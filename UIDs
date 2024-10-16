@@ -240,7 +240,7 @@ pydio:*:291:291::0:0:pydio cells user:/var/pydio:/bin/sh
 sftpgo:*:292:292::0:0:SFTPGo user:/nonexistent:/usr/sbin/nologin
 biboumi:*:293:293::0:0:biboumi:/nonexistent:/usr/sbin/nologin
 krill:*:294:294::0:0:krill Pseudo User:/nonexistent:/usr/sbin/nologin
-jottad:*:295:295::0:0:Jotta Cloud Daemon:/nonexisten:/usr/sbin/nologin
+jottad:*:295:295::0:0:Jotta Cloud Daemon:/nonexistent:/usr/sbin/nologin
 writefreely:*:296:296::0:0:WriteFreely daemon:/var/db/writefreely:/usr/sbin/nologin
 conduit:*:297:297::0:0:Conduit daemon:/var/db/conduit:/usr/sbin/nologin
 neolink:*:298:298::0:0:& daemon:/nonexistent:/usr/sbin/nologin
