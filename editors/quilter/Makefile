@@ -19,9 +19,7 @@ LIB_DEPENDS=	libgee-0.8.so:devel/libgee \
 USES=		compiler:c11 desktop-file-utils gettext gnome meson pkgconfig python:build vala:build
 USE_GITHUB=	yes
 GH_ACCOUNT=	lainsce
-USE_GNOME=	glib20 gtk30 gtksourceview5
-
-GLIB_SCHEMAS=	io.github.lainsce.Quilter.gschema.xml
+USE_GNOME=	glib20 gtk30 gtksourceview4
 
 LDFLAGS+=	${LOCALBASE}/lib/libmarkdown.a
 
