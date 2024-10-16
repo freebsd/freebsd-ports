@@ -23,7 +23,8 @@ OPTIONS_SUB=	yes
 
 BINARY_ALIAS=	python3=${PYTHON_CMD}
 
-DOCS_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gi-docgen>=0:textproc/py-gi-docgen@${PY_FLAVOR}
+DOCS_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gi-docgen>=0:textproc/py-gi-docgen@${PY_FLAVOR} \
+			rst2html5:textproc/py-docutils@${PY_FLAVOR}
 DOCS_MESON_ENABLED=	documentation
 DOCS_IMPLIES=	GIR
 GIR_DESC=	Build introspection data
