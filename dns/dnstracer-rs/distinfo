@@ -1,6 +1,6 @@
-TIMESTAMP = 1728889555
-SHA256 (rust/crates/dnstracer-0.9.0.crate) = 452283ddeb99fe4ad246e5ee5a2a565166c449d2be60a160f2c5bc7f80a6af23
-SIZE (rust/crates/dnstracer-0.9.0.crate) = 17238
+TIMESTAMP = 1729083747
+SHA256 (rust/crates/dnstracer-0.9.1.crate) = 47b8e4b81524c0e0ce590cad6a8b4ee7fcbfdaae78fd549434f7c131b5fd5cb5
+SIZE (rust/crates/dnstracer-0.9.1.crate) = 17974
 SHA256 (rust/crates/addr2line-0.24.2.crate) = dfbe277e56a376000877090da837660b4427aad530e3028d44e0bffe4f89a1c1
 SIZE (rust/crates/addr2line-0.24.2.crate) = 39015
 SHA256 (rust/crates/adler2-2.0.0.crate) = 512761e0bb2578dd7380c6baaa0f4ce03e84f95e960231d1dec8bf4d7d6e2627
