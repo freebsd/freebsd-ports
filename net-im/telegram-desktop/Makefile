@@ -1,5 +1,5 @@
 PORTNAME=	telegram-desktop
-DISTVERSION=	5.6.1
+DISTVERSION=	5.6.3
 CATEGORIES=	net-im
 MASTER_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/releases/download/v${DISTVERSION}/
 DISTNAME=	tdesktop-${DISTVERSION}-full
@@ -110,17 +110,10 @@ TELEGRAM_API_ID=	601761
 
 .include <bsd.port.options.mk>
 
-.if ${OPSYS} == FreeBSD
-#EXTRA_PATCHES=	${PATCHDIR}/extra-patch-CMakeLists.txt
-USES+=	llvm:min=16,build
-USES:=	${USES:Ncompiler\:*} # XXX avoid warnings
-.if defined(WITH_CCACHE_BUILD) && !defined(NO_CCACHE)
+.if ${OPSYS} == FreeBSD && defined(WITH_CCACHE_BUILD) && !defined(NO_CCACHE)
 CMAKE_ARGS+=	-DCMAKE_CC_COMPILER_LAUNCHER="${LOCALBASE}/bin/ccache" \
 		-DCMAKE_CPP_COMPILER_LAUNCHER="${LOCALBASE}/bin/ccache" \
 		-DCMAKE_CXX_COMPILER_LAUNCHER="${LOCALBASE}/bin/ccache"
-.endif
-#.else
-#USES+=	compiler:c++20-lang
 .endif
 
 post-extract:
