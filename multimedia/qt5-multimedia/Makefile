@@ -1,5 +1,6 @@
 PORTNAME=	multimedia
 PORTVERSION=	${QT5_VERSION}${QT5_KDE_PATCH}
+PORTREVISION=	1
 CATEGORIES=	multimedia
 PKGNAMEPREFIX=	qt5-
 
@@ -41,6 +42,7 @@ OPENAL_VARS_OFF=	QT_CONFIG+=-openal \
 			QMAKE_CONFIGURE_ARGS+=-no-openal
 
 ALSA_LIB_DEPENDS=	libasound.so:audio/alsa-lib
+ALSA_RUN_DEPENDS=	alsa-plugins>=0:audio/alsa-plugins
 ALSA_VARS=		QT_CONFIG+=alsa
 ALSA_VARS_OFF=		QT_CONFIG+=-alsa \
 			QMAKE_CONFIGURE_ARGS+=-no-alsa

@@ -24,6 +24,7 @@ OPTIONS_SINGLE_AUDIO=	ALSA PULSEAUDIO
 OPTIONS_SUB=		yes
 
 ALSA_LIB_DEPENDS=	libasound.so:audio/alsa-lib
+ALSA_RUN_DEPENDS=	alsa-plugins>=0:audio/alsa-plugins
 ALSA_CMAKE_BOOL=	FEATURE_alsa
 
 FFMPEG_LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg
