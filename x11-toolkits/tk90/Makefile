@@ -28,7 +28,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}${TK_VERSION}
 WRKSRC_SUBDIR=	unix
 
 ALL_TARGET=	all
-INSTALL_TARGET=	install-strip install-libraries
+INSTALL_TARGET=	install-libraries
 TEST_TARGET=	test
 
 USES+=		tcl:${SHORT_TK_VER},tea xorg
@@ -58,6 +58,13 @@ PLIST_SUB=	TK_VER=${TK_VER} \
 
 DEMOS_INSTALL_TARGET=	install-demos
 TKMAN_INSTALL_TARGET=	install-doc
+
+.if defined(WITH_DEBUG)
+CONFIGURE_ARGS+=--enable-symbols
+INSTALL_TARGET+=install
+.else
+INSTALL_TARGET+=install-strip
+.endif
 
 post-patch:
 	${REINPLACE_CMD} \
