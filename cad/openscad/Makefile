@@ -6,20 +6,19 @@ CATEGORIES=	cad
 #PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
 #PATCHFILES+=	cc49ad8dac24.patch:-p1
 
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 MAINTAINER=	mr@FreeBSD.org
 COMMENT=	Programmer's solid 3D CAD modeller #'
 WWW=		https://www.openscad.org/
-
-LICENSE=	GPLv2+
-LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	cgal>0:math/cgal \
 		evdev-proto>0:devel/evdev-proto \
 		${LOCALBASE}/include/glm/glm.hpp:math/glm \
 		${LOCALBASE}/include/clipper2/clipper.h:cad/Clipper2 \
 		${PYTHON_PKGNAMEPREFIX}numpy>0:math/py-numpy@${PY_FLAVOR}
-LIB_DEPENDS=	libasound_module_pcm_oss.so:audio/alsa-plugins \
-		libzip.so:archivers/libzip \
+LIB_DEPENDS=	libzip.so:archivers/libzip \
 		libhidapi.so:comms/hidapi \
 		libboost_regex.so:devel/boost-libs \
 		libqscintilla2_qt5.so:devel/qscintilla2-qt5 \
@@ -51,6 +50,8 @@ GH_SUBDIR=	libraries/MCAD:mcad submodules/mimalloc:mimalloc submodules/manifold:
 # Avoid overlinking: kvm, procstat, boost(thread, system), Qt5(concurrent, network, printsupport)
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-Wl,--as-needed -L${LOCALBASE}/lib
+#CMAKE_ON=	USE_GLAD
+#CMAKE_OFF=	USE_GLEW
 
 .include <bsd.port.pre.mk>
 
