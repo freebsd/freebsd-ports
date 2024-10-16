@@ -43,6 +43,7 @@ USES=		autoreconf:build bison cargo gmake libtool python
 USE_GCC=	yes:build
 USE_GITHUB=	nodefault
 
+BROKEN_armv7=	fails to build: configure: error: C compiler cannot create executables
 NO_MTREE=	yes
 GH_ACCOUNT=	espressif
 GH_PROJECT=	binutils-gdb:github1 \
@@ -161,7 +162,7 @@ do-install:
 	    ${XARGS} ${CHMOD} +x
 
 	# xtensa-toolchian-wrapper
-	${INSTALL_PROGRAM} ${WRKSRC2}/target/x86_64-unknown-freebsd/release/xtensa-toolchian-wrapper \
+	${INSTALL_PROGRAM} ${WRKSRC2}/target/*-unknown-freebsd/release/xtensa-toolchian-wrapper \
 	    ${STAGEDIR}${PREFIX}/${PKGBASE}/bin
 .for chip in ${XTENSA_CHIPS}
 .for wrap in ${XTENSA_WRAPPED}
