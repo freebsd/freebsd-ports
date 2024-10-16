@@ -1,5 +1,5 @@
 PORTNAME=	graal
-DISTVERSION=	1.0.7
+DISTVERSION=	1.0.8
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -33,7 +33,6 @@ RUN_DEPENDS=	\
 		pylint${PYTHON_PKGNAMESUFFIX}>=1.8.4:devel/pylint \
 		rubygem-github-linguist>0:textproc/rubygem-github-linguist \
 		scc>0:devel/scc
-
 
 USES=		python shebangfix
 USE_PYTHON=	autoplist concurrent pep517 unittest
