@@ -1,6 +1,6 @@
---- electron/spec/api-web-frame-main-spec.ts.orig	2023-05-31 14:28:29 UTC
+--- electron/spec/api-web-frame-main-spec.ts.orig	2024-10-09 13:53:06 UTC
 +++ electron/spec/api-web-frame-main-spec.ts
-@@ -289,7 +289,7 @@ describe('webFrameMain module', () => {
+@@ -292,7 +292,7 @@ describe('webFrameMain module', () => {
      });
  
      // TODO(jkleinsc) fix this flaky test on linux
