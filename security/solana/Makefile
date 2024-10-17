@@ -1,7 +1,7 @@
 PORTNAME=	solana
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.17.9
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	security
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -15,12 +15,11 @@ BROKEN_armv7=		compilation failure: error[E0512]: cannot transmute between types
 BROKEN_i386=		fails on 32-bit systems: https://github.com/solana-labs/solana/issues/16811
 BROKEN_powerpc64le=	compilation failure: called `Option::unwrap()` on a `None` value in ring-0.16.20/build.rs:358:10 # see https://github.com/rust-lang/rust/issues/119901
 
-BUILD_DEPENDS=	llvm-config${LLVM_VERSION}:devel/llvm${LLVM_VERSION} \
-		protoc:devel/protobuf \
+BUILD_DEPENDS=	protoc:devel/protobuf \
 		gmake:devel/gmake
 LIB_DEPENDS=	libhidapi.so:comms/hidapi
 
-USES=		cargo pkgconfig ssl
+USES=		cargo llvm:lib pkgconfig ssl
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	solana-labs
@@ -693,9 +692,7 @@ XARCH=		${ARCH:S/amd64/x86_64/:tu}
 MAKE_ENV=	${XARCH}_UNKNOWN_FREEBSD_OPENSSL_INCLUDE_DIR=${OPENSSLINC} \
 		${XARCH}_UNKNOWN_FREEBSD_OPENSSL_LIB_DIR=${OPENSSLLIB}
 
-LLVM_VERSION=	12
-
-BINARY_ALIAS=	llvm-config=${PREFIX}/bin/llvm-config${LLVM_VERSION}
+BINARY_ALIAS=	llvm-config=${LOCALBASE}/bin/${LLVM_CONFIG}
 
 do-install:
 	for f in ${CARGO_TARGET_DIR}/${CARGO_BUILD_TARGET}/*/${PORTNAME}*; do \
