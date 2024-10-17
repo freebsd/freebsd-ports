@@ -21,11 +21,12 @@ GH_ACCOUNT=	DataDog
 NATIVE_STATIC_LIBS=	-lpthread -lrt -lexecinfo -lutil -lc -lm
 
 post-patch:
-	@${SED} -e 's|@Datadog_VERSION@|${PORTVERSION}|' ${WRKSRC}/profiling-ffi/datadog_profiling.pc.in > ${WRKSRC}/datadog_profiling.pc
-	@${SED} -e 's|@Datadog_VERSION@|${PORTVERSION}|' ${WRKSRC}/profiling-ffi/datadog_profiling_with_rpath.pc.in > ${WRKSRC}/datadog_profiling_with_rpath.pc
-	@${SED} -e 's|@Datadog_VERSION@|${PORTVERSION}|; s|@Datadog_LIBRARIES@|${NATIVE_STATIC_LIBS}|' ${WRKSRC}/profiling-ffi/datadog_profiling-static.pc.in > ${WRKSRC}/datadog_profiling-static.pc
-	@${SED} -e 's|@Datadog_LIBRARIES@|${NATIVE_STATIC_LIBS}|' ${WRKSRC}/cmake/DatadogConfig.cmake.in > ${WRKSRC}/DatadogConfig.cmake
-	@${SED} -e 's|@Datadog_LIBRARIES@|${NATIVE_STATIC_LIBS}|' ${WRKSRC}/cmake/DataPipelineConfig.cmake.in > ${WRKSRC}/DataPipelineConfig.cmake
+.for file in datadog_profiling datadog_profiling-static datadog_profiling_with_rpath
+	@${SED} -e 's|@Datadog_VERSION@|${PORTVERSION}|; s|@Datadog_LIBRARIES@|${NATIVE_STATIC_LIBS}|' ${WRKSRC}/profiling-ffi/${file}.pc.in > ${WRKSRC}/${file}.pc
+.endfor
+.for file in DatadogConfig DataPipelineConfig
+	@${SED} -e 's|@Datadog_LIBRARIES@|${NATIVE_STATIC_LIBS}|' ${WRKSRC}/cmake/${file}.cmake.in > ${WRKSRC}/${file}.cmake
+.endfor
 # Fix sys-info-0.9.1 on 32-bit architectures, see also https://github.com/FillZpp/sys-info-rs/issues/80
 	@${SED} -i '' -e '/get_cpu/ s|unsigned long|uint64_t|; /get_proc_total/ s|unsigned long|uint64_t|' ${WRKSRC}/cargo-crates/sys-info-0.9.1/c/*.[ch]
 
@@ -41,10 +42,10 @@ post-build:
 	@${MV} ${CARGO_TARGET_DIR}/${CARGO_BUILD_TARGET}/release/libtest_spawn_from_lib.so ${CARGO_TARGET_DIR}/${CARGO_BUILD_TARGET}/release/libtest_spawn_from_lib.so.skip
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/libdatadog-crashtracking-receiver ${STAGEDIR}${PREFIX}/bin/
 	${MKDIR} ${STAGEDIR}${PREFIX}/include/datadog/
 	${MKDIR} ${STAGEDIR}${PREFIX}/lib/cmake/libdatadog/
 	${MKDIR} ${STAGEDIR}${PREFIX}/libdata/pkgconfig/
+	${INSTALL_PROGRAM} ${WRKSRC}/libdatadog-crashtracking-receiver ${STAGEDIR}${PREFIX}/bin/
 	${INSTALL_DATA} ${CARGO_TARGET_DIR}/include/datadog/*.h ${STAGEDIR}${PREFIX}/include/datadog/
 	${INSTALL_DATA} ${WRKSRC}/*.cmake ${STAGEDIR}${PREFIX}/lib/cmake/libdatadog/
 	${INSTALL_DATA} ${CARGO_TARGET_DIR}/${CARGO_BUILD_TARGET}/release/*.a ${STAGEDIR}${PREFIX}/lib/
