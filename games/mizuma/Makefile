@@ -1,5 +1,5 @@
 PORTNAME=	mizuma
-DISTVERSION=	2024.09
+DISTVERSION=	2024.10
 CATEGORIES=	games emulators
 MASTER_SITES=	https://codeberg.org/Alexander88207/Mizutamari/archive/${PORTVERSION}${EXTRACT_SUFX}?dummy=/
 
