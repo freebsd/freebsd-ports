@@ -1,0 +1,10 @@
+--- ruby-lsp-rspec.gemspec.orig	2024-10-15 04:04:44 UTC
++++ ruby-lsp-rspec.gemspec
+@@ -22,6 +22,6 @@ Gem::Specification.new do |s|
+ 
+   s.specification_version = 4
+ 
+-  s.add_runtime_dependency(%q<ruby-lsp>.freeze, ["~> 0.19.0".freeze])
++  s.add_runtime_dependency(%q<ruby-lsp>.freeze, ["~> 0.20.0".freeze])
+ end
+ 
