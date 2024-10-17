@@ -1,5 +1,5 @@
 PORTNAME=	gitlab-security_report_schemas
-PORTVERSION=	0.1.2.min15.0.0.max15.2.0
+PORTVERSION=	0.1.2.min15.0.0.max15.2.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
