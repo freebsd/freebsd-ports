@@ -1,5 +1,5 @@
 PORTNAME=	pytype
-PORTVERSION=	2024.9.13
+PORTVERSION=	2024.10.11
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMESUFFIX=	${PYTHON_PKGNAMESUFFIX}
@@ -23,14 +23,14 @@ RUN_DEPENDS=	ninja>=1.10.2:devel/ninja \
 		${PYTHON_PKGNAMEPREFIX}Jinja2>=3.1.2:devel/py-Jinja2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}libcst>=1.0.1:devel/py-libcst@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}msgspec>=0.18.6:devel/py-msgspec@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}networkx>=0,1:math/py-networkx@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}networkx>=2.8,1:math/py-networkx@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pycnite>=2024.7.31:devel/py-pycnite@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pydot>=1.4.2:graphics/py-pydot@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tabulate>=0.8.9:devel/py-tabulate@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}toml>=0.10.2:textproc/py-toml@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}typing-extensions>=4.3.0:devel/py-typing-extensions@${PY_FLAVOR}
 
-USES=		compiler:c++11-lang python
+USES=		compiler:c++11-lang python:3.10+
 USE_PYTHON=	autoplist concurrent pep517 pytest
 
 TEST_ENV=	PYTHONPATH=${STAGEDIR}${PYTHON_SITELIBDIR}
