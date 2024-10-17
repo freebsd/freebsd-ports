@@ -100,7 +100,7 @@ DOCS_CONFIGURE_ENABLE=	docs
 JAVA_CONFIGURE_ENABLE=	java
 QT6_CONFIGURE_WITH=	qscintilla qt=6
 
-QT6_LIB_DEPENDS=	libqscintilla2_qt6.so:devel/qscintilla2-qt6
+QT6_LIB_DEPENDS=	libqscintilla2_qt6.so:devel/qscintilla2@qt6
 
 DOCS_USES=	tex
 DOCS_USE=	TEX=dvipsk:build,formats:build

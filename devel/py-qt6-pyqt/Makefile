@@ -12,7 +12,7 @@ WWW=		https://riverbankcomputing.com/software/pyqt
 PYQT_DIST=	yes
 
 LIB_DEPENDS=	libdbus-1.so:devel/dbus \
-		libqscintilla2_qt6.so:devel/qscintilla2-qt6
+		libqscintilla2_qt6.so:devel/qscintilla2@qt6
 BUILD_DEPENDS=	${PY_SETUPTOOLS} \
 		${PYTHON_PKGNAMEPREFIX}dbus>1:devel/py-dbus@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dbus>1:devel/py-dbus@${PY_FLAVOR}

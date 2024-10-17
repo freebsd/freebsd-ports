@@ -51,7 +51,7 @@ LIB_DEPENDS=	libabsl_log_internal_check_op.so:devel/abseil \
 		libproj.so:graphics/proj \
 		libprotobuf-lite.so:devel/protobuf \
 		libqjson-qt5.so:devel/qjson \
-		libqscintilla2_qt5.so:devel/qscintilla2-qt5 \
+		libqscintilla2_qt5.so:devel/qscintilla2@qt5 \
 		libqt5keychain.so:security/qtkeychain@qt5 \
 		libqwt.so:x11-toolkits/qwt6@qt5 \
 		librttopo.so:devel/librttopo \

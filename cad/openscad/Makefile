@@ -21,7 +21,7 @@ BUILD_DEPENDS=	cgal>0:math/cgal \
 LIB_DEPENDS=	libzip.so:archivers/libzip \
 		libhidapi.so:comms/hidapi \
 		libboost_regex.so:devel/boost-libs \
-		libqscintilla2_qt5.so:devel/qscintilla2-qt5 \
+		libqscintilla2_qt5.so:devel/qscintilla2@qt5 \
 		libopencsg.so:graphics/opencsg \
 		libgmp.so:math/gmp \
 		libmpfr.so:math/mpfr \

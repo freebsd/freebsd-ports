@@ -15,7 +15,7 @@ WWW=		https://riverbankcomputing.com/software/pyqtchart
 LICENSE=	${PYQT5_LICENSE}
 
 BUILD_DEPENDS=	${PY_SETUPTOOLS}
-LIB_DEPENDS=	libqscintilla2_qt5.so:devel/qscintilla2-qt5
+LIB_DEPENDS=	libqscintilla2_qt5.so:devel/qscintilla2@qt5
 
 USES=		gl python pyqt:5 qt:5
 USE_GL=		gl

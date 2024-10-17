@@ -6226,9 +6226,8 @@
     SUBDIR += qjson
     SUBDIR += qmake
     SUBDIR += qschematic
-    SUBDIR += qscintilla2-designerplugin-qt5
-    SUBDIR += qscintilla2-qt5
-    SUBDIR += qscintilla2-qt6
+    SUBDIR += qscintilla2
+    SUBDIR += qscintilla2-designerplugin
     SUBDIR += qt-maybe
     SUBDIR += qt5
     SUBDIR += qt5-assistant

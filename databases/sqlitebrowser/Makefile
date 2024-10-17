@@ -12,7 +12,7 @@ LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libantlr.a:devel/antlr
-LIB_DEPENDS=	libqscintilla2_qt5.so:devel/qscintilla2-qt5
+LIB_DEPENDS=	libqscintilla2_qt5.so:devel/qscintilla2@qt5
 
 USES=		cmake desktop-file-utils gnome qt:5 sqlite
 USE_QT=		core concurrent gui network printsupport testlib widgets \
