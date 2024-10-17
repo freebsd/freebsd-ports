@@ -1,11 +1,10 @@
 PORTNAME=	gitlab-${FLAVOR:Uce}
 PORTVERSION=	${GITLAB_VERSION}
-PORTREVISION=	${GITLAB_PORTREVISION} # modify it in www/gitlab/Makefile.common
 DISTVERSIONPREFIX=	v
 .if ${FLAVOR:U} == ee
 DISTVERSIONSUFFIX=	-ee
 .endif
-PORTREVISION=	1
+PORTREVISION=	${GITLAB_PORTREVISION} # modify it in www/gitlab/Makefile.common
 CATEGORIES=	www devel
 
 # include patch to fix database migration
@@ -30,7 +29,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 # mail/rubygem-net-pop is required as ruby 3.1 removed it
 MY_DEPENDS=	git>=2.41.0:devel/git \
 	gitaly>=${GITLAB_VERSION}:devel/gitaly \
-	gitlab-elasticsearch-indexer>=5.2.0:textproc/gitlab-elasticsearch-indexer \
+	gitlab-elasticsearch-indexer>=5.3.0:textproc/gitlab-elasticsearch-indexer \
 	gitlab-agent>=${GITLAB_VERSION}:net/gitlab-agent \
 	gitlab-pages>=${GITLAB_VERSION}:www/gitlab-pages \
 	gitlab-shell>=14.39.0:devel/gitlab-shell \
@@ -44,6 +43,7 @@ MY_DEPENDS=	git>=2.41.0:devel/git \
 	rubygem-psych3>=3.1<4:textproc/rubygem-psych3 \
 	rubygem-rails70>=7.0.8.4<7.1:www/rubygem-rails70 \
 	rubygem-bootsnap>=1.18.3<1.19:devel/rubygem-bootsnap \
+	rubygem-ffi>=1.17<2:devel/rubygem-ffi \
 	rubygem-openssl>=3.2.0<4:security/rubygem-openssl \
 	rubygem-ipaddr>=1.2.5<1.3:net/rubygem-ipaddr \
 	rubygem-responders-rails70>=3.0<4.0:www/rubygem-responders-rails70 \
@@ -135,9 +135,9 @@ MY_DEPENDS=	git>=2.41.0:devel/git \
 	rubygem-elasticsearch-model713>=7.2<8:textproc/rubygem-elasticsearch-model713 \
 	rubygem-elasticsearch-rails7>=7.2<8:textproc/rubygem-elasticsearch-rails7 \
 	rubygem-elasticsearch-api7>=7.17.11<7.18:textproc/rubygem-elasticsearch-api7 \
-	rubygem-aws-sdk-core-gitlab>=3.202.0<3.203:devel/rubygem-aws-sdk-core-gitlab \
+	rubygem-aws-sdk-core-gitlab>=3.206.0<3.207:devel/rubygem-aws-sdk-core-gitlab \
 	rubygem-aws-sdk-cloudformation-gitlab>=1<2:devel/rubygem-aws-sdk-cloudformation-gitlab \
-	rubygem-aws-sdk-s3-gitlab>=1.159.0<1.160:devel/rubygem-aws-sdk-s3-gitlab \
+	rubygem-aws-sdk-s3-gitlab>=1.163.0<1.164:devel/rubygem-aws-sdk-s3-gitlab \
 	rubygem-faraday-typhoeus>=1.1<2:www/rubygem-faraday-typhoeus \
 	rubygem-faraday_middleware-aws-sigv4>=1.0.1<1.1:devel/rubygem-faraday_middleware-aws-sigv4 \
 	rubygem-typhoeus>=1.4.0<1.5:www/rubygem-typhoeus \
@@ -158,12 +158,12 @@ MY_DEPENDS=	git>=2.41.0:devel/git \
 	rubygem-truncato>=0.7.12<0.8.0:textproc/rubygem-truncato \
 	rubygem-tty-prompt>=0.23<1:devel/rubygem-tty-prompt \
 	rubygem-nokogiri>=1.16<2:textproc/rubygem-nokogiri \
-	rubygem-gitlab-glfm-markdown>=0.0.20<0.1:textproc/rubygem-gitlab-glfm-markdown \
+	rubygem-gitlab-glfm-markdown>=0.0.21<0.1:textproc/rubygem-gitlab-glfm-markdown \
 	rubygem-icalendar>=2.10.2<2.11:devel/rubygem-icalendar \
 	rubygem-diffy>=3.4<4:textproc/rubygem-diffy \
 	rubygem-rack22>=2.2.9,3<2.3,3:www/rubygem-rack22 \
 	rubygem-rack-timeout>=0.7.0<0.8:www/rubygem-rack-timeout \
-	rubygem-puma>=6.4<7:www/rubygem-puma \
+	rubygem-puma>=6.4.3<7:www/rubygem-puma \
 	rubygem-sd_notify>=0.1.1<0.2:devel/rubygem-sd_notify \
 	rubygem-state_machines-activerecord08>=0.8.0<0.9.0:databases/rubygem-state_machines-activerecord08 \
 	rubygem-sidekiq72>=7.2.4<7.3:devel/rubygem-sidekiq72 \
@@ -217,7 +217,7 @@ MY_DEPENDS=	git>=2.41.0:devel/git \
 	rubygem-gitlab-labkit>=0.36.0<0.37:devel/rubygem-gitlab-labkit \
 	rubygem-thrift>=0.16.0:devel/rubygem-thrift \
 	rubygem-rails-i18n-rails70>=7.0.9<8:devel/rubygem-rails-i18n-rails70 \
-	rubygem-gettext_i18n_rails112>=1.12.0<1.13:devel/rubygem-gettext_i18n_rails112 \
+	rubygem-gettext_i18n_rails>=1.13.0<1.14:devel/rubygem-gettext_i18n_rails \
 	rubygem-gettext>=3.4<4:devel/rubygem-gettext \
 	rubygem-batch-loader>=2.0.5<2.1:devel/rubygem-batch-loader \
 	rubygem-tty-prompt>=0.23<1:devel/rubygem-tty-prompt \
@@ -226,7 +226,7 @@ MY_DEPENDS=	git>=2.41.0:devel/git \
 	rubygem-webrick>=1.8.1<1.9:www/rubygem-webrick \
 	rubygem-prometheus-client-mmap>=1.1.1<2:devel/rubygem-prometheus-client-mmap \
 	rubygem-async212>=2.12.1<2.13:devel/rubygem-async212 \
-	rubygem-gitlab-security_report_schemas>=0.1.2.min15.0.0.max15.2.0<0.1.2.min15.0.0.max15.2.1:devel/rubygem-gitlab-security_report_schemas \
+	rubygem-gitlab-security_report_schemas>=0.1.2.min15.0.0.max15.2.1<0.1.2.min15.0.0.max15.2.2:devel/rubygem-gitlab-security_report_schemas \
 	rubygem-opentelemetry-sdk>=1.5.0:devel/rubygem-opentelemetry-sdk \
 	rubygem-opentelemetry-exporter-otlp>=0.26.3:devel/rubygem-opentelemetry-exporter-otlp \
 	rubygem-opentelemetry-instrumentation-active_support>=0.6.0:devel/rubygem-opentelemetry-instrumentation-active_support \
@@ -312,9 +312,11 @@ MY_DEPENDS=	git>=2.41.0:devel/git \
 	rubygem-duo_api>=1.3<2:security/rubygem-duo_api \
 	rubygem-gitlab-sdk>=0.3.0<0.4:devel/rubygem-gitlab-sdk \
 	rubygem-paper_trail>=15.0<16:devel/rubygem-paper_trail \
+	rubygem-i18n_data>=0.13.1<1:devel/rubygem-i18n_data \
 	rubygem-google-cloud-profiler-v2>=0.3<1:textproc/rubygem-google-cloud-profiler-v2 \
 	rubygem-parallel>=1.22<2:sysutils/rubygem-parallel \
-	rubygem-google-cloud-storage_transfer12>=1.2.0<1.3:net/rubygem-google-cloud-storage_transfer12
+	rubygem-google-cloud-storage_transfer12>=1.2.0<1.3:net/rubygem-google-cloud-storage_transfer12 \
+	rubygem-minitest>=5.11<6:devel/rubygem-minitest
 
 BUILD_DEPENDS=	gem:devel/ruby-gems \
 	${MY_DEPENDS}
@@ -346,6 +348,7 @@ SHEBANG_FILES=	scripts/build_qa_image \
 		scripts/frontend/start_storybook.sh \
 		scripts/partitioning/generate-fk \
 		scripts/validate-monorepo-gem \
+		.lefthook/gitleaks.sh \
 		.lefthook/pre-push/merge_conflicts \
 		qa/gdk/entrypoint \
 		qa/bin/test \
