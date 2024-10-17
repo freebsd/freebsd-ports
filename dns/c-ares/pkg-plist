@@ -14,7 +14,7 @@ lib/cmake/c-ares/c-ares-targets.cmake
 %%STATIC%%lib/libcares_static.a
 lib/libcares.so
 lib/libcares.so.2
-lib/libcares.so.2.18.1
+lib/libcares.so.2.19.1
 libdata/pkgconfig/libcares.pc
 share/man/man1/adig.1.gz
 share/man/man1/ahost.1.gz
@@ -61,6 +61,7 @@ share/man/man3/ares_dns_record_set_id.3.gz
 share/man/man3/ares_dns_rr.3.gz
 share/man/man3/ares_dns_rr_add_abin.3.gz
 share/man/man3/ares_dns_rr_del_abin.3.gz
+share/man/man3/ares_dns_rr_del_opt_byid.3.gz
 share/man/man3/ares_dns_rr_get_abin.3.gz
 share/man/man3/ares_dns_rr_get_abin_cnt.3.gz
 share/man/man3/ares_dns_rr_get_addr.3.gz
@@ -132,6 +133,9 @@ share/man/man3/ares_parse_srv_reply.3.gz
 share/man/man3/ares_parse_txt_reply.3.gz
 share/man/man3/ares_parse_uri_reply.3.gz
 share/man/man3/ares_process.3.gz
+share/man/man3/ares_process_fd.3.gz
+share/man/man3/ares_process_fds.3.gz
+share/man/man3/ares_process_pending_write.3.gz
 share/man/man3/ares_query_dnsrec.3.gz
 share/man/man3/ares_query.3.gz
 share/man/man3/ares_queue.3.gz
@@ -146,6 +150,7 @@ share/man/man3/ares_send_dnsrec.3.gz
 share/man/man3/ares_set_local_dev.3.gz
 share/man/man3/ares_set_local_ip4.3.gz
 share/man/man3/ares_set_local_ip6.3.gz
+share/man/man3/ares_set_pending_write_cb.3.gz
 share/man/man3/ares_set_server_state_callback.3.gz
 share/man/man3/ares_set_servers.3.gz
 share/man/man3/ares_set_servers_csv.3.gz
@@ -154,6 +159,7 @@ share/man/man3/ares_set_servers_ports_csv.3.gz
 share/man/man3/ares_set_socket_callback.3.gz
 share/man/man3/ares_set_socket_configure_callback.3.gz
 share/man/man3/ares_set_socket_functions.3.gz
+share/man/man3/ares_set_socket_functions_ex.3.gz
 share/man/man3/ares_set_sortlist.3.gz
 share/man/man3/ares_strerror.3.gz
 share/man/man3/ares_svcb_param_t.3.gz
