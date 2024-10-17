@@ -1,6 +1,33 @@
---- Makefile.orig	2024-08-20 19:30:28 UTC
+--- Makefile.orig	2024-10-16 07:53:22 UTC
 +++ Makefile
-@@ -618,12 +618,12 @@ ${DEPENDENCY_DIR}/git-%/Makefile: ${DEPENDENCY_DIR}/gi
+@@ -216,8 +216,7 @@ BUILD_GEM_NAME ?= gitaly
+ BUILD_GEM_NAME ?= gitaly
+ 
+ # Git binaries that are eventually embedded into the Gitaly binary.
+-GIT_PACKED_EXECUTABLES       = $(addprefix ${BUILD_DIR}/bin/gitaly-, $(addsuffix -v2.46, ${GIT_EXECUTABLES})) \
+-							   $(addprefix ${BUILD_DIR}/bin/gitaly-, $(addsuffix -v2.47, ${GIT_EXECUTABLES}))
++GIT_PACKED_EXECUTABLES       = $(addprefix ${BUILD_DIR}/bin/gitaly-, $(addsuffix -v2.47, ${GIT_EXECUTABLES}))
+ 
+ # All executables provided by Gitaly.
+ GITALY_EXECUTABLES           = $(addprefix ${BUILD_DIR}/bin/,$(notdir $(shell find ${SOURCE_DIR}/cmd -mindepth 1 -maxdepth 1 -type d -print)))
+@@ -306,14 +305,14 @@ install: build
+ 
+ .PHONY: build-bundled-git
+ ## Build bundled Git binaries.
+-build-bundled-git: build-bundled-git-v2.46 build-bundled-git-v2.47
++build-bundled-git: build-bundled-git-v2.47
+ build-bundled-git-v2.46: $(patsubst %,${BUILD_DIR}/bin/gitaly-%-v2.46,${GIT_EXECUTABLES})
+ build-bundled-git-v2.47: $(patsubst %,${BUILD_DIR}/bin/gitaly-%-v2.47,${GIT_EXECUTABLES})
+ 
+ .PHONY: install-bundled-git
+ ## Install bundled Git binaries. The target directory can be modified by
+ ## setting PREFIX and DESTDIR.
+-install-bundled-git: install-bundled-git-v2.46 install-bundled-git-v2.47
++install-bundled-git: install-bundled-git-v2.47
+ install-bundled-git-v2.46: $(patsubst %,${INSTALL_DEST_DIR}/gitaly-%-v2.46,${GIT_EXECUTABLES})
+ install-bundled-git-v2.47: $(patsubst %,${INSTALL_DEST_DIR}/gitaly-%-v2.47,${GIT_EXECUTABLES})
+ 
+@@ -614,12 +613,12 @@ ${DEPENDENCY_DIR}/git-%/Makefile: ${DEPENDENCY_DIR}/gi
  # otherwise try to rebuild all targets depending on it whenever we build
  # something else. We thus depend on the Makefile instead.
  ${DEPENDENCY_DIR}/git-%/Makefile: ${DEPENDENCY_DIR}/git-%.version
