@@ -1,6 +1,6 @@
 PORTNAME=	trunk
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.21.0
+DISTVERSION=	0.21.1
 CATEGORIES=	www devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -240,7 +240,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		nom-7.1.3 \
 		normpath-1.3.0 \
 		notify-6.1.1 \
-		notify-debouncer-full-0.3.1 \
+		notify-debouncer-full-0.3.2 \
 		nu-ansi-term-0.46.0 \
 		num-conv-0.1.0 \
 		num-traits-0.2.19 \
@@ -335,9 +335,9 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		rustls-0.23.14 \
 		rustls-native-certs-0.8.0 \
 		rustls-pemfile-2.2.0 \
-		rustls-pki-types-1.9.0 \
+		rustls-pki-types-1.10.0 \
 		rustls-webpki-0.102.8 \
-		rustversion-1.0.17 \
+		rustversion-1.0.18 \
 		ryu-1.0.18 \
 		same-file-1.0.6 \
 		schannel-0.1.26 \
