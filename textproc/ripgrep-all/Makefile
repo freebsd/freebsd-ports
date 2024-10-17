@@ -1,7 +1,7 @@
 PORTNAME=	ripgrep-all
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.9.6
-PORTREVISION=	30
+PORTREVISION=	31
 CATEGORIES=	textproc
 
 MAINTAINER=	alexis.praga@free.fr
@@ -14,6 +14,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.md
 USES=		cargo
 USE_GITHUB=	yes
 GH_ACCOUNT=	phiresky
+
+RUN_DEPENDS+= rg:textproc/ripgrep
 
 CARGO_CRATES=	addr2line-0.12.0 \
 		adler32-1.0.4 \
