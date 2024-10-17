@@ -370,7 +370,6 @@
     SUBDIR += mirrorselect
     SUBDIR += mitmproxy
     SUBDIR += mknmz-wwwoffle
-    SUBDIR += mnogosearch
     SUBDIR += mod_asn
     SUBDIR += mod_auth_cas
     SUBDIR += mod_auth_cookie_mysql2
