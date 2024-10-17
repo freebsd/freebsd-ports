@@ -1,5 +1,6 @@
 PORTNAME=	anope
 DISTVERSION=	2.0.16
+PORTREVISION=	1
 CATEGORIES=	irc
 
 MAINTAINER=	devnull@apt322.org
@@ -31,6 +32,7 @@ GNUTLS_LIB_DEPENDS=	libgnutls.so:security/gnutls
 LDAP_USES=	ldap
 
 MYSQL_USES=	mysql
+MYSQL_CMAKE_ON=	-DEXTRA_LIBS:STRING="${LOCALBASE}/lib/mysql/"
 
 NLS_USES=	gettext
 
