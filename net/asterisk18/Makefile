@@ -1,6 +1,5 @@
 PORTNAME=	asterisk
-PORTVERSION=	18.24.3
-PORTREVISION=	2
+PORTVERSION=	18.25.0
 CATEGORIES=	net
 MASTER_SITES=	https://downloads.asterisk.org/pub/telephony/%SUBDIR%/:DEFAULT,g729
 MASTER_SITE_SUBDIR=	asterisk/ \
@@ -11,7 +10,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 DIST_SUBDIR=	${PORTNAME}
 EXTRACT_ONLY:=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	cmt@FreeBSD.org
 COMMENT=	Open Source PBX and telephony toolkit
 WWW=		https://www.asterisk.org
 
@@ -56,7 +55,6 @@ LDFLAGS+=	-L.
 
 CONFLICTS=		ossp-uuid
 CONFLICTS_BUILD=	linuxthreads
-CONFLICTS_INSTALL=	asterisk13 asterisk16
 
 USERS=	${ASTERISK_USER}
 GROUPS=	${ASTERISK_GROUP} dahdi
@@ -210,7 +208,7 @@ XMLDOC_CONFIGURE_ENABLE=	xmldoc
 XMPP_LIB_DEPENDS=	libiksemel.so:textproc/iksemel
 XMPP_CONFIGURE_WITH=	iksemel
 
-ASTERISK_CORE_G729_SOUNDS=	asterisk-core-sounds-en-g729-1.5.tar.gz
+ASTERISK_CORE_G729_SOUNDS=	asterisk-core-sounds-en-g729-1.6.1.tar.gz
 ASTERISK_MOH_G729_SOUNDS=	asterisk-moh-opsound-g729-2.03.tar.gz
 ASTERISK_USER?=		asterisk
 ASTERISK_GROUP?=	asterisk
