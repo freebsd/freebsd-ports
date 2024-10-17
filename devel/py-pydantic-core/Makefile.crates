@@ -44,21 +44,21 @@ CARGO_CRATES=	ahash-0.8.11 \
 		percent-encoding-2.3.1 \
 		portable-atomic-1.6.0 \
 		proc-macro2-1.0.86 \
-		pyo3-0.22.2 \
-		pyo3-build-config-0.22.2 \
-		pyo3-ffi-0.22.2 \
-		pyo3-macros-0.22.2 \
-		pyo3-macros-backend-0.22.2 \
+		pyo3-0.22.3 \
+		pyo3-build-config-0.22.3 \
+		pyo3-ffi-0.22.3 \
+		pyo3-macros-0.22.3 \
+		pyo3-macros-backend-0.22.3 \
 		python3-dll-a-0.2.10 \
 		quote-1.0.36 \
 		radium-0.7.0 \
-		regex-1.10.6 \
-		regex-automata-0.4.7 \
-		regex-syntax-0.8.4 \
+		regex-1.11.0 \
+		regex-automata-0.4.8 \
+		regex-syntax-0.8.5 \
 		rustversion-1.0.17 \
 		ryu-1.0.18 \
-		serde-1.0.209 \
-		serde_derive-1.0.209 \
+		serde-1.0.210 \
+		serde_derive-1.0.210 \
 		serde_json-1.0.128 \
 		smallvec-1.13.2 \
 		speedate-0.14.4 \
