@@ -497,6 +497,7 @@ lib/calibre/calibre/ebooks/oeb/polish/tests/main.py
 lib/calibre/calibre/ebooks/oeb/polish/tests/parsing.py
 lib/calibre/calibre/ebooks/oeb/polish/tests/structure.py
 lib/calibre/calibre/ebooks/oeb/polish/toc.py
+lib/calibre/calibre/ebooks/oeb/polish/tts.py
 lib/calibre/calibre/ebooks/oeb/polish/upgrade.py
 lib/calibre/calibre/ebooks/oeb/polish/utils.py
 lib/calibre/calibre/ebooks/oeb/reader.py
@@ -1138,6 +1139,7 @@ lib/calibre/calibre/gui2/tweak_book/spell.py
 lib/calibre/calibre/gui2/tweak_book/templates.py
 lib/calibre/calibre/gui2/tweak_book/text_search.py
 lib/calibre/calibre/gui2/tweak_book/toc.py
+lib/calibre/calibre/gui2/tweak_book/tts.py
 lib/calibre/calibre/gui2/tweak_book/ui.py
 lib/calibre/calibre/gui2/tweak_book/undo.py
 lib/calibre/calibre/gui2/tweak_book/widgets.py
@@ -1206,6 +1208,7 @@ lib/calibre/calibre/plugins/cPalmdoc.so
 lib/calibre/calibre/plugins/certgen.so
 lib/calibre/calibre/plugins/fast_css_transform.so
 lib/calibre/calibre/plugins/fast_html_entities.so
+lib/calibre/calibre/plugins/ffmpeg.so
 lib/calibre/calibre/plugins/freetype.so
 lib/calibre/calibre/plugins/html_as_json.so
 lib/calibre/calibre/plugins/html_syntax_highlighter.so
@@ -1433,6 +1436,7 @@ lib/calibre/calibre/web/fetch/__init__.py
 lib/calibre/calibre/web/fetch/simple.py
 lib/calibre/calibre/web/fetch/utils.py
 lib/calibre/calibre/web/site_parsers/__init__.py
+lib/calibre/calibre/web/site_parsers/natgeo.py
 lib/calibre/calibre/web/site_parsers/nytimes.py
 lib/calibre/css_selectors/__init__.py
 lib/calibre/css_selectors/errors.py
