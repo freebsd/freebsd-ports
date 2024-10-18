@@ -1,12 +1,10 @@
 PORTNAME=	mrtg
-PORTVERSION=	2.17.10
+DISTVERSION=	2.17.10
 PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	net-mgmt
-MASTER_SITES=	http://oss.oetiker.ch/mrtg/pub/ \
-		ftp://ftp.idilis.ro/mirrors/mrtg/ \
-		ftp://ftp.nstu.ru/pub/sources/nettools/monitoring/ \
-		ftp://ftp.chg.ru/pub/networking/monitoring/mrtg/
+MASTER_SITES=	https://github.com/oetiker/${PORTNAME}/releases/download/v${DISTVERSION}/ \
+		https://oss.oetiker.ch/${PORTNAME}/pub/
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Multi-router traffic grapher
