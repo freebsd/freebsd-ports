@@ -91,6 +91,7 @@
     SUBDIR += calamaris-devel
     SUBDIR += caldavzap
     SUBDIR += carbonapi
+    SUBDIR += cas
     SUBDIR += castget
     SUBDIR += castor
     SUBDIR += cgi-lib
