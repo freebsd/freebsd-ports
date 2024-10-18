@@ -10,6 +10,8 @@ WWW=		https://globulation2.org/
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		fails to build with boost-1.85
+
 LIB_DEPENDS=	libvorbis.so:audio/libvorbis \
 		libportaudio.so:audio/portaudio \
 		libspeex.so:audio/speex \
