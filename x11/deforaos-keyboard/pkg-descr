@@ -1,1 +1,8 @@
-DeforaOS desktop virtual keyboard
+This program emulates a physical keyboard by providing a virtual interface on
+screen. It currently supports four modes:
+ * docked, where it will occupy the bottom of the screen;
+ * popup, likewise as a popup window;
+ * windowed, where it can be found in the system tray (the default)
+ * embedded, which outputs its window ID for inclusion within another program.
+
+Additionally, it can be piloted through its companion tool, desktopctl(1).

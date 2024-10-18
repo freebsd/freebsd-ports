@@ -1,0 +1,19 @@
+--- doc/Makefile.orig	2024-10-10 06:25:03 UTC
++++ doc/Makefile
+@@ -1,4 +1,4 @@
+-TARGETS	= $(OBJDIR)notes.1 $(OBJDIR)notes.html
++TARGETS	= $(OBJDIR)notes.1
+ OBJDIR	=
+ PREFIX	= /usr/local
+ DESTDIR	=
+@@ -25,10 +25,8 @@ install: all
+ 
+ install: all
+ 	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -i -- "$(OBJDIR)notes.1"
+-	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -i -- "$(OBJDIR)notes.html"
+ 
+ uninstall:
+ 	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -u -- "notes.1"
+-	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -u -- "notes.html"
+ 
+ .PHONY: all clean distclean install uninstall

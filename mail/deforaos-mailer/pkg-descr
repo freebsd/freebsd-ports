@@ -1,1 +1,6 @@
-DeforaOS desktop mail client
+Mailer is a mail client application for the DeforaOS desktop.
+
+It supports local mail folders in the mbox format, as well as POP 3 and IMAP 4
+servers, including connectivity over SSL. It is possible to access GMail
+through its IMAP 4 gateway. It currently requires a functional local e-mail
+service to send e-mails; this is performed through the sendmail(8) command.
