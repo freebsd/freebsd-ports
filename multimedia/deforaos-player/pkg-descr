@@ -1,1 +1,4 @@
 DeforaOS Desktop multimedia player
+
+Player is a media player, part of the DeforaOS Project. It is currently
+implemented as a Gtk+ front-end for mpv.

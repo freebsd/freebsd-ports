@@ -43,6 +43,7 @@
     SUBDIR += coregarage
     SUBDIR += countdown
     SUBDIR += dailystrips
+    SUBDIR += deforaos-notes
     SUBDIR += deforaos-todo
     SUBDIR += dfshow
     SUBDIR += dmenu-wayland

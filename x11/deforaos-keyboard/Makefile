@@ -1,8 +1,7 @@
 PORTNAME=	keyboard
-PORTVERSION=	0.3.1
-PORTREVISION=	1
+PORTVERSION=	0.4.0
 CATEGORIES=	x11
-MASTER_SITES=	http://www.defora.org/os/download/download/4453/
+MASTER_SITES=	https://ftp.defora.org/pub/DeforaOS/Apps/Desktop/src/Keyboard/
 PKGNAMEPREFIX=	deforaos-
 DISTNAME=	Keyboard-${PORTVERSION}
 
@@ -19,16 +18,18 @@ LIB_DEPENDS=	libDesktop.so:x11/deforaos-libdesktop \
 		libfreetype.so:print/freetype2
 
 USES=		desktop-file-utils gnome pkgconfig xorg
-USE_GNOME=	gtk20 cairo gdkpixbuf2
+USE_GNOME=	cairo gdkpixbuf2 gtk30
 USE_XORG=	x11 xtst
+
 MAKE_ARGS+=	PREFIX=${PREFIX}
 
 OPTIONS_DEFINE=	DOCS NLS
 OPTIONS_SUB=	yes
-NLS_USES=	gettext
 
 DOCS_BUILD_DEPENDS=	xsltproc:textproc/libxslt \
 	${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl:textproc/docbook-xsl
+
+NLS_USES=	gettext
 
 post-patch-DOCS-off:
 	${REINPLACE_CMD} 's|data doc include|data include|' \
