@@ -18,14 +18,16 @@ LICENSE_NAME=	Apache License 2.0 with LLVM Exceptions
 LICENSE_FILE=	${WRKSRC}/llvm/LICENSE.TXT
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
+BUILD_DEPENDS=	${WASI_SYSROOT}/include/stdarg.h:devel/wasi-libc
+
+USES=		cmake tar:xz
+
 .if ${DISTVERSION} == 0
 IGNORE=		is a meta-port; there is nothing to build
 PKGNAMESUFFIX=	-master
+.else
+USES+=		llvm:${LLVM_SUFFIX}
 .endif
-
-BUILD_DEPENDS=	${WASI_SYSROOT}/include/stdarg.h:devel/wasi-libc
-
-USES=		cmake llvm:${LLVM_SUFFIX} tar:xz
 
 LLVM_RELEASE=	${DISTVERSION:C/rc.*//}
 LLVM_SUFFIX=	${LLVM_RELEASE:C/\.[0-9]\.[0-9]$//}
