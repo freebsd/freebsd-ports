@@ -1,6 +1,6 @@
---- configure.in.orig	Mon Apr  8 22:31:30 2002
-+++ configure.in	Mon Apr  8 22:52:21 2002
-@@ -105,7 +105,7 @@
+--- configure.in.orig	1997-03-03 03:45:05 UTC
++++ configure.in
+@@ -105,7 +105,7 @@ changequote(,)dnl
  dnl `header'.
  define(MOO_FUNC_DECL_CHECK, [
  changequote(,)dnl
@@ -9,7 +9,7 @@
  changequote([,])dnl
  AC_PROGRAM_EGREP($pattern, [
  #include <$1>
-@@ -260,7 +260,7 @@
+@@ -260,7 +260,7 @@ AC_TEST_PROGRAM([
  SAVECC="$CC"
  CC="$CC $opt"
  AC_TEST_PROGRAM([
@@ -18,3 +18,14 @@
  ],
  [have_ansi=1
  break],
+@@ -333,8 +333,9 @@ MOO_NDECL_FUNCS(string.h, bzero memcpy memset strerror
+ #include <memory.h>
+ #endif
+ ])
+-echo checking for bzero being declared in stdlib.h
++echo checking for bzero being declared in stdlib.h and strings.h
+ MOO_FUNC_DECL_CHECK(stdlib.h, bzero, AC_DEFINE(BZERO_IN_STDLIB_H))
++MOO_FUNC_DECL_CHECK(strings.h, bzero, AC_DEFINE(BZERO_IN_STRINGS_H))
+ MOO_NDECL_FUNCS(sys/time.h, getitimer setitimer select, [
+ #if NEED_SELECT_H
+ #include <sys/types.h>

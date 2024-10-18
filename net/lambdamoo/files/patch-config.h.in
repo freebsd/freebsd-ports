@@ -1,6 +1,18 @@
---- config.h.in.orig	Sun Jul  4 16:45:44 1999
-+++ config.h.in	Sun Jul  4 16:45:54 1999
-@@ -163,7 +163,7 @@
+--- config.h.in.orig	1998-12-29 05:26:51 UTC
++++ config.h.in
+@@ -94,9 +94,10 @@
+ #undef NDECL_FORK		/* <unistd.h>	  */
+ #undef NDECL_WAITPID		/* <sys/wait.h>	  */
+ 
+-/* Some systems declare bzero() in <stdlib.h> instead of in <string.h>. */
++/* Some systems declare bzero() in <stdlib.h> or <strings.h> instead of in <string.h>. */
+ 
+ #undef BZERO_IN_STDLIB_H
++#undef BZERO_IN_STRINGS_H
+ 
+ /* Some header files are only present on certain kinds of UNIXes (e.g., BSD,
+  * System V, or POSIX).  The following symbols are defined only if the named
+@@ -163,7 +164,7 @@
   * system provides the named functions.
   */
  
@@ -9,7 +21,7 @@
  #undef HAVE_MATHERR
  #undef HAVE_MKFIFO
  #undef HAVE_REMOVE
-@@ -257,12 +257,16 @@
+@@ -257,12 +258,16 @@
  #if INT_MAX == 2147483647
     typedef int		int32;
     typedef unsigned	unsigned32;
