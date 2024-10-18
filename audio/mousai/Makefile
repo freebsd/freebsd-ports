@@ -1,7 +1,6 @@
 PORTNAME=	mousai
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.7.7
-PORTREVISION=	4
+DISTVERSION=	0.7.8
 CATEGORIES=	audio
 
 MAINTAINER=	ports@FreeBSD.org
@@ -11,20 +10,22 @@ WWW=		https://github.com/SeaDve/Mousai
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libsoup-3.0.so:devel/libsoup3 \
-		libgraphene-1.0.so:graphics/graphene
+LIB_DEPENDS=	libgraphene-1.0.so:graphics/graphene \
+		libsoup-3.0.so:devel/libsoup3
 
 USES=		cargo gettext gnome gstreamer meson pkgconfig
 USE_GITHUB=	yes
-USE_GNOME=	cairo gtk40 libadwaita
-USE_GSTREAMER=	bad good ogg opus pulse
 GH_ACCOUNT=	SeaDve
 GH_PROJECT=	Mousai
-MAKE_ENV=	${CARGO_ENV}
+USE_GNOME=	cairo gtk40 libadwaita
+GLIB_SCHEMAS=	io.github.seadve.Mousai.gschema.xml
+USE_GSTREAMER=	bad good ogg opus pulse
+
 CARGO_BUILD=	no
 CARGO_INSTALL=	no
 CARGO_TEST=	no
-GLIB_SCHEMAS=	io.github.seadve.Mousai.gschema.xml
+
+MAKE_ENV=	${CARGO_ENV}
 
 post-patch:
 	@${REINPLACE_CMD} -e '/update_desktop_database/d' \
