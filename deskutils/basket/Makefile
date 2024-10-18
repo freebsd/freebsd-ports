@@ -11,6 +11,9 @@ WWW=		https://basket-notepads.github.io/
 
 LICENSE=	GPLv2
 
+DEPRECATED=	Unmaintained for years, fails to build with libgit 1.8.1
+EXPIRATION_DATE=2024-12-31
+
 LIB_DEPENDS=	libassuan.so:security/libassuan \
 		libgpg-error.so:security/libgpg-error \
 		libgpgme.so:security/gpgme \
