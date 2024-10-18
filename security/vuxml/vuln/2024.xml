@@ -1,3 +1,39 @@
+  <vuln vid="815bf172-ab9e-4c4b-9662-d18b0054330d">
+    <topic>electron{31,32} -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>electron31</name>
+	<range><lt>31.7.1</lt></range>
+      </package>
+      <package>
+	<name>electron32</name>
+	<range><lt>32.2.1</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Electron developers report:</p>
+	<blockquote cite="https://github.com/electron/electron/releases/tag/v31.7.1">
+	  <p>This update fixes the following vulnerabilities:</p>
+	  <ul>
+	    <li>Security: backported fix for CVE-2024-9602.</li>
+	    <li>Security: backported fix for CVE-2024-9603.</li>
+	  </ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2024-9602</cvename>
+      <url>https://github.com/advisories/GHSA-4v8q-vp3v-vvxh</url>
+      <cvename>CVE-2024-9603</cvename>
+      <url>https://github.com/advisories/GHSA-92m3-m5pw-p2x9</url>
+    </references>
+    <dates>
+      <discovery>2024-10-16</discovery>
+      <entry>2024-10-18</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="851ce3e4-8b03-11ef-84e9-901b0e9408dc">
     <topic>element-web -- Potential exposure of access token via authenticated media</topic>
     <affects>
