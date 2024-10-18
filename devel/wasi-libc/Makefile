@@ -16,7 +16,7 @@ LICENSE_FILE_LLVM2=	${WRKSRC}/LICENSE-APACHE-LLVM
 LICENSE_NAME_LLVM2=	Apache License 2.0 with LLVM Exceptions
 LICENSE_PERMS_LLVM2=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-USES=		gmake llvm:min=12
+USES=		gmake llvm:min=17
 USE_GITHUB=	yes
 GH_ACCOUNT=	WebAssembly
 GH_TUPLE=	WebAssembly:WASI:59cbe14:wasi/tools/wasi-headers/WASI

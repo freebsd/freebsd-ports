@@ -3524,3 +3524,13 @@ security/py-zope.password||2024-10-08|Has no value as standalone package
 devel/py-pyproject_hooks|devel/py-pyproject-hooks|2024-10-14|Move devel/py-pyproject_hooks to devel/py-pyproject-hooks
 security/clusterssh|security/p5-App-ClusterSSH|2024-10-16|Renamed to match upstream naming, please use security/p5-App-ClusterSSH instead
 www/mnogosearch||2024-10-17|Upstream disappeared since 2022, abandonware
+devel/wasi-compiler-rt12||2024-10-18|Version no longer supported as a WASI component
+devel/wasi-compiler-rt13||2024-10-18|Version no longer supported as a WASI component
+devel/wasi-compiler-rt14||2024-10-18|Version no longer supported as a WASI component
+devel/wasi-compiler-rt15||2024-10-18|Version no longer supported as a WASI component
+devel/wasi-compiler-rt16||2024-10-18|Version no longer supported as a WASI component
+devel/wasi-libcxx12||2024-10-18|Version no longer supported as a WASI component
+devel/wasi-libcxx13||2024-10-18|Version no longer supported as a WASI component
+devel/wasi-libcxx14||2024-10-18|Version no longer supported as a WASI component
+devel/wasi-libcxx15||2024-10-18|Version no longer supported as a WASI component
+devel/wasi-libcxx16||2024-10-18|Version no longer supported as a WASI component

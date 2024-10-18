@@ -56,16 +56,8 @@ CMAKE_ARGS=	-DCMAKE_AR=${LOCALBASE}/bin/llvm-ar${LLVM_VERSION} \
 		-DCOMPILER_RT_DEFAULT_TARGET_ONLY=ON \
 		-DCOMPILER_RT_OS_DIR=wasi
 
-.include <bsd.port.pre.mk>
-
-.if ${LLVM_VERSION} < 16
-CMAKE_ARGS+=	-DLLVM_CONFIG_PATH=${LLVM_CONFIG}
-CMAKE_INSTALL_PREFIX=	${LLVM_PREFIX}/lib/clang/${LLVM_RELEASE}
-PLIST_FILES=	${LLVM_PREFIX}/lib/clang/${LLVM_RELEASE}/lib/wasi/libclang_rt.builtins-wasm32.a
-.else
 CMAKE_ARGS+=	-DLLVM_CMAKE_DIR=${LLVM_PREFIX}
 CMAKE_INSTALL_PREFIX=	${LLVM_PREFIX}/lib/clang/${LLVM_VERSION}
 PLIST_FILES=	${LLVM_PREFIX}/lib/clang/${LLVM_VERSION}/lib/wasi/libclang_rt.builtins-wasm32.a
-.endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
