@@ -1,0 +1,11 @@
+--- util/ntp-keygen-opts.def.orig	2023-05-31 10:31:39 UTC
++++ util/ntp-keygen-opts.def
+@@ -7,7 +7,7 @@ prog-name      = "ntp-keygen";
+ #include autogen-version.def
+ 
+ prog-name      = "ntp-keygen";
+-prog-title     = "Create a NTP host key";
++prog-title     = "Create a Network Time Protocol host key";
+ package        = ntp;
+ 
+ include        = '#include <stdlib.h>';

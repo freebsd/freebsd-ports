@@ -1,0 +1,11 @@
+--- ntpq/ntpq-opts.def.orig	2023-05-31 10:31:39 UTC
++++ ntpq/ntpq-opts.def
+@@ -7,7 +7,7 @@ prog-name      = "ntpq";
+ #include autogen-version.def
+ 
+ prog-name      = "ntpq";
+-prog-title     = "standard NTP query program";
++prog-title     = "query Network Time Protocol servers";
+ argument       = '[ host ...]';
+ 
+ flag = {
