@@ -15,6 +15,10 @@ WWW=		http://ssddiff.alioth.debian.org/
 
 LICENSE=	GPLv2+
 
+BROKEN=		Unfetchable
+DEPRECATED=	Abandonware, unfetchable and upstream is gone
+EXPIRATION_DATE=2024-10-31
+
 GNU_CONFIGURE=	yes
 USES=		autoreconf gnome pkgconfig tar:bzip2
 USE_GNOME=	libxml2
