@@ -19,7 +19,7 @@ USES=		cpe php:web,flavors shebangfix
 USE_PHP=	ctype dom fileinfo filter gd intl mbstring pdo session \
 		simplexml tokenizer xml zip zlib
 
-WRKSRC=		${WRKDIR}/${PORTNAME}_src-${PORTVERSION}
+WRKSRC=		${WRKDIR}/${PORTNAME}_src-${DISTVERSION}
 SHEBANG_GLOB=	*.php *.sh
 NO_ARCH=	yes
 NO_BUILD=	yes
@@ -30,7 +30,7 @@ SUB_LIST+=	PREFIX=${PREFIX} \
 		TYPO3WWW=${TYPO3WWW}
 
 PORT_V_MAJOR=	13
-PORT_V_MINOR=	1
+PORT_V_MINOR=	3
 PORT_V_PATCH=	1
 
 TYPO3DIR=	www/${PORTNAME}-${PORT_V_MAJOR}
