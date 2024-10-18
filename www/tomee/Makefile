@@ -1,8 +1,8 @@
 PORTNAME=	tomee
-PORTVERSION=	1.7.4
+DISTVERSION=	8.0.16
 CATEGORIES=	www java
-MASTER_SITES=	https://archive.apache.org/dist/${PORTNAME}/${PORTNAME}-${PORTVERSION}/
-DISTNAME=	apache-${PORTNAME}-${PORTVERSION}-webprofile
+MASTER_SITES=	https://archive.apache.org/dist/${PORTNAME}/${PORTNAME}-${DISTVERSION}/
+DISTNAME=	apache-${PORTNAME}-${DISTVERSION}-webprofile
 
 MAINTAINER=	neu@mycontrol.de
 COMMENT=	Open-source Java EE Container by Apache
@@ -14,32 +14,34 @@ RUN_DEPENDS=	jsvc:devel/apache-commons-daemon
 
 USES=		cpe
 CPE_VENDOR=	apache
-
 USE_JAVA=	yes
+USE_RC_SUBR=	${PKGBASE}
+
+EXTRACT_AFTER_ARGS=	--exclude *.bat \
+			--exclude *.bat.original \
+			--exclude *.exe \
+			--no-same-owner --no-same-permissions
 NO_ARCH=	yes
 NO_BUILD=	yes
+SUB_LIST=	TOMEE_HOME=${TOMEE_HOME} \
+		TOMEE_USER=${WWWOWN} \
+		JAVA_HOME=${JAVA_HOME}
 
-USE_RC_SUBR=	${PKGBASE}
+WRKSRC=		${WRKDIR}/apache-${PORTNAME}-webprofile-${DISTVERSION}
+
+PLIST_SUB=	T=${TOMEE_SUBDIR} \
+		WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}
 
 TOMEE_SUBDIR?=	${DISTNAME:R}
 TOMEE_HOME=	${PREFIX}/${TOMEE_SUBDIR}
 TOMEE_CONF_FILES=	\
-		catalina.policy catalina.properties context.xml logging.properties \
-		server.xml tomcat-users.xml web.xml tomee.xml system.properties
-PLIST_SUB=	T=${TOMEE_SUBDIR} \
-		WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}
-
-SUB_LIST=	TOMEE_HOME=${TOMEE_HOME} \
-		TOMEE_USER=${WWWOWN} \
-		JAVA_HOME=${JAVA_HOME}
-WRKSRC=		${WRKDIR}/apache-${PORTNAME}-webprofile-${PORTVERSION}
+		catalina.policy catalina.properties context.xml jaspic-providers.xml \
+		logging.properties server.xml tomcat-users.xml web.xml tomee.xml \
+		system.properties
 
 .include <bsd.port.pre.mk>
 
 post-patch:
-	@${FIND} ${WRKSRC} -name '*.bat' -delete
-	@${FIND} ${WRKSRC} -name '*.exe' -delete
-	@${FIND} ${WRKSRC} -name '*.bat.original' -delete
 .for f in ${TOMEE_CONF_FILES}
 	@${MV} ${WRKSRC}/conf/${f} ${WRKSRC}/conf/${f}.sample
 .endfor
