@@ -487,6 +487,7 @@
     SUBDIR += cpp2py
     SUBDIR += cppcheck
     SUBDIR += cppi
+    SUBDIR += cppinsights
     SUBDIR += cpplint
     SUBDIR += cpprestsdk
     SUBDIR += cpptest
