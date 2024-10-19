@@ -1,15 +1,16 @@
 # Handle PyQt related ports
 #
 # Feature:	pyqt
-# Usage:	USES=pyqt:ARGS
-# Valid ARGS:	5, 6
+# Usage:	USES=pyqt:<version>[,dist]
+# Versions:	5, 6
+# Internal use ARGS:	dist
+#    This port is part of PyQt5/6 itself. Variables and
+#    targets are then set assuming a certain tarball and
+#    port layout.
 #
 # MAINTAINER:	kde@FreeBSD.org
 #
-# Internal Port variables for PyQt ports:
-# PYQT_DIST	- This port is part of PyQt5/6 itself. Variables and
-#		targets are then set assuming a certain tarball and
-#		port layout.
+# Port variables for PyQt ports:
 # USE_PYQT	- List of PyQt components to depend on
 #		* foo:build    only build depend
 #		* foo:run      only run depend
@@ -46,6 +47,10 @@ IGNORE?=	USES=pyqt needs a version number (valid values: ${_PYQT_SUPPORTED})
 _PYQT_VERSION=	0
 .  endif
 
+.  if ${pyqt_ARGS:Mdist}
+_PYQT_DIST=	yes
+.  endif
+
 PYQT_MAINTAINER=	kde@FreeBSD.org
 
 MASTER_SITE_RIVERBANK=	https://www.riverbankcomputing.com/static/Downloads/%SUBDIR%/
@@ -61,7 +66,9 @@ MASTER_SITES_SIP=		PYPI/source/s/sip
 # Qt 5 components
 MASTER_SITES_PYQT5SIP=		PYPI/source/P/PyQt5-sip
 MASTER_SITES_PYQT5=		PYPI/source/P/PyQt5
+MASTER_SITES_PYQT53D=		PYPI/source/P/PyQt3D
 MASTER_SITES_PYQT5CHART=	PYPI/source/P/PyQtChart
+MASTER_SITES_PYQT5DATAVIS3D=	PYPI/source/P/PyQtDataVisualization
 MASTER_SITES_PYQT5NETWORKAUTH=	PYPI/source/P/PyQtNetworkAuth
 MASTER_SITES_PYQT5WEBENGINE=	PYPI/source/P/PyQtWebEngine
 
@@ -99,22 +106,22 @@ MASTER_SITES_PYQTWEBENGINE=	${MASTER_SITES_PYQT${_PYQT_VERSION}WEBENGINE}
 # below, should have a suitable epoch appended to the version.
 
 # Qt version-agnostic components
-# PyQt-builder >= 1.16.0 requires setuptools >= 64
-# https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=270358
-PYQTBUILDER_VERSION=		1.15.4
+PYQTBUILDER_VERSION=		1.16.4
 QSCI2_VERSION=			2.14.1
-SIP_VERSION=			6.8.3	# ,1
+SIP_VERSION=			6.8.6	# ,1
 
 # Qt 5 components
-PYQT5SIP_VERSION=		12.13.0
-PYQT5_VERSION=			5.15.10
-PYQT5CHART_VERSION=		5.15.6
-PYQT5NETWORKAUTH_VERSION=	5.15.5
-PYQT5WEBENGINE_VERSION=		5.15.6
+PYQT5SIP_VERSION=		12.15.0
+PYQT5_VERSION=			5.15.11
+PYQT53D_VERSION=		5.15.7
+PYQT5CHART_VERSION=		5.15.7
+PYQT5DATAVIS3D_VERSION=		5.15.6
+PYQT5NETWORKAUTH_VERSION=	5.15.6
+PYQT5WEBENGINE_VERSION=		5.15.7
 
 # Qt 6 components
-PYQT6SIP_VERSION=		13.6.0
-PYQT6_VERSION=			6.7.0
+PYQT6SIP_VERSION=		13.8.0
+PYQT6_VERSION=			6.7.1
 PYQT63D_VERSION=		6.7.0
 PYQT6CHART_VERSION=		6.7.0
 PYQT6DATAVIS3D_VERSION=		6.7.0
@@ -122,13 +129,15 @@ PYQT6NETWORKAUTH_VERSION=	6.7.0
 PYQT6WEBENGINE_VERSION=		6.7.0
 
 # Qt version-agnostic components
-#PYQTBUILDER_DISTNAME=		pyqt_builder-${PYQTBUILDER_VERSION}
+PYQTBUILDER_DISTNAME=		pyqt_builder-${PYQTBUILDER_VERSION}
 QSCI2_DISTNAME=			QScintilla_src-${QSCI2_VERSION}
 
 # Qt 5 components
 PYQT5SIP_DISTNAME=		PyQt5_sip-${PYQT5SIP_VERSION}
 PYQT5_DISTNAME=			PyQt5-${PYQT5_VERSION}
+PYQT53D_DISTNAME=		PyQt3D-${PYQT53D_VERSION}
 PYQT5CHART_DISTNAME=		PyQtChart-${PYQT5CHART_VERSION}
+PYQT5DATAVIS3D_DISTNAME=	PyQtDataVisualization-${PYQT5DATAVIS3D_VERSION}
 PYQT5NETWORKAUTH_DISTNAME=	PyQtNetworkAuth-${PYQT5NETWORKAUTH_VERSION}
 PYQT5WEBENGINE_DISTNAME=	PyQtWebEngine-${PYQT5WEBENGINE_VERSION}
 
@@ -148,11 +157,12 @@ PYQT5_LICENSE=		GPLv3
 PYQT6_LICENSE=		GPLv3
 
 _USE_PYQT_ALL=		pyqt5 pyqt6 3d chart datavis3d networkauth webengine
-_USE_SIP_ALL=		sip pysip
+_USE_SIP_ALL=		pysip sip
 _USE_QSCINTILLA=	qscintilla2
 _USE_PYQTBUILDER=	qtbuilder
 
 # Unversioned variables for the rest of the file
+PYQTSIP_VERSION=		${PYQT${_PYQT_VERSION}SIP_VERSION}
 PYQT_VERSION=			${PYQT${_PYQT_VERSION}_VERSION}
 PYQT3D_VERSION=			${PYQT${_PYQT_VERSION}3D_VERSION}
 PYQTCHART_VERSION=		${PYQT${_PYQT_VERSION}CHART_VERSION}
@@ -160,10 +170,7 @@ PYQTDATAVIS3D_VERSION=		${PYQT${_PYQT_VERSION}DATAVIS3D_VERSION}
 PYQTNETWORKAUTH_VERSION=	${PYQT${_PYQT_VERSION}NETWORKAUTH_VERSION}
 PYQTWEBENGINE_VERSION=		${PYQT${_PYQT_VERSION}WEBENGINE_VERSION}
 
-PYQT_RELNAME=			py-qt${_PYQT_VERSION}
-PYQT_PY_RELNAME=		${PYTHON_PKGNAMEPREFIX}qt${_PYQT_VERSION}
-PYQT_MASTERSITES=		${MASTER_SITES_PYQT${_PYQT_VERSION}}
-
+PYQTSIP_DISTNAME=		${PYQT${_PYQT_VERSION}SIP_DISTNAME}
 PYQT_DISTNAME=			${PYQT${_PYQT_VERSION}_DISTNAME}
 PYQT3D_DISTNAME=		${PYQT${_PYQT_VERSION}3D_DISTNAME}
 PYQTCHART_DISTNAME=		${PYQT${_PYQT_VERSION}CHART_DISTNAME}
@@ -174,9 +181,12 @@ PYQTWEBENGINE_DISTNAME=		${PYQT${_PYQT_VERSION}WEBENGINE_DISTNAME}
 PYQT_DISTINFO_FILE=		${PYQT${_PYQT_VERSION}_DISTINFO_FILE}
 PYQT_LICENSE=			${PYQT${_PYQT_VERSION}_LICENSE}
 
+PYQT_RELNAME=			py-qt${_PYQT_VERSION}
+PYQT_PY_RELNAME=		${PYTHON_PKGNAMEPREFIX}qt${_PYQT_VERSION}
+
 # PATH (see note about epochs, above)
 py-sip_PATH=			${PYTHON_PKGNAMEPREFIX}sip>=${SIP_VERSION},1
-py-pysip_PATH=			${PYQT_PY_RELNAME}-sip>=${PYQTSIP_VERSION}
+py-pysip_PATH=			${PYTHON_PKGNAMEPREFIX}PyQt${_PYQT_VERSION}-sip>=${PYQTSIP_VERSION}
 py-qscintilla2_PATH=		${PYQT_PY_RELNAME}-qscintilla2>=${QSCI2_VERSION}
 py-qtbuilder_PATH=		${PYTHON_PKGNAMEPREFIX}PyQt-builder>=${PYQTBUILDER_VERSION}
 py-pyqt5_PATH=			${PYQT_PY_RELNAME}-pyqt>=${PYQT_VERSION}
@@ -230,7 +240,7 @@ PLIST_SUB+=	PYQT_APIDIR=${_APIDIR_REL} \
 		PYQT_QSCIVERSION=${QSCI2_VERSION} \
 		PYQT_PYQTVERSION=${PYQT_VERSION}
 
-.  if defined(PYQT_DIST)
+.  if defined(_PYQT_DIST)
 
 LICENSE?=	${PYQT_LICENSE}
 
@@ -265,7 +275,7 @@ do-install:
 	(cd ${WRKSRC} ; ${SETENVI} ${WRK_ENV} ${MAKE_ENV} ${MAKE} -C ./build install INSTALL_ROOT=${STAGEDIR} )
 .    endif  # !target(do-install)
 
-.  endif  # defined(PYQT_DIST)
+.  endif  # defined(_PYQT_DIST)
 
 # Set build, run and test depends -- we need to prefix them internally with "py-"
 # else we conflict with the ones defined in bsd.qt.mk with the same name

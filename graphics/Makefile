@@ -979,6 +979,7 @@
     SUBDIR += py-pyzbar
     SUBDIR += py-qpageview
     SUBDIR += py-qrencode
+    SUBDIR += py-qt5-3d
     SUBDIR += py-qt6-3d
     SUBDIR += py-qudida
     SUBDIR += py-railroad-diagrams
