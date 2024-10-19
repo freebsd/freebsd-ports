@@ -16,7 +16,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}woob>=2.0:www/py-woob@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}woob>=2.0:www/py-woob@${PY_FLAVOR}
 
 USES=		gmake pyqt:5 python
-USE_PYQT=	pyqt5 sip
+USE_PYQT=	pyqt5
 USE_PYTHON=	autoplist distutils
 
 USE_GITLAB=	yes

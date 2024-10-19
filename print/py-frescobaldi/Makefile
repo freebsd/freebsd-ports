@@ -19,7 +19,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}python-ly>=0:print/py-python-ly@${PY_FLAVOR}
 USES=		desktop-file-utils gettext gmake pyqt:5 python qmake qt:5
 USE_GITHUB=	yes
 GH_ACCOUNT=	frescobaldi
-USE_PYQT=	pyqt5 sip webengine
+USE_PYQT=	pyqt5 webengine sip:build
 USE_PYTHON=	autoplist distutils noflavors
 
 NO_ARCH=	yes

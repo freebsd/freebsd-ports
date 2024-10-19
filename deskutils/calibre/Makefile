@@ -72,7 +72,7 @@ GH_TUPLE=	kovidgoyal:calibre-translations:0e909e6:translations \
 		LibreOffice:dictionaries:b871dff:hypenation
 PIPER_VOICES_HASH=	40c852d339fc7532cbbf28a4a942a7c96c185c96
 USE_GL=		opengl
-USE_PYQT=	pyqt6 pysip qtbuilder sip webengine
+USE_PYQT=	pyqt6 pysip webengine qtbuilder:build sip:build
 USE_QT=		base
 USE_RC_SUBR=	calibre
 USE_XORG=	x11 xext xrender

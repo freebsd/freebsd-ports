@@ -25,7 +25,7 @@ RUN_DEPENDS=	${PY_PILLOW} \
 		${PYTHON_PKGNAMEPREFIX}webob>=1.4:www/py-webob@${PY_FLAVOR}
 
 USES=		pyqt:6 python qt:6 shebangfix
-USE_PYQT=	pyqt6:run sip:run webengine:run
+USE_PYQT=	pyqt6:run webengine:run
 USE_PYTHON=	autoplist concurrent pep517
 USE_QT=		sqldriver-sqlite:run
 

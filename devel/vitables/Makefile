@@ -19,7 +19,7 @@ RUN_DEPENDS=	${PYNUMPY} \
 
 USES=		dos2unix python pyqt:5
 USE_PYTHON=	pep517 cython noflavors autoplist pytest # 3 tests fail, see https://github.com/uvemas/ViTables/issues/124
-USE_PYQT=	pyqt5:run sip:run
+USE_PYQT=	pyqt5:run
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	uvemas

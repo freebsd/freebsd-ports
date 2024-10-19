@@ -28,7 +28,7 @@ CPE_VENDOR=	henri_wahl
 USE_GITHUB=	yes
 GH_ACCOUNT=	HenriWahl
 GH_PROJECT=	Nagstamon
-USE_PYQT=	pyqt5:run sip:run
+USE_PYQT=	pyqt5:run
 USE_PYTHON=	autoplist distutils noflavors
 
 NO_ARCH=	yes

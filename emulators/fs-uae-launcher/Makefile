@@ -16,7 +16,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR} 
 
 USES=		gettext gmake gnome pathfix pyqt:5 python tar:xz
 USE_PYTHON=	distutils autoplist noflavors
-USE_PYQT=	pyqt5 sip
+USE_PYQT=	pyqt5
 
 MAKE_ARGS=	prefix=${PREFIX} PYTHON=${PYTHON_CMD}
 PYDISTUTILS_INSTALLARGS+=	--install-lib=${PYTHON_SITELIBDIR}

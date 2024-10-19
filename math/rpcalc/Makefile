@@ -12,7 +12,7 @@ LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/doc/LICENSE
 
 USES=		pyqt:5 python shebangfix
-USE_PYQT=	pyqt5 sip
+USE_PYQT=	pyqt5
 
 SHEBANG_FILES=	source/rpcalc.py
 

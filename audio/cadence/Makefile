@@ -21,7 +21,7 @@ USES=		compiler:c++11-lang desktop-file-utils gmake localbase pkgconfig \
 		python pyqt:5 qt:5 shebangfix tar:bz2
 SHEBANG_FILES=	src/*.py
 USE_QT=		core gui widgets buildtools:build
-USE_PYQT=	pyqt5 sip
+USE_PYQT=	pyqt5
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	falkTX

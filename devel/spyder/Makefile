@@ -59,7 +59,7 @@ RUN_DEPENDS=	\
 
 USES=		desktop-file-utils python pyqt:5
 USE_PYTHON=	distutils autoplist noflavors
-USE_PYQT=	pyqt5 sip
+USE_PYQT=	pyqt5
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	spyder-ide
