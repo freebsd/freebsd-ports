@@ -1,5 +1,5 @@
 PORTNAME=	vault
-DISTVERSION=	1.17.5
+DISTVERSION=	1.17.6
 DISTVERSIONPREFIX=	v
 CATEGORIES=	security
 MASTER_SITES=	https://raw.githubusercontent.com/hashicorp/vault/${DISTVERSIONFULL}/ \
