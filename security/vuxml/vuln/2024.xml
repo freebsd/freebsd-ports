@@ -18,10 +18,6 @@
 	<range><lt>3.3.2_1</lt></range>
       </package>
       <package>
-	<name>openssl34</name>
-	<range><lt>3.4.0.b1_1</lt></range>
-      </package>
-      <package>
 	<name>openssl-quictls</name>
 	<range><lt>3.0.15_1,1</lt></range>
       </package>
