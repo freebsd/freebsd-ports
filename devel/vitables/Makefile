@@ -1,6 +1,7 @@
 PORTNAME=	vitables
 DISTVERSIONPREFIX=	v
 DISTVERSION=	3.0.3
+PORTREVISION=	1
 CATEGORIES=	devel science python
 
 MAINTAINER=	yuri@FreeBSD.org

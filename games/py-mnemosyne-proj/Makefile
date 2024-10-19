@@ -1,5 +1,6 @@
 PORTNAME=	mnemosyne-proj
 DISTVERSION=	2.11
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	games education python
 MASTER_SITES=	PYPI

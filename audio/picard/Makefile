@@ -1,5 +1,6 @@
 PORTNAME=	picard
 DISTVERSION=	2.12.3
+PORTREVISION=	1
 CATEGORIES=	audio python
 MASTER_SITES=	https://github.com/metabrainz/${PORTNAME}/releases/download/release-${DISTVERSION}/ \
 		https://data.musicbrainz.org/pub/musicbrainz/${PORTNAME}/
