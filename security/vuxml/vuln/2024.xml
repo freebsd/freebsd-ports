@@ -3,7 +3,31 @@
     <affects>
       <package>
 	<name>openssl</name>
-	<range><lt>3.0.15_1</lt></range>
+	<range><lt>3.0.15_1,1</lt></range>
+      </package>
+      <package>
+	<name>openssl31</name>
+	<range><lt>3.1.7_1</lt></range>
+      </package>
+      <package>
+	<name>openssl32</name>
+	<range><lt>3.2.3_1</lt></range>
+      </package>
+      <package>
+	<name>openssl33</name>
+	<range><lt>3.3.2_1</lt></range>
+      </package>
+      <package>
+	<name>openssl34</name>
+	<range><lt>3.4.0.b1_1</lt></range>
+      </package>
+      <package>
+	<name>openssl-quictls</name>
+	<range><lt>3.0.15_1,1</lt></range>
+      </package>
+      <package>
+	<name>openssl31-quictls</name>
+	<range><lt>3.1.7_1</lt></range>
       </package>
     </affects>
     <description>
