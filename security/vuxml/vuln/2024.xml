@@ -1,3 +1,33 @@
+  <vuln vid="c6f4177c-8e29-11ef-98e7-84a93843eb75">
+    <topic>OpenSSL -- OOB memory access vulnerability</topic>
+    <affects>
+      <package>
+	<name>openssl</name>
+	<range><lt>3.0.15_1</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The OpenSSL project reports:</p>
+	<blockquote cite="https://openssl-library.org/news/secadv/20241016.txt">
+	  <p>Low-level invalid GF(2^m) parameters lead to OOB memory access
+	   (CVE-2024-9143) (Low)</p>
+	  <p> Use of the low-level GF(2^m) elliptic curve APIs with untrusted
+	    explicit values for the field polynomial can lead to out-of-bounds
+	    memory reads or writes.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2024-9143</cvename>
+      <url>https://openssl-library.org/news/secadv/20241016.txt</url>
+    </references>
+    <dates>
+      <discovery>2024-10-16</discovery>
+      <entry>2024-10-19</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="815bf172-ab9e-4c4b-9662-d18b0054330d">
     <topic>electron{31,32} -- multiple vulnerabilities</topic>
     <affects>
