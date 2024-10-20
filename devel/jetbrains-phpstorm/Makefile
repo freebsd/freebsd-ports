@@ -1,5 +1,5 @@
 PORTNAME=	phpstorm
-PORTVERSION=	2024.1.4
+PORTVERSION=	2024.2.3
 CATEGORIES=	devel
 MASTER_SITES=	https://download-cdn.jetbrains.com/webide/
 PKGNAMEPREFIX=	jetbrains-
@@ -31,11 +31,14 @@ USE_JAVA=	yes
 JAVA_VERSION=	17+
 
 DATADIR=	${PREFIX}/share/jetbrains/${PORTNAME}
+
+EXTRACT_AFTER_ARGS+=	--exclude PhpStorm-*/jbr
+
 NO_BUILD=	yes
 SUB_FILES=	${PORTNAME} ${PORTNAME}.desktop pkg-message
 SUB_LIST=	JAVA_HOME=${JAVA_HOME}
 
-WRKSRC=		${WRKDIR}/PhpStorm-241.18034.69
+WRKSRC=		${WRKDIR}/PhpStorm-242.23339.16
 
 _PTY4J_ARCH=	freebsd/${ARCH:S/amd64/x86-64/}
 _SQLITE_ARCH=	linux-${ARCH:S/amd64/x86_64/}
@@ -48,17 +51,15 @@ do-install:
 # Linux/Windows/OS X only so remove them
 	@${RM} -r \
 		${WRKSRC}/bin/fsnotifier \
+		${WRKSRC}/bin/phpstorm \
 		${WRKSRC}/bin/remote-dev-server \
 		${WRKSRC}/bin/remote-dev-server.sh \
 		${WRKSRC}/bin/repair \
 		${WRKSRC}/bin/restarter \
-		${WRKSRC}/jbr \
 		${WRKSRC}/lib/async-profiler \
 		${WRKSRC}/lib/jna \
 		${WRKSRC}/lib/native \
 		${WRKSRC}/lib/pty4j \
-		${WRKSRC}/plugins/clouds-docker-gateway \
-		${WRKSRC}/plugins/clouds-docker-impl \
 		${WRKSRC}/plugins/cwm-plugin \
 		${WRKSRC}/plugins/gateway-plugin \
 		${WRKSRC}/plugins/gateway-terminal \
