@@ -1,8 +1,6 @@
 PORTNAME=	lapce
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.4.0-94 # Cargo.lock patched: `make patch cargo-crates`
-DISTVERSIONSUFFIX=	-gdc9a24d8
-PORTREVISION=	4
+DISTVERSION=	0.4.2 # Cargo.lock patched: `make patch cargo-crates`
 CATEGORIES=	editors
 
 MAINTAINER=	eduardo@FreeBSD.org
@@ -36,9 +34,6 @@ PORTSCOUT=	skipv:0.6.0
 # first to not fetch openssl-src tarball and later to remove git2 ossl vendored feature.
 CARGO_ENV=	RUSTC_BOOTSTRAP=1 OPENSSL_NO_VENDOR=1
 
-# Do not LTO and strip binaries while WIP:
-# https://github.com/lapce/lapce/issues/2748
-LTO_UNSAFE=	yes
 post-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/pixmaps
 	${INSTALL_DATA} ${WRKSRC}/extra/images/logo.png \

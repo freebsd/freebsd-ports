@@ -1,7 +1,5 @@
-https://github.com/lapce/cosmic-text/pull/6
-
---- cargo-crates/floem-cosmic-text-0.7.2/src/font/fallback/mod.rs.orig	2024-05-09 07:49:44 UTC
-+++ cargo-crates/floem-cosmic-text-0.7.2/src/font/fallback/mod.rs
+--- cargo-crates/cosmic-text-0.12.1/src/font/fallback/mod.rs.orig	2006-07-24 01:21:28 UTC
++++ cargo-crates/cosmic-text-0.12.1/src/font/fallback/mod.rs
 @@ -10,7 +10,7 @@ use self::platform::*;
  
  use self::platform::*;
