@@ -4,7 +4,7 @@ DISTVERSION=	4.2.0
 PORTREVISION=	20
 CATEGORIES=	devel
 
-MAINTAINER=	antranigv@freebsd.am
+MAINTAINER=	kfv@kfv.io
 COMMENT=	Language Server Protocol for LaTeX
 WWW=		https://texlab.netlify.app/
 
