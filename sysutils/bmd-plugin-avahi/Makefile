@@ -1,5 +1,6 @@
 PORTNAME=	bmd-plugin-avahi
 DISTVERSION=	3.0
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	naito.yuichiro@gmail.com
@@ -15,6 +16,8 @@ ONLY_FOR_ARCHS_REASON=	bhyve runs on amd64 only
 BUILD_DEPENDS=	bmd>0:sysutils/bmd
 RUN_DEPENDS=	bmd>0:sysutils/bmd \
 		avahi-app>0:net/avahi-app
+
+USES=		uidfix
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	yuichiro-naito
