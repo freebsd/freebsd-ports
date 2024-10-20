@@ -1,5 +1,5 @@
 PORTNAME=	goland
-PORTVERSION=	2024.1.4
+PORTVERSION=	2024.2.3
 CATEGORIES=	devel
 MASTER_SITES=	https://download-cdn.jetbrains.com/go/
 PKGNAMEPREFIX=	jetbrains-
@@ -57,6 +57,7 @@ do-install:
 # Linux/Windows/OS X only so remove them
 	@${RM} -r \
 		${WRKSRC}/bin/fsnotifier \
+		${WRKSRC}/bin/goland \
 		${WRKSRC}/bin/remote-dev-server \
 		${WRKSRC}/bin/remote-dev-server.sh \
 		${WRKSRC}/bin/repair \
@@ -65,8 +66,6 @@ do-install:
 		${WRKSRC}/lib/jna \
 		${WRKSRC}/lib/native \
 		${WRKSRC}/lib/pty4j \
-		${WRKSRC}/plugins/clouds-docker-gateway \
-		${WRKSRC}/plugins/clouds-docker-impl \
 		${WRKSRC}/plugins/cwm-plugin \
 		${WRKSRC}/plugins/gateway-plugin \
 		${WRKSRC}/plugins/gateway-terminal \
