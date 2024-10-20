@@ -1,7 +1,6 @@
 PORTNAME=	cskk
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.1.1
-PORTREVISION=	5
+DISTVERSION=	3.1.2
 CATEGORIES=	japanese
 
 MAINTAINER=	syobon@syobon.net
@@ -15,9 +14,13 @@ BUILD_DEPENDS=	cargo-cbuild:devel/cargo-c
 LIB_DEPENDS=	libxkbcommon.so:x11/libxkbcommon
 
 USES=		cargo localbase:ldflags
-USE_LDCONFIG=	${PREFIX}/lib/cskk
 USE_GITHUB=	yes
 GH_ACCOUNT=	naokiri
+
+USE_LDCONFIG=	${PREFIX}/lib/cskk
+
+PLIST_SUB=	VERSION=${DISTVERSION} \
+		VERSION_MAJOR=${DISTVERSION:R:R}
 
 do-build:
 	@${CARGO_CARGO_RUN} cbuild ${CARGO_BUILD_ARGS}
