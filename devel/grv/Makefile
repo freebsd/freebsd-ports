@@ -11,7 +11,8 @@ WWW=		https://github.com/rgburke/grv
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-DEPRECATED=	Unmaintained for years, fails to build with libgit 1.8.1
+BROKEN=		fails to build with libgit 1.8.1
+DEPRECATED=	Unmaintained for years, outdated
 EXPIRATION_DATE=2024-12-31
 
 LIB_DEPENDS=	libgit2.so:devel/libgit2
