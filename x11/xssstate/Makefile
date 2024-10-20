@@ -3,7 +3,7 @@ PORTVERSION=	1.1
 CATEGORIES=	x11
 MASTER_SITES=	https://dl.suckless.org/tools/
 
-MAINTAINER=	antranigv@freebsd.am
+MAINTAINER=	kfv@kfv.io
 COMMENT=	Simple tool to retrieve the X screensaver state
 WWW=		https://tools.suckless.org/x/xssstate
 
