@@ -12,6 +12,8 @@ WWW=		https://wiki.gnome.org/Apps/Builder
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		fails to build with libgit2 1.8.1
+
 LIB_DEPENDS=	libcmark.so:textproc/cmark \
 		libdazzle-1.0.so:x11-toolkits/libdazzle \
 		libdevhelp-3.so:devel/devhelp \
