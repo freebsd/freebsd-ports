@@ -2,8 +2,8 @@ PORTNAME=	biber
 # https://sourceforge.net/projects/biblatex-biber/files/biblatex-biber/development/documentation/biber.pdf/download
 # Keep this in-sync with biblatex.sty (currently at 3.19).
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.20
-PORTEPOCH=	1
+DISTVERSION=	2.19
+PORTEPOCH=	2
 CATEGORIES=	print perl5
 PKGNAMEPREFIX=	latex-
 DIST_SUBDIR=	TeX
@@ -68,6 +68,8 @@ GH_ACCOUNT=	plk
 USE_PERL5=	modbuild
 USE_TEX=	texmf
 
+# t/remote-files.t .......... Dubious, test returned 1 (wstat 256, 0x100)
+# Failed 1/52 test programs. 1/1268 subtests failed.
 TEST_ENV+=	BIBER_DEV_TESTS=1
 
 NO_ARCH=	yes
