@@ -1,5 +1,5 @@
 PORTNAME=	ruby-libvirt
-PORTVERSION=	0.8.2
+PORTVERSION=	0.8.4
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -8,6 +8,7 @@ COMMENT=	Ruby bindings for libvirt
 WWW=		https://libvirt.org/ruby/
 
 LICENSE=	LGPL21
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libvirt.so:devel/libvirt
 
