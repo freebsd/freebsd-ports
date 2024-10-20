@@ -1,9 +1,8 @@
 PORTNAME=	gphoto2
-PORTVERSION=	2.5.0
+PORTVERSION=	2.5.1
 CATEGORIES=	graphics python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DIST_SUBDIR=	python-gphoto2
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Python bindings for libgphoto2
