@@ -1,9 +1,9 @@
---- src_ext/ocaml-patches/0001-Fix-relocation-ocaml-32-bit.patch.orig	2023-05-27 13:17:37 UTC
-+++ src_ext/ocaml-patches/0001-Fix-relocation-ocaml-32-bit.patch
+--- src_ext/ocaml-patches/0001-arm-powerpc.patch	2023-05-27 13:17:37 UTC
++++ src_ext/ocaml-patches/0001-arm-powerpc.patch
 @@ -0,0 +1,32 @@
 +--- a/configure.orig	2023-05-27 13:13:22 UTC
 ++++ a/configure
-+@@ -14256,12 +14256,20 @@ case $host in #(
++@@ -14344,12 +14344,20 @@ case $host in #(
 +     arch=amd64; system=win64 ;; #(
 +   powerpc64le*-*-linux*) :
 +     arch=power; model=ppc64le; system=elf ;; #(
@@ -24,7 +24,7 @@
 +   s390x*-*-linux*) :
 +     arch=s390x; model=z10; system=elf ;; #(
 +   # expected to match "gnueabihf" as well as "musleabihf"
-+@@ -14281,6 +14289,8 @@
++@@ -14369,6 +14377,8 @@
 +     arch=arm; model=armv6; system=linux_eabi ;; #(
 +   armv6*-*-freebsd*) :
 +     arch=arm; model=armv6; system=freebsd ;; #(
