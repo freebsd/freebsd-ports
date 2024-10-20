@@ -1,7 +1,6 @@
 PORTNAME=	wlmaker
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.3
-PORTREVISION=	2
+DISTVERSION=	0.4
 CATEGORIES=	x11-wm wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -23,18 +22,23 @@ USE_GITHUB=	yes
 USE_GNOME=	cairo
 USE_XORG=	xcb
 GH_ACCOUNT=	phkaeser
-GH_TUPLE=	phkaeser:libbase:df7ce2a:libbase/submodules/libbase
+GH_TUPLE=	phkaeser:libbase:69a87c3:libbase/submodules/libbase
 CMAKE_OFF=	${WITH_DEBUG:D:Uconfig_DEBUG}
 PLIST_FILES=	bin/${PORTNAME} \
 		bin/wlmclock \
+		@comment\ bin/example_toplevel \
 		share/icons/${PORTNAME}/chrome-48x48.png \
 		share/icons/${PORTNAME}/clip-48x48.png \
 		share/icons/${PORTNAME}/firefox-48x48.png \
 		share/icons/${PORTNAME}/terminal-48x48.png \
+		share/icons/${PORTNAME}/wlmclock-64x64.png \
+		share/applications/wlmclock.desktop \
 		share/wayland-sessions/${PORTNAME}.desktop \
 		${NULL}
 
 post-patch:
+# Temporarily force wlroots 0.17
+	@${REINPLACE_CMD} '/PKG.*wlroots-0.18/d' ${WRKSRC}/CMakeLists.txt
 # Respect -O level from global CFLAGS or CMAKE_BUILD_TYPE
 	@${REINPLACE_CMD} '/-O[0-9]/d' \
 		${WRKSRC}/submodules/libbase/CMakeLists.txt \
