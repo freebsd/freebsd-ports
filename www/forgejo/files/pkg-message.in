@@ -24,4 +24,12 @@ forgejo will start even if doctor has identified an issue, you can disable
 the check by setting forgejo_configcheck_enabled=NO in rc.conf.
 EOM
 }
+{ type: upgrade
+  maximum_version: "8.0.2"
+  message: <<EOM
+Breaking changes: upgrading from Forgejo 8 changes the semantics of some
+authentication, breaking previously working API calls. Please see the
+release notes for details: https://codeberg.org/forgejo/forgejo/milestone/7235
+EOM
+}
 ]
