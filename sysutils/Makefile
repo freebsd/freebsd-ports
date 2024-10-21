@@ -429,7 +429,6 @@
     SUBDIR += fusefs-afuse
     SUBDIR += fusefs-bindfs
     SUBDIR += fusefs-chironfs
-    SUBDIR += fusefs-cryptofs
     SUBDIR += fvcool
     SUBDIR += fwup
     SUBDIR += fx

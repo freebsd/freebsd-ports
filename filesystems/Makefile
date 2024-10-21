@@ -6,6 +6,7 @@
     SUBDIR += cfs
     SUBDIR += clamfs
     SUBDIR += cramfs
+    SUBDIR += cryptofs
     SUBDIR += curlftpfs
     SUBDIR += darling-dmg
     SUBDIR += e2fsprogs
