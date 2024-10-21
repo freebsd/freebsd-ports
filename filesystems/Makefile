@@ -80,6 +80,7 @@
     SUBDIR += wimlib
     SUBDIR += xfsm
     SUBDIR += xfsprogs
+    SUBDIR += xfuse
     SUBDIR += zap
     SUBDIR += zfs-periodic
     SUBDIR += zfs-replicate

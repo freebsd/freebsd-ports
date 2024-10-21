@@ -465,7 +465,6 @@
     SUBDIR += fusefs-unionfs
     SUBDIR += fusefs-unreliablefs
     SUBDIR += fusefs-webdavfs
-    SUBDIR += fusefs-xfuse
     SUBDIR += fvcool
     SUBDIR += fwup
     SUBDIR += fx
