@@ -1,6 +1,6 @@
 PORTNAME=	libzfs
 PORTVERSION=	1.1.2023020700
-CATEGORIES=	devel python
+CATEGORIES=	filesystems devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	freqlabs@FreeBSD.org

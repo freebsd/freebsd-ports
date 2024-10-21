@@ -49,6 +49,7 @@
     SUBDIR += py-fs2
     SUBDIR += py-fsspec
     SUBDIR += py-fsspec-xrootd
+    SUBDIR += py-libzfs
     SUBDIR += py-llfuse
     SUBDIR += py-prometheus-zfs
     SUBDIR += py-pyfakefs
