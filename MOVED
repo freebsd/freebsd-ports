@@ -3540,3 +3540,4 @@ devel/qscintilla2-designerplugin-qt5|devel/qscintilla2-designerplugin@qt5|2024-1
 lang/gcc10||2024-10-20|Has expired: Unsupported by upstream. Use GCC 12 or newer instead
 sysutils/zap|filesystems/zap|2024-10-21|Moved to new category filesystems
 sysutils/fusefs-mergerfs|filesystems/mergerfs|2024-10-21|Moved to new category filesystems
+sysutils/squashfs-tools-ng|filesystems/squashfs-tools-ng|2024-10-21|Moved to new category filesystems
