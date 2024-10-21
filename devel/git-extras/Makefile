@@ -1,8 +1,8 @@
 PORTNAME=	git-extras
-DISTVERSION=	7.2.0
+DISTVERSION=	7.3.0
 CATEGORIES=	devel
 
-MAINTAINER=	igor.ostapenko@pm.me
+MAINTAINER=	igoro@FreeBSD.org
 COMMENT=	Sub-commands for repo summary, repl, changelog population, and more
 WWW=		https://github.com/tj/git-extras/
 
