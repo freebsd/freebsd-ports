@@ -3552,8 +3552,8 @@ sysutils/zxfer|filesystems/zxfer|2024-10-21|Moved to new category filesystems
 security/py-dfvfs|filesystems/py-dfvfs|2024-10-21|Moved to new category filesystems
 security/cfs|filesystems/cfs|2024-10-21|Moved to new category filesystems
 filesystems/py-fsspec-xrootd|filesystems/py-fsspec-xrootd|2024-10-21|Moved to new category filesystems
-devel/py-fsspec|filesystems/py-fsspec|2024-10-21|Moved to new category filesystems
-devel/py-fs2|filesystems/py-fs2|2024-10-21|Moved to new category filesystems
+filesystems/py-fsspec|filesystems/py-fsspec|2024-10-21|Moved to new category filesystems
+filesystems/py-fs2|filesystems/py-fs2|2024-10-21|Moved to new category filesystems
 filesystems/zrepl-dsh2dsh|filesystems/zrepl-dsh2dsh|2024-10-21|Moved to new category filesystems
 sysutils/zrepl|filesystems/zrepl|2024-10-21|Moved to new category filesystems
 sysutils/zisofs-tools|filesystems/zisofs-tools|2024-10-21|Moved to new category filesystems
@@ -3622,3 +3622,4 @@ devel/py-llfuse|filesystems/py-llfuse|2024-10-21|Moved to new category filesyste
 devel/py-libzfs|filesystems/py-libzfs|2024-10-21|Moved to new category filesystems
 devel/py-fusepy|filesystems/py-fusepy|2024-10-21|Moved to new category filesystems
 devel/py-gcsfs|filesystems/py-gcsfs|2024-10-21|Moved to new category filesystems
+devel/py-fs|filesystems/py-fs|2024-10-21|Moved to new category filesystems

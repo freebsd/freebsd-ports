@@ -4888,7 +4888,6 @@
     SUBDIR += py-frictionless-ckan-mapper
     SUBDIR += py-frozendict
     SUBDIR += py-frozenlist
-    SUBDIR += py-fs
     SUBDIR += py-fudge
     SUBDIR += py-funcparserlib
     SUBDIR += py-funcsigs

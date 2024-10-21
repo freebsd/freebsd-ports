@@ -46,6 +46,7 @@
     SUBDIR += pear-Horde_Vfs
     SUBDIR += progsreiserfs
     SUBDIR += py-dfvfs
+    SUBDIR += py-fs
     SUBDIR += py-fs2
     SUBDIR += py-fsspec
     SUBDIR += py-fsspec-xrootd
