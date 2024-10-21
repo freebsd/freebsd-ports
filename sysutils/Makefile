@@ -776,7 +776,6 @@
     SUBDIR += moosefs2-cgi
     SUBDIR += moosefs2-cgiserv
     SUBDIR += moosefs2-chunkserver
-    SUBDIR += moosefs2-cli
     SUBDIR += moreutils
     SUBDIR += most
     SUBDIR += mountsmb2

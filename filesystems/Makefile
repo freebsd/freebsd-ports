@@ -7,6 +7,7 @@
     SUBDIR += hfsutils
     SUBDIR += linux-c7-dosfstools
     SUBDIR += mergerfs
+    SUBDIR += moosefs2-cli
     SUBDIR += moosefs2-client
     SUBDIR += moosefs2-master
     SUBDIR += moosefs2-metalogger
