@@ -1,6 +1,5 @@
 PORTNAME=	agedu
-PORTVERSION=	20211129.8cd63c5
-PORTREVISION=	1
+PORTVERSION=	20241013.3622eda
 CATEGORIES=	sysutils
 MASTER_SITES=	https://www.chiark.greenend.org.uk/~sgtatham/agedu/ \
 		LOCAL/sunpoet
