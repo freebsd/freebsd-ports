@@ -3589,4 +3589,5 @@ sysutils/moosefs3-master|filesystems/moosefs3-master|2024-10-21|Moved to new cat
 filesystems/moosefs3-client|filesystems/moosefs3-client|2024-10-21|Moved to new category filesystems
 sysutils/moosefs3-cli|filesystems/moosefs3-cli|2024-10-21|Moved to new category filesystems
 sysutils/moosefs3-chunkserver|filesystems/moosefs3-chunkserver|2024-10-21|Moved to new category filesystems
-sysutils/moosefs3-cgiserv|filesystems/moosefs3-cgiserv|2024-10-21|Moved to new category filesystems
+filesystems/moosefs3-cgiserv|filesystems/moosefs3-cgiserv|2024-10-21|Moved to new category filesystems
+sysutils/moosefs3-cgi|filesystems/moosefs3-cgi|2024-10-21|Moved to new category filesystems
