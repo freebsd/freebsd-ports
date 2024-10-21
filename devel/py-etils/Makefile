@@ -51,7 +51,7 @@ ECOLAB_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}jupyter>=0:devel/py-jupyter@${PY_FLAV
 			${PYTHON_PKGNAMEPREFIX}packaging>=0:devel/py-packaging@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}protobuf>=0,1:devel/py-protobuf@${PY_FLAVOR}
 ENP_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=0,1:math/py-numpy@${PY_FLAVOR}
-EPATH_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}fsspec>=0:devel/py-fsspec@${PY_FLAVOR} \
+EPATH_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}fsspec>=0:filesystems/py-fsspec@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}importlib-resources>=0:devel/py-importlib-resources@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}typing-extensions>=0:devel/py-typing-extensions@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}zipp>=0:devel/py-zipp@${PY_FLAVOR}

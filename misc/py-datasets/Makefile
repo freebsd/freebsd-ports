@@ -18,7 +18,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyproject-hooks>0:devel/py-pyproject-hooks
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aiohttp>0:www/py-aiohttp@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dill>0.3.0:devel/py-dill@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}filelock>0:sysutils/py-filelock@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}fsspec>=2023.1.0:devel/py-fsspec@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}fsspec>=2023.1.0:filesystems/py-fsspec@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}huggingface-hub>0.21.2:misc/py-huggingface-hub@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}multiprocess>0:devel/py-multiprocess@${PY_FLAVOR} \
 		${PYNUMPY} \
