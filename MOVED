@@ -3638,3 +3638,4 @@ sysutils/fusefs-xfuse|filesystems/xfuse|2024-10-21|Moved to new category filesys
 sysutils/fusefs-webdavfs|filesystems/fusefs-webdavfs|2024-10-21|Moved to new category filesystems
 sysutils/fusefs-unreliablefs|filesystems/unreliablefs|2024-10-21|Moved to new category filesystems
 sysutils/fusefs-unionfs|filesystems/unionfs|2024-10-21|Moved to new category filesystems
+sysutils/fusefs-ufs|filesystems/ufs|2024-10-21|Moved to new category filesystems

@@ -461,7 +461,6 @@
     SUBDIR += fusefs-sqlfs
     SUBDIR += fusefs-squashfuse
     SUBDIR += fusefs-sshfs
-    SUBDIR += fusefs-ufs
     SUBDIR += fvcool
     SUBDIR += fwup
     SUBDIR += fx
