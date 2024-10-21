@@ -1,7 +1,7 @@
 PORTNAME=	afuse
 PORTVERSION=	0.4.1
 PORTREVISION=	2
-CATEGORIES=	sysutils
+CATEGORIES=	filesystems
 MASTER_SITES=	https://BSDforge.com/projects/source/sysutils/afuse/
 PKGNAMEPREFIX=	fusefs-
 

@@ -1,6 +1,7 @@
     COMMENT = File systems and related utilities
 
     SUBDIR += acfgfs
+    SUBDIR += afuse
     SUBDIR += archivemount
     SUBDIR += avfs
     SUBDIR += bindfs
