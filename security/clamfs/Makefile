@@ -1,8 +1,8 @@
 PORTNAME=	clamfs
-PORTVERSION=	1.2.0
-PORTREVISION=	4
+DISTVERSION=	1.2.0
+PORTREVISION=	5
 CATEGORIES=	security
-MASTER_SITES=	https://github.com/burghardt/${PORTNAME}/releases/download/${PORTNAME}-${PORTVERSION}/
+MASTER_SITES=	https://github.com/burghardt/${PORTNAME}/releases/download/${PORTNAME}-${DISTVERSION}/
 
 MAINTAINER=	anastasios@mageirias.com
 COMMENT=	User-space fs with on-access antivirus scanning
@@ -20,7 +20,6 @@ RUN_DEPENDS=	clamd:security/clamav
 USES=		autoreconf compiler:c++11-lib fuse:3 pkgconfig
 
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
 PLIST_FILES=	bin/clamfs \
 		share/man/man1/clamfs.1.gz
