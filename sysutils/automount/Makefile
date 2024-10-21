@@ -21,7 +21,7 @@ NTFS3G_RUN_DEPENDS=	fusefs-ntfs>=0:filesystems/ntfs
 EXT4_DESC=		Support EXT2/3/4 filesystem
 EXT4_RUN_DEPENDS=	fusefs-lkl>=0:filesystems/lkl
 HFS_DESC=		Support macOS HFS filesystem
-HFS_RUN_DEPENDS=	fusefs-hfsfuse>=0:sysutils/fusefs-hfsfuse
+HFS_RUN_DEPENDS=	fusefs-hfsfuse>=0:filesystems/hfsfuse
 EXFAT_DESC=		Support Microsoft exFAT filesystem
 EXFAT_RUN_DEPENDS=	fusefs-exfat>=0:sysutils/fusefs-exfat \
 			exfat-utils>=0:filesystems/exfat-utils

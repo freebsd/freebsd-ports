@@ -18,6 +18,7 @@
     SUBDIR += genromfs
     SUBDIR += gvfs
     SUBDIR += hfsexplorer
+    SUBDIR += hfsfuse
     SUBDIR += hfsutils
     SUBDIR += httpdirfs
     SUBDIR += httpfs

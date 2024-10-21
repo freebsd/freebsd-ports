@@ -3662,3 +3662,4 @@ sysutils/fusefs-jmtpfs|filesystems/jmtpfs|2024-10-21|Moved to new category files
 sysutils/fusefs-ifuse|filesystems/ifuse|2024-10-21|Moved to new category filesystems
 sysutils/fusefs-httpfs|filesystems/httpfs|2024-10-21|Moved to new category filesystems
 sysutils/fusefs-httpdirfs|filesystems/httpdirfs|2024-10-21|Moved to new category filesystems
+sysutils/fusefs-hfsfuse|filesystems/hfsfuse|2024-10-21|Moved to new category filesystems
