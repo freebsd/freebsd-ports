@@ -1293,7 +1293,6 @@
     SUBDIR += libfort
     SUBDIR += libfortuna
     SUBDIR += libfreefare
-    SUBDIR += libfsapfs
     SUBDIR += libftdi
     SUBDIR += libftdi1
     SUBDIR += libfwnt
