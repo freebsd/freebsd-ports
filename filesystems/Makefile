@@ -7,6 +7,7 @@
     SUBDIR += hfsutils
     SUBDIR += linux-c7-dosfstools
     SUBDIR += mergerfs
+    SUBDIR += moosefs2-netdump
     SUBDIR += moosefs3-cgi
     SUBDIR += moosefs3-cgiserv
     SUBDIR += moosefs3-chunkserver
