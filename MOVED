@@ -3621,3 +3621,4 @@ devel/py-pyfakefs|filesystems/py-pyfakefs|2024-10-21|Moved to new category files
 devel/py-llfuse|filesystems/py-llfuse|2024-10-21|Moved to new category filesystems
 devel/py-libzfs|filesystems/py-libzfs|2024-10-21|Moved to new category filesystems
 devel/py-fusepy|filesystems/py-fusepy|2024-10-21|Moved to new category filesystems
+devel/py-gcsfs|filesystems/py-gcsfs|2024-10-21|Moved to new category filesystems
