@@ -49,6 +49,7 @@
     SUBDIR += py-fsspec-xrootd
     SUBDIR += py-prometheus-zfs
     SUBDIR += py-zfs-autobackup
+    SUBDIR += R-cran-fs
     SUBDIR += rubygem-winrm-fs
     SUBDIR += scan_ffs
     SUBDIR += squashfs-tools

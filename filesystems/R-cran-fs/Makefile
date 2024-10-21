@@ -1,6 +1,6 @@
 PORTNAME=	fs
 DISTVERSION=	1.6.4
-CATEGORIES=	sysutils
+CATEGORIES=	filesystems sysutils
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	uzsolt@FreeBSD.org

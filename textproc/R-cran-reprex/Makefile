@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 CRAN_DEPENDS=	R-cran-callr>=3.6.0:devel/R-cran-callr \
 		R-cran-cli>=3.2.0:devel/R-cran-cli \
 		R-cran-clipr>=0.4.0:devel/R-cran-clipr \
-		R-cran-fs>0:sysutils/R-cran-fs \
+		R-cran-fs>0:filesystems/R-cran-fs \
 		R-cran-glue>0:devel/R-cran-glue \
 		R-cran-knitr>=1.23:print/R-cran-knitr \
 		R-cran-lifecycle>0:devel/R-cran-lifecycle \

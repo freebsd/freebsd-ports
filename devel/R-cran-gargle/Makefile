@@ -10,7 +10,7 @@ WWW=		https://gargle.r-lib.org/
 LICENSE=	MIT
 
 CRAN_DEPENDS=	R-cran-cli>=3.0.1:devel/R-cran-cli \
-		R-cran-fs>=1.3.1:sysutils/R-cran-fs \
+		R-cran-fs>=1.3.1:filesystems/R-cran-fs \
 		R-cran-glue>=1.3.0:devel/R-cran-glue \
 		R-cran-httr>=1.4.5:www/R-cran-httr \
 		R-cran-jsonlite>0:converters/R-cran-jsonlite \

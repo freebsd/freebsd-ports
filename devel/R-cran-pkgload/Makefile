@@ -11,7 +11,7 @@ LICENSE=	GPLv3
 
 RUN_DEPENDS=	R-cran-cli>=3.3.0:devel/R-cran-cli \
 		R-cran-desc>0:devel/R-cran-desc \
-		R-cran-fs>0:sysutils/R-cran-fs \
+		R-cran-fs>0:filesystems/R-cran-fs \
 		R-cran-glue>0:devel/R-cran-glue \
 		R-cran-lifecycle>0:devel/R-cran-lifecycle \
 		R-cran-pkgbuild>0:devel/R-cran-pkgbuild \
