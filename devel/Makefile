@@ -4891,7 +4891,6 @@
     SUBDIR += py-fs
     SUBDIR += py-fs2
     SUBDIR += py-fsspec
-    SUBDIR += py-fsspec-xrootd
     SUBDIR += py-fudge
     SUBDIR += py-funcparserlib
     SUBDIR += py-funcsigs

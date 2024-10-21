@@ -8,6 +8,7 @@
     SUBDIR += linux-c7-dosfstools
     SUBDIR += mergerfs
     SUBDIR += py-dfvfs
+    SUBDIR += py-fsspec-xrootd
     SUBDIR += py-zfs-autobackup
     SUBDIR += squashfs-tools
     SUBDIR += squashfs-tools-ng

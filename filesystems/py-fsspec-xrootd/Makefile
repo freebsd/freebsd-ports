@@ -1,6 +1,6 @@
 PORTNAME=	fsspec-xrootd
 PORTVERSION=	0.4.0
-CATEGORIES=	devel python
+CATEGORIES=	filesystems devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	fsspec_xrootd-${PORTVERSION}
