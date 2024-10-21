@@ -1,7 +1,7 @@
 PORTNAME=	mp3fs
 PORTVERSION=	1.1.1
 PORTEPOCH=	1
-CATEGORIES=	sysutils audio
+CATEGORIES=	filesystems audio
 MASTER_SITES=	https://github.com/khenriks/${PORTNAME}/releases/download/v${PORTVERSION}/
 PKGNAMEPREFIX=	fusefs-
 

@@ -446,7 +446,6 @@
     SUBDIR += fusefs-libs3
     SUBDIR += fusefs-lkl
     SUBDIR += fusefs-mhddfs
-    SUBDIR += fusefs-mp3fs
     SUBDIR += fvcool
     SUBDIR += fwup
     SUBDIR += fx
