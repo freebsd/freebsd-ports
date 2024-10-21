@@ -16,6 +16,7 @@
     SUBDIR += hfsexplorer
     SUBDIR += hfsutils
     SUBDIR += kio-fuse
+    SUBDIR += libfsxfs
     SUBDIR += libmodi
     SUBDIR += linux-c7-dosfstools
     SUBDIR += lizardfs

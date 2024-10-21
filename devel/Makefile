@@ -1298,7 +1298,6 @@
     SUBDIR += libfsfat
     SUBDIR += libfshfs
     SUBDIR += libfsntfs
-    SUBDIR += libfsxfs
     SUBDIR += libftdi
     SUBDIR += libftdi1
     SUBDIR += libfwnt
