@@ -10,6 +10,8 @@ WWW=		https://github.com/newren/git-filter-repo
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING.mit
 
+CONFLICTS=	git-filter-repo-devel-*
+
 RUN_DEPENDS=	git:devel/git
 
 USES=		python shebangfix
