@@ -1,6 +1,6 @@
 PORTNAME=	unreliablefs
 DISTVERSION=	0.2.0
-CATEGORIES=	sysutils
+CATEGORIES=	filesystems
 PKGNAMEPREFIX=	fusefs-
 PATCH_SITES=	https://github.com/ligurio/unreliablefs/commit/
 PATCHFILES=	e97d259b1cda3c1342c9cb472d31230e50b0776d.patch:-p1

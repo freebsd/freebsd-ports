@@ -463,7 +463,6 @@
     SUBDIR += fusefs-sshfs
     SUBDIR += fusefs-ufs
     SUBDIR += fusefs-unionfs
-    SUBDIR += fusefs-unreliablefs
     SUBDIR += fvcool
     SUBDIR += fwup
     SUBDIR += fx
