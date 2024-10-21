@@ -1,7 +1,7 @@
 PORTNAME=	cfs
 DISTVERSION=	1.5.0
 PORTREVISION=	1
-CATEGORIES=	security
+CATEGORIES=	filesystems security
 MASTER_SITES=	http://www.bayofrum.net/dist/${PORTNAME}/
 
 MAINTAINER=	crees@FreeBSD.org
