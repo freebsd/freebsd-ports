@@ -3617,3 +3617,4 @@ emulators/mtools|filesystems/mtools|2024-10-21|Moved to new category filesystems
 devel/tclvfs|filesystems/tclvfs|2024-10-21|Moved to new category filesystems
 devel/rubygem-aws-sdk-efs|filesystems/rubygem-aws-sdk-efs|2024-10-21|Moved to new category filesystems
 devel/py-s3fs|filesystems/py-s3fs|2024-10-21|Moved to new category filesystems
+devel/py-pyfakefs|filesystems/py-pyfakefs|2024-10-21|Moved to new category filesystems

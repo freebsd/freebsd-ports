@@ -5528,7 +5528,6 @@
     SUBDIR += py-pyee11
     SUBDIR += py-pyelftools
     SUBDIR += py-pyface
-    SUBDIR += py-pyfakefs
     SUBDIR += py-pyfcm
     SUBDIR += py-pyflakes
     SUBDIR += py-pyformance

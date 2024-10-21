@@ -50,6 +50,7 @@
     SUBDIR += py-fsspec
     SUBDIR += py-fsspec-xrootd
     SUBDIR += py-prometheus-zfs
+    SUBDIR += py-pyfakefs
     SUBDIR += py-s3fs
     SUBDIR += py-zfs-autobackup
     SUBDIR += R-cran-fs
