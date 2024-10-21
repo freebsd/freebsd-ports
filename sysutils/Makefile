@@ -638,7 +638,6 @@
     SUBDIR += kf6-kwallet
     SUBDIR += khelpcenter
     SUBDIR += kiconvtool
-    SUBDIR += kio-fuse
     SUBDIR += kldfind
     SUBDIR += kldpatch
     SUBDIR += kopia

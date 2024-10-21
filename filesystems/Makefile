@@ -5,6 +5,7 @@
     SUBDIR += fswatch-mon
     SUBDIR += hfsexplorer
     SUBDIR += hfsutils
+    SUBDIR += kio-fuse
     SUBDIR += linux-c7-dosfstools
     SUBDIR += lizardfs
     SUBDIR += ltfs

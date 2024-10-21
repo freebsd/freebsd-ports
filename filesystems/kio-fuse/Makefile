@@ -1,6 +1,6 @@
 PORTNAME=	kio-fuse
 DISTVERSION=	5.1.0
-CATEGORIES=	sysutils kde
+CATEGORIES=	filesystems sysutils kde
 MASTER_SITES=	KDE/stable/${PORTNAME}
 
 MAINTAINER=	kde@FreeBSD.org

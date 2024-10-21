@@ -3601,3 +3601,4 @@ filesystems/moosefs2-cgiserv|filesystems/moosefs2-cgiserv|2024-10-21|Moved to ne
 sysutils/moosefs2-cgi|filesystems/moosefs2-cgi|2024-10-21|Moved to new category filesystems
 sysutils/ltfs|filesystems/ltfs|2024-10-21|Moved to new category filesystems
 sysutils/lizardfs|filesystems/lizardfs|2024-10-21|Moved to new category filesystems
+sysutils/kio-fuse|filesystems/kio-fuse|2024-10-21|Moved to new category filesystems
