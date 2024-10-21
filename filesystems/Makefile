@@ -4,6 +4,7 @@
     SUBDIR += archivemount
     SUBDIR += avfs
     SUBDIR += cfs
+    SUBDIR += chironfs
     SUBDIR += clamfs
     SUBDIR += cramfs
     SUBDIR += cryptofs

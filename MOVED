@@ -3671,3 +3671,4 @@ sysutils/fusefs-exfat|filesystems/exfat|2024-10-21|Moved to new category filesys
 sysutils/fusefs-encfs|filesystems/encfs|2024-10-21|Moved to new category filesystems
 sysutils/fusefs-curlftpfs|filesystems/curlftpfs|2024-10-21|Moved to new category filesystems
 sysutils/fusefs-cryptofs|filesystems/cryptofs|2024-10-21|Moved to new category filesystems
+sysutils/fusefs-chironfs|filesystems/chironfs|2024-10-21|Moved to new category filesystems
