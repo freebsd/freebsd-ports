@@ -3647,3 +3647,4 @@ sysutils/fusefs-simple-mtpfs|filesystems/simple-mtpfs|2024-10-21|Moved to new ca
 sysutils/fusefs-securefs|filesystems/securefs|2024-10-21|Moved to new category filesystems
 sysutils/fusefs-sandboxfs|filesystems/sandboxfs|2024-10-21|Moved to new category filesystems
 sysutils/fusefs-s3fs|filesystems/s3fs|2024-10-21|Moved to new category filesystems
+sysutils/fusefs-s3backer|filesystems/s3backer|2024-10-21|Moved to new category filesystems

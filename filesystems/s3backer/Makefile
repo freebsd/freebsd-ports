@@ -1,7 +1,7 @@
 PORTNAME=	s3backer
 DISTVERSION=	1.5.4
 PORTREVISION=	1
-CATEGORIES=	sysutils
+CATEGORIES=	filesystems
 MASTER_SITES=	https://s3.amazonaws.com/archie-public/s3backer/
 PKGNAMEPREFIX=	fusefs-
 
