@@ -10,7 +10,7 @@ WWW=		https://e2tools.github.io/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libext2fs.so:sysutils/e2fsprogs-core
+LIB_DEPENDS=	libext2fs.so:filesystems/e2fsprogs-core
 
 USES=		pkgconfig
 GNU_CONFIGURE_MANPREFIX=        ${PREFIX}/share

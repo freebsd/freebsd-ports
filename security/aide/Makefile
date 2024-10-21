@@ -10,7 +10,7 @@ WWW=		https://aide.github.io/
 
 LIB_DEPENDS=	libmhash.so:security/mhash \
 		libpcre2-8.so:devel/pcre2 \
-		libe2p.so:sysutils/e2fsprogs-core
+		libe2p.so:filesystems/e2fsprogs-core
 
 USES=		bison gmake localbase pkgconfig:build
 

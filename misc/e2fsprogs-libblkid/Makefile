@@ -11,7 +11,7 @@ LIB_DEPENDS=	libuuid.so:misc/e2fsprogs-libuuid
 
 CONFIGURE_ARGS=	--enable-elf-shlibs --disable-libuuid --enable-libblkid
 
-MASTERDIR=	${.CURDIR}/../../sysutils/e2fsprogs-core
+MASTERDIR=	${.CURDIR}/../../filesystems/e2fsprogs-core
 MAKE_ARGS=	LIB_SUBDIRS=lib/blkid LDFLAGS_SHLIB=-L${LOCALBASE}/lib
 USE_LDCONFIG=	yes
 ALL_TARGET=	libs

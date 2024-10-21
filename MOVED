@@ -852,7 +852,7 @@ security/rubygem-bcrypt_pbkdf10|security/rubygem-bcrypt_pbkdf|2022-01-11|Remove 
 math/gotoblas|math/openblas|2022-01-15|Remove obsoleted port. Use math/openblas instead
 net/pipsecd||2022-01-15|Has expired: Abandonware, current release is from 1999 and uses insecure encryption algorithms
 devel/maven31|devel/maven|2022-01-15|Has expired: Outdated, unsupported upstream
-devel/e2fsprogs-libss||2022-01-17|Folded back into sysutils/e2fsprogs, which was the sole user
+devel/e2fsprogs-libss||2022-01-17|Folded back into filesystems/e2fsprogs, which was the sole user
 lang/spidermonkey60|lang/spidermonkey78|2022-01-18|Has expired: Requires python2 to build
 shells/ammonite|devel/ammonite|2022-01-18|Ammonite dropped built-in shell support
 emulators/yuzu-qt5|emulators/yuzu|2022-01-20|Merged as QT5 port option
@@ -3604,3 +3604,4 @@ sysutils/lizardfs|filesystems/lizardfs|2024-10-21|Moved to new category filesyst
 sysutils/kio-fuse|filesystems/kio-fuse|2024-10-21|Moved to new category filesystems
 sysutils/exfat-utils|filesystems/exfat-utils|2024-10-21|Moved to new category filesystems
 sysutils/e2tools|filesystems/e2tools|2024-10-21|Moved to new category filesystems
+sysutils/e2fsprogs|filesystems/e2fsprogs|2024-10-21|Moved to new category filesystems
