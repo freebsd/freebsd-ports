@@ -1,7 +1,7 @@
 PORTNAME=	xfsm
 PORTVERSION=	1.99
 PORTREVISION=	2
-CATEGORIES=	sysutils
+CATEGORIES=	filesystems sysutils
 MASTER_SITES=	SUNSITE/system/status/xstatus
 
 MAINTAINER=	ports@FreeBSD.org
