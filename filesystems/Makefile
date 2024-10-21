@@ -7,6 +7,7 @@
     SUBDIR += hfsutils
     SUBDIR += linux-c7-dosfstools
     SUBDIR += mergerfs
+    SUBDIR += ntfs2btrfs
     SUBDIR += openzfs
     SUBDIR += openzfs-kmod
     SUBDIR += p5-Filesys-Statvfs

@@ -3581,3 +3581,4 @@ sysutils/p5-Fuse|filesystems/p5-Fuse|2024-10-21|Moved to new category filesystem
 sysutils/p5-Filesys-Statvfs|filesystems/p5-Filesys-Statvfs|2024-10-21|Moved to new category filesystems
 sysutils/openzfs|filesystems/openzfs|2024-10-21|Moved to new category filesystems
 sysutils/openzfs-kmod|filesystems/openzfs-kmod|2024-10-21|Moved to new category filesystems
+sysutils/ntfs2btrfs|filesystems/ntfs2btrfs|2024-10-21|Moved to new category filesystems

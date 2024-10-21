@@ -1,6 +1,6 @@
 PORTNAME=	ntfs2btrfs
 PORTVERSION=	20230501
-CATEGORIES=	sysutils
+CATEGORIES=	filesystems sysutils
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	NTFS to Btrfs in-place conversion utility
