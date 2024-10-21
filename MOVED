@@ -3564,3 +3564,4 @@ filesystems/zfs-stats-lite|filesystems/zfs-stats-lite|2024-10-21|Moved to new ca
 sysutils/zfs-stats|filesystems/zfs-stats|2024-10-21|Moved to new category filesystems
 sysutils/zfs-snapshot-mgmt|filesystems/zfs-snapshot-mgmt|2024-10-21|Moved to new category filesystems
 sysutils/zfs-snapshot-clean|filesystems/zfs-snapshot-clean|2024-10-21|Moved to new category filesystems
+sysutils/zfs-snap-diff|filesystems/zfs-snap-diff|2024-10-21|Moved to new category filesystems
