@@ -33,7 +33,7 @@ NTFS_DESC=	Mount NTFS filesystems with read and write support
 PTP_DESC=	Picture Transfer Protocol support
 
 EXFAT_RUN_DEPENDS=	mount.exfat:sysutils/fusefs-exfat
-EXT4_RUN_DEPENDS=	fuse-ext2:sysutils/fusefs-ext2
+EXT4_RUN_DEPENDS=	fuse-ext2:filesystems/ext2
 HFS_RUN_DEPENDS=	hfsfuse:filesystems/hfsfuse
 LKL_RUN_DEPENDS=	lklfuse:filesystems/lkl
 MTP_RUN_DEPENDS=	jmtpfs:filesystems/jmtpfs

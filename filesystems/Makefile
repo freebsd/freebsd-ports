@@ -11,6 +11,7 @@
     SUBDIR += e2fsprogs-core
     SUBDIR += e2tools
     SUBDIR += exfat-utils
+    SUBDIR += ext2
     SUBDIR += fstyp
     SUBDIR += fswatch-mon
     SUBDIR += funionfs
