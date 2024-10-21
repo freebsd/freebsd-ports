@@ -13,6 +13,7 @@
     SUBDIR += exfat-utils
     SUBDIR += fstyp
     SUBDIR += fswatch-mon
+    SUBDIR += fusefs-libs3
     SUBDIR += genromfs
     SUBDIR += gvfs
     SUBDIR += hfsexplorer

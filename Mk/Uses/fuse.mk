@@ -16,7 +16,7 @@ LIBFUSE_VER?=	2
 .  if ${LIBFUSE_VER} == 2
 LIB_DEPENDS+=	libfuse.so:sysutils/fusefs-libs
 .  elif ${LIBFUSE_VER} == 3
-LIB_DEPENDS+=	libfuse3.so:sysutils/fusefs-libs3
+LIB_DEPENDS+=	libfuse3.so:filesystems/fusefs-libs3
 .  else
 IGNORE=		cannot install: unknown FUSE library version: ${LIBFUSE_VERSION}
 .  endif

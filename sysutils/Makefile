@@ -443,7 +443,6 @@
     SUBDIR += fusefs-ifuse
     SUBDIR += fusefs-jmtpfs
     SUBDIR += fusefs-libs
-    SUBDIR += fusefs-libs3
     SUBDIR += fvcool
     SUBDIR += fwup
     SUBDIR += fx
