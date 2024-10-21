@@ -427,7 +427,6 @@
     SUBDIR += fselect
     SUBDIR += ftwin
     SUBDIR += fusefs-afuse
-    SUBDIR += fusefs-bindfs
     SUBDIR += fvcool
     SUBDIR += fwup
     SUBDIR += fx

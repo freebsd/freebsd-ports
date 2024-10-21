@@ -1,7 +1,7 @@
 PORTNAME=	bindfs
 DISTVERSION=	1.17.7
 PORTREVISION=	1
-CATEGORIES=	sysutils
+CATEGORIES=	filesystems
 MASTER_SITES=	https://bindfs.org/downloads/
 PKGNAMEPREFIX=	fusefs-
 
