@@ -435,7 +435,6 @@
     SUBDIR += fsc
     SUBDIR += fsearch
     SUBDIR += fselect
-    SUBDIR += fstyp
     SUBDIR += ftwin
     SUBDIR += fusefs-afuse
     SUBDIR += fusefs-bindfs

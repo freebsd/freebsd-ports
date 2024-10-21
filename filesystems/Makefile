@@ -1,5 +1,6 @@
     COMMENT = File systems and related utilities
 
+    SUBDIR += fstyp
     SUBDIR += fswatch-mon
     SUBDIR += hfsexplorer
     SUBDIR += hfsutils

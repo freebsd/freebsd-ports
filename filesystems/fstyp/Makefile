@@ -1,7 +1,7 @@
 PORTNAME=	fstyp
 PORTVERSION=	0.1
 PORTREVISION=	1
-CATEGORIES=	sysutils
+CATEGORIES=	filesystems sysutils
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION} http://thegaul.org/src/
 
 MAINTAINER=	ports@FreeBSD.org
