@@ -3584,3 +3584,4 @@ sysutils/openzfs-kmod|filesystems/openzfs-kmod|2024-10-21|Moved to new category 
 sysutils/ntfs2btrfs|filesystems/ntfs2btrfs|2024-10-21|Moved to new category filesystems
 sysutils/mtpfs|filesystems/mtpfs|2024-10-21|Moved to new category filesystems
 sysutils/moosefs3-netdump|filesystems/moosefs3-netdump|2024-10-21|Moved to new category filesystems
+sysutils/moosefs3-metalogger|filesystems/moosefs3-metalogger|2024-10-21|Moved to new category filesystems

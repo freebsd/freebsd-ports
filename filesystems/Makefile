@@ -7,6 +7,7 @@
     SUBDIR += hfsutils
     SUBDIR += linux-c7-dosfstools
     SUBDIR += mergerfs
+    SUBDIR += moosefs3-metalogger
     SUBDIR += moosefs3-netdump
     SUBDIR += mtpfs
     SUBDIR += ntfs2btrfs
