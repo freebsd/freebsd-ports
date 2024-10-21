@@ -798,7 +798,6 @@
     SUBDIR += gengetopt
     SUBDIR += genht
     SUBDIR += genie
-    SUBDIR += genromfs
     SUBDIR += getoptions
     SUBDIR += gettext
     SUBDIR += gettext-lint
