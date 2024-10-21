@@ -450,7 +450,6 @@
     SUBDIR += fusefs-nbt
     SUBDIR += fusefs-ntfs
     SUBDIR += fusefs-ntfs-compression
-    SUBDIR += fusefs-pod
     SUBDIR += fvcool
     SUBDIR += fwup
     SUBDIR += fx
