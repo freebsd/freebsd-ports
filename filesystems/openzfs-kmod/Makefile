@@ -1,7 +1,7 @@
 PORTNAME=	openzfs
 PORTVERSION=	2023113000
 DISTVERSIONPREFIX=	v
-CATEGORIES=	sysutils
+CATEGORIES=	filesystems sysutils
 PKGNAMESUFFIX?=	-kmod
 
 MAINTAINER=	freqlabs@FreeBSD.org

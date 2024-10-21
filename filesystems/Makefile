@@ -8,6 +8,7 @@
     SUBDIR += linux-c7-dosfstools
     SUBDIR += mergerfs
     SUBDIR += openzfs
+    SUBDIR += openzfs-kmod
     SUBDIR += p5-Filesys-Statvfs
     SUBDIR += p5-Fuse
     SUBDIR += pear-Horde_Vfs
