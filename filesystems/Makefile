@@ -12,6 +12,7 @@
     SUBDIR += py-fsspec
     SUBDIR += py-fsspec-xrootd
     SUBDIR += py-zfs-autobackup
+    SUBDIR += scan_ffs
     SUBDIR += squashfs-tools
     SUBDIR += squashfs-tools-ng
     SUBDIR += ufs_copy

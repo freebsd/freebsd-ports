@@ -1,7 +1,7 @@
 PORTNAME=	scan_ffs
 PORTVERSION=	1.2
 PORTREVISION=	1
-CATEGORIES=	sysutils
+CATEGORIES=	filesystems sysutils
 MASTER_SITES=	http://www.ranner.eu/stuff/
 
 MAINTAINER=	michael@ranner.eu

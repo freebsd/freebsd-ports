@@ -3572,3 +3572,4 @@ sysutils/xfsm|filesystems/xfsm|2024-10-21|Moved to new category filesystems
 sysutils/wimlib|filesystems/wimlib|2024-10-21|Moved to new category filesystems
 sysutils/vzvol|filesystems/vzvol|2024-10-21|Moved to new category filesystems
 sysutils/ufs_copy|filesystems/ufs_copy|2024-10-21|Moved to new category filesystems
+sysutils/scan_ffs|filesystems/scan_ffs|2024-10-21|Moved to new category filesystems
