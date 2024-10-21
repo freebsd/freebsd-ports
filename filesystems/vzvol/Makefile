@@ -2,7 +2,7 @@ PORTNAME=	vzvol
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.7.0
 PORTREVISION=	3
-CATEGORIES=	sysutils
+CATEGORIES=	filesystems sysutils
 
 MAINTAINER=	rainbow@sanitylinux.org
 COMMENT=	Feature-rich ZFS zvol management tool
