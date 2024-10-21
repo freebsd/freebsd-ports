@@ -4894,7 +4894,6 @@
     SUBDIR += py-funcsigs
     SUBDIR += py-funcy
     SUBDIR += py-furl
-    SUBDIR += py-fusepy
     SUBDIR += py-future
     SUBDIR += py-futurist
     SUBDIR += py-fuzzywuzzy

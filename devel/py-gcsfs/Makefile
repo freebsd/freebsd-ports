@@ -33,6 +33,6 @@ GCSFUSE_DESC=	Fuse support
 CRC_DESC=	CRC support
 
 GCSFUSE_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}crcmod>=0:devel/py-crcmod@${PY_FLAVOR}
-CRC_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}fusepy>=0:devel/py-fusepy@${PY_FLAVOR}
+CRC_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}fusepy>=0:filesystems/py-fusepy@${PY_FLAVOR}
 
 .include <bsd.port.mk>
