@@ -1,7 +1,7 @@
 PORTNAME=	fuse-zip
 PORTVERSION=	0.4.4
 PORTREVISION=	2
-CATEGORIES=	sysutils
+CATEGORIES=	filesystems sysutils
 MASTER_SITES=	https://bitbucket.org/agalanin/fuse-zip/downloads/
 
 MAINTAINER=	ports@FreeBSD.org

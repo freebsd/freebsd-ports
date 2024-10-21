@@ -91,6 +91,7 @@
     SUBDIR += zfsnap
     SUBDIR += zfsnap2
     SUBDIR += zfstools
+    SUBDIR += zip
     SUBDIR += zisofs-tools
     SUBDIR += zrepl
     SUBDIR += zrepl-dsh2dsh
