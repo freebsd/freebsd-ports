@@ -1,7 +1,7 @@
 PORTNAME=	fswatch
 DISTVERSION=	1.13.0
 PORTREVISION=	3
-CATEGORIES=	sysutils
+CATEGORIES=	filesystems sysutils
 MASTER_SITES=	https://github.com/emcrisostomo/${PORTNAME}/releases/download/${DISTVERSION}/
 PKGNAMESUFFIX=	-mon
 
