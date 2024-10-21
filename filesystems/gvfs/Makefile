@@ -1,7 +1,7 @@
 PORTNAME=	gvfs
 PORTVERSION=	1.50.2
 PORTREVISION=	2
-CATEGORIES=	devel gnome
+CATEGORIES=	filesystems devel gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
 

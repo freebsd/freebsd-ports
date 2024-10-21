@@ -19,7 +19,7 @@ LIB_DEPENDS=	libcinnamon-desktop.so:x11/cinnamon-desktop \
 		libxapp.so:x11/xapp
 RUN_DEPENDS=	gnome-icon-theme>=0:misc/gnome-icon-theme \
 		gsettings-desktop-schemas>=0:devel/gsettings-desktop-schemas \
-		gvfs>0:devel/gvfs
+		gvfs>0:filesystems/gvfs
 
 USES=		compiler:c11 desktop-file-utils gettext gnome meson pkgconfig \
 		python shared-mime-info shebangfix xorg
