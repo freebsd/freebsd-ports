@@ -1,7 +1,7 @@
 PORTNAME=	zfs-replicate
 PORTVERSION=	2.0.2
 DISTVERSIONPREFIX=	v
-CATEGORIES=	sysutils
+CATEGORIES=	filesystems sysutils
 
 MAINTAINER=	tschetter.victor@gmail.com
 COMMENT=	ZFS Snapshot Replication Script
