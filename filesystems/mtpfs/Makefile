@@ -1,7 +1,7 @@
 PORTNAME=	mtpfs
 PORTVERSION=	1.1
 PORTREVISION=	5
-CATEGORIES=	sysutils
+CATEGORIES=	filesystems sysutils
 
 MAINTAINER=	jhixson@FreeBSD.org
 COMMENT=	MTP device filesystem
