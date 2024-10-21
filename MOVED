@@ -3660,3 +3660,4 @@ filesystems/fusefs-libs3|filesystems/fusefs-libs3|2024-10-21|Moved to new catego
 sysutils/fusefs-libs|filesystems/fusefs-libs|2024-10-21|Moved to new category filesystems
 sysutils/fusefs-jmtpfs|filesystems/jmtpfs|2024-10-21|Moved to new category filesystems
 sysutils/fusefs-ifuse|filesystems/ifuse|2024-10-21|Moved to new category filesystems
+sysutils/fusefs-httpfs|filesystems/httpfs|2024-10-21|Moved to new category filesystems

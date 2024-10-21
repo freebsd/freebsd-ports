@@ -19,6 +19,7 @@
     SUBDIR += gvfs
     SUBDIR += hfsexplorer
     SUBDIR += hfsutils
+    SUBDIR += httpfs
     SUBDIR += ifuse
     SUBDIR += jmtpfs
     SUBDIR += kio-fuse

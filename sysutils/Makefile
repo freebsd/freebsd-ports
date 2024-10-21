@@ -439,7 +439,6 @@
     SUBDIR += fusefs-gitfs
     SUBDIR += fusefs-hfsfuse
     SUBDIR += fusefs-httpdirfs
-    SUBDIR += fusefs-httpfs
     SUBDIR += fvcool
     SUBDIR += fwup
     SUBDIR += fx
