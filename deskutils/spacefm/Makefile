@@ -49,7 +49,7 @@ IFUSE_DESC=		Mount your iPhone/iPod Touch
 IFUSE_RUN_DEPENDS=	fusefs-ifuse>0:sysutils/fusefs-ifuse
 
 JMTPFS_DESC=		Mount MTP devices
-JMTPFS_RUN_DEPENDS=	fusefs-jmtpfs>0:sysutils/fusefs-jmtpfs
+JMTPFS_RUN_DEPENDS=	fusefs-jmtpfs>0:filesystems/jmtpfs
 
 LSOF_DESC=		Device processes
 LSOF_RUN_DEPENDS=	lsof:sysutils/lsof

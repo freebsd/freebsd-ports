@@ -36,7 +36,7 @@ EXFAT_RUN_DEPENDS=	mount.exfat:sysutils/fusefs-exfat
 EXT4_RUN_DEPENDS=	fuse-ext2:sysutils/fusefs-ext2
 HFS_RUN_DEPENDS=	hfsfuse:sysutils/fusefs-hfsfuse
 LKL_RUN_DEPENDS=	lklfuse:filesystems/lkl
-MTP_RUN_DEPENDS=	jmtpfs:sysutils/fusefs-jmtpfs
+MTP_RUN_DEPENDS=	jmtpfs:filesystems/jmtpfs
 NTFS_RUN_DEPENDS=	ntfs-3g:filesystems/ntfs
 PTP_RUN_DEPENDS=	gphotofs:graphics/fusefs-gphotofs
 
