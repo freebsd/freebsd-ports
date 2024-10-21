@@ -251,7 +251,6 @@
     SUBDIR += cpuid2cpuflags
     SUBDIR += cpulimit
     SUBDIR += cpupdate
-    SUBDIR += cramfs
     SUBDIR += crashme
     SUBDIR += crate
     SUBDIR += createrepo_c

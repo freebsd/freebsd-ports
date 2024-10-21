@@ -1,7 +1,7 @@
 PORTNAME=	cramfs
 PORTVERSION=	1.1
 PORTREVISION=	1
-CATEGORIES=	sysutils
+CATEGORIES=	filesystems sysutils
 MASTER_SITES=	SF
 
 MAINTAINER=	portmaster@BSDforge.com
