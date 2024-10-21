@@ -1710,6 +1710,5 @@
     SUBDIR += zsd
     SUBDIR += zsm
     SUBDIR += ztop
-    SUBDIR += zxfer
 
 .include <bsd.port.subdir.mk>

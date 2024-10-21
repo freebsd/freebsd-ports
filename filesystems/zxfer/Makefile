@@ -2,7 +2,7 @@ PORTNAME=	zxfer
 PORTVERSION=	1.1.7
 PORTREVISION=	1
 DISTVERSIONPREFIX=	v
-CATEGORIES=	sysutils
+CATEGORIES=	filesystems sysutils
 
 MAINTAINER=	ports@scaleengine.com
 COMMENT=	Easily and reliably transfer ZFS filesystems

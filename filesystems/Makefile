@@ -10,5 +10,6 @@
     SUBDIR += squashfs-tools
     SUBDIR += squashfs-tools-ng
     SUBDIR += zap
+    SUBDIR += zxfer
 
 .include <bsd.port.subdir.mk>
