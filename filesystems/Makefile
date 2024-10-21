@@ -14,6 +14,7 @@
     SUBDIR += py-zfs-autobackup
     SUBDIR += squashfs-tools
     SUBDIR += squashfs-tools-ng
+    SUBDIR += ufs_copy
     SUBDIR += vzvol
     SUBDIR += wimlib
     SUBDIR += xfsm

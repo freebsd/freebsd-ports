@@ -1566,7 +1566,6 @@
     SUBDIR += ucspi-unix
     SUBDIR += udfclient
     SUBDIR += ufetch
-    SUBDIR += ufs_copy
     SUBDIR += uhidd
     SUBDIR += uif2iso
     SUBDIR += unetbootin
