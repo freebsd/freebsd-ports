@@ -1,7 +1,7 @@
 PORTNAME=	rar2fs
 DISTVERSION=	1.29.6
 DISTVERSIONPREFIX=	v
-CATEGORIES=	sysutils
+CATEGORIES=	filesystems
 PKGNAMEPREFIX=	fusefs-
 
 MAINTAINER=	n_carlsson@outlook.com
