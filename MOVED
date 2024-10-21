@@ -3599,3 +3599,4 @@ sysutils/moosefs2-cli|filesystems/moosefs2-cli|2024-10-21|Moved to new category 
 sysutils/moosefs2-chunkserver|filesystems/moosefs2-chunkserver|2024-10-21|Moved to new category filesystems
 filesystems/moosefs2-cgiserv|filesystems/moosefs2-cgiserv|2024-10-21|Moved to new category filesystems
 sysutils/moosefs2-cgi|filesystems/moosefs2-cgi|2024-10-21|Moved to new category filesystems
+sysutils/ltfs|filesystems/ltfs|2024-10-21|Moved to new category filesystems

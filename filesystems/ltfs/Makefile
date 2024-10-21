@@ -2,7 +2,7 @@ PORTNAME=	ltfs
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.4.6.2
 DISTVERSIONSUFFIX=	-10513
-CATEGORIES=	sysutils
+CATEGORIES=	filesystems sysutils
 
 MAINTAINER=	kbowling@FreeBSD.org
 COMMENT=	Reference implementation of LTFS for stand-alone tape drive
