@@ -1,6 +1,6 @@
 PORTNAME=	zfs-stats-lite
 PORTVERSION=	1.4
-CATEGORIES=	sysutils
+CATEGORIES=	filesystems sysutils
 MASTER_SITES=	http://druidbsd.sourceforge.net/download/
 
 MAINTAINER=	ports@FreeBSD.org

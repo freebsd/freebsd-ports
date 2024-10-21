@@ -15,6 +15,7 @@
     SUBDIR += squashfs-tools
     SUBDIR += squashfs-tools-ng
     SUBDIR += zap
+    SUBDIR += zfs-stats-lite
     SUBDIR += zfsnap
     SUBDIR += zfsnap2
     SUBDIR += zfstools
