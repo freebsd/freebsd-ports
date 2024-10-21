@@ -779,7 +779,6 @@
     SUBDIR += moosefs2-cli
     SUBDIR += moosefs2-client
     SUBDIR += moosefs2-master
-    SUBDIR += moosefs2-metalogger
     SUBDIR += moreutils
     SUBDIR += most
     SUBDIR += mountsmb2
