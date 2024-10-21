@@ -46,7 +46,7 @@ CURLFTPFS_DESC=		Mount FTP shares
 CURLFTPFS_RUN_DEPENDS=	fusefs-curlftpfs>0:sysutils/fusefs-curlftpfs
 
 IFUSE_DESC=		Mount your iPhone/iPod Touch
-IFUSE_RUN_DEPENDS=	fusefs-ifuse>0:sysutils/fusefs-ifuse
+IFUSE_RUN_DEPENDS=	fusefs-ifuse>0:filesystems/ifuse
 
 JMTPFS_DESC=		Mount MTP devices
 JMTPFS_RUN_DEPENDS=	fusefs-jmtpfs>0:filesystems/jmtpfs
