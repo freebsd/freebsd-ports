@@ -373,7 +373,6 @@
     SUBDIR += evisum
     SUBDIR += evtviewer
     SUBDIR += exa
-    SUBDIR += exfat-utils
     SUBDIR += extipl
     SUBDIR += eza
     SUBDIR += ezjail

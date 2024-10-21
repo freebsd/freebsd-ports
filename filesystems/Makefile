@@ -1,6 +1,7 @@
     COMMENT = File systems and related utilities
 
     SUBDIR += cfs
+    SUBDIR += exfat-utils
     SUBDIR += fstyp
     SUBDIR += fswatch-mon
     SUBDIR += hfsexplorer
