@@ -15,6 +15,7 @@
     SUBDIR += squashfs-tools
     SUBDIR += squashfs-tools-ng
     SUBDIR += zap
+    SUBDIR += zrepl
     SUBDIR += zrepl-dsh2dsh
     SUBDIR += zxfer
 

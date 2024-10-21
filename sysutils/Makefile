@@ -1705,7 +1705,6 @@
     SUBDIR += zoxide
     SUBDIR += zpool-iostat-viz
     SUBDIR += zrep
-    SUBDIR += zrepl
     SUBDIR += zsd
     SUBDIR += zsm
     SUBDIR += ztop

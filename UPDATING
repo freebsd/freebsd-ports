@@ -1600,7 +1600,7 @@ you update your ports collection, before attempting any port upgrades.
   remove references to it.
 
 20221226:
-  AFFECTS: users of sysutils/zrepl
+  AFFECTS: users of filesystems/zrepl
   AUTHOR: driesm@FreeBSD.org
 
   The Prometheus metric zrepl_version_daemon has been converted to the
@@ -2170,7 +2170,7 @@ you update your ports collection, before attempting any port upgrades.
   work after the update.
 
 20220510
-  AFFECTS: sysutils/zrepl
+  AFFECTS: filesystems/zrepl
   AUTHOR: monwarez@gmail.com
 
   The zrepl update to 0.5.0.8 includes the following breaking changes:

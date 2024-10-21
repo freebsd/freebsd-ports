@@ -2,7 +2,7 @@ PORTNAME=	zrepl
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.6.1
 PORTREVISION=	9
-CATEGORIES=	sysutils
+CATEGORIES=	filesystems sysutils
 
 MAINTAINER=	driesm@FreeBSD.org
 COMMENT=	ZFS dataset replication tool
