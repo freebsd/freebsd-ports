@@ -76,6 +76,7 @@
     SUBDIR += squashfs-tools-ng
     SUBDIR += tclvfs
     SUBDIR += ufs_copy
+    SUBDIR += unionfs
     SUBDIR += unreliablefs
     SUBDIR += vzvol
     SUBDIR += webdavfs
