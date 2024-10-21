@@ -13,7 +13,7 @@ WWW=		https://github.com/log2timeline/dfvfs
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	libbde>=a:devel/libbde \
+RUN_DEPENDS=	libbde>=a:filesystems/libbde \
 		libewf>=0:devel/libewf \
 		libfsapfs>=e:filesystems/libfsapfs \
 		libfsext>=e:filesystems/libfsext \

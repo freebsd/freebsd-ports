@@ -16,6 +16,7 @@
     SUBDIR += hfsexplorer
     SUBDIR += hfsutils
     SUBDIR += kio-fuse
+    SUBDIR += libbde
     SUBDIR += libfsapfs
     SUBDIR += libfsext
     SUBDIR += libfsfat

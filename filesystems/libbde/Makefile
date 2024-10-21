@@ -1,6 +1,6 @@
 PORTNAME=	libbde
 DISTVERSION=	alpha-20231220
-CATEGORIES=	devel
+CATEGORIES=	filesystems devel
 MASTER_SITES=	https://github.com/libyal/libbde/releases/download/${PORTVERSION:E}/ \
 		LOCAL/antoine
 
