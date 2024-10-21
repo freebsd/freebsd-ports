@@ -431,7 +431,6 @@
     SUBDIR += fusefs-chironfs
     SUBDIR += fusefs-cryptofs
     SUBDIR += fusefs-curlftpfs
-    SUBDIR += fusefs-encfs
     SUBDIR += fvcool
     SUBDIR += fwup
     SUBDIR += fx
