@@ -1,6 +1,7 @@
 PORTNAME=	git-filter-repo
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.45.0
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	cy@FreeBSD.org
@@ -20,6 +21,7 @@ SHEBANG_FILES=	git-filter-repo
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	newren
+GH_TAGNAME=	a9093a6
 
 NO_BUILD=	yes
 NO_ARCH=	yes
