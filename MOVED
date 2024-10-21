@@ -3554,3 +3554,4 @@ security/cfs|filesystems/cfs|2024-10-21|Moved to new category filesystems
 filesystems/py-fsspec-xrootd|filesystems/py-fsspec-xrootd|2024-10-21|Moved to new category filesystems
 devel/py-fsspec|filesystems/py-fsspec|2024-10-21|Moved to new category filesystems
 devel/py-fs2|filesystems/py-fs2|2024-10-21|Moved to new category filesystems
+sysutils/zrepl-dsh2dsh|filesystems/zrepl-dsh2dsh|2024-10-21|Moved to new category filesystems

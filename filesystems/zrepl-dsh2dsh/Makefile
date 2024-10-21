@@ -1,7 +1,7 @@
 PORTNAME=	zrepl
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.8.5
-CATEGORIES=	sysutils
+CATEGORIES=	filesystems sysutils
 PKGNAMESUFFIX=	-dsh2dsh
 
 MAINTAINER=	dsh@bamus.cz
