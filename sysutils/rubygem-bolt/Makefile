@@ -29,7 +29,7 @@ RUN_DEPENDS=	r10k:sysutils/rubygem-r10k \
 		rubygem-puppetfile-resolver>=0.6.2:sysutils/rubygem-puppetfile-resolver \
 		rubygem-ruby_smb>=1.0:net/rubygem-ruby_smb \
 		rubygem-terminal-table>=3.0<4:textproc/rubygem-terminal-table \
-		rubygem-winrm-fs>=1.3:sysutils/rubygem-winrm-fs \
+		rubygem-winrm-fs>=1.3:filesystems/rubygem-winrm-fs \
 		rubygem-winrm>=2.0:sysutils/rubygem-winrm
 
 USES=		gem shebangfix

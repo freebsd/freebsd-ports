@@ -1313,7 +1313,6 @@
     SUBDIR += rubygem-win32-file-stat
     SUBDIR += rubygem-winrm
     SUBDIR += rubygem-winrm-elevated
-    SUBDIR += rubygem-winrm-fs
     SUBDIR += rubygem-yell
     SUBDIR += runas
     SUBDIR += rundeck
