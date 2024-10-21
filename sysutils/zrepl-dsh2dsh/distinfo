@@ -1,5 +1,5 @@
-TIMESTAMP = 1728757205
-SHA256 (go/sysutils_zrepl-dsh2dsh/zrepl-v0.8.5/v0.8.5.mod) = fa6b007413229b4bcba2c4871c96a3024f0cd52e8a42b0e60ff844bff0a8a2c5
-SIZE (go/sysutils_zrepl-dsh2dsh/zrepl-v0.8.5/v0.8.5.mod) = 3490
-SHA256 (go/sysutils_zrepl-dsh2dsh/zrepl-v0.8.5/v0.8.5.zip) = b209f3417f5c1b5b4dee485eda8e54aec73689f3784333252c1fe001aa42fd62
-SIZE (go/sysutils_zrepl-dsh2dsh/zrepl-v0.8.5/v0.8.5.zip) = 605727
+TIMESTAMP = 1729520199
+SHA256 (go/sysutils_zrepl-dsh2dsh/zrepl-v0.8.9/v0.8.9.mod) = b1328a874b06ec042040304ef051aed69ba12d870b69789e77f3db456cf99946
+SIZE (go/sysutils_zrepl-dsh2dsh/zrepl-v0.8.9/v0.8.9.mod) = 3490
+SHA256 (go/sysutils_zrepl-dsh2dsh/zrepl-v0.8.9/v0.8.9.zip) = f0dbf0e40feb60e811dc46505eb9df0de82afe3b354c0d0d44945fcfb0dc49c8
+SIZE (go/sysutils_zrepl-dsh2dsh/zrepl-v0.8.9/v0.8.9.zip) = 600710

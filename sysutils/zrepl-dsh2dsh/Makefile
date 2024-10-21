@@ -1,6 +1,6 @@
 PORTNAME=	zrepl
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.8.5
+DISTVERSION=	0.8.9
 CATEGORIES=	sysutils
 PKGNAMESUFFIX=	-dsh2dsh
 
@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USES=		go:1.23,modules ncurses
 
 GO_MODULE=	github.com/dsh2dsh/${PORTNAME}
-GO_BUILDFLAGS=	-ldflags "${STRIP} -w -X github.com/dsh2dsh/${PORTNAME}/version.${PORTNAME}Version=${DISTVERSIONFULL}"
+GO_BUILDFLAGS=	-ldflags "${STRIP} -w -X github.com/dsh2dsh/${PORTNAME}/internal/version.${PORTNAME}Version=${DISTVERSIONFULL}"
 
 CONFLICTS_INSTALL=	${PORTNAME}
 
@@ -52,7 +52,7 @@ post-install:
 
 post-install-EXAMPLES-on:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/hooks
-	(cd ${WRKSRC}/config/samples && \
+	(cd ${WRKSRC}/internal/config/samples && \
 		${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR})
 	${INSTALL_DATA} \
 		${WRKSRC}/dist/grafana/grafana-prometheus-${PORTNAME}.json \
