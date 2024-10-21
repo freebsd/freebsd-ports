@@ -436,7 +436,6 @@
     SUBDIR += fusefs-ext2
     SUBDIR += fusefs-funionfs
     SUBDIR += fusefs-fusepak
-    SUBDIR += fusefs-gitfs
     SUBDIR += fvcool
     SUBDIR += fwup
     SUBDIR += fx

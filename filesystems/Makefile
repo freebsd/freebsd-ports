@@ -16,6 +16,7 @@
     SUBDIR += fusefs-libs
     SUBDIR += fusefs-libs3
     SUBDIR += genromfs
+    SUBDIR += gitfs
     SUBDIR += gvfs
     SUBDIR += hfsexplorer
     SUBDIR += hfsfuse
