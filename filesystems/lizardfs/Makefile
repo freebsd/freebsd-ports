@@ -2,7 +2,7 @@ PORTNAME=	lizardfs
 PORTVERSION=	3.12.0
 DISTVERSIONPREFIX=	v
 PORTREVISION=	22
-CATEGORIES=	sysutils
+CATEGORIES=	filesystems sysutils
 
 MAINTAINER=	jhixson@FreeBSD.org
 COMMENT=	Open Source Distributed Filesystem

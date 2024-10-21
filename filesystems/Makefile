@@ -6,6 +6,7 @@
     SUBDIR += hfsexplorer
     SUBDIR += hfsutils
     SUBDIR += linux-c7-dosfstools
+    SUBDIR += lizardfs
     SUBDIR += ltfs
     SUBDIR += mergerfs
     SUBDIR += moosefs2-cgi
