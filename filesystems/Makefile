@@ -74,6 +74,7 @@
     SUBDIR += scan_ffs
     SUBDIR += squashfs-tools
     SUBDIR += squashfs-tools-ng
+    SUBDIR += sshfs
     SUBDIR += tclvfs
     SUBDIR += ufs
     SUBDIR += ufs_copy

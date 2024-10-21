@@ -460,7 +460,6 @@
     SUBDIR += fusefs-smbnetfs
     SUBDIR += fusefs-sqlfs
     SUBDIR += fusefs-squashfuse
-    SUBDIR += fusefs-sshfs
     SUBDIR += fvcool
     SUBDIR += fwup
     SUBDIR += fx
