@@ -1,7 +1,7 @@
 PORTNAME=	jp2a
-DISTVERSION=	1.3.0
+DISTVERSIONPREFIX=	v
+DISTVERSION=	1.3.1
 CATEGORIES=	graphics
-MASTER_SITES=	https://github.com/Talinx/${PORTNAME}/releases/download/v${DISTVERSION}/
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Converts JPG images to ASCII
@@ -15,8 +15,10 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libpng.so:graphics/png \
 		libwebp.so:graphics/webp
 
-USES=		jpeg localbase ncurses pkgconfig tar:bz2
+USES=		autoreconf jpeg localbase ncurses pkgconfig
 USE_CSTD=	c99
+USE_GITHUB=	yes
+GH_ACCOUNT=	Talinx
 
 GNU_CONFIGURE=	yes
 
