@@ -27,6 +27,7 @@
     SUBDIR += fusepak
     SUBDIR += genromfs
     SUBDIR += gitfs
+    SUBDIR += gphotofs
     SUBDIR += gvfs
     SUBDIR += hfsexplorer
     SUBDIR += hfsfuse

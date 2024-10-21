@@ -1,7 +1,7 @@
 PORTNAME=	gphotofs
 PORTVERSION=	0.5
 PORTREVISION=	5
-CATEGORIES=	graphics sysutils
+CATEGORIES=	filesystems graphics sysutils
 MASTER_SITES=	SF/gphoto/${PORTNAME}/${PORTVERSION}.0
 PKGNAMEPREFIX=	fusefs-
 

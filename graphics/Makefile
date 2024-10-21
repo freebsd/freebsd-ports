@@ -215,7 +215,6 @@
     SUBDIR += frei0r-plugins-opencv
     SUBDIR += frogr
     SUBDIR += ftgl
-    SUBDIR += fusefs-gphotofs
     SUBDIR += fv
     SUBDIR += fyre
     SUBDIR += g2

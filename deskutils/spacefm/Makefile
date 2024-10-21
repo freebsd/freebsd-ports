@@ -55,7 +55,7 @@ LSOF_DESC=		Device processes
 LSOF_RUN_DEPENDS=	lsof:sysutils/lsof
 
 PHOTOFS_DESC=		Mount cameras
-PHOTOFS_RUN_DEPENDS=	fusefs-gphotofs>0:graphics/fusefs-gphotofs
+PHOTOFS_RUN_DEPENDS=	fusefs-gphotofs>0:filesystems/gphotofs
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|#!/bin/bash|#!${LOCALBASE}/bin/bash|' \
