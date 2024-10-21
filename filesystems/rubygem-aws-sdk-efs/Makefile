@@ -1,6 +1,6 @@
 PORTNAME=	aws-sdk-efs
 PORTVERSION=	1.85.0
-CATEGORIES=	devel rubygems
+CATEGORIES=	filesystems devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
