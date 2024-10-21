@@ -1688,7 +1688,6 @@
     SUBDIR += zeroer
     SUBDIR += zetaback
     SUBDIR += zetaback-devel
-    SUBDIR += zfs-periodic
     SUBDIR += zidrav
     SUBDIR += znapzend
     SUBDIR += zogftw
