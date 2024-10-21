@@ -14,8 +14,12 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		go:modules
 
-GO_MODULE=	github.com/joewalnes/websocketd
+#GO_MODULE=	github.com/joewalnes/websocketd
 
 PLIST_FILES=	bin/websocketd
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	joewalnes
+GH_TUPLE=	gorilla:websocket:v1.4.0:gorilla_websocket/vendor/github.com/gorilla/websocket
 
 .include <bsd.port.mk>
