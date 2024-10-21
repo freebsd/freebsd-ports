@@ -78,7 +78,6 @@
     SUBDIR += automount
     SUBDIR += automounter
     SUBDIR += autorestic
-    SUBDIR += avfs
     SUBDIR += azure-agent
     SUBDIR += b2sum
     SUBDIR += b3sum

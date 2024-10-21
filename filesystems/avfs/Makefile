@@ -1,6 +1,6 @@
 PORTNAME=	avfs
 PORTVERSION=	1.1.4
-CATEGORIES=	sysutils
+CATEGORIES=	filesystems sysutils
 MASTER_SITES=	SF/avf/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	danfe@FreeBSD.org

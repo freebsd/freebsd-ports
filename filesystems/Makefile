@@ -1,5 +1,6 @@
     COMMENT = File systems and related utilities
 
+    SUBDIR += avfs
     SUBDIR += cfs
     SUBDIR += cramfs
     SUBDIR += darling-dmg
