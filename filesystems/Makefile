@@ -56,6 +56,7 @@
     SUBDIR += scan_ffs
     SUBDIR += squashfs-tools
     SUBDIR += squashfs-tools-ng
+    SUBDIR += tclvfs
     SUBDIR += ufs_copy
     SUBDIR += vzvol
     SUBDIR += wimlib
