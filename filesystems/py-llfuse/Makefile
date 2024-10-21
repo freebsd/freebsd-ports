@@ -1,6 +1,6 @@
 PORTNAME=	llfuse
 PORTVERSION=	1.5.1
-CATEGORIES=	devel python
+CATEGORIES=	filesystems devel python
 MASTER_SITES=	PYPI \
 		https://github.com/python-llfuse/python-llfuse/releases/download/release-${PORTVERSION}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}

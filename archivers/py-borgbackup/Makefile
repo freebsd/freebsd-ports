@@ -35,7 +35,7 @@ OPTIONS_DEFINE=		FUSE
 OPTIONS_DEFAULT=	FUSE
 
 FUSE_DESC=	Support to mount locally borg backup files
-FUSE_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}llfuse>0:devel/py-llfuse@${PY_FLAVOR}
+FUSE_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}llfuse>0:filesystems/py-llfuse@${PY_FLAVOR}
 
 .include <bsd.port.pre.mk>
 
