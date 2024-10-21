@@ -783,7 +783,6 @@
     SUBDIR += moosefs2-netdump
     SUBDIR += moosefs3-cgi
     SUBDIR += moosefs3-cgiserv
-    SUBDIR += moosefs3-chunkserver
     SUBDIR += moreutils
     SUBDIR += most
     SUBDIR += mountsmb2
