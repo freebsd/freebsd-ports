@@ -444,7 +444,6 @@
     SUBDIR += fusefs-jmtpfs
     SUBDIR += fusefs-libs
     SUBDIR += fusefs-libs3
-    SUBDIR += fusefs-lkl
     SUBDIR += fvcool
     SUBDIR += fwup
     SUBDIR += fx
