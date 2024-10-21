@@ -32,7 +32,7 @@ LKL_DESC=	Btrfs and XFS support through Linux Kernel Library
 NTFS_DESC=	Mount NTFS filesystems with read and write support
 PTP_DESC=	Picture Transfer Protocol support
 
-EXFAT_RUN_DEPENDS=	mount.exfat:sysutils/fusefs-exfat
+EXFAT_RUN_DEPENDS=	mount.exfat:filesystems/exfat
 EXT4_RUN_DEPENDS=	fuse-ext2:filesystems/ext2
 HFS_RUN_DEPENDS=	hfsfuse:filesystems/hfsfuse
 LKL_RUN_DEPENDS=	lklfuse:filesystems/lkl

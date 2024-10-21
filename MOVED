@@ -3667,3 +3667,4 @@ sysutils/fusefs-gitfs|filesystems/gitfs|2024-10-21|Moved to new category filesys
 sysutils/fusefs-fusepak|filesystems/fusepak|2024-10-21|Moved to new category filesystems
 sysutils/fusefs-funionfs|filesystems/funionfs|2024-10-21|Moved to new category filesystems
 sysutils/fusefs-ext2|filesystems/fusefs-ext2|2024-10-21|Moved to new category filesystems
+sysutils/fusefs-exfat|filesystems/exfat|2024-10-21|Moved to new category filesystems

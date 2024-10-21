@@ -432,7 +432,6 @@
     SUBDIR += fusefs-cryptofs
     SUBDIR += fusefs-curlftpfs
     SUBDIR += fusefs-encfs
-    SUBDIR += fusefs-exfat
     SUBDIR += fvcool
     SUBDIR += fwup
     SUBDIR += fx

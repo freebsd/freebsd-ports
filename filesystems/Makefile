@@ -10,6 +10,7 @@
     SUBDIR += e2fsprogs
     SUBDIR += e2fsprogs-core
     SUBDIR += e2tools
+    SUBDIR += exfat
     SUBDIR += exfat-utils
     SUBDIR += ext2
     SUBDIR += fstyp
