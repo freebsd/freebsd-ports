@@ -48,6 +48,7 @@
     SUBDIR += moosefs3-netdump
     SUBDIR += mtools
     SUBDIR += mtpfs
+    SUBDIR += nbt
     SUBDIR += ntfs
     SUBDIR += ntfs-compression
     SUBDIR += ntfs2btrfs
