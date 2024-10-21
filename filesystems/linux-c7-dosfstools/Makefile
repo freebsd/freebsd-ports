@@ -1,7 +1,7 @@
 PORTNAME=	dosfstools
 PORTVERSION=	3.0.20
 DISTVERSIONSUFFIX=	-10.el7
-CATEGORIES=	sysutils linux
+CATEGORIES=	filesystems sysutils linux
 
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Utilities for MS-DOS FAT filesystems (CentOS ${LINUX_DIST_VER})

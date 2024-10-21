@@ -3543,3 +3543,4 @@ sysutils/fusefs-mergerfs|filesystems/mergerfs|2024-10-21|Moved to new category f
 filesystems/squashfs-tools-ng|filesystems/squashfs-tools-ng|2024-10-21|Moved to new category filesystems
 sysutils/squashfs-tools|filesystems/squashfs-tools|2024-10-21|Moved to new category filesystems
 sysutils/py-zfs-autobackup|filesystems/py-zfs-autobackup|2024-10-21|Moved to new category filesystems
+sysutils/linux-c7-dosfstools|filesystems/linux-c7-dosfstools|2024-10-21|Moved to new category filesystems

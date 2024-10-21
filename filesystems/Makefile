@@ -1,5 +1,6 @@
     COMMENT = File systems and related utilities
 
+    SUBDIR += linux-c7-dosfstools
     SUBDIR += mergerfs
     SUBDIR += py-zfs-autobackup
     SUBDIR += squashfs-tools
