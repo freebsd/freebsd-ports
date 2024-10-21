@@ -457,7 +457,6 @@
     SUBDIR += fusefs-sandboxfs
     SUBDIR += fusefs-securefs
     SUBDIR += fusefs-simple-mtpfs
-    SUBDIR += fusefs-smbnetfs
     SUBDIR += fvcool
     SUBDIR += fwup
     SUBDIR += fx
