@@ -459,7 +459,6 @@
     SUBDIR += fusefs-simple-mtpfs
     SUBDIR += fusefs-smbnetfs
     SUBDIR += fusefs-sqlfs
-    SUBDIR += fusefs-squashfuse
     SUBDIR += fvcool
     SUBDIR += fwup
     SUBDIR += fx

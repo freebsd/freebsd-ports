@@ -1,7 +1,7 @@
 PORTNAME=	squashfuse
 PORTVERSION=	0.1.104
 PORTREVISION=	1
-CATEGORIES=	sysutils
+CATEGORIES=	filesystems
 MASTER_SITES=	https://github.com/vasi/${PORTNAME}/releases/download/${DISTVERSION}/
 PKGNAMEPREFIX=	fusefs-
 

@@ -3640,3 +3640,4 @@ sysutils/fusefs-unreliablefs|filesystems/unreliablefs|2024-10-21|Moved to new ca
 sysutils/fusefs-unionfs|filesystems/unionfs|2024-10-21|Moved to new category filesystems
 sysutils/fusefs-ufs|filesystems/ufs|2024-10-21|Moved to new category filesystems
 sysutils/fusefs-sshfs|filesystems/sshfs|2024-10-21|Moved to new category filesystems
+sysutils/fusefs-squashfuse|filesystems/squashfuse|2024-10-21|Moved to new category filesystems
