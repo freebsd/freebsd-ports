@@ -1,7 +1,7 @@
 PORTNAME=	ntfs-compression
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.0
-CATEGORIES=	sysutils
+CATEGORIES=	filesystems
 PKGNAMEPREFIX=	fusefs-
 
 MAINTAINER=	danfe@FreeBSD.org

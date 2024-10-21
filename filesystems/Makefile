@@ -48,6 +48,7 @@
     SUBDIR += moosefs3-netdump
     SUBDIR += mtools
     SUBDIR += mtpfs
+    SUBDIR += ntfs-compression
     SUBDIR += ntfs2btrfs
     SUBDIR += openzfs
     SUBDIR += openzfs-kmod

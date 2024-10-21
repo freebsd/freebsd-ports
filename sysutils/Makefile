@@ -449,7 +449,6 @@
     SUBDIR += fusefs-mp3fs
     SUBDIR += fusefs-nbt
     SUBDIR += fusefs-ntfs
-    SUBDIR += fusefs-ntfs-compression
     SUBDIR += fvcool
     SUBDIR += fwup
     SUBDIR += fx
