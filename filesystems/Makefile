@@ -13,6 +13,7 @@
     SUBDIR += py-fs2
     SUBDIR += py-fsspec
     SUBDIR += py-fsspec-xrootd
+    SUBDIR += py-prometheus-zfs
     SUBDIR += py-zfs-autobackup
     SUBDIR += rubygem-winrm-fs
     SUBDIR += scan_ffs

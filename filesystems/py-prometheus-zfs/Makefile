@@ -1,7 +1,7 @@
 PORTNAME=	prometheus-zfs
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.0.4
-CATEGORIES=	sysutils python
+CATEGORIES=	filesystems sysutils python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	0mp@FreeBSD.org
