@@ -1,6 +1,6 @@
 PORTNAME=	Horde_Vfs
 PORTVERSION=	2.4.2
-CATEGORIES=	sysutils www pear
+CATEGORIES=	filesystems sysutils www pear
 PKGNAMEPREFIX=	${PEAR_PKGNAMEPREFIX}
 
 MAINTAINER=	horde@FreeBSD.org

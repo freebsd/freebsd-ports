@@ -7,6 +7,7 @@
     SUBDIR += hfsutils
     SUBDIR += linux-c7-dosfstools
     SUBDIR += mergerfs
+    SUBDIR += pear-Horde_Vfs
     SUBDIR += progsreiserfs
     SUBDIR += py-dfvfs
     SUBDIR += py-fs2
