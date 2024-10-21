@@ -1,7 +1,7 @@
 PORTNAME=	securefs
 DISTVERSION=	0.14.3
 PORTREVISION=	2
-CATEGORIES=	sysutils
+CATEGORIES=	filesystems
 PKGNAMEPREFIX=	fusefs-
 
 MAINTAINER=	ports@FreeBSD.org
