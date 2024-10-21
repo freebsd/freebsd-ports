@@ -11,7 +11,7 @@ WWW=		https://github.com/ebiggers/ntfs-3g-system-compression
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libntfs-3g.so:sysutils/fusefs-ntfs
+LIB_DEPENDS=	libntfs-3g.so:filesystems/ntfs
 
 USES=		autoreconf libtool pkgconfig
 GNU_CONFIGURE=	yes

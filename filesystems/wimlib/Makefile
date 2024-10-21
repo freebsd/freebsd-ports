@@ -25,6 +25,6 @@ OPTIONS_DEFAULT=	NTFS
 NTFS_DESC=	Build with libntfs-3g for NTFS support (recommended)
 
 NTFS_CONFIGURE_WITH=	ntfs-3g
-NTFS_LIB_DEPENDS=	libntfs-3g.so:sysutils/fusefs-ntfs
+NTFS_LIB_DEPENDS=	libntfs-3g.so:filesystems/ntfs
 
 .include <bsd.port.mk>

@@ -17,7 +17,7 @@ NO_ARCH=	yes
 OPTIONS_DEFINE=		NTFS3G EXT4 EXFAT HFS
 OPTIONS_DEFAULT=	NTFS3G EXT4 EXFAT HFS
 NTFS3G_DESC=		Enable NTFS write support with ntfs-3g over FUSE
-NTFS3G_RUN_DEPENDS=	fusefs-ntfs>=0:sysutils/fusefs-ntfs
+NTFS3G_RUN_DEPENDS=	fusefs-ntfs>=0:filesystems/ntfs
 EXT4_DESC=		Support EXT2/3/4 filesystem
 EXT4_RUN_DEPENDS=	fusefs-lkl>=0:sysutils/fusefs-lkl
 HFS_DESC=		Support macOS HFS filesystem

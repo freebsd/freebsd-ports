@@ -1,7 +1,7 @@
 PORTNAME=	ntfs
 PORTVERSION=	2022.10.3
 PORTREVISION=	1
-CATEGORIES=	sysutils
+CATEGORIES=	filesystems
 MASTER_SITES=	https://download.tuxera.com/opensource/
 PKGNAMEPREFIX=	fusefs-
 DISTNAME=	${PORTNAME}-3g_ntfsprogs-${PORTVERSION}

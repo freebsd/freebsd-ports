@@ -37,7 +37,7 @@ EXT4_RUN_DEPENDS=	fuse-ext2:sysutils/fusefs-ext2
 HFS_RUN_DEPENDS=	hfsfuse:sysutils/fusefs-hfsfuse
 LKL_RUN_DEPENDS=	lklfuse:sysutils/fusefs-lkl
 MTP_RUN_DEPENDS=	jmtpfs:sysutils/fusefs-jmtpfs
-NTFS_RUN_DEPENDS=	ntfs-3g:sysutils/fusefs-ntfs
+NTFS_RUN_DEPENDS=	ntfs-3g:filesystems/ntfs
 PTP_RUN_DEPENDS=	gphotofs:graphics/fusefs-gphotofs
 
 .include <bsd.port.mk>
