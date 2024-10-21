@@ -1296,7 +1296,6 @@
     SUBDIR += libfsapfs
     SUBDIR += libfsext
     SUBDIR += libfsfat
-    SUBDIR += libfshfs
     SUBDIR += libftdi
     SUBDIR += libftdi1
     SUBDIR += libfwnt
