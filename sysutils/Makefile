@@ -775,7 +775,6 @@
     SUBDIR += monitorix
     SUBDIR += moosefs2-cgi
     SUBDIR += moosefs2-cgiserv
-    SUBDIR += moosefs2-chunkserver
     SUBDIR += moreutils
     SUBDIR += most
     SUBDIR += mountsmb2
