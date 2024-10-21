@@ -552,7 +552,6 @@
     SUBDIR += hextools
     SUBDIR += hexyl
     SUBDIR += hfsexplorer
-    SUBDIR += hfsutils
     SUBDIR += hid-tools
     SUBDIR += highlnk
     SUBDIR += hilite

@@ -1,7 +1,7 @@
 PORTNAME=	hfsutils
 PORTVERSION=	3.2.6
 PORTREVISION=	4
-CATEGORIES=	sysutils
+CATEGORIES=	filesystems sysutils
 MASTER_SITES=	ftp://ftp.mars.org/pub/hfs/
 
 MAINTAINER=	ports@FreeBSD.org
