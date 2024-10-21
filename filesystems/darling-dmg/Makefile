@@ -1,7 +1,7 @@
 PORTNAME=	darling-dmg
 DISTVERSIONPREFIX=v
 DISTVERSION=	1.0.4
-CATEGORIES=	sysutils
+CATEGORIES=	filesystems sysutils
 
 MAINTAINER=	freebsd@sysctl.cz
 COMMENT=	FUSE module for .dmg files (containing an HFS+ filesystem)

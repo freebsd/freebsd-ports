@@ -1,6 +1,7 @@
     COMMENT = File systems and related utilities
 
     SUBDIR += cfs
+    SUBDIR += darling-dmg
     SUBDIR += e2fsprogs
     SUBDIR += e2fsprogs-core
     SUBDIR += e2tools
