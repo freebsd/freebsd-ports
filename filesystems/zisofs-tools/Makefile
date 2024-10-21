@@ -1,7 +1,7 @@
 PORTNAME=	zisofs-tools
 PORTVERSION=	1.0.8
 PORTREVISION=	2
-CATEGORIES=	sysutils
+CATEGORIES=	filesystems sysutils
 MASTER_SITES=	KERNEL_ORG/linux/utils/fs/zisofs
 
 MAINTAINER=	chip-set@mail.ru
