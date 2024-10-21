@@ -1,7 +1,7 @@
 PORTNAME=	wimlib
 PORTVERSION=	1.13.0
 PORTREVISION=	3
-CATEGORIES=	sysutils
+CATEGORIES=	filesystems sysutils
 MASTER_SITES=	https://wimlib.net/downloads/
 
 MAINTAINER=	mail_of_sergey@mail.ru
