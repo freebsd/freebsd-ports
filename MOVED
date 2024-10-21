@@ -3669,3 +3669,4 @@ sysutils/fusefs-funionfs|filesystems/funionfs|2024-10-21|Moved to new category f
 sysutils/fusefs-ext2|filesystems/fusefs-ext2|2024-10-21|Moved to new category filesystems
 sysutils/fusefs-exfat|filesystems/exfat|2024-10-21|Moved to new category filesystems
 sysutils/fusefs-encfs|filesystems/encfs|2024-10-21|Moved to new category filesystems
+sysutils/fusefs-curlftpfs|filesystems/curlftpfs|2024-10-21|Moved to new category filesystems

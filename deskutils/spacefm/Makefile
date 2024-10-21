@@ -43,7 +43,7 @@ OPTIONS_GROUP_OPT_DEPS=	CURLFTPFS IFUSE JMTPFS LSOF PHOTOFS
 PORTDOCS=	*
 
 CURLFTPFS_DESC=		Mount FTP shares
-CURLFTPFS_RUN_DEPENDS=	fusefs-curlftpfs>0:sysutils/fusefs-curlftpfs
+CURLFTPFS_RUN_DEPENDS=	fusefs-curlftpfs>0:filesystems/curlftpfs
 
 IFUSE_DESC=		Mount your iPhone/iPod Touch
 IFUSE_RUN_DEPENDS=	fusefs-ifuse>0:filesystems/ifuse
