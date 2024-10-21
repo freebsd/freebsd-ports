@@ -894,7 +894,6 @@
     SUBDIR += p5-Filesys-DiskFree
     SUBDIR += p5-Filesys-DiskSpace
     SUBDIR += p5-Filesys-DiskUsage
-    SUBDIR += p5-Filesys-Statvfs
     SUBDIR += p5-Filesys-ZFS
     SUBDIR += p5-Filesys-ZFS-Stat
     SUBDIR += p5-Fuse-Simple

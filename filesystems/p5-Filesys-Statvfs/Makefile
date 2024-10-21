@@ -1,7 +1,7 @@
 PORTNAME=	Filesys-Statvfs
 PORTVERSION=	0.82
 PORTREVISION=	1
-CATEGORIES=	sysutils perl5
+CATEGORIES=	filesystems sysutils perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
