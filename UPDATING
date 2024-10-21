@@ -5,6 +5,18 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20241109:
+  AFFECTS: all users of i386
+  AUTHOR: asomers@FreeBSD.org
+
+  On i386 the lang/rust port has been updated to require SSE2 by default.  Not
+  only does the compiler itself require SSE2, but it unconditionally generates
+  code that requires it, too.  Over 500 ports include Rust code (www/firefox,
+  security/py-cryptography, etc).  Official binary packages of all of those
+  ports will no longer work on Pentium III and older hardware.  PIII users must
+  now build their own lang/rust packages, clearing the SSE2 option, and rebuild
+  any dependent ports.
+
 20241104:
   AFFECTS: users of mail/fetchmail
   AUTHOR: chalpin@cs.wisc.edu
