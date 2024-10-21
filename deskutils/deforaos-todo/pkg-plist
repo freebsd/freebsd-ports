@@ -1,9 +1,15 @@
 bin/todo
+include/Desktop/Todo.h
+lib/libTodo.a
+lib/libTodo.so
+lib/libTodo.so.0
+lib/libTodo.so.0.0
+libdata/pkgconfig/Todo.pc
+%%PORTDOCS%%share/doc/Todo/COPYING
 %%PORTDOCS%%share/man/man1/todo.1.gz
-share/applications/deforaos-todo.desktop
+share/applications/org.defora.todo.desktop
 share/icons/hicolor/16x16/apps/todo.png
 share/icons/hicolor/24x24/apps/todo.png
 share/icons/hicolor/48x48/apps/todo.png
-lib/Mailer/plugins/todo.so
 %%NLS%%share/locale/fr/LC_MESSAGES/Todo.mo
 %%NLS%%share/locale/es/LC_MESSAGES/Todo.mo

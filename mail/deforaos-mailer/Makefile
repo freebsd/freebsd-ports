@@ -1,8 +1,7 @@
 PORTNAME=	mailer
-PORTVERSION=	0.1.7
-PORTREVISION=	2
+PORTVERSION=	0.2.0
 CATEGORIES=	mail
-MASTER_SITES=	http://www.defora.org/os/download/download/4426/
+MASTER_SITES=	https://ftp.defora.org/pub/DeforaOS/Apps/Desktop/src/Mailer/
 PKGNAMEPREFIX=	deforaos-
 DISTNAME=	Mailer-${PORTVERSION}
 
@@ -10,18 +9,19 @@ MAINTAINER=	khorben@defora.org
 COMMENT=	DeforaOS desktop mail client
 WWW=		https://www.defora.org/
 
-LICENSE=	GPLv3
+LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libSystem.so:devel/deforaos-libsystem \
+LIB_DEPENDS=	libDesktop.so:x11/deforaos-libdesktop \
+		libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
 		libharfbuzz.so:print/harfbuzz \
-		libfontconfig.so:x11-fonts/fontconfig \
-		libDesktop.so:x11/deforaos-libdesktop
+		libSystem.so:devel/deforaos-libsystem
 
-USES=		gnome pkgconfig ssl
-USE_GNOME=	cairo gdkpixbuf2 gtk20
+USES=		gnome pkgconfig ssl xorg
+USE_GNOME=	cairo gdkpixbuf2 gtk30
 USE_LDCONFIG=	yes
+USE_XORG=	x11
 
 MAKE_ARGS+=	PREFIX=${PREFIX}
 MAKE_ENV+=	MANDIR=${STAGEDIR}${PREFIX}/share/man
@@ -31,16 +31,13 @@ MAKE_JOBS_UNSAFE=	yes
 OPTIONS_DEFINE=	DOCS NLS
 OPTIONS_SUB=	yes
 
-DOCS_BUILD_DEPENDS=	xsltproc:textproc/libxslt \
-	${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl:textproc/docbook-xsl
+DOCS_BUILD_DEPENDS=	${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl:textproc/docbook-xsl \
+			gtkdoc-check:textproc/gtk-doc \
+			xsltproc:textproc/libxslt
+
 NLS_USES=	gettext
 
 .include <bsd.port.pre.mk>
-
-.if ${SSL_DEFAULT} == base
-# openssl from base doesn't install a .pc file and pkg-config didn't like it
-CONFIGURE_ENV+=	libssl_CFLAGS="-I${OPENSSLINC}" libssl_LIBS="-L${OPENSSLLIB} -lssl"
-.endif
 
 post-patch-DOCS-off:
 	${REINPLACE_CMD} 's|data doc include|data include|' \
@@ -53,14 +50,8 @@ post-patch-NLS-off:
 post-patch:
 	${REINPLACE_CMD} -e 's|/lib/|/libdata/|g' \
 		${WRKSRC}/data/pkgconfig.sh
-	${REINPLACE_CMD} 's/-lssl/& -lcrypto/' \
-		${WRKSRC}/src/Makefile ${WRKSRC}/src/account/Makefile \
-		${WRKSRC}/src/plugins/Makefile ${WRKSRC}/tests/Makefile
-	${REINPLACE_CMD} 's|-Wl,-pie||g' \
-		${WRKSRC}/src/Makefile \
-		${WRKSRC}/tests/Makefile
 .if ${OPSYS} == FreeBSD
-	${REINPLACE_CMD} 's/stack-protector-all/stack-protector-all -Wno-error=int-conversion/g' \
+	${REINPLACE_CMD} 's/-fstack-protector/-fstack-protector -Wno-error=int-conversion/g' \
 		${WRKSRC}/src/Makefile \
 		${WRKSRC}/src/account/Makefile \
 		${WRKSRC}/src/plugins/Makefile \
@@ -69,8 +60,8 @@ post-patch:
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/* \
-		${STAGEDIR}${PREFIX}/lib/Mailer/plugins/* \
-		${STAGEDIR}${PREFIX}/lib/Mailer/account/* \
+		${STAGEDIR}${PREFIX}/lib/Mailer/plugins/*.so \
+		${STAGEDIR}${PREFIX}/lib/Mailer/account/*.so \
 		${STAGEDIR}${PREFIX}/lib/libMailer.so.0.0
 
 .include <bsd.port.post.mk>

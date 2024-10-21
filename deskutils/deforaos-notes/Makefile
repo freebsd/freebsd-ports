@@ -1,47 +1,45 @@
-PORTNAME=	surfer
-PORTVERSION=	0.3.1
-PORTREVISION=	3
-CATEGORIES=	www
-MASTER_SITES=	https://ftp.defora.org/pub/DeforaOS/Apps/Desktop/src/Surfer/
+PORTNAME=	notes
+PORTVERSION=	0.2.1
+CATEGORIES=	deskutils
+MASTER_SITES=	https://ftp.defora.org/pub/DeforaOS/Apps/Desktop/src/Notes/
 PKGNAMEPREFIX=	deforaos-
-DISTNAME=	Surfer-${PORTVERSION}
+DISTNAME=	Notes-${PORTVERSION}
 
 MAINTAINER=	khorben@defora.org
-COMMENT=	DeforaOS desktop web browser
+COMMENT=	DeforaOS desktop notes
 WWW=		https://www.defora.org/
 
-LICENSE=	GPLv3
+LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libDesktop.so:x11/deforaos-libdesktop \
-		libharfbuzz.so:print/harfbuzz \
-		libsoup-2.4.so:devel/libsoup \
-		libSystem.so:devel/deforaos-libsystem \
-		libwebkit2gtk-4.0.so:www/webkit2-gtk3
+		libSystem.so:devel/deforaos-libsystem
 
 USES=		desktop-file-utils gnome pkgconfig xorg
-USE_GNOME=	cairo gdkpixbuf2 gtk30
+USE_GNOME=	gtk30
 USE_XORG=	x11
-
-MAKE_ARGS=	PREFIX=${PREFIX}
-MAKE_ENV+=	MANDIR=${STAGEDIR}${PREFIX}/share/man
+MAKE_ARGS+=	PREFIX=${PREFIX}
 
 OPTIONS_DEFINE=		DOCS NLS
 OPTIONS_SUB=		yes
 DOCS_BUILD_DEPENDS=	${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl:textproc/docbook-xsl \
 			xsltproc:textproc/libxslt
-
 NLS_USES=		gettext
+
+post-patch:
+	${REINPLACE_CMD} 's|-Wl,-pie||g' \
+		${WRKSRC}/src/Makefile
 
 post-patch-DOCS-off:
 	${REINPLACE_CMD} 's|= data doc|= data|' \
 		${WRKSRC}/Makefile
 
 post-patch-NLS-off:
-	${REINPLACE_CMD} 's|data po src|data src|' \
+	${REINPLACE_CMD} 's|po src tools|src tools|' \
 		${WRKSRC}/Makefile
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/*
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/notes \
+		${STAGEDIR}${PREFIX}/lib/libNotes.so.0.0
 
 .include <bsd.port.mk>

@@ -1,8 +1,9 @@
 bin/player
 bin/playerctl
 include/Desktop/Player.h
-share/man/man1/player.1.gz
-share/man/man1/playerctl.1.gz
+%%PORTDOCS%%share/man/man1/player.1.gz
+%%PORTDOCS%%share/man/man1/playerctl.1.gz
 share/Player/splash.png
-share/applications/player.desktop
-share/locale/fr/LC_MESSAGES/Player.mo
+share/applications/deforaos-player.desktop
+%%NLS%%share/locale/es/LC_MESSAGES/Player.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/Player.mo
