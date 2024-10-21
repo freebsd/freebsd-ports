@@ -1,7 +1,7 @@
 PORTNAME=	archivemount
 DISTVERSION=	0.9.1
 PORTREVISION=	1
-CATEGORIES=	sysutils
+CATEGORIES=	filesystems sysutils
 MASTER_SITES=	https://www.cybernoia.de/software/archivemount/
 
 MAINTAINER=	jirnov@gmail.com

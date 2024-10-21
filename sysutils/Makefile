@@ -59,7 +59,6 @@
     SUBDIR += arc_summary
     SUBDIR += arcconf
     SUBDIR += archey4
-    SUBDIR += archivemount
     SUBDIR += ascpu
     SUBDIR += asfsm
     SUBDIR += asmctl

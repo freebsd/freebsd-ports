@@ -3609,3 +3609,4 @@ sysutils/e2fsprogs-core|filesystems/e2fsprogs-core|2024-10-21|Moved to new categ
 sysutils/darling-dmg|filesystems/darling-dmg|2024-10-21|Moved to new category filesystems
 sysutils/cramfs|filesystems/cramfs|2024-10-21|Moved to new category filesystems
 sysutils/avfs|filesystems/avfs|2024-10-21|Moved to new category filesystems
+sysutils/archivemount|filesystems/archivemount|2024-10-21|Moved to new category filesystems

@@ -1,5 +1,6 @@
     COMMENT = File systems and related utilities
 
+    SUBDIR += archivemount
     SUBDIR += avfs
     SUBDIR += cfs
     SUBDIR += cramfs
