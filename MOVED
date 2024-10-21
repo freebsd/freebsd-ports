@@ -3643,3 +3643,4 @@ sysutils/fusefs-sshfs|filesystems/sshfs|2024-10-21|Moved to new category filesys
 sysutils/fusefs-squashfuse|filesystems/squashfuse|2024-10-21|Moved to new category filesystems
 sysutils/fusefs-sqlfs|filesystems/sqlfs|2024-10-21|Moved to new category filesystems
 sysutils/fusefs-smbnetfs|filesystems/smbnetfs|2024-10-21|Moved to new category filesystems
+sysutils/fusefs-simple-mtpfs|filesystems/simple-mtpfs|2024-10-21|Moved to new category filesystems

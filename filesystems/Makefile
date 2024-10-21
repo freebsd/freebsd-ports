@@ -72,6 +72,7 @@
     SUBDIR += rubygem-aws-sdk-efs
     SUBDIR += rubygem-winrm-fs
     SUBDIR += scan_ffs
+    SUBDIR += simple-mtpfs
     SUBDIR += smbnetfs
     SUBDIR += sqlfs
     SUBDIR += squashfs-tools
