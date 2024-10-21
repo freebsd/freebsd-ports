@@ -3558,4 +3558,5 @@ filesystems/zrepl-dsh2dsh|filesystems/zrepl-dsh2dsh|2024-10-21|Moved to new cate
 sysutils/zrepl|filesystems/zrepl|2024-10-21|Moved to new category filesystems
 sysutils/zisofs-tools|filesystems/zisofs-tools|2024-10-21|Moved to new category filesystems
 sysutils/zfstools|filesystems/zfstools|2024-10-21|Moved to new category filesystems
-sysutils/zfsnap2|filesystems/zfsnap2|2024-10-21|Moved to new category filesystems
+filesystems/zfsnap2|filesystems/zfsnap2|2024-10-21|Moved to new category filesystems
+sysutils/zfsnap|filesystems/zfsnap|2024-10-21|Moved to new category filesystems

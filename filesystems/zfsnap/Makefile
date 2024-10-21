@@ -2,7 +2,7 @@ PORTNAME=	zfsnap
 PORTVERSION=	1.11.1
 DISTVERSIONPREFIX=	v
 PORTREVISION=	1
-CATEGORIES=	sysutils
+CATEGORIES=	filesystems sysutils
 
 MAINTAINER=	yamagi@yamagi.org
 COMMENT=	Simple sh script to make zfs rolling snaphosts with cron
