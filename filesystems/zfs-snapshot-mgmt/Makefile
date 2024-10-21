@@ -1,7 +1,7 @@
 PORTNAME=	zfs-snapshot-mgmt
 PORTVERSION=	20090201
 PORTREVISION=	4
-CATEGORIES=	sysutils
+CATEGORIES=	filesystems sysutils
 MASTER_SITES=	http://marcin.studio4plus.com/files/
 
 MAINTAINER=	johntdarrah@gmail.com
