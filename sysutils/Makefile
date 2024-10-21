@@ -1690,7 +1690,6 @@
     SUBDIR += yank
     SUBDIR += yazi
     SUBDIR += z
-    SUBDIR += zap
     SUBDIR += zbackup
     SUBDIR += zeitgeist
     SUBDIR += zellij

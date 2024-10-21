@@ -1,7 +1,7 @@
 PORTNAME=	zap
 DISTVERSION=	0.8.3
 PORTREVISION=	1
-CATEGORIES=	sysutils
+CATEGORIES=	filesystems sysutils
 
 MAINTAINER=	jrm@FreeBSD.org
 COMMENT=	Maintain and replicate ZFS snapshots

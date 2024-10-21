@@ -3538,3 +3538,4 @@ devel/qscintilla2-qt5|devel/qscintilla2@qt5|2024-10-19|Converted to a flavorized
 devel/qscintilla2-qt6|devel/qscintilla2@qt6|2024-10-19|Converted to a flavorized port. Use devel/qscintilla2@qt6 instead
 devel/qscintilla2-designerplugin-qt5|devel/qscintilla2-designerplugin@qt5|2024-10-19|Converted to a flavorized port. Use devel/qscintilla2-designerplugin@qt5 instead
 lang/gcc10||2024-10-20|Has expired: Unsupported by upstream. Use GCC 12 or newer instead
+sysutils/zap|filesystems/zap|2024-10-21|Moved to new category filesystems
