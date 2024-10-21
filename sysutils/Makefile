@@ -453,7 +453,6 @@
     SUBDIR += fusefs-pod
     SUBDIR += fusefs-rar2fs
     SUBDIR += fusefs-s3backer
-    SUBDIR += fusefs-s3fs
     SUBDIR += fvcool
     SUBDIR += fwup
     SUBDIR += fx

@@ -71,6 +71,7 @@
     SUBDIR += R-cran-fs
     SUBDIR += rubygem-aws-sdk-efs
     SUBDIR += rubygem-winrm-fs
+    SUBDIR += s3fs
     SUBDIR += sandboxfs
     SUBDIR += scan_ffs
     SUBDIR += securefs
