@@ -36,6 +36,7 @@
     SUBDIR += moosefs3-master
     SUBDIR += moosefs3-metalogger
     SUBDIR += moosefs3-netdump
+    SUBDIR += mtools
     SUBDIR += mtpfs
     SUBDIR += ntfs2btrfs
     SUBDIR += openzfs

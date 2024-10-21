@@ -3613,3 +3613,4 @@ sysutils/archivemount|filesystems/archivemount|2024-10-21|Moved to new category 
 sysutils/acfgfs|filesystems/acfgfs|2024-10-21|Moved to new category filesystems
 sysutils/R-cran-fs|filesystems/R-cran-fs|2024-10-21|Moved to new category filesystems
 security/clamfs|filesystems/clamfs|2024-10-21|Moved to new category filesystems
+emulators/mtools|filesystems/mtools|2024-10-21|Moved to new category filesystems

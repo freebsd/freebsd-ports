@@ -10,7 +10,7 @@ WWW=		https://limine-bootloader.org/
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	mtools:emulators/mtools \
+BUILD_DEPENDS=	mtools:filesystems/mtools \
 		nasm:devel/nasm
 
 USES=		gmake

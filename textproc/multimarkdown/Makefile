@@ -26,7 +26,7 @@ OPTIONS_SUB=	yes
 
 CHEAT_SHEET_DESC=	HTML-based cheat sheat
 EXTRAS_DESC=		Extra scripts and XSLT support
-HELPERS_DESC=		Helper scripts (conflicts with emulators/mtools)
+HELPERS_DESC=		Helper scripts (conflicts with filesystems/mtools)
 
 CHEAT_SHEET_GH_PROJECT=	MultiMarkdown-6-Syntax-Guide:cheat
 CHEAT_SHEET_GH_SUBDIR=	cheat-sheet:cheat

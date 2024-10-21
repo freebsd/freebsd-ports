@@ -1,7 +1,7 @@
 PORTNAME=	mtools
 PORTVERSION=	4.0.43
 PORTREVISION=	1
-CATEGORIES=	emulators
+CATEGORIES=	filesystems emulators
 MASTER_SITES=	GNU
 
 MAINTAINER=	skreuzer@FreeBSD.org
