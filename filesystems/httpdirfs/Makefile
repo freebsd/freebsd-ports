@@ -1,7 +1,7 @@
 PORTNAME=	httpdirfs
 DISTVERSION=	1.2.3
 PORTREVISION=	1
-CATEGORIES=	sysutils
+CATEGORIES=	filesystems
 PKGNAMEPREFIX=	fusefs-
 
 MAINTAINER=	0mp@FreeBSD.org
