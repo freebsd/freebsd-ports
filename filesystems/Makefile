@@ -4,6 +4,7 @@
     SUBDIR += archivemount
     SUBDIR += avfs
     SUBDIR += cfs
+    SUBDIR += clamfs
     SUBDIR += cramfs
     SUBDIR += darling-dmg
     SUBDIR += e2fsprogs
