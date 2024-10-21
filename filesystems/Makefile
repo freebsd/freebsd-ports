@@ -1,5 +1,6 @@
     COMMENT = File systems and related utilities
 
+    SUBDIR += hfsexplorer
     SUBDIR += hfsutils
     SUBDIR += linux-c7-dosfstools
     SUBDIR += mergerfs

@@ -1,7 +1,7 @@
 PORTNAME=	hfsexplorer
 DISTVERSIONPREFIX=	${PORTNAME}-
 DISTVERSION=	2021.10.9
-CATEGORIES=	sysutils java
+CATEGORIES=	filesystems sysutils java
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	HFSExplorer read Mac-formatted harddisks and disk images
