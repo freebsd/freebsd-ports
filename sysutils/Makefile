@@ -434,7 +434,6 @@
     SUBDIR += fusefs-encfs
     SUBDIR += fusefs-exfat
     SUBDIR += fusefs-ext2
-    SUBDIR += fusefs-funionfs
     SUBDIR += fvcool
     SUBDIR += fwup
     SUBDIR += fx

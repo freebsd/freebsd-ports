@@ -3665,3 +3665,4 @@ sysutils/fusefs-httpdirfs|filesystems/httpdirfs|2024-10-21|Moved to new category
 sysutils/fusefs-hfsfuse|filesystems/hfsfuse|2024-10-21|Moved to new category filesystems
 sysutils/fusefs-gitfs|filesystems/gitfs|2024-10-21|Moved to new category filesystems
 sysutils/fusefs-fusepak|filesystems/fusepak|2024-10-21|Moved to new category filesystems
+sysutils/fusefs-funionfs|filesystems/funionfs|2024-10-21|Moved to new category filesystems

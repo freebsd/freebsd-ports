@@ -13,6 +13,7 @@
     SUBDIR += exfat-utils
     SUBDIR += fstyp
     SUBDIR += fswatch-mon
+    SUBDIR += funionfs
     SUBDIR += fusefs-libs
     SUBDIR += fusefs-libs3
     SUBDIR += fusepak
