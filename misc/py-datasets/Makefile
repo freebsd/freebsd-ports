@@ -46,7 +46,7 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}absl-py>=0:devel/py-absl-py@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest>=0:devel/py-pytest@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytorch>=2.0.0:misc/py-pytorch@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}rarfile>=4.0:archivers/py-rarfile@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}s3fs>=2021.11.1:devel/py-s3fs@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}s3fs>=2021.11.1:filesystems/py-s3fs@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tiktoken>=0:textproc/py-tiktoken@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}typing-extensions>=4.6.1:devel/py-typing-extensions@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}zstandard>=0:archivers/py-zstandard@${PY_FLAVOR}

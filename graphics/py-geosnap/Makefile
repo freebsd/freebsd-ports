@@ -32,7 +32,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}contextily>=0:graphics/py-contextily@${PY_FL
 		${PYTHON_PKGNAMEPREFIX}pyarrow>=0.14.1:databases/py-pyarrow@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyproj>=3:graphics/py-pyproj@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}quilt3>=3.6:www/py-quilt3@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}s3fs>=0:devel/py-s3fs@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}s3fs>=0:filesystems/py-s3fs@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}scikit-learn>=0:science/py-scikit-learn@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}seaborn>=0:math/py-seaborn@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}segregation>=2.1:science/py-segregation@${PY_FLAVOR} \

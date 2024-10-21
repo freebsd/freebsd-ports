@@ -56,7 +56,7 @@ EPATH_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}fsspec>=0:filesystems/py-fsspec@${PY_F
 			${PYTHON_PKGNAMEPREFIX}typing-extensions>=0:devel/py-typing-extensions@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}zipp>=0:devel/py-zipp@${PY_FLAVOR}
 EPATH_GCS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gcsfs>=0:devel/py-gcsfs@${PY_FLAVOR}
-EPATH_S3_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}s3fs>=0:devel/py-s3fs@${PY_FLAVOR}
+EPATH_S3_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}s3fs>=0:filesystems/py-s3fs@${PY_FLAVOR}
 EPY_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}typing-extensions>=0:devel/py-typing-extensions@${PY_FLAVOR}
 ETQDM_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}absl-py>=0:devel/py-absl-py@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}tqdm>=0:misc/py-tqdm@${PY_FLAVOR}

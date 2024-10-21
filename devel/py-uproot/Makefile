@@ -32,7 +32,7 @@ S3_DESC=	Access Amazon S3 storage
 XROOTD_DESC=	Access extended ROOT daemon
 
 HTTP_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aiohttp>=0:www/py-aiohttp@${PY_FLAVOR}
-S3_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}s3fs>=0:devel/py-s3fs@${PY_FLAVOR}
+S3_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}s3fs>=0:filesystems/py-s3fs@${PY_FLAVOR}
 XROOTD_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}fsspec-xrootd>=0:filesystems/py-fsspec-xrootd@${PY_FLAVOR}
 
 .include <bsd.port.pre.mk>

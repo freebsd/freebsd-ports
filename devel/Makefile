@@ -5824,7 +5824,6 @@
     SUBDIR += py-rush
     SUBDIR += py-rx
     SUBDIR += py-rx1
-    SUBDIR += py-s3fs
     SUBDIR += py-saneyaml
     SUBDIR += py-sarge
     SUBDIR += py-sarif-om
