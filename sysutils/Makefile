@@ -786,7 +786,6 @@
     SUBDIR += moosefs3-chunkserver
     SUBDIR += moosefs3-cli
     SUBDIR += moosefs3-client
-    SUBDIR += moosefs3-master
     SUBDIR += moreutils
     SUBDIR += most
     SUBDIR += mountsmb2
