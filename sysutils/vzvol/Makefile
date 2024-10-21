@@ -28,7 +28,7 @@ OPTIONS_DEFAULT=	EXT PROGRESS VIRTUALBOX XFS
 EXT_RUN_DEPENDS=	mke2fs:sysutils/e2fsprogs-core
 PROGRESS_RUN_DEPENDS=	pv:sysutils/pv
 VIRTUALBOX_RUN_DEPENDS=	VBoxManage:emulators/virtualbox-ose
-XFS_RUN_DEPENDS=	mkfs.xfs:sysutils/xfsprogs
+XFS_RUN_DEPENDS=	mkfs.xfs:filesystems/xfsprogs
 
 EXT_DESC=		Install support for ext2, ext3, and ext4
 PROGRESS_DESC=		Enables progress bars for import

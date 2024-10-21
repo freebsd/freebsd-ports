@@ -3567,3 +3567,4 @@ sysutils/zfs-snapshot-clean|filesystems/zfs-snapshot-clean|2024-10-21|Moved to n
 sysutils/zfs-snap-diff|filesystems/zfs-snap-diff|2024-10-21|Moved to new category filesystems
 sysutils/zfs-replicate|filesystems/zfs-replicate|2024-10-21|Moved to new category filesystems
 sysutils/zfs-periodic|filesystems/zfs-periodic|2024-10-21|Moved to new category filesystems
+sysutils/xfsprogs|filesystems/xfsprogs|2024-10-21|Moved to new category filesystems

@@ -14,6 +14,7 @@
     SUBDIR += py-zfs-autobackup
     SUBDIR += squashfs-tools
     SUBDIR += squashfs-tools-ng
+    SUBDIR += xfsprogs
     SUBDIR += zap
     SUBDIR += zfs-periodic
     SUBDIR += zfs-replicate
