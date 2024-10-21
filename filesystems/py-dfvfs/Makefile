@@ -1,7 +1,7 @@
 PORTNAME=	dfvfs
 PORTVERSION=	20231208
 PORTREVISION=	1
-CATEGORIES=	security devel python
+CATEGORIES=	filesystems security devel python
 MASTER_SITES=	https://github.com/log2timeline/dfvfs/releases/download/${PORTVERSION}/ \
 		LOCAL/antoine
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
