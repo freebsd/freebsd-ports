@@ -1,5 +1,5 @@
 PORTNAME=	uiCA
-PORTVERSION=	g20230312+${INSTRVERSION}
+PORTVERSION=	g20240114+${INSTRVERSION}
 CATEGORIES=	benchmarks devel
 MASTER_SITES=	https://uops.info/instructions.xml?dummy=/:instructions \
 		https://uops.info/:instructions
@@ -21,7 +21,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}plotly>0:graphics/py-plotly@${PY_FLAVOR} \
 USES=		compiler python shebangfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	andreas-abel
-GH_TAGNAME=	9cbbe931247f45f756738cf35800b5e8dff7bbb0
+GH_TAGNAME=	6ebeeab0f8705cae4b17a9362f9c65ef91f5cc44
 GH_TUPLE=	andreas-abel:XED-to-XML:c71679ee893ae91db677056d542f305fcc433cb1:xed/XED-to-XML \
 		intelxed:mbuild:09b6654be0c52bf1df44e88c88b411a67b624cbd:mbuild/mbuild
 USE_PYTHON=	concurrent flavors
