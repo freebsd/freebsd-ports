@@ -1,7 +1,7 @@
 PORTNAME=		moosefs2
 PORTVERSION=		2.0.91
 PORTREVISION=	1
-CATEGORIES=		sysutils
+CATEGORIES=		filesystems sysutils
 MASTER_SITES=		http://ppa.moosefs.com/src/
 PKGNAMESUFFIX?=		-master
 DISTNAME=		moosefs-${PORTVERSION}-1
