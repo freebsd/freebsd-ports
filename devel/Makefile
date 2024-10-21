@@ -4889,7 +4889,6 @@
     SUBDIR += py-frozendict
     SUBDIR += py-frozenlist
     SUBDIR += py-fs
-    SUBDIR += py-fs2
     SUBDIR += py-fudge
     SUBDIR += py-funcparserlib
     SUBDIR += py-funcsigs
