@@ -1,6 +1,6 @@
 PORTNAME=	e2tools
 DISTVERSION=	0.1.2
-CATEGORIES=	sysutils
+CATEGORIES=	filesystems sysutils
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/v${DISTVERSION}/
 
 MAINTAINER=	fuz@FreeBSD.org
