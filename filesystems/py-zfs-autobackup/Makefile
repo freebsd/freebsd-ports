@@ -1,7 +1,7 @@
 PORTNAME=	zfs-autobackup
 DISTVERSIONPREFIX=	v
 DISTVERSION=	3.2.2
-CATEGORIES=	sysutils python
+CATEGORIES=	filesystems sysutils python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	skozlov@FreeBSD.org
