@@ -30,6 +30,7 @@
     SUBDIR += lizardfs
     SUBDIR += ltfs
     SUBDIR += mergerfs
+    SUBDIR += mhddfs
     SUBDIR += moosefs2-cgi
     SUBDIR += moosefs2-cgiserv
     SUBDIR += moosefs2-chunkserver

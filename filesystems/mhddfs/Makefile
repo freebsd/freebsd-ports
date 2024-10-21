@@ -1,7 +1,7 @@
 PORTNAME=	mhddfs
 PORTVERSION=	0.1.37
 PORTREVISION=	1
-CATEGORIES=	sysutils
+CATEGORIES=	filesystems
 MASTER_SITES=	http://mhddfs.uvw.ru/downloads/
 PKGNAMEPREFIX=	fusefs-
 DISTNAME=	${PORTNAME}_${PORTVERSION}
