@@ -41,7 +41,7 @@ TCL_CONFIGURE_ON=	--with-tcl-stubs --with-tcl=${TCL_LIBDIR}
 TCL_USES=		tcl
 TCL_CFLAGS=		-DTCL_LIBRARY_NAME=\\\"libtcl${TCL_SHLIB_VER}.so\\\" \
 			-DTCL_MINOR_OFFSET=7
-FUSE_LIB_DEPENDS=	libfuse.so:sysutils/fusefs-libs
+FUSE_LIB_DEPENDS=	libfuse.so:filesystems/fusefs-libs
 FUSE_USES=		localbase:ldflags
 
 post-patch-FUSE-on:

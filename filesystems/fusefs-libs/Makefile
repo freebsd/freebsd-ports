@@ -1,7 +1,7 @@
 PORTNAME=	fusefs
 DISTVERSION=	2.9.9
 PORTREVISION=	2
-CATEGORIES=	sysutils
+CATEGORIES=	filesystems sysutils
 MASTER_SITES=	https://github.com/libfuse/libfuse/releases/download/fuse-${DISTVERSION}/
 PKGNAMESUFFIX=	-libs
 DISTNAME=	fuse-${DISTVERSION}

@@ -442,7 +442,6 @@
     SUBDIR += fusefs-httpfs
     SUBDIR += fusefs-ifuse
     SUBDIR += fusefs-jmtpfs
-    SUBDIR += fusefs-libs
     SUBDIR += fvcool
     SUBDIR += fwup
     SUBDIR += fx

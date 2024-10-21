@@ -3656,4 +3656,5 @@ sysutils/fusefs-nbt|filesystems/nbt|2024-10-21|Moved to new category filesystems
 sysutils/fusefs-mp3fs|filesystems/mp3fs|2024-10-21|Moved to new category filesystems
 sysutils/fusefs-mhddfs|filesystems/mhddfs|2024-10-21|Moved to new category filesystems
 sysutils/fusefs-lkl|filesystems/lkl|2024-10-21|Moved to new category filesystems
-sysutils/fusefs-libs3|filesystems/fusefs-libs3|2024-10-21|Moved to new category filesystems
+filesystems/fusefs-libs3|filesystems/fusefs-libs3|2024-10-21|Moved to new category filesystems
+sysutils/fusefs-libs|filesystems/fusefs-libs|2024-10-21|Moved to new category filesystems

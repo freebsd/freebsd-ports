@@ -16,7 +16,7 @@ BUILD_DEPENDS=	base64>=0:converters/base64 \
 		expect>=0:lang/expect \
 		gawk>=0:lang/gawk \
 		socat>=0:net/socat
-LIB_DEPENDS=	libfuse.so:sysutils/fusefs-libs \
+LIB_DEPENDS=	libfuse.so:filesystems/fusefs-libs \
 		libgmp.so:math/gmp \
 		libgnutls.so:security/gnutls \
 		libjson-glib-1.0.so:devel/json-glib \
