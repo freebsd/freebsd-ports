@@ -1,7 +1,7 @@
 PORTNAME=	progsreiserfs
 DISTVERSION=	0.3.1-rc8
 PORTREVISION=	8
-CATEGORIES=	sysutils
+CATEGORIES=	filesystems sysutils
 MASTER_SITES=	http://www.cgsecurity.org/
 
 MAINTAINER=	ports@FreeBSD.org
