@@ -2,7 +2,7 @@ PORTNAME=	openzfs
 PORTVERSION=	2023113000
 DISTVERSIONPREFIX=	v
 PORTREVISION=	1
-CATEGORIES=	sysutils
+CATEGORIES=	filesystems sysutils
 
 MAINTAINER=	freqlabs@FreeBSD.org
 COMMENT=	OpenZFS userland for FreeBSD
@@ -14,7 +14,7 @@ BROKEN_aarch64=	invokes x86 assembler
 BROKEN_riscv64=	fails to compile: btree_test.c:462:49: result of comparison of constant -1 with expression of type 'char' is always true
 
 BUILD_DEPENDS=	ksh93:shells/ksh93
-RUN_DEPENDS=	openzfs-kmod>=0:sysutils/openzfs-kmod
+RUN_DEPENDS=	openzfs-kmod>=0:filesystems/openzfs-kmod
 
 USES+=		autoreconf:build cpe libtool gmake gettext-runtime python:build shebangfix ssl
 SHEBANG_GLOB=	*.ksh *.ksh.in *.kshlib *.py.in
