@@ -2,7 +2,7 @@ PORTNAME=	sandboxfs
 DISTVERSIONPREFIX=	sandboxfs-
 DISTVERSION=	0.2.0
 PORTREVISION=	42
-CATEGORIES=	sysutils
+CATEGORIES=	filesystems
 PKGNAMEPREFIX=	fusefs-
 
 MAINTAINER=	mikael@FreeBSD.org
