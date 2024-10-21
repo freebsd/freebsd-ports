@@ -77,6 +77,7 @@
     SUBDIR += tclvfs
     SUBDIR += ufs_copy
     SUBDIR += vzvol
+    SUBDIR += webdavfs
     SUBDIR += wimlib
     SUBDIR += xfsm
     SUBDIR += xfsprogs
