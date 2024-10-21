@@ -3605,3 +3605,4 @@ sysutils/kio-fuse|filesystems/kio-fuse|2024-10-21|Moved to new category filesyst
 sysutils/exfat-utils|filesystems/exfat-utils|2024-10-21|Moved to new category filesystems
 sysutils/e2tools|filesystems/e2tools|2024-10-21|Moved to new category filesystems
 sysutils/e2fsprogs|filesystems/e2fsprogs|2024-10-21|Moved to new category filesystems
+sysutils/e2fsprogs-core|filesystems/e2fsprogs-core|2024-10-21|Moved to new category filesystems
