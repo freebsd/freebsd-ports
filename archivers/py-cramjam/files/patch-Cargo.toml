@@ -4,8 +4,8 @@
  crate-type = ["cdylib"]
  
  [features]
--default                  = ["extension-module", "snappy", "lz4", "bzip2", "brotli", "xz", "zstd", "gzip", "deflate", "blosc2", "igzip"]
-+default                  = ["extension-module", "snappy", "lz4", "bzip2", "brotli", "xz", "zstd", "gzip", "deflate", "use-system-blosc2-shared", "use-system-isal-shared"]
+-default                  = ["extension-module", "snappy", "lz4", "bzip2", "brotli", "xz", "zstd", "gzip", "zlib", "deflate", "blosc2", "igzip", "ideflate", "izlib"]
++default                  = ["extension-module", "snappy", "lz4", "bzip2", "brotli", "xz", "zstd", "gzip-shared", "zlib-shared", "deflate-shared", "use-system-blosc2-shared", "use-system-isal-shared", "ideflate-shared", "izlib-shared"]
  extension-module         = ["pyo3/extension-module"]
  generate-import-lib      = ["pyo3/generate-import-lib"]  # needed for Windows PyPy builds
  

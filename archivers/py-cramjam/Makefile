@@ -1,5 +1,5 @@
 PORTNAME=	cramjam
-PORTVERSION=	2.8.4
+PORTVERSION=	2.9.0
 CATEGORIES=	archivers python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,9 +12,9 @@ WWW=		https://github.com/milesgranger/cramjam
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	c-blosc2>=0:archivers/c-blosc2 \
-		isa-l>=0:devel/isa-l \
-		${PYTHON_PKGNAMEPREFIX}maturin>=0.14:devel/py-maturin@${PY_FLAVOR}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}maturin>=0.14:devel/py-maturin@${PY_FLAVOR}
+LIB_DEPENDS=	libblosc2.so:archivers/c-blosc2 \
+		libisal.so:devel/isa-l
 
 USES=		cargo python
 USE_PYTHON=	autoplist concurrent pep517
