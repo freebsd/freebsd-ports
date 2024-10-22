@@ -1,5 +1,5 @@
 PORTNAME=	gems
-PORTVERSION=	3.5.21
+PORTVERSION=	3.5.22
 CATEGORIES=	devel ruby
 MASTER_SITES=	https://rubygems.org/rubygems/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -51,7 +51,7 @@ DOCS_VARS_OFF=	RUBY_SETUP_OPTIONS+="--no-ri --no-rdoc"
 
 post-extract:
 	@${RM} -r ${WRKSRC}/bundler
-	@${FIND} ${WRKSRC} -name '._*' -delete -o -name .document -delete
+	@${FIND} ${WRKSRC} -name .document -delete
 
 post-patch:
 	@${RM} ${WRKSRC}/lib/rubygems/commands/setup_command.rb.orig
