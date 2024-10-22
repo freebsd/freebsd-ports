@@ -1,5 +1,5 @@
 PORTNAME=	moto
-PORTVERSION=	5.0.16
+PORTVERSION=	5.0.17
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI \
 		https://github.com/getmoto/moto/releases/download/${PORTVERSION}/
@@ -34,6 +34,7 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}antlr4-python3-runtime>=0:devel/py-antlr4-p
 		${PYTHON_PKGNAMEPREFIX}joserfc>=0.9.0:security/py-joserfc@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}jsondiff>=1.1.2:devel/py-jsondiff@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}jsonpath-ng>=0:devel/py-jsonpath-ng@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}jsonschema>=0:devel/py-jsonschema@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}multipart>=0:devel/py-multipart@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}openapi-spec-validator>=0.5.0:devel/py-openapi-spec-validator@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}py-partiql-parser>=0.5.6:devel/py-py-partiql-parser@${PY_FLAVOR} \
