@@ -5978,6 +5978,7 @@
     SUBDIR += py-tinyrpc
     SUBDIR += py-tipper
     SUBDIR += py-tokenize-rt
+    SUBDIR += py-toml-fmt-common
     SUBDIR += py-toolz
     SUBDIR += py-tooz
     SUBDIR += py-toposort
