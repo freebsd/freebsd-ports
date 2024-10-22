@@ -1,6 +1,5 @@
 PORTNAME=	rdflib
-PORTVERSION=	6.3.2
-PORTREVISION=	1
+PORTVERSION=	7.1.0
 CATEGORIES=	textproc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,27 +12,25 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}poetry-core>=1.4.0:devel/py-poetry-core@${PY_FLAVOR}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}isodate>=0.6.0:devel/py-isodate@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}html5lib-modern>=1.2<2:www/py-html5lib-modern@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyparsing>=2.1.0<4:devel/py-pyparsing@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}berkeleydb>=0:databases/py-berkeleydb@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}networkx>=0:math/py-networkx@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}networkx>=2<4:math/py-networkx@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-cov>=0:devel/py-pytest-cov@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-subtests>=0:devel/py-pytest-subtests@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tabulate>=0:devel/py-tabulate@${PY_FLAVOR}
 
-USES=		cpe python shebangfix
+USES=		cpe python
 USE_PYTHON=	autoplist concurrent pep517 pytest
 
 NO_ARCH=	yes
 
 CPE_VENDOR=	rdflib_project
 
-SHEBANG_FILES=	rdflib/plugins/parsers/notation3.py
+.include <bsd.port.pre.mk>
 
-OPTIONS_DEFINE=	HTML
-OPTIONS_DEFAULT=HTML
-HTML_DESC=	HTML support
+.if ${PYTHON_REL} < 31100
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}isodate>=0.7.2<1.0.0:devel/py-isodate@${PY_FLAVOR}
+.endif
 
-HTML_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}html5lib>=1.0<2:www/py-html5lib@${PY_FLAVOR}
-
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
