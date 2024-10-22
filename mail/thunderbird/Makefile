@@ -1,6 +1,5 @@
 PORTNAME=	thunderbird
-DISTVERSION=	128.3.2
-PORTREVISION=	1
+DISTVERSION=	128.3.3
 CATEGORIES=	mail news net-im wayland
 MASTER_SITES=	MOZILLA/${PORTNAME}/releases/${DISTVERSION}esr/source \
 		MOZILLA/${PORTNAME}/candidates/${DISTVERSION}esr-candidates/build1/source
