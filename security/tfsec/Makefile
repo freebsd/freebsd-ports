@@ -1,7 +1,6 @@
 PORTNAME=	tfsec
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.28.10
-PORTREVISION=	1
+DISTVERSION=	1.28.11
 CATEGORIES=	security
 
 MAINTAINER=	dutra@FreeBSD.org
@@ -11,7 +10,7 @@ WWW=		https://aquasecurity.github.io/tfsec
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:modules
+USES=		go:1.22,modules
 
 GO_MODULE=	github.com/aquasecurity/tfsec
 GO_TARGET=	./cmd/${PORTNAME}
