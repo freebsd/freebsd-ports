@@ -388,6 +388,7 @@
     SUBDIR += highmoon
     SUBDIR += hinversi
     SUBDIR += hitori
+    SUBDIR += hivetui
     SUBDIR += hllib
     SUBDIR += holotz-castle
     SUBDIR += hoverboard-sdl
