@@ -64,7 +64,7 @@ _GST1_PLUGINS_ftp=	curl
 _GST1_PLUGINS_graphics=	aalib cairo gdkpixbuf gl jpeg kms libcaca libvisual \
 			opencv openexr openjpeg png rsvg vulkan webp zbar
 _GST1_PLUGINS_multimedia=	aom assrender bad dash dts dv dvdread \
-			editing-services gnonlin good hls libav libde265 \
+			editing-services good hls libav libde265 \
 			mpeg2dec mpeg2enc mplex mm msdk openh264 resindvd \
 			smoothstreaming theora ttml ugly v4l2 vaapi vpx webrtc \
 			x264 x265
@@ -305,10 +305,6 @@ gst-dv_IMPL=		good
 gst-editing-services_PORT=	multimedia/gstreamer${_GST_VER}-editing-services
 gst-editing-services_SUFFIX=	#
 gst-editing-services_IMPL=	#
-
-gst-gnonlin_PORT=	multimedia/gstreamer${_GST_VER}-plugins-gnonlin
-gst-gnonlin_IMPL=	good
-gst-gnonlin_VERSION=	1.4.0
 
 gst-hls_PORT=		multimedia/gstreamer${_GST_VER}-plugins-hls
 gst-hls_IMPL=		bad
