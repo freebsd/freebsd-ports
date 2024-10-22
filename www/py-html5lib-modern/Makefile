@@ -7,7 +7,7 @@ DISTNAME=	html5lib_modern-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	HTML parser based on the WHATWG HTML specification
-WWW=		https://github.com/html5lib/html5lib-python
+WWW=		https://github.com/ashleysommer/html5lib-modern
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
