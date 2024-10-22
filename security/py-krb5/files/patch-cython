@@ -1,0 +1,51 @@
+Obtained from:	https://github.com/jborean93/pykrb5/commit/3caba43693520001ba6847ecbc1b378ea344a68f
+
+--- src/krb5/_set_password.pyi.orig	2024-10-03 06:17:02 UTC
++++ src/krb5/_set_password.pyi
+@@ -1,3 +1,8 @@
++# Copyright: (c) 2024 Jordan Borean (@jborean93) <jborean93@gmail.com>
++# MIT License (see LICENSE or https://opensource.org/licenses/MIT)
++
++from __future__ import annotations
++
+ import enum
+ import typing
+ 
+@@ -57,7 +62,7 @@ def set_password(
+     context: Context,
+     creds: Creds,
+     newpw: bytes,
+-    change_password_for: typing.Optional[Principal] = None,
++    change_password_for: Principal | None = None,
+ ) -> SetPasswordResult:
+     """Set a password for a principal using specified credentials.
+ 
+@@ -87,7 +92,7 @@ def set_password_using_ccache(
+     context: Context,
+     ccache: CCache,
+     newpw: bytes,
+-    change_password_for: typing.Optional[Principal] = None,
++    change_password_for: Principal | None = None,
+ ) -> SetPasswordResult:
+     """Set a password for a principal using cached credentials.
+ 
+--- src/krb5/_set_password.pyx.orig	2024-10-03 06:17:02 UTC
++++ src/krb5/_set_password.pyx
+@@ -74,7 +74,7 @@ def set_password(
+     Context context not None,
+     Creds creds not None,
+     const unsigned char[:] newpw not None,
+-    change_password_for: typing.Optional[Principal] = None,
++    Principal change_password_for = None,
+ ) -> SetPasswordResult:
+     cdef krb5_error_code err = 0
+     cdef int result_code
+@@ -134,7 +134,7 @@ def set_password_using_ccache(
+     Context context not None,
+     CCache ccache not None,
+     const unsigned char[:] newpw not None,
+-    change_password_for: typing.Optional[Principal] = None,
++    Principal change_password_for = None,
+ ) -> SetPasswordResult:
+     cdef krb5_error_code err = 0
+     cdef int result_code
