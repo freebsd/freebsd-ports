@@ -3540,3 +3540,4 @@ devel/qscintilla2-designerplugin-qt5|devel/qscintilla2-designerplugin@qt5|2024-1
 lang/gcc10||2024-10-20|Has expired: Unsupported by upstream. Use GCC 12 or newer instead
 security/pam_fprintd|security/fprintd|2024-10-21|pam_fprint is replaced by fprintd's pam_fprintd module
 security/fprint_demo||2024-10-21|Most features are integrated into fprintd's helpers, and libfprint has an examples section
+multimedia/gstreamer1-qt||2024-10-22|Has expired: Project abandoned 10 years ago
