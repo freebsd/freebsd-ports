@@ -90,7 +90,6 @@
     SUBDIR += gstreamer1-plugins-dts
     SUBDIR += gstreamer1-plugins-dv
     SUBDIR += gstreamer1-plugins-dvdread
-    SUBDIR += gstreamer1-plugins-gnonlin
     SUBDIR += gstreamer1-plugins-good
     SUBDIR += gstreamer1-plugins-hls
     SUBDIR += gstreamer1-plugins-libde265
