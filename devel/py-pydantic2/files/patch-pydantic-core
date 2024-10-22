@@ -1,4 +1,5 @@
-Obtained:	https://github.com/pydantic/pydantic/commit/9b69920888054df4ef544ecbdc03e09b90646ac2
+Obtained from:	https://github.com/pydantic/pydantic/commit/9b69920888054df4ef544ecbdc03e09b90646ac2
+		https://github.com/pydantic/pydantic/commit/51cf3cbfa767abfba1048cae41ea766d6add4f4a
 
 --- pydantic/_internal/_config.py.orig	2020-02-02 00:00:00 UTC
 +++ pydantic/_internal/_config.py
@@ -35,6 +36,48 @@ Obtained:	https://github.com/pydantic/pydantic/commit/9b69920888054df4ef544ecbdc
  
          core_config_values = {
              'title': config.get('title') or (obj and obj.__name__),
+--- pydantic/_internal/_core_utils.py.orig	2020-02-02 00:00:00 UTC
++++ pydantic/_internal/_core_utils.py
+@@ -44,10 +44,6 @@ Used in a `Tag` schema to specify the tag used for a d
+ """
+ Used in a `Tag` schema to specify the tag used for a discriminated union.
+ """
+-HAS_INVALID_SCHEMAS_METADATA_KEY = 'pydantic.internal.invalid'
+-"""Used to mark a schema that is invalid because it refers to a definition that was not yet defined when the
+-schema was first encountered.
+-"""
+ 
+ 
+ def is_core_schema(
+@@ -146,10 +142,7 @@ def define_expected_missing_refs(
+     expected_missing_refs = allowed_missing_refs.difference(refs)
+     if expected_missing_refs:
+         definitions: list[core_schema.CoreSchema] = [
+-            # TODO: Replace this with a (new) CoreSchema that, if present at any level, makes validation fail
+-            #   Issue: https://github.com/pydantic/pydantic-core/issues/619
+-            core_schema.none_schema(ref=ref, metadata={HAS_INVALID_SCHEMAS_METADATA_KEY: True})
+-            for ref in expected_missing_refs
++            core_schema.invalid_schema(ref=ref) for ref in expected_missing_refs
+         ]
+         return core_schema.definitions_schema(schema, definitions)
+     return None
+@@ -160,11 +153,11 @@ def collect_invalid_schemas(schema: core_schema.CoreSc
+ 
+     def _is_schema_valid(s: core_schema.CoreSchema, recurse: Recurse) -> core_schema.CoreSchema:
+         nonlocal invalid
+-        if 'metadata' in s:
+-            metadata = s['metadata']
+-            if HAS_INVALID_SCHEMAS_METADATA_KEY in metadata:
+-                invalid = metadata[HAS_INVALID_SCHEMAS_METADATA_KEY]
+-                return s
++
++        if s['type'] == 'invalid':
++            invalid = True
++            return s
++
+         return recurse(s, _is_schema_valid)
+ 
+     walk_core_schema(schema, _is_schema_valid)
 --- pydantic/config.py.orig	2020-02-02 00:00:00 UTC
 +++ pydantic/config.py
 @@ -563,13 +563,15 @@ class ConfigDict(TypedDict, total=False):
@@ -59,7 +102,20 @@ Obtained:	https://github.com/pydantic/pydantic/commit/9b69920888054df4ef544ecbdc
      ser_json_bytes: Literal['utf8', 'base64', 'hex']
 --- pydantic/json_schema.py.orig	2020-02-02 00:00:00 UTC
 +++ pydantic/json_schema.py
-@@ -720,7 +720,7 @@ class GenerateJsonSchema:
+@@ -555,6 +555,12 @@ class GenerateJsonSchema:
+         return json_schema
+ 
+     # ### Schema generation methods
++
++    def invalid_schema(self, schema: core_schema.InvalidSchema) -> JsonSchemaValue:
++        """Placeholder - should never be called."""
++
++        raise RuntimeError('Cannot generate schema for invalid_schema. This is a bug! Please report it.')
++
+     def any_schema(self, schema: core_schema.AnySchema) -> JsonSchemaValue:
+         """Generates a JSON schema that matches any value.
+ 
+@@ -720,7 +726,7 @@ class GenerateJsonSchema:
          Returns:
              The generated JSON schema.
          """
@@ -91,7 +147,7 @@ Obtained:	https://github.com/pydantic/pydantic/commit/9b69920888054df4ef544ecbdc
      'typing-extensions>=4.12.2; python_version >= "3.13"',
      'annotated-types>=0.6.0',
 -    "pydantic-core==2.23.4",
-+    "pydantic-core==2.24.1",
++    "pydantic-core==2.24.2",
  ]
  dynamic = ['version', 'readme']
  
