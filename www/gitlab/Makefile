@@ -58,7 +58,7 @@ MY_DEPENDS=	git>=2.41.0:devel/git \
 	rubygem-logger15>=1.5.3<1.6:devel/rubygem-logger15 \
 	rubygem-marginalia>=1.11.1<1.12:databases/rubygem-marginalia \
 	rubygem-declarative_policy>=1.1.0<1.2:security/rubygem-declarative_policy \
-	rubygem-coverband>=6.1.2<6.2:www/rubygem-coverband \
+	rubygem-coverband>=6.1.2<6.1.3:www/rubygem-coverband \
 	rubygem-devise-rails70>=4.9.3<4.10:devel/rubygem-devise-rails70 \
 	rubygem-bcrypt>=3.1.14<3.2:security/rubygem-bcrypt \
 	rubygem-doorkeeper-rails70>=5.6.6<6:security/rubygem-doorkeeper-rails70 \
