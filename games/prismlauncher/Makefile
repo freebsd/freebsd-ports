@@ -1,5 +1,5 @@
 PORTNAME=	prismlauncher
-DISTVERSION=	8.4
+DISTVERSION=	9.0
 CATEGORIES=	games java
 
 MAINTAINER=	Alexander88207@protonmail.com
@@ -27,7 +27,7 @@ GH_TUPLE=	gulrak:filesystem:2fc4b463:filesystem/libraries/filesystem \
 USE_GL=		opengl
 USE_JAVA=	yes
 USE_KDE=	ecm:build
-USE_QT=		5compat base
+USE_QT=		5compat base networkauth
 
 CMAKE_ARGS=	-DJAVA_HOME=${JAVA_HOME} -DJava_JAVAC_EXECUTABLE=${JAVAC} \
 		-DLauncher_BUILD_PLATFORM=FreeBSD
@@ -44,4 +44,4 @@ post-patch:
 		${WRKSRC}/launcher/minecraft/LaunchProfile.cpp \
 		${WRKSRC}/launcher/minecraft/MinecraftInstance.cpp
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
