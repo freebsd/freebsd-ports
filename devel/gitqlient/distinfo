@@ -1,11 +1,3 @@
-TIMESTAMP = 1728942157
-SHA256 (francescmm-GitQlient-v1.6.3_GH0.tar.gz) = c4416af5f0fcaa1440bc529d81d488811d5a5a22a25ed66a82929c5d4068d885
-SIZE (francescmm-GitQlient-v1.6.3_GH0.tar.gz) = 4514603
-SHA256 (francescmm-QPinnableTabWidget-06da655529e288ccd354c08092c21984352e0400_GH0.tar.gz) = eea4538bbd480a533e12a328f97108abfffc225caa1c8b58406bb70483bd7221
-SIZE (francescmm-QPinnableTabWidget-06da655529e288ccd354c08092c21984352e0400_GH0.tar.gz) = 13454
-SHA256 (francescmm-QLogger-36cde545bf3554589b79f6afb2360eb0f80b9f80_GH0.tar.gz) = 07bf7ba9a35b42093f7b628390f58e3a53b0f32592bf956b6f0d75535c35ce38
-SIZE (francescmm-QLogger-36cde545bf3554589b79f6afb2360eb0f80b9f80_GH0.tar.gz) = 20357
-SHA256 (francescmm-AuxiliarCustomWidgets-c400e91ec23317714a55ccf7d7cebe6cafa559f1_GH0.tar.gz) = 361dccc7d53699ed35d9212a97973bd1c6aeda4ea73c1d05db257390959a5ed4
-SIZE (francescmm-AuxiliarCustomWidgets-c400e91ec23317714a55ccf7d7cebe6cafa559f1_GH0.tar.gz) = 440350
-SHA256 (francescmm-git-62f9899415d8b20e2c2814d666536b75dd06c890_GH0.tar.gz) = 3cd3a328a4906156edb771daef9ba12c0eb9998240dbcb3a65661d7130595e17
-SIZE (francescmm-git-62f9899415d8b20e2c2814d666536b75dd06c890_GH0.tar.gz) = 29933
+TIMESTAMP = 1728945397
+SHA256 (gitqlient_1.6.3.tar.gz) = 93b68ff1d717db1b745469238d88fdca9a29e87d4b25e97a0410fa8fc7f558d4
+SIZE (gitqlient_1.6.3.tar.gz) = 5033798
