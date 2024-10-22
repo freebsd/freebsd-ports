@@ -3542,3 +3542,4 @@ security/pam_fprintd|security/fprintd|2024-10-21|pam_fprint is replaced by fprin
 security/fprint_demo||2024-10-21|Most features are integrated into fprintd's helpers, and libfprint has an examples section
 multimedia/gstreamer1-qt||2024-10-22|Has expired: Project abandoned 10 years ago
 multimedia/gstreamer1-plugins-gnonlin||2024-10-22|Has expired: Deprecated upstream. Use the gstnle plugin from multimedia/gstreamer1-editing-services instead
+finance/frontaccounting24|finance/frontaccounting|2024-10-22|Move finance/frontaccounting24 to finance/frontaccounting
