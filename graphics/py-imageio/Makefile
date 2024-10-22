@@ -1,5 +1,5 @@
 PORTNAME=	imageio
-PORTVERSION=	2.35.1
+PORTVERSION=	2.36.0
 CATEGORIES=	graphics python
 MASTER_SITES=	PYPI \
 		https://github.com/imageio/imageio/releases/download/v${PORTVERSION}/
@@ -28,7 +28,7 @@ TEST_DEPENDS=	opencv>=0:graphics/opencv \
 # devel/py-fsspec[github]
 TEST_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}requests>=0:www/py-requests@${PY_FLAVOR}
 
-USES=		python
+USES=		python:3.9+
 USE_PYTHON=	autoplist concurrent pep517 pytest
 
 NO_ARCH=	yes
