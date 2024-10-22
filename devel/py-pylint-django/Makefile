@@ -19,4 +19,9 @@ USE_PYTHON=	autoplist concurrent pep517
 
 NO_ARCH=	yes
 
+OPTIONS_DEFINE=	DJANGO
+DJANGO_DESC=	Django support
+
+DJANGO_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django42>=2.2:www/py-django42@${PY_FLAVOR}
+
 .include <bsd.port.mk>
