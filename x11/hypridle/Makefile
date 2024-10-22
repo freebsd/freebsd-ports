@@ -1,6 +1,6 @@
 PORTNAME=	hypridle
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.1.3
+DISTVERSION=	0.1.4
 CATEGORIES=	x11 wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -9,8 +9,6 @@ WWW=		https://github.com/hyprwm/hypridle
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
-
-BROKEN=		https://github.com/hyprwm/hypridle/issues/95
 
 BUILD_DEPENDS=	wayland-protocols>0:graphics/wayland-protocols
 LIB_DEPENDS=	libhyprlang.so:devel/hyprlang \
