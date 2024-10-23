@@ -1,6 +1,6 @@
---- tools/v8_gypfiles/v8.gyp.orig	2024-02-13 21:43:34 UTC
+--- tools/v8_gypfiles/v8.gyp.orig	2024-08-21 12:35:32 UTC
 +++ tools/v8_gypfiles/v8.gyp
-@@ -1083,7 +1083,7 @@
+@@ -1095,7 +1095,7 @@
          }],
          # Platforms that don't have Compare-And-Swap (CAS) support need to link atomic library
          # to implement atomic memory access
