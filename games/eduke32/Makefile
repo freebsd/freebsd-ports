@@ -1,6 +1,6 @@
 PORTNAME=	eduke32
 PORTVERSION=	20240316
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://dukeworld.com/eduke32/synthesis/${PORTVERSION}-${GITREVISION}/:eduke32 \
 		LOCAL/pkubaj/:erp \
