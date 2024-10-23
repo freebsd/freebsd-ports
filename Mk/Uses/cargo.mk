@@ -110,9 +110,6 @@ RUSTDOC?=	${LOCALBASE}/bin/rustdoc
 # Location of the cargo output directory.
 CARGO_TARGET_DIR?=	${WRKDIR}/target
 
-# Default target platform (affects some RUSTFLAGS if passed)
-CARGO_BUILD_TARGET?=	${_CARGO_RUST_ARCH_${ARCH}:U${ARCH}}-unknown-${OPSYS:tl}
-
 _CARGO_RUST_ARCH_amd64=		x86_64
 _CARGO_RUST_ARCH_i386=		i686
 _CARGO_RUST_ARCH_riscv64=	riscv64gc
@@ -128,9 +125,7 @@ _CARGO_RUST_ARCH_riscv64=	riscv64gc
 CARGO_ENV+= \
 	CARGO_HOME=${WRKDIR}/cargo-home \
 	CARGO_BUILD_JOBS=${MAKE_JOBS_NUMBER} \
-	CARGO_BUILD_TARGET=${CARGO_BUILD_TARGET} \
 	CARGO_TARGET_DIR=${CARGO_TARGET_DIR} \
-	CARGO_TARGET_${CARGO_BUILD_TARGET:S/-/_/g:tu}_LINKER="${CC}" \
 	RUSTC=${RUSTC} \
 	RUSTDOC=${RUSTDOC} \
 	RUSTFLAGS="${RUSTFLAGS} ${LDFLAGS:C/.+/-C link-arg=&/}"

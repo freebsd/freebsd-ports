@@ -35,7 +35,7 @@ PLIST_FILES=	include/rustc_demangle.h \
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/../../crates/capi/include/rustc_demangle.h ${STAGEDIR}${PREFIX}/include
-	${INSTALL_DATA} ${WRKDIR}/target/*-freebsd/release/librustc_demangle.a ${STAGEDIR}${PREFIX}/lib
-	${INSTALL_LIB} ${WRKDIR}/target/*-freebsd/release/librustc_demangle.so ${STAGEDIR}${PREFIX}/lib
+	${INSTALL_DATA} ${WRKDIR}/target/release/librustc_demangle.a ${STAGEDIR}${PREFIX}/lib
+	${INSTALL_LIB} ${WRKDIR}/target/release/librustc_demangle.so ${STAGEDIR}${PREFIX}/lib
 
 .include <bsd.port.mk>

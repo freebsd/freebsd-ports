@@ -248,7 +248,7 @@ PLIST_FILES=	bin/starlark
 do-install:
 	# binaries (workaround for error: found a virtual manifest at `xx` instead of a package manifest)
 	${INSTALL_PROGRAM} \
-		${WRKDIR}/target/*/release/starlark \
+		${WRKDIR}/target/release/starlark \
 		${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>

@@ -94,7 +94,7 @@ TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PYTHON_SITELIBDIR}/${PORTNAME}
-	${INSTALL_LIB} ${WRKDIR}/target/*-unknown-freebsd/release/libpyqir.so ${STAGEDIR}${PYTHON_SITELIBDIR}/${PORTNAME}/_native.abi3.so
+	${INSTALL_LIB} ${WRKDIR}/target/release/libpyqir.so ${STAGEDIR}${PYTHON_SITELIBDIR}/${PORTNAME}/_native.abi3.so
 	${INSTALL_DATA} ${WRKSRC}/pyqir/pyqir/*.py ${STAGEDIR}${PYTHON_SITELIBDIR}/${PORTNAME}
 
 .include <bsd.port.mk>

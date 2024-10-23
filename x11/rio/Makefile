@@ -434,6 +434,6 @@ PLIST_FILES=	bin/${PORTNAME}
 
 do-install:
 	# workaround for error: found a virtual manifest at `/usr/ports/x11/rio/work/rio-4636f43/Cargo.toml` instead of a package manifest
-	${INSTALL_PROGRAM} ${WRKDIR}/target/*-freebsd/release/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+	${INSTALL_PROGRAM} ${WRKDIR}/target/release/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>

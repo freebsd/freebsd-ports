@@ -65,7 +65,7 @@ post-patch:
 do-install:
 # XXX [workspace.dependencies] breaks rebuild in subdirs
 .for f in ${CARGO_INSTALL_PATH}
-	${INSTALL_PROGRAM} ${CARGO_TARGET_DIR}/*/*/${PORTNAME}-$f \
+	${INSTALL_PROGRAM} ${CARGO_TARGET_DIR}/*/${PORTNAME}-$f \
 		${STAGEDIR}${PREFIX}/bin
 .endfor
 

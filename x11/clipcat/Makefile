@@ -517,7 +517,7 @@ do-install:
 .for p in ${PROGRAMS}
 	# workaround for error: found a virtual manifest at `xx` instead of a package manifest
 	${INSTALL_PROGRAM} \
-		${WRKDIR}/target/*/release/${p} \
+		${WRKDIR}/target/release/${p} \
 		${STAGEDIR}${PREFIX}/bin/${p}
 .endfor
 

@@ -698,7 +698,7 @@ LLVM_VERSION=	12
 BINARY_ALIAS=	llvm-config=${PREFIX}/bin/llvm-config${LLVM_VERSION}
 
 do-install:
-	for f in ${CARGO_TARGET_DIR}/${CARGO_BUILD_TARGET}/*/${PORTNAME}*; do \
+	for f in ${CARGO_TARGET_DIR}/*/${PORTNAME}*; do \
 		if [ -f $$f -a -x $$f ]; then \
 			${INSTALL_PROGRAM} $$f ${STAGEDIR}${PREFIX}/bin; \
 		fi \

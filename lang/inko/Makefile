@@ -127,10 +127,10 @@ CARGO_CRATES=	addr2line-0.21.0 \
 
 do-install:
 	# executable
-	${INSTALL_PROGRAM} ${WRKDIR}/target/*-freebsd/release/inko ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+	${INSTALL_PROGRAM} ${WRKDIR}/target/release/inko ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 	# runtime library
 	${MKDIR} ${STAGEDIR}${PREFIX}/lib/inko/runtime
-	${INSTALL_DATA} ${WRKDIR}/target/*-freebsd/release/libinko.a ${STAGEDIR}${PREFIX}/lib/inko/runtime
+	${INSTALL_DATA} ${WRKDIR}/target/release/libinko.a ${STAGEDIR}${PREFIX}/lib/inko/runtime
 	# standard library
 	cd ${WRKSRC}/std/src && ${COPYTREE_SHARE} std ${STAGEDIR}${PREFIX}/lib/inko
 

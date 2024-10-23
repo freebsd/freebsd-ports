@@ -135,7 +135,7 @@ CARGO_CRATES=	aead-0.4.1 \
 PLIST_FILES=	lib/lib${PORTNAME}.so
 
 do-install:
-	${INSTALL_LIB} ${CARGO_TARGET_DIR}/${CARGO_BUILD_TARGET}/*/lib${PORTNAME}.so \
+	${INSTALL_LIB} ${CARGO_TARGET_DIR}/*/lib${PORTNAME}.so \
 		${STAGEDIR}${PREFIX}/lib/
 
 .include <bsd.port.mk>

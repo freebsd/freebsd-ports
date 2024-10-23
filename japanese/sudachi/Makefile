@@ -175,7 +175,7 @@ post-patch:
 do-install:
 	# install binaries (workaround for error: found a virtual manifest at `xx` instead of a package manifest)
 	${INSTALL_PROGRAM} \
-		${WRKDIR}/target/*/release/${PORTNAME} \
+		${WRKDIR}/target/release/${PORTNAME} \
 		${STAGEDIR}${PREFIX}/bin
 	# install the resources directory
 	@cd ${WRKSRC} && \

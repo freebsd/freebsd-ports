@@ -125,6 +125,6 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 PLIST_FILES=	bin/${PORTNAME}
 
 do-install: # workaround this error in do-install: There are multiple `tokay` packages in your project, and the specification `tokay` is ambiguous.
-	${INSTALL_PROGRAM} ${WRKDIR}/target/*-unknown-freebsd/release/tokay ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+	${INSTALL_PROGRAM} ${WRKDIR}/target/release/tokay ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>

@@ -1,7 +1,7 @@
 PORTNAME=	libdatadog
 PORTVERSION=	11.0.0
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -31,14 +31,14 @@ post-patch:
 	@${SED} -i '' -e '/get_cpu/ s|unsigned long|uint64_t|; /get_proc_total/ s|unsigned long|uint64_t|' ${WRKSRC}/cargo-crates/sys-info-0.9.1/c/*.[ch]
 
 post-build:
-	@${CARGO_TARGET_DIR}/${CARGO_BUILD_TARGET}/release/dedup_headers \
+	@${CARGO_TARGET_DIR}/release/dedup_headers \
 		${CARGO_TARGET_DIR}/include/datadog/common.h \
 		${CARGO_TARGET_DIR}/include/datadog/profiling.h \
 		${CARGO_TARGET_DIR}/include/datadog/telemetry.h \
 		${CARGO_TARGET_DIR}/include/datadog/data-pipeline.h
-	@${CC} -I ${CARGO_TARGET_DIR}/include/ -L ${CARGO_TARGET_DIR}/${CARGO_BUILD_TARGET}/release/ -ldatadog_profiling_ffi \
+	@${CC} -I ${CARGO_TARGET_DIR}/include/ -L ${CARGO_TARGET_DIR}/release/ -ldatadog_profiling_ffi \
 		${WRKSRC}/crashtracker/libdatadog-crashtracking-receiver.c -o ${WRKSRC}/libdatadog-crashtracking-receiver
-	@${MV} ${CARGO_TARGET_DIR}/${CARGO_BUILD_TARGET}/release/libtest_spawn_from_lib.so ${CARGO_TARGET_DIR}/${CARGO_BUILD_TARGET}/release/libtest_spawn_from_lib.so.skip
+	@${MV} ${CARGO_TARGET_DIR}/release/libtest_spawn_from_lib.so ${CARGO_TARGET_DIR}/release/libtest_spawn_from_lib.so.skip
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/libdatadog-crashtracking-receiver ${STAGEDIR}${PREFIX}/bin/
@@ -47,8 +47,8 @@ do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/libdata/pkgconfig/
 	${INSTALL_DATA} ${CARGO_TARGET_DIR}/include/datadog/*.h ${STAGEDIR}${PREFIX}/include/datadog/
 	${INSTALL_DATA} ${WRKSRC}/*.cmake ${STAGEDIR}${PREFIX}/lib/cmake/libdatadog/
-	${INSTALL_DATA} ${CARGO_TARGET_DIR}/${CARGO_BUILD_TARGET}/release/*.a ${STAGEDIR}${PREFIX}/lib/
-	${INSTALL_LIB} ${CARGO_TARGET_DIR}/${CARGO_BUILD_TARGET}/release/*.so ${STAGEDIR}${PREFIX}/lib/
+	${INSTALL_DATA} ${CARGO_TARGET_DIR}/release/*.a ${STAGEDIR}${PREFIX}/lib/
+	${INSTALL_LIB} ${CARGO_TARGET_DIR}/release/*.so ${STAGEDIR}${PREFIX}/lib/
 	${INSTALL_DATA} ${WRKSRC}/datadog_profiling*.pc ${STAGEDIR}${PREFIX}/libdata/pkgconfig/
 
 .include <bsd.port.mk>

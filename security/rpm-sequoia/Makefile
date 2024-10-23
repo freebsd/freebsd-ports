@@ -270,7 +270,7 @@ PLIST_FILES=	lib/librpm_sequoia.so \
 do-install:
 	# .so lib
 	${MKDIR} ${STAGEDIR}${PREFIX}/lib
-	${INSTALL_LIB} ${WRKDIR}/target/*-unknown-freebsd/release/librpm_sequoia.so ${STAGEDIR}${PREFIX}/lib
+	${INSTALL_LIB} ${WRKDIR}/target/release/librpm_sequoia.so ${STAGEDIR}${PREFIX}/lib
 	# .pc file
 	${MKDIR} ${STAGEDIR}${PREFIX}/libdata/pkgconfig
 	${INSTALL_DATA} ${WRKDIR}/target/release/rpm-sequoia.pc ${STAGEDIR}${PREFIX}/libdata/pkgconfig/rpm-sequoia.pc

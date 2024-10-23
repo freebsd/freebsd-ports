@@ -28,8 +28,8 @@ PLIST_FILES=	bin/fd \
 
 post-build:
 	${MKDIR} ${WRKSRC}/autocomplete
-	${CARGO_TARGET_DIR}/${CARGO_BUILD_TARGET}/release/fd --gen-completions bash > ${WRKSRC}/autocomplete/fd.bash
-	${CARGO_TARGET_DIR}/${CARGO_BUILD_TARGET}/release/fd --gen-completions fish > ${WRKSRC}/autocomplete/fd.fish
+	${CARGO_TARGET_DIR}/release/fd --gen-completions bash > ${WRKSRC}/autocomplete/fd.bash
+	${CARGO_TARGET_DIR}/release/fd --gen-completions fish > ${WRKSRC}/autocomplete/fd.fish
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/fd.1 \

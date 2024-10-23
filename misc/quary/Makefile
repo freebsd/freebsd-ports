@@ -534,7 +534,7 @@ LDFLAGS+=	-L/usr/local/lib/gcc${GCC_DEFAULT} -latomic
 
 do-install:
 	${INSTALL_PROGRAM} \
-		${WRKDIR}/target/*/release/${PORTNAME} \
+		${WRKDIR}/target/release/${PORTNAME} \
 		${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>

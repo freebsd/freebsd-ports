@@ -335,7 +335,7 @@ do-install:
 	# workaround for error: found a virtual manifest at `xx` instead of a package manifest
 .for prog in ${PROGRAMS}
 	${INSTALL_PROGRAM} \
-		${WRKDIR}/target/*/release/${prog} \
+		${WRKDIR}/target/release/${prog} \
 		${STAGEDIR}${PREFIX}/bin
 .endfor
 	# install config files

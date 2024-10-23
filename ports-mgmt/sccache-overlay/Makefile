@@ -398,8 +398,8 @@ CARGO_CRATES=	addr2line-0.14.1 \
 		zstd-sys-1.4.19+zstd.1.4.8
 CARGO_FEATURES=	--no-default-features
 QA_ENV=		IGNORE_QA_proxydeps=1
-LDFLAGS+=	-Wl,-rpath=\$$ORIGIN/../lib \
-		-Wl,-dynamic-linker,/tmp/sccache-overlay/ld-elf.so.1
+#LDFLAGS+=	-Wl,-rpath=\$$ORIGIN/lib \
+#		-Wl,-dynamic-linker,/tmp/sccache-overlay/ld-elf.so.1
 SUB_FILES=	pkg-message
 
 post-install:

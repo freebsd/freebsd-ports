@@ -9,8 +9,6 @@ WWW=		https://github.com/charliermarsh/ruff
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN_i386=	compilation fails: evaluation of constant value failed, see https://github.com/briansmith/ring/issues/2006
-
 BUILD_DEPENDS=	gmake:devel/gmake
 LIB_DEPENDS=	libzstd.so:archivers/zstd
 
@@ -38,17 +36,17 @@ do-install:
 	# workaround for error: found a virtual manifest at `xx` instead of a package manifest
 .for p in ${PROGS}
 	${INSTALL_PROGRAM} \
-		${WRKDIR}/target/*/release/${p} \
+		${WRKDIR}/target/release/${p} \
 		${STAGEDIR}${PREFIX}/bin
 .endfor
 	# generate shell completions
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/bash-completion/completions
-	${WRKDIR}/target/*/release/${PORTNAME} generate-shell-completion bash > ${STAGEDIR}${PREFIX}/share/bash-completion/completions/${PORTNAME}
+	${WRKDIR}/target/release/${PORTNAME} generate-shell-completion bash > ${STAGEDIR}${PREFIX}/share/bash-completion/completions/${PORTNAME}
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/elvish/lib
-	${WRKDIR}/target/*/release/${PORTNAME} generate-shell-completion elvish > ${STAGEDIR}${PREFIX}/share/elvish/lib/${PORTNAME}.elv
+	${WRKDIR}/target/release/${PORTNAME} generate-shell-completion elvish > ${STAGEDIR}${PREFIX}/share/elvish/lib/${PORTNAME}.elv
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/fish/vendor_completions.d
-	${WRKDIR}/target/*/release/${PORTNAME} generate-shell-completion fish > ${STAGEDIR}${PREFIX}/share/fish/vendor_completions.d/${PORTNAME}.fish
+	${WRKDIR}/target/release/${PORTNAME} generate-shell-completion fish > ${STAGEDIR}${PREFIX}/share/fish/vendor_completions.d/${PORTNAME}.fish
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/zsh/site-functions
-	${WRKDIR}/target/*/release/${PORTNAME} generate-shell-completion zsh > ${STAGEDIR}${PREFIX}/share/zsh/site-functions/_${PORTNAME}
+	${WRKDIR}/target/release/${PORTNAME} generate-shell-completion zsh > ${STAGEDIR}${PREFIX}/share/zsh/site-functions/_${PORTNAME}
 
 .include <bsd.port.mk>

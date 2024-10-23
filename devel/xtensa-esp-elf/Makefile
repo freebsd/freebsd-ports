@@ -163,7 +163,7 @@ do-install:
 	    ${XARGS} ${CHMOD} +x
 
 	# xtensa-toolchian-wrapper
-	${INSTALL_PROGRAM} ${WRKSRC2}/target/*-unknown-freebsd/release/xtensa-toolchian-wrapper \
+	${INSTALL_PROGRAM} ${WRKSRC2}/target/release/xtensa-toolchian-wrapper \
 	    ${STAGEDIR}${PREFIX}/${PKGBASE}/bin
 .for chip in ${XTENSA_CHIPS}
 .for wrap in ${XTENSA_WRAPPED}
