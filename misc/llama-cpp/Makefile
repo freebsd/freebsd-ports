@@ -1,6 +1,6 @@
 PORTNAME=	llama-cpp
 DISTVERSIONPREFIX=	b
-DISTVERSION=	3938
+DISTVERSION=	3952
 CATEGORIES=	misc # machine-learning
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
