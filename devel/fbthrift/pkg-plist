@@ -480,6 +480,7 @@ include/thrift/lib/cpp2/server/TokenBucketConcurrencyController.h
 include/thrift/lib/cpp2/server/TransportRoutingHandler.h
 include/thrift/lib/cpp2/server/WeightedRequestPileQueue-inl.h
 include/thrift/lib/cpp2/server/WeightedRequestPileQueue.h
+include/thrift/lib/cpp2/server/metrics/PendingConnectionsMetrics.h
 include/thrift/lib/cpp2/server/metrics/StreamMetricCallback.h
 include/thrift/lib/cpp2/server/overload/ChainedOverloadChecker.h
 include/thrift/lib/cpp2/server/overload/CurrentlyOverloadedChecker.h
