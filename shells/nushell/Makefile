@@ -1,6 +1,5 @@
 PORTNAME=	nushell
-DISTVERSION=	0.98.0
-PORTREVISION=	1
+DISTVERSION=	0.99.1
 CATEGORIES=	shells
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -175,7 +174,7 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		fallible-streaming-iterator-0.1.9 \
 		fancy-regex-0.13.0 \
 		fast-float-0.2.0 \
-		fastrand-2.1.0 \
+		fastrand-2.1.1 \
 		fd-lock-4.0.2 \
 		file-id-0.2.1 \
 		filesize-0.2.0 \
@@ -217,6 +216,7 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		hash32-0.3.1 \
 		hashbrown-0.12.3 \
 		hashbrown-0.14.5 \
+		hashbrown-0.15.0 \
 		hashlink-0.9.1 \
 		heapless-0.8.0 \
 		heck-0.5.0 \
@@ -230,7 +230,7 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		http-body-util-0.1.2 \
 		httparse-1.9.4 \
 		httpdate-1.0.3 \
-		human-date-parser-0.1.2 \
+		human-date-parser-0.2.0 \
 		humantime-2.1.0 \
 		hyper-1.4.1 \
 		hyper-util-0.1.7 \
@@ -238,7 +238,7 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		iana-time-zone-haiku-0.1.2 \
 		ical-0.11.0 \
 		idna-0.5.0 \
-		indexmap-2.5.0 \
+		indexmap-2.6.0 \
 		indicatif-0.17.8 \
 		inotify-0.9.6 \
 		inotify-sys-0.1.5 \
@@ -348,7 +348,7 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		objc2-quartz-core-0.2.2 \
 		object-0.36.3 \
 		omnipath-0.1.6 \
-		once_cell-1.19.0 \
+		once_cell-1.20.1 \
 		open-5.3.0 \
 		openssl-0.10.66 \
 		openssl-macros-0.1.1 \
@@ -453,7 +453,7 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		recvmsg-1.0.0 \
 		redox_syscall-0.5.3 \
 		redox_users-0.4.6 \
-		reedline-0.35.0 \
+		reedline-0.36.0 \
 		ref-cast-1.0.23 \
 		ref-cast-impl-1.0.23 \
 		regex-1.10.6 \
@@ -480,7 +480,7 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		rustc-demangle-0.1.24 \
 		rustc-hash-1.1.0 \
 		rustc_version-0.4.0 \
-		rustix-0.38.34 \
+		rustix-0.38.37 \
 		rustversion-1.0.17 \
 		ryu-1.0.18 \
 		same-file-1.0.6 \
@@ -508,7 +508,7 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		serial_test_derive-3.1.1 \
 		servo_arc-0.3.0 \
 		sha2-0.10.8 \
-		shadow-rs-0.34.0 \
+		shadow-rs-0.35.0 \
 		shell-words-1.1.0 \
 		shlex-1.3.0 \
 		signal-hook-0.3.17 \
@@ -552,10 +552,10 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		sys-locale-0.3.1 \
 		sysinfo-0.30.13 \
 		tabled-0.16.0 \
-		tango-bench-0.5.0 \
+		tango-bench-0.6.0 \
 		tap-1.0.1 \
 		target-features-0.1.6 \
-		tempfile-3.12.0 \
+		tempfile-3.13.0 \
 		tendril-0.4.3 \
 		termcolor-1.4.1 \
 		terminal_size-0.3.0 \
@@ -597,7 +597,7 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		unicode-linebreak-0.1.5 \
 		unicode-normalization-0.1.23 \
 		unicode-reverse-1.0.9 \
-		unicode-segmentation-1.11.0 \
+		unicode-segmentation-1.12.0 \
 		unicode-truncate-1.1.0 \
 		unicode-width-0.1.11 \
 		unicode-xid-0.2.5 \
