@@ -1690,6 +1690,7 @@
     SUBDIR += py-forcediphttpsadapter
     SUBDIR += py-formencode
     SUBDIR += py-fqdn
+    SUBDIR += py-frappe-bench
     SUBDIR += py-freenit
     SUBDIR += py-frozen-flask
     SUBDIR += py-gandi.cli
