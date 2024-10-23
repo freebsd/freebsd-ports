@@ -11,6 +11,8 @@ WWW=		https://github.com/googleprojectzero/weggli
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_amd64=	link fails: error: version script assignment of 'global' to symbol '__muloti4' failed: symbol not defined
+
 USES=		cargo
 USE_GITHUB=	yes
 GH_ACCOUNT=	googleprojectzero
