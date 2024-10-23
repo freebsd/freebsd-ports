@@ -1,5 +1,6 @@
 PORTNAME=	sortinghat
 DISTVERSION=	1.5.0
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,7 +17,7 @@ RUN_DEPENDS=	\
 		${PYTHON_PKGNAMEPREFIX}click>=8.0.0:devel/py-click@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}django42>=4.2:www/py-django42@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}django-cors-headers>=3.7.0:www/py-django-cors-headers@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}django-graphql-jwt>=0.3.0:www/py-django-graphql-jwt@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}django-graphql-jwt34>=0.3.0:www/py-django-graphql-jwt34@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}django-rq>=2.3.2:devel/py-django-rq@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}django-storages>=1.13.2:www/py-django-storages@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}django-treebeard>=4.5.1:www/py-django-treebeard@${PY_FLAVOR} \
