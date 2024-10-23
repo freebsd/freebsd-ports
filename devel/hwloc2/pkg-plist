@@ -36,8 +36,9 @@ include/hwloc/shmem.h
 lib/libhwloc.a
 lib/libhwloc.so
 lib/libhwloc.so.15
-lib/libhwloc.so.15.6.0
+lib/libhwloc.so.15.8.1
 libdata/pkgconfig/hwloc.pc
+%%CAIRO%%share/applications/lstopo.desktop
 share/man/man1/hwloc-annotate.1.gz
 share/man/man1/hwloc-bind.1.gz
 share/man/man1/hwloc-calc.1.gz
@@ -94,6 +95,7 @@ share/man/man3/HWLOC_MEMBIND_NOCPUBIND.3.gz
 share/man/man3/HWLOC_MEMBIND_PROCESS.3.gz
 share/man/man3/HWLOC_MEMBIND_STRICT.3.gz
 share/man/man3/HWLOC_MEMBIND_THREAD.3.gz
+share/man/man3/HWLOC_MEMBIND_WEIGHTED_INTERLEAVE.3.gz
 share/man/man3/HWLOC_OBJ_BRIDGE.3.gz
 share/man/man3/HWLOC_OBJ_BRIDGE_HOST.3.gz
 share/man/man3/HWLOC_OBJ_BRIDGE_PCI.3.gz
@@ -376,6 +378,7 @@ share/man/man3/hwloc_obj_get_info_by_name.3.gz
 share/man/man3/hwloc_obj_is_in_subtree.3.gz
 share/man/man3/hwloc_obj_osdev_type_e.3.gz
 share/man/man3/hwloc_obj_osdev_type_t.3.gz
+share/man/man3/hwloc_obj_set_subtype.3.gz
 share/man/man3/hwloc_obj_t.3.gz
 share/man/man3/hwloc_obj_type_is_cache.3.gz
 share/man/man3/hwloc_obj_type_is_dcache.3.gz
@@ -428,6 +431,7 @@ share/man/man3/hwloc_topology_export_synthetic.3.gz
 share/man/man3/hwloc_topology_export_xml.3.gz
 share/man/man3/hwloc_topology_export_xmlbuffer.3.gz
 share/man/man3/hwloc_topology_flags_e.3.gz
+share/man/man3/hwloc_topology_free_group_object.3.gz
 share/man/man3/hwloc_topology_get_allowed_cpuset.3.gz
 share/man/man3/hwloc_topology_get_allowed_nodeset.3.gz
 share/man/man3/hwloc_topology_get_complete_cpuset.3.gz
@@ -469,6 +473,7 @@ share/man/man3/hwloc_type_sscanf_as_depth.3.gz
 share/man/man3/hwloc_windows_get_nr_processor_groups.3.gz
 share/man/man3/hwloc_windows_get_processor_group_cpuset.3.gz
 share/man/man3/hwlocality_advanced_io.3.gz
+share/man/man3/hwlocality_api_error_reporting.3.gz
 share/man/man3/hwlocality_api_version.3.gz
 share/man/man3/hwlocality_bitmap.3.gz
 share/man/man3/hwlocality_configuration.3.gz
