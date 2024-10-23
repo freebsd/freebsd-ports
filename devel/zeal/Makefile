@@ -1,10 +1,7 @@
 PORTNAME=	zeal
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.7.0
+DISTVERSION=	0.7.2
 CATEGORIES=	devel
-
-PATCH_SITES=	https://github.com/zealdocs/zeal/commit/
-PATCHFILES+=	9630cc94c155d87295e51b41fbab2bd5798f8229.patch:-p1 # Fix build with Qt >= 6.6.0
 
 MAINTAINER=	rakuco@FreeBSD.org
 COMMENT=	Offline documentation browser
