@@ -27,6 +27,11 @@ CARGO_ENV=	SODIUM_LIB_DIR=${LIBS_PREFIX}${PREFIX}/lib SODIUM_INCLUDE_DIR=${LIBS_
 
 PLIST_FILES=	bin/cncli
 
+CARGO_BUILD_TARGET=	${_CARGO_RUST_ARCH_${ARCH}:U${ARCH}}-unknown-${OPSYS:tl}
+CARGO_ENV+= \
+		CARGO_BUILD_TARGET=${CARGO_BUILD_TARGET} \
+		CARGO_TARGET_${CARGO_BUILD_TARGET:S/-/_/g:tu}_LINKER="${CC}"
+
 pre-build:
 		cd ${WRKSRC_sodium} && ./autogen.sh
 		cd ${WRKSRC_sodium} && ./configure --prefix=${PREFIX} --with-pthreads --disable-shared

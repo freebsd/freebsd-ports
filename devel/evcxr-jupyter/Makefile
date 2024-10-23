@@ -311,7 +311,7 @@ LDFLAGS+=	-L/usr/local/lib/gcc${GCC_DEFAULT} -latomic
 .endif
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKDIR}/target/*-unknown-freebsd/release/evcxr ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKDIR}/target/*-unknown-freebsd/release/evcxr_jupyter ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKDIR}/target/release/evcxr ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKDIR}/target/release/evcxr_jupyter ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>

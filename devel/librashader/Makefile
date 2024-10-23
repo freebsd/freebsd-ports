@@ -34,7 +34,7 @@ DEBUG_VARS_OFF=	_PROFILE=release
 # grep '#define LIBRASHADER_CURRENT_ABI' ${WRKSRC}/include/librashader.h | cut -d' ' -f3
 _ABI=		1
 
-_OUT=		${CARGO_TARGET_DIR}/${CARGO_BUILD_TARGET}/${_PROFILE}
+_OUT=		${CARGO_TARGET_DIR}/${_PROFILE}
 
 post-patch:
 	${REINPLACE_CMD} 's|/usr/local|${PREFIX}|g' \
@@ -42,7 +42,7 @@ post-patch:
 
 do-build:
 	${CARGO_CARGO_RUN} run -p librashader-build-script -- --profile \
-		${_PROFILE} --target ${CARGO_BUILD_TARGET} --stable
+		${_PROFILE} --stable
 	patchelf --set-soname librashader.so.${_ABI} ${_OUT}/librashader.so
 
 do-install:

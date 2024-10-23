@@ -47,13 +47,13 @@ post-patch:
 # install quiche apps and libquiche
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/quiche/include/quiche.h ${STAGEDIR}${PREFIX}/include
-	${INSTALL_DATA} ${CARGO_TARGET_DIR}/${CARGO_BUILD_TARGET}/*/quiche.pc ${STAGEDIR}${PREFIX}/libdata/pkgconfig
-	${INSTALL_LIB} ${CARGO_TARGET_DIR}/${CARGO_BUILD_TARGET}/*/libquiche.so ${STAGEDIR}${PREFIX}/lib/libquiche.so.${DISTVERSION}
+	${INSTALL_DATA} ${CARGO_TARGET_DIR}/*/quiche.pc ${STAGEDIR}${PREFIX}/libdata/pkgconfig
+	${INSTALL_LIB} ${CARGO_TARGET_DIR}/*/libquiche.so ${STAGEDIR}${PREFIX}/lib/libquiche.so.${DISTVERSION}
 	${RLN} ${STAGEDIR}${PREFIX}/lib/libquiche.so.${DISTVERSION} ${STAGEDIR}${PREFIX}/lib/libquiche.so.${MAJOR_VER}
 	${RLN} ${STAGEDIR}${PREFIX}/lib/libquiche.so.${DISTVERSION} ${STAGEDIR}${PREFIX}/lib/libquiche.so
-	${INSTALL_LIB} ${CARGO_TARGET_DIR}/${CARGO_BUILD_TARGET}/*/libquiche.a ${STAGEDIR}${PREFIX}/lib
-	${INSTALL_PROGRAM} ${CARGO_TARGET_DIR}/${CARGO_BUILD_TARGET}/*/quiche-server ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_PROGRAM} ${CARGO_TARGET_DIR}/${CARGO_BUILD_TARGET}/*/quiche-client ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_LIB} ${CARGO_TARGET_DIR}/*/libquiche.a ${STAGEDIR}${PREFIX}/lib
+	${INSTALL_PROGRAM} ${CARGO_TARGET_DIR}/*/quiche-server ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${CARGO_TARGET_DIR}/*/quiche-client ${STAGEDIR}${PREFIX}/bin
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

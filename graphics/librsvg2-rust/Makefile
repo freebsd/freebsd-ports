@@ -32,7 +32,6 @@ CONFIGURE_ARGS=	--disable-Bsymbolic \
 		--enable-vala
 CONFIGURE_ENV=	${CARGO_ENV}
 MAKE_ENV=	${CARGO_ENV}
-CARGO_ENV=	RUST_TARGET=${CARGO_BUILD_TARGET}
 CARGO_BUILD=	no
 CARGO_INSTALL=	no
 CARGO_TEST=	no
@@ -47,10 +46,5 @@ DOCS_BUILD_DEPENDS=	gi-docgen:textproc/py-gi-docgen
 DOCS_CONFIGURE_ENABLE=	gtk-doc
 
 TESTING_UNSAFE=	ld: error: undefined symbol: pthread_condattr_init
-
-post-patch:
-# Add explicit <triple> subdir for --target from USES=cargo
-	@${REINPLACE_CMD} 's/test "x$$cross_compiling" = "xyes"/true/' \
-		${WRKSRC}/configure
 
 .include <bsd.port.mk>

@@ -26,7 +26,7 @@ CARGO_FEATURES=	tokio rustls
 CARGO_INSTALL=	no
 
 do-install:
-	${INSTALL_SCRIPT} ${CARGO_TARGET_DIR}/${CARGO_BUILD_TARGET}/*/arti ${STAGEDIR}${PREFIX}/bin/arti
+	${INSTALL_SCRIPT} ${CARGO_TARGET_DIR}/*/arti ${STAGEDIR}${PREFIX}/bin/arti
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${ETCDIR} ${STAGEDIR}/var/log/arti ${STAGEDIR}/var/run/arti ${STAGEDIR}/var/db/arti

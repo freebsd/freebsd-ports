@@ -27,7 +27,7 @@ PLIST_FILES=	share/jetbrains/${PORTNAME}/restarter
 do-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}
 	${INSTALL_PROGRAM} \
-		${CARGO_TARGET_DIR}/${CARGO_BUILD_TARGET}/*/restarter \
+		${CARGO_TARGET_DIR}/*/restarter \
 		${STAGEDIR}${DATADIR}
 
 post-install:

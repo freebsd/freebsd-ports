@@ -108,7 +108,7 @@ PLIST_FILES=	bin/parinfer-rust \
 		share/vim/vimfiles/plugin/parinfer.vim
 
 post-install:
-	${INSTALL_LIB} ${CARGO_TARGET_DIR}/${CARGO_BUILD_TARGET}/*/libparinfer_rust.so \
+	${INSTALL_LIB} ${CARGO_TARGET_DIR}/*/libparinfer_rust.so \
 		${STAGEDIR}${PREFIX}/lib
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/kak/rc/extra \
 		${STAGEDIR}${PREFIX}/share/vim/vimfiles/doc \

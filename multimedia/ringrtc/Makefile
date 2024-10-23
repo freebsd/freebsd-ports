@@ -171,7 +171,7 @@ pre-build:
 # it's not intended to be used outside of signal-desktop, put that in
 # /usr/local/share/ringrtc instead?
 do-install:
-	${INSTALL_LIB} ${CARGO_TARGET_DIR}/${CARGO_BUILD_TARGET}/release/libringrtc.so \
+	${INSTALL_LIB} ${CARGO_TARGET_DIR}/release/libringrtc.so \
 		${STAGEDIR}${PREFIX}/lib/
 
 .include <bsd.port.mk>

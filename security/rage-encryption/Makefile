@@ -31,7 +31,7 @@ PLIST_FILES=	bin/rage \
 
 do-install:
 .for f in rage rage-keygen rage-mount
-	${INSTALL_PROGRAM} ${CARGO_TARGET_DIR}/${CARGO_BUILD_TARGET}/*/${f} \
+	${INSTALL_PROGRAM} ${CARGO_TARGET_DIR}/*/${f} \
 		${STAGEDIR}${PREFIX}/bin
 .endfor
 

@@ -15,7 +15,7 @@ Add explicit <triple> subdir for --target from USES=cargo
      filename = filename or out_basename
      subprocess.run(['cp', '-a',
 -        './{}/{}'.format(binary_dir, filename),
-+        os.path.join('.', os.getenv('CARGO_BUILD_TARGET', ''), binary_dir, filename),
++        os.path.join('.', binary_dir, filename),
          out_path],
          check=True)
  

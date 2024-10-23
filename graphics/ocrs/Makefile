@@ -126,7 +126,7 @@ PLIST_FILES=	bin/${PORTNAME}
 do-install:
 	# binaries (workaround for error: found a virtual manifest at `xx` instead of a package manifest)
 	${INSTALL_PROGRAM} \
-		${WRKDIR}/target/*/release/${PORTNAME} \
+		${WRKDIR}/target/release/${PORTNAME} \
 		${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>

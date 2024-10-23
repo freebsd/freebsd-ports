@@ -200,8 +200,8 @@ post-install:
 		${STAGEDIR}${PREFIX}/share/bash-completion/completions \
 		${STAGEDIR}${PREFIX}/share/fish/vendor_completions.d \
 		${STAGEDIR}${PREFIX}/share/zsh/site-functions
-	${INSTALL_DATA} ${WRKDIR}/target/*-freebsd/release/completions/${PORTNAME}.bash ${STAGEDIR}${PREFIX}/share/bash-completion/completions/${PORTNAME}
-	${INSTALL_DATA} ${WRKDIR}/target/*-freebsd/release/completions/${PORTNAME}.fish ${STAGEDIR}${PREFIX}/share/fish/vendor_completions.d
-	${INSTALL_DATA} ${WRKDIR}/target/*-freebsd/release/completions/_${PORTNAME} ${STAGEDIR}${PREFIX}/share/zsh/site-functions
+	${INSTALL_DATA} ${WRKDIR}/target/release/completions/${PORTNAME}.bash ${STAGEDIR}${PREFIX}/share/bash-completion/completions/${PORTNAME}
+	${INSTALL_DATA} ${WRKDIR}/target/release/completions/${PORTNAME}.fish ${STAGEDIR}${PREFIX}/share/fish/vendor_completions.d
+	${INSTALL_DATA} ${WRKDIR}/target/release/completions/_${PORTNAME} ${STAGEDIR}${PREFIX}/share/zsh/site-functions
 
 .include <bsd.port.mk>

@@ -22,7 +22,7 @@ MANPAGES_BUILD_DEPENDS=	help2man:misc/help2man
 
 post-build-MANPAGES-on:
 	help2man -s 1 -Nn "${COMMENT}" \
-		${CARGO_TARGET_DIR}/${CARGO_BUILD_TARGET}/*/${PORTNAME} \
+		${CARGO_TARGET_DIR}/*/${PORTNAME} \
 		-o ${WRKSRC}/${PORTNAME}.1
 
 post-install-MANPAGES-on:

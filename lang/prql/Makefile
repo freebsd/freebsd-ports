@@ -508,7 +508,7 @@ PLIST_FILES=	bin/prqlc
 do-install:
 	# workaround for error: found a virtual manifest at `xx` instead of a package manifest
 	${INSTALL_PROGRAM} \
-		${WRKDIR}/target/*/release/prqlc \
+		${WRKDIR}/target/release/prqlc \
 		${STAGEDIR}${PREFIX}/bin/prqlc
 
 .include <bsd.port.mk>

@@ -36,7 +36,7 @@ post-patch:
 # Add explicit <triple> subdir for --target from USES=cargo
 # Adjust for CARGO_TARGET_DIR outside of meson.global_source_root()
 	@${REINPLACE_CMD} -e "s/'build',/ & '--verbose', '--verbose',/" \
-		-e "s,'target','..' / & / '${CARGO_BUILD_TARGET}'," \
+		-e "s,'target','..' / & ," \
 		${WRKSRC}/meson.build
 
 .include <bsd.port.mk>

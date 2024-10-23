@@ -98,6 +98,6 @@ BINARY_ALIAS=	python3=${PYTHON_CMD}
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/lib/varnish/vmods/
-	${INSTALL_LIB} ${WRKDIR}/target/*freebsd/release/libvmod_fileserver.so ${STAGEDIR}${PREFIX}/lib/varnish/vmods/
+	${INSTALL_LIB} ${WRKDIR}/target/release/libvmod_fileserver.so ${STAGEDIR}${PREFIX}/lib/varnish/vmods/
 
 .include <bsd.port.mk>

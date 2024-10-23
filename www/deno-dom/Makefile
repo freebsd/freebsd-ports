@@ -91,7 +91,7 @@ do-install:
 	# binaries (workaround for error: found a virtual manifest at `xx` instead of a package manifest)
 	${MKDIR} ${STAGEDIR}${PREFIX}/lib/deno-plugins
 	${INSTALL_LIB} \
-		${WRKDIR}/target/*/release/libplugin.so \
+		${WRKDIR}/target/release/libplugin.so \
 		${STAGEDIR}${PREFIX}/lib/deno-plugins/deno_dom.so
 
 .include <bsd.port.mk>

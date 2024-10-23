@@ -12,9 +12,9 @@
  then
      echo "DEBUG MODE"
 -    cargo build --manifest-path $1/Cargo.toml -p fractal-gtk && cp "$CARGO_TARGET_DIR"/debug/fractal-gtk "$OUTPUT"
-+    cargo build --manifest-path $1/Cargo.toml -p fractal-gtk && cp "$CARGO_TARGET_DIR"/"$CARGO_BUILD_TARGET"/debug/fractal-gtk "$OUTPUT"
++    cargo build --manifest-path $1/Cargo.toml -p fractal-gtk && cp "$CARGO_TARGET_DIR"/debug/fractal-gtk "$OUTPUT"
  else
      echo "RELEASE MODE"
 -    cargo build --manifest-path $1/Cargo.toml --release -p fractal-gtk && cp "$CARGO_TARGET_DIR"/release/fractal-gtk "$OUTPUT"
-+    cargo build --manifest-path $1/Cargo.toml --release -p fractal-gtk && cp "$CARGO_TARGET_DIR"/"$CARGO_BUILD_TARGET"/release/fractal-gtk "$OUTPUT"
++    cargo build --manifest-path $1/Cargo.toml --release -p fractal-gtk && cp "$CARGO_TARGET_DIR"/release/fractal-gtk "$OUTPUT"
  fi
