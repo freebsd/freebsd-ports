@@ -943,6 +943,7 @@ llvm-devel/bin/verify-uselistorder
 %%CLANG%%llvm-devel/include/clang/Analysis/FlowSensitive/Arena.h
 %%CLANG%%llvm-devel/include/clang/Analysis/FlowSensitive/CFGMatchSwitch.h
 %%CLANG%%llvm-devel/include/clang/Analysis/FlowSensitive/CNFFormula.h
+%%CLANG%%llvm-devel/include/clang/Analysis/FlowSensitive/CachedConstAccessorsLattice.h
 %%CLANG%%llvm-devel/include/clang/Analysis/FlowSensitive/DataflowAnalysis.h
 %%CLANG%%llvm-devel/include/clang/Analysis/FlowSensitive/DataflowAnalysisContext.h
 %%CLANG%%llvm-devel/include/clang/Analysis/FlowSensitive/DataflowEnvironment.h
@@ -1123,6 +1124,7 @@ llvm-devel/bin/verify-uselistorder
 %%CLANG%%llvm-devel/include/clang/Basic/SourceMgrAdapter.h
 %%CLANG%%llvm-devel/include/clang/Basic/Specifiers.h
 %%CLANG%%llvm-devel/include/clang/Basic/Stack.h
+%%CLANG%%llvm-devel/include/clang/Basic/StackExhaustionHandler.h
 %%CLANG%%llvm-devel/include/clang/Basic/SyncScope.h
 %%CLANG%%llvm-devel/include/clang/Basic/TargetBuiltins.h
 %%CLANG%%llvm-devel/include/clang/Basic/TargetCXXABI.def
@@ -1726,6 +1728,7 @@ llvm-devel/bin/verify-uselistorder
 %%FLANG%%llvm-devel/include/flang/Optimizer/Dialect/CUF/CUFOps.h
 %%FLANG%%llvm-devel/include/flang/Optimizer/Dialect/CUF/CUFOps.h.inc
 %%FLANG%%llvm-devel/include/flang/Optimizer/Dialect/CUF/CUFOps.td
+%%FLANG%%llvm-devel/include/flang/Optimizer/Dialect/CUF/CUFToLLVMIRTranslation.h
 %%FLANG%%llvm-devel/include/flang/Optimizer/Dialect/CanonicalizationPatterns.inc
 %%FLANG%%llvm-devel/include/flang/Optimizer/Dialect/CanonicalizationPatterns.td
 %%FLANG%%llvm-devel/include/flang/Optimizer/Dialect/FIRAttr.cpp.inc
@@ -1788,7 +1791,7 @@ llvm-devel/bin/verify-uselistorder
 %%FLANG%%llvm-devel/include/flang/Optimizer/Support/Matcher.h
 %%FLANG%%llvm-devel/include/flang/Optimizer/Support/TypeCode.h
 %%FLANG%%llvm-devel/include/flang/Optimizer/Support/Utils.h
-%%FLANG%%llvm-devel/include/flang/Optimizer/Transforms/CufOpConversion.h
+%%FLANG%%llvm-devel/include/flang/Optimizer/Transforms/CUFOpConversion.h
 %%FLANG%%llvm-devel/include/flang/Optimizer/Transforms/MemoryUtils.h
 %%FLANG%%llvm-devel/include/flang/Optimizer/Transforms/Passes.h
 %%FLANG%%llvm-devel/include/flang/Optimizer/Transforms/Passes.h.inc
@@ -1818,6 +1821,7 @@ llvm-devel/bin/verify-uselistorder
 %%FLANG%%llvm-devel/include/flang/Runtime/CUDA/common.h
 %%FLANG%%llvm-devel/include/flang/Runtime/CUDA/descriptor.h
 %%FLANG%%llvm-devel/include/flang/Runtime/CUDA/memory.h
+%%FLANG%%llvm-devel/include/flang/Runtime/CUDA/registration.h
 %%FLANG%%llvm-devel/include/flang/Runtime/allocatable.h
 %%FLANG%%llvm-devel/include/flang/Runtime/allocator-registry.h
 %%FLANG%%llvm-devel/include/flang/Runtime/array-constructor.h
@@ -2840,6 +2844,7 @@ llvm-devel/include/llvm/CodeGen/DebugHandlerBase.h
 llvm-devel/include/llvm/CodeGen/DetectDeadLanes.h
 llvm-devel/include/llvm/CodeGen/DwarfEHPrepare.h
 llvm-devel/include/llvm/CodeGen/DwarfStringPoolEntry.h
+llvm-devel/include/llvm/CodeGen/EarlyIfConversion.h
 llvm-devel/include/llvm/CodeGen/EdgeBundles.h
 llvm-devel/include/llvm/CodeGen/ExecutionDomainFix.h
 llvm-devel/include/llvm/CodeGen/ExpandLargeDivRem.h
@@ -3400,6 +3405,7 @@ llvm-devel/include/llvm/ExecutionEngine/Orc/Debugging/DebuggerSupport.h
 llvm-devel/include/llvm/ExecutionEngine/Orc/Debugging/DebuggerSupportPlugin.h
 llvm-devel/include/llvm/ExecutionEngine/Orc/Debugging/PerfSupportPlugin.h
 llvm-devel/include/llvm/ExecutionEngine/Orc/Debugging/VTuneSupportPlugin.h
+llvm-devel/include/llvm/ExecutionEngine/Orc/DylibManager.h
 llvm-devel/include/llvm/ExecutionEngine/Orc/ELFNixPlatform.h
 llvm-devel/include/llvm/ExecutionEngine/Orc/EPCDebugObjectRegistrar.h
 llvm-devel/include/llvm/ExecutionEngine/Orc/EPCDynamicLibrarySearchGenerator.h
@@ -3439,6 +3445,7 @@ llvm-devel/include/llvm/ExecutionEngine/Orc/SectCreate.h
 llvm-devel/include/llvm/ExecutionEngine/Orc/Shared/AllocationActions.h
 llvm-devel/include/llvm/ExecutionEngine/Orc/Shared/ExecutorAddress.h
 llvm-devel/include/llvm/ExecutionEngine/Orc/Shared/ExecutorSymbolDef.h
+llvm-devel/include/llvm/ExecutionEngine/Orc/Shared/MachOObjectFormat.h
 llvm-devel/include/llvm/ExecutionEngine/Orc/Shared/MemoryFlags.h
 llvm-devel/include/llvm/ExecutionEngine/Orc/Shared/ObjectFormats.h
 llvm-devel/include/llvm/ExecutionEngine/Orc/Shared/OrcError.h
@@ -3933,6 +3940,7 @@ llvm-devel/include/llvm/SandboxIR/Function.h
 llvm-devel/include/llvm/SandboxIR/Instruction.h
 llvm-devel/include/llvm/SandboxIR/IntrinsicInst.h
 llvm-devel/include/llvm/SandboxIR/Module.h
+llvm-devel/include/llvm/SandboxIR/Operator.h
 llvm-devel/include/llvm/SandboxIR/Pass.h
 llvm-devel/include/llvm/SandboxIR/PassManager.h
 llvm-devel/include/llvm/SandboxIR/Region.h
@@ -4423,6 +4431,7 @@ llvm-devel/include/llvm/Transforms/Utils/FunctionImportUtils.h
 llvm-devel/include/llvm/Transforms/Utils/GlobalStatus.h
 llvm-devel/include/llvm/Transforms/Utils/GuardUtils.h
 llvm-devel/include/llvm/Transforms/Utils/HelloWorld.h
+llvm-devel/include/llvm/Transforms/Utils/IRNormalizer.h
 llvm-devel/include/llvm/Transforms/Utils/InjectTLIMappings.h
 llvm-devel/include/llvm/Transforms/Utils/InstructionNamer.h
 llvm-devel/include/llvm/Transforms/Utils/InstructionWorklist.h
@@ -4487,7 +4496,11 @@ llvm-devel/include/llvm/Transforms/Vectorize/SandboxVectorizer/Interval.h
 llvm-devel/include/llvm/Transforms/Vectorize/SandboxVectorizer/Legality.h
 llvm-devel/include/llvm/Transforms/Vectorize/SandboxVectorizer/Passes/BottomUpVec.h
 llvm-devel/include/llvm/Transforms/Vectorize/SandboxVectorizer/Passes/NullPass.h
+llvm-devel/include/llvm/Transforms/Vectorize/SandboxVectorizer/Passes/PrintInstructionCount.h
+llvm-devel/include/llvm/Transforms/Vectorize/SandboxVectorizer/Passes/RegionsFromMetadata.h
 llvm-devel/include/llvm/Transforms/Vectorize/SandboxVectorizer/SandboxVectorizer.h
+llvm-devel/include/llvm/Transforms/Vectorize/SandboxVectorizer/SandboxVectorizerPassBuilder.h
+llvm-devel/include/llvm/Transforms/Vectorize/SandboxVectorizer/Scheduler.h
 llvm-devel/include/llvm/Transforms/Vectorize/SandboxVectorizer/SeedCollector.h
 llvm-devel/include/llvm/Transforms/Vectorize/VectorCombine.h
 llvm-devel/include/llvm/WindowsDriver/MSVCPaths.h
