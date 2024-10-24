@@ -169,6 +169,7 @@
 %%DATADIR%%/tables/grc-international-composed.uti
 %%DATADIR%%/tables/grc-international-decomposed.uti
 %%DATADIR%%/tables/grc-international-en.utb
+%%DATADIR%%/tables/grc-international-en-composed.utb
 %%DATADIR%%/tables/grc-international-es.utb
 %%DATADIR%%/tables/gu-in-g1.utb
 %%DATADIR%%/tables/gujarati.cti
@@ -224,6 +225,7 @@
 %%DATADIR%%/tables/it.tbl
 %%DATADIR%%/tables/iu-ca-g1.ctb
 %%DATADIR%%/tables/ja-kantenji.utb
+%%DATADIR%%/tables/ja-kantenji-ucs2.utb
 %%DATADIR%%/tables/ka.utb
 %%DATADIR%%/tables/ka-in-g1.utb
 %%DATADIR%%/tables/kannada.cti
@@ -381,6 +383,7 @@
 %%DATADIR%%/tables/text_nabcc.dis
 %%DATADIR%%/tables/th-comp8-backward.utb
 %%DATADIR%%/tables/th-g0.utb
+%%DATADIR%%/tables/th-g1.utb
 %%DATADIR%%/tables/tr.ctb
 %%DATADIR%%/tables/tr-g1.ctb
 %%DATADIR%%/tables/tr-g2.ctb
@@ -452,7 +455,7 @@ libdata/pkgconfig/liblouis.pc
 lib/liblouis.a
 lib/liblouis.so
 lib/liblouis.so.20
-lib/liblouis.so.20.0.18
+lib/liblouis.so.20.0.19
 share/man/man1/lou_allround.1.gz
 share/man/man1/lou_checkhyphens.1.gz
 share/man/man1/lou_checktable.1.gz
