@@ -1,6 +1,6 @@
 PORTNAME=	openscad
 PORTVERSION=	2024.10.11
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	cad
 
 #PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
@@ -29,7 +29,6 @@ LIB_DEPENDS=	libzip.so:archivers/libzip \
 		libharfbuzz.so:print/harfbuzz \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libdouble-conversion.so:devel/double-conversion \
-		libasound_module_pcm_oss.so:audio/alsa-plugins \
 		libtbb.so:devel/onetbb
 
 CONFLICTS=	openscad-devel
