@@ -1,4 +1,4 @@
---- electron/shell/app/electron_main_delegate.cc.orig	2024-09-04 18:50:02 UTC
+--- electron/shell/app/electron_main_delegate.cc.orig	2024-10-22 17:22:08 UTC
 +++ electron/shell/app/electron_main_delegate.cc
 @@ -59,13 +59,13 @@
  #include "chrome/child/v8_crashpad_support_win.h"
@@ -25,7 +25,7 @@
      case DIR_APP_DATA: {
        auto env = base::Environment::Create();
        cur = base::nix::GetXDGDirectory(
-@@ -289,7 +289,7 @@ std::optional<int> ElectronMainDelegate::BasicStartupC
+@@ -283,7 +283,7 @@ std::optional<int> ElectronMainDelegate::BasicStartupC
      base::win::PinUser32();
  #endif
  
@@ -34,7 +34,7 @@
    // Check for --no-sandbox parameter when running as root.
    if (getuid() == 0 && IsSandboxEnabled(command_line))
      LOG(FATAL) << "Running as root without --"
-@@ -339,7 +339,7 @@ void ElectronMainDelegate::PreSandboxStartup() {
+@@ -333,7 +333,7 @@ void ElectronMainDelegate::PreSandboxStartup() {
        /* is_preinit = */ IsBrowserProcess() || IsZygoteProcess());
  #endif
  
@@ -43,7 +43,7 @@
    crash_reporter::InitializeCrashKeys();
  #endif
  
-@@ -374,7 +374,7 @@ void ElectronMainDelegate::PreSandboxStartup() {
+@@ -368,7 +368,7 @@ void ElectronMainDelegate::PreSandboxStartup() {
    }
  #endif
  
@@ -52,7 +52,7 @@
    crash_keys::SetCrashKeysFromCommandLine(*command_line);
    crash_keys::SetPlatformCrashKey();
  #endif
-@@ -409,7 +409,7 @@ std::optional<int> ElectronMainDelegate::PreBrowserMai
+@@ -403,7 +403,7 @@ std::optional<int> ElectronMainDelegate::PreBrowserMai
  #if BUILDFLAG(IS_MAC)
    RegisterAtomCrApp();
  #endif
