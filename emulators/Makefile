@@ -35,6 +35,7 @@
     SUBDIR += es-de
     SUBDIR += fceux
     SUBDIR += flexemu
+    SUBDIR += flycast
     SUBDIR += fmsx
     SUBDIR += frodo
     SUBDIR += fs-uae

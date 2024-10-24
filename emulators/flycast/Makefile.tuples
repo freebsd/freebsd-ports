@@ -1,0 +1,4 @@
+GH_TUPLE= \
+	vinniefalco:LuaBridge:fab7b33b896a42dcc865ba5ecdbacd9f409137f8:LuaBridge/core/deps/luabridge \
+	GPUOpen-LibrariesAndSDKs:VulkanMemoryAllocator:6eb62e1515072827db992c2befd80b71b2d04329:VulkanMemoryAllocator/core/deps/VulkanMemoryAllocator \
+	RetroAchievements:rcheevos:563230b1c249774b4852c944dc7cdcb952c9e8e8:rcheevos/core/deps/rcheevos \

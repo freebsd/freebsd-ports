@@ -1,0 +1,57 @@
+--- CMakeLists.txt.orig	2024-10-21 14:13:00 UTC
++++ CMakeLists.txt
+@@ -410,9 +410,13 @@ endif()
+ 	target_link_libraries(${PROJECT_NAME} PRIVATE glslang::glslang-default-resource-limits glslang::SPIRV)
+ endif()
+ 
++if(USE_OSS)
++	target_compile_definitions(${PROJECT_NAME} PRIVATE USE_OSS)
++endif()
++
+ if(NOT LIBRETRO)
+ 	find_package(ALSA)
+-	if(ALSA_FOUND AND NOT ANDROID)
++	if(USE_ALSA AND ALSA_FOUND AND NOT ANDROID)
+ 		target_compile_definitions(${PROJECT_NAME} PRIVATE USE_ALSA)
+ 		target_include_directories(${PROJECT_NAME} PRIVATE ${ALSA_INCLUDE_DIRS})
+ 		target_link_libraries(${PROJECT_NAME} PRIVATE ${ALSA_LIBRARIES})
+@@ -471,9 +475,8 @@ endif()
+ 	endif()
+ endif()
+ 
+-add_subdirectory(core/deps/libchdr EXCLUDE_FROM_ALL)
+-target_link_libraries(${PROJECT_NAME} PRIVATE chdr-static)
+-target_include_directories(${PROJECT_NAME} PRIVATE core/deps/libchdr/include)
++pkg_check_modules(libchdr REQUIRED libchdr)
++target_link_libraries(${PROJECT_NAME} PRIVATE ${libchdr_LINK_LIBRARIES})
+ 
+ if(NOT WITH_SYSTEM_ZLIB)
+ 	set(ZLIB_RELATIVE_PATH "core/deps/libchdr/deps/zlib-1.3.1")
+@@ -490,7 +493,7 @@ if(PKG_CONFIG_FOUND AND NOT ANDROID AND NOT APPLE AND 
+ find_package(PkgConfig)
+ if(PKG_CONFIG_FOUND AND NOT ANDROID AND NOT APPLE AND NOT LIBRETRO)
+ 	pkg_check_modules(AO IMPORTED_TARGET ao)
+-	if(AO_FOUND)
++	if(USE_AO AND AO_FOUND)
+ 		target_compile_definitions(${PROJECT_NAME} PRIVATE USE_LIBAO)
+ 		target_link_libraries(${PROJECT_NAME} PRIVATE PkgConfig::AO)
+ 	endif()
+@@ -510,7 +513,7 @@ if(PKG_CONFIG_FOUND AND NOT ANDROID AND NOT APPLE AND 
+ 	endif()
+ 
+ 	pkg_check_modules(LIBPULSE IMPORTED_TARGET libpulse)
+-	if(LIBPULSE_FOUND)
++	if(USE_PULSEAUDIO AND LIBPULSE_FOUND)
+ 		target_compile_definitions(${PROJECT_NAME} PRIVATE USE_PULSEAUDIO)
+ 		target_link_libraries(${PROJECT_NAME} PRIVATE PkgConfig::LIBPULSE)
+ 	endif()
+@@ -1338,8 +1341,7 @@ if(USE_VULKAN)
+ 		target_compile_definitions(${PROJECT_NAME} PUBLIC VK_USE_PLATFORM_METAL_EXT)
+ 	endif()
+ 
+-	add_subdirectory(core/deps/Vulkan-Headers)
+-	target_link_libraries(${PROJECT_NAME} PRIVATE Vulkan::Headers)
++	find_package(VulkanHeaders)
+ 
+ 	add_subdirectory(core/deps/VulkanMemoryAllocator)
+ 	target_compile_options(VulkanMemoryAllocator INTERFACE $<$<AND:$<COMPILE_LANGUAGE:CXX>,$<CXX_COMPILER_ID:AppleClang,Clang>>:-Wno-nullability-completeness>)

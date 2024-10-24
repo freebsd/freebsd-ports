@@ -1,0 +1,14 @@
+Flycast is a multi-platform Sega Dreamcast, Naomi, Naomi 2, and Atomiswave
+emulator derived from the inactive reicast project.
+
+Flycast provides high performance and high compatibility. It supports an HLE
+BIOS, so dumping a real BIOS from a console isn't required (but it is still
+recommended for increased compatibility). Furthermore it supports widescreen,
+either with a generic hack to render outside of the screen, or by auto-applying
+codes/patches to certain games which provides better results. Resolution and
+texture upscaling is supported alongside dumping and loading of custom textures.
+Flycast emulates standard Dreamcast controllers, keyboard, mouse, light-gun
+(with your mouse), Twin Sticks, and even the ASCII Mission Stick. It can emulate
+two expansion sockets per controller (VMU, Purupuru/Rumble Pack, or Microphone).
+Most if not all games compatible with Dreamcast Live servers are supported by
+Flycast.
