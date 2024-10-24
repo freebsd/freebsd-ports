@@ -451,6 +451,7 @@
     SUBDIR += libRmath
     SUBDIR += libbraiding
     SUBDIR += libccd
+    SUBDIR += libceed
     SUBDIR += libcerf
     SUBDIR += libdivide
     SUBDIR += libdivsufsort
