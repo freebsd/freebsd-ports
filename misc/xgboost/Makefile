@@ -1,6 +1,6 @@
 PORTNAME=	xgboost
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.1.1
+DISTVERSION=	2.1.2
 CATEGORIES=	misc # machine-learning
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -17,7 +17,7 @@ BROKEN_powerpc=	compilation fails: non-constant-expression cannot be narrowed fr
 LIB_DEPENDS=	libdmlc.so:devel/dmlc-core
 TEST_DEPENDS=	googletest>0:devel/googletest
 
-USES=		cmake:testing compiler:c++11-lang localbase:ldflags
+USES=		cmake:testing compiler:c++17-lang localbase:ldflags
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
