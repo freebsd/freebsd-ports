@@ -123,7 +123,7 @@ CONFIGURE_ARGS+=--control=unix:${UNIT_SOCK}
 CFLAGS+=	-Wno-compound-token-split-by-macro
 .endif
 
-.if !target(post-install)
+.if !defined(UNIT_MODNAME)
 post-install:
 	${MKDIR} ${STAGEDIR}${UNIT_DBDIR}
 	${MKDIR} ${STAGEDIR}${UNIT_LOGDIR}
