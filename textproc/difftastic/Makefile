@@ -1,6 +1,5 @@
 PORTNAME=	difftastic
-DISTVERSION=	0.60.0
-PORTREVISION=	2
+DISTVERSION=	0.61.0
 CATEGORIES=	textproc
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -27,7 +26,7 @@ CARGO_CRATES=	ahash-0.8.11 \
 		bitflags-2.5.0 \
 		bstr-1.9.1 \
 		bumpalo-3.14.0 \
-		cc-1.1.5 \
+		cc-1.1.30 \
 		cfg-if-1.0.0 \
 		clap-3.2.25 \
 		clap_lex-0.2.4 \
@@ -110,6 +109,7 @@ CARGO_CRATES=	ahash-0.8.11 \
 		serde-1.0.197 \
 		serde_derive-1.0.197 \
 		serde_json-1.0.114 \
+		shlex-1.3.0 \
 		signal-hook-0.3.17 \
 		signal-hook-mio-0.2.3 \
 		signal-hook-registry-1.4.1 \
@@ -124,7 +124,7 @@ CARGO_CRATES=	ahash-0.8.11 \
 		textwrap-0.16.1 \
 		thread_local-1.1.8 \
 		tree-sitter-0.20.10 \
-		tree_magic_mini-3.1.4 \
+		tree_magic_mini-3.1.5 \
 		typed-arena-2.0.2 \
 		unicode-ident-1.0.12 \
 		unicode-width-0.1.11 \
