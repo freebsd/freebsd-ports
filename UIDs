@@ -697,7 +697,7 @@ c-lightning:*:735:735::0:0:c-lightning Daemon:/var/db/c-lightning:/usr/sbin/nolo
 # free: 748
 # free: 749
 # free: 750
-# free: 751
+supysonic:*:751:751::0:0:Subsonic server API:/var/db/supysonic:/usr/sbin/nologin
 # free: 752
 # free: 753
 # free: 754
