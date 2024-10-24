@@ -986,6 +986,7 @@
     SUBDIR += py-keras-preprocessing
     SUBDIR += py-kiwisolver
     SUBDIR += py-levmar
+    SUBDIR += py-libceed
     SUBDIR += py-libpoly
     SUBDIR += py-linearmodels
     SUBDIR += py-lmfit
