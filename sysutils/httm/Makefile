@@ -16,8 +16,6 @@ USES=		cargo
 USE_GITHUB=	yes
 GH_ACCOUNT=	kimono-koans
 
-.include "${.CURDIR}/Makefile.cargo"
-
 PLIST_FILES=	bin/httm
 
 .include <bsd.port.mk>
