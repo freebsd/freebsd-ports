@@ -3545,3 +3545,4 @@ multimedia/gstreamer1-plugins-gnonlin||2024-10-22|Has expired: Deprecated upstre
 finance/frontaccounting24|finance/frontaccounting|2024-10-22|Move finance/frontaccounting24 to finance/frontaccounting
 www/rubygem-rails-settings-cached-rails61||2024-10-24|Has expired: Ruby on Rails 6.1.x reaches EOL on 2024-10-01
 databases/rubygem-pghero-rails61||2024-10-24|Has expired: Ruby on Rails 6.1.x reaches EOL on 2024-10-01
+devel/rubygem-kt-paperclip-rails61||2024-10-24|Has expired: Ruby on Rails 6.1.x reaches EOL on 2024-10-01
