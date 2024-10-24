@@ -3,6 +3,7 @@ lib/libmousepad.so
 lib/libmousepad.so.0
 lib/libmousepad.so.0.0.0
 %%SPELL%%lib/mousepad/plugins/libmousepad-plugin-gspell.so
+%%SHORTCUTS%%lib/mousepad/plugins/libmousepad-plugin-shortcuts.so
 share/applications/org.xfce.mousepad-settings.desktop
 share/applications/org.xfce.mousepad.desktop
 share/icons/hicolor/128x128/apps/org.xfce.mousepad.png
