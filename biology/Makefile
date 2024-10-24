@@ -108,6 +108,7 @@
     SUBDIR += mafft
     SUBDIR += mapm3
     SUBDIR += mashmap
+    SUBDIR += mca-calling
     SUBDIR += megahit
     SUBDIR += metaeuk
     SUBDIR += migrate
