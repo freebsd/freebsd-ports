@@ -1,3 +1,72 @@
+  <vuln vid="fcb0e00f-d7d3-49b6-a4a1-852528230912">
+    <topic>electron31 -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>electron31</name>
+	<range><lt>31.7.2</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Electron developers report:</p>
+	<blockquote cite="https://github.com/electron/electron/releases/tag/v31.7.2">
+	  <p>This update fixes the following vulnerabilities:</p>
+	  <ul>
+	    <li>Security: backported fix for CVE-2024-9121.</li>
+	    <li>Security: backported fix for CVE-2024-9122.</li>
+	    <li>Security: backported fix for CVE-2024-7025.</li>
+	    <li>Security: backported fix for CVE-2024-9369.</li>
+	    <li>Security: backported fix for CVE-2024-7965.</li>
+	    <li>Security: backported fix for CVE-2024-7966.</li>
+	    <li>Security: backported fix for CVE-2024-7967.</li>
+	    <li>Security: backported fix for CVE-2024-8198.</li>
+	    <li>Security: backported fix for CVE-2024-8193.</li>
+	    <li>Security: backported fix for CVE-2024-7969.</li>
+	    <li>Security: backported fix for CVE-2024-7970.</li>
+	    <li>Security: backported fix for CVE-2024-8362.</li>
+	    <li>Security: backported fix for CVE-2024-8636.</li>
+	    <li>Security: backported fix for CVE-2024-9123.</li>
+	    <li>Security: backported fix for CVE-2024-9120.</li>
+	  </ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2024-9121</cvename>
+      <url>https://github.com/advisories/GHSA-qcr8-x9j3-5j62</url>
+      <cvename>CVE-2024-9122</cvename>
+      <url>https://github.com/advisories/GHSA-4fw3-822r-pqw6</url>
+      <cvename>CVE-2024-7025</cvename>
+      <cvename>CVE-2024-9369</cvename>
+      <cvename>CVE-2024-7965</cvename>
+      <url>https://github.com/advisories/GHSA-x38q-hvmx-rwhg</url>
+      <cvename>CVE-2024-7966</cvename>
+      <url>https://github.com/advisories/GHSA-4pj3-wmgx-2h8r</url>
+      <cvename>CVE-2024-7967</cvename>
+      <url>https://github.com/advisories/GHSA-57cq-jgq2-x7vg</url>
+      <cvename>CVE-2024-8198</cvename>
+      <url>https://github.com/advisories/GHSA-76vg-grjj-w595</url>
+      <cvename>CVE-2024-8193</cvename>
+      <url>https://github.com/advisories/GHSA-5q6v-fp9h-6rjg</url>
+      <cvename>CVE-2024-7969</cvename>
+      <url>https://github.com/advisories/GHSA-p8h7-64p8-w5pq</url>
+      <cvename>CVE-2024-7970</cvename>
+      <url>https://github.com/advisories/GHSA-4c4w-77f9-v9mq</url>
+      <cvename>CVE-2024-8362</cvename>
+      <url>https://github.com/advisories/GHSA-rw7g-4966-p363</url>
+      <cvename>CVE-2024-8636</cvename>
+      <url>https://github.com/advisories/GHSA-r6cg-gw4p-5gmj</url>
+      <cvename>CVE-2024-9123</cvename>
+      <url>https://github.com/advisories/GHSA-xwv3-34j2-7jgx</url>
+      <cvename>CVE-2024-9120</cvename>
+      <url>https://github.com/advisories/GHSA-xh87-v57g-jhpw</url>
+    </references>
+    <dates>
+      <discovery>2024-10-24</discovery>
+      <entry>2024-10-24</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="78e6c113-91c1-11ef-a904-2cf05da270f3">
     <topic>Gitlab -- vulnerabilities</topic>
     <affects>
