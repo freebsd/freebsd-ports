@@ -32,7 +32,6 @@ CMAKE_OFF=	DOWNLOAD_LINKS \
 PORTSCOUT=	skipv:qtiplot
 
 OPTIONS_DEFINE=	DOCS NLS PYTHON
-OPTIONS_DEFAULT=	PYTHON
 OPTIONS_SUB=	yes
 
 PYTHON_DESC=		Python scripting support
@@ -42,6 +41,7 @@ PYTHON_USE=		PYQT=pyqt5,sip:build
 PYTHON_CMAKE_ON=	-DPython3_EXECUTABLE=${PYTHON_CMD} \
 			-DSCRIPTING_PYTHON=True
 PYTHON_CMAKE_OFF=	-DSCRIPTING_PYTHON=False
+PYTHON_BROKEN=		fails to build with Python support
 
 post-install-PYTHON-on:
 	${MV} ${STAGEDIR}${PREFIX}/etc/scidavisrc.py \
