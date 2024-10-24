@@ -568,7 +568,6 @@
     SUBDIR += rubygem-dotenv-rails-rails4
     SUBDIR += rubygem-dotenv-rails-rails5
     SUBDIR += rubygem-dotenv-rails-rails50
-    SUBDIR += rubygem-dotenv-rails-rails61
     SUBDIR += rubygem-dotenv2
     SUBDIR += rubygem-haversine_distance
     SUBDIR += rubygem-iesd
