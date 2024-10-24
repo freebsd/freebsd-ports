@@ -9,9 +9,6 @@ WWW=		https://www.jfree.org/jcommon/
 
 LICENSE=	LGPL21
 
-BROKEN_armv6=		fails to package: find: *: No such file or directory
-BROKEN_armv7=		fails to package: find: *: No such file or directory
-
 USES=		zip
 USE_JAVA=	yes
 
