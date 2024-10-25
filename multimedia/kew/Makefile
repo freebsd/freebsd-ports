@@ -1,6 +1,6 @@
 PORTNAME=	kew
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.8.2
+DISTVERSION=	3.0.0
 CATEGORIES=	multimedia
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -17,8 +17,10 @@ LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg \
 		libfftw3f.so:math/fftw3-float \
 		libfreeimage.so:graphics/freeimage \
 		libnotify.so:devel/libnotify \
+		libogg.so:audio/libogg \
 		libopus.so:audio/opus \
 		libopusfile.so:audio/opusfile \
+		libtag.so:audio/taglib \
 		libvorbis.so:audio/libvorbis
 
 USES=		gettext-runtime gmake gnome pkgconfig
