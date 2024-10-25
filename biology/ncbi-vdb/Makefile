@@ -3,7 +3,7 @@ DISTVERSION=	2.11.0
 PORTREVISION=	6
 CATEGORIES=	biology
 
-MAINTAINER=	mzaki@niid.go.jp
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	NCBI's virtualized back-end for accessing Sequence Read Archive
 WWW=		https://github.com/ncbi/ncbi-vdb/wiki
 
