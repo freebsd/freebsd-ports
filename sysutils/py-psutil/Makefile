@@ -1,5 +1,5 @@
 PORTNAME=	psutil
-PORTVERSION=	6.0.0
+PORTVERSION=	6.1.0
 CATEGORIES=	sysutils python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -19,8 +19,6 @@ USES=		cpe python
 USE_PYTHON=	autoplist concurrent pep517
 
 LDFLAGS+=	-lutil
-
-CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}psutil121
 
 CPE_VENDOR=	psutil_project
 
