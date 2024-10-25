@@ -1,6 +1,5 @@
-
 PORTNAME=	ufs
-DISTVERSION=	0.3.0
+DISTVERSION=	0.4.3
 CATEGORIES=	sysutils
 PKGNAMEPREFIX=	fusefs-
 
@@ -17,6 +16,7 @@ USES=		cargo fuse:3
 USE_GITHUB=	yes
 GH_ACCOUNT=	realchonk
 GH_PROJECT=	fuse-ufs
+CARGO_INSTALL_PATH=	fuse-ufs
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/docs/fuse-ufs.8 ${STAGEDIR}${PREFIX}/share/man/man8/
