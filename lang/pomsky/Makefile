@@ -6,7 +6,8 @@ CATEGORIES=	lang textproc
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Portable, modern regular expression language
-WWW=		https://pomsky-lang.org
+WWW=		https://pomsky-lang.org \
+		https://github.com/pomsky-lang/pomsky
 
 LICENSE=	MIT APACHE20
 LICENSE_COMB=	dual
