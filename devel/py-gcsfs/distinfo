@@ -1,3 +1,3 @@
-TIMESTAMP = 1725559719
-SHA256 (gcsfs-2024.9.0.post1.tar.gz) = 7ca70ee9d7c7dbce1a3e36b4883e14102c2d7b4284f49e242843a437bc684684
-SIZE (gcsfs-2024.9.0.post1.tar.gz) = 79460
+TIMESTAMP = 1729653350
+SHA256 (gcsfs-2024.10.0.tar.gz) = 5df54cfe568e8fdeea5aafa7fed695cdc69a9a674e991ca8c1ce634f5df1d314
+SIZE (gcsfs-2024.10.0.tar.gz) = 79588
