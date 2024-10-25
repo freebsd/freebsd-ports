@@ -1,5 +1,6 @@
 PORTNAME=	bmd
 DISTVERSION=	3.1
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	naito.yuichiro@gmail.com
@@ -14,6 +15,8 @@ ONLY_FOR_ARCHS_REASON=	bhyve runs on amd64 only
 
 RUN_DEPENDS=	bhyve-firmware>0:sysutils/bhyve-firmware \
 		grub2-bhyve>0:sysutils/grub2-bhyve
+
+USES=		uidfix
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	yuichiro-naito
