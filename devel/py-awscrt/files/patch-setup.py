@@ -1,14 +1,14 @@
---- setup.py.orig	2024-10-01 16:33:58 UTC
+--- setup.py.orig	2024-10-21 22:20:04 UTC
 +++ setup.py
 @@ -12,7 +12,6 @@ import sysconfig
  import subprocess
  import sys
  import sysconfig
 -from wheel.bdist_wheel import bdist_wheel
- 
- 
- def is_64bit():
-@@ -301,20 +300,6 @@ class awscrt_build_ext(setuptools.command.build_ext.bu
+ if sys.platform == 'win32':
+     # distutils is deprecated in Python 3.10 and removed in 3.12. However, it still works because Python defines a compatibility interface as long as setuptools is installed.
+     # We don't have an official alternative for distutils.ccompiler as of September 2024. See: https://github.com/pypa/setuptools/issues/2806
+@@ -306,20 +305,6 @@ class awscrt_build_ext(setuptools.command.build_ext.bu
          super().run()
  
  
@@ -31,7 +31,7 @@
      extra_compile_args = os.environ.get('CFLAGS', '').split()
 @@ -468,6 +453,6 @@ setuptools.setup(
      ],
-     python_requires='>=3.7',
+     python_requires='>=3.8',
      ext_modules=[awscrt_ext()],
 -    cmdclass={'build_ext': awscrt_build_ext, "bdist_wheel": bdist_wheel_abi3},
 +    cmdclass={'build_ext': awscrt_build_ext},
