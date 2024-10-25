@@ -1,6 +1,6 @@
 PORTNAME=	fblog
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.12.0
+DISTVERSION=	4.13.1
 CATEGORIES=	textproc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -31,10 +31,10 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		cc-1.0.98 \
 		cfg-if-1.0.0 \
 		chrono-0.4.38 \
-		clap-4.5.16 \
-		clap_builder-4.5.15 \
-		clap_complete-4.5.24 \
-		clap_derive-4.5.13 \
+		clap-4.5.18 \
+		clap_builder-4.5.18 \
+		clap_complete-4.5.29 \
+		clap_derive-4.5.18 \
 		clap_lex-0.7.0 \
 		colorchoice-1.0.1 \
 		core-foundation-sys-0.8.6 \
@@ -48,7 +48,7 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		errno-0.3.9 \
 		generic-array-0.14.7 \
 		getrandom-0.2.15 \
-		handlebars-6.0.0 \
+		handlebars-6.1.0 \
 		hashbrown-0.14.5 \
 		heck-0.5.0 \
 		home-0.5.9 \
@@ -79,15 +79,15 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		proc-macro2-1.0.83 \
 		quote-1.0.36 \
 		redox_users-0.4.5 \
-		regex-1.10.6 \
-		regex-automata-0.4.6 \
-		regex-syntax-0.8.3 \
+		regex-1.11.0 \
+		regex-automata-0.4.8 \
+		regex-syntax-0.8.5 \
 		rustc-hash-2.0.0 \
 		rustix-0.38.34 \
 		ryu-1.0.18 \
-		serde-1.0.209 \
-		serde_derive-1.0.209 \
-		serde_json-1.0.127 \
+		serde-1.0.210 \
+		serde_derive-1.0.210 \
+		serde_json-1.0.128 \
 		serde_spanned-0.6.7 \
 		sha2-0.10.8 \
 		strsim-0.11.1 \
