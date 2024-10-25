@@ -1,5 +1,5 @@
 PORTNAME=	brakeman
-PORTVERSION=	6.2.1
+PORTVERSION=	6.2.2
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 
@@ -16,6 +16,8 @@ LICENSE_PERMS=	auto-accept dist-mirror dist-sell pkg-mirror pkg-sell
 RUN_DEPENDS=	rubygem-racc>=0:devel/rubygem-racc
 
 USES=		gem
+
+NO_ARCH=	yes
 
 PLIST_FILES=	bin/brakeman
 
