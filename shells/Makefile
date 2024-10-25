@@ -42,6 +42,7 @@
     SUBDIR += nu_plugin_query
     SUBDIR += nushell
     SUBDIR += ohmyzsh
+    SUBDIR += oil
     SUBDIR += oksh
     SUBDIR += p5-Bash-Completion
     SUBDIR += p5-Shell-Perl
