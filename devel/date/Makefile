@@ -1,5 +1,5 @@
 PORTNAME=	date
-PORTVERSION=	3.0.2
+PORTVERSION=	3.0.3
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
@@ -27,6 +27,5 @@ USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	HowardHinnant
-GH_PROJECT=	date
 
 .include <bsd.port.mk>
