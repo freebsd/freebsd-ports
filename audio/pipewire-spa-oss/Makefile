@@ -1,5 +1,6 @@
 PORTNAME=	pipewire-spa-oss
 DISTVERSION=	g20241021
+PORTREVISION=	1
 CATEGORIES=	audio
 
 MAINTAINER=	arrowd@FreeBSD.org
@@ -96,14 +97,14 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		yansi-term-0.1.2 \
 		libspa,libspa-sys@git+https://gitlab.freedesktop.org/pipewire/pipewire-rs.git?rev=016e554768ae251c8de3724ea4b06f4749a8dd00\#016e554768ae251c8de3724ea4b06f4749a8dd00
 
-PLIST_FILES=	lib/spa-0.2/freebsd_oss/libspa_freebsd_oss.so \
+PLIST_FILES=	lib/spa-0.2/libspa_freebsd_oss.so \
 		share/pipewire/pipewire.conf.d/oss.conf \
 		share/wireplumber/scripts/monitors/oss.lua \
 		share/wireplumber/wireplumber.conf.d/oss.conf
 
 do-install:
-	${MKDIR} ${STAGEDIR}${PREFIX}/lib/spa-0.2/freebsd_oss
-	${INSTALL_LIB} ${WRKDIR}/target/release/libspa_freebsd_oss.so ${STAGEDIR}${PREFIX}/lib/spa-0.2/freebsd_oss
+	${MKDIR} ${STAGEDIR}${PREFIX}/lib/spa-0.2
+	${INSTALL_LIB} ${WRKDIR}/target/release/libspa_freebsd_oss.so ${STAGEDIR}${PREFIX}/lib/spa-0.2
 
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/pipewire/pipewire.conf.d
 	${INSTALL_DATA} ${WRKSRC}/conf/pipewire/pipewire.conf.d/oss.conf ${STAGEDIR}${PREFIX}/share/pipewire/pipewire.conf.d
