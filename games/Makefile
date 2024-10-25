@@ -613,6 +613,7 @@
     SUBDIR += mangband
     SUBDIR += marblemarcher
     SUBDIR += mari0
+    SUBDIR += mastermind
     SUBDIR += masterserver
     SUBDIR += maxr
     SUBDIR += meandmyshadow
