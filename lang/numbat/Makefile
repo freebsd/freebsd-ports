@@ -1,12 +1,12 @@
 PORTNAME=	numbat
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.14.0
-PORTREVISION=	0
 CATEGORIES=	lang devel science
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Statically typed programming language for scientific computations
-WWW=		https://numbat.dev
+WWW=		https://numbat.dev \
+		https://github.com/sharkdp/numbat
 
 LICENSE=	APACHE20 MIT
 LICENSE_COMB=	dual
