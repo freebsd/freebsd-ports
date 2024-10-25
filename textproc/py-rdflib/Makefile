@@ -27,6 +27,17 @@ NO_ARCH=	yes
 
 CPE_VENDOR=	rdflib_project
 
+OPTIONS_DEFINE=	BERKELEYDB LXML NETWORKX ORJSON
+BERKELEYDB_DESC=BDB support
+LXML_DESC=	XML support
+ORJSON_DESC=	JSON support
+NETWORKX_DESC=	Network support
+
+BERKELEYDB_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}berkeleydb>=0:databases/py-berkeleydb@${PY_FLAVOR}
+LXML_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lxml>=4.3<6.0:devel/py-lxml@${PY_FLAVOR}
+NEWORKX_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}networkx>=2<4:math/py-networkx@${PY_FLAVOR}
+ORJSON_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}orjson>=3.9.14<4:devel/py-orjson@${PY_FLAVOR}
+
 .include <bsd.port.pre.mk>
 
 .if ${PYTHON_REL} < 31100
