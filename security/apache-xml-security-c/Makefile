@@ -1,5 +1,6 @@
 PORTNAME=	xml-security-c
 DISTVERSION=	3.0.0
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	https://shibboleth.net/downloads/xml-security-c/${DISTVERSION}/
 PKGNAMEPREFIX=	apache-

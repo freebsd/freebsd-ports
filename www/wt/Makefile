@@ -1,5 +1,6 @@
 PORTNAME=	wt
 DISTVERSION=	4.11.0
+PORTREVISION=	1
 CATEGORIES=	www
 
 MAINTAINER=	info@babaei.net
@@ -112,7 +113,7 @@ RESOURCES_CMAKE_BOOL=	INSTALL_RESOURCES
 
 SAML_LIB_DEPENDS=	liblog4shib.so:devel/log4shib \
 			libsaml.so:security/opensaml \
-			libxerces-c-3.2.so:textproc/xerces-c3 \
+			libxerces-c.so:textproc/xerces-c3 \
 			libxml-security-c.so:security/apache-xml-security-c \
 			libxmltooling.so:devel/xmltooling
 SAML_CMAKE_BOOL=	ENABLE_SAML
