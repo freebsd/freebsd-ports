@@ -5,8 +5,8 @@ COMMENT?=	Qt bindings to AppStream
 
 LIB_DEPENDS=	libappstream.so:devel/appstream
 
-FLAVORS=	qt5 qt6
-FLAVOR?=	qt5
+FLAVORS=	qt6 qt5
+FLAVOR?=	qt6
 
 USES=		qt:${FLAVOR:S/qt//}
 
@@ -14,9 +14,9 @@ _USE_QT_qt5=	core buildtools:build qmake:build testlib:build
 _USE_QT_qt6=	base
 USE_QT=		${_USE_QT_${FLAVOR}}
 
-_MESON_ARGS_qt5=	-Dqt5=true
-_MESON_ARGS_qt6=	-Dqt=true
-MESON_ARGS=		${_MESON_ARGS_${FLAVOR}}
+_MESON_ARGS_qt5=	-Dqt-versions='5'
+_MESON_ARGS_qt6=	-Dqt-versions='6'
+MESON_ARGS=		-Dqt=true ${_MESON_ARGS_${FLAVOR}}
 
 _QT_VER_SUFFIX_qt5=	5
 _QT_VER_SUFFIX_qt6=	#
