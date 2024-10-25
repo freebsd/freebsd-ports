@@ -1,5 +1,5 @@
 PORTNAME=	labwc
-DISTVERSION=	0.8.0
+DISTVERSION=	0.8.1
 CATEGORIES=	x11-wm wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -18,12 +18,15 @@ LIB_DEPENDS=	libpng.so:graphics/png \
 
 USES=		compiler:c11 gnome meson pkgconfig xorg
 USE_GITHUB=	yes
+USE_GITLAB=	nodefault
 USE_GNOME=	cairo libxml2 pango
 USE_XORG=	pixman
+GL_TUPLE=	https://gitlab.freedesktop.org:vyivel:libsfdo:v0.1.3:libsfdo/subprojects/libsfdo-basedir
 PLIST_FILES=	bin/${PORTNAME} \
 		share/icons/hicolor/scalable/apps/${PORTNAME}-symbolic.svg \
 		share/icons/hicolor/scalable/apps/${PORTNAME}.svg \
-		share/wayland-sessions/${PORTNAME}.desktop
+		share/wayland-sessions/${PORTNAME}.desktop \
+		share/xdg-desktop-portal/${PORTNAME}-portals.conf
 PORTEXAMPLES=	*
 
 OPTIONS_DEFINE=	EXAMPLES LIBRSVG2 MANPAGES NLS X11
@@ -90,5 +93,11 @@ post-patch:
 # Respect hier(7) for examples
 	@${REINPLACE_CMD} '/datadir/s/doc/examples/' \
 		${WRKSRC}/docs/meson.build
+
+.ifdef GL_TUPLE
+post-configure:
+	@${REINPLACE_CMD} 's/meson install/& \
+		--skip-subprojects/' ${BUILD_WRKSRC}/build.ninja
+.endif
 
 .include <bsd.port.mk>
