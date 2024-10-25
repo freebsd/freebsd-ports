@@ -1,5 +1,5 @@
 PORTNAME=	vips
-PORTVERSION=	8.15.4
+PORTVERSION=	8.15.5
 CATEGORIES=	graphics
 MASTER_SITES=	https://github.com/libvips/libvips/releases/download/v${PORTVERSION}/
 
@@ -38,7 +38,7 @@ MESON_ARGS=	--default-library=both \
 		-Dzlib=enabled
 USE_LDCONFIG=	yes
 
-PLIST_SUB=	PORTVERSION=${PORTVERSION} VERSION=${PORTVERSION:R}
+PLIST_SUB=	VERSION=${PORTVERSION:R}
 
 FLAVORS=	x11 nox11
 FLAVOR?=	${FLAVORS:[1]}
