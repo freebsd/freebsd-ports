@@ -1,6 +1,6 @@
 PORTNAME=	spamassassin
 PORTVERSION=	4.0.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES?=	mail perl5
 MASTER_SITES=	https://archive.apache.org/dist/${PORTNAME}/source/ CPAN/Mail
 DISTNAME=	Mail-SpamAssassin-${PORTVERSION}
