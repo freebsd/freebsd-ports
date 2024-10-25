@@ -7,7 +7,8 @@ PKGNAMESUFFIX=	-cli
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Extensible ORM and Query Builder for Rust
-WWW=		https://diesel.rs
+WWW=		https://diesel.rs \
+		https://github.com/diesel-rs/diesel
 
 LICENSE=	APACHE20 MIT
 LICENSE_COMB=	dual
