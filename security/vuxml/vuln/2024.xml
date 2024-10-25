@@ -326,6 +326,10 @@
 	<name>firefox-esr</name>
 	<range><lt>128.3.1,1</lt></range>
       </package>
+      <package>
+	<name>librewolf</name>
+	<range><lt>131</lt></range>
+      </package>
     </affects>
     <description>
 	<body xmlns="http://www.w3.org/1999/xhtml">
@@ -599,6 +603,10 @@
       <package>
 	<name>thunderbird</name>
 	<range><lt>128.3.0</lt></range>
+      </package>
+      <package>
+	<name>librewolf</name>
+	<range><lt>131</lt></range>
       </package>
     </affects>
     <description>
@@ -1685,6 +1693,10 @@
 	<name>firefox</name>
 	<range><lt>128.0,2</lt></range>
       </package>
+      <package>
+	<name>librewolf</name>
+	<range><lt>128.0</lt></range>
+      </package>
     </affects>
     <description>
 	<body xmlns="http://www.w3.org/1999/xhtml">
@@ -1869,6 +1881,10 @@
       <package>
 	<name>firefox</name>
 	<range><lt>130.0_1,2</lt></range>
+      </package>
+      <package>
+	<name>librewolf</name>
+	<range><lt>130.0</lt></range>
       </package>
     </affects>
     <description>
@@ -2314,6 +2330,10 @@
 	<name>firefox</name>
 	<range><lt>129.0,2</lt></range>
       </package>
+      <package>
+	<name>librewolf</name>
+	<range><lt>129.0</lt></range>
+      </package>
     </affects>
     <description>
 	<body xmlns="http://www.w3.org/1999/xhtml">
@@ -2468,6 +2488,10 @@
       <package>
 	<name>firefox</name>
 	<range><lt>127,2</lt></range>
+      </package>
+      <package>
+	<name>librewolf</name>
+	<range><lt>127</lt></range>
       </package>
     </affects>
     <description>
@@ -2705,6 +2729,10 @@
 	<name>firefox</name>
 	<range><lt>129,2</lt></range>
       </package>
+      <package>
+	<name>librewolf</name>
+	<range><lt>129</lt></range>
+      </package>
     </affects>
     <description>
 	<body xmlns="http://www.w3.org/1999/xhtml">
@@ -2915,6 +2943,10 @@
       <package>
 	<name>firefox</name>
 	<range><lt>129.0,2</lt></range>
+      </package>
+      <package>
+	<name>librewolf</name>
+	<range><lt>129.0</lt></range>
       </package>
     </affects>
     <description>
@@ -3156,6 +3188,10 @@ All of these are related to the CometVisu add-on for openHAB - if you are a user
       <package>
 	<name>firefox</name>
 	<range><lt>127.0,2</lt></range>
+      </package>
+      <package>
+	<name>librewolf</name>
+	<range><lt>127.0</lt></range>
       </package>
     </affects>
     <description>
