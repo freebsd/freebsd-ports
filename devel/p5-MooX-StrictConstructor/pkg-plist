@@ -1,4 +1,10 @@
-%%SITE_PERL%%/Method/Generate/Constructor/Role/StrictConstructor.pm
 %%SITE_PERL%%/MooX/StrictConstructor.pm
-%%PERL5_MAN3%%/Method::Generate::Constructor::Role::StrictConstructor.3.gz
+%%SITE_PERL%%/MooX/StrictConstructor/Role/BuildAll.pm
+%%SITE_PERL%%/MooX/StrictConstructor/Role/Constructor.pm
+%%SITE_PERL%%/MooX/StrictConstructor/Role/Constructor/Base.pm
+%%SITE_PERL%%/MooX/StrictConstructor/Role/Constructor/Late.pm
 %%PERL5_MAN3%%/MooX::StrictConstructor.3.gz
+%%PERL5_MAN3%%/MooX::StrictConstructor::Role::BuildAll.3.gz
+%%PERL5_MAN3%%/MooX::StrictConstructor::Role::Constructor.3.gz
+%%PERL5_MAN3%%/MooX::StrictConstructor::Role::Constructor::Base.3.gz
+%%PERL5_MAN3%%/MooX::StrictConstructor::Role::Constructor::Late.3.gz
