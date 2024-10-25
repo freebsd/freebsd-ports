@@ -17,6 +17,7 @@
     SUBDIR += R-cran-FNN
     SUBDIR += R-cran-Formula
     SUBDIR += R-cran-FrF2
+    SUBDIR += R-cran-GPArotation
     SUBDIR += R-cran-KFAS
     SUBDIR += R-cran-LearnBayes
     SUBDIR += R-cran-MCMCpack
