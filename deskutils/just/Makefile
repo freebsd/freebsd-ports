@@ -4,7 +4,8 @@ CATEGORIES=	deskutils
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Just a command runner: handy way to save/run project-specific commands
-WWW=		https://just.systems/
+WWW=		https://just.systems/ \
+		https://github.com/casey/just
 
 LICENSE=	CC0-1.0
 LICENSE_FILE=	${WRKSRC}/LICENSE
