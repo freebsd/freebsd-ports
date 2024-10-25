@@ -1,6 +1,6 @@
 PORTNAME=	doctl
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.114.0
+DISTVERSION=	1.116.0
 CATEGORIES=	sysutils
 MASTER_SITES=	https://github.com/digitalocean/${PORTNAME}/releases/download/v${DISTVERSION}/
 DISTNAME=	${PORTNAME}-${DISTVERSION}-source
