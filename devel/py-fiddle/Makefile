@@ -24,4 +24,10 @@ USE_PYTHON=	autoplist concurrent pep517
 
 NO_ARCH=	yes
 
+OPTIONS_DEFINE=	FLAGS
+FLAGS_DESC=	Command-line flags support
+
+FLAGS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}absl-py>=0:devel/py-absl-py@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}etils>=0:devel/py-etils@${PY_FLAVOR}
+
 .include <bsd.port.mk>
