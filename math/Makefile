@@ -103,6 +103,7 @@
     SUBDIR += R-cran-misc3d
     SUBDIR += R-cran-miscTools
     SUBDIR += R-cran-mitools
+    SUBDIR += R-cran-mnormt
     SUBDIR += R-cran-moments
     SUBDIR += R-cran-mvtnorm
     SUBDIR += R-cran-ncdf4
