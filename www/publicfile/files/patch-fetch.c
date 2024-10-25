@@ -1,6 +1,6 @@
---- fetch.c.orig	1999-11-08 23:23:46.000000000 -0800
-+++ fetch.c	2014-01-29 15:19:43.000000000 -0800
-@@ -82,7 +82,7 @@
+--- fetch.c.orig	1999-11-09 07:23:46 UTC
++++ fetch.c
+@@ -82,7 +82,7 @@ static void list(char *fn,int flaglong)
    substdio_puts(&ss,"\r\n");
  }
  
@@ -9,7 +9,7 @@
  {
    DIR *dir;
    direntry *d;
-@@ -122,7 +122,7 @@
+@@ -122,7 +122,7 @@ static int doit(char *fn,int fddata,int fdfile,int how
        for (;;) {
  	r = read(fdfile,inbuf,sizeof inbuf);
  	if (r == -1) {
