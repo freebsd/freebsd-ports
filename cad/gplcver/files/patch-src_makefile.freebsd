@@ -1,0 +1,11 @@
+--- src/makefile.freebsd.orig	2024-10-26 15:44:05 UTC
++++ src/makefile.freebsd
+@@ -45,7 +45,7 @@ LD=ld
+ # select loader
+ LD=ld
+ # needed for dynamic PLI loading
+-LFLAGS=-export-dynamic
++LFLAGS=-rdynamic
+ 
+ # system libs
+ LIBS= -lm
