@@ -1214,6 +1214,7 @@
     SUBDIR += waffle
     SUBDIR += waifu2x-converter-cpp
     SUBDIR += waifu2x-ncnn-vulkan
+    SUBDIR += wallhaven-cli
     SUBDIR += wayland
     SUBDIR += wayland-protocols
     SUBDIR += wayland-utils
