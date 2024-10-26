@@ -6,7 +6,8 @@ CATEGORIES=	shells
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Magical shell history
-WWW=		https://atuin.sh
+WWW=		https://atuin.sh \
+		https://github.com/atuinsh/atuin
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
