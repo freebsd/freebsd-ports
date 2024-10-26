@@ -1,5 +1,5 @@
 PORTNAME=	distilator
-PORTVERSION=	1.4
+PORTVERSION=	1.5.0
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	https://critical.ch/distilator/ \
 		LOCAL/ehaupt
