@@ -5,7 +5,8 @@ CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Arbitrary-precision unit-aware calculator
-WWW=		https://printfn.github.io/fend
+WWW=		https://printfn.github.io/fend \
+		https://github.com/printfn/fend
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
