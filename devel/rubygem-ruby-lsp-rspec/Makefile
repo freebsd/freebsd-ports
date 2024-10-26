@@ -1,5 +1,5 @@
 PORTNAME=	ruby-lsp-rspec
-PORTVERSION=	0.1.16
+PORTVERSION=	0.1.17
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
