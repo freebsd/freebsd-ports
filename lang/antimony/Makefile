@@ -7,7 +7,8 @@ PKGNAMESUFFIX=	-language
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Antimony programming language
-WWW=		https://antimony-lang.github.io/antimony/
+WWW=		https://antimony-lang.github.io/antimony/ \
+		https://github.com/antimony-lang/antimony
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
