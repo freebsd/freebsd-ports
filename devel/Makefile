@@ -5807,6 +5807,7 @@
     SUBDIR += py-robotframework
     SUBDIR += py-robotframework-assertion-engine
     SUBDIR += py-robotframework-databaselibrary
+    SUBDIR += py-robotframework-excellib
     SUBDIR += py-robotframework-pabot
     SUBDIR += py-robotframework-pythonlibcore
     SUBDIR += py-robotframework-requests
