@@ -1,5 +1,5 @@
 PORTNAME=	ruby-lsp-rails
-PORTVERSION=	0.3.20
+PORTVERSION=	0.3.21
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
