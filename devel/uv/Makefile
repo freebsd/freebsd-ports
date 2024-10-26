@@ -1,11 +1,12 @@
 PORTNAME=	uv
-DISTVERSION=	0.4.21
-PORTREVISION=	2
+DISTVERSION=	0.4.27
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Extremely fast Python package installer and resolver, written in Rust
-WWW=		https://astral.sh/
+WWW=		https://astral.sh/ \
+		https://docs.astral.sh/uv/ \
+		https://github.com/astral-sh/uv
 
 LICENSE=	APACHE20 MIT
 LICENSE_COMB=	dual
