@@ -1,5 +1,5 @@
 PORTNAME=	dlib
-DISTVERSION=	19.24.2
+DISTVERSION=	19.24.6
 CATEGORIES=	science devel math python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,40 +12,26 @@ LICENSE=	BSL
 LICENSE_FILE=	${WRKSRC}/dlib/LICENSE.txt
 
 LIB_DEPENDS=		${PY_BOOST} \
-			libpng.so:graphics/png
+			libpng.so:graphics/png \
+			libgif.so:graphics/giflib
 
-USES=			cmake:indirect compiler:c++11-lang pkgconfig python shebangfix
+USES=			cmake:indirect compiler:c++11-lang pkgconfig python shebangfix \
+			sqlite
 USE_PYTHON=		autoplist distutils
+USE_XORG=		ice sm x11 xext
 SHEBANG_FILES=		python_examples/*.py
 
-OPTIONS_DEFINE=		X11 JPEG GIF SQLITE BLASLAPACK AVX
-OPTIONS_DEFAULT=	X11 JPEG GIF SQLITE
+OPTIONS_DEFINE=		BLASLAPACK
 
-BLASLAPACK_DESC=	Use Blas and Lapack libraries from ports
-AVX_DESC=		Use AVX instructions if supported by CPU
-
-X11_USES=		xorg
-X11_USE=		xorg=x11
-
-JPEG_USES=		jpeg
-JPEG_VARS_OFF=		jpegargs="--no DLIB_JPEG_SUPPORT"
-
-PNG_LIB_DEPENDS=	libpng.so:graphics/png
-PNG_VARS_OFF=		pngargs="--no DLIB_PNG_SUPPORT"
-
-GIF_LIB_DEPENDS=	libgif.so:graphics/giflib
-GIF_VARS_OFF=		gifargs="--no DLIB_GIF_SUPPORT"
-
-SQLITE_USES=		sqlite
-SQLITE_VARS_OFF=	sqliteargs="--no DLIB_LINK_WITH_SQLITE3"
+BLASLAPACK_DESC=	Use OpenBLAS for matrix operations
 
 BLASLAPACK_USES=	blaslapack:openblas
-BLASLAPACK_VARS_OFF=	blaslapackargs="--no DLIB_USE_BLAS --no DLIB_USE_LAPACK --no DLIB_USE_MKL_FFT"
-
-AVX_VARS_OFF=		avxargs="--no USE_AVX_INSTRUCTIONS"
+BLASLAPACK_VARS_OFF=	blaslapackargs="--no DLIB_USE_BLAS --no DLIB_USE_LAPACK"
 
 PYDISTUTILS_BUILDARGS=	--set BOOST_PYTHON_SUFFIX:STRING=${PYTHON_SUFFIX} ${X11ARGS} ${JPEGARGS} ${PNGARGS} ${GIFARGS} ${SQLITEARGS} ${BLASLAPACKARGS} ${AVXARGS} ${BLASLAPACK}
 
-PLIST_SUB=		PYTHON2="@comment " PYTHON3=""
+# due to a build system bug the code gets recompiled twice during "build" and "stage"
+do-build:
+	@${DO_NADA}
 
 .include <bsd.port.mk>
