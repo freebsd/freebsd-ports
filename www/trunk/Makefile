@@ -5,7 +5,8 @@ CATEGORIES=	www devel
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Build, bundle & ship your Rust WASM application to the web
-WWW=		https://trunkrs.dev/
+WWW=		https://trunkrs.dev/ \
+		https://github.com/trunk-rs/trunk
 
 LICENSE=	APACHE20 MIT
 LICENSE_COMB=	dual
