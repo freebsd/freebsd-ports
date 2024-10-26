@@ -1,3 +1,6 @@
-Database Library utilities for use with Robot Framework. This can allow you to
-query your database after an action has been made to verify the results. This
-is compatible* with any Database API Specification 2.0 module.
+The Database Library for Robot Framework allows you to query a database and
+verify the results. It requires an appropriate Python module to be installed
+separately - depending on your database, like e.g. oracledb or pymysql.
+
+The library consists of some keywords designed to perform different checks on
+your database. Here you can find the keyword docs.
