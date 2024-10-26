@@ -5,7 +5,8 @@ CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Massively parallel, optimal functional runtime in Rust
-WWW=		https://higherorderco.com
+WWW=		https://higherorderco.com \
+		https://github.com/HigherOrderCO/hvm
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
