@@ -2,8 +2,11 @@ PORTNAME=	plasma-desktop
 DISTVERSION=	${KDE_PLASMA_VERSION}
 CATEGORIES=	x11 kde kde-plasma
 
-COMMENT=	KDE Plasma Desktop
+PATCH_SITES=	https://invent.kde.org/plasma/plasma-desktop/-/commit/
+PATCHFILES=	02726a1ca0189f71f46513078cbc82af9daa9425.patch:-p1 # Fix build with LLVM >= 19
+
 MAINTAINER=	kde@FreeBSD.org
+COMMENT=	KDE Plasma Desktop
 
 BUILD_DEPENDS=	wayland-protocols>=0:graphics/wayland-protocols \
 		xf86-input-evdev>0:x11-drivers/xf86-input-evdev \
