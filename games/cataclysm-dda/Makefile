@@ -4,6 +4,10 @@ PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	games
 
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES=	1ab7d1793b3a34779e4616b8c0c7fab37a6da3be.patch:-p1 # Fix build with clang 19 \
+		https://github.com/CleverRaven/Cataclysm-DDA/issues/77355
+
 MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Roguelike set in a post-apocalyptic world
 WWW=		https://cataclysmdda.org
