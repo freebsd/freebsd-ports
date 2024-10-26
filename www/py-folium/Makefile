@@ -1,5 +1,5 @@
 PORTNAME=	folium
-PORTVERSION=	0.17.0
+PORTVERSION=	0.18.0
 MASTER_SITES=	PYPI
 CATEGORIES=	www python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -21,7 +21,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}branca>=0.6.0:www/py-branca@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}xyzservices>=0:www/py-xyzservices@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>=0:devel/py-pytest@${PY_FLAVOR}
 
-USES=		python
+USES=		python:3.9+
 USE_PYTHON=	autoplist concurrent pep517
 
 NO_ARCH=	yes
