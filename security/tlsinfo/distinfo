@@ -1,0 +1,5 @@
+TIMESTAMP = 1729848269
+SHA256 (go/security_tlsinfo/tlsinfo-v0.1.41/v0.1.41.mod) = a905e555229fbef4a126396cd989399d188288b69cbc78d098ddb8daaee9ce5b
+SIZE (go/security_tlsinfo/tlsinfo-v0.1.41/v0.1.41.mod) = 336
+SHA256 (go/security_tlsinfo/tlsinfo-v0.1.41/v0.1.41.zip) = 383202f24a816ae83e5a1700d2040b87fb7d9044c69ded453a64c38db1233c9d
+SIZE (go/security_tlsinfo/tlsinfo-v0.1.41/v0.1.41.zip) = 13374
