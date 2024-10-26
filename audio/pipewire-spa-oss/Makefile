@@ -10,6 +10,8 @@ WWW=		https://github.com/shkhln/pw-oss
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+ONLY_FOR_ARCHS=	aarch64 amd64 riscv64 riscv64sf
+
 LIB_DEPENDS=	libpipewire-0.3.so:multimedia/pipewire
 
 USES=		cargo llvm:lib,noexport
