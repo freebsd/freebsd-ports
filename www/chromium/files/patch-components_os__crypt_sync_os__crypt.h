@@ -1,4 +1,4 @@
---- components/os_crypt/sync/os_crypt.h.orig	2024-09-30 07:45:04 UTC
+--- components/os_crypt/sync/os_crypt.h.orig	2024-10-22 08:31:56 UTC
 +++ components/os_crypt/sync/os_crypt.h
 @@ -14,7 +14,7 @@
  #include "build/build_config.h"
@@ -67,6 +67,6 @@
  
 -#if BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
-   // Create the KeyStorage. Will be null if no service is found. A Config must
-   // be set before every call to this method.
-   std::unique_ptr<KeyStorageLinux> CreateKeyStorage();
+   // Returns a cached string of "peanuts". Is thread-safe.
+   crypto::SymmetricKey* GetPasswordV10();
+ 

@@ -1,11 +1,11 @@
---- ui/views/widget/root_view.cc.orig	2024-09-30 07:45:04 UTC
+--- ui/views/widget/root_view.cc.orig	2024-10-22 08:31:56 UTC
 +++ ui/views/widget/root_view.cc
-@@ -135,7 +135,7 @@ class AnnounceTextView : public View {
+@@ -139,7 +139,7 @@ class AnnounceTextView : public View {
  #if BUILDFLAG(IS_CHROMEOS)
      // On ChromeOS, kAlert role can invoke an unnecessary event on reparenting.
-     node_data->role = ax::mojom::Role::kStaticText;
+     GetViewAccessibility().SetRole(ax::mojom::Role::kStaticText);
 -#elif BUILDFLAG(IS_LINUX)
 +#elif BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
      // TODO(crbug.com/40658933): Use live regions (do not use alerts).
      // May require setting kLiveStatus, kContainerLiveStatus to "polite".
-     node_data->role = ax::mojom::Role::kAlert;
+     GetViewAccessibility().SetRole(ax::mojom::Role::kAlert);

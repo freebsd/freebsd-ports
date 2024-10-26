@@ -1,4 +1,4 @@
---- components/password_manager/core/browser/password_manager_client.h.orig	2024-09-30 07:45:04 UTC
+--- components/password_manager/core/browser/password_manager_client.h.orig	2024-10-22 08:31:56 UTC
 +++ components/password_manager/core/browser/password_manager_client.h
 @@ -30,7 +30,7 @@
  #include "net/cert/cert_status_flags.h"
@@ -9,8 +9,8 @@
  #include "base/i18n/rtl.h"
  #include "components/password_manager/core/browser/password_cross_domain_confirmation_popup_controller.h"
  #include "ui/gfx/geometry/rect_f.h"
-@@ -520,7 +520,7 @@ class PasswordManagerClient {
-   virtual void RefreshPasswordManagerSettingsIfNeeded() const;
+@@ -545,7 +545,7 @@ class PasswordManagerClient {
+       CredentialsCallback callback);
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || \
 -    BUILDFLAG(IS_CHROMEOS)

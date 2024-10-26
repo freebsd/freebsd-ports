@@ -1,4 +1,4 @@
---- content/app/content_main_runner_impl.cc.orig	2024-09-30 07:45:04 UTC
+--- content/app/content_main_runner_impl.cc.orig	2024-10-22 08:31:56 UTC
 +++ content/app/content_main_runner_impl.cc
 @@ -147,18 +147,20 @@
  #include "content/browser/posix_file_descriptor_info_impl.h"
@@ -71,7 +71,7 @@
  
  #if BUILDFLAG(ENABLE_PPAPI)
    // Ensure access to the Pepper plugins before the sandbox is turned on.
-@@ -764,7 +780,7 @@ RunOtherNamedProcessTypeMain(const std::string& proces
+@@ -764,7 +780,7 @@ NO_STACK_PROTECTOR int RunOtherNamedProcessTypeMain(
      unregister_thread_closure = base::HangWatcher::RegisterThread(
          base::HangWatcher::ThreadType::kMainThread);
      bool start_hang_watcher_now;
@@ -94,7 +94,7 @@
  
  #endif  // !BUILDFLAG(IS_WIN)
  
-@@ -1055,8 +1070,20 @@ int ContentMainRunnerImpl::Initialize(ContentMainParam
+@@ -1059,8 +1074,20 @@ int ContentMainRunnerImpl::Initialize(ContentMainParam
        process_type == switches::kZygoteProcess) {
      PreSandboxInit();
    }
@@ -115,7 +115,7 @@
    delegate_->SandboxInitialized(process_type);
  
  #if BUILDFLAG(USE_ZYGOTE)
-@@ -1153,6 +1180,11 @@ int NO_STACK_PROTECTOR ContentMainRunnerImpl::Run() {
+@@ -1157,6 +1184,11 @@ NO_STACK_PROTECTOR int ContentMainRunnerImpl::Run() {
    content_main_params_.reset();
  
    RegisterMainThreadFactories();

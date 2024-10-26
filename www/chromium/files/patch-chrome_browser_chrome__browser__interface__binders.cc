@@ -1,6 +1,6 @@
---- chrome/browser/chrome_browser_interface_binders.cc.orig	2024-09-30 07:45:04 UTC
+--- chrome/browser/chrome_browser_interface_binders.cc.orig	2024-10-22 08:31:56 UTC
 +++ chrome/browser/chrome_browser_interface_binders.cc
-@@ -127,12 +127,12 @@
+@@ -128,12 +128,12 @@
  #endif  // BUILDFLAG(FULL_SAFE_BROWSING)
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -15,7 +15,7 @@
  #include "chrome/browser/ui/webui/app_settings/web_app_settings_ui.h"
  #include "ui/webui/resources/cr_components/app_management/app_management.mojom.h"
  #endif
-@@ -219,7 +219,7 @@
+@@ -221,7 +221,7 @@
  #endif  // BUILDFLAG(IS_ANDROID)
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -24,7 +24,7 @@
  #include "chrome/browser/companion/visual_query/visual_query_suggestions_service_factory.h"
  #include "chrome/browser/screen_ai/screen_ai_service_router.h"
  #include "chrome/browser/screen_ai/screen_ai_service_router_factory.h"
-@@ -232,7 +232,7 @@
+@@ -234,7 +234,7 @@
  #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) ||
          // BUILDFLAG(IS_CHROMEOS)
  
@@ -33,7 +33,7 @@
  #include "chrome/browser/ui/webui/whats_new/whats_new_ui.h"
  #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
  
-@@ -846,7 +846,7 @@ void BindMediaFoundationPreferences(
+@@ -859,7 +859,7 @@ void BindMediaFoundationPreferences(
  #endif  // BUILDFLAG(IS_WIN)
  
  #if BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || \
@@ -42,7 +42,7 @@
  void BindScreenAIAnnotator(
      content::RenderFrameHost* frame_host,
      mojo::PendingReceiver<screen_ai::mojom::ScreenAIAnnotator> receiver) {
-@@ -1063,7 +1063,7 @@ void PopulateChromeFrameBinders(
+@@ -1083,7 +1083,7 @@ void PopulateChromeFrameBinders(
  #endif  // BUILDFLAG(ENABLE_SPEECH_SERVICE)
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -51,7 +51,7 @@
    if (base::FeatureList::IsEnabled(blink::features::kDesktopPWAsSubApps) &&
        !render_frame_host->GetParentOrOuterDocument()) {
      // The service binder will reject non-primary main frames, but we still need
-@@ -1159,7 +1159,7 @@ void PopulateChromeWebUIFrameBinders(
+@@ -1179,7 +1179,7 @@ void PopulateChromeWebUIFrameBinders(
        DataSharingInternalsUI>(map);
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -60,7 +60,7 @@
    RegisterWebUIControllerInterfaceBinder<
        connectors_internals::mojom::PageHandler,
        enterprise_connectors::ConnectorsInternalsUI>(map);
-@@ -1170,7 +1170,7 @@ void PopulateChromeWebUIFrameBinders(
+@@ -1190,7 +1190,7 @@ void PopulateChromeWebUIFrameBinders(
                                           policy::DlpInternalsUI>(map);
  #endif
  
@@ -69,7 +69,7 @@
    RegisterWebUIControllerInterfaceBinder<
        app_management::mojom::PageHandlerFactory, WebAppSettingsUI>(map);
  #endif
-@@ -1256,14 +1256,14 @@ void PopulateChromeWebUIFrameBinders(
+@@ -1276,14 +1276,14 @@ void PopulateChromeWebUIFrameBinders(
        page_image_service::mojom::PageImageServiceHandler, HistoryUI,
        HistoryClustersSidePanelUI, NewTabPageUI, BookmarksSidePanelUI>(map);
  
@@ -86,7 +86,7 @@
        WhatsNewUI,
  #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
        NewTabPageUI>(map);
-@@ -1750,7 +1750,7 @@ void PopulateChromeWebUIFrameBinders(
+@@ -1779,7 +1779,7 @@ void PopulateChromeWebUIFrameBinders(
  #endif  // BUILDFLAG(IS_CHROMEOS_ASH)
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \

@@ -1,4 +1,4 @@
---- content/utility/utility_main.cc.orig	2024-08-26 12:06:38 UTC
+--- content/utility/utility_main.cc.orig	2024-10-22 08:31:56 UTC
 +++ content/utility/utility_main.cc
 @@ -36,17 +36,21 @@
  #include "services/screen_ai/buildflags/buildflags.h"
@@ -97,16 +97,16 @@
    // Initializes the sandbox before any threads are created.
    // TODO(jorgelo): move this after GTK initialization when we enable a strict
    // Seccomp-BPF policy.
-@@ -292,7 +304,7 @@ int UtilityMain(MainFunctionParams parameters) {
-                              screen_ai::GetBinaryPathSwitch()));
-       break;
- #endif
+@@ -295,7 +307,7 @@ int UtilityMain(MainFunctionParams parameters) {
+     case sandbox::mojom::Sandbox::kVideoEffects:
+       // TODO(crbug.com/361128453): Implement this.
+       NOTREACHED() << "kVideoEffects sandbox not implemented.";
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_ASH)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_ASH) || BUILDFLAG(IS_BSD)
      case sandbox::mojom::Sandbox::kHardwareVideoDecoding:
        pre_sandbox_hook =
            base::BindOnce(&media::HardwareVideoDecodingPreSandboxHook);
-@@ -319,6 +331,7 @@ int UtilityMain(MainFunctionParams parameters) {
+@@ -322,6 +334,7 @@ int UtilityMain(MainFunctionParams parameters) {
      default:
        break;
    }
@@ -114,7 +114,7 @@
    if (!sandbox::policy::IsUnsandboxedSandboxType(sandbox_type) &&
        (parameters.zygote_child || !pre_sandbox_hook.is_null())) {
      sandbox_options.use_amd_specific_policies =
-@@ -326,6 +339,11 @@ int UtilityMain(MainFunctionParams parameters) {
+@@ -329,6 +342,11 @@ int UtilityMain(MainFunctionParams parameters) {
      sandbox::policy::Sandbox::Initialize(
          sandbox_type, std::move(pre_sandbox_hook), sandbox_options);
    }

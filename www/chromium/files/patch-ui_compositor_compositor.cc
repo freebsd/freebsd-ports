@@ -1,6 +1,6 @@
---- ui/compositor/compositor.cc.orig	2024-09-30 07:45:04 UTC
+--- ui/compositor/compositor.cc.orig	2024-10-22 08:31:56 UTC
 +++ ui/compositor/compositor.cc
-@@ -926,7 +926,7 @@ void Compositor::OnResume() {
+@@ -925,7 +925,7 @@ void Compositor::OnResume() {
      obs.ResetIfActive();
  }
  
