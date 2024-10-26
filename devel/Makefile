@@ -6069,6 +6069,7 @@
     SUBDIR += py-usort
     SUBDIR += py-uvloop
     SUBDIR += py-validate-pyproject
+    SUBDIR += py-validate-pyproject-schema-store
     SUBDIR += py-validators
     SUBDIR += py-validictory
     SUBDIR += py-vcrpy
