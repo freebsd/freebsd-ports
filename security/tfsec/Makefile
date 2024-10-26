@@ -10,6 +10,9 @@ WWW=		https://aquasecurity.github.io/tfsec
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	tfsec now is party of security/trivy
+EXPIRATION_DATE=2024-11-26
+
 USES=		go:1.22,modules
 
 GO_MODULE=	github.com/aquasecurity/tfsec
