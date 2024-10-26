@@ -6,7 +6,8 @@ CATEGORIES=	www
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Impossibly fast web search, made for static sites
-WWW=		https://stork-search.net
+WWW=		https://stork-search.net \
+		https://github.com/jameslittle230/stork
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/../license.txt
