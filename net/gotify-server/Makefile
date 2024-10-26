@@ -27,6 +27,8 @@ GO_BUILDFLAGS=	-buildmode=pie -modcacherw \
 		-X 'main.BuildDate=${_BUILD_DATE}' \
 		-X 'main.Mode=prod'"
 
+.include <bsd.port.pre.mk>
+
 .if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400000
 MAKE_ENV+=	 NODE_OPTIONS=--openssl-legacy-provider
 .endif
@@ -71,4 +73,4 @@ make-yarn-cache: patch
 	cd ${WRKDIR} && ${TAR} -czf ${PORTNAME}-yarn-offline-cache-${DISTVERSION}${EXTRACT_SUFX} yarn-offline-cache
 	@${ECHO_CMD} upload ${PORTNAME}-yarn-offline-cache-${DISTVERSION}${EXTRACT_SUFX}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
