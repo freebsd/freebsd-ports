@@ -5,7 +5,8 @@ CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Highly customizable changelog generator
-WWW=		https://git-cliff.org
+WWW=		https://git-cliff.org \
+		https://github.com/orhun/git-cliff
 
 LICENSE=	APACHE20 MIT
 LICENSE_COMB=	multi
