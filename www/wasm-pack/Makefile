@@ -6,7 +6,8 @@ CATEGORIES=	www
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Workflow tool for Rust-generated WebAssembly
-WWW=		https://rustwasm.github.io/wasm-pack/
+WWW=		https://rustwasm.github.io/wasm-pack/ \
+		https://github.com/rustwasm/wasm-pack
 
 LICENSE=	APACHE20 MIT
 LICENSE_COMB=	dual
