@@ -6,7 +6,9 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Extremely fast Python linter and code formatter
-WWW=		https://docs.astral.sh/ruff/
+WWW=		https://astral.sh/ \
+		https://docs.astral.sh/ruff/ \
+		https://github.com/astral-sh/ruff
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
