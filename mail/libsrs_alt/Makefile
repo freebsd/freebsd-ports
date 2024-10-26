@@ -1,17 +1,21 @@
 PORTNAME=		libsrs_alt
 DISTVERSION=		1.0
-PORTREVISION=		2
+PORTREVISION=		3
 CATEGORIES=		mail
 MASTER_SITES=		http://opsec.eu/src/srs/
 
 MAINTAINER=		pi@FreeBSD.org
 COMMENT=		Sender Rewriting Scheme C Implementation
-WWW=		https://opsec.eu/src/srs/
+WWW=			https://opsec.eu/src/srs/
+
+LICENSE=		GPLv2
+LICENSE_FILE=		${WRKSRC}/COPYING
 
 USES=			libtool tar:bzip2
 USE_LDCONFIG=		yes
 
 GNU_CONFIGURE=		yes
+LIBS+=			-lutil
 
 PLIST_SUB=		SHLIB_MAJOR="${SHLIB_MAJOR}"
 
