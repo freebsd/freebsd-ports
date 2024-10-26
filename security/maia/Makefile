@@ -10,6 +10,9 @@ WWW=		http://www.maiamailguard.com/
 LICENSE=GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
+DEPRECATED=	Depends on deprecated dependencies and doesn't work with PHP 8.
+EXPIRATION_DATE=2024-12-31
+
 RUN_DEPENDS=	p5-Unix-Syslog>=0.94:sysutils/p5-Unix-Syslog \
 		p5-MIME-Tools>=4.116:mail/p5-MIME-Tools \
 		p5-Convert-TNEF>=0.08:converters/p5-Convert-TNEF \
