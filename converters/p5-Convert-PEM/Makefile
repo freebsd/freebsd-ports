@@ -1,5 +1,5 @@
 PORTNAME=	Convert-PEM
-PORTVERSION=	0.09
+PORTVERSION=	0.12
 CATEGORIES=	converters perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,7 +15,8 @@ LICENSE_FILE_GPLv1+ =	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Class-ErrorHandler>=0:devel/p5-Class-ErrorHandler \
 		p5-Convert-ASN1>=0.34:converters/p5-Convert-ASN1 \
-		p5-Crypt-DES_EDE3>=0:security/p5-Crypt-DES_EDE3
+		p5-Crypt-DES_EDE3>=0:security/p5-Crypt-DES_EDE3 \
+		p5-CryptX>=0:security/p5-CryptX
 TEST_DEPENDS=	p5-Test-Exception>=0:devel/p5-Test-Exception
 
 USES=		perl5
