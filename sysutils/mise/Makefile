@@ -1,6 +1,6 @@
 PORTNAME=	mise
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2024.10.9
+DISTVERSION=	2024.10.10
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -29,11 +29,11 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		android_system_properties-0.1.5 \
 		ansi-str-0.8.0 \
 		ansitok-0.2.0 \
-		anstream-0.6.15 \
-		anstyle-1.0.8 \
-		anstyle-parse-0.2.5 \
-		anstyle-query-1.1.1 \
-		anstyle-wincon-3.0.4 \
+		anstream-0.6.17 \
+		anstyle-1.0.9 \
+		anstyle-parse-0.2.6 \
+		anstyle-query-1.1.2 \
+		anstyle-wincon-3.0.6 \
 		anyhow-1.0.91 \
 		arbitrary-1.3.2 \
 		arrayvec-0.5.2 \
@@ -76,9 +76,9 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		color-print-0.3.6 \
 		color-print-proc-macro-0.3.6 \
 		color-spantrace-0.2.1 \
-		colorchoice-1.0.2 \
-		confique-0.2.6 \
-		confique-macro-0.0.10 \
+		colorchoice-1.0.3 \
+		confique-0.3.0 \
+		confique-macro-0.0.11 \
 		console-0.15.8 \
 		const-oid-0.9.6 \
 		constant_time_eq-0.3.1 \
@@ -122,7 +122,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		ego-tree-0.6.3 \
 		either-1.13.0 \
 		encode_unicode-0.3.6 \
-		encoding_rs-0.8.34 \
+		encoding_rs-0.8.35 \
 		env_filter-0.1.2 \
 		env_logger-0.11.5 \
 		envmnt-0.10.4 \
@@ -165,7 +165,6 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		h2-0.4.6 \
 		hashbrown-0.12.3 \
 		hashbrown-0.15.0 \
-		heck-0.3.3 \
 		heck-0.4.1 \
 		heck-0.5.0 \
 		hermit-abi-0.3.9 \
@@ -235,7 +234,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		miniz_oxide-0.8.0 \
 		mio-1.0.2 \
 		mlua-0.9.9 \
-		mlua-sys-0.6.3 \
+		mlua-sys-0.6.4 \
 		mlua_derive-0.9.3 \
 		native-tls-0.2.12 \
 		new_debug_unreachable-1.0.6 \
@@ -281,7 +280,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		phf_macros-0.11.2 \
 		phf_shared-0.10.0 \
 		phf_shared-0.11.2 \
-		pin-project-lite-0.2.14 \
+		pin-project-lite-0.2.15 \
 		pin-utils-0.1.0 \
 		pkcs8-0.10.2 \
 		pkg-config-0.3.31 \
@@ -308,7 +307,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		rayon-1.10.0 \
 		rayon-core-1.12.1 \
 		redox_syscall-0.5.7 \
-		regex-1.11.0 \
+		regex-1.11.1 \
 		regex-automata-0.1.10 \
 		regex-automata-0.4.8 \
 		regex-syntax-0.6.29 \
@@ -436,7 +435,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		untrusted-0.9.0 \
 		url-2.5.2 \
 		urlencoding-2.1.3 \
-		usage-lib-0.11.0 \
+		usage-lib-0.11.1 \
 		utf-8-0.7.6 \
 		utf8parse-0.2.2 \
 		valuable-0.1.0 \
