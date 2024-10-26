@@ -685,6 +685,7 @@ share/man/man1/redpsl.1.gz
 %%DATADIR%%/red/list.b
 %%DATADIR%%/red/listvecops.b
 %%DATADIR%%/red/log2atan.b
+%%DATADIR%%/red/logoturtle.b
 %%DATADIR%%/red/logsort.b
 %%DATADIR%%/red/loops.b
 %%DATADIR%%/red/loops88.b
@@ -756,6 +757,7 @@ share/man/man1/redpsl.1.gz
 %%DATADIR%%/red/nestdom.b
 %%DATADIR%%/red/nestrad.b
 %%DATADIR%%/red/newtok.b
+%%DATADIR%%/red/newtok1.b
 %%DATADIR%%/red/newton.b
 %%DATADIR%%/red/noncom2.b
 %%DATADIR%%/red/normform.b
