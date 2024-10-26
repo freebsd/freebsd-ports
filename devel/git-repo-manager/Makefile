@@ -6,7 +6,8 @@ CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Git tool to manage worktrees and integrate with GitHub and GitLab
-WWW=		https://hakoerber.github.io/git-repo-manager/
+WWW=		https://hakoerber.github.io/git-repo-manager/ \
+		https://github.com/hakoerber/git-repo-manager/tags
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
