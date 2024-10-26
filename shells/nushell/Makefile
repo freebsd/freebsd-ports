@@ -4,7 +4,8 @@ CATEGORIES=	shells
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	New type of shell
-WWW=		https://www.nushell.sh/
+WWW=		https://www.nushell.sh/ \
+		https://github.com/nushell/nushell
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
