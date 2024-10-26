@@ -1,12 +1,12 @@
 PORTNAME=	inko
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.14.0
-PORTREVISION=	5
+DISTVERSION=	0.16.0
 CATEGORIES=	lang devel
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Language for building concurrent software
-WWW=		https://inko-lang.org/
+WWW=		https://inko-lang.org/ \
+		https://github.com/inko-lang/inko
 
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -15,115 +15,116 @@ NOT_FOR_ARCHS=	armv6 armv7 i386 mips powerpc # build fails on non-64-bit archite
 
 LIB_DEPENDS=	libffi.so:devel/libffi
 
-USES=		cargo llvm:15 localbase:ldflags
+USES=		cargo llvm:17,lib localbase:ldflags
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	inko-lang
 
-MAKE_ENV=	LLVM_SYS_150_PREFIX=${LLVM_PREFIX} \
+MAKE_ENV=	LLVM_SYS_170_PREFIX=${LLVM_PREFIX} \
 		INKO_RT=${PREFIX}/lib/inko/runtime \
 		INKO_STD=${PREFIX}/lib/inko
 
-CARGO_CRATES=	addr2line-0.21.0 \
+CARGO_CRATES=	addr2line-0.22.0 \
 		adler-1.0.2 \
-		aho-corasick-1.1.2 \
+		anyhow-1.0.86 \
 		arrayref-0.3.7 \
 		arrayvec-0.7.4 \
-		autocfg-1.1.0 \
-		backtrace-0.3.69 \
-		base64-0.21.7 \
+		autocfg-1.3.0 \
+		backtrace-0.3.73 \
+		base64-0.22.1 \
 		bitflags-1.3.2 \
-		bitflags-2.4.1 \
-		blake3-1.5.0 \
+		bitflags-2.6.0 \
+		blake3-1.5.1 \
 		bstr-0.2.17 \
-		cc-1.0.83 \
+		cc-1.1.0 \
 		cfg-if-1.0.0 \
-		concurrent-queue-2.4.0 \
 		console-0.15.8 \
 		constant_time_eq-0.3.0 \
-		crc32fast-1.3.2 \
+		core-foundation-0.9.4 \
+		core-foundation-sys-0.8.6 \
+		crc32fast-1.4.2 \
 		crossbeam-queue-0.3.11 \
-		crossbeam-utils-0.8.19 \
-		either-1.9.0 \
+		crossbeam-utils-0.8.20 \
+		either-1.13.0 \
 		encode_unicode-0.3.6 \
-		errno-0.3.8 \
+		errno-0.3.9 \
 		filetime-0.2.23 \
-		flate2-1.0.28 \
+		flate2-1.0.30 \
 		fnv-1.0.7 \
 		form_urlencoded-1.2.1 \
 		getopts-0.2.21 \
-		getrandom-0.2.12 \
-		gimli-0.28.1 \
+		getrandom-0.2.15 \
+		gimli-0.29.0 \
 		idna-0.5.0 \
-		lazy_static-1.4.0 \
-		libc-0.2.152 \
-		linux-raw-sys-0.4.12 \
-		llvm-sys-150.1.3 \
-		log-0.4.20 \
-		memchr-2.7.1 \
-		miniz_oxide-0.7.1 \
-		object-0.32.2 \
+		inkwell-0.4.0 \
+		inkwell_internals-0.9.0 \
+		lazy_static-1.5.0 \
+		libc-0.2.155 \
+		linux-raw-sys-0.4.14 \
+		llvm-sys-170.1.1 \
+		log-0.4.22 \
+		memchr-2.7.4 \
+		miniz_oxide-0.7.4 \
+		num-bigint-0.4.6 \
+		num-integer-0.1.46 \
+		num-traits-0.2.19 \
+		object-0.36.1 \
 		once_cell-1.19.0 \
+		openssl-probe-0.1.5 \
 		percent-encoding-2.3.1 \
-		pin-project-lite-0.2.13 \
-		polling-2.8.0 \
 		ppv-lite86-0.2.17 \
-		proc-macro2-1.0.76 \
-		quote-1.0.35 \
+		proc-macro2-1.0.86 \
+		quote-1.0.36 \
 		rand-0.8.5 \
 		rand_chacha-0.3.1 \
 		rand_core-0.6.4 \
 		redox_syscall-0.4.1 \
-		regex-1.10.2 \
 		regex-automata-0.1.10 \
-		regex-automata-0.4.3 \
-		regex-syntax-0.8.2 \
-		ring-0.17.7 \
-		rustc-demangle-0.1.23 \
-		rustix-0.38.28 \
-		rustls-0.21.10 \
-		rustls-webpki-0.101.7 \
-		sct-0.7.1 \
-		semver-1.0.21 \
-		similar-2.4.0 \
+		regex-lite-0.1.6 \
+		ring-0.17.8 \
+		rustc-demangle-0.1.24 \
+		rustix-0.38.34 \
+		rustls-0.23.11 \
+		rustls-native-certs-0.7.1 \
+		rustls-pemfile-2.1.2 \
+		rustls-pki-types-1.7.0 \
+		rustls-webpki-0.102.5 \
+		schannel-0.1.23 \
+		security-framework-2.11.0 \
+		security-framework-sys-2.11.0 \
+		semver-1.0.23 \
+		similar-2.5.0 \
 		similar-asserts-1.5.0 \
-		socket2-0.5.5 \
+		socket2-0.5.7 \
 		spin-0.9.8 \
-		syn-2.0.48 \
-		tar-0.4.40 \
-		thiserror-1.0.56 \
-		thiserror-impl-1.0.56 \
-		tinyvec-1.6.0 \
+		subtle-2.6.1 \
+		syn-2.0.70 \
+		tar-0.4.41 \
+		thiserror-1.0.61 \
+		thiserror-impl-1.0.61 \
+		tinyvec-1.8.0 \
 		tinyvec_macros-0.1.1 \
-		unicode-bidi-0.3.14 \
+		unicode-bidi-0.3.15 \
 		unicode-ident-1.0.12 \
-		unicode-normalization-0.1.22 \
-		unicode-segmentation-1.10.1 \
-		unicode-width-0.1.11 \
+		unicode-normalization-0.1.23 \
+		unicode-segmentation-1.11.0 \
+		unicode-width-0.1.13 \
 		untrusted-0.9.0 \
-		ureq-2.9.1 \
-		url-2.5.0 \
+		ureq-2.10.0 \
+		url-2.5.2 \
 		wasi-0.11.0+wasi-snapshot-preview1 \
-		webpki-roots-0.25.3 \
-		windows-sys-0.48.0 \
+		webpki-roots-0.26.3 \
 		windows-sys-0.52.0 \
-		windows-targets-0.48.5 \
-		windows-targets-0.52.0 \
-		windows_aarch64_gnullvm-0.48.5 \
-		windows_aarch64_gnullvm-0.52.0 \
-		windows_aarch64_msvc-0.48.5 \
-		windows_aarch64_msvc-0.52.0 \
-		windows_i686_gnu-0.48.5 \
-		windows_i686_gnu-0.52.0 \
-		windows_i686_msvc-0.48.5 \
-		windows_i686_msvc-0.52.0 \
-		windows_x86_64_gnu-0.48.5 \
-		windows_x86_64_gnu-0.52.0 \
-		windows_x86_64_gnullvm-0.48.5 \
-		windows_x86_64_gnullvm-0.52.0 \
-		windows_x86_64_msvc-0.48.5 \
-		windows_x86_64_msvc-0.52.0 \
-		inkwell,inkwell_internals@git+https://github.com/TheDan64/inkwell.git?rev=c18e3e8\#c18e3e8f2bb408c3ec323dd80d08b3a24e7c5152
+		windows-targets-0.52.6 \
+		windows_aarch64_gnullvm-0.52.6 \
+		windows_aarch64_msvc-0.52.6 \
+		windows_i686_gnu-0.52.6 \
+		windows_i686_gnullvm-0.52.6 \
+		windows_i686_msvc-0.52.6 \
+		windows_x86_64_gnu-0.52.6 \
+		windows_x86_64_gnullvm-0.52.6 \
+		windows_x86_64_msvc-0.52.6 \
+		zeroize-1.8.1
 
 do-install:
 	# executable
