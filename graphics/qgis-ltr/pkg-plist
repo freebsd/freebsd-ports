@@ -28,7 +28,6 @@ include/qgis/layer.h
 include/qgis/pal.h
 include/qgis/palexception.h
 include/qgis/palrtree.h
-include/qgis/palstat.h
 include/qgis/pointset.h
 include/qgis/priorityqueue.h
 include/qgis/problem.h
