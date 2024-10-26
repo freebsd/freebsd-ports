@@ -1,6 +1,6 @@
---- chrome/browser/chrome_browser_main.cc.orig	2024-09-30 07:45:04 UTC
+--- chrome/browser/chrome_browser_main.cc.orig	2024-10-22 08:31:56 UTC
 +++ chrome/browser/chrome_browser_main.cc
-@@ -247,15 +247,15 @@
+@@ -249,15 +249,15 @@
  
  // TODO(crbug.com/40118868): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
@@ -19,7 +19,7 @@
  #include "base/nix/xdg_util.h"
  #endif
  
-@@ -288,14 +288,14 @@
+@@ -290,14 +290,14 @@
  // TODO(crbug.com/40118868): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -36,7 +36,7 @@
  #include "chrome/browser/headless/headless_mode_metrics.h"  // nogncheck
  #include "chrome/browser/headless/headless_mode_util.h"     // nogncheck
  #include "components/headless/select_file_dialog/headless_select_file_dialog.h"
-@@ -367,14 +367,14 @@
+@@ -369,14 +369,14 @@
  #endif  // BUILDFLAG(IS_WIN) && BUILDFLAG(USE_BROWSER_SPELLCHECKER)
  
  #if BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || \
@@ -53,7 +53,7 @@
  constexpr base::FilePath::CharType kMediaHistoryDatabaseName[] =
      FILE_PATH_LITERAL("Media History");
  
-@@ -539,7 +539,7 @@ void ProcessSingletonNotificationCallbackImpl(
+@@ -541,7 +541,7 @@ void ProcessSingletonNotificationCallbackImpl(
    }
  #endif
  
@@ -62,7 +62,7 @@
    // Set the global activation token sent as a command line switch by another
    // browser process. This also removes the switch after use to prevent any side
    // effects of leaving it in the command line after this point.
-@@ -1105,7 +1105,7 @@ int ChromeBrowserMainParts::PreCreateThreadsImpl() {
+@@ -1118,7 +1118,7 @@ int ChromeBrowserMainParts::PreCreateThreadsImpl() {
        browser_creator_->AddFirstRunTabs(master_prefs_->new_tabs);
      }
  
@@ -71,7 +71,7 @@
      // Create directory for user-level Native Messaging manifest files. This
      // makes it less likely that the directory will be created by third-party
      // software with incorrect owner or permission. See crbug.com/725513 .
-@@ -1153,7 +1153,7 @@ int ChromeBrowserMainParts::PreCreateThreadsImpl() {
+@@ -1166,7 +1166,7 @@ int ChromeBrowserMainParts::PreCreateThreadsImpl() {
  // TODO(crbug.com/40118868): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -80,7 +80,7 @@
    metrics::DesktopSessionDurationTracker::Initialize();
    ProfileActivityMetricsRecorder::Initialize();
    TouchModeStatsTracker::Initialize(
-@@ -1340,7 +1340,7 @@ void ChromeBrowserMainParts::PostProfileInit(Profile* 
+@@ -1362,7 +1362,7 @@ void ChromeBrowserMainParts::PostProfileInit(Profile* 
  #endif  // BUILDFLAG(IS_WIN)
  
  #if BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || \
@@ -89,7 +89,7 @@
    // Delete the media history database if it still exists.
    // TODO(crbug.com/40177301): Remove this.
    base::ThreadPool::PostTask(
-@@ -1389,7 +1389,7 @@ void ChromeBrowserMainParts::PostProfileInit(Profile* 
+@@ -1411,7 +1411,7 @@ void ChromeBrowserMainParts::PostProfileInit(Profile* 
        *UrlLanguageHistogramFactory::GetForBrowserContext(profile));
  #endif  // BUILDFLAG(IS_CHROMEOS_ASH)
  
@@ -98,7 +98,7 @@
    if (headless::IsHeadlessMode()) {
      headless::ReportHeadlessActionMetrics();
    }
-@@ -1501,7 +1501,7 @@ int ChromeBrowserMainParts::PreMainMessageLoopRunImpl(
+@@ -1523,7 +1523,7 @@ int ChromeBrowserMainParts::PreMainMessageLoopRunImpl(
    // In headless mode provide alternate SelectFileDialog factory overriding
    // any platform specific SelectFileDialog implementation that may have been
    // set.
@@ -107,7 +107,7 @@
    if (headless::IsHeadlessMode()) {
      headless::HeadlessSelectFileDialogFactory::SetUp();
    }
-@@ -2050,7 +2050,7 @@ bool ChromeBrowserMainParts::ProcessSingletonNotificat
+@@ -2072,7 +2072,7 @@ bool ChromeBrowserMainParts::ProcessSingletonNotificat
  
    // Drop the request if headless mode is in effect or the request is from
    // a headless Chrome process.

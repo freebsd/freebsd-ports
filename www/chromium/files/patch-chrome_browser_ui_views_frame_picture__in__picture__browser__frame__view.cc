@@ -1,4 +1,4 @@
---- chrome/browser/ui/views/frame/picture_in_picture_browser_frame_view.cc.orig	2024-09-30 07:45:04 UTC
+--- chrome/browser/ui/views/frame/picture_in_picture_browser_frame_view.cc.orig	2024-10-22 08:31:56 UTC
 +++ chrome/browser/ui/views/frame/picture_in_picture_browser_frame_view.cc
 @@ -61,7 +61,7 @@
  #include "ui/aura/window.h"
@@ -54,7 +54,7 @@
  gfx::Insets
  PictureInPictureBrowserFrameView::RestoredMirroredFrameBorderInsets() const {
    auto border = FrameBorderInsets();
-@@ -1188,7 +1188,7 @@ void PictureInPictureBrowserFrameView::AnimationProgre
+@@ -1189,7 +1189,7 @@ void PictureInPictureBrowserFrameView::AnimationProgre
  // views::View implementations:
  
  void PictureInPictureBrowserFrameView::OnPaint(gfx::Canvas* canvas) {
@@ -63,7 +63,7 @@
    // Draw the PiP window frame borders and shadows, including the top bar
    // background.
    if (window_frame_provider_) {
-@@ -1343,7 +1343,7 @@ void PictureInPictureBrowserFrameView::UpdateTopBarVie
+@@ -1344,7 +1344,7 @@ void PictureInPictureBrowserFrameView::UpdateTopBarVie
  }
  
  gfx::Insets PictureInPictureBrowserFrameView::FrameBorderInsets() const {
@@ -72,7 +72,7 @@
    if (window_frame_provider_) {
      const auto insets = window_frame_provider_->GetFrameThicknessDip();
      const bool tiled = frame()->tiled();
-@@ -1361,7 +1361,7 @@ gfx::Insets PictureInPictureBrowserFrameView::FrameBor
+@@ -1362,7 +1362,7 @@ gfx::Insets PictureInPictureBrowserFrameView::FrameBor
  }
  
  gfx::Insets PictureInPictureBrowserFrameView::ResizeBorderInsets() const {
@@ -81,7 +81,7 @@
    return FrameBorderInsets();
  #elif !BUILDFLAG(IS_CHROMEOS_ASH)
    return gfx::Insets(kResizeBorder);
-@@ -1382,7 +1382,7 @@ gfx::Size PictureInPictureBrowserFrameView::GetNonClie
+@@ -1383,7 +1383,7 @@ gfx::Size PictureInPictureBrowserFrameView::GetNonClie
                     top_height + border_thickness.bottom());
  }
  

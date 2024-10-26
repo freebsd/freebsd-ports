@@ -1,6 +1,6 @@
---- chrome/browser/ui/views/chrome_browser_main_extra_parts_views.cc.orig	2024-03-22 08:19:40 UTC
+--- chrome/browser/ui/views/chrome_browser_main_extra_parts_views.cc.orig	2024-10-22 08:31:56 UTC
 +++ chrome/browser/ui/views/chrome_browser_main_extra_parts_views.cc
-@@ -38,7 +38,7 @@
+@@ -39,7 +39,7 @@
  #include "ui/wm/core/wm_state.h"
  #endif  // defined(USE_AURA)
  
@@ -9,7 +9,7 @@
  #include <sys/stat.h>
  #include <sys/types.h>
  #include <unistd.h>
-@@ -131,7 +131,7 @@ void ChromeBrowserMainExtraPartsViews::PreProfileInit(
+@@ -132,7 +132,7 @@ void ChromeBrowserMainExtraPartsViews::PreProfileInit(
          return controller;
        }));
  

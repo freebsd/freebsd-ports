@@ -1,4 +1,4 @@
---- remoting/host/chromoting_host.h.orig	2024-09-30 07:45:04 UTC
+--- remoting/host/chromoting_host.h.orig	2024-10-22 08:31:56 UTC
 +++ remoting/host/chromoting_host.h
 @@ -33,7 +33,7 @@
  #include "remoting/protocol/session_manager.h"
@@ -9,7 +9,7 @@
  #include "remoting/host/chromoting_host_services_server.h"
  #endif
  
-@@ -98,7 +98,7 @@ class ChromotingHost : public ClientSession::EventHand
+@@ -99,7 +99,7 @@ class ChromotingHost : public ClientSession::EventHand
    // This method can only be called once during the lifetime of this object.
    void Start(const std::string& host_owner);
  
@@ -18,7 +18,7 @@
    // Starts running the ChromotingHostServices server and listening for incoming
    // IPC binding requests.
    // Currently only Linux runs the ChromotingHostServices server on the host
-@@ -204,7 +204,7 @@ class ChromotingHost : public ClientSession::EventHand
+@@ -203,7 +203,7 @@ class ChromotingHost : public ClientSession::EventHand
    // List of host extensions.
    std::vector<std::unique_ptr<HostExtension>> extensions_;
  

@@ -1,4 +1,4 @@
---- chrome/browser/enterprise/connectors/reporting/realtime_reporting_client.cc.orig	2024-09-30 07:45:04 UTC
+--- chrome/browser/enterprise/connectors/reporting/realtime_reporting_client.cc.orig	2024-10-22 08:31:56 UTC
 +++ chrome/browser/enterprise/connectors/reporting/realtime_reporting_client.cc
 @@ -59,7 +59,7 @@
  #include "base/strings/utf_string_conversions.h"
@@ -36,9 +36,9 @@
    Profile* profile = Profile::FromBrowserContext(context_);
    device_signals::SignalsAggregator* signals_aggregator =
        enterprise_signals::SignalsAggregatorFactory::GetForProfile(profile);
-@@ -505,7 +505,7 @@ std::string RealtimeReportingClient::GetProfileUserNam
-                              ? safe_browsing::GetProfileEmail(identity_manager_)
-                              : std::string();
+@@ -504,7 +504,7 @@ std::string RealtimeReportingClient::GetProfileUserNam
+   std::string username =
+       identity_manager_ ? GetProfileEmail(identity_manager_) : std::string();
  
 -#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)

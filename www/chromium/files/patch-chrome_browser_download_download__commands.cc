@@ -1,4 +1,4 @@
---- chrome/browser/download/download_commands.cc.orig	2024-06-17 12:56:06 UTC
+--- chrome/browser/download/download_commands.cc.orig	2024-10-22 08:31:56 UTC
 +++ chrome/browser/download/download_commands.cc
 @@ -26,7 +26,7 @@
  #include "ui/base/clipboard/scoped_clipboard_writer.h"
@@ -9,7 +9,7 @@
  #include "chrome/browser/ui/browser.h"
  #include "chrome/browser/ui/browser_finder.h"
  #include "chrome/browser/ui/scoped_tabbed_browser_displayer.h"
-@@ -167,7 +167,7 @@ void DownloadCommands::ExecuteCommand(Command command)
+@@ -166,7 +166,7 @@ void DownloadCommands::ExecuteCommand(Command command)
  }
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \

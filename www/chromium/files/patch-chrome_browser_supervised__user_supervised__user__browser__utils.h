@@ -1,4 +1,4 @@
---- chrome/browser/supervised_user/supervised_user_browser_utils.h.orig	2024-09-30 07:45:04 UTC
+--- chrome/browser/supervised_user/supervised_user_browser_utils.h.orig	2024-10-22 08:31:56 UTC
 +++ chrome/browser/supervised_user/supervised_user_browser_utils.h
 @@ -11,7 +11,7 @@
  #include "content/public/browser/web_contents.h"
@@ -9,9 +9,9 @@
  #include "chrome/browser/supervised_user/supervised_user_verification_page.h"
  #endif
  
-@@ -59,7 +59,7 @@ void AssertChildStatusOfTheUser(Profile* profile, bool
- // content area.
- bool IsAuthenticatedSupervisedProfile(Profile* profile);
+@@ -55,7 +55,7 @@ std::string GetAccountGivenName(Profile& profile);
+ // of the user.
+ void AssertChildStatusOfTheUser(Profile* profile, bool is_child);
  
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_BSD)
