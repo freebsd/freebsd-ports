@@ -5,7 +5,8 @@ CATEGORIES=	lang
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Reliable typst code formatter
-WWW=		https://enter-tainer.github.io/typstyle
+WWW=		https://enter-tainer.github.io/typstyle \
+		https://github.com/Enter-tainer/typstyle
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
