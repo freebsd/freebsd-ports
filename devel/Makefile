@@ -5805,6 +5805,7 @@
     SUBDIR += py-rfc3986-validator
     SUBDIR += py-rich-click
     SUBDIR += py-robotframework
+    SUBDIR += py-robotframework-assertion-engine
     SUBDIR += py-robotframework-databaselibrary
     SUBDIR += py-robotframework-pabot
     SUBDIR += py-robotframework-pythonlibcore
