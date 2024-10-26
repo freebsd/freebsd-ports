@@ -1,3 +1,97 @@
+  <vuln vid="fafaef4d-f364-4a07-bbdd-bf53448c593c">
+    <topic>chromium -- multiple security fixes</topic>
+    <affects>
+      <package>
+       <name>chromium</name>
+       <range><lt>130.0.6723.69</lt></range>
+      </package>
+      <package>
+       <name>ungoogled-chromium</name>
+       <range><lt>130.0.6723.69</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+       <p>Chrome Releases reports:</p>
+       <blockquote cite="https://chromereleases.googleblog.com/2024/10/stable-channel-update-for-desktop_22.html">
+	 <p>This update includes 3 security fixes:</p>
+	 <ul>
+	    <li>[371011220] High CVE-2024-10229: Inappropriate implementation in Extensions. Reported by Vsevolod Kokorin (Slonser) of Solidlab on 2024-10-02</li>
+	    <li>[371565065] High CVE-2024-10230: Type Confusion in V8. Reported by Seunghyun Lee (@0x10n) on 2024-10-05</li>
+	    <li>[372269618] High CVE-2024-10231: Type Confusion in V8. Reported by Seunghyun Lee (@0x10n) on 2024-10-09</li>
+	 </ul>
+       </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2024-10229</cvename>
+      <cvename>CVE-2024-10230</cvename>
+      <cvename>CVE-2024-10231</cvename>
+      <url>https://chromereleases.googleblog.com/2024/10/stable-channel-update-for-desktop_22.html</url>
+    </references>
+    <dates>
+      <discovery>2024-10-22</discovery>
+      <entry>2024-10-26</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="1e71e366-080b-4e8f-a9e6-150bf698186b">
+    <topic>chromium -- multiple security fixes</topic>
+    <affects>
+      <package>
+       <name>chromium</name>
+       <range><lt>130.0.6723.58</lt></range>
+      </package>
+      <package>
+       <name>ungoogled-chromium</name>
+       <range><lt>130.0.6723.58</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+       <p>Chrome Releases reports:</p>
+       <blockquote cite="https://chromereleases.googleblog.com/2024/10/stable-channel-update-for-desktop_15.html">
+	 <p>This update includes 17 security fixes:</p>
+	 <ul>
+	    <li>[367755363] High CVE-2024-9954: Use after free in AI. Reported by DarkNavy on 2024-09-18</li>
+	    <li>[370133761] Medium CVE-2024-9955: Use after free in Web Authentication. Reported by anonymous on 2024-09-29</li>
+	    <li>[370482421] Medium CVE-2024-9956: Inappropriate implementation in Web Authentication. Reported by mastersplinter on 2024-09-30</li>
+	    <li>[358151317] Medium CVE-2024-9957: Use after free in UI. Reported by lime(@limeSec_) and fmyy(@binary_fmyy) From TIANGONG Team of Legendsec at QI-ANXIN Group on 2024-08-08</li>
+	    <li>[40076120] Medium CVE-2024-9958: Inappropriate implementation in PictureInPicture. Reported by Lyra Rebane (rebane2001) on 2023-11-02</li>
+	    <li>[368672129] Medium CVE-2024-9959: Use after free in DevTools. Reported by Sakana.S on 2024-09-21</li>
+	    <li>[354748063] Medium CVE-2024-9960: Use after free in Dawn. Reported by Anonymous on 2024-07-23</li>
+	    <li>[357776197] Medium CVE-2024-9961: Use after free in Parcel Tracking. Reported by lime(@limeSec_) and fmyy(@binary_fmyy) From TIANGONG Team of Legendsec at QI-ANXIN Group on 2024-08-06</li>
+	    <li>[364508693] Medium CVE-2024-9962: Inappropriate implementation in Permissions. Reported by Shaheen Fazim on 2024-09-04</li>
+	    <li>[328278718] Medium CVE-2024-9963: Insufficient data validation in Downloads. Reported by Anonymous on 2024-03-06</li>
+	    <li>[361711121] Low CVE-2024-9964: Inappropriate implementation in Payments. Reported by Hafiizh on 2024-08-23</li>
+	    <li>[352651673] Low CVE-2024-9965: Insufficient data validation in DevTools. Reported by Shaheen Fazim on 2024-07-12</li>
+	    <li>[364773822] Low CVE-2024-9966: Inappropriate implementation in Navigations. Reported by Harry Chen on 2024-09-05</li>
+	 </ul>
+       </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2024-9954</cvename>
+      <cvename>CVE-2024-9955</cvename>
+      <cvename>CVE-2024-9956</cvename>
+      <cvename>CVE-2024-9957</cvename>
+      <cvename>CVE-2024-9958</cvename>
+      <cvename>CVE-2024-9959</cvename>
+      <cvename>CVE-2024-9960</cvename>
+      <cvename>CVE-2024-9961</cvename>
+      <cvename>CVE-2024-9962</cvename>
+      <cvename>CVE-2024-9963</cvename>
+      <cvename>CVE-2024-9964</cvename>
+      <cvename>CVE-2024-9965</cvename>
+      <cvename>CVE-2024-9966</cvename>
+      <url>https://chromereleases.googleblog.com/2024/10/stable-channel-update-for-desktop_15.html</url>
+    </references>
+    <dates>
+      <discovery>2024-10-15</discovery>
+      <entry>2024-10-26</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="fcb0e00f-d7d3-49b6-a4a1-852528230912">
     <topic>electron31 -- multiple vulnerabilities</topic>
     <affects>
