@@ -16,7 +16,8 @@ ONLY_FOR_ARCHS=	aarch64 amd64 armv6 armv7 i386 powerpc64 powerpc64le
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libpcre2-8.so:devel/pcre2
 
-USES=		fortran localbase pathfix
+USES=		cpe fortran localbase pathfix
+CPE_VENDOR=	r-project
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
