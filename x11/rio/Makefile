@@ -6,7 +6,8 @@ PKGNAMESUFFIX=	-terminal-emulator
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Hardware-accelerated GPU terminal emulator powered by WebGPU
-WWW=		https://raphamorim.io/rio
+WWW=		https://raphamorim.io/rio \
+		https://github.com/raphamorim/rio
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
