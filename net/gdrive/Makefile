@@ -16,6 +16,9 @@ WWW=		https://github.com/prasmussen/gdrive
 
 LICENSE=	MIT
 
+DEPRECATED=	Abandonware, upstream repo archived Apr 19, 2023
+EXPIRATION_DATE=2024-11-30
+
 USES=		go
 USE_GITHUB=	yes
 GH_ACCOUNT=	prasmussen
