@@ -1,4 +1,5 @@
 PORTNAME=	nvidia-drm-515-kmod
+PORTREVISION=	1
 CATEGORIES=	graphics
 
 BUILD_DEPENDS+=	${KMODDIR}/drm.ko:graphics/drm-515-kmod
