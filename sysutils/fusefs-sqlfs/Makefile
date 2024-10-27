@@ -14,6 +14,9 @@ WWW=		https://www.nongnu.org/libsqlfs/
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Abandoned upstream, superseded by forks
+EXPIRATION_DATE=2024-12-31
+
 USES=		fuse sqlite
 
 PORTDOCS=	README
