@@ -15,11 +15,9 @@ include/squashfuse/table.h
 include/squashfuse/traverse.h
 include/squashfuse/util.h
 include/squashfuse/xattr.h
-lib/libsquashfuse.a
 lib/libsquashfuse.so
 lib/libsquashfuse.so.0
 lib/libsquashfuse.so.0.0.0
-lib/libsquashfuse_ll.a
 lib/libsquashfuse_ll.so
 lib/libsquashfuse_ll.so.0
 lib/libsquashfuse_ll.so.0.0.0
