@@ -7,6 +7,7 @@ include/squashfuse/decompress.h
 include/squashfuse/dir.h
 include/squashfuse/file.h
 include/squashfuse/fs.h
+include/squashfuse/ll.h
 include/squashfuse/squashfs_fs.h
 include/squashfuse/squashfuse.h
 include/squashfuse/stack.h
@@ -18,5 +19,11 @@ lib/libsquashfuse.a
 lib/libsquashfuse.so
 lib/libsquashfuse.so.0
 lib/libsquashfuse.so.0.0.0
+lib/libsquashfuse_ll.a
+lib/libsquashfuse_ll.so
+lib/libsquashfuse_ll.so.0
+lib/libsquashfuse_ll.so.0.0.0
 libdata/pkgconfig/squashfuse.pc
+libdata/pkgconfig/squashfuse_ll.pc
 share/man/man1/squashfuse.1.gz
+share/man/man1/squashfuse_ll.1.gz
