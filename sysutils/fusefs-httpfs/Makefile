@@ -14,6 +14,9 @@ WWW=		https://httpfs.sourceforge.net/
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/debian/copyright
 
+DEPRECATED=	Abandonware, last release in 2012 and there are multiple issues unresolved
+EXPIRATION_DATE=2024-12-31
+
 USES=		fuse pkgconfig gmake
 
 WRKSRC=		${WRKDIR}/${PORTNAME}2-${VERSION}
