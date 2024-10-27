@@ -1,4 +1,4 @@
-TIMESTAMP = 1728684607
+TIMESTAMP = 1730066397
 SHA256 (filippo.io/mlkem768/@v/v0.0.0-20240821141156-859a9b3f2ff6.zip) = 937bf0a147580a33e2a8831bc73edb8889698f9e906c71740ddf4fffb9691d4e
 SIZE (filippo.io/mlkem768/@v/v0.0.0-20240821141156-859a9b3f2ff6.zip) = 21003
 SHA256 (filippo.io/mlkem768/@v/v0.0.0-20240821141156-859a9b3f2ff6.mod) = e11c63e9fabc4f05d5f369a535d67287958b4f9266390b68882f28d67311a676
@@ -19,5 +19,5 @@ SHA256 (golang.org/x/term/@v/v0.23.0.zip) = 2597a62b487b952c11c89b2001551af1fe1d
 SIZE (golang.org/x/term/@v/v0.23.0.zip) = 19866
 SHA256 (golang.org/x/term/@v/v0.23.0.mod) = d44cfec368bf145eb7174b94307dbbf13d9ce881f03de797c3abf5731fba1eba
 SIZE (golang.org/x/term/@v/v0.23.0.mod) = 68
-SHA256 (google-boringssl-0.0.0.0.2024.10.11.01-d0b6ca2_GH0.tar.gz) = 4bd6966bdd3d4ac9847910be620b4c8f1f6bd4440314f6a030b42b199c251c7c
-SIZE (google-boringssl-0.0.0.0.2024.10.11.01-d0b6ca2_GH0.tar.gz) = 45420164
+SHA256 (google-boringssl-0.0.0.0.2024.10.26.01-b8c97f5_GH0.tar.gz) = 0ee3f64681562a62961c8eb2119457b1d70cceb9b6fdcd6842ec079ebc227f0a
+SIZE (google-boringssl-0.0.0.0.2024.10.26.01-b8c97f5_GH0.tar.gz) = 45509412
