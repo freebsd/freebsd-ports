@@ -7,7 +7,8 @@ PKGNAMESUFFIX=	-site-generator
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Static site generator written in Rust
-WWW=		https://cobalt-org.github.io/
+WWW=		https://cobalt-org.github.io/ \
+		https://github.com/cobalt-org/cobalt.rs
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE-MIT
