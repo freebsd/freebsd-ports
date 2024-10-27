@@ -5,7 +5,8 @@ CATEGORIES=	net-p2p
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	CL utility for BitTorrent torrent file creation, verification, etc
-WWW=		https://imdl.io
+WWW=		https://imdl.io \
+		https://github.com/casey/intermodal
 
 LICENSE=	CC0-1.0
 LICENSE_FILE=	${WRKSRC}/LICENSE
