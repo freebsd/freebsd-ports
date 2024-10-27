@@ -1032,6 +1032,7 @@
     SUBDIR += py-pyscard
     SUBDIR += py-pysodium
     SUBDIR += py-pyspnego
+    SUBDIR += py-pysrp
     SUBDIR += py-python-axolotl
     SUBDIR += py-python-axolotl-curve25519
     SUBDIR += py-python-cas
