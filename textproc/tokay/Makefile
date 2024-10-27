@@ -6,7 +6,8 @@ CATEGORIES=	textproc
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Programming language designed for ad-hoc parsing, inspired by awk
-WWW=		https://tokay.dev
+WWW=		https://tokay.dev \
+		https://github.com/tokay-lang/tokay
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
