@@ -6,7 +6,8 @@ CATEGORIES=	security
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Web-scale blockchain for decentralized apps and marketplaces
-WWW=		https://solana.com/
+WWW=		https://solana.com/ \
+		https://github.com/solana-labs/solana
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
