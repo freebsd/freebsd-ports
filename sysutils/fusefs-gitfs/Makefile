@@ -11,6 +11,9 @@ WWW=		https://www.presslabs.com/code/gitfs/
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Abandonware, last release on 2019
+EXPIRATION_DATE=2024-12-31
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}atomiclong>=0.1.1:devel/py-atomiclong@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}cffi>=1.12.3:devel/py-cffi@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}fusepy>=3.0.1:devel/py-fusepy@${PY_FLAVOR} \
