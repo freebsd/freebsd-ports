@@ -1,6 +1,6 @@
---- chrome/browser/supervised_user/supervised_user_google_auth_navigation_throttle.cc.orig	2024-10-01 07:26:23 UTC
+--- chrome/browser/supervised_user/supervised_user_google_auth_navigation_throttle.cc.orig	2024-10-27 06:40:35 UTC
 +++ chrome/browser/supervised_user/supervised_user_google_auth_navigation_throttle.cc
-@@ -26,7 +26,7 @@
+@@ -29,7 +29,7 @@
  
  #if BUILDFLAG(IS_ANDROID)
  #include "chrome/browser/supervised_user/child_accounts/child_account_service_android.h"
@@ -9,7 +9,7 @@
  #include "chrome/browser/supervised_user/supervised_user_verification_controller_client.h"
  #include "chrome/browser/supervised_user/supervised_user_verification_page.h"
  #endif
-@@ -140,7 +140,7 @@ SupervisedUserGoogleAuthNavigationThrottle::ShouldProc
+@@ -145,7 +145,7 @@ SupervisedUserGoogleAuthNavigationThrottle::ShouldProc
      return content::NavigationThrottle::DEFER;
    }
  

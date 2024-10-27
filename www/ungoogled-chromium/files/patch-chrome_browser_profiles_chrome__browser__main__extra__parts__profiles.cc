@@ -1,6 +1,6 @@
---- chrome/browser/profiles/chrome_browser_main_extra_parts_profiles.cc.orig	2024-10-01 07:26:23 UTC
+--- chrome/browser/profiles/chrome_browser_main_extra_parts_profiles.cc.orig	2024-10-27 06:40:35 UTC
 +++ chrome/browser/profiles/chrome_browser_main_extra_parts_profiles.cc
-@@ -340,7 +340,7 @@
+@@ -346,7 +346,7 @@
  #include "chromeos/constants/chromeos_features.h"
  #endif
  
@@ -9,7 +9,7 @@
  #include "chrome/browser/policy/messaging_layer/util/manual_test_heartbeat_event_factory.h"
  #endif
  
-@@ -426,18 +426,18 @@
+@@ -439,18 +439,18 @@
  #endif
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -31,7 +31,7 @@
  #include "chrome/browser/browser_switcher/browser_switcher_service_factory.h"
  #include "chrome/browser/enterprise/client_certificates/certificate_provisioning_service_factory.h"
  #include "chrome/browser/enterprise/client_certificates/certificate_store_factory.h"
-@@ -677,7 +677,7 @@ void ChromeBrowserMainExtraPartsProfiles::
+@@ -704,7 +704,7 @@ void ChromeBrowserMainExtraPartsProfiles::
    DiceBoundSessionCookieServiceFactory::GetInstance();
  #endif  // BUILDFLAG(ENABLE_DICE_SUPPORT)
  #endif  // BUILDFLAG(ENABLE_BOUND_SESSION_CREDENTIALS)
@@ -40,7 +40,7 @@
    browser_switcher::BrowserSwitcherServiceFactory::GetInstance();
  #endif
    browser_sync::UserEventServiceFactory::GetInstance();
-@@ -812,7 +812,7 @@ void ChromeBrowserMainExtraPartsProfiles::
+@@ -837,7 +837,7 @@ void ChromeBrowserMainExtraPartsProfiles::
    enterprise_connectors::ConnectorsServiceFactory::GetInstance();
  #endif
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -49,7 +49,7 @@
    enterprise_connectors::DeviceTrustConnectorServiceFactory::GetInstance();
    enterprise_connectors::DeviceTrustServiceFactory::GetInstance();
  #endif
-@@ -821,21 +821,21 @@ void ChromeBrowserMainExtraPartsProfiles::
+@@ -846,21 +846,21 @@ void ChromeBrowserMainExtraPartsProfiles::
    enterprise_connectors::ExtensionTelemetryEventRouterFactory::GetInstance();
  #endif
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -75,7 +75,7 @@
    enterprise_signin::EnterpriseSigninServiceFactory::GetInstance();
  #endif
  #if BUILDFLAG(ENABLE_SESSION_SERVICE)
-@@ -967,7 +967,7 @@ void ChromeBrowserMainExtraPartsProfiles::
+@@ -990,7 +990,7 @@ void ChromeBrowserMainExtraPartsProfiles::
  #endif
  // TODO(crbug.com/40118868): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
@@ -84,7 +84,7 @@
      (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS))
    metrics::DesktopProfileSessionDurationsServiceFactory::GetInstance();
  #endif
-@@ -1068,7 +1068,7 @@ void ChromeBrowserMainExtraPartsProfiles::
+@@ -1091,7 +1091,7 @@ void ChromeBrowserMainExtraPartsProfiles::
  #if BUILDFLAG(IS_CHROMEOS)
    policy::PolicyCertServiceFactory::GetInstance();
  #endif
@@ -93,7 +93,7 @@
    policy::ProfileTokenPolicyWebSigninServiceFactory::GetInstance();
    policy::UserPolicyOidcSigninServiceFactory::GetInstance();
  #endif
-@@ -1113,7 +1113,7 @@ void ChromeBrowserMainExtraPartsProfiles::
+@@ -1140,7 +1140,7 @@ void ChromeBrowserMainExtraPartsProfiles::
  #if !BUILDFLAG(IS_CHROMEOS_ASH) && !BUILDFLAG(IS_ANDROID)
    ProfileStatisticsFactory::GetInstance();
  #endif
@@ -102,7 +102,7 @@
    ProfileTokenWebSigninInterceptorFactory::GetInstance();
    OidcAuthenticationSigninInterceptorFactory::GetInstance();
  #endif
-@@ -1129,7 +1129,7 @@ void ChromeBrowserMainExtraPartsProfiles::
+@@ -1159,7 +1159,7 @@ void ChromeBrowserMainExtraPartsProfiles::
  #endif
    ReduceAcceptLanguageFactory::GetInstance();
    RendererUpdaterFactory::GetInstance();

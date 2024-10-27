@@ -1,6 +1,6 @@
---- base/system/sys_info_freebsd.cc.orig	2024-06-22 08:49:42 UTC
+--- base/system/sys_info_freebsd.cc.orig	2024-10-27 06:40:35 UTC
 +++ base/system/sys_info_freebsd.cc
-@@ -9,30 +9,106 @@
+@@ -9,28 +9,103 @@
  #include <sys/sysctl.h>
  
  #include "base/notreached.h"
@@ -21,7 +21,7 @@
 +  }
 +  return ncpu;
 +}
-+
++  
 +uint64_t SysInfo::AmountOfPhysicalMemoryImpl() {
 +  int pages, page_size, r = 0;
    size_t size = sizeof(pages);
@@ -31,12 +31,11 @@
 +
 +  if (r == 0)
 +    r = sysctlbyname("vm.stats.vm.v_page_count", &pages, &size, NULL, 0);
-+  if (r == 0)
++  if (r == 0)   
 +    r = sysctlbyname("vm.stats.vm.v_page_size", &page_size, &size, NULL, 0);
 +
 +  if (r == -1) {
-     NOTREACHED_IN_MIGRATION();
-     return 0;
+     NOTREACHED();
    }
 -  return static_cast<int64_t>(pages) * page_size;
 +
@@ -48,7 +47,7 @@
 +  unsigned int pgfree, pginact, pgcache;
 +  size_t size = sizeof(page_size);
 +  size_t szpg = sizeof(pgfree);
-+
++ 
 +  if (r == 0)
 +    r = sysctlbyname("vm.stats.vm.v_page_size", &page_size, &size, NULL, 0);
 +  if (r == 0)
@@ -93,10 +92,8 @@
    size_t size = sizeof(limit);
 +
    if (sysctlbyname("kern.ipc.shmmax", &limit, &size, NULL, 0) < 0) {
-     NOTREACHED_IN_MIGRATION();
-     return 0;
+     NOTREACHED();
    }
-+
    return static_cast<uint64_t>(limit);
 +}
 +

@@ -1,6 +1,6 @@
---- chrome/browser/supervised_user/supervised_user_browser_utils.cc.orig	2024-10-01 07:26:23 UTC
+--- chrome/browser/supervised_user/supervised_user_browser_utils.cc.orig	2024-10-27 06:40:35 UTC
 +++ chrome/browser/supervised_user/supervised_user_browser_utils.cc
-@@ -40,7 +40,7 @@
+@@ -42,7 +42,7 @@
  #include "components/user_manager/user_type.h"
  #elif BUILDFLAG(IS_CHROMEOS_LACROS)
  #include "chromeos/startup/browser_params_proxy.h"
@@ -9,8 +9,8 @@
  #include "chrome/browser/supervised_user/supervised_user_verification_controller_client.h"
  #include "chrome/browser/supervised_user/supervised_user_verification_page.h"
  #endif
-@@ -178,7 +178,7 @@ bool IsAuthenticatedSupervisedProfile(Profile* profile
-          supervised_user::ChildAccountService::AuthState::AUTHENTICATED;
+@@ -165,7 +165,7 @@ void AssertChildStatusOfTheUser(Profile* profile, bool
+ #endif
  }
  
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN)

@@ -1,6 +1,6 @@
---- components/safe_browsing/core/common/features.cc.orig	2024-10-01 07:26:23 UTC
+--- components/safe_browsing/core/common/features.cc.orig	2024-10-27 06:40:35 UTC
 +++ components/safe_browsing/core/common/features.cc
-@@ -240,7 +240,7 @@ BASE_FEATURE(kRippleForEnhancedProtection,
+@@ -237,7 +237,7 @@ BASE_FEATURE(kRippleForEnhancedProtection,
  BASE_FEATURE(kSafeBrowsingAsyncRealTimeCheck,
               "SafeBrowsingAsyncRealTimeCheck",
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \

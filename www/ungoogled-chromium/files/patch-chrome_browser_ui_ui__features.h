@@ -1,4 +1,4 @@
---- chrome/browser/ui/ui_features.h.orig	2024-10-01 07:26:23 UTC
+--- chrome/browser/ui/ui_features.h.orig	2024-10-27 06:40:35 UTC
 +++ chrome/browser/ui/ui_features.h
 @@ -78,7 +78,7 @@ bool IsExtensionMenuInRootAppMenu();
  BASE_DECLARE_FEATURE(kAccessCodeCastUI);
@@ -9,7 +9,7 @@
  BASE_DECLARE_FEATURE(kFewerUpdateConfirmations);
  #endif
  
-@@ -256,7 +256,7 @@ bool IsToolbarPinningEnabled();
+@@ -258,7 +258,7 @@ bool IsToolbarPinningEnabled();
  
  BASE_DECLARE_FEATURE(kTopChromeWebUIUsesSpareRenderer);
  

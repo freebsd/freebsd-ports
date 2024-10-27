@@ -1,6 +1,6 @@
---- base/process/process_metrics_openbsd.cc.orig	2024-06-22 08:49:42 UTC
+--- base/process/process_metrics_openbsd.cc.orig	2024-10-27 06:40:35 UTC
 +++ base/process/process_metrics_openbsd.cc
-@@ -6,75 +6,50 @@
+@@ -6,74 +6,50 @@
  
  #include <stddef.h>
  #include <stdint.h>
@@ -79,8 +79,7 @@
 -
 -base::expected<TimeDelta, ProcessCPUUsageError>
 -ProcessMetrics::GetCumulativeCPUUsage() {
--  NOTREACHED_IN_MIGRATION();
--  return base::unexpected(ProcessCPUUsageError::kNotImplemented);
+-  NOTREACHED();
 -}
 -
 -ProcessMetrics::ProcessMetrics(ProcessHandle process)
@@ -94,7 +93,7 @@
    struct vmtotal vmtotal;
    unsigned long mem_total, mem_free, mem_inactive;
    size_t len = sizeof(vmtotal);
-@@ -86,9 +61,136 @@ size_t GetSystemCommitCharge() {
+@@ -85,9 +61,136 @@ size_t GetSystemCommitCharge() {
    mem_free = vmtotal.t_free;
    mem_inactive = vmtotal.t_vm - vmtotal.t_avm;
  
