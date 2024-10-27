@@ -5,7 +5,8 @@ CATEGORIES=	security
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Distributed firewall
-WWW=		https://diswall.stream
+WWW=		https://diswall.stream \
+		https://github.com/dis-works/diswall-rs
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
