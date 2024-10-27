@@ -6,7 +6,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Ranger-like terminal file manager
-WWW=		https://crates.io/crates/joshuto
+WWW=		https://github.com/kamiyaa/joshuto
 
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/LICENSE
