@@ -1,6 +1,5 @@
 PORTNAME=	sway
-DISTVERSION=	1.9
-PORTREVISION=	2
+DISTVERSION=	1.10
 CATEGORIES=	x11-wm wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -16,8 +15,9 @@ LIB_DEPENDS=	libjson-c.so:devel/json-c \
 		libevdev.so:devel/libevdev \
 		libudev.so:devel/libudev-devd \
 		libpcre2-8.so:devel/pcre2 \
+		libdrm.so:graphics/libdrm \
 		libwayland-egl.so:graphics/wayland \
-		libwlroots.so:x11-toolkits/wlroots017 \
+		libwlroots-0.18.so:x11-toolkits/wlroots \
 		libinput.so:x11/libinput \
 		libxkbcommon.so:x11/libxkbcommon
 
@@ -49,7 +49,6 @@ SWAYBG_RUN_DEPENDS=	swaybg:x11/swaybg
 
 X11_USE=		XORG=xcb
 X11_LIB_DEPENDS=	libxcb-icccm.so:x11/xcb-util-wm
-X11_MESON_ENABLED=	xwayland
 
 post-patch:
 # Let @sample handle default files under etc/
