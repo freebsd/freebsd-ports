@@ -6,7 +6,8 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	More powerful alternative to sysctl(8) with a terminal user interface
-WWW=		https://systeroid.cli.rs
+WWW=		https://systeroid.cli.rs \
+		https://github.com/orhun/systeroid
 
 LICENSE=	APACHE20 MIT
 LICENSE_COMB=	dual
