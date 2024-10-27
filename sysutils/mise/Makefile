@@ -1,6 +1,6 @@
 PORTNAME=	mise
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2024.10.10
+DISTVERSION=	2024.10.11
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -196,7 +196,6 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		instant-0.1.13 \
 		ipnet-2.10.1 \
 		is_terminal_polyfill-1.70.1 \
-		itertools-0.12.1 \
 		itertools-0.13.0 \
 		itoa-1.0.11 \
 		jobserver-0.1.32 \
@@ -207,7 +206,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		lazy_static-1.5.0 \
 		libc-0.2.161 \
 		libgit2-sys-0.17.0+1.8.1 \
-		libm-0.2.8 \
+		libm-0.2.9 \
 		libredox-0.1.3 \
 		libssh2-sys-0.3.0 \
 		libz-sys-1.1.20 \
@@ -233,9 +232,9 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		miniz_oxide-0.7.4 \
 		miniz_oxide-0.8.0 \
 		mio-1.0.2 \
-		mlua-0.9.9 \
+		mlua-0.10.0 \
 		mlua-sys-0.6.4 \
-		mlua_derive-0.9.3 \
+		mlua_derive-0.10.0 \
 		native-tls-0.2.12 \
 		new_debug_unreachable-1.0.6 \
 		nix-0.29.0 \
@@ -442,7 +441,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		vcpkg-0.2.15 \
 		version_check-0.9.5 \
 		versions-6.3.2 \
-		vfox-0.1.6 \
+		vfox-0.2.1 \
 		vte-0.10.1 \
 		vte_generate_state_changes-0.1.2 \
 		wait-timeout-0.2.0 \
