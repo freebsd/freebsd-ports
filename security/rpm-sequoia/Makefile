@@ -6,7 +6,8 @@ CATEGORIES=	security archivers
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	OpenPGP backend for rpm using Sequoia PGP
-WWW=		https://sequoia-pgp.org/
+WWW=		https://sequoia-pgp.org/ \
+		https://github.com/rpm-software-management/rpm-sequoia
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
