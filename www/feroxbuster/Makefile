@@ -5,7 +5,8 @@ CATEGORIES=	www security
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Fast, simple, recursive content discovery tool
-WWW=		https://epi052.github.io/feroxbuster/
+WWW=		https://epi052.github.io/feroxbuster/ \
+		https://github.com/epi052/feroxbuster
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
