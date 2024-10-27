@@ -6,7 +6,8 @@ DISTFILES=	${CARGO_DIST_SUBDIR}/${DISTNAME}${CARGO_CRATE_EXT}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Cross-shell prompt for astronauts
-WWW=		https://starship.rs/
+WWW=		https://starship.rs/ \
+		https://github.com/starship/starship
 
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/LICENSE
