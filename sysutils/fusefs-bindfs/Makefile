@@ -14,21 +14,15 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		fuse:3 localbase:ldflags pkgconfig
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
+
+CONFIGURE_ENV+=	fuse3_LIBS="-L${LOCALBASE}/lib -lfuse3"
+CONFIGURE_ARGS=	--with-fuse3
 
 PLIST_FILES=	bin/bindfs \
 		share/man/man1/bindfs.1.gz
 
-.include <bsd.port.pre.mk>
+post-patch:
+	@${REINPLACE_CMD} -e 's|-pthread|-lthr|g' \
+	    ${PATCH_WRKSRC}/configure
 
-.if ${LIBFUSE_VER} == 3
-FUSEPKG=	fuse3
-CONFIGURE_ENV+=	FUSE_CFLAGS="-I${LOCALBASE}/include/fuse3" \
-		FUSE_LIBS="-L${LOCALBASE}/lib -lfuse3"
-LDFLAGS+=	-lthr
-.endif
-
-FUSE_VERSION=	"`pkgconf --modversion ${FUSEPKG} | \
-		${SED} -E 's,^([0-9]+)\.([0-9]+)\..*,\1\2,'`"
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
