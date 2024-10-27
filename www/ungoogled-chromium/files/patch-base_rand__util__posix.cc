@@ -1,4 +1,4 @@
---- base/rand_util_posix.cc.orig	2024-08-26 14:40:28 UTC
+--- base/rand_util_posix.cc.orig	2024-10-27 06:40:35 UTC
 +++ base/rand_util_posix.cc
 @@ -28,7 +28,7 @@
  #include "base/time/time.h"
@@ -30,7 +30,7 @@
  // TODO(pasko): Unify reading kernel version numbers in:
  // mojo/core/channel_linux.cc
  // chrome/browser/android/seccomp_support_detector.cc
-@@ -181,6 +183,7 @@ bool UseBoringSSLForRandBytes() {
+@@ -177,6 +179,7 @@ bool UseBoringSSLForRandBytes() {
  namespace {
  
  void RandBytesInternal(span<uint8_t> output, bool avoid_allocation) {
@@ -38,7 +38,7 @@
  #if !BUILDFLAG(IS_NACL)
    // The BoringSSL experiment takes priority over everything else.
    if (!avoid_allocation && internal::UseBoringSSLForRandBytes()) {
-@@ -217,6 +220,9 @@ void RandBytesInternal(span<uint8_t> output, bool avoi
+@@ -213,6 +216,9 @@ void RandBytesInternal(span<uint8_t> output, bool avoi
    const int urandom_fd = GetUrandomFD();
    const bool success = ReadFromFD(urandom_fd, as_writable_chars(output));
    CHECK(success);
@@ -48,7 +48,7 @@
  }
  
  }  // namespace
-@@ -236,9 +242,11 @@ void RandBytes(span<uint8_t> output) {
+@@ -232,9 +238,11 @@ void RandBytes(span<uint8_t> output) {
    RandBytesInternal(output, /*avoid_allocation=*/false);
  }
  

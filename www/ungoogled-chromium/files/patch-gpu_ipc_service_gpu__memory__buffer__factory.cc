@@ -1,4 +1,4 @@
---- gpu/ipc/service/gpu_memory_buffer_factory.cc.orig	2024-08-26 14:40:28 UTC
+--- gpu/ipc/service/gpu_memory_buffer_factory.cc.orig	2024-10-27 06:40:35 UTC
 +++ gpu/ipc/service/gpu_memory_buffer_factory.cc
 @@ -14,7 +14,7 @@
  #include "gpu/ipc/service/gpu_memory_buffer_factory_io_surface.h"
@@ -9,10 +9,10 @@
  #include "gpu/ipc/service/gpu_memory_buffer_factory_native_pixmap.h"
  #endif
  
-@@ -37,7 +37,7 @@ GpuMemoryBufferFactory::CreateNativeType(
-   return std::make_unique<GpuMemoryBufferFactoryIOSurface>();
- #elif BUILDFLAG(IS_ANDROID)
-   return std::make_unique<GpuMemoryBufferFactoryAndroidHardwareBuffer>();
+@@ -71,7 +71,7 @@ GpuMemoryBufferFactory::CreateNativeType(
+   // to have a factory that vends invalid GMB handles rather than having no
+   // factory at all.
+   return std::make_unique<GpuMemoryBufferFactoryStub>();
 -#elif BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_FUCHSIA)
 +#elif BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_FUCHSIA) || BUILDFLAG(IS_BSD)
    return std::make_unique<GpuMemoryBufferFactoryNativePixmap>(

@@ -1,4 +1,4 @@
---- build/config/compiler/BUILD.gn.orig	2024-10-01 07:26:23 UTC
+--- build/config/compiler/BUILD.gn.orig	2024-10-27 06:40:35 UTC
 +++ build/config/compiler/BUILD.gn
 @@ -199,7 +199,7 @@ declare_args() {
    # This greatly reduces the size of debug builds, at the cost of
@@ -9,7 +9,7 @@
  }
  
  declare_args() {
-@@ -253,13 +253,16 @@ config("default_include_dirs") {
+@@ -256,13 +256,16 @@ config("default_include_dirs") {
  # Compiler instrumentation can introduce dependencies in DSOs to symbols in
  # the executable they are loaded into, so they are unresolved at link-time.
  config("no_unresolved_symbols") {
@@ -27,7 +27,7 @@
  }
  
  # compiler ---------------------------------------------------------------------
-@@ -505,6 +508,10 @@ config("compiler") {
+@@ -508,6 +511,10 @@ config("compiler") {
      }
    }
  
@@ -38,7 +38,7 @@
    # Linux-specific compiler flags setup.
    # ------------------------------------
    if (use_icf && (!is_apple || use_lld)) {
-@@ -558,7 +565,7 @@ config("compiler") {
+@@ -561,7 +568,7 @@ config("compiler") {
      ldflags += [ "-Wl,-z,keep-text-section-prefix" ]
    }
  
@@ -47,7 +47,7 @@
      cflags += [ "-fcrash-diagnostics-dir=" + clang_diagnostic_dir ]
      if (save_reproducers_on_lld_crash && use_lld) {
        ldflags += [
-@@ -1212,7 +1219,7 @@ config("compiler_cpu_abi") {
+@@ -1217,7 +1224,7 @@ config("compiler_cpu_abi") {
          ]
        }
      } else if (current_cpu == "arm") {
@@ -56,7 +56,7 @@
            !(is_chromeos_lacros && is_chromeos_device)) {
          cflags += [ "--target=arm-linux-gnueabihf" ]
          ldflags += [ "--target=arm-linux-gnueabihf" ]
-@@ -1227,7 +1234,7 @@ config("compiler_cpu_abi") {
+@@ -1232,7 +1239,7 @@ config("compiler_cpu_abi") {
          cflags += [ "-mtune=$arm_tune" ]
        }
      } else if (current_cpu == "arm64") {
@@ -65,7 +65,7 @@
            !(is_chromeos_lacros && is_chromeos_device)) {
          cflags += [ "--target=aarch64-linux-gnu" ]
          ldflags += [ "--target=aarch64-linux-gnu" ]
-@@ -1562,7 +1569,7 @@ config("compiler_deterministic") {
+@@ -1567,7 +1574,7 @@ config("compiler_deterministic") {
      # different build directory like "out/feature_a" and "out/feature_b" if
      # we build same files with same compile flag.
      # Other paths are already given in relative, no need to normalize them.
@@ -74,7 +74,7 @@
        # TODO(https://crbug.com/1231236): Use -ffile-compilation-dir= here.
        cflags += [
          "-Xclang",
-@@ -1620,7 +1627,7 @@ config("compiler_deterministic") {
+@@ -1625,7 +1632,7 @@ config("compiler_deterministic") {
  }
  
  config("clang_revision") {
@@ -83,7 +83,7 @@
        current_os != "zos") {
      update_args = [
        "--print-revision",
-@@ -1950,9 +1957,6 @@ config("default_warnings") {
+@@ -1955,9 +1962,6 @@ config("default_warnings") {
  
          # TODO(crbug.com/40286317): Evaluate and possibly enable.
          "-Wno-vla-extension",
@@ -93,7 +93,7 @@
        ]
  
        cflags_cc += [
-@@ -1960,17 +1964,11 @@ config("default_warnings") {
+@@ -1965,17 +1969,11 @@ config("default_warnings") {
          "-Wenum-compare-conditional",
        ]
  
@@ -112,7 +112,7 @@
        }
      }
  
-@@ -2699,7 +2697,7 @@ config("afdo_optimize_size") {
+@@ -2709,7 +2707,7 @@ config("afdo_optimize_size") {
  # There are some targeted places that AFDO regresses, so we provide a separate
  # config to allow AFDO to be disabled per-target.
  config("afdo") {
@@ -121,7 +121,7 @@
      cflags = []
      if (clang_emit_debug_info_for_profiling) {
        # Add the following flags to generate debug info for profiling.
-@@ -2726,7 +2724,7 @@ config("afdo") {
+@@ -2736,7 +2734,7 @@ config("afdo") {
        cflags += [ "-Wno-backend-plugin" ]
        inputs = [ _clang_sample_profile ]
      }
@@ -130,8 +130,8 @@
      cflags = [ "-fauto-profile=${auto_profile_path}" ]
      inputs = [ auto_profile_path ]
    }
-@@ -2891,7 +2889,7 @@ config("symbols") {
-     configs += [ "//build/config:compress_debug_sections" ]
+@@ -2913,7 +2911,7 @@ config("symbols") {
+     cflags += [ "-gomit-unreferenced-methods" ]
    }
  
 -  if (is_clang && (!is_nacl || is_nacl_saigo)) {

@@ -1,4 +1,4 @@
---- chrome/browser/ui/webui/management/management_ui_handler.cc.orig	2024-08-26 14:40:28 UTC
+--- chrome/browser/ui/webui/management/management_ui_handler.cc.orig	2024-10-27 06:40:35 UTC
 +++ chrome/browser/ui/webui/management/management_ui_handler.cc
 @@ -57,7 +57,7 @@
  #include "ui/base/l10n/l10n_util.h"
@@ -18,7 +18,7 @@
    // Insert the device signals consent disclosure at the end of browser
    // reporting section.
    auto* user_permission_service = GetUserPermissionService();
-@@ -533,7 +533,7 @@ policy::PolicyService* ManagementUIHandler::GetPolicyS
+@@ -547,7 +547,7 @@ policy::PolicyService* ManagementUIHandler::GetPolicyS
        ->policy_service();
  }
  

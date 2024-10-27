@@ -1,6 +1,6 @@
---- base/process/process_metrics_freebsd.cc.orig	2024-06-22 08:49:42 UTC
+--- base/process/process_metrics_freebsd.cc.orig	2024-10-27 06:40:35 UTC
 +++ base/process/process_metrics_freebsd.cc
-@@ -3,44 +3,58 @@
+@@ -3,43 +3,58 @@
  // found in the LICENSE file.
  
  #include "base/process/process_metrics.h"
@@ -67,14 +67,13 @@
  
 -base::expected<TimeDelta, ProcessCPUUsageError>
 -ProcessMetrics::GetCumulativeCPUUsage() {
--  NOTREACHED_IN_MIGRATION();
--  return base::unexpected(ProcessCPUUsageError::kNotImplemented);
+-  NOTREACHED();
 -}
 -
  size_t GetSystemCommitCharge() {
    int mib[2], pagesize;
    unsigned long mem_total, mem_free, mem_inactive;
-@@ -62,6 +76,230 @@ size_t GetSystemCommitCharge() {
+@@ -61,6 +76,230 @@ size_t GetSystemCommitCharge() {
    pagesize = getpagesize();
  
    return mem_total - (mem_free*pagesize) - (mem_inactive*pagesize);

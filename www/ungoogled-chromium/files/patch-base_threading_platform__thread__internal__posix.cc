@@ -1,6 +1,6 @@
---- base/threading/platform_thread_internal_posix.cc.orig	2024-03-22 14:16:19 UTC
+--- base/threading/platform_thread_internal_posix.cc.orig	2024-10-27 06:40:35 UTC
 +++ base/threading/platform_thread_internal_posix.cc
-@@ -42,7 +42,7 @@ ThreadPriorityForTest NiceValueToThreadPriorityForTest
+@@ -41,7 +41,7 @@ ThreadPriorityForTest NiceValueToThreadPriorityForTest
  }
  
  int GetCurrentThreadNiceValue() {

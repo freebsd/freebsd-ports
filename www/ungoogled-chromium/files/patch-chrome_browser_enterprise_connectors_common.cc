@@ -1,15 +1,15 @@
---- chrome/browser/safe_browsing/cloud_content_scanning/deep_scanning_utils.cc.orig	2024-10-01 07:26:23 UTC
-+++ chrome/browser/safe_browsing/cloud_content_scanning/deep_scanning_utils.cc
-@@ -16,7 +16,7 @@
- #include "components/crash/core/common/crash_key.h"
- #include "components/signin/public/identity_manager/identity_manager.h"
+--- chrome/browser/enterprise/connectors/common.cc.orig	2024-10-27 06:40:35 UTC
++++ chrome/browser/enterprise/connectors/common.cc
+@@ -23,7 +23,7 @@
+ #include "components/policy/core/common/policy_loader_lacros.h"
+ #endif
  
 -#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
  #include "chrome/browser/enterprise/signin/enterprise_signin_prefs.h"
  #include "components/prefs/pref_service.h"
  #endif
-@@ -419,7 +419,7 @@ std::string GetProfileEmail(Profile* profile) {
+@@ -266,7 +266,7 @@ std::string GetProfileEmail(Profile* profile) {
    std::string email =
        GetProfileEmail(IdentityManagerFactory::GetForProfile(profile));
  

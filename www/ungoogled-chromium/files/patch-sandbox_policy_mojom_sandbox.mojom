@@ -1,6 +1,6 @@
---- sandbox/policy/mojom/sandbox.mojom.orig	2023-12-23 12:33:28 UTC
+--- sandbox/policy/mojom/sandbox.mojom.orig	2024-10-27 06:40:35 UTC
 +++ sandbox/policy/mojom/sandbox.mojom
-@@ -77,6 +77,12 @@ enum Sandbox {
+@@ -80,6 +80,12 @@ enum Sandbox {
    [EnableIf=is_fuchsia]
    kVideoCapture,
  

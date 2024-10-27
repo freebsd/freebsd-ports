@@ -1,5 +1,5 @@
 PORTNAME=	ungoogled-chromium
-PORTVERSION=	129.0.6668.100
+PORTVERSION=	130.0.6723.91
 PULSEMV=	16
 PULSEV=		${PULSEMV}.1
 UGVERSION=	${DISTVERSION}-1
@@ -124,7 +124,7 @@ GN_ARGS+=	enable_widevine=true \
 		use_system_libffi=true \
 		use_system_libjpeg=true \
 		use_udev=false \
-		extra_cxxflags="${CXXFLAGS} ${PINCLUDES}" \
+		extra_cxxflags="${CXXFLAGS} -I${LOCALBASE}/include/libepoll-shim ${PINCLUDES}" \
 		extra_ldflags="${LDFLAGS}" \
 		ffmpeg_branding="${FFMPEG_BRAND}"
 

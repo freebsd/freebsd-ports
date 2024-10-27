@@ -1,6 +1,6 @@
---- chrome/browser/ui/browser_command_controller.cc.orig	2024-10-01 07:26:23 UTC
+--- chrome/browser/ui/browser_command_controller.cc.orig	2024-10-27 06:40:35 UTC
 +++ chrome/browser/ui/browser_command_controller.cc
-@@ -129,7 +129,7 @@
+@@ -128,7 +128,7 @@
  #include "components/user_manager/user_manager.h"
  #endif
  
@@ -9,7 +9,7 @@
  #include "ui/base/ime/text_input_flags.h"
  #include "ui/linux/linux_ui.h"
  #endif
-@@ -138,7 +138,7 @@
+@@ -137,7 +137,7 @@
  #include "ui/ozone/public/ozone_platform.h"
  #endif
  
@@ -18,7 +18,7 @@
  #include "chrome/browser/ui/shortcuts/desktop_shortcuts_utils.h"
  #endif  // BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_WIN)
  
-@@ -315,7 +315,7 @@ bool BrowserCommandController::IsReservedCommandOrKey(
+@@ -318,7 +318,7 @@ bool BrowserCommandController::IsReservedCommandOrKey(
  #endif
    }
  
@@ -27,7 +27,7 @@
    // If this key was registered by the user as a content editing hotkey, then
    // it is not reserved.
    auto* linux_ui = ui::LinuxUi::instance();
-@@ -570,7 +570,7 @@ bool BrowserCommandController::ExecuteCommandWithDispo
+@@ -573,7 +573,7 @@ bool BrowserCommandController::ExecuteCommandWithDispo
  
  // TODO(crbug.com/40118868): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
@@ -36,7 +36,7 @@
      case IDC_MINIMIZE_WINDOW:
        browser_->window()->Minimize();
        break;
-@@ -582,7 +582,7 @@ bool BrowserCommandController::ExecuteCommandWithDispo
+@@ -585,7 +585,7 @@ bool BrowserCommandController::ExecuteCommandWithDispo
        break;
  #endif
  
@@ -45,7 +45,7 @@
      case IDC_USE_SYSTEM_TITLE_BAR: {
        PrefService* prefs = profile()->GetPrefs();
        prefs->SetBoolean(prefs::kUseCustomChromeFrame,
-@@ -776,7 +776,7 @@ bool BrowserCommandController::ExecuteCommandWithDispo
+@@ -786,7 +786,7 @@ bool BrowserCommandController::ExecuteCommandWithDispo
        break;
      case IDC_CREATE_SHORTCUT:
        base::RecordAction(base::UserMetricsAction("CreateShortcut"));
@@ -54,7 +54,7 @@
        if (base::FeatureList::IsEnabled(features::kShortcutsNotApps)) {
          chrome::CreateDesktopShortcutForActiveWebContents(browser_);
        } else {
-@@ -1279,12 +1279,12 @@ void BrowserCommandController::InitCommandState() {
+@@ -1264,12 +1264,12 @@ void BrowserCommandController::InitCommandState() {
  #endif
  // TODO(crbug.com/40118868): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
@@ -69,7 +69,7 @@
    bool use_system_title_bar = true;
  #if BUILDFLAG(IS_OZONE)
    use_system_title_bar = ui::OzonePlatform::GetInstance()
-@@ -1600,7 +1600,7 @@ void BrowserCommandController::UpdateCommandsForTabSta
+@@ -1601,7 +1601,7 @@ void BrowserCommandController::UpdateCommandsForTabSta
    bool can_create_web_app = web_app::CanCreateWebApp(browser_);
    command_updater_.UpdateCommandEnabled(IDC_INSTALL_PWA, can_create_web_app);
  
