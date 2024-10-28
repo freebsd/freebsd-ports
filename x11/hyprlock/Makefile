@@ -30,10 +30,15 @@ PLIST_FILES=	bin/${PORTNAME} \
 		etc/pam.d/${PORTNAME} \
 		share/hypr/${PORTNAME}.conf
 
-# XXX Drop after FreeBSD 13.3 EOL around 2025-07-01
-.if exists(/usr/lib/libc++.so) && !exists(/usr/include/c++/v1/__chrono/time_zone.h)
+# https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=282377
+.if exists(/usr/lib/libc++.so)
 LIB_DEPENDS+=	libdate-tz.so:devel/date
 USES+=		localbase:ldflags
+
+post-patch:	libcxx-post-patch
+libcxx-post-patch:
+	@${REINPLACE_CMD} '/_LIBCPP_VERSION/s/$$/ || defined(_LIBCPP_HAS_NO_TIME_ZONE_DATABASE)/' \
+		${WRKSRC}/src/renderer/widgets/IWidget.cpp
 .endif
 
 .include <bsd.port.mk>
