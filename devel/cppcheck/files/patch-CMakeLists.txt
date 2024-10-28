@@ -1,11 +1,11 @@
---- CMakeLists.txt.orig	2024-08-31 14:09:43 UTC
+--- CMakeLists.txt.orig	2024-10-27 15:13:49 UTC
 +++ CMakeLists.txt
 @@ -2,7 +2,7 @@ endif()
  if(MSVC)
      cmake_minimum_required(VERSION 3.13)
  endif()
--project(Cppcheck VERSION 2.15.0 LANGUAGES CXX)
-+project(cppcheck VERSION 2.15.0 LANGUAGES CXX)
+-project(Cppcheck VERSION 2.16.0 LANGUAGES CXX)
++project(cppcheck VERSION 2.16.0 LANGUAGES CXX)
  
  include(cmake/cxx11.cmake)
  use_cxx11()
