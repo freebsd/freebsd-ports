@@ -1,5 +1,7 @@
 bin/sopwith
 share/applications/sopwith.desktop
 share/icons/hicolor/128x128/apps/sopwith.png
+share/man/man5/sopwith-mission.5.gz
 share/man/man5/sopwith.cfg.5.gz
 share/man/man6/sopwith.6.gz
+share/metainfo/io.github.fragglet.sdl_sopwith.metainfo.xml
