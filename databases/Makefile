@@ -550,6 +550,7 @@
     SUBDIR += pgFormatter
     SUBDIR += pg_activity
     SUBDIR += pg_citus
+		SUBDIR += pg_cron
     SUBDIR += pg_dirtyread
     SUBDIR += pg_ed25519
     SUBDIR += pg_filedump
