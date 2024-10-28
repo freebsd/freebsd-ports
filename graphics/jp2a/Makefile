@@ -1,7 +1,8 @@
 PORTNAME=	jp2a
-DISTVERSIONPREFIX=	v
 DISTVERSION=	1.3.1
+PORTREVISION=	1
 CATEGORIES=	graphics
+MASTER_SITES=	https://github.com/Talinx/${PORTNAME}/releases/download/v${DISTVERSION}/
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Converts JPG images to ASCII
@@ -15,18 +16,12 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libpng.so:graphics/png \
 		libwebp.so:graphics/webp
 
-USES=		autoreconf jpeg localbase ncurses pkgconfig
-USE_CSTD=	c99
-USE_GITHUB=	yes
-GH_ACCOUNT=	Talinx
+USES=		jpeg localbase:ldflags ncurses pkgconfig tar:bz2
 
 GNU_CONFIGURE=	yes
 
-CONFIGURE_ARGS=	--disable-doxygen-doc
-CONFIGURE_ENV+=	bashcompdir=${STAGEDIR}${PREFIX}/etc/bash_completion.d
-MAKE_ENV+=	bashcompdir=${STAGEDIR}${PREFIX}/etc/bash_completion.d
-
-LDFLAGS+=	-lm
+CONFIGURE_ARGS=	--disable-assert \
+		--disable-doxygen-doc
 
 PLIST_FILES=	bin/jp2a \
 		etc/bash_completion.d/jp2a \
