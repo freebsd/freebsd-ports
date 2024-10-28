@@ -1,6 +1,6 @@
---- src/slic3r/GUI/Field.cpp.orig	2023-12-12 14:21:21 UTC
+--- src/slic3r/GUI/Field.cpp.orig	2024-09-18 13:39:04 UTC
 +++ src/slic3r/GUI/Field.cpp
-@@ -221,7 +221,7 @@ bool Field::is_matched(const std::string& string, cons
+@@ -222,7 +222,7 @@ static wxString na_value(bool for_spin_ctrl = false)
  
  static wxString na_value(bool for_spin_ctrl = false)
  {

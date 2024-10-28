@@ -1,5 +1,5 @@
---- src/hidapi/CMakeLists.txt.orig	2022-09-06 07:09:19 UTC
-+++ src/hidapi/CMakeLists.txt
+--- bundled_deps/hidapi/CMakeLists.txt.orig	2024-09-18 13:39:04 UTC
++++ bundled_deps/hidapi/CMakeLists.txt
 @@ -1,8 +1,9 @@
 -
  if (WIN32)
@@ -11,10 +11,10 @@
  else ()
      # Assume Linux or Unix other than Mac OS
      set(HIDAPI_IMPL linux/hid.c)
-@@ -16,4 +17,6 @@ if (CMAKE_SYSTEM_NAME STREQUAL "Linux")
+@@ -16,4 +17,6 @@ target_link_libraries(hidapi PRIVATE dl)
  	# Don't link the udev library, as there are two versions out there (libudev.so.0, libudev.so.1), so they are linked explicitely.
  #	target_link_libraries(hidapi udev)
- 	target_link_libraries(hidapi dl)
+ target_link_libraries(hidapi PRIVATE dl)
 +elseif (CMAKE_SYSTEM_NAME STREQUAL "FreeBSD")
-+	target_link_libraries(hidapi usb iconv)
++       target_link_libraries(hidapi usb iconv)
  endif()

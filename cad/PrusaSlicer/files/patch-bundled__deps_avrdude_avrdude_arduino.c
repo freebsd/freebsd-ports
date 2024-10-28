@@ -1,5 +1,5 @@
---- src/avrdude/arduino.c.orig	2023-07-25 13:23:52 UTC
-+++ src/avrdude/arduino.c
+--- bundled_deps/avrdude/avrdude/arduino.c.orig	2024-09-18 13:39:04 UTC
++++ bundled_deps/avrdude/avrdude/arduino.c
 @@ -28,6 +28,7 @@
  #include "ac_cfg.h"
  

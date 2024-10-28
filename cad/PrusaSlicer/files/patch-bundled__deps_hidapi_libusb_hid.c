@@ -1,5 +1,5 @@
---- src/hidapi/libusb/hid.c.orig	2024-10-15 09:14:40 UTC
-+++ src/hidapi/libusb/hid.c
+--- bundled_deps/hidapi/libusb/hid.c.orig	2024-10-15 09:17:30 UTC
++++ bundled_deps/hidapi/libusb/hid.c
 @@ -0,0 +1,1514 @@
 +/*******************************************************
 + HIDAPI - Multi-Platform library for
