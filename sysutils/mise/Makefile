@@ -1,6 +1,6 @@
 PORTNAME=	mise
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2024.10.11
+DISTVERSION=	2024.10.12
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -319,7 +319,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		rustc-demangle-0.1.24 \
 		rustc-hash-2.0.0 \
 		rustc_version-0.4.1 \
-		rustix-0.38.37 \
+		rustix-0.38.38 \
 		rustls-0.23.15 \
 		rustls-native-certs-0.8.0 \
 		rustls-pemfile-2.2.0 \
@@ -418,7 +418,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		try-lock-0.2.5 \
 		typeid-1.0.2 \
 		typenum-1.17.0 \
-		ubi-0.2.0 \
+		ubi-0.2.1 \
 		ucd-trie-0.1.7 \
 		unic-char-property-0.9.0 \
 		unic-char-range-0.9.0 \
@@ -486,7 +486,6 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		winsafe-0.0.19 \
 		xattr-1.3.1 \
 		xx-1.1.8 \
-		xz-0.1.0 \
 		xz2-0.1.7 \
 		yansi-1.0.1 \
 		zerocopy-0.7.35 \
