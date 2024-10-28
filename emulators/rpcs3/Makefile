@@ -97,4 +97,21 @@ post-patch:
 		-e '/GIT_VERSION/s/local_build/${GH_TAGNAME:C/[^-]*-//}/' \
 		${WRKSRC}/${PORTNAME}/git-version.cmake
 
+# https://github.com/RPCS3/rpcs3/issues/16259 (don't forget distinfo)
+.if exists(/usr/include/c++/v1/__thread/support.h)
+# XXX Move into separate port and standardize via USES
+GH_TUPLE+=	llvm:llvm-project:llvmorg-18.1.8:libcxx
+CXXFLAGS+=	-nostdinc++ -isystem${WRKDIR}/libcxx_prefix/include/c++/v1
+# Don't link against new libc++ as it's not necessary
+#LDFLAGS+=	-nostdlib++ -L${WRKDIR}/libcxx_prefix/lib -l:libc++.a -lcxxrt
+
+pre-configure:	bundled-libcxx
+bundled-libcxx:
+	@${SETENV} ${CONFIGURE_ENV} ${CMAKE_BIN} ${CMAKE_ARGS} \
+		-DLIBCXX_INCLUDE_BENCHMARKS:BOOL=OFF \
+		-DCMAKE_INSTALL_PREFIX:PATH=${WRKDIR}/libcxx_prefix \
+		-B ${WRKDIR}/libcxx_build -S ${WRKSRC_libcxx}/libcxx
+	@${DO_MAKE_BUILD:NDESTDIR*} install -C ${WRKDIR}/libcxx_build
+.endif # exists(/usr/include/c++/v1/__thread/support.h)
+
 .include <bsd.port.mk>
