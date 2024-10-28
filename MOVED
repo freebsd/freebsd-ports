@@ -3556,3 +3556,4 @@ databases/rubygem-discard-rails61||2024-10-24|Has expired: Ruby on Rails 6.1.x r
 security/rubygem-devise_pam_authenticatable2-rails61||2024-10-24|Has expired: Ruby on Rails 6.1.x reaches EOL on 2024-10-01
 security/rubygem-doorkeeper-rails61||2024-10-24|Has expired: Ruby on Rails 6.1.x reaches EOL on 2024-10-01
 devel/rubygem-better_html-rails61||2024-10-27|Has expired: Ruby on Rails 6.1.x reaches EOL on 2024-10-01
+x11-wm/sway-devel|x11-wm/sway|2024-10-27|Out of date: use x11-wm/sway for now
