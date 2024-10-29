@@ -7164,6 +7164,7 @@
     SUBDIR += rubygem-event_stream_parser0
     SUBDIR += rubygem-eventmachine
     SUBDIR += rubygem-excon
+    SUBDIR += rubygem-excon0
     SUBDIR += rubygem-execjs
     SUBDIR += rubygem-extlib
     SUBDIR += rubygem-extpp
