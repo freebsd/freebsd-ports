@@ -207,7 +207,7 @@ pre-su-install:
 
 post-install::
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/spamc
-	@${MKDIR} ${STAGEDIR}/var/lib/spamassassin ${STAGEDIR}${DBDIR}/spamassassin ${STAGEDIR}/var/run/spamd
+	@${MKDIR} ${STAGEDIR}${DBDIR}/spamassassin ${STAGEDIR}/var/run/spamd
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${DOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC} && ${COPYTREE_SHARE} "sql ldap" ${STAGEDIR}${DOCSDIR})
