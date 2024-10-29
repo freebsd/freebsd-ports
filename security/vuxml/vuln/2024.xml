@@ -1,3 +1,47 @@
+  <vuln vid="f07c8f87-8e65-11ef-81b8-659bf0027d16">
+    <topic>forgejo -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>forgejo</name>
+	<range><lt>9.0.1</lt></range>
+      </package>
+      <package>
+	<name>forgejo7</name>
+	<range><lt>7.0.10</lt></range>
+      </package>
+    </affects>
+    <description>
+       <body xmlns="http://www.w3.org/1999/xhtml">
+       <h1>Problem Description:</h1>
+       <ul>
+       <li>Forgejo generates a token which is used to authenticate web
+       endpoints that are only meant to be used internally, for instance
+       when the SSH daemon is used to push a commit with Git.  The
+       verification of this token was not done in constant time and was
+       susceptible to timing attacks.  A pre-condition for such an attack is
+       the precise measurements of the time for each operation.  Since it
+       requires observing the timing of network operations, the issue is
+       mitigated when a Forgejo instance is accessed over the internet
+       because the ISP introduce unpredictable random delays.</li>
+       <li>Because of a missing permission check, the branch used to propose
+       a pull request to a repository can always be deleted by the user
+       performing the merge.  It was fixed so that such a deletion is only
+       allowed if the user performing the merge has write permission to the
+       repository from which the pull request was made.</li>
+       </ul>
+      </body>
+    </description>
+    <references>
+      <url>https://codeberg.org/forgejo/forgejo/milestone/8544</url>
+      <url>https://codeberg.org/forgejo/forgejo/pulls/5719</url>
+      <url>https://codeberg.org/forgejo/forgejo/pulls/5718</url>
+    </references>
+    <dates>
+      <discovery>2024-10-28</discovery>
+      <entry>2024-10-28</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="fafaef4d-f364-4a07-bbdd-bf53448c593c">
     <topic>chromium -- multiple security fixes</topic>
     <affects>
