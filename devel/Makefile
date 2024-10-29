@@ -6053,6 +6053,7 @@
     SUBDIR += py-unidep
     SUBDIR += py-unidiff
     SUBDIR += py-unipath
+    SUBDIR += py-unittest-parallel
     SUBDIR += py-unittest2
     SUBDIR += py-unittest2pytest
     SUBDIR += py-unpaddedbase64
