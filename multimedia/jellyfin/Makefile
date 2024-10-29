@@ -8,7 +8,7 @@ EXTRACT_ONLY+=	${PORTNAME}-${PORTNAME}-${GH_TAGNAME}_GH0.tar.gz \
 		${PORTNAME}-${PORTNAME}-web-${GH_TAGNAME}_GH0.tar.gz \
 		${PREFETCH_FILE}
 
-MAINTAINER=	michiel@vanbaak.eu
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Jellyfin Server Component with WebUI
 WWW=		https://jellyfin.org/
 
