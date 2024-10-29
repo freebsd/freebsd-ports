@@ -2,18 +2,13 @@ PORTNAME=	procmail
 PORTVERSION=	3.22
 PORTREVISION=	11
 CATEGORIES=	mail
-MASTER_SITES=	ftp://ftp.ucsb.edu/pub/mirrors/procmail/ \
-		ftp://ftp.informatik.rwth-aachen.de/pub/packages/procmail/ \
-		ftp://ftp.fu-berlin.de/pub/unix/mail/procmail/ \
-		ftp://ftp.kfki.hu/pub/packages/mail/procmail/ \
-		http://www.ring.gr.jp/archives/net/mail/procmail/ \
-		ftp://ftp.ring.gr.jp/pub/net/mail/procmail/ \
-		ftp://ftp.mirrorservice.org/sites/ftp.procmail.org/pub/procmail/ \
-		LOCAL/sunpoet
+MASTER_SITES=	https://github.com/apple-oss-distributions/procmail/raw/refs/heads/main/ \
+		https://ftp.osuosl.org/pub/blfs/conglomeration/procmail/ \
+		https://ftp.fu-berlin.de/unix/mail/procmail/ \
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Local mail delivery agent
-WWW=		https://www.procmail.org/
+WWW=		https://github.com/BuGlessRB/procmail
 
 LICENSE=	GPLv2
 
