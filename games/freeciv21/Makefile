@@ -5,7 +5,8 @@ MASTER_SITES=	https://github.com/longturn/${PORTNAME}/releases/download/${FC21_V
 DISTNAME=	${PORTNAME:S/^f/F/}-${FC21_VERSION}
 
 PATCH_SITES=	https://github.com/longturn/${PORTNAME}/commit/
-PATCHFILES=	1c314496c1cabf6e582e10d8660bb1b31ae461d3.patch
+PATCHFILES=	1c314496c1cabf6e582e10d8660bb1b31ae461d3.patch \
+		138877d9500f92303313b0be3c38c55be4b7b39c.patch
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	tobias.rehbein@web.de
