@@ -1,5 +1,5 @@
 PORTNAME=	starlette
-PORTVERSION=	0.41.0
+PORTVERSION=	0.41.1
 CATEGORIES=	www python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -26,7 +26,7 @@ FULL_DESC=	Full dependencies
 
 FULL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}itsdangerous>=0:security/py-itsdangerous@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}Jinja2>=0:devel/py-Jinja2@${PY_FLAVOR} \
-			${PYTHON_PKGNAMEPREFIX}python-multipart>=0.0.7:www/py-python-multipart@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}python-multipart>=0.0.13:www/py-python-multipart@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}pyyaml>=0:devel/py-pyyaml@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}requests>=0:www/py-requests@${PY_FLAVOR}
 
