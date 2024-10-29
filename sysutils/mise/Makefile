@@ -1,11 +1,12 @@
 PORTNAME=	mise
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2024.10.12
+DISTVERSION=	2024.10.13
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Runtime Executor (asdf rust clone)
-WWW=		https://mise.jdx.dev/
+WWW=		https://mise.jdx.dev/ \
+		https://github.com/jdx/mise
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -192,7 +193,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		indicatif-0.17.8 \
 		indoc-2.0.5 \
 		inout-0.1.3 \
-		insta-1.40.0 \
+		insta-1.41.0 \
 		instant-0.1.13 \
 		ipnet-2.10.1 \
 		is_terminal_polyfill-1.70.1 \
@@ -434,7 +435,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		untrusted-0.9.0 \
 		url-2.5.2 \
 		urlencoding-2.1.3 \
-		usage-lib-0.11.1 \
+		usage-lib-0.12.1 \
 		utf-8-0.7.6 \
 		utf8parse-0.2.2 \
 		valuable-0.1.0 \
