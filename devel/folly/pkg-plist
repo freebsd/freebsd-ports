@@ -413,15 +413,12 @@ include/folly/executors/thread_factory/NamedThreadFactory.h
 include/folly/executors/thread_factory/PriorityThreadFactory.h
 include/folly/executors/thread_factory/ThreadFactory.h
 include/folly/experimental/Bits.h
-include/folly/experimental/CodingDetail.h
 include/folly/experimental/EliasFanoCoding.h
 include/folly/experimental/EventCount.h
-include/folly/experimental/ExecutionObserver.h
 include/folly/experimental/FlatCombiningPriorityQueue.h
 include/folly/experimental/FunctionScheduler.h
 include/folly/experimental/LockFreeRingBuffer.h
 include/folly/experimental/PrimaryPtr.h
-include/folly/experimental/ReadMostlySharedPtr.h
 include/folly/experimental/RelaxedConcurrentPriorityQueue.h
 include/folly/experimental/SingleWriterFixedHashMap.h
 include/folly/experimental/SingletonRelaxedCounter.h
