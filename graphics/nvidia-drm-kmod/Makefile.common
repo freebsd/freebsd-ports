@@ -30,6 +30,10 @@ MAKE_ENV+=	DEBUG_FLAGS=${DEBUG_FLAGS} \
 WRKSRC=		${WRKDIR}/NVIDIA-FreeBSD-${ARCH_SUFX}-${NVIDIA_DISTVERSION}/
 WRKSRC_SUBDIR=	src/nvidia-drm/
 
+.if ${NVVERSION} < 565.00000
+EXTRA_PATCHES+= ${FILESDIR}/extra-patch-nvidia-drm-conftest.h
+.endif #565.00
+
 .if ${NVVERSION} < 555.04202
 EXTRA_PATCHES+= ${FILESDIR}/extra-patch-nvidia-drm-freebsd-lkpi.c
 .endif
@@ -39,6 +43,9 @@ post-install:
 	${INSTALL_DATA} ${WRKDIR}/20-nvidia-drm-outputclass.conf ${STAGEDIR}${PREFIX}/share/X11/xorg.conf.d/
 
 post-patch:
+	# Workaround for LLVM/Clang19
+	${REINPLACE_CMD} -e '/DRMKMODDIR.*\/linuxkpi\/dummy\/include/d' \
+		${WRKSRC}/Makefile
 	# We should support -CURRENT: kill the check (first #if __FreeBSD_version)
 	linenum=$$(${SED} -ne '/^#if __FreeBSD_version/ { = ; q ; }' \
 			${WRKSRC}/../nvidia/nv-freebsd.h) ; ${REINPLACE_CMD} \
