@@ -13,23 +13,23 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	wayland-protocols>0:graphics/wayland-protocols
 LIB_DEPENDS=	libgtk-layer-shell.so:x11-toolkits/gtk-layer-shell \
-		libwayland-client.so:graphics/wayland \
-		libjson-c.so:devel/json-c
+		libjson-c.so:devel/json-c \
+		libwayland-client.so:graphics/wayland
 
-USES=		gnome meson pkgconfig
+USES=		gnome meson pkgconfig python:run
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	LBCrion
 
 USE_GNOME=	cairo gdkpixbuf2 gtk30
 
-MESON_ARGS=		-Dbsdctl=enabled -Dnetwork=enabled -Dbluez=enabled \
-			-Didleinhibit=enabled -Diwd=enabled
+MESON_ARGS=		-Dbluez=enabled -Dbsdctl=enabled -Didleinhibit=enabled \
+			-Diwd=enabled -Dnetwork=enabled
 
-SUB_FILES=		pkg-message
+SUB_FILES=	pkg-message
 
-OPTIONS_DEFINE=		MPD PULSEAUDIO XKB ALSA
-OPTIONS_DEFAULT=	MPD PULSEAUDIO XKB ALSA
+OPTIONS_DEFINE=		ALSA MPD PULSEAUDIO XKB
+OPTIONS_DEFAULT=	ALSA MPD PULSEAUDIO XKB
 OPTIONS_SUB=		yes
 
 ALSA_DESC=		ALSA audio volume control
@@ -43,7 +43,7 @@ ALSA_MESON_ENABLED=	alsa
 MPD_LIB_DEPENDS=	libmpdclient.so:audio/libmpdclient
 MPD_MESON_ENABLED=	mpd
 
-PULSEAUDIO_LIB_DEPENDS=	libpulse.so:audio/pulseaudio
+PULSEAUDIO_LIB_DEPENDS=		libpulse.so:audio/pulseaudio
 PULSEAUDIO_MESON_ENABLED=	pulse
 
 XKB_LIB_DEPENDS=	libxkbregistry.so:x11/libxkbcommon
