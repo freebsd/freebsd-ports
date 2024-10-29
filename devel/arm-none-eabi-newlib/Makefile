@@ -1,6 +1,6 @@
 PORTNAME=	newlib
-PORTVERSION=	2.4.0
-PORTREVISION=	2
+PORTVERSION=	4.4.0
+DISTVERSIONSUFFIX=	.20231231
 CATEGORIES=	devel
 MASTER_SITES=	SOURCEWARE/${PORTNAME}
 PKGNAMEPREFIX=	${NEWLIB_TARGET}-
@@ -22,13 +22,15 @@ HAS_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--prefix=${PREFIX} \
 		--target="${NEWLIB_TARGET}" \
 		--disable-newlib-supplied-syscalls \
-		--enable-multilib
+		--enable-multilib \
+		--enable-newlib-nano-malloc \
+		--enable-newlib-nano-formatted-io \
+		--enable-target-optspace
 
-# Disable installation of .info files and fix includedir reference.
-post-patch:
-	@${REINPLACE_CMD} -E 's/^(install.*:.*)install-info(.*)/\1\2/' ${WRKSRC}/etc/Makefile.in
+INSTALL_TARGET=	install-target
 
 post-install:
+	@${RM} -r ${STAGEDIR}${PREFIX}/share/info
 	@${FIND} ${STAGEDIR} ! -type d | \
 		${SED} 's,${STAGEDIR}${PREFIX}/,,' >> ${TMPPLIST}
 	@${FIND} -ds ${STAGEDIR}${PREFIX}/${NEWLIB_TARGET} -type d -empty | \
