@@ -1,3 +1,31 @@
+  <vuln vid="4b3a8e7d-9372-11ef-87ad-a8a15998b5cb">
+    <topic>hwloc2 -- Denial of service or other unspecified impacts</topic>
+    <affects>
+      <package>
+	<name>hwloc2</name>
+	<range><ge>2.1.0</ge><le>2.9.2</le></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>cve@mitre.org reports:</p>
+	<blockquote cite="https://github.com/open-mpi/hwloc/issues/544">
+	  <p>An issue was discovered in open-mpi hwloc 2.1.0 allows attackers
+	to cause a denial of service or other unspecified impacts via
+	glibc-cpuset in topology-linux.c.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2022-47022</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2022-47022</url>
+    </references>
+    <dates>
+      <discovery>2023-08-22</discovery>
+      <entry>2024-10-29</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="f07c8f87-8e65-11ef-81b8-659bf0027d16">
     <topic>forgejo -- multiple vulnerabilities</topic>
     <affects>
@@ -38,7 +66,7 @@
     </references>
     <dates>
       <discovery>2024-10-28</discovery>
-      <entry>2024-10-28</entry>
+      <entry>2024-10-29</entry>
     </dates>
   </vuln>
 
