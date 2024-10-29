@@ -1,5 +1,6 @@
 bin/thrift1
 include/thrift/ThriftLibrary.cmake
+include/thrift/annotation/bundled_annotations.h
 include/thrift/annotation/compat.thrift
 include/thrift/annotation/cpp.thrift
 include/thrift/annotation/gen-cpp2/cpp_clients.h
