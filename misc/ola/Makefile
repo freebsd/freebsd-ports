@@ -1,6 +1,6 @@
 PORTNAME=	ola
 DISTVERSION=	0.10.9
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	misc
 MASTER_SITES=	https://github.com/OpenLightingProject/ola/releases/download/${DISTVERSION}/
 
