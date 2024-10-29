@@ -13,7 +13,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libpciaccess.so:devel/libpciaccess
 
-USES=		gnome iconv libtool pathfix pkgconfig tar:bzip2
+USES=		cpe gnome iconv libtool pathfix pkgconfig tar:bzip2
+CPE_VENDOR=	open-mpi
 USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
 
