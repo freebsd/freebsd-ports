@@ -28,6 +28,11 @@ TEST_ENV=	PYTHONPATH=.
 
 CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}*django-rq
 
+OPTIONS_DEFINE=	SENTRY
+SENTRY_DESC=	Sentry support
+
+SENTRY_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}raven>=6.1.0:devel/py-raven@${PY_FLAVOR}
+
 # https://github.com/rq/django-rq/blob/master/Makefile
 do-test:
 	cd ${WRKSRC} && ${SETENV} ${TEST_ENV} ${LOCALBASE}/bin/django-admin test django_rq --settings=django_rq.tests.settings -v2
