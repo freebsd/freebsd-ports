@@ -1,0 +1,461 @@
+--- python/src/BoxCoxFactory.i.orig	2024-06-05 12:07:40 UTC
++++ python/src/BoxCoxFactory.i
+@@ -2,13 +2,13 @@
+ 
+ // do not pass argument by reference, return it as tuple item
+ %typemap(in, numinputs=0) OT::LinearModelResult & linearModelResult ($*ltype temp) %{ temp = OT::LinearModelResult(); $1 = &temp; %}
+-%typemap(argout) OT::LinearModelResult & linearModelResult %{ $result = SWIG_Python_AppendOutput($result, SWIG_NewPointerObj(new OT::LinearModelResult(*$1), SWIGTYPE_p_OT__LinearModelResult, SWIG_POINTER_OWN |  0 )); %}
++%typemap(argout) OT::LinearModelResult & linearModelResult %{ $result = OT_AppendOutput($result, SWIG_NewPointerObj(new OT::LinearModelResult(*$1), SWIGTYPE_p_OT__LinearModelResult, SWIG_POINTER_OWN)); %}
+ 
+ %typemap(in, numinputs=0) OT::GeneralLinearModelResult & generalLinearModelResult ($*ltype temp) %{ temp = OT::GeneralLinearModelResult(); $1 = &temp; %}
+-%typemap(argout) OT::GeneralLinearModelResult & generalLinearModelResult %{ $result = SWIG_Python_AppendOutput($result, SWIG_NewPointerObj(new OT::GeneralLinearModelResult(*$1), SWIGTYPE_p_OT__GeneralLinearModelResult, SWIG_POINTER_OWN |  0 )); %}
++%typemap(argout) OT::GeneralLinearModelResult & generalLinearModelResult %{ $result = OT_AppendOutput($result, SWIG_NewPointerObj(new OT::GeneralLinearModelResult(*$1), SWIGTYPE_p_OT__GeneralLinearModelResult, SWIG_POINTER_OWN)); %}
+ 
+ %typemap(in, numinputs=0) OT::Graph & graph ($*ltype temp) %{ temp = OT::Graph(); $1 = &temp; %}
+-%typemap(argout) OT::Graph & graph %{ $result = SWIG_Python_AppendOutput($result, SWIG_NewPointerObj(new OT::Graph(*$1), SWIGTYPE_p_OT__Graph, SWIG_POINTER_OWN |  0 )); %}
++%typemap(argout) OT::Graph & graph %{ $result = OT_AppendOutput($result, SWIG_NewPointerObj(new OT::Graph(*$1), SWIGTYPE_p_OT__Graph, SWIG_POINTER_OWN)); %}
+ 
+ 
+ %{
+--- python/src/Collection.i.orig	2024-06-05 12:07:40 UTC
++++ python/src/Collection.i
+@@ -49,7 +49,7 @@ PyObject * __getitem__(PyObject * arg) const
+     else
+       for (Py_ssize_t i = 0; i < size; ++ i)
+         result.at(i) = self->at(start + i * step);
+-    return SWIG_NewPointerObj((new collectionType(static_cast< const collectionType& >(result))), SWIG_TypeQuery(#collectionType " *"), SWIG_POINTER_OWN |  0);
++    return SWIG_NewPointerObj((new collectionType(static_cast< const collectionType& >(result))), SWIG_TypeQuery(#collectionType " *"), SWIG_POINTER_OWN);
+   }
+   else if (PySequence_Check(arg))
+   {
+@@ -73,7 +73,7 @@ PyObject * __getitem__(PyObject * arg) const
+       }
+       result[i] = self->at(index);
+     }
+-    return SWIG_NewPointerObj((new collectionType(static_cast< const collectionType& >(result))), SWIG_TypeQuery(#collectionType " *"), SWIG_POINTER_OWN |  0);
++    return SWIG_NewPointerObj((new collectionType(static_cast< const collectionType& >(result))), SWIG_TypeQuery(#collectionType " *"), SWIG_POINTER_OWN);
+   }
+   else if (PyObject_HasAttrString(arg, "__int__"))
+   {
+--- python/src/DistributionImplementation.i.orig	2024-06-05 12:07:40 UTC
++++ python/src/DistributionImplementation.i
+@@ -2,19 +2,19 @@
+ 
+ // do not pass argument by reference, return it as tuple item
+ %typemap(in, numinputs=0) OT::Sample & gridOut ($*ltype temp) %{ temp = OT::Sample(); $1 = &temp; %}
+-%typemap(argout) OT::Sample & gridOut %{ $result = SWIG_Python_AppendOutput($result, SWIG_NewPointerObj(new OT::Sample(*$1), SWIGTYPE_p_OT__Sample, SWIG_POINTER_OWN |  0 )); %}
++%typemap(argout) OT::Sample & gridOut %{ $result = OT_AppendOutput($result, SWIG_NewPointerObj(new OT::Sample(*$1), SWIGTYPE_p_OT__Sample, SWIG_POINTER_OWN)); %}
+ 
+ %typemap(in, numinputs=0) OT::Point & marginalProbOut ($*ltype temp) %{ temp = OT::Point(); $1 = &temp; %}
+-%typemap(argout) OT::Point & marginalProbOut %{ $result = SWIG_Python_AppendOutput($result, SWIG_NewPointerObj(new OT::Point(*$1), SWIGTYPE_p_OT__Point, SWIG_POINTER_OWN |  0 )); %}
++%typemap(argout) OT::Point & marginalProbOut %{ $result = OT_AppendOutput($result, SWIG_NewPointerObj(new OT::Point(*$1), SWIGTYPE_p_OT__Point, SWIG_POINTER_OWN)); %}
+ 
+ %typemap(in, numinputs=0) OT::Point & thresholdOut ($*ltype temp) %{ temp = OT::Point(); $1 = &temp; %}
+-%typemap(argout) OT::Point & thresholdOut %{ $result = SWIG_Python_AppendOutput($result, SWIG_NewPointerObj(new OT::Point(*$1), SWIGTYPE_p_OT__Point, SWIG_POINTER_OWN |  0 )); %}
++%typemap(argout) OT::Point & thresholdOut %{ $result = OT_AppendOutput($result, SWIG_NewPointerObj(new OT::Point(*$1), SWIGTYPE_p_OT__Point, SWIG_POINTER_OWN)); %}
+ 
+ %typemap(in, numinputs=0) OT::Scalar & marginalProbOut ($*ltype temp) %{ temp = -1.0; $1 = &temp; %}
+-%typemap(argout) OT::Scalar & marginalProbOut %{ $result = SWIG_Python_AppendOutput($result, PyFloat_FromDouble(*$1)); %}
++%typemap(argout) OT::Scalar & marginalProbOut %{ $result = OT_AppendOutput($result, PyFloat_FromDouble(*$1)); %}
+ 
+ %typemap(in, numinputs=0) OT::Scalar & thresholdOut ($*ltype temp) %{ temp = -1.0; $1 = &temp; %}
+-%typemap(argout) OT::Scalar & thresholdOut %{ $result = SWIG_Python_AppendOutput($result, PyFloat_FromDouble(*$1)); %}
++%typemap(argout) OT::Scalar & thresholdOut %{ $result = OT_AppendOutput($result, PyFloat_FromDouble(*$1)); %}
+ 
+ 
+ %{
+--- python/src/FejerAlgorithm.i.orig	2024-06-05 12:07:40 UTC
++++ python/src/FejerAlgorithm.i
+@@ -2,7 +2,7 @@
+ 
+ // do not pass argument by reference, return it as tuple item
+ %typemap(in, numinputs=0) OT::Sample & adaptedNodesOut ($*ltype temp) %{ temp = OT::Sample(); $1 = &temp; %}
+-%typemap(argout) OT::Sample & adaptedNodesOut %{ $result = SWIG_Python_AppendOutput($result, SWIG_NewPointerObj(new OT::Sample(*$1), SWIGTYPE_p_OT__Sample, SWIG_POINTER_OWN |  0 )); %}
++%typemap(argout) OT::Sample & adaptedNodesOut %{ $result = OT_AppendOutput($result, SWIG_NewPointerObj(new OT::Sample(*$1), SWIGTYPE_p_OT__Sample, SWIG_POINTER_OWN)); %}
+ 
+ %{
+ #include "openturns/FejerAlgorithm.hxx"
+--- python/src/Field.i.orig	2024-06-05 12:07:40 UTC
++++ python/src/Field.i
+@@ -76,7 +76,7 @@ PyObject * __getitem__(PyObject * args) const {
+       if (index < 0)
+         throw OT::OutOfBoundException(HERE) << "index should be in [-" << self->getSize() << ", " << self->getSize() - 1 << "]." ;
+       OT::Point result(self->at(index));
+-      return SWIG_NewPointerObj((new OT::Point(static_cast< const OT::Point& >(result))), SWIGTYPE_p_OT__Point, SWIG_POINTER_OWN | 0);
++      return SWIG_NewPointerObj((new OT::Point(static_cast< const OT::Point& >(result))), SWIGTYPE_p_OT__Point, SWIG_POINTER_OWN);
+     }
+   }
+ 
+--- python/src/FittingTest.i.orig	2024-06-05 12:07:40 UTC
++++ python/src/FittingTest.i
+@@ -3,16 +3,16 @@
+ 
+ // do not pass argument by reference, return it as tuple item
+ %typemap(in, numinputs=0) OT::TestResult & bestResultOut ($*ltype temp) %{ temp = OT::TestResult(); $1 = &temp; %}
+-%typemap(argout) OT::TestResult & bestResultOut %{ $result = SWIG_Python_AppendOutput($result, SWIG_NewPointerObj(new OT::TestResult(*$1), SWIGTYPE_p_OT__TestResult, SWIG_POINTER_OWN |  0 )); %}
++%typemap(argout) OT::TestResult & bestResultOut %{ $result = OT_AppendOutput($result, SWIG_NewPointerObj(new OT::TestResult(*$1), SWIGTYPE_p_OT__TestResult, SWIG_POINTER_OWN)); %}
+ 
+ %typemap(in, numinputs=0) OT::Scalar & bestBICOut ($*ltype temp) %{ temp = -1.0; $1 = &temp; %}
+-%typemap(argout) OT::Scalar & bestBICOut %{ $result = SWIG_Python_AppendOutput($result, OT::convert<OT::Scalar, OT::_PyFloat_>(*$1)); %}
++%typemap(argout) OT::Scalar & bestBICOut %{ $result = OT_AppendOutput($result, OT::convert<OT::Scalar, OT::_PyFloat_>(*$1)); %}
+ 
+ %typemap(in, numinputs=0) OT::Distribution & estimatedDistribution ($*ltype temp) %{ temp = OT::Distribution(); $1 = &temp; %}
+-%typemap(argout) OT::Distribution & estimatedDistribution %{ $result = SWIG_Python_AppendOutput( SWIG_NewPointerObj(new OT::Distribution(*$1), SWIGTYPE_p_OT__Distribution, SWIG_POINTER_OWN |  0 ), $result)  ; %}
++%typemap(argout) OT::Distribution & estimatedDistribution %{ $result = OT_AppendOutput( SWIG_NewPointerObj(new OT::Distribution(*$1), SWIGTYPE_p_OT__Distribution, SWIG_POINTER_OWN), $result)  ; %}
+ 
+ %typemap(in, numinputs=0) OT::Scalar & bestAICOut ($*ltype temp) %{ temp = -1.0; $1 = &temp; %}
+-%typemap(argout) OT::Scalar & bestAICOut %{ $result = SWIG_Python_AppendOutput($result, OT::convert<OT::Scalar, OT::_PyFloat_>(*$1)); %}
++%typemap(argout) OT::Scalar & bestAICOut %{ $result = OT_AppendOutput($result, OT::convert<OT::Scalar, OT::_PyFloat_>(*$1)); %}
+ 
+ %{
+ #include "openturns/FittingTest.hxx"
+--- python/src/GaussLegendre.i.orig	2024-06-05 12:07:40 UTC
++++ python/src/GaussLegendre.i
+@@ -2,7 +2,7 @@
+ 
+ // do not pass argument by reference, return it as tuple item
+ %typemap(in, numinputs=0) OT::Sample & adaptedNodesOut ($*ltype temp) %{ temp = OT::Sample(); $1 = &temp; %}
+-%typemap(argout) OT::Sample & adaptedNodesOut %{ $result = SWIG_Python_AppendOutput($result, SWIG_NewPointerObj(new OT::Sample(*$1), SWIGTYPE_p_OT__Sample, SWIG_POINTER_OWN |  0 )); %}
++%typemap(argout) OT::Sample & adaptedNodesOut %{ $result = OT_AppendOutput($result, SWIG_NewPointerObj(new OT::Sample(*$1), SWIGTYPE_p_OT__Sample, SWIG_POINTER_OWN)); %}
+ 
+ %{
+ #include "openturns/GaussLegendre.hxx"
+--- python/src/GeneralizedExtremeValueFactory.i.orig	2024-06-05 12:07:40 UTC
++++ python/src/GeneralizedExtremeValueFactory.i
+@@ -2,7 +2,7 @@
+ 
+ // do not pass argument by reference, return it as tuple item
+ %typemap(in, numinputs=0) OT::Point & logLikelihoodOut ($*ltype temp) %{ temp = OT::Point(); $1 = &temp; %}
+-%typemap(argout) OT::Point & logLikelihoodOut %{ $result = SWIG_Python_AppendOutput($result, SWIG_NewPointerObj(new OT::Point(*$1), SWIGTYPE_p_OT__Point, SWIG_POINTER_OWN |  0 )); %}
++%typemap(argout) OT::Point & logLikelihoodOut %{ $result = OT_AppendOutput($result, SWIG_NewPointerObj(new OT::Point(*$1), SWIGTYPE_p_OT__Point, SWIG_POINTER_OWN)); %}
+ 
+ %{
+ #include "openturns/GeneralizedExtremeValueFactory.hxx"
+--- python/src/Matrix.i.orig	2024-06-05 12:07:40 UTC
++++ python/src/Matrix.i
+@@ -2,12 +2,12 @@
+ 
+ // do not pass argument by reference, return it as tuple item
+ %typemap(in, numinputs=0) OT::Matrix & ROut ($*ltype temp) %{ temp = OT::Matrix(); $1 = &temp; %}
+-%typemap(argout) OT::Matrix & ROut %{ $result = SWIG_Python_AppendOutput($result, SWIG_NewPointerObj(new OT::Matrix(*$1), SWIG_TypeQuery("OT::Matrix *"), SWIG_POINTER_OWN |  0 )); %}
++%typemap(argout) OT::Matrix & ROut %{ $result = OT_AppendOutput($result, SWIG_NewPointerObj(new OT::Matrix(*$1), SWIG_TypeQuery("OT::Matrix *"), SWIG_POINTER_OWN)); %}
+ 
+ %apply OT::Matrix & ROut { OT::Matrix & uOut, OT::Matrix & vTOut, OT::Matrix & vOut };
+ 
+ %typemap(in, numinputs=0) OT::ComplexMatrix & vOut ($*ltype temp) %{ temp = OT::ComplexMatrix(); $1 = &temp; %}
+-%typemap(argout) OT::ComplexMatrix & vOut %{ $result = SWIG_Python_AppendOutput($result, SWIG_NewPointerObj(new OT::ComplexMatrix(*$1), SWIG_TypeQuery("OT::ComplexMatrix *"), SWIG_POINTER_OWN |  0 )); %}
++%typemap(argout) OT::ComplexMatrix & vOut %{ $result = OT_AppendOutput($result, SWIG_NewPointerObj(new OT::ComplexMatrix(*$1), SWIG_TypeQuery("OT::ComplexMatrix *"), SWIG_POINTER_OWN)); %}
+ 
+ %{
+ #include "openturns/Matrix.hxx"
+@@ -47,7 +47,7 @@ PyObject * __getitem__(PyObject * args) const {
+         result.operator()(i, j) = self->operator()( start1 + i*step1, j );
+       }
+     }
+-    return SWIG_NewPointerObj((new OT::baseType(static_cast< const OT::baseType& >(result))), SWIG_TypeQuery("OT::" #baseType " *"), SWIG_POINTER_OWN |  0 );
++    return SWIG_NewPointerObj((new OT::baseType(static_cast< const OT::baseType& >(result))), SWIG_TypeQuery("OT::" #baseType " *"), SWIG_POINTER_OWN);
+   }
+ 
+   PyObject * obj1 = 0 ;
+@@ -121,7 +121,7 @@ PyObject * __getitem__(PyObject * args) const {
+           result.operator()(i, j) = self->operator()( start1 + i*step1, start2 + j*step2 );
+         }
+       }
+-      return SWIG_NewPointerObj((new OT::baseType(static_cast< const OT::baseType& >(result))), SWIG_TypeQuery("OT::" #baseType " *"), SWIG_POINTER_OWN |  0 );
++      return SWIG_NewPointerObj((new OT::baseType(static_cast< const OT::baseType& >(result))), SWIG_TypeQuery("OT::" #baseType " *"), SWIG_POINTER_OWN);
+     }
+     else
+     {
+@@ -131,7 +131,7 @@ PyObject * __getitem__(PyObject * args) const {
+       {
+         result.operator()(i, 0) = self->operator()( start1 + i*step1, arg3 );
+       }
+-      return SWIG_NewPointerObj((new OT::baseType(static_cast< const OT::baseType& >(result))), SWIG_TypeQuery("OT::" #baseType " *"), SWIG_POINTER_OWN |  0 );
++      return SWIG_NewPointerObj((new OT::baseType(static_cast< const OT::baseType& >(result))), SWIG_TypeQuery("OT::" #baseType " *"), SWIG_POINTER_OWN);
+     }
+ 
+   }
+@@ -145,7 +145,7 @@ PyObject * __getitem__(PyObject * args) const {
+       {
+         result.operator()(0, j) = self->operator()( arg2, start2 + j*step2 );
+       }
+-      return SWIG_NewPointerObj((new OT::baseType(static_cast< const OT::baseType& >(result))), SWIG_TypeQuery("OT::" #baseType " *"), SWIG_POINTER_OWN |  0 );
++      return SWIG_NewPointerObj((new OT::baseType(static_cast< const OT::baseType& >(result))), SWIG_TypeQuery("OT::" #baseType " *"), SWIG_POINTER_OWN);
+     }
+     else
+     {  
+--- python/src/MatrixImplementation.i.orig	2024-06-05 12:07:40 UTC
++++ python/src/MatrixImplementation.i
+@@ -2,21 +2,21 @@
+ 
+ // do not pass argument by reference, return it as tuple item
+ %typemap(in, numinputs=0) OT::MatrixImplementation & ROut ($*ltype temp) %{ temp = OT::MatrixImplementation(); $1 = &temp; %}
+-%typemap(argout) OT::MatrixImplementation & ROut %{ $result = SWIG_Python_AppendOutput($result, SWIG_NewPointerObj(new OT::MatrixImplementation(*$1), SWIG_TypeQuery("OT::MatrixImplementation *"), SWIG_POINTER_OWN |  0 )); %}
++%typemap(argout) OT::MatrixImplementation & ROut %{ $result = OT_AppendOutput($result, SWIG_NewPointerObj(new OT::MatrixImplementation(*$1), SWIG_TypeQuery("OT::MatrixImplementation *"), SWIG_POINTER_OWN)); %}
+ 
+ %apply OT::MatrixImplementation & ROut { OT::MatrixImplementation & uOut, OT::MatrixImplementation & vTOut, OT::MatrixImplementation & vOut };
+ 
+ %typemap(in, numinputs=0) OT::ComplexMatrixImplementation & vOut ($*ltype temp) %{ temp = OT::ComplexMatrixImplementation(); $1 = &temp; %}
+-%typemap(argout) OT::ComplexMatrixImplementation & vOut %{ $result = SWIG_Python_AppendOutput($result, SWIG_NewPointerObj(new OT::ComplexMatrixImplementation(*$1), SWIG_TypeQuery("OT::ComplexMatrixImplementation *"), SWIG_POINTER_OWN |  0 )); %}
++%typemap(argout) OT::ComplexMatrixImplementation & vOut %{ $result = OT_AppendOutput($result, SWIG_NewPointerObj(new OT::ComplexMatrixImplementation(*$1), SWIG_TypeQuery("OT::ComplexMatrixImplementation *"), SWIG_POINTER_OWN)); %}
+ 
+ %typemap(in, numinputs=0) OT::SquareComplexMatrix & vOut ($*ltype temp) %{ temp = OT::SquareComplexMatrix(); $1 = &temp; %}
+-%typemap(argout) OT::SquareComplexMatrix & vOut %{ $result = SWIG_Python_AppendOutput($result, SWIG_NewPointerObj(new OT::SquareComplexMatrix(*$1), SWIG_TypeQuery("OT::SquareComplexMatrix *"), SWIG_POINTER_OWN |  0 )); %}
++%typemap(argout) OT::SquareComplexMatrix & vOut %{ $result = OT_AppendOutput($result, SWIG_NewPointerObj(new OT::SquareComplexMatrix(*$1), SWIG_TypeQuery("OT::SquareComplexMatrix *"), SWIG_POINTER_OWN)); %}
+ 
+ %typemap(in, numinputs=0) OT::SquareMatrix & vOut ($*ltype temp) %{ temp = OT::SquareMatrix(); $1 = &temp; %}
+-%typemap(argout) OT::SquareMatrix & vOut %{ $result = SWIG_Python_AppendOutput($result, SWIG_NewPointerObj(new OT::SquareMatrix(*$1), SWIG_TypeQuery("OT::SquareMatrix *"), SWIG_POINTER_OWN |  0 )); %}
++%typemap(argout) OT::SquareMatrix & vOut %{ $result = OT_AppendOutput($result, SWIG_NewPointerObj(new OT::SquareMatrix(*$1), SWIG_TypeQuery("OT::SquareMatrix *"), SWIG_POINTER_OWN)); %}
+ 
+ %typemap(in, numinputs=0) OT::Scalar & signOut ($*ltype temp) %{ temp = 0.; $1 = &temp; %}
+-%typemap(argout) OT::Scalar & signOut %{ $result = SWIG_Python_AppendOutput($result, OT::convert< OT::Scalar, OT::_PyFloat_ >(*$1) ); %}
++%typemap(argout) OT::Scalar & signOut %{ $result = OT_AppendOutput($result, OT::convert< OT::Scalar, OT::_PyFloat_ >(*$1) ); %}
+ 
+ %{
+ #include "openturns/MatrixImplementation.hxx"
+--- python/src/Mesh.i.orig	2024-06-05 12:07:40 UTC
++++ python/src/Mesh.i
+@@ -2,9 +2,9 @@
+ 
+ // do not pass argument by reference, return it as tuple item
+ %typemap(in, numinputs=0) OT::Point & coordinatesOut ($*ltype temp) %{ temp = OT::Point(); $1 = &temp; %}
+-%typemap(argout) OT::Point & coordinatesOut %{ $result = SWIG_Python_AppendOutput($result, SWIG_NewPointerObj(new OT::Point(*$1), SWIGTYPE_p_OT__Point, SWIG_POINTER_OWN |  0 )); %}
++%typemap(argout) OT::Point & coordinatesOut %{ $result = OT_AppendOutput($result, SWIG_NewPointerObj(new OT::Point(*$1), SWIGTYPE_p_OT__Point, SWIG_POINTER_OWN)); %}
+ %typemap(in, numinputs=0) OT::UnsignedInteger & simplexIndexOut ($*ltype temp) %{ temp = OT::UnsignedInteger(); $1 = &temp; %}
+-%typemap(argout) OT::UnsignedInteger & simplexIndexOut %{ $result = SWIG_Python_AppendOutput($result, PyLong_FromUnsignedLong(*$1)); %}
++%typemap(argout) OT::UnsignedInteger & simplexIndexOut %{ $result = OT_AppendOutput($result, PyLong_FromUnsignedLong(*$1)); %}
+ 
+ %{
+ #include "openturns/Mesh.hxx"
+--- python/src/OrthogonalUniVariatePolynomialFactory.i.orig	2024-06-05 12:07:40 UTC
++++ python/src/OrthogonalUniVariatePolynomialFactory.i
+@@ -2,7 +2,7 @@
+ 
+ // do not pass argument by reference, return it as tuple item
+ %typemap(in, numinputs=0) OT::Point & weightsOut ($*ltype temp) %{ temp = OT::Point(); $1 = &temp; %}
+-%typemap(argout) OT::Point & weightsOut %{ $result = SWIG_Python_AppendOutput($result, SWIG_NewPointerObj(new OT::Point(*$1), SWIGTYPE_p_OT__Point, SWIG_POINTER_OWN |  0 )); %}
++%typemap(argout) OT::Point & weightsOut %{ $result = OT_AppendOutput($result, SWIG_NewPointerObj(new OT::Point(*$1), SWIGTYPE_p_OT__Point, SWIG_POINTER_OWN)); %}
+ 
+ %{
+ #include "openturns/OrthogonalUniVariatePolynomialFactory.hxx"
+--- python/src/OTtypes.i.orig	2024-06-05 12:07:40 UTC
++++ python/src/OTtypes.i
+@@ -11,6 +11,16 @@
+ %{
+ #include "openturns/OT.hxx"
+ #include "openturns/PythonWrappingFunctions.hxx"
++
++// for SWIG 4.3 compat
++inline PyObject* OT_AppendOutput(PyObject* result, PyObject* obj)
++{
++#if SWIG_VERSION >= 0x040300
++  return SWIG_Python_AppendOutput(result, obj, 1);
++#else
++  return SWIG_Python_AppendOutput(result, obj);
++#endif
++}
+ %}
+ 
+ %typemap(in) UnsignedInteger {
+--- python/src/PythonPointToFieldFunction.cxx.orig	2024-06-05 12:07:40 UTC
++++ python/src/PythonPointToFieldFunction.cxx
+@@ -174,7 +174,7 @@ Sample PythonPointToFieldFunction::operator() (const P
+ 
+   callsNumber_.increment();
+ 
+-  ScopedPyObjectPointer pyInP(SWIG_NewPointerObj(new OT::Point(inP), SWIG_TypeQuery("OT::Point *"), SWIG_POINTER_OWN | 0));
++  ScopedPyObjectPointer pyInP(SWIG_NewPointerObj(new OT::Point(inP), SWIG_TypeQuery("OT::Point *"), SWIG_POINTER_OWN));
+   ScopedPyObjectPointer result(PyObject_CallFunctionObjArgs(pyObj_, pyInP.get(), NULL));
+   if (result.isNull())
+   {
+--- python/src/RandomMixture.i.orig	2024-06-05 12:07:40 UTC
++++ python/src/RandomMixture.i
+@@ -2,7 +2,7 @@
+ 
+ // do not pass argument by reference, return it as tuple item
+ %typemap(in, numinputs=0) OT::Point & kolmogorovNormOut ($*ltype temp) %{ temp = OT::Point(); $1 = &temp; %}
+-%typemap(argout) OT::Point & kolmogorovNormOut %{ $result = SWIG_Python_AppendOutput($result, SWIG_NewPointerObj(new OT::Point(*$1), SWIGTYPE_p_OT__Point, SWIG_POINTER_OWN |  0 )); %}
++%typemap(argout) OT::Point & kolmogorovNormOut %{ $result = OT_AppendOutput($result, SWIG_NewPointerObj(new OT::Point(*$1), SWIGTYPE_p_OT__Point, SWIG_POINTER_OWN)); %}
+ 
+ %{
+ #include "openturns/RandomMixture.hxx"
+--- python/src/Sample.i.orig	2024-06-05 12:07:40 UTC
++++ python/src/Sample.i
+@@ -223,7 +223,7 @@ PyObject * __getitem__(PyObject * args) const
+       for (Py_ssize_t i = 0; i < size; ++ i)
+         result.at(i) = self->at(start + i * step);
+       result.setDescription(self->getDescription());
+-      return SWIG_NewPointerObj((new OT::Sample(static_cast< const OT::Sample& >(result))), SWIGTYPE_p_OT__Sample, SWIG_POINTER_OWN | 0);
++      return SWIG_NewPointerObj((new OT::Sample(static_cast< const OT::Sample& >(result))), SWIGTYPE_p_OT__Sample, SWIG_POINTER_OWN);
+     }
+     else if (PySequence_Check(args))
+     {
+@@ -246,7 +246,7 @@ PyObject * __getitem__(PyObject * args) const
+         result.at(i) = self->at(index);
+       }
+       result.setDescription(self->getDescription());
+-      return SWIG_NewPointerObj((new OT::Sample(static_cast< const OT::Sample& >(result))), SWIGTYPE_p_OT__Sample, SWIG_POINTER_OWN | 0);
++      return SWIG_NewPointerObj((new OT::Sample(static_cast< const OT::Sample& >(result))), SWIGTYPE_p_OT__Sample, SWIG_POINTER_OWN);
+     }
+     else if (PyObject_HasAttrString(args, "__int__"))
+     {
+@@ -260,7 +260,7 @@ PyObject * __getitem__(PyObject * args) const
+       if (index < 0)
+         throw OT::OutOfBoundException(HERE) << "index should be in [-" << self->getSize() << ", " << self->getSize() - 1 << "]." ;
+       OT::Point result(self->at(index));
+-      return SWIG_NewPointerObj((new OT::Point(static_cast< const OT::Point& >(result))), SWIGTYPE_p_OT__Point, SWIG_POINTER_OWN | 0);
++      return SWIG_NewPointerObj((new OT::Point(static_cast< const OT::Point& >(result))), SWIGTYPE_p_OT__Point, SWIG_POINTER_OWN);
+     }
+   }
+ 
+@@ -310,7 +310,7 @@ PyObject * __getitem__(PyObject * args) const
+       OT::Point result(size2);
+       for (Py_ssize_t j = 0; j < size2; ++ j)
+         result.at(j) = self->at(index1, start2 + j * step2);
+-      return SWIG_NewPointerObj((new OT::Point(static_cast< const OT::Point& >(result))), SWIGTYPE_p_OT__Point, SWIG_POINTER_OWN | 0);
++      return SWIG_NewPointerObj((new OT::Point(static_cast< const OT::Point& >(result))), SWIGTYPE_p_OT__Point, SWIG_POINTER_OWN);
+     }
+     else if (PySequence_Check(obj2))
+     {
+@@ -333,7 +333,7 @@ PyObject * __getitem__(PyObject * args) const
+         else
+           SWIG_exception(SWIG_TypeError, "Indexing list expects int type");
+       }
+-      return SWIG_NewPointerObj((new OT::Point(static_cast< const OT::Point& >(result))), SWIGTYPE_p_OT__Point, SWIG_POINTER_OWN | 0);
++      return SWIG_NewPointerObj((new OT::Point(static_cast< const OT::Point& >(result))), SWIGTYPE_p_OT__Point, SWIG_POINTER_OWN);
+     }
+   }
+   else if (PySlice_Check(obj1))
+@@ -363,7 +363,7 @@ PyObject * __getitem__(PyObject * args) const
+       for (Py_ssize_t i = 0; i < size1; ++ i)
+         result.at(i, 0) = self->at(start1 + i * step1, index2);
+       result.setDescription(OT::Description(1, self->getDescription()[index2]));
+-      return SWIG_NewPointerObj((new OT::Sample(static_cast< const OT::Sample& >(result))), SWIGTYPE_p_OT__Sample, SWIG_POINTER_OWN | 0);
++      return SWIG_NewPointerObj((new OT::Sample(static_cast< const OT::Sample& >(result))), SWIGTYPE_p_OT__Sample, SWIG_POINTER_OWN);
+     }
+     else if (PySlice_Check(obj2))
+     {
+@@ -386,7 +386,7 @@ PyObject * __getitem__(PyObject * args) const
+       for (Py_ssize_t j = 0; j < size2; ++ j)
+         description[j] = entireDescription[start2 + j*step2];
+       result.setDescription(description);
+-      return SWIG_NewPointerObj((new OT::Sample(static_cast< const OT::Sample& >(result))), SWIGTYPE_p_OT__Sample, SWIG_POINTER_OWN | 0);
++      return SWIG_NewPointerObj((new OT::Sample(static_cast< const OT::Sample& >(result))), SWIGTYPE_p_OT__Sample, SWIG_POINTER_OWN);
+     }
+     else if (PySequence_Check(obj2))
+     {
+@@ -418,7 +418,7 @@ PyObject * __getitem__(PyObject * args) const
+       for (Py_ssize_t j = 0; j < size2; ++ j)
+         marginalDescription[j] = description[indices2[j]];
+       result.setDescription(marginalDescription);
+-      return SWIG_NewPointerObj((new OT::Sample(static_cast< const OT::Sample& >(result))), SWIGTYPE_p_OT__Sample, SWIG_POINTER_OWN | 0);
++      return SWIG_NewPointerObj((new OT::Sample(static_cast< const OT::Sample& >(result))), SWIGTYPE_p_OT__Sample, SWIG_POINTER_OWN);
+     }
+   }
+   else if (PySequence_Check(obj1))
+@@ -457,7 +457,7 @@ PyObject * __getitem__(PyObject * args) const
+       for (Py_ssize_t i = 0; i < size1; ++ i)
+         result.at(i, 0) = self->at(indices1[i], index2);
+       result.setDescription(OT::Description(1, self->getDescription()[index2]));
+-      return SWIG_NewPointerObj((new OT::Sample(static_cast< const OT::Sample& >(result))), SWIGTYPE_p_OT__Sample, SWIG_POINTER_OWN | 0);
++      return SWIG_NewPointerObj((new OT::Sample(static_cast< const OT::Sample& >(result))), SWIGTYPE_p_OT__Sample, SWIG_POINTER_OWN);
+     }
+     else if (PySlice_Check(obj2))
+     {
+@@ -480,7 +480,7 @@ PyObject * __getitem__(PyObject * args) const
+       for (Py_ssize_t j = 0; j < size2; ++ j)
+         marginalDescription[j] = description[start2 + j*step2];
+       result.setDescription(marginalDescription);
+-      return SWIG_NewPointerObj((new OT::Sample(static_cast< const OT::Sample& >(result))), SWIGTYPE_p_OT__Sample, SWIG_POINTER_OWN | 0);
++      return SWIG_NewPointerObj((new OT::Sample(static_cast< const OT::Sample& >(result))), SWIGTYPE_p_OT__Sample, SWIG_POINTER_OWN);
+     }
+     else if (PySequence_Check(obj2))
+     {
+@@ -512,7 +512,7 @@ PyObject * __getitem__(PyObject * args) const
+       for (Py_ssize_t j = 0; j < size2; ++ j)
+         marginalDescription[j] = description[indices2[j]];
+       result.setDescription(marginalDescription);
+-      return SWIG_NewPointerObj((new OT::Sample(static_cast< const OT::Sample& >(result))), SWIGTYPE_p_OT__Sample, SWIG_POINTER_OWN | 0);
++      return SWIG_NewPointerObj((new OT::Sample(static_cast< const OT::Sample& >(result))), SWIGTYPE_p_OT__Sample, SWIG_POINTER_OWN);
+     }
+   }
+   else
+--- python/src/SamplePartition.i.orig	2024-06-05 12:07:40 UTC
++++ python/src/SamplePartition.i
+@@ -2,7 +2,7 @@
+ 
+ // do not pass argument by reference, return it as tuple item
+ %typemap(in, numinputs=0) OT::SamplePartition & clusters ($*ltype temp) %{ temp = OT::SamplePartition(); $1 = &temp; %}
+-%typemap(argout) OT::SamplePartition & clusters %{ $result = SWIG_Python_AppendOutput($result, SWIG_NewPointerObj(new OT::SamplePartition(*$1), SWIGTYPE_p_OT__SamplePartition, SWIG_POINTER_OWN |  0 )); %}
++%typemap(argout) OT::SamplePartition & clusters %{ $result = OT_AppendOutput($result, SWIG_NewPointerObj(new OT::SamplePartition(*$1), SWIGTYPE_p_OT__SamplePartition, SWIG_POINTER_OWN)); %}
+ 
+ %{
+ #include "openturns/SamplePartition.hxx"
+--- python/src/SimplicialCubature.i.orig	2024-06-05 12:07:40 UTC
++++ python/src/SimplicialCubature.i
+@@ -2,7 +2,7 @@
+ 
+ // do not pass argument by reference, return it as tuple item
+ %typemap(in, numinputs=0) OT::Sample & adaptedNodesOut ($*ltype temp) %{ temp = OT::Sample(); $1 = &temp; %}
+-%typemap(argout) OT::Sample & adaptedNodesOut %{ $result = SWIG_Python_AppendOutput($result, SWIG_NewPointerObj(new OT::Sample(*$1), SWIGTYPE_p_OT__Sample, SWIG_POINTER_OWN |  0 )); %}
++%typemap(argout) OT::Sample & adaptedNodesOut %{ $result = OT_AppendOutput($result, SWIG_NewPointerObj(new OT::Sample(*$1), SWIGTYPE_p_OT__Sample, SWIG_POINTER_OWN)); %}
+ 
+ %{
+ #include "openturns/SimplicialCubature.hxx"
+--- python/src/SplitterImplementation.i.orig	2024-06-05 12:07:40 UTC
++++ python/src/SplitterImplementation.i
+@@ -35,8 +35,8 @@ PyObject* __next__()
+     return 0;
+   }
+   PyObject* result = PyTuple_New(2);
+-  PyTuple_SET_ITEM(result, 0, SWIG_NewPointerObj(indicesTrain.clone(), SWIGTYPE_p_OT__Indices, SWIG_POINTER_OWN | 0));
+-  PyTuple_SET_ITEM(result, 1, SWIG_NewPointerObj(indicesTest.clone(), SWIGTYPE_p_OT__Indices, SWIG_POINTER_OWN | 0));
++  PyTuple_SET_ITEM(result, 0, SWIG_NewPointerObj(indicesTrain.clone(), SWIGTYPE_p_OT__Indices, SWIG_POINTER_OWN));
++  PyTuple_SET_ITEM(result, 1, SWIG_NewPointerObj(indicesTest.clone(), SWIGTYPE_p_OT__Indices, SWIG_POINTER_OWN));
+   return result;
+ }
+ 
+--- python/src/SquareMatrix.i.orig	2024-06-05 12:07:40 UTC
++++ python/src/SquareMatrix.i
+@@ -2,7 +2,7 @@
+ 
+ // do not pass argument by reference, return it as tuple item
+ %typemap(in, numinputs=0) OT::SquareComplexMatrix & vOut ($*ltype temp) %{ temp = OT::SquareComplexMatrix(); $1 = &temp; %}
+-%typemap(argout) OT::SquareComplexMatrix & vOut %{ $result = SWIG_Python_AppendOutput($result, SWIG_NewPointerObj(new OT::SquareComplexMatrix(*$1), SWIG_TypeQuery("OT::SquareComplexMatrix *"), SWIG_POINTER_OWN |  0 )); %}
++%typemap(argout) OT::SquareComplexMatrix & vOut %{ $result = OT_AppendOutput($result, SWIG_NewPointerObj(new OT::SquareComplexMatrix(*$1), SWIG_TypeQuery("OT::SquareComplexMatrix *"), SWIG_POINTER_OWN)); %}
+ 
+ %{
+ #include "openturns/SquareMatrix.hxx"
+--- python/src/SymmetricMatrix.i.orig	2024-06-05 12:07:40 UTC
++++ python/src/SymmetricMatrix.i
+@@ -2,7 +2,7 @@
+ 
+ // do not pass argument by reference, return it as tuple item
+ %typemap(in, numinputs=0) OT::SquareMatrix & vOut ($*ltype temp) %{ temp = OT::SquareMatrix(); $1 = &temp; %}
+-%typemap(argout) OT::SquareMatrix & vOut %{ $result = SWIG_Python_AppendOutput($result, SWIG_NewPointerObj(new OT::SquareMatrix(*$1), SWIG_TypeQuery("OT::SquareMatrix *"), SWIG_POINTER_OWN |  0 )); %}
++%typemap(argout) OT::SquareMatrix & vOut %{ $result = OT_AppendOutput($result, SWIG_NewPointerObj(new OT::SquareMatrix(*$1), SWIG_TypeQuery("OT::SquareMatrix *"), SWIG_POINTER_OWN)); %}
+ 
+ %{
+ #include "openturns/SymmetricMatrix.hxx"
+--- python/src/WeightedExperimentImplementation.i.orig	2024-06-05 12:07:40 UTC
++++ python/src/WeightedExperimentImplementation.i
+@@ -2,7 +2,7 @@
+ 
+ // do not pass argument by reference, return it as tuple item
+ %typemap(in, numinputs=0) OT::Point & weightsOut ($*ltype temp) %{ temp = OT::Point(); $1 = &temp; %}
+-%typemap(argout) OT::Point & weightsOut %{ $result = SWIG_Python_AppendOutput($result, SWIG_NewPointerObj(new OT::Point(*$1), SWIGTYPE_p_OT__Point, SWIG_POINTER_OWN |  0 )); %}
++%typemap(argout) OT::Point & weightsOut %{ $result = OT_AppendOutput($result, SWIG_NewPointerObj(new OT::Point(*$1), SWIGTYPE_p_OT__Point, SWIG_POINTER_OWN)); %}
+ 
+ %{
+ #include "openturns/WeightedExperimentImplementation.hxx"
+--- python/src/WhittleFactory.i.orig	2024-06-05 12:07:40 UTC
++++ python/src/WhittleFactory.i
+@@ -2,7 +2,7 @@
+ 
+ // do not pass argument by reference, return it as tuple item
+ %typemap(in, numinputs=0) OT::Point & informationCriteriaOut ($*ltype temp) %{ temp = OT::Point(); $1 = &temp; %}
+-%typemap(argout) OT::Point & informationCriteriaOut %{ $result = SWIG_Python_AppendOutput($result, SWIG_NewPointerObj(new OT::Point(*$1), SWIGTYPE_p_OT__Point, SWIG_POINTER_OWN |  0 )); %}
++%typemap(argout) OT::Point & informationCriteriaOut %{ $result = OT_AppendOutput($result, SWIG_NewPointerObj(new OT::Point(*$1), SWIGTYPE_p_OT__Point, SWIG_POINTER_OWN)); %}
+ 
+ %{
+ #include "openturns/WhittleFactory.hxx"
