@@ -17,6 +17,8 @@ USES=		cargo ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	ducaale
 
+RUSTFLAGS=	${ARCH:S/i386/YES/:C/^[a-z].*//:S/YES/-C target-feature=+sse,+sse2/} # add sse sse2 target-features only on i386
+
 PLIST_FILES=	bin/${PORTNAME}
 PORTDOCS=	CHANGELOG.md README.md
 
