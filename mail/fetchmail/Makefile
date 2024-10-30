@@ -1,10 +1,10 @@
 PORTNAME?=	fetchmail
-DISTVERSION=	6.4.39
+DISTVERSION=	6.5.0
 PORTREVISION?=	0
 CATEGORIES=	mail
 # The next line is inherited by the fetchmailconf dependent port,
 # do NOT replace fetchmail by ${PORTNAME}
-MASTER_SITES=	SF/fetchmail/branch_6.4/
+MASTER_SITES=	SF/fetchmail/branch_6.5/
 
 MAINTAINER=	chalpin@cs.wisc.edu
 COMMENT?=	Batch mail retrieval utility for IMAP/POP3/ETRN/ODMR
@@ -27,7 +27,7 @@ GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
 # the added PYTHON=: suppresses python builds,
 # see ../../mail/fetchmailconf/ for the configuration tool
-CONFIGURE_ARGS=	--enable-fallback=no \
+CONFIGURE_ARGS=	--enable-opie \
 		--enable-RPA \
 		--enable-SDPS \
 		--without-hesiod \
@@ -37,7 +37,6 @@ CONFIGURE_ARGS=	--enable-fallback=no \
 # for instance, libcom_err.so on GSSAPI_NONE builds:
 LDFLAGS+=	-L${LOCALBASE}/lib -Wl,--as-needed
 
-PATCH_STRIP=	-p1
 SUB_FILES=	pkg-message
 USERS=		${PORTNAME}
 GROUPS=		${USERS}
@@ -102,8 +101,10 @@ post-install-DOCS-on:
 
 .include <bsd.port.pre.mk>
 
-.if (${OPSYS} == FreeBSD && ${OSVERSION} < 1400072) || ${OPSYS} != FreeBSD
-CONFIGURE_ARGS+=	--enable-opie
+.if ${MASTERDIR} == ${.CURDIR} && ${OPSYS} == FreeBSD
+. if ${OSVERSION} >= 1400072
+LIB_DEPENDS+=	libopie.so:security/opie	# moved to port (from base in 13.X)
+. endif
 .endif
 
 .include <bsd.port.post.mk>
