@@ -1,3 +1,31 @@
+  <vuln vid="b73d1f2a-96de-11ef-9e71-00d8612f03c8">
+    <topic>librewolf -- Undefined behavior in selection node cache</topic>
+    <affects>
+      <package>
+	<name>librewolf</name>
+	<range><lt>131.0.3</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>security@mozilla.org reports:</p>
+	<blockquote cite="https://bugzilla.mozilla.org/show_bug.cgi?id=1920381">
+	  <p>When manipulating the selection node cache, an attacker may have
+	been able to cause unexpected behavior, potentially leading to an
+	exploitable crash.  This vulnerability affects Firefox &lt; 131.0.3.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2024-9936</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2024-9936</url>
+    </references>
+    <dates>
+      <discovery>2024-10-14</discovery>
+      <entry>2024-10-30</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="4b3a8e7d-9372-11ef-87ad-a8a15998b5cb">
     <topic>hwloc2 -- Denial of service or other unspecified impacts</topic>
     <affects>
