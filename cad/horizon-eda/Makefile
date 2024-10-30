@@ -9,10 +9,13 @@ PATCHFILES=	3b6b783db797b593119756821c04ac64b66b7ffa.patch:-p1 # Fix build with 
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	EDA package for printed circuit board design
-WWW=		https://horizon-eda.org/
+WWW=		https://horizon-eda.org/ \
+		https://github.com/horizon-eda/horizon
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+BROKEN_FreeBSD_15=	compilation error: no matching function for call to 'git_commit_create', see https://github.com/horizon-eda/horizon/issues/790
 
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/optional.hpp:devel/boost-libs \
 		cmake:devel/cmake-core \
