@@ -5887,6 +5887,7 @@
     SUBDIR += py-simpleparse
     SUBDIR += py-simpletal
     SUBDIR += py-simpy
+    SUBDIR += py-simsimd
     SUBDIR += py-single-version
     SUBDIR += py-sip
     SUBDIR += py-sirmordred
