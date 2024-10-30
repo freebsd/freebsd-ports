@@ -20,6 +20,8 @@ USES=		cargo localbase
 USE_GITHUB=	yes
 GH_ACCOUNT=	hakoerber
 
+RUSTFLAGS=	${ARCH:S/i386/YES/:C/^[a-z].*//:S/YES/-C target-feature=+sse,+sse2/} # add sse sse2 target-features only on i386
+
 CARGO_CRATES=	adler2-2.0.0 \
 		aho-corasick-1.1.3 \
 		anstream-0.6.15 \
