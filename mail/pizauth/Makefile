@@ -15,6 +15,8 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	ltratt
 GH_TAGNAME=	${DISTNAME}
 
+RUSTFLAGS=	${ARCH:S/i386/YES/:C/^[a-z].*//:S/YES/-C target-feature=+sse,+sse2/} # add sse sse2 target-features only on i386
+
 PLIST_FILES=	bin/pizauth \
 		share/man/man1/pizauth.1.gz \
 		share/man/man5/pizauth.conf.5.gz
