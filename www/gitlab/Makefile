@@ -110,7 +110,7 @@ MY_DEPENDS=	git>=2.41.0:devel/git \
 	rubygem-hamlit>=2.15.0<2.16:www/rubygem-hamlit \
 	rubygem-carrierwave1>=1.3.4<2.0:www/rubygem-carrierwave1 \
 	rubygem-mini_magick4>=4.12<5:graphics/rubygem-mini_magick4 \
-	rubygem-fog-aws>=3.26<4:net/rubygem-fog-aws \
+	rubygem-fog-aws328>=3.26<4:net/rubygem-fog-aws328 \
 	rubygem-fog-core210>=2.1.0<2.1.1:devel/rubygem-fog-core210 \
 	rubygem-fog-google>=1.24.1<1.25:net/rubygem-fog-google \
 	rubygem-fog-local>=0.8<1.0:net/rubygem-fog-local \
@@ -192,7 +192,7 @@ MY_DEPENDS=	git>=2.41.0:devel/git \
 	rubygem-circuitbox>=2.0.0<2.1:www/rubygem-circuitbox \
 	rubygem-sanitize60>=6.0.2<6.1:textproc/rubygem-sanitize60 \
 	rubygem-babosa>=2.0<3:textproc/rubygem-babosa \
-	rubygem-loofah>=2.22.0<2.23:textproc/rubygem-loofah \
+	rubygem-loofah222>=2.22.0<2.23:textproc/rubygem-loofah222 \
 	rubygem-licensee>=9.16<10:devel/rubygem-licensee \
 	rubygem-charlock_holmes>=0.7.9<0.8:textproc/rubygem-charlock_holmes \
 	rubygem-ruby-magic>=0.6<1:devel/rubygem-ruby-magic \
