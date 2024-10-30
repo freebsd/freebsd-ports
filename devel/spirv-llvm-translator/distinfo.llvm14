@@ -1,5 +1,5 @@
-TIMESTAMP = 1725364355
-SHA256 (KhronosGroup-SPIRV-LLVM-Translator-v14.0.5_GH0.tar.gz) = 57d0bcf14a5aa7d7052f48936d339f35831773d0368bbae092b28bc93377d26f
-SIZE (KhronosGroup-SPIRV-LLVM-Translator-v14.0.5_GH0.tar.gz) = 1600639
+TIMESTAMP = 1730284826
+SHA256 (KhronosGroup-SPIRV-LLVM-Translator-v14.0.6_GH0.tar.gz) = 8b07af985c75f1c9dc3e02655a7acbccf29c0d3997a47b828f55a43392b2fc63
+SIZE (KhronosGroup-SPIRV-LLVM-Translator-v14.0.6_GH0.tar.gz) = 1609662
 SHA256 (KhronosGroup-SPIRV-Headers-1.5.4.raytracing.fixed-332-g1c6bb27_GH0.tar.gz) = d5aa6bb24f14dc0ec6785cb03826b3e10194e8d168930d7cdec5826536d43ea1
 SIZE (KhronosGroup-SPIRV-Headers-1.5.4.raytracing.fixed-332-g1c6bb27_GH0.tar.gz) = 466608
