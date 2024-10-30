@@ -1,4 +1,4 @@
-TIMESTAMP = 1730177356
+TIMESTAMP = 1730267502
 SHA256 (rust/crates/addr2line-0.24.1.crate) = f5fb1d8e4442bd405fdfd1dacb42792696b0cf9cb15882e5d097b742a676d375
 SIZE (rust/crates/addr2line-0.24.1.crate) = 41554
 SHA256 (rust/crates/adler2-2.0.0.crate) = 512761e0bb2578dd7380c6baaa0f4ce03e84f95e960231d1dec8bf4d7d6e2627
@@ -219,5 +219,5 @@ SHA256 (rust/crates/zerocopy-derive-0.7.35.crate) = fa4f8080344d4671fb4e831a13ad
 SIZE (rust/crates/zerocopy-derive-0.7.35.crate) = 37829
 SHA256 (rust/crates/zeroize-1.8.1.crate) = ced3678a2879b30306d323f4542626697a464a97c0a07c9aebf7ebca65cd4dde
 SIZE (rust/crates/zeroize-1.8.1.crate) = 20029
-SHA256 (inko-lang-inko-v0.17.0_GH0.tar.gz) = 3245ce094eafe2310e16029e49ae591835ca38679fae82b2f8ce275058932736
-SIZE (inko-lang-inko-v0.17.0_GH0.tar.gz) = 1489995
+SHA256 (inko-lang-inko-v0.17.1_GH0.tar.gz) = 54aba9b14f1d823ba845716efb41c4a43a5c3a6d5ace94068deaa112d59670cf
+SIZE (inko-lang-inko-v0.17.1_GH0.tar.gz) = 1489065
