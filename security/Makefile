@@ -746,7 +746,6 @@
     SUBDIR += p5-openxpki
     SUBDIR += p5-openxpki-i18n
     SUBDIR += p5-plog
-    SUBDIR += palisade
     SUBDIR += pam-modules
     SUBDIR += pam-mysql
     SUBDIR += pam-pgsql
