@@ -8121,6 +8121,7 @@
     SUBDIR += str
     SUBDIR += string_theory
     SUBDIR += stringencoders
+    SUBDIR += stringzilla
     SUBDIR += stuffbin
     SUBDIR += stxxl
     SUBDIR += stylua

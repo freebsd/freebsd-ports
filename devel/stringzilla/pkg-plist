@@ -1,0 +1,10 @@
+include/stringzilla/drafts.h
+include/stringzilla/module.modulemap
+include/stringzilla/stringzilla.h
+include/stringzilla/stringzilla.hpp
+lib/libstringzilla_shared.so
+lib/libstringzilla_shared.so.1
+lib/libstringzilla_shared.so.3.10.6
+lib/libstringzillite.so
+lib/libstringzillite.so.1
+lib/libstringzillite.so.3.10.6
