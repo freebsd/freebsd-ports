@@ -444,7 +444,6 @@
     SUBDIR += latte-integrale
     SUBDIR += lcalc
     SUBDIR += ldouble
-    SUBDIR += lean
     SUBDIR += lean4
     SUBDIR += leangz
     SUBDIR += lemon
