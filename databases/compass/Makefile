@@ -36,6 +36,9 @@ LICENSE_NAME=	Server Side Public License
 LICENSE_FILE=	${WRKSRC}/LICENSE
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
+DEPRECATED=	Depends on expired devel/electron29
+EXPIRATION_DATE=2024-12-31
+
 DISTCACHEFILES=	${DISTCACHEFILE_npm} \
 		${DISTCACHEFILE_gyp} \
 		${DISTCACHEFILE_yarn} \
