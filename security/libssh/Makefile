@@ -5,7 +5,8 @@ MASTER_SITES=	https://www.libssh.org/files/${PORTVERSION:R}/
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Library implementing the SSH2 protocol
-WWW=		https://www.libssh.org/
+WWW=		https://www.libssh.org/ \
+		https://gitlab.com/libssh/libssh-mirror
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
