@@ -3567,3 +3567,4 @@ www/mod_cloudflare||2024-10-31|Has expired: Deprecated upstream 20 Jul 2021, ups
 audio/libshairport||2024-10-31|Has expired: Abandonware, project removed upstream and hasn't seen development since 2011
 databases/libpqtypes||2024-10-31|Has expired: Abandonware, upstream is no longer around
 databases/libmongo-client||2024-10-31|Has expired: Abandonware, upstream removed repo
+archivers/rubygem-archive-tar-minitar|archivers/rubygem-minitar|2024-10-31|Has expired: archive-tar-minitar has been deprecated. Use archivers/rubygem-minitar instead
