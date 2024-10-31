@@ -15,5 +15,5 @@ include/vid.stab/transformtype_operations.h
 include/vid.stab/vidstabdefines.h
 include/vid.stab/vsvector.h
 lib/libvidstab.so
-lib/libvidstab.so.0.9
+lib/libvidstab.so.1.2
 libdata/pkgconfig/vidstab.pc
