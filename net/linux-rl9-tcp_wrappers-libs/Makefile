@@ -1,0 +1,24 @@
+PORTNAME=	tcp_wrappers
+PORTVERSION=	7.6
+DISTVERSIONSUFFIX=	-97.el9
+MASTER_SITES=	EPEL9
+CATEGORIES=	net linux
+PKGNAMESUFFIX=	-libs
+
+MAINTAINER=	emulation@FreeBSD.org
+COMMENT=	Libraries tcp wrappers (Rocky Linux ${LINUX_DIST_VER})
+WWW=		https://www.centos.org
+
+USES=		linux:rl9
+USE_LDCONFIG=	yes
+USE_LINUX=	xorglibs
+USE_LINUX_RPM=	yes
+
+LIB_DISTNAMES=	${PORTNAME}${PKGNAMESUFFIX}-${DISTVERSIONFULL}
+
+CONFLICTS=	linux-c7-${PORTNAME}${PKGNAMESUFFIX}
+DOCSDIR=	${PREFIX}/usr/share/doc/${PORTNAME}${PKGNAMESUFFIX}
+
+OPTIONS_DEFINE=	DOCS
+
+.include <bsd.port.mk>
