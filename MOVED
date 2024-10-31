@@ -3558,3 +3558,4 @@ devel/rubygem-better_html-rails61||2024-10-27|Has expired: Ruby on Rails 6.1.x r
 x11-wm/sway-devel|x11-wm/sway|2024-10-27|Out of date: use x11-wm/sway for now
 math/lean|math/lean4|2024-10-30|lean has been superseded by lean4, new generation
 security/palisade|security/openfhe|2024-10-30|palisade has been superseded by openfhe, new generation
+emulators/wine8||2024-10-31|Has expired: The transition to Wine 9.0 should be mostly done now
