@@ -1694,7 +1694,6 @@
     SUBDIR += py-frappe-bench
     SUBDIR += py-freenit
     SUBDIR += py-frozen-flask
-    SUBDIR += py-gandi.cli
     SUBDIR += py-gevent-websocket
     SUBDIR += py-ghp-import
     SUBDIR += py-google
