@@ -4,7 +4,7 @@ CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
-COMMENT=	Official AWS Ruby gem for AWS Elemental MediaPackage v2 (mediapackagev2)
+COMMENT=	Official AWS Ruby gem for AWS Elemental MediaPackage V2 (mediapackagev2)
 WWW=		https://github.com/aws/aws-sdk-ruby/tree/version-3/gems/aws-sdk-mediapackagev2
 
 LICENSE=	APACHE20
