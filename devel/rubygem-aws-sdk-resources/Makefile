@@ -1,5 +1,5 @@
 PORTNAME=	aws-sdk-resources
-PORTVERSION=	3.210.0
+PORTVERSION=	3.211.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -163,6 +163,9 @@ RUN_DEPENDS=	rubygem-aws-sdk-accessanalyzer>=1<2:devel/rubygem-aws-sdk-accessana
 		rubygem-aws-sdk-freetier>=1<2:devel/rubygem-aws-sdk-freetier \
 		rubygem-aws-sdk-fsx>=1<2:devel/rubygem-aws-sdk-fsx \
 		rubygem-aws-sdk-gamelift>=1<2:devel/rubygem-aws-sdk-gamelift \
+		rubygem-aws-sdk-geomaps>=1<2:devel/rubygem-aws-sdk-geomaps \
+		rubygem-aws-sdk-geoplaces>=1<2:devel/rubygem-aws-sdk-geoplaces \
+		rubygem-aws-sdk-georoutes>=1<2:devel/rubygem-aws-sdk-georoutes \
 		rubygem-aws-sdk-glacier>=1<2:devel/rubygem-aws-sdk-glacier \
 		rubygem-aws-sdk-globalaccelerator>=1<2:devel/rubygem-aws-sdk-globalaccelerator \
 		rubygem-aws-sdk-glue>=1<2:devel/rubygem-aws-sdk-glue \
