@@ -4,6 +4,8 @@ share/applications/google-chrome.desktop
 %%DATADIR%%/CHROME_VERSION_EXTRA
 %%DATADIR%%/MEIPreload/manifest.json
 %%DATADIR%%/MEIPreload/preloaded_data.pb
+%%DATADIR%%/PrivacySandboxAttestationsPreloaded/manifest.json
+%%DATADIR%%/PrivacySandboxAttestationsPreloaded/privacy-sandbox-attestations.dat
 %%DATADIR%%/WidevineCdm/LICENSE
 %%DATADIR%%/WidevineCdm/_platform_specific/linux_x64/libwidevinecdm.so
 %%DATADIR%%/WidevineCdm/manifest.json
