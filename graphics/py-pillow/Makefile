@@ -1,5 +1,5 @@
 PORTNAME=	pillow
-PORTVERSION=	10.4.0
+PORTVERSION=	11.0.0
 CATEGORIES=	graphics python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -10,10 +10,10 @@ WWW=		https://python-pillow.org/ \
 		https://pillow.readthedocs.io/en/stable/ \
 		https://github.com/python-pillow/Pillow
 
-LICENSE=	PIL
-LICENSE_NAME=	Standard PIL License
+LICENSE=	MIT-CMU
+LICENSE_NAME=	CMU License
 LICENSE_FILE=	${WRKSRC}/LICENSE
-LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
+LICENSE_PERMS=	auto-accept dist-mirror dist-sell pkg-mirror pkg-sell
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=61:devel/py-setuptools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
