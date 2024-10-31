@@ -1,5 +1,5 @@
 PORTNAME=	libmesh
-DISTVERSION=	1.7.4
+DISTVERSION=	1.7.5
 CATEGORIES=	math
 MASTER_SITES=	https://github.com/libMesh/${PORTNAME}/releases/download/v${DISTVERSION}/
 
@@ -13,6 +13,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 		libnlopt.so:math/nlopt
+TEST_DEPENDS=	bash:shells/bash
 
 USES=		compiler:c++17-lang eigen:3 gmake libtool localbase perl5 pkgconfig shebangfix tar:xz
 
@@ -39,7 +40,7 @@ USE_LDCONFIG=	yes
 CXXFLAGS+=	-I${WRKSRC}/contrib/parmetis/include # because parmetis.h isn't found for ./include/libmesh/parmetis_helper.h
 
 INSTALL_TARGET=	install-strip
-TEST_TARGET=	check # 1 test crashes, see https://github.com/libMesh/libmesh/discussions/3986
+TEST_TARGET=	check
 
 OPTIONS_DEFINE=			GLPK HDF5 MPI EXAMPLES
 OPTIONS_DEFAULT=		MPI
