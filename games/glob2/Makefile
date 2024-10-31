@@ -1,6 +1,6 @@
 PORTNAME=	glob2
 PORTVERSION=	0.9.5.0.g20240607
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 
 MAINTAINER=	makc@FreeBSD.org
@@ -9,8 +9,6 @@ WWW=		https://globulation2.org/
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
-
-BROKEN=		fails to build with boost-1.85
 
 LIB_DEPENDS=	libvorbis.so:audio/libvorbis \
 		libportaudio.so:audio/portaudio \
