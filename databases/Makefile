@@ -141,7 +141,6 @@
     SUBDIR += libiodbc
     SUBDIR += libmemcache
     SUBDIR += libmemcached
-    SUBDIR += libmongo-client
     SUBDIR += libmongocrypt
     SUBDIR += libmswstr
     SUBDIR += libnvpair
