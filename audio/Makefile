@@ -199,7 +199,6 @@
     SUBDIR += freepats
     SUBDIR += ft2-clone
     SUBDIR += ft2play
-    SUBDIR += funktrackergold
     SUBDIR += furnace
     SUBDIR += ganv
     SUBDIR += gbsplay
