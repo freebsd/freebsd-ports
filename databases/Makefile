@@ -148,7 +148,6 @@
     SUBDIR += libodbc++
     SUBDIR += libpbl
     SUBDIR += libpg_query
-    SUBDIR += libpqtypes
     SUBDIR += libsdb
     SUBDIR += libzdb
     SUBDIR += linux-c7-sqlite3
