@@ -5,6 +5,10 @@ CATEGORIES=	security devel
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/${PORTNAME}-${DISTVERSION}/ \
 		https://www.libssh2.org/download/
 
+PATCH_SITES=	https://github.com/libssh2/libssh2/commit/
+PATCHFILES=	5d03b4f94ac6740e0085a6acda6fc417ca6ecc83.patch:-p1 \
+		d4e43c7b69d10b6cfaaa53787addfd4beac7a3ce.patch:-p1
+
 MAINTAINER=	sbz@FreeBSD.org
 COMMENT=	Library implementing the SSH2 protocol
 WWW=		https://www.libssh2.org/
