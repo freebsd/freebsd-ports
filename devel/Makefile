@@ -5100,6 +5100,7 @@
     SUBDIR += py-jupyter-collaboration
     SUBDIR += py-jupyter-collaboration-ui
     SUBDIR += py-jupyter-core
+    SUBDIR += py-jupyter-docprovider
     SUBDIR += py-jupyter-events
     SUBDIR += py-jupyter-kernel-test
     SUBDIR += py-jupyter-lsp
