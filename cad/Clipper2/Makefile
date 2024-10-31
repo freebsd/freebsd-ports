@@ -6,7 +6,7 @@ MASTER_SITES=	https://github.com/AngusJohnson/${PORTNAME}/releases/download/${PO
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	mr@freebsd.org
-COMMENT=	A Polygon Clipping and Offsetting library (in C++, C# & Delphi)
+COMMENT=	A Polygon Clipping and Offsetting library (in C++, C\# & Delphi)
 WWW=		https://github.com/AngusJohnson/Clipper2
 
 LICENSE=	BSL
