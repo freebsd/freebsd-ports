@@ -16,15 +16,16 @@ LICENSE=	GPLv2
 BROKEN=		fails to build under qemu: killing runaway build after 21600 seconds with no output
 .endif
 
-OPTIONS_DEFINE=	DOCS EXAMPLES
-
-INSTALL_TARGET=	install.bin install.man
 USES=		cpe
+
 EXTRA_PATCHES=	${FILESDIR}/procmail-3.22-getline.patch:-p1
+INSTALL_TARGET=	install.bin install.man
 
 PORTDOCS=	FAQ FEATURES HISTORY KNOWN_BUGS README
 PORTEXAMPLES=	1procmailrc 1rmail 2procmailrc 2rmail 3procmailrc 3rmail \
 		advanced dirname forward local_procmail_lmtp.m4 mailstat
+
+OPTIONS_DEFINE=	DOCS EXAMPLES
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|g' ${WRKSRC}/config.h ${WRKSRC}/src/autoconf
