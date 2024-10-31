@@ -2482,7 +2482,6 @@ net/rubygem-octokit5|net/rubygem-octokit|2023-10-06|Use net/rubygem-octokit
 games/minilens||2023-10-08|Has expired: Depends on expired devel/godot2 (use devel/godot instead)
 games/tanks-of-freedom||2023-10-08|Has expired: Depends on expired devel/godot2 (use devel/godot instead)
 devel/godot2|devel/godot|2023-10-08|Has expired: Requires legacy OpenSSL 1.1.1 so use devel/godot
-devel/py-jupyter-server-ydoc|devel/py-jupyter-collaboration|2023-10-11|Remove obsoleted port. Use devel/py-jupyter-collaboration instead
 devel/py-packaging21|devel/py-packaging|2023-10-11|Remove obsoleted port. Use devel/py-packaging instead
 devel/rubygem-google-protobuf323|devel/rubygem-google-protobuf|2023-10-11|Remove obsoleted port. Use devel/rubygem-google-protobuf instead
 audio/rem||2023-10-12|Has expired: Deprecated, replaced by libre
