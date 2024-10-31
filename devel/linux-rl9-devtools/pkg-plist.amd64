@@ -2337,6 +2337,7 @@ usr/lib/.build-id/43/507aa787cb6288a800217dc9de38b5851ea83d.1
 usr/lib/.build-id/48/eb782d2aa76dbc45e42993722808333e3a87ec
 usr/lib/.build-id/4d/fb4e7aa6e1bbbe45d6ed103872445c8872731c
 usr/lib/.build-id/4f/69ad93e690390cc7f36461079ab4f6e2ba2bb6
+usr/lib/.build-id/51/f1fa43fdfe17b029254eb4aaa9e099749561ce
 usr/lib/.build-id/55/95aaaf92bf523bf8ec17ed21888c5f3dc3fd2f
 usr/lib/.build-id/58/e165c36b48230c37667b80c2c599c1cf7db4bf
 usr/lib/.build-id/58/e2a24a1e8c9edf9de56c5b4206c4c5b70e520a
@@ -2648,6 +2649,8 @@ usr/lib64/grcrt1.o
 usr/lib64/libBrokenLocale.so
 usr/lib64/libanl.a
 usr/lib64/libanl.so
+usr/lib64/libatomic.so.1
+usr/lib64/libatomic.so.1.2.0
 usr/lib64/libbfd-%%BUVERSION%%.so
 usr/lib64/libbfd.a
 usr/lib64/libbfd.la
