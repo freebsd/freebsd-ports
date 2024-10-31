@@ -13,8 +13,6 @@ WWW=		https://librepcb.org/ \
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-BROKEN_FreeBSD_15=	compilation error: no member named 'construct' in 'optional<type-parameter-0-0 &>', see https://github.com/LibrePCB/LibrePCB/issues/1454
-
 LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg4 \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libfreeimage.so:graphics/freeimage \
