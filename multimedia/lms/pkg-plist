@@ -3,6 +3,7 @@ bin/lms-metadata
 bin/lms-recommendation
 @sample etc/lms.conf.sample
 etc/pam.d/lms
+lib/liblmsartwork.so
 lib/liblmsauth.so
 lib/liblmsav.so
 lib/liblmscore.so
@@ -13,7 +14,6 @@ lib/liblmsmetadata.so
 lib/liblmsrecommendation.so
 lib/liblmsscanner.so
 lib/liblmsscrobbling.so
-lib/liblmsservice-cover.so
 lib/liblmssom.so
 lib/liblmssubsonic.so
 %%DATADIR%%/approot/admin-initwizard.xml
@@ -28,12 +28,13 @@ lib/liblmssubsonic.so
 %%DATADIR%%/approot/artists.xml
 %%DATADIR%%/approot/error.xml
 %%DATADIR%%/approot/explore.xml
-%%DATADIR%%/approot/images/unknown-artist.jpg
+%%DATADIR%%/approot/images/unknown-artist.svg
 %%DATADIR%%/approot/images/unknown-cover.svg
 %%DATADIR%%/approot/login.xml
 %%DATADIR%%/approot/main.xml
 %%DATADIR%%/approot/mediaplayer.xml
 %%DATADIR%%/approot/messages.xml
+%%DATADIR%%/approot/messages_en-US.xml
 %%DATADIR%%/approot/messages_fr.xml
 %%DATADIR%%/approot/messages_it.xml
 %%DATADIR%%/approot/messages_pl.xml
