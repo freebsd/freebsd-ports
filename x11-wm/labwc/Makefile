@@ -1,5 +1,6 @@
 PORTNAME=	labwc
 DISTVERSION=	0.8.1
+PORTREVISION=	1
 CATEGORIES=	x11-wm wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -48,6 +49,7 @@ NLS_USES=		gettext
 NLS_MESON_ENABLED=	nls
 NLS_PLIST_FILES=	share/locale/ar/LC_MESSAGES/${PORTNAME}.mo \
 			share/locale/cs/LC_MESSAGES/${PORTNAME}.mo \
+			share/locale/da/LC_MESSAGES/${PORTNAME}.mo \
 			share/locale/de/LC_MESSAGES/${PORTNAME}.mo \
 			share/locale/el/LC_MESSAGES/${PORTNAME}.mo \
 			share/locale/es/LC_MESSAGES/${PORTNAME}.mo \
@@ -68,6 +70,7 @@ NLS_PLIST_FILES=	share/locale/ar/LC_MESSAGES/${PORTNAME}.mo \
 			share/locale/pa/LC_MESSAGES/${PORTNAME}.mo \
 			share/locale/pl/LC_MESSAGES/${PORTNAME}.mo \
 			share/locale/pt/LC_MESSAGES/${PORTNAME}.mo \
+			share/locale/pt_BR/LC_MESSAGES/${PORTNAME}.mo \
 			share/locale/ru/LC_MESSAGES/${PORTNAME}.mo \
 			share/locale/sv/LC_MESSAGES/${PORTNAME}.mo \
 			share/locale/tr/LC_MESSAGES/${PORTNAME}.mo \
