@@ -1,12 +1,11 @@
 PORTNAME=	ardour
-DISTVERSION=	8.6.0
-PORTREVISION=	2
+DISTVERSION=	8.10.0
 CATEGORIES=	audio
 # Official source download is tailored to browsers, downloads from github are
 # deliberately made empty. Put the badly named distfile into a subdirectory.
 MASTER_SITES=	https://community.ardour.org/download/release/
 DISTNAME=	Ardour-${DISTVERSION}
-DISTFILES=	574
+DISTFILES=	598
 DIST_SUBDIR=	${DISTNAME}
 
 MAINTAINER=	dev@submerge.ch
@@ -16,7 +15,8 @@ WWW=		https://ardour.org/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	lv2>=1.18.0:audio/lv2 \
+BUILD_DEPENDS=	boost-libs>0:devel/boost-libs \
+		lv2>=1.18.0:audio/lv2 \
 		itstool>2.0.0:textproc/itstool \
 		${BUILD_DEPENDS_${ARCH}}
 BUILD_DEPENDS_aarch64=	as:devel/binutils
@@ -33,7 +33,6 @@ LIB_DEPENDS=	libserd-0.so:devel/serd \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
 		libharfbuzz.so:print/harfbuzz \
-		libboost_date_time.so:devel/boost-libs \
 		libvamp-hostsdk.so:audio/vamp-plugin-sdk \
 		libsamplerate.so:audio/libsamplerate \
 		libsndfile.so:audio/libsndfile \
@@ -45,11 +44,13 @@ LIB_DEPENDS=	libserd-0.so:devel/serd \
 		libFLAC.so:audio/flac \
 		libwebsockets.so:net/libwebsockets
 
+# libboost_date_time.so:devel/boost-libs
+
 USES=		compiler:c++11-lang desktop-file-utils gettext gnome \
-		libarchive pkgconfig python:build readline tar:bzip2 \
+		libarchive pkgconfig python:build readline ssl tar:bzip2 \
 		waf xorg shared-mime-info
 USE_CXXSTD=	c++11
-USE_GNOME=	atk cairo cairomm gdkpixbuf2 glib20 glibmm gtk20 gtkmm24 pango
+USE_GNOME=	atk cairo cairomm gdkpixbuf2 glib20 glibmm gtk20 gtkmm24 libxml2 pango
 USE_LDCONFIG=	yes
 USE_XORG=	x11
 
