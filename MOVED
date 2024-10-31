@@ -3560,3 +3560,4 @@ math/lean|math/lean4|2024-10-30|lean has been superseded by lean4, new generatio
 security/palisade|security/openfhe|2024-10-30|palisade has been superseded by openfhe, new generation
 emulators/wine8||2024-10-31|Has expired: The transition to Wine 9.0 should be mostly done now
 audio/funktrackergold||2024-10-31|Has expired: Software looks abandoned: last release is in 1999 and WWW link had nothing to do with the software. Does not build with GCC 14.2
+cad/tkgate||2024-10-31|Has expired: Upstream is gone
