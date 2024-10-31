@@ -3570,3 +3570,4 @@ databases/libmongo-client||2024-10-31|Has expired: Abandonware, upstream removed
 archivers/rubygem-archive-tar-minitar|archivers/rubygem-minitar|2024-10-31|Has expired: archive-tar-minitar has been deprecated. Use archivers/rubygem-minitar instead
 audio/audiere||2024-10-31|Has expired: last release in 2006, no consumers in the Ports tree
 databases/emacs-sqlite3-api||2024-10-31|Has expired: Emacs 29 and later support sqlite3 natively
+lang/ferite||2024-10-31|Has expired: Abandonware and outdated, last release in 2009 (current version in 2005)
