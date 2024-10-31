@@ -389,7 +389,6 @@
     SUBDIR += mod_authnz_external24
     SUBDIR += mod_authz_unixgroup24
     SUBDIR += mod_cfg_ldap
-    SUBDIR += mod_cloudflare
     SUBDIR += mod_dav_svn
     SUBDIR += mod_defensible
     SUBDIR += mod_dnssd
