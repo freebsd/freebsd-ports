@@ -1,4 +1,4 @@
-TIMESTAMP = 1729659269
+TIMESTAMP = 1730352083
 SHA256 (rust/crates/addr2line-0.24.2.crate) = dfbe277e56a376000877090da837660b4427aad530e3028d44e0bffe4f89a1c1
 SIZE (rust/crates/addr2line-0.24.2.crate) = 39015
 SHA256 (rust/crates/adler2-2.0.0.crate) = 512761e0bb2578dd7380c6baaa0f4ce03e84f95e960231d1dec8bf4d7d6e2627
@@ -333,5 +333,5 @@ SHA256 (rust/crates/windows_x86_64_msvc-0.52.6.crate) = 589f6da84c646204747d1270
 SIZE (rust/crates/windows_x86_64_msvc-0.52.6.crate) = 832564
 SHA256 (rust/crates/winnow-0.6.20.crate) = 36c1fec1a2bb5866f07c25f68c26e565c4c200aebb96d7e55710c19d3e8ac49b
 SIZE (rust/crates/winnow-0.6.20.crate) = 163617
-SHA256 (Decodetalkers-neocmakelsp-v0.8.12_GH0.tar.gz) = de00f241038ac64ce3149ff9529791517e7ea4f106e37ee88b0bbac9c7cb42e4
-SIZE (Decodetalkers-neocmakelsp-v0.8.12_GH0.tar.gz) = 3792165
+SHA256 (Decodetalkers-neocmakelsp-v0.8.12.2_GH0.tar.gz) = 74f6979fc6e3dd2e5d58cce314eb0e71280b7da2a4874795634a01c01e0fbab2
+SIZE (Decodetalkers-neocmakelsp-v0.8.12.2_GH0.tar.gz) = 3791937
