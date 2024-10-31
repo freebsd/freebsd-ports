@@ -1,5 +1,6 @@
 PORTNAME=	libclc
 DISTVERSION=	${DISTVERSION_${FLAVOR}}
+DISTVERSION_llvm19=	19.1.3
 DISTVERSION_llvm18=	18.1.8
 DISTVERSION_llvm17=	17.0.6
 DISTVERSION_llvm16=	16.0.6
@@ -21,7 +22,7 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 BUILD_DEPENDS=	spirv-llvm-translator-${FLAVOR}>0:devel/spirv-llvm-translator@${FLAVOR} \
 		libedit>=0:devel/libedit
 
-FLAVORS=	${15 16 17 18:L:S/^/llvm/}
+FLAVORS=	${15 16 17 18 19:L:S/^/llvm/}
 
 USES=		cmake compiler:c++11-lib llvm:${FLAVOR:S/llvm//},build python:build tar:xz
 USE_LDCONFIG=	${PREFIX}/${FLAVOR}/lib
@@ -35,8 +36,13 @@ NO_ARCH=	yes
 
 .include <bsd.port.pre.mk>
 
-PLIST_SUB+=	${FLAVORS:N${FLAVOR}:@v@${v:tu}="\@comment "@}
-PLIST_SUB+=	${FLAVOR:tu}=""
+.for i in ${FLAVORS:S/llvm//}
+.if ${i} <= ${FLAVOR:S/llvm//}
+PLIST_SUB+=	${i:S/^/llvm/:tu}=""
+.else
+PLIST_SUB+=	${i:S/^/llvm/:tu}="@comment "
+.endif
+.endfor
 PLIST_SUB+=	LLVM_VERSION=${FLAVOR}
 
 .include <bsd.port.post.mk>
