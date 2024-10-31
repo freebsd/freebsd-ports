@@ -1,12 +1,12 @@
 PORTNAME=	libmesh
-DISTVERSION=	1.7.0
-PORTREVISION=	7
+DISTVERSION=	1.7.4
 CATEGORIES=	math
 MASTER_SITES=	https://github.com/libMesh/${PORTNAME}/releases/download/v${DISTVERSION}/
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Numerical simulation of partial differential equations
-WWW=		https://libmesh.github.io
+WWW=		https://libmesh.github.io \
+		https://github.com/libMesh/libmesh
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
@@ -14,7 +14,10 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 		libnlopt.so:math/nlopt
 
-USES=		compiler:c++17-lang eigen:3 gmake libtool localbase perl5 pkgconfig tar:xz
+USES=		compiler:c++17-lang eigen:3 gmake libtool localbase perl5 pkgconfig shebangfix tar:xz
+
+SHEBANG_GLOB=	*.sh # for one or more run.sh files in tests
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-static \
 		--with-methods=opt \
@@ -36,7 +39,7 @@ USE_LDCONFIG=	yes
 CXXFLAGS+=	-I${WRKSRC}/contrib/parmetis/include # because parmetis.h isn't found for ./include/libmesh/parmetis_helper.h
 
 INSTALL_TARGET=	install-strip
-TEST_TARGET=	check
+TEST_TARGET=	check # 1 test crashes, see https://github.com/libMesh/libmesh/discussions/3986
 
 OPTIONS_DEFINE=			GLPK HDF5 MPI EXAMPLES
 OPTIONS_DEFAULT=		MPI
