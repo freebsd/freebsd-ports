@@ -1,7 +1,7 @@
-TIMESTAMP = 1717505719
-SHA256 (rocky/c/cups-libs-2.3.3op2-24.el9.aarch64.rpm) = c16294962f31efff78fd9444ae99c7dc2addf934a430ee34c883986ab22c14ac
-SIZE (rocky/c/cups-libs-2.3.3op2-24.el9.aarch64.rpm) = 263926
-SHA256 (rocky/c/cups-libs-2.3.3op2-24.el9.x86_64.rpm) = 851efc4f305468f77bea6cabd1389364e273ad38aa1917482365c3897f945193
-SIZE (rocky/c/cups-libs-2.3.3op2-24.el9.x86_64.rpm) = 266928
-SHA256 (rocky/c/cups-2.3.3op2-24.el9.src.rpm) = b6ad4b6c8c8c75cb5be2adc72aa3019c9a20c29d1c70c8a69a0d2995ec7abee9
-SIZE (rocky/c/cups-2.3.3op2-24.el9.src.rpm) = 8100979
+TIMESTAMP = 1727473473
+SHA256 (rocky/c/cups-libs-2.3.3op2-27.el9_4.aarch64.rpm) = 174e188f68a0ef5f89a4f480ea8424bae44dd77bb1fd0bdabb200fbb6620e130
+SIZE (rocky/c/cups-libs-2.3.3op2-27.el9_4.aarch64.rpm) = 264046
+SHA256 (rocky/c/cups-libs-2.3.3op2-27.el9_4.x86_64.rpm) = 53aaba20b4ced1f5d08cb5faa56e971236d2cc41ce5a010f0c48e116f3699ff3
+SIZE (rocky/c/cups-libs-2.3.3op2-27.el9_4.x86_64.rpm) = 266765
+SHA256 (rocky/c/cups-2.3.3op2-27.el9_4.src.rpm) = 92cb36fe5f356f41cdc8fe10b9929acc82f79fd95ed91c4624c00555a04afd9c
+SIZE (rocky/c/cups-2.3.3op2-27.el9_4.src.rpm) = 8103677
