@@ -3562,3 +3562,4 @@ emulators/wine8||2024-10-31|Has expired: The transition to Wine 9.0 should be mo
 audio/funktrackergold||2024-10-31|Has expired: Software looks abandoned: last release is in 1999 and WWW link had nothing to do with the software. Does not build with GCC 14.2
 cad/tkgate||2024-10-31|Has expired: Upstream is gone
 www/py-gandi.cli||2024-10-31|Has expired: Upstream no longer continuing
+devel/libdevq||2024-10-31|Has expired: Upstream repo archived Dec 14, 2023

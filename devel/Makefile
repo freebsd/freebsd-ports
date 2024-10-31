@@ -1249,7 +1249,6 @@
     SUBDIR += libdbusmenu-qt
     SUBDIR += libddoc
     SUBDIR += libddwaf
-    SUBDIR += libdevq
     SUBDIR += libdfui
     SUBDIR += libdill
     SUBDIR += libdisasm

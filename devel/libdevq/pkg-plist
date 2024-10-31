@@ -1,8 +1,0 @@
-%%PROGRAMS%%bin/devq-evwatch
-%%PROGRAMS%%bin/devq-lsdri
-include/libdevq.h
-lib/libdevq.so
-lib/libdevq.so.0
-lib/libdevq.so.0.0.0
-libdata/pkgconfig/libdevq-1.0.pc
-share/man/man3/libdevq.3.gz
