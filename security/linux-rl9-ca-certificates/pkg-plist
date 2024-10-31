@@ -22,6 +22,7 @@ usr/share/pki/ca-trust-legacy/ca-bundle.legacy.default.crt
 usr/share/pki/ca-trust-legacy/ca-bundle.legacy.disable.crt
 usr/share/pki/ca-trust-source/README
 usr/share/pki/ca-trust-source/ca-bundle.trust.p11-kit
+@dir etc/pki/ca-trust/extracted/pem/directory-hash
 @dir etc/pki/ca-trust/source/anchors
 @dir etc/pki/ca-trust/source/blocklist
 @dir usr/share/pki/ca-trust-source/anchors
