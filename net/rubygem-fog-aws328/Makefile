@@ -20,6 +20,8 @@ USES=		gem
 
 NO_ARCH=	yes
 
+PORTSCOUT=	limit:^3\.28\.
+
 post-install:
 	${RM} ${STAGEDIR}${PREFIX}/bin/console ${STAGEDIR}${PREFIX}/bin/setup
 
