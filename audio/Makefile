@@ -39,7 +39,6 @@
     SUBDIR += atunes
     SUBDIR += aubio
     SUBDIR += audacity
-    SUBDIR += audiere
     SUBDIR += audiocd-kio
     SUBDIR += audiowmark
     SUBDIR += aumix

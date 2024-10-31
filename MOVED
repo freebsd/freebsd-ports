@@ -3568,3 +3568,4 @@ audio/libshairport||2024-10-31|Has expired: Abandonware, project removed upstrea
 databases/libpqtypes||2024-10-31|Has expired: Abandonware, upstream is no longer around
 databases/libmongo-client||2024-10-31|Has expired: Abandonware, upstream removed repo
 archivers/rubygem-archive-tar-minitar|archivers/rubygem-minitar|2024-10-31|Has expired: archive-tar-minitar has been deprecated. Use archivers/rubygem-minitar instead
+audio/audiere||2024-10-31|Has expired: last release in 2006, no consumers in the Ports tree
