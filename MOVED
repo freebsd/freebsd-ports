@@ -3564,3 +3564,4 @@ cad/tkgate||2024-10-31|Has expired: Upstream is gone
 www/py-gandi.cli||2024-10-31|Has expired: Upstream no longer continuing
 devel/libdevq||2024-10-31|Has expired: Upstream repo archived Dec 14, 2023
 www/mod_cloudflare||2024-10-31|Has expired: Deprecated upstream 20 Jul 2021, upstream recommends mod_remoteip
+audio/libshairport||2024-10-31|Has expired: Abandonware, project removed upstream and hasn't seen development since 2011

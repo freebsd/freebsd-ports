@@ -381,7 +381,6 @@
     SUBDIR += libopusenc
     SUBDIR += libremidi
     SUBDIR += libsamplerate
-    SUBDIR += libshairport
     SUBDIR += libshout
     SUBDIR += libsidplay
     SUBDIR += libsidplayfp
