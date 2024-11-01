@@ -1,13 +1,13 @@
 PORTNAME=	viennarna
-DISTVERSION=	2.6.4
-PORTREVISION=	2
+DISTVERSION=	2.7.0
 CATEGORIES=	biology
-MASTER_SITES=	https://www.tbi.univie.ac.at/RNA/download/sourcecode/2_6_x/
+MASTER_SITES=	https://www.tbi.univie.ac.at/RNA/download/sourcecode/2_7_x/
 DISTNAME=	ViennaRNA-${DISTVERSION}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Alignment tools for the structural analysis of RNA
-WWW=		https://www.tbi.univie.ac.at/RNA/
+WWW=		https://www.tbi.univie.ac.at/RNA/ \
+		https://github.com/ViennaRNA/ViennaRNA
 
 LICENSE=	ViennaRNALicense
 LICENSE_NAME=	Vienna RNA License
@@ -54,5 +54,10 @@ PORTEXAMPLES=	*
 
 post-configure: # remove -lstdc++ from .pc file
 	@${REINPLACE_CMD} -e 's| -lstdc++||' ${WRKSRC}/RNAlib2.pc
+
+post-install:
+	# remove stray files
+	@${RM} ${STAGEDIR}/RNA/RNAconsensus.py
+	@${RMDIR} ${STAGEDIR}/RNA
 
 .include <bsd.port.mk>
