@@ -1612,6 +1612,7 @@
     SUBDIR += py-sphinx-me
     SUBDIR += py-sphinx-multiversion
     SUBDIR += py-sphinx-multiversion-zrepl
+    SUBDIR += py-sphinx-notfound-page
     SUBDIR += py-sphinx-sitemap
     SUBDIR += py-sphinx-tabs
     SUBDIR += py-sphinx-theme-builder
