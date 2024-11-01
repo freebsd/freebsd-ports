@@ -1,6 +1,6 @@
-TIMESTAMP = 1651455043
-SHA256 (fcitx/fcitx-4.2.9.8.tar.xz) = bdb6a87d07506b903558e9b24a7b1548634695a93d5045c54ad520c6169f1e2a
-SIZE (fcitx/fcitx-4.2.9.8.tar.xz) = 1703948
+TIMESTAMP = 1730425303
+SHA256 (fcitx/fcitx-4.2.9.9.tar.xz) = 307bddeabbec383eb27c4ea222d9f71d8d9011d7942f4010368e5bc3ca7440a1
+SIZE (fcitx/fcitx-4.2.9.9.tar.xz) = 1708908
 SHA256 (fcitx/en_dict-20121020.tar.gz) = c44a5d7847925eea9e4d2d04748d442cd28dd9299a0b572ef7d91eac4f5a6ceb
 SIZE (fcitx/en_dict-20121020.tar.gz) = 630491
 SHA256 (fcitx/pinyin.tar.gz) = 583829b24a758c087c08de4a69480d0bf5946354fe77db360d6d7f467c2bd8e1
