@@ -12,7 +12,7 @@
 +static inline int is_unreserved_rfc3986(char c)
 +{
 +    int is_locase_alpha = (c >= 'a' && c <= 'z');
-+    int is_upcase_alpha = (c >= 'a' && c <= 'z');
++    int is_upcase_alpha = (c >= 'A' && c <= 'Z');
 +    int is_digit        = (c >= '0' && c <= '9');
 +    int is_special      = c == '-'
 +                       || c == '.'

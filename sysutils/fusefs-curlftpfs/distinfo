@@ -1,2 +1,13 @@
-SHA256 (curlftpfs-0.9.2.tar.gz) = 4eb44739c7078ba0edde177bdd266c4cfb7c621075f47f64c85a06b12b3c6958
-SIZE (curlftpfs-0.9.2.tar.gz) = 365503
+TIMESTAMP = 1730467218
+SHA256 (curlftpfs/curlftpfs-0.9.2.tar.gz) = 4eb44739c7078ba0edde177bdd266c4cfb7c621075f47f64c85a06b12b3c6958
+SIZE (curlftpfs/curlftpfs-0.9.2.tar.gz) = 365503
+SHA256 (curlftpfs/fix-CURLOPT_INFILESIZE.patch) = 19734139dfcd5252f5b8005343afba89e809bed6b476901c24dc6c3535e36501
+SIZE (curlftpfs/fix-CURLOPT_INFILESIZE.patch) = 644
+SHA256 (curlftpfs/free_ftpfs_file-memleak-fix.patch) = accd3b5a322bacbf4ccdc8433ce3fc97b6d6284a56ab29daa1579424e7e41f39
+SIZE (curlftpfs/free_ftpfs_file-memleak-fix.patch) = 425
+SHA256 (curlftpfs/nocache-memleak-fix.patch) = 75db4498ca4879078e25e87da4ef57d648f22aee692e3b5ae23030762f6b4ac2
+SIZE (curlftpfs/nocache-memleak-fix.patch) = 1864
+SHA256 (curlftpfs/curlftpfs__no_verify_hostname.patch) = f69d4537447acbb559a14efbd8f880cde2b20f06ca2b0edd2229f8bb319675db
+SIZE (curlftpfs/curlftpfs__no_verify_hostname.patch) = 872
+SHA256 (curlftpfs/consistent-feature-flag.patch) = afd83c6640c281517e9aea548f760f911e4f5bf00485645e4368ffb0b90c9784
+SIZE (curlftpfs/consistent-feature-flag.patch) = 1724

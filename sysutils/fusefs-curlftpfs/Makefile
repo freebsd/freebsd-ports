@@ -1,9 +1,18 @@
 PORTNAME=	curlftpfs
 PORTVERSION=	0.9.2
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	sysutils
 MASTER_SITES=	SF
 PKGNAMEPREFIX=	fusefs-
+DIST_SUBDIR=	${PORTNAME}
+
+PATCH_SITES=	https://sources.debian.org/data/main/c/curlftpfs/0.9.2-9/debian/patches/
+PATCHFILES=	fix-CURLOPT_INFILESIZE.patch \
+		free_ftpfs_file-memleak-fix.patch \
+		nocache-memleak-fix.patch \
+		curlftpfs__no_verify_hostname.patch \
+		consistent-feature-flag.patch
+PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	rodrigo@FreeBSD.org
 COMMENT=	Mount remote FTP directories
