@@ -1,8 +1,9 @@
 PORTNAME=	django-taggit
-PORTVERSION=	5.0.1
+PORTVERSION=	6.1.0
 CATEGORIES=	www python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}dj50-
+DISTNAME=	django_taggit-${PORTVERSION}
 
 MAINTAINER=	kai@FreeBSD.org
 COMMENT=	Reusable Django application for simple tagging
