@@ -1,6 +1,6 @@
 PORTNAME=	mise
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2024.10.13
+DISTVERSION=	2024.11.0
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -182,7 +182,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		hyper-1.5.0 \
 		hyper-rustls-0.27.3 \
 		hyper-tls-0.6.0 \
-		hyper-util-0.1.9 \
+		hyper-util-0.1.10 \
 		iana-time-zone-0.1.61 \
 		iana-time-zone-haiku-0.1.2 \
 		idna-0.5.0 \
@@ -193,7 +193,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		indicatif-0.17.8 \
 		indoc-2.0.5 \
 		inout-0.1.3 \
-		insta-1.41.0 \
+		insta-1.41.1 \
 		instant-0.1.13 \
 		ipnet-2.10.1 \
 		is_terminal_polyfill-1.70.1 \
@@ -207,7 +207,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		lazy_static-1.5.0 \
 		libc-0.2.161 \
 		libgit2-sys-0.17.0+1.8.1 \
-		libm-0.2.9 \
+		libm-0.2.11 \
 		libredox-0.1.3 \
 		libssh2-sys-0.3.0 \
 		libz-sys-1.1.20 \
@@ -299,7 +299,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		quick-xml-0.23.1 \
 		quinn-0.11.5 \
 		quinn-proto-0.11.8 \
-		quinn-udp-0.5.5 \
+		quinn-udp-0.5.6 \
 		quote-1.0.37 \
 		rand-0.8.5 \
 		rand_chacha-0.3.1 \
@@ -312,7 +312,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		regex-automata-0.4.8 \
 		regex-syntax-0.6.29 \
 		regex-syntax-0.8.5 \
-		reqwest-0.12.8 \
+		reqwest-0.12.9 \
 		ring-0.17.8 \
 		rmp-0.8.14 \
 		rmp-serde-1.3.0 \
@@ -321,7 +321,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		rustc-hash-2.0.0 \
 		rustc_version-0.4.1 \
 		rustix-0.38.38 \
-		rustls-0.23.15 \
+		rustls-0.23.16 \
 		rustls-native-certs-0.8.0 \
 		rustls-pemfile-2.2.0 \
 		rustls-pki-types-1.10.0 \
@@ -338,9 +338,9 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		self-replace-1.5.0 \
 		self_update-0.41.0 \
 		semver-1.0.23 \
-		serde-1.0.213 \
+		serde-1.0.214 \
 		serde-value-0.7.0 \
-		serde_derive-1.0.213 \
+		serde_derive-1.0.214 \
 		serde_ignored-0.1.10 \
 		serde_json-1.0.132 \
 		serde_spanned-0.6.8 \
@@ -375,7 +375,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		strum_macros-0.26.4 \
 		subtle-2.6.1 \
 		syn-1.0.109 \
-		syn-2.0.85 \
+		syn-2.0.86 \
 		sync_wrapper-1.0.1 \
 		sys-info-0.9.1 \
 		system-configuration-0.6.1 \
@@ -394,8 +394,8 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		test-case-macros-3.3.1 \
 		test-log-0.2.16 \
 		test-log-macros-0.2.16 \
-		thiserror-1.0.65 \
-		thiserror-impl-1.0.65 \
+		thiserror-1.0.66 \
+		thiserror-impl-1.0.66 \
 		thread_local-1.1.8 \
 		time-0.3.36 \
 		time-core-0.1.2 \
