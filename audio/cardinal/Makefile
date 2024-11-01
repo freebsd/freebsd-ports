@@ -7,7 +7,8 @@ MASTER_SITES=	https://github.com/DISTRHO/Cardinal/releases/download/${DISTVERSIO
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Plugin wrapper around VCV Rack
-WWW=		https://cardinal.kx.studio/
+WWW=		https://cardinal.kx.studio/ \
+		https://github.com/DISTRHO/Cardinal
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
