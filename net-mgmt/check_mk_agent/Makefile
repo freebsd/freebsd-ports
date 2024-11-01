@@ -1,6 +1,7 @@
 PORTNAME=	check_mk_agent
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.3.0p16
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	https://raw.githubusercontent.com/Checkmk/checkmk/${DISTVERSIONFULL}/agents/:agent \
 		https://raw.githubusercontent.com/Checkmk/checkmk/${DISTVERSIONFULL}/doc/agents/:doc \
@@ -22,7 +23,7 @@ RUN_DEPENDS=	bash:shells/bash \
 		statgrab:devel/libstatgrab \
 		wget:ftp/wget
 
-USES=		perl5 python:3.4+ shebangfix
+USES=		perl5 python:3.4+,run shebangfix
 USE_PERL5=	run
 
 SHEBANG_FILES=	${_CHECKMK_AGENT}
@@ -49,12 +50,14 @@ OPTIONS_DEFINE=	DOCS
 _CHECKMK_AGENT=		${PORTNAME}.freebsd
 _CHECKMK_LIBDIR=	${PREFIX}/lib/check_mk_agent
 _CHECKMK_CONFDIR=	${PREFIX}/etc/check_mk
+_CHECKMK_VARDIR=	/var/db/check_mk_agent
 
 post-patch:
 	@${REINPLACE_CMD} \
-		-e 's|%%CHECKMK_LIBDIR%%|${_CHECKMK_LIBDIR}|' \
-		-e 's|%%CHECKMK_CONFDIR%%|${_CHECKMK_CONFDIR}|' \
-		-e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
+		-e 's|/usr/local/lib/check_mk_agent|${_CHECKMK_LIBDIR}|' \
+		-e 's|/etc/check_mk|${_CHECKMK_CONFDIR}|' \
+		-e 's|/var/lib/check_mk_agent|${_CHECKMK_VARDIR}|' \
+		-e 's|/usr/local|${LOCALBASE}|g' \
 		${WRKSRC}/${_CHECKMK_AGENT}
 
 do-install:
