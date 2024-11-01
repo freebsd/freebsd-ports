@@ -1,4 +1,4 @@
-TIMESTAMP = 1730326129
+TIMESTAMP = 1730449762
 SHA256 (apexcharts@3.52.0/dist/apexcharts.min.js) = dacc69f7eb21440e4b331ce1831f9fa5e40f218d995a005db789a9e55d989fe1
 SIZE (apexcharts@3.52.0/dist/apexcharts.min.js) = 534248
 SHA256 (@tabler/core@1.0.0-beta20/dist/css/tabler.min.css) = 952de72b130c6622884491bb5205289ce1d8baf1e05b979c9048ef1cc6316fd4
@@ -779,5 +779,5 @@ SHA256 (rust/crates/zstd-safe-7.2.1.crate) = 54a3ab4db68cea366acc5c897c7b4d4d1b8
 SIZE (rust/crates/zstd-safe-7.2.1.crate) = 21122
 SHA256 (rust/crates/zstd-sys-2.0.13+zstd.1.5.6.crate) = 38ff0f21cfee8f97d94cef41359e0c89aa6113028ab0291aa8ca0038995a95aa
 SIZE (rust/crates/zstd-sys-2.0.13+zstd.1.5.6.crate) = 749090
-SHA256 (lovasoa-SQLPage-v0.30.0_GH0.tar.gz) = abc0e3d39d733d4f4c811346d243ff42bb139519f852f8d71dc9090d6d7f56b0
-SIZE (lovasoa-SQLPage-v0.30.0_GH0.tar.gz) = 29744766
+SHA256 (lovasoa-SQLPage-v0.30.1_GH0.tar.gz) = f91f3798614c27146979d6b1127a7a1f24707d63720665bd37aff66ad5e22b36
+SIZE (lovasoa-SQLPage-v0.30.1_GH0.tar.gz) = 30197437
