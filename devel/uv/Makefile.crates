@@ -2,12 +2,12 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		adler2-2.0.0 \
 		aho-corasick-1.1.3 \
 		anes-0.1.6 \
-		anstream-0.6.15 \
+		anstream-0.6.17 \
 		anstyle-1.0.8 \
 		anstyle-parse-0.2.5 \
 		anstyle-query-1.1.1 \
-		anstyle-wincon-3.0.4 \
-		anyhow-1.0.90 \
+		anstyle-wincon-3.0.6 \
+		anyhow-1.0.91 \
 		arrayref-0.3.9 \
 		arrayvec-0.7.6 \
 		assert-json-diff-2.0.2 \
@@ -136,7 +136,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		glob-0.3.1 \
 		globset-0.4.15 \
 		globwalk-0.9.1 \
-		goblin-0.8.2 \
+		goblin-0.9.2 \
 		h2-0.4.6 \
 		half-2.4.1 \
 		hashbrown-0.14.5 \
@@ -164,7 +164,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		indexmap-2.6.0 \
 		indicatif-0.17.8 \
 		indoc-2.0.5 \
-		insta-1.40.0 \
+		insta-1.41.0 \
 		instant-0.1.13 \
 		ipnet-2.10.1 \
 		is-terminal-0.4.13 \
@@ -185,7 +185,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		kurbo-0.8.3 \
 		kurbo-0.9.5 \
 		lazy_static-1.5.0 \
-		libc-0.2.159 \
+		libc-0.2.161 \
 		libmimalloc-sys-0.1.39 \
 		libredox-0.1.3 \
 		libz-ng-sys-1.1.16 \
@@ -259,7 +259,9 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		predicates-tree-1.0.11 \
 		pretty_assertions-1.4.1 \
 		priority-queue-2.1.1 \
-		proc-macro2-1.0.88 \
+		proc-macro2-1.0.89 \
+		procfs-0.16.0 \
+		procfs-core-0.16.0 \
 		ptr_meta-0.3.0 \
 		ptr_meta_derive-0.3.0 \
 		quinn-0.11.5 \
@@ -279,7 +281,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		redox_syscall-0.5.7 \
 		redox_users-0.4.6 \
 		reflink-copy-0.1.19 \
-		regex-1.11.0 \
+		regex-1.11.1 \
 		regex-automata-0.1.10 \
 		regex-automata-0.4.8 \
 		regex-syntax-0.6.29 \
@@ -300,7 +302,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		rust-netrc-0.1.2 \
 		rustc-demangle-0.1.24 \
 		rustc-hash-2.0.0 \
-		rustix-0.38.37 \
+		rustix-0.38.38 \
 		rustls-0.23.15 \
 		rustls-native-certs-0.8.0 \
 		rustls-pemfile-2.2.0 \
@@ -320,9 +322,9 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		security-framework-sys-2.12.0 \
 		self-replace-1.5.0 \
 		semver-1.0.23 \
-		serde-1.0.210 \
+		serde-1.0.213 \
 		serde-untagged-0.1.6 \
-		serde_derive-1.0.210 \
+		serde_derive-1.0.213 \
 		serde_derive_internals-0.29.1 \
 		serde_json-1.0.132 \
 		serde_spanned-0.6.8 \
@@ -354,7 +356,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		svgfilters-0.4.0 \
 		svgtypes-0.9.0 \
 		svgtypes-0.10.0 \
-		syn-2.0.82 \
+		syn-2.0.85 \
 		sync_wrapper-1.0.1 \
 		sys-info-0.9.1 \
 		tagu-0.1.6 \
@@ -369,10 +371,9 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		test-case-macros-3.3.1 \
 		test-log-0.2.16 \
 		test-log-macros-0.2.16 \
-		testing_logger-0.1.1 \
 		textwrap-0.16.1 \
-		thiserror-1.0.64 \
-		thiserror-impl-1.0.64 \
+		thiserror-1.0.65 \
+		thiserror-impl-1.0.65 \
 		thread_local-1.1.8 \
 		tikv-jemalloc-sys-0.6.0+5.3.0-1-ge13ca993e8ccb9ba9847cc330696e02839f328f7 \
 		tikv-jemallocator-0.6.0 \
@@ -381,7 +382,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		tinytemplate-1.2.1 \
 		tinyvec-1.8.0 \
 		tinyvec_macros-0.1.1 \
-		tokio-1.40.0 \
+		tokio-1.41.0 \
 		tokio-macros-2.4.0 \
 		tokio-rustls-0.26.0 \
 		tokio-socks-0.5.2 \
@@ -398,6 +399,8 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		tracing-log-0.2.0 \
 		tracing-serde-0.1.3 \
 		tracing-subscriber-0.3.18 \
+		tracing-test-0.2.5 \
+		tracing-test-macro-0.2.5 \
 		tracing-tree-0.4.0 \
 		try-lock-0.2.5 \
 		ttf-parser-0.18.1 \
@@ -456,9 +459,11 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		windows-interface-0.57.0 \
 		windows-interface-0.58.0 \
 		windows-registry-0.2.0 \
+		windows-registry-0.3.0 \
 		windows-result-0.1.2 \
 		windows-result-0.2.0 \
 		windows-strings-0.1.0 \
+		windows-strings-0.2.0 \
 		windows-sys-0.48.0 \
 		windows-sys-0.52.0 \
 		windows-sys-0.59.0 \
@@ -497,5 +502,5 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		zstd-sys-2.0.13+zstd.1.5.6 \
 		reqwest-middleware,reqwest-retry@git+https://github.com/TrueLayer/reqwest-middleware?rev=d95ec5a99fcc9a4339e1850d40378bbfe55ab121\#d95ec5a99fcc9a4339e1850d40378bbfe55ab121 \
 		tl@git+https://github.com/charliermarsh/tl.git?rev=6e25b2ee2513d75385101a8ff9f591ef51f314ec\#6e25b2ee2513d75385101a8ff9f591ef51f314ec \
-		async_zip@git+https://github.com/charliermarsh/rs-async-zip?rev=011b24604fa7bc223daaad7712c0694bac8f0a87\#011b24604fa7bc223daaad7712c0694bac8f0a87 \
-		pubgrub@git+https://github.com/astral-sh/pubgrub?rev=7243f4faf8e54837aa8a401a18406e7173de4ad5\#7243f4faf8e54837aa8a401a18406e7173de4ad5
+		pubgrub,version-ranges@git+https://github.com/astral-sh/pubgrub?rev=95e1390399cdddee986b658be19587eb1fdb2d79\#95e1390399cdddee986b658be19587eb1fdb2d79 \
+		async_zip@git+https://github.com/charliermarsh/rs-async-zip?rev=011b24604fa7bc223daaad7712c0694bac8f0a87\#011b24604fa7bc223daaad7712c0694bac8f0a87
