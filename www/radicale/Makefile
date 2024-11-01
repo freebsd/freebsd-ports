@@ -1,5 +1,5 @@
 PORTNAME=	radicale
-PORTVERSION=	3.2.3
+PORTVERSION=	3.3.0
 CATEGORIES=	www python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,7 +11,8 @@ WWW=		https://radicale.org/
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING.md
 
-BUILD_DEPENDS=	${PY_SETUPTOOLS}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR} \
+		${PY_SETUPTOOLS}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}bcrypt>=0:security/py-bcrypt@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}passlib>=0:security/py-passlib@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}vobject>=0.9.6:deskutils/py-vobject@${PY_FLAVOR} \
@@ -20,7 +21,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}bcrypt>=0:security/py-bcrypt@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}defusedxml>0:devel/py-defusedxml@${PY_FLAVOR}
 
 USES=		cpe python
-USE_PYTHON=	autoplist distutils
+USE_PYTHON=	autoplist pep517
 USERS=		radicale
 GROUPS=		radicale
 USE_RC_SUBR=	radicale
