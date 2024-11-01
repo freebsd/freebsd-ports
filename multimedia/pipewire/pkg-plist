@@ -304,7 +304,6 @@ lib/spa-0.2/videotestsrc/libspa-videotestsrc.so
 %%VULKAN%%lib/spa-0.2/vulkan/libspa-vulkan.so
 libdata/pkgconfig/libpipewire-0.3.pc
 libdata/pkgconfig/libspa-0.2.pc
-share/glib-2.0/schemas/org.freedesktop.pulseaudio.gschema.xml
 share/locale/af/LC_MESSAGES/pipewire.mo
 share/locale/as/LC_MESSAGES/pipewire.mo
 share/locale/be/LC_MESSAGES/pipewire.mo
