@@ -1,8 +1,11 @@
 PORTNAME=	httpdirfs
-DISTVERSION=	1.2.3
-PORTREVISION=	1
+DISTVERSION=	1.2.6
 CATEGORIES=	sysutils
 PKGNAMEPREFIX=	fusefs-
+
+PATCH_SITES=	https://github.com/fangfufu/httpdirfs/commit/
+PATCHFILES=	43bdf7e71fde43084519e86051533a6b20c31474.patch:-p1 \
+		08700415d7b61d9f611a858481b26858fe92eb7a.patch:-p1
 
 MAINTAINER=	0mp@FreeBSD.org
 COMMENT=	FUSE filesystem to mount HTTP directory listings, with a permanent cache
@@ -18,21 +21,15 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libgumbo.so:devel/gumbo \
 		libuuid.so:misc/e2fsprogs-libuuid
 
-USES=		fuse gmake localbase pkgconfig ssl
-USE_CSTD=	c99
+USES=		fuse:3 meson pkgconfig ssl
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	fangfufu
 
-MAKE_ENV=	prefix=${PREFIX}
-
-PLIST_FILES=	bin/httpdirfs \
-		share/man/man1/httpdirfs.1.gz
+PLIST_FILES=	bin/httpdirfs
 PORTDOCS=	README.md
 
 OPTIONS_DEFINE=	DOCS
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/httpdirfs
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
