@@ -9,8 +9,8 @@ LICENSE=		GPLv2
 LICENSE_FILE=		${WRKSRC}/COPYING
 
 BUILD_DEPENDS=		bash:shells/bash \
-			${LOCALBASE}/bin/getopt:devel/util-linux \
-LIB_DEPENDS=		libgnutls.so:security/gnutls
+			${LOCALBASE}/bin/getopt:devel/util-linux
+LIB_DEPENDS=		libgnutls.so:security/gnutls \
 			libltdl.so:devel/libltdl \
 			libqb.so:devel/libqb \
 			libuuid.so:misc/e2fsprogs-libuuid \
