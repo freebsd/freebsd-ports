@@ -88,7 +88,7 @@ GROUPS=		mongodb
 
 OPTIONS_DEFINE=		LTO NOAVX SASL
 OPTIONS_DEFINE_aarch64=	ARMV80A
-OPTIONS_DEFAULT=	NOAVX SASL
+OPTIONS_DEFAULT=	SASL
 
 # MongoDB on non-LSE ARM cpu like Raspberry Pi can work but is unsupported upstream.
 # Can give corruption on high concurrency.
