@@ -14,8 +14,6 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}six>1.16.0:devel/py-six@${PY_FLAVOR}
 USES=		python
 USE_GITHUB=	yes
 GH_ACCOUNT=	cocagne
-GH_PROJECT=	${PORTNAME}
-GH_TAG=		${DISTVERSION}
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
