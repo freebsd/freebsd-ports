@@ -31,7 +31,7 @@ BUILD_DEPENDS+=	astk-serveur>0:cad/astk-serveur	\
 		${SHELL_INSTALL_ASTER}:shells/${SHIADEP}	\
 		gnproc:sysutils/coreutils			\
 		bash:shells/bash				\
-		getopt>0:misc/getopt				\
+		${LOCALBASE}/bin/getopt:devel/util-linux	\
 		xterm:x11/xterm					\
 		${PYNUMPY}	\
 		${PYTHON_PKGNAMEPREFIX}sympy>0:math/py-sympy@${PY_FLAVOR}

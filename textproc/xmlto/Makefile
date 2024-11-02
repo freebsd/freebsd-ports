@@ -1,6 +1,6 @@
 PORTNAME=	xmlto
 PORTVERSION=	0.0.28
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc
 MASTER_SITES=	https://releases.pagure.org/xmlto/:xmlto \
 		LOCAL/mandree/:xmlto \
@@ -18,7 +18,7 @@ WWW=		https://pagure.io/xmlto/
 LICENSE=	GPLv2
 
 BUILD_DEPENDS=	${BASH_CMD}:shells/bash \
-		${GETOPT_CMD}:misc/getopt \
+		${GETOPT_CMD}:devel/util-linux \
 		xmllint:textproc/libxml2 \
 		xsltproc:textproc/libxslt \
 		docbook-xsl>0:textproc/docbook-xsl \
