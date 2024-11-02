@@ -1,5 +1,5 @@
-TIMESTAMP = 1720060414
-SHA256 (go/textproc_yamlfmt/yamlfmt-v0.13.0/v0.13.0.mod) = 15a3dd0a9db17b0867ba915300336aa279f5db9752ae32bcfe627f20c72ee8e0
-SIZE (go/textproc_yamlfmt/yamlfmt-v0.13.0/v0.13.0.mod) = 273
-SHA256 (go/textproc_yamlfmt/yamlfmt-v0.13.0/v0.13.0.zip) = 14878af0c1527918022210a8a6f0ed1d530f509960b937e755ad5e4855510339
-SIZE (go/textproc_yamlfmt/yamlfmt-v0.13.0/v0.13.0.zip) = 92799
+TIMESTAMP = 1730549873
+SHA256 (go/textproc_yamlfmt/yamlfmt-v0.14.0/v0.14.0.mod) = e14a5654f736b4e04e5c5bd16027f6e870bf882c6688d203ef77098964ef7e6d
+SIZE (go/textproc_yamlfmt/yamlfmt-v0.14.0/v0.14.0.mod) = 330
+SHA256 (go/textproc_yamlfmt/yamlfmt-v0.14.0/v0.14.0.zip) = 74a706bb77a0bcc3f838516e5b91fda0a46deaf648127228459b73d32e54cd84
+SIZE (go/textproc_yamlfmt/yamlfmt-v0.14.0/v0.14.0.zip) = 100370
