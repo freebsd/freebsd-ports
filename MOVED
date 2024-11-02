@@ -3577,3 +3577,4 @@ misc/uk-phone||2024-10-31|Has expired: Obsolete, 20+ year old data
 textproc/ssddiff||2024-10-31|Has expired: Abandonware, unfetchable and upstream is gone
 sysutils/pydf||2024-11-02|Has expired: Inactive upstream. Does not properly work on FreeBSD
 ports-mgmt/freebsd-bugzilla-cli||2024-11-02|Has expired: Broken. Upstream unavailable
+misc/getopt||2024-11-02|Has expired: Use getopt from devel/util-linux instead
