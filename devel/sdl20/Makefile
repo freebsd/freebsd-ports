@@ -1,5 +1,5 @@
 PORTNAME=	sdl2
-DISTVERSION=	2.30.8
+DISTVERSION=	2.30.9
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/libsdl-org/SDL/releases/download/release-${DISTVERSION}/ \
 		https://www.libsdl.org/release/
@@ -21,6 +21,8 @@ CMAKE_OFF=	SDL_ARTS \
 		SDL_RPATH
 CMAKE_ON=	CMAKE_DISABLE_FIND_PACKAGE_Git
 USE_LDCONFIG=	yes
+
+PLIST_SUB=	LIBVERSION=0.${DISTVERSION:R:E}00.${DISTVERSION:E}
 
 PORTSCOUT=	limitw:1,even
 
