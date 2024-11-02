@@ -1,6 +1,7 @@
 PORTNAME=	mongodb
 DISTVERSIONPREFIX=	r
 DISTVERSION=	8.0.1
+PORTREVISION=	1
 CATEGORIES=	databases net
 PKGNAMESUFFIX=	${DISTVERSION:R:S/.//}
 
@@ -105,6 +106,7 @@ ARMV80A_EXTRA_PATCHES=	${FILESDIR}/extrapatch-SConstruct
 LTO_MAKE_ARGS=	--lto=on
 
 NOAVX_MAKE_ARGS=	--experimental-optimization="-sandybridge"
+NOAVX_EXTRA_PATCHES=	${FILESDIR}/extrapatch-src_third__party_mozjs_SConscript
 
 SASL_LIB_DEPENDS=	libsasl2.so:security/cyrus-sasl2
 SASL_MAKE_ARGS=		--use-sasl-client
