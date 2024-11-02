@@ -1,6 +1,7 @@
 PORTNAME=	silicon
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.5.3
+PORTREVISION=	1
 CATEGORIES=	misc
 PKGNAMESUFFIX=	-code-visualizer
 
@@ -16,7 +17,7 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libharfbuzz.so:print/harfbuzz \
 		libonig.so:devel/oniguruma
 
-USES=		cargo python xorg
+USES=		cargo python:build xorg
 USE_XORG=	xcb
 
 USE_GITHUB=	yes
