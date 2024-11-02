@@ -1,6 +1,7 @@
 PORTNAME=	como
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.3.0
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
@@ -38,7 +39,6 @@ USE_QT=		base declarative tools
 USE_XORG=	x11 xcb
 GH_ACCOUNT=	winft
 SHEBANG_FILES=	plugins/effects/*.py
-CMAKE_OFF=	BUILD_EXAMPLES # https://github.com/winft/como/issues/29
 PLIST_SUB=	VERSION=${PORTVERSION}
 LDFLAGS+=	-Wl,--as-needed # fontconfig/freetype, GL, ICE/SM/Xext/Xi, pixman
 
