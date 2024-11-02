@@ -251,6 +251,7 @@ cbsd/etc/defaults/vm-linux-Android-x86.conf
 cbsd/etc/defaults/vm-linux-ArchLinux-x86-2024.conf
 cbsd/etc/defaults/vm-linux-Batocera.conf
 cbsd/etc/defaults/vm-linux-BlackBox-8-x86_64.conf
+cbsd/etc/defaults/vm-linux-BlackBox-9-x86_64.conf
 cbsd/etc/defaults/vm-linux-BlissOS-x86.conf
 cbsd/etc/defaults/vm-linux-CentOS-7-x86_64.conf
 cbsd/etc/defaults/vm-linux-CentOS-stream-9-x86_64.conf
@@ -291,10 +292,9 @@ cbsd/etc/defaults/vm-linux-cloud-Debian-x86-12.conf
 cbsd/etc/defaults/vm-linux-cloud-Debian-x86-9.conf
 cbsd/etc/defaults/vm-linux-cloud-Devuan-x86-5.conf
 cbsd/etc/defaults/vm-linux-cloud-Euro-9-x86_64.conf
-cbsd/etc/defaults/vm-linux-cloud-Fedora-37-x86_64.conf
-cbsd/etc/defaults/vm-linux-cloud-Fedora-38-x86_64.conf
 cbsd/etc/defaults/vm-linux-cloud-Fedora-39-x86_64.conf
 cbsd/etc/defaults/vm-linux-cloud-Fedora-40-x86_64.conf
+cbsd/etc/defaults/vm-linux-cloud-Fedora-41-x86_64.conf
 cbsd/etc/defaults/vm-linux-cloud-FreePBX-16-x86_64.conf
 cbsd/etc/defaults/vm-linux-cloud-HomeAssistantOS-2024.conf
 cbsd/etc/defaults/vm-linux-cloud-Kali-2022-amd64.conf
@@ -313,8 +313,8 @@ cbsd/etc/defaults/vm-linux-cloud-ubuntuserver-amd64-20.conf
 cbsd/etc/defaults/vm-linux-cloud-ubuntuserver-amd64-22.04.conf
 cbsd/etc/defaults/vm-linux-cloud-ubuntuserver-amd64-23.04.conf
 cbsd/etc/defaults/vm-linux-cloud-ubuntuserver-amd64-24.04.conf
-cbsd/etc/defaults/vm-linux-fedora-server-39-x86_64.conf
 cbsd/etc/defaults/vm-linux-fedora-server-40-x86_64.conf
+cbsd/etc/defaults/vm-linux-fedora-server-41-x86_64.conf
 cbsd/etc/defaults/vm-linux-fedora-silverblue-40-x86_64.conf
 cbsd/etc/defaults/vm-linux-kubuntu-desktop-amd64-22.conf
 cbsd/etc/defaults/vm-linux-kubuntu-desktop-amd64-23.conf
