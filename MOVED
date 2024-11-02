@@ -3575,3 +3575,4 @@ www/moodle42||2024-10-31|Has expired: Upstream EOL
 misc/uk-postcodes||2024-10-31|Has expired: Obsolete, 20+ year old data
 misc/uk-phone||2024-10-31|Has expired: Obsolete, 20+ year old data
 textproc/ssddiff||2024-10-31|Has expired: Abandonware, unfetchable and upstream is gone
+sysutils/pydf||2024-11-02|Has expired: Inactive upstream. Does not properly work on FreeBSD
