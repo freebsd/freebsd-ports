@@ -1,0 +1,20 @@
+#!/bin/sh
+
+# PROVIDE: teddycloudd
+# REQUIRE: DAEMON
+# BEFORE:  LOGIN
+# KEYWORD: shutdown
+
+. /etc/rc.subr
+
+name=teddycloudd
+rcvar=teddycloudd_enable
+
+pidfile="/var/run/${name}.pid"
+
+procname="%%PREFIX%%/bin/teddycloud"
+command="/usr/sbin/daemon"
+command_args="-p ${pidfile} -t ${name} -o /var/log/teddycloud.log ${procname}"
+
+load_rc_config $name
+run_rc_command "$1"

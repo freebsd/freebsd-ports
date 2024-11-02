@@ -1,0 +1,19 @@
+--- Makefile.orig	2024-01-22 13:39:05 UTC
++++ Makefile
+@@ -40,11 +40,11 @@ else
+ build_rawDateTime:="${shell date "+%Y-%m-%d %H:%M:%S %z"}"
+ endif
+ 
+-build_gitDirty:=${shell git diff --quiet && echo '0' || echo '1'}
+-build_gitDateTime:="${shell git log -1 --format=%ai}"
+-build_gitShortSha:=${shell git rev-parse --short HEAD}
+-build_gitSha:=${shell git rev-parse HEAD}
+-build_gitTag:=${shell git name-rev --tags --name-only $(build_gitSha)}
++build_gitDirty:=0
++build_gitDateTime:="2024-01-22 13:39:05 +0000"
++build_gitShortSha:=8602da9
++build_gitSha:=8602da92d1080e67c678f476d4cf4de008aa857e
++build_gitTag:=tc_v0.3.5
+ build_platform:=$(PLATFORM)
+ build_os:="$(OS)"
+ 

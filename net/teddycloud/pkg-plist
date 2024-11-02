@@ -1,0 +1,30 @@
+bin/teddycloud
+%%ETCDIR%%/tonies.custom.json
+%%ETCDIR%%/tonies.json
+%%ETCDIR%%/tonieboxes.json
+%%DATADIR%%/data/www/404.html
+%%DATADIR%%/data/www/encode_test.html
+%%DATADIR%%/data/www/favicon.ico
+%%DATADIR%%/data/www/img_custom.png
+%%DATADIR%%/data/www/img_empty.png
+%%DATADIR%%/data/www/img_unknown.png
+%%DATADIR%%/data/www/index.html
+%%DATADIR%%/data/www/library/esptool.js
+%%DATADIR%%/data/www/web/asset-manifest.json
+%%DATADIR%%/data/www/web/favicon.ico
+%%DATADIR%%/data/www/web/index.html
+%%DATADIR%%/data/www/web/manifest.json
+%%DATADIR%%/data/www/web/robots.txt
+%%DATADIR%%/data/www/web/static/css/main.e6c13ad2.css
+%%DATADIR%%/data/www/web/static/css/main.e6c13ad2.css.map
+%%DATADIR%%/data/www/web/static/js/main.3c1d6764.js
+%%DATADIR%%/data/www/web/static/js/main.3c1d6764.js.LICENSE.txt
+%%DATADIR%%/data/www/web/static/js/main.3c1d6764.js.map
+%%DATADIR%%/data/www/web/static/media/getFetch.40f37ddea2378391108f.cjs
+%%DATADIR%%/data/www/web/static/media/logo.2f09160138082fd1c6f8.png
+%%DATADIR%%/data/www/web/translations/de.json
+%%DATADIR%%/data/www/web/translations/en.json
+@dir %%DATADIR%%/certs/client
+@dir %%DATADIR%%/certs/server
+@dir %%DATADIR%%/data/content/default
+@dir %%DATADIR%%/data/library
