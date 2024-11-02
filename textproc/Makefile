@@ -400,6 +400,7 @@
     SUBDIR += libfyaml
     SUBDIR += libgepub
     SUBDIR += libixion
+    SUBDIR += libjcat
     SUBDIR += libkmfl
     SUBDIR += libkolabxml
     SUBDIR += libkomparediff2
