@@ -1512,6 +1512,7 @@
     SUBDIR += py-petl
     SUBDIR += py-pikepdf
     SUBDIR += py-precis_i18n
+    SUBDIR += py-pscript
     SUBDIR += py-pss
     SUBDIR += py-pyPEG2
     SUBDIR += py-pyahocorasick
