@@ -376,7 +376,7 @@ KERBEROS_RUN_DEPENDS=		rubygem-timfel-krb5-auth>=0.8<1:security/rubygem-timfel-k
 KERBEROS_EXTRA_PATCHES_OFF=	${FILESDIR}/extra-patch-Gemfile-kerberos-off
 
 post-patch:
-	${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|" -e "s|%%WWWDIR%%|${WWWDIR}|" ${WRKSRC}/config/gitlab.yml.example \
+	${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|" -e "s|%%LOCALBASE%%|${LOCALBASE}|" -e "s|%%WWWDIR%%|${WWWDIR}|" ${WRKSRC}/config/gitlab.yml.example \
 		${WRKSRC}/config/puma.rb.example \
 		${WRKSRC}/lib/support/nginx/gitlab \
 		${WRKSRC}/lib/support/nginx/gitlab-ssl
