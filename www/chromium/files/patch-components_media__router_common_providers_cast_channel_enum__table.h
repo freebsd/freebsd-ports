@@ -1,16 +1,17 @@
---- components/media_router/common/providers/cast/channel/enum_table.h.orig	2024-10-22 08:31:56 UTC
+diff --git components/media_router/common/providers/cast/channel/enum_table.h components/media_router/common/providers/cast/channel/enum_table.h	2024-11-02 08:11:27 UTC
+index 18fd272c6a..ad9ec2c243 100644
+--- components/media_router/common/providers/cast/channel/enum_table.h
 +++ components/media_router/common/providers/cast/channel/enum_table.h
 @@ -368,7 +368,12 @@ class EnumTable {
  
   private:
  #ifdef ARCH_CPU_64_BITS
--  alignas(std::hardware_destructive_interference_size)
 +#ifdef __cpp_lib_hardware_interference_size
-+  using std::hardware_destructive_interference_size;
+   alignas(std::hardware_destructive_interference_size)
 +#else
 +  static constexpr std::size_t hardware_destructive_interference_size = 64;
-+#endif
 +  alignas(hardware_destructive_interference_size)
++#endif
  #endif
        std::initializer_list<Entry> data_;
    bool is_sorted_;
