@@ -1,0 +1,13 @@
+--- pyproject.toml.orig	2024-10-26 18:30:53 UTC
++++ pyproject.toml
+@@ -16,8 +16,8 @@ classifiers = [
+ ]
+ 
+ [tool.poetry.dependencies]
+-python = "^2.7 || ^3.6"
+-pscript = "^0.7.0"
++python = "^3.11"
++pscript = "^0.7.7"
+ 
+ [tool.poetry.dev-dependencies]
+ pytest = "^3.0"
