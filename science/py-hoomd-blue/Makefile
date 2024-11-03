@@ -12,8 +12,6 @@ WWW=		https://glotzerlab.engin.umich.edu/hoomd-blue/ \
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN_FreeBSD_15=	compilation fails with clang-19, see https://github.com/glotzerlab/hoomd-blue/issues/1924
-
 BUILD_DEPENDS=	pybind11>0:devel/pybind11
 
 USES=		cmake:testing compiler:c++17-lang eigen:3 localbase:ldflags python shebangfix # see https://github.com/glotzerlab/hoomd-blue/issues/1204
