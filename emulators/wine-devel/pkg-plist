@@ -1559,6 +1559,7 @@ lib/wine/%%WINEARCH%%-unix/libwindowscodecs.a
 lib/wine/%%WINEARCH%%-unix/libwindowscodecsext.a
 lib/wine/%%WINEARCH%%-unix/libwinecrt0.a
 lib/wine/%%WINEARCH%%-unix/libwined3d.a
+lib/wine/%%WINEARCH%%-unix/libwinedmo.a
 %%GSTREAMER%%lib/wine/%%WINEARCH%%-unix/libwinegstreamer.a
 lib/wine/%%WINEARCH%%-unix/libwinevulkan.a
 lib/wine/%%WINEARCH%%-unix/libwing32.a
@@ -1597,6 +1598,7 @@ lib/wine/%%WINEARCH%%-unix/secur32.so
 lib/wine/%%WINEARCH%%-unix/win32u.so
 %%ALSA%%lib/wine/%%WINEARCH%%-unix/winealsa.so
 lib/wine/%%WINEARCH%%-unix/winebus.so
+lib/wine/%%WINEARCH%%-unix/winedmo.so
 %%GSTREAMER%%lib/wine/%%WINEARCH%%-unix/winegstreamer.so
 %%OSS%%lib/wine/%%WINEARCH%%-unix/wineoss.so
 lib/wine/%%WINEARCH%%-unix/wineps.so
@@ -1751,6 +1753,7 @@ lib/wine/%%WINEARCH%%-windows/dcomp.dll
 %%WINE32%%lib/wine/%%WINEARCH%%-windows/ddeml.dll16
 lib/wine/%%WINEARCH%%-windows/ddraw.dll
 lib/wine/%%WINEARCH%%-windows/ddrawex.dll
+lib/wine/%%WINEARCH%%-windows/desk.cpl
 lib/wine/%%WINEARCH%%-windows/devenum.dll
 lib/wine/%%WINEARCH%%-windows/dhcpcsvc.dll
 lib/wine/%%WINEARCH%%-windows/dhcpcsvc6.dll
@@ -2099,6 +2102,7 @@ lib/wine/%%WINEARCH%%-windows/libwindowscodecs.a
 lib/wine/%%WINEARCH%%-windows/libwindowscodecsext.a
 lib/wine/%%WINEARCH%%-windows/libwinecrt0.a
 lib/wine/%%WINEARCH%%-windows/libwined3d.a
+lib/wine/%%WINEARCH%%-windows/libwinedmo.a
 lib/wine/%%WINEARCH%%-windows/libwinevulkan.a
 lib/wine/%%WINEARCH%%-windows/libwing32.a
 lib/wine/%%WINEARCH%%-windows/libwinhttp.a
@@ -2521,6 +2525,7 @@ lib/wine/%%WINEARCH%%-windows/wineconsole.exe
 lib/wine/%%WINEARCH%%-windows/wined3d.dll
 lib/wine/%%WINEARCH%%-windows/winedbg.exe
 lib/wine/%%WINEARCH%%-windows/winedevice.exe
+lib/wine/%%WINEARCH%%-windows/winedmo.dll
 lib/wine/%%WINEARCH%%-windows/winefile.exe
 %%GSTREAMER%%lib/wine/%%WINEARCH%%-windows/winegstreamer.dll
 lib/wine/%%WINEARCH%%-windows/winehid.sys
@@ -2562,7 +2567,6 @@ lib/wine/%%WINEARCH%%-windows/wlanui.dll
 lib/wine/%%WINEARCH%%-windows/wldap32.dll
 lib/wine/%%WINEARCH%%-windows/wldp.dll
 lib/wine/%%WINEARCH%%-windows/wmadmod.dll
-lib/wine/%%WINEARCH%%-windows/wmvdecod.dll
 lib/wine/%%WINEARCH%%-windows/wmasf.dll
 lib/wine/%%WINEARCH%%-windows/wmi.dll
 lib/wine/%%WINEARCH%%-windows/wmic.exe
@@ -2571,6 +2575,7 @@ lib/wine/%%WINEARCH%%-windows/wmp.dll
 lib/wine/%%WINEARCH%%-windows/wmphoto.dll
 lib/wine/%%WINEARCH%%-windows/wmplayer.exe
 lib/wine/%%WINEARCH%%-windows/wmvcore.dll
+lib/wine/%%WINEARCH%%-windows/wmvdecod.dll
 lib/wine/%%WINEARCH%%-windows/wnaspi32.dll
 lib/wine/%%WINEARCH%%-windows/wofutil.dll
 lib/wine/%%WINEARCH%%-windows/wordpad.exe
