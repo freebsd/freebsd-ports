@@ -5,7 +5,7 @@ CATEGORIES=	biology
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Fast Whole-Genome Similarity (ANI) Estimation
-WWW=		https://github.com/shenwei356/unikmer/
+WWW=		https://github.com/ParBLiSS/FastANI
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -13,6 +13,10 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libgsl.so:math/gsl
 
 USES=		cmake:testing
+
+.if !exists(/usr/include/omp.h)
+BROKEN=		build w/out OpenMP support still attempts to use omp.h, see https://github.com/ParBLiSS/FastANI/issues/139
+.endif
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	ParBLiSS
