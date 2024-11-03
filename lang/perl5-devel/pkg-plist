@@ -195,6 +195,7 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%PRIV_LIB%%/ExtUtils/ParseXS/Constants.pm
 %%PRIV_LIB%%/ExtUtils/ParseXS/CountLines.pm
 %%PRIV_LIB%%/ExtUtils/ParseXS/Eval.pm
+%%PRIV_LIB%%/ExtUtils/ParseXS/Node.pm
 %%PRIV_LIB%%/ExtUtils/ParseXS/Utilities.pm
 %%PRIV_LIB%%/ExtUtils/Typemaps.pm
 %%PRIV_LIB%%/ExtUtils/Typemaps/Cmd.pm
@@ -967,6 +968,7 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%ARCH_LIB%%/PerlIO/mmap.pm
 %%ARCH_LIB%%/PerlIO/via.pm
 %%ARCH_LIB%%/SDBM_File.pm
+%%ARCH_LIB%%/Scalar/List/Utils.pm
 %%ARCH_LIB%%/Scalar/Util.pm
 %%ARCH_LIB%%/Socket.pm
 %%ARCH_LIB%%/Storable.pm
@@ -1123,6 +1125,7 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%MAN1%%/perl5412delta.1.gz
 %%MAN1%%/perl5413delta.1.gz
 %%MAN1%%/perl5414delta.1.gz
+%%MAN1%%/perl5415delta.1.gz
 %%MAN1%%/perl561delta.1.gz
 %%MAN1%%/perl56delta.1.gz
 %%MAN1%%/perl581delta.1.gz
@@ -1450,6 +1453,7 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%MAN3%%/ExtUtils::ParseXS.3.gz
 %%MAN3%%/ExtUtils::ParseXS::Constants.3.gz
 %%MAN3%%/ExtUtils::ParseXS::Eval.3.gz
+%%MAN3%%/ExtUtils::ParseXS::Node.3.gz
 %%MAN3%%/ExtUtils::ParseXS::Utilities.3.gz
 %%MAN3%%/ExtUtils::Typemaps.3.gz
 %%MAN3%%/ExtUtils::Typemaps::Cmd.3.gz
@@ -1644,6 +1648,7 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%MAN3%%/Pod::Usage.3.gz
 %%MAN3%%/SDBM_File.3.gz
 %%MAN3%%/Safe.3.gz
+%%MAN3%%/Scalar::List::Utils.3.gz
 %%MAN3%%/Scalar::Util.3.gz
 %%MAN3%%/Search::Dict.3.gz
 %%MAN3%%/SelectSaver.3.gz
@@ -2068,6 +2073,7 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%PRIV_LIB%%/pod/perl5412delta.pod
 %%PRIV_LIB%%/pod/perl5413delta.pod
 %%PRIV_LIB%%/pod/perl5414delta.pod
+%%PRIV_LIB%%/pod/perl5415delta.pod
 %%PRIV_LIB%%/pod/perl561delta.pod
 %%PRIV_LIB%%/pod/perl56delta.pod
 %%PRIV_LIB%%/pod/perl581delta.pod
