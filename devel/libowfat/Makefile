@@ -1,5 +1,5 @@
 PORTNAME=	libowfat
-PORTVERSION=	0.33
+PORTVERSION=	0.34
 CATEGORIES=	devel
 MASTER_SITES=	https://www.fefe.de/libowfat/
 
