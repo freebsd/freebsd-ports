@@ -1140,6 +1140,7 @@
     SUBDIR += rubiks
     SUBDIR += rubygem-algebra
     SUBDIR += rubygem-bigdecimal
+    SUBDIR += rubygem-cmath
     SUBDIR += rubygem-enumerable-statistics
     SUBDIR += rubygem-expression_parser
     SUBDIR += rubygem-fftw3
