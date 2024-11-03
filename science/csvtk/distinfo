@@ -1,7 +1,7 @@
-TIMESTAMP = 1717582464
-SHA256 (go/science_csvtk/csvtk-v0.30.0/v0.30.0.mod) = d7fb623448b5ab1389c71f70ef058d7cbda180a220ad5b6ab0a675c8f7a1f281
-SIZE (go/science_csvtk/csvtk-v0.30.0/v0.30.0.mod) = 2653
-SHA256 (go/science_csvtk/csvtk-v0.30.0/v0.30.0.zip) = 662a1b7119f12381bb2cda2c3ee6ad2c36b8d06b3a666a61f0ac6aff8e80930d
-SIZE (go/science_csvtk/csvtk-v0.30.0/v0.30.0.zip) = 2599418
-SHA256 (go/science_csvtk/csvtk-v0.30.0/golang-sys-v0.6.0_GH0.tar.gz) = b4f6d17c7a128f76169964b437cb66b3f2dbf9a33361928ec19dfecf7b03fc54
-SIZE (go/science_csvtk/csvtk-v0.30.0/golang-sys-v0.6.0_GH0.tar.gz) = 1434234
+TIMESTAMP = 1730636279
+SHA256 (go/science_csvtk/csvtk-v0.31.0/v0.31.0.mod) = 75e19f271f01be7c31eecbfa77f335de74dccd346ad3e55c545ca2c9a1b86c3a
+SIZE (go/science_csvtk/csvtk-v0.31.0/v0.31.0.mod) = 2688
+SHA256 (go/science_csvtk/csvtk-v0.31.0/v0.31.0.zip) = a2b4ed2cdbfac04270a3b0a1521f66fe5f66ca90e14411cc2719514d229f974c
+SIZE (go/science_csvtk/csvtk-v0.31.0/v0.31.0.zip) = 2615552
+SHA256 (go/science_csvtk/csvtk-v0.31.0/golang-sys-v0.6.0_GH0.tar.gz) = b4f6d17c7a128f76169964b437cb66b3f2dbf9a33361928ec19dfecf7b03fc54
+SIZE (go/science_csvtk/csvtk-v0.31.0/golang-sys-v0.6.0_GH0.tar.gz) = 1434234
