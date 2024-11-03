@@ -1,5 +1,4 @@
 bin/pdl
-bin/pdl2
 bin/pdldoc
 bin/perldl
 bin/pptemplate
@@ -38,6 +37,7 @@ bin/pptemplate
 %%SITE_ARCH%%/PDL/Demos/Cartography_demo.pm
 %%SITE_ARCH%%/PDL/Demos/Func_demo.pm
 %%SITE_ARCH%%/PDL/Demos/General.pm
+%%SITE_ARCH%%/PDL/Demos/Simplex.pm
 %%SITE_ARCH%%/PDL/Demos/Sound.pm
 %%SITE_ARCH%%/PDL/Demos/Transform_demo.pm
 %%SITE_ARCH%%/PDL/Demos/m51.fits
@@ -58,7 +58,6 @@ bin/pptemplate
 %%SITE_ARCH%%/PDL/Func.pm
 %%SITE_ARCH%%/PDL/Gaussian.pm
 %%SITE_ARCH%%/PDL/Graphics.pod
-%%SITE_ARCH%%/PDL/Graphics/IIS.pm
 %%SITE_ARCH%%/PDL/Graphics/Limits.pm
 %%SITE_ARCH%%/PDL/Graphics/State.pm
 %%SITE_ARCH%%/PDL/Graphics2D.pm
@@ -89,7 +88,6 @@ bin/pptemplate
 %%SITE_ARCH%%/PDL/Math.pm
 %%SITE_ARCH%%/PDL/Matrix.pm
 %%SITE_ARCH%%/PDL/MatrixOps.pm
-%%SITE_ARCH%%/PDL/Minuit.pm
 %%SITE_ARCH%%/PDL/Modules.pod
 %%SITE_ARCH%%/PDL/NiceSlice.pm
 %%SITE_ARCH%%/PDL/NiceSlice/FilterSimple.pm
@@ -108,13 +106,9 @@ bin/pptemplate
 %%SITE_ARCH%%/PDL/PP/PDLCode.pm
 %%SITE_ARCH%%/PDL/PP/PdlParObj.pm
 %%SITE_ARCH%%/PDL/PP/Signature.pm
+%%SITE_ARCH%%/PDL/Parallel/threads.pm
+%%SITE_ARCH%%/PDL/Parallel/threads/SIMD.pm
 %%SITE_ARCH%%/PDL/ParallelCPU.pod
-%%SITE_ARCH%%/PDL/Perldl2/Plugin/CleanErrors.pm
-%%SITE_ARCH%%/PDL/Perldl2/Plugin/NiceSlice.pm
-%%SITE_ARCH%%/PDL/Perldl2/Plugin/PDLCommands.pm
-%%SITE_ARCH%%/PDL/Perldl2/Plugin/PrintControl.pm
-%%SITE_ARCH%%/PDL/Perldl2/Profile/Perldl2.pm
-%%SITE_ARCH%%/PDL/Perldl2/Script.pm
 %%SITE_ARCH%%/PDL/Philosophy.pod
 %%SITE_ARCH%%/PDL/Primitive.pm
 %%SITE_ARCH%%/PDL/QuickStart.pod
@@ -133,8 +127,10 @@ bin/pptemplate
 %%SITE_ARCH%%/PDL/Types.pm
 %%SITE_ARCH%%/PDL/Ufunc.pm
 %%SITE_ARCH%%/PDL/default.perldlrc
-%%SITE_ARCH%%/PDL/pdl2.pod
 %%SITE_ARCH%%/PDL/pptemplate.pod
+%%SITE_ARCH%%/PDLdb.pl
+%%SITE_ARCH%%/Test/Deep/PDL.pm
+%%SITE_ARCH%%/Test/PDL.pm
 %%SITE_ARCH%%/auto/PDL/Bad/Bad.so
 %%SITE_ARCH%%/auto/PDL/CallExt/CallExt.so
 %%SITE_ARCH%%/auto/PDL/Complex/Complex.so
@@ -142,7 +138,6 @@ bin/pptemplate
 %%SITE_ARCH%%/auto/PDL/Core/Core.so
 %%SITE_ARCH%%/auto/PDL/FFT/FFT.so
 %%SITE_ARCH%%/auto/PDL/Fit/Gaussian/Gaussian.so
-%%SITE_ARCH%%/auto/PDL/Graphics/IIS/IIS.so
 %%SITE_ARCH%%/auto/PDL/IO/Browser/Browser.so
 %%SITE_ARCH%%/auto/PDL/IO/Misc/Misc.so
 %%SITE_ARCH%%/auto/PDL/IO/Pnm/Pnm.so
@@ -152,7 +147,6 @@ bin/pptemplate
 %%SITE_ARCH%%/auto/PDL/ImageRGB/ImageRGB.so
 %%SITE_ARCH%%/auto/PDL/Math/Math.so
 %%SITE_ARCH%%/auto/PDL/MatrixOps/MatrixOps.so
-%%SITE_ARCH%%/auto/PDL/Minuit/Minuit.so
 %%SITE_ARCH%%/auto/PDL/Ops/Ops.so
 %%SITE_ARCH%%/auto/PDL/Primitive/Primitive.so
 %%SITE_ARCH%%/auto/PDL/Slatec/Slatec.so
@@ -162,6 +156,7 @@ bin/pptemplate
 %%PERL5_MAN1%%/PDL::API.1.gz
 %%PERL5_MAN1%%/PDL::BadValues.1.gz
 %%PERL5_MAN1%%/PDL::Broadcasting.1.gz
+%%PERL5_MAN1%%/PDL::Bugs.1.gz
 %%PERL5_MAN1%%/PDL::Course.1.gz
 %%PERL5_MAN1%%/PDL::Dataflow.1.gz
 %%PERL5_MAN1%%/PDL::DeveloperGuide.1.gz
@@ -181,11 +176,9 @@ bin/pptemplate
 %%PERL5_MAN1%%/PDL::Tips.1.gz
 %%PERL5_MAN1%%/PDL::Tutorials.1.gz
 %%PERL5_MAN1%%/pdl.1.gz
-%%PERL5_MAN1%%/pdl2.1.gz
 %%PERL5_MAN1%%/pdldoc.1.gz
 %%PERL5_MAN1%%/perldl.1.gz
 %%PERL5_MAN1%%/pptemplate.1.gz
-%%PERL5_MAN3%%/Bugs.3.gz
 %%PERL5_MAN3%%/PDL.3.gz
 %%PERL5_MAN3%%/PDL::AutoLoader.3.gz
 %%PERL5_MAN3%%/PDL::Bad.3.gz
@@ -210,7 +203,6 @@ bin/pptemplate
 %%PERL5_MAN3%%/PDL::Fit::Gaussian.3.gz
 %%PERL5_MAN3%%/PDL::Func.3.gz
 %%PERL5_MAN3%%/PDL::Graphics2D.3.gz
-%%PERL5_MAN3%%/PDL::Graphics::IIS.3.gz
 %%PERL5_MAN3%%/PDL::Graphics::Limits.3.gz
 %%PERL5_MAN3%%/PDL::Graphics::State.3.gz
 %%PERL5_MAN3%%/PDL::IFiles.3.gz
@@ -235,7 +227,6 @@ bin/pptemplate
 %%PERL5_MAN3%%/PDL::Math.3.gz
 %%PERL5_MAN3%%/PDL::Matrix.3.gz
 %%PERL5_MAN3%%/PDL::MatrixOps.3.gz
-%%PERL5_MAN3%%/PDL::Minuit.3.gz
 %%PERL5_MAN3%%/PDL::NiceSlice.3.gz
 %%PERL5_MAN3%%/PDL::Ops.3.gz
 %%PERL5_MAN3%%/PDL::Opt::Simplex.3.gz
@@ -243,11 +234,6 @@ bin/pptemplate
 %%PERL5_MAN3%%/PDL::Overloads.3.gz
 %%PERL5_MAN3%%/PDL::PP::Dump.3.gz
 %%PERL5_MAN3%%/PDL::PP::Signature.3.gz
-%%PERL5_MAN3%%/PDL::Perldl2::CleanErrors.3.gz
-%%PERL5_MAN3%%/PDL::Perldl2::NiceSlice.3.gz
-%%PERL5_MAN3%%/PDL::Perldl2::PDLCommands.3.gz
-%%PERL5_MAN3%%/PDL::Perldl2::Perldl2.3.gz
-%%PERL5_MAN3%%/PDL::Perldl2::PrintControl.3.gz
 %%PERL5_MAN3%%/PDL::Polynomial.3.gz
 %%PERL5_MAN3%%/PDL::Primitive.3.gz
 %%PERL5_MAN3%%/PDL::Reduce.3.gz
@@ -258,6 +244,5 @@ bin/pptemplate
 %%PERL5_MAN3%%/PDL::Transform::Cartography.3.gz
 %%PERL5_MAN3%%/PDL::Types.3.gz
 %%PERL5_MAN3%%/PDL::Ufunc.3.gz
-%%PERL5_MAN3%%/PDL::pdl2.3.gz
 %%PERL5_MAN3%%/PDL::pptemplate.3.gz
 %%PERL5_MAN3%%/Pdlpp.3.gz
