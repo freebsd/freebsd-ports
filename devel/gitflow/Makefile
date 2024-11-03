@@ -1,6 +1,6 @@
 PORTNAME=	gitflow
 PORTVERSION=	1.12.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 
 MAINTAINER=	nbari@tequila.io
@@ -10,7 +10,7 @@ WWW=		https://github.com/petervanderdoes/gitflow-avh
 LICENSE=	BSD2CLAUSE LGPL21
 LICENSE_COMB=	multi
 
-RUN_DEPENDS=	${LOCALBASE}/bin/getopt:devel/util-linux
+RUN_DEPENDS=	getopt>=0:misc/getopt
 
 USES=		gmake
 USE_GITHUB=	yes

@@ -1,6 +1,6 @@
 PORTNAME=	password-store
 PORTVERSION=	1.7.4
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	sysutils
 MASTER_SITES=	https://git.zx2c4.com/${PORTNAME}/snapshot/
 
@@ -12,7 +12,7 @@ LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	bash:shells/bash \
-		${LOCALBASE}/bin/getopt:devel/util-linux \
+		getopt>=0:misc/getopt \
 		gnupg>=2:security/gnupg \
 		tree>=1.7:sysutils/tree
 

@@ -9,7 +9,7 @@ LICENSE=		GPLv2
 LICENSE_FILE=		${WRKSRC}/COPYING
 
 BUILD_DEPENDS=		bash:shells/bash \
-			${LOCALBASE}/bin/getopt:devel/util-linux
+			getopt>=0:misc/getopt
 LIB_DEPENDS=		libgnutls.so:security/gnutls \
 			libltdl.so:devel/libltdl \
 			libqb.so:devel/libqb \
@@ -17,7 +17,7 @@ LIB_DEPENDS=		libgnutls.so:security/gnutls \
 			libxml2.so:textproc/libxml2 \
 			libxslt.so:textproc/libxslt
 RUN_DEPENDS=		bash:shells/bash \
-			${LOCALBASE}/bin/getopt:devel/util-linux \
+			getopt>=0:misc/getopt \
 			ocf-tester:net-mgmt/resource-agents
 
 CONFLICTS=		heartbeat
