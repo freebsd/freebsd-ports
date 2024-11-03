@@ -1,6 +1,6 @@
 PORTNAME=	hoomd-blue
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.9.0
+DISTVERSION=	4.9.1
 CATEGORIES=	science # physics
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -11,6 +11,8 @@ WWW=		https://glotzerlab.engin.umich.edu/hoomd-blue/ \
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+BROKEN_FreeBSD_15=	compilation fails with clang-19, see https://github.com/glotzerlab/hoomd-blue/issues/1924
 
 BUILD_DEPENDS=	pybind11>0:devel/pybind11
 
