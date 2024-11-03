@@ -1,0 +1,11 @@
+--- configure.orig	2024-04-04 09:13:50 UTC
++++ configure
+@@ -35861,7 +35861,7 @@ fi
+   enable_getopt=$ul_default_estate
+   build_getopt=yes
+   if test "x$ul_default_estate" = xno; then
+-    build_getopt=no
++    build_getopt=yes
+   fi
+ else
+ 
