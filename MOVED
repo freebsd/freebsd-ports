@@ -2234,7 +2234,7 @@ dns/mydns-ng||2023-06-30|Has expired: Abandonware, last release in 2010. Conside
 dns/mydns||2023-06-30|Has expired: Abandonware, last release in 2006. Consider migrating to dns/powerdns
 net/opal||2023-06-30|Has expired: Very outdated, current version in tree was released back in 2013 and upstream is still active
 math/R-cran-RHmm||2023-06-30|Has expired: Fails to build with R 4.3.0+ and abandoned upstream
-databases/py-caterva||2023-06-30|Has expired: Use archivers/py-blosc2 instead. All the features of Python-Caterva have been included in the Python-Blosc2 NDArray object
+databases/py-caterva|archivers/py-blosc2|2023-06-30|Has expired: Use archivers/py-blosc2 instead. All the features of Python-Caterva have been included in the Python-Blosc2 NDArray object
 net-im/purple-hangouts||2023-06-30|Has expired: Google Hangouts discontinued 2022-11-01, data deleted 2023-01-01
 dns/ares||2023-06-30|Has expired: Deprecated upstream as of March 12, 2023
 security/rubygem-omniauth-cas3||2023-06-30|Has expired: Deprecated by upstream. The repository has been archived by the owner on Aug 23, 2022
