@@ -1,0 +1,11 @@
+Rewrite of getopt(1) with the following features:
+
+* It can do anything that the GNU getopt(3) routines can do.
+* It can cope with spaces and shell metacharacters within arguments.
+* It can parse long parameters.
+* It can shuffle parameters, so you can mix options and other parameters
+  on the command-line.
+* It can be easily identified as an enhanced getopt(1) from within shell
+  scripts.
+* It can report parse errors as coming from the shell script.
+* It compiles cleanly with both libc-5 and glibc-2.

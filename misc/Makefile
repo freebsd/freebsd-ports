@@ -152,6 +152,7 @@
     SUBDIR += g810-led
     SUBDIR += gedkeeper
     SUBDIR += geekcode
+    SUBDIR += getopt
     SUBDIR += gimp-help-en
     SUBDIR += gkrellm-gamma
     SUBDIR += gkrellm-xkb
