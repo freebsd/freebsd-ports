@@ -1,5 +1,5 @@
 PORTNAME=	pysolfc
-DISTVERSION=	3.0.0
+DISTVERSION=	3.1.0
 CATEGORIES=	games python
 MASTER_SITES=	SF/${PORTNAME}/PySolFC/${PYSOLFCDIR} \
 		SF/${PORTNAME}/PySolFC-Cardsets/minimal/:cardsets \
@@ -24,7 +24,6 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}attrs>=18.2.0:devel/py-attrs@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}configobj>0:devel/py-configobj@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}game>0:devel/py-game@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pysol-cards>0:games/py-pysol-cards@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}random2>=0:math/py-random2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tkinter>0:x11-toolkits/py-tkinter@${PY_FLAVOR}
 
