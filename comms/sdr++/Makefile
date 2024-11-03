@@ -10,6 +10,8 @@ WWW=		https://github.com/AlexandreRouma/SDRPlusPlus
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/license
 
+BROKEN_FreeBSD_15=	compilation fails with clang-19, see https://github.com/AlexandreRouma/SDRPlusPlus/issues/1509
+
 LIB_DEPENDS=	libad9361.so:misc/libad9361-iio \
 		libairspy.so:comms/airspy \
 		libairspyhf.so:comms/airspyhf \
@@ -49,9 +51,9 @@ RTAUDIO_BROKEN=			see https://github.com/AlexandreRouma/SDRPlusPlus/issues/1149
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "amd64" || ${ARCH} == "i386"
-PLIST_SUB+=     SSE=""
+PLIST_SUB+=	SSE=""
 .else
-PLIST_SUB+=     SSE="@comment "
+PLIST_SUB+=	SSE="@comment "
 .endif
 
 .include <bsd.port.post.mk>
