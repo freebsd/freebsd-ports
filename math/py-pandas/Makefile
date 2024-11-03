@@ -7,7 +7,9 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	Flexible, high-performance data analysis in Python
-WWW=		https://pandas.pydata.org/
+WWW=		https://pandas.pydata.org/ \
+		https://pandas.pydata.org/docs/ \
+		https://github.com/pandas-dev/pandas
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -25,8 +27,9 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.26.0,1<2,1:math/py-numpy@${PY_FLAVO
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}arrow>=0:devel/py-arrow@${PY_FLAVOR}
 
 USES=		cpe python
+USE_PYTHON=	autoplist concurrent cython pep517
+
 CPE_VENDOR=	numfocus
-USE_PYTHON=	autoplist cython pep517
 
 OPTIONS_DEFINE=		MPL SCIPY
 OPTIONS_GROUP=		ACCEL STORAGE HTML EXCEL
