@@ -1,10 +1,7 @@
 PORTNAME=	ispc
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.25.1
+DISTVERSION=	1.25.2
 CATEGORIES=	devel
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES=	abb4800eb9553e3710fd0dd293a552a9af361396.diff:-p1 # backport of https://github.com/ispc/ispc/pull/3074/commits
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Intel's compiler for high-performance SIMD programming
