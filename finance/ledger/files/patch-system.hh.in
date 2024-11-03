@@ -1,7 +1,15 @@
 diff -ruN ledger-3.2.1/src/system.hh.in ledger-3.2.1-patched/src/system.hh.in
 --- src/system.hh.in.orig	2020-05-18 00:30:10.000000000 -0500
-+++ src/system.hh.in	2022-05-29 08:49:10.857528000 -0500
-@@ -153,6 +153,7 @@
++++ src/system.hh.in	2024-10-07 01:57:27.327578000 -0400
+@@ -144,7 +144,6 @@
+ #include <boost/date_time/posix_time/posix_time_io.hpp>
+ #include <boost/date_time/gregorian/gregorian_io.hpp>
+ 
+-#include <boost/filesystem/convenience.hpp>
+ #include <boost/filesystem/exception.hpp>
+ #include <boost/filesystem/fstream.hpp>
+ #include <boost/filesystem/operations.hpp>
+@@ -156,6 +155,7 @@
  #include <boost/function.hpp>
  
  #include <boost/intrusive_ptr.hpp>
