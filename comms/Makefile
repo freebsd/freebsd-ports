@@ -74,6 +74,7 @@
     SUBDIR += libdc
     SUBDIR += libfap
     SUBDIR += libfec
+    SUBDIR += libfobos
     SUBDIR += libimobiledevice
     SUBDIR += libimobiledevice-glue
     SUBDIR += libirman
