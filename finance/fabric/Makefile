@@ -45,9 +45,6 @@ GH_TUPLE=	\
 		docker:go-units:v0.5.0:docker_go_units/vendor/github.com/docker/go-units \
 		dustin:go-humanize:v1.0.0:dustin_go_humanize/vendor/github.com/dustin/go-humanize \
 		etcd-io:etcd:v3.5.14:etcd_io_etcd/vendor/go.etcd.io/etcd/client/pkg/v3 \
-		etcd-io:etcd:v3.5.14:etcd_io_etcd_1/vendor/go.etcd.io/etcd/pkg/v3 \
-		etcd-io:etcd:v3.5.14:etcd_io_etcd_2/vendor/go.etcd.io/etcd/raft/v3 \
-		etcd-io:etcd:v3.5.14:etcd_io_etcd_3/vendor/go.etcd.io/etcd/server/v3 \
 		felixge:httpsnoop:v1.0.1:felixge_httpsnoop/vendor/github.com/felixge/httpsnoop \
 		fsnotify:fsnotify:v1.7.0:fsnotify_fsnotify/vendor/github.com/fsnotify/fsnotify \
 		fsouza:go-dockerclient:v1.10.0:fsouza_go_dockerclient/vendor/github.com/fsouza/go-dockerclient \
