@@ -10,6 +10,7 @@ WWW=		https://trilinos.github.io/
 LICENSE=	BSD3CLAUSE LGPL20 # Trilinos is licensed on a per-package basis. Most packages are under a BSD license, some are published under the (L)GPL.
 LICENSE_COMB=	multi
 
+BROKEN_FreeBSD_15=	compilation fails with clang-19, see https://github.com/trilinos/Trilinos/issues/13570
 BROKEN_armv6=	kokkos assumes a 64-bit build; i.e., 8-byte pointers, but found 4-byte
 BROKEN_armv7=	kokkos assumes a 64-bit build; i.e., 8-byte pointers, but found 4-byte
 BROKEN_i386=	kokkos assumes a 64-bit build; i.e., 8-byte pointers, but found 4-byte
