@@ -24,7 +24,7 @@ NO_BUILD=	yes
 PLIST_FILES=	lib/WidevineCdm/_platform_specific/linux_x64/libwidevinecdm.so \
 		lib/WidevineCdm/manifest.json
 
-CHROME_VERSION=	121.0.6167.85-1
+CHROME_VERSION=	128.0.6613.84-1
 
 post-extract:
 	cd ${WRKDIR} && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} data.tar.xz ${EXTRACT_AFTER_ARGS}
