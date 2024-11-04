@@ -20,7 +20,7 @@
 # remark_store_type (str):	type of storage, bolt or rpc
 #				Default: bolt
 # remark_store_bolt_path (str):	parent directory for the bolt files
-#				Default: %%REMARK42_DATADIR%%
+#				Default: %%REMARK_DATADIR%%
 # remark_backup_path (str):	backups location
 #				Default: %%REMARK_DATADIR%%/backup
 # remark_avatar_fs_path (str):	avatars location for fs store
