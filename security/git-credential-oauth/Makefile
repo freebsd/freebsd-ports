@@ -1,6 +1,6 @@
 PORTNAME=	git-credential-oauth
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.13.3
+DISTVERSION=	0.13.4
 CATEGORIES=	security
 
 MAINTAINER=	ehaupt@FreeBSD.org
