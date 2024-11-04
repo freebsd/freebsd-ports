@@ -42,7 +42,6 @@ GH_TUPLE=	\
 		fsnotify:fsnotify:v1.7.0:fsnotify_fsnotify/vendor/github.com/fsnotify/fsnotify \
 		go-check:check:10cb98267c6c:go_check_check/vendor/gopkg.in/check.v1 \
 		go-ini:ini:v1.67.0:go_ini_ini/vendor/github.com/go-ini/ini \
-		go-ini:ini:v1.67.0:go_ini_ini_1/vendor/gopkg.in/ini.v1 \
 		go-logr:logr:v1.4.2:go_logr_logr/vendor/github.com/go-logr/logr \
 		go-logr:stdr:v1.2.2:go_logr_stdr/vendor/github.com/go-logr/stdr \
 		go-yaml:yaml:v3.0.1:go_yaml_yaml/vendor/gopkg.in/yaml.v3 \
@@ -63,7 +62,6 @@ GH_TUPLE=	\
 		google:flatbuffers:v1.12.1:google_flatbuffers/vendor/github.com/google/flatbuffers \
 		google:go-cmp:v0.6.0:google_go_cmp/vendor/github.com/google/go-cmp \
 		google:go-genproto:ddb44dafa142:google_go_genproto/vendor/google.golang.org/genproto/googleapis/api \
-		google:go-genproto:ddb44dafa142:google_go_genproto_1/vendor/google.golang.org/genproto/googleapis/rpc \
 		google:uuid:v1.6.0:google_uuid/vendor/github.com/google/uuid \
 		gorilla:mux:v1.8.1:gorilla_mux/vendor/github.com/gorilla/mux \
 		grpc-ecosystem:grpc-gateway:v2.20.0:grpc_ecosystem_grpc_gateway_v2/vendor/github.com/grpc-ecosystem/grpc-gateway/v2 \
