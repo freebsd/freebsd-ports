@@ -1,3 +1,30 @@
+  <vuln vid="ecf9a798-9aa9-11ef-a8f0-a8a15998b5cb">
+    <topic>libqb -- Buffer overflow</topic>
+    <affects>
+      <package>
+	<name>libqb</name>
+	<range><lt>2.0.8</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>cve@mitre.org reports:</p>
+	<blockquote cite="https://github.com/ClusterLabs/libqb/commit/1bbaa929b77113532785c408dd1b41cd0521ffc8">
+	  <p>log_blackbox.c in libqb before 2.0.8 allows a buffer overflow via
+	long log messages because the header size is not considered.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2023-39976</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2023-39976</url>
+    </references>
+    <dates>
+      <discovery>2023-08-08</discovery>
+      <entry>2024-11-04</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="e17384ef-c5e8-4b5d-bb62-c13405e7f1f7">
     <topic>chromium -- multiple security fixes</topic>
     <affects>
