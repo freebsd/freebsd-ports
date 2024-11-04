@@ -1,4 +1,4 @@
-TIMESTAMP = 1720421947
+TIMESTAMP = 1730709783
 SHA256 (rust/crates/anstream-0.6.13.crate) = d96bd03f33fe50a863e394ee9718a706f988b9079b20c3784fb726e7678b62fb
 SIZE (rust/crates/anstream-0.6.13.crate) = 30928
 SHA256 (rust/crates/anstyle-1.0.6.crate) = 8901269c6307e8d93993578286ac0edf7f195079ffff5ebdeea6a59ffb7e36bc
@@ -195,5 +195,5 @@ SHA256 (rust/crates/windows_x86_64_msvc-0.48.5.crate) = ed94fce61571a4006852b738
 SIZE (rust/crates/windows_x86_64_msvc-0.48.5.crate) = 798412
 SHA256 (rust/crates/windows_x86_64_msvc-0.52.4.crate) = 32b752e52a2da0ddfbdbcc6fceadfeede4c939ed16d13e648833a61dfb611ed8
 SIZE (rust/crates/windows_x86_64_msvc-0.52.4.crate) = 828019
-SHA256 (tummychow-git-absorb-0.6.15_GH0.tar.gz) = 630e61a6edf1e244c38145bda98a522217c34d3ab70a3399af1f29f19e7ced26
-SIZE (tummychow-git-absorb-0.6.15_GH0.tar.gz) = 29061
+SHA256 (tummychow-git-absorb-0.6.16_GH0.tar.gz) = d0fac448801674a4d4d5d42d6ef2d2e21545ad66755023c531a273a47893a573
+SIZE (tummychow-git-absorb-0.6.16_GH0.tar.gz) = 29086
