@@ -1898,6 +1898,7 @@
     SUBDIR += py-xandikos
     SUBDIR += py-xyzservices
     SUBDIR += py-yarl
+    SUBDIR += py-youtube-transcript-api
     SUBDIR += py-yt-dlp
     SUBDIR += pydio-cells
     SUBDIR += qdecoder
