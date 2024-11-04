@@ -1,6 +1,7 @@
 bin/teddycloud
 %%ETCDIR%%/tonies.custom.json
 %%ETCDIR%%/tonies.json
+%%ETCDIR%%/tonieboxes.custom.json
 %%ETCDIR%%/tonieboxes.json
 %%DATADIR%%/data/www/404.html
 %%DATADIR%%/data/www/encode_test.html
@@ -8,23 +9,56 @@ bin/teddycloud
 %%DATADIR%%/data/www/img_custom.png
 %%DATADIR%%/data/www/img_empty.png
 %%DATADIR%%/data/www/img_unknown.png
-%%DATADIR%%/data/www/index.html
+%%DATADIR%%/data/www/legacy.html
+%%DATADIR%%/data/www/library/babel.js
 %%DATADIR%%/data/www/library/esptool.js
-%%DATADIR%%/data/www/web/asset-manifest.json
+%%DATADIR%%/data/www/library/react-dom.development.js
+%%DATADIR%%/data/www/library/react.development.js
+%%DATADIR%%/data/www/robots.txt
+%%DATADIR%%/data/www/web/assets/3200_pcb-Dxz0Vi-z.png
+%%DATADIR%%/data/www/web/assets/3235_pcb-BE0vs2bl.png
+%%DATADIR%%/data/www/web/assets/cc3200-B-jSkbsy.jpg
+%%DATADIR%%/data/www/web/assets/cc3235-Cr21bWbC.jpg
+%%DATADIR%%/data/www/web/assets/cc3235_flash-D2YMWv70.jpg
+%%DATADIR%%/data/www/web/assets/cc3235_smd_grippers-MdbEjaZo.jpg
+%%DATADIR%%/data/www/web/assets/esp32-BPYaDt9v.js
+%%DATADIR%%/data/www/web/assets/esp32-B_b6hCjy.jpg
+%%DATADIR%%/data/www/web/assets/esp32_pcb-CWEYHEzm.png
+%%DATADIR%%/data/www/web/assets/esp32_pcb_clamp-Cw2o3uco.png
+%%DATADIR%%/data/www/web/assets/esp32_write_patched_image_with_esptools-DmsBlrjp.png
+%%DATADIR%%/data/www/web/assets/esp32c2-CtjOOsCE.js
+%%DATADIR%%/data/www/web/assets/esp32c3-DDsZSfEd.js
+%%DATADIR%%/data/www/web/assets/esp32c6-BRG5ZpJ8.js
+%%DATADIR%%/data/www/web/assets/esp32h2-Cf8JbGZQ.js
+%%DATADIR%%/data/www/web/assets/esp32p4-DfBdIAkh.js
+%%DATADIR%%/data/www/web/assets/esp32s2-BOsRKhcm.js
+%%DATADIR%%/data/www/web/assets/esp32s3-DkgZlzv1.js
+%%DATADIR%%/data/www/web/assets/esp8266-8VKmCx7J.js
+%%DATADIR%%/data/www/web/assets/index-BU1Nt4kW.css
+%%DATADIR%%/data/www/web/assets/index-ChP2LRih.js
+%%DATADIR%%/data/www/web/assets/logo-aw46LCqE.png
+%%DATADIR%%/data/www/web/assets/openTB_step1_1-4vwQGflo.png
+%%DATADIR%%/data/www/web/assets/openTB_step1_2-DIZc5DI4.png
+%%DATADIR%%/data/www/web/assets/openTB_step2-DhjDRq3m.png
+%%DATADIR%%/data/www/web/assets/openTB_step3-Dn6Mo3hQ.png
+%%DATADIR%%/data/www/web/assets/openTB_step4-Bj5i-Kw_.png
+%%DATADIR%%/data/www/web/assets/openTB_step5-DTGOEBgD.png
+%%DATADIR%%/data/www/web/assets/rom-Caghk6Eh.js
+%%DATADIR%%/data/www/web/assets/tb-esp32-uart-BDPWj6EB.png
+%%DATADIR%%/data/www/web/assets/tb-esp32-uart-clamp-D_86EMpu.png
 %%DATADIR%%/data/www/web/favicon.ico
 %%DATADIR%%/data/www/web/index.html
 %%DATADIR%%/data/www/web/manifest.json
 %%DATADIR%%/data/www/web/robots.txt
-%%DATADIR%%/data/www/web/static/css/main.e6c13ad2.css
-%%DATADIR%%/data/www/web/static/css/main.e6c13ad2.css.map
-%%DATADIR%%/data/www/web/static/js/main.3c1d6764.js
-%%DATADIR%%/data/www/web/static/js/main.3c1d6764.js.LICENSE.txt
-%%DATADIR%%/data/www/web/static/js/main.3c1d6764.js.map
-%%DATADIR%%/data/www/web/static/media/getFetch.40f37ddea2378391108f.cjs
-%%DATADIR%%/data/www/web/static/media/logo.2f09160138082fd1c6f8.png
 %%DATADIR%%/data/www/web/translations/de.json
 %%DATADIR%%/data/www/web/translations/en.json
+%%DATADIR%%/data/www/web/translations/es.json
+%%DATADIR%%/data/www/web/translations/fr.json
+%%DATADIR%%/data/www/web/web_version.json
 @dir %%DATADIR%%/certs/client
 @dir %%DATADIR%%/certs/server
 @dir %%DATADIR%%/data/content/default
+@dir %%DATADIR%%/data/firmware/ota/cc3200
+@dir %%DATADIR%%/data/firmware/ota/cc3235
+@dir %%DATADIR%%/data/firmware/ota/esp32
 @dir %%DATADIR%%/data/library

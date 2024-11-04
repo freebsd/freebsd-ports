@@ -1,6 +1,15 @@
---- Makefile.orig	2024-01-22 13:39:05 UTC
+--- Makefile.orig	2024-10-26 18:14:34 UTC
 +++ Makefile
-@@ -40,11 +40,11 @@ else
+@@ -24,7 +24,7 @@ else
+ 	build_os_id:="windows"
+ else
+ 	SHELL_ENV ?= bash
+-	build_arch:="$(shell arch)"
++	build_arch:="$(shell uname -m)"
+ 	build_os_id:="$(shell grep "^ID=" /etc/os-release | cut -d'=' -f2- | tr -d '"')"
+ endif
+ 
+@@ -47,11 +47,11 @@ endif
  build_rawDateTime:="${shell date "+%Y-%m-%d %H:%M:%S %z"}"
  endif
  
@@ -10,10 +19,37 @@
 -build_gitSha:=${shell git rev-parse HEAD}
 -build_gitTag:=${shell git name-rev --tags --name-only $(build_gitSha)}
 +build_gitDirty:=0
-+build_gitDateTime:="2024-01-22 13:39:05 +0000"
-+build_gitShortSha:=8602da9
-+build_gitSha:=8602da92d1080e67c678f476d4cf4de008aa857e
-+build_gitTag:=tc_v0.3.5
++build_gitDateTime:="2024-10-26 18:14:34 +0000"
++build_gitShortSha:=203f12d
++build_gitSha:=203f12d3d357d16268b83c7bdedb332820b9e87a
++build_gitTag:=tc_v0.6.2
  build_platform:=$(PLATFORM)
  build_os:="$(OS)"
  
+@@ -70,12 +70,12 @@ endif
+ 	CFLAGS_VERSION+=-DBUILD_VERSION=\"${build_version}\" 
+ endif
+ 
+-web_gitDirty:=${shell cd $(WEB_SRC_DIR) && git diff --quiet && echo '0' || echo '1'}
+-web_gitDateTime:="${shell cd $(WEB_SRC_DIR) && git log -1 --format=%ai}"
+-web_gitShortSha:=${shell cd $(WEB_SRC_DIR) && git rev-parse --short HEAD}
+-web_gitSha:=${shell cd $(WEB_SRC_DIR) && git rev-parse HEAD}
+-web_gitTag:=${shell cd $(WEB_SRC_DIR) && git name-rev --tags --name-only $(web_gitSha)}
+-web_gitTagPrefix:=$(firstword $(subst _, ,$(web_gitTag)))
++web_gitDirty:=0
++web_gitDateTime:="2024-10-26 06:25:22 +0200"
++web_gitShortSha:=e4d9fc1
++web_gitSha:=e4d9fc19e493933c2020be2d40ee5de2f07d7eef
++web_gitTag:=tcw_v0.6.2
++web_gitTagPrefix:=tcw
+ web_version:=vX.X.X
+ CFLAGS_VERSION+=-DWEB_GIT_IS_DIRTY=${web_gitDirty} -DWEB_GIT_DATETIME=\"${web_gitDateTime}\" -DWEB_RAW_DATETIME=\"${web_rawDateTime}\" -DWEB_GIT_SHORT_SHA=\"${web_gitShortSha}\" -DWEB_GIT_SHA=\"${web_gitSha}\" -DWEB_GIT_TAG=\"${web_gitTag}\"
+ ifeq ($(web_gitTagPrefix),tcw)
+@@ -153,6 +153,7 @@ CFLAGS_linux += -DFFMPEG_DECODING
+ endif
+ CFLAGS_linux += -ggdb
+ CFLAGS_linux += -DFFMPEG_DECODING
++LFLAGS_linux += -pthread -lm
+ 
+ # for now enable extensive error checking
+ # Add flags for extensive error checking if NO_SANITIZERS is not set to 1
