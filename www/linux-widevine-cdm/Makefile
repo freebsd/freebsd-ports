@@ -2,7 +2,7 @@
 # https://aur.archlinux.org/cgit/aur.git/?h=vivaldi-widevine
 
 PORTNAME=	widevine-cdm
-PORTVERSION=	4.10.2710.0
+PORTVERSION=	4.10.2830.0
 CATEGORIES=	www multimedia linux
 MASTER_SITES=	https://dl.google.com/linux/deb/pool/main/g/google-chrome-stable/
 PKGNAMEPREFIX=	linux-
