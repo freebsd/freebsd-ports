@@ -503,6 +503,7 @@
     SUBDIR += librsvg2
     SUBDIR += librsvg2-rust
     SUBDIR += librtprocess
+    SUBDIR += libskiasharp
     SUBDIR += libsixel
     SUBDIR += libspiro
     SUBDIR += libspng
