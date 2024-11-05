@@ -1,5 +1,6 @@
 PORTNAME=	osinfo-db-tools
-PORTVERSION=	1.12.0
+DISTVERSION=	1.12.0
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	https://releases.pagure.org/libosinfo/
 
@@ -13,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libjson-glib-1.0.so:devel/json-glib \
 		libsoup-2.4.so:devel/libsoup
 
-USES=		gettext gmake gnome libarchive pkgconfig tar:xz meson
-USE_GNOME=	glib20 intltool libxml2 libxslt
+USES=		gettext gnome libarchive meson pkgconfig tar:xz
+USE_GNOME=	glib20 intltool libxml2
 
 .include <bsd.port.mk>
