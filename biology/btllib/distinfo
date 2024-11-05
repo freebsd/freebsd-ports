@@ -1,6 +1,6 @@
-TIMESTAMP = 1722057311
-SHA256 (bcgsc-btllib-v1.7.3_GH0.tar.gz) = cc588aa8c568e31daa7e1491cafe8e95b6018d3344238165b8d1a03a0a9caccf
-SIZE (bcgsc-btllib-v1.7.3_GH0.tar.gz) = 880227
+TIMESTAMP = 1733374207
+SHA256 (bcgsc-btllib-v1.7.5_GH0.tar.gz) = a4c9cdd2c1d37d7f0465dc15e6267693f74e5e3b547b5ff187989abf1e4ca0b8
+SIZE (bcgsc-btllib-v1.7.5_GH0.tar.gz) = 956716
 SHA256 (p-ranav-argparse-15d745f_GH0.tar.gz) = f033d4eb4a430b4ae4bf3c2a40e087709bf77462c1f9968ae07828437219a370
 SIZE (p-ranav-argparse-15d745f_GH0.tar.gz) = 105608
 SHA256 (skystrife-cpptoml-fededad_GH0.tar.gz) = dd2d129b67f537ae7d6f8d8d084c8c0d772d0f5b4b3118c1892e67ff536e335e
