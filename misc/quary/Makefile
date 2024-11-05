@@ -5,7 +5,8 @@ CATEGORIES=	misc
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Open-source BI for engineers
-WWW=		https://www.quary.dev
+WWW=		https://www.quary.dev \
+		https://github.com/quarylabs/quary
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
