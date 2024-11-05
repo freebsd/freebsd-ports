@@ -21,6 +21,14 @@ sbin/qb-blackbox
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL
 %%PORTDOCS%%%%DOCSDIR%%/README.markdown
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Makefile.am
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Makefile.in
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ipcclient.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ipcserver.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mapnotify.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/simplelog.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tcpclient.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tcpserver.c
 %%DOXYGEN%%share/man/man3/qb_array_create.3.gz
 %%DOXYGEN%%share/man/man3/qb_array_create_2.3.gz
 %%DOXYGEN%%share/man/man3/qb_array_elems_per_bin_get.3.gz
