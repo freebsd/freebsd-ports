@@ -278,6 +278,7 @@ include/folly/coro/Sleep-inl.h
 include/folly/coro/Sleep.h
 include/folly/coro/SmallUnboundedQueue.h
 include/folly/coro/Task.h
+include/folly/coro/TaskWrapper.h
 include/folly/coro/TimedWait.h
 include/folly/coro/Timeout-inl.h
 include/folly/coro/Timeout.h
@@ -418,11 +419,8 @@ include/folly/experimental/EventCount.h
 include/folly/experimental/FlatCombiningPriorityQueue.h
 include/folly/experimental/FunctionScheduler.h
 include/folly/experimental/LockFreeRingBuffer.h
-include/folly/experimental/PrimaryPtr.h
 include/folly/experimental/RelaxedConcurrentPriorityQueue.h
-include/folly/experimental/SingleWriterFixedHashMap.h
 include/folly/experimental/SingletonRelaxedCounter.h
-include/folly/experimental/TLRefCount.h
 include/folly/experimental/TestUtil.h
 include/folly/experimental/ThreadedRepeatingFunctionRunner.h
 include/folly/experimental/channels/Channel-fwd.h
