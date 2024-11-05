@@ -265,6 +265,7 @@ include/thrift/lib/cpp2/async/metadata/RequestRpcMetadataAdapter.h
 include/thrift/lib/cpp2/async/metadata/RequestRpcMetadataFacade.h
 include/thrift/lib/cpp2/async/metadata/TCompactRequestRpcMetadataAdapter.h
 include/thrift/lib/cpp2/transport/rocket/compression/Compression.h
+include/thrift/lib/cpp2/transport/rocket/compression/CompressionAlgorithmSelector.h
 include/thrift/lib/cpp2/transport/rocket/payload/ChecksumPayloadSerializerStrategy.h
 include/thrift/lib/cpp2/debug_thrift_data_difference/debug.h
 include/thrift/lib/cpp2/debug_thrift_data_difference/detail/debug-inl-post.h
