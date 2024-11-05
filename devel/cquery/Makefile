@@ -10,6 +10,9 @@ WWW=		https://github.com/cquery-project/cquery
 
 LICENSE=	MIT
 
+DEPRECATED=	Abandonware, upstream repo archived Jul 30, 2020. Consider using migrating to devel/ccls
+EXPIRATION_DATE=2024-12-31
+
 LIB_DEPENDS=	libclang.so:devel/llvm${LLVM_DEFAULT}
 
 USES=		compiler:c++14-lang cmake
