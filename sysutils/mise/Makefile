@@ -1,6 +1,6 @@
 PORTNAME=	mise
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2024.11.0
+DISTVERSION=	2024.11.1
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -30,13 +30,13 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		android_system_properties-0.1.5 \
 		ansi-str-0.8.0 \
 		ansitok-0.2.0 \
-		anstream-0.6.17 \
-		anstyle-1.0.9 \
+		anstream-0.6.18 \
+		anstyle-1.0.10 \
 		anstyle-parse-0.2.6 \
 		anstyle-query-1.1.2 \
 		anstyle-wincon-3.0.6 \
-		anyhow-1.0.91 \
-		arbitrary-1.3.2 \
+		anyhow-1.0.92 \
+		arbitrary-1.4.0 \
 		arrayvec-0.5.2 \
 		assert_cmd-2.0.16 \
 		async-compression-0.4.17 \
@@ -60,7 +60,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		bzip2-sys-0.1.11+1.0.8 \
 		calm_io-0.1.1 \
 		calmio_filters-0.1.0 \
-		cc-1.1.31 \
+		cc-1.1.34 \
 		cfg-if-1.0.0 \
 		cfg_aliases-0.2.1 \
 		chrono-0.4.38 \
@@ -104,7 +104,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		demand-1.2.4 \
 		der-0.7.9 \
 		deranged-0.3.11 \
-		derive_arbitrary-1.3.2 \
+		derive_arbitrary-1.4.0 \
 		derive_more-0.99.18 \
 		deunicode-1.6.0 \
 		diff-0.1.13 \
@@ -165,7 +165,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		globwalk-0.9.1 \
 		h2-0.4.6 \
 		hashbrown-0.12.3 \
-		hashbrown-0.15.0 \
+		hashbrown-0.15.1 \
 		heck-0.4.1 \
 		heck-0.5.0 \
 		hermit-abi-0.3.9 \
@@ -185,7 +185,18 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		hyper-util-0.1.10 \
 		iana-time-zone-0.1.61 \
 		iana-time-zone-haiku-0.1.2 \
-		idna-0.5.0 \
+		icu_collections-1.5.0 \
+		icu_locid-1.5.0 \
+		icu_locid_transform-1.5.0 \
+		icu_locid_transform_data-1.5.0 \
+		icu_normalizer-1.5.0 \
+		icu_normalizer_data-1.5.0 \
+		icu_properties-1.5.1 \
+		icu_properties_data-1.5.0 \
+		icu_provider-1.5.0 \
+		icu_provider_macros-1.5.0 \
+		idna-1.0.3 \
+		idna_adapter-1.2.0 \
 		ignore-0.4.23 \
 		indenter-0.3.3 \
 		indexmap-1.9.3 \
@@ -213,6 +224,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		libz-sys-1.1.20 \
 		linked-hash-map-0.5.6 \
 		linux-raw-sys-0.4.14 \
+		litemap-0.7.3 \
 		litrs-0.4.1 \
 		lock_api-0.4.12 \
 		lockfree-object-pool-0.1.6 \
@@ -320,7 +332,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		rustc-demangle-0.1.24 \
 		rustc-hash-2.0.0 \
 		rustc_version-0.4.1 \
-		rustix-0.38.38 \
+		rustix-0.38.39 \
 		rustls-0.23.16 \
 		rustls-native-certs-0.8.0 \
 		rustls-pemfile-2.2.0 \
@@ -375,14 +387,15 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		strum_macros-0.26.4 \
 		subtle-2.6.1 \
 		syn-1.0.109 \
-		syn-2.0.86 \
+		syn-2.0.87 \
 		sync_wrapper-1.0.1 \
+		synstructure-0.13.1 \
 		sys-info-0.9.1 \
 		system-configuration-0.6.1 \
 		system-configuration-sys-0.6.0 \
 		tabled-0.16.0 \
 		tabled_derive-0.8.0 \
-		tar-0.4.42 \
+		tar-0.4.43 \
 		tempfile-3.13.0 \
 		tendril-0.4.3 \
 		tera-1.20.0 \
@@ -394,12 +407,13 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		test-case-macros-3.3.1 \
 		test-log-0.2.16 \
 		test-log-macros-0.2.16 \
-		thiserror-1.0.66 \
-		thiserror-impl-1.0.66 \
+		thiserror-1.0.68 \
+		thiserror-impl-1.0.68 \
 		thread_local-1.1.8 \
 		time-0.3.36 \
 		time-core-0.1.2 \
 		time-macros-0.2.18 \
+		tinystr-0.7.6 \
 		tinyvec-1.8.0 \
 		tinyvec_macros-0.1.1 \
 		tokio-1.41.0 \
@@ -427,22 +441,22 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		unic-segment-0.9.0 \
 		unic-ucd-segment-0.9.0 \
 		unic-ucd-version-0.9.0 \
-		unicode-bidi-0.3.17 \
 		unicode-ident-1.0.13 \
-		unicode-normalization-0.1.24 \
 		unicode-segmentation-1.12.0 \
 		unicode-width-0.1.11 \
 		untrusted-0.9.0 \
-		url-2.5.2 \
+		url-2.5.3 \
 		urlencoding-2.1.3 \
-		usage-lib-0.12.1 \
+		usage-lib-1.1.1 \
 		utf-8-0.7.6 \
+		utf16_iter-1.0.5 \
+		utf8_iter-1.0.4 \
 		utf8parse-0.2.2 \
 		valuable-0.1.0 \
 		vcpkg-0.2.15 \
 		version_check-0.9.5 \
 		versions-6.3.2 \
-		vfox-0.2.1 \
+		vfox-0.2.2 \
 		vte-0.10.1 \
 		vte_generate_state_changes-0.1.2 \
 		wait-timeout-0.2.0 \
@@ -485,14 +499,22 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		windows_x86_64_msvc-0.52.6 \
 		winnow-0.6.20 \
 		winsafe-0.0.19 \
+		write16-1.0.0 \
+		writeable-0.5.5 \
 		xattr-1.3.1 \
 		xx-1.1.8 \
 		xz2-0.1.7 \
 		yansi-1.0.1 \
+		yoke-0.7.4 \
+		yoke-derive-0.7.4 \
 		zerocopy-0.7.35 \
 		zerocopy-derive-0.7.35 \
+		zerofrom-0.1.4 \
+		zerofrom-derive-0.1.4 \
 		zeroize-1.8.1 \
 		zeroize_derive-1.4.2 \
+		zerovec-0.10.4 \
+		zerovec-derive-0.10.3 \
 		zip-2.2.0 \
 		zipsign-api-0.1.2 \
 		zopfli-0.8.1 \
