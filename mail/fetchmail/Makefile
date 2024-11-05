@@ -1,6 +1,6 @@
 PORTNAME?=	fetchmail
 DISTVERSION=	6.5.0
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	mail
 # The next line is inherited by the fetchmailconf dependent port,
 # do NOT replace fetchmail by ${PORTNAME}
@@ -27,9 +27,7 @@ GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
 # the added PYTHON=: suppresses python builds,
 # see ../../mail/fetchmailconf/ for the configuration tool
-CONFIGURE_ARGS=	--enable-opie \
-		--enable-RPA \
-		--enable-SDPS \
+CONFIGURE_ARGS=	--enable-SDPS \
 		--without-hesiod \
 		PYTHON=:
 
@@ -45,13 +43,19 @@ PORTDOCS=	FAQ FEATURES NEWS NOTES OLDNEWS README README.SSL \
 		README.SSL-SERVER design-notes.html esrs-design-notes.html \
 		fetchmail-FAQ.html fetchmail-features.html todo.html
 
-OPTIONS_DEFINE=		DOCS NLS
-OPTIONS_DEFAULT=	GSSAPI_BASE OPENSSL
+OPTIONS_DEFINE=		OPIE RPA DOCS NLS
+OPTIONS_DEFAULT=	GSSAPI_BASE OPENSSL RPA
 OPTIONS_SINGLE=		GSSAPI TLS
 OPTIONS_SINGLE_GSSAPI=	GSSAPI_BASE GSSAPI_HEIMDAL GSSAPI_MIT GSSAPI_NONE
 OPTIONS_SINGLE_TLS=	OPENSSL WOLFSSL
 
 OPTIONS_SUB=	yes
+
+OPIE_CONFIGURE_ON=		--enable-opie
+OPIE_DESC=			Build with OPIE support (deprecated - weak/broken cryptography)
+
+RPA_CONFIGURE_ON=		--enable-RPA
+RPA_DESC=			Build with RPA support (deprecated - weak/broken cryptography)
 
 GSSAPI_BASE_USES=		gssapi
 GSSAPI_BASE_CONFIGURE_ON=	${GSSAPI_CONFIGURE_ARGS} \
@@ -101,9 +105,10 @@ post-install-DOCS-on:
 
 .include <bsd.port.pre.mk>
 
-.if ${MASTERDIR} == ${.CURDIR} && ${OPSYS} == FreeBSD
+.if ${PORT_OPTIONS:MOPIE} && ${MASTERDIR} == ${.CURDIR} && ${OPSYS} == FreeBSD
 . if ${OSVERSION} >= 1400072
 LIB_DEPENDS+=	libopie.so:security/opie	# moved to port (from base in 13.X)
+CPPFLAGS+=	-I${LOCALBASE}/include
 . endif
 .endif
 

@@ -5,6 +5,17 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20241104:
+  AFFECTS: users of mail/fetchmail
+  AUTHOR: chalpin@cs.wisc.edu
+
+  OPIE and RPA have been made optional because both have significant security
+  problems. OPIE support was not provided by the port on 14.x until the update
+  to 6.5.0, when it was briefly re-activated. Because of its security flaws, it
+  has now been disabled by default on both 13.x and 14.x.
+
+  RPA is currently enabled by default, but this will change in a future update.
+
 20241019:
   AFFECTS: users of security/libressl
   AUTHOR: brnrd@FreeBSD.org
