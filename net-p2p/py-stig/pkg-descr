@@ -1,0 +1,20 @@
+Stig features:
+
+* Filters are used to select torrents for listing, starting/stopping, deleting,
+etc
+
+* Tabs allow you to open and switch between multiple lists (torrents, peers,
+files, etc)
+
+* Commands do almost everything, and they can be invoked:
+- through single- or multi-key (think GNU/EMACS) keybindings,
+- by entering them in a command prompt in the TUI (think vi) with tab completion
+- by providing them as CLI arguments when invoking stig (think Git),
+- or by listing them in an rc file which is automatically loaded.
+
+* Color themes support 16 and 256 colors
+
+* Complete built-in documentation with help command or --help argument
+
+* Full API abstraction layer makes it possible to add support for other
+BitTorrent clients with RPC interfaces (contributors are welcome)
