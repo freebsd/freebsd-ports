@@ -178,6 +178,7 @@ LIBCLANG_RT_LIBS_x86_64= \
 	msan_cxx.a \
 	msan_cxx.a.syms \
 	xray-basic.a \
+	xray-dso.a \
 	xray-fdr.a \
 	xray-profiling.a \
 	xray.a \
