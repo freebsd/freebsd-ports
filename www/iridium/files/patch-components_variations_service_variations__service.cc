@@ -1,6 +1,6 @@
---- components/variations/service/variations_service.cc.orig	2024-08-01 05:47:53 UTC
+--- components/variations/service/variations_service.cc.orig	2024-11-04 08:56:03 UTC
 +++ components/variations/service/variations_service.cc
-@@ -101,7 +101,7 @@ std::string GetPlatformString() {
+@@ -102,7 +102,7 @@ std::string GetPlatformString() {
    return "android";
  #elif BUILDFLAG(IS_FUCHSIA)
    return "fuchsia";

@@ -1,6 +1,6 @@
---- media/audio/pulse/pulse_util.cc.orig	2024-06-25 12:08:48 UTC
+--- media/audio/pulse/pulse_util.cc.orig	2024-11-04 08:56:03 UTC
 +++ media/audio/pulse/pulse_util.cc
-@@ -45,7 +45,11 @@ constexpr char kBrowserDisplayName[] = "chromium-brows
+@@ -50,7 +50,11 @@ constexpr char kBrowserDisplayName[] = "chromium-brows
  
  #if defined(DLOPEN_PULSEAUDIO)
  static const base::FilePath::CharType kPulseLib[] =

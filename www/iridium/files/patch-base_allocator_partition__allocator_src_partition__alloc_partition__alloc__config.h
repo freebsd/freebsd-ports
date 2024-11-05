@@ -1,4 +1,4 @@
---- base/allocator/partition_allocator/src/partition_alloc/partition_alloc_config.h.orig	2024-08-27 06:28:16 UTC
+--- base/allocator/partition_allocator/src/partition_alloc/partition_alloc_config.h.orig	2024-11-04 08:56:03 UTC
 +++ base/allocator/partition_allocator/src/partition_alloc/partition_alloc_config.h
 @@ -168,7 +168,7 @@ constexpr bool kUseLazyCommit = false;
  // This may be required on more platforms in the future.
@@ -7,9 +7,9 @@
 -   PA_BUILDFLAG(IS_CHROMEOS))
 +   PA_BUILDFLAG(IS_CHROMEOS) || PA_BUILDFLAG(IS_BSD))
  
- // PartitionAlloc uses PartitionRootEnumerator to acquire all
- // PartitionRoots at BeforeFork and to release at AfterFork.
-@@ -216,7 +216,7 @@ constexpr bool kUseLazyCommit = false;
+ // Enable shadow metadata.
+ //
+@@ -231,7 +231,7 @@ constexpr bool kUseLazyCommit = false;
  // Also enabled on ARM64 macOS and iOS, as the 16kiB pages on this platform lead
  // to larger slot spans.
  #if PA_BUILDFLAG(IS_LINUX) || \

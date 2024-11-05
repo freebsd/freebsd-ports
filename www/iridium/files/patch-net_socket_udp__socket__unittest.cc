@@ -1,6 +1,6 @@
---- net/socket/udp_socket_unittest.cc.orig	2024-06-25 12:08:48 UTC
+--- net/socket/udp_socket_unittest.cc.orig	2024-11-04 08:56:03 UTC
 +++ net/socket/udp_socket_unittest.cc
-@@ -358,7 +358,7 @@ TEST_F(UDPSocketTest, PartialRecv) {
+@@ -372,7 +372,7 @@ TEST_F(UDPSocketTest, PartialRecv) {
    EXPECT_EQ(second_packet, received);
  }
  
@@ -9,7 +9,7 @@
  // - MacOS: requires root permissions on OSX 10.7+.
  // - Android: devices attached to testbots don't have default network, so
  // broadcasting to 255.255.255.255 returns error -109 (Address not reachable).
-@@ -669,7 +669,7 @@ TEST_F(UDPSocketTest, ClientSetDoNotFragment) {
+@@ -683,7 +683,7 @@ TEST_F(UDPSocketTest, ClientSetDoNotFragment) {
      EXPECT_THAT(rv, IsOk());
  
      rv = client.SetDoNotFragment();
@@ -17,8 +17,8 @@
 +#if BUILDFLAG(IS_IOS) || BUILDFLAG(IS_FUCHSIA) || BUILDFLAG(IS_BSD)
      // TODO(crbug.com/42050633): IP_MTU_DISCOVER is not implemented on Fuchsia.
      EXPECT_THAT(rv, IsError(ERR_NOT_IMPLEMENTED));
- #elif BUILDFLAG(IS_MAC)
-@@ -697,7 +697,7 @@ TEST_F(UDPSocketTest, ServerSetDoNotFragment) {
+ #else
+@@ -705,7 +705,7 @@ TEST_F(UDPSocketTest, ServerSetDoNotFragment) {
      EXPECT_THAT(rv, IsOk());
  
      rv = server.SetDoNotFragment();
@@ -26,8 +26,8 @@
 +#if BUILDFLAG(IS_IOS) || BUILDFLAG(IS_FUCHSIA) || BUILDFLAG(IS_BSD)
      // TODO(crbug.com/42050633): IP_MTU_DISCOVER is not implemented on Fuchsia.
      EXPECT_THAT(rv, IsError(ERR_NOT_IMPLEMENTED));
- #elif BUILDFLAG(IS_MAC)
-@@ -762,7 +762,7 @@ TEST_F(UDPSocketTest, JoinMulticastGroup) {
+ #else
+@@ -764,7 +764,7 @@ TEST_F(UDPSocketTest, JoinMulticastGroup) {
  
  // TODO(crbug.com/40620614): failing on device on iOS 12.2.
  // TODO(crbug.com/40189274): flaky on Mac 11.
@@ -36,7 +36,7 @@
  #define MAYBE_SharedMulticastAddress DISABLED_SharedMulticastAddress
  #else
  #define MAYBE_SharedMulticastAddress SharedMulticastAddress
-@@ -816,7 +816,7 @@ TEST_F(UDPSocketTest, MAYBE_SharedMulticastAddress) {
+@@ -818,7 +818,7 @@ TEST_F(UDPSocketTest, MAYBE_SharedMulticastAddress) {
                                  NetLogSource());
    ASSERT_THAT(client_socket.Connect(send_address), IsOk());
  

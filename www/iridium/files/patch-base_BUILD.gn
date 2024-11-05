@@ -1,15 +1,6 @@
---- base/BUILD.gn.orig	2024-08-27 06:28:16 UTC
+--- base/BUILD.gn.orig	2024-11-04 08:56:03 UTC
 +++ base/BUILD.gn
-@@ -176,7 +176,7 @@ buildflag_header("ios_cronet_buildflags") {
-   flags = [ "CRONET_BUILD=$is_cronet_build" ]
- }
- 
--enable_message_pump_epoll = is_linux || is_chromeos || is_android
-+enable_message_pump_epoll = (is_linux || is_chromeos || is_android) && !is_bsd
- buildflag_header("message_pump_buildflags") {
-   header = "message_pump_buildflags.h"
-   header_dir = "base/message_loop"
-@@ -1119,11 +1119,23 @@ component("base") {
+@@ -1101,11 +1101,26 @@ component("base") {
    # Needed for <atomic> if using newer C++ library than sysroot, except if
    # building inside the cros_sdk environment - use host_toolchain as a
    # more robust check for this.
@@ -21,7 +12,10 @@
  
 +  # *BSD needs libkvm
 +  if (is_bsd) {
-+    libs += [ "kvm" ]
++    libs += [
++      "kvm",
++      "epoll-shim",
++    ]
 +  }
 +
 +  if (is_freebsd) {
@@ -34,7 +28,7 @@
    if (use_allocator_shim) {
      if (is_apple) {
        sources += [ "allocator/early_zone_registration_apple.h" ]
-@@ -1143,7 +1155,7 @@ component("base") {
+@@ -1125,7 +1140,7 @@ component("base") {
  
    # Allow more direct string conversions on platforms with native utf8
    # strings
@@ -43,7 +37,7 @@
      defines += [ "SYSTEM_NATIVE_UTF8" ]
    }
  
-@@ -2121,6 +2133,22 @@ component("base") {
+@@ -2102,6 +2117,22 @@ component("base") {
      ]
    }
  
@@ -66,7 +60,7 @@
    # iOS
    if (is_ios) {
      sources += [
-@@ -2266,6 +2294,33 @@ component("base") {
+@@ -2246,6 +2277,33 @@ component("base") {
      }
    }
  
@@ -100,16 +94,16 @@
    if (use_blink) {
      sources += [
        "files/file_path_watcher.cc",
-@@ -2276,7 +2331,7 @@ component("base") {
-   }
+@@ -2572,7 +2630,7 @@ buildflag_header("protected_memory_buildflags") {
+   header = "protected_memory_buildflags.h"
+   header_dir = "base/memory"
  
-   if (dep_libevent) {
--    deps += [ "//third_party/libevent" ]
-+    public_deps += [ "//third_party/libevent" ]
-   }
+-  protected_memory_enabled = !is_component_build && is_clang &&
++  protected_memory_enabled = !is_openbsd && !is_component_build && is_clang &&
+                              (is_win || is_linux || is_android || is_mac)
  
-   if (use_libevent) {
-@@ -3077,7 +3132,7 @@ if (is_apple) {
+   flags = [ "PROTECTED_MEMORY_ENABLED=$protected_memory_enabled" ]
+@@ -3055,7 +3113,7 @@ if (is_apple) {
    }
  }
  
@@ -118,7 +112,7 @@
    # This test must compile with -fstack-protector-all
    source_set("stack_canary_linux_unittests") {
      testonly = true
-@@ -3730,7 +3785,7 @@ test("base_unittests") {
+@@ -3717,7 +3775,7 @@ test("base_unittests") {
      ]
    }
  
@@ -127,7 +121,7 @@
      sources += [
        "debug/proc_maps_linux_unittest.cc",
        "files/scoped_file_linux_unittest.cc",
-@@ -3757,7 +3812,7 @@ test("base_unittests") {
+@@ -3744,7 +3802,7 @@ test("base_unittests") {
        "posix/file_descriptor_shuffle_unittest.cc",
        "posix/unix_domain_socket_unittest.cc",
      ]
@@ -136,7 +130,7 @@
        sources += [
          "profiler/stack_base_address_posix_unittest.cc",
          "profiler/stack_copier_signal_unittest.cc",
-@@ -3768,7 +3823,7 @@ test("base_unittests") {
+@@ -3755,7 +3813,7 @@ test("base_unittests") {
  
    # Allow more direct string conversions on platforms with native utf8
    # strings
@@ -145,7 +139,7 @@
      defines += [ "SYSTEM_NATIVE_UTF8" ]
    }
  
-@@ -3953,7 +4008,7 @@ test("base_unittests") {
+@@ -3942,7 +4000,7 @@ test("base_unittests") {
      deps += [ ":base_profiler_test_support_library" ]
    }
  

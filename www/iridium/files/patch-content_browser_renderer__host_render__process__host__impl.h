@@ -1,4 +1,4 @@
---- content/browser/renderer_host/render_process_host_impl.h.orig	2024-08-27 06:28:16 UTC
+--- content/browser/renderer_host/render_process_host_impl.h.orig	2024-11-04 08:56:03 UTC
 +++ content/browser/renderer_host/render_process_host_impl.h
 @@ -102,7 +102,7 @@
  #include "media/fuchsia_media_codec_provider_impl.h"
@@ -9,7 +9,7 @@
  #include "content/browser/child_thread_type_switcher_linux.h"
  #include "media/mojo/mojom/video_encode_accelerator.mojom.h"
  #endif
-@@ -602,7 +602,7 @@ class CONTENT_EXPORT RenderProcessHostImpl
+@@ -612,7 +612,7 @@ class CONTENT_EXPORT RenderProcessHostImpl
    // Sets this RenderProcessHost to be guest only. For Testing only.
    void SetForGuestsOnlyForTesting();
  
@@ -18,7 +18,7 @@
    // Launch the zygote early in the browser startup.
    static void EarlyZygoteLaunch();
  #endif  // BUILDFLAG(IS_POSIX) && !BUILDFLAG(IS_ANDROID) && !BUILDFLAG(IS_MAC)
-@@ -967,7 +967,7 @@ class CONTENT_EXPORT RenderProcessHostImpl
+@@ -977,7 +977,7 @@ class CONTENT_EXPORT RenderProcessHostImpl
      std::unique_ptr<service_manager::BinderRegistry> binders_;
      mojo::Receiver<mojom::ChildProcessHost> receiver_{this};
  

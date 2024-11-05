@@ -1,6 +1,6 @@
---- v8/src/base/sys-info.cc.orig	2022-03-28 18:11:04 UTC
+--- v8/src/base/sys-info.cc.orig	2024-11-04 08:56:03 UTC
 +++ v8/src/base/sys-info.cc
-@@ -38,7 +38,7 @@ namespace base {
+@@ -36,7 +36,7 @@ namespace base {
  // static
  int SysInfo::NumberOfProcessors() {
  #if V8_OS_OPENBSD
