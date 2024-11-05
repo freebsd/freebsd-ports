@@ -1,6 +1,6 @@
---- chrome/enterprise_companion/enterprise_companion_client.cc.orig	2024-08-27 06:28:16 UTC
+--- chrome/enterprise_companion/enterprise_companion_client.cc.orig	2024-11-04 08:56:03 UTC
 +++ chrome/enterprise_companion/enterprise_companion_client.cc
-@@ -33,7 +33,7 @@ namespace {
+@@ -36,7 +36,7 @@ namespace {
  
  #if BUILDFLAG(IS_MAC)
  constexpr char kServerName[] = MAC_BUNDLE_IDENTIFIER_STRING ".service";

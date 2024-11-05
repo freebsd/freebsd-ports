@@ -1,11 +1,16 @@
---- build/config/clang/BUILD.gn.orig	2024-08-27 06:28:16 UTC
+--- build/config/clang/BUILD.gn.orig	2024-11-04 08:56:03 UTC
 +++ build/config/clang/BUILD.gn
-@@ -237,7 +237,7 @@ template("clang_lib") {
+@@ -236,7 +236,12 @@ template("clang_lib") {
  
  # Adds a dependency on the Clang runtime library clang_rt.builtins.
  clang_lib("compiler_builtins") {
--  if (!toolchain_has_rust) {
-+  if (!toolchain_has_rust || is_bsd) {
-     # Since there's no Rust in the toolchain, there's no concern that we'll use
-     # the Rust stdlib's intrinsics here.
-     #
+-  if (is_mac) {
++  if (is_bsd) {
++    # Since there's no Rust in the toolchain, there's no concern that we'll use
++    # the Rust stdlib's intrinsics here.
++    #
++    # Don't define libname which makes this target do nothing.
++  } else if (is_mac) {
+     libname = "osx"
+   } else if (is_ios) {
+     if (target_environment == "simulator") {
