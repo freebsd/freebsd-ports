@@ -11,6 +11,9 @@ WWW=		https://github.com/shadowsocks/shadowsocks-libev
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Abandonware, no active development. Please migrate to net/shadowsocks-rust
+EXPIRATION_DATE=2024-11-30
+
 LIB_DEPENDS=	libev.so:devel/libev \
 		libmbedcrypto.so:security/mbedtls \
 		libpcre.so:devel/pcre \
