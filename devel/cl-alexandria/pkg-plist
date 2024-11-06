@@ -16,6 +16,7 @@ lib/common-lisp/alexandria/alexandria-1/strings.lisp
 lib/common-lisp/alexandria/alexandria-1/symbols.lisp
 lib/common-lisp/alexandria/alexandria-1/tests.lisp
 lib/common-lisp/alexandria/alexandria-1/types.lisp
+lib/common-lisp/alexandria/alexandria-2/arrays.lisp
 lib/common-lisp/alexandria/alexandria-2/control-flow.lisp
 lib/common-lisp/alexandria/alexandria-2/lists.lisp
 lib/common-lisp/alexandria/alexandria-2/package.lisp
