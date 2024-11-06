@@ -1216,8 +1216,12 @@ include/wine/windows/windows.ui.input.h
 include/wine/windows/windows.ui.input.idl
 include/wine/windows/windows.ui.viewmanagement.h
 include/wine/windows/windows.ui.viewmanagement.idl
+include/wine/windows/windows.ui.xaml.h
 include/wine/windows/windows.ui.xaml.hosting.desktopwindowxamlsource.h
 include/wine/windows/windows.ui.xaml.hosting.desktopwindowxamlsource.idl
+include/wine/windows/windows.ui.xaml.idl
+include/wine/windows/windows.ui.xaml.interop.h
+include/wine/windows/windows.ui.xaml.interop.idl
 include/wine/windows/windowscontracts.h
 include/wine/windows/windowscontracts.idl
 include/wine/windows/windowsx.h
