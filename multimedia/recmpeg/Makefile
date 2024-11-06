@@ -8,6 +8,9 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple video encoder
 WWW=		https://fame.sourceforge.net/
 
+DEPRECATED=	Depends on deprecated and obsolete library libfame, consider migrating to multimedia/ffmpeg
+EXPIRATION_DATE=2024-12-31
+
 LIB_DEPENDS=	libfame.so:multimedia/libfame
 
 GNU_CONFIGURE=	yes
