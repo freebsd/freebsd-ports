@@ -11,6 +11,9 @@ WWW=		https://fame.sourceforge.net/
 LICENSE=	LGPL20+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Obsolete library, last release in 2004. Consider migrating to multimedia/ffmpeg
+EXPIRATION_DATE=2024-12-31
+
 USES=		libtool
 USE_LDCONFIG=	yes
 
