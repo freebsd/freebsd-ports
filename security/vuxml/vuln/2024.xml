@@ -1,3 +1,38 @@
+  <vuln vid="ab254c9d-9c36-11ef-8c1c-a8a1599412c6">
+    <topic>chromium -- multiple security fixes</topic>
+    <affects>
+      <package>
+       <name>chromium</name>
+       <range><lt>130.0.6723.116</lt></range>
+      </package>
+      <package>
+       <name>ungoogled-chromium</name>
+       <range><lt>130.0.6723.116</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+       <p>Chrome Releases reports:</p>
+       <blockquote cite="https://chromereleases.googleblog.com/2024/11/stable-channel-update-for-desktop.html">
+	 <p>This update includes 2 security fixes:</p>
+	 <ul>
+	    <li>[370217726] High CVE-2024-10826: Use after free in Family Experiences. Reported by Anonymous on 2024-09-29</li>
+	    <li>[375065084] High CVE-2024-10827: Use after free in Serial. Reported by Anonymous on 2024-10-23</li>
+	 </ul>
+       </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2024-10826</cvename>
+      <cvename>CVE-2024-10827</cvename>
+      <url>https://chromereleases.googleblog.com/2024/11/stable-channel-update-for-desktop.html</url>
+    </references>
+    <dates>
+      <discovery>2024-11-05</discovery>
+      <entry>2024-11-06</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="ecf9a798-9aa9-11ef-a8f0-a8a15998b5cb">
     <topic>libqb -- Buffer overflow</topic>
     <affects>
