@@ -1,5 +1,5 @@
 PORTNAME=	graphviz
-PORTVERSION=	12.1.2
+PORTVERSION=	12.2.0
 PORTREVISION=	0
 CATEGORIES=	graphics tk
 MASTER_SITES=	https://gitlab.com/api/v4/projects/4207231/packages/generic/graphviz-releases/${PORTVERSION}/
@@ -168,7 +168,6 @@ TK_CONFIGURE_ON=	--with-wish=${WISH}
 TK_CONFIGURE_ENV=	TKCONFIG="${TK_LIBDIR}/tkConfig.sh"
 TK_IMPLIES=	TCL
 GUILE_CONFIGURE_ENABLE=		guile
-GUILE_BROKEN=		guile3-3.0.10: guile-3.0, exited on signal 11
 GO_CONFIGURE_ENABLE=		go
 NVTHREADS_LDFLAGS=	-lpthread
 
@@ -247,8 +246,6 @@ post-patch:
 		${WRKSRC}/configure.ac
 	${REINPLACE_CMD} -e 's|#include "gui.h"|#include "gui/gui.h"|' \
 		${WRKSRC}/cmd/smyrna/tvnodes.h
-	${REINPLACE_CMD} -e 's|SF_FLAGS|SFIO_FLAGS|g' \
-		${WRKSRC}/lib/sfio/*.[ch]
 	cd ${WRKSRC} && ${REINPLACE_CMD} \
 		-e 's|exec tclsh |exec tclsh${TCL_VER} |' ${FIX_TCL_SCRIPT}
 	cd ${WRKSRC} && ${REINPLACE_CMD} \

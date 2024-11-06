@@ -1,15 +1,6 @@
---- configure.ac.orig	2024-07-04 07:59:36 UTC
+--- configure.ac.orig	2024-11-03 19:33:36 UTC
 +++ configure.ac
-@@ -576,7 +576,7 @@ else
-       if test "$GUILE_CONFIG" = ""; then
-         use_guile="No (guile not available)"
-       else
--        [GUILE_VERSION=`$GUILE_CONFIG --version 2>&1 | sed -n '1 s/^.* \+\([0-9\.]\+\)$/\1/ p'`]
-+        [GUILE_VERSION=`$GUILE_CONFIG --version 2>&1 | sed -n '1 s/^.* \([0-9\.]*\)$/\1/ p'`]
-         GUILE_VERSION_MAJOR=`echo $GUILE_VERSION | cut -d '.' -f 1`
-         GUILE_VERSION_MINOR=`echo $GUILE_VERSION | cut -d '.' -f 2`
-         AC_CHECK_PROGS(GUILE,guile$GUILE_VERSION_MAJOR.$GUILE_VERSION_MINOR guile$GUILE_VERSION_MAJOR guile)
-@@ -759,13 +759,13 @@ else
+@@ -731,13 +731,13 @@ else
  	        for l in "$lua_suffix" "" "54" "5.4" "53" "5.3" "52" "5.2" "51" "5.1" ; do
  	            pkgconfig_lua_found=`$PKG_CONFIG --exists lua$l 2>/dev/null`
  	            if test "$?" = "0" ; then
@@ -25,7 +16,7 @@
  		           LUA_LIBS="$LUA_LFLAGS "`$PKG_CONFIG --libs lualib$l`
  		        fi
                          break
-@@ -1070,6 +1070,7 @@ else
+@@ -1029,6 +1029,7 @@ else
              RUBY_CFLAGS="$RUBY_CFLAGS -I`$RUBY $srcdir/config/config_ruby.rb vendorhdrdir`"
              RUBY_CFLAGS="$RUBY_CFLAGS -I`$RUBY $srcdir/config/config_ruby.rb sitehdrdir`"
              RUBY_CFLAGS="$RUBY_CFLAGS -I`$RUBY $srcdir/config/config_ruby.rb rubyhdrdir`"
