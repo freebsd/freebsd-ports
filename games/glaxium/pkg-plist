@@ -1,5 +1,4 @@
 bin/glaxium
-share/man/man6/glaxium.6.gz
 %%DATADIR%%/samples/detection.wav
 %%DATADIR%%/samples/explode1.wav
 %%DATADIR%%/samples/explode2.wav
@@ -57,3 +56,4 @@ share/man/man6/glaxium.6.gz
 %%DATADIR%%/textures/sphere.png
 %%DATADIR%%/textures/tache.png
 %%DATADIR%%/textures/thunder.png
+share/man/man6/glaxium.6.gz

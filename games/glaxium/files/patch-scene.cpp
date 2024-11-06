@@ -1,6 +1,6 @@
---- ./scene.cpp.orig	Thu Oct 10 16:57:58 2002
-+++ ./scene.cpp	Sat Jul 21 17:54:40 2007
-@@ -2361,7 +2361,7 @@
+--- scene.cpp.orig	2024-11-06 19:04:58 UTC
++++ scene.cpp
+@@ -2361,7 +2361,7 @@ void Scene::menuIdle() 
  	oldTimer = newTimer;
  	globalList->move()	;
  #ifndef PI
