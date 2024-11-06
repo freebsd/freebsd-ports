@@ -1,7 +1,6 @@
 PORTNAME=	gitu
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.26.0
-PORTREVISION=	0
+DISTVERSION=	0.27.0
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -49,7 +48,6 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		clap_lex-0.7.2 \
 		clipboard-win-5.4.0 \
 		colorchoice-1.0.2 \
-		compact_str-0.7.1 \
 		compact_str-0.8.0 \
 		console-0.15.8 \
 		core-foundation-sys-0.8.7 \
@@ -58,7 +56,6 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		crossbeam-deque-0.8.5 \
 		crossbeam-epoch-0.9.18 \
 		crossbeam-utils-0.8.20 \
-		crossterm-0.27.0 \
 		crossterm-0.28.1 \
 		crossterm_winapi-0.9.1 \
 		crunchy-0.2.2 \
@@ -97,6 +94,7 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		iana-time-zone-haiku-0.1.2 \
 		idna-0.5.0 \
 		indexmap-2.6.0 \
+		indoc-2.0.5 \
 		insta-1.40.0 \
 		instability-0.3.2 \
 		is-terminal-0.4.13 \
@@ -117,7 +115,6 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		lru-0.12.5 \
 		memchr-2.7.4 \
 		minimal-lexical-0.2.1 \
-		mio-0.8.11 \
 		mio-1.0.2 \
 		nom-7.1.3 \
 		num-traits-0.2.19 \
@@ -146,19 +143,18 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		proc-macro-crate-3.2.0 \
 		proc-macro2-1.0.88 \
 		quote-1.0.37 \
-		ratatui-0.27.0 \
-		ratatui-0.28.1 \
-		ratatui-macros-0.4.4 \
+		ratatui-0.29.0 \
+		ratatui-macros-0.6.0 \
 		rayon-1.10.0 \
 		rayon-core-1.12.1 \
 		redox_syscall-0.1.57 \
 		redox_syscall-0.5.7 \
-		regex-1.11.0 \
+		regex-1.11.1 \
 		regex-automata-0.4.8 \
 		regex-syntax-0.8.5 \
 		relative-path-1.9.3 \
-		rstest-0.21.0 \
-		rstest_macros-0.21.0 \
+		rstest-0.23.0 \
+		rstest_macros-0.23.0 \
 		rustc_version-0.4.1 \
 		rustix-0.38.37 \
 		rustversion-1.0.18 \
@@ -166,8 +162,8 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		same-file-1.0.6 \
 		scopeguard-1.2.0 \
 		semver-1.0.23 \
-		serde-1.0.210 \
-		serde_derive-1.0.210 \
+		serde-1.0.213 \
+		serde_derive-1.0.213 \
 		serde_json-1.0.128 \
 		serde_spanned-0.6.8 \
 		signal-hook-0.3.17 \
@@ -177,12 +173,11 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		simple-logging-2.0.2 \
 		slab-0.4.9 \
 		smallvec-1.13.2 \
-		stability-0.2.1 \
 		static_assertions-1.1.0 \
 		strsim-0.11.1 \
 		strum-0.26.3 \
 		strum_macros-0.26.4 \
-		syn-2.0.79 \
+		syn-2.0.85 \
 		temp-dir-0.1.14 \
 		thiserror-1.0.64 \
 		thiserror-impl-1.0.64 \
@@ -214,7 +209,7 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		tree-sitter-scala-0.20.3 \
 		tree-sitter-toml-0.20.0 \
 		tree-sitter-typescript-0.20.5 \
-		tui-prompts-0.3.20 \
+		tui-prompts-0.5.0 \
 		uncased-0.9.10 \
 		unicode-bidi-0.3.17 \
 		unicode-ident-1.0.13 \
@@ -222,6 +217,7 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		unicode-segmentation-1.12.0 \
 		unicode-truncate-1.1.0 \
 		unicode-width-0.1.14 \
+		unicode-width-0.2.0 \
 		url-2.5.2 \
 		utf8parse-0.2.2 \
 		vcpkg-0.2.15 \
