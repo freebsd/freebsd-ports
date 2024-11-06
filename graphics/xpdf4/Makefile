@@ -1,6 +1,6 @@
 PORTNAME=	xpdf
 PORTVERSION=	4.05
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	graphics print
 MASTER_SITES=	https://dl.xpdfreader.com/
@@ -21,13 +21,6 @@ CONFLICTS_INSTALL+=	xpdf3 xpdf
 CONFLICTS_INSTALL+=	xpdf3 xpdf4
 .endif
 
-FLAVORS=	qt5 qt6
-FLAVOR?=	${FLAVORS:[1]}
-qt5_PKGNAMESUFFIX=
-qt6_PKGNAMESUFFIX=	-qt6
-qt5_CONFLICTS_INSTALL=  ${PORTNAME}-qt6
-qt6_CONFLICTS_INSTALL=  ${PORTNAME}
-
 USES=		compiler:c++11-lang cmake cpe localbase:ldflags
 LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 		libpng.so:graphics/png \
@@ -41,7 +34,9 @@ CMAKE_ARGS+=	-DOPI_SUPPORT:BOOL=ON -DCMAKE_DISABLE_FIND_PACKAGE_Qt4:BOOL=ON \
 		-DCMAKE_INSTALL_PREFIX=${PREFIX} \
 		-DCMAKE_INSTALL_BINDIR=${PREFIX}/libexec/xpdf \
 		-DCMAKE_INSTALL_MANDIR=${PREFIX}/share/xpdf/man \
-		-DNO_TEXT_SELECT:BOOL=OFF
+		-DNO_TEXT_SELECT:BOOL=OFF \
+		-DCMAKE_DISABLE_FIND_PACKAGE_Qt5Widgets:BOOL=FALSE \
+		-DCMAKE_DISABLE_FIND_PACKAGE_Qt6Widgets:BOOL=ON
 CPE_VENDOR=	xpdfreader
 
 PLIST_SUB=		DESKTOPDIR="${DESKTOPDIR}"
@@ -57,20 +52,10 @@ TYPE1_RUN_DEPENDS=	${LOCALBASE}/share/ghostscript/fonts/d050000l.pfb:print/gsfon
 LIBPAPER_CMAKE_BOOL=	USE_LIBPAPER
 LIBPAPER_LIB_DEPENDS=	libpaper.so:print/libpaper
 
-GUI_DESC=		GUI interface
-GUI_USES=		desktop-file-utils
-
-.if ${FLAVOR} == qt5
-USES+=		qt:5
-GUI_USE=	QT=buildtools:build,qmake:build,concurrent,core,gui,network,printsupport,svg,widgets
-CMAKE_ARGS+=	-DCMAKE_DISABLE_FIND_PACKAGE_Qt5Widgets:BOOL=FALSE \
-		-DCMAKE_DISABLE_FIND_PACKAGE_Qt6Widgets:BOOL=ON
-.else
-USES+=		qt:6
-GUI_USE=	QT=base,tools:build
-CMAKE_ARGS+=	-DCMAKE_DISABLE_FIND_PACKAGE_Qt5Widgets:BOOL=ON \
-		-DCMAKE_DISABLE_FIND_PACKAGE_Qt6Widgets:BOOL=FALSE
-.endif
+GUI_CMAKE_OFF=		-DCMAKE_DISABLE_FIND_PACKAGE_Qt5Widgets=1
+GUI_DESC=		QT5 interface
+GUI_USES=		qt:5 desktop-file-utils
+GUI_USE=		QT=buildtools:build,qmake:build,concurrent,core,gui,widgets,printsupport,svg,network,printsupport
 
 PRINT_CMAKE_ON=		-DXPDFWIDGET_PRINTING:BOOL=ON -DCUPS:BOOL=ON
 PRINT_CMAKE_OFF=	-DXPDFWIDGET_PRINTING:BOOL=OFF -DCUPS:BOOL=OFF
