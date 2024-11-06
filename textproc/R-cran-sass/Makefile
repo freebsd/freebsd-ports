@@ -9,7 +9,7 @@ WWW=		https://cran.r-project.org/web/packages/sass/
 
 LICENSE=	MIT
 
-CRAN_DEPENDS=	R-cran-fs>0:sysutils/R-cran-fs \
+CRAN_DEPENDS=	R-cran-fs>0:filesystems/R-cran-fs \
 		R-cran-htmltools>=0.5.1:textproc/R-cran-htmltools \
 		R-cran-R6>0:devel/R-cran-R6 \
 		R-cran-rappdirs>0:devel/R-cran-rappdirs \

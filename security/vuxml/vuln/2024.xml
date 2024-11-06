@@ -1,3 +1,100 @@
+  <vuln vid="ab254c9d-9c36-11ef-8c1c-a8a1599412c6">
+    <topic>chromium -- multiple security fixes</topic>
+    <affects>
+      <package>
+       <name>chromium</name>
+       <range><lt>130.0.6723.116</lt></range>
+      </package>
+      <package>
+       <name>ungoogled-chromium</name>
+       <range><lt>130.0.6723.116</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+       <p>Chrome Releases reports:</p>
+       <blockquote cite="https://chromereleases.googleblog.com/2024/11/stable-channel-update-for-desktop.html">
+	 <p>This update includes 2 security fixes:</p>
+	 <ul>
+	    <li>[370217726] High CVE-2024-10826: Use after free in Family Experiences. Reported by Anonymous on 2024-09-29</li>
+	    <li>[375065084] High CVE-2024-10827: Use after free in Serial. Reported by Anonymous on 2024-10-23</li>
+	 </ul>
+       </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2024-10826</cvename>
+      <cvename>CVE-2024-10827</cvename>
+      <url>https://chromereleases.googleblog.com/2024/11/stable-channel-update-for-desktop.html</url>
+    </references>
+    <dates>
+      <discovery>2024-11-05</discovery>
+      <entry>2024-11-06</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="ecf9a798-9aa9-11ef-a8f0-a8a15998b5cb">
+    <topic>libqb -- Buffer overflow</topic>
+    <affects>
+      <package>
+	<name>libqb</name>
+	<range><lt>2.0.8</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>cve@mitre.org reports:</p>
+	<blockquote cite="https://github.com/ClusterLabs/libqb/commit/1bbaa929b77113532785c408dd1b41cd0521ffc8">
+	  <p>log_blackbox.c in libqb before 2.0.8 allows a buffer overflow via
+	long log messages because the header size is not considered.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2023-39976</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2023-39976</url>
+    </references>
+    <dates>
+      <discovery>2023-08-08</discovery>
+      <entry>2024-11-04</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="e17384ef-c5e8-4b5d-bb62-c13405e7f1f7">
+    <topic>chromium -- multiple security fixes</topic>
+    <affects>
+      <package>
+       <name>chromium</name>
+       <range><lt>130.0.6723.91</lt></range>
+      </package>
+      <package>
+       <name>ungoogled-chromium</name>
+       <range><lt>130.0.6723.91</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+       <p>Chrome Releases reports:</p>
+       <blockquote cite="https://chromereleases.googleblog.com/2024/10/stable-channel-update-for-desktop_29.html">
+	 <p>This update includes 2 security fixes:</p>
+	 <ul>
+	    <li>[375123371] Critical CVE-2024-10487: Out of bounds write in Dawn. Reported by Apple Security Engineering and Architecture (SEAR) on 2024-10-23</li>
+	    <li>[374310077] High CVE-2024-10488: Use after free in WebRTC. Reported by Cassidy Kim(@cassidy6564) on 2024-10-18</li>
+	 </ul>
+       </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2024-10487</cvename>
+      <cvename>CVE-2024-10488</cvename>
+      <url>https://chromereleases.googleblog.com/2024/10/stable-channel-update-for-desktop_29.html</url>
+    </references>
+    <dates>
+      <discovery>2024-10-29</discovery>
+      <entry>2024-11-02</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="3092668e-97e4-11ef-bdd9-4ccc6adda413">
     <topic>qt5-webengine -- Multiple vulnerabilities</topic>
     <affects>

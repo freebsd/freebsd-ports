@@ -17,6 +17,7 @@ include/SDL3/SDL_error.h
 include/SDL3/SDL_events.h
 include/SDL3/SDL_filesystem.h
 include/SDL3/SDL_gamepad.h
+include/SDL3/SDL_gpu.h
 include/SDL3/SDL_guid.h
 include/SDL3/SDL_haptic.h
 include/SDL3/SDL_hidapi.h
@@ -51,6 +52,7 @@ include/SDL3/SDL_pixels.h
 include/SDL3/SDL_platform.h
 include/SDL3/SDL_platform_defines.h
 include/SDL3/SDL_power.h
+include/SDL3/SDL_process.h
 include/SDL3/SDL_properties.h
 include/SDL3/SDL_rect.h
 include/SDL3/SDL_render.h
@@ -72,7 +74,6 @@ include/SDL3/SDL_test_harness.h
 include/SDL3/SDL_test_log.h
 include/SDL3/SDL_test_md5.h
 include/SDL3/SDL_test_memory.h
-include/SDL3/SDL_test_random.h
 include/SDL3/SDL_thread.h
 include/SDL3/SDL_time.h
 include/SDL3/SDL_timer.h
@@ -89,6 +90,6 @@ lib/cmake/SDL3/SDL3testTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/SDL3/SDL3testTargets.cmake
 lib/libSDL3.so
 lib/libSDL3.so.0
-lib/libSDL3.so.0.1.2
+lib/libSDL3.so.%%LIBVERSION%%
 lib/libSDL3_test.a
 libdata/pkgconfig/sdl3.pc

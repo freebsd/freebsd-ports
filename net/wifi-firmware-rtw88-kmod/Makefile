@@ -5,7 +5,8 @@ FWSUBDIR=	rtw88
 #FWDRV_VERSION=	20230515	# rtw8822c is barfing
 #FWDRV_VERSION=	20230117	# rtw8822c is barfing
 #FWDRV_VERSION=	20220209	# Used for a long time
-FWDRV_VERSION=	20240513
+#FWDRV_VERSION=	20240513
+FWDRV_VERSION=	20241017
 
 LICENSE_FILE=	LICENCE.rtlwifi_firmware.txt
 LICENSE_NAME=	Realtek firmware license (${FWDRV})
@@ -18,11 +19,15 @@ WHENCE_REGEX=	rtw88 -.*
 ### >>>
 
 FWSUBS= \
+	rtw8703b \
 	rtw8723d \
 	rtw8821c \
 	rtw8822b \
 	rtw8822c
 
+DISTFILES_rtw8703b= \
+	${FWSUBDIR}/rtw8703b_fw.bin${DISTURL_SUFFIX} \
+	${FWSUBDIR}/rtw8703b_wow_fw.bin${DISTURL_SUFFIX}
 DISTFILES_rtw8723d= \
 	${FWSUBDIR}/rtw8723d_fw.bin${DISTURL_SUFFIX}
 DISTFILES_rtw8821c= \
@@ -34,6 +39,7 @@ DISTFILES_rtw8822c= \
 	${FWSUBDIR}/rtw8822c_wow_fw.bin${DISTURL_SUFFIX}
 
 DISTFILES_${FWDRV}= \
+	${DISTFILES_rtw8703b} \
 	${DISTFILES_rtw8723d} \
 	${DISTFILES_rtw8821c} \
 	${DISTFILES_rtw8822b} \

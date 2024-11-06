@@ -489,6 +489,7 @@
     SUBDIR += legesmotus
     SUBDIR += lexter
     SUBDIR += lgeneral
+    SUBDIR += lgogdownloader
     SUBDIR += libgnome-games-support
     SUBDIR += libkdegames
     SUBDIR += libkmahjongg

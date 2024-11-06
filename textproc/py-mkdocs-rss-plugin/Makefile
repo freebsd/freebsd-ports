@@ -1,7 +1,6 @@
 PORTNAME=	mkdocs-rss-plugin
-DISTVERSION=	1.15.0
+DISTVERSION=	1.16.0
 CATEGORIES=	textproc python
-MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	kai@FreeBSD.org
@@ -16,7 +15,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cachecontrol>=0.14<1:www/py-cachecontrol@${P
 		${PYTHON_PKGNAMEPREFIX}requests>=2.31<3:www/py-requests@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}mkdocs>=1.4.1:textproc/py-mkdocs@${PY_FLAVOR}
 
-USES=		python
+USES=		python:3.9+
 USE_GITHUB=	yes
 GH_ACCOUNT=	Guts
 USE_PYTHON=	autoplist distutils

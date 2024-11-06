@@ -10,6 +10,9 @@ WWW=		https://github.com/ncbi/ncbi-vdb/wiki
 LICENSE=	PD
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Very outdated, unmaintained and unsupported upstream
+EXPIRATION_DATE=2024-12-31
+
 ONLY_FOR_ARCHS=	amd64 i386
 ONLY_FOR_ARCHS_REASON=	libs/search/nucstrstr.c requires SSE2 instructions
 

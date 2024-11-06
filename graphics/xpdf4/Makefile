@@ -1,5 +1,6 @@
 PORTNAME=	xpdf
 PORTVERSION=	4.05
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	graphics print
 MASTER_SITES=	https://dl.xpdfreader.com/

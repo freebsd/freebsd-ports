@@ -1,6 +1,5 @@
 PORTNAME=	qmmp
-PORTVERSION=	1.6.9
-PORTREVISION=	2
+PORTVERSION=	1.7.1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://qmmp.ylsoftware.com/files/${PORTNAME}/${DISTVERSION:R}/ \
 		SF/qmmp-dev/${PORTNAME}/${DISTVERSION:R}/
@@ -244,6 +243,7 @@ post-patch:
 	@${GREP} -L '${LOCALBASE}/lib/oss' \
 		${WRKSRC}/src/plugins/Output/oss4/CMakeLists.txt | ${XARGS} \
 		${REINPLACE_CMD} -e 's|/usr/local/|${LOCALBASE}/|'
+	@${REINPLACE_CMD} -e 's|Qt6Multimedia|Qt5Multimedia|g' ${WRKSRC}/src/plugins/Output/CMakeLists.txt
 
 post-build-DOXYGEN-on:
 	cd ${WRKSRC}/doc && doxygen Doxyfile

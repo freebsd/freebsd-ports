@@ -11,6 +11,8 @@ WWW=		https://github.com/PCMSolver/pcmsolver
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_FreeBSD_15=	compilation is broken with clang-19, see https://github.com/PCMSolver/pcmsolver/issues/208
+
 USES=		cmake compiler:c11 fortran python
 USE_LDCONFIG=	yes
 

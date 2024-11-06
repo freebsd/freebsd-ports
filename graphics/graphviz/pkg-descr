@@ -2,7 +2,7 @@ Graph Visualization Software from AT&T Laboratories and
 Bell Laboratories (Lucent Technologies)
 
 These programs licensed under the terms described in the web page at:
-http://www.graphviz.org/License.php
+https://www.graphviz.org/license/
 
 The package contains:
     dotty  - customizable X windows graph viewer written in the Lefty editor

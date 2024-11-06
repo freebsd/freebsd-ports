@@ -17,6 +17,8 @@ DISTFILES=	mesa-${MESAVERSION}${EXTRACT_SUFX}
 
 PATCH_SITES=	https://gitlab.freedesktop.org/mesa/mesa/-/commit/
 PATCHFILES+=	4a253aae7ca437201d2a31d2a11a1a5434fe41f1.patch:-p1 # https://gitlab.freedesktop.org/mesa/mesa/-/merge_requests/26284
+PATCHFILES+=	5a9c052ba78e5d1b0020b8f8320d211d2205a958.patch:-p1 # https://gitlab.freedesktop.org/mesa/mesa/-/merge_requests/29993
+PATCHFILES+=	5d48fb19553c15bbbac498afcb7cc8710a803716.patch:-p1 # https://gitlab.freedesktop.org/mesa/mesa/-/merge_requests/31931
 
 MAINTAINER=	x11@FreeBSD.org
 

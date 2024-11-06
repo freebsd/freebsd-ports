@@ -15,6 +15,9 @@ LICENSE_NAME=	MPEG-2 license
 LICENSE_FILE=	${WRKSRC}/mpeg2enc.h
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
+DEPRECATED=	Obsolete, addon to VTK5 which was removed in 2018
+EXPIRATION_DATE=2024-11-30
+
 USES=		cmake:insource
 USE_LDCONFIG=	yes
 CMAKE_ARGS?=	-DBUILD_SHARED_LIBS:BOOL=ON

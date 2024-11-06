@@ -1,6 +1,6 @@
 PORTNAME=	cargo-hack
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.6.32
+DISTVERSION=	0.6.33
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -17,7 +17,7 @@ USES=		cargo
 USE_GITHUB=	yes
 GH_ACCOUNT=	taiki-e
 
-CARGO_CRATES=	anyhow-1.0.91 \
+CARGO_CRATES=	anyhow-1.0.92 \
 		autocfg-1.4.0 \
 		bitflags-2.6.0 \
 		build-context-0.1.3 \
@@ -45,12 +45,12 @@ CARGO_CRATES=	anyhow-1.0.91 \
 		rustix-0.38.38 \
 		ryu-1.0.18 \
 		same-file-1.0.6 \
-		serde-1.0.213 \
-		serde_derive-1.0.213 \
+		serde-1.0.214 \
+		serde_derive-1.0.214 \
 		serde_json-1.0.132 \
 		serde_spanned-0.6.8 \
 		slab-0.4.9 \
-		syn-2.0.85 \
+		syn-2.0.87 \
 		tempfile-3.13.0 \
 		termcolor-1.4.1 \
 		toml_datetime-0.6.8 \

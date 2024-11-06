@@ -1,6 +1,6 @@
 PORTNAME=	google-perftools
 DISTVERSIONPREFIX=	gperftools-
-DISTVERSION=	2.15
+DISTVERSION=	2.16
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/gperftools/gperftools/releases/download/gperftools-${PORTVERSION}/
 DISTNAME=	gperftools-${PORTVERSION}
@@ -17,12 +17,13 @@ BROKEN_armv7=	error: use of undeclared identifier '_URC_NO_REASON', see https://
 BROKEN_riscv64=	error: Cannot calculate stack trace: will need to write for your environment, see https://github.com/gperftools/gperftools/issues/1359
 
 USES=		compiler:c11 gmake libtool localbase:ldflags perl5
-GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 USE_LDCONFIG=	yes
 USE_PERL5=	test
-TEST_TARGET=	check
-# two tests are failing
+
+GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
+
+TEST_TARGET=	check # 7 tests are failing, see https://github.com/gperftools/gperftools/issues/1572
 TESTING_UNSAFE=	yes
 
 LIBS+=		-lexecinfo

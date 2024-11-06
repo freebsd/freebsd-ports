@@ -14,7 +14,7 @@ EXTRACT_ONLY=	${_DISTFILES:M*_GH0.tar.gz}
 
 BUILD_DEPENDS=	gtar>0:archivers/gtar \
 		patchelf>0:sysutils/patchelf \
-		squashfs-tools-ng>0:sysutils/squashfs-tools-ng
+		squashfs-tools-ng>0:filesystems/squashfs-tools-ng
 
 .include "${.CURDIR}/flavors.mk"
 

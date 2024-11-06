@@ -4,7 +4,8 @@ CATEGORIES=	math lang
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	IDE for MiniZinc, a constraint modeling language
-WWW=		https://www.minizinc.org/
+WWW=		https://www.minizinc.org/ \
+		https://github.com/MiniZinc
 
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

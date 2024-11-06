@@ -1,5 +1,5 @@
 PORTNAME=	discord
-DISTVERSION=	0.0.72
+DISTVERSION=	0.0.73
 CATEGORIES=	net-im
 MASTER_SITES=	https://dl.discordapp.net/apps/linux/${DISTVERSION}/
 PKGNAMEPREFIX=	linux-
@@ -16,8 +16,7 @@ LICENSE_PERMS_DISCORD=	dist-mirror pkg-mirror auto-accept
 
 ONLY_FOR_ARCHS=	amd64
 
-RUN_DEPENDS=	linux-rl9-libatomic>=11.4.1:devel/linux-rl9-libatomic \
-		pulseaudio:audio/pulseaudio
+RUN_DEPENDS=	pulseaudio:audio/pulseaudio
 
 USES=		linux:rl9
 USE_LINUX=	alsa-plugins-oss alsa-plugins-pulseaudio alsalib at-spi2-atk \

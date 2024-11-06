@@ -1,4 +1,5 @@
 bin/mattermostd
+bin/mmctl
 %%ETCDIR%%/config.json.sample
 %%WWWDIR%%/fonts/OFL.txt
 %%WWWDIR%%/fonts/nunito-bold.ttf

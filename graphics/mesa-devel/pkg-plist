@@ -1,4 +1,5 @@
 %%VKLAYERS%%bin/mesa-overlay-control.py
+%%VKLAYERS%%bin/mesa-screenshot-control.py
 %%NO_COINST%%%%OPENCL%%etc/OpenCL/vendors/mesa.icd
 %%OPENCL%%etc/OpenCL/vendors/rusticl.icd
 %%COINST%%etc/libmap.d/mesa%%SUFFIX%%.conf
@@ -34,6 +35,7 @@ lib/libEGL_mesa%%SUFFIX%%.so.0.0.0
 %%OPENCL%%lib/libRusticlOpenCL.so.1.0.0
 %%VKLAYERS%%lib/libVkLayer_MESA_device_select.so
 %%VKLAYERS%%lib/libVkLayer_MESA_overlay.so
+%%VKLAYERS%%lib/libVkLayer_MESA_screenshot.so
 lib/libgallium_dri%%SUFFIX%%.so
 %%NO_COINST%%lib/libgbm%%SUFFIX%%.so
 lib/libgbm%%SUFFIX%%.so.1
@@ -58,6 +60,7 @@ share/drirc.d/00-mesa%%SUFFIX%%-defaults.conf
 %%radv%%share/drirc.d/00-radv%%SUFFIX%%-defaults.conf
 %%NO_COINST%%share/glvnd/egl_vendor.d/50_mesa.json
 %%VKLAYERS%%share/vulkan/explicit_layer.d/VkLayer_MESA_overlay.json
+%%VKLAYERS%%share/vulkan/explicit_layer.d/VkLayer_MESA_screenshot.json
 %%anv%%%%NO_COINST%%share/vulkan/icd.d/intel_icd.%%ARCH%%.json
 %%hasvk%%share/vulkan/icd.d/intel_hasvk_icd.%%ARCH%%.json
 %%radv%%%%NO_COINST%%share/vulkan/icd.d/radeon_icd.%%ARCH%%.json

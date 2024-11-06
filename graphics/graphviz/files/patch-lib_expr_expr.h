@@ -1,6 +1,6 @@
---- lib/expr/expr.h.orig	2023-01-21 19:59:25 UTC
+--- lib/expr/expr.h.orig	2024-09-28 08:34:49 UTC
 +++ lib/expr/expr.h
-@@ -24,6 +24,7 @@ extern "C" {
+@@ -23,6 +23,7 @@ extern "C" {
  
  #include <ast/ast.h>
  #include <inttypes.h>

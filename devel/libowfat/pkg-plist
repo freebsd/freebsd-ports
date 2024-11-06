@@ -241,7 +241,10 @@ share/man/man3/libowfat_iob_adds.3.gz
 share/man/man3/libowfat_iob_adds_free.3.gz
 share/man/man3/libowfat_iob_bytesleft.3.gz
 share/man/man3/libowfat_iob_free.3.gz
+share/man/man3/libowfat_iob_init.3.gz
+share/man/man3/libowfat_iob_init_autofree.3.gz
 share/man/man3/libowfat_iob_new.3.gz
+share/man/man3/libowfat_iob_new_autofree.3.gz
 share/man/man3/libowfat_iob_prefetch.3.gz
 share/man/man3/libowfat_iob_reset.3.gz
 share/man/man3/libowfat_iob_send.3.gz
@@ -249,6 +252,7 @@ share/man/man3/libowfat_iob_write.3.gz
 share/man/man3/libowfat_iom_abort.3.gz
 share/man/man3/libowfat_iom_add.3.gz
 share/man/man3/libowfat_iom_init.3.gz
+share/man/man3/libowfat_iom_requeue.3.gz
 share/man/man3/libowfat_iom_wait.3.gz
 share/man/man3/libowfat_iopause.3.gz
 share/man/man3/libowfat_mmap_private.3.gz

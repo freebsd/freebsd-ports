@@ -175,6 +175,7 @@
     SUBDIR += py-fltk
     SUBDIR += py-guietta
     SUBDIR += py-kivy
+    SUBDIR += py-pangocffi
     SUBDIR += py-python-xlib
     SUBDIR += py-qt5-chart
     SUBDIR += py-qt5-datavis3d

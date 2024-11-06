@@ -1,6 +1,6 @@
---- lib/procMgr/procMgrPosix.c.orig	2023-07-18 17:10:48 UTC
+--- lib/procMgr/procMgrPosix.c.orig	2024-10-10 15:05:07 UTC
 +++ lib/procMgr/procMgrPosix.c
-@@ -58,6 +58,8 @@
+@@ -59,6 +59,8 @@
  #include <limits.h>
  #include <paths.h>
  #include <sys/sysctl.h>

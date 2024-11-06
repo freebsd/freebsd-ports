@@ -1,6 +1,6 @@
 PORTNAME=	mesa
-DISTVERSION=	24.2-branchpoint-4926
-DISTVERSIONSUFFIX=	-ge474d4ebeef
+DISTVERSION=	24.2-branchpoint-4961
+DISTVERSIONSUFFIX=	-g5c63d7a916d
 CATEGORIES=	graphics
 PKGNAMESUFFIX=	-devel
 
@@ -9,6 +9,7 @@ PATCHFILES+=	700efacda59c.patch:-p1:github
 PATCH_SITES+=	${GL_SITE}/${GL_ACCOUNT}/${GL_PROJECT}/-/commit/
 PATCHFILES+=	2930dcbb3329.patch:-p1 # https://gitlab.freedesktop.org/mesa/mesa/-/merge_requests/22246
 PATCHFILES+=	11aaf934112c.patch:-p1 # https://gitlab.freedesktop.org/mesa/mesa/-/merge_requests/22941
+PATCHFILES+=	5d48fb19553c.patch:-p1 # https://gitlab.freedesktop.org/mesa/mesa/-/merge_requests/31931
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Bleeding edge Mesa drivers (OpenCL, OpenGL, Vulkan)
@@ -33,7 +34,7 @@ USE_GITLAB=	yes
 USE_LDCONFIG=	yes
 GL_SITE=	https://gitlab.freedesktop.org
 BINARY_ALIAS=	python=${PYTHON_CMD}
-SHEBANG_FILES=	src/vulkan/overlay-layer/${PORTNAME}-overlay-control.py
+SHEBANG_FILES=	src/vulkan/*/*control.py
 MESON_ARGS=	-Dgallium-xa=disabled \
 		-Dandroid-libbacktrace=disabled \
 		-Dlibunwind=disabled \
@@ -131,7 +132,8 @@ VDPAU_IMPLIES=		X11
 
 VKLAYERS_DESC=		Vulkan layers: ${VKLAYERS_MESON_ON:C/.*=//} (implies ${VKLAYERS_IMPLIES})
 VKLAYERS_BUILD_DEPENDS=	glslangValidator:graphics/glslang
-VKLAYERS_MESON_ON=	-Dvulkan-layers=device-select,overlay
+VKLAYERS_LIB_DEPENDS=	libpng.so:graphics/png
+VKLAYERS_MESON_ON=	-Dvulkan-layers=device-select,overlay,screenshot
 VKLAYERS_IMPLIES=	${"${PORT_OPTIONS:Manv}":?anv:radv} # any from OPTIONS_GROUP_VULKAN
 
 WAYLAND_BUILD_DEPENDS=	wayland-protocols>0:graphics/wayland-protocols

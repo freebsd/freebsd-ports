@@ -1,2 +1,3 @@
-SHA256 (getopt-1.1.6.tar.gz) = d0bf1dc642a993e7388a1cddfb9409bed375c21d5278056ccca3a0acd09dc5fe
-SIZE (getopt-1.1.6.tar.gz) = 58926
+TIMESTAMP = 1714112744
+SHA256 (util-linux-2.39.4.tar.xz) = 6c4f8723dafd41c39d93ecbf16509fc88c33cd5bd3277880ae5a1d97a014fd0e
+SIZE (util-linux-2.39.4.tar.xz) = 8541176

@@ -5,10 +5,13 @@ CATEGORIES=	math # geometry
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	C++ library for isogeometric analysis (IGA)
-WWW=		https://gismo.github.io/
+WWW=		https://gismo.github.io/ \
+		https://github.com/gismo/gismo
 
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
+
+BROKEN_FreeBSD_15=	compilation is broken with clang-19, see https://github.com/gismo/gismo/issues/741
 
 USES=		cmake:testing compiler:c++14-lang
 USE_GITHUB=	yes

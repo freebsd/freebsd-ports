@@ -47,6 +47,7 @@ INSTALL_TARGET=install-strip
 
 .if ${PORT_OPTIONS:MPYTHON}
 BROKEN=	fails to build
+DEPRECATED=	Uses expired Python 3.8
 .endif
 
 .if ${ARCH} != amd64 && ${ARCH} != i386

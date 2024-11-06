@@ -1,6 +1,6 @@
---- media/audio/alsa/audio_manager_alsa.cc.orig	2024-08-01 05:47:53 UTC
+--- media/audio/alsa/audio_manager_alsa.cc.orig	2024-11-04 08:56:03 UTC
 +++ media/audio/alsa/audio_manager_alsa.cc
-@@ -95,7 +95,9 @@ void AudioManagerAlsa::GetAlsaAudioDevices(StreamType 
+@@ -100,7 +100,9 @@ void AudioManagerAlsa::GetAlsaAudioDevices(StreamType 
    int card = -1;
  
    // Loop through the physical sound cards to get ALSA device hints.
@@ -10,7 +10,7 @@
      void** hints = NULL;
      int error = wrapper_->DeviceNameHint(card, kPcmInterfaceName, &hints);
      if (!error) {
-@@ -107,7 +109,9 @@ void AudioManagerAlsa::GetAlsaAudioDevices(StreamType 
+@@ -112,7 +114,9 @@ void AudioManagerAlsa::GetAlsaAudioDevices(StreamType 
        DLOG(WARNING) << "GetAlsaAudioDevices: unable to get device hints: "
                      << wrapper_->StrError(error);
      }
@@ -20,7 +20,7 @@
  }
  
  void AudioManagerAlsa::GetAlsaDevicesInfo(AudioManagerAlsa::StreamType type,
-@@ -190,7 +194,11 @@ bool AudioManagerAlsa::IsAlsaDeviceAvailable(
+@@ -195,7 +199,11 @@ bool AudioManagerAlsa::IsAlsaDeviceAvailable(
    // goes through software conversion if needed (e.g. incompatible
    // sample rate).
    // TODO(joi): Should we prefer "hw" instead?
@@ -32,7 +32,7 @@
    return strncmp(kDeviceTypeDesired, device_name,
                   std::size(kDeviceTypeDesired) - 1) == 0;
  }
-@@ -242,7 +250,9 @@ bool AudioManagerAlsa::HasAnyAlsaAudioDevice(
+@@ -247,7 +255,9 @@ bool AudioManagerAlsa::HasAnyAlsaAudioDevice(
    // Loop through the sound cards.
    // Don't use snd_device_name_hint(-1,..) since there is an access violation
    // inside this ALSA API with libasound.so.2.0.0.
@@ -42,7 +42,7 @@
      int error = wrapper_->DeviceNameHint(card, kPcmInterfaceName, &hints);
      if (!error) {
        for (void** hint_iter = hints; *hint_iter != NULL; hint_iter++) {
-@@ -266,7 +276,9 @@ bool AudioManagerAlsa::HasAnyAlsaAudioDevice(
+@@ -271,7 +281,9 @@ bool AudioManagerAlsa::HasAnyAlsaAudioDevice(
        DLOG(WARNING) << "HasAnyAudioDevice: unable to get device hints: "
                      << wrapper_->StrError(error);
      }

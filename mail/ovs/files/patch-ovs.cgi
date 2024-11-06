@@ -1,5 +1,6 @@
---- ovs.cgi.orig	Mon Sep  3 18:19:22 2007
-+++ ovs.cgi	Fri Sep  7 20:28:39 2007
+--- ovs.cgi.orig	Mon Sep  3 18:19:22 2007 UTC
++++ ovs.cgi
+dd	Fri Sep  7 20:28:39 2007
 @@ -25,9 +25,9 @@
  my $points_per_sample = 3;
  my $ypoints = 160;

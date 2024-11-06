@@ -1,5 +1,5 @@
 PORTNAME=	mkdocstrings
-DISTVERSION=	0.26.0
+DISTVERSION=	0.26.2
 CATEGORIES=	textproc python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -23,7 +23,7 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mkdocs-material>0:textproc/py-mkdocs-materi
 		${PYTHON_PKGNAMEPREFIX}mkdocstrings-python>0:textproc/py-mkdocstrings-python@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sphinx>0:textproc/py-sphinx@${PY_FLAVOR}
 
-USES=		python
+USES=		python:3.9+
 USE_GITHUB=	yes
 USE_PYTHON=	autoplist pep517 pytest
 # Skip "test_sphinx_load_mkdocstrings_inventory_file" as it requires

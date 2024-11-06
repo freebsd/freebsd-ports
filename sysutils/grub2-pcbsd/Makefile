@@ -63,7 +63,7 @@ CONFIGURE_ARGS+=	--disable-grub-mkfont
 .endif
 
 .if ${PORT_OPTIONS:MFUSE}
-LIB_DEPENDS+=	libfuse.so:sysutils/fusefs-libs
+LIB_DEPENDS+=	libfuse.so:filesystems/fusefs-libs
 CONFIGURE_ARGS+=	--enable-grub-mount
 .else
 CONFIGURE_ARGS+=	--disable-grub-mount

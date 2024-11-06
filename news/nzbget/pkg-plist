@@ -1,9 +1,7 @@
 bin/nzbget
-%%ETCDIR%%.conf
 %%ETCDIR%%.conf.sample
 %%DATADIR%%/doc/COPYING
 %%DATADIR%%/doc/ChangeLog.md
-%%DATADIR%%/nzbget.conf
 %%DATADIR%%/webui/config.js
 %%DATADIR%%/webui/dark-theme.css
 %%DATADIR%%/webui/downloads.js
@@ -38,5 +36,6 @@ bin/nzbget
 %%DATADIR%%/webui/messages.js
 %%DATADIR%%/webui/status.js
 %%DATADIR%%/webui/style.css
+%%DATADIR%%/webui/system-info.js
 %%DATADIR%%/webui/upload.js
 %%DATADIR%%/webui/util.js

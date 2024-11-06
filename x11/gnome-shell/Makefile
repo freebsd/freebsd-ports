@@ -1,6 +1,6 @@
 PORTNAME=	gnome-shell
 PORTVERSION=	42.4
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	x11 gnome
 MASTER_SITES=	GNOME/sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+)\..*/\1/}
 DIST_SUBDIR=	gnome
@@ -22,7 +22,7 @@ LIB_DEPENDS=	libatk-bridge-2.0.so:accessibility/at-spi2-core \
 		libcanberra.so:audio/libcanberra \
 		libcroco-0.6.so:textproc/libcroco \
 		libdrm.so:graphics/libdrm \
-		libgcr-base-3.so:security/gcr \
+		libgcr-base-3.so:security/gcr3 \
 		libgjs.so:lang/gjs \
 		libgnome-autoar-0.so:archivers/gnome-autoar \
 		libgraphene-1.0.so:graphics/graphene \

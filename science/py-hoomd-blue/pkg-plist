@@ -557,6 +557,7 @@ lib/cmake/hoomd/hoomd-targets.cmake
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/md/AreaConservationMeshForceCompute.h
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/md/AreaConservationMeshForceComputeGPU.cuh
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/md/AreaConservationMeshForceComputeGPU.h
+%%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/md/AreaConservationMeshParameters.h
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/md/BendingRigidityMeshForceCompute.h
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/md/BendingRigidityMeshForceComputeGPU.h
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/md/BondTablePotential.h
@@ -682,6 +683,7 @@ lib/cmake/hoomd/hoomd-targets.cmake
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/md/TriangleAreaConservationMeshForceCompute.h
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/md/TriangleAreaConservationMeshForceComputeGPU.cuh
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/md/TriangleAreaConservationMeshForceComputeGPU.h
+%%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/md/TriangleAreaConservationMeshParameters.h
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/md/TwoStepBD.h
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/md/TwoStepBDGPU.h
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/md/TwoStepConstantPressure.h
@@ -702,6 +704,7 @@ lib/cmake/hoomd/hoomd-targets.cmake
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/md/TwoStepRATTLENVEGPU.h
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/md/VolumeConservationMeshForceCompute.h
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/md/VolumeConservationMeshForceComputeGPU.h
+%%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/md/VolumeConservationMeshParameters.h
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/md/WallData.h
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/md/ZeroMomentumUpdater.h
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/metal/EAMForceCompute.h

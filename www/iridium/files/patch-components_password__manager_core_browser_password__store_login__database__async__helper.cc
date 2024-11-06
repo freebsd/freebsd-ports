@@ -1,6 +1,6 @@
---- components/password_manager/core/browser/password_store/login_database_async_helper.cc.orig	2024-08-27 06:28:16 UTC
+--- components/password_manager/core/browser/password_store/login_database_async_helper.cc.orig	2024-11-04 08:56:03 UTC
 +++ components/password_manager/core/browser/password_store/login_database_async_helper.cc
-@@ -152,7 +152,7 @@ LoginsResultOrError LoginDatabaseAsyncHelper::FillMatc
+@@ -154,7 +154,7 @@ LoginsResultOrError LoginDatabaseAsyncHelper::FillMatc
      std::vector<PasswordForm> matched_forms;
      if (!login_db_ ||
          !login_db_->GetLogins(form, include_psl, &matched_forms)) {

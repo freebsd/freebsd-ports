@@ -1,5 +1,5 @@
 PORTNAME=	alpaca
-DISTVERSION=	2.6.5
+DISTVERSION=	2.7.0
 CATEGORIES=	misc
 
 MAINTAINER=	nivit@FreeBSD.org
@@ -17,13 +17,15 @@ RUN_DEPENDS=	${PY_PILLOW} \
 		${PYTHON_PKGNAMEPREFIX}pypdf>=4.3.1:print/py-pypdf@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytube>=15.0.0:multimedia/py-pytube@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>=2.32.3:www/py-requests@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}youtube-transcript-api>=0.6.2:www/py-youtube-transcript-api@${PY_FLAVOR} \
 		ollama:misc/ollama
 
-USES=		desktop-file-utils gettext-runtime gettext-tools gnome meson python
+USES=		desktop-file-utils gettext-runtime gettext-tools gnome meson \
+		python
 USE_GITHUB=	yes
-USE_GNOME=	vte3
 GH_ACCOUNT=	Jeffser
 GH_PROJECT=	Alpaca
+USE_GNOME=	vte3
 
 post-patch:
 	@${REINPLACE_CMD} \

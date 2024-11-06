@@ -1,4 +1,4 @@
---- components/feature_engagement/public/feature_constants.h.orig	2024-08-27 06:28:16 UTC
+--- components/feature_engagement/public/feature_constants.h.orig	2024-11-04 08:56:03 UTC
 +++ components/feature_engagement/public/feature_constants.h
 @@ -20,7 +20,7 @@ BASE_DECLARE_FEATURE(kIPHDemoMode);
  BASE_DECLARE_FEATURE(kIPHDummyFeature);
@@ -9,7 +9,7 @@
  #if BUILDFLAG(GOOGLE_CHROME_BRANDING)
  BASE_DECLARE_FEATURE(kEsbDownloadRowPromoFeature);
  #endif
-@@ -264,7 +264,8 @@ BASE_DECLARE_FEATURE(kDefaultBrowserTriggerCriteriaExp
+@@ -258,7 +258,8 @@ BASE_DECLARE_FEATURE(kDefaultBrowserTriggerCriteriaExp
  #endif  // BUILDFLAG(IS_IOS)
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_APPLE) || BUILDFLAG(IS_LINUX) || \
@@ -17,14 +17,14 @@
 +    BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_FUCHSIA) || \
 +    BUILDFLAG(IS_BSD)
  BASE_DECLARE_FEATURE(kIPHAutofillCreditCardBenefitFeature);
+ BASE_DECLARE_FEATURE(kIPHAutofillDisabledVirtualCardSuggestionFeature);
  BASE_DECLARE_FEATURE(kIPHAutofillExternalAccountProfileSuggestionFeature);
- BASE_DECLARE_FEATURE(kIPHAutofillManualFallbackFeature);
-@@ -314,7 +315,7 @@ BASE_DECLARE_FEATURE(kIPHScalableIphHelpAppBasedTenFea
+@@ -309,7 +310,7 @@ BASE_DECLARE_FEATURE(kIPHScalableIphHelpAppBasedTenFea
  BASE_DECLARE_FEATURE(kIPHScalableIphGamingFeature);
  #endif
  
 -#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
  BASE_DECLARE_FEATURE(kIPHDesktopPWAsLinkCapturingLaunch);
+ BASE_DECLARE_FEATURE(kIPHToolbarManagementButtonFeature);
  #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
- 

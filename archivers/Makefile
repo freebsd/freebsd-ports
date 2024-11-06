@@ -184,6 +184,7 @@
     SUBDIR += ppunpack
     SUBDIR += py-acefile
     SUBDIR += py-bitshuffle
+    SUBDIR += py-blosc
     SUBDIR += py-blosc2
     SUBDIR += py-borgbackup
     SUBDIR += py-borgbackup12

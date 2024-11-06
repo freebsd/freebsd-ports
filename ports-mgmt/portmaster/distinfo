@@ -1,3 +1,3 @@
-TIMESTAMP = 1701339347
-SHA256 (freebsd-portmaster-3.29_GH0.tar.gz) = 6fa2250ae6d2d1c0f4604c276c6c5d9dd336315b3399a84c6e705b8c6d1421fd
-SIZE (freebsd-portmaster-3.29_GH0.tar.gz) = 44717
+TIMESTAMP = 1730492333
+SHA256 (freebsd-portmaster-3.30_GH0.tar.gz) = 9a94a309703cc6ef99fb7e13e5dcf6842d5a495cf90e5835410a7fe78243f303
+SIZE (freebsd-portmaster-3.30_GH0.tar.gz) = 44715

@@ -34,7 +34,7 @@
    backup:
      path: "tmp/backups"   # Relative paths are relative to Rails.root (default: tmp/backups/)
 -    # gitaly_backup_path: /home/git/gitaly/_build/bin/gitaly-backup # Path of the gitaly-backup binary (default: searches $PATH)
-+    gitaly_backup_path: %%PREFIX%%/share/gitaly/bin/gitaly-backup # Path of the gitaly-backup binary (default: searches $PATH)
++    gitaly_backup_path: %%LOCALBASE%%/share/gitaly/bin/gitaly-backup # Path of the gitaly-backup binary (default: searches $PATH)
      # archive_permissions: 0640 # Permissions for the resulting backup.tar file (default: 0600)
      # keep_time: 604800   # default: 0 (forever) (in seconds)
      # pg_schema: public     # default: nil, it means that all schemas will be backed up
@@ -44,8 +44,8 @@
    gitlab_shell:
 -    path: /home/git/gitlab-shell/
 -    authorized_keys_file: /home/git/.ssh/authorized_keys
-+    path: %%PREFIX%%/share/gitlab-shell/
-+    authorized_keys_file: %%PREFIX%%/git/.ssh/authorized_keys
++    path: %%LOCALBASE%%/share/gitlab-shell/
++    authorized_keys_file: %%LOCALBASE%%/git/.ssh/authorized_keys
  
      # File that contains the secret key for verifying access for gitlab-shell.
      # Default is '.gitlab_shell_secret' relative to Rails.root (i.e. root of the GitLab app).
@@ -77,14 +77,14 @@
    ## GitLab Elasticsearch settings
    elasticsearch:
 -    indexer_path: /home/git/gitlab-elasticsearch-indexer/
-+    indexer_path: %%PREFIX%%/bin/
++    indexer_path: %%LOCALBASE%%/bin/
  
    ## Git settings
    # CAUTION!
    # Use the default values unless you really know what you are doing
    git:
 -    bin_path: /usr/bin/git
-+    bin_path: %%PREFIX%%/bin/git
++    bin_path: %%LOCALBASE%%/bin/git
  
    ## Webpack settings
    # If enabled, this will tell rails to serve frontend assets from the webpack-dev-server running
@@ -119,14 +119,14 @@
  
    gitaly:
 -    client_path: tmp/tests/gitaly/_build/bin
-+    client_path: %%PREFIX%%/share/gitaly/bin
++    client_path: %%LOCALBASE%%/share/gitaly/bin
      token: secret
    workhorse:
      secret_file: tmp/gitlab_workhorse_test_secret
    backup:
      path: tmp/tests/backups
 -    gitaly_backup_path: tmp/tests/gitaly/_build/bin/gitaly-backup
-+    gitaly_backup_path: %%PREFIX%%/share/gitaly/bin/gitaly-backup
++    gitaly_backup_path: %%LOCALBASE%%/share/gitaly/bin/gitaly-backup
    gitlab_shell:
      path: tmp/tests/gitlab-shell/
      authorized_keys_file: tmp/tests/authorized_keys

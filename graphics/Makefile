@@ -215,7 +215,6 @@
     SUBDIR += frei0r-plugins-opencv
     SUBDIR += frogr
     SUBDIR += ftgl
-    SUBDIR += fusefs-gphotofs
     SUBDIR += fv
     SUBDIR += fyre
     SUBDIR += g2
@@ -503,6 +502,7 @@
     SUBDIR += librsvg2
     SUBDIR += librsvg2-rust
     SUBDIR += librtprocess
+    SUBDIR += libskiasharp
     SUBDIR += libsixel
     SUBDIR += libspiro
     SUBDIR += libspng

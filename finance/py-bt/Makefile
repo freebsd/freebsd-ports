@@ -8,7 +8,8 @@ DISTNAME=	${PORTNAME:S/-/_/}-${PORTVERSION}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Flexible backtesting framework to test quantitative trading strategies
-WWW=		http://pmorissette.github.io/bt/
+WWW=		http://pmorissette.github.io/bt/ \
+		https://github.com/pmorissette/bt
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

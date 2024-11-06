@@ -78,7 +78,6 @@
     SUBDIR += mednafen
     SUBDIR += mesen
     SUBDIR += mgba
-    SUBDIR += mtools
     SUBDIR += mupen64plus
     SUBDIR += mupen64plus-audio-sdl
     SUBDIR += mupen64plus-core

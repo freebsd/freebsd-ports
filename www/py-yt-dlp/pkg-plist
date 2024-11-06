@@ -127,6 +127,7 @@ bin/yt-dlp-devel
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/blerp.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/blogger.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/bloomberg.py
+%%PYTHON_SITELIBDIR%%/yt_dlp/extractor/bluesky.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/bokecc.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/bongacams.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/boosty.py

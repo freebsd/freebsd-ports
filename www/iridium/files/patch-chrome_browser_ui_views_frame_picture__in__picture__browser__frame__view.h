@@ -1,4 +1,4 @@
---- chrome/browser/ui/views/frame/picture_in_picture_browser_frame_view.h.orig	2024-08-27 06:28:16 UTC
+--- chrome/browser/ui/views/frame/picture_in_picture_browser_frame_view.h.orig	2024-11-04 08:56:03 UTC
 +++ chrome/browser/ui/views/frame/picture_in_picture_browser_frame_view.h
 @@ -27,7 +27,7 @@
  #include "ui/views/layout/flex_layout_view.h"
@@ -24,7 +24,7 @@
    void RemovedFromWidget() override;
 -#if BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
-   gfx::Insets MirroredFrameBorderInsets() const override;
+   gfx::Insets RestoredMirroredFrameBorderInsets() const override;
    gfx::Insets GetInputInsets() const override;
    SkRRect GetRestoredClipRegion() const override;
 @@ -195,7 +195,7 @@ class PictureInPictureBrowserFrameView
@@ -36,7 +36,7 @@
    // Returns whether a client-side shadow should be drawn for the window.
    bool ShouldDrawFrameShadow() const;
  
-@@ -371,7 +371,7 @@ class PictureInPictureBrowserFrameView
+@@ -376,7 +376,7 @@ class PictureInPictureBrowserFrameView
    // `top_bar_color_animation_`.
    std::optional<SkColor> current_foreground_color_;
  

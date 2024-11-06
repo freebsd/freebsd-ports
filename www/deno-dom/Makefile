@@ -1,16 +1,17 @@
 PORTNAME=	deno-dom
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.1.47
-PORTREVISION=	2
+DISTVERSION=	0.1.48
 CATEGORIES=	www
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Deno: Browser DOM & HTML parser plugin
-WWW=		https://jsr.io/@b-fuze/deno-dom
+WWW=		https://jsr.io/@b-fuze/deno-dom \
+		https://github.com/b-fuze/deno-dom
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_armv7=	compilation fails, mismatched types, see https://github.com/b-fuze/deno-dom/issues/178
 BROKEN_i386=	compilation fails, mismatched types, see https://github.com/b-fuze/deno-dom/issues/178
 
 USES=		cargo
@@ -18,7 +19,7 @@ USES=		cargo
 USE_GITHUB=	yes
 GH_ACCOUNT=	b-fuze
 
-CARGO_CRATES=	autocfg-1.3.0 \
+CARGO_CRATES=	autocfg-1.4.0 \
 		bitflags-2.6.0 \
 		byteorder-1.5.0 \
 		cfg-if-1.0.0 \
@@ -27,14 +28,14 @@ CARGO_CRATES=	autocfg-1.3.0 \
 		getrandom-0.2.15 \
 		html5ever-0.25.2 \
 		itoa-1.0.11 \
-		libc-0.2.155 \
+		libc-0.2.161 \
 		lock_api-0.4.12 \
 		log-0.4.22 \
 		mac-0.1.1 \
 		markup5ever-0.10.1 \
 		memchr-2.7.4 \
 		new_debug_unreachable-1.0.6 \
-		once_cell-1.19.0 \
+		once_cell-1.20.2 \
 		parking_lot-0.12.3 \
 		parking_lot_core-0.9.10 \
 		phf-0.8.0 \
@@ -45,8 +46,8 @@ CARGO_CRATES=	autocfg-1.3.0 \
 		phf_shared-0.10.0 \
 		ppv-lite86-0.2.20 \
 		precomputed-hash-0.1.1 \
-		proc-macro2-1.0.86 \
-		quote-1.0.36 \
+		proc-macro2-1.0.89 \
+		quote-1.0.37 \
 		rand-0.7.3 \
 		rand-0.8.5 \
 		rand_chacha-0.2.2 \
@@ -55,21 +56,21 @@ CARGO_CRATES=	autocfg-1.3.0 \
 		rand_core-0.6.4 \
 		rand_hc-0.2.0 \
 		rand_pcg-0.2.1 \
-		redox_syscall-0.5.3 \
+		redox_syscall-0.5.7 \
 		ryu-1.0.18 \
 		scopeguard-1.2.0 \
-		serde-1.0.207 \
-		serde_derive-1.0.207 \
-		serde_json-1.0.124 \
+		serde-1.0.214 \
+		serde_derive-1.0.214 \
+		serde_json-1.0.132 \
 		siphasher-0.3.11 \
 		smallvec-1.13.2 \
 		static_vcruntime-2.0.0 \
 		string_cache-0.8.7 \
 		string_cache_codegen-0.5.2 \
 		syn-1.0.109 \
-		syn-2.0.74 \
+		syn-2.0.87 \
 		tendril-0.4.3 \
-		unicode-ident-1.0.12 \
+		unicode-ident-1.0.13 \
 		utf-8-0.7.6 \
 		wasi-0.9.0+wasi-snapshot-preview1 \
 		wasi-0.11.0+wasi-snapshot-preview1 \

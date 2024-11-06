@@ -5,14 +5,19 @@ CATEGORIES=	misc # machine-learning
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Apache MXNet: Ultra-scalable deep learning framework
-WWW=		https://mxnet.apache.org/
+WWW=		https://mxnet.apache.org/ \
+		https://github.com/apache/mxnet
 
 LICENSE=	APACHE20
 
+BROKEN_FreeBSD_15=	compilation fails with clang-19, but the MXNet project has been retired by Apache and the port should probably be removed soon
 BROKEN_i386=	https://github.com/apache/incubator-mxnet/issues/20832
 .if !exists(/usr/include/omp.h)
 BROKEN=		requires OpenMP support that is missing on this architecture
 .endif
+
+DEPRECATED=		Project has been retired by Apache, see https://attic.apache.org/projects/mxnet.html
+EXPIRATION_DATE=	2025-04-01
 
 BUILD_DEPENDS=	googletest>0:devel/googletest
 LIB_DEPENDS=	libdmlc.so:devel/dmlc-core \
