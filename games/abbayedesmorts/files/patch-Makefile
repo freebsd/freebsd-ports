@@ -1,0 +1,18 @@
+--- Makefile.orig	2024-09-23 21:18:05 UTC
++++ Makefile
+@@ -47,13 +47,11 @@ $(PROG): $(OBJS)
+ all: $(PROG)
+ 
+ $(PROG): $(OBJS)
+-	@echo linking $@
+-	@$(CC) $(OBJS) $(LDFLAGS) $(LIBS) -o $@
++	$(CC) $(OBJS) $(LDFLAGS) $(LIBS) -o $@
+ 
+ .SUFFIXES: .c .o
+ .c.o:
+-	@echo compile $<
+-	@$(CC) $(CFLAGS) -c $< -o $@
++	$(CC) $(CFLAGS) -c $< -o $@
+ 
+ clean:
+ 	@echo cleaning...
