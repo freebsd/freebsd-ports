@@ -1,6 +1,6 @@
 PORTNAME=	cloud-init
 DISTVERSION=	24.1.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -40,6 +40,12 @@ CONFLICTS_INSTALL=	cloud-init-devel
 
 # Standard bsd.port.mk variables
 ETCDIR=		${PREFIX}/etc/cloud
+
+.include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400000
+EXTRA_PATCHES=	${PATCHDIR}/extra-cloudinit_distros_freebsd.py
+.endif
 
 NO_ARCH=	yes
 
