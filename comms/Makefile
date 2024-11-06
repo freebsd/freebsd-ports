@@ -168,6 +168,7 @@
     SUBDIR += remserial
     SUBDIR += rtl-433
     SUBDIR += rtl-sdr
+    SUBDIR += rtlbt-firmware
     SUBDIR += rubygem-callsign
     SUBDIR += rubygem-ruby-termios
     SUBDIR += rubygem-serialport
