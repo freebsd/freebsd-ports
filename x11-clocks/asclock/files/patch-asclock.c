@@ -1,4 +1,4 @@
---- asclock.c.orig	1996-08-25 22:35:49 UTC
+--- asclock.c.orig	1998-12-27 19:05:24 UTC
 +++ asclock.c
 @@ -1,4 +1,7 @@
  #include <stdio.h>
@@ -8,34 +8,26 @@
  #include <X11/Xlib.h>
  #include <X11/xpm.h>
  #include <X11/extensions/shape.h>
-@@ -245,6 +248,7 @@ int main(int argc,char *argv[])
- 	      InsertTime();
- 	    }
- 	  if (ITBLINKS)
-+           {
- 	    if (actualtime % 2)
- 	      /* Sekunden Doppelpunkt ein */
- 	      XCopyArea(dpy, led.pixmap, visible.pixmap, NormalGC,
-@@ -253,6 +257,7 @@ int main(int argc,char *argv[])
- 	      /* Sekunden Doppelpunkt aus */
- 	      XCopyArea(dpy, asclock.pixmap, visible.pixmap, NormalGC,
- 			27,6,3,11,posx[2], posy[0]);
-+	   }
- 	  
- 	  RedrawWindow(&visible);
- 
-@@ -302,8 +307,8 @@ void GetXPM(void)
+@@ -107,6 +110,7 @@ void usage()
+   fprintf(stderr,"\n");
+   exit(1);
+ }
++int mytime(void);
+ int main(int argc,char *argv[])
+ {
+   int i;
+@@ -345,8 +349,8 @@ void GetXPM(void)
    static char **clock_xpm;
    XColor col;
    XWindowAttributes attributes;
--  char led1[22];
--  char led2[22];
+-  char led1[23];
+-  char led2[23];
 +  char led1[64];
 +  char led2[64];
    int ret;
  
    clock_xpm =ONLYSHAPE ? mask_xpm : clk_xpm;
-@@ -317,51 +322,49 @@ void GetXPM(void)
+@@ -360,18 +364,14 @@ void GetXPM(void)
        nocolor("parse",LedColor);
      }
  
@@ -56,45 +48,5 @@
 +  sprintf(led2, "X      c #%04X%04X%04X", col.red, col.green, col.blue);
 +  led_xpm[3] = led2;
  
-   asclock.attributes.valuemask |= (XpmReturnPixels | XpmReturnExtensions);
-   ret = XpmCreatePixmapFromData(dpy, Root, clock_xpm, &asclock.pixmap, 
- 				&asclock.mask, &asclock.attributes);
-   if(ret != XpmSuccess)
--    {fprintf(stderr, ERR_colorcells);exit(1);}
-+    {fprintf(stderr, "1: %s\n", XpmGetErrorString(ret));exit(1);}
-   visible.attributes.valuemask |= (XpmReturnPixels | XpmReturnExtensions);
-   ret = XpmCreatePixmapFromData(dpy, Root, clk_xpm, &visible.pixmap, 
- 				&visible.mask, &visible.attributes);
-+  if(ret != XpmSuccess)
-+    {fprintf(stderr, "2: %s\n", XpmGetErrorString(ret));exit(1);}
  
-   led.attributes.valuemask |= (XpmReturnPixels | XpmReturnExtensions);
-   ret = XpmCreatePixmapFromData(dpy, Root, led_xpm, &led.pixmap, 
- 				&led.mask, &led.attributes);
-   if(ret != XpmSuccess)
--    {fprintf(stderr, ERR_colorcells);exit(1);}
-+    {fprintf(stderr, "3: %s\n", XpmGetErrorString(ret));exit(1);}
- 
-   month.attributes.valuemask |= (XpmReturnPixels | XpmReturnExtensions);
-   ret = XpmCreatePixmapFromData(dpy, Root, month_xpm, &month.pixmap, 
- 				&month.mask, &month.attributes);
-   if(ret != XpmSuccess)
--    {fprintf(stderr, ERR_colorcells);exit(1);}
-+    {fprintf(stderr, "4: %s\n", XpmGetErrorString(ret));exit(1);}
- 
-   date.attributes.valuemask |= (XpmReturnPixels | XpmReturnExtensions);
-   ret = XpmCreatePixmapFromData(dpy, Root, date_xpm, &date.pixmap, 
- 				&date.mask, &date.attributes);
-   if(ret != XpmSuccess)
--    {fprintf(stderr, ERR_colorcells);exit(1);}
-+    {fprintf(stderr, "5: %s\n", XpmGetErrorString(ret));exit(1);}
- 
-   weekday.attributes.valuemask |= (XpmReturnPixels | XpmReturnExtensions);
-   ret = XpmCreatePixmapFromData(dpy, Root, weekday_xpm, &weekday.pixmap, 
- 				&weekday.mask, &weekday.attributes);
-   if(ret != XpmSuccess)
--    {fprintf(stderr, ERR_colorcells);exit(1);}
-+    {fprintf(stderr, "6: %s\n", XpmGetErrorString(ret));exit(1);}
- }
- /****************************************************************************/
- /* Removes expose events for a specific window from the queue */
+   asclock.attributes.closeness = 40000; /* Allow for "similar" colors */
