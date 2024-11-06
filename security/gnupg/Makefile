@@ -1,6 +1,5 @@
 PORTNAME=	gnupg
-DISTVERSION=	2.4.5
-PORTREVISION=	1
+DISTVERSION=	2.4.6
 CATEGORIES=	security
 MASTER_SITES=	GNUPG
 
@@ -20,39 +19,44 @@ LIB_DEPENDS=	libassuan.so:security/libassuan \
 		libnpth.so:devel/npth
 RUN_DEPENDS=	pinentry:security/pinentry
 
-USES=		compiler:c11 cpe gmake iconv makeinfo pkgconfig readline sqlite tar:bzip2
+USES=		autoreconf compiler:c11 cpe gettext-tools gmake iconv makeinfo pkgconfig \
+		readline sqlite tar:bzip2
 
-CONFLICTS=	dirmngr
 CPE_VENDOR=	gnupg
 
-CONFIGURE_ARGS=	--disable-ntbtls --enable-gpg-is-gpg2
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
-INFO=		gnupg
-TEST_TARGET=	check
+CONFIGURE_ARGS=	--disable-ntbtls \
+		--enable-gpg-is-gpg2
+
 TEST_ARGS=	TESTARGS=--parallel
+TEST_TARGET=	check
 
-OPTIONS_DEFINE=	DOCS GNUTLS LARGE_RSA LDAP NLS SCDAEMON SUID_GPG WKS_SERVER
-OPTIONS_DEFAULT=GNUTLS SCDAEMON WKS_SERVER
-OPTIONS_SUB=	yes
+CONFLICTS=	dirmngr
 
-LARGE_RSA_DESC=	Enable support for 8192-bit RSA keys
-LDAP_DESC=	LDAP keyserver interface
-SCDAEMON_DESC=	Enable Smartcard daemon (with libusb)
-SUID_GPG_DESC=	Install GPG as SUID root
-WKS_SERVER_DESC=Install the Web Key Service server
+INFO=		gnupg
 
-GNUTLS_CONFIGURE_ENABLE=gnutls
-GNUTLS_LIB_DEPENDS=	libgnutls.so:security/gnutls
+OPTIONS_DEFINE=		DOCS GNUTLS LARGE_RSA LDAP NLS SCDAEMON SUID_GPG \
+			WKS_SERVER
+OPTIONS_DEFAULT=	GNUTLS SCDAEMON WKS_SERVER
+OPTIONS_SUB=		yes
+
+LARGE_RSA_DESC=		Enable support for 8192-bit RSA keys
+LDAP_DESC=		LDAP keyserver interface
+SCDAEMON_DESC=		Enable Smartcard daemon (with libusb)
+SUID_GPG_DESC=		Install GPG as SUID root
+WKS_SERVER_DESC=	Install the Web Key Service server
+
+GNUTLS_LIB_DEPENDS=		libgnutls.so:security/gnutls
+GNUTLS_CONFIGURE_ENABLE=	gnutls
 
 LARGE_RSA_CONFIGURE_ENABLE=	large-secmem
 
+LDAP_USES=		ldap
 LDAP_CONFIGURE_WITH=	ldap=${LOCALBASE}
 LDAP_LIBS=		-L${LOCALBASE}/lib
-LDAP_USES=		ldap
 
-NLS_CONFIGURE_ENABLE=	nls
 NLS_USES=		gettext
+NLS_CONFIGURE_ENABLE=	nls
 
 SCDAEMON_CONFIGURE_ENABLE=	scdaemon
 
