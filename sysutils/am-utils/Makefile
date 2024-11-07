@@ -1,6 +1,6 @@
 PORTNAME=	am-utils
 PORTVERSION=	6.2
-PORTREVISION=	12
+PORTREVISION=	13
 PORTEPOCH=	1
 CATEGORIES=	sysutils net
 MASTER_SITES=	https://download.filesystems.org/am-utils/ \
