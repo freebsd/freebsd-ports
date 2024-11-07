@@ -1,5 +1,5 @@
 PORTNAME=	xmlsec1
-DISTVERSION=	1.3.5
+DISTVERSION=	1.3.6
 CATEGORIES=	security
 MASTER_SITES=	https://github.com/lsh123/xmlsec/releases/download/xmlsec_${DISTVERSION:S,.,_,g}/ \
 		https://www.aleksey.com/xmlsec/download/
@@ -18,13 +18,10 @@ USE_GNOME=	libxml2 libxslt
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
-
+CONFIGURE_ARGS=	--disable-static
 INSTALL_TARGET=	install-strip
-
 PORTDOCS=	*
 PLIST_SUB=	DISTVERSION=${DISTVERSION}
-
-CONFIGURE_ARGS=	--disable-static
 
 OPTIONS_DEFINE=		DOCS
 OPTIONS_MULTI=		SSL
@@ -45,28 +42,29 @@ OPENSSL_CONFIGURE_OFF=	--without-openssl
 OPENSSL_CONFIGURE_ON=	--with-openssl="${OPENSSLBASE}"
 
 post-patch:
-	@${REINPLACE_CMD} -e 's/(CP) -ru/(CP) -r/' \
-		-e 's/(CP) -u/(CP)/' \
-		${PATCH_WRKSRC}/docs/Makefile.am \
-		${PATCH_WRKSRC}/docs/Makefile.in \
-		${PATCH_WRKSRC}/docs/api/Makefile.am \
-		${PATCH_WRKSRC}/docs/api/Makefile.in \
-		${PATCH_WRKSRC}/man/Makefile.am \
-		${PATCH_WRKSRC}/man/Makefile.in
+	cd ${PATCH_WRKSRC} && ${REINPLACE_CMD} \
+	    -e 's/(CP) -ru/(CP) -r/' \
+	    -e 's/(CP) -u/(CP)/' \
+	    docs/Makefile.am \
+	    docs/Makefile.in \
+	    docs/api/Makefile.am \
+	    docs/api/Makefile.in \
+	    man/Makefile.am \
+	    man/Makefile.in
 
 post-patch-GNUTLS-on:
 # Don't rely on broken autodetection
-	@${REINPLACE_CMD} -e '/^GNUTLS_FOUND/s/no/yes/' \
-		-e '/^GNUTLS_LIBS=/s,"","-L${LOCALBASE}/lib -lgnutls",' \
-		${PATCH_WRKSRC}/${CONFIGURE_SCRIPT}
+	${REINPLACE_CMD} -e '/^GNUTLS_FOUND/s/no/yes/' \
+	    -e '/^GNUTLS_LIBS=/s,"","-L${LOCALBASE}/lib -lgnutls",' \
+	    ${PATCH_WRKSRC}/${CONFIGURE_SCRIPT}
 
 post-patch-NSS-on:
-	@${REINPLACE_CMD} -e 's/mozilla-nss/nss/' \
-		-e 's/mozilla-nspr/nspr/' ${PATCH_WRKSRC}/${CONFIGURE_SCRIPT}
-	@${REINPLACE_CMD} -e 's,^\(xmlsec1_LDADD = \)\\$$,\1 -L${LOCALBASE}/lib -lpthread\\,' \
-		${PATCH_WRKSRC}/apps/Makefile.in
+	${REINPLACE_CMD} -e 's/mozilla-nss/nss/' \
+	    -e 's/mozilla-nspr/nspr/' ${PATCH_WRKSRC}/${CONFIGURE_SCRIPT}
+	${REINPLACE_CMD} -e 's,^\(xmlsec1_LDADD = \)\\$$,\1 -L${LOCALBASE}/lib -lpthread\\,' \
+	    ${PATCH_WRKSRC}/apps/Makefile.in
 
 post-install:
-	${RM} -r ${STAGEDIR}${DOCSDIR}/css
+	${RMDIR} ${STAGEDIR}${DOCSDIR}/css
 
 .include <bsd.port.mk>
