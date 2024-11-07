@@ -1,12 +1,11 @@
 PORTNAME=	butterfly
-PORTVERSION=	2.0.1
-PORTREVISION=	1
+PORTVERSION=	3.2.5
 CATEGORIES=	www
 MASTER_SITES=	PYPI
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Web terminal based on websocket and tornado
-WWW=		https://pypi.org/project/butterfly/
+WWW=		https://github.com/paradoxxxzero/butterfly
 
 LICENSE=	GPLv3
 
