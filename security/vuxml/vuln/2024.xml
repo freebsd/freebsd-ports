@@ -1,3 +1,31 @@
+  <vuln vid="d48a2224-9b4c-11ef-bdd9-4ccc6adda413">
+    <topic>gstreamer1-rtsp-server -- Potential Denial-of-Service (DoS) with specially crafted client requests</topic>
+    <affects>
+      <package>
+	<name>gstreamer1-rtsp-server</name>
+	<range><ge>1.18.0</ge><lt>1.24.9</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Qingpeng Du reports:</p>
+	<blockquote cite="https://gstreamer.freedesktop.org/security/sa-2024-0004.html">
+	  <p>A series of specially crafted client requests during streaming setup
+	   (post client authentication, if any) can cause the RTSP server library
+	   to abort, if it has been compiled with assertions enabled.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2024-44331</cvename>
+      <url>https://gstreamer.freedesktop.org/security/sa-2024-0004.html</url>
+    </references>
+    <dates>
+      <discovery>2024-10-29</discovery>
+      <entry>2024-11-07</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="ab254c9d-9c36-11ef-8c1c-a8a1599412c6">
     <topic>chromium -- multiple security fixes</topic>
     <affects>
