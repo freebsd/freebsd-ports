@@ -1,5 +1,5 @@
 PORTNAME=	torch-geometric
-DISTVERSION=	2.6.0
+DISTVERSION=	2.6.1
 CATEGORIES=	misc python # machine-learning
 #MASTER_SITES=	PYPI # no tests
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -47,5 +47,7 @@ GH_ACCOUNT=	pyg-team
 GH_PROJECT=	pytorch_geometric
 
 NO_ARCH=	yes
+
+# tests as of version 2.6.1: 17 failed, 5452 passed, 986 skipped, 12 warnings in 330.89s (0:05:30)
 
 .include <bsd.port.mk>
