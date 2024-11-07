@@ -1541,6 +1541,7 @@
     SUBDIR += linux-rl9-nspr
     SUBDIR += linux-rl9-ocl-icd
     SUBDIR += linux-rl9-orc
+    SUBDIR += linux-rl9-qt5
     SUBDIR += linux-rl9-qt5-qtbase
     SUBDIR += linux-rl9-qt5-qtdeclarative
     SUBDIR += linux-rl9-qt5-qtscript
