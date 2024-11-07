@@ -1,12 +1,13 @@
 PORTNAME=	timm
-DISTVERSION=	1.0.9
+DISTVERSION=	1.0.11
 CATEGORIES=	misc python # machine-learning
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	PyTorch Image Models
-WWW=		https://huggingface.co/docs/timm/index
+WWW=		https://huggingface.co/docs/timm/index \
+		https://github.com/huggingface/pytorch-image-models
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
