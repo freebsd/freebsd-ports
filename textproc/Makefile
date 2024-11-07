@@ -799,6 +799,8 @@
     SUBDIR += p5-Search-Elasticsearch-Client-1_0
     SUBDIR += p5-Search-Elasticsearch-Client-2_0
     SUBDIR += p5-Search-Elasticsearch-Client-5_0
+    SUBDIR += p5-Search-Elasticsearch-Client-6_0
+    SUBDIR += p5-Search-Elasticsearch-Client-7_0
     SUBDIR += p5-Search-Estraier
     SUBDIR += p5-Search-Odeum
     SUBDIR += p5-Search-QueryParser
