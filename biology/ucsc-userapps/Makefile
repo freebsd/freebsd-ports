@@ -8,13 +8,9 @@ MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Command line tools from the UCSC Genome Browser project
 WWW=		https://hgdownload.cse.ucsc.edu/admin/exe/
 
-LICENSE=	UCSC-GB
-LICENSE_NAME=	UCSC Genome Browser License
-LICENSE_TEXT=	Some tools installed by this port require a license for\
-		commercial use.\n\nContact UCSC directly if you are using\
-		these tools for commercial purposes.\n\nSee\
-		https://genome.ucsc.edu/license/ for full terms.
-LICENSE_PERMS=	no-dist-mirror no-dist-sell no-pkg-mirror no-pkg-sell
+# Some tools in the source dist are non-free for commercial use.
+# If they are added, the license below must be changed and packaging forbidden.
+LICENSE=	MIT
 
 ONLY_FOR_ARCHS=		amd64
 ONLY_FOR_ARCHS_REASON=	uses _mm_popcnt_u64() function
