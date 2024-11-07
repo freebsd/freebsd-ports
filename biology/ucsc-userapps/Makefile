@@ -1,9 +1,8 @@
 PORTNAME=	ucsc-userapps
-DISTVERSION=	414
-PORTREVISION=	1
+DISTVERSION=	472
 CATEGORIES=	biology perl5 python
 MASTER_SITES=	http://hgdownload.cse.ucsc.edu/admin/exe/userApps.archive/
-DISTNAME=	userApps.v${PORTVERSION}.src
+DISTNAME=	userApps.v${DISTVERSION}.src
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Command line tools from the UCSC Genome Browser project
@@ -21,11 +20,13 @@ ONLY_FOR_ARCHS=		amd64
 ONLY_FOR_ARCHS_REASON=	uses _mm_popcnt_u64() function
 
 BUILD_DEPENDS=	bash:shells/bash
-LIB_DEPENDS=	libiconv.so:converters/libiconv \
+LIB_DEPENDS=	libmysqlclient.so:databases/mysql80-client \
+		libunwind.so:devel/libunwind \
+		libfreetype.so:print/freetype2 \
 		libpng.so:graphics/png
 RUN_DEPENDS=	bash:shells/bash
 
-USES=		gmake localbase:ldflags mysql shebangfix perl5 python ssl tar:tgz
+USES=		gmake iconv localbase:ldflags shebangfix perl5 python:3.6+ ssl tar:tgz
 
 RESTRICTED=	Redistribution is limited, see license
 
@@ -36,7 +37,8 @@ SHEBANG_FILES=	kent/src/checkUmask.sh \
 		kent/src/utils/tdbSort \
 		kent/src/utils/trackDbIndexBb/trackDbIndexBb \
 		kent/src/utils/ucscApiClient \
-		kent/src/utils/webSync
+		kent/src/utils/webSync \
+		kent/src/utils/bigGuessDb/bigGuessDb
 
 WRKSRC=		${WRKDIR}/userApps
 CFLAGS+=	-fcommon
@@ -49,7 +51,7 @@ SUB_FILES=	ucsc-shell
 # code from the libraries per conversation with UCSC.  Work to resolve this
 # is ongoing.
 do-build:
-	@${MV} ${WRKSRC}/kent/src/inc/uuid.h ${WRKSRC}/kent/src/inc/my_uuid.h
+	@(test -f ${WRKSRC}/kent/src/inc/my_uuid.h || ${MV} ${WRKSRC}/kent/src/inc/uuid.h ${WRKSRC}/kent/src/inc/my_uuid.h)
 	@${MKDIR} ${WRKSRC}/bin
 	@(cd ${WRKSRC}/kent/src/lib && ${DO_MAKE_BUILD})
 	@(cd ${WRKSRC}/kent/src/htslib && ${DO_MAKE_BUILD})
