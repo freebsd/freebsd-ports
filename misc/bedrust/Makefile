@@ -1,6 +1,6 @@
 PORTNAME=	bedrust
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.8.0
+DISTVERSION=	0.8.1
 CATEGORIES=	misc # machine-learning
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -22,6 +22,8 @@ CARGO_CRATES=	addr2line-0.24.1 \
 		adler2-2.0.0 \
 		aho-corasick-1.1.3 \
 		aligned-vec-0.5.0 \
+		android-tzdata-0.1.1 \
+		android_system_properties-0.1.5 \
 		anstream-0.6.15 \
 		anstyle-1.0.8 \
 		anstyle-parse-0.2.5 \
@@ -73,6 +75,7 @@ CARGO_CRATES=	addr2line-0.24.1 \
 		cc-1.1.18 \
 		cfg-expr-0.15.8 \
 		cfg-if-1.0.0 \
+		chrono-0.4.38 \
 		clap-4.5.17 \
 		clap_builder-4.5.17 \
 		clap_derive-4.5.13 \
@@ -133,6 +136,8 @@ CARGO_CRATES=	addr2line-0.24.1 \
 		httpdate-1.0.3 \
 		hyper-0.14.30 \
 		hyper-rustls-0.24.2 \
+		iana-time-zone-0.1.61 \
+		iana-time-zone-haiku-0.1.2 \
 		idna-0.5.0 \
 		ignore-0.4.23 \
 		image-0.25.2 \
@@ -147,6 +152,7 @@ CARGO_CRATES=	addr2line-0.24.1 \
 		itoa-1.0.11 \
 		jobserver-0.1.32 \
 		jpeg-decoder-0.3.1 \
+		js-sys-0.3.70 \
 		lazy_static-1.5.0 \
 		lebe-0.5.2 \
 		libc-0.2.158 \
@@ -288,6 +294,7 @@ CARGO_CRATES=	addr2line-0.24.1 \
 		wasm-bindgen-shared-0.2.93 \
 		weezl-0.1.8 \
 		winapi-util-0.1.9 \
+		windows-core-0.52.0 \
 		windows-sys-0.48.0 \
 		windows-sys-0.52.0 \
 		windows-sys-0.59.0 \
