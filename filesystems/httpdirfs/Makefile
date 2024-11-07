@@ -7,7 +7,7 @@ PATCH_SITES=	https://github.com/fangfufu/httpdirfs/commit/
 PATCHFILES=	43bdf7e71fde43084519e86051533a6b20c31474.patch:-p1 \
 		08700415d7b61d9f611a858481b26858fe92eb7a.patch:-p1
 
-MAINTAINER=	0mp@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	FUSE filesystem to mount HTTP directory listings, with a permanent cache
 WWW=		https://github.com/fangfufu/httpdirfs
 
