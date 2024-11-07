@@ -449,6 +449,7 @@
     SUBDIR += linux-rl9-expat
     SUBDIR += linux-rl9-libxml2
     SUBDIR += linux-rl9-libxslt
+    SUBDIR += linux-rl9-qt5-qtxmlpatterns
     SUBDIR += linuxdoc
     SUBDIR += linuxdoc-tools
     SUBDIR += localize

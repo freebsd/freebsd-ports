@@ -549,6 +549,11 @@
     SUBDIR += linux-rl9-librsvg2
     SUBDIR += linux-rl9-openjpeg
     SUBDIR += linux-rl9-png
+    SUBDIR += linux-rl9-qt5-qt3d
+    SUBDIR += linux-rl9-qt5-qtgraphicaleffects
+    SUBDIR += linux-rl9-qt5-qtimageformats
+    SUBDIR += linux-rl9-qt5-qtsvg
+    SUBDIR += linux-rl9-qt5-qtwayland
     SUBDIR += linux-rl9-tiff
     SUBDIR += linux-rl9-vulkan
     SUBDIR += linux-rl9-wayland

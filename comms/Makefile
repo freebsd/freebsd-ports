@@ -88,6 +88,10 @@
     SUBDIR += libusbsio
     SUBDIR += limesuite
     SUBDIR += linrad
+    SUBDIR += linux-rl9-qt5-qtconnectivity
+    SUBDIR += linux-rl9-qt5-qtsensors
+    SUBDIR += linux-rl9-qt5-qtserialbus
+    SUBDIR += linux-rl9-qt5-qtserialport
     SUBDIR += liquid-dsp
     SUBDIR += lirc
     SUBDIR += locator
