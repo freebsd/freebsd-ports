@@ -6,7 +6,7 @@ MASTER_SITES=	https://www.cpsec.aist.go.jp/achievements/AIST-DeleGate/dist/deleg
 		https://its-more.jp/delegate/ftp/pub/DeleGate/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
-MAINTAINER=	portmaster@BSDforge.com
+MAINTAINER=	mew14930xvi@inbox.lv
 COMMENT=	General purpose TCP/IP proxy system
 WWW=		https://its-more.jp/delegate/
 
