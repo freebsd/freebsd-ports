@@ -112,6 +112,7 @@ WRKSRC=		${WRKDIR}/${BASE_DISTNAME}
 PORTVERSION=	${BASE_PORTVERSION}
 DISTFILES+=	${BASE_DISTFILE}:base
 PATCHDIR=	${.CURDIR:H:H}/multimedia/gstreamer1-plugins/files
+LIB_DEPENDS+=	libdrm.so:graphics/libdrm
 .elif ${DIST} == "bad"
 EXTRACT_ONLY=	${BAD_DISTFILE}
 WRKSRC=		${WRKDIR}/${BAD_DISTNAME}
