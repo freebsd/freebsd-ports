@@ -15,6 +15,7 @@ USES=		imake xorg
 USE_XORG=	xpm xext x11
 GNU_CONFIGURE=	yes
 PLIST_FILES=	bin/asclock share/man/man1/asclock.1.gz
+PORTSCOUT=	limit:^1\.
 
 OPTIONS_DEFINE=
 OPTIONS_SINGLE=	LANG CLOCK
