@@ -163,6 +163,7 @@ _linux_rl9_python3=			linux-rl9-python39>0:lang/linux-rl9-python3
 _linux_c7_qt=				linux-c7-qt>0:devel/linux-c7-qt
 _linux_c7_qt-x11=			linux-c7-qt-x11>0:x11-toolkits/linux-c7-qt-x11
 _linux_c7_qtwebkit=			linux-c7-qtwebkit>0:www/linux-c7-qtwebkit
+_linux_rl9_qt3d=			linux-rl9-qt5-qt3d>0:graphics/linux-rl9-qt5-qt3d
 _linux_rl9_qtbase=			linux-rl9-qt5-qtbase>0:devel/linux-rl9-qt5-qtbase
 _linux_rl9_qtconnectivity=		linux-rl9-qt5-qtconnectivity>0:comms/linux-rl9-qt5-qtconnectivity
 _linux_rl9_qtdeclarative=		linux-rl9-qt5-qtdeclarative>0:devel/linux-rl9-qt5-qtdeclarative
