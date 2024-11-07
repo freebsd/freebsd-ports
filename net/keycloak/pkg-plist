@@ -30,7 +30,6 @@ bin/kcreg
 %%JAVASHAREDIR%%/keycloak/lib/lib/deployment/appmodel.dat
 %%JAVASHAREDIR%%/keycloak/lib/lib/deployment/com.fasterxml.jackson.dataformat.jackson-dataformat-yaml-2.17.2.jar
 %%JAVASHAREDIR%%/keycloak/lib/lib/deployment/deployment-class-path.dat
-%%JAVASHAREDIR%%/keycloak/lib/lib/deployment/io.mvnpm.importmap-1.0.11.jar
 %%JAVASHAREDIR%%/keycloak/lib/lib/deployment/io.quarkus.arc.arc-processor-3.15.1.jar
 %%JAVASHAREDIR%%/keycloak/lib/lib/deployment/io.quarkus.gizmo.gizmo-1.8.0.jar
 %%JAVASHAREDIR%%/keycloak/lib/lib/deployment/io.quarkus.http.quarkus-http-core-5.3.2.jar
