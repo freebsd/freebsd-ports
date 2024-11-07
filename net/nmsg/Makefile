@@ -1,5 +1,5 @@
 PORTNAME=	nmsg
-PORTVERSION=	1.3.0
+PORTVERSION=	1.3.1
 PORTREVISION=	0
 CATEGORIES=	net
 MASTER_SITES=	FARSIGHT LOCAL/truckman/farsight
@@ -16,7 +16,7 @@ LIB_DEPENDS=	libprotobuf-c.so:devel/protobuf-c \
 
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
-USES=		autoreconf gmake libtool pathfix pkgconfig
+USES=		gmake libtool pathfix pkgconfig
 USE_LDCONFIG=	yes
 USE_PERL5=	build
 CONFIGURE_ARGS=	--with-pkgconfigdir='$${exec_prefix}/libdata/pkgconfig'
