@@ -1,6 +1,6 @@
---- src/main.js.orig	2024-09-04 12:53:09 UTC
-+++ src/main.js
-@@ -163,7 +163,7 @@ if (userLocale) {
+--- src/main.ts.orig	2024-10-31 05:10:14 UTC
++++ src/main.ts
+@@ -141,7 +141,7 @@ if (userLocale) {
  // Pseudo Language Language Pack is being used.
  // In that case, use `en` as the Electron locale.
  
@@ -9,7 +9,7 @@
  	const electronLocale = (!userLocale || userLocale === 'qps-ploc') ? 'en' : userLocale;
  	app.commandLine.appendSwitch('lang', electronLocale);
  }
-@@ -233,7 +233,7 @@ function configureCommandlineSwitchesSync(cliArgs) {
+@@ -206,7 +206,7 @@ function configureCommandlineSwitchesSync(cliArgs: Nat
  		'proxy-bypass-list'
  	];
  
