@@ -1,7 +1,7 @@
 PORTNAME=	gdk-pixbuf2
 PORTVERSION=	2.42.6
 DISTVERSIONSUFFIX=	-4.el9_4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics linux
 
 MAINTAINER=	emulation@FreeBSD.org
@@ -12,7 +12,7 @@ USES=		cpe linux:rl9
 CPE_VENDOR=	gnome
 CPE_PRODUCT=	gdk-pixbuf
 USE_LDCONFIG=	yes
-USE_LINUX=	jasper jpeg png tiff xorglibs
++USE_LINUX=	gnutls jasper jpeg libproxy png tiff xorglibs
 USE_LINUX_RPM=	yes
 
 CONFLICTS=	linux-c7-${PORTNAME}
