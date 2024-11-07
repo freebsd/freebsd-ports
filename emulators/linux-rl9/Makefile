@@ -25,7 +25,7 @@ USE_LINUX=	alsalib alsa-lib-devel alsa-plugins-oss alsa-plugins-pulseaudio \
 		libtasn1 libthai libtheora libtracker-sparql \
 		libunistring libusb libv4l libva libvdpau libvorbis libvpx libxkbcommon libxml2 \
 		llvm lz4 nettle nspr nss openal-soft ocl-icd openjpeg openldap opus orc \
-		p11-kit pango pixman png pulseaudio-libs python3 \
+		p11-kit pango pixman png pulseaudio-libs python3 qt3d \
 		qtbase qtconnectivity qtdeclarative qtgraphicaleffects qtimageformats \
 		qtquickcontrols qtscript qtsensors qtserialbus qtserialport qtsvg \
 		qttools qtwayland qtwebchannel qtwebsockets qtx11extras qtxmlpatterns \
