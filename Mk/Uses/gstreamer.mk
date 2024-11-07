@@ -66,7 +66,7 @@ _GST1_PLUGINS_graphics=	aalib cairo gdkpixbuf gl jpeg kms libcaca libvisual \
 			opencv openexr openjpeg png rsvg vulkan webp zbar
 _GST1_PLUGINS_multimedia=	aom assrender bad dash dts dv dvdread \
 			editing-services good hls libav libde265 \
-			mpeg2dec mpeg2enc mplex mm msdk openh264 resindvd \
+			mpeg2dec mpeg2enc mplex mm msdk openh264 resindvd rust \
 			smoothstreaming theora ttml ugly v4l2 vaapi vpx webrtc \
 			x264 x265
 _GST1_PLUGINS_net=	sctp srtp
@@ -341,6 +341,11 @@ gst-openh264_IMPL=	bad
 
 gst-resindvd_PORT=	multimedia/gstreamer${_GST_VER}-plugins-resindvd
 gst-resindvd_IMPL=	bad
+
+gst-rust_PORT=		multimedia/gstreamer${_GST_VER}-plugins-rust
+gst-rust_IMPL=		#
+gst-rust_GST1_VERSION=	0.13.3
+gst-rust_VERSION=	${gst-rust_GST${_GST_VER}_VERSION}
 
 gst-smoothstreaming_PORT=	multimedia/gstreamer${_GST_VER}-plugins-smoothstreaming
 gst-smoothstreaming_IMPL=	bad
