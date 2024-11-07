@@ -1522,6 +1522,7 @@
     SUBDIR += linux-c7-systemd-libs
     SUBDIR += linux-c7-zlib-devel
     SUBDIR += linux-ltp
+    SUBDIR += linux-pvs-studio
     SUBDIR += linux-rl9-dbus-libs
     SUBDIR += linux-rl9-devtools
     SUBDIR += linux-rl9-elfutils-libelf
