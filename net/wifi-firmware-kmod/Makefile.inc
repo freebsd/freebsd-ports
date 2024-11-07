@@ -1,5 +1,6 @@
 PORTNAME=	wifi-firmware-${FWDRV}-kmod
 PORTVERSION=	${FWDRV_VERSION}
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/plain/ \
 		https://ams.source.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/plain/ \
@@ -84,6 +85,8 @@ USES=		uidfix
 # OSVERSION seems to not add the _USES_install bits from kmod.mk.
 USES+=		kmod
 
+BOOT_LOADERCONFD=	/boot/loader.conf.d
+
 .include <bsd.port.pre.mk>
 
 .if (${OSVERSION} >= 1500014) || (${OSVERSION} < 1500000 && ${OSVERSION} >= 1402000)
@@ -106,6 +109,12 @@ post-extract:
 	@${CP} ${DISTDIR}/${DIST_SUBDIR}/WHENCE${DISTURL_SUFFIX} ${WRKSRC}/WHENCE.in
 	@${SED} -e "s@%%XXX%%@${WHENCE_REGEX:Q}@g" ${FILESDIR}/WHENCE.awk.in > ${WRKSRC}/WHENCE.awk
 	@${AWK} -f ${WRKSRC}/WHENCE.awk ${WRKSRC}/WHENCE.in > ${WRKSRC}/WHENCE
+	# Do we need to set a tunable?
+.if defined(COMPAT_LINUXKPI_SKB_MEM_LIMIT) && ${COMPAT_LINUXKPI_SKB_MEM_LIMIT} > 0
+	@${MKDIR} ${WRKSRC}/${BOOT_LOADERCONFD}
+	@${ECHO_CMD} "compat.linuxkpi.skb.mem_limit=${COMPAT_LINUXKPI_SKB_MEM_LIMIT}" > ${WRKSRC}/${BOOT_LOADERCONFD}/${FLAVOR}.conf
+	@${ECHO_CMD} "${BOOT_LOADERCONFD}/${FLAVOR}.conf" >> ${PLIST}
+.endif
 ################################################################################
 .if (${OSVERSION} >= 1500014) || (${OSVERSION} < 1500000 && ${OSVERSION} >= 1402000)
 .for _f in ${DISTFILES_${FLAVOR}}
@@ -117,7 +126,7 @@ post-extract:
 	(cd ${WRKSRC}/fw/ && ${FIND} . -type d -mindepth 1 | \
 	    ${AWK} -vB="${BOOTFWDIR}/" '{ sub("^./", "@dir "B); print; }') >> ${PLIST}.tmp
 	# Remove possibly duplicate @dir entries
-	@${SORT} -u ${PLIST}.tmp > ${PLIST}
+	@${SORT} -u ${PLIST}.tmp >> ${PLIST}
 .else
 ################################################################################
 # Build kernel modules.
@@ -156,5 +165,12 @@ post-extract:
 do-install:
 	(cd ${WRKSRC}/fw/ && ${COPYTREE_SHARE} . ${STAGEDIR}/${BOOTFWDIR})
 .endif
+
+.if defined(COMPAT_LINUXKPI_SKB_MEM_LIMIT) && ${COMPAT_LINUXKPI_SKB_MEM_LIMIT} > 0
+post-install:
+	@${MKDIR} ${STAGEDIR}/${BOOT_LOADERCONFD}
+	@${INSTALL_DATA} ${WRKSRC}/${BOOT_LOADERCONFD}/${FLAVOR}.conf ${STAGEDIR}/${BOOT_LOADERCONFD}/${FLAVOR}.conf
+.endif
+
 
 .include <bsd.port.post.mk>
