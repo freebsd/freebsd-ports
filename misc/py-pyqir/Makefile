@@ -1,7 +1,6 @@
 PORTNAME=	pyqir
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.10.4
-PORTREVISION=	2
+DISTVERSION=	0.10.6
 CATEGORIES=	misc python # quantum-computing
 #MASTER_SITES=	PYPI # no tarballs
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -42,6 +41,7 @@ CARGO_CRATES=	aho-corasick-1.1.2 \
 		llvm-sys-120.3.2 \
 		llvm-sys-130.1.2 \
 		llvm-sys-140.1.3 \
+		llvm-sys-150.2.1 \
 		lock_api-0.4.11 \
 		log-0.4.20 \
 		memchr-2.7.1 \
