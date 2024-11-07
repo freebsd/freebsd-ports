@@ -1,4 +1,4 @@
-TIMESTAMP = 1730926843
+TIMESTAMP = 1731007285
 SHA256 (rust/crates/ab_glyph-0.2.28.crate) = 79faae4620f45232f599d9bc7b290f88247a0834162c4495ab2f02d60004adfb
 SIZE (rust/crates/ab_glyph-0.2.28.crate) = 19965
 SHA256 (rust/crates/ab_glyph_rasterizer-0.1.8.crate) = c71b1793ee61086797f5c80b6efa2b8ffa6d5dd703f118545808a7f2e27f7046
@@ -1729,5 +1729,5 @@ SHA256 (Imberflur-wgpu-0.18-with-fixes-for-veloren-v2_GH0.tar.gz) = eaf65f3809d3
 SIZE (Imberflur-wgpu-0.18-with-fixes-for-veloren-v2_GH0.tar.gz) = 10001880
 SHA256 (xMAC94x-portpicker-rs-df6b37872f3586ac3b21d08b56c8ec7cd92fb172_GH0.tar.gz) = 29252101e189bbe067f0bacba18181afc69a2fb9bc031bbba8dcbade45dec02f
 SIZE (xMAC94x-portpicker-rs-df6b37872f3586ac3b21d08b56c8ec7cd92fb172_GH0.tar.gz) = 2210
-SHA256 (veloren-v0.16.0-653-g736665224.tar.bz2) = b8ce3a7fa592d59abde8f94c014944cba16b24730e804babb08b4814994a937b
-SIZE (veloren-v0.16.0-653-g736665224.tar.bz2) = 304280335
+SHA256 (veloren-v0.16.0-668-g193cf134a.tar.bz2) = f3eb8385275c89ac67f763e5cabb6dab2d5deb90fbc57e5b49c8b8676ef79cc0
+SIZE (veloren-v0.16.0-668-g193cf134a.tar.bz2) = 304290850
