@@ -1,6 +1,5 @@
 PORTNAME=	art
-DISTVERSION=	1.24
-PORTREVISION=	1
+DISTVERSION=	1.24.1
 CATEGORIES=	graphics
 MASTER_SITES=	https://bitbucket.org/agriggio/art/downloads/
 PKGNAMESUFFIX=	-raw-image-editor
@@ -37,6 +36,7 @@ USE_XORG=	x11
 
 EXTRACT_CMD=	gtar
 
+CXXFLAGS+=	-I${LOCALBASE}/include/Imath # workaround for https://bitbucket.org/agriggio/art/issues/339/1241-build-fails-usr-local-include-ctl
 LDFLAGS+=	-lpthread # otherwise build breaks on some systems: error: undefined symbol: pthread_create
 
 OPTIONS_DEFINE=		CTL LTO
