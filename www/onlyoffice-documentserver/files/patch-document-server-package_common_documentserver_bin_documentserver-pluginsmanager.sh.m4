@@ -1,6 +1,6 @@
 --- document-server-package/common/documentserver/bin/documentserver-pluginsmanager.sh.m4.orig	2023-06-20 13:51:11 UTC
 +++ document-server-package/common/documentserver/bin/documentserver-pluginsmanager.sh.m4
-@@ -1,33 +1,32 @@
+@@ -1,35 +1,33 @@
 -#!/bin/bash
 +#!/bin/sh
  
@@ -17,17 +17,19 @@
  				RESTART_CONDITION=$2
  				shift
  			fi
-+			shift	
++			shift
  		;;
 -		
 -		* ) args+=("$1");
-+
 +		*)
 +			break
 +		;;
  	esac
 -	shift
  done
+ 
+-export LD_LIBRARY_PATH=/var/www/M4_DS_PREFIX/server/FileConverter/bin:$LD_LIBRARY_PATH
++export LD_LIBRARY_PATH=%%LOCALBASE%%/www/M4_DS_PREFIX/server/FileConverter/bin:$LD_LIBRARY_PATH
  
 -PLUGIN_MANAGER="/var/www/M4_DS_PREFIX/server/tools/pluginsmanager"
 -PLUGIN_DIR="/var/www/M4_DS_PREFIX/sdkjs-plugins/"
@@ -47,4 +49,4 @@
 +	if pgrep -f "supervisord" >/dev/null; then
  		supervisorctl restart ds:docservice
  	fi
- fi
+ 	documentserver-flush-cache.sh
