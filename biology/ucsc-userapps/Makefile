@@ -12,9 +12,6 @@ WWW=		https://hgdownload.cse.ucsc.edu/admin/exe/
 # If they are added, the license below must be changed and packaging forbidden.
 LICENSE=	MIT
 
-ONLY_FOR_ARCHS=		amd64
-ONLY_FOR_ARCHS_REASON=	uses _mm_popcnt_u64() function
-
 BUILD_DEPENDS=	bash:shells/bash
 LIB_DEPENDS=	libmysqlclient.so:databases/mysql80-client \
 		libunwind.so:devel/libunwind \
