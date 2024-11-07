@@ -1,5 +1,6 @@
 PORTNAME=	jenkins
 PORTVERSION=	2.479.1
+PORTREVISION=	1
 CATEGORIES=	devel java
 MASTER_SITES=	https://get.jenkins.io/war-stable/${PORTVERSION}/
 PKGNAMESUFFIX=	-lts
@@ -16,7 +17,7 @@ LICENSE=	MIT
 
 USES=		cpe
 CPE_EDITION=	lts
-USE_JAVA=	11+
+USE_JAVA=	17+
 USE_RC_SUBR=	jenkins
 
 CONFLICTS=	jenkins
