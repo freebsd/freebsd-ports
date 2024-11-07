@@ -198,7 +198,7 @@ _linux_rl9_vulkan=			linux-rl9-vulkan-loader>0:graphics/linux-rl9-vulkan
 _linux_${linux_ARGS}_wayland=		linux-${linux_ARGS}-wayland>0:graphics/linux-${linux_ARGS}-wayland
 _linux_rl9_webp=			linux-rl9-libwebp>0:graphics/linux-rl9-webp
 _linux_rl9_wget=			linux-rl9-wget>0:ftp/linux-rl9-wget
-_linux_c7_xcb-util=			linux-c7-xcb-util>0:x11/linux-c7-xcb-util
+_linux_${linux_ARGS}_xcb-util=		linux-${linux_ARGS}-xcb-util>0:x11/linux-${linux_ARGS}-xcb-util
 _linux_${linux_ARGS}_xorglibs=		linux-${linux_ARGS}-xorg-libs>=7.7:x11/linux-${linux_ARGS}-xorg-libs
 _linux_c7_zlib-devel=			linux-c7-zlib-devel>0:devel/linux-c7-zlib-devel
 # special node for linux_libusb
