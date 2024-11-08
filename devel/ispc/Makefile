@@ -1,11 +1,12 @@
 PORTNAME=	ispc
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.25.2
+DISTVERSION=	1.25.3
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Intel's compiler for high-performance SIMD programming
-WWW=		https://ispc.github.io/
+WWW=		https://ispc.github.io/ \
+		https://github.com/ispc/ispc
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
