@@ -1799,6 +1799,7 @@
     SUBDIR += py-python-dotenv
     SUBDIR += py-python-multipart
     SUBDIR += py-pyweblib
+    SUBDIR += py-pywebview-gtk
     SUBDIR += py-pywikibot
     SUBDIR += py-pywry
     SUBDIR += py-qh3
