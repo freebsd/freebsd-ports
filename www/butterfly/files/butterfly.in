@@ -11,6 +11,7 @@
 : ${butterfly_enable="NO"}
 : ${butterfly_user="root"}
 : ${butterfly_args="--unsecure"}
+: ${butterfly_hostname="localhost"}
 
 . /etc/rc.subr
 
@@ -23,11 +24,11 @@ load_rc_config $name
 
 start_butterfly() {
   echo "Starting ${name}."
-  if ! [ -r %%ETCDIR%%/ssl/butterfly_localhost.crt -a %%ETCDIR%%/ssl/butterfly_localhost.key -a %%ETCDIR%%/ssl/butterfly_ca.crt ]; then
-    %%PREFIX%%/bin/butterfly.server.py --generate-certs --host=localhost &&
+  if ! [ -r %%ETCDIR%%/ssl/butterfly_${butterfly_hostname}.crt -a %%ETCDIR%%/ssl/butterfly_${butterfly_hostname}.key -a %%ETCDIR%%/ssl/butterfly_ca.crt ]; then
+    %%PREFIX%%/bin/butterfly.server.py --generate-certs --host=${butterfly_hostname} &&
     echo "${name}: generated the ssl certificate in %%ETCDIR%%/ssl"
   fi
-  daemon -p $pidfile -u ${butterfly_user} %%PREFIX%%/bin/butterfly.server.py ${butterfly_args} >/var/log/${name}.log 2>&1
+  daemon -p $pidfile -u ${butterfly_user} %%PREFIX%%/bin/butterfly.server.py ${butterfly_args} --host=${butterfly_hostname} >/var/log/${name}.log 2>&1
 }
 
 command="%%PYTHON_CMD%%"

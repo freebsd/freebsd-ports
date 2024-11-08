@@ -8,6 +8,7 @@ lib/gstreamer-1.0/libgstfallbackswitch.so
 lib/gstreamer-1.0/libgstffv1.so
 lib/gstreamer-1.0/libgstfmp4.so
 lib/gstreamer-1.0/libgstgif.so
+lib/gstreamer-1.0/libgstgopbuffer.so
 %%GTK4%%lib/gstreamer-1.0/libgstgtk4.so
 lib/gstreamer-1.0/libgsthlssink3.so
 lib/gstreamer-1.0/libgsthsv.so
@@ -15,7 +16,10 @@ lib/gstreamer-1.0/libgstjson.so
 lib/gstreamer-1.0/libgstlewton.so
 lib/gstreamer-1.0/libgstlivesync.so
 lib/gstreamer-1.0/libgstmp4.so
+lib/gstreamer-1.0/libgstmpegtslive.so
 lib/gstreamer-1.0/libgstndi.so
+lib/gstreamer-1.0/libgstoriginalbuffer.so
+lib/gstreamer-1.0/libgstquinn.so
 lib/gstreamer-1.0/libgstraptorq.so
 lib/gstreamer-1.0/libgstrav1e.so
 lib/gstreamer-1.0/libgstregex.so
@@ -24,9 +28,11 @@ lib/gstreamer-1.0/libgstrsaudiofx.so
 %%PANGO%%lib/gstreamer-1.0/libgstrsclosedcaption.so
 lib/gstreamer-1.0/libgstrsfile.so
 lib/gstreamer-1.0/libgstrsflv.so
+lib/gstreamer-1.0/libgstrsinter.so
 %%PANGO%%lib/gstreamer-1.0/libgstrsonvif.so
 lib/gstreamer-1.0/libgstrspng.so
 lib/gstreamer-1.0/libgstrsrtp.so
+lib/gstreamer-1.0/libgstrsrtsp.so
 lib/gstreamer-1.0/libgstrstracers.so
 %%CAIRO%%lib/gstreamer-1.0/libgstrsvideofx.so
 %%WEBP%%lib/gstreamer-1.0/libgstrswebp.so
@@ -48,6 +54,7 @@ libdata/pkgconfig/gstfallbackswitch.pc
 libdata/pkgconfig/gstffv1.pc
 libdata/pkgconfig/gstfmp4.pc
 libdata/pkgconfig/gstgif.pc
+libdata/pkgconfig/gstgopbuffer.pc
 %%GTK4%%libdata/pkgconfig/gstgtk4.pc
 libdata/pkgconfig/gsthlssink3.pc
 libdata/pkgconfig/gsthsv.pc
@@ -55,7 +62,10 @@ libdata/pkgconfig/gstjson.pc
 libdata/pkgconfig/gstlewton.pc
 libdata/pkgconfig/gstlivesync.pc
 libdata/pkgconfig/gstmp4.pc
+libdata/pkgconfig/gstmpegtslive.pc
 libdata/pkgconfig/gstndi.pc
+libdata/pkgconfig/gstoriginalbuffer.pc
+libdata/pkgconfig/gstquinn.pc
 libdata/pkgconfig/gstraptorq.pc
 libdata/pkgconfig/gstrav1e.pc
 libdata/pkgconfig/gstregex.pc
@@ -64,9 +74,11 @@ libdata/pkgconfig/gstrsaudiofx.pc
 %%PANGO%%libdata/pkgconfig/gstrsclosedcaption.pc
 libdata/pkgconfig/gstrsfile.pc
 libdata/pkgconfig/gstrsflv.pc
+libdata/pkgconfig/gstrsinter.pc
 %%PANGO%%libdata/pkgconfig/gstrsonvif.pc
 libdata/pkgconfig/gstrspng.pc
 libdata/pkgconfig/gstrsrtp.pc
+libdata/pkgconfig/gstrsrtsp.pc
 libdata/pkgconfig/gstrstracers.pc
 %%CAIRO%%libdata/pkgconfig/gstrsvideofx.pc
 %%WEBP%%libdata/pkgconfig/gstrswebp.pc

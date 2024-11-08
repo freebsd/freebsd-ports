@@ -1,3 +1,208 @@
+  <vuln vid="305ceb2c-9df8-11ef-a660-d85ed309193e">
+    <topic>x11vnc -- access to shared memory segments</topic>
+    <affects>
+      <package>
+	<name>x11vnc</name>
+	<range><lt>0.9.16_8</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>cve@mitre.org reports:</p>
+	<blockquote cite="https://nvd.nist.gov/vuln/detail/CVE-2020-29074">
+	  <p>scan.c in x11vnc 0.9.16 uses IPC_CREAT|0777 in shmget calls,
+	  which allows access by actors other than the current user.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2020-29074</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2020-29074</url>
+    </references>
+    <dates>
+      <discovery>2020-11-18</discovery>
+      <entry>2024-11-08</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="adffe51e-9df5-11ef-a660-d85ed309193e">
+    <topic>lrzsz -- Integer overflow in zmodem, crash and information leak</topic>
+    <affects>
+      <package>
+	<name>lrzsz</name>
+	<range><lt>0.12.20_7</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>cve@mitre.org reports:</p>
+	<blockquote cite="https://nvd.nist.gov/vuln/detail/CVE-2018-10195">
+	  <p>Lrzsz has an integer overflow vulernability in the
+	  src/zm.c:zsdata() function. An attacker could exploit this with
+	  the sz command to cause a crash or potentially leak information
+	  to the receiving server.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2018-10195</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2018-10195</url>
+    </references>
+    <dates>
+      <discovery>2018-04-26</discovery>
+      <entry>2024-11-08</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="776aaafc-939f-11ef-87ad-a8a15998b5cb">
+    <topic>tnef -- An attacker may be able to write to the victim's .ssh/authorized_keys file via an e-mail message</topic>
+    <affects>
+      <package>
+	<name>tnef</name>
+	<range><lt>1.4.18</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>cve@mitre.org reports:</p>
+	<blockquote cite="https://github.com/verdammelt/tnef/compare/1.4.17...1.4.18">
+	  <p>In tnef before 1.4.18, an attacker may be able to write to the
+	victim&apos;s .ssh/authorized_keys file via an e-mail message with
+	a crafted winmail.dat application/ms-tnef attachment, because of a
+	heap-based buffer over-read involving strdup.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2019-18849</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2019-18849</url>
+    </references>
+    <dates>
+      <discovery>2019-11-11</discovery>
+      <entry>2024-10-26</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="70cf37c8-939b-11ef-87ad-a8a15998b5cb">
+    <topic>tnef -- Invalid read and write operations, controlled by an attacker</topic>
+    <affects>
+      <package>
+	<name>tnef</name>
+	<range><le>1.4.12</le></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>cve@mitre.org reports:</p>
+	<blockquote cite="http://www.debian.org/security/2017/dsa-3798">
+	  <p>CVE-2017-6307: An issue was discovered in tnef before
+	  1.4.13.  Two OOB Writes have been identified in
+	  src/mapi_attr.c:mapi_attr_read().  These might lead to
+	  invalid read and write operations, controlled by an
+	  attacker.</p>
+	</blockquote>
+	<blockquote cite="http://www.debian.org/security/2017/dsa-3798">
+	  <p>CVE-2017-6308: An issue was discovered in tnef before
+	  1.4.13.  Several Integer Overflows, which can lead to Heap
+	  Overflows, have been identified in the functions that wrap
+	  memory allocation.</p>
+	</blockquote>
+	<blockquote cite="http://www.debian.org/security/2017/dsa-3798">
+	  <p>CVE-2017-6309: An issue was discovered in tnef before
+	  1.4.13.  Two type confusions have been identified in the
+	  parse_file() function.  These might lead to invalid read and
+	  write operations, controlled by an attacker.</p>
+	</blockquote>
+	<blockquote cite="http://www.debian.org/security/2017/dsa-3798">
+	  <p>CVE-2017-6310: An issue was discovered in tnef before
+	  1.4.13.  Four type confusions have been identified in the
+	  file_add_mapi_attrs() function.  These might lead to invalid
+	  read and write operations, controlled by an attacker.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2017-6307</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2017-6307</url>
+      <cvename>CVE-2017-6308</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2017-6308</url>
+      <cvename>CVE-2017-6309</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2017-6309</url>
+      <cvename>CVE-2017-6310</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2017-6310</url>
+    </references>
+    <dates>
+      <discovery>2017-02-24</discovery>
+      <entry>2024-10-26</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="96266fc9-1200-43b5-8393-4c51f54bb7bc">
+    <topic>electron32 -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>electron32</name>
+	<range><lt>32.2.3</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Electron developers report:</p>
+	<blockquote cite="https://github.com/electron/electron/releases/tag/v32.2.3">
+	  <p>This update fixes the following vulnerabilities:</p>
+	  <ul>
+	    <li>Security: backported fix for CVE-2024-10230.</li>
+	    <li>Security: backported fix for CVE-2024-10231.</li>
+	    <li>Security: backported fix for CVE-2024-10229.</li>
+	    <li>Security: backported fix for CVE-2024-10487.</li>
+	  </ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2024-10230</cvename>
+      <url>https://github.com/advisories/GHSA-g4gj-m346-585c</url>
+      <cvename>CVE-2024-10231</cvename>
+      <url>https://github.com/advisories/GHSA-3wfx-mj93-vf8v</url>
+      <cvename>CVE-2024-10229</cvename>
+      <url>https://github.com/advisories/GHSA-3hjp-j522-245f</url>
+      <cvename>CVE-2024-10487</cvename>
+      <url>https://github.com/advisories/GHSA-h72p-7xmw-gpp8</url>
+    </references>
+    <dates>
+      <discovery>2024-11-08</discovery>
+      <entry>2024-11-08</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="d48a2224-9b4c-11ef-bdd9-4ccc6adda413">
+    <topic>gstreamer1-rtsp-server -- Potential Denial-of-Service (DoS) with specially crafted client requests</topic>
+    <affects>
+      <package>
+	<name>gstreamer1-rtsp-server</name>
+	<range><ge>1.18.0</ge><lt>1.24.9</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Qingpeng Du reports:</p>
+	<blockquote cite="https://gstreamer.freedesktop.org/security/sa-2024-0004.html">
+	  <p>A series of specially crafted client requests during streaming setup
+	   (post client authentication, if any) can cause the RTSP server library
+	   to abort, if it has been compiled with assertions enabled.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2024-44331</cvename>
+      <url>https://gstreamer.freedesktop.org/security/sa-2024-0004.html</url>
+    </references>
+    <dates>
+      <discovery>2024-10-29</discovery>
+      <entry>2024-11-07</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="ab254c9d-9c36-11ef-8c1c-a8a1599412c6">
     <topic>chromium -- multiple security fixes</topic>
     <affects>

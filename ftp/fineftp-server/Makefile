@@ -1,12 +1,11 @@
 PORTNAME=	fineftp-server
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.3.1
-PORTREVISION=	2
+DISTVERSION=	1.4.3
 CATEGORIES=	ftp
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	C++ minimal FTP server library
-WWW=		https://github.com/continental/fineftp-server
+WWW=		https://github.com/eclipse-ecal/fineftp-server
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -18,9 +17,10 @@ USES=		cmake compiler:c++14-lang
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	continental
+GH_ACCOUNT=	eclipse-ecal
 
 CMAKE_ON=	BUILD_SHARED_LIBS
+CMAKE_OFF=	FINEFTP_SERVER_BUILD_SAMPLES
 CMAKE_ARGS=	-Dasio_INCLUDE_DIR=${LOCALBASE}/include
 
 .include <bsd.port.mk>

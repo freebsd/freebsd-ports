@@ -117,6 +117,7 @@
     SUBDIR += ipcad
     SUBDIR += ipcalc
     SUBDIR += ipfixcol2
+    SUBDIR += ipgen
     SUBDIR += iprange
     SUBDIR += ipv6calc
     SUBDIR += ipv6gen

@@ -37,6 +37,7 @@ share/applications/bhyvemgr.desktop
 %%DATADIR%%/images/systems/ghostbsd.png
 %%DATADIR%%/images/systems/kalilinux.png
 %%DATADIR%%/images/systems/linux.png
+%%DATADIR%%/images/systems/linuxmint.png
 %%DATADIR%%/images/systems/manjaro.png
 %%DATADIR%%/images/systems/netbsd.png
 %%DATADIR%%/images/systems/nomadbsd.png

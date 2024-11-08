@@ -1,22 +1,12 @@
---- ext/gl/meson.build.orig	2024-08-21 11:25:15 UTC
+--- ext/gl/meson.build.orig	2024-10-30 20:33:30 UTC
 +++ ext/gl/meson.build
-@@ -114,10 +114,6 @@ endif
-   optional_deps += bcm_host_dep
- endif
+@@ -53,6 +53,9 @@ gl_objc_args = []
+ optional_deps = []
+ gl_objc_args = []
  
--if egl_dep.found() and cc.has_header('libdrm/drm_fourcc.h')
--  optional_deps += allocators_dep
--endif
--
- if ['darwin', 'ios'].contains(host_system)
-   if not have_objc
-     error('No ObjC compiler found')
-@@ -144,7 +140,7 @@ gstopengl = library('gstopengl',
-   objc_args : gst_plugins_base_args + gl_objc_args + extra_c_args,
-   link_args : noseh_link_args,
-   include_directories : [configinc],
--  dependencies : [gstgl_dep, video_dep,
-+  dependencies : [gstgl_dep, dependency('gstreamer-video-1.0'),
-                   gst_base_dep, gst_controller_dep, libm] + optional_deps,
-   install : true,
-   install_dir : plugins_install_dir)
++allocators_dep = dependency('gstreamer-allocators-1.0')
++video_dep = dependency('gstreamer-video-1.0')
++
+ if gl_dep.found() # have desktop GL
+   opengl_sources += [
+     'gstglfilterglass.c',

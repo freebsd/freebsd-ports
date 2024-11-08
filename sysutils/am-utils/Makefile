@@ -1,10 +1,9 @@
 PORTNAME=	am-utils
 PORTVERSION=	6.2
-PORTREVISION=	12
+PORTREVISION=	13
 PORTEPOCH=	1
 CATEGORIES=	sysutils net
-MASTER_SITES=	ftp://ftp.am-utils.org/pub/am-utils/ \
-		ftp://ftp.cs.umn.edu/pub/am-utils/ \
+MASTER_SITES=	https://download.filesystems.org/am-utils/ \
 		ftp://ftp.u-aizu.ac.jp/pub/net/amd/am-utils/
 
 MAINTAINER=	cy@FreeBSD.org

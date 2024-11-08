@@ -1,7 +1,7 @@
 PORTNAME=	kooha
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.3.0
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	multimedia wayland
 
 MAINTAINER=	ports@FreeBSD.org
@@ -12,12 +12,11 @@ LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libgraphene-1.0.so:graphics/graphene
-RUN_DEPENDS=	${LOCALBASE}/lib/gstreamer-1.0/libgstgtk4.so:multimedia/gstreamer1-plugins-rust
 
 USES=		cargo gettext gnome gstreamer meson pkgconfig
 USE_GITHUB=	yes
 USE_GNOME=	cairo gtk40 libadwaita
-USE_GSTREAMER=	gl good opus pulse vpx
+USE_GSTREAMER=	gl good opus pulse rust vpx
 GH_ACCOUNT=	SeaDve
 GH_PROJECT=	Kooha
 MAKE_ENV=	${CARGO_ENV}

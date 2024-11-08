@@ -13,6 +13,10 @@ http://localhost:57575
 
 The port and other parameters can be configured in
 %%ETCDIR%%/butterfly.conf
+
+By default, the daemon runs "unsecure" and as root, the default
+hostname used is "localhost". Set butterfly_user, butterfly_args,
+and butterfly_hostname butterfly_user rc variables to adjust.
 EOM
 }
 ]
