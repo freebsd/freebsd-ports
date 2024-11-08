@@ -1,3 +1,59 @@
+  <vuln vid="305ceb2c-9df8-11ef-a660-d85ed309193e">
+    <topic>x11vnc -- access to shared memory segments</topic>
+    <affects>
+      <package>
+	<name>x11vnc</name>
+	<range><lt>0.9.16_8</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>cve@mitre.org reports:</p>
+	<blockquote cite="https://nvd.nist.gov/vuln/detail/CVE-2020-29074">
+	  <p>scan.c in x11vnc 0.9.16 uses IPC_CREAT|0777 in shmget calls,
+	  which allows access by actors other than the current user.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2020-29074</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2020-29074</url>
+    </references>
+    <dates>
+      <discovery>2020-11-18</discovery>
+      <entry>2024-11-08</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="adffe51e-9df5-11ef-a660-d85ed309193e">
+    <topic>lrzsz -- Integer overflow in zmodem, crash and information leak</topic>
+    <affects>
+      <package>
+	<name>lrzsz</name>
+	<range><lt>0.12.20_7</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>cve@mitre.org reports:</p>
+	<blockquote cite="https://nvd.nist.gov/vuln/detail/CVE-2018-10195">
+	  <p>Lrzsz has an integer overflow vulernability in the
+	  src/zm.c:zsdata() function. An attacker could exploit this with
+	  the sz command to cause a crash or potentially leak information
+	  to the receiving server.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2018-10195</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2018-10195</url>
+    </references>
+    <dates>
+      <discovery>2018-04-26</discovery>
+      <entry>2024-11-08</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="776aaafc-939f-11ef-87ad-a8a15998b5cb">
     <topic>tnef -- An attacker may be able to write to the victim's .ssh/authorized_keys file via an e-mail message</topic>
     <affects>
