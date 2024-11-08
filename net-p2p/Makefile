@@ -103,6 +103,7 @@
     SUBDIR += udpt
     SUBDIR += uhub
     SUBDIR += vuze
+    SUBDIR += warpinator
     SUBDIR += xbt
     SUBDIR += xmrig
 
