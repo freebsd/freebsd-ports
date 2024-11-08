@@ -1,0 +1,10 @@
+--- libpkt/GNUmakefile.orig	2024-02-29 01:38:00 UTC
++++ libpkt/GNUmakefile
+@@ -8,7 +8,6 @@ SRCS+=		utils.c
+ SRCS+=		ip6pkt.c
+ SRCS+=		utils.c
+ 
+-CFLAGS+=	-O2
+ CFLAGS+=	-Wall -Wstrict-prototypes -Wmissing-prototypes -Wpointer-arith
+ CFLAGS+=	-Wreturn-type -Wswitch -Wshadow
+ CFLAGS+=	-Wcast-qual -Wwrite-strings
