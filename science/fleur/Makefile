@@ -1,6 +1,5 @@
 PORTNAME=	fleur
-DISTVERSION=	6.2
-PORTREVISION=	4
+DISTVERSION=	7.2
 CATEGORIES=	science # chemistry
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -23,7 +22,7 @@ USE_GNOME=	libxml2
 
 USE_GITLAB=	yes
 GL_SITE=	https://iffgit.fz-juelich.de
-GL_TAGNAME=	a9f84b504efcb04c6d5bd2f59b6b1a0f9eb6e831
+GL_TAGNAME=	447eed3b7ec3de5fcdfbd232cd1eda4caefb51d3
 
 FFLAGS=		-I${LOCALBASE}/include
 LDFLAGS+=	-llapack -lopenblas -lxml2 # to fix missing symbols, see https://iffgit.fz-juelich.de/fleur/fleur/-/issues/670
@@ -80,6 +79,8 @@ post-install: # strip
 do-test:
 	# now: some tests fail or freeze, possibly because of missing hdf5 and kplib dependencies
 	# was: 9 testcases are known to fail, see https://iffgit.fz-juelich.de/fleur/fleur/-/issues/671
-	@cd ${WRKSRC}/tests && pytest ../tests --build_dir=${TEST_WRKSRC}
+	@cd ${WRKSRC}/testing && pytest tests --build_dir=${TEST_WRKSRC}
+
+# tests fail to run: INTERNALERROR> pluggy._manager.PluginValidationError: unknown hook 'pytest_html_report_title' in plugin <module 'conftest' from '/usr/ports/science/fleur/work/fleur-447eed3b7ec3de5fcdfbd232cd1eda4caefb51d3/testing/conftest.py'>
 
 .include <bsd.port.mk>
