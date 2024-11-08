@@ -1767,6 +1767,7 @@
     SUBDIR += py-mwoauth
     SUBDIR += py-nevow
     SUBDIR += py-nh3
+    SUBDIR += py-nicegui
     SUBDIR += py-notebook
     SUBDIR += py-onetimepass
     SUBDIR += py-openbrokerapi
