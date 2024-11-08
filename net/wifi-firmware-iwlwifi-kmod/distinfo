@@ -1,4 +1,4 @@
-TIMESTAMP = 1730331777
+TIMESTAMP = 1731028346
 SHA256 (linux-firmware/iwlwififw/iwlwifi-3160-17.ucode?h=20241017) = 0e893c1ed74c3186047508e93442b2d71a07dd5fac00d9dbdb68f34407d7be14
 SIZE (linux-firmware/iwlwififw/iwlwifi-3160-17.ucode?h=20241017) = 918268
 SHA256 (linux-firmware/iwlwififw/iwlwifi-3168-29.ucode?h=20241017) = 3afae7bf4bb5fbb83a895ec7ad097b9fd20b7d8794f405c2823cbea5284e65c3
@@ -47,8 +47,12 @@ SHA256 (linux-firmware/iwlwififw/iwlwifi-so-a0-gf-a0-89.ucode?h=20241017) = 6ea5
 SIZE (linux-firmware/iwlwififw/iwlwifi-so-a0-gf-a0-89.ucode?h=20241017) = 1739904
 SHA256 (linux-firmware/iwlwififw/iwlwifi-so-a0-hr-b0-89.ucode?h=20241017) = ac8744414535eda690adec05ea812de15deaaeb9aed575506a9268419a0e0158
 SIZE (linux-firmware/iwlwififw/iwlwifi-so-a0-hr-b0-89.ucode?h=20241017) = 1530736
-SHA256 (linux-firmware/iwlwififw/iwlwifi-so-a0-jf-b0-72.ucode?h=20241017) = bc3a70588ae1563411556e43d23a65ea16f26f5a7fd551169c6c8a2eebf0f832
-SIZE (linux-firmware/iwlwififw/iwlwifi-so-a0-jf-b0-72.ucode?h=20241017) = 1406312
+SHA256 (linux-firmware/iwlwififw/iwlwifi-so-a0-jf-b0-77.ucode?h=20241017) = 9dccba0a8ba98483cb8385398d013b693b5b37cbff9402763ba215cc4921386c
+SIZE (linux-firmware/iwlwififw/iwlwifi-so-a0-jf-b0-77.ucode?h=20241017) = 1446036
+SHA256 (linux-firmware/iwlwififw/iwlwifi-ty-a0-gf-a0.pnvm?h=20241017) = 6ec769bb51449c1f1cbb0d528d8d5f3dc89de7546274913460e11a4b0da19e6c
+SIZE (linux-firmware/iwlwififw/iwlwifi-ty-a0-gf-a0.pnvm?h=20241017) = 55036
+SHA256 (linux-firmware/iwlwififw/iwlwifi-ty-a0-gf-a0-89.ucode?h=20241017) = b226e25ad6682bfd0cbf4d444c322d3fa9a48de435cc50d85a4007fb7c3763b2
+SIZE (linux-firmware/iwlwififw/iwlwifi-ty-a0-gf-a0-89.ucode?h=20241017) = 1681772
 SHA256 (linux-firmware/iwlwififw/iwlwifi-ma-b0-hr-b0-83.ucode?h=20241017) = 03b67d28b4916634c544e057abdc46b15b636a85064df993ca431fd92fe4a835
 SIZE (linux-firmware/iwlwififw/iwlwifi-ma-b0-hr-b0-83.ucode?h=20241017) = 1572104
 SHA256 (linux-firmware/iwlwififw/iwlwifi-gl-c0-fm-c0.pnvm?h=20241017) = faee96e453d18d9e0433c5490afc8218d22cf02a745f2041c5fa00b35b686a9c
