@@ -195,7 +195,8 @@ gst-sndfile_IMPL=	bad
 
 gst-sndio_PORT=		audio/gstreamer${_GST_VER}-plugins-sndio
 gst-sndio_IMPL=		#
-gst-sndio_VERSION=	1.8.0
+gst-sndio_GST1_VERSION=	1.24.0
+gst-sndio_VERSION=	${gst-sndio_GST${_GST_VER}_VERSION}
 
 gst-soundtouch_PORT=	audio/gstreamer${_GST_VER}-plugins-soundtouch
 gst-soundtouch_IMPL=	bad
