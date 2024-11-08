@@ -1,6 +1,4 @@
-- see https://github.com/pavlin-policar/openTSNE/issues/165
-
---- openTSNE/dependencies/annoy/annoymodule.cc.orig	2021-03-13 20:45:35 UTC
+--- openTSNE/dependencies/annoy/annoymodule.cc.orig	2024-11-08 03:59:50 UTC
 +++ openTSNE/dependencies/annoy/annoymodule.cc
 @@ -177,7 +177,7 @@ py_an_init(py_annoy *self, PyObject *args, PyObject *k
    int f;
