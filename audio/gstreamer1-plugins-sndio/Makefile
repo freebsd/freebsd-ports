@@ -14,7 +14,7 @@ LIB_DEPENDS=	libsndio.so:audio/sndio
 
 USES=		gnome gstreamer pkgconfig
 USE_GITHUB=	yes
-GH_ACCOUNT=	t6
+GH_ACCOUNT=	BSDKaffee
 USE_GNOME=	glib20
 
 PLIST_FILES=	lib/gstreamer-1.0/libgstsndio.so
