@@ -1,3 +1,86 @@
+  <vuln vid="776aaafc-939f-11ef-87ad-a8a15998b5cb">
+    <topic>tnef -- An attacker may be able to write to the victim's .ssh/authorized_keys file via an e-mail message</topic>
+    <affects>
+      <package>
+	<name>tnef</name>
+	<range><lt>1.4.18</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>cve@mitre.org reports:</p>
+	<blockquote cite="https://github.com/verdammelt/tnef/compare/1.4.17...1.4.18">
+	  <p>In tnef before 1.4.18, an attacker may be able to write to the
+	victim&apos;s .ssh/authorized_keys file via an e-mail message with
+	a crafted winmail.dat application/ms-tnef attachment, because of a
+	heap-based buffer over-read involving strdup.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2019-18849</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2019-18849</url>
+    </references>
+    <dates>
+      <discovery>2019-11-11</discovery>
+      <entry>2024-10-26</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="70cf37c8-939b-11ef-87ad-a8a15998b5cb">
+    <topic>tnef -- Invalid read and write operations, controlled by an attacker</topic>
+    <affects>
+      <package>
+	<name>tnef</name>
+	<range><le>1.4.12</le></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>cve@mitre.org reports:</p>
+	<blockquote cite="http://www.debian.org/security/2017/dsa-3798">
+	  <p>CVE-2017-6307: An issue was discovered in tnef before
+	  1.4.13.  Two OOB Writes have been identified in
+	  src/mapi_attr.c:mapi_attr_read().  These might lead to
+	  invalid read and write operations, controlled by an
+	  attacker.</p>
+	</blockquote>
+	<blockquote cite="http://www.debian.org/security/2017/dsa-3798">
+	  <p>CVE-2017-6308: An issue was discovered in tnef before
+	  1.4.13.  Several Integer Overflows, which can lead to Heap
+	  Overflows, have been identified in the functions that wrap
+	  memory allocation.</p>
+	</blockquote>
+	<blockquote cite="http://www.debian.org/security/2017/dsa-3798">
+	  <p>CVE-2017-6309: An issue was discovered in tnef before
+	  1.4.13.  Two type confusions have been identified in the
+	  parse_file() function.  These might lead to invalid read and
+	  write operations, controlled by an attacker.</p>
+	</blockquote>
+	<blockquote cite="http://www.debian.org/security/2017/dsa-3798">
+	  <p>CVE-2017-6310: An issue was discovered in tnef before
+	  1.4.13.  Four type confusions have been identified in the
+	  file_add_mapi_attrs() function.  These might lead to invalid
+	  read and write operations, controlled by an attacker.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2017-6307</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2017-6307</url>
+      <cvename>CVE-2017-6308</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2017-6308</url>
+      <cvename>CVE-2017-6309</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2017-6309</url>
+      <cvename>CVE-2017-6310</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2017-6310</url>
+    </references>
+    <dates>
+      <discovery>2017-02-24</discovery>
+      <entry>2024-10-26</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="96266fc9-1200-43b5-8393-4c51f54bb7bc">
     <topic>electron32 -- multiple vulnerabilities</topic>
     <affects>
