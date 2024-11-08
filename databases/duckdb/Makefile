@@ -1,23 +1,23 @@
 PORTNAME=	duckdb
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.1.2
+DISTVERSION=	1.1.3
 CATEGORIES=	databases
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	In-process SQL OLAP database management system
-WWW=		https://duckdb.org/
+WWW=		https://duckdb.org/ \
+		https://github.com/duckdb/duckdb
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		cmake:testing compiler:c++11-lang ssl
 USE_GITHUB=	yes
-GH_TUPLE=	duckdb:duckdb_inet:eca867b2517af06eabc89ccd6234266e9a7d6d71:inet/extension/inet \
-		duckdb:duckdb_spatial:3f94d52aa9f7d67b1a30e6cea642bbb790c04aa2:spatial/extension/spatial \
-		duckdb:substrait:be71387cf0a484dc7b261a0cb21abec0d0e0ce5c:sqlsmith/extension/substrait \
+GH_TUPLE=	duckdb:duckdb_inet:51d7ad789f34eecb36a2071bac5aef0e12747d70:inet/extension/inet \
+		duckdb:duckdb_spatial:7ea79b614755d2bdee4be468691e4e17b39b8dbc:spatial/extension/spatial \
 		duckdb:sqlite_scanner:d5d62657702d33cb44a46cddc7ffc4b67bf7e961:sqlite/extension/sqlite_scanner \
 		duckdb:duckdb_sqlsmith:d6d62c1cba6b1369ba79db4bff3c67f24aaa95c2:sqlsmith/extension/sqlsmith \
-		duckdb:duckdb_vss:dd880d6121c0f3dff27131e54e057c9db0f1c710:vss/extension/vss
+		duckdb:duckdb_vss:96374099476b3427c9ab43c1821e610b0465c864:vss/extension/vss
 # the list of out-of-tree extensions is here: .github/config/out_of_tree_extensions.cmake
 
 CXXFLAGS+=	-I${WRKSRC}/extension/inet/src/include \
@@ -66,6 +66,6 @@ post-extract: # remove the jemalloc extension directory just in case
 post-test: # run tests
 	@cd ${TEST_WRKSRC} && test/unittest
 
-# 1 test fails, see https://github.com/duckdb/duckdb/issues/14365
+# tests as of 1.1.3: All tests passed (53 skipped tests, 458453 assertions in 3305 test cases)
 
 .include <bsd.port.mk>
