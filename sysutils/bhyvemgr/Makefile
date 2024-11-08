@@ -1,6 +1,6 @@
 PORTNAME=	bhyvemgr
 DISTVERSIONPREFIX=	v
-PORTVERSION=	1.1.1
+PORTVERSION=	1.2.0
 CATEGORIES=	sysutils
 PKGNAMESUFFIX=	${LAZARUS_PKGNAMESUFFIX}
 
@@ -13,7 +13,7 @@ LICENSE=	BSD3CLAUSE
 RUN_DEPENDS=	virt-viewer>0:net-mgmt/virt-viewer \
 		sudo>0:security/sudo
 
-ONLY_FOR_ARCHS=	amd64
+ONLY_FOR_ARCHS?=amd64
 
 USES=		desktop-file-utils fpc lazarus:flavors xorg
 USE_XORG=	x11
@@ -28,7 +28,8 @@ FREERDP3_RUN_DEPENDS=	freerdp3>0:net/freerdp3
 .include <bsd.port.pre.mk>
 
 .if ${OPSYS} == FreeBSD && (${OSVERSION} >= 1500000)
-ONLY_FOR_ARCHS+=	aarch64
+ONLY_FOR_ARCHS=	aarch64 amd64
+RUN_DEPENDS+=	swtpm>0:sysutils/swtpm
 .endif
 
 .if ${ARCH} == "aarch64"
