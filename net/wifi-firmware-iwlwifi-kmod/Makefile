@@ -59,7 +59,9 @@ DISTFILES_ax210= \
 	iwlwifi-so-a0-gf-a0.pnvm${DISTURL_SUFFIX} \
 	iwlwifi-so-a0-gf-a0-89.ucode${DISTURL_SUFFIX} \
 	iwlwifi-so-a0-hr-b0-89.ucode${DISTURL_SUFFIX} \
-	iwlwifi-so-a0-jf-b0-72.ucode${DISTURL_SUFFIX}
+	iwlwifi-so-a0-jf-b0-77.ucode${DISTURL_SUFFIX} \
+	iwlwifi-ty-a0-gf-a0.pnvm${DISTURL_SUFFIX} \
+	iwlwifi-ty-a0-gf-a0-89.ucode${DISTURL_SUFFIX}
 DISTFILES_bz= \
 	iwlwifi-gl-c0-fm-c0.pnvm${DISTURL_SUFFIX} \
 	iwlwifi-gl-c0-fm-c0-92.ucode${DISTURL_SUFFIX}
