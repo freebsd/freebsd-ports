@@ -1010,6 +1010,7 @@
     SUBDIR += py-ansible-core
     SUBDIR += py-ansible-lint
     SUBDIR += py-ansible-runner
+    SUBDIR += py-appjail-gui
     SUBDIR += py-azure-cli
     SUBDIR += py-azure-cli-acr
     SUBDIR += py-azure-cli-base

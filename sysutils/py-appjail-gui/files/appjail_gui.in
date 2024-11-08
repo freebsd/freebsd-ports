@@ -1,0 +1,59 @@
+#!/bin/sh
+#
+# PROVIDE: appjail_gui
+# REQUIRE: NETWORKING LOGIN
+# KEYWORD: shutdown
+#
+# Configuration settings for appjail-gui in /etc/rc.conf
+#
+# appjail_gui_enable (bool):    Enable appjail_gui. (default=NO)
+# appjail_gui_user (str):       User to run appjail-gui. (default=root)
+# appjail_gui_log (str):        Send stdout/stderr to a file. (default=/var/log/appjail_gui/appjail_gui.log)
+# appjail_gui_flags (str):      Flags used for appjail-gui. (default=)
+#
+
+. /etc/rc.subr
+
+name=appjail_gui
+rcvar=appjail_gui_enable
+
+load_rc_config $name
+
+: ${appjail_gui_enable:=NO}
+: ${appjail_gui_user:=root}
+: ${appjail_gui_log:=/var/log/${name}.log}
+
+pidfile="/var/run/${name}/${name}.pid"
+procname="%%PREFIX%%/bin/appjail-gui"
+command_interpreter="%%PYTHON_CMD%%"
+start_precmd="appjail_gui_precmd"
+start_cmd="appjail_gui_start"
+
+appjail_gui_precmd()
+{
+        local piddir
+        piddir=`dirname "${pidfile}"`
+
+        if [ ! -d "${piddir}" ]; then
+                mkdir -p "${piddir}"
+                chown "${appjail_gui_user}" "${piddir}"
+        fi
+
+        if [ ! -f "${appjail_gui_log}" ]; then
+                install -o ${appjail_gui_user} -m 640 /dev/null ${appjail_gui_log}
+        fi
+}
+
+appjail_gui_start()
+{
+        echo "Starting appjail-gui."
+        /usr/sbin/daemon -c \
+                -p "${pidfile}" \
+                -o "${appjail_gui_log}" \
+                -u "${appjail_gui_user}" \
+                "${command_interpreter}" \
+                "${procname}" \
+                ${appjail_gui_flags}
+}
+
+run_rc_command "$1"
