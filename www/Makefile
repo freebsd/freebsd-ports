@@ -1768,6 +1768,7 @@
     SUBDIR += py-nevow
     SUBDIR += py-nh3
     SUBDIR += py-nicegui
+    SUBDIR += py-nicegui-nogui
     SUBDIR += py-notebook
     SUBDIR += py-onetimepass
     SUBDIR += py-openbrokerapi
