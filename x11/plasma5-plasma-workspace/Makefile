@@ -1,7 +1,10 @@
 PORTNAME=	plasma-workspace
 DISTVERSION=	${KDE_PLASMA_VERSION}.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11 kde kde-plasma
+
+PATCH_SITES=	https://invent.kde.org/plasma/plasma-workspace/-/commit/
+PATCHFILES=	e109503c8ee12866ecfbd3aaf89170a753f2ea84.patch:-p1 # Fix writing ICEAuthority file
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Plasma5 Plasma workspace
