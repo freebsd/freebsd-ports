@@ -1,6 +1,5 @@
 %%VKLAYERS%%bin/mesa-overlay-control.py
 %%VKLAYERS%%bin/mesa-screenshot-control.py
-%%NO_COINST%%%%OPENCL%%etc/OpenCL/vendors/mesa.icd
 %%OPENCL%%etc/OpenCL/vendors/rusticl.icd
 %%COINST%%etc/libmap.d/mesa%%SUFFIX%%.conf
 %%NO_COINST%%include/EGL/eglext_angle.h
@@ -16,10 +15,6 @@
 %%panfrost%%lib/dri%%SUFFIX%%/rockchip_dri.so
 %%VAAPI%%%%r600%%lib/dri%%SUFFIX%%/r600_drv_video.so
 %%VAAPI%%%%radeonsi%%lib/dri%%SUFFIX%%/radeonsi_drv_video.so
-%%OPENCL%%%%crocus%%lib/gallium-pipe%%SUFFIX%%/pipe_crocus.so
-%%OPENCL%%%%iris%%lib/gallium-pipe%%SUFFIX%%/pipe_iris.so
-%%OPENCL%%%%r600%%lib/gallium-pipe%%SUFFIX%%/pipe_r600.so
-%%OPENCL%%%%radeonsi%%lib/gallium-pipe%%SUFFIX%%/pipe_radeonsi.so
 lib/gbm/dri%%SUFFIX%%_gbm.so
 %%NO_COINST%%lib/libEGL_mesa%%SUFFIX%%.so
 lib/libEGL_mesa%%SUFFIX%%.so.0
@@ -27,9 +22,6 @@ lib/libEGL_mesa%%SUFFIX%%.so.0.0.0
 %%X11%%%%NO_COINST%%lib/libGLX_mesa%%SUFFIX%%.so
 %%X11%%lib/libGLX_mesa%%SUFFIX%%.so.0
 %%X11%%lib/libGLX_mesa%%SUFFIX%%.so.0.0.0
-%%OPENCL%%%%NO_COINST%%lib/libMesaOpenCL%%SUFFIX%%.so
-%%OPENCL%%lib/libMesaOpenCL%%SUFFIX%%.so.1
-%%OPENCL%%lib/libMesaOpenCL%%SUFFIX%%.so.1.0.0
 %%OPENCL%%lib/libRusticlOpenCL.so
 %%OPENCL%%lib/libRusticlOpenCL.so.1
 %%OPENCL%%lib/libRusticlOpenCL.so.1.0.0

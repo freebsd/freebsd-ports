@@ -1,7 +1,7 @@
 PORTNAME=	mesa
 DISTVERSION=	24.2-branchpoint-5103
 DISTVERSIONSUFFIX=	-gc108dfc930f
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 PKGNAMESUFFIX=	-devel
 
@@ -115,10 +115,7 @@ OPENCL_LIB_DEPENDS=	libLLVMSPIRVLib.so.${OPENCL_SOVERSION}:devel/spirv-llvm-tran
 OPENCL_RUN_DEPENDS=	libclc-${LLVM_PORT:T}>0:devel/libclc@${LLVM_PORT:T}
 OPENCL_SOVERSION=	${LLVM_VERSION}${${LLVM_VERSION}>=18:?.1:}
 OPENCL_CONFIGURE_ENV=	PKG_CONFIG_PATH="${LLVM_PREFIX}/libdata/pkgconfig"
-OPENCL_MESON_TRUE=	gallium-rusticl opencl-spirv
-OPENCL_MESON_ON=	-Dgallium-opencl=icd
-OPENCL_MESON_OFF=	-Dgallium-opencl=disabled
-OPENCL_VARS+=		COINST_RUN_DEPENDS+=clover>0:lang/clover # ICD
+OPENCL_MESON_TRUE=	gallium-rusticl
 OPENCL_IMPLIES=		LLVM ${"${PORT_OPTIONS:Miris}":?iris:radeonsi} # any from OPTIONS_GROUP_GALLIUM
 
 VAAPI_DESC=		Hardware encoding/decoding (only r600, radeonsi)
