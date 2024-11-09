@@ -1,0 +1,11 @@
+--- ssh_config.orig	2024-09-19 15:20:48.000000000 -0700
++++ ssh_config	2024-11-09 12:23:47.263548000 -0800
+@@ -17,6 +17,8 @@
+ # list of available options, their meanings and defaults, please see the
+ # ssh_config(5) man page.
+ 
++Include ssh_config.d/*.conf
++
+ # Host *
+ #   ForwardAgent no
+ #   ForwardX11 no

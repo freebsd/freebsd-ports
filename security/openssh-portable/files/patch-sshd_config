@@ -1,19 +1,18 @@
-!!!
-!!! Note files/extra-patch-pam-sshd_config contains more changes for default PAM option.
-!!!
---- sshd_config.orig	2022-02-11 18:49:55.062881000 +0000
-+++ sshd_config	2022-02-11 18:52:31.639435000 +0000
-@@ -10,6 +10,9 @@
+--- sshd_config.orig	2024-11-09 12:22:03.414050000 -0800
++++ sshd_config	2024-11-09 12:25:59.964286000 -0800
+@@ -10,6 +10,11 @@
  # possible, but leave them commented.  Uncommented options override the
  # default value.
  
 +# Note that some of FreeBSD's defaults differ from OpenBSD's, and
 +# FreeBSD has a few additional options.
 +
++Include sshd_config.d/*.conf
++
  #Port 22
  #AddressFamily any
  #ListenAddress 0.0.0.0
-@@ -37,8 +40,7 @@
+@@ -37,8 +42,7 @@
  #PubkeyAuthentication yes
  
  # The default is to check both .ssh/authorized_keys and .ssh/authorized_keys2
@@ -23,7 +22,7 @@
  
  #AuthorizedPrincipalsFile none
  
-@@ -84,7 +86,7 @@
+@@ -84,7 +88,7 @@ AuthorizedKeysFile	.ssh/authorized_keys
  #AllowAgentForwarding yes
  #AllowTcpForwarding yes
  #GatewayPorts no
