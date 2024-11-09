@@ -5,7 +5,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME:S/r/R/}%21%20Max/${PORTVERSION}/
 DISTNAME=	${PORTNAME:S/r/R/}_${PORTVERSION}
 DIST_SUBDIR=	java
 
-MAINTAINER=	Clockwork6400@protonmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Action adventure in Space
 WWW=		https://rescue.sourceforge.net/
 

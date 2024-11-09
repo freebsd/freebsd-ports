@@ -4,7 +4,7 @@ PORTREVISION=	1
 CATEGORIES=	shells
 MASTER_SITES=	SF
 
-MAINTAINER=	Clockwork6400@protonmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Command-line program to change directory fast
 WWW=		http://wcd.sourceforge.net/
 
