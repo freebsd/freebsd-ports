@@ -1,14 +1,10 @@
 PORTNAME=	eww
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.4.0
-PORTREVISION=	22
+DISTVERSION=	0.6.0
 CATEGORIES=	x11 wayland
 PKGNAMESUFFIX=	-${FLAVOR}
 
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	f97d5919f3a4.patch:-p1 # https://github.com/elkowar/eww/pull/711
-
-MAINTAINER=	DtxdF@disroot.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	ElKowars wacky widgets
 WWW=		https://elkowar.github.io/eww
 
@@ -17,6 +13,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN_armv7=	mismatched types: expected \`i32\`, found \`i64\`
 BROKEN_powerpc64le=	rust compiler crashes, see https://github.com/rust-lang/rust/issues/120583
+
+LIB_DEPENDS=	libdbusmenu-glib.so:devel/libdbusmenu
 
 FLAVORS=			x11 wayland
 wayland_LIB_DEPENDS=		libgtk-layer-shell.so:x11-toolkits/gtk-layer-shell
@@ -28,9 +26,9 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	elkowar
 USE_GNOME=	cairo gdkpixbuf2 gtk30
 
-CARGO_FEATURES=		--no-default-features ${FLAVOR}
+CARGO_FEATURES=		${FLAVOR} --no-default-features
 CARGO_INSTALL_PATH=	crates/${PORTNAME}
-CARGO_ENV=	RUSTC_BOOTSTRAP=1
+CARGO_ENV=		RUSTC_BOOTSTRAP=1
 
 PLIST_FILES=	bin/${PORTNAME}
 
