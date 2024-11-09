@@ -1,7 +1,6 @@
 PORTNAME=	lib${GH_PROJECT}
-PORTVERSION=	26.0.0
+PORTVERSION=	26.0.1
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	osa@FreeBSD.org
@@ -60,12 +59,12 @@ CARGO_CRATES=	addr2line-0.24.1 \
 		bytes-1.5.0 \
 		bytesize-1.3.0 \
 		camino-1.1.4 \
-		cap-fs-ext-3.3.0 \
-		cap-net-ext-3.3.0 \
-		cap-primitives-3.3.0 \
-		cap-rand-3.3.0 \
-		cap-std-3.3.0 \
-		cap-time-ext-3.3.0 \
+		cap-fs-ext-3.4.1 \
+		cap-net-ext-3.4.1 \
+		cap-primitives-3.4.1 \
+		cap-rand-3.4.1 \
+		cap-std-3.4.1 \
+		cap-time-ext-3.4.1 \
 		capstone-0.12.0 \
 		capstone-sys-0.16.0 \
 		cargo-platform-0.1.2 \
@@ -168,7 +167,7 @@ CARGO_CRATES=	addr2line-0.24.1 \
 		indexmap-nostd-0.4.0 \
 		indicatif-0.13.0 \
 		instant-0.1.12 \
-		io-extras-0.18.1 \
+		io-extras-0.18.3 \
 		io-lifetimes-2.0.3 \
 		ipnet-2.5.0 \
 		is-terminal-0.4.10 \
@@ -183,7 +182,7 @@ CARGO_CRATES=	addr2line-0.24.1 \
 		lazy_static-1.4.0 \
 		lazycell-1.3.0 \
 		leb128-0.2.5 \
-		libc-0.2.158 \
+		libc-0.2.161 \
 		libfuzzer-sys-0.4.5 \
 		libloading-0.8.1 \
 		libm-0.2.7 \
@@ -253,7 +252,7 @@ CARGO_CRATES=	addr2line-0.24.1 \
 		rustc-demangle-0.1.24 \
 		rustc-hash-1.1.0 \
 		rustc-hash-2.0.0 \
-		rustix-0.38.37 \
+		rustix-0.38.39 \
 		rustls-0.22.4 \
 		rustls-0.23.7 \
 		rustls-pki-types-1.3.1 \
