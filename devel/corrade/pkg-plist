@@ -12,6 +12,7 @@ include/Corrade/Containers/BitArrayView.h
 include/Corrade/Containers/Containers.h
 include/Corrade/Containers/EnumSet.h
 include/Corrade/Containers/EnumSet.hpp
+include/Corrade/Containers/Function.h
 include/Corrade/Containers/GrowableArray.h
 include/Corrade/Containers/Iterable.h
 include/Corrade/Containers/LinkedList.h
@@ -27,6 +28,7 @@ include/Corrade/Containers/ScopeGuard.h
 include/Corrade/Containers/StaticArray.h
 include/Corrade/Containers/StridedArrayView.h
 include/Corrade/Containers/StridedArrayViewStl.h
+include/Corrade/Containers/StridedBitArrayView.h
 include/Corrade/Containers/StridedDimensions.h
 include/Corrade/Containers/String.h
 include/Corrade/Containers/StringIterable.h
@@ -34,6 +36,7 @@ include/Corrade/Containers/StringStl.h
 include/Corrade/Containers/StringStlHash.h
 include/Corrade/Containers/StringStlView.h
 include/Corrade/Containers/StringView.h
+include/Corrade/Containers/StructuredBindings.h
 include/Corrade/Containers/Tags.h
 include/Corrade/Containers/Triple.h
 include/Corrade/Containers/TripleStl.h
@@ -74,6 +77,7 @@ include/Corrade/Utility/AbstractHash.h
 include/Corrade/Utility/Algorithms.h
 include/Corrade/Utility/Arguments.h
 include/Corrade/Utility/Assert.h
+include/Corrade/Utility/BitAlgorithms.h
 include/Corrade/Utility/Configuration.h
 include/Corrade/Utility/ConfigurationGroup.h
 include/Corrade/Utility/ConfigurationValue.h
@@ -106,6 +110,7 @@ include/Corrade/Utility/Sha1.h
 include/Corrade/Utility/StlForwardArray.h
 include/Corrade/Utility/StlForwardString.h
 include/Corrade/Utility/StlForwardTuple.h
+include/Corrade/Utility/StlForwardTupleSizeElement.h
 include/Corrade/Utility/StlForwardVector.h
 include/Corrade/Utility/StlMath.h
 include/Corrade/Utility/String.h
@@ -136,5 +141,5 @@ share/cmake/Corrade/CorradeConfig.cmake
 share/cmake/Corrade/CorradeLibSuffix.cmake
 share/cmake/Corrade/FindCorrade.cmake
 share/cmake/Corrade/UseCorrade.cmake
-%%DATADIR%%/debuggers/gdb/__init__.py
-%%DATADIR%%/debuggers/gdb/printers.py
+share/gdb/python/corrade/__init__.py
+share/gdb/python/corrade/printers.py
