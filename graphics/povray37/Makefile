@@ -24,6 +24,9 @@ GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	COMPILED_BY=${HOSTARCH}-portbld-${OPSYS:tl}-${OSREL:R} \
 		--program-transform-name='s/povray/${PKGBASE}/' \
 		--disable-optimiz
+CPPFLAGS+=	-D POVMSUCS2="char16_t"
+CPPFLAGS+=	-D UCS2="char16_t"
+CPPFLAGS+=	-D UCS4="char32_t"
 
 VERSION_BASE=	${PORTVERSION:C/([0-9]+\.[0-9]+).*/\1/}
 ETCDIR=		${PREFIX}/etc/${PORTNAME}/${VERSION_BASE}
