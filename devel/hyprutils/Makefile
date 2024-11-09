@@ -1,7 +1,10 @@
 PORTNAME=	hyprutils
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.2.3
+DISTVERSION=	0.2.4
 CATEGORIES=	devel
+
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES+=	d504d45114ad.patch:-p1 # https://github.com/hyprwm/hyprutils/pull/16
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Hyprland utilities library used across the ecosystem
