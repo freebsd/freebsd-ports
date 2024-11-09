@@ -1,6 +1,6 @@
 PORTNAME=	stringzilla
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.10.6
+DISTVERSION=	3.10.8
 CATEGORIES=	devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 ONLY_FOR_ARCHS=	aarch64 amd64
 
-USES=		cmake
+USES=		cmake:testing
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
@@ -22,16 +22,12 @@ GH_ACCOUNT=	ashvardanian
 GH_PROJECT=	StringZilla
 
 CMAKE_ON=	STRINGZILLA_INSTALL
+CMAKE_OFF=	STRINGZILLA_BUILD_TEST
+CMAKE_TESTING_ON=	STRINGZILLA_BUILD_TEST
 CMAKE_ARGS=	-DSTRINGZILLA_INCLUDE_INSTALL_DIR=include
 
-post-install: # https://github.com/ashvardanian/StringZilla/issues/188
-	${INSTALL_LIB} ${BUILD_WRKSRC}/libstringzilla_shared.so.3.10.6 ${STAGEDIR}${PREFIX}/lib
-	${INSTALL_LIB} ${BUILD_WRKSRC}/libstringzillite.so.3.10.6 ${STAGEDIR}${PREFIX}/lib
-	@cd ${STAGEDIR}${PREFIX}/lib && \
-		${LN} -s libstringzilla_shared.so.3.10.6 libstringzilla_shared.so.1 && \
-		${LN} -s libstringzilla_shared.so.1 libstringzilla_shared.so
-	@cd ${STAGEDIR}${PREFIX}/lib && \
-		${LN} -s libstringzillite.so.3.10.6 libstringzillite.so.1 && \
-		${LN} -s libstringzillite.so.1 libstringzillite.so
+post-install:
+	# workaround for https://github.com/ashvardanian/StringZilla/issues/194
+	@${RM} -r ${STAGEDIR}/usr/src
 
 .include <bsd.port.mk>
