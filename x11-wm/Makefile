@@ -65,6 +65,7 @@
     SUBDIR += lxqt
     SUBDIR += lxqt-panel
     SUBDIR += lxqt-session
+    SUBDIR += lxqt-wayland-session
     SUBDIR += lxsession
     SUBDIR += magpie
     SUBDIR += marco
