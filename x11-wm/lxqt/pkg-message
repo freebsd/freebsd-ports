@@ -1,0 +1,13 @@
+[
+{ type: install
+  message: <<EOM
+LXQt 2 desktop was installed
+
+1) If you want to test wayland support, take a look at the following url:
+
+   https://github.com/lxqt/lxqt/wiki/ConfigWaylandSettings
+
+2) Enjoy it ;)
+EOM
+}
+]

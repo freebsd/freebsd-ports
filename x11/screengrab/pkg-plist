@@ -14,6 +14,7 @@ share/metainfo/screengrab.metainfo.xml
 %%DATADIR%%/translations/screengrab_ca.qm
 %%DATADIR%%/translations/screengrab_cs.qm
 %%DATADIR%%/translations/screengrab_cy.qm
+%%DATADIR%%/translations/screengrab_da.qm
 %%DATADIR%%/translations/screengrab_de.qm
 %%DATADIR%%/translations/screengrab_el.qm
 %%DATADIR%%/translations/screengrab_es.qm
@@ -36,6 +37,7 @@ share/metainfo/screengrab.metainfo.xml
 %%DATADIR%%/translations/screengrab_pl.qm
 %%DATADIR%%/translations/screengrab_pt.qm
 %%DATADIR%%/translations/screengrab_pt_BR.qm
+%%DATADIR%%/translations/screengrab_ro.qm
 %%DATADIR%%/translations/screengrab_ru.qm
 %%DATADIR%%/translations/screengrab_si.qm
 %%DATADIR%%/translations/screengrab_sk.qm
