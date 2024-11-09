@@ -1,7 +1,7 @@
 PORTNAME=	hammer2
 PORTVERSION=	1.2.6
 DISTVERSIONPREFIX=	v
-CATEGORIES=	sysutils
+CATEGORIES=	filesystems
 
 MAINTAINER=	tkusumi@netbsd.org
 COMMENT=	HAMMER2 file system for FreeBSD (read-only support)

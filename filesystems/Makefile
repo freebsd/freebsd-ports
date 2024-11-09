@@ -32,6 +32,7 @@
     SUBDIR += gitfs
     SUBDIR += gphotofs
     SUBDIR += gvfs
+    SUBDIR += hammer2
     SUBDIR += hfsexplorer
     SUBDIR += hfsfuse
     SUBDIR += hfsutils
