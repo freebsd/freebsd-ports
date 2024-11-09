@@ -3052,6 +3052,7 @@
 %%DATADIR%%/presets/crt-royale-fast/4k/crt-royale-fast-ntsc-composite-slotmask-psx.slangp
 %%DATADIR%%/presets/crt-royale-fast/4k/crt-royale-fast-ntsc-composite-slotmask-snes.slangp
 %%DATADIR%%/presets/crt-royale-fast/4k/crt-royale-fast-ntsc-composite-slotmask.slangp
+%%DATADIR%%/presets/crt-royale-fast/4k/crt-royale-fast-ntsc-rf-slotmask-nes.slangp
 %%DATADIR%%/presets/crt-royale-fast/4k/crt-royale-fast-rgb-aperture.slangp
 %%DATADIR%%/presets/crt-royale-fast/4k/crt-royale-fast-rgb-slot.slangp
 %%DATADIR%%/presets/crt-royale-fast/4k/crt-royale-pvm-ntsc-composite-genesis-rainbow-effect.slangp
@@ -3072,6 +3073,7 @@
 %%DATADIR%%/presets/crt-royale-fast/crt-royale-fast-ntsc-composite-slotmask-psx.slangp
 %%DATADIR%%/presets/crt-royale-fast/crt-royale-fast-ntsc-composite-slotmask-snes.slangp
 %%DATADIR%%/presets/crt-royale-fast/crt-royale-fast-ntsc-composite-slotmask.slangp
+%%DATADIR%%/presets/crt-royale-fast/crt-royale-fast-ntsc-rf-slotmask-nes.slangp
 %%DATADIR%%/presets/crt-royale-fast/crt-royale-fast-rgb-aperture.slangp
 %%DATADIR%%/presets/crt-royale-fast/crt-royale-fast-rgb-slot.slangp
 %%DATADIR%%/presets/crt-royale-fast/crt-royale-pvm-ntsc-composite-genesis-rainbow-effect.slangp

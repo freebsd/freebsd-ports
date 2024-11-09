@@ -113,7 +113,6 @@
 %%DATADIR%%/Definitions/blueroms.yml
 %%DATADIR%%/Definitions/bluraytracker.yml
 %%DATADIR%%/Definitions/blutopia-api.yml
-%%DATADIR%%/Definitions/bolly-api.yml
 %%DATADIR%%/Definitions/booktracker.yml
 %%DATADIR%%/Definitions/bootytape.yml
 %%DATADIR%%/Definitions/borgzelle.yml
@@ -156,7 +155,6 @@
 %%DATADIR%%/Definitions/cyanbug.yml
 %%DATADIR%%/Definitions/dajiao.yml
 %%DATADIR%%/Definitions/danishbytes-api.yml
-%%DATADIR%%/Definitions/dariustracker.yml
 %%DATADIR%%/Definitions/dark-shadow.yml
 %%DATADIR%%/Definitions/dasunerwartete.yml
 %%DATADIR%%/Definitions/datascene-api.yml
@@ -222,7 +220,6 @@
 %%DATADIR%%/Definitions/girotorrent.yml
 %%DATADIR%%/Definitions/gktorrent.yml
 %%DATADIR%%/Definitions/glodls.yml
-%%DATADIR%%/Definitions/goodtracker.yml
 %%DATADIR%%/Definitions/gtorrentpro.yml
 %%DATADIR%%/Definitions/haidan.yml
 %%DATADIR%%/Definitions/haitang.yml
@@ -255,6 +252,7 @@
 %%DATADIR%%/Definitions/hdturk.yml
 %%DATADIR%%/Definitions/hdu.yml
 %%DATADIR%%/Definitions/hdvideo.yml
+%%DATADIR%%/Definitions/hdzero.yml
 %%DATADIR%%/Definitions/hebits.yml
 %%DATADIR%%/Definitions/hellashut-api.yml
 %%DATADIR%%/Definitions/hellashut.yml
@@ -295,7 +293,6 @@
 %%DATADIR%%/Definitions/kinorun.yml
 %%DATADIR%%/Definitions/kinozal-magnet.yml
 %%DATADIR%%/Definitions/kinozal.yml
-%%DATADIR%%/Definitions/knaben.yml
 %%DATADIR%%/Definitions/korsar.yml
 %%DATADIR%%/Definitions/krazyzone.yml
 %%DATADIR%%/Definitions/kufei.yml
@@ -319,6 +316,7 @@
 %%DATADIR%%/Definitions/locadora.yml
 %%DATADIR%%/Definitions/losslessclub.yml
 %%DATADIR%%/Definitions/lst.yml
+%%DATADIR%%/Definitions/lusthive.yml
 %%DATADIR%%/Definitions/mactorrentsdownload.yml
 %%DATADIR%%/Definitions/madsrevolution.yml
 %%DATADIR%%/Definitions/magnetcat.yml
@@ -349,6 +347,7 @@
 %%DATADIR%%/Definitions/mvgroupforum.yml
 %%DATADIR%%/Definitions/mvgroupmain.yml
 %%DATADIR%%/Definitions/mypornclub.yml
+%%DATADIR%%/Definitions/myporno.yml
 %%DATADIR%%/Definitions/myspleen.yml
 %%DATADIR%%/Definitions/nethd.yml
 %%DATADIR%%/Definitions/newheaven.yml
@@ -360,8 +359,8 @@
 %%DATADIR%%/Definitions/nntt.yml
 %%DATADIR%%/Definitions/noname-club.yml
 %%DATADIR%%/Definitions/noname-clubl.yml
-%%DATADIR%%/Definitions/nordichd.yml
 %%DATADIR%%/Definitions/ntelogo.yml
+%%DATADIR%%/Definitions/nusantarare.yml
 %%DATADIR%%/Definitions/nyaasi.yml
 %%DATADIR%%/Definitions/okpt.yml
 %%DATADIR%%/Definitions/oldgreektracker.yml
@@ -369,6 +368,7 @@
 %%DATADIR%%/Definitions/onejav.yml
 %%DATADIR%%/Definitions/onlyencodes-api.yml
 %%DATADIR%%/Definitions/opencd.yml
+%%DATADIR%%/Definitions/opensharing.yml
 %%DATADIR%%/Definitions/oshenpt.yml
 %%DATADIR%%/Definitions/ostwiki.yml
 %%DATADIR%%/Definitions/ourbits.yml
@@ -385,7 +385,6 @@
 %%DATADIR%%/Definitions/pignetwork.yml
 %%DATADIR%%/Definitions/pixelcove.yml
 %%DATADIR%%/Definitions/pixelcove2fa.yml
-%%DATADIR%%/Definitions/plusteca.yml
 %%DATADIR%%/Definitions/polishtorrent.yml
 %%DATADIR%%/Definitions/polishtracker-api.yml
 %%DATADIR%%/Definitions/pornbay.yml
@@ -394,7 +393,6 @@
 %%DATADIR%%/Definitions/pornrips.yml
 %%DATADIR%%/Definitions/portugas-api.yml
 %%DATADIR%%/Definitions/postman.yml
-%%DATADIR%%/Definitions/potuk.yml
 %%DATADIR%%/Definitions/privatesilverscreen-api.yml
 %%DATADIR%%/Definitions/proaudiotorrents.yml
 %%DATADIR%%/Definitions/proporno.yml
@@ -449,7 +447,7 @@
 %%DATADIR%%/Definitions/sfp.yml
 %%DATADIR%%/Definitions/shanaproject.yml
 %%DATADIR%%/Definitions/shareisland-api.yml
-%%DATADIR%%/Definitions/sharewood.yml
+%%DATADIR%%/Definitions/sharewood-api.yml
 %%DATADIR%%/Definitions/showrss.yml
 %%DATADIR%%/Definitions/siambit.yml
 %%DATADIR%%/Definitions/simpleanime.yml
@@ -535,7 +533,6 @@
 %%DATADIR%%/Definitions/torrentview.yml
 %%DATADIR%%/Definitions/torrentwhiz.yml
 %%DATADIR%%/Definitions/torrentz2nz.yml
-%%DATADIR%%/Definitions/tosky.yml
 %%DATADIR%%/Definitions/totheglory.yml
 %%DATADIR%%/Definitions/totheglory2fa.yml
 %%DATADIR%%/Definitions/trackermk.yml
@@ -563,6 +560,7 @@
 %%DATADIR%%/Definitions/uploadcx.yml
 %%DATADIR%%/Definitions/upscalevault.yml
 %%DATADIR%%/Definitions/utopia.yml
+%%DATADIR%%/Definitions/vault-network.yml
 %%DATADIR%%/Definitions/videoteka.yml
 %%DATADIR%%/Definitions/vsthouse.yml
 %%DATADIR%%/Definitions/vstorrent.yml
@@ -575,7 +573,6 @@
 %%DATADIR%%/Definitions/wukong.yml
 %%DATADIR%%/Definitions/x-ite.me.yml
 %%DATADIR%%/Definitions/xider-torrent.yml
-%%DATADIR%%/Definitions/xperiencebytes-api.yml
 %%DATADIR%%/Definitions/xthor-api.yml
 %%DATADIR%%/Definitions/xtorrenty.yml
 %%DATADIR%%/Definitions/xtremebytes.yml

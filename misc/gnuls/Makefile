@@ -8,6 +8,9 @@ DISTNAME=	coreutils-${PORTVERSION}
 MAINTAINER=	bmc@clapper.org
 COMMENT=	GNU colorized 'ls'
 
+DEPRECATED=	Outdated, consider using sysutils/coreutils or sysutils/rust-coreutils
+EXPIRATION_DATE=2024-11-30
+
 USES=		gmake localbase perl5 tar:xz
 USE_LDCONFIG=	yes
 USE_PERL5=	build

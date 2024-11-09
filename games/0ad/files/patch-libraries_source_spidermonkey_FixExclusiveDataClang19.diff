@@ -1,0 +1,14 @@
+--- libraries/source/spidermonkey/FixExclusiveDataClang19.diff.orig	2024-10-26 16:30:56 UTC
++++ libraries/source/spidermonkey/FixExclusiveDataClang19.diff
+@@ -0,0 +1,11 @@
++--- a/js/src/threading/ExclusiveData.h.orig	2020-11-28 17:33:56.000000000 +0100
+++++ b/js/src/threading/ExclusiveData.h
++@@ -110,7 +110,7 @@
++       : lock_(id), value_(std::forward<Args>(args)...) {}
++ 
++   ExclusiveData(ExclusiveData&& rhs)
++-      : lock_(std::move(rhs.lock)), value_(std::move(rhs.value_)) {
+++      : lock_(std::move(rhs.lock())), value_(std::move(rhs.value_)) {
++     MOZ_ASSERT(&rhs != this, "self-move disallowed!");
++   }
++ 

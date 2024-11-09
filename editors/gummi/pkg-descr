@@ -1,1 +1,8 @@
-Gummi is a LaTeX editor. It was designed with simplicity in mind.
+Gummi is a simple LaTeX editor for GTK.
+
+Features include:
+ - continuous preview mode showing output in a separate panel
+ - command completion for faster typing
+ - optional spell checking
+ - detailed build log
+ - editor wizard aiding creation of new image, table or matrix

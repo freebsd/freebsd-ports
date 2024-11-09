@@ -3285,7 +3285,9 @@ libdata/pkgconfig/petsc.pc
 %%DATADIR%%/examples/src/ksp/ksp/tutorials/output/ex2f_1.out
 %%DATADIR%%/examples/src/ksp/ksp/tutorials/output/ex2f_2.out
 %%DATADIR%%/examples/src/ksp/ksp/tutorials/output/ex31_1.out
-%%DATADIR%%/examples/src/ksp/ksp/tutorials/output/ex32_1.out
+%%DATADIR%%/examples/src/ksp/ksp/tutorials/output/ex32_2.out
+%%DATADIR%%/examples/src/ksp/ksp/tutorials/output/ex32_3.out
+%%DATADIR%%/examples/src/ksp/ksp/tutorials/output/ex32_4.out
 %%DATADIR%%/examples/src/ksp/ksp/tutorials/output/ex34_1.out
 %%DATADIR%%/examples/src/ksp/ksp/tutorials/output/ex34_2.out
 %%DATADIR%%/examples/src/ksp/ksp/tutorials/output/ex34_hyprestruct.out
@@ -6084,7 +6086,6 @@ libdata/pkgconfig/petsc.pc
 %%DATADIR%%/examples/src/sys/tests/ex5.c
 %%DATADIR%%/examples/src/sys/tests/ex50.c
 %%DATADIR%%/examples/src/sys/tests/ex51.c
-%%DATADIR%%/examples/src/sys/tests/ex52.c
 %%DATADIR%%/examples/src/sys/tests/ex53.c
 %%DATADIR%%/examples/src/sys/tests/ex53f.F90
 %%DATADIR%%/examples/src/sys/tests/ex54.c
@@ -6267,8 +6268,6 @@ libdata/pkgconfig/petsc.pc
 %%DATADIR%%/examples/src/sys/tests/output/ex50_1.out
 %%DATADIR%%/examples/src/sys/tests/output/ex50_2.out
 %%DATADIR%%/examples/src/sys/tests/output/ex51_1.out
-%%DATADIR%%/examples/src/sys/tests/output/ex52_large.out
-%%DATADIR%%/examples/src/sys/tests/output/ex52_small.out
 %%DATADIR%%/examples/src/sys/tests/output/ex53_1.out
 %%DATADIR%%/examples/src/sys/tests/output/ex53f_1.out
 %%DATADIR%%/examples/src/sys/tests/output/ex54_0.out
@@ -7821,6 +7820,7 @@ libdata/pkgconfig/petsc.pc
 %%DATADIR%%/examples/src/vec/vec/tests/ex3.c
 %%DATADIR%%/examples/src/vec/vec/tests/ex30f.F90
 %%DATADIR%%/examples/src/vec/vec/tests/ex31.c
+%%DATADIR%%/examples/src/vec/vec/tests/ex32.c
 %%DATADIR%%/examples/src/vec/vec/tests/ex33.c
 %%DATADIR%%/examples/src/vec/vec/tests/ex34.c
 %%DATADIR%%/examples/src/vec/vec/tests/ex35.c
@@ -7897,7 +7897,7 @@ libdata/pkgconfig/petsc.pc
 %%DATADIR%%/examples/src/vec/vec/tests/output/ex29_test_inv_error.out
 %%DATADIR%%/examples/src/vec/vec/tests/output/ex2_1.out
 %%DATADIR%%/examples/src/vec/vec/tests/output/ex30f_1.out
-%%DATADIR%%/examples/src/vec/vec/tests/output/ex32f_1.out
+%%DATADIR%%/examples/src/vec/vec/tests/output/ex32.out
 %%DATADIR%%/examples/src/vec/vec/tests/output/ex33_1.out
 %%DATADIR%%/examples/src/vec/vec/tests/output/ex34_1.out
 %%DATADIR%%/examples/src/vec/vec/tests/output/ex35_1.out

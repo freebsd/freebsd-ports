@@ -1,6 +1,6 @@
---- components/network_session_configurator/browser/network_session_configurator_unittest.cc.orig	2024-10-01 07:26:23 UTC
+--- components/network_session_configurator/browser/network_session_configurator_unittest.cc.orig	2024-10-27 06:40:35 UTC
 +++ components/network_session_configurator/browser/network_session_configurator_unittest.cc
-@@ -828,7 +828,7 @@ TEST_F(NetworkSessionConfiguratorTest, HostRules) {
+@@ -855,7 +855,7 @@ TEST_F(NetworkSessionConfiguratorTest, HostRules) {
  
  TEST_F(NetworkSessionConfiguratorTest, DefaultCacheBackend) {
  #if BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || \

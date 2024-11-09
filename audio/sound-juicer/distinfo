@@ -1,5 +1,5 @@
-TIMESTAMP = 1656739301
-SHA256 (gnome/sound-juicer-3.38.0.tar.xz) = ae375f357a1b8b81e4aff737c9d6c98bc2dadfe20e71754b1d52a79f036aa521
-SIZE (gnome/sound-juicer-3.38.0.tar.xz) = 1775916
+TIMESTAMP = 1725541832
+SHA256 (gnome/sound-juicer-3.40.0.tar.xz) = 2ee882744391beb4c6d64a0f6825fb765510b706ec2b704bfb42e42afaae1de6
+SIZE (gnome/sound-juicer-3.40.0.tar.xz) = 1806280
 SHA256 (gnome/9f97ca1faca3.patch) = 3c55c3be5c44ba9007dd1be59c286c12af8d6b2f81edaa37efab0521a110707a
 SIZE (gnome/9f97ca1faca3.patch) = 1077

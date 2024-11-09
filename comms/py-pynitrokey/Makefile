@@ -14,7 +14,6 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}spsdk>=0:comms/py-spsdk@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}certifi>=14.5.14,:security/py-certifi@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}cffi>=0:devel/py-cffi@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}click>=8.0,:devel/py-click@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}cryptography>=0:security/py-cryptography@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}ecdsa>=0:security/py-ecdsa@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}fido2>=1.1.2,<2:security/py-fido2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}intelhex>=0:devel/py-intelhex@${PY_FLAVOR} \
@@ -35,7 +34,6 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}spsdk>=0:comms/py-spsdk@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}certifi>=14.5.14,:security/py-certifi@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}cffi>=0:devel/py-cffi@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}click>=8.0,:devel/py-click@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}cryptography>=0:security/py-cryptography@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}ecdsa>=0:security/py-ecdsa@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}fido2>=1.1.2,<2:security/py-fido2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}intelhex>=0:devel/py-intelhex@${PY_FLAVOR} \
@@ -57,7 +55,7 @@ PEP517_BUILD_CMD=	${PYTHON_CMD} -m flit_core.wheel
 PEP517_BUILD_DEPEND=	${PYTHON_PKGNAMEPREFIX}flit-core>=3.2.0<4:devel/py-flit-core@${PY_FLAVOR}
 
 USES=		python shebangfix
-USE_PYTHON=	autoplist concurrent pep517
+USE_PYTHON=	autoplist concurrent cryptography pep517
 
 SHEBANG_FILES=	pynitrokey/start/upgrade_by_passwd.py \
 		pynitrokey/start/usb_strings.py

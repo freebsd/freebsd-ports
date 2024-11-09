@@ -1,4 +1,4 @@
---- src/slic3r/GUI/BitmapCache.cpp.orig	2023-12-12 14:21:21 UTC
+--- src/slic3r/GUI/BitmapCache.cpp.orig	2024-09-18 13:39:04 UTC
 +++ src/slic3r/GUI/BitmapCache.cpp
 @@ -20,8 +20,9 @@
      #include <wx/rawbmp.h>
@@ -7,8 +7,8 @@
 -#include <nanosvg/nanosvg.h>
 -#include <nanosvg/nanosvgrast.h>
 +#include <wx/display.h>
-+#include "libnanosvg/nanosvg.h"
-+#include "libnanosvg/nanosvgrast.h"
++#include <libnanosvg/nanosvg.h>
++#include <libnanosvg/nanosvgrast.h>
  
  namespace Slic3r { namespace GUI {
  

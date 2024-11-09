@@ -1,5 +1,5 @@
 PORTNAME=	matrix-synapse
-DISTVERSION=	1.116.0
+DISTVERSION=	1.118.0
 PORTREVISION=	1
 CATEGORIES=	net-im python
 MASTER_SITES=	PYPI
@@ -8,12 +8,12 @@ DISTFILES=	${PORTNAME:S/-/_/}-${DISTVERSION}.tar.gz
 
 MAINTAINER=	ports@skyforge.at
 COMMENT=	Matrix protocol reference homeserver
-WWW=		https://matrix-org.github.io/synapse
+WWW=		https://element-hq.github.io/synapse
 
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}poetry-core>=1.1.0<1.9.0_99:devel/py-poetry-core@${PY_FLAVOR} \
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}poetry-core>=1.1.0<1.9.1_99:devel/py-poetry-core@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}setuptools-rust>=1.3<1.10.2_99:devel/py-setuptools-rust@${PY_FLAVOR}
 # Keep the RUN_DEPENDS layout similar to the pyproject.toml file
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}jsonschema>=3.0.0:devel/py-jsonschema@${PY_FLAVOR} \

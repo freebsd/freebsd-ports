@@ -388,6 +388,7 @@
     SUBDIR += highmoon
     SUBDIR += hinversi
     SUBDIR += hitori
+    SUBDIR += hivetui
     SUBDIR += hllib
     SUBDIR += holotz-castle
     SUBDIR += hoverboard-sdl
@@ -488,6 +489,7 @@
     SUBDIR += legesmotus
     SUBDIR += lexter
     SUBDIR += lgeneral
+    SUBDIR += lgogdownloader
     SUBDIR += libgnome-games-support
     SUBDIR += libkdegames
     SUBDIR += libkmahjongg
@@ -612,6 +614,7 @@
     SUBDIR += mangband
     SUBDIR += marblemarcher
     SUBDIR += mari0
+    SUBDIR += mastermind
     SUBDIR += masterserver
     SUBDIR += maxr
     SUBDIR += meandmyshadow

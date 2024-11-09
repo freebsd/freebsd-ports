@@ -1,6 +1,6 @@
-%%ACTIVERECORD%%bin/arc-poco
 %%PAGECOMPILER%%bin/cpspc
 %%PAGECOMPILER%%bin/f2cpsp
+%%ACTIVERECORD%%bin/poco-arc
 include/Poco/ASCIIEncoding.h
 include/Poco/AbstractCache.h
 include/Poco/AbstractDelegate.h
@@ -23,6 +23,7 @@ include/Poco/ActiveMethod.h
 include/Poco/ActiveResult.h
 include/Poco/ActiveRunnable.h
 include/Poco/ActiveStarter.h
+include/Poco/ActiveThreadPool.h
 include/Poco/Activity.h
 include/Poco/Alignment.h
 include/Poco/Any.h
@@ -249,6 +250,7 @@ include/Poco/Dynamic/Struct.h
 include/Poco/Dynamic/Var.h
 include/Poco/Dynamic/VarHolder.h
 include/Poco/Dynamic/VarIterator.h
+include/Poco/Dynamic/VarVisitor.h
 include/Poco/DynamicAny.h
 include/Poco/DynamicAnyHolder.h
 include/Poco/DynamicFactory.h
@@ -258,7 +260,6 @@ include/Poco/Environment.h
 include/Poco/Environment_UNIX.h
 include/Poco/Environment_VX.h
 include/Poco/Environment_WIN32U.h
-include/Poco/Environment_WINCE.h
 include/Poco/Error.h
 include/Poco/ErrorHandler.h
 include/Poco/Event.h
@@ -294,7 +295,6 @@ include/Poco/FileStream_WIN32.h
 include/Poco/File_UNIX.h
 include/Poco/File_VX.h
 include/Poco/File_WIN32U.h
-include/Poco/File_WINCE.h
 include/Poco/Format.h
 include/Poco/Formatter.h
 include/Poco/FormattingChannel.h
@@ -394,6 +394,8 @@ include/Poco/MetaProgramming.h
 %%MONGODB%%include/Poco/MongoDB/MessageHeader.h
 %%MONGODB%%include/Poco/MongoDB/MongoDB.h
 %%MONGODB%%include/Poco/MongoDB/ObjectId.h
+%%MONGODB%%include/Poco/MongoDB/OpMsgCursor.h
+%%MONGODB%%include/Poco/MongoDB/OpMsgMessage.h
 %%MONGODB%%include/Poco/MongoDB/PoolableConnectionFactory.h
 %%MONGODB%%include/Poco/MongoDB/QueryRequest.h
 %%MONGODB%%include/Poco/MongoDB/RegularExpression.h
@@ -403,9 +405,9 @@ include/Poco/MetaProgramming.h
 %%MONGODB%%include/Poco/MongoDB/UpdateRequest.h
 include/Poco/Mutex.h
 include/Poco/Mutex_POSIX.h
+include/Poco/Mutex_STD.h
 include/Poco/Mutex_VX.h
 include/Poco/Mutex_WIN32.h
-include/Poco/Mutex_WINCE.h
 include/Poco/NObserver.h
 include/Poco/NamedEvent.h
 include/Poco/NamedEvent_Android.h
@@ -581,10 +583,10 @@ include/Poco/Optional.h
 include/Poco/OrderedMap.h
 include/Poco/OrderedSet.h
 include/Poco/PBKDF2Engine.h
+include/Poco/PIDFile.h
 include/Poco/Path.h
 include/Poco/Path_UNIX.h
 include/Poco/Path_WIN32U.h
-include/Poco/Path_WINCE.h
 include/Poco/PatternFormatter.h
 include/Poco/Pipe.h
 include/Poco/PipeImpl.h
@@ -606,7 +608,8 @@ include/Poco/Process.h
 include/Poco/Process_UNIX.h
 include/Poco/Process_VX.h
 include/Poco/Process_WIN32U.h
-include/Poco/Process_WINCE.h
+include/Poco/ProcessOptions.h
+include/Poco/ProcessRunner.h
 %%PROMETHEUS%%include/Poco/Prometheus/AtomicFloat.h
 %%PROMETHEUS%%include/Poco/Prometheus/CallbackMetric.h
 %%PROMETHEUS%%include/Poco/Prometheus/Collector.h
@@ -632,7 +635,6 @@ include/Poco/RWLock_Android.h
 include/Poco/RWLock_POSIX.h
 include/Poco/RWLock_VX.h
 include/Poco/RWLock_WIN32.h
-include/Poco/RWLock_WINCE.h
 include/Poco/Random.h
 include/Poco/RandomStream.h
 include/Poco/RecursiveDirectoryIterator.h
@@ -724,7 +726,6 @@ include/Poco/ThreadTarget.h
 include/Poco/Thread_POSIX.h
 include/Poco/Thread_VX.h
 include/Poco/Thread_WIN32.h
-include/Poco/Thread_WINCE.h
 include/Poco/TimedNotificationQueue.h
 include/Poco/Timer.h
 include/Poco/Timespan.h

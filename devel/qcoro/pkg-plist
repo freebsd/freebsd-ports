@@ -10,6 +10,7 @@ include/qcoro%%QT_VER%%/QCoro/QCoroFwd
 include/qcoro%%QT_VER%%/QCoro/QCoroGenerator
 include/qcoro%%QT_VER%%/QCoro/QCoroIODevice
 include/qcoro%%QT_VER%%/QCoro/QCoroImageProvider
+include/qcoro%%QT_VER%%/QCoro/QCoroLazyTask
 include/qcoro%%QT_VER%%/QCoro/QCoroLocalSocket
 include/qcoro%%QT_VER%%/QCoro/QCoroNetwork
 include/qcoro%%QT_VER%%/QCoro/QCoroNetworkReply
@@ -31,8 +32,10 @@ include/qcoro%%QT_VER%%/qcoro/config.h
 include/qcoro%%QT_VER%%/qcoro/coroutine.h
 include/qcoro%%QT_VER%%/qcoro/impl/connect.h
 include/qcoro%%QT_VER%%/qcoro/impl/isqprivatesignal.h
+include/qcoro%%QT_VER%%/qcoro/impl/lazytask.h
 include/qcoro%%QT_VER%%/qcoro/impl/task.h
 include/qcoro%%QT_VER%%/qcoro/impl/taskawaiterbase.h
+include/qcoro%%QT_VER%%/qcoro/impl/taskbase.h
 include/qcoro%%QT_VER%%/qcoro/impl/taskfinalsuspend.h
 include/qcoro%%QT_VER%%/qcoro/impl/taskpromise.h
 include/qcoro%%QT_VER%%/qcoro/impl/taskpromisebase.h
@@ -52,6 +55,7 @@ include/qcoro%%QT_VER%%/qcoro/qcorofwd.h
 include/qcoro%%QT_VER%%/qcoro/qcorogenerator.h
 include/qcoro%%QT_VER%%/qcoro/qcoroimageprovider.h
 include/qcoro%%QT_VER%%/qcoro/qcoroiodevice.h
+include/qcoro%%QT_VER%%/qcoro/qcorolazytask.h
 include/qcoro%%QT_VER%%/qcoro/qcorolocalsocket.h
 include/qcoro%%QT_VER%%/qcoro/qcoronetwork.h
 include/qcoro%%QT_VER%%/qcoro/qcoronetwork_export.h

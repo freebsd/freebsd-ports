@@ -1,7 +1,7 @@
 PORTNAME=	jql
 DISTVERSIONPREFIX=	jql-v
-DISTVERSION=	7.2.0
-PORTREVISION=	0
+DISTVERSION=	8.0.1
+PORTREVISION=	1
 CATEGORIES=	textproc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -25,7 +25,7 @@ CARGO_CRATES=	addr2line-0.24.1 \
 		anstyle-parse-0.2.5 \
 		anstyle-query-1.1.1 \
 		anstyle-wincon-3.0.4 \
-		anyhow-1.0.89 \
+		anyhow-1.0.93 \
 		autocfg-1.3.0 \
 		backtrace-0.3.74 \
 		bumpalo-3.16.0 \
@@ -36,8 +36,8 @@ CARGO_CRATES=	addr2line-0.24.1 \
 		ciborium-0.2.2 \
 		ciborium-io-0.2.2 \
 		ciborium-ll-0.2.2 \
-		clap-4.5.18 \
-		clap_builder-4.5.18 \
+		clap-4.5.20 \
+		clap_builder-4.5.20 \
 		clap_derive-4.5.18 \
 		clap_lex-0.7.2 \
 		colorchoice-1.0.2 \
@@ -52,10 +52,10 @@ CARGO_CRATES=	addr2line-0.24.1 \
 		equivalent-1.0.1 \
 		gimli-0.31.0 \
 		half-2.4.1 \
-		hashbrown-0.14.5 \
+		hashbrown-0.15.0 \
 		heck-0.5.0 \
 		hermit-abi-0.4.0 \
-		indexmap-2.5.0 \
+		indexmap-2.6.0 \
 		is-terminal-0.4.13 \
 		is_terminal_polyfill-1.70.1 \
 		itertools-0.10.5 \
@@ -84,18 +84,18 @@ CARGO_CRATES=	addr2line-0.24.1 \
 		rustc-demangle-0.1.24 \
 		ryu-1.0.18 \
 		same-file-1.0.6 \
-		serde-1.0.210 \
-		serde_derive-1.0.210 \
-		serde_json-1.0.128 \
+		serde-1.0.214 \
+		serde_derive-1.0.214 \
+		serde_json-1.0.132 \
 		serde_stacker-0.1.11 \
 		shlex-1.3.0 \
 		stacker-0.1.17 \
 		strsim-0.11.1 \
-		syn-2.0.77 \
-		thiserror-1.0.64 \
-		thiserror-impl-1.0.64 \
+		syn-2.0.87 \
+		thiserror-2.0.0 \
+		thiserror-impl-2.0.0 \
 		tinytemplate-1.2.1 \
-		tokio-1.40.0 \
+		tokio-1.41.1 \
 		tokio-macros-2.4.0 \
 		unicode-ident-1.0.13 \
 		utf8parse-0.2.2 \
@@ -118,11 +118,11 @@ CARGO_CRATES=	addr2line-0.24.1 \
 		windows_x86_64_gnu-0.52.6 \
 		windows_x86_64_gnullvm-0.52.6 \
 		windows_x86_64_msvc-0.52.6 \
-		winnow-0.6.18 \
+		winnow-0.6.20 \
 		yansi-1.0.1
 PLIST_FILES=	bin/${PORTNAME}
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKDIR}/target/*/release/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/${PORTNAME} # otherwise there's error: found a virtual manifest at `xx` instead of a package manifest
+	${INSTALL_PROGRAM} ${WRKDIR}/target/release/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/${PORTNAME} # otherwise there's error: found a virtual manifest at `xx` instead of a package manifest
 
 .include <bsd.port.mk>

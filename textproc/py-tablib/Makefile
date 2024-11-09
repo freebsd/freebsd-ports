@@ -1,6 +1,5 @@
 PORTNAME=	tablib
-PORTVERSION=	3.6.1
-PORTREVISION=	1
+PORTVERSION=	3.7.0
 CATEGORIES=	textproc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,7 +15,7 @@ BUILD_DEPENDS=	${PY_SETUPTOOLS} \
 		${PYTHON_PKGNAMEPREFIX}setuptools-scm>=6.2:devel/py-setuptools-scm@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
 
-USES=		cpe python
+USES=		cpe python:3.9+
 CPE_VENDOR=	python
 USE_PYTHON=	autoplist pep517 pytest
 

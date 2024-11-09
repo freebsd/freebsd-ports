@@ -7,11 +7,13 @@ MASTER_SITES=	https://github.com/DISTRHO/Cardinal/releases/download/${DISTVERSIO
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Plugin wrapper around VCV Rack
-WWW=		https://cardinal.kx.studio/
+WWW=		https://cardinal.kx.studio/ \
+		https://github.com/DISTRHO/Cardinal
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_FreeBSD_15=	compilation fails, error: static assertion failed due to requirement 'is_arithmetic<rack::simd::Vector<float, 4>>::value', see https://github.com/DISTRHO/Cardinal/issues/726
 BROKEN_armv7=	compilation fails due to the variable name conflict with base header, see https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=279134
 
 BUILD_DEPENDS=	${LOCALBASE}/include/FuzzySearchDatabase.hpp:textproc/fuzzysearchdatabase \

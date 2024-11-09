@@ -18,6 +18,7 @@ include/rtc/pacinghandler.hpp
 include/rtc/peerconnection.hpp
 include/rtc/plihandler.hpp
 include/rtc/reliability.hpp
+include/rtc/rembhandler.hpp
 include/rtc/rtc.h
 include/rtc/rtc.hpp
 include/rtc/rtcpnackresponder.hpp
@@ -37,5 +38,5 @@ lib/cmake/LibDataChannel/LibDataChannelConfigVersion.cmake
 lib/cmake/LibDataChannel/LibDataChannelTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/LibDataChannel/LibDataChannelTargets.cmake
 lib/libdatachannel.so
-lib/libdatachannel.so.0.21
-lib/libdatachannel.so.0.21.2
+lib/libdatachannel.so.0.22
+lib/libdatachannel.so.0.22.2

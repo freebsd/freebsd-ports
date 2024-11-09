@@ -14,7 +14,7 @@ CRAN_DEPENDS=	R-cran-cli>=3.0.1:devel/R-cran-cli \
 		R-cran-crayon>0:devel/R-cran-crayon \
 		R-cran-curl>=2.7:ftp/R-cran-curl \
 		R-cran-desc>=1.4.2:devel/R-cran-desc \
-		R-cran-fs>=1.3.0:sysutils/R-cran-fs \
+		R-cran-fs>=1.3.0:filesystems/R-cran-fs \
 		R-cran-gert>=1.4.1:devel/R-cran-gert \
 		R-cran-gh>=1.2.1:www/R-cran-gh \
 		R-cran-glue>=1.3.0:devel/R-cran-glue \

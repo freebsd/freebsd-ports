@@ -1,10 +1,10 @@
 PORTNAME=	cbsd
-DISTVERSION=	14.1.2
+DISTVERSION=	14.1.4
 CATEGORIES=	sysutils
 
 MAINTAINER=	olevole@olevole.ru
 COMMENT=	Yet another FreeBSD Jail, XEN and Bhyve Management Utility
-WWW=		https://www.bsdstore.ru
+WWW=		https://github.com/cbsd/cbsd
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

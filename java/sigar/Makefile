@@ -11,9 +11,6 @@ WWW=		https://support.hyperic.com/display/SIGAR/Home
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/NOTICE
 
-BROKEN_armv6=		fails to compile: jni-build.xml: gcc failed with return code 1
-BROKEN_armv7=		fails to compile: jni-build.xml: gcc failed with return code 1
-
 BUILD_DEPENDS=	${ANT_CMD}:devel/apache-ant
 LIB_DEPENDS=	libsigar.so:devel/sigar
 TEST_DEPENDS=	${JAVALIBDIR}/junit.jar:java/junit
@@ -37,7 +34,7 @@ INVOKE_ANT=	${SETENV} PATH=${PATH}:${WRKSRC}/bin JAVA_HOME=${JAVA_HOME} \
 .include <bsd.port.pre.mk>
 
 .if ${OPSYS} == FreeBSD
-LIBNAME=	libsigar-${ARCH:S,i386,x86,:S,powerpc64,ppc64,}-${OPSYS:tl}-1
+LIBNAME=	libsigar-${ARCH:S,armv6,arm,:S,armv7,arm,:S,i386,x86,:S,powerpc64,ppc64,}-${OPSYS:tl}-1
 .else
 IGNORE=		${OPSYS} platform is not supported
 .endif

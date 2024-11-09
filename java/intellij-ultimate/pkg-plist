@@ -16,8 +16,8 @@ share/applications/idea.desktop
 %%DATADIR%%/build.txt
 %%DATADIR%%/help/ReferenceCard.pdf
 %%DATADIR%%/help/ReferenceCardForMac.pdf
-%%DATADIR%%/jdk-shared-indexes/jdk-9823dce3aa75-b114ca120d71.ijx
-%%DATADIR%%/jdk-shared-indexes/jdk-9823dce3aa75-b114ca120d71.txt
+%%DATADIR%%/jdk-shared-indexes/jdk-9823dce3aa75-28b599e66164.ijx
+%%DATADIR%%/jdk-shared-indexes/jdk-9823dce3aa75-28b599e66164.txt
 %%DATADIR%%/lib/annotations.jar
 %%DATADIR%%/lib/app-client.jar
 %%DATADIR%%/lib/app.jar
@@ -515,8 +515,8 @@ share/applications/idea.desktop
 %%DATADIR%%/plugins/javascript-plugin/helpers/vitest-intellij/node_modules/vitest-intellij-reporter-safe.js
 %%DATADIR%%/plugins/javascript-plugin/helpers/vitest-intellij/vitest-intellij-reporter.js
 %%DATADIR%%/plugins/javascript-plugin/helpers/vitest-intellij/vitest-intellij-util.js
-%%DATADIR%%/plugins/javascript-plugin/js/js-predefined-d6986cc7102b-7c0b70fcd90d.ijx
-%%DATADIR%%/plugins/javascript-plugin/js/js-predefined-d6986cc7102b-7c0b70fcd90d.txt
+%%DATADIR%%/plugins/javascript-plugin/js/js-predefined-d6986cc7102b-5c90d61e3bab.ijx
+%%DATADIR%%/plugins/javascript-plugin/js/js-predefined-d6986cc7102b-5c90d61e3bab.txt
 %%DATADIR%%/plugins/javascript-plugin/jsLanguageServicesImpl/external/!HowToUpdateBundledTypeScript.md
 %%DATADIR%%/plugins/javascript-plugin/jsLanguageServicesImpl/external/browser.d.ts
 %%DATADIR%%/plugins/javascript-plugin/jsLanguageServicesImpl/external/cancellationToken.js

@@ -1,6 +1,6 @@
 PORTNAME=	rapid-photo-downloader
 DISTVERSION=	0.9.26
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	graphics
 MASTER_SITES=	https://launchpad.net/rapid/pyqt/${PORTVERSION}/+download/
 
@@ -37,7 +37,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}arrow>0:devel/py-arrow@${PY_FLAVOR} \
 USES=		desktop-file-utils gettext pyqt:5 python qt:5
 USE_PYTHON=	autoplist distutils noflavors
 USE_QT=		imageformats:run
-USE_PYQT=	pyqt5 sip
+USE_PYQT=	pyqt5
 BINARY_ALIAS=	python3=${PYTHON_VERSION}
 
 NO_ARCH=	yes

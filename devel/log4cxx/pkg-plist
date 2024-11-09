@@ -55,6 +55,7 @@ include/log4cxx/helpers/makeunique.h
 include/log4cxx/helpers/messagebuffer.h
 include/log4cxx/helpers/object.h
 include/log4cxx/helpers/onlyonceerrorhandler.h
+include/log4cxx/helpers/optional.h
 include/log4cxx/helpers/optionconverter.h
 include/log4cxx/helpers/outputstream.h
 include/log4cxx/helpers/outputstreamwriter.h
@@ -200,5 +201,5 @@ lib/cmake/log4cxx/log4cxxConfig.cmake
 lib/cmake/log4cxx/log4cxxConfigVersion.cmake
 lib/liblog4cxx.so
 lib/liblog4cxx.so.15
-lib/liblog4cxx.so.15.2.0
+lib/liblog4cxx.so.15.3.0
 libdata/pkgconfig/liblog4cxx.pc

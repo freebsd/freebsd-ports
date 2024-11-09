@@ -1,4 +1,4 @@
---- src/slic3r/GUI/DesktopIntegrationDialog.hpp.orig	2023-12-12 14:21:21 UTC
+--- src/slic3r/GUI/DesktopIntegrationDialog.hpp.orig	2024-09-18 13:39:04 UTC
 +++ src/slic3r/GUI/DesktopIntegrationDialog.hpp
 @@ -2,7 +2,7 @@
  ///|/
@@ -9,7 +9,7 @@
  #ifndef slic3r_DesktopIntegrationDialog_hpp_
  #define slic3r_DesktopIntegrationDialog_hpp_
  
-@@ -46,4 +46,4 @@ class DesktopIntegrationDialog : public wxDialog (priv
+@@ -47,4 +47,4 @@ class DesktopIntegrationDialog : public wxDialog (priv
  } // namespace Slic3r
  
  #endif // slic3r_DesktopIntegrationDialog_hpp_

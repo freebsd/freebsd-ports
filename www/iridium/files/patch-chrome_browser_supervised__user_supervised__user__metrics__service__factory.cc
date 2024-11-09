@@ -1,4 +1,4 @@
---- chrome/browser/supervised_user/supervised_user_metrics_service_factory.cc.orig	2024-08-27 06:28:16 UTC
+--- chrome/browser/supervised_user/supervised_user_metrics_service_factory.cc.orig	2024-11-04 08:56:03 UTC
 +++ chrome/browser/supervised_user/supervised_user_metrics_service_factory.cc
 @@ -14,7 +14,7 @@
  #include "components/supervised_user/core/browser/supervised_user_service.h"
@@ -17,4 +17,4 @@
 +#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
    extensions_metrics_delegate =
        std::make_unique<SupervisedUserExtensionsMetricsDelegateImpl>(
-           extensions::ExtensionRegistry::Get(profile), *profile->GetPrefs());
+           extensions::ExtensionRegistry::Get(profile), profile);

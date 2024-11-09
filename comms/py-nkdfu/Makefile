@@ -10,17 +10,11 @@ WWW=		https://github.com/Nitrokey/nkdfu
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}fire>=0:devel/py-fire@${PY_FLAVOR}  \
-		${PYTHON_PKGNAMEPREFIX}tqdm>=0:misc/py-tqdm@${PY_FLAVOR}  \
-		${PYTHON_PKGNAMEPREFIX}intelhex>=2.3.0:devel/py-intelhex@${PY_FLAVOR}  \
-		${PYTHON_PKGNAMEPREFIX}libusb1>=1.9.3:devel/py-libusb1@${PY_FLAVOR}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}flit-core>=0:devel/py-flit-core@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}fire>=0:devel/py-fire@${PY_FLAVOR}  \
 		${PYTHON_PKGNAMEPREFIX}tqdm>=0:misc/py-tqdm@${PY_FLAVOR}  \
 		${PYTHON_PKGNAMEPREFIX}intelhex>=2.3.0:devel/py-intelhex@${PY_FLAVOR}  \
 		${PYTHON_PKGNAMEPREFIX}libusb1>=1.9.3:devel/py-libusb1@${PY_FLAVOR}
-
-PEP517_BUILD_CMD=	${PYTHON_CMD} -m flit_core.wheel
-PEP517_BUILD_DEPEND=	${PYTHON_PKGNAMEPREFIX}flit-core>=3.2.0<4:devel/py-flit-core@${PY_FLAVOR}
 
 USES=		python shebangfix
 USE_PYTHON=	autoplist pep517

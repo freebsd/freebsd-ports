@@ -1,0 +1,115 @@
+--- ../test/compare.orig	2024-08-05 19:28:10.829687613 +0200
++++ ../test/compare	2024-10-19 20:48:23.143198000 +0200
+@@ -36,6 +36,70 @@
+ 	    continue
+ 	fi
+ 	
++
++# These do not work on FreeBSD.
++	if [ $i = axrad2.inp ]
++	then
++	    continue
++	fi
++	if [ $i = beamhtfc2.inp ]
++	then
++	    continue
++	fi
++	if [ $i = beamread.inp ]
++	then
++	    continue
++	fi
++	if [ $i = beamread2.inp ]
++	then
++	    continue
++	fi
++	if [ $i = beamread3.inp ]
++	then
++	    continue
++	fi
++	if [ $i = beamread4.inp ]
++	then
++	    continue
++	fi
++	if [ $i = crackIIinta.inp ]
++	then
++	    continue
++	fi
++	if [ $i = substructure.inp ]
++	then
++	    continue
++	fi
++	if [ $i = substructure2.inp ]
++	then
++	    continue
++	fi
++	if [ $i = segment.inp ]
++	then
++	    continue
++	fi
++	if [ $i = segmenttemp.inp ]
++	then
++	    continue
++	fi
++	if [ $i = induction2.inp ]
++	then
++	    continue
++	fi
++	if [ $i = sens_modalstress.inp ]
++	then
++	    continue
++	fi
++	if [ $i = beamprand.inp ]
++	then
++	    continue
++	fi
++	if [ $i = beam10psmooth.inp ]
++	then
++	    continue
++	fi
++
++
+ #
+ #       removing the old .dat and .frd file, if any
+ #
+@@ -48,7 +112,7 @@
+ #       the .frd file
+ #
+ 
+-        ~/CalculiX/src/CalculiX  ${i%.inp} >> $tempfile 2>&1
++        ../src/ccx_2.22  ${i%.inp} >> $tempfile 2>&1
+ 
+ #
+ #       moving the .mtx file to the .dat file in order to compare
+@@ -103,7 +167,7 @@
+ #       do not differ by more than a given amount (defined in file
+ #       datcheck.pl)
+ #
+-	./datcheck.pl ${i%.inp} >> $errorfile
++	perl datcheck.pl ${i%.inp} >> $errorfile
+ #
+ #       check whether the .frd or the .frd.ref file exists
+ #
+@@ -135,15 +199,17 @@
+ #           do not differ by more than a given amount (defined in file
+ #           frdcheck.pl)
+ #
+-	    ./frdcheck.pl ${i%.inp} >> $errorfile
+-            
++			perl frdcheck.pl ${i%.inp} >> $errorfile
+         fi
+ 
+ done
+ 
+ rm -f *.rfn.inp
+ rm -f $tempfile
+-echo "check the existence of file $errorfile"
+-echo "if this file does not exist, the present results"
+-echo "agree with the reference results"
+-echo " "
++
++if [ -s $errorfile ]; then
++	echo "errors in $errorfile"
++	exit 1
++fi
++rm $errorfile
++exit 0

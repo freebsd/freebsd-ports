@@ -1,5 +1,5 @@
 PORTNAME=	ldb
-PORTVERSION=	2.8.1
+PORTVERSION=	2.8.2
 CATEGORIES=	databases
 MASTER_SITES=	SAMBA
 PKGNAMESUFFIX?=	${PORTVERSION:C/([[:digit:]]+)[.]([[:digit:]]+).*/\1\2/}

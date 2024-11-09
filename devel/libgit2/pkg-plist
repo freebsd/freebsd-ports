@@ -68,6 +68,7 @@ include/git2/sys/cred.h
 include/git2/sys/credential.h
 include/git2/sys/diff.h
 include/git2/sys/email.h
+include/git2/sys/errors.h
 include/git2/sys/filter.h
 include/git2/sys/hashsig.h
 include/git2/sys/index.h

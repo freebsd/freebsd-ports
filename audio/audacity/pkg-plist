@@ -1,8 +1,10 @@
 bin/audacity
+lib/audacity/lib-audacity-application-logic.so
 lib/audacity/lib-audio-devices.so
 lib/audacity/lib-audio-graph.so
 lib/audacity/lib-audio-io.so
 lib/audacity/lib-basic-ui.so
+lib/audacity/lib-builtin-effects.so
 lib/audacity/lib-channel.so
 lib/audacity/lib-command-parameters.so
 lib/audacity/lib-components.so
@@ -19,6 +21,7 @@ lib/audacity/lib-files.so
 lib/audacity/lib-graphics.so
 lib/audacity/lib-import-export.so
 lib/audacity/lib-ipc.so
+lib/audacity/lib-label-track.so
 %%LADSPA%%lib/audacity/lib-ladspa.so
 lib/audacity/lib-lv2.so
 lib/audacity/lib-math.so
@@ -28,6 +31,7 @@ lib/audacity/lib-module-manager.so
 lib/audacity/lib-music-information-retrieval.so
 lib/audacity/lib-note-track.so
 lib/audacity/lib-numeric-formats.so
+lib/audacity/lib-nyquist-effects.so
 lib/audacity/lib-playable-track.so
 lib/audacity/lib-preference-pages.so
 lib/audacity/lib-preferences.so
@@ -58,7 +62,9 @@ lib/audacity/lib-utility.so
 lib/audacity/lib-uuid.so
 lib/audacity/lib-viewport.so
 lib/audacity/lib-vst.so
+lib/audacity/lib-wave-track-fft.so
 lib/audacity/lib-wave-track-paint.so
+lib/audacity/lib-wave-track-settings.so
 lib/audacity/lib-wave-track.so
 lib/audacity/lib-wx-init.so
 lib/audacity/lib-wx-wrappers.so
@@ -129,25 +135,23 @@ share/applications/audacity.desktop
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/0/0b/timeline_default_scale_with_scrub_ruler.png
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/0/0c/editmenuclipboundaries_splitnew_02.png
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/0/0c/export_ac3_3_4_0.png
+%%MANUAL%%%%DATADIR%%/help/manual/m/images/0/0c/import_menu_3_7_0.png
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/0/0c/prefs_settings_for_importing_malformed_mp3_files.png
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/0/0c/recording_meter_gradient_full_height.png
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/0/0c/spectral_edit_shelves.png
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/0/0d/spectral_01.png
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/0/0e/editmenulabeledaudio_split_2.png
-%%MANUAL%%%%DATADIR%%/help/manual/m/images/0/0e/save_project_menu_3_6_0.png
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/0/0e/selectmenuclipboundaries_prevtocursor_2.png
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/0/0e/silence_3_5_0.png
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/0/0e/waveform_sample_rates.png
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/0/0e/zoom9.png
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/0/0f/ex2a_cutexpanded.png
-%%MANUAL%%%%DATADIR%%/help/manual/m/images/0/0f/view_zoom_3_6_0.png
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/1/10/crossfade_tracks_effect_completed.png
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/1/10/gunshot.png
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/1/10/timer_record_w10.png
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/1/11/chirp_3_5_0.png
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/1/11/compressor_parameters_smoothing_spectrum_no_smoothing.png
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/1/11/crossfade_selected_region.png
-%%MANUAL%%%%DATADIR%%/help/manual/m/images/1/11/edit_remove_special_3_4_0.png
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/1/11/editmenuclipboundaries_detach_01.png
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/1/11/spectral_02.png
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/1/12/audio_setup_recording_device.png
@@ -175,6 +179,7 @@ share/applications/audacity.desktop
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/1/16/exportaudiounitpresetsdialog.png
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/1/16/floated_toolbars_3_6_0.png
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/1/16/multi_view_mono_spectral_selection.png
+%%MANUAL%%%%DATADIR%%/help/manual/m/images/1/16/save_project_menu_3_7_0.png
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/1/16/set_envelope.png
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/1/16/timer_record_progress_stop_confirm_w10.png
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/1/16/tool_edit_silence.png
@@ -328,6 +333,7 @@ share/applications/audacity.desktop
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/3/3c/audio_track_dropdown_menu_3_6_0_mult_view_selection.png
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/3/3c/punch_in_tracks002.png
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/3/3c/silence_finder.png
+%%MANUAL%%%%DATADIR%%/help/manual/m/images/3/3c/view_skip_to_3_7_0.png
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/3/3d/erremptyproject.png
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/3/3d/invert.png
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/3/3d/risset_drum_3_5_0.png
@@ -345,6 +351,7 @@ share/applications/audacity.desktop
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/4/41/labeltrack7.png
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/4/41/pasteinwhitespace_cannotmove_after.png
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/4/42/exportmultipleexample04.png
+%%MANUAL%%%%DATADIR%%/help/manual/m/images/4/42/view_zoom_3_7_0.png
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/4/43/compare_audio.png
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/4/43/label_right_click_dropdown_context_menu.png
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/4/43/labeltrack2.png
@@ -379,9 +386,7 @@ share/applications/audacity.desktop
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/4/48/timer_record_completion_w10.png
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/4/48/tracks_mute_unmutemenu.png
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/4/48/tutorial3linedup.png
-%%MANUAL%%%%DATADIR%%/help/manual/m/images/4/48/view_skip_to_3_6_0.png
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/4/48/waveform_colorway_3_1_0.png
-%%MANUAL%%%%DATADIR%%/help/manual/m/images/4/49/edit_labeled_audio_3_4_0.png
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/4/49/export_wav_3_4_0.png
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/4/49/extra_devicemenu.png
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/4/49/glitch_repair_after.png
@@ -443,7 +448,6 @@ share/applications/audacity.desktop
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/5/57/note_track_vscale_context_menu_2.3.2.png
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/5/57/sound_finder.png
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/5/57/status_bar_disc_space_remaining.png
-%%MANUAL%%%%DATADIR%%/help/manual/m/images/5/57/view_menu_3_6_0.png
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/5/58/multi_view_stereo_default_50_50.png
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/5/58/splitting_and_joining_stereo_tracks_04.png
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/5/59/spectraledit_01.png
@@ -641,6 +645,7 @@ share/applications/audacity.desktop
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/9/90/custom_ffmpeg_format_options_w10.png
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/9/90/export_multiple_3_4_0.png
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/9/90/play.png
+%%MANUAL%%%%DATADIR%%/help/manual/m/images/9/91/view_menu_3_7_0.png
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/9/92/compressor_parameters_smoothing_spectrum.png
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/9/92/hostwin7basic.png
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/9/92/macro_command_selection.png
@@ -681,6 +686,7 @@ share/applications/audacity.desktop
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/9/9c/preferences_effects.png
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/9/9c/tone_3_5_0.png
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/9/9c/unsuitable_fat_drive_for_open.png
+%%MANUAL%%%%DATADIR%%/help/manual/m/images/9/9c/view_track_size_3_7_0.png
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/9/9c/waveform.png
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/9/9d/compressor_rt_with_graph_3_6_0.png
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/9/9d/export_to_cloud_or_computer.png
@@ -719,8 +725,8 @@ share/applications/audacity.desktop
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/a/a5/render_clip_speed.png
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/a/a5/spectraleditparametric2000hz_10.png
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/a/a6/error_saving_project_disk_full.png
-%%MANUAL%%%%DATADIR%%/help/manual/m/images/a/a6/import_menu_3_6_0.png
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/a/a6/tracks_align_tracksmenu.png
+%%MANUAL%%%%DATADIR%%/help/manual/m/images/a/a7/edit_remove_special_3_7_0.png
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/a/a7/extra_scriptables_imenu.png
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/a/a7/normalize_3_5_0.png
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/a/a7/track_collapse_button.png
@@ -728,7 +734,6 @@ share/applications/audacity.desktop
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/a/a8/errorexporting.png
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/a/a8/speaker.png
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/a/a9/dither_in_quality_preferences.png
-%%MANUAL%%%%DATADIR%%/help/manual/m/images/a/a9/file_menu_with_clouds_3_6_0.png
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/a/a9/trackdropdown.png
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/a/a9/tracks_panmenu.png
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/a/aa/help.png
@@ -856,6 +861,7 @@ share/applications/audacity.desktop
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/c/c8/warning_to_save_project.png
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/c/c9/copy_3_2_3.png
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/c/c9/export_custom_ffmpeg_3_4_0.png
+%%MANUAL%%%%DATADIR%%/help/manual/m/images/c/c9/file_menu_3_7_0.png
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/c/c9/high_pass_filter_3_5_0.png
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/c/c9/label_sounds_leading.png
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/c/c9/labeltrack1.png
@@ -950,9 +956,9 @@ share/applications/audacity.desktop
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/e/e0/manage_plugins_category_3_5_0.png
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/e/e0/select_spectral_menu_3_2_3.png
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/e/e0/tool_edit_zoomin.png
+%%MANUAL%%%%DATADIR%%/help/manual/m/images/e/e1/edit_labeled_audio_3_7_0.png
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/e/e1/exportmultipleexample02.png
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/e/e1/sltg_edits_11.png
-%%MANUAL%%%%DATADIR%%/help/manual/m/images/e/e1/view_track_size_3_6_0.png
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/e/e2/waveform_digital.png
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/e/e3/earbud_by_mic.jpg
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/e/e3/ex1b_before.png
@@ -1028,6 +1034,7 @@ share/applications/audacity.desktop
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/f/f8/noise_gate_3_5_0.png
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/f/f8/spectraleditmultilp2000.png
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/f/f9/high_curve.png
+%%MANUAL%%%%DATADIR%%/help/manual/m/images/f/f9/label_interval.png
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/f/f9/label_track_3_6_0.png
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/f/f9/mono_track_example.png
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/f/f9/pointlabeltextselected_w10.png

@@ -1,3 +1,13 @@
-TIMESTAMP = 1659162758
-SHA256 (alicevision-geogram-v1.7.9_GH0.tar.gz) = f9f58dbae9f62ee161cc30a8ed184fbb800f8a0f010fdd00275903d4cd23f14d
-SIZE (alicevision-geogram-v1.7.9_GH0.tar.gz) = 6923300
+TIMESTAMP = 1730601343
+SHA256 (BrunoLevy-geogram-v1.9.0_GH0.tar.gz) = 22baa50539a56f0f88ce84adfc8bea50a379caf7120f03d3df834c4bd607a1d0
+SIZE (BrunoLevy-geogram-v1.9.0_GH0.tar.gz) = 5640678
+SHA256 (ddemidov-amgcl-a705f0822a332e215c41bccbeb6a7d92e90c49f2_GH0.tar.gz) = 9f1bc3ad8e1e22e0f5be8f2c170ece55b1fabf7e8f1e4c68b422668a090a5ba5
+SIZE (ddemidov-amgcl-a705f0822a332e215c41bccbeb6a7d92e90c49f2_GH0.tar.gz) = 3036193
+SHA256 (glfw-glfw-b35641f4a3c62aa86a0b3c983d163bc0fe36026d_GH0.tar.gz) = a183c1e033328e253b64e95bbec038b45c3d371afb0065f5ae9355de149d466d
+SIZE (glfw-glfw-b35641f4a3c62aa86a0b3c983d163bc0fe36026d_GH0.tar.gz) = 929291
+SHA256 (ocornut-imgui-6d948ab47ecf984239af01434f3ed03808dbf188_GH0.tar.gz) = 9d2c703592fb6d3165eb128dc1229aa5ef42dbab43383cef994b73fdc9f12a02
+SIZE (ocornut-imgui-6d948ab47ecf984239af01434f3ed03808dbf188_GH0.tar.gz) = 1846848
+SHA256 (LoicMarechal-libMeshb-e3678731ef14497c720ee7017a14450eba2602d2_GH0.tar.gz) = 4efe2e914f1b82436f956c1694d147da4be0dc9aea20f5c4b49a17d9ff263b3c
+SIZE (LoicMarechal-libMeshb-e3678731ef14497c720ee7017a14450eba2602d2_GH0.tar.gz) = 1202361
+SHA256 (diegonehab-rply-4296cc91b5c8c26d4e7d7aac0cee2b194ffc5800_GH0.tar.gz) = c8b8350352c4935a5ec3cc582082b75e84e5415615c8adadc3acddbf43877409
+SIZE (diegonehab-rply-4296cc91b5c8c26d4e7d7aac0cee2b194ffc5800_GH0.tar.gz) = 31153

@@ -1,6 +1,5 @@
 PORTNAME=	dbus
-PORTVERSION=	3.1
-PORTREVISION=	1
+PORTVERSION=	4.1
 CATEGORIES=	devel
 MASTER_SITES=	https://chiselapp.com/user/schelte/repository/dbus/uv/
 PKGNAMESUFFIX=	-tcl
@@ -24,7 +23,7 @@ PORTDOCS=	*
 
 TEST_TARGET=	do-test
 
-PLIST_FILES=	lib/dbus/lib${TCL_PKG}.so \
+PLIST_FILES=	lib/dbus/lib${TCL_PKG_LIB_PREFIX}${TCL_PKG}.so \
 		lib/dbus/pkgIndex.tcl \
 		share/man/mann/dbus.n.gz
 

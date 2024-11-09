@@ -1,5 +1,5 @@
 PORTNAME=	public_suffix_list
-PORTVERSION=	20240930
+PORTVERSION=	20241031
 CATEGORIES=	dns
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -10,7 +10,6 @@ WWW=		https://publicsuffix.org/ \
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-#SLAVEDIRS=	dns/p5-Mozilla-PublicSuffix dns/py-publicsuffix dns/py-publicsuffix2 dns/py-publicsuffixlist dns/rubygem-public_suffix dns/rubygem-public_suffix_service www/py-adblock
 SLAVEDIRS=	dns/p5-Mozilla-PublicSuffix dns/py-publicsuffix dns/py-publicsuffix2 dns/rubygem-public_suffix dns/rubygem-public_suffix_service www/py-adblock
 
 NO_ARCH=	yes
@@ -22,7 +21,7 @@ PORTDATA=	public_suffix_list.dat \
 USE_GITHUB=	yes
 GH_ACCOUNT=	publicsuffix
 GH_PROJECT=	list
-GH_TAGNAME=	8a487b3
+GH_TAGNAME=	a4a3877
 
 do-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}/

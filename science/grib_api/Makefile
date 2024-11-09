@@ -13,6 +13,9 @@ WWW=		https://confluence.ecmwf.int/display/GRIB
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Deprecated by upstream. Use science/eccodes instead
+EXPIRATION_DATE=2024-11-30
+
 LIB_DEPENDS=	libnetcdf.so:science/netcdf \
 		libpng.so:graphics/png
 

@@ -1,7 +1,7 @@
 PORTNAME=	keycloak
-DISTVERSION=	26.0.0
+DISTVERSION=	26.0.5
 CATEGORIES=	net java
-MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/${PORTVERSION}/
+MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/${DISTVERSION}/
 
 MAINTAINER=	freebsd@rheinwolf.de
 COMMENT=	Identity and access management solution

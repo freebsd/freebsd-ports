@@ -1,14 +1,14 @@
-TIMESTAMP = 1711067017
+TIMESTAMP = 1726845241
 SHA256 (devilutionx.mpq?tag=v4) = c563903af73f7037be0a7d3752e3422f2074b75cddce6bca951a138f3597197e
 SIZE (devilutionx.mpq?tag=v4) = 5293561
-SHA256 (diasurgical-devilutionX-1.5.2_GH0.tar.gz) = c046fd23778729ce77e7f6fd1c66ba7c3e1b32a1472821c3485f0d8bd4f3b4aa
-SIZE (diasurgical-devilutionX-1.5.2_GH0.tar.gz) = 9448866
+SHA256 (diasurgical-devilutionX-1.5.3_GH0.tar.gz) = 3d1ad32bde3ed6a11e19770bea92084a3e739dd11885fdbb91b3325e11b388d3
+SIZE (diasurgical-devilutionX-1.5.3_GH0.tar.gz) = 9684744
 SHA256 (diasurgical-libsmackerdec-91e732bb6953489077430572f43fc802bf2c75b2_GH0.tar.gz) = e565e37ef1ae4f8846d9c9c24b861bc56fdce2d7a4ece47de448e00aa9048b87
 SIZE (diasurgical-libsmackerdec-91e732bb6953489077430572f43fc802bf2c75b2_GH0.tar.gz) = 18576
 SHA256 (diasurgical-libmpq-b78d66c6fee6a501cc9b95d8556a129c68841b05_GH0.tar.gz) = 348cd9c2be9c067dfcb8a2d6cd6f947ade5088e1543c1e5db1fdc5b12db6aeea
 SIZE (diasurgical-libmpq-b78d66c6fee6a501cc9b95d8556a129c68841b05_GH0.tar.gz) = 70149
-SHA256 (diasurgical-asio-cfbe961e2d6e2978d5e081231e4f798df46437c_GH0.tar.gz) = 85a36a7cbed568c0a1ea01709405dddec502252c47b54aadc600c584b5d0249d
-SIZE (diasurgical-asio-cfbe961e2d6e2978d5e081231e4f798df46437c_GH0.tar.gz) = 1615001
+SHA256 (diasurgical-asio-4bcf552fcea3e1ae555dde2ab33bc9fa6770da4d_GH0.tar.gz) = 005072e4e16c033c59b222380e2ac81e1f958c591d6a512137d386aa10b40af7
+SIZE (diasurgical-asio-4bcf552fcea3e1ae555dde2ab33bc9fa6770da4d_GH0.tar.gz) = 2970545
 SHA256 (diasurgical-libzt-d6c6a069a5041a3e89594c447ced3f15d77618b8_GH0.tar.gz) = 2e0388061f57dbae12f36497f5e3f20a07a0bff1140159a9d14efaf2a3d23dc1
 SIZE (diasurgical-libzt-d6c6a069a5041a3e89594c447ced3f15d77618b8_GH0.tar.gz) = 386305
 SHA256 (diasurgical-ZeroTierOne-b1350ac91118d1bd6bb71c0c41be5f4a30196838_GH0.tar.gz) = 39c1b7e28f9d4d92edaaa831007715358465a068019fe84a56b5366b386a1363

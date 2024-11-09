@@ -1,3 +1,4 @@
+cmake/nanobind-config.cmake
 include/nanobind/eigen/dense.h
 include/nanobind/eigen/sparse.h
 include/nanobind/eval.h

@@ -1,7 +1,7 @@
 PORTNAME=	git-workspace
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.5.0
-PORTREVISION=	2
+PORTREVISION=	5
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -16,6 +16,8 @@ USES=		cargo localbase:ldflags
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	orf
+
+RUSTFLAGS=	${ARCH:S/i386/YES/:C/^[a-z].*//:S/YES/-C target-feature=+sse,+sse2/} # add sse sse2 target-features only on i386
 
 CARGO_CRATES=	adler-1.0.2 \
 		aho-corasick-1.1.3 \

@@ -20,7 +20,6 @@ PY_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlalchemy20>=2.0.6:databases/py-sqlalchemy20
 		${PYTHON_PKGNAMEPREFIX}cachetools>0:devel/py-cachetools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}ccxt>=4.0.0:finance/py-ccxt@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}colorama>0:devel/py-colorama@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}cryptography>=0:security/py-cryptography@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}python-dateutil>0:devel/py-python-dateutil@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}fastapi>0:www/py-fastapi@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}httpx>=0.24.1:www/py-httpx@${PY_FLAVOR} \
@@ -57,7 +56,7 @@ BUILD_DEPENDS=	${PY_SETUPTOOLS} \
 RUN_DEPENDS=	${PY_DEPENDS}
 
 USES=		python
-USE_PYTHON=	pep517 concurrent autoplist pytest
+USE_PYTHON=	autoplist concurrent cryptography pep517 pytest
 
 NO_ARCH=	yes
 

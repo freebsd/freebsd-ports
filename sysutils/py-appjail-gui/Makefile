@@ -1,0 +1,37 @@
+PORTNAME=	appjail-gui
+DISTVERSIONPREFIX=	v
+DISTVERSION=	0.1.0
+CATEGORIES=	sysutils www python
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+
+MAINTAINER=	DtxdF@disroot.org
+COMMENT=	Graphical User Interface for AppJail
+WWW=		https://github.com/DtxdF/${PORTNAME}
+
+LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}commentjson>=0:devel/py-commentjson@${PY_FLAVOR}
+
+USES=		python
+USE_GITHUB=	yes
+GH_ACCOUNT=	DtxdF
+USE_PYTHON=	autoplist distutils
+
+USE_RC_SUBR=	appjail_gui
+
+NO_ARCH=	yes
+
+SUB_LIST=	PYTHON_CMD=${PYTHON_CMD}
+
+OPTIONS_DEFAULT=	NICEGUI_GUI
+OPTIONS_SINGLE=		NICEGUI
+OPTIONS_SINGLE_NICEGUI=	NICEGUI_GUI NICEGUI_NOGUI
+
+NICEGUI_GUI_DESC=	Use www/py-nicegui
+NICEGUI_NOGUI_DESC=	Use www/py-nicegui-nogui
+
+NICEGUI_GUI_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}nicegui>=0:www/py-nicegui@${PY_FLAVOR}
+NICEGUI_NOGUI_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}nicegui-nogui>=0:www/py-nicegui-nogui@${PY_FLAVOR}
+
+.include <bsd.port.mk>

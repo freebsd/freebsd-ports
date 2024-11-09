@@ -1,4 +1,4 @@
---- content/public/common/content_features.cc.orig	2024-10-01 07:26:23 UTC
+--- content/public/common/content_features.cc.orig	2024-10-27 06:40:35 UTC
 +++ content/public/common/content_features.cc
 @@ -65,7 +65,7 @@ BASE_FEATURE(kAudioServiceOutOfProcess,
  // TODO(crbug.com/40118868): Remove !IS_CHROMEOS_LACROS once lacros starts being
@@ -9,7 +9,7 @@
               base::FEATURE_ENABLED_BY_DEFAULT
  #else
               base::FEATURE_DISABLED_BY_DEFAULT
-@@ -1174,9 +1174,9 @@ BASE_FEATURE(kWebAssemblyTiering,
+@@ -1206,9 +1206,9 @@ BASE_FEATURE(kWebAssemblyTiering,
  BASE_FEATURE(kWebAssemblyTrapHandler,
               "WebAssemblyTrapHandler",
  #if ((BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_WIN) ||  \
@@ -21,7 +21,7 @@
       defined(ARCH_CPU_ARM64))
               base::FEATURE_ENABLED_BY_DEFAULT
  #else
-@@ -1213,7 +1213,11 @@ BASE_FEATURE(kWebUICodeCache,
+@@ -1245,7 +1245,11 @@ BASE_FEATURE(kWebUICodeCache,
  
  // Controls whether the WebUSB API is enabled:
  // https://wicg.github.io/webusb

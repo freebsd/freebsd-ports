@@ -1,6 +1,6 @@
 PORTNAME=	watchfiles
 PORTVERSION=	0.24.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -23,6 +23,6 @@ USE_PYTHON=	autoplist concurrent pep517
 CARGO_BUILD=	no
 CARGO_INSTALL=	no
 
-PORTSCOUT=	skipv:4.0.16
+PORTSCOUT=	limit:^\0.
 
 .include <bsd.port.mk>

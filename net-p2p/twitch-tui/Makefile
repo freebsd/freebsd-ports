@@ -1,12 +1,13 @@
 PORTNAME=	twitch-tui
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.6.16
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net-p2p
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Twitch chat in the terminal
-WWW=		https://xithrius.github.io/twitch-tui/
+WWW=		https://xithrius.github.io/twitch-tui/ \
+		https://github.com/Xithrius/twitch-tui
 
 LICENSE=	APACHE20 MIT
 LICENSE_COMB=	dual

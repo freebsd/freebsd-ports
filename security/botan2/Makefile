@@ -13,6 +13,9 @@ WWW=		https://botan.randombit.net/
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/license.txt
 
+DEPRECATED=	End of life 2024-12-31 upstream, consider migrating to security/botan3
+EXPIRATION_DATE=2025-01-31
+
 BROKEN_armv6=	include/arm_neon.h:28:2: error: "NEON support not enabled"
 
 LIB_DEPENDS=	libboost_filesystem.so:devel/boost-libs

@@ -1,0 +1,7 @@
+This library allows reading and writing gzip-compressed JSON catalog files,
+which can be used to store GPG, PKCS-7 and SHA-256 checksums for each file.  It
+provides equivalent functionality to the catalog files supported in Microsoft
+Windows.  Unlike Microsoft catalog files which are a signed manifest of hashes,
+a Jcat file is a manifest of signatures.  This means it's possible (and
+positively encouraged) to modify the .jcat file to add new signatures or replace
+existing ones.

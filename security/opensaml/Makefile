@@ -1,6 +1,5 @@
 PORTNAME=	opensaml
-PORTVERSION=	3.2.1
-PORTREVISION=	3
+PORTVERSION=	3.3.0
 CATEGORIES=	security
 MASTER_SITES=	http://shibboleth.net/downloads/c++-opensaml/${PORTVERSION}/
 

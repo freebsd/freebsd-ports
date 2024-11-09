@@ -1,6 +1,6 @@
---- tests/libslic3r/test_emboss.cpp.orig	2023-12-12 14:21:21 UTC
+--- tests/libslic3r/test_emboss.cpp.orig	2024-09-18 13:39:04 UTC
 +++ tests/libslic3r/test_emboss.cpp
-@@ -195,7 +195,7 @@ TEST_CASE("Visualize glyph from font", "[Emboss]")
+@@ -196,7 +196,7 @@ TEST_CASE("Visualize glyph from font", "[Emboss]")
  #endif // VISUALIZE
  
  #include "test_utils.hpp"

@@ -1,5 +1,5 @@
 PORTNAME=	islpy
-DISTVERSION=	2023.2.5
+DISTVERSION=	2024.2
 CATEGORIES=	math
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -39,5 +39,7 @@ do-configure:
 			--no-use-shipped-isl \
 			--use-barvinok \
 			--prefix=${PREFIX}
+
+# tests as of 2024.2: 31 passed, 1 skipped in 2.46s
 
 .include <bsd.port.mk>

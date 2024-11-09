@@ -1,11 +1,13 @@
 PORTNAME=	surrealdb
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.0.4
+PORTREVISION=	1
 CATEGORIES=	databases
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Scalable, distributed, collaborative, document-graph database
-WWW=		https://surrealdb.com
+WWW=		https://surrealdb.com \
+		https://github.com/surrealdb/surrealdb
 
 LICENSE=	BSL11
 LICENSE_NAME=	Business Source License 1.1

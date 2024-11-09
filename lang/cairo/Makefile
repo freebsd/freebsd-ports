@@ -1,15 +1,20 @@
 PORTNAME=	cairo
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.8.4
+PORTREVISION=	1
 CATEGORIES=	lang
 PKGNAMESUFFIX=	-language
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Turing-complete language for creating provable programs
-WWW=		https://cairo-by-example.com/
+WWW=		https://www.cairo-lang.org/ \
+		https://cairo-by-example.com/ \
+		https://github.com/starkware-libs/cairo
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+BROKEN_i386=	compilation fails: error: undefined symbol: __atomic_load
 
 BUILD_DEPENDS=	gmake:devel/gmake
 LIB_DEPENDS=	libzstd.so:archivers/zstd
@@ -447,7 +452,7 @@ PLIST_FILES=	bin/cairo-compile bin/cairo-format bin/cairo-language-server bin/ca
 do-install: # workaround for error: found a virtual manifest at `/usr/ports/lang/cairo/work/cairo-2.0.1/Cargo.toml` instead of a package manifest
 	# executables
 .for e in ${PLIST_FILES:S/bin\///}
-	${INSTALL_PROGRAM} ${WRKDIR}/target/*-freebsd/release/${e} ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKDIR}/target/release/${e} ${STAGEDIR}${PREFIX}/bin
 .endfor
 	# corelib
 	${MKDIR} ${STAGEDIR}${PREFIX}/lib/cairo-lang

@@ -1,6 +1,5 @@
 PORTNAME=	coregarage
-DISTVERSION=	4.3.0
-PORTREVISION=	2
+DISTVERSION=	4.5.0
 CATEGORIES=	deskutils
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -13,12 +12,12 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libarchiveqt5.so:archivers/libarchive-qt \
 		libcprime-core.so:deskutils/libcprime
 
-USES=		cmake localbase:ldflags qt:5
+USES=		cmake desktop-file-utils localbase:ldflags qt:5
 USE_QT=		buildtools:build core gui network qmake:build widgets
 USE_GITLAB=	yes
 
 GL_ACCOUNT=	CuboCore
-GL_TAGNAME=	50d4c4f246a50df522c08e4b9af690a00ad96c1b
+GL_TAGNAME=	c03fd7d1bd37d4a11017cf242c55c66b157033fa
 
 PLIST_FILES=	bin/coregarage \
 		share/applications/org.cubocore.CoreGarage.desktop \

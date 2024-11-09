@@ -13,6 +13,8 @@ include/sdbus-c++/ProxyInterfaces.h
 include/sdbus-c++/StandardInterfaces.h
 include/sdbus-c++/TypeTraits.h
 include/sdbus-c++/Types.h
+include/sdbus-c++/VTableItems.h
+include/sdbus-c++/VTableItems.inl
 include/sdbus-c++/sdbus-c++.h
 lib/cmake/sdbus-c++-tools/sdbus-c++-tools-config-version.cmake
 lib/cmake/sdbus-c++-tools/sdbus-c++-tools-config.cmake
@@ -23,7 +25,7 @@ lib/cmake/sdbus-c++/sdbus-c++-config.cmake
 lib/cmake/sdbus-c++/sdbus-c++-targets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/sdbus-c++/sdbus-c++-targets.cmake
 lib/libsdbus-c++.so
-lib/libsdbus-c++.so.1
-lib/libsdbus-c++.so.1.6.0
+lib/libsdbus-c++.so.2
+lib/libsdbus-c++.so.2.0.0
 libdata/pkgconfig/sdbus-c++-tools.pc
 libdata/pkgconfig/sdbus-c++.pc

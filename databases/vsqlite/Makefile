@@ -9,6 +9,9 @@ WWW=		https://github.com/vinzenz/vsqlite--
 
 LICENSE=	BSD3CLAUSE
 
+DEPRECATED=	Abandonware, last release in 2014 and last commit 4 years ago
+EXPIRATION_DATE=2024-11-30
+
 LIB_DEPENDS=	libboost_random.so:devel/boost-libs
 
 USE_GITHUB=	yes

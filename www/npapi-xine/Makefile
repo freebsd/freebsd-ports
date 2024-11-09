@@ -11,6 +11,8 @@ COMMENT=	Embed Xine player into browser
 WWW=		http://www.xinehq.de/
 
 BROKEN_aarch64=		fails to build: ../include/prcpucfg.h:604:2: Unknown CPU architecture
+DEPRECATED=	NPAPI support was removed in browsers years ago
+EXPIRATION_DATE=2024-11-30
 
 LIB_DEPENDS=	libxine.so:multimedia/libxine
 

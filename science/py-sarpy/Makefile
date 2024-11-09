@@ -21,4 +21,16 @@ USE_PYTHON=	autoplist concurrent pep517
 
 NO_ARCH=	yes
 
+OPTIONS_DEFINE=	ALL
+ALL_DESC=	All optional dependencies
+
+ALL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}h5py>=0:science/py-h5py@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}lxml5>=4.1.1:devel/py-lxml5@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}matplotlib>=0:math/py-matplotlib@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}networkx>=2.5:math/py-networkx@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}pillow>=0:graphics/py-pillow@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}pytest>=3.3.2,1:devel/py-pytest@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}shapely>=1.6.4:devel/py-shapely@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}smart-open>=0:net/py-smart-open@${PY_FLAVOR}
+
 .include <bsd.port.mk>

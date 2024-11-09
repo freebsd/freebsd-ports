@@ -1,4 +1,4 @@
---- content/browser/child_thread_type_switcher_linux.cc.orig	2024-05-21 18:07:39 UTC
+--- content/browser/child_thread_type_switcher_linux.cc.orig	2024-10-22 08:31:56 UTC
 +++ content/browser/child_thread_type_switcher_linux.cc
 @@ -20,6 +20,9 @@ void SetThreadTypeOnLauncherThread(base::ProcessId pee
                                     base::ThreadType thread_type) {
@@ -10,7 +10,7 @@
    bool ns_pid_supported = false;
    pid_t peer_tid = base::FindThreadID(peer_pid, ns_tid, &ns_pid_supported);
    if (peer_tid == -1) {
-@@ -38,6 +41,7 @@ void SetThreadTypeOnLauncherThread(base::ProcessId pee
+@@ -39,6 +42,7 @@ void SetThreadTypeOnLauncherThread(base::ProcessId pee
  
    base::PlatformThread::SetThreadType(peer_pid, peer_tid, thread_type,
                                        base::IsViaIPC(true));

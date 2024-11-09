@@ -1,6 +1,6 @@
 PORTNAME=	libdatachannel
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.21.2
+DISTVERSION=	0.22.2
 CATEGORIES=	www
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -18,7 +18,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	paullouisageneau
 GH_TUPLE=	SergiusTheBest:plog:e21baecd4753f14da64ede979c5a19302618b752:SergiusTheBest_plog/deps/plog \
 		sctplab:usrsctp:ebb18adac6501bad4501b1f6dccb67a1c85cc299:sctplab_usrsctp/deps/usrsctp \
-		paullouisageneau:libjuice:ac0fc81:paullouisageneau_libjuice/deps/libjuice \
+		paullouisageneau:libjuice:201b2c9:paullouisageneau_libjuice/deps/libjuice \
 		nlohmann:json:9cca280a4d0ccf0c08f47a99aa71d1b0e52f8d03:nlohmann_json/deps/json \
 		cisco:libsrtp:a566a9cfcd619e8327784aa7cff4a1276dc1e895:cisco_libsrtp/deps/libsrtp
 CMAKE_ON=	USE_SYSTEM_SRTP NO_EXAMPLES NO_TESTS
@@ -36,5 +36,7 @@ do-test: # tests require dual stack to be enabled with 'sysctl net.inet6.ip6.v6o
 		${SETENV} ${CONFIGURE_ENV} ${CMAKE_BIN} ${CMAKE_ARGS} -DNO_TESTS:BOOL=OFF ${CMAKE_SOURCE_PATH} && \
 		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} ${ALL_TARGET} && \
 		./tests-${DISTVERSION:C/-.*//}
+
+# installs lib/libjuice.a and lib/libusrsctp.a that would conflict with separately installed packages juice and usrsctp, see https://github.com/paullouisageneau/libdatachannel/issues/1277
 
 .include <bsd.port.post.mk>

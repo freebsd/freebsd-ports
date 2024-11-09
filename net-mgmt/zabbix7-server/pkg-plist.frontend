@@ -751,6 +751,7 @@
 %%WWWDIR%%/include/classes/api/clients/CApiClient.php
 %%WWWDIR%%/include/classes/api/clients/CLocalApiClient.php
 %%WWWDIR%%/include/classes/api/helpers/CApiHostHelper.php
+%%WWWDIR%%/include/classes/api/helpers/CApiPskHelper.php
 %%WWWDIR%%/include/classes/api/helpers/CApiTagHelper.php
 %%WWWDIR%%/include/classes/api/item_types/CItemType.php
 %%WWWDIR%%/include/classes/api/item_types/CItemTypeBrowser.php

@@ -1,5 +1,6 @@
 PORTNAME=	openssl
 PORTVERSION=	3.3.2
+PORTREVISION=	1
 CATEGORIES=	security devel
 PKGNAMESUFFIX=	33
 
@@ -10,7 +11,7 @@ WWW=		https://www.openssl.org/
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-CONFLICTS_INSTALL=	boringssl libressl libressl-devel openssl openssl111 openssl3[12] openssl*-quictls
+CONFLICTS_INSTALL=	boringssl libressl libressl-devel openssl openssl111 openssl3[124] openssl*-quictls
 
 HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	config

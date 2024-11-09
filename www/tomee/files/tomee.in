@@ -11,8 +11,12 @@
 #   Set to "NO" by default.
 #   Set it to "YES" to enable TomEE
 #
-# tomee_catalina_base (str)
+# tomee_catalina_home (str)
 #   Set to "%%TOMEE_HOME%%" by default.
+#   Set the CATALINA_HOME variable for the TomEE process
+#
+# tomee_catalina_base (str)
+#   Set to "${catalina.home}" by default.
 #   Set the CATALINA_BASE variable for the TomEE process
 #
 # tomee_catalina_tmpdir (str)
@@ -37,7 +41,7 @@
 #
 # tomee_logging_config (str):
 #   Set to "${catalina.base}/conf/logging.properties" by default.
-#   Set the JUL config file 
+#   Set the JUL config file
 #
 # tomee_java_home (str):
 #   Set to "%%JAVA_HOME%%" by default.
@@ -80,8 +84,8 @@ load_rc_config "${name}"
 eval "${rcvar}=\${${rcvar}:-'NO'}"
 eval "_tomee_java_home=\${${name}_java_home:-'%%JAVA_HOME%%'}"
 eval "_tomee_catalina_user=\${${name}_catalina_user:-'%%TOMEE_USER%%'}"
-eval "_tomee_catalina_home='%%TOMEE_HOME%%'"
-eval "_tomee_catalina_base=\${${name}_catalina_base:-'%%TOMEE_HOME%%'}"
+eval "_tomee_catalina_home=\${${name}_catalina_home:-'%%TOMEE_HOME%%'}"
+eval "_tomee_catalina_base=\${${name}_catalina_base:-'${_tomcat_catalina_home}'}"
 eval "_tomee_catalina_tmpdir=\${${name}_catalina_tmpdir:-'${_tomee_catalina_base}/temp'}"
 eval "_tomee_stdout=\${${name}_stdout:-'${_tomee_catalina_base}/logs/catalina.out'}"
 eval "_tomee_stderr=\${${name}_stderr:-'&1'}"
@@ -99,6 +103,17 @@ required_dirs="${_tomee_catalina_tmpdir}"
 
 extra_commands="reload"
 
+_tomee_java_version=`${_tomee_java_home}/bin/java -version 2>&1 | /usr/bin/awk -F '"' '/version/ {print $2}'`
+
+case "${_tomee_java_version}" in
+	9* | [1-2][0-9]* )
+		_tomee_endorsed_dirs_option=
+		;;
+	*)
+		_tomee_endorsed_dirs_option="-Djava.endorsed.dirs='${_tomee_catalina_home}/endorsed'"
+		;;
+esac
+
 command="%%LOCALBASE%%/bin/jsvc"
 command_args="-java-home '${_tomee_java_home}' \
 	-server \
@@ -107,11 +122,11 @@ command_args="-java-home '${_tomee_java_home}' \
 	-wait ${_tomee_wait} \
 	-outfile '${_tomee_stdout}' \
 	-errfile '${_tomee_stderr}' \
-	-classpath '%%TOMEE_HOME%%/bin/bootstrap.jar:%%LOCALBASE%%/share/java/classes/commons-daemon.jar:%%TOMEE_HOME%%/bin/tomcat-juli.jar${_tomee_classpath}' \
+	-classpath '${_tomee_catalina_home}/bin/bootstrap.jar:%%LOCALBASE%%/share/java/classes/commons-daemon.jar:${_tomee_catalina_home}/bin/tomcat-juli.jar${_tomee_classpath}' \
 	-Djava.util.logging.manager=${_tomee_logging_manager} \
 	-Djava.util.logging.config.file='${_tomee_logging_config}' \
 	${_tomee_java_opts} \
-	-Djava.endorsed.dirs='%%TOMEE_HOME%%/endorsed' \
+	${_tomee_endorsed_dirs_option} \
 	-Dcatalina.home='${_tomee_catalina_home}' \
 	-Dcatalina.base='${_tomee_catalina_base}' \
 	-Djava.io.tmpdir='${_tomee_catalina_tmpdir}' \
@@ -124,8 +139,8 @@ tomee_prestart()
 {
 	if [ -r "${_tomee_catalina_base}/bin/setenv.sh" ]; then
 		. "${_tomee_catalina_base}/bin/setenv.sh"
-	elif [ -r "%%TOMEE_HOME%%/bin/setenv.sh" ]; then
-		. "%%TOMEE_HOME%%/bin/setenv.sh"
+	elif [ -r "${_tomee_catalina_home}/bin/setenv.sh" ]; then
+		. "${_tomee_catalina_home}/bin/setenv.sh"
 	fi
 }
 

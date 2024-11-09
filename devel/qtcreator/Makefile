@@ -1,9 +1,13 @@
 PORTNAME=	qtcreator
 DISTVERSION=	14.0.2
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	QT/official_releases/qtcreator/${DISTVERSION:R}/${DISTVERSION}
 DISTNAME=	qt-creator-opensource-src-${DISTVERSION}
 DIST_SUBDIR=	KDE/Qt/qtcreator
+
+PATCH_SITES=	https://github.com/qt-creator/qt-creator/commit/
+PATCHFILES+=	f175ec933f1c5c5d7a345edbaacc8ff90202aee2.patch:-p1 # clang-format19 fix; will be in qtcreator 15.0
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	C++ and QML IDE for Qt development

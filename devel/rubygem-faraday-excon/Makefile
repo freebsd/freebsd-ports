@@ -1,5 +1,5 @@
 PORTNAME=	faraday-excon
-PORTVERSION=	2.2.0
+PORTVERSION=	2.3.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -10,7 +10,7 @@ WWW=		https://github.com/excon/faraday-excon
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-RUN_DEPENDS=	rubygem-excon>=0.109.0:devel/rubygem-excon \
+RUN_DEPENDS=	rubygem-excon>=1.0.0:devel/rubygem-excon \
 		rubygem-faraday>=2.11.0<3:www/rubygem-faraday
 
 USES=		gem

@@ -1,9 +1,10 @@
---- src/libslic3r/Arrange/Core/NFP/NFPConcave_CGAL.cpp.orig	2024-03-01 12:13:10 UTC
+--- src/libslic3r/Arrange/Core/NFP/NFPConcave_CGAL.cpp.orig	2024-09-18 13:39:04 UTC
 +++ src/libslic3r/Arrange/Core/NFP/NFPConcave_CGAL.cpp
-@@ -5,6 +5,8 @@
- #include "NFP.hpp"
- #include "NFPConcave_CGAL.hpp"
- 
+@@ -2,6 +2,9 @@
+ ///|/
+ ///|/ PrusaSlicer is released under the terms of the AGPLv3 or higher
+ ///|/
++
 +#include <boost/next_prior.hpp>
 +
  #include <CGAL/Exact_predicates_inexact_constructions_kernel.h>

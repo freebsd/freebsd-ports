@@ -1,5 +1,5 @@
 PORTNAME=	calibre
-PORTVERSION=	7.19.0
+PORTVERSION=	7.21.0
 CATEGORIES=	deskutils python
 MASTER_SITES=	https://download.calibre-ebook.com/${PORTVERSION}/:DEFAULT \
 		https://raw.githubusercontent.com/rhasspy/piper/${PIPER_VOICES_HASH}/:piper
@@ -31,7 +31,8 @@ BUILD_DEPENDS=		${LOCALBASE}/bin/cmake:devel/cmake-core \
 			${PYTHON_PKGNAMEPREFIX}zeroconf>0:net/py-zeroconf@${PY_FLAVOR} \
 			liberation-fonts-ttf>=2.1.3:x11-fonts/liberation-fonts-ttf \
 			MathJax3>0:www/mathjax3
-LIB_DEPENDS=		libfreetype.so:print/freetype2 \
+LIB_DEPENDS=		libavcodec.so:multimedia/ffmpeg \
+			libfreetype.so:print/freetype2 \
 			libhunspell-1.7.so:textproc/hunspell \
 			libhyphen.so:textproc/hyphen \
 			libicudata.so:devel/icu \
@@ -67,11 +68,11 @@ USES=		desktop-file-utils gettext-runtime:build gl localbase:ldflags \
 		pkgconfig pyqt:6 python:3.11+ qt:6 shared-mime-info shebangfix sqlite ssl \
 		tar:xz xorg
 USE_GITHUB=	nodefault
-GH_TUPLE=	kovidgoyal:calibre-translations:3394773:translations \
-		LibreOffice:dictionaries:75f5dff:hypenation
-PIPER_VOICES_HASH=	40c852d339fc7532cbbf28a4a942a7c96c185c96
+GH_TUPLE=	kovidgoyal:calibre-translations:1da29f6:translations \
+		LibreOffice:dictionaries:d375e51:hypenation
+PIPER_VOICES_HASH=	c0670df63daf07070c9be36b5c4bed270ad72383
 USE_GL=		opengl
-USE_PYQT=	pyqt6 pysip qtbuilder sip webengine
+USE_PYQT=	pyqt6 pysip webengine qtbuilder:build sip:build
 USE_QT=		base
 USE_RC_SUBR=	calibre
 USE_XORG=	x11 xext xrender

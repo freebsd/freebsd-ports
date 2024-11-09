@@ -10,6 +10,9 @@ WWW=		https://github.com/NuxiNL/cloudabi
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Unmaintained upstream since 2020
+EXPIRATION_DATE=2024-11-30
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	NuxiNL
 

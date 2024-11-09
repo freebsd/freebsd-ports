@@ -1,5 +1,6 @@
 PORTNAME=	pizauth
 DISTVERSION=	1.0.5
+PORTREVISION=	1
 CATEGORIES=	mail
 
 MAINTAINER=	nivit@FreeBSD.org
@@ -14,6 +15,8 @@ USES=		cargo
 USE_GITHUB=	yes
 GH_ACCOUNT=	ltratt
 GH_TAGNAME=	${DISTNAME}
+
+RUSTFLAGS=	${ARCH:S/i386/YES/:C/^[a-z].*//:S/YES/-C target-feature=+sse,+sse2/} # add sse sse2 target-features only on i386
 
 PLIST_FILES=	bin/pizauth \
 		share/man/man1/pizauth.1.gz \

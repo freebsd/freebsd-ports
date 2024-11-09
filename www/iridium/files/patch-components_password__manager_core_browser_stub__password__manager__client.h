@@ -1,4 +1,4 @@
---- components/password_manager/core/browser/stub_password_manager_client.h.orig	2024-08-27 06:28:16 UTC
+--- components/password_manager/core/browser/stub_password_manager_client.h.orig	2024-11-04 08:56:03 UTC
 +++ components/password_manager/core/browser/stub_password_manager_client.h
 @@ -75,7 +75,7 @@ class StubPasswordManagerClient : public PasswordManag
    MockPasswordFeatureManager* GetPasswordFeatureManager();
@@ -6,6 +6,6 @@
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || \
 -    BUILDFLAG(IS_CHROMEOS)
 +    BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
+   void OpenPasswordDetailsBubble(
+       const password_manager::PasswordForm& form) override;
    std::unique_ptr<
-       password_manager::PasswordCrossDomainConfirmationPopupController>
-   ShowCrossDomainConfirmationPopup(

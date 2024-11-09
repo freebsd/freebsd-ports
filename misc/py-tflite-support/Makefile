@@ -11,6 +11,8 @@ WWW=		https://www.tensorflow.org/
 
 LICENSE=	APACHE20
 
+BROKEN_FreeBSD_15=	compilation fails with clang-19, and it isn't clear how to upgrade, see https://github.com/tensorflow/tflite-support/issues/991
+
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pybind11>=2.4:devel/py-pybind11@${PY_FLAVOR}
 RUN_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}absl>=0.7.0:devel/py-absl@${PY_FLAVOR} \

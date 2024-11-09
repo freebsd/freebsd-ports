@@ -1,4 +1,4 @@
---- gst-libs/gst/va/meson.build.orig	2024-09-19 10:01:21 UTC
+--- gst-libs/gst/va/meson.build.orig	2024-10-30 20:33:30 UTC
 +++ gst-libs/gst/va/meson.build
 @@ -45,12 +45,12 @@ extra_args = ['-DGST_USE_UNSTABLE_API',
                '-DBUILDING_GST_VA',
@@ -15,12 +15,12 @@
    msdk_opt = get_option('msdk')
    qsv_opt = get_option('qsv')
    if va_opt.disabled() and msdk_opt.disabled() and qsv_opt.disabled()
-@@ -75,7 +75,7 @@ endif
+@@ -74,7 +74,7 @@ endif
    subdir_done()
  endif
  
 -if host_system == 'linux'
 +if host_system in ['linux', 'freebsd']
-   libva_drm_dep = dependency('libva-drm', version: libva_req, required: va_required,
-       fallback: ['libva', 'libva_drm_dep'])
+   libva_drm_dep = dependency('libva-drm', version: libva_req, required: va_required)
    if not libva_drm_dep.found()
+     subdir_done()

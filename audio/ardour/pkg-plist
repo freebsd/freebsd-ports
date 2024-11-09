@@ -98,6 +98,7 @@ lib/%%ARDOUR_MAJOR%%/surfaces/libardour_faderport2.so
 lib/%%ARDOUR_MAJOR%%/surfaces/libardour_faderport8.so
 lib/%%ARDOUR_MAJOR%%/surfaces/libardour_generic_midi.so
 lib/%%ARDOUR_MAJOR%%/surfaces/libardour_launch_control_xl.so
+lib/%%ARDOUR_MAJOR%%/surfaces/libardour_launchkey_4.so
 lib/%%ARDOUR_MAJOR%%/surfaces/libardour_launchpad_mini.so
 lib/%%ARDOUR_MAJOR%%/surfaces/libardour_launchpad_pro.so
 lib/%%ARDOUR_MAJOR%%/surfaces/libardour_launchpad_x.so
@@ -189,6 +190,8 @@ share/applications/%%ARDOUR_MAJOR%%.desktop
 %%DATADIR%%/icons/launchpad-mini.png
 %%DATADIR%%/icons/launchpad-pro.png
 %%DATADIR%%/icons/launchpad-x.png
+%%DATADIR%%/icons/lkmk4.png
+%%DATADIR%%/icons/lkmk4mini.png
 %%DATADIR%%/icons/mezzforte.png
 %%DATADIR%%/icons/mezzoforte.png
 %%DATADIR%%/icons/mezzopiano.png
@@ -310,6 +313,7 @@ share/applications/%%ARDOUR_MAJOR%%.desktop
 %%DATADIR%%/midi_maps/AKAI_MPK249.map
 %%DATADIR%%/midi_maps/AKAI_MPK61.map
 %%DATADIR%%/midi_maps/AKAI_MPKmini.map
+%%DATADIR%%/midi_maps/AKAI_MPKmini_mk3.map
 %%DATADIR%%/midi_maps/AKAI_MPKminiplus.map
 %%DATADIR%%/midi_maps/Alesis_Q49v2.map
 %%DATADIR%%/midi_maps/Alesis_QX25.map
@@ -328,6 +332,7 @@ share/applications/%%ARDOUR_MAJOR%%.desktop
 %%DATADIR%%/midi_maps/Korg_taktile.map
 %%DATADIR%%/midi_maps/M-Audio_Axiom25.map
 %%DATADIR%%/midi_maps/M-Audio_Axiom61.map
+%%DATADIR%%/midi_maps/M-Audio_Axiom_49_mkII.map
 %%DATADIR%%/midi_maps/M-Audio_Axiom_AIR_Mini_32.map
 %%DATADIR%%/midi_maps/M-Audio_Axiom_Air_25_2015_Model_Transport_Only.map
 %%DATADIR%%/midi_maps/M-Audio_Oxygen49.map
@@ -578,6 +583,7 @@ share/applications/%%ARDOUR_MAJOR%%.desktop
 %%DATADIR%%/patchfiles/Korg_Wavestation_SR.midnam
 %%DATADIR%%/patchfiles/Korg_X2_3_3R.midnam
 %%DATADIR%%/patchfiles/Korg_X5(D).midnam
+%%DATADIR%%/patchfiles/Korg_X50.midnam
 %%DATADIR%%/patchfiles/Korg_X5DR.midnam
 %%DATADIR%%/patchfiles/Korg_Z1.midnam
 %%DATADIR%%/patchfiles/Korg_iSeries.midnam
@@ -591,6 +597,7 @@ share/applications/%%ARDOUR_MAJOR%%.desktop
 %%DATADIR%%/patchfiles/Kurzweil_K2500_2600_Expansion.midnam
 %%DATADIR%%/patchfiles/Kurzweil_K2600.midnam
 %%DATADIR%%/patchfiles/Kurzweil_K2661.midnam
+%%DATADIR%%/patchfiles/Kurzweil_K2700.midnam
 %%DATADIR%%/patchfiles/Kurzweil_Mark_12_152.midnam
 %%DATADIR%%/patchfiles/Kurzweil_Micro_Piano.midnam
 %%DATADIR%%/patchfiles/Kurzweil_PC2_PC2r_w_Orch.midnam
@@ -843,6 +850,8 @@ share/applications/%%ARDOUR_MAJOR%%.desktop
 %%DATADIR%%/scripts/collapse_playlists.lua
 %%DATADIR%%/scripts/create_drum_tracks.lua
 %%DATADIR%%/scripts/delete_xrun_markers.lua
+%%DATADIR%%/scripts/dm10studio.lua
+%%DATADIR%%/scripts/duplicate_to_grid.lua
 %%DATADIR%%/scripts/export_mp4chaps.lua
 %%DATADIR%%/scripts/jump_to_marker.lua
 %%DATADIR%%/scripts/lfo_automation.lua
@@ -864,6 +873,7 @@ share/applications/%%ARDOUR_MAJOR%%.desktop
 %%DATADIR%%/scripts/preare_record_example.lua
 %%DATADIR%%/scripts/raptor_arp.lua
 %%DATADIR%%/scripts/record_now.lua
+%%DATADIR%%/scripts/remove_sysex_from_region.lua
 %%DATADIR%%/scripts/remove_unknown_procs.lua
 %%DATADIR%%/scripts/reset_mixer.lua
 %%DATADIR%%/scripts/reverse_midi.lua
@@ -896,6 +906,7 @@ share/applications/%%ARDOUR_MAJOR%%.desktop
 %%DATADIR%%/scripts/scl_to_mts.lua
 %%DATADIR%%/scripts/scope.lua
 %%DATADIR%%/scripts/select_every_2nd_region.lua
+%%DATADIR%%/scripts/select_regions_at_playhead.lua
 %%DATADIR%%/scripts/send_to_bus.lua
 %%DATADIR%%/scripts/session_template_advanced.lua
 %%DATADIR%%/scripts/session_template_record.lua
@@ -918,6 +929,7 @@ share/applications/%%ARDOUR_MAJOR%%.desktop
 %%DATADIR%%/themes/adwaita_dark-ardour.colors
 %%DATADIR%%/themes/blueberry_milk-ardour.colors
 %%DATADIR%%/themes/caineville-ardour.colors
+%%DATADIR%%/themes/captain_light-ardour.colors
 %%DATADIR%%/themes/clear_gray-ardour.colors
 %%DATADIR%%/themes/cubasish-ardour.colors
 %%DATADIR%%/themes/dark-ardour.colors

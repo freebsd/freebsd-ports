@@ -72,6 +72,7 @@ include/fizz/crypto/hpke/Hpke.h
 include/fizz/crypto/hpke/Types.h
 include/fizz/crypto/hpke/Utils.h
 include/fizz/crypto/hpke/test/Mocks.h
+include/fizz/crypto/test/HashTest.h
 include/fizz/crypto/test/HmacTest.h
 include/fizz/crypto/test/Mocks.h
 include/fizz/crypto/test/SignatureTestData.h
@@ -133,6 +134,7 @@ include/fizz/protocol/ech/ECHExtensions.h
 include/fizz/protocol/ech/Encryption.h
 include/fizz/protocol/ech/Types-inl.h
 include/fizz/protocol/ech/Types.h
+include/fizz/protocol/test/CertTestTypes.h
 include/fizz/protocol/test/CertUtil.h
 include/fizz/protocol/test/Matchers.h
 include/fizz/protocol/test/Mocks.h

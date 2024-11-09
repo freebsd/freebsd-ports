@@ -1,6 +1,6 @@
 PORTNAME=	geany-plugin-git-changebar
 PORTVERSION=	${GEANY_VER}
-PORTREVISION=	1
+PORTREVISION=	3
 CATEGORIES=	devel
 
 MAINTAINER=	madpilot@FreeBSD.org

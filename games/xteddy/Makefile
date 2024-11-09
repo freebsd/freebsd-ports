@@ -4,7 +4,7 @@ PORTREVISION=	4
 CATEGORIES=	games
 MASTER_SITES=	http://webstaff.itn.liu.se/~stegu/xteddy/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	0mp@FreeBSD.org
 COMMENT=	Cuddlesome teddy for the X desktop
 WWW=		http://webstaff.itn.liu.se/~stegu/xteddy/
 

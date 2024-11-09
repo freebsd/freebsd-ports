@@ -1,0 +1,4 @@
+This utility is a tool designed to keep the FreeBSD bootcodes and
+loaders up-to-date.  It's useful because the FreeBSD upgrade process
+doesn't update them.  It verifies if they are up to date and updates
+them if desired.

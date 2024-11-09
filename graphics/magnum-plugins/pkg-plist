@@ -91,3 +91,5 @@ lib/magnum/importers/TinyGltfImporter.conf
 lib/magnum/importers/TinyGltfImporter.so
 share/cmake/MagnumPlugins/FindMagnumPlugins.cmake
 share/cmake/MagnumPlugins/MagnumPluginsConfig.cmake
+share/cmake/MagnumPlugins/dependencies/FindAssimp.cmake
+share/cmake/MagnumPlugins/dependencies/FindDevIL.cmake

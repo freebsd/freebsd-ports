@@ -3,6 +3,9 @@ DISTVERSION=	${KDE_PLASMA_VERSION}
 PORTREVISION=	1
 CATEGORIES=	x11 kde kde-plasma
 
+PATCH_SITES=	https://invent.kde.org/plasma/plasma-desktop/-/commit/
+PATCHFILES=	02726a1ca0189f71f46513078cbc82af9daa9425.patch:-p1 # Fix build with LLVM >= 19
+
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Plasma5 plasma desktop
 WWW=		https://www.kde.org/plasma-desktop

@@ -1,12 +1,14 @@
 PORTNAME=	rio
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.1.17
+PORTREVISION=	1
 CATEGORIES=	x11 wayland
 PKGNAMESUFFIX=	-terminal-emulator
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Hardware-accelerated GPU terminal emulator powered by WebGPU
-WWW=		https://raphamorim.io/rio
+WWW=		https://raphamorim.io/rio \
+		https://github.com/raphamorim/rio
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -434,6 +436,6 @@ PLIST_FILES=	bin/${PORTNAME}
 
 do-install:
 	# workaround for error: found a virtual manifest at `/usr/ports/x11/rio/work/rio-4636f43/Cargo.toml` instead of a package manifest
-	${INSTALL_PROGRAM} ${WRKDIR}/target/*-freebsd/release/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+	${INSTALL_PROGRAM} ${WRKDIR}/target/release/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>

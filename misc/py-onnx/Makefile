@@ -1,6 +1,6 @@
 PORTNAME=	onnx
 DISTVERSION=	1.16.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	misc # machine-learning
 MASTER_SITES=	PYPI \
 		https://github.com/abseil/abseil-cpp/archive/refs/tags/:abseil \

@@ -1,8 +1,8 @@
---- services/on_device_model/on_device_model_service.h.orig	2024-06-25 12:08:48 UTC
+--- services/on_device_model/on_device_model_service.h.orig	2024-11-04 08:56:03 UTC
 +++ services/on_device_model/on_device_model_service.h
-@@ -22,6 +22,10 @@
- #include "sandbox/policy/linux/sandbox_linux.h"
- #endif
+@@ -27,6 +27,10 @@ namespace ml {
+ class OnDeviceModelInternalImpl;
+ }
  
 +#if BUILDFLAG(IS_BSD)
 +#include "sandbox/policy/sandbox.h"
@@ -11,7 +11,7 @@
  namespace on_device_model {
  
  class COMPONENT_EXPORT(ON_DEVICE_MODEL) OnDeviceModelService
-@@ -35,7 +39,7 @@ class COMPONENT_EXPORT(ON_DEVICE_MODEL) OnDeviceModelS
+@@ -40,7 +44,7 @@ class COMPONENT_EXPORT(ON_DEVICE_MODEL) OnDeviceModelS
    // Must be called in the service's process after the run loop finished.
    [[nodiscard]] static bool Shutdown();
  

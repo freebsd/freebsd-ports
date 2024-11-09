@@ -1,11 +1,13 @@
 PORTNAME=	comrak
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.29.0
+PORTREVISION=	1
 CATEGORIES=	textproc
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	CommonMark + GFM compatible Markdown parser and renderer
-WWW=		https://docs.rs/comrak/latest/comrak/
+WWW=		https://docs.rs/comrak/latest/comrak/ \
+		https://github.com/kivikakk/comrak
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING

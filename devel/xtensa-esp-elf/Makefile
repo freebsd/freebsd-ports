@@ -1,6 +1,6 @@
 PORTNAME=	xtensa-esp-elf
 DISTVERSION=	13.2.0_20240530
-PORTREVISION=	1
+PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/espressif/crosstool-NG/releases/download/esp-${DISTVERSION}/:source1 \
 		GNU/gmp:source2 \
@@ -43,6 +43,7 @@ USES=		autoreconf:build bison cargo gmake libtool python
 USE_GCC=	yes:build
 USE_GITHUB=	nodefault
 
+BROKEN_armv7=	fails to build: configure: error: C compiler cannot create executables
 NO_MTREE=	yes
 GH_ACCOUNT=	espressif
 GH_PROJECT=	binutils-gdb:github1 \
@@ -73,7 +74,7 @@ CARGO_CARGOTOML=	${WRKSRC2}/Cargo.toml
 CARGO_CARGOLOCK=	${WRKSRC2}/Cargo.lock
 WRKSRC2=	${WRKDIR}/esp-toolchain-bin-wrappers-${TAG_WRAPPERS}/gnu-xtensa-toolchian
 
-ESPVER=		${DISTNAME:tl:S/-src$//:S/-esp-/-/}
+ESPVER=		esp-${DISTVERSION}
 ESPDATE=	20240305
 GCCVER=		13.2.0
 PLIST_SUB=	PKGBASE=$(PKGBASE) \
@@ -102,6 +103,10 @@ post-extract:
 	${LN} -s \
 	    ${DISTDIR}/espressif-newlib-esp32-esp-4.3.0_${ESPDATE}_GH0.tar.gz \
 	    ${TARBALLS}/newlib-esp32-esp-4.3.0_${ESPDATE}.tar.gz
+	${CP} -p ${BUILD_WRKSRC}/maintainer/git-version-gen \
+	    ${BUILD_WRKSRC}/maintainer/git-version-gen-
+	${PRINTF} "#!/bin/sh\necho -n '${ESPVER}'\n" > \
+	    ${BUILD_WRKSRC}/maintainer/git-version-gen
 
 	# Use a new crosstool.config that lets us download a
 	# branch/tag tarball instead of doing "git clone"
@@ -111,9 +116,6 @@ post-extract:
 
 do-configure:
 	cd ${BUILD_WRKSRC} && ./bootstrap
-	${PRINTF} "#!/bin/sh\necho '${ESPVER}'\n" > \
-	    ${BUILD_WRKSRC}/version.sh
-	${CHMOD} -w+x ${BUILD_WRKSRC}/version.sh
 	cd ${BUILD_WRKSRC} && \
 	    ${SETENV} ${BUILD_ENV} LIBS=-lintl \
 	    ./configure --prefix=${WRKDIR}/ct-ng --exec-prefix=${WRKDIR}/ct-ng
@@ -161,7 +163,7 @@ do-install:
 	    ${XARGS} ${CHMOD} +x
 
 	# xtensa-toolchian-wrapper
-	${INSTALL_PROGRAM} ${WRKSRC2}/target/x86_64-unknown-freebsd/release/xtensa-toolchian-wrapper \
+	${INSTALL_PROGRAM} ${WRKSRC2}/target/release/xtensa-toolchian-wrapper \
 	    ${STAGEDIR}${PREFIX}/${PKGBASE}/bin
 .for chip in ${XTENSA_CHIPS}
 .for wrap in ${XTENSA_WRAPPED}

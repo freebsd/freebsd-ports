@@ -1,8 +1,7 @@
 PORTNAME=	mosh
-PORTVERSION=	0.2.7
-PORTREVISION=	7
+DISTVERSION=	0.2.9-rc1
 CATEGORIES=	lang
-MASTER_SITES=	https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/mosh-scheme/
+MASTER_SITES=	https://github.com/higepon/mosh/releases/download/${DISTNAME}/
 PKGNAMESUFFIX=	-scheme
 
 MAINTAINER=	mjt@cltn.org
@@ -20,15 +19,18 @@ NOT_FOR_ARCHS_REASON=	gcconfig.h: the collector has not been ported to this mach
 LIB_DEPENDS=	libgmp.so:math/gmp \
 		libonig.so:devel/oniguruma
 
+USES=		gmake ssl
+
 CONFLICTS_INSTALL=	mosh-1.[0-9].*
 
-USES=		gmake ssl
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--datadir=${PREFIX}/lib
 
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+
+PLIST_SUB=	VERSION=${DISTVERSION}
 
 .if ${MACHINE_CPU:Msse3}
 CONFIGURE_ENV+=	MOSH_OPTS="-msse3 -mfpmath=sse"

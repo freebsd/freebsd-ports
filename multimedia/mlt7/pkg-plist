@@ -169,7 +169,9 @@ share/man/man1/melt-7.1.gz
 %%JACKRACK%%%%DATADIR%%/jackrack/filter_jack.yml
 %%JACKRACK%%%%DATADIR%%/jackrack/filter_jackrack.yml
 %%JACKRACK%%%%DATADIR%%/jackrack/filter_ladspa.yml
+%%JACKRACK%%%%DATADIR%%/jackrack/filter_vst2.yml
 %%JACKRACK%%%%DATADIR%%/jackrack/producer_ladspa.yml
+%%JACKRACK%%%%DATADIR%%/jackrack/producer_vst2.yml
 %%KDENLIVE%%%%DATADIR%%/kdenlive/filter_boxblur.yml
 %%KDENLIVE%%%%DATADIR%%/kdenlive/filter_freeze.yml
 %%KDENLIVE%%%%DATADIR%%/kdenlive/filter_wave.yml

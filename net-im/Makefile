@@ -141,6 +141,7 @@
     SUBDIR += signal-desktop
     SUBDIR += signald
     SUBDIR += slack-term
+    SUBDIR += snac
     SUBDIR += spectral
     SUBDIR += ssh-chat
     SUBDIR += sshout

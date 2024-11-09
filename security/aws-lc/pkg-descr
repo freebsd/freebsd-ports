@@ -1,0 +1,7 @@
+AWS-LC is a general-purpose cryptographic library maintained by the AWS
+Cryptography team for AWS and their customers. It is based on code from the
+Google BoringSSL project and the OpenSSL project.
+
+AWS-LC contains portable C implementations of algorithms needed for TLS and
+common applications. For performance critical algorithms, optimized assembly
+versions are included for x86 and ARM.

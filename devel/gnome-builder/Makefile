@@ -1,6 +1,6 @@
 PORTNAME=	gnome-builder
 PORTVERSION=	42.1
-PORTREVISION=	6
+PORTREVISION=	8
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME/sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+)\..*/\1/}
 DIST_SUBDIR=	gnome
@@ -11,6 +11,8 @@ WWW=		https://wiki.gnome.org/Apps/Builder
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
+
+BROKEN=		fails to build with libgit2 1.8.1
 
 LIB_DEPENDS=	libcmark.so:textproc/cmark \
 		libdazzle-1.0.so:x11-toolkits/libdazzle \

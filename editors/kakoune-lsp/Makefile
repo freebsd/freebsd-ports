@@ -1,6 +1,6 @@
 PORTNAME=	kakoune-lsp
 DISTVERSIONPREFIX=	v
-DISTVERSION=	17.1.2
+DISTVERSION=	18.0.3
 PORTREVISION=	1
 CATEGORIES=	editors
 
@@ -19,15 +19,10 @@ GH_ACCOUNT=	kakoune-lsp
 
 SUB_FILES=	pkg-message
 
-PLIST_FILES=	bin/kak-lsp \
-		"@sample ${ETCDIR}/kak-lsp.toml.sample"
+PLIST_FILES=	bin/kak-lsp
 PORTDOCS=	README.asciidoc
 
 OPTIONS_DEFINE=	DOCS
-
-post-install:
-	@${MKDIR} ${STAGEDIR}${ETCDIR}
-	${INSTALL_DATA} ${WRKSRC}/kak-lsp.toml ${STAGEDIR}${ETCDIR}/kak-lsp.toml.sample
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

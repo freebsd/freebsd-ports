@@ -20,6 +20,7 @@
     SUBDIR += cless
     SUBDIR += cnprint
     SUBDIR += dictd-database
+    SUBDIR += elffont
     SUBDIR += enscript
     SUBDIR += eterm
     SUBDIR += fandol

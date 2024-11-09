@@ -1,5 +1,5 @@
 PORTNAME=	pmd
-DISTVERSION=	7.3.0
+DISTVERSION=	7.6.0
 CATEGORIES=	devel java
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/${PORTNAME}_releases/${DISTVERSION}/
 DISTNAME=	${PORTNAME}-dist-${DISTVERSION}-bin

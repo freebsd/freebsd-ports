@@ -28,7 +28,7 @@ INOTIFY_DESC=	Monitor directory changes via libinotify
 AVFS_DESC=	Use AVFS library to access archives
 SSL_DESC=	SHA-256 checksum support via OpenSSL
 
-AVFS_LIB_DEPENDS=	libavfs.so:sysutils/avfs
+AVFS_LIB_DEPENDS=	libavfs.so:filesystems/avfs
 AVFS_CONFIGURE_OFF=	--without-avfs
 
 DBUS_LIB_DEPENDS=	libdbus-1.so:devel/dbus

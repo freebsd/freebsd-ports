@@ -9,6 +9,8 @@ WWW=		https://github.com/nullobsi/pass-secrets
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN=		https://github.com/nullobsi/pass-secrets/issues/17
+
 LIB_DEPENDS=	libsdbus-c++.so:devel/sdbus-cpp
 RUN_DEPENDS=	pass:sysutils/password-store
 

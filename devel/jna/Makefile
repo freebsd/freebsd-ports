@@ -1,6 +1,6 @@
 PORTNAME=	jna
 PORTVERSION=	5.15.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel java
 
 MAINTAINER=	ports@markdixon.name
@@ -12,9 +12,6 @@ LICENSE_COMB=	dual
 LICENSE_FILE_APACHE20=	${WRKSRC}/AL2.0
 LICENSE_FILE_LGPL21+ =	${WRKSRC}/LGPL2.1
 LICENSE_FILE=	${WRKSRC}/LICENSE
-
-BROKEN_armv6=	fails to compile: build.xml: compilation failed
-BROKEN_armv7=	fails to compile: build.xml: compilation failed
 
 BUILD_DEPENDS=	makeinfo:print/texinfo
 
@@ -39,7 +36,7 @@ PORTDOCS=	javadoc platform-${PORTVERSION}-javadoc.jar
 
 OPTIONS_DEFINE=	DOCS
 
-ANT_ARCH=	${ARCH:S/amd64/x86-64/:S/i386/x86/:S/powerpc64/ppc64/}
+ANT_ARCH=	${ARCH:S/amd64/x86-64/:S/armv6/arm/:S/armv7/arm/:S/i386/x86/:S/powerpc64/ppc64/}
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' \

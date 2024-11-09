@@ -11,6 +11,7 @@ include/Wt/Auth/AbstractPasswordService.h
 include/Wt/Auth/AbstractUserDatabase.h
 include/Wt/Auth/AuthModel.h
 include/Wt/Auth/AuthService.h
+include/Wt/Auth/AuthThrottle.h
 include/Wt/Auth/AuthUtils.h
 include/Wt/Auth/AuthWidget.h
 %%DBO%%include/Wt/Auth/Dbo/AuthInfo.h
@@ -23,6 +24,10 @@ include/Wt/Auth/Identity.h
 include/Wt/Auth/IssuedToken.h
 include/Wt/Auth/Login.h
 include/Wt/Auth/LostPasswordWidget.h
+include/Wt/Auth/Mfa/AbstractMfaProcess.h
+include/Wt/Auth/Mfa/Totp.h
+include/Wt/Auth/Mfa/TotpProcess.h
+include/Wt/Auth/Mfa/TotpQrCode.h
 include/Wt/Auth/OAuthAuthorizationEndpointProcess.h
 include/Wt/Auth/OAuthClient.h
 include/Wt/Auth/OAuthService.h
@@ -377,6 +382,8 @@ include/Wt/WVideo.h
 include/Wt/WViewWidget.h
 include/Wt/WVirtualImage.h
 include/Wt/WVmlImage.h
+include/Wt/WWebSocketConnection.h
+include/Wt/WWebSocketResource.h
 include/Wt/WWebWidget.h
 include/Wt/WWidget.h
 include/Wt/WWidgetItem.h

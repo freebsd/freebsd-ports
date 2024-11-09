@@ -1,8 +1,11 @@
 bin/sound-juicer
-share/man/man1/sound-juicer.1.gz
 share/GConf/gsettings/sound-juicer.convert
 share/applications/org.gnome.SoundJuicer.desktop
 share/dbus-1/services/org.gnome.SoundJuicer.service
+%%DOCSDIR%%/AUTHORS
+%%DOCSDIR%%/COPYING
+%%DOCSDIR%%/NEWS
+%%DOCSDIR%%/README.md
 share/help/C/sound-juicer/figures/prefs.png
 share/help/C/sound-juicer/figures/startup.png
 share/help/C/sound-juicer/index.docbook
@@ -107,6 +110,7 @@ share/locale/hi/LC_MESSAGES/sound-juicer.mo
 share/locale/hr/LC_MESSAGES/sound-juicer.mo
 share/locale/hu/LC_MESSAGES/sound-juicer.mo
 share/locale/id/LC_MESSAGES/sound-juicer.mo
+share/locale/ie/LC_MESSAGES/sound-juicer.mo
 share/locale/it/LC_MESSAGES/sound-juicer.mo
 share/locale/ja/LC_MESSAGES/sound-juicer.mo
 share/locale/ka/LC_MESSAGES/sound-juicer.mo
@@ -152,9 +156,6 @@ share/locale/xh/LC_MESSAGES/sound-juicer.mo
 share/locale/zh_CN/LC_MESSAGES/sound-juicer.mo
 share/locale/zh_HK/LC_MESSAGES/sound-juicer.mo
 share/locale/zh_TW/LC_MESSAGES/sound-juicer.mo
+share/man/man1/sound-juicer.1.gz
 share/metainfo/org.gnome.SoundJuicer.metainfo.xml
 %%DATADIR%%/rhythmbox.gep
-%%DOCSDIR%%/AUTHORS
-%%DOCSDIR%%/COPYING
-%%DOCSDIR%%/NEWS
-%%DOCSDIR%%/README.md

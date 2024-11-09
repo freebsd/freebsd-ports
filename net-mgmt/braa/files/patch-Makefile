@@ -1,0 +1,33 @@
+--- Makefile.orig	2024-09-08 14:03:35 UTC
++++ Makefile
+@@ -4,8 +4,8 @@
+ ###################################################################
+ 
+ # Linux, FreeBSD, OpenBSD
+-CFLAGS = 
+-LDFLAGS = 
++#CFLAGS = 
++#LDFLAGS = 
+ 
+ # Solaris / SPARC
+ # CFLAGS = -DSOLARIS_SPARC
+@@ -18,15 +18,14 @@ OBJECTS = ${SOURCES:.c=.o}
+ SOURCES= braaasn.c braaoids.c braaprotocol.c queries.c braa.c
+ OBJECTS = ${SOURCES:.c=.o}
+ 
+-
+ OUT= braa
+ 
+ LIBS = 
+ 
+ all: ${OBJECTS}
+-	cc $(OBJECTS) -o $(OUT) $(LDFLAGS) $(LIBS)
+-	strip $(OUT)
++	$(CC) $(OBJECTS) -o $(OUT) $(LDFLAGS) $(LIBS)
++#	strip $(OUT)
+ 
+ clean:
+ 	rm -rf $(OBJECTS) $(OUT)
+-	
+\ No newline at end of file
++	

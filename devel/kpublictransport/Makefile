@@ -1,6 +1,6 @@
 PORTNAME=	kpublictransport
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	devel kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org

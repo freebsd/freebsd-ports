@@ -1,5 +1,5 @@
 PORTNAME=	aws-sdk-resources
-PORTVERSION=	3.209.0
+PORTVERSION=	3.211.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -137,7 +137,7 @@ RUN_DEPENDS=	rubygem-aws-sdk-accessanalyzer>=1<2:devel/rubygem-aws-sdk-accessana
 		rubygem-aws-sdk-ecr>=1<2:devel/rubygem-aws-sdk-ecr \
 		rubygem-aws-sdk-ecrpublic>=1<2:devel/rubygem-aws-sdk-ecrpublic \
 		rubygem-aws-sdk-ecs>=1<2:devel/rubygem-aws-sdk-ecs \
-		rubygem-aws-sdk-efs>=1<2:devel/rubygem-aws-sdk-efs \
+		rubygem-aws-sdk-efs>=1<2:filesystems/rubygem-aws-sdk-efs \
 		rubygem-aws-sdk-eks>=1<2:devel/rubygem-aws-sdk-eks \
 		rubygem-aws-sdk-eksauth>=1<2:devel/rubygem-aws-sdk-eksauth \
 		rubygem-aws-sdk-elasticache>=1<2:devel/rubygem-aws-sdk-elasticache \
@@ -163,6 +163,9 @@ RUN_DEPENDS=	rubygem-aws-sdk-accessanalyzer>=1<2:devel/rubygem-aws-sdk-accessana
 		rubygem-aws-sdk-freetier>=1<2:devel/rubygem-aws-sdk-freetier \
 		rubygem-aws-sdk-fsx>=1<2:devel/rubygem-aws-sdk-fsx \
 		rubygem-aws-sdk-gamelift>=1<2:devel/rubygem-aws-sdk-gamelift \
+		rubygem-aws-sdk-geomaps>=1<2:devel/rubygem-aws-sdk-geomaps \
+		rubygem-aws-sdk-geoplaces>=1<2:devel/rubygem-aws-sdk-geoplaces \
+		rubygem-aws-sdk-georoutes>=1<2:devel/rubygem-aws-sdk-georoutes \
 		rubygem-aws-sdk-glacier>=1<2:devel/rubygem-aws-sdk-glacier \
 		rubygem-aws-sdk-globalaccelerator>=1<2:devel/rubygem-aws-sdk-globalaccelerator \
 		rubygem-aws-sdk-glue>=1<2:devel/rubygem-aws-sdk-glue \
@@ -269,7 +272,6 @@ RUN_DEPENDS=	rubygem-aws-sdk-accessanalyzer>=1<2:devel/rubygem-aws-sdk-accessana
 		rubygem-aws-sdk-networkfirewall>=1<2:devel/rubygem-aws-sdk-networkfirewall \
 		rubygem-aws-sdk-networkmanager>=1<2:devel/rubygem-aws-sdk-networkmanager \
 		rubygem-aws-sdk-networkmonitor>=1<2:devel/rubygem-aws-sdk-networkmonitor \
-		rubygem-aws-sdk-nimblestudio>=1<2:devel/rubygem-aws-sdk-nimblestudio \
 		rubygem-aws-sdk-oam>=1<2:devel/rubygem-aws-sdk-oam \
 		rubygem-aws-sdk-omics>=1<2:devel/rubygem-aws-sdk-omics \
 		rubygem-aws-sdk-opensearchserverless>=1<2:devel/rubygem-aws-sdk-opensearchserverless \

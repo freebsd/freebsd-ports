@@ -1,26 +1,24 @@
---- check_mk_agent.freebsd.orig	2024-08-15 18:32:18 UTC
+--- check_mk_agent.freebsd.orig	2024-10-02 06:30:56 UTC
 +++ check_mk_agent.freebsd
-@@ -117,9 +117,9 @@ set_variable_defaults() {
- #
- 
- set_variable_defaults() {
--    : "${MK_LIBDIR:=/usr/local/lib/check_mk_agent}"
--    : "${MK_CONFDIR:=/etc/check_mk}"
--    : "${MK_VARDIR:=/var/lib/check_mk_agent}"
-+    : "${MK_LIBDIR:=%%CHECKMK_LIBDIR%%}"
-+    : "${MK_CONFDIR:=%%CHECKMK_CONFDIR%%}"
-+    : "${MK_VARDIR:=/var/db/check_mk_agent}"
-     : "${MK_LOGDIR:=/var/log/check_mk_agent}"
- 
-     # some 'booleans'
-@@ -138,8 +138,8 @@ preamble_1() {
-     # Make sure locally installed binaries are found
-     # Only add binaries if they are not already in the path! If you append to path in a loop the process will
-     # eventually each the 128k size limit for the environment and become a zombie process. See execve manpage.
--    [ "${PATH#*"/usr/local/bin"}" != "${PATH}" ] || PATH="${PATH}:/usr/local/bin"
--    [ "${PATH#*"/usr/local/sbin"}" != "${PATH}" ] || PATH="${PATH}:/usr/local/sbin"
-+    [ "${PATH#*"%%LOCALBASE%%/bin"}" != "${PATH}" ] || PATH="${PATH}:%%LOCALBASE%%/bin"
-+    [ "${PATH#*"%%LOCALBASE%%/sbin"}" != "${PATH}" ] || PATH="${PATH}:%%LOCALBASE%%/sbin"
+@@ -142,6 +142,21 @@ preamble_1() {
+     [ "${PATH#*"/usr/local/sbin"}" != "${PATH}" ] || PATH="${PATH}:/usr/local/sbin"
      [ -d "/var/qmail/bin" ] && { [ "${PATH#*"/var/qmail/bin"}" != "${PATH}" ] || PATH="${PATH}:/var/qmail/bin"; }
  
++    echo '<<<sysctl_mem>>>'
++    _page_size=$( sysctl -n vm.stats.vm.v_page_size )
++    echo "mem.cache $(( _page_size * $( sysctl -n vm.stats.vm.v_cache_count ) ))"
++    echo "mem.free $(( _page_size * $( sysctl -n vm.stats.vm.v_free_count ) ))"
++    echo "mem.total $( sysctl -n hw.physmem )"
++    echo "mem.used $(( _page_size * ( $( sysctl -n vm.stats.vm.v_active_count ) + $( sysctl -n vm.stats.vm.v_wire_count ) ) ))"
++    _swap_total=$( sysctl -n vm.swap_total )
++    _swap_used=$(( $( swapinfo | tail -1 | awk '{print $3}' ) * 1024 ))
++    echo "swap.free $(( _swap_total - _swap_used ))"
++    echo "swap.total ${_swap_total}"
++    echo "swap.used ${_swap_used}"
++    unset -v _page_size
++    unset -v _swap_total
++    unset -v _swap_used
++
      # All executables in PLUGINSDIR will simply be executed and their
+     # ouput appended to the output of the agent. Plugins define their own
+     # sections and must output headers with '<<<' and '>>>'

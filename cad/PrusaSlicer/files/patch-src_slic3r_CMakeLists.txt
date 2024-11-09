@@ -1,26 +1,45 @@
---- src/slic3r/CMakeLists.txt.orig	2024-06-27 09:25:47 UTC
+--- src/slic3r/CMakeLists.txt.orig	2024-09-18 13:39:04 UTC
 +++ src/slic3r/CMakeLists.txt
-@@ -375,7 +375,8 @@ set(SLIC3R_GUI_SOURCES
-     Utils/PrusaConnect.cpp
+@@ -382,7 +382,8 @@ set(SLIC3R_GUI_SOURCES
+     Utils/ServiceConfig.cpp
  )
  
 -find_package(NanoSVG REQUIRED)
-+# find_package(NanoSVG REQUIRED)
++#find_package(NanoSVG REQUIRED)
 +find_package(OpenSSL REQUIRED)
  
  if (APPLE)
      list(APPEND SLIC3R_GUI_SOURCES
-@@ -404,11 +405,11 @@ encoding_check(libslic3r_gui)
- 
- encoding_check(libslic3r_gui)
- 
--target_link_libraries(libslic3r_gui libslic3r avrdude libcereal imgui libvgcode GLEW::GLEW OpenGL::GL hidapi libcurl ${wxWidgets_LIBRARIES} NanoSVG::nanosvg NanoSVG::nanosvgrast)
-+target_link_libraries(libslic3r_gui libslic3r avrdude imgui libvgcode GLEW::GLEW OpenGL::GL hidapi libcurl ${wxWidgets_LIBRARIES} OpenSSL::SSL OpenSSL::Crypto)
+@@ -426,7 +427,6 @@ target_link_libraries(
+     PUBLIC
+     libslic3r
+     avrdude
+-    libcereal
+     imgui
+     libvgcode
+     GLEW::GLEW
+@@ -434,19 +434,21 @@ target_link_libraries(
+     hidapi
+     libcurl
+     ${wxWidgets_LIBRARIES}
+-    NanoSVG::nanosvg
+-    NanoSVG::nanosvgrast
+     stb_dxt
+     fastfloat
++	OpenSSL::SSL
++	OpenSSL::Crypto
+ )
  
  if (MSVC)
-     target_link_libraries(libslic3r_gui Setupapi.lib)
+     target_link_libraries(libslic3r_gui PUBLIC Setupapi.lib)
 -elseif (CMAKE_SYSTEM_NAME STREQUAL "Linux")
 +elseif (CMAKE_SYSTEM_NAME STREQUAL "Linux" OR CMAKE_SYSTEM_NAME STREQUAL "FreeBSD")
-     target_link_libraries(libslic3r_gui ${DBUS_LIBRARIES}) 
+     target_link_libraries(libslic3r_gui PUBLIC ${DBUS_LIBRARIES})
  elseif (APPLE)
-     target_link_libraries(libslic3r_gui ${DISKARBITRATION_LIBRARY} ${COREWLAN_LIBRARY})
+     target_link_libraries(libslic3r_gui PUBLIC ${DISKARBITRATION_LIBRARY} ${COREWLAN_LIBRARY})
+ endif()
++
++add_definitions(-DBOOST_LOG_DYN_LINK)
+ 
+ #if (SLIC3R_STATIC)
+     # FIXME: This was previously exported by wx-config but the wxWidgets

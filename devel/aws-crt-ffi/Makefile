@@ -1,6 +1,7 @@
 PORTNAME=	aws-crt-ffi
-PORTVERSION=	0.3.8
+PORTVERSION=	0.4.0
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -19,6 +20,7 @@ LIB_DEPENDS=	libaws-c-auth.so:security/aws-c-auth \
 		libaws-c-io.so:devel/aws-c-io \
 		libaws-c-sdkutils.so:devel/aws-c-sdkutils \
 		libaws-checksums.so:devel/aws-checksums \
+		libcrypto.so:security/aws-lc \
 		libs2n.so:security/s2n-tls
 
 USES=		cmake ssl
@@ -33,5 +35,9 @@ PLIST_FILES=	lib/aws-crt-ffi/cmake/aws-crt-ffi-config.cmake \
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	awslabs
+
+post-patch:
+# Clean up bundled libraries
+	@${RM} -r ${WRKSRC}/crt/
 
 .include <bsd.port.mk>

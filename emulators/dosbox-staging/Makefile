@@ -1,6 +1,6 @@
 PORTNAME=	dosbox-staging
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.81.2
+DISTVERSION=	0.82.0
 CATEGORIES=	emulators
 
 MAINTAINER=	makc@FreeBSD.org
@@ -22,7 +22,8 @@ USE_GL=		gl
 USE_SDL=	sdl2 net2
 USE_GITHUB=	yes
 
-MESON_ARGS=	-Dunit_tests=disabled -Duse_mt32emu=false
+MESON_ARGS=	-Dunit_tests=disabled \
+		-Duse_mt32emu=false
 LDFLAGS+=	-pthread
 
 OPTIONS_DEFINE=	ALSA DOCS FLUIDSYNTH
@@ -35,11 +36,18 @@ ALSA_MESON_TRUE=	use_alsa
 FLUIDSYNTH_LIB_DEPENDS=	libfluidsynth.so:audio/fluidsynth
 FLUIDSYNTH_MESON_TRUE=	use_fluidsynth
 
+.if defined(PACKAGE_BUILDING)
+# Disable SIMD autodetection
+# https://github.com/dosbox-staging/dosbox-staging/issues/4020
+MESON_ARGS+=	-Duse_zlib_ng=sse2,ssse3,neon
+.endif
+
 post-patch:
+	@${SED} -i '' '1s,bash,sh,' ${WRKSRC}/scripts/get-version.sh
 	@${REINPLACE_CMD} 's,/usr/share/doc/dosbox-staging,${DOCSDIR},' \
 		${WRKSRC}/docs/dosbox.1
 	${MV} ${WRKSRC}/docs/dosbox.1 ${WRKSRC}/docs/dosbox-staging.1
 	@${REINPLACE_CMD} '/^Exec/s,dosbox,dosbox-staging,' \
-		${WRKSRC}/contrib/linux/dosbox-staging.desktop
+		${WRKSRC}/contrib/linux/org.dosbox-staging.dosbox-staging.desktop
 
 .include <bsd.port.mk>

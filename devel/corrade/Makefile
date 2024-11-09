@@ -1,13 +1,13 @@
 PORTNAME=	corrade
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2020.06-1214
-DISTVERSIONSUFFIX=	-g3bf6057d
-PORTREVISION=	1
+DISTVERSION=	2020.06-1783
+DISTVERSIONSUFFIX=	-gd83e30e5
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	C++11/C++14 multiplatform utility library
-WWW=		https://magnum.graphics/corrade/
+WWW=		https://magnum.graphics/corrade/ \
+		https://github.com/mosra/corrade
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
@@ -20,7 +20,7 @@ USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	mosra
-GH_TUPLE=	mosra:toolchains:65568a9:toolchains/toolchains
+GH_TUPLE=	mosra:toolchains:2243706:toolchains/toolchains
 
 CMAKE_ARGS=	-DLIB_SUFFIX:STRING=""
 
@@ -35,5 +35,7 @@ post-patch:
 		${WRKSRC}/src/Corrade/Utility/StlForwardArray.h \
 		${WRKSRC}/src/Corrade/Utility/StlForwardTuple.h
 .endif
+
+# tests: 97% tests passed, 5 tests failed out of 143, see https://github.com/mosra/corrade/issues/189
 
 .include <bsd.port.post.mk>

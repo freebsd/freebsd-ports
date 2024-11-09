@@ -1,5 +1,5 @@
 PORTNAME=	telegram-desktop
-DISTVERSION=	5.6.3
+DISTVERSION=	5.7.2
 CATEGORIES=	net-im
 MASTER_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/releases/download/v${DISTVERSION}/
 DISTNAME=	tdesktop-${DISTVERSION}-full
@@ -40,8 +40,6 @@ LIB_DEPENDS=	libabsl_base.so:devel/abseil \
 		libqrcodegencpp.so:graphics/qr-code-generator \
 		librnnoise.so:audio/rnnoise \
 		libsrtp2.so:net/libsrtp2 \
-		libxcb-keysyms.so:x11/xcb-util-keysyms \
-		libxkbcommon.so:x11/libxkbcommon \
 		libxxhash.so:devel/xxhash \
 		libvpx.so:multimedia/libvpx
 
@@ -53,7 +51,7 @@ qt5_CONFLICTS_INSTALL=	${PORTNAME}-qt6
 qt6_CONFLICTS_INSTALL=	${PORTNAME}
 
 USES=		cmake compiler:c++20-lang desktop-file-utils gl gnome jpeg localbase \
-		minizip openal pkgconfig python:build ssl xorg
+		minizip openal pkgconfig python:build ssl
 
 USE_GITHUB=	nodefault
 GH_ACCOUNT=	telegramdesktop
@@ -62,24 +60,22 @@ GH_PROJECT=	tdesktop
 .if ${FLAVOR} == qt5
 USES+=		kde:5 qt:5
 USE_QT=		buildtools:build core dbus declarative gui imageformats network qmake:build \
-		svg wayland widgets
+		svg widgets
 USE_KDE=	coreaddons kimageformats
 .else
 USES+=		kde:6 qt:6
-USE_QT=		5compat base declarative imageformats lottie shadertools svg tools:build wayland
+USE_QT=		5compat base declarative imageformats lottie shadertools svg tools:build
 USE_KDE=	coreaddons kimageformats
 .endif
 
 USE_GL=		gl
 USE_GNOME=	glib20 glibmm26 introspection
-USE_XORG=	x11 xcb xcomposite xdamage xext xfixes xrandr xrender xtst
 
 CMAKE_ARGS=	-DTDESKTOP_API_ID=${TELEGRAM_API_ID} -DTDESKTOP_API_HASH=${TELEGRAM_API_HASH} \
 		-DQT_VERSION_MAJOR=${FLAVOR:S/qt//}
 CMAKE_ON=	DESKTOP_APP_USE_PACKAGED DESKTOP_APP_DISABLE_CRASH_REPORTS \
 		DESKTOP_APP_DISABLE_JEMALLOC \
-		DESKTOP_APP_DISABLE_SCUDO \
-		DESKTOP_APP_DISABLE_WAYLAND_INTEGRATION
+		DESKTOP_APP_DISABLE_SCUDO
 
 # Since cmake 3.25.0, BSDs are no longer recognised as Linux (in this port).
 CMAKE_ARGS+=	-DLINUX=true
@@ -91,11 +87,14 @@ LDFLAGS+=	-lBlocksRuntime
 # It dynamically loads PulseAudio, and if this fails, it loads ALSA.
 # If both of them are not installed, then voice calls do not work, but other functionalities still work.
 OPTIONS_DEFINE=		SYSTEM_FONTS
-OPTIONS_DEFAULT=	ALSA
+OPTIONS_DEFAULT=	ALSA X11 WAYLAND
 OPTIONS_GROUP=	AUDIO
+OPTIONS_MULTI=	DESKTOP
 OPTIONS_GROUP_AUDIO=	ALSA PULSEAUDIO
+OPTIONS_MULTI_DESKTOP=	X11 WAYLAND
 
 AUDIO_DESC=		Audio backend for voice calls
+DESKTOP_DESC=		Desktop integration
 SYSTEM_FONTS_DESC=	Use system fonts instead of bundled patched ones
 
 ALSA_LIB_DEPENDS=	libasound.so:audio/alsa-lib
@@ -103,6 +102,13 @@ PULSEAUDIO_LIB_DEPENDS=	libpulse.so:audio/pulseaudio
 ALSA_CMAKE_BOOL_OFF=	LIBTGVOIP_DISABLE_ALSA
 PULSEAUDIO_CMAKE_BOOL_OFF=	LIBTGVOIP_DISABLE_PULSEAUDIO
 SYSTEM_FONTS_CMAKE_BOOL_OFF=	DESKTOP_APP_USE_PACKAGED_FONTS
+WAYLAND_CMAKE_BOOL_OFF=	DESKTOP_APP_DISABLE_WAYLAND_INTEGRATION
+WAYLAND_USE=		qt=wayland
+X11_CMAKE_BOOL_OFF=	DESKTOP_APP_DISABLE_X11_INTEGRATION
+X11_USES=		xorg
+X11_USE=		xorg=x11,xcb,xcomposite,xdamage,xext,xfixes,xrandr,xrender,xtst
+X11_LIB_DEPENDS=	libxcb-keysyms.so:x11/xcb-util-keysyms \
+			libxkbcommon.so:x11/libxkbcommon
 
 # Telegram asks each custom build to have its own API ID and hash.
 TELEGRAM_API_HASH=	20a3432aab43f24bb4460fceac5ba38d

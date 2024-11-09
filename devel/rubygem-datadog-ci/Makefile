@@ -1,5 +1,5 @@
 PORTNAME=	datadog-ci
-PORTVERSION=	1.7.0
+PORTVERSION=	1.8.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -11,9 +11,11 @@ WWW=		https://docs.datadoghq.com/continuous_integration/ \
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.BSD3
 
-RUN_DEPENDS=	rubygem-datadog>=2.3<3:devel/rubygem-datadog \
+RUN_DEPENDS=	rubygem-datadog>=2.4<3:devel/rubygem-datadog \
 		rubygem-msgpack>=0:devel/rubygem-msgpack
 
 USES=		gem
+
+PLIST_FILES=	bin/ddcirb
 
 .include <bsd.port.mk>

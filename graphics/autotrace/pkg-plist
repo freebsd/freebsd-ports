@@ -1,14 +1,14 @@
 bin/autotrace
-bin/autotrace-config
 include/autotrace/autotrace.h
+include/autotrace/color.h
 include/autotrace/exception.h
 include/autotrace/input.h
 include/autotrace/output.h
+include/autotrace/spline.h
 include/autotrace/types.h
-lib/libautotrace.a
 lib/libautotrace.so
 lib/libautotrace.so.3
 lib/libautotrace.so.3.0.0
 libdata/pkgconfig/autotrace.pc
 share/man/man1/autotrace.1.gz
-share/aclocal/autotrace.m4
+

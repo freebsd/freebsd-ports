@@ -7,7 +7,8 @@ MASTER_SITES=	https://download.librepcb.org/releases/${DISTVERSION}/
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Schematic and PCB editing software
-WWW=		https://librepcb.org/
+WWW=		https://librepcb.org/ \
+		https://github.com/LibrePCB/LibrePCB
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

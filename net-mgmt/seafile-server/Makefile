@@ -57,7 +57,7 @@ OPTIONS_SUB=		yes
 FUSE_DESC=		Use file system in userspace
 
 FUSE_CONFIGURE_ENABLE=	fuse
-FUSE_LIB_DEPENDS=	libfuse.so:sysutils/fusefs-libs
+FUSE_LIB_DEPENDS=	libfuse.so:filesystems/fusefs-libs
 
 LDAP_CONFIGURE_ENABLE=	ldap
 LDAP_USES=		ldap

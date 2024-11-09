@@ -1,6 +1,7 @@
 PORTNAME=	ntpd-rs
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.3.0
+PORTREVISION=	1
 CATEGORIES=	net
 
 MAINTAINER=	mikael@FreeBSD.org
@@ -30,7 +31,7 @@ post-patch:
 
 do-install:
 .for f in ${BINFILES}
-	${INSTALL_PROGRAM} ${CARGO_TARGET_DIR}/${CARGO_BUILD_TARGET}/*/${f} ${STAGEDIR}${LOCALBASE}/bin
+	${INSTALL_PROGRAM} ${CARGO_TARGET_DIR}/*/${f} ${STAGEDIR}${LOCALBASE}/bin
 .endfor
 	${MKDIR} ${STAGEDIR}${ETCDIR}
 	${INSTALL_DATA} ${WRKSRC}/ntp.server.toml ${STAGEDIR}${ETCDIR}/ntp.server.toml.sample

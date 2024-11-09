@@ -1,5 +1,5 @@
 PORTNAME=	xdg-desktop-portal-lxqt
-PORTVERSION=	1.0.2
+PORTVERSION=	1.1.0
 CATEGORIES=	deskutils
 
 MAINTAINER=	lxqt@FreeBSD.org

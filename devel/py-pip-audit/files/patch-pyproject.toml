@@ -1,0 +1,13 @@
+Obtained from:	https://github.com/pypa/pip-audit/commit/aba8b4517a1c21acc08e81e9a9648d0596d095c2
+
+--- pyproject.toml.orig	2024-04-30 19:27:30 UTC
++++ pyproject.toml
+@@ -28,7 +28,7 @@ dependencies = [
+ ]
+ dependencies = [
+     "CacheControl[filecache] >= 0.13.0",
+-    "cyclonedx-python-lib >= 5,< 8",
++    "cyclonedx-python-lib >= 5,< 9",
+     "html5lib>=1.1",
+     "packaging>=23.0.0",                 # https://github.com/pypa/pip-audit/issues/464
+     "pip-api>=0.0.28",

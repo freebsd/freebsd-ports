@@ -36,26 +36,19 @@ GROUPS=	_lldpd
 
 CONFLICTS_INSTALL=	${FLAVORS:N${FLAVOR}:S/^/${PORTNAME}-/}
 
-OPTIONS_DEFINE=		BASH DOCS DTRACE PIE PROPRIETARY READLINE SNMP XML ZSH
+OPTIONS_DEFINE=		BASH DOCS PIE PROPRIETARY READLINE SNMP XML ZSH
 OPTIONS_DEFAULT=	BASH PROPRIETARY SNMP XML ZSH
-# ld(1) fails to link probes: Relocations in generic ELF (EM: 0)
-OPTIONS_EXCLUDE_aarch64=	DTRACE
-# dt_modtext:opensolaris/lib/libdtrace/common/dt_link.c: arm not implemented
-OPTIONS_EXCLUDE_armv6=		DTRACE
-OPTIONS_EXCLUDE_armv7=		DTRACE
 OPTIONS_SUB=	yes
 
 .if ${FLAVOR:U} == tiny
 OPTIONS_DEFAULT:=
 .endif
 
-DTRACE_DESC=		DTrace support (BROKEN)
 PIE_DESC=		Build PIE (position independant executables)
 PROPRIETARY_DESC=	Support proprietary protocols (CDP/EDP/FDP/SONMP)
 SNMP_DESC=		Enable SNMP sub-agent (AgentX)
 XML_DESC=		XML output support
 
-DTRACE_CONFIGURE_ENABLE=	dtrace
 PIE_CONFIGURE_ENABLE=		pie
 PROPRIETARY_CONFIGURE_ENABLE=	cdp edp fdp sonmp
 READLINE_CONFIGURE_WITH=	readline

@@ -29,6 +29,7 @@ include/qmmp/visual.h
 include/qmmp/visualfactory.h
 include/qmmp/volume.h
 include/qmmp/volumehandler.h
+include/qmmpui/colorwidget.h
 include/qmmpui/commandlinehandler.h
 include/qmmpui/commandlinemanager.h
 include/qmmpui/configdialog.h
@@ -51,10 +52,12 @@ include/qmmpui/playlistparser.h
 include/qmmpui/playlisttrack.h
 include/qmmpui/qmmpui_export.h
 include/qmmpui/qmmpuisettings.h
+include/qmmpui/shortcutdialog.h
 include/qmmpui/templateeditor.h
 include/qmmpui/uifactory.h
 include/qmmpui/uihelper.h
 include/qmmpui/uiloader.h
+include/qmmpui/visualmenu.h
 lib/libqmmp.so
 lib/libqmmp.so.2
 lib/libqmmp.so.%%SHLIB_VER%%

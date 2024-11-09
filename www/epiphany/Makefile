@@ -1,6 +1,6 @@
 PORTNAME=	epiphany
 PORTVERSION=	42.4
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	www gnome
 MASTER_SITES=	GNOME/sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+)\..*/\1/}
 DIST_SUBDIR=	gnome
@@ -16,7 +16,7 @@ BUILD_DEPENDS=	gsettings-desktop-schemas>=0:devel/gsettings-desktop-schemas \
 		iso-codes>=0:misc/iso-codes \
 		itstool:textproc/itstool
 LIB_DEPENDS=	libdazzle-1.0.so:x11-toolkits/libdazzle \
-		libgcr-base-3.so:security/gcr \
+		libgcr-base-3.so:security/gcr3 \
 		libgmp.so:math/gmp \
 		libhandy-1.so:x11-toolkits/libhandy \
 		libicuuc.so:devel/icu \

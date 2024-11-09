@@ -1,6 +1,6 @@
 PORTNAME=	Pyrseas
-PORTVERSION=	0.9.1
-PORTREVISION=	1
+DISTVERSIONPREFIX=	v
+DISTVERSION=	0.10.0
 CATEGORIES=	databases python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -11,16 +11,16 @@ WWW=		https://github.com/perseas/Pyrseas
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}psycopg2>=2.5:databases/py-psycopg2@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pgdbconn>=0.8:databases/py-pgdbconn@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pyyaml>=3.10:devel/py-pyyaml@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}psycopg>=3.1:databases/py-psycopg@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pyyaml>=5.3:devel/py-pyyaml@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR}
 
 USES=		python
-USE_PYTHON=	distutils autoplist
-
 USE_GITHUB=	yes
 GH_ACCOUNT=	perseas
+USE_PYTHON=	autoplist distutils
+
+NO_ARCH=	yes
 
 # Requires a running PostgreSQL instance
 

@@ -37,6 +37,7 @@
     SUBDIR += decord
     SUBDIR += deforaos-player
     SUBDIR += dirac
+    SUBDIR += dovi_tool
     SUBDIR += dragon
     SUBDIR += droidcam
     SUBDIR += dtv-scan-tables
@@ -89,7 +90,6 @@
     SUBDIR += gstreamer1-plugins-dts
     SUBDIR += gstreamer1-plugins-dv
     SUBDIR += gstreamer1-plugins-dvdread
-    SUBDIR += gstreamer1-plugins-gnonlin
     SUBDIR += gstreamer1-plugins-good
     SUBDIR += gstreamer1-plugins-hls
     SUBDIR += gstreamer1-plugins-libde265
@@ -112,7 +112,6 @@
     SUBDIR += gstreamer1-plugins-webrtc
     SUBDIR += gstreamer1-plugins-x264
     SUBDIR += gstreamer1-plugins-x265
-    SUBDIR += gstreamer1-qt
     SUBDIR += gstreamer1-rtsp-server
     SUBDIR += gstreamer1-vaapi
     SUBDIR += gstreamer1-validate

@@ -163,6 +163,7 @@
     SUBDIR += imapfilter
     SUBDIR += imapsync
     SUBDIR += imaptools
+    SUBDIR += imap-tools
     SUBDIR += imaputils
     SUBDIR += isbg
     SUBDIR += isoqlog
@@ -593,6 +594,7 @@
     SUBDIR += rspamd
     SUBDIR += rspamd-devel
     SUBDIR += rss2email3
+    SUBDIR += ruby-notmuch
     SUBDIR += rubygem-actionmailbox60
     SUBDIR += rubygem-actionmailbox61
     SUBDIR += rubygem-actionmailbox70

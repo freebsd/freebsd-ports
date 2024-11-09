@@ -1,5 +1,5 @@
 PORTNAME=	nextcloudclient
-PORTVERSION=	3.14.1
+PORTVERSION=	3.14.2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	deskutils
 
@@ -30,7 +30,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	nextcloud
 GH_PROJECT=	desktop
 
-OPTIONS_DEFINE=			DOCS DEBUG GNOME KDE WEBENGINE
+OPTIONS_DEFINE=			DOCS DEBUG GNOME GUIADDONS KDE WEBENGINE
 OPTIONS_DEFAULT=		GNOME
 OPTIONS_DEFAULT_aarch64=	WEBENGINE
 OPTIONS_DEFAULT_amd64=		WEBENGINE
@@ -38,6 +38,7 @@ OPTIONS_DEFAULT_i386=		WEBENGINE
 
 OPTIONS_SUB=	yes
 
+GUIADDONS_DESC=		Use KDE guiaddons (implies KDE)
 KDE_DESC=		KDE desktop environment support
 WEBENGINE_DESC=		Use Webengine to provide web login flow
 
@@ -51,9 +52,12 @@ DOCS_VARS=		PORTDOCS=*
 GNOME_CMAKE_BOOL=	BUILD_SHELL_INTEGRATION_NAUTILUS
 
 KDE_USES=		xorg
-KDE_USE=		KDE=completion,config,coreaddons,ecm:build,guiaddons,jobwidgets,kio,service,solid,widgetsaddons,windowsystem \
+KDE_USE=		KDE=completion,config,coreaddons,ecm:build,jobwidgets,kio,service,solid,widgetsaddons,windowsystem \
 			XORG=x11
 KDE_CMAKE_BOOL=		BUILD_SHELL_INTEGRATION_DOLPHIN
+
+GUIADDONS_IMPLIES=	KDE
+GUIADDONS_USE=		KDE=guiaddons
 
 WEBENGINE_USE=		QT=location,webchannel,webengine
 WEBENGINE_CMAKE_BOOL=	BUILD_WITH_WEBENGINE
@@ -67,6 +71,10 @@ CMAKE_ARGS+=	-DCMAKE_BUILD_TYPE:STRING=Debug
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|.lst |.lst.sample |' ${WRKSRC}/CMakeLists.txt
+
+post-patch-GUIADDONS-off:
+	@${REINPLACE_CMD} -e '/^find_package.*KF6GuiAddons/d' \
+		${WRKSRC}/src/gui/CMakeLists.txt
 
 pre-configure:
 	@(cd ${WRKSRC} && ${CP} -f sync-exclude.lst sync-exclude.lst.sample)

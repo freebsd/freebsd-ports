@@ -16,9 +16,6 @@ WWW=		https://commons.apache.org/proper/commons-math/
 
 LICENSE=	APACHE20
 
-BROKEN_armv6=		fails to compile: build.xml: Compile failed; see the compiler error output for details
-BROKEN_armv7=		fails to compile: PowellOptimizer.java:301: error: Illegal static declaration in inner class PowellOptimizer.LineSearch
-
 USE_ANT=	yes
 USE_JAVA=	yes
 USE_LOCALE=	en_US.ISO8859-1

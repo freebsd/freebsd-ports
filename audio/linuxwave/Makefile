@@ -1,11 +1,7 @@
 PORTNAME=	linuxwave
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.1.5
-PORTREVISION=	2
+DISTVERSION=	0.2.0
 CATEGORIES=	audio
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	6120822d7c16.patch:-p1 # https://github.com/orhun/linuxwave/pull/28
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Generate music from the entropy of Linux
@@ -18,7 +14,7 @@ BUILD_DEPENDS=	zig>=0.12.0:lang/zig
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	orhun
-GH_TUPLE=	Hejsil:zig-clap:0.8.0:zig_clap/libs/zig-clap
+GH_TUPLE=	Hejsil:zig-clap:0.9.1:zig_clap/../.cache/zig/p/122062d301a203d003547b414237229b09a7980095061697349f8bef41be9c30266b
 MAKE_ENV=	DESTDIR="${STAGEDIR}"
 CONFIGURE_ARGS=	--prefix "${PREFIX}" \
 		${WITH_DEBUG:D:U-Doptimize=ReleaseFast} \

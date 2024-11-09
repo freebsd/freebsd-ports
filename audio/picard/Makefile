@@ -1,5 +1,6 @@
 PORTNAME=	picard
 DISTVERSION=	2.12.3
+PORTREVISION=	1
 CATEGORIES=	audio python
 MASTER_SITES=	https://github.com/metabrainz/${PORTNAME}/releases/download/release-${DISTVERSION}/ \
 		https://data.musicbrainz.org/pub/musicbrainz/${PORTNAME}/
@@ -23,7 +24,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}discid>=1.0:audio/py-discid@${PY_FLAVOR} \
 
 USES=		desktop-file-utils gettext-tools pyqt:5 python
 USE_LOCALE=	en_US.UTF-8
-USE_PYQT=	pyqt5:run sip
+USE_PYQT=	pyqt5:run
 USE_PYTHON=	autoplist noflavors pep517 unittest
 
 CONFLICTS_INSTALL=	picard-tools py*-python-picard # bin/picard

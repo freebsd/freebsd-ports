@@ -7,6 +7,9 @@ MASTER_SITES=	SF
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Dump frames from mpeg movies
 
+DEPRECATED=	Obsolete utility, consider using multimedia/ffmpeg
+EXPIRATION_DATE=2024-12-31
+
 LIB_DEPENDS=	libsmpeg.so:multimedia/smpeg
 
 USES=		sdl

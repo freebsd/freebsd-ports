@@ -1,13 +1,14 @@
 PORTNAME=	gluon
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.18.2
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	lang
 PKGNAMESUFFIX=	-language
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Static, type inferred and embeddable language
-WWW=		https://gluon-lang.org
+WWW=		https://gluon-lang.org \
+		https://github.com/gluon-lang/gluon
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/../LICENSE

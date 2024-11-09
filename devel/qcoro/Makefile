@@ -1,7 +1,6 @@
 PORTNAME=	qcoro
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.10.0
-PORTREVISION=	1
+DISTVERSION=	0.11.0
 CATEGORIES=	devel kde
 PKGNAMESUFFIX=	-${FLAVOR}
 
@@ -15,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSES/MIT.txt
 FLAVORS=	qt5 qt6
 FLAVOR?=	qt5
 
-USES=		cmake compiler:c++20-lang gl pkgconfig qt:${FLAVOR:S/qt//}
+USES=		cmake:testing compiler:c++20-lang gl pkgconfig qt:${FLAVOR:S/qt//}
 USE_GITHUB=	yes
 GH_ACCOUNT=	danvratil
 _USE_GL_qt5=	# empty
@@ -26,9 +25,11 @@ _USE_QT_qt5=	core dbus declarative gui network websockets \
 _USE_QT_qt6=	base declarative websockets
 USE_QT=		${_USE_QT_${FLAVOR}}
 
-CMAKE_OFF=	QCORO_BUILD_EXAMPLES
-CMAKE_ON=	BUILD_SHARED_LIBS
-CMAKE_ARGS=	-DUSE_QT_VERSION=${FLAVOR:S/qt//}
+CMAKE_ARGS=		-DUSE_QT_VERSION=${FLAVOR:S/qt//}
+CMAKE_ON=		BUILD_SHARED_LIBS
+CMAKE_OFF=		QCORO_BUILD_EXAMPLES \
+			QCORO_BUILD_TESTING
+CMAKE_TESTING_ON=	QCORO_BUILD_TESTING
 
 PLIST_SUB=	QT_VER=${FLAVOR:S/qt//} \
 		SHORTVER=${DISTVERSION:R:R} \

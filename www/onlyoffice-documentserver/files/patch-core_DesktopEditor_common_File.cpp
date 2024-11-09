@@ -1,6 +1,6 @@
 --- core/DesktopEditor/common/File.cpp.orig	2023-01-27 21:00:04 UTC
 +++ core/DesktopEditor/common/File.cpp
-@@ -39,11 +39,15 @@
+@@ -39,10 +39,14 @@
  #include <windows.h>
  #endif
  
@@ -12,12 +12,11 @@
 +#if defined(__FreeBSD__)
 +#include <sys/types.h>
 +#include <sys/sysctl.h>
- #endif
 +#endif
- 
- #ifdef _IOS
- const char* fileSystemRepresentation(const std::wstring& sFileName);
-@@ -1783,6 +1787,23 @@ namespace NSFile
+ #include <sys/time.h>
+ #include <utime.h>
+ #endif
+@@ -1915,6 +1919,23 @@ namespace NSFile
  #endif
  			return L"";
  		}

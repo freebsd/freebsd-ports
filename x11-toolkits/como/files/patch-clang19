@@ -1,0 +1,40 @@
+https://github.com/winft/como/issues/29
+
+--- como/render/wayland/platform.h.orig	2024-10-09 12:19:16 UTC
++++ como/render/wayland/platform.h
+@@ -246,16 +246,6 @@ class platform (public)
+         locked++;
+     }
+ 
+-    void unlock()
+-    {
+-        assert(locked > 0);
+-        locked--;
+-
+-        if (!locked) {
+-            this->addRepaintFull();
+-        }
+-    }
+-
+     std::unique_ptr<scene_t> create_scene()
+     {
+         auto setup_hooks = [&, this](auto scene) -> decltype(scene) {
+--- como/render/wayland/xwl_platform.h.orig	2024-10-09 12:19:16 UTC
++++ como/render/wayland/xwl_platform.h
+@@ -259,16 +259,6 @@ class xwl_platform (public)
+         locked++;
+     }
+ 
+-    void unlock()
+-    {
+-        assert(locked > 0);
+-        locked--;
+-
+-        if (!locked) {
+-            this->addRepaintFull();
+-        }
+-    }
+-
+     std::unique_ptr<scene_t> create_scene()
+     {
+         if (is_sw_compositing()) {

@@ -10,6 +10,9 @@ WWW=		https://po4a.org/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Depends on expired textproc/jade
+EXPIRATION_DATE=2025-03-31
+
 BUILD_DEPENDS=	${RUN_DEPENDS} \
 		p5-Pod-Parser>=0:textproc/p5-Pod-Parser
 RUN_DEPENDS=	p5-Term-ReadKey>=2.30:devel/p5-Term-ReadKey \

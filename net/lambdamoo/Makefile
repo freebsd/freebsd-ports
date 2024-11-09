@@ -9,7 +9,12 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The most commonly used program to run MOOs
 WWW=		https://www.moo.mud.org/
 
-USES=		bison
+LICENSE=	XEROX
+LICENSE_NAME=	unknown
+LICENSE_FILE=	${WRKSRC}/server.c
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
+
+USES=		autoreconf:build bison
 GNU_CONFIGURE=	yes
 
 CONFIGURE_ENV=	YACC=${YACC}
@@ -22,6 +27,10 @@ PORTDOCS=	*
 ALL_TARGET=
 
 OPTIONS_DEFINE=	DOCS
+
+	# needs to run just autoconf, autoreconf doesn't work
+pre-configure:
+	cd ${WRKSRC} && ${LOCALBASE}/bin/autoconf${_AUTORECONF}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/moo ${STAGEDIR}${PREFIX}/sbin

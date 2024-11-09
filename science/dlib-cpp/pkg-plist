@@ -6,10 +6,9 @@ include/dlib/any/any_decision_function.h
 include/dlib/any/any_decision_function_abstract.h
 include/dlib/any/any_function.h
 include/dlib/any/any_function_abstract.h
-include/dlib/any/any_function_impl.h
-include/dlib/any/any_function_impl2.h
 include/dlib/any/any_trainer.h
 include/dlib/any/any_trainer_abstract.h
+include/dlib/any/storage.h
 include/dlib/array.h
 include/dlib/array/array_kernel.h
 include/dlib/array/array_kernel_abstract.h
@@ -67,17 +66,17 @@ include/dlib/clustering/modularity_clustering.h
 include/dlib/clustering/modularity_clustering_abstract.h
 include/dlib/clustering/spectral_cluster.h
 include/dlib/clustering/spectral_cluster_abstract.h
-include/dlib/cmake_utils/add_global_compiler_switch.cmake
 include/dlib/cmake_utils/check_if_avx_instructions_executable_on_host.cmake
 include/dlib/cmake_utils/check_if_neon_available.cmake
 include/dlib/cmake_utils/check_if_sse4_instructions_executable_on_host.cmake
 include/dlib/cmake_utils/find_blas.cmake
+include/dlib/cmake_utils/find_ffmpeg.cmake
 include/dlib/cmake_utils/find_libjpeg.cmake
+include/dlib/cmake_utils/find_libjxl.cmake
 include/dlib/cmake_utils/find_libpng.cmake
 include/dlib/cmake_utils/find_libwebp.cmake
 include/dlib/cmake_utils/set_compiler_specific_options.cmake
 include/dlib/cmake_utils/tell_visual_studio_to_use_static_runtime.cmake
-include/dlib/cmake_utils/use_cpp_11.cmake
 include/dlib/cmd_line_parser.h
 include/dlib/cmd_line_parser/cmd_line_parser_check_1.h
 include/dlib/cmd_line_parser/cmd_line_parser_check_c.h
@@ -106,6 +105,7 @@ include/dlib/config_reader/config_reader_kernel_abstract.h
 include/dlib/config_reader/config_reader_thread_safe_1.h
 include/dlib/config_reader/config_reader_thread_safe_abstract.h
 include/dlib/console_progress_indicator.h
+include/dlib/constexpr_if.h
 include/dlib/control.h
 include/dlib/control/approximate_linear_models.h
 include/dlib/control/approximate_linear_models_abstract.h
@@ -246,11 +246,17 @@ include/dlib/external/pybind11/include/pybind11/detail/common.h
 include/dlib/external/pybind11/include/pybind11/detail/descr.h
 include/dlib/external/pybind11/include/pybind11/detail/init.h
 include/dlib/external/pybind11/include/pybind11/detail/internals.h
+include/dlib/external/pybind11/include/pybind11/detail/type_caster_base.h
 include/dlib/external/pybind11/include/pybind11/detail/typeid.h
 include/dlib/external/pybind11/include/pybind11/eigen.h
+include/dlib/external/pybind11/include/pybind11/eigen/common.h
+include/dlib/external/pybind11/include/pybind11/eigen/matrix.h
+include/dlib/external/pybind11/include/pybind11/eigen/tensor.h
 include/dlib/external/pybind11/include/pybind11/embed.h
 include/dlib/external/pybind11/include/pybind11/eval.h
 include/dlib/external/pybind11/include/pybind11/functional.h
+include/dlib/external/pybind11/include/pybind11/gil.h
+include/dlib/external/pybind11/include/pybind11/gil_safe_call_once.h
 include/dlib/external/pybind11/include/pybind11/iostream.h
 include/dlib/external/pybind11/include/pybind11/numpy.h
 include/dlib/external/pybind11/include/pybind11/operators.h
@@ -258,10 +264,16 @@ include/dlib/external/pybind11/include/pybind11/options.h
 include/dlib/external/pybind11/include/pybind11/pybind11.h
 include/dlib/external/pybind11/include/pybind11/pytypes.h
 include/dlib/external/pybind11/include/pybind11/stl.h
+include/dlib/external/pybind11/include/pybind11/stl/filesystem.h
 include/dlib/external/pybind11/include/pybind11/stl_bind.h
+include/dlib/external/pybind11/include/pybind11/type_caster_pyobject_ptr.h
+include/dlib/external/pybind11/include/pybind11/typing.h
 include/dlib/external/pybind11/tools/FindCatch.cmake
 include/dlib/external/pybind11/tools/FindEigen3.cmake
 include/dlib/external/pybind11/tools/FindPythonLibsNew.cmake
+include/dlib/external/pybind11/tools/JoinPaths.cmake
+include/dlib/external/pybind11/tools/pybind11Common.cmake
+include/dlib/external/pybind11/tools/pybind11NewTools.cmake
 include/dlib/external/pybind11/tools/pybind11Tools.cmake
 include/dlib/external/zlib/crc32.h
 include/dlib/external/zlib/deflate.h
@@ -274,6 +286,11 @@ include/dlib/external/zlib/trees.h
 include/dlib/external/zlib/zconf.h
 include/dlib/external/zlib/zlib.h
 include/dlib/external/zlib/zutil.h
+include/dlib/fft/fft.h
+include/dlib/fft/fft_size.h
+include/dlib/fft/fft_stl.h
+include/dlib/fft/kiss_fft.h
+include/dlib/fft/mkl_fft.h
 include/dlib/filtering.h
 include/dlib/filtering/kalman_filter.h
 include/dlib/filtering/kalman_filter_abstract.h
@@ -281,6 +298,7 @@ include/dlib/filtering/rls_filter.h
 include/dlib/filtering/rls_filter_abstract.h
 include/dlib/float_details.h
 include/dlib/fstream
+include/dlib/functional.h
 include/dlib/general_hash/count_bits.h
 include/dlib/general_hash/count_bits_abstract.h
 include/dlib/general_hash/general_hash.h
@@ -299,6 +317,8 @@ include/dlib/geometry/line.h
 include/dlib/geometry/line_abstract.h
 include/dlib/geometry/point_transforms.h
 include/dlib/geometry/point_transforms_abstract.h
+include/dlib/geometry/polygon.h
+include/dlib/geometry/polygon_abstract.h
 include/dlib/geometry/rectangle.h
 include/dlib/geometry/rectangle_abstract.h
 include/dlib/geometry/vector.h
@@ -397,6 +417,8 @@ include/dlib/image_loader/image_loader.h
 include/dlib/image_loader/image_loader_abstract.h
 include/dlib/image_loader/jpeg_loader.h
 include/dlib/image_loader/jpeg_loader_abstract.h
+include/dlib/image_loader/jxl_loader.h
+include/dlib/image_loader/jxl_loader_abstract.h
 include/dlib/image_loader/load_image.h
 include/dlib/image_loader/load_image_abstract.h
 include/dlib/image_loader/png_loader.h
@@ -444,6 +466,8 @@ include/dlib/image_saver/image_saver.h
 include/dlib/image_saver/image_saver_abstract.h
 include/dlib/image_saver/save_jpeg.h
 include/dlib/image_saver/save_jpeg_abstract.h
+include/dlib/image_saver/save_jxl.h
+include/dlib/image_saver/save_jxl_abstract.h
 include/dlib/image_saver/save_png.h
 include/dlib/image_saver/save_png_abstract.h
 include/dlib/image_saver/save_webp.h
@@ -533,12 +557,15 @@ include/dlib/map.h
 include/dlib/map/map_kernel_1.h
 include/dlib/map/map_kernel_abstract.h
 include/dlib/map/map_kernel_c.h
+include/dlib/math.h
+include/dlib/math/bessel.h
+include/dlib/math/details/bessel.h
+include/dlib/math/windows.h
 include/dlib/matlab/call_matlab.h
+include/dlib/matlab/sig_traits.h
 include/dlib/matlab/subprocess_stream.h
 include/dlib/matrix.h
 include/dlib/matrix/cblas_constants.h
-include/dlib/matrix/fft_size.h
-include/dlib/matrix/kiss_fft.h
 include/dlib/matrix/lapack/fortran_id.h
 include/dlib/matrix/lapack/gees.h
 include/dlib/matrix/lapack/geev.h
@@ -586,12 +613,17 @@ include/dlib/matrix/matrix_subexp_abstract.h
 include/dlib/matrix/matrix_trsm.h
 include/dlib/matrix/matrix_utilities.h
 include/dlib/matrix/matrix_utilities_abstract.h
-include/dlib/matrix/mkl_fft.h
 include/dlib/matrix/symmetric_matrix_cache.h
 include/dlib/matrix/symmetric_matrix_cache_abstract.h
 include/dlib/md5.h
 include/dlib/md5/md5_kernel_1.h
 include/dlib/md5/md5_kernel_abstract.h
+include/dlib/media.h
+include/dlib/media/ffmpeg_demuxer.h
+include/dlib/media/ffmpeg_details.h
+include/dlib/media/ffmpeg_muxer.h
+include/dlib/media/ffmpeg_utils.h
+include/dlib/media/sink.h
 include/dlib/member_function_pointer.h
 include/dlib/member_function_pointer/make_mfp.h
 include/dlib/member_function_pointer/make_mfp_abstract.h
@@ -670,7 +702,9 @@ include/dlib/optimization/optimization_stop_strategies.h
 include/dlib/optimization/optimization_stop_strategies_abstract.h
 include/dlib/optimization/optimization_trust_region.h
 include/dlib/optimization/optimization_trust_region_abstract.h
+include/dlib/optional.h
 include/dlib/ostream
+include/dlib/overloaded.h
 include/dlib/pipe.h
 include/dlib/pipe/pipe_kernel_1.h
 include/dlib/pipe/pipe_kernel_abstract.h
@@ -703,6 +737,7 @@ include/dlib/reference_counter.h
 include/dlib/reference_counter/reference_counter_kernel_1.h
 include/dlib/reference_counter/reference_counter_kernel_abstract.h
 include/dlib/revision.h
+include/dlib/scope.h
 include/dlib/sequence.h
 include/dlib/sequence/sequence_compare_1.h
 include/dlib/sequence/sequence_compare_abstract.h
@@ -968,6 +1003,7 @@ include/dlib/test/conditioning_class.h
 include/dlib/test/create_iris_datafile.h
 include/dlib/test/fftr_good_data.h
 include/dlib/test/optimization_test_functions.h
+include/dlib/test/stft_good_data.h
 include/dlib/test/tester.h
 include/dlib/test_for_odr_violations.h
 include/dlib/threads.h
@@ -1023,6 +1059,7 @@ include/dlib/tuple/tuple_abstract.h
 include/dlib/type_safe_union.h
 include/dlib/type_safe_union/type_safe_union_kernel.h
 include/dlib/type_safe_union/type_safe_union_kernel_abstract.h
+include/dlib/type_traits.h
 include/dlib/uintn.h
 include/dlib/unicode.h
 include/dlib/unicode/unicode.h
@@ -1044,21 +1081,21 @@ lib/cmake/dlib/dlib.cmake
 lib/cmake/dlib/dlibConfig.cmake
 lib/cmake/dlib/dlibConfigVersion.cmake
 lib/libdlib.so
-lib/libdlib.so.19.24.0
+lib/libdlib.so.19.24.6
 libdata/pkgconfig/dlib-1.pc
 @dir include/dlib/all
-@dir include/dlib/appveyor
 @dir include/dlib/cmake_utils/test_for_avx
-@dir include/dlib/cmake_utils/test_for_cpp11
 @dir include/dlib/cmake_utils/test_for_cuda
 @dir include/dlib/cmake_utils/test_for_cudnn
 @dir include/dlib/cmake_utils/test_for_libjpeg
+@dir include/dlib/cmake_utils/test_for_libjxl
 @dir include/dlib/cmake_utils/test_for_libpng
+@dir include/dlib/cmake_utils/test_for_libwebp
 @dir include/dlib/cmake_utils/test_for_neon
 @dir include/dlib/cmake_utils/test_for_sse4
 @dir include/dlib/external/libpng/arm
 @dir include/dlib/test/blas_bindings
 @dir include/dlib/test/examples
+@dir include/dlib/test/ffmpeg_data
 @dir include/dlib/test/gui
 @dir include/dlib/test/tools
-@dir include/dlib/travis

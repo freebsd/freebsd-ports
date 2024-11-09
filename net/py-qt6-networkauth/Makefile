@@ -1,21 +1,20 @@
 PORTNAME=	networkauth
 DISTVERSION=	${PYQTNETWORKAUTH_VERSION}
+PORTREVISION=	1
 CATEGORIES=	net devel python
 MASTER_SITES=	${MASTER_SITES_PYQTNETWORKAUTH}
 PKGNAMEPREFIX=	${PYQT_PY_RELNAME}-
 DISTNAME=	${PYQTNETWORKAUTH_DISTNAME}
 
-PYQT_DIST=	yes
-
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Python bindings for the Qt6 toolkit, QtNetworkAuth module
 WWW=		https://riverbankcomputing.com/software/pyqt
 
-BUILD_DEPENDS=	${PY_SETUPTOOLS}
+LICENSE=	${PYQT6_LICENSE}
 
-USES=		gl pyqt:6 python qt:6
+USES=		gl pyqt:6,dist python qt:6
 USE_GL=		opengl
-USE_PYQT=	sip:build pyqt6 qtbuilder
+USE_PYQT=	pyqt6 qtbuilder:build sip:build
 USE_PYTHON=	concurrent flavors
 USE_QT=		base networkauth
 

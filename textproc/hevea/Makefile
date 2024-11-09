@@ -1,8 +1,7 @@
 PORTNAME=	hevea
 PORTVERSION=	2.36
 CATEGORIES=	textproc
-MASTER_SITES=	http://para.inria.fr/~maranget/hevea/distri/ \
-		ftp://ftp.inria.fr/INRIA/moscova/hevea/
+MASTER_SITES=	http://moscova.inria.fr/~maranget/${PORTNAME}/distri/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 

@@ -1,0 +1,7 @@
+StringZilla is the GodZilla of string libraries, using SIMD and SWAR to
+accelerate string operations on modern CPUs. It is up to 10x faster than the
+default and even other SIMD-accelerated string libraries in C, C++, Python,
+and other languages, while covering broad functionality. It accelerates exact
+and fuzzy string matching, edit distance computations, sorting,
+lazily-evaluated ranges to avoid memory allocations, and even random-string
+generators.

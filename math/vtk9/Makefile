@@ -12,8 +12,6 @@ WWW=		https://vtk.org/
 
 LICENSE=	BSD3CLAUSE
 
-BROKEN_FreeBSD_13_aarch64=	clang crashes, see https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=275784
-
 LIB_DEPENDS=	\
 		libexpat.so:textproc/expat2 \
 		libfreetype.so:print/freetype2 \

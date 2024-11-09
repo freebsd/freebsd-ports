@@ -1,6 +1,6 @@
---- src/computefourier-1.0-2.0.cc.orig	2013-06-13 08:12:25.000000000 -0400
-+++ src/computefourier-1.0-2.0.cc	2013-08-09 00:26:54.000000000 -0400
-@@ -248,8 +248,13 @@
+--- src/computefourier-1.0-2.0.cc.orig	2013-06-13 12:12:25 UTC
++++ src/computefourier-1.0-2.0.cc
+@@ -248,8 +248,13 @@ inner_loop_locate(sfft_v1v2_data * data, complex_t * o
            __m128d ad_bc = _mm_mul_pd(ab, dc);
            __m128d ac_mbd = _mm_mul_pd(ac_bd, signs);
  
@@ -15,7 +15,7 @@
            unsigned int i_mod_B_p_offset = (i & B2_m_1) + offset;
            __m128d xy = _mm_load_pd(d_x_sampt + i_mod_B_p_offset);
            __m128d st = _mm_add_pd(xy, ab_times_cd);
-@@ -283,7 +288,13 @@
+@@ -283,7 +288,13 @@ inner_loop_locate(sfft_v1v2_data * data, complex_t * o
        __m128d ab_square = _mm_mul_pd(ab, ab);
        __m128d cd_square = _mm_mul_pd(cd, cd);
  
@@ -29,7 +29,7 @@
  
        _mm_store_pd(samples + j, r);
      }
-@@ -390,11 +401,23 @@
+@@ -390,11 +401,23 @@ estimate_values(sfft_v1v2_data * data, const int *hits
            __m128d ad_bc = _mm_mul_pd(ab, dc);
            __m128d mad_bc = _mm_mul_pd(ad_bc, signs);
  

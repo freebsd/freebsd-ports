@@ -1,6 +1,6 @@
 PORTNAME=	adios2
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.10.1
+DISTVERSION=	2.10.2
 CATEGORIES=	misc science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -56,5 +56,8 @@ DOCSDIR=	${PREFIX}/share/doc/ADIOS2
 PORTDOCS=	*
 
 # several tests fail, see https://github.com/ornladios/ADIOS2/issues/3286
+
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/adios2/bindings/adios2_bindings${PYTHON_EXT_SUFFIX}.so
 
 .include <bsd.port.mk>

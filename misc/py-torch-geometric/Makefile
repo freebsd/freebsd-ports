@@ -1,5 +1,5 @@
 PORTNAME=	torch-geometric
-DISTVERSION=	2.6.0
+DISTVERSION=	2.6.1
 CATEGORIES=	misc python # machine-learning
 #MASTER_SITES=	PYPI # no tests
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,7 +15,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}flit-core>0:devel/py-flit-core@${PY_FLAVOR
 		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aiohttp>0:www/py-aiohttp@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dgl>0:math/py-dgl@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}fsspec>0:devel/py-fsspec@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}fsspec>0:filesystems/py-fsspec@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}Jinja2>0:devel/py-Jinja2@${PY_FLAVOR} \
 		${PYNUMPY}  \
 		${PYTHON_PKGNAMEPREFIX}psutil>=5.8.0:sysutils/py-psutil@${PY_FLAVOR} \
@@ -47,5 +47,7 @@ GH_ACCOUNT=	pyg-team
 GH_PROJECT=	pytorch_geometric
 
 NO_ARCH=	yes
+
+# tests as of version 2.6.1: 17 failed, 5452 passed, 986 skipped, 12 warnings in 330.89s (0:05:30)
 
 .include <bsd.port.mk>

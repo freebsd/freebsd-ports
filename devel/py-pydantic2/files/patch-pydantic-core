@@ -1,4 +1,7 @@
-Obtained:	https://github.com/pydantic/pydantic/commit/9b69920888054df4ef544ecbdc03e09b90646ac2
+Obtained from:	https://github.com/pydantic/pydantic/commit/9b69920888054df4ef544ecbdc03e09b90646ac2
+		https://github.com/pydantic/pydantic/commit/51cf3cbfa767abfba1048cae41ea766d6add4f4a
+		https://github.com/pydantic/pydantic/commit/27afdfc9120c7a5b1071d907a25c37b46b103292
+		https://github.com/pydantic/pydantic/commit/6b92e9dab9eb3e649af148d5d8a9a8d2d2cd31d2
 
 --- pydantic/_internal/_config.py.orig	2020-02-02 00:00:00 UTC
 +++ pydantic/_internal/_config.py
@@ -11,63 +14,818 @@ Obtained:	https://github.com/pydantic/pydantic/commit/9b69920888054df4ef544ecbdc
  
  if not TYPE_CHECKING:
      # See PyCharm issues https://youtrack.jetbrains.com/issue/PY-21915
-@@ -69,7 +69,7 @@ class ConfigWrapper:
-     strict: bool
-     # whether instances of models and dataclasses (including subclass instances) should re-validate, default 'never'
-     revalidate_instances: Literal['always', 'never', 'subclass-instances']
--    ser_json_timedelta: Literal['iso8601', 'float']
-+    ser_json_timedelta: Literal['iso8601', 'seconds_float', 'milliseconds_float']
-     ser_json_bytes: Literal['utf8', 'base64', 'hex']
-     val_json_bytes: Literal['utf8', 'base64', 'hex']
-     ser_json_inf_nan: Literal['null', 'constants', 'strings']
-@@ -168,6 +168,14 @@ class ConfigWrapper:
-             A `CoreConfig` object created from config.
-         """
-         config = self.config_dict
+--- pydantic/_internal/_core_utils.py.orig	2020-02-02 00:00:00 UTC
++++ pydantic/_internal/_core_utils.py
+@@ -44,10 +44,6 @@ Used in a `Tag` schema to specify the tag used for a d
+ """
+ Used in a `Tag` schema to specify the tag used for a discriminated union.
+ """
+-HAS_INVALID_SCHEMAS_METADATA_KEY = 'pydantic.internal.invalid'
+-"""Used to mark a schema that is invalid because it refers to a definition that was not yet defined when the
+-schema was first encountered.
+-"""
+ 
+ 
+ def is_core_schema(
+@@ -146,10 +142,7 @@ def define_expected_missing_refs(
+     expected_missing_refs = allowed_missing_refs.difference(refs)
+     if expected_missing_refs:
+         definitions: list[core_schema.CoreSchema] = [
+-            # TODO: Replace this with a (new) CoreSchema that, if present at any level, makes validation fail
+-            #   Issue: https://github.com/pydantic/pydantic-core/issues/619
+-            core_schema.none_schema(ref=ref, metadata={HAS_INVALID_SCHEMAS_METADATA_KEY: True})
+-            for ref in expected_missing_refs
++            core_schema.invalid_schema(ref=ref) for ref in expected_missing_refs
+         ]
+         return core_schema.definitions_schema(schema, definitions)
+     return None
+@@ -160,11 +153,11 @@ def collect_invalid_schemas(schema: core_schema.CoreSc
+ 
+     def _is_schema_valid(s: core_schema.CoreSchema, recurse: Recurse) -> core_schema.CoreSchema:
+         nonlocal invalid
+-        if 'metadata' in s:
+-            metadata = s['metadata']
+-            if HAS_INVALID_SCHEMAS_METADATA_KEY in metadata:
+-                invalid = metadata[HAS_INVALID_SCHEMAS_METADATA_KEY]
+-                return s
 +
-+        if config.get('ser_json_timedelta') == 'float':
-+            warnings.warn(
-+                'The `float` option for `ser_json_timedelta` has been deprecated in favor of `seconds_float`. Please use this setting instead.',
-+                PydanticDeprecatedSince210,
-+                stacklevel=2,
-+            )
-+            config['ser_json_timedelta'] = 'seconds_float'
++        if s['type'] == 'invalid':
++            invalid = True
++            return s
++
+         return recurse(s, _is_schema_valid)
  
-         core_config_values = {
-             'title': config.get('title') or (obj and obj.__name__),
---- pydantic/config.py.orig	2020-02-02 00:00:00 UTC
-+++ pydantic/config.py
-@@ -563,13 +563,15 @@ class ConfigDict(TypedDict, total=False):
-     3. Using `'never'` we would have gotten `user=SubUser(hobbies=['scuba diving'], sins=['lying'])`.
-     """
- 
--    ser_json_timedelta: Literal['iso8601', 'float']
-+    ser_json_timedelta: Literal['iso8601', 'seconds_float', 'milliseconds_float']
-     """
--    The format of JSON serialized timedeltas. Accepts the string values of `'iso8601'` and
--    `'float'`. Defaults to `'iso8601'`.
-+    The format of JSON serialized timedeltas. Accepts the string values of `'iso8601'`,
-+    `'seconds_float'`, and `'milliseconds_float'`. Defaults to `'iso8601'`.
- 
-     - `'iso8601'` will serialize timedeltas to ISO 8601 durations.
--    - `'float'` will serialize timedeltas to the total number of seconds.
-+    - `'seconds_float'` will serialize timedeltas to the total number of seconds.
-+    - `'milliseconds_float'` will serialize timedeltas to the total number of milliseconds.
-+        NOTE: `'float' is deprecated in v2.10 in favour of `'milliseconds_float'`
-     """
- 
-     ser_json_bytes: Literal['utf8', 'base64', 'hex']
+     walk_core_schema(schema, _is_schema_valid)
 --- pydantic/json_schema.py.orig	2020-02-02 00:00:00 UTC
 +++ pydantic/json_schema.py
-@@ -720,7 +720,7 @@ class GenerateJsonSchema:
-         Returns:
-             The generated JSON schema.
-         """
--        if self._config.ser_json_timedelta == 'float':
-+        if self._config.ser_json_timedelta in {'milliseconds_float', 'seconds_float'}:
-             return {'type': 'number'}
-         return {'type': 'string', 'format': 'duration'}
+@@ -555,6 +555,12 @@ class GenerateJsonSchema:
+         return json_schema
  
+     # ### Schema generation methods
++
++    def invalid_schema(self, schema: core_schema.InvalidSchema) -> JsonSchemaValue:
++        """Placeholder - should never be called."""
++
++        raise RuntimeError('Cannot generate schema for invalid_schema. This is a bug! Please report it.')
++
+     def any_schema(self, schema: core_schema.AnySchema) -> JsonSchemaValue:
+         """Generates a JSON schema that matches any value.
+ 
+--- pydantic/networks.py.orig	2020-02-02 00:00:00 UTC
++++ pydantic/networks.py
+@@ -4,13 +4,16 @@ import re
+ 
+ import dataclasses as _dataclasses
+ import re
++from dataclasses import fields
+ from importlib.metadata import version
+ from ipaddress import IPv4Address, IPv4Interface, IPv4Network, IPv6Address, IPv6Interface, IPv6Network
+-from typing import TYPE_CHECKING, Any
++from typing import TYPE_CHECKING, Any, ClassVar
+ 
+ from pydantic_core import MultiHostUrl, PydanticCustomError, Url, core_schema
+ from typing_extensions import Annotated, Self, TypeAlias
+ 
++from pydantic.errors import PydanticUserError
++
+ from ._internal import _fields, _repr, _schema_generation_shared
+ from ._migration import getattr_migration
+ from .annotated_handlers import GetCoreSchemaHandler
+@@ -86,136 +89,294 @@ class UrlConstraints(_fields.PydanticMetadata):
+             )
+         )
+ 
++    @property
++    def defined_constraints(self) -> dict[str, Any]:
++        """Fetch a key / value mapping of constraints to values that are not None. Used for core schema updates."""
++        return {field.name: getattr(self, field.name) for field in fields(self)}
+ 
+-AnyUrl = Url
+-"""Base type for all URLs.
+ 
+-* Any scheme allowed
+-* Top-level domain (TLD) not required
+-* Host required
++# TODO: there's a lot of repeated code in these two base classes - should we consolidate, or does that up
++# the complexity enough that it's not worth saving a few lines?
+ 
+-Assuming an input URL of `http://samuel:pass@example.com:8000/the/path/?query=here#fragment=is;this=bit`,
+-the types export the following properties:
+ 
+-- `scheme`: the URL scheme (`http`), always set.
+-- `host`: the URL host (`example.com`), always set.
+-- `username`: optional username if included (`samuel`).
+-- `password`: optional password if included (`pass`).
+-- `port`: optional port (`8000`).
+-- `path`: optional path (`/the/path/`).
+-- `query`: optional URL query (for example, `GET` arguments or "search string", such as `query=here`).
+-- `fragment`: optional fragment (`fragment=is;this=bit`).
+-"""
+-AnyHttpUrl = Annotated[Url, UrlConstraints(allowed_schemes=['http', 'https'])]
+-"""A type that will accept any http or https URL.
++class _BaseUrl(Url):
++    _constraints: ClassVar[UrlConstraints] = UrlConstraints()
+ 
+-* TLD not required
+-* Host required
+-"""
+-HttpUrl = Annotated[Url, UrlConstraints(max_length=2083, allowed_schemes=['http', 'https'])]
+-"""A type that will accept any http or https URL.
++    @classmethod
++    def __get_pydantic_core_schema__(cls, source: type[Any], handler: GetCoreSchemaHandler) -> core_schema.CoreSchema:
++        if issubclass(cls, source):
++            return core_schema.url_schema(**cls._constraints.defined_constraints)
++        else:
++            schema = handler(source)
++            # TODO: this logic is used in types.py as well in the _check_annotated_type function, should we move that to somewhere more central?
++            if annotated_type := schema['type'] not in ('url', 'multi-host-url'):
++                raise PydanticUserError(
++                    f"'{cls.__name__}' cannot annotate '{annotated_type}'.", code='invalid-annotated-type'
++                )
++            for constraint_key, constraint_value in cls._constraints.defined_constraints.items():
++                schema[constraint_key] = constraint_value
++            return schema
+ 
+-* TLD not required
+-* Host required
+-* Max length 2083
+ 
+-```py
+-from pydantic import BaseModel, HttpUrl, ValidationError
++class _BaseMultiHostUrl(MultiHostUrl):
++    _constraints: ClassVar[UrlConstraints] = UrlConstraints()
+ 
+-class MyModel(BaseModel):
+-    url: HttpUrl
++    @classmethod
++    def __get_pydantic_core_schema__(cls, source: type[Any], handler: GetCoreSchemaHandler) -> core_schema.CoreSchema:
++        if issubclass(cls, source):
++            return core_schema.multi_host_url_schema(**cls._constraints.defined_constraints)
++        else:
++            schema = handler(source)
++            # TODO: this logic is used in types.py as well in the _check_annotated_type function, should we move that to somewhere more central?
++            if annotated_type := schema['type'] not in ('url', 'multi-host-url'):
++                raise PydanticUserError(
++                    f"'{cls.__name__}' cannot annotate '{annotated_type}'.", code='invalid-annotated-type'
++                )
++            for constraint_key, constraint_value in cls._constraints.defined_constraints.items():
++                schema[constraint_key] = constraint_value
++            return schema
+ 
+-m = MyModel(url='http://www.example.com')  # (1)!
+-print(m.url)
+-#> http://www.example.com/
+ 
+-try:
+-    MyModel(url='ftp://invalid.url')
+-except ValidationError as e:
+-    print(e)
+-    '''
+-    1 validation error for MyModel
+-    url
+-      URL scheme should be 'http' or 'https' [type=url_scheme, input_value='ftp://invalid.url', input_type=str]
+-    '''
++class AnyUrl(_BaseUrl):
++    """Base type for all URLs.
+ 
+-try:
+-    MyModel(url='not a url')
+-except ValidationError as e:
+-    print(e)
+-    '''
+-    1 validation error for MyModel
+-    url
+-      Input should be a valid URL, relative URL without a base [type=url_parsing, input_value='not a url', input_type=str]
+-    '''
+-```
++    * Any scheme allowed
++    * Top-level domain (TLD) not required
++    * Host required
+ 
+-1. Note: mypy would prefer `m = MyModel(url=HttpUrl('http://www.example.com'))`, but Pydantic will convert the string to an HttpUrl instance anyway.
++    Assuming an input URL of `http://samuel:pass@example.com:8000/the/path/?query=here#fragment=is;this=bit`,
++    the types export the following properties:
+ 
+-"International domains" (e.g. a URL where the host or TLD includes non-ascii characters) will be encoded via
+-[punycode](https://en.wikipedia.org/wiki/Punycode) (see
+-[this article](https://www.xudongz.com/blog/2017/idn-phishing/) for a good description of why this is important):
++    - `scheme`: the URL scheme (`http`), always set.
++    - `host`: the URL host (`example.com`), always set.
++    - `username`: optional username if included (`samuel`).
++    - `password`: optional password if included (`pass`).
++    - `port`: optional port (`8000`).
++    - `path`: optional path (`/the/path/`).
++    - `query`: optional URL query (for example, `GET` arguments or "search string", such as `query=here`).
++    - `fragment`: optional fragment (`fragment=is;this=bit`).
++    """
+ 
+-```py
+-from pydantic import BaseModel, HttpUrl
++    _constraints = UrlConstraints(host_required=True)
+ 
+-class MyModel(BaseModel):
+-    url: HttpUrl
++    @property
++    def host(self) -> str:
++        """The required URL host."""
++        ...
+ 
+-m1 = MyModel(url='http://puny£code.com')
+-print(m1.url)
+-#> http://xn--punycode-eja.com/
+-m2 = MyModel(url='https://www.аррӏе.com/')
+-print(m2.url)
+-#> https://www.xn--80ak6aa92e.com/
+-m3 = MyModel(url='https://www.example.珠宝/')
+-print(m3.url)
+-#> https://www.example.xn--pbt977c/
+-```
+ 
++class AnyHttpUrl(_BaseUrl):
++    """A type that will accept any http or https URL.
+ 
+-!!! warning "Underscores in Hostnames"
+-    In Pydantic, underscores are allowed in all parts of a domain except the TLD.
+-    Technically this might be wrong - in theory the hostname cannot have underscores, but subdomains can.
++    * TLD not required
++    * Host required
++    """
+ 
+-    To explain this; consider the following two cases:
++    _constraints = UrlConstraints(host_required=True, allowed_schemes=['http', 'https'])
+ 
+-    - `exam_ple.co.uk`: the hostname is `exam_ple`, which should not be allowed since it contains an underscore.
+-    - `foo_bar.example.com` the hostname is `example`, which should be allowed since the underscore is in the subdomain.
++    @property
++    def host(self) -> str:
++        """The required URL host."""
++        ...
+ 
+-    Without having an exhaustive list of TLDs, it would be impossible to differentiate between these two. Therefore
+-    underscores are allowed, but you can always do further validation in a validator if desired.
+ 
+-    Also, Chrome, Firefox, and Safari all currently accept `http://exam_ple.com` as a URL, so we're in good
+-    (or at least big) company.
+-"""
+-AnyWebsocketUrl = Annotated[Url, UrlConstraints(allowed_schemes=['ws', 'wss'])]
+-"""A type that will accept any ws or wss URL.
++class HttpUrl(_BaseUrl):
++    """A type that will accept any http or https URL.
+ 
+-* TLD not required
+-* Host required
+-"""
+-WebsocketUrl = Annotated[Url, UrlConstraints(max_length=2083, allowed_schemes=['ws', 'wss'])]
+-"""A type that will accept any ws or wss URL.
++    * TLD not required
++    * Host required
++    * Max length 2083
+ 
+-* TLD not required
+-* Host required
+-* Max length 2083
+-"""
+-FileUrl = Annotated[Url, UrlConstraints(allowed_schemes=['file'])]
+-"""A type that will accept any file URL.
++    ```py
++    from pydantic import BaseModel, HttpUrl, ValidationError
+ 
+-* Host not required
+-"""
+-FtpUrl = Annotated[Url, UrlConstraints(allowed_schemes=['ftp'])]
+-"""A type that will accept ftp URL.
++    class MyModel(BaseModel):
++        url: HttpUrl
+ 
+-* TLD not required
+-* Host required
+-"""
+-PostgresDsn = Annotated[
+-    MultiHostUrl,
+-    UrlConstraints(
++    m = MyModel(url='http://www.example.com')  # (1)!
++    print(m.url)
++    #> http://www.example.com/
++
++    try:
++        MyModel(url='ftp://invalid.url')
++    except ValidationError as e:
++        print(e)
++        '''
++        1 validation error for MyModel
++        url
++          URL scheme should be 'http' or 'https' [type=url_scheme, input_value='ftp://invalid.url', input_type=str]
++        '''
++
++    try:
++        MyModel(url='not a url')
++    except ValidationError as e:
++        print(e)
++        '''
++        1 validation error for MyModel
++        url
++          Input should be a valid URL, relative URL without a base [type=url_parsing, input_value='not a url', input_type=str]
++        '''
++    ```
++
++    1. Note: mypy would prefer `m = MyModel(url=HttpUrl('http://www.example.com'))`, but Pydantic will convert the string to an HttpUrl instance anyway.
++
++    "International domains" (e.g. a URL where the host or TLD includes non-ascii characters) will be encoded via
++    [punycode](https://en.wikipedia.org/wiki/Punycode) (see
++    [this article](https://www.xudongz.com/blog/2017/idn-phishing/) for a good description of why this is important):
++
++    ```py
++    from pydantic import BaseModel, HttpUrl
++
++    class MyModel(BaseModel):
++        url: HttpUrl
++
++    m1 = MyModel(url='http://puny£code.com')
++    print(m1.url)
++    #> http://xn--punycode-eja.com/
++    m2 = MyModel(url='https://www.аррӏе.com/')
++    print(m2.url)
++    #> https://www.xn--80ak6aa92e.com/
++    m3 = MyModel(url='https://www.example.珠宝/')
++    print(m3.url)
++    #> https://www.example.xn--pbt977c/
++    ```
++
++
++    !!! warning "Underscores in Hostnames"
++        In Pydantic, underscores are allowed in all parts of a domain except the TLD.
++        Technically this might be wrong - in theory the hostname cannot have underscores, but subdomains can.
++
++        To explain this; consider the following two cases:
++
++        - `exam_ple.co.uk`: the hostname is `exam_ple`, which should not be allowed since it contains an underscore.
++        - `foo_bar.example.com` the hostname is `example`, which should be allowed since the underscore is in the subdomain.
++
++        Without having an exhaustive list of TLDs, it would be impossible to differentiate between these two. Therefore
++        underscores are allowed, but you can always do further validation in a validator if desired.
++
++        Also, Chrome, Firefox, and Safari all currently accept `http://exam_ple.com` as a URL, so we're in good
++        (or at least big) company.
++    """
++
++    _constraints = UrlConstraints(max_length=2083, allowed_schemes=['http', 'https'], host_required=True)
++
++    @property
++    def host(self) -> str:
++        """The required URL host."""
++        ...
++
++
++class AnyWebsocketUrl(_BaseUrl):
++    """A type that will accept any ws or wss URL.
++
++    * TLD not required
++    * Host required
++    """
++
++    _constraints = UrlConstraints(allowed_schemes=['ws', 'wss'], host_required=True)
++
++    @property
++    def host(self) -> str:
++        """The required URL host."""
++        ...
++
++
++class WebsocketUrl(_BaseUrl):
++    """A type that will accept any ws or wss URL.
++
++    * TLD not required
++    * Host required
++    * Max length 2083
++    """
++
++    _constraints = UrlConstraints(max_length=2083, allowed_schemes=['ws', 'wss'], host_required=True)
++
++    @property
++    def host(self) -> str:
++        """The required URL host."""
++        ...
++
++
++class FileUrl(_BaseUrl):
++    """A type that will accept any file URL.
++
++    * Host not required
++    """
++
++    _constraints = UrlConstraints(allowed_schemes=['file'])
++
++
++class FtpUrl(_BaseUrl):
++    """A type that will accept ftp URL.
++
++    * TLD not required
++    * Host required
++    """
++
++    _constraints = UrlConstraints(allowed_schemes=['ftp'], host_required=True)
++
++
++class PostgresDsn(_BaseMultiHostUrl):
++    """A type that will accept any Postgres DSN.
++
++    * User info required
++    * TLD not required
++    * Host required
++    * Supports multiple hosts
++
++    If further validation is required, these properties can be used by validators to enforce specific behaviour:
++
++    ```py
++    from pydantic import (
++        BaseModel,
++        HttpUrl,
++        PostgresDsn,
++        ValidationError,
++        field_validator,
++    )
++
++    class MyModel(BaseModel):
++        url: HttpUrl
++
++    m = MyModel(url='http://www.example.com')
++
++    # the repr() method for a url will display all properties of the url
++    print(repr(m.url))
++    #> Url('http://www.example.com/')
++    print(m.url.scheme)
++    #> http
++    print(m.url.host)
++    #> www.example.com
++    print(m.url.port)
++    #> 80
++
++    class MyDatabaseModel(BaseModel):
++        db: PostgresDsn
++
++        @field_validator('db')
++        def check_db_name(cls, v):
++            assert v.path and len(v.path) > 1, 'database must be provided'
++            return v
++
++    m = MyDatabaseModel(db='postgres://user:pass@localhost:5432/foobar')
++    print(m.db)
++    #> postgres://user:pass@localhost:5432/foobar
++
++    try:
++        MyDatabaseModel(db='postgres://user:pass@localhost:5432')
++    except ValidationError as e:
++        print(e)
++        '''
++        1 validation error for MyDatabaseModel
++        db
++          Assertion failed, database must be provided
++        assert (None)
++         +  where None = MultiHostUrl('postgres://user:pass@localhost:5432').path [type=assertion_error, input_value='postgres://user:pass@localhost:5432', input_type=str]
++        '''
++    ```
++    """
++
++    _constraints = UrlConstraints(
+         host_required=True,
+         allowed_schemes=[
+             'postgres',
+@@ -228,130 +389,118 @@ PostgresDsn = Annotated[
+             'postgresql+py-postgresql',
+             'postgresql+pygresql',
+         ],
+-    ),
+-]
+-"""A type that will accept any Postgres DSN.
++    )
+ 
+-* User info required
+-* TLD not required
+-* Host required
+-* Supports multiple hosts
++    @property
++    def host(self) -> str:
++        """The required URL host."""
++        ...
+ 
+-If further validation is required, these properties can be used by validators to enforce specific behaviour:
+ 
+-```py
+-from pydantic import (
+-    BaseModel,
+-    HttpUrl,
+-    PostgresDsn,
+-    ValidationError,
+-    field_validator,
+-)
++class CockroachDsn(_BaseUrl):
++    """A type that will accept any Cockroach DSN.
+ 
+-class MyModel(BaseModel):
+-    url: HttpUrl
++    * User info required
++    * TLD not required
++    * Host required
++    """
+ 
+-m = MyModel(url='http://www.example.com')
++    _constraints = UrlConstraints(
++        host_required=True,
++        allowed_schemes=[
++            'cockroachdb',
++            'cockroachdb+psycopg2',
++            'cockroachdb+asyncpg',
++        ],
++    )
+ 
+-# the repr() method for a url will display all properties of the url
+-print(repr(m.url))
+-#> Url('http://www.example.com/')
+-print(m.url.scheme)
+-#> http
+-print(m.url.host)
+-#> www.example.com
+-print(m.url.port)
+-#> 80
++    @property
++    def host(self) -> str:
++        """The required URL host."""
++        ...
+ 
+-class MyDatabaseModel(BaseModel):
+-    db: PostgresDsn
+ 
+-    @field_validator('db')
+-    def check_db_name(cls, v):
+-        assert v.path and len(v.path) > 1, 'database must be provided'
+-        return v
++class AmqpDsn(_BaseUrl):
++    """A type that will accept any AMQP DSN.
+ 
+-m = MyDatabaseModel(db='postgres://user:pass@localhost:5432/foobar')
+-print(m.db)
+-#> postgres://user:pass@localhost:5432/foobar
++    * User info required
++    * TLD not required
++    * Host not required
++    """
+ 
+-try:
+-    MyDatabaseModel(db='postgres://user:pass@localhost:5432')
+-except ValidationError as e:
+-    print(e)
+-    '''
+-    1 validation error for MyDatabaseModel
+-    db
+-      Assertion failed, database must be provided
+-    assert (None)
+-     +  where None = MultiHostUrl('postgres://user:pass@localhost:5432').path [type=assertion_error, input_value='postgres://user:pass@localhost:5432', input_type=str]
+-    '''
+-```
+-"""
++    _constraints = UrlConstraints(allowed_schemes=['amqp', 'amqps'])
+ 
+-CockroachDsn = Annotated[
+-    Url,
+-    UrlConstraints(
++
++class RedisDsn(_BaseUrl):
++    """A type that will accept any Redis DSN.
++
++    * User info required
++    * TLD not required
++    * Host required (e.g., `rediss://:pass@localhost`)
++    """
++
++    _constraints = UrlConstraints(
++        allowed_schemes=['redis', 'rediss'],
++        default_host='localhost',
++        default_port=6379,
++        default_path='/0',
+         host_required=True,
+-        allowed_schemes=[
+-            'cockroachdb',
+-            'cockroachdb+psycopg2',
+-            'cockroachdb+asyncpg',
+-        ],
+-    ),
+-]
+-"""A type that will accept any Cockroach DSN.
++    )
+ 
+-* User info required
+-* TLD not required
+-* Host required
+-"""
+-AmqpDsn = Annotated[Url, UrlConstraints(allowed_schemes=['amqp', 'amqps'])]
+-"""A type that will accept any AMQP DSN.
++    @property
++    def host(self) -> str:
++        """The required URL host."""
++        ...
+ 
+-* User info required
+-* TLD not required
+-* Host required
+-"""
+-RedisDsn = Annotated[
+-    Url,
+-    UrlConstraints(allowed_schemes=['redis', 'rediss'], default_host='localhost', default_port=6379, default_path='/0'),
+-]
+-"""A type that will accept any Redis DSN.
+ 
+-* User info required
+-* TLD not required
+-* Host required (e.g., `rediss://:pass@localhost`)
+-"""
+-MongoDsn = Annotated[MultiHostUrl, UrlConstraints(allowed_schemes=['mongodb', 'mongodb+srv'], default_port=27017)]
+-"""A type that will accept any MongoDB DSN.
++class MongoDsn(_BaseMultiHostUrl):
++    """A type that will accept any MongoDB DSN.
+ 
+-* User info not required
+-* Database name not required
+-* Port not required
+-* User info may be passed without user part (e.g., `mongodb://mongodb0.example.com:27017`).
+-"""
+-KafkaDsn = Annotated[Url, UrlConstraints(allowed_schemes=['kafka'], default_host='localhost', default_port=9092)]
+-"""A type that will accept any Kafka DSN.
++    * User info not required
++    * Database name not required
++    * Port not required
++    * User info may be passed without user part (e.g., `mongodb://mongodb0.example.com:27017`).
++    """
+ 
+-* User info required
+-* TLD not required
+-* Host required
+-"""
+-NatsDsn = Annotated[
+-    MultiHostUrl,
+-    UrlConstraints(allowed_schemes=['nats', 'tls', 'ws', 'wss'], default_host='localhost', default_port=4222),
+-]
+-"""A type that will accept any NATS DSN.
++    _constraints = UrlConstraints(allowed_schemes=['mongodb', 'mongodb+srv'], default_port=27017)
+ 
+-NATS is a connective technology built for the ever increasingly hyper-connected world.
+-It is a single technology that enables applications to securely communicate across
+-any combination of cloud vendors, on-premise, edge, web and mobile, and devices.
+-More: https://nats.io
+-"""
+-MySQLDsn = Annotated[
+-    Url,
+-    UrlConstraints(
++
++class KafkaDsn(_BaseUrl):
++    """A type that will accept any Kafka DSN.
++
++    * User info required
++    * TLD not required
++    * Host required
++    """
++
++    _constraints = UrlConstraints(
++        allowed_schemes=['kafka'], default_host='localhost', default_port=9092, host_required=True
++    )
++
++
++class NatsDsn(_BaseMultiHostUrl):
++    """A type that will accept any NATS DSN.
++
++    NATS is a connective technology built for the ever increasingly hyper-connected world.
++    It is a single technology that enables applications to securely communicate across
++    any combination of cloud vendors, on-premise, edge, web and mobile, and devices.
++    More: https://nats.io
++    """
++
++    _constraints = UrlConstraints(
++        allowed_schemes=['nats', 'tls', 'ws', 'wss'], default_host='localhost', default_port=4222
++    )
++
++
++class MySQLDsn(_BaseUrl):
++    """A type that will accept any MySQL DSN.
++
++    * User info required
++    * TLD not required
++    * Host required
++    """
++
++    _constraints = UrlConstraints(
+         allowed_schemes=[
+             'mysql',
+             'mysql+mysqlconnector',
+@@ -363,54 +512,73 @@ MySQLDsn = Annotated[
+             'mysql+pyodbc',
+         ],
+         default_port=3306,
+-    ),
+-]
+-"""A type that will accept any MySQL DSN.
++        host_required=True,
++    )
+ 
+-* User info required
+-* TLD not required
+-* Host required
+-"""
+-MariaDBDsn = Annotated[
+-    Url,
+-    UrlConstraints(
++    @property
++    def host(self) -> str:
++        """The required URL host."""
++        ...
++
++
++class MariaDBDsn(_BaseUrl):
++    """A type that will accept any MariaDB DSN.
++
++    * User info required
++    * TLD not required
++    * Host required
++    """
++
++    _constraints = UrlConstraints(
+         allowed_schemes=['mariadb', 'mariadb+mariadbconnector', 'mariadb+pymysql'],
+         default_port=3306,
+-    ),
+-]
+-"""A type that will accept any MariaDB DSN.
++        host_required=True,
++    )
+ 
+-* User info required
+-* TLD not required
+-* Host required
+-"""
+-ClickHouseDsn = Annotated[
+-    Url,
+-    UrlConstraints(
++    @property
++    def host(self) -> str:
++        """The required URL host."""
++        ...
++
++
++class ClickHouseDsn(_BaseUrl):
++    """A type that will accept any ClickHouse DSN.
++
++    * User info required
++    * TLD not required
++    * Host required
++    """
++
++    _constraints = UrlConstraints(
+         allowed_schemes=['clickhouse+native', 'clickhouse+asynch'],
+         default_host='localhost',
+         default_port=9000,
+-    ),
+-]
+-"""A type that will accept any ClickHouse DSN.
++        host_required=True,
++    )
+ 
+-* User info required
+-* TLD not required
+-* Host required
+-"""
+-SnowflakeDsn = Annotated[
+-    Url,
+-    UrlConstraints(
++    @property
++    def host(self) -> str:
++        """The required URL host."""
++        ...
++
++
++class SnowflakeDsn(_BaseUrl):
++    """A type that will accept any Snowflake DSN.
++
++    * User info required
++    * TLD not required
++    * Host required
++    """
++
++    _constraints = UrlConstraints(
+         allowed_schemes=['snowflake'],
+         host_required=True,
+-    ),
+-]
+-"""A type that will accept any Snowflake DSN.
++    )
+ 
+-* User info required
+-* TLD not required
+-* Host required
+-"""
++    @property
++    def host(self) -> str:
++        """The required URL host."""
++        ...
+ 
+ 
+ def import_email_validator() -> None:
 --- pydantic/warnings.py.orig	2020-02-02 00:00:00 UTC
 +++ pydantic/warnings.py
 @@ -67,6 +67,13 @@ class PydanticDeprecatedSince29(PydanticDeprecationWar
@@ -91,39 +849,13 @@ Obtained:	https://github.com/pydantic/pydantic/commit/9b69920888054df4ef544ecbdc
      'typing-extensions>=4.12.2; python_version >= "3.13"',
      'annotated-types>=0.6.0',
 -    "pydantic-core==2.23.4",
-+    "pydantic-core==2.24.0",
++    "pydantic-core==2.25.1",
  ]
  dynamic = ['version', 'readme']
  
 --- tests/test_json_schema.py.orig	2020-02-02 00:00:00 UTC
 +++ tests/test_json_schema.py
-@@ -108,6 +108,7 @@ from pydantic.types import (
-     conint,
-     constr,
- )
-+from pydantic.warnings import PydanticDeprecatedSince210
- 
- try:
-     import email_validator
-@@ -1777,11 +1778,15 @@ def test_model_default():
- @pytest.mark.parametrize(
-     'ser_json_timedelta,properties',
-     [
--        ('float', {'duration': {'default': 300.0, 'title': 'Duration', 'type': 'number'}}),
-+        ('seconds_float', {'duration': {'default': 300.0, 'title': 'Duration', 'type': 'number'}}),
-+        ('milliseconds_float', {'duration': {'default': 300000.0, 'title': 'Duration', 'type': 'number'}}),
-         ('iso8601', {'duration': {'default': 'PT5M', 'format': 'duration', 'title': 'Duration', 'type': 'string'}}),
-     ],
- )
--def test_model_default_timedelta(ser_json_timedelta: Literal['float', 'iso8601'], properties: typing.Dict[str, Any]):
-+def test_model_default_timedelta(
-+    ser_json_timedelta: Literal['iso8601', 'seconds_float', 'milliseconds_float'],
-+    properties: typing.Dict[str, Any],
-+):
-     class Model(BaseModel):
-         model_config = ConfigDict(ser_json_timedelta=ser_json_timedelta)
- 
-@@ -1795,6 +1800,22 @@ def test_model_default_timedelta(ser_json_timedelta: L
+@@ -1795,6 +1795,22 @@ def test_model_default_timedelta(ser_json_timedelta: L
      }
  
  
@@ -146,99 +878,13 @@ Obtained:	https://github.com/pydantic/pydantic/commit/9b69920888054df4ef544ecbdc
  @pytest.mark.parametrize(
      'ser_json_bytes,properties',
      [
-@@ -1819,12 +1840,14 @@ def test_model_default_bytes(ser_json_bytes: Literal['
- @pytest.mark.parametrize(
-     'ser_json_timedelta,properties',
-     [
--        ('float', {'duration': {'default': 300.0, 'title': 'Duration', 'type': 'number'}}),
-+        ('seconds_float', {'duration': {'default': 300.0, 'title': 'Duration', 'type': 'number'}}),
-+        ('milliseconds_float', {'duration': {'default': 300000.0, 'title': 'Duration', 'type': 'number'}}),
-         ('iso8601', {'duration': {'default': 'PT5M', 'format': 'duration', 'title': 'Duration', 'type': 'string'}}),
+--- tests/test_networks.py.orig	2020-02-02 00:00:00 UTC
++++ tests/test_networks.py
+@@ -107,7 +107,6 @@ except ImportError:
+         'http://example.org/path#fragment',
+         'http://example.org/path?query#',
+         'http://example.org/path?query#fragment',
+-        'file://localhost/foo/bar',
      ],
  )
- def test_dataclass_default_timedelta(
--    ser_json_timedelta: Literal['float', 'iso8601'], properties: typing.Dict[str, Any]
-+    ser_json_timedelta: Literal['iso8601', 'milliseconds_float', 'seconds_float'],
-+    properties: typing.Dict[str, Any],
- ):
-     @dataclass(config=ConfigDict(ser_json_timedelta=ser_json_timedelta))
-     class Dataclass:
-@@ -1838,6 +1861,20 @@ def test_dataclass_default_timedelta(
-     }
- 
- 
-+def test_dataclass_default_timedelta_float():
-+    with pytest.warns(PydanticDeprecatedSince210):
-+
-+        @dataclass(config=ConfigDict(ser_json_timedelta='float'))
-+        class Dataclass:
-+            duration: timedelta = timedelta(minutes=5)
-+
-+        assert TypeAdapter(Dataclass).json_schema(mode='serialization') == {
-+            'properties': {'duration': {'default': 300.0, 'title': 'Duration', 'type': 'number'}},
-+            'title': 'Dataclass',
-+            'type': 'object',
-+        }
-+
-+
- @pytest.mark.parametrize(
-     'ser_json_bytes,properties',
-     [
-@@ -1861,24 +1898,49 @@ def test_dataclass_default_bytes(ser_json_bytes: Liter
- @pytest.mark.parametrize(
-     'ser_json_timedelta,properties',
-     [
--        ('float', {'duration': {'default': 300.0, 'title': 'Duration', 'type': 'number'}}),
-+        ('seconds_float', {'duration': {'default': 300.0, 'title': 'Duration', 'type': 'number'}}),
-+        ('milliseconds_float', {'duration': {'default': 300000.0, 'title': 'Duration', 'type': 'number'}}),
-         ('iso8601', {'duration': {'default': 'PT5M', 'format': 'duration', 'title': 'Duration', 'type': 'string'}}),
-     ],
- )
- def test_typeddict_default_timedelta(
--    ser_json_timedelta: Literal['float', 'iso8601'], properties: typing.Dict[str, Any]
-+    ser_json_timedelta: Literal['iso8601', 'milliseconds_float', 'seconds_float'],
-+    properties: typing.Dict[str, Any],
- ):
-     class MyTypedDict(TypedDict):
-         __pydantic_config__ = ConfigDict(ser_json_timedelta=ser_json_timedelta)
- 
-         duration: Annotated[timedelta, Field(timedelta(minutes=5))]
- 
--    # insert_assert(TypeAdapter(MyTypedDict).json_schema(mode='serialization'))
--    assert TypeAdapter(MyTypedDict).json_schema(mode='serialization') == {
--        'properties': properties,
--        'title': 'MyTypedDict',
--        'type': 'object',
--    }
-+    if ser_json_timedelta == 'float':
-+        with pytest.warns(PydanticDeprecatedSince210):
-+            # insert_assert(TypeAdapter(MyTypedDict).json_schema(mode='serialization'))
-+            assert TypeAdapter(MyTypedDict).json_schema(mode='serialization') == {
-+                'properties': properties,
-+                'title': 'MyTypedDict',
-+                'type': 'object',
-+            }
-+    else:
-+        assert TypeAdapter(MyTypedDict).json_schema(mode='serialization') == {
-+            'properties': properties,
-+            'title': 'MyTypedDict',
-+            'type': 'object',
-+        }
-+
-+
-+def test_typeddict_default_timedelta_float():
-+    class MyTypedDict(TypedDict):
-+        __pydantic_config__ = ConfigDict(ser_json_timedelta='float')
-+
-+        duration: Annotated[timedelta, Field(timedelta(minutes=5))]
-+
-+    with pytest.warns(PydanticDeprecatedSince210):
-+        # insert_assert(TypeAdapter(MyTypedDict).json_schema(mode='serialization'))
-+        assert TypeAdapter(MyTypedDict).json_schema(mode='serialization') == {
-+            'properties': {'duration': {'default': 300.0, 'title': 'Duration', 'type': 'number'}},
-+            'title': 'MyTypedDict',
-+            'type': 'object',
-+        }
- 
- 
- @pytest.mark.parametrize(
+ def test_any_url_success(value):

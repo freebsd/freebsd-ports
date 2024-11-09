@@ -1,5 +1,5 @@
 PORTNAME=	boringssl
-PORTVERSION=	0.0.0.0.2024.10.11.01
+PORTVERSION=	0.0.0.0.2024.11.06.01
 PORTREVISION=	1
 CATEGORIES=	security
 EXTRACT_ONLY=	${GH_ACCOUNT}-${PORTNAME}-${PORTVERSION}-${GH_TAGNAME}_GH0.tar.gz
@@ -20,7 +20,7 @@ CPE_VENDOR=	google
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	google
-GH_TAGNAME=	d0b6ca2
+GH_TAGNAME=	52a2c00
 CMAKE_ARGS+=	-DBUILD_SHARED_LIBS=1
 
 CFLAGS_i386=	-msse2
@@ -34,7 +34,9 @@ MAKE_ENV+=	GOFLAGS=-mod=readonly \
 
 .if ${.TARGETS} == "makesum" || ${.TARGETS} == "test"
 MASTER_SITES+=	https://proxy.golang.org/:gomods
-DISTFILES+=	filippo.io/mlkem768/@v/v0.0.0-20240821141156-859a9b3f2ff6.zip:gomods \
+DISTFILES+=	filippo.io/edwards25519/@v/v1.1.0.zip:gomods \
+		filippo.io/edwards25519/@v/v1.1.0.mod:gomods \
+		filippo.io/mlkem768/@v/v0.0.0-20240821141156-859a9b3f2ff6.zip:gomods \
 		filippo.io/mlkem768/@v/v0.0.0-20240821141156-859a9b3f2ff6.mod:gomods \
 		golang.org/x/crypto/@v/v0.26.0.zip:gomods \
 		golang.org/x/crypto/@v/v0.26.0.mod:gomods \

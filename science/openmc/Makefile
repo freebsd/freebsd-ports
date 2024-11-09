@@ -5,10 +5,14 @@ CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Monte Carlo neutron and photon transport simulation code
-WWW=		https://openmc.org/
+WWW=		https://openmc.org/ \
+		https://docs.openmc.org/en/stable/ \
+		https://github.com/openmc-dev/openmc
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+BROKEN_FreeBSD_15=	compilation fails with clang-19, see https://github.com/openmc-dev/openmc/issues/3183
 
 BUILD_DEPENDS=	xtensor>0:math/xtensor
 LIB_DEPENDS=	libfmt.so:devel/libfmt \

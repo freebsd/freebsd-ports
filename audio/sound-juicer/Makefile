@@ -1,12 +1,8 @@
 PORTNAME=	sound-juicer
-PORTVERSION=	3.38.0
-PORTREVISION=	6
+PORTVERSION=	3.40.0
 CATEGORIES=	audio gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
-
-PATCH_SITES=	https://gitlab.gnome.org/GNOME/${PORTNAME}/-/commit/
-PATCHFILES+=	9f97ca1faca3.patch:-p1 # https://gitlab.gnome.org/GNOME/sound-juicer/-/merge_requests/27
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Clean, mean, and lean CD ripper for GNOME
@@ -21,13 +17,13 @@ LIB_DEPENDS=	libmusicbrainz5.so:audio/libmusicbrainz5 \
 		libbrasero-media3.so:sysutils/brasero \
 		libcanberra-gtk3.so:audio/libcanberra-gtk3
 
-PORTSCOUT=	limitw:1,even
-
 USES=		compiler:c11 desktop-file-utils gettext gnome gstreamer meson \
 		pkgconfig tar:xz
 USE_GSTREAMER=	cdparanoia flac good vorbis
 USE_GNOME=	gtk30
 INSTALL_TARGET=	install-strip
+
+PORTSCOUT=	limitw:1,even
 
 GLIB_SCHEMAS=	org.gnome.sound-juicer.gschema.xml
 

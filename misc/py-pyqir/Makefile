@@ -1,7 +1,7 @@
 PORTNAME=	pyqir
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.10.4
-PORTREVISION=	2
+DISTVERSION=	0.10.6
+PORTREVISION=	1
 CATEGORIES=	misc python # quantum-computing
 #MASTER_SITES=	PYPI # no tarballs
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -42,6 +42,7 @@ CARGO_CRATES=	aho-corasick-1.1.2 \
 		llvm-sys-120.3.2 \
 		llvm-sys-130.1.2 \
 		llvm-sys-140.1.3 \
+		llvm-sys-150.2.1 \
 		lock_api-0.4.11 \
 		log-0.4.20 \
 		memchr-2.7.1 \
@@ -94,7 +95,7 @@ TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PYTHON_SITELIBDIR}/${PORTNAME}
-	${INSTALL_LIB} ${WRKDIR}/target/*-unknown-freebsd/release/libpyqir.so ${STAGEDIR}${PYTHON_SITELIBDIR}/${PORTNAME}/_native.abi3.so
+	${INSTALL_LIB} ${WRKDIR}/target/release/libpyqir.so ${STAGEDIR}${PYTHON_SITELIBDIR}/${PORTNAME}/_native.abi3.so
 	${INSTALL_DATA} ${WRKSRC}/pyqir/pyqir/*.py ${STAGEDIR}${PYTHON_SITELIBDIR}/${PORTNAME}
 
 .include <bsd.port.mk>

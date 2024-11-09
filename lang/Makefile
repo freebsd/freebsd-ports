@@ -74,7 +74,6 @@
     SUBDIR += f2c
     SUBDIR += fasm
     SUBDIR += fennel
-    SUBDIR += ferite
     SUBDIR += ficl
     SUBDIR += fpc
     SUBDIR += fpc-devel
@@ -88,7 +87,6 @@
     SUBDIR += gauche
     SUBDIR += gawk
     SUBDIR += gcc
-    SUBDIR += gcc10
     SUBDIR += gcc11
     SUBDIR += gcc11-devel
     SUBDIR += gcc12

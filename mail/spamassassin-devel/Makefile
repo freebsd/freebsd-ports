@@ -1,5 +1,6 @@
 PORTNAME=	spamassassin
 PORTVERSION=	${SA_COMMIT_DATE}
+PORTREVISION=	1
 CATEGORIES?=	mail perl5
 PKGNAMESUFFIX=	-devel
 
@@ -9,8 +10,8 @@ WWW=		https://spamassassin.apache.org/
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	apache
-GH_TAGNAME=	42fc5ed3a
-SA_COMMIT_DATE=	2024.10.01
+GH_TAGNAME=	5ea6c25b4
+SA_COMMIT_DATE=	2024.10.29
 
 LICENSE=	APACHE20
 
@@ -185,6 +186,7 @@ post-patch::
 		-e 's,B_CONFDIR)/v343.pre,B_CONFDIR)/v343.pre.sample,g' \
 		-e 's,B_CONFDIR)/v400.pre,B_CONFDIR)/v400.pre.sample,g' \
 		-e 's,B_CONFDIR)/v401.pre,B_CONFDIR)/v401.pre.sample,g' \
+		-e 's,B_CONFDIR)/v402.pre,B_CONFDIR)/v402.pre.sample,g' \
 		-e 's/require DBI/0/' \
 		${WRKSRC}/Makefile.PL
 	${REINPLACE_CMD} -e '/^CC =/d; \
@@ -210,7 +212,7 @@ pre-su-install:
 
 post-install::
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/spamc
-	@${MKDIR} ${STAGEDIR}/var/lib/spamassassin ${STAGEDIR}${DBDIR}/spamassassin ${STAGEDIR}/var/run/spamd
+	@${MKDIR} ${STAGEDIR}${DBDIR}/spamassassin ${STAGEDIR}/var/run/spamd
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${DOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC} && ${COPYTREE_SHARE} "sql ldap" ${STAGEDIR}${DOCSDIR})

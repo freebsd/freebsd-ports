@@ -1,5 +1,5 @@
 PORTNAME=	quantities
-DISTVERSION=	0.16.0
+DISTVERSION=	0.16.1
 CATEGORIES=	science python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -19,5 +19,7 @@ TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 TEST_WRKSRC=	${WRKSRC}/quantities/tests
 
 NO_ARCH=	yes
+
+# tests: 173 passed, 3 xfailed in 33.50s
 
 .include <bsd.port.mk>

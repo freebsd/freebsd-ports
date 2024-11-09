@@ -1,5 +1,5 @@
 PORTNAME=	Term-Form
-PORTVERSION=	0.557
+PORTVERSION=	0.558
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -13,8 +13,8 @@ LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	p5-Term-Choose>=1.764:devel/p5-Term-Choose \
-		p5-Term-Choose-Util>=0.141:devel/p5-Term-Choose-Util
+RUN_DEPENDS=	p5-Term-Choose>=1.767:devel/p5-Term-Choose \
+		p5-Term-Choose-Util>=0.143:devel/p5-Term-Choose-Util
 TEST_DEPENDS=	p5-Test-Fatal>=0:devel/p5-Test-Fatal
 
 USES=		perl5

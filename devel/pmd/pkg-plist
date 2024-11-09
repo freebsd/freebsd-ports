@@ -1,11 +1,11 @@
 bin/pmd
-@sample %%ETCDIR%%/simplelogger.properties.sample
-%%DATADIR%%/Saxon-HE-12.4.jar
+%%ETCDIR%%/simplelogger.properties.sample
+%%DATADIR%%/Saxon-HE-12.5.jar
 %%DATADIR%%/antlr4-runtime-4.9.3.jar
 %%DATADIR%%/apex-ls_2.13-5.2.0.jar
-%%DATADIR%%/apex-parser-4.1.0.jar
+%%DATADIR%%/apex-parser-4.3.0.jar
 %%DATADIR%%/apex-types_2.13-1.3.0.jar
-%%DATADIR%%/asm-9.6.jar
+%%DATADIR%%/asm-9.7.jar
 %%DATADIR%%/better-files_2.13-3.9.2.jar
 %%DATADIR%%/checker-compat-qual-2.5.3.jar
 %%DATADIR%%/checker-qual-2.11.1.jar
@@ -14,13 +14,13 @@ bin/pmd
 %%DATADIR%%/commons-lang3-3.14.0.jar
 %%DATADIR%%/directory-watcher-0.18.0.jar
 %%DATADIR%%/directory-watcher-better-files_2.13-0.18.0.jar
-%%DATADIR%%/error_prone_annotations-2.23.0.jar
+%%DATADIR%%/error_prone_annotations-2.27.0.jar
 %%DATADIR%%/failureaccess-1.0.2.jar
 %%DATADIR%%/flogger-0.8.jar
 %%DATADIR%%/flogger-system-backend-0.8.jar
 %%DATADIR%%/geny_2.13-0.6.2.jar
 %%DATADIR%%/groovy-4.0.19.jar
-%%DATADIR%%/gson-2.10.1.jar
+%%DATADIR%%/gson-2.11.0.jar
 %%DATADIR%%/gson-extras-1.3.0.jar
 %%DATADIR%%/guava-33.0.0-jre.jar
 %%DATADIR%%/httpclient5-5.1.3.jar
@@ -42,7 +42,7 @@ bin/pmd
 %%DATADIR%%/nice-xml-messages-3.1.jar
 %%DATADIR%%/outline-parser_2.13-1.3.0.jar
 %%DATADIR%%/parsers_2.13-4.9.1.jar
-%%DATADIR%%/pcollections-3.2.0.jar
+%%DATADIR%%/pcollections-4.0.2.jar
 %%DATADIR%%/picocli-4.7.5.jar
 %%DATADIR%%/pmd-ant-%%PORTVERSION%%.jar
 %%DATADIR%%/pmd-apex-%%PORTVERSION%%.jar
@@ -79,8 +79,8 @@ bin/pmd
 %%DATADIR%%/pmd-visualforce-%%PORTVERSION%%.jar
 %%DATADIR%%/pmd-xml-%%PORTVERSION%%.jar
 %%DATADIR%%/progressbar-0.9.5.jar
-%%DATADIR%%/protobuf-java-3.25.3.jar
-%%DATADIR%%/rhino-1.7.14.jar
+%%DATADIR%%/protobuf-java-3.25.5.jar
+%%DATADIR%%/rhino-1.7.15.jar
 %%DATADIR%%/sbom/pmd-%%PORTVERSION%%-cyclonedx.json
 %%DATADIR%%/sbom/pmd-%%PORTVERSION%%-cyclonedx.xml
 %%DATADIR%%/scala-collection-compat_2.13-2.8.1.jar

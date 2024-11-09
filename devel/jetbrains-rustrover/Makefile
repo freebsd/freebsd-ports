@@ -1,5 +1,5 @@
 PORTNAME=	rustrover
-PORTVERSION=	2024.1.2
+PORTVERSION=	2024.2.3
 CATEGORIES=	devel
 MASTER_SITES=	https://download-cdn.jetbrains.com/rustrover/
 PKGNAMEPREFIX=	jetbrains-
@@ -58,12 +58,11 @@ do-install:
 		${WRKSRC}/bin/remote-dev-server.sh \
 		${WRKSRC}/bin/repair \
 		${WRKSRC}/bin/restarter \
+		${WRKSRC}/bin/rustrover \
 		${WRKSRC}/lib/async-profiler \
 		${WRKSRC}/lib/jna \
 		${WRKSRC}/lib/native \
 		${WRKSRC}/lib/pty4j \
-		${WRKSRC}/plugins/clouds-docker-gateway \
-		${WRKSRC}/plugins/clouds-docker-impl \
 		${WRKSRC}/plugins/cwm-plugin \
 		${WRKSRC}/plugins/gateway-plugin \
 		${WRKSRC}/plugins/gateway-terminal \

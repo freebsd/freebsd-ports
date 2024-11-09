@@ -1,0 +1,9 @@
+poudriere is a tool primarily designed to test package production on FreeBSD.
+However, most people will find it useful to bulk build ports for FreeBSD.
+
+Changes from upstream:
+
+  * Better reuse of prebuilded FreeBSD packages.
+  * Speedup building by rebuilding only changed ports.
+  * Share go mod cache between builders and store downloaded modules in
+    `DISTFILES_CACHE`.

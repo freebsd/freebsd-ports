@@ -1,6 +1,6 @@
 PORTNAME=	solanum
 DISTVERSION=	5.0.0
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	deskutils
 
 MAINTAINER=	ports@FreeBSD.org
@@ -31,7 +31,6 @@ post-patch:
 # Make each cargo subcommand very verbose
 # Add explicit <triple> subdir for --target from USES=cargo
 	@${REINPLACE_CMD} -e "/cargo_options =/s/ '--/&verbose', &verbose', &/" \
-		-e "/cp/s,'src',& / '${CARGO_BUILD_TARGET}'," \
 		${WRKSRC}/src/meson.build
 
 .include <bsd.port.mk>

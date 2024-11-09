@@ -1,0 +1,11 @@
+Supysonic is a Python implementation of the Subsonic server API.
+
+Current supported features are:
+ * browsing (by folders or tags)
+ * streaming of various audio files formats
+ * transcoding
+ * user or random playlists
+ * cover art
+ * starred tracks/albums and ratings
+ * lastfm scrobbling
+ * Jukebox mode

@@ -1,4 +1,5 @@
 bin/zimpl
+include/zimpl/attribute.h
 include/zimpl/blkmem.h
 include/zimpl/bound.h
 include/zimpl/code.h
@@ -37,6 +38,7 @@ include/zimpl/tuple.h
 include/zimpl/xlpglue.h
 include/zimpl/zimpllib.h
 include/zimpl/zlpglue.h
+lib/cmake/zimpl/zimpl-config-version.cmake
 lib/cmake/zimpl/zimpl-config.cmake
 lib/cmake/zimpl/zimpl-targets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/zimpl/zimpl-targets.cmake

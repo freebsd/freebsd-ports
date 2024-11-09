@@ -48,7 +48,7 @@ HTTP_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aiohttp>=3.6.2:www/py-aiohttp@${PY_FLAV
 INTERVAL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}intervaltree>=3.0.2:devel/py-intervaltree@${PY_FLAVOR}
 NUMPY_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.16.4,1:math/py-numpy@${PY_FLAVOR}
 PANDAS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pandas>=0.24.2,1:math/py-pandas@${PY_FLAVOR}
-REMOTE_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}fsspec>=0.7.4:devel/py-fsspec@${PY_FLAVOR}
+REMOTE_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}fsspec>=0.7.4:filesystems/py-fsspec@${PY_FLAVOR}
 SMB_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}smbprotocol>=1.0.1:net/py-smbprotocol@${PY_FLAVOR}
 XLS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}xlrd>=2.0.1:textproc/py-xlrd@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}xlwt>=1.3.0:textproc/py-xlwt@${PY_FLAVOR}

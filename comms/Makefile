@@ -74,6 +74,7 @@
     SUBDIR += libdc
     SUBDIR += libfap
     SUBDIR += libfec
+    SUBDIR += libfobos
     SUBDIR += libimobiledevice
     SUBDIR += libimobiledevice-glue
     SUBDIR += libirman
@@ -87,6 +88,10 @@
     SUBDIR += libusbsio
     SUBDIR += limesuite
     SUBDIR += linrad
+    SUBDIR += linux-rl9-qt5-qtconnectivity
+    SUBDIR += linux-rl9-qt5-qtsensors
+    SUBDIR += linux-rl9-qt5-qtserialbus
+    SUBDIR += linux-rl9-qt5-qtserialport
     SUBDIR += liquid-dsp
     SUBDIR += lirc
     SUBDIR += locator
@@ -167,6 +172,7 @@
     SUBDIR += remserial
     SUBDIR += rtl-433
     SUBDIR += rtl-sdr
+    SUBDIR += rtlbt-firmware
     SUBDIR += rubygem-callsign
     SUBDIR += rubygem-ruby-termios
     SUBDIR += rubygem-serialport

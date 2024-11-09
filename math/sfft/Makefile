@@ -1,6 +1,6 @@
 PORTNAME=	sfft
-PORTVERSION=	0.1.0
-PORTREVISION=	12
+DISTVERSION=	0.1.0
+PORTREVISION=	13
 CATEGORIES=	math
 MASTER_SITES=	http://spiral.net/software/sfft/ LOCAL/bf
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
@@ -12,12 +12,18 @@ WWW=		https://spiral.net/software/sfft.html
 
 LICENSE=	GPLv2
 
-ONLY_FOR_ARCHS=		amd64 i386
+ONLY_FOR_ARCHS=		aarch64 amd64 armv7 i386
 ONLY_FOR_ARCHS_REASON=	requires SSE instructions, which are x86-specific
+
+BROKEN_armv7=	/usr/local/bin/ld: error: unsupported option: -z relro
+
+BUILD_DEPENDS_aarch64=	${LOCALBASE}/include/sse2neon.h:devel/sse2neon
+BUILD_DEPENDS_armv7=	${BUILD_DEPENDS_aarch64}
+BUILD_DEPENDS+=	${BUILD_DEPENDS_${ARCH}}
 
 LIB_DEPENDS=	libfftw3.so:math/fftw3
 
-USES=		uidfix zip
+USES=		localbase:ldflags uidfix zip
 USE_GCC=	yes
 USE_LDCONFIG=	yes
 
@@ -26,8 +32,10 @@ OPTIONS_DEFAULT=	OPTIMIZED_CFLAGS
 
 BUILD_WRKSRC=	${WRKSRC}/src
 INSTALL_WRKSRC=	${BUILD_WRKSRC}
-CFLAGS+=	-fopenmp -msse2 -Iflopcount -I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+CFLAGS_armv7=	-mfpu=neon
+CFLAGS_i386=	-msse2
+CFLAGS+=	-fopenmp -Iflopcount
+CXXFLAGS+=	${CFLAGS_${ARCH}} -fopenmp -Iflopcount
 HEADERS=	sfft.h
 HDIR=		include/sfft
 MAKE_ENV=	LDADD="-lfftw3 ${LIBM}" LIB=sfft SHLIB_MAJOR="${SHLIB_MAJOR}" \
@@ -42,11 +50,6 @@ SRCS=	common.cc computefourier-1.0-2.0.cc \
 	sfft.cc simulation.cc timer.cc utils.cc
 
 .include <bsd.port.options.mk>
-
-.if !${ARCH:Mamd64} && !${MACHINE_CPU:Msse2}
-IGNORE=	this port requires SSE2, and benefits from SSE3 -- set CPUTYPE\
-appropriately
-.endif
 
 LIBM=	-lm
 
@@ -73,36 +76,20 @@ MAKE_ENV+=	WITHOUT_PROFILE=yes
 .endif
 
 post-extract:
-	@${CP} /usr/include/complex.h ${BUILD_WRKSRC}/sfftcomplex.h
 	@${PRINTF} "LIBDIR=\t${PREFIX}/lib\n.include <bsd.lib.mk>\n" > \
 		${BUILD_WRKSRC}/Makefile
-
-post-patch:
-	@${REINPLACE_CMD} -e 's/string\.h/cstring/' \
-		${WRKSRC}/src/utils.cc
-	@${REINPLACE_CMD} -E -e '/<complex\.h>/ \
-	{s/<complex\.h>/ "sfftcomplex.h"/; x ; \
-	s|^.*$$|#endif|; G; x; \
-	s|^.*$$|extern "C" {|; G; x; \
-	s|^.*$$|#ifdef __cplusplus|; G; x; \
-	s|^.*$$|#ifdef __cplusplus|; H; \
-	s|^.*$$|}|; H; \
-	s|^.*$$|#endif|; H; x;}' \
-		${WRKSRC}/src/computefourier-1.0-2.0.h \
-		${WRKSRC}/src/computefourier-3.0.h \
-		${WRKSRC}/src/fft.h
 
 CORELIMIT?=	/usr/bin/limits -Sc 0
 
 do-test:
-	@cd ${BUILD_WRKSRC}; \
-	${CXX} ${CXXFLAGS} -o sfft-verification verification.cc \
-	${LDFLAGS} libsfft.a -lfftw3 ${LIBM} ; \
-	for _v in 1 2 3 ; do \
-	for _k in 5 10 50; do \
-	echo "Checking sfft version $${_v} with $${_k} frequency components:"; \
-	${CORELIMIT} ./sfft-verification -k $${_k} -r 3 -v $${_v} || ${TRUE} ; \
-	done ; done
+	cd ${BUILD_WRKSRC} && ${CXX} ${CXXFLAGS} -o sfft-verification verification.cc \
+		${LDFLAGS} libsfft.a -lfftw3 ${LIBM}
+.for v in 1 2 3
+. for k in 5 10 50
+	@${ECHO_CMD} "Checking sfft version $v with $k frequency components:"
+	cd ${BUILD_WRKSRC} && ${CORELIMIT} ./sfft-verification -k $k -r 3 -v $v || ${TRUE}
+. endfor
+.endfor
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/${HDIR}

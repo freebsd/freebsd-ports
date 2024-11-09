@@ -1,5 +1,6 @@
 PORTNAME=	arti
-DISTVERSION=	1.2.8
+DISTVERSION=	1.3.0
+PORTREVISION=	1
 CATEGORIES=	security
 
 MAINTAINER=	cs@FreeBSD.org
@@ -21,12 +22,12 @@ PLIST_SUB=	USERS="${USERS}" GROUPS="${GROUPS}"
 USE_GITLAB=	yes
 GL_SITE=	https://gitlab.torproject.org
 GL_ACCOUNT=	tpo/core
-GL_TAGNAME=	976425194b7a6e7939f75753cef3d5739cef1c5c
+GL_TAGNAME=	0a7ba1c3b5cd483efa50c02201b8ff50580d3f48
 CARGO_FEATURES=	tokio rustls
 CARGO_INSTALL=	no
 
 do-install:
-	${INSTALL_SCRIPT} ${CARGO_TARGET_DIR}/${CARGO_BUILD_TARGET}/*/arti ${STAGEDIR}${PREFIX}/bin/arti
+	${INSTALL_SCRIPT} ${CARGO_TARGET_DIR}/*/arti ${STAGEDIR}${PREFIX}/bin/arti
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${ETCDIR} ${STAGEDIR}/var/log/arti ${STAGEDIR}/var/run/arti ${STAGEDIR}/var/db/arti

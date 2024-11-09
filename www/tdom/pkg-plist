@@ -1,8 +1,8 @@
 include/tdom.h
-lib/tdom%%PORTVERSION%%/libtdom%%PORTVERSION%%.so
-lib/tdom%%PORTVERSION%%/libtdomstub%%PORTVERSION%%.a
-lib/tdom%%PORTVERSION%%/pkgIndex.tcl
-lib/tdom%%PORTVERSION%%/tdom.tcl
+lib/tdom%%DISTVERSION%%/lib%%TCL_PKG_LIB_PREFIX%%tdom%%DISTVERSION%%.so
+lib/tdom%%DISTVERSION%%/libtdomstub%%TCL_PKG_STUB_POSTFIX%%.a
+lib/tdom%%DISTVERSION%%/pkgIndex.tcl
+lib/tdom%%DISTVERSION%%/tdom.tcl
 lib/tdomConfig.sh
 share/man/mann/dom.n.gz
 share/man/mann/domDoc.n.gz

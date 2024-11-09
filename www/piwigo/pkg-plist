@@ -40,7 +40,6 @@
 %%WWWDIR%%/admin/cat_modify.php
 %%WWWDIR%%/admin/cat_options.php
 %%WWWDIR%%/admin/cat_perm.php
-%%WWWDIR%%/admin/cat_search.php
 %%WWWDIR%%/admin/comments.php
 %%WWWDIR%%/admin/configuration.php
 %%WWWDIR%%/admin/element_set_ranks.php
@@ -51,6 +50,7 @@
 %%WWWDIR%%/admin/history.php
 %%WWWDIR%%/admin/include/add_core_tabs.inc.php
 %%WWWDIR%%/admin/include/albums_tab.inc.php
+%%WWWDIR%%/admin/include/batch_manager_filters.inc.php
 %%WWWDIR%%/admin/include/c13y_internal.class.php
 %%WWWDIR%%/admin/include/check_integrity.class.php
 %%WWWDIR%%/admin/include/configuration_sizes_process.inc.php
@@ -82,6 +82,7 @@
 %%WWWDIR%%/admin/maintenance.php
 %%WWWDIR%%/admin/maintenance_actions.php
 %%WWWDIR%%/admin/maintenance_env.php
+%%WWWDIR%%/admin/maintenance_sys.php
 %%WWWDIR%%/admin/menubar.php
 %%WWWDIR%%/admin/notification_by_mail.php
 %%WWWDIR%%/admin/permalinks.php
@@ -152,6 +153,7 @@
 %%WWWDIR%%/admin/themes/clear/mail-css.tpl
 %%WWWDIR%%/admin/themes/clear/theme.css
 %%WWWDIR%%/admin/themes/clear/themeconf.inc.php
+%%WWWDIR%%/admin/themes/default/css/components/album_selector.css
 %%WWWDIR%%/admin/themes/default/css/components/general.css
 %%WWWDIR%%/admin/themes/default/fontello/LICENSE.txt
 %%WWWDIR%%/admin/themes/default/fontello/README.txt
@@ -293,17 +295,23 @@
 %%WWWDIR%%/admin/themes/default/js/addAlbum.js
 %%WWWDIR%%/admin/themes/default/js/album_selector.js
 %%WWWDIR%%/admin/themes/default/js/albums.js
+%%WWWDIR%%/admin/themes/default/js/batchManagerFilter.js
 %%WWWDIR%%/admin/themes/default/js/batchManagerGlobal.js
+%%WWWDIR%%/admin/themes/default/js/batchManagerUnit.js
 %%WWWDIR%%/admin/themes/default/js/cat_list.js
 %%WWWDIR%%/admin/themes/default/js/cat_modify.js
+%%WWWDIR%%/admin/themes/default/js/cat_search.js
 %%WWWDIR%%/admin/themes/default/js/common.js
 %%WWWDIR%%/admin/themes/default/js/datepicker.js
 %%WWWDIR%%/admin/themes/default/js/doubleSlider.js
 %%WWWDIR%%/admin/themes/default/js/group_list.js
 %%WWWDIR%%/admin/themes/default/js/history.js
+%%WWWDIR%%/admin/themes/default/js/intro_tooltips.js
 %%WWWDIR%%/admin/themes/default/js/jquery.geoip.js
 %%WWWDIR%%/admin/themes/default/js/maintenance.js
 %%WWWDIR%%/admin/themes/default/js/maintenance_env.js
+%%WWWDIR%%/admin/themes/default/js/maintenance_sys.js
+%%WWWDIR%%/admin/themes/default/js/photos_add_direct.js
 %%WWWDIR%%/admin/themes/default/js/picture_formats.js
 %%WWWDIR%%/admin/themes/default/js/picture_modify.js
 %%WWWDIR%%/admin/themes/default/js/plugins_installated.js
@@ -321,7 +329,6 @@
 %%WWWDIR%%/admin/themes/default/template/cat_modify.tpl
 %%WWWDIR%%/admin/themes/default/template/cat_options.tpl
 %%WWWDIR%%/admin/themes/default/template/cat_perm.tpl
-%%WWWDIR%%/admin/themes/default/template/cat_search.tpl
 %%WWWDIR%%/admin/themes/default/template/check_integrity.tpl
 %%WWWDIR%%/admin/themes/default/template/comments.tpl
 %%WWWDIR%%/admin/themes/default/template/configuration_comments.tpl
@@ -342,6 +349,7 @@
 %%WWWDIR%%/admin/themes/default/template/include/add_album.inc.tpl
 %%WWWDIR%%/admin/themes/default/template/include/album_selector.inc.tpl
 %%WWWDIR%%/admin/themes/default/template/include/autosize.inc.tpl
+%%WWWDIR%%/admin/themes/default/template/include/batch_manager_filter.inc.tpl
 %%WWWDIR%%/admin/themes/default/template/include/colorbox.inc.tpl
 %%WWWDIR%%/admin/themes/default/template/include/datepicker.inc.tpl
 %%WWWDIR%%/admin/themes/default/template/include/install.inc.tpl
@@ -351,6 +359,7 @@
 %%WWWDIR%%/admin/themes/default/template/languages_new.tpl
 %%WWWDIR%%/admin/themes/default/template/maintenance_actions.tpl
 %%WWWDIR%%/admin/themes/default/template/maintenance_env.tpl
+%%WWWDIR%%/admin/themes/default/template/maintenance_sys.tpl
 %%WWWDIR%%/admin/themes/default/template/menubar.tpl
 %%WWWDIR%%/admin/themes/default/template/navigation_bar.tpl
 %%WWWDIR%%/admin/themes/default/template/notification_by_mail.tpl
@@ -499,6 +508,7 @@
 %%WWWDIR%%/include/random_compat/random_bytes_libsodium_legacy.php
 %%WWWDIR%%/include/random_compat/random_bytes_mcrypt.php
 %%WWWDIR%%/include/random_compat/random_int.php
+%%WWWDIR%%/include/search_filters.inc.php
 %%WWWDIR%%/include/section_init.inc.php
 %%WWWDIR%%/include/smarty/CHANGELOG.md
 %%WWWDIR%%/include/smarty/LICENSE
@@ -812,6 +822,10 @@
 %%WWWDIR%%/install/db/168-database.php
 %%WWWDIR%%/install/db/169-database.php
 %%WWWDIR%%/install/db/170-database.php
+%%WWWDIR%%/install/db/171-database.php
+%%WWWDIR%%/install/db/172-database.php
+%%WWWDIR%%/install/db/173-database.php
+%%WWWDIR%%/install/db/174-database.php
 %%WWWDIR%%/install/db/61-database.php
 %%WWWDIR%%/install/db/62-database.php
 %%WWWDIR%%/install/db/63-database.php
@@ -868,6 +882,7 @@
 %%WWWDIR%%/install/upgrade_11.0.0.php
 %%WWWDIR%%/install/upgrade_12.0.0.php
 %%WWWDIR%%/install/upgrade_13.0.0.php
+%%WWWDIR%%/install/upgrade_14.0.0.php
 %%WWWDIR%%/install/upgrade_2.0.0.php
 %%WWWDIR%%/install/upgrade_2.1.0.php
 %%WWWDIR%%/install/upgrade_2.10.0.php
@@ -2947,6 +2962,7 @@
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/default/icon/recent.png
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/default/icon/recent_by_child.png
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/default/icon/remove_s.png
+@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/default/icon/warning-triangle.svg
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/default/iconset.css
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/default/images/ajax-loader-small.gif
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/default/images/ajax_loader.gif
@@ -3636,7 +3652,6 @@
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/modus/js/menuh.js
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/modus/js/modus.async.js
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/modus/js/photo.autosize.js
-@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/modus/js/photo.autosize.min.js
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/modus/js/thumb.arrange.js
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/modus/js/thumb.arrange.min.js
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/modus/js/thumb.pop.js

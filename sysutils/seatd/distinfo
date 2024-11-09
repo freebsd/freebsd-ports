@@ -1,5 +1,5 @@
-TIMESTAMP = 1689758313
-SHA256 (seatd-0.8.0.tar.gz) = a562a44ee33ccb20954a1c1ec9a90ecb2db7a07ad6b18d0ac904328efbcf65a0
-SIZE (seatd-0.8.0.tar.gz) = 39349
+TIMESTAMP = 1730317406
+SHA256 (seatd-0.9.1.tar.gz) = 819979c922a0be258aed133d93920bce6a3d3565a60588d6d372ce9db2712cd3
+SIZE (seatd-0.9.1.tar.gz) = 41968
 SHA256 (5f31d8eebea1.patch) = aa2fe83d42688540c270201272ed92f1ca7d7664cf62184c7a8bd0bf10b58f7b
 SIZE (5f31d8eebea1.patch) = 23322

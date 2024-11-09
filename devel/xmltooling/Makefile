@@ -1,5 +1,5 @@
 PORTNAME=	xmltooling
-PORTVERSION=	3.2.4
+PORTVERSION=	3.3.0
 CATEGORIES=	devel security
 MASTER_SITES=	http://shibboleth.net/downloads/c++-opensaml/latest/
 

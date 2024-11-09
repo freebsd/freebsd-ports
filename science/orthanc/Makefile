@@ -1,6 +1,6 @@
 PORTNAME=	orthanc
 DISTVERSION=	1.12.3
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	science
 MASTER_SITES=	https://orthanc.uclouvain.be/downloads/sources/orthanc/
 DISTNAME=	Orthanc-${PORTVERSION}

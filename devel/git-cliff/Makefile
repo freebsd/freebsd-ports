@@ -1,11 +1,13 @@
 PORTNAME=	git-cliff
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.6.1
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Highly customizable changelog generator
-WWW=		https://git-cliff.org
+WWW=		https://git-cliff.org \
+		https://github.com/orhun/git-cliff
 
 LICENSE=	APACHE20 MIT
 LICENSE_COMB=	multi

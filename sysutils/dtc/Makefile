@@ -1,10 +1,10 @@
 PORTNAME=	dtc
-PORTVERSION=	1.6.0
 DISTVERSIONPREFIX=	v
+DISTVERSION=	1.7.1
 CATEGORIES=	sysutils
 
 PATCH_SITES=	https://github.com/dgibson/dtc/commit/
-PATCHFILES+=	ca19c3db2b.patch:-p1 # https://github.com/dgibson/dtc/pull/41
+PATCHFILES=	1b75550436433e150164715dedb417e4d234df6c.patch:-p1
 
 MAINTAINER=	uboot@FreeBSD.org
 COMMENT=	Device Tree Compiler
@@ -14,18 +14,20 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libyaml.so:textproc/libyaml
 
-USES=		bison compiler:c11 cpe gmake pkgconfig shebangfix
+USES=		bison compiler:c11 cpe meson pkgconfig shebangfix
 CPE_VENDOR=	${PORTNAME}_project
+SHEBANG_FILES=	dtdiff
+USE_LDCONFIG=	yes
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	dgibson
-USE_LDCONFIG=	yes
-SHEBANG_FILES=	dtdiff
 
-TEST_TARGET=	check
-TEST_ENV=	STATSZ="stat -f %Uz"
+MESON_ARGS=	--default-library=shared \
+		-Dpython=disabled \
+		-Dvalgrind=disabled
 
-MAKE_ARGS+=	PREFIX=${PREFIX} NO_PYTHON=yes \
-		INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
-		INSTALL_LIB="${INSTALL_LIB}"
+OPTIONS_DEFINE=		TEST
+
+TEST_MESON_TRUE=	tests
 
 .include <bsd.port.mk>

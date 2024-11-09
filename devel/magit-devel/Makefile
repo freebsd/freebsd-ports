@@ -1,6 +1,6 @@
 PORTNAME=	magit
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.1.1
+DISTVERSION=	4.1.2
 DISTVERSIONSUFFIX=
 CATEGORIES=	devel elisp
 PKGNAMESUFFIX=	-devel${EMACS_PKGNAMESUFFIX}
@@ -15,12 +15,12 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	compat.el${EMACS_PKGNAMESUFFIX}>=30.0.0.0:misc/compat.el@${EMACS_FLAVOR} \
 		dash.el${EMACS_PKGNAMESUFFIX}>=2.19.1:devel/dash.el@${EMACS_FLAVOR} \
 		git:devel/git \
-		transient-devel${EMACS_PKGNAMESUFFIX}>=0.7.6:devel/transient-devel@${EMACS_FLAVOR} \
+		transient-devel${EMACS_PKGNAMESUFFIX}>=0.7.8:devel/transient-devel@${EMACS_FLAVOR} \
 		with-editor-devel${EMACS_PKGNAMESUFFIX}>=3.4.2:editors/with-editor-devel@${EMACS_FLAVOR}
 RUN_DEPENDS=	compat.el${EMACS_PKGNAMESUFFIX}>=30.0.0.0:misc/compat.el@${EMACS_FLAVOR} \
 		dash.el${EMACS_PKGNAMESUFFIX}>=2.19.1:devel/dash.el@${EMACS_FLAVOR} \
 		git:devel/git \
-		transient-devel${EMACS_PKGNAMESUFFIX}>=0.7.6:devel/transient-devel@${EMACS_FLAVOR} \
+		transient-devel${EMACS_PKGNAMESUFFIX}>=0.7.8:devel/transient-devel@${EMACS_FLAVOR} \
 		with-editor-devel${EMACS_PKGNAMESUFFIX}>=3.4.2:editors/with-editor-devel@${EMACS_FLAVOR}
 
 USES=		emacs gmake makeinfo

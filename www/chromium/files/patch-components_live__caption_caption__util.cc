@@ -1,6 +1,6 @@
---- components/live_caption/caption_util.cc.orig	2024-05-21 18:07:39 UTC
+--- components/live_caption/caption_util.cc.orig	2024-10-22 08:31:56 UTC
 +++ components/live_caption/caption_util.cc
-@@ -144,7 +144,7 @@ std::string GetCaptionSettingsUrl() {
+@@ -139,7 +139,7 @@ std::string GetCaptionSettingsUrl() {
    return "chrome://os-settings/audioAndCaptions";
  #endif  // BUILDFLAG(IS_CHROMEOS)
  

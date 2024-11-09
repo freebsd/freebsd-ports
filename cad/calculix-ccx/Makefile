@@ -1,6 +1,5 @@
 PORTNAME=	ccx
-PORTVERSION=	2.21
-PORTREVISION=	1
+DISTVERSION=	2.22
 CATEGORIES=	cad
 MASTER_SITES=	http://www.dhondt.de/
 PKGNAMEPREFIX=	CalculiX-
@@ -13,45 +12,35 @@ COMMENT=	Three-Dimensional Structural Finite Element Program
 WWW=		http://www.calculix.de/
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/gpl-2.0.txt
 
-LIB_DEPENDS=	libarpack.so:math/arpack-ng	\
+LIB_DEPENDS=	libarpack.so:math/arpack-ng \
 		libspooles.so:math/spooles
 
 USES=		blaslapack fortran gmake perl5 tar:bzip2
 USE_PERL5=	build
 
-DIST_SOURCES=	ccx_${PORTVERSION}.src${EXTRACT_SUFX}
-DIST_HTM=	ccx_${PORTVERSION}.htm${EXTRACT_SUFX}
-DIST_PDF=	ccx_${PORTVERSION}.pdf
-DIST_EXAMPLES=	ccx_${PORTVERSION}.test${EXTRACT_SUFX}
+DIST_SOURCES=	ccx_${DISTVERSION}.src${EXTRACT_SUFX}
+DIST_HTM=	ccx_${DISTVERSION}.htm${EXTRACT_SUFX}
+DIST_PDF=	ccx_${DISTVERSION}.pdf
+DIST_EXAMPLES=	ccx_${DISTVERSION}.test${EXTRACT_SUFX}
 
-ALL_TARGET=	#Empty
-
-CCX_VER=	ccx_${PORTVERSION}
-DOCSDIR=	${PREFIX}/share/doc/CalculiX
-WRKSRC=		${WRKDIR}/CalculiX/${CCX_VER}/src
-
-OPTIONS_DEFINE=	DOCS EXAMPLES
+ALL_TARGET=
 
 CFLAGS+=	-fpic
 FFLAGS+=	-fpic
 
-.include <bsd.port.options.mk>
+CCX_VER=	ccx_${PORTVERSION}
+DOCSDIR=	${PREFIX}/share/doc/CalculiX
+TEST_WRKSRC=	${WRKDIR}/CalculiX/${CCX_VER}/test
+WRKSRC=		${WRKDIR}/CalculiX/${CCX_VER}/src
 
-.if ${PORT_OPTIONS:MDOCS}
-DISTFILES+=	${DIST_HTM} ${DIST_PDF}
-EXTRACT_ONLY+=	${DIST_HTM}
-.endif
+OPTIONS_DEFINE=	DOCS EXAMPLES
 
-.if $(PORT_OPTIONS:MEXAMPLES)
-DISTFILES+=	${DIST_EXAMPLES}
-EXTRACT_ONLY+=	${DIST_EXAMPLES}
-.endif
-
-.if ${GCC_DEFAULT} >= 10
-# workaround for Missing actual argument for argument '_formal_15' at (1)
-FFLAGS+=	-fallow-argument-mismatch
-.endif
+DOCS_DISTFILES=		${DIST_HTM} ${DIST_PDF}
+DOCS_EXTRACT_ONLY=	${DIST_HTM}
+EXAMPLES_DISTFILES=	${DIST_EXAMPLES}
+EXAMPLES_EXTRACT_ONLY=	${DIST_EXAMPLES}
 
 pre-build:
 	@${REINPLACE_CMD} -e 's+%%FC%%+${FC}+g ; s+%%CC%%+${CC}+g ; \
@@ -75,5 +64,10 @@ do-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	@(cd ${WRKDIR}/CalculiX/${CCX_VER}/test && ${COPYTREE_SHARE} . \
 	  ${STAGEDIR}${EXAMPLESDIR})
+
+do-test:
+	@cd ${TEST_WRKSRC} && ( \
+		${SH} compare \
+	)
 
 .include <bsd.port.mk>

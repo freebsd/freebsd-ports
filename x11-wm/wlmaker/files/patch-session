@@ -1,8 +1,8 @@
 Avoid Debian specifics when starting from a GUI login manager
 
---- share/CMakeLists.txt.orig	2024-07-04 07:20:06 UTC
+--- share/CMakeLists.txt.orig	2024-08-30 23:53:51 UTC
 +++ share/CMakeLists.txt
-@@ -18,17 +18,10 @@ CONFIGURE_FILE(
+@@ -18,20 +18,13 @@ CONFIGURE_FILE(
    ${CMAKE_CURRENT_SOURCE_DIR}/wrap-wlmaker.sh.in
    ${CMAKE_CURRENT_BINARY_DIR}/wrap-wlmaker.sh
    @ONLY)
@@ -21,6 +21,15 @@ Avoid Debian specifics when starting from a GUI login manager
    FILES ${CMAKE_CURRENT_BINARY_DIR}/wlmaker.desktop
 -  TYPE DATA)
 +  DESTINATION "share/wayland-sessions")
+ 
+ CONFIGURE_FILE(
+   ${CMAKE_CURRENT_SOURCE_DIR}/wlmclock.desktop.in
+@@ -39,4 +32,4 @@ INSTALL(
+   @ONLY)
+ INSTALL(
+   FILES ${CMAKE_CURRENT_BINARY_DIR}/wlmclock.desktop
+-  TYPE DATA)
++  DESTINATION "share/applications")
 --- share/wlmaker.desktop.in.orig	2024-07-04 07:20:06 UTC
 +++ share/wlmaker.desktop.in
 @@ -1,5 +1,5 @@ Comment=A Wayland compositor inspired by Window Maker

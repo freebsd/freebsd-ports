@@ -4,9 +4,11 @@ include/entt/config/version.h
 include/entt/container/dense_map.hpp
 include/entt/container/dense_set.hpp
 include/entt/container/fwd.hpp
+include/entt/container/table.hpp
 include/entt/core/algorithm.hpp
 include/entt/core/any.hpp
 include/entt/core/attribute.h
+include/entt/core/bit.hpp
 include/entt/core/compressed_pair.hpp
 include/entt/core/enum.hpp
 include/entt/core/family.hpp
@@ -16,6 +18,7 @@ include/entt/core/ident.hpp
 include/entt/core/iterator.hpp
 include/entt/core/memory.hpp
 include/entt/core/monostate.hpp
+include/entt/core/ranges.hpp
 include/entt/core/tuple.hpp
 include/entt/core/type_info.hpp
 include/entt/core/type_traits.hpp
@@ -29,6 +32,7 @@ include/entt/entity/helper.hpp
 include/entt/entity/mixin.hpp
 include/entt/entity/observer.hpp
 include/entt/entity/organizer.hpp
+include/entt/entity/ranges.hpp
 include/entt/entity/registry.hpp
 include/entt/entity/runtime_view.hpp
 include/entt/entity/snapshot.hpp
@@ -56,7 +60,6 @@ include/entt/meta/resolve.hpp
 include/entt/meta/template.hpp
 include/entt/meta/type_traits.hpp
 include/entt/meta/utility.hpp
-include/entt/platform/android-ndk-r17.hpp
 include/entt/poly/fwd.hpp
 include/entt/poly/poly.hpp
 include/entt/process/fwd.hpp

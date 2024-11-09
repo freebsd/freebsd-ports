@@ -1,38 +1,40 @@
 [
 { type: install
   message: <<EOM
-This is ancient software that is ported for curiosity purposes.  It is
-unlikely to be useful in everyday use, and should not be used in untrusted
-environments as there are highly likely to be unresolved security issues.
+CDE - The Common Desktop Environment is an X Windows desktop environment
+that was commonly used on commercial UNIX variants such as Sun Solaris,
+HP-UX, and IBM AIX. Developed between 1993 and 1999, it has now been
+released under an Open source license by The Open Group.
 
-It is also necessary to enable the Subprocess Control Service (and dtcms for
-the calendar to work).
+Common Desktop Environment requires the Subprocess Control Service,
+dtcms, and the inetd super server to fully function.
 
-# sysrc rpcbind_enable=yes
-# sysrc dtcms_enable=yes
-# sysrc inetd_enable=yes
-# service rpcbind start && service dtcms start
-
-and
-
-Add the following line to /etc/inetd.conf:
+First, add the following line to /etc/inetd.conf:
 
 dtspc	stream	tcp	nowait	root	 %%PREFIX%%/dt/bin/dtspcd	%%PREFIX%%/dt/bin/dtspcd
 
-and to /etc/services:
+Second, add the following line to /etc/services:
 
 dtspc		6112/tcp # CDE Subprocess Control Service
 
-To start the Common Desktop Environment,
-% ln -s %%PREFIX%%/dt/bin/Xsession ~/.Xsession
-% env LANG=C startx
+# sysrc rpcbind_enable=YES
+# sysrc dtcms_enable=YES
+# sysrc inetd_enable=YES
+# service rpcbind start && service dtcms start && service inetd start
 
-If you want to use dtlogin as well, you'll need to create
+Finally, make sure to add %%PREFIX%%/dt/bin to your path.
+
+To start the Common Desktop Environment:
+% env LANG=C startx %%PREFIX%%/dt/bin/Xsession
+
+Alternatively, if you want to use the Login Manager as well, create
 %%LOCALBASE%%/etc/X11/Xwrapper.config and add this line:
 
-Also, make sure to add %%PREFIX%%/dt/bin to your path.
-
 allowed_users=anybody
+
+To start the Common Desktop Enviroment Login Manager:
+
+% %%LOCALBASE%%/dt/bin/dtlogin -daemon
 EOM
 }
 ]

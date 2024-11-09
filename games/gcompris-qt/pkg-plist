@@ -219,6 +219,7 @@ share/applications/org.kde.gcompris.desktop
 %%DATADIR%%/translations/gcompris_id.qm
 %%DATADIR%%/translations/gcompris_it.qm
 %%DATADIR%%/translations/gcompris_lt.qm
+%%DATADIR%%/translations/gcompris_lv.qm
 %%DATADIR%%/translations/gcompris_mk.qm
 %%DATADIR%%/translations/gcompris_ml.qm
 %%DATADIR%%/translations/gcompris_nl.qm

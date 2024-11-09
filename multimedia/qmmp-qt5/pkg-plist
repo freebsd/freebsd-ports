@@ -28,6 +28,7 @@ include/qmmp%%BIN_SUFFX%%/qmmp/visual.h
 include/qmmp%%BIN_SUFFX%%/qmmp/visualfactory.h
 include/qmmp%%BIN_SUFFX%%/qmmp/volume.h
 include/qmmp%%BIN_SUFFX%%/qmmp/volumehandler.h
+include/qmmp%%BIN_SUFFX%%/qmmpui/colorwidget.h
 include/qmmp%%BIN_SUFFX%%/qmmpui/commandlinehandler.h
 include/qmmp%%BIN_SUFFX%%/qmmpui/commandlinemanager.h
 include/qmmp%%BIN_SUFFX%%/qmmpui/configdialog.h
@@ -50,10 +51,12 @@ include/qmmp%%BIN_SUFFX%%/qmmpui/playlistparser.h
 include/qmmp%%BIN_SUFFX%%/qmmpui/playlisttrack.h
 include/qmmp%%BIN_SUFFX%%/qmmpui/qmmpui_export.h
 include/qmmp%%BIN_SUFFX%%/qmmpui/qmmpuisettings.h
+include/qmmp%%BIN_SUFFX%%/qmmpui/shortcutdialog.h
 include/qmmp%%BIN_SUFFX%%/qmmpui/templateeditor.h
 include/qmmp%%BIN_SUFFX%%/qmmpui/uifactory.h
 include/qmmp%%BIN_SUFFX%%/qmmpui/uihelper.h
 include/qmmp%%BIN_SUFFX%%/qmmpui/uiloader.h
+include/qmmp%%BIN_SUFFX%%/qmmpui/visualmenu.h
 lib/libqmmp%%BIN_SUFFX%%.so
 lib/libqmmp%%BIN_SUFFX%%.so.1
 lib/libqmmp%%BIN_SUFFX%%.so.%%SHLIB_VER%%

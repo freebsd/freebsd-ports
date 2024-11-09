@@ -11,6 +11,9 @@ WWW=		https://github.com/NuxiNL/cloudlibc
 
 LICENSE=	MIT
 
+DEPRECATED=	Unmaintained upstream since 2020
+EXPIRATION_DATE=2024-11-30
+
 RUN_DEPENDS=	clang${LLVM_DEFAULT}:devel/llvm${LLVM_DEFAULT} \
 		lld${LLVM_DEFAULT}:devel/llvm${LLVM_DEFAULT} \
 		pkgconf:devel/pkgconf

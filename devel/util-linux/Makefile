@@ -1,6 +1,6 @@
 PORTNAME=	util-linux
 DISTVERSION=	2.39.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	KERNEL_ORG/linux/utils/util-linux/v${DISTVERSION:R}/
 
@@ -38,6 +38,7 @@ TEST_TARGET=	check # tests fail due to https://bugs.freebsd.org/bugzilla/show_bu
 CONFLICTS_INSTALL=	heirloom-doctools
 
 OPTIONS_DEFINE=		CAL FLOCK GETOPT HARDLINK UUID
+OPTIONS_DEFAULT=	GETOPT
 OPTIONS_SUB=		yes
 
 CAL_DESC=		Install util-linux cal(1)

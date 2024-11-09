@@ -1,6 +1,6 @@
---- electron/spec/visibility-state-spec.ts.orig	2024-04-16 14:29:17 UTC
+--- electron/spec/visibility-state-spec.ts.orig	2024-10-09 13:53:06 UTC
 +++ electron/spec/visibility-state-spec.ts
-@@ -10,7 +10,7 @@ import { setTimeout } from 'node:timers/promises';
+@@ -12,7 +12,7 @@ import { closeWindow } from './lib/window-helpers';
  
  // visibilityState specs pass on linux with a real window manager but on CI
  // the environment does not let these specs pass

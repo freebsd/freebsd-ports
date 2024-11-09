@@ -89,6 +89,12 @@ SASL_MAKE_ARGS=		--use-sasl-client
 SSL_USES=	ssl
 SSL_MAKE_ARGS=	--ssl
 
+.include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && (${OSREL:R} >= 15 && ${OSVERSION} >= 1500026)
+USES+=		llvm:max=18,build
+.endif
+
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == aarch64 || ${ARCH} == powerpc64le

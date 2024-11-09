@@ -9,6 +9,10 @@ WWW=		https://include-what-you-use.org
 LICENSE=	NCSA
 LICENSE_FILE=	${WRKSRC}/LICENSE.TXT
 
+DEPRECATED=	Uses EOLed python 3.8
+EXPIRATION_DATE=2025-03-31
+IGNORE=		requires python 3.8
+
 USES=		cmake llvm:${LLVM_VER},build,run ncurses python:3.8,run shebangfix
 USE_GITHUB=	yes
 

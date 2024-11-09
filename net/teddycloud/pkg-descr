@@ -1,0 +1,5 @@
+teddycloud is an alternative to the public toniebox server.
+It is designed to be used in a local network and does not provide
+means of authentication. In order to use this server, certificates
+have to be read out of a toniebox, which requires UART access to
+the boxes internal processor.

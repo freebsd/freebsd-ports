@@ -1,0 +1,9 @@
+@dir %%ETCDIR%%
+@sample %%ETCDIR%%/supysonic.conf.sample
+@owner %%USER%%
+@group %%GROUP%%
+@dir /var/cache/supysonic
+@dir /var/log/supysonic
+@dir /var/run/supysonic
+@owner
+@group

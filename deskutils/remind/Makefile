@@ -1,5 +1,5 @@
 PORTNAME=	remind
-DISTVERSION=	05.00.06
+DISTVERSION=	05.00.07
 CATEGORIES=	deskutils
 # upstream moves distfiles to OLD once a new release appears
 MASTER_SITES=	https://dianne.skoll.ca/projects/remind/download/ \
@@ -70,16 +70,16 @@ LOCATION?=	Ottawa
 .include <bsd.port.options.mk>
 
 pre-configure:
-	@${REINPLACE_CMD} \
+	${REINPLACE_CMD} \
 	    -e 's#DEFAULT_LATITUDE 39#DEFAULT_LATITUDE ${DEFAULT_LATITUDE}#' \
 	    -e 's#DEFAULT_LONGITUDE 39#DEFAULT_LONGITUDE ${DEFAULT_LONGITUDE}#' \
 	    -e 's#Ottawa#${LOCATION}#' ${WRKSRC}/src/custom.h
 
 pre-configure-A4-on:
-	@${REINPLACE_CMD} -e 's#"Letter", 612, 792#"A4", 595, 842#' ${WRKSRC}/src/custom.h
+	${REINPLACE_CMD} -e 's#"Letter", 612, 792#"A4", 595, 842#' ${WRKSRC}/src/custom.h
 
 pre-configure-TCLTK-on:
-	@${REINPLACE_CMD} -e 's,wish,${WISH},' ${WRKSRC}/scripts/tkremind
+	${REINPLACE_CMD} -e '/^exec/s,wish,${WISH},' ${WRKSRC}/scripts/tkremind.in
 
 do-build:
 	cd ${WRKSRC}/src && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} all

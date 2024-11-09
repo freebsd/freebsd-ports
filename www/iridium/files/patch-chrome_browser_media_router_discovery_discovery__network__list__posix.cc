@@ -1,6 +1,6 @@
---- chrome/browser/media/router/discovery/discovery_network_list_posix.cc.orig	2022-03-28 18:11:04 UTC
+--- chrome/browser/media/router/discovery/discovery_network_list_posix.cc.orig	2024-11-04 08:56:03 UTC
 +++ chrome/browser/media/router/discovery/discovery_network_list_posix.cc
-@@ -5,11 +5,12 @@
+@@ -10,11 +10,12 @@
  #include "chrome/browser/media/router/discovery/discovery_network_list.h"
  
  #include <ifaddrs.h>
@@ -15,7 +15,7 @@
  
  #include <algorithm>
  
-@@ -18,7 +19,7 @@
+@@ -23,7 +24,7 @@
  #include "chrome/browser/media/router/discovery/discovery_network_list_wifi.h"
  #include "net/base/net_errors.h"
  
@@ -24,7 +24,7 @@
  #include <netpacket/packet.h>
  #else
  #include <net/if_dl.h>
-@@ -27,7 +28,7 @@
+@@ -32,7 +33,7 @@
  namespace media_router {
  namespace {
  
@@ -33,7 +33,7 @@
  using sll = struct sockaddr_ll;
  #define SOCKET_ARP_TYPE(s) ((s)->sll_hatype)
  #define SOCKET_ADDRESS_LEN(s) ((s)->sll_halen)
-@@ -38,6 +39,12 @@ using sll = struct sockaddr_dl;
+@@ -43,6 +44,12 @@ using sll = struct sockaddr_dl;
  #define SOCKET_ARP_TYPE(s) ((s)->sdl_type)
  #define SOCKET_ADDRESS_LEN(s) ((s)->sdl_alen)
  #define SOCKET_ADDRESS(s) (LLADDR(s))

@@ -276,7 +276,7 @@ keycloak:*:332:
 honeytrap:*:333:
 percona:*:334:
 benthos:*:335:
-# free: 336
+snac:*:336:
 daapd:*:337:
 murmur:*:338:
 mumble-server:*:339:
@@ -692,7 +692,7 @@ c-lightning:*:735:
 # free: 748
 # free: 749
 # free: 750
-# free: 751
+supysonic:*:751:
 # free: 752
 # free: 753
 # free: 754

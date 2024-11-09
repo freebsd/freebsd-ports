@@ -1,6 +1,6 @@
 PORTNAME=	amberfish
 PORTVERSION=	1.6.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	textproc databases
 MASTER_SITES=	SF/${PORTNAME}/Amberfish%20source%20-%20stable/${PORTVERSION}	\
 		http://etymon.com/software/amberfish/stable/

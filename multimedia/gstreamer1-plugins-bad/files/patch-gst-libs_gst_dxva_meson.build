@@ -1,11 +1,11 @@
---- gst-libs/gst/dxva/meson.build.orig	2024-08-21 11:25:15 UTC
+--- gst-libs/gst/dxva/meson.build.orig	2024-10-30 20:33:30 UTC
 +++ gst-libs/gst/dxva/meson.build
 @@ -1,3 +1,4 @@
 +if get_option('dxva').enabled()
  dxva_sources = files(
    'gstdxvaav1decoder.cpp',
    'gstdxvah264decoder.cpp',
-@@ -73,3 +74,4 @@ meson.override_dependency(pkg_name, gstdxva_dep)
+@@ -74,3 +75,4 @@ meson.override_dependency(pkg_name, gstdxva_dep)
    dependencies : [gstvideo_dep, gstcodecs_dep])
  
  meson.override_dependency(pkg_name, gstdxva_dep)

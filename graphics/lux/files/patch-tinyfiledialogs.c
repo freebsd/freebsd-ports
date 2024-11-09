@@ -1,7 +1,7 @@
---- tinyfiledialogs.c.orig	2022-03-08 00:31:39 UTC
+--- tinyfiledialogs.c.orig	2024-10-14 12:36:00 UTC
 +++ tinyfiledialogs.c
-@@ -47,13 +47,6 @@ Thanks for contributions, bug corrections & thorough t
- - Paul Rouget
+@@ -53,13 +53,6 @@ misrepresented as being the original software.
+     |__________________________________________|
  */
  
 -

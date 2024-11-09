@@ -1,13 +1,13 @@
---- tools/meson.build.orig	2024-08-21 11:25:15 UTC
+--- tools/meson.build.orig	2024-10-30 20:33:30 UTC
 +++ tools/meson.build
 @@ -1,3 +1,4 @@
 +if not get_option('tools').disabled()
  tool_deps = [pbutils_dep, audio_dep, video_dep, tag_dep, gst_dep, gst_base_dep, gmodule_dep]
  
  extra_args = []
-@@ -44,7 +45,6 @@ endif
-     },
-   }
+@@ -44,7 +45,6 @@ gst_tools = {
+   },
+ }
  
 -if not get_option('tools').disabled() and not static_build
    foreach tool, data: gst_tools

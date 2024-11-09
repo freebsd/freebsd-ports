@@ -1,6 +1,8 @@
 PORTNAME=	creduce
-DISTVERSION=	2.11.0.llvm13.g20220117
-PORTEPOCH=	1
+DISTVERSIONPREFIX=	creduce-
+DISTVERSION=	2.10.0-110
+DISTVERSIONSUFFIX=	-g31e855e
+PORTEPOCH=	2
 CATEGORIES=	devel
 
 MAINTAINER=	fuz@FreeBSD.org
@@ -21,12 +23,10 @@ RUN_DEPENDS=	topformflat:devel/delta \
 		p5-Getopt-Tabular>=0:devel/p5-Getopt-Tabular \
 		p5-Term-ReadKey>=0:devel/p5-Term-ReadKey
 
-USES=		cmake gnome compiler:c++14-lang llvm:13,build,lib,run perl5
+USES=		cmake gnome llvm:18,build,lib,run perl5
 
-USE_CXXSTD=	c++14
 USE_GITHUB=	yes
 GH_ACCOUNT=	csmith-project
-GH_TAGNAME=	4ae77d1e101135a6aea310b30c19e2af968b7bf6
 USE_GNOME=	libxml2
 
 # See clang_delta/CMakeLists.txt for more details

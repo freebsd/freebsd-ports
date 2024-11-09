@@ -1,11 +1,12 @@
 PORTNAME=	trunk
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.21.0
+DISTVERSION=	0.21.4
 CATEGORIES=	www devel
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Build, bundle & ship your Rust WASM application to the web
-WWW=		https://trunkrs.dev/
+WWW=		https://trunkrs.dev/ \
+		https://github.com/trunk-rs/trunk
 
 LICENSE=	APACHE20 MIT
 LICENSE_COMB=	dual
@@ -63,7 +64,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		bzip2-0.4.4 \
 		bzip2-sys-0.1.11+1.0.8 \
 		camino-1.1.9 \
-		cargo-lock-9.0.0 \
+		cargo-lock-10.0.1 \
 		cargo-platform-0.1.8 \
 		cargo_metadata-0.18.1 \
 		cc-1.1.30 \
@@ -127,7 +128,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		equivalent-1.0.1 \
 		errno-0.3.9 \
 		fastrand-2.1.1 \
-		file-id-0.2.1 \
+		file-id-0.2.2 \
 		filetime-0.2.25 \
 		flate2-1.0.34 \
 		fnv-1.0.7 \
@@ -206,7 +207,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		libdeflater-1.22.0 \
 		libloading-0.8.5 \
 		libredox-0.1.3 \
-		lightningcss-1.0.0-alpha.59 \
+		lightningcss-1.0.0-alpha.60 \
 		lightningcss-derive-1.0.0-alpha.43 \
 		linked-hash-map-0.5.6 \
 		linux-raw-sys-0.4.14 \
@@ -240,7 +241,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		nom-7.1.3 \
 		normpath-1.3.0 \
 		notify-6.1.1 \
-		notify-debouncer-full-0.3.1 \
+		notify-debouncer-full-0.3.2 \
 		nu-ansi-term-0.46.0 \
 		num-conv-0.1.0 \
 		num-traits-0.2.19 \
@@ -256,7 +257,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		outref-0.1.0 \
 		overload-0.1.1 \
 		oxipng-9.1.2 \
-		parcel_selectors-0.27.0 \
+		parcel_selectors-0.28.0 \
 		parcel_sourcemap-2.1.1 \
 		parking_lot-0.12.3 \
 		parking_lot_core-0.9.10 \
@@ -266,17 +267,14 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		pbkdf2-0.12.2 \
 		percent-encoding-2.3.1 \
 		phf-0.8.0 \
-		phf-0.10.1 \
 		phf-0.11.2 \
 		phf_codegen-0.8.0 \
-		phf_codegen-0.10.0 \
+		phf_codegen-0.11.2 \
 		phf_generator-0.8.0 \
-		phf_generator-0.10.0 \
 		phf_generator-0.11.2 \
 		phf_macros-0.8.0 \
 		phf_macros-0.11.2 \
 		phf_shared-0.8.0 \
-		phf_shared-0.10.0 \
 		phf_shared-0.11.2 \
 		pin-project-1.1.6 \
 		pin-project-internal-1.1.6 \
@@ -335,9 +333,9 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		rustls-0.23.14 \
 		rustls-native-certs-0.8.0 \
 		rustls-pemfile-2.2.0 \
-		rustls-pki-types-1.9.0 \
+		rustls-pki-types-1.10.0 \
 		rustls-webpki-0.102.8 \
-		rustversion-1.0.17 \
+		rustversion-1.0.18 \
 		ryu-1.0.18 \
 		same-file-1.0.6 \
 		schannel-0.1.26 \
@@ -401,10 +399,8 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		tokio-stream-0.1.16 \
 		tokio-tungstenite-0.24.0 \
 		tokio-util-0.7.12 \
-		toml-0.7.8 \
 		toml-0.8.19 \
 		toml_datetime-0.6.8 \
-		toml_edit-0.19.15 \
 		toml_edit-0.22.22 \
 		tower-0.4.13 \
 		tower-0.5.1 \
@@ -449,7 +445,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		web-sys-0.3.72 \
 		webpki-roots-0.26.6 \
 		which-4.4.2 \
-		which-6.0.3 \
+		which-7.0.0 \
 		widestring-1.1.0 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
@@ -483,7 +479,6 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		windows_x86_64_gnullvm-0.52.6 \
 		windows_x86_64_msvc-0.48.5 \
 		windows_x86_64_msvc-0.52.6 \
-		winnow-0.5.40 \
 		winnow-0.6.20 \
 		winreg-0.50.0 \
 		winsafe-0.0.19 \

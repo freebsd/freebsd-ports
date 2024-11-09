@@ -1,7 +1,7 @@
-TIMESTAMP = 1728119087
-SHA256 (signal-desktop-7.27.0-npm-cache.tar.gz) = 283b2ebf520a277337037eaece07f77c8b79367af8e5beea488cd0645e555888
-SIZE (signal-desktop-7.27.0-npm-cache.tar.gz) = 320812567
+TIMESTAMP = 1730490880
+SHA256 (signal-desktop-7.31.0-npm-cache.tar.gz) = a7dd02f582b20f4e64458f9493020a7af1064a242e8449dd897995d918bad433
+SIZE (signal-desktop-7.31.0-npm-cache.tar.gz) = 322228663
 SHA256 (sqlcipher-4.6.1--3.0.7--0.2.1-7c30de8bcb5d21127803f5ab19a097e1b508d05744aca3ac6166352506b5f451.tar.gz) = 7c30de8bcb5d21127803f5ab19a097e1b508d05744aca3ac6166352506b5f451
 SIZE (sqlcipher-4.6.1--3.0.7--0.2.1-7c30de8bcb5d21127803f5ab19a097e1b508d05744aca3ac6166352506b5f451.tar.gz) = 75824751
-SHA256 (signalapp-Signal-Desktop-v7.27.0_GH0.tar.gz) = 6eb0021cdf9a57fb0b0f62e50da561c59fe557d0a86db722bfff861a42897fe4
-SIZE (signalapp-Signal-Desktop-v7.27.0_GH0.tar.gz) = 42376810
+SHA256 (signalapp-Signal-Desktop-v7.31.0_GH0.tar.gz) = ab1309ace701936fbb0666cc0de77ecf987f85fa5bd356bcde770c2145e63b45
+SIZE (signalapp-Signal-Desktop-v7.31.0_GH0.tar.gz) = 42462900

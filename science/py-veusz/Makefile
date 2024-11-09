@@ -1,7 +1,7 @@
 PORTNAME=	veusz
 DISTVERSIONPREFIX=	${PORTNAME}-
 DISTVERSION=	3.6.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	science
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -18,7 +18,7 @@ RUN_DEPENDS=	${PYNUMPY}
 
 USES=		compiler:c++11-lang python pyqt:5 qt:5 shebangfix
 USE_GITHUB=	yes
-USE_PYQT=	pyqt5 sip
+USE_PYQT=	pyqt5 sip:build
 USE_PYTHON=	distutils concurrent autoplist pytest
 USE_QT=		core gui xml widgets qmake:build
 

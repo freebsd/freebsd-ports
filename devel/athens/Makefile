@@ -1,6 +1,7 @@
 PORTNAME=	athens
-DISTVERSION=	0.15.2
+DISTVERSION=	0.15.4
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	bofh@FreeBSD.org
@@ -10,9 +11,9 @@ WWW=		https://github.com/gomods/athens
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:modules
+USES=		go:1.22,modules
 
-BUILD_DATE=	2024-10-01-00:00:00-UTC
+BUILD_DATE=	2024-11-04-00:00:00-UTC
 
 GO_MODULE=	github.com/gomods/${PORTNAME}
 GO_TARGET=	./cmd/proxy

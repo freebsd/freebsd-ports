@@ -1,6 +1,7 @@
 PORTNAME=	swww
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.9.5
+PORTREVISION=	1
 CATEGORIES=	x11
 
 MAINTAINER=	nivit@FreeBSD.org
@@ -27,7 +28,7 @@ post-build:
 	${WRKSRC}/doc/gen.sh
 
 post-install:
-	${INSTALL_PROGRAM} ${CARGO_TARGET_DIR}/${CARGO_BUILD_TARGET}/release/swww-daemon \
+	${INSTALL_PROGRAM} ${CARGO_TARGET_DIR}/release/swww-daemon \
 		${STAGEDIR}${PREFIX}/bin/
 	(cd ${WRKSRC}/doc/generated && \
 		${INSTALL_MAN} *.1 ${STAGEDIR}${PREFIX}/share/man/man1/)

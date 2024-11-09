@@ -1,6 +1,6 @@
-TIMESTAMP = 1726403466
-SHA256 (ifreund-waylock-v1.2.1_GH0.tar.gz) = 5f890e120940dcec912f9aae3d3ddf7d2e9073a6e70320b1a8c9f78e62459a67
-SIZE (ifreund-waylock-v1.2.1_GH0.tar.gz) = 20361
+TIMESTAMP = 1729614030
+SHA256 (ifreund-waylock-v1.3.0_GH0.tar.gz) = 8930c75dec6a2e5b3f462a44dfa896807f01193b4e7c43c25a9c9064896b4931
+SIZE (ifreund-waylock-v1.3.0_GH0.tar.gz) = 20655
 SHA256 (ifreund-zig-wayland-v0.2.0_GH0.tar.gz) = 6cbbb8ca10c84cc83a09b21e3b84e0ab4238306376b268788fedcc46397b322d
 SIZE (ifreund-zig-wayland-v0.2.0_GH0.tar.gz) = 56461
 SHA256 (ifreund-zig-xkbcommon-v0.2.0_GH0.tar.gz) = 4ef3193a375f1893475c3bc481d262a7eef5c28e0d1ea7c20739deaa4f8df6bd

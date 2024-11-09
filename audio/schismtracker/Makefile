@@ -1,8 +1,6 @@
 PORTNAME=	schismtracker
-DISTVERSION=	20240909
-DISTVERSIONSUFFIX=	.source
+DISTVERSION=	20241021
 CATEGORIES=	audio
-MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/${DISTVERSION}/
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Module tracker editor/player resembling impulse tracker
@@ -16,18 +14,22 @@ ONLY_FOR_ARCHS=	amd64 armv7 i386 powerpc powerpc64 powerpc64le
 LIB_DEPENDS=	libFLAC.so:audio/flac \
 		libutf8proc.so:textproc/utf8proc
 
-USES=		compiler:c++11-lib desktop-file-utils localbase pkgconfig \
-		python sdl xorg
+USES=		autoreconf compiler:c++11-lib desktop-file-utils localbase \
+		pkgconfig python sdl xorg
+USE_GITHUB=	yes
 USE_SDL=	sdl2
 USE_XORG=	x11 xext xv
 GNU_CONFIGURE=	yes
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 PLIST_FILES=	bin/schismtracker \
 		share/applications/schism.desktop \
 		share/man/man1/schismtracker.1.gz \
 		share/pixmaps/schism-icon-128.png \
 		share/pixmaps/schism-itf-icon-128.png
+
+post-patch:
+	@${REINPLACE_CMD} -e "s|%%LAST_GIT_COMMIT%%|${DISTVERSION:C/([0-9]{4})([0-9]{2})([0-9]{2})/\1-\2-\3/}|" \
+		${WRKSRC}/configure.ac
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/sys/fd.org/*.desktop ${STAGEDIR}${DESKTOPDIR}

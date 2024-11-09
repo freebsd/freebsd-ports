@@ -1,3 +1,3 @@
-TIMESTAMP = 1726740961
-SHA256 (types-setuptools-75.1.0.20240917.tar.gz) = 12f12a165e7ed383f31def705e5c0fa1c26215dd466b0af34bd042f7d5331f55
-SIZE (types-setuptools-75.1.0.20240917.tar.gz) = 42585
+TIMESTAMP = 1729994320
+SHA256 (types-setuptools-75.2.0.20241025.tar.gz) = 2949913a518d5285ce00a3b7d88961c80a6e72ffb8f3da0a3f5650ea533bd45e
+SIZE (types-setuptools-75.2.0.20241025.tar.gz) = 43477

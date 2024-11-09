@@ -4468,6 +4468,7 @@ share/applications/emacsclient.desktop
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/w32common.h
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/w32console.c
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/w32cygwinx.c
+%%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/w32dwrite.c
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/w32fns.c
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/w32font.c
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/w32font.h

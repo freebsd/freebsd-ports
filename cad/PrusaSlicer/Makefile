@@ -1,7 +1,7 @@
 PORTNAME=	PrusaSlicer
 DISTVERSIONPREFIX=version_
-DISTVERSION=	2.8.0
-PORTREVISION=	2
+DISTVERSION=	2.8.1
+PORTREVISION=	1
 CATEGORIES=	cad
 DIST_SUBDIR=	PrusaSlicer
 
@@ -40,10 +40,13 @@ LIB_DEPENDS+=	libbgcode_convert.so:cad/libbgcode \
 		libfreetype.so:print/freetype2 \
 		libavcodec.so:multimedia/ffmpeg4 \
 		libharfbuzz.so:print/harfbuzz \
-		libwayland-egl.so:graphics/wayland
+		libwayland-egl.so:graphics/wayland \
+		libwebkit2gtk-4.0.so:www/webkit2-gtk3 \
+		libsoup-2.4.so:devel/libsoup \
+		libjavascriptcoregtk-4.0.so:www/webkit2-gtk3
 
 USES=		cmake cpe desktop-file-utils eigen:3 gettext gl gnome iconv \
-		jpeg pkgconfig xorg
+		jpeg pkgconfig xorg ssl tcl tk
 CPE_VENDOR=	prusa3d
 USE_GITHUB=	yes
 GH_ACCOUNT=	prusa3d

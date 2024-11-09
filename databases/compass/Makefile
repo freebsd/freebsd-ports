@@ -1,7 +1,7 @@
 PORTNAME=	compass
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.43.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	databases
 MASTER_SITES=	https://cloud.mongodb.com/static/font/:fonts \
 		https://registry.npmjs.org/fs-xattr/-/:fs_xattr \
@@ -35,6 +35,9 @@ LICENSE=	SSPLv1
 LICENSE_NAME=	Server Side Public License
 LICENSE_FILE=	${WRKSRC}/LICENSE
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
+
+DEPRECATED=	Depends on expired devel/electron29
+EXPIRATION_DATE=2024-12-31
 
 DISTCACHEFILES=	${DISTCACHEFILE_npm} \
 		${DISTCACHEFILE_gyp} \

@@ -25,6 +25,7 @@ include/freerdp%%MAJORVERSION%%/freerdp/channels/location.h
 include/freerdp%%MAJORVERSION%%/freerdp/channels/log.h
 include/freerdp%%MAJORVERSION%%/freerdp/channels/rail.h
 include/freerdp%%MAJORVERSION%%/freerdp/channels/rdp2tcp.h
+include/freerdp%%MAJORVERSION%%/freerdp/channels/rdpear.h
 include/freerdp%%MAJORVERSION%%/freerdp/channels/rdpdr.h
 include/freerdp%%MAJORVERSION%%/freerdp/channels/rdpecam.h
 include/freerdp%%MAJORVERSION%%/freerdp/channels/rdpei.h
@@ -166,6 +167,7 @@ include/freerdp%%MAJORVERSION%%/freerdp/utils/cliprdr_utils.h
 include/freerdp%%MAJORVERSION%%/freerdp/utils/drdynvc.h
 include/freerdp%%MAJORVERSION%%/freerdp/utils/encoded_types.h
 include/freerdp%%MAJORVERSION%%/freerdp/utils/gfx.h
+include/freerdp%%MAJORVERSION%%/freerdp/utils/helpers.h
 include/freerdp%%MAJORVERSION%%/freerdp/utils/http.h
 include/freerdp%%MAJORVERSION%%/freerdp/utils/passphrase.h
 include/freerdp%%MAJORVERSION%%/freerdp/utils/pcap.h
