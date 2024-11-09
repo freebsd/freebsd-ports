@@ -1,8 +1,8 @@
 PORTNAME=	scikit-sparse
-DISTVERSION=	0.4.8
-PORTREVISION=	9
+DISTVERSIONPREFIX=	v
+DISTVERSION=	0.4.15
 CATEGORIES=	science python
-MASTER_SITES=	PYPI
+#MASTER_SITES=	PYPI # missing files under tests/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -16,15 +16,21 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 LIB_DEPENDS=	libumfpack.so:math/suitesparse-umfpack	\
 		libcholmod.so:math/suitesparse-cholmod
 RUN_DEPENDS=	${PYNUMPY} \
-		${PYTHON_PKGNAMEPREFIX}scipy>0:science/py-scipy@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}scipy>=0.19:science/py-scipy@${PY_FLAVOR}
 
 USES=		fortran python
-USE_PYTHON=	distutils cython autoplist
+USE_PYTHON=	distutils cython autoplist pytest
+USE_GITHUB=	yes
 
 CFLAGS+=	-I${LOCALBASE}/include/suitesparse
 LDFLAGS+=	-shared
 
+TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
+TEST_WRKSRC=	${WRKSRC}/tests
+
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/sksparse/cholmod*.so
+
+# tests: 10 passed, 400 warnings in 25.73s
 
 .include <bsd.port.mk>
