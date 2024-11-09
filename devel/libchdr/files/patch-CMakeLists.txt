@@ -1,0 +1,26 @@
+--- CMakeLists.txt.orig	2024-11-12 19:29:11 UTC
++++ CMakeLists.txt
+@@ -51,8 +51,12 @@ if (WITH_SYSTEM_ZSTD)
+ 
+ # zstd
+ if (WITH_SYSTEM_ZSTD)
+-  find_package(zstd REQUIRED)
+-  list(APPEND PLATFORM_LIBS zstd::libzstd_shared)
++  # find_package(zstd) fails on i386 because of a known problem with the
++  # provided cmake module. Use pkg_check_modules instead.
++  find_package(PkgConfig REQUIRED)
++  pkg_check_modules(zstd REQUIRED libzstd)
++  list(APPEND CHDR_INCLUDES ${zstd_INCLUDE_DIRS})
++  list(APPEND PLATFORM_LIBS ${zstd_LINK_LIBRARIES})
+ else()
+   option(ZSTD_BUILD_SHARED "BUILD SHARED LIBRARIES" OFF)
+   option(ZSTD_BUILD_PROGRAMS "BUILD PROGRAMS" OFF)
+@@ -83,7 +87,7 @@ if (INSTALL_STATIC_LIBS)
+ endif()
+ 
+ if (INSTALL_STATIC_LIBS)
+-  install(TARGETS chdr-static ${CHDR_LIBS}
++  install(TARGETS chdr-static
+     ARCHIVE DESTINATION "${CMAKE_INSTALL_LIBDIR}"
+   )
+ endif()

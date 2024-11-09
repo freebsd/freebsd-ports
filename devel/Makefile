@@ -1221,6 +1221,7 @@
     SUBDIR += libcdb
     SUBDIR += libcds
     SUBDIR += libcfu
+    SUBDIR += libchdr
     SUBDIR += libchipcard
     SUBDIR += libcidr
     SUBDIR += libcii
