@@ -163,6 +163,7 @@
     SUBDIR += imapfilter
     SUBDIR += imapsync
     SUBDIR += imaptools
+    SUBDIR += imap-tools
     SUBDIR += imaputils
     SUBDIR += isbg
     SUBDIR += isoqlog
