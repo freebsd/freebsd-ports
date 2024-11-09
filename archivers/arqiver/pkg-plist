@@ -1,8 +1,11 @@
 bin/arqiver
 share/applications/arqiver.desktop
+%%DATADIR%%/translations/arqiver_bg.qm
 %%DATADIR%%/translations/arqiver_ca.qm
 %%DATADIR%%/translations/arqiver_cs.qm
+%%DATADIR%%/translations/arqiver_el.qm
 %%DATADIR%%/translations/arqiver_eo.qm
+%%DATADIR%%/translations/arqiver_es.qm
 %%DATADIR%%/translations/arqiver_et.qm
 %%DATADIR%%/translations/arqiver_fi.qm
 %%DATADIR%%/translations/arqiver_fr.qm
