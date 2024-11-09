@@ -1,4 +1,4 @@
---- components/supervised_user/core/common/features.cc.orig	2024-08-27 06:28:16 UTC
+--- components/supervised_user/core/common/features.cc.orig	2024-11-04 08:56:03 UTC
 +++ components/supervised_user/core/common/features.cc
 @@ -66,7 +66,7 @@ BASE_FEATURE(kUpdatedSupervisedUserExtensionApprovalSt
               "UpdatedSupervisedUserExtensionApprovalStrings",
@@ -18,8 +18,8 @@
    bool skipParentApprovalEnabled = base::FeatureList::IsEnabled(
        kEnableSupervisedUserSkipParentApprovalToInstallExtensions);
    bool permissionExtensionsForSupervisedUsersEnabled =
-@@ -106,13 +106,13 @@ BASE_FEATURE(kCustomWebSignInInterceptForSupervisedUse
-              "CustomWebSignInInterceptForSupervisedUsersUi",
+@@ -106,13 +106,13 @@ BASE_FEATURE(kSupervisedUserProfileSigninIPH,
+              "SupervisedUserProfileSigninIPH",
               base::FEATURE_DISABLED_BY_DEFAULT);
  
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN)

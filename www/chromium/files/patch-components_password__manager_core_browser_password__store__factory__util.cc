@@ -1,6 +1,6 @@
---- components/password_manager/core/browser/password_store_factory_util.cc.orig	2024-09-30 07:45:04 UTC
+--- components/password_manager/core/browser/password_store_factory_util.cc.orig	2024-10-22 08:31:56 UTC
 +++ components/password_manager/core/browser/password_store_factory_util.cc
-@@ -28,7 +28,7 @@ namespace {
+@@ -29,7 +29,7 @@ namespace {
  LoginDatabase::DeletingUndecryptablePasswordsEnabled GetPolicyFromPrefs(
      PrefService* prefs) {
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \

@@ -1,6 +1,6 @@
---- tools/json_schema_compiler/feature_compiler.py.orig	2024-05-23 20:04:36 UTC
+--- tools/json_schema_compiler/feature_compiler.py.orig	2024-10-27 06:40:35 UTC
 +++ tools/json_schema_compiler/feature_compiler.py
-@@ -277,6 +277,8 @@ FEATURE_GRAMMAR = ({
+@@ -292,6 +292,8 @@ FEATURE_GRAMMAR = ({
                  'linux': 'Feature::LINUX_PLATFORM',
                  'mac': 'Feature::MACOSX_PLATFORM',
                  'win': 'Feature::WIN_PLATFORM',

@@ -1,8 +1,7 @@
 PORTNAME=	todo
-PORTVERSION=	0.2.1
-PORTREVISION=	2
+PORTVERSION=	0.3.1
 CATEGORIES=	deskutils
-MASTER_SITES=	http://www.defora.org/os/download/download/4429/
+MASTER_SITES=	https://ftp.defora.org/pub/DeforaOS/Apps/Desktop/src/Todo/
 PKGNAMEPREFIX=	deforaos-
 DISTNAME=	Todo-${PORTVERSION}
 
@@ -13,21 +12,25 @@ WWW=		https://www.defora.org/
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libSystem.so:devel/deforaos-libsystem \
-		libDesktop.so:x11/deforaos-libdesktop
-BUILD_DEPENDS=	${LOCALBASE}/include/Desktop/Mailer/plugin.h:mail/deforaos-mailer
+LIB_DEPENDS=	libDesktop.so:x11/deforaos-libdesktop \
+		libSystem.so:devel/deforaos-libsystem
 
-USES=		desktop-file-utils gnome pkgconfig
-USE_GNOME=	gtk20
+USES=		desktop-file-utils gnome pkgconfig xorg
+USE_GNOME=	gtk30
+USE_XORG=	x11
 MAKE_ARGS+=	PREFIX=${PREFIX}
 
 CONFLICTS_INSTALL=	devtodo # man/man1/todo.1.gz
 
-OPTIONS_DEFINE=	DOCS NLS
-OPTIONS_SUB=	yes
-NLS_USES=	gettext
-DOCS_BUILD_DEPENDS=	xsltproc:textproc/libxslt \
-		${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl:textproc/docbook-xsl
+OPTIONS_DEFINE=		DOCS NLS
+OPTIONS_SUB=		yes
+DOCS_BUILD_DEPENDS=	${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl:textproc/docbook-xsl \
+			xsltproc:textproc/libxslt
+NLS_USES=		gettext
+
+post-patch:
+	${REINPLACE_CMD} -e 's|/lib/|/libdata/|g' \
+		${WRKSRC}/data/pkgconfig.sh
 
 post-patch-DOCS-off:
 	${REINPLACE_CMD} 's|= data doc|= data|' \
@@ -37,13 +40,8 @@ post-patch-NLS-off:
 	${REINPLACE_CMD} 's|po src tools|src tools|' \
 		${WRKSRC}/Makefile
 
-post-patch:
-	${REINPLACE_CMD} 's|-Wl,-pie||g' \
-		${WRKSRC}/tools/Makefile \
-		${WRKSRC}/src/Makefile
-
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/todo \
-		${STAGEDIR}${PREFIX}/lib/Mailer/plugins/todo.so
+		${STAGEDIR}${PREFIX}/lib/libTodo.so.0.0
 
 .include <bsd.port.mk>

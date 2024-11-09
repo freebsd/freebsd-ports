@@ -1,10 +1,10 @@
 PORTNAME=	wrangler
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.19.12
-PORTREVISION=	22
+PORTREVISION=	23
 CATEGORIES=	devel
 
-MAINTAINER=	antranigv@freebsd.am
+MAINTAINER=	kfv@kfv.io
 COMMENT=	Cloudflare Workers CLI Tool
 WWW=		https://developers.cloudflare.com/workers/cli-wrangler/
 

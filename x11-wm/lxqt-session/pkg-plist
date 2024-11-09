@@ -153,6 +153,7 @@ share/applications/lxqt-suspend.desktop
 %%LXQT_TRANSLATIONS%%/lxqt-session/lxqt-session_uk.qm
 %%LXQT_TRANSLATIONS%%/lxqt-session/lxqt-session_zh_CN.qm
 %%LXQT_TRANSLATIONS%%/lxqt-session/lxqt-session_zh_TW.qm
+%%LXQT_SHAREDIR%%/waylandwindowmanagers.conf
 %%LXQT_SHAREDIR%%/windowmanagers.conf
 share/man/man1/lxqt-config-session.1.gz
 share/man/man1/lxqt-leave.1.gz

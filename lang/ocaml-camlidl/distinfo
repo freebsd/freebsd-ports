@@ -1,5 +1,3 @@
-TIMESTAMP = 1089725420
-SHA256 (camlidl-1.05.tar.gz) = 857ed5bd3b2f99c62813070e1a5b4b6375e837c6815f4ad956baeb6f8c660311
-SIZE (camlidl-1.05.tar.gz) = 100640
-SHA256 (camlidl-1.05.doc.html.tar.gz) = 00ac7822ec73cb3cb5cb23b5d34879436366d979887eb3a312e1adcae8c1c32c
-SIZE (camlidl-1.05.doc.html.tar.gz) = 45945
+TIMESTAMP = 1728850004
+SHA256 (xavierleroy-camlidl-1.12-camlidl112_GH0.tar.gz) = d6ab22a363f22798d303df3b0e54ba274f2c3d7ab7a3023fee1c73d8a21970aa
+SIZE (xavierleroy-camlidl-1.12-camlidl112_GH0.tar.gz) = 182507

@@ -1,12 +1,13 @@
 PORTNAME=	numbat
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.14.0
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	lang devel science
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Statically typed programming language for scientific computations
-WWW=		https://numbat.dev
+WWW=		https://numbat.dev \
+		https://github.com/sharkdp/numbat
 
 LICENSE=	APACHE20 MIT
 LICENSE_COMB=	dual
@@ -284,7 +285,7 @@ PLIST_FILES=	bin/${PORTNAME}
 do-install:
 	# workaround for error: found a virtual manifest at `xx` instead of a package manifest
 	${INSTALL_PROGRAM} \
-		${WRKDIR}/target/*/release/${PORTNAME} \
+		${WRKDIR}/target/release/${PORTNAME} \
 		${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>

@@ -1,4 +1,8 @@
 include/date/date.h
+include/date/islamic.h
+include/date/iso_week.h
+include/date/julian.h
+include/date/solar_hijri.h
 include/date/tz.h
 lib/cmake/date/dateConfig.cmake
 lib/cmake/date/dateConfigVersion.cmake
@@ -6,4 +10,4 @@ lib/cmake/date/dateTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/date/dateTargets.cmake
 lib/libdate-tz.so
 lib/libdate-tz.so.3
-lib/libdate-tz.so.3.0.0
+lib/libdate-tz.so.3.0.3

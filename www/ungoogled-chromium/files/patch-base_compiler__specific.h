@@ -1,6 +1,6 @@
---- base/compiler_specific.h.orig	2024-10-01 07:26:23 UTC
+--- base/compiler_specific.h.orig	2024-10-27 06:40:35 UTC
 +++ base/compiler_specific.h
-@@ -326,7 +326,7 @@
+@@ -257,7 +257,7 @@
  //
  // In some cases it's desirable to remove this, e.g. on hot functions, or if
  // we have purposely changed the reference canary.
@@ -9,7 +9,7 @@
  #if HAS_ATTRIBUTE(__no_stack_protector__)
  #define NO_STACK_PROTECTOR __attribute__((__no_stack_protector__))
  #else
-@@ -457,7 +457,7 @@ inline constexpr bool AnalyzerAssumeTrue(bool arg) {
+@@ -388,7 +388,7 @@ inline constexpr bool AnalyzerAssumeTrue(bool arg) {
  // See https://clang.llvm.org/docs/AttributeReference.html#preserve-most for
  // more details.
  #if (defined(ARCH_CPU_ARM64) || defined(ARCH_CPU_X86_64)) && \

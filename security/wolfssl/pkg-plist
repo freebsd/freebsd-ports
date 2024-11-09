@@ -49,6 +49,7 @@ include/wolfssl/openssl/rand.h
 include/wolfssl/openssl/rc4.h
 include/wolfssl/openssl/ripemd.h
 include/wolfssl/openssl/rsa.h
+include/wolfssl/openssl/safestack.h
 include/wolfssl/openssl/sha.h
 include/wolfssl/openssl/sha3.h
 include/wolfssl/openssl/srp.h
@@ -156,7 +157,7 @@ include/wolfssl/wolfio.h
 lib/libwolfssl.a
 lib/libwolfssl.so
 lib/libwolfssl.so.42
-lib/libwolfssl.so.42.2.0
+lib/libwolfssl.so.42.3.0
 libdata/pkgconfig/wolfssl.pc
 %%PORTDOCS%%%%DOCSDIR%%/QUIC.md
 %%PORTDOCS%%%%DOCSDIR%%/README.txt

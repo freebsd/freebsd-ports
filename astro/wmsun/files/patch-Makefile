@@ -1,11 +1,11 @@
---- Makefile.orig	2015-08-28 11:57:39 UTC
+--- Makefile.orig	2024-10-17 21:56:44 UTC
 +++ Makefile
-@@ -19,14 +19,14 @@ LIBS   = -lXpm -lX11 -lXext -lm -ldockapp
- OBJS   = wmsun.o SunRise.o
+@@ -21,14 +21,14 @@
  
  .c.o:
--	$(CC) $(CPPFLAGS) $(CFLAGS) -c $< -o $*.o
-+	$(CC) $(CPPFLAGS) $(CFLAGS) -c $< -o $@ $(INCDIR)
+ 	$(CC) $(CPPFLAGS) -DWMSUN_VERSION=\"$(WMSUN_VERSION)\" $(CFLAGS) -c $< \
+-		-o $*.o
++		-o $@ $(INCDIR)
  
  all:	wmsun.o wmsun
  

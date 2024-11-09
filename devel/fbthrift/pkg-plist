@@ -1,5 +1,6 @@
 bin/thrift1
 include/thrift/ThriftLibrary.cmake
+include/thrift/annotation/bundled_annotations.h
 include/thrift/annotation/compat.thrift
 include/thrift/annotation/cpp.thrift
 include/thrift/annotation/gen-cpp2/cpp_clients.h
@@ -264,6 +265,7 @@ include/thrift/lib/cpp2/async/metadata/RequestRpcMetadataAdapter.h
 include/thrift/lib/cpp2/async/metadata/RequestRpcMetadataFacade.h
 include/thrift/lib/cpp2/async/metadata/TCompactRequestRpcMetadataAdapter.h
 include/thrift/lib/cpp2/transport/rocket/compression/Compression.h
+include/thrift/lib/cpp2/transport/rocket/compression/CompressionAlgorithmSelector.h
 include/thrift/lib/cpp2/transport/rocket/payload/ChecksumPayloadSerializerStrategy.h
 include/thrift/lib/cpp2/debug_thrift_data_difference/debug.h
 include/thrift/lib/cpp2/debug_thrift_data_difference/detail/debug-inl-post.h
@@ -480,6 +482,7 @@ include/thrift/lib/cpp2/server/TokenBucketConcurrencyController.h
 include/thrift/lib/cpp2/server/TransportRoutingHandler.h
 include/thrift/lib/cpp2/server/WeightedRequestPileQueue-inl.h
 include/thrift/lib/cpp2/server/WeightedRequestPileQueue.h
+include/thrift/lib/cpp2/server/metrics/PendingConnectionsMetrics.h
 include/thrift/lib/cpp2/server/metrics/StreamMetricCallback.h
 include/thrift/lib/cpp2/server/overload/ChainedOverloadChecker.h
 include/thrift/lib/cpp2/server/overload/CurrentlyOverloadedChecker.h

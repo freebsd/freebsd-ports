@@ -1,11 +1,12 @@
 PORTNAME=	bend
-DISTVERSION=	0.2.36
+DISTVERSION=	0.2.37
 CATEGORIES=	lang
 PKGNAMESUFFIX=	-language
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Massively parallel, high-level programming language
-WWW=		https://higherorderco.com
+WWW=		https://higherorderco.com \
+		https://github.com/HigherOrderCO/Bend
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE-APACHE
@@ -20,7 +21,7 @@ GH_ACCOUNT=	HigherOrderCO
 GH_PROJECT=	Bend
 
 CARGO_BUILDDEP=	no
-CARGO_CRATES=	TSPL-0.0.12 \
+CARGO_CRATES=	TSPL-0.0.13 \
 		anstream-0.6.14 \
 		anstyle-1.0.7 \
 		anstyle-parse-0.2.4 \
@@ -41,7 +42,7 @@ CARGO_CRATES=	TSPL-0.0.12 \
 		heck-0.5.0 \
 		hermit-abi-0.3.9 \
 		highlight_error-0.1.1 \
-		hvm-2.0.19 \
+		hvm-2.0.22 \
 		indexmap-2.2.6 \
 		insta-1.39.0 \
 		interner-0.2.1 \

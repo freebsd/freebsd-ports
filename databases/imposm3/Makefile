@@ -1,7 +1,7 @@
 PORTNAME=	imposm3
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.11.1
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	databases geography
 
 MAINTAINER=	darcy@dbitech.ca
@@ -15,6 +15,8 @@ LIB_DEPENDS=	libgeos.so:graphics/geos \
 		libleveldb.so:databases/leveldb
 
 USES=		go:modules
+USE_GITHUB=	nodefault
+GH_TUPLE=	golang:sys:v0.26.0:sys
 GO_MODULE=	github.com/omniscale/imposm3
 GO_TARGET=	./cmd/imposm
 GO_BUILDFLAGS=	-ldflags "\
@@ -24,6 +26,10 @@ PLIST_FILES=	bin/imposm
 
 PORTEXAMPLES=	example-mapping.json example-mapping.yml
 OPTIONS_DEFINE=	EXAMPLES
+
+pre-patch:
+	${RM} -r ${WRKSRC}/vendor/golang.org/x/sys
+	${LN} -s ${WRKDIR}/sys-* ${WRKSRC}/vendor/golang.org/x/sys
 
 post-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}

@@ -10,6 +10,8 @@ WWW=		https://lnav.org/
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_FreeBSD_15=	compilation fails with clang-19 but future 0.12.3 will include fix: https://github.com/tstack/lnav/issues/1328
+
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libpcre2-8.so:devel/pcre2
 

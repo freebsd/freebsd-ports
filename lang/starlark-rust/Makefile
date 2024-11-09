@@ -1,7 +1,7 @@
 PORTNAME=	starlark-rust
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.12.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	lang
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -248,7 +248,7 @@ PLIST_FILES=	bin/starlark
 do-install:
 	# binaries (workaround for error: found a virtual manifest at `xx` instead of a package manifest)
 	${INSTALL_PROGRAM} \
-		${WRKDIR}/target/*/release/starlark \
+		${WRKDIR}/target/release/starlark \
 		${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>

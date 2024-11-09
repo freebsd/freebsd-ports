@@ -1,5 +1,5 @@
 PORTNAME=	anyio
-PORTVERSION=	4.6.0
+PORTVERSION=	4.6.2
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -29,6 +29,10 @@ TRIO_DESC=	Use trio as backend
 TRIO_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}trio>=0.26.1:net/py-trio@${PY_FLAVOR}
 
 .include <bsd.port.pre.mk>
+
+.if ${PYTHON_REL} >= 31000
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}truststore>=0.9.1:security/py-truststore@${PY_FLAVOR}
+.endif
 
 .if ${PYTHON_REL} < 31100
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}typing-extensions>=4.1:devel/py-typing-extensions@${PY_FLAVOR}

@@ -1,7 +1,7 @@
 PORTNAME=	signal-fts5-extension
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.2.1
-PORTREVISION=	14
+PORTREVISION=	15
 CATEGORIES=	devel
 
 MAINTAINER=	mikael@FreeBSD.org
@@ -89,6 +89,6 @@ CARGO_CRATES=	atty-0.2.14 \
 PLIST_FILES=	lib/libsignal_tokenizer.a
 
 do-install:
-	${INSTALL_DATA} ${CARGO_TARGET_DIR}/${CARGO_BUILD_TARGET}/*/libsignal_tokenizer.a ${STAGEDIR}${LOCALBASE}/lib/
+	${INSTALL_DATA} ${CARGO_TARGET_DIR}/*/libsignal_tokenizer.a ${STAGEDIR}${LOCALBASE}/lib/
 
 .include <bsd.port.mk>

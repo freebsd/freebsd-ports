@@ -1,5 +1,5 @@
 PORTNAME=	SCIP
-DISTVERSION=	9.1.1
+DISTVERSION=	9.2.0
 CATEGORIES=	math science
 MASTER_SITES=	https://www.scipopt.org/download/release/
 DISTNAME=	${PORTNAME:tl}-${DISTVERSION}

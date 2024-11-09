@@ -1,6 +1,7 @@
 PORTNAME=	pulsar-client-cpp # this port requres instruction sets crc32, pclmul above the default sse2
 DISTVERSIONPREFIX=	v
 DISTVERSION=	3.6.0
+PORTREVISION=	1
 CATEGORIES=	net-p2p
 
 MAINTAINER=	yuri@FreeBSD.org

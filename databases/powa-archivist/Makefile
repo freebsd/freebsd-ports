@@ -1,11 +1,12 @@
 PORTNAME=	powa-archivist
 DISTVERSIONPREFIX=	REL_
 DISTVERSION=	4_2_2
+PORTREVISION=	1
 CATEGORIES=	databases
 
 MAINTAINER=	girgen@FreeBSD.org
 COMMENT=	PostgreSQL workload analyzer background worker
-WWW=		http://powa.readthedocs.org/en/latest/powa-archivist/index.html
+WWW=		https://powa.readthedocs.io/en/stable/components/powa-archivist/
 
 LICENSE=	PostgreSQL
 

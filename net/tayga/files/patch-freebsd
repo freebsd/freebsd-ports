@@ -1,7 +1,6 @@
-diff -ur nat64.c nat64.c
---- nat64.c	2012-10-03 16:55:57.000000000 +0400
-+++ nat64.c	2012-10-04 14:22:01.000000000 +0400
-@@ -94,8 +94,7 @@
+--- nat64.c.orig	2011-05-25 14:11:30 UTC
++++ nat64.c
+@@ -94,8 +94,7 @@ static void host_send_icmp4(uint8_t tos, struct in_add
  	} __attribute__ ((__packed__)) header;
  	struct iovec iov[2];
  
@@ -11,7 +10,7 @@ diff -ur nat64.c nat64.c
  	header.ip4.ver_ihl = 0x45;
  	header.ip4.tos = tos;
  	header.ip4.length = htons(sizeof(header.ip4) + sizeof(header.icmp) +
-@@ -156,6 +155,7 @@
+@@ -156,6 +155,7 @@ static void host_handle_icmp4(struct pkt *p)
  	}
  }
  
@@ -19,7 +18,7 @@ diff -ur nat64.c nat64.c
  static void xlate_header_4to6(struct pkt *p, struct ip6 *ip6,
  		int payload_length)
  {
-@@ -266,8 +266,7 @@
+@@ -266,8 +266,7 @@ static void xlate_4to6_data(struct pkt *p)
  	if (dest)
  		dest->flags |= CACHE_F_SEEN_4TO6;
  
@@ -29,7 +28,7 @@ diff -ur nat64.c nat64.c
  
  	if (no_frag_hdr) {
  		iov[0].iov_base = &header;
-@@ -514,8 +513,7 @@
+@@ -514,8 +513,7 @@ static void xlate_4to6_icmp_error(struct pkt *p)
  						sizeof(header.ip6_em)),
  				ip_checksum(p_em.data, p_em.data_len)));
  
@@ -39,7 +38,7 @@ diff -ur nat64.c nat64.c
  
  	iov[0].iov_base = &header;
  	iov[0].iov_len = sizeof(header);
-@@ -566,8 +564,7 @@
+@@ -566,8 +564,7 @@ static void host_send_icmp6(uint8_t tc, struct in6_add
  	} __attribute__ ((__packed__)) header;
  	struct iovec iov[2];
  
@@ -49,16 +48,7 @@ diff -ur nat64.c nat64.c
  	header.ip6.ver_tc_fl = htonl((0x6 << 28) | (tc << 20));
  	header.ip6.payload_length = htons(sizeof(header.icmp) + data_len);
  	header.ip6.next_header = 58;
-@@ -588,6 +585,8 @@
- 	if (writev(gcfg->tun_fd, iov, data_len ? 2 : 1) < 0)
- 		slog(LOG_WARNING, "error writing packet to tun device: %s\n",
- 				strerror(errno));
-+
-+	slog(LOG_WARNING, "Wrote somethinh\n");
- }
- 
- static void host_send_icmp6_error(uint8_t type, uint8_t code, uint32_t word,
-@@ -728,8 +727,7 @@
+@@ -728,8 +725,7 @@ static void xlate_6to4_data(struct pkt *p)
  	if (dest)
  		dest->flags |= CACHE_F_SEEN_6TO4;
  
@@ -68,7 +58,7 @@ diff -ur nat64.c nat64.c
  
  	header.ip4.cksum = ip_checksum(&header.ip4, sizeof(header.ip4));
  
-@@ -932,8 +930,7 @@
+@@ -932,8 +928,7 @@ static void xlate_6to4_icmp_error(struct pkt *p)
  							sizeof(header.ip4_em)),
  				ip_checksum(p_em.data, p_em.data_len));
  
@@ -78,10 +68,9 @@ diff -ur nat64.c nat64.c
  
  	iov[0].iov_base = &header;
  	iov[0].iov_len = sizeof(header);
-diff -ur tayga.c tayga.c
---- tayga.c	2012-10-03 16:55:57.000000000 +0400
-+++ tayga.c	2012-10-04 15:13:49.000000000 +0400
-@@ -84,6 +84,7 @@
+--- tayga.c.orig	2011-05-25 14:11:30 UTC
++++ tayga.c
+@@ -84,6 +84,7 @@ void read_random_bytes(void *d, int len)
  	}
  }
  
@@ -89,12 +78,12 @@ diff -ur tayga.c tayga.c
  static void tun_setup(int do_mktun, int do_rmtun)
  {
  	struct ifreq ifr;
-@@ -161,6 +162,113 @@
+@@ -161,7 +162,114 @@ static void tun_setup(int do_mktun, int do_rmtun)
  	slog(LOG_INFO, "Using tun device %s with MTU %d\n", gcfg->tundev,
  			gcfg->mtu);
  }
 +#endif
-+
+ 
 +#ifdef __FreeBSD__
 +static void tun_setup(int do_mktun, int do_rmtun)
 +{
@@ -200,10 +189,11 @@ diff -ur tayga.c tayga.c
 +			gcfg->mtu);
 +}
 +#endif
- 
++
  static void signal_handler(int signal)
  {
-@@ -214,7 +322,7 @@
+ 	write(signalfds[1], &signal, sizeof(signal));
+@@ -214,7 +322,7 @@ static void read_from_tun(void)
  	memset(p, 0, sizeof(struct pkt));
  	p->data = gcfg->recv_buf + sizeof(struct tun_pi);
  	p->data_len = ret - sizeof(struct tun_pi);
@@ -212,10 +202,9 @@ diff -ur tayga.c tayga.c
  	case ETH_P_IP:
  		handle_ip4(p);
  		break;
-diff -ur tayga.h tayga.h
---- tayga.h	2012-10-03 16:55:57.000000000 +0400
-+++ tayga.h	2012-10-04 14:26:09.000000000 +0400
-@@ -31,14 +31,44 @@
+--- tayga.h.orig	2011-05-25 14:11:30 UTC
++++ tayga.h
+@@ -31,13 +31,43 @@
  #include <syslog.h>
  #include <errno.h>
  #include <time.h>
@@ -231,12 +220,12 @@ diff -ur tayga.h tayga.h
 +#include <net/ethernet.h>
 +#include <sys/uio.h>
 +#endif
-+
  
++
  #include "list.h"
  #include "config.h"
  
- 
++
 +#ifdef __Linux__
 +#define	TUN_SET_PROTO(_pi, _af)			{ (_pi)->flags = 0; (_pi)->proto = htons(_af); }
 +#define	TUN_GET_PROTO(_pi)			ntohs((_pi)->proto)
@@ -256,7 +245,6 @@ diff -ur tayga.h tayga.h
 +#define	TUN_SET_PROTO(_pi, _af)			{ (_pi)->proto = htonl(_af); }
 +#define	TUN_GET_PROTO(_pi)			ntohl((_pi)->proto)
 +#endif
-+
+ 
  /* Configuration knobs */
  
- /* Number of seconds of silence before a map ages out of the cache */

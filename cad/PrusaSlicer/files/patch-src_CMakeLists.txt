@@ -1,6 +1,6 @@
---- src/CMakeLists.txt.orig	2024-06-27 09:25:47 UTC
+--- src/CMakeLists.txt.orig	2024-09-18 13:39:04 UTC
 +++ src/CMakeLists.txt
-@@ -60,7 +60,7 @@ if (SLIC3R_GUI)
+@@ -46,7 +46,7 @@ if (SLIC3R_GUI)
      endif()
  
      find_package(JPEG MODULE QUIET)
@@ -9,7 +9,7 @@
  
      string(REGEX MATCH "wxpng" WX_PNG_BUILTIN ${wxWidgets_LIBRARIES})
      if (PNG_FOUND AND NOT WX_PNG_BUILTIN)
-@@ -123,7 +123,7 @@ endif ()
+@@ -109,7 +109,7 @@ endif ()
      set_target_properties(PrusaSlicer PROPERTIES OUTPUT_NAME "prusa-slicer")
  endif ()
  

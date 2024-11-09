@@ -1,6 +1,6 @@
---- electron/shell/browser/electron_browser_main_parts_posix.cc.orig	2024-08-20 22:47:02 UTC
+--- electron/shell/browser/electron_browser_main_parts_posix.cc.orig	2024-10-15 14:19:55 UTC
 +++ electron/shell/browser/electron_browser_main_parts_posix.cc
-@@ -199,12 +199,16 @@ void ElectronBrowserMainParts::InstallShutdownSignalHa
+@@ -210,12 +210,16 @@ void ElectronBrowserMainParts::InstallShutdownSignalHa
    g_pipe_pid = getpid();
    g_shutdown_pipe_read_fd = pipefd[0];
    g_shutdown_pipe_write_fd = pipefd[1];

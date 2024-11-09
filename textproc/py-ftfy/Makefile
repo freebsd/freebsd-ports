@@ -1,7 +1,8 @@
 PORTNAME=	ftfy
-PORTVERSION=	6.3.0
+PORTVERSION=	6.3.1
 CATEGORIES=	textproc python
-MASTER_SITES=	PYPI
+MASTER_SITES=	PYPI \
+		https://github.com/rspeer/python-ftfy/releases/download/v${PORTVERSION}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org

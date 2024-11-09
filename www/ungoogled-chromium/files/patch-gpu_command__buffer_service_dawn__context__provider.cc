@@ -1,6 +1,6 @@
---- gpu/command_buffer/service/dawn_context_provider.cc.orig	2024-10-01 07:26:23 UTC
+--- gpu/command_buffer/service/dawn_context_provider.cc.orig	2024-10-27 06:40:35 UTC
 +++ gpu/command_buffer/service/dawn_context_provider.cc
-@@ -170,7 +170,7 @@ wgpu::BackendType DawnContextProvider::GetDefaultBacke
+@@ -307,7 +307,7 @@ wgpu::BackendType DawnContextProvider::GetDefaultBacke
    return base::FeatureList::IsEnabled(features::kSkiaGraphiteDawnUseD3D12)
               ? wgpu::BackendType::D3D12
               : wgpu::BackendType::D3D11;

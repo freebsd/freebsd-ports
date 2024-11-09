@@ -1,5 +1,5 @@
 PORTNAME=	winetricks
-PORTVERSION=	20240105
+DISTVERSION=	20241017
 CATEGORIES=	emulators
 
 MAINTAINER=	Alexander88207@protonmail.com
@@ -15,10 +15,11 @@ ONLY_FOR_ARCHS_REASON=	Wine only runs on x86 architecture
 RUN_DEPENDS=	cabextract:archivers/cabextract
 
 USES=		perl5
-USE_PERL5=	run
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	Winetricks
+GH_TAGNAME=	a06ea87
+USE_PERL5=	run
 
 NO_ARCH=	yes
 NO_BUILD=	yes

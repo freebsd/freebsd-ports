@@ -1,11 +1,21 @@
---- pyproject.toml.orig	2023-04-24 00:14:41 UTC
+--- pyproject.toml.orig	1970-01-01 00:00:00 UTC
 +++ pyproject.toml
-@@ -5,7 +5,7 @@ requires = [
-     "setuptools>=61.0.0",
+@@ -2,15 +2,14 @@ requires = [
+ # Minimum requirements for the build system to execute.
+ # See https://github.com/scipy/scipy/pull/12940 for the AIX issue.
+ requires = [
+-    "meson-python==0.13.1",
+-    "meson==1.2.1",
++    "meson-python>=0.13.1",
++    "meson>=1.2.1",
      "wheel",
      "Cython>=0.29.33,<3",  # Note: sync with setup.py, environment.yml and asv.conf.json
--    "oldest-supported-numpy>=2022.8.16",
-+    "numpy>=1.23.2",
+     # Note: numpy 1.25 has a backwards compatible C API by default
+     # we don't want to force users to compile with 1.25 though
+     # (Ideally, in the future, though, oldest-supported-numpy can be dropped when our min numpy is 1.25.x)
+-    "oldest-supported-numpy>=2022.8.16; python_version<'3.12'",
+-    "numpy>=1.26.0,<2; python_version>='3.12'",
++    "numpy>=1.26.0,<2",
      "versioneer[toml]"
  ]
- # build-backend = "setuptools.build_meta"
+ 

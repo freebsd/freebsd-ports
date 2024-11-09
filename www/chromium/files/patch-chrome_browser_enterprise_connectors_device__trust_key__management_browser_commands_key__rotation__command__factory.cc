@@ -1,6 +1,6 @@
---- chrome/browser/enterprise/connectors/device_trust/key_management/browser/commands/key_rotation_command_factory.cc.orig	2024-09-30 07:45:04 UTC
+--- chrome/browser/enterprise/connectors/device_trust/key_management/browser/commands/key_rotation_command_factory.cc.orig	2024-10-22 08:31:56 UTC
 +++ chrome/browser/enterprise/connectors/device_trust/key_management/browser/commands/key_rotation_command_factory.cc
-@@ -18,7 +18,7 @@
+@@ -19,7 +19,7 @@
  
  #if BUILDFLAG(IS_WIN)
  #include "chrome/browser/enterprise/connectors/device_trust/key_management/browser/commands/win_key_rotation_command.h"

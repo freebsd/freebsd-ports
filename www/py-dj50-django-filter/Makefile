@@ -1,8 +1,9 @@
 PORTNAME=	django-filter
-DISTVERSION=	24.2
+DISTVERSION=	24.3
 CATEGORIES=	www python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}dj50-
+DISTNAME=	django_filter-${DISTVERSION}
 
 MAINTAINER=	kai@FreeBSD.org
 COMMENT=	Dynamic filtering for querysets with Django

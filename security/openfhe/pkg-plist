@@ -217,6 +217,7 @@ include/openfhe/core/utils/prng/README.md
 include/openfhe/core/utils/prng/blake2-impl.h
 include/openfhe/core/utils/prng/blake2.h
 include/openfhe/core/utils/prng/blake2engine.h
+include/openfhe/core/utils/prng/prng.h
 include/openfhe/core/utils/serial.h
 include/openfhe/core/utils/serializable.h
 include/openfhe/core/utils/sertype.h
@@ -354,10 +355,10 @@ lib/OpenFHE/OpenFHETargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/OpenFHE/OpenFHETargets.cmake
 lib/libOPENFHEbinfhe.so
 lib/libOPENFHEbinfhe.so.1
-lib/libOPENFHEbinfhe.so.1.2.1
+lib/libOPENFHEbinfhe.so.1.2.3
 lib/libOPENFHEcore.so
 lib/libOPENFHEcore.so.1
-lib/libOPENFHEcore.so.1.2.1
+lib/libOPENFHEcore.so.1.2.3
 lib/libOPENFHEpke.so
 lib/libOPENFHEpke.so.1
-lib/libOPENFHEpke.so.1.2.1
+lib/libOPENFHEpke.so.1.2.3

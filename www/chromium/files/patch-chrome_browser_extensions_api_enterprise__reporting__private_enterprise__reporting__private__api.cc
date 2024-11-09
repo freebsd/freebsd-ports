@@ -1,6 +1,6 @@
---- chrome/browser/extensions/api/enterprise_reporting_private/enterprise_reporting_private_api.cc.orig	2024-09-30 07:45:04 UTC
+--- chrome/browser/extensions/api/enterprise_reporting_private/enterprise_reporting_private_api.cc.orig	2024-10-22 08:31:56 UTC
 +++ chrome/browser/extensions/api/enterprise_reporting_private/enterprise_reporting_private_api.cc
-@@ -38,7 +38,7 @@
+@@ -41,7 +41,7 @@
  #include "components/reporting/util/statusor.h"
  #endif
  
@@ -9,7 +9,7 @@
  #include <optional>
  
  #include "base/strings/string_util.h"
-@@ -155,7 +155,7 @@ api::enterprise_reporting_private::ContextInfo ToConte
+@@ -158,7 +158,7 @@ api::enterprise_reporting_private::ContextInfo ToConte
    return info;
  }
  
@@ -18,7 +18,7 @@
  
  device_signals::SignalsAggregationRequest CreateAggregationRequest(
      device_signals::SignalName signal_name) {
-@@ -217,7 +217,7 @@ EnterpriseReportingPrivateGetDeviceIdFunction::
+@@ -220,7 +220,7 @@ EnterpriseReportingPrivateGetDeviceIdFunction::
  
  // getPersistentSecret
  
@@ -27,7 +27,7 @@
  
  EnterpriseReportingPrivateGetPersistentSecretFunction::
      EnterpriseReportingPrivateGetPersistentSecretFunction() = default;
-@@ -643,7 +643,7 @@ void EnterpriseReportingPrivateEnqueueRecordFunction::
+@@ -646,7 +646,7 @@ void EnterpriseReportingPrivateEnqueueRecordFunction::
  }
  #endif
  

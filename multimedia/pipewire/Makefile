@@ -1,5 +1,6 @@
 PORTNAME=	pipewire
-DISTVERSION=	1.2.5
+DISTVERSION=	1.2.6
+PORTREVISION=	1
 CATEGORIES=	multimedia
 
 MAINTAINER=	arrowd@FreeBSD.org
@@ -52,6 +53,7 @@ LV2_DESC=		Support lv2-based audio plugins via lilv
 LV2_LIB_DEPENDS=	liblilv-0.so:audio/lilv
 LV2_MESON_ENABLED=	lv2
 
+PULSEAUDIO_DESC=		Enable PulseAudio emulation
 PULSEAUDIO_MESON_ENABLED=	libpulse
 PULSEAUDIO_LIB_DEPENDS=		libpulse.so:audio/pulseaudio
 
@@ -85,6 +87,7 @@ MESON_ARGS=	-D pw-cat=enabled \
 		-D libmysofa=disabled \
 		-D libffado=disabled \
 		-D snap=disabled \
+		-D gsettings-pulse-schema=disabled \
 		-D udevrulesdir="${LOCALBASE}/lib/udev/rules.d"
 
 PORTDOCS=	*

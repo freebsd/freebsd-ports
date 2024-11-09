@@ -5,7 +5,7 @@ MASTER_SITES=	https://github.com/longturn/${PORTNAME}/releases/download/${FC21_V
 DISTNAME=	${PORTNAME:S/^f/F/}-${FC21_VERSION}
 
 PATCH_SITES=	https://github.com/longturn/${PORTNAME}/commit/
-PATCHFILES=	1c314496c1cabf6e582e10d8660bb1b31ae461d3.patch
+PATCHFILES=	108a01125e4bae235c212f2484306547a79da07f.patch
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	tobias.rehbein@web.de
@@ -26,7 +26,7 @@ USE_KDE=	archive
 USE_QT=		core gui network svg widgets buildtools:build qmake:build
 USE_SDL=	mixer2
 
-FC21_VERSION=	v3.0-patch.4
+FC21_VERSION=	v3.0-patch.5
 
 CMAKE_ON=	CMAKE_DISABLE_FIND_PACKAGE_Git \
 		CMAKE_DISABLE_FIND_PACKAGE_Sphinx

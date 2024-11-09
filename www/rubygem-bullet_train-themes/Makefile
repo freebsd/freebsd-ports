@@ -1,5 +1,5 @@
 PORTNAME=	bullet_train-themes
-PORTVERSION=	1.7.22
+PORTVERSION=	1.7.23
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 

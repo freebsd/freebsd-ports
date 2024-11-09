@@ -48,8 +48,6 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Babel>=2.10.0:devel/py-babel@${PY_FLAVOR} \
 USES=		cpe python shebangfix
 CPE_VENDOR=	moinmo
 USE_PYTHON=	autoplist pep517
-PEP517_INSTALL_CMD?=	${PYTHON_CMD} -m installer --destdir ${STAGEDIR} --prefix ${PREFIX} ${BUILD_WRKSRC}/dist/${PYDISTUTILS_PKGNAME}-${DISTVERSION}*.whl
-PYDISTUTILS_PKGNAME=	moin
 
 NO_ARCH=	yes
 

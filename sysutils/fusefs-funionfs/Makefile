@@ -11,6 +11,10 @@ WWW=		http://funionfs.apiou.org/
 
 LICENSE=	GPLv2+
 
+BROKEN=		Unfetchable
+DEPRECATED=	Upstream is no longer around
+EXPIRATION_DATE=2024-11-30
+
 USES=		fuse localbase
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share

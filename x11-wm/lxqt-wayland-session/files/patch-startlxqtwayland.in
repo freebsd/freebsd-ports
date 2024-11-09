@@ -1,0 +1,16 @@
+--- startlxqtwayland.in.orig	2024-11-08 08:33:16 UTC
++++ startlxqtwayland.in
+@@ -7,6 +7,13 @@ contains()
+     [ "$str" = "$substr" -o -z "${str##$substr:*}" -o -z "${str##*:$substr:*}" -o -z "${str%%*:$substr}" ]
+ }
+ 
++if [ -f /var/db/zoneinfo ]; then TZ=`cat /var/db/zoneinfo`;
++        cmp -s /usr/share/zoneinfo/$TZ /etc/localtime
++        if [ $? -eq 0 ]; then
++                export TZ="${TZ}"
++        fi
++fi
++
+ if [ -z "$XDG_DATA_HOME" ]; then
+     export XDG_DATA_HOME="$HOME/.local/share"
+ fi

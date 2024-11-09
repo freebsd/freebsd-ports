@@ -11,6 +11,8 @@ WWW=		https://www.bespokesynth.com/
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_FreeBSD_15=	compilation broken with clang-19: see https://github.com/BespokeSynth/BespokeSynth/issues/1687
+
 BUILD_DEPENDS=	juce706>0:devel/juce706 \
 		pybind11>0:devel/pybind11
 LIB_DEPENDS=	libasound.so:audio/alsa-lib \

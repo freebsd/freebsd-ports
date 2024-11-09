@@ -1,5 +1,6 @@
 PORTNAME=	ReText
 DISTVERSION=	8.0.2
+PORTREVISION=	1
 CATEGORIES=	editors
 MASTER_SITES=	PYPI
 
@@ -21,7 +22,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}docutils>=0:textproc/py-docutils@${PY_FLAVOR
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pymdown-extensions>0:textproc/py-pymdown-extensions@${PY_FLAVOR}
 
 USES=		desktop-file-utils pyqt:6 python:3.9+
-USE_PYQT=	pyqt6:run sip:run
+USE_PYQT=	pyqt6:run
 USE_PYTHON=	autoplist noflavors pep517 pytest
 
 NO_ARCH=	yes

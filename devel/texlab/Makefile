@@ -1,10 +1,10 @@
 PORTNAME=	texlab
 DISTVERSIONPREFIX=	v
 DISTVERSION=	4.2.0
-PORTREVISION=	20
+PORTREVISION=	21
 CATEGORIES=	devel
 
-MAINTAINER=	antranigv@freebsd.am
+MAINTAINER=	kfv@kfv.io
 COMMENT=	Language Server Protocol for LaTeX
 WWW=		https://texlab.netlify.app/
 

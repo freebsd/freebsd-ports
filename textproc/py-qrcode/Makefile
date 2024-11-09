@@ -1,6 +1,6 @@
 PORTNAME=	qrcode
-PORTVERSION=	7.4
-PORTREVISION=	1
+PORTVERSION=	8.0
+PORTREVISION=	2
 CATEGORIES=	textproc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,14 +11,15 @@ WWW=		https://github.com/lincolnloop/python-qrcode
 
 LICENSE=	BSD3CLAUSE
 
-RUN_DEPENDS=	${PY_PILLOW} \
-		${PYTHON_PKGNAMEPREFIX}png>=0.0.17:graphics/py-png@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}six>=1.8:devel/py-six@${PY_FLAVOR} \
-		${PYTHON_SITELIBDIR}/typing_extensions.py:devel/py-typing-extensions@${PY_FLAVOR}
+BUILD_DEPENDS= ${PYTHON_PKGNAMEPREFIX}poetry-core>=0:devel/py-poetry-core@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pillow>=9.1.0:graphics/py-pillow@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}png>=0.0.17:graphics/py-png@${PY_FLAVOR}
 
-USES=		python
-USE_PYTHON=	autoplist concurrent distutils
+USES=		python shebangfix
+USE_PYTHON=	autoplist concurrent pep517
 
 NO_ARCH=	yes
+
+SHEBANG_FILES=	qrcode/console_scripts.py
 
 .include <bsd.port.mk>

@@ -27,4 +27,9 @@ USE_PYTHON=	autoplist concurrent pep517
 
 NO_ARCH=	yes
 
+OPTIONS_DEFINE=	PROGRESS
+PROGRESS_DESC=	Progress bar for interactive use
+
+PROGRESS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tqdm>=0:misc/py-tqdm@${PY_FLAVOR}
+
 .include <bsd.port.mk>

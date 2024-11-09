@@ -1,6 +1,7 @@
 PORTNAME=	ocrs
 DISTVERSIONPREFIX=	ocrs-cli-v
 DISTVERSION=	0.9.0
+PORTREVISION=	1
 CATEGORIES=	graphics
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -126,7 +127,7 @@ PLIST_FILES=	bin/${PORTNAME}
 do-install:
 	# binaries (workaround for error: found a virtual manifest at `xx` instead of a package manifest)
 	${INSTALL_PROGRAM} \
-		${WRKDIR}/target/*/release/${PORTNAME} \
+		${WRKDIR}/target/release/${PORTNAME} \
 		${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>

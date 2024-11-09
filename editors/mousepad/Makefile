@@ -1,5 +1,5 @@
 PORTNAME=	mousepad
-PORTVERSION=	0.6.2
+PORTVERSION=	0.6.3
 CATEGORIES=	editors xfce
 MASTER_SITES=	XFCE/apps
 DIST_SUBDIR=	xfce4
@@ -16,25 +16,28 @@ LIB_DEPENDS=	libharfbuzz.so:print/harfbuzz
 USES=		desktop-file-utils gettext-tools gmake gnome libtool perl5 \
 		pkgconfig tar:bzip2 xfce
 USE_GNOME=	cairo gdkpixbuf2 glib20 gtk30 gtksourceview3 intltool
+GLIB_SCHEMAS=	org.xfce.mousepad.gschema.xml
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 
-GLIB_SCHEMAS=	org.xfce.mousepad.gschema.xml
-
-OPTIONS_DEFINE=		NLS SPELL
-OPTIONS_DEFAULT=	SPELL
+OPTIONS_DEFINE=		NLS SHORTCUTS SPELL
+OPTIONS_DEFAULT=	SHORTCUTS SPELL
 OPTIONS_SUB=		yes
 
+SHORTCUTS_DESC=		Shortcuts editor plugin
 SPELL_DESC=		Spell checking plugin
 
-NLS_CONFIGURE_ENABLE=	nls
 NLS_USES=		gettext-runtime
+NLS_CONFIGURE_ENABLE=	nls
 
+SHORTCUTS_USE=		XFCE=libmenu,xfconf
+SHORTCUTS_CONFIGURE_ENABLE=	plugin-shortcuts
+
+SPELL_LIB_DEPENDS=	libenchant-2.so:textproc/enchant2 \
+			libgspell-1.so:textproc/gspell
 SPELL_CONFIGURE_ENABLE=	plugin-gspell
-SPELL_LIB_DEPENDS=	libgspell-1.so:textproc/gspell \
-			libenchant-2.so:textproc/enchant2
 SPELL_VARS=		GLIB_SCHEMAS+=org.xfce.mousepad.plugins.gspell.gschema.xml
 
 .include <bsd.port.mk>

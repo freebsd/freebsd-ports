@@ -1,6 +1,6 @@
---- electron/spec/api-power-monitor-spec.ts.orig	2024-02-21 16:26:48 UTC
+--- electron/spec/api-power-monitor-spec.ts.orig	2024-10-09 13:53:06 UTC
 +++ electron/spec/api-power-monitor-spec.ts
-@@ -16,7 +16,7 @@ describe('powerMonitor', () => {
+@@ -18,7 +18,7 @@ describe('powerMonitor', () => {
  describe('powerMonitor', () => {
    let logindMock: any, dbusMockPowerMonitor: any, getCalls: any, emitSignal: any, reset: any;
  

@@ -1,6 +1,7 @@
 PORTNAME=	mongodb
 DISTVERSIONPREFIX=	r
 DISTVERSION=	8.0.1
+PORTREVISION=	1
 CATEGORIES=	databases net
 PKGNAMESUFFIX=	${DISTVERSION:R:S/.//}
 
@@ -92,7 +93,7 @@ GROUPS=		mongodb
 
 OPTIONS_DEFINE=		LTO NOAVX SASL
 OPTIONS_DEFINE_aarch64=	ARMV80A
-OPTIONS_DEFAULT=	NOAVX SASL
+OPTIONS_DEFAULT=	SASL
 
 # MongoDB on non-LSE ARM cpu like Raspberry Pi can work but is unsupported upstream.
 # Can give corruption on high concurrency.
@@ -105,9 +106,16 @@ ARMV80A_EXTRA_PATCHES=	${FILESDIR}/extrapatch-SConstruct
 LTO_MAKE_ARGS=	--lto=on
 
 NOAVX_MAKE_ARGS=	--experimental-optimization="-sandybridge"
+NOAVX_EXTRA_PATCHES=	${FILESDIR}/extrapatch-src_third__party_mozjs_SConscript
 
 SASL_LIB_DEPENDS=	libsasl2.so:security/cyrus-sasl2
 SASL_MAKE_ARGS=		--use-sasl-client
+
+.include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1500026 # llvm 19.1.2 import
+USES+=		llvm:max=18,build
+.endif
 
 .include <bsd.port.pre.mk>
 

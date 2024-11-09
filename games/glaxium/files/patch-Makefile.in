@@ -1,6 +1,6 @@
---- ./Makefile.in.orig	2002-10-20 18:30:12.000000000 +0000
-+++ ./Makefile.in	2013-10-22 22:38:44.900225905 +0000
-@@ -13,10 +13,10 @@
+--- Makefile.in.orig	2002-10-20 18:30:12 UTC
++++ Makefile.in
+@@ -13,13 +13,13 @@ mandir=@mandir@
  bindir=@bindir@
  mandir=@mandir@
  
@@ -9,8 +9,12 @@
  DATA_DIRS=samples textures
 -GLAXIUM_HOME=$(datadir)/games/glaxium
 -MAN_DIR=$(mandir)
-+GLAXIUM_HOME=$(DESTDIR)$(datadir)/games/glaxium
++GLAXIUM_HOME=$(DESTDIR)$(datadir)/glaxium
 +MAN_DIR=$(DESTDIR)$(mandir)
  
  glaxium : $(OBJ)
- 	gcc -g -o glaxium $(OBJ) $(LIB)
+-	gcc -g -o glaxium $(OBJ) $(LIB)
++	$(CC) -o glaxium $(OBJ) $(LIB)
+ 
+ 
+ 

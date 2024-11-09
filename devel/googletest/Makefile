@@ -22,7 +22,9 @@ CMAKE_OFF=	GTEST_HAS_ABSL \
 CMAKE_ON=	BUILD_GMOCK \
 		BUILD_SHARED_LIBS \
 		INSTALL_GTEST
-CMAKE_TESTING_ON=	gmock_build_tests gtest_build_tests
+CMAKE_TESTING_ON=	\
+		gmock_build_tests \
+		gtest_build_tests
 PATHFIX_CMAKELISTSTXT=	internal_utils.cmake
 USE_CXXSTD=	c++17
 USE_LDCONFIG=	yes

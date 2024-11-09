@@ -1,10 +1,10 @@
 PORTNAME=	abyss
-DISTVERSION=	2.3.9
+DISTVERSION=	2.3.10
 CATEGORIES=	biology
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Assembly By Short Sequences: parallel, paired-end sequence assembler
-WWW=		https://www.bcgsc.ca/resources/software/abyss
+WWW=		https://www.bcgsc.ca/resources/software/abyss/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -33,15 +33,16 @@ make_CMD=	${PREFIX}/bin/gmake
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-sparsehash # configure fails to find std::hash, reported to the ML: https://groups.google.com/forum/#!topic/trans-abyss/SZDBKR5bKxs
-GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
-TEST_TARGET=	check # tests fail to compile, see https://github.com/bcgsc/abyss/issues/453
+TEST_TARGET=	check
 
-OPTIONS_DEFINE=	DOCS
+PORTSCOUT=	limit:^[0-9\.]*$$ # to ignore alpha-numeric tags
 
 PORTDOCS=	*
 
-PORTSCOUT=	limit:^[0-9\.]*$$ # to ignore alpha-numeric tags
+OPTIONS_DEFINE=	DOCS
+
+TESTING_UNSAFE=	yes # tests fail to compile, see https://github.com/bcgsc/abyss/issues/453
 
 .include <bsd.port.pre.mk>
 

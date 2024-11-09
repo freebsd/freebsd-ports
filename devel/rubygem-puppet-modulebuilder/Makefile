@@ -1,5 +1,5 @@
 PORTNAME=	puppet-modulebuilder
-DISTVERSION=	1.0.0
+DISTVERSION=	2.0.2
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 

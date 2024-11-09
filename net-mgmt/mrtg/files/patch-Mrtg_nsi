@@ -1,0 +1,11 @@
+--- contrib/NSI/Mrtg_nsi.orig	2017-03-05 14:09:53 UTC
++++ contrib/NSI/Mrtg_nsi
+@@ -59,7 +59,7 @@ $main::OS = 'NT';
+ 	}
+ 	die "ERROR: Can\'t find location of mrtg executable\n" 
+ 	  unless $main::binpath; 
+-	unshift (@INC,$main::binpath);
++	$main::binpath .= "/../libexec"
+ }
+ 
+ # There older perls tend to behave peculiar with

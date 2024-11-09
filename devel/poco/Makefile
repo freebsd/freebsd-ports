@@ -1,5 +1,5 @@
 PORTNAME=	poco
-DISTVERSION=	1.12.4
+DISTVERSION=	1.13.3
 DISTVERSIONSUFFIX=	-all
 CATEGORIES=	devel net
 MASTER_SITES=	https://pocoproject.org/releases/${PORTNAME}-${PORTVERSION}/
@@ -19,7 +19,7 @@ CPE_VENDOR=	pocoproject
 USE_LDCONFIG=	yes
 
 CMAKE_ON=	POCO_UNBUNDLED
-SHLIB_MAJOR=	94
+SHLIB_MAJOR=	103
 PLIST_SUB=	SHLIB_MAJOR=${SHLIB_MAJOR}
 
 OPTIONS_DEFINE=		ACTIVERECORD ENCODINGS JSON JWT MONGODB PAGECOMPILER \
@@ -82,10 +82,6 @@ post-patch:
 	@${REINPLACE_CMD} -e \
 		's|CMAKE_DEBUG_POSTFIX "d"|CMAKE_DEBUG_POSTFIX ""|' \
 		 ${WRKSRC}/cmake/DefinePlatformSpecifc.cmake
-
-# Avoid conflict with archivers/arc
-post-install-ACTIVERECORD-on:
-	@${MV} ${STAGEDIR}${PREFIX}/bin/arc ${STAGEDIR}${PREFIX}/bin/arc-poco
 
 .include <bsd.port.options.mk>
 

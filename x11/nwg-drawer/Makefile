@@ -1,6 +1,6 @@
 PORTNAME=	nwg-drawer
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.5.1
+DISTVERSION=	0.5.2
 CATEGORIES=	x11 wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -23,7 +23,7 @@ GH_TUPLE=	allan-simon:go-singleinstance:d0997106ab37:allan_simon_go_singleinstan
 		expr-lang:expr:v1.16.9:expr_lang_expr/vendor/github.com/expr-lang/expr \
 		fsnotify:fsnotify:v1.7.0:fsnotify_fsnotify/vendor/github.com/fsnotify/fsnotify \
 		golang:sync:v0.8.0:golang_sync/vendor/golang.org/x/sync \
-		golang:sys:v0.25.0:golang_sys/vendor/golang.org/x/sys \
+		golang:sys:v0.26.0:golang_sys/vendor/golang.org/x/sys \
 		gotk3:gotk3:ff349ae13f56:gotk3_gotk3/vendor/github.com/gotk3/gotk3 \
 		joshuarubin:go-sway:v1.2.0:joshuarubin_go_sway/vendor/github.com/joshuarubin/go-sway \
 		joshuarubin:lifecycle:v1.1.4:joshuarubin_lifecycle/vendor/github.com/joshuarubin/lifecycle \

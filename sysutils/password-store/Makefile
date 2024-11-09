@@ -1,6 +1,6 @@
 PORTNAME=	password-store
 PORTVERSION=	1.7.4
-PORTREVISION=	5
+PORTREVISION=	7
 CATEGORIES=	sysutils
 MASTER_SITES=	https://git.zx2c4.com/${PORTNAME}/snapshot/
 

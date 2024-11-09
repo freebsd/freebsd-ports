@@ -1,5 +1,5 @@
 PORTNAME=	PDL
-PORTVERSION=	2.093
+PORTVERSION=	2.094
 CATEGORIES=	math perl5
 MASTER_SITES=	CPAN
 
@@ -27,12 +27,14 @@ RUN_DEPENDS=	p5-Astro-FITS-Header>=0:astro/p5-Astro-FITS-Header \
 		p5-Pod-Parser>=0:textproc/p5-Pod-Parser \
 		p5-Sys-SigAction>=0:devel/p5-Sys-SigAction \
 		p5-Term-ReadKey>=2.34:devel/p5-Term-ReadKey
-TEST_DEPENDS=	p5-Test-Exception>=0:devel/p5-Test-Exception \
+TEST_DEPENDS=	p5-Test-Deep>=0:devel/p5-Test-Deep \
+		p5-Test-Exception>=0:devel/p5-Test-Exception \
 		p5-Test-Warn>=0:devel/p5-Test-Warn
 
 USES=		gmake perl5
 USE_PERL5=	configure
 
+MAKE_ENV=	POSIX_THREADS_LIBS='-lpthread'
 MAKE_JOBS_UNSAFE=	yes
 
 PORTSCOUT=	limit:^[0-9\.]*$$
@@ -87,7 +89,6 @@ post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/PDL/Core/Core.so
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/PDL/FFT/FFT.so
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/PDL/Fit/Gaussian/Gaussian.so
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/PDL/Graphics/IIS/IIS.so
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/PDL/IO/Browser/Browser.so
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/PDL/IO/Misc/Misc.so
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/PDL/IO/Pnm/Pnm.so
@@ -97,7 +98,6 @@ post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/PDL/ImageRGB/ImageRGB.so
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/PDL/Math/Math.so
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/PDL/MatrixOps/MatrixOps.so
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/PDL/Minuit/Minuit.so
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/PDL/Ops/Ops.so
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/PDL/Primitive/Primitive.so
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/PDL/Slatec/Slatec.so

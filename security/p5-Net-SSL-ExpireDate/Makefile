@@ -1,5 +1,5 @@
 PORTNAME=	Net-SSL-ExpireDate
-PORTVERSION=	1.24
+PORTVERSION=	1.25
 CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -10,6 +10,7 @@ WWW=		https://metacpan.org/release/Net-SSL-ExpireDate
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
+LICENSE_FILE_GPLv1+ =	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Class-Accessor>=0:devel/p5-Class-Accessor \
@@ -20,7 +21,7 @@ RUN_DEPENDS=	p5-Class-Accessor>=0:devel/p5-Class-Accessor \
 		p5-UNIVERSAL-require>=0:devel/p5-UNIVERSAL-require
 
 USES=		perl5
-USE_PERL5=	configure
+USE_PERL5=	modbuildtiny
 
 NO_ARCH=	yes
 

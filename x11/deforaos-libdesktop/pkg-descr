@@ -1,1 +1,6 @@
 DeforaOS desktop library
+
+libDesktop is a collection of compatibility and portability routines to help
+with the development of desktop applications using the Gtk+ toolkit.
+
+libDesktop defaults to the version 3 of the Gtk+ toolkit.

@@ -5,7 +5,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}_${PORTVERSION}
 DISTNAME=	${PORTNAME}_${PORTVERSION}_src
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Find duplicated code blocks in large C/C++/Java/C#/VB.Net systems
+COMMENT=	Find duplicated code blocks in large C/C++/Java/C\#/VB.Net systems
 WWW=		http://duplo.giants.ch/
 
 USES=		gmake

@@ -5,7 +5,7 @@
  # $Id: rules.mk 684 2008-12-20 07:14:57Z pphaneuf $
  
 -source/quadra: LDLIBS+=$(SDL_LIBS) -lpng -lz
-+EXT_LIBS := -lcompat  # needed in FBSD for the ftime function
++EXT_LIBS := -lcompat -lutil # needed in FBSD for the ftime function
 +
 +source/quadra: LDLIBS+=$(SDL_LIBS) -lpng -lz $(EXT_LIBS)
  source/quadra: $(QUADRA_OBJECTS) $(SDL_MAIN_OBJ) skelton/lib/libugs_s.a

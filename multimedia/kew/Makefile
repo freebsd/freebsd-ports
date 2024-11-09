@@ -1,6 +1,7 @@
 PORTNAME=	kew
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.8.2
+DISTVERSION=	3.0.0
+PORTREVISION=	1
 CATEGORIES=	multimedia
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -12,13 +13,14 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN_i386=	compilation fails with incompatible pointer, see https://github.com/ravachol/kew/issues/118
 
-LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg \
-		libchafa.so:graphics/chafa \
+LIB_DEPENDS=	libchafa.so:graphics/chafa \
+		libfaad.so:audio/faad \
 		libfftw3f.so:math/fftw3-float \
-		libfreeimage.so:graphics/freeimage \
 		libnotify.so:devel/libnotify \
+		libogg.so:audio/libogg \
 		libopus.so:audio/opus \
 		libopusfile.so:audio/opusfile \
+		libtag.so:audio/taglib \
 		libvorbis.so:audio/libvorbis
 
 USES=		gettext-runtime gmake gnome pkgconfig

@@ -1,6 +1,5 @@
 PORTNAME=	appstream-glib
-PORTVERSION=	0.8.2
-PORTREVISION=	3
+PORTVERSION=	0.8.3
 CATEGORIES=	devel
 MASTER_SITES=	http://people.freedesktop.org/~hughsient/appstream-glib/releases/
 DIST_SUBDIR=	gnome
@@ -29,8 +28,7 @@ USE_GNOME=	cairo gdkpixbuf2 glib20 gtk30 introspection:build \
 		libxml2:build pango
 USE_LDCONFIG=	yes
 MESON_ARGS=	-Drpm=false \
-		-Dalpm=false \
-		-Dstemmer=false
+		-Dalpm=false
 
 OPTIONS_DEFINE=	DOCS MANPAGES
 OPTIONS_DEFAULT=MANPAGES

@@ -1,11 +1,7 @@
 PORTNAME=	libxlsxwriter
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.1.8
-PORTREVISION=	1
+DISTVERSION=	1.1.9
 CATEGORIES=	math devel
-
-PATCH_SITES=	https://github.com/jmcnamara/libxlsxwriter/commit/
-PATCHFILES=	5af9c1fd3e330a6a4aeaba58599e2c5294c521ab.patch:-p1
 
 MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	C library for creating Excel XLSX files

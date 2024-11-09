@@ -1,5 +1,4 @@
 bin/convert_hf_to_gguf.py
-bin/llama-baby-llama
 bin/llama-batched
 bin/llama-batched-bench
 bin/llama-bench
@@ -7,6 +6,7 @@ bin/llama-cli
 bin/llama-convert-llama2c-to-ggml
 bin/llama-cvector-generator
 bin/llama-embedding
+bin/llama-simple-chat
 %%EXAMPLES%%bin/llama-eval-callback
 %%EXAMPLES%%bin/llama-export-lora
 %%EXAMPLES%%bin/llama-gbnf-validator
@@ -39,6 +39,7 @@ include/ggml-alloc.h
 include/ggml-backend.h
 include/ggml-blas.h
 include/ggml-cann.h
+include/ggml-cpu.h
 include/ggml-cuda.h
 include/ggml-kompute.h
 include/ggml-metal.h

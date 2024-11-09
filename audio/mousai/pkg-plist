@@ -17,6 +17,7 @@ share/locale/fa/LC_MESSAGES/mousai.mo
 share/locale/fi/LC_MESSAGES/mousai.mo
 share/locale/fil/LC_MESSAGES/mousai.mo
 share/locale/fr/LC_MESSAGES/mousai.mo
+share/locale/ga/LC_MESSAGES/mousai.mo
 share/locale/gl/LC_MESSAGES/mousai.mo
 share/locale/hi/LC_MESSAGES/mousai.mo
 share/locale/hr/LC_MESSAGES/mousai.mo
@@ -43,5 +44,6 @@ share/locale/ta/LC_MESSAGES/mousai.mo
 share/locale/tr/LC_MESSAGES/mousai.mo
 share/locale/uk/LC_MESSAGES/mousai.mo
 share/locale/zh_Hans/LC_MESSAGES/mousai.mo
+share/locale/zh_Hant/LC_MESSAGES/mousai.mo
 share/metainfo/io.github.seadve.Mousai.metainfo.xml
 %%DATADIR%%/resources.gresource

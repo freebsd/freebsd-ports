@@ -1,6 +1,6 @@
 PORTNAME=	fluent-bit
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.1.9
+DISTVERSION=	3.1.10
 CATEGORIES=	sysutils
 
 MAINTAINER=	girgen@FreeBSD.org
@@ -24,7 +24,7 @@ CMAKE_ARGS=	-DFLB_DEBUG=Off \
 LDFLAGS+=	-lexecinfo
 
 OPTIONS_DEFINE=		LUA_FILTER PGSQL SSL
-OPTIONS_DEFAULT=	SSL
+OPTIONS_DEFAULT=	LUA_FILTER PGSQL SSL
 LUA_FILTER_DESC=	Support for modifying incoming records using Lua scripts
 
 LUA_FILTER_USES=	luajit:luajit-devel pkgconfig

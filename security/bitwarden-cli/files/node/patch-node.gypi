@@ -1,6 +1,6 @@
---- node.gypi.orig	2023-03-05 06:42:54 UTC
+--- node.gypi.orig	2024-08-21 12:35:29 UTC
 +++ node.gypi
-@@ -349,6 +349,9 @@
+@@ -350,6 +350,9 @@
      [ 'node_use_openssl=="true"', {
        'defines': [ 'HAVE_OPENSSL=1' ],
        'conditions': [

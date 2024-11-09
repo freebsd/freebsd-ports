@@ -1,6 +1,6 @@
 PORTNAME=	seahorse
 PORTVERSION=	41.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security gnome
 MASTER_SITES=	GNOME/sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+)\..*/\1/}
 DIST_SUBDIR=	gnome
@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	gnupg>=2.1.4:security/gnupg \
 		itstool:textproc/itstool
-LIB_DEPENDS=	libgcr-base-3.so:security/gcr \
+LIB_DEPENDS=	libgcr-base-3.so:security/gcr3 \
 		libgpgme.so:security/gpgme \
 		libhandy-1.so:x11-toolkits/libhandy \
 		libpwquality.so:security/libpwquality \

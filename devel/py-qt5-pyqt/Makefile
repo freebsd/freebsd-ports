@@ -1,6 +1,5 @@
 PORTNAME=	pyqt
-PORTVERSION=	${PYQT_VERSION}
-PORTREVISION=	1
+DISTVERSION=	${PYQT_VERSION}
 CATEGORIES=	devel python
 MASTER_SITES=	${MASTER_SITES_PYQT}
 PKGNAMEPREFIX=	${PYQT_PY_RELNAME}-
@@ -10,20 +9,14 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Python bindings for the Qt5 toolkit, QtCore module
 WWW=		https://riverbankcomputing.com/software/pyqt
 
-PYQT_DIST=	yes
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dbus>1:devel/py-dbus@${PY_FLAVOR}
+LIB_DEPENDS=	libdbus-1.so:devel/dbus
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dbus>1:devel/py-dbus@${PY_FLAVOR}
 
-LIB_DEPENDS=	libqscintilla2_qt5.so:devel/qscintilla2-qt5 \
-		libdbus-1.so:devel/dbus
-BUILD_DEPENDS=	${PY_SETUPTOOLS} \
-		${PYTHON_PKGNAMEPREFIX}dbus>1:devel/py-dbus@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}ply>0:devel/py-ply@${PY_FLAVOR}
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}dbus>1:devel/py-dbus@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}ply>0:devel/py-ply@${PY_FLAVOR}
-
-USES=		gl pkgconfig python pyqt:5 qt:5
+USES=		gl pkgconfig python pyqt:5,dist qt:5
 USE_GL=		gl
-USE_PYTHON=	concurrent flavors py3kplist
-USE_PYQT=	qtbuilder sip pysip
+USE_PYQT=	pysip qtbuilder:build sip:build
+USE_PYTHON=	concurrent flavors
 USE_QT=		connectivity core dbus declarative designer gui help imageformats location \
 		multimedia network opengl printsupport quick3d remoteobjects \
 		sensors serialport speech sql svg testlib webchannel websockets \
@@ -45,6 +38,8 @@ post-install:
 		-f -d ${PYTHONPREFIX_SITELIBDIR}/PyQt5 \
 		${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/PyQt5
 	@${FIND} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/PyQt5 \
+		-name '*.so*' -exec ${STRIP_CMD} {} +
+	@${FIND} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/dbus/mainloop \
 		-name '*.so*' -exec ${STRIP_CMD} {} +
 
 .include <bsd.port.mk>

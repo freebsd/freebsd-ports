@@ -2,18 +2,13 @@ PORTNAME=	procmail
 PORTVERSION=	3.22
 PORTREVISION=	11
 CATEGORIES=	mail
-MASTER_SITES=	ftp://ftp.ucsb.edu/pub/mirrors/procmail/ \
-		ftp://ftp.informatik.rwth-aachen.de/pub/packages/procmail/ \
-		ftp://ftp.fu-berlin.de/pub/unix/mail/procmail/ \
-		ftp://ftp.kfki.hu/pub/packages/mail/procmail/ \
-		http://www.ring.gr.jp/archives/net/mail/procmail/ \
-		ftp://ftp.ring.gr.jp/pub/net/mail/procmail/ \
-		ftp://ftp.mirrorservice.org/sites/ftp.procmail.org/pub/procmail/ \
-		LOCAL/sunpoet
+MASTER_SITES=	https://github.com/apple-oss-distributions/procmail/raw/refs/heads/main/ \
+		https://ftp.osuosl.org/pub/blfs/conglomeration/procmail/ \
+		https://ftp.fu-berlin.de/unix/mail/procmail/ \
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Local mail delivery agent
-WWW=		https://www.procmail.org/
+WWW=		https://github.com/BuGlessRB/procmail
 
 LICENSE=	GPLv2
 
@@ -21,15 +16,16 @@ LICENSE=	GPLv2
 BROKEN=		fails to build under qemu: killing runaway build after 21600 seconds with no output
 .endif
 
-OPTIONS_DEFINE=	DOCS EXAMPLES
-
-INSTALL_TARGET=	install.bin install.man
 USES=		cpe
+
 EXTRA_PATCHES=	${FILESDIR}/procmail-3.22-getline.patch:-p1
+INSTALL_TARGET=	install.bin install.man
 
 PORTDOCS=	FAQ FEATURES HISTORY KNOWN_BUGS README
 PORTEXAMPLES=	1procmailrc 1rmail 2procmailrc 2rmail 3procmailrc 3rmail \
 		advanced dirname forward local_procmail_lmtp.m4 mailstat
+
+OPTIONS_DEFINE=	DOCS EXAMPLES
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|g' ${WRKSRC}/config.h ${WRKSRC}/src/autoconf

@@ -1,6 +1,6 @@
 PORTNAME=	virtualbox-ose
 PORTVERSION=	6.1.50
-PORTREVISION?=	4
+PORTREVISION?=	5
 CATEGORIES=	emulators
 MASTER_SITES=	https://download.virtualbox.org/virtualbox/${PORTVERSION}/:src \
 		LOCAL/bofh/emulators/virtualbox-ose:docs
@@ -106,7 +106,7 @@ QT5_CONFIGURE_OFF=	--disable-qt
 QT5_IMPLIES=		X11
 R0LOGGING_IMPLIES=	DEBUG
 UDPTUNNEL_CONFIGURE_OFF=	--disable-udptunnel
-VBOXIMG_LIB_DEPENDS=	libfuse.so.2:sysutils/fusefs-libs
+VBOXIMG_LIB_DEPENDS=	libfuse.so.2:filesystems/fusefs-libs
 VDE_CONFIGURE_ON=	--enable-vde
 VDE_RUN_DEPENDS=	vde_switch:net/vde2
 VNC_CONFIGURE_ON=	--enable-vnc

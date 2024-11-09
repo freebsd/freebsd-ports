@@ -52,7 +52,7 @@ gitea_start() {
 
 gitea_prestart() {
 	if checkyesno gitea_configcheck_enable; then
-		if su ${gitea_user} -c "%%PREFIX%%/sbin/${name} doctor check >/dev/null"; then
+		if su -m ${gitea_user} -c "%%PREFIX%%/sbin/${name} doctor check >/dev/null"; then
 		else
 			echo "cannot start ${name} because of configuration errors. Run" >&2
 			echo "    su -m git -c '${name} doctor check'" >&2

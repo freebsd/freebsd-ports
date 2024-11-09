@@ -1,5 +1,5 @@
 PORTNAME?=	pycryptodome
-DISTVERSION=	3.20.0
+DISTVERSION=	3.21.0
 CATEGORIES=	security python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -8,7 +8,7 @@ MAINTAINER=	john@saltant.com
 COMMENT=	Cryptographic library for Python
 WWW=		https://www.pycryptodome.org/
 
-LICENSE=	APACHE20 BSD2CLAUSE PD
+LICENSE=	BSD2CLAUSE PD
 LICENSE_COMB=	multi
 LICENSE_FILE=	${WRKSRC}/LICENSE.rst
 
@@ -17,7 +17,7 @@ BUILD_DEPENDS=	${PY_SETUPTOOLS} \
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pycryptodome-test-vectors>=0:security/py-pycryptodome-test-vectors@${PY_FLAVOR} \
 		gmp>=0:math/gmp
 
-# Officially: 2.7, 3.5-3.12
+# Officially: 2.7, 3.6-3.13
 USES=		cpe python
 CPE_VENDOR=	python
 USE_PYTHON=	autoplist pep517

@@ -4,7 +4,7 @@ CATEGORIES=	devel java python
 MASTER_SITES=	https://download.jetbrains.com/python/
 DISTNAME=	pycharm-professional-${PORTVERSION}
 
-MAINTAINER=	rm@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	JetBrains PyCharm Professional Edition IDE
 WWW=		https://www.jetbrains.com/pycharm/
 

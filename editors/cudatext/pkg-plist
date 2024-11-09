@@ -4,7 +4,6 @@ share/applications/cudatext.desktop
 %%DATADIR%%/data/autocomplete/Batch files.acp
 %%DATADIR%%/data/autocomplete/C++.acp
 %%DATADIR%%/data/autocomplete/C.acp
-%%DATADIR%%/data/autocomplete/Lua.acp
 %%DATADIR%%/data/autocompletespec/css_colors.ini
 %%DATADIR%%/data/autocompletespec/css_list.ini
 %%DATADIR%%/data/autocompletespec/css_sel.ini
@@ -200,7 +199,6 @@ share/applications/cudatext.desktop
 %%DATADIR%%/data/filetypeicons/vscode_16x16/icon_bad.png
 %%DATADIR%%/data/filetypeicons/vscode_16x16/icon_server.png
 %%DATADIR%%/data/filetypeicons/vscode_16x16/icons.json
-%%DATADIR%%/data/lang/credits.txt
 %%DATADIR%%/data/lang/history.txt
 %%DATADIR%%/data/lang/ru_RU.ini
 %%DATADIR%%/data/lang/translation template.ini
@@ -226,8 +224,6 @@ share/applications/cudatext.desktop
 %%DATADIR%%/data/lexlib/JSON.lcf
 %%DATADIR%%/data/lexlib/JavaScript.cuda-lexmap
 %%DATADIR%%/data/lexlib/JavaScript.lcf
-%%DATADIR%%/data/lexlib/Lua.cuda-lexmap
-%%DATADIR%%/data/lexlib/Lua.lcf
 %%DATADIR%%/data/lexlib/Markdown.cuda-lexmap
 %%DATADIR%%/data/lexlib/Markdown.lcf
 %%DATADIR%%/data/lexlib/Python.cuda-lexmap
@@ -277,6 +273,7 @@ share/applications/cudatext.desktop
 %%DATADIR%%/data/projtoolbaricons/default_16x16/readme2.txt
 %%DATADIR%%/data/projtoolbaricons/default_16x16/recents.png
 %%DATADIR%%/data/projtoolbaricons/default_16x16/save.png
+%%DATADIR%%/data/projtoolbaricons/default_16x16/sync.png
 %%DATADIR%%/data/projtoolbaricons/default_white_16x16/add-dir.png
 %%DATADIR%%/data/projtoolbaricons/default_white_16x16/add-file.png
 %%DATADIR%%/data/projtoolbaricons/default_white_16x16/cfg.png
@@ -288,6 +285,7 @@ share/applications/cudatext.desktop
 %%DATADIR%%/data/projtoolbaricons/default_white_16x16/recents.png
 %%DATADIR%%/data/projtoolbaricons/default_white_16x16/save-min.png
 %%DATADIR%%/data/projtoolbaricons/default_white_16x16/save.png
+%%DATADIR%%/data/projtoolbaricons/default_white_16x16/sync.png
 %%DATADIR%%/data/projtoolbaricons/feather_black_16x16/add-dir.png
 %%DATADIR%%/data/projtoolbaricons/feather_black_16x16/add-dir.svg
 %%DATADIR%%/data/projtoolbaricons/feather_black_16x16/add-file.png
@@ -302,6 +300,7 @@ share/applications/cudatext.desktop
 %%DATADIR%%/data/projtoolbaricons/feather_black_16x16/recents.png
 %%DATADIR%%/data/projtoolbaricons/feather_black_16x16/save.png
 %%DATADIR%%/data/projtoolbaricons/feather_black_16x16/save.svg
+%%DATADIR%%/data/projtoolbaricons/feather_black_16x16/sync.png
 %%DATADIR%%/data/projtoolbaricons/feather_white_16x16/add-dir.png
 %%DATADIR%%/data/projtoolbaricons/feather_white_16x16/add-dir.svg
 %%DATADIR%%/data/projtoolbaricons/feather_white_16x16/add-file.png
@@ -316,6 +315,7 @@ share/applications/cudatext.desktop
 %%DATADIR%%/data/projtoolbaricons/feather_white_16x16/recents.png
 %%DATADIR%%/data/projtoolbaricons/feather_white_16x16/save.png
 %%DATADIR%%/data/projtoolbaricons/feather_white_16x16/save.svg
+%%DATADIR%%/data/projtoolbaricons/feather_white_16x16/sync.png
 %%DATADIR%%/data/sideicons/common_20x20/console.png
 %%DATADIR%%/data/sideicons/common_20x20/credits.txt
 %%DATADIR%%/data/sideicons/common_20x20/find.png
@@ -471,10 +471,11 @@ share/applications/cudatext.desktop
 %%DATADIR%%/py/cuda_sort/__init__.py
 %%DATADIR%%/py/cuda_sort/app_specific.py
 %%DATADIR%%/py/cuda_sort/install.inf
-%%DATADIR%%/py/cuda_sort/readme/history.txt
 %%DATADIR%%/py/cuda_sort/readme/readme.txt
+%%DATADIR%%/py/cuda_sort/sort_dlg.py
 %%DATADIR%%/py/cuda_sort/sort_emails.py
 %%DATADIR%%/py/cuda_sort/sort_ini.py
+%%DATADIR%%/py/cuda_sort/sort_numeric.py
 %%DATADIR%%/py/cuda_sort/sort_sep.py
 %%DATADIR%%/py/cuda_tabs_list/__init__.py
 %%DATADIR%%/py/cuda_tabs_list/install.inf

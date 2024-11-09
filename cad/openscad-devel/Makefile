@@ -1,6 +1,6 @@
 PORTNAME=	openscad
 PORTVERSION=	2024.10.11
-PORTREVISION=	2
+PORTREVISION=	4
 CATEGORIES=	cad
 PKGNAMESUFFIX=	-devel
 
@@ -22,7 +22,7 @@ BUILD_DEPENDS=	cgal>0:math/cgal \
 LIB_DEPENDS=	libzip.so:archivers/libzip \
 		libhidapi.so:comms/hidapi \
 		libboost_regex.so:devel/boost-libs \
-		libqscintilla2_qt5.so:devel/qscintilla2-qt5 \
+		libqscintilla2_qt5.so:devel/qscintilla2@qt5 \
 		libopencsg.so:graphics/opencsg \
 		libgmp.so:math/gmp \
 		libmpfr.so:math/mpfr \
@@ -30,7 +30,6 @@ LIB_DEPENDS=	libzip.so:archivers/libzip \
 		libharfbuzz.so:print/harfbuzz \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libdouble-conversion.so:devel/double-conversion \
-		libasound_module_pcm_oss.so:audio/alsa-plugins \
 		libtbb.so:devel/onetbb
 
 CONFLICTS=	openscad

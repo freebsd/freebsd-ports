@@ -1,6 +1,6 @@
 PORTNAME=	rarian
 DISTVERSION=	0.8.5
-PORTREVISION=	6
+PORTREVISION=	8
 CATEGORIES=	textproc gnome
 MASTER_SITES=	https://gitlab.freedesktop.org/${PORTNAME}/${PORTNAME}/-/releases/${DISTVERSION}/downloads/assets/
 
@@ -14,13 +14,13 @@ LICENSE_FILE_GPLv2+ =	${WRKSRC}/COPYING.UTILS
 LICENSE_FILE_LGPL21+ =	${WRKSRC}/COPYING.LIB
 LICENSE_FILE_ZLIB=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/getopt:misc/getopt \
+BUILD_DEPENDS=	getopt>=0:misc/getopt \
 		bash:shells/bash \
 		xsltproc:textproc/libxslt \
 		docbook-xml>0:textproc/docbook-xml \
 		${LOCALBASE}/share/xsl/docbook/xhtml/chunk.xsl:textproc/docbook-xsl
 LIB_DEPENDS=	libtinyxml.so:textproc/tinyxml
-RUN_DEPENDS=	${LOCALBASE}/bin/getopt:misc/getopt \
+RUN_DEPENDS=	getopt>=0:misc/getopt \
 		bash:shells/bash \
 		xsltproc:textproc/libxslt \
 		docbook-xml>0:textproc/docbook-xml \

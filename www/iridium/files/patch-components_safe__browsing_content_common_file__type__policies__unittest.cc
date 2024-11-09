@@ -1,6 +1,6 @@
---- components/safe_browsing/content/common/file_type_policies_unittest.cc.orig	2024-06-25 12:08:48 UTC
+--- components/safe_browsing/content/common/file_type_policies_unittest.cc.orig	2024-11-04 08:56:03 UTC
 +++ components/safe_browsing/content/common/file_type_policies_unittest.cc
-@@ -139,7 +139,7 @@ TEST_F(FileTypePoliciesTest, UnpackResourceBundle) {
+@@ -148,7 +148,7 @@ TEST_F(FileTypePoliciesTest, UnpackResourceBundle) {
    EXPECT_EQ(DownloadFileType::FULL_PING, file_type.ping_setting());
  // TODO(crbug.com/40118868): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.

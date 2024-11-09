@@ -1,4 +1,4 @@
---- bin/authentication_milter.orig	2024-02-05 02:41:57 UTC
+--- bin/authentication_milter.orig	2024-10-11 04:07:26 UTC
 +++ bin/authentication_milter
 @@ -15,7 +15,7 @@ use Mail::Milter::Authentication::Protocol::SMTP;
  use Mail::Milter::Authentication::Protocol::SMTP;
@@ -9,7 +9,7 @@
  my $daemon = 0;
  my $help   = 0;
  my $prefix;
-@@ -195,11 +195,11 @@ version 3.20240205
+@@ -195,11 +195,11 @@ version 3.20241011
  =item --pidfile <file>
  
    Write the process PID to the given file.
@@ -23,7 +23,7 @@
  
  =item -i|--ident <ident>
  
-@@ -212,7 +212,7 @@ version 3.20240205
+@@ -212,7 +212,7 @@ version 3.20241011
  
  =head1 CONFIGURATION
  
@@ -32,7 +32,7 @@
  
    The configuration file format is as follows...
  
-@@ -266,10 +266,10 @@ version 3.20240205
+@@ -266,10 +266,10 @@ version 3.20241011
      "metric_tempfile"   : "/tmpfs/authmilter_metrics",  | Path to shared metrics data, defaults to <lib_path>/metrics
      "metric_basic_http" : 1,                            | Disable extended http services such as config and grafana json pages
  
@@ -47,7 +47,7 @@
  
      # metric_port and metric_host are deprecated.
      # please use metric_connection instead
-@@ -289,7 +289,7 @@ version 3.20240205
+@@ -289,7 +289,7 @@ version 3.20241011
          "sock_type"      : "inet",                      | Socket type (inet or unix)
          "sock_host"      : "localhost",                 | Host to connect to (when inet)
          "sock_port"      : "2525",                      | Port to connect to (when inet)
@@ -56,7 +56,7 @@
          "timeout_in"     : "10",                        | Timeout when waiting for inbound SMTP data
          "timeout_out"    : "10",                        | Timeout when waiting for outbound SMTP data
          "pipeline_limit" : "50",                        | Limit the number of transactions accepted in an SMTP pipeline
-@@ -315,7 +315,7 @@ version 3.20240205
+@@ -315,7 +315,7 @@ version 3.20241011
          "unix:/var/sock/a.sock" : {
              "server_name" : "util.example.com",
              "sock_type"   : "unix",
@@ -65,21 +65,3 @@
              "timeout_in"  : "10",
              "timeout_out" : "10"
          }
-@@ -408,7 +408,7 @@ version 3.20240205
-         },
-         "!InactiveModule" : {},
-                                                         | Additionally, config for a module can be placed in a file
--                                                        | with filename /etc/authentication_milter.d/ModuleName.json
-+                                                        | with filename %%ETCDIR%%/authentication_milter.d/ModuleName.json
-                                                         | the contents of which should be the JSON assigned to the
-                                                         | entry here.
- 
-@@ -421,7 +421,7 @@ This milter uses Mail::DMARC as a backend for DMARC ch
- 
- This milter uses Mail::DMARC as a backend for DMARC checks, this module requires that a configuration file is setup.
- 
--You should create and populate /etc/mail-dmarc.ini
-+You should create and populate %%ETCDIR%%/mail-dmarc.ini
- 
- For DMARC reporting you are also required to setup a datastore, including creating a basic table structure.
- The detauls of this are to be found in the Mail::DMARC documentation.

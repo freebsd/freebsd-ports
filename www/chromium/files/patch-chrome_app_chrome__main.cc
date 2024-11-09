@@ -1,4 +1,4 @@
---- chrome/app/chrome_main.cc.orig	2024-08-26 12:06:38 UTC
+--- chrome/app/chrome_main.cc.orig	2024-10-22 08:31:56 UTC
 +++ chrome/app/chrome_main.cc
 @@ -30,11 +30,11 @@
  #include "chrome/app/chrome_main_mac.h"
@@ -23,7 +23,7 @@
  #define ENABLE_OLD_HEADLESS
  #endif
  
-@@ -119,7 +119,7 @@ int ChromeMain(int argc, const char** argv) {
+@@ -120,7 +120,7 @@ int ChromeMain(int argc, const char** argv) {
  #error Unknown platform.
  #endif
  
@@ -32,7 +32,7 @@
    PossiblyDetermineFallbackChromeChannel(argv[0]);
  #endif
  
-@@ -185,7 +185,7 @@ int ChromeMain(int argc, const char** argv) {
+@@ -186,7 +186,7 @@ int ChromeMain(int argc, const char** argv) {
    SetUpBundleOverrides();
  #endif
  

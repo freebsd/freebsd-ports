@@ -28,7 +28,7 @@ load_rc_config $name
 pidfile=/var/run/${name}.pid
 procname="%%PREFIX%%/bin/fluent-bit"
 command="/usr/sbin/daemon"
-command_args="-H -p ${pidfile} -o /var/log/${name}/${name}.log ${procname} --quiet --config ${fluent_bit_config} ${fluent_bit_flags} --daemon"
+command_args="-H -p ${pidfile} -o /var/log/${name}/${name}.log ${procname} --quiet --config ${fluent_bit_config} ${fluent_bit_flags}"
 
 start_precmd=fluent_bit_startprecmd
 

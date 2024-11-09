@@ -1,26 +1,26 @@
 PORTNAME=	magnum
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2020.06-2037
-DISTVERSIONSUFFIX=	-gb6a31a0af
-PORTREVISION=	1
+DISTVERSION=	2020.06-3075
+DISTVERSIONSUFFIX=	-gf91638c46
 CATEGORIES=	graphics devel
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	C++11 graphics middleware for games and data visualization
-WWW=		https://magnum.graphics/
+WWW=		https://magnum.graphics/ \
+		https://github.com/mosra/magnum
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libCorradeUtility.so:devel/corrade
 
-USES=		cmake:testing compiler:c++11-lang gl
+USES=		cmake compiler:c++11-lang gl
 USE_GL=		opengl
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	mosra
-GH_TUPLE=	mosra:toolchains:65568a9:toolchains/toolchains
+GH_TUPLE=	mosra:toolchains:2243706:toolchains/toolchains
 
 CMAKE_ARGS=	-DLIB_SUFFIX=""
 

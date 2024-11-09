@@ -1,7 +1,7 @@
 PORTNAME=	wl-screenrec
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.1.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	multimedia wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -29,7 +29,7 @@ post-patch:
 post-install:
 .for _shell in bash fish zsh
 	@${ECHO_MSG} "Generating ${STAGEDIR}${PREFIX}/${PLIST_FILES:M*${_shell}*}"
-	${CARGO_TARGET_DIR}/${CARGO_BUILD_TARGET}/*/${PORTNAME} \
+	${CARGO_TARGET_DIR}/*/${PORTNAME} \
 		--generate-completions ${_shell} \
 		>${STAGEDIR}${PREFIX}/${PLIST_FILES:M*${_shell}*}
 .endfor

@@ -91,10 +91,10 @@ include/shibsp/util/SPConstants.h
 include/shibsp/util/TemplateParameters.h
 include/shibsp/version.h
 lib/libshibsp.so
-lib/libshibsp.so.11
-lib/libshibsp.so.11.0.1
-lib/shibboleth/adfs.so
+lib/libshibsp.so.12
+lib/libshibsp.so.12.0.0
 lib/shibboleth/adfs-lite.so
+lib/shibboleth/adfs.so
 @comment %%MEMCACHED%%lib/shibboleth/memcache-store.so
 %%ODBC%%lib/shibboleth/odbc-store.so
 lib/shibboleth/plugins-lite.so
@@ -103,8 +103,8 @@ lib/shibboleth/plugins.so
 %%FASTCGI%%lib/shibboleth/shibauthorizer
 %%FASTCGI%%lib/shibboleth/shibresponder
 lib/libshibsp-lite.so
-lib/libshibsp-lite.so.11
-lib/libshibsp-lite.so.11.0.1
+lib/libshibsp-lite.so.12
+lib/libshibsp-lite.so.12.0.0
 libdata/pkgconfig/shibsp-lite.pc
 libdata/pkgconfig/shibsp.pc
 sbin/shibd

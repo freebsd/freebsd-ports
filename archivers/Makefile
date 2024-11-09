@@ -184,6 +184,7 @@
     SUBDIR += ppunpack
     SUBDIR += py-acefile
     SUBDIR += py-bitshuffle
+    SUBDIR += py-blosc
     SUBDIR += py-blosc2
     SUBDIR += py-borgbackup
     SUBDIR += py-borgbackup12
@@ -222,7 +223,6 @@
     SUBDIR += rar
     SUBDIR += rpm2cpio
     SUBDIR += rpm4
-    SUBDIR += rubygem-archive-tar-minitar
     SUBDIR += rubygem-archive-zip
     SUBDIR += rubygem-bzip2-ffi
     SUBDIR += rubygem-bzip2-ruby

@@ -1,7 +1,7 @@
---- chrome/browser/ui/web_applications/web_app_ui_manager_impl.cc.orig	2024-09-30 07:45:04 UTC
+--- chrome/browser/ui/web_applications/web_app_ui_manager_impl.cc.orig	2024-10-22 08:31:56 UTC
 +++ chrome/browser/ui/web_applications/web_app_ui_manager_impl.cc
 @@ -573,7 +573,7 @@ void WebAppUiManagerImpl::MaybeShowIPHPromoForAppsLaun
-     content::WebContents* web_contents,
+     Browser* browser,
      Profile* profile,
      const std::string& app_id) {
 -#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)

@@ -1,5 +1,5 @@
 PORTNAME=	python-openstackclient
-PORTVERSION=	7.1.3
+PORTVERSION=	7.2.1
 CATEGORIES=	net python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -26,7 +26,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cliff>=3.5.0:devel/py-cliff@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>=2.27.0:www/py-requests@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}stevedore>=2.0.1:devel/py-stevedore@${PY_FLAVOR}
 
-USES=		python shebangfix
+USES=		python:3.9+ shebangfix
 USE_PYTHON=	autoplist concurrent cryptography pep517
 
 NO_ARCH=	yes

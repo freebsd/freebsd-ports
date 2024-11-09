@@ -1,4 +1,4 @@
---- content/browser/utility_process_host.cc.orig	2024-10-01 07:26:23 UTC
+--- content/browser/utility_process_host.cc.orig	2024-10-27 06:40:35 UTC
 +++ content/browser/utility_process_host.cc
 @@ -62,7 +62,7 @@
  #include "content/browser/v8_snapshot_files.h"
@@ -45,7 +45,7 @@
    allowed_gpu_ = true;
  #endif
  }
-@@ -408,7 +408,7 @@ bool UtilityProcessHost::StartProcess() {
+@@ -406,7 +406,7 @@ bool UtilityProcessHost::StartProcess() {
      file_data_->files_to_preload.merge(GetV8SnapshotFilesToPreload(*cmd_line));
  #endif  // BUILDFLAG(IS_POSIX)
  
@@ -54,7 +54,7 @@
      // The network service should have access to the parent directories
      // necessary for its usage.
      if (sandbox_type_ == sandbox::mojom::Sandbox::kNetwork) {
-@@ -419,13 +419,13 @@ bool UtilityProcessHost::StartProcess() {
+@@ -417,13 +417,13 @@ bool UtilityProcessHost::StartProcess() {
      }
  #endif  // BUILDFLAG(IS_LINUX)
  

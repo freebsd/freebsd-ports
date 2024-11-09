@@ -1,5 +1,6 @@
 PORTNAME=	openssl
 PORTVERSION=	3.1.7
+PORTREVISION=	1
 CATEGORIES=	security devel
 PKGNAMESUFFIX=	31
 
@@ -12,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 #EXPIRATION_DATE=	2025-03-14
 
-CONFLICTS_INSTALL=	boringssl libressl libressl-devel openssl openssl111 openssl3[23] openssl*-quictls
+CONFLICTS_INSTALL=	boringssl libressl libressl-devel openssl openssl111 openssl3[234] openssl*-quictls
 
 HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	config

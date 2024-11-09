@@ -1,0 +1,5 @@
+Zsh-fast-syntax-highlighting enables highlighting of commands whilst they
+are typed at an interactive zsh prompt. This helps in reviewing
+commands before running them, particularly in catching syntax errors.
+Compared to zsh-syntax-highlighting, this package is more optimized
+and feature-rich.

@@ -1,5 +1,6 @@
 PORTNAME=	httm
 DISTVERSION=	0.43.2
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	bofh@FreeBSD.org
@@ -15,8 +16,6 @@ NOT_FOR_ARCHS_REASON=	Fails to build: non-binding let on a synchronization lock
 USES=		cargo
 USE_GITHUB=	yes
 GH_ACCOUNT=	kimono-koans
-
-.include "${.CURDIR}/Makefile.cargo"
 
 PLIST_FILES=	bin/httm
 

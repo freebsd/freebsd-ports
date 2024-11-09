@@ -1,7 +1,7 @@
 PORTNAME=	grv
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.3.2
-PORTREVISION=	30
+PORTREVISION=	32
 CATEGORIES=	devel
 
 MAINTAINER=	dmgk@FreeBSD.org
@@ -10,6 +10,10 @@ WWW=		https://github.com/rgburke/grv
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+BROKEN=		fails to build with libgit 1.8.1
+DEPRECATED=	Unmaintained for years, outdated
+EXPIRATION_DATE=2024-12-31
 
 LIB_DEPENDS=	libgit2.so:devel/libgit2
 

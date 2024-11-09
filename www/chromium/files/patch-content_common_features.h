@@ -1,4 +1,4 @@
---- content/common/features.h.orig	2024-09-30 07:45:04 UTC
+--- content/common/features.h.orig	2024-10-22 08:31:56 UTC
 +++ content/common/features.h
 @@ -34,7 +34,7 @@ CONTENT_EXPORT BASE_DECLARE_FEATURE(kDocumentPolicyNeg
  CONTENT_EXPORT BASE_DECLARE_FEATURE(kEnableBackForwardCacheForScreenReader);
@@ -9,7 +9,7 @@
  CONTENT_EXPORT BASE_DECLARE_FEATURE(kEnableDevToolsJsErrorReporting);
  #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
  CONTENT_EXPORT BASE_DECLARE_FEATURE(kEmbeddingRequiresOptIn);
-@@ -75,7 +75,7 @@ CONTENT_EXPORT extern const base::FeatureParam<int>
+@@ -76,7 +76,7 @@ CONTENT_EXPORT extern const base::FeatureParam<int>
  CONTENT_EXPORT BASE_DECLARE_FEATURE(kGpuInfoCollectionSeparatePrefetch);
  #endif
  CONTENT_EXPORT BASE_DECLARE_FEATURE(kGroupNIKByJoiningOrigin);

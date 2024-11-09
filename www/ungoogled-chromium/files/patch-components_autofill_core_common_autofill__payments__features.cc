@@ -1,4 +1,4 @@
---- components/autofill/core/common/autofill_payments_features.cc.orig	2024-10-01 07:26:23 UTC
+--- components/autofill/core/common/autofill_payments_features.cc.orig	2024-10-27 06:40:35 UTC
 +++ components/autofill/core/common/autofill_payments_features.cc
 @@ -8,7 +8,7 @@
  
@@ -9,7 +9,7 @@
      (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS))
  // When enabled, Chrome will extract the checkout amount from the checkout page
  // of the allowlisted merchant websites.
-@@ -292,7 +292,7 @@ BASE_FEATURE(kAutofillSyncEwalletAccounts,
+@@ -320,7 +320,7 @@ BASE_FEATURE(kAutofillSyncEwalletAccounts,
  bool ShouldShowImprovedUserConsentForCreditCardSave() {
  // TODO(crbug.com/40118868): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.

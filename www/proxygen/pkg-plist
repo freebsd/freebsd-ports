@@ -281,6 +281,8 @@ include/proxygen/lib/utils/ZlibStreamCompressor.h
 include/proxygen/lib/utils/ZlibStreamDecompressor.h
 include/proxygen/lib/utils/ZstdStreamCompressor.h
 include/proxygen/lib/utils/ZstdStreamDecompressor.h
+include/proxygen/lib/http/webtransport/QuicWebTransport.h
+include/proxygen/lib/http/webtransport/WebTransportImpl.h
 lib/cmake/proxygen/proxygen-config.cmake
 lib/cmake/proxygen/proxygen-targets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/proxygen/proxygen-targets.cmake
@@ -291,3 +293,4 @@ lib/libproxygendeviousbaton.so
 lib/libproxygenhqloggerhelper.so
 lib/libproxygenhqserver.so
 lib/libproxygenhttpserver.so
+lib/libquicwebtransport.so

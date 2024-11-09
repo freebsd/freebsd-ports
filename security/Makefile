@@ -39,6 +39,7 @@
     SUBDIR += aws-c-auth
     SUBDIR += aws-c-cal
     SUBDIR += aws-iam-authenticator
+    SUBDIR += aws-lc
     SUBDIR += aws-vault
     SUBDIR += axc
     SUBDIR += barnyard2
@@ -75,7 +76,6 @@
     SUBDIR += ccsrch
     SUBDIR += certmgr
     SUBDIR += certspotter
-    SUBDIR += cfs
     SUBDIR += cfssl
     SUBDIR += cfv
     SUBDIR += chaosreader
@@ -94,7 +94,6 @@
     SUBDIR += clamav-lts
     SUBDIR += clamav-unofficial-sigs
     SUBDIR += clamd-stream-client
-    SUBDIR += clamfs
     SUBDIR += clamsmtp
     SUBDIR += clamtk
     SUBDIR += cloak
@@ -159,7 +158,6 @@
     SUBDIR += fizz
     SUBDIR += flawfinder
     SUBDIR += flawz
-    SUBDIR += fprint_demo
     SUBDIR += fprintd
     SUBDIR += fragroute
     SUBDIR += fragrouter
@@ -170,6 +168,7 @@
     SUBDIR += fwknop
     SUBDIR += fwlogwatch
     SUBDIR += gcr
+    SUBDIR += gcr3
     SUBDIR += gef
     SUBDIR += git-credential-azure
     SUBDIR += git-credential-gopass
@@ -746,11 +745,9 @@
     SUBDIR += p5-openxpki
     SUBDIR += p5-openxpki-i18n
     SUBDIR += p5-plog
-    SUBDIR += palisade
     SUBDIR += pam-modules
     SUBDIR += pam-mysql
     SUBDIR += pam-pgsql
-    SUBDIR += pam_fprint
     SUBDIR += pam_google_authenticator
     SUBDIR += pam_helper
     SUBDIR += pam_howdy
@@ -928,7 +925,6 @@
     SUBDIR += py-cybox
     SUBDIR += py-detect-secrets
     SUBDIR += py-dfdatetime
-    SUBDIR += py-dfvfs
     SUBDIR += py-dfwinreg
     SUBDIR += py-dirhash
     SUBDIR += py-django-auth-kerberos
@@ -1033,6 +1029,7 @@
     SUBDIR += py-pyscard
     SUBDIR += py-pysodium
     SUBDIR += py-pyspnego
+    SUBDIR += py-pysrp
     SUBDIR += py-python-axolotl
     SUBDIR += py-python-axolotl-curve25519
     SUBDIR += py-python-cas
@@ -1132,7 +1129,6 @@
     SUBDIR += rubygem-devise-two-factor-rails70
     SUBDIR += rubygem-devise-two-factor41-rails70
     SUBDIR += rubygem-devise_pam_authenticatable2
-    SUBDIR += rubygem-devise_pam_authenticatable2-rails61
     SUBDIR += rubygem-digest
     SUBDIR += rubygem-digest-crc
     SUBDIR += rubygem-doorkeeper
@@ -1140,8 +1136,8 @@
     SUBDIR += rubygem-doorkeeper-openid_connect
     SUBDIR += rubygem-doorkeeper-rails5
     SUBDIR += rubygem-doorkeeper-rails50
-    SUBDIR += rubygem-doorkeeper-rails61
     SUBDIR += rubygem-doorkeeper-rails70
+    SUBDIR += rubygem-doorkeeper57-rails70
     SUBDIR += rubygem-duo_api
     SUBDIR += rubygem-ed25519
     SUBDIR += rubygem-encryptor

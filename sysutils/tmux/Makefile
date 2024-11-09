@@ -1,6 +1,5 @@
 PORTNAME=	tmux
-PORTVERSION=	3.3a
-PORTREVISION=	3
+PORTVERSION=	3.5a
 CATEGORIES=	sysutils
 MASTER_SITES=	https://github.com/tmux/tmux/releases/download/${PORTVERSION}/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
@@ -21,7 +20,7 @@ USES=		cpe ncurses:port pkgconfig
 CPE_VENDOR=	tmux_project
 
 USE_GITHUB=	nodefault
-GH_TUPLE=	imomaliev:tmux-bash-completion:f5d5323:bash
+GH_TUPLE=	imomaliev:tmux-bash-completion:8da7f79:bash
 
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=${PREFIX}/share

@@ -1,6 +1,6 @@
 PORTNAME=	enigma
 PORTVERSION=	1.30
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -10,7 +10,7 @@ WWW=		https://www.nongnu.org/enigma/
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libxerces-c.so.3:textproc/xerces-c3 \
+LIB_DEPENDS=	libxerces-c.so:textproc/xerces-c3 \
 		libpng.so:graphics/png \
 		libenet.so:net/enet \
 		libcurl.so:ftp/curl

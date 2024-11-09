@@ -452,6 +452,7 @@
     SUBDIR += linux-rl9-avahi-libs
     SUBDIR += linux-rl9-libproxy
     SUBDIR += linux-rl9-openldap
+    SUBDIR += linux-rl9-tcp_wrappers-libs
     SUBDIR += liveMedia
     SUBDIR += lla
     SUBDIR += lua-luasocket
@@ -1287,6 +1288,7 @@
     SUBDIR += rubygem-fog-aliyun
     SUBDIR += rubygem-fog-atmos
     SUBDIR += rubygem-fog-aws
+    SUBDIR += rubygem-fog-aws328
     SUBDIR += rubygem-fog-azure
     SUBDIR += rubygem-fog-brightbox
     SUBDIR += rubygem-fog-cloudatcost
@@ -1565,6 +1567,7 @@
     SUBDIR += tcpxtract
     SUBDIR += td-system-tools
     SUBDIR += tdetect
+    SUBDIR += teddycloud
     SUBDIR += termshark
     SUBDIR += tftpgrab
     SUBDIR += throttled

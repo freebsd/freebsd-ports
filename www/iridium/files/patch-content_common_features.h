@@ -1,6 +1,6 @@
---- content/common/features.h.orig	2024-08-27 06:28:16 UTC
+--- content/common/features.h.orig	2024-11-04 08:56:03 UTC
 +++ content/common/features.h
-@@ -35,7 +35,7 @@ CONTENT_EXPORT BASE_DECLARE_FEATURE(kDocumentPolicyNeg
+@@ -34,7 +34,7 @@ CONTENT_EXPORT BASE_DECLARE_FEATURE(kDocumentPolicyNeg
  CONTENT_EXPORT BASE_DECLARE_FEATURE(kEnableBackForwardCacheForScreenReader);
  CONTENT_EXPORT BASE_DECLARE_FEATURE(
      kEnableBackForwardCacheForOngoingSubframeNavigation);

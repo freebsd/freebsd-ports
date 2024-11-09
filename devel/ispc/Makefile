@@ -1,12 +1,12 @@
 PORTNAME=	ispc
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.24.0
-PORTREVISION=	1
+DISTVERSION=	1.25.3
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Intel's compiler for high-performance SIMD programming
-WWW=		https://ispc.github.io/
+WWW=		https://ispc.github.io/ \
+		https://github.com/ispc/ispc
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
@@ -19,13 +19,13 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/flex:textproc/flex \
 LIB_DEPENDS=	libLLVM.so:devel/llvm${LLVM_VERSION} \
 		libtbb.so:devel/onetbb
 
-USES=		bison cmake compiler:c++17-lang llvm:lib,min=15,max=15 python:build,test shebangfix
+USES=		bison cmake compiler:c++17-lang llvm:lib,min=16,max=16 python:build,test shebangfix
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
 GH_TUPLE=	google:googletest:6a7ed31:googletest/ispcrt/tests/vendor/google/googletest
 
-SHEBANG_FILES=	*.py
+SHEBANG_GLOB=	*.py
 
 CONFIGURE_ENV=	PATH=${LOCALBASE}/llvm${LLVM_VERSION}/bin:${PATH} # see https://github.com/ispc/ispc/issues/2318
 CMAKE_OFF=	ISPC_NO_DUMPS ISPCRT_BUILD_GPU ISPC_INCLUDE_TESTS ISPCRT_BUILD_TESTS ISPC_INCLUDE_EXAMPLES
@@ -65,7 +65,7 @@ XE_PLIST_FILES=		include/ispcrt/ispcrt.h \
 XE_BROKEN=		Unknown architecture
 
 do-test: # all tests pass
-	@cd ${WRKSRC} && ISPC_HOME=${BUILD_WRKSRC}/bin ./run_tests.py
+	@cd ${WRKSRC} && ISPC_HOME=${BUILD_WRKSRC}/bin ./scripts/run_tests.py
 
 test-check-all: # the upstream claims that some of these checks are broken without using their patched llvm version, hence using llvm-devel
 	@cd ${BUILD_WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} check-all

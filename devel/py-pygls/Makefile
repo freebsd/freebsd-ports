@@ -21,4 +21,9 @@ USE_PYTHON=	autoplist concurrent pep517
 
 NO_ARCH=	yes
 
+OPTIONS_DEFINE=	WS
+WS_DESC=	WebSocket support
+
+WS_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}websockets>=11.0.3:devel/py-websockets@${PY_FLAVOR}
+
 .include <bsd.port.mk>

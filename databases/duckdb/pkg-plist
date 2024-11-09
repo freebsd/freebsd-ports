@@ -431,7 +431,6 @@ include/duckdb/execution/operator/csv_scanner/csv_file_scanner.hpp
 include/duckdb/execution/operator/csv_scanner/csv_option.hpp
 include/duckdb/execution/operator/csv_scanner/csv_reader_options.hpp
 include/duckdb/execution/operator/csv_scanner/csv_schema.hpp
-include/duckdb/execution/operator/csv_scanner/csv_sniffer.hpp
 include/duckdb/execution/operator/csv_scanner/csv_state.hpp
 include/duckdb/execution/operator/csv_scanner/csv_state_machine.hpp
 include/duckdb/execution/operator/csv_scanner/csv_state_machine_cache.hpp
@@ -440,6 +439,8 @@ include/duckdb/execution/operator/csv_scanner/header_value.hpp
 include/duckdb/execution/operator/csv_scanner/quote_rules.hpp
 include/duckdb/execution/operator/csv_scanner/scanner_boundary.hpp
 include/duckdb/execution/operator/csv_scanner/skip_scanner.hpp
+include/duckdb/execution/operator/csv_scanner/sniffer/csv_sniffer.hpp
+include/duckdb/execution/operator/csv_scanner/sniffer/sniff_result.hpp
 include/duckdb/execution/operator/csv_scanner/state_machine_options.hpp
 include/duckdb/execution/operator/csv_scanner/string_value_scanner.hpp
 include/duckdb/execution/operator/filter/physical_filter.hpp

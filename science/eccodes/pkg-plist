@@ -19322,6 +19322,7 @@ libdata/pkgconfig/eccodes.pc
 %%DATADIR%%/definitions/grib2/boot_multifield.def
 %%DATADIR%%/definitions/grib2/cfName.def
 %%DATADIR%%/definitions/grib2/cfVarName.def
+%%DATADIR%%/definitions/grib2/cfVarName.legacy.def
 %%DATADIR%%/definitions/grib2/combinationOfAttributesOfTileConcept.def
 %%DATADIR%%/definitions/grib2/crraLocalVersion.table
 %%DATADIR%%/definitions/grib2/crra_suiteName.table
@@ -24081,7 +24082,16 @@ libdata/pkgconfig/eccodes.pc
 %%DATADIR%%/definitions/grib2/templates/template.4.125.def
 %%DATADIR%%/definitions/grib2/templates/template.4.126.def
 %%DATADIR%%/definitions/grib2/templates/template.4.127.def
+%%DATADIR%%/definitions/grib2/templates/template.4.128.def
+%%DATADIR%%/definitions/grib2/templates/template.4.129.def
 %%DATADIR%%/definitions/grib2/templates/template.4.13.def
+%%DATADIR%%/definitions/grib2/templates/template.4.130.def
+%%DATADIR%%/definitions/grib2/templates/template.4.131.def
+%%DATADIR%%/definitions/grib2/templates/template.4.132.def
+%%DATADIR%%/definitions/grib2/templates/template.4.133.def
+%%DATADIR%%/definitions/grib2/templates/template.4.134.def
+%%DATADIR%%/definitions/grib2/templates/template.4.135.def
+%%DATADIR%%/definitions/grib2/templates/template.4.136.def
 %%DATADIR%%/definitions/grib2/templates/template.4.14.def
 %%DATADIR%%/definitions/grib2/templates/template.4.15.def
 %%DATADIR%%/definitions/grib2/templates/template.4.2.def
@@ -24941,6 +24951,7 @@ libdata/pkgconfig/eccodes.pc
 %%DATADIR%%/definitions/mars/grib.ocea.of.def
 %%DATADIR%%/definitions/mars/grib.ocea.or.def
 %%DATADIR%%/definitions/mars/grib.olda.an.def
+%%DATADIR%%/definitions/mars/grib.olda.tpa.def
 %%DATADIR%%/definitions/mars/grib.oper.3v.def
 %%DATADIR%%/definitions/mars/grib.oper.4i.def
 %%DATADIR%%/definitions/mars/grib.oper.4v.def
@@ -24949,6 +24960,7 @@ libdata/pkgconfig/eccodes.pc
 %%DATADIR%%/definitions/mars/grib.oper.ef.def
 %%DATADIR%%/definitions/mars/grib.oper.efi.def
 %%DATADIR%%/definitions/mars/grib.oper.em.def
+%%DATADIR%%/definitions/mars/grib.oper.ep.def
 %%DATADIR%%/definitions/mars/grib.oper.es.def
 %%DATADIR%%/definitions/mars/grib.oper.fa.def
 %%DATADIR%%/definitions/mars/grib.oper.fc.def
@@ -25064,6 +25076,7 @@ libdata/pkgconfig/eccodes.pc
 %%DATADIR%%/definitions/mars/grib.wmfm.fcmean.def
 %%DATADIR%%/definitions/mars/grib.wmfm.fcmin.def
 %%DATADIR%%/definitions/mars/grib.wmfm.fcstdev.def
+%%DATADIR%%/definitions/mars/mars.quantile.def
 %%DATADIR%%/definitions/mars/marsTypeConcept.def
 %%DATADIR%%/definitions/mars/model.96.table
 %%DATADIR%%/definitions/mars/stream.table

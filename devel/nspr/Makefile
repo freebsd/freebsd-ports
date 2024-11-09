@@ -1,5 +1,5 @@
 PORTNAME=	nspr
-DISTVERSION=	4.35
+DISTVERSION=	4.36
 CATEGORIES=	devel
 MASTER_SITES=	MOZILLA/${PORTNAME}/releases/v${PORTVERSION}/src
 
@@ -29,7 +29,7 @@ post-patch:
 post-build-TEST-on:
 	@${DO_MAKE_BUILD} -C ${BUILD_WRKSRC}/lib/tests
 	@${DO_MAKE_BUILD} -C ${BUILD_WRKSRC}/pr/tests
-	@${LN} -fs libmy.so.1 ${BUILD_WRKSRC}/pr/tests/dll/libmy.so
+	@${LN} -fs ${BUILD_WRKSRC}/pr/tests/dll/libmy.so ${BUILD_WRKSRC}/pr/tests/dll/libmy.so.1
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/*.so

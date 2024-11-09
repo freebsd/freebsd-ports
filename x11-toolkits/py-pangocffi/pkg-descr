@@ -1,0 +1,5 @@
+pangocffi is a CFFI-based set of Python bindings for pango.
+
+pangocffi on its own is not that useful, since it depends on a PangoFontMap
+being declared against the PangoContext. PangoFontMap instances can easily be
+retrieved from libraries such as PangoCairo, PangoXft, PangoFT2, and PangoWin32

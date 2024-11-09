@@ -1,0 +1,8 @@
+Functions are provided for computing the density and the distribution function
+of d-dimensional normal and "t" random variables, possibly truncated (on one
+side or two sides), and for generating random vectors sampled from these
+distributions, except sampling from the truncated "t". Moments of arbitrary
+order of a multivariate truncated normal are computed, and converted to
+cumulants up to order 4. Probabilities are computed via non-Monte Carlo methods;
+different routines are used in the case d=1, d=2, d=3, d>3, if d denotes the
+dimensionality.

@@ -1,6 +1,6 @@
---- sandbox/policy/switches.cc.orig	2024-07-31 14:19:23 UTC
+--- sandbox/policy/switches.cc.orig	2024-10-27 06:40:35 UTC
 +++ sandbox/policy/switches.cc
-@@ -54,10 +54,10 @@ const char kWindowsSystemProxyResolverSandbox[] = "pro
+@@ -55,10 +55,10 @@ const char kWindowsSystemProxyResolverSandbox[] = "pro
  const char kMirroringSandbox[] = "mirroring";
  #endif  // BUILDFLAG(IS_MAC)
  
@@ -13,7 +13,7 @@
  const char kHardwareVideoEncodingSandbox[] = "hardware_video_encoding";
  #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
  
-@@ -97,7 +97,9 @@ const char kGpuSandboxFailuresFatal[] = "gpu-sandbox-f
+@@ -98,7 +98,9 @@ const char kGpuSandboxFailuresFatal[] = "gpu-sandbox-f
  // Meant to be used as a browser-level switch for testing purposes only.
  const char kNoSandbox[] = "no-sandbox";
  

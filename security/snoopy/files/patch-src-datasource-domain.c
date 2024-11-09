@@ -1,4 +1,4 @@
---- src/datasource/domain.c.orig	2022-08-27 02:05:09 UTC
+--- src/datasource/domain.c.orig	2023-07-28 01:34:23 UTC
 +++ src/datasource/domain.c
 @@ -36,7 +36,9 @@
  #include   <errno.h>
@@ -19,14 +19,14 @@
  #define   HOSTS_PATH            "/etc/hosts"
  #define   HOSTS_LINE_SIZE_MAX   1024
  #define   HOSTS_LINE_POS_MAX    1023
-@@ -76,12 +78,12 @@ int snoopy_datasource_domain (char * const result, __a
+@@ -76,12 +78,12 @@ int snoopy_datasource_domain (char * const resultBuf, 
       * START: COPY FROM datasource/hostname
       */
      /* Get my hostname first */
 -    retVal = gethostname(hostname, HOST_NAME_MAX);
 +    retVal = gethostname(hostname, _POSIX_HOST_NAME_MAX);
      if (0 != retVal) {
-         return snprintf(result, SNOOPY_DATASOURCE_MESSAGE_MAX_SIZE, "(error @ gethostname(): %d)", errno);
+         return snprintf(resultBuf, resultBufSize, "(error @ gethostname(): %d)", errno);
      }
  
 -    // If hostname was something alien (longer than HOST_NAME_MAX), then the

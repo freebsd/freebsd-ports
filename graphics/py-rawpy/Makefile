@@ -1,5 +1,5 @@
 PORTNAME=	rawpy
-PORTVERSION=	0.23.1
+PORTVERSION=	0.23.2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	graphics python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -20,8 +20,14 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.26.0,1:math/py-numpy@${PY_FLAVOR}
 USES=		pkgconfig python
 USE_PYTHON=	autoplist concurrent cython pep517
 
+MAKE_ENV=	RAWPY_USE_SYSTEM_LIBRAW=1
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	letmaik
+
+post-patch:
+# Clean up bundled libraries
+	@${RM} -r ${WRKSRC}/external/
 
 post-install:
 	${FIND} ${STAGEDIR}${PYTHON_SITELIBDIR} -name '*.so' -exec ${STRIP_CMD} {} +

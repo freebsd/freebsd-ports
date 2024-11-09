@@ -1,6 +1,6 @@
 PORTNAME=	step-certificates
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.27.2
+DISTVERSION=	0.27.5
 PORTREVISION=	1
 CATEGORIES=	security
 
@@ -15,7 +15,7 @@ BUILD_DEPENDS=	pcsc-lite>0:devel/pcsc-lite
 LIB_DEPENDS=	libpcsclite.so:devel/pcsc-lite
 RUN_DEPENDS=	step:security/step-cli
 
-USES=		go:modules
+USES=		go:1.22,modules
 
 USE_RC_SUBR=	step-ca
 

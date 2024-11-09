@@ -1,6 +1,6 @@
 PORTNAME=	geary
 PORTVERSION=	40.0
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	mail gnome
 MASTER_SITES=	GNOME/sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+)\..*/\1/}
 DIST_SUBDIR=	gnome
@@ -22,7 +22,7 @@ LIB_DEPENDS=	libappstream-glib.so:devel/appstream-glib \
 		libcanberra.so:audio/libcanberra \
 		libenchant-2.so:textproc/enchant2 \
 		libfolks.so:net-im/folks \
-		libgcr-base-3.so:security/gcr \
+		libgcr-base-3.so:security/gcr3 \
 		libgee-0.8.so:devel/libgee \
 		libgmime-3.0.so:mail/gmime30 \
 		libgoa-1.0.so:net/gnome-online-accounts \

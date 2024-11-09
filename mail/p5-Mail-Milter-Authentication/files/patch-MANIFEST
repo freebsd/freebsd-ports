@@ -1,0 +1,10 @@
+--- MANIFEST.orig	2024-10-11 04:07:26 UTC
++++ MANIFEST
+@@ -96,7 +96,6 @@ lib/Mail/Milter/Authentication/htdocs/css/skeleton.css
+ lib/Mail/Milter/Authentication/htdocs/css/authmilter.css
+ lib/Mail/Milter/Authentication/htdocs/css/normalize.css
+ lib/Mail/Milter/Authentication/htdocs/css/skeleton.css
+-share/authentication_milter.init
+ share/authentication_milter.json
+ share/mail-dmarc.ini
+ t/00-load.t

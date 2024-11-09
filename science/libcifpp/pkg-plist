@@ -34,7 +34,7 @@ lib/cmake/cifpp/cifpp-targets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/cifpp/cifpp-targets.cmake
 lib/libcifpp.so
 lib/libcifpp.so.7.0
-lib/libcifpp.so.7.0.6
+lib/libcifpp.so.7.0.7
 %%DATADIR%%/components.cif
 %%DATADIR%%/mmcif_ddl.dic
 %%DATADIR%%/mmcif_ma.dic

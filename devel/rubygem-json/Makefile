@@ -1,14 +1,17 @@
 PORTNAME=	json
-PORTVERSION=	2.7.2
+PORTVERSION=	2.7.5
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	ruby@FreeBSD.org
-COMMENT=	Parse JSON texts and generate them from ruby data structures
-WWW=		https://flori.github.io/json/
+MAINTAINER=	sunpoet@FreeBSD.org
+COMMENT=	JSON implementation as a Ruby extension in C
+WWW=		https://ruby.github.io/json/ \
+		https://github.com/ruby/json/releases
 
 LICENSE=	BSD2CLAUSE RUBY
 LICENSE_COMB=	dual
+LICENSE_FILE_BSD2CLAUSE=${WRKSRC}/BSDL
+LICENSE_FILE_RUBY=	${WRKSRC}/COPYING
 
 USES=		gem
 

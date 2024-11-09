@@ -309,8 +309,8 @@ gtksharp20_USE_GNOME_IMPL=	gtk20
 libgnomekbd_LIB_DEPENDS=	libgnomekbd.so:x11/libgnomekbd
 libgnomekbd_USE_GNOME_IMPL=	gtk30 libxml2
 
-gvfs_BUILD_DEPENDS=	gvfs>=0:devel/gvfs
-gvfs_RUN_DEPENDS=	gvfs>=0:devel/gvfs
+gvfs_BUILD_DEPENDS=	gvfs>=0:filesystems/gvfs
+gvfs_RUN_DEPENDS=	gvfs>=0:filesystems/gvfs
 
 # End component definition section
 

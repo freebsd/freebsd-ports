@@ -1,4 +1,4 @@
---- CMakeLists.txt.orig	2024-06-27 09:25:47 UTC
+--- CMakeLists.txt.orig	2024-09-18 13:39:04 UTC
 +++ CMakeLists.txt
 @@ -14,6 +14,7 @@ include(CMakeDependentOption)
  include("version.inc")
@@ -17,7 +17,7 @@
      find_package(PkgConfig REQUIRED)
  
      if (CMAKE_VERSION VERSION_LESS "3.1")
-@@ -264,6 +265,8 @@ if (NOT MSVC AND ("${CMAKE_CXX_COMPILER_ID}" STREQUAL 
+@@ -263,6 +264,8 @@ if (NOT MSVC AND ("${CMAKE_CXX_COMPILER_ID}" STREQUAL 
      # On GCC and Clang, no return from a non-void function is a warning only. Here, we make it an error.
      add_compile_options(-Werror=return-type)
  
@@ -26,7 +26,20 @@
      # removes LOTS of extraneous Eigen warnings (GCC only supports it since 6.1)
      # https://eigen.tuxfamily.org/bz/show_bug.cgi?id=1221
      if("${CMAKE_CXX_COMPILER_ID}" MATCHES "Clang" OR CMAKE_CXX_COMPILER_VERSION VERSION_GREATER 6.0)
-@@ -648,8 +651,8 @@ elseif (SLIC3R_FHS)
+@@ -371,10 +374,10 @@ set(MINIMUM_BOOST_VERSION "1.66.0")
+ # boost::process was introduced first in version 1.64.0,
+ # boost::beast::detail::base64 was introduced first in version 1.66.0
+ set(MINIMUM_BOOST_VERSION "1.66.0")
+-set(_boost_components "system;filesystem;thread;log;locale;regex;chrono;atomic;date_time;iostreams;nowide")
++set(_boost_components "system;filesystem;thread;log;log_setup;locale;regex;chrono;atomic;date_time;iostreams;nowide")
+ find_package(Boost ${MINIMUM_BOOST_VERSION} REQUIRED COMPONENTS ${_boost_components})
+ 
+-find_package(Eigen3 3.3.7 REQUIRED)
++find_package(Eigen3 3.3.7 REQUIRED NO_MODULE)
+ 
+ add_library(boost_libs INTERFACE)
+ add_library(boost_headeronly INTERFACE)
+@@ -636,8 +639,8 @@ elseif (SLIC3R_FHS)
      install(DIRECTORY ${SLIC3R_RESOURCES_DIR}/ DESTINATION ${SLIC3R_FHS_RESOURCES}
          PATTERN "*/udev" EXCLUDE
      )
@@ -37,7 +50,7 @@
      foreach(SIZE 32 128 192)
          install(FILES ${SLIC3R_RESOURCES_DIR}/icons/PrusaSlicer_${SIZE}px.png
              DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/icons/hicolor/${SIZE}x${SIZE}/apps RENAME PrusaSlicer.png
-@@ -658,7 +661,8 @@ elseif (SLIC3R_FHS)
+@@ -646,7 +649,8 @@ elseif (SLIC3R_FHS)
              DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/icons/hicolor/${SIZE}x${SIZE}/apps RENAME PrusaSlicer-gcodeviewer.png
          )
      endforeach()

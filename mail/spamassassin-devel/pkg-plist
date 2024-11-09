@@ -18,6 +18,7 @@ bin/spamd
 @sample %%ETCDIR%%/v343.pre.sample
 @sample %%ETCDIR%%/v400.pre.sample
 @sample %%ETCDIR%%/v401.pre.sample
+@sample %%ETCDIR%%/v402.pre.sample
 include/libspamc.h
 lib/libspamc.so
 lib/libspamc.so.0
@@ -246,8 +247,6 @@ lib/libspamc.so.0
 @comment ##################################################################
 @postunexec rm -rf /var/lib/spamassassin/2* 2>&1 >/dev/null || true
 @dir /var/db/spamassassin
-@dir /var/lib
-@dir /var/lib/spamassassin
 @dir(%%USER%%,%%GROUP%%,) /var/run/spamd
 @comment ##################################################################
 @postunexec [ -d /var/db/spamassassin ] && echo "If you are no longer using SpamAssassin, remove /var/db/spamassassin"

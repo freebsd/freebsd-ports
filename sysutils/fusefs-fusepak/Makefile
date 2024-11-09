@@ -11,6 +11,10 @@ WWW=		http://fusepak.sourceforge.net/
 
 LICENSE=	GPLv2
 
+BROKEN=		Unfetchable
+DEPRECATED=	Upstream is no longer around
+EXPIRATION_DATE=2024-11-30
+
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 USES=		fuse pkgconfig tar:bzip2

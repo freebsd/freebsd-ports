@@ -96,8 +96,4 @@ do-install:
 			${MAKEFILE} ${MAKE_ARGS} \
 			${UNIT_MODNAME}-install DESTDIR=${STAGEDIR}
 
-# Overwrite the target in the ${MASTERDIR}/Makefile
-post-install:
-	@${DO_NADA}
-
 .include "${MASTERDIR}/Makefile"

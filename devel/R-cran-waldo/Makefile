@@ -1,5 +1,5 @@
 PORTNAME=	waldo
-DISTVERSION=	0.5.3
+DISTVERSION=	0.6.1
 CATEGORIES=	devel
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
@@ -17,11 +17,13 @@ RUN_DEPENDS=	R-cran-cli>0:devel/R-cran-cli \
 		R-cran-rematch2>0:devel/R-cran-rematch2 \
 		R-cran-rlang>=1.0.0:devel/R-cran-rlang \
 		R-cran-tibble>0:devel/R-cran-tibble
-TEST_DEPENDS=	R-cran-covr>0:devel/R-cran-covr \
+TEST_DEPENDS=	R-cran-bit64>0:devel/R-cran-bit64 \
+		R-cran-covr>0:devel/R-cran-covr \
 		R-cran-R6>0:devel/R-cran-R6 \
 		R-cran-testthat>=3.0.0:devel/R-cran-testthat \
 		R-cran-withr>0:devel/R-cran-withr \
 		R-cran-xml2>0:textproc/R-cran-xml2
+TESTING_UNSAFE=	R-cran-S7 port required
 
 USES=		cran:auto-plist
 

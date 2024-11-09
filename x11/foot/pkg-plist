@@ -5,9 +5,9 @@ bin/footclient
 %%PORTDOCS%%share/man/man1/footclient.1.gz
 %%PORTDOCS%%share/man/man5/foot.ini.5.gz
 %%PORTDOCS%%share/man/man7/foot-ctlseqs.7.gz
-share/applications/org.codeberg.dnkl.foot-server.desktop
-share/applications/org.codeberg.dnkl.foot.desktop
-share/applications/org.codeberg.dnkl.footclient.desktop
+share/applications/foot-server.desktop
+share/applications/foot.desktop
+share/applications/footclient.desktop
 share/bash-completion/completions/foot
 share/bash-completion/completions/footclient
 %%PORTDOCS%%%%DOCSDIR%%/CHANGELOG.md

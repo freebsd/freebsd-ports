@@ -2,17 +2,17 @@ CARGO_CRATES=	adler2-2.0.0 \
 		alloc-no-stdlib-2.0.4 \
 		alloc-stdlib-0.2.2 \
 		atty-0.2.14 \
-		autocfg-1.3.0 \
+		autocfg-1.4.0 \
 		bitflags-1.3.2 \
 		bitflags-2.6.0 \
 		blosc2-rs-0.3.1+2.15.1 \
 		blosc2-sys-0.3.1+2.15.1 \
-		brotli-3.5.0 \
-		brotli-decompressor-2.5.1 \
+		brotli-7.0.0 \
+		brotli-decompressor-4.0.1 \
 		bzip2-0.4.4 \
 		bzip2-sys-0.1.11+1.0.8 \
 		cbindgen-0.24.5 \
-		cc-1.1.21 \
+		cc-1.1.31 \
 		cfg-if-1.0.0 \
 		clap-3.2.25 \
 		clap_lex-0.2.4 \
@@ -21,60 +21,60 @@ CARGO_CRATES=	adler2-2.0.0 \
 		crc32fast-1.4.2 \
 		errno-0.3.9 \
 		fastrand-2.1.1 \
-		flate2-1.0.33 \
+		flate2-1.0.34 \
 		hashbrown-0.12.3 \
 		heck-0.4.1 \
 		heck-0.5.0 \
 		hermit-abi-0.1.19 \
 		indexmap-1.9.3 \
 		indoc-2.0.5 \
-		isal-rs-0.3.1+496255c \
-		isal-sys-0.3.1+496255c \
+		isal-rs-0.5.3+496255c \
+		isal-sys-0.5.3+496255c \
 		itoa-1.0.11 \
 		jobserver-0.1.32 \
-		libc-0.2.158 \
-		libcramjam-0.5.1 \
+		libc-0.2.161 \
+		libcramjam-0.6.0 \
 		libdeflate-sys-1.19.3 \
 		libdeflater-1.19.3 \
 		linux-raw-sys-0.4.14 \
 		lock_api-0.4.12 \
 		log-0.4.22 \
-		lz4-1.27.0 \
-		lz4-sys-1.11.0 \
+		lz4-1.28.0 \
+		lz4-sys-1.11.1+lz4-1.10.0 \
 		lzma-sys-0.1.20 \
 		memchr-2.7.4 \
 		memoffset-0.9.1 \
 		miniz_oxide-0.8.0 \
-		once_cell-1.19.0 \
+		once_cell-1.20.2 \
 		os_str_bytes-6.6.1 \
 		parking_lot-0.12.3 \
 		parking_lot_core-0.9.10 \
 		pkg-config-0.3.31 \
-		portable-atomic-1.8.0 \
-		proc-macro2-1.0.86 \
-		pyo3-0.22.3 \
-		pyo3-build-config-0.22.3 \
-		pyo3-ffi-0.22.3 \
-		pyo3-macros-0.22.3 \
-		pyo3-macros-backend-0.22.3 \
+		portable-atomic-1.9.0 \
+		proc-macro2-1.0.88 \
+		pyo3-0.22.5 \
+		pyo3-build-config-0.22.5 \
+		pyo3-ffi-0.22.5 \
+		pyo3-macros-0.22.5 \
+		pyo3-macros-backend-0.22.5 \
 		python3-dll-a-0.2.10 \
 		quote-1.0.37 \
-		redox_syscall-0.5.4 \
+		redox_syscall-0.5.7 \
 		rustix-0.38.37 \
 		ryu-1.0.18 \
 		same-file-1.0.6 \
 		scopeguard-1.2.0 \
-		serde-1.0.210 \
-		serde_derive-1.0.210 \
-		serde_json-1.0.128 \
+		serde-1.0.211 \
+		serde_derive-1.0.211 \
+		serde_json-1.0.132 \
 		shlex-1.3.0 \
 		smallvec-1.13.2 \
 		snap-1.1.1 \
 		strsim-0.10.0 \
 		syn-1.0.109 \
-		syn-2.0.77 \
+		syn-2.0.82 \
 		target-lexicon-0.12.16 \
-		tempfile-3.12.0 \
+		tempfile-3.13.0 \
 		termcolor-1.4.1 \
 		textwrap-0.16.1 \
 		toml-0.5.11 \

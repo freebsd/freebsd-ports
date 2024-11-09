@@ -6,7 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	rm@FreeBSD.org
 COMMENT=	Python based HTML parser based on the HTML5 spec
-WWW=		https://github.com/html5lib
+WWW=		https://github.com/html5lib/html5lib-python
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

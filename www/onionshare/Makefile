@@ -1,7 +1,7 @@
 PORTNAME=	onionshare
 DISTVERSIONPREFIX=v
 DISTVERSION=	2.6
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	www security python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -40,9 +40,8 @@ RUN_DEPENDS=	meek-client:security/meek \
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>=0:devel/py-pytest@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-qt>=0:devel/py-pytest-qt@${PY_FLAVOR}
 
-USES=		cpe python pyqt:5 qt:5 shebangfix xorg
+USES=		cpe python qt:5 shebangfix xorg
 USE_GITHUB=	yes
-USE_PYQT=	pyqt5 sip
 USE_PYTHON=	distutils autoplist
 USE_XORG=	x11 xcb
 

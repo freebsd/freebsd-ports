@@ -1,4 +1,4 @@
---- components/feature_engagement/public/feature_constants.cc.orig	2024-08-27 06:28:16 UTC
+--- components/feature_engagement/public/feature_constants.cc.orig	2024-11-04 08:56:03 UTC
 +++ components/feature_engagement/public/feature_constants.cc
 @@ -18,7 +18,7 @@ BASE_FEATURE(kIPHDemoMode, "IPH_DemoMode", base::FEATU
  BASE_FEATURE(kIPHDummyFeature, "IPH_Dummy", base::FEATURE_DISABLED_BY_DEFAULT);
@@ -9,7 +9,7 @@
  #if BUILDFLAG(GOOGLE_CHROME_BRANDING)
  BASE_FEATURE(kEsbDownloadRowPromoFeature,
               "EsbDownloadRowPromo",
-@@ -637,7 +637,8 @@ BASE_FEATURE(kDefaultBrowserTriggerCriteriaExperiment,
+@@ -639,7 +639,8 @@ BASE_FEATURE(kDefaultBrowserTriggerCriteriaExperiment,
  #endif  // BUILDFLAG(IS_IOS)
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_APPLE) || BUILDFLAG(IS_LINUX) || \
@@ -19,7 +19,7 @@
  BASE_FEATURE(kIPHAutofillCreditCardBenefitFeature,
               "IPH_AutofillCreditCardBenefit",
               base::FEATURE_DISABLED_BY_DEFAULT);
-@@ -771,7 +772,7 @@ BASE_FEATURE(kIPHScalableIphGamingFeature,
+@@ -776,7 +777,7 @@ BASE_FEATURE(kIPHScalableIphGamingFeature,
               base::FEATURE_DISABLED_BY_DEFAULT);
  #endif
  

@@ -1,6 +1,6 @@
---- electron/spec/chromium-spec.ts.orig	2024-08-20 22:47:02 UTC
+--- electron/spec/chromium-spec.ts.orig	2024-11-05 17:01:40 UTC
 +++ electron/spec/chromium-spec.ts
-@@ -471,13 +471,13 @@ describe('command line switches', () => {
+@@ -474,13 +474,13 @@ describe('command line switches', () => {
      it('should not set an invalid locale', async () => testLocale('asdfkl', `${currentLocale}|${currentSystemLocale}|${currentPreferredLanguages}`));
  
      const lcAll = String(process.env.LC_ALL);
@@ -18,7 +18,16 @@
    });
  
    describe('--remote-debugging-pipe switch', () => {
-@@ -2813,12 +2813,12 @@ describe('font fallback', () => {
+@@ -567,7 +567,7 @@ describe('command line switches', () => {
+ 
+     // Disable the test on linux arm and arm64 to avoid startup crash
+     // https://github.com/electron/electron/issues/44293#issuecomment-2420077154
+-    ifit(process.platform !== 'linux' || (process.arch !== 'arm' && process.arch !== 'arm64'))('creates startup trace', async () => {
++    ifit((process.platform !== 'linux' && process.platform !== 'freebsd') || (process.arch !== 'arm' && process.arch !== 'arm64'))('creates startup trace', async () => {
+       const rc = await startRemoteControlApp(['--trace-startup=*', `--trace-startup-file=${outputFilePath}`, '--trace-startup-duration=1', '--enable-logging']);
+       const stderrComplete = new Promise<string>(resolve => {
+         let stderr = '';
+@@ -2885,12 +2885,12 @@ describe('font fallback', () => {
        expect(fonts[0].familyName).to.equal('Arial');
      } else if (process.platform === 'darwin') {
        expect(fonts[0].familyName).to.equal('Helvetica');
@@ -33,7 +42,7 @@
      const html = `
      <html lang="ja-JP">
        <head>
-@@ -3212,7 +3212,7 @@ describe('navigator.clipboard.write', () => {
+@@ -3286,7 +3286,7 @@ describe('navigator.clipboard.write', () => {
    });
  });
  

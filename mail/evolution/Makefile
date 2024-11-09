@@ -1,6 +1,6 @@
 PORTNAME=	evolution
 DISTVERSION=	3.44.4
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	mail gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
@@ -24,7 +24,7 @@ LIB_DEPENDS=	libcryptui.so:security/libcryptui \
 		libenchant-2.so:textproc/enchant2 \
 		libenchant.so:textproc/enchant \
 		libfribidi.so:converters/fribidi \
-		libgcr-base-3.so:security/gcr \
+		libgcr-base-3.so:security/gcr3 \
 		libgnome-autoar-gtk-0.so:archivers/gnome-autoar \
 		libgspell-1.so:textproc/gspell \
 		libgtkspell3-3.so:textproc/gtkspell3 \

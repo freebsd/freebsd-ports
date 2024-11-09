@@ -1,5 +1,6 @@
 PORTNAME=	jp2a
-DISTVERSION=	1.3.0
+DISTVERSION=	1.3.1
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	https://github.com/Talinx/${PORTNAME}/releases/download/v${DISTVERSION}/
 
@@ -15,16 +16,12 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libpng.so:graphics/png \
 		libwebp.so:graphics/webp
 
-USES=		jpeg localbase ncurses pkgconfig tar:bz2
-USE_CSTD=	c99
+USES=		jpeg localbase:ldflags ncurses pkgconfig tar:bz2
 
 GNU_CONFIGURE=	yes
 
-CONFIGURE_ARGS=	--disable-doxygen-doc
-CONFIGURE_ENV+=	bashcompdir=${STAGEDIR}${PREFIX}/etc/bash_completion.d
-MAKE_ENV+=	bashcompdir=${STAGEDIR}${PREFIX}/etc/bash_completion.d
-
-LDFLAGS+=	-lm
+CONFIGURE_ARGS=	--disable-assert \
+		--disable-doxygen-doc
 
 PLIST_FILES=	bin/jp2a \
 		etc/bash_completion.d/jp2a \

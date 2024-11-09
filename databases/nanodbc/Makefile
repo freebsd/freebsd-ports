@@ -5,10 +5,13 @@ CATEGORIES=	databases devel
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Small C++ wrapper for the native C ODBC API
-WWW=		https://nanodbc.github.io/nanodbc/
+WWW=		https://nanodbc.github.io/nanodbc/ \
+		https://github.com/nanodbc/nanodbc
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+BROKEN_FreeBSD_15=	compilation fails with clang-19, see https://github.com/nanodbc/nanodbc/issues/421
 
 LIB_DEPENDS=	libodbc.so:databases/unixODBC
 

@@ -1,11 +1,12 @@
 PORTNAME=	rustpython
 DISTVERSION=	0.3.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	lang
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Python interpreter written in Rust
-WWW=		https://rustpython.github.io/
+WWW=		https://rustpython.github.io/ \
+		https://github.com/RustPython/RustPython
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

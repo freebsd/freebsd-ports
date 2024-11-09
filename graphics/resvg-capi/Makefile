@@ -1,6 +1,7 @@
 PORTNAME=	resvg-c-api
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.44.0
+PORTREVISION=	1
 CATEGORIES=	graphics
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -86,7 +87,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/resvg.h ${STAGEDIR}${PREFIX}/include
 	${INSTALL_DATA} ${WRKSRC}/ResvgQt.h ${STAGEDIR}${PREFIX}/include
 	cd ${WRKDIR}/target && \
-		${INSTALL_LIB} */release/libresvg.so ${STAGEDIR}${PREFIX}/lib && \
-		${INSTALL_DATA} */release/libresvg.a ${STAGEDIR}${PREFIX}/lib
+		${INSTALL_LIB} release/libresvg.so ${STAGEDIR}${PREFIX}/lib && \
+		${INSTALL_DATA} release/libresvg.a ${STAGEDIR}${PREFIX}/lib
 
 .include <bsd.port.mk>

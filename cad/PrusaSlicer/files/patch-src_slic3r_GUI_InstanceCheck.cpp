@@ -1,4 +1,4 @@
---- src/slic3r/GUI/InstanceCheck.cpp.orig	2024-06-27 09:25:47 UTC
+--- src/slic3r/GUI/InstanceCheck.cpp.orig	2024-09-18 13:39:04 UTC
 +++ src/slic3r/GUI/InstanceCheck.cpp
 @@ -27,7 +27,7 @@
  #include <strsafe.h>
@@ -9,7 +9,7 @@
  #include <dbus/dbus.h> /* Pull in all of D-Bus headers. */
  #endif //__linux__
  
-@@ -229,7 +229,7 @@ namespace instance_check_internal
+@@ -240,7 +240,7 @@ namespace instance_check_internal
  		return false;
  	}
  
@@ -18,7 +18,7 @@
  
  	static bool  send_message(const std::string &message_text, const std::string &version)
  	{
-@@ -317,7 +317,7 @@ bool instance_check(int argc, char** argv, bool app_co
+@@ -328,7 +328,7 @@ bool instance_check(int argc, char** argv, bool app_co
  	hashed_path = std::hash<std::string>{}(boost::filesystem::system_complete(argv[0]).string());
  #else
  	boost::system::error_code ec;

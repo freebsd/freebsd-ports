@@ -1,7 +1,7 @@
 PORTNAME=	video-trimmer
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.8.2
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	multimedia
 
 MAINTAINER=	ports@FreeBSD.org
@@ -30,7 +30,6 @@ post-patch:
 # Make each cargo subcommand very verbose
 # Add explicit <triple> subdir for --target from USES=cargo
 	@${REINPLACE_CMD} -e '/cargo/s/ --/&verbose&verbose&/' \
-		-Ee '/cp/s,/(release|debug)/,/${CARGO_BUILD_TARGET}&,' \
 		${WRKSRC}/build-aux/cargo.sh
 
 .include <bsd.port.mk>

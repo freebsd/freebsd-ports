@@ -1005,6 +1005,7 @@
 %%WWWDIR%%/app/Validator/ColumnRestrictionValidator.php
 %%WWWDIR%%/app/Validator/ColumnValidator.php
 %%WWWDIR%%/app/Validator/CommentValidator.php
+%%WWWDIR%%/app/Validator/ConfigValidator.php
 %%WWWDIR%%/app/Validator/CurrencyValidator.php
 %%WWWDIR%%/app/Validator/CustomFilterValidator.php
 %%WWWDIR%%/app/Validator/ExternalLinkValidator.php
@@ -1101,6 +1102,7 @@
 %%WWWDIR%%/libs/SimpleValidator/Validators/Equals.php
 %%WWWDIR%%/libs/SimpleValidator/Validators/Exists.php
 %%WWWDIR%%/libs/SimpleValidator/Validators/GreaterThan.php
+%%WWWDIR%%/libs/SimpleValidator/Validators/GreaterThanOrEqual.php
 %%WWWDIR%%/libs/SimpleValidator/Validators/InArray.php
 %%WWWDIR%%/libs/SimpleValidator/Validators/Integer.php
 %%WWWDIR%%/libs/SimpleValidator/Validators/Ip.php
@@ -1113,6 +1115,8 @@
 %%WWWDIR%%/libs/SimpleValidator/Validators/Numeric.php
 %%WWWDIR%%/libs/SimpleValidator/Validators/Range.php
 %%WWWDIR%%/libs/SimpleValidator/Validators/Required.php
+%%WWWDIR%%/libs/SimpleValidator/Validators/Timezone.php
+%%WWWDIR%%/libs/SimpleValidator/Validators/URL.php
 %%WWWDIR%%/libs/SimpleValidator/Validators/Unique.php
 %%WWWDIR%%/libs/ical/Component.php
 %%WWWDIR%%/libs/ical/Component/Alarm.php

@@ -1,6 +1,6 @@
 PORTNAME=	librdkafka
-DISTVERSION=	2.3.0
 DISTVERSIONPREFIX=	v
+DISTVERSION=	2.3.0
 CATEGORIES=	net
 
 MAINTAINER=	pizzamig@FreeBSD.org
@@ -29,6 +29,7 @@ MAKE_ARGS=	pkgconfigdir=${PREFIX}/libdata/pkgconfig
 CONFIGURE_ARGS+=	--disable-sasl \
 					--enable-ssl \
 					--enable-strip
+LDFLAGS+=      -Wl,--undefined-version
 
 USE_LDCONFIG=	yes
 

@@ -1,12 +1,13 @@
 PORTNAME=	hoomd-blue
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.8.2
+DISTVERSION=	4.9.1
 CATEGORIES=	science # physics
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Molecular dynamics and Monte Carlo soft matter simulation
-WWW=		https://glotzerlab.engin.umich.edu/hoomd-blue/
+WWW=		https://glotzerlab.engin.umich.edu/hoomd-blue/ \
+		https://github.com/glotzerlab/hoomd-blue
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

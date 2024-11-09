@@ -1,13 +1,15 @@
---- configure.ac.orig	2019-11-23 15:26:35 UTC
-+++ configure.ac
-@@ -364,23 +364,9 @@ AC_DEFINE_UNQUOTED([LYX_RELEASE_PATCH],$lyx_patch,[Pat
+--- configure.ac.orig	2024-11-04 08:26:47.400346000 +0000
++++ configure.ac	2024-11-04 08:28:53.253697000 +0000
+@@ -344,25 +344,10 @@
  
  AC_CONFIG_FILES([Makefile \
        lyx.1:lyx.1in \
 -      3rdparty/Makefile \
 -      3rdparty/boost/Makefile \
+-      3rdparty/dtl/Makefile \
 -      3rdparty/hunspell/Makefile \
 -      3rdparty/mythes/Makefile \
+       3rdparty/nod/Makefile \
 -      3rdparty/libiconv/Makefile \
        $ICONV_ICONV_H_IN \
 -      3rdparty/zlib/Makefile \

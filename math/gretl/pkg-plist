@@ -26,6 +26,7 @@ include/gretl/gretl_bundle.h
 include/gretl/gretl_cmatrix.h
 include/gretl/gretl_commands.h
 include/gretl/gretl_data_io.h
+include/gretl/gretl_drivers.h
 include/gretl/gretl_errors.h
 include/gretl/gretl_f2c.h
 include/gretl/gretl_foreign.h
@@ -141,8 +142,8 @@ lib/gretl-gtk%%GTK_VER%%/vif.so
 %%GUI%%lib/gretl-gtk%%GTK_VER%%/xlsx_import.so
 %%GUI%%lib/gretl-gtk%%GTK_VER%%/xml_get.so
 lib/libgretl-1.0.so
-lib/libgretl-1.0.so.48
-lib/libgretl-1.0.so.48.0.0
+lib/libgretl-1.0.so.49
+lib/libgretl-1.0.so.49.0.0
 libdata/pkgconfig/gretl.pc
 %%GUI%%share/applications/gretl.desktop
 %%GUI%%share/applications/gretl_edit.desktop
@@ -362,7 +363,6 @@ libdata/pkgconfig/gretl.pc
 %%ADDONS%%%%DATADIR%%/functions/SVAR/examples/SetRestrictions/spaghetti_plot.inp
 %%ADDONS%%%%DATADIR%%/functions/SVAR/examples/SetRestrictions/supply_demand.inp
 %%ADDONS%%%%DATADIR%%/functions/SVAR/examples/Traditional/BlQuah.inp
-%%ADDONS%%%%DATADIR%%/functions/SVAR/examples/Traditional/BlQuah_hd.inp
 %%ADDONS%%%%DATADIR%%/functions/SVAR/examples/Traditional/BlQuah_plus_shortrun.inp
 %%ADDONS%%%%DATADIR%%/functions/SVAR/examples/Traditional/IS-LM.inp
 %%ADDONS%%%%DATADIR%%/functions/SVAR/examples/Traditional/awm.inp
@@ -372,6 +372,7 @@ libdata/pkgconfig/gretl.pc
 %%ADDONS%%%%DATADIR%%/functions/SVAR/examples/Traditional/plain.inp
 %%ADDONS%%%%DATADIR%%/functions/SVAR/examples/Traditional/restr_example.inp
 %%ADDONS%%%%DATADIR%%/functions/SVAR/examples/Traditional/simple_C.inp
+%%ADDONS%%%%DATADIR%%/functions/SVAR/examples/Traditional/simple_C_named.inp
 %%ADDONS%%%%DATADIR%%/functions/SVAR/examples/Traditional/simple_C_wild.inp
 %%ADDONS%%%%DATADIR%%/functions/SVAR/examples/UhligData.gdt
 %%ADDONS%%%%DATADIR%%/functions/SVAR/examples/chomoreno_fromeviewswf.gdt
@@ -455,7 +456,7 @@ libdata/pkgconfig/gretl.pc
 %%ADDONS%%%%DATADIR%%/functions/regls/regls.gfn
 %%ADDONS%%%%DATADIR%%/functions/regls/regls.pdf
 %%GUI%%%%DATADIR%%/gretl-icons.gresource
-%%GUI%%%%DATADIR%%/gretl-logo.xpm
+%%GUI%%%%DATADIR%%/gretl-logo.png
 %%DATADIR%%/gretl_cli_cmdref.en
 %%DATADIR%%/gretl_cli_cmdref.es
 %%DATADIR%%/gretl_cli_cmdref.gl

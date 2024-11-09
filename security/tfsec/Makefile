@@ -1,6 +1,6 @@
 PORTNAME=	tfsec
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.28.10
+DISTVERSION=	1.28.11
 PORTREVISION=	1
 CATEGORIES=	security
 
@@ -11,7 +11,10 @@ WWW=		https://aquasecurity.github.io/tfsec
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:modules
+DEPRECATED=	tfsec now is party of security/trivy
+EXPIRATION_DATE=2024-11-26
+
+USES=		go:1.22,modules
 
 GO_MODULE=	github.com/aquasecurity/tfsec
 GO_TARGET=	./cmd/${PORTNAME}

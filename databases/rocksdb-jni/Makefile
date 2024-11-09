@@ -13,7 +13,8 @@ EXTRACT_ONLY=	${GH_ACCOUNT}-${GH_PROJECT}-${DISTVERSIONFULL}_GH0${EXTRACT_SUFX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Java (JNI) interface to RocksDB
-WWW=		https://rocksdb.org/
+WWW=		https://rocksdb.org/ \
+		https://github.com/facebook/rocksdb
 
 LICENSE=	APACHE20 GPLv2
 LICENSE_COMB=	dual

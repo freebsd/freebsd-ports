@@ -1,6 +1,6 @@
---- third_party/vulkan-loader/src/BUILD.gn.orig	2024-08-01 05:47:53 UTC
+--- third_party/vulkan-loader/src/BUILD.gn.orig	2024-11-04 08:56:03 UTC
 +++ third_party/vulkan-loader/src/BUILD.gn
-@@ -59,7 +59,7 @@ config("vulkan_internal_config") {
+@@ -57,7 +57,7 @@ config("vulkan_internal_config") {
      defines += [
        "SYSCONFDIR=\"/etc\"",
        "FALLBACK_CONFIG_DIRS=\"/etc/xdg\"",

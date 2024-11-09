@@ -1,9 +1,0 @@
---- Makefile.orig	2024-07-23 07:59:39 UTC
-+++ Makefile
-@@ -1,4 +1,6 @@
- MK_DEBUG_FILES=	no
-+BINOWN!=	id -u
-+BINGRP!=	id -g
- SHLIB=		bmdplugin_avahi
- SHLIB_MAJOR=	1
- CFLAGS+=	-I${LOCALBASE}/include -DLOCALBASE=\"${LOCALBASE}\"

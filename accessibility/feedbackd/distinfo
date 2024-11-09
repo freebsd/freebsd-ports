@@ -1,5 +1,5 @@
-TIMESTAMP = 1677701315
-SHA256 (feedbackd-v0.1.0.tar.bz2) = 17351120edabd4a5cf8599b7b5b04ce63b88e910b9aa9b9a614f0344e78259a9
-SIZE (feedbackd-v0.1.0.tar.bz2) = 75888
-SHA256 (gmobile-v0.0.6.tar.bz2) = 0d122e77c110c2d40f60c82ebecf5cf998209ca3e5544670125a085b1760af45
-SIZE (gmobile-v0.0.6.tar.bz2) = 42905
+TIMESTAMP = 1727505683
+SHA256 (feedbackd-v0.5.0.tar.bz2) = 9d94904599084778c736c1c63899a0fd4f7a1f7e57eca57c285a000866b820e9
+SIZE (feedbackd-v0.5.0.tar.bz2) = 95805
+SHA256 (gmobile-v0.1.0.tar.bz2) = d58b31c55766455e4dbf6463f96288dad50c97e865e71613e3b94d4948388c47
+SIZE (gmobile-v0.1.0.tar.bz2) = 46153

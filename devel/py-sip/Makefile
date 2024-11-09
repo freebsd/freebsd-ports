@@ -7,22 +7,17 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Python to C and C++ bindings generator
-WWW=		http://www.riverbankcomputing.co.uk/software/sip/
+WWW=		https://github.com/Python-SIP/sip
 
-LICENSE=		SIP GPLv2 GPLv3
-LICENSE_COMB=		multi
-LICENSE_NAME_SIP=	SIP License
-LICENSE_GROUPS_SIP=	FSF GPL OSI
-LICENSE_PERMS_SIP=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
-LICENSE_FILE_SIP=	${WRKSRC}/LICENSE
-LICENSE_FILE_GPLv2=	${WRKSRC}/LICENSE-GPL2
-LICENSE_FILE_GPLv3=	${WRKSRC}/LICENSE-GPL3
+LICENSE=	BSD2CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PY_SETUPTOOLS} \
+		${PYTHON_PKGNAMEPREFIX}setuptools-scm>=8:devel/py-setuptools-scm@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}packaging>0:devel/py-packaging@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}ply>0:devel/py-ply@${PY_FLAVOR} \
-		${PY_TOMLI}
+RUN_DEPENDS=	${PY_SETUPTOOLS} \
+		${PY_TOMLI} \
+		${PYTHON_PKGNAMEPREFIX}packaging>0:devel/py-packaging@${PY_FLAVOR}
 
 USES=		python pyqt:sip
 USE_PYTHON=	autoplist concurrent pep517

@@ -472,6 +472,7 @@
     SUBDIR += salome-kernel
     SUBDIR += scidavis
     SUBDIR += sciplot
+    SUBDIR += seacas
     SUBDIR += segyio
     SUBDIR += serac
     SUBDIR += shelxle

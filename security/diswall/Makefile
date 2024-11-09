@@ -1,11 +1,13 @@
 PORTNAME=	diswall
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.5.3
+DISTVERSION=	0.6.0
+PORTREVISION=	1
 CATEGORIES=	security
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Distributed firewall
-WWW=		https://diswall.stream
+WWW=		https://diswall.stream \
+		https://github.com/dis-works/diswall-rs
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -21,13 +23,12 @@ GH_PROJECT=	diswall-rs
 RUSTFLAGS=	${ARCH:S/i386/YES/:C/^[a-z].*//:S/YES/-C target-feature=+sse,+sse2/} # add sse sse2 target-features only on i386
 
 CARGO_CRATES=	adler2-2.0.0 \
-		ahash-0.8.11 \
 		aho-corasick-1.1.3 \
 		allocator-api2-0.2.18 \
 		async-channel-2.3.1 \
 		async-task-4.7.1 \
 		atomic-waker-1.1.2 \
-		autocfg-1.3.0 \
+		autocfg-1.4.0 \
 		base64-0.13.1 \
 		base64-0.22.1 \
 		base64-url-1.4.13 \
@@ -39,7 +40,7 @@ CARGO_CRATES=	adler2-2.0.0 \
 		byteorder-1.5.0 \
 		cassowary-0.3.0 \
 		castaway-0.2.3 \
-		cc-1.1.21 \
+		cc-1.1.30 \
 		cfg-if-1.0.0 \
 		cfg_aliases-0.2.1 \
 		compact_str-0.8.0 \
@@ -70,44 +71,45 @@ CARGO_CRATES=	adler2-2.0.0 \
 		fastrand-1.9.0 \
 		fastrand-2.1.1 \
 		fiat-crypto-0.2.9 \
-		flate2-1.0.33 \
+		flate2-1.0.34 \
+		foldhash-0.1.3 \
 		form_urlencoded-1.2.1 \
-		futures-core-0.3.30 \
-		futures-io-0.3.30 \
+		futures-core-0.3.31 \
+		futures-io-0.3.31 \
 		futures-lite-2.3.0 \
 		generic-array-0.14.7 \
 		getopts-0.2.21 \
 		getrandom-0.2.15 \
-		hashbrown-0.14.5 \
+		hashbrown-0.15.0 \
 		heck-0.5.0 \
 		hermit-abi-0.3.9 \
 		hostname-0.4.0 \
 		idna-0.5.0 \
-		indexmap-2.5.0 \
+		indexmap-2.6.0 \
 		instability-0.3.2 \
 		instant-0.1.13 \
 		itertools-0.13.0 \
 		itoa-1.0.11 \
 		json-0.12.4 \
 		lazy_static-1.5.0 \
-		libc-0.2.158 \
+		libc-0.2.159 \
 		linux-raw-sys-0.4.14 \
 		lock_api-0.4.12 \
 		log-0.4.22 \
-		lru-0.12.4 \
+		lru-0.12.5 \
 		memchr-2.7.4 \
 		miniz_oxide-0.8.0 \
 		mio-1.0.2 \
 		nats-0.25.0 \
 		netstat2-0.9.1 \
 		nix-0.29.0 \
-		nkeys-0.4.3 \
+		nkeys-0.4.4 \
 		nuid-0.3.2 \
 		num-conv-0.1.0 \
 		num-derive-0.3.3 \
 		num-traits-0.2.19 \
 		num_threads-0.1.7 \
-		once_cell-1.19.0 \
+		once_cell-1.20.2 \
 		openssl-probe-0.1.5 \
 		parking-2.2.1 \
 		parking_lot-0.12.3 \
@@ -118,44 +120,44 @@ CARGO_CRATES=	adler2-2.0.0 \
 		pin-project-lite-0.2.14 \
 		piper-0.2.4 \
 		pkcs8-0.10.2 \
-		pkg-config-0.3.30 \
-		portable-atomic-1.7.0 \
+		pkg-config-0.3.31 \
+		portable-atomic-1.9.0 \
 		powerfmt-0.2.0 \
 		ppv-lite86-0.2.20 \
-		proc-macro2-1.0.86 \
+		proc-macro2-1.0.88 \
 		quote-1.0.37 \
 		rand-0.8.5 \
 		rand_chacha-0.3.1 \
 		rand_core-0.6.4 \
 		ratatui-0.28.1 \
-		redox_syscall-0.5.4 \
-		regex-1.10.6 \
-		regex-automata-0.4.7 \
-		regex-syntax-0.8.4 \
+		redox_syscall-0.5.7 \
+		regex-1.11.0 \
+		regex-automata-0.4.8 \
+		regex-syntax-0.8.5 \
 		ring-0.17.8 \
 		rmp-0.8.14 \
 		rmp-serde-1.3.0 \
 		rustc_version-0.4.1 \
 		rustix-0.38.37 \
 		rustls-0.22.4 \
-		rustls-0.23.13 \
+		rustls-0.23.15 \
 		rustls-native-certs-0.7.3 \
-		rustls-pemfile-2.1.3 \
-		rustls-pki-types-1.8.0 \
+		rustls-pemfile-2.2.0 \
+		rustls-pki-types-1.10.0 \
 		rustls-webpki-0.102.8 \
-		rustversion-1.0.17 \
+		rustversion-1.0.18 \
 		ryu-1.0.18 \
-		schannel-0.1.24 \
+		schannel-0.1.26 \
 		scopeguard-1.2.0 \
 		security-framework-2.11.1 \
-		security-framework-sys-2.11.1 \
+		security-framework-sys-2.12.0 \
 		semver-1.0.23 \
 		serde-1.0.210 \
 		serde_derive-1.0.210 \
 		serde_json-1.0.128 \
 		serde_nanos-0.1.4 \
 		serde_repr-0.1.19 \
-		serde_spanned-0.6.7 \
+		serde_spanned-0.6.8 \
 		sha2-0.10.8 \
 		shlex-1.3.0 \
 		signal-hook-0.3.17 \
@@ -175,10 +177,10 @@ CARGO_CRATES=	adler2-2.0.0 \
 		strum_macros-0.26.4 \
 		subtle-2.6.1 \
 		syn-1.0.109 \
-		syn-2.0.77 \
+		syn-2.0.79 \
 		termcolor-1.4.1 \
-		thiserror-1.0.63 \
-		thiserror-impl-1.0.63 \
+		thiserror-1.0.64 \
+		thiserror-impl-1.0.64 \
 		time-0.3.36 \
 		time-core-0.1.2 \
 		time-macros-0.2.18 \
@@ -186,14 +188,14 @@ CARGO_CRATES=	adler2-2.0.0 \
 		tinyvec_macros-0.1.1 \
 		toml-0.8.19 \
 		toml_datetime-0.6.8 \
-		toml_edit-0.22.21 \
+		toml_edit-0.22.22 \
 		typenum-1.17.0 \
-		unicode-bidi-0.3.15 \
+		unicode-bidi-0.3.17 \
 		unicode-ident-1.0.13 \
 		unicode-normalization-0.1.24 \
 		unicode-segmentation-1.12.0 \
 		unicode-truncate-1.1.0 \
-		unicode-width-0.1.13 \
+		unicode-width-0.1.14 \
 		untrusted-0.9.0 \
 		ureq-2.10.1 \
 		url-2.5.2 \
@@ -217,7 +219,7 @@ CARGO_CRATES=	adler2-2.0.0 \
 		windows_x86_64_gnu-0.52.6 \
 		windows_x86_64_gnullvm-0.52.6 \
 		windows_x86_64_msvc-0.52.6 \
-		winnow-0.6.18 \
+		winnow-0.6.20 \
 		zerocopy-0.7.35 \
 		zerocopy-derive-0.7.35 \
 		zeroize-1.8.1

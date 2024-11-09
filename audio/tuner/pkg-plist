@@ -13,8 +13,13 @@ share/icons/hicolor/48x48@2/apps/%%APPNAME%%.svg
 share/icons/hicolor/64x64/apps/%%APPNAME%%.svg
 share/icons/hicolor/64x64@2/apps/%%APPNAME%%.svg
 share/locale/de/LC_MESSAGES/%%APPNAME%%.mo
+share/locale/es/LC_MESSAGES/%%APPNAME%%.mo
 share/locale/fr/LC_MESSAGES/%%APPNAME%%.mo
 share/locale/it/LC_MESSAGES/%%APPNAME%%.mo
+share/locale/ja/LC_MESSAGES/%%APPNAME%%.mo
+share/locale/nb_NO/LC_MESSAGES/%%APPNAME%%.mo
 share/locale/nl/LC_MESSAGES/%%APPNAME%%.mo
+share/locale/pt_BR/LC_MESSAGES/%%APPNAME%%.mo
+share/locale/ru/LC_MESSAGES/%%APPNAME%%.mo
 share/locale/tr/LC_MESSAGES/%%APPNAME%%.mo
 share/metainfo/%%APPNAME%%.appdata.xml

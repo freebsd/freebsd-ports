@@ -1,6 +1,6 @@
---- chrome/browser/ui/webui/management/management_ui_constants.cc.orig	2024-08-26 12:06:38 UTC
+--- chrome/browser/ui/webui/management/management_ui_constants.cc.orig	2024-10-22 08:31:56 UTC
 +++ chrome/browser/ui/webui/management/management_ui_constants.cc
-@@ -82,12 +82,12 @@ const char kProfileReportingBrowser[] = "profileReport
+@@ -88,12 +88,12 @@ const char kProfileReportingBrowser[] = "profileReport
  const char kProfileReportingExtension[] = "profileReportingExtension";
  const char kProfileReportingPolicy[] = "profileReportingPolicy";
  

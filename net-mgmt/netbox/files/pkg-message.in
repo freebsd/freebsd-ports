@@ -414,4 +414,30 @@ must be checked before proceeding with the upgrade.
       have been removed.
 EOD
 }
+{ type: upgrade
+  maximum_version: 4.1.6
+  message: <<EOD
+1. The NetBox 4.1 release contains some breaking changes, so the following
+   items should be checked before upgrading:
+
+   * Several filters deprecated in v4.0 have been removed.
+
+   * The unit size for "VirtualMachine.disk" and "VirtualDisk.size" has been
+     changed from 1 gigabyte to 1 megabyte. Existing values will be adjusted
+     automatically during the upgrade process.
+
+   * The "min_vid" and "max_vid" fields on the VLAN group model have been
+     replaced with "vid_ranges", an array of starting and ending VLAN ID pairs.
+
+   * The five individual event type fields on the "EventRule" model have been
+     replaced by a single "event_types" array field, which lists applicable
+     event types by name.
+
+   * All UI views & API endpoints associated with change records have been
+     moved from "/extras" to "/core".
+
+   * The "validate()" method on "CustomValidator" subclasses now must accept
+     the request argument.
+EOD
+}
 ]

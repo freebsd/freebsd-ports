@@ -8,12 +8,14 @@ PATCHFILES=	46d86944f349a177acb40fb8a3adc301c395fe60.patch:-p1 # https://github.
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Quantum circuits simulator submodule of the Qiskit framework
-WWW=		https://qiskit.org/aer/
+WWW=		https://qiskit.org/aer/ \
+		https://github.com/Qiskit/qiskit-aer
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-BROKEN_i386=	undefined reference to `__atomic_load'
+BROKEN_FreeBSD_15=	compilation fails with clang-19: error: no member named 'size_' in 'QubitVector<data_t>'
+BROKEN_i386=	undefined reference to `__atomic_load' # '
 
 BUILD_DEPENDS=	nlohmann-json>0:devel/nlohmann-json
 LIB_DEPENDS=	libfmt.so:devel/libfmt \

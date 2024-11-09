@@ -28,7 +28,6 @@
     SUBDIR += fixc
     SUBDIR += freqtrade
     SUBDIR += frontaccounting
-    SUBDIR += frontaccounting24
     SUBDIR += gnucash
     SUBDIR += gnucash-docs
     SUBDIR += grisbi

@@ -1,6 +1,6 @@
---- components/named_mojo_ipc_server/named_mojo_ipc_server_client_util.cc.orig	2023-03-13 07:33:08 UTC
+--- components/named_mojo_ipc_server/named_mojo_ipc_server_client_util.cc.orig	2024-11-04 08:56:03 UTC
 +++ components/named_mojo_ipc_server/named_mojo_ipc_server_client_util.cc
-@@ -22,7 +22,7 @@ namespace named_mojo_ipc_server {
+@@ -23,7 +23,7 @@ namespace named_mojo_ipc_server {
  // static
  mojo::PlatformChannelEndpoint ConnectToServer(
      const mojo::NamedPlatformChannel::ServerName& server_name) {

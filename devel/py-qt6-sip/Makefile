@@ -1,23 +1,22 @@
-PORTNAME=	sip
-PORTVERSION=	${PYQT6SIP_VERSION}
+PORTNAME=	PyQt6-sip
+DISTVERSION=	${PYQTSIP_VERSION}
 CATEGORIES=	devel python
 MASTER_SITES=	${MASTER_SITES_PYQT6SIP}
-PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}qt6-
-DISTNAME=	${PYQT6SIP_DISTNAME}
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	${PYQTSIP_DISTNAME}
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Python to C and C++ bindings generator
-WWW=		http://www.riverbankcomputing.co.uk/software/sip/
+WWW=		https://pypi.org/project/PyQt6-sip/
 
-LICENSE=		SIP GPLv2 GPLv3
-LICENSE_COMB=		multi
-LICENSE_GROUPS_SIP=	FSF GPL OSI
-LICENSE_NAME_SIP=	SIP License
-LICENSE_FILE_SIP=	${FILESDIR}/LICENSE
-LICENSE_PERMS_SIP=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
+LICENSE=	BSD2CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+BUILD_DEPENDS=	${PY_SETUPTOOLS} \
+		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
 
 USES=		python pyqt:6
-USE_PYTHON=	autoplist concurrent distutils flavors py3kplist
+USE_PYTHON=	autoplist concurrent pep517
 USE_PYQT=	#
 
 .include <bsd.port.mk>

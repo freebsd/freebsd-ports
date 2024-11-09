@@ -1,5 +1,5 @@
 PORTNAME=	sidekiq
-PORTVERSION=	7.3.2
+PORTVERSION=	7.3.4
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -10,8 +10,7 @@ WWW=		https://sidekiq.org/ \
 
 LICENSE=	LGPL3
 
-RUN_DEPENDS=	rubygem-concurrent-ruby>=0<2:devel/rubygem-concurrent-ruby \
-		rubygem-connection_pool>=2.3.0:net/rubygem-connection_pool \
+RUN_DEPENDS=	rubygem-connection_pool>=2.3.0:net/rubygem-connection_pool \
 		rubygem-logger>=0:devel/rubygem-logger \
 		rubygem-rack>=2.2.4,3:www/rubygem-rack \
 		rubygem-redis-client>=0.22.2:databases/rubygem-redis-client

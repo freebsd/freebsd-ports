@@ -1,5 +1,6 @@
 PORTNAME=	devtools
 PORTVERSION=	${LINUX_DIST_VER}
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	emulation@FreeBSD.org
@@ -19,8 +20,8 @@ QA_ENV+=		USESLIBTOOL=no
 
 BUVERSION=	2.35.2-43.el9
 GCCVERSION=	11.4.1-3.el9
-GLIBCVERSION=	2.34-100.el9_4.2
-KERNELVERSION=	5.14.0-427.18.1.el9_4
+GLIBCVERSION=	2.34-100.el9_4.4
+KERNELVERSION=	5.14.0-427.40.1.el9_4
 MPFRVERSION=	4.1.0-7.el9
 LIBMPCVERSION=	1.2.1-4.el9
 
@@ -29,12 +30,13 @@ BIN_DISTNAMES=	binutils-${BUVERSION} \
 		gcc-${GCCVERSION} \
 		gcc-c++-${GCCVERSION} \
 		gcc-gfortran-${GCCVERSION} \
-		mpfr-${MPFRVERSION} \
-		libstdc++-devel-${GCCVERSION}
+		mpfr-${MPFRVERSION}
 LIB_DISTNAMES=	binutils-devel-${BUVERSION} \
 		glibc-devel-${GLIBCVERSION} \
+		libatomic-${GCCVERSION} \
 		libgomp-${GCCVERSION} \
-		libmpc-${LIBMPCVERSION}
+		libmpc-${LIBMPCVERSION} \
+		libstdc++-devel-${GCCVERSION}
 LIB_DISTNAMES_aarch64=	k/kernel-headers-${KERNELVERSION}
 LIB_DISTNAMES_amd64=	g/glibc-headers-${GLIBCVERSION} \
 			k/kernel-headers-${KERNELVERSION}
@@ -46,7 +48,8 @@ SRC_DISTFILES=	binutils-${BUVERSION}${SRC_SUFX}:SOURCE \
 		mpfr-${MPFRVERSION}${SRC_SUFX}:SOURCE \
 		gcc-${GCCVERSION}${SRC_SUFX}:SOURCE
 
-CONFLICTS=	linux-c7-${PORTNAME}
+CONFLICTS=	linux-c7-${PORTNAME} \
+		linux-rl9-libatomic
 
 OPTIONS_DEFINE=	DOCS NLS
 OPTIONS_SUB=	yes

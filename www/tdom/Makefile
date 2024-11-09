@@ -1,8 +1,8 @@
 PORTNAME=	tDOM
-DISTVERSION=	0.9.4
+DISTVERSION=	0.9.5
 CATEGORIES=	www
 MASTER_SITES=	http://tdom.org/downloads/
-DISTNAME=	${PORTNAME:tl}-${PORTVERSION}-src
+DISTNAME=	${PORTNAME:tl}-${DISTVERSION}-src
 
 MAINTAINER=	ports@virtual-estates.net
 COMMENT=	High performance processing of XML and HTML data with Tcl
@@ -17,10 +17,10 @@ CONFIGURE_ARGS=	--enable-threads --disable-tdomalloc
 EXTRACT_AFTER_ARGS=	--exclude 'expat*/*.c' --exclude 'expat*/[a-mo-z]*.h' \
 			--exclude 'domalloc*' --exclude win
 
-MAKE_ARGS+=	RANLIB_STUB=:
+MAKE_ARGS+=	TESTFLAGS=
 TEST_TARGET=	test
 
-PLIST_SUB=	PORTVERSION=${PORTVERSION}
+PLIST_SUB=	DISTVERSION=${DISTVERSION}
 
 DOCS=		CHANGES README.md
 
@@ -48,7 +48,6 @@ post-patch-EBASE-on:
 	    ${WRKSRC}/generic/tdom.h \
 	    ${WRKSRC}/generic/tclexpat.h
 	${REINPLACE_CMD} 's|-lexpat|-lbsdxml|' ${WRKSRC}/configure
-	${REINPLACE_CMD} '553s|$$|knownBug} {|' ${WRKSRC}/tests/dom.test
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}/html
@@ -56,6 +55,6 @@ post-install-DOCS-on:
 	${INSTALL_DATA} ${WRKSRC}/doc/*.html ${STAGEDIR}${DOCSDIR}/html/
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/tdom0.9.4/libtdom0.9.4.so
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/${TCL_PKG:tl}/lib${TCL_PKG_LIB_PREFIX}${TCL_PKG:tl}.so
 
 .include <bsd.port.mk>

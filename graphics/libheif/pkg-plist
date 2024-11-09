@@ -20,6 +20,7 @@ lib/libheif.so.%%LIB_VER%%
 %%OPENJPEG%%lib/libheif/libheif-j2kdec.so
 %%OPENJPEG%%lib/libheif/libheif-j2kenc.so
 %%RAV1E%%lib/libheif/libheif-rav1e.so
+%%OPENJPH%%lib/libheif/libheif-jphenc.so
 %%SVTAV1%%lib/libheif/libheif-svtenc.so
 libdata/pkgconfig/libheif.pc
 %%PORTEXAMPLES%%share/man/man1/heif-dec.1.gz

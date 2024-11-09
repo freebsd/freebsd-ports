@@ -281,6 +281,7 @@ keycloak:*:332:332::0:0:keycloak server:/nonexistent:/usr/sbin/nologin
 honeytrap:*:333:333::0:0:HoneyTrap Daemon:/nonexistent:/usr/sbin/nologin
 percona:*:334:334::0:0:Percona Daemons:/nonexistent:/usr/sbin/nologin
 benthos:*:335:335::0:0:Benthos Daemon:/nonexistent:/usr/sbin/nologin
+snac:*:336:336::0:0:Snac Daemon:/nonexistent:/usr/sbin/nologin
 _pma:*:336:80::0:0:phpMyAdmin Owner:/nonexistent:/usr/sbin/nologin
 daapd:*:337:337::0:0:daapd User:/nonexistent:/usr/sbin/nologin
 murmur:*:338:338::0:0:& User:/nonexistent:/usr/sbin/nologin
@@ -697,7 +698,7 @@ c-lightning:*:735:735::0:0:c-lightning Daemon:/var/db/c-lightning:/usr/sbin/nolo
 # free: 748
 # free: 749
 # free: 750
-# free: 751
+supysonic:*:751:751::0:0:Subsonic server API:/var/db/supysonic:/usr/sbin/nologin
 # free: 752
 # free: 753
 # free: 754

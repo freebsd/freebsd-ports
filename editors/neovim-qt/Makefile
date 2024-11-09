@@ -1,7 +1,6 @@
 PORTNAME=	neovim-qt
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.2.17-66
-PORTREVISION=	1
+DISTVERSION=	0.2.18
 CATEGORIES=	editors
 PKGNAMESUFFIX=	${FLAVOR:S/qt//}
 
@@ -12,10 +11,8 @@ WWW=		https://github.com/equalsraf/neovim-qt/
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	neovim>=0:editors/neovim \
-		unibilium>=0:devel/unibilium
-LIB_DEPENDS=	libmsgpackc.so:devel/msgpack-c \
-		libunibilium.so:devel/unibilium
+BUILD_DEPENDS=	neovim>=0:editors/neovim
+LIB_DEPENDS=	libmsgpack-c.so:devel/msgpack-c
 RUN_DEPENDS=	neovim>=0:editors/neovim
 
 FLAVORS=		qt5 qt6
@@ -26,12 +23,11 @@ qt6_CONFLICTS_INSTALL=	neovim-qt5
 USES=		${_USES_${FLAVOR}} cmake desktop-file-utils qt:${FLAVOR:S/qt//}
 USE_GITHUB=	yes
 GH_ACCOUNT=	equalsraf
-GH_TAGNAME=	ecb3679
 _USES_qt6=	gl
 _USE_QT_qt5=	core gui network svg testlib widgets buildtools:build \
 		qmake:build
 _USE_QT_qt6=	base svg
-_USE_GL_qt6=	gl opengl
+_USE_GL_qt6=	opengl
 USE_GL=		${_USE_GL_${FLAVOR}}
 USE_QT=		${_USE_QT_${FLAVOR}}
 

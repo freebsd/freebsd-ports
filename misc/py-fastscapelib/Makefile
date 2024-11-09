@@ -6,10 +6,13 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Library of efficient algorithms for topographic data
-WWW=		https://fastscapelib.readthedocs.io/en/latest/
+WWW=		https://fastscapelib.readthedocs.io/en/latest/ \
+		https://github.com/fastscape-lem/fastscapelib
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+BROKEN_FreeBSD_15=	compilation fails with clang-19, see https://github.com/fastscape-lem/fastscapelib/issues/168
 
 BUILD_DEPENDS=	cmake:devel/cmake-core \
 		xtensor>0:math/xtensor \

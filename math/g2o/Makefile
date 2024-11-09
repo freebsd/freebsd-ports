@@ -6,10 +6,13 @@ CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	General framework for graph optimization
-WWW=		https://openslam-org.github.io/g2o.html
+WWW=		https://openslam-org.github.io/g2o.html \
+		https://github.com/RainerKuemmerle/g2o
 
 LICENSE=	LGPL3 GPLv3
 LICENSE_COMB=	dual
+
+BROKEN_FreeBSD_15=	compilation error: static assertion failed due to requirement 'is_unsigned<int>::value', see https://github.com/RainerKuemmerle/g2o/issues/838
 
 LIB_DEPENDS=	libamd.so:math/suitesparse-amd \
 		libcamd.so:math/suitesparse-camd \

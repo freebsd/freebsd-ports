@@ -1,11 +1,13 @@
 PORTNAME=	fend
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.5.3
+PORTREVISION=	1
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Arbitrary-precision unit-aware calculator
-WWW=		https://printfn.github.io/fend
+WWW=		https://printfn.github.io/fend \
+		https://github.com/printfn/fend
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
@@ -122,7 +124,7 @@ PLIST_FILES=	bin/${PORTNAME}
 do-install:
 	# workaround for error: found a virtual manifest at `xx` instead of a package manifest
 	${INSTALL_PROGRAM} \
-		${WRKDIR}/target/*/release/${PORTNAME} \
+		${WRKDIR}/target/release/${PORTNAME} \
 		${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>

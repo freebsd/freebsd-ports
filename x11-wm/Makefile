@@ -65,6 +65,7 @@
     SUBDIR += lxqt
     SUBDIR += lxqt-panel
     SUBDIR += lxqt-session
+    SUBDIR += lxqt-wayland-session
     SUBDIR += lxsession
     SUBDIR += magpie
     SUBDIR += marco
@@ -103,7 +104,6 @@
     SUBDIR += stumpwm
     SUBDIR += subtle
     SUBDIR += sway
-    SUBDIR += sway-devel
     SUBDIR += swayfx
     SUBDIR += theseus-ship
     SUBDIR += tinywm

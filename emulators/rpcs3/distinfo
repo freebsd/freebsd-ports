@@ -1,6 +1,6 @@
-TIMESTAMP = 1728949822
-SHA256 (RPCS3-rpcs3-v0.0.33-17034-g7b92cbcb9a_GH0.tar.gz) = 97efcbbefd4c067321622f2247b98b918af554c52341184c3a6c59d39d302b0e
-SIZE (RPCS3-rpcs3-v0.0.33-17034-g7b92cbcb9a_GH0.tar.gz) = 7829102
+TIMESTAMP = 1730503352
+SHA256 (RPCS3-rpcs3-v0.0.34-17082-g17e78a9e6f_GH0.tar.gz) = 5a62c212d0d44764082a61ba4d4eb41ec7f27f6fcd5366b6e003551415c8ed3e
+SIZE (RPCS3-rpcs3-v0.0.34-17082-g17e78a9e6f_GH0.tar.gz) = 7836086
 SHA256 (RPCS3-hidapi-hidapi-0.14.0-2-g8b43a97_GH0.tar.gz) = 109ba77362885d60e274930f637735ee75df2850fe99e3f1c3a5b9d1187f8cb6
 SIZE (RPCS3-hidapi-hidapi-0.14.0-2-g8b43a97_GH0.tar.gz) = 348879
 SHA256 (RPCS3-soundtouch-2.3.1-68-g394e1f5_GH0.tar.gz) = e24af82c51547341e2dfd43af03c1847abfd8d27334d667e6a51943f7f505cbe
@@ -29,3 +29,5 @@ SHA256 (wolfSSL-wolfssl-v5.7.2-stable_GH0.tar.gz) = 0f2ed82e345b833242705bbc4b08
 SIZE (wolfSSL-wolfssl-v5.7.2-stable_GH0.tar.gz) = 23591507
 SHA256 (thestk-rtmidi-6.0.0_GH0.tar.gz) = ef7bcda27fee6936b651c29ebe9544c74959d0b1583b716ce80a1c6fea7617f0
 SIZE (thestk-rtmidi-6.0.0_GH0.tar.gz) = 515502
+SHA256 (llvm-llvm-project-llvmorg-18.1.8_GH0.tar.gz) = 09c08693a9afd6236f27a2ebae62cda656eba19021ef3f94d59e931d662d4856
+SIZE (llvm-llvm-project-llvmorg-18.1.8_GH0.tar.gz) = 205562783

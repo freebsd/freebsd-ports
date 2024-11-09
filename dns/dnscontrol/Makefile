@@ -1,7 +1,7 @@
 PORTNAME=	dnscontrol
 DISTVERSIONPREFIX=v
-DISTVERSION=	4.11.0
-PORTREVISION=	3
+DISTVERSION=	4.14.3
+PORTREVISION=	1
 CATEGORIES=	dns
 
 MAINTAINER=	decke@FreeBSD.org
@@ -11,7 +11,7 @@ WWW=		https://stackexchange.github.io/dnscontrol/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:1.22,modules
+USES=		go:1.23,modules
 GO_MODULE=	github.com/StackExchange/dnscontrol/v4
 
 PLIST_FILES=	bin/${PORTNAME}

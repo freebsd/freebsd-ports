@@ -1,6 +1,6 @@
 PORTNAME=	hypridle
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.1.2
+DISTVERSION=	0.1.5
 CATEGORIES=	x11 wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -12,6 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	wayland-protocols>0:graphics/wayland-protocols
 LIB_DEPENDS=	libhyprlang.so:devel/hyprlang \
+		libhyprutils.so:devel/hyprutils \
 		libsdbus-c++.so:devel/sdbus-cpp \
 		libwayland-client.so:graphics/wayland
 
@@ -20,7 +21,8 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	hyprwm
 LDFLAGS+=	-Wl,--as-needed # sdbus-cpp deps
 PLIST_FILES=	bin/${PORTNAME} \
-		lib/systemd/user/${PORTNAME}.service
+		lib/systemd/user/${PORTNAME}.service \
+		share/hypr/${PORTNAME}.conf
 
 post-patch:
 # https://github.com/ConsoleKit2/ConsoleKit2/issues/150

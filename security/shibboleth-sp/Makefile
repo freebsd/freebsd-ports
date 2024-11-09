@@ -1,6 +1,6 @@
 PORTNAME=	shibboleth-sp
-PORTVERSION=	3.4.1
-PORTREVISION=	2
+PORTVERSION=	3.5.0
+PORTREVISION=	1
 CATEGORIES=	security www
 MASTER_SITES=	http://shibboleth.net/downloads/service-provider/${PORTVERSION}/
 
@@ -13,7 +13,7 @@ LICENSE=	APACHE20
 BUILD_DEPENDS=	boost-libs>=0:devel/boost-libs
 LIB_DEPENDS=	libsaml.so:security/opensaml \
 		liblog4shib.so:devel/log4shib \
-		libxerces-c-3.2.so:textproc/xerces-c3 \
+		libxerces-c.so:textproc/xerces-c3 \
 		libxml-security-c.so:security/apache-xml-security-c \
 		libxmltooling.so:devel/xmltooling \
 		libapr-1.so:devel/apr1 \

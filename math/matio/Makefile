@@ -1,5 +1,5 @@
 PORTNAME=	matio
-PORTVERSION=	1.5.27
+PORTVERSION=	1.5.28
 CATEGORIES=	math
 MASTER_SITES=	SF
 
@@ -9,14 +9,14 @@ WWW=		https://sourceforge.net/projects/matio/
 
 LICENSE=	BSD2CLAUSE
 
-USES=		7z compiler:c11 cpe libtool pathfix
+USES=		compiler:c11 cpe libtool pathfix
 
 CPE_VENDOR=	matio_project
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
-PLIST_SUB=	SHLIB_VER=13.0.0
+PLIST_SUB=	SHLIB_VER=13.0.1
 
 OPTIONS_DEFINE=	HDF5
 OPTIONS_DEFAULT=	HDF5

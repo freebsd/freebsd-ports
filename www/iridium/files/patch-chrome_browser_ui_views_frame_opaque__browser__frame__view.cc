@@ -1,4 +1,4 @@
---- chrome/browser/ui/views/frame/opaque_browser_frame_view.cc.orig	2024-08-01 05:47:53 UTC
+--- chrome/browser/ui/views/frame/opaque_browser_frame_view.cc.orig	2024-11-04 08:56:03 UTC
 +++ chrome/browser/ui/views/frame/opaque_browser_frame_view.cc
 @@ -54,7 +54,7 @@
  #include "ui/views/window/vector_icons/vector_icons.h"
@@ -9,7 +9,7 @@
  #include "ui/views/controls/menu/menu_runner.h"
  #endif
  
-@@ -564,7 +564,7 @@ OpaqueBrowserFrameView::FrameButtonStyle
+@@ -559,7 +559,7 @@ OpaqueBrowserFrameView::FrameButtonStyle
  OpaqueBrowserFrameView::GetFrameButtonStyle() const {
  // TODO(crbug.com/40118868): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
@@ -18,7 +18,7 @@
    return FrameButtonStyle::kMdButton;
  #else
    return FrameButtonStyle::kImageButton;
-@@ -583,7 +583,7 @@ bool OpaqueBrowserFrameView::ShouldDrawRestoredFrameSh
+@@ -578,7 +578,7 @@ bool OpaqueBrowserFrameView::ShouldDrawRestoredFrameSh
    return false;
  }
  
@@ -27,7 +27,7 @@
  bool OpaqueBrowserFrameView::IsTiled() const {
    return frame()->tiled();
  }
-@@ -782,7 +782,7 @@ gfx::Rect OpaqueBrowserFrameView::GetIconBounds() cons
+@@ -777,7 +777,7 @@ gfx::Rect OpaqueBrowserFrameView::GetIconBounds() cons
  }
  
  void OpaqueBrowserFrameView::WindowIconPressed() {

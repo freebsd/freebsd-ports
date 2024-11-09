@@ -1,9 +1,0 @@
---- Makefile.am.orig	2015-01-04 17:27:39.467515754 +0000
-+++ Makefile.am	2015-01-04 17:28:01.265514225 +0000
-@@ -1,5 +1,5 @@
- AM_LDFLAGS =
--AUTOMAKE_OPTIONS = foreign
-+AUTOMAKE_OPTIONS = foreign subdir-objects
- @SET_MAKE@
- 
- srcfiles = src/array.c src/datetime.c src/error.c \

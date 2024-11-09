@@ -1,6 +1,5 @@
 PORTNAME=	Mail-Milter-Authentication
-PORTVERSION=	3.20240205
-PORTREVISION=	1
+PORTVERSION=	3.20241011
 CATEGORIES=	mail perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -46,7 +45,8 @@ RUN_DEPENDS=	p5-App-Cmd>0:devel/p5-App-Cmd \
 TEST_DEPENDS=	p5-Crypt-OpenSSL-RSA>0:security/p5-Crypt-OpenSSL-RSA \
 		p5-Test-CheckManifest>0:devel/p5-Test-CheckManifest \
 		p5-Test-Exception>0:devel/p5-Test-Exception \
-		p5-Test-Perl-Critic>0:textproc/p5-Test-Perl-Critic
+		p5-Test-Perl-Critic>0:textproc/p5-Test-Perl-Critic \
+		p5-Test-Pod>0:devel/p5-Test-Pod
 
 USES=		perl5 shebangfix
 USE_PERL5=	configure
@@ -58,22 +58,24 @@ TEST_ENV=	AUTHOR_TESTING=1 \
 		RELEASE_TESTING=1 \
 		TEST_AUTHOR=1
 
-ETCDIR=			${PREFIX}/etc/mail
+ETCDIR=		${PREFIX}/etc/mail
 EXTRACT_AFTER_ARGS=	--exclude ./share/authentication_milter.init \
 			--no-same-owner --no-same-permission
-.for V in CACHEDIR ETCDIR RUNDIR SPOOLDIR VARLIBDIR VARLIBDIRBASE \
-	DEFAULT_USER DEFAULT_GROUP
-REINPLACE_LIST+=	-e "s|%%${V}%%|${$V}|g"
-.endfor
-NO_ARCH=		yes
-SUB_FILES=		pkg-message
-.for V in CACHEDIR ETCDIR RUNDIR SPOOLDIR VARLIBDIR VARLIBDIRBASE \
-	DEFAULT_USER DEFAULT_GROUP
-SUB_LIST+=		${V}=${$V}
-.endfor
-
+REINPLACE_VARS=	CACHEDIR \
+		DEFAULT_GROUP \
+		DEFAULT_USER \
+		ETCDIR \
+		RUNDIR \
+		SPOOLDIR \
+		VARLIBDIR \
+		VARLIBDIRBASE
+REINPLACE_LIST=	${REINPLACE_VARS:@.V.@-e "s|%%${.V.}%%|${${.V.}}|g"@}
+NO_ARCH=	yes
+SUB_FILES=	pkg-message
+SUB_LIST=	${REINPLACE_VARS:@.V.@${.V.}=${${.V.}}@}
 PLIST_SUB=	${SUB_LIST}
 
+.ifnmake portclippy
 CACHEDIR=	/var/cache/auth_milter
 DEFAULT_GROUP=	mailnull
 DEFAULT_USER=	mailnull
@@ -81,13 +83,16 @@ RUNDIR=		/var/run/auth_milter
 SPOOLDIR=	/var/spool/auth_milter
 VARLIBDIR=	/var/lib/auth_milter
 VARLIBDIRBASE=	/var/lib
+.endif
 
 post-patch:
 		cd ${PATCH_WRKSRC} && ${REINPLACE_CMD} ${REINPLACE_LIST} \
 		    bin/authentication_milter \
 		    lib/Mail/Milter/Authentication/Config.pm \
 		    lib/Mail/Milter/Authentication/Handler/DMARC.pm \
-		    share/authentication_milter.json
+		    share/authentication_milter.json \
+		    t/04-unit-handler-dmarc.t
+		${FIND} ${WRKSRC} -name "*.bak" -delete -o -name "*.orig" -delete
 
 post-install:
 		${MKDIR} ${STAGEDIR}${ETCDIR}/authentication_milter.d

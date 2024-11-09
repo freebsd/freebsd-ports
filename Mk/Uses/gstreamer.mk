@@ -43,11 +43,12 @@ _GST_VER=	${_GST_VER_DEFAULT}
 # following ports:
 # - multimedia/gstreamer1
 # - multimedia/gstreamer1-editing-services
+# - multimedia/gstreamer1-libav
 # - multimedia/gstreamer1-plugins (via `make makesum-gst1`)
 # - multimedia/gstreamer1-rtsp-server
 # - multimedia/gstreamer1-vaapi
 # - multimedia/py-gstreamer1
-_GST1_VERSION=		1.24.8
+_GST1_VERSION=		1.24.9
 _GST1_LIB_VER=		1.0
 _GST1_SOVERSION=	0.${_GST1_VERSION:R:E}${${_GST1_VERSION:E} > 9:?:0}${_GST1_VERSION:E}.0
 
@@ -64,8 +65,8 @@ _GST1_PLUGINS_ftp=	curl
 _GST1_PLUGINS_graphics=	aalib cairo gdkpixbuf gl jpeg kms libcaca libvisual \
 			opencv openexr openjpeg png rsvg vulkan webp zbar
 _GST1_PLUGINS_multimedia=	aom assrender bad dash dts dv dvdread \
-			editing-services gnonlin good hls libav libde265 \
-			mpeg2dec mpeg2enc mplex mm msdk openh264 resindvd \
+			editing-services good hls libav libde265 \
+			mpeg2dec mpeg2enc mplex mm msdk openh264 resindvd rust \
 			smoothstreaming theora ttml ugly v4l2 vaapi vpx webrtc \
 			x264 x265
 _GST1_PLUGINS_net=	sctp srtp
@@ -194,7 +195,8 @@ gst-sndfile_IMPL=	bad
 
 gst-sndio_PORT=		audio/gstreamer${_GST_VER}-plugins-sndio
 gst-sndio_IMPL=		#
-gst-sndio_VERSION=	1.8.0
+gst-sndio_GST1_VERSION=	1.24.0
+gst-sndio_VERSION=	${gst-sndio_GST${_GST_VER}_VERSION}
 
 gst-soundtouch_PORT=	audio/gstreamer${_GST_VER}-plugins-soundtouch
 gst-soundtouch_IMPL=	bad
@@ -306,10 +308,6 @@ gst-editing-services_PORT=	multimedia/gstreamer${_GST_VER}-editing-services
 gst-editing-services_SUFFIX=	#
 gst-editing-services_IMPL=	#
 
-gst-gnonlin_PORT=	multimedia/gstreamer${_GST_VER}-plugins-gnonlin
-gst-gnonlin_IMPL=	good
-gst-gnonlin_VERSION=	1.4.0
-
 gst-hls_PORT=		multimedia/gstreamer${_GST_VER}-plugins-hls
 gst-hls_IMPL=		bad
 
@@ -344,6 +342,11 @@ gst-openh264_IMPL=	bad
 
 gst-resindvd_PORT=	multimedia/gstreamer${_GST_VER}-plugins-resindvd
 gst-resindvd_IMPL=	bad
+
+gst-rust_PORT=		multimedia/gstreamer${_GST_VER}-plugins-rust
+gst-rust_IMPL=		#
+gst-rust_GST1_VERSION=	0.13.3
+gst-rust_VERSION=	${gst-rust_GST${_GST_VER}_VERSION}
 
 gst-smoothstreaming_PORT=	multimedia/gstreamer${_GST_VER}-plugins-smoothstreaming
 gst-smoothstreaming_IMPL=	bad

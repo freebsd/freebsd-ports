@@ -1,7 +1,7 @@
---- lib/Mail/Milter/Authentication/Handler/DMARC.pm.orig	2024-02-05 02:41:57 UTC
+--- lib/Mail/Milter/Authentication/Handler/DMARC.pm.orig	2024-10-11 04:07:26 UTC
 +++ lib/Mail/Milter/Authentication/Handler/DMARC.pm
-@@ -26,7 +26,7 @@ sub default_config {
-         'report_suppression_list' => 'rbl.example.com',
+@@ -27,7 +27,7 @@ sub default_config {
+         'report_suppression_email_list' => 'rbl.example.com',
          'no_report'      => 0,
          'hide_report_to' => 0,
 -        'config_file'    => '/etc/mail-dmarc.ini',

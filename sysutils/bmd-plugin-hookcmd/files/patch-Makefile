@@ -1,9 +1,0 @@
---- Makefile.orig	2024-07-23 08:00:58 UTC
-+++ Makefile
-@@ -1,4 +1,6 @@
- MK_DEBUG_FILES=	no
-+BINOWN!=	id -u
-+BINGRP!=	id -g
- SHLIB=		bmdplugin_hookcmd
- SHLIB_MAJOR=	1
- CFLAGS+=	-I${LOCALBASE}/include -DLOCALBASE=\"${LOCALBASE}\"

@@ -1,0 +1,11 @@
+This is a traditional console-based Mastermind game. The rules are as follows:
+1. The game will generate a 4-digit color/number code
+2. The range of colors/numbers is from 1 to 8
+3. The player has 10 chances to guess the code
+4. After each guess, the system will provide hints:
+   - Green plus sign (+) indicates both color and position are correct
+   - Red minus sign (-) indicates the color is correct but the position is wrong
+5. The player needs to gradually guess the correct code based on the hints
+6. During the game, you can enter 'r' at any time to switch display mode
+   (color blocks/numbers)
+7. During the game, you can enter 'q' at any time to exit the game

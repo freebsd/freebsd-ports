@@ -1,0 +1,15 @@
+--- lib/Makefile.orig	2024-10-13 20:49:49 UTC
++++ lib/Makefile
+@@ -40,10 +40,10 @@ installbyt:
+ 	$(OCAMLOPT) -a -o $(NATIVELIB) -cclib -lcamlidl $(NATIVEOBJS)
+ 
+ installbyt:
+-	cp -p $(INTERFACES) $(BYTELIB) $(OCAMLLIB)
++	$(BSD_INSTALL_DATA) -p $(INTERFACES) $(BYTELIB) $(DESTDIR)$(OCAMLLIB)
+ 
+ installopt:
+-	cp -p $(NATIVELIB) $(NATIVELIB:.cmxa=.$(LIBEXT)) $(OCAMLLIB)
++	$(BSD_INSTALL_DATA) $(NATIVELIB) $(NATIVELIB:.cmxa=.$(LIBEXT)) $(DESTDIR)$(OCAMLLIB)
+ 
+ .SUFFIXES: .mli .ml .cmi .cmo .cmx
+ 

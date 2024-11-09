@@ -1,6 +1,6 @@
---- core/system/Platform.cpp.orig	2021-04-08 21:23:28 UTC
+--- core/system/Platform.cpp.orig	2022-11-16 12:31:25 UTC
 +++ core/system/Platform.cpp
-@@ -102,14 +106,18 @@ class CpuUsage { (private)
+@@ -117,14 +117,18 @@ class CpuUsage { (public)
  
  public:
      CpuUsage() {
@@ -20,7 +20,7 @@
          file = fopen("/proc/cpuinfo", "r");
          numProcessors = 0;
          while (fgets(line, 128, file) != NULL) {
-@@ -117,6 +125,8 @@ class CpuUsage { (private)
+@@ -132,6 +136,8 @@ class CpuUsage { (public)
                  numProcessors++;
          }
          fclose(file);
@@ -29,7 +29,7 @@
      }
  
      Optional<Float> getUsage() {
-@@ -150,7 +160,7 @@ bool isDebuggerPresent() {
+@@ -176,7 +182,7 @@ bool isDebuggerPresent() {
      char buf[1024];
      bool debuggerPresent = false;
  

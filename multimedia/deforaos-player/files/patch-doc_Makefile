@@ -1,0 +1,23 @@
+--- doc/Makefile.orig	2024-10-10 22:59:16 UTC
++++ doc/Makefile
+@@ -1,4 +1,4 @@
+-TARGETS	= $(OBJDIR)index.html $(OBJDIR)player.1 $(OBJDIR)player.html $(OBJDIR)playerctl.1 $(OBJDIR)playerctl.html
++TARGETS	= $(OBJDIR)player.1 $(OBJDIR)playerctl.1
+ OBJDIR	=
+ PREFIX	= /usr/local
+ DESTDIR	=
+@@ -37,14 +37,10 @@ install: all
+ 
+ install: all
+ 	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -i -- "$(OBJDIR)player.1"
+-	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -i -- "$(OBJDIR)player.html"
+ 	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -i -- "$(OBJDIR)playerctl.1"
+-	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -i -- "$(OBJDIR)playerctl.html"
+ 
+ uninstall:
+ 	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -u -- "player.1"
+-	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -u -- "player.html"
+ 	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -u -- "playerctl.1"
+-	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -u -- "playerctl.html"
+ 
+ .PHONY: all clean distclean install uninstall

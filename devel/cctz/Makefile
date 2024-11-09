@@ -1,8 +1,10 @@
 PORTNAME=	cctz
-PORTVERSION=	2.2
-PORTREVISION=	3
 DISTVERSIONPREFIX=	v
+DISTVERSION=	2.4
 CATEGORIES=	devel
+
+PATCH_SITES=	https://github.com/google/cctz/commit/
+PATCHFILES=	64d12062183e2fa01f8c0127c4b9f91afaeee46c.patch:-p1
 
 MAINTAINER=	z7dr6ut7gs@snkmail.com
 COMMENT=	C++ library for handling dates, times, and time zones
@@ -11,24 +13,26 @@ WWW=		https://github.com/google/cctz
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-GH_ACCOUNT=	google
-USES=		compiler:c++11-lib gmake
+TEST_DEPENDS=	benchmark>0:devel/benchmark \
+		googletest>0:devel/googletest
+
+USES=		cmake:testing
+
 USE_GITHUB=	yes
+GH_ACCOUNT=	google
 
-MAKE_ARGS+=	CXX=${CXX} \
-		EXTRA_CPPFLAGS="-D_POSIX_C_SOURCE=201112L -D_XOPEN_SOURCE=600"
-
-PLIST_FILES=	include/cctz/civil_time.h \
-		include/cctz/civil_time_detail.h \
-		include/cctz/time_zone.h \
-		include/cctz/zone_info_source.h \
-		lib/libcctz.a
 PORTDOCS=	README.md
+
+CMAKE_OFF=	BUILD_EXAMPLES \
+		BUILD_TESTING \
+		BUILD_TOOLS
+CMAKE_ON=	BUILD_SHARED_LIBS
+CMAKE_ARGS=	-DVERSION=${DISTVERSION} -DSOVERSION=${DISTVERSION:R}
 
 OPTIONS_DEFINE=	DOCS
 
-post-install:
+post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

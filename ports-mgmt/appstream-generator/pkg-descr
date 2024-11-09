@@ -1,0 +1,4 @@
+AppStream is an effort to provide additional metadata and unique IDs for all
+software available in the package repository. This package contains the
+server-side of the AppStream infrastructure, a tool to generate metadata from
+FreeBSD packages.

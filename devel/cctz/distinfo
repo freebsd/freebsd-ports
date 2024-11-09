@@ -1,3 +1,5 @@
-TIMESTAMP = 1525700523
-SHA256 (google-cctz-v2.2_GH0.tar.gz) = ab315d5beb18a65ace57f6ea91f9ea298ec163fee89f84a44e81732af4d07348
-SIZE (google-cctz-v2.2_GH0.tar.gz) = 294330
+TIMESTAMP = 1729718272
+SHA256 (google-cctz-v2.4_GH0.tar.gz) = e1a00957d472044808a24a26f1ba020f36dc26949a69c214562d96b74093adb3
+SIZE (google-cctz-v2.4_GH0.tar.gz) = 222831
+SHA256 (64d12062183e2fa01f8c0127c4b9f91afaeee46c.patch) = ce8209dc567a1c2fddb186e2f420435dccb812deef1a18e1e42e2b619fbb0f1f
+SIZE (64d12062183e2fa01f8c0127c4b9f91afaeee46c.patch) = 844

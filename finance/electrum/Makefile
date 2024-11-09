@@ -1,5 +1,5 @@
 PORTNAME=	electrum
-DISTVERSION=	4.5.5
+DISTVERSION=	4.5.8
 CATEGORIES=	finance python
 MASTER_SITES=	https://download.electrum.org/${PORTVERSION}/ \
 		http://download.electrum.org/${PORTVERSION}/
@@ -48,7 +48,7 @@ OPTIONS_SUB=		yes
 HARDWARE_DESC=	Enable Bitcoin hardware wallet support
 
 GUI_USES=		desktop-file-utils pyqt:5
-GUI_USE=		PYQT=pyqt5,sip
+GUI_USE=		PYQT=pyqt5
 HARDWARE_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}bitbox02>=0.13.0:security/py-bitbox02@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}btchip-python>=0.1.32:security/py-btchip-python@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}ckcc-protocol>=0.7.7:security/py-ckcc-protocol@${PY_FLAVOR} \

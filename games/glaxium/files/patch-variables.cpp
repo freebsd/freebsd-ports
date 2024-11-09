@@ -1,6 +1,6 @@
---- ./variables.cpp.orig	Fri Oct 18 01:53:00 2002
-+++ ./variables.cpp	Sat Jul 21 17:51:10 2007
-@@ -453,6 +453,7 @@
+--- variables.cpp.orig	2024-11-06 19:04:58 UTC
++++ variables.cpp
+@@ -453,6 +453,7 @@ char* GlaxiumVariables::getFullOptionsPath() {
  	static char strReturn[1024];
  	strcpy(strReturn, getenv("HOME"));
  	strcat(strReturn, "/.glaxiumrc");
