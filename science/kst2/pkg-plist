@@ -33,6 +33,7 @@ lib/kst2/plugins/libkst2_datasource_its.so
 lib/kst2/plugins/libkst2_datasource_qimagesource.so
 lib/kst2/plugins/libkst2_datasource_sourcelist.so
 lib/kst2/plugins/libkst2_datasource_tiff16source.so
+lib/kst2/plugins/libkst2_filters_boxcar.so
 lib/kst2/plugins/libkst2_filters_butterworth_bandpass.so
 lib/kst2/plugins/libkst2_filters_butterworth_bandstop.so
 lib/kst2/plugins/libkst2_filters_butterworth_highpass.so
