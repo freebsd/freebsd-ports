@@ -10,7 +10,6 @@ WWW=		https://mxnet.apache.org/ \
 
 LICENSE=	APACHE20
 
-BROKEN_FreeBSD_15=	compilation fails with clang-19, but the MXNet project has been retired by Apache and the port should probably be removed soon
 BROKEN_i386=	https://github.com/apache/incubator-mxnet/issues/20832
 .if !exists(/usr/include/omp.h)
 BROKEN=		requires OpenMP support that is missing on this architecture
@@ -57,11 +56,10 @@ OPENCV_LIB_DEPENDS=	libopencv_core.so:graphics/opencv \
 CMAKE_OFF+=	USE_SSE
 .endif
 
-xpost-patch:
-	@${RM} ${WRKSRC}/include/mkldnn/*
-.for h in dnnl.h dnnl.hpp mkldnn.h mkldnn.hpp mkldnn_dnnl_mangling.h mkldnn_types.h mkldnn_version.h
-	@${LN} -s ${LOCALBASE}/include/${h} ${WRKSRC}/include/mkldnn/${h}
-.endfor
+post-patch:
+	@${FIND} ${WRKSRC} -type f -name '*.h' | \
+	    ${XARGS} ${GREP} -l 'template LaunchEx' | \
+	    ${XARGS} ${REINPLACE_CMD} -E -e 's/(template LaunchEx)/\1<>/'
 
 post-install-CPP-on: # https://github.com/apache/incubator-mxnet/issues/17080
 	@cd ${STAGEDIR}${PREFIX} && ${RM} include/mxnet-cpp/.gitignore include/mxnet-cpp/CPPLINT.cfg
