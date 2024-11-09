@@ -1,5 +1,3 @@
-TIMESTAMP = 1660198520
-SHA256 (Qiskit-qiskit-aer-0.10.4_GH0.tar.gz) = 7fe0f95863ee9190fadbf846ee5a7aa220b22c8a1ba5ec156cf2075af1bb3e80
-SIZE (Qiskit-qiskit-aer-0.10.4_GH0.tar.gz) = 6660184
-SHA256 (46d86944f349a177acb40fb8a3adc301c395fe60.patch) = d1600a164264ab70698bbbc998e6efe260bd691cd9c807e31088f877bdd2a082
-SIZE (46d86944f349a177acb40fb8a3adc301c395fe60.patch) = 2434
+TIMESTAMP = 1731124130
+SHA256 (Qiskit-qiskit-aer-0.15.1_GH0.tar.gz) = e1c45f10467ec1c64b021d44b6ab9a69b645dfc444036960e057b3058f70c6dd
+SIZE (Qiskit-qiskit-aer-0.15.1_GH0.tar.gz) = 7136084
