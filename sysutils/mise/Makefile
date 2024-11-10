@@ -1,7 +1,6 @@
 PORTNAME=	mise
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2024.11.4
-PORTREVISION=	1
+DISTVERSION=	2024.11.5
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -60,7 +59,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		bzip2-sys-0.1.11+1.0.8 \
 		calm_io-0.1.1 \
 		calmio_filters-0.1.0 \
-		cc-1.1.36 \
+		cc-1.1.37 \
 		cfg-if-1.0.0 \
 		cfg_aliases-0.2.1 \
 		chrono-0.4.38 \
@@ -74,8 +73,8 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		clap_lex-0.7.2 \
 		clap_mangen-0.2.24 \
 		color-eyre-0.6.3 \
-		color-print-0.3.6 \
-		color-print-proc-macro-0.3.6 \
+		color-print-0.3.7 \
+		color-print-proc-macro-0.3.7 \
 		color-spantrace-0.2.1 \
 		colorchoice-1.0.3 \
 		confique-0.3.0 \
@@ -128,7 +127,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		errno-dragonfly-0.1.2 \
 		exec-0.3.1 \
 		eyre-0.6.12 \
-		fastrand-2.1.1 \
+		fastrand-2.2.0 \
 		fiat-crypto-0.2.9 \
 		filetime-0.2.25 \
 		filetime_creation-0.2.0 \
@@ -206,7 +205,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		lazy-regex-3.3.0 \
 		lazy-regex-proc_macros-3.3.0 \
 		lazy_static-1.5.0 \
-		libc-0.2.161 \
+		libc-0.2.162 \
 		libgit2-sys-0.17.0+1.8.1 \
 		libm-0.2.11 \
 		libredox-0.1.3 \
@@ -325,7 +324,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		schannel-0.1.26 \
 		scopeguard-1.2.0 \
 		security-framework-2.11.1 \
-		security-framework-sys-2.12.0 \
+		security-framework-sys-2.12.1 \
 		self-replace-1.5.0 \
 		self_update-0.41.0 \
 		semver-1.0.23 \
@@ -372,7 +371,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		tabled-0.16.0 \
 		tabled_derive-0.8.0 \
 		tar-0.4.43 \
-		tempfile-3.13.0 \
+		tempfile-3.14.0 \
 		tera-1.20.0 \
 		termcolor-1.4.1 \
 		terminal_size-0.4.0 \
@@ -391,7 +390,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		tinystr-0.7.6 \
 		tinyvec-1.8.0 \
 		tinyvec_macros-0.1.1 \
-		tokio-1.41.0 \
+		tokio-1.41.1 \
 		tokio-macros-2.4.0 \
 		tokio-native-tls-0.3.1 \
 		tokio-rustls-0.26.0 \
