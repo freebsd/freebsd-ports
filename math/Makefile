@@ -623,6 +623,7 @@
     SUBDIR += octave-forge-nurbs
     SUBDIR += octave-forge-oct2mat
     SUBDIR += octave-forge-octave-pool
+    SUBDIR += octave-forge-octave_tar
     SUBDIR += octave-forge-octclip
     SUBDIR += octave-forge-octproj
     SUBDIR += octave-forge-odbc
