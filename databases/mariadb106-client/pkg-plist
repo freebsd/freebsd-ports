@@ -39,7 +39,7 @@ bin/mysqlimport
 bin/mysqlshow
 bin/mysqlslap
 bin/mysqltest
-@comment bin/mytop
+bin/mytop
 bin/my_print_defaults
 bin/replace
 @sample %%ETCDIR%%/my.cnf.sample
@@ -140,7 +140,7 @@ share/man/man1/mysqlshow.1.gz
 share/man/man1/mysqlslap.1.gz
 share/man/man1/mysqltest.1.gz
 share/man/man1/mysqltest_embedded.1.gz
-@comment share/man/man1/mytop.1.gz
+share/man/man1/mytop.1.gz
 @comment share/man/man1/perror.1.gz
 share/man/man1/replace.1.gz
 @comment share/man/man1/resolve_stack_dump.1.gz
