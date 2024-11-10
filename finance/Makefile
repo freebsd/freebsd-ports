@@ -111,6 +111,7 @@
     SUBDIR += py-exchange-calendars
     SUBDIR += py-ffn
     SUBDIR += py-financedatabase
+    SUBDIR += py-financetoolkit
     SUBDIR += py-finnhub-python
     SUBDIR += py-finviz
     SUBDIR += py-finvizfinance
