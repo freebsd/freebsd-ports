@@ -1,0 +1,2 @@
+Pytest plugin, meant to facilitate unit tests writing for tools consuming
+Web APIs.
