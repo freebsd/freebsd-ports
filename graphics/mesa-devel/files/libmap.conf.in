@@ -9,8 +9,6 @@ libEGL_mesa.so.0 libEGL_mesa%%SUFFIX%%.so.0
 libgbm.so.1 libgbm%%SUFFIX%%.so.1
 %%PREFIX%%/lib/gbm/dri_gbm.so %%PREFIX%%/lib/gbm/dri%%SUFFIX%%_gbm.so
 
-%%OPENCL%%libMesaOpenCL.so.1 libMesaOpenCL%%SUFFIX%%.so.1
-
 %%anv%%%%PREFIX%%/lib/libvulkan_intel.so libvulkan_intel%%SUFFIX%%.so
 %%hasvk%%%%PREFIX%%/lib/libvulkan_intel_hasvk.so libvulkan_intel_hasvk%%SUFFIX%%.so
 %%radv%%%%PREFIX%%/lib/libvulkan_radeon.so libvulkan_radeon%%SUFFIX%%.so
