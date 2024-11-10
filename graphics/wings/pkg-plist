@@ -643,6 +643,8 @@ lib/erlang/lib/wings/plugins/default/wp9_dialogs_tr.lang
 lib/erlang/lib/wings/plugins/import_export/README
 lib/erlang/lib/wings/plugins/import_export/collada_import.beam
 lib/erlang/lib/wings/plugins/import_export/collada_import_en.lang
+lib/erlang/lib/wings/plugins/import_export/fbx_p_import.beam
+lib/erlang/lib/wings/plugins/import_export/fbx_p_import_en.lang
 lib/erlang/lib/wings/plugins/import_export/wpc_3ds.beam
 lib/erlang/lib/wings/plugins/import_export/wpc_3ds_de.lang
 lib/erlang/lib/wings/plugins/import_export/wpc_3ds_en.lang
@@ -653,6 +655,8 @@ lib/erlang/lib/wings/plugins/import_export/wpc_3ds_ko.lang
 lib/erlang/lib/wings/plugins/import_export/wpc_3ds_pl.lang
 lib/erlang/lib/wings/plugins/import_export/wpc_3ds_pt.lang
 lib/erlang/lib/wings/plugins/import_export/wpc_3ds_tr.lang
+lib/erlang/lib/wings/plugins/import_export/wpc_3mf.beam
+lib/erlang/lib/wings/plugins/import_export/wpc_3mf_en.lang
 lib/erlang/lib/wings/plugins/import_export/wpc_ai.beam
 lib/erlang/lib/wings/plugins/import_export/wpc_ai_de.lang
 lib/erlang/lib/wings/plugins/import_export/wpc_ai_en.lang
@@ -663,6 +667,8 @@ lib/erlang/lib/wings/plugins/import_export/wpc_ai_ko.lang
 lib/erlang/lib/wings/plugins/import_export/wpc_ai_pl.lang
 lib/erlang/lib/wings/plugins/import_export/wpc_ai_pt.lang
 lib/erlang/lib/wings/plugins/import_export/wpc_ai_tr.lang
+lib/erlang/lib/wings/plugins/import_export/wpc_amf.beam
+lib/erlang/lib/wings/plugins/import_export/wpc_amf_en.lang
 lib/erlang/lib/wings/plugins/import_export/wpc_bzw.beam
 lib/erlang/lib/wings/plugins/import_export/wpc_collada.beam
 lib/erlang/lib/wings/plugins/import_export/wpc_collada_de.lang
@@ -670,6 +676,8 @@ lib/erlang/lib/wings/plugins/import_export/wpc_collada_en.lang
 lib/erlang/lib/wings/plugins/import_export/wpc_collada_es-ES.lang
 lib/erlang/lib/wings/plugins/import_export/wpc_collada_jp.lang
 lib/erlang/lib/wings/plugins/import_export/wpc_collada_ko.lang
+lib/erlang/lib/wings/plugins/import_export/wpc_fbx_p.beam
+lib/erlang/lib/wings/plugins/import_export/wpc_fbx_p_en.lang
 lib/erlang/lib/wings/plugins/import_export/wpc_gltf.beam
 lib/erlang/lib/wings/plugins/import_export/wpc_gltf_en.lang
 lib/erlang/lib/wings/plugins/import_export/wpc_hlines.beam
