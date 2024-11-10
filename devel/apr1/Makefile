@@ -1,6 +1,6 @@
 PORTNAME=	apr
 PORTVERSION=	${APR_VERSION}.${APU_VERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	APACHE/apr
 DISTFILES=	apr-${APR_VERSION}.tar.gz \
@@ -35,7 +35,7 @@ OPTIONS_RADIO_CRYPTO=	SSL NSS
 OPTIONS_DEFAULT=	BDB1 GDBM SSL
 
 APU_DESC=		Database support
-BDB1_DESC=		Berkeley DB 1.85 support (BSD 4-clause)
+BDB1_DESC=		Berkeley DB 1.85 support (BSD 3-clause)
 BDB5_DESC=		Berkeley DB v5 support (deprecated)
 BDB18_DESC=		Berkeley DB 18.x support (AGPLv3)
 BERKELEYDB_DESC=	Berkeley DB provider
@@ -52,8 +52,8 @@ LDAP_USES=		ldap
 MYSQL_USES=		mysql
 NSS_LIB_DEPENDS=	libnss3.so:security/nss
 ODBC_LIB_DEPENDS=	libodbc.so:databases/unixODBC
-
-QLITE_USES=		sqlite
+PGSQL_USES=		pgsql
+SQLITE_USES=		sqlite
 SSL_USES=		ssl
 
 APR_WRKDIR=	${WRKDIR}/apr-${APR_VERSION}
