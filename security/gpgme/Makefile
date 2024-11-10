@@ -1,6 +1,6 @@
 PORTNAME=	gpgme
-PORTVERSION=	1.23.2
-PORTREVISION?=	1
+PORTVERSION=	1.24.0
+PORTREVISION?=	0
 CATEGORIES?=	security
 MASTER_SITES=	GNUPG/gpgme
 
@@ -14,21 +14,21 @@ LICENSE_FILE?=	${WRKSRC}/COPYING.LESSER
 LIB_DEPENDS=	libassuan.so:security/libassuan \
 		libgpg-error.so:security/libgpg-error
 
-USES=		compiler:c11 cpe gmake libtool localbase:ldflags tar:bzip2
+USES=		compiler:c11 cpe gmake libtool localbase:ldflags pathfix tar:bzip2
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
 CFLAGS+=	-Wno-suggest-override -Wno-unknown-warning-option
-INSTALL_TARGET?=install-strip
+INSTALL_TARGET=	install-strip
 TEST_TARGET=	check
 
 CPE_VENDOR=	gnu
 
-.if !defined(SLAVEPORT)
+.if !defined(_GPGME_BINDING)
 CONFIGURE_ARGS+=--enable-languages="cl"
 
 INFO=		gpgme
-PORTDOCS=	AUTHORS ChangeLog INSTALL NEWS README THANKS TODO
+PORTDOCS=	AUTHORS INSTALL NEWS README
 
 OPTIONS_DEFINE=		DOCS TEST UISERVER
 OPTIONS_SINGLE=		GNUPG
@@ -51,49 +51,41 @@ UISERVER_DESC=			GnuPG UI server support
 UISERVER_CONFIGURE_ENABLE=	fd-passing
 .else
 LIB_DEPENDS+=	libgpgme.so:security/gpgme
-BUILD_WRKSRC=	${WRKSRC}/lang/${BINDING_NAME}
-INSTALL_WRKSRC=	${WRKSRC}/lang/${BINDING_NAME}
-TEST_WRKSRC=	${WRKSRC}/lang/${BINDING_NAME}/tests
+BUILD_WRKSRC=	${WRKSRC}/lang/${_GPGME_BINDING}
+INSTALL_WRKSRC=	${WRKSRC}/lang/${_GPGME_BINDING}
+TEST_WRKSRC=	${WRKSRC}/lang/${_GPGME_BINDING}/tests
 
-.  if ${SLAVEPORT} != "cpp" && ${SLAVEPORT} != "qt-headers"
+.  if ${_GPGME_BINDING} == "cpp"
+USES+=		compiler:c++11-lang
+CONFIGURE_ARGS+=--enable-languages="cpp"
+NO_TEST=	yes
+.  else
 OPTIONS_DEFINE+=	TEST
 .  endif
 
-.  if ${SLAVEPORT} == "cpp"
-USES+=		compiler:c++11-lib
-CONFIGURE_ARGS+=--enable-languages="cpp"
-NO_TEST=	yes
-.  endif
-
-.  if ${SLAVEPORT} == "qt-headers"
-CONFIGURE_ARGS+=--enable-languages=""
-ALL_TARGET=	all-am
-INSTALL_TARGET=	install-data
-NO_ARCH=	yes
-NO_TEST=	yes
-.  endif
-
-.  if ${SLAVEPORT} == "qt"
+.  if ${_GPGME_BINDING} == "qt"
 LIB_DEPENDS+=	libgpgmepp.so:security/gpgme-cpp
-RUN_DEPENDS+=	${LOCALBASE}/include/qgpgme/qgpgme_version.h:security/gpgme-qt-headers
 
 FLAVORS=		qt5 qt6
 FLAVOR?=		${FLAVORS:[1]}
 qt5_PKGNAMESUFFIX=	-qt5
 qt6_PKGNAMESUFFIX=	-qt6
 
-QT_STR=		Qt${FLAVOR:S/qt//}
-
 .    if ${FLAVOR:U} == "qt5"
-USES+=		compiler:c++11-lib pkgconfig qt:5
-USE_QT=		buildtools:build core
+USES+=		compiler:c++11-lang pkgconfig qt:5
+USE_QT=		core \
+		buildtools:build
 TEST_USE=	QT=testlib:build
-PLIST_SUB=	QT_SUFFIX="" qt_SUFFIX=""
+PLIST_SUB=	QGPGME_CMAKE_SUFFIX="" \
+		QGPGME_INCLUDE_SUFFIX="${FLAVOR}" \
+		QGPGME_LIB_SUFFIX=""
 .    else
 USES+=		compiler:c++17-lang pkgconfig qt:6
 USE_CXXSTD=	c++17
 USE_QT=		base
-PLIST_SUB=	QT_SUFFIX="${QT_STR}" qt_SUFFIX="${FLAVOR}"
+PLIST_SUB=	QGPGME_CMAKE_SUFFIX="Qt${FLAVOR:S|qt||}" \
+		QGPGME_INCLUDE_SUFFIX="${FLAVOR}" \
+		QGPGME_LIB_SUFFIX="${FLAVOR}"
 .    endif
 
 CONFIGURE_ARGS+=--enable-languages="cpp ${FLAVOR}"
@@ -104,10 +96,9 @@ DOXYGEN_BUILD_DEPENDS=	doxygen:devel/doxygen \
 			dot:graphics/graphviz
 .  endif
 
-.  if ${SLAVEPORT} == "python"
+.  if ${_GPGME_BINDING} == "python"
 BUILD_DEPENDS+=	swig:devel/swig \
 		${PY_SETUPTOOLS}
-RUN_DEPENDS+=	${PY_SETUPTOOLS}
 USES+=		python
 USE_PYTHON=	flavors
 CONFIGURE_ARGS+=--enable-languages="python"
@@ -118,22 +109,19 @@ PLIST_SUB+=	VERSION=${PORTVERSION}
 .  endif
 .endif
 
+.include <bsd.port.pre.mk>
+
 post-patch:
+.if ${COMPILER_TYPE} == "clang"
 	@${REINPLACE_CMD} -e 's|mno-direct-extern-access|fno-direct-access-external-data|g' \
 		${WRKSRC}/configure
-.if defined(SLAVEPORT)
+.endif
+.if defined(_GPGME_BINDING)
 	@${FIND} ${BUILD_WRKSRC} -name "Makefile.in" -type f | ${XARGS} \
 	${REINPLACE_CMD} -e 's|../../../src/libgpgme.la|-lgpgme|g'
-.  if ${SLAVEPORT} == "qt"
+.  if ${_GPGME_BINDING} == "qt"
 	@${FIND} ${BUILD_WRKSRC} -name "Makefile.in" -type f | ${XARGS} \
 	${REINPLACE_CMD} -e 's|../../cpp/src/libgpgmepp.la|-lgpgmepp|g'
-	@${REINPLACE_CMD} -e 's|install-exec-am install-data-am|install-exec-am install-data-local|' \
-		${WRKSRC}/lang/qt/src/Makefile.in
-.  endif
-.  if ${SLAVEPORT} == "qt-headers"
-	@${REINPLACE_CMD} -e '/^all-am/s|$$(LTLIBRARIES)||' \
-		-e '/^install-data-am/s|install-data-local||' \
-		${WRKSRC}/lang/qt/src/Makefile.in
 .  endif
 .endif
 	@${REINPLACE_CMD} -e 's|^clfilesdir.*|clfilesdir=$$\(libdir\)/common-lisp/gpgme|g' \
@@ -177,7 +165,7 @@ pre-test: pre-build-TEST-on
 
 post-test: post-build-TEST-on
 
-.if !defined(SLAVEPORT)
+.if !defined(_GPGME_BINDING)
 post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
@@ -190,4 +178,4 @@ post-install-DOXYGEN-on:
 	@${FIND} -P ${STAGEDIR}${DOCSDIR} -type f 2>/dev/null | \
 		${SED} -ne 's|^${STAGEDIR}${PREFIX}/||p' >> ${TMPPLIST}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

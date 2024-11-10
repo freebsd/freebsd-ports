@@ -8,7 +8,8 @@ lib/common-lisp/gpgme/gpgme.asd
 lib/common-lisp/gpgme/gpgme.lisp
 lib/libgpgme.so
 lib/libgpgme.so.11
-lib/libgpgme.so.11.32.1
+lib/libgpgme.so.11.33.0
 libdata/pkgconfig/gpgme-glib.pc
 libdata/pkgconfig/gpgme.pc
 share/aclocal/gpgme.m4
+share/man/man1/gpgme-json.1.gz
