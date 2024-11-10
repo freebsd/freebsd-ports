@@ -12,6 +12,8 @@ WWW=		https://cairo-by-example.com/
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_i386=	compilation fails: undefined symbol: __atomic_load_8
+
 BUILD_DEPENDS=	gmake:devel/gmake
 LIB_DEPENDS=	libzstd.so:archivers/zstd
 
