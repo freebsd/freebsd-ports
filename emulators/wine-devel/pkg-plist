@@ -1093,6 +1093,8 @@ include/wine/windows/windows.applicationmodel.h
 include/wine/windows/windows.applicationmodel.idl
 include/wine/windows/windows.data.json.h
 include/wine/windows/windows.data.json.idl
+include/wine/windows/windows.data.xml.dom.h
+include/wine/windows/windows.data.xml.dom.idl
 include/wine/windows/windows.devices.bluetooth.h
 include/wine/windows/windows.devices.bluetooth.idl
 include/wine/windows/windows.devices.enumeration.h
@@ -1174,6 +1176,8 @@ include/wine/windows/windows.perception.spatial.surfaces.h
 include/wine/windows/windows.perception.spatial.surfaces.idl
 include/wine/windows/windows.security.authentication.onlineid.h
 include/wine/windows/windows.security.authentication.onlineid.idl
+include/wine/windows/windows.security.authorization.appcapabilityaccess.h
+include/wine/windows/windows.security.authorization.appcapabilityaccess.idl
 include/wine/windows/windows.security.credentials.h
 include/wine/windows/windows.security.credentials.idl
 include/wine/windows/windows.security.credentials.ui.h
@@ -1214,6 +1218,8 @@ include/wine/windows/windows.ui.h
 include/wine/windows/windows.ui.idl
 include/wine/windows/windows.ui.input.h
 include/wine/windows/windows.ui.input.idl
+include/wine/windows/windows.ui.notifications.h
+include/wine/windows/windows.ui.notifications.idl
 include/wine/windows/windows.ui.viewmanagement.h
 include/wine/windows/windows.ui.viewmanagement.idl
 include/wine/windows/windows.ui.xaml.h
@@ -2399,6 +2405,7 @@ lib/wine/%%WINEARCH%%-windows/slbcsp.dll
 lib/wine/%%WINEARCH%%-windows/slc.dll
 lib/wine/%%WINEARCH%%-windows/snmpapi.dll
 lib/wine/%%WINEARCH%%-windows/softpub.dll
+lib/wine/%%WINEARCH%%-windows/sort.exe
 %%WINE32%%lib/wine/%%WINEARCH%%-windows/sound.drv16
 lib/wine/%%WINEARCH%%-windows/spoolss.dll
 lib/wine/%%WINEARCH%%-windows/spoolsv.exe
