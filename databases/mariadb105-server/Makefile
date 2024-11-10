@@ -1,5 +1,5 @@
 PORTNAME?=	mariadb
-PORTVERSION=	10.5.26
+PORTVERSION=	10.5.27
 PORTREVISION?=	0
 CATEGORIES=	databases
 MASTER_SITES=	\
@@ -30,7 +30,7 @@ LIB_DEPENDS+=	libpcre2-8.so:devel/pcre2
 # Ugly workaround for MariaDB/CMake library detection
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-USES=		bison:build cmake:insource,noninja compiler:c++11-lib cpe iconv:translit libedit ncurses shebangfix ssl
+USES=		bison:build cmake:insource,noninja compiler:c++11-lib cpe iconv:translit libedit ncurses pkgconfig shebangfix ssl
 
 SUB_FILES=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
@@ -125,7 +125,8 @@ CONFLICTS_INSTALL=	mariadb10[0-46-9]-${PKGNAMESUFFIX:C/^[0-9]*-//} \
 			mariadb1011-${PKGNAMESUFFIX:C/^[0-9]*-//} \
 			mysql[0-9]*-${PKGNAMESUFFIX:C/^[0-9]*-//} \
 			mysqlwsrep*-server \
-			percona[0-9]*-${PKGNAMESUFFIX:C/^[0-9]*-//}
+			percona[0-9]*-${PKGNAMESUFFIX:C/^[0-9]*-//} \
+			mytop
 
 FASTMTX_CMAKE_BOOL=	WITH_FAST_MUTEXES
 GSSAPI_BASE_USES=	gssapi
