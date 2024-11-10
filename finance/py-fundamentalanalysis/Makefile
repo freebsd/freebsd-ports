@@ -1,6 +1,5 @@
 PORTNAME=	fundamentalanalysis
-PORTVERSION=	0.2.14
-PORTREVISION=	1
+PORTVERSION=	0.3.1
 CATEGORIES=	finance python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,11 +11,14 @@ WWW=		https://github.com/JerBouma/FundamentalAnalysis
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pandas>=1.1.2:math/py-pandas@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}requests>=2.25.1:www/py-requests@${PY_FLAVOR}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}poetry-core>0:devel/py-poetry-core@${PY_FLAVOR} \
+		${PY_SETUPTOOLS}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}financedatabase>=2.2.0:finance/py-financedatabase@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}financetoolkit>=1.3.5:finance/py-financetoolkit@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pandas>=1.1.2:math/py-pandas@${PY_FLAVOR}
 
 USES=		python
-USE_PYTHON=	autoplist concurrent distutils
+USE_PYTHON=	pep517 concurrent autoplist
 
 NO_ARCH=	yes
 
