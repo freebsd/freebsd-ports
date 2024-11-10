@@ -1,5 +1,5 @@
 PORTNAME=	ccxt
-DISTVERSION=	4.2.31
+DISTVERSION=	4.4.29
 CATEGORIES=	finance python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -19,7 +19,7 @@ RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}aiohttp>=3.8:www/py-aiohttp@${PY_FLAVOR} \
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest-asyncio>0:devel/py-pytest-asyncio@${PY_FLAVOR}
 
 USES=		python
-USE_PYTHON=	distutils autoplist cryptography pytest # 3 errors during tests, see https://github.com/ccxt/ccxt/issues/16661
+USE_PYTHON=	distutils autoplist cryptography pytest # 3 errors during tests, see https://github.com/ccxt/ccxt/issues/16661 ; no tests found in 4.4.29
 
 NO_ARCH=	yes
 
