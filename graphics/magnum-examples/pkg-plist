@@ -1,12 +1,14 @@
 bin/magnum-animated-gif
 bin/magnum-animated-gif-console
 bin/magnum-arcball
+bin/magnum-arealights
 bin/magnum-box2d
 bin/magnum-bullet
 bin/magnum-cubemap
 bin/magnum-dart
 bin/magnum-fluidsimulation2d
 bin/magnum-fluidsimulation3d
+bin/magnum-imgui
 bin/magnum-motionblur
 bin/magnum-mouseinteraction
 bin/magnum-octree
@@ -20,6 +22,7 @@ bin/magnum-texturedquad
 bin/magnum-triangle
 bin/magnum-triangle-plain-glfw
 bin/magnum-triangle-vulkan
+bin/magnum-viewer
 share/magnum/examples/cubemap/+x.jpg
 share/magnum/examples/cubemap/+y.jpg
 share/magnum/examples/cubemap/+z.jpg
@@ -41,3 +44,4 @@ share/magnum/examples/dart/robotiq/inner_knuckle_fine.stl
 share/magnum/examples/dart/robotiq/outer_finger_fine.stl
 share/magnum/examples/dart/robotiq/outer_knuckle_fine.stl
 share/magnum/examples/dart/robotiq/robotiq_85_base_link_fine.stl
+share/magnum/examples/viewer/scene.glb
