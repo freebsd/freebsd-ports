@@ -41,6 +41,9 @@ lib/libKirigamiPlatform.so.%%KDE_FRAMEWORKS_VERSION%%
 lib/libKirigamiPrimitives.so
 lib/libKirigamiPrimitives.so.6
 lib/libKirigamiPrimitives.so.%%KDE_FRAMEWORKS_VERSION%%
+lib/libKirigamiPrivate.so
+lib/libKirigamiPrivate.so.6
+lib/libKirigamiPrivate.so.%%KDE_FRAMEWORKS_VERSION%%
 %%QT_QMLDIR%%/org/kde/kirigami/AboutItem.qml
 %%QT_QMLDIR%%/org/kde/kirigami/AboutPage.qml
 %%QT_QMLDIR%%/org/kde/kirigami/AbstractApplicationHeader.qml
@@ -127,7 +130,7 @@ lib/libKirigamiPrimitives.so.%%KDE_FRAMEWORKS_VERSION%%
 %%QT_QMLDIR%%/org/kde/kirigami/private/DefaultPageTitleDelegate.qml
 %%QT_QMLDIR%%/org/kde/kirigami/private/EdgeShadow.qml
 %%QT_QMLDIR%%/org/kde/kirigami/private/GlobalDrawerActionItem.qml
-%%QT_QMLDIR%%/org/kde/kirigami/private/KirigamiPrivatePlugin.qmltypes
+%%QT_QMLDIR%%/org/kde/kirigami/private/KirigamiPrivate.qmltypes
 %%QT_QMLDIR%%/org/kde/kirigami/private/MobileDialogLayer.qml
 %%QT_QMLDIR%%/org/kde/kirigami/private/PrivateActionToolButton.qml
 %%QT_QMLDIR%%/org/kde/kirigami/private/PullDownIndicator.qml
@@ -140,7 +143,7 @@ lib/libKirigamiPrimitives.so.%%KDE_FRAMEWORKS_VERSION%%
 %%QT_QMLDIR%%/org/kde/kirigami/private/globaltoolbar/ToolBarPageFooter.qml
 %%QT_QMLDIR%%/org/kde/kirigami/private/globaltoolbar/ToolBarPageHeader.qml
 %%QT_QMLDIR%%/org/kde/kirigami/private/kde-qmlmodule.version
-%%QT_QMLDIR%%/org/kde/kirigami/private/libKirigamiPrivatePlugin.so
+%%QT_QMLDIR%%/org/kde/kirigami/private/libKirigamiPrivateplugin.so
 %%QT_QMLDIR%%/org/kde/kirigami/private/qmldir
 %%QT_QMLDIR%%/org/kde/kirigami/qmldir
 %%QT_QMLDIR%%/org/kde/kirigami/styles/Material/InlineMessage.qml

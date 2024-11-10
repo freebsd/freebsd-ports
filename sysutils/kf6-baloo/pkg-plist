@@ -34,11 +34,15 @@ lib/libexec/kf6/baloo_file_extractor
 %%QT_PLUGINDIR%%/kf6/kio/baloosearch.so
 %%QT_PLUGINDIR%%/kf6/kio/tags.so
 %%QT_PLUGINDIR%%/kf6/kio/timeline.so
+%%QT_QMLDIR%%/org/kde/baloo/balooplugin.qmltypes
+%%QT_QMLDIR%%/org/kde/baloo/experimental/baloomonitorplugin.qmltypes
+%%QT_QMLDIR%%/org/kde/baloo/experimental/kde-qmlmodule.version
 %%QT_QMLDIR%%/org/kde/baloo/experimental/libbaloomonitorplugin.so
 %%QT_QMLDIR%%/org/kde/baloo/experimental/qmldir
+%%QT_QMLDIR%%/org/kde/baloo/kde-qmlmodule.version
 %%QT_QMLDIR%%/org/kde/baloo/libbalooplugin.so
 %%QT_QMLDIR%%/org/kde/baloo/qmldir
-lib/systemd/user/kde-baloo.service
+@comment lib/systemd/user/kde-baloo.service
 libdata/pkgconfig/KF6Baloo.pc
 share/dbus-1/interfaces/org.kde.BalooWatcherApplication.xml
 share/dbus-1/interfaces/org.kde.baloo.file.indexer.xml
@@ -139,6 +143,8 @@ share/locale/de/LC_MESSAGES/balooshow6.mo
 share/locale/de/LC_MESSAGES/kio6_baloosearch.mo
 share/locale/de/LC_MESSAGES/kio6_tags.mo
 share/locale/de/LC_MESSAGES/kio6_timeline.mo
+share/locale/el/LC_MESSAGES/baloo_file6.mo
+share/locale/el/LC_MESSAGES/baloo_file_extractor6.mo
 share/locale/el/LC_MESSAGES/balooctl6.mo
 share/locale/el/LC_MESSAGES/baloodb6.mo
 share/locale/el/LC_MESSAGES/balooengine6.mo
@@ -269,6 +275,10 @@ share/locale/id/LC_MESSAGES/balooshow6.mo
 share/locale/id/LC_MESSAGES/kio6_baloosearch.mo
 share/locale/id/LC_MESSAGES/kio6_tags.mo
 share/locale/id/LC_MESSAGES/kio6_timeline.mo
+share/locale/ie/LC_MESSAGES/baloo_file6.mo
+share/locale/ie/LC_MESSAGES/baloo_file_extractor6.mo
+share/locale/ie/LC_MESSAGES/kio6_baloosearch.mo
+share/locale/ie/LC_MESSAGES/kio6_timeline.mo
 share/locale/it/LC_MESSAGES/baloo_file6.mo
 share/locale/it/LC_MESSAGES/baloo_file_extractor6.mo
 share/locale/it/LC_MESSAGES/balooctl6.mo
@@ -469,6 +479,8 @@ share/locale/sr@latin/LC_MESSAGES/balooshow6.mo
 share/locale/sr@latin/LC_MESSAGES/kio6_baloosearch.mo
 share/locale/sr@latin/LC_MESSAGES/kio6_tags.mo
 share/locale/sr@latin/LC_MESSAGES/kio6_timeline.mo
+share/locale/sv/LC_MESSAGES/baloo_file6.mo
+share/locale/sv/LC_MESSAGES/baloo_file_extractor6.mo
 share/locale/sv/LC_MESSAGES/balooctl6.mo
 share/locale/sv/LC_MESSAGES/baloodb6.mo
 share/locale/sv/LC_MESSAGES/balooengine6.mo

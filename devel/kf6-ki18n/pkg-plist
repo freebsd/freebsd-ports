@@ -1,4 +1,5 @@
 include/KF6/KI18n/KLazyLocalizedString
+include/KF6/KI18n/KLocalization
 include/KF6/KI18n/KLocalizedContext
 include/KF6/KI18n/KLocalizedString
 include/KF6/KI18n/KLocalizedTranslator
@@ -6,6 +7,7 @@ include/KF6/KI18n/KuitSetup
 include/KF6/KI18n/ki18n_export.h
 include/KF6/KI18n/ki18n_version.h
 include/KF6/KI18n/klazylocalizedstring.h
+include/KF6/KI18n/klocalization.h
 include/KF6/KI18n/klocalizedcontext.h
 include/KF6/KI18n/klocalizedstring.h
 include/KF6/KI18n/klocalizedtranslator.h
@@ -27,11 +29,11 @@ lib/cmake/KF6I18n/build-tsfiles.cmake
 lib/cmake/KF6I18n/kf6i18nuic.cmake
 lib/cmake/KF6I18n/ts-pmap-compile.py
 lib/libKF6I18n.so
-lib/libKF6I18n.so.%%KDE_FRAMEWORKS_VERSION%%
 lib/libKF6I18n.so.6
+lib/libKF6I18n.so.%%KDE_FRAMEWORKS_VERSION%%
 lib/libKF6I18nLocaleData.so
-lib/libKF6I18nLocaleData.so.%%KDE_FRAMEWORKS_VERSION%%
 lib/libKF6I18nLocaleData.so.6
+lib/libKF6I18nLocaleData.so.%%KDE_FRAMEWORKS_VERSION%%
 %%QT_PLUGINDIR%%/kf6/ktranscript.so
 %%QT_QMLDIR%%/org/kde/i18n/localeData/kde-qmlmodule.version
 %%QT_QMLDIR%%/org/kde/i18n/localeData/ki18nlocaledataqmlplugin.qmltypes

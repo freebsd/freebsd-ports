@@ -2,8 +2,10 @@
 %%QT_PLUGINDIR%%/imageformats/kimg_eps.so
 %%QT_PLUGINDIR%%/imageformats/kimg_hdr.so
 %%QT_PLUGINDIR%%/imageformats/kimg_pcx.so
+%%QT_PLUGINDIR%%/imageformats/kimg_pfm.so
 %%QT_PLUGINDIR%%/imageformats/kimg_pic.so
 %%QT_PLUGINDIR%%/imageformats/kimg_psd.so
+%%QT_PLUGINDIR%%/imageformats/kimg_pxr.so
 %%QT_PLUGINDIR%%/imageformats/kimg_qoi.so
 %%QT_PLUGINDIR%%/imageformats/kimg_ras.so
 %%QT_PLUGINDIR%%/imageformats/kimg_rgb.so

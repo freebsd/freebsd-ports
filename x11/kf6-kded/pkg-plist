@@ -1,7 +1,7 @@
 bin/kded6
 lib/cmake/KF6KDED/KF6KDEDConfig.cmake
 lib/cmake/KF6KDED/KF6KDEDConfigVersion.cmake
-lib/systemd/user/plasma-kded6.service
+@comment lib/systemd/user/plasma-kded6.service
 share/applications/org.kde.kded6.desktop
 share/dbus-1/interfaces/org.kde.kded6.xml
 share/dbus-1/services/org.kde.kded6.service

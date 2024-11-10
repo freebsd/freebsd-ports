@@ -45,11 +45,11 @@ lib/cmake/KF6NewStuffCore/KF6NewStuffCoreConfigVersion.cmake
 lib/cmake/KF6NewStuffCore/KF6NewStuffCoreTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/KF6NewStuffCore/KF6NewStuffCoreTargets.cmake
 lib/libKF6NewStuffCore.so
-lib/libKF6NewStuffCore.so.%%KDE_FRAMEWORKS_VERSION%%
 lib/libKF6NewStuffCore.so.6
+lib/libKF6NewStuffCore.so.%%KDE_FRAMEWORKS_VERSION%%
 lib/libKF6NewStuffWidgets.so
-lib/libKF6NewStuffWidgets.so.%%KDE_FRAMEWORKS_VERSION%%
 lib/libKF6NewStuffWidgets.so.6
+lib/libKF6NewStuffWidgets.so.%%KDE_FRAMEWORKS_VERSION%%
 %%QT_PLUGINDIR%%/designer/knewstuff6widgets.so
 %%QT_QMLDIR%%/org/kde/newstuff/Action.qml
 %%QT_QMLDIR%%/org/kde/newstuff/Button.qml
@@ -73,8 +73,11 @@ lib/libKF6NewStuffWidgets.so.6
 %%QT_QMLDIR%%/org/kde/newstuff/private/Shadow.qml
 %%QT_QMLDIR%%/org/kde/newstuff/private/entrygriddelegates/BigPreviewDelegate.qml
 %%QT_QMLDIR%%/org/kde/newstuff/private/entrygriddelegates/FeedbackOverlay.qml
-%%QT_QMLDIR%%/org/kde/newstuff/private/entrygriddelegates/ThumbDelegate.qml
 %%QT_QMLDIR%%/org/kde/newstuff/private/entrygriddelegates/TileDelegate.qml
+%%QT_QMLDIR%%/org/kde/newstuff/private/kde-qmlmodule.version
+%%QT_QMLDIR%%/org/kde/newstuff/private/libnewstuffqmlpluginprivate.so
+%%QT_QMLDIR%%/org/kde/newstuff/private/newstuffqmlpluginprivate.qmltypes
+%%QT_QMLDIR%%/org/kde/newstuff/private/qmldir
 %%QT_QMLDIR%%/org/kde/newstuff/qmldir
 share/applications/org.kde.knewstuff-dialog6.desktop
 share/locale/af/LC_MESSAGES/knewstuff6.mo

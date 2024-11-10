@@ -13,6 +13,7 @@ share/dbus-1/interfaces/kf6_org.kde.StatusNotifierItem.xml
 share/dbus-1/interfaces/kf6_org.kde.StatusNotifierWatcher.xml
 share/locale/ar/LC_MESSAGES/kstatusnotifieritem6_qt.qm
 share/locale/ast/LC_MESSAGES/kstatusnotifieritem6_qt.qm
+share/locale/bg/LC_MESSAGES/kstatusnotifieritem6_qt.qm
 share/locale/ca/LC_MESSAGES/kstatusnotifieritem6_qt.qm
 share/locale/ca@valencia/LC_MESSAGES/kstatusnotifieritem6_qt.qm
 share/locale/cs/LC_MESSAGES/kstatusnotifieritem6_qt.qm
@@ -43,6 +44,7 @@ share/locale/ru/LC_MESSAGES/kstatusnotifieritem6_qt.qm
 share/locale/sa/LC_MESSAGES/kstatusnotifieritem6_qt.qm
 share/locale/sk/LC_MESSAGES/kstatusnotifieritem6_qt.qm
 share/locale/sl/LC_MESSAGES/kstatusnotifieritem6_qt.qm
+share/locale/sv/LC_MESSAGES/kstatusnotifieritem6_qt.qm
 share/locale/ta/LC_MESSAGES/kstatusnotifieritem6_qt.qm
 share/locale/tr/LC_MESSAGES/kstatusnotifieritem6_qt.qm
 share/locale/uk/LC_MESSAGES/kstatusnotifieritem6_qt.qm

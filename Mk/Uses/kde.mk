@@ -108,7 +108,7 @@ KDE_FRAMEWORKS5_VERSION?=	5.116.0
 KDE_FRAMEWORKS5_BRANCH?=	stable
 
 # Next KDE Frameworks (Qt6 based)
-KDE_FRAMEWORKS6_VERSION?=	6.3.0
+KDE_FRAMEWORKS6_VERSION?=	6.7.0
 KDE_FRAMEWORKS6_BRANCH?=	stable
 
 # Current KDE applications.
@@ -311,6 +311,7 @@ _USE_FRAMEWORKS6_ALL=	ecm colorscheme \
 			svg \
 			statusnotifieritem \
 			plasma-wayland-protocols \
+			texttemplate \
 			userfeedback \
 			${_USE_FRAMEWORKS_TIER1:Noxygen-icons5:Nwayland} \
 			${_USE_FRAMEWORKS_TIER2} \
@@ -601,6 +602,9 @@ kde-syntaxhighlighting_LIB=	libKF${_KDE_VERSION}SyntaxHighlighting.so
 
 kde-texteditor_PORT=		devel/kf${_KDE_VERSION}-ktexteditor
 kde-texteditor_LIB=		libKF${_KDE_VERSION}TextEditor.so
+
+kde-texttemplate_PORT=		devel/kf${_KDE_VERSION}-ktexttemplate
+kde-texttemplate_LIB=		libKF${_KDE_VERSION}TextTemplate.so
 
 kde-textwidgets_PORT=		x11-toolkits/kf${_KDE_VERSION}-ktextwidgets
 kde-textwidgets_LIB=		libKF${_KDE_VERSION}TextWidgets.so

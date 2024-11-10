@@ -1,3 +1,4 @@
+bin/ktexteditor-script-tester6
 include/KF6/KTextEditor/KTextEditor/AbstractAnnotationItemDelegate
 include/KF6/KTextEditor/KTextEditor/AnnotationInterface
 include/KF6/KTextEditor/KTextEditor/Application

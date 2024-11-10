@@ -1,0 +1,24 @@
+--- src/CMakeLists.txt.orig	2024-01-10 02:08:59 UTC
++++ src/CMakeLists.txt
+@@ -189,6 +189,7 @@ kconfig_add_kcfg_files(dolphinprivate
+     settings/dolphin_generalsettings.kcfgc
+     settings/dolphin_contextmenusettings.kcfgc
+     settings/dolphin_versioncontrolsettings.kcfgc
++    GENERATE_MOC
+ )
+ 
+ generate_export_header(dolphinprivate BASE_NAME dolphin)
+@@ -547,10 +548,12 @@ if(NOT WIN32)
+         settings/dolphin_contentdisplaysettings.kcfgc
+         settings/dolphin_generalsettings.kcfgc
+         settings/dolphin_versioncontrolsettings.kcfgc
++        GENERATE_MOC
+     )
+ 
+     kconfig_add_kcfg_files(kcm_dolphingeneral
+-        settings/dolphin_generalsettings.kcfgc)
++        settings/dolphin_generalsettings.kcfgc
++        GENERATE_MOC)
+ 
+     target_link_libraries(kcm_dolphinviewmodes dolphinprivate)
+     target_link_libraries(kcm_dolphingeneral dolphinprivate)
