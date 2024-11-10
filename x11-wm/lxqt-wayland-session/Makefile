@@ -18,6 +18,6 @@ USES=		cmake gl localbase:ldflags perl5 pkgconfig lxqt:2 \
 USE_GL=		gl
 USE_PERL5=	build
 USE_XORG=	ice sm xcb xext
-USE_LXQT=	buildtools2
+USE_LXQT=	buildtools2 lxqt
 
 .include <bsd.port.mk>
