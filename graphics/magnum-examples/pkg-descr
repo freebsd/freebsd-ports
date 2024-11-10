@@ -1,0 +1,3 @@
+magnum-integration contains integration libraries for Magnum C++11/C++14
+graphics engine, providing integration of various math and physics libraries
+into the engine itself.

@@ -563,6 +563,7 @@
     SUBDIR += lux
     SUBDIR += lximage-qt
     SUBDIR += magnum
+    SUBDIR += magnum-examples
     SUBDIR += magnum-integration
     SUBDIR += magnum-plugins
     SUBDIR += mahotas
