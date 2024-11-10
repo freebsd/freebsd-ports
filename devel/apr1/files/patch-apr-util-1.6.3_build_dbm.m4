@@ -11,6 +11,15 @@ index 57bd131f..5cbee4b3 100644
              # We generate a separate cache variable for each prefix and libname
              # we search under.  That way, we avoid caching information that
              # changes if the user runs `configure' with a different set of
+@@ -293,7 +293,7 @@ AC_DEFUN([APU_CHECK_DB1], [
+   APU_CHECK_BERKELEY_DB(1, 0, 0,
+     "$places",
+     "db1/db.h db.h",
+-    "db1"
++    "c db1"
+   )
+   if test "$apu_have_db" = "1"; then
+     apu_db_version=1
 @@ -432,7 +432,15 @@ AC_DEFUN([APU_CHECK_DB], [
        AC_MSG_ERROR(Berkeley db$db_major not found)
      fi

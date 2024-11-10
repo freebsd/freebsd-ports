@@ -5,6 +5,17 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20241110
+  AFFECTS: users of devel/apr1 and www/apache24
+  AUTHOR: brnrd@FreeBSD.org
+
+  The default BerkeleyDB provider for apr-util was changed from BerkeleyDB
+  5 (deprecated) to BerkeleyDB 1 from base libc. The change of version
+  results in a non-compatible database format.
+
+  After upgrading, you must rebuild all BerkeleyDB databases used by
+  apr-util (example: Apache databases created with `httxt2dbm -F db` 
+
 20241109:
   AFFECTS: all users of i386
   AUTHOR: asomers@FreeBSD.org
