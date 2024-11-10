@@ -1,7 +1,6 @@
 PORTNAME=	argc
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.21.0
-PORTREVISION=	1
+DISTVERSION=	1.21.1
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -19,8 +18,8 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	sigoden
 
 CARGO_CRATES=	aho-corasick-1.1.3 \
-		anstyle-1.0.9 \
-		anyhow-1.0.91 \
+		anstyle-1.0.10 \
+		anyhow-1.0.93 \
 		assert_cmd-2.0.16 \
 		assert_fs-1.1.2 \
 		autocfg-1.4.0 \
@@ -41,7 +40,7 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		encode_unicode-0.3.6 \
 		equivalent-1.0.1 \
 		errno-0.3.9 \
-		fastrand-2.1.1 \
+		fastrand-2.2.0 \
 		float-cmp-0.9.0 \
 		futures-0.3.31 \
 		futures-channel-0.3.31 \
@@ -57,15 +56,15 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		glob-0.3.1 \
 		globset-0.4.15 \
 		globwalk-0.9.1 \
-		hashbrown-0.15.0 \
+		hashbrown-0.15.1 \
 		hermit-abi-0.3.9 \
 		home-0.5.9 \
 		ignore-0.4.23 \
 		indexmap-2.6.0 \
-		insta-1.41.0 \
+		insta-1.41.1 \
 		itoa-1.0.11 \
 		lazy_static-1.5.0 \
-		libc-0.2.161 \
+		libc-0.2.162 \
 		libredox-0.1.3 \
 		linked-hash-map-0.5.6 \
 		linux-raw-sys-0.4.14 \
@@ -98,7 +97,7 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		rstest-0.23.0 \
 		rstest_macros-0.23.0 \
 		rustc_version-0.4.1 \
-		rustix-0.38.38 \
+		rustix-0.38.39 \
 		ryu-1.0.18 \
 		same-file-1.0.6 \
 		semver-1.0.23 \
@@ -109,12 +108,12 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		similar-2.6.0 \
 		slab-0.4.9 \
 		smawk-0.3.2 \
-		syn-2.0.85 \
-		tempfile-3.13.0 \
+		syn-2.0.87 \
+		tempfile-3.14.0 \
 		termtree-0.4.1 \
 		textwrap-0.16.1 \
-		thiserror-1.0.65 \
-		thiserror-impl-1.0.65 \
+		thiserror-1.0.68 \
+		thiserror-impl-1.0.68 \
 		threadpool-1.8.1 \
 		toml_datetime-0.6.8 \
 		toml_edit-0.22.22 \
@@ -125,7 +124,7 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		wait-timeout-0.2.0 \
 		walkdir-2.5.0 \
 		wasi-0.11.0+wasi-snapshot-preview1 \
-		which-6.0.3 \
+		which-7.0.0 \
 		winapi-util-0.1.9 \
 		windows-sys-0.48.0 \
 		windows-sys-0.52.0 \
