@@ -1,10 +1,10 @@
---- Gemfile.orig	2024-06-12 00:45:02 UTC
+--- Gemfile.orig	2024-11-03 22:15:03 UTC
 +++ Gemfile
 @@ -2,25 +2,25 @@ ruby '>= 2.7.0', '< 3.3.0'
  
  ruby '>= 2.7.0', '< 3.3.0'
  
--gem 'rails', '6.1.7.8'
+-gem 'rails', '6.1.7.10'
 -gem 'rouge', '~> 4.2.0'
 +gem 'rails', '~> 6.1.7'
 +gem 'rouge', '~> 4.2'
@@ -24,10 +24,11 @@
  #  Ruby Standard Gems
 -gem 'csv', '~> 3.2.6'
 -gem 'net-imap', '~> 0.3.4'
+-gem 'net-pop', '~> 0.1.2'
+-gem 'net-smtp', '~> 0.3.3'
 +gem 'csv', '~> 3.2'
 +gem 'net-imap', '~> 0.3'
- gem 'net-pop', '~> 0.1.2'
--gem 'net-smtp', '~> 0.3.3'
++gem 'net-pop', '~> 0.1'
 +gem 'net-smtp', '~> 0.3'
  gem 'rexml', require: false if Gem.ruby_version >= Gem::Version.new('3.0')
  
