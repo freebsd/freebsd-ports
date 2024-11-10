@@ -1,6 +1,5 @@
 PORTNAME=	jp2a
-DISTVERSION=	1.3.1
-PORTREVISION=	1
+DISTVERSION=	1.3.2
 CATEGORIES=	graphics
 MASTER_SITES=	https://github.com/Talinx/${PORTNAME}/releases/download/v${DISTVERSION}/
 
