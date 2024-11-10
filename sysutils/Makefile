@@ -776,7 +776,6 @@
     SUBDIR += oc
     SUBDIR += ocijail
     SUBDIR += odo
-    SUBDIR += ods2
     SUBDIR += ohmu
     SUBDIR += omnibackup
     SUBDIR += onefetch
