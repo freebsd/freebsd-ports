@@ -4,6 +4,9 @@ DISTVERSION=	2020.06-1783
 DISTVERSIONSUFFIX=	-gd83e30e5
 CATEGORIES=	devel
 
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES=	249ee71c78774f42301469d4f2f0a269d009cf66.patch:-p1 # https://github.com/mosra/corrade/pull/190
+
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	C++11/C++14 multiplatform utility library
 WWW=		https://magnum.graphics/corrade/ \
