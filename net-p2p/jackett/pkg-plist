@@ -107,7 +107,6 @@
 %%DATADIR%%/Definitions/bitru.yml
 %%DATADIR%%/Definitions/bitsearch.yml
 %%DATADIR%%/Definitions/bitspyder.yml
-%%DATADIR%%/Definitions/bitstream.yml
 %%DATADIR%%/Definitions/bitturk.yml
 %%DATADIR%%/Definitions/bluebird.yml
 %%DATADIR%%/Definitions/blueroms.yml
@@ -159,7 +158,6 @@
 %%DATADIR%%/Definitions/dasunerwartete.yml
 %%DATADIR%%/Definitions/datascene-api.yml
 %%DATADIR%%/Definitions/deildu.yml
-%%DATADIR%%/Definitions/denofsimps-api.yml
 %%DATADIR%%/Definitions/desitorrents-api.yml
 %%DATADIR%%/Definitions/devil-torrents.yml
 %%DATADIR%%/Definitions/diablotorrent.yml
@@ -233,6 +231,7 @@
 %%DATADIR%%/Definitions/hdarea.yml
 %%DATADIR%%/Definitions/hdatmos.yml
 %%DATADIR%%/Definitions/hdc.yml
+%%DATADIR%%/Definitions/hdclone.yml
 %%DATADIR%%/Definitions/hdcztorrent.yml
 %%DATADIR%%/Definitions/hddolby.yml
 %%DATADIR%%/Definitions/hdfans.yml
@@ -258,6 +257,7 @@
 %%DATADIR%%/Definitions/hellashut.yml
 %%DATADIR%%/Definitions/helltorrents.yml
 %%DATADIR%%/Definitions/hhanclub.yml
+%%DATADIR%%/Definitions/hhd-api.yml
 %%DATADIR%%/Definitions/homeporntorrents.yml
 %%DATADIR%%/Definitions/houseofdevil.yml
 %%DATADIR%%/Definitions/hudbt.yml
@@ -289,7 +289,6 @@
 %%DATADIR%%/Definitions/kelu.yml
 %%DATADIR%%/Definitions/kickasstorrents-to.yml
 %%DATADIR%%/Definitions/kickasstorrents-ws.yml
-%%DATADIR%%/Definitions/kimoji.yml
 %%DATADIR%%/Definitions/kinorun.yml
 %%DATADIR%%/Definitions/kinozal-magnet.yml
 %%DATADIR%%/Definitions/kinozal.yml
@@ -305,6 +304,7 @@
 %%DATADIR%%/Definitions/learnbits.yml
 %%DATADIR%%/Definitions/learnflakes.yml
 %%DATADIR%%/Definitions/leech24-api.yml
+%%DATADIR%%/Definitions/lemonhd.yml
 %%DATADIR%%/Definitions/lepornoinfo.yml
 %%DATADIR%%/Definitions/lesaloon.yml
 %%DATADIR%%/Definitions/lesbians4u.yml
@@ -361,6 +361,7 @@
 %%DATADIR%%/Definitions/noname-clubl.yml
 %%DATADIR%%/Definitions/ntelogo.yml
 %%DATADIR%%/Definitions/nusantarare.yml
+%%DATADIR%%/Definitions/nyaapantsu.yml
 %%DATADIR%%/Definitions/nyaasi.yml
 %%DATADIR%%/Definitions/okpt.yml
 %%DATADIR%%/Definitions/oldgreektracker.yml
@@ -387,6 +388,7 @@
 %%DATADIR%%/Definitions/pixelcove2fa.yml
 %%DATADIR%%/Definitions/polishtorrent.yml
 %%DATADIR%%/Definitions/polishtracker-api.yml
+%%DATADIR%%/Definitions/polskie-torrenty.yml
 %%DATADIR%%/Definitions/pornbay.yml
 %%DATADIR%%/Definitions/pornolab.yml
 %%DATADIR%%/Definitions/pornotorrent.yml
@@ -419,7 +421,6 @@
 %%DATADIR%%/Definitions/rainbowtracker.yml
 %%DATADIR%%/Definitions/rapidzona.yml
 %%DATADIR%%/Definitions/rareshare2.yml
-%%DATADIR%%/Definitions/redbits-api.yml
 %%DATADIR%%/Definitions/redleaves.yml
 %%DATADIR%%/Definitions/redstartorrent.yml
 %%DATADIR%%/Definitions/reelflix-api.yml
@@ -429,10 +430,10 @@
 %%DATADIR%%/Definitions/rintornet.yml
 %%DATADIR%%/Definitions/riperam.yml
 %%DATADIR%%/Definitions/rockbox.yml
+%%DATADIR%%/Definitions/rockethd.yml
 %%DATADIR%%/Definitions/romanianmetaltorrents.yml
 %%DATADIR%%/Definitions/rotorrent.yml
 %%DATADIR%%/Definitions/rousi.yml
-%%DATADIR%%/Definitions/rptscene.yml
 %%DATADIR%%/Definitions/rudub.yml
 %%DATADIR%%/Definitions/rustorka.yml
 %%DATADIR%%/Definitions/rutor.yml
@@ -484,9 +485,9 @@
 %%DATADIR%%/Definitions/theoldschool-api.yml
 %%DATADIR%%/Definitions/theparadiese.yml
 %%DATADIR%%/Definitions/thepiratebay.yml
+%%DATADIR%%/Definitions/thepiratedship.yml
 %%DATADIR%%/Definitions/theplace.yml
 %%DATADIR%%/Definitions/therarbg.yml
-%%DATADIR%%/Definitions/thesceneplace.yml
 %%DATADIR%%/Definitions/theshinning-api.yml
 %%DATADIR%%/Definitions/theshow.yml
 %%DATADIR%%/Definitions/thevault.yml
@@ -531,7 +532,6 @@
 %%DATADIR%%/Definitions/torrentslocal.yml
 %%DATADIR%%/Definitions/torrenttrader.yml
 %%DATADIR%%/Definitions/torrentview.yml
-%%DATADIR%%/Definitions/torrentwhiz.yml
 %%DATADIR%%/Definitions/torrentz2nz.yml
 %%DATADIR%%/Definitions/totheglory.yml
 %%DATADIR%%/Definitions/totheglory2fa.yml
@@ -543,7 +543,6 @@
 %%DATADIR%%/Definitions/trezzorcookie.yml
 %%DATADIR%%/Definitions/tribalmixes.yml
 %%DATADIR%%/Definitions/trupornolabs.yml
-%%DATADIR%%/Definitions/turknova.yml
 %%DATADIR%%/Definitions/turkseed-api.yml
 %%DATADIR%%/Definitions/turktorrent.yml
 %%DATADIR%%/Definitions/tvchaosuk.yml
