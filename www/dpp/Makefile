@@ -13,8 +13,6 @@ WWW=		https://dpp.dev/ \
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN_FreeBSD_15=	compilation fails with clang-19, see https://github.com/brainboxdotcc/DPP/issues/1332
-
 BUILD_DEPENDS=	nlohmann-json>0:devel/nlohmann-json
 LIB_DEPENDS=	libopus.so:audio/opus \
 		libsodium.so:security/libsodium
