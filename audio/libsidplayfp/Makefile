@@ -1,5 +1,6 @@
 PORTNAME=	libsidplayfp
 DISTVERSION=	2.11.0
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/v${DISTVERSION}/
 
@@ -20,6 +21,8 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-static \
 		--with-exsid=no \
 		--with-gcrypt
+
+LDFLAGS+=	-lpthread
 
 INSTALL_TARGET=	install-strip
 
