@@ -11,6 +11,8 @@ WWW=		https://github.com/sourcefrog/conserve
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN_i386=	rust/llvm runs out of memory
+
 USES=		cargo
 
 USE_GITHUB=	yes
