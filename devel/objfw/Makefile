@@ -1,5 +1,5 @@
 PORTNAME=	objfw
-DISTVERSION=	1.1.6
+DISTVERSION=	1.2.1
 CATEGORIES=	devel lang
 MASTER_SITES=	https://objfw.nil.im/downloads/
 
@@ -56,7 +56,7 @@ post-install:
 .for i in objfw-new ofarc ofdns ofhash ofhttp
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${i}
 .endfor
-.for i in libobjfw.so.1 libobjfwrt.so.1
+.for i in libobjfw.so.1 libobjfwrt.so.1 libobjfwhid.so.1
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/${i}
 .endfor
 
