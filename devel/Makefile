@@ -5654,6 +5654,7 @@
     SUBDIR += py-pytest-random-order
     SUBDIR += py-pytest-randomly
     SUBDIR += py-pytest-recorder
+    SUBDIR += py-pytest-recording
     SUBDIR += py-pytest-regressions
     SUBDIR += py-pytest-regtest
     SUBDIR += py-pytest-relaxed

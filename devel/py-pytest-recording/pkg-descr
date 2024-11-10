@@ -1,0 +1,7 @@
+Pytest plugin that allows recording network interactions via VCR.py
+
+Features:
+* Straightforward pytest.mark.vcr, that reflects VCR.use_cassettes API
+* Combining multiple VCR cassettes
+* Network access blocking
+* The rewrite recording mode that rewrites cassettes from scratch
