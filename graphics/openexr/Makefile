@@ -1,5 +1,5 @@
 PORTNAME?=	openexr
-PORTVERSION=	3.3.1
+PORTVERSION=	3.3.2 # verify sigstore: make makesum verify-sigstore
 PORTREVISION?=	0
 CATEGORIES=	graphics devel
 .if !defined(MASTERDIR)
@@ -46,17 +46,17 @@ USES?=		cmake:testing compiler:c++14-lang cpe pathfix pkgconfig
 
 USE_LDCONFIG=	yes
 
-CMAKE_TESTING_ON=	BUILD_TESTING \
-			OPENEXR_TEST_LIBRARIES \
-			OPENEXR_TEST_PYTHON \
-			OPENEXR_TEST_TOOLS
+CMAKE_ARGS?=	-DCMAKE_DEBUG_POSTFIX=
 
 CMAKE_OFF=	BUILD_TESTING \
 		OPENEXR_TEST_LIBRARIES \
 		OPENEXR_TEST_PYTHON \
 		OPENEXR_TEST_TOOLS
 
-CMAKE_ARGS?=	-DCMAKE_DEBUG_POSTFIX=
+CMAKE_TESTING_ON=	BUILD_TESTING \
+			OPENEXR_TEST_LIBRARIES \
+			OPENEXR_TEST_PYTHON \
+			OPENEXR_TEST_TOOLS
 
 CPPFLAGS+=	-I.
 # must be linked with -l{thr|pthread} explicitly
@@ -112,6 +112,12 @@ post-install-EXAMPLES-on:
 post-install-EXAMPLES-off:
 	${RM} -R ${STAGEDIR}${PREFIX}/share/doc/OpenEXR/examples/
 	@${RMDIR} ${STAGEDIR}${PREFIX}/share/doc/OpenEXR 2>/dev/null || :
+
+verify-sigstore: openexr-${PORTVERSION}.tar.gz.sigstore.json
+	sigstore verify github --cert-identity https://github.com/AcademySoftwareFoundation/openexr/.github/workflows/release-sign.yml@refs/tags/v${PORTVERSION} ${DISTDIR}/${DIST_SUBDIR}/openexr-${PORTVERSION}.tar.gz --bundle openexr-${PORTVERSION}.tar.gz.sigstore.json
+
+openexr-${PORTVERSION}.tar.gz.sigstore.json:
+	${FETCH_CMD} https://github.com/AcademySoftwareFoundation/openexr/releases/download/v${PORTVERSION}/openexr-${PORTVERSION}.tar.gz.sigstore.json
 
 .endif
 .include <bsd.port.mk>
