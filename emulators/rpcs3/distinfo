@@ -29,5 +29,5 @@ SHA256 (wolfSSL-wolfssl-v5.7.2-stable_GH0.tar.gz) = 0f2ed82e345b833242705bbc4b08
 SIZE (wolfSSL-wolfssl-v5.7.2-stable_GH0.tar.gz) = 23591507
 SHA256 (thestk-rtmidi-6.0.0_GH0.tar.gz) = ef7bcda27fee6936b651c29ebe9544c74959d0b1583b716ce80a1c6fea7617f0
 SIZE (thestk-rtmidi-6.0.0_GH0.tar.gz) = 515502
-SHA256 (llvm-llvm-project-llvmorg-18.1.8_GH0.tar.gz) = 09c08693a9afd6236f27a2ebae62cda656eba19021ef3f94d59e931d662d4856
-SIZE (llvm-llvm-project-llvmorg-18.1.8_GH0.tar.gz) = 205562783
+SHA256 (2b0f786b2dc3.patch) = 104926ee5ac385db8bd531489542b049a8ab261cbf77141ed2c185188b533a04
+SIZE (2b0f786b2dc3.patch) = 45215
