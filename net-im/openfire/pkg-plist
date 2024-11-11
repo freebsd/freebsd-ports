@@ -15,11 +15,13 @@
 %%PORTDOCS%%%%DOCSDIR%%/client-minimal-working-example-stanzajs.html
 %%PORTDOCS%%%%DOCSDIR%%/client-minimal-working-example-stropejs.html
 %%PORTDOCS%%%%DOCSDIR%%/client-minimal-working-example-twistedwords.html
+%%PORTDOCS%%%%DOCSDIR%%/client-minimal-working-example-whixp.html
 %%PORTDOCS%%%%DOCSDIR%%/client-minimal-working-example-xmppdotnet.html
 %%PORTDOCS%%%%DOCSDIR%%/database-guide.html
 %%PORTDOCS%%%%DOCSDIR%%/database.html
 %%PORTDOCS%%%%DOCSDIR%%/db-clustering-guide.html
 %%PORTDOCS%%%%DOCSDIR%%/db-integration-guide.html
+%%PORTDOCS%%%%DOCSDIR%%/demoboot-guide.html
 %%PORTDOCS%%%%DOCSDIR%%/diagrams/netty-message-handling.md
 %%PORTDOCS%%%%DOCSDIR%%/diagrams/netty-server-bootstrap.md
 %%PORTDOCS%%%%DOCSDIR%%/docker.html
@@ -34,6 +36,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/images/VSCode-8.png
 %%PORTDOCS%%%%DOCSDIR%%/images/VSCode-9.png
 %%PORTDOCS%%%%DOCSDIR%%/images/active_directory.png
+%%PORTDOCS%%%%DOCSDIR%%/images/dns-srv-details.png
 %%PORTDOCS%%%%DOCSDIR%%/images/header_logo.gif
 %%PORTDOCS%%%%DOCSDIR%%/images/launcher.png
 %%PORTDOCS%%%%DOCSDIR%%/images/netty-in-openfire.png
@@ -65,6 +68,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/licenses/LICENSE-jaxen.txt
 %%PORTDOCS%%%%DOCSDIR%%/licenses/LICENSE-xpp3.txt
 %%PORTDOCS%%%%DOCSDIR%%/load-balancing.html
+%%PORTDOCS%%%%DOCSDIR%%/network-configuration-guide.html
 %%PORTDOCS%%%%DOCSDIR%%/one-time-access-token-guide.html
 %%PORTDOCS%%%%DOCSDIR%%/openfire.doap
 %%PORTDOCS%%%%DOCSDIR%%/overlay.html
@@ -117,7 +121,7 @@
 %%DATADIR%%/lib/hsqldb-2.7.1.jar
 %%DATADIR%%/lib/httpclient-4.5.13.jar
 %%DATADIR%%/lib/httpcore-4.4.13.jar
-%%DATADIR%%/lib/i18n-4.8.3.jar
+%%DATADIR%%/lib/i18n-4.9.1.jar
 %%DATADIR%%/lib/imageio-bmp-3.9.4.jar
 %%DATADIR%%/lib/imageio-core-3.9.4.jar
 %%DATADIR%%/lib/istack-commons-runtime-3.0.11.jar
@@ -213,7 +217,7 @@
 %%DATADIR%%/lib/websocket-jetty-common-10.0.18.jar
 %%DATADIR%%/lib/websocket-jetty-server-10.0.18.jar
 %%DATADIR%%/lib/websocket-servlet-10.0.18.jar
-%%DATADIR%%/lib/xmppserver-4.8.3.jar
+%%DATADIR%%/lib/xmppserver-4.9.1.jar
 %%DATADIR%%/lib/xpp3-1.1.4c.jar
 %%DATADIR%%/logs
 %%DATADIR%%/plugins/admin/plugin.xml
