@@ -1,4 +1,5 @@
 include/aquamarine/allocator/Allocator.hpp
+include/aquamarine/allocator/DRMDumb.hpp
 include/aquamarine/allocator/GBM.hpp
 include/aquamarine/allocator/Swapchain.hpp
 include/aquamarine/backend/Backend.hpp
