@@ -1,6 +1,6 @@
 PORTNAME=	asql
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.80.0
+DISTVERSION=	0.92.0
 CATEGORIES=	databases
 PKGNAMEPREFIX=	cutelyst-
 
@@ -13,11 +13,12 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 # TODO: once there are multiple (selectable) backends, introduce
 # 	OPTIONS to toggle them, so we're not always depending on pgsql
-USES=		cmake compiler:c++11-lang localbase pgsql qt:5
+USES=		cmake compiler:c++20-lang localbase pgsql qt:6
+USE_CXXSTD=	c++20
 USE_GITHUB=	yes
 USE_LDCONFIG=	yes
-USE_QT=		qmake:build buildtools:build \
-		core
+USE_QT=		tools:build \
+		base
 
 GH_ACCOUNT=	cutelyst
 

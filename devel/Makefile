@@ -514,6 +514,7 @@
     SUBDIR += ctypes.sh
     SUBDIR += cunit
     SUBDIR += cut
+    SUBDIR += cutelee
     SUBDIR += cutils
     SUBDIR += cutter
     SUBDIR += cvise
