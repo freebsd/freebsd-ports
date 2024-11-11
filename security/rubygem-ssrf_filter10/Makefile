@@ -14,4 +14,6 @@ USES=		gem
 
 NO_ARCH=	yes
 
+PORTSCOUT=	limit:^1\.0\.
+
 .include <bsd.port.mk>
