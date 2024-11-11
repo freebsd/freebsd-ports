@@ -1,5 +1,5 @@
 PORTNAME=	magic
-DISTVERSION=	8.3.485
+DISTVERSION=	8.3.499
 CATEGORIES=	cad
 MASTER_SITES=	http://opencircuitdesign.com/magic/archive/
 
@@ -15,10 +15,10 @@ LIB_DEPENDS=	libBLT25.so:x11-toolkits/blt \
 		libfreetype.so:print/freetype2
 RUN_DEPENDS=	bash:shells/bash
 
-USES=		gmake gnome gl localbase:ldflags python:build shebangfix tk:tea tar:tgz xorg
+USES=		gmake gnome gl localbase:ldflags python:build shebangfix tar:tgz tk:tea xorg
+USE_GL=		gl glu
 USE_GNOME=	cairo
 USE_XORG=	ice x11 xext xi xmu
-USE_GL=		gl glu
 
 SHEBANG_FILES=	scripts/preproc.py tcltk/magic.sh.in tcltk/ext2sim.sh.in tcltk/ext2spice.sh.in
 
