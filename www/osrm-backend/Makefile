@@ -23,6 +23,7 @@ LIB_DEPENDS=	libboost_date_time.so:devel/boost-libs \
 		libtbb.so:devel/onetbb
 
 USES=		cmake compiler:c++20-lang lua:54 pkgconfig
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	Project-OSRM
 GH_TAGNAME=	203314b1
@@ -33,6 +34,12 @@ USERS=		osrm
 GROUPS=		osrm
 
 OPTIONS_DEFINE=	DEBUG
+
+.include <bsd.port.options.mk>
+
+.if ${OSVERSION} >= 1500025
+USES+= llvm:max=18
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-Werror=all -Werror=extra|-Werror=extra|g' \
