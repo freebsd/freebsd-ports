@@ -88,7 +88,6 @@
     SUBDIR += gawk
     SUBDIR += gcc
     SUBDIR += gcc11
-    SUBDIR += gcc11-devel
     SUBDIR += gcc12
     SUBDIR += gcc12-devel
     SUBDIR += gcc13

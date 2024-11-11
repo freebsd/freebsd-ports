@@ -3717,3 +3717,4 @@ sysutils/dsbmc|filesystems/dsbmc|2024-11-06|Moved to new category filesystems
 misc/e2fsprogs-libblkid|filesystems/e2fsprogs-libblkid|2024-11-06|Moved to new category filesystems
 security/gpgme-qt-headers|security/gpgme-qt|2024-11-10|Flavored headers are now installed by security/gpgme-qt
 devel/flatbuffers205|devel/flatbuffers|2024-11-10|Not needed any more
+lang/gcc11-devel|lang/gcc11|2024-11-12|GCC 11 reached end of life; use the final release (or a newer major version)
