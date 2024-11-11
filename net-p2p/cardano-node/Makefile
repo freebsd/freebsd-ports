@@ -1,5 +1,6 @@
 PORTNAME=	cardano-node
 PORTVERSION=	9.2.1
+PORTREVISION=	1
 CATEGORIES=	net-p2p
 MASTER_SITES=	https://chap.intersectmbo.org/package/:chap
 
