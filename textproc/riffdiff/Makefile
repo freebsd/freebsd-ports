@@ -1,6 +1,5 @@
 PORTNAME=	riffdiff
-DISTVERSION=	3.3.6
-PORTREVISION=	1
+DISTVERSION=	3.3.7
 CATEGORIES=	textproc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -68,6 +67,7 @@ CARGO_CRATES=	addr2line-0.14.0 \
 		regex-syntax-0.6.26 \
 		rustc-demangle-0.1.18 \
 		rustix-0.36.16 \
+		rustversion-1.0.18 \
 		similar-2.6.0 \
 		strsim-0.10.0 \
 		syn-1.0.48 \
