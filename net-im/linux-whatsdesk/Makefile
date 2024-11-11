@@ -1,6 +1,7 @@
 PORTNAME=	linux-whatsdesk
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.3.9
+PORTREVISION=	1
 CATEGORIES=	net-im
 MASTER_SITES=	https://zerkc.gitlab.io/whatsdesk/
 DISTFILES=	whatsdesk_${DISTVERSION}_amd64.deb
@@ -19,7 +20,7 @@ EXTRACT_DEPENDS=	deb2targz:archivers/deb2targz
 
 USES=		desktop-file-utils linux:rl9 tar:xz
 USE_LINUX=	alsa-plugins-oss alsa-plugins-pulseaudio alsalib at-spi2-atk \
-		atk ca-certificates cups-libs dbuslibs devtools gtk3 libdrm \
+		atk ca-certificates cups-libs dbuslibs devtools gtk3 jpeg libdrm \
 		libsigsegv nss opus
 
 NO_BUILD=	yes
