@@ -1,5 +1,5 @@
 PORTNAME=	aider_chat
-DISTVERSION=	0.56.0
+DISTVERSION=	0.62.0
 CATEGORIES=	misc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,6 +16,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools-scm>=8.0:devel/py-setuptools-sc
 		${PYTHON_PKGNAMEPREFIX}setuptools>=63:devel/py-setuptools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0.44:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}arrow>=1.3:devel/py-arrow@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}SoundFile>=0.12:audio/py-SoundFile@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}backoff>=2.2:devel/py-backoff@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}beautifulsoup>=4.12:www/py-beautifulsoup@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}blinker>=1.8:devel/py-blinker@${PY_FLAVOR} \
@@ -28,24 +29,28 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}arrow>=1.3:devel/py-arrow@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}greenlet>=3.0.3:devel/py-greenlet@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}grep-ast>=0.3.2:textproc/py-grep-ast@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}huggingface-hub>=0.24.6:misc/py-huggingface-hub@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}importlib-resources>=0:devel/py-importlib-resources@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}json5>=0.9.11:devel/py-json5@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}jsonschema>=4.23.0:devel/py-jsonschema@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}litellm>=1.24.5:misc/py-litellm@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}litellm>=1.44.7:misc/py-litellm@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}mixpanel>=4.10:misc/py-mixpanel@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}networkx>=3.3:math/py-networkx@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}numpy>=1.26.4,1:math/py-numpy@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}numpy<2.0,1:math/py-numpy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}openai>=1.43.1:misc/py-openai@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}packaging>=24.1:devel/py-packaging@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pathspec>=0.12.1:devel/py-pathspec@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pexpect>=4.9.0:misc/py-pexpect@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pillow>=10.4.0:graphics/py-pillow@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}posthog>=3.7.0:misc/py-posthog@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}prompt-toolkit>=3.0.47:devel/py-prompt-toolkit@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}psutil>=5.8.0:sysutils/py-psutil@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pydub>=0.25:audio/py-pydub@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pypandoc>=1.5:textproc/py-pypandoc@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyperclip>=1.7.0:devel/py-pyperclip@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyyaml-include>=1.2:devel/py-pyyaml-include@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}rich>=13.8:textproc/py-rich@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}scipy>=1.11,1<1.14,1:science/py-scipy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sounddevice>=0.5.0:audio/py-sounddevice@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}SoundFile>=0.12:audio/py-SoundFile@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}streamlit>=1.38:www/py-streamlit@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tiktoken>=0.7.0:textproc/py-tiktoken@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tokenizers>=0.20.0:textproc/py-tokenizers@${PY_FLAVOR} \
