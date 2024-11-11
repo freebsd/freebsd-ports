@@ -458,6 +458,7 @@
     SUBDIR += py-llm-claude-3
     SUBDIR += py-log_symbols
     SUBDIR += py-mffpy
+    SUBDIR += py-mixpanel
     SUBDIR += py-mmcv
     SUBDIR += py-mmdet
     SUBDIR += py-mmengine
