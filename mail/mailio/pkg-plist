@@ -9,6 +9,7 @@ include/mailio/imap.hpp
 include/mailio/mailboxes.hpp
 include/mailio/message.hpp
 include/mailio/mime.hpp
+include/mailio/percent.hpp
 include/mailio/pop3.hpp
 include/mailio/q_codec.hpp
 include/mailio/quoted_printable.hpp
