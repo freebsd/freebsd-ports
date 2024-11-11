@@ -1,11 +1,11 @@
 PORTNAME=	valgrind
-PORTVERSION=	3.24.0.g20240913
+PORTVERSION=	3.25.0.g20241104
 DISTVERSIONPREFIX=	freebsd-
 PORTEPOCH=	1
 CATEGORIES=	devel
-MASTER_SITES=	https://snapshots.sourceware.org/valgrind/trunk/2024-09-13_07-46_1726213561/
+MASTER_SITES=	https://snapshots.sourceware.org/valgrind/trunk/2024-11-04_12-31_1730723461/
 PKGNAMESUFFIX=	-devel
-DISTNAME=	${PORTNAME}-3.24.0.GIT
+DISTNAME=	${PORTNAME}-3.25.0.GIT
 
 MAINTAINER=	pjfloyd@wanadoo.fr
 COMMENT=	Memory debugging and profiling tool
