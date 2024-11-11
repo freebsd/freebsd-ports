@@ -1,11 +1,12 @@
 PORTNAME=	ut
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.1.0
+DISTVERSION=	2.1.1
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	C++20 micro/Unit Testing Framework
-WWW=		https://boost-ext.github.io/ut/
+WWW=		https://boost-ext.github.io/ut/ \
+		https://github.com/boost-ext/ut
 
 LICENSE=	BSL
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
