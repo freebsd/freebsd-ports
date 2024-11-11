@@ -31,9 +31,9 @@ TEST_WRKSRC=	${WRKSRC}/../tests
 USE_GITHUB=	yes
 GH_ACCOUNT=	Stiffstream
 GH_PROJECT=	noexcept-ctcheck:nectc restinio:rinio so5extra:so5e
-GH_TAGNAME=	v.1.0.0:nectc v.0.6.16:rinio v.1.5.2:so5e
+GH_TAGNAME=	v.1.0.0:nectc v.0.6.16:rinio v.1.6.2:so5e
 
-_SO5_LIBVER=	5.7.4.2
+_SO5_LIBVER=	5.8.3
 
 PLIST_FILES=	bin/${PORTNAME}
 PORTDOCS=	*.md
@@ -43,7 +43,7 @@ OPTIONS_DEFINE=	DOCS
 post-extract:
 	@${LN} -s ../../noexcept-ctcheck-v.1.0.0/noexcept_ctcheck \
 		../../restinio-v.0.6.16/dev/restinio \
-		../../so5extra-v.1.5.2/dev/so_5_extra \
+		../../so5extra-v.1.6.2/dev/so_5_extra \
 		../../oess-2.2.3/dev/cpp_util_2 \
 		../../oess-2.2.3/dev/oess_2 ${WRKSRC}
 
