@@ -40,6 +40,8 @@ post-patch:
 	@${REINPLACE_CMD} -e '/typedef std::/s,auto_ptr,unique_ptr,' \
 		${WRKSRC}/common/src/IO/NodeSerializer.h \
 		${WRKSRC}/common/src/Renderer/FontTexture.h
+	@${REINPLACE_CMD} -e '/BBox/s,insersectWith,intersectWith,' \
+		${WRKSRC}/common/src/BBox.h
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/TrenchBroom ${STAGEDIR}${PREFIX}/bin
