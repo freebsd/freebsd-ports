@@ -1,6 +1,6 @@
 PORTNAME=	cpupdate
 DISTVERSION=	g20180513
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	sysutils
 
 MAINTAINER=	eugen@FreeBSD.org
@@ -34,10 +34,10 @@ GH_TAGNAME=	48e42d5
 
 PLIST_FILES=	sbin/${PORTNAME} share/man/man8/${PORTNAME}.8.gz
 
-# MCE DB r305
+# MCE DB r312
 CPM_ACCOUNT=	platomav
 CPM_PROJECT=	CPUMicrocodes
-CPM_TAGNAME=	29715f8
+CPM_TAGNAME=	7d439dd
 
 OPTIONS_DEFINE=		CPM INTEL
 CPM_DESC=		Download platomav/CPUMicrocodes collection
@@ -48,7 +48,7 @@ CPM_PACK?=		${CPM_ACCOUNT}-${CPM_PROJECT}-${CPM_TAGNAME}_GH0.tar.gz
 CPM_DIR=		${WRKDIR}/${CPM_PROJECT}-${CPM_TAGNAME}
 CPM_DATADIR=		${DATADIR}/CPUMicrocodes/secondary/Intel
 
-INTEL_PACK=		microcode-20240910
+INTEL_PACK=		microcode-20241112
 INTEL_DESC=		Download Intel microcode pack ${INTEL_PACK}
 INTEL_PROJECT=		Intel-Linux-Processor-Microcode-Data-Files
 INTEL_MASTER_SITES=	https://codeload.github.com/intel/${INTEL_PROJECT}/tar.gz/:intel
