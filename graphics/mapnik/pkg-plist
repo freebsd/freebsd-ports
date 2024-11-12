@@ -545,7 +545,8 @@ lib/cmake/mapnik/mapnikUtilityTargets_shapeindex.cmake
 lib/cmake/mapnik/mapnikUtilityTargets_svg2png-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/mapnik/mapnikUtilityTargets_svg2png.cmake
 lib/libmapnik.so
-lib/libmapnik.so.4.0.1
+lib/libmapnik.so.4.0
+lib/libmapnik.so.4.0.3
 lib/libmapnikjson.a
 lib/libmapnikwkt.a
 lib/mapnik/input/csv.input
