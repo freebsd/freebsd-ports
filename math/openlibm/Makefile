@@ -3,7 +3,7 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	0.8.0
 CATEGORIES=	math
 
-MAINTAINER=	iblis@hs.ntnu.edu.tw
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	High quality system independent, portable, open source libm
 WWW=		http://julialang.org/openlibm/
 

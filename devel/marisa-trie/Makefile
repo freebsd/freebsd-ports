@@ -5,7 +5,7 @@ PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	devel
 
-MAINTAINER=	iblis@hs.ntnu.edu.tw
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	MARISA: Matching Algorithm with Recursively Implemented StorAge
 WWW=		https://github.com/s-yata/marisa-trie
 

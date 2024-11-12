@@ -4,7 +4,7 @@ CATEGORIES=	science math
 MASTER_SITES=	http://www.csie.ntu.edu.tw/~cjlin/libsvm/ \
 		http://www.csie.ntu.edu.tw/~cjlin/libsvm/oldfiles/
 
-MAINTAINER?=	iblis@hs.ntnu.edu.tw
+MAINTAINER?=	ports@FreeBSD.org
 COMMENT=	Library for Support Vector Machines
 WWW=		https://www.csie.ntu.edu.tw/~cjlin/libsvm/
 
