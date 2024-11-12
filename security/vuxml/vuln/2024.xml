@@ -1,3 +1,40 @@
+  <vuln vid="ab4e6f65-a142-11ef-84e9-901b0e9408dc">
+    <topic>element-web -- several vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>element-web</name>
+	<range><lt>1.11.85</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Element team reports:</p>
+	<blockquote cite="https://github.com/element-hq/element-web/security/advisories/GHSA-5486-384g-mcx2">
+	  <p>Versions of Element Web and Desktop earlier than 1.11.85 do
+	  not check if thumbnails for attachments, stickers and images
+	  are coherent. It is possible to add thumbnails to events
+	  trigger a file download once clicked.</p>
+	</blockquote>
+	<blockquote cite="https://github.com/element-hq/element-web/security/advisories/GHSA-w36j-v56h-q9pc">
+	  <p>A malicious homeserver can send invalid messages over
+	  federation which can prevent Element Web and Desktop from
+	  rendering single messages or the entire room containing
+	  them.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2024-51749</cvename>
+      <cvename>CVE-2024-51750</cvename>
+      <url>https://github.com/element-hq/element-web/security/advisories/GHSA-5486-384g-mcx2</url>
+      <url>https://github.com/element-hq/element-web/security/advisories/GHSA-w36j-v56h-q9pc</url>
+    </references>
+    <dates>
+      <discovery>2024-11-12</discovery>
+      <entry>2024-11-12</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="574f7bc9-a141-11ef-84e9-901b0e9408dc">
     <topic>Matrix clients -- mxc uri validation in js sdk</topic>
     <affects>
