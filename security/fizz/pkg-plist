@@ -132,6 +132,8 @@ include/fizz/protocol/ech/Decrypter.h
 include/fizz/protocol/ech/ECHExtensions-inl.h
 include/fizz/protocol/ech/ECHExtensions.h
 include/fizz/protocol/ech/Encryption.h
+include/fizz/protocol/ech/GreaseECH.h
+include/fizz/protocol/ech/GreaseECHSetting.h
 include/fizz/protocol/ech/Types-inl.h
 include/fizz/protocol/ech/Types.h
 include/fizz/protocol/test/CertTestTypes.h
