@@ -1,6 +1,6 @@
 PORTNAME=	nlopt
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.8.0
+DISTVERSION=	2.9.0
 CATEGORIES=	math
 
 MAINTAINER=	rhurlin@FreeBSD.org
@@ -36,7 +36,8 @@ MAKE_ENV+=	GUILE_EXECUTABLE=${PREFIX}/bin/guile3 \
 RUN_DEPENDS=	${PYNUMPY}
 CONFLICTS_INSTALL=	${PORTNAME}-minimal
 PLIST_FILES+=	lib/guile/3.0/extensions/nlopt_guile.so \
-		${PYTHON_SITELIBDIR}/_nlopt%%PYTHON_EXT_SUFFIX%%.so \
+		%%PYTHON_SITELIBDIR%%/_nlopt.so \
+		%%PYTHON_SITELIBDIR%%/nlopt-2.9.0.dist-info/METADATA \
 		${PYTHON_SITELIBDIR}/nlopt.py \
 		${GUILE_SITE_DIR}/nlopt.scm
 .endif

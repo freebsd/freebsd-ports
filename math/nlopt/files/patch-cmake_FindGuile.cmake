@@ -1,6 +1,6 @@
---- cmake/FindGuile.cmake.orig	2024-08-09 20:31:24 UTC
+--- cmake/FindGuile.cmake.orig	2024-11-10 18:47:56 UTC
 +++ cmake/FindGuile.cmake
-@@ -12,87 +12,42 @@
+@@ -12,61 +12,9 @@
  # GUILE_SITE_DIR         - site dir
  # GUILE_EXTENSION_DIR    - extension dir
  # GUILE_ROOT_DIR         - prefix dir
@@ -19,7 +19,7 @@
 -    guile
 -  HINTS /opt/local/include
 -)
--
+ 
 -# Look for the library
 -find_library (GUILE_LIBRARY NAMES guile-3.0 guile-2.2 guile-2.0 guile
 -  HINTS
@@ -30,6 +30,10 @@
 -set (GUILE_LIBRARIES ${GUILE_LIBRARY})
 -set (GUILE_INCLUDE_DIRS ${GUILE_INCLUDE_DIR})
 -
+-find_path (GMP_INCLUDE_DIR gmp.h)
+-if (GMP_INCLUDE_DIR)
+-  list (APPEND GUILE_INCLUDE_DIRS ${GMP_INCLUDE_DIR})
+-endif ()
 -
 -# check guile's version if we're using cmake >= 2.6
 -if (GUILE_INCLUDE_DIR)
@@ -59,11 +63,29 @@
  find_program(GUILE_EXECUTABLE
                NAMES guile3.0 guile2.2 guile2.0 guile
             )
--
- find_program(GUILE_CONFIG_EXECUTABLE
+@@ -75,28 +23,33 @@ find_program(GUILE_CONFIG_EXECUTABLE
                NAMES guile-config3.0 guile-config2.2 guile-config2.0 guile-config
             )
  
+-
+-if (GUILE_CONFIG_EXECUTABLE)
+-  execute_process (COMMAND ${GUILE_CONFIG_EXECUTABLE} info prefix
+-                    OUTPUT_VARIABLE GUILE_ROOT_DIR
+-                    OUTPUT_STRIP_TRAILING_WHITESPACE)
+-
+-  execute_process (COMMAND ${GUILE_CONFIG_EXECUTABLE} info sitedir
+-                    OUTPUT_VARIABLE GUILE_SITE_DIR
+-                    OUTPUT_STRIP_TRAILING_WHITESPACE)
+-
+-  execute_process (COMMAND ${GUILE_CONFIG_EXECUTABLE} info extensiondir
+-                    OUTPUT_VARIABLE GUILE_EXTENSION_DIR
+-                    OUTPUT_STRIP_TRAILING_WHITESPACE)
+-endif ()
+-
+-# IF(GUILE_FOUND AND GUILE_VERSION_MAJOR EQUAL 2)
+-# 	ADD_DEFINITIONS(-DHAVE_GUILE2)
+-# ENDIF(GUILE_FOUND AND GUILE_VERSION_MAJOR EQUAL 2)
+-
 +pkg_check_modules(GUILE IMPORTED_TARGET guile)
 +if (GUILE_FOUND)
 +  pkg_get_variable(GUILE_ROOT_DIR guile prefix)
@@ -88,25 +110,7 @@
 +message(STATUS "GUILE_EXTENSION_DIR is set to ${GUILE_EXTENSION_DIR}")
 +message(STATUS "GUILE_EXECUTABLE is set to ${GUILE_EXECUTABLE}")
 +message(STATUS "GUILE_CONFIG_EXECUTABLE is set to ${GUILE_CONFIG_EXECUTABLE}")
- 
--if (GUILE_CONFIG_EXECUTABLE)
--  execute_process (COMMAND ${GUILE_CONFIG_EXECUTABLE} info prefix
--                    OUTPUT_VARIABLE GUILE_ROOT_DIR
--                    OUTPUT_STRIP_TRAILING_WHITESPACE)
--
--  execute_process (COMMAND ${GUILE_CONFIG_EXECUTABLE} info sitedir
--                    OUTPUT_VARIABLE GUILE_SITE_DIR
--                    OUTPUT_STRIP_TRAILING_WHITESPACE)
--
--  execute_process (COMMAND ${GUILE_CONFIG_EXECUTABLE} info extensiondir
--                    OUTPUT_VARIABLE GUILE_EXTENSION_DIR
--                    OUTPUT_STRIP_TRAILING_WHITESPACE)
--endif ()
--
--# IF(GUILE_FOUND AND GUILE_VERSION_MAJOR EQUAL 2)
--# 	ADD_DEFINITIONS(-DHAVE_GUILE2)
--# ENDIF(GUILE_FOUND AND GUILE_VERSION_MAJOR EQUAL 2)
--
++ 
  # handle REQUIRED and QUIET options
  include (FindPackageHandleStandardArgs)
 -find_package_handle_standard_args (Guile REQUIRED_VARS GUILE_EXECUTABLE GUILE_ROOT_DIR GUILE_INCLUDE_DIRS GUILE_LIBRARIES VERSION_VAR GUILE_VERSION_STRING)
