@@ -4,7 +4,7 @@ CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	marco.broeder@posteo.eu
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python implementation of the Git file formats and protocols
 WWW=		https://www.dulwich.io/
 
