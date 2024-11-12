@@ -11,6 +11,8 @@ WWW=		https://www.nushell.sh/
 
 LICENSE=	MIT
 
+BROKEN_FreeBSD_15_armv7=	compilation fails, see https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=282712
+
 LIB_DEPNDS=	libssh2.so:security/libssh2
 
 USES=		cargo localbase ssl
