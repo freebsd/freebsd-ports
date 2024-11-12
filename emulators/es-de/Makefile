@@ -1,7 +1,7 @@
 PORTNAME=	es-de
 DISTVERSIONPREFIX=	v
 DISTVERSION=	3.1.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	emulators
 
 MAINTAINER=	bsdcode@disroot.org
@@ -26,28 +26,25 @@ LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg \
 		libpugixml.so:textproc/pugixml \
 		librlottie.so:graphics/rlottie
 
-USES=		cmake compiler:c++17-lang gl localbase pkgconfig sdl
+USES=		cmake compiler:c++17-lang gl pkgconfig sdl
 USE_GITLAB=	yes
 GL_PROJECT=	emulationstation-de
 USE_GL=		opengl
 USE_SDL=	sdl2
 
+CMAKE_ARGS=	-DUTF8CPP_INCLUDE_DIR=${LOCALBASE}/include/utf8cpp
 CMAKE_ON=	VIDEO_HW_DECODING
 
 OPTIONS_DEFINE=		DEINIT DOCS NLS
 OPTIONS_DEFAULT=	DEINIT
 OPTIONS_SUB=		yes
 
-DEINIT_DESC=		Deinit frontend on emulator launch
+DEINIT_DESC=	Deinit frontend on emulator launch
 
 DEINIT_CMAKE_BOOL=	DEINIT_ON_LAUNCH
 
-NLS_USES=		gettext
-NLS_CMAKE_BOOL=		COMPILE_LOCALIZATIONS
-
-post-patch:
-	${REINPLACE_CMD} 's|#include "utf8.h"|#include <utf8cpp/utf8.h>|g' \
-		${WRKSRC}/es-core/src/utils/StringUtil.h
+NLS_USES=	gettext
+NLS_CMAKE_BOOL=	COMPILE_LOCALIZATIONS
 
 post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
