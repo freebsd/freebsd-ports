@@ -1,7 +1,7 @@
 PORTNAME=	ripgrep-all
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.9.6
-PORTREVISION=	31
+PORTREVISION=	32
 CATEGORIES=	textproc
 
 MAINTAINER=	alexis.praga@free.fr
@@ -10,6 +10,8 @@ WWW=		https://github.com/phiresky/ripgrep-all/
 
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
+
+RUN_DEPENDS=	rg:textproc/ripgrep
 
 USES=		cargo
 USE_GITHUB=	yes
