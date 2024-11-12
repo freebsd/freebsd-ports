@@ -1,3 +1,37 @@
+  <vuln vid="574f7bc9-a141-11ef-84e9-901b0e9408dc">
+    <topic>Matrix clients -- mxc uri validation in js sdk</topic>
+    <affects>
+      <package>
+	<name>cinny</name>
+	<range><lt>4.2.3</lt></range>
+      </package>
+      <package>
+	<name>element-web</name>
+	<range><lt>1.11.85</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>matrix-js-sdk upstream reports:</p>
+	<blockquote cite="https://github.com/matrix-org/matrix-js-sdk/security/advisories/GHSA-xvg8-m4x3-w6xr">
+	  <p>matrix-js-sdk before 34.11.0 is vulnerable to client-side
+	  path traversal via crafted MXC URIs. A malicious room member
+	  can trigger clients based on the matrix-js-sdk to issue
+	  arbitrary authenticated GET requests to the client's
+	  homeserver.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2024-50336</cvename>
+      <url>https://github.com/matrix-org/matrix-js-sdk/security/advisories/GHSA-xvg8-m4x3-w6xr</url>
+    </references>
+    <dates>
+      <discovery>2024-11-12</discovery>
+      <entry>2024-11-12</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="0a82bc4d-a129-11ef-8351-589cfc0f81b0">
     <topic>icinga2 -- TLS Certificate Validation Bypass</topic>
     <affects>
