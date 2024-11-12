@@ -1,12 +1,11 @@
 PORTNAME=	xen
 PKGNAMESUFFIX=	-tools
-DISTVERSION=	4.18.2.20240411
-PORTREVISION=	2
+DISTVERSION=	4.19.0.20241112
 CATEGORIES=	sysutils emulators
 
 USE_GITLAB=	yes
 GL_ACCOUNT=	xen-project
-GL_TAGNAME=	2d38302c33b117aa9a417056db241aefc840c2f0
+GL_TAGNAME=	251a9496485a86f302980a3f8d3c656831b5a62f
 GL_TUPLE=	qemu-project:qemu:v8.0.4:qemu \
 		qemu-project:dtc:b6910bec:dtc \
 		qemu-project:meson:3a9b285a:meson \
