@@ -7,8 +7,7 @@ including determining the client's actual IP address and browser
 fingerprinting.  Other aspects of Firefox have also been patched
 to plug privacy leaks in ways not possible any other way.
 
-You are recommended to install noscript extension manually,
-and read about TB and privacy from tor-project documentation.
+You are recommended to read about TB and privacy from tor-project documentation.
 
 Remember that there are no perfect privacy or anonymity solutions, and
 this includes TB.  As always you must pay attention and in many cases

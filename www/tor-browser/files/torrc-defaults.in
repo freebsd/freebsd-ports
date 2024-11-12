@@ -1,4 +1,9 @@
 AvoidDiskWrites 1
 CookieAuthentication 1
 DormantCanceledByStartup 1
+
+## obfs4proxy configuration
 ClientTransportPlugin meek_lite,obfs2,obfs3,obfs4,scramblesuit exec %%LOCALBASE%%/bin/obfs4proxy
+
+## snowflake configuration
+ClientTransportPlugin snowflake exec %%LOCALBASE%%/bin/snowflake-client
