@@ -1,3 +1,37 @@
+  <vuln vid="0a82bc4d-a129-11ef-8351-589cfc0f81b0">
+    <topic>icinga2 -- TLS Certificate Validation Bypass</topic>
+    <affects>
+      <package>
+	<name>icinga2</name>
+	<range><lt>2.14.3</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Icinga project reports:</p>
+	<blockquote cite="https://github.com/Icinga/icinga2/commit/0419a2c36de408e9a703aec0962061ec9a285d3c">
+	  <p>Icinga is a monitoring system which checks the availability of
+	network resources, notifies users of outages, and generates performance
+	data for reporting.  The TLS certificate validation in all Icinga
+	2 versions starting from 2.4.0 was flawed, allowing an attacker to
+	impersonate both trusted cluster nodes as well as any API users
+	that use TLS client certificates for authentication (ApiUser objects
+	with the client_cn attribute set).  This vulnerability has been
+	fixed in v2.14.3, v2.13.10, v2.12.11, and v2.11.12.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2024-49369</cvename>
+      <url>https://icinga.com/blog/2024/11/12/critical-icinga-2-security-releases-2-14-3/</url>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2024-49369</url>
+    </references>
+    <dates>
+      <discovery>2024-11-12</discovery>
+      <entry>2024-11-12</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="33236f80-a11d-11ef-a964-1c697a616631">
     <topic>Intel CPUs -- multiple vulnerabilities</topic>
     <affects>
