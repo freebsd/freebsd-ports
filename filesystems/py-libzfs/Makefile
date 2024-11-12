@@ -3,7 +3,7 @@ PORTVERSION=	1.1.2023020700
 CATEGORIES=	filesystems devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	freqlabs@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python libzfs bindings
 WWW=		https://github.com/freenas/py-libzfs
 

@@ -4,7 +4,7 @@ DISTVERSIONPREFIX=	v
 CATEGORIES=	filesystems sysutils
 PKGNAMESUFFIX?=	-kmod
 
-MAINTAINER=	freqlabs@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	OpenZFS kernel module for FreeBSD
 WWW=		https://github.com/openzfs/zfs
 

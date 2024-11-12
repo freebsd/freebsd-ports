@@ -3,7 +3,7 @@ PORTVERSION=	0.3.3.20210928
 CATEGORIES=	devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	freqlabs@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Wrapper for the sysctl system functions
 WWW=		https://github.com/truenas/py-sysctl
 

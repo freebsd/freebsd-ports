@@ -4,7 +4,7 @@ DISTVERSIONPREFIX=	v
 PORTREVISION=	1
 CATEGORIES=	filesystems sysutils
 
-MAINTAINER=	freqlabs@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	OpenZFS userland for FreeBSD
 WWW=		https://github.com/openzfs/zfs
 
