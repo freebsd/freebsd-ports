@@ -1,5 +1,5 @@
 PORTNAME=	imap-tools
-DISTVERSION=	1.2.0
+DISTVERSION=	1.3.0
 CATEGORIES=	mail
 MASTER_SITES=	CRATESIO
 DISTFILES=	${CARGO_DIST_SUBDIR}/${DISTNAME}${CARGO_CRATE_EXT}
@@ -11,6 +11,8 @@ WWW=		https://gitlab.com/mat813/imap-tools
 LICENSE=	MIT
 
 USES=		cargo
+
+CARGO_FEATURES=	--no-default-features rustls
 
 PLIST_FILES=	bin/imap-tools
 
