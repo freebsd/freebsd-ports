@@ -1,6 +1,6 @@
 PORTNAME=	mopac
 DISTVERSIONPREFIX=	v
-DISTVERSION=	23.0.0
+DISTVERSION=	23.0.1
 PORTEPOCH=	1
 CATEGORIES=	science # chemistry
 
@@ -26,6 +26,7 @@ CMAKE_ARGS=	-DPython3_EXECUTABLE=${PYTHON_CMD} #-DPython3_NumPy_INCLUDE_DIRS=${P
 PLIST_FILES=	bin/mopac \
 		bin/mopac-makpol \
 		bin/mopac-param \
+		include/mopac.h \
 		lib/libmopac.so \
 		lib/libmopac.so.2
 
