@@ -11,6 +11,8 @@ WWW=		https://www.nushell.sh/
 
 LICENSE=	MIT
 
+BROKEN_FreeBSD_15_armv7=	compilation fails, see https://github.com/nix-rust/nix/issues/2535
+
 USES=		cargo
 
 PLIST_FILES=	bin/${PORTNAME}
