@@ -1,3 +1,43 @@
+  <vuln vid="33236f80-a11d-11ef-a964-1c697a616631">
+    <topic>Intel CPUs -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>cpu-microcode-intel</name>
+	<range><lt>20241112</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Intel reports:</p>
+	<blockquote cite="https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-01101.html">
+	 <p>
+	  A potential security vulnerability in some 4th and 5th Generation
+	  Intel Xeon Processors may allow denial of service. Intel released
+	  microcode updates to mitigate this potential vulnerability.
+	 </p>
+	</blockquote>
+	<blockquote cite="https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-01079.html">
+	 <p>
+	  Potential security vulnerabilities in some Intel Xeon processors using
+	  Intel Software Guard Extensions (Intel SGX) may allow escalation of
+	  privilege.  Intel released firmware updates to mitigate these
+	  potential vulnerabilities.
+	 </p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2024-21853</cvename>
+      <cvename>CVE-2024-23918</cvename>
+      <cvename>CVE-2024-21820</cvename>
+      <url>https://github.com/intel/Intel-Linux-Processor-Microcode-Data-Files/releases/tag/microcode-20241112</url>
+    </references>
+    <dates>
+      <discovery>2024-09-10</discovery>
+      <entry>2024-09-10</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="305ceb2c-9df8-11ef-a660-d85ed309193e">
     <topic>x11vnc -- access to shared memory segments</topic>
     <affects>
@@ -2076,7 +2116,7 @@
     <affects>
       <package>
 	<name>cpu-microcode-intel</name>
-	<range><lt>20240910</lt></range>
+	<range><lt>20241112</lt></range>
       </package>
     </affects>
     <description>
@@ -2107,6 +2147,7 @@
     <dates>
       <discovery>2024-09-10</discovery>
       <entry>2024-09-10</entry>
+      <modified>2024-11-12</modified>
     </dates>
   </vuln>
 
