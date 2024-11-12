@@ -167,6 +167,8 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		enum-ordinalize-derive-4.3.1 \
 		enumset-1.1.5 \
 		enumset_derive-0.10.0 \
+		env_filter-0.1.2 \
+		env_logger-0.11.5 \
 		equivalent-1.0.1 \
 		erased-serde-0.3.31 \
 		errno-0.3.9 \
@@ -636,7 +638,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		wcgi-0.2.0 \
 		wcgi-host-0.2.0 \
 		web-sys-0.3.72 \
-		webc-7.0.0-rc.1 \
+		webc-7.0.0-rc.2 \
 		webpki-roots-0.26.6 \
 		weedle2-5.0.0 \
 		weezl-0.1.8 \
