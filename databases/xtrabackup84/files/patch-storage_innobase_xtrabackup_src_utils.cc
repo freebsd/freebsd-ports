@@ -1,4 +1,4 @@
---- storage/innobase/xtrabackup/src/utils.cc.orig	2023-10-19 12:05:28 UTC
+--- storage/innobase/xtrabackup/src/utils.cc.orig	2024-08-08 10:30:27 UTC
 +++ storage/innobase/xtrabackup/src/utils.cc
 @@ -21,6 +21,8 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Bos
  
@@ -9,8 +9,8 @@
  #include <sys/sysctl.h>
  #else
  #ifdef HAVE_PROCPS_V3
-@@ -113,12 +115,14 @@ unsigned long get_version_number(std::string version_s
-   return major * 10000 + minor * 100 + version;
+@@ -131,12 +133,14 @@ bool get_major_minor_version(const std::string &versio
+   return true;
  }
  
 -#ifdef __APPLE__
@@ -25,7 +25,7 @@
  unsigned long host_free_memory() {
    unsigned long total_mem = host_total_memory();
    int64_t used_mem;
-@@ -139,6 +143,31 @@ unsigned long host_free_memory() {
+@@ -157,6 +161,31 @@ unsigned long host_free_memory() {
      return total_mem - (unsigned long)used_mem;
    }
    return 0;

@@ -1,6 +1,6 @@
---- cmake/install_layout.cmake.orig	2023-10-19 12:05:28 UTC
+--- cmake/install_layout.cmake.orig	2024-08-08 10:30:27 UTC
 +++ cmake/install_layout.cmake
-@@ -159,7 +159,7 @@ SET(INSTALL_INFODIR_STANDALONE          "docs")
+@@ -160,7 +160,7 @@ SET(INSTALL_MYSQLSHAREDIR_STANDALONE    "share")
  #
  SET(INSTALL_SHAREDIR_STANDALONE         "share")
  SET(INSTALL_MYSQLSHAREDIR_STANDALONE    "share")

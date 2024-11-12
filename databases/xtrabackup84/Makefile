@@ -1,7 +1,7 @@
 PORTNAME=	xtrabackup84
 PORTVERSION=	8.4.0
 DISTVERSIONSUFFIX=	-1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	databases
 MASTER_SITES=	https://downloads.percona.com/downloads/Percona-XtraBackup-innovative-release/Percona-XtraBackup-8.4.0-1/source/tarball/:percona
 DISTFILES=	${PPORTNAME}-${DVERSION}${EXTRACT_SUFX}:percona

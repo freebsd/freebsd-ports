@@ -1,6 +1,6 @@
---- sql/auth/sql_authorization.cc.orig	2023-10-19 12:05:28 UTC
+--- sql/auth/sql_authorization.cc.orig	2024-08-08 10:30:27 UTC
 +++ sql/auth/sql_authorization.cc
-@@ -7437,6 +7437,10 @@ bool operator==(const Role_id &a, const std::string &b
+@@ -237,6 +237,10 @@ bool operator==(const Role_id &a, const std::string &b
    return tmp == b;
  }
  
