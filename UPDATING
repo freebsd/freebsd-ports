@@ -5,6 +5,21 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20241112
+  AFFECTS: users of databases/prometheus-postgres-exporter
+  AUTHOR: lexi@hemlock.eden.le-fay.org
+
+  BREAKING CHANGE: In postgres_exporter 0.16.0 and later, the log message format
+  has changed.  From the upstream release notes:
+
+  The logging system has been replaced with log/slog from the stdlib.  This
+  change is being made across the prometheus ecosystem.  The logging output has
+  changed, but the messages and levels remain the same.  The ts label for the
+  timestamp has been replaced with time, the accuracy is less, and the timezone
+  is not forced to UTC.  The caller field has been replaced by the source field,
+  which now includes the full path to the source file. The level field now
+  exposes the log level in capital letters.
+
 20241110
   AFFECTS: users of devel/apr1 and www/apache24
   AUTHOR: brnrd@FreeBSD.org

@@ -1,10 +1,9 @@
 PORTNAME=	prometheus-postgres-exporter
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.15.0
-PORTREVISION=	3
+DISTVERSION=	0.16.0
 CATEGORIES=	databases
 
-MAINTAINER=	lexi.freebsd@le-fay.org
+MAINTAINER=	lexi@hemlock.eden.le-fay.org
 COMMENT=	PostgreSQL metric exporter for Prometheus
 WWW=		https://github.com/prometheus-community/postgres_exporter
 
@@ -19,7 +18,7 @@ GO_TARGET=	./cmd/postgres_exporter:${PREFIX}/bin/postgres_exporter
 SUB_FILES=	pkg-message
 
 PLIST_FILES=	bin/postgres_exporter \
-				etc/postgres_exporter.yml.sample
+		etc/postgres_exporter.yml.sample
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc
