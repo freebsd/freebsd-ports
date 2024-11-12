@@ -1,5 +1,5 @@
 PORTNAME=	python-libsbml
-DISTVERSION=	5.20.1
+DISTVERSION=	5.20.4
 CATEGORIES=	biology python
 #MASTER_SITES=	PYPI # no tarballs on PYPI
 MASTER_SITES=	https://github.com/sbmlteam/python-libsbml/releases/download/v${DISTVERSION}/
