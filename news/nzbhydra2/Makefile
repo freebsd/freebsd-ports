@@ -1,5 +1,5 @@
 PORTNAME=	nzbhydra2
-DISTVERSION=	5.3.3
+DISTVERSION=	7.9.0
 DISTVERSIONSUFFIX=	-generic
 CATEGORIES=	news java
 MASTER_SITES=	https://github.com/theotherp/${PORTNAME}/releases/download/v${DISTVERSION}/
