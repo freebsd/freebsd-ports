@@ -1,7 +1,6 @@
 PORTNAME=	cargo-mutants
 DISTVERSIONPREFIX=	v
-DISTVERSION=	24.9.0
-PORTREVISION=	1
+DISTVERSION=	24.11.0
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -56,7 +55,7 @@ CARGO_CRATES=	aho-corasick-0.7.20 \
 		colorchoice-1.0.1 \
 		console-0.15.0 \
 		core-foundation-sys-0.8.6 \
-		cp_r-0.5.1 \
+		cp_r-0.5.2 \
 		crossbeam-channel-0.5.13 \
 		crossbeam-utils-0.8.20 \
 		ctor-0.1.26 \
