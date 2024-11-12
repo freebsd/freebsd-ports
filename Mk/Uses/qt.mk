@@ -152,9 +152,10 @@ _USES_POST+=		qt
 _QT_MK_POST_INCLUDED=	qt.mk
 
 # The Qt components supported by qt.mk: list of shared, and version specific ones
-_USE_QT_COMMON=		3d charts connectivity datavis3d declarative doc examples imageformats location \
-			multimedia networkauth quick3d quicktimeline remoteobjects scxml \
-			sensors serialbus serialport speech svg virtualkeyboard wayland \
+_USE_QT_COMMON=		3d charts connectivity datavis3d declarative doc \
+			examples imageformats location multimedia networkauth \
+			quick3d quicktimeline remoteobjects scxml sensors \
+			serialbus serialport speech svg virtualkeyboard wayland \
 			webchannel webengine websockets webview
 
 _USE_QT5_ONLY=		assistant buildtools concurrent core dbus \
@@ -167,9 +168,10 @@ _USE_QT5_ONLY=		assistant buildtools concurrent core dbus \
 			uitools webglplugin websockets-qml \
 			widgets x11extras xml xmlpatterns
 
-_USE_QT6_ONLY=		5compat base coap graphs grpc httpserver languageserver lottie pdf positioning \
-			quick3dphysics quickeffectmaker shadertools tools translations \
-			sqldriver-sqlite sqldriver-mysql sqldriver-psql sqldriver-odbc
+_USE_QT6_ONLY=		5compat base coap graphs grpc httpserver languageserver \
+			lottie mqtt pdf positioning quick3dphysics quickeffectmaker \
+			shadertools tools translations sqldriver-sqlite \
+			sqldriver-mysql sqldriver-psql sqldriver-odbc
 
 # Dependency tuples: _LIB should be preferred if possible.
 qt-3d_PORT=		graphics/${_QT_RELNAME}-3d
@@ -268,6 +270,9 @@ qt-location_LIB=	libQt${_QT_LIBVER}Location.so
 
 qt-l10n_PORT=		misc/${_QT_RELNAME}-l10n
 qt-l10n_PATH=		${_QT_RELNAME}-l10n>=${_QT_VERSION:R:R}
+
+qt-mqtt_PORT=		net/${_QT_RELNAME}-mqtt
+qt-mqtt_LIB=		libQt${_QT_LIBVER}Mqtt.so
 
 qt-multimedia_PORT=	multimedia/${_QT_RELNAME}-multimedia
 qt-multimedia_LIB=	libQt${_QT_LIBVER}Multimedia.so

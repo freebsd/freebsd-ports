@@ -21,16 +21,16 @@ qmake_ARGS?=	# empty
 .include "${USESDIR}/qmake.mk"
 
 # Supported distribution arguments
-_COMMON_DISTS=		3d base charts connectivity datavis3d declarative imageformats location multimedia \
-			networkauth quick3d quicktimeline remoteobjects scxml sensors \
-			serialbus serialport speech svg tools translations virtualkeyboard \
+_COMMON_DISTS=		3d base charts connectivity datavis3d declarative \
+			imageformats location multimedia networkauth quick3d \
+			quicktimeline remoteobjects scxml sensors serialbus \
+			serialport speech svg tools translations virtualkeyboard \
 			wayland webchannel webengine websockets webview
-_QT5_DISTS=		gamepad graphicaleffects quickcontrols \
-			quickcontrols2 script webglplugin \
-			x11extras xmlpatterns
-_QT6_DISTS=		5compat coap doc graphs grpc httpserver languageserver lottie positioning \
-			quick3dphysics quickeffectmaker shadertools
-
+_QT5_DISTS=		gamepad graphicaleffects quickcontrols quickcontrols2 \
+			script webglplugin x11extras xmlpatterns
+_QT6_DISTS=		5compat coap doc graphs grpc httpserver languageserver \
+			lottie mqtt positioning quick3dphysics quickeffectmaker \
+			shadertools
 _QT_DISTS=		${_COMMON_DISTS} \
 			${_QT${_QT_VER}_DISTS}
 
@@ -96,8 +96,8 @@ _QT5_DISTNAME_kde=		${_QT_DIST:S,^,kde-qt,:S,$,-${DISTVERSION},}
 _QT6_DISTNAME=			${_QT_DIST:S,^,qt,:S,$,-everywhere-src-${DISTVERSION},}
 
 # Effective master sites and distfile values
-# net/qt6-coap has no submodule distfile and uses USE_GITHUB
-.  if ${_QT_DIST} != coap
+# net/qt6-coap and net/qt6-mqtt have no submodule distfiles and use USE_GITHUB
+.  if ${_QT_DIST} != coap && ${_QT_DIST} != mqtt
 MASTER_SITES=			${_QT${_QT_VER}_MASTER_SITES${_KDE_${_QT_DIST}:D_kde}}
 MASTER_SITE_SUBDIR=		${_QT${_QT_VER}_MASTER_SITE_SUBDIR${_KDE_${_QT_DIST}:D_kde}}
 DISTNAME=			${_QT${_QT_VER}_DISTNAME${_KDE_${_QT_DIST}:D_kde}}
