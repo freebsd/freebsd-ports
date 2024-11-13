@@ -1,6 +1,6 @@
---- Modules/FindBoost.cmake.orig	2022-01-25 13:45:06 UTC
+--- Modules/FindBoost.cmake.orig	2024-11-06 13:41:37 UTC
 +++ Modules/FindBoost.cmake
-@@ -135,6 +135,9 @@ This module reads hints about search locations from va
+@@ -140,6 +140,9 @@ This module reads hints about search locations from va
  ``BOOST_LIBRARYDIR``
    Preferred library directory e.g. ``<prefix>/lib``.
  
@@ -10,7 +10,7 @@
  ``Boost_NO_SYSTEM_PATHS``
    Set to ``ON`` to disable searching in locations not
    specified by these hint variables. Default is ``OFF``.
-@@ -558,6 +561,9 @@ function(_boost_set_legacy_variables_from_config)
+@@ -574,6 +577,9 @@ endfunction()
    endif()
  endfunction()
  
@@ -20,7 +20,7 @@
  #-------------------------------------------------------------------------------
  # Before we go searching, check whether a boost cmake package is available, unless
  # the user specifically asked NOT to search for one.
-@@ -2162,10 +2168,10 @@ foreach(COMPONENT ${Boost_FIND_COMPONENTS})
+@@ -2196,10 +2202,10 @@ foreach(COMPONENT ${Boost_FIND_COMPONENTS})
    # Handle Python version suffixes
    unset(COMPONENT_PYTHON_VERSION_MAJOR)
    unset(COMPONENT_PYTHON_VERSION_MINOR)

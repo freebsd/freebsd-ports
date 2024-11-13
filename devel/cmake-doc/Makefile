@@ -27,7 +27,7 @@ INSTALL_TARGET=	install
 
 NO_ARCH=	yes
 
-DISTINFO_FILE=	${.CURDIR}/../cmake-core/distinfo
+DISTINFO_FILE=	${.CURDIR:H}/cmake-core/distinfo
 PLIST_SUB=	CMAKEVERSION="${DISTVERSION:S/.//g:C/-.*//}"
 
 .include <bsd.port.mk>

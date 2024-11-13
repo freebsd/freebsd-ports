@@ -1,6 +1,6 @@
---- Modules/GNUInstallDirs.cmake.orig	2023-03-27 21:42:13 UTC
+--- Modules/GNUInstallDirs.cmake.orig	2024-11-06 13:41:37 UTC
 +++ Modules/GNUInstallDirs.cmake
-@@ -408,6 +408,12 @@ macro(GNUInstallDirs_get_absolute_install_dir absvar v
+@@ -418,6 +418,12 @@ macro(GNUInstallDirs_get_absolute_install_dir absvar v
        else()
          set(${absvar} "${CMAKE_INSTALL_PREFIX}/${${var}}")
        endif()
