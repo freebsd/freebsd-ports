@@ -1,7 +1,7 @@
 PORTNAME=	alsa-plugins
 PORTVERSION=	1.2.7.1
 DISTVERSIONSUFFIX=	-1.el9
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio linux
 PKGNAMESUFFIX=	-oss
 
@@ -24,5 +24,9 @@ DESCR=		${PORTSDIR}/${PKGCATEGORY}/${PORTNAME}/pkg-descr
 DOCSDIR=	${PREFIX}/usr/share/doc/${PORTNAME}${PKGNAMESUFFIX}
 
 OPTIONS_DEFINE=	DOCS
+
+post-patch:
+	@${LN} -sf ../../../usr/share/alsa/alsa.conf.d/50-oss.conf \
+		${WRKSRC}/etc/alsa/conf.d
 
 .include <bsd.port.mk>
