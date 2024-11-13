@@ -26,7 +26,7 @@ bin/myisam_ftdump
 bin/myisamchk
 bin/myisamlog
 bin/myisampack
-bin/mytop
+@comment bin/mytop
 %%ROCKSDB%%bin/myrocks_hotbackup
 bin/mysql_client_test
 bin/mysql_client_test_embedded
@@ -305,7 +305,7 @@ libexec/mysqld
 @comment share/man/man1/mysqlslap.1.gz
 @comment share/man/man1/mysqltest.1.gz
 @comment share/man/man1/mysqltest_embedded.1.gz
-share/man/man1/mytop.1.gz
+@comment share/man/man1/mytop.1.gz
 @comment share/man/man1/mysql.server.1.gz
 @comment share/man/man1/mysql_fix_extensions.1.gz
 @comment share/man/man1/mysql_install_db.1.gz
