@@ -1,4 +1,7 @@
+usr/lib/.build-id/32/63cdb9220b6ae93c0345d26a828f1549499d36
 usr/lib/.build-id/53/5678a6714fd1af72a590f0170f395fad63c33c
+usr/lib/libidn2.so.0
+usr/lib/libidn2.so.0.3.7
 usr/lib64/libidn2.so.0
 usr/lib64/libidn2.so.0.3.7
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS

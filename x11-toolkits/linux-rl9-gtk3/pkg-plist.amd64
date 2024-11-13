@@ -1,14 +1,38 @@
 usr/bin/gtk-launch
+usr/bin/gtk-query-immodules-3.0-32
 usr/bin/gtk-query-immodules-3.0-64
+usr/lib/.build-id/07/2a0e4f0306961989eb26c95dfb7ffdc8c09d64
 usr/lib/.build-id/0e/30d676081163e769e558b1372e7f9e09e3f164
 usr/lib/.build-id/1b/d795696f0eede1f522f4d91ce76d3491eba08d
 usr/lib/.build-id/37/33eb23f09759287a035a21a8c799c8eaeaafb3
 usr/lib/.build-id/37/9fb6a3c708055d4307931a8558a8c1f4ccba62
+usr/lib/.build-id/43/877f72b836b10ad190adaa93ea0e4c268900ef
+usr/lib/.build-id/47/87f42338aa8e8d50396c49cd228099d6e1cea0
+usr/lib/.build-id/53/51589987036aec4ae0042fd42584919ec4152e
+usr/lib/.build-id/5a/0698c2b49859cedb90f69b25a76e3651f0bda2
 usr/lib/.build-id/81/15576d7be82ea11c854acef286a8d44eddc785
+usr/lib/.build-id/a3/123c0c4ebd860da2cb3de538f5a2bf16d58c27
+usr/lib/.build-id/b4/5a3d77dae0d7046cf4d501ee966c6781e0c13f
 usr/lib/.build-id/d2/054a7f1a31e7119c6639174aed49b0dccf031e
 usr/lib/.build-id/ee/b9023a187b51999004c35c687c75f8fedb60e4
+usr/lib/.build-id/ef/90e6b0ddaf63845bb55d47913d393c7153e41e
 usr/lib/.build-id/f4/6fde8fa19b43b8ee6fcb3668f091b316022689
+usr/lib/.build-id/f5/44296039cd62d498bdb458638592a67db86a55
 usr/lib/.build-id/fa/8b811bd227a52219b899869a5cc0c31d5552a4
+usr/lib/girepository-1.0/Gdk-3.0.typelib
+usr/lib/girepository-1.0/GdkX11-3.0.typelib
+usr/lib/girepository-1.0/Gtk-3.0.typelib
+usr/lib/gtk-3.0/3.0.0/printbackends/libprintbackend-cups.so
+usr/lib/gtk-3.0/3.0.0/printbackends/libprintbackend-file.so
+usr/lib/gtk-3.0/3.0.0/printbackends/libprintbackend-lpr.so
+usr/lib/libgailutil-3.so.0
+usr/lib/libgailutil-3.so.0.0.0
+usr/lib/libgdk-3.so.0
+usr/lib/libgdk-3.so.0.2404.27
+usr/lib/libgtk-3.so.0
+usr/lib/libgtk-3.so.0.2404.27
+usr/lib/libstemmer.so.0
+usr/lib/libstemmer.so.0.0.0
 usr/lib64/girepository-1.0/Gdk-3.0.typelib
 usr/lib64/girepository-1.0/GdkX11-3.0.typelib
 usr/lib64/girepository-1.0/Gtk-3.0.typelib
@@ -157,10 +181,15 @@ usr/share/licenses/gtk3/COPYING
 %%NLS%%usr/share/locale/zh_HK/LC_MESSAGES/gtk30.mo
 %%NLS%%usr/share/locale/zh_TW/LC_MESSAGES/gtk30.mo
 usr/share/man/man1/gtk-launch.1.gz
+usr/share/man/man1/gtk-query-immodules-3.0-32.1.gz
 usr/share/man/man1/gtk-query-immodules-3.0-64.1.gz
 usr/share/man/man1/gtk-query-immodules-3.0.1.gz
 usr/share/themes/Default/gtk-3.0/gtk-keys.css
 usr/share/themes/Emacs/gtk-3.0/gtk-keys.css
+@dir usr/lib/gtk-3.0/3.0.0/immodules
+@dir usr/lib/gtk-3.0/3.0.0/theming-engines
+@dir usr/lib/gtk-3.0/immodules
+@dir usr/lib/gtk-3.0/modules
 @dir usr/lib64/gtk-3.0/3.0.0/immodules
 @dir usr/lib64/gtk-3.0/3.0.0/theming-engines
 @dir usr/lib64/gtk-3.0/3.0.0

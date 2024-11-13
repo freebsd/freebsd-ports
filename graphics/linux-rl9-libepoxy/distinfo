@@ -1,6 +1,8 @@
-TIMESTAMP = 1686565958
+TIMESTAMP = 1731434287
 SHA256 (rocky/l/libepoxy-1.5.5-4.el9.aarch64.rpm) = fc17c6ac5aa01b2c781350398631afdfab3175f1e43acee80c220a4623efa80a
 SIZE (rocky/l/libepoxy-1.5.5-4.el9.aarch64.rpm) = 261697
+SHA256 (rocky/l/libepoxy-1.5.5-4.el9.i686.rpm) = 64faf19b50658179e10fb44d48b6a1ba256abbf30938095c0d5d1e5f97b4153e
+SIZE (rocky/l/libepoxy-1.5.5-4.el9.i686.rpm) = 268096
 SHA256 (rocky/l/libepoxy-1.5.5-4.el9.x86_64.rpm) = 6520de86c5183ff8b3ddfe27640b898627ef3987419128dd71c088f5d5e9bcb3
 SIZE (rocky/l/libepoxy-1.5.5-4.el9.x86_64.rpm) = 249375
 SHA256 (rocky/l/libepoxy-1.5.5-4.el9.src.rpm) = 1f3d08627454938f400af0b609ceca19e8c7a5d90cdb9f7e12049a0f00ff7df4

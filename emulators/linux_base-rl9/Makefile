@@ -1,6 +1,6 @@
 PORTNAME=	rl9
 PORTVERSION=	${LINUX_DIST_VER}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	emulators linux
 PKGNAMEPREFIX=	linux_base-
 EXTRACT_ONLY=	${DISTFILES:N*${SRC_SUFX}*:Nf/filesystem-*:C/:[^:]+$//}
@@ -13,6 +13,7 @@ LICENSE=	BSD2CLAUSE
 USES=		linux:rl9
 USE_LINUX=	# empty
 USE_LINUX_RPM=	yes
+WANT_LINUX32=	yes
 
 .include	"${.CURDIR}/Makefile.version"
 
@@ -71,9 +72,11 @@ LIB_DISTNAMES=	bzip2-libs-${bzip2_ver} \
 		popt-${popt_ver} \
 		readline-${readline_ver} \
 		slang-${slang_ver} \
-		util-linux-${util_ver} \
 		xz-libs-${xz_ver} \
 		zlib-${zlib_ver}
+
+LIB_DISTNAMES_amd64=	\
+		util-linux-${util_ver}
 
 SHARE_DISTNAMES=basesystem-${basesystem_ver} \
 		ncurses-base-${ncurses_ver} \

@@ -1,6 +1,6 @@
 PORTNAME=	devtools
 PORTVERSION=	${LINUX_DIST_VER}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 
 MAINTAINER=	emulation@FreeBSD.org
@@ -13,6 +13,7 @@ USES=		linux:rl9
 USE_LDCONFIG=	yes
 USE_LINUX=	libgfortran
 USE_LINUX_RPM=	yes
+WANT_LINUX32=	yes
 
 ONLY_FOR_ARCHS=	aarch64 amd64
 

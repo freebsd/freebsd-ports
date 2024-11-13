@@ -1,5 +1,11 @@
+usr/lib/.build-id/59/d0866d2dfeb067897c2c22a0f0c3646afb9913
 usr/lib/.build-id/d0/8821b1f6ea2bc790045b988efa22835e987162
+usr/lib/.build-id/d0/e012925e0b33c4593ec2cdda141797065bdcd2
 usr/lib/.build-id/f1/bf810edca5c9cefde4c23d362d2e6e33cbe2f7
+usr/lib/libasm-%%LIBVERSION%%.so
+usr/lib/libasm.so.1
+usr/lib/libdw-%%LIBVERSION%%.so
+usr/lib/libdw.so.1
 usr/lib64/libasm-%%LIBVERSION%%.so
 usr/lib64/libasm.so.1
 usr/lib64/libdw-%%LIBVERSION%%.so

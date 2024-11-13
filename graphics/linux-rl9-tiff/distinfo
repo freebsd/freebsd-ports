@@ -1,7 +1,9 @@
-TIMESTAMP = 1717508558
-SHA256 (rocky/l/libtiff-4.4.0-12.el9.aarch64.rpm) = 78e240aa7770d612b189bfda1a52afe0184f8bdf0dfb4b45310ebf98a0f19da3
-SIZE (rocky/l/libtiff-4.4.0-12.el9.aarch64.rpm) = 196537
-SHA256 (rocky/l/libtiff-4.4.0-12.el9.x86_64.rpm) = 5bc7060751a17276042b030d4a56ef8cd3b129443a6f2046b315f1b6cc402db7
-SIZE (rocky/l/libtiff-4.4.0-12.el9.x86_64.rpm) = 202025
-SHA256 (rocky/l/libtiff-4.4.0-12.el9.src.rpm) = 6b747f9018966060cc5207f26dd654c8abacaf0a2928c7e1e124394c70927080
-SIZE (rocky/l/libtiff-4.4.0-12.el9.src.rpm) = 2889636
+TIMESTAMP = 1731448723
+SHA256 (rocky/l/libtiff-4.4.0-12.el9_4.1.aarch64.rpm) = ea686f09fb5a1d104ece1ab3d42d7e263c117d9e03281cf96183c03b0d6d7296
+SIZE (rocky/l/libtiff-4.4.0-12.el9_4.1.aarch64.rpm) = 196298
+SHA256 (rocky/l/libtiff-4.4.0-12.el9_4.1.i686.rpm) = 01ac8e4ebb906f14e83ebdab4bd003124562561720a342e57080d074bf3c6b3f
+SIZE (rocky/l/libtiff-4.4.0-12.el9_4.1.i686.rpm) = 219749
+SHA256 (rocky/l/libtiff-4.4.0-12.el9_4.1.x86_64.rpm) = d760a963c5b275793109894ef139967f9a168ccf57cf844cc7c96f32d9c4a3d5
+SIZE (rocky/l/libtiff-4.4.0-12.el9_4.1.x86_64.rpm) = 201779
+SHA256 (rocky/l/libtiff-4.4.0-12.el9_4.1.src.rpm) = e76ad3ab60bd09a0c6f035870f2952d699951d54ce67fdea03be18c0399b8a16
+SIZE (rocky/l/libtiff-4.4.0-12.el9_4.1.src.rpm) = 2890298

@@ -17,7 +17,7 @@ USE_LINUX_RPM=	yes
 USE_LINUX=	ffmpeg-libs gstreamer1
 
 CONFLICTS=	linux-c7-${PORTNAME}${PKGNAMESUFFIX}
-DESCR=		${.CURDIR}/../${PORTNAME}/pkg-descr
+DESCR=		${PORTSDIR}/${PKGCATEGORY}/${PORTNAME}/pkg-descr
 DOCSDIR=	${PREFIX}/usr/share/doc/${PORTNAME}
 
 OPTIONS_DEFINE=	DOCS

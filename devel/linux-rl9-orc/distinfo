@@ -1,6 +1,8 @@
-TIMESTAMP = 1727471432
+TIMESTAMP = 1731433108
 SHA256 (rocky/o/orc-0.4.31-7.el9_4.aarch64.rpm) = 3789d3d8da9927b5c50c5554337a22c8b79e1b4953a473818daef6cc90aaac41
 SIZE (rocky/o/orc-0.4.31-7.el9_4.aarch64.rpm) = 180669
+SHA256 (rocky/o/orc-0.4.31-7.el9_4.i686.rpm) = 02b6226ed6675ec42d59532b967b4735a2e3b314f84b7d5f5d96e8768f9195a4
+SIZE (rocky/o/orc-0.4.31-7.el9_4.i686.rpm) = 198117
 SHA256 (rocky/o/orc-0.4.31-7.el9_4.x86_64.rpm) = 7f63ee701c9beb9840b71e4df89d0d84dafd1d6e29697bf6b53d8b07c61f966f
 SIZE (rocky/o/orc-0.4.31-7.el9_4.x86_64.rpm) = 186588
 SHA256 (rocky/o/orc-compiler-0.4.31-7.el9_4.aarch64.rpm) = 018e932cdb22fca46a97538d530423c2905d33f8243120dec6731ea9d249f477

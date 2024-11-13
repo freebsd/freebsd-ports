@@ -1,6 +1,7 @@
 PORTNAME=	libpciaccess
 PORTVERSION=	0.16
 DISTVERSIONSUFFIX=	-6.el9
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	emulation@FreeBSD.org
@@ -10,9 +11,10 @@ WWW=		https://www.freedesktop.org/wiki/Software/xlibs/
 USES=		linux:rl9
 USE_LDCONFIG=	yes
 USE_LINUX_RPM=	yes
+WANT_LINUX32=	yes
 
 CONFLICTS=	linux-c7-${PORTNAME}
-DESCR=		${.CURDIR}/../${PORTNAME}/pkg-descr
+DESCR=		${PORTSDIR}/${PKGCATEGORY}/${PORTNAME}/pkg-descr
 
 OPTIONS_DEFINE=	DOCS
 

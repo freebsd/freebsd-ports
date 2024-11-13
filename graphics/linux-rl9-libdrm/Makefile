@@ -1,6 +1,7 @@
 PORTNAME=	libdrm
 PORTVERSION=	2.4.117
 DISTVERSIONSUFFIX=	-1.el9
+PORTREVISION=	1
 CATEGORIES=	graphics linux
 
 MAINTAINER=	emulation@FreeBSD.org
@@ -11,8 +12,9 @@ USES=		linux:rl9
 USE_LDCONFIG=	yes
 USE_LINUX=	libpciaccess
 USE_LINUX_RPM=	yes
+WANT_LINUX32=	yes
 
-DESCR=		${.CURDIR}/../${PORTNAME}/pkg-descr
+DESCR=		${PORTSDIR}/${PKGCATEGORY}/${PORTNAME}/pkg-descr
 
 OPTIONS_DEFINE=	DOCS
 

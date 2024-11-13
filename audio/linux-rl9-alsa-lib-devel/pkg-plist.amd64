@@ -1,3 +1,7 @@
+usr/lib/libasound.so
+usr/lib/libatopology.so
+usr/lib/pkgconfig/alsa-topology.pc
+usr/lib/pkgconfig/alsa.pc
 usr/lib64/libasound.so
 usr/lib64/libatopology.so
 usr/lib64/pkgconfig/alsa-topology.pc

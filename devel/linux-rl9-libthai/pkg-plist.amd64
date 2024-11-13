@@ -1,4 +1,7 @@
+usr/lib/.build-id/01/e46fd31ba51f28260d0d758842acb5ae0844d5
 usr/lib/.build-id/52/f685e39fcdb3b99887c5c196baa9c4bcacc670
+usr/lib/libthai.so.0
+usr/lib/libthai.so.0.3.1
 usr/lib64/libthai.so.0
 usr/lib64/libthai.so.0.3.1
 %%PORTDOCS%%usr/share/doc/libthai/AUTHORS

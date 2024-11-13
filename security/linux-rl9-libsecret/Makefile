@@ -1,6 +1,7 @@
 PORTNAME=	libsecret
 PORTVERSION=	0.20.4
 DISTVERSIONSUFFIX=	-4.el9
+PORTREVISION=	1
 CATEGORIES=	security linux
 
 MAINTAINER=	emulation@FreeBSD.org
@@ -13,9 +14,10 @@ USES=		linux:rl9
 USE_LDCONFIG=	yes
 USE_LINUX=	libgcrypt libgpg-error
 USE_LINUX_RPM=	yes
+WANT_LINUX32=	yes
 
 CONFLICTS=	linux-c7-${PORTNAME}
-DESCR=		${.CURDIR}/../${PORTNAME}/pkg-descr
+DESCR=		${PORTSDIR}/${PKGCATEGORY}/${PORTNAME}/pkg-descr
 
 OPTIONS_DEFINE=	DOCS NLS
 OPTIONS_SUB=	yes

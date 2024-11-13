@@ -1,6 +1,7 @@
 PORTNAME=	pango
 PORTVERSION=	1.48.7
 DISTVERSIONSUFFIX=	-3.el9
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits linux
 
 MAINTAINER=	emulation@FreeBSD.org
@@ -12,9 +13,10 @@ CPE_VENDOR=	gnome
 USE_LDCONFIG=	yes
 USE_LINUX=	cairo fontconfig freetype fribidi harfbuzz libthai xorglibs
 USE_LINUX_RPM=	yes
+WANT_LINUX32=	yes
 
 CONFLICTS=	linux-c7-${PORTNAME}
-DESCR=		${.CURDIR}/../${PORTNAME}/pkg-descr
+DESCR=		${PORTSDIR}/${PKGCATEGORY}/${PORTNAME}/pkg-descr
 
 OPTIONS_DEFINE=	DOCS
 

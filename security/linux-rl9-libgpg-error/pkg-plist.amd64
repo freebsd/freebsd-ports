@@ -1,6 +1,10 @@
 usr/bin/gpg-error
 usr/lib/.build-id/6a/51c4775d127d417f1739858c83e6b9d3ab0c37
+usr/lib/.build-id/9d/3133a9b2da06caa7fa37625d1d24f6e3f3cc65
+usr/lib/.build-id/c4/c6eedddf3d0d36d64b778bf48d664530f25cd5
 usr/lib/.build-id/d3/29208c15a720c5907854b9b69541c9bf401969
+usr/lib/libgpg-error.so.0
+usr/lib/libgpg-error.so.0.32.0
 usr/lib64/libgpg-error.so.0
 usr/lib64/libgpg-error.so.0.32.0
 %%PORTDOCS%%usr/share/doc/libgpg-error/AUTHORS

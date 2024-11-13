@@ -1,6 +1,7 @@
 PORTNAME=	libxkbcommon
 PORTVERSION=	1.0.3
 DISTVERSIONSUFFIX=	-4.el9
+PORTREVISION=	1
 CATEGORIES=	x11 linux
 
 MAINTAINER=	emulation@FreeBSD.org
@@ -11,7 +12,8 @@ USES=		cpe linux:rl9
 CPE_VENDOR=	xkbcommon
 USE_LDCONFIG=	yes
 USE_LINUX_RPM=	yes
+WANT_LINUX32=	yes
 
-DESCR=		${.CURDIR}/../${PORTNAME}/pkg-descr
+DESCR=		${PORTSDIR}/${PKGCATEGORY}/${PORTNAME}/pkg-descr
 
 .include <bsd.port.mk>

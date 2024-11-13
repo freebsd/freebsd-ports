@@ -1,6 +1,8 @@
-TIMESTAMP = 1707752265
+TIMESTAMP = 1731425998
 SHA256 (rocky/l/libpsl-0.21.1-5.el9.aarch64.rpm) = 3c7d57a0adafb76ddcf588e41326bcb0b33fd7c6cbf2044450288a289e47ab25
 SIZE (rocky/l/libpsl-0.21.1-5.el9.aarch64.rpm) = 64676
+SHA256 (rocky/l/libpsl-0.21.1-5.el9.i686.rpm) = a8101c1d94803b6b84f818569d122a702771d0eece23bca2f340cb20449d173c
+SIZE (rocky/l/libpsl-0.21.1-5.el9.i686.rpm) = 65579
 SHA256 (rocky/l/libpsl-0.21.1-5.el9.x86_64.rpm) = 30553c652451362ebf346a98ff45fa2417dc25a9a644401b4d86d9000c0346a9
 SIZE (rocky/l/libpsl-0.21.1-5.el9.x86_64.rpm) = 64862
 SHA256 (rocky/l/libpsl-0.21.1-5.el9.src.rpm) = 7183b90fbeed67673d13f685436b52c3b4336f9d38677bd9dfc9d700221df4bd

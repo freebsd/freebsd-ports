@@ -1,4 +1,7 @@
+usr/lib/.build-id/30/15f6b4ed027551badd6f5c1f9770d7fa5b1086
 usr/lib/.build-id/f2/544fa0a4d8367567c3d7ee1415912fc58a4aaf
+usr/lib/libpciaccess.so.0
+usr/lib/libpciaccess.so.0.11.1
 usr/lib64/libpciaccess.so.0
 usr/lib64/libpciaccess.so.0.11.1
 %%PORTDOCS%%usr/share/doc/libpciaccess/AUTHORS

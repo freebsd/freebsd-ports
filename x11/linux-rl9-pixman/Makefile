@@ -1,7 +1,7 @@
 PORTNAME=	pixman
 PORTVERSION=	0.40.0
 DISTVERSIONSUFFIX=	-6.el9_3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11 linux
 
 MAINTAINER=	emulation@FreeBSD.org
@@ -11,7 +11,8 @@ WWW=		http://pixman.org
 USES=		cpe linux:rl9
 USE_LDCONFIG=	yes
 USE_LINUX_RPM=	yes
+WANT_LINUX32=	yes
 
-DESCR=		${.CURDIR}/../${PORTNAME}/pkg-descr
+DESCR=		${PORTSDIR}/${PKGCATEGORY}/${PORTNAME}/pkg-descr
 
 .include <bsd.port.mk>

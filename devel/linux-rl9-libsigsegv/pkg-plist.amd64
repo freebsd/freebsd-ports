@@ -1,4 +1,7 @@
 usr/lib/.build-id/dc/6c919a45d4cdcc1e9aa671ba513dfc1350d776
+usr/lib/.build-id/ef/55a1e1729fd6ac859ca7c25898e3314e1cb69c
+usr/lib/libsigsegv.so.2
+usr/lib/libsigsegv.so.2.0.6
 usr/lib64/libsigsegv.so.2
 usr/lib64/libsigsegv.so.2.0.6
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS

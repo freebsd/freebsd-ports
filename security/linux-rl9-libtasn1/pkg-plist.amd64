@@ -1,4 +1,7 @@
+usr/lib/.build-id/1e/99accfe14d80aefbdf2fa18a2b9e11fa42e8e0
 usr/lib/.build-id/c1/7247c829f91e289fb9424e7a05b9946d8985d2
+usr/lib/libtasn1.so.6
+usr/lib/libtasn1.so.6.6.0
 usr/lib64/libtasn1.so.6
 usr/lib64/libtasn1.so.6.6.0
 %%PORTDOCS%%usr/share/doc/libtasn1/AUTHORS

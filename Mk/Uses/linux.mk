@@ -305,6 +305,9 @@ DISTFILES_aarch64?=	${LIB_DISTNAMES:S/$/${EXTRACT_SUFX_aarch64}:aarch64/} \
 DISTFILES_amd64=	${LIB_DISTNAMES:S/$/${EXTRACT_SUFX_i386}:amd64,i386/} \
 			${LIB_DISTNAMES_i386:S/$/${EXTRACT_SUFX_i386}:amd64,i386/}
 .        endif
+.        if  !empty(WANT_LINUX32)
+DISTFILES_amd64+=	${LIB_DISTNAMES:S/$/${EXTRACT_SUFX_i386}:amd64/}
+.        endif
 DISTFILES_amd64+=	${LIB_DISTNAMES:S/$/${EXTRACT_SUFX_amd64}:amd64/} \
 			${LIB_DISTNAMES_amd64:S/$/${EXTRACT_SUFX_amd64}:amd64/} \
 			${BIN_DISTNAMES:S/$/${EXTRACT_SUFX_amd64}:amd64/} \

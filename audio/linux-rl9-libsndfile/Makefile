@@ -1,7 +1,7 @@
 PORTNAME=	libsndfile
 PORTVERSION=	1.0.31
 DISTVERSIONSUFFIX=	-8.el9
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio linux
 
 MAINTAINER=	emulation@FreeBSD.org
@@ -12,11 +12,12 @@ USES=		cpe linux:rl9
 USE_LDCONFIG=	yes
 USE_LINUX=	flac gsm libogg libvorbis
 USE_LINUX_RPM=	yes
+WANT_LINUX32=	yes
 
 CPE_VENDOR=	libsndfile_project
 
 CONFLICTS=	linux-c7-${PORTNAME}
-DESCR=		${.CURDIR}/../${PORTNAME}/pkg-descr
+DESCR=		${PORTSDIR}/${PKGCATEGORY}/${PORTNAME}/pkg-descr
 
 OPTIONS_DEFINE=	DOCS
 

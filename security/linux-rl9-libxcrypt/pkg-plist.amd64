@@ -1,4 +1,9 @@
+usr/lib/.build-id/07/177b20d9cc92b5d2efd1b676101479a7e0f792
 usr/lib/.build-id/43/cc909d67a7573957be572f25a1bda51b9d72d6
+usr/lib/fipscheck/libcrypt.so.2.0.0.hmac
+usr/lib/fipscheck/libcrypt.so.2.hmac
+usr/lib/libcrypt.so.2
+usr/lib/libcrypt.so.2.0.0
 usr/lib64/fipscheck/libcrypt.so.2.0.0.hmac
 usr/lib64/fipscheck/libcrypt.so.2.hmac
 usr/lib64/libcrypt.so.2

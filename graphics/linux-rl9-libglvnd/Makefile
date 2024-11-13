@@ -1,6 +1,7 @@
 PORTNAME=	libglvnd
 PORTVERSION=	1.3.4
 DISTVERSIONSUFFIX=	-1.el9
+PORTREVISION=	1
 CATEGORIES=	graphics linux
 
 MAINTAINER=	emulation@FreeBSD.org
@@ -11,6 +12,7 @@ USES=		linux:rl9
 USE_LDCONFIG=	yes
 USE_LINUX=	xorglibs
 USE_LINUX_RPM=	yes
+WANT_LINUX32=	yes
 
 CONFLICTS_INSTALL=	linux-nvidia-libs linux-nvidia-libs-*
 

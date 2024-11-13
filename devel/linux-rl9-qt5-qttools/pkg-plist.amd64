@@ -1,12 +1,24 @@
 usr/bin/qdbus-qt5
 usr/bin/qtpaths
+usr/lib/.build-id/4b/8fcd752f332ae4c2e46b9b54d44106f0678da7
 usr/lib/.build-id/55/b92dc9de089306dff23708b330861a8873d2f3
 usr/lib/.build-id/67/e73c7cc782478fc90ef75c46b802871a2b724f
 usr/lib/.build-id/67/e73c7cc782478fc90ef75c46b802871a2b724f.1
 usr/lib/.build-id/6e/bb50efdb6545d12ba3fe795584caa8b80e3135
+usr/lib/.build-id/87/4ac0ad09414f55022d1d40dc570d87b6ed21ab
 usr/lib/.build-id/9c/c962cf9e92f3d8eabb4da19f579ccb594d043e
 usr/lib/.build-id/a7/5e31cf131a5d38fea7079c6d94cd5502ed26cf
 usr/lib/.build-id/a7/5e31cf131a5d38fea7079c6d94cd5502ed26cf.1
+usr/lib/.build-id/e4/e568a6c43bd42645322c1398c9b1acb25fffa8
+usr/lib/libQt5Designer.so.5
+usr/lib/libQt5Designer.so.5.15
+usr/lib/libQt5Designer.so.5.15.9
+usr/lib/libQt5DesignerComponents.so.5
+usr/lib/libQt5DesignerComponents.so.5.15
+usr/lib/libQt5DesignerComponents.so.5.15.9
+usr/lib/libQt5Help.so.5
+usr/lib/libQt5Help.so.5.15
+usr/lib/libQt5Help.so.5.15.9
 usr/lib64/libQt5Designer.so.5
 usr/lib64/libQt5Designer.so.5.15
 usr/lib64/libQt5Designer.so.5.15.9
@@ -20,4 +32,5 @@ usr/lib64/qt5/bin/qdbus
 usr/lib64/qt5/bin/qdbus-qt5
 usr/lib64/qt5/bin/qtpaths
 usr/share/licenses/qt5-qttools-common/LICENSE.LGPL3
+@dir usr/lib/cmake/Qt5Designer
 @dir usr/lib64/cmake/Qt5Designer

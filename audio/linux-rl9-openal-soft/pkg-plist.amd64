@@ -1,7 +1,11 @@
 etc/openal/alsoft.conf
 usr/bin/openal-info
 usr/lib/.build-id/0b/c2b4fcae34de3f623f0f994feed8e22de866ca
+usr/lib/.build-id/25/b28d7342a90e0435827c2395ad66f712acc0ce
+usr/lib/.build-id/68/b91eafdb5e8adbabe1d5be0ea67e76d5234e5f
 usr/lib/.build-id/ba/632ab5a3a7ad86b9d79f30ed3b382757e1d712
+usr/lib/libopenal.so.1
+usr/lib/libopenal.so.1.19.1
 usr/lib64/libopenal.so.1
 usr/lib64/libopenal.so.1.19.1
 %%PORTDOCS%%%%DOCSDIR%%/COPYING

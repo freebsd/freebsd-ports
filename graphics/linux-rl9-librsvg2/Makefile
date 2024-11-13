@@ -1,7 +1,7 @@
 PORTNAME=	librsvg2
 PORTVERSION=	2.50.7
 DISTVERSIONSUFFIX=	-3.el9
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	graphics linux
 
 MAINTAINER=	emulation@FreeBSD.org
@@ -15,8 +15,9 @@ USE_LDCONFIG=	yes
 USE_LINUX=	cairo cairo-gobject fontconfig freetype gdkpixbuf2 libxml2 \
 		pango
 USE_LINUX_RPM=	yes
+WANT_LINUX32=	yes
 
-DESCR=		${.CURDIR}/../${PORTNAME}/pkg-descr
+DESCR=		${PORTSDIR}/${PKGCATEGORY}/${PORTNAME}/pkg-descr
 
 OPTIONS_DEFINE=	DOCS
 

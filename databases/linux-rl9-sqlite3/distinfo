@@ -1,10 +1,12 @@
-TIMESTAMP = 1707694431
+TIMESTAMP = 1731423541
 SHA256 (rocky/s/sqlite-3.34.1-7.el9_3.aarch64.rpm) = c28b24e8614c96b50bc91de6c54a7b931dcc842759d7864328287d8cfbfe5bf2
 SIZE (rocky/s/sqlite-3.34.1-7.el9_3.aarch64.rpm) = 753848
 SHA256 (rocky/s/sqlite-3.34.1-7.el9_3.x86_64.rpm) = 3db7e0a7937231a5b23a8537bec0ee58ab03e16dad01564ccfc7d0b844fcfc39
 SIZE (rocky/s/sqlite-3.34.1-7.el9_3.x86_64.rpm) = 764919
 SHA256 (rocky/s/sqlite-libs-3.34.1-7.el9_3.aarch64.rpm) = 2cb657f0cbcac497228fec8d29621f7e093af3a0b59a7d78703eb59032fb40a8
 SIZE (rocky/s/sqlite-libs-3.34.1-7.el9_3.aarch64.rpm) = 628618
+SHA256 (rocky/s/sqlite-libs-3.34.1-7.el9_3.i686.rpm) = 5003ec7b55f0d6e7ef97f157a012f004fa87a99f41a1f134995a0522b967fcb4
+SIZE (rocky/s/sqlite-libs-3.34.1-7.el9_3.i686.rpm) = 678995
 SHA256 (rocky/s/sqlite-libs-3.34.1-7.el9_3.x86_64.rpm) = 9e9b58febeff10765c104ecebc8af189507ecd6c2a600f9b0d9207394117a063
 SIZE (rocky/s/sqlite-libs-3.34.1-7.el9_3.x86_64.rpm) = 633300
 SHA256 (rocky/s/sqlite-3.34.1-7.el9_3.src.rpm) = 5e054864074976fc20d0c3c7f0b92c4a9317335956d46380f3c1c6f5fec037dc

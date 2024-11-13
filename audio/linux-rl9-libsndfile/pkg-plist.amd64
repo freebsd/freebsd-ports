@@ -1,4 +1,7 @@
+usr/lib/.build-id/1e/3618d0a3dbfa33aa4647577a346717a617b626
 usr/lib/.build-id/23/a70491670c78e84962fc3327318b6db76e2b99
+usr/lib/libsndfile.so.1
+usr/lib/libsndfile.so.1.0.31
 usr/lib64/libsndfile.so.1
 usr/lib64/libsndfile.so.1.0.31
 %%PORTDOCS%%usr/share/doc/libsndfile/AUTHORS

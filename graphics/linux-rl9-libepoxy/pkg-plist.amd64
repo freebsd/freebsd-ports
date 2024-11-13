@@ -1,4 +1,7 @@
+usr/lib/.build-id/02/6167b0448d300bab55f72f500dbafec7bcd382
 usr/lib/.build-id/17/5f21d1237cd3bf3ad557a3e0cbe017fcfb04ce
+usr/lib/libepoxy.so.0
+usr/lib/libepoxy.so.0.0.0
 usr/lib64/libepoxy.so.0
 usr/lib64/libepoxy.so.0.0.0
 %%PORTDOCS%%usr/share/doc/libepoxy/README.md

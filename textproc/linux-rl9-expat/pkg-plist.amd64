@@ -1,6 +1,10 @@
 usr/bin/xmlwf
-usr/lib/.build-id/dd/ff0146e24b1963c325d7c146c86aad2c991919
 usr/lib/.build-id/4b/4979ff1d8fa81ebc15c0a4b47d5e3913baa39f
+usr/lib/.build-id/8c/c86fb757195948e3d732d6ca7fcd3053c86301
+usr/lib/.build-id/c8/6b59f6eac27095e0163f07248e6073289c7722
+usr/lib/.build-id/dd/ff0146e24b1963c325d7c146c86aad2c991919
+usr/lib/libexpat.so.1
+usr/lib/libexpat.so.1.8.10
 usr/lib64/libexpat.so.1
 usr/lib64/libexpat.so.1.8.10
 %%PORTDOCS%%usr/share/doc/expat/AUTHORS

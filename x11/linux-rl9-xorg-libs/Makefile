@@ -1,6 +1,6 @@
 PORTNAME=	xorg-libs
 PORTVERSION=	7.7
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11 linux
 
 MAINTAINER=	emulation@FreeBSD.org
@@ -11,6 +11,7 @@ USES=		linux:rl9
 USE_LDCONFIG=	yes
 USE_LINUX=	fontconfig
 USE_LINUX_RPM=	yes
+WANT_LINUX32=	yes
 
 .include	"${.CURDIR}/Makefile.version"
 

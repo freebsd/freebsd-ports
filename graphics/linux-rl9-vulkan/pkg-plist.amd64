@@ -1,4 +1,7 @@
+usr/lib/.build-id/45/fbdbe2b4e3dea431dd55ab6f8d6bb964dcd66a
 usr/lib/.build-id/c4/e1f787541e4b1015cc7c622055f85245355435
+usr/lib/libvulkan.so.1
+usr/lib/libvulkan.so.%%LIBVERSION%%
 usr/lib64/libvulkan.so.1
 usr/lib64/libvulkan.so.%%LIBVERSION%%
 %%PORTDOCS%%%%DOCSDIR%%/CONTRIBUTING.md

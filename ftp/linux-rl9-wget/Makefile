@@ -18,7 +18,7 @@ CPE_VENDOR=	gnu
 OPTIONS_DEFINE=	DOCS NLS
 OPTIONS_SUB=	yes
 
-DESCR=		${.CURDIR}/../${PORTNAME}/pkg-descr
+DESCR=		${PORTSDIR}/${PKGCATEGORY}/${PORTNAME}/pkg-descr
 DOCSDIR=	${PREFIX}/usr/share/doc/${PORTNAME}${PKGNAMESUFFIX}
 
 .include <bsd.port.mk>

@@ -1,6 +1,8 @@
-TIMESTAMP = 1717496767
+TIMESTAMP = 1731422909
 SHA256 (rocky/n/nettle-3.9.1-1.el9.aarch64.rpm) = bf9a860921be5e1c6d18c756eeb772ed19f725734d7ff0be45db9faee4ab50bc
 SIZE (rocky/n/nettle-3.9.1-1.el9.aarch64.rpm) = 538169
+SHA256 (rocky/n/nettle-3.9.1-1.el9.i686.rpm) = 896487634e937933d731ae3337e388395d52db3f70aee35401c3a888b009bf30
+SIZE (rocky/n/nettle-3.9.1-1.el9.i686.rpm) = 569252
 SHA256 (rocky/n/nettle-3.9.1-1.el9.x86_64.rpm) = dcd2bb2ca0e67d5a50c54a608a346a4bd95711258c16ce1db578ebf0a004ea6c
 SIZE (rocky/n/nettle-3.9.1-1.el9.x86_64.rpm) = 571534
 SHA256 (rocky/n/nettle-3.9.1-1.el9.src.rpm) = 57a692b1bea9a1db8487da2ce43cb7816f06768f9b6896a53ae064dfa2e28f09

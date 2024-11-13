@@ -1,6 +1,7 @@
 PORTNAME=	libthai
 PORTVERSION=	0.1.28
 DISTVERSIONSUFFIX=	-8.el9
+PORTREVISION=	1
 CATEGORIES=	devel linux
 
 MAINTAINER=	emulation@FreeBSD.org
@@ -10,9 +11,10 @@ WWW=		https://linux.thai.net/projects/libthai/
 USES=		linux:rl9
 USE_LDCONFIG=	yes
 USE_LINUX_RPM=	yes
+WANT_LINUX32=	yes
 
 CONFLICTS=	linux-c7-${PORTNAME}
-DESCR=		${.CURDIR}/../${PORTNAME}/pkg-descr
+DESCR=		${PORTSDIR}/${PKGCATEGORY}/${PORTNAME}/pkg-descr
 
 OPTIONS_DEFINE=	DOCS
 

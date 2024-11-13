@@ -1,6 +1,7 @@
 PORTNAME=	libpng
 PORTVERSION=	1.6.37
 DISTVERSIONSUFFIX=	-12.el9
+PORTREVISION=	1
 CATEGORIES=	graphics linux
 
 MAINTAINER=	emulation@FreeBSD.org
@@ -15,8 +16,9 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 USES=		cpe linux:rl9
 USE_LDCONFIG=	yes
 USE_LINUX_RPM=	yes
+WANT_LINUX32=	yes
 
 CONFLICTS=	linux-c7-${PORTNAME}
-DESCR=		${.CURDIR}/../png/pkg-descr
+DESCR=		${PORTSDIR}/${PKGCATEGORY}/png/pkg-descr
 
 .include <bsd.port.mk>

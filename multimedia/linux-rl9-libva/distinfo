@@ -1,6 +1,8 @@
-TIMESTAMP = 1717510704
+TIMESTAMP = 1731445854
 SHA256 (rocky/l/libva-2.20.0-1.el9.aarch64.rpm) = 5e45b56e8637ebd57c79e3a1d132d3783a56facb2659eb4e44319ef1cc98482d
 SIZE (rocky/l/libva-2.20.0-1.el9.aarch64.rpm) = 106949
+SHA256 (rocky/l/libva-2.20.0-1.el9.i686.rpm) = 5119c02902a717ab17197436503f20164a622c088adc5356630b515534da4384
+SIZE (rocky/l/libva-2.20.0-1.el9.i686.rpm) = 114178
 SHA256 (rocky/l/libva-2.20.0-1.el9.x86_64.rpm) = a2014d21610d80b058a9273014b178be75097fe3a289bde8fbdf85b312187179
 SIZE (rocky/l/libva-2.20.0-1.el9.x86_64.rpm) = 107188
 SHA256 (rocky/l/libva-2.20.0-1.el9.src.rpm) = ed4a90e084aca90b29f2a5be04c37e8a01b30851d27a2c11ef0036ef241cf8b5

@@ -1,4 +1,7 @@
+usr/lib/.build-id/00/67b8cfe754a62c23876f3d642bcecbdb0bb8a0
 usr/lib/.build-id/46/6a776c87cb3824287646623385b76822b883ef
+usr/lib/libassuan.so.0
+usr/lib/libassuan.so.0.8.5
 usr/lib64/libassuan.so.0
 usr/lib64/libassuan.so.0.8.5
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS

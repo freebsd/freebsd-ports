@@ -1,6 +1,11 @@
 usr/bin/secret-tool
 usr/lib/.build-id/27/1640d6a68b01f4991fb7bc8fe8fc37a65ad4e8
 usr/lib/.build-id/43/52383f2bab10d03e96607e00df3f6a0261f423
+usr/lib/.build-id/ab/a25ec229ddaa9d36c1a59237ad75e032f4418e
+usr/lib/.build-id/bd/997be42a0e3ff9c609c42b90ef83e6ddb1fa92
+usr/lib/girepository-1.0/Secret-1.typelib
+usr/lib/libsecret-1.so.0
+usr/lib/libsecret-1.so.0.0.0
 usr/lib64/girepository-1.0/Secret-1.typelib
 usr/lib64/libsecret-1.so.0
 usr/lib64/libsecret-1.so.0.0.0

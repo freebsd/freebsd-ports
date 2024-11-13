@@ -1,27 +1,73 @@
 etc/X11/xinit/xinput.d/im-cedilla.conf
 etc/gtk-2.0/im-multipress.conf
+usr/bin/gtk-query-immodules-2.0-32
 usr/bin/gtk-query-immodules-2.0-64
 usr/bin/update-gtk-immodules
+usr/lib/.build-id/01/f0775c31548238b04c00e034feecefebfed071
 usr/lib/.build-id/0d/2f2cbe311f63170e9a7df410eea721cc6d1373
 usr/lib/.build-id/0e/f57625a7b64d2b4f1c87acaf04dbf107792495
 usr/lib/.build-id/0f/3a2634413b3793eecccda3cf7e34b80fc8585b
+usr/lib/.build-id/0f/54eea846d6362428485e1249a29ef6fbcd306f
 usr/lib/.build-id/15/0fc57e6b6566b0a9424029eb1a4bdae721dcf1
 usr/lib/.build-id/1b/df1a8dc025469e683d47c8049fa1bbb12f84ec
 usr/lib/.build-id/1c/0c4f4cbf1e5e1b8791e3be18821a7be34f6066
+usr/lib/.build-id/2e/200c0e82edd2dc8e4ebcfd9d0b86710e10df75
 usr/lib/.build-id/3e/fdd14ab49e71c6add3d86f2c8a85573c70d2bc
+usr/lib/.build-id/49/9c15c7642ff097f23632c0751262695bfd069a
 usr/lib/.build-id/52/01c37bf9b024ed63fc854138f9ae66fb0c777e
+usr/lib/.build-id/56/1d5df7c0d38e17e54afa251a6d25a100205289
+usr/lib/.build-id/6a/a64068516fb9b0587f0141117b4f11321a9ccd
+usr/lib/.build-id/70/af7319e6ce70370cd1655e7afded57c3ce897d
+usr/lib/.build-id/72/7a9ae29d3a2b59f7b85b06ee4b7b384a22d1e4
+usr/lib/.build-id/73/e18d24977cdc76492c871a2623428dcd2540e7
 usr/lib/.build-id/7d/10ebe0d93cc0f8b21859f203788d57a28c4219
+usr/lib/.build-id/86/4a1e3ece4daf1f0f60bbe66c70d00335acff29
 usr/lib/.build-id/88/deaabb948e01ce110f470a993a72155adc3402
 usr/lib/.build-id/99/4cceaf342f91b89fcc4cd297c2da3137001835
+usr/lib/.build-id/9d/99328d20310061bfb0b0fc6d9b55dff342baed
+usr/lib/.build-id/9f/e3c3ad323e6e5a1ba38a2eca1412b9eec66b83
+usr/lib/.build-id/ac/209805dfc52b6d92f09ddbbe0bfdb1ce6de731
+usr/lib/.build-id/ac/8d31fc1d3726ac0eab7352409334f63e277136
 usr/lib/.build-id/bc/60b1d4c7d7d68768fd65f1a00101563d033263
 usr/lib/.build-id/be/83592a268f01c46bd73d128e5b628f1ee30d55
 usr/lib/.build-id/c0/6c3ea6d7b0187c427ec9efd926ee308a28b094
+usr/lib/.build-id/c3/fe6f77f1816d248cdeb03b754fec2c8c931083
+usr/lib/.build-id/c4/044856d753a92d0827b90b30949b8867d8d15a
 usr/lib/.build-id/d2/f462a50693ea965a903cc2879f823e4030d28d
 usr/lib/.build-id/d6/a3cd28d47a73c330bdd523033adb75d346ac29
+usr/lib/.build-id/d8/4f0f556f828a94d147845d26d3704a29341f5a
+usr/lib/.build-id/df/065274a948aa4af0eb705206d86386dbfc7e66
 usr/lib/.build-id/e1/18199c529875904442980e39c895a79680a99f
+usr/lib/.build-id/eb/973ca751055fada812d846294a34648efa03b6
 usr/lib/.build-id/f4/e87c9de0b2b5132d552244ed978465bbd51a31
 usr/lib/.build-id/fb/f5eecae5ecdfb3f71e91c09a8c2156f59c0f49
+usr/lib/.build-id/fd/659d336e57f76ac5bbfd5d02c66159dd6e0b7e
 usr/lib/.build-id/fd/ee7da9726fcce11d988ec42e1c34491b804f0d
+usr/lib/girepository-1.0/Gdk-2.0.typelib
+usr/lib/girepository-1.0/GdkX11-2.0.typelib
+usr/lib/girepository-1.0/Gtk-2.0.typelib
+usr/lib/gtk-2.0/2.10.0/engines/libpixmap.so
+usr/lib/gtk-2.0/2.10.0/immodules/im-am-et.so
+usr/lib/gtk-2.0/2.10.0/immodules/im-cedilla.so
+usr/lib/gtk-2.0/2.10.0/immodules/im-cyrillic-translit.so
+usr/lib/gtk-2.0/2.10.0/immodules/im-inuktitut.so
+usr/lib/gtk-2.0/2.10.0/immodules/im-ipa.so
+usr/lib/gtk-2.0/2.10.0/immodules/im-multipress.so
+usr/lib/gtk-2.0/2.10.0/immodules/im-thai.so
+usr/lib/gtk-2.0/2.10.0/immodules/im-ti-er.so
+usr/lib/gtk-2.0/2.10.0/immodules/im-ti-et.so
+usr/lib/gtk-2.0/2.10.0/immodules/im-viqr.so
+usr/lib/gtk-2.0/2.10.0/printbackends/libprintbackend-cups.so
+usr/lib/gtk-2.0/2.10.0/printbackends/libprintbackend-file.so
+usr/lib/gtk-2.0/2.10.0/printbackends/libprintbackend-lpr.so
+usr/lib/gtk-2.0/modules/libferret.so
+usr/lib/gtk-2.0/modules/libgail.so
+usr/lib/libgailutil.so.18
+usr/lib/libgailutil.so.18.0.1
+usr/lib/libgdk-x11-2.0.so.0
+usr/lib/libgdk-x11-2.0.so.0.2400.33
+usr/lib/libgtk-x11-2.0.so.0
+usr/lib/libgtk-x11-2.0.so.0.2400.33
 usr/lib64/girepository-1.0/Gdk-2.0.typelib
 usr/lib64/girepository-1.0/GdkX11-2.0.typelib
 usr/lib64/girepository-1.0/Gtk-2.0.typelib
@@ -156,12 +202,17 @@ usr/share/licenses/gtk2/COPYING
 %%NLS%%usr/share/locale/zh_CN/LC_MESSAGES/gtk20.mo
 %%NLS%%usr/share/locale/zh_HK/LC_MESSAGES/gtk20.mo
 %%NLS%%usr/share/locale/zh_TW/LC_MESSAGES/gtk20.mo
+usr/share/man/man1/gtk-query-immodules-2.0-32.1.gz
 usr/share/man/man1/gtk-query-immodules-2.0-64.1.gz
 usr/share/man/man1/gtk-query-immodules-2.0.1.gz
 usr/share/man/man1/update-gtk-immodules.1.gz
 usr/share/themes/Default/gtk-2.0-key/gtkrc
 usr/share/themes/Emacs/gtk-2.0-key/gtkrc
 usr/share/themes/Raleigh/gtk-2.0/gtkrc
+@dir usr/lib/gtk-2.0/2.10.0/filesystems
+@dir usr/lib/gtk-2.0/2.10.0
+@dir usr/lib/gtk-2.0/immodules
+@dir usr/lib/gtk-2.0
 @dir usr/lib64/gtk-2.0/2.10.0/filesystems
 @dir usr/lib64/gtk-2.0/2.10.0
 @dir usr/lib64/gtk-2.0/immodules
@@ -169,4 +220,5 @@ usr/share/themes/Raleigh/gtk-2.0/gtkrc
 @dir usr/share/gtk-2.0
 @postexec %D/usr/bin/gtk-query-immodules-2.0-32 --update-cache
 @postexec %D/usr/bin/gtk-query-immodules-2.0-64 --update-cache
+@postunexec /bin/rm -f %D/usr/lib/gtk-2.0/2.10.0/immodules.cache
 @postunexec /bin/rm -f %D/usr/lib64/gtk-2.0/2.10.0/immodules.cache

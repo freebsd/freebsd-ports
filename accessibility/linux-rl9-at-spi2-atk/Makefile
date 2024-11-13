@@ -1,6 +1,7 @@
 PORTNAME=	at-spi2-atk
 PORTVERSION=	2.38.0
 DISTVERSIONSUFFIX=	-4.el9
+PORTREVISION=	1
 CATEGORIES=	accessibility linux
 
 MAINTAINER=	emulation@FreeBSD.org
@@ -13,6 +14,8 @@ USES=		cpe linux:rl9
 USE_LDCONFIG=	yes
 USE_LINUX=	at-spi2-core atk dbuslibs
 USE_LINUX_RPM=	yes
+WANT_LINUX32=	yes
+
 CPE_VENDOR=	gnome
 
 OPTIONS_DEFINE=	DOCS
