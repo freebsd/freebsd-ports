@@ -1,0 +1,11 @@
+--- third_party/cpuinfo/cpuinfo.gni.orig	2024-04-15 20:34:24 UTC
++++ third_party/cpuinfo/cpuinfo.gni
+@@ -8,7 +8,7 @@ use_cpuinfo =
+     current_cpu != "s390" && current_cpu != "s390x" &&
+     current_cpu != "riscv64" &&
+     # cpuinfo is not supported on fuchsia.
+-    !is_fuchsia &&
++    !is_fuchsia && !is_bsd &&
+     # There's a few arm architectures that are not supported by cpuinfo,
+     # especially amongst ChromeOS devices.
+     # See //third_party/cpuinfo/src/src/arm/linux/cp.h.
