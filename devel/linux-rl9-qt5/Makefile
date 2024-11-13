@@ -11,8 +11,8 @@ LICENSE=	BSD2CLAUSE
 
 USES=		linux:rl9 metaport
 USE_LINUX=	qt3d qtbase qtconnectivity qtdeclarative qtgraphicaleffects \
-		qtimageformats 	qtquickcontrols qtscript qtsensors \
-		qtserialbus qtserialport qtsvg 	qttools qtwayland \
+		qtimageformats qtmultimedia qtquickcontrols qtscript qtsensors \
+		qtserialbus qtserialport qtsvg qttools qtwayland \
 		qtwebchannel qtwebsockets qtx11extras qtxmlpatterns
 
 DESCR=		${PORTSDIR}/devel/${PORTNAME}/pkg-descr

@@ -170,6 +170,7 @@ _linux_rl9_qtconnectivity=		linux-rl9-qt5-qtconnectivity>0:comms/linux-rl9-qt5-q
 _linux_rl9_qtdeclarative=		linux-rl9-qt5-qtdeclarative>0:devel/linux-rl9-qt5-qtdeclarative
 _linux_rl9_qtgraphicaleffects=		linux-rl9-qt5-qtgraphicaleffects>0:graphics/linux-rl9-qt5-qtgraphicaleffects
 _linux_rl9_qtimageformats=		linux-rl9-qt5-qtimageformats>0:graphics/linux-rl9-qt5-qtimageformats
+_linux_rl9_qtmultimedia=		linux-rl9-qt5-qtmultimedia>0:multimedia/linux-rl9-qt5-qtmultimedia
 _linux_rl9_qtquickcontrols=		linux-rl9-qt5-qtquickcontrols>0:x11-toolkits/linux-rl9-qt5-qtquickcontrols
 _linux_rl9_qtscript=			linux-rl9-qt5-qtscript>0:devel/linux-rl9-qt5-qtscript
 _linux_rl9_qtsensors=			linux-rl9-qt5-qtsensors>0:comms/linux-rl9-qt5-qtsensors

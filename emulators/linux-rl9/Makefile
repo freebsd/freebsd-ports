@@ -24,8 +24,8 @@ USE_LINUX=	alsalib alsa-lib-devel alsa-plugins-oss alsa-plugins-pulseaudio \
 		lz4 nettle nspr nss ocl-icd openal-soft openjpeg openldap opus orc \
 		p11-kit pango pixman png pulseaudio-libs pulseaudio-utils python3 \
 		qt3d qtbase qtconnectivity qtdeclarative qtgraphicaleffects qtimageformats \
-		qtquickcontrols qtscript qtsensors qtserialbus qtserialport qtsvg \
-		qttools qtwayland qtwebchannel qtwebsockets qtx11extras qtxmlpatterns \
+		qtmultimedia qtquickcontrols qtscript qtsensors qtserialbus qtserialport \
+		qtsvg qttools qtwayland qtwebchannel qtwebsockets qtx11extras qtxmlpatterns \
 		sqlite3 strace systemd-libs tcp_wrappers-libs tiff vulkan \
 		wayland webp wget xcb-util xorglibs
 
