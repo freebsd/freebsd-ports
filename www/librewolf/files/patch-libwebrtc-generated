@@ -1,8 +1,7 @@
-commit da3b4d2fa4d2a502149450e93d2ceaee9eb8d8e4
+commit 92b3c1de6620a3031f08835ef1d374b60fb46a2c
 Author: Christoph Moench-Tegeder <cmt@FreeBSD.org>
-Date:   Wed Sep 18 20:59:22 2024 +0000
 
-    regenerate FreeBSD libwebrtc patch for Firefox 131
+    regenerate FreeBSD libwebrtc patch for Firefox 132
 
 diff --git third_party/libwebrtc/api/adaptation/resource_adaptation_api_gn/moz.build third_party/libwebrtc/api/adaptation/resource_adaptation_api_gn/moz.build
 index 2dbd5881583e..332ca04819ee 100644
@@ -7503,7 +7502,7 @@ index f1716e6b6267..7d3b6bae0048 100644
 -
  Library("frame_encryptor_interface_gn")
 diff --git third_party/libwebrtc/api/crypto/options_gn/moz.build third_party/libwebrtc/api/crypto/options_gn/moz.build
-index fae93b139253..5726c9c835be 100644
+index a9e9b0cd9473..5726c9c835be 100644
 --- third_party/libwebrtc/api/crypto/options_gn/moz.build
 +++ third_party/libwebrtc/api/crypto/options_gn/moz.build
 @@ -12,11 +12,21 @@ AllowCompilerWarnings()
@@ -7528,7 +7527,7 @@ index fae93b139253..5726c9c835be 100644
  
  FINAL_LIBRARY = "xul"
  
-@@ -43,174 +53,32 @@ if not CONFIG["MOZ_DEBUG"]:
+@@ -43,178 +53,32 @@ if not CONFIG["MOZ_DEBUG"]:
  if CONFIG["MOZ_DEBUG"] == "1":
  
      DEFINES["DYNAMIC_ANNOTATIONS_ENABLED"] = "1"
@@ -7546,6 +7545,10 @@ index fae93b139253..5726c9c835be 100644
 -    DEFINES["_GNU_SOURCE"] = True
 -    DEFINES["__STDC_CONSTANT_MACROS"] = True
 -    DEFINES["__STDC_FORMAT_MACROS"] = True
+-
+-    OS_LIBS += [
+-        "log"
+-    ]
 -
 -if CONFIG["OS_TARGET"] == "Darwin":
 -
@@ -58055,10 +58058,10 @@ index a4fb8b3162bd..f70faede2fba 100644
  Library("desktop_capture_gn")
 diff --git third_party/libwebrtc/modules/desktop_capture/desktop_capture_objc_gn/moz.build third_party/libwebrtc/modules/desktop_capture/desktop_capture_objc_gn/moz.build
 deleted file mode 100644
-index 0a76b27ceb41..000000000000
+index 88222c2ec906..000000000000
 --- third_party/libwebrtc/modules/desktop_capture/desktop_capture_objc_gn/moz.build
 +++ /dev/null
-@@ -1,78 +0,0 @@
+@@ -1,79 +0,0 @@
 -# This Source Code Form is subject to the terms of the Mozilla Public
 -# License, v. 2.0. If a copy of the MPL was not distributed with this
 -# file, You can obtain one at http://mozilla.org/MPL/2.0/.
@@ -58108,6 +58111,7 @@ index 0a76b27ceb41..000000000000
 -    "/third_party/libwebrtc/modules/desktop_capture/mac/desktop_frame_cgimage.mm",
 -    "/third_party/libwebrtc/modules/desktop_capture/mac/desktop_frame_iosurface.mm",
 -    "/third_party/libwebrtc/modules/desktop_capture/mac/desktop_frame_provider.mm",
+-    "/third_party/libwebrtc/modules/desktop_capture/mac/sck_picker_handle.mm",
 -    "/third_party/libwebrtc/modules/desktop_capture/mac/screen_capturer_mac.mm",
 -    "/third_party/libwebrtc/modules/desktop_capture/mac/screen_capturer_sck.mm",
 -    "/third_party/libwebrtc/modules/desktop_capture/mouse_cursor_monitor_mac.mm",
@@ -99208,7 +99212,7 @@ index b99c992d4953..b1f2505dadb4 100644
  
  Library("video_stream_buffer_controller_gn")
 diff --git third_party/libwebrtc/video/video_stream_encoder_impl_gn/moz.build third_party/libwebrtc/video/video_stream_encoder_impl_gn/moz.build
-index a51248556ab1..23e6fa0a8b70 100644
+index b1d59382d51a..b102d5288fbe 100644
 --- third_party/libwebrtc/video/video_stream_encoder_impl_gn/moz.build
 +++ third_party/libwebrtc/video/video_stream_encoder_impl_gn/moz.build
 @@ -12,11 +12,21 @@ AllowCompilerWarnings()
@@ -99233,7 +99237,7 @@ index a51248556ab1..23e6fa0a8b70 100644
  
  FINAL_LIBRARY = "xul"
  
-@@ -48,190 +58,32 @@ if not CONFIG["MOZ_DEBUG"]:
+@@ -51,190 +61,32 @@ if not CONFIG["MOZ_DEBUG"]:
  if CONFIG["MOZ_DEBUG"] == "1":
  
      DEFINES["DYNAMIC_ANNOTATIONS_ENABLED"] = "1"
