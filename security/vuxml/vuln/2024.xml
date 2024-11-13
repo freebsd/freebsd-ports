@@ -1,3 +1,111 @@
+  <vuln vid="ce0f52e1-a174-11ef-9a62-002590c1f29c">
+    <topic>FreeBSD -- Certificate revocation list fetch(1) option fails</topic>
+    <affects>
+      <package>
+	<name>FreeBSD</name>
+	<range><ge>14.1</ge><lt>14.1_6</lt></range>
+	<range><ge>13.4</ge><lt>13.4_2</lt></range>
+	<range><ge>13.3</ge><lt>13.3_8</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Problem Description:</h1>
+	<p>The fetch(3) library uses environment variables for passing
+	certain information, including the revocation file pathname.  The
+	environment variable name used by fetch(1) to pass the filename to
+	the library was incorrect, in effect ignoring the option.</p>
+	<h1>Impact:</h1>
+	<p>Fetch would still connect to a host presenting a certificate
+	included in the revocation file passed to the --crl option.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2024-45289</cvename>
+      <freebsdsa>SA-24:19.fetch</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2024-10-29</discovery>
+      <entry>2024-11-13</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="8caa5d60-a174-11ef-9a62-002590c1f29c">
+    <topic>FreeBSD -- Unbounded allocation in ctl(4) CAM Target Layer</topic>
+    <affects>
+      <package>
+	<name>FreeBSD-kernel</name>
+	<range><ge>14.1</ge><lt>14.1_6</lt></range>
+	<range><ge>13.4</ge><lt>13.4_2</lt></range>
+	<range><ge>13.3</ge><lt>13.3_8</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Problem Description:</h1>
+	<p>The command ctl_persistent_reserve_out allows the caller to
+	specify an arbitrary size which will be passed to the kernel's
+	memory allocator.</p>
+	<h1>Impact:</h1>
+	<p>A malicious guest could cause a Denial of Service (DoS) on the
+	host.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2024-39281</cvename>
+      <freebsdsa>SA-24:18.ctl</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2024-10-29</discovery>
+      <entry>2024-11-13</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="eb5c615d-a173-11ef-9a62-002590c1f29c">
+    <topic>FreeBSD -- Multiple issues in the bhyve hypervisor</topic>
+    <affects>
+      <package>
+	<name>FreeBSD</name>
+	<range><ge>14.1</ge><lt>14.1_6</lt></range>
+	<range><ge>13.4</ge><lt>13.4_2</lt></range>
+	<range><ge>13.3</ge><lt>13.3_8</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Problem Description:</h1>
+	<p>Several vulnerabilities were found in the bhyve hypervisor's
+	device models.</p>
+	<p>The NVMe driver function nvme_opc_get_log_page is vulnerable to a
+	buffer over- read from a guest-controlled value.  (CVE-2024-51562)</p>
+	<p>The virtio_vq_recordon function is subject to a time-of-check to
+	time-of-use (TOCTOU) race condition.  (CVE-2024-51563)</p>
+	<p>A guest can trigger an infinite loop in the hda audio driver.
+	(CVE-2024-51564)</p>
+	<p>The hda driver is vulnerable to a buffer over-read from a
+	guest-controlled value.  (CVE-2024-51565)</p>
+	<p>The NVMe driver queue processing is vulernable to guest-induced
+	infinite loops.  (CVE-2024-51566)</p>
+	<h1>Impact:</h1>
+	<p>Malicious guest virtual machines may be able to perform a denial
+	of service (DoS) of the bhyve host, and may read memory within the
+	bhyve process that they should not be able to access.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2024-51562</cvename>
+      <cvename>CVE-2024-51563</cvename>
+      <cvename>CVE-2024-51564</cvename>
+      <cvename>CVE-2024-51565</cvename>
+      <cvename>CVE-2024-51566</cvename>
+      <freebsdsa>SA-24:17.bhyve</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2024-10-29</discovery>
+      <entry>2024-11-13</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="ab4e6f65-a142-11ef-84e9-901b0e9408dc">
     <topic>element-web -- several vulnerabilities</topic>
     <affects>
