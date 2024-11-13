@@ -155,6 +155,7 @@
     SUBDIR += diffutils
     SUBDIR += dikt
     SUBDIR += discount
+    SUBDIR += dmenu-translate
     SUBDIR += doc-mode.el
     SUBDIR += docbook
     SUBDIR += docbook-sgml
