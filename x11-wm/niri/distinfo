@@ -1,4 +1,4 @@
-TIMESTAMP = 1731164272
+TIMESTAMP = 1731483594
 SHA256 (rust/crates/addr2line-0.24.2.crate) = dfbe277e56a376000877090da837660b4427aad530e3028d44e0bffe4f89a1c1
 SIZE (rust/crates/addr2line-0.24.2.crate) = 39015
 SHA256 (rust/crates/adler2-2.0.0.crate) = 512761e0bb2578dd7380c6baaa0f4ce03e84f95e960231d1dec8bf4d7d6e2627
@@ -1011,5 +1011,5 @@ SHA256 (Smithay-smithay-5e137dcebc9f2de4d026180dfc4ce81282f7f14f_GH0.tar.gz) = 8
 SIZE (Smithay-smithay-5e137dcebc9f2de4d026180dfc4ce81282f7f14f_GH0.tar.gz) = 745631
 SHA256 (pipewire-pipewire-rs-86df39190c0ab67444666a42908f7e8c1344e24a_GL0.tar.gz) = 2680a51b34c5b6b91cacb94b17f0eaa3423370f0ec17d740c3ef0c616b2aa293
 SIZE (pipewire-pipewire-rs-86df39190c0ab67444666a42908f7e8c1344e24a_GL0.tar.gz) = 114264
-SHA256 (YaLTeR-niri-v0.1.10_GH0.tar.gz) = 2a6e6c21b05c14498eb84e58853c0a4c9d96d4215b8aec53388e89266fccca1b
-SIZE (YaLTeR-niri-v0.1.10_GH0.tar.gz) = 428901
+SHA256 (YaLTeR-niri-v0.1.10.1_GH0.tar.gz) = d8854830436a87215b0bc6a60b6d43f350d927a03a2798c75f0fbda228bac8d3
+SIZE (YaLTeR-niri-v0.1.10.1_GH0.tar.gz) = 429116
