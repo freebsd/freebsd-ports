@@ -11,8 +11,6 @@ WWW=		https://github.com/Nukesor/pueue
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN_FreeBSD_15_armv7=	compilation fails, see https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=282712
-
 USES=		cargo
 
 USE_GITHUB=	yes
