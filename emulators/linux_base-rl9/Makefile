@@ -75,8 +75,8 @@ LIB_DISTNAMES=	bzip2-libs-${bzip2_ver} \
 		xz-libs-${xz_ver} \
 		zlib-${zlib_ver}
 
-LIB_DISTNAMES_amd64=	\
-		util-linux-${util_ver}
+LIB_DISTNAMES_aarch64=	u/util-linux-${util_ver}
+LIB_DISTNAMES_amd64=	u/util-linux-${util_ver}
 
 SHARE_DISTNAMES=basesystem-${basesystem_ver} \
 		ncurses-base-${ncurses_ver} \
