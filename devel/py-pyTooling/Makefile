@@ -1,6 +1,6 @@
 PORTNAME=	pyTooling
 DISTVERSIONPREFIX=	v
-DISTVERSION=	8.0.1
+DISTVERSION=	8.0.2
 CATEGORIES=	devel
 #MASTER_SITES=	PYPI # requirements.txt is missing
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -37,6 +37,6 @@ NO_ARCH=	yes
 
 TEST_WRKSRC=	${WRKSRC}
 
-# tests as of 8.0.1: 7 failed, 829 passed, 17 skipped, 6 xfailed in 18.51s
+# tests as of 8.0.2: 6 failed, 830 passed, 17 skipped, 6 xfailed in 18.53s
 
 .include <bsd.port.mk>
