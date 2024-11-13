@@ -1,12 +1,7 @@
-# todo rm 
-# work/stage/usr/local/www/onlyoffice/documentserver/server/Common/config/production-freebsd.json.bak
-# work/stage/usr/local/www/onlyoffice/documentserver/server/Common/config/development-freebsd.json.bak
-# work/stage/usr/local/www/onlyoffice/documentserver/dictionaries/sl_SI/hyph_sl_SI.dic.bak
-
-
 PORTNAME=	onlyoffice-documentserver
 DISTVERSIONPREFIX=	v
 DISTVERSION=	8.2.0.143
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES+=	LOCAL/mikael/v8/:source1 \
 		LOCAL/mikael/onlyoffice/:source2 \

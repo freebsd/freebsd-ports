@@ -7,9 +7,9 @@
 -DIR="/var/www/M4_DS_PREFIX"
 +DIR="%%LOCALBASE%%/www/M4_DS_PREFIX"
  
- #Start generate AllFonts.js, font thumbnails and font_selection.bin
- echo -n Generating AllFonts.js, please wait...
-@@ -49,11 +49,6 @@ echo Done
+ export LD_LIBRARY_PATH=/var/www/M4_DS_PREFIX/server/FileConverter/bin:$LD_LIBRARY_PATH
+ 
+@@ -52,24 +52,16 @@ echo Done
  
  echo Done
  
@@ -21,7 +21,10 @@
  #Remove gzipped files
  rm -f \
    $DIR/fonts/*.gz \
-@@ -62,10 +57,7 @@ if [ "$ONLYOFFICE_DATA_CONTAINER" != "true" ]; then
+   $DIR/sdkjs/common/AllFonts.js.gz \
+-  $DIR/sdkjs/common/Images/*.gz \ 
++  $DIR/sdkjs/common/Images/*.gz \
+   $DIR/sdkjs/slide/themes/themes.js.gz
  
  #Restart web-site and converter
  if [ "$ONLYOFFICE_DATA_CONTAINER" != "true" ]; then
