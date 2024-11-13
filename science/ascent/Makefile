@@ -6,10 +6,13 @@ PKGNAMESUFFIX=	-visualizer
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Visualization and analysis runtime for multi-physics HPC simulations
-WWW=		https://ascent.readthedocs.io/en/latest/
+WWW=		https://ascent.readthedocs.io/en/latest/ \
+		https://github.com/Alpine-DAV/ascent
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/../LICENSE
+
+BROKEN_FreeBSD_15=	compilation fails with clang-19, see https://github.com/Alpine-DAV/ascent/issues/1422
 
 LIB_DEPENDS=	libconduit.so:science/conduit \
 		libhdf5.so:science/hdf5 \
