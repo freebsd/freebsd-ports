@@ -1,6 +1,6 @@
 PORTNAME?=	fetchmail
-DISTVERSION=	6.5.0
-PORTREVISION?=	1
+DISTVERSION=	6.5.1
+PORTREVISION?=	0
 CATEGORIES=	mail
 # The next line is inherited by the fetchmailconf dependent port,
 # do NOT replace fetchmail by ${PORTNAME}
