@@ -1,6 +1,6 @@
 PORTNAME=	shibboleth-sp
 PORTVERSION=	3.5.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security www
 MASTER_SITES=	http://shibboleth.net/downloads/service-provider/${PORTVERSION}/
 
@@ -20,7 +20,7 @@ LIB_DEPENDS=	libsaml.so:security/opensaml \
 		libgdbm.so:databases/gdbm \
 		libexpat.so:textproc/expat2
 
-USES=		gmake tar:bzip2 cpe pkgconfig libtool bdb
+USES=		gmake tar:bzip2 cpe pkgconfig libtool
 USE_CXXSTD=	c++14
 
 GNU_CONFIGURE=	yes
