@@ -3720,3 +3720,4 @@ devel/flatbuffers205|devel/flatbuffers|2024-11-10|Not needed any more
 lang/gcc11-devel|lang/gcc11|2024-11-12|GCC 11 reached end of life; use the final release (or a newer major version)
 sysutils/hammer2|filesystems/hammer2|2024-11-13|Moved to new category filesystems
 sysutils/ods2|filesystems/ods2|2024-11-13|Moved to new category filesystems
+sysutils/ztop|filesystems/ztop|2024-11-13|Moved to new category filesystems

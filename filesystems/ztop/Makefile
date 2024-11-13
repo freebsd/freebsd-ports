@@ -2,7 +2,7 @@ PORTNAME=	ztop
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.2.3
 PORTREVISION=	9
-CATEGORIES=	sysutils
+CATEGORIES=	filesystems sysutils
 
 MAINTAINER=	asomers@FreeBSD.org
 COMMENT=	Display ZFS dataset I/O in real time
