@@ -11,6 +11,10 @@ WWW=		https://github.com/xo/usql
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_aarch64=	fails to find resvg_xx symbols, see https://github.com/xo/usql/issues/494
+BROKEN_armv7=	fails to find resvg_xx symbols, see https://github.com/xo/usql/issues/494
+BROKEN_i386=	fails to find resvg_xx symbols, see https://github.com/xo/usql/issues/494
+
 LIB_DEPENDS=	libresvg.so:graphics/resvg-capi
 
 USES=		go:1.22,modules
