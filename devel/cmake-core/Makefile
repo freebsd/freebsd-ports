@@ -93,6 +93,7 @@ pre-configure:
 # or similar options: it expects them to be set in CMake-style
 # syntax in the initial cache.
 	@${CP} ${WRKDIR}/InitialCache.cmake ${BUILD_WRKSRC}
+	@${FIND} ${WRKSRC} -name "*.bak" -delete -o -name "*.orig" -delete
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/Auxiliary/cmake-mode.el ${STAGEDIR}${PREFIX}/share/emacs/site-lisp
