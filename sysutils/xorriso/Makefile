@@ -5,7 +5,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://files.libburnia-project.org/releases/
 DISTNAME=	libisoburn-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	wen@FreeBSD.org
 COMMENT=	ISO image manipulation tool based on Libburnia
 WWW=		https://dev.lovelyhq.com/libburnia/web/wiki
 
