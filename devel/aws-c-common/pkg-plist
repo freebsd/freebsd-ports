@@ -65,6 +65,7 @@ include/aws/common/ref_count.h
 include/aws/common/ring_buffer.h
 include/aws/common/ring_buffer.inl
 include/aws/common/rw_lock.h
+include/aws/common/shutdown_types.h
 include/aws/common/statistics.h
 include/aws/common/stdbool.h
 include/aws/common/stdint.h
