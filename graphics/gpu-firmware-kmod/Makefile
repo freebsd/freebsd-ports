@@ -1,5 +1,5 @@
 PORTNAME=	gpu-firmware-kmod
-PORTVERSION=	20240401
+PORTVERSION=	20241114
 PORTEPOCH=	1
 CATEGORIES=	graphics
 
@@ -71,6 +71,7 @@ RUN_DEPENDS+=	gpu-firmware-intel-kmod-skylake>0:graphics/gpu-firmware-intel-kmod
 		gpu-firmware-intel-kmod-tigerlake>0:graphics/gpu-firmware-intel-kmod@tigerlake \
 		gpu-firmware-intel-kmod-rocketlake>0:graphics/gpu-firmware-intel-kmod@rocketlake \
 		gpu-firmware-intel-kmod-dg1>0:graphics/gpu-firmware-intel-kmod@dg1 \
+		gpu-firmware-intel-kmod-dg2>0:graphics/gpu-firmware-intel-kmod@dg2 \
 		gpu-firmware-intel-kmod-alderlake>0:graphics/gpu-firmware-intel-kmod@alderlake
 .endif
 
