@@ -9,6 +9,7 @@
     SUBDIR += R-cran-processx
     SUBDIR += R-cran-ps
     SUBDIR += R-cran-xopen
+    SUBDIR += RyzenAdj
     SUBDIR += UEFITool
     SUBDIR += abduco
     SUBDIR += abgx360
