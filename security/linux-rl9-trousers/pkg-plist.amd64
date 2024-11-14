@@ -1,0 +1,13 @@
+etc/tcsd.conf
+usr/lib/.build-id/04/6c37af71d52d303d781eb4552cfc4e589337f0
+usr/lib/.build-id/ac/0e21f3845515722e75692e3204350340aa6504
+usr/lib/systemd/system/tcsd.service
+usr/lib64/libtspi.so.1
+usr/lib64/libtspi.so.1.2.0
+usr/sbin/tcsd
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/README
+usr/share/licenses/trousers-lib/LICENSE
+usr/share/man/man5/tcsd.conf.5.gz
+usr/share/man/man8/tcsd.8.gz
+@dir var/lib/tpm
