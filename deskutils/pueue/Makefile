@@ -1,7 +1,7 @@
 PORTNAME=	pueue
 DISTVERSIONPREFIX=	v
 DISTVERSION=	3.4.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	deskutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -15,6 +15,7 @@ USES=		cargo
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	Nukesor
+USE_RC_SUBR=	pueued
 
 RUSTFLAGS=	${ARCH:S/i386/YES/:C/^[a-z].*//:S/YES/-C target-feature=+sse,+sse2/} # add sse sse2 target-features only on i386
 
