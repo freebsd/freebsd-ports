@@ -1,7 +1,6 @@
 PORTNAME=	cardano-cli
 DISTVERSIONPREFIX=	${PORTNAME}-
-DISTVERSION=	10.0.0.0
-PORTREVISION=	1
+DISTVERSION=	10.1.1.0
 CATEGORIES=	sysutils net-p2p
 MASTER_SITES=	https://chap.intersectmbo.org/package/:chap
 
@@ -56,7 +55,7 @@ USE_CABAL=	Cabal-3.12.1.0 \
 		asn1-parse-0.9.5 \
 		asn1-types-0.3.4 \
 		assoc-1.1.1 \
-		async-2.2.5_2 \
+		async-2.2.5_3 \
 		attoparsec-0.14.4_5 \
 		attoparsec-aeson-2.2.2.0 \
 		auto-update-0.2.1 \
@@ -68,7 +67,7 @@ USE_CABAL=	Cabal-3.12.1.0 \
 		base16-bytestring-1.0.2.0_1 \
 		base58-bytestring-0.1.0 \
 		base64-bytestring-1.2.1.0_1 \
-		base64-bytestring-type-1.0.1_20 \
+		base64-bytestring-type-1.0.1_21 \
 		basement-0.0.16 \
 		bech32-1.1.7 \
 		bifunctors-5.6.2 \
@@ -88,7 +87,7 @@ USE_CABAL=	Cabal-3.12.1.0 \
 		call-stack-0.4.0 \
 		canonical-json-0.6.0.1_1 \
 		capability-0.5.0.1_4 \
-		cardano-api-10.0.0.0:chap \
+		cardano-api-10.1.0.0:chap \
 		cardano-binary-1.7.1.0:chap \
 		cardano-crypto-1.1.2:chap \
 		cardano-crypto-class-2.1.5.0:chap \
@@ -107,7 +106,7 @@ USE_CABAL=	Cabal-3.12.1.0 \
 		cardano-ledger-binary-1.4.0.0:chap \
 		cardano-ledger-byron-1.0.1.0:chap \
 		cardano-ledger-byron-test-1.5.1.1:chap \
-		cardano-ledger-conway-1.17.0.0:chap \
+		cardano-ledger-conway-1.17.1.0:chap \
 		cardano-ledger-conway-test-1.3.0.0:chap \
 		cardano-ledger-core-1.15.0.0:chap \
 		cardano-ledger-mary-1.7.0.1:chap \
@@ -176,7 +175,7 @@ USE_CABAL=	Cabal-3.12.1.0 \
 		either-5.0.2_2 \
 		erf-2.0.0.0 \
 		errors-2.3.0_5 \
-		extra-1.7.16 \
+		extra-1.7.16_1 \
 		fgl-5.8.3.0 \
 		file-embed-0.0.16.0 \
 		filelock-0.1.1.7 \
@@ -193,7 +192,7 @@ USE_CABAL=	Cabal-3.12.1.0 \
 		generic-lens-core-2.2.1.0_2 \
 		generic-optics-2.2.1.0_2 \
 		generic-random-1.5.0.1 \
-		generically-0.1.1_3 \
+		generically-0.1.1_4 \
 		generics-sop-0.5.1.4_1 \
 		genvalidity-1.1.1.0 \
 		githash-0.1.7.0 \
@@ -212,7 +211,7 @@ USE_CABAL=	Cabal-3.12.1.0 \
 		hedgehog-quickcheck-0.1.1_8 \
 		here-1.2.14 \
 		hourglass-0.2.12_1 \
-		hsc2hs-0.68.10_2 \
+		hsc2hs-0.68.10_3 \
 		hspec-2.11.9 \
 		hspec-core-2.11.9 \
 		hspec-discover-2.11.9 \
@@ -244,7 +243,7 @@ USE_CABAL=	Cabal-3.12.1.0 \
 		lens-5.3.2_2 \
 		libyaml-0.1.4 \
 		libyaml-clib-0.2.5 \
-		lifted-async-0.10.2.6 \
+		lifted-async-0.10.2.6_1 \
 		lifted-base-0.2.3.12 \
 		list-t-1.0.5.7 \
 		logict-0.8.1.0_1 \
@@ -293,10 +292,10 @@ USE_CABAL=	Cabal-3.12.1.0 \
 		ouroboros-network-mock-0.1.1.2:chap \
 		ouroboros-network-protocols-0.11.0.0:chap \
 		ouroboros-network-testing-0.7.0.0:chap \
-		parallel-3.2.2.0_8 \
+		parallel-3.2.2.0_9 \
 		parsec-3.1.17.0_1 \
 		parser-combinators-1.3.0_1 \
-		parsers-0.12.11_2 \
+		parsers-0.12.11_3 \
 		partial-order-0.2.0.0 \
 		pem-0.2.4 \
 		pipes-4.3.16_6 \
@@ -310,7 +309,7 @@ USE_CABAL=	Cabal-3.12.1.0 \
 		prettyprinter-ansi-terminal-1.1.3 \
 		prettyprinter-compat-ansi-wl-pprint-1.0.2 \
 		prettyprinter-configurable-1.36.0.0:chap \
-		primitive-0.9.0.0_1 \
+		primitive-0.9.0.0_2 \
 		profunctors-5.6.2_3 \
 		psqueues-0.2.8.0_1 \
 		quickcheck-instances-0.3.31_2 \
@@ -387,9 +386,9 @@ USE_CABAL=	Cabal-3.12.1.0 \
 		th-desugar-1.15_1 \
 		th-env-0.1.1 \
 		th-expand-syns-0.4.11.0_4 \
-		th-lift-0.8.4_2 \
+		th-lift-0.8.4_3 \
 		th-lift-instances-0.1.20 \
-		th-orphans-0.13.14_3 \
+		th-orphans-0.13.14_4 \
 		th-reify-many-0.1.10 \
 		th-utilities-0.2.5.0 \
 		these-1.2.1_1 \
@@ -430,7 +429,7 @@ USE_CABAL=	Cabal-3.12.1.0 \
 		vty-unix-0.1.0.0_1 \
 		wai-3.2.4 \
 		warp-3.4.2 \
-		wherefrom-compat-0.1.1.1 \
+		wherefrom-compat-0.1.1.1_1 \
 		with-utf8-1.1.0.0_1 \
 		witherable-0.5_1 \
 		wl-pprint-annotated-0.1.0.1_3 \
