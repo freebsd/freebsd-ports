@@ -49,5 +49,4 @@ usr/share/licenses/qt5-qtmultimedia/LICENSE.GPL2
 usr/share/licenses/qt5-qtmultimedia/LICENSE.GPL3
 usr/share/licenses/qt5-qtmultimedia/LICENSE.GPL3-EXCEPT
 usr/share/licenses/qt5-qtmultimedia/LICENSE.LGPL3
-@dir usr/lib/cmake/Qt5MultimediaWidgets
 @dir usr/lib64/cmake/Qt5MultimediaWidgets
