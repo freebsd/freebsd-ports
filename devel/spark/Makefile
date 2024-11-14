@@ -15,7 +15,7 @@ LICENSE=	APACHE20
 
 BROKEN_armv6=	fails to build: maven-assembly-plugin: Failed to retrieve numeric file attributes
 BROKEN_armv7=	fails to build: maven-assembly-plugin: Failed to retrieve numeric file attributes
-ROKEN_i386=	not enough memory on this architecture to build the port
+BROKEN_i386=	not enough memory on this architecture to build the port
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libsnappyjava.so:archivers/snappy-java \
 		bash:shells/bash \
