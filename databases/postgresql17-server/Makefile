@@ -1,5 +1,5 @@
 PORTNAME?=	postgresql
-DISTVERSION?=	17.0
+DISTVERSION?=	17.1
 # PORTREVISION must be ?= otherwise, all slave ports get this PORTREVISION and
 # not their own.  Probably best to keep it at ?=0 when reset here too.
 PORTREVISION?=	0
@@ -72,25 +72,12 @@ GROUPS=	${PG_GROUP}
 SUB_FILES+=	502.pgsql
 .endif
 
-OPTIONS_SUB=	yes
-
-.if defined(CLIENT_ONLY)
-OPTIONS_DEFINE+=LIBEDIT DOCS
-LIBEDIT_DESC=	Use non-GPL libedit instead of readline
-LIBEDIT_CONFIGURE_ON+=--with-libedit-preferred
-LIBEDIT_USES=		libedit
-LIBEDIT_USES_OFF=	readline
-BUILD_DEPENDS+=	docbook-xml>0:textproc/docbook-xml \
-		docbook-xsl>=0:textproc/docbook-xsl \
-		xmllint:textproc/libxml2 \
-		xsltproc:textproc/libxslt
-.else
 MAKE_ENV+=	PATH=${PREFIX}/bin:${PATH}
 CONFIGURE_ENV+=	PATH=${PREFIX}/bin:${PATH}
-.endif
 
 .if defined(SERVER_ONLY)
 OPTIONS_DEFINE=	DTRACE LDAP TZDATA XML DOCS
+OPTIONS_DEFAULT+=XML
 LDAP_DESC=	Build with LDAP authentication support
 TZDATA_DESC=	Use internal timezone database
 XML_DESC=	Build with XML data type
@@ -132,7 +119,7 @@ CONFIGURE_ARGS+=	--without-icu
 
 
 .if !defined(SLAVE_ONLY)
-OPTIONS_DEFINE+=	NLS PAM GSSAPI OPTIMIZED_CFLAGS DEBUG DOCS
+OPTIONS_DEFINE+=	NLS PAM GSSAPI OPTIMIZED_CFLAGS DEBUG DOCS SSL
 KRB5_DESC=		Build with kerberos provider support
 NLS_DESC=		Use internationalized messages
 PAM_DESC=		Build with PAM Support
@@ -140,8 +127,6 @@ MIT_KRB5_DESC=		Build with MIT kerberos support
 HEIMDAL_KRB5_DESC=	Builds with Heimdal kerberos
 GSSAPI_DESC=		Build with GSSAPI support
 OPTIMIZED_CFLAGS_DESC=	Builds with compiler optimizations (-O3)
-
-OPTIONS_DEFINE+=	SSL
 SSL_DESC=		Build with OpenSSL support
 
 OPTIONS_DEFAULT+=	SSL
