@@ -48,11 +48,11 @@ etc/bash_completion.d/westcos-tool
 @sample etc/opensc.conf.sample
 lib/libopensc.a
 lib/libopensc.so
-lib/libopensc.so.11
-lib/libopensc.so.11.0.2
+lib/libopensc.so.12
+lib/libopensc.so.12.0.1
 %%SM%%lib/libsmm-local.so
-%%SM%%lib/libsmm-local.so.11
-%%SM%%lib/libsmm-local.so.11.0.2
+%%SM%%lib/libsmm-local.so.12
+%%SM%%lib/libsmm-local.so.12.0.1
 lib/onepin-opensc-pkcs11.so
 lib/opensc-pkcs11.so
 lib/pkcs11-spy.so
