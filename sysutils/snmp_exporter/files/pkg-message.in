@@ -10,4 +10,43 @@ To run snmp_exporter, set the snmp_exporter_enable="YES" rcvar
 and point your prometheus instance at port 9116.
 EOM
 }
+{ type: upgrade
+  maximum_version: "0.28.0"
+  message: <<EOM
+BREAKING CHANGES:
+
+In snmp_exporter 0.28.0 (actually, since 0.23.0 upstream), the configuration
+format for authentication has changed.  The previous configuration will not
+work and must be updated.  Please refer to the upstream documentation on how to
+migrate:
+
+    https://github.com/prometheus/snmp_exporter/blob/main/auth-split-migration.md
+
+Alternatively, if you want to continue using your existing configuration,
+install the 'sysutils/snmp_exporter20' port instead, which contains the older
+0.20.0 version.
+
+---
+
+In snmp_exporter 0.27.0, breaking changes were made affecting the 'synology',
+'ddwrt' and 'kemp_loadmaster' modules.  For migration instructions, see:
+
+    https://github.com/prometheus/snmp_exporter/releases/tag/v0.27.0
+
+---
+
+In snmp_exporter 0.28.0, the sysUpTime metric has been removed from the if_mib
+module.  For migration instructions, see:
+
+    https://github.com/prometheus/snmp_exporter/releases/tag/v0.28.0
+
+---
+
+(FreeBSD-specific) Since 0.28.0, the port no longer patches the generator to
+hardcode ${PREFIX}/etc in the paths used by snmp_exporter_generator.  If you
+were relying on this behaviour, you should update your scripts to specify the
+full pathname.
+
+EOM
+}
 ]

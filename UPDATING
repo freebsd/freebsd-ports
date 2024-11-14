@@ -5,6 +5,36 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20250315:
+  AFFECTS: users of sysutils/snmp_exporter
+  AUTHOR: lexi@hemlock.eden.le-fay.org
+
+  BREAKING CHANGE: The new version of sysutils/snmp_exporter (0.28.0)
+  introduces several breaking changes.  If you don't want to migrate yet,
+  switch to the new port sysutils/snmp_exporter20 which contains the previous
+  version (0.20.0).
+
+  1. The exporter uses a new configuration file format for SNMP authentication,
+  and configurations from the previous version will no longer work.  This
+  applies regardless of whether you use the configuration generator or write
+  the configuration by hand.
+
+  For migration instructions, see:
+    https://github.com/prometheus/snmp_exporter/blob/main/auth-split-migration.md
+
+  2. Breaking changes were made affecting the 'synology', 'ddwrt' and
+  'kemp_loadmaster' modules.  For migration instructions, see:
+    https://github.com/prometheus/snmp_exporter/releases/tag/v0.27.0
+
+  3. The sysUpTime metric has been removed from the if_mib module.  For
+  migration instructions, see:
+    https://github.com/prometheus/snmp_exporter/releases/tag/v0.28.0
+
+  4. (FreeBSD-specific) The port no longer patches the generator to hardcode
+  ${PREFIX}/etc in the paths used by snmp_exporter_generator.  If you were
+  relying on this behaviour, you should update your scripts to specify the full
+  pathname.
+
 20250312:
   AFFECTS: users of net/samba4{19,20}
   AUTHOR: michaelo@FreeBSD.org
