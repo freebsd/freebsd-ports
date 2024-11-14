@@ -1,7 +1,6 @@
 PORTNAME=	twitch-tui
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.6.16
-PORTREVISION=	3
+DISTVERSION=	2.6.17
 CATEGORIES=	net-p2p
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -23,6 +22,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		adler-1.0.2 \
 		ahash-0.8.11 \
 		aho-corasick-1.1.3 \
+		aligned-vec-0.5.0 \
 		allocator-api2-0.2.18 \
 		android-tzdata-0.1.1 \
 		android_system_properties-0.1.5 \
@@ -31,22 +31,32 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		anstyle-parse-0.2.5 \
 		anstyle-query-1.1.1 \
 		anstyle-wincon-3.0.4 \
+		anyhow-1.0.92 \
+		arbitrary-1.4.0 \
+		arg_enum_proc_macro-0.3.4 \
+		arrayvec-0.7.6 \
 		atomic-waker-1.1.2 \
 		autocfg-1.3.0 \
+		av1-grain-0.2.3 \
+		avif-serialize-0.8.2 \
 		backtrace-0.3.71 \
 		base64-0.22.1 \
 		bit_field-0.10.2 \
 		bitflags-1.3.2 \
 		bitflags-2.6.0 \
+		bitstream-io-2.5.3 \
 		block2-0.5.1 \
+		built-0.7.5 \
 		bumpalo-3.16.0 \
 		bytemuck-1.17.0 \
 		byteorder-1.5.0 \
+		byteorder-lite-0.1.0 \
 		bytes-1.7.1 \
 		cassowary-0.3.0 \
 		castaway-0.2.3 \
 		cc-1.1.13 \
 		cesu8-1.1.0 \
+		cfg-expr-0.15.8 \
 		cfg-if-1.0.0 \
 		cfg_aliases-0.1.1 \
 		chrono-0.4.38 \
@@ -135,38 +145,53 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		iana-time-zone-haiku-0.1.2 \
 		ident_case-1.0.1 \
 		idna-0.5.0 \
-		image-0.24.9 \
+		image-0.25.5 \
+		image-webp-0.2.0 \
+		imgref-1.11.0 \
 		indenter-0.3.3 \
 		indexmap-1.9.3 \
 		indexmap-2.4.0 \
 		instability-0.3.2 \
+		interpolate_name-0.2.4 \
 		ipnet-2.9.0 \
 		irc-1.0.0 \
 		irc-proto-1.0.0 \
 		is_terminal_polyfill-1.70.1 \
+		itertools-0.12.1 \
 		itertools-0.13.0 \
 		itoa-1.0.11 \
 		jni-0.21.1 \
 		jni-sys-0.3.0 \
+		jobserver-0.1.32 \
 		jpeg-decoder-0.3.1 \
 		js-sys-0.3.70 \
 		lazy_static-1.5.0 \
 		lebe-0.5.2 \
 		libc-0.2.156 \
-		libwebp-sys2-0.1.9 \
+		libfuzzer-sys-0.4.7 \
 		linux-raw-sys-0.4.14 \
 		lock_api-0.4.12 \
 		log-0.4.22 \
+		loop9-0.1.5 \
 		lru-0.12.4 \
+		maybe-rayon-0.1.1 \
 		memchr-2.7.4 \
 		mime-0.3.17 \
+		minimal-lexical-0.2.1 \
 		miniz_oxide-0.7.4 \
 		mio-1.0.2 \
 		native-tls-0.2.12 \
 		ndk-context-0.1.1 \
+		new_debug_unreachable-1.0.6 \
 		nibble_vec-0.1.0 \
 		nix-0.28.0 \
+		nom-7.1.3 \
+		noop_proc_macro-0.3.0 \
+		num-bigint-0.4.6 \
 		num-conv-0.1.0 \
+		num-derive-0.4.2 \
+		num-integer-0.1.46 \
+		num-rational-0.4.2 \
 		num-traits-0.2.19 \
 		objc-sys-0.3.5 \
 		objc2-0.5.2 \
@@ -190,11 +215,20 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		pkg-config-0.3.30 \
 		png-0.17.13 \
 		powerfmt-0.2.0 \
+		ppv-lite86-0.2.20 \
 		proc-macro2-1.0.86 \
+		profiling-1.0.16 \
+		profiling-procmacros-1.0.16 \
 		qoi-0.4.1 \
+		quick-error-2.0.1 \
 		quote-1.0.36 \
 		radix_trie-0.2.1 \
+		rand-0.8.5 \
+		rand_chacha-0.3.1 \
+		rand_core-0.6.4 \
 		ratatui-0.28.0 \
+		rav1e-0.7.1 \
+		ravif-0.11.11 \
 		rayon-1.10.0 \
 		rayon-core-1.12.1 \
 		redox_syscall-0.5.3 \
@@ -202,6 +236,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		regex-automata-0.4.7 \
 		regex-syntax-0.8.4 \
 		reqwest-0.12.5 \
+		rgb-0.8.50 \
 		ring-0.17.8 \
 		rustc-demangle-0.1.24 \
 		rustix-0.38.34 \
@@ -231,6 +266,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		signal-hook-mio-0.2.4 \
 		signal-hook-registry-1.4.2 \
 		simd-adler32-0.3.7 \
+		simd_helpers-0.1.0 \
 		slab-0.4.9 \
 		smallvec-1.13.2 \
 		smawk-0.3.2 \
@@ -245,6 +281,8 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		sync_wrapper-1.0.1 \
 		system-configuration-0.5.1 \
 		system-configuration-sys-0.5.0 \
+		system-deps-6.2.2 \
+		target-lexicon-0.12.16 \
 		tempfile-3.12.0 \
 		textwrap-0.16.1 \
 		thiserror-1.0.63 \
@@ -285,8 +323,10 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		untrusted-0.9.0 \
 		url-2.5.2 \
 		utf8parse-0.2.2 \
+		v_frame-0.3.8 \
 		valuable-0.1.0 \
 		vcpkg-0.2.15 \
+		version-compare-0.2.0 \
 		version_check-0.9.5 \
 		walkdir-2.5.0 \
 		want-0.3.1 \
@@ -299,7 +339,6 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		wasm-bindgen-shared-0.2.93 \
 		web-sys-0.3.70 \
 		webbrowser-1.0.1 \
-		webp-animation-0.9.0 \
 		weezl-0.1.8 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
@@ -341,7 +380,9 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		zerocopy-0.7.35 \
 		zerocopy-derive-0.7.35 \
 		zeroize-1.8.1 \
-		zune-inflate-0.2.54
+		zune-core-0.4.12 \
+		zune-inflate-0.2.54 \
+		zune-jpeg-0.4.13
 
 OPENSSLINC=	/usr/include
 OPENSSLLIB=	/usr/lib
