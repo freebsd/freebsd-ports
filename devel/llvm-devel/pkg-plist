@@ -2675,6 +2675,7 @@ llvm-devel/include/llvm/Analysis/InstructionPrecedenceTracking.h
 llvm-devel/include/llvm/Analysis/InstructionSimplify.h
 llvm-devel/include/llvm/Analysis/InteractiveModelRunner.h
 llvm-devel/include/llvm/Analysis/IteratedDominanceFrontier.h
+llvm-devel/include/llvm/Analysis/LastRunTrackingAnalysis.h
 llvm-devel/include/llvm/Analysis/LazyBlockFrequencyInfo.h
 llvm-devel/include/llvm/Analysis/LazyBranchProbabilityInfo.h
 llvm-devel/include/llvm/Analysis/LazyCallGraph.h
@@ -2903,6 +2904,7 @@ llvm-devel/include/llvm/CodeGen/GlobalISel/MachineIRBuilder.h
 llvm-devel/include/llvm/CodeGen/GlobalISel/RegBankSelect.h
 llvm-devel/include/llvm/CodeGen/GlobalISel/Utils.h
 llvm-devel/include/llvm/CodeGen/GlobalMerge.h
+llvm-devel/include/llvm/CodeGen/GlobalMergeFunctions.h
 llvm-devel/include/llvm/CodeGen/HardwareLoops.h
 llvm-devel/include/llvm/CodeGen/ISDOpcodes.h
 llvm-devel/include/llvm/CodeGen/IndirectBrExpand.h
@@ -3410,11 +3412,13 @@ llvm-devel/include/llvm/ExecutionEngine/JITSymbol.h
 llvm-devel/include/llvm/ExecutionEngine/MCJIT.h
 llvm-devel/include/llvm/ExecutionEngine/OProfileWrapper.h
 llvm-devel/include/llvm/ExecutionEngine/ObjectCache.h
+llvm-devel/include/llvm/ExecutionEngine/Orc/AbsoluteSymbols.h
 llvm-devel/include/llvm/ExecutionEngine/Orc/COFFPlatform.h
 llvm-devel/include/llvm/ExecutionEngine/Orc/COFFVCRuntimeSupport.h
 llvm-devel/include/llvm/ExecutionEngine/Orc/CompileOnDemandLayer.h
 llvm-devel/include/llvm/ExecutionEngine/Orc/CompileUtils.h
 llvm-devel/include/llvm/ExecutionEngine/Orc/Core.h
+llvm-devel/include/llvm/ExecutionEngine/Orc/CoreContainers.h
 llvm-devel/include/llvm/ExecutionEngine/Orc/DebugObjectManagerPlugin.h
 llvm-devel/include/llvm/ExecutionEngine/Orc/DebugUtils.h
 llvm-devel/include/llvm/ExecutionEngine/Orc/Debugging/DebugInfoSupport.h
@@ -3450,6 +3454,7 @@ llvm-devel/include/llvm/ExecutionEngine/Orc/MachOBuilder.h
 llvm-devel/include/llvm/ExecutionEngine/Orc/MachOPlatform.h
 llvm-devel/include/llvm/ExecutionEngine/Orc/Mangling.h
 llvm-devel/include/llvm/ExecutionEngine/Orc/MapperJITLinkMemoryManager.h
+llvm-devel/include/llvm/ExecutionEngine/Orc/MaterializationUnit.h
 llvm-devel/include/llvm/ExecutionEngine/Orc/MemoryMapper.h
 llvm-devel/include/llvm/ExecutionEngine/Orc/ObjectFileInterface.h
 llvm-devel/include/llvm/ExecutionEngine/Orc/ObjectLinkingLayer.h
@@ -4415,7 +4420,6 @@ llvm-devel/include/llvm/Transforms/Scalar/Sink.h
 llvm-devel/include/llvm/Transforms/Scalar/SpeculativeExecution.h
 llvm-devel/include/llvm/Transforms/Scalar/StraightLineStrengthReduce.h
 llvm-devel/include/llvm/Transforms/Scalar/StructurizeCFG.h
-llvm-devel/include/llvm/Transforms/Scalar/TLSVariableHoist.h
 llvm-devel/include/llvm/Transforms/Scalar/TailRecursionElimination.h
 llvm-devel/include/llvm/Transforms/Scalar/WarnMissedTransforms.h
 llvm-devel/include/llvm/Transforms/Utils.h
@@ -6374,11 +6378,20 @@ llvm-devel/include/llvm/XRay/YAMLXRayRecord.h
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_MAJOR%%/include/adcintrin.h
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_MAJOR%%/include/adxintrin.h
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_MAJOR%%/include/altivec.h
+%%CLANG%%llvm-devel/lib/clang/%%LLVM_MAJOR%%/include/amdgpuintrin.h
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_MAJOR%%/include/ammintrin.h
+%%CLANG%%llvm-devel/lib/clang/%%LLVM_MAJOR%%/include/amxavx512intrin.h
+%%CLANG%%llvm-devel/lib/clang/%%LLVM_MAJOR%%/include/amxbf16transposeintrin.h
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_MAJOR%%/include/amxcomplexintrin.h
+%%CLANG%%llvm-devel/lib/clang/%%LLVM_MAJOR%%/include/amxcomplextransposeintrin.h
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_MAJOR%%/include/amxfp16intrin.h
+%%CLANG%%llvm-devel/lib/clang/%%LLVM_MAJOR%%/include/amxfp16transposeintrin.h
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_MAJOR%%/include/amxfp8intrin.h
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_MAJOR%%/include/amxintrin.h
+%%CLANG%%llvm-devel/lib/clang/%%LLVM_MAJOR%%/include/amxmovrsintrin.h
+%%CLANG%%llvm-devel/lib/clang/%%LLVM_MAJOR%%/include/amxmovrstransposeintrin.h
+%%CLANG%%llvm-devel/lib/clang/%%LLVM_MAJOR%%/include/amxtf32intrin.h
+%%CLANG%%llvm-devel/lib/clang/%%LLVM_MAJOR%%/include/amxtf32transposeintrin.h
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_MAJOR%%/include/amxtransposeintrin.h
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_MAJOR%%/include/arm64intr.h
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_MAJOR%%/include/arm_acle.h
@@ -6467,6 +6480,7 @@ llvm-devel/include/llvm/XRay/YAMLXRayRecord.h
 %%COMPILER_RT%%llvm-devel/lib/clang/%%LLVM_MAJOR%%/include/fuzzer/FuzzedDataProvider.h
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_MAJOR%%/include/fxsrintrin.h
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_MAJOR%%/include/gfniintrin.h
+%%CLANG%%llvm-devel/lib/clang/%%LLVM_MAJOR%%/include/gpuintrin.h
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_MAJOR%%/include/hexagon_circ_brev_intrinsics.h
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_MAJOR%%/include/hexagon_protos.h
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_MAJOR%%/include/hexagon_types.h
@@ -6504,9 +6518,11 @@ llvm-devel/include/llvm/XRay/YAMLXRayRecord.h
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_MAJOR%%/include/movdirintrin.h
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_MAJOR%%/include/movrs_avx10_2_512intrin.h
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_MAJOR%%/include/movrs_avx10_2intrin.h
+%%CLANG%%llvm-devel/lib/clang/%%LLVM_MAJOR%%/include/movrsintrin.h
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_MAJOR%%/include/msa.h
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_MAJOR%%/include/mwaitxintrin.h
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_MAJOR%%/include/nmmintrin.h
+%%CLANG%%llvm-devel/lib/clang/%%LLVM_MAJOR%%/include/nvptxintrin.h
 %%OPENMP%%llvm-devel/lib/clang/%%LLVM_MAJOR%%/include/omp-tools.h
 %%OPENMP%%llvm-devel/lib/clang/%%LLVM_MAJOR%%/include/omp.h
 %%OPENMP%%llvm-devel/lib/clang/%%LLVM_MAJOR%%/include/ompt-multiplex.h
@@ -7395,7 +7411,7 @@ llvm-devel/lib/libRemarks.so.%%LLVM_MAJOR_MINOR%%git
 %%CLANG%%llvm-devel/lib/libscanbuild/resources/selectable.js
 %%CLANG%%llvm-devel/lib/libscanbuild/resources/sorttable.js
 %%CLANG%%llvm-devel/lib/libscanbuild/shell.py
-%%LLDB%%llvm-devel/lib/lua/5.3/lldb.so
+%%LLDB%%llvm-devel/lib/lua/5.4/lldb.so
 %%MLIR%%llvm-devel/lib/objects-Release/obj.MLIRCAPIAMDGPU/AMDGPU.cpp.o
 %%MLIR%%llvm-devel/lib/objects-Release/obj.MLIRCAPIArith/Arith.cpp.o
 %%MLIR%%llvm-devel/lib/objects-Release/obj.MLIRCAPIAsync/Async.cpp.o
