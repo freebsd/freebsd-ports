@@ -539,6 +539,7 @@
     SUBDIR += linux-rl9-cairo-gobject
     SUBDIR += linux-rl9-dri
     SUBDIR += linux-rl9-gdk-pixbuf2
+    SUBDIR += linux-rl9-graphene
     SUBDIR += linux-rl9-graphite2
     SUBDIR += linux-rl9-jasper
     SUBDIR += linux-rl9-jbigkit

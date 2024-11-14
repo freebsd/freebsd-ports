@@ -85,6 +85,7 @@ _linux_${linux_ARGS}_fribidi=		linux-${linux_ARGS}-fribidi>0:converters/linux-${
 _linux_${linux_ARGS}_gdkpixbuf2=	linux-${linux_ARGS}-gdk-pixbuf2>0:graphics/linux-${linux_ARGS}-gdk-pixbuf2
 _linux_rl9_gnupg=			linux-rl9-gnupg2>0:security/linux-rl9-gnupg
 _linux_${linux_ARGS}_gnutls=		linux-${linux_ARGS}-gnutls>0:security/linux-${linux_ARGS}-gnutls
+_linux_rl9_graphene=			linux-rl9-graphene>0:graphics/linux-rl9-graphene
 _linux_${linux_ARGS}_graphite2=		linux-${linux_ARGS}-graphite2>0:graphics/linux-${linux_ARGS}-graphite2
 _linux_${linux_ARGS}_gsm=		linux-${linux_ARGS}-gsm>0:audio/linux-${linux_ARGS}-gsm
 _linux_rl9_gstreamer1=			linux-rl9-gstreamer1>0:multimedia/linux-rl9-gstreamer1
