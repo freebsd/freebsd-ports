@@ -1,6 +1,6 @@
 PORTNAME=	sendmail
 PORTVERSION=	8.18.1
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.sendmail.org/pub/sendmail/
 DISTNAME=	${PORTNAME}.${PORTVERSION}
@@ -80,6 +80,7 @@ CYRUSLOOKUP_IMPLIES=	SOCKETMAP
 SMTPUTF8_LIB_DEPENDS=	libidn2.so:dns/libidn2 libicui18n.so:devel/icu
 MTA_STS_IMPLIES=	SOCKETMAP TLS
 TLS_CERT_CHAIN_IMPLIES=	TLS
+BLACKLISTD_EXTRA_PATCHES= ${FILESDIR}/extra-patch-proto.m4
 
 .include <bsd.port.options.mk>
 
