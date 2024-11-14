@@ -2,6 +2,7 @@ PORTNAME=	b2
 DISTVERSIONPREFIX=	v
 DISTVERSION=	4.2.0
 CATEGORIES=	devel
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	leres@FreeBSD.org
 COMMENT=	Command Line Interface for Backblaze's B2 storage service
@@ -25,7 +26,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}argcomplete>=2:devel/py-argcomplete@${PY_FLA
 		${PYTHON_PKGNAMEPREFIX}tqdm>=4.65.0:misc/py-tqdm@${PY_FLAVOR}
 
 USES=		python
-USE_PYTHON=	autoplist concurrent pep517
+USE_PYTHON=	autoplist concurrent optsuffix pep517
 
 CONFLICTS_INSTALL=	boost_build
 
