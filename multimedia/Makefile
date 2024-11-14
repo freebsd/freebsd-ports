@@ -204,6 +204,7 @@
     SUBDIR += libzen
     SUBDIR += linux-c7-libtheora
     SUBDIR += linux-c7-libv4l
+    SUBDIR += linux-rl9-aom
     SUBDIR += linux-rl9-ffmpeg
     SUBDIR += linux-rl9-gstreamer1
     SUBDIR += linux-rl9-gstreamer1-libav

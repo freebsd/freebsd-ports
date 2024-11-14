@@ -56,6 +56,7 @@ _linux_${linux_ARGS}_alsa-lib-devel=	linux-${linux_ARGS}-alsa-lib-devel>0:audio/
 _linux_${linux_ARGS}_alsa-plugins-oss=	linux-${linux_ARGS}-alsa-plugins-oss>0:audio/linux-${linux_ARGS}-alsa-plugins-oss
 _linux_${linux_ARGS}_alsa-plugins-pulseaudio=linux-${linux_ARGS}-alsa-plugins-pulseaudio>0:audio/linux-${linux_ARGS}-alsa-plugins-pulseaudio
 _linux_${linux_ARGS}_alsalib=		linux-${linux_ARGS}-alsa-lib>0:audio/linux-${linux_ARGS}-alsa-lib
+_linux_rl9_aom=				linux-rl9-aom-libs>0:multimedia/linux-rl9-aom
 _linux_${linux_ARGS}_at-spi2-atk=	linux-${linux_ARGS}-at-spi2-atk>0:accessibility/linux-${linux_ARGS}-at-spi2-atk
 _linux_${linux_ARGS}_at-spi2-core=	linux-${linux_ARGS}-at-spi2-core>0:accessibility/linux-${linux_ARGS}-at-spi2-core
 _linux_${linux_ARGS}_atk=		linux-${linux_ARGS}-atk>0:accessibility/linux-${linux_ARGS}-atk
