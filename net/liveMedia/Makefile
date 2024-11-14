@@ -1,5 +1,5 @@
 PORTNAME=	liveMedia
-DISTVERSION=	2024.09.25
+DISTVERSION=	2024.10.31
 PORTEPOCH=	2
 CATEGORIES=	net devel
 MASTER_SITES=	https://download.videolan.org/contrib/live555/
