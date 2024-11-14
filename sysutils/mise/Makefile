@@ -1,6 +1,6 @@
 PORTNAME=	mise
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2024.11.8
+DISTVERSION=	2024.11.10
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -49,7 +49,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		bit-vec-0.7.0 \
 		bitflags-2.6.0 \
 		block-buffer-0.10.4 \
-		bstr-1.10.0 \
+		bstr-1.11.0 \
 		built-0.7.5 \
 		bumpalo-3.16.0 \
 		bytecount-0.6.8 \
@@ -59,7 +59,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		bzip2-sys-0.1.11+1.0.8 \
 		calm_io-0.1.1 \
 		calmio_filters-0.1.0 \
-		cc-1.1.37 \
+		cc-1.2.0 \
 		cfg-if-1.0.0 \
 		cfg_aliases-0.2.1 \
 		chrono-0.4.38 \
@@ -67,10 +67,10 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		chrono-tz-build-0.3.0 \
 		ci_info-0.14.14 \
 		cipher-0.4.4 \
-		clap-4.5.20 \
-		clap_builder-4.5.20 \
+		clap-4.5.21 \
+		clap_builder-4.5.21 \
 		clap_derive-4.5.18 \
-		clap_lex-0.7.2 \
+		clap_lex-0.7.3 \
 		clap_mangen-0.2.24 \
 		color-eyre-0.6.3 \
 		color-print-0.3.7 \
@@ -190,11 +190,10 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		indenter-0.3.3 \
 		indexmap-1.9.3 \
 		indexmap-2.6.0 \
-		indicatif-0.17.8 \
+		indicatif-0.17.9 \
 		indoc-2.0.5 \
 		inout-0.1.3 \
 		insta-1.41.1 \
-		instant-0.1.13 \
 		ipnet-2.10.1 \
 		is_terminal_polyfill-1.70.1 \
 		itertools-0.13.0 \
@@ -289,8 +288,8 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		proc-macro-error-attr-1.0.4 \
 		proc-macro2-1.0.89 \
 		quick-xml-0.23.1 \
-		quinn-0.11.5 \
-		quinn-proto-0.11.8 \
+		quinn-0.11.6 \
+		quinn-proto-0.11.9 \
 		quinn-udp-0.5.7 \
 		quote-1.0.37 \
 		rand-0.8.5 \
@@ -421,6 +420,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		unicode-ident-1.0.13 \
 		unicode-segmentation-1.12.0 \
 		unicode-width-0.1.11 \
+		unicode-width-0.2.0 \
 		unsafe-libyaml-0.2.11 \
 		untrusted-0.9.0 \
 		url-2.5.3 \
@@ -447,6 +447,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		wasm-bindgen-macro-support-0.2.95 \
 		wasm-bindgen-shared-0.2.95 \
 		web-sys-0.3.72 \
+		web-time-1.1.0 \
 		webpki-roots-0.26.6 \
 		which-6.0.3 \
 		which-7.0.0 \
