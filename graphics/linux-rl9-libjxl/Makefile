@@ -1,0 +1,28 @@
+PORTNAME=	libjxl
+PORTVERSION=	0.7.0
+DISTVERSIONSUFFIX=	-1.el9
+MASTER_SITES=	EPEL9
+#PKGNAMESUFFIX=	-libs
+CATEGORIES=	graphics linux
+
+MAINTAINER=	emulation@FreeBSD.org
+COMMENT=	JPEG XL reference encoder/decoder
+WWW=		https://jpeg.org/jpegxl/
+
+LICENSE=	BSD2CLAUSE
+
+USES=		linux:rl9
+USE_LDCONFIG=	yes
+USE_LINUX=	jpeg png tiff
+USE_LINUX_RPM=	yes
+
+LIB_DISTNAMES=	${PORTNAME}-${DISTVERSIONFULL}
+SRC_DISTFILES=	jpegxl-${DISTVERSIONFULL}${SRC_SUFX}:SOURCE
+
+CONFLICTS=	linux-c7-${PORTNAME}
+DESCR=		${PORTSDIR}/${PKGCATEGORY}/${PORTNAME}/pkg-descr
+DOCSDIR=	${PREFIX}/usr/share/doc/${PORTNAME}${PKGNAMESUFFIX}
+
+OPTIONS_DEFINE=	DOCS
+
+.include <bsd.port.mk>

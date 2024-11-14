@@ -547,6 +547,7 @@
     SUBDIR += linux-rl9-libdrm
     SUBDIR += linux-rl9-libepoxy
     SUBDIR += linux-rl9-libglvnd
+    SUBDIR += linux-rl9-libjxl
     SUBDIR += linux-rl9-librsvg2
     SUBDIR += linux-rl9-openjpeg
     SUBDIR += linux-rl9-png
