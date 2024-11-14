@@ -1,6 +1,6 @@
 PORTNAME=	timescaledb-tune
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.17.1
+DISTVERSION=	0.18.0
 CATEGORIES=	databases
 
 MAINTAINER=	kbowling@FreeBSD.org
