@@ -1,3 +1,38 @@
+  <vuln vid="6b591e05-971c-4077-8ae4-1310554971b7">
+    <topic>electron31 -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>electron31</name>
+	<range><lt>31.7.4</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Electron developers report:</p>
+	<blockquote cite="https://github.com/electron/electron/releases/tag/v31.7.4">
+	  <p>This update fixes the following vulnerabilities:</p>
+	  <ul>
+	    <li>Security: backported fix for CVE-2024-10231.</li>
+	    <li>Security: backported fix for CVE-2024-10229.</li>
+	    <li>Security: backported fix for CVE-2024-10487.</li>
+	  </ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2024-10231</cvename>
+      <url>https://github.com/advisories/GHSA-3wfx-mj93-vf8v</url>
+      <cvename>CVE-2024-10229</cvename>
+      <url>https://github.com/advisories/GHSA-3hjp-j522-245f</url>
+      <cvename>CVE-2024-10487</cvename>
+      <url>https://github.com/advisories/GHSA-h72p-7xmw-gpp8</url>
+    </references>
+    <dates>
+      <discovery>2024-11-12</discovery>
+      <entry>2024-11-14</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="1eb4d32c-a245-11ef-998c-2cf05da270f3">
     <topic>Gitlab -- vulnerabilities</topic>
     <affects>
