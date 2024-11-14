@@ -200,6 +200,7 @@ _linux_rl9_tcl86=			linux-rl9-tcl86>0:lang/linux-rl9-tcl86
 _linux_${linux_ARGS}_tcp_wrappers-libs=	linux-${linux_ARGS}-tcp_wrappers-libs>0:net/linux-${linux_ARGS}-tcp_wrappers-libs
 _linux_${linux_ARGS}_tiff=		linux-${linux_ARGS}-libtiff>0:graphics/linux-${linux_ARGS}-tiff
 _linux_c7_tk85=				linux-c7-tk85>0:x11-toolkits/linux-c7-tk85
+_linux_rl9_tk86=			linux-rl9-tk86>0:x11-toolkits/linux-rl9-tk86
 _linux_c7_trousers=			linux-c7-trousers>0:security/linux-c7-trousers
 _linux_c7_userspace-rcu=		linux-c7-userspace-rcu>0:sysutils/linux-c7-userspace-rcu
 _linux_rl9_vulkan=			linux-rl9-vulkan-loader>0:graphics/linux-rl9-vulkan

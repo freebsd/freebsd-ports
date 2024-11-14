@@ -1,0 +1,7 @@
+TIMESTAMP = 1731618293
+SHA256 (rocky/t/tk-8.6.10-9.el9.aarch64.rpm) = 8127affe03184158fe70d542a015f62d6db07cd6773fea8c3ccb4b6159c2cdf2
+SIZE (rocky/t/tk-8.6.10-9.el9.aarch64.rpm) = 1634790
+SHA256 (rocky/t/tk-8.6.10-9.el9.x86_64.rpm) = 82ad90c7cc5ae4e7e881e96877d4bbb11591533b7d90dc784ec1e99aa33300b2
+SIZE (rocky/t/tk-8.6.10-9.el9.x86_64.rpm) = 1636342
+SHA256 (rocky/t/tk-8.6.10-9.el9.src.rpm) = e36a514376c053f0ab5c187552f4a66c7ee6e8e42c089f6cdd9aab2079e679ee
+SIZE (rocky/t/tk-8.6.10-9.el9.src.rpm) = 4459951
