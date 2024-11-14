@@ -1,13 +1,13 @@
 PORTNAME=	gpaw
-DISTVERSION=	22.1.0
-PORTREVISION=	6
+DISTVERSION=	24.6.0
 CATEGORIES=	science python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	DFT and beyond within the projector-augmented wave method in chemistry
-WWW=		https://wiki.fysik.dtu.dk/gpaw/
+WWW=		https://wiki.fysik.dtu.dk/gpaw/ \
+		https://gitlab.com/gpaw/gpaw
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -20,7 +20,7 @@ LIB_DEPENDS=	libblas.so:math/blas \
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ase>0:science/py-ase@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}matplotlib>0:math/py-matplotlib@${PY_FLAVOR} \
 		${PYNUMPY} \
-		${PYTHON_PKGNAMEPREFIX}scipy>=0:science/py-scipy@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}scipy>0:science/py-scipy@${PY_FLAVOR} \
 		gpaw-setups>0:science/gpaw-setups
 
 USES=		gettext-runtime localbase python shebangfix
@@ -30,13 +30,10 @@ SHEBANG_FILES=	tools/*
 
 LDFLAGS=	-lmpi # otherwise: ImportError: /usr/local/lib/python3.8/site-packages/_gpaw.cpython-38.so: Undefined symbol "MPI_Comm_rank"
 
-post-patch:
-	@${REINPLACE_CMD} "s|'/usr/local/|'${LOCALBASE}/|" ${WRKSRC}/gpaw/__init__.py
-
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/_gpaw*.so
 
-do-test: install
+do-test: install # tests fail to run, see https://gitlab.com/gpaw/gpaw/-/issues/1273
 	@${ECHO} "== Performing a test calculation on one CPU =="
 	@gpaw test
 	@${ECHO} "== Performing a test calculation on 8 CPUs =="
