@@ -557,6 +557,7 @@
     SUBDIR += linux-rl9-qt5-qtsvg
     SUBDIR += linux-rl9-qt5-qtwayland
     SUBDIR += linux-rl9-shaderc
+    SUBDIR += linux-rl9-spirv-tools
     SUBDIR += linux-rl9-tiff
     SUBDIR += linux-rl9-vulkan
     SUBDIR += linux-rl9-wayland
