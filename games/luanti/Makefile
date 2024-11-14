@@ -1,5 +1,5 @@
-PORTNAME=	minetest
-PORTVERSION=	5.9.1
+PORTNAME=	luanti
+PORTVERSION=	5.10.0
 CATEGORIES=	games
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -14,6 +14,8 @@ LIB_DEPENDS=	libgmp.so:math/gmp \
 		libzstd.so:archivers/zstd
 
 USES=		cmake compiler:c++17-lang cpe iconv:wchar_t sqlite
+GH_ACCOUNT=	minetest
+GH_PROJECT=	minetest
 USE_GITHUB=	yes
 CMAKE_ARGS=	-DCUSTOM_EXAMPLE_CONF_DIR="${PREFIX}/etc" \
 CMAKE_ON=	ENABLE_SYSTEM_JSONCPP
@@ -22,6 +24,8 @@ CMAKE_OFF=	BUILD_DOCUMENTATION
 TEST_ENV=	${MAKE_ENV} LC_ALL=C.UTF-8
 
 LDFLAGS_i386=	-Wl,-znotext
+
+DATADIR=	${PREFIX}/share/luanti
 
 PORTDATA=	*
 PORTDOCS=	*
@@ -88,9 +92,9 @@ LIB_DEPENDS+=	libvorbis.so:audio/libvorbis \
 .endif
 
 .if ${PORT_OPTIONS:MSERVER}
-USE_RC_SUBR=	${PORTNAME}
-USERS=		${PORTNAME}
-GROUPS=		${PORTNAME}
+USE_RC_SUBR=	minetest
+USERS=		minetest
+GROUPS=		minetest
 .endif
 
 post-extract:
