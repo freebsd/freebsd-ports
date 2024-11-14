@@ -17,7 +17,7 @@ LIB_DEPENDS=	libexiv2.so:graphics/exiv2 \
 USES=		cmake compiler:c++11-lang desktop-file-utils jpeg kde:5 \
 		pkgconfig qt:5 shebangfix tar:xz xorg
 USE_KDE=	archive auth codecs completion config configwidgets coreaddons \
-		i18n iconthemes jobwidgets kio libkdcraw marble phonon purpose service solid \
+		i18n iconthemes jobwidgets kio libkdcraw phonon purpose service solid \
 		sonnet textwidgets widgetsaddons windowsystem xmlgui \
 		ecm:build
 USE_QT=		concurrent core dbus declarative gui location network \
@@ -26,9 +26,14 @@ USE_QT=		concurrent core dbus declarative gui location network \
 USE_XORG=	x11
 SHEBANG_FILES=	scripts/open-raw.pl scripts/kpa-backup.sh
 
-OPTIONS_DEFINE=	WEBENGINE
+OPTIONS_DEFINE=	MARBLE WEBENGINE
+OPTIONS_DEFAULT=MARBLE
 OPTIONS_DEFAULT_amd64=	WEBENGINE
 OPTIONS_DEFAULT_i386=	WEBENGINE
+
+MARBLE_DESC=	Virtual globe and world atlas
+MARBLE_USE=	kde=marble
+MARBLE_CMAKE_OFF=	-DMarble_FOUND:BOOL=OFF
 
 WEBENGINE_DESC=	Add dependency on qt5-webengine
 WEBENGINE_USE=	QT=webengine
