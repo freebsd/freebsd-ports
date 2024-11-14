@@ -1,7 +1,6 @@
 PORTNAME=	vst3sdk
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.7.7_build_19
-PORTREVISION=	1
+DISTVERSION=	3.7.12_build_20
 CATEGORIES=	audio
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -24,19 +23,19 @@ LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 		libxkbcommon.so:x11/libxkbcommon
 
 USES=		cmake compiler:c++14-lang gnome localbase:ldflags pkgconfig shebangfix xorg
-USE_GNOME=	cairo gtk30 gtkmm30
+USE_GNOME=	gtk30 gtkmm30
 USE_XORG=	ice sm x11 xcb xext
 USE_CXXSTD=	c++20 # otherwise the code in public.sdk/source/vst/hosting/module_linux.cpp uses the default value of __cplusplus=201703 and fails to use the correct #include <filesystem>
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	steinbergmedia
 GH_TUPLE=	\
-		steinbergmedia:vst3_base:ea2bac9:steinbergmedia_vst3_base/base \
-		steinbergmedia:vst3_cmake:bd2a55a:steinbergmedia_vst3_cmake/cmake \
-		steinbergmedia:vst3_doc:d5397c9:steinbergmedia_vst3_doc/doc \
-		steinbergmedia:vst3_pluginterfaces:bc5ff0f:steinbergmedia_vst3_pluginterfaces/pluginterfaces \
-		steinbergmedia:vst3_public_sdk:bbb0538:steinbergmedia_vst3_public_sdk/public.sdk \
-		steinbergmedia:vstgui:91c4105:steinbergmedia_vstgui/vstgui4
+		steinbergmedia:vst3_base:f0998e7:steinbergmedia_vst3_base/base \
+		steinbergmedia:vst3_cmake:2022b26:steinbergmedia_vst3_cmake/cmake \
+		steinbergmedia:vst3_doc:3c2097d:steinbergmedia_vst3_doc/doc \
+		steinbergmedia:vst3_pluginterfaces:151ecde:steinbergmedia_vst3_pluginterfaces/pluginterfaces \
+		steinbergmedia:vst3_public_sdk:3fce096:steinbergmedia_vst3_public_sdk/public.sdk \
+		steinbergmedia:vstgui:02eadc0:steinbergmedia_vstgui/vstgui4
 
 SHEBANG_FILES=	vstgui4/vstgui/uidescription/editing/createuidescdata.sh
 
