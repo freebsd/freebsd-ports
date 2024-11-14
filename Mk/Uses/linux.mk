@@ -196,6 +196,7 @@ _linux_${linux_ARGS}_sqlite3=		linux-${linux_ARGS}-sqlite>0:databases/linux-${li
 _linux_${linux_ARGS}_strace=		linux-${linux_ARGS}-strace>0:devel/linux-${linux_ARGS}-strace
 _linux_${linux_ARGS}_systemd-libs=	linux-${linux_ARGS}-systemd-libs>0:devel/linux-${linux_ARGS}-systemd-libs
 _linux_c7_tcl85=			linux-c7-tcl85>0:lang/linux-c7-tcl85
+_linux_rl9_tcl86=			linux-rl9-tcl86>0:lang/linux-rl9-tcl86
 _linux_${linux_ARGS}_tcp_wrappers-libs=	linux-${linux_ARGS}-tcp_wrappers-libs>0:net/linux-${linux_ARGS}-tcp_wrappers-libs
 _linux_${linux_ARGS}_tiff=		linux-${linux_ARGS}-libtiff>0:graphics/linux-${linux_ARGS}-tiff
 _linux_c7_tk85=				linux-c7-tk85>0:x11-toolkits/linux-c7-tk85
