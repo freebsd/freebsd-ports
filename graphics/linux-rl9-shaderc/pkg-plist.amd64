@@ -1,0 +1,9 @@
+usr/lib/.build-id/dd/a1a5df6beb3a6a37d74c9c6589c87004c4c29d
+usr/lib/.build-id/ec/2ea258f109f537e1605b2ab54bdc3c0febc58b
+usr/lib/libshaderc_shared.so.1
+usr/lib64/libshaderc_shared.so.1
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/CHANGES
+%%PORTDOCS%%%%DOCSDIR%%/CONTRIBUTORS
+%%PORTDOCS%%%%DOCSDIR%%/README.md
+usr/share/licenses/libshaderc/LICENSE

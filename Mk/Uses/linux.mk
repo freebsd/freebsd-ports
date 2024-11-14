@@ -189,6 +189,7 @@ _linux_c7_sdl12=			linux-c7-sdl>0:devel/linux-c7-sdl12
 _linux_c7_sdlimage=			linux-c7-sdl_image>0:graphics/linux-c7-sdl_image
 _linux_c7_sdlmixer=			linux-c7-sdl_mixer>0:audio/linux-c7-sdl_mixer
 _linux_c7_sdlttf=			linux-c7-sdl_ttf>0:graphics/linux-c7-sdl_ttf
+_linux_rl9_shaderc=			linux-rl9-shaderc>0:graphics/linux-rl9-shaderc
 _linux_${linux_ARGS}_sqlite3=		linux-${linux_ARGS}-sqlite>0:databases/linux-${linux_ARGS}-sqlite3
 _linux_${linux_ARGS}_strace=		linux-${linux_ARGS}-strace>0:devel/linux-${linux_ARGS}-strace
 _linux_${linux_ARGS}_systemd-libs=	linux-${linux_ARGS}-systemd-libs>0:devel/linux-${linux_ARGS}-systemd-libs
