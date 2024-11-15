@@ -79,6 +79,7 @@ install:
 	rt314 \
 	samba \
 	secure \
+	snort \
 	sonicwall \
 	spamassassin \
 	syslog \
@@ -98,6 +99,7 @@ install:
 	automount \
 	autorpm \
 	barracuda \
+	dropbear \
 	bfd \
 	cisco \
 	clam-update \
@@ -112,6 +114,7 @@ install:
 	dpkg \
 	emerge \
 	evtapplication \
+	evtmswindows \
 	evtsecurity \
 	evtsystem \
 	exim \
@@ -137,6 +140,7 @@ install:
 	named \
 	netopia \
 	netscreen \
+	nut \
 	oidentd \
 	openvpn \
 	pam \
@@ -169,6 +173,7 @@ install:
 	shaperd \
 	slon \
 	smartd \
+	snort \
 	sonicwall \
 	spamassassin \
 	sshd \

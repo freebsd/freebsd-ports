@@ -1,10 +1,9 @@
 PORTNAME=	logwatch
-PORTVERSION=	7.5.1
-PORTREVISION=	1
+DISTVERSION=	7.11
 CATEGORIES=	sysutils
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	trix@basement.net
+MAINTAINER=	trashcan@ellael.org
 COMMENT=	Log file analysis program
 WWW=		https://www.logwatch.org
 
@@ -13,6 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		perl5 shebangfix
 USE_PERL5=	run
+RUN_DEPENDS=	p5-HTML-HTML5-Entities>=0:textproc/p5-HTML-HTML5-Entities
 SHEBANG_FILES=	scripts/logwatch.pl
 PORTDOCS=	HOWTO-Customize-LogWatch README
 NO_BUILD=	yes
@@ -21,23 +21,14 @@ MAKE_ENV+=	SITE_PERL_REL=${SITE_PERL_REL}
 OPTIONS_DEFINE=	DOCS
 
 pre-configure:
-	@${CP} ${FILESDIR}/Makefile ${WRKSRC}
-
-post-patch:
 	${REINPLACE_CMD}  -E \
 	-e "s,/usr/share/logwatch,${LOCALBASE}," \
 	-e "s,/etc/logwatch,${ETCDIR}," \
-	-e 's,^eval "use lib.*,,' \
 	-e "s,.BaseDir/lib,${LIBEXECDIR}," \
-	-e 's,BaseDir/dist.conf,ConfigDir/defaults,' \
-	-e 's,BaseDir/default.conf,ConfigDir/defaults,' \
-	-e 's,ConfigDir/conf,ConfigDir,' \
 	-e "s,BaseDir/scripts/([^/]*)/,BaseDir/libexec/${PORTNAME}/defaults/\1/," \
 	-e "s,ConfigDir/scripts/([^/]*)/,BaseDir/libexec/${PORTNAME}/\1/," \
 	${WRKSRC}/scripts/logwatch.pl
-	${REINPLACE_CMD}  -E \
-	-e "s,/var/cache/logwatch,${LOCALBASE}/var/${PORTNAME}," \
-	${WRKSRC}/conf/logwatch.conf
+	@${CP} ${FILESDIR}/Makefile ${WRKSRC}
 
 post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
