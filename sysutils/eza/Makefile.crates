@@ -18,9 +18,10 @@ CARGO_CRATES=	addr2line-0.24.1 \
 		bitflags-1.3.2 \
 		bitflags-2.4.0 \
 		bumpalo-3.13.0 \
+		by_address-1.2.1 \
 		byteorder-1.4.3 \
 		cast-0.3.0 \
-		cc-1.0.79 \
+		cc-1.1.37 \
 		cfg-if-1.0.0 \
 		chrono-0.4.38 \
 		ciborium-0.2.1 \
@@ -66,12 +67,12 @@ CARGO_CRATES=	addr2line-0.24.1 \
 		is-terminal-0.4.9 \
 		itertools-0.10.5 \
 		itoa-1.0.9 \
-		jobserver-0.1.22 \
+		jobserver-0.1.32 \
 		js-sys-0.3.64 \
-		libc-0.2.161 \
+		libc-0.2.162 \
 		libgit2-sys-0.17.0+1.8.1 \
 		libredox-0.0.1 \
-		libz-sys-1.1.2 \
+		libz-sys-1.1.20 \
 		linux-raw-sys-0.4.11 \
 		locale-0.2.2 \
 		log-0.4.22 \
@@ -92,8 +93,8 @@ CARGO_CRATES=	addr2line-0.24.1 \
 		openssl-sys-0.9.61 \
 		option-ext-0.2.0 \
 		os_pipe-1.1.4 \
-		palette-0.7.5 \
-		palette_derive-0.7.5 \
+		palette-0.7.6 \
+		palette_derive-0.7.6 \
 		partition-identity-0.3.0 \
 		path-clean-1.0.1 \
 		percent-encoding-2.3.1 \
@@ -127,8 +128,8 @@ CARGO_CRATES=	addr2line-0.24.1 \
 		ryu-1.0.15 \
 		same-file-1.0.6 \
 		scopeguard-1.2.0 \
-		serde-1.0.214 \
-		serde_derive-1.0.214 \
+		serde-1.0.215 \
+		serde_derive-1.0.215 \
 		serde_json-1.0.107 \
 		serde_norway-0.9.39 \
 		serde_spanned-0.6.8 \
