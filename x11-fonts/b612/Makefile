@@ -11,7 +11,7 @@ LICENSE_COMB=	dual
 LICENSE_NAME_EDL=	Eclipse Distribution License
 LICENSE_FILE_EDL=	${WRKSRC}/edl-v10.html
 LICENSE_FILE_EPL=	${WRKSRC}/EPL-2.0.html
-LICENSE_PERMS_EDL=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
+LICENSE_PERMS_EDL=	auto-accept dist-mirror dist-sell pkg-mirror pkg-sell
 
 USES=		fonts
 
