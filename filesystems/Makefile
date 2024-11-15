@@ -1,5 +1,6 @@
     COMMENT = File systems and related utilities
 
+    SUBDIR += R-cran-fs
     SUBDIR += acfgfs
     SUBDIR += afuse
     SUBDIR += archivemount
@@ -99,7 +100,6 @@
     SUBDIR += py-pyfakefs
     SUBDIR += py-s3fs
     SUBDIR += py-zfs-autobackup
-    SUBDIR += R-cran-fs
     SUBDIR += rar2fs
     SUBDIR += rubygem-winrm-fs
     SUBDIR += s3backer
