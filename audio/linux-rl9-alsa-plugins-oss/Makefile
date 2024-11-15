@@ -91,6 +91,8 @@ do-install:
 
 ## Pet poudriere's stage-qa
 post-install:
+.if defined(WRKDIRPREFIX) && !empty(WRKDIRPREFIX)
 	${RM} -r ${LINUXBASE}${WRKDIRPREFIX}
+.endif
 
 .include <bsd.port.mk>
