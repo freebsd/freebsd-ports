@@ -1,6 +1,6 @@
 PORTNAME=	kyua
 DISTVERSION=	0.13
-PORTREVISION=	8
+PORTREVISION=	9
 PORTEPOCH=	3
 CATEGORIES=	devel
 
@@ -9,6 +9,12 @@ COMMENT=	Testing framework for infrastructure software
 WWW=		https://github.com/jmmv/kyua/
 
 LICENSE=	BSD3CLAUSE
+
+# Since 14.2 the test suite is based on execenv=jail feature of the latest Kyua,
+# and tests(7) are expected to be aligned with Kyua version in the base,
+# while the port is not going to be maintained to avoid double work.
+DEPRECATED=	Consider using base version as tests(7) fail on 14.2 and later
+EXPIRATION_DATE=	2026-04-30
 
 LIB_DEPENDS=	liblutok.so:devel/lutok
 
@@ -36,6 +42,12 @@ GROUPS=		tests
 OPTIONS_DEFINE=		DOCS EXAMPLES TEST
 OPTIONS_DEFAULT=	TEST
 OPTIONS_SUB=		yes
+
+.include <bsd.port.pre.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSREL:R} >= 14
+IGNORE=		kyua from base must be used for FreeBSD 14.x and newer
+.endif
 
 DOCS_MAKE_ARGS_OFF=	doc_DATA=
 EXAMPLES_MAKE_ARGS_OFF=	dist_examples_DATA=
