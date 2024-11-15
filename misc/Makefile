@@ -275,7 +275,6 @@
     SUBDIR += mmv
     SUBDIR += mnn
     SUBDIR += molequeue
-    SUBDIR += morse
     SUBDIR += mtx
     SUBDIR += mxnet
     SUBDIR += najitool

@@ -3722,3 +3722,4 @@ sysutils/hammer2|filesystems/hammer2|2024-11-13|Moved to new category filesystem
 sysutils/ods2|filesystems/ods2|2024-11-13|Moved to new category filesystems
 sysutils/ztop|filesystems/ztop|2024-11-13|Moved to new category filesystems
 devel/b2|devel/py-b2|2024-11-14|Add py- prefix
+misc/morse||2024-11-14|Project discontinued upstream
