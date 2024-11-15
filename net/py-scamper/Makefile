@@ -29,7 +29,7 @@ PLIST_FILES=	${PYTHONPREFIX_SITELIBDIR:S,^${PREFIX}/,,}/scamper.a \
 post-patch:
 	@${REINPLACE_CMD} \
 		-e 's/$$(scamper_la_DEPENDENCIES)//' \
-		-e 's,../../scamper/libscamperfile.la,-lscamperfile,' \
+		-e 's,../libscamperfile/libscamperfile.la,-lscamperfile,' \
 		-e 's,../libscamperctrl/libscamperctrl.la,-lscamperctrl,' \
 		${BUILD_WRKSRC}/Makefile.in
 
