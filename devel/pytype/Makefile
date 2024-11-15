@@ -1,5 +1,6 @@
 PORTNAME=	pytype
 PORTVERSION=	2024.10.11
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMESUFFIX=	${PYTHON_PKGNAMESUFFIX}
@@ -26,7 +27,7 @@ RUN_DEPENDS=	ninja>=1.10.2:devel/ninja \
 		${PYTHON_PKGNAMEPREFIX}networkx>=2.8,1:math/py-networkx@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pycnite>=2024.7.31:devel/py-pycnite@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pydot>=1.4.2:graphics/py-pydot@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}tabulate>=0.8.9:devel/py-tabulate@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}tabulate>=0.8.10:devel/py-tabulate@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}toml>=0.10.2:textproc/py-toml@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}typing-extensions>=4.3.0:devel/py-typing-extensions@${PY_FLAVOR}
 
