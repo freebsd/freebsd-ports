@@ -1,6 +1,6 @@
 PORTNAME=	devtools
 PORTVERSION=	${LINUX_DIST_VER}
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 
 MAINTAINER=	emulation@FreeBSD.org
@@ -11,7 +11,7 @@ WWW=		https://gcc.gnu.org/
 
 USES=		linux:rl9
 USE_LDCONFIG=	yes
-USE_LINUX=	libgfortran
+USE_LINUX=	libgfortran libsigsegv
 USE_LINUX_RPM=	yes
 WANT_LINUX32=	yes
 
@@ -61,5 +61,23 @@ PLIST_SUB=	BUVERSION=${BUVERSION} \
 		KERNELVERSION=${KERNELVERSION} \
 		MPFRVERSION=${MPFRVERSION} \
 		LIBMPCVERSION=${LIBMPCVERSION}
+
+.include <bsd.port.options.mk>
+
+post-install:
+	${LN} -sf ld.bfd ${STAGEDIR}${PREFIX}/usr/bin/ld
+.if ${ARCH} == aarch64
+	${LN} -sfh ../../../../lib64/libgcc_s.so.1 \
+	${STAGEDIR}${PREFIX}/usr/lib/gcc/aarch64-redhat-linux/11/libgcc_s.so
+.elif ${ARCH} == amd64
+	${LN} -sfh ../../../../lib64/libgcc_s.so.1 \
+	${STAGEDIR}${PREFIX}/usr/lib/gcc/x86_64-redhat-linux/11/libgcc_s.so
+	${LN} -sfh ../../../../libgcc_s.so.1 \
+	${STAGEDIR}${PREFIX}/usr/lib/gcc/x86_64-redhat-linux/11/32/libgcc_s.so
+.	if defined(WANT_LINUX32)
+		${LN} -sfh ../../../libgcc_s.so.1 \
+		${STAGEDIR}${PREFIX}/usr/lib/gcc/i686-redhat-linux/11/libgcc_s.so
+.	endif
+.endif
 
 .include <bsd.port.mk>

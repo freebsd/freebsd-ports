@@ -20,6 +20,7 @@ usr/bin/gcov-dump
 usr/bin/gcov-tool
 usr/bin/gfortran
 usr/bin/gprof
+usr/bin/ld
 usr/bin/ld.bfd
 usr/bin/lto-dump
 usr/bin/nm
@@ -2459,6 +2460,7 @@ usr/lib/cpp
 usr/lib/crt1.o
 usr/lib/crti.o
 usr/lib/crtn.o
+usr/lib/gcc/i686-redhat-linux/11/libgcc_s.so
 usr/lib/gcc/i686-redhat-linux/11/libstdc++.so
 usr/lib/gcc/i686-redhat-linux/11/libstdc++fs.a
 usr/lib/gcc/x86_64-redhat-linux/11/32/crtbegin.o

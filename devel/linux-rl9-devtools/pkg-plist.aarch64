@@ -24,6 +24,7 @@ usr/bin/gcov-dump
 usr/bin/gcov-tool
 usr/bin/gfortran
 usr/bin/gprof
+usr/bin/ld
 usr/bin/ld.bfd
 usr/bin/lto-dump
 usr/bin/nm
