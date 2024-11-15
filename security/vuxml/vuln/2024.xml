@@ -1,3 +1,35 @@
+  <vuln vid="773e7eb2-af19-4fc7-be7f-0f6a2523b98b">
+    <topic>electron31 -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>electron31</name>
+	<range><lt>31.7.5</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Electron developers report:</p>
+	<blockquote cite="https://github.com/electron/electron/releases/tag/v31.7.5">
+	  <p>This update fixes the following vulnerabilities:</p>
+	  <ul>
+	    <li>Security: backported fix for CVE-2024-10827.</li>
+	    <li>Security: backported fix for CVE-2024-11110.</li>
+	  </ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2024-10827</cvename>
+      <url>https://github.com/advisories/GHSA-58wv-w3hc-2c76</url>
+      <cvename>CVE-2024-11110</cvename>
+      <url>https://github.com/advisories/GHSA-4mww-gp9h-h59m</url>
+    </references>
+    <dates>
+      <discovery>2024-11-15</discovery>
+      <entry>2024-11-15</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="a03636f4-a29f-11ef-af48-6cc21735f730">
     <topic>PostgreSQL -- PL/Perl environment variable changes execute arbitrary code</topic>
     <affects>
