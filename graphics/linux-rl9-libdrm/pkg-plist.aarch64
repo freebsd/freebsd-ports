@@ -21,5 +21,7 @@ usr/lib64/libdrm_nouveau.so.2
 usr/lib64/libdrm_nouveau.so.2.0.0
 usr/lib64/libdrm_radeon.so.1
 usr/lib64/libdrm_radeon.so.1.0.1
+usr/lib64/libdrm_tegra.so.0
+usr/lib64/libdrm_tegra.so.0.0.0
 %%PORTDOCS%%usr/share/doc/libdrm/README.rst
 %%DATADIR%%/amdgpu.ids
