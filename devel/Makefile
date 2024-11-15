@@ -5929,6 +5929,7 @@
     SUBDIR += py-sysv_ipc
     SUBDIR += py-tables
     SUBDIR += py-tabulate
+    SUBDIR += py-tabulate2
     SUBDIR += py-tabulator
     SUBDIR += py-tailer
     SUBDIR += py-tapi
