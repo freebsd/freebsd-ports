@@ -11,7 +11,7 @@ WWW=		https://launchpad.net/py3dns
 LICENSE=	CNRI
 LICENSE_NAME=	CNRI LICENSE AGREEMENT
 LICENSE_FILE=	${WRKSRC}/LICENSE
-LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
+LICENSE_PERMS=	auto-accept dist-mirror dist-sell pkg-mirror pkg-sell
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}flit-core>=3.2<4:devel/py-flit-core@${PY_FLAVOR}
 
