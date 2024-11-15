@@ -11,13 +11,13 @@ WWW=		https://jupyter.org/
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatch-jupyter-builder>0:devel/py-hatch-jupyter-builder@${PY_FLAVOR} \
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatch-jupyter-builder>=0.5:devel/py-hatch-jupyter-builder@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}hatchling>=1.11:devel/py-hatchling@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}jupyterlab>=4.2.0:devel/py-jupyterlab@${PY_FLAVOR}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}jupyter-server>=2.4.0:devel/py-jupyter-server@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}jupyterlab>=4.2.0:devel/py-jupyterlab@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}jupyterlab-server>=2.27.1:devel/py-jupyterlab-server@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}notebook-shim>=0.2:devel/py-notebook-shim@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}jupyterlab>=4.2.0<4.3:devel/py-jupyterlab@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}jupyter-server>=2.4.0<3:devel/py-jupyter-server@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}jupyterlab>=4.2.0<4.3:devel/py-jupyterlab@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}jupyterlab-server>=2.27.1<3:devel/py-jupyterlab-server@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}notebook-shim>=0.2<0.3:devel/py-notebook-shim@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tornado>=6.2.0:www/py-tornado@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ipykernel>0:devel/py-ipykernel@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}nbval>0:devel/py-nbval@${PY_FLAVOR} \
