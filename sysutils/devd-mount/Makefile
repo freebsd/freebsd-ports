@@ -1,7 +1,5 @@
 PORTNAME=	devd-mount
-DISTVERSION=	0.1.0-7
-PORTREVISION=	1
-DISTVERSIONSUFFIX=	-gc4810d4
+DISTVERSION=	0.2.0
 CATEGORIES=	sysutils
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -17,17 +15,13 @@ GH_ACCOUNT=	outpaddling
 NO_BUILD=	yes
 NO_ARCH=	yes
 
-CONFLICTS_INSTALL=	automount
-
 PLIST_FILES=	sbin/devd-mount \
-		sbin/automount \
 		etc/devd/devd-mount.conf \
 		"@sample etc/devd-mount.conf.sample" \
 		share/man/man8/devd-mount.8.gz
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/devd-mount ${STAGEDIR}${PREFIX}/sbin
-	${INSTALL_SCRIPT} ${WRKSRC}/devd-mount ${STAGEDIR}${PREFIX}/sbin/automount
 	${INSTALL_DATA} ${WRKSRC}/devd.conf \
 		${STAGEDIR}${PREFIX}/etc/devd/devd-mount.conf
 	${INSTALL_DATA} ${WRKSRC}/devd-mount.conf \
