@@ -11,6 +11,7 @@ WWW=		https://freefem.org/ \
 
 LICENSE=	LGPL3
 
+BROKEN=		fails to compile with nlopt-2.9.0, see https://github.com/FreeFem/FreeFem-sources/issues/324
 BROKEN_FreeBSD_15=	compilation fails with clang-19, see https://github.com/FreeFem/FreeFem-sources/issues/323
 
 BUILD_DEPENDS=	bash:shells/bash		\
