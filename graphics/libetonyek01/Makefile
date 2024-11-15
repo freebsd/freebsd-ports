@@ -1,6 +1,5 @@
 PORTNAME=	libetonyek
-PORTVERSION=	0.1.10
-PORTREVISION=	7
+PORTVERSION=	0.1.11
 PORTEPOCH=	1
 CATEGORIES=	graphics
 MASTER_SITES=	LODEV/${PORTNAME}
@@ -30,5 +29,7 @@ CONFIGURE_ARGS=	--disable-tests --disable-werror --without-docs --with-mdds=${MD
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
+
+PLIST_SUB=	LIBVERSION=1.0.${PORTVERSION:E}
 
 .include <bsd.port.mk>
