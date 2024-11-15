@@ -46,6 +46,7 @@ include/aws/crt/mqtt/MqttTypes.h
 include/aws/iot/Mqtt5Client.h
 include/aws/iot/MqttClient.h
 include/aws/iot/MqttCommon.h
+include/aws/iot/MqttRequestResponseClient.h
 lib/aws-crt-cpp/cmake/aws-crt-cpp-config-version.cmake
 lib/aws-crt-cpp/cmake/aws-crt-cpp-config.cmake
 lib/aws-crt-cpp/cmake/shared/aws-crt-cpp-targets-%%CMAKE_BUILD_TYPE%%.cmake
