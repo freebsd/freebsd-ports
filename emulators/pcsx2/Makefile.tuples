@@ -1,9 +1,0 @@
-GH_TUPLE= \
-	fmtlib:fmt:5cfd28d476c6859617878f951931b8ce7d36b9df:fmt/3rdparty/fmt/fmt \
-	biojppm:rapidyaml:213b201d264139cd1b887790197e08850af628e3:rapidyaml/3rdparty/rapidyaml/rapidyaml \
-	KhronosGroup:Vulkan-Headers:19a863ccce773ff393b186329478b1eb1a519fd3:VulkanHeaders/3rdparty/vulkan-headers \
-	biojppm:c4core:d35c7c9bf370134595699d791e6ff8db018ddc8d:c4core/3rdparty/rapidyaml/rapidyaml/ext/c4core \
-	biojppm:cmake:371982300ff5a076d7c3199057ebed77bbe3472f:cmake/3rdparty/rapidyaml/rapidyaml/ext/c4core/cmake \
-	biojppm:debugbreak:5dcbe41d2bd4712c8014aa7e843723ad7b40fd74:debugbreak/3rdparty/rapidyaml/rapidyaml/ext/c4core/src/c4/ext/debugbreak \
-	fastfloat:fast_float:32d21dcecb404514f94fb58660b8029a4673c2c1:fast_float/3rdparty/rapidyaml/rapidyaml/ext/c4core/src/c4/ext/fast_float \
-
