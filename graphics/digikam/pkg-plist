@@ -245,7 +245,7 @@ lib/libdigikamgui.so.%%SHLIB_VER%%
 %%QT_PLUGINDIR%%/digikam/generic/Generic_FileTransfer_Plugin.so
 %%QT_PLUGINDIR%%/digikam/generic/Generic_Flickr_Plugin.so
 %%QT_PLUGINDIR%%/digikam/generic/Generic_GLViewer_Plugin.so
-%%MARBLE%%%%QT_PLUGINDIR%%/digikam/generic/Generic_GeolocationEdit_Plugin.so
+%%QT_PLUGINDIR%%/digikam/generic/Generic_GeolocationEdit_Plugin.so
 %%QT_PLUGINDIR%%/digikam/generic/Generic_Google_Plugin.so
 %%QT_PLUGINDIR%%/digikam/generic/Generic_HtmlGallery_Plugin.so
 %%QT_PLUGINDIR%%/digikam/generic/Generic_ImageShack_Plugin.so
