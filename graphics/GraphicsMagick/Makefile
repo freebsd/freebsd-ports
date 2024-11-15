@@ -34,7 +34,7 @@ USES+=		xorg
 CONFIGURE_ARGS+=--without-x ac_cv_lib_ICE_IceConnectionNumber=no
 .endif
 
-PORTSCOUT=	limit:^[0-9]\.[0-9]\.[1-9][0-9\]*$$
+PORTSCOUT=	limit:^[0-9]\.[0-9]\.[1-9][0-9\]$$
 
 # Use fonts installed by x11-fonts/webfonts by default
 WINDOWS_FONT_DIR?=	${LOCALBASE}/share/fonts/webfonts
