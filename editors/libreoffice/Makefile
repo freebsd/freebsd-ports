@@ -23,7 +23,6 @@ BUILD_DEPENDS=	p5-Archive-Zip>=0:archivers/p5-Archive-Zip \
 		${LOCALBASE}/include/libcuckoo/cuckoohash_map.hh:devel/libcuckoo \
 		mdds>=2.1:devel/mdds \
 		gpatch:devel/patch \
-		ucpp:devel/ucpp \
 		${LOCALBASE}/include/sane/sane.h:graphics/sane-backends \
 		vigra-config:graphics/vigra \
 		${LOCALBASE}/include/glm/glm.hpp:math/glm \
@@ -183,6 +182,10 @@ GTK3_CONFIGURE_ENABLE=	gtk3
 GTK3_USE=	GNOME=gtk30
 
 GTK4_CONFIGURE_ENABLE=	gtk4
+GTK4_LIB_DEPENDS=	libepoxy.so:graphics/libepoxy \
+			libgraphene-1.0.so:graphics/graphene \
+			libharfbuzz.so:print/harfbuzz \
+			libvulkan.so:graphics/vulkan-loader
 GTK4_USE=	GNOME=gtk40
 
 JAVA_BUILD_DEPENDS=	ant:devel/apache-ant \
@@ -269,7 +272,7 @@ QT6_CONFIGURE_ENABLE=	qt6
 QT6_CONFIGURE_ENV=	QMAKE6=${QMAKE} MOC6=${MOC} PATH="${QT_TOOLDIR}:${PATH}"
 QT6_PREVENTS=	KF5
 QT6_PREVENTS_MSG=	KF5 support require Qt5 engine
-QT6_USE=	qt=base,declarative:build,multimedia,tools:build
+QT6_USE=	qt=base,declarative,multimedia,tools:build
 QT6_USES=	qt:6
 
 SDK_BUILD_DEPENDS=	doxygen:devel/doxygen
@@ -325,7 +328,6 @@ CONFIGURE_ARGS=	--disable-dependency-tracking \
 		--with-system-nss \
 		--with-system-openjpeg \
 		--with-system-orcus \
-		--with-system-ucpp \
 		--with-system-zlib \
 		--with-system-zxcvbn=no \
 		--with-system-zxing \
@@ -363,6 +365,11 @@ BINARY_ALIAS=	sed=gsed
 .include <bsd.port.options.mk>
 
 .include <bsd.port.pre.mk>
+
+.if ${OPSYS} == FreeBSD && ( \
+    (${OSVERSION} >= 1400051 && ${OSVERSION} < 1400057))
+BROKEN=	please update FreeBSD base system first to fix an ABI incompatibility
+.endif
 
 .if ${ARCH} == powerpc || ${ARCH} == powerpcspe || ${ARCH} == powerpc64
 CONFIGURE_ARGS+=	--disable-skia
