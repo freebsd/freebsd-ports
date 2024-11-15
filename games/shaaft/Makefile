@@ -21,6 +21,7 @@ GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--disable-optimize
 
+CFLAGS+=	-fpermissive
 CPPFLAGS+=	$$(libpng-config --I_opts)
 LDFLAGS+=	$$(libpng-config --L_opts)
 
