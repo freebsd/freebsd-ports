@@ -18,9 +18,9 @@ LICENSE_NAME_AMS=	AMSFonts Copyright version 2.2
 LICENSE_NAME_AREV=	Arev Fonts Copyright
 LICENSE_NAME_BITSTREAM=	Bitstream Vera Fonts Copyright
 LICENSE_FILE=	${WRKSRC}/LICENSE
-LICENSE_PERMS_AMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
-LICENSE_PERMS_AREV=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
-LICENSE_PERMS_BITSTREAM=dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
+LICENSE_PERMS_AMS=	auto-accept dist-mirror dist-sell pkg-mirror pkg-sell
+LICENSE_PERMS_AREV=	auto-accept dist-mirror dist-sell pkg-mirror pkg-sell
+LICENSE_PERMS_BITSTREAM=auto-accept dist-mirror dist-sell pkg-mirror pkg-sell
 
 USES=		fonts tar:bzip2
 
