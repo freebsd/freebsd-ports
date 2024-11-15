@@ -9,7 +9,7 @@ EXTRACT_SUFX=	.src.rpm
 DIST_SUBDIR=	rocky/a
 
 MAINTAINER=	emulation@FreeBSD.org
-COMMENT=	OSS plugin for ALSA (Linux CentOS ${LINUX_DIST_VER})
+COMMENT=	OSS plugin for ALSA (Rocky Linux ${LINUX_DIST_VER})
 WWW=		https://www.alsa-project.org/
 
 LICENSE=	LGPL21+
