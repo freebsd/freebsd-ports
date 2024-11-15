@@ -18,8 +18,12 @@
      # versions prior to v0.3.0 had too stric dependency rules
      # for other deps such as protobuf, making it harder satisfy all dependencies.
  ]
-@@ -79,7 +79,7 @@ googlefontsalwayslatest = [
-     "gflanguages >= 0.6.2, == 0.6.*",
+@@ -76,10 +76,10 @@ googlefontsalwayslatest = [
+ # deal with API-breaking updates. Only the latest released version is acceptable:
+ googlefontsalwayslatest = [
+     "axisregistry >= 0.4.10, == 0.4.*",
+-    "gflanguages >= 0.6.2, == 0.6.*",
++    "gflanguages >= 0.6.2, < 0.8",
      "gfsubsets >= 2024.5.9",
      "glyphsets >= 1.0.0, == 1.*",
 -    "shaperglot >= 0.5.0, == 0.5.*",

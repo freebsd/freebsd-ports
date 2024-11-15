@@ -1,6 +1,6 @@
 PORTNAME=	fontbakery
 PORTVERSION=	0.12.10
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	print python
 MASTER_SITES=	PYPI \
 		https://github.com/fonttools/fontbakery/releases/download/v${PORTVERSION}/
@@ -59,7 +59,7 @@ GOOGLEFONTS_RUN_DEPENDS=${PYTHON_PKGNAMEPREFIX}axisregistry>=0.4.10<0.5:x11-font
 			${PYTHON_PKGNAMEPREFIX}collidoscope>=0.5.2:print/py-collidoscope@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}dehinter>=3.1.0:print/py-dehinter@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}fonttools>=0:print/py-fonttools@${PY_FLAVOR} \
-			${PYTHON_PKGNAMEPREFIX}gflanguages>=0.6.2<0.7:x11-fonts/py-gflanguages@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}gflanguages>=0.6.2<0.8:x11-fonts/py-gflanguages@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}gfsubsets>=2024.5.9:x11-fonts/py-gfsubsets@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}glyphsets>=1.0.0<2:print/py-glyphsets@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}protobuf>=3.7.0,1:devel/py-protobuf@${PY_FLAVOR} \
