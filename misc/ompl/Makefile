@@ -1,6 +1,6 @@
 PORTNAME=	ompl
 DISTVERSION=	1.6.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	misc comms
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -12,23 +12,19 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libboost_system.so:devel/boost-libs
 
-USES=		cmake:testing compiler:c++11-lang eigen:3 pkgconfig
+USES=		cmake:testing compiler:c++17-lang eigen:3 pkgconfig
 USE_GITHUB=	yes
 USE_LDCONFIG=	yes
 
 CMAKE_OFF=	OMPL_REGISTRATION OMPL_BUILD_TESTS OMPL_BUILD_DEMOS OMPL_VERSIONED_INSTALL
 CMAKE_TESTING_ON=	OMPL_BUILD_TESTS
 
-OPTIONS_DEFINE=		FLANN MORSE OPENDE SPOT TRIANGLE PLANNERARENA
-OPTIONS_DEFAULT=	FLANN MORSE OPENDE TRIANGLE
+OPTIONS_DEFINE=		FLANN OPENDE SPOT TRIANGLE PLANNERARENA
+OPTIONS_DEFAULT=	FLANN OPENDE TRIANGLE
 OPTIONS_SUB=		yes
 
 FLANN_DESC=		Use FLANN for nearest neighbor queries
 FLANN_LIB_DEPENDS=	libflann.so:math/flann
-
-MORSE_DESC=		Include a plugin for the MORSE Robot Simulation engine
-MORSE_BUILD_DEPENDS=	morse-robotics>0:misc/morse
-MORSE_RUN_DEPENDS=	morse-robotics>0:misc/morse
 
 OPENDE_DESC=		Use Open Dynamics Engine for kinodynamic planning
 OPENDE_LIB_DEPENDS=	libode.so:devel/ode
