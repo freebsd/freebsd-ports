@@ -65,10 +65,11 @@ Obtained from:	https://github.com/derickr/vld/commit/df1c52c4cb62e5ff31e1b72e3f1
  		opcode.opcode == ZEND_THROW ||
  #if PHP_VERSION_ID >= 80000
  		opcode.opcode == ZEND_MATCH_ERROR ||
-@@ -1094,6 +1125,48 @@ int vld_find_jumps(zend_op_array *opa, unsigned int po
+@@ -1094,6 +1125,49 @@ int vld_find_jumps(zend_op_array *opa, unsigned int po
  		jumps[0] = VLD_JMP_EXIT;
  		*jump_count = 1;
  		return 1;
++#if PHP_VERSION_ID >= 80200
 +	} else if (
 +		opcode.opcode == ZEND_INIT_FCALL
 +	) {
@@ -110,11 +111,11 @@ Obtained from:	https://github.com/derickr/vld/commit/df1c52c4cb62e5ff31e1b72e3f1
 +			*jump_count = 1;
 +			return 1;
 +		}
-+
++# endif
  #if PHP_VERSION_ID >= 70200
  	} else if (
  # if PHP_VERSION_ID >= 80000
-@@ -1233,6 +1306,7 @@ void vld_analyse_branch(zend_op_array *opa, unsigned i
+@@ -1233,6 +1307,7 @@ void vld_analyse_branch(zend_op_array *opa, unsigned i
  			break;
  		}
  
@@ -122,7 +123,7 @@ Obtained from:	https://github.com/derickr/vld/commit/df1c52c4cb62e5ff31e1b72e3f1
  		/* See if we have an exit instruction */
  		if (opa->opcodes[position].opcode == ZEND_EXIT) {
  			VLD_PRINT(1, "Exit found\n");
-@@ -1240,6 +1314,7 @@ void vld_analyse_branch(zend_op_array *opa, unsigned i
+@@ -1240,6 +1315,7 @@ void vld_analyse_branch(zend_op_array *opa, unsigned i
  			branch_info->branches[position].start_lineno = opa->opcodes[position].lineno;
  			break;
  		}
