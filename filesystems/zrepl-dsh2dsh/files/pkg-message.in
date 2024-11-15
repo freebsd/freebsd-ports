@@ -1,8 +1,6 @@
 [
 { type: install
   message: <<EOM
-Messages from filesystems/zrepl-dsh2dsh:
-
 SETUP BEFORE FIRST USE:
 - Create the log file /var/log/zrepl.log:
   # service newsyslog restart
@@ -38,6 +36,18 @@ More config details in the zrepl periodic script:
 
     %%LOCALBASE%%/etc/periodic/weekly/500.zrepl
 
+EOM
+}
+{
+  type: upgrade
+  maximum_version: "0.9.0"
+  message: <<EOM
+Upgrading from before 0.9.0 need to modify configuration file:
+
+  %%PREFIX%%/etc/zrepl/zrepl.yml
+
+Please read more about this change here:
+https://github.com/dsh2dsh/zrepl?tab=readme-ov-file#breaking-changes
 EOM
 }
 ]
