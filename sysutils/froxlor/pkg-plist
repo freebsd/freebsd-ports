@@ -406,6 +406,7 @@
 %%WWWDIR%%/templates/Froxlor/assets/js/jquery/customer.js
 %%WWWDIR%%/templates/Froxlor/assets/js/jquery/dnseditor.js
 %%WWWDIR%%/templates/Froxlor/assets/js/jquery/domains.js
+%%WWWDIR%%/templates/Froxlor/assets/js/jquery/emails.js
 %%WWWDIR%%/templates/Froxlor/assets/js/jquery/global.js
 %%WWWDIR%%/templates/Froxlor/assets/js/jquery/index.html
 %%WWWDIR%%/templates/Froxlor/assets/js/jquery/install.js
@@ -431,7 +432,7 @@
 %%WWWDIR%%/templates/Froxlor/assets/scss/components/index.html
 %%WWWDIR%%/templates/Froxlor/assets/scss/index.html
 %%WWWDIR%%/templates/Froxlor/base.html.twig
-%%WWWDIR%%/templates/Froxlor/build/assets/app-53f08c7d.js
+%%WWWDIR%%/templates/Froxlor/build/assets/app-65a6b342.js
 %%WWWDIR%%/templates/Froxlor/build/assets/app-8baf2336.css
 %%WWWDIR%%/templates/Froxlor/build/assets/fa-brands-400-003f1154.ttf
 %%WWWDIR%%/templates/Froxlor/build/assets/fa-brands-400-faae6fc0.woff2
