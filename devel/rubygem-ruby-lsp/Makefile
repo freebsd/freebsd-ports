@@ -1,5 +1,5 @@
 PORTNAME=	ruby-lsp
-PORTVERSION=	0.20.1
+PORTVERSION=	0.21.2
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -21,6 +21,7 @@ USES=		gem
 NO_ARCH=	yes
 
 PLIST_FILES=	bin/ruby-lsp \
-		bin/ruby-lsp-check
+		bin/ruby-lsp-check \
+		bin/ruby-lsp-launcher
 
 .include <bsd.port.mk>
