@@ -137,7 +137,7 @@ RUN_DEPENDS=	rubygem-aws-sdk-accessanalyzer>=1<2:devel/rubygem-aws-sdk-accessana
 		rubygem-aws-sdk-ecr>=1<2:devel/rubygem-aws-sdk-ecr \
 		rubygem-aws-sdk-ecrpublic>=1<2:devel/rubygem-aws-sdk-ecrpublic \
 		rubygem-aws-sdk-ecs>=1<2:devel/rubygem-aws-sdk-ecs \
-		rubygem-aws-sdk-efs>=1<2:filesystems/rubygem-aws-sdk-efs \
+		rubygem-aws-sdk-efs>=1<2:devel/rubygem-aws-sdk-efs \
 		rubygem-aws-sdk-eks>=1<2:devel/rubygem-aws-sdk-eks \
 		rubygem-aws-sdk-eksauth>=1<2:devel/rubygem-aws-sdk-eksauth \
 		rubygem-aws-sdk-elasticache>=1<2:devel/rubygem-aws-sdk-elasticache \
