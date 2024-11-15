@@ -1,5 +1,5 @@
 PORTNAME=	pastebinit
-PORTVERSION=	1.7.0
+PORTVERSION=	1.7.1
 CATEGORIES=	misc python
 
 MAINTAINER=	amdmi3@FreeBSD.org
