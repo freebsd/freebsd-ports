@@ -29,6 +29,7 @@ CONFIGURE_ARGS=	--prefix="${PREFIX}" --mandir="${PREFIX}/share/man" \
 		--docdir="${DOCSDIR}" --with-libiconv=${ICONV_PREFIX}
 CONFIGURE_TARGET=	${ARCH:S/amd64/x86_64/}-portbld-freebsd${OSREL}
 # Complaints if the environment changes between build stages.
+CFLAGS+=	-fpermissive
 LDFLAGS+=	${LDFLAGS_${CHOSEN_COMPILER_TYPE}}
 LDFLAGS_gcc=	-lthr
 MAKE_ENV=	${CONFIGURE_ENV}
