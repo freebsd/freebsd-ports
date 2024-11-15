@@ -1,7 +1,6 @@
 PORTNAME=		mqtt2prometheus
 DISTVERSIONPREFIX=	v
-DISTVERSION=		0.1.6
-PORTREVISION=	22
+DISTVERSION=		0.1.7
 CATEGORIES=		net-mgmt
 
 MAINTAINER=	manu@FreeBSD.org
@@ -55,5 +54,6 @@ post-extract:
 post-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/etc/mqtt2prometheus/
 	${INSTALL_DATA} ${WRKSRC}/config.yaml.dist ${STAGEDIR}${PREFIX}/etc/mqtt2prometheus/
+	${INSTALL_SCRIPT} ${FILESDIR}/${PORTNAME} ${STAGEDIR}${PREFIX}/etc/rc.d
 
 .include <bsd.port.mk>

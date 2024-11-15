@@ -1,6 +1,6 @@
-TIMESTAMP = 1679877009
-SHA256 (hikhvar-mqtt2prometheus-v0.1.6_GH0.tar.gz) = 61b046469b76411641d4fcb4d56ac29b4e86b4374111da60b988de91267df848
-SIZE (hikhvar-mqtt2prometheus-v0.1.6_GH0.tar.gz) = 59608
+TIMESTAMP = 1731654699
+SHA256 (hikhvar-mqtt2prometheus-v0.1.7_GH0.tar.gz) = 77e59fc04a522bcf08d8380a75021f5cda008067e50435dbe24b4c85155c20fc
+SIZE (hikhvar-mqtt2prometheus-v0.1.7_GH0.tar.gz) = 69807
 SHA256 (beorn7-perks-v1.0.1_GH0.tar.gz) = 98db84bb0224a26094e6adba91b7ee7a1a7ace28cb648d818f8e779e6a19f825
 SIZE (beorn7-perks-v1.0.1_GH0.tar.gz) = 10867
 SHA256 (eclipse-paho.mqtt.golang-v1.3.5_GH0.tar.gz) = 9cfb8872e5f6347ec5e669791f28339a9f404f65ec7ad6bee341ce5b399065b9
