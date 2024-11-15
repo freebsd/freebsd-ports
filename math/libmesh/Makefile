@@ -11,6 +11,8 @@ WWW=		https://libmesh.github.io \
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		compilation fails with nlopt-2.9.0, see https://github.com/libMesh/libmesh/issues/4009
+
 LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 		libnlopt.so:math/nlopt
 TEST_DEPENDS=	bash:shells/bash
