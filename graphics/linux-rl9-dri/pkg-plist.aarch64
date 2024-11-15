@@ -45,6 +45,7 @@ usr/lib/.build-id/e3/85b10a0cfd97735fdd3ef77cc570e9169d4e9d
 usr/lib/.build-id/ec/f38088658bb9156dc989a7ea9bdb6efb90d1c0
 usr/lib64/dri/armada-drm_dri.so
 usr/lib64/dri/exynos_dri.so
+usr/lib64/dri/hdlcd_dri.so
 usr/lib64/dri/hx8357d_dri.so
 usr/lib64/dri/ili9225_dri.so
 usr/lib64/dri/ili9341_dri.so
