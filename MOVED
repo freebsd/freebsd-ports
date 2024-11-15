@@ -3721,4 +3721,4 @@ lang/gcc11-devel|lang/gcc11|2024-11-12|GCC 11 reached end of life; use the final
 sysutils/hammer2|filesystems/hammer2|2024-11-13|Moved to new category filesystems
 sysutils/ods2|filesystems/ods2|2024-11-13|Moved to new category filesystems
 sysutils/ztop|filesystems/ztop|2024-11-13|Moved to new category filesystems
-devel/b2|py-b2|2024-11-14|Add py- prefix
+devel/b2|devel/py-b2|2024-11-14|Add py- prefix
