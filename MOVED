@@ -3574,7 +3574,6 @@ misc/uk-postcodes||2024-10-31|Has expired: Obsolete, 20+ year old data
 misc/uk-phone||2024-10-31|Has expired: Obsolete, 20+ year old data
 textproc/ssddiff||2024-10-31|Has expired: Abandonware, unfetchable and upstream is gone
 sysutils/pydf||2024-11-02|Has expired: Inactive upstream. Does not properly work on FreeBSD
-ports-mgmt/freebsd-bugzilla-cli||2024-11-02|Has expired: Broken. Upstream unavailable
 sysutils/zap|filesystems/zap|2024-11-06|Moved to new category filesystems
 sysutils/fusefs-mergerfs|filesystems/mergerfs|2024-11-06|Moved to new category filesystems
 sysutils/squashfs-tools-ng|filesystems/squashfs-tools-ng|2024-11-06|Moved to new category filesystems
