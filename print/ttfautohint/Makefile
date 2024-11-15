@@ -13,7 +13,7 @@ LICENSE_COMB=	dual
 LICENSE_NAME_FTL=	The FreeType Project license
 LICENSE_FILE_FTL=	${WRKSRC}/FTL.TXT
 LICENSE_FILE_GPLv2+ =	${WRKSRC}/GPLv2.TXT
-LICENSE_PERMS_FTL=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
+LICENSE_PERMS_FTL=	auto-accept dist-mirror dist-sell pkg-mirror pkg-sell
 
 BUILD_DEPENDS=	freetype2>=2.4.5:print/freetype2 \
 		harfbuzz>=1.3.0:print/harfbuzz
