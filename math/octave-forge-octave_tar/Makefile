@@ -1,5 +1,5 @@
 PORTNAME=	octave-forge-octave_tar
-DISTVERSION=	1.0.0
+DISTVERSION=	1.0.1
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org
