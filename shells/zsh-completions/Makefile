@@ -9,7 +9,7 @@ WWW=		https://github.com/zsh-users/zsh-completions
 LICENSE=	ZSH
 LICENSE_NAME=	ZSH license
 LICENSE_FILE=	${WRKSRC}/LICENSE
-LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
+LICENSE_PERMS=	auto-accept dist-mirror dist-sell pkg-mirror pkg-sell
 
 NO_ARCH=	yes
 NO_BUILD=	yes
