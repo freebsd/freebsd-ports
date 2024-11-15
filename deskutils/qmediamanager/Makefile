@@ -1,7 +1,5 @@
 PORTNAME=	qmediamanager
-DISTVERSION=	0.1.1-2
-PORTREVISION=	1
-DISTVERSIONSUFFIX=	-g2dc5c7b
+DISTVERSION=	0.1.2
 CATEGORIES=	deskutils
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -29,6 +27,7 @@ PLIST_FILES=	bin/qmediamanager share/man/man1/qmediamanager.1.gz
 
 do-install:
 	${INSTALL} -c ${WRKSRC}/qmediamanager ${STAGEDIR}${PREFIX}/bin
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/qmediamanager
 	${INSTALL} -c ${WRKSRC}/Man/qmediamanager.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 .include <bsd.port.mk>
