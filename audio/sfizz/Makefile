@@ -69,6 +69,11 @@ VST_CMAKE_BOOL=		SFIZZ_VST
 
 .include <bsd.port.pre.mk>
 
+post-patch:
+	@${REINPLACE_CMD} \
+		-E -e 's/(template do_(push|pop)_any)/\1<>/' \
+		${WRKSRC}/external/atomic_queue/include/atomic_queue/atomic_queue.h
+
 post-install-LV2-on:
 	@${STRIP_CMD} \
 		${STAGEDIR}${PREFIX}/lib/lv2/sfizz.lv2/Contents/Binary/sfizz.so \
