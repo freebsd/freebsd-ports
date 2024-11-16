@@ -67,7 +67,7 @@
 +#	AC_MSG_RESULT([no])
 +#		AC_MSG_ERROR([[Your compiler doesn't seem to support C++20, please upgrade]])
 +#)
-+CXXFLAGS="$old_CXXFLAGS -std=c++14"
++CXXFLAGS="$old_CXXFLAGS -std=c++17"
  
  # generic lambda expressions support
  AC_MSG_CHECKING([whether compiler supports generic lambda expressions])

@@ -1,10 +1,6 @@
 PORTNAME=	ncmpcpp
-DISTVERSION=	0.10
-PORTREVISION=	1
+DISTVERSION=	0.10.1
 CATEGORIES=	audio
-
-PATCH_SITES=	https://github.com/ncmpcpp/ncmpcpp/commit/
-PATCHFILES=	72d990fe250da1e583677474b3462b9e9894130b.patch:-p1
 
 MAINTAINER=	yamagi@yamagi.org
 COMMENT=	Ncurses mpd client, clone of ncmpc with some new features
@@ -18,7 +14,7 @@ LIB_DEPENDS=	libmpdclient.so:audio/libmpdclient \
 		libboost_filesystem.so:devel/boost-libs \
 		libcurl.so:ftp/curl
 
-USES=		autoreconf compiler:c++14-lang iconv libtool ncurses \
+USES=		autoreconf compiler:c++17-lang iconv libtool ncurses \
 		pkgconfig readline
 
 USE_GITHUB=	yes
