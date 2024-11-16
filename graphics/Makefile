@@ -292,6 +292,7 @@
     SUBDIR += goocanvasmm2
     SUBDIR += goom
     SUBDIR += gource
+    SUBDIR += gowall
     SUBDIR += goxel
     SUBDIR += gpaint
     SUBDIR += gphoto2
