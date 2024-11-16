@@ -1,11 +1,12 @@
 PORTNAME=	Pyomo
-DISTVERSION=	6.8.0
+DISTVERSION=	6.8.1
 CATEGORIES=	math python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Python Optimization Modeling Objects
-WWW=		https://github.com/Pyomo/pyomo
+WWW=		https://github.com/Pyomo/pyomo \
+		https://www.pyomo.org/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
@@ -22,7 +23,7 @@ TEST_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}docplex>0:math/py-docplex@${PY_FLAVOR} \
 		ipopt:math/ipopt
 
 USES=		python
-USE_PYTHON=	distutils cython concurrent autoplist pytest # 29 tests fail, see https://github.com/Pyomo/pyomo/issues/3294
+USE_PYTHON=	distutils cython concurrent autoplist pytest # tests fail to run, see https://github.com/Pyomo/pyomo/issues/3424
 
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 
