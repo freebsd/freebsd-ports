@@ -1,18 +1,14 @@
 PORTNAME=	bredbandskollen
 DISTVERSIONPREFIX=	BBK_CLI_
-DISTVERSION=	1.2
-PORTREVISION=	1
+DISTVERSION=	1.2.1
 CATEGORIES=	net
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES=	1a5f2870b48c3ec85be1c45c397992a218b0af77.patch:-p1 # Switch to c++14, fix tests; https://github.com/dotse/bbk/issues/14
 
 MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Command line tool to check internet connection speed
 WWW=		https://github.com/dotse/bbk
 
-LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/src/LICENSE
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 TEST_DEPENDS=	googletest>0:devel/googletest
 
