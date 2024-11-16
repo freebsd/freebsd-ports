@@ -1,3 +1,4 @@
 TIMESTAMP = 1730905199
-SHA256 (gphotofs-0.5.tar.bz2) = 676ec4de69a81c193ffc31bdc7b587ac2a2cc3780b14f0e7c9c4c0a517b343cc
-SIZE (gphotofs-0.5.tar.bz2) = 261357
+TIMESTAMP = 1730027628
+SHA256 (gphoto-gphotofs-0.5.20181029-9f9f594_GH0.tar.gz) = 66b53832b994ae35d5453baa5b9f30bcdb17c97a38d880b9db7e12cce0255ddd
+SIZE (gphoto-gphotofs-0.5.20181029-9f9f594_GH0.tar.gz) = 51440
