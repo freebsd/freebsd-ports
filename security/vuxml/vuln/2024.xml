@@ -1,3 +1,50 @@
+  <vuln vid="8fe4f296-a3ec-11ef-8c1c-a8a1599412c6">
+    <topic>chromium -- multiple security fixes</topic>
+    <affects>
+      <package>
+       <name>chromium</name>
+       <range><lt>131.0.6778.69</lt></range>
+      </package>
+      <package>
+       <name>ungoogled-chromium</name>
+       <range><lt>131.0.6778.69</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+       <p>Chrome Releases reports:</p>
+       <blockquote cite="https://chromereleases.googleblog.com/2024/11/stable-channel-update-for-desktop_12.html">
+	 <p>This update includes 12 security fixes:</p>
+	 <ul>
+	    <li>[373263969] High CVE-2024-11110: Inappropriate implementation in Blink. Reported by Vsevolod Kokorin (Slonser) of Solidlab on 2024-10-14</li>
+	    <li>[360520331] Medium CVE-2024-11111: Inappropriate implementation in Autofill. Reported by Narendra Bhati, Suma Soft Pvt. Ltd - Pune (India) on 2024-08-18</li>
+	    <li>[354824998] Medium CVE-2024-11112: Use after free in Media. Reported by Nan Wang(@eternalsakura13) and Zhenghang Xiao(@Kipreyyy) of 360 Vulnerability Research Institute on 2024-07-23</li>
+	    <li>[360274917] Medium CVE-2024-11113: Use after free in Accessibility. Reported by Weipeng Jiang (@Krace) of VRI on 2024-08-16</li>
+	    <li>[370856871] Medium CVE-2024-11114: Inappropriate implementation in Views. Reported by Micky on 2024-10-02</li>
+	    <li>[371929521] Medium CVE-2024-11115: Insufficient policy enforcement in Navigation. Reported by mastersplinter on 2024-10-07</li>
+	    <li>[40942531] Medium CVE-2024-11116: Inappropriate implementation in Paint. Reported by Thomas Orlita on 2023-11-14</li>
+	    <li>[40062534] Low CVE-2024-11117: Inappropriate implementation in FileSystem. Reported by Ameen Basha M K on 2023-01-06</li>
+	 </ul>
+       </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2024-11110</cvename>
+      <cvename>CVE-2024-11111</cvename>
+      <cvename>CVE-2024-11112</cvename>
+      <cvename>CVE-2024-11113</cvename>
+      <cvename>CVE-2024-11114</cvename>
+      <cvename>CVE-2024-11115</cvename>
+      <cvename>CVE-2024-11116</cvename>
+      <cvename>CVE-2024-11117</cvename>
+      <url>https://chromereleases.googleblog.com/2024/11/stable-channel-update-for-desktop_12.html</url>
+    </references>
+    <dates>
+      <discovery>2024-11-12</discovery>
+      <entry>2024-11-16</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="773e7eb2-af19-4fc7-be7f-0f6a2523b98b">
     <topic>electron31 -- multiple vulnerabilities</topic>
     <affects>
