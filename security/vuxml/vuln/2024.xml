@@ -52,6 +52,10 @@
 	<name>electron31</name>
 	<range><lt>31.7.5</lt></range>
       </package>
+      <package>
+	<name>electron32</name>
+	<range><lt>32.2.5</lt></range>
+      </package>
     </affects>
     <description>
 	<body xmlns="http://www.w3.org/1999/xhtml">
@@ -74,6 +78,7 @@
     <dates>
       <discovery>2024-11-15</discovery>
       <entry>2024-11-15</entry>
+      <modified>2024-11-16</modified>
     </dates>
   </vuln>
 
