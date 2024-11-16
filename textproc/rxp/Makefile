@@ -10,6 +10,10 @@ WWW=		https://www.cogsci.ed.ac.uk/~richard/rxp.html
 
 LICENSE=	GPLv2
 
+BROKEN=		Unfetchable
+DEPRECATED=	Unfetchable and outdated
+EXPIRATION_DATE=2024-12-31
+
 USES=	uidfix
 
 USE_LDCONFIG=	yes
