@@ -1,8 +1,8 @@
 PORTNAME=	mkjail
-DISTVERSION=	0.0.4
+DISTVERSION=	0.0.5
 CATEGORIES=	sysutils
 
-MAINTAINER=	fuz@FreeBSD.org
+MAINTAINER=	dvl@FreeBSD.org
 COMMENT=	Fat jail creation script
 WWW=		https://github.com/mkjail/mkjail
 
