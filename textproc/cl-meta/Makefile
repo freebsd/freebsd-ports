@@ -13,6 +13,10 @@ MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Parser generator for Common Lisp
 WWW=		http://home.pipeline.com/~hbaker1/Prag-Parse.html
 
+BROKEN=		Unfetchable
+DEPRECATED=	Upstream is gone
+EXPIRATION_DATE=2024-12-31
+
 WRKSRC=		${WRKDIR}/${PORTNAME}
 NO_BUILD=	yes
 
