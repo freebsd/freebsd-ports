@@ -1,8 +1,7 @@
 PORTNAME=	gtfparse
-DISTVERSION=	1.3.0
-PORTREVISION=	1
+DISTVERSION=	2.5.0
 CATEGORIES=	biology python
-MASTER_SITES=	PYPI
+#MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -11,11 +10,13 @@ WWW=		https://github.com/openvax/gtfparse
 
 LICENSE=	APACHE20
 
-RUN_DEPENDS=	${PYNUMPY} \
-		${PYTHON_PKGNAMEPREFIX}pandas>=0.15:math/py-pandas@${PY_FLAVOR}
+BUILD_DEPENDS=	${PY_SETUPTOOLS}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pandas>0:math/py-pandas@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}polars>=0.20.2:misc/py-polars@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pyarrow>=14.0.2:databases/py-pyarrow@${PY_FLAVOR}
 
 USES=		python
-USE_PYTHON=	distutils autoplist
+USE_PYTHON=	pep517 autoplist pytest # tests from the PYPI tarball fail because 'data' module is missing, and the GH repository doesn't have tags
 
 NO_ARCH=	yes
 
