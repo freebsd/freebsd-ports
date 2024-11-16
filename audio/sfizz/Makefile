@@ -9,8 +9,6 @@ WWW=		https://sfz.tools/sfizz/
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN_FreeBSD_15=	compilation fails with clang-19, see https://github.com/sfztools/sfizz/issues/1305
-
 LIB_DEPENDS=	libabsl_hash.so:devel/abseil
 RUN_DEPENDS=	zenity:x11/zenity
 
@@ -46,5 +44,8 @@ post-patch:
 		-e 's|CACHE_LINE_SIZE|CACHE_LINE_SIZEx|' \
 		${WRKSRC}/external/atomic_queue/include/atomic_queue/atomic_queue.h \
 		${WRKSRC}/external/atomic_queue/include/atomic_queue/defs.h
+	@${REINPLACE_CMD} \
+		-E -e 's/(template do_(push|pop)_any)/\1<>/' \
+		${WRKSRC}/external/atomic_queue/include/atomic_queue/atomic_queue.h
 
 .include <bsd.port.mk>
