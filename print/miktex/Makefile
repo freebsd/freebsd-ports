@@ -1,9 +1,8 @@
 PORTNAME=	miktex
-DISTVERSION=	23.9
-PORTREVISION=	4
+DISTVERSION=	24.4
 CATEGORIES=	print
 MASTER_SITES=	https://miktex.org/download/ctan/systems/win32/miktex/source/ \
-	https://ctan.org/tex-archive/systems/win32/miktex/tm/packages/:bootstrap
+		https://ctan.org/tex-archive/systems/win32/miktex/tm/packages/:bootstrap
 DISTFILES=	miktex-zzdb1-2.9.tar.lzma:bootstrap \
 		miktex-zzdb3-2.9.tar.lzma:bootstrap \
 		miktex-config-2.9.tar.lzma:bootstrap \
@@ -15,7 +14,7 @@ DISTFILES=	miktex-zzdb1-2.9.tar.lzma:bootstrap \
 DIST_SUBDIR=	miktex
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	uzsolt@FreeBSD.org
 COMMENT=	Implementation of TeX/LaTeX
 WWW=		https://miktex.org
 
@@ -28,27 +27,30 @@ LIB_DEPENDS=	libapr-1.so:devel/apr1 \
 		libboost_locale.so:devel/boost-libs \
 		libcurl.so:ftp/curl \
 		libexpat.so:textproc/expat2 \
-		libfreetype.so:print/freetype2 \
 		libfontconfig.so:x11-fonts/fontconfig \
+		libfreetype.so:print/freetype2 \
 		libfribidi.so:converters/fribidi \
 		libgd.so:graphics/gd \
 		libgmp.so:math/gmp \
 		libgraphite2.so:graphics/graphite2 \
-		libharfbuzz.so:print/harfbuzz \
 		libharfbuzz-icu.so:print/harfbuzz-icu \
+		libharfbuzz.so:print/harfbuzz \
 		libhunspell-1.7.so:textproc/hunspell \
 		libicui18n.so:devel/icu \
 		libicuuc.so:devel/icu \
 		libinotify.so:devel/libinotify \
 		liblog4cxx.so:devel/log4cxx \
+		libmpfi.so:math/mpfi \
 		libmpfr.so:math/mpfr \
 		libmspack.so:archivers/libmspack \
 		libpng.so:graphics/png \
 		libpopt.so:devel/popt \
+		libQt6Widgets.so:devel/qt6-base \
 		liburiparser.so:net/uriparser \
 		libzzip.so:devel/zziplib
 
-USES=		bison cmake:noninja gettext-tools gmake gnome jpeg pkgconfig ssl tar:xz xorg
+USES=		bison cmake:noninja gettext-tools gmake gnome jpeg \
+		localbase:ldflags pkgconfig ssl tar:xz xorg
 USE_GNOME=	cairo libxslt
 USE_LDCONFIG=	yes
 USE_XORG=	pixman
@@ -56,26 +58,29 @@ USE_XORG=	pixman
 CMAKE_ARGS=	-DMIKTEX_SYSTEM_ETC_FONTS_CONFD_DIR=${LOCALBASE}/etc/fonts/conf.d \
 		-DMIKTEX_SYSTEM_VAR_CACHE_DIR=${DATADIR}/cache \
 		-DMIKTEX_SYSTEM_VAR_LIB_DIR=${DATADIR}/lib
+CMAKE_ON=	WITH_MAN_PAGES
 
 MAKE_JOBS_UNSAFE=	yes
 
-OPTIONS_DEFINE=		MANPAGES UIQT
-OPTIONS_DEFAULT=	MANPAGES UIQT
+LDFLAGS+=	-linotify
+
+OPTIONS_DEFINE=		UIQT
+OPTIONS_DEFAULT=	UIQT
 OPTIONS_SUB=		yes
 
 UIQT_DESC=	Build Qt components
 
-MANPAGES_CMAKE_BOOL=	WITH_MAN_PAGES
-UIQT_USES=	gl
-UIQT_USES=	desktop-file-utils qt:5
-UIQT_USE=	qt=buildtools:build,concurrent,core,dbus,declarative,gui,linguisttools,network,printsupport,qmake:build,script,scripttools,uitools,widgets,xml gl=gl
+UIQT_USES=		desktop-file-utils gl qt:6
+UIQT_USE=		GL=gl,opengl \
+			qmake:build \
+			QT=5compat,declarative,tools
 UIQT_CMAKE_BOOL=	WITH_UI_QT
 
 post-extract:
 	${MKDIR} ${BUILD_WRKSRC}
-.	for f in ${DISTFILES:M*bootstrap}
-		${CP} ${DISTDIR}/${DIST_SUBDIR}/${f:S/:bootstrap//} ${BUILD_WRKSRC}
-.	endfor
+.for f in ${DISTFILES:M*bootstrap}
+	${CP} ${DISTDIR}/${DIST_SUBDIR}/${f:S/:bootstrap//} ${BUILD_WRKSRC}
+.endfor
 
 post-patch:
 	${REINPLACE_CMD} 's|log4cxx/rollingfileappender.h|log4cxx/rolling/rollingfileappender.h|g' \
