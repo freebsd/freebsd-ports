@@ -1,0 +1,63 @@
+--- CMakeLists.txt.orig	2024-11-09 13:40:26 UTC
++++ CMakeLists.txt
+@@ -11,6 +11,7 @@ add_library("${PROJECT_NAME}")
+ option(BUILD_SHARED_LIBS "Build using shared libraries" ON)
+ 
+ add_library("${PROJECT_NAME}")
++set_target_properties(${PROJECT_NAME} PROPERTIES VERSION 0.8.4 SOVERSION 4)
+ 
+ # Find the relevant folder depending on the architecture
+ set(OPENLIBM_ARCH_FOLDER ${CMAKE_SYSTEM_PROCESSOR})
+@@ -22,7 +23,7 @@ elseif(${OPENLIBM_ARCH_FOLDER} STREQUAL "armv7-a")
+     set(OPENLIBM_ARCH_FOLDER "aarch64")
+ elseif(${OPENLIBM_ARCH_FOLDER} STREQUAL "armv7-a")
+     set(OPENLIBM_ARCH_FOLDER "arm")
+-elseif(${OPENLIBM_ARCH_FOLDER} STREQUAL "x86" OR ${OPENLIBM_ARCH_FOLDER} STREQUAL "i686")
++elseif(${OPENLIBM_ARCH_FOLDER} STREQUAL "x86" OR ${OPENLIBM_ARCH_FOLDER} STREQUAL "i686" OR ${OPENLIBM_ARCH_FOLDER} STREQUAL "i386")
+     set(OPENLIBM_ARCH_FOLDER "i387")
+ elseif(${OPENLIBM_ARCH_FOLDER} STREQUAL "powerpc")
+     set(OPENLIBM_ARCH_FOLDER "powerpc")
+@@ -37,7 +38,7 @@ list(APPEND C_ASM_COMPILE_FLAGS "-Wall" "-Wno-implicit
+ list(APPEND C_ASM_COMPILE_FLAGS "-ffp-contract=off" "-fno-fast-math" "-fno-rounding-math" "-fno-math-errno")
+ list(APPEND C_ASM_COMPILE_FLAGS "-fPIC" "-std=c99" "-fno-builtin")
+ list(APPEND C_ASM_COMPILE_FLAGS "-Wall" "-Wno-implicit-function-declaration")
+-list(APPEND C_ASM_COMPILE_FLAGS "-DASSEMBLER" "-D__BSD_VISIBLE" "-O3")
++list(APPEND C_ASM_COMPILE_FLAGS "-DASSEMBLER" "-D__BSD_VISIBLE")
+ 
+ # Compiler-specific compile flags
+ if("${CMAKE_C_COMPILER_ID}" MATCHES "Clang")
+@@ -50,9 +51,9 @@ if(${OPENLIBM_ARCH_FOLDER} STREQUAL "i387")
+ 
+ # Architecture-specific compile flags - take advantage of sse on x86
+ if(${OPENLIBM_ARCH_FOLDER} STREQUAL "i387")
+-    list(APPEND C_ASM_COMPILE_FLAGS "-march=i686" "-m32" "-msse2" "-mfpmath=sse")
+-elseif(${OPENLIBM_ARCH_FOLDER} STREQUAL "amd64")
+-    list(APPEND C_ASM_COMPILE_FLAGS "-m64" "-msse2" "-mfpmath=sse")
++#    list(APPEND C_ASM_COMPILE_FLAGS "-march=i686" "-m32" "-msse2" "-mfpmath=sse")
++#elseif(${OPENLIBM_ARCH_FOLDER} STREQUAL "amd64")
++#    list(APPEND C_ASM_COMPILE_FLAGS "-m64" "-msse2" "-mfpmath=sse")
+ endif()
+ 
+ # Suppress warnings if requested
+@@ -560,7 +561,7 @@ set_target_properties("${PROJECT_NAME}" PROPERTIES PUB
+ 
+ file(GLOB PUBLIC_HEADERS "*.h" "include/*.h" "${OPENLIBM_ARCH_FOLDER}/*.h" "src/*.h")
+ set_target_properties("${PROJECT_NAME}" PROPERTIES PUBLIC_HEADER "${PUBLIC_HEADERS}")
+-install (TARGETS "${PROJECT_NAME}")
++install (TARGETS "${PROJECT_NAME}" PUBLIC_HEADER DESTINATION include/openlibm)
+ 
+ # Can't use configure_file because openlibm.pc.in uses $var instead of CMake configure @var's
+ # Would rather string replace variables here instead of editing .pc.in, because editing .pc.in
+@@ -568,9 +569,9 @@ string(PREPEND PC_FILE "prefix=${CMAKE_INSTALL_PREFIX}
+ file(READ "${PROJECT_SRC}/openlibm.pc.in" PC_FILE)
+ string(REPLACE "\${version}" ${CMAKE_PROJECT_VERSION} PC_FILE ${PC_FILE})
+ string(PREPEND PC_FILE "prefix=${CMAKE_INSTALL_PREFIX}
+-includedir=\${prefix}/${CMAKE_INSTALL_INCLUDEDIR}
+-libdir=\${prefix}/${CMAKE_INSTALL_LIBDIR}\n
++includedir=\${prefix}/include/openlibm
++libdir=\${prefix}/lib\n
+ ")
+ file(WRITE "${CMAKE_BINARY_DIR}/${PROJECT_NAME}.pc" ${PC_FILE})
+ install(FILES "${CMAKE_BINARY_DIR}/${PROJECT_NAME}.pc"
+-        DESTINATION "${CMAKE_INSTALL_LIBDIR}/pkgconfig")
++        DESTINATION "${CMAKE_INSTALL_PREFIX}/libdata/pkgconfig")
