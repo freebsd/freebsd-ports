@@ -1,13 +1,11 @@
 PORTNAME=	astc-encoder
-DISTVERSION=	4.8.0
+DISTVERSION=	5.1.0
 CATEGORIES=	misc
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES=	f1756a58e896bc05caf80d203509bb2aa94aaa25.patch:-p1
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Texture compressor for Adaptive Scalable Texture Compression format
-WWW=		https://github.com/ARM-software/astc-encoder
+WWW=		https://github.com/ARM-software/astc-encoder \
+		https://developer.arm.com/Gaming%20Graphics%20and%20VR
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
