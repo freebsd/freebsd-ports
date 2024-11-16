@@ -11,6 +11,9 @@ WWW=		https://www.cs.helsinki.fi/u/jjaakkol/sgrep.html
 
 LICENSE=	GPLv2
 
+DEPRECATED=	Abandonware, primary site is dead and according to website not touched in 20 years. Consider migrating to textproc/p5-ack 
+EXPIRATION_DATE=2024-12-31
+
 PORTSCOUT=	limit:^0\.
 CONFLICTS=	sgrep2-1.*
 
