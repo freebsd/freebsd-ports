@@ -1,6 +1,6 @@
 PORTNAME=	kphotoalbum
 DISTVERSION=	5.12.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics kde
 MASTER_SITES=	KDE/stable/${PORTNAME}/${PORTVERSION}/
 DIST_SUBDIR=	KDE
@@ -20,22 +20,26 @@ USE_KDE=	archive auth codecs completion config configwidgets coreaddons \
 		i18n iconthemes jobwidgets kio libkdcraw phonon purpose service solid \
 		sonnet textwidgets widgetsaddons windowsystem xmlgui \
 		ecm:build
-USE_QT=		concurrent core dbus declarative gui location network \
-		printsupport sql webchannel widgets xml \
+USE_QT=		concurrent core dbus gui network sql widgets xml \
 		buildtools:build qmake:build
 USE_XORG=	x11
-SHEBANG_FILES=	scripts/open-raw.pl scripts/kpa-backup.sh
 
-OPTIONS_DEFINE=	MARBLE WEBENGINE
-OPTIONS_DEFAULT=MARBLE
-OPTIONS_DEFAULT_amd64=	WEBENGINE
-OPTIONS_DEFAULT_i386=	WEBENGINE
+SHEBANG_FILES=	scripts/kpa-backup.sh \
+		scripts/open-raw.pl
 
-MARBLE_DESC=	Virtual globe and world atlas
-MARBLE_USE=	kde=marble
-MARBLE_CMAKE_OFF=	-DMarble_FOUND:BOOL=OFF
+OPTIONS_DEFINE=		MARBLE
+OPTIONS_DEFAULT=	MARBLE
 
-WEBENGINE_DESC=	Add dependency on qt5-webengine
-WEBENGINE_USE=	QT=webengine
+MARBLE_DESC=		Virtual globe and world atlas
+MARBLE_USE=		KDE=marble
+MARBLE_CMAKE_BOOL_OFF=	CMAKE_DISABLE_FIND_PACKAGE_Marble
+
+.include <bsd.port.options.mk>
+
+# These dependencies are only needed if the WEBENGINE option is enabled
+# in astro/marble.
+.if ${PORT_OPTIONS:MMARBLE} && exists(${LOCALBASE}/lib/marble/plugins/Photo.so)
+USE_QT+=	declarative location printsupport webchannel webengine
+.endif
 
 .include <bsd.port.mk>
