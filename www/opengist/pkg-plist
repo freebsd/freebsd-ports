@@ -1,0 +1,16 @@
+bin/opengist
+%%ETCDIR%%/config.yml.sample
+etc/rc.d/opengist
+%%WWWDIR%%/assets/admin-f49fd6c0.js
+%%WWWDIR%%/assets/default-f34219fc.png
+%%WWWDIR%%/assets/editor-dd91ca8c.js
+%%WWWDIR%%/assets/embed-3b762c54.css
+%%WWWDIR%%/assets/embed-ba879bc1.js
+%%WWWDIR%%/assets/favicon-32-5d82ace6.png
+%%WWWDIR%%/assets/gist-bdaf8125.js
+%%WWWDIR%%/assets/main-4eb45586.js
+%%WWWDIR%%/assets/main-54c7a69f.css
+%%WWWDIR%%/assets/opengist-85b89b9c.svg
+%%WWWDIR%%/assets/webauthn-da047c6d.js
+%%WWWDIR%%/manifest.json
+@dir /var/run/opengist

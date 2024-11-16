@@ -1,0 +1,58 @@
+#!/bin/sh
+
+# PROVIDE: opengist
+# REQUIRE: LOGIN NETWORKING
+# KEYWORD: shutdown
+#
+
+. /etc/rc.subr
+
+name=opengist
+rcvar=opengist_enable
+
+load_rc_config $name
+
+: ${opengist_enable:="NO"}
+: ${opengist_home:="%%WWWDIR%%"}
+: ${opengist_config_file:="%%PREFIX%%/etc/${name}/config.yml"}
+: ${opengist_syslog_output_enable:="NO"}
+: ${opengist_syslog_output_priority:="info"}
+: ${opengist_syslog_output_facility:="daemon"}
+
+if checkyesno opengist_syslog_output_enable; then
+	opengist_syslog_output_flags="-t ${name} -T ${name}"
+
+	if [ -n "${opengist_syslog_output_priority}" ]; then
+		opengist_syslog_output_flags="${opengist_syslog_output_flags} -s ${opengist_syslog_output_priority}"
+	fi
+
+	if [ -n "${opengist_syslog_output_facility}" ]; then
+		opengist_syslog_output_flags="${opengist_syslog_output_flags} -l ${opengist_syslog_output_facility}"
+	fi
+fi
+
+pidfile=/var/run/opengist/${name}.pid
+procname="%%PREFIX%%/bin/${name}"
+
+start_cmd="${name}_start"
+start_precmd="${name}_precmd"
+
+opengist_precmd()
+{
+	if [ ! -f ${opengist_config_file} ]
+	then
+		echo ${opengist_config_file} missing.
+		return 1
+	fi
+}
+
+opengist_start() {
+        /usr/sbin/daemon -f ${opengist_syslog_output_flags} -p ${pidfile} \
+                /usr/bin/env -i \
+                "PATH=%%PREFIX%%/bin:${PATH}" \
+                ${procname} -c ${opengist_config_file}
+}
+
+cd ${opengist_home}
+
+run_rc_command "$1"

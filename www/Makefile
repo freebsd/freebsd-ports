@@ -498,6 +498,7 @@
     SUBDIR += onlyoffice-documentserver
     SUBDIR += opencart
     SUBDIR += openemr
+    SUBDIR += opengist
     SUBDIR += openresty
     SUBDIR += orangehrm
     SUBDIR += osrm-backend
