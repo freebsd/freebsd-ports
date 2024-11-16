@@ -1,6 +1,6 @@
---- sandbox/policy/features.h.orig	2024-10-22 08:31:56 UTC
+--- sandbox/policy/features.h.orig	2024-11-14 07:57:23 UTC
 +++ sandbox/policy/features.h
-@@ -45,7 +45,7 @@ SANDBOX_POLICY_EXPORT BASE_DECLARE_FEATURE(
+@@ -45,7 +45,7 @@ SANDBOX_POLICY_EXPORT BASE_DECLARE_FEATURE(kWinSboxPar
  SANDBOX_POLICY_EXPORT BASE_DECLARE_FEATURE(kSpectreVariant2Mitigation);
  #endif  // BUILDFLAG(IS_CHROMEOS_ASH)
  

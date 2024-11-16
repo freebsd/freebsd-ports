@@ -1,6 +1,6 @@
---- chrome/browser/browser_process_impl.cc.orig	2024-10-22 08:31:56 UTC
+--- chrome/browser/browser_process_impl.cc.orig	2024-11-14 07:57:23 UTC
 +++ chrome/browser/browser_process_impl.cc
-@@ -235,7 +235,7 @@
+@@ -236,7 +236,7 @@
  #include "chrome/browser/ui/profiles/profile_picker.h"
  #endif
  
@@ -9,7 +9,7 @@
  #include "chrome/browser/error_reporting/chrome_js_error_report_processor.h"  // nogncheck
  #endif
  
-@@ -256,7 +256,7 @@
+@@ -257,7 +257,7 @@
  #include "components/enterprise/browser/controller/chrome_browser_cloud_management_controller.h"
  #endif
  
@@ -18,7 +18,7 @@
  #include "chrome/browser/browser_features.h"
  #include "components/os_crypt/async/browser/secret_portal_key_provider.h"
  #endif
-@@ -1124,7 +1124,7 @@ void BrowserProcessImpl::RegisterPrefs(PrefRegistrySim
+@@ -1125,7 +1125,7 @@ void BrowserProcessImpl::RegisterPrefs(PrefRegistrySim
                                  GoogleUpdateSettings::GetCollectStatsConsent());
    registry->RegisterBooleanPref(prefs::kDevToolsRemoteDebuggingAllowed, true);
  
@@ -27,7 +27,7 @@
    os_crypt_async::SecretPortalKeyProvider::RegisterLocalPrefs(registry);
  #endif
  }
-@@ -1307,7 +1307,7 @@ void BrowserProcessImpl::PreMainMessageLoopRun() {
+@@ -1308,7 +1308,7 @@ void BrowserProcessImpl::PreMainMessageLoopRun() {
  
    ApplyMetricsReportingPolicy();
  
@@ -36,8 +36,8 @@
    ChromeJsErrorReportProcessor::Create();
  #endif
  
-@@ -1404,7 +1404,7 @@ void BrowserProcessImpl::PreMainMessageLoopRun() {
-   }
+@@ -1398,7 +1398,7 @@ void BrowserProcessImpl::PreMainMessageLoopRun() {
+               features::kUseAppBoundEncryptionProviderForEncryption))));
  #endif  // BUILDFLAG(IS_WIN)
  
 -#if BUILDFLAG(IS_LINUX)
@@ -45,7 +45,7 @@
    if (base::FeatureList::IsEnabled(features::kDbusSecretPortal)) {
      providers.emplace_back(
          /*precedence=*/10u,
-@@ -1655,7 +1655,7 @@ void BrowserProcessImpl::Unpin() {
+@@ -1648,7 +1648,7 @@ void BrowserProcessImpl::Unpin() {
  // Mac is currently not supported.
  // TODO(crbug.com/40118868): Revisit once build flag switch of lacros-chrome is
  // complete.

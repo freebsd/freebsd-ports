@@ -1,6 +1,6 @@
---- chrome/browser/enterprise/connectors/reporting/realtime_reporting_client.cc.orig	2024-10-22 08:31:56 UTC
+--- chrome/browser/enterprise/connectors/reporting/realtime_reporting_client.cc.orig	2024-11-14 07:57:23 UTC
 +++ chrome/browser/enterprise/connectors/reporting/realtime_reporting_client.cc
-@@ -59,7 +59,7 @@
+@@ -58,7 +58,7 @@
  #include "base/strings/utf_string_conversions.h"
  #endif
  
@@ -9,8 +9,8 @@
  #include "chrome/browser/enterprise/signals/signals_aggregator_factory.h"
  #include "chrome/browser/enterprise/signin/enterprise_signin_prefs.h"
  #include "components/device_signals/core/browser/signals_aggregator.h"
-@@ -144,7 +144,7 @@ void UploadSecurityEventReport(base::Value::Dict event
-       std::move(report), std::move(upload_callback));
+@@ -143,7 +143,7 @@ void UploadSecurityEventReport(base::Value::Dict event
+       std::move(upload_callback));
  }
  
 -#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
@@ -18,7 +18,7 @@
  void PopulateSignals(base::Value::Dict event,
                       policy::CloudPolicyClient* client,
                       std::string name,
-@@ -421,7 +421,7 @@ void RealtimeReportingClient::ReportPastEvent(const st
+@@ -420,7 +420,7 @@ void RealtimeReportingClient::ReportPastEvent(const st
                             /*include_profile_user_name=*/false);
  }
  
@@ -27,7 +27,7 @@
  
  void AddCrowdstrikeSignalsToEvent(
      base::Value::Dict& event,
-@@ -480,7 +480,7 @@ void RealtimeReportingClient::ReportEventWithTimestamp
+@@ -479,7 +479,7 @@ void RealtimeReportingClient::ReportEventWithTimestamp
    if (include_profile_user_name) {
      event.Set(kKeyProfileUserName, GetProfileUserName());
    }
@@ -36,7 +36,7 @@
    Profile* profile = Profile::FromBrowserContext(context_);
    device_signals::SignalsAggregator* signals_aggregator =
        enterprise_signals::SignalsAggregatorFactory::GetForProfile(profile);
-@@ -504,7 +504,7 @@ std::string RealtimeReportingClient::GetProfileUserNam
+@@ -503,7 +503,7 @@ std::string RealtimeReportingClient::GetProfileUserNam
    std::string username =
        identity_manager_ ? GetProfileEmail(identity_manager_) : std::string();
  

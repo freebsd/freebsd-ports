@@ -1,6 +1,6 @@
---- ui/native_theme/native_theme_features.cc.orig	2024-01-30 07:53:34 UTC
+--- ui/native_theme/native_theme_features.cc.orig	2024-11-14 07:57:23 UTC
 +++ ui/native_theme/native_theme_features.cc
-@@ -54,7 +54,7 @@ bool IsOverlayScrollbarEnabled() {
+@@ -65,7 +65,7 @@ bool IsOverlayScrollbarEnabled() {
  
  bool IsFluentScrollbarEnabled() {
  // Fluent scrollbars are only used for some OSes due to UI design guidelines.
@@ -9,7 +9,7 @@
    return base::FeatureList::IsEnabled(features::kFluentScrollbar) ||
           IsFluentOverlayScrollbarEnabled();
  #else
-@@ -63,7 +63,7 @@ bool IsFluentScrollbarEnabled() {
+@@ -74,7 +74,7 @@ bool IsFluentScrollbarEnabled() {
  }
  bool IsFluentOverlayScrollbarEnabled() {
  // Fluent scrollbars are only used for some OSes due to UI design guidelines.

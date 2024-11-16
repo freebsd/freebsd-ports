@@ -1,4 +1,4 @@
---- chrome/browser/net/system_network_context_manager.cc.orig	2024-10-22 08:31:56 UTC
+--- chrome/browser/net/system_network_context_manager.cc.orig	2024-11-14 07:57:23 UTC
 +++ chrome/browser/net/system_network_context_manager.cc
 @@ -102,7 +102,7 @@
  
@@ -136,7 +136,7 @@
    gssapi_library_loader_observer_.Install(network_service);
  #endif  // BUILDFLAG(IS_LINUX)
  
-@@ -969,7 +969,7 @@ bool SystemNetworkContextManager::IsNetworkSandboxEnab
+@@ -965,7 +965,7 @@ bool SystemNetworkContextManager::IsNetworkSandboxEnab
        break;
    }
  

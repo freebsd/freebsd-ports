@@ -1,6 +1,6 @@
---- chrome/browser/ui/webui/certificate_manager/client_cert_sources.h.orig	2024-10-22 08:31:56 UTC
+--- chrome/browser/ui/webui/certificate_manager/client_cert_sources.h.orig	2024-11-14 07:57:23 UTC
 +++ chrome/browser/ui/webui/certificate_manager/client_cert_sources.h
-@@ -18,7 +18,7 @@ CreatePlatformClientCertSource(
+@@ -19,7 +19,7 @@ CreatePlatformClientCertSource(
          remote_client,
      Profile* profile);
  

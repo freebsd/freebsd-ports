@@ -1,6 +1,6 @@
---- components/feature_engagement/public/feature_list.cc.orig	2024-10-22 08:31:56 UTC
+--- components/feature_engagement/public/feature_list.cc.orig	2024-11-14 07:57:23 UTC
 +++ components/feature_engagement/public/feature_list.cc
-@@ -165,7 +165,7 @@ const base::Feature* const kAllFeatures[] = {
+@@ -162,7 +162,7 @@ const base::Feature* const kAllFeatures[] = {
      &kIPHiOSLensOverlayEntrypointTipFeature,
  #endif  // BUILDFLAG(IS_IOS)
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_APPLE) || BUILDFLAG(IS_LINUX) || \
@@ -19,7 +19,7 @@
      &kIPHAutofillCreditCardBenefitFeature,
      &kIPHAutofillDisabledVirtualCardSuggestionFeature,
      &kIPHAutofillExternalAccountProfileSuggestionFeature,
-@@ -281,7 +282,7 @@ const base::Feature* const kAllFeatures[] = {
+@@ -282,7 +283,7 @@ const base::Feature* const kAllFeatures[] = {
      &kIPHScalableIphGamingFeature,
  #endif  // BUILDFLAG(IS_CHROMEOS_ASH)
  

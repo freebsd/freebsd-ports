@@ -1,4 +1,4 @@
---- chrome/browser/ui/webui/management/management_ui_handler.h.orig	2024-06-17 12:56:06 UTC
+--- chrome/browser/ui/webui/management/management_ui_handler.h.orig	2024-11-14 07:57:23 UTC
 +++ chrome/browser/ui/webui/management/management_ui_handler.h
 @@ -31,7 +31,7 @@ namespace policy {
  class PolicyService;
@@ -16,5 +16,5 @@
 -#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
    virtual device_signals::UserPermissionService* GetUserPermissionService();
+   base::Value::Dict GetDeviceSignalGrantedMessage();
  #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
- 

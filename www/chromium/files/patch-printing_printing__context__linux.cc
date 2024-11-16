@@ -1,4 +1,4 @@
---- printing/printing_context_linux.cc.orig	2023-12-10 06:10:27 UTC
+--- printing/printing_context_linux.cc.orig	2024-11-14 07:57:23 UTC
 +++ printing/printing_context_linux.cc
 @@ -23,7 +23,7 @@
  #endif
@@ -9,7 +9,7 @@
  #include "ui/linux/linux_ui.h"
  #endif
  
-@@ -68,7 +68,7 @@ mojom::ResultCode PrintingContextLinux::UseDefaultSett
+@@ -66,7 +66,7 @@ mojom::ResultCode PrintingContextLinux::UseDefaultSett
  
    ResetSettings();
  
@@ -18,7 +18,7 @@
    if (!ui::LinuxUi::instance())
      return mojom::ResultCode::kSuccess;
  
-@@ -84,7 +84,7 @@ mojom::ResultCode PrintingContextLinux::UseDefaultSett
+@@ -82,7 +82,7 @@ mojom::ResultCode PrintingContextLinux::UseDefaultSett
  }
  
  gfx::Size PrintingContextLinux::GetPdfPaperSizeDeviceUnits() {
@@ -27,7 +27,7 @@
    if (ui::LinuxUi::instance())
      return ui::LinuxUi::instance()->GetPdfPaperSize(this);
  #endif
-@@ -97,7 +97,7 @@ mojom::ResultCode PrintingContextLinux::UpdatePrinterS
+@@ -95,7 +95,7 @@ mojom::ResultCode PrintingContextLinux::UpdatePrinterS
    DCHECK(!printer_settings.show_system_dialog);
    DCHECK(!in_print_job_);
  
