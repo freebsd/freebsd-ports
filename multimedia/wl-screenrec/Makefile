@@ -21,6 +21,10 @@ PLIST_FILES=	bin/${PORTNAME} \
 		share/fish/vendor_completions.d/${PORTNAME}.fish \
 		share/zsh/site-functions/_${PORTNAME}
 
+# https://github.com/russelltg/wl-screenrec/issues/99
+# https://github.com/zmwangx/rust-ffmpeg-sys/issues/96
+PORTSCOUT=	ignore:1
+
 post-patch:
 	@${REINPLACE_CMD} -e 's,"llvm-config,"${LLVM_CONFIG},' \
 		${WRKSRC_crate_clang-sys}/build/common.rs \
