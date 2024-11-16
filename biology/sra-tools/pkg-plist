@@ -271,7 +271,7 @@ lib64/libngs-c++.so.3.0.6
 %%JAVASHAREDIR%%doc/ngs-doc/package-search-index.js
 %%JAVASHAREDIR%%doc/ngs-doc/resources/glass.png
 %%JAVASHAREDIR%%doc/ngs-doc/resources/x.png
-%%JAVASHAREDIR%%doc/ngs-doc/script-dir/jquery-3.6.1.min.js
+%%JAVASHAREDIR%%doc/ngs-doc/script-dir/jquery-3.7.1.min.js
 %%JAVASHAREDIR%%doc/ngs-doc/script-dir/jquery-ui.min.css
 %%JAVASHAREDIR%%doc/ngs-doc/script-dir/jquery-ui.min.js
 %%JAVASHAREDIR%%doc/ngs-doc/script.js
