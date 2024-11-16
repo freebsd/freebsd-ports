@@ -1,26 +1,31 @@
 PORTNAME=	repsnapper
-DISTVERSION=	2.5a4
-PORTREVISION=	11
+DISTVERSION=	2.5a5
 CATEGORIES=	cad
 
 MAINTAINER=	martin.dieringer@gmx.de
 COMMENT=	Controller and GCode generator for RepRap 3D printers
 WWW=		https://reprap.org/wiki/RepSnapper_Manual:Introduction
 
-LICENSE=	GPLv2 BSD3CLAUSE MIT
-LICENSE_COMB=	multi
+LICENSE=		BSD3CLAUSE GPLv2 MIT
+LICENSE_COMB=		multi
+LICENSE_FILE_GPLv2=	${WRKSRC}/licenses/GPL-2.0.txt
+LICENSE_FILE_MIT=	${WRKSRC}/licenses/MIT.txt
 
-LIB_DEPENDS=	libgtkglextmm-x11-1.2.so:x11-toolkits/gtkglextmm \
+LIB_DEPENDS=	libgtkglext-x11-1.0.so:x11-toolkits/gtkglext \
+		libgtkglextmm-x11-1.2.so:x11-toolkits/gtkglextmm \
 		libpolyclipping.so:graphics/polyclipping \
 		libzip.so:archivers/libzip
 
-USES=		compiler:c++11-lib autoreconf gettext gl gmake gnome libtool \
+USES=		autoreconf compiler:c++11-lib gettext gl gmake gnome libtool \
 		localbase perl5 pkgconfig
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	timschmidt
-USE_GNOME=	gtkmm24 intltool libxml++26
-USE_GL=		gl
+USE_GL=		gl glu
+USE_GNOME=	gtkmm24 intltool libxml++26 pangox-compat
 USE_PERL5=	build
+USE_XORG=	x11
+
 GNU_CONFIGURE=	yes
 
 INSTALL_TARGET=	install-strip
