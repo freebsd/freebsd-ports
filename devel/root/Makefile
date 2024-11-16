@@ -1,6 +1,6 @@
 PORTNAME=	root
 DISTVERSION=	6.32.04
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel science math parallel python
 MASTER_SITES=	https://root.cern/download/
 DISTFILES=	${PORTNAME}_v${DISTVERSION}.source${EXTRACT_SUFX}
@@ -12,6 +12,8 @@ WWW=		https://root.cern/
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/LGPL2_1.txt
 
+BROKEN_FreeBSD_15=	fails to build: Patch for newest CURRENT is missing
+
 BUILD_AND_RUN_DEPENDS=	bash:shells/bash \
 		nlohmann-json>=3:devel/nlohmann-json
 BUILD_DEPENDS=	${BUILD_AND_RUN_DEPENDS}
@@ -22,8 +24,7 @@ LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 		libzstd.so:archivers/zstd
 RUN_DEPENDS=	${BUILD_AND_RUN_DEPENDS}
 
-USES=		cmake compiler:c++17-lang desktop-file-utils \
-		iconv shebangfix
+USES=		cmake desktop-file-utils iconv shebangfix
 
 SHEBANG_FILES=	main/python/rootbrowse.py \
 		main/python/rootcp.py \
@@ -47,9 +48,8 @@ SHEBANG_FILES=	main/python/rootbrowse.py \
 python_OLD_CMD+=	"/usr/bin/env @python@"
 
 # Flags and environment variables for building
-CMAKE_ARGS=	-DCMAKE_CXX_STANDARD=17
 CMAKE_ON=	builtin_clang builtin_cling builtin_llvm builtin_openui5 gnuinstall \
-		rpath runtime_cxxmodules shared soversion
+		rpath shared soversion
 CMAKE_OFF=	arrow builtin_afterimage builtin_cfitsio builtin_cppzmq builtin_davix \
 		builtin_fftw3 builtin_freetype builtin_ftgl builtin_gl2ps builtin_glew \
 		builtin_gsl builtin_gtest builtin_lz4 builtin_lzma builtin_nlohmannjson \
@@ -58,8 +58,9 @@ CMAKE_OFF=	arrow builtin_afterimage builtin_cfitsio builtin_cppzmq builtin_davix
 		builtin_zstd cefweb clad cocoa cuda cudnn daos davix dcache fcgi fftw3 gviz \
 		libcxx llvm13_broken_tests macos_native memory_termination minuit2_mpi \
 		minuit2_omp mpi odbc proof pythia8 qt5web qt6web r roofit_multiprocess \
-		shadowpw test_distrdf_dask test_distrdf_pyspark tmva-gpu tmva-rmva tmva-sofie \
-		unfold unuran uring vc veccore vecgeom win_broken_tests winrtdebug
+		runtime_cxxmodules shadowpw test_distrdf_dask test_distrdf_pyspark tmva-gpu \
+		tmva-rmva tmva-sofie unfold unuran uring vc veccore vecgeom win_broken_tests \
+		winrtdebug
 
 # Port build options; DOCS also on by default
 # See https://root.cern/install/build_from_source/#all-build-options
@@ -204,9 +205,9 @@ PLIST_SUB+=	PYVER="${PYTHON_VER:S/./_/}" \
 
 # Some .modulemap, .pcm and .idx files are not installed on aarch64, a few headers are only installed on aarch64
 .if ${OPSYS} == FreeBSD && ${ARCH} == "aarch64"
-PLIST_SUB+=	NOT_INSTALLED_ON_AARCH64="@comment " ONLY_INSTALLED_ON_AARCH64=""
+PLIST_SUB+=	ONLY_INSTALLED_ON_AARCH64=""
 .else
-PLIST_SUB+=	NOT_INSTALLED_ON_AARCH64="" ONLY_INSTALLED_ON_AARCH64="@comment "
+PLIST_SUB+=	ONLY_INSTALLED_ON_AARCH64="@comment "
 .endif
 
 # Files in lib/root/__pycache__ have links into WRKDIR and should not be staged. This happens even when PYROOT option is OFF.
