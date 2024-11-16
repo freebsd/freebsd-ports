@@ -10,6 +10,9 @@ WWW=		https://github.com/petervanderdoes/gitflow-avh
 LICENSE=	BSD2CLAUSE LGPL21
 LICENSE_COMB=	multi
 
+DEPRECATED=	Upstream repo archived Jun 19, 2023
+EXPIRATION_DATE=2024-12-31
+
 RUN_DEPENDS=	getopt>=0:misc/getopt
 
 USES=		gmake
