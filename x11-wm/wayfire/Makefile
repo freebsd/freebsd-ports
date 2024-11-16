@@ -1,7 +1,7 @@
 PORTNAME=	wayfire
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.9.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-wm wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -22,7 +22,7 @@ LIB_DEPENDS=	libevdev.so:devel/libevdev \
 		libwf-config.so:devel/wf-config \
 		libpng.so:graphics/png \
 		libwayland-server.so:graphics/wayland \
-		libwlroots.so:x11-toolkits/wlroots017 \
+		libwlroots-0.17.so:x11-toolkits/wlroots017 \
 		libinput.so:x11/libinput \
 		libxkbcommon.so:x11/libxkbcommon
 RUN_DEPENDS=	nlohmann-json>0:devel/nlohmann-json

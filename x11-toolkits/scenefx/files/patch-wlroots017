@@ -1,0 +1,15 @@
+Run-time dependency wlroots found: NO (tried pkgconfig and cmake)
+
+meson.build:103:10: ERROR: Dependency "wlroots" not found, tried pkgconfig and cmake
+
+--- meson.build.orig	2024-04-19 21:18:47 UTC
++++ meson.build
+@@ -100,7 +100,7 @@ wlroots_is_sub = subproject(
+ 	required: false,
+ 	version: wlroots_version,
+ ).found()
+-wlroots = dependency('wlroots',
++wlroots = dependency('wlroots-0.17',
+ 	version: wlroots_version,
+ 	default_options: wlroots_options,
+ )
