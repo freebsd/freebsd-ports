@@ -1,4 +1,4 @@
---- chrome/browser/ui/views/frame/picture_in_picture_browser_frame_view.cc.orig	2024-10-22 08:31:56 UTC
+--- chrome/browser/ui/views/frame/picture_in_picture_browser_frame_view.cc.orig	2024-11-14 07:57:23 UTC
 +++ chrome/browser/ui/views/frame/picture_in_picture_browser_frame_view.cc
 @@ -61,7 +61,7 @@
  #include "ui/aura/window.h"
@@ -27,7 +27,7 @@
      // Calculate input bounds for Linux. This is needed because the input bounds
      // is not necessary the same as the local bounds on Linux.
      if (pip_browser_frame_view_->ShouldDrawFrameShadow()) {
-@@ -591,7 +591,7 @@ PictureInPictureBrowserFrameView::PictureInPictureBrow
+@@ -590,7 +590,7 @@ PictureInPictureBrowserFrameView::PictureInPictureBrow
          AddChildView(std::move(auto_pip_setting_overlay));
    }
  
@@ -36,7 +36,7 @@
    auto* profile = browser_view->browser()->profile();
    auto* linux_ui_theme = ui::LinuxUiTheme::GetForProfile(profile);
    auto* theme_service_factory = ThemeServiceFactory::GetForProfile(profile);
-@@ -813,7 +813,7 @@ void PictureInPictureBrowserFrameView::OnThemeChanged(
+@@ -812,7 +812,7 @@ void PictureInPictureBrowserFrameView::OnThemeChanged(
    for (ContentSettingImageView* view : content_setting_views_)
      view->SetIconColor(color_provider->GetColor(kColorPipWindowForeground));
  
@@ -45,7 +45,7 @@
    // On Linux the top bar background will be drawn in OnPaint().
    top_bar_container_view_->SetBackground(views::CreateSolidBackground(
        color_provider->GetColor(kColorPipWindowTopBarBackground)));
-@@ -897,7 +897,7 @@ void PictureInPictureBrowserFrameView::RemovedFromWidg
+@@ -896,7 +896,7 @@ void PictureInPictureBrowserFrameView::RemovedFromWidg
    BrowserNonClientFrameView::RemovedFromWidget();
  }
  
@@ -54,7 +54,7 @@
  gfx::Insets
  PictureInPictureBrowserFrameView::RestoredMirroredFrameBorderInsets() const {
    auto border = FrameBorderInsets();
-@@ -1189,7 +1189,7 @@ void PictureInPictureBrowserFrameView::AnimationProgre
+@@ -1188,7 +1188,7 @@ void PictureInPictureBrowserFrameView::AnimationProgre
  // views::View implementations:
  
  void PictureInPictureBrowserFrameView::OnPaint(gfx::Canvas* canvas) {
@@ -63,7 +63,7 @@
    // Draw the PiP window frame borders and shadows, including the top bar
    // background.
    if (window_frame_provider_) {
-@@ -1344,7 +1344,7 @@ void PictureInPictureBrowserFrameView::UpdateTopBarVie
+@@ -1343,7 +1343,7 @@ void PictureInPictureBrowserFrameView::UpdateTopBarVie
  }
  
  gfx::Insets PictureInPictureBrowserFrameView::FrameBorderInsets() const {
@@ -72,7 +72,7 @@
    if (window_frame_provider_) {
      const auto insets = window_frame_provider_->GetFrameThicknessDip();
      const bool tiled = frame()->tiled();
-@@ -1362,7 +1362,7 @@ gfx::Insets PictureInPictureBrowserFrameView::FrameBor
+@@ -1361,7 +1361,7 @@ gfx::Insets PictureInPictureBrowserFrameView::FrameBor
  }
  
  gfx::Insets PictureInPictureBrowserFrameView::ResizeBorderInsets() const {
@@ -81,7 +81,7 @@
    return FrameBorderInsets();
  #elif !BUILDFLAG(IS_CHROMEOS_ASH)
    return gfx::Insets(kResizeBorder);
-@@ -1383,7 +1383,7 @@ gfx::Size PictureInPictureBrowserFrameView::GetNonClie
+@@ -1382,7 +1382,7 @@ gfx::Size PictureInPictureBrowserFrameView::GetNonClie
                     top_height + border_thickness.bottom());
  }
  

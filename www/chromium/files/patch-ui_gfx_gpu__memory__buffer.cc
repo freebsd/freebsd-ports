@@ -1,6 +1,6 @@
---- ui/gfx/gpu_memory_buffer.cc.orig	2024-05-21 18:07:39 UTC
+--- ui/gfx/gpu_memory_buffer.cc.orig	2024-11-14 07:57:23 UTC
 +++ ui/gfx/gpu_memory_buffer.cc
-@@ -55,7 +55,7 @@ GpuMemoryBufferHandle GpuMemoryBufferHandle::Clone() c
+@@ -63,7 +63,7 @@ GpuMemoryBufferHandle GpuMemoryBufferHandle::Clone() c
    handle.region = region.Duplicate();
    handle.offset = offset;
    handle.stride = stride;

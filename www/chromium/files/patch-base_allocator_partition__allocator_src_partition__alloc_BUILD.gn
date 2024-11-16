@@ -1,6 +1,6 @@
---- base/allocator/partition_allocator/src/partition_alloc/BUILD.gn.orig	2024-10-22 08:31:56 UTC
+--- base/allocator/partition_allocator/src/partition_alloc/BUILD.gn.orig	2024-11-14 07:57:23 UTC
 +++ base/allocator/partition_allocator/src/partition_alloc/BUILD.gn
-@@ -858,7 +858,7 @@ if (is_clang_or_gcc) {
+@@ -863,7 +863,7 @@ if (is_clang_or_gcc) {
          configs -= [ partition_alloc_enable_arc_config ]
        }
      }

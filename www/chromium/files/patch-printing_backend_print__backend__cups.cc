@@ -1,4 +1,4 @@
---- printing/backend/print_backend_cups.cc.orig	2024-10-22 08:31:56 UTC
+--- printing/backend/print_backend_cups.cc.orig	2024-11-14 07:57:23 UTC
 +++ printing/backend/print_backend_cups.cc
 @@ -33,7 +33,7 @@
  #include "printing/mojom/print.mojom.h"
@@ -17,8 +17,8 @@
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_BSD)
  // This may be removed when Amazon Linux 2 reaches EOL (30 Jun 2025).
  bool AreNewerCupsFunctionsAvailable() {
-   return cupsFindDestDefault && cupsFindDestSupported && ippValidateAttributes;
-@@ -291,7 +291,7 @@ bool PrintBackendCUPS::IsValidPrinter(const std::strin
+   return cupsFindDestDefault && cupsFindDestSupported && cupsUserAgent &&
+@@ -292,7 +292,7 @@ bool PrintBackendCUPS::IsValidPrinter(const std::strin
  #if !BUILDFLAG(IS_CHROMEOS)
  scoped_refptr<PrintBackend> PrintBackend::CreateInstanceImpl(
      const std::string& locale) {

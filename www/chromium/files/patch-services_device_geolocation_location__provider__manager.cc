@@ -1,6 +1,6 @@
---- services/device/geolocation/location_provider_manager.cc.orig	2024-08-26 12:06:38 UTC
+--- services/device/geolocation/location_provider_manager.cc.orig	2024-11-14 07:57:23 UTC
 +++ services/device/geolocation/location_provider_manager.cc
-@@ -51,7 +51,7 @@ LocationProviderManager::LocationProviderManager(
+@@ -87,7 +87,7 @@ LocationProviderManager::LocationProviderManager(
  #if BUILDFLAG(IS_ANDROID)
    // On Android, default to using the platform location provider.
    provider_manager_mode_ = kPlatformOnly;

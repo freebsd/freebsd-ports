@@ -1,14 +1,12 @@
 PORTNAME=	chromium
-PORTVERSION=	130.0.6723.116
-PORTREVISION=	1
+PORTVERSION=	131.0.6778.69
 PULSEMV=	16
 PULSEV=		${PULSEMV}.1
 CATEGORIES=	www wayland
 MASTER_SITES=	https://commondatastorage.googleapis.com/chromium-browser-official/ \
 		https://nerd.hu/distfiles/:external \
-		https://chromium-tarballs.syd1.cdn.digitaloceanspaces.com/:unofficial \
 		https://freedesktop.org/software/pulseaudio/releases/:pulseaudio
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:unofficial \
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:external \
 		chrome-linux-${PORTVERSION}-llvm17.profdata${EXTRACT_SUFX}:external \
 		pulseaudio-${PULSEV}.tar.gz:pulseaudio
 
@@ -225,7 +223,7 @@ WIDEVINE_DESC=		Depend on foreign-cdm to enable playback of DRM content
 WIDEVINE_RUN_DEPENDS=	foreign-cdm>0:www/foreign-cdm
 
 .include "Makefile.tests"
-TEST_DISTFILES=		${PORTNAME}-${DISTVERSION}-testdata${EXTRACT_SUFX}:unofficial
+TEST_DISTFILES=		${PORTNAME}-${DISTVERSION}-testdata${EXTRACT_SUFX}:external
 TEST_ALL_TARGET=	${TEST_TARGETS}
 
 .include <bsd.port.options.mk>
@@ -290,7 +288,7 @@ pre-configure:
 	#./build/linux/unbundle/remove_bundled_libraries.py [list of preserved]
 	cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} ${PYTHON_CMD} \
 		./build/linux/unbundle/replace_gn_files.py --system-libraries \
-		dav1d flac fontconfig freetype harfbuzz-ng icu libdrm libevent libpng \
+		dav1d flac fontconfig harfbuzz-ng icu libdrm libevent libpng \
 		libusb libwebp libxml libxslt openh264 opus || ${FALSE}
 	# Chromium uses an unreleased version of FFmpeg, so configure it
 	cd ${WRKSRC}/media/ffmpeg && \

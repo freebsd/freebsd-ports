@@ -1,4 +1,4 @@
---- remoting/host/ipc_constants.cc.orig	2023-02-08 09:03:45 UTC
+--- remoting/host/ipc_constants.cc.orig	2024-11-14 07:57:23 UTC
 +++ remoting/host/ipc_constants.cc
 @@ -17,7 +17,7 @@ namespace remoting {
  
@@ -9,7 +9,7 @@
  
  #if !defined(NDEBUG)
  // Use a different IPC name for debug builds so that we can run the host
-@@ -68,7 +68,7 @@ GetChromotingHostServicesServerName() {
+@@ -81,7 +81,7 @@ GetChromotingHostServicesServerName() {
    static const base::NoDestructor<mojo::NamedPlatformChannel::ServerName>
        server_name(
            named_mojo_ipc_server::WorkingDirectoryIndependentServerNameFromUTF8(

@@ -1,6 +1,6 @@
---- components/device_signals/core/common/signals_features.h.orig	2023-08-17 07:33:31 UTC
+--- components/device_signals/core/common/signals_features.h.orig	2024-11-14 07:57:23 UTC
 +++ components/device_signals/core/common/signals_features.h
-@@ -28,7 +28,7 @@ enum class NewEvFunction { kFileSystemInfo, kSettings,
+@@ -31,7 +31,7 @@ enum class NewEvFunction { kFileSystemInfo, kSettings,
  bool IsNewFunctionEnabled(NewEvFunction new_ev_function);
  
  #if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || \

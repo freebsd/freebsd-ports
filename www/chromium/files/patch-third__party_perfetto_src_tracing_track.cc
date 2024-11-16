@@ -1,6 +1,18 @@
---- third_party/perfetto/src/tracing/track.cc.orig	2024-07-30 11:12:21 UTC
+--- third_party/perfetto/src/tracing/track.cc.orig	2024-11-14 07:57:23 UTC
 +++ third_party/perfetto/src/tracing/track.cc
-@@ -155,7 +155,7 @@ namespace internal {
+@@ -60,8 +60,9 @@ protos::gen::TrackDescriptor ProcessTrack::Serialize()
+   auto desc = Track::Serialize();
+   auto pd = desc.mutable_process();
+   pd->set_pid(static_cast<int32_t>(pid));
+-#if PERFETTO_BUILDFLAG(PERFETTO_OS_LINUX) || \
+-    PERFETTO_BUILDFLAG(PERFETTO_OS_ANDROID)
++#if (PERFETTO_BUILDFLAG(PERFETTO_OS_LINUX) || \
++    PERFETTO_BUILDFLAG(PERFETTO_OS_ANDROID)) && \
++    !PERFETTO_BUILDFLAG(PERFETTO_OS_BSD)
+   std::string cmdline;
+   if (base::ReadFile("/proc/self/cmdline", &cmdline)) {
+     // Since cmdline is a zero-terminated list of arguments, this ends up
+@@ -155,7 +156,7 @@ namespace internal {
  namespace {
  
  uint64_t GetProcessStartTime() {

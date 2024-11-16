@@ -1,6 +1,6 @@
---- base/system/sys_info.cc.orig	2024-08-26 12:06:38 UTC
+--- base/system/sys_info.cc.orig	2024-11-14 07:57:23 UTC
 +++ base/system/sys_info.cc
-@@ -223,7 +223,7 @@ std::string SysInfo::HardwareModelName() {
+@@ -229,7 +229,7 @@ std::string SysInfo::SocManufacturer() {
  #endif
  
  void SysInfo::GetHardwareInfo(base::OnceCallback<void(HardwareInfo)> callback) {

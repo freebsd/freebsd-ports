@@ -1,6 +1,4 @@
-diff --git components/media_router/common/providers/cast/channel/enum_table.h components/media_router/common/providers/cast/channel/enum_table.h	2024-11-02 08:11:27 UTC
-index 18fd272c6a..ad9ec2c243 100644
---- components/media_router/common/providers/cast/channel/enum_table.h
+--- components/media_router/common/providers/cast/channel/enum_table.h.orig	2024-11-14 07:57:23 UTC
 +++ components/media_router/common/providers/cast/channel/enum_table.h
 @@ -368,7 +368,12 @@ class EnumTable {
  
