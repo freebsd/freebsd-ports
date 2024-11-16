@@ -29,6 +29,7 @@ LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
 		libprotobuf.so:devel/protobuf \
 		libcurl.so:ftp/curl \
 		libGLEW-wayland.so:graphics/glew-wayland \
+		libnng.so:net/nng \
 		libodbc.so:databases/unixODBC
 
 CONFLICTS_INSTALL=	kicad # bin/_cvpcb.kiface
