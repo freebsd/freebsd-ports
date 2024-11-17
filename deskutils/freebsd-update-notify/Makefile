@@ -1,6 +1,6 @@
 PORTNAME=	freebsd-update-notify
-DISTVERSION=	0.1.1-6
-DISTVERSIONSUFFIX=	-gf703b73
+DISTVERSION=	0.1.1-7
+DISTVERSIONSUFFIX=	-gf0ddfa9
 CATEGORIES=	deskutils
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -10,7 +10,9 @@ WWW=		https://github.com/outpaddling/freebsd-update-notify
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	zenity:x11/zenity auto-admin>=0.8.0:sysutils/auto-admin
+RUN_DEPENDS=	zenity:x11/zenity \
+		auto-admin>=0.8.0:sysutils/auto-admin \
+		rxvt-unicode>0:x11/rxvt-unicode
 
 USE_GITHUB=	yes
 
