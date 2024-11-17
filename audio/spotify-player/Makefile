@@ -1,7 +1,6 @@
 PORTNAME=	spotify-player
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.17.1
-PORTREVISION=	11
+DISTVERSION=	0.20.4
 CATEGORIES=	audio
 
 MAINTAINER=	jfree@FreeBSD.org
@@ -16,7 +15,7 @@ NOT_FOR_ARCHS_REASON=	fails to build
 
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig
 
-USES=		cargo ssl
+USES=		cargo llvm ssl
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	aome510
@@ -28,24 +27,34 @@ CARGO_INSTALL_PATH=	./spotify_player
 PLIST_FILES=	bin/spotify_player
 PORTDOCS=	README.md
 
-OPTIONS_DEFINE=		CLIPBOARD DAEMON DBUS DOCS IMAGE LYRICS NOTIFY
-OPTIONS_DEFAULT=	CLIPBOARD DBUS NOTIFY PORTAUDIO
+OPTIONS_DEFINE=		DAEMON \
+			DBUS \
+			DOCS \
+			FUZZY_SEARCH \
+			IMAGE \
+			LYRICS \
+			NOTIFY \
+			STREAMING
+
 OPTIONS_SINGLE=		BACKEND
 OPTIONS_SINGLE_BACKEND=	PORTAUDIO PULSEAUDIO
 
-CLIPBOARD_DESC=	Open Spotify links from clipboard
+OPTIONS_DEFAULT=	DBUS NOTIFY PORTAUDIO STREAMING
+
 DAEMON_DESC=	Ability to launch as daemon
 DBUS_DESC=	Media control via MPRIS D-Bus
+FUZZY_SEARCH_DESC=	Approximate string matching
 IMAGE_DESC=	Terminal album art rendering
 LYRICS_DESC=	Fetch lyrics for current track
 NOTIFY_DESC=	Desktop notifications
-
-CLIPBOARD_VARS=	CARGO_FEATURES+=clipboard
+STREAMING_DESC=	Play music directly from terminal
 
 DAEMON_VARS=	CARGO_FEATURES+=daemon
 
 DBUS_LIB_DEPENDS=	libdbus-1.so:devel/dbus
 DBUS_VARS=		CARGO_FEATURES+=media-control
+
+FUZZY_SEARCH_VARS=	CARGO_FEATURES+=fzf
 
 IMAGE_VARS=	CARGO_FEATURES+=image
 
@@ -58,6 +67,8 @@ PORTAUDIO_VARS=		CARGO_FEATURES+=portaudio-backend
 
 PULSEAUDIO_LIB_DEPENDS=	libpulse.so:audio/pulseaudio
 PULSEAUDIO_VARS=	CARGO_FEATURES+=pulseaudio-backend
+
+STREAMING_VARS=	CARGO_FEATURES+=streaming
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
