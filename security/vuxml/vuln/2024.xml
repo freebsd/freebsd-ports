@@ -1,3 +1,44 @@
+  <vuln vid="28ffa931-a510-11ef-8109-b42e991fc52e">
+    <topic>mongodb -- Buffer over-reads in MongoDB Server</topic>
+    <affects>
+      <package>
+	<name>mongodb50</name>
+	<range><lt>5.0.30</lt></range>
+      </package>
+      <package>
+	<name>mongodb60</name>
+	<range><lt>6.0.19</lt></range>
+      </package>
+      <package>
+	<name>mongodb70</name>
+	<range><lt>7.0.15</lt></range>
+      </package>
+      <package>
+	<name>mongodb80</name>
+	<range><lt>8.0.2</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>cna@mongodb.com reports:</p>
+	<blockquote cite="https://jira.mongodb.org/browse/SERVER-96419">
+	  <p>An authorized user may trigger crashes or receive the contents of
+	buffer over-reads of Server memory by issuing specially crafted
+	requests that construct malformed BSON in the MongoDB Server.
+	</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2024-10921</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2024-10921</url>
+    </references>
+    <dates>
+      <discovery>2024-11-14</discovery>
+      <entry>2024-11-17</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="aba28514-a414-11ef-98e7-84a93843eb75">
     <topic>Vaultwarden -- Multiple vulnerabilities</topic>
     <affects>
