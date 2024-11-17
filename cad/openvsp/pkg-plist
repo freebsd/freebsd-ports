@@ -8,8 +8,13 @@ bin/vsploads
 bin/vspscript
 bin/vspviewer
 help/AdvLink.html
+help/SetEdit.html
 help/github-pandoc.css
 help/images/AdvLink_example.png
+help/images/SetEditor_body.png
+help/images/SetEditor_footer.png
+help/images/SetEditor_header.png
+help/images/SetEditor_window.png
 help/index.html
 %%DATADIR%%/23015.af
 %%DATADIR%%/AirfoilExport.vspscript
