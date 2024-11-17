@@ -17,17 +17,21 @@ LIB_DEPENDS=	libchdr.so:devel/libchdr \
 		libzip.so:archivers/libzip \
 		libzstd.so:archivers/zstd
 
-USES=		cmake compiler:c++17-lang lua:52+ pkgconfig sdl
+USES=		cmake compiler:c++17-lang pkgconfig sdl
 USE_GITHUB=	yes
 GH_ACCOUNT=	flyinghead
 USE_SDL=	sdl2
 
 .include "${.CURDIR}/Makefile.tuples"
 
-OPTIONS_DEFINE=		DOCS OPENMP VULKAN
-OPTIONS_DEFAULT=	ALSA AO OPENMP OSS VULKAN
+OPTIONS_DEFINE=		DOCS LUA OPENMP VULKAN
+OPTIONS_DEFAULT=	ALSA AO LUA OPENMP OSS VULKAN
 OPTIONS_GROUP=		AUDIO
 OPTIONS_GROUP_AUDIO=	ALSA AO OSS PULSEAUDIO
+
+# building with lua support fails on i386, see also
+# https://github.com/vinniefalco/LuaBridge/issues/302
+OPTIONS_EXCLUDE_i386=	LUA
 
 VULKAN_DESC=	Build with Vulkan support
 
@@ -36,6 +40,9 @@ ALSA_CMAKE_BOOL=	USE_ALSA
 
 AO_LIB_DEPENDS=		libao.so:audio/libao
 AO_CMAKE_BOOL=		USE_AO
+
+LUA_USES=		lua:52+
+LUA_CMAKE_BOOL=		USE_LUA
 
 OPENMP_CMAKE_BOOL=	USE_OPENMP
 
