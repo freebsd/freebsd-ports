@@ -473,7 +473,7 @@ do-install:
 	find ${WRKDIR}/target
 	echo "<< find"
 	${INSTALL_PROGRAM} \
-		${WRKDIR}/target/*/release/${PORTNAME} \
+		${WRKDIR}/target/release/${PORTNAME} \
 		${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>
