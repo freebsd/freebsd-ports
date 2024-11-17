@@ -6,11 +6,13 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Event record for High Energy Physics Monte Carlo generators/simulation
-WWW=		https://hepmc.web.cern.ch/hepmc/
+WWW=		https://hepmc.web.cern.ch/hepmc/ \
+		https://gitlab.cern.ch/hepmc/HepMC3
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/../COPYING
 
+BROKEN_armv7=	compilation fails, static assertion failed due to requirement 'sizeof(long long) <= sizeof(int)': Implicit narrowing is not permitted.
 BROKEN_i386=	compilation fails, static_assert(sizeof(IntType) <= sizeof(ssize_t), "Implicit narrowing is not permitted."), reported to the ML hepmc-dev@cern.ch on 2024-06-24
 BROKEN_powerpc=	compilation fails, static_assert(sizeof(IntType) <= sizeof(ssize_t), "Implicit narrowing is not permitted."), reported to the ML hepmc-dev@cern.ch on 2024-06-24
 
