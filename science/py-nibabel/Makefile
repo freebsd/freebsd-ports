@@ -1,5 +1,5 @@
 PORTNAME=	nibabel
-DISTVERSION=	5.3.0
+DISTVERSION=	5.3.2
 CATEGORIES=	science python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -25,7 +25,7 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest-cov>0:devel/py-pytest-cov@${PY_FLAVO
 TEST_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}pydicom>0:science/py-pydicom@${PY_FLAVOR}
 
 USES=		python:3.9+
-USE_PYTHON=	pep517 concurrent autoplist pytest # 1 test fails, see https://github.com/nipy/nibabel/issues/1375
+USE_PYTHON=	pep517 concurrent autoplist pytest # 2 test fail, 1 error, see https://github.com/nipy/nibabel/issues/1386
 
 NO_ARCH=	yes
 
@@ -36,6 +36,6 @@ post-install:
 		${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/nibabel/cmdline/diff.py  \
 		${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/nibabel/cmdline/ls.py 
 
-# tests: 1 failed, 5175 passed, 267 skipped, 35 xfailed, 5 xpassed, 508 warnings, 1 error in 296.51s (0:04:56)
+# tests as of 5.3.2: 2 failed, 5414 passed, 50 skipped, 37 xfailed, 5 xpassed, 500 warnings, 1 error in 318.54s (0:05:18)
 
 .include <bsd.port.mk>
