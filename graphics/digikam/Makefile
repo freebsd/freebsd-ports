@@ -1,15 +1,15 @@
 PORTNAME=	digikam
-DISTVERSION=	8.4.0
-PORTREVISION=	3
+DISTVERSION=	8.5.0
 CATEGORIES=	graphics kde
 MASTER_SITES=	KDE/stable/${PORTNAME}/${PORTVERSION} \
-		https://files.kde.org/digikam/%SUBDIR%/:aesthetic,autotags,face,shape \
-		https://kde-applicationdata.mirrors.omnilance.com/digikam/%SUBDIR%/:aesthetic,autotags,face,shape \
-		https://mirrors.ocf.berkeley.edu/kde-applicationdata/digikam/%SUBDIR%/:aesthetic,autotags,face,shape
+		https://files.kde.org/digikam/%SUBDIR%/:aesthetic,autotags,face,shape,yunet \
+		https://kde-applicationdata.mirrors.omnilance.com/digikam/%SUBDIR%/:aesthetic,autotags,face,shape,yunet \
+		https://mirrors.ocf.berkeley.edu/kde-applicationdata/digikam/%SUBDIR%/:aesthetic,autotags,face,shape,yunet
 MASTER_SITE_SUBDIR=	aestheticdetector/:aesthetic \
 			autotags/:autotags \
 			facesengine/dnnface/:face \
-			facesengine/shape-predictor/:shape
+			facesengine/shape-predictor/:shape \
+			facesengine/yunet/:yunet
 # One bit changed in the naming convention ..
 DISTFILES=	digiKam-${DISTVERSIONPREFIX}${DISTVERSION}${DISTVERSIONSUFFIX}${EXTRACT_SUFX}
 DIST_SUBDIR=	KDE/${PORTNAME}
@@ -81,14 +81,17 @@ AUTOTAGS_DISTFILES=	classification_classes_ILSVRC2012.txt:autotags \
 			yolov5n_batch_16_s320.onnx:autotags \
 			yolov5x_batch_16_s320.onnx:autotags
 
-FACEDETECT_DESC=	Install data required for face detection (~419 MiB)
+FACEDETECT_DESC=	Install data required for face detection (~455 MiB)
 FACEDETECT_DISTFILES=	weights_inceptionv3_299.pb:aesthetic \
 			deploy.prototxt:face \
+			face_recognition_sface_2021dec.onnx:face \
 			openface_nn4.small2.v1.t7:face \
 			res10_300x300_ssd_iter_140000_fp16.caffemodel:face \
 			yolov3-face.cfg:face \
 			yolov3-wider_16000.weights:face \
-			shapepredictor.dat:shape
+			shapepredictor.dat:shape \
+			face_detection_yunet_2023mar.onnx:yunet \
+			face_detection_yunet_2023mar_int8.onnx:yunet
 
 KDEPIM_DESC=		KDEPim Addressbook support
 KDEPIM_USES=		grantlee:5

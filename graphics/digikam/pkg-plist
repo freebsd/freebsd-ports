@@ -345,9 +345,6 @@ share/applications/org.kde.showfoto.desktop
 %%DATADIR%%/data/exifinfo.png
 %%DATADIR%%/data/fabric-texture.png
 %%DATADIR%%/data/granit-pattern.png
-%%DATADIR%%/data/histogram-lin.png
-%%DATADIR%%/data/histogram-log.png
-%%DATADIR%%/data/histogram.png
 %%DATADIR%%/data/ice-pattern.png
 %%DATADIR%%/data/image-full.png
 %%DATADIR%%/data/image-selection.png
@@ -398,9 +395,13 @@ share/applications/org.kde.showfoto.desktop
 %%DATADIR%%/data/wood-pattern.png
 %%DATADIR%%/database/dbconfig.xml
 %%DATADIR%%/database/mysql-global.conf
+%%DATADIR%%/dnnmodels/dnnmodels.conf
 %%AUTOTAGS%%%%DATADIR%%/facesengine/classification_classes_ILSVRC2012.txt
 %%AUTOTAGS%%%%DATADIR%%/facesengine/coco.names
 %%FACEDETECT%%%%DATADIR%%/facesengine/deploy.prototxt
+%%FACEDETECT%%%%DATADIR%%/facesengine/face_detection_yunet_2023mar.onnx
+%%FACEDETECT%%%%DATADIR%%/facesengine/face_detection_yunet_2023mar_int8.onnx
+%%FACEDETECT%%%%DATADIR%%/facesengine/face_recognition_sface_2021dec.onnx
 %%FACEDETECT%%%%DATADIR%%/facesengine/openface_nn4.small2.v1.t7
 %%FACEDETECT%%%%DATADIR%%/facesengine/res10_300x300_ssd_iter_140000_fp16.caffemodel
 %%AUTOTAGS%%%%DATADIR%%/facesengine/resnet50.onnx
@@ -1881,12 +1882,10 @@ share/applications/org.kde.showfoto.desktop
 %%DATADIR%%/themes/vanilla/template.xsl
 %%DATADIR%%/themes/vanilla/vanilla.desktop
 %%DATADIR%%/utils/digikam-camera
-share/icons/hicolor/128x128/apps/avplayer.png
 share/icons/hicolor/128x128/apps/digikam.png
 share/icons/hicolor/128x128/apps/expoblending.png
 share/icons/hicolor/128x128/apps/panorama.png
 share/icons/hicolor/128x128/apps/showfoto.png
-share/icons/hicolor/16x16/apps/avplayer.png
 share/icons/hicolor/16x16/apps/digikam.png
 share/icons/hicolor/16x16/apps/dk-box.png
 share/icons/hicolor/16x16/apps/dk-dropbox.png
@@ -1905,7 +1904,6 @@ share/icons/hicolor/16x16/apps/dk-smugmug.png
 share/icons/hicolor/16x16/apps/expoblending.png
 share/icons/hicolor/16x16/apps/panorama.png
 share/icons/hicolor/16x16/apps/showfoto.png
-share/icons/hicolor/22x22/apps/avplayer.png
 share/icons/hicolor/22x22/apps/digikam.png
 share/icons/hicolor/22x22/apps/dk-box.png
 share/icons/hicolor/22x22/apps/dk-dropbox.png
@@ -1924,7 +1922,6 @@ share/icons/hicolor/22x22/apps/dk-smugmug.png
 share/icons/hicolor/22x22/apps/expoblending.png
 share/icons/hicolor/22x22/apps/panorama.png
 share/icons/hicolor/22x22/apps/showfoto.png
-share/icons/hicolor/256x256/apps/avplayer.png
 share/icons/hicolor/256x256/apps/digikam.png
 share/icons/hicolor/256x256/apps/showfoto.png
 share/icons/hicolor/32x32/actions/albumfolder-importdir.png
@@ -1945,7 +1942,6 @@ share/icons/hicolor/32x32/actions/tag-recents.png
 share/icons/hicolor/32x32/actions/tag-reset.png
 share/icons/hicolor/32x32/actions/tag.png
 share/icons/hicolor/32x32/actions/underexposure.png
-share/icons/hicolor/32x32/apps/avplayer.png
 share/icons/hicolor/32x32/apps/digikam.png
 share/icons/hicolor/32x32/apps/dk-box.png
 share/icons/hicolor/32x32/apps/dk-dropbox.png
@@ -1964,7 +1960,6 @@ share/icons/hicolor/32x32/apps/dk-smugmug.png
 share/icons/hicolor/32x32/apps/expoblending.png
 share/icons/hicolor/32x32/apps/panorama.png
 share/icons/hicolor/32x32/apps/showfoto.png
-share/icons/hicolor/48x48/apps/avplayer.png
 share/icons/hicolor/48x48/apps/digikam.png
 share/icons/hicolor/48x48/apps/dk-box.png
 share/icons/hicolor/48x48/apps/dk-dropbox.png
@@ -1983,12 +1978,10 @@ share/icons/hicolor/48x48/apps/dk-smugmug.png
 share/icons/hicolor/48x48/apps/expoblending.png
 share/icons/hicolor/48x48/apps/panorama.png
 share/icons/hicolor/48x48/apps/showfoto.png
-share/icons/hicolor/64x64/apps/avplayer.png
 share/icons/hicolor/64x64/apps/digikam.png
 share/icons/hicolor/64x64/apps/showfoto.png
 share/icons/hicolor/96x96/apps/expoblending.png
 share/icons/hicolor/96x96/apps/panorama.png
-share/icons/hicolor/scalable/apps/avplayer.svgz
 share/icons/hicolor/scalable/apps/digikam.svgz
 share/icons/hicolor/scalable/apps/dk-flickr.svgz
 share/icons/hicolor/scalable/apps/dk-googlephoto.svgz
