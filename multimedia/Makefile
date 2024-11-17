@@ -57,6 +57,7 @@
     SUBDIR += ffaudioconverter
     SUBDIR += ffdec
     SUBDIR += ffmpeg
+    SUBDIR += ffmpeg3
     SUBDIR += ffmpeg4
     SUBDIR += ffmpegthumbnailer
     SUBDIR += ffms2
