@@ -11,6 +11,9 @@ WWW=		https://docs.oracle.com/cd/E19422-01/819-3693/ncg_lib.html
 LICENSE=	CDDL
 LICENSE_FILE=	${WRKSRC}/usr/src/OPENSOLARIS.LICENSE
 
+DEPRECATED=	Obsolete, consider using libm in base or math/openlibm
+EXPIRATION_DATE=2024-12-31
+
 BROKEN_FreeBSD_14=	fails to compile: conflicting types for 'lround'
 ONLY_FOR_ARCHS=	amd64	# i386 possible with much work
 
