@@ -1,7 +1,7 @@
 PORTNAME=	appointments
-PORTVERSION=	2.1.12
+PORTVERSION=	2.2.0
 CATEGORIES=	www
-MASTER_SITES=	https://github.com/${GH_ACCOUNT}/${PORTNAME}/raw/${DISTVERSIONPREFIX}${DISTVERSION}/build/artifacts/appstore/
+MASTER_SITES=	https://github.com/${GH_ACCOUNT}/${PORTNAME}/raw/${DISTVERSIONPREFIX}${DISTVERSION}a/build/artifacts/appstore/
 DISTVERSIONPREFIX=	v
 DISTNAME=	${PORTNAME}
 
