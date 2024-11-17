@@ -3,5 +3,5 @@
 %%PYTHON_SITELIBDIR%%/nlopt/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/nlopt/__pycache__/nlopt%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/nlopt/__pycache__/nlopt%%PYTHON_EXT_SUFFIX%%.pyc
-%%PYTHON_SITELIBDIR%%/nlopt/_nlopt%%PYTHON_EXT_SUFFIX%%.so
+%%PYTHON_SITELIBDIR%%/nlopt/_nlopt.so
 %%PYTHON_SITELIBDIR%%/nlopt/nlopt.py
