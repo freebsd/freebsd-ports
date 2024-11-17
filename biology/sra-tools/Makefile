@@ -1,6 +1,5 @@
 PORTNAME=	sra-tools
-DISTVERSION=	3.0.6
-PORTREVISION=	1
+DISTVERSION=	3.1.1
 CATEGORIES=	biology java
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -12,15 +11,12 @@ LICENSE_COMB=		multi
 LICENSE_FILE_PD=	${WRKSRC}/LICENSE
 LICENSE_DISTFILES_LGPL21+ =
 
-# Untested on other platforms, aarch64 support was recently added upstream
 ONLY_FOR_ARCHS=		aarch64 amd64
 ONLY_FOR_ARCHS_REASON=	Upstream explicitly supports specific platforms
 
+# hdf5 is dynamically loaded by some tools, but nothing links to it
 BUILD_DEPENDS=	bash:shells/bash
-LIB_DEPENDS=	libxml2.so:textproc/libxml2 \
-		libhdf5.so:science/hdf5 \
-		libepoll-shim.so:devel/libepoll-shim \
-		libzstd.so:archivers/zstd
+RUN_DEPENDS=	hdf5>0:science/hdf5
 
 USES=		bison cmake shebangfix
 USE_GITHUB=	yes
@@ -34,32 +30,38 @@ OPTIONS_DEFINE=	EXAMPLES
 
 SHEBANG_GLOB=	*.sh
 GH_ACCOUNT=	ncbi
+# FIXME: At the time this was added, sra-tools build required access to the
+# ncbi-vdb source tree.  Use a separate dependent port if that is no
+# longer the case.  CMakeLists.txt still looks for ../ncbi-vdb in 3.1.1.
 GH_TUPLE+=	ncbi:ncbi-vdb:${DISTVERSION}:vdb/ncbi-vdb
 
 CMAKE_ARGS+=	-DVDB_LIBDIR:STRING=${WRKSRC}/ncbi-vdb/build/lib
 
-post-extract:
-	@${MKDIR} ${WRKSRC}/ncbi-vdb/interfaces/os/bsd
-	@${CP} ${FILESDIR}/*.h ${WRKSRC}/ncbi-vdb/interfaces/os/bsd
-	# cd ${WRKDIR} && ${LN} -s ${WRKSRC}/ncbi-vdb .
-
 pre-configure:
-	# This follows a static patch.  Run "make clean patch" before
-	# updating the patch.
-	${REINPLACE_CMD} -e 's|/usr/local/etc/ncbi|${PREFIX}/etc/ncbi|g' \
+	# Reinplaces may follow static patches.  Run "make clean patch"
+	# before updating those patches so reinplaces do not get added to them.
+	@${REINPLACE_CMD} -e 's|"/etc/ncbi"|"${PREFIX}/etc/ncbi"|g' \
 		${WRKSRC}/ncbi-vdb/libs/kfg/config.c
-	${REINPLACE_CMD} -e 's|/usr/local/bin|${PREFIX}/bin|g' \
+	@${REINPLACE_CMD} -e 's|/usr/local/bin|${PREFIX}/bin|g' \
 		${WRKSRC}/tools/external/driver-tool/file-path.posix.cpp
+	@${REINPLACE_CMD} -e 's|/../ncbi-vdb|/ncbi-vdb|g' \
+		${WRKSRC}/CMakeLists.txt
 	cd ${WRKSRC}/ncbi-vdb/build && cmake .. && make
 
+# FIXME: Unsure where the jquery version comes from and it differs on
+# amd64 (jquery-3.7.1.min.js) and aarch64 (jquery-3.6.1.min.js).
+# Just hack the version out for now.  Not sure we even need javadoc installed.
 post-stage:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/*.${DISTVERSION}
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib64/*.${DISTVERSION}
 	${MV} ${STAGEDIR}${PREFIX}/share/examples ${STAGEDIR}${PREFIX}/share/examples-sratools
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${MV} ${STAGEDIR}${PREFIX}/share/examples-sratools/* ${STAGEDIR}${EXAMPLESDIR}
 	${RMDIR} ${STAGEDIR}${PREFIX}/share/examples-sratools
 	${MV} ${STAGEDIR}${PREFIX}/share/examples-java ${STAGEDIR}${EXAMPLESDIR}/java
 	${MV} ${STAGEDIR}${PREFIX}/share/examples-python ${STAGEDIR}${EXAMPLESDIR}/python
+	${MV} ${STAGEDIR}${JAVASHAREDIR}doc/ngs-doc/script-dir/jquery-[0-9]*.min.js \
+		${STAGEDIR}${JAVASHAREDIR}doc/ngs-doc/script-dir/jquery.min.js
 
 post-stage-EXAMPLES-off:
 	${RM} -r ${STAGEDIR}${EXAMPLESDIR}
