@@ -1,6 +1,6 @@
 PORTNAME=	nerdctl
 DISTVERSIONPREFIX=v
-DISTVERSION=	1.7.7
+DISTVERSION=	2.0.0
 CATEGORIES=	sysutils
 
 MAINTAINER=	laurent.chardon@gmail.com
@@ -12,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		go:modules
 
-GO_MODULE=	github.com/containerd/nerdctl
+GO_MODULE=	github.com/containerd/nerdctl/v2
 GO_TARGET=	./cmd/${PORTNAME}
 GO_BUILDFLAGS=	-ldflags "-s -w -X ${GO_MODULE}/pkg/version.Version=${DISTVERSIONFULL}"
 
