@@ -1,8 +1,6 @@
 PORTNAME=	pymol
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.5.0-97
-PORTREVISION=	2
-DISTVERSIONSUFFIX=	-gd24468af
+DISTVERSION=	3.0.0
 CATEGORIES=	science biology python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -19,15 +17,14 @@ BUILD_DEPENDS=	${PYNUMPY} \
 		${LOCALBASE}/include/glm/glm.hpp:math/glm \
 		${LOCALBASE}/include/mmtf.hpp:science/mmtf-cpp
 LIB_DEPENDS=	libfreetype.so:print/freetype2 \
-		libpng.so:graphics/png \
-		libmsgpackc.so:devel/msgpack-c \
-		libnetcdf.so:science/netcdf
+		libnetcdf.so:science/netcdf \
+		libpng16.so:graphics/png
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}msgpack>0:devel/py-msgpack@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}Pmw>0:x11-toolkits/py-Pmw@${PY_FLAVOR} \
 		${PYNUMPY}
 
 USES=		compiler:c++11-lang gl gnome python tar:bz2
-USE_GL=		gl glew glu glut
+USE_GL=		gl glew glu
 USE_GNOME=	libxml2
 USE_PYTHON=	distutils concurrent # autoplist is broken: https://github.com/schrodinger/pymol-open-source/issues/99
 
