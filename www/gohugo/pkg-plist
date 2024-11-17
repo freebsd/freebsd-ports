@@ -10,7 +10,6 @@ bin/hugo
 %%MANPAGES%%share/man/man1/hugo-convert-toTOML.1.gz
 %%MANPAGES%%share/man/man1/hugo-convert-toYAML.1.gz
 %%MANPAGES%%share/man/man1/hugo-convert.1.gz
-%%MANPAGES%%share/man/man1/hugo-deploy.1.gz
 %%MANPAGES%%share/man/man1/hugo-env.1.gz
 %%MANPAGES%%share/man/man1/hugo-gen-chromastyles.1.gz
 %%MANPAGES%%share/man/man1/hugo-gen-doc.1.gz
