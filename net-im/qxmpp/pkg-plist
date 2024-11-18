@@ -2,6 +2,7 @@ include/QXmppQt%%QT_VER%%/Omemo/QXmppOmemoManager.h
 include/QXmppQt%%QT_VER%%/Omemo/QXmppOmemoMemoryStorage.h
 include/QXmppQt%%QT_VER%%/Omemo/QXmppOmemoStorage.h
 include/QXmppQt%%QT_VER%%/Omemo/qxmppomemo_export.h
+include/QXmppQt%%QT_VER%%/QXmppAccountMigrationManager.h
 include/QXmppQt%%QT_VER%%/QXmppArchiveIq.h
 include/QXmppQt%%QT_VER%%/QXmppArchiveManager.h
 include/QXmppQt%%QT_VER%%/QXmppAtmManager.h
@@ -28,6 +29,7 @@ include/QXmppQt%%QT_VER%%/QXmppCarbonManagerV2.h
 include/QXmppQt%%QT_VER%%/QXmppClient.h
 include/QXmppQt%%QT_VER%%/QXmppClientExtension.h
 include/QXmppQt%%QT_VER%%/QXmppConfiguration.h
+include/QXmppQt%%QT_VER%%/QXmppCredentials.h
 include/QXmppQt%%QT_VER%%/QXmppDataForm.h
 include/QXmppQt%%QT_VER%%/QXmppDataFormBase.h
 include/QXmppQt%%QT_VER%%/QXmppDialback.h
@@ -81,6 +83,7 @@ include/QXmppQt%%QT_VER%%/QXmppMixIq.h
 include/QXmppQt%%QT_VER%%/QXmppMixIq_p.h
 include/QXmppQt%%QT_VER%%/QXmppMixManager.h
 include/QXmppQt%%QT_VER%%/QXmppMixParticipantItem.h
+include/QXmppQt%%QT_VER%%/QXmppMovedManager.h
 include/QXmppQt%%QT_VER%%/QXmppMucIq.h
 include/QXmppQt%%QT_VER%%/QXmppMucManager.h
 include/QXmppQt%%QT_VER%%/QXmppNonSASLAuth.h
@@ -125,7 +128,6 @@ include/QXmppQt%%QT_VER%%/QXmppSessionIq.h
 include/QXmppQt%%QT_VER%%/QXmppSocks.h
 include/QXmppQt%%QT_VER%%/QXmppStanza.h
 include/QXmppQt%%QT_VER%%/QXmppStartTlsPacket.h
-include/QXmppQt%%QT_VER%%/QXmppStream.h
 include/QXmppQt%%QT_VER%%/QXmppStreamError.h
 include/QXmppQt%%QT_VER%%/QXmppStreamFeatures.h
 include/QXmppQt%%QT_VER%%/QXmppStun.h
@@ -142,6 +144,7 @@ include/QXmppQt%%QT_VER%%/QXmppTrustMessages.h
 include/QXmppQt%%QT_VER%%/QXmppTrustSecurityPolicy.h
 include/QXmppQt%%QT_VER%%/QXmppTrustStorage.h
 include/QXmppQt%%QT_VER%%/QXmppUploadRequestManager.h
+include/QXmppQt%%QT_VER%%/QXmppUri.h
 include/QXmppQt%%QT_VER%%/QXmppUserLocationManager.h
 include/QXmppQt%%QT_VER%%/QXmppUserTuneItem.h
 include/QXmppQt%%QT_VER%%/QXmppUserTuneManager.h

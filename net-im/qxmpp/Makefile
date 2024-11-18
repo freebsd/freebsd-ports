@@ -1,6 +1,6 @@
 PORTNAME=	qxmpp
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.7.1
+DISTVERSION=	1.9.0
 CATEGORIES=	net-im
 PKGNAMESUFFIX=	-${FLAVOR}
 
@@ -16,7 +16,7 @@ LIB_DEPENDS=	libomemo-c.so:security/libomemo-c
 FLAVORS=	qt5 qt6
 FLAVOR?=	qt5
 
-USES=		cmake compiler:c++17-lang pathfix pkgconfig qca \
+USES=		cmake compiler:c++20-lang pathfix pkgconfig qca \
 		qt:${QT_VER}
 USE_GITHUB=	yes
 GH_ACCOUNT=	qxmpp-project
