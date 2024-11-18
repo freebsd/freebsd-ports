@@ -1,1 +1,7 @@
-Automatically discover and run Hspec tests.
+Hspec is a testing framework for Haskell.
+Some of Hspec's distinctive features are:
+
+- a friendly DSL for defining tests
+- integration with QuickCheck, SmallCheck, and HUnit
+- parallel test execution
+- automatic discovery of test files
