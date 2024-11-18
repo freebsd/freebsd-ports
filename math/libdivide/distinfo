@@ -1,3 +1,5 @@
-TIMESTAMP = 1638115355
+TIMESTAMP = 1731919803
 SHA256 (ridiculousfish-libdivide-5.0_GH0.tar.gz) = 01ffdf90bc475e42170741d381eb9cfb631d9d7ddac7337368bcd80df8c98356
 SIZE (ridiculousfish-libdivide-5.0_GH0.tar.gz) = 680611
+SHA256 (fa020f3b3e7ab3e80a2b23ab70bad0f46dbab795.patch) = 47ed962063ff09c4030a95297803e99b5899795bcaba7630fa3c5e0f80f583dd
+SIZE (fa020f3b3e7ab3e80a2b23ab70bad0f46dbab795.patch) = 829

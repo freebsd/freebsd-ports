@@ -3,6 +3,9 @@ DISTVERSION=	5.0
 PORTREVISION=	1
 CATEGORIES=	math
 
+PATCH_SITES=	https://github.com/ridiculousfish/${PORTNAME}/commit/
+PATCHFILES+=	fa020f3b3e7ab3e80a2b23ab70bad0f46dbab795.patch:-p1 # https://github.com/ridiculousfish/libdivide/pull/113
+
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Fast prime counting function implementations
 WWW=		https://libdivide.com/
