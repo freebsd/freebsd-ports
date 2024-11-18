@@ -1,6 +1,6 @@
 PORTNAME=	cantata
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.2.1
+DISTVERSION=	3.3.0
 CATEGORIES=	audio kde
 
 MAINTAINER=	kde@FreeBSD.org
@@ -64,7 +64,7 @@ MTP_LIB_DEPENDS=	libmtp.so:multimedia/libmtp
 MTP_CMAKE_BOOL=		ENABLE_MTP
 
 MUSICBRAINZ_IMPLIES=	CDPARANOIA
-MUSICBRAINZ_LIB_DEPENDS=libmusicbrainz5.so:audio/libmusicbrainz5
+MUSICBRAINZ_LIB_DEPENDS=libmusicbrainz5cc.so:audio/libmusicbrainz5
 MUSICBRAINZ_CMAKE_BOOL=	ENABLE_MUSICBRAINZ
 
 NLS_USE=		QT=tools:build
