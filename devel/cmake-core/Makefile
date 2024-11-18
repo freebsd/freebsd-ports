@@ -1,5 +1,6 @@
 PORTNAME=	cmake
 DISTVERSION=	${_CMAKE_VERSION}
+PORTREVISION=	1
 CATEGORIES=	devel
 PKGNAMESUFFIX=	-core
 
@@ -11,7 +12,9 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/Copyright.txt
 
 LIB_DEPENDS=	libexpat.so:textproc/expat2 \
+		libidn2.so:dns/libidn2 \
 		libjsoncpp.so:devel/jsoncpp \
+		libpkg.so:${PKG_ORIGIN} \
 		librhash.so:security/rhash \
 		libuv.so:devel/libuv
 
@@ -55,14 +58,8 @@ BUILD_WRKSRC=		${WRKDIR}/.build
 CONFIGURE_WRKSRC=	${BUILD_WRKSRC}
 INSTALL_WRKSRC=		${BUILD_WRKSRC}
 
-OPTIONS_DEFINE=		DOCS CPACK
-OPTIONS_DEFAULT=	CPACK
+OPTIONS_DEFINE=		DOCS
 OPTIONS_SUB=		yes
-
-CPACK_DESC=		Enable FreeBSD generator in CPack
-CPACK_LIB_DEPENDS=	libpkg.so:${PKG_ORIGIN}
-CPACK_SUB_LIST=		CPACK_OPTION_VALUE="ON"
-CPACK_SUB_LIST_OFF=	CPACK_OPTION_VALUE="OFF"
 
 post-patch:
 	@(${FIND} ${WRKSRC}/Modules -name "*.cmake" -print0; \
