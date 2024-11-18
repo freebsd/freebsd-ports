@@ -1,12 +1,13 @@
 PORTNAME=	llama-cpp-python
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.3.1
+DISTVERSION=	0.3.2
 CATEGORIES=	misc # machine-learning
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Python bindings for the llama.cpp library
-WWW=		https://llama-cpp-python.readthedocs.io/en/latest/
+WWW=		https://llama-cpp-python.readthedocs.io/en/latest/ \
+		https://github.com/abetlen/llama-cpp-python
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
@@ -33,7 +34,7 @@ USE_PYTHON=	pep517 autoplist pytest
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	abetlen
-GH_TUPLE=	ggerganov:llama.cpp:c919d5d:cpp/vendor/llama.cpp
+GH_TUPLE=	ggerganov:llama.cpp:74d73dc:cpp/vendor/llama.cpp
 
 SHEBANG_GLOB=	*.py
 
