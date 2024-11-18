@@ -1,5 +1,5 @@
 PORTNAME=	qdldl
-PORTVERSION=	0.1.5.post3
+PORTVERSION=	0.1.7.post4
 CATEGORIES=	math python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -23,10 +23,12 @@ TEST_DEPENDS=	pytest:devel/py-pytest@${PY_FLAVOR}
 USES=		compiler:c++11-lang python
 USE_PYTHON=	distutils autoplist
 
+TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
+
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/qdldl.cpython-*.so
 
-do-test: install
+do-test: install # this is required for some reason, and TEST_ENV doesn't work
 	@cd ${WRKSRC} && pytest
 
 .include <bsd.port.mk>
