@@ -1,10 +1,11 @@
 PORTNAME=	juce
-DISTVERSION=	8.0.2
+DISTVERSION=	8.0.3
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	C++ application framework to develop desktop and mobile applications
-WWW=		https://juce.com/
+WWW=		https://juce.com/ \
+		https://github.com/juce-framework/JUCE
 
 LICENSE=	JUCE6
 LICENSE_NAME=	JUCE 6 End User License Agreement
