@@ -1,6 +1,6 @@
 PORTNAME=	vorta
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.9.1
+DISTVERSION=	0.10.1
 CATEGORIES=	deskutils python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -24,7 +24,6 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}borgbackup>=1.2.7:archivers/py-borgbackup@${
 		${PYTHON_PKGNAMEPREFIX}SecretStorage>=3.3.1:security/py-SecretStorage@${PY_FLAVOR}
 
 USES=		python
-
 USE_GITHUB=	yes
 GH_ACCOUNT=	borgbase
 USE_PYTHON=	autoplist pep517
