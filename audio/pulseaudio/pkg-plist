@@ -12,7 +12,7 @@ bin/pasuspender
 bin/pulseaudio
 bin/qpaeq
 %%X11%%bin/start-pulseaudio-x11
-etc/dbus-1/system.d/pulseaudio-system.conf
+share/dbus-1/system.d/pulseaudio-system.conf
 @sample etc/pulse/client.conf.sample
 @sample etc/pulse/daemon.conf.sample
 @sample etc/pulse/default.pa.sample
@@ -61,7 +61,7 @@ lib/libpulse-simple.so.0
 lib/libpulse-simple.so.0.1.1
 lib/libpulse.so
 lib/libpulse.so.0
-lib/libpulse.so.0.24.2
+lib/libpulse.so.0.24.3
 %%AVAHI%%lib/pulseaudio/modules/libavahi-wrap.so
 %%ALSA%%lib/pulseaudio/modules/libalsa-util.so
 lib/pulseaudio/modules/libcli.so
