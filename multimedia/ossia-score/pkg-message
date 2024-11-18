@@ -1,0 +1,19 @@
+[
+{ type: install
+  message: <<EOM
+You installed ossia score: a free and open-source sequencer.
+
+In order to run ossia you might want to choose its audio
+backend using one of these environment variables:
+- SCORE_AUDIO_BACKEND=jack
+- SCORE_AUDIO_BACKEND=pipewire
+- SCORE_AUDIO_BACKEND=dummy
+
+On startup ossie-score will ask you if you would like to
+download the user library. You might want to answer Yes.
+The user library contains presets, sound files, etc.
+It is downloaded into ~/Documents/ossia/score/packages
+
+EOM
+}
+]

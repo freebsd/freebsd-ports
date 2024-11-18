@@ -276,6 +276,7 @@
     SUBDIR += opentimelineio
     SUBDIR += opentoonz
     SUBDIR += oscam
+    SUBDIR += ossia-score
     SUBDIR += p5-Audio-M4P
     SUBDIR += p5-FFmpeg-Command
     SUBDIR += p5-FLV-Info

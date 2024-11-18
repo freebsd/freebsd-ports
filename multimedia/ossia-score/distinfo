@@ -1,0 +1,5 @@
+TIMESTAMP = 1731913354
+SHA256 (ossia.score-3.3.2-src.tar.xz) = 716db9cd86e6f197c006f1e724a370e2b1f582e56603c01a60d3a60e1aa213c0
+SIZE (ossia.score-3.3.2-src.tar.xz) = 61600828
+SHA256 (a4d848c959b54eba5612ecfdf87d1d5fc74020ab.patch) = 53c64380f438fae6540f03c3028be9943f1c8ac3fd50bd6bacd783acf8e3988c
+SIZE (a4d848c959b54eba5612ecfdf87d1d5fc74020ab.patch) = 1036

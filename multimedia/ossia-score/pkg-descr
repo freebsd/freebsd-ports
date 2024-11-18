@@ -1,0 +1,9 @@
+Ossia Score is a free, open-source, interactive, intermedia, cross-platform
+intermedia sequencer for precise and flexible scripting of interactive
+scenarios.
+
+Is allows to control and score any OSC-compliant software or hardware:
+Max/MSP, PureData, openFrameworks,
+
+With score you can sequence OSC, MIDI, etc. parameters between multiple software
+and hardware, to create interactive and intermedia scores.
