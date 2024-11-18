@@ -3,7 +3,7 @@
 @@ -1,7 +1,7 @@ requires = [
  [build-system]
  requires = [
--  "setuptools ~= 75.4",
+-  "setuptools ~= 75.5",
 -  "wheel ~= 0.45",
 +  "setuptools",
 +  "wheel",
