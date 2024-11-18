@@ -1,6 +1,6 @@
 PORTNAME=	nyx
 PORTVERSION=	2.1.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security net
 MASTER_SITES=	PYPI
 
@@ -11,11 +11,13 @@ WWW=		https://nyx.torproject.org/
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}stem>=1.7.1:security/py-stem@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR}
 
 USES=		python
-USE_PYTHON=	distutils autoplist noflavors
+USE_PYTHON=	autoplist noflavors pep517
 
 NO_ARCH=	yes
 
