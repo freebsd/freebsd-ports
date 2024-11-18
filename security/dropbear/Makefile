@@ -1,6 +1,5 @@
 PORTNAME=	dropbear
-PORTVERSION=	2022.83
-PORTREVISION=	2
+PORTVERSION=	2024.86
 CATEGORIES=	security
 MASTER_SITES=	https://matt.ucc.asn.au/dropbear/releases/
 
@@ -80,7 +79,7 @@ LIB_DEPENDS=	libtomcrypt.so:security/libtomcrypt \
 
 post-patch:
 	@${REINPLACE_CMD} -e "s,_PRIV_FILENAME \"/etc/,_PRIV_FILENAME \"${PREFIX}/etc/,g; \
-		s,/usr/bin/X11/,${LOCALBASE}/,g" ${WRKSRC}/default_options.h
+		s,/usr/bin/X11/,${LOCALBASE}/,g" ${WRKSRC}/src/default_options.h
 
 post-patch-SMALL_CODE-off:
 	@${ECHO} "#define DROPBEAR_SMALL_CODE 0" >> ${WRKSRC}/localoptions.h
@@ -157,16 +156,12 @@ post-patch-SHA2_512-on:
 post-patch-X11FWD-on:
 	@${ECHO} "#define DROPBEAR_X11FWD 1" >> ${WRKSRC}/localoptions.h
 
-do-install:
+post-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/dropbear
-	${INSTALL_PROGRAM} ${WRKSRC}/dbclient ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/dropbearconvert ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/dropbearkey ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/dropbear ${STAGEDIR}${PREFIX}/sbin
 	${INSTALL_PROGRAM} ${WRKSRC}/scp ${STAGEDIR}${PREFIX}/bin/dbscp
-	${INSTALL_MAN} ${WRKSRC}/dropbearconvert.1 ${STAGEDIR}${PREFIX}/share/man/man1
-	${INSTALL_MAN} ${WRKSRC}/dropbearkey.1 ${STAGEDIR}${PREFIX}/share/man/man1
-	${INSTALL_MAN} ${WRKSRC}/dbclient.1 ${STAGEDIR}${PREFIX}/share/man/man1
-	${INSTALL_MAN} ${WRKSRC}/dropbear.8 ${STAGEDIR}${PREFIX}/share/man/man8
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/dropbearconvert
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/dropbearkey
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/dbclient
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/sbin/dropbear
 
 .include <bsd.port.mk>
