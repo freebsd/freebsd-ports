@@ -3,6 +3,7 @@ DISTVERSION=	g20241113
 PORTEPOCH=	2
 CATEGORIES=	www
 PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
+MASTER_SITES=	LOCAL/meta
 
 MAINTAINER=	dereks@lifeofadishwasher.com
 COMMENT=	Tiny Tiny RSS: web-based news feed (RSS/Atom) aggregator
