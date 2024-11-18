@@ -1,8 +1,11 @@
 PORTNAME=	lensfun
 PORTVERSION=	0.3.95
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION}
+
+PATCH_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/commit/
+PATCHFILES+=	6142618a17d29c396d595ede3d0bdd5c648f3c2e.diff:-p1
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Library for fixing lens geometry distortions
