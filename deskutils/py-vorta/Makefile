@@ -1,6 +1,7 @@
 PORTNAME=	vorta
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.10.1
+PORTREVISION=	1
 CATEGORIES=	deskutils python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -20,6 +21,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}borgbackup>=1.2.7:archivers/py-borgbackup@${
 		${PYTHON_PKGNAMEPREFIX}peewee>=3.15.0:databases/py-peewee@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}platformdirs>=3.11.0:devel/py-platformdirs@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}psutil>=5.9.8:sysutils/py-psutil@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}sqlite3>=3.11.10:databases/py-sqlite3@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}qt6-pyqt>=6.6.1:devel/py-qt6-pyqt@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}SecretStorage>=3.3.1:security/py-SecretStorage@${PY_FLAVOR}
 
