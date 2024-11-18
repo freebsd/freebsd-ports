@@ -1,7 +1,6 @@
 PORTNAME=	cargo-audit
 DISTVERSIONPREFIX=	${PORTNAME}/v
-DISTVERSION=	0.20.0
-PORTREVISION=	4
+DISTVERSION=	0.21.0
 PORTEPOCH=	1
 CATEGORIES=	security
 
@@ -11,8 +10,8 @@ WWW=		https://rustsec.org/
 
 LICENSE=	APACHE20 MIT
 LICENSE_COMB=	dual
-LICENSE_FILE_APACHE20=	${WRKSRC}/LICENSE-APACHE
-LICENSE_FILE_MIT=	${WRKSRC}/LICENSE-MIT
+LICENSE_FILE_APACHE20=	${WRKSRC}/${PORTNAME}/LICENSE-APACHE
+LICENSE_FILE_MIT=	${WRKSRC}/${PORTNAME}/LICENSE-MIT
 
 # ca_root_nss must be installed until
 # https://github.com/rustsec/rustsec/issues/1137 is fixed
@@ -27,7 +26,7 @@ NO_TEST=	yes
 
 PLIST_FILES=	bin/cargo-audit
 
-CARGO_CARGOLOCK=	${WRKSRC}/../Cargo.lock
-WRKSRC_SUBDIR=	cargo-audit
+CARGO_CARGOTOML=	${WRKSRC}/${PORTNAME}/Cargo.toml
+CARGO_INSTALL_PATH=	${PORTNAME}
 
 .include <bsd.port.mk>
