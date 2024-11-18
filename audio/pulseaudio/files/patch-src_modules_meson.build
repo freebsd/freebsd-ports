@@ -1,6 +1,6 @@
---- src/modules/meson.build.orig	2022-06-21 10:54:48 UTC
+--- src/modules/meson.build.orig	2024-01-12 17:22:09 UTC
 +++ src/modules/meson.build
-@@ -209,7 +209,7 @@ endif
+@@ -221,7 +221,7 @@ endif
    ]
  endif
  
