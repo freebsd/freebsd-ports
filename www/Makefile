@@ -1793,6 +1793,7 @@
     SUBDIR += py-proxy_tools
     SUBDIR += py-puppetboard
     SUBDIR += py-py-restclient
+    SUBDIR += py-pydrive2
     SUBDIR += py-pygsheets
     SUBDIR += py-pyjwt
     SUBDIR += py-pyjwt1
