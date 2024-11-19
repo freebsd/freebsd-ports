@@ -1,4 +1,4 @@
---- chrome/browser/chrome_browser_main.cc.orig	2024-10-27 06:40:35 UTC
+--- chrome/browser/chrome_browser_main.cc.orig	2024-11-16 12:20:41 UTC
 +++ chrome/browser/chrome_browser_main.cc
 @@ -249,15 +249,15 @@
  
@@ -36,7 +36,7 @@
  #include "chrome/browser/headless/headless_mode_metrics.h"  // nogncheck
  #include "chrome/browser/headless/headless_mode_util.h"     // nogncheck
  #include "components/headless/select_file_dialog/headless_select_file_dialog.h"
-@@ -369,14 +369,14 @@
+@@ -365,14 +365,14 @@
  #endif  // BUILDFLAG(IS_WIN) && BUILDFLAG(USE_BROWSER_SPELLCHECKER)
  
  #if BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || \
@@ -53,7 +53,7 @@
  constexpr base::FilePath::CharType kMediaHistoryDatabaseName[] =
      FILE_PATH_LITERAL("Media History");
  
-@@ -541,7 +541,7 @@ void ProcessSingletonNotificationCallbackImpl(
+@@ -537,7 +537,7 @@ void ProcessSingletonNotificationCallbackImpl(
    }
  #endif
  
@@ -62,7 +62,7 @@
    // Set the global activation token sent as a command line switch by another
    // browser process. This also removes the switch after use to prevent any side
    // effects of leaving it in the command line after this point.
-@@ -1119,7 +1119,7 @@ int ChromeBrowserMainParts::PreCreateThreadsImpl() {
+@@ -1115,7 +1115,7 @@ int ChromeBrowserMainParts::PreCreateThreadsImpl() {
        browser_creator_->AddFirstRunTabs(master_prefs_->new_tabs);
      }
  
@@ -71,7 +71,7 @@
      // Create directory for user-level Native Messaging manifest files. This
      // makes it less likely that the directory will be created by third-party
      // software with incorrect owner or permission. See crbug.com/725513 .
-@@ -1167,7 +1167,7 @@ int ChromeBrowserMainParts::PreCreateThreadsImpl() {
+@@ -1163,7 +1163,7 @@ int ChromeBrowserMainParts::PreCreateThreadsImpl() {
  // TODO(crbug.com/40118868): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -80,7 +80,7 @@
    metrics::DesktopSessionDurationTracker::Initialize();
    ProfileActivityMetricsRecorder::Initialize();
    TouchModeStatsTracker::Initialize(
-@@ -1363,7 +1363,7 @@ void ChromeBrowserMainParts::PostProfileInit(Profile* 
+@@ -1359,7 +1359,7 @@ void ChromeBrowserMainParts::PostProfileInit(Profile* 
  #endif  // BUILDFLAG(IS_WIN)
  
  #if BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || \
@@ -89,7 +89,7 @@
    // Delete the media history database if it still exists.
    // TODO(crbug.com/40177301): Remove this.
    base::ThreadPool::PostTask(
-@@ -1412,7 +1412,7 @@ void ChromeBrowserMainParts::PostProfileInit(Profile* 
+@@ -1408,7 +1408,7 @@ void ChromeBrowserMainParts::PostProfileInit(Profile* 
        *UrlLanguageHistogramFactory::GetForBrowserContext(profile));
  #endif  // BUILDFLAG(IS_CHROMEOS_ASH)
  
@@ -98,7 +98,7 @@
    if (headless::IsHeadlessMode()) {
      headless::ReportHeadlessActionMetrics();
    }
-@@ -1524,7 +1524,7 @@ int ChromeBrowserMainParts::PreMainMessageLoopRunImpl(
+@@ -1517,7 +1517,7 @@ int ChromeBrowserMainParts::PreMainMessageLoopRunImpl(
    // In headless mode provide alternate SelectFileDialog factory overriding
    // any platform specific SelectFileDialog implementation that may have been
    // set.
@@ -107,7 +107,7 @@
    if (headless::IsHeadlessMode()) {
      headless::HeadlessSelectFileDialogFactory::SetUp();
    }
-@@ -2068,7 +2068,7 @@ bool ChromeBrowserMainParts::ProcessSingletonNotificat
+@@ -2069,7 +2069,7 @@ bool ChromeBrowserMainParts::ProcessSingletonNotificat
  
    // Drop the request if headless mode is in effect or the request is from
    // a headless Chrome process.

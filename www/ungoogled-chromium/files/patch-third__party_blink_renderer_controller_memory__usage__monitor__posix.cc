@@ -1,6 +1,6 @@
---- third_party/blink/renderer/controller/memory_usage_monitor_posix.cc.orig	2024-08-26 14:40:28 UTC
+--- third_party/blink/renderer/controller/memory_usage_monitor_posix.cc.orig	2024-11-16 12:20:41 UTC
 +++ third_party/blink/renderer/controller/memory_usage_monitor_posix.cc
-@@ -133,15 +133,17 @@ void MemoryUsageMonitorPosix::ResetFileDescriptors() {
+@@ -128,15 +128,17 @@ void MemoryUsageMonitorPosix::ResetFileDescriptors() {
  
  void MemoryUsageMonitorPosix::SetProcFiles(base::File statm_file,
                                             base::File status_file) {

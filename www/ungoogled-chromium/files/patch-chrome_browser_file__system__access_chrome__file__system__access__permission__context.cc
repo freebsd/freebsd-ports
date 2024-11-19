@@ -1,6 +1,6 @@
---- chrome/browser/file_system_access/chrome_file_system_access_permission_context.cc.orig	2024-10-27 06:40:35 UTC
+--- chrome/browser/file_system_access/chrome_file_system_access_permission_context.cc.orig	2024-11-16 12:20:41 UTC
 +++ chrome/browser/file_system_access/chrome_file_system_access_permission_context.cc
-@@ -323,7 +323,7 @@ const struct {
+@@ -335,7 +335,7 @@ const struct {
       FILE_PATH_LITERAL("Library/Mobile Documents/com~apple~CloudDocs"),
       kDontBlockChildren},
  #endif

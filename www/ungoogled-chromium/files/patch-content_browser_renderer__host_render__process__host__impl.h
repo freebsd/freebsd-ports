@@ -1,4 +1,4 @@
---- content/browser/renderer_host/render_process_host_impl.h.orig	2024-10-27 06:40:35 UTC
+--- content/browser/renderer_host/render_process_host_impl.h.orig	2024-11-16 12:20:41 UTC
 +++ content/browser/renderer_host/render_process_host_impl.h
 @@ -102,7 +102,7 @@
  #include "media/fuchsia_media_codec_provider_impl.h"
@@ -18,7 +18,7 @@
    // Launch the zygote early in the browser startup.
    static void EarlyZygoteLaunch();
  #endif  // BUILDFLAG(IS_POSIX) && !BUILDFLAG(IS_ANDROID) && !BUILDFLAG(IS_MAC)
-@@ -977,7 +977,7 @@ class CONTENT_EXPORT RenderProcessHostImpl
+@@ -973,7 +973,7 @@ class CONTENT_EXPORT RenderProcessHostImpl
      std::unique_ptr<service_manager::BinderRegistry> binders_;
      mojo::Receiver<mojom::ChildProcessHost> receiver_{this};
  

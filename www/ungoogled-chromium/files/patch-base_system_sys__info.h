@@ -1,6 +1,6 @@
---- base/system/sys_info.h.orig	2024-05-23 20:04:36 UTC
+--- base/system/sys_info.h.orig	2024-11-16 12:20:41 UTC
 +++ base/system/sys_info.h
-@@ -325,6 +325,8 @@ class BASE_EXPORT SysInfo {
+@@ -331,6 +331,8 @@ class BASE_EXPORT SysInfo {
    static void ResetCpuSecurityMitigationsEnabledForTesting();
  #endif
  
@@ -9,7 +9,7 @@
   private:
    friend class test::ScopedAmountOfPhysicalMemoryOverride;
    FRIEND_TEST_ALL_PREFIXES(SysInfoTest, AmountOfAvailablePhysicalMemory);
-@@ -337,7 +339,7 @@ class BASE_EXPORT SysInfo {
+@@ -343,7 +345,7 @@ class BASE_EXPORT SysInfo {
    static HardwareInfo GetHardwareInfoSync();
  
  #if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_ANDROID) || \

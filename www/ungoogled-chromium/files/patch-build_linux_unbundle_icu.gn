@@ -1,4 +1,4 @@
---- build/linux/unbundle/icu.gn.orig	2024-08-26 14:40:28 UTC
+--- build/linux/unbundle/icu.gn.orig	2024-11-16 12:20:41 UTC
 +++ build/linux/unbundle/icu.gn
 @@ -17,6 +17,15 @@ config("icu_config") {
      "USING_SYSTEM_ICU=1",
@@ -16,3 +16,37 @@
      # U_EXPORT (defined in unicode/platform.h) is used to set public visibility
      # on classes through the U_COMMON_API and U_I18N_API macros (among others).
      # When linking against the system ICU library, we want its symbols to have
+@@ -35,6 +44,18 @@ config("icu_config") {
+     # please see: https://crbug.com/822820
+     "U_IMPORT=U_EXPORT",
+   ]
++
++  _icu_version = exec_script(pkg_config_script,
++                              common_pkg_config_args + pkg_config_args + [
++                                    "icu-i18n",
++                                    "--version-as-components",
++                                  ],
++                              "value")
++
++  # Unbreak with icu 76 where private symbols are picked up
++  if (_icu_version[0] >= 76) {
++    defines += [ "U_HIDE_DRAFT_API" ]
++  }
+ }
+ 
+ pkg_config("system_icui18n") {
+@@ -46,6 +67,14 @@ pkg_config("system_icuuc") {
+ }
+ 
+ source_set("icui18n") {
++  deps = [ ":icui18n_shim" ]
++  public_configs = [
++    ":icu_config",
++    ":system_icui18n",
++  ]
++}
++
++source_set("icui18n_hidden_visibility") {
+   deps = [ ":icui18n_shim" ]
+   public_configs = [
+     ":icu_config",

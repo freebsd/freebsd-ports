@@ -1,0 +1,9 @@
+--- .gn.orig	2024-11-16 12:20:41 UTC
++++ .gn
+@@ -172,4 +172,6 @@ exec_script_whitelist =
+ 
+       "//tools/grit/grit_rule.gni",
+       "//tools/gritsettings/BUILD.gn",
++
++      "//third_party/icu/BUILD.gn",
+     ]

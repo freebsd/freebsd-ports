@@ -1,20 +1,20 @@
---- chrome/browser/supervised_user/supervised_user_navigation_throttle.cc.orig	2024-10-27 06:40:35 UTC
+--- chrome/browser/supervised_user/supervised_user_navigation_throttle.cc.orig	2024-11-16 12:20:41 UTC
 +++ chrome/browser/supervised_user/supervised_user_navigation_throttle.cc
-@@ -201,7 +201,7 @@ void SupervisedUserNavigationThrottle::OnCheckDone(
-   }
+@@ -213,7 +213,7 @@ void SupervisedUserNavigationThrottle::OnInterstitialR
+     case kCancelWithInterstitial: {
+       CHECK(navigation_handle());
+ // LINT.IfChange(cancel_with_interstitial)
+-#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_BSD)
+       if (supervised_user::ShouldShowReAuthInterstitial(*navigation_handle(),
+                                                         is_main_frame)) {
+         // Show the re-authentication interstitial if the user signed out of
+@@ -244,7 +244,7 @@ void SupervisedUserNavigationThrottle::OnInterstitialR
  }
  
+ namespace supervised_user {
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_BSD)
- SupervisedUserVerificationPage::VerificationPurpose
- GetVerificationPurposeFromFilteringReason(
-     supervised_user::FilteringBehaviorReason reason) {
-@@ -235,7 +235,7 @@ void SupervisedUserNavigationThrottle::OnInterstitialR
-       Profile* profile = Profile::FromBrowserContext(
-           navigation_handle()->GetWebContents()->GetBrowserContext());
  
--#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN)
-+#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_BSD)
-       supervised_user::ChildAccountService* child_account_service =
-           ChildAccountServiceFactory::GetForProfile(profile);
-       if (base::FeatureList::IsEnabled(
+ bool ShouldShowReAuthInterstitial(content::NavigationHandle& navigation_handle,
+                                   bool is_main_frame) {

@@ -1,4 +1,4 @@
---- chrome/browser/ui/webui/signin/profile_picker_handler.cc.orig	2024-10-27 06:40:35 UTC
+--- chrome/browser/ui/webui/signin/profile_picker_handler.cc.orig	2024-11-16 12:20:41 UTC
 +++ chrome/browser/ui/webui/signin/profile_picker_handler.cc
 @@ -209,7 +209,7 @@ base::Value::Dict CreateProfileEntry(const ProfileAttr
  
@@ -9,7 +9,7 @@
    } else if (base::FeatureList::IsEnabled(
                   supervised_user::kShowKiteForSupervisedUsers) &&
               entry->IsSupervised()) {
-@@ -1224,7 +1224,7 @@ void ProfilePickerHandler::BeginFirstWebContentsProfil
+@@ -1211,7 +1211,7 @@ void ProfilePickerHandler::BeginFirstWebContentsProfil
  }
  
  void ProfilePickerHandler::MaybeUpdateGuestMode() {

@@ -1,6 +1,6 @@
---- chrome/browser/ui/views/profiles/profile_menu_view.cc.orig	2024-08-26 14:40:28 UTC
+--- chrome/browser/ui/views/profiles/profile_menu_view.cc.orig	2024-11-16 12:20:41 UTC
 +++ chrome/browser/ui/views/profiles/profile_menu_view.cc
-@@ -82,7 +82,7 @@
+@@ -88,7 +88,7 @@
  #include "ui/strings/grit/ui_strings.h"
  #include "ui/views/accessibility/view_accessibility.h"
  
