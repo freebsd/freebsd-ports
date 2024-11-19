@@ -28,7 +28,6 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig	\
 RUN_DEPENDS=	${PYNUMPY}	\
 		xcrysden:science/xcrysden	\
 		libarchive>0:archivers/libarchive	\
-		${PYTHON_PKGNAMEPREFIX}gobject3>0:devel/py-gobject3@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}matplotlib>0:math/py-matplotlib@${PY_FLAVOR}
 
 USES=		autoreconf blaslapack compiler:c11 fortran gl gmake gnome	\
@@ -36,7 +35,7 @@ USES=		autoreconf blaslapack compiler:c11 fortran gl gmake gnome	\
 		shebangfix tar:bzip2 xorg
 SHEBANG_GLOB=	*.py
 USE_XORG=	x11
-USE_GNOME=	cairo gtk30 gdkpixbuf2 intltool introspection
+USE_GNOME=	cairo gtk30 gdkpixbuf2 intltool introspection pygobject3:run
 USE_GL=		gl glu
 USE_GITLAB=	yes
 GL_ACCOUNT=	l_sim

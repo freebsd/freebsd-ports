@@ -24,8 +24,8 @@ OPTIONS_DEFAULT=LAUNCHER
 OPTIONS_SUB=	yes
 
 LAUNCHER_DESC=		Install pygtk launcher
-LAUNCHER_USES=		python:run
-LAUNCHER_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gobject3>0:devel/py-gobject3@${PY_FLAVOR}
+LAUNCHER_USES=		gnome python:run
+LAUNCHER_USE=		gnome=pygobject3:run
 LAUNCHER_ALL_TARGET=	jnbmenu
 LAUNCHER_INSTALL_TARGET=jnbmenuinstall
 

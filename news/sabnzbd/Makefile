@@ -60,7 +60,8 @@ DBUS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dbus>=0:devel/py-dbus@${PY_FLAVOR}
 NLS_USES=		gettext-tools
 NOTIFY2_IMPLIES=	DBUS
 NOTIFY2_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}notify2>=0:devel/py-notify2@${PY_FLAVOR}
-PYGOBJECT_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gobject3>=3.10.2:devel/py-gobject3@${PY_FLAVOR}
+PYGOBJECT_USES=		gnome
+PYGOBJECT_USE=		gnome=pygobject3:run
 SSL_USE=		PYTHON=cryptography
 
 post-patch:

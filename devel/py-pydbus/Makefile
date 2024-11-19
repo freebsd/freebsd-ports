@@ -11,9 +11,8 @@ WWW=		https://github.com/LEW21/pydbus/
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gobject3>=3.42.2:devel/py-gobject3@${PY_FLAVOR}
-
-USES=		python
+USES=		gnome python
+USE_GNOME=	pygobject3:run
 USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>

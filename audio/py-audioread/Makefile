@@ -26,8 +26,9 @@ GSTREAMER_DESC=	Use gstreamer as backend
 PYMAD_DESC=	Use pymad as backend
 
 FFMPEG_RUN_DEPENDS=	ffmpeg:multimedia/ffmpeg
-GSTREAMER_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gobject3>=0:devel/py-gobject3@${PY_FLAVOR} \
-			${PYTHON_PKGNAMEPREFIX}gstreamer1>=1.0:multimedia/py-gstreamer1@${PY_FLAVOR}
+GSTREAMER_USES=		gnome
+GSTREAMER_USE=		gnome=pygobject3:run
+GSTREAMER_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gstreamer1>=1.0:multimedia/py-gstreamer1@${PY_FLAVOR}
 PYMAD_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pymad>=0:audio/py-pymad@${PY_FLAVOR}
 
 .include <bsd.port.mk>

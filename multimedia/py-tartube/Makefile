@@ -12,7 +12,6 @@ LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}feedparser>=6.0.8:textproc/py-feedparser@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}gobject3>=3.42.2:devel/py-gobject3@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}matplotlib>=3.7.1:math/py-matplotlib@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}moviepy>=1.0.3:multimedia/py-moviepy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}playsound>=1.3.0:audio/py-playsound@${PY_FLAVOR} \
@@ -23,7 +22,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}feedparser>=6.0.8:textproc/py-feedparser@${P
 		ffmpeg:multimedia/ffmpeg \
 		yt-dlp:www/yt-dlp
 
-USES=		python
+USES=		gnome python
+USE_GNOME=	pygobject3:run
 USE_PYTHON=	autoplist distutils
 
 MAKE_ENV=	TARTUBE_PKG_STRICT=1

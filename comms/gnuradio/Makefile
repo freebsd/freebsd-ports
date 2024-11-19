@@ -17,7 +17,6 @@ BUILD_DEPENDS=	volk>0:devel/volk \
 		${PYNUMPY} \
 		${PYTHON_SITELIBDIR}/mako/__init__.py:textproc/py-mako@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyyaml>=3.11:devel/py-pyyaml@${PY_FLAVOR} \
-		${PYTHON_SITELIBDIR}/gi/__init__.py:devel/py-gobject3@${PY_FLAVOR} \
 		${PYTHON_SITELIBDIR}/cairo/__init__.py:graphics/py-cairo@${PY_FLAVOR} \
 		${PYTHON_SITELIBDIR}/six.py:devel/py-six@${PY_FLAVOR} \
 		${PYTHON_SITELIBDIR}/click/__init__.py:devel/py-click@${PY_FLAVOR} \
@@ -69,6 +68,7 @@ CMAKE_ARGS+=	-DCMAKE_INSTALL_RPATH:STRING="${LOCALBASE}/lib/gcc${_GCC_VER}" \
 #CMAKE_ARGS+=	--debug-output --trace
 USE_CXXSTD=	c++11
 USE_GITHUB=	yes
+USE_GNOME=	pygobject3
 USE_PYQT=	pyqt5
 USE_WX=		3.2
 USE_QT=		buildtools core gui xml qmake widgets

@@ -13,7 +13,6 @@ LICENSE=	GPLv3
 COMMON_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pexpect>0:misc/py-pexpect@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sqlalchemy20>0:databases/py-sqlalchemy20@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}psutil>0.:sysutils/py-psutil@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}gobject3>2:devel/py-gobject3@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}websockets>11.:devel/py-websockets@${PY_FLAVOR}
 RUN_DEPENDS=	${COMMON_DEPENDS}
 BUILD_DEPENDS=	${COMMON_DEPENDS}
@@ -24,7 +23,7 @@ USES=		desktop-file-utils display:configure gettext gnome gstreamer python
 _USES_$t+=	${_USES_configure}
 .endfor
 USE_PYTHON=	distutils autoplist
-USE_GNOME=	gtksourceview3:run glib20 gtk30 librsvg2 introspection
+USE_GNOME=	gtksourceview3:run glib20 gtk30 librsvg2 introspection pygobject3
 PYDISTUTILS_INSTALLNOSINGLE=	nope
 
 NO_ARCH=	yes

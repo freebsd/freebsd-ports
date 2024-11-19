@@ -12,13 +12,13 @@ WWW=		https://0xacab.org/jvoisin/mat2
 LICENSE=	LGPL3+
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cairo>0:graphics/py-cairo@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}gobject3>0:devel/py-gobject3@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}mutagen>0:audio/py-mutagen@${PY_FLAVOR} \
 		gdk-pixbuf2>0:graphics/gdk-pixbuf2 \
 		librsvg2-rust>0:graphics/librsvg2-rust \
 		poppler-glib>0:graphics/poppler-glib
 
-USES=		python
+USES=		gnome python
+USE_GNOME=	pygobject3:run
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
