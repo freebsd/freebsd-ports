@@ -1,6 +1,6 @@
 PORTNAME=	mise
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2024.11.15
+DISTVERSION=	2024.11.16
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -331,7 +331,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		serde-value-0.7.0 \
 		serde_derive-1.0.215 \
 		serde_ignored-0.1.10 \
-		serde_json-1.0.132 \
+		serde_json-1.0.133 \
 		serde_spanned-0.6.8 \
 		serde_urlencoded-0.7.1 \
 		serde_yaml-0.9.34+deprecated \
