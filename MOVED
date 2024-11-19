@@ -3727,3 +3727,5 @@ devel/rubygem-google-apis-sqladmin_v1beta4_041|devel/rubygem-google-apis-sqladmi
 devel/rubygem-google-apis-androidpublisher_v3034|devel/rubygem-google-apis-androidpublisher_v3-gitlab|2024-11-22|Renamed to devel/rubygem-google-apis-androidpublisher_v3-gitlab
 textproc/rubygem-elasticsearch-model713|textproc/rubygem-elasticsearch-model-gitlab|2024-11-22|Renamed to textproc/rubygem-elasticsearch-model-gitlab
 devel/signal-fts5-extension||2024-11-22|No consumers left in the ports tree
+devel/py-gobject3|devel/py-pygobject|2024-11-22|Use proper upstream package name
+devel/pygobject3-common|devel/pygobject-common|2024-11-22|Match devel/py-pygobject, use proper upstream name

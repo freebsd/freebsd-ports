@@ -1,5 +1,6 @@
 PORTNAME=	i3-gnome-pomodoro
 DISTVERSION=	0.1.0
+PORTREVISION=	1
 CATEGORIES=	deskutils python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -19,7 +20,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}blinkstick>=g20230504:sysutils/py-blinkstick
 		${PYTHON_PKGNAMEPREFIX}pydbus>=0.6.0:devel/py-pydbus@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyusb>=1.2.1:devel/py-pyusb@${PY_FLAVOR} \
 		gnome-pomodoro:deskutils/gnome-pomodoro \
-		pygobject3-common>=3.42.0:devel/pygobject3-common
+		pygobject-common>=3.42.0:devel/pygobject-common
 
 USES=		python shebangfix
 

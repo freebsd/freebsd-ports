@@ -4922,7 +4922,6 @@
     SUBDIR += py-glance-store
     SUBDIR += py-glob2
     SUBDIR += py-glom
-    SUBDIR += py-gobject3
     SUBDIR += py-goodreads
     SUBDIR += py-google-cloud-iam
     SUBDIR += py-google-crc32c
@@ -5537,6 +5536,7 @@
     SUBDIR += py-pygdbmi
     SUBDIR += py-pygit2
     SUBDIR += py-pygls
+    SUBDIR += py-pygobject
     SUBDIR += py-pygpx
     SUBDIR += py-pyhashxx
     SUBDIR += py-pyhcl
@@ -6216,7 +6216,7 @@
     SUBDIR += pydeps
     SUBDIR += pyderasn
     SUBDIR += pyenv
-    SUBDIR += pygobject3-common
+    SUBDIR += pygobject-common
     SUBDIR += pylint
     SUBDIR += pylyzer
     SUBDIR += pymsteams
