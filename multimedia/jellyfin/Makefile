@@ -1,5 +1,5 @@
 PORTNAME=	jellyfin
-DISTVERSION=	10.10.1
+DISTVERSION=	10.10.3
 CATEGORIES=	multimedia
 DISTFILES+=	${PREFETCH_FILE}:prefetch
 EXTRACT_ONLY+=	${PORTNAME}-${PORTNAME}-${GH_TAGNAME}_GH0.tar.gz \
@@ -61,10 +61,10 @@ FSharp.Core:4.2.3 \
 Fare:2.1.1 \
 FsCheck.Xunit:2.16.6 \
 FsCheck:2.16.6 \
-HarfBuzzSharp.NativeAssets.Linux:7.3.0.2 \
-HarfBuzzSharp.NativeAssets.Win32:7.3.0.2 \
-HarfBuzzSharp.NativeAssets.macOS:7.3.0.2 \
-HarfBuzzSharp:7.3.0.2 \
+HarfBuzzSharp.NativeAssets.Linux:7.3.0.3 \
+HarfBuzzSharp.NativeAssets.Win32:7.3.0.3 \
+HarfBuzzSharp.NativeAssets.macOS:7.3.0.3 \
+HarfBuzzSharp:7.3.0.3 \
 Humanizer.Core:2.14.1 \
 ICU4N.Transliterator:60.1.0-alpha.356 \
 ICU4N:60.1.0-alpha.356 \
@@ -75,12 +75,12 @@ LrcParser:2024.728.2 \
 MetaBrainz.Common.Json:6.0.2 \
 MetaBrainz.Common:3.0.0 \
 MetaBrainz.MusicBrainz:6.1.0 \
-Microsoft.AspNetCore.Authorization:8.0.10 \
+Microsoft.AspNetCore.Authorization:8.0.11 \
 Microsoft.AspNetCore.Http.Abstractions:2.2.0 \
 Microsoft.AspNetCore.Http.Extensions:2.2.0 \
 Microsoft.AspNetCore.Http.Features:2.2.0 \
 Microsoft.AspNetCore.HttpOverrides:2.2.0 \
-Microsoft.AspNetCore.Metadata:8.0.10 \
+Microsoft.AspNetCore.Metadata:8.0.11 \
 Microsoft.AspNetCore.Mvc.Testing:8.0.4 \
 Microsoft.AspNetCore.TestHost:8.0.4 \
 Microsoft.Bcl.AsyncInterfaces:6.0.0 \
@@ -91,16 +91,16 @@ Microsoft.CodeAnalysis.CSharp:4.5.0 \
 Microsoft.CodeAnalysis.Common:4.5.0 \
 Microsoft.CodeAnalysis.Workspaces.Common:4.5.0 \
 Microsoft.CodeCoverage:17.9.0 \
-Microsoft.Data.Sqlite.Core:8.0.10 \
-Microsoft.Data.Sqlite:8.0.10 \
-Microsoft.EntityFrameworkCore.Abstractions:8.0.10 \
-Microsoft.EntityFrameworkCore.Analyzers:8.0.10 \
-Microsoft.EntityFrameworkCore.Design:8.0.10 \
-Microsoft.EntityFrameworkCore.Relational:8.0.10 \
-Microsoft.EntityFrameworkCore.Sqlite.Core:8.0.10 \
-Microsoft.EntityFrameworkCore.Sqlite:8.0.10 \
-Microsoft.EntityFrameworkCore.Tools:8.0.10 \
-Microsoft.EntityFrameworkCore:8.0.10 \
+Microsoft.Data.Sqlite.Core:8.0.11 \
+Microsoft.Data.Sqlite:8.0.11 \
+Microsoft.EntityFrameworkCore.Abstractions:8.0.11 \
+Microsoft.EntityFrameworkCore.Analyzers:8.0.11 \
+Microsoft.EntityFrameworkCore.Design:8.0.11 \
+Microsoft.EntityFrameworkCore.Relational:8.0.11 \
+Microsoft.EntityFrameworkCore.Sqlite.Core:8.0.11 \
+Microsoft.EntityFrameworkCore.Sqlite:8.0.11 \
+Microsoft.EntityFrameworkCore.Tools:8.0.11 \
+Microsoft.EntityFrameworkCore:8.0.11 \
 Microsoft.Extensions.ApiDescription.Server:3.0.0 \
 Microsoft.Extensions.Caching.Abstractions:2.0.0 \
 Microsoft.Extensions.Caching.Abstractions:8.0.0 \
@@ -128,9 +128,9 @@ Microsoft.Extensions.DependencyInjection:8.0.1 \
 Microsoft.Extensions.DependencyModel:8.0.2 \
 Microsoft.Extensions.Diagnostics.Abstractions:8.0.0 \
 Microsoft.Extensions.Diagnostics.Abstractions:8.0.1 \
-Microsoft.Extensions.Diagnostics.HealthChecks.Abstractions:8.0.10 \
-Microsoft.Extensions.Diagnostics.HealthChecks.EntityFrameworkCore:8.0.10 \
-Microsoft.Extensions.Diagnostics.HealthChecks:8.0.10 \
+Microsoft.Extensions.Diagnostics.HealthChecks.Abstractions:8.0.11 \
+Microsoft.Extensions.Diagnostics.HealthChecks.EntityFrameworkCore:8.0.11 \
+Microsoft.Extensions.Diagnostics.HealthChecks:8.0.11 \
 Microsoft.Extensions.Diagnostics:8.0.1 \
 Microsoft.Extensions.FileProviders.Abstractions:8.0.0 \
 Microsoft.Extensions.FileProviders.Physical:8.0.0 \
@@ -202,11 +202,11 @@ Serilog:4.0.0 \
 Serilog:4.1.0 \
 SerilogAnalyzer:0.15.0 \
 ShimSkiaSharp:2.0.0.1 \
-SkiaSharp.HarfBuzz:2.88.8 \
-SkiaSharp.NativeAssets.Linux:2.88.8 \
-SkiaSharp.NativeAssets.Win32:2.88.8 \
-SkiaSharp.NativeAssets.macOS:2.88.8 \
-SkiaSharp:2.88.8 \
+SkiaSharp.HarfBuzz:2.88.9 \
+SkiaSharp.NativeAssets.Linux:2.88.9 \
+SkiaSharp.NativeAssets.Win32:2.88.9 \
+SkiaSharp.NativeAssets.macOS:2.88.9 \
+SkiaSharp:2.88.9 \
 SmartAnalyzers.MultithreadingAnalyzer:1.1.31 \
 StyleCop.Analyzers.Unstable:1.2.0.556 \
 StyleCop.Analyzers:1.2.0-beta.556 \
@@ -373,7 +373,7 @@ runtime.unix.system.io.filesystem:4.3.0 \
 runtime.unix.system.net.primitives:4.3.0 \
 runtime.unix.system.private.uri:4.3.0 \
 runtime.unix.system.runtime.extensions:4.3.0 \
-z440.atl.core:6.6.0 \
+z440.atl.core:6.8.0 \
 Ude.NetStandard:1.2.0 \
 
 SUB_FILES=	jellyfin pkg-message
