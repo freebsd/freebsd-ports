@@ -1,7 +1,6 @@
 PORTNAME=	tblite
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.3.0
-PORTREVISION=	3
+DISTVERSION=	0.4.0
 CATEGORIES=	science # chemistry
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -28,6 +27,8 @@ USE_GITHUB=	yes
 USE_LDCONFIG=	yes
 
 CMAKE_ON=	BUILD_SHARED_LIBS
+CMAKE_OFF=	WITH_TESTS
+CMAKE_TESTING_ON=	WITH_TESTS
 
 post-patch: # see https://github.com/toml-f/toml-f/issues/51
 	@${REINPLACE_CMD} -e 's|$${CMAKE_Fortran_COMPILER_ID}-$${CMAKE_Fortran_COMPILER_VERSION}||' ${WRKSRC}/config/CMakeLists.txt
