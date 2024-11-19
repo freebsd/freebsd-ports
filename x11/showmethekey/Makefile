@@ -1,13 +1,14 @@
 PORTNAME=	showmethekey
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.15.1
+DISTVERSION=	1.16.0
 CATEGORIES=	x11 wayland
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Show keys you typed on screen
 WWW=		https://showmethekey.alynx.one/
 
 LICENSE=	APACHE20
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	evdev-proto>0:devel/evdev-proto
 LIB_DEPENDS=	libjson-glib-1.0.so:devel/json-glib \
