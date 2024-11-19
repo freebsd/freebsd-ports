@@ -5,8 +5,8 @@
  #else
      const char* LinkageCxx = Linkage;
 +#ifdef __FreeBSD__
-+// atexit-like commands need 'throw()' specifier on FreeBSD 15 aarch64
-+#if defined(__aarch64__) && __FreeBSD_cc_version >= 1500000
++// atexit-like commands need 'throw()' specifier on FreeBSD 15
++#if __FreeBSD_cc_version >= 1500000
 +    const char* Attr = " throw () ";
 +#else
      const char* Attr = "";

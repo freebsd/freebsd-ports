@@ -1,6 +1,6 @@
 PORTNAME=	root
 DISTVERSION=	6.32.04
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel science math parallel python
 MASTER_SITES=	https://root.cern/download/
 DISTFILES=	${PORTNAME}_v${DISTVERSION}.source${EXTRACT_SUFX}
@@ -11,8 +11,6 @@ WWW=		https://root.cern/
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/LGPL2_1.txt
-
-BROKEN_FreeBSD_15=	fails to build: Patch for newest CURRENT is missing
 
 BUILD_AND_RUN_DEPENDS=	bash:shells/bash \
 		nlohmann-json>=3:devel/nlohmann-json
