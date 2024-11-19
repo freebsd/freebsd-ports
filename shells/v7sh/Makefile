@@ -15,10 +15,7 @@ MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	Implementation of the UNIX 7th Edition shell
 WWW=		http://minnie.tuhs.org/UnixTree/V7/
 
-BROKEN_aarch64=	Fails to link: missing sbrk
-BROKEN_riscv64=	Fails to link: missing sbrk
-
-USES=		uidfix
+USES=		sbrk uidfix
 EXTRACT_CMD=	${CP}
 EXTRACT_BEFORE_ARGS=
 EXTRACT_AFTER_ARGS=	${WRKSRC}

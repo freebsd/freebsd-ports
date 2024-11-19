@@ -11,13 +11,10 @@ WWW=		https://www.gnu.org/software/apl/
 
 LICENSE=	GPLv3+
 
-BROKEN_aarch64=	Fails to link: missing sbrk
-BROKEN_riscv64=	Fails to link: missing sbrk
-
 # XXX: should be optional, but no way to disable in the configure script
 LIB_DEPENDS=	libfftw3.so:math/fftw3
 
-USES=		compiler:c++11-lang gmake libtool localbase
+USES=		compiler:c++11-lang gmake libtool localbase sbrk
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ENV=	CXX_WERROR=no

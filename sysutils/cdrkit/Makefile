@@ -14,7 +14,7 @@ LICENSE=	GPLv2+
 
 RUN_DEPENDS?=	${PORTNAME}-genisoimage>0:sysutils/genisoimage
 
-USES=		cmake iconv perl5 shebangfix
+USES=		cmake iconv perl5 sbrk shebangfix
 USE_PERL5=	run
 SHEBANG_FILES=	3rd-party/dirsplit/dirsplit
 # Fix build with clang11

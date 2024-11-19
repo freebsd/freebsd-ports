@@ -20,9 +20,6 @@ WWW=		http://bwrc.eecs.berkeley.edu/Classes/IcBook/SPICE/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
-BROKEN_aarch64=	Fails to link: missing sbrk
-BROKEN_riscv64=	Fails to link: missing sbrk
-
 WRKSRC=		${WRKDIR}/${PORTNAME}3f5
 MAKEFILE=	${FILESDIR}/Makefile
 CONFIGURE_ENV=	CONFIGFILE="${CONFIGFILE}" \
@@ -37,6 +34,8 @@ PORTEXAMPLES=	bjtnoise.cir bsim1tst.cir bsim2tst.cir diffpair.cir \
 		mixdisto.cir mos6inv.cir mosamp2.cir mosmem.cir process.mod \
 		process.pro pz2.cir pzt.cir rc.cir rca3040.cir resnoise.cir \
 		rtlinv.cir schmitt.cir simplepz.cir
+
+USES=		sbrk
 
 OPTIONS_DEFINE=	DOCS EXAMPLES X11 DEV_BSIM3 DEV_BSIM4 DEV_HISIM2
 OPTIONS_DEFAULT=X11

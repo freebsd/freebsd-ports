@@ -11,12 +11,10 @@ WWW=		https://la-samhna.de/samhain/
 
 LICENSE=	GPLv2
 
-BROKEN_aarch64=		fails to link: missing sbrk
 BROKEN_mips=		fails to configure: error: Could not find the libwrap library
 BROKEN_mips64=		fails to configure: error: Could not find the libwrap library
-BROKEN_riscv64=		fails to link: missing sbrk
 
-USES=			shebangfix
+USES=			sbrk shebangfix
 SHEBANG_FILES=		scripts/samhainadmin-gpg.pl.in \
 			scripts/samhainadmin-sig.pl.in
 
