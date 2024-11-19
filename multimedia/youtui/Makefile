@@ -1,7 +1,6 @@
 PORTNAME=	youtui
 DISTVERSIONPREFIX=	youtui/v
-DISTVERSION=	0.0.16
-PORTREVISION=	1
+DISTVERSION=	0.0.17
 CATEGORIES=	multimedia
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -35,10 +34,11 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		anstyle-parse-0.2.4 \
 		anstyle-query-1.1.0 \
 		anstyle-wincon-3.0.3 \
-		anyhow-1.0.86 \
+		anyhow-1.0.89 \
 		arrayvec-0.7.4 \
 		async-compression-0.4.11 \
 		async-trait-0.1.81 \
+		async_cell-0.2.2 \
 		atomic-waker-1.1.2 \
 		autocfg-1.3.0 \
 		backtrace-0.3.73 \
@@ -60,7 +60,7 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		bytemuck-1.16.1 \
 		bytemuck_derive-1.7.0 \
 		byteorder-1.5.0 \
-		bytes-1.7.1 \
+		bytes-1.7.2 \
 		cassowary-0.3.0 \
 		castaway-0.2.3 \
 		cbc-0.1.2 \
@@ -267,7 +267,7 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		rand-0.8.5 \
 		rand_chacha-0.3.1 \
 		rand_core-0.6.4 \
-		ratatui-0.28.0 \
+		ratatui-0.28.1 \
 		redox_syscall-0.2.16 \
 		redox_syscall-0.5.3 \
 		redox_users-0.4.5 \
@@ -280,6 +280,7 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		reqwest-retry-0.6.1 \
 		retry-policies-0.4.0 \
 		ring-0.17.8 \
+		rodio-0.20.1 \
 		rustc-demangle-0.1.24 \
 		rustc-hash-1.1.0 \
 		rustc-hash-2.0.0 \
@@ -341,6 +342,8 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		syn-2.0.71 \
 		sync_wrapper-1.0.1 \
 		synstructure-0.13.1 \
+		system-configuration-0.6.1 \
+		system-configuration-sys-0.6.0 \
 		tap-1.0.1 \
 		tempfile-3.10.1 \
 		tendril-0.4.3 \
@@ -354,10 +357,11 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		tinystr-0.7.6 \
 		tinyvec-1.8.0 \
 		tinyvec_macros-0.1.1 \
-		tokio-1.39.3 \
+		tokio-1.40.0 \
 		tokio-macros-2.4.0 \
 		tokio-native-tls-0.3.1 \
 		tokio-rustls-0.26.0 \
+		tokio-stream-0.1.16 \
 		tokio-util-0.7.11 \
 		toml-0.8.19 \
 		toml_datetime-0.6.8 \
@@ -449,7 +453,6 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		yansi-0.5.1 \
 		yoke-0.7.4 \
 		yoke-derive-0.7.4 \
-		youtui-vendored-rodio-0.19.0-youtui-vendored.1 \
 		youtui-vendored-rusty_ytdl-0.7.4-youtui-vendored.1 \
 		zerocopy-0.7.35 \
 		zerocopy-derive-0.7.35 \
