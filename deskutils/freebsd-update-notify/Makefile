@@ -1,6 +1,6 @@
 PORTNAME=	freebsd-update-notify
-DISTVERSION=	0.1.1-8
-DISTVERSIONSUFFIX=	-g714e534
+DISTVERSION=	0.1.1-11
+DISTVERSIONSUFFIX=	-g2d7b872
 CATEGORIES=	deskutils
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -12,7 +12,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	zenity:x11/zenity \
 		auto-admin>=0.8.0:sysutils/auto-admin \
-		rxvt-unicode>0:x11/rxvt-unicode
+		rxvt-unicode>0:x11/rxvt-unicode \
+		xwininfo>0:x11/xwininfo \
+		xhost>0:x11/xhost
 
 USE_GITHUB=	yes
 
@@ -29,6 +31,10 @@ PLIST_FILES=	libexec/freebsd-update-notify \
 		"@sample etc/freebsd-update-notify/freebsd-update-notify.conf.sample" \
 		"@sample etc/freebsd-update-notify/freebsd-update-notify.crontab.sample etc/cron.d/freebsd-update-notify" \
 		"@dir etc/cron.d"
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|g' \
+		${WRKSRC}/freebsd-update-notify
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/etc/cron.d
