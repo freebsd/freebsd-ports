@@ -1,7 +1,7 @@
 PORTNAME=	openmvg
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	misc science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -16,7 +16,7 @@ ONLY_FOR_ARCHS_REASON=	need to figure out which TARGET_ARCHITECTURE values corre
 
 #HPP_DEPENDS=	cereal>0:devel/cereal # external cereal is currently broken, see https://github.com/openMVG/openMVG/issues/1963
 #BUILD_DEPENDS=	${HPP_DEPENDS}
-BUILD_DEPENDS=	tbb>0:devel/tbb # configure only checks TBB headers
+BUILD_DEPENDS=	onetbb>0:devel/onetbb # configure only checks TBB headers
 LIB_DEPENDS=	libblas.so:math/blas \
 		libceres.so:math/ceres-solver \
 		libClp.so:math/clp \
