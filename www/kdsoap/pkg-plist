@@ -78,4 +78,3 @@ share/doc/KDSoap%%KDSOAP_QT6_SUFFIX%%/README.md
 %%KDSOAP_QT5_ONLY%%share/doc/KDSoap/kdsoap.pri
 %%KDSOAP_QT5_ONLY%%share/doc/KDSoap/kdwsdl2cpp.pri
 %%KDSOAP_QT5_ONLY%%share/mkspecs/features/kdsoap.prf
-
