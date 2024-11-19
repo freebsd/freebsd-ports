@@ -1,3 +1,48 @@
+  <vuln vid="141f2a22-a6a7-11ef-b282-0c9d92850f7a">
+    <topic>xorg server -- _XkbSetCompatMap vulnerability</topic>
+    <affects>
+      <package>
+	<name>xorg-server</name>
+	<range><lt>21.1.14,1</lt></range>
+      </package>
+      <package>
+	<name>xwayland</name>
+	<range><lt>24.1.4,1</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The X.Org project reports:</p>
+	<blockquote cite="https://lists.x.org/archives/xorg-announce/2024-October/003545.html">
+	  <ul>
+	    <li>
+	      CVE-2024-9632: Heap buffer Heap-based buffer overflow
+		privilege escalation in _XkbSetCompatMap
+
+	      <p>The _XkbSetCompatMap() function attempts to resize
+		the `sym_interpret` buffer.
+
+		However, It didn't update its size properly.
+		It updated `num_si` only, without updating `size_si`.
+
+		This may lead to local privilege escalation if the
+		server is run as root or remote code execution
+		(e.g. x11 over ssh).</p>
+	    </li>
+	  </ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2024-9632</cvename>
+      <url>https://lists.x.org/archives/xorg-announce/2024-October/003545.html</url>
+    </references>
+    <dates>
+      <discovery>2024-10-29</discovery>
+      <entry>2024-11-19</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="28ffa931-a510-11ef-8109-b42e991fc52e">
     <topic>mongodb -- Buffer over-reads in MongoDB Server</topic>
     <affects>
