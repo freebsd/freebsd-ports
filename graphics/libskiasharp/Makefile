@@ -1,7 +1,10 @@
 PORTNAME=	libskiasharp
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.88.3
+PORTREVISION=	1
 CATEGORIES=	graphics
+MASTER_SITES=	LOCAL/bapt:libjpeg_turbo
+DISTFILES=	libjpeg_turbo-${LIBJPEG_TURBO_REV}.tar.gz:libjpeg_turbo
 
 MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	Complete 2D graphic library for drawing Text, Geometries, and Images
@@ -23,10 +26,14 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	mono
 GH_PROJECT=	skia
 
+LIBJPEG_TURBO_REV=	22f1a22c99e9dde8cd3c72ead333f425c5a7aa77
+
 USE_LDCONFIG=	yes
 USE_BINUTILS=	yes
 
 SOVERSION=	118.0.0
+#
+# see https://github.com/libjpeg-turbo/libjpeg-turbo/issues/795#issuecomment-2484148592
 GN_ARGS=	is_official_build=true \
 		skia_enable_tools=false \
 		target_os="linux" \
@@ -35,7 +42,7 @@ GN_ARGS=	is_official_build=true \
 		skia_use_piex=true \
 		skia_use_harfbuzz=false \
 		skia_use_system_expat=true \
-		skia_use_system_libjpeg_turbo=true \
+		skia_use_system_libjpeg_turbo=false \
 		skia_use_system_freetype2=true \
 		skia_use_system_libpng=true \
 		skia_use_system_libwebp=true \
@@ -59,6 +66,10 @@ BUILD_WRKSRC=	${WRKSRC}/out
 
 PLIST_FILES=	lib/libSkiaSharp.so \
 		lib/libSkiaSharp.so.${SOVERSION}
+
+post-extract:
+	${MKDIR} ${WRKSRC}/third_party/externals
+	${RLN} ${WRKDIR}/libjpeg_turbo ${WRKSRC}/third_party/externals/libjpeg-turbo
 
 do-configure:
 	cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} gn gen 'out' --args='${GN_ARGS}'
