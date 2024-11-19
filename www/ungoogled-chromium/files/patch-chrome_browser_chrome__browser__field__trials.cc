@@ -1,6 +1,6 @@
---- chrome/browser/chrome_browser_field_trials.cc.orig	2024-08-26 14:40:28 UTC
+--- chrome/browser/chrome_browser_field_trials.cc.orig	2024-11-16 12:20:41 UTC
 +++ chrome/browser/chrome_browser_field_trials.cc
-@@ -48,7 +48,7 @@
+@@ -49,7 +49,7 @@
  #include "chrome/browser/ui/startup/default_browser_prompt/default_browser_prompt_trial.h"
  #endif
  
@@ -9,7 +9,7 @@
  #include "base/nix/xdg_util.h"
  #include "ui/base/ui_base_features.h"
  #endif  // BUILDFLAG(IS_LINUX)
-@@ -155,7 +155,7 @@ void ChromeBrowserFieldTrials::RegisterSyntheticTrials
+@@ -135,7 +135,7 @@ void ChromeBrowserFieldTrials::RegisterSyntheticTrials
  #endif
  }
  

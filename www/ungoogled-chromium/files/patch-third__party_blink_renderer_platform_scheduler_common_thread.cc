@@ -1,6 +1,6 @@
---- third_party/blink/renderer/platform/scheduler/common/thread.cc.orig	2024-10-01 07:26:23 UTC
+--- third_party/blink/renderer/platform/scheduler/common/thread.cc.orig	2024-11-16 12:20:41 UTC
 +++ third_party/blink/renderer/platform/scheduler/common/thread.cc
-@@ -88,7 +88,7 @@ void Thread::CreateAndSetCompositorThread() {
+@@ -87,7 +87,7 @@ void Thread::CreateAndSetCompositorThread() {
              "Compositor");
        }));
  

@@ -1,6 +1,6 @@
---- chrome/browser/ui/webui/certificate_manager/certificate_manager_handler.cc.orig	2024-10-27 06:40:35 UTC
+--- chrome/browser/ui/webui/certificate_manager/certificate_manager_handler.cc.orig	2024-11-16 12:20:41 UTC
 +++ chrome/browser/ui/webui/certificate_manager/certificate_manager_handler.cc
-@@ -154,7 +154,7 @@ CertificateManagerPageHandler::GetCertSource(
+@@ -162,7 +162,7 @@ CertificateManagerPageHandler::GetCertSource(
              "distrusted_certs",
              cert_verifier::mojom::CertificateTrust::kDistrusted);
          break;

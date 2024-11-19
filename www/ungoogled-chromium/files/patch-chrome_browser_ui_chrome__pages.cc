@@ -1,4 +1,4 @@
---- chrome/browser/ui/chrome_pages.cc.orig	2024-08-26 14:40:28 UTC
+--- chrome/browser/ui/chrome_pages.cc.orig	2024-11-16 12:20:41 UTC
 +++ chrome/browser/ui/chrome_pages.cc
 @@ -86,7 +86,7 @@
  #include "components/signin/public/identity_manager/identity_manager.h"
@@ -18,7 +18,7 @@
  void ShowChromeWhatsNew(Browser* browser) {
    ShowSingletonTab(browser, GURL(kChromeUIWhatsNewURL));
  }
-@@ -721,7 +721,7 @@ void ShowShortcutCustomizationApp(Profile* profile,
+@@ -725,7 +725,7 @@ void ShowShortcutCustomizationApp(Profile* profile,
  #endif  // BUILDFLAG(IS_CHROMEOS_ASH)
  }
  

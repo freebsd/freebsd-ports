@@ -1,6 +1,6 @@
---- remoting/host/it2me/it2me_host.cc.orig	2024-10-27 06:40:35 UTC
+--- remoting/host/it2me/it2me_host.cc.orig	2024-11-16 12:20:41 UTC
 +++ remoting/host/it2me/it2me_host.cc
-@@ -57,7 +57,7 @@
+@@ -58,7 +58,7 @@
  #include "remoting/host/chromeos/features.h"
  #endif
  
@@ -9,7 +9,7 @@
  #include "remoting/host/linux/wayland_manager.h"
  #include "remoting/host/linux/wayland_utils.h"
  #endif  // BUILDFLAG(IS_LINUX)
-@@ -185,7 +185,7 @@ void It2MeHost::Connect(
+@@ -184,7 +184,7 @@ void It2MeHost::Connect(
  
    OnPolicyUpdate(std::move(policies));
  

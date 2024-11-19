@@ -1,6 +1,6 @@
---- base/files/file_util_posix.cc.orig	2024-07-31 14:19:23 UTC
+--- base/files/file_util_posix.cc.orig	2024-11-16 12:20:41 UTC
 +++ base/files/file_util_posix.cc
-@@ -889,36 +889,33 @@ bool CreateNewTempDirectory(const FilePath::StringType
+@@ -897,36 +897,33 @@ bool CreateNewTempDirectory(const FilePath::StringType
  bool CreateDirectoryAndGetError(const FilePath& full_path, File::Error* error) {
    ScopedBlockingCall scoped_blocking_call(
        FROM_HERE, BlockingType::MAY_BLOCK);  // For call to mkdir().

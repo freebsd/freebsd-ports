@@ -1,6 +1,6 @@
---- chrome/browser/chrome_browser_field_trials.h.orig	2024-08-26 14:40:28 UTC
+--- chrome/browser/chrome_browser_field_trials.h.orig	2024-11-16 12:20:41 UTC
 +++ chrome/browser/chrome_browser_field_trials.h
-@@ -34,7 +34,7 @@ class ChromeBrowserFieldTrials : public variations::Pl
+@@ -33,7 +33,7 @@ class ChromeBrowserFieldTrials : public variations::Pl
        const variations::EntropyProviders& entropy_providers,
        base::FeatureList* feature_list) override;
    void RegisterSyntheticTrials() override;

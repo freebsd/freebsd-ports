@@ -1,5 +1,5 @@
---- third_party/perfetto/src/tracing/core/clock_snapshots.cc.orig	2024-04-23 07:42:17 UTC
-+++ third_party/perfetto/src/tracing/core/clock_snapshots.cc
+--- third_party/perfetto/src/base/clock_snapshots.cc.orig	2024-11-16 12:20:41 UTC
++++ third_party/perfetto/src/base/clock_snapshots.cc
 @@ -26,7 +26,8 @@ ClockSnapshotVector CaptureClockSnapshots() {
    ClockSnapshotVector snapshot_data;
  #if !PERFETTO_BUILDFLAG(PERFETTO_OS_APPLE) && \

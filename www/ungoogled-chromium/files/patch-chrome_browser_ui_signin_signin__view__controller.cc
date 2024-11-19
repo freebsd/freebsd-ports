@@ -1,8 +1,8 @@
---- chrome/browser/ui/signin/signin_view_controller.cc.orig	2024-08-26 14:40:28 UTC
+--- chrome/browser/ui/signin/signin_view_controller.cc.orig	2024-11-16 12:20:41 UTC
 +++ chrome/browser/ui/signin/signin_view_controller.cc
-@@ -482,7 +482,7 @@ void SigninViewController::ShowModalManagedUserNoticeD
-     signin::SigninChoiceCallbackVariant process_user_choice_callback,
-     base::OnceClosure done_callback) {
+@@ -479,7 +479,7 @@ void SigninViewController::ShowModalManagedUserNoticeD
+     std::unique_ptr<signin::EnterpriseProfileCreationDialogParams>
+         create_param) {
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
 -    BUILDFLAG(IS_CHROMEOS_LACROS)
 +    BUILDFLAG(IS_CHROMEOS_LACROS) || BUILDFLAG(IS_BSD)

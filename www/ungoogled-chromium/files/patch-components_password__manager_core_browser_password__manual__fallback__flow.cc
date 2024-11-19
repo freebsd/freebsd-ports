@@ -1,4 +1,4 @@
---- components/password_manager/core/browser/password_manual_fallback_flow.cc.orig	2024-10-27 06:40:35 UTC
+--- components/password_manager/core/browser/password_manual_fallback_flow.cc.orig	2024-11-16 12:20:41 UTC
 +++ components/password_manager/core/browser/password_manual_fallback_flow.cc
 @@ -43,7 +43,7 @@ std::u16string GetUsernameFromLabel(const std::u16stri
  }
@@ -18,7 +18,7 @@
        std::optional<password_manager::PasswordForm> credentials =
            GetCorrespondingPasswordForm(
                suggestion.GetPayload<Suggestion::PasswordSuggestionDetails>(),
-@@ -413,7 +413,7 @@ void PasswordManualFallbackFlow::EnsureCrossDomainPass
+@@ -418,7 +418,7 @@ void PasswordManualFallbackFlow::EnsureCrossDomainPass
      const Suggestion::PasswordSuggestionDetails& payload,
      base::OnceClosure on_allowed) {
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || \
