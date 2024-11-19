@@ -15,7 +15,7 @@ LICENSE_COMB=	multi
 
 FETCH_DEPENDS=	npm:www/npm${NODEJS_SUFFIX}
 BUILD_DEPENDS=	npm:www/npm${NODEJS_SUFFIX} \
-		dotnet:lang/dotnet
+		dotnet:lang/dotnet8
 LIB_DEPENDS=	libSkiaSharp.so:graphics/libskiasharp
 RUN_DEPENDS=	ca_root_nss>0:security/ca_root_nss \
 		ffmpeg>0:multimedia/ffmpeg \
@@ -25,7 +25,7 @@ RUN_DEPENDS=	ca_root_nss>0:security/ca_root_nss \
 		libunwind>0:devel/libunwind \
 		mediainfo>0:multimedia/mediainfo
 TEST_DEPENDS=	npm:www/npm${NODEJS_SUFFIX} \
-		dotnet:lang/dotnet
+		dotnet:lang/dotnet8
 
 USES=		nodejs:20,build sqlite:3 ssl elfctl
 

@@ -46,6 +46,7 @@
     SUBDIR += dhall
     SUBDIR += dlang-tools
     SUBDIR += dotnet
+    SUBDIR += dotnet8
     SUBDIR += duktape
     SUBDIR += duktape-lib
     SUBDIR += ecl
