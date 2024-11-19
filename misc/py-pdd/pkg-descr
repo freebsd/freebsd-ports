@@ -1,0 +1,6 @@
+pdd (Python3 Date Diff) is a tiny command line utility to calculate date
+and time difference. It can also be used as a timer. If no program
+arguments are specified it shows the current date, time and timezone.
+
+pdd has been written with only one goal - simplicity. Users shouldn't have
+to memorize anything.

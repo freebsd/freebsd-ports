@@ -484,6 +484,7 @@
     SUBDIR += py-oterm
     SUBDIR += py-palettable
     SUBDIR += py-papermill
+    SUBDIR += py-pdd
     SUBDIR += py-pexpect
     SUBDIR += py-pkbar
     SUBDIR += py-placekey
