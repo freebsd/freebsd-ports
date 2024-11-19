@@ -1696,6 +1696,7 @@
     SUBDIR += py-formencode
     SUBDIR += py-fqdn
     SUBDIR += py-frappe-bench
+    SUBDIR += py-free-proxy
     SUBDIR += py-freenit
     SUBDIR += py-frozen-flask
     SUBDIR += py-gevent-websocket
