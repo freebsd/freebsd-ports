@@ -11,6 +11,8 @@ WWW=		https://kicad.org/
 
 LICENSE=	GPLv2
 
+BROKEN=		fails to build with boost-1.86+
+
 BUILD_DEPENDS=	${LOCALBASE}/include/glm/glm.hpp:math/glm	\
 		swig:devel/swig
 LIB_DEPENDS=	libboost_thread.so:devel/boost-libs	\
