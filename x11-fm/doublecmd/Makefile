@@ -1,5 +1,5 @@
 PORTNAME=	doublecmd
-PORTVERSION=	1.1.19
+PORTVERSION=	1.1.20
 DISTVERSIONPREFIX=	v
 CATEGORIES=	x11-fm
 PKGNAMESUFFIX=	${LAZARUS_PKGNAMESUFFIX}
@@ -20,9 +20,11 @@ USES=		desktop-file-utils dos2unix fpc gnome lazarus:flavors xorg
 DOS2UNIX_FILES=	components/multithreadprocs/mtpcpu.pas src/dmhelpmanager.pas
 USE_GITHUB=	yes
 GH_PROJECT=	doublecmd.github.io:help
-GH_TAGNAME=	${DISTVERSIONPREFIX}1.1.10:help
+GH_TAGNAME=	${DISTVERSIONPREFIX}${DCHELP}:help
 USE_GNOME=	cairo glib20
 USE_XORG=	x11
+
+DCHELP=		1.1.18
 
 LAZARUS_PROJECT_FILES=	components/chsdet/chsdet.lpk \
 			components/multithreadprocs/multithreadprocslaz.lpk \
