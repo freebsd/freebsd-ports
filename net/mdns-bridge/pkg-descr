@@ -1,0 +1,4 @@
+daemon for forwarding mDNS data between network interfaces. It
+is intended for use by firewalls to provide service discovery
+across network segments, with and without filtering, for both
+IPv4 and IPv6.
