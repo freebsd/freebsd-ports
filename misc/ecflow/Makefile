@@ -12,6 +12,8 @@ WWW=		https://confluence.ecmwf.int/display/ECFLOW/ecflow+home
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN=		fails to build with boost-1.86+
+
 PY_DEPENDS=	${PYTHON_PKGNAMEPREFIX}boost-libs>0:devel/boost-python-libs@${PY_FLAVOR}
 BUILD_DEPENDS=	bash:shells/bash \
 		${PY_DEPENDS}
