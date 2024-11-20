@@ -11,6 +11,8 @@ WWW=		https://www.nntb.no/~dreibh/hipercontracer/
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		fails to build with boost-1.86+
+
 LIB_DEPENDS=	libboost_atomic.so:devel/boost-libs
 
 USES=		cmake compiler:c++14-lang python shebangfix tar:xz
