@@ -1,5 +1,6 @@
 PORTNAME=	mailio
 DISTVERSION=	0.24.0
+PORTREVISION=	1
 CATEGORIES=	mail devel
 
 MAINTAINER=	yuri@FreeBSD.org

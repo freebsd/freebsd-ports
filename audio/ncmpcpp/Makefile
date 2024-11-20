@@ -1,5 +1,6 @@
 PORTNAME=	ncmpcpp
 DISTVERSION=	0.10.1
+PORTREVISION=	1
 CATEGORIES=	audio
 
 MAINTAINER=	yamagi@yamagi.org

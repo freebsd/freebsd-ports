@@ -1,6 +1,6 @@
 PORTNAME=	giacxcas
 DISTVERSION=	1.9.0-85
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math
 MASTER_SITES=	http://www-fourier.ujf-grenoble.fr/~parisse/debian/dists/stable/main/source/:giac \
 		http://cocoa.dima.unige.it/cocoa/cocoalib/tgz/:cocoa \

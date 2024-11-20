@@ -1,6 +1,6 @@
 PORTNAME=	plasma-desktop
 DISTVERSION=	${KDE_PLASMA_VERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11 kde kde-plasma
 
 PATCH_SITES=	https://invent.kde.org/plasma/plasma-desktop/-/commit/

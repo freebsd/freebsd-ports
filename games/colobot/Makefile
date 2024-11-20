@@ -1,7 +1,7 @@
 PORTNAME=	colobot
 DISTVERSIONPREFIX=	${PORTNAME}-gold-
 DISTVERSION=	0.2.0
-PORTREVISION=	9
+PORTREVISION=	10
 DISTVERSIONSUFFIX=	-alpha
 CATEGORIES=	games education
 MASTER_SITES=	https://colobot.info/files/music/:music

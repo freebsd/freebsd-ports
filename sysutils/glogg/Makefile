@@ -1,6 +1,6 @@
 PORTNAME=	glogg
 DISTVERSION=	1.1.4
-PORTREVISION=	16
+PORTREVISION=	17
 CATEGORIES=	sysutils textproc
 MASTER_SITES=	http://glogg.bonnefon.org/files/
 

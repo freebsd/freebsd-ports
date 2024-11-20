@@ -1,5 +1,5 @@
 PORTNAME=	foundationdb
-PORTREVISION=	1
+PORTREVISION=	2
 
 COMMENT=	FoundationDB client
 

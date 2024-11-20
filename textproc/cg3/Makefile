@@ -1,6 +1,6 @@
 PORTNAME=	cg3
 DISTVERSION=	1.3.6
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	textproc
 MASTER_SITES=	https://github.com/GrammarSoft/${PORTNAME}/releases/download/v${DISTVERSION}/
 

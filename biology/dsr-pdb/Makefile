@@ -1,6 +1,6 @@
 PORTNAME=	dsr-pdb
 DISTVERSION=	1.0.3
-PORTREVISION=	13
+PORTREVISION=	14
 CATEGORIES=	biology
 MASTER_SITES=	https://graphics.stanford.edu/~drussel/
 DISTNAME=	${PORTNAME}
