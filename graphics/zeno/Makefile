@@ -1,5 +1,5 @@
 PORTNAME=	zeno
-DISTVERSION=	2023.11.16
+DISTVERSION=	2024.10.1
 CATEGORIES=	graphics
 
 MAINTAINER=	freebsd@sysctl.cz
@@ -13,9 +13,11 @@ BUILD_DEPENDS=	openmpi>0:net/openmpi \
 		cgal>=5.0.2:math/cgal \
 		onetbb>0:devel/onetbb \
 		openvdb>0:misc/openvdb
+LIB_DEPENDS=	libcryptopp.so:security/cryptopp
 
 USES=		cmake compiler:c++17-lang eigen:3 localbase:ldflags qt:5
 USE_GITHUB=	yes
+USE_GCC=	yes
 GH_ACCOUNT=	zenustech
 USE_LDCONFIG=	yes
 USE_QT=		core gui network opengl svg widgets buildtools:build qmake:build

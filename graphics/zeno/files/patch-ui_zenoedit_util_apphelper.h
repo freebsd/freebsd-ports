@@ -1,7 +1,6 @@
---- ui/zenoedit/util/apphelper.h.orig	2024-07-27 11:22:11 UTC
+--- ui/zenoedit/util/apphelper.h.orig	2024-09-30 13:46:54 UTC
 +++ ui/zenoedit/util/apphelper.h
-@@ -1,19 +1,18 @@
- #ifndef __ZENOEDIT_HELPER__
+@@ -2,18 +2,17 @@
  #define __ZENOEDIT_HELPER__
  
  #include <zenomodel/include/igraphsmodel.h>

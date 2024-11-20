@@ -1,6 +1,6 @@
---- ui/zenoedit/zenomainwindow.cpp.orig	2024-04-22 13:07:02 UTC
+--- ui/zenoedit/zenomainwindow.cpp.orig	2024-09-30 13:46:54 UTC
 +++ ui/zenoedit/zenomainwindow.cpp
-@@ -1467,7 +1467,7 @@ void ZenoMainWindow::onZenovisFrameUpdate(bool bGLView
+@@ -1479,7 +1479,7 @@ void ZenoMainWindow::onCheckUpdate()
  
  void ZenoMainWindow::onCheckUpdate()
  {

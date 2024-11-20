@@ -1,6 +1,6 @@
---- ui/zenoedit/util/apphelper.cpp.orig	2023-11-22 19:17:26 UTC
+--- ui/zenoedit/util/apphelper.cpp.orig	2024-09-30 13:46:54 UTC
 +++ ui/zenoedit/util/apphelper.cpp
-@@ -11,7 +11,11 @@
+@@ -14,7 +14,11 @@
  #include <zeno/core/Session.h>
  #include <zeno/extra/GlobalComm.h>
  #include "viewport/zoptixviewport.h"
