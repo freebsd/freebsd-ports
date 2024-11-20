@@ -1,7 +1,11 @@
 PORTNAME=	base
 DISTVERSION=	${QT6_VERSION}
+PORTREVISION=	1
 CATEGORIES=	devel
 PKGNAMEPREFIX=	qt6-
+
+PATCH_SITES=	https://github.com/qt/qtbase/commit/
+PATCHFILES+=	5875da6d70303468eab85030a80f54c268f80b79.patch:-p1 # PR282335
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt base (core, gui, widgets, network,...)
