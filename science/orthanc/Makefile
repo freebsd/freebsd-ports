@@ -12,6 +12,8 @@ WWW=		https://www.orthanc-server.com/
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		fails to build with boost-1.86+
+
 BUILD_DEPENDS=	protoc:devel/protobuf
 
 LIB_DEPENDS=	libboost_atomic.so:devel/boost-libs \

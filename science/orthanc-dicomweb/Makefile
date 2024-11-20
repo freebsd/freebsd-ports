@@ -26,6 +26,8 @@ WWW=		https://www.orthanc-server.com/static.php?page=dicomweb
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		fails to build with boost-1.86+
+
 BUILD_DEPENDS=	${LOCALBASE}/include/orthanc/OrthancCPlugin.h:science/orthanc
 LIB_DEPENDS=	libboost_atomic.so:devel/boost-libs \
 		libexpat.so:textproc/expat2 \
