@@ -57,6 +57,8 @@ MPI_LIB_DEPENDS=	libmpich.so:net/mpich
 
 .include <bsd.port.options.mk>
 
+PLIST_SUB+=	ARCH=${ARCH:S/i386/x86/:S/aarch64/arm64/}
+
 .if ${ARCH} == "amd64"
 PLIST_SUB+=		AMD64=""
 . if !${PORT_OPTIONS:M32BIT}
