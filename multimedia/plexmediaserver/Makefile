@@ -1,6 +1,6 @@
 PORTNAME=	plexmediaserver
-DISTVERSION?=	1.41.1.9057
-DISTVERSIONSUFFIX?=	af5eaea7a
+DISTVERSION?=	1.41.2.9200
+DISTVERSIONSUFFIX?=	c6bbc1b53
 CATEGORIES=	multimedia
 MASTER_SITES?=	https://downloads.plex.tv/plex-media-server-new/${DISTVERSION}-${DISTVERSIONSUFFIX}/freebsd/
 DISTNAME?=	PlexMediaServer-${DISTVERSION}-${DISTVERSIONSUFFIX}-FreeBSD-${ARCH}
