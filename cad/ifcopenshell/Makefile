@@ -14,6 +14,8 @@ WWW=		https://ifcopenshell.org/
 LICENSE=	LGPL3+
 LICENSE_FILE=	${WRKSRC}/COPYING.LESSER
 
+BROKEN=		fails to build with boost-1.86+
+
 BUILD_DEPENDS=	${LOCALBASE}/include/CGAL/Cartesian.h:math/cgal \
 		${LOCALBASE}/include/nlohmann/json.hpp:devel/nlohmann-json \
 		${LOCALBASE}/include/svgpp/svgpp.hpp:graphics/svgpp
