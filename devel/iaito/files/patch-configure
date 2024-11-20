@@ -1,11 +1,11 @@
---- configure.orig	2024-05-24 00:09:14 UTC
+--- configure.orig	2024-11-20 08:00:58 UTC
 +++ configure
-@@ -470,7 +470,7 @@ QMAKE=""; fi
- fi ; fi
- if [ "$WANT_QMAKE6" = "1" ]; then
- QMAKE=""; fi
+@@ -474,7 +474,7 @@ else
+ else
+ case "$undefined_variable" in 0|"") echo ; echo "ERROR: Missing qmake6" >&2 ; echo ; exit 1 ;; esac; fi
+ else
 -if [ "$HAVE_QMAKE" = "1" ]; then
 +if [ "$HAVE_QMAKE" = "1" -a "$WANT_QMAKE6" != "1" ]; then
- QMAKE_BIN="${QMAKE}"
- else
- if [ "$HAVE_QMAKE6" = "1" ]; then
+ QMAKE_BIN="${QMAKE}"; fi; fi
+ if [ "$QMAKE_BIN" = """" ]; then
+ case "$undefined_variable" in 0|"") echo ; echo "ERROR: Missing qmake" >&2 ; echo ; exit 1 ;; esac; fi
