@@ -12,6 +12,8 @@ WWW=		https://valyriatear.blogspot.com/
 # GPLv2, GPLv3 (with font exception), OFL-1.1, CC0, CC-BY-3, and CC-BY-SA-3.
 LICENSE=	GPLv2
 
+BROKEN=		fails to build with boost-1.86+
+
 LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
 		libvorbis.so:audio/libvorbis \
 		libpng.so:graphics/png
