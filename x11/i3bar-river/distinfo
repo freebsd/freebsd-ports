@@ -1,4 +1,4 @@
-TIMESTAMP = 1728313516
+TIMESTAMP = 1732100577
 SHA256 (rust/crates/anstyle-1.0.8.crate) = 1bec1de6f59aedf83baf9ff929c98f2ad654b97c9510f4e70cf6f661d49fd5b1
 SIZE (rust/crates/anstyle-1.0.8.crate) = 15771
 SHA256 (rust/crates/anyhow-1.0.89.crate) = 86fdf8605db99b54d3cd748a44c6d04df638eb5dafb219b135d0149bd0db01f6
@@ -161,5 +161,5 @@ SHA256 (rust/crates/winnow-0.6.20.crate) = 36c1fec1a2bb5866f07c25f68c26e565c4c20
 SIZE (rust/crates/winnow-0.6.20.crate) = 163617
 SHA256 (rust/crates/xcursor-0.3.8.crate) = 0ef33da6b1660b4ddbfb3aef0ade110c8b8a781a3b6382fa5f2b5b040fd55f61
 SIZE (rust/crates/xcursor-0.3.8.crate) = 7191
-SHA256 (MaxVerevkin-i3bar-river-v1.0.1_GH0.tar.gz) = ff52fd62275d5ba4662912d3a21be4893d200b26aee102491ac1e0518822db50
-SIZE (MaxVerevkin-i3bar-river-v1.0.1_GH0.tar.gz) = 42660
+SHA256 (MaxVerevkin-i3bar-river-v1.1.0_GH0.tar.gz) = 3e616979c7baf0130b4ace7bcd53ddcdbc65bf239fb5a669860f16620f36bfa5
+SIZE (MaxVerevkin-i3bar-river-v1.1.0_GH0.tar.gz) = 43824
