@@ -20,7 +20,7 @@ USE_GITLAB=	yes
 GL_SITE=	https://gitlab.freedesktop.org/
 GL_ACCOUNT=	libevdev
 GL_TAGNAME=	0f71fd65d83b28b744a2fe0a6cc1e3139921c721
-USE_PYTHON=	autoplist distutils
+USE_PYTHON=	autoplist noflavors distutils
 
 OPTIONS_DEFINE=		MANPAGES
 OPTIONS_DEFAULT=	MANPAGES
