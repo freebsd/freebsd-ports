@@ -1,15 +1,15 @@
---- tools/boost_install/boost-install.jam.orig	2023-08-08 21:02:56 UTC
+--- tools/boost_install/boost-install.jam.orig	2024-08-07 22:07:42 UTC
 +++ tools/boost_install/boost-install.jam
-@@ -1318,16 +1318,16 @@ rule boost-install ( libraries * )
+@@ -1247,16 +1247,16 @@ rule boost-install ( libraries * )
      alias install-libraries-shared : install-libraries-shared-cygwin : <target-os>cygwin ;
      $(p).mark-target-as-explicit install-libraries-shared ;
  
--    install install-libraries-shared- : $(libraries) : <location>$(libdir) <install-type>SHARED_LIB <install-type>PDB <install-dependencies>on <install-no-version-symlinks>on ;
-+    install install-libraries-shared- : $(libraries) : <location>$(libdir) <install-type>SHARED_LIB <install-type>PDB <install-dependencies>on ;
+-    install install-libraries-shared- : $(libraries) : <location>(libdir) <install-type>SHARED_LIB <install-type>PDB <install-dependencies>on <install-no-version-symlinks>on ;
++    install install-libraries-shared- : $(libraries) : <location>(libdir) <install-type>SHARED_LIB <install-type>PDB <install-dependencies>on  ;
      $(p).mark-target-as-explicit install-libraries-shared- ;
  
--    install install-libraries-shared-cygwin : $(libraries) : <location>$(bindir) <install-type>SHARED_LIB <install-type>PDB <install-dependencies>on <install-no-version-symlinks>on ;
-+    install install-libraries-shared-cygwin : $(libraries) : <location>$(bindir) <install-type>SHARED_LIB <install-type>PDB <install-dependencies>on ;
+-    install install-libraries-shared-cygwin : $(libraries) : <location>(bindir) <install-type>SHARED_LIB <install-type>PDB <install-dependencies>on <install-no-version-symlinks>on ;
++    install install-libraries-shared-cygwin : $(libraries) : <location>(bindir) <install-type>SHARED_LIB <install-type>PDB <install-dependencies>on  ;
      $(p).mark-target-as-explicit install-libraries-shared-cygwin ;
  
      install install-unprefixed-static : $(unprefixed) : <install-type>STATIC_LIB <conditional>@boost-install%install-subdir ;
@@ -20,19 +20,19 @@
      $(p).mark-target-as-explicit install-unprefixed-shared ;
  
      install-cmake-config $(libraries) ;
-@@ -1347,13 +1347,13 @@ rule boost-install ( libraries * )
-     install stage-libraries-static : $(libraries) : <location>$(stage-libdir) <install-dependencies>on <install-type>STATIC_LIB ;
+@@ -1277,13 +1277,13 @@ rule boost-install ( libraries * )
+     install stage-libraries-static : $(libraries) : <location>(libdir) $(reqs) <install-dependencies>on <install-type>STATIC_LIB ;
      $(p).mark-target-as-explicit stage-libraries-static ;
  
--    install stage-libraries-shared : $(libraries) : <location>$(stage-libdir) <install-dependencies>on <install-type>SHARED_LIB <install-type>PDB <install-no-version-symlinks>on ;
-+    install stage-libraries-shared : $(libraries) : <location>$(stage-libdir) <install-dependencies>on <install-type>SHARED_LIB <install-type>PDB ;
+-    install stage-libraries-shared : $(libraries) : <location>(libdir) $(reqs) <install-dependencies>on <install-type>SHARED_LIB <install-type>PDB <install-no-version-symlinks>on ;
++    install stage-libraries-shared : $(libraries) : <location>(libdir) $(reqs) <install-dependencies>on <install-type>SHARED_LIB <install-type>PDB ;
      $(p).mark-target-as-explicit stage-libraries-shared ;
  
-     install stage-unprefixed-static : $(unprefixed) : <install-type>STATIC_LIB <conditional>@boost-install%stage-subdir ;
+     install stage-unprefixed-static : $(unprefixed) : <install-type>STATIC_LIB $(reqs) <conditional>@boost-install%install-subdir ;
      $(p).mark-target-as-explicit stage-unprefixed-static ;
  
--    install stage-unprefixed-shared : $(unprefixed) : <install-type>SHARED_LIB <install-type>PDB <install-no-version-symlinks>on <conditional>@boost-install%stage-subdir ;
-+    install stage-unprefixed-shared : $(unprefixed) : <install-type>SHARED_LIB <install-type>PDB <conditional>@boost-install%stage-subdir ;
+-    install stage-unprefixed-shared : $(unprefixed) : <install-type>SHARED_LIB $(reqs) <install-type>PDB <install-no-version-symlinks>on <conditional>@boost-install%install-subdir ;
++    install stage-unprefixed-shared : $(unprefixed) : <install-type>SHARED_LIB $(reqs) <install-type>PDB <conditional>@boost-install%install-subdir ;
      $(p).mark-target-as-explicit stage-unprefixed-shared ;
  
      generate stage-dependencies : $(libraries) : <generating-rule>@boost-install%generate-dependencies <name>stage ;
