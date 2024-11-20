@@ -1,6 +1,6 @@
 PORTNAME=	pipewire
 DISTVERSION=	1.2.6
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	multimedia
 
 MAINTAINER=	arrowd@FreeBSD.org
@@ -17,7 +17,7 @@ LIB_DEPENDS=	libdbus-1.so:devel/dbus \
 		libopus.so:audio/opus \
 		libsndfile.so:audio/libsndfile \
 		libudev.so:devel/libudev-devd \
-		libwebrtc_audio_processing.so:audio/webrtc-audio-processing0
+		libwebrtc-audio-processing-1.so:audio/webrtc-audio-processing
 
 USES=		compiler:c11 gettext-tools gnome localbase:ldflags meson \
 		ncurses pkgconfig python:build readline shebangfix ssl
