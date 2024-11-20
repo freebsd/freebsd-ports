@@ -23,7 +23,7 @@
 .\" (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
 .\" THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 .\"
-.Dd May 28, 2024
+.Dd November 20, 2024
 .Dt PAPERLESS-NGX 7
 .Os
 .Sh NAME
@@ -166,6 +166,14 @@ The required files can be downloaded by using these commands:
 .Bd -literal -offset indent
 su -l paperless -c '%%PYTHON_CMD%% -m nltk.downloader \\
   stopwords snowball_data punkt -d /var/db/paperless/nltkdata'
+.Ed
+.Pp
+In case you are using py-nltk >= 3.9, you need to download
+.Em punk_tab
+instead:
+.Bd -literal -offset indent
+su -l paperless -c '%%PYTHON_CMD%% -m nltk.downloader \\
+  stopwords snowball_data punkt_tab -d /var/db/paperless/nltkdata'
 .Ed
 .Pp
 Normally, the document classifier is run automatically by
