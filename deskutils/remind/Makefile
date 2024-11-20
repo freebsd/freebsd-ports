@@ -1,5 +1,5 @@
 PORTNAME=	remind
-DISTVERSION=	05.00.07
+DISTVERSION=	05.01.01
 CATEGORIES=	deskutils
 # upstream moves distfiles to OLD once a new release appears
 MASTER_SITES=	https://dianne.skoll.ca/projects/remind/download/ \
@@ -19,6 +19,9 @@ GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 MAKE_ARGS=	INSTALL_SCRIPT="${INSTALL_SCRIPT}"
 INSTALL_TARGET=	${WITH_DEBUG:Dinstall:Uinstall-stripped}
 TEST_TARGET=	test
+MAKE_JOBS_UNSAFE=	yes
+BUILD_WRKSRC=	${WRKSRC}/src
+INSTALL_WRKSRC=	${BUILD_WRKSRC}
 
 # disable LTO on riscv64
 EXTRA_PATCHES_riscv64=	${FILESDIR}/extra-patch-configure.in
@@ -81,18 +84,15 @@ pre-configure-A4-on:
 pre-configure-TCLTK-on:
 	${REINPLACE_CMD} -e '/^exec/s,wish,${WISH},' ${WRKSRC}/scripts/tkremind.in
 
-do-build:
-	cd ${WRKSRC}/src && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} all
-
-do-install:
-	cd ${WRKSRC}/src && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${INSTALL_TARGET}
-
 do-install-REM2HTML-on:
-	cd ${WRKSRC}/rem2html && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} install
+	cd ${WRKSRC}/rem2html && \
+		${SETENVI} ${WRK_ENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} install
 
 do-install-REM2PDF-on:
-	cd ${WRKSRC}/rem2pdf && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_FLAGS} Makefile.top ${MAKE_ARGS} all
-	cd ${WRKSRC}/rem2pdf && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_FLAGS} Makefile.top ${MAKE_ARGS} install
+	cd ${WRKSRC}/rem2pdf && \
+		${SETENVI} ${WRK_ENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_FLAGS} Makefile.top ${MAKE_ARGS} all
+	cd ${WRKSRC}/rem2pdf && \
+		${SETENVI} ${WRK_ENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_FLAGS} Makefile.top ${MAKE_ARGS} install
 
 post-install-TCLTK-off:
 	${RM} ${STAGEDIR}${PREFIX}/bin/tkremind
