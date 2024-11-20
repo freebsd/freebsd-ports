@@ -1,0 +1,5 @@
+--- vendor/ppx_compare-399a908f452dd0d4124e82fea686d8f35c2a3d2a/dune-project.orig	2024-09-26 18:08:47 UTC
++++ vendor/ppx_compare-399a908f452dd0d4124e82fea686d8f35c2a3d2a/dune-project
+@@ -1 +1 @@
+-(lang dune 3.11)
++(lang dune 3.7)

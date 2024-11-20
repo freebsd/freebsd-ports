@@ -1,0 +1,5 @@
+--- vendor/time_now-0.17.0/dune-project.orig	2024-11-19 19:37:33 UTC
++++ vendor/time_now-0.17.0/dune-project
+@@ -1 +1 @@
+-(lang dune 3.11)
++(lang dune 3.7)

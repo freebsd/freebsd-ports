@@ -1,0 +1,8 @@
+--- vendor/ocaml-re-1.11.0-351-g140deeb/dune-project.orig	2024-11-01 20:09:03 UTC
++++ vendor/ocaml-re-1.11.0-351-g140deeb/dune-project
+@@ -1,4 +1,4 @@
+-(lang dune 3.12)
++(lang dune 3.7)
+ 
+ (name re)
+ 

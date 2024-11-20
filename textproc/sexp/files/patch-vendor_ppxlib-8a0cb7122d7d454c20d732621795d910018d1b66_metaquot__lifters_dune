@@ -1,0 +1,8 @@
+--- vendor/ppxlib-8a0cb7122d7d454c20d732621795d910018d1b66/metaquot_lifters/dune.orig	2024-09-27 08:20:04 UTC
++++ vendor/ppxlib-8a0cb7122d7d454c20d732621795d910018d1b66/metaquot_lifters/dune
+@@ -3,4 +3,4 @@
+  (public_name ppxlib.metaquot_lifters)
+  (flags
+   (:standard -safe-string))
+- (libraries ppxlib ppxlib_traverse_builtins stdppx stdlib-shims))
++ (libraries ppxlib ppxlib_traverse_builtins stdppx))
