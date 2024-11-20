@@ -1,9 +1,9 @@
 PORTNAME=	steam-utils
-DISTVERSION=	20240625
+DISTVERSION=	20241116
 CATEGORIES=	games linux
 PKGNAMEPREFIX=	linux-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	monwarez@mailoo.org
 COMMENT=	Steam launcher for FreeBSD
 WWW=		https://github.com/shkhln/linuxulator-steam-utils
 
@@ -22,6 +22,7 @@ USES=		linux ruby:run
 USE_GITHUB=	yes
 GH_ACCOUNT=	shkhln
 GH_PROJECT=	linuxulator-steam-utils
+GH_TAGNAME=	ea0fe31
 
 USE_LINUX=	devtools:build dbuslibs gtk2 dri nss alsa-plugins-oss
 
