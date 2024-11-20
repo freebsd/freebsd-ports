@@ -2133,6 +2133,7 @@ lib/wine/%%WINEARCH%%-windows/libwindowscodecsext.a
 lib/wine/%%WINEARCH%%-windows/libwinecrt0.a
 lib/wine/%%WINEARCH%%-windows/libwined3d.a
 lib/wine/%%WINEARCH%%-windows/libwinedmo.a
+%%GSTREAMER%%lib/wine/%%WINEARCH%%-windows/libwinegstreamer.a
 lib/wine/%%WINEARCH%%-windows/libwinevulkan.a
 lib/wine/%%WINEARCH%%-windows/libwing32.a
 lib/wine/%%WINEARCH%%-windows/libwinhttp.a
