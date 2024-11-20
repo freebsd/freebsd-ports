@@ -2051,6 +2051,7 @@ lib/wine/%%WINEARCH%%-windows/libwindowscodecs.a
 lib/wine/%%WINEARCH%%-windows/libwindowscodecsext.a
 lib/wine/%%WINEARCH%%-windows/libwinecrt0.a
 lib/wine/%%WINEARCH%%-windows/libwined3d.a
+%%GSTREAMER%%lib/wine/%%WINEARCH%%-windows/libwinegstreamer.a
 lib/wine/%%WINEARCH%%-windows/libwinevulkan.a
 lib/wine/%%WINEARCH%%-windows/libwinhttp.a
 lib/wine/%%WINEARCH%%-windows/libwininet.a
