@@ -2279,6 +2279,7 @@
     SUBDIR += rubygem-responders-rails61
     SUBDIR += rubygem-responders-rails70
     SUBDIR += rubygem-responders-rails71
+    SUBDIR += rubygem-responders-rails72
     SUBDIR += rubygem-rest-client
     SUBDIR += rubygem-rfacebook
     SUBDIR += rubygem-rfeedfinder
