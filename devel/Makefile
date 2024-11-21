@@ -7949,6 +7949,7 @@
     SUBDIR += rubygem-un
     SUBDIR += rubygem-unicode
     SUBDIR += rubygem-unicode-display_width
+    SUBDIR += rubygem-unicode-display_width2
     SUBDIR += rubygem-unicode-emoji
     SUBDIR += rubygem-unicode-version
     SUBDIR += rubygem-unicode_utils
