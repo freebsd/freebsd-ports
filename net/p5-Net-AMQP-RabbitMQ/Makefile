@@ -1,5 +1,5 @@
 PORTNAME=	Net-AMQP-RabbitMQ
-PORTVERSION=	2.40013
+PORTVERSION=	2.40014
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -7,6 +7,11 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Interact with RabbitMQ over AMQP using librabbitmq
 WWW=		https://github.com/net-amqp-rabbitmq/net-amqp-rabbitmq
+
+LICENSE=	MIT MPL11
+LICENSE_COMB=	dual
+LICENSE_FILE_MIT=	${WRKSRC}/LICENSE-MIT
+LICENSE_FILE_MPL11=	${WRKSRC}/LICENSE-MPL-1.1
 
 NOT_FOR_ARCHS=		mips mips64
 NOT_FOR_ARCHS_REASON=	Endianness not known
