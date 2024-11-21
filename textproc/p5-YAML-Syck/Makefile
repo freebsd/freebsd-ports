@@ -1,5 +1,6 @@
 PORTNAME=	YAML-Syck
 PORTVERSION=	1.34
+PORTREVISION=	1
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -13,5 +14,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		perl5
 USE_PERL5=	configure
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/YAML/Syck/Syck.so
 
 .include <bsd.port.mk>
