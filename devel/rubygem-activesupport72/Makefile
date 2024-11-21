@@ -1,5 +1,5 @@
 PORTNAME=	activesupport
-PORTVERSION=	7.2.1.2
+PORTVERSION=	7.2.2
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	72
@@ -13,6 +13,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
 
 RUN_DEPENDS=	rubygem-base64>=0:converters/rubygem-base64 \
+		rubygem-benchmark>=0.3:benchmarks/rubygem-benchmark \
 		rubygem-bigdecimal>=0:math/rubygem-bigdecimal \
 		rubygem-concurrent-ruby>=1.3.1<2:devel/rubygem-concurrent-ruby \
 		rubygem-connection_pool>=2.2.5:net/rubygem-connection_pool \
