@@ -1,5 +1,5 @@
 PORTNAME=	validate-pyproject
-PORTVERSION=	0.22
+PORTVERSION=	0.23
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -27,7 +27,7 @@ OPTIONS_DEFAULT=ALL STORE
 ALL_DESC=	All functions
 STORE_DESC=	Schema stores
 
-ALL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}packaging>=20.4:devel/py-packaging@${PY_FLAVOR} \
+ALL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}packaging>=24.2:devel/py-packaging@${PY_FLAVOR} \
 			${PY_TOMLI} \
 			${PYTHON_PKGNAMEPREFIX}trove-classifiers>=2021.10.20:devel/py-trove-classifiers@${PY_FLAVOR}
 STORE_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}validate-pyproject-schema-store>=0:devel/py-validate-pyproject-schema-store@${PY_FLAVOR}
