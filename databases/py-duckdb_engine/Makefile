@@ -17,4 +17,6 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}duckdb>=0.4.0:databases/py-duckdb@${PY_FLAVO
 USES=		python
 USE_PYTHON=	autoplist concurrent pep517
 
+NO_ARCH=	yes
+
 .include <bsd.port.mk>
