@@ -1,5 +1,6 @@
 PORTNAME=	automount
 DISTVERSION=	1.7.9
+PORTREVISION=	1
 CATEGORIES=	filesystems sysutils
 MASTER_SITES=	https://raw.github.com/vermaden/automount/master/
 
@@ -8,6 +9,8 @@ COMMENT=	FreeBSD's devd(8) based automount solution
 WWW=		https://github.com/vermaden/automount/
 
 LICENSE=	BSD2CLAUSE
+
+CONFLICTS_INSTALL=	devd-mount	# Competing devd rules
 
 PLIST_FILES=	sbin/automount etc/devd/automount_devd.conf etc/automount.conf.sample
 
