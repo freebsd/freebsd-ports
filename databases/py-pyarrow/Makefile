@@ -1,5 +1,5 @@
 PORTNAME=	pyarrow
-PORTVERSION=	17.0.0
+PORTVERSION=	18.0.0
 CATEGORIES=	databases python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,9 +17,8 @@ BUILD_DEPENDS=	arrow>=${PORTVERSION}<${PORTVERSION}_99:databases/arrow \
 		${PYTHON_PKGNAMEPREFIX}setuptools-scm>=8:devel/py-setuptools-scm@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 LIB_DEPENDS=	libarrow.so:databases/arrow
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.16.6,1<2,1:math/py-numpy@${PY_FLAVOR}
 
-USES=		cmake:indirect python shebangfix
+USES=		cmake:indirect python:3.9+ shebangfix
 USE_PYTHON=	autoplist concurrent cython pep517
 
 SHEBANG_FILES=	cmake_modules/aws_sdk_cpp_generate_variables.sh
