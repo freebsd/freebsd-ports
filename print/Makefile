@@ -195,6 +195,7 @@
     SUBDIR += py-rtf
     SUBDIR += py-ttfautohint-py
     SUBDIR += py-ufolib2
+    SUBDIR += py-ufomerge
     SUBDIR += py-uharfbuzz
     SUBDIR += py-vharfbuzz
     SUBDIR += py-weasyprint
