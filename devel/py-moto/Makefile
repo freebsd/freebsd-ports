@@ -1,5 +1,5 @@
 PORTNAME=	moto
-PORTVERSION=	5.0.19
+PORTVERSION=	5.0.20
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI \
 		https://github.com/getmoto/moto/releases/download/${PORTVERSION}/
