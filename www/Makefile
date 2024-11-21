@@ -1497,6 +1497,7 @@
     SUBDIR += py-cssselect
     SUBDIR += py-cssutils
     SUBDIR += py-daphne
+    SUBDIR += py-dash
     SUBDIR += py-dj-database-url
     SUBDIR += py-dj50-django-auth-ldap
     SUBDIR += py-dj50-django-choices-field
