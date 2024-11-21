@@ -203,6 +203,7 @@
     SUBDIR += py-lzstring
     SUBDIR += py-patool
     SUBDIR += py-pyminizip
+    SUBDIR += py-pyppmd
     SUBDIR += py-python-lhafile
     SUBDIR += py-python-lzo
     SUBDIR += py-python-rpm-packaging
