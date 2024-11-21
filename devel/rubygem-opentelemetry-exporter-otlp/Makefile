@@ -1,5 +1,5 @@
 PORTNAME=	opentelemetry-exporter-otlp
-PORTVERSION=	0.28.0
+PORTVERSION=	0.29.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -13,7 +13,7 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-googleapis-common-protos-types>=1.3<2:devel/rubygem-googleapis-common-protos-types \
-		rubygem-google-protobuf>=3.18<5:devel/rubygem-google-protobuf \
+		rubygem-google-protobuf>=3.18:devel/rubygem-google-protobuf \
 		rubygem-opentelemetry-api>=1.1<2:devel/rubygem-opentelemetry-api \
 		rubygem-opentelemetry-common>=0.20<1:devel/rubygem-opentelemetry-common \
 		rubygem-opentelemetry-sdk>=1.2<2:devel/rubygem-opentelemetry-sdk \
