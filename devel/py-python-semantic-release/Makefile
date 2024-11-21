@@ -1,5 +1,6 @@
 PORTNAME=	python-semantic-release
 PORTVERSION=	9.12.0
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -22,7 +23,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}click>=8.0<9:devel/py-click@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}importlib-resources>=6.0<7:devel/py-importlib-resources@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}Jinja2>=3.1<4:devel/py-Jinja2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pydantic2>=2.0<3:devel/py-pydantic2@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}python-gitlab>=4.0<5:devel/py-python-gitlab@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}python-gitlab>=4.0:devel/py-python-gitlab@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>=2.25<3:www/py-requests@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}rich>=13.0<14:textproc/py-rich@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}shellingham>=1.5<2:devel/py-shellingham@${PY_FLAVOR} \
