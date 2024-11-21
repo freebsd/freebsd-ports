@@ -615,6 +615,7 @@ bin/tshark
 %%DEVELOPMENT%%include/wireshark/wsutil/eax.h
 %%DEVELOPMENT%%include/wireshark/wsutil/epochs.h
 %%DEVELOPMENT%%include/wireshark/wsutil/exported_pdu_tlvs.h
+%%DEVELOPMENT%%include/wireshark/wsutil/failure_message_simple.h
 %%DEVELOPMENT%%include/wireshark/wsutil/feature_list.h
 %%DEVELOPMENT%%include/wireshark/wsutil/filesystem.h
 %%DEVELOPMENT%%include/wireshark/wsutil/g711.h
@@ -681,10 +682,10 @@ bin/tshark
 %%DEVELOPMENT%%lib/cmake/wireshark/WiresharkTargets.cmake
 lib/libwireshark.so
 lib/libwireshark.so.18
-lib/libwireshark.so.18.0.1
+lib/libwireshark.so.18.0.2
 lib/libwiretap.so
 lib/libwiretap.so.15
-lib/libwiretap.so.15.0.1
+lib/libwiretap.so.15.0.2
 lib/libwsutil.so
 lib/libwsutil.so.16
 lib/libwsutil.so.16.0.0
