@@ -291,7 +291,7 @@ MY_DEPENDS=	git>=2.41.0:devel/git \
 	rubygem-lockbox>=1.3.0<1.4:security/rubygem-lockbox \
 	rubygem-valid_email>=0.1<1:mail/rubygem-valid_email \
 	rubygem-jsonb_accessor>=1.3.10<1.4:www/rubygem-jsonb_accessor \
-	rubygem-json>=2.7.2<2.8:devel/rubygem-json \
+	rubygem-json27>=2.7.2<2.8:devel/rubygem-json27 \
 	rubygem-json_schemer>=2.3.0<2.4:devel/rubygem-json_schemer \
 	rubygem-oj313>=3.13.21<3.14:devel/rubygem-oj313 \
 	rubygem-oj-introspect>=0.7<1:devel/rubygem-oj-introspect \
@@ -308,7 +308,7 @@ MY_DEPENDS=	git>=2.41.0:devel/git \
 	rubygem-app_store_connect>=0:net/rubygem-app_store_connect \
 	rubygem-telesignenterprise>=2.2<3:devel/rubygem-telesignenterprise \
 	rubygem-net-protocol01>=0.1.3<0.2:net/rubygem-net-protocol01 \
-	rubygem-net-http>=0.4.1<0.4.2:www/rubygem-net-http \
+	rubygem-net-http041>=0.4.1<0.4.2:www/rubygem-net-http041 \
 	rubygem-duo_api>=1.3<2:security/rubygem-duo_api \
 	rubygem-gitlab-sdk>=0.3.0<0.4:devel/rubygem-gitlab-sdk \
 	rubygem-paper_trail>=15.0<16:devel/rubygem-paper_trail \
