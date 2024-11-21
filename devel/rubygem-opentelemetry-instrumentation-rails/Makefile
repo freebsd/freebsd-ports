@@ -1,5 +1,5 @@
 PORTNAME=	opentelemetry-instrumentation-rails
-PORTVERSION=	0.32.0
+PORTVERSION=	0.33.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-opentelemetry-api>=1.0<2:devel/rubygem-opentelemetry-api \
 		rubygem-opentelemetry-instrumentation-action_mailer>=0.2.0<0.3:devel/rubygem-opentelemetry-instrumentation-action_mailer \
-		rubygem-opentelemetry-instrumentation-action_pack>=0.9.0<0.10:devel/rubygem-opentelemetry-instrumentation-action_pack \
+		rubygem-opentelemetry-instrumentation-action_pack>=0.10.0<0.11:devel/rubygem-opentelemetry-instrumentation-action_pack \
 		rubygem-opentelemetry-instrumentation-action_view>=0.7.0<0.8:devel/rubygem-opentelemetry-instrumentation-action_view \
 		rubygem-opentelemetry-instrumentation-active_job>=0.7.0<0.8:devel/rubygem-opentelemetry-instrumentation-active_job \
 		rubygem-opentelemetry-instrumentation-active_record>=0.8.0<0.9:devel/rubygem-opentelemetry-instrumentation-active_record \
