@@ -1,5 +1,5 @@
 PORTNAME=	ncdu
-PORTVERSION=	1.20
+PORTVERSION=	1.21
 CATEGORIES=	sysutils
 MASTER_SITES=	https://dev.yorhel.nl/download/
 
@@ -11,7 +11,7 @@ WWW=		https://dev.yorhel.nl/ncdu \
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		ncurses
+USES=		ncurses pkgconfig
 
 GNU_CONFIGURE=	yes
 
