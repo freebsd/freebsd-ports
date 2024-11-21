@@ -1661,6 +1661,7 @@
     SUBDIR += py-tabletext
     SUBDIR += py-tablib
     SUBDIR += py-terminaltables
+    SUBDIR += py-text2digits
     SUBDIR += py-textdistance
     SUBDIR += py-textfsm
     SUBDIR += py-textract
