@@ -30,7 +30,7 @@ OPTIONS_SUB=	yes
 
 CURL_DESC=	Lumix WiFi support via cURL
 CURL_LIB_DEPENDS=	libcurl.so:ftp/curl
-CURL_CONFIGURE_WITH=	libcurl=${LOCALBASE}
+CURL_CONFIGURE_OFF=	--with-libcurl=no
 
 GD_DESC=	libGD conversion support
 GD_LIB_DEPENDS=		libgd.so:graphics/gd
