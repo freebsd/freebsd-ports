@@ -1,9 +1,12 @@
-DISTVERSION?=	12.21
+DISTVERSION?=	12.22
 # PORTREVISION must be ?= otherwise, all slave ports get this PORTREVISION and
 # not their own.  Probably best to keep it at ?=0 when reset here too.
 PORTREVISION?=	0
 
 MAINTAINER?=	pgsql@FreeBSD.org
+
+DEPRECATED=	PostgreSQL-12 is end-of-life
+EXPIRATION_DATE=2024-12-31
 
 INSTALL_DIRS?=	src/common src/timezone src/backend \
 		src/backend/utils/mb/conversion_procs \
