@@ -1,5 +1,5 @@
 PORTNAME=	aiohttp
-PORTVERSION=	3.10.10
+PORTVERSION=	3.10.11
 CATEGORIES=	www python
 MASTER_SITES=	PYPI \
 		https://github.com/aio-libs/aiohttp/releases/download/v${PORTVERSION}/
@@ -41,7 +41,7 @@ SPEEDUPS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aiodns>=3.0.0:dns/py-aiodns@${PY_FL
 .include <bsd.port.pre.mk>
 
 .if ${PYTHON_REL} < 31100
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}async_timeout>=4.0<5.0:devel/py-async_timeout@${PY_FLAVOR}
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}async_timeout>=4.0<6.0:devel/py-async_timeout@${PY_FLAVOR}
 .endif
 
 pre-configure:
