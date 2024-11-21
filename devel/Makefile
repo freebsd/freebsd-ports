@@ -7099,6 +7099,7 @@
     SUBDIR += rubygem-danger-gitlab
     SUBDIR += rubygem-datadog
     SUBDIR += rubygem-datadog-ci
+    SUBDIR += rubygem-datadog-ruby_core_source
     SUBDIR += rubygem-date
     SUBDIR += rubygem-ddmemoize
     SUBDIR += rubygem-ddmetrics
