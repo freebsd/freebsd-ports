@@ -1,5 +1,5 @@
 PORTNAME=	blinker
-PORTVERSION=	1.8.2
+PORTVERSION=	1.9.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI \
 		https://github.com/pallets-eco/blinker/releases/download/${PORTVERSION}/
@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}flit-core>=0<4:devel/py-flit-core@${PY_FLAVOR}
 
-USES=		python
+USES=		python:3.9+
 USE_PYTHON=	autoplist concurrent pep517 pytest
 
 NO_ARCH=	yes
