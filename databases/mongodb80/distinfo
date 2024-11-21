@@ -1,5 +1,5 @@
-TIMESTAMP = 1728052033
-SHA256 (mongodb-mongo-r8.0.1_GH0.tar.gz) = 2bbd63ee2f15eebbeb4be1d137af953089b3355fa33b8ff6eace7efbfe48829b
-SIZE (mongodb-mongo-r8.0.1_GH0.tar.gz) = 94766782
+TIMESTAMP = 1732059461
+SHA256 (mongodb-mongo-r8.0.3_GH0.tar.gz) = 1b8f20e5af9848a3a1f875446fdd26a89e830fff87894f18ef4a235f3414065c
+SIZE (mongodb-mongo-r8.0.3_GH0.tar.gz) = 94759909
 SHA256 (mongodb-forks-spidermonkey-bb6edb4fcd43607c87de81df8c58db11a663634a_GH0.tar.gz) = 8b237164cb3f492aa1658080b91bafb3c98fe72da11ffb65513e4bffe01553f9
 SIZE (mongodb-forks-spidermonkey-bb6edb4fcd43607c87de81df8c58db11a663634a_GH0.tar.gz) = 164675678
