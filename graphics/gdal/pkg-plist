@@ -117,8 +117,8 @@ lib/cmake/gdal/GDALConfig.cmake
 lib/cmake/gdal/GDALConfigVersion.cmake
 lib/gdalplugins/drivers.ini
 lib/libgdal.so
-lib/libgdal.so.35
-lib/libgdal.so.35.%%PORTVERSION%%
+lib/libgdal.so.36
+lib/libgdal.so.36.%%PORTVERSION%%
 libdata/pkgconfig/gdal.pc
 share/bash-completion/completions/gdal-config
 share/bash-completion/completions/gdal2tiles.py

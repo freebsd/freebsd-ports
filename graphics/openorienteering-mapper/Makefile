@@ -1,7 +1,7 @@
 PORTNAME=	openorienteering-mapper
 PORTVERSION=	0.9.5
 DISTVERSIONPREFIX=	v
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	graphics geography
 
 MAINTAINER=	sikmir@gmail.com
