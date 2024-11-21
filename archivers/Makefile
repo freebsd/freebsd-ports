@@ -202,6 +202,7 @@
     SUBDIR += py-lzma
     SUBDIR += py-lzstring
     SUBDIR += py-patool
+    SUBDIR += py-pybcj
     SUBDIR += py-pyminizip
     SUBDIR += py-pyppmd
     SUBDIR += py-python-lhafile
