@@ -1,0 +1,3 @@
+The inflate64 is a python package to provide Deflater and
+Inflater class to compress and decompress with Enhanced
+Deflate compression algorithm.

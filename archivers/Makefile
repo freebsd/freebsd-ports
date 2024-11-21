@@ -196,6 +196,7 @@
     SUBDIR += py-comicapi
     SUBDIR += py-compressed-rtf
     SUBDIR += py-cramjam
+    SUBDIR += py-inflate64
     SUBDIR += py-laszip
     SUBDIR += py-libarchive-c
     SUBDIR += py-lz4
