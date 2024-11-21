@@ -2,6 +2,8 @@ Obtained from:	https://github.com/pydantic/pydantic/commit/9b69920888054df4ef544
 		https://github.com/pydantic/pydantic/commit/51cf3cbfa767abfba1048cae41ea766d6add4f4a
 		https://github.com/pydantic/pydantic/commit/27afdfc9120c7a5b1071d907a25c37b46b103292
 		https://github.com/pydantic/pydantic/commit/6b92e9dab9eb3e649af148d5d8a9a8d2d2cd31d2
+		https://github.com/pydantic/pydantic/commit/678ec30686af0b99a0632dde01dcf592aed0e306
+		https://github.com/pydantic/pydantic/commit/4eecee7baf2b85fffae669574f9e26e34cc2f8f0
 
 --- pydantic/_internal/_config.py.orig	2020-02-02 00:00:00 UTC
 +++ pydantic/_internal/_config.py
@@ -826,6 +828,105 @@ Obtained from:	https://github.com/pydantic/pydantic/commit/9b69920888054df4ef544
  
  
  def import_email_validator() -> None:
+--- pydantic/type_adapter.py.orig	2020-02-02 00:00:00 UTC
++++ pydantic/type_adapter.py
+@@ -347,6 +347,7 @@ class TypeAdapter(Generic[T]):
+         strict: bool | None = None,
+         from_attributes: bool | None = None,
+         context: dict[str, Any] | None = None,
++        experimental_allow_partial: bool | Literal['off', 'on', 'trailing-strings'] = False,
+     ) -> T:
+         """Validate a Python object against the model.
+ 
+@@ -355,6 +356,11 @@ class TypeAdapter(Generic[T]):
+             strict: Whether to strictly check types.
+             from_attributes: Whether to extract data from object attributes.
+             context: Additional context to pass to the validator.
++            experimental_allow_partial: **Experimental** whether to enable
++                [partial validation](../concepts/experimental.md#partial-validation), e.g. to process streams.
++                * False / 'off': Default behavior, no partial validation.
++                * True / 'on': Enable partial validation.
++                * 'trailing-strings': Enable partial validation and allow trailing strings in the input.
+ 
+         !!! note
+             When using `TypeAdapter` with a Pydantic `dataclass`, the use of the `from_attributes`
+@@ -363,11 +369,23 @@ class TypeAdapter(Generic[T]):
+         Returns:
+             The validated object.
+         """
+-        return self.validator.validate_python(object, strict=strict, from_attributes=from_attributes, context=context)
++        return self.validator.validate_python(
++            object,
++            strict=strict,
++            from_attributes=from_attributes,
++            context=context,
++            allow_partial=experimental_allow_partial,
++        )
+ 
+     @_frame_depth(1)
+     def validate_json(
+-        self, data: str | bytes, /, *, strict: bool | None = None, context: dict[str, Any] | None = None
++        self,
++        data: str | bytes,
++        /,
++        *,
++        strict: bool | None = None,
++        context: dict[str, Any] | None = None,
++        experimental_allow_partial: bool | Literal['off', 'on', 'trailing-strings'] = False,
+     ) -> T:
+         """Usage docs: https://docs.pydantic.dev/2.9/concepts/json/#json-parsing
+ 
+@@ -377,25 +395,47 @@ class TypeAdapter(Generic[T]):
+             data: The JSON data to validate against the model.
+             strict: Whether to strictly check types.
+             context: Additional context to use during validation.
++            experimental_allow_partial: **Experimental** whether to enable
++                [partial validation](../concepts/experimental.md#partial-validation), e.g. to process streams.
++                * False / 'off': Default behavior, no partial validation.
++                * True / 'on': Enable partial validation.
++                * 'trailing-strings': Enable partial validation and allow trailing strings in the input.
+ 
+         Returns:
+             The validated object.
+         """
+-        return self.validator.validate_json(data, strict=strict, context=context)
++        return self.validator.validate_json(
++            data, strict=strict, context=context, allow_partial=experimental_allow_partial
++        )
+ 
+     @_frame_depth(1)
+-    def validate_strings(self, obj: Any, /, *, strict: bool | None = None, context: dict[str, Any] | None = None) -> T:
++    def validate_strings(
++        self,
++        obj: Any,
++        /,
++        *,
++        strict: bool | None = None,
++        context: dict[str, Any] | None = None,
++        experimental_allow_partial: bool | Literal['off', 'on', 'trailing-strings'] = False,
++    ) -> T:
+         """Validate object contains string data against the model.
+ 
+         Args:
+             obj: The object contains string data to validate.
+             strict: Whether to strictly check types.
+             context: Additional context to use during validation.
++            experimental_allow_partial: **Experimental** whether to enable
++                [partial validation](../concepts/experimental.md#partial-validation), e.g. to process streams.
++                * False / 'off': Default behavior, no partial validation.
++                * True / 'on': Enable partial validation.
++                * 'trailing-strings': Enable partial validation and allow trailing strings in the input.
+ 
+         Returns:
+             The validated object.
+         """
+-        return self.validator.validate_strings(obj, strict=strict, context=context)
++        return self.validator.validate_strings(
++            obj, strict=strict, context=context, allow_partial=experimental_allow_partial
++        )
+ 
+     @_frame_depth(1)
+     def get_default_value(self, *, strict: bool | None = None, context: dict[str, Any] | None = None) -> Some[T] | None:
 --- pydantic/warnings.py.orig	2020-02-02 00:00:00 UTC
 +++ pydantic/warnings.py
 @@ -67,6 +67,13 @@ class PydanticDeprecatedSince29(PydanticDeprecationWar
