@@ -7730,6 +7730,7 @@
     SUBDIR += rubygem-rubocop-ast
     SUBDIR += rubygem-rubocop-capybara
     SUBDIR += rubygem-rubocop-factory_bot
+    SUBDIR += rubygem-rubocop-minitest
     SUBDIR += rubygem-rubocop-performance
     SUBDIR += rubygem-rubocop-rails
     SUBDIR += rubygem-rubocop-rake
