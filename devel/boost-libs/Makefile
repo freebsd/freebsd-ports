@@ -58,6 +58,15 @@ ALL_TARGET=	stage
 
 .include <bsd.port.options.mk>
 
+# boost.stacktrace.from_exceptions is ready only for amd64 yet
+.if ${ARCH:Mamd64}
+PLIST_SUB+=	SFE=""
+.else
+MAKE_ARGS+=	boost.stacktrace.from_exception=off
+PLIST_SUB+=	SFE="@comment "
+
+.endif
+
 do-install:
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} \
 		${MAKE_ARGS:NDESTDIR=*:S,^--prefix=,&${STAGEDIR},} ${INSTALL_TARGET}
