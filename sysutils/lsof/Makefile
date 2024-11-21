@@ -2,14 +2,13 @@
 #       to commit it.  I (ler) don't have access to all the ARCH's
 
 PORTNAME=	lsof
-DISTVERSION=	4.99.3
-PORTREVISION=	2
+DISTVERSION=	4.99.4
 PORTEPOCH=	8
 CATEGORIES=	sysutils
 
 MAINTAINER=	ler@FreeBSD.org
 COMMENT=	Lists information about open files (similar to fstat(1))
-WWW=		https://github.com/lsof-org/lsof
+WWW=		https://github.com/lsof-org/lsof/
 
 LICENSE=	lsof
 LICENSE_NAME=	lsof
@@ -20,11 +19,6 @@ USES=		compiler cpe shebangfix
 CPE_VENDOR=	lsof_project
 USE_GITHUB=	yes
 GH_ACCOUNT=	lsof-org
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES=	003c8463fd6b8cf2d25a4b10a874825f8f4b471b.patch \
-		5233d10ec63ba674c250bdc4308c3a22a04f6d20.patch
-PATCH_DIST_STRIP=	-p1
 
 SHEBANG_FILES=	scripts/*.pl
 
@@ -47,7 +41,7 @@ CONFIGURE_SCRIPT=	Configure
 CONFIGURE_ARGS=		-n freebsd
 CONFIGURE_ENV=		FREEBSD_SYS="${SRC_BASE}/sys" \
 			LSOF_CC="${CC}"
-BUILD_DEPENDS=		${LOCALBASE}/bin/bash:shells/bash 
+BUILD_DEPENDS=		${LOCALBASE}/bin/bash:shells/bash
 
 # GCC needs -lzfs -lzpool for reasons unknown.  If someone can
 # figure out why, I (ler) am all ears.
@@ -62,9 +56,8 @@ IGNORE+=	requires kernel sources
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/lsof ${STAGEDIR}${PREFIX}/sbin
 	(cd ${WRKSRC} && /usr/bin/soelim Lsof.8 > ${WRKSRC}/lsof.8)
-	${INSTALL_MAN} ${WRKSRC}/lsof.8 ${STAGEDIR}${PREFIX}/share/man/man8/lsof.8
-	@${MKDIR} ${STAGEDIR}${PREFIX}/share/lsof
-	${INSTALL_SCRIPT} ${WRKSRC}/scripts/* ${STAGEDIR}${PREFIX}/share/lsof
-	@${CHMOD} 0444 ${STAGEDIR}${PREFIX}/share/lsof/00*
+	${INSTALL_MAN} ${WRKSRC}/lsof.8 ${STAGEDIR}${MANDIRS}/man8/lsof.8
+	${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/scripts/* ${STAGEDIR}${DATADIR}
 
 .include <bsd.port.post.mk>

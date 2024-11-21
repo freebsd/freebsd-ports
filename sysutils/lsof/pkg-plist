@@ -2,10 +2,11 @@ share/man/man8/lsof.8.gz
 @group kmem
 @mode 2755
 sbin/lsof
-@mode
 @group wheel
+@mode 0444
 %%DATADIR%%/00MANIFEST
 %%DATADIR%%/00README
+@mode
 %%DATADIR%%/big_brother.pl
 %%DATADIR%%/count_pf.pl
 %%DATADIR%%/identd.pl
