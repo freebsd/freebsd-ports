@@ -1,0 +1,13 @@
+https://github.com/boostorg/asio/issues/437
+https://github.com/boostorg/asio/commit/6ca7c4726e05
+
+--- CMakeLists.txt.orig	2024-03-01 07:57:00 UTC
++++ CMakeLists.txt
+@@ -275,6 +275,7 @@ add_definitions(-DBOOST_ASIO_DISABLE_CONCEPTS)
+ 
+ # boost asio's concept usage doesn't play nicely with some compilers yet.
+ add_definitions(-DBOOST_ASIO_DISABLE_CONCEPTS)
++add_definitions(-Dasync_operation=typename) # XXX Remove after Boost 1.87 upgrade
+ if (MSVC)
+     add_compile_options($<$<COMPILE_LANGUAGE:CXX>:/std:c++20>)
+ 
