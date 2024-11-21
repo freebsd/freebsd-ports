@@ -1,0 +1,11 @@
+--- node_modules/mongodb-client-encryption/package.json.orig	2024-05-13 13:50:11 UTC
++++ node_modules/mongodb-client-encryption/package.json
+@@ -16,7 +16,7 @@
+     "lib": "lib"
+   },
+   "scripts": {
+-    "install": "prebuild-install --runtime napi --tag-prefix node-v || node-gyp rebuild",
++    "install": "prebuild-install --runtime napi --tag-prefix node-v || BUILD_TYPE=dynamic node-gyp rebuild",
+     "build:ts": "tsc",
+     "clang-format": "clang-format --style=file:.clang-format --Werror -i addon/*",
+     "check:eslint": "eslint src test",

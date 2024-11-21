@@ -1,0 +1,36 @@
+--- package.json.orig	2024-05-15 14:01:43 UTC
++++ package.json
+@@ -9,7 +9,7 @@
+   "author": "Compass Team <compass@mongodb.com>",
+   "scripts": {
+     "bootstrap-with-chromium": "npm install && npm run compile",
+-    "bootstrap": "npx cross-env PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=1 npm install && npm run compile",
++    "bootstrap": "npx cross-env PUPPETEER_SKIP_DOWNLOAD=1 npm install && npm run compile",
+     "clean": "lerna clean -y && rm -Rf node_modules",
+     "check": "lerna run check --since HEAD --exclude-dependents",
+     "check-ci": "npm run check --workspaces --if-present",
+@@ -33,7 +33,7 @@
+     "start-browser": "npm run start --workspace @mongosh/browser-repl",
+     "start": "npm run start-cli",
+     "precompile-exec": "npm run compile-cli",
+-    "compile-exec": "npm run evergreen-release compile",
++    "compile-exec": "SEGMENT_API_KEY=dummy npm run evergreen-release compile",
+     "compile-all": "npm run compile-compass && npm run compile-exec",
+     "evergreen-release": "cd packages/build && npm run evergreen-release --",
+     "release": "cd packages/build && npm run release --",
+@@ -59,7 +59,6 @@
+     "create-vulnerability-tickets": "mongodb-sbom-tools generate-vulnerability-report --snyk-reports=.sbom/snyk-test-result.json,.sbom/node-js-vuln.json --dependencies=.sbom/dependencies.json,.sbom/node-js-dep.json --create-jira-issues",
+     "where": "monorepo-where",
+     "reformat": "npm run reformat --workspaces --if-present",
+-    "prepare": "husky install",
+     "precommit": "precommit",
+     "preinstall": "node scripts/sort-workspaces.js"
+   },
+@@ -101,7 +100,6 @@
+     "duplexpair": "^1.0.2",
+     "find-up": "^5.0.0",
+     "glob": "^10.3.12",
+-    "husky": "^8.0.3",
+     "mocha": "^10.2.0",
+     "mongodb": "^6.5.0",
+     "mongodb-runner": "^5.4.6",

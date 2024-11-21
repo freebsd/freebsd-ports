@@ -1,0 +1,11 @@
+TIMESTAMP = 1731685667
+SHA256 (mongosh/mongodb-client-encryption-6.0.0.tgz) = b72d6ad4e4c449ba4548f8f4f8708d37c1490c6615caefa8c56a02f22897b64a
+SIZE (mongosh/mongodb-client-encryption-6.0.0.tgz) = 15734
+SHA256 (mongosh/kerberos-2.1.0.tgz) = eeb1d33472dcf15be8ae46e30ffc76455a62356a91cee52bb8d48f97a35a58c7
+SIZE (mongosh/kerberos-2.1.0.tgz) = 28988
+SHA256 (mongosh/os-dns-native-1.2.0.tgz) = cfe145091dd469c4fe6923b61ef85621222526a0ed74b01b6b3739069d244f7d
+SIZE (mongosh/os-dns-native-1.2.0.tgz) = 6525
+SHA256 (mongosh/mongosh-v2.2.5-node-modules.tar.xz) = 2a1f75f49bcb49a93bd58d38d8a3fdbae685d57ade77e85b95ceba10c5b047c3
+SIZE (mongosh/mongosh-v2.2.5-node-modules.tar.xz) = 155537736
+SHA256 (mongosh/VultureProject-mongosh-v2.2.5_GH0.tar.gz) = 38fd3c21433d2b8d371161941843a3c6a6652e41c4a9d3cfa3917164630f3928
+SIZE (mongosh/VultureProject-mongosh-v2.2.5_GH0.tar.gz) = 8653615

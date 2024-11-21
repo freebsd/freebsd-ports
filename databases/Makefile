@@ -188,6 +188,7 @@
     SUBDIR += mongodb60
     SUBDIR += mongodb70
     SUBDIR += mongodb80
+    SUBDIR += mongosh
     SUBDIR += movine
     SUBDIR += mroonga
     SUBDIR += mtop
