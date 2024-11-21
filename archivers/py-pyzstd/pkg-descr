@@ -1,0 +1,3 @@
+Pyzstd module provides classes and functions for compressing
+and decompressing data, using Facebook's Zstandard (or zstd
+as short name) algorithm.
