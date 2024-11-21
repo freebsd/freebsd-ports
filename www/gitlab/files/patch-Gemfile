@@ -1,15 +1,15 @@
---- Gemfile.orig	2024-10-22 18:38:20 UTC
+--- Gemfile.orig	2024-11-20 11:30:30 UTC
 +++ Gemfile
-@@ -160,7 +160,7 @@ gem 'graphql', '~> 2.3.14', feature_category: :api
+@@ -160,7 +160,7 @@ gem 'graphql', '~> 2.4.1', feature_category: :api
  
  # GraphQL API
- gem 'graphql', '~> 2.3.14', feature_category: :api
+ gem 'graphql', '~> 2.4.1', feature_category: :api
 -gem 'graphql-docs', '~> 5.0.0', group: [:development, :test], feature_category: :api
 +#gem 'graphql-docs', '~> 5.0.0', group: [:development, :test], feature_category: :api
- gem 'graphiql-rails', '~> 1.10', feature_category: :api
  gem 'apollo_upload_server', '~> 2.1.6', feature_category: :api
  gem 'graphlient', '~> 0.8.0', feature_category: :importers # Used by BulkImport feature (group::import)
-@@ -213,7 +213,7 @@ gem 'google-cloud-storage', '~> 1.45.0' # rubocop:todo
+ 
+@@ -212,7 +212,7 @@ gem 'google-cloud-storage', '~> 1.45.0' # rubocop:todo
  gem 'google-apis-storage_v1', '~> 0.29' # rubocop:todo Gemfile/MissingFeatureCategory
  gem 'google-cloud-storage', '~> 1.45.0' # rubocop:todo Gemfile/MissingFeatureCategory
  # We need >= 0.11.1 because that's when match_glob support is added to list_objects
@@ -18,7 +18,7 @@
  gem 'google-apis-compute_v1', '~> 0.57.0' # rubocop:todo Gemfile/MissingFeatureCategory
  gem 'google-apis-container_v1', '~> 0.43.0' # rubocop:todo Gemfile/MissingFeatureCategory
  gem 'google-apis-container_v1beta1', '~> 0.43.0' # rubocop:todo Gemfile/MissingFeatureCategory
-@@ -224,7 +224,7 @@ gem 'google-apis-androidpublisher_v3', '~> 0.34.0' # r
+@@ -223,7 +223,7 @@ gem 'google-apis-androidpublisher_v3', '~> 0.34.0' # r
  gem 'google-apis-sqladmin_v1beta4', '~> 0.41.0' # rubocop:todo Gemfile/MissingFeatureCategory
  gem 'google-apis-androidpublisher_v3', '~> 0.34.0' # rubocop:todo Gemfile/MissingFeatureCategory
  
@@ -27,7 +27,7 @@
  gem 'google-cloud-artifact_registry-v1', '~> 0.11.0', feature_category: :shared
  gem 'google-cloud-compute-v1', '~> 2.6.0', feature_category: :shared
  
-@@ -275,7 +275,7 @@ group :puma do
+@@ -276,7 +276,7 @@ group :puma do
  gem 'rack-timeout', '~> 0.7.0', require: 'rack/timeout/base' # rubocop:todo Gemfile/MissingFeatureCategory
  
  group :puma do
@@ -36,7 +36,7 @@
    gem 'sd_notify', '~> 0.1.0', require: false # rubocop:todo Gemfile/MissingFeatureCategory
  end
  
-@@ -283,7 +283,7 @@ gem 'state_machines-activerecord', '~> 0.8.0' # ruboco
+@@ -284,7 +284,7 @@ gem 'state_machines-activerecord', '~> 0.8.0' # ruboco
  gem 'state_machines-activerecord', '~> 0.8.0' # rubocop:todo Gemfile/MissingFeatureCategory
  
  # Background jobs
@@ -45,7 +45,7 @@
  gem 'sidekiq-cron', '~> 1.12.0', feature_category: :scalability
  gem 'gitlab-sidekiq-fetcher',
    path: 'vendor/gems/sidekiq-reliable-fetch',
-@@ -424,7 +424,7 @@ gem 'snowplow-tracker', '~> 0.8.0' # rubocop:todo Gemf
+@@ -423,7 +423,7 @@ gem 'snowplow-tracker', '~> 0.8.0' # rubocop:todo Gemf
  gem 'snowplow-tracker', '~> 0.8.0' # rubocop:todo Gemfile/MissingFeatureCategory
  
  # Metrics
@@ -54,7 +54,7 @@
  gem 'prometheus-client-mmap', '~> 1.1', '>= 1.1.1', require: 'prometheus/client' # rubocop:todo Gemfile/MissingFeatureCategory
  
  # Event-driven reactor for Ruby
-@@ -466,136 +466,15 @@ gem 'warning', '~> 1.3.0' # rubocop:todo Gemfile/Missi
+@@ -465,136 +465,15 @@ gem 'warning', '~> 1.3.0' # rubocop:todo Gemfile/Missi
  
  gem 'warning', '~> 1.3.0' # rubocop:todo Gemfile/MissingFeatureCategory
  
@@ -85,7 +85,7 @@
 -group :development, :test do
 -  gem 'deprecation_toolkit', '~> 1.5.1', require: false # rubocop:todo Gemfile/MissingFeatureCategory
 -  gem 'bullet', '~> 7.1.2' # rubocop:todo Gemfile/MissingFeatureCategory
--  gem 'parser', '= 3.3.3.0', feature_category: :shared
+-  gem 'parser', '= 3.3.6.0', feature_category: :shared
 -  gem 'pry-byebug' # rubocop:todo Gemfile/MissingFeatureCategory
 -  gem 'pry-rails', '~> 0.3.9' # rubocop:todo Gemfile/MissingFeatureCategory
 -  gem 'pry-shell', '~> 0.6.4' # rubocop:todo Gemfile/MissingFeatureCategory
@@ -102,7 +102,7 @@
 -  gem 'spring', '~> 4.1.0' # rubocop:todo Gemfile/MissingFeatureCategory
 -  gem 'spring-commands-rspec', '~> 1.0.4' # rubocop:todo Gemfile/MissingFeatureCategory
 -
--  gem 'gitlab-styles', '~> 12.0.1', feature_category: :tooling
+-  gem 'gitlab-styles', '~> 13.0.1', feature_category: :tooling
 -  gem 'haml_lint', '~> 0.58', feature_category: :tooling
 -
 -  gem 'bundler-audit', '~> 0.9.1', require: false # rubocop:todo Gemfile/MissingFeatureCategory
@@ -174,7 +174,7 @@
 -
 -  gem 'shoulda-matchers', '~> 5.1.0', require: false # rubocop:todo Gemfile/MissingFeatureCategory
 -  gem 'email_spec', '~> 2.2.0' # rubocop:todo Gemfile/MissingFeatureCategory
--  gem 'webmock', '~> 3.23.0', feature_category: :shared
+-  gem 'webmock', '~> 3.24.0', feature_category: :shared
 -  gem 'rails-controller-testing' # rubocop:todo Gemfile/MissingFeatureCategory
 -  gem 'concurrent-ruby', '~> 1.1' # rubocop:todo Gemfile/MissingFeatureCategory
 -  gem 'test-prof', '~> 1.4.0', feature_category: :tooling
@@ -185,18 +185,22 @@
 -  # Moved in `test` because https://gitlab.com/gitlab-org/gitlab/-/issues/217527
 -  gem 'derailed_benchmarks', require: false # rubocop:todo Gemfile/MissingFeatureCategory
 -
--  gem 'gitlab_quality-test_tooling', '~> 1.39.0', require: false, feature_category: :tooling
+-  gem 'gitlab_quality-test_tooling', '~> 2.1.0', require: false, feature_category: :tooling
 -end
 -
  gem 'octokit', '~> 9.0', feature_category: :importers
  # Needed by octokit: https://github.com/octokit/octokit.rb/pull/1688
  gem 'faraday-multipart', '~> 1.0', feature_category: :importers
-@@ -633,13 +512,13 @@ gem 'gitaly', '~> 17.4.0.pre.rc1', feature_category: :
- gem 'gitaly', '~> 17.4.0.pre.rc1', feature_category: :gitaly
+@@ -629,16 +508,16 @@ gem 'spamcheck', '~> 1.3.0' # rubocop:todo Gemfile/Mis
+ gem 'spamcheck', '~> 1.3.0' # rubocop:todo Gemfile/MissingFeatureCategory
+ 
+ # Gitaly GRPC protocol definitions
+-gem 'gitaly', '~> 17.5.0.pre.rc1', feature_category: :gitaly
++gem 'gitaly', '~> 17.6.0', feature_category: :gitaly
  
  # KAS GRPC protocol definitions
--gem 'gitlab-kas-grpc', '~> 17.4.0.pre.rc1', feature_category: :deployment_management
-+gem 'gitlab-kas-grpc', '~> 17.4', feature_category: :deployment_management
+-gem 'gitlab-kas-grpc', '~> 17.5.0', feature_category: :deployment_management
++gem 'gitlab-kas-grpc', '~> 17.6.0', feature_category: :deployment_management
  
  # Lock the version before issues below are resolved:
  # https://gitlab.com/gitlab-org/gitlab/-/issues/473169#note_2028352939
@@ -207,7 +211,7 @@
  
  gem 'google-protobuf', '~> 3.25', '>= 3.25.3' # rubocop:todo Gemfile/MissingFeatureCategory
  
-@@ -660,7 +539,7 @@ gem 'gitlab-net-dns', '~> 0.9.2' # rubocop:todo Gemfil
+@@ -659,7 +538,7 @@ gem 'gitlab-net-dns', '~> 0.9.2' # rubocop:todo Gemfil
  gem 'gitlab-net-dns', '~> 0.9.2' # rubocop:todo Gemfile/MissingFeatureCategory
  
  # Countries list
@@ -216,7 +220,7 @@
  
  gem 'retriable', '~> 3.1.2' # rubocop:todo Gemfile/MissingFeatureCategory
  
-@@ -735,10 +614,15 @@ gem 'duo_api', '~> 1.3' # rubocop:todo Gemfile/Missing
+@@ -734,10 +613,15 @@ gem 'duo_api', '~> 1.3' # rubocop:todo Gemfile/Missing
  
  gem 'duo_api', '~> 1.3' # rubocop:todo Gemfile/MissingFeatureCategory
  
