@@ -1,6 +1,5 @@
 PORTNAME=	root
-DISTVERSION=	6.32.04
-PORTREVISION=	3
+DISTVERSION=	6.32.08
 CATEGORIES=	devel science math parallel python
 MASTER_SITES=	https://root.cern/download/
 DISTFILES=	${PORTNAME}_v${DISTVERSION}.source${EXTRACT_SUFX}
@@ -53,20 +52,19 @@ CMAKE_OFF=	arrow builtin_afterimage builtin_cfitsio builtin_cppzmq builtin_davix
 		builtin_gsl builtin_gtest builtin_lz4 builtin_lzma builtin_nlohmannjson \
 		builtin_openssl builtin_pcre builtin_tbb builtin_unuran builtin_vc builtin_vdt \
 		builtin_veccore builtin_xrootd builtin_xxhash builtin_zeromq builtin_zlib \
-		builtin_zstd cefweb clad cocoa cuda cudnn daos davix dcache fcgi fftw3 gviz \
-		libcxx llvm13_broken_tests macos_native memory_termination minuit2_mpi \
-		minuit2_omp mpi odbc proof pythia8 qt5web qt6web r roofit_multiprocess \
-		runtime_cxxmodules shadowpw test_distrdf_dask test_distrdf_pyspark tmva-gpu \
-		tmva-rmva tmva-sofie unfold unuran uring vc veccore vecgeom win_broken_tests \
-		winrtdebug
+		builtin_zstd cefweb clad cocoa cuda cudnn daos dcache fcgi fftw3 gviz libcxx \
+		llvm13_broken_tests macos_native memory_termination minuit2_mpi minuit2_omp \
+		mpi odbc proof pythia8 qt5web qt6web r roofit_multiprocess runtime_cxxmodules \
+		shadowpw test_distrdf_dask test_distrdf_pyspark tmva-gpu tmva-rmva tmva-sofie \
+		unfold unuran uring vc veccore vecgeom win_broken_tests winrtdebug
 
 # Port build options; DOCS also on by default
 # See https://root.cern/install/build_from_source/#all-build-options
-OPTIONS_DEFINE=	DOCS ASIMAGE DATAFRAME FITS FORTRAN GDML HTTP IMT MATHMORE MYSQL \
-		OPENGL PGSQL PYROOT ROOFIT ROOT7 SPECTRUM SQLITE SSL TMLP TMVAML VDT WEBGUI \
-		X11 XML XROOTD
-OPTIONS_DEFAULT=	ASIMAGE DATAFRAME FITS GDML HTTP IMT MATHMORE OPENGL PYROOT \
-		ROOFIT ROOT7 SPECTRUM SSL TMLP TMVAML VDT WEBGUI X11 XML XROOTD
+OPTIONS_DEFINE=	DOCS ASIMAGE DATAFRAME DAVIX FITS FORTRAN GDML HTTP IMT MATHMORE \
+		MYSQL OPENGL PGSQL PYROOT ROOFIT ROOT7 SPECTRUM SQLITE SSL TMLP TMVAML VDT \
+		WEBGUI X11 XML XROOTD
+OPTIONS_DEFAULT=	ASIMAGE DATAFRAME DAVIX FITS GDML HTTP IMT MATHMORE OPENGL \
+		PYROOT ROOFIT ROOT7 SPECTRUM SSL TMLP TMVAML VDT WEBGUI X11 XML XROOTD
 OPTIONS_SUB=	yes
 
 ASIMAGE_CMAKE_BOOL=	asimage
@@ -88,12 +86,10 @@ ASIMAGE_USE=	gnome=cairo,gdkpixbuf2,glib20,librsvg2
 DATAFRAME_CMAKE_BOOL=	dataframe
 DATAFRAME_DESC=			Enable ROOT RDataFrame
 
-# TODO: davix only comes with pkgconfig file on fbsd, while
-# ROOT's configure stage relies on find_package() -- patch
-#DAVIX_CMAKE_BOOL=	davix
-#DAVIX_DESC=		Enable support for Davix (HTTP/WebDAV access)
-#DAVIX_IMPLIES=	libuuid xml2 openssl
-#DAVIX_LIB_DEPENDS=	libdavix.so:www/davix
+DAVIX_CMAKE_BOOL=	davix
+DAVIX_DESC=		Enable support for Davix (HTTP/WebDAV access)
+DAVIX_LIB_DEPENDS=	libdavix.so:www/davix
+DAVIX_USES=	pkgconfig
 
 FITS_CMAKE_BOOL=	fitsio
 FITS_DESC=		Enable support for reading FITS images
@@ -201,14 +197,14 @@ PLIST_SUB+=	PYVER="${PYTHON_VER:S/./_/}" \
 		SHLIB_SHVER="${DISTVERSION:R}" \
 		SHLIB_VER="${DISTVERSION}"
 
-# Some .modulemap, .pcm and .idx files are not installed on aarch64, a few headers are only installed on aarch64
+# A few headers are only installed on aarch64
 .if ${OPSYS} == FreeBSD && ${ARCH} == "aarch64"
 PLIST_SUB+=	ONLY_INSTALLED_ON_AARCH64=""
 .else
 PLIST_SUB+=	ONLY_INSTALLED_ON_AARCH64="@comment "
 .endif
 
-# Files in lib/root/__pycache__ have links into WRKDIR and should not be staged. This happens even when PYROOT option is OFF.
+# Files in lib/root/__pycache__ have links into WRKDIR and should not be staged
 post-install:
 	${RM} -r ${STAGEDIR}${PREFIX}/lib/root/__pycache__
 

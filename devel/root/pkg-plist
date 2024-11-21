@@ -1231,6 +1231,7 @@ include/root/ROOT/RNotFn.hxx
 %%ROOT7%%include/root/ROOT/RPaveText.hxx
 include/root/ROOT/RRangeCast.hxx
 include/root/ROOT/RRawFile.hxx
+%%DAVIX%%include/root/ROOT/RRawFileDavix.hxx
 %%XROOTD%%include/root/ROOT/RRawFileNetXNG.hxx
 include/root/ROOT/RRawFileTFile.hxx
 include/root/ROOT/RRawFileUnix.hxx
@@ -1797,6 +1798,8 @@ include/root/TDataMember.h
 include/root/TDataType.h
 include/root/TDatabasePDG.h
 include/root/TDatime.h
+%%DAVIX%%include/root/TDavixFile.h
+%%DAVIX%%include/root/TDavixSystem.h
 include/root/TDecayChannel.h
 include/root/TDecompBK.h
 include/root/TDecompBase.h
@@ -3760,6 +3763,11 @@ lib/root/libRCsg.so
 lib/root/libRCsg.so.%%SHLIB_SHVER%%
 lib/root/libRCsg.so.%%SHLIB_VER%%
 lib/root/libRCsg_rdict.pcm
+%%DAVIX%%lib/root/libRDAVIX.rootmap
+%%DAVIX%%lib/root/libRDAVIX.so
+%%DAVIX%%lib/root/libRDAVIX.so.%%SHLIB_SHVER%%
+%%DAVIX%%lib/root/libRDAVIX.so.%%SHLIB_VER%%
+%%DAVIX%%lib/root/libRDAVIX_rdict.pcm
 %%OPENGL%%lib/root/libRGL.rootmap
 %%OPENGL%%lib/root/libRGL.so
 %%OPENGL%%lib/root/libRGL.so.%%SHLIB_SHVER%%
@@ -3893,8 +3901,6 @@ lib/root/libRIO.so.%%SHLIB_VER%%
 %%HTTP%%%%ROOT7%%lib/root/libROOTObjectDraw7Provider.so.%%SHLIB_SHVER%%
 %%HTTP%%%%ROOT7%%lib/root/libROOTObjectDraw7Provider.so.%%SHLIB_VER%%
 %%PYROOT%%lib/root/libROOTPythonizations.so
-%%PYROOT%%lib/root/libROOTPythonizations.so.%%SHLIB_SHVER%%
-%%PYROOT%%lib/root/libROOTPythonizations.so.%%SHLIB_VER%%
 %%TMVAML%%lib/root/libROOTTMVASofie.rootmap
 %%TMVAML%%lib/root/libROOTTMVASofie.so
 %%TMVAML%%lib/root/libROOTTMVASofie.so.%%SHLIB_SHVER%%
