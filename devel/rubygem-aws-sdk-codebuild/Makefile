@@ -1,5 +1,5 @@
 PORTNAME=	aws-sdk-codebuild
-PORTVERSION=	1.135.0
+PORTVERSION=	1.137.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
