@@ -4733,6 +4733,7 @@
     SUBDIR += py-dataclass-array
     SUBDIR += py-dataclasses-json
     SUBDIR += py-datadog
+    SUBDIR += py-dataflows-tabulator
     SUBDIR += py-datapackage
     SUBDIR += py-datasette
     SUBDIR += py-datatest
