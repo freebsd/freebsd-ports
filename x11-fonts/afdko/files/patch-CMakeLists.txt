@@ -1,24 +1,30 @@
---- CMakeLists.txt.orig	2022-04-11 22:59:15 UTC
+--- CMakeLists.txt.orig	2024-11-06 00:31:38 UTC
 +++ CMakeLists.txt
-@@ -36,11 +36,11 @@ list(APPEND CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_D
- # https://www.antlr.org/download/antlr4-cpp-runtime-4.9.3-source.zip
- # set(ANTLR4_ZIP_REPOSITORY "/path_to_antlr4_archive/a4.zip")
+@@ -27,22 +27,6 @@ list(APPEND CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_D
  
+ list(APPEND CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake)
+ 
+-# Antlr 4 configuration
+-
+-# This is an alternate way of supplying the Antlr 4 sources that will override
+-# the git clone of the tag listed below. This is especially useful if you
+-# encounter compiler problems and need to make small edits to compensate. Start
+-# with the Antlr project's sources, e.g.
+-# https://www.antlr.org/download/antlr4-cpp-runtime-4.9.3-source.zip
+-# set(ANTLR4_ZIP_REPOSITORY "/path_to_antlr4_archive/a4.zip")
+-
 -add_definitions(-DANTLR4CPP_STATIC)
 -set(ANTLR4_WITH_STATIC_CRT OFF)
-+#add_definitions(-DANTLR4CPP_STATIC)
-+#set(ANTLR4_WITH_STATIC_CRT OFF)
- # 4.9.3 is the latest ANTLR4 version
--set(ANTLR4_TAG tags/4.9.3)
+-# 4.9.3 is the latest ANTLR4 version
+-set(ANTLR4_TAG tags/4.13.2)
 -include(ExternalAntlr4Cpp)
-+#set(ANTLR4_TAG tags/4.9.3)
-+#include(ExternalAntlr4Cpp)
- 
- # sanitizer support
- # work around https://github.com/pypa/setuptools/issues/1928 with environment
-@@ -76,4 +76,4 @@ add_subdirectory(c/sfntedit/source)
+-
+-
+ if (DEFINED ENV{FORCE_BUILD_LIBXML2})
+     set(BUILD_STATIC_LIBXML2 TRUE)
+ else()
+@@ -107,4 +91,3 @@ add_subdirectory(c/type1/source)
  add_subdirectory(c/spot/source)
  add_subdirectory(c/tx/source)
  add_subdirectory(c/type1/source)
 -add_subdirectory(c/makeotf)
-+#add_subdirectory(c/makeotf)
