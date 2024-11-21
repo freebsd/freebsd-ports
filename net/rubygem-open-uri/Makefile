@@ -1,5 +1,5 @@
 PORTNAME=	open-uri
-PORTVERSION=	0.4.1
+PORTVERSION=	0.5.0
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
@@ -9,7 +9,8 @@ WWW=		https://github.com/ruby/open-uri
 
 LICENSE=	BSD2CLAUSE RUBY
 LICENSE_COMB=	dual
-LICENSE_FILE_BSD2CLAUSE=${WRKSRC}/LICENSE.txt
+LICENSE_FILE_BSD2CLAUSE=${WRKSRC}/BSDL
+LICENSE_FILE_RUBY=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	rubygem-stringio>=0:devel/rubygem-stringio \
 		rubygem-time>=0:devel/rubygem-time \
