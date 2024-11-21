@@ -1,0 +1,7 @@
+Net::HTTP provides a rich library which can be used to build HTTP user-agents.
+For more details about HTTP see RFC2616.
+
+Net::HTTP is designed to work closely with URI. URI::HTTP#host, URI::HTTP#port
+and URI::HTTP#request_uri are designed to work with Net::HTTP.
+
+If you are only performing a few GET requests you should try OpenURI.
