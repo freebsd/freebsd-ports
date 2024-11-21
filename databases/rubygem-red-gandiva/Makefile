@@ -1,5 +1,5 @@
 PORTNAME=	red-gandiva
-PORTVERSION=	17.0.0
+PORTVERSION=	18.0.0
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 
