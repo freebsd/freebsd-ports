@@ -19,6 +19,8 @@ include/opentelemetry/context/propagation/text_map_propagator.h
 include/opentelemetry/context/runtime_context.h
 include/opentelemetry/detail/preprocessor.h
 include/opentelemetry/exporters/memory/in_memory_data.h
+include/opentelemetry/exporters/memory/in_memory_metric_data.h
+include/opentelemetry/exporters/memory/in_memory_metric_exporter_factory.h
 include/opentelemetry/exporters/memory/in_memory_span_data.h
 include/opentelemetry/exporters/memory/in_memory_span_exporter.h
 include/opentelemetry/exporters/memory/in_memory_span_exporter_factory.h
@@ -260,6 +262,7 @@ lib/cmake/opentelemetry-cpp/opentelemetry-cpp-target-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/opentelemetry-cpp/opentelemetry-cpp-target.cmake
 lib/libopentelemetry_common.so
 lib/libopentelemetry_exporter_in_memory.so
+lib/libopentelemetry_exporter_in_memory_metric.so
 lib/libopentelemetry_exporter_ostream_logs.so
 lib/libopentelemetry_exporter_ostream_metrics.so
 lib/libopentelemetry_exporter_ostream_span.so
