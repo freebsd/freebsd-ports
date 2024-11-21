@@ -42,8 +42,8 @@ forgejo_start() {
 	/usr/sbin/daemon %%DAEMONARGS%% \
 		-u ${forgejo_user} -p ${pidfile} \
 		/usr/bin/env -i \
-		"GITEA_WORK_DIR=${forgejo_shared}" \
-		"GITEA_CUSTOM=${forgejo_custom}" \
+		"FORGEJO_WORK_DIR=${forgejo_shared}" \
+		"FORGEJO_CUSTOM=${forgejo_custom}" \
 		"HOME=${githome}" \
 		"PATH=%%PREFIX%%/bin:${PATH}" \
 		"USER=${forgejo_user}" \
