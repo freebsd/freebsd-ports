@@ -1,5 +1,5 @@
 PORTNAME=	libddwaf
-PORTVERSION=	1.20.1
+PORTVERSION=	1.21.0
 CATEGORIES=	devel
 
 MAINTAINER=	sunpoet@FreeBSD.org
