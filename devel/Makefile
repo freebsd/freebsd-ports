@@ -6524,6 +6524,7 @@
     SUBDIR += rubygem-aws-sdk-configservice
     SUBDIR += rubygem-aws-sdk-connect
     SUBDIR += rubygem-aws-sdk-connectcampaignservice
+    SUBDIR += rubygem-aws-sdk-connectcampaignsv2
     SUBDIR += rubygem-aws-sdk-connectcases
     SUBDIR += rubygem-aws-sdk-connectcontactlens
     SUBDIR += rubygem-aws-sdk-connectparticipant
