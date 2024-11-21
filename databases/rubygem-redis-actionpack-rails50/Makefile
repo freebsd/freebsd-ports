@@ -1,5 +1,5 @@
 PORTNAME=	redis-actionpack
-PORTVERSION=	5.4.0
+PORTVERSION=	5.5.0
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	-rails50
@@ -11,7 +11,7 @@ WWW=		https://redis-store.org/redis-actionpack/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
 
-RUN_DEPENDS=	rubygem-actionpack50>=5<8:www/rubygem-actionpack50 \
+RUN_DEPENDS=	rubygem-actionpack50>=5:www/rubygem-actionpack50 \
 		rubygem-redis-rack>=2.1.0<4:www/rubygem-redis-rack \
 		rubygem-redis-store>=1.1.0<2:devel/rubygem-redis-store
 
