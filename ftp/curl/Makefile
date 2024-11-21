@@ -1,5 +1,6 @@
 PORTNAME=	curl
 PORTVERSION=	8.11.0
+PORTREVISION=	1
 CATEGORIES=	ftp net www
 MASTER_SITES=	https://curl.se/download/ \
 		https://github.com/curl/curl/releases/download/curl-${PORTVERSION:S|.|_|g}/
@@ -99,6 +100,7 @@ GNUTLS_LIB_DEPENDS=	libgnutls.so:security/gnutls \
 GOPHER_CONFIGURE_ENABLE=gopher
 GSSAPI_BASE_CONFIGURE_ON=	--with-gssapi=${GSSAPIBASEDIR} ${GSSAPI_CONFIGURE_ARGS}
 GSSAPI_BASE_CPPFLAGS=	${GSSAPICPPFLAGS}
+GSSAPI_BASE_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-gssapi
 GSSAPI_BASE_LDFLAGS=	${GSSAPILDFLAGS}
 GSSAPI_BASE_LIBS=	${GSSAPILIBS}
 GSSAPI_BASE_USES=	gssapi
