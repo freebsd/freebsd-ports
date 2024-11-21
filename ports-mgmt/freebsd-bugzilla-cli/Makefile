@@ -5,7 +5,7 @@ CATEGORIES=	ports-mgmt
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Interact with the FreeBSD bugzilla instance
-WWW=		https://github.com/p6m7g8/p6-freebsd-bugzilla
+WWW=		https://github.com/p6m7g8/__p6-freebsd-bugzilla
 
 LICENSE=	APACHE20
 
@@ -18,7 +18,7 @@ DATADIR=	${PREFIX}/share/bz
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	p6m7g8
-GH_PROJECT=	p6-freebsd-bugzilla
+GH_PROJECT=	__p6-freebsd-bugzilla
 GH_TAGNAME=	e76c8b1
 
 OPTIONS_GROUP=	BACKEND
