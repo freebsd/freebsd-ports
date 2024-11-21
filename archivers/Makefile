@@ -201,6 +201,7 @@
     SUBDIR += py-lz4
     SUBDIR += py-lzma
     SUBDIR += py-lzstring
+    SUBDIR += py-multivolumefile
     SUBDIR += py-patool
     SUBDIR += py-pybcj
     SUBDIR += py-pyminizip
