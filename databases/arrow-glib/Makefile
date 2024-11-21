@@ -1,5 +1,5 @@
 PORTNAME=	arrow
-PORTVERSION=	17.0.0
+PORTVERSION=	18.0.0
 CATEGORIES=	databases
 MASTER_SITES=	APACHE/arrow/arrow-${PORTVERSION}/
 PKGNAMESUFFIX=	-glib
@@ -29,6 +29,6 @@ MESON_ARGS=	--default-library=both \
 		-Dvapi=false
 WRKSRC_SUBDIR=	c_glib
 
-PLIST_SUB=	SHLIB_VER=${PORTVERSION:R:R}00.${PORTVERSION:E}.0
+PLIST_SUB=	SHLIB_VER=${PORTVERSION:R:R}00
 
 .include <bsd.port.mk>
