@@ -1,5 +1,6 @@
 PORTNAME=	devd-mount
 DISTVERSION=	0.2.0
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -8,6 +9,8 @@ WWW=		https://github.com/outpaddling/devd-mount
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+CONFLICTS=	automount	# Competing devd rules
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	outpaddling
