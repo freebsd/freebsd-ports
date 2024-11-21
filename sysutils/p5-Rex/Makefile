@@ -1,5 +1,5 @@
 PORTNAME=	Rex
-PORTVERSION=	1.14.3
+PORTVERSION=	1.15.0
 CATEGORIES=	sysutils perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:FERKI
@@ -21,7 +21,6 @@ RUN_DEPENDS=	p5-AWS-Signature4>=0:devel/p5-AWS-Signature4 \
 		p5-Digest-HMAC>=0:security/p5-Digest-HMAC \
 		p5-HTTP-Message>=0:www/p5-HTTP-Message \
 		p5-Hash-Merge>=0:textproc/p5-Hash-Merge \
-		p5-IO-String>=0:devel/p5-IO-String \
 		p5-IO-Tty>=0:devel/p5-IO-Tty \
 		p5-JSON-MaybeXS>=0:converters/p5-JSON-MaybeXS \
 		p5-Net-OpenSSH>=0:net/p5-Net-OpenSSH \
