@@ -1,5 +1,6 @@
 PORTNAME=	gajim
 DISTVERSION=	1.9.5
+PORTREVISION=	1
 CATEGORIES=	net-im
 MASTER_SITES=	https://gajim.org/downloads/${DISTVERSION:R}/
 

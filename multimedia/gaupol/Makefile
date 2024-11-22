@@ -1,5 +1,6 @@
 PORTNAME=	gaupol
 DISTVERSION=	1.13
+PORTREVISION=	1
 CATEGORIES=	multimedia python
 
 MAINTAINER=	ports@FreeBSD.org

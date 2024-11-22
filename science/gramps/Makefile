@@ -1,6 +1,7 @@
 PORTNAME=	gramps
 DISTVERSIONPREFIX=	v
 DISTVERSION=	5.2.3
+PORTREVISION=	1
 CATEGORIES=	science gnome python
 
 MAINTAINER=	eduardo@FreeBSD.org

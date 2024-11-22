@@ -1,5 +1,6 @@
 PORTNAME=	ibus-anthy
 PORTVERSION=	1.5.16
+PORTREVISION=	1
 CATEGORIES=	japanese
 MASTER_SITES=	https://github.com/ibus/ibus-anthy/releases/download/${PORTVERSION}/
 PKGNAMEPREFIX=	ja-

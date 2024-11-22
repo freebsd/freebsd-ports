@@ -1,6 +1,6 @@
 PORTNAME=	solfege
 DISTVERSION=	3.23.5pre2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	https://git.savannah.gnu.org/cgit/${PORTNAME}.git/snapshot/
 PKGNAMESUFFIX=	-nosound

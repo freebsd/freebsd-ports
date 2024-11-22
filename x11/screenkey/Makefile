@@ -1,6 +1,6 @@
 PORTNAME=	screenkey
 PORTVERSION=	1.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11 python
 MASTER_SITES=	https://www.thregr.org/~wavexx/software/screenkey/releases/
 

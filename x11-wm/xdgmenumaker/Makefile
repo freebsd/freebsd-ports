@@ -1,5 +1,6 @@
 PORTNAME=	xdgmenumaker
 PORTVERSION=	2.2
+PORTREVISION=	1
 CATEGORIES=	x11-wm python
 
 MAINTAINER=	danfe@FreeBSD.org
