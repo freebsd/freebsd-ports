@@ -11,6 +11,8 @@ WWW=		https://github.com/librespot-org/librespot
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BUILD_DEPENDS=	bindgen:devel/rust-bindgen-cli
+
 USES=		cargo
 
 USE_GITHUB=	yes
