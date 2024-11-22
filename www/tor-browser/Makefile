@@ -1,5 +1,5 @@
 PORTNAME=	tor-browser
-DISTVERSION=	14.0.1
+DISTVERSION=	14.0.2
 CATEGORIES=	www net security wayland
 MASTER_SITES=	TOR \
 		https://build-sources.tbb.torproject.org/:source1 \
@@ -7,8 +7,8 @@ MASTER_SITES=	TOR \
 		https://secure.informaction.com/%SUBDIR%/:source3
 MASTER_SITE_SUBDIR=	torbrowser/${DISTVERSION}/:DEFAULT \
 			download/releases/:source3
-DISTNAME=	src-firefox-tor-browser-128.4.0esr-14.0-1-build2
-NOSCRIPT=	noscript-11.4.42.xpi
+DISTNAME=	src-firefox-tor-browser-128.4.0esr-14.0-1-build3
+NOSCRIPT=	noscript-11.5.2.xpi
 DISTFILES=	${DISTNAME}.tar.xz \
 		manual_215922.zip:source1 \
 		fonts-3--4348e1.tar.zst:source2 \
@@ -49,8 +49,8 @@ USE_GITLAB=	nodefault
 GL_SITE=	https://gitlab.torproject.org/
 GL_ACCOUNT=	tpo
 GL_PROJECT=	translation:basebrowser translation:torbrowser
-TAG_BASE=	3b1be2065b54939ed019d94174f137847bcf3c66
-TAG_TOR=	ba63bd165f3fd4bdd472815c9761413d4671cfb7
+TAG_BASE=	5a074e0814015db3c2edbf63ff8e9d1f552900aa
+TAG_TOR=	7276d3d2ad0319c3d3762047226da7ee104d1d42
 GL_TAGNAME=	${TAG_BASE}:basebrowser ${TAG_TOR}:torbrowser
 USE_MOZILLA=	-sqlite
 
