@@ -1,5 +1,6 @@
 PORTNAME=	licensee
 PORTVERSION=	9.17.1
+PORTREVISION=	1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -11,7 +12,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 RUN_DEPENDS=	rubygem-dotenv>=2.0<4:misc/rubygem-dotenv \
-		rubygem-octokit>=4.20<10:net/rubygem-octokit \
+		rubygem-octokit-gitlab>=4.20<10:net/rubygem-octokit-gitlab \
 		rubygem-reverse_markdown>=1.0<3:textproc/rubygem-reverse_markdown \
 		rubygem-rugged>=0.24<2.0:devel/rubygem-rugged \
 		rubygem-thor>=0.19<2.0:devel/rubygem-thor

@@ -1111,6 +1111,7 @@
     SUBDIR += rotate
     SUBDIR += rpm-sequoia
     SUBDIR += rubygem-acme-client
+    SUBDIR += rubygem-acme-client-gitlab
     SUBDIR += rubygem-aes_key_wrap
     SUBDIR += rubygem-airbrussh
     SUBDIR += rubygem-android_key_attestation
@@ -1143,6 +1144,7 @@
     SUBDIR += rubygem-encryptor
     SUBDIR += rubygem-ezcrypto
     SUBDIR += rubygem-googleauth
+    SUBDIR += rubygem-googleauth-gitlab
     SUBDIR += rubygem-gpgme
     SUBDIR += rubygem-gpgr
     SUBDIR += rubygem-gssapi
@@ -1182,6 +1184,7 @@
     SUBDIR += rubygem-omniauth-multipassword
     SUBDIR += rubygem-omniauth-multipassword2
     SUBDIR += rubygem-omniauth-oauth2-generic
+    SUBDIR += rubygem-omniauth-oauth2-generic-gitlab
     SUBDIR += rubygem-omniauth-rails_csrf_protection
     SUBDIR += rubygem-omniauth-saml
     SUBDIR += rubygem-omniauth-saml1
@@ -1200,6 +1203,7 @@
     SUBDIR += rubygem-pwned
     SUBDIR += rubygem-pyu-ruby-sasl
     SUBDIR += rubygem-rack-oauth2
+    SUBDIR += rubygem-rack-oauth2-gitlab
     SUBDIR += rubygem-rasn1
     SUBDIR += rubygem-razorback-scriptNugget
     SUBDIR += rubygem-rbnacl
@@ -1233,6 +1237,7 @@
     SUBDIR += rubygem-securecompare
     SUBDIR += rubygem-securerandom
     SUBDIR += rubygem-signet
+    SUBDIR += rubygem-signet-gitlab
     SUBDIR += rubygem-six
     SUBDIR += rubygem-ssh_data
     SUBDIR += rubygem-sshkey

@@ -1,5 +1,5 @@
 PORTNAME=	faraday-http-cache
-PORTVERSION=	2.3.0
+PORTVERSION=	2.5.1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -10,7 +10,7 @@ WWW=		https://github.com/sourcelevel/faraday-http-cache
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rubygem-faraday1>=0.8:www/rubygem-faraday1
+RUN_DEPENDS=	rubygem-faraday-gitlab>=0.8:www/rubygem-faraday-gitlab
 
 USES=		gem
 
