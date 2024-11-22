@@ -1,7 +1,6 @@
 PORTNAME=	r7-organizer
-PORTVERSION=	2.0.1
+PORTVERSION=	3.1.2
 DISTVERSIONSUFFIX=	-1
-PORTREVISION=	2
 CATEGORIES=	mail linux russian
 MASTER_SITES=	https://download.r7-office.ru/organizer/centos/
 PKGNAMEPREFIX=	linux-
