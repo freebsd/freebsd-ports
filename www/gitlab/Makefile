@@ -145,7 +145,7 @@ MY_DEPENDS=	git>=2.41.0:devel/git \
 	rubygem-deckar01-task_list>=2.3.4<2.4:www/rubygem-deckar01-task_list \
 	rubygem-gitlab-markup>=1.9.0<1.10.0:textproc/rubygem-gitlab-markup \
 	rubygem-commonmarker0>=0.23.10<0.24:textproc/rubygem-commonmarker0 \
-	rubygem-kramdown>=2.4.0<2.5:textproc/rubygem-kramdown \
+	rubygem-kramdown-gitlab>=2.4.0<2.5:textproc/rubygem-kramdown-gitlab \
 	rubygem-redcloth>=4.3.3<4.4.0:www/rubygem-redcloth \
 	rubygem-org-ruby>=0.9.12<0.10.0:textproc/rubygem-org-ruby \
 	rubygem-creole>=0.5.0<0.6.0:textproc/rubygem-creole \

@@ -18,8 +18,8 @@ RUN_DEPENDS=	rubygem-claide>=1.0<2:devel/rubygem-claide \
 		rubygem-faraday-gitlab>=0.9.0<3.0:www/rubygem-faraday-gitlab \
 		rubygem-faraday-http-cache>=2.0.0<3:www/rubygem-faraday-http-cache \
 		rubygem-git>=1.13<2:devel/rubygem-git \
-		rubygem-kramdown>=2.3<3:textproc/rubygem-kramdown \
-		rubygem-kramdown-parser-gfm>=1.0<2:textproc/rubygem-kramdown-parser-gfm \
+		rubygem-kramdown-gitlab>=2.3<3:textproc/rubygem-kramdown-gitlab \
+		rubygem-kramdown-parser-gfm-gitlab>=1.0<2:textproc/rubygem-kramdown-parser-gfm-gitlab \
 		rubygem-octokit-gitlab>=4:net/rubygem-octokit-gitlab \
 		rubygem-terminal-table>=1<4:textproc/rubygem-terminal-table
 
