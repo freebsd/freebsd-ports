@@ -1,5 +1,5 @@
 PORTNAME=	cyclonedx-python-lib
-PORTVERSION=	8.4.0
+PORTVERSION=	8.5.0
 CATEGORIES=	textproc python
 MASTER_SITES=	PYPI \
 		https://github.com/CycloneDX/cyclonedx-python-lib/releases/download/v${PORTVERSION}/
