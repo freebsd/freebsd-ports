@@ -170,6 +170,8 @@
 %%WWWDIR%%/files/update/7075.sql
 %%WWWDIR%%/files/update/7076.sql
 %%WWWDIR%%/files/update/7077.sql
+%%WWWDIR%%/files/update/7078.sql
+%%WWWDIR%%/files/update/7079.sql
 %%WWWDIR%%/image/adjustment.png
 %%WWWDIR%%/image/apple-logo.png
 %%WWWDIR%%/image/binary.png
@@ -1147,6 +1149,7 @@
 %%WWWDIR%%/vendor/jasig/phpcas/source/CAS/ServiceBaseUrl/Static.php
 %%WWWDIR%%/vendor/jasig/phpcas/source/CAS/Session/PhpSession.php
 %%WWWDIR%%/vendor/jasig/phpcas/source/CAS/TypeMismatchException.php
+%%WWWDIR%%/vendor/phpmailer/phpmailer/.editorconfig
 %%WWWDIR%%/vendor/phpmailer/phpmailer/COMMITMENT
 %%WWWDIR%%/vendor/phpmailer/phpmailer/LICENSE
 %%WWWDIR%%/vendor/phpmailer/phpmailer/README.md
@@ -1156,10 +1159,12 @@
 %%WWWDIR%%/vendor/phpmailer/phpmailer/get_oauth_token.php
 %%WWWDIR%%/vendor/phpmailer/phpmailer/language/phpmailer.lang-af.php
 %%WWWDIR%%/vendor/phpmailer/phpmailer/language/phpmailer.lang-ar.php
+%%WWWDIR%%/vendor/phpmailer/phpmailer/language/phpmailer.lang-as.php
 %%WWWDIR%%/vendor/phpmailer/phpmailer/language/phpmailer.lang-az.php
 %%WWWDIR%%/vendor/phpmailer/phpmailer/language/phpmailer.lang-ba.php
 %%WWWDIR%%/vendor/phpmailer/phpmailer/language/phpmailer.lang-be.php
 %%WWWDIR%%/vendor/phpmailer/phpmailer/language/phpmailer.lang-bg.php
+%%WWWDIR%%/vendor/phpmailer/phpmailer/language/phpmailer.lang-bn.php
 %%WWWDIR%%/vendor/phpmailer/phpmailer/language/phpmailer.lang-ca.php
 %%WWWDIR%%/vendor/phpmailer/phpmailer/language/phpmailer.lang-cs.php
 %%WWWDIR%%/vendor/phpmailer/phpmailer/language/phpmailer.lang-da.php
