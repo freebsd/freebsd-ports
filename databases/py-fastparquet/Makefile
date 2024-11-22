@@ -1,7 +1,7 @@
 PORTNAME=	fastparquet
 PORTVERSION=	2024.11.0
 CATEGORIES=	databases python
-#MASTER_SITES=	PYPI
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -28,8 +28,8 @@ USE_PYTHON=	autoplist concurrent cython pep517
 BINARY_ALIAS=	git=false
 MAKE_ENV=	SETUPTOOLS_SCM_PRETEND_VERSION=${PORTVERSION}
 
-USE_GITHUB=	yes
-GH_ACCOUNT=	dask
+post-patch:
+	@${RM} ${WRKSRC}/fastparquet/*.c
 
 post-install:
 	${FIND} ${STAGEDIR}${PYTHON_SITELIBDIR} -name '*.so' -exec ${STRIP_CMD} {} +

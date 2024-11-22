@@ -1,3 +1,3 @@
-TIMESTAMP = 1731679212
-SHA256 (dask-fastparquet-2024.11.0_GH0.tar.gz) = 312c2252bc2a5507430561efeb7e574035da70fbe16cb894f9cf0abda4392dfa
-SIZE (dask-fastparquet-2024.11.0_GH0.tar.gz) = 28909048
+TIMESTAMP = 1732239506
+SHA256 (fastparquet-2024.11.0.tar.gz) = e3b1fc73fd3e1b70b0de254bae7feb890436cb67e99458b88cb9bd3cc44db419
+SIZE (fastparquet-2024.11.0.tar.gz) = 467192
