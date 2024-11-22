@@ -1,5 +1,6 @@
 PORTNAME=	google-apis-cloudresourcemanager_v1
 PORTVERSION=	0.31.0
+PORTREVISION=	1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -11,7 +12,7 @@ WWW=		https://github.com/googleapis/google-api-ruby-client/tree/main/generated/g
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-RUN_DEPENDS=	rubygem-google-apis-core>=0.9.1<2.0:devel/rubygem-google-apis-core
+RUN_DEPENDS=	rubygem-google-apis-core-gitlab>=0.9.1<2.0:devel/rubygem-google-apis-core-gitlab
 
 USES=		gem
 

@@ -7131,6 +7131,7 @@
     SUBDIR += rubygem-faraday-excon
     SUBDIR += rubygem-faraday-excon1
     SUBDIR += rubygem-faraday_middleware-aws-sigv4
+    SUBDIR += rubygem-faraday_middleware-aws-sigv4-gitlab
     SUBDIR += rubygem-faraday_middleware-aws-sigv403
     SUBDIR += rubygem-faraday_middleware-multi_json
     SUBDIR += rubygem-fast-stemmer
@@ -7185,6 +7186,7 @@
     SUBDIR += rubygem-fuubar
     SUBDIR += rubygem-fuzzy_match
     SUBDIR += rubygem-gapic-common
+    SUBDIR += rubygem-gapic-common-gitlab
     SUBDIR += rubygem-gdata
     SUBDIR += rubygem-gem-compare
     SUBDIR += rubygem-gem_plugin
@@ -7233,7 +7235,7 @@
     SUBDIR += rubygem-google-api-client
     SUBDIR += rubygem-google-apis-admin_directory_v1
     SUBDIR += rubygem-google-apis-androidpublisher_v3
-    SUBDIR += rubygem-google-apis-androidpublisher_v3034
+    SUBDIR += rubygem-google-apis-androidpublisher_v3-gitlab
     SUBDIR += rubygem-google-apis-bigquery_v2
     SUBDIR += rubygem-google-apis-cloudbilling_v1
     SUBDIR += rubygem-google-apis-cloudkms_v1
@@ -7242,10 +7244,11 @@
     SUBDIR += rubygem-google-apis-cloudresourcemanager_v2
     SUBDIR += rubygem-google-apis-cloudresourcemanager_v3
     SUBDIR += rubygem-google-apis-compute_v1
-    SUBDIR += rubygem-google-apis-compute_v1_057
+    SUBDIR += rubygem-google-apis-compute_v1-gitlab
     SUBDIR += rubygem-google-apis-container_v1
     SUBDIR += rubygem-google-apis-container_v1beta1
     SUBDIR += rubygem-google-apis-core
+    SUBDIR += rubygem-google-apis-core-gitlab
     SUBDIR += rubygem-google-apis-core011
     SUBDIR += rubygem-google-apis-discovery_v1
     SUBDIR += rubygem-google-apis-drive_v3
@@ -7255,14 +7258,18 @@
     SUBDIR += rubygem-google-apis-iam_v2
     SUBDIR += rubygem-google-apis-iam_v2beta
     SUBDIR += rubygem-google-apis-iamcredentials_v1
+    SUBDIR += rubygem-google-apis-iamcredentials_v1-gitlab
     SUBDIR += rubygem-google-apis-monitoring_v3
+    SUBDIR += rubygem-google-apis-monitoring_v3-gitlab
     SUBDIR += rubygem-google-apis-playcustomapp_v1
     SUBDIR += rubygem-google-apis-pubsub_v1
+    SUBDIR += rubygem-google-apis-pubsub_v1-gitlab
     SUBDIR += rubygem-google-apis-serviceusage_v1
     SUBDIR += rubygem-google-apis-sheets_v4
     SUBDIR += rubygem-google-apis-sqladmin_v1beta4
-    SUBDIR += rubygem-google-apis-sqladmin_v1beta4_041
+    SUBDIR += rubygem-google-apis-sqladmin_v1beta4-gitlab
     SUBDIR += rubygem-google-apis-storage_v1
+    SUBDIR += rubygem-google-apis-storage_v1-gitlab
     SUBDIR += rubygem-google-cloud-common
     SUBDIR += rubygem-google-iam-credentials
     SUBDIR += rubygem-google-iam-credentials-v1

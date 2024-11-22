@@ -3519,3 +3519,7 @@ devel/libegit2||2024-09-30|Has expired: No consumer in ports tree
 audio/libechonest||2024-10-05|Removed, Abandonware and service no longer available
 net/fbzmq||2024-10-05|Repository was archived by facebook and the last version doesn't build
 x11-toolkits/wlroots016||2024-10-07|No consumers in ports
+devel/rubygem-google-apis-compute_v1_057|devel/rubygem-google-apis-compute_v1-gitlab|2024-11-22|Renamed to devel/rubygem-google-apis-compute_v1-gitlab
+devel/rubygem-google-apis-sqladmin_v1beta4_041|devel/rubygem-google-apis-sqladmin_v1beta4-gitlab|2024-11-22|Renamed to devel/rubygem-google-apis-sqladmin_v1beta4-gitlab
+devel/rubygem-google-apis-androidpublisher_v3034|devel/rubygem-google-apis-androidpublisher_v3-gitlab|2024-11-22|Renamed to devel/rubygem-google-apis-androidpublisher_v3-gitlab
+textproc/rubygem-elasticsearch-model713|textproc/rubygem-elasticsearch-model-gitlab|2024-11-22|Renamed to textproc/rubygem-elasticsearch-model-gitlab
