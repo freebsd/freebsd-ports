@@ -43,8 +43,12 @@ bin/podboat
 %%PORTDOCS%%%%DOCSDIR%%/contrib/linkding/linkding.rb
 %%PORTDOCS%%%%DOCSDIR%%/contrib/miniflux/docker-compose.yml
 %%PORTDOCS%%%%DOCSDIR%%/contrib/move_url.py
+%%PORTDOCS%%%%DOCSDIR%%/contrib/newsboat.fish
 %%PORTDOCS%%%%DOCSDIR%%/contrib/newsboat_reorganize.py
 %%PORTDOCS%%%%DOCSDIR%%/contrib/pinboard.pl
+%%PORTDOCS%%%%DOCSDIR%%/contrib/readeck/README.md
+%%PORTDOCS%%%%DOCSDIR%%/contrib/readeck/interactive-labels-readeck.clj
+%%PORTDOCS%%%%DOCSDIR%%/contrib/readeck/standard-readeck.clj
 %%PORTDOCS%%%%DOCSDIR%%/contrib/slashdot-replace-newlines.xslt
 %%PORTDOCS%%%%DOCSDIR%%/contrib/slashdot.rb
 %%PORTDOCS%%%%DOCSDIR%%/contrib/urls-maintenance.sh
