@@ -1,5 +1,5 @@
 PORTNAME=	zabbix6
-DISTVERSION=	6.0.35
+DISTVERSION=	6.0.36
 PORTREVISION?=	0
 CATEGORIES=	net-mgmt
 MASTER_SITES=	https://cdn.zabbix.com/zabbix/sources/stable/${DISTVERSION:R}/
@@ -208,7 +208,7 @@ post-patch:
 .endif
 
 .if ${ZABBIX_BUILD} != "agent"
-.  for d in mysql oracle postgresql sqlite3
+.  for d in mysql oracle postgresql
 	@${REINPLACE_CMD} \
 		-e 's|/usr/bin/traceroute|/usr/sbin/traceroute|g' \
 		-e 's|sudo /usr/bin/nmap|sudo ${LOCALBASE}/bin/nmap|g' \

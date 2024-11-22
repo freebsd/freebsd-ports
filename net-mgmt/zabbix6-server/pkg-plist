@@ -24,8 +24,6 @@
 %%DATADIR%%/%%ZABBIX_BUILD%%/database/postgresql/tsdb_history_pk_upgrade_with_compression/history_pk_str.sql
 %%DATADIR%%/%%ZABBIX_BUILD%%/database/postgresql/tsdb_history_pk_upgrade_with_compression/history_pk_text.sql
 %%DATADIR%%/%%ZABBIX_BUILD%%/database/postgresql/tsdb_history_pk_upgrade_with_compression/history_pk_uint.sql
-%%DATADIR%%/%%ZABBIX_BUILD%%/database/sqlite3/data.sql
-%%DATADIR%%/%%ZABBIX_BUILD%%/database/sqlite3/images.sql
 %%DATADIR%%/%%ZABBIX_BUILD%%/database/sqlite3/schema.sql
 @sample %%ETCDIR%%/zabbix_%%ZABBIX_BUILD%%.conf.sample
 %%PROXY%%bin/zabbix_proxy_js
