@@ -1,0 +1,33 @@
+PORTNAME=	lexbor
+DISTVERSIONPREFIX=	v
+DISTVERSION=	2.4.0
+CATEGORIES=	www
+
+MAINTAINER=	alster@vinterdalen.se
+COMMENT=	Modular web engine (HTML/CSS parser, renderer, ...)
+WWW=		https://lexbor.com/ \
+		https://github.com/lexbor/lexbor/
+
+LICENSE=	APACHE20
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+USES=		cmake:testing
+USE_GITHUB=	yes
+USE_LDCONFIG=	yes
+
+CMAKE_TESTING_ON=	BUILD_TESTING
+
+OPTIONS_DEFINE=		ASAN HEADERS SHARED STATIC
+OPTIONS_DEFAULT=	HEADERS SHARED STATIC
+OPTIONS_SUB=	yes
+
+ASAN_DESC=	Enable Address Sanitizer if possible
+HEADERS_DESC=	Install library headers (.h files)
+SHARED_DESC=	Create a shared library
+
+ASAN_CMAKE_BOOL=	LEXBOR_BUILD_WITH_ASAN
+HEADERS_CMAKE_BOOL=	LEXBOR_INSTALL_HEADERS
+SHARED_CMAKE_BOOL=	LEXBOR_BUILD_SHARED
+STATIC_CMAKE_BOOL=	LEXBOR_BUILD_STATIC
+
+.include <bsd.port.mk>
