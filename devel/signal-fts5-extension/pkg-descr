@@ -1,9 +1,0 @@
-Signal-FTS5-Extension is a C ABI library which exposes a FTS5 tokenizer function
-named signal_tokenizer that:
-
-  Segments UTF-8 strings into words according to Unicode standard
-  Normalizes and removes diacritics from words
-  Converts words to lower case
-
-When used as a custom FTS5 tokenizer this enables application to support CJK
-symbols in full-text search.

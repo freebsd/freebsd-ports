@@ -8081,7 +8081,6 @@
     SUBDIR += shtool
     SUBDIR += shunit2
     SUBDIR += sigar
-    SUBDIR += signal-fts5-extension
     SUBDIR += signal-sqlcipher-extension
     SUBDIR += sigslot
     SUBDIR += silc-toolkit

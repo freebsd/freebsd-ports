@@ -3726,3 +3726,4 @@ devel/rubygem-google-apis-compute_v1_057|devel/rubygem-google-apis-compute_v1-gi
 devel/rubygem-google-apis-sqladmin_v1beta4_041|devel/rubygem-google-apis-sqladmin_v1beta4-gitlab|2024-11-22|Renamed to devel/rubygem-google-apis-sqladmin_v1beta4-gitlab
 devel/rubygem-google-apis-androidpublisher_v3034|devel/rubygem-google-apis-androidpublisher_v3-gitlab|2024-11-22|Renamed to devel/rubygem-google-apis-androidpublisher_v3-gitlab
 textproc/rubygem-elasticsearch-model713|textproc/rubygem-elasticsearch-model-gitlab|2024-11-22|Renamed to textproc/rubygem-elasticsearch-model-gitlab
+devel/signal-fts5-extension||2024-11-22|No consumers left in the ports tree
