@@ -13,7 +13,8 @@ LICENSE=	ZLIB
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR} \
+		sqlite3>=${PORTVERSION:R},1:databases/sqlite3
 
 USES=		localbase python sqlite
 USE_PYTHON=	autoplist concurrent pep517 unittest
