@@ -8,7 +8,7 @@ DISTNAME=	r7organizer_pro-${PORTVERSION}${DISTVERSIONSUFFIX}
 EXTRACT_SUFX=	.x86_64.rpm
 
 MAINTAINER=	fluffy@FreeBSD.org
-COMMENT=	Russian office mail, tasks and contacts organizer
+COMMENT=	Russian office mail, tasks and contacts organizer (PRO version)
 WWW=		https://r7-office.ru/organizer
 
 LICENSE=	commercial
