@@ -1,3 +1,32 @@
+  <vuln vid="16e472d5-a8aa-11ef-b680-4ccc6adda413">
+    <topic>qt5-webengine -- Use after free in Serial</topic>
+    <affects>
+      <package>
+	<name>qt5-webengine</name>
+	<range><lt>5.15.18p5</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Qt qtwebengine-chromium repo reports:</p>
+	<blockquote cite="https://code.qt.io/cgit/qt/qtwebengine-chromium.git/log/?h=87-based">
+	  <p>Backports for 1 security bug in Chromium:</p>
+	  <ul>
+	    <li>CVE-2024-10827: Use after free in Serial</li>
+	  </ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2024-10827</cvename>
+      <url>https://code.qt.io/cgit/qt/qtwebengine-chromium.git/log/?h=87-based</url>
+    </references>
+    <dates>
+      <discovery>2024-10-24</discovery>
+      <entry>2024-11-22</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="141f2a22-a6a7-11ef-b282-0c9d92850f7a">
     <topic>xorg server -- _XkbSetCompatMap vulnerability</topic>
     <affects>
