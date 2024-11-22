@@ -9,7 +9,7 @@
  }
  
  declare_args() {
-@@ -251,13 +251,16 @@ config("default_include_dirs") {
+@@ -256,13 +256,16 @@ config("default_include_dirs") {
  # Compiler instrumentation can introduce dependencies in DSOs to symbols in
  # the executable they are loaded into, so they are unresolved at link-time.
  config("no_unresolved_symbols") {
@@ -27,7 +27,7 @@
  }
  
  # compiler ---------------------------------------------------------------------
-@@ -499,6 +502,10 @@ config("compiler") {
+@@ -508,6 +511,10 @@ config("compiler") {
      }
    }
  
@@ -38,16 +38,16 @@
    # Linux-specific compiler flags setup.
    # ------------------------------------
    if (use_icf && (!is_apple || use_lld)) {
-@@ -545,7 +552,7 @@ config("compiler") {
+@@ -561,7 +568,7 @@ config("compiler") {
      ldflags += [ "-Wl,-z,keep-text-section-prefix" ]
    }
  
--  if (is_clang && !is_nacl && current_os != "zos") {
-+  if (is_clang && !is_nacl && current_os != "zos" && !is_bsd) {
+-  if (is_clang && !is_nacl) {
++  if (is_clang && !is_nacl && !is_bsd) {
      cflags += [ "-fcrash-diagnostics-dir=" + clang_diagnostic_dir ]
      if (save_reproducers_on_lld_crash && use_lld) {
        ldflags += [
-@@ -1173,7 +1180,7 @@ config("compiler_cpu_abi") {
+@@ -1217,7 +1224,7 @@ config("compiler_cpu_abi") {
          ]
        }
      } else if (current_cpu == "arm") {
@@ -56,7 +56,7 @@
            !(is_chromeos_lacros && is_chromeos_device)) {
          cflags += [ "--target=arm-linux-gnueabihf" ]
          ldflags += [ "--target=arm-linux-gnueabihf" ]
-@@ -1188,7 +1195,7 @@ config("compiler_cpu_abi") {
+@@ -1232,7 +1239,7 @@ config("compiler_cpu_abi") {
          cflags += [ "-mtune=$arm_tune" ]
        }
      } else if (current_cpu == "arm64") {
@@ -65,7 +65,7 @@
            !(is_chromeos_lacros && is_chromeos_device)) {
          cflags += [ "--target=aarch64-linux-gnu" ]
          ldflags += [ "--target=aarch64-linux-gnu" ]
-@@ -1523,7 +1530,7 @@ config("compiler_deterministic") {
+@@ -1567,7 +1574,7 @@ config("compiler_deterministic") {
      # different build directory like "out/feature_a" and "out/feature_b" if
      # we build same files with same compile flag.
      # Other paths are already given in relative, no need to normalize them.
@@ -74,16 +74,25 @@
        # TODO(https://crbug.com/1231236): Use -ffile-compilation-dir= here.
        cflags += [
          "-Xclang",
-@@ -1575,7 +1582,7 @@ config("compiler_deterministic") {
+@@ -1625,7 +1632,7 @@ config("compiler_deterministic") {
  }
  
  config("clang_revision") {
--  if (is_clang && clang_base_path == default_clang_base_path) {
-+  if (is_clang && !is_bsd && clang_base_path == default_clang_base_path) {
+-  if (is_clang && clang_base_path == default_clang_base_path &&
++  if (is_clang && !is_bsd && clang_base_path == default_clang_base_path &&
+       current_os != "zos") {
      update_args = [
        "--print-revision",
-       "--verify-version=$clang_version",
-@@ -1889,9 +1896,6 @@ config("default_warnings") {
+@@ -1739,7 +1746,7 @@ config("runtime_library") {
+   # the C++ symbols. This config ensures the C++ symbols exist and are strong in
+   # order to cause that replacement to occur by explicitly linking in clang's
+   # compiler-rt library.
+-  if (is_clang && !is_nacl && !is_cronet_build) {
++  if (is_clang && !is_bsd && !is_nacl && !is_cronet_build) {
+     configs += [ "//build/config/clang:compiler_builtins" ]
+   }
+ 
+@@ -1955,9 +1962,6 @@ config("default_warnings") {
  
          # TODO(crbug.com/40286317): Evaluate and possibly enable.
          "-Wno-vla-extension",
@@ -93,7 +102,7 @@
        ]
  
        cflags_cc += [
-@@ -1899,7 +1903,7 @@ config("default_warnings") {
+@@ -1965,17 +1969,11 @@ config("default_warnings") {
          "-Wenum-compare-conditional",
        ]
  
@@ -102,7 +111,17 @@
          cflags_cc += [
            # TODO(crbug.com/41486292): Fix and re-enable.
            "-Wno-c++11-narrowing-const-reference",
-@@ -2616,7 +2620,7 @@ config("afdo_optimize_size") {
+         ]
+-
+-        # TODO(crbug.com/344680447): Fix and re-enable.
+-        cflags_cc += [ "-Wno-missing-template-arg-list-after-template-kw" ]
+-
+-        # TODO(crbug.com/356172342): Fix and re-enable.
+-        cflags_cc += [ "-Wno-dangling-assignment-gsl" ]
+       }
+     }
+ 
+@@ -2709,7 +2707,7 @@ config("afdo_optimize_size") {
  # There are some targeted places that AFDO regresses, so we provide a separate
  # config to allow AFDO to be disabled per-target.
  config("afdo") {
@@ -111,7 +130,7 @@
      cflags = []
      if (clang_emit_debug_info_for_profiling) {
        # Add the following flags to generate debug info for profiling.
-@@ -2643,7 +2647,7 @@ config("afdo") {
+@@ -2736,7 +2734,7 @@ config("afdo") {
        cflags += [ "-Wno-backend-plugin" ]
        inputs = [ _clang_sample_profile ]
      }
@@ -120,13 +139,12 @@
      cflags = [ "-fauto-profile=${auto_profile_path}" ]
      inputs = [ auto_profile_path ]
    }
-@@ -2808,7 +2812,8 @@ config("symbols") {
-     configs += [ "//build/config:compress_debug_sections" ]
+@@ -2913,7 +2911,7 @@ config("symbols") {
+     cflags += [ "-gomit-unreferenced-methods" ]
    }
  
--  if (is_clang && (!is_nacl || is_nacl_saigo) && current_os != "zos") {
-+  if (is_clang && (!is_nacl || is_nacl_saigo) && current_os != "zos" &&
-+      !is_bsd) {
+-  if (is_clang && (!is_nacl || is_nacl_saigo)) {
++  if (is_clang && (!is_nacl || is_nacl_saigo) && !is_bsd) {
      if (is_apple) {
        # TODO(crbug.com/40117949): Investigate missing debug info on mac.
        # Make sure we don't use constructor homing on mac.
