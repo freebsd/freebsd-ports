@@ -1,10 +1,10 @@
 PORTNAME=	hammer2
-PORTVERSION=	1.2.6
+PORTVERSION=	1.2.8
 DISTVERSIONPREFIX=	v
 CATEGORIES=	filesystems
 
 MAINTAINER=	tkusumi@netbsd.org
-COMMENT=	HAMMER2 file system for FreeBSD (read-only support)
+COMMENT=	HAMMER2 file system for FreeBSD (experimental write support)
 WWW=		https://github.com/kusumi/freebsd_hammer2
 
 LICENSE=	BSD3CLAUSE
