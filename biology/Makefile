@@ -156,6 +156,7 @@
     SUBDIR += picard-tools
     SUBDIR += plink
     SUBDIR += pooler
+    SUBDIR += preseq
     SUBDIR += primer3
     SUBDIR += prodigal
     SUBDIR += prodigy-lig
