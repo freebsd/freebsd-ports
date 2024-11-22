@@ -1,15 +1,13 @@
 --- node_modules/@signalapp/better-sqlite3/deps/sqlite3.gyp.orig	2022-07-02 14:34:04 UTC
 +++ node_modules/@signalapp/better-sqlite3/deps/sqlite3.gyp
-@@ -100,6 +100,15 @@
+@@ -90,6 +90,13 @@
              ]
            }
          },
 +        'OS == "freebsd"', {
 +          'link_settings': {
 +            'libraries': [
-+              # This statically links libcrypto, whereas -lcrypto would dynamically link it
-+              '/usr/local/lib/libcrypto.a',
-+              '/usr/local/lib/libsignal_tokenizer.a'
++              '/usr/local/lib/libsignal_sqlcipher_extension.a',
 +             ]
 +           }
 +         },

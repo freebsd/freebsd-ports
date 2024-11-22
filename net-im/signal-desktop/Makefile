@@ -1,6 +1,6 @@
 PORTNAME=	signal-desktop
 DISTVERSIONPREFIX=	v
-DISTVERSION=	7.31.0
+DISTVERSION=	7.34.0
 CATEGORIES=	net-im
 MASTER_SITES=	LOCAL/mikael/signal-desktop/:npm \
 		https://build-artifacts.signal.org/desktop/:sqlcipher
@@ -23,7 +23,7 @@ EXTRACT_DEPENDS=jq:textproc/jq \
 BUILD_DEPENDS=	${LOCALBASE}/lib/libcrypto.a:security/openssl \
 		${LOCALBASE}/lib/libringrtc.so:multimedia/ringrtc \
 		${LOCALBASE}/lib/libsignal_node.so:net-im/libsignal-node \
-		${LOCALBASE}/lib/libsignal_tokenizer.a:devel/signal-fts5-extension \
+		${LOCALBASE}/lib/libsignal_sqlcipher_extension.a:devel/signal-sqlcipher-extension \
 		app-builder>0:devel/app-builder \
 		electron${ELECTRON_VER_MAJOR}:devel/electron${ELECTRON_VER_MAJOR} \
 		esbuild:devel/esbuild \
@@ -86,10 +86,10 @@ MAKE_ENV+=	ESBUILD_BINARY_PATH=${LOCALBASE}/bin/esbuild
 
 _BUILD_DATE=	$$(date +'%s')
 
-ELECTRON_VER_MAJOR=	30
+ELECTRON_VER_MAJOR=	32
 ESBUILD_VERSION=	0.21.2
 
-SQLCIPHER=	sqlcipher-4.6.1--3.0.7--0.2.1-7c30de8bcb5d21127803f5ab19a097e1b508d05744aca3ac6166352506b5f451
+SQLCIPHER=	sqlcipher-v2-4.6.1-signal-patch2--0.2.0-b0dbebe5b2d81879984bfa2318ba364fb4d436669ddc1668d2406eaaaee40b7e
 
 NODE_ARCH=	${ARCH:S/aarch64/arm64/:S/amd64/x64/}
 APP_OUT_DIR=	linux-${ARCH:S/aarch64/arm64-/:S/amd64//}unpacked
@@ -125,8 +125,8 @@ post-extract:
 		${SETENV} ${MAKE_ENV} npm install --ignore-optional --ignore-scripts --offline || ${TRUE}
 
 do-build:
-# electron-builder is stupid and tries to open ${LOCALBASE}/share/electron30/electron with WRITE priv
-# copy ${LOCALBASE}/share/electron30 in WRKDIR
+# electron-builder is stupid and tries to open ${LOCALBASE}/share/electron32/electron with WRITE priv
+# copy ${LOCALBASE}/share/electron32 in WRKDIR
 # it's needed for the do-install phase, it's here because of this issue
 # https://github.com/MikaelUrankar/signal-desktop/issues/6 (I don't know why it fails though)
 	@${RM} -r ${WRKDIR}/electron${ELECTRON_VER_MAJOR}

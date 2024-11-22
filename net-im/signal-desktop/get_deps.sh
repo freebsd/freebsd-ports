@@ -1,5 +1,5 @@
 #!/bin/sh
-SIGNAL_VERS=v7.31.0
+SIGNAL_VERS=v7.34.0
 
 fetch -qo /tmp/package.json https://raw.githubusercontent.com/signalapp/Signal-Desktop/${SIGNAL_VERS}/package.json
 node_version=$(awk /'"node":'/'{print $2}' /tmp/package.json | sed 's/"//g')
@@ -23,10 +23,8 @@ fetch -qo /tmp/download.js https://raw.githubusercontent.com/signalapp/better-sq
 BASE_URI=https://build-artifacts.signal.org/desktop
 HASH=$(awk /"HASH ="/'{print $4}' /tmp/download.js | sed -e 's#;##g' -e "s#'##g")
 SQLCIPHER_VERSION=$(awk /"SQLCIPHER_VERSION ="/'{print $4}' /tmp/download.js | sed -e 's#;##g' -e "s#'##g")
-OPENSSL_VERSION=$(awk /"OPENSSL_VERSION ="/'{print $4}' /tmp/download.js | sed -e 's#;##g' -e "s#'##g")
-TOKENIZER_VERSION=$(awk /"TOKENIZER_VERSION ="/'{print $4}' /tmp/download.js | sed -e 's#;##g' -e "s#'##g")
-TAG="${SQLCIPHER_VERSION}--${OPENSSL_VERSION}--${TOKENIZER_VERSION}"
-echo "Signal-FTS5-Extension= ${TOKENIZER_VERSION}"
-echo "SQLCIPHER=sqlcipher-${TAG}-${HASH}" | portedit merge -i Makefile
-
-echo "fetch https://build-artifacts.signal.org/desktop/sqlcipher-${TAG}-${HASH}.tar.gz"
+SQLCIPHER_VERSION=$(awk /"SQLCIPHER_VERSION ="/'{print $4}' /tmp/download.js | sed -e 's#;##g' -e "s#'##g")
+EXTENSION_VERSION=$(awk /"EXTENSION_VERSION ="/'{print $4}' /tmp/download.js | sed -e 's#;##g' -e "s#'##g")
+TAG="${SQLCIPHER_VERSION}--${EXTENSION_VERSION}"
+echo "SQLCIPHER=sqlcipher-v2-${TAG}-${HASH}" | portedit merge -i Makefile
+echo "SQLCIPHER=sqlcipher-v2-${TAG}-${HASH}" | portedit merge -i Makefile.online
