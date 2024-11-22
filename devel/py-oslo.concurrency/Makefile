@@ -25,4 +25,9 @@ USE_PYTHON=	autoplist concurrent pep517
 
 NO_ARCH=	yes
 
+OPTIONS_DEFINE=	EVENTLET
+EVENTLET_DESC=	Concurrent support via eventlet
+
+EVENTLET_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}eventlet>=0.27.0:net/py-eventlet@${PY_FLAVOR}
+
 .include <bsd.port.mk>
