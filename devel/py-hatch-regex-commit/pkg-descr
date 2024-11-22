@@ -1,0 +1,2 @@
+hatch-regex-commit provides a plugin for Hatch that automatically creates a Git
+commit and tag after version bumping.
