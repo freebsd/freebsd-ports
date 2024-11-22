@@ -1,6 +1,6 @@
 PORTNAME=	htmldoc
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.9.18
+DISTVERSION=	1.9.19
 CATEGORIES=	textproc
 
 MAINTAINER=	fuz@FreeBSD.org
@@ -16,7 +16,7 @@ LIB_DEPENDS=	libcups.so:print/cups \
 		libpng16.so:graphics/png
 
 USES=		compiler:c11 cpe jpeg pkgconfig
-CPE_VENDOR=	${PORTNAME}_project
+CPE_VENDOR=	htmldoc_project
 USE_GITHUB=	yes
 GH_ACCOUNT=	michaelrsweet
 
