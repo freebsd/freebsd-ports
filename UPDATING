@@ -5,6 +5,24 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20241122
+  AFFECTS: users of databases/couchdb3
+  AUTHOR: dch@FreeBSD.org
+
+  Users who installed or upgraded to CouchDB 3.3.3 *after* 2024-09-30, and
+  who are also running 14.1-RELEASE or newer, will hit a nasty corruption bug,
+  causing all CPUs to lock up, possibly crashing, and generating a lot of
+  errors in log files.
+
+  This bug is caused by corrupt docs after decompression, due to a clash
+  between improved compiler optimisations in clang18, and a bug in snappy
+  itself. Given the above symptoms, all affected users will have noticed.
+
+  Upgrade to 3.4.2 in ports, to resolve this issue.
+
+  Please read more about this issue here:
+  https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=282217
+
 20241115
   AFFECTS: users of filesystems/zrepl-dsh2dsh
   AUTHOR: dsh@bamus.cz

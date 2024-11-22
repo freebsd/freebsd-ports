@@ -1,6 +1,5 @@
 PORTNAME=	couchdb3
-DISTVERSION=	3.3.3
-PORTREVISION=	1
+DISTVERSION=	3.4.2
 CATEGORIES=	databases
 MASTER_SITES=	APACHE/couchdb/source/${DISTVERSION}
 DISTNAME=	apache-couchdb-${DISTVERSION}
@@ -16,7 +15,6 @@ BUILD_DEPENDS=	erlang-runtime${_ERLVER}>=${_ERLVER}.0:lang/erlang-runtime${_ERLV
 		rebar:devel/rebar
 LIB_DEPENDS=	libicudata.so:devel/icu \
 		libmozjs-91.so:lang/spidermonkey91
-RUN_DEPENDS=	erlang-runtime${_ERLVER}>=${_ERLVER}.0:lang/erlang-runtime${_ERLVER}
 
 USES=		compiler:c++17-lang cpe gmake libtool ncurses
 CPE_VENDOR=	apache
@@ -51,7 +49,7 @@ OPTIONS_SUB=	yes
 
 _APPDIR=	${LOCALBASE}/libexec/${PORTNAME}
 _DBDIR?=	/var/db/${PORTNAME}
-_ERLVER?=	25
+_ERLVER?=	26
 _LOGDIR?=	/var/log/${PORTNAME}
 _LOGFILE?=	${_LOGDIR}/couch.log
 _RELDIR=	${_APPDIR}/releases/${DISTVERSION}
@@ -83,40 +81,48 @@ post-patch:
 .endif
 
 pre-install:
+# prune build artefacts and surplus headers
+	${FIND} -E ${WRKSRC} -type f \
+		-regex '.*\.(a|buildinfo|c|cc|cmd|d|o|orig|h|cpp)' -print -delete
+
+do-install:
 # relocate user-modifiable runtime configs to match hier(7)
-	${MKDIR} ${STAGEDIR}${ETCDIR}
+	${MKDIR} ${STAGEDIR}${ETCDIR} ${STAGEDIR}${PREFIX}/libexec/${PORTNAME}
 	${INSTALL_DATA} ${WRKSRC}/rel/couchdb/etc/local.ini \
 		${STAGEDIR}${ETCDIR}/local.ini.sample
 	${INSTALL_DATA} ${WRKSRC}/rel/couchdb/etc/vm.args \
 		${STAGEDIR}${ETCDIR}/vm.args.sample
 	${INSTALL_MAN} ${WRKSRC}/share/docs/man/apachecouchdb.1 \
 		${STAGEDIR}${PREFIX}/share/man/man1
-# prune build artefacts and surplus headers
-	${FIND} -E ${WRKSRC} -type f \
-		-regex '.*\.(a|buildinfo|c|cc|cmd|d|o|orig|h|cpp)' -print -delete
-	@${CP} ${WRKSRC}/src/docs/images/favicon.ico ${WRKSRC}/share/www/
+	${CP} ${WRKSRC}/src/docs/images/favicon.ico ${WRKSRC}/share/www/
 # remove runtime dirs and files that were moved to match hier(7)
 	${RM} -rv \
+		${WRKSRC}/rel/couchdb/erts-*/include \
+		${WRKSRC}/rel/couchdb/erts-*/src \
 		${WRKSRC}/rel/couchdb/etc/*.d \
 		${WRKSRC}/rel/couchdb/etc/local.ini \
 		${WRKSRC}/rel/couchdb/etc/vm.args \
-		${WRKSRC}/rel/couchdb/lib/couch-*/priv/couch*js \
+		${WRKSRC}/rel/couchdb/lib/couch-*/priv/couch_js/1.8.5 \
+		${WRKSRC}/rel/couchdb/lib/couch-*/priv/couch_js/60 \
+		${WRKSRC}/rel/couchdb/lib/couch-*/priv/couch_js/68 \
+		${WRKSRC}/rel/couchdb/lib/couch-*/priv/couch_js/86 \
+		${WRKSRC}/rel/couchdb/lib/couch-*/priv/priv/couchjs \
 		${WRKSRC}/rel/couchdb/releases/*/vm.args \
 		${WRKSRC}/rel/couchdb/share/docs \
 		${WRKSRC}/rel/couchdb/share/www \
 		${WRKSRC}/rel/couchdb/var
 	(cd ${WRKSRC}/rel/couchdb && ${COPYTREE_SHARE} . ${STAGEDIR}${_APPDIR})
-
+	${INSTALL_PROGRAM} ${WRKSRC}/rel/couchdb/bin/couchjs ${STAGEDIR}${_APPDIR}/bin/
+# fauxton UI is a required component
+	(cd ${WRKSRC}/share/www && ${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR})
 post-install:
 	@${FIND} -E ${STAGEDIR} -type f \
-		\( -name couchjs -o -name *.so \) \
+		\( -name couchjs* -o -name *.so \) \
 		-exec ${STRIP_CMD} {} +
 	@${MKDIR} \
 		${STAGEDIR}${_DBDIR} \
 		${STAGEDIR}${_LOGDIR} \
 		${STAGEDIR}${_RUNDIR}
-# fauxton UI is a required component
-	(cd ${WRKSRC}/share/www && ${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR})
 
 post-install-DOCS-on:
 	(cd ${WRKSRC}/share/docs/html && ${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR}/docs)
