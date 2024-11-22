@@ -1,7 +1,6 @@
 PORTNAME=	far2l
-PORTVERSION=	2.6.3
+PORTVERSION=	2.6.4
 DISTVERSIONPREFIX=	v_
-PORTREVISION=	1
 CATEGORIES=	misc
 
 MAINTAINER=	danfe@FreeBSD.org
@@ -11,15 +10,15 @@ WWW=		https://github.com/elfmz/far2l
 LICENSE=	GPLv2
 
 LIB_DEPENDS=	libpcre.so:devel/pcre \
-		libuchardet.so:textproc/uchardet \
-		libxerces-c.so:textproc/xerces-c3
+		libuchardet.so:textproc/uchardet
 RUN_DEPENDS=	bash:shells/bash
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	elfmz
 
-USES=		cmake compiler:c++11-lang libarchive perl5 pkgconfig \
-		shebangfix ssl
+USES=		cmake compiler:c++11-lang desktop-file-utils gnome \
+		libarchive perl5 pkgconfig shebangfix ssl
+USE_GNOME=	libxml2
 USE_PERL5=	build
 SHEBANG_FILES=	far2l/bootstrap/view.sh
 
@@ -52,12 +51,15 @@ post-patch:
 	@${REINPLACE_CMD} -e \
 		's,pkg_search_module\(([[:alpha:]]*\)[^)]*,find_package\1,' \
 			${WRKSRC}/CMakeLists.txt
-	@${REINPLACE_CMD} -e 's,^if (fmt_FOUND,& AND FALSE,' \
-		${WRKSRC}/colorer/CMakeLists.txt
 	@${GREP} -Rl --null --include=\*.cpp /bin/bash ${WRKSRC} | ${XARGS} \
 		-0 ${REINPLACE_CMD} -e 's,/bin/bash,${LOCALBASE}&,'
+	@${REINPLACE_CMD} -e '/SetBackgroundColour/ { x; \
+		s|^|SetIcon(wxIcon(wxStandardPaths::Get().GetInstallPrefix()\
+		+ "/share/icons/far2l.svg", wxBITMAP_TYPE_ICO));|; H; x; }' \
+			${WRKSRC}/WinPort/src/Backend/WX/wxMain.cpp
 
 post-stage:
 	${RMDIR} ${STAGEDIR}${PREFIX}/lib/far2l/Plugins/NetRocks/plug/SHELL
+	${RM} ${STAGEDIR}${DATADIR}/wslgclip.*
 
 .include <bsd.port.mk>
