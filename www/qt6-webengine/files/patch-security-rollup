@@ -1,0 +1,971 @@
+Security fixes applied to the 118-based branch [1] after Qt 6.7.3 release.
+
+Includes fixes between [2] and [3].
+
+[1] https://code.qt.io/cgit/qt/qtwebengine-chromium.git/log/chromium?h=118-based
+[2] https://code.qt.io/cgit/qt/qtwebengine-chromium.git/commit/chromium?h=118-based&id=45bdfbd7721749beea9abd18467465e4c9026559
+[3] https://code.qt.io/cgit/qt/qtwebengine-chromium.git/commit/chromium?h=118-based&id=c30894bf867630a8ffcb56c8817c00f3d673f370
+
+diff --git a/chromium/base/mac/wrap_cg_display.h b/chromium/base/mac/wrap_cg_display.h
+index a579ef1a900..8645627a3a1 100644
+--- src/3rdparty/chromium/base/mac/wrap_cg_display.h
++++ src/3rdparty/chromium/base/mac/wrap_cg_display.h
+@@ -12,6 +12,11 @@
+ 
+ #include <CoreGraphics/CoreGraphics.h>
+ 
++// Build fix for macOS SDK 15 and newer
++#if !defined(CG_AVAILABLE_BUT_DEPRECATED)
++#define CG_AVAILABLE_BUT_DEPRECATED(a,b,c)
++#endif
++
+ inline CGDisplayStreamRef __nullable wrapCGDisplayStreamCreate(
+     CGDirectDisplayID display,
+     size_t outputWidth,
+diff --git a/chromium/base/metrics/field_trial.cc b/chromium/base/metrics/field_trial.cc
+index 2b67eb59ba1..81243e649e8 100644
+--- src/3rdparty/chromium/base/metrics/field_trial.cc
++++ src/3rdparty/chromium/base/metrics/field_trial.cc
+@@ -1020,7 +1020,7 @@ std::string FieldTrialList::SerializeSharedMemoryRegionMetadata(
+   // Tell the child process the name of the inherited HANDLE.
+   uintptr_t uintptr_handle =
+       reinterpret_cast<uintptr_t>(shm.GetPlatformHandle());
+-  ss << uintptr_handle << ",";
++  ss << NumberToString(uintptr_handle) << ",";
+   if (launch_options->elevated) {
+     // Tell the child that it must open its parent and grab the handle.
+     ss << "p,";
+@@ -1061,8 +1061,8 @@ std::string FieldTrialList::SerializeSharedMemoryRegionMetadata(
+ #endif
+ 
+   UnguessableToken guid = shm.GetGUID();
+-  ss << guid.GetHighForSerialization() << "," << guid.GetLowForSerialization();
+-  ss << "," << shm.GetSize();
++  ss << NumberToString(guid.GetHighForSerialization()) << "," << NumberToString(guid.GetLowForSerialization());
++  ss << "," << NumberToString(shm.GetSize());
+   return ss.str();
+ }
+ 
+diff --git a/chromium/base/trace_event/trace_event_etw_export_win.cc b/chromium/base/trace_event/trace_event_etw_export_win.cc
+index 04e2ab0b350..26f6b168373 100644
+--- src/3rdparty/chromium/base/trace_event/trace_event_etw_export_win.cc
++++ src/3rdparty/chromium/base/trace_event/trace_event_etw_export_win.cc
+@@ -426,8 +426,8 @@ bool TraceEventETWExport::IsCategoryGroupEnabled(
+   if (!instance->etw_provider_->IsEnabled())
+     return false;
+ 
+-  CStringTokenizer category_group_tokens(&*category_group_name.begin(),
+-                                         &*category_group_name.end(), ",");
++  CStringTokenizer category_group_tokens(category_group_name.data(),
++      category_group_name.data() + category_group_name.size(), ",");
+   while (category_group_tokens.GetNext()) {
+     StringPiece category_group_token = category_group_tokens.token_piece();
+     if (instance->IsCategoryEnabled(category_group_token)) {
+diff --git a/chromium/components/viz/service/gl/gpu_service_impl.cc b/chromium/components/viz/service/gl/gpu_service_impl.cc
+index 0156b748c38..bed248728cc 100644
+--- src/3rdparty/chromium/components/viz/service/gl/gpu_service_impl.cc
++++ src/3rdparty/chromium/components/viz/service/gl/gpu_service_impl.cc
+@@ -143,12 +143,6 @@ namespace viz {
+ 
+ namespace {
+ 
+-// Whether to crash the GPU service on context loss when running in-process with
+-// ANGLE.
+-BASE_FEATURE(kCrashOnInProcessANGLEContextLoss,
+-             "CrashOnInProcessANGLEContextLoss",
+-             base::FEATURE_DISABLED_BY_DEFAULT);
+-
+ // The names emitted for GPU initialization trace events.
+ // This code may be removed after the following investigation:
+ // crbug.com/1350257
+@@ -671,16 +665,6 @@ void GpuServiceImpl::InitializeWithHost(
+   // initialized.
+   gl::DirectCompositionOverlayCapsMonitor::GetInstance()->AddObserver(this);
+ #endif
+-
+-  if (in_host_process() &&
+-      gpu_channel_manager_->use_passthrough_cmd_decoder()) {
+-    // Check `kCrashOnInProcessANGLEContextLoss` to ensure registration within
+-    // the experiment - the check done at the time of MaybeExitOnContextLost()
+-    // doesn't cause clients in the enabled arm to become registered in the
+-    // experiment due to it being followed by an immediate crash.
+-    [[maybe_unused]] bool unused =
+-        base::FeatureList::IsEnabled(kCrashOnInProcessANGLEContextLoss);
+-  }
+ }
+ 
+ void GpuServiceImpl::Bind(
+@@ -1063,24 +1047,6 @@ void GpuServiceImpl::MaybeExitOnContextLost(
+   DCHECK(main_runner_->BelongsToCurrentThread());
+ 
+   if (in_host_process()) {
+-    // When running with ANGLE, crash on a backend context loss if
+-    // `kCrashOnInProcessANGLEContextLoss` is enabled. This enables evaluation
+-    // of the hypothesis that as ANGLE is currently unable to recover from
+-    // context loss when running within Chrome, it is better to crash in this
+-    // case than enter into a loop of context loss events leading to undefined
+-    // behavior. Note that it *is* possible to recover from a context loss
+-    // event that was generated by Chrome rather than being due to an actual
+-    // backend context loss. In general, this is context losses where
+-    // `synthetic_loss is true - the one exception is if `context_lost_reason`
+-    // is `kMakeCurrentFailed`, which we regard as an unrecoverable context
+-    // loss even though `synthetic_loss` will be set to true.
+-    if (gpu_channel_manager_->use_passthrough_cmd_decoder() &&
+-        (!synthetic_loss ||
+-         context_lost_reason == gpu::error::kMakeCurrentFailed) &&
+-        base::FeatureList::IsEnabled(kCrashOnInProcessANGLEContextLoss)) {
+-      CHECK(false);
+-    }
+-
+     // We can't restart the GPU process when running in the host process;
+     // instead, just hope for recovery from the context loss.
+     return;
+diff --git a/chromium/content/browser/renderer_host/navigation_controller_impl.cc b/chromium/content/browser/renderer_host/navigation_controller_impl.cc
+index db818eb83e9..084fd00eeae 100644
+--- src/3rdparty/chromium/content/browser/renderer_host/navigation_controller_impl.cc
++++ src/3rdparty/chromium/content/browser/renderer_host/navigation_controller_impl.cc
+@@ -1826,6 +1826,7 @@ void NavigationControllerImpl::UpdateNavigationEntryDetails(
+       params.method, params.post_id, nullptr /* blob_url_loader_factory */,
+       ComputePolicyContainerPoliciesForFrameEntry(
+           rfh, request && request->IsSameDocument(),
++          request ? request->DidEncounterError() : false,
+           request ? request->common_params().url : params.url));
+ 
+   if (rfh->GetParent()) {
+@@ -2288,6 +2289,7 @@ void NavigationControllerImpl::RendererDidNavigateNewSubframe(
+   }
+   std::unique_ptr<PolicyContainerPolicies> policy_container_policies =
+       ComputePolicyContainerPoliciesForFrameEntry(rfh, is_same_document,
++                                                  request->DidEncounterError(),
+                                                   request->GetURL());
+   bool protect_url_in_navigation_api = false;
+   if (is_same_document) {
+@@ -4474,7 +4476,14 @@ std::unique_ptr<PolicyContainerPolicies>
+ NavigationControllerImpl::ComputePolicyContainerPoliciesForFrameEntry(
+     RenderFrameHostImpl* rfh,
+     bool is_same_document,
++    bool navigation_encountered_error,
+     const GURL& url) {
++  if (navigation_encountered_error) {
++    // We should never reload the policy container of an error page from
++    // history, see https://crbug.com/364773822.
++    return nullptr;
++  }
++
+   if (is_same_document) {
+     DCHECK(GetLastCommittedEntry());
+     FrameNavigationEntry* previous_frame_entry =
+diff --git a/chromium/content/browser/renderer_host/navigation_controller_impl.h b/chromium/content/browser/renderer_host/navigation_controller_impl.h
+index ba9be480a81..987963d4bf4 100644
+--- src/3rdparty/chromium/content/browser/renderer_host/navigation_controller_impl.h
++++ src/3rdparty/chromium/content/browser/renderer_host/navigation_controller_impl.h
+@@ -835,6 +835,7 @@ class CONTENT_EXPORT NavigationControllerImpl : public NavigationController {
+   std::unique_ptr<PolicyContainerPolicies>
+   ComputePolicyContainerPoliciesForFrameEntry(RenderFrameHostImpl* rfh,
+                                               bool is_same_document,
++                                              bool navigation_encountered_error,
+                                               const GURL& url);
+ 
+   // Adds details from a committed navigation to `entry` and the
+diff --git a/chromium/gpu/config/software_rendering_list.json b/chromium/gpu/config/software_rendering_list.json
+index a2f6aa5f2cf..0878fb2599e 100644
+--- src/3rdparty/chromium/gpu/config/software_rendering_list.json
++++ src/3rdparty/chromium/gpu/config/software_rendering_list.json
+@@ -1396,23 +1396,6 @@
+         "accelerated_webgl2"
+       ]
+     },
+-    {
+-      "id": 158,
+-      "description": "Canvas rendering issues with Intel drivers on Windows since 94-based: https://bugreports.qt.io/browse/QTBUG-104065",
+-      "cr_bugs": [1316442],
+-      "os": {
+-        "type": "win"
+-      },
+-      "exceptions": [
+-        {
+-          "gl_renderer": "ANGLE.*"
+-        }
+-      ],
+-      "vendor_id": "0x8086",
+-      "features": [
+-        "accelerated_2d_canvas"
+-      ]
+-    },
+     {
+       "id": 159,
+       "cr_bugs": [902247],
+diff --git a/chromium/third_party/blink/renderer/core/dom/element_rare_data_vector.cc b/chromium/third_party/blink/renderer/core/dom/element_rare_data_vector.cc
+index 5680187326b..66abc46ca6a 100644
+--- src/3rdparty/chromium/third_party/blink/renderer/core/dom/element_rare_data_vector.cc
++++ src/3rdparty/chromium/third_party/blink/renderer/core/dom/element_rare_data_vector.cc
+@@ -45,12 +45,21 @@ ElementRareDataVector::~ElementRareDataVector() {
+ unsigned ElementRareDataVector::GetFieldIndex(FieldId field_id) const {
+   unsigned field_id_int = static_cast<unsigned>(field_id);
+   DCHECK(fields_bitfield_ & (static_cast<BitfieldType>(1) << field_id_int));
+-#ifdef _MSC_VER
+-  return __popcnt(fields_bitfield_ &
+-                            ~(~static_cast<BitfieldType>(0) << field_id_int));
+-#else
++#if defined(__GNUC__) || defined(__clang__)
+   return __builtin_popcount(fields_bitfield_ &
+                             ~(~static_cast<BitfieldType>(0) << field_id_int));
++#elif _MSVC_LANG >= 202002L // C++20
++  return std::popcount(fields_bitfield_ &
++                       ~(~static_cast<BitfieldType>(0) << field_id_int));
++#else
++    uint32_t v = (fields_bitfield_ &
++                  ~(~static_cast<BitfieldType>(0) << field_id_int));
++    uint32_t c = v - ((v >> 1) & 0x55555555);
++    c = ((c >> 2) & 0x33333333) + (c & 0x33333333);
++    c = ((c >> 4) + c) & 0x0F0F0F0F;
++    c = ((c >> 8) + c) & 0x00FF00FF;
++    c = ((c >> 16) + c) & 0x0000FFFF;
++    return c;
+ #endif
+ }
+ 
+diff --git a/chromium/third_party/blink/renderer/core/loader/modulescript/module_script_loader.cc b/chromium/third_party/blink/renderer/core/loader/modulescript/module_script_loader.cc
+index e6138a68698..1bd0a69801d 100644
+--- src/3rdparty/chromium/third_party/blink/renderer/core/loader/modulescript/module_script_loader.cc
++++ src/3rdparty/chromium/third_party/blink/renderer/core/loader/modulescript/module_script_loader.cc
+@@ -116,11 +116,18 @@ void ModuleScriptLoader::FetchInternal(
+   url_ = module_request.Url();
+ #endif
+ 
++  DOMWrapperWorld& request_world = modulator_->GetScriptState()->World();
++  // Prevents web service workers from intercepting isolated world dynamic
++  // script imports requests and responding with different contents.
++  // TODO(crbug.com/1296102): Link to documentation that describes the criteria
++  // where module imports are handled by service worker fetch handler.
++  resource_request.SetSkipServiceWorker(request_world.IsIsolatedWorld());
++
+   // <spec step="5">... destination is destination, ...</spec>
+   resource_request.SetRequestContext(module_request.ContextType());
+   resource_request.SetRequestDestination(module_request.Destination());
+ 
+-  ResourceLoaderOptions options(&modulator_->GetScriptState()->World());
++  ResourceLoaderOptions options(&request_world);
+ 
+   // <spec step="7">Set up the module script request given request and
+   // options.</spec>
+diff --git a/chromium/third_party/blink/renderer/core/paint/sparse_vector.h b/chromium/third_party/blink/renderer/core/paint/sparse_vector.h
+index 983d49f249e..ebc1c2a17bc 100644
+--- src/3rdparty/chromium/third_party/blink/renderer/core/paint/sparse_vector.h
++++ src/3rdparty/chromium/third_party/blink/renderer/core/paint/sparse_vector.h
+@@ -108,10 +108,18 @@ class CORE_EXPORT SparseVector {
+     // Then count the total population of field IDs lower than that one we
+     // are looking for. The target field ID should be located at the index of
+     // of the total population.
+-#ifdef _MSC_VER
+-    return __popcnt(fields_bitfield_ & mask);
+-#else
++#if defined(__GNUC__) || defined(__clang__)
+     return __builtin_popcount(fields_bitfield_ & mask);
++#elif _MSVC_LANG >= 202002L // C++20
++    return std::popcount(fields_bitfield_ & mask);
++#else
++    uint32_t v = (fields_bitfield_ & mask);
++    uint32_t c = v - ((v >> 1) & 0x55555555);
++    c = ((c >> 2) & 0x33333333) + (c & 0x33333333);
++    c = ((c >> 4) + c) & 0x0F0F0F0F;
++    c = ((c >> 8) + c) & 0x00FF00FF;
++    c = ((c >> 16) + c) & 0x0000FFFF;
++    return c;
+ #endif
+   }
+ 
+diff --git a/chromium/third_party/blink/renderer/modules/serial/serial_port_underlying_sink.cc b/chromium/third_party/blink/renderer/modules/serial/serial_port_underlying_sink.cc
+index 136f27f1ab0..97bb637e329 100644
+--- src/3rdparty/chromium/third_party/blink/renderer/modules/serial/serial_port_underlying_sink.cc
++++ src/3rdparty/chromium/third_party/blink/renderer/modules/serial/serial_port_underlying_sink.cc
+@@ -266,4 +266,10 @@ void SerialPortUnderlyingSink::PipeClosed() {
+   abort_handle_.Clear();
+ }
+ 
++void SerialPortUnderlyingSink::Dispose() {
++  // Ensure that `watcher_` is disarmed so that `OnHandleReady()` is not called
++  // after this object becomes garbage.
++  PipeClosed();
++}
++
+ }  // namespace blink
+diff --git a/chromium/third_party/blink/renderer/modules/serial/serial_port_underlying_sink.h b/chromium/third_party/blink/renderer/modules/serial/serial_port_underlying_sink.h
+index 0b2070f01aa..a3ff78fc45c 100644
+--- src/3rdparty/chromium/third_party/blink/renderer/modules/serial/serial_port_underlying_sink.h
++++ src/3rdparty/chromium/third_party/blink/renderer/modules/serial/serial_port_underlying_sink.h
+@@ -20,6 +20,8 @@ class SerialPort;
+ class WritableStreamDefaultController;
+ 
+ class SerialPortUnderlyingSink final : public UnderlyingSinkBase {
++  USING_PRE_FINALIZER(SerialPortUnderlyingSink, Dispose);
++
+  public:
+   SerialPortUnderlyingSink(SerialPort*, mojo::ScopedDataPipeProducerHandle);
+ 
+@@ -46,6 +48,7 @@ class SerialPortUnderlyingSink final : public UnderlyingSinkBase {
+   void OnFlushOrDrain();
+   void WriteData();
+   void PipeClosed();
++  void Dispose();
+ 
+   mojo::ScopedDataPipeProducerHandle data_pipe_;
+   mojo::SimpleWatcher watcher_;
+diff --git a/chromium/third_party/blink/renderer/modules/serial/serial_port_underlying_source.cc b/chromium/third_party/blink/renderer/modules/serial/serial_port_underlying_source.cc
+index 1f4440001bf..c7d17260ddb 100644
+--- src/3rdparty/chromium/third_party/blink/renderer/modules/serial/serial_port_underlying_source.cc
++++ src/3rdparty/chromium/third_party/blink/renderer/modules/serial/serial_port_underlying_source.cc
+@@ -225,4 +225,10 @@ void SerialPortUnderlyingSource::Close() {
+   data_pipe_.reset();
+ }
+ 
++void SerialPortUnderlyingSource::Dispose() {
++  // Ensure that `watcher_` is disarmed so that `OnHandleReady()` is not called
++  // after this object becomes garbage.
++  Close();
++}
++
+ }  // namespace blink
+diff --git a/chromium/third_party/blink/renderer/modules/serial/serial_port_underlying_source.h b/chromium/third_party/blink/renderer/modules/serial/serial_port_underlying_source.h
+index 2ca0f471f54..eed40684716 100644
+--- src/3rdparty/chromium/third_party/blink/renderer/modules/serial/serial_port_underlying_source.h
++++ src/3rdparty/chromium/third_party/blink/renderer/modules/serial/serial_port_underlying_source.h
+@@ -11,6 +11,7 @@
+ #include "third_party/blink/renderer/bindings/core/v8/script_value.h"
+ #include "third_party/blink/renderer/core/execution_context/execution_context_lifecycle_observer.h"
+ #include "third_party/blink/renderer/core/streams/underlying_byte_source_base.h"
++#include "third_party/blink/renderer/platform/heap/prefinalizer.h"
+ 
+ namespace blink {
+ 
+@@ -20,6 +21,8 @@ class SerialPort;
+ 
+ class SerialPortUnderlyingSource : public UnderlyingByteSourceBase,
+                                    ExecutionContextLifecycleObserver {
++ USING_PRE_FINALIZER(SerialPortUnderlyingSource, Dispose);
++
+  public:
+   SerialPortUnderlyingSource(ScriptState*,
+                              SerialPort*,
+@@ -46,6 +49,7 @@ class SerialPortUnderlyingSource : public UnderlyingByteSourceBase,
+   void OnFlush(ScriptPromiseResolver*);
+   void PipeClosed();
+   void Close();
++  void Dispose();
+ 
+   // TODO(crbug.com/1457493) : Remove when debugging is done.
+   MojoResult invalid_data_pipe_read_result_ = MOJO_RESULT_OK;
+diff --git a/chromium/third_party/dawn/src/tint/lang/wgsl/resolver/validator.cc b/chromium/third_party/dawn/src/tint/lang/wgsl/resolver/validator.cc
+index 42f7e840d1d..78e83769803 100644
+--- src/3rdparty/chromium/third_party/dawn/src/tint/lang/wgsl/resolver/validator.cc
++++ src/3rdparty/chromium/third_party/dawn/src/tint/lang/wgsl/resolver/validator.cc
+@@ -518,6 +518,22 @@ bool Validator::AddressSpaceLayout(const core::type::Type* store_ty,
+                     return false;
+                 }
+             }
++
++            // If an alignment was explicitly specified, we need to validate that it satisfies the
++            // alignment requirement of the address space.
++            auto* align_attr =
++                ast::GetAttribute<ast::StructMemberAlignAttribute>(m->Declaration()->attributes);
++            if (align_attr && !enabled_extensions_.Contains(
++                                  wgsl::Extension::kChromiumInternalRelaxedUniformLayout)) {
++                auto align = sem_.GetVal(align_attr->expr)->ConstantValue()->ValueAs<uint32_t>();
++                if (align % required_align != 0) {
++                    AddError(align_attr->expr->source)
++                        << "alignment must be a multiple of " << style::Literal(required_align)
++                        << " bytes for the " << style::Enum(address_space) << " address space";
++                    note_usage();
++                    return false;
++                }
++            }
+         }
+     }
+ 
+diff --git a/chromium/third_party/dawn/third_party/dxc/lib/Transforms/Scalar/DxilConditionalMem2Reg.cpp b/chromium/third_party/dawn/third_party/dxc/lib/Transforms/Scalar/DxilConditionalMem2Reg.cpp
+index 79a250de94f..026d2aacd0c 100644
+--- src/3rdparty/chromium/third_party/dawn/third_party/dxc/lib/Transforms/Scalar/DxilConditionalMem2Reg.cpp
++++ src/3rdparty/chromium/third_party/dawn/third_party/dxc/lib/Transforms/Scalar/DxilConditionalMem2Reg.cpp
+@@ -257,14 +257,17 @@ class DxilConditionalMem2Reg : public FunctionPass {
+   static bool ScalarizePreciseVectorAlloca(Function &F) {
+     BasicBlock *Entry = &*F.begin();
+ 
+-    bool Changed = false;
++    SmallVector<AllocaInst *, 4> PreciseAllocaInsts;
+     for (auto it = Entry->begin(); it != Entry->end();) {
+       Instruction *I = &*(it++);
+       AllocaInst *AI = dyn_cast<AllocaInst>(I);
+       if (!AI || !AI->getAllocatedType()->isVectorTy()) continue;
+       if (!HLModule::HasPreciseAttributeWithMetadata(AI)) continue;
++      PreciseAllocaInsts.push_back(AI);
++    }
+ 
+-
++    bool Changed = false;
++    for (auto AI : PreciseAllocaInsts) {
+       IRBuilder<> B(AI);
+       VectorType *VTy = cast<VectorType>(AI->getAllocatedType());
+       Type *ScalarTy = VTy->getVectorElementType();
+diff --git a/chromium/third_party/devtools-frontend/src/front_end/panels/network/NetworkLogView.ts b/chromium/third_party/devtools-frontend/src/front_end/panels/network/NetworkLogView.ts
+index f2cc8ca2ef3..73d6e02d1fe 100644
+--- src/3rdparty/chromium/third_party/devtools-frontend/src/front_end/panels/network/NetworkLogView.ts
++++ src/3rdparty/chromium/third_party/devtools-frontend/src/front_end/panels/network/NetworkLogView.ts
+@@ -2184,8 +2184,7 @@ export class NetworkLogView extends Common.ObjectWrapper.eventMixin<EventTypes,
+     const ignoredHeaders = new Set<string>(['accept-encoding', 'host', 'method', 'path', 'scheme', 'version']);
+ 
+     function escapeStringWin(str: string): string {
+-      /* If there are no new line characters do not escape the " characters
+-         since it only uglifies the command.
++      /* Always escape the " characters so that we can use caret escaping.
+ 
+          Because cmd.exe parser and MS Crt arguments parsers use some of the
+          same escape characters, they can interact with each other in
+@@ -2211,11 +2210,11 @@ export class NetworkLogView extends Common.ObjectWrapper.eventMixin<EventTypes,
+          new line is there to enact the escape command the second is the character
+          to escape (in this case new line).
+         */
+-      const encapsChars = /[\r\n]/.test(str) ? '^"' : '"';
++      const encapsChars = '^"';
+       return encapsChars +
+           str.replace(/\\/g, '\\\\')
+               .replace(/"/g, '\\"')
+-              .replace(/[^a-zA-Z0-9\s_\-:=+~'\/.',?;()*`&]/g, '^$&')
++              .replace(/[^a-zA-Z0-9\s_\-:=+~'\/.',?;()*`]/g, '^$&')
+               .replace(/%(?=[a-zA-Z0-9_])/g, '%^')
+               .replace(/\r?\n/g, '^\n\n') +
+           encapsChars;
+diff --git a/chromium/third_party/expat/src/expat/lib/xmlparse.c b/chromium/third_party/expat/src/expat/lib/xmlparse.c
+index 205cb04b720..59d7b4f8100 100644
+--- src/3rdparty/chromium/third_party/expat/src/expat/lib/xmlparse.c
++++ src/3rdparty/chromium/third_party/expat/src/expat/lib/xmlparse.c
+@@ -1986,6 +1986,12 @@ XML_ParseBuffer(XML_Parser parser, int len, int isFinal) {
+ 
+   if (parser == NULL)
+     return XML_STATUS_ERROR;
++
++  if (len < 0) {
++    parser->m_errorCode = XML_ERROR_INVALID_ARGUMENT;
++    return XML_STATUS_ERROR;
++  }
++
+   switch (parser->m_parsingStatus.parsing) {
+   case XML_SUSPENDED:
+     parser->m_errorCode = XML_ERROR_SUSPENDED;
+@@ -6886,6 +6892,16 @@ dtdCopy(XML_Parser oldParser, DTD *newDtd, const DTD *oldDtd,
+     if (! newE)
+       return 0;
+     if (oldE->nDefaultAtts) {
++      /* Detect and prevent integer overflow.
++       * The preprocessor guard addresses the "always false" warning
++       * from -Wtype-limits on platforms where
++       * sizeof(int) < sizeof(size_t), e.g. on x86_64. */
++#if UINT_MAX >= SIZE_MAX
++      if ((size_t)oldE->nDefaultAtts
++          > ((size_t)(-1) / sizeof(DEFAULT_ATTRIBUTE))) {
++        return 0;
++      }
++#endif
+       newE->defaultAtts
+           = ms->malloc_fcn(oldE->nDefaultAtts * sizeof(DEFAULT_ATTRIBUTE));
+       if (! newE->defaultAtts) {
+@@ -7428,6 +7444,15 @@ nextScaffoldPart(XML_Parser parser) {
+   int next;
+ 
+   if (! dtd->scaffIndex) {
++    /* Detect and prevent integer overflow.
++     * The preprocessor guard addresses the "always false" warning
++     * from -Wtype-limits on platforms where
++     * sizeof(unsigned int) < sizeof(size_t), e.g. on x86_64. */
++#if UINT_MAX >= SIZE_MAX
++    if (parser->m_groupSize > ((size_t)(-1) / sizeof(int))) {
++      return -1;
++    }
++#endif
+     dtd->scaffIndex = (int *)MALLOC(parser, parser->m_groupSize * sizeof(int));
+     if (! dtd->scaffIndex)
+       return -1;
+diff --git a/chromium/third_party/ipcz/src/ipcz/node_link.cc b/chromium/third_party/ipcz/src/ipcz/node_link.cc
+index 2fe981a9a2e..fc7b186eda0 100644
+--- src/3rdparty/chromium/third_party/ipcz/src/ipcz/node_link.cc
++++ src/3rdparty/chromium/third_party/ipcz/src/ipcz/node_link.cc
+@@ -36,21 +36,6 @@
+ 
+ namespace ipcz {
+ 
+-namespace {
+-
+-template <typename T>
+-FragmentRef<T> MaybeAdoptFragmentRef(NodeLinkMemory& memory,
+-                                     const FragmentDescriptor& descriptor) {
+-  if (descriptor.is_null() || descriptor.size() < sizeof(T) ||
+-      descriptor.offset() % 8 != 0) {
+-    return {};
+-  }
+-
+-  return memory.AdoptFragmentRef<T>(memory.GetFragment(descriptor));
+-}
+-
+-}  // namespace
+-
+ // static
+ Ref<NodeLink> NodeLink::CreateActive(Ref<Node> node,
+                                      LinkSide link_side,
+@@ -702,8 +687,8 @@ bool NodeLink::OnAcceptBypassLink(msg::AcceptBypassLink& accept) {
+     return true;
+   }
+ 
+-  auto link_state = MaybeAdoptFragmentRef<RouterLinkState>(
+-      memory(), accept.params().new_link_state_fragment);
++  auto link_state = memory().AdoptFragmentRefIfValid<RouterLinkState>(
++      accept.params().new_link_state_fragment);
+   if (link_state.is_null()) {
+     // Bypass links must always come with a valid fragment for their
+     // RouterLinkState. If one has not been provided, that's a validation
+@@ -745,8 +730,8 @@ bool NodeLink::OnBypassPeerWithLink(msg::BypassPeerWithLink& bypass) {
+     return true;
+   }
+ 
+-  auto link_state = MaybeAdoptFragmentRef<RouterLinkState>(
+-      memory(), bypass.params().new_link_state_fragment);
++  auto link_state = memory().AdoptFragmentRefIfValid<RouterLinkState>(
++      bypass.params().new_link_state_fragment);
+   if (link_state.is_null()) {
+     return false;
+   }
+diff --git a/chromium/third_party/ipcz/src/ipcz/node_link_memory.h b/chromium/third_party/ipcz/src/ipcz/node_link_memory.h
+index df8010b595f..ba04a7c03da 100644
+--- src/3rdparty/chromium/third_party/ipcz/src/ipcz/node_link_memory.h
++++ src/3rdparty/chromium/third_party/ipcz/src/ipcz/node_link_memory.h
+@@ -86,14 +86,29 @@ class NodeLinkMemory : public RefCounted<NodeLinkMemory> {
+   // with the same BufferId and dimensions as `descriptor`.
+   Fragment GetFragment(const FragmentDescriptor& descriptor);
+ 
+-  // Adopts an existing reference to a RefCountedFragment within `fragment`.
+-  // This does NOT increment the ref count of the RefCountedFragment.
++  // Adopts an existing reference to a RefCountedFragment within `fragment`,
++  // which must be a valid, properly aligned, and sufficiently sized fragment to
++  // hold a T. This does NOT increment the ref count of the RefCountedFragment.
+   template <typename T>
+   FragmentRef<T> AdoptFragmentRef(const Fragment& fragment) {
+     ABSL_ASSERT(sizeof(T) <= fragment.size());
+     return FragmentRef<T>(kAdoptExistingRef, WrapRefCounted(this), fragment);
+   }
+ 
++  // Attempts to adopt an existing reference to a RefCountedFragment located at
++  // `fragment`. Returns null if the fragment descriptor is null, misaligned,
++  // or of insufficient size. This does NOT increment the ref count of the
++  // RefCountedFragment.
++  template <typename T>
++  FragmentRef<T> AdoptFragmentRefIfValid(const FragmentDescriptor& descriptor) {
++    if (descriptor.is_null() || descriptor.size() < sizeof(T) ||
++        descriptor.offset() % 8 != 0) {
++      return {};
++    }
++
++    return AdoptFragmentRef<T>(GetFragment(descriptor));
++  }
++
+   // Adds a new buffer to the underlying BufferPool to use as additional
+   // allocation capacity for blocks of size `block_size`. Note that the
+   // contents of the mapped region must already be initialized as a
+diff --git a/chromium/third_party/ipcz/src/ipcz/router.cc b/chromium/third_party/ipcz/src/ipcz/router.cc
+index 09988c04fe9..45ab0135459 100644
+--- src/3rdparty/chromium/third_party/ipcz/src/ipcz/router.cc
++++ src/3rdparty/chromium/third_party/ipcz/src/ipcz/router.cc
+@@ -764,12 +764,17 @@ Ref<Router> Router::Deserialize(const RouterDescriptor& descriptor,
+               ? descriptor.decaying_incoming_sequence_length
+               : descriptor.next_incoming_sequence_number);
+ 
++      auto link_state =
++          from_node_link.memory().AdoptFragmentRefIfValid<RouterLinkState>(
++              descriptor.new_link_state_fragment);
++      if (link_state.is_null()) {
++        // Central links require a valid link state fragment.
++        return nullptr;
++      }
+       new_outward_link = from_node_link.AddRemoteRouterLink(
+           context, descriptor.new_sublink,
+-          from_node_link.memory().AdoptFragmentRef<RouterLinkState>(
+-              from_node_link.memory().GetFragment(
+-                  descriptor.new_link_state_fragment)),
+-          LinkType::kCentral, LinkSide::kB, router);
++          std::move(link_state), LinkType::kCentral,
++          LinkSide::kB, router);
+       if (!new_outward_link) {
+         return nullptr;
+       }
+diff --git a/chromium/third_party/perfetto/include/perfetto/base/compiler.h b/chromium/third_party/perfetto/include/perfetto/base/compiler.h
+index 85678cc768c..ae7bf0aa10a 100644
+--- src/3rdparty/chromium/third_party/perfetto/include/perfetto/base/compiler.h
++++ src/3rdparty/chromium/third_party/perfetto/include/perfetto/base/compiler.h
+@@ -76,9 +76,31 @@
+ 
+ #if defined(__GNUC__) || defined(__clang__)
+ #define PERFETTO_POPCOUNT(x) __builtin_popcountll(x)
+-#else
++#elif defined(__AVX__) || defined(__SSE4_2__) || defined(__POPCNT__)
+ #include <intrin.h>
+ #define PERFETTO_POPCOUNT(x) __popcnt64(x)
++#else
++#if _MSVC_LANG >= 202002L || (__cplusplus > 201703L && __has_include(<bit>)) // C++20
++#include <bit>
++#endif
++template <typename ValueType, std::enable_if_t<std::is_unsigned_v<ValueType>, int> = 0>
++inline uint32_t qPopulationCount(ValueType v) noexcept
++{
++#if defined(__cpp_lib_bitops)
++    return std::popcount(v);
++#else
++    // we static_cast these bit patterns in order to truncate them to the correct size
++    v = static_cast<ValueType>(v - ((v >> 1) & static_cast<ValueType>(0x5555'5555'5555'5555ull)));
++    v = static_cast<ValueType>((v & static_cast<ValueType>(0x3333'3333'3333'3333ull))
++      + ((v >> 2) & static_cast<ValueType>(0x3333'3333'3333'3333ull)));
++    v = static_cast<ValueType>((v + (v >> 4)) & static_cast<ValueType>(0x0F0F'0F0F'0F0F'0F0Full));
++    // Multiply by one in each byte, so that it will have the sum of all source bytes in the highest byte
++    v = static_cast<ValueType>(v * static_cast<ValueType>(0x0101'0101'0101'0101ull));
++    // Extract highest byte
++    return static_cast<uint32_t>(v >> (sizeof(ValueType) * CHAR_BIT - 8));
++#endif
++}
++#define PERFETTO_POPCOUNT(x) qPopulationCount(x)
+ #endif
+ 
+ #if defined(__clang__)
+diff --git a/chromium/third_party/skia/src/gpu/ganesh/ops/DrawAtlasOp.cpp b/chromium/third_party/skia/src/gpu/ganesh/ops/DrawAtlasOp.cpp
+index a3d7e4ddabb..7faa16de5df 100644
+--- src/3rdparty/chromium/third_party/skia/src/gpu/ganesh/ops/DrawAtlasOp.cpp
++++ src/3rdparty/chromium/third_party/skia/src/gpu/ganesh/ops/DrawAtlasOp.cpp
+@@ -112,6 +112,7 @@ DrawAtlasOpImpl::DrawAtlasOpImpl(GrProcessorSet* processorSet, const SkPMColor4f
+         : GrMeshDrawOp(ClassID()), fHelper(processorSet, aaType), fColor(color) {
+     SkASSERT(xforms);
+     SkASSERT(rects);
++    SkASSERT(spriteCount >= 0);
+ 
+     fViewMatrix = viewMatrix;
+     Geometry& installedGeo = fGeoData.push_back();
+@@ -127,6 +128,11 @@ DrawAtlasOpImpl::DrawAtlasOpImpl(GrProcessorSet* processorSet, const SkPMColor4f
+         vertexStride += sizeof(GrColor);
+     }
+ 
++    // Bail out if we'd overflow from a really large draw
++    if (spriteCount > SK_MaxS32 / static_cast<int>(4 * vertexStride)) {
++        return;
++    }
++
+     // Compute buffer size and alloc buffer
+     fQuadCount = spriteCount;
+     int allocSize = static_cast<int>(4 * vertexStride * spriteCount);
+diff --git a/chromium/third_party/webrtc/modules/desktop_capture/mac/screen_capturer_mac.mm b/chromium/third_party/webrtc/modules/desktop_capture/mac/screen_capturer_mac.mm
+index 8f0c68d48b4..1cf029186b0 100644
+--- src/3rdparty/chromium/third_party/webrtc/modules/desktop_capture/mac/screen_capturer_mac.mm
++++ src/3rdparty/chromium/third_party/webrtc/modules/desktop_capture/mac/screen_capturer_mac.mm
+@@ -20,6 +20,11 @@
+ #include "rtc_base/trace_event.h"
+ #include "sdk/objc/helpers/scoped_cftyperef.h"
+ 
++// Build fix for macOS SDK 15 and newer
++#if !defined(CG_AVAILABLE_BUT_DEPRECATED)
++#define CG_AVAILABLE_BUT_DEPRECATED(a,b,c)
++#endif
++
+ // All these symbols have incorrect availability annotations in the 13.3 SDK.
+ // These have the correct annotation. See https://crbug.com/1431897.
+ // TODO(thakis): Remove this once FB12109479 is fixed and we updated to an SDK
+diff --git a/chromium/v8/src/compiler/access-info.cc b/chromium/v8/src/compiler/access-info.cc
+index 92405188f28..ac19b0a2178 100644
+--- src/3rdparty/chromium/v8/src/compiler/access-info.cc
++++ src/3rdparty/chromium/v8/src/compiler/access-info.cc
+@@ -919,6 +919,7 @@ PropertyAccessInfo AccessInfoFactory::ComputePropertyAccessInfo(
+       return PropertyAccessInfo::NotFound(zone(), receiver_map, holder);
+     }
+ 
++    CHECK(prototype.IsJSObject());
+     holder = prototype.AsJSObject();
+     map = map_prototype_map;
+ 
+diff --git a/chromium/v8/src/compiler/heap-refs.cc b/chromium/v8/src/compiler/heap-refs.cc
+index 932f0be7872..4c7d00d6a4d 100644
+--- src/3rdparty/chromium/v8/src/compiler/heap-refs.cc
++++ src/3rdparty/chromium/v8/src/compiler/heap-refs.cc
+@@ -1610,6 +1610,7 @@ HolderLookupResult FunctionTemplateInfoRef::LookupHolderOfExpectedType(
+   if (!expected_receiver_type->IsTemplateFor(prototype.object()->map())) {
+     return not_found;
+   }
++  CHECK(prototype.IsJSObject());
+   return HolderLookupResult(CallOptimization::kHolderFound,
+                             prototype.AsJSObject());
+ }
+diff --git a/chromium/v8/src/compiler/js-call-reducer.cc b/chromium/v8/src/compiler/js-call-reducer.cc
+index caec49b87c5..e7f89542a46 100644
+--- src/3rdparty/chromium/v8/src/compiler/js-call-reducer.cc
++++ src/3rdparty/chromium/v8/src/compiler/js-call-reducer.cc
+@@ -3715,14 +3715,13 @@ bool CanInlineJSToWasmCall(const wasm::FunctionSig* wasm_signature) {
+     return false;
+   }
+ 
+-  wasm::ValueType externRefNonNull = wasm::kWasmExternRef.AsNonNull();
+   for (auto type : wasm_signature->all()) {
+ #if defined(V8_TARGET_ARCH_32_BIT)
+     if (type == wasm::kWasmI64) return false;
+ #endif
+     if (type != wasm::kWasmI32 && type != wasm::kWasmI64 &&
+         type != wasm::kWasmF32 && type != wasm::kWasmF64 &&
+-        type != wasm::kWasmExternRef && type != externRefNonNull) {
++        type != wasm::kWasmExternRef) {
+       return false;
+     }
+   }
+diff --git a/chromium/v8/src/compiler/js-native-context-specialization.cc b/chromium/v8/src/compiler/js-native-context-specialization.cc
+index 8f37860aefe..089b6410528 100644
+--- src/3rdparty/chromium/v8/src/compiler/js-native-context-specialization.cc
++++ src/3rdparty/chromium/v8/src/compiler/js-native-context-specialization.cc
+@@ -878,7 +878,9 @@ JSNativeContextSpecialization::InferHasInPrototypeChain(
+       // might be a different object each time, so it's much simpler to include
+       // {prototype}. That does, however, mean that we must check {prototype}'s
+       // map stability.
+-      if (!prototype.map(broker()).is_stable()) return kMayBeInPrototypeChain;
++      if (!prototype.IsJSObject() || !prototype.map(broker()).is_stable()) {
++        return kMayBeInPrototypeChain;
++      }
+       last_prototype = prototype.AsJSObject();
+     }
+     WhereToStart start = result == NodeProperties::kUnreliableMaps
+diff --git a/chromium/v8/src/execution/local-isolate.cc b/chromium/v8/src/execution/local-isolate.cc
+index ca5ed58ae63..568a6fe0cf9 100644
+--- src/3rdparty/chromium/v8/src/execution/local-isolate.cc
++++ src/3rdparty/chromium/v8/src/execution/local-isolate.cc
+@@ -64,8 +64,7 @@ bool StackLimitCheck::HasOverflowed(LocalIsolate* local_isolate) {
+ #ifdef V8_INTL_SUPPORT
+ // WARNING: This might be out-of-sync with the main-thread.
+ const std::string& LocalIsolate::DefaultLocale() {
+-  const std::string& res =
+-      is_main_thread() ? isolate_->DefaultLocale() : default_locale_;
++  const std::string& res = isolate_->DefaultLocale();
+   DCHECK(!res.empty());
+   return res;
+ }
+diff --git a/chromium/v8/src/execution/local-isolate.h b/chromium/v8/src/execution/local-isolate.h
+index b9cdec9e703..08aa92d712d 100644
+--- src/3rdparty/chromium/v8/src/execution/local-isolate.h
++++ src/3rdparty/chromium/v8/src/execution/local-isolate.h
+@@ -185,9 +185,6 @@ class V8_EXPORT_PRIVATE LocalIsolate final : private HiddenLocalFactory {
+   base::Optional<WorkerThreadRuntimeCallStatsScope> rcs_scope_;
+   RuntimeCallStats* runtime_call_stats_;
+ #endif
+-#ifdef V8_INTL_SUPPORT
+-  std::string default_locale_;
+-#endif
+ };
+ 
+ template <base::MutexSharedType kIsShared>
+diff --git a/chromium/v8/src/maglev/maglev-graph-builder.cc b/chromium/v8/src/maglev/maglev-graph-builder.cc
+index 2e7756703f4..406f436a44c 100644
+--- src/3rdparty/chromium/v8/src/maglev/maglev-graph-builder.cc
++++ src/3rdparty/chromium/v8/src/maglev/maglev-graph-builder.cc
+@@ -5080,15 +5080,21 @@ void MaglevGraphBuilder::VisitDeletePropertySloppy() {
+ 
+ void MaglevGraphBuilder::VisitGetSuperConstructor() {
+   ValueNode* active_function = GetAccumulatorTagged();
+-  ValueNode* map_proto;
++  // TODO(victorgomes): Maybe BuildLoadTaggedField should support constants
++  // instead.
+   if (compiler::OptionalHeapObjectRef constant =
+           TryGetConstant(active_function)) {
+-    map_proto = GetConstant(constant->map(broker()).prototype(broker()));
+-  } else {
+-    ValueNode* map =
+-        AddNewNode<LoadTaggedField>({active_function}, HeapObject::kMapOffset);
+-    map_proto = AddNewNode<LoadTaggedField>({map}, Map::kPrototypeOffset);
++    compiler::MapRef map = constant->map(broker());
++    if (map.is_stable()) {
++      broker()->dependencies()->DependOnStableMap(map);
++      ValueNode* map_proto = GetConstant(map.prototype(broker()));
++      StoreRegister(iterator_.GetRegisterOperand(0), map_proto);
++      return;
++    }
+   }
++  ValueNode* map =
++      AddNewNode<LoadTaggedField>({active_function}, HeapObject::kMapOffset);
++  ValueNode* map_proto = AddNewNode<LoadTaggedField>({map}, Map::kPrototypeOffset);
+   StoreRegister(iterator_.GetRegisterOperand(0), map_proto);
+ }
+ 
+diff --git a/chromium/v8/src/runtime/runtime-wasm.cc b/chromium/v8/src/runtime/runtime-wasm.cc
+index 34851fe10da..6d4d445bc60 100644
+--- src/3rdparty/chromium/v8/src/runtime/runtime-wasm.cc
++++ src/3rdparty/chromium/v8/src/runtime/runtime-wasm.cc
+@@ -468,7 +468,16 @@ RUNTIME_FUNCTION(Runtime_TierUpWasmToJSWrapper) {
+                                       isolate);
+   if (IsTuple2(*origin)) {
+     Handle<Tuple2> tuple = Handle<Tuple2>::cast(origin);
+-    instance = handle(WasmInstanceObject::cast(tuple->value1()), isolate);
++    Handle<WasmInstanceObject> call_origin_instance(handle(WasmInstanceObject::cast(tuple->value1()), isolate));
++    if (call_origin_instance->module() != instance->module()) {
++      for (wasm::ValueType type : sig.all()) {
++        if (type.has_index()) {
++          ref->set_wrapper_budget(Smi::kMaxValue);
++          return ReadOnlyRoots(isolate).undefined_value();
++        }
++      }
++    }
++    instance = call_origin_instance;
+     origin = handle(tuple->value2(), isolate);
+   }
+ 
+diff --git a/chromium/v8/src/wasm/streaming-decoder.cc b/chromium/v8/src/wasm/streaming-decoder.cc
+index 786c5aa250f..9eb2d2fb9f1 100644
+--- src/3rdparty/chromium/v8/src/wasm/streaming-decoder.cc
++++ src/3rdparty/chromium/v8/src/wasm/streaming-decoder.cc
+@@ -294,6 +294,10 @@ void AsyncStreamingDecoder::Finish(bool can_use_compiled_module) {
+   if (!full_wire_bytes_.back().empty()) {
+     size_t total_length = 0;
+     for (auto& bytes : full_wire_bytes_) total_length += bytes.size();
++    if (ok()) {
++      // {DecodeSectionLength} enforces this with graceful error reporting.
++      CHECK_LE(total_length, max_module_size());
++    }
+     auto all_bytes = base::OwnedVector<uint8_t>::NewForOverwrite(total_length);
+     uint8_t* ptr = all_bytes.begin();
+     for (auto& bytes : full_wire_bytes_) {
+@@ -627,6 +631,18 @@ std::unique_ptr<AsyncStreamingDecoder::DecodingState>
+ AsyncStreamingDecoder::DecodeSectionLength::NextWithValue(
+     AsyncStreamingDecoder* streaming) {
+   TRACE_STREAMING("DecodeSectionLength(%zu)\n", value_);
++  // Check if this section fits into the overall module length limit.
++  // Note: {this->module_offset_} is the position of the section ID byte,
++  // {streaming->module_offset_} is the start of the section's payload (i.e.
++  // right after the just-decoded section length varint).
++  // The latter can already exceed the max module size, when the previous
++  // section barely fit into it, and this new section's ID or length crossed
++  // the threshold.
++  uint32_t payload_start = streaming->module_offset();
++  size_t max_size = max_module_size();
++  if (payload_start > max_size || max_size - payload_start < value_) {
++    return streaming->ToErrorState();
++  }
+   SectionBuffer* buf =
+       streaming->CreateNewBuffer(module_offset_, section_id_, value_,
+                                  buffer().SubVector(0, bytes_consumed_));
+diff --git a/chromium/v8/src/wasm/wasm-engine.cc b/chromium/v8/src/wasm/wasm-engine.cc
+index 688a0741cb6..6898538c9e4 100644
+--- src/3rdparty/chromium/v8/src/wasm/wasm-engine.cc
++++ src/3rdparty/chromium/v8/src/wasm/wasm-engine.cc
+@@ -1855,10 +1855,11 @@ uint32_t max_table_init_entries() {
+ 
+ // {max_module_size} is declared in wasm-limits.h.
+ size_t max_module_size() {
+-  // Clamp the value of --wasm-max-module-size between 16 and just below 2GB.
++  // Clamp the value of --wasm-max-module-size between 16 and the maximum
++  // that the implementation supports.
+   constexpr size_t kMin = 16;
+-  constexpr size_t kMax = RoundDown<kSystemPointerSize>(size_t{kMaxInt});
+-  static_assert(kMin <= kV8MaxWasmModuleSize && kV8MaxWasmModuleSize <= kMax);
++  constexpr size_t kMax = kV8MaxWasmModuleSize;
++  static_assert(kMin <= kV8MaxWasmModuleSize);
+   return std::clamp(v8_flags.wasm_max_module_size.value(), kMin, kMax);
+ }
+ 
+diff --git a/chromium/v8/src/wasm/wasm-js.cc b/chromium/v8/src/wasm/wasm-js.cc
+index 8710727207a..5e2427cde30 100644
+--- src/3rdparty/chromium/v8/src/wasm/wasm-js.cc
++++ src/3rdparty/chromium/v8/src/wasm/wasm-js.cc
+@@ -189,8 +189,8 @@ GET_FIRST_ARGUMENT_AS(Tag)
+ #undef GET_FIRST_ARGUMENT_AS
+ 
+ i::wasm::ModuleWireBytes GetFirstArgumentAsBytes(
+-    const v8::FunctionCallbackInfo<v8::Value>& info, ErrorThrower* thrower,
+-    bool* is_shared) {
++    const v8::FunctionCallbackInfo<v8::Value>& info, size_t max_length,
++    ErrorThrower* thrower, bool* is_shared) {
+   DCHECK(i::ValidateCallbackInfo(info));
+   const uint8_t* start = nullptr;
+   size_t length = 0;
+@@ -221,7 +221,6 @@ i::wasm::ModuleWireBytes GetFirstArgumentAsBytes(
+   if (length == 0) {
+     thrower->CompileError("BufferSource argument is empty");
+   }
+-  size_t max_length = i::wasm::max_module_size();
+   if (length > max_length) {
+     // The spec requires a CompileError for implementation-defined limits, see
+     // https://webassembly.github.io/spec/js-api/index.html#limits.
+@@ -534,7 +533,8 @@ void WebAssemblyCompile(const v8::FunctionCallbackInfo<v8::Value>& info) {
+       new AsyncCompilationResolver(isolate, context, promise_resolver));
+ 
+   bool is_shared = false;
+-  auto bytes = GetFirstArgumentAsBytes(info, &thrower, &is_shared);
++  auto bytes = GetFirstArgumentAsBytes(info, i::wasm::max_module_size(),
++                                       &thrower, &is_shared);
+   if (thrower.error()) {
+     resolver->OnCompilationFailed(thrower.Reify());
+     return;
+@@ -559,8 +559,11 @@ void WasmStreamingCallbackForTesting(
+       v8::WasmStreaming::Unpack(info.GetIsolate(), info.Data());
+ 
+   bool is_shared = false;
++  // We don't check the buffer length up front, to allow d8 to test that the
++  // streaming decoder implementation handles overly large inputs correctly.
++  size_t unlimited = std::numeric_limits<size_t>::max();
+   i::wasm::ModuleWireBytes bytes =
+-      GetFirstArgumentAsBytes(info, &thrower, &is_shared);
++      GetFirstArgumentAsBytes(info, unlimited, &thrower, &is_shared);
+   if (thrower.error()) {
+     streaming->Abort(Utils::ToLocal(thrower.Reify()));
+     return;
+@@ -653,7 +656,8 @@ void WebAssemblyValidate(const v8::FunctionCallbackInfo<v8::Value>& info) {
+   ScheduledErrorThrower thrower(i_isolate, "WebAssembly.validate()");
+ 
+   bool is_shared = false;
+-  auto bytes = GetFirstArgumentAsBytes(info, &thrower, &is_shared);
++  auto bytes = GetFirstArgumentAsBytes(info, i::wasm::max_module_size(),
++                                       &thrower, &is_shared);
+ 
+   v8::ReturnValue<v8::Value> return_value = info.GetReturnValue();
+ 
+@@ -725,7 +729,8 @@ void WebAssemblyModule(const v8::FunctionCallbackInfo<v8::Value>& info) {
+   }
+ 
+   bool is_shared = false;
+-  auto bytes = GetFirstArgumentAsBytes(info, &thrower, &is_shared);
++  auto bytes = GetFirstArgumentAsBytes(info, i::wasm::max_module_size(),
++                                       &thrower, &is_shared);
+ 
+   if (thrower.error()) {
+     return;
+@@ -1023,7 +1028,8 @@ void WebAssemblyInstantiate(const v8::FunctionCallbackInfo<v8::Value>& info) {
+   }
+ 
+   bool is_shared = false;
+-  auto bytes = GetFirstArgumentAsBytes(info, &thrower, &is_shared);
++  auto bytes = GetFirstArgumentAsBytes(info, i::wasm::max_module_size(),
++                                       &thrower, &is_shared);
+   if (thrower.error()) {
+     resolver->OnInstantiationFailed(thrower.Reify());
+     return;
+@@ -1155,9 +1161,10 @@ i::Handle<i::Object> DefaultReferenceValue(i::Isolate* isolate,
+   DCHECK(type.is_object_reference());
+   // Use undefined for JS type (externref) but null for wasm types as wasm does
+   // not know undefined.
+-  if (type.heap_representation() == i::wasm::HeapType::kExtern ||
+-      type.heap_representation() == i::wasm::HeapType::kNoExtern) {
++  if (type.heap_representation() == i::wasm::HeapType::kExtern) {
+     return isolate->factory()->undefined_value();
++  } else if (type.heap_representation() == i::wasm::HeapType::kNoExtern) {
++    return isolate->factory()->null_value();
+   }
+   return isolate->factory()->wasm_null();
+ }
+diff --git a/chromium/v8/src/wasm/wasm-objects.cc b/chromium/v8/src/wasm/wasm-objects.cc
+index 4c5050a56b8..5698a8f49de 100644
+--- src/3rdparty/chromium/v8/src/wasm/wasm-objects.cc
++++ src/3rdparty/chromium/v8/src/wasm/wasm-objects.cc
+@@ -1850,8 +1850,8 @@ Handle<WasmTagObject> WasmTagObject::New(Isolate* isolate,
+ }
+ 
+ bool WasmTagObject::MatchesSignature(uint32_t expected_canonical_type_index) {
+-  return wasm::GetWasmEngine()->type_canonicalizer()->IsCanonicalSubtype(
+-      this->canonical_type_index(), expected_canonical_type_index);
++  return static_cast<uint32_t>(this->canonical_type_index()) ==
++         expected_canonical_type_index;
+ }
+ 
+ const wasm::FunctionSig* WasmCapiFunction::GetSignature(Zone* zone) const {
