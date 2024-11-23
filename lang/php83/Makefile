@@ -1,5 +1,5 @@
 PORTNAME=	php83
-DISTVERSION=	8.3.13
+DISTVERSION=	8.3.14
 PORTREVISION?=	0
 CATEGORIES?=	lang devel www
 MASTER_SITES=	PHP/distributions
@@ -168,19 +168,19 @@ post-install:
 		${WRKDIR}/php.conf ${STAGEDIR}/${PREFIX}/etc
 
 post-install-CGI-on:
-	${STRIP_CMD} ${STAGEDIR}/${PREFIX}/bin/php-cgi
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/php-cgi
 
 post-install-CLI-on:
-	${STRIP_CMD} ${STAGEDIR}/${PREFIX}/bin/php
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/php
 
 post-install-EMBED-on:
-	${STRIP_CMD} ${STAGEDIR}/${PREFIX}/lib/libphp.so
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libphp.so
 
 post-install-FPM-on:
-	${STRIP_CMD} ${STAGEDIR}/${PREFIX}/sbin/php-fpm
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/sbin/php-fpm
 
 post-install-PHPDBG-on:
-	${STRIP_CMD} ${STAGEDIR}/${PREFIX}/bin/phpdbg
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/phpdbg
 
 .else
 do-install:
@@ -272,7 +272,7 @@ USE_GNOME=	libxml2
 .endif
 
 .if ${PHP_MODNAME} == "enchant"
-LIB_DEPENDS+=   libenchant-2.so:textproc/enchant2
+LIB_DEPENDS+=	libenchant-2.so:textproc/enchant2
 CONFIGURE_ARGS+=--with-enchant=${LOCALBASE}
 USES+=		pkgconfig
 .endif
@@ -404,7 +404,7 @@ CONFIGURE_ARGS+= --with-unixODBC=${LOCALBASE}
 .if ${PHP_MODNAME} == "opcache"
 # This is needed by Zend extensions, keep before everything.
 PHP_MOD_PRIO=		10
-CONFIGURE_ARGS+=        --enable-opcache
+CONFIGURE_ARGS+=	--enable-opcache
 .endif
 
 .if ${PHP_MODNAME} == "pcntl"
