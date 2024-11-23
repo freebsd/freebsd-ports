@@ -1,5 +1,6 @@
 PORTNAME=	cairo-dock-plugins
 DISTVERSION=	3.5.0
+PORTREVISION=	1
 CATEGORIES=	deskutils
 
 MAINTAINER=	ports@FreeBSD.org

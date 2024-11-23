@@ -1,6 +1,6 @@
 PORTNAME=	gmtk
 PORTVERSION=	1.0.9
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	multimedia gnome devel
 MASTER_SITES=	https://pkgs.rpmfusion.org/repo/pkgs/free/gmtk/gmtk-1.0.9.tar.gz/9184658014ca7b325b569ac7417e4860/
 

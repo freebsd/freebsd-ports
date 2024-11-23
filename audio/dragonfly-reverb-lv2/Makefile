@@ -1,6 +1,6 @@
 PORTNAME=	dragonfly-reverb
 DISTVERSION=	3.2.10
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio multimedia
 
 MAINTAINER=	yuri@FreeBSD.org

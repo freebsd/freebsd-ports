@@ -1,5 +1,6 @@
 PORTNAME=	openal-soft
 PORTVERSION=	1.23.1
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	https://openal-soft.org/openal-releases/
 

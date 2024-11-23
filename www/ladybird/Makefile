@@ -1,5 +1,6 @@
 PORTNAME=	ladybird
 PORTVERSION=	g20240505
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	https://github.com/unicode-org/cldr-json/releases/download/${CLDRVERSION}/:cldr \
 		https://www.unicode.org/Public/${UCDVERSION}/ucd/:ucd \

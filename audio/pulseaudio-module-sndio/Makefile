@@ -1,6 +1,6 @@
 PORTNAME=	pulseaudio-module-sndio
 DISTVERSION=	13.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	audio
 MASTER_SITES=	https://github.com/t6/pulseaudio-module-sndio/releases/download/${DISTVERSION}/
 

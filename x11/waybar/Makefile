@@ -1,6 +1,6 @@
 PORTNAME=	waybar
 DISTVERSION=	0.11.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11 wayland
 PKGNAMESUFFIX=	${FLAVOR:N${FLAVORS:[1]}:C/.+/-${FLAVOR}/}
 PATCH_SITES=    https://github.com/Alexays/Waybar/commit/

@@ -1,5 +1,6 @@
 PORTNAME=	cava
 DISTVERSION=	0.10.2
+PORTREVISION=	1
 CATEGORIES=	audio
 
 MAINTAINER=	vendion@gmail.com

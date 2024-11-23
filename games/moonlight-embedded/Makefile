@@ -1,5 +1,6 @@
 PORTNAME=	moonlight-embedded
 DISTVERSION=	2.7.0
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	https://github.com/moonlight-stream/moonlight-embedded/releases/download/v${DISTVERSION}/
 

@@ -1,6 +1,6 @@
 PORTNAME=	psindustrializer
 DISTVERSION=	0.2.7
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	audio
 MASTER_SITES=	SF/industrializer/
 

@@ -1,6 +1,7 @@
 PORTNAME=	higan
 DISTVERSIONPREFIX=	v
 DISTVERSION=	110
+PORTREVISION=	1
 CATEGORIES=	emulators games
 
 MAINTAINER=	cyberbotx@cyberbotx.com

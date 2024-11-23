@@ -1,5 +1,6 @@
 PORTNAME=	pasystray
 PORTVERSION=	0.8.2
+PORTREVISION=	1
 CATEGORIES=	audio
 
 MAINTAINER=	julien+freebsdports@delhaye.me

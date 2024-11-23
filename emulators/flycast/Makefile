@@ -1,6 +1,7 @@
 PORTNAME=	flycast
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.4
+PORTREVISION=	1
 CATEGORIES=	emulators
 
 MAINTAINER=	bsdcode@disroot.org
