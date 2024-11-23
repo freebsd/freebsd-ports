@@ -1,6 +1,6 @@
 PORTNAME=	zellij
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.41.1
+DISTVERSION=	0.41.2
 CATEGORIES=	sysutils
 
 MAINTAINER=	riggs@FreeBSD.org
@@ -90,7 +90,6 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		cobs-0.2.3 \
 		colored-2.0.0 \
 		colorsys-0.6.5 \
-		common-path-1.0.0 \
 		concurrent-queue-1.2.2 \
 		concurrent-queue-2.2.0 \
 		console-0.15.0 \
