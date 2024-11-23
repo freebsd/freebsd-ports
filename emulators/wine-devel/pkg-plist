@@ -493,6 +493,8 @@ include/wine/windows/dxgitype.idl
 include/wine/windows/dxva.h
 include/wine/windows/dxva2api.h
 include/wine/windows/dxva2api.idl
+include/wine/windows/dxvahd.h
+include/wine/windows/dxvahd.idl
 include/wine/windows/dyngraph.idl
 include/wine/windows/endpointvolume.h
 include/wine/windows/endpointvolume.idl
@@ -1460,6 +1462,7 @@ lib/wine/%%WINEARCH%%-unix/libhidparse.a
 lib/wine/%%WINEARCH%%-unix/libhlink.a
 lib/wine/%%WINEARCH%%-unix/libhtmlhelp.a
 lib/wine/%%WINEARCH%%-unix/libhttpapi.a
+lib/wine/%%WINEARCH%%-unix/libicmui.a
 lib/wine/%%WINEARCH%%-unix/libieframe.a
 lib/wine/%%WINEARCH%%-unix/libimagehlp.a
 lib/wine/%%WINEARCH%%-unix/libimm32.a
@@ -1880,6 +1883,7 @@ lib/wine/%%WINEARCH%%-windows/icacls.exe
 lib/wine/%%WINEARCH%%-windows/iccvid.dll
 lib/wine/%%WINEARCH%%-windows/icinfo.exe
 lib/wine/%%WINEARCH%%-windows/icmp.dll
+lib/wine/%%WINEARCH%%-windows/icmui.dll
 lib/wine/%%WINEARCH%%-windows/ieframe.dll
 lib/wine/%%WINEARCH%%-windows/ieproxy.dll
 lib/wine/%%WINEARCH%%-windows/iertutil.dll
@@ -2008,6 +2012,7 @@ lib/wine/%%WINEARCH%%-windows/libhidparse.a
 lib/wine/%%WINEARCH%%-windows/libhlink.a
 lib/wine/%%WINEARCH%%-windows/libhtmlhelp.a
 lib/wine/%%WINEARCH%%-windows/libhttpapi.a
+lib/wine/%%WINEARCH%%-windows/libicmui.a
 lib/wine/%%WINEARCH%%-windows/libieframe.a
 lib/wine/%%WINEARCH%%-windows/libimagehlp.a
 lib/wine/%%WINEARCH%%-windows/libimm32.a
