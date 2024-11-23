@@ -1,3 +1,62 @@
+  <vuln vid="889eddee-a964-11ef-b680-4ccc6adda413">
+    <topic>qt6-webengine -- Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>qt6-webengine</name>
+	<range><lt>6.7.3_2</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Qt qtwebengine-chromium repo reports:</p>
+	<blockquote cite="https://code.qt.io/cgit/qt/qtwebengine-chromium.git/log/?h=118-based">
+	  <p>Backports for 16 security bugs in Chromium:</p>
+	  <ul>
+	    <li>CVE-2024-9120: Use after free in Dawn</li>
+	    <li>CVE-2024-9122: Type Confusion in V8</li>
+	    <li>CVE-2024-9123: Integer overflow in Skia</li>
+	    <li>CVE-2024-9369: Insufficient data validation in Mojo</li>
+	    <li>CVE-2024-9602: Type confusion in V8</li>
+	    <li>CVE-2024-9603: Type confusion in V8</li>
+	    <li>CVE-2024-9965: Insufficient data validation in DevTools</li>
+	    <li>CVE-2024-9966: Inappropriate implementation in Navigations</li>
+	    <li>CVE-2024-10229: Inappropriate implementation in Extensions</li>
+	    <li>CVE-2024-10230: Type confusion in V8</li>
+	    <li>CVE-2024-10231: Type confusion in V8</li>
+	    <li>CVE-2024-10487: Out of bounds write in Dawn</li>
+	    <li>CVE-2024-10827: Use after free in Serial</li>
+	    <li>CVE-2024-45490: Negative length in libexpat</li>
+	    <li>CVE-2024-45491: Integer overflow in libexpat</li>
+	    <li>CVE-2024-45492: Integer overflow in libexpat</li>
+	  </ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2024-9120</cvename>
+      <cvename>CVE-2024-9122</cvename>
+      <cvename>CVE-2024-9123</cvename>
+      <cvename>CVE-2024-9369</cvename>
+      <cvename>CVE-2024-9602</cvename>
+      <cvename>CVE-2024-9603</cvename>
+      <cvename>CVE-2024-9965</cvename>
+      <cvename>CVE-2024-9966</cvename>
+      <cvename>CVE-2024-10229</cvename>
+      <cvename>CVE-2024-10230</cvename>
+      <cvename>CVE-2024-10231</cvename>
+      <cvename>CVE-2024-10487</cvename>
+      <cvename>CVE-2024-10827</cvename>
+      <cvename>CVE-2024-45490</cvename>
+      <cvename>CVE-2024-45491</cvename>
+      <cvename>CVE-2024-45492</cvename>
+      <url>https://code.qt.io/cgit/qt/qtwebengine-chromium.git/log/?h=118-based</url>
+    </references>
+    <dates>
+      <discovery>2024-09-26</discovery>
+      <entry>2024-11-23</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="16e472d5-a8aa-11ef-b680-4ccc6adda413">
     <topic>qt5-webengine -- Use after free in Serial</topic>
     <affects>
