@@ -1,5 +1,5 @@
 PORTNAME=	tremotesf
-DISTVERSION=	2.7.2
+DISTVERSION=	2.7.3
 CATEGORIES=	net-p2p
 MASTER_SITES=	https://github.com/equeim/${PORTNAME}2/releases/download/${DISTVERSION}/
 
@@ -38,14 +38,16 @@ USE_QT=		base
 USE_KDE=	widgetsaddons windowsystem
 USE_XORG=	x11
 
+EXTRACT_AFTER_ARGS=	--exclude ${DISTNAME}/src/3rdparty/cpp-httplib \
+			--no-same-owner --no-same-permissions
+
 .include <bsd.port.options.mk>
 
 .if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400092
 TEST_DEPENDS=	cpp-httplib>0:www/cpp-httplib
+CMAKE_ARGS=	-DTREMOTESF_WITH_HTTPLIB=system
 .else
 CMAKE_ARGS=	-DTREMOTESF_WITH_HTTPLIB=none
-EXTRACT_AFTER_ARGS=	--exclude ${DISTNAME}/src/3rdparty/cpp-httplib \
-			--no-same-owner --no-same-permissions
 .endif
 
 .include <bsd.port.mk>
