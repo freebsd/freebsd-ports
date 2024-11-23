@@ -18,8 +18,7 @@ USES=		cmake:testing compiler:c++11-lib cpe localbase:ldflags pkgconfig shared-m
 CPE_VENDOR=	${PORTNAME}_project
 USE_GITHUB=	yes
 USE_LDCONFIG=	yes
-GH_TUPLE=	jbeich:skcms:42030a7:skcms/third_party/skcms \
-		libjxl:testdata:ff8d743:testdata/testdata \
+GH_TUPLE=	libjxl:testdata:ff8d743:testdata/testdata \
 		webmproject:sjpeg:e5ab130:sjpeg/third_party/sjpeg \
 		${NULL}
 CMAKE_ON=	JPEGXL_ENABLE_PLUGINS
@@ -29,8 +28,10 @@ CMAKE_OFF+=	${CMAKE_TESTING_ON}
 LDFLAGS+=	-Wl,--as-needed # brotlicommon, OPENEXR/PNG deps
 PLIST_SUB=	VERSION=${PORTVERSION}
 
-OPTIONS_DEFINE=	GIF JPEG LTO MANPAGES OPENEXR PIXBUF PNG
+OPTIONS_DEFINE=	GIF JPEG LCMS2 LTO MANPAGES OPENEXR PIXBUF PNG
 OPTIONS_DEFAULT=GIF JPEG LTO MANPAGES OPENEXR PIXBUF PNG
+OPTIONS_DEFAULT_powerpc=	LCMS2
+OPTIONS_DEFAULT_powerpc64=	LCMS2
 OPTIONS_EXCLUDE_i386=	LTO # ConvolutionWithTranspose(): JXL_CHECK: out->xsize() == in.ysize()
 OPTIONS_EXCLUDE_riscv64=	LTO # bug 262871
 OPTIONS_SUB=	yes
@@ -42,6 +43,13 @@ JPEG_USES=		jpeg
 JPEG_CMAKE_BOOL=	JPEGXL_ENABLE_JPEGLI
 JPEG_CMAKE_BOOL_OFF=	CMAKE_DISABLE_FIND_PACKAGE_JPEG
 JPEG_CMAKE_BOOL_OFF+=	JPEGXL_ENABLE_JPEGLI_LIBJPEG # XXX WITH_JPEG8, libmap.conf(5)
+
+LCMS2_LIB_DEPENDS=	liblcms2.so:graphics/lcms2
+LCMS2_GH_TUPLE_OFF=	jbeich:skcms:42030a7:skcms/third_party/skcms
+LCMS2_CMAKE_BOOL_OFF=	JPEGXL_ENABLE_SKCMS
+.if make(makesum)
+GH_TUPLE+=		${LCMS2_GH_TUPLE_OFF}
+.endif
 
 LTO_CMAKE_BOOL=		CMAKE_INTERPROCEDURAL_OPTIMIZATION
 LTO_CMAKE_ON=		-DCMAKE_POLICY_DEFAULT_CMP0069:STRING=NEW
@@ -59,12 +67,6 @@ PIXBUF_CMAKE_BOOL=	JPEGXL_ENABLE_PLUGIN_GDKPIXBUF
 
 PNG_LIB_DEPENDS=	libpng.so:graphics/png
 PNG_CMAKE_BOOL_OFF=	CMAKE_DISABLE_FIND_PACKAGE_PNG
-
-.include <bsd.port.options.mk>
-
-.if ${ARCH} == powerpc || ${ARCH} == powerpc64
-LIB_DEPENDS+=	liblcms2.so:graphics/lcms2
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} 's,/usr,${LOCALBASE},' \
