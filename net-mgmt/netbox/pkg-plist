@@ -335,8 +335,6 @@
 %%DATADIR%%/docs/media/development/github_fork_button.png
 %%DATADIR%%/docs/media/development/github_fork_dialog.png
 %%DATADIR%%/docs/media/development/github_new_issue.png
-%%DATADIR%%/docs/media/development/transifex_pull_request.png
-%%DATADIR%%/docs/media/development/transifex_sync.png
 %%DATADIR%%/docs/media/installation/netbox_application_stack.png
 %%DATADIR%%/docs/media/installation/upgrade_paths.png
 %%DATADIR%%/docs/media/misc/reference_architecture.png
@@ -1197,7 +1195,7 @@
 %%DATADIR%%/templates/generic/object_delete.html
 %%DATADIR%%/templates/generic/object_edit.html
 %%DATADIR%%/templates/generic/object_list.html
-%%DATADIR%%/templates/graphiql.html
+%%DATADIR%%/templates/graphql/graphiql.html
 %%DATADIR%%/templates/home.html
 %%DATADIR%%/templates/htmx/delete_form.html
 %%DATADIR%%/templates/htmx/form.html
