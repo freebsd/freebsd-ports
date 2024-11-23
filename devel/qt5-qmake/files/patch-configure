@@ -1,6 +1,6 @@
---- configure.orig	2017-11-14 13:26:30 UTC
+--- configure.orig	2024-11-21 20:06:55 UTC
 +++ configure
-@@ -799,6 +799,10 @@ if [ '!' -f "$outpath/bin/qmake" ] ; then 
+@@ -802,6 +802,10 @@ if [ '!' -f "$outpath/bin/qmake" ] ; then 
              fi
          fi
  
