@@ -23,45 +23,95 @@ error[E0432]: unresolved imports `nix::sys::epoll`, `nix::sys::eventfd`
    |                |      help: a similar name exists in the module: `event`
    |                no `epoll` in `sys`
 
---- Cargo.lock.orig	2024-10-02 08:29:50 UTC
+--- Cargo.lock.orig	2024-11-23 09:54:48 UTC
 +++ Cargo.lock
-@@ -867,12 +867,6 @@ version = "0.1.1"
- source = "registry+https://github.com/rust-lang/crates.io-index"
- checksum = "fd16c4719339c4530435d38e511904438d07cce7950afa3718a84ac36c10e89e"
+@@ -1073,7 +1073,7 @@ dependencies = [
+  "bitflags 1.3.2",
+  "block",
+  "cocoa-foundation",
+- "core-foundation 0.9.4",
++ "core-foundation",
+  "core-graphics 0.23.2",
+  "foreign-types 0.5.0",
+  "libc",
+@@ -1088,7 +1088,7 @@ dependencies = [
+ dependencies = [
+  "bitflags 1.3.2",
+  "block",
+- "core-foundation 0.9.4",
++ "core-foundation",
+  "core-graphics-types",
+  "libc",
+  "objc",
+@@ -1223,16 +1223,6 @@ dependencies = [
+ ]
  
--[[package]]
--name = "cfg_aliases"
--version = "0.2.1"
--source = "registry+https://github.com/rust-lang/crates.io-index"
--checksum = "613afe47fcd5fac7ccf1db93babcb082c5994d996f20b8b159f2ad1658eb5724"
--
  [[package]]
- name = "chrono"
- version = "0.4.38"
-@@ -2613,9 +2607,9 @@ dependencies = [
+-name = "core-foundation"
+-version = "0.10.0"
+-source = "registry+https://github.com/rust-lang/crates.io-index"
+-checksum = "b55271e5c8c478ad3f38ad24ef34923091e0548492a266d19b3c0b4d82574c63"
+-dependencies = [
+- "core-foundation-sys",
+- "libc",
+-]
+-
+-[[package]]
+ name = "core-foundation-sys"
+ version = "0.8.7"
+ source = "registry+https://github.com/rust-lang/crates.io-index"
+@@ -1245,7 +1235,7 @@ dependencies = [
+ checksum = "2581bbab3b8ffc6fcbd550bf46c355135d16e9ff2a6ea032ad6b9bf1d7efe4fb"
+ dependencies = [
+  "bitflags 1.3.2",
+- "core-foundation 0.9.4",
++ "core-foundation",
+  "core-graphics-types",
+  "foreign-types 0.3.2",
+  "libc",
+@@ -1258,7 +1248,7 @@ dependencies = [
+ checksum = "c07782be35f9e1140080c6b96f0d44b739e2278479f64e02fdab4e32dfd8b081"
+ dependencies = [
+  "bitflags 1.3.2",
+- "core-foundation 0.9.4",
++ "core-foundation",
+  "core-graphics-types",
+  "foreign-types 0.5.0",
+  "libc",
+@@ -1271,7 +1261,7 @@ dependencies = [
+ checksum = "45390e6114f68f718cc7a830514a96f903cccd70d02a8f6d9f643ac4ba45afaf"
+ dependencies = [
+  "bitflags 1.3.2",
+- "core-foundation 0.9.4",
++ "core-foundation",
+  "libc",
+ ]
+ 
+@@ -2610,9 +2600,9 @@ name = "gilrs"
  
  [[package]]
  name = "gilrs"
--version = "0.10.10"
+-version = "0.11.0"
 +version = "0.10.2"
  source = "registry+https://github.com/rust-lang/crates.io-index"
--checksum = "a556964c6d62458084356ce9770676f5104bd667e12e9a795691076e8a17c5cf"
+-checksum = "bbb2c998745a3c1ac90f64f4f7b3a54219fd3612d7705e7798212935641ed18f"
 +checksum = "62fd19844d0eb919aca41d3e4ea0e0b6bf60e1e827558b101c269015b8f5f27a"
  dependencies = [
   "fnv",
   "gilrs-core",
-@@ -2627,24 +2621,23 @@ dependencies = [
+@@ -2624,24 +2614,23 @@ name = "gilrs-core"
  
  [[package]]
  name = "gilrs-core"
--version = "0.5.15"
+-version = "0.6.0"
 +version = "0.5.7"
  source = "registry+https://github.com/rust-lang/crates.io-index"
--checksum = "732dadc05170599ddec9a89653f10d7a2af54da9181b3fa6e2bd49907ec8f7e4"
+-checksum = "495af945e45efd6386227613cd9fb7bd7c43d3c095040e30c5304c489e6abed5"
 +checksum = "5ccc99e9b8d63ffcaa334c4babfa31f46e156618a11f63efb6e8e6bcb37b830d"
  dependencies = [
-  "core-foundation",
-- "inotify 0.10.2",
+- "core-foundation 0.10.0",
+- "inotify 0.11.0",
++ "core-foundation",
   "io-kit-sys",
   "js-sys",
   "libc",
@@ -75,29 +125,29 @@ error[E0432]: unresolved imports `nix::sys::epoll`, `nix::sys::eventfd`
   "wasm-bindgen",
   "web-sys",
 - "windows 0.58.0",
-+ "windows 0.51.1",
++ "windows 0.48.0",
  ]
  
  [[package]]
-@@ -3326,17 +3319,6 @@ dependencies = [
-  "libc",
+@@ -3356,17 +3345,6 @@ dependencies = [
  ]
  
--[[package]]
+ [[package]]
 -name = "inotify"
--version = "0.10.2"
+-version = "0.11.0"
 -source = "registry+https://github.com/rust-lang/crates.io-index"
--checksum = "fdd168d97690d0b8c412d6b6c10360277f4d7ee495c5d0d5d5fe0854923255cc"
+-checksum = "f37dccff2791ab604f9babef0ba14fbe0be30bd368dc541e2b08d07c8aa908f3"
 -dependencies = [
-- "bitflags 1.3.2",
+- "bitflags 2.6.0",
 - "inotify-sys",
 - "libc",
 -]
 -
- [[package]]
+-[[package]]
  name = "inotify-sys"
  version = "0.1.5"
-@@ -3388,9 +3370,9 @@ dependencies = [
+ source = "registry+https://github.com/rust-lang/crates.io-index"
+@@ -3431,9 +3409,9 @@ name = "io-kit-sys"
  
  [[package]]
  name = "io-kit-sys"
@@ -109,48 +159,52 @@ error[E0432]: unresolved imports `nix::sys::epoll`, `nix::sys::eventfd`
  dependencies = [
   "core-foundation-sys",
   "mach2",
-@@ -4192,25 +4174,24 @@ dependencies = [
+@@ -4145,7 +4123,7 @@ dependencies = [
+  "ascii",
+  "block",
+  "cocoa",
+- "core-foundation 0.9.4",
++ "core-foundation",
+  "dirs-next",
+  "objc",
+  "objc-foundation",
+@@ -4247,6 +4225,17 @@ name = "nix"
  
  [[package]]
  name = "nix"
--version = "0.28.0"
 +version = "0.26.4"
- source = "registry+https://github.com/rust-lang/crates.io-index"
--checksum = "ab2156c4fce2f8df6c499cc1c763e4394b7482525bf2a9701c9d79d215f519e4"
++source = "registry+https://github.com/rust-lang/crates.io-index"
 +checksum = "598beaf3cc6fdd9a5dfb1630c2800c7acd31df7aaf0f565796fba2b53ca1af1b"
- dependencies = [
-- "bitflags 2.6.0",
++dependencies = [
 + "bitflags 1.3.2",
-  "cfg-if 1.0.0",
-- "cfg_aliases 0.1.1",
-  "libc",
- ]
- 
- [[package]]
- name = "nix"
--version = "0.29.0"
-+version = "0.28.0"
++ "cfg-if 1.0.0",
++ "libc",
++]
++
++[[package]]
++name = "nix"
+ version = "0.29.0"
  source = "registry+https://github.com/rust-lang/crates.io-index"
--checksum = "71e2746dc3a24dd78b3cfcb7be93368c6de9963d30f43a6a73998a9cf4b17b46"
-+checksum = "ab2156c4fce2f8df6c499cc1c763e4394b7482525bf2a9701c9d79d215f519e4"
+ checksum = "71e2746dc3a24dd78b3cfcb7be93368c6de9963d30f43a6a73998a9cf4b17b46"
+@@ -5833,7 +5822,7 @@ dependencies = [
+ source = "registry+https://github.com/rust-lang/crates.io-index"
+ checksum = "afbb878bdfdf63a336a5e63561b1835e7a8c91524f51621db870169eac84b490"
+ dependencies = [
+- "core-foundation 0.9.4",
++ "core-foundation",
+  "core-foundation-sys",
+  "jni 0.19.0",
+  "log",
+@@ -6008,7 +5997,7 @@ dependencies = [
+ checksum = "897b2245f0b511c87893af39b033e5ca9cce68824c4d7e7630b5a1d339658d02"
  dependencies = [
   "bitflags 2.6.0",
-  "cfg-if 1.0.0",
-- "cfg_aliases 0.2.1",
-+ "cfg_aliases",
+- "core-foundation 0.9.4",
++ "core-foundation",
+  "core-foundation-sys",
   "libc",
- ]
- 
-@@ -4251,7 +4232,7 @@ dependencies = [
-  "crossbeam-channel",
-  "filetime",
-  "fsevent-sys",
-- "inotify 0.9.6",
-+ "inotify",
-  "kqueue",
-  "libc",
-  "log",
-@@ -7041,7 +7022,7 @@ version = "1.6.3"
+  "num-bigint 0.4.6",
+@@ -7189,7 +7178,7 @@ dependencies = [
  source = "registry+https://github.com/rust-lang/crates.io-index"
  checksum = "97fee6b57c6a41524a810daee9286c02d7752c4253064d0b05472833a438f675"
  dependencies = [
@@ -159,15 +213,15 @@ error[E0432]: unresolved imports `nix::sys::epoll`, `nix::sys::eventfd`
   "rand",
   "static_assertions",
  ]
-@@ -9076,7 +9057,7 @@ checksum = "9596d90b45384f5281384ab204224876e8e8bf7d58366d9b795ad99aa9894b94"
- dependencies = [
+@@ -9239,7 +9228,7 @@ dependencies = [
   "android-activity",
   "bitflags 1.3.2",
-- "cfg_aliases 0.1.1",
-+ "cfg_aliases",
-  "core-foundation",
+  "cfg_aliases 0.1.1",
+- "core-foundation 0.9.4",
++ "core-foundation",
   "core-graphics 0.22.3",
   "dispatch",
+  "instant",
 --- cargo-crates/gilrs-0.10.2/examples/ev.rs.orig	1970-01-01 00:00:00 UTC
 +++ cargo-crates/gilrs-0.10.2/examples/ev.rs
 @@ -9,6 +9,8 @@ use std::process;
@@ -852,3 +906,14 @@ error[E0432]: unresolved imports `nix::sys::epoll`, `nix::sys::eventfd`
      }
  
      pub fn gamepad(&self, id: usize) -> Option<&Gamepad> {
+--- voxygen/Cargo.toml.orig	2024-11-23 09:54:48 UTC
++++ voxygen/Cargo.toml
+@@ -101,7 +101,7 @@ levenshtein = "1.0.5"
+ levenshtein = "1.0.5"
+ 
+ # Controller
+-gilrs = { version = "0.11.0", features = ["serde-serialize"] }
++gilrs = { version = "0.10.0", features = ["serde-serialize"] }
+ 
+ # Singleplayer
+ server = { package = "veloren-server", path = "../server", optional = true, default-features = false, features = [
