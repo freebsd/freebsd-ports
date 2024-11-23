@@ -5822,6 +5822,7 @@
     SUBDIR += py-rply
     SUBDIR += py-rq
     SUBDIR += py-rq-scheduler
+    SUBDIR += py-rq1
     SUBDIR += py-rstr
     SUBDIR += py-rtree
     SUBDIR += py-rtslib-fb
