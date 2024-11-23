@@ -3,6 +3,7 @@
 sbin/acme.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/deploy/README.md
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/deploy/ali_cdn.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/deploy/ali_dcdn.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/deploy/apache.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/deploy/cleverreach.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/deploy/consul.sh
@@ -148,6 +149,7 @@ sbin/acme.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dnsapi/dns_nsupdate.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dnsapi/dns_nw.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dnsapi/dns_oci.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/dnsapi/dns_omglol.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dnsapi/dns_one.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dnsapi/dns_online.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dnsapi/dns_openprovider.sh
