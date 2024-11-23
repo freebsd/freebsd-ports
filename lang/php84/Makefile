@@ -1,9 +1,8 @@
 PORTNAME=	php84
-DISTVERSION=	8.4.0RC4
+DISTVERSION=	8.4.1
 PORTREVISION?=	0
 CATEGORIES?=	lang devel www
-MASTER_SITES=	https://downloads.php.net/~saki/ \
-		https://downloads.php.net/~calvinb/
+MASTER_SITES=	PHP/distributions
 DISTNAME=	php-${DISTVERSION}
 
 MAINTAINER=	bofh@FreeBSD.org
@@ -171,19 +170,19 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/Zend/zend_lazy_objects.h ${STAGEDIR}${PREFIX}/include/php/Zend
 
 post-install-CGI-on:
-	${STRIP_CMD} ${STAGEDIR}/${PREFIX}/bin/php-cgi
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/php-cgi
 
 post-install-CLI-on:
-	${STRIP_CMD} ${STAGEDIR}/${PREFIX}/bin/php
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/php
 
 post-install-EMBED-on:
-	${STRIP_CMD} ${STAGEDIR}/${PREFIX}/lib/libphp.so
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libphp.so
 
 post-install-FPM-on:
-	${STRIP_CMD} ${STAGEDIR}/${PREFIX}/sbin/php-fpm
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/sbin/php-fpm
 
 post-install-PHPDBG-on:
-	${STRIP_CMD} ${STAGEDIR}/${PREFIX}/bin/phpdbg
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/phpdbg
 
 .else
 do-install:
@@ -275,7 +274,7 @@ USE_GNOME=	libxml2
 .endif
 
 .if ${PHP_MODNAME} == "enchant"
-LIB_DEPENDS+=   libenchant-2.so:textproc/enchant2
+LIB_DEPENDS+=	libenchant-2.so:textproc/enchant2
 CONFIGURE_ARGS+=--with-enchant=${LOCALBASE}
 USES+=		pkgconfig
 .endif
