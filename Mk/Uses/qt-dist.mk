@@ -108,14 +108,14 @@ DIST_SUBDIR=			KDE/Qt/${_QT_VERSION}
 .  if ${_QT_VER:M5}
 # KDE maintains a repository with a patched Qt5 distribution.
 _KDE_3d=		0
-_KDE_base=		127
+_KDE_base=		130
 _KDE_charts=		0
-_KDE_connectivity=	3
+_KDE_connectivity=	1
 _KDE_datavis3d=		0
-_KDE_declarative=	25
+_KDE_declarative=	22
 _KDE_gamepad=		0
 _KDE_graphicaleffects=	0
-_KDE_imageformats=	4
+_KDE_imageformats=	2
 _KDE_location=		7
 _KDE_multimedia=	2
 _KDE_networkauth=	1
@@ -138,7 +138,9 @@ _KDE_translations=	0
 _KDE_virtualkeyboard=	0
 _KDE_wayland=		59
 _KDE_webchannel=	3
-_KDE_webengine=			2
+# We track the 5.15 branch for www/qt5-webengine to make it easier to
+# stay on top of Chromium security patches.
+_KDE_webengine=			5
 _KDE_webengine_BRANCH=		5.15
 _KDE_webengine_ORIGIN_TAG=	v5.15.18-lts
 _KDE_webengine_VERSION=		5.15.18
