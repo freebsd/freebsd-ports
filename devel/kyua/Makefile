@@ -43,17 +43,17 @@ OPTIONS_DEFINE=		DOCS EXAMPLES TEST
 OPTIONS_DEFAULT=	TEST
 OPTIONS_SUB=		yes
 
-.include <bsd.port.pre.mk>
-
-.if ${OPSYS} == FreeBSD && ${OSREL:R} >= 14
-IGNORE=		kyua from base must be used for FreeBSD 14.x and newer
-.endif
-
 DOCS_MAKE_ARGS_OFF=	doc_DATA=
 EXAMPLES_MAKE_ARGS_OFF=	dist_examples_DATA=
 TEST_BUILD_DEPENDS=	atf>=0.21:devel/atf
 TEST_RUN_DEPENDS=	atf>=0.21:devel/atf
 TEST_CONFIGURE_WITH=	atf
+
+.include <bsd.port.pre.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSREL:R} >= 14
+IGNORE=		kyua from base must be used for FreeBSD 14.x and newer
+.endif
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/kyua
@@ -62,4 +62,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/examples/Kyuafile.top \
 		${STAGEDIR}${PREFIX}/tests/Kyuafile
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
