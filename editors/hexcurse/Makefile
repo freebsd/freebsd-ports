@@ -17,7 +17,8 @@ GH_ACCOUNT=	LonnyGomes
 
 GNU_CONFIGURE=	yes
 
-CFLAGS+=	-Wno-error=deprecated-non-prototype
+CFLAGS+=	-Wno-error=deprecated-non-prototype \
+		-Wno-error=format-truncation
 
 PLIST_FILES=	bin/hexcurse share/man/man1/hexcurse.1.gz
 
