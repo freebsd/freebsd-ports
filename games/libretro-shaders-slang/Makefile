@@ -1,5 +1,5 @@
 PORTNAME=	libretro-shaders-slang
-DISTVERSION=	g20241022
+DISTVERSION=	g20241122
 CATEGORIES=	games
 
 MAINTAINER=	bsdcode@disroot.org
@@ -13,24 +13,12 @@ LICENSE_COMB=	multi
 USE_GITHUB=	yes
 GH_ACCOUNT=	libretro
 GH_PROJECT=	slang-shaders
-GH_TAGNAME=	4f3d214b314d84c6a3e25b27c77bd1d0ee3a1697
+GH_TAGNAME=	8731861b22946faf71bb94ce25147484db61eb6f
+
+MAKE_ARGS=	PREFIX=${PREFIX}
 
 DATADIR=	${PREFIX}/share/libretro/shaders/shaders_slang
-EXTRACT_AFTER_ARGS=	--exclude ".gitlab-ci.yml" --exclude "configure" \
-			--exclude "Makefile" --no-same-owner \
-			--no-same-permissions
 NO_ARCH=	yes
 NO_BUILD=	yes
-
-OPTIONS_DEFINE=	DOCS
-
-do-install:
-	${MKDIR} ${STAGEDIR}${DATADIR}
-	(cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR} \
-		"! -regex ^./README.md")
-
-post-install-DOCS-on:
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README.md ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
