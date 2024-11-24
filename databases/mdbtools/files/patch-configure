@@ -1,0 +1,11 @@
+--- configure.orig	2024-11-23 19:10:22 UTC
++++ configure
+@@ -17896,7 +17896,7 @@ fi
+ 
+ 
+ 
+-CFLAGS="$CFLAGS -Wall -Werror"
++CFLAGS="$CFLAGS -Wall -Wextra"
+ LOCALE_T=locale_t
+ case $host in #(
+   *mingw*) :
