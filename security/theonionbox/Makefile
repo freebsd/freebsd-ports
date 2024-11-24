@@ -1,6 +1,6 @@
 PORTNAME=	theonionbox
 DISTVERSION=	4.3.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security net python
 MASTER_SITES=	PYPI
 
@@ -10,7 +10,7 @@ WWW=		https://github.com/ralphwetzel/theonionbox
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}apscheduler>=3.4:devel/py-apscheduler@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}APScheduler>=3.4:devel/py-apscheduler@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}bottle>=0.12.13:www/py-bottle@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}psutil>=5.4.0:sysutils/py-psutil@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pysocks>=1.6.7:net/py-pysocks@${PY_FLAVOR} \

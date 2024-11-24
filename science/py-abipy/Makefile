@@ -1,5 +1,6 @@
 PORTNAME=	abipy
 DISTVERSION=	0.9.8
+PORTREVISION=	1
 CATEGORIES=	science python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -9,7 +10,7 @@ WWW=		https://abinit.github.io/abipy/
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}apscheduler>0:devel/py-apscheduler@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}APScheduler>0:devel/py-apscheduler@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}ase>0:science/py-ase@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}chart-studio>0:graphics/py-chart-studio@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}click>0:devel/py-click@${PY_FLAVOR} \
