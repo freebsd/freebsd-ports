@@ -8,6 +8,7 @@ include/igdgmm/GmmLib/CachePolicy/GmmGen12dGPUCachePolicy.h
 include/igdgmm/GmmLib/CachePolicy/GmmGen8CachePolicy.h
 include/igdgmm/GmmLib/CachePolicy/GmmGen9CachePolicy.h
 include/igdgmm/GmmLib/CachePolicy/GmmXe_LPGCachePolicy.h
+include/igdgmm/GmmLib/CachePolicy/GmmXe2_LPGCachePolicy.h
 include/igdgmm/GmmLib/Platform/GmmPlatforms.h
 include/igdgmm/GmmLib/Texture/GmmTexture.h
 include/igdgmm/GmmLib/TranslationTable/GmmUmdTranslationTable.h
@@ -22,6 +23,7 @@ include/igdgmm/GmmLib/inc/External/Common/CachePolicy/GmmCachePolicyGen12dGPU.h
 include/igdgmm/GmmLib/inc/External/Common/CachePolicy/GmmCachePolicyGen8.h
 include/igdgmm/GmmLib/inc/External/Common/CachePolicy/GmmCachePolicyGen9.h
 include/igdgmm/GmmLib/inc/External/Common/CachePolicy/GmmCachePolicyXe_LPG.h
+include/igdgmm/GmmLib/inc/External/Common/CachePolicy/GmmCachePolicyXe2_LPG.h
 include/igdgmm/GmmLib/inc/External/Common/GmmCachePolicy.h
 include/igdgmm/GmmLib/inc/External/Common/GmmCachePolicyCommon.h
 include/igdgmm/GmmLib/inc/External/Common/GmmCachePolicyExt.h
@@ -63,5 +65,5 @@ include/igdgmm/util/g_gfxDebug.h
 include/igdgmm/util/gfxDebug.h
 lib/libigdgmm.so
 lib/libigdgmm.so.12
-lib/libigdgmm.so.12.3.0
+lib/libigdgmm.so.12.5.0
 libdata/pkgconfig/igdgmm.pc
