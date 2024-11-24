@@ -28,7 +28,6 @@ GLIB_SCHEMAS=	org.gnome.gitlab.YaLTeR.VideoTrimmer.gschema.xml
 
 post-patch:
 # Make each cargo subcommand very verbose
-# Add explicit <triple> subdir for --target from USES=cargo
 	@${REINPLACE_CMD} -e '/cargo/s/ --/&verbose&verbose&/' \
 		${WRKSRC}/build-aux/cargo.sh
 

@@ -35,7 +35,6 @@ CARGO_ENV+=	CARGO_PROFILE_RELEASE_LTO=false
 
 post-patch:
 # Make each cargo subcommand very verbose
-# Add explicit <triple> subdir for --target from USES=cargo
 	@${REINPLACE_CMD} -e "/cargo_options =/s/ '--/&verbose', &verbose', &/" \
 		${WRKSRC}/src/meson.build
 

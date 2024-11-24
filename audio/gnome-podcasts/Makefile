@@ -37,7 +37,6 @@ post-patch:
 		-e '/update_desktop_database/d' \
 		${WRKSRC}/meson.build
 # Make each cargo subcommand very verbose
-# Add explicit <triple> subdir for --target from USES=cargo
 	@${REINPLACE_CMD} -e "/cargo_options =/s/ '--/&verbose', &verbose', &/" \
 		${WRKSRC}/${PORTNAME}-gtk/src/meson.build
 
