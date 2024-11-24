@@ -1,7 +1,7 @@
 PORTNAME=	microsoft-gsl
 DISTVERSIONPREFIX=	v
 DISTVERSION=	4.1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 
 PATCH_SITES=	https://github.com/microsoft/GSL/commit/
