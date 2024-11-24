@@ -278,6 +278,7 @@ libdata/pkgconfig/snort.pc
 %%PORTDOCS%%%%DOCSDIR%%/enviro.txt
 %%PORTDOCS%%%%DOCSDIR%%/errors.txt
 %%PORTDOCS%%%%DOCSDIR%%/extending.txt
+%%PORTDOCS%%%%DOCSDIR%%/extractor.txt
 %%PORTDOCS%%%%DOCSDIR%%/features.txt
 %%PORTDOCS%%%%DOCSDIR%%/file_processing.txt
 %%PORTDOCS%%%%DOCSDIR%%/ftp.txt
