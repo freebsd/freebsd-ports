@@ -1,0 +1,9 @@
+[
+{ type: install
+  message: <<EOM
+zigbee2mqtt file locations are as following:
+  - configuration file is %%Z2M_DATADIR%%/configuration.yaml
+  - log directory is %%Z2M_LOGDIR%%
+EOM
+}
+]

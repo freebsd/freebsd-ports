@@ -1,0 +1,62 @@
+#!/bin/sh
+
+# PROVIDE: z2m
+# REQUIRE: DAEMON
+# KEYWORD: shutdown
+
+# FreeBSD rc.d script for zigbee2mqtt
+#
+
+# The z2m service has the following rc.conf options:
+#
+# z2m_enable (bool):	Set to YES to enable z2m
+# 			Default: NO
+# z2m_user (str):	The user to run z2m as
+# 			Default: z2m
+# z2m_group (str):	The group to run z2m as
+# 			Default: z2m
+# z2m_chdir (str):	The directory where z2m is installed
+# 			Default: %%PREFIX%%/z2m
+# z2m_datadir (str):	The directory where z2m's data is stored
+# 			Default: /var/db/z2m
+# z2m_restart (bool):	Set to YES if z2m should be automatically
+# 			restarted after it crashes.
+# 			Default: NO
+
+. /etc/rc.subr
+
+name=z2m
+desc="zigbee2mqtt service"
+rcvar=z2m_enable
+
+load_rc_config $name
+
+: ${z2m_enable:=NO}
+: ${z2m_group:=%%Z2M_GROUP%%}
+: ${z2m_datadir:=%%Z2M_DATADIR%%}
+: ${z2m_pidfile=/var/run/z2m/z2m.pid}
+: ${z2m_restart=NO}
+: ${z2m_user:=%%Z2M_USER%%}
+: ${z2m_chdir=%%Z2M_HOME%%}
+: ${z2m_env:="ZIGBEE2MQTT_DATA=${z2m_datadir}"}
+
+# If z2m_restart is YES, then restart z2m when it crashes, otherwise
+# daemon(8) will exit.
+if checkyesno z2m_restart; then
+	_restartargs="-r"
+else
+	_restartargs=""
+fi
+
+pidfile=${z2m_pidfile}
+
+command=/usr/sbin/daemon
+command_args="-f -H \
+                -P ${pidfile} -t ${name} -T ${name} \
+                ${_restartargs} \
+                %%LOCALBASE%%/bin/node index.js"
+required_files="${z2m_datadir}/configuration.yaml"
+
+start_precmd="[ -d ${pidfile%/*} ] || install -d -o ${z2m_user} -g ${z2m_group} ${pidfile%/*}"
+
+run_rc_command "$1"
