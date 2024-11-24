@@ -1,3 +1,3 @@
-TIMESTAMP = 1488930125
-SHA256 (liblogging-1.0.6.tar.gz) = 338c6174e5c8652eaa34f956be3451f7491a4416ab489aef63151f802b00bf93
-SIZE (liblogging-1.0.6.tar.gz) = 593393
+TIMESTAMP = 1732443627
+SHA256 (rsyslog-liblogging-v1.0.7_GH0.tar.gz) = f0f6e82c57a47f71ccdf9673af9f317c37357c9113b865d9ef4e89c2238a3a44
+SIZE (rsyslog-liblogging-v1.0.7_GH0.tar.gz) = 288035
