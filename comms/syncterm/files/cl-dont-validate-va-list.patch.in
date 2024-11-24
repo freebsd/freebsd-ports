@@ -1,0 +1,11 @@
+--- misc/int_err.c.orig	2024-12-01 18:55:35.113669000 -0500
++++ misc/int_err.c	2024-12-01 18:55:54.976487000 -0500
+@@ -41,7 +41,7 @@
+ 	ANALYSER_HINT_STRING( format );
+ 	ANALYSER_HINT_FORMAT_STRING( format );
+ 
+-	REQUIRES_B( verifyVAList( argPtr ) );
++	//REQUIRES_B( verifyVAList( argPtr ) );
+ 
+ 	/* Clear return value */
+ 	clearErrorInfo( errorInfo );
