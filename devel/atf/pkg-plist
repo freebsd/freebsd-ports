@@ -45,8 +45,8 @@ share/aclocal/atf-sh.m4
 %%DATADIR%%/libatf-sh.subr
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
-%%PORTDOCS%%%%DOCSDIR%%/NEWS
-%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/NEWS.md
+%%PORTDOCS%%%%DOCSDIR%%/README.md
 %%TEST%%tests/atf/Kyuafile
 %%TEST%%tests/atf/atf-c/Kyuafile
 %%TEST%%tests/atf/atf-c/macros_h_test.c
@@ -84,7 +84,6 @@ share/aclocal/atf-sh.m4
 %%TEST%%tests/atf/atf-c++/pkg_config_test
 %%TEST%%tests/atf/atf-c++/detail/Kyuafile
 %%TEST%%tests/atf/atf-c++/detail/application_test
-%%TEST%%tests/atf/atf-c++/detail/auto_array_test
 %%TEST%%tests/atf/atf-c++/detail/env_test
 %%TEST%%tests/atf/atf-c++/detail/exceptions_test
 %%TEST%%tests/atf/atf-c++/detail/fs_test

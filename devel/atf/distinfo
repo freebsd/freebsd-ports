@@ -1,3 +1,3 @@
-TIMESTAMP = 1704164615
-SHA256 (freebsd-atf-0.21-55c21b2_GH0.tar.gz) = cfb4c031ee61a827f6f0aa0b061e263cc6db1292be9eb9f5d54050bfcdee30f5
-SIZE (freebsd-atf-0.21-55c21b2_GH0.tar.gz) = 198322
+TIMESTAMP = 1732441833
+SHA256 (freebsd-atf-0.21-511d921_GH0.tar.gz) = 8351566535cbdc4c136b1255d265f1874be72959df3e3e5c822d035ca2f32dbc
+SIZE (freebsd-atf-0.21-511d921_GH0.tar.gz) = 196633
