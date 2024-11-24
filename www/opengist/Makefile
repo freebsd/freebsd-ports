@@ -11,6 +11,7 @@ WWW=		https://opengist.io/
 
 LICENSE=	AGPLv3
 
+BROKEN_aarch64=	fails to build
 BROKEN_i386=	fails to build
 
 BUILD_DEPENDS=	npm${NODEJS_SUFFIX}>0:www/npm${NODEJS_SUFFIX}
