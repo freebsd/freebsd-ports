@@ -3,7 +3,7 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	0.7.18
 CATEGORIES=	biology
 
-MAINTAINER=	jwb@FreeBSD.org
+MAINTAINER=	alster@vinterdalen.se
 COMMENT=	Burrows-Wheeler sequence aligner
 WWW=		https://github.com/lh3/bwa/
 
