@@ -13,14 +13,14 @@ LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
 
 BUILD_DEPENDS=	nasm>0:devel/nasm
 
-USES=		compiler:c11 gl gmake sdl shebangfix
+USES=		compiler:c11 gl gmake perl5 sdl shebangfix
 
 USE_GITHUB=     yes
 GH_ACCOUNT=     finalburnneo
 GH_PROJECT=     FBNeo
 GH_TAGNAME=     60b73a1fd017d7d8af5a428e16be17e24847d3a2
 
-USE_GL+=	gl
+USE_GL=		gl
 USE_SDL=	sdl2 image2
 
 SHEBANG_GLOB=	*.pl
