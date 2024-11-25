@@ -1311,7 +1311,6 @@
     SUBDIR += snmp_exporter
     SUBDIR += snooze
     SUBDIR += sockaddr
-    SUBDIR += socket
     SUBDIR += socklog
     SUBDIR += solaar
     SUBDIR += spcm
