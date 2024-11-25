@@ -2,13 +2,12 @@ PORTNAME=	dict
 PORTVERSION=	1.2
 PORTREVISION=	1
 CATEGORIES=	german
-MASTER_SITES=	http://wolfram.schneider.org/src/
+MASTER_SITES=	https://wolfram.schneider.org/src/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${dict}.gz
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Simple English/German dictionary
-WWW=		http://www.de.freebsd.org/~wosch/dict/dict.cgi
 
 LICENSE=	BSD2CLAUSE
 
