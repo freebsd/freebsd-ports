@@ -1,5 +1,5 @@
-TIMESTAMP = 1724341740
-SHA256 (vieb-12.0.0.tar.gz) = 091a5339123c60fbc42f68a129a85e90e2ee2061219d7aada2c5f03b238226ca
-SIZE (vieb-12.0.0.tar.gz) = 103234982
-SHA256 (vieb-images-12.0.0.tar.gz) = 2bfcc02f33492396b869a8e5d215b1904fdf028fc4f5f85876fbd9a9f1972e0d
-SIZE (vieb-images-12.0.0.tar.gz) = 969961
+TIMESTAMP = 1732525447
+SHA256 (vieb-12.1.0.tar.gz) = 89ff95ca5048cd9f09cdc2ab0109c7426fca1a0e2ec17f9cd303eaae323c0130
+SIZE (vieb-12.1.0.tar.gz) = 105475371
+SHA256 (vieb-images-12.1.0.tar.gz) = e31ede1df07e1be476855c724d297acce4674fc4eeddbed8ebc4c527135ef899
+SIZE (vieb-images-12.1.0.tar.gz) = 969960
