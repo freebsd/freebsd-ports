@@ -2,7 +2,7 @@ PORTNAME=	manck
 PORTVERSION=	1.2
 PORTREVISION=	3
 CATEGORIES=	sysutils
-MASTER_SITES=	http://wolfram.schneider.org/src/
+MASTER_SITES=	https://wolfram.schneider.org/src/
 
 MAINTAINER=	0mp@FreeBSD.org
 COMMENT=	Manual page consistency checker
