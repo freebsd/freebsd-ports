@@ -8198,6 +8198,7 @@
     SUBDIR += termbox
     SUBDIR += termcolor
     SUBDIR += terminality
+    SUBDIR += terraform-ls
     SUBDIR += test-drive
     SUBDIR += tevent
     SUBDIR += tex-kpathsea
