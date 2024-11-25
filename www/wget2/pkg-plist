@@ -4,8 +4,8 @@ include/wget.h
 include/wgetver.h
 lib/libwget.a
 lib/libwget.so
-lib/libwget.so.2
-lib/libwget.so.2.0.0
+lib/libwget.so.3
+lib/libwget.so.3.0.0
 libdata/pkgconfig/libwget.pc
 %%NLS%%share/locale/ca/LC_MESSAGES/wget2.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/wget2.mo
@@ -21,6 +21,9 @@ libdata/pkgconfig/libwget.pc
 %%NLS%%share/locale/id/LC_MESSAGES/wget2.mo
 %%NLS%%share/locale/it/LC_MESSAGES/wget2.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/wget2.mo
+%%NLS%%share/locale/ka/LC_MESSAGES/wget2.mo
+%%NLS%%share/locale/ko/LC_MESSAGES/wget2.mo
+%%NLS%%share/locale/ms/LC_MESSAGES/wget2.mo
 %%NLS%%share/locale/nb/LC_MESSAGES/wget2.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/wget2.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/wget2.mo

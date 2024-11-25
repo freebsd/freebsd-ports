@@ -1,6 +1,5 @@
 PORTNAME=	wget2
-DISTVERSION=	2.1.0
-PORTREVISION=	1
+DISTVERSION=	2.2.0
 CATEGORIES=	www
 MASTER_SITES=	GNU/wget
 
@@ -22,7 +21,7 @@ CONFIGURE_ARGS+=--without-libidn  # only libidn2 is used
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 
-OPTIONS_DEFINE=	DANE IDN MANPAGES DOXYGEN NLS PSL NGHTTP2 GPGME TEST HSTS
+OPTIONS_DEFINE=	DANE IDN MANPAGES DOXYGEN NLS PSL NGHTTP2 GPGME TEST HSTS PROXY
 OPTIONS_GROUP=	COMPRESSION
 OPTIONS_GROUP_COMPRESSION=	BROTLI ZSTD LZMA BZIP2
 OPTIONS_SINGLE=	SSL
@@ -33,7 +32,7 @@ OPTIONS_DEFAULT=IDN MANPAGES OPENSSL NLS PSL NGHTTP2 BROTLI ZSTD GPGME TEST HSTS
 OPTIONS_SUB=	yes
 
 # requires gnutls built with DANE option enabled
-DANE_DESC=		Support for DANE certificate checking
+DANE_DESC=		Support for DANE certificate checking (requires gnutls built with DANE option)
 DANE_CONFIGURE_WITH=	libdane
 DANE_LIB_DEPENDS=	libgnutls-dane.so:security/gnutls
 
@@ -107,6 +106,10 @@ ZSTD_LIB_DEPENDS=	libzstd.so:archivers/zstd
 LZMA_CONFIGURE_WITH=	lzma
 
 BZIP2_CONFIGURE_WITH=	bzip2
+
+PROXY_DESC=		Systemwide proxy configuration through libproxy
+PROXY_CONFIGURE_ENABLE=	libproxy
+PROXY_LIB_DEPENDS=      libproxy.so:net/libproxy
 
 .include <bsd.port.pre.mk>
 
