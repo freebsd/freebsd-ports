@@ -3,7 +3,7 @@ PORTVERSION=	1.28
 PORTREVISION=	17
 CATEGORIES=	x11 windowmaker
 MASTER_SITES=	http://freebsd.nsu.ru/distfiles/wdm/:wdm GENTOO:wdm \
-		http://wolfram.schneider.org/bsd/gif/bsd/:pic_large \
+		https://wolfram.schneider.org/bsd/gif/bsd/:pic_large \
 		LOCAL/tg:pic_small
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:wdm \
 		beastie.xpm:pic_small \
