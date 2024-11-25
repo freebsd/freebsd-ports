@@ -1,4 +1,5 @@
 bin/alpaca
+bin/alpaca_search_provider
 share/Alpaca/alpaca.gresource
 share/Alpaca/alpaca/__init__.py
 share/Alpaca/alpaca/available_models.json
@@ -14,8 +15,11 @@ share/Alpaca/alpaca/generic_actions.py
 share/Alpaca/alpaca/internal.py
 share/Alpaca/alpaca/main.py
 share/Alpaca/alpaca/window.py
+share/applications/com.jeffser.Alpaca.SearchProvider.desktop
 share/applications/com.jeffser.Alpaca.desktop
+share/dbus-1/services/com.jeffser.Alpaca.SearchProvider.service
 share/glib-2.0/schemas/com.jeffser.Alpaca.gschema.xml
+share/gnome-shell/search-providers/com.jeffser.Alpaca.search-provider.ini
 share/icons/hicolor/512x512/apps/com.jeffser.Alpaca.png
 share/icons/hicolor/scalable/apps/com.jeffser.Alpaca.svg
 share/icons/hicolor/symbolic/apps/com.jeffser.Alpaca-symbolic.svg
@@ -25,6 +29,7 @@ share/locale/es/LC_MESSAGES/alpaca.mo
 share/locale/fr/LC_MESSAGES/alpaca.mo
 share/locale/he/LC_MESSAGES/alpaca.mo
 share/locale/hi/LC_MESSAGES/alpaca.mo
+share/locale/it/LC_MESSAGES/alpaca.mo
 share/locale/nb_NO/LC_MESSAGES/alpaca.mo
 share/locale/pt_BR/LC_MESSAGES/alpaca.mo
 share/locale/ru/LC_MESSAGES/alpaca.mo
