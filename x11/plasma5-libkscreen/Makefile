@@ -1,5 +1,6 @@
 PORTNAME=	libkscreen
 DISTVERSION=	${KDE_PLASMA_VERSION}
+PORTREVISION=	1
 CATEGORIES=	x11 kde kde-plasma
 
 MAINTAINER=	kde@FreeBSD.org
@@ -17,7 +18,7 @@ USE_QT=		core dbus gui wayland x11extras \
 		buildtools:build qmake:build testlib:build
 USE_XORG=	x11 xcb xrandr
 
-PNP_IDS_FILE=	${LOCALBASE}/share/hwdata/hwdata/pnp.ids
+PNP_IDS_FILE=	${LOCALBASE}/share/hwdata/pnp.ids
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/share/hwdata/pnp.ids|${PNP_IDS_FILE}|' ${WRKSRC}/src/edid.cpp
