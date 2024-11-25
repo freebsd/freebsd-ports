@@ -1,6 +1,6 @@
 PORTNAME=	spek
 DISTVERSION=	0.8.5
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	audio
 MASTER_SITES=	https://github.com/alexkay/${PORTNAME}/releases/download/v${DISTVERSION}/
 

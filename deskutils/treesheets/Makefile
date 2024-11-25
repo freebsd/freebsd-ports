@@ -1,5 +1,6 @@
 PORTNAME=	treesheets
 DISTVERSION=	1.0.20240911
+PORTREVISION=	1
 CATEGORIES=	deskutils
 
 MAINTAINER=	eduardo@FreeBSD.org
