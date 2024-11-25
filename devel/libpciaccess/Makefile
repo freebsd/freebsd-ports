@@ -10,7 +10,7 @@ WWW=		https://www.freedesktop.org/wiki/Software/xlibs/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=    hwdata>0:misc/hwdata
+RUN_DEPENDS=	hwdata>0:misc/hwdata
 
 USES=		tar:xz xorg-cat:lib,meson
 INSTALL_TARGET=	install-strip
