@@ -17,7 +17,7 @@ USE_KDE=	config \
 USE_QT=		base wayland
 USE_XORG=	xcb
 
-PNP_IDS_FILE=	${LOCALBASE}/share/hwdata/hwdata/pnp.ids
+PNP_IDS_FILE=	${LOCALBASE}/share/hwdata/pnp.ids
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/share/hwdata/pnp.ids|${PNP_IDS_FILE}|' ${WRKSRC}/src/edid.cpp
