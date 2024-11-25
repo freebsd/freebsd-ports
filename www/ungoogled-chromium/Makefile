@@ -1,5 +1,5 @@
 PORTNAME=	ungoogled-chromium
-PORTVERSION=	131.0.6778.69
+PORTVERSION=	131.0.6778.85
 PULSEMV=	16
 PULSEV=		${PULSEMV}.1
 UGVERSION=	${DISTVERSION}-1
@@ -7,12 +7,9 @@ CATEGORIES=	www wayland
 MASTER_SITES=	https://commondatastorage.googleapis.com/chromium-browser-official/ \
 		https://nerd.hu/distfiles/:external \
 		https://freedesktop.org/software/pulseaudio/releases/:pulseaudio
-DISTFILES=	chromium-${DISTVERSION}${EXTRACT_SUFX}:external \
+DISTFILES=	chromium-${DISTVERSION}${EXTRACT_SUFX} \
 		ungoogled-chromium-${UGVERSION}.tar.gz:external \
 		pulseaudio-${PULSEV}.tar.gz:pulseaudio
-
-# unofficial distfiles
-DISTFILES+=	chrome-gn-${PORTVERSION}-src.tar.xz:external
 
 MAINTAINER=	chromium@FreeBSD.org
 COMMENT=	Google web browser based on WebKit sans integration with Google
@@ -236,7 +233,7 @@ WIDEVINE_DESC=		Depend on foreign-cdm to enable playback of DRM content
 WIDEVINE_RUN_DEPENDS=	foreign-cdm>0:www/foreign-cdm
 
 .include "Makefile.tests"
-TEST_DISTFILES=		chromium-${DISTVERSION}-testdata${EXTRACT_SUFX}:external
+TEST_DISTFILES=		chromium-${DISTVERSION}-testdata${EXTRACT_SUFX}
 TEST_ALL_TARGET=	${TEST_TARGETS}
 
 .include <bsd.port.options.mk>
