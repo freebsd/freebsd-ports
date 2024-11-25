@@ -375,9 +375,9 @@ post-install:
 	${CAT} ${WRKSRC}/conf/nginx.conf >> ${STAGEDIR}${ETCDIR}/nginx.conf-dist
 
 post-install-WWW-on:
-	${MKDIR} ${STAGEDIR}${PREFIX}/www/nginx-dist
-	(cd ${WRKSRC}/html && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/www/nginx-dist && \
-	${TOUCH} ${STAGEDIR}${PREFIX}/www/nginx-dist/EXAMPLE_DIRECTORY-DONT_ADD_OR_TOUCH_ANYTHING)
+	${MKDIR} ${STAGEDIR}${PREFIX}/www/freenginx-dist
+	(cd ${WRKSRC}/html && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/www/freenginx-dist && \
+	${TOUCH} ${STAGEDIR}${PREFIX}/www/freenginx-dist/EXAMPLE_DIRECTORY-DONT_ADD_OR_TOUCH_ANYTHING)
 .endif
 
 .include <bsd.port.post.mk>
