@@ -13,6 +13,8 @@ BUILD_DEPENDS=	rst2man:textproc/py-docutils@${PY_FLAVOR}
 
 USES=		autoreconf cpe libtool pathfix pkgconfig python:env
 
+PORTSCOUT=	limit:^1\.
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	rsyslog
 
