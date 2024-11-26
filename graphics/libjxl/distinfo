@@ -1,6 +1,6 @@
-TIMESTAMP = 1726205465
-SHA256 (libjxl-libjxl-v0.11.0_GH0.tar.gz) = 7ce4ec8bb37a435a73ac18c4c9ff56c2dc6c98892bf3f53a328e3eca42efb9cf
-SIZE (libjxl-libjxl-v0.11.0_GH0.tar.gz) = 1873614
+TIMESTAMP = 1732626155
+SHA256 (libjxl-libjxl-v0.11.1_GH0.tar.gz) = 1492dfef8dd6c3036446ac3b340005d92ab92f7d48ee3271b5dac1d36945d3d9
+SIZE (libjxl-libjxl-v0.11.1_GH0.tar.gz) = 1876134
 SHA256 (libjxl-testdata-ff8d743_GH0.tar.gz) = d225523e0576f21b6f8de106d2eac4e07650522bae7b65011993792a4dbc3eda
 SIZE (libjxl-testdata-ff8d743_GH0.tar.gz) = 69102242
 SHA256 (webmproject-sjpeg-e5ab130_GH0.tar.gz) = 89d706381311af14e1124276266aebf41977f5facfd2a984cd365835e4bb55ff
