@@ -1,0 +1,237 @@
+From cd3398db20a314d8700f25b4ec62ff87301736e1 Mon Sep 17 00:00:00 2001
+From: the-djmaze <>
+Date: Tue, 26 Nov 2024 01:47:34 +0100
+Subject: [PATCH] Resolve #1850
+
+---
+ snappymail/v/2.38.2/app/libraries/MailSo/Log/Logger.php      | 4 ++--
+ .../v/2.38.2/app/libraries/RainLoop/Plugins/Helper.php       | 2 +-
+ snappymail/v/2.38.2/app/libraries/snappymail/gpg/base.php    | 6 +++---
+ snappymail/v/2.38.2/app/libraries/snappymail/gpg/pgp.php     | 6 +++---
+ snappymail/v/2.38.2/app/libraries/snappymail/gpg/smime.php   | 6 +++---
+ .../v/2.38.2/app/libraries/snappymail/http/request.php       | 2 +-
+ .../v/2.38.2/app/libraries/snappymail/http/request/curl.php  | 5 ++---
+ .../v/2.38.2/app/libraries/snappymail/http/response.php      | 2 +-
+ snappymail/v/2.38.2/app/libraries/snappymail/pgp/pecl.php    | 6 +++---
+ .../v/2.38.2/app/libraries/snappymail/pgp/pgpinterface.php   | 6 +++---
+ 10 files changed, 22 insertions(+), 23 deletions(-)
+
+diff --git snappymail/v/2.38.2/app/libraries/MailSo/Log/Logger.php snappymail/v/2.38.2/app/libraries/MailSo/Log/Logger.php
+index e1cec4c16..4f48b340a 100644
+--- snappymail/v/2.38.2/app/libraries/MailSo/Log/Logger.php
++++ snappymail/v/2.38.2/app/libraries/MailSo/Log/Logger.php
+@@ -150,7 +150,7 @@ class Logger extends \SplFixedArray
+ 		\E_USER_ERROR => \LOG_ERR,
+ 		\E_USER_WARNING => \LOG_WARNING,
+ 		\E_USER_NOTICE => \LOG_NOTICE,
+-		\E_STRICT => \LOG_CRIT,
++//		\E_STRICT => \LOG_CRIT,
+ 		\E_RECOVERABLE_ERROR => \LOG_ERR,
+ 		\E_DEPRECATED => \LOG_INFO,
+ 		\E_USER_DEPRECATED => \LOG_INFO
+@@ -168,7 +168,7 @@ class Logger extends \SplFixedArray
+ 		\E_USER_ERROR => '-USER',
+ 		\E_USER_WARNING => '-USER',
+ 		\E_USER_NOTICE => '-USER',
+-		\E_STRICT => '-STRICT',
++//		\E_STRICT => '-STRICT',
+ 		\E_RECOVERABLE_ERROR => '-RECOVERABLE',
+ 		\E_DEPRECATED => '-DEPRECATED',
+ 		\E_USER_DEPRECATED => '-USER_DEPRECATED'
+diff --git snappymail/v/2.38.2/app/libraries/RainLoop/Plugins/Helper.php snappymail/v/2.38.2/app/libraries/RainLoop/Plugins/Helper.php
+index b4168bf80..9f85f9659 100644
+--- snappymail/v/2.38.2/app/libraries/RainLoop/Plugins/Helper.php
++++ snappymail/v/2.38.2/app/libraries/RainLoop/Plugins/Helper.php
+@@ -4,7 +4,7 @@ namespace RainLoop\Plugins;
+ 
+ class Helper
+ {
+-	static public function ValidateWildcardValues(string $sString, string $sWildcardValues, string &$sFoundValue = null) : bool
++	static public function ValidateWildcardValues(string $sString, string $sWildcardValues, ?string &$sFoundValue = null) : bool
+ 	{
+ 		$sFoundValue = '';
+ 
+diff --git snappymail/v/2.38.2/app/libraries/snappymail/gpg/base.php snappymail/v/2.38.2/app/libraries/snappymail/gpg/base.php
+index d94de5454..122d51ae6 100644
+--- snappymail/v/2.38.2/app/libraries/snappymail/gpg/base.php
++++ snappymail/v/2.38.2/app/libraries/snappymail/gpg/base.php
+@@ -251,7 +251,7 @@ abstract class Base
+ 	/**
+ 	 * Verifies a signed text
+ 	 */
+-	public function verify(string $signed_text, string $signature, string &$plaintext = null) /*: array|false*/
++	public function verify(string $signed_text, string $signature, ?string &$plaintext = null) /*: array|false*/
+ 	{
+ 		return false;
+ 	}
+@@ -259,7 +259,7 @@ abstract class Base
+ 	/**
+ 	 * Verifies a signed file
+ 	 */
+-	public function verifyFile(string $filename, string $signature, string &$plaintext = null) /*: array|false*/
++	public function verifyFile(string $filename, string $signature, ?string &$plaintext = null) /*: array|false*/
+ 	{
+ 		return false;
+ 	}
+@@ -267,7 +267,7 @@ abstract class Base
+ 	/**
+ 	 * Verifies a signed file
+ 	 */
+-	public function verifyStream($fp, string $signature, string &$plaintext = null) /*: array|false*/
++	public function verifyStream($fp, string $signature, ?string &$plaintext = null) /*: array|false*/
+ 	{
+ 		return false;
+ 	}
+diff --git snappymail/v/2.38.2/app/libraries/snappymail/gpg/pgp.php snappymail/v/2.38.2/app/libraries/snappymail/gpg/pgp.php
+index 2815c8010..f3921112f 100644
+--- snappymail/v/2.38.2/app/libraries/snappymail/gpg/pgp.php
++++ snappymail/v/2.38.2/app/libraries/snappymail/gpg/pgp.php
+@@ -739,7 +739,7 @@ class PGP extends Base implements \SnappyMail\PGP\PGPInterface
+ 	/**
+ 	 * Verifies a signed text
+ 	 */
+-	public function verify(string $signed_text, string $signature, string &$plaintext = null) /*: array|false*/
++	public function verify(string $signed_text, string $signature, ?string &$plaintext = null) /*: array|false*/
+ 	{
+ 		return $this->_verify($signed_text, $signature);
+ 	}
+@@ -747,7 +747,7 @@ class PGP extends Base implements \SnappyMail\PGP\PGPInterface
+ 	/**
+ 	 * Verifies a signed file
+ 	 */
+-	public function verifyFile(string $filename, string $signature, string &$plaintext = null) /*: array|false*/
++	public function verifyFile(string $filename, string $signature, ?string &$plaintext = null) /*: array|false*/
+ 	{
+ 		$fp = \fopen($filename, 'rb');
+ 		try {
+@@ -763,7 +763,7 @@ class PGP extends Base implements \SnappyMail\PGP\PGPInterface
+ 	/**
+ 	 * Verifies a signed file
+ 	 */
+-	public function verifyStream($fp, string $signature, string &$plaintext = null) /*: array|false*/
++	public function verifyStream($fp, string $signature, ?string &$plaintext = null) /*: array|false*/
+ 	{
+ 		if (!$fp || !\is_resource($fp)) {
+ 			throw new \Exception('Invalid stream resource');
+diff --git snappymail/v/2.38.2/app/libraries/snappymail/gpg/smime.php snappymail/v/2.38.2/app/libraries/snappymail/gpg/smime.php
+index 203a180b0..bc66c7291 100644
+--- snappymail/v/2.38.2/app/libraries/snappymail/gpg/smime.php
++++ snappymail/v/2.38.2/app/libraries/snappymail/gpg/smime.php
+@@ -589,7 +589,7 @@ class SMIME extends Base
+ 	/**
+ 	 * Verifies a signed text
+ 	 */
+-	public function verify(string $signed_text, string $signature, string &$plaintext = null) /*: array|false*/
++	public function verify(string $signed_text, string $signature, ?string &$plaintext = null) /*: array|false*/
+ 	{
+ 		return $this->_verify($signed_text, $signature);
+ 	}
+@@ -597,7 +597,7 @@ class SMIME extends Base
+ 	/**
+ 	 * Verifies a signed file
+ 	 */
+-	public function verifyFile(string $filename, string $signature, string &$plaintext = null) /*: array|false*/
++	public function verifyFile(string $filename, string $signature, ?string &$plaintext = null) /*: array|false*/
+ 	{
+ 		$fp = \fopen($filename, 'rb');
+ 		try {
+@@ -613,7 +613,7 @@ class SMIME extends Base
+ 	/**
+ 	 * Verifies a signed file
+ 	 */
+-	public function verifyStream($fp, string $signature, string &$plaintext = null) /*: array|false*/
++	public function verifyStream($fp, string $signature, ?string &$plaintext = null) /*: array|false*/
+ 	{
+ 		if (!$fp || !\is_resource($fp)) {
+ 			throw new \Exception('Invalid stream resource');
+diff --git snappymail/v/2.38.2/app/libraries/snappymail/http/request.php snappymail/v/2.38.2/app/libraries/snappymail/http/request.php
+index 0bdf9468e..8c1c3604a 100644
+--- snappymail/v/2.38.2/app/libraries/snappymail/http/request.php
++++ snappymail/v/2.38.2/app/libraries/snappymail/http/request.php
+@@ -111,7 +111,7 @@ abstract class Request
+ 
+ 	abstract protected function __doRequest(string &$method, string &$request_url, &$body, array $extra_headers) : Response;
+ 
+-	public function doRequest($method, $request_url, $body = null, array $extra_headers = array()) : ?Response
++	public function doRequest($method, $request_url, /*string|array*/$body = null, array $extra_headers = array()) : ?Response
+ 	{
+ 		$method = \strtoupper($method);
+ 		$url    = $request_url;
+diff --git snappymail/v/2.38.2/app/libraries/snappymail/http/request/curl.php snappymail/v/2.38.2/app/libraries/snappymail/http/request/curl.php
+index 2185d0c8f..f25fef1c0 100644
+--- snappymail/v/2.38.2/app/libraries/snappymail/http/request/curl.php
++++ snappymail/v/2.38.2/app/libraries/snappymail/http/request/curl.php
+@@ -6,9 +6,8 @@ use SnappyMail\HTTP\Response;
+ 
+ class CURL extends \SnappyMail\HTTP\Request
+ {
+-	private
+-		$response_headers = array(),
+-		$response_body = '';
++	private array $response_headers = array();
++	private string $response_body = '';
+ 
+ 	public function supportsSSL() : bool
+ 	{
+diff --git snappymail/v/2.38.2/app/libraries/snappymail/http/response.php snappymail/v/2.38.2/app/libraries/snappymail/http/response.php
+index d52624415..18411512f 100644
+--- snappymail/v/2.38.2/app/libraries/snappymail/http/response.php
++++ snappymail/v/2.38.2/app/libraries/snappymail/http/response.php
+@@ -12,7 +12,7 @@ class Response
+ 		$headers = array(), # The headers returned from the final_uri
+ 		$body;              # The body returned from the final_uri
+ 
+-	function __construct(string $request_uri, int $status = 0, ?array $headers = null, $body = null)
++	function __construct(string $request_uri, int $status = 0, ?array $headers = null, string $body = '')
+ 	{
+ 		if ($headers) {
+ 			$name = null;
+diff --git snappymail/v/2.38.2/app/libraries/snappymail/pgp/pecl.php snappymail/v/2.38.2/app/libraries/snappymail/pgp/pecl.php
+index d89ba02cc..4b311d3ae 100644
+--- snappymail/v/2.38.2/app/libraries/snappymail/pgp/pecl.php
++++ snappymail/v/2.38.2/app/libraries/snappymail/pgp/pecl.php
+@@ -365,7 +365,7 @@ class PECL implements \SnappyMail\PGP\PGPInterface
+ 	/**
+ 	 * Verifies a signed text
+ 	 */
+-	public function verify(string $signed_text, string $signature, string &$plaintext = null) /*: array|false*/
++	public function verify(string $signed_text, string $signature, ?string &$plaintext = null) /*: array|false*/
+ 	{
+ 		$result = $this->GnuPG->verify($signed_text, $signature ?: false, $plaintext) ?: $this->gnupgError();
+ 		if (!$result) {
+@@ -378,7 +378,7 @@ class PECL implements \SnappyMail\PGP\PGPInterface
+ 	/**
+ 	 * Verifies a signed file
+ 	 */
+-	public function verifyFile(string $filename, string $signature, string &$plaintext = null) /*: array|false*/
++	public function verifyFile(string $filename, string $signature, ?string &$plaintext = null) /*: array|false*/
+ 	{
+ 		return $this->GnuPG->verify(\file_get_contents($filename), $signature, $plaintext) ?: $this->gnupgError();
+ 	}
+@@ -386,7 +386,7 @@ class PECL implements \SnappyMail\PGP\PGPInterface
+ 	/**
+ 	 * Verifies a given resource
+ 	 */
+-	public function verifyStream(/*resource*/ $fp, string $signature, string &$plaintext = null) /*: array|false */
++	public function verifyStream(/*resource*/ $fp, string $signature, ?string &$plaintext = null) /*: array|false */
+ 	{
+ 		if (!$fp || !\is_resource($fp)) {
+ 			throw new \Exception('Invalid stream resource');
+diff --git snappymail/v/2.38.2/app/libraries/snappymail/pgp/pgpinterface.php snappymail/v/2.38.2/app/libraries/snappymail/pgp/pgpinterface.php
+index 3a5dd2ad6..75ee2e58f 100644
+--- snappymail/v/2.38.2/app/libraries/snappymail/pgp/pgpinterface.php
++++ snappymail/v/2.38.2/app/libraries/snappymail/pgp/pgpinterface.php
+@@ -39,7 +39,7 @@ interface PGPInterface
+ 	public function sign(string $plaintext) /*: string|false*/;
+ 	public function signFile(string $filename) /*: string|false*/;
+ 	public function signStream($fp, /*string|resource*/ $output = null) /*: string|false*/;
+-	public function verify(string $signed_text, string $signature, string &$plaintext = null) /*: array|false*/;
+-	public function verifyFile(string $filename, string $signature, string &$plaintext = null) /*: array|false*/;
+-	public function verifyStream(/*resource*/ $fp, string $signature, string &$plaintext = null) /*: array|false */;
++	public function verify(string $signed_text, string $signature, ?string &$plaintext = null) /*: array|false*/;
++	public function verifyFile(string $filename, string $signature, ?string &$plaintext = null) /*: array|false*/;
++	public function verifyStream(/*resource*/ $fp, string $signature, ?string &$plaintext = null) /*: array|false */;
+ }
+-- 
+2.47.1
+
