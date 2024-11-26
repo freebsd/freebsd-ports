@@ -53,6 +53,10 @@
 #			Default: BUILD_TESTING
 # CMAKE_TESTING_OFF	Appends -D<var>:bool=OFF to the CMAKE_TESTING_ARGS.
 #			Default: empty
+# CMAKE_TESTING_SETENV	- Use SETENV instead of SETENVI to run the tests.
+#			Useful for tests that require a running X or Wayland
+#			session to keep enviroment variables like DISPLAY.
+#			Default: undefined, set to any value to enable.
 # CMAKE_TESTING_TARGET	- Name of the test target. Default: test
 #
 # MAINTAINER: kde@FreeBSD.org
@@ -185,6 +189,13 @@ CMAKE_TESTING_ON?=		BUILD_TESTING
 CMAKE_TESTING_PARALLEL_LEVEL?=	${MAKE_JOBS_NUMBER}
 CMAKE_TESTING_TARGET?=		test
 
+# Use SETENV instead of SETENVI if CMAKE_TESTING_SETENV is defined
+.      if defined(CMAKE_TESTING_SETENV)
+_CMAKE_TESTING_SETENV=	${SETENV}
+.      else
+_CMAKE_TESTING_SETENV=	${SETENVI}
+.      endif
+
 # Handle the option-like CMAKE_TESTING_ON and CMAKE_TESTING_OFF lists.
 .      for _bool_kind in ON OFF
 .        if defined(CMAKE_TESTING_${_bool_kind})
@@ -196,7 +207,7 @@ do-test:
 	@cd ${BUILD_WRKSRC} && \
 		${SETENVI} ${WRK_ENV} ${CONFIGURE_ENV} ${CMAKE_BIN} ${CMAKE_ARGS} ${CMAKE_TESTING_ARGS} ${CMAKE_SOURCE_PATH} && \
 		${SETENVI} ${WRK_ENV} ${MAKE_ENV} ${MAKE_CMD} ${_MAKE_JOBS} ${MAKE_ARGS} ${ALL_TARGET} && \
-		${SETENVI} ${WRK_ENV} ${TEST_ENV} CTEST_PARALLEL_LEVEL=${CMAKE_TESTING_PARALLEL_LEVEL} ${MAKE_CMD} ${MAKE_ARGS} ${CMAKE_TESTING_TARGET}
+		${_CMAKE_TESTING_SETENV} ${WRK_ENV} ${TEST_ENV} CTEST_PARALLEL_LEVEL=${CMAKE_TESTING_PARALLEL_LEVEL} ${MAKE_CMD} ${MAKE_ARGS} ${CMAKE_TESTING_TARGET}
 .    endif
 .  endif
 
