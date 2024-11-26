@@ -1,8 +1,8 @@
 PORTNAME=	clpeak
-DISTVERSION=	1.1.2
+DISTVERSION=	1.1.3
 CATEGORIES=	benchmarks
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Benchmarking tool to measure peak capabilities of opencl devices
 WWW=		https://github.com/krrishnarraj/clpeak
 
