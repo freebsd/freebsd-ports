@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2024-07-29 22:38:04 UTC
+--- CMakeLists.txt.orig	2024-11-25 23:19:04 UTC
 +++ CMakeLists.txt
-@@ -69,6 +69,8 @@ else()
+@@ -76,6 +76,8 @@ else()
      set(ARCH ppc64le)
    elseif(CMAKE_SYSTEM_PROCESSOR MATCHES "^(powerpc|ppc)64")
      set(ARCH ppc64)
