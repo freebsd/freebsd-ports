@@ -1,3 +1,39 @@
+  <vuln vid="7d7a28cd-7f5a-450a-852f-c49aaab3fa7e">
+    <topic>keycloak -- Multiple security fixes</topic>
+    <affects>
+      <package>
+	<name>keycloak</name>
+	<range><lt>26.0.6</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Keycloak reports:</p>
+	<blockquote cite="https://www.keycloak.org/2024/11/keycloak-2606-released.html">
+	  <p>This update includes 5 security fixes:</p>
+	  <ul>
+	    <li>CVE-2024-10451: Sensitive Data Exposure in Keycloak Build Process</li>
+	    <li>CVE-2024-10270: Potential Denial of Service</li>
+	    <li>CVE-2024-10492: Keycloak path trasversal</li>
+	    <li>CVE-2024-9666: Keycloak proxy header handling Denial-of-Service (DoS) vulnerability</li>
+	    <li>CVE-2024-10039: Bypassing mTLS validation</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-9666</cvename>
+      <cvename>CVE-2021-10039</cvename>
+      <cvename>CVE-2021-10270</cvename>
+      <cvename>CVE-2021-10451</cvename>
+      <cvename>CVE-2021-10492</cvename>
+    </references>
+    <dates>
+      <discovery>2024-11-22</discovery>
+      <entry>2024-11-25</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="2263ea04-ac81-11ef-998c-2cf05da270f3">
     <topic>Gitlab -- vulnerabilities</topic>
     <affects>
