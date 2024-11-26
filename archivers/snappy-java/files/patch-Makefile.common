@@ -38,7 +38,7 @@
 +
 +FreeBSD-arm_CXX          := $(CROSS_PREFIX)g++
 +FreeBSD-arm_STRIP        := $(CROSS_PREFIX)strip
-+FreeBSD-arm_CXXFLAGS     := -I$(JAVA_HOME)/include -Ilib/inc_mac -O2 -fPIC -fvisibility=hidden
++FreeBSD-arm_CXXFLAGS     := -I$(JAVA_HOME)/include -Ilib/inc_mac -O2 -fPIC -fvisibility=hidden -DSNAPPY_HAVE_NEON=0
 +FreeBSD-arm_LINKFLAGS    := -shared -static-libgcc
 +FreeBSD-arm_LIBNAME      := libsnappyjava.so
 +FreeBSD-arm_SNAPPY_FLAGS :=
