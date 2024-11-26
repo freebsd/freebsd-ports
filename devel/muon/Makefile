@@ -25,14 +25,14 @@ USE_CSTD=	c99
 CFLAGS+=	-D__XSI_VISIBLE=1
 CONFIGURE_ENV=	CC="${CC}" CFLAGS="${CFLAGS}"
 
-post-patch:
-# this confuses some of the FreeBSD configure targets
-	@${RM} -r ${WRKSRC}/tests/project/common
-
 do-configure:
 	@(cd ${WRKSRC} && \
 		${SETENV} ${CONFIGURE_ENV} ${SH} bootstrap.sh . && \
-		./muon setup -Dlibcurl=disabled -Dlibarchive=disabled ${BUILD_WRKSRC})
+		${SETENV} ${CONFIGURE_ENV} ./muon setup \
+			-Dlibcurl=disabled \
+			-Dlibarchive=disabled \
+			-Dtracy=disabled \
+			${BUILD_WRKSRC})
 
 do-install:
 	@(${SETENV} ${MAKE_ENV} ${BUILD_WRKSRC}/muon -C ${BUILD_WRKSRC} install)
