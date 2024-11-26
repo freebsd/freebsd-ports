@@ -2116,6 +2116,7 @@
     SUBDIR += tth
     SUBDIR += tttcmds
     SUBDIR += ttynt
+    SUBDIR += tui-journal
     SUBDIR += turboxsl
     SUBDIR += txt2html
     SUBDIR += txt2man
