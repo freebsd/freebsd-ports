@@ -13,4 +13,5 @@ etc/rc.d/opengist
 %%WWWDIR%%/assets/opengist-85b89b9c.svg
 %%WWWDIR%%/assets/webauthn-da047c6d.js
 %%WWWDIR%%/manifest.json
+@dir /var/db/opengist
 @dir /var/run/opengist
