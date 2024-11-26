@@ -6,8 +6,8 @@
      for (dir = ctx->dirs; dir != NULL && *dir != NULL; dir++) {
 -        wasi_config_preopen_dir(wasi_config, *dir, *dir);
 +        wasi_config_preopen_dir(wasi_config, *dir, *dir,
-+                                 WASMTIME_WASI_DIR_PERMS_WRITE,
-+                                 WASMTIME_WASI_FILE_PERMS_WRITE);
++                WASMTIME_WASI_DIR_PERMS_READ|WASMTIME_WASI_DIR_PERMS_WRITE,
++                WASMTIME_WASI_FILE_PERMS_READ|WASMTIME_WASI_FILE_PERMS_WRITE);
      }
  
      error = wasmtime_context_set_wasi(rt_ctx->ctx, wasi_config);
