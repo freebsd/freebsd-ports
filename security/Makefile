@@ -1344,7 +1344,6 @@
     SUBDIR += teleport
     SUBDIR += testssl.sh
     SUBDIR += tfhe
-    SUBDIR += tfsec
     SUBDIR += theonionbox
     SUBDIR += tinc
     SUBDIR += tinc-devel
