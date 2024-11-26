@@ -8,48 +8,6 @@ until LLVM can be updated to use libc++ by default.
 
 https://reviews.llvm.org/D77776
 
---- vendor/cc-1.0.79/src/lib.rs.orig	2021-03-04 20:58:54 UTC
-+++ vendor/cc-1.0.79/src/lib.rs
-@@ -2659,24 +2659,7 @@ impl Tool {
-     }
- 
-     fn with_features(path: PathBuf, clang_driver: Option<&str>, cuda: bool) -> Self {
--        // Try to detect family of the tool from its name, falling back to Gnu.
--        let family = if let Some(fname) = path.file_name().and_then(|p| p.to_str()) {
--            if fname.contains("clang-cl") {
--                ToolFamily::Msvc { clang_cl: true }
--            } else if fname.ends_with("cl") || fname == "cl.exe" {
--                ToolFamily::Msvc { clang_cl: false }
--            } else if fname.contains("clang") {
--                match clang_driver {
--                    Some("cl") => ToolFamily::Msvc { clang_cl: true },
--                    _ => ToolFamily::Clang,
--                }
--            } else {
--                ToolFamily::Gnu
--            }
--        } else {
--            ToolFamily::Gnu
--        };
--
-+        let family = ToolFamily::Gnu;
-         Tool {
-             path: path,
-             cc_wrapper_path: None,
-
---- vendor/cc-1.0.97/src/tool.rs.orig	2024-05-09 18:20:47 UTC
-+++ vendor/cc-1.0.97/src/tool.rs
-@@ -151,9 +151,7 @@ impl Tool {
- 
-             match (clang, accepts_cl_style_flags, gcc) {
-                 (clang_cl, true, _) => Ok(ToolFamily::Msvc { clang_cl }),
--                (true, false, _) => Ok(ToolFamily::Clang {
--                    zig_cc: is_zig_cc(path, cargo_output),
--                }),
-+                (true, false, _) => Ok(ToolFamily::Gnu),
-                 (false, false, true) => Ok(ToolFamily::Gnu),
-                 (false, false, false) => {
-                     cargo_output.print_warning(&"Compiler family detection failed since it does not define `__clang__`, `__GNUC__` or `_MSC_VER`, fallback to treating it as GNU");
 --- vendor/cc-1.0.99/src/tool.rs.orig	2024-05-09 18:20:47 UTC
 +++ vendor/cc-1.0.99/src/tool.rs
 @@ -151,9 +151,7 @@ impl Tool {
@@ -63,57 +21,31 @@ https://reviews.llvm.org/D77776
                  (false, false, true) => Ok(ToolFamily::Gnu),
                  (false, false, false) => {
                      cargo_output.print_warning(&"Compiler family detection failed since it does not define `__clang__`, `__GNUC__` or `_MSC_VER`, fallback to treating it as GNU");
---- vendor/cc-1.0.105/src/tool.rs.orig	2024-05-09 18:20:47 UTC
-+++ vendor/cc-1.0.105/src/tool.rs
-@@ -151,9 +151,7 @@ impl Tool {
- 
-             match (clang, accepts_cl_style_flags, gcc) {
-                 (clang_cl, true, _) => Ok(ToolFamily::Msvc { clang_cl }),
--                (true, false, _) => Ok(ToolFamily::Clang {
--                    zig_cc: is_zig_cc(path, cargo_output),
--                }),
-+                (true, false, _) => Ok(ToolFamily::Gnu),
-                 (false, false, true) => Ok(ToolFamily::Gnu),
-                 (false, false, false) => {
-                     cargo_output.print_warning(&"Compiler family detection failed since it does not define `__clang__`, `__GNUC__` or `_MSC_VER`, fallback to treating it as GNU");
---- vendor/cc-1.1.5/src/tool.rs.orig	2024-05-09 18:20:47 UTC
-+++ vendor/cc-1.1.5/src/tool.rs
-@@ -151,9 +151,7 @@ impl Tool {
- 
-             match (clang, accepts_cl_style_flags, gcc) {
-                 (clang_cl, true, _) => Ok(ToolFamily::Msvc { clang_cl }),
--                (true, false, _) => Ok(ToolFamily::Clang {
--                    zig_cc: is_zig_cc(path, cargo_output),
--                }),
-+                (true, false, _) => Ok(ToolFamily::Gnu),
-                 (false, false, true) => Ok(ToolFamily::Gnu),
-                 (false, false, false) => {
-                     cargo_output.print_warning(&"Compiler family detection failed since it does not define `__clang__`, `__GNUC__` or `_MSC_VER`, fallback to treating it as GNU");
 
---- vendor/cc-1.1.6/src/tool.rs.orig	2024-05-09 18:20:47 UTC
-+++ vendor/cc-1.1.6/src/tool.rs
-@@ -151,9 +151,7 @@ impl Tool {
+--- vendor/cc-1.1.22/src/tool.rs.orig	2024-11-27 08:36:40.862061000 +0100
++++ vendor/cc-1.1.22/src/tool.rs	2024-11-27 08:38:23.622042000 +0100
+@@ -174,9 +174,7 @@ impl Tool {
  
-             match (clang, accepts_cl_style_flags, gcc) {
-                 (clang_cl, true, _) => Ok(ToolFamily::Msvc { clang_cl }),
--                (true, false, _) => Ok(ToolFamily::Clang {
+             match (clang, accepts_cl_style_flags, gcc, emscripten, vxworks) {
+                 (clang_cl, true, _, false, false) => Ok(ToolFamily::Msvc { clang_cl }),
+-                (true, _, _, _, false) | (_, _, _, true, false) => Ok(ToolFamily::Clang {
 -                    zig_cc: is_zig_cc(path, cargo_output),
 -                }),
-+                (true, false, _) => Ok(ToolFamily::Gnu),
-                 (false, false, true) => Ok(ToolFamily::Gnu),
-                 (false, false, false) => {
-                     cargo_output.print_warning(&"Compiler family detection failed since it does not define `__clang__`, `__GNUC__` or `_MSC_VER`, fallback to treating it as GNU");
++                (true, _, _, _, false) | (_, _, _, true, false) => Ok(ToolFamily::Gnu),
+                 (false, false, true, _, false) | (_, _, _, _, true) => Ok(ToolFamily::Gnu),
+                 (false, false, false, false, false) => {
+                     cargo_output.print_warning(&"Compiler family detection failed since it does not define `__clang__`, `__GNUC__`, `__EMSCRIPTEN__` or `__VXWORKS__`, also does not accept cl style flag `-?`, fallback to treating it as GNU");
 
---- vendor/cc-1.1.10/src/tool.rs.orig	2024-05-09 18:20:47 UTC
-+++ vendor/cc-1.1.10/src/tool.rs
-@@ -151,9 +151,7 @@ impl Tool {
+--- vendor/cc-1.1.23/src/tool.rs.orig	2024-11-27 08:36:40.862061000 +0100
++++ vendor/cc-1.1.23/src/tool.rs	2024-11-27 08:38:23.622042000 +0100
+@@ -174,9 +174,7 @@ impl Tool {
  
-             match (clang, accepts_cl_style_flags, gcc) {
-                 (clang_cl, true, _) => Ok(ToolFamily::Msvc { clang_cl }),
--                (true, false, _) => Ok(ToolFamily::Clang {
+             match (clang, accepts_cl_style_flags, gcc, emscripten, vxworks) {
+                 (clang_cl, true, _, false, false) => Ok(ToolFamily::Msvc { clang_cl }),
+-                (true, _, _, _, false) | (_, _, _, true, false) => Ok(ToolFamily::Clang {
 -                    zig_cc: is_zig_cc(path, cargo_output),
 -                }),
-+                (true, false, _) => Ok(ToolFamily::Gnu),
-                 (false, false, true) => Ok(ToolFamily::Gnu),
-                 (false, false, false) => {
-                     cargo_output.print_warning(&"Compiler family detection failed since it does not define `__clang__`, `__GNUC__` or `_MSC_VER`, fallback to treating it as GNU");
++                (true, _, _, _, false) | (_, _, _, true, false) => Ok(ToolFamily::Gnu),
+                 (false, false, true, _, false) | (_, _, _, _, true) => Ok(ToolFamily::Gnu),
+                 (false, false, false, false, false) => {
+                     cargo_output.print_warning(&"Compiler family detection failed since it does not define `__clang__`, `__GNUC__`, `__EMSCRIPTEN__` or `__VXWORKS__`, also does not accept cl style flag `-?`, fallback to treating it as GNU");

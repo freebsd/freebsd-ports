@@ -1,6 +1,6 @@
 PORTNAME=	rust
-PORTVERSION?=	1.82.0
-PORTREVISION?=	1
+PORTVERSION?=	1.83.0
+PORTREVISION?=	0
 CATEGORIES=	lang
 MASTER_SITES=	https://static.rust-lang.org/dist/:src \
 		https://dev-static.rust-lang.org/dist/:src \
@@ -64,7 +64,7 @@ DOCS_VARS=		_RUST_BUILD_DOCS=true \
 			_RUST_TOOLS+=rustdoc
 DOCS_VARS_OFF=		_RUST_BUILD_DOCS=false
 GDB_RUN_DEPENDS=	${LOCALBASE}/bin/gdb:devel/gdb
-PORT_LLVM_USES=		llvm:min=17,lib,noexport
+PORT_LLVM_USES=		llvm:min=18,lib,noexport
 PORT_LLVM_MAKE_ENV=	RUSTFLAGS="-Lnative=${LOCALBASE}/lib"
 SOURCES_VARS=		_COMPONENTS+=rust-src-${_PACKAGE_VERS} \
 			_RUST_TOOLS+=src
@@ -72,8 +72,8 @@ WASM_VARS=		_COMPONENTS+="rust-analysis-${_PACKAGE_VERS}-wasm32-unknown-unknown 
 			_RUST_TARGETS+=wasm32-unknown-unknown
 
 # See WRKSRC/src/stage0 for the date and version values
-BOOTSTRAPS_DATE?=		2024-09-05
-RUST_BOOTSTRAP_VERSION?=	1.81.0
+BOOTSTRAPS_DATE?=		2024-10-17
+RUST_BOOTSTRAP_VERSION?=	1.82.0
 
 CARGO_VENDOR_DIR?=		${WRKSRC}/vendor
 
@@ -198,9 +198,7 @@ do-configure:
 .endif
 	@${ECHO_CMD} 'remap-debuginfo=true' >> ${WRKSRC}/config.toml
 	@${ECHO_CMD} '[llvm]' >> ${WRKSRC}/config.toml
-.if defined(NIGHTLY_DATE)
 	@${ECHO_CMD} 'download-ci-llvm = false' >> ${WRKSRC}/config.toml
-.endif
 .if ${PORT_OPTIONS:MLTO}
 	@${ECHO_CMD} 'thin-lto=true' >> ${WRKSRC}/config.toml
 .endif
