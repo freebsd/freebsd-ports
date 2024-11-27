@@ -1,6 +1,5 @@
 PORTNAME=	python-distutils-extra
-PORTVERSION=	3.0
-PORTREVISION=	1
+PORTVERSION=	3.1
 CATEGORIES=	devel python
 MASTER_SITES=	DEBIAN
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -20,6 +19,6 @@ USES=		python tar:xz
 USE_PYTHON=	autoplist concurrent pep517
 
 NO_ARCH=	yes
-WRKSRC=		${WRKDIR}/python-distutils-extra
+WRKSRC=		${WRKDIR}/work
 
 .include <bsd.port.mk>
