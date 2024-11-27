@@ -1,3 +1,3 @@
-TIMESTAMP = 1729594480
-SHA256 (uvicorn-0.32.0.tar.gz) = f78b36b143c16f54ccdb8190d0a26b5f1901fe5a3c777e1ab29f26391af8551e
-SIZE (uvicorn-0.32.0.tar.gz) = 77564
+TIMESTAMP = 1732260970
+SHA256 (uvicorn-0.32.1.tar.gz) = ee9519c246a72b1c084cea8d3b44ed6026e78a4a309cbedae9c37e4cb9fbb175
+SIZE (uvicorn-0.32.1.tar.gz) = 77630
