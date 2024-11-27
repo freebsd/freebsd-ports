@@ -757,6 +757,7 @@
     SUBDIR += py-carbon
     SUBDIR += py-cassandra-driver
     SUBDIR += py-couchdb
+    SUBDIR += py-cymysql
     SUBDIR += py-databases
     SUBDIR += py-dbf
     SUBDIR += py-dbt-core
