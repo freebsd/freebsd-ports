@@ -11,6 +11,4 @@ LICENSE=	APACHE20
 
 USES=		gem
 
-#NO_ARCH=	yes
-
 .include <bsd.port.mk>
