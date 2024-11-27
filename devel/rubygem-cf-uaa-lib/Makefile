@@ -1,5 +1,5 @@
 PORTNAME=	cf-uaa-lib
-PORTVERSION=	4.0.6
+PORTVERSION=	4.0.7
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -12,8 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-addressable>=2.8.0<3:www/rubygem-addressable \
 		rubygem-httpclient>=2.8.2.4<3:www/rubygem-httpclient \
-		rubygem-json_pure>=2.7<3:devel/rubygem-json_pure \
-		rubygem-multi_json>=1.12.1<1.16:devel/rubygem-multi_json
+		rubygem-json>=2.7<3:devel/rubygem-json
 
 USES=		gem
 
