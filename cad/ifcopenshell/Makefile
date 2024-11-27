@@ -5,7 +5,9 @@ DISTVERSIONPREFIX=	v
 CATEGORIES=	cad
 
 PATCH_SITES=	https://github.com/IfcOpenShell/IfcOpenShell/commit/
-PATCHFILES=	589b98053e62ee14b6817e7d2b9f5b6b527310b7.patch:-p1
+PATCHFILES=	589b98053e62ee14b6817e7d2b9f5b6b527310b7.patch:-p1 \
+		1fe168d331123920eeb9a96e542fcc1453de57fe.patch:-p1 \
+		0f87bd8206a50d186621c2511d2e907bcf438968.patch:-p1
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open source IFC library and geometry engine
@@ -13,8 +15,6 @@ WWW=		https://ifcopenshell.org/
 
 LICENSE=	LGPL3+
 LICENSE_FILE=	${WRKSRC}/COPYING.LESSER
-
-BROKEN=		fails to build with boost-1.86+
 
 BUILD_DEPENDS=	${LOCALBASE}/include/CGAL/Cartesian.h:math/cgal \
 		${LOCALBASE}/include/nlohmann/json.hpp:devel/nlohmann-json \
