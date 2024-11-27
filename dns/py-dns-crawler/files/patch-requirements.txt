@@ -16,7 +16,7 @@
  hstspreload
 -idna==2.10
 -pyaml==21.10.1
--PyICU==2.10.2
+-PyICU==2.13.1
 -pyOpenSSL==23.1.1
 -redis==4.5.4
 -requests_toolbelt==0.10.1
@@ -28,7 +28,7 @@
 \ No newline at end of file
 +idna>=2.10
 +pyaml>=21.10.1
-+PyICU>=2.10.2
++PyICU>=2.13.1
 +pyOpenSSL>=23.1.1
 +redis>=4.5.4
 +requests_toolbelt>=0.10.1
