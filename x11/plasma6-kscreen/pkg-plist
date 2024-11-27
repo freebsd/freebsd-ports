@@ -3,7 +3,7 @@ lib/libexec/kscreen_osd_service
 %%QT_PLUGINDIR%%/kf6/kded/kscreen.so
 %%QT_PLUGINDIR%%/plasma/applets/org.kde.kscreen.so
 %%QT_PLUGINDIR%%/plasma/kcms/systemsettings/kcm_kscreen.so
-lib/systemd/user/plasma-kscreen-osd.service
+@comment lib/systemd/user/plasma-kscreen-osd.service
 share/applications/kcm_kscreen.desktop
 share/dbus-1/services/org.kde.kscreen.osdService.service
 share/kglobalaccel/org.kde.kscreen.desktop

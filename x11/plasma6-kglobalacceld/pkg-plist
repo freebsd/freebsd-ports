@@ -10,4 +10,4 @@ lib/libKGlobalAccelD.so.0
 lib/libKGlobalAccelD.so.%%KDE_PLASMA_VERSION%%
 lib/libexec/kglobalacceld
 %%QT_PLUGINDIR%%/org.kde.kglobalacceld.platforms/KGlobalAccelDXcb.so
-lib/systemd/user/plasma-kglobalaccel.service
+@comment lib/systemd/user/plasma-kglobalaccel.service

@@ -33,7 +33,6 @@ lib/libplasmapotdprovidercore.so.2.0.0
 %%QT_PLUGINDIR%%/potd/plasma_potd_bingprovider.so
 %%QT_PLUGINDIR%%/potd/plasma_potd_epodprovider.so
 %%QT_PLUGINDIR%%/potd/plasma_potd_flickrprovider.so
-%%QT_PLUGINDIR%%/potd/plasma_potd_natgeoprovider.so
 %%QT_PLUGINDIR%%/potd/plasma_potd_noaaprovider.so
 %%QT_PLUGINDIR%%/potd/plasma_potd_simonstalenhagprovider.so
 %%QT_PLUGINDIR%%/potd/plasma_potd_wcpotdprovider.so

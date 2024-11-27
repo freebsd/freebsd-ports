@@ -42,7 +42,7 @@ lib/libexec/kf6/kscreen_backend_launcher
 %%QT_PLUGINDIR%%/kf6/kscreen/KSC_KWayland.so
 %%QT_PLUGINDIR%%/kf6/kscreen/KSC_QScreen.so
 %%QT_PLUGINDIR%%/kf6/kscreen/KSC_XRandR.so
-lib/systemd/user/plasma-kscreen.service
+@comment lib/systemd/user/plasma-kscreen.service
 libdata/pkgconfig/KF6Screen.pc
 share/dbus-1/services/org.kde.kscreen.service
 share/locale/ar/LC_MESSAGES/libkscreen6_qt.qm

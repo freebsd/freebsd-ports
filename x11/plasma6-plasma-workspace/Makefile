@@ -2,6 +2,8 @@ PORTNAME=	plasma-workspace
 DISTVERSION=	${KDE_PLASMA_VERSION}
 CATEGORIES=	x11 kde kde-plasma
 
+#PATCH_SITES=	https://invent.kde.org/plasma/plasma-workspace/-/commit/
+
 COMMENT=	KDE Plasma Workspace
 MAINTAINER=	kde@FreeBSD.org
 
@@ -39,7 +41,7 @@ USE_KDE=	activities activities-stats archive attica auth baloo \
 		ecm:build plasma-wayland-protocols:build
 USE_QT=		5compat base declarative svg wayland
 USE_XORG=	ice sm x11 xau xcb xcursor xext xfixes xft xi xrender xtst
-SHEBANG_FILES=	components/calendar/kconf_update/migrate-calendar-to-plugin-id.py
+SHEBANG_FILES=	components/calendar/kconf_update/migrate-calendar-to-plugin-id.py.in
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \

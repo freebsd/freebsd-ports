@@ -63,6 +63,7 @@ share/locale/de/LC_MESSAGES/kcm_updates.mo
 share/locale/de/LC_MESSAGES/libdiscover.mo
 share/locale/de/LC_MESSAGES/plasma-discover-notifier.mo
 share/locale/de/LC_MESSAGES/plasma-discover.mo
+share/locale/el/LC_MESSAGES/kcm_updates.mo
 share/locale/el/LC_MESSAGES/libdiscover.mo
 share/locale/el/LC_MESSAGES/plasma-discover-notifier.mo
 share/locale/el/LC_MESSAGES/plasma-discover.mo
@@ -86,6 +87,10 @@ share/locale/eu/LC_MESSAGES/kcm_updates.mo
 share/locale/eu/LC_MESSAGES/libdiscover.mo
 share/locale/eu/LC_MESSAGES/plasma-discover-notifier.mo
 share/locale/eu/LC_MESSAGES/plasma-discover.mo
+share/locale/fa/LC_MESSAGES/kcm_updates.mo
+share/locale/fa/LC_MESSAGES/libdiscover.mo
+share/locale/fa/LC_MESSAGES/plasma-discover-notifier.mo
+share/locale/fa/LC_MESSAGES/plasma-discover.mo
 share/locale/fi/LC_MESSAGES/kcm_updates.mo
 share/locale/fi/LC_MESSAGES/libdiscover.mo
 share/locale/fi/LC_MESSAGES/plasma-discover-notifier.mo

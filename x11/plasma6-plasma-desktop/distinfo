@@ -1,5 +1,3 @@
-TIMESTAMP = 1729919577
-SHA256 (KDE/plasma/6.1.2/plasma-desktop-6.1.2.tar.xz) = 29e4047c49274ade6996240695cbdabe78c184181708079404debf6dad87e2d8
-SIZE (KDE/plasma/6.1.2/plasma-desktop-6.1.2.tar.xz) = 16139568
-SHA256 (KDE/plasma/6.1.2/02726a1ca0189f71f46513078cbc82af9daa9425.patch) = fa5e9ebe72a649c7faff9912f0bd2ec5a026455f8a454bc34953bff16bad58a1
-SIZE (KDE/plasma/6.1.2/02726a1ca0189f71f46513078cbc82af9daa9425.patch) = 862
+TIMESTAMP = 1731066235
+SHA256 (KDE/plasma/6.2.3/plasma-desktop-6.2.3.tar.xz) = 621ef18e65d75378320881c0c5d4866f390320b0b2abafebcb33d7546168632a
+SIZE (KDE/plasma/6.2.3/plasma-desktop-6.2.3.tar.xz) = 16334344

@@ -1,6 +1,6 @@
 etc/xdg/autostart/polkit-kde-authentication-agent-1.desktop
 lib/libexec/polkit-kde-authentication-agent-1
-lib/systemd/user/plasma-polkit-agent.service
+@comment lib/systemd/user/plasma-polkit-agent.service
 share/applications/org.kde.polkit-kde-authentication-agent-1.desktop
 share/knotifications6/policykit1-kde.notifyrc
 share/locale/ar/LC_MESSAGES/polkit-kde-authentication-agent-1.mo
