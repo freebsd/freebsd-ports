@@ -1,5 +1,5 @@
 PORTNAME=	pam_xdg
-DISTVERSION=	0.8.4
+DISTVERSION=	0.8.5
 CATEGORIES=	sysutils wayland
 MASTER_SITES=	https://ftp.sdaoden.eu/
 
@@ -22,6 +22,7 @@ MAKE_ARGS+=	SHLIB_NAME="${PORTNAME}.so" MAN="${PORTNAME}.8" \
 CFLAGS+=	-DXDG_CONFIG_DIR="${PREFIX}/etc" \
 		-DXDG_DATA_DIR_LOCAL="${PREFIX}" \
 		-DXDG_RUNTIME_DIR_OUTER="/var/run"
-LDFLAGS+=	-Wl,-z,defs
+# https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=263265
+#LDFLAGS+=	-Wl,-z,defs
 
 .include <bsd.port.mk>
