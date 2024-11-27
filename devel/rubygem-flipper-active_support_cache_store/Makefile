@@ -1,5 +1,5 @@
 PORTNAME=	flipper-active_support_cache_store
-PORTVERSION=	1.3.1
+PORTVERSION=	1.3.2
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -10,7 +10,7 @@ WWW=		https://www.flippercloud.io/ \
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-activesupport71>=4.2<8:devel/rubygem-activesupport71 \
+RUN_DEPENDS=	rubygem-activesupport72>=4.2<9:devel/rubygem-activesupport72 \
 		rubygem-flipper>=${PORTVERSION}<1.4:devel/rubygem-flipper
 
 USES=		gem
