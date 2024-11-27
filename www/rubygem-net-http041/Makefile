@@ -18,6 +18,6 @@ USES=		gem
 
 NO_ARCH=	yes
 
-PORTSCOUT=	ignroe:1
+PORTSCOUT=	ignore:1
 
 .include <bsd.port.mk>
