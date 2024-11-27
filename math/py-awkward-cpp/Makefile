@@ -1,5 +1,5 @@
 PORTNAME=	awkward-cpp
-PORTVERSION=	41
+PORTVERSION=	42
 CATEGORIES=	math python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,14 +18,8 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pybind11>=0:devel/py-pybind11@${PY_FLAVOR}
 		rapidjson>=0:devel/rapidjson
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.18.0,1:math/py-numpy@${PY_FLAVOR}
 
-USES=		cmake:indirect compiler:c++11-lang localbase python
+USES=		cmake:indirect compiler:c++11-lang localbase python:3.9+
 USE_PYTHON=	autoplist concurrent pep517
-
-.include <bsd.port.pre.mk>
-
-.if ${PYTHON_REL} < 30900
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}importlib-resources>=0:devel/py-importlib-resources@${PY_FLAVOR}
-.endif
 
 post-patch:
 # Clean up bundled libraries
@@ -34,4 +28,4 @@ post-patch:
 post-install:
 	${FIND} ${STAGEDIR}${PYTHON_SITELIBDIR} -name '*.so' -exec ${STRIP_CMD} {} +
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
