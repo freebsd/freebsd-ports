@@ -95,12 +95,12 @@ Library selection is handled by libglvnd and/or libmap.conf.
  
  _kmsro_targets = [
     driver_kmsro, driver_v3d, driver_vc4, driver_freedreno, driver_etnaviv,
---- src/gbm/backends/dri/meson.build.orig	2024-09-20 11:03:50 UTC
+--- src/gbm/backends/dri/meson.build.orig	2024-11-27 22:48:04 UTC
 +++ src/gbm/backends/dri/meson.build
-@@ -9,7 +9,7 @@ libgbm_dri = shared_library(
+@@ -9,7 +9,7 @@ shared_library(
  endif
  
- libgbm_dri = shared_library(
+ shared_library(
 -  'dri_gbm',
 +  'dri' + get_option('egl-lib-suffix') + '_gbm',
    files('gbm_dri.c', 'gbm_driint.h'),
