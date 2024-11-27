@@ -19,8 +19,6 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLA
 USES=		python
 USE_PYTHON=	autoplist concurrent pep517
 
-#NO_ARCH=	yes
-
 OPTIONS_DEFINE=	TOML YAML
 OPTIONS_DEFAULT=TOML YAML
 
