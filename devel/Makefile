@@ -829,8 +829,8 @@
     SUBDIR += git-extras
     SUBDIR += git-filter-repo
     SUBDIR += git-filter-repo-devel
-    SUBDIR += git-gui
     SUBDIR += git-graph
+    SUBDIR += git-gui
     SUBDIR += git-lab
     SUBDIR += git-lfs
     SUBDIR += git-merge-changelog
