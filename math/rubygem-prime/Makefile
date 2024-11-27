@@ -1,5 +1,5 @@
 PORTNAME=	prime
-PORTVERSION=	0.1.2
+PORTVERSION=	0.1.3
 CATEGORIES=	math rubygems
 MASTER_SITES=	RG
 
@@ -9,7 +9,8 @@ WWW=		https://github.com/ruby/prime
 
 LICENSE=	BSD2CLAUSE RUBY
 LICENSE_COMB=	dual
-LICENSE_FILE_BSD2CLAUSE=${WRKSRC}/LICENSE.txt
+LICENSE_FILE_BSD2CLAUSE=${WRKSRC}/BSDL
+LICENSE_FILE_RUBY=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	rubygem-forwardable>=0:devel/rubygem-forwardable \
 		rubygem-singleton>=0:devel/rubygem-singleton
