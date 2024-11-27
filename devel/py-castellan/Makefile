@@ -1,5 +1,5 @@
 PORTNAME=	castellan
-PORTVERSION=	5.1.1
+PORTVERSION=	5.2.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -26,7 +26,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}keystoneauth1>=3.4.0:devel/py-keystoneauth1@
 		${PYTHON_PKGNAMEPREFIX}requests>=2.18.0:www/py-requests@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}stevedore>=1.20.0:devel/py-stevedore@${PY_FLAVOR}
 
-USES=		python shebangfix
+USES=		python:3.9+ shebangfix
 USE_PYTHON=	autoplist concurrent cryptography pep517
 
 NO_ARCH=	yes
