@@ -1,5 +1,6 @@
 PORTNAME=	zigbee2mqtt
 DISTVERSION=	1.41.0
+PORTREVISION=	1
 CATEGORIES=	comms
 MASTER_SITES=	LOCAL/otis/:nodemodules
 DISTFILES=	${DISTCACHEFILES_nodemodules}:nodemodules
@@ -35,7 +36,7 @@ USERS=		${Z2M_USER}
 GROUPS=		${Z2M_GROUP}
 
 DISTCACHEFILES=			${DISTCACHEFILES_nodemodules}
-DISTCACHEFILES_nodemodules=	zigbee2mqtt-nodemodules-${DISTVERSION}.tar.gz
+DISTCACHEFILES_nodemodules=	zigbee2mqtt-nodemodules-${PKGVERSION}.tar.gz
 
 # user, group and homedir
 Z2M_GROUP?=	z2m
@@ -71,10 +72,11 @@ do-install:
 	${INSTALL} -lrs ${STAGEDIR}${Z2M_DATADIR} ${STAGEDIR}${Z2M_HOME}/data
 
 # This should be run after DISTVERSION change
-create-caches-tarball:
+create-caches-tarball: ${WRKSRC}
 	cd ${WRKSRC} && \
 		${SETENV} ${MAKE_ENV} npm install --ignore-scripts --no-progress --no-audit --no-fund && \
-		${TAR} czf ${WRKDIR}/zigbee2mqtt-nodemodules-${DISTVERSION}.tar.gz \
+		${FIND} ${WRKSRC}/node_modules -type d -a \( -name build -o -name dist \) -print0 | xargs -0 ${RM} -rf && \
+		${TAR} czf ${WRKDIR}/zigbee2mqtt-nodemodules-${PKGVERSION}.tar.gz \
 		node_modules package-lock.json
 
 .include <bsd.port.mk>
