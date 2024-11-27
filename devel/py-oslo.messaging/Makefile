@@ -1,5 +1,5 @@
 PORTNAME=	oslo.messaging
-PORTVERSION=	14.9.1
+PORTVERSION=	15.0.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -32,7 +32,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}amqp>=2.5.2:net/py-amqp@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}stevedore>=1.20.0:devel/py-stevedore@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}webob>=1.7.1:www/py-webob@${PY_FLAVOR}
 
-USES=		python
+USES=		python:3.9+
 USE_PYTHON=	autoplist concurrent pep517
 
 NO_ARCH=	yes
