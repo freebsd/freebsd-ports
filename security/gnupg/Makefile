@@ -1,5 +1,6 @@
 PORTNAME=	gnupg
 DISTVERSION=	2.4.6
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	GNUPG
 
@@ -19,8 +20,8 @@ LIB_DEPENDS=	libassuan.so:security/libassuan \
 		libnpth.so:devel/npth
 RUN_DEPENDS=	pinentry:security/pinentry
 
-USES=		autoreconf compiler:c11 cpe gettext-tools gmake iconv makeinfo pkgconfig \
-		readline sqlite tar:bzip2
+USES=		compiler:c11 cpe gmake iconv makeinfo pkgconfig readline sqlite \
+		tar:bzip2
 
 CPE_VENDOR=	gnupg
 
@@ -76,6 +77,7 @@ pre-build:
 	${TOUCH} ${WRKSRC}/doc/*.texi
 
 post-install:
+	${RMDIR} ${STAGEDIR}${PREFIX}/share/man/manh
 	${MV} ${STAGEDIR}${PREFIX}/bin/gpgsplit ${STAGEDIR}${PREFIX}/bin/gpgsplit2
 	${MV} ${STAGEDIR}${DATADIR}/help*.txt ${STAGEDIR}${DOCSDIR}
 

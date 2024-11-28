@@ -1,6 +1,8 @@
---- m4/gpg-error.m4.orig	2024-05-15 10:33:38 UTC
-+++ m4/gpg-error.m4
-@@ -67,7 +67,7 @@ AC_DEFUN([_AM_PATH_GPGRT_CONFIG],[dnl
+Fix path of pkgconfig files passed to gpgrt-config.
+
+--- configure.orig	2024-01-25 10:09:44 UTC
++++ configure
+@@ -8428,7 +8428,7 @@ fi
      # Get the prefix of gpgrt-config assuming it's something like:
      #   <PREFIX>/bin/gpgrt-config
      gpgrt_prefix=${GPGRT_CONFIG%/*/*}
