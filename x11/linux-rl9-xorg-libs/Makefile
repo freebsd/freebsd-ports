@@ -9,7 +9,7 @@ WWW=		https://x.org
 
 USES=		linux:rl9
 USE_LDCONFIG=	yes
-USE_LINUX=	fontconfig
+USE_LINUX=	fontconfig python3 systemd-libs
 USE_LINUX_RPM=	yes
 WANT_LINUX32=	yes
 
@@ -44,10 +44,13 @@ LIB_DISTNAMES=	libICE-${libICE_ver} \
 		libXxf86dga-${libXxf86dga_ver} \
 		libXxf86vm-${libXxf86vm_ver} \
 		libfontenc-${libfontenc_ver} \
+		libinput-${libinput_ver} \
+		libwacom-${libwacom_ver} \
 		libxcb-${libxcb_ver} \
 		libxkbfile-${libxkbfile_ver} \
 		libxshmfence-${libxshmfence_ver}
 SHARE_DISTNAMES=libX11-common-${libX11_ver} \
+		libwacom-data-${libwacom_ver} \
 		xkeyboard-config-${xkeyboard-config_ver}
 SRC_DISTFILES=	libICE-${libICE_ver}${SRC_SUFX}:SOURCE \
 		libSM-${libSM_ver}${SRC_SUFX}:SOURCE \
@@ -77,6 +80,8 @@ SRC_DISTFILES=	libICE-${libICE_ver}${SRC_SUFX}:SOURCE \
 		libXxf86dga-${libXxf86dga_ver}${SRC_SUFX}:SOURCE \
 		libXxf86vm-${libXxf86vm_ver}${SRC_SUFX}:SOURCE \
 		libfontenc-${libfontenc_ver}${SRC_SUFX}:SOURCE \
+		libinput-${libinput_ver}${SRC_SUFX}:SOURCE \
+		libwacom-${libwacom_ver}${SRC_SUFX}:SOURCE \
 		libxcb-${libxcb_ver}${SRC_SUFX}:SOURCE \
 		libxkbfile-${libxkbfile_ver}${SRC_SUFX}:SOURCE \
 		libxshmfence-${libxshmfence_ver}${SRC_SUFX}:SOURCE \

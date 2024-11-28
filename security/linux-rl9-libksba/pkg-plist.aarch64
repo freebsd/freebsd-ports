@@ -1,0 +1,13 @@
+usr/lib/.build-id/bb/49c6850840ea457b9b1a95008b987d7dea6bd2
+usr/lib64/libksba.so.8
+usr/lib64/libksba.so.8.13.1
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/THANKS
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+usr/share/licenses/libksba/COPYING
+usr/share/licenses/libksba/COPYING.GPLv2
+usr/share/licenses/libksba/COPYING.GPLv3
+usr/share/licenses/libksba/COPYING.LGPLv3

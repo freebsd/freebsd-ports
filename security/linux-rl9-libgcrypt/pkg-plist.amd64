@@ -1,11 +1,11 @@
-usr/lib/.build-id/3d/6b325fb24d09990a1b32343b27d3762d9ace14
-usr/lib/.build-id/83/26c4c629a0b54660fa342cc854212caef12092
+usr/lib/.build-id/c6/59a2e5dcc5077ba7e4a019de8a57656f17954e
+usr/lib/.build-id/c9/505f4b48e6aef79b08a88046ba3d837d7a23b1
 usr/lib/libgcrypt.so.20
 usr/lib/libgcrypt.so.20.4.0
 usr/lib64/libgcrypt.so.20
 usr/lib64/libgcrypt.so.20.4.0
-%%PORTDOCS%%usr/share/doc/libgcrypt/AUTHORS
-%%PORTDOCS%%usr/share/doc/libgcrypt/NEWS
-%%PORTDOCS%%usr/share/doc/libgcrypt/THANKS
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/THANKS
 usr/share/licenses/libgcrypt/COPYING.LIB
 @dir etc/gcrypt

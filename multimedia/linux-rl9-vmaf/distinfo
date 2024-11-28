@@ -1,0 +1,5 @@
+TIMESTAMP = 1732671491
+SHA256 (rocky/l/libvmaf-2.3.0-2.el9.x86_64.rpm) = b90fbe935fef13cc983acae4a6a66a4ddd4600b6183694539c73ae58e3eecef1
+SIZE (rocky/l/libvmaf-2.3.0-2.el9.x86_64.rpm) = 181104
+SHA256 (rocky/v/vmaf-2.3.0-2.el9.src.rpm) = e16c282cd656e3c2e3ec63bd2ec2c19f610da2f2eeaafea1c3e8bc839e07d6b7
+SIZE (rocky/v/vmaf-2.3.0-2.el9.src.rpm) = 18378485

@@ -215,6 +215,7 @@
     SUBDIR += linux-rl9-libvdpau
     SUBDIR += linux-rl9-libvpx
     SUBDIR += linux-rl9-qt5-qtmultimedia
+    SUBDIR += linux-rl9-vmaf
     SUBDIR += linux-tsmuxer
     SUBDIR += linux_dvbwrapper-kmod
     SUBDIR += livego

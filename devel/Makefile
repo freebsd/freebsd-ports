@@ -1529,6 +1529,7 @@
     SUBDIR += linux-rl9-devtools
     SUBDIR += linux-rl9-elfutils-libelf
     SUBDIR += linux-rl9-elfutils-libs
+    SUBDIR += linux-rl9-highway
     SUBDIR += linux-rl9-icu
     SUBDIR += linux-rl9-libatomic
     SUBDIR += linux-rl9-libevent
@@ -1540,7 +1541,10 @@
     SUBDIR += linux-rl9-libthai
     SUBDIR += linux-rl9-libtool-ltdl
     SUBDIR += linux-rl9-libunistring
+    SUBDIR += linux-rl9-lld
+    SUBDIR += linux-rl9-lldb
     SUBDIR += linux-rl9-llvm
+    SUBDIR += linux-rl9-npth
     SUBDIR += linux-rl9-nspr
     SUBDIR += linux-rl9-ocl-icd
     SUBDIR += linux-rl9-orc

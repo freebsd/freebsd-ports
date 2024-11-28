@@ -1,12 +1,11 @@
 PORTNAME=	llvm
-PORTVERSION=	17.0.6
-DISTVERSIONSUFFIX=	-5.el9
-PORTREVISION=	1
+PORTVERSION=	18.1.8
+DISTVERSIONSUFFIX=	-3.el9
 CATEGORIES=	devel linux
 
 MAINTAINER=	emulation@FreeBSD.org
-COMMENT=	LLVM suite (Rocky Linux ${LINUX_DIST_VER})
-WWW=		https://www.freedesktop.org/Software/dbus
+COMMENT=	The Low Level Virtual Machine suite (Rocky Linux ${LINUX_DIST_VER})
+WWW=		http://llvm.org
 
 LICENSE=	GPLv2+
 
@@ -21,11 +20,6 @@ LIB_DISTNAMES=	${PORTNAME}-devel-${DISTVERSIONFULL} \
 		${PORTNAME}-libs-${DISTVERSIONFULL} \
 		${PORTNAME}-static-${DISTVERSIONFULL}
 
-DESCR=		${PORTSDIR}/${PKGCATEGORY}/${PORTNAME}/pkg-descr
 DOCSDIR=	${PREFIX}/usr/share/doc/${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}
-
-post-install:
-	${RM} -r ${STAGEDIR}${PREFIX}/usr/include \
-		${STAGEDIR}${PREFIX}/usr/lib64/cmake
 
 .include <bsd.port.mk>

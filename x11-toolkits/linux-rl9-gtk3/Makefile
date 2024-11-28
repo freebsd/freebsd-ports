@@ -1,7 +1,7 @@
 PORTNAME=	gtk3
 PORTVERSION=	3.24.31
-DISTVERSIONSUFFIX=	-2.el9
-PORTREVISION=	2
+DISTVERSIONSUFFIX=	-5.el9
+PORTREVISION=	4
 CATEGORIES=	x11-toolkits linux
 
 MAINTAINER=	emulation@FreeBSD.org
@@ -16,15 +16,13 @@ CPE_VENDOR=	gnome
 CPE_PRODUCT=	gtk
 USE_LDCONFIG=	yes
 USE_LINUX=	at-spi2-atk atk cairo-gobject dbuslibs fontconfig freetype gdkpixbuf2 \
-		gnutls icu libepoxy libproxy librsvg2 libtracker-sparql \
+		gnutls icu libepoxy libproxy librsvg2 libstemmer libtracker-sparql \
 		libxkbcommon pango wayland xorglibs
 USE_LINUX_RPM=	yes
 WANT_LINUX32=	yes
 
-LIB_DISTNAMES=	${PORTNAME}-${PORTVERSION}${DISTVERSIONSUFFIX} \
-		libstemmer-0-18.585svn.el9
-
 DESCR=		${PORTSDIR}/${PKGCATEGORY}/${PORTNAME}0/pkg-descr
+DOCSDIR=	${PREFIX}/usr/share/doc/${PORTNAME}
 
 OPTIONS_DEFINE=	DOCS NLS
 OPTIONS_SUB=	yes

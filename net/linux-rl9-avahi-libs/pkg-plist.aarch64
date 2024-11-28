@@ -1,10 +1,13 @@
-usr/lib/.build-id/8c/cfde8abeab4d6f9c94fd47299b0bbe5076fc4d
-usr/lib/.build-id/a7/5ac4df86dcb24d244439092182e187c862bee0
-usr/lib/.build-id/ff/b31747e2e044ff4c6fb122d9900840cb14a096
+usr/lib/.build-id/1b/0a7226e5a2720eae5c6aabddb351e9973d7d97
+usr/lib/.build-id/40/1b0551d2a9ff6be5a183b2fe295b02a8f182d5
+usr/lib/.build-id/96/b5b0e919a8b3004b125ff0651bed3ec54f7b6f
+usr/lib/.build-id/fb/5a9bcaa622ecb8b71f8ce984f42f7771070fd6
 usr/lib64/libavahi-client.so.3
 usr/lib64/libavahi-client.so.3.2.9
 usr/lib64/libavahi-common.so.3
 usr/lib64/libavahi-common.so.3.5.4
+usr/lib64/libavahi-glib.so.1
+usr/lib64/libavahi-glib.so.1.0.2
 usr/lib64/libavahi-libevent.so.1
 usr/lib64/libavahi-libevent.so.1.0.0
 usr/share/doc/avahi-libs/README

@@ -13,7 +13,7 @@ LICENSE=	BSD2CLAUSE
 
 USES=		linux:rl9
 USE_LDCONFIG=	yes
-USE_LINUX=	libjxl
+USE_LINUX=	brotli highway libjxl
 USE_LINUX_RPM=	yes
 
 #BIN_DISTNAMES=	${PORTNAME}-${DISTVERSIONFULL}
@@ -25,5 +25,11 @@ DESCR=		${PORTSDIR}/${PKGCATEGORY}/${PORTNAME}/pkg-descr
 DOCSDIR=	${PREFIX}/usr/share/doc/${PORTNAME}${PKGNAMESUFFIX}
 
 OPTIONS_DEFINE=	DOCS
+
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == amd64
+USE_LINUX+=	vmaf
+.endif
 
 .include <bsd.port.mk>

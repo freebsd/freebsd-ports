@@ -16,12 +16,12 @@ USE_LINUX=	alsalib alsa-lib-devel alsa-plugins-oss alsa-plugins-pulseaudio \
 		ffmpeg-libs flac fontconfig freetype fribidi gdkpixbuf2 gnupg gnutls \
 		graphite2 gsm gstreamer1 gstreamer1-libav gtk2 gtk3 harfbuzz icu \
 		jasper jbigkit jpeg libassuan libasyncns libdrm libepoxy libevent \
-		libgcrypt libgfortran libglvnd libgpg-error libidn2 libnghttp2 libogg \
+		libgcrypt libgfortran libglvnd libgpg-error libidn2 libksba libnghttp2 libogg \
 		libpciaccess libproxy libpsl librsvg2 libsecret libsigc++20 libsigsegv \
-		libsndfile libsoup libtasn1 libthai libtheora libtool-ltdl \
+		libsndfile libsoup libssh libstemmer libtasn1 libthai libtheora libtool-ltdl \
 		libtracker-sparql libunistring libusb libv4l libva libvdpau \
 		libvorbis libvpx libxcrypt libxkbcommon libxml2 libxslt llvm \
-		lz4 nettle nspr nss ocl-icd openal-soft openjpeg openldap opus orc \
+		lz4 nettle npth nspr nss ocl-icd openal-soft openjpeg openldap opus orc \
 		p11-kit pango pixman png pulseaudio-libs pulseaudio-utils python3 \
 		qt3d qtbase qtconnectivity qtdeclarative qtgraphicaleffects qtimageformats \
 		qtmultimedia qtquickcontrols qtscript qtsensors qtserialbus qtserialport \

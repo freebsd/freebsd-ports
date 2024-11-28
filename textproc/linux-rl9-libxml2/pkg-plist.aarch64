@@ -5,9 +5,9 @@ usr/lib/.build-id/a0/3292b74166c9b3e843ca7a3413a30903657589
 usr/lib/.build-id/d8/5be4166c79d150bcc481a3ca3cb1259a0dfa5f
 usr/lib64/libxml2.so.2
 usr/lib64/libxml2.so.2.9.13
-%%PORTDOCS%%usr/share/doc/libxml2/NEWS
-%%PORTDOCS%%usr/share/doc/libxml2/README.md
-%%PORTDOCS%%usr/share/doc/libxml2/TODO
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README.md
+%%PORTDOCS%%%%DOCSDIR%%/TODO
 usr/share/licenses/libxml2/Copyright
 usr/share/man/man1/xmlcatalog.1.gz
 usr/share/man/man1/xmllint.1.gz

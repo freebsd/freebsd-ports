@@ -1,0 +1,9 @@
+TIMESTAMP = 1732661132
+SHA256 (rocky/l/libksba-1.5.1-7.el9.aarch64.rpm) = 7e28b5f40e71c42ad89144ab9c4a5ece8d5ad2057deff4214954cb2645d57071
+SIZE (rocky/l/libksba-1.5.1-7.el9.aarch64.rpm) = 153797
+SHA256 (rocky/l/libksba-1.5.1-7.el9.i686.rpm) = 2d596acb13fe582901bcd3cc9363e04f27533c902e4d0f4230723223325edc38
+SIZE (rocky/l/libksba-1.5.1-7.el9.i686.rpm) = 160403
+SHA256 (rocky/l/libksba-1.5.1-7.el9.x86_64.rpm) = 889bd55e123a02abe8afc82da4de3f8d6688bfee71148e2032673fbfe83b3445
+SIZE (rocky/l/libksba-1.5.1-7.el9.x86_64.rpm) = 155981
+SHA256 (rocky/l/libksba-1.5.1-7.el9.src.rpm) = 60ce35a117e69e8d14adee3f2190bb481d82a099e18dfd5b947122c2d4c3973a
+SIZE (rocky/l/libksba-1.5.1-7.el9.src.rpm) = 674684

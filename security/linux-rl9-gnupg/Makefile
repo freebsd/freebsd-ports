@@ -11,7 +11,7 @@ WWW=		https://gnutls.org/
 
 USES=		cpe linux:rl9
 CPE_VENDOR=	gnu
-USE_LINUX=	gnutls libassuan libgcrypt libgpg-error openldap sqlite3
+USE_LINUX=	gnutls libassuan libgcrypt libgpg-error libksba npth openldap sqlite3
 USE_LINUX_RPM=	yes
 
 BIN_DISTNAMES=	${PORTNAME}2-${DISTVERSION}${DISTVERSIONSUFFIX}

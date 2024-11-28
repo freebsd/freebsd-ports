@@ -1,0 +1,10 @@
+usr/lib/.build-id/e0/399cf33fffea8f9c6d3f958848fd8e7cc15e7e
+usr/lib64/libssh.so.4
+usr/lib64/libssh.so.4.9.4
+usr/lib64/libssh_threads.so.4
+usr/lib64/libssh_threads.so.4.9.4
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/BSD
+%%PORTDOCS%%%%DOCSDIR%%/CHANGELOG
+%%PORTDOCS%%%%DOCSDIR%%/README
+usr/share/licenses/libssh/COPYING

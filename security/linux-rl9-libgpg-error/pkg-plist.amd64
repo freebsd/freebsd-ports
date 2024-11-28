@@ -7,9 +7,9 @@ usr/lib/libgpg-error.so.0
 usr/lib/libgpg-error.so.0.32.0
 usr/lib64/libgpg-error.so.0
 usr/lib64/libgpg-error.so.0.32.0
-%%PORTDOCS%%usr/share/doc/libgpg-error/AUTHORS
-%%PORTDOCS%%usr/share/doc/libgpg-error/NEWS
-%%PORTDOCS%%usr/share/doc/libgpg-error/README
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
 %%DATADIR%%/errorref.txt
 usr/share/licenses/libgpg-error/COPYING
 usr/share/licenses/libgpg-error/COPYING.LIB

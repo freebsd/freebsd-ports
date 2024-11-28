@@ -10,9 +10,9 @@ usr/lib/libxml2.so.2
 usr/lib/libxml2.so.2.9.13
 usr/lib64/libxml2.so.2
 usr/lib64/libxml2.so.2.9.13
-%%PORTDOCS%%usr/share/doc/libxml2/NEWS
-%%PORTDOCS%%usr/share/doc/libxml2/README.md
-%%PORTDOCS%%usr/share/doc/libxml2/TODO
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README.md
+%%PORTDOCS%%%%DOCSDIR%%/TODO
 usr/share/licenses/libxml2/Copyright
 usr/share/man/man1/xmlcatalog.1.gz
 usr/share/man/man1/xmllint.1.gz

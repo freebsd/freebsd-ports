@@ -9,9 +9,9 @@ usr/lib/libsecret-1.so.0.0.0
 usr/lib64/girepository-1.0/Secret-1.typelib
 usr/lib64/libsecret-1.so.0
 usr/lib64/libsecret-1.so.0.0.0
-%%PORTDOCS%%usr/share/doc/libsecret/AUTHORS
-%%PORTDOCS%%usr/share/doc/libsecret/NEWS
-%%PORTDOCS%%usr/share/doc/libsecret/README
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
 usr/share/licenses/libsecret/COPYING
 %%NLS%%usr/share/locale/an/LC_MESSAGES/libsecret.mo
 %%NLS%%usr/share/locale/ar/LC_MESSAGES/libsecret.mo
