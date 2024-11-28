@@ -1,0 +1,91 @@
+#!/bin/sh
+#
+# PROVIDE: %%PORTNAME%%
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# %%RC_NAME%%_enable (bool):        Set to NO by default.
+#                       Set it to YES to enable it.
+# %%RC_NAME%%_ip_addr:      IP Address used to listen for connections
+#                       Default: 0.0.0.0
+# %%RC_NAME%%_conf_dir:     Directory where %%RC_NAME%% configuration
+#                       data is stored.
+#                       Default: %%PREFIX%%/%%RC_NAME%%
+# %%RC_NAME%%_settings:     Directory and file name of %%RC_NAME%% settings
+#                       db is stored.
+#                       Default: %%PREFIX%%/%%RC_NAME%%/app.db
+# %%RC_NAME%%_gdrive:       Directory and file name of %%RC_NAME%% gdrive
+#                       db is stored.
+#                       Default: %%PREFIX%%/%%RC_NAME%%/gdrive.db
+# %%RC_NAME%%_cert:         Directory and file name of %%RC_NAME%% gdrive
+#                       db is stored.
+#                       Default: None
+# %%RC_NAME%%_key:          Directory and file name of %%RC_NAME%% gdrive
+#                       db is stored.
+#                       Default: None
+# %%RC_NAME%%_flags:        Additonal flags as needed
+#                       Default: None
+# %%RC_NAME%%_user:         The user account %%RC_NAME%% daemon runs as what
+#                       you want it to be. It uses '%%RC_NAME%%' user by
+#                       default. Do not set it as empty or it will run
+#                       as root.
+# %%RC_NAME%%_group:        The group account %%RC_NAME%% daemon runs as what
+#                       you want it to be. It uses '%%RC_NAME%%' group by
+#                       default. Do not set it as empty or it will run
+#                       as wheel.
+# %%RC_NAME%%_pid:      Set the name of the %%RC_NAME%% pidfile
+#                       Default: %%PORTNAME%%.pid
+# %%RC_NAME%%_pid_dir:      Set the directory of the %%RC_NAME%% pidfile
+#                       Default: /var/run/%%PORTNAME%%
+# %%RC_NAME%%_log:      Set the name of the %%RC_NAME%% logfile
+#                       Default: %%PORTNAME%%.log
+# %%RC_NAME%%_log_dir:      Set the directory of the %%RC_NAME%% logfile
+#                       Default: /var/log/%%PORTNAME%%
+
+. /etc/rc.subr
+
+name=%%RC_NAME%%
+rcvar=%%RC_NAME%%_enable
+load_rc_config ${name}
+
+: ${%%RC_NAME%%_enable:=NO}
+: ${%%RC_NAME%%_user:=%%USER%%}
+: ${%%RC_NAME%%_group:=%%GROUP%%}
+: ${%%RC_NAME%%_ip_addr="0.0.0.0"}
+: ${%%RC_NAME%%_conf_dir="%%DATADIR%%"}
+: ${%%RC_NAME%%_settings="${%%RC_NAME%%_conf_dir}/app.db"}
+: ${%%RC_NAME%%_gdrive="${%%RC_NAME%%_conf_dir}/gdrive.db"}
+: ${%%RC_NAME%%_pid:="%%PORTNAME%%.pid"}
+: ${%%RC_NAME%%_pid_dir:="/var/run/%%PORTNAME%%"}
+: ${%%RC_NAME%%_log:="%%PORTNAME%%.log"}
+: ${%%RC_NAME%%_log_dir:="/var/log/%%PORTNAME%%"}
+
+pidfile=${%%RC_NAME%%_pid_dir}/${%%RC_NAME%%_pid}
+logfile=${%%RC_NAME%%_log_dir}/${%%RC_NAME%%_log}
+
+start_precmd="${name}_prestart"
+
+procname="%%PREFIX%%/bin/cps"
+command_interpreter="%%PYTHON_CMD%%"
+command="/usr/sbin/daemon"
+command_args="-p $pidfile $procname \
+		-i ${%%RC_NAME%%_ip_addr} \
+		-p ${%%RC_NAME%%_settings} \
+		-g ${%%RC_NAME%%_gdrive} \
+		${%%RC_NAME%%_cert:+-c ${%%RC_NAME%%_cert}} \
+		${%%RC_NAME%%_key:+-k ${%%RC_NAME%%_key}} \
+		-o $logfile"
+
+%%RC_NAME%%_prestart()
+{
+	PATH=${PATH}:%%PREFIX%%/bin:%%PREFIX%%/sbin
+
+	for calwebdir in ${%%RC_NAME%%_pid_dir} ${%%RC_NAME%%_log_dir} ${%%RC_NAME%%_conf_dir}; do
+		[ -d ${calwebdir} ] || install -d -g ${%%RC_NAME%%_group} -o ${%%RC_NAME%%_user} ${calwebdir}
+	done
+}
+
+run_rc_command $1

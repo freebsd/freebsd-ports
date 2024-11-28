@@ -1486,6 +1486,7 @@
     SUBDIR += py-cachecontrol
     SUBDIR += py-cachelib
     SUBDIR += py-caldav
+    SUBDIR += py-calibreweb
     SUBDIR += py-channels
     SUBDIR += py-channels-redis
     SUBDIR += py-cheroot

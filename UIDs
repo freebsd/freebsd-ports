@@ -758,7 +758,7 @@ bosun:*:807:807::0:0:Bosun Daemon:/nonexistent:/usr/sbin/nologin
 clixon:*:808:808::0:0:Clixon Daemon:/nonexistent:/usr/sbin/nologin
 # free: 809
 # free: 810
-# free: 811
+calibreweb:*:811:811::0:0:Calibre-Web Daemon:/nonexistent:/usr/sbin/nologin
 foreman_proxy:*:812:812::0:0:Foreman Smart Proxy:/usr/local/share/foreman-proxy:/usr/sbin/nologin
 hitch:*:813:813::0:0:Hitch TLS Proxy:/nonexistent:/usr/sbin/nologin
 puppet:*:814:814::0:0:Puppet Daemon:/nonexistent:/usr/sbin/nologin
