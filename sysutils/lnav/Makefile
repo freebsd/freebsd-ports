@@ -1,9 +1,7 @@
 PORTNAME=	lnav
-DISTVERSIONPREFIX=	v
-DISTVERSION=	0.12.3-beta2-62
-DISTVERSIONSUFFIX=	-g1bef9f04
+DISTVERSION=	0.12.3
 CATEGORIES=	sysutils
-#MASTER_SITES=	https://github.com/tstack/${PORTNAME}/releases/download/v${DISTVERSION}/
+MASTER_SITES=	https://github.com/tstack/${PORTNAME}/releases/download/v${DISTVERSION}/
 
 MAINTAINER=	tom@hur.st
 COMMENT=	Terminal-based log file navigator
@@ -15,10 +13,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libpcre2-8.so:devel/pcre2
 
-USES=		autoreconf compiler:c++17-lang gmake ncurses readline sqlite
-USE_GITHUB=	yes
-GH_ACCOUNT=	tstack
-
+USES=		autoreconf compiler:c++17-lang gmake ncurses readline sqlite \
+		tar:bz2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-static
 
