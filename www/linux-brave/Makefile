@@ -12,10 +12,11 @@ WWW=		https://www.brave.com
 RUN_DEPENDS=	update-mime-database:misc/shared-mime-info
 
 USES=		cpe desktop-file-utils gnome linux:rl9 shared-mime-info shebangfix
-USE_LINUX=	alsalib alsa-plugins-oss alsa-plugins-pulseaudio ca-certificates \
-		cups-libs curl dbuslibs dri ffmpeg-libs gnupg gstreamer1-libav \
-		gtk3 libunistring nss p11-kit sqlite3 wget xorglibs
-ONLY_FOR_ARCHS=	amd64
+USE_LINUX=	alsalib alsa-plugins-oss alsa-plugins-pulseaudio at-spi2-atk \
+		ca-certificates cairo cups-libs curl dbuslibs dri ffmpeg-libs \
+		gnupg gstreamer1-libav gtk3 libexpat libxkbcommon libunistring \
+		nspr nss p11-kit pango sqlite3 wget xorglibs
+ONLY_FOR_ARCHS=	aarch64 amd64
 
 SHEBANG_FILES=	opt/brave.com/brave/brave-browser
 
@@ -29,7 +30,7 @@ SRC_SUFX?=		.src${EXTRACT_SUFX}
 
 REINPLACE_ARGS=	-i ""
 
-BRAVE_VER?=	1.71.123
+BRAVE_VER?=	1.73.91
 BRAVE_BUILD?=	1
 
 DATADIR=	${PREFIX}/share/${PORTNAME}
