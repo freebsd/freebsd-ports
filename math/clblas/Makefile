@@ -4,7 +4,7 @@ DISTVERSIONPREFIX=	v
 PORTREVISION=	17
 CATEGORIES=	math
 
-MAINTAINER=	jmd@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Software library containing BLAS functions written in OpenCL
 WWW=		https://github.com/clMathLibraries/clBLAS
 

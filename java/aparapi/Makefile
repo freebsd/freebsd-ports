@@ -4,7 +4,7 @@ PORTREVISION=	1
 DISTVERSIONSUFFIX=	-SNAPSHOT
 CATEGORIES=	java lang
 
-MAINTAINER=	jmd@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open source API for expressing data parallel workflows in Java
 WWW=		https://github.com/aparapi/aparapi
 

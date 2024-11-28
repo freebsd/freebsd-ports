@@ -3,7 +3,7 @@ PORTVERSION=	1.2.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	math
 
-MAINTAINER=	jmd@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Framework for performing tensor operations
 WWW=		https://github.com/devinamatthews/tblis
 

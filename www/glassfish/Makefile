@@ -5,7 +5,7 @@ CATEGORIES=	www java
 MASTER_SITES=	ECLIPSE/glassfish
 PKGNAMEPREFIX=	eclipse-
 
-MAINTAINER=	jmd@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Eclipse Jakarta EE Platform
 WWW=		https://projects.eclipse.org/projects/ee4j.glassfish
 

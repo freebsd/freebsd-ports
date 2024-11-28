@@ -2,7 +2,7 @@ PORTNAME=	rocr
 PORTVERSION=	1.9.1
 CATEGORIES=	sysutils
 
-MAINTAINER=	jmd@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	HPC market enhanced HSA based runtime
 WWW=		https://github.com/RadeonOpenCompute/ROCT-Thunk-Interface
 

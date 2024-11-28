@@ -4,7 +4,7 @@ DISTVERSION=	1.0.0-beta
 PORTREVISION=	3
 CATEGORIES=	math
 
-MAINTAINER=	jmd@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library for uniform random number generation in OpenCL
 WWW=		https://github.com/clMathLibraries/clRNG
 

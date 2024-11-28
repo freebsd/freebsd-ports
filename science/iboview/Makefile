@@ -5,7 +5,7 @@ CATEGORIES=	science
 MASTER_SITES=	http://www.iboview.org/bin/
 DISTNAME=	ibo-view.20150427
 
-MAINTAINER=	jmd@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Program for analyzing molecular electronic structure
 WWW=		http://www.iboview.org/
 

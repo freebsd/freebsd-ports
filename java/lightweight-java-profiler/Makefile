@@ -2,7 +2,7 @@ PORTNAME=	lightweight-java-profiler
 PORTVERSION=	g20170308
 CATEGORIES=	java devel
 
-MAINTAINER=	jmd@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lightweight Java profiler which can be used for flamegraphs
 WWW=		https://github.com/inevity/lightweight-java-profiler
 

@@ -2,7 +2,7 @@ PORTNAME=	roct
 PORTVERSION=	1.9.1
 CATEGORIES=	sysutils
 
-MAINTAINER=	jmd@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Radeon Open Compute Thunk Interface
 WWW=		https://github.com/RadeonOpenCompute/ROCT-Thunk-Interface
 

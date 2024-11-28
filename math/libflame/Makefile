@@ -3,7 +3,7 @@ DISTVERSION=	5.2.0
 PORTREVISION=	1
 CATEGORIES=	math
 
-MAINTAINER=	jmd@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	FLAME dense linear algebra library
 WWW=		https://github.com/flame/libflame
 
