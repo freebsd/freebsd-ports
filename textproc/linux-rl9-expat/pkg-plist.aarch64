@@ -3,7 +3,7 @@ usr/lib/.build-id/4f/b53bd6d8f33c6eca2756455770438524414ab5
 usr/lib/.build-id/e3/2fdf964c630acee7ed5552113f0a67d60e16fc
 usr/lib64/libexpat.so.1
 usr/lib64/libexpat.so.1.8.10
-%%PORTDOCS%%%%DOCSDIR%%usr/share/doc/expat/AUTHORS
-%%PORTDOCS%%%%DOCSDIR%%usr/share/doc/expat/Changes
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/Changes
 usr/share/licenses/expat/COPYING
 usr/share/man/man1/xmlwf.1.gz
