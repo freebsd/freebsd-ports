@@ -1,5 +1,5 @@
 PORTNAME=	porch
-PORTVERSION=	0.4
+PORTVERSION=	1.0
 CATEGORIES=	sysutils
 MASTER_SITES=	https://git.kevans.dev/kevans/${PORTNAME}/archive/${PORTVERSION}.tar.gz?dummy=/
 

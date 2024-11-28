@@ -4,6 +4,7 @@ bin/porch
 %%LUA_MODSHAREDIR%%/porch/actions.lua
 %%LUA_MODSHAREDIR%%/porch/context.lua
 %%LUA_MODSHAREDIR%%/porch/direct.lua
+%%LUA_MODSHAREDIR%%/porch/env.lua
 %%LUA_MODSHAREDIR%%/porch/matchers.lua
 %%LUA_MODSHAREDIR%%/porch/process.lua
 %%LUA_MODSHAREDIR%%/porch/scripter.lua
@@ -11,4 +12,5 @@ bin/porch
 %%EXAMPLES%%%%EXAMPLESDIR%%/cat-multi.orch
 %%EXAMPLES%%%%EXAMPLESDIR%%/nc.orch
 %%MANPAGES%%share/man/man1/porch.1.gz
+%%MANPAGES%%share/man/man3lua/porch.3lua.gz
 %%MANPAGES%%share/man/man5/orch.5.gz
