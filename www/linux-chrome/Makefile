@@ -15,8 +15,8 @@ RUN_DEPENDS=	linux-rl9-wget>0:ftp/linux-rl9-wget \
 
 USES=		cpe desktop-file-utils gnome linux:rl9 shared-mime-info shebangfix
 USE_LINUX=	alsalib alsa-plugins-oss alsa-plugins-pulseaudio at-spi2-atk \
-		ca-certificates cairo cups-libs curl dbuslibs dri ffmpeg-libs \
-		gnupg gstreamer1-libav gtk3 libexpat libxkbcommon libunistring \
+		ca-certificates cairo cups-libs curl dbuslibs dri expat \
+		ffmpeg-libs gnupg gstreamer1-libav gtk3 libxkbcommon libunistring \
 		nspr nss p11-kit pango sqlite3 wget xorglibs
 ONLY_FOR_ARCHS=	amd64
 
