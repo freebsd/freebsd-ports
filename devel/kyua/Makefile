@@ -49,11 +49,10 @@ TEST_BUILD_DEPENDS=	atf>=0.21:devel/atf
 TEST_RUN_DEPENDS=	atf>=0.21:devel/atf
 TEST_CONFIGURE_WITH=	atf
 
-.include <bsd.port.pre.mk>
-
-.if ${OPSYS} == FreeBSD && ${OSREL:R} >= 14
-IGNORE=		kyua from base must be used for FreeBSD 14.x and newer
-.endif
+# TODO: Get back to IGNORE after the alignment with the dependent ports
+#.if ${OPSYS} == FreeBSD && ${OSREL:R} >= 14
+#IGNORE=		kyua from base must be used for FreeBSD 14.x and newer
+#.endif
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/kyua
@@ -62,4 +61,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/examples/Kyuafile.top \
 		${STAGEDIR}${PREFIX}/tests/Kyuafile
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
