@@ -14,9 +14,10 @@ RUN_DEPENDS=	linux-rl9-wget>0:ftp/linux-rl9-wget \
 		update-mime-database:misc/shared-mime-info
 
 USES=		cpe desktop-file-utils gnome linux:rl9 shared-mime-info shebangfix
-USE_LINUX=	alsalib alsa-plugins-oss alsa-plugins-pulseaudio ca-certificates \
-		cups-libs curl dbuslibs dri ffmpeg-libs gstreamer1-libav \
-		gtk3 libunistring nss p11-kit sqlite3 xorglibs
+USE_LINUX=	alsalib alsa-plugins-oss alsa-plugins-pulseaudio at-spi2-atk \
+		ca-certificates cairo cups-libs curl dbuslibs dri ffmpeg-libs \
+		gnupg gstreamer1-libav gtk3 libexpat libxkbcommon libunistring \
+		nspr nss p11-kit pango sqlite3 wget xorglibs
 ONLY_FOR_ARCHS=	amd64
 
 SHEBANG_FILES=	opt/google/chrome/google-chrome
@@ -31,7 +32,7 @@ SRC_SUFX?=		.src${EXTRACT_SUFX}
 
 REINPLACE_ARGS=	-i ""
 
-CHROME_VER?=	130.0.6723.116
+CHROME_VER?=	131.0.6778.85
 CHROME_BUILD?=	1
 
 DATADIR=	${PREFIX}/share/${PORTNAME}
