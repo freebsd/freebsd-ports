@@ -1,5 +1,6 @@
 PORTNAME=	pyhanko-certvalidator
 PORTVERSION=	0.26.5
+PORTREVISION=	1
 CATEGORIES=	security python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -23,5 +24,10 @@ USES=		python
 USE_PYTHON=	autoplist concurrent cryptography pep517
 
 NO_ARCH=	yes
+
+OPTIONS_DEFINE=	ASYNC_HTTP
+ASYNC_HTTP_DESC=Asynchronous support
+
+ASYNC_HTTP_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aiohttp>=3.8<3.12:www/py-aiohttp@${PY_FLAVOR}
 
 .include <bsd.port.mk>

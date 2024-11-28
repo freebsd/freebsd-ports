@@ -8,3 +8,12 @@
      "wheel"
  ]
  build-backend = "setuptools.build_meta"
+@@ -51,7 +51,7 @@ Homepage = "https://github.com/MatthiasValvekens/certv
+ Homepage = "https://github.com/MatthiasValvekens/certvalidator"
+ 
+ [project.optional-dependencies]
+-async-http = ["aiohttp>=3.8,<3.11"]
++async-http = ["aiohttp>=3.8,<3.12"]
+ testing = [
+     "pytest>=6.1.1",
+     "pytest-cov>=4.0,<6.1",
