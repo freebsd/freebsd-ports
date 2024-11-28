@@ -1,5 +1,5 @@
 PORTNAME=	nsnotifyd
-PORTVERSION=	2.1
+PORTVERSION=	2.2
 CATEGORIES=	dns
 MASTER_SITES=	http://dotat.at/prog/nsnotifyd/
 
@@ -7,17 +7,17 @@ MAINTAINER=	dvl@FreeBSD.org
 COMMENT=	Handle DNS NOTIFY messages by running a command
 WWW=		https://dotat.at/prog/nsnotifyd/
 
-LICENSE=	CC0-1.0
-
-GNU_CONFIGURE=	yes
+LICENSE=	MIT
 
 USES=		shebangfix
 SHEBANG_FILES=	nsnotify-liststealth
 
+GNU_CONFIGURE=	yes
 USE_RC_SUBR=	nsnotifyd
 
 EXEFILES=	nsnotify nsnotifyd
-BINFILES=	nsnotify-liststealth nsnotify2git nsnotify2stealth nsnotify2update
+BINFILES=	nsnotify-liststealth nsnotify2git nsnotify2stealth \
+		nsnotify2update
 MAN1FILES=	metazone nsnotify nsnotifyd
 MAN5FILES=	metazone
 
