@@ -1,5 +1,5 @@
 PORTNAME=	aws-sdk-resources
-PORTVERSION=	3.214.0
+PORTVERSION=	3.215.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -274,6 +274,8 @@ RUN_DEPENDS=	rubygem-aws-sdk-accessanalyzer>=1<2:devel/rubygem-aws-sdk-accessana
 		rubygem-aws-sdk-networkfirewall>=1<2:devel/rubygem-aws-sdk-networkfirewall \
 		rubygem-aws-sdk-networkmanager>=1<2:devel/rubygem-aws-sdk-networkmanager \
 		rubygem-aws-sdk-networkmonitor>=1<2:devel/rubygem-aws-sdk-networkmonitor \
+		rubygem-aws-sdk-notifications>=1<2:devel/rubygem-aws-sdk-notifications \
+		rubygem-aws-sdk-notificationscontacts>=1<2:devel/rubygem-aws-sdk-notificationscontacts \
 		rubygem-aws-sdk-oam>=1<2:devel/rubygem-aws-sdk-oam \
 		rubygem-aws-sdk-omics>=1<2:devel/rubygem-aws-sdk-omics \
 		rubygem-aws-sdk-opensearchserverless>=1<2:devel/rubygem-aws-sdk-opensearchserverless \
