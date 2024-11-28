@@ -5,7 +5,7 @@ MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	${PORTNAME:tl}-${DISTVERSION}
 
-MAINTAINER=	jwb@FreeBSD.org
+MAINTAINER=	alster@vinterdalen.se
 COMMENT=	Python library to facilitate programmatic analysis of sequence data
 WWW=		https://github.com/htseq/htseq/
 
