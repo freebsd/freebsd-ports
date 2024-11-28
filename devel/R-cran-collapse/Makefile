@@ -1,5 +1,5 @@
 PORTNAME=	collapse
-DISTVERSION=	2.0.17
+DISTVERSION=	2.0.18
 CATEGORIES=	devel
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
@@ -19,8 +19,12 @@ TEST_DEPENDS=	R-cran-data.table>0:devel/R-cran-data.table \
 		R-cran-microbenchmark>0:devel/R-cran-microbenchmark \
 		R-cran-plm>0:finance/R-cran-plm \
 		R-cran-testthat>0:devel/R-cran-testthat
-# Tests: 'fixest' required (?) not ported yet
 
 USES=		cran:auto-plist,compiles
+
+pre-test:
+# R-cran-fixest package does not exist yet
+	@${LOCALBASE}/bin/Rscript -e 'install.packages("fixest", \
+		repos = "https://cloud.r-project.org")'
 
 .include <bsd.port.mk>
