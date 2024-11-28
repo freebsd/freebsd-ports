@@ -1,5 +1,5 @@
 PORTNAME=	httr2
-DISTVERSION=	1.0.6
+DISTVERSION=	1.0.7
 CATEGORIES=	www
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
@@ -11,7 +11,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	R-cran-cli>=3.0.0:devel/R-cran-cli \
-		R-cran-curl>=5.2.2:ftp/R-cran-curl \
+		R-cran-curl>=6.0.1:ftp/R-cran-curl \
 		R-cran-glue>0:devel/R-cran-glue \
 		R-cran-lifecycle>0:devel/R-cran-lifecycle \
 		R-cran-magrittr>0:devel/R-cran-magrittr \
