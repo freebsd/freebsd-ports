@@ -1,18 +1,20 @@
 PORTNAME=	ucsc-userapps
-DISTVERSION=	472
+DISTVERSION=	474
 CATEGORIES=	biology perl5 python
-MASTER_SITES=	http://hgdownload.cse.ucsc.edu/admin/exe/userApps.archive/
+MASTER_SITES=	https://hgdownload.cse.ucsc.edu/admin/exe/userApps.archive/
 DISTNAME=	userApps.v${DISTVERSION}.src
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Command line tools from the UCSC Genome Browser project
 WWW=		https://hgdownload.cse.ucsc.edu/admin/exe/
 
-# Some tools in the source dist are non-free for commercial use.
-# If they are added, the license below must be changed and packaging forbidden.
+# Note: Some tools in the source dist are non-free for commercial use.
+# If they are added to the install, the license below must be changed
+# and packaging forbidden.
 LICENSE=	MIT
 
 BUILD_DEPENDS=	bash:shells/bash
+# FIXME: Switch from mysql to mariadb
 LIB_DEPENDS=	libmysqlclient.so:databases/mysql80-client \
 		libunwind.so:devel/libunwind \
 		libfreetype.so:print/freetype2 \
@@ -20,8 +22,6 @@ LIB_DEPENDS=	libmysqlclient.so:databases/mysql80-client \
 RUN_DEPENDS=	bash:shells/bash
 
 USES=		gmake iconv localbase:ldflags shebangfix perl5 python:3.6+ ssl tar:tgz
-
-RESTRICTED=	Redistribution is limited, see license
 
 SHEBANG_FILES=	kent/src/checkUmask.sh \
 		kent/src/utils/bigHeat \
