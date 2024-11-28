@@ -2,7 +2,7 @@ PORTNAME=	qt5
 PORTVERSION=	5.15.9
 DISTVERSIONSUFFIX=	-3.el9
 PORTREVISION=	1
-CATEGORIES=	devel linux
+CATEGORIES=	x11-toolkits linux
 PKGNAMESUFFIX=	-qtdeclarative
 
 MAINTAINER=	emulation@FreeBSD.org
