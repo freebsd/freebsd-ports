@@ -1,6 +1,6 @@
 PORTNAME=	tabulator
 PORTVERSION=	1.53.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -23,7 +23,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}boto3>=1.9:www/py-boto3@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}openpyxl>=2.6:textproc/py-openpyxl@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>=2.8:www/py-requests@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}six>=1.9:devel/py-six@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}sqlalchemy14>=0.9.6:databases/py-sqlalchemy14@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}sqlalchemy20>=0.9.6:databases/py-sqlalchemy20@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}unicodecsv>=0.14:devel/py-unicodecsv@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}xlrd>=1.0:textproc/py-xlrd@${PY_FLAVOR}
 
