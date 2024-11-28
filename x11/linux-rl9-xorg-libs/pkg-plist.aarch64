@@ -69,6 +69,13 @@ usr/lib/.build-id/f2/dd10f1297f78287efdcbc20756af6c2decce15
 usr/lib/.build-id/f9/ba1ce559aa55e9129c0abf2f0e6fafd8a12ccb
 usr/lib/.build-id/fc/cdd491775a6532ce665cd4e9d26cc4ee1880b6
 usr/lib/.build-id/fd/2fad0a37873158833a2df27bc3d5ebab440873
+usr/lib/udev/hwdb.d/65-libwacom.hwdb
+usr/lib/udev/libinput-device-group
+usr/lib/udev/libinput-fuzz-extract
+usr/lib/udev/libinput-fuzz-to-zero
+usr/lib/udev/rules.d/65-libwacom.rules
+usr/lib/udev/rules.d/80-libinput-device-groups.rules
+usr/lib/udev/rules.d/90-libinput-fuzz-override.rules
 usr/lib64/libICE.so.6
 usr/lib64/libICE.so.6.3.0
 usr/lib64/libSM.so.6
