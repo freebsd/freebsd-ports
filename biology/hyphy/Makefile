@@ -1,10 +1,11 @@
 PORTNAME=	hyphy
-DISTVERSION=	2.5.63
+DISTVERSION=	2.5.64
 CATEGORIES=	biology
 
 MAINTAINER=	jrm@FreeBSD.org
 COMMENT=	Hypothesis testing using Phylogenies
-WWW=		https://www.hyphy.org/
+WWW=		https://www.hyphy.org/ \
+		https://github.com/veg/hyphy/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
