@@ -644,12 +644,6 @@ lib/calibre/calibre/ebooks/unihandecode/jacodepoints.py
 lib/calibre/calibre/ebooks/unihandecode/jadecoder.py
 lib/calibre/calibre/ebooks/unihandecode/krcodepoints.py
 lib/calibre/calibre/ebooks/unihandecode/krdecoder.py
-lib/calibre/calibre/ebooks/unihandecode/pykakasi/__init__.py
-lib/calibre/calibre/ebooks/unihandecode/pykakasi/h2a.py
-lib/calibre/calibre/ebooks/unihandecode/pykakasi/j2h.py
-lib/calibre/calibre/ebooks/unihandecode/pykakasi/jisyo.py
-lib/calibre/calibre/ebooks/unihandecode/pykakasi/k2a.py
-lib/calibre/calibre/ebooks/unihandecode/pykakasi/kakasi.py
 lib/calibre/calibre/ebooks/unihandecode/unicodepoints.py
 lib/calibre/calibre/ebooks/unihandecode/unidecoder.py
 lib/calibre/calibre/ebooks/unihandecode/vncodepoints.py
@@ -830,6 +824,7 @@ lib/calibre/calibre/gui2/dialogs/edit_authors_dialog_ui.py
 lib/calibre/calibre/gui2/dialogs/edit_category_notes.py
 lib/calibre/calibre/gui2/dialogs/enum_values_edit.py
 lib/calibre/calibre/gui2/dialogs/exim.py
+lib/calibre/calibre/gui2/dialogs/ff_doc_editor.py
 lib/calibre/calibre/gui2/dialogs/jobs_ui.py
 lib/calibre/calibre/gui2/dialogs/match_books.py
 lib/calibre/calibre/gui2/dialogs/match_books_ui.py
@@ -864,6 +859,7 @@ lib/calibre/calibre/gui2/dialogs/template_dialog.py
 lib/calibre/calibre/gui2/dialogs/template_dialog_box_layout.py
 lib/calibre/calibre/gui2/dialogs/template_dialog_code_widget.py
 lib/calibre/calibre/gui2/dialogs/template_dialog_ui.py
+lib/calibre/calibre/gui2/dialogs/template_general_info.py
 lib/calibre/calibre/gui2/dialogs/template_line_editor.py
 lib/calibre/calibre/gui2/dialogs/trim_image.py
 lib/calibre/calibre/gui2/dnd.py
@@ -1308,6 +1304,7 @@ lib/calibre/calibre/utils/copy_files.py
 lib/calibre/calibre/utils/copy_files_test.py
 lib/calibre/calibre/utils/date.py
 lib/calibre/calibre/utils/exim.py
+lib/calibre/calibre/utils/ffml_processor.py
 lib/calibre/calibre/utils/file_type_icons.py
 lib/calibre/calibre/utils/filenames.py
 lib/calibre/calibre/utils/fonts/__init__.py
@@ -1834,9 +1831,6 @@ lib/calibre/tinycss/version.py
 %%DATADIR%%/localization/iso3166.calibre_msgpack
 %%DATADIR%%/localization/iso639.calibre_msgpack
 %%DATADIR%%/localization/locales.zip
-%%DATADIR%%/localization/pykakasi/itaijidict2.calibre_msgpack
-%%DATADIR%%/localization/pykakasi/kanadict2.calibre_msgpack
-%%DATADIR%%/localization/pykakasi/kanwadict2.calibre_msgpack
 %%DATADIR%%/localization/stats.calibre_msgpack
 %%DATADIR%%/localization/website-languages.txt
 %%DATADIR%%/lookup.js
