@@ -1,5 +1,5 @@
 PORTNAME=	harec
-PORTVERSION=	0.24.0
+PORTVERSION=	0.24.2
 CATEGORIES=	lang
 MASTER_SITES=	https://git.sr.ht/~sircmpwn/${PORTNAME}/archive/
 DISTNAME=	${PORTVERSION}
