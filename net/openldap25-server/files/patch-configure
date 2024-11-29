@@ -1,14 +1,5 @@
---- configure.orig	2024-05-21 17:19:57 UTC
+--- configure.orig	2024-11-26 17:12:48 UTC
 +++ configure
-@@ -14157,7 +14157,7 @@ fi
- 			PERL_CPPFLAGS="$PERL_CPPFLAGS $opt"
- 		done
- 		PERL_LDFLAGS=""
--		for opt in `$PERLBIN" -MExtUtils::Embed -e ldopts`; do
-+		for opt in `$PERLBIN -MExtUtils::Embed -e ldopts`; do
- 			case "$opt" in
- 			"-lc" )
- 				continue;;
 @@ -16837,9 +16837,9 @@ if test $have_uuid = no ; then
  fi
  
