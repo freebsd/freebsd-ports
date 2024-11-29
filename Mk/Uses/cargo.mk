@@ -128,7 +128,7 @@ CARGO_ENV+= \
 	CARGO_TARGET_DIR=${CARGO_TARGET_DIR} \
 	RUSTC=${RUSTC} \
 	RUSTDOC=${RUSTDOC} \
-	RUSTFLAGS="${RUSTFLAGS} ${LDFLAGS:C/.+/-C link-args=&/}"
+	RUSTFLAGS="${RUSTFLAGS} -C ar=${AR} -C linker=${CC} ${LDFLAGS:C/.+/-C link-args=&/}"
 
 .  if ${ARCH} != powerpc64le
 CARGO_ENV+=	RUST_BACKTRACE=1
