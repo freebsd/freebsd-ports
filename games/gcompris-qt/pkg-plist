@@ -25,8 +25,8 @@ share/applications/org.kde.gcompris.desktop
 %%DATADIR%%/rcc/binary_bulb.rcc
 %%DATADIR%%/rcc/braille_alphabets.rcc
 %%DATADIR%%/rcc/braille_fun.rcc
-%%DATADIR%%/rcc/calendar.rcc
 %%DATADIR%%/rcc/calcudoku.rcc
+%%DATADIR%%/rcc/calendar.rcc
 %%DATADIR%%/rcc/canal_lock.rcc
 %%DATADIR%%/rcc/categorization.rcc
 %%DATADIR%%/rcc/checkers.rcc
