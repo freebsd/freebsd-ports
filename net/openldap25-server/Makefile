@@ -397,13 +397,13 @@ pre-configure:
 
 .if !defined(CLIENT_ONLY)
 test: build
-	@(cd ${BUILD_WRKSRC} && ${SETENV} ${MAKE_ENV} \
+	@(cd ${BUILD_WRKSRC} && ${SETENVI} ${WRK_ENV} ${MAKE_ENV} \
 		${MAKE_CMD} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} test)
 
 post-build:
 .for module in ${CONTRIB_MODULES}
 	@(cd ${BUILD_WRKSRC}/contrib/${module} && \
-		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_FLAGS} ${MAKEFILE} \
+		${SETENVI} ${WRK_ENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_FLAGS} ${MAKEFILE} \
 		${MAKE_ARGS} prefix="${PREFIX}" all)
 .endfor
 .endif
@@ -431,7 +431,7 @@ post-install:
 	${MKDIR} ${STAGEDIR}${LDAP_RUN_DIR}
 .for module in ${CONTRIB_MODULES}
 	(cd ${WRKSRC}/contrib/${module} && \
-		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_FLAGS} ${MAKEFILE} \
+		${SETENVI} ${WRK_ENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_FLAGS} ${MAKEFILE} \
 		${MAKE_ARGS} prefix="${PREFIX}" install)
 .endfor
 .for cleanfile in ${CONTRIB_CLEANFILES}
