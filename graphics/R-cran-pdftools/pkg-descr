@@ -1,0 +1,4 @@
+Utilities based on 'libpoppler' for extracting text, fonts, attachments and
+metadata from a PDF file. Also supports high quality rendering of PDF documents
+into PNG, JPEG, TIFF format, or into raw bitmap vectors for further processing
+in R.

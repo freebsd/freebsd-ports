@@ -26,6 +26,7 @@
     SUBDIR += R-cran-magick
     SUBDIR += R-cran-munsell
     SUBDIR += R-cran-pROC
+    SUBDIR += R-cran-pdftools
     SUBDIR += R-cran-pixmap
     SUBDIR += R-cran-png
     SUBDIR += R-cran-qcc
