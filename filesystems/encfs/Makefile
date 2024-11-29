@@ -5,15 +5,12 @@ PORTREVISION=	9
 CATEGORIES=	filesystems
 PKGNAMEPREFIX=	fusefs-
 
-MAINTAINER=	dmgk@FreeBSD.org
+MAINTAINER=	fuz@FreeBSD.org
 COMMENT=	Encrypted pass-through FUSE filesystem
 WWW=		http://www.arg0.net/encfs
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
-
-DEPRECATED=	Unmaintained upstream as of May 26 2024
-EXPIRATION_DATE=2024-12-31
 
 USES=		cmake compiler:c++11-lib cpe fuse ssl
 CPE_VENDOR=	${PORTNAME}_project
