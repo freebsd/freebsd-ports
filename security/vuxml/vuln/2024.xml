@@ -1,3 +1,35 @@
+  <vuln vid="c5dafd73-adfd-11ef-af27-00e081b7aa2d">
+    <topic>jenkins -- Denial of service vulnerability in bundled json-lib</topic>
+    <affects>
+      <package>
+	<name>jenkins</name>
+	<range><lt>2.487</lt></range>
+      </package>
+      <package>
+	<name>jenkins-lts</name>
+	<range><lt>2.479.2</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Jenkins Security Advisory:</p>
+	<blockquote cite="https://www.jenkins.io/security/advisory/2024-11-27/">
+	  <h1>Description</h1>
+	  <h5>(High) SECURITY-3463 / CVE-2024-47855</h5>
+	  <p>Denial of service vulnerability in bundled json-lib</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2024-47855</cvename>
+      <url>https://www.jenkins.io/security/advisory/2024-11-27/</url>
+    </references>
+    <dates>
+      <discovery>2024-11-27</discovery>
+      <entry>2024-11-29</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="7d7a28cd-7f5a-450a-852f-c49aaab3fa7e">
     <topic>keycloak -- Multiple security fixes</topic>
     <affects>
