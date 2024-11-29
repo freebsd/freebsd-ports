@@ -29,6 +29,7 @@
     SUBDIR += R-cran-pixmap
     SUBDIR += R-cran-png
     SUBDIR += R-cran-qcc
+    SUBDIR += R-cran-qpdf
     SUBDIR += R-cran-ragg
     SUBDIR += R-cran-s2
     SUBDIR += R-cran-scales
