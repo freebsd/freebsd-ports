@@ -5,6 +5,7 @@ lib/liblftp-jobs.a
 lib/liblftp-tasks.a
 share/applications/lftp.desktop
 share/icons/hicolor/48x48/apps/lftp-icon.png
+share/zsh/site-functions/_lftp
 %%DATADIR%%/convert-mozilla-cookies
 %%DATADIR%%/import-ncftp
 %%DATADIR%%/import-netscape
@@ -20,6 +21,7 @@ share/icons/hicolor/48x48/apps/lftp-icon.png
 %%NLS%%share/locale/pl/LC_MESSAGES/lftp.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/lftp.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/lftp.mo
+%%NLS%%share/locale/sr/LC_MESSAGES/lftp.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/lftp.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/lftp.mo
 %%NLS%%share/locale/zh_HK/LC_MESSAGES/lftp.mo
