@@ -1,6 +1,5 @@
 PORTNAME=	jenkins
-PORTVERSION=	2.479.1
-PORTREVISION=	1
+PORTVERSION=	2.479.2
 CATEGORIES=	devel java
 MASTER_SITES=	https://get.jenkins.io/war-stable/${PORTVERSION}/
 PKGNAMESUFFIX=	-lts
