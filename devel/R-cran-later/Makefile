@@ -1,5 +1,5 @@
 PORTNAME=	later
-DISTVERSION=	1.4.0
+DISTVERSION=	1.4.1
 CATEGORIES=	devel
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
@@ -19,6 +19,6 @@ TEST_DEPENDS=	R-cran-knitr>0:print/R-cran-knitr \
 		R-cran-rmarkdown>0:textproc/R-cran-rmarkdown \
 		R-cran-testthat>0:devel/R-cran-testthat
 
-USES=		compiler:c++11-lang cran:auto-plist,compiles
+USES=		compiler:c++17-lang cran:auto-plist,compiles
 
 .include <bsd.port.mk>
