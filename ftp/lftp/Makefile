@@ -1,5 +1,6 @@
 PORTNAME=	lftp
 PORTVERSION=	4.9.3
+PORTREVISION=	1
 CATEGORIES=	ftp
 MASTER_SITES=	ftp://ftp.cs.tu-berlin.de/pub/net/ftp/lftp/ \
 		http://ftp.st.ryukoku.ac.jp/pub/network/ftp/lftp/ \
@@ -7,12 +8,12 @@ MASTER_SITES=	ftp://ftp.cs.tu-berlin.de/pub/net/ftp/lftp/ \
 		http://ftp.tuwien.ac.at/infosys/browsers/ftp/lftp/ \
 		http://lftp.cybermirror.org/ \
 		http://lftp.cybermirror.org/old/ \
-		http://lftp.tech/ftp/ \
-		http://lftp.tech/ftp/old/
+		http://lftp.yar.ru/ftp/ \
+		http://lftp.yar.ru/ftp/old/
 
 MAINTAINER=	martymac@FreeBSD.org
 COMMENT=	Shell-like command-line FTP client
-WWW=		https://lftp.tech/
+WWW=		https://lftp.yar.ru/
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
