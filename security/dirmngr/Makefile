@@ -13,6 +13,8 @@ WWW=		https://www.gnupg.org/aegypten2
 LICENSE=	GPLv2
 
 BROKEN=		does not build with security/libassuan >= 3.0.0 (GNU Pth support was dropped)
+DEPRECATED=	Obsolete, now maintained within GNU Privacy Guard (GnuPG). Please use security/gnupg
+EXPIRATION_DATE=2024-12-31
 
 LIB_DEPENDS=	libassuan.so:security/libassuan \
 		libgcrypt.so:security/libgcrypt \
