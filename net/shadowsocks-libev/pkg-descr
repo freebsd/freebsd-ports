@@ -1,5 +1,0 @@
-Shadowsocks is a lightweight tunnel proxy which can help you get through
-firewalls.
-
-Shadowsocks-libev is a C implentment based on libev. It targets mainly on
-embedded devices and low end boxes.
