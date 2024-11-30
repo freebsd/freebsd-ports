@@ -3740,3 +3740,4 @@ www/npapi-xine||2024-11-30|Has expired: NPAPI support was removed in browsers ye
 net/shadowsocks-libev|net/shadowsocks-rust|2024-11-30|Has expired: Abandonware, no active development. Please migrate to net/shadowsocks-rust
 sysutils/fusefs-fusepak||2024-11-30|Has expired: Upstream is no longer around
 sysutils/fusefs-funionfs||2024-11-30|Has expired: Upstream is no longer around
+net/gdrive||2024-11-30|Has expired: Abandonware, upstream repo archived Apr 19, 2023
