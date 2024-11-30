@@ -1,5 +1,6 @@
 PORTNAME=	sortinghat
 DISTVERSION=	1.5.1
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -30,7 +31,7 @@ RUN_DEPENDS=	\
 		${PYTHON_PKGNAMEPREFIX}pyjwt>=2.4.0:www/py-pyjwt@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}python-dateutil>=2.9.0:devel/py-python-dateutil@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>=2.7.0:www/py-requests@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}rq1>=1.12.0:devel/py-rq1@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}rq>=1.12.0:devel/py-rq@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sgqlc>=16.1:devel/py-sgqlc@${PY_FLAVOR} \
 		uwsgi${PYTHON_PKGNAMESUFFIX}>0:www/uwsgi
 
