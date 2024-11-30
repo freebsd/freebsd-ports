@@ -3733,3 +3733,4 @@ sysutils/socket||2024-11-25|Removed: it is no longer maintained, and there are b
 security/tfsec|security/trivy|2024-11-26|Has expired: tfsec now is party of security/trivy
 devel/linux-rl9-qt5-qtdeclarative|x11-toolkits/linux-rl9-qt5-qtdeclarative|2024-11-27|Moved to appropriate category
 audio/libcddb||2024-11-30|Has expired: Multiple services have been shutdown and there's no way to easily submit data
+audio/libcddb-doc||2024-11-30|Removed, documentation for expired audio/libcddb
