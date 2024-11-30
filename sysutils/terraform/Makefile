@@ -1,6 +1,7 @@
 PORTNAME=	terraform
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.9.7
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	https://raw.githubusercontent.com/${GH_ACCOUNT}/${GH_PROJECT}/${DISTVERSIONFULL}/:gomod
 DISTFILES=	${DISTVERSIONFULL}${EXTRACT_SUFX} \
@@ -31,6 +32,7 @@ LICENSE_PERMS=	dist-mirror pkg-mirror pkg-sell auto-accept
 
 CPE_VENDOR=	hashicorp
 GO_MODULE=	github.com/hashicorp/terraform
+GO_BUILDFLAGS=	-ldflags="-X github.com/hashicorp/terraform/version.dev=no"
 
 # Disable some master port targets
 TARGET_ORDER_OVERRIDE=	-1:go-post-extract
