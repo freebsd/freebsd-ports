@@ -1,2 +1,0 @@
-#!/bin/sh
-MANPATH=%%PREFIX%%/%%ARCH%%/share/man man "$@"

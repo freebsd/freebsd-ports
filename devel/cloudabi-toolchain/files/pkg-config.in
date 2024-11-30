@@ -1,2 +1,0 @@
-#!/bin/sh
-PKG_CONFIG_LIBDIR=%%PREFIX%%/%%ARCH%%/lib/pkgconfig %%PREFIX%%/bin/pkgconf "$@"
