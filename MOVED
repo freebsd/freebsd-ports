@@ -3732,3 +3732,4 @@ devel/pygobject3-common|devel/pygobject-common|2024-11-22|Match devel/py-pygobje
 sysutils/socket||2024-11-25|Removed: it is no longer maintained, and there are better alternative as net/netcat
 security/tfsec|security/trivy|2024-11-26|Has expired: tfsec now is party of security/trivy
 devel/linux-rl9-qt5-qtdeclarative|x11-toolkits/linux-rl9-qt5-qtdeclarative|2024-11-27|Moved to appropriate category
+audio/libcddb||2024-11-30|Has expired: Multiple services have been shutdown and there's no way to easily submit data

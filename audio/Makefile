@@ -337,7 +337,6 @@
     SUBDIR += libcanberra-gtk2
     SUBDIR += libcanberra-gtk3
     SUBDIR += libcdaudio
-    SUBDIR += libcddb
     SUBDIR += libcddb-doc
     SUBDIR += libconvolve
     SUBDIR += libcoverart
