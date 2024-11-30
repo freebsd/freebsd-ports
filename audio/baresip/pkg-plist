@@ -65,6 +65,7 @@ lib/libbaresip.so
 lib/libbaresip.so.%%ABI_MAJOR%%
 lib/libbaresip.so.%%ABI_MAJOR%%.%%ABI_AGE%%.%%ABI_REV%%
 libdata/pkgconfig/libbaresip.pc
+share/applications/com.github.baresip.desktop
 %%DATADIR%%/autoanswer.wav
 %%DATADIR%%/busy.wav
 %%DATADIR%%/callwaiting.wav
