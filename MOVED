@@ -3741,3 +3741,4 @@ net/shadowsocks-libev|net/shadowsocks-rust|2024-11-30|Has expired: Abandonware, 
 sysutils/fusefs-fusepak||2024-11-30|Has expired: Upstream is no longer around
 sysutils/fusefs-funionfs||2024-11-30|Has expired: Upstream is no longer around
 net/gdrive||2024-11-30|Has expired: Abandonware, upstream repo archived Apr 19, 2023
+sysutils/cloudabi-utils||2024-11-30|Removed, part of expired devel/cloudabi

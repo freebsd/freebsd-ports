@@ -208,7 +208,6 @@
     SUBDIR += clone
     SUBDIR += clonehdd
     SUBDIR += cloud-nuke
-    SUBDIR += cloudabi-utils
     SUBDIR += clsync
     SUBDIR += cluster-glue
     SUBDIR += cmdwatch
