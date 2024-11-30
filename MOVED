@@ -3744,3 +3744,4 @@ net/gdrive||2024-11-30|Has expired: Abandonware, upstream repo archived Apr 19, 
 sysutils/cloudabi-utils||2024-11-30|Removed, part of expired devel/cloudabi
 devel/cloudabi-toolchain||2024-11-30|Has expired: Unmaintained upstream since 2020
 devel/cloudabi||2024-11-30|Has expired: Unmaintained upstream since 2020
+misc/gnuls||2024-11-30|Has expired: Outdated, consider using sysutils/coreutils or sysutils/rust-coreutils
