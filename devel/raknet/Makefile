@@ -21,6 +21,8 @@ LICENSE_NAME_SpecialAuth=	Special authorization from developer
 LICENSE_FILE_SpecialAuth=	${FILESDIR}/SpecialAuth.mbox
 LICENSE_PERMS_SpecialAuth=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
+DEPRECATED=		Unmaintained upstream, only builds with EOL toolchain
+EXPIRATION_DATE=	2025-01-15
 NOT_FOR_ARCHS=		aarch64 mips mips64
 NOT_FOR_ARCHS_REASON=	fails to compile: error: Add your platform to the list
 
