@@ -1,5 +1,5 @@
 PORTNAME=	spine
-PORTVERSION=	1.2.27
+PORTVERSION=	1.2.28
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.cacti.net/downloads/${PORTNAME}/
 DISTNAME=	cacti-${PORTNAME}-${PORTVERSION}
