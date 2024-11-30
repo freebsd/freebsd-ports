@@ -3738,3 +3738,4 @@ multimedia/vtkmpeg2encode||2024-11-30|Has expired: Obsolete, addon to VTK5 which
 databases/vsqlite||2024-11-30|Has expired: Abandonware, last release in 2014 and last commit 4 years ago
 www/npapi-xine||2024-11-30|Has expired: NPAPI support was removed in browsers years ago
 net/shadowsocks-libev|net/shadowsocks-rust|2024-11-30|Has expired: Abandonware, no active development. Please migrate to net/shadowsocks-rust
+sysutils/fusefs-fusepak||2024-11-30|Has expired: Upstream is no longer around
