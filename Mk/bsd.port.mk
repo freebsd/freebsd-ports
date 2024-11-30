@@ -1615,9 +1615,12 @@ PKG_NOTES+=	flavor
 PKG_NOTE_flavor=	${FLAVOR}
 .    endif
 
+# GIT_CEILING_DIRECTORIES prevents ports that try to find their version
+# using git from finding the ports tree's git repository.
 WRK_ENV+=		HOME=${WRKDIR} \
 				MACHINE_ARCH=${MACHINE_ARCH} \
 				PWD="$${PWD}" \
+				GIT_CEILING_DIRECTORIES=${WRKDIR} \
 				__MAKE_CONF=${NONEXISTENT}
 .    for e in OSVERSION PATH TERM TMPDIR \
 				UNAME_b UNAME_i UNAME_K UNAME_m UNAME_n \
