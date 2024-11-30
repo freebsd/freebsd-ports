@@ -1,6 +1,5 @@
 PORTNAME=	rust
-PORTVERSION?=	1.82.0
-PORTREVISION?=	1
+PORTVERSION=	1.82.0
 CATEGORIES=	lang
 MASTER_SITES=	https://static.rust-lang.org/dist/:src \
 		https://dev-static.rust-lang.org/dist/:src \
@@ -12,9 +11,10 @@ DISTFILES?=	${NIGHTLY_DATE:D${NIGHTLY_DATE}/}${DISTNAME}${EXTRACT_SUFX}:src \
 		${_RUST_STD_BOOTSTRAP}${EXTRACT_SUFX}:bootstrap \
 		${_CARGO_BOOTSTRAP}${EXTRACT_SUFX}:bootstrap
 DIST_SUBDIR?=	rust
+PKGNAMESUFFIX=	182
 
-MAINTAINER=	rust@FreeBSD.org
-COMMENT=	Language with a focus on memory safety and concurrency
+MAINTAINER=	jbeich@FreeBSD.org
+COMMENT=	Language with a focus on memory safety and concurrency (deprecated 1.82.* series)
 WWW=		https://www.rust-lang.org/
 
 LICENSE=	APACHE20 MIT
@@ -22,9 +22,8 @@ LICENSE_COMB=	dual
 LICENSE_FILE_APACHE20=	${WRKSRC}/LICENSE-APACHE
 LICENSE_FILE_MIT=	${WRKSRC}/LICENSE-MIT
 
-ONLY_FOR_ARCHS?=	aarch64 amd64 armv7 i386 powerpc64 powerpc64le powerpc \
-			riscv64
-ONLY_FOR_ARCHS_REASON?=	requires prebuilt bootstrap compiler
+ONLY_FOR_ARCHS=	aarch64 amd64
+ONLY_FOR_ARCHS_REASON=	unused by games/veloren-weekly
 
 LIB_DEPENDS=	libcurl.so:ftp/curl
 
@@ -38,7 +37,8 @@ MAKE_ENV=	DESTDIR=${STAGEDIR} \
 TEST_ENV=	${MAKE_ENV} \
 		ALLOW_NONZERO_RLIMIT_CORE=1
 
-CONFLICTS_INSTALL?=	rust-nightly rust182
+PORTSCOUT=	limit:^1\.82\.
+CONFLICTS_INSTALL=	rust rust-nightly
 
 # rustc stashes intermediary files in TMPDIR (default /tmp) which
 # might cause issues for users that for some reason space limit
@@ -184,7 +184,7 @@ do-configure:
 	@${ECHO_CMD} 'prefix="${PREFIX}"' >> ${WRKSRC}/config.toml
 	@${ECHO_CMD} 'sysconfdir="${PREFIX}/etc"' >> ${WRKSRC}/config.toml
 	@${ECHO_CMD} '[rust]' >> ${WRKSRC}/config.toml
-	@${ECHO_CMD} 'channel="${PKGNAMESUFFIX:Ustable:S/^-//}"' >> ${WRKSRC}/config.toml
+	@${ECHO_CMD} 'channel="stable"' >> ${WRKSRC}/config.toml
 	@${ECHO_CMD} 'default-linker="${CC}"' >> ${WRKSRC}/config.toml
 	@${ECHO_CMD} 'deny-warnings=false' >> ${WRKSRC}/config.toml
 	@${ECHO_CMD} 'verbose-tests=true' >> ${WRKSRC}/config.toml

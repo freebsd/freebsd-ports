@@ -48,6 +48,10 @@ CARGO_ENV+=		RUSTC_BOOTSTRAP=1
 # XXX https://github.com/rust-lang/cargo/issues/4101
 CARGO_INSTALL_PATH=	server-cli voxygen
 
+# https://github.com/yoanlcq/vek/issues/96
+CARGO_BUILDDEP=	no
+BUILD_DEPENDS+=	rust182>0:lang/rust182
+
 post-patch:
 # .git/ directory is missing, so don't abort if git binary is also missing
 	@${REINPLACE_CMD} -e 's/"git"/"${TRUE}"/' \
