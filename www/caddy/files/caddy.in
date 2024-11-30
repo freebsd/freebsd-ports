@@ -8,7 +8,7 @@
 #
 # - Edit %%ETCDIR%%/Caddyfile
 #   See https://caddyserver.com/docs/
-# - Run 'service enable caddy'
+# - Run 'service caddy enable'
 #
 # Note while Caddy currently defaults to running as root:wheel, it is strongly
 # recommended to run the server as an unprivileged user, such as www:www.
