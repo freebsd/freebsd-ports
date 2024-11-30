@@ -1,12 +1,11 @@
 PORTNAME=	lutok
-DISTVERSIONPREFIX=	${PORTNAME}-
-DISTVERSION=	0.4
-PORTREVISION=	9
+DISTVERSION=	0.5
 CATEGORIES=	devel
+MASTER_SITES=https://github.com/freebsd/${PORTNAME}/releases/download/${DISTNAME}/
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Lightweight C++ API for Lua
-WWW=		https://github.com/jmmv/lutok/
+WWW=		https://github.com/freebsd/lutok/
 
 LICENSE=	BSD3CLAUSE
 
@@ -15,8 +14,6 @@ RUN_DEPENDS=	atf>=0.21:devel/atf
 
 USES=		autoreconf libtool lua pathfix pkgconfig
 USE_CXXSTD=	gnu++11
-USE_GITHUB=	yes
-GH_ACCOUNT=	freebsd
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
@@ -28,11 +25,11 @@ CONFIGURE_ARGS+=	LUA_CFLAGS="-I${LUA_INCDIR}"
 CONFIGURE_ARGS+=	LUA_LIBS="-L${LUA_LIBDIR} -llua-${LUA_VER} -lm"
 
 MAKE_FLAGS+=	examplesdir=${EXAMPLESDIR}
-#		pkgconfigdir=${PREFIX}/libdata/pkgconfig
-
 INSTALL_TARGET=	install-strip
 
-PORTDOCS=	AUTHORS COPYING NEWS README html/*
+NO_WRKSUBDIR=	yes
+
+PORTDOCS=	AUTHORS COPYING NEWS.md README.md html/*
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 OPTIONS_SUB=		yes
