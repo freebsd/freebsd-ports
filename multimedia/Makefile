@@ -394,7 +394,6 @@
     SUBDIR += video-trimmer
     SUBDIR += vlc
     SUBDIR += vmaf
-    SUBDIR += vtkmpeg2encode
     SUBDIR += vvdec
     SUBDIR += vvenc
     SUBDIR += w_scan2

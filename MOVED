@@ -3734,3 +3734,4 @@ security/tfsec|security/trivy|2024-11-26|Has expired: tfsec now is party of secu
 devel/linux-rl9-qt5-qtdeclarative|x11-toolkits/linux-rl9-qt5-qtdeclarative|2024-11-27|Moved to appropriate category
 audio/libcddb||2024-11-30|Has expired: Multiple services have been shutdown and there's no way to easily submit data
 audio/libcddb-doc||2024-11-30|Removed, documentation for expired audio/libcddb
+multimedia/vtkmpeg2encode||2024-11-30|Has expired: Obsolete, addon to VTK5 which was removed in 2018
