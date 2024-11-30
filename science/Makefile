@@ -112,7 +112,6 @@
     SUBDIR += gnudatalanguage
     SUBDIR += gpaw-setups
     SUBDIR += gramps
-    SUBDIR += grib_api
     SUBDIR += gromacs
     SUBDIR += gsmc
     SUBDIR += gtamsanalyzer
