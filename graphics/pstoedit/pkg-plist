@@ -1,4 +1,5 @@
 bin/pstoedit
+%%GUI%%bin/PstoeditQtGui
 include/pstoedit/base64writer.h
 include/pstoedit/cppcomp.h
 include/pstoedit/drvbase.h
@@ -24,6 +25,8 @@ lib/pstoedit/libp2edrvstd.so
 libdata/pkgconfig/pstoedit.pc
 share/man/man1/pstoedit.1.gz
 share/aclocal/pstoedit.m4
+%%GUI%%share/applications/PstoeditQtGui.desktop
+%%GUI%%share/icons/hicolor/256x256/apps/pstoedit.png
 %%DATADIR%%/drvhpgl.pencolors
 %%DATADIR%%/examplefigmap.fmp
 %%DATADIR%%/latex2e.fmp
