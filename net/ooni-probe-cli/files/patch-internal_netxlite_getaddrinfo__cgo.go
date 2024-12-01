@@ -4,7 +4,7 @@
  
  #ifndef _WIN32
  #include <netdb.h> // for getaddrinfo
-+#include <sys/socket.h>
++#include <sys/socket.h> // for C.SOCK_STREAM and C.AF_*
  #else
  #include <ws2tcpip.h> // for getaddrinfo
  #endif
