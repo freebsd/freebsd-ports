@@ -59,6 +59,7 @@ CARGO_CRATES=	adler32-1.2.0 \
 		glob-0.3.1 \
 		hashbrown-0.14.5 \
 		hashbrown-0.15.0 \
+		hermit-abi-0.3.9 \
 		hermit-abi-0.4.0 \
 		iana-time-zone-0.1.61 \
 		iana-time-zone-haiku-0.1.2 \
@@ -87,6 +88,7 @@ CARGO_CRATES=	adler32-1.2.0 \
 		memchr-2.7.4 \
 		memoffset-0.9.1 \
 		mio-0.8.11 \
+		mio-1.0.2 \
 		notify-6.1.1 \
 		notify-debouncer-full-0.3.2 \
 		num-conv-0.1.0 \
