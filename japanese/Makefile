@@ -148,6 +148,7 @@
     SUBDIR += jvim3
     SUBDIR += kakasi
     SUBDIR += kasumi
+    SUBDIR += kasumi-unicode
     SUBDIR += kbanner
     SUBDIR += kcc
     SUBDIR += kcode
