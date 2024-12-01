@@ -15,10 +15,12 @@ WWW=		https://tonies-wiki.revvox.de/docs/tools/teddycloud/
 
 LICENSE=	GPLv2+
 
-BUILD_DEPENDS+= curl:ftp/curl \
+NOT_FOR_ARCHS=	i386
+
+BUILD_DEPENDS+=	curl:ftp/curl \
 		protoc-c:devel/protobuf-c
 
-USES= 		gmake
+USES=		gmake
 USE_GCC=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	toniebox-reverse-engineering:DEFAULT,teddycloud_web \
