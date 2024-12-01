@@ -325,6 +325,8 @@ share/man/man1/anki.1.gz
 %%DATADIR%%/anki/_rsbridge.pyi
 %%DATADIR%%/anki/_rsbridge.so
 %%DATADIR%%/anki/_vendor/stringcase.py
+%%DATADIR%%/anki/ankihub_pb2.py
+%%DATADIR%%/anki/ankihub_pb2.pyi
 %%DATADIR%%/anki/ankidroid_pb2.py
 %%DATADIR%%/anki/ankidroid_pb2.pyi
 %%DATADIR%%/anki/ankiweb_pb2.py
@@ -425,6 +427,7 @@ share/man/man1/anki.1.gz
 %%DATADIR%%/aqt/about.py
 %%DATADIR%%/aqt/addcards.py
 %%DATADIR%%/aqt/addons.py
+%%DATADIR%%/aqt/ankihub.py
 %%DATADIR%%/aqt/browser/__init__.py
 %%DATADIR%%/aqt/browser/browser.py
 %%DATADIR%%/aqt/browser/card_info.py
