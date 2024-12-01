@@ -10,7 +10,7 @@ install -d -m 750 -o %%USERS%% -g %%GROUPS%% ${USERS_HOME} /var/log/ejabberd /va
 
 chown -R %%USERS%%:%%GROUPS%%  %%PREFIX%%/etc/%%PORTNAME%%
 chown -R %%USERS%%:%%GROUPS%%  %%PREFIX%%/%%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%
-	
+
 find %%PREFIX%%/%%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%% -type f -print0 | xargs -0 chmod %%SHAREMODE%%
 find %%PREFIX%%/%%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%% -type f -print0 | xargs -0 chown %%SHAREOWN%%:%%SHAREGRP%%
 
