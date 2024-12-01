@@ -1,6 +1,5 @@
 PORTNAME=	zigbee2mqtt
-DISTVERSION=	1.41.0
-PORTREVISION=	1
+DISTVERSION=	1.42.0
 CATEGORIES=	comms
 MASTER_SITES=	LOCAL/otis/:nodemodules
 DISTFILES=	${DISTCACHEFILES_nodemodules}:nodemodules
