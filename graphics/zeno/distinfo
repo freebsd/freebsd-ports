@@ -1,3 +1,15 @@
-TIMESTAMP = 1731578367
+TIMESTAMP = 1732976904
 SHA256 (zenustech-zeno-2024.10.1_GH0.tar.gz) = ae44fd0ac2aabf225718ffa4d10a057b4ad088534f81df19682b77701dfca139
 SIZE (zenustech-zeno-2024.10.1_GH0.tar.gz) = 101700063
+SHA256 (zenustech-openvdb-74a95a74d91e0115be00d7b94391f5607e02d60f_GH0.tar.gz) = eb57b050e06ebf9d900a537f3d57b0d1b359ffeba8a347773dba3f4618041698
+SIZE (zenustech-openvdb-74a95a74d91e0115be00d7b94391f5607e02d60f_GH0.tar.gz) = 3816032
+SHA256 (zenustech-assimp-745fcc9ba0c79feb4edfc71f464d6d4c920ecc06_GH0.tar.gz) = ed5017b2f8bdee0f117ed9ada0ea0f4e67705bd264e9bb0a086d89a9fcac3834
+SIZE (zenustech-assimp-745fcc9ba0c79feb4edfc71f464d6d4c920ecc06_GH0.tar.gz) = 46626516
+SHA256 (zenustech-dem-bones-bin-30a39493f0394dfedc5d72ea463405b8f07a446e_GH0.tar.gz) = 813a7a3c9d66527881591c716c91cc863ec3b3b4f7e8f176a99dbcbe3aa6d521
+SIZE (zenustech-dem-bones-bin-30a39493f0394dfedc5d72ea463405b8f07a446e_GH0.tar.gz) = 20143407
+SHA256 (zenustech-libigl-9af4b833cb37c0d4b77ca62b7502284b3a83a47e_GH0.tar.gz) = 75156457813f2679696db8bbfaef137fab9b8accd78488d4c49ce50e94e08fcc
+SIZE (zenustech-libigl-9af4b833cb37c0d4b77ca62b7502284b3a83a47e_GH0.tar.gz) = 2524253
+SHA256 (zenustech-bullet3-aa4931408428cd72057e59627770fc027c5bb0be_GH0.tar.gz) = 134f6f0baddd84eaf1c0535bfd7c4fb1797ca3897375b513c9fec6a9fbe30abc
+SIZE (zenustech-bullet3-aa4931408428cd72057e59627770fc027c5bb0be_GH0.tar.gz) = 1647993
+SHA256 (zenustech-OpenSubdiv-a50680658f9732a41fea8e150310cfb9b147dc3c_GH0.tar.gz) = 4bf359ef175e9ef90296d84cdafef67b748a0a35339fb3b7d2192761f4965f0d
+SIZE (zenustech-OpenSubdiv-a50680658f9732a41fea8e150310cfb9b147dc3c_GH0.tar.gz) = 39239132
