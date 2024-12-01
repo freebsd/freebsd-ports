@@ -1,5 +1,5 @@
 PORTNAME=	nextcloudclient
-PORTVERSION=	3.14.2
+PORTVERSION=	3.15.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	deskutils
 
@@ -14,9 +14,10 @@ LIB_DEPENDS=	libinotify.so:devel/libinotify \
 		libqt6keychain.so:security/qtkeychain@qt6 \
 		libxkbcommon.so:x11/libxkbcommon
 
-USES=		cmake:noninja compiler:c++17-lang desktop-file-utils gl gmake \
+USES=		cmake:noninja compiler:c++20-lang desktop-file-utils gl gmake \
 		gnome iconv kde:6 localbase:ldflags pkgconfig qt:6 shared-mime-info \
 		sqlite ssl
+USE_CXXSTD=	c++20
 USE_GL=		opengl
 USE_KDE=	archive
 USE_LDCONFIG=	yes
@@ -31,7 +32,7 @@ GH_ACCOUNT=	nextcloud
 GH_PROJECT=	desktop
 
 OPTIONS_DEFINE=			DOCS DEBUG GNOME GUIADDONS KDE WEBENGINE
-OPTIONS_DEFAULT=		GNOME
+OPTIONS_DEFAULT=		GNOME GUIADDONS
 OPTIONS_DEFAULT_aarch64=	WEBENGINE
 OPTIONS_DEFAULT_amd64=		WEBENGINE
 OPTIONS_DEFAULT_i386=		WEBENGINE
@@ -57,7 +58,7 @@ KDE_USE=		KDE=completion,config,coreaddons,ecm:build,jobwidgets,kio,service,soli
 KDE_CMAKE_BOOL=		BUILD_SHELL_INTEGRATION_DOLPHIN
 
 GUIADDONS_IMPLIES=	KDE
-GUIADDONS_USE=		KDE=guiaddons
+GUIADDONS_USE=		KDE+=guiaddons
 
 WEBENGINE_USE=		QT=location,webchannel,webengine
 WEBENGINE_CMAKE_BOOL=	BUILD_WITH_WEBENGINE
@@ -71,6 +72,10 @@ CMAKE_ARGS+=	-DCMAKE_BUILD_TYPE:STRING=Debug
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|.lst |.lst.sample |' ${WRKSRC}/CMakeLists.txt
+
+post-patch-DOCS-on:
+	@${MV} ${WRKSRC}/doc/images/macosvfs-file-sharing.png.png \
+		${WRKSRC}/doc/images/macosvfs-file-sharing.png
 
 post-patch-GUIADDONS-off:
 	@${REINPLACE_CMD} -e '/^find_package.*KF6GuiAddons/d' \
