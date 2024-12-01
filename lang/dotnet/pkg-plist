@@ -1,7 +1,7 @@
-bin/dotnet
-dotnet/LICENSE.txt
-dotnet/ThirdPartyNotices.txt
-dotnet/dotnet
+@comment bin/dotnet
+@comment dotnet/LICENSE.txt
+@comment dotnet/ThirdPartyNotices.txt
+@comment dotnet/dotnet
 dotnet/host/fxr/%%FULL_DOTNETVERSION%%/libhostfxr.so
 dotnet/library-packs/Microsoft.DotNet.ILCompiler.%%FULL_DOTNETVERSION%%.nupkg
 dotnet/library-packs/Microsoft.NET.ILLink.Tasks.%%FULL_DOTNETVERSION%%.nupkg

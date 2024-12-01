@@ -28,7 +28,8 @@ BUILD_DEPENDS=	bash:shells/bash \
 LIB_DEPENDS=	libicuuc.so:devel/icu \
 		libinotify.so:devel/libinotify \
 		libunwind.so:devel/libunwind
-RUN_DEPENDS=	terminfo-db>0:misc/terminfo-db
+RUN_DEPENDS=	terminfo-db>0:misc/terminfo-db \
+		dotnet:lang/dotnet-runtime
 
 USES=		autoreconf:build gssapi:mit llvm:noexport nodejs pkgconfig \
 		python:build,3.9+ shebangfix ssl
@@ -98,15 +99,12 @@ do-build:
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/dotnet
 	${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${WRKSRC}/artifacts/${DOTNET_ARCH}/Release/${SDK_DISTNAME}${EXTRACT_SUFX} -C ${STAGEDIR}${PREFIX}/dotnet ${EXTRACT_AFTER_ARGS}
-	${ELFCTL} -e +noaslr ${STAGEDIR}${PREFIX}/dotnet/dotnet
+	${RM} -r ${STAGEDIR}${PREFIX}/dotnet/packs/NETStandard.Library.Ref
 
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/dotnet/dotnet
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/dotnet/sdk/${SDKVERSION}/AppHostTemplate/apphost
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/dotnet/packs/Microsoft.NETCore.App.Host.freebsd-${DOTNET_ARCH}/${DISTVERSION}/runtimes/freebsd-${DOTNET_ARCH}/native/apphost
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/dotnet/packs/Microsoft.NETCore.App.Host.freebsd-${DOTNET_ARCH}/${DISTVERSION}/runtimes/freebsd-${DOTNET_ARCH}/native/singlefilehost
 	${FIND} ${STAGEDIR}${PREFIX}/dotnet -name "*.so" -exec ${STRIP_CMD} -s "{}" ";"
-
-	${RLN} ${STAGEDIR}${PREFIX}/dotnet/dotnet ${STAGEDIR}${PREFIX}/bin/dotnet
 
 bootstrap-makesum:
 	cd ${WRKSRC}/artifacts/${DOTNET_ARCH}/Release && sha256 ${SOURCEBUILT_ARTIFACTS_DISTNAME}${EXTRACT_SUFX}
