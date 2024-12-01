@@ -1,6 +1,6 @@
 PORTNAME=	cataclysm-dda
-DISTVERSION=	0.G
-PORTREVISION=	1
+PORTVERSION=	0.H			# Preserve PORTVERSION so uppercase is respected
+DISTVERSIONSUFFIX=	-g08f04fd	# Using TAG instead of upstream 0.H-RELEASE
 PORTEPOCH=	1
 CATEGORIES=	games
 
@@ -20,10 +20,11 @@ FLAVOR?=	curses
 FLAVORS_SUB=	yes
 
 tiles_PKGNAMESUFFIX=		-tiles
+tiles_LIB_DEPENDS=		libFLAC.so:audio/flac
 curses_CONFLICTS_INSTALL=	cataclysm-dda-tiles
 tiles_CONFLICTS_INSTALL=	cataclysm-dda
 
-USES=		cmake compiler:c++14-lang
+USES=		cmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	CleverRaven
 GH_PROJECT=	Cataclysm-DDA
