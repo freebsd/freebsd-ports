@@ -1,5 +1,5 @@
 PORTNAME=	emacs
-DISTVERSION=	31.0.50.20241116
+DISTVERSION=	31.0.50.20241201
 PORTEPOCH=	3
 CATEGORIES=	editors
 PKGNAMESUFFIX=	-devel
@@ -24,7 +24,7 @@ USES=		autoreconf:build cpe gmake localbase:ldflags makeinfo ncurses \
 CPE_VENDOR=	gnu
 USE_GITHUB=	yes
 GH_ACCOUNT=	emacs-mirror
-GH_TAGNAME=	7ded1064cf4
+GH_TAGNAME=	a8169bee206
 
 GNU_CONFIGURE=		yes
 GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
@@ -76,7 +76,7 @@ INFO=		auth autotype bovine calc ccmode cl dbus dired-x ebrowse ede \
 		modus-themes newsticker nxml-mode octave-mode org pcl-cvs pgg \
 		rcirc reftex remember sasl sc semantic ses sieve smtpmail \
 		speedbar srecode todo-mode tramp transient url use-package \
-		vhdl-mode vip viper vtable widget wisent woman
+		vhdl-mode viper vtable widget wisent woman
 INFO_PATH=	${DATADIR_REL}/info
 PLIST_SUB=	EMACS_VER=${DISTVERSION:R} \
 		GNU_HOST=${CONFIGURE_TARGET}
