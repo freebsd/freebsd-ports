@@ -25,6 +25,8 @@ DOCSDIR=	${PREFIX}/share/doc/ja/anthy
 ELISPDIR=	share/emacs/site-lisp/anthy
 PLIST_SUB=	ELISPDIR=${ELISPDIR}
 
+CONFLICTS_INSTALL=	ja-anthy-unicode
+
 OPTIONS_DEFINE=	ODIC GSKKDIC DOCS
 
 ODIC_DESC=	Okinawa Dictionary

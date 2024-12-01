@@ -1,0 +1,10 @@
+Anthy is a japanese input method library that can be used from many setups.
+
+Anthy Unicode is another Anthy project forked from Anthy since Anthy is no
+longer maintained.
+
+Anthy Unicode's purposes are:
+1. Convert internal codes from EUC-JP to UTF-8
+2. Migrate the user fiels from $HOME/.anthy to $XDG_CONFIG_HOME/anthy
+3. Maintain new eras
+4. Enhance th word conversions

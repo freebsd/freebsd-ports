@@ -14,6 +14,7 @@
     SUBDIR += alias-fonts
     SUBDIR += another-htmllint
     SUBDIR += anthy
+    SUBDIR += anthy-unicode
     SUBDIR += aobook
     SUBDIR += bible_names-fpw
     SUBDIR += boiled-mozc
