@@ -8,6 +8,9 @@ DISTNAME=	Shaaft-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	OpenGL 3D falling block game similar to Blockout
 
+DEPRECATED=	Unmaintained upstream for ages, breaks with modern toolchains
+EXPIRATION_DATE=2025-03-02
+
 LIB_DEPENDS=	libpng.so:graphics/png
 
 CONFLICTS=	criticalmass
