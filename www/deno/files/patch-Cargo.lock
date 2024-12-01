@@ -1,22 +1,34 @@
---- Cargo.lock.orig	2024-10-11 15:31:50 UTC
-+++ Cargo.lock
-@@ -1884,6 +1884,7 @@ dependencies = [
+--- Cargo.lock.orig	2024-12-01 11:23:56.886645000 +0100
++++ Cargo.lock	2024-12-01 11:25:02.291256000 +0100
+@@ -1943,6 +1943,7 @@ dependencies = [
   "sm3",
   "spki",
   "stable_deref_trait",
 + "sysinfo",
   "thiserror",
   "tokio",
-  "url",
-@@ -2041,6 +2042,7 @@ dependencies = [
+  "tokio-eld",
+@@ -2109,6 +2110,7 @@ dependencies = [
   "serde",
   "signal-hook",
   "signal-hook-registry",
 + "sysinfo",
   "tempfile",
   "test_server",
-  "tokio",
-@@ -4164,7 +4166,7 @@ dependencies = [
+  "thiserror",
+@@ -4460,9 +4462,9 @@ name = "libc"
+ 
+ [[package]]
+ name = "libc"
+-version = "0.2.153"
++version = "0.2.167"
+ source = "registry+https://github.com/rust-lang/crates.io-index"
+-checksum = "9c198f91728a82281a64e1f4f9eeb25d82cb32a5de251c6bd1b5154d63a8e7bd"
++checksum = "09d6582e104315a817dff97f75133544b2e094ee22447d2acf4a74e189ba06fc"
+ 
+ [[package]]
+ name = "libffi"
+@@ -4500,7 +4502,7 @@ dependencies = [
  checksum = "4979f22fdb869068da03c9f7528f8297c6fd2606bc3a4affe42e6a823fdb8da4"
  dependencies = [
   "cfg-if",
@@ -25,14 +37,14 @@
  ]
  
  [[package]]
-@@ -7022,6 +7024,20 @@ dependencies = [
+@@ -7451,6 +7453,20 @@ dependencies = [
  ]
  
  [[package]]
 +name = "sysinfo"
-+version = "0.32.0"
++version = "0.32.1"
 +source = "registry+https://github.com/rust-lang/crates.io-index"
-+checksum = "e3b5ae3f4f7d64646c46c4cae4e3f01d1c5d255c7406fdd7c7f999a94e488791"
++checksum = "4c33cd241af0f2e9e3b5c32163b873b29956890b5342e6745b917ce9d490f4af"
 +dependencies = [
 + "core-foundation-sys",
 + "libc",
@@ -46,7 +58,7 @@
  name = "tap"
  version = "1.0.1"
  source = "registry+https://github.com/rust-lang/crates.io-index"
-@@ -8237,7 +8253,7 @@ dependencies = [
+@@ -8504,7 +8520,7 @@ dependencies = [
  checksum = "5b2b1bf557d947847a30eb73f79aa6cdb3eaf3ce02f5e9599438f77896a62b3c"
  dependencies = [
   "thiserror",
@@ -55,7 +67,7 @@
  ]
  
  [[package]]
-@@ -8277,20 +8293,73 @@ dependencies = [
+@@ -8544,20 +8560,73 @@ dependencies = [
  source = "registry+https://github.com/rust-lang/crates.io-index"
  checksum = "e48a53791691ab099e5e2ad123536d0fff50652600abaf43bbf952894110d0be"
  dependencies = [
@@ -105,7 +117,7 @@
 +dependencies = [
 + "proc-macro2",
 + "quote",
-+ "syn 2.0.72",
++ "syn 2.0.87",
 +]
 +
 +[[package]]
@@ -116,7 +128,7 @@
 +dependencies = [
 + "proc-macro2",
 + "quote",
-+ "syn 2.0.72",
++ "syn 2.0.87",
 +]
 +
 +[[package]]
@@ -132,7 +144,7 @@
  name = "windows-sys"
  version = "0.48.0"
  source = "registry+https://github.com/rust-lang/crates.io-index"
-@@ -8305,7 +8374,7 @@ dependencies = [
+@@ -8572,7 +8641,7 @@ dependencies = [
  source = "registry+https://github.com/rust-lang/crates.io-index"
  checksum = "282be5f36a8ce781fad8c8ae18fa3f9beff57ec1b52cb3de0789201425d9a33d"
  dependencies = [
@@ -141,7 +153,7 @@
  ]
  
  [[package]]
-@@ -8325,17 +8394,18 @@ name = "windows-targets"
+@@ -8592,17 +8661,18 @@ name = "windows-targets"
  
  [[package]]
  name = "windows-targets"
@@ -169,7 +181,7 @@
  ]
  
  [[package]]
-@@ -8346,9 +8416,9 @@ name = "windows_aarch64_gnullvm"
+@@ -8613,9 +8683,9 @@ name = "windows_aarch64_gnullvm"
  
  [[package]]
  name = "windows_aarch64_gnullvm"
@@ -181,7 +193,7 @@
  
  [[package]]
  name = "windows_aarch64_msvc"
-@@ -8358,9 +8428,9 @@ name = "windows_aarch64_msvc"
+@@ -8625,9 +8695,9 @@ name = "windows_aarch64_msvc"
  
  [[package]]
  name = "windows_aarch64_msvc"
@@ -193,7 +205,7 @@
  
  [[package]]
  name = "windows_i686_gnu"
-@@ -8370,11 +8440,17 @@ name = "windows_i686_gnu"
+@@ -8637,11 +8707,17 @@ name = "windows_i686_gnu"
  
  [[package]]
  name = "windows_i686_gnu"
@@ -213,7 +225,7 @@
  name = "windows_i686_msvc"
  version = "0.48.5"
  source = "registry+https://github.com/rust-lang/crates.io-index"
-@@ -8382,9 +8458,9 @@ name = "windows_i686_msvc"
+@@ -8649,9 +8725,9 @@ name = "windows_i686_msvc"
  
  [[package]]
  name = "windows_i686_msvc"
@@ -225,7 +237,7 @@
  
  [[package]]
  name = "windows_x86_64_gnu"
-@@ -8394,9 +8470,9 @@ name = "windows_x86_64_gnu"
+@@ -8661,9 +8737,9 @@ name = "windows_x86_64_gnu"
  
  [[package]]
  name = "windows_x86_64_gnu"
@@ -237,7 +249,7 @@
  
  [[package]]
  name = "windows_x86_64_gnullvm"
-@@ -8406,9 +8482,9 @@ name = "windows_x86_64_gnullvm"
+@@ -8673,9 +8749,9 @@ name = "windows_x86_64_gnullvm"
  
  [[package]]
  name = "windows_x86_64_gnullvm"
@@ -249,7 +261,7 @@
  
  [[package]]
  name = "windows_x86_64_msvc"
-@@ -8418,9 +8494,9 @@ name = "windows_x86_64_msvc"
+@@ -8685,9 +8761,9 @@ name = "windows_x86_64_msvc"
  
  [[package]]
  name = "windows_x86_64_msvc"

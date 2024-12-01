@@ -1,5 +1,5 @@
---- cargo-crates/v8-0.106.0/v8/src/base/platform/platform-freebsd.cc.orig	2020-06-26 16:28:04 UTC
-+++ cargo-crates/v8-0.106.0/v8/src/base/platform/platform-freebsd.cc
+--- cargo-crates/v8-130.0.1/v8/src/base/platform/platform-freebsd.cc.orig	2020-06-26 16:28:04 UTC
++++ cargo-crates/v8-130.0.1/v8/src/base/platform/platform-freebsd.cc
 @@ -43,14 +43,10 @@ TimezoneCache* OS::CreateTimezoneCache() {
    return new PosixDefaultTimezoneCache();
  }

@@ -1,5 +1,5 @@
---- cargo-crates/v8-0.106.0/v8/src/api/api.cc.orig	2020-06-26 16:28:04 UTC
-+++ cargo-crates/v8-0.106.0/v8/src/api/api.cc
+--- cargo-crates/v8-130.0.1/v8/src/api/api.cc.orig	2020-06-26 16:28:04 UTC
++++ cargo-crates/v8-130.0.1/v8/src/api/api.cc
 @@ -145,7 +145,7 @@
  #include "src/wasm/wasm-serialization.h"
  #endif  // V8_ENABLE_WEBASSEMBLY

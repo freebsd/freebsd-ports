@@ -1,5 +1,5 @@
---- cargo-crates/v8-0.106.0/v8/src/base/small-vector.h.orig	2022-10-25 08:25:05 UTC
-+++ cargo-crates/v8-0.106.0/v8/src/base/small-vector.h
+--- cargo-crates/v8-130.0.1/v8/src/base/small-vector.h.orig	2022-10-25 08:25:05 UTC
++++ cargo-crates/v8-130.0.1/v8/src/base/small-vector.h
 @@ -22,7 +22,7 @@ template <typename T, size_t kSize, typename Allocator
  class SmallVector {
    // Currently only support trivially copyable and trivially destructible data
