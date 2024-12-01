@@ -1,30 +1,32 @@
 PORTNAME=	nwg-drawer
-DISTVERSIONPREFIX=	v
-DISTVERSION=	0.5.2
+DISTVERSION=	0.6.0
 CATEGORIES=	x11 wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Application drawer for sway and other wlroots compositors
 WWW=		https://github.com/nwg-piotr/nwg-drawer
 
-LICENSE=	MIT
-LICENSE_FILE=	${WRKSRC}/LICENSE
+LICENSE=	AGPLv3 MIT
+LICENSE_COMB=	multi
+LICENSE_FILE_AGPLv3=	${WRKSRC_diamondburned_gotk4_pkg}/LICENSE.md
+LICENSE_FILE_MIT=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
-		libgtk-layer-shell.so:x11-toolkits/gtk-layer-shell
+LIB_DEPENDS=	libgtk-layer-shell.so:x11-toolkits/gtk-layer-shell
 RUN_DEPENDS=	xdg-open:devel/xdg-utils
 
 USES=		gnome go:modules pkgconfig
 USE_GITHUB=	yes
 USE_GNOME=	cairo gdkpixbuf2 gtk30
 GH_ACCOUNT=	nwg-piotr
-GH_TUPLE=	allan-simon:go-singleinstance:d0997106ab37:allan_simon_go_singleinstance/vendor/github.com/allan-simon/go-singleinstance \
-		dlasky:gotk3-layershell:5c5115f0d774:dlasky_gotk3_layershell/vendor/github.com/dlasky/gotk3-layershell \
+GH_TUPLE=	KarpelesLab:weak:v0.1.1:karpeleslab_weak/vendor/github.com/KarpelesLab/weak \
+		allan-simon:go-singleinstance:d0997106ab37:allan_simon_go_singleinstance/vendor/github.com/allan-simon/go-singleinstance \
+		diamondburned:gotk4-layer-shell:6efa9f6dc438:diamondburned_gotk4_layer_shell_pkg/vendor/github.com/diamondburned/gotk4-layer-shell \
+		diamondburned:gotk4:v0.3.1:diamondburned_gotk4_pkg/vendor/github.com/diamondburned/gotk4 \
 		expr-lang:expr:v1.16.9:expr_lang_expr/vendor/github.com/expr-lang/expr \
-		fsnotify:fsnotify:v1.7.0:fsnotify_fsnotify/vendor/github.com/fsnotify/fsnotify \
-		golang:sync:v0.8.0:golang_sync/vendor/golang.org/x/sync \
-		golang:sys:v0.26.0:golang_sys/vendor/golang.org/x/sys \
-		gotk3:gotk3:ff349ae13f56:gotk3_gotk3/vendor/github.com/gotk3/gotk3 \
+		fsnotify:fsnotify:v1.8.0:fsnotify_fsnotify/vendor/github.com/fsnotify/fsnotify \
+		go4org:unsafe-assume-no-moving-gc:b99613f794b6:go4org_unsafe_assume_no_moving_gc/vendor/go4.org/unsafe/assume-no-moving-gc \
+		golang:sync:v0.9.0:golang_sync/vendor/golang.org/x/sync \
+		golang:sys:v0.27.0:golang_sys/vendor/golang.org/x/sys \
 		joshuarubin:go-sway:v1.2.0:joshuarubin_go_sway/vendor/github.com/joshuarubin/go-sway \
 		joshuarubin:lifecycle:v1.1.4:joshuarubin_lifecycle/vendor/github.com/joshuarubin/lifecycle \
 		sirupsen:logrus:v1.9.3:sirupsen_logrus/vendor/github.com/sirupsen/logrus \
