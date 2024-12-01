@@ -352,6 +352,7 @@
     SUBDIR += rubygem-streamio-ffmpeg
     SUBDIR += scte35dump
     SUBDIR += shotcut
+    SUBDIR += shotcut-qt6
     SUBDIR += simplescreenrecorder
     SUBDIR += smpeg
     SUBDIR += smpeg2
