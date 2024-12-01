@@ -1,5 +1,6 @@
 PORTNAME=	eza
 DISTVERSION=	0.20.10
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	https://github.com/eza-community/${PORTNAME}/archive/refs/tags/v${DISTVERSION}/${DISTVERSION}.tar.gz?dummy=/:src \
 		https://github.com/eza-community/${PORTNAME}/releases/download/v${DISTVERSION}/man-${DISTVERSION}.tar.gz?dummy=/:man

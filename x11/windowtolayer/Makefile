@@ -1,5 +1,6 @@
 PORTNAME=	windowtolayer
 PORTVERSION=	s20241109
+PORTREVISION=	1
 CATEGORIES=	x11 wayland
 
 MAINTAINER=	jbeich@FreeBSD.org

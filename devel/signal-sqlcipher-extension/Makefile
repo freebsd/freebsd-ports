@@ -1,6 +1,7 @@
 PORTNAME=	signal-sqlcipher-extension
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.2.0
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	mikael@FreeBSD.org
