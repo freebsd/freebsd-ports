@@ -1,5 +1,5 @@
 PORTNAME=	expat
-DISTVERSION=	2.6.3
+DISTVERSION=	2.6.4
 CATEGORIES=	textproc
 MASTER_SITES=	https://github.com/libexpat/libexpat/releases/download/R_${DISTVERSION:S|.|_|g}/
 
@@ -32,7 +32,7 @@ OPTIONS_SUB=	yes
 
 STATIC_CONFIGURE_ENABLE=	static
 
-TEST_USES=	shebangfix
+TEST_USES=	compiler:c++11-lang shebangfix
 SHEBANG_FILES=	test-driver-wrapper.sh tests/udiffer.py tests/xmltest.sh
 TEST_CONFIGURE_WITH=	tests
 
