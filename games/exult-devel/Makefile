@@ -1,5 +1,5 @@
 DISTVERSIONPREFIX=	snapshot-v
-DISTVERSION=	1.11.0.20241022
+DISTVERSION=	1.11.0.20241201
 PORTREVISION=	0 # Always set PORTREVISION explicitly as otherwise it is inherited from games/exult
 PKGNAMESUFFIX=	-devel
 
