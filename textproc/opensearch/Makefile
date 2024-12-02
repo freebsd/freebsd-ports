@@ -15,7 +15,7 @@ BUILD_DEPENDS=	jna>0:devel/jna
 RUN_DEPENDS=	bash>0:shells/bash \
 		jna>0:devel/jna
 
-CONFLICTS?=	opensearch13 opensearch210
+CONFLICTS?=	opensearch13 opensearch210 opensearch213
 
 USES=		cpe shebangfix
 USE_JAVA=	yes
@@ -45,7 +45,7 @@ PLUGINS_CONFIG_FILES?= \
 		opensearch-notifications-core/notifications-core.yml \
 		opensearch-notifications/notifications.yml \
 		opensearch-observability/observability.yml
-.if ${PKGNAMESUFFIX} == "210"
+.if ${PKGNAMESUFFIX} == "210" || ${PKGNAMESUFFIX} == "213"
 PLUGINS_CONFIG_FILES+=	\
 		opensearch-performance-analyzer/agent-stats-metadata \
 		opensearch-performance-analyzer/log4j2.xml \
@@ -115,7 +115,7 @@ do-install-PLUGINS-on:
 		 ${STAGEDIR}${ETCDIR}/opensearch-observability \
 		 ${STAGEDIR}${ETCDIR}/opensearch-reports-scheduler \
 		 ${STAGEDIR}${ETCDIR}/opensearch-security
-.if ${PKGNAMESUFFIX} == "210"
+.if ${PKGNAMESUFFIX} == "210" || ${PKGNAMESUFFIX} == "213"
 	${MKDIR} ${STAGEDIR}${ETCDIR}/opensearch-performance-analyzer
 .endif
 
@@ -143,7 +143,7 @@ post-install:
 	${ECHO} "@dir(opensearch,opensearch,0750) ${ETCDIR}/opensearch-notifications-core" >> ${TMPPLIST}
 	${ECHO} "@dir(opensearch,opensearch,0750) ${ETCDIR}/opensearch-notifications" >> ${TMPPLIST}
 	${ECHO} "@dir(opensearch,opensearch,0750) ${ETCDIR}/opensearch-observability" >> ${TMPPLIST}
-.if ${PKGNAMESUFFIX} == "210"
+.if ${PKGNAMESUFFIX} == "210" || ${PKGNAMESUFFIX} == "213"
 	${ECHO} "@dir(opensearch,opensearch,0750) ${ETCDIR}/opensearch-performance-analyzer" >> ${TMPPLIST}
 .endif
 	${ECHO} "@dir(opensearch,opensearch,0750) ${ETCDIR}/opensearch-reports-scheduler" >> ${TMPPLIST}
