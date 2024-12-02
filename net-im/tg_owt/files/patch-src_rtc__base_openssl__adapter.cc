@@ -1,6 +1,6 @@
---- src/rtc_base/openssl_adapter.cc.orig	2023-06-08 13:40:19 UTC
+--- src/rtc_base/openssl_adapter.cc.orig	2024-11-16 05:27:29 UTC
 +++ src/rtc_base/openssl_adapter.cc
-@@ -192,7 +192,9 @@ bool OpenSSLAdapter::InitializeSSL() {
+@@ -176,7 +176,9 @@ bool OpenSSLAdapter::InitializeSSL() {
    // Loading the error strings crashes mac_asan.  Omit this debugging aid there.
    SSL_load_error_strings();
  #endif
