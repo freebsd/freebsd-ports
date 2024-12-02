@@ -1,3 +1,42 @@
+  <vuln vid="f0d33375-b0e0-11ef-a724-b42e991fc52e">
+    <topic>zabbix -- SQL injection in user.get API</topic>
+    <affects>
+      <package>
+	<name>zabbix6-frontend</name>
+	<range><lt>6.0.31</lt></range>
+      </package>
+      <package>
+	<name>zabbix64-frontend</name>
+	<range><lt>6.4.16</lt></range>
+      </package>
+      <package>
+	<name>zabbix7-frontend</name>
+	<range><lt>7.0.0</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>security@zabbix.com reports:</p>
+	<blockquote cite="https://support.zabbix.com/browse/ZBX-25623">
+	  <p>A non-admin user account on the Zabbix frontend with the default
+	User role, or with any other role that gives API access can exploit
+	this vulnerability.  An SQLi exists in the CUser class in the
+	addRelatedObjects function, this function is being called from the
+	CUser.get function which is available for every user who has API
+	access.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2024-42327</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2024-42327</url>
+    </references>
+    <dates>
+      <discovery>2024-11-27</discovery>
+      <entry>2024-12-02</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="8b6e97a9-804e-4366-9f75-d102b22a716d">
     <topic>electron33 -- Inappropriate implementation in Extensions</topic>
     <affects>
