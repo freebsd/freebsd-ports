@@ -1,6 +1,6 @@
 PORTNAME=	closql
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.0.0
+DISTVERSION=	2.1.0
 CATEGORIES=	databases elisp
 PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
 
@@ -12,9 +12,9 @@ LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	compat.el${EMACS_PKGNAMESUFFIX}>=30.0.0.0:misc/compat.el@${EMACS_FLAVOR} \
-		emacsql${EMACS_PKGNAMESUFFIX}>=4.0.0:databases/emacsql@${EMACS_FLAVOR}
+		emacsql${EMACS_PKGNAMESUFFIX}>=4.1.0:databases/emacsql@${EMACS_FLAVOR}
 RUN_DEPENDS=	compat.el${EMACS_PKGNAMESUFFIX}>=30.0.0.0:misc/compat.el@${EMACS_FLAVOR} \
-		emacsql${EMACS_PKGNAMESUFFIX}>=4.0.0:databases/emacsql@${EMACS_FLAVOR}
+		emacsql${EMACS_PKGNAMESUFFIX}>=4.1.0:databases/emacsql@${EMACS_FLAVOR}
 
 USES=		emacs gmake
 USE_GITHUB=	yes
