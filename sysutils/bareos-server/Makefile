@@ -1,6 +1,6 @@
 PORTNAME=	bareos
 DISTVERSIONPREFIX=	Release/
-DISTVERSION=	23.0.2
+DISTVERSION=	23.1.0
 PORTREVISION?=	0
 CATEGORIES?=	sysutils
 PKGNAMEPREFIX?=	#
@@ -16,7 +16,8 @@ LICENSE_COMB=	multi
 CONFLICTS?=	bareos20-server bareos21-server bareos22-server
 
 LIB_DEPENDS+=	liblzo2.so:archivers/lzo2 \
-		libjansson.so:devel/jansson
+		libjansson.so:devel/jansson \
+		libfmt.so:devel/libfmt
 
 USES+=		cmake compiler:c++11-lang cpe localbase:ldflags perl5 pkgconfig readline \
 		shebangfix
@@ -167,7 +168,9 @@ CMAKE_ARGS+=	-Dbuild-dird=ON \
 
 MTX_RUN_DEPENDS=	${LOCALBASE}/sbin/mtx:misc/mtx
 PGSQL_CMAKE_ON=		-Dpostgresql=ON
-PGSQL_USES=	pgsql
+PGSQL_USES=		pgsql
+PGSQL_SUB_LIST=		REQ_PGSQL=postgresql
+PGSQL_SUB_LIST_OFF=	REQ_PGSQL=""
 .endif
 
 .if defined(WITH_CLIENT_ONLY)
@@ -182,13 +185,16 @@ MP1+=	bsmtp.1 bregex.1 bwild.1 bareos-tray-monitor.1
 MAKE_ENV+=	MAN8="${MP8}" MAN1="${MP1}"
 
 post-patch:
-	@${REINPLACE_CMD}  '133,138d' ${WRKSRC}/CMakeLists.txt
+	@${REINPLACE_CMD}  '136,141d' ${WRKSRC}/CMakeLists.txt
 .if ${PKGNAMESUFFIX} == "-server"
 	@${REINPLACE_CMD}  '50d' ${WRKSRC}/core/src/plugins/CMakeLists.txt
 .endif
 .if ${PKGNAMESUFFIX} == "-client"
 	@${REINPLACE_CMD} -e 's|-Werror -Wall|-Wall|g' ${PATCH_WRKSRC}/core/CMakeLists.txt
 .endif
+
+post-patch-PYTHON-off:
+	@${REINPLACE_CMD} 's/set(python ON)/set(python OFF)/' ${WRKSRC}/cmake/BareosSetVariableDefaults.cmake
 
 post-extract:
 .if defined(WITH_CLIENT_ONLY)

@@ -29,6 +29,7 @@ bin/bwild
 @sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/profile/operator.conf.sample
 @sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/schedule/WeeklyCycle.conf.sample
 @sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/schedule/WeeklyCycleAfterBackup.conf.sample
+%%ETCDIR%%/bareos-dir.d/storage/dedup.conf.sample
 @sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/storage/File.conf.sample
 %%GFAPI%%@sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/storage/Gluster.conf.sample
 @sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/storage/NULL.conf.sample
@@ -43,8 +44,10 @@ bin/bwild
 @sample(,bareos,640) %%ETCDIR%%/bareos-sd.d/director/bareos-mon.conf.sample
 @sample(,bareos,640) %%ETCDIR%%/bareos-sd.d/messages/Standard.conf.sample
 @sample(,bareos,640) %%ETCDIR%%/bareos-sd.d/storage/bareos-sd.conf.sample
+@sample(,bareos,640) %%ETCDIR%%/bareos-sd.d/device/dedup.conf.sample
 %%MTX%%@sample(,bareos,640) %%ETCDIR%%/mtx-changer.conf.sample
 etc/logrotate.d/bareos-dir
+lib/bareos/backends/libbareossd-dedupable.so
 lib/bareos/backends/libbareossd-fifo.so
 lib/bareos/backends/libbareossd-file.so
 %%GFAPI%%lib/bareos/backends/libbareossd-gfapi.so
