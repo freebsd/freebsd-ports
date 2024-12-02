@@ -1,6 +1,5 @@
 PORTNAME=	jwt-cli
-PORTVERSION=	6.1.1
-PORTREVISION=	2
+PORTVERSION=	6.2.0
 CATEGORIES=	www
 
 MAINTAINER=	osa@FreeBSD.org
@@ -33,11 +32,12 @@ CARGO_CRATES=	aho-corasick-0.7.19 \
 		cfg-if-1.0.0 \
 		chrono-0.4.38 \
 		clap-3.2.25 \
-		clap-4.5.16 \
-		clap_builder-4.5.15 \
+		clap-4.5.21 \
+		clap_builder-4.5.21 \
 		clap_complete-3.2.5 \
-		clap_complete-4.5.18 \
-		clap_derive-4.5.13 \
+		clap_complete-4.5.38 \
+		clap_complete_nushell-4.5.4 \
+		clap_derive-4.5.18 \
 		clap_generate-3.0.3 \
 		clap_lex-0.2.4 \
 		clap_lex-0.7.0 \
