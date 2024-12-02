@@ -91,6 +91,7 @@ lib/seed7/lib/comp/typ_act.s7i
 lib/seed7/lib/comp/type.s7i
 lib/seed7/lib/comp/ut8_act.s7i
 lib/seed7/lib/complex.s7i
+lib/seed7/lib/compress.s7i
 lib/seed7/lib/console.s7i
 lib/seed7/lib/cpio.s7i
 lib/seed7/lib/crc32.s7i
