@@ -1,3 +1,32 @@
+  <vuln vid="8b6e97a9-804e-4366-9f75-d102b22a716d">
+    <topic>electron33 -- Inappropriate implementation in Extensions</topic>
+    <affects>
+      <package>
+	<name>electron33</name>
+	<range><lt>33.2.1</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Electron developers report:</p>
+	<blockquote cite="https://github.com/electron/electron/releases/tag/v33.2.1">
+	  <p>This update fixes the following vulnerability:</p>
+	  <ul>
+	    <li>Security: backported fix for CVE-2024-11110.</li>
+	  </ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2024-11110</cvename>
+      <url>https://github.com/advisories/GHSA-4mww-gp9h-h59m</url>
+    </references>
+    <dates>
+      <discovery>2024-11-27</discovery>
+      <entry>2024-12-02</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="c5dafd73-adfd-11ef-af27-00e081b7aa2d">
     <topic>jenkins -- Denial of service vulnerability in bundled json-lib</topic>
     <affects>
