@@ -1,4 +1,3 @@
-bin/emacsql-sqlite
 %%EMACS_VERSION_SITE_LISPDIR%%/emacsql/emacsql-autoloads.el
 %%EMACS_VERSION_SITE_LISPDIR%%/emacsql/emacsql-compiler.el
 %%EMACS_VERSION_SITE_LISPDIR%%/emacsql/emacsql-compiler.elc
