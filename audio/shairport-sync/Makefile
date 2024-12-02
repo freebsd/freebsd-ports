@@ -1,6 +1,5 @@
 PORTNAME=	shairport-sync
-DISTVERSION=	4.3.4
-PORTREVISION=	2
+DISTVERSION=	4.3.5
 CATEGORIES=	audio
 
 MAINTAINER=	ehaupt@FreeBSD.org
@@ -15,7 +14,7 @@ LIB_DEPENDS=	libavahi-client.so:net/avahi-app \
 		libpopt.so:devel/popt \
 		libsoxr.so:audio/libsoxr
 
-USES=		autoreconf libtool pkgconfig ssl
+USES=		autoreconf libtool localbase pkgconfig ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	mikebrady
 USE_RC_SUBR=	${PORTNAME}
@@ -33,7 +32,6 @@ CONFIGURE_ARGS=	--sysconfdir=${LOCALBASE}/etc \
 CONFIGURE_ENV+=	SSL_CFLAGS=-I${OPENSSLINC} \
 		SSL_LIBS=-L${OPENSSLLIB}
 
-CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-lcrypto
 
 OPTIONS_DEFINE=		AIRPLAY2 ALAC ALSA MQTT PULSEAUDIO SNDIO
