@@ -5,6 +5,19 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20241202:
+  AFFECTS: users of net/gdrive
+  AUTHOR: meta@FreeBSD.org
+
+  The port net/gdrive has been updated to its successor product because
+  the original upstream GitHub repo has been unmaintained & archived.
+
+  Users upgrading from gdrive 2.x to 3.x need to reconfigure account
+  credentials following the instructions provided by new upstream.
+
+  - https://github.com/glotlabs/gdrive/blob/main/docs/basic_usage.md
+  - https://github.com/glotlabs/gdrive/blob/main/docs/create_google_api_credentials.md
+
 20241122
   AFFECTS: users of databases/couchdb3
   AUTHOR: dch@FreeBSD.org
