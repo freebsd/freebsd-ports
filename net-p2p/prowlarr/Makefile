@@ -1,5 +1,5 @@
 PORTNAME=	prowlarr
-DISTVERSION=	1.25.4.4818
+DISTVERSION=	1.26.1.4844
 CATEGORIES=	net-p2p
 MASTER_SITES=	https://github.com/Prowlarr/Prowlarr/releases/download/v${PORTVERSION}/
 DISTNAME=	Prowlarr.master.${PORTVERSION}.freebsd-core-x64
