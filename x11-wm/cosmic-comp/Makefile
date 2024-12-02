@@ -1,7 +1,6 @@
 PORTNAME=	cosmic-comp
 DISTVERSIONPREFIX=	epoch-
-DISTVERSION=	1.0.0-alpha.3
-PORTREVISION=	2
+DISTVERSION=	1.0.0-alpha.4
 CATEGORIES=	x11-wm wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
