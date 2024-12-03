@@ -29,8 +29,7 @@ BUILD_DEPENDS=	bash>0:shells/bash \
 		libnghttp2>=1.45.1:www/libnghttp2 \
 		libuv>=1.42.0:devel/libuv \
 		objdump:devel/binutils \
-		git>0:devel/git \
-		${PREFIX}/include/gssapi/gssapi_generic.h:security/krb5
+		git>0:devel/git
 RUN_DEPENDS=	ca_root_nss>=0:security/ca_root_nss
 LIB_DEPENDS=	libmongocrypt.so:databases/libmongocrypt \
 		libbrotlidec.so:archivers/brotli \
@@ -38,7 +37,7 @@ LIB_DEPENDS=	libmongocrypt.so:databases/libmongocrypt \
 		libnghttp2.so:www/libnghttp2 \
 		libuv.so:devel/libuv
 
-USES=		compiler:c++11-lib gmake localbase pkgconfig nodejs:20,build python:build ssl
+USES=		compiler:c++11-lib gmake gssapi:mit localbase pkgconfig nodejs:20,build python:build ssl
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	VultureProject
