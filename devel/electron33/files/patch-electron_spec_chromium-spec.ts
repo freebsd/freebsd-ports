@@ -1,4 +1,4 @@
---- electron/spec/chromium-spec.ts.orig	2024-11-07 16:14:43 UTC
+--- electron/spec/chromium-spec.ts.orig	2024-11-27 04:18:00 UTC
 +++ electron/spec/chromium-spec.ts
 @@ -474,13 +474,13 @@ describe('command line switches', () => {
      it('should not set an invalid locale', async () => testLocale('asdfkl', `${currentLocale}|${currentSystemLocale}|${currentPreferredLanguages}`));
@@ -27,7 +27,7 @@
        const rc = await startRemoteControlApp(['--trace-startup=*', `--trace-startup-file=${outputFilePath}`, '--trace-startup-duration=1', '--enable-logging']);
        const stderrComplete = new Promise<string>(resolve => {
          let stderr = '';
-@@ -2885,12 +2885,12 @@ describe('font fallback', () => {
+@@ -2917,12 +2917,12 @@ describe('font fallback', () => {
        expect(fonts[0].familyName).to.equal('Arial');
      } else if (process.platform === 'darwin') {
        expect(fonts[0].familyName).to.equal('Helvetica');
@@ -42,7 +42,7 @@
      const html = `
      <html lang="ja-JP">
        <head>
-@@ -3286,7 +3286,7 @@ describe('navigator.clipboard.write', () => {
+@@ -3318,7 +3318,7 @@ describe('navigator.clipboard.write', () => {
    });
  });
  

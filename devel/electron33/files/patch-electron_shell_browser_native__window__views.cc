@@ -1,4 +1,4 @@
---- electron/shell/browser/native_window_views.cc.orig	2024-10-22 02:29:46 UTC
+--- electron/shell/browser/native_window_views.cc.orig	2024-11-27 04:18:00 UTC
 +++ electron/shell/browser/native_window_views.cc
 @@ -49,7 +49,7 @@
  #include "ui/wm/core/shadow_types.h"
@@ -171,7 +171,7 @@
  void NativeWindowViews::SetIcon(const gfx::ImageSkia& icon) {
    auto* tree_host = views::DesktopWindowTreeHostLinux::GetHostForWidget(
        GetAcceleratedWidget());
-@@ -1681,7 +1681,7 @@ bool NativeWindowViews::CanMinimize() const {
+@@ -1691,7 +1691,7 @@ bool NativeWindowViews::CanMinimize() const {
  bool NativeWindowViews::CanMinimize() const {
  #if BUILDFLAG(IS_WIN)
    return minimizable_;
@@ -180,7 +180,7 @@
    return true;
  #endif
  }
-@@ -1737,7 +1737,7 @@ void NativeWindowViews::HandleKeyboardEvent(
+@@ -1747,7 +1747,7 @@ void NativeWindowViews::HandleKeyboardEvent(
    if (widget_destroyed_)
      return;
  
@@ -189,7 +189,7 @@
    if (event.windows_key_code == ui::VKEY_BROWSER_BACK)
      NotifyWindowExecuteAppCommand(kBrowserBackward);
    else if (event.windows_key_code == ui::VKEY_BROWSER_FORWARD)
-@@ -1756,7 +1756,7 @@ void NativeWindowViews::OnMouseEvent(ui::MouseEvent* e
+@@ -1766,7 +1766,7 @@ void NativeWindowViews::OnMouseEvent(ui::MouseEvent* e
    // Alt+Click should not toggle menu bar.
    root_view_.ResetAltState();
  

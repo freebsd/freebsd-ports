@@ -1,4 +1,4 @@
---- electron/shell/browser/api/electron_api_app.cc.orig	2024-09-04 18:50:02 UTC
+--- electron/shell/browser/api/electron_api_app.cc.orig	2024-11-27 04:18:00 UTC
 +++ electron/shell/browser/api/electron_api_app.cc
 @@ -92,7 +92,7 @@
  #include "shell/browser/ui/cocoa/electron_bundle_mover.h"
@@ -36,7 +36,7 @@
    auto env = base::Environment::Create();
    env->SetVar("CHROME_DESKTOP", desktop_name);
  #endif
-@@ -1033,7 +1033,7 @@ bool App::RequestSingleInstanceLock(gin::Arguments* ar
+@@ -1032,7 +1032,7 @@ bool App::RequestSingleInstanceLock(gin::Arguments* ar
        base::BindRepeating(NotificationCallbackWrapper, cb));
  #endif
  
@@ -45,7 +45,7 @@
    // Read the xdg-activation token and set it in the command line for the
    // duration of the notification in order to ensure this is propagated to an
    // already running electron app instance if it exists.
-@@ -1328,7 +1328,7 @@ std::vector<gin_helper::Dictionary> App::GetAppMetrics
+@@ -1327,7 +1327,7 @@ std::vector<gin_helper::Dictionary> App::GetAppMetrics
        pid_dict.Set("name", process_metric.second->name);
      }
  
@@ -54,7 +54,7 @@
      auto memory_info = process_metric.second->GetMemoryInfo();
  
      auto memory_dict = gin_helper::Dictionary::CreateEmpty(isolate);
-@@ -1702,7 +1702,7 @@ gin::ObjectTemplateBuilder App::GetObjectTemplateBuild
+@@ -1701,7 +1701,7 @@ gin::ObjectTemplateBuilder App::GetObjectTemplateBuild
        .SetMethod(
            "removeAsDefaultProtocolClient",
            base::BindRepeating(&Browser::RemoveAsDefaultProtocolClient, browser))
@@ -63,7 +63,7 @@
        .SetMethod(
            "getApplicationInfoForProtocol",
            base::BindRepeating(&Browser::GetApplicationInfoForProtocol, browser))
-@@ -1760,7 +1760,7 @@ gin::ObjectTemplateBuilder App::GetObjectTemplateBuild
+@@ -1759,7 +1759,7 @@ gin::ObjectTemplateBuilder App::GetObjectTemplateBuild
        .SetMethod("getJumpListSettings", &App::GetJumpListSettings)
        .SetMethod("setJumpList", &App::SetJumpList)
  #endif

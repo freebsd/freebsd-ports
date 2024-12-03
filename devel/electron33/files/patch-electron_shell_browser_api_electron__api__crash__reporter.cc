@@ -1,4 +1,4 @@
---- electron/shell/browser/api/electron_api_crash_reporter.cc.orig	2024-10-22 02:29:46 UTC
+--- electron/shell/browser/api/electron_api_crash_reporter.cc.orig	2024-11-27 04:18:00 UTC
 +++ electron/shell/browser/api/electron_api_crash_reporter.cc
 @@ -29,7 +29,7 @@
  #include "shell/common/process_util.h"
@@ -36,7 +36,7 @@
  void GetUploadedReports(
      v8::Isolate* isolate,
      base::OnceCallback<void(v8::Local<v8::Value>)> callback) {
-@@ -237,13 +237,13 @@ void SetUploadToServer(bool upload) {
+@@ -236,13 +236,13 @@ void SetUploadToServer(bool upload) {
  #endif
  
  void SetUploadToServer(bool upload) {
@@ -52,7 +52,7 @@
    return false;
  #else
    return ElectronCrashReporterClient::Get()->GetCollectStatsConsent();
-@@ -252,7 +252,7 @@ v8::Local<v8::Value> GetParameters(v8::Isolate* isolat
+@@ -251,7 +251,7 @@ v8::Local<v8::Value> GetParameters(v8::Isolate* isolat
  
  v8::Local<v8::Value> GetParameters(v8::Isolate* isolate) {
    std::map<std::string, std::string> keys;
@@ -61,7 +61,7 @@
    electron::crash_keys::GetCrashKeys(&keys);
  #endif
    return gin::ConvertToV8(isolate, keys);
-@@ -264,7 +264,7 @@ void Initialize(v8::Local<v8::Object> exports,
+@@ -263,7 +263,7 @@ void Initialize(v8::Local<v8::Object> exports,
                  void* priv) {
    gin_helper::Dictionary dict(context->GetIsolate(), exports);
    dict.SetMethod("start", &electron::api::crash_reporter::Start);
