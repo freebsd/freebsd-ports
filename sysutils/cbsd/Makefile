@@ -1,5 +1,5 @@
 PORTNAME=	cbsd
-DISTVERSION=	14.1.4
+DISTVERSION=	14.2.0
 CATEGORIES=	sysutils
 
 MAINTAINER=	olevole@olevole.ru
@@ -30,10 +30,6 @@ SUB_FILES=	pkg-message
 USERS=		${PORTNAME}
 GROUPS=		${PORTNAME}
 
-OPTIONS_DEFINE=	BHYVE_GOP
-OPTIONS_SUB=	yes
-BHYVE_GOP_DESC=	Include bhyve UEFI firmware with GPU PPT+GOP support
-
 CBSD_HOME?=	${PREFIX}/cbsd
 
 .include <bsd.port.options.mk>
@@ -47,7 +43,6 @@ PLIST_SUB+=	X86="@comment "
 .if ${OPSYS} != FreeBSD
 PLIST_SUB+=	FBSD="@comment "
 LIB_DEPENDS+=	libelf.so:devel/libelf
-RUN_DEPENDS+=	sysrc:sysutils/sysrc
 .else
 PLIST_SUB+=	FBSD=""
 .endif
@@ -67,6 +62,7 @@ do-install:
 		${STAGEDIR}${PREFIX}/cbsd/misc/src \
 		${STAGEDIR}${PREFIX}/cbsd/sbin/src \
 		${STAGEDIR}${PREFIX}/cbsd/tools/src
+	${RM} -rf ${STAGEDIR}${PREFIX}/cbsd/share/docs
 	${INSTALL_MAN} ${WRKSRC}/man/cbsd.8 \
 		${STAGEDIR}${PREFIX}/share/man/man8
 	@${MKDIR} ${STAGEDIR}${PREFIX}/libexec/bsdconfig

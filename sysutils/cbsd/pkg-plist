@@ -6,7 +6,6 @@ bin/cbsd
 @group
 @mode
 share/man/man8/cbsd.8.gz
-%%BHYVE_GOP%%cbsd/upgrade/patch/efigop.fd
 %%FBSD%%cbsd/misc/next-vale-port
 %%FBSD%%cbsd/tools/bridge
 %%FBSD%%cbsd/tools/racct-bhyve-statsd
@@ -96,6 +95,8 @@ cbsd/etc/defaults/FreeBSD-kernel-CBSD-amd64-13.2
 cbsd/etc/defaults/FreeBSD-kernel-CBSD-amd64-13.3
 cbsd/etc/defaults/FreeBSD-kernel-CBSD-amd64-14
 cbsd/etc/defaults/FreeBSD-kernel-CBSD-amd64-14.1
+cbsd/etc/defaults/FreeBSD-kernel-CBSD-amd64-14.2
+cbsd/etc/defaults/FreeBSD-kernel-CBSD-amd64-14.3
 cbsd/etc/defaults/FreeBSD-kernel-CBSD-amd64-15
 cbsd/etc/defaults/FreeBSD-kernel-CBSD-amd64-15.0
 cbsd/etc/defaults/FreeBSD-kernel-FIRE-amd64-14.1
@@ -208,14 +209,15 @@ cbsd/etc/defaults/virtualbox-default-default.conf
 cbsd/etc/defaults/vls.conf
 cbsd/etc/defaults/vm-dflybsd-cloud-DragonflyBSD-hammer-x64-6.conf
 cbsd/etc/defaults/vm-dflybsd-x86-6.conf
-cbsd/etc/defaults/vm-freebsd-FreeBSD-aarch64-14.1.conf
+cbsd/etc/defaults/vm-freebsd-FreeBSD-aarch64-14.2.conf
 cbsd/etc/defaults/vm-freebsd-FreeBSD-bsdinstall-jail.conf
 cbsd/etc/defaults/vm-freebsd-FreeBSD-from-jail.conf
-cbsd/etc/defaults/vm-freebsd-FreeBSD-img-aarch64-13.3.conf
-cbsd/etc/defaults/vm-freebsd-FreeBSD-img-arm64-13.3.conf
-cbsd/etc/defaults/vm-freebsd-FreeBSD-riscv64-14.1.conf
+cbsd/etc/defaults/vm-freebsd-FreeBSD-img-aarch64-14.2.conf
+cbsd/etc/defaults/vm-freebsd-FreeBSD-img-arm64-14.2.conf
+cbsd/etc/defaults/vm-freebsd-FreeBSD-riscv64-14.2.conf
 cbsd/etc/defaults/vm-freebsd-FreeBSD-x64-13.4.conf
 cbsd/etc/defaults/vm-freebsd-FreeBSD-x64-14.1.conf
+cbsd/etc/defaults/vm-freebsd-FreeBSD-x64-14.2.conf
 cbsd/etc/defaults/vm-freebsd-FreeBSD-x64-15.0-LATEST.conf
 cbsd/etc/defaults/vm-freebsd-GhostBSD-x64-24.conf
 cbsd/etc/defaults/vm-freebsd-HardenedBSD-x64-14-STABLE.conf
@@ -227,11 +229,13 @@ cbsd/etc/defaults/vm-freebsd-cloud-FreeBSD-ufs-x64-13.2.conf
 cbsd/etc/defaults/vm-freebsd-cloud-FreeBSD-ufs-x64-13.3.conf
 cbsd/etc/defaults/vm-freebsd-cloud-FreeBSD-ufs-x64-13.4.conf
 cbsd/etc/defaults/vm-freebsd-cloud-FreeBSD-ufs-x64-14.1.conf
+cbsd/etc/defaults/vm-freebsd-cloud-FreeBSD-ufs-x64-14.2.conf
 cbsd/etc/defaults/vm-freebsd-cloud-FreeBSD-ufs-x64-15.conf
 cbsd/etc/defaults/vm-freebsd-cloud-FreeBSD-zfs-x64-13.2.conf
 cbsd/etc/defaults/vm-freebsd-cloud-FreeBSD-zfs-x64-13.3.conf
 cbsd/etc/defaults/vm-freebsd-cloud-FreeBSD-zfs-x64-13.4.conf
 cbsd/etc/defaults/vm-freebsd-cloud-FreeBSD-zfs-x64-14.1.conf
+cbsd/etc/defaults/vm-freebsd-cloud-FreeBSD-zfs-x64-14.2.conf
 cbsd/etc/defaults/vm-freebsd-cloud-FreeBSD-zfs-x64-15.conf
 cbsd/etc/defaults/vm-freebsd-cloud-GhostBSD-zfs-x64-24.conf
 cbsd/etc/defaults/vm-freebsd-cloud-OPNSense-22-RELEASE-amd64-22.conf
@@ -239,7 +243,6 @@ cbsd/etc/defaults/vm-freebsd-cloud-XigmaNAS-13-amd64.conf
 cbsd/etc/defaults/vm-freebsd-cloud-firestarter-ufs-x64-14.conf
 cbsd/etc/defaults/vm-freebsd-fio.conf
 cbsd/etc/defaults/vm-freebsd-helloSystem-x64.conf
-cbsd/etc/defaults/vm-freebsd-pfSense-2-RELEASE-amd64.conf
 cbsd/etc/defaults/vm-freebsd-ravynOS-x64-24.conf
 cbsd/etc/defaults/vm-linux-AlmaLinux-9-x86_64.conf
 cbsd/etc/defaults/vm-linux-Alpine-extended-3.conf
@@ -247,13 +250,10 @@ cbsd/etc/defaults/vm-linux-Alpine-standart-3.conf
 cbsd/etc/defaults/vm-linux-AltLinux-10.conf
 cbsd/etc/defaults/vm-linux-AltLinux-kworkstation-10.conf
 cbsd/etc/defaults/vm-linux-AltVirt-10.conf
-cbsd/etc/defaults/vm-linux-Android-x86.conf
 cbsd/etc/defaults/vm-linux-ArchLinux-x86-2024.conf
 cbsd/etc/defaults/vm-linux-Batocera.conf
-cbsd/etc/defaults/vm-linux-BlackBox-8-x86_64.conf
 cbsd/etc/defaults/vm-linux-BlackBox-9-x86_64.conf
 cbsd/etc/defaults/vm-linux-BlissOS-x86.conf
-cbsd/etc/defaults/vm-linux-CentOS-7-x86_64.conf
 cbsd/etc/defaults/vm-linux-CentOS-stream-9-x86_64.conf
 cbsd/etc/defaults/vm-linux-ClearLinux-Server-x86_64.conf
 cbsd/etc/defaults/vm-linux-Debian-x86-11.conf
@@ -277,6 +277,7 @@ cbsd/etc/defaults/vm-linux-Rocky-9-x86_64.conf
 cbsd/etc/defaults/vm-linux-RouterOS-x86-7.conf
 cbsd/etc/defaults/vm-linux-Slackware-x86-15.conf
 cbsd/etc/defaults/vm-linux-Starface-8.conf
+cbsd/etc/defaults/vm-linux-Starface-9.conf
 cbsd/etc/defaults/vm-linux-Tails-6.conf
 cbsd/etc/defaults/vm-linux-TinyCore-x86-15.conf
 cbsd/etc/defaults/vm-linux-TrueNAS-Scale-24.conf
@@ -284,7 +285,6 @@ cbsd/etc/defaults/vm-linux-VoidLinux-2024-x86_64.conf
 cbsd/etc/defaults/vm-linux-cloud-Alma-9-x86_64.conf
 cbsd/etc/defaults/vm-linux-cloud-Arch-x86-2022.conf
 cbsd/etc/defaults/vm-linux-cloud-CentOS-7-x86_64.conf
-cbsd/etc/defaults/vm-linux-cloud-CentOS-stream-8-x86_64.conf
 cbsd/etc/defaults/vm-linux-cloud-CentOS-stream-9-x86_64.conf
 cbsd/etc/defaults/vm-linux-cloud-Debian-x86-10.conf
 cbsd/etc/defaults/vm-linux-cloud-Debian-x86-11.conf
@@ -303,7 +303,6 @@ cbsd/etc/defaults/vm-linux-cloud-Oracle-7-x86_64.conf
 cbsd/etc/defaults/vm-linux-cloud-Oracle-8-x86_64.conf
 cbsd/etc/defaults/vm-linux-cloud-Oracle-9-x86_64.conf
 cbsd/etc/defaults/vm-linux-cloud-Parrot-5-amd64.conf
-cbsd/etc/defaults/vm-linux-cloud-Rocky-8-x86_64.conf
 cbsd/etc/defaults/vm-linux-cloud-Rocky-9-x86_64.conf
 cbsd/etc/defaults/vm-linux-cloud-firestarter-debian-11.conf
 cbsd/etc/defaults/vm-linux-cloud-kubernetes-27.conf
@@ -317,7 +316,6 @@ cbsd/etc/defaults/vm-linux-fedora-server-40-x86_64.conf
 cbsd/etc/defaults/vm-linux-fedora-server-41-x86_64.conf
 cbsd/etc/defaults/vm-linux-fedora-silverblue-40-x86_64.conf
 cbsd/etc/defaults/vm-linux-kubuntu-desktop-amd64-22.conf
-cbsd/etc/defaults/vm-linux-kubuntu-desktop-amd64-23.conf
 cbsd/etc/defaults/vm-linux-kubuntu-desktop-amd64-24.conf
 cbsd/etc/defaults/vm-linux-lubuntu-desktop-amd64-22.conf
 cbsd/etc/defaults/vm-linux-lubuntu-desktop-amd64-24.conf
@@ -328,7 +326,6 @@ cbsd/etc/defaults/vm-linux-ubuntu-desktop-amd64-23.conf
 cbsd/etc/defaults/vm-linux-ubuntu-desktop-amd64-24.conf
 cbsd/etc/defaults/vm-linux-ubuntuserver-amd64-20.conf
 cbsd/etc/defaults/vm-linux-ubuntuserver-amd64-22.conf
-cbsd/etc/defaults/vm-linux-ubuntuserver-amd64-23.conf
 cbsd/etc/defaults/vm-linux-ubuntuserver-amd64-24.conf
 cbsd/etc/defaults/vm-linux-vyos-1.5.conf
 cbsd/etc/defaults/vm-netbsd-cloud-netbsd-x86-10.conf
@@ -345,7 +342,7 @@ cbsd/etc/defaults/vm-other-OpenIndiana-2024.conf
 cbsd/etc/defaults/vm-other-ReactOS.conf
 cbsd/etc/defaults/vm-other-Redox-0.7.conf
 cbsd/etc/defaults/vm-other-SmartOS.conf
-cbsd/etc/defaults/vm-other-omnios-2023.conf
+cbsd/etc/defaults/vm-other-omnios-2025.conf
 cbsd/etc/defaults/vm-other-plan9front.conf
 cbsd/etc/defaults/vm-windows-10_86x_64x.conf
 cbsd/etc/defaults/vm-windows-11_86x_64x.conf
@@ -1087,6 +1084,7 @@ cbsd/tools/bhyve-p9shares
 cbsd/tools/bhyve-ppt
 cbsd/tools/bootmgmt
 cbsd/tools/bootmgmt-pxe
+cbsd/tools/buildah
 cbsd/tools/capabilities
 cbsd/tools/carpcfg
 cbsd/tools/carpcontrol
@@ -1210,6 +1208,7 @@ cbsd/upgrade/backup_db/pre-initenv-backup
 cbsd/upgrade/patch/BHYVE_UEFI_VARS.fd
 cbsd/upgrade/patch/bhyve-vesa-fb-13.0/patch-13x-usr.sbin-bhyve-pci_fbuf.c
 cbsd/upgrade/patch/efi.fd
+cbsd/upgrade/patch/efigop.fd
 cbsd/upgrade/patch/efirefd.fd
 cbsd/upgrade/patch/efirefn.fd
 cbsd/upgrade/patch/iov-13.0/README.md
@@ -1352,6 +1351,8 @@ cbsd/upgrade/pre-patch-14.1.0.0
 cbsd/upgrade/pre-patch-14.1.1.0
 cbsd/upgrade/pre-patch-14.1.3.0
 cbsd/upgrade/pre-patch-14.1.3.1
+cbsd/upgrade/pre-patch-14.2.0.0
+cbsd/upgrade/pre-patch-14.2.0.1
 cbsd/vboxctl/vconfig
 cbsd/vboxctl/vconstruct-tui
 cbsd/vboxctl/vcontrol-tui

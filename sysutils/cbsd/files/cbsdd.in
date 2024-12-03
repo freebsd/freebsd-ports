@@ -1,7 +1,7 @@
 #!/bin/sh
 #
 # PROVIDE: cbsdd
-# REQUIRE: LOGIN FILESYSTEMS sshd
+# REQUIRE: LOGIN FILESYSTEMS cleanvar sshd
 # KEYWORD: shutdown
 #
 # cbsdd_enable="YES"
