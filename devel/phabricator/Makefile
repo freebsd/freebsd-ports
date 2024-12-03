@@ -1,6 +1,6 @@
 PORTNAME=	phabricator
 PORTVERSION=	20211218
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel
 PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 
@@ -14,8 +14,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 RUN_DEPENDS=	arcanist-lib${PHP_PKGNAMESUFFIX}>=20210113_4:devel/arcanist-lib@${PHP_FLAVOR} \
 		git:devel/git
 
-USES=		cpe php:cli,flavors shebangfix
+USES=		cpe dos2unix php:cli,flavors shebangfix
 CPE_VENDOR=	phacility
+DOS2UNIX_FILES=	externals/phpmailer/class.smtp.php externals/phpqrcode/phpqrcode.php
 USE_GITHUB=	yes
 GH_ACCOUNT=	phacility
 GH_TAGNAME=	dec9522
