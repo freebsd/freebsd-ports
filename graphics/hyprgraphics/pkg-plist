@@ -1,0 +1,7 @@
+include/hyprgraphics/cairo/CairoSurface.hpp
+include/hyprgraphics/color/Color.hpp
+include/hyprgraphics/image/Image.hpp
+lib/libhyprgraphics.so
+lib/libhyprgraphics.so.0
+lib/libhyprgraphics.so.%%VERSION%%
+libdata/pkgconfig/hyprgraphics.pc
