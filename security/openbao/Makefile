@@ -1,7 +1,6 @@
 PORTNAME=	openbao
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.0.1
-PORTREVISION=	1
+DISTVERSION=	2.1.0
 CATEGORIES=	security
 MASTER_SITES+=	https://raw.githubusercontent.com/${PORTNAME}/${PORTNAME}/${DISTVERSIONFULL}/
 DISTFILES=	go.mod \
@@ -18,7 +17,7 @@ WWW=		https://openbao.org/
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:1.22,modules
+USES=		go:1.23,modules
 USE_GITHUB=	yes
 USE_RC_SUBR=	${PORTNAME}
 
