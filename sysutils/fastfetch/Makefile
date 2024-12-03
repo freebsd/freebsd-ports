@@ -1,6 +1,5 @@
 PORTNAME=	fastfetch
-DISTVERSION=	2.30.1
-PORTREVISION=	1
+DISTVERSION=	2.31.0
 CATEGORIES=	sysutils
 
 MAINTAINER=	pkubaj@FreeBSD.org
@@ -18,10 +17,10 @@ USES=		cmake:testing localbase:ldflags pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	fastfetch-cli
 
-OPTIONS_DEFINE=	VULKAN WAYLAND XCB LIBDRM GIO DCONF DBUS XFCONF SQLITE3 \
+OPTIONS_DEFINE=	VULKAN WAYLAND XRANDR LIBDRM GIO DCONF DBUS XFCONF SQLITE3 \
 		IMAGEMAGICK CHAFA GLX OSMESA OPENCL
 
-OPTIONS_DEFAULT=VULKAN WAYLAND XCB LIBDRM GIO DCONF DBUS XFCONF SQLITE3 \
+OPTIONS_DEFAULT=VULKAN WAYLAND XRANDR LIBDRM GIO DCONF DBUS XFCONF SQLITE3 \
 		IMAGEMAGICK CHAFA GLX OSMESA OPENCL
 
 DCONF_DESC=	Needed for values that are only stored in DConf + Fallback for GSettings
@@ -29,7 +28,7 @@ CHAFA_DESC=	Image output as ascii art
 LIBDRM_DESC=	Enable display server detection via libdrm
 OSMESA_DESC=	Enable osmesa support
 VULKAN_DESC=	Vulkan module & fallback for GPU output
-XCB_DESC=	Needed for display and WM detection in X11
+XRANDR_DESC=	Needed for display and WM detection in X11
 XFCONF_DESC=	Needed for XFWM theme and XFCE Terminal font
 
 VULKAN_CMAKE_BOOL=	ENABLE_VULKAN
@@ -39,8 +38,8 @@ VULKAN_BUILD_DEPENDS=	${LOCALBASE}/lib/libvulkan.so:graphics/vulkan-loader \
 WAYLAND_CMAKE_BOOL=	ENABLE_WAYLAND
 WAYLAND_BUILD_DEPENDS=	${LOCALBASE}/lib/libwayland-server.so:graphics/wayland
 
-XCB_CMAKE_BOOL=	ENABLE_XCB ENABLE_XCB_RANDR
-XCB_BUILD_DEPENDS=	${LOCALBASE}/lib/libxcb-randr.so:x11/libxcb
+XRANDR_CMAKE_BOOL=	ENABLE_XRANDR
+XRANDR_BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/xrandr.pc:x11/libXrandr:x11/libXrandr
 
 LIBDRM_CMAKE_BOOL=	ENABLE_DRM
 LIBDRM_BUILD_DEPENDS=	${LOCALBASE}/lib/libdrm.so:graphics/libdrm
