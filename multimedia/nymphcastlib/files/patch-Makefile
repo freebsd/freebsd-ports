@@ -1,0 +1,22 @@
+--- Makefile.orig	2024-12-03 20:49:22 UTC
++++ Makefile
+@@ -148,10 +148,10 @@ all: lib
+ 
+ lib: makedir lib/$(ARCH)$(OUTPUT).a lib/$(ARCH)$(LIBNAME)
+ 	
+-obj/static/$(ARCH)%.o: %.cpp
++obj/static/$(ARCH)%.o: %.cpp | makedir
+ 	$(CXX) -c -o $@ $< $(CXXFLAGS)
+ 	
+-obj/shared/$(ARCH)%.o: %.cpp
++obj/shared/$(ARCH)%.o: %.cpp | makedir
+ 	$(CXX) -c -o $@ $< $(CXXFLAGS) $(SHARED_FLAGS) $(LIBS)
+ 	
+ lib/$(ARCH)$(OUTPUT).a: $(OBJECTS)
+@@ -226,4 +226,4 @@ ifndef OS
+ endif
+ 
+ package:
+-	tar -C lib/$(ARCH) -cvzf lib/$(OUTPUT)-$(VERSION)-$(USYS)-$(UMCH).tar.gz $(OUTPUT).a $(OUTPUT).so.$(VERSION)
+\ No newline at end of file
++	tar -C lib/$(ARCH) -cvzf lib/$(OUTPUT)-$(VERSION)-$(USYS)-$(UMCH).tar.gz $(OUTPUT).a $(OUTPUT).so.$(VERSION)

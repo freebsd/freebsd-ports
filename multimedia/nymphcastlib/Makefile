@@ -1,5 +1,6 @@
 PORTNAME=	NymphCastLib
 DISTVERSION=	v0.2.1
+PORTREVISION=	1
 CATEGORIES=	multimedia
 
 MAINTAINER=	adridg@FreeBSD.org
