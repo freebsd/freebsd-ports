@@ -16,6 +16,7 @@ include/skalibs/cbuffer.h
 include/skalibs/cdb.h
 include/skalibs/cdbmake.h
 include/skalibs/config.h
+include/skalibs/cplz.h
 include/skalibs/cspawn.h
 include/skalibs/datastruct.h
 include/skalibs/devino.h
@@ -29,6 +30,7 @@ include/skalibs/env.h
 include/skalibs/envalloc.h
 include/skalibs/error.h
 include/skalibs/exec.h
+include/skalibs/fcntl.h
 include/skalibs/fmtscan.h
 include/skalibs/functypes.h
 include/skalibs/gccattributes.h
@@ -37,6 +39,7 @@ include/skalibs/genqdyn.h
 include/skalibs/genset.h
 include/skalibs/gensetdyn.h
 include/skalibs/genwrite.h
+include/skalibs/gol.h
 include/skalibs/iopause.h
 include/skalibs/ip46.h
 include/skalibs/kolbak.h
@@ -80,10 +83,12 @@ include/skalibs/unix-transactional.h
 include/skalibs/unixconnection.h
 include/skalibs/unixmessage.h
 include/skalibs/unixonacid.h
+lib/libskarnet.a
+@mode 755
 lib/libskarnet.so
 lib/libskarnet.so.2.14
-lib/libskarnet.so.2.14.1.1
-lib/skalibs/libskarnet.a
+@mode
+lib/libskarnet.so.2.14.3.0
 lib/skalibs/sysdeps/pthread.lib
 lib/skalibs/sysdeps/socket.lib
 lib/skalibs/sysdeps/spawn.lib
