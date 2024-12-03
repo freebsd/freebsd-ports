@@ -123,7 +123,7 @@ MY_DEPENDS=	git>=2.41.0:devel/git \
 	rubygem-google-apis-container_v1>=0.43.0<0.44:devel/rubygem-google-apis-container_v1 \
 	rubygem-google-apis-container_v1beta1>=0.43.0<0.44:devel/rubygem-google-apis-container_v1beta1 \
 	rubygem-google-apis-cloudbilling_v1>=0.21.0<0.22:devel/rubygem-google-apis-cloudbilling_v1 \
-	rubygem-google-apis-cloudresourcemanager_v1>=0.31.0<0.32:devel/rubygem-google-apis-cloudresourcemanager_v1 \
+	rubygem-google-apis-cloudresourcemanager_v1-gitlab>=0.31.0<0.32:devel/rubygem-google-apis-cloudresourcemanager_v1-gitlab \
 	rubygem-google-apis-iam_v1>=0.36.0<0.37:devel/rubygem-google-apis-iam_v1 \
 	rubygem-google-apis-serviceusage_v1>=0.28.0<0.29:devel/rubygem-google-apis-serviceusage_v1 \
 	rubygem-google-apis-sqladmin_v1beta4-gitlab>=0.41.0<0.42:devel/rubygem-google-apis-sqladmin_v1beta4-gitlab \
