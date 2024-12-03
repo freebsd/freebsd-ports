@@ -2039,6 +2039,7 @@
     SUBDIR += rubygem-faraday-follow_redirects-gitlab
     SUBDIR += rubygem-faraday-gitlab
     SUBDIR += rubygem-faraday-http-cache
+    SUBDIR += rubygem-faraday-http-cache-gitlab
     SUBDIR += rubygem-faraday-httpclient
     SUBDIR += rubygem-faraday-httpclient1
     SUBDIR += rubygem-faraday-multipart

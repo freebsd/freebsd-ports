@@ -1,6 +1,6 @@
 PORTNAME=	danger
 PORTVERSION=	9.5.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -16,7 +16,7 @@ RUN_DEPENDS=	rubygem-claide>=1.0<2:devel/rubygem-claide \
 		rubygem-colored2>=3.1<4:textproc/rubygem-colored2 \
 		rubygem-cork>=0.1<1:devel/rubygem-cork \
 		rubygem-faraday-gitlab>=0.9.0<3.0:www/rubygem-faraday-gitlab \
-		rubygem-faraday-http-cache>=2.0.0<3:www/rubygem-faraday-http-cache \
+		rubygem-faraday-http-cache-gitlab>=2.0.0<3:www/rubygem-faraday-http-cache-gitlab \
 		rubygem-git>=1.13<2:devel/rubygem-git \
 		rubygem-kramdown-gitlab>=2.3<3:textproc/rubygem-kramdown-gitlab \
 		rubygem-kramdown-parser-gfm-gitlab>=1.0<2:textproc/rubygem-kramdown-parser-gfm-gitlab \
