@@ -22,6 +22,9 @@ WWW=		https://github.com/mongodb-js/mongosh/
 
 LICENSE=	APACHE20
 
+BROKEN_aarch64=	fails to compile: nx/src/native/index.js:147 throw new Error(`Unsupported architecture on FreeBSD: ${arch}`)
+BROKEN_i386=	fails to compile: nx/src/native/index.js:147 throw new Error(`Unsupported architecture on FreeBSD: ${arch}`)
+
 FETCH_DEPENDS=	npm${NODEJS_SUFFIX}>0:www/npm${NODEJS_SUFFIX}
 BUILD_DEPENDS=	bash>0:shells/bash \
 		brotli>=1.0.9,1:archivers/brotli \
