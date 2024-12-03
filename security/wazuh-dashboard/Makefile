@@ -1,6 +1,6 @@
 PORTNAME=	wazuh
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.7.5
+DISTVERSION=	4.9.2
 CATEGORIES=	security
 MASTER_SITES=	LOCAL/acm/${PORTNAME}/
 PKGNAMESUFFIX=  -dashboard
@@ -14,13 +14,13 @@ WWW=		https://github.com/wazuh/wazuh-dashboard-plugins
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	${LOCALBASE}/www/opensearch-dashboards/bin/opensearch-dashboards:textproc/opensearch-dashboards210
+RUN_DEPENDS=	${LOCALBASE}/www/opensearch-dashboards/bin/opensearch-dashboards:textproc/opensearch-dashboards213
 
 NO_BUILD=	yes
 
 SUB_FILES=	pkg-message
 
-OPENSEARCH_VERSION=	2.10.0
+OPENSEARCH_VERSION=	2.13.0
 ETCDIR=		${PREFIX}/etc/wazuh-dashboard
 WRKSRC=		${WRKDIR}/${PORTNAME}${PKGNAMESUFFIX}-plugins
 
@@ -30,11 +30,11 @@ do-extract:
 	${CP} ${_DISTDIR}/opensearch_dashboards.yml ${WRKDIR}
 
 do-install:
-	@${MKDIR} ${STAGEDIR}${PREFIX}/www/opensearch-dashboards/plugins/wazuh
+	@${MKDIR} ${STAGEDIR}${PREFIX}/www/opensearch-dashboards/plugins
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/wazuh-dashboard
 
 	@${INSTALL_DATA} ${WRKDIR}/opensearch_dashboards.yml ${STAGEDIR}${PREFIX}/etc/wazuh-dashboard
 	(cd ${WRKSRC} && ${COPYTREE_SHARE} . \
-		${STAGEDIR}/${PREFIX}/www/opensearch-dashboards/plugins/wazuh)
+		${STAGEDIR}/${PREFIX}/www/opensearch-dashboards/plugins/)
 
 .include <bsd.port.mk>

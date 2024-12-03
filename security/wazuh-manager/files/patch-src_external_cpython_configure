@@ -1,11 +1,11 @@
---- src/external/cpython/configure	2023-06-17 10:52:31.789714000 -0500
-+++ src/external/cpython/configure	2023-06-17 10:52:50.027151000 -0500
-@@ -6566,7 +6566,7 @@
+--- src/external/cpython/configure.orig	2024-10-20 14:05:43.000000000 -0700
++++ src/external/cpython/configure	2024-10-20 18:59:43.441324000 -0700
+@@ -7643,7 +7643,7 @@
  
  if test "$Py_LTO" = 'true' ; then
    case $CC in
 -    *clang*)
 +    *clang*|cc)
- 
-       if test -n "$ac_tool_prefix"; then
-   # Extract the first word of "${ac_tool_prefix}llvm-ar", so it can be a program name with args.
+       LDFLAGS_NOLTO="-fno-lto"
+                   { $as_echo "$as_me:${as_lineno-$LINENO}: checking whether C compiler accepts -flto=thin" >&5
+ $as_echo_n "checking whether C compiler accepts -flto=thin... " >&6; }

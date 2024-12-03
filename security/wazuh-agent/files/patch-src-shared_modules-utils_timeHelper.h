@@ -1,10 +1,9 @@
---- src/shared_modules/utils/timeHelper.h	2023-12-12 19:27:07.563605000 -0500
-+++ src/shared_modules/utils/timeHelper.h	2023-12-12 19:27:29.163243000 -0500
-@@ -48,8 +48,19 @@
-     {
-         return getTimestamp(std::time(nullptr));
+--- src/shared_modules/utils/timeHelper.h.orig	2024-10-17 00:22:27.000000000 -0700
++++ src/shared_modules/utils/timeHelper.h	2024-10-20 00:02:09.915969000 -0700
+@@ -196,6 +196,17 @@
+         return output.str();
      }
-+
+ 
 +    static std::string timeToSeconds(std::string& str) {
 +        int seconds;
 +        std::tm t;
@@ -15,10 +14,7 @@
 +
 +        return std::to_string(seconds);
 +    }
- };
- 
- #pragma GCC diagnostic pop
- 
--#endif // _TIME_HELPER_H
-\ No newline at end of file
-+#endif // _TIME_HELPER_H
++
+     /**
+      * @brief Get seconds from epoch, since 1970-01-01 00:00:00 UTC.
+      * @return seconds from epoch.

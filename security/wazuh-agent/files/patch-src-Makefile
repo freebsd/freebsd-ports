@@ -1,5 +1,5 @@
---- src/Makefile	2023-11-23 07:17:53.000000000 -0500
-+++ src/Makefile	2023-12-06 17:52:09.798369000 -0500
+--- src/Makefile.orig	2024-10-28 07:30:27.000000000 -0700
++++ src/Makefile	2024-12-01 16:39:15.434082000 -0800
 @@ -49,9 +49,11 @@
  
  HAS_CHECKMODULE = $(shell command -v checkmodule > /dev/null && echo YES)
@@ -12,7 +12,7 @@
  
  ARCH_FLAGS =
  
-@@ -101,7 +103,7 @@
+@@ -109,7 +111,7 @@
  USE_PRELUDE?=no
  USE_ZEROMQ?=no
  USE_GEOIP?=no
@@ -21,7 +21,7 @@
  USE_BIG_ENDIAN=no
  USE_AUDIT=no
  MINGW_HOST=unknown
-@@ -163,6 +165,8 @@
+@@ -174,6 +176,8 @@
  DEFINES+=-DUSER=\"${WAZUH_USER}\"
  DEFINES+=-DGROUPGLOBAL=\"${WAZUH_GROUP}\"
  
@@ -30,7 +30,7 @@
  ifneq (${TARGET},winagent)
  		DEFINES+=-D${uname_S}
  ifeq (${uname_S},Linux)
-@@ -253,10 +257,10 @@
+@@ -264,10 +268,10 @@
  ifeq (${uname_S},FreeBSD)
  		DEFINES+=-DFreeBSD
  		OSSEC_CFLAGS+=-pthread -I/usr/local/include
@@ -43,15 +43,7 @@
  		AR_LDFLAGS+=-L/usr/local/lib
  		AR_LDFLAGS+='-Wl,-rpath,$$ORIGIN/../../lib'
  		PRECOMPILED_OS:=freebsd
-@@ -390,7 +394,6 @@
- 
- OSSEC_CFLAGS+=${DEFINES}
- OSSEC_CFLAGS+=-pipe -Wall -Wextra -std=gnu99
--OSSEC_CFLAGS+=-I./ -I./headers/ -I${EXTERNAL_OPENSSL}include -I$(EXTERNAL_JSON) -I${EXTERNAL_LIBYAML}include -I${EXTERNAL_CURL}include -I${EXTERNAL_MSGPACK}include -I${EXTERNAL_BZIP2} -I${SHARED_MODULES}common -I${DBSYNC}include -I${RSYNC}include -I${SYSCOLLECTOR}include  -I${SYSINFO}include  -I${EXTERNAL_LIBPCRE2}include -I${EXTERNAL_RPM}/builddir/output/include -I${SYSCHECK}include
- 
- OSSEC_CFLAGS += ${CFLAGS}
- OSSEC_LDFLAGS += ${LDFLAGS}
-@@ -487,8 +490,8 @@
+@@ -503,8 +507,8 @@
  ifneq (,$(filter ${USE_INOTIFY},YES auto yes y Y 1))
  	DEFINES+=-DINOTIFY_ENABLED
  	ifeq (${uname_S},FreeBSD)
@@ -62,30 +54,30 @@
  		OSSEC_CFLAGS+=-I/usr/local/include
  	endif
  endif
-@@ -907,6 +910,8 @@
+@@ -929,6 +933,8 @@
  	EXTERNAL_LIBS += $(LIBCURL_LIB)
  else ifeq (${uname_S},Linux)
  	EXTERNAL_LIBS += $(LIBCURL_LIB)
 +else ifeq (${uname_S},FreeBSD)
-+        EXTERNAL_LIBS += $(LIBCURL_LIB)
++	EXTERNAL_LIBS += $(LIBCURL_LIB)
  else ifeq (${uname_S},Darwin)
  	EXTERNAL_LIBS += $(LIBCURL_LIB)
  endif
-@@ -1084,9 +1089,13 @@
- ifeq (${uname_S},Linux)
- 	cd $(EXTERNAL_CURL) && CPPFLAGS="-fPIC -I${ROUTE_PATH}/${EXTERNAL_OPENSSL}include" LDFLAGS="-L${ROUTE_PATH}/${EXTERNAL_OPENSSL}" LIBS="-ldl -lpthread" ./configure --with-ssl="${ROUTE_PATH}/${EXTERNAL_OPENSSL}" --disable-ldap --without-libidn2 --without-libpsl --without-brotli --without-nghttp2
+@@ -1145,9 +1151,13 @@
+ 	cd $(EXTERNAL_CURL) && CPPFLAGS="-fPIC -I${ROUTE_PATH}/${EXTERNAL_OPENSSL}include" LDFLAGS="-L${ROUTE_PATH}/${EXTERNAL_OPENSSL}" LIBS="-ldl -lpthread" ./configure --with-openssl="${ROUTE_PATH}/${EXTERNAL_OPENSSL}" --disable-ldap --without-libidn2 --without-libpsl --without-brotli --without-nghttp2 --without-zstd
+ endif
  else
 +ifeq (${uname_S},FreeBSD)
-+	cd $(EXTERNAL_CURL) && CPPFLAGS="-fPIC -I${ROUTE_PATH}/${EXTERNAL_OPENSSL}include" LDFLAGS="-L${ROUTE_PATH}/${EXTERNAL_OPENSSL}" LIBS="-pthread" ./configure --with-ssl="${ROUTE_PATH}/${EXTERNAL_OPENSSL}" --disable-ldap --without-libidn2 --without-brotli --without-nghttp2 --without-librtmp
++	cd $(EXTERNAL_CURL) && CPPFLAGS="-fPIC -I${ROUTE_PATH}/${EXTERNAL_OPENSSL}include" LDFLAGS="-L${ROUTE_PATH}/${EXTERNAL_OPENSSL}" LIBS="-pthread" ./configure --with-ssl="${ROUTE_PATH}/${EXTERNAL_OPENSSL}"  --disable-ldap --without-libidn2 --without-brotli --without-nghttp2 --without-librtmp
 +else
- 	cd $(EXTERNAL_CURL) && CPPFLAGS="-fPIC -I${ROUTE_PATH}/${EXTERNAL_OPENSSL}include" LDFLAGS="-L${ROUTE_PATH}/${EXTERNAL_OPENSSL}" LIBS="-lpthread" ./configure --with-ssl="${ROUTE_PATH}/${EXTERNAL_OPENSSL}" --disable-ldap --without-libidn2 --without-brotli --without-nghttp2 --without-librtmp
+ 	cd $(EXTERNAL_CURL) && CPPFLAGS="-fPIC -I${ROUTE_PATH}/${EXTERNAL_OPENSSL}include" LDFLAGS="-L${ROUTE_PATH}/${EXTERNAL_OPENSSL}" LIBS="-lpthread" ./configure --with-openssl="${ROUTE_PATH}/${EXTERNAL_OPENSSL}" --disable-ldap --without-libidn2 --without-brotli --without-nghttp2 --without-librtmp --without-zstd
  endif
  endif
 +endif
  
  
  #### procps #########
-@@ -2106,7 +2115,7 @@
+@@ -2236,7 +2246,7 @@
  #### FIM ######
  
  wazuh-syscheckd: librootcheck.a libwazuh.a ${WAZUHEXT_LIB} build_shared_modules
@@ -94,7 +86,25 @@
  
  #### Monitor #######
  
-@@ -2305,10 +2314,33 @@
+@@ -2414,7 +2424,7 @@
+ WPYTHON_DIR := ${INSTALLDIR}/framework/python
+ OPTIMIZE_CPYTHON?=no
+ WPYTHON_TAR=cpython.tar.gz
+-WLIBPYTHON=libpython3.10.so.1.0
++WLIBPYTHON=libpython3.11.so.1.0
+ 
+ ifneq (,$(filter ${OPTIMIZE_CPYTHON},YES yes y Y 1))
+ CPYTHON_FLAGS=--enable-optimizations
+@@ -2428,7 +2438,7 @@
+ endif
+ 
+ ifeq (,$(wildcard ${EXTERNAL_CPYTHON}/python))
+-	export WPATH_LIB="'\$$\$$ORIGIN/../../../lib'" && export SOURCE_PATH=${ROUTE_PATH} && export WAZUH_FFI_PATH=${EXTERNAL_LIBFFI} && export LD_LIBRARY_PATH=${ROUTE_PATH} && cd ${EXTERNAL_CPYTHON} && ./configure --prefix="${WPYTHON_DIR}" --libdir="${WPYTHON_DIR}/lib" --enable-shared --with-openssl="${ROUTE_PATH}/${EXTERNAL_OPENSSL}" LDFLAGS="${ARCH_FLAGS} -L${ROUTE_PATH} -lwazuhext -Wl,-rpath,'\$$\$$ORIGIN/../../../lib',--disable-new-dtags" CPPFLAGS="-I${ROUTE_PATH}/${EXTERNAL_OPENSSL}" $(CPYTHON_FLAGS) && ${MAKE}
++	export WPATH_LIB="'\$$\$$ORIGIN/../../../lib'" && export SOURCE_PATH=${ROUTE_PATH} && export WAZUH_FFI_PATH=${EXTERNAL_LIBFFI} && export LD_LIBRARY_PATH=${ROUTE_PATH} && cd ${EXTERNAL_CPYTHON} && ./configure --prefix="${WPYTHON_DIR}" --libdir="${WPYTHON_DIR}/lib" --enable-shared --with-openssl="${ROUTE_PATH}/${EXTERNAL_OPENSSL}" LIBSQLITE3_CFLAGS="-I${LOCALBASE}/include" LIBSQLITE3_LIBS="-L${LOCALBASE}/lib -lsqlite3" LDFLAGS="${ARCH_FLAGS} -L${ROUTE_PATH} -lwazuhext -Wl,-rpath,'\$$\$$ORIGIN/../../../lib',--disable-new-dtags" CPPFLAGS="-I${ROUTE_PATH}/${EXTERNAL_OPENSSL}" $(CPYTHON_FLAGS) && ${MAKE}
+ endif
+ 
+ build_python: $(WAZUHEXT_LIB)
+@@ -2440,10 +2450,34 @@
  	mkdir -p ${WPYTHON_DIR}
  	cp external/${WPYTHON_TAR} ${WPYTHON_DIR}/${WPYTHON_TAR} && ${TAR} ${WPYTHON_DIR}/${WPYTHON_TAR} -C ${WPYTHON_DIR} && rm -rf ${WPYTHON_DIR}/${WPYTHON_TAR}
  endif
@@ -112,23 +122,24 @@
 +ifneq (,$(wildcard ${EXTERNAL_CPYTHON}))
 +	$(STAGEDIR)${WPYTHON_DIR}/bin/python3 -B -m pip install --upgrade pip --prefix=${WPYTHON_DIR} --root=$(STAGEDIR) --no-index --find-links=wazuh-cache/ --cache-dir=wazuh-cache/ --no-compile
 +	LD_LIBRARY_PATH="$(STAGEDIR)${INSTALLDIR}/lib" LDFLAGS="-L$(STAGEDIR)${INSTALLDIR}/lib" $(STAGEDIR)${WPYTHON_DIR}/bin/python3 -m pip install wazuh-cache-any/*.whl  --root=$(STAGEDIR) --prefix=${WPYTHON_DIR} --no-deps --no-compile
-+	LD_LIBRARY_PATH="$(STAGEDIR)${INSTALLDIR}/lib" LDFLAGS="-L$(STAGEDIR)${INSTALLDIR}/lib" $(STAGEDIR)${WPYTHON_DIR}/bin/python3 -m pip install wazuh-cache-${uname_M}/*.whl  --root=$(STAGEDIR) --prefix=${WPYTHON_DIR} --no-deps --no-compile
++	LD_LIBRARY_PATH="$(STAGEDIR)${INSTALLDIR}/lib" LDFLAGS="-L$(STAGEDIR)${INSTALLDIR}/lib" $(STAGEDIR)${WPYTHON_DIR}/bin/python3 -m pip install wazuh-cache/*.whl --root=$(STAGEDIR) --prefix=${WPYTHON_DIR} --no-deps --no-compile
 +endif
 +
 +install_framework:
-+	cd ../framework && $(STAGEDIR)${WPYTHON_DIR}/bin/python3 -B setup.py clean --all install --prefix=${WPYTHON_DIR} --root=$(STAGEDIR) --wazuh-version=$(shell cat VERSION) --install-type=${TARGET} --no-compile
++	LD_LIBRARY_PATH="$(STAGEDIR)${INSTALLDIR}/lib" LDFLAGS="-L$(STAGEDIR)${INSTALLDIR}/lib" $(STAGEDIR)${WPYTHON_DIR}/bin/python3 -m pip install wazuh-python/wazuh*.whl --root=$(STAGEDIR) --prefix=${WPYTHON_DIR} --no-deps --no-compile
 +	chmod -R o=- $(STAGEDIR)${WPYTHON_DIR}
 +
 +install_api:
-+	cd ../api && $(STAGEDIR)${WPYTHON_DIR}/bin/python3 -B setup.py clean --all install --prefix=${WPYTHON_DIR} --root=$(STAGEDIR) --no-compile
++	LD_LIBRARY_PATH="$(STAGEDIR)${INSTALLDIR}/lib" LDFLAGS="-L$(STAGEDIR)${INSTALLDIR}/lib" $(STAGEDIR)${WPYTHON_DIR}/bin/python3 -m pip install wazuh-python/api*.whl --root=$(STAGEDIR) --prefix=${WPYTHON_DIR} --no-deps --no-compile
 +
 +install_mitre:
-+	cd ../tools/mitre && $(STAGEDIR)${WPYTHON_DIR}/bin/python3 mitredb.py -d $(STAGEDIR)${INSTALLDIR}/var/db/mitre.db
++	export CRYPTOGRAPHY_OPENSSL_NO_LEGACY=1 && cd ../tools/mitre && $(STAGEDIR)${WPYTHON_DIR}/bin/python3 mitredb.py -d $(STAGEDIR)${INSTALLDIR}/var/db/mitre.db
 +else
++
  install_dependencies: install_python
  ifneq (,$(wildcard ${EXTERNAL_CPYTHON}))
  	${WPYTHON_DIR}/bin/python3 -m pip install --upgrade pip --index-url=file://${ROUTE_PATH}/${EXTERNAL_CPYTHON}/Dependencies/simple
-@@ -2325,6 +2357,7 @@
+@@ -2460,6 +2494,7 @@
  
  install_mitre: install_python
  	cd ../tools/mitre && ${WPYTHON_DIR}/bin/python3 mitredb.py -d ${INSTALLDIR}/var/db/mitre.db

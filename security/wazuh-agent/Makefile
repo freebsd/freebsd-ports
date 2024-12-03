@@ -1,8 +1,8 @@
 PORTNAME=	wazuh
-DISTVERSION=	4.7.5
+DISTVERSION=	4.9.2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	security
-MASTER_SITES=	https://packages.wazuh.com/deps/24/libraries/sources/:wazuh_sources
+MASTER_SITES=	https://packages.wazuh.com/deps/30/libraries/sources/:wazuh_sources
 PKGNAMESUFFIX=	-agent
 DISTFILES=	${EXTERNAL_DISTFILES}
 DIST_SUBDIR=	${PORTNAME}-${DISTVERSION}
@@ -185,7 +185,6 @@ do-install:
 
 	${INSTALL_SCRIPT} ${WRKSRC}/wodles/azure/azure-logs.py ${STAGEDIR}${WAZUHPREFIX}/wodles/azure/azure-logs.py
 	${INSTALL_SCRIPT} ${WRKSRC}/framework/wrappers/generic_wrapper.sh ${STAGEDIR}${WAZUHPREFIX}/wodles/azure/azure-logs
-	${INSTALL_SCRIPT} ${WRKSRC}/wodles/azure/orm.py ${STAGEDIR}${WAZUHPREFIX}/wodles/azure/orm.py
 
 	${INSTALL_DATA} ${WRKSRC}/ruleset/sca/generic/sca_unix_audit.yml ${STAGEDIR}${WAZUHPREFIX}/ruleset/sca/
 

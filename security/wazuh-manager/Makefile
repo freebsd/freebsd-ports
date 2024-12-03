@@ -1,12 +1,13 @@
 PORTNAME=	wazuh
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.7.5
+DISTVERSION=	4.9.2
 CATEGORIES=	security
-MASTER_SITES=	https://packages.wazuh.com/deps/24/libraries/sources/:wazuh_sources \
+MASTER_SITES=	https://packages.wazuh.com/deps/30/libraries/sources/:wazuh_sources \
 		LOCAL/acm/${PORTNAME}/:wazuh_cache
 PKGNAMESUFFIX=	-manager
 DISTFILES=	${EXTERNAL_DISTFILES} \
-		${PORTNAME}-cache-any-${DISTVERSION}${EXTRACT_SUFX}:wazuh_cache
+		${PORTNAME}-cache-any-${DISTVERSION}${EXTRACT_SUFX}:wazuh_cache \
+		${PORTNAME}-python-${DISTVERSION}${EXTRACT_SUFX}:wazuh_cache
 DIST_SUBDIR=	${PORTNAME}-${DISTVERSION}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
@@ -20,13 +21,17 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 ONLY_FOR_ARCHS=	aarch64 amd64
 
 BUILD_DEPENDS=	cmake:devel/cmake-core \
-		autoconf>=2.71:devel/autoconf
-LIB_DEPENDS+=	libgdbm.so:databases/gdbm \
+		autoconf>=2.71:devel/autoconf \
+		bash>0:shells/bash
+LIB_DEPENDS+=	libcurl.so:ftp/curl \
+		libgdbm.so:databases/gdbm \
 		libnghttp2.so:www/libnghttp2 \
 		libffi.so:devel/libffi \
-		libarrow.so:databases/arrow
+		libarrow.so:databases/arrow \
+		libepoll-shim.so:devel/libepoll-shim
+RUN_DEPENDS=	bash>0:shells/bash
 
-USES=		cpe gmake perl5 python:3.9 readline shebangfix sqlite:3 uidfix
+USES=		cpe gmake perl5 python:3.11 readline shebangfix sqlite:3 uidfix
 
 USE_GITHUB=	yes
 GH_TUPLE=	alonsobsd:wazuh-freebsd:${WAZUH_EXTRAFILE_TAGNAME}:wazuh
@@ -39,26 +44,33 @@ WAZUH_CACHEFILE=	${PORTNAME}-cache-any-${DISTVERSION}${EXTRACT_SUFX}
 WAZUH_EXTRAFILE=	alonsobsd-${PORTNAME}-freebsd-${WAZUH_EXTRAFILE_TAGNAME}_GH0${EXTRACT_SUFX}
 WAZUH_EXTRAFILE_TAGNAME=cd0051b
 
-EXTERNAL_DISTFILES=	cJSON.tar.gz:wazuh_sources \
+EXTERNAL_DISTFILES=	audit-userspace.tar.gz:wazuh_sources \
+			benchmark.tar.gz:wazuh_sources \
+			bzip2.tar.gz:wazuh_sources \
+			cJSON.tar.gz:wazuh_sources \
+			cpp-httplib.tar.gz:wazuh_sources \
+			cpython.tar.gz:wazuh_cache \
 			curl.tar.gz:wazuh_sources \
+			flatbuffers.tar.gz:wazuh_sources \
+			googletest.tar.gz:wazuh_sources \
+			http-request.tar.gz:wazuh_cache \
 			jemalloc.tar.gz:wazuh_sources \
+			libarchive.tar.gz:wazuh_sources \
 			libdb.tar.gz:wazuh_sources \
 			libffi.tar.gz:wazuh_sources \
-			libyaml.tar.gz:wazuh_sources \
-			openssl.tar.gz:wazuh_sources \
-			procps.tar.gz:wazuh_sources \
-			sqlite.tar.gz:wazuh_sources \
-			zlib.tar.gz:wazuh_sources \
-			audit-userspace.tar.gz:wazuh_sources \
-			msgpack.tar.gz:wazuh_sources \
-			bzip2.tar.gz:wazuh_sources \
-			nlohmann.tar.gz:wazuh_sources \
-			googletest.tar.gz:wazuh_sources \
 			libpcre2.tar.gz:wazuh_sources \
 			libplist.tar.gz:wazuh_sources	\
-			libarchive.tar.gz:wazuh_sources \
+			libyaml.tar.gz:wazuh_sources \
+			lua.tar.gz:wazuh_sources \
+			lzma.tar.gz:wazuh_sources \
+			msgpack.tar.gz:wazuh_sources \
+			nlohmann.tar.gz:wazuh_sources \
+			openssl.tar.gz:wazuh_sources \
 			popt.tar.gz:wazuh_sources \
-			cpython.tar.gz:wazuh_sources
+			procps.tar.gz:wazuh_sources \
+			rocksdb.tar.gz:wazuh_sources \
+			sqlite.tar.gz:wazuh_sources \
+			zlib.tar.gz:wazuh_sources
 
 OPTIONS_DEFINE=	INOTIFY PRELUDE ZEROMQ
 OPTIONS_GROUP_DATABASE=	MYSQL PGSQL
@@ -89,56 +101,56 @@ GROUPS=		${WAZUH_GROUP}
 SUB_FILES=	pkg-message
 CONFLICTS=	ossec-* wazuh-agent
 
-WZBIN_FILES=	wazuh-logcollector wazuh-execd  manage_agents wazuh-modulesd \
+WZBIN_FILES=	agent_control wazuh-logcollector wazuh-execd  manage_agents wazuh-modulesd \
 		wazuh-agentlessd wazuh-analysisd wazuh-monitord wazuh-reportd wazuh-maild \
 		wazuh-logtest-legacy wazuh-csyslogd wazuh-dbd verify-agent-conf clear_stats \
-		wazuh-regex agent_control wazuh-integratord wazuh-db wazuh-remoted wazuh-authd
+		wazuh-regex wazuh-integratord wazuh-db wazuh-remoted wazuh-authd wazuh-keystore
 
 WZARBIN_FILES=	default-firewall-drop pf npf ipfw firewalld-drop disable-account \
 		host-deny ip-customblock restart-wazuh route-null kaspersky wazuh-slack
 
-WZSHEBANG_FILES=chardetect connexion cygdb cython cythonize f2py3.9 f2py3 f2py fixup_pubsub_v1_keywords.py \
-		flask futurize jp.py jsonschema normalizer openapi-spec-validator pasteurize \
+WZSHEBANG_FILES=chardetect connexion cygdb cython cythonize f2py fixup_pubsub_v1_keywords.py \
+		futurize httpx jp.py jsonschema normalizer openapi-spec-validator pasteurize \
 		pyrsa-decrypt pyrsa-encrypt pyrsa-keygen pyrsa-priv2pub pyrsa-sign \
 		pyrsa-verify rstpep2html.py rst2s5.py rst2xetex.py rst2man.py rst2odt.py \
 		rst2latex.py rst2pseudoxml.py rst2odt_prepstyles.py rst2html.py rst2html5.py \
-		rst2html4.py rst2xml.py tabulate wsdump.py
+		rst2html4.py rst2xml.py tabulate uvicorn wsdump.py
 
+WAZUHMOD660=	/queue/indexer /queue/vd
 WAZUHMOD750=	/ /logs/wazuh /logs/archives /logs/alerts /logs/firewall \
 		/logs/api /logs/cluster /bin /lib /queue /queue/agentless \
-		/queue/db /queue/diff /queue/fts /queue/logcollector \
+		/queue/db /queue/diff /queue/fts /queue/keystore /queue/logcollector \
 		/queue/syscollector /queue/syscollector/db  /ruleset \
 		/ruleset/decoders /ruleset/rules /ruleset/sca /wodles \
 		/active-response /active-response/bin /agentless /var /backup \
-		/backup/db /backup/agents /backup/groups /backup/shared /queue/rids \
-		/wodles/aws /wodles/azure /wodles/docker /wodles/gcloud \
-		/wodles/gcloud/buckets /wodles/gcloud/pubsub /wodles/oscap \
-		/wodles/oscap/content /stats /integrations
+		/backup/db /backup/agents /backup/groups /backup/shared \
+		/wodles/aws /wodles/aws/buckets_s3 /wodles/aws/services /wodles/aws/subscribers \
+		/wodles/azure /wodles/azure/azure_services /wodles/azure/db \
+		/wodles/docker /wodles/gcloud /wodles/gcloud/buckets /wodles/gcloud/pubsub \
+		/stats /integrations
 
 WAZUHMOD770=	/etc/decoders /etc/lists /etc/lists/amazon /etc/rootcheck \
 		/etc/rules /etc/shared/default /logs /queue/agent-groups \
 		/queue/alerts /queue/cluster /queue/fim /queue/fim/db \
 		/queue/rids /queue/sockets /queue/tasks /etc /etc/shared \
 		/.ssh /var/db /var/download /var/db/agents /var/run /var/upgrade \
-		/var/selinux /var/wodles /var/incoming /var/multigroups  \
+		/var/selinux /var/wodles /var/multigroups /queue/rids /queue/router
 
 WAZUHPREFIX=	/var/ossec
 
-WZPYTHONWHEELS=	aiohttp-3.9.1-cp39-cp39-${FBSD_VERSION_BASE}_${ARCH_BASE}.whl \
-		cffi-1.14.4-cp39-cp39-${FBSD_VERSION_BASE}_${ARCH_BASE}.whl \
-		cryptography-3.3.2-cp39-cp39-${FBSD_VERSION_BASE}_${ARCH_BASE}.whl \
-		frozenlist-1.2.0-cp39-cp39-${FBSD_VERSION_BASE}_${ARCH_BASE}.whl \
-		grpcio-1.38.1-cp39-cp39-${FBSD_VERSION_BASE}_${ARCH_BASE}.whl \
-		hiredis-1.1.0-cp39-cp39-${FBSD_VERSION_BASE}_${ARCH_BASE}.whl \
-		MarkupSafe-2.1.2-cp39-cp39-${FBSD_VERSION_BASE}_${ARCH_BASE}.whl \
-		multidict-5.1.0-cp39-cp39-${FBSD_VERSION_BASE}_${ARCH_BASE}.whl \
-		numpy-1.21.6-cp39-cp39-${FBSD_VERSION_BASE}_${ARCH_BASE}.whl \
-		psutil-5.8.0-cp39-cp39-${FBSD_VERSION_BASE}_${ARCH_BASE}.whl \
-		pyarrow-15.0.2-cp39-cp39-${FBSD_VERSION_BASE}_${ARCH_BASE}.whl \
-		PyYAML-6.0.1-cp39-cp39-${FBSD_VERSION_BASE}_${ARCH_BASE}.whl \
-		SQLAlchemy-1.3.11-cp39-cp39-${FBSD_VERSION_BASE}_${ARCH_BASE}.whl \
-		uvloop-0.15.2-cp39-cp39-${FBSD_VERSION_BASE}_${ARCH_BASE}.whl \
-		yarl-1.6.3-cp39-cp39-${FBSD_VERSION_BASE}_${ARCH_BASE}.whl
+WZPYTHONWHEELS=	cffi-1.15.1-cp311-cp311-${FBSD_VERSION_BASE}_${ARCH_BASE}.whl \
+		cryptography-42.0.4-cp311-cp311-${FBSD_VERSION_BASE}_${ARCH_BASE}.whl \
+		greenlet-2.0.2-cp311-cp311-${FBSD_VERSION_BASE}_${ARCH_BASE}.whl \
+		grpcio-1.66.2-cp311-cp311-${FBSD_VERSION_BASE}_${ARCH_BASE}.whl \
+		lazy_object_proxy-1.10.0-cp311-cp311-${FBSD_VERSION_BASE}_${ARCH_BASE}.whl \
+		MarkupSafe-2.1.2-cp311-cp311-${FBSD_VERSION_BASE}_${ARCH_BASE}.whl \
+		multidict-5.2.0-cp311-cp311-${FBSD_VERSION_BASE}_${ARCH_BASE}.whl \
+		numpy-1.26.4-cp311-cp311-${FBSD_VERSION_BASE}_${ARCH_BASE}.whl \
+		psutil-5.9.0-cp311-cp311-${FBSD_VERSION_BASE}_${ARCH_BASE}.whl \
+		pyarrow-18.0.0-cp311-cp311-${FBSD_VERSION_BASE}_${ARCH_BASE}.whl \
+		PyYAML-6.0.1-cp311-cp311-${FBSD_VERSION_BASE}_${ARCH_BASE}.whl \
+		rpds_py-0.15.2-cp311-cp311-${FBSD_VERSION_BASE}_${ARCH_BASE}.whl \
+		uvloop-0.17.0-cp311-cp311-${FBSD_VERSION_BASE}_${ARCH_BASE}.whl
 
 ARCH_BASE=	${ARCH:S/aarch64/arm64/g}
 UNAME_r=	${_OSRELEASE:tl}
@@ -146,17 +158,22 @@ FBSD_RELEASE=	freebsd_${UNAME_r:S/./_/g:S/-/_/g}
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "aarch64" && ${OSVERSION} < 1400000
+IGNORE=		FreeBSD ${OSVERSION} ${ARCH} is not supported
+.endif
+
 .if ${ARCH} != "aarch64"
 FBSD13_PATCH_LEVEL=	_p1
+FBSD14_PATCH_LEVEL=	_p5
 .endif
 
 .if ${OSVERSION} >= 1300139 && ${OSVERSION} < 1400000
-FBSD_VERSION_BASE=freebsd_13_3_release${FBSD13_PATCH_LEVEL}
+FBSD_VERSION_BASE=freebsd_13_4_release${FBSD13_PATCH_LEVEL}
 FBSD_MAJOR_VERSION=13
 WAZUH_CACHENAME=${PORTNAME}-cache-fbsd13-${ARCH}-${DISTVERSION}
 DISTFILES+=	${WAZUH_CACHENAME}${EXTRACT_SUFX}:wazuh_cache
 .elif ${OSVERSION} >= 1400000 && ${OSVERSION} < 1500000
-FBSD_VERSION_BASE=freebsd_14_1_release
+FBSD_VERSION_BASE=freebsd_14_1_release${FBSD14_PATCH_LEVEL}
 FBSD_MAJOR_VERSION=14
 WAZUH_CACHENAME=${PORTNAME}-cache-fbsd14-${ARCH}-${DISTVERSION}
 DISTFILES+=	${WAZUH_CACHENAME}${EXTRACT_SUFX}:wazuh_cache
@@ -171,13 +188,19 @@ IGNORE=		FreeBSD ${OSVERSION} ${ARCH} is not supported
 
 post-extract:
 .for FILE in ${EXTERNAL_DISTFILES}
-	@cd ${WRKSRC}/src/external && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/${FILE:S/:wazuh_sources//} ${EXTRACT_AFTER_ARGS}
+.if ${FILE} == "http-request.tar.gz:wazuh_cache"
+	@cd ${WRKSRC}/src/shared_modules && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/${FILE:S/:wazuh_cache//} ${EXTRACT_AFTER_ARGS}
+.else
+	@cd ${WRKSRC}/src/external && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/${FILE:S/:wazuh_sources//:S/:wazuh_cache//} ${EXTRACT_AFTER_ARGS}
+.endif
 .endfor
 	@cd ${WRKDIR} && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/${WAZUH_EXTRAFILE} ${EXTRACT_AFTER_ARGS}
 	@${MV} ${WRKDIR}/${PORTNAME}-freebsd-${WAZUH_EXTRAFILE_TAGNAME} ${WRKDIR}/wazuh-freebsd
 
 	@cd ${WRKSRC}/src && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/${WAZUH_CACHEFILE} ${EXTRACT_AFTER_ARGS}
 	@cd ${WRKSRC}/src && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/${WAZUH_CACHENAME}${EXTRACT_SUFX} ${EXTRACT_AFTER_ARGS}
+	@cd ${WRKSRC}/src && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/${PORTNAME}-python-${DISTVERSION}${EXTRACT_SUFX} ${EXTRACT_AFTER_ARGS}
+
 .	for FILE in ${WZPYTHONWHEELS}
 		@${MV} ${WRKSRC}/src/wazuh-cache/${FILE} ${WRKSRC}/src/wazuh-cache/${FILE:S/${FBSD_VERSION_BASE}/${FBSD_RELEASE}/}
 .	endfor
@@ -190,6 +213,8 @@ post-extract:
 post-patch:
 	${REINPLACE_CMD} -e 's|CC=|CC?=|g' -e 's|AR=|AR?=|g' ${WRKSRC}/src/external/bzip2/Makefile
 	${REINPLACE_CMD} -e 's|^\( *MULTIARCH=\).*--print-multiarch.*|\1|' ${WRKSRC}/src/external/cpython/configure
+	${REINPLACE_CMD} -e 's|coroutine|coroutines|g' ${WRKSRC}/framework/wazuh/core/cluster/client.py \
+		${WRKSRC}/framework/wazuh/rbac/decorators.py
 
 do-build:
 	cd ${WRKSRC}/src/ && ${SETENV} ${MAKE_ENV} STAGEDIR=${STAGEDIR} \
@@ -199,7 +224,12 @@ do-install:
 	${MKDIR} ${STAGEDIR}${WAZUHPREFIX}/bin
 	${MKDIR} ${STAGEDIR}${WAZUHPREFIX}/lib
 	${MKDIR} ${STAGEDIR}${WAZUHPREFIX}/tmp
+	${MKDIR} ${STAGEDIR}${WAZUHPREFIX}/templates
 	${MKDIR} ${STAGEDIR}${WAZUHPREFIX}/.ssh
+
+.for DIRE in ${WAZUHMOD660}
+	${MKDIR} -m 0660 ${STAGEDIR}${WAZUHPREFIX}${DIRE}
+.endfor
 
 .for DIRE in ${WAZUHMOD750}
 	${MKDIR} -m 0750 ${STAGEDIR}${WAZUHPREFIX}${DIRE}
@@ -262,9 +292,6 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/integrations/shuffle.py ${STAGEDIR}${WAZUHPREFIX}/integrations/shuffle.py
 	${INSTALL_SCRIPT} ${WRKSRC}/integrations/virustotal.py ${STAGEDIR}${WAZUHPREFIX}/integrations/virustotal.py
 
-	${MKDIR} ${STAGEDIR}${WAZUHPREFIX}/queue/vulnerabilities/dictionaries
-	${INSTALL_DATA} ${WRKSRC}/src/wazuh_modules/vulnerability_detector/cpe_helper.json ${STAGEDIR}${WAZUHPREFIX}/queue/vulnerabilities/dictionaries
-
 	${INSTALL_DATA} /dev/null ${STAGEDIR}${WAZUHPREFIX}/queue/agents-timestamp
 	${INSTALL_DATA} ${WRKSRC}/ruleset/rootcheck/db/*.txt ${STAGEDIR}${WAZUHPREFIX}/etc/shared/default
 	${INSTALL_DATA} ${WRKSRC}/etc/agent.conf ${STAGEDIR}${WAZUHPREFIX}/etc/shared/default/agent.conf.sample
@@ -274,6 +301,28 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/wodles/utils.py ${STAGEDIR}${WAZUHPREFIX}/wodles/utils.py
 
 	${INSTALL_SCRIPT} ${WRKSRC}/wodles/aws/aws_s3.py ${STAGEDIR}${WAZUHPREFIX}/wodles/aws/aws-s3.py
+	${INSTALL_SCRIPT} ${WRKSRC}/wodles/aws/__init__.py ${STAGEDIR}${WAZUHPREFIX}/wodles/aws/__init__.py
+	${INSTALL_SCRIPT} ${WRKSRC}/wodles/aws/aws_tools.py ${STAGEDIR}${WAZUHPREFIX}/wodles/aws/aws_tools.py
+	${INSTALL_SCRIPT} ${WRKSRC}/wodles/aws/wazuh_integration.py ${STAGEDIR}${WAZUHPREFIX}/wodles/aws/wazuh_integration.py
+	${INSTALL_SCRIPT} ${WRKSRC}/wodles/aws/buckets_s3/aws_bucket.py ${STAGEDIR}${WAZUHPREFIX}/wodles/aws/buckets_s3/aws_bucket.py
+	${INSTALL_SCRIPT} ${WRKSRC}/wodles/aws/buckets_s3/cloudtrail.py ${STAGEDIR}${WAZUHPREFIX}/wodles/aws/buckets_s3/cloudtrail.py
+	${INSTALL_SCRIPT} ${WRKSRC}/wodles/aws/buckets_s3/config.py ${STAGEDIR}${WAZUHPREFIX}/wodles/aws/buckets_s3/config.py
+	${INSTALL_SCRIPT} ${WRKSRC}/wodles/aws/buckets_s3/guardduty.py ${STAGEDIR}${WAZUHPREFIX}/wodles/aws/buckets_s3/guardduty.py
+	${INSTALL_SCRIPT} ${WRKSRC}/wodles/aws/buckets_s3/__init__.py ${STAGEDIR}${WAZUHPREFIX}/wodles/aws/buckets_s3/__init__.py
+	${INSTALL_SCRIPT} ${WRKSRC}/wodles/aws/buckets_s3/load_balancers.py ${STAGEDIR}${WAZUHPREFIX}/wodles/aws/buckets_s3/load_balancers.py
+	${INSTALL_SCRIPT} ${WRKSRC}/wodles/aws/buckets_s3/server_access.py ${STAGEDIR}${WAZUHPREFIX}/wodles/aws/buckets_s3/server_access.py
+	${INSTALL_SCRIPT} ${WRKSRC}/wodles/aws/buckets_s3/umbrella.py ${STAGEDIR}${WAZUHPREFIX}/wodles/aws/buckets_s3/umbrella.py
+	${INSTALL_SCRIPT} ${WRKSRC}/wodles/aws/buckets_s3/vpcflow.py ${STAGEDIR}${WAZUHPREFIX}/wodles/aws/buckets_s3/vpcflow.py
+	${INSTALL_SCRIPT} ${WRKSRC}/wodles/aws/buckets_s3/waf.py ${STAGEDIR}${WAZUHPREFIX}/wodles/aws/buckets_s3/waf.py
+	${INSTALL_SCRIPT} ${WRKSRC}/wodles/aws/services/aws_service.py ${STAGEDIR}${WAZUHPREFIX}/wodles/aws/services/aws_service.py
+	${INSTALL_SCRIPT} ${WRKSRC}/wodles/aws/services/cloudwatchlogs.py ${STAGEDIR}${WAZUHPREFIX}/wodles/aws/services/cloudwatchlogs.py
+	${INSTALL_SCRIPT} ${WRKSRC}/wodles/aws/services/__init__.py ${STAGEDIR}${WAZUHPREFIX}/wodles/aws/services/__init__.py
+	${INSTALL_SCRIPT} ${WRKSRC}/wodles/aws/services/inspector.py ${STAGEDIR}${WAZUHPREFIX}/wodles/aws/services/inspector.py
+	${INSTALL_SCRIPT} ${WRKSRC}/wodles/aws/subscribers/__init__.py ${STAGEDIR}${WAZUHPREFIX}/wodles/aws/subscribers/__init__.py
+	${INSTALL_SCRIPT} ${WRKSRC}/wodles/aws/subscribers/sqs_queue.py ${STAGEDIR}${WAZUHPREFIX}/wodles/aws/subscribers/sqs_queue.py
+	${INSTALL_SCRIPT} ${WRKSRC}/wodles/aws/subscribers/s3_log_handler.py ${STAGEDIR}${WAZUHPREFIX}/wodles/aws/subscribers/s3_log_handler.py
+	${INSTALL_SCRIPT} ${WRKSRC}/wodles/aws/subscribers/sqs_message_processor.py ${STAGEDIR}${WAZUHPREFIX}/wodles/aws/subscribers/sqs_message_processor.py
+
 	${INSTALL_SCRIPT} ${WRKSRC}/framework/wrappers/generic_wrapper.sh ${STAGEDIR}${WAZUHPREFIX}/wodles/aws/aws-s3
 
 	${INSTALL_SCRIPT} ${WRKSRC}/wodles/gcloud/exceptions.py ${STAGEDIR}${WAZUHPREFIX}/wodles/gcloud/exceptions.py
@@ -289,8 +338,15 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/framework/wrappers/generic_wrapper.sh ${STAGEDIR}${WAZUHPREFIX}/wodles/docker/DockerListener
 
 	${INSTALL_SCRIPT} ${WRKSRC}/wodles/azure/azure-logs.py ${STAGEDIR}${WAZUHPREFIX}/wodles/azure/azure-logs.py
+	${INSTALL_SCRIPT} ${WRKSRC}/wodles/azure/azure_utils.py ${STAGEDIR}${WAZUHPREFIX}/wodles/azure/azure_utils.py
+	${INSTALL_SCRIPT} ${WRKSRC}/wodles/azure/azure_services/__init__.py ${STAGEDIR}${WAZUHPREFIX}/wodles/azure/azure_services/__init__.py
+	${INSTALL_SCRIPT} ${WRKSRC}/wodles/azure/azure_services/analytics.py ${STAGEDIR}${WAZUHPREFIX}/wodles/azure/azure_services/analytics.py
+	${INSTALL_SCRIPT} ${WRKSRC}/wodles/azure/azure_services/graph.py ${STAGEDIR}${WAZUHPREFIX}/wodles/azure/azure_services/graph.py
+	${INSTALL_SCRIPT} ${WRKSRC}/wodles/azure/azure_services/storage.py ${STAGEDIR}${WAZUHPREFIX}/wodles/azure/azure_services/storage.py
+	${INSTALL_SCRIPT} ${WRKSRC}/wodles/azure/db/__init__.py ${STAGEDIR}${WAZUHPREFIX}/wodles/azure/db/__init__.py
+	${INSTALL_SCRIPT} ${WRKSRC}/wodles/azure/db/orm.py ${STAGEDIR}${WAZUHPREFIX}/wodles/azure/db/orm.py
+	${INSTALL_SCRIPT} ${WRKSRC}/wodles/azure/db/utils.py ${STAGEDIR}${WAZUHPREFIX}/wodles/azure/db/utils.py
 	${INSTALL_SCRIPT} ${WRKSRC}/framework/wrappers/generic_wrapper.sh ${STAGEDIR}${WAZUHPREFIX}/wodles/azure/azure-logs
-	${INSTALL_SCRIPT} ${WRKSRC}/wodles/azure/orm.py ${STAGEDIR}${WAZUHPREFIX}/wodles/azure/orm.py
 
 	${INSTALL_SCRIPT} ${WRKSRC}/framework/wrappers/generic_wrapper.sh ${STAGEDIR}${WAZUHPREFIX}/integrations/maltiverse
 	${INSTALL_SCRIPT} ${WRKSRC}/framework/wrappers/generic_wrapper.sh ${STAGEDIR}${WAZUHPREFIX}/integrations/pagerduty
@@ -303,12 +359,19 @@ do-install:
 
 	${INSTALL_LIB} ${WRKSRC}/src/libwazuhext.so ${STAGEDIR}${WAZUHPREFIX}/lib
 	${INSTALL_LIB} ${WRKSRC}/src/libwazuhshared.so ${STAGEDIR}${WAZUHPREFIX}/lib
+	${INSTALL_LIB} ${WRKSRC}/src/build/shared_modules/content_manager/libcontent_manager.so ${STAGEDIR}${WAZUHPREFIX}/lib
+	${INSTALL_LIB} ${WRKSRC}/src/build/shared_modules/indexer_connector/libindexer_connector.so ${STAGEDIR}${WAZUHPREFIX}/lib
+	${INSTALL_LIB} ${WRKSRC}/src/build/shared_modules/router/librouter.so ${STAGEDIR}${WAZUHPREFIX}/lib
+	${INSTALL_LIB} ${WRKSRC}/src/build/wazuh_modules/vulnerability_scanner/libvulnerability_scanner.so ${STAGEDIR}${WAZUHPREFIX}/lib
+	${INSTALL_LIB} ${WRKSRC}/src/data_provider/build/lib/libsysinfo.so ${STAGEDIR}${WAZUHPREFIX}/lib
+	${INSTALL_LIB} ${WRKSRC}/src/external/jemalloc/lib/libjemalloc.so.2 ${STAGEDIR}${WAZUHPREFIX}/lib
+	${INSTALL_LIB} ${WRKSRC}/src/external/rocksdb/build/librocksdb.so.8.3.2 ${STAGEDIR}${WAZUHPREFIX}/lib
 	${INSTALL_LIB} ${WRKSRC}/src/shared_modules/dbsync/build/lib/libdbsync.so ${STAGEDIR}${WAZUHPREFIX}/lib
 	${INSTALL_LIB} ${WRKSRC}/src/shared_modules/rsync/build/lib/librsync.so ${STAGEDIR}${WAZUHPREFIX}/lib
 	${INSTALL_LIB} ${WRKSRC}/src/syscheckd/build/lib/libfimdb.so ${STAGEDIR}${WAZUHPREFIX}/lib
 	${INSTALL_LIB} ${WRKSRC}/src/wazuh_modules/syscollector/build/lib/libsyscollector.so ${STAGEDIR}${WAZUHPREFIX}/lib
-	${INSTALL_LIB} ${WRKSRC}/src/data_provider/build/lib/libsysinfo.so ${STAGEDIR}${WAZUHPREFIX}/lib
-	${INSTALL_LIB} ${WRKSRC}/src/external/jemalloc/lib/libjemalloc.so.2 ${STAGEDIR}${WAZUHPREFIX}/lib
+
+	${INSTALL_DATA} ${WRKSRC}/src/wazuh_modules/vulnerability_scanner/indexer/template/index-template.json ${STAGEDIR}${WAZUHPREFIX}/templates/vd_states_template.json
 
 	cd ${WRKSRC}/src/ && ${SETENV} ${MAKE_ENV} STAGEDIR=${STAGEDIR} \
 		${MAKE_CMD} install_python ${MAKE_ARGS}
@@ -326,11 +389,11 @@ do-install:
 		${MAKE_CMD} --quiet -C api install INSTALLDIR=${STAGEDIR}${WAZUHPREFIX}
 
 	@cd ${STAGEDIR}${WAZUHPREFIX}/framework/python/lib && \
-		${STAGEDIR}${WAZUHPREFIX}/framework/python/bin/python3 -m compileall -x 'bad_coding|badsyntax|lib2to3/tests/data' -f -p ${WAZUHPREFIX}/framework/python/lib/ "python3.9"
+		${STAGEDIR}${WAZUHPREFIX}/framework/python/bin/python3 -m compileall -x 'bad_coding|badsyntax|lib2to3/tests/data' -f -p ${WAZUHPREFIX}/framework/python/lib/ "python3.11"
 	@cd ${STAGEDIR}${WAZUHPREFIX}/framework/python/lib && \
-		${STAGEDIR}${WAZUHPREFIX}/framework/python/bin/python3 -O -m compileall -x 'bad_coding|badsyntax|lib2to3/tests/data' -f -p ${WAZUHPREFIX}/framework/python/lib/ "python3.9"
+		${STAGEDIR}${WAZUHPREFIX}/framework/python/bin/python3 -O -m compileall -x 'bad_coding|badsyntax|lib2to3/tests/data' -f -p ${WAZUHPREFIX}/framework/python/lib/ "python3.11"
 	@cd ${STAGEDIR}${WAZUHPREFIX}/framework/python/lib && \
-		${STAGEDIR}${WAZUHPREFIX}/framework/python/bin/python3 -OO -m compileall -x 'bad_coding|badsyntax|lib2to3/tests/data' -f -p ${WAZUHPREFIX}/framework/python/lib/ "python3.9"
+		${STAGEDIR}${WAZUHPREFIX}/framework/python/bin/python3 -OO -m compileall -x 'bad_coding|badsyntax|lib2to3/tests/data' -f -p ${WAZUHPREFIX}/framework/python/lib/ "python3.11"
 
 	${MKDIR} ${STAGEDIR}${WAZUHPREFIX}/packages_files/manager_installation_scripts/etc/templates
 	${MKDIR} ${STAGEDIR}${WAZUHPREFIX}/packages_files/manager_installation_scripts/databases
@@ -349,7 +412,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/src/os_dbd/postgresql.schema ${STAGEDIR}${WAZUHPREFIX}/packages_files/manager_installation_scripts/databases
 
 post-install:
-	@${STRIP_CMD} ${STAGEDIR}${WAZUHPREFIX}/framework/python/bin/python3.9
+	@${STRIP_CMD} ${STAGEDIR}${WAZUHPREFIX}/framework/python/bin/python3.11
 	@${FIND} ${STAGEDIR}${WAZUHPREFIX}/framework -type f -name "*.so" -exec ${STRIP_CMD} "{}" \;
 .for FILE in ${WZSHEBANG_FILES}
 	@${REINPLACE_CMD} -i "" -e 's|${STAGEDIR}||g' ${STAGEDIR}${WAZUHPREFIX}/framework/python/bin/${FILE}

@@ -1,6 +1,6 @@
---- src/external/cpython/Makefile.pre.in.orig	2023-03-21 17:26:00 UTC
-+++ src/external/cpython/Makefile.pre.in
-@@ -70,14 +70,14 @@ INSTALL_SCRIPT= @INSTALL_SCRIPT@
+--- src/external/cpython/Makefile.pre.in.orig	2024-10-20 14:05:43.000000000 -0700
++++ src/external/cpython/Makefile.pre.in	2024-10-20 18:54:46.292821000 -0700
+@@ -71,14 +71,14 @@
  INSTALL_DATA=	@INSTALL_DATA@
  # Shared libraries must be installed with executable mode on some systems;
  # rather than figuring out exactly which, we always give them executable mode.
@@ -17,38 +17,38 @@
  BASECFLAGS=	@BASECFLAGS@
  BASECPPFLAGS=	@BASECPPFLAGS@
  CONFIGURE_CFLAGS=	@CFLAGS@
-@@ -474,7 +474,7 @@ DTRACE_DEPS = \
+@@ -586,7 +586,7 @@
  # Default target
  all:		@DEF_MAKE_ALL_RULE@
- build_all:	check-clean-src $(BUILDPYTHON) oldsharedmods sharedmods gdbhooks \
--		Programs/_testembed python-config
-+		 python-config
+ build_all:	check-clean-src $(BUILDPYTHON) platform oldsharedmods sharedmods \
+-		gdbhooks Programs/_testembed python-config
++		gdbhooks python-config
+ build_wasm: check-clean-src $(BUILDPYTHON) platform oldsharedmods python-config
  
  # Check that the source is clean when building out of source.
- check-clean-src:
-@@ -723,8 +723,8 @@ Makefile Modules/config.c: Makefile.pre \
- 	@echo "The Makefile was updated, you may need to re-run make."
+@@ -965,8 +965,8 @@
+ 	# using Tools/scripts/generate_re_casefix.py
+ 	$(RUNSHARED) ./$(BUILDPYTHON) $(srcdir)/Tools/scripts/generate_re_casefix.py $(srcdir)/Lib/re/_casefix.py
  
- 
--Programs/_testembed: Programs/_testembed.o $(LIBRARY) $(LDLIBRARY) $(PY3LIBRARY) $(EXPORTSYMS)
--	$(LINKCC) $(PY_CORE_LDFLAGS) $(LINKFORSHARED) -o $@ Programs/_testembed.o $(BLDLIBRARY) $(LIBS) $(MODLIBS) $(SYSLIBS)
-+: .o $(LIBRARY) $(LDLIBRARY) $(PY3LIBRARY) $(EXPORTSYMS)
-+	$(LINKCC) $(PY_CORE_LDFLAGS) $(LINKFORSHARED) -o $@ .o $(BLDLIBRARY) $(LIBS) $(MODLIBS) $(SYSLIBS)
+-Programs/_testembed: Programs/_testembed.o $(LINK_PYTHON_DEPS)
+-	$(LINKCC) $(PY_CORE_LDFLAGS) $(LINKFORSHARED) -o $@ Programs/_testembed.o $(LINK_PYTHON_OBJS) $(LIBS) $(MODLIBS) $(SYSLIBS)
++: .o $(LINK_PYTHON_DEPS)
++	$(LINKCC) $(PY_CORE_LDFLAGS) $(LINKFORSHARED) -o $@ .o $(LINK_PYTHON_OBJS) $(LIBS) $(MODLIBS) $(SYSLIBS)
  
  ############################################################################
- # Importlib
-@@ -797,8 +797,8 @@ Modules/getpath.o: $(srcdir)/Modules/getpath.c Makefil
+ # "Bootstrap Python" used to run deepfreeze.py
+@@ -1258,8 +1258,8 @@
  Programs/python.o: $(srcdir)/Programs/python.c
  	$(MAINCC) -c $(PY_CORE_CFLAGS) -o $@ $(srcdir)/Programs/python.c
  
--Programs/_testembed.o: $(srcdir)/Programs/_testembed.c
+-Programs/_testembed.o: $(srcdir)/Programs/_testembed.c Programs/test_frozenmain.h
 -	$(MAINCC) -c $(PY_CORE_CFLAGS) -o $@ $(srcdir)/Programs/_testembed.c
 +.o: $(srcdir)/.c
 +	$(MAINCC) -c $(PY_CORE_CFLAGS) -o $@ $(srcdir)/.c
  
- Modules/_sre.o: $(srcdir)/Modules/_sre.c $(srcdir)/Modules/sre.h $(srcdir)/Modules/sre_constants.h $(srcdir)/Modules/sre_lib.h
+ Modules/_sre/sre.o: $(srcdir)/Modules/_sre/sre.c $(srcdir)/Modules/_sre/sre.h $(srcdir)/Modules/_sre/sre_constants.h $(srcdir)/Modules/_sre/sre_lib.h
  
-@@ -1255,7 +1255,7 @@ install: @FRAMEWORKINSTALLFIRST@ commoninstall bininst
+@@ -1753,7 +1753,7 @@
  			upgrade) ensurepip="--upgrade" ;; \
  			install|*) ensurepip="" ;; \
  		esac; \
@@ -57,7 +57,7 @@
  			$$ensurepip --root=$(DESTDIR)/ ; \
  	fi
  
-@@ -1265,7 +1265,7 @@ altinstall: commoninstall
+@@ -1763,7 +1763,7 @@
  			upgrade) ensurepip="--altinstall --upgrade" ;; \
  			install|*) ensurepip="--altinstall" ;; \
  		esac; \
@@ -66,7 +66,7 @@
  			$$ensurepip --root=$(DESTDIR)/ ; \
  	fi
  
-@@ -1550,37 +1550,10 @@ libinstall:	build_all $(srcdir)/Modules/xxmodule.c
+@@ -2144,38 +2144,10 @@
  		$(INSTALL_DATA) $(srcdir)/Modules/xxmodule.c \
  			$(DESTDIR)$(LIBDEST)/distutils/tests ; \
  	fi
@@ -102,25 +102,26 @@
 -		$(PYTHON_FOR_BUILD) -m lib2to3.pgen2.driver $(DESTDIR)$(LIBDEST)/lib2to3/Grammar.txt
 -	-PYTHONPATH=$(DESTDIR)$(LIBDEST) $(RUNSHARED) \
 -		$(PYTHON_FOR_BUILD) -m lib2to3.pgen2.driver $(DESTDIR)$(LIBDEST)/lib2to3/PatternGrammar.txt
+-
 +		$(PYTHON_FOR_BUILD) -B -m lib2to3.pgen2.driver $(DESTDIR)$(LIBDEST)/lib2to3/PatternGrammar.txt
- 
  # bpo-21536: Misc/python-config.sh is generated in the build directory
  # from $(srcdir)Misc/python-config.sh.in.
-@@ -1694,7 +1667,7 @@ libainstall:	@DEF_MAKE_RULE@ python-config
+ python-config: $(srcdir)/Misc/python-config.in Misc/python-config.sh
+@@ -2292,7 +2264,7 @@
  # Install the dynamically loadable modules
  # This goes into $(exec_prefix)
- sharedinstall: sharedmods
+ sharedinstall: all
 -	$(RUNSHARED) $(PYTHON_FOR_BUILD) $(srcdir)/setup.py install \
 +	$(RUNSHARED) $(PYTHON_FOR_BUILD) -B $(srcdir)/setup.py install \
  	   	--prefix=$(prefix) \
  		--install-scripts=$(BINDIR) \
  		--install-platlib=$(DESTSHARED) \
-@@ -1860,7 +1833,7 @@ clean-retain-profile: pycremoval
- 	find build -name '*.py[co]' -exec rm -f {} ';' || true
- 	-rm -f pybuilddir.txt
- 	-rm -f Lib/lib2to3/*Grammar*.pickle
--	-rm -f Programs/_testembed Programs/_freeze_importlib
-+	-rm -f  Programs/_freeze_importlib
- 	-find build -type f -a ! -name '*.gc??' -exec rm -f {} ';'
- 	-rm -f Include/pydtrace_probes.h
- 	-rm -f profile-gen-stamp
+@@ -2470,7 +2442,7 @@
+ 	-rm -f _bootstrap_python
+ 	-rm -f python.html python*.js python.data python*.symbols python*.map
+ 	-rm -f $(WASM_STDLIB)
+-	-rm -f Programs/_testembed Programs/_freeze_module
++	-rm -f Programs/_freeze_module
+ 	-rm -f Python/deepfreeze/*.[co]
+ 	-rm -f Python/frozen_modules/*.h
+ 	-rm -f Python/frozen_modules/MANIFEST
