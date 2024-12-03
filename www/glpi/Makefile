@@ -1,6 +1,5 @@
 PORTNAME=	glpi
-PORTVERSION=	10.0.16
-PORTREVISION=	1
+PORTVERSION=	10.0.17
 PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	https://github.com/glpi-project/glpi/releases/download/${PORTVERSION}/
