@@ -195,7 +195,7 @@ lib/saga/libtable_calculus.so
 lib/saga/libtable_tools.so
 lib/saga/libtin_tools.so
 lib/saga/libvis_3d_viewer.so
-share/applications/saga.desktop
+share/applications/org.saga_gis.saga_gui.desktop
 share/icons/hicolor/128x128/apps/saga.png
 share/icons/hicolor/16x16/apps/saga.png
 share/icons/hicolor/192x192/apps/saga.png
@@ -211,7 +211,7 @@ share/icons/hicolor/8x8/apps/saga.png
 share/icons/hicolor/96x96/apps/saga.png
 share/man/man1/saga_cmd.1.gz
 share/man/man1/saga_gui.1.gz
-share/metainfo/org.saga-gis.saga-gui.appdata.xml
+share/metainfo/org.saga_gis.saga_gui.appdata.xml
 share/pixmaps/saga.png
 %%DATADIR%%/debug/README.md
 %%DATADIR%%/debug/gdb_saga_api_pp.py
