@@ -5,6 +5,14 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20241203:
+  AFFECTS: users of deskutils/treesheets
+  AUTHOR: eduardo@FreeBSD.org
+
+  The binary have been renamed from treesheets to TreeSheets
+
+  - https://github.com/aardappel/treesheets/pull/760
+
 20241202:
   AFFECTS: users of net/gdrive
   AUTHOR: meta@FreeBSD.org

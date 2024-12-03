@@ -1,4 +1,4 @@
-bin/treesheets
+bin/TreeSheets
 share/applications/com.strlen.TreeSheets.desktop
 share/icons/hicolor/scalable/apps/com.strlen.TreeSheets.svg
 %%NLS%%share/locale/de/LC_MESSAGES/ts.mo
