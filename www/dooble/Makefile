@@ -1,5 +1,5 @@
 PORTNAME=	dooble
-DISTVERSION=	2024.11.17
+DISTVERSION=	2024.11.23
 CATEGORIES=	www
 
 MAINTAINER=	eric@camachat.org
@@ -16,15 +16,15 @@ GH_ACCOUNT=	textbrowser
 GH_TUPLE=	textbrowser:dooble-dictionaries:0f1e715:dictionaries
 #textbrowser:dooble:${PORTVERSION}:DEFAULT
 USE_GL=		opengl
-USE_QT=		base charts declarative positioning webchannel webengine \
-		sqldriver-sqlite:run
+USE_QT=		base charts declarative positioning sqldriver-sqlite:run \
+		webchannel webengine
 USE_XORG=	xcb
 
-QMAKE_ENV+=	DOOBLE_DICTIONARIES_DIRECTORY=${WRKSRC_dictionaries}/Dictionaries
+QMAKE_ENV+=		DOOBLE_DICTIONARIES_DIRECTORY=${WRKSRC_dictionaries}/Dictionaries
 QMAKE_SOURCE_PATH=	dooble.pro
 
 QTWEBENGINE_DICTIONARIES=	${QT_DATADIR}/qtwebengine_dictionaries
-PLIST_SUB=	QTWEBENGINE_DICTIONARIES=${QTWEBENGINE_DICTIONARIES}
+PLIST_SUB=			QTWEBENGINE_DICTIONARIES=${QTWEBENGINE_DICTIONARIES}
 
 do-install:
 		${INSTALL_PROGRAM} ${WRKSRC}/Dooble ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
