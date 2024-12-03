@@ -9,7 +9,7 @@ WWW=		https://legacy.lwjgl.org
 
 LICENSE=	BSD3CLAUSE
 
-ONLY_FOR_ARCHS=	amd64 i386 powerpc64 powerpc64le
+ONLY_FOR_ARCHS=	aarch64 amd64 i386 powerpc64 powerpc64le
 
 BUILD_DEPENDS=	${JAVAJARDIR}/jutils/jutils.jar:games/jutils \
 		${JAVAJARDIR}/jinput/jinput.jar:games/jinput
@@ -42,11 +42,11 @@ PLIST_FILES=	${JAVAJARDIR}/${PORTNAME}/${PORTNAME}.jar \
 PLIST_FILES+=	lib/${PORTNAME}/lib${PORTNAME}.so
 .endif
 
-.if ${ARCH} == amd64 || ${ARCH:Mpowerpc64*}
+.if ${ARCH} == aarch64 || ${ARCH} == amd64 || ${ARCH:Mpowerpc64*}
 PLIST_FILES+=	lib/${PORTNAME}/lib${PORTNAME}64.so
 .endif
 
-.if ${ARCH:Mpowerpc64*}
+.if ${ARCH} == aarch64 || ${ARCH:Mpowerpc64*}
 MAKE_ARGS+=	-Dbuild.64bit.only=1
 .endif
 
@@ -59,6 +59,9 @@ post-patch:
 		${WRKSRC}/platform_build/bsd_ant/build.xml
 .elif ${ARCH} == powerpc64le
 	@${REINPLACE_CMD} -e 's|amd64|ppc64le|g' \
+		${WRKSRC}/platform_build/bsd_ant/build.xml
+.elif ${ARCH} == aarch64
+	@${REINPLACE_CMD} -e 's|amd64|aarch64|g' \
 		${WRKSRC}/platform_build/bsd_ant/build.xml
 .endif
 
@@ -73,7 +76,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/libs/freebsd/lib${PORTNAME}.so \
 		${STAGEDIR}${PREFIX}/lib/${PORTNAME}
 .endif
-.if ${ARCH} == amd64 || ${ARCH:Mpowerpc64*}
+.if ${ARCH} == aarch64 || ${ARCH} == amd64 || ${ARCH:Mpowerpc64*}
 	${INSTALL_DATA} ${WRKSRC}/libs/freebsd/lib${PORTNAME}64.so \
 		${STAGEDIR}${PREFIX}/lib/${PORTNAME}
 .endif
