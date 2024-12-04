@@ -7,6 +7,8 @@
 %%DATADIR%%/tables/afr-za-g2.ctb
 %%DATADIR%%/tables/akk-borger.utb
 %%DATADIR%%/tables/akk.utb
+%%DATADIR%%/tables/ancient-languages-borger.utb
+%%DATADIR%%/tables/ancient-languages-us.utb
 %%DATADIR%%/tables/ar-ar-comp8.utb
 %%DATADIR%%/tables/ar-ar-g1.utb
 %%DATADIR%%/tables/ar-ar-g2.ctb
@@ -49,6 +51,7 @@
 %%DATADIR%%/tables/cop-eg-comp8.utb
 %%DATADIR%%/tables/corrections.cti
 %%DATADIR%%/tables/countries.cti
+%%DATADIR%%/tables/critical-apparatus.uti
 %%DATADIR%%/tables/cs-chardefs.cti
 %%DATADIR%%/tables/cs-comp8.utb
 %%DATADIR%%/tables/cs-g1.ctb
@@ -179,6 +182,8 @@
 %%DATADIR%%/tables/hbo.utb
 %%DATADIR%%/tables/he-IL-comp8.utb
 %%DATADIR%%/tables/he-IL.utb
+%%DATADIR%%/tables/he-common-consonants.uti
+%%DATADIR%%/tables/he-common-vowels-ihbc.uti
 %%DATADIR%%/tables/hi-in-g1.utb
 %%DATADIR%%/tables/hi.tbl
 %%DATADIR%%/tables/hr-chardefs.cti
@@ -455,7 +460,7 @@ libdata/pkgconfig/liblouis.pc
 lib/liblouis.a
 lib/liblouis.so
 lib/liblouis.so.20
-lib/liblouis.so.20.0.19
+lib/liblouis.so.20.0.20
 share/man/man1/lou_allround.1.gz
 share/man/man1/lou_checkhyphens.1.gz
 share/man/man1/lou_checktable.1.gz
