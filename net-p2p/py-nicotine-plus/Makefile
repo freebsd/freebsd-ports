@@ -1,12 +1,11 @@
 PORTNAME=	nicotine-plus
-DISTVERSION=	3.3.5
-PORTREVISION=	1
+DISTVERSION=	3.3.6
 CATEGORIES=	net-p2p python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	${PORTNAME:S/-/_/}-${DISTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	marko.cupac@mimar.rs
 COMMENT=	Graphical client for the Soulseek file sharing network
 WWW=		https://github.com/Nicotine-Plus/nicotine-plus/
 
