@@ -13,6 +13,9 @@ WWW=		https://lucene.apache.org/solr/
 
 LICENSE=	APACHE20
 
+DEPRECATED=	Deprecated upstream 2024-10-25, upgrade to version 9 in textproc/apache-solr instead
+EXPIRATION_DATE=	2024-12-24
+
 RUN_DEPENDS=	bash:shells/bash
 
 USES=		cpe tar:tgz
