@@ -26,7 +26,6 @@
     SUBDIR += dosbox-staging
     SUBDIR += dosbox-x
     SUBDIR += dps8m
-    SUBDIR += duckstation
     SUBDIR += dynamips-community
     SUBDIR += edumips64
     SUBDIR += elliott-803
@@ -34,6 +33,7 @@
     SUBDIR += emulationstation
     SUBDIR += es-de
     SUBDIR += fbneo
+    SUBDIR += fbsd-duckstation
     SUBDIR += fceux
     SUBDIR += flexemu
     SUBDIR += flycast

@@ -4,3 +4,6 @@ DuckStation is an simulator/emulator of the Sony PlayStation(TM) console,
 focusing on playability, speed, and long-term maintainability. The goal is to
 be as accurate as possible while maintaining performance suitable for low-end
 devices.
+
+That version of DuckStation includes local (FreeBSD-only) patches, mostly used
+to fix build and relocate resources to common paths.

@@ -3747,3 +3747,4 @@ misc/gnuls||2024-11-30|Has expired: Outdated, consider using sysutils/coreutils 
 science/grib_api|science/eccodes|2024-11-30|Has expired: Deprecated by upstream. Use science/eccodes instead
 www/kohana||2024-12-01|Has expired: Supports only PHP5, abandoned upstream
 devel/py-simple-term-menu|devel/py-simple_term_menu|2024-12-02|Upstream renamed
+emulators/duckstation|emulators/fbsd-duckstation|2024-12-03|Developer asked to emphasize the port includes local patches

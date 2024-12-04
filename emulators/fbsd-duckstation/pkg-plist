@@ -1,5 +1,5 @@
-bin/duckstation-qt
-share/applications/duckstation.desktop
+bin/fbsd-duckstation-qt
+share/applications/fbsd-duckstation.desktop
 share/pixmaps/duckstation.png
 %%DATADIR%%/resources/chtdb.txt
 %%DATADIR%%/resources/discdb.yaml

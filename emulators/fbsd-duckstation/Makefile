@@ -1,4 +1,4 @@
-PORTNAME=	duckstation
+PORTNAME=	fbsd-duckstation
 PORTVERSION=	20240614
 DISTVERSIONPREFIX=	v
 PORTREVISION=	2
@@ -33,6 +33,7 @@ USES=		cmake compiler:c++20-lang gl jpeg kde:5 pkgconfig qt:6 sdl xorg
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	stenzek
+GH_PROJECT=	duckstation
 # See: https://github.com/stenzek/duckstation/commits/latest
 GH_TAGNAME=	v0.1-6937
 
@@ -56,9 +57,10 @@ do-install:
 		${COPYTREE_SHARE} resources/ ${STAGEDIR}${DATADIR}/ && \
 		${COPYTREE_SHARE} translations/ ${STAGEDIR}${DATADIR}/
 	${INSTALL_PROGRAM} \
-		${CONFIGURE_WRKSRC}/bin/duckstation-qt ${STAGEDIR}${PREFIX}/bin/
+		${CONFIGURE_WRKSRC}/bin/duckstation-qt \
+		${STAGEDIR}${PREFIX}/bin/fbsd-duckstation-qt
 	${INSTALL_DATA} ${CONFIGURE_WRKSRC}/bin/resources/images/duck.png \
 		${STAGEDIR}${PREFIX}/share/pixmaps/duckstation.png
-	${INSTALL_DATA} ${FILESDIR}/duckstation.desktop ${STAGEDIR}${DESKTOPDIR}
+	${INSTALL_DATA} ${FILESDIR}/fbsd-duckstation.desktop ${STAGEDIR}${DESKTOPDIR}
 
 .include <bsd.port.mk>
