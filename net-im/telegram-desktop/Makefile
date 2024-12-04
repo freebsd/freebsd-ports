@@ -1,6 +1,5 @@
 PORTNAME=	telegram-desktop
-DISTVERSION=	5.8.3
-PORTREVISION=	1
+DISTVERSION=	5.9.0
 CATEGORIES=	net-im
 MASTER_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/releases/download/v${DISTVERSION}/
 DISTNAME=	tdesktop-${DISTVERSION}-full
@@ -20,6 +19,7 @@ NOT_FOR_ARCHS=		powerpc powerpc64 powerpcspe
 NOT_FOR_ARCHS_REASON=	Only little endian is supported
 
 BUILD_DEPENDS=	boost-libs>0:devel/boost-libs \
+		microsoft-gsl>0:devel/microsoft-gsl \
 		range-v3>0:devel/range-v3 \
 		tl-expected>0:devel/tl-expected \
 		v4l_compat>0:multimedia/v4l_compat \
@@ -127,6 +127,7 @@ post-extract:
 	# Some of the third-party components already built, and
 	# can be safely removed
 	${RM} -rf \
+		${WRKSRC}/Telegram/ThirdParty/GSL \
 		${WRKSRC}/Telegram/ThirdParty/QR \
 		${WRKSRC}/Telegram/ThirdParty/dispatch \
 		${WRKSRC}/Telegram/ThirdParty/expected \
