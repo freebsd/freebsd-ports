@@ -266,6 +266,7 @@
     SUBDIR += httpclient
     SUBDIR += httpcore
     SUBDIR += httptunnel
+    SUBDIR += httpx
     SUBDIR += httrack
     SUBDIR += hurl
     SUBDIR += hypermail

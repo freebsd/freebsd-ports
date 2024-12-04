@@ -1,0 +1,10 @@
+httpx is a fast and multi-purpose HTTP toolkit that allows running
+multiple probes using the retryablehttp library.
+
+Features:
+ - Simple and modular code base making it easy to contribute.
+ - Fast And fully configurable flags to probe multiple elements.
+ - Supports multiple HTTP based probings.
+ - Smart auto fallback from https to http as default.
+ - Supports hosts, URLs and CIDR as input.
+ - Handles edge cases doing retries, backoffs etc for handling WAFs.
