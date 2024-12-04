@@ -1,6 +1,6 @@
 PORTNAME=	sonarqube
-DISTVERSION=	10.7.0.96327
-PORTREVISION=	4
+DISTVERSION=	24.12.0.100206
+PORTREVISION=	0
 CATEGORIES=	devel security www java
 MASTER_SITES=	https://binaries.sonarsource.com/Distribution/sonarqube/:m_core \
 		https://binaries.sonarsource.com/Distribution/sonar-csharp-plugin/:m_csharp \
@@ -55,8 +55,8 @@ TEMP_DIR=	${DBBASE_DIR}/temp
 # If you want to update plugins, simply update the version number below,
 # and run "make makesum".
 SONARCSHARP_VER=	10.3.0.106239
-SONARJAVA_VER=		8.5.0.37199
-SONARJAVASCRIPT_VER=	10.16.0.27621
+SONARJAVA_VER=		8.7.0.37452
+SONARJAVASCRIPT_VER=	10.18.0.28572
 SONARPHP_VER=		3.40.0.12590
 SONARPYTHON_VER=	4.24.0.18631
 SONARVBNET_VER=		${SONARCSHARP_VER}
@@ -124,7 +124,7 @@ do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/${APP_DIR}/elasticsearch/plugins
 	${MKDIR} ${STAGEDIR}${LOG_DIR} ${STAGEDIR}${PID_DIR} \
 		${STAGEDIR}${DATA_DIR} ${STAGEDIR}${TEMP_DIR}
-.for dir in conf elasticsearch extensions lib web
+.for dir in conf elasticsearch extensions jres lib web
 	cd ${WRKSRC}; ${COPYTREE_SHARE} ${dir} ${STAGEDIR}${PREFIX}/${APP_DIR} "! -name *\.orig"
 .endfor
 #	 ${LN} -s ${JAVASHAREDIR}/classes/jna.jar \
@@ -137,7 +137,7 @@ gen-plist:
 	${ECHO} '@dir(sonarqube,sonarqube,755) %%TEMP_DIR%%' >>${PLIST}.new
 	${ECHO} '@dir %%APP_DIR%%/elasticsearch/plugins' >>${PLIST}.new
 #	${ECHO} '@dir(sonarqube,sonarqube,755) %%APP_DIR%%/extensions' >>${PLIST}.new
-.for dir in conf elasticsearch lib web
+.for dir in conf elasticsearch jres lib web
 	${FIND} ${STAGEDIR}${PREFIX}/${APP_DIR}/${dir} -type f -o -type l |  \
 	    ${SED} -e "s:${STAGEDIR}${PREFIX}/::g ; \
 		s:${JAR_VERSION}:%%JAR_VERSION%%:g ; \
