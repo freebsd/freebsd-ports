@@ -1,10 +1,11 @@
 PORTNAME=	CycloneDDS
-DISTVERSION=	0.10.4
+DISTVERSION=	0.10.5
 CATEGORIES=	comms
 
 MAINTAINER=	flo@purplekraken.com
 COMMENT=	Eclipse Cyclone DDS middleware
-WWW=		https://cyclonedds.io/
+WWW=		https://cyclonedds.io/ \
+		https://github.com/eclipse-cyclonedds/cyclonedds/
 
 LICENSE=	EPL
 LICENSE_FILE=	${WRKSRC}/LICENSE
