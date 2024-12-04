@@ -102,6 +102,8 @@ do-build:
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/dotnet
 	${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${WRKSRC}/artifacts/assets/Release/${SDK_DISTNAME}${EXTRACT_SUFX} -C ${STAGEDIR}${PREFIX}/dotnet ${EXTRACT_AFTER_ARGS}
+	${FIND} ${WRKSRC}/artifacts/packages/Release -name "*freebsd*.nupkg" -exec \
+		${INSTALL_DATA} {} ${STAGEDIR}${PREFIX}/dotnet/library-packs/ \;
 
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/dotnet/sdk/${SDKVERSION}/AppHostTemplate/apphost
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/dotnet/packs/Microsoft.NETCore.App.Host.${SDK_RID}/${DISTVERSION}/runtimes/${SDK_RID}/native/apphost
