@@ -1,4 +1,3 @@
-PORTREVISION=	1
 PKGNAMEPREFIX=	libretro-
 
 MASTERDIR=	${.CURDIR}/../ppsspp
