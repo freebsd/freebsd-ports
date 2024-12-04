@@ -7389,6 +7389,7 @@
     SUBDIR += rubygem-libyajl2
     SUBDIR += rubygem-license_finder
     SUBDIR += rubygem-licensee
+    SUBDIR += rubygem-licensee-gitlab
     SUBDIR += rubygem-listen
     SUBDIR += rubygem-little-plugger
     SUBDIR += rubygem-local_time

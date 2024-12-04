@@ -195,7 +195,7 @@ MY_DEPENDS=	git>=2.41.0:devel/git \
 	rubygem-sanitize60>=6.0.2<6.1:textproc/rubygem-sanitize60 \
 	rubygem-babosa>=2.0<3:textproc/rubygem-babosa \
 	rubygem-loofah222>=2.22.0<2.23:textproc/rubygem-loofah222 \
-	rubygem-licensee>=9.16<10:devel/rubygem-licensee \
+	rubygem-licensee-gitlab>=9.16<10:devel/rubygem-licensee-gitlab \
 	rubygem-charlock_holmes>=0.7.9<0.8:textproc/rubygem-charlock_holmes \
 	rubygem-ruby-magic>=0.6<1:devel/rubygem-ruby-magic \
 	rubygem-fast_blank>=1.0.1<1.1:devel/rubygem-fast_blank \
