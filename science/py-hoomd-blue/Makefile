@@ -1,6 +1,6 @@
 PORTNAME=	hoomd-blue
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.9.1
+DISTVERSION=	5.0.0
 CATEGORIES=	science # physics
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -19,14 +19,16 @@ USES=		cmake:testing compiler:c++17-lang eigen:3 localbase:ldflags python sheban
 USE_GITHUB=	yes
 GH_ACCOUNT=	glotzerlab
 
-GH_TUPLE=	glotzerlab:upp11:0c1fb8d:glotzerlab_upp11/hoomd/extern/upp11 \
-		glotzerlab:nano-signal-slot:34223a4:glotzerlab_nano_signal_slot/hoomd/extern/nano-signal-slot \
-		glotzerlab:quickhull:1ffbc6f:glotzerlab_quickhull/hoomd/extern/quickhull \
-		glotzerlab:random123:a2c4f04:glotzerlab_random123/hoomd/extern/random123 \
-		glotzerlab:HIP:d211f99:glotzerlab_HIP/hoomd/extern/HIP \
-		glotzerlab:hipCUB:c70e193:glotzerlab_hipCUB/hoomd/extern/hipCUB \
-		mphowardlab:neighbor:ba0f068:mphowardlab_neighbor/hoomd/extern/neighbor \
-		mphowardlab:hipper:b6da049:mphowardlab_hipper/hoomd/extern/hipper
+GH_TUPLE=	glotzerlab:upp11:0c1fb8dfb4bcdc1c5c4eff9165539b15e70c4360:glotzerlab_upp11/hoomd/extern/upp11 \
+		glotzerlab:nano-signal-slot:34223a4a7e97f8e114ef007e5360cf7a71265da3:glotzerlab_nano_signal_slot/hoomd/extern/nano-signal-slot \
+		glotzerlab:quickhull:1ffbc6f884ea1da89e104a5996cf8a726db673d5:glotzerlab_quickhull/hoomd/extern/quickhull \
+		glotzerlab:HIP:d211f99eebb3637b6840f310f8797abb25012c18:glotzerlab_HIP/hoomd/extern/HIP \
+		glotzerlab:hipCUB:c70e19332a8402049b3359b409e50220a759c42d:glotzerlab_hipCUB/hoomd/extern/hipCUB \
+		mphowardlab:neighbor:ba0f06869b766066a7068852fa3b8c5fa746f71f:mphowardlab_neighbor/hoomd/extern/neighbor \
+		mphowardlab:hipper:b6da049a516ada03e4e1b66ca6b4c2c7c9668595:mphowardlab_hipper/hoomd/extern/hipper \
+		glotzerlab:hoomd-examples:2710e2708877e375a56d2faa1df7d400b12d75a2:glotzerlab_hoomd_examples/sphinx-doc/tutorial \
+		glotzerlab:OpenRAND:92dc12a23dff2d0aa3545f749d1c013677b9a87e:glotzerlab_OpenRAND/hoomd/extern/OpenRAND \
+		mphowardlab:hipper:b6da049a516ada03e4e1b66ca6b4c2c7c9668595:mphowardlab_hipper/hoomd/extern/hipper
 
 SHEBANG_GLOB=	*.sh
 
