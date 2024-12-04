@@ -12,8 +12,8 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		byteorder-1.5.0 \
 		bytes-1.8.0 \
 		cfg-if-1.0.0 \
-		clap-4.5.21 \
-		clap_builder-4.5.21 \
+		clap-4.5.22 \
+		clap_builder-4.5.22 \
 		clap_derive-4.5.18 \
 		clap_lex-0.7.3 \
 		colorchoice-1.0.3 \
@@ -97,7 +97,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		tinystr-0.7.6 \
 		tinyvec-1.8.0 \
 		tinyvec_macros-0.1.1 \
-		tokio-1.41.1 \
+		tokio-1.42.0 \
 		tokio-macros-2.4.0 \
 		tracing-0.1.40 \
 		tracing-attributes-0.1.27 \
