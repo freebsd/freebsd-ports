@@ -1,7 +1,6 @@
 bin/podman
-bin/podmansh
 bin/podman-remote
-@dir libexec/podman
+bin/podmansh
 share/bash-completion/completions/podman
 share/bash-completion/completions/podman-remote
 share/fish/vendor_completions.d/podman-remote.fish
@@ -185,14 +184,15 @@ share/man/man1/podman-secret.1.gz
 share/man/man1/podman-start.1.gz
 share/man/man1/podman-stats.1.gz
 share/man/man1/podman-stop.1.gz
+share/man/man1/podman-system-check.1.gz
 share/man/man1/podman-system-connection-add.1.gz
 share/man/man1/podman-system-connection-default.1.gz
 share/man/man1/podman-system-connection-list.1.gz
 share/man/man1/podman-system-connection-remove.1.gz
 share/man/man1/podman-system-connection-rename.1.gz
 share/man/man1/podman-system-connection.1.gz
-share/man/man1/podman-system-events.1.gz
 share/man/man1/podman-system-df.1.gz
+share/man/man1/podman-system-events.1.gz
 share/man/man1/podman-system-info.1.gz
 share/man/man1/podman-system-migrate.1.gz
 share/man/man1/podman-system-prune.1.gz
@@ -224,7 +224,8 @@ share/man/man1/podman-volume.1.gz
 share/man/man1/podman-wait.1.gz
 share/man/man1/podman.1.gz
 share/man/man1/podmansh.1.gz
-share/man/man5/quadlet.5.gz
 share/man/man5/podman-systemd.unit.5.gz
+share/man/man5/quadlet.5.gz
 share/zsh/site-functions/_podman
 share/zsh/site-functions/_podman-remote
+@dir libexec/podman
