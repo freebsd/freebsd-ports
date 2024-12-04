@@ -1,5 +1,5 @@
 PORTNAME=	rabbitmq
-DISTVERSION=	3.13.7
+DISTVERSION=	4.0.4
 CATEGORIES=	net
 MASTER_SITES=	https://github.com/rabbitmq/rabbitmq-server/releases/download/v${DISTVERSION}/
 # https://github.com/rabbitmq/rabbitmq-server/releases/download/v3.12.12/rabbitmq-server-generic-unix-3.12.12.tar.xz
@@ -31,7 +31,7 @@ GROUPS=		rabbitmq
 
 PLIST_SUB=	VERSION=${DISTVERSION}
 
-_ERLANG_VER=	26
+_ERLANG_VER=	27
 _ERLANG_LIB=	erlang${_ERLANG_VER}
 
 .include <bsd.port.options.mk>
