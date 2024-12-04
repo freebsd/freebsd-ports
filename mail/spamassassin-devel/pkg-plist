@@ -51,6 +51,7 @@ lib/libspamc.so.0
 %%SITE_PERL%%/Mail/SpamAssassin/DnsResolver.pm
 %%SITE_PERL%%/Mail/SpamAssassin/GeoDB.pm
 %%SITE_PERL%%/Mail/SpamAssassin/HTML.pm
+%%SITE_PERL%%/Mail/SpamAssassin/HTML/Color.pm
 %%SITE_PERL%%/Mail/SpamAssassin/Locales.pm
 %%SITE_PERL%%/Mail/SpamAssassin/Locker.pm
 %%SITE_PERL%%/Mail/SpamAssassin/Locker/Flock.pm
@@ -171,6 +172,7 @@ lib/libspamc.so.0
 %%PERL5_MAN3%%/Mail::SpamAssassin::Conf::SQL.3.gz
 %%PERL5_MAN3%%/Mail::SpamAssassin::DnsResolver.3.gz
 %%PERL5_MAN3%%/Mail::SpamAssassin::GeoDB.3.gz
+%%PERL5_MAN3%%/Mail::SpamAssassin::HTML::Color.3.gz
 %%PERL5_MAN3%%/Mail::SpamAssassin::Logger.3.gz
 %%PERL5_MAN3%%/Mail::SpamAssassin::Logger::File.3.gz
 %%PERL5_MAN3%%/Mail::SpamAssassin::Logger::Stderr.3.gz
