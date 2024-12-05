@@ -13,6 +13,8 @@ WWW=		https://ossia.io/ \
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
+BROKEN_i386=	compilation fails, see https://github.com/ossia/score/issues/1608
+
 BUILD_DEPENDS=	rapidfuzz-cpp>0:devel/rapidfuzz-cpp
 LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg \
 		libboost_system.so:devel/boost-libs \
