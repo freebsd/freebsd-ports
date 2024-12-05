@@ -1,6 +1,6 @@
 PORTNAME=	postfix
-DISTVERSION=	3.9.0
-PORTREVISION?=	1
+DISTVERSION=	3.9.1
+PORTREVISION?=	0
 PORTEPOCH=	1
 CATEGORIES=	mail
 MASTER_SITES=	https://postfix-mirror.horus-it.com/postfix-release/ \
