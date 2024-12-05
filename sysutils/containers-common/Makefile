@@ -1,13 +1,15 @@
 PORTNAME=	containers-common
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.60.4
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	dfr@FreeBSD.org
 COMMENT=	Common manpages and config files for podman and buildah
 WWW=		https://github.com/containers
 
-LICENSE=	GPLv2
+LICENSE=	APACHE20
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	bash:shells/bash \
 		curl:ftp/curl \

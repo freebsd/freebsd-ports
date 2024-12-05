@@ -1,13 +1,15 @@
 PORTNAME=	skopeo
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.16.1
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	dfr@FreeBSD.org
 COMMENT=	Inspect container images and repositories on registries
 WWW=		https://github.com/containers/skopeo
 
-LICENSE=	GPLv2
+LICENSE=	APACHE20
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	bash:shells/bash \
 		curl:ftp/curl \

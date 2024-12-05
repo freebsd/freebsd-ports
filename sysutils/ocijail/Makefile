@@ -1,13 +1,15 @@
 PORTNAME=	ocijail
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.4.0
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	dfr@FreeBSD.org
 COMMENT=	Experimental, proof-of-concept OCI-compatible runtime for jails
 WWW=		https://github.com/dfr/ocijail
 
-LICENSE=	BSD3CLAUSE
+LICENSE=	BSD2CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	bazel:devel/bazel5 bash:shells/bash
 
