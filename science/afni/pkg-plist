@@ -998,6 +998,7 @@ lib/afni/plug_zeropad.so
 %%DATADIR%%/funstuff/face_brian_pittman.jpg
 %%DATADIR%%/funstuff/face_brianna.jpg
 %%DATADIR%%/funstuff/face_bridget.jpg
+%%DATADIR%%/funstuff/face_broberts.jpg
 %%DATADIR%%/funstuff/face_brodmann.jpg
 %%DATADIR%%/funstuff/face_browndyke.jpg
 %%DATADIR%%/funstuff/face_bruce_jones.jpg
@@ -1467,6 +1468,7 @@ lib/afni/plug_zeropad.so
 %%DATADIR%%/funstuff/splash_Lincoln.Mem.Sunset2.BG.jpg
 %%DATADIR%%/funstuff/splash_Lucca.Cafe2.BG.jpg
 %%DATADIR%%/funstuff/splash_Lucca.Dinner.VBG.jpg
+%%DATADIR%%/funstuff/splash_MIT2018.jpg
 %%DATADIR%%/funstuff/splash_Monastery_BG.jpg
 %%DATADIR%%/funstuff/splash_NIH.B1.frontB.jpg
 %%DATADIR%%/funstuff/splash_NIH.B10.southdoors.BG.jpg
@@ -1706,6 +1708,7 @@ lib/afni/plug_zeropad.so
 %%DATADIR%%/funstuff/splash_tulips_VG.jpg
 %%DATADIR%%/funstuff/splash_tulsa2011.jpg
 %%DATADIR%%/funstuff/splash_tulsa2016.jpg
+%%DATADIR%%/funstuff/splash_tulsa2024.jpg
 %%DATADIR%%/funstuff/splash_twinkies.jpg
 %%DATADIR%%/funstuff/splash_umiami.jpg
 %%DATADIR%%/funstuff/splash_usajapan.jpg
