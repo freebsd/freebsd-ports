@@ -290,6 +290,7 @@
     SUBDIR += kanboard
     SUBDIR += kannel
     SUBDIR += kannel-sqlbox
+    SUBDIR += katana
     SUBDIR += kcgi
     SUBDIR += kdsoap
     SUBDIR += kf5-khtml
