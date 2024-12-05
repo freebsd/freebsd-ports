@@ -1,6 +1,5 @@
 PORTNAME=	lib2geom
-DISTVERSION=	1.3
-PORTREVISION=	3
+DISTVERSION=	1.4
 CATEGORIES=	math gnome
 
 MAINTAINER=	gnome@FreeBSD.org
@@ -22,8 +21,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cairo>0:graphics/py-cairo@${PY_FLAVOR}
 TEST_DEPENDS=	googletest>0:devel/googletest \
 		ragel:devel/ragel
 
-USES=		cmake:testing gettext-runtime gnome localbase:ldflags pkgconfig \
-		python
+USES=		compiler:c++20-lang cmake:testing gettext-runtime gnome localbase:ldflags \
+		pkgconfig python
 USE_GNOME=	cairo glib20 gtk30
 USE_PYTHON=	cython cython_test
 

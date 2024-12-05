@@ -1,8 +1,10 @@
 PORTNAME=	inkscape
-DISTVERSION=	1.3.2
-PORTREVISION=	4
+DISTVERSION=	1.4
 CATEGORIES=	graphics gnome
 MASTER_SITES=	https://media.inkscape.org/dl/resources/file/
+
+PATCH_SITES=	https://gitlab.com/${PORTNAME}/${PORTNAME}/-/commit/
+PATCHFILES+=	eb6dadcf1a5c660167ba43f3606c8e7cc6529787.patch:-p1 # https://gitlab.com/inkscape/inkscape/-/merge_requests/6755
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Full featured open source SVG editor
@@ -29,31 +31,31 @@ LIB_DEPENDS=	libboost_filesystem.so:devel/boost-libs \
 		libharfbuzz.so:print/harfbuzz \
 		libpotrace.so:graphics/libpotrace \
 		libpng.so:graphics/png \
-		libsoup-2.4.so:devel/libsoup \
 		libenchant-2.so:textproc/enchant2 \
 		libepoxy.so:graphics/libepoxy \
 		lib2geom.so:math/lib2geom
-RUN_DEPENDS=	${PYNUMPY} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>0:math/py-numpy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}appdirs>0:devel/py-appdirs@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}lxml>0:devel/py-lxml@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}filelock>=3.7.1:sysutils/py-filelock@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}scour>0:textproc/py-scour@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}cachecontrol>0:www/py-cachecontrol@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}cssselect>0:www/py-cssselect@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}filelock>=3.7.1:sysutils/py-filelock@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}lxml>0:devel/py-lxml@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>0:www/py-requests@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}scour>0:textproc/py-scour@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}tinycss2>0:textproc/py-tinycss2@${PY_FLAVOR} \
 		fig2dev:print/fig2dev
 TEST_DEPENDS=	googletest>0:devel/googletest \
 		bash:shells/bash
 
-USES=		compiler:c++17-lang cmake:testing cpe desktop-file-utils ghostscript:run \
+USES=		compiler:c++20-lang cmake:testing cpe desktop-file-utils ghostscript:run \
 		gnome jpeg pathfix pkgconfig python \
 		readline shebangfix tar:xz xorg
-USE_GNOME=	cairo gdkpixbuf2 gtkmm30 gtksourceview4 libxml2 libxslt
+USE_GNOME=	cairo gdkpixbuf2 glibmm gtkmm30 gtksourceview4 libxml2 libxslt
 USE_PYTHON=	cython
 USE_XORG=	sm ice x11 xext
 USE_LDCONFIG=	yes
 
-DATETAG=	2023-11-25_091e20ef0f
+DATETAG=	2024-10-09_e7c3feb100
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}_${DATETAG}
 
 BINARY_ALIAS=	python3=${PYTHON_CMD}
