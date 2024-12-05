@@ -1,5 +1,5 @@
 PORTNAME=	nsnotifyd
-PORTVERSION=	2.2
+PORTVERSION=	2.3
 CATEGORIES=	dns
 MASTER_SITES=	http://dotat.at/prog/nsnotifyd/
 
