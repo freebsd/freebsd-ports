@@ -1,11 +1,11 @@
 PORTNAME=	rmf
-DISTVERSION=	1.6.1
-PORTREVISION=	2
+DISTVERSION=	1.7.0
 CATEGORIES=	science graphics
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Library to support reading and writing of Rich Molecular Format files
-WWW=		https://integrativemodeling.org/rmf/
+WWW=		https://integrativemodeling.org/rmf/ \
+		https://github.com/open-rmf/rmf
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/COPYING
