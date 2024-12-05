@@ -18,8 +18,6 @@ GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX= ${PREFIX}/share
 CONFIGURE_ARGS+=--with-mhash \
 		--with-zlib \
-		--with-posix-acl \
-		--with-e2fsattrs \
 		--with-config_file=${PREFIX}/etc/aide.conf
 CONFIGURE_ENV=	YACC="bison -y" \
 		POSIX_ACL_CFLAGS="-I/usr/include/sys" \
@@ -30,6 +28,17 @@ CONFIGURE_ENV=	YACC="bison -y" \
 LDFLAGS+=	-lpthread
 
 SUB_FILES=	pkg-message
+
+FLAVORS=	default without_acl
+FLAVOR?=	${FLAVORS:[1]}
+
+.if ${FLAVOR:U} != without_acl
+CONFIGURE_ARGS+=--with-posix-acl \
+		--with-e2fsattrs
+.endif
+
+default_PKGNAMESUFFIX=
+without_acl_PKGNAMESUFFIX=	-without_acl
 
 post-install:
 	${INSTALL_DATA} ${FILESDIR}/aide.conf.freebsd ${STAGEDIR}${PREFIX}/etc/aide.conf.sample
