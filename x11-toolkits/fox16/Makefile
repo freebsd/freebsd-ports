@@ -1,5 +1,5 @@
 PORTNAME=	fox
-PORTVERSION=	1.6.58
+PORTVERSION=	1.6.59
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://fox-toolkit.org/ftp/ \
 		ftp://ftp.fox-toolkit.org/pub/
@@ -25,7 +25,8 @@ CONFIGURE_ARGS=	--with-opengl --with-x --with-xim
 
 CPPFLAGS+=	-fPIC -Dregister=
 
-PLIST_SUB=	MAJORVER="${MAJORVER}"
+PLIST_SUB=	MAJORVER="${MAJORVER}" \
+		SOVERSION="${SOVERSION}"
 
 PORTDOCS=	*
 
@@ -74,6 +75,7 @@ XRENDER_CONFIGURE_ON=	--with-xrender=yes
 XRENDER_CONFIGURE_OFF=	--with-xrender=no
 
 MAJORVER=	${PORTVERSION:R}
+SOVERSION=	0.0.${PORTVERSION:E}
 
 .include <bsd.port.pre.mk>
 
@@ -125,7 +127,7 @@ post-patch-APPS-off:
 		${WRKSRC}/Makefile.in
 
 post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libCHART-${MAJORVER}.so.[0-9].*
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libFOX-${MAJORVER}.so.[0-9].*
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libCHART-${MAJORVER}.so.${SOVERSION}
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libFOX-${MAJORVER}.so.${SOVERSION}
 
 .include <bsd.port.post.mk>
