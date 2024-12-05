@@ -1,9 +1,9 @@
 CARGO_CRATES=	ahash-0.8.11 \
-		arbitrary-1.3.2 \
+		arbitrary-1.4.1 \
 		autocfg-1.4.0 \
 		bencher-0.1.5 \
 		bitvec-1.0.1 \
-		cc-1.1.31 \
+		cc-1.2.1 \
 		cfg-if-1.0.0 \
 		codspeed-2.7.2 \
 		codspeed-bencher-compat-2.7.2 \
@@ -11,18 +11,18 @@ CARGO_CRATES=	ahash-0.8.11 \
 		equivalent-1.0.1 \
 		funty-2.0.0 \
 		getrandom-0.2.15 \
-		hashbrown-0.15.0 \
+		hashbrown-0.15.2 \
 		heck-0.5.0 \
 		indexmap-2.6.0 \
 		indoc-2.0.5 \
-		itoa-1.0.11 \
+		itoa-1.0.14 \
 		jobserver-0.1.32 \
 		lazy_static-1.5.0 \
 		lexical-parse-float-0.8.5 \
 		lexical-parse-integer-0.8.6 \
 		lexical-util-0.8.5 \
-		libc-0.2.161 \
-		libfuzzer-sys-0.4.7 \
+		libc-0.2.164 \
+		libfuzzer-sys-0.4.8 \
 		memchr-2.7.4 \
 		memoffset-0.9.1 \
 		num-bigint-0.4.6 \
@@ -30,27 +30,27 @@ CARGO_CRATES=	ahash-0.8.11 \
 		num-traits-0.2.19 \
 		once_cell-1.20.2 \
 		paste-1.0.15 \
-		portable-atomic-1.9.0 \
-		proc-macro2-1.0.89 \
-		pyo3-0.22.5 \
-		pyo3-build-config-0.22.5 \
-		pyo3-ffi-0.22.5 \
-		pyo3-macros-0.22.5 \
-		pyo3-macros-backend-0.22.5 \
+		portable-atomic-1.10.0 \
+		proc-macro2-1.0.92 \
+		pyo3-0.23.2 \
+		pyo3-build-config-0.23.2 \
+		pyo3-ffi-0.23.2 \
+		pyo3-macros-0.23.2 \
+		pyo3-macros-backend-0.23.2 \
 		python3-dll-a-0.2.10 \
 		quote-1.0.37 \
 		radium-0.7.0 \
 		ryu-1.0.18 \
-		serde-1.0.214 \
-		serde_derive-1.0.214 \
-		serde_json-1.0.132 \
+		serde-1.0.215 \
+		serde_derive-1.0.215 \
+		serde_json-1.0.133 \
 		shlex-1.3.0 \
 		smallvec-1.13.2 \
 		static_assertions-1.1.0 \
-		syn-2.0.85 \
+		syn-2.0.89 \
 		tap-1.0.1 \
 		target-lexicon-0.12.16 \
-		unicode-ident-1.0.13 \
+		unicode-ident-1.0.14 \
 		unindent-0.2.3 \
 		version_check-0.9.5 \
 		wasi-0.11.0+wasi-snapshot-preview1 \
