@@ -527,7 +527,6 @@
     SUBDIR += ogg2mp3
     SUBDIR += openal-soft
     SUBDIR += opencore-amr
-    SUBDIR += openspc
     SUBDIR += opus
     SUBDIR += opus-tools
     SUBDIR += opusfile
