@@ -104,4 +104,4 @@ lib/cmake/QGpgme%%QGPGME_CMAKE_SUFFIX%%/QGpgme%%QGPGME_CMAKE_SUFFIX%%Config.cmak
 lib/cmake/QGpgme%%QGPGME_CMAKE_SUFFIX%%/QGpgme%%QGPGME_CMAKE_SUFFIX%%ConfigVersion.cmake
 lib/libqgpgme%%QGPGME_LIB_SUFFIX%%.so
 lib/libqgpgme%%QGPGME_LIB_SUFFIX%%.so.15
-lib/libqgpgme%%QGPGME_LIB_SUFFIX%%.so.15.6.0
+lib/libqgpgme%%QGPGME_LIB_SUFFIX%%.so.15.6.1

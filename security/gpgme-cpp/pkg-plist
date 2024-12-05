@@ -44,5 +44,5 @@ lib/cmake/Gpgmepp/GpgmeppConfig.cmake
 lib/cmake/Gpgmepp/GpgmeppConfigVersion.cmake
 lib/libgpgmepp.so
 lib/libgpgmepp.so.6
-lib/libgpgmepp.so.6.21.0
+lib/libgpgmepp.so.6.21.1
 libdata/pkgconfig/gpgmepp.pc
