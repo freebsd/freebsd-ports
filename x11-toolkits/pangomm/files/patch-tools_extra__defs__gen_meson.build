@@ -1,0 +1,10 @@
+--- tools/extra_defs_gen/meson.build.orig	2021-12-06 18:18:10 UTC
++++ tools/extra_defs_gen/meson.build
+@@ -7,6 +7,7 @@
+ glibmm_generate_extra_defs_dep = cpp_compiler.find_library(
+   'glibmm_generate_extra_defs@0@-2.68'.format(msvc14x_toolset_ver),
+   required: glibmm_dep.type_name() != 'internal',
++  dirs: join_paths(get_option('prefix'), get_option('libdir')),
+ )
+ if not glibmm_generate_extra_defs_dep.found()
+   glibmm_generate_extra_defs_dep = dependency(
