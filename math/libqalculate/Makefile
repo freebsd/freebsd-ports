@@ -1,7 +1,11 @@
 PORTNAME=	libqalculate
 PORTVERSION=	5.4.0
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	https://github.com/Qalculate/${PORTNAME}/releases/download/v${PORTVERSION}/
+
+PATCH_SITES=	https://github.com/Qalculate/libqalculate/commit/
+PATCHFILES+=	0d81784d2c85ca90b5a660b70862b9572be661e3.patch:-p1 # https://github.com/Qalculate/libqalculate/issues/722
 
 MAINTAINER=	jhale@FreeBSD.org
 COMMENT=	Multi-purpose desktop calculator (backend library)
