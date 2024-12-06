@@ -1,9 +1,10 @@
 PORTNAME=	nnn
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.9
+DISTVERSION=	5.0
 CATEGORIES=	misc shells
+MASTER_SITES=   GH
 
-MAINTAINER=	dmgk@FreeBSD.org
+MAINTAINER=	thindil@laeran.pl.eu.org
 COMMENT=	Missing terminal file browser for X
 WWW=		https://github.com/jarun/nnn
 
@@ -19,7 +20,8 @@ GH_ACCOUNT=	jarun
 MAKE_ARGS=	CFLAGS_OPTIMIZATION= \
 		LDLIBS_CURSES=-lncursesw \
 		MANPREFIX=${PREFIX}/share/man \
-		PKG_CONFIG=/usr/bin/true
+		PKG_CONFIG=/usr/bin/true \
+		STRIP_CMD="${STRIP_CMD}"
 
 PLIST_FILES=	bin/nnn \
 		etc/bash_completion.d/nnn-completion.bash \
@@ -42,7 +44,6 @@ MEDIAINFO_RUN_DEPENDS=	mediainfo:multimedia/mediainfo
 XDG_RUN_DEPENDS=	xdg-open:devel/xdg-utils
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/nnn
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/bash_completion.d
 	${INSTALL_DATA} ${WRKSRC}/misc/auto-completion/bash/nnn-completion.bash \
 		${STAGEDIR}${PREFIX}/etc/bash_completion.d
