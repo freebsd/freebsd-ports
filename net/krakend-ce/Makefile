@@ -1,12 +1,12 @@
 PORTNAME=	krakend-ce
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.7.2
-PORTREVISION=	1
+DISTVERSION=	2.8.0
 CATEGORIES=	net
 
 MAINTAINER=	alster@vinterdalen.se
 COMMENT=	High-performance, stateless, declarative, API Gateway
-WWW=		https://github.com/krakend/krakend-ce/
+WWW=		https://www.krakend.io/ \
+		https://github.com/krakend/krakend-ce/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -14,7 +14,10 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 NOT_FOR_ARCHS=	armv7 i386
 NOT_FOR_ARCHS_REASON=	Build failure: vendor/github.com/krakendio/krakend-amqp/v2/consumer.go:47:20: cannot use math.MaxInt64 (untyped int constant 9223372036854775807) as int value in assignment (overflows)
 
-USES=		go:1.23,modules
+USES=		cpe go:1.23,modules
+CPE_VENDOR=	krakend
+CPE_PRODUCT=	krakend
+CPE_SW_EDITION=	community
 
 GO_MODULE=	github.com/krakendio/krakend-ce/v2
 GO_TARGET=	./cmd/${PORTNAME}
