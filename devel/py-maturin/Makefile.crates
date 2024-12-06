@@ -8,6 +8,7 @@ CARGO_CRATES=	adler2-2.0.0 \
 		anstyle-query-1.1.0 \
 		anstyle-wincon-3.0.3 \
 		anyhow-1.0.89 \
+		arbitrary-1.4.1 \
 		autocfg-1.3.0 \
 		automod-1.0.14 \
 		base64-0.21.7 \
@@ -16,22 +17,23 @@ CARGO_CRATES=	adler2-2.0.0 \
 		bitflags-2.5.0 \
 		block-buffer-0.10.4 \
 		bstr-1.10.0 \
+		bumpalo-3.16.0 \
 		byteorder-1.5.0 \
 		bytes-1.7.1 \
 		bytesize-1.3.0 \
 		bzip2-0.4.4 \
 		bzip2-sys-0.1.11+1.0.8 \
-		cab-0.5.0 \
+		cab-0.6.0 \
 		camino-1.1.9 \
 		cargo-config2-0.1.26 \
 		cargo-options-0.7.4 \
 		cargo-platform-0.1.8 \
-		cargo-xwin-0.16.5 \
-		cargo-zigbuild-0.19.3 \
-		cargo_metadata-0.18.1 \
-		cbindgen-0.26.0 \
+		cargo-xwin-0.17.5 \
+		cargo-zigbuild-0.19.5 \
+		cargo_metadata-0.19.0 \
+		cbindgen-0.27.0 \
 		cc-1.1.21 \
-		cfb-0.9.0 \
+		cfb-0.10.0 \
 		cfg-if-1.0.0 \
 		charset-0.1.5 \
 		chumsky-0.9.3 \
@@ -61,11 +63,13 @@ CARGO_CRATES=	adler2-2.0.0 \
 		data-encoding-2.6.0 \
 		deranged-0.3.11 \
 		derivative-2.2.0 \
+		derive_arbitrary-1.4.1 \
 		dialoguer-0.11.0 \
 		diff-0.1.13 \
 		digest-0.10.7 \
 		dirs-5.0.1 \
 		dirs-sys-0.4.1 \
+		displaydoc-0.2.5 \
 		dissimilar-1.0.9 \
 		dunce-1.0.5 \
 		dyn-clone-1.0.17 \
@@ -76,7 +80,7 @@ CARGO_CRATES=	adler2-2.0.0 \
 		errno-0.3.9 \
 		expect-test-1.5.0 \
 		fastrand-2.1.0 \
-		fat-macho-0.4.8 \
+		fat-macho-0.4.9 \
 		filetime-0.2.23 \
 		flate2-1.0.33 \
 		fnv-1.0.7 \
@@ -84,22 +88,23 @@ CARGO_CRATES=	adler2-2.0.0 \
 		foreign-types-shared-0.1.1 \
 		form_urlencoded-1.2.1 \
 		fs-err-2.11.0 \
+		fs-err-3.0.0 \
+		fs4-0.11.1 \
 		futures-0.3.30 \
-		futures-channel-0.3.30 \
-		futures-core-0.3.30 \
+		futures-channel-0.3.31 \
+		futures-core-0.3.31 \
 		futures-executor-0.3.30 \
-		futures-io-0.3.30 \
-		futures-macro-0.3.30 \
-		futures-sink-0.3.30 \
-		futures-task-0.3.30 \
+		futures-io-0.3.31 \
+		futures-macro-0.3.31 \
+		futures-sink-0.3.31 \
+		futures-task-0.3.31 \
 		futures-timer-3.0.3 \
-		futures-util-0.3.30 \
+		futures-util-0.3.31 \
 		generic-array-0.14.7 \
 		getrandom-0.2.15 \
 		glob-0.3.1 \
 		globset-0.4.15 \
-		goblin-0.8.2 \
-		hashbrown-0.12.3 \
+		goblin-0.9.2 \
 		hashbrown-0.14.5 \
 		heck-0.4.1 \
 		heck-0.5.0 \
@@ -108,7 +113,6 @@ CARGO_CRATES=	adler2-2.0.0 \
 		humantime-serde-1.1.1 \
 		idna-0.5.0 \
 		ignore-0.4.23 \
-		indexmap-1.9.3 \
 		indexmap-2.5.0 \
 		indicatif-0.17.8 \
 		indoc-2.0.5 \
@@ -118,13 +122,15 @@ CARGO_CRATES=	adler2-2.0.0 \
 		itoa-1.0.11 \
 		keyring-2.3.3 \
 		lazy_static-1.4.0 \
-		lddtree-0.3.5 \
+		lddtree-0.3.7 \
 		libc-0.2.158 \
 		libmimalloc-sys-0.1.38 \
 		libredox-0.1.3 \
 		linux-keyutils-0.2.4 \
 		linux-raw-sys-0.4.14 \
+		litemap-0.7.3 \
 		lock_api-0.4.12 \
+		lockfree-object-pool-0.1.6 \
 		log-0.4.21 \
 		lzxd-0.2.5 \
 		mailparse-0.15.0 \
@@ -133,10 +139,10 @@ CARGO_CRATES=	adler2-2.0.0 \
 		mimalloc-0.1.42 \
 		mime-0.3.17 \
 		mime_guess-2.0.4 \
-		minijinja-1.0.21 \
+		minijinja-2.5.0 \
 		minimal-lexical-0.2.1 \
 		miniz_oxide-0.8.0 \
-		msi-0.7.0 \
+		msi-0.8.0 \
 		multipart-0.18.0 \
 		native-tls-0.2.12 \
 		nom-7.1.3 \
@@ -197,10 +203,10 @@ CARGO_CRATES=	adler2-2.0.0 \
 		rustc_version-0.4.1 \
 		rustflags-0.1.6 \
 		rustix-0.38.34 \
-		rustls-0.22.4 \
+		rustls-0.23.19 \
 		rustls-pemfile-2.1.3 \
-		rustls-pki-types-1.7.0 \
-		rustls-webpki-0.102.4 \
+		rustls-pki-types-1.10.0 \
+		rustls-webpki-0.102.8 \
 		rustversion-1.0.17 \
 		ryu-1.0.18 \
 		same-file-1.0.6 \
@@ -222,6 +228,7 @@ CARGO_CRATES=	adler2-2.0.0 \
 		sharded-slab-0.1.7 \
 		shell-words-1.1.0 \
 		shlex-1.3.0 \
+		simd-adler32-0.3.7 \
 		similar-2.5.0 \
 		slab-0.4.9 \
 		smallvec-1.13.2 \
@@ -230,12 +237,13 @@ CARGO_CRATES=	adler2-2.0.0 \
 		snapbox-macros-0.3.10 \
 		socks-0.3.4 \
 		spin-0.9.8 \
+		stable_deref_trait-1.2.0 \
 		stacker-0.1.15 \
 		static_assertions-1.1.0 \
 		strsim-0.11.1 \
 		subtle-2.5.0 \
 		syn-1.0.109 \
-		syn-2.0.76 \
+		syn-2.0.87 \
 		tar-0.4.42 \
 		target-lexicon-0.12.16 \
 		tempfile-3.11.0 \
@@ -243,14 +251,15 @@ CARGO_CRATES=	adler2-2.0.0 \
 		terminal_size-0.3.0 \
 		textwrap-0.16.1 \
 		thiserror-1.0.64 \
+		thiserror-2.0.3 \
 		thiserror-impl-1.0.64 \
+		thiserror-impl-2.0.3 \
 		thread_local-1.1.8 \
 		time-0.3.36 \
 		time-core-0.1.2 \
 		time-macros-0.2.18 \
 		tinyvec-1.7.0 \
 		tinyvec_macros-0.1.1 \
-		toml-0.5.11 \
 		toml-0.8.15 \
 		toml_datetime-0.6.6 \
 		toml_edit-0.21.1 \
@@ -273,7 +282,7 @@ CARGO_CRATES=	adler2-2.0.0 \
 		unicode-xid-0.2.6 \
 		unscanny-0.1.0 \
 		untrusted-0.9.0 \
-		ureq-2.9.7 \
+		ureq-2.11.0 \
 		url-2.5.2 \
 		urlencoding-2.1.3 \
 		utf8parse-0.2.2 \
@@ -286,8 +295,7 @@ CARGO_CRATES=	adler2-2.0.0 \
 		walkdir-2.5.0 \
 		wasi-0.11.0+wasi-snapshot-preview1 \
 		webpki-roots-0.26.2 \
-		which-5.0.0 \
-		which-6.0.3 \
+		which-7.0.0 \
 		wild-2.2.1 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
@@ -316,9 +324,13 @@ CARGO_CRATES=	adler2-2.0.0 \
 		winnow-0.6.13 \
 		winsafe-0.0.19 \
 		xattr-1.3.1 \
-		xwin-0.5.1 \
+		xwin-0.6.5 \
 		yansi-1.0.1 \
+		yoke-0.7.4 \
 		zerocopy-0.7.34 \
 		zerocopy-derive-0.7.34 \
+		zerofrom-0.1.4 \
 		zeroize-1.8.1 \
-		zip-0.6.6
+		zip-0.6.6 \
+		zip-2.1.6 \
+		zopfli-0.8.1
