@@ -1,7 +1,8 @@
 bin/nzbget
-%%ETCDIR%%.conf.sample
+@sample %%ETCDIR%%.conf.sample
 %%DATADIR%%/doc/COPYING
 %%DATADIR%%/doc/ChangeLog.md
+%%DATADIR%%/nzbget.conf
 %%DATADIR%%/webui/config.js
 %%DATADIR%%/webui/dark-theme.css
 %%DATADIR%%/webui/downloads.js
