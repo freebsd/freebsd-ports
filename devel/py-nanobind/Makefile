@@ -1,6 +1,6 @@
 PORTNAME=	nanobind
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.2.0
+DISTVERSION=	2.4.0
 CATEGORIES=	devel python
 #MASTER_SITES=	PYPI # no tarball
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -34,5 +34,7 @@ pre-test: # build test extensions
 	@cd ${WRKSRC} && \
 		${SETENV} ${MAKE_ENV} cmake . && \
 		${SETENV} ${MAKE_ENV} ${MAKE} -j${MAKE_JOBS_NUMBER}
+
+# tests fail to compile: Free-threaded extensions require a free-threaded version of Python
 
 .include <bsd.port.mk>
