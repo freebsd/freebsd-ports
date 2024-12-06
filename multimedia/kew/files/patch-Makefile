@@ -1,3 +1,5 @@
+- workaround for https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=283155
+
 --- Makefile.orig	2024-12-06 01:44:59 UTC
 +++ Makefile
 @@ -58,7 +58,7 @@ COMMONFLAGS += -fstack-protector-strong -Wformat -Werr
