@@ -1,13 +1,13 @@
 PORTNAME=	encfs
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.9.5
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	filesystems
 PKGNAMEPREFIX=	fusefs-
 
 MAINTAINER=	fuz@FreeBSD.org
 COMMENT=	Encrypted pass-through FUSE filesystem
-WWW=		http://www.arg0.net/encfs
+WWW=		https://vgough.github.io/encfs/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
