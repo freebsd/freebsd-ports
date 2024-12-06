@@ -1,3 +1,260 @@
+  <vuln vid="7f3a302b-b3e8-11ef-b680-4ccc6adda413">
+    <topic>gstreamer1-plugins-vorbis -- Stack buffer-overflow in Vorbis decoder</topic>
+    <affects>
+      <package>
+	<name>gstreamer1-plugins-vorbis</name>
+	<range><lt>1.24.10</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The GStreamer Security Center reports:</p>
+	<blockquote cite="https://gstreamer.freedesktop.org/security/">
+	  <p>Stack buffer-overflow in Vorbis decoder that can cause crashes for
+	    certain input files.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2024-47538</cvename>
+      <url>https://gstreamer.freedesktop.org/security/sa-2024-0022.html</url>
+    </references>
+    <dates>
+      <discovery>2024-12-03</discovery>
+      <entry>2024-12-06</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="7d1b4e5d-b3e8-11ef-b680-4ccc6adda413">
+    <topic>gstreamer1-plugins-opus -- Stack buffer-overflow in Opus decoder</topic>
+    <affects>
+      <package>
+	<name>gstreamer1-plugins-opus</name>
+	<range><lt>1.24.10</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The GStreamer Security Center reports:</p>
+	<blockquote cite="https://gstreamer.freedesktop.org/security/">
+	  <p>Stack buffer-overflow in Opus decoder that can cause crashes for
+	    certain input files.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2024-47607</cvename>
+      <url>https://gstreamer.freedesktop.org/security/sa-2024-0024.html</url>
+    </references>
+    <dates>
+      <discovery>2024-12-03</discovery>
+      <entry>2024-12-06</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="7b34ddf7-b3e8-11ef-b680-4ccc6adda413">
+    <topic>gstreamer1-plugins-ogg -- Out-of-bounds write in Ogg demuxer</topic>
+    <affects>
+      <package>
+	<name>gstreamer1-plugins-ogg</name>
+	<range><lt>1.24.10</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The GStreamer Security Center reports:</p>
+	<blockquote cite="https://gstreamer.freedesktop.org/security/">
+	  <p>An out-of-bounds write in the Ogg demuxer that can cause crashes
+	    for certain input files.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2024-47615</cvename>
+      <url>https://gstreamer.freedesktop.org/security/sa-2024-0026.html</url>
+    </references>
+    <dates>
+      <discovery>2024-12-03</discovery>
+      <entry>2024-12-06</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="7945c543-b3e8-11ef-b680-4ccc6adda413">
+    <topic>gstreamer1-plugins-jpeg -- NULL-pointer dereferences in JPEG decoder</topic>
+    <affects>
+      <package>
+	<name>gstreamer1-plugins-jpeg</name>
+	<range><lt>1.24.10</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The GStreamer Security Center reports:</p>
+	<blockquote cite="https://gstreamer.freedesktop.org/security/">
+	  <p>Insufficient error handling in the JPEG decoder that can lead to
+	    NULL-pointer dereferences, and that can cause crashes for certain
+	    input files.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2024-47599</cvename>
+      <url>https://gstreamer.freedesktop.org/security/sa-2024-0016.html</url>
+    </references>
+    <dates>
+      <discovery>2024-12-03</discovery>
+      <entry>2024-12-06</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="772d8625-b3e8-11ef-b680-4ccc6adda413">
+    <topic>gstreamer1-plugins-gdkpixbuf -- NULL-pointer dereference</topic>
+    <affects>
+      <package>
+	<name>gstreamer1-plugins-gdkpixbuf</name>
+	<range><lt>1.24.10</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The GStreamer Security Center reports:</p>
+	<blockquote cite="https://gstreamer.freedesktop.org/security/">
+	  <p>A NULL-pointer dereference in the gdk-pixbuf decoder that can
+	    cause crashes for certain input files.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2024-47613</cvename>
+      <url>https://gstreamer.freedesktop.org/security/sa-2024-0025.html</url>
+    </references>
+    <dates>
+      <discovery>2024-12-03</discovery>
+      <entry>2024-12-06</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="750ab972-b3e8-11ef-b680-4ccc6adda413">
+    <topic>gstreamer1-plugins-good -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>gstreamer1-plugins-good</name>
+	<range><lt>1.24.10</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The GStreamer Security Center reports:</p>
+	<blockquote cite="https://gstreamer.freedesktop.org/security/">
+	  <p>20 security bugs.</p>
+	  <ul>
+	    <li>CVE-2024-47537: Integer overflow in MP4/MOV sample table parser leading to out-of-bounds writes</li>
+	    <li>CVE-2024-47598: MP4/MOV sample table parser out-of-bounds read</li>
+	    <li>CVE-2024-47539: MP4/MOV Closed Caption handling out-of-bounds write</li>
+	    <li>CVE-2024-47543: MP4/MOV demuxer out-of-bounds read</li>
+	    <li>CVE-2024-47545: Integer overflow in MP4/MOV demuxer that can result in out-of-bounds read</li>
+	    <li>CVE-2024-47544: NULL-pointer dereferences in MP4/MOV demuxer CENC handling</li>
+	    <li>CVE-2024-47597: Out-of-bounds reads in MP4/MOV demuxer sample table parser</li>
+	    <li>CVE-2024-47546: Integer underflow in MP4/MOV demuxer that can lead to out-of-bounds reads</li>
+	    <li>CVE-2024-47606: Integer overflows in MP4/MOV demuxer and memory allocator that can lead to out-of-bounds writes</li>
+	    <li>CVE-2024-47596: Integer underflow in MP4/MOV demuxer that can lead to out-of-bounds reads</li>
+	    <li>CVE-2024-47540: Usage of uninitialized stack memory in Matroska/WebM demuxer</li>
+	    <li>CVE-2024-47602: NULL-pointer dereferences and out-of-bounds reads in Matroska/WebM demuxer</li>
+	    <li>CVE-2024-47601: NULL-pointer dereference in Matroska/WebM demuxer</li>
+	    <li>CVE-2024-47603: NULL-pointer dereference in Matroska/WebM demuxer</li>
+	    <li>CVE-2024-47775: Out-of-bounds read in WAV parser</li>
+	    <li>CVE-2024-47776: Out-of-bounds read in WAV parser</li>
+	    <li>CVE-2024-47777: Out-of-bounds read in WAV parser</li>
+	    <li>CVE-2024-47778: Out-of-bounds read in WAV parser</li>
+	    <li>CVE-2024-47774: Integer overflow in AVI subtitle parser that leads to out-of-bounds reads</li>
+	    <li>CVE-2024-47834: Use-after-free in Matroska demuxer</li>
+	  </ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2024-47537</cvename>
+      <url>https://gstreamer.freedesktop.org/security/sa-2024-0005.html</url>
+      <cvename>CVE-2024-47598</cvename>
+      <url>https://gstreamer.freedesktop.org/security/sa-2024-0006.html</url>
+      <cvename>CVE-2024-47539</cvename>
+      <url>https://gstreamer.freedesktop.org/security/sa-2024-0007.html</url>
+      <cvename>CVE-2024-47543</cvename>
+      <url>https://gstreamer.freedesktop.org/security/sa-2024-0009.html</url>
+      <cvename>CVE-2024-47545</cvename>
+      <url>https://gstreamer.freedesktop.org/security/sa-2024-0010.html</url>
+      <cvename>CVE-2024-47544</cvename>
+      <url>https://gstreamer.freedesktop.org/security/sa-2024-0011.html</url>
+      <cvename>CVE-2024-47597</cvename>
+      <url>https://gstreamer.freedesktop.org/security/sa-2024-0012.html</url>
+      <cvename>CVE-2024-47546</cvename>
+      <url>https://gstreamer.freedesktop.org/security/sa-2024-0013.html</url>
+      <cvename>CVE-2024-47606</cvename>
+      <url>https://gstreamer.freedesktop.org/security/sa-2024-0014.html</url>
+      <cvename>CVE-2024-47596</cvename>
+      <url>https://gstreamer.freedesktop.org/security/sa-2024-0015.html</url>
+      <cvename>CVE-2024-47540</cvename>
+      <url>https://gstreamer.freedesktop.org/security/sa-2024-0017.html</url>
+      <cvename>CVE-2024-47602</cvename>
+      <url>https://gstreamer.freedesktop.org/security/sa-2024-0019.html</url>
+      <cvename>CVE-2024-47601</cvename>
+      <url>https://gstreamer.freedesktop.org/security/sa-2024-0020.html</url>
+      <cvename>CVE-2024-47603</cvename>
+      <url>https://gstreamer.freedesktop.org/security/sa-2024-0021.html</url>
+      <cvename>CVE-2024-47775</cvename>
+      <url>https://gstreamer.freedesktop.org/security/sa-2024-0027.html</url>
+      <cvename>CVE-2024-47776</cvename>
+      <url>https://gstreamer.freedesktop.org/security/sa-2024-0027.html</url>
+      <cvename>CVE-2024-47777</cvename>
+      <url>https://gstreamer.freedesktop.org/security/sa-2024-0027.html</url>
+      <cvename>CVE-2024-47778</cvename>
+      <url>https://gstreamer.freedesktop.org/security/sa-2024-0027.html</url>
+      <cvename>CVE-2024-47835</cvename>
+      <url>https://gstreamer.freedesktop.org/security/sa-2024-0028.html</url>
+      <cvename>CVE-2024-47834</cvename>
+      <url>https://gstreamer.freedesktop.org/security/sa-2024-0030.html</url>
+    </references>
+    <dates>
+      <discovery>2024-12-03</discovery>
+      <entry>2024-12-06</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="7256fae8-b3e8-11ef-b680-4ccc6adda413">
+    <topic>gstreamer1-plugins -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>gstreamer1-plugins</name>
+	<range><lt>1.24.10</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The GStreamer Security Center reports:</p>
+	<blockquote cite="https://gstreamer.freedesktop.org/security/">
+	  <p>3 security bugs.</p>
+	  <ul>
+	    <li>CVE-2024-47542: ID3v2 parser out-of-bounds read and NULL-pointer dereference</li>
+	    <li>CVE-2024-47600: Out-of-bounds read in gst-discoverer-1.0 commandline tool</li>
+	    <li>CVE-2024-47541: Out-of-bounds write in SSA subtitle parser</li>
+	  </ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2024-47542</cvename>
+      <url>https://gstreamer.freedesktop.org/security/sa-2024-0008.html</url>
+      <cvename>CVE-2024-47600</cvename>
+      <url>https://gstreamer.freedesktop.org/security/sa-2024-0018.html</url>
+      <cvename>CVE-2024-47541</cvename>
+      <url>https://gstreamer.freedesktop.org/security/sa-2024-0023.html</url>
+    </references>
+    <dates>
+      <discovery>2024-12-03</discovery>
+      <entry>2024-12-06</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="f0d33375-b0e0-11ef-a724-b42e991fc52e">
     <topic>zabbix -- SQL injection in user.get API</topic>
     <affects>
