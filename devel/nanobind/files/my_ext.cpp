@@ -2,7 +2,7 @@
 
 int add(int a, int b) { return a + b; }
 
-NB_MODULE(myext, m) {
+NB_MODULE(my_ext, m) {
     m.def("add", &add);
 }
 
