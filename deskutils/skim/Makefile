@@ -1,7 +1,6 @@
 PORTNAME=	skim
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.10.4
-PORTREVISION=	16
+DISTVERSION=	0.15.5
 CATEGORIES=	deskutils
 PKGNAMESUFFIX=	-fuzzy-finder
 
@@ -17,109 +16,153 @@ USES=		cargo
 USE_GITHUB=	yes
 GH_ACCOUNT=	lotabout
 
-CARGO_CRATES=	aho-corasick-0.7.19 \
+CARGO_CRATES=	aho-corasick-1.1.3 \
+		android-tzdata-0.1.1 \
 		android_system_properties-0.1.5 \
-		arrayvec-0.7.2 \
+		anstream-0.6.18 \
+		anstyle-1.0.10 \
+		anstyle-parse-0.2.6 \
+		anstyle-query-1.1.2 \
+		anstyle-wincon-3.0.6 \
+		arrayvec-0.7.6 \
 		atty-0.2.14 \
-		autocfg-1.1.0 \
+		autocfg-1.4.0 \
 		beef-0.5.2 \
 		bitflags-1.3.2 \
-		bumpalo-3.11.1 \
-		cc-1.0.73 \
+		bitflags-2.6.0 \
+		bstr-1.11.0 \
+		bumpalo-3.16.0 \
+		byteorder-1.5.0 \
+		cc-1.2.1 \
 		cfg-if-1.0.0 \
-		chrono-0.4.22 \
-		clap-3.2.22 \
-		clap_lex-0.2.4 \
-		codespan-reporting-0.11.1 \
-		core-foundation-sys-0.8.3 \
-		crossbeam-0.8.2 \
-		crossbeam-channel-0.5.6 \
-		crossbeam-deque-0.8.2 \
-		crossbeam-epoch-0.9.11 \
-		crossbeam-queue-0.3.6 \
-		crossbeam-utils-0.8.12 \
-		cxx-1.0.80 \
-		cxx-build-1.0.80 \
-		cxxbridge-flags-1.0.80 \
-		cxxbridge-macro-1.0.80 \
-		darling-0.14.1 \
-		darling_core-0.14.1 \
-		darling_macro-0.14.1 \
+		cfg_aliases-0.2.1 \
+		chrono-0.4.38 \
+		clap-4.5.21 \
+		clap_builder-4.5.21 \
+		clap_complete-4.5.38 \
+		clap_complete_fig-4.5.2 \
+		clap_complete_nushell-4.5.4 \
+		clap_derive-4.5.18 \
+		clap_lex-0.7.3 \
+		clap_mangen-0.2.24 \
+		colorchoice-1.0.3 \
+		core-foundation-sys-0.8.7 \
+		crossbeam-0.8.4 \
+		crossbeam-channel-0.5.13 \
+		crossbeam-deque-0.8.5 \
+		crossbeam-epoch-0.9.18 \
+		crossbeam-queue-0.3.11 \
+		crossbeam-utils-0.8.20 \
+		darling-0.20.10 \
+		darling_core-0.20.10 \
+		darling_macro-0.20.10 \
 		defer-drop-1.3.0 \
-		derive_builder-0.11.2 \
-		derive_builder_core-0.11.2 \
-		derive_builder_macro-0.11.2 \
+		deranged-0.3.11 \
+		derive_builder-0.20.2 \
+		derive_builder_core-0.20.2 \
+		derive_builder_macro-0.20.2 \
 		dirs-next-2.0.0 \
 		dirs-sys-next-0.1.2 \
-		either-1.8.0 \
-		env_logger-0.9.1 \
+		either-1.13.0 \
+		env_filter-0.1.2 \
+		env_logger-0.11.5 \
+		equivalent-1.0.1 \
+		errno-0.3.9 \
+		fastrand-2.2.0 \
 		fnv-1.0.7 \
 		fuzzy-matcher-0.3.7 \
-		getrandom-0.2.8 \
-		hashbrown-0.12.3 \
+		getrandom-0.2.15 \
+		hashbrown-0.15.2 \
+		heck-0.5.0 \
 		hermit-abi-0.1.19 \
+		home-0.5.9 \
 		humantime-2.1.0 \
-		iana-time-zone-0.1.51 \
-		iana-time-zone-haiku-0.1.1 \
+		iana-time-zone-0.1.61 \
+		iana-time-zone-haiku-0.1.2 \
 		ident_case-1.0.1 \
-		indexmap-1.9.1 \
-		js-sys-0.3.60 \
-		lazy_static-1.4.0 \
-		libc-0.2.135 \
-		link-cplusplus-1.0.7 \
-		log-0.4.17 \
-		memchr-2.5.0 \
-		memoffset-0.6.5 \
-		nix-0.24.2 \
-		nix-0.25.0 \
-		num-integer-0.1.45 \
-		num-traits-0.2.15 \
-		num_cpus-1.13.1 \
-		num_threads-0.1.6 \
-		once_cell-1.15.0 \
-		os_str_bytes-6.3.0 \
-		pin-utils-0.1.0 \
-		proc-macro2-1.0.47 \
-		quote-1.0.21 \
-		rayon-1.5.3 \
-		rayon-core-1.9.3 \
-		redox_syscall-0.2.16 \
-		redox_users-0.4.3 \
-		regex-1.6.0 \
-		regex-syntax-0.6.27 \
-		rustversion-1.0.9 \
-		scopeguard-1.1.0 \
-		scratch-1.0.2 \
-		shlex-1.1.0 \
-		strsim-0.10.0 \
-		syn-1.0.103 \
+		indexmap-2.7.0 \
+		is_terminal_polyfill-1.70.1 \
+		js-sys-0.3.72 \
+		lazy_static-1.5.0 \
+		libc-0.2.165 \
+		libredox-0.1.3 \
+		linux-raw-sys-0.4.14 \
+		log-0.4.22 \
+		memchr-2.7.4 \
+		nix-0.24.3 \
+		nix-0.29.0 \
+		num-conv-0.1.0 \
+		num-traits-0.2.19 \
+		once_cell-1.20.2 \
+		powerfmt-0.2.0 \
+		ppv-lite86-0.2.20 \
+		proc-macro2-1.0.92 \
+		quote-1.0.37 \
+		rand-0.8.5 \
+		rand_chacha-0.3.1 \
+		rand_core-0.6.4 \
+		rayon-1.10.0 \
+		rayon-core-1.12.1 \
+		redox_users-0.4.6 \
+		regex-1.11.1 \
+		regex-automata-0.4.9 \
+		regex-syntax-0.8.5 \
+		roff-0.2.2 \
+		rustix-0.38.41 \
+		rustversion-1.0.18 \
+		serde-1.0.215 \
+		serde_derive-1.0.215 \
+		shell-quote-0.7.1 \
+		shlex-1.3.0 \
+		strsim-0.11.1 \
+		syn-2.0.89 \
+		tempfile-3.14.0 \
 		term-0.7.0 \
-		termcolor-1.1.3 \
-		textwrap-0.15.1 \
-		thiserror-1.0.37 \
-		thiserror-impl-1.0.37 \
-		thread_local-1.1.4 \
-		time-0.1.44 \
-		time-0.3.15 \
+		thiserror-1.0.69 \
+		thiserror-impl-1.0.69 \
+		thread_local-1.1.8 \
+		time-0.3.36 \
+		time-core-0.1.2 \
 		timer-0.2.0 \
 		tuikit-0.5.0 \
-		unicode-ident-1.0.5 \
-		unicode-width-0.1.10 \
-		utf8parse-0.2.0 \
-		vte-0.11.0 \
-		vte_generate_state_changes-0.1.1 \
-		wasi-0.10.0+wasi-snapshot-preview1 \
+		unicode-ident-1.0.14 \
+		unicode-width-0.1.14 \
+		unicode-width-0.2.0 \
+		utf8parse-0.2.2 \
+		vte-0.13.0 \
+		vte_generate_state_changes-0.1.2 \
 		wasi-0.11.0+wasi-snapshot-preview1 \
-		wasm-bindgen-0.2.83 \
-		wasm-bindgen-backend-0.2.83 \
-		wasm-bindgen-macro-0.2.83 \
-		wasm-bindgen-macro-support-0.2.83 \
-		wasm-bindgen-shared-0.2.83 \
+		wasm-bindgen-0.2.95 \
+		wasm-bindgen-backend-0.2.95 \
+		wasm-bindgen-macro-0.2.95 \
+		wasm-bindgen-macro-support-0.2.95 \
+		wasm-bindgen-shared-0.2.95 \
+		which-7.0.0 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
-		winapi-util-0.1.5 \
-		winapi-x86_64-pc-windows-gnu-0.4.0
+		winapi-x86_64-pc-windows-gnu-0.4.0 \
+		windows-core-0.52.0 \
+		windows-sys-0.52.0 \
+		windows-sys-0.59.0 \
+		windows-targets-0.52.6 \
+		windows_aarch64_gnullvm-0.52.6 \
+		windows_aarch64_msvc-0.52.6 \
+		windows_i686_gnu-0.52.6 \
+		windows_i686_gnullvm-0.52.6 \
+		windows_i686_msvc-0.52.6 \
+		windows_x86_64_gnu-0.52.6 \
+		windows_x86_64_gnullvm-0.52.6 \
+		windows_x86_64_msvc-0.52.6 \
+		winsafe-0.0.19 \
+		zerocopy-0.7.35 \
+		zerocopy-derive-0.7.35
 
 PLIST_FILES=	bin/sk
+
+do-install:
+	# binaries (workaround for error: found a virtual manifest at `xx` instead of a package manifest)
+	${INSTALL_PROGRAM} \
+		${WRKDIR}/target/release/sk \
+		${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>
