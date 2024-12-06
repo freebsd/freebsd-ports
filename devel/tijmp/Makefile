@@ -6,7 +6,7 @@ MASTER_SITES=	https://www.khelekore.org/jmp/tijmp/ \
 
 MAINTAINER=	ronald@FreeBSD.org
 COMMENT=	Tools Interface Java Memory Profiler
-WWW=		https://khelekore.org/jmp/tijmp/
+WWW=		https://www.khelekore.org/jmp/tijmp/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
