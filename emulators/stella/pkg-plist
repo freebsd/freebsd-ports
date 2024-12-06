@@ -3,7 +3,6 @@ bin/stella
 %%PORTDOCS%%%%DOCSDIR%%/basic_settings.png
 %%PORTDOCS%%%%DOCSDIR%%/commandsmenu_r77.png
 %%PORTDOCS%%%%DOCSDIR%%/debugger.html
-%%PORTDOCS%%%%DOCSDIR%%/graphics/Stella_icon.png
 %%PORTDOCS%%%%DOCSDIR%%/graphics/cheat.png
 %%PORTDOCS%%%%DOCSDIR%%/graphics/chucky_cheese.png
 %%PORTDOCS%%%%DOCSDIR%%/graphics/circuit.png
@@ -45,6 +44,7 @@ bin/stella
 %%PORTDOCS%%%%DOCSDIR%%/graphics/open_help.png
 %%PORTDOCS%%%%DOCSDIR%%/graphics/options.png
 %%PORTDOCS%%%%DOCSDIR%%/graphics/options_audio.png
+%%PORTDOCS%%%%DOCSDIR%%/graphics/options_bezels.png
 %%PORTDOCS%%%%DOCSDIR%%/graphics/options_developer.png
 %%PORTDOCS%%%%DOCSDIR%%/graphics/options_developer_debugger.png
 %%PORTDOCS%%%%DOCSDIR%%/graphics/options_developer_emulation.png
@@ -76,11 +76,11 @@ bin/stella
 %%PORTDOCS%%%%DOCSDIR%%/graphics/rominfo_1x_small.png
 %%PORTDOCS%%%%DOCSDIR%%/graphics/rominfo_2x_small.png
 %%PORTDOCS%%%%DOCSDIR%%/graphics/secret_quest.png
-%%PORTDOCS%%%%DOCSDIR%%/graphics/show_all.png
+%%PORTDOCS%%%%DOCSDIR%%/graphics/select_random_rom.png
 %%PORTDOCS%%%%DOCSDIR%%/graphics/show_current_dir.png
-%%PORTDOCS%%%%DOCSDIR%%/graphics/show_roms.png
 %%PORTDOCS%%%%DOCSDIR%%/graphics/show_sub_dirs.png
 %%PORTDOCS%%%%DOCSDIR%%/graphics/space_invaders.png
+%%PORTDOCS%%%%DOCSDIR%%/graphics/stella_icon.png
 %%PORTDOCS%%%%DOCSDIR%%/graphics/timemachine.png
 %%PORTDOCS%%%%DOCSDIR%%/index.html
 %%PORTDOCS%%%%DOCSDIR%%/index_r77.html
