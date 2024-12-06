@@ -22,8 +22,9 @@ WWW=		https://github.com/mongodb-js/mongosh/
 
 LICENSE=	APACHE20
 
-BROKEN_aarch64=	fails to compile: nx/src/native/index.js:147 throw new Error(`Unsupported architecture on FreeBSD: ${arch}`)
-BROKEN_i386=	fails to compile: nx/src/native/index.js:147 throw new Error(`Unsupported architecture on FreeBSD: ${arch}`)
+BROKEN_aarch64=	fails to compile: nx/src/native/index.js:147 Error: Unsupported architecture on FreeBSD: arm64
+BROKEN_armv7=	fails to compile: nx/src/native/index.js:147 Error: Unsupported architecture on FreeBSD: arm
+BROKEN_i386=	fails to compile: nx/src/native/index.js:147 Error: Unsupported architecture on FreeBSD: ia32
 
 FETCH_DEPENDS=	npm${NODEJS_SUFFIX}>0:www/npm${NODEJS_SUFFIX}
 BUILD_DEPENDS=	bash>0:shells/bash \
