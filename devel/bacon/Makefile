@@ -1,12 +1,12 @@
 PORTNAME=	bacon
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.3.0
-PORTREVISION=	1
+DISTVERSION=	3.5.0
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Background rust code check
-WWW=		https://dystroy.org/bacon/
+WWW=		https://dystroy.org/bacon/ \
+		https://github.com/Canop/bacon
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -37,7 +37,7 @@ CARGO_CRATES=	adler2-2.0.0 \
 		bumpalo-3.16.0 \
 		camino-1.1.9 \
 		cargo-platform-0.1.8 \
-		cargo_metadata-0.18.1 \
+		cargo_metadata-0.19.0 \
 		cc-1.1.33 \
 		cfg-if-1.0.0 \
 		cfg_aliases-0.2.1 \
@@ -183,7 +183,7 @@ CARGO_CRATES=	adler2-2.0.0 \
 		syn-1.0.109 \
 		syn-2.0.86 \
 		tempfile-3.13.0 \
-		termimad-0.31.0 \
+		termimad-0.31.1 \
 		terminal-light-1.7.0 \
 		thiserror-1.0.66 \
 		thiserror-impl-1.0.66 \
