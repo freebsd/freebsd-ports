@@ -1,0 +1,9 @@
+The Hidden Lake is an anonymous network built on a micro-service
+architecture. At the heart of HL is the core - HLS (service), which
+generates anonymizing traffic and combines many other services (for
+example, HLT and HLM). Thus, Hidden Lake is not a whole and monolithic
+solution, but a composition of several combined services. The HL is a
+friend-to-friend (F2F) network, which means building trusted
+communications. Due to this approach, members of the HL network can
+avoid spam in their direction, as well as possible attacks if
+vulnerabilities are found in the code.
