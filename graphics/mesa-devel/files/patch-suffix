@@ -132,17 +132,17 @@ Library selection is handled by libglvnd and/or libmap.conf.
    gl_lib_version = '0.0.0'
    files_libglx += files(
      'g_glxglvnddispatchfuncs.c',
---- src/intel/vulkan/meson.build.orig	2021-02-06 23:04:35 UTC
+--- src/intel/vulkan/meson.build.orig	2024-12-06 19:52:50 UTC
 +++ src/intel/vulkan/meson.build
-@@ -170,7 +170,7 @@ libanv_common = static_library(
+@@ -264,7 +264,7 @@ libvulkan_intel = shared_library(
  )
  
  libvulkan_intel = shared_library(
 -  'vulkan_intel',
 +  'vulkan_intel' + get_option('egl-lib-suffix'),
-   [files('anv_gem.c'), anv_entrypoints[0]],
+   [files('anv_gem.c'), anv_entrypoints[0], bvh_spv],
    include_directories : [
-     inc_include, inc_src, inc_mapi, inc_mesa, inc_gallium, inc_intel, inc_compiler, inc_vulkan_wsi,
+     inc_include, inc_src, inc_intel,
 --- src/intel/vulkan_hasvk/meson.build.orig	2022-09-03 20:27:51 UTC
 +++ src/intel/vulkan_hasvk/meson.build
 @@ -181,7 +181,7 @@ libvulkan_intel_hasvk = shared_library(
