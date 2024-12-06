@@ -1,6 +1,6 @@
 PORTNAME=	snitch
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.2.5
+DISTVERSION=	1.3.1
 CATEGORIES=	devel
 PKGNAMESUFFIX=	-testing
 
@@ -11,7 +11,9 @@ WWW=		https://github.com/cschreib/snitch
 LICENSE=	BSL
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cmake compiler:c++20-lang
+TEST_DEPENDS=	doctest>0:devel/doctest
+
+USES=		cmake:testing compiler:c++20-lang
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
@@ -31,5 +33,7 @@ CMAKE_ON=	SNITCH_HEADER_ONLY
 NO_ARCH=	yes
 CONFLICTS_INSTALL=	snitch-testing # see https://github.com/cschreib/snitch/issues/125
 .endif
+
+CMAKE_TESTING_ON=	SNITCH_DO_TEST # tests fail to find doctest because cmake attempts to fetch it, see https://github.com/snitch-org/snitch/issues/201
 
 .include <bsd.port.mk>

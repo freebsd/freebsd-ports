@@ -1,4 +1,5 @@
 include/snitch/snitch.hpp
+include/snitch/snitch_any.hpp
 include/snitch/snitch_append.hpp
 include/snitch/snitch_capture.hpp
 include/snitch/snitch_cli.hpp
@@ -20,6 +21,7 @@ include/snitch/snitch_macros_reporter.hpp
 include/snitch/snitch_macros_test_case.hpp
 include/snitch/snitch_macros_utility.hpp
 include/snitch/snitch_macros_warnings.hpp
+include/snitch/snitch_main.hpp
 include/snitch/snitch_matcher.hpp
 include/snitch/snitch_registry.hpp
 include/snitch/snitch_reporter_catch2_xml.hpp
@@ -29,6 +31,8 @@ include/snitch/snitch_section.hpp
 include/snitch/snitch_string.hpp
 include/snitch/snitch_string_utility.hpp
 include/snitch/snitch_test_data.hpp
+include/snitch/snitch_time.hpp
+include/snitch/snitch_type_id.hpp
 include/snitch/snitch_type_name.hpp
 include/snitch/snitch_vector.hpp
 lib/cmake/snitch/snitch-config.cmake
