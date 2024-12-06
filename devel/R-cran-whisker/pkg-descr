@@ -1,1 +1,17 @@
-Implements 'Mustache' logicless templating.
+Whisker is a {{Mustache}} implementation in R confirming to the Mustache
+specification. Mustache is a logicless templating language, meaning that no
+programming source code can be used in your templates. This may seem very
+limited, but Mustache is nonetheless powerful and has the advantage of being
+able to be used unaltered in many programming languages. It makes it very easy
+to write a web application in R using Mustache templates which could also be
+re-used for client-side rendering with "Mustache.js".
+
+Mustache (and therefore whisker) takes a simple, but different, approach to
+templating compared to most templating engines. Most templating libraries, such
+as Sweave, knitr and brew, allow the user to mix programming code and text
+throughout the template. This is powerful, but ties your template directly to a
+programming language and makes it difficult to seperate programming code from
+templating code.
+
+Whisker, on the other hand, takes a Mustache template and uses the variables of
+the current environment (or the supplied list) to fill in the variables.
