@@ -1,2 +1,2 @@
-Parses .eventlog files emitted by GHC 6.12.1 and later.  Includes the
-ghc-events-show tool to dump and event log file as text.
+Parses .eventlog files emitted by GHC 8.0.2 and later. Includes the ghc-events
+tool permitting, in particular, to dump an event log file as text.
