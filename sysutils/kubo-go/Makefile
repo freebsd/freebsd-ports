@@ -1,7 +1,7 @@
 PORTNAME=	kubo
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.29.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	sysutils
 PKGNAMESUFFIX=	-go
 
@@ -21,7 +21,7 @@ CONFLICTS_INSTALL?=	ipfs-go-*
 CPE_VENDOR=	protocol
 
 GO_MODULE=	github.com/ipfs/kubo
-GO_TARGET=	./cmd/ipfs:kubo
+GO_TARGET=	./cmd/ipfs:kubo-go
 
 USE_RC_SUBR=	${PORTNAME}${PKGNAMESUFFIX}
 
