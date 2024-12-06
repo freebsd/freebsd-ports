@@ -1,5 +1,5 @@
 PORTNAME=	cardano-node
-PORTVERSION=	10.1.2
+PORTVERSION=	10.1.3
 CATEGORIES=	net-p2p
 MASTER_SITES=	https://chap.intersectmbo.org/package/:chap
 
@@ -26,7 +26,7 @@ GH_ACCOUNT=	IntersectMBO
 
 GH_TUPLE=	IntersectMBO:libsodium:${LIBSODIUM_HASH}:sodium
 
-CARDANO_NODE_HASH=	efd560070aaf042d1eb4680ae37fc607c7742319
+CARDANO_NODE_HASH=	36871ba0cd3e86a5dbcfd6878cdb7168bb4e56a1
 LIBSODIUM_HASH=		dbb48cce5429cb6585c9034f002568964f1ce567
 
 USE_RC_SUBR=		cardano_node
@@ -84,7 +84,7 @@ USE_CABAL=	Cabal-3.12.1.0 \
 		base64-bytestring-type-1.0.1_21 \
 		basement-0.0.16 \
 		bech32-1.1.7 \
-		bifunctors-5.6.2 \
+		bifunctors-5.6.2_1 \
 		bimap-0.5.0 \
 		bin-0.1.4_1 \
 		binary-orphans-1.0.5 \
@@ -123,7 +123,7 @@ USE_CABAL=	Cabal-3.12.1.0 \
 		cardano-ledger-binary-1.4.0.0:chap \
 		cardano-ledger-byron-1.0.1.0:chap \
 		cardano-ledger-byron-test-1.5.1.1:chap \
-		cardano-ledger-conway-1.17.2.0:chap \
+		cardano-ledger-conway-1.17.3.0:chap \
 		cardano-ledger-conway-test-1.3.0.0:chap \
 		cardano-ledger-core-1.15.0.0:chap \
 		cardano-ledger-mary-1.7.0.1:chap \
@@ -213,7 +213,7 @@ USE_CABAL=	Cabal-3.12.1.0 \
 		foldl-1.4.17 \
 		formatting-7.2.0 \
 		foundation-0.0.30 \
-		free-5.2_5 \
+		free-5.2_6 \
 		fs-api-0.3.0.0 \
 		fs-sim-0.3.0.0 \
 		generic-data-1.1.0.0_2 \
@@ -426,7 +426,7 @@ USE_CABAL=	Cabal-3.12.1.0 \
 		tasty-1.5_2 \
 		tasty-expected-failure-0.12.3 \
 		tasty-golden-2.3.5 \
-		tasty-hedgehog-1.4.0.2_5 \
+		tasty-hedgehog-1.4.0.2_6 \
 		tasty-hunit-0.10.2 \
 		tasty-quickcheck-0.11 \
 		tasty-rerun-1.1.19_3 \
@@ -487,7 +487,7 @@ USE_CABAL=	Cabal-3.12.1.0 \
 		vector-algorithms-0.9.0.2_1 \
 		vector-binary-instances-0.2.5.2_5 \
 		vector-map-1.1.0.0:chap \
-		vector-stream-0.1.0.1_2 \
+		vector-stream-0.1.0.1_3 \
 		vector-th-unbox-0.2.2_6 \
 		void-0.7.3 \
 		wai-3.2.4 \
@@ -501,7 +501,7 @@ USE_CABAL=	Cabal-3.12.1.0 \
 		wl-pprint-text-1.2.0.2_3 \
 		word8-0.1.3 \
 		yaml-0.11.11.2_2 \
-		zlib-0.7.1.0_1 \
+		zlib-0.7.1.0_2 \
 		zlib-bindings-0.1.1.5_2
 
 CABAL_PROJECT=		append
