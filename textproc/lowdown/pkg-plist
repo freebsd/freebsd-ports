@@ -41,3 +41,4 @@ share/man/man3/lowdown_term_rndr.3.gz
 share/man/man3/lowdown_tree_rndr.3.gz
 share/man/man5/lowdown.5.gz
 %%DATADIR%%/odt/styles.xml
+%%DATADIR%%/html/default.html
