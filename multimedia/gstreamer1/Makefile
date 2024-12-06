@@ -1,6 +1,5 @@
 PORTNAME=	gstreamer
 PORTVERSION=	${_GST_VERSION}
-PORTREVISION=	2
 CATEGORIES=	multimedia
 MASTER_SITES=	https://gstreamer.freedesktop.org/src/gstreamer/
 PKGNAMESUFFIX=	1
