@@ -1,6 +1,6 @@
 PORTNAME=	thanos
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.37.0
+DISTVERSION=	0.37.1
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	alster@vinterdalen.se
@@ -18,7 +18,7 @@ GO_TARGET=	./cmd/${PORTNAME}
 GO_BUILDFLAGS=	-ldflags "\
 		-s -w \
 		-X github.com/prometheus/common/version.Version=${DISTVERSION} \
-		-X github.com/prometheus/common/version.Revision="889d527" \
+		-X github.com/prometheus/common/version.Revision="e0812e2" \
 		-X github.com/prometheus/common/version.Branch="master" \
 		-X github.com/prometheus/common/version.BuildUser=${USER} \
 		-X github.com/prometheus/common/version.BuildDate=${BUILD_DATE}"
