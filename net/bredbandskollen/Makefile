@@ -36,6 +36,6 @@ do-install:
 	${LN} -sf bbk_cli ${STAGEDIR}/${PREFIX}/bin/bredbandskollen
 
 do-test:
-	cd ${WRKSRC}/src/test && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} test
+	cd ${WRKSRC}/src/test && ${SETENVI} ${WRK_ENV} ${MAKE_ENV} ${MAKE_CMD} test
 
 .include <bsd.port.mk>
