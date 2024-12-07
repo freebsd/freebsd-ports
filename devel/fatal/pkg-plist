@@ -1,3 +1,4 @@
+include/fatal/.clang-format
 include/fatal/benchmark/benchmark.h
 include/fatal/benchmark/cases.h
 include/fatal/benchmark/driver.h
