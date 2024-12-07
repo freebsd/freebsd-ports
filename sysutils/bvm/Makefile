@@ -1,5 +1,5 @@
 PORTNAME=	bvm
-DISTVERSION=	1.3.4
+DISTVERSION=	1.3.5
 CATEGORIES=	sysutils
 
 MAINTAINER=	bigdragonsoft@gmail.com
