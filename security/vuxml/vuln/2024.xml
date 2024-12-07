@@ -1,3 +1,40 @@
+  <vuln vid="c2fd83e4-b450-11ef-b680-4ccc6adda413">
+    <topic>qt6-webengine -- Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>qt6-webengine</name>
+	<range><lt>6.7.3_3</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Qt qtwebengine-chromium repo reports:</p>
+	<blockquote cite="https://code.qt.io/cgit/qt/qtwebengine-chromium.git/log/?h=118-based">
+	  <p>Backports for 5 security bugs in Chromium:</p>
+	  <ul>
+	    <li>CVE-2024-11110: Inappropriate implementation in Blink</li>
+	    <li>CVE-2024-11112: Use after free in Media</li>
+	    <li>CVE-2024-11114: Inappropriate implementation in Views</li>
+	    <li>CVE-2024-11116: Inappropriate implementation in Paint</li>
+	    <li>CVE-2024-11117: Inappropriate implementation in FileSystem</li>
+	  </ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2024-11110</cvename>
+      <cvename>CVE-2024-11112</cvename>
+      <cvename>CVE-2024-11114</cvename>
+      <cvename>CVE-2024-11116</cvename>
+      <cvename>CVE-2024-11117</cvename>
+      <url>https://code.qt.io/cgit/qt/qtwebengine-chromium.git/log/?h=118-based</url>
+    </references>
+    <dates>
+      <discovery>2024-11-29</discovery>
+      <entry>2024-12-07</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="7f3a302b-b3e8-11ef-b680-4ccc6adda413">
     <topic>gstreamer1-plugins-vorbis -- Stack buffer-overflow in Vorbis decoder</topic>
     <affects>
