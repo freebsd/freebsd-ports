@@ -3,6 +3,7 @@ include/thrift/ThriftLibrary.cmake
 include/thrift/annotation/bundled_annotations.h
 include/thrift/annotation/compat.thrift
 include/thrift/annotation/cpp.thrift
+include/thrift/annotation/erlang.thrift
 include/thrift/annotation/gen-cpp2/cpp_clients.h
 include/thrift/annotation/gen-cpp2/cpp_constants.h
 include/thrift/annotation/gen-cpp2/cpp_data.h
@@ -264,7 +265,6 @@ include/thrift/lib/cpp2/async/metadata/CursorBasedRequestRpcMetadataAdapter.h
 include/thrift/lib/cpp2/async/metadata/RequestRpcMetadataAdapter.h
 include/thrift/lib/cpp2/async/metadata/RequestRpcMetadataFacade.h
 include/thrift/lib/cpp2/async/metadata/TCompactRequestRpcMetadataAdapter.h
-include/thrift/lib/cpp2/transport/rocket/compression/Compression.h
 include/thrift/lib/cpp2/transport/rocket/compression/CompressionAlgorithmSelector.h
 include/thrift/lib/cpp2/transport/rocket/payload/ChecksumPayloadSerializerStrategy.h
 include/thrift/lib/cpp2/debug_thrift_data_difference/debug.h
@@ -349,6 +349,7 @@ include/thrift/lib/cpp2/op/detail/Get.h
 include/thrift/lib/cpp2/op/detail/Hash.h
 include/thrift/lib/cpp2/op/detail/HashProtocol.h
 include/thrift/lib/cpp2/op/detail/Patch.h
+include/thrift/lib/cpp2/op/detail/PatchTraits.h
 include/thrift/lib/cpp2/op/detail/StructOp.h
 include/thrift/lib/cpp2/op/detail/StructPatch.h
 include/thrift/lib/cpp2/op/detail/ValueOp.h
@@ -544,6 +545,7 @@ include/thrift/lib/cpp2/transport/rocket/client/RequestContext.h
 include/thrift/lib/cpp2/transport/rocket/client/RequestContextQueue.h
 include/thrift/lib/cpp2/transport/rocket/client/RocketClient.h
 include/thrift/lib/cpp2/transport/rocket/client/RocketStreamServerCallback.h
+include/thrift/lib/cpp2/transport/rocket/compression/CompressionManager.h
 include/thrift/lib/cpp2/transport/rocket/flush/FlushManager.h
 include/thrift/lib/cpp2/transport/rocket/framing/ErrorCode.h
 include/thrift/lib/cpp2/transport/rocket/framing/Flags.h
