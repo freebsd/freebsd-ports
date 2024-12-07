@@ -177,6 +177,8 @@ include/wine/windows/bits5_0.h
 include/wine/windows/bits5_0.idl
 include/wine/windows/bitsmsg.h
 include/wine/windows/bluetoothapis.h
+include/wine/windows/bthdef.h
+include/wine/windows/bthioctl.h
 include/wine/windows/bthsdpdef.h
 include/wine/windows/cderr.h
 include/wine/windows/cdosys.h
@@ -1428,6 +1430,7 @@ lib/wine/%%WINEARCH%%-unix/libd3dx10_42.a
 lib/wine/%%WINEARCH%%-unix/libd3dx11.a
 lib/wine/%%WINEARCH%%-unix/libd3dx11_42.a
 lib/wine/%%WINEARCH%%-unix/libd3dx9.a
+lib/wine/%%WINEARCH%%-unix/libd3dx9_43.a
 lib/wine/%%WINEARCH%%-unix/libd3dxof.a
 lib/wine/%%WINEARCH%%-unix/libdataexchange.a
 lib/wine/%%WINEARCH%%-unix/libdbgeng.a
@@ -1627,6 +1630,7 @@ lib/wine/%%WINEARCH%%-unix/qcap.so
 lib/wine/%%WINEARCH%%-unix/secur32.so
 lib/wine/%%WINEARCH%%-unix/win32u.so
 %%ALSA%%lib/wine/%%WINEARCH%%-unix/winealsa.so
+lib/wine/%%WINEARCH%%-unix/winebth.so
 lib/wine/%%WINEARCH%%-unix/winebus.so
 lib/wine/%%WINEARCH%%-unix/winedmo.so
 %%GSTREAMER%%lib/wine/%%WINEARCH%%-unix/winegstreamer.so
@@ -1978,6 +1982,7 @@ lib/wine/%%WINEARCH%%-windows/libd3dx10_42.a
 lib/wine/%%WINEARCH%%-windows/libd3dx11.a
 lib/wine/%%WINEARCH%%-windows/libd3dx11_42.a
 lib/wine/%%WINEARCH%%-windows/libd3dx9.a
+lib/wine/%%WINEARCH%%-windows/libd3dx9_43.a
 lib/wine/%%WINEARCH%%-windows/libd3dxof.a
 lib/wine/%%WINEARCH%%-windows/libdataexchange.a
 lib/wine/%%WINEARCH%%-windows/libdbgeng.a
@@ -2543,6 +2548,7 @@ lib/wine/%%WINEARCH%%-windows/windows.media.devices.dll
 lib/wine/%%WINEARCH%%-windows/windows.media.dll
 lib/wine/%%WINEARCH%%-windows/windows.media.mediacontrol.dll
 lib/wine/%%WINEARCH%%-windows/windows.media.speech.dll
+lib/wine/%%WINEARCH%%-windows/windows.networking.connectivity.dll
 lib/wine/%%WINEARCH%%-windows/windows.networking.dll
 lib/wine/%%WINEARCH%%-windows/windows.networking.hostname.dll
 lib/wine/%%WINEARCH%%-windows/windows.perception.stub.dll
@@ -2557,6 +2563,7 @@ lib/wine/%%WINEARCH%%-windows/windowscodecsext.dll
 %%ALSA%%lib/wine/%%WINEARCH%%-windows/winealsa.drv
 lib/wine/%%WINEARCH%%-windows/wineboot.exe
 lib/wine/%%WINEARCH%%-windows/winebrowser.exe
+lib/wine/%%WINEARCH%%-windows/winebth.sys
 lib/wine/%%WINEARCH%%-windows/winebus.sys
 lib/wine/%%WINEARCH%%-windows/winecfg.exe
 lib/wine/%%WINEARCH%%-windows/wineconsole.exe
