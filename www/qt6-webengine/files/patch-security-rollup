@@ -1,10 +1,12 @@
 Security fixes applied to the 118-based branch [1] after Qt 6.7.3 release.
 
-Includes fixes between [2] and [3].
+Includes fixes between [2] and [3]. [4] has been redacted, since it disrupts
+our main patches, is not a security fix, and only applies to iOS.
 
 [1] https://code.qt.io/cgit/qt/qtwebengine-chromium.git/log/chromium?h=118-based
 [2] https://code.qt.io/cgit/qt/qtwebengine-chromium.git/commit/chromium?h=118-based&id=45bdfbd7721749beea9abd18467465e4c9026559
-[3] https://code.qt.io/cgit/qt/qtwebengine-chromium.git/commit/chromium?h=118-based&id=c30894bf867630a8ffcb56c8817c00f3d673f370
+[3] https://code.qt.io/cgit/qt/qtwebengine-chromium.git/commit/chromium?h=118-based&id=eb31082fcba2380e2cc5789aa707328050531e8d
+[4] https://code.qt.io/cgit/qt/qtwebengine-chromium.git/commit/chromium?h=118-based&id=edb5aad8fc938acb291261ec123f5d25f615ddc7
 
 diff --git a/chromium/base/mac/wrap_cg_display.h b/chromium/base/mac/wrap_cg_display.h
 index a579ef1a900..8645627a3a1 100644
@@ -120,6 +122,360 @@ index 0156b748c38..bed248728cc 100644
      // We can't restart the GPU process when running in the host process;
      // instead, just hope for recovery from the context loss.
      return;
+diff --git a/chromium/content/browser/file_system_access/file_system_access_directory_handle_impl.cc b/chromium/content/browser/file_system_access/file_system_access_directory_handle_impl.cc
+index ec3216d5f92..bb3602f58b9 100644
+--- src/3rdparty/chromium/content/browser/file_system_access/file_system_access_directory_handle_impl.cc
++++ src/3rdparty/chromium/content/browser/file_system_access/file_system_access_directory_handle_impl.cc
+@@ -54,32 +54,6 @@ using UserAction = FileSystemAccessPermissionContext::UserAction;
+ #endif
+ 
+ namespace {
+-// Returns whether the specified extension receives special handling by the
+-// Windows shell.
+-bool IsShellIntegratedExtension(const base::FilePath::StringType& extension) {
+-  base::FilePath::StringType extension_lower = base::ToLowerASCII(extension);
+-
+-  // .lnk and .scf files may be used to execute arbitrary code (see
+-  // https://nvd.nist.gov/vuln/detail/CVE-2010-2568 and
+-  // https://crbug.com/1227995, respectively). '.url' files can be used to read
+-  // arbitrary files (see https://crbug.com/1307930 and
+-  // https://crbug.com/1354518).
+-  if (extension_lower == FILE_PATH_LITERAL("lnk") ||
+-      extension_lower == FILE_PATH_LITERAL("scf") ||
+-      extension_lower == FILE_PATH_LITERAL("url")) {
+-    return true;
+-  }
+-
+-  // Setting a file's extension to a CLSID may conceal its actual file type on
+-  // some Windows versions (see https://nvd.nist.gov/vuln/detail/CVE-2004-0420).
+-  if (!extension_lower.empty() &&
+-      (extension_lower.front() == FILE_PATH_LITERAL('{')) &&
+-      (extension_lower.back() == FILE_PATH_LITERAL('}'))) {
+-    return true;
+-  }
+-  return false;
+-}
+-
+ #if BUILDFLAG(IS_POSIX)
+ base::FilePath ReadSymbolicLink(const base::FilePath& path) {
+   DCHECK(!path.empty());
+@@ -710,80 +684,13 @@ void FileSystemAccessDirectoryHandleImpl::AllEntriesReady(
+       file_system_access_error::Ok(), std::move(entries), has_more_entries);
+ }
+ 
+-// static
+-bool FileSystemAccessDirectoryHandleImpl::IsSafePathComponent(
+-    const std::string& name) {
+-  // This method is similar to net::IsSafePortablePathComponent, with a few
+-  // notable differences where the net version does not consider names safe
+-  // while here we do want to allow them. These cases are:
+-  //  - Names starting with a '.'. These would be hidden files in most file
+-  //    managers, but are something we explicitly want to support for the
+-  //    File System Access API, for names like .git.
+-  //  - Names that end in '.local'. For downloads writing to such files is
+-  //    dangerous since it might modify what code is executed when an executable
+-  //    is ran from the same directory. For the File System Access API this
+-  //    isn't really a problem though, since if a website can write to a .local
+-  //    file via a FileSystemDirectoryHandle they can also just modify the
+-  //    executables in the directory directly.
+-  //
+-  // TODO(https://crbug.com/1154757): Unify this with
+-  // net::IsSafePortablePathComponent, with the result probably ending up in
+-  // base/i18n/file_util_icu.h.
+-
+-  const base::FilePath component = storage::StringToFilePath(name);
+-  // Empty names, or names that contain path separators are invalid.
+-  if (component.empty() || component != component.BaseName() ||
+-      component != component.StripTrailingSeparators()) {
+-    return false;
+-  }
+-
+-  std::u16string component16;
+-#if BUILDFLAG(IS_WIN)
+-  component16.assign(component.value().begin(), component.value().end());
+-#else
+-  std::string component8 = component.AsUTF8Unsafe();
+-  if (!base::UTF8ToUTF16(component8.c_str(), component8.size(), &component16)) {
+-    return false;
+-  }
+-#endif
+-  // base::i18n::IsFilenameLegal blocks names that start with '.', so strip out
+-  // a leading '.' before passing it to that method.
+-  // TODO(mek): Consider making IsFilenameLegal more flexible to support this
+-  // use case.
+-  if (component16[0] == '.') {
+-    component16 = component16.substr(1);
+-  }
+-  if (!base::i18n::IsFilenameLegal(component16)) {
+-    return false;
+-  }
+-
+-  base::FilePath::StringType extension = component.Extension();
+-  if (!extension.empty()) {
+-    extension.erase(extension.begin());  // Erase preceding '.'.
+-  }
+-  if (IsShellIntegratedExtension(extension)) {
+-    return false;
+-  }
+-
+-  if (base::TrimString(component.value(), FILE_PATH_LITERAL("."),
+-                       base::TRIM_TRAILING) != component.value()) {
+-    return false;
+-  }
+-
+-  if (net::IsReservedNameOnWindows(component.value())) {
+-    return false;
+-  }
+-
+-  return true;
+-}
+-
+ blink::mojom::FileSystemAccessErrorPtr
+ FileSystemAccessDirectoryHandleImpl::GetChildURL(
+     const std::string& basename,
+     storage::FileSystemURL* result) {
+   DCHECK_CALLED_ON_VALID_SEQUENCE(sequence_checker_);
+ 
+-  if (!IsSafePathComponent(basename)) {
++  if (!manager()->IsSafePathComponent(basename)) {
+     return file_system_access_error::FromStatus(
+         FileSystemAccessStatus::kInvalidArgument, "Name is not allowed.");
+   }
+diff --git a/chromium/content/browser/file_system_access/file_system_access_directory_handle_impl.h b/chromium/content/browser/file_system_access/file_system_access_directory_handle_impl.h
+index 7bbec9a39d9..98452fc1f56 100644
+--- src/3rdparty/chromium/content/browser/file_system_access/file_system_access_directory_handle_impl.h
++++ src/3rdparty/chromium/content/browser/file_system_access/file_system_access_directory_handle_impl.h
+@@ -84,14 +84,6 @@ class CONTENT_EXPORT FileSystemAccessDirectoryHandleImpl
+       const std::string& basename,
+       storage::FileSystemURL* result);
+ 
+-  // The File System Access API should not give access to files that might
+-  // trigger special handling from the operating system. This method is used to
+-  // validate that all paths passed to GetFileHandle/GetDirectoryHandle are safe
+-  // to be exposed to the web.
+-  // TODO(https://crbug.com/1154757): Merge this with
+-  // net::IsSafePortablePathComponent.
+-  static bool IsSafePathComponent(const std::string& name);
+-
+  private:
+   // This method creates the file if it does not currently exists. I.e. it is
+   // the implementation for passing create=true to GetFile.
+diff --git a/chromium/content/browser/file_system_access/file_system_access_handle_base.cc b/chromium/content/browser/file_system_access/file_system_access_handle_base.cc
+index 5792ad95e45..44891c0b75c 100644
+--- src/3rdparty/chromium/content/browser/file_system_access/file_system_access_handle_base.cc
++++ src/3rdparty/chromium/content/browser/file_system_access/file_system_access_handle_base.cc
+@@ -217,7 +217,7 @@ void FileSystemAccessHandleBase::DoMove(
+     }
+   }
+ 
+-  if (!FileSystemAccessDirectoryHandleImpl::IsSafePathComponent(
++  if (!manager()->IsSafePathComponent(
+           new_entry_name)) {
+     std::move(callback).Run(file_system_access_error::FromStatus(
+         blink::mojom::FileSystemAccessStatus::kInvalidArgument));
+@@ -250,7 +250,7 @@ void FileSystemAccessHandleBase::DoRename(
+     }
+   }
+ 
+-  if (!FileSystemAccessDirectoryHandleImpl::IsSafePathComponent(
++  if (!manager()->IsSafePathComponent(
+           new_entry_name)) {
+     std::move(callback).Run(file_system_access_error::FromStatus(
+         blink::mojom::FileSystemAccessStatus::kInvalidArgument));
+diff --git a/chromium/content/browser/file_system_access/file_system_access_manager_impl.cc b/chromium/content/browser/file_system_access/file_system_access_manager_impl.cc
+index faa3f12e452..c0d16224f11 100644
+--- src/3rdparty/chromium/content/browser/file_system_access/file_system_access_manager_impl.cc
++++ src/3rdparty/chromium/content/browser/file_system_access/file_system_access_manager_impl.cc
+@@ -15,9 +15,11 @@
+ #include "base/functional/bind.h"
+ #include "base/functional/callback_forward.h"
+ #include "base/functional/callback_helpers.h"
++#include "base/i18n/file_util_icu.h"
+ #include "base/notreached.h"
+ #include "base/ranges/algorithm.h"
+ #include "base/strings/string_util.h"
++#include "base/strings/utf_string_conversions.h"
+ #include "base/task/sequenced_task_runner.h"
+ #include "base/task/task_traits.h"
+ #include "base/task/thread_pool.h"
+@@ -296,6 +298,32 @@ void DidCheckIfDefaultDirectoryExists(
+   }
+ }
+ 
++// Returns whether the specified extension receives special handling by the
++// Windows shell.
++bool IsShellIntegratedExtension(const base::FilePath::StringType& extension) {
++  base::FilePath::StringType extension_lower = base::ToLowerASCII(extension);
++
++  // .lnk and .scf files may be used to execute arbitrary code (see
++  // https://nvd.nist.gov/vuln/detail/CVE-2010-2568 and
++  // https://crbug.com/1227995, respectively). '.url' files can be used to read
++  // arbitrary files (see https://crbug.com/1307930 and
++  // https://crbug.com/1354518).
++  if (extension_lower == FILE_PATH_LITERAL("lnk") ||
++      extension_lower == FILE_PATH_LITERAL("scf") ||
++      extension_lower == FILE_PATH_LITERAL("url")) {
++    return true;
++  }
++
++  // Setting a file's extension to a CLSID may conceal its actual file type on
++  // some Windows versions (see https://nvd.nist.gov/vuln/detail/CVE-2004-0420).
++  if (!extension_lower.empty() &&
++      (extension_lower.front() == FILE_PATH_LITERAL('{')) &&
++      (extension_lower.back() == FILE_PATH_LITERAL('}'))) {
++    return true;
++  }
++  return false;
++}
++
+ }  // namespace
+ 
+ FileSystemAccessManagerImpl::SharedHandleState::SharedHandleState(
+@@ -1749,4 +1777,69 @@ FileSystemAccessManagerImpl::AsWeakPtr() {
+   return weak_factory_.GetWeakPtr();
+ }
+ 
++bool FileSystemAccessManagerImpl::IsSafePathComponent(
++    const std::string& name) {
++  // This method is similar to net::IsSafePortablePathComponent, with a few
++  // notable differences where the net version does not consider names safe
++  // while here we do want to allow them. These cases are:
++  //  - Names starting with a '.'. These would be hidden files in most file
++  //    managers, but are something we explicitly want to support for the
++  //    File System Access API, for names like .git.
++  //  - Names that end in '.local'. For downloads writing to such files is
++  //    dangerous since it might modify what code is executed when an executable
++  //    is ran from the same directory. For the File System Access API this
++  //    isn't really a problem though, since if a website can write to a .local
++  //    file via a FileSystemDirectoryHandle they can also just modify the
++  //
++  // TODO(crbug.com/40159607): Unify this with
++  // net::IsSafePortablePathComponent, with the result probably ending up in
++  // base/i18n/file_util_icu.h.
++
++  const base::FilePath component = storage::StringToFilePath(name);
++  // Empty names, or names that contain path separators are invalid.
++  if (component.empty() || component != component.BaseName() ||
++      component != component.StripTrailingSeparators()) {
++    return false;
++  }
++
++  std::u16string component16;
++#if BUILDFLAG(IS_WIN)
++  component16.assign(component.value().begin(), component.value().end());
++#else
++  std::string component8 = component.AsUTF8Unsafe();
++  if (!base::UTF8ToUTF16(component8.c_str(), component8.size(), &component16)) {
++    return false;
++  }
++#endif
++  // base::i18n::IsFilenameLegal blocks names that start with '.', so strip out
++  // a leading '.' before passing it to that method.
++  // TODO(mek): Consider making IsFilenameLegal more flexible to support this
++  // use case.
++  if (component16[0] == '.') {
++    component16 = component16.substr(1);
++  }
++  if (!base::i18n::IsFilenameLegal(component16)) {
++    return false;
++  }
++
++  base::FilePath::StringType extension = component.Extension();
++  if (!extension.empty()) {
++    extension.erase(extension.begin());  // Erase preceding '.'.
++  }
++  if (IsShellIntegratedExtension(extension)) {
++    return false;
++  }
++
++  if (base::TrimString(component.value(), FILE_PATH_LITERAL("."),
++                       base::TRIM_TRAILING) != component.value()) {
++    return false;
++  }
++
++  if (net::IsReservedNameOnWindows(component.value())) {
++    return false;
++  }
++
++  return true;
++}
++
+ }  // namespace content
+diff --git a/chromium/content/browser/file_system_access/file_system_access_manager_impl.h b/chromium/content/browser/file_system_access/file_system_access_manager_impl.h
+index 2b6828054b7..eeda10526b8 100644
+--- src/3rdparty/chromium/content/browser/file_system_access/file_system_access_manager_impl.h
++++ src/3rdparty/chromium/content/browser/file_system_access/file_system_access_manager_impl.h
+@@ -359,6 +359,14 @@ class CONTENT_EXPORT FileSystemAccessManagerImpl
+ 
+   void Shutdown();
+ 
++  // The File System Access API should not give access to files that might
++  // trigger special handling from the operating system. This method is used to
++  // validate that all paths passed to GetFileHandle/GetDirectoryHandle are safe
++  // to be exposed to the web.
++  // TODO(crbug.com/40159607): Merge this with
++  // net::IsSafePortablePathComponent.
++  bool IsSafePathComponent(const std::string& name);
++
+   // Invokes `method` on the correct sequence on the FileSystemOperationRunner,
+   // passing `args` and a callback to the method.
+   // The passed in `callback` is wrapped to make sure it is called on the
+diff --git a/chromium/content/browser/renderer_host/cross_process_frame_connector.cc b/chromium/content/browser/renderer_host/cross_process_frame_connector.cc
+index 00eb0fb1348..2944d939029 100644
+--- src/3rdparty/chromium/content/browser/renderer_host/cross_process_frame_connector.cc
++++ src/3rdparty/chromium/content/browser/renderer_host/cross_process_frame_connector.cc
+@@ -60,10 +60,11 @@ CrossProcessFrameConnector::~CrossProcessFrameConnector() {
+   }
+ 
+   // Notify the view of this object being destroyed, if the view still exists.
+-  SetView(nullptr);
++  SetView(nullptr, /*allow_paint_holding=*/false);
+ }
+ 
+-void CrossProcessFrameConnector::SetView(RenderWidgetHostViewChildFrame* view) {
++void CrossProcessFrameConnector::SetView(RenderWidgetHostViewChildFrame* view,
++                                         bool allow_paint_holding) {
+   // Detach ourselves from the previous |view_|.
+   if (view_) {
+     RenderWidgetHostViewBase* root_view = GetRootRenderWidgetHostView();
+@@ -110,7 +111,7 @@ void CrossProcessFrameConnector::SetView(RenderWidgetHostViewChildFrame* view) {
+     if (frame_proxy_in_parent_renderer_ &&
+         frame_proxy_in_parent_renderer_->is_render_frame_proxy_live()) {
+       frame_proxy_in_parent_renderer_->GetAssociatedRemoteFrame()
+-          ->SetFrameSinkId(view_->GetFrameSinkId());
++          ->SetFrameSinkId(view_->GetFrameSinkId(), allow_paint_holding);
+     }
+   }
+ }
+diff --git a/chromium/content/browser/renderer_host/cross_process_frame_connector.h b/chromium/content/browser/renderer_host/cross_process_frame_connector.h
+index 05ecb60aebe..4436cd1fba7 100644
+--- src/3rdparty/chromium/content/browser/renderer_host/cross_process_frame_connector.h
++++ src/3rdparty/chromium/content/browser/renderer_host/cross_process_frame_connector.h
+@@ -100,7 +100,7 @@ class CONTENT_EXPORT CrossProcessFrameConnector {
+   // above.
+   RenderWidgetHostViewChildFrame* get_view_for_testing() { return view_; }
+ 
+-  void SetView(RenderWidgetHostViewChildFrame* view);
++  void SetView(RenderWidgetHostViewChildFrame* view, bool allow_paint_holding);
+ 
+   // Returns the parent RenderWidgetHostView or nullptr if it doesn't have one.
+   virtual RenderWidgetHostViewBase* GetParentRenderWidgetHostView();
+diff --git a/chromium/content/browser/renderer_host/delegated_frame_host.cc b/chromium/content/browser/renderer_host/delegated_frame_host.cc
+index 3ea56e0e536..499a23b5209 100644
+--- src/3rdparty/chromium/content/browser/renderer_host/delegated_frame_host.cc
++++ src/3rdparty/chromium/content/browser/renderer_host/delegated_frame_host.cc
+@@ -503,7 +503,10 @@ void DelegatedFrameHost::ContinueDelegatedFrameEviction(
+   // preventing the FrameTree from being traversed. This could happen during
+   // navigation involving BFCache. This should not occur with
+   // features::kEvictSubtree.
+-  DCHECK(!surface_ids.empty() ||
++  // We do allow the surface ids to be empty if we
++  // don't have a local surface id, since that means we don't have memory
++  // allocated in viz.
++  DCHECK(!surface_ids.empty() || !local_surface_id_.is_valid() ||
+          !base::FeatureList::IsEnabled(features::kEvictSubtree));
+   if (!surface_ids.empty()) {
+     DCHECK(host_frame_sink_manager_);
 diff --git a/chromium/content/browser/renderer_host/navigation_controller_impl.cc b/chromium/content/browser/renderer_host/navigation_controller_impl.cc
 index db818eb83e9..084fd00eeae 100644
 --- src/3rdparty/chromium/content/browser/renderer_host/navigation_controller_impl.cc
@@ -167,6 +523,524 @@ index ba9be480a81..987963d4bf4 100644
                                                const GURL& url);
  
    // Adds details from a committed navigation to `entry` and the
+diff --git a/chromium/content/browser/renderer_host/navigator.cc b/chromium/content/browser/renderer_host/navigator.cc
+index e4cdb82d559..fd5e2eb26c3 100644
+--- src/3rdparty/chromium/content/browser/renderer_host/navigator.cc
++++ src/3rdparty/chromium/content/browser/renderer_host/navigator.cc
+@@ -32,6 +32,7 @@
+ #include "content/browser/web_package/prefetched_signed_exchange_cache.h"
+ #include "content/browser/webui/web_ui_controller_factory_registry.h"
+ #include "content/browser/webui/web_ui_impl.h"
++#include "content/common/features.h"
+ #include "content/common/navigation_params_utils.h"
+ #include "content/public/browser/browser_context.h"
+ #include "content/public/browser/content_browser_client.h"
+@@ -516,17 +517,56 @@ void Navigator::DidNavigate(
+   // Store this information before DidNavigateFrame() potentially swaps RFHs.
+   url::Origin old_frame_origin = old_frame_host->GetLastCommittedOrigin();
+ 
++  // RenderFrameHostImpl::DidNavigate will update the url, and may cause the
++  // node to consider itself no longer on the initial empty document. Record
++  // whether we're leaving the initial empty document before that.
++  bool was_on_initial_empty_document =
++      frame_tree_node->is_on_initial_empty_document();
++
++  // Allow main frame paint holding in the following cases:
++  //  - We don't have an animated transition. See crbug.com/360844863.
++  //  - At least one of the following conditions is true:
++  //    - This is a navigation from the initial document. This part helps with
++  //      tests. See crbug.com/367623929.
++  //    - This is a same origin navigation (or we're not limiting cross-origin
++  //      paint holding)
++  //    - There is a user activation. This means that the user interacted with
++  //      the page. Commonly used attacks are done without user activation --
++  //      which will not enable paint holding. However, if the user interacts
++  //      with the page, we treat it as a valid case for paint holding.
++  //    - The client allows non-activated cross origin paintholding, which is
++  //      currently the case with webview.
++  //
++  // See https://issues.chromium.org/40942531 for reasons we limit paint
++  // holding.
++  ContentBrowserClient* client = GetContentClient()->browser();
++  const bool allow_main_frame_paint_holding =
++      (was_on_initial_empty_document ||
++       old_frame_origin.IsSameOriginWith(params.origin) ||
++       old_frame_host->HasStickyUserActivation() ||
++       client->AllowNonActivatedCrossOriginPaintHolding() ||
++       !base::FeatureList::IsEnabled(
++           kLimitCrossOriginNonActivatedPaintHolding));
++
++  // Only allow subframe paint holding for same origin.
++  const bool allow_subframe_paint_holding =
++      old_frame_origin.IsSameOriginWith(params.origin);
++
+   // DidNavigateFrame() must be called before replicating the new origin and
+   // other properties to proxies.  This is because it destroys the subframes of
+   // the frame we're navigating from, which might trigger those subframes to
+   // run unload handlers.  Those unload handlers should still see the old
+   // frame's origin.  See https://crbug.com/825283.
++  const bool allow_paint_holding = frame_tree_node->IsMainFrame()
++                                       ? allow_main_frame_paint_holding
++                                       : allow_subframe_paint_holding;
++
+   frame_tree_node->render_manager()->DidNavigateFrame(
+       render_frame_host, navigation_request->common_params().has_user_gesture,
+       was_within_same_document,
+       navigation_request->browsing_context_group_swap()
+           .ShouldClearProxiesOnCommit(),
+-      navigation_request->commit_params().frame_policy);
++      navigation_request->commit_params().frame_policy, allow_paint_holding);
+ 
+   // The main frame, same site, and cross-site navigation checks for user
+   // activation mirror the checks in DocumentLoader::CommitNavigation() (note:
+@@ -593,12 +633,6 @@ void Navigator::DidNavigate(
+     render_frame_host->GetPage().SetContentsMimeType(params.contents_mime_type);
+   }
+ 
+-  // RenderFrameHostImpl::DidNavigate will update the url, and may cause the
+-  // node to consider itself no longer on the initial empty document. Record
+-  // whether we're leaving the initial empty document before that.
+-  bool was_on_initial_empty_document =
+-      frame_tree_node->is_on_initial_empty_document();
+-
+   render_frame_host->DidNavigate(params, navigation_request.get(),
+                                  was_within_same_document);
+ 
+diff --git a/chromium/content/browser/renderer_host/render_frame_host_impl.cc b/chromium/content/browser/renderer_host/render_frame_host_impl.cc
+index d1d0efb398b..a45f586a3c4 100644
+--- src/3rdparty/chromium/content/browser/renderer_host/render_frame_host_impl.cc
++++ src/3rdparty/chromium/content/browser/renderer_host/render_frame_host_impl.cc
+@@ -8546,7 +8546,8 @@ void RenderFrameHostImpl::AdoptPortal(
+                                        ->render_manager()
+                                        ->GetRenderWidgetHostView()
+                                        ->GetFrameSinkId();
+-  proxy_host->GetAssociatedRemoteFrame()->SetFrameSinkId(frame_sink_id);
++  // generally disallow paint holding for security reasons
++  proxy_host->GetAssociatedRemoteFrame()->SetFrameSinkId(frame_sink_id, /*allow_paint_holding*/ false);
+ 
+   std::move(callback).Run(
+       proxy_host->frame_tree_node()->current_replication_state().Clone(),
+diff --git a/chromium/content/browser/renderer_host/render_frame_host_manager.cc b/chromium/content/browser/renderer_host/render_frame_host_manager.cc
+index 9f5cddd99a0..91114140ea4 100644
+--- src/3rdparty/chromium/content/browser/renderer_host/render_frame_host_manager.cc
++++ src/3rdparty/chromium/content/browser/renderer_host/render_frame_host_manager.cc
+@@ -731,10 +731,11 @@ void RenderFrameHostManager::DidNavigateFrame(
+     bool was_caused_by_user_gesture,
+     bool is_same_document_navigation,
+     bool clear_proxies_on_commit,
+-    const blink::FramePolicy& frame_policy) {
++    const blink::FramePolicy& frame_policy,
++    bool allow_paint_holding) {
+   CommitPendingIfNecessary(render_frame_host, was_caused_by_user_gesture,
+-                           is_same_document_navigation,
+-                           clear_proxies_on_commit);
++                           is_same_document_navigation, clear_proxies_on_commit,
++                           allow_paint_holding);
+ 
+   // Make sure any dynamic changes to this frame's sandbox flags and permissions
+   // policy that were made prior to navigation take effect.  This should only
+@@ -770,7 +771,8 @@ void RenderFrameHostManager::CommitPendingIfNecessary(
+     RenderFrameHostImpl* render_frame_host,
+     bool was_caused_by_user_gesture,
+     bool is_same_document_navigation,
+-    bool clear_proxies_on_commit) {
++    bool clear_proxies_on_commit,
++    bool allow_paint_holding) {
+   if (!speculative_render_frame_host_) {
+     // There's no speculative RenderFrameHost so it must be that the current
+     // RenderFrameHost completed a navigation.
+@@ -784,7 +786,8 @@ void RenderFrameHostManager::CommitPendingIfNecessary(
+   if (render_frame_host == speculative_render_frame_host_.get()) {
+     // A cross-RenderFrameHost navigation completed, so show the new renderer.
+     CommitPending(std::move(speculative_render_frame_host_),
+-                  std::move(stored_page_to_restore_), clear_proxies_on_commit);
++                  std::move(stored_page_to_restore_), clear_proxies_on_commit,
++                  allow_paint_holding);
+ 
+     if (GetNavigationQueueingFeatureLevel() >=
+         NavigationQueueingFeatureLevel::kAvoidRedundantCancellations) {
+@@ -841,9 +844,26 @@ void RenderFrameHostManager::CommitPendingIfNecessary(
+     // output on prerender activation.
+     if (render_frame_host_->lifecycle_state() !=
+         LifecycleStateImpl::kPrerendering) {
+-      static_cast<RenderWidgetHostImpl*>(
+-          render_frame_host_->GetView()->GetRenderWidgetHost())
+-          ->StartNewContentRenderingTimeout();
++      auto* rwhi = static_cast<RenderWidgetHostImpl*>(
++          render_frame_host_->GetView()->GetRenderWidgetHost());
++
++      rwhi->StartNewContentRenderingTimeout();
++      // Force the timer to expire immediately if we don't allow main frame
++      // paint holding.
++      if (frame_tree_node_->IsMainFrame() && !allow_paint_holding) {
++        // We post task here, since this evicts a surface but the embedding of a
++        // new surface would be done in the same stack as this call. The
++        // ordering of whether the new surface has or has not yet been embedded
++        // differs for different platforms, and we always want the new surface
++        // to be embedded before we evict. Hence, we post a task. In practice
++        // this still disables paint holding unless this task is delayed for a
++        // long time.
++        GetUIThreadTaskRunner({})->PostTask(
++            FROM_HERE,
++            base::BindOnce(
++                &RenderWidgetHostImpl::ForceFirstFrameAfterNavigationTimeout,
++                rwhi->GetWeakPtr()));
++      }
+     }
+   }
+ 
+@@ -1467,7 +1487,8 @@ void RenderFrameHostManager::PerformEarlyRenderFrameHostSwapIfNeeded(
+ 
+   CommitPending(
+       std::move(speculative_render_frame_host_), nullptr,
+-      request->browsing_context_group_swap().ShouldClearProxiesOnCommit());
++      request->browsing_context_group_swap().ShouldClearProxiesOnCommit(),
++      /* allow_paint_holding */ false);
+   request->SetAssociatedRFHType(
+       NavigationRequest::AssociatedRenderFrameHostType::CURRENT);
+ 
+@@ -4028,7 +4049,8 @@ void RenderFrameHostManager::SetRWHViewForInnerFrameTree(
+     RenderWidgetHostViewChildFrame* child_rwhv) {
+   DCHECK(IsMainFrameForInnerDelegate());
+   DCHECK(GetProxyToOuterDelegate());
+-  GetProxyToOuterDelegate()->SetChildRWHView(child_rwhv, nullptr);
++  GetProxyToOuterDelegate()->SetChildRWHView(child_rwhv, nullptr,
++                                             /*allow_paint_holding=*/false);
+ }
+ 
+ bool RenderFrameHostManager::InitRenderView(
+@@ -4340,7 +4362,8 @@ RenderFrameHostManager::GetFrameTokenForSiteInstanceGroup(
+ void RenderFrameHostManager::CommitPending(
+     std::unique_ptr<RenderFrameHostImpl> pending_rfh,
+     std::unique_ptr<StoredPage> pending_stored_page,
+-    bool clear_proxies_on_commit) {
++    bool clear_proxies_on_commit,
++    bool allow_paint_holding) {
+   TRACE_EVENT1("navigation", "RenderFrameHostManager::CommitPending",
+                "FrameTreeNode id", frame_tree_node_->frame_tree_node_id());
+   CHECK(pending_rfh);
+@@ -4593,9 +4616,10 @@ void RenderFrameHostManager::CommitPending(
+   // valid surface id, because it already has that surface embedded through
+   // `RenderFrameHostImpl::WillLeaveBackForwardCache` and the timeout that
+   // would be set here will clear that frame (incorrectly).
+-  if (is_main_frame && old_view && old_view != new_view) {
+-    // We should take the fallback if we're not coming from BFCache or if we
+-    // don't have a valid surface id to display.
++  if (is_main_frame && allow_paint_holding && old_view && old_view != new_view) {
++    // If allowed, we should take the fallback in any of the following cases:
++    //  - We're not coming from BFCache
++    //  - We don't have a valid surface id to display.
+     auto* render_widget_host_view_base =
+         static_cast<RenderWidgetHostViewBase*>(render_frame_host_->GetView());
+     should_take_fallback_content =
+@@ -4730,7 +4754,7 @@ void RenderFrameHostManager::CommitPending(
+   if (proxy_to_parent_or_outer_delegate) {
+     proxy_to_parent_or_outer_delegate->SetChildRWHView(
+         static_cast<RenderWidgetHostViewChildFrame*>(new_view),
+-        old_size ? &*old_size : nullptr);
++        old_size ? &*old_size : nullptr, allow_paint_holding);
+   }
+ 
+   if (render_frame_host_->is_local_root()) {
+@@ -5136,8 +5160,10 @@ void RenderFrameHostManager::CreateNewFrameForInnerDelegateAttachIfNecessary() {
+   // Swap in the speculative frame. It will later be replaced when
+   // WebContents::AttachToOuterWebContentsFrame is called.
+   speculative_render_frame_host_->SwapIn();
++
+   CommitPending(std::move(speculative_render_frame_host_), nullptr,
+-                false /* clear_proxies_on_commit */);
++                false /* clear_proxies_on_commit */,
++                /* allow_paint_holding */ false);
+   NotifyPrepareForInnerDelegateAttachComplete(true /* success */);
+ }
+ 
+diff --git a/chromium/content/browser/renderer_host/render_frame_host_manager.h b/chromium/content/browser/renderer_host/render_frame_host_manager.h
+index 9257b8c5f93..46acf6a9380 100644
+--- src/3rdparty/chromium/content/browser/renderer_host/render_frame_host_manager.h
++++ src/3rdparty/chromium/content/browser/renderer_host/render_frame_host_manager.h
+@@ -322,7 +322,8 @@ class CONTENT_EXPORT RenderFrameHostManager {
+                         bool was_caused_by_user_gesture,
+                         bool is_same_document_navigation,
+                         bool clear_proxies_on_commit,
+-                        const blink::FramePolicy& frame_policy);
++                        const blink::FramePolicy& frame_policy,
++                        bool allow_paint_holding);
+ 
+   // Called when this frame's opener is changed to the frame specified by
+   // |opener_frame_token| in |source_site_instance_group|'s process.  This
+@@ -971,15 +972,18 @@ class CONTENT_EXPORT RenderFrameHostManager {
+   // |clear_proxies_on_commit| Indicates if the proxies and opener must be
+   // removed during the commit. This can happen following some BrowsingInstance
+   // swaps, such as those for COOP.
++  // |allow_paint_holding| Indicates whether paint holding is allowed.
+   void CommitPending(std::unique_ptr<RenderFrameHostImpl> pending_rfh,
+                      std::unique_ptr<StoredPage> pending_stored_page,
+-                     bool clear_proxies_on_commit);
++                     bool clear_proxies_on_commit,
++                     bool allow_paint_holding);
+ 
+   // Helper to call CommitPending() in all necessary cases.
+   void CommitPendingIfNecessary(RenderFrameHostImpl* render_frame_host,
+                                 bool was_caused_by_user_gesture,
+                                 bool is_same_document_navigation,
+-                                bool clear_proxies_on_commit);
++                                bool clear_proxies_on_commit,
++                                bool allow_paint_holding);
+ 
+   // Runs the unload handler in the old RenderFrameHost, after the new
+   // RenderFrameHost has committed.  |old_render_frame_host| will either be
+diff --git a/chromium/content/browser/renderer_host/render_frame_proxy_host.cc b/chromium/content/browser/renderer_host/render_frame_proxy_host.cc
+index 2ac59af2958..6ac750e7155 100644
+--- src/3rdparty/chromium/content/browser/renderer_host/render_frame_proxy_host.cc
++++ src/3rdparty/chromium/content/browser/renderer_host/render_frame_proxy_host.cc
+@@ -192,10 +192,10 @@ RenderFrameProxyHost::~RenderFrameProxyHost() {
+   TRACE_EVENT_END("navigation", perfetto::Track::FromPointer(this));
+ }
+ 
+-void RenderFrameProxyHost::SetChildRWHView(
+-    RenderWidgetHostViewChildFrame* view,
+-    const gfx::Size* initial_frame_size) {
+-  cross_process_frame_connector_->SetView(view);
++void RenderFrameProxyHost::SetChildRWHView(RenderWidgetHostViewChildFrame* view,
++                                           const gfx::Size* initial_frame_size,
++                                           bool allow_paint_holding) {
++  cross_process_frame_connector_->SetView(view, allow_paint_holding);
+   if (initial_frame_size)
+     cross_process_frame_connector_->SetLocalFrameSize(*initial_frame_size);
+ }
+diff --git a/chromium/content/browser/renderer_host/render_frame_proxy_host.h b/chromium/content/browser/renderer_host/render_frame_proxy_host.h
+index 08c1d72af90..c63589a7c31 100644
+--- src/3rdparty/chromium/content/browser/renderer_host/render_frame_proxy_host.h
++++ src/3rdparty/chromium/content/browser/renderer_host/render_frame_proxy_host.h
+@@ -164,7 +164,8 @@ class CONTENT_EXPORT RenderFrameProxyHost
+   // receives its size from the parent via FrameHostMsg_UpdateResizeParams
+   // before it begins parsing the content.
+   void SetChildRWHView(RenderWidgetHostViewChildFrame* view,
+-                       const gfx::Size* initial_frame_size);
++                       const gfx::Size* initial_frame_size,
++                       bool allow_paint_holding);
+ 
+   RenderViewHostImpl* GetRenderViewHost();
+ 
+diff --git a/chromium/content/browser/renderer_host/render_widget_host_impl.cc b/chromium/content/browser/renderer_host/render_widget_host_impl.cc
+index f27648e12c1..a337dd6a96b 100644
+--- src/3rdparty/chromium/content/browser/renderer_host/render_widget_host_impl.cc
++++ src/3rdparty/chromium/content/browser/renderer_host/render_widget_host_impl.cc
+@@ -117,6 +117,7 @@
+ #include "third_party/blink/public/common/input/synthetic_web_input_event_builders.h"
+ #include "third_party/blink/public/common/storage_key/storage_key.h"
+ #include "third_party/blink/public/common/web_preferences/web_preferences.h"
++#include "third_party/blink/public/common/widget/constants.h"
+ #include "third_party/blink/public/common/widget/visual_properties.h"
+ #include "third_party/blink/public/mojom/drag/drag.mojom.h"
+ #include "third_party/blink/public/mojom/frame/intrinsic_sizing_info.mojom.h"
+@@ -165,10 +166,6 @@ using blink::WebMouseWheelEvent;
+ namespace content {
+ namespace {
+ 
+-// How long to wait for newly loaded content to send a compositor frame
+-// before clearing previously displayed graphics.
+-constexpr base::TimeDelta kNewContentRenderingDelay = base::Seconds(4);
+-
+ constexpr gfx::Rect kInvalidScreenRect(std::numeric_limits<int>::max(),
+                                        std::numeric_limits<int>::max(),
+                                        0,
+@@ -438,7 +435,7 @@ RenderWidgetHostImpl::RenderWidgetHostImpl(
+               switches::kDisableHangMonitor)),
+       latency_tracker_(delegate_),
+       hung_renderer_delay_(kHungRendererDelay),
+-      new_content_rendering_delay_(kNewContentRenderingDelay),
++      new_content_rendering_delay_(blink::kNewContentRenderingDelay),
+       frame_token_message_queue_(std::move(frame_token_message_queue)),
+       render_frame_metadata_provider_(
+ #if BUILDFLAG(IS_MAC)
+diff --git a/chromium/content/browser/renderer_host/render_widget_host_view_child_frame.cc b/chromium/content/browser/renderer_host/render_widget_host_view_child_frame.cc
+index b190c86708d..632973c779e 100644
+--- src/3rdparty/chromium/content/browser/renderer_host/render_widget_host_view_child_frame.cc
++++ src/3rdparty/chromium/content/browser/renderer_host/render_widget_host_view_child_frame.cc
+@@ -406,7 +406,7 @@ void RenderWidgetHostViewChildFrame::Destroy() {
+   // have already been cleared when RenderWidgetHostViewBase notified its
+   // observers of our impending destruction.
+   if (frame_connector_) {
+-    frame_connector_->SetView(nullptr);
++    frame_connector_->SetView(nullptr, /*allow_paint_holding=*/false);
+     SetFrameConnector(nullptr);
+   }
+ 
+diff --git a/chromium/content/common/features.cc b/chromium/content/common/features.cc
+index 52443a0118c..e80454c2edd 100644
+--- src/3rdparty/chromium/content/common/features.cc
++++ src/3rdparty/chromium/content/common/features.cc
+@@ -59,6 +59,11 @@ BASE_FEATURE(kWindowOpenFileSelectFix,
+              "WindowOpenFileSelectFix",
+              base::FEATURE_ENABLED_BY_DEFAULT);
+ 
++// Flag guard for fix for crbug.com/40942531.
++BASE_FEATURE(kLimitCrossOriginNonActivatedPaintHolding,
++             "LimitCrossOriginNonActivatedPaintHolding",
++             base::FEATURE_ENABLED_BY_DEFAULT);
++
+ // Please keep features in alphabetical order.
+ 
+ }  // namespace content
+diff --git a/chromium/content/common/features.h b/chromium/content/common/features.h
+index 5b5feb19663..92d7b515f86 100644
+--- src/3rdparty/chromium/content/common/features.h
++++ src/3rdparty/chromium/content/common/features.h
+@@ -72,6 +72,8 @@ CONTENT_EXPORT BASE_DECLARE_FEATURE(kSpeculativeServiceWorkerStartup);
+ // Flag guard for fix for crbug.com/1414936.
+ CONTENT_EXPORT BASE_DECLARE_FEATURE(kWindowOpenFileSelectFix);
+ 
++CONTENT_EXPORT BASE_DECLARE_FEATURE(kLimitCrossOriginNonActivatedPaintHolding);
++
+ // Please keep features in alphabetical order.
+ 
+ }  // namespace content
+diff --git a/chromium/content/public/browser/content_browser_client.cc b/chromium/content/public/browser/content_browser_client.cc
+index f30e5094533..59d3cc16e25 100644
+--- src/3rdparty/chromium/content/public/browser/content_browser_client.cc
++++ src/3rdparty/chromium/content/public/browser/content_browser_client.cc
+@@ -1593,4 +1593,8 @@ bool ContentBrowserClient::
+   return true;
+ }
+ 
++bool ContentBrowserClient::AllowNonActivatedCrossOriginPaintHolding() {
++  return false;
++}
++
+ }  // namespace content
+diff --git a/chromium/content/public/browser/content_browser_client.h b/chromium/content/public/browser/content_browser_client.h
+index 3ae26ba017f..ded95892ab6 100644
+--- src/3rdparty/chromium/content/public/browser/content_browser_client.h
++++ src/3rdparty/chromium/content/public/browser/content_browser_client.h
+@@ -2619,6 +2619,10 @@ class CONTENT_EXPORT ContentBrowserClient {
+   // "Cache-control: no-store" header in BFCache.
+   virtual bool ShouldAllowBackForwardCacheForCacheControlNoStorePage(
+       content::BrowserContext* browser_context);
++
++  // Indicates whether this client allows paint holding in cross-origin
++  // navigations even if there was no user activation.
++  virtual bool AllowNonActivatedCrossOriginPaintHolding();
+ };
+ 
+ }  // namespace content
+diff --git a/chromium/content/renderer/media/media_factory.cc b/chromium/content/renderer/media/media_factory.cc
+index a6859aa3532..3316f1aaedc 100644
+--- src/3rdparty/chromium/content/renderer/media/media_factory.cc
++++ src/3rdparty/chromium/content/renderer/media/media_factory.cc
+@@ -690,7 +690,7 @@ MediaFactory::CreateRendererFactorySelector(
+ 
+     media::ObserveOverlayStateCB observe_overlay_state_cb =
+         base::BindRepeating(&OverlayStateObserverImpl::Create,
+-                            render_thread->GetOverlayStateServiceProvider());
++                            base::RetainedRef(render_thread->GetOverlayStateServiceProvider()));
+ 
+     factory_selector->AddFactory(
+         RendererType::kMediaFoundation,
+diff --git a/chromium/content/renderer/media/win/overlay_state_observer_impl.cc b/chromium/content/renderer/media/win/overlay_state_observer_impl.cc
+index 7cb6729a1e2..1de0ddc46ab 100644
+--- src/3rdparty/chromium/content/renderer/media/win/overlay_state_observer_impl.cc
++++ src/3rdparty/chromium/content/renderer/media/win/overlay_state_observer_impl.cc
+@@ -16,7 +16,7 @@ OverlayStateObserverImpl::Create(
+     StateChangedCB state_changed_cb) {
+   if (overlay_state_service_provider) {
+     return base::WrapUnique(new OverlayStateObserverImpl(
+-        overlay_state_service_provider, mailbox, state_changed_cb));
++        overlay_state_service_provider, mailbox, std::move(state_changed_cb)));
+   }
+   return nullptr;
+ }
+diff --git a/chromium/content/renderer/media/win/overlay_state_service_provider.h b/chromium/content/renderer/media/win/overlay_state_service_provider.h
+index a1b97b4429f..491a44ba2ea 100644
+--- src/3rdparty/chromium/content/renderer/media/win/overlay_state_service_provider.h
++++ src/3rdparty/chromium/content/renderer/media/win/overlay_state_service_provider.h
+@@ -15,11 +15,19 @@ class GpuChannelHost;
+ 
+ namespace content {
+ 
+-class OverlayStateServiceProvider {
++class OverlayStateServiceProvider
++    : public base::RefCountedThreadSafe<OverlayStateServiceProvider> {
+  public:
+   virtual bool RegisterObserver(
+       mojo::PendingRemote<gpu::mojom::OverlayStateObserver> pending_remote,
+       const gpu::Mailbox& mailbox) = 0;
++
++ protected:
++  friend class base::RefCountedThreadSafe<OverlayStateServiceProvider>;
++  OverlayStateServiceProvider() = default;
++  OverlayStateServiceProvider(const OverlayStateServiceProvider&) = delete;
++  OverlayStateServiceProvider& operator=(const OverlayStateServiceProvider&) =
++      delete;
+   virtual ~OverlayStateServiceProvider() = default;
+ };
+ 
+@@ -29,7 +37,6 @@ class OverlayStateServiceProviderImpl : public OverlayStateServiceProvider {
+  public:
+   explicit OverlayStateServiceProviderImpl(
+       scoped_refptr<gpu::GpuChannelHost> channel);
+-  ~OverlayStateServiceProviderImpl() override;
+ 
+   bool RegisterObserver(
+       mojo::PendingRemote<gpu::mojom::OverlayStateObserver> pending_remote,
+@@ -43,6 +50,7 @@ class OverlayStateServiceProviderImpl : public OverlayStateServiceProvider {
+       delete;
+   OverlayStateServiceProviderImpl& operator=(
+       const OverlayStateServiceProviderImpl&) = delete;
++  ~OverlayStateServiceProviderImpl() override;
+ 
+   scoped_refptr<gpu::GpuChannelHost> channel_;
+ };
+diff --git a/chromium/content/renderer/render_thread_impl.cc b/chromium/content/renderer/render_thread_impl.cc
+index 328ed025f6b..f44428ecb13 100644
+--- src/3rdparty/chromium/content/renderer/render_thread_impl.cc
++++ src/3rdparty/chromium/content/renderer/render_thread_impl.cc
+@@ -1268,7 +1268,7 @@ scoped_refptr<DCOMPTextureFactory> RenderThreadImpl::GetDCOMPTextureFactory() {
+   return dcomp_texture_factory_;
+ }
+ 
+-OverlayStateServiceProvider*
++scoped_refptr<OverlayStateServiceProvider>
+ RenderThreadImpl::GetOverlayStateServiceProvider() {
+   DCHECK(IsMainThread());
+   // Only set 'overlay_state_service_provider_' if Media Foundation for clear
+@@ -1282,11 +1282,12 @@ RenderThreadImpl::GetOverlayStateServiceProvider() {
+         return nullptr;
+       }
+       overlay_state_service_provider_ =
+-          std::make_unique<OverlayStateServiceProviderImpl>(std::move(channel));
++          base::MakeRefCounted<OverlayStateServiceProviderImpl>(
++              std::move(channel));
+     }
+   }
+ 
+-  return overlay_state_service_provider_.get();
++  return overlay_state_service_provider_;
+ }
+ #endif  // BUILDFLAG(IS_WIN)
+ 
+diff --git a/chromium/content/renderer/render_thread_impl.h b/chromium/content/renderer/render_thread_impl.h
+index 0d91d61008a..1e3a986f9e7 100644
+--- src/3rdparty/chromium/content/renderer/render_thread_impl.h
++++ src/3rdparty/chromium/content/renderer/render_thread_impl.h
+@@ -265,7 +265,7 @@ class CONTENT_EXPORT RenderThreadImpl
+   // The OverlayStateService is only available where Media Foundation for
+   // clear is supported, otherwise GetOverlayStateServiceProvider will return
+   // nullptr.
+-  OverlayStateServiceProvider* GetOverlayStateServiceProvider();
++  scoped_refptr<OverlayStateServiceProvider> GetOverlayStateServiceProvider();
+ #endif
+ 
+   blink::WebVideoCaptureImplManager* video_capture_impl_manager() const {
+@@ -530,7 +530,7 @@ class CONTENT_EXPORT RenderThreadImpl
+ 
+ #if BUILDFLAG(IS_WIN)
+   scoped_refptr<DCOMPTextureFactory> dcomp_texture_factory_;
+-  std::unique_ptr<OverlayStateServiceProviderImpl>
++  scoped_refptr<OverlayStateServiceProviderImpl>
+       overlay_state_service_provider_;
+ #endif
+ 
 diff --git a/chromium/gpu/config/software_rendering_list.json b/chromium/gpu/config/software_rendering_list.json
 index a2f6aa5f2cf..0878fb2599e 100644
 --- src/3rdparty/chromium/gpu/config/software_rendering_list.json
@@ -195,6 +1069,56 @@ index a2f6aa5f2cf..0878fb2599e 100644
      {
        "id": 159,
        "cr_bugs": [902247],
+diff --git a/chromium/third_party/blink/common/widget/constants.cc b/chromium/third_party/blink/common/widget/constants.cc
+index 212050c1221..2b27ca8d7e9 100644
+--- src/3rdparty/chromium/third_party/blink/common/widget/constants.cc
++++ src/3rdparty/chromium/third_party/blink/common/widget/constants.cc
+@@ -8,4 +8,6 @@ namespace blink {
+ 
+ const int kMinimumWindowSize = 100;
+ 
++const base::TimeDelta kNewContentRenderingDelay = base::Seconds(4);
++
+ }  // namespace blink
+diff --git a/chromium/third_party/blink/public/common/widget/constants.h b/chromium/third_party/blink/public/common/widget/constants.h
+index 95749573237..69aedfbc137 100644
+--- src/3rdparty/chromium/third_party/blink/public/common/widget/constants.h
++++ src/3rdparty/chromium/third_party/blink/public/common/widget/constants.h
+@@ -5,6 +5,7 @@
+ #ifndef THIRD_PARTY_BLINK_PUBLIC_COMMON_WIDGET_CONSTANTS_H_
+ #define THIRD_PARTY_BLINK_PUBLIC_COMMON_WIDGET_CONSTANTS_H_
+ 
++#include "base/time/time.h"
+ #include "third_party/blink/public/common/common_export.h"
+ 
+ namespace blink {
+@@ -13,6 +14,9 @@ namespace blink {
+ // window object
+ BLINK_COMMON_EXPORT extern const int kMinimumWindowSize;
+ 
++// The timeout for clearing old paint for a cross-document navigation.
++BLINK_COMMON_EXPORT extern const base::TimeDelta kNewContentRenderingDelay;
++
+ }  // namespace blink
+ 
+ #endif  // THIRD_PARTY_BLINK_PUBLIC_COMMON_WIDGET_CONSTANTS_H_
+diff --git a/chromium/third_party/blink/public/mojom/frame/remote_frame.mojom b/chromium/third_party/blink/public/mojom/frame/remote_frame.mojom
+index 4d891d46b67..e3c22c2059b 100644
+--- src/3rdparty/chromium/third_party/blink/public/mojom/frame/remote_frame.mojom
++++ src/3rdparty/chromium/third_party/blink/public/mojom/frame/remote_frame.mojom
+@@ -404,7 +404,11 @@ interface RemoteFrame {
+ 
+   // Notifies this remote frame that its associated compositing
+   // destination (RenderWidgetHostView) has changed.
+-  SetFrameSinkId(viz.mojom.FrameSinkId frame_sink_id);
++  //
++  // The embedder can keep using the painted content from the previous frame
++  // sink until the new frame sink produces a new frame, i.e., paint holding.
++  // `allow_paint_holding` is used to limit this to same-origin navigations.
++  SetFrameSinkId(viz.mojom.FrameSinkId frame_sink_id, bool allow_paint_holding);
+ 
+   // Notifies the remote frame that the process rendering the child frame's
+   // contents has terminated.
 diff --git a/chromium/third_party/blink/renderer/core/dom/element_rare_data_vector.cc b/chromium/third_party/blink/renderer/core/dom/element_rare_data_vector.cc
 index 5680187326b..66abc46ca6a 100644
 --- src/3rdparty/chromium/third_party/blink/renderer/core/dom/element_rare_data_vector.cc
@@ -225,6 +1149,575 @@ index 5680187326b..66abc46ca6a 100644
  #endif
  }
  
+diff --git a/chromium/third_party/blink/renderer/core/frame/child_frame_compositing_helper.cc b/chromium/third_party/blink/renderer/core/frame/child_frame_compositing_helper.cc
+index 632bc8d5aa3..d5afeae18a8 100644
+--- src/3rdparty/chromium/third_party/blink/renderer/core/frame/child_frame_compositing_helper.cc
++++ src/3rdparty/chromium/third_party/blink/renderer/core/frame/child_frame_compositing_helper.cc
+@@ -12,7 +12,10 @@
+ #include "cc/paint/paint_image.h"
+ #include "cc/paint/paint_image_builder.h"
+ #include "skia/ext/image_operations.h"
++#include "third_party/blink/public/common/widget/constants.h"
+ #include "third_party/blink/renderer/core/frame/child_frame_compositor.h"
++#include "third_party/blink/renderer/platform/runtime_enabled_features.h"
++#include "third_party/blink/renderer/platform/wtf/functional.h"
+ #include "third_party/skia/include/core/SkBitmap.h"
+ #include "third_party/skia/include/core/SkImage.h"
+ #include "ui/gfx/geometry/point_f.h"
+@@ -46,11 +49,14 @@ void ChildFrameCompositingHelper::ChildFrameGone(float device_scale_factor) {
+ 
+ void ChildFrameCompositingHelper::SetSurfaceId(
+     const viz::SurfaceId& surface_id,
+-    bool capture_sequence_number_changed) {
++    CaptureSequenceNumberChanged capture_sequence_number_changed,
++    AllowPaintHolding allow_paint_holding) {
+   if (surface_id_ == surface_id)
+     return;
+ 
++  const auto current_surface_id = surface_id_;
+   surface_id_ = surface_id;
++  paint_holding_timer_.Stop();
+ 
+   surface_layer_ = cc::SurfaceLayer::Create();
+   surface_layer_->SetMasksToBounds(true);
+@@ -59,10 +65,12 @@ void ChildFrameCompositingHelper::SetSurfaceId(
+ 
+   // If we're synchronizing surfaces, then use an infinite deadline to ensure
+   // everything is synchronized.
+-  cc::DeadlinePolicy deadline = capture_sequence_number_changed
+-                                    ? cc::DeadlinePolicy::UseInfiniteDeadline()
+-                                    : cc::DeadlinePolicy::UseDefaultDeadline();
++  cc::DeadlinePolicy deadline =
++      capture_sequence_number_changed == CaptureSequenceNumberChanged::kYes
++          ? cc::DeadlinePolicy::UseInfiniteDeadline()
++          : cc::DeadlinePolicy::UseDefaultDeadline();
+   surface_layer_->SetSurfaceId(surface_id, deadline);
++  MaybeSetUpPaintHolding(current_surface_id, allow_paint_holding);
+ 
+   // TODO(lfg): Investigate if it's possible to propagate the information
+   // about the child surface's opacity. https://crbug.com/629851.
+@@ -72,6 +80,33 @@ void ChildFrameCompositingHelper::SetSurfaceId(
+   UpdateVisibility(true);
+ }
+ 
++void ChildFrameCompositingHelper::MaybeSetUpPaintHolding(
++    const viz::SurfaceId& fallback_id,
++    AllowPaintHolding allow_paint_holding) {
++  if (!RuntimeEnabledFeatures::PaintHoldingForIframesEnabled()) {
++    return;
++  }
++
++  if (fallback_id.is_valid() &&
++      allow_paint_holding == AllowPaintHolding::kYes) {
++    surface_layer_->SetOldestAcceptableFallback(fallback_id);
++
++    paint_holding_timer_.Start(
++        FROM_HERE, kNewContentRenderingDelay,
++        WTF::BindOnce(&ChildFrameCompositingHelper::PaintHoldingTimerFired,
++                      base::Unretained(this)));
++  } else {
++    surface_layer_->SetOldestAcceptableFallback(viz::SurfaceId());
++  }
++}
++
++void ChildFrameCompositingHelper::PaintHoldingTimerFired() {
++  CHECK(RuntimeEnabledFeatures::PaintHoldingForIframesEnabled());
++  if (surface_layer_) {
++    surface_layer_->SetOldestAcceptableFallback(viz::SurfaceId());
++  }
++}
++
+ void ChildFrameCompositingHelper::UpdateVisibility(bool visible) {
+   const scoped_refptr<cc::Layer>& layer = child_frame_compositor_->GetCcLayer();
+   if (layer) {
+diff --git a/chromium/third_party/blink/renderer/core/frame/child_frame_compositing_helper.h b/chromium/third_party/blink/renderer/core/frame/child_frame_compositing_helper.h
+index 2717a66a18d..4f870564916 100644
+--- src/3rdparty/chromium/third_party/blink/renderer/core/frame/child_frame_compositing_helper.h
++++ src/3rdparty/chromium/third_party/blink/renderer/core/frame/child_frame_compositing_helper.h
+@@ -7,6 +7,7 @@
+ 
+ #include <stdint.h>
+ 
++#include "base/timer/timer.h"
+ #include "cc/layers/content_layer_client.h"
+ #include "cc/layers/surface_layer.h"
+ #include "components/viz/common/surfaces/surface_id.h"
+@@ -29,8 +30,12 @@ class CORE_EXPORT ChildFrameCompositingHelper : public cc::ContentLayerClient {
+       delete;
+   ~ChildFrameCompositingHelper() override;
+ 
+-  void SetSurfaceId(const viz::SurfaceId& surface_id,
+-                    bool capture_sequence_number_changed);
++  enum class CaptureSequenceNumberChanged { kYes, kNo };
++  enum class AllowPaintHolding { kYes, kNo };
++  void SetSurfaceId(
++      const viz::SurfaceId& surface_id,
++      CaptureSequenceNumberChanged capture_sequence_number_changed,
++      AllowPaintHolding allow_paint_holding);
+   void UpdateVisibility(bool visible);
+   void ChildFrameGone(float device_scale_factor);
+ 
+@@ -43,10 +48,15 @@ class CORE_EXPORT ChildFrameCompositingHelper : public cc::ContentLayerClient {
+   scoped_refptr<cc::DisplayItemList> PaintContentsToDisplayList() override;
+   bool FillsBoundsCompletely() const override;
+ 
++  void MaybeSetUpPaintHolding(const viz::SurfaceId& fallback_id,
++                              AllowPaintHolding allow_paint_holding);
++  void PaintHoldingTimerFired();
++
+   ChildFrameCompositor* const child_frame_compositor_;
+   viz::SurfaceId surface_id_;
+   scoped_refptr<cc::SurfaceLayer> surface_layer_;
+   scoped_refptr<cc::PictureLayer> crash_ui_layer_;
++  base::OneShotTimer paint_holding_timer_;
+   float device_scale_factor_ = 1.f;
+ };
+ 
+diff --git a/chromium/third_party/blink/renderer/core/frame/child_frame_compositing_helper_test.cc b/chromium/third_party/blink/renderer/core/frame/child_frame_compositing_helper_test.cc
+index 47d094c4e8d..cb961013332 100644
+--- src/3rdparty/chromium/third_party/blink/renderer/core/frame/child_frame_compositing_helper_test.cc
++++ src/3rdparty/chromium/third_party/blink/renderer/core/frame/child_frame_compositing_helper_test.cc
+@@ -4,6 +4,7 @@
+ 
+ #include "third_party/blink/renderer/core/frame/child_frame_compositing_helper.h"
+ 
++#include "base/test/task_environment.h"
+ #include "cc/layers/layer.h"
+ #include "testing/gtest/include/gtest/gtest.h"
+ #include "third_party/blink/renderer/core/frame/child_frame_compositor.h"
+@@ -61,6 +62,9 @@ class ChildFrameCompositingHelperTest : public testing::Test {
+   ChildFrameCompositingHelper* compositing_helper() {
+     return &compositing_helper_;
+   }
++  const cc::SurfaceLayer& GetSurfaceLayer() {
++    return *static_cast<cc::SurfaceLayer*>(compositor_.GetCcLayer().get());
++  }
+ 
+  private:
+   MockChildFrameCompositor compositor_;
+@@ -74,7 +78,10 @@ TEST_F(ChildFrameCompositingHelperTest, ChildFrameGoneClearsFallback) {
+   EXPECT_FALSE(compositing_helper()->surface_id().is_valid());
+ 
+   const viz::SurfaceId surface_id = MakeSurfaceId(viz::FrameSinkId(1, 1), 1);
+-  compositing_helper()->SetSurfaceId(surface_id, false);
++  compositing_helper()->SetSurfaceId(
++      surface_id,
++      ChildFrameCompositingHelper::CaptureSequenceNumberChanged::kNo,
++      ChildFrameCompositingHelper::AllowPaintHolding::kNo);
+   EXPECT_EQ(surface_id, compositing_helper()->surface_id());
+ 
+   // Reporting that the child frame is gone should clear the surface id.
+@@ -82,4 +89,33 @@ TEST_F(ChildFrameCompositingHelperTest, ChildFrameGoneClearsFallback) {
+   EXPECT_FALSE(compositing_helper()->surface_id().is_valid());
+ }
+ 
++TEST_F(ChildFrameCompositingHelperTest, PaintHoldingTimeout) {
++  base::test::SingleThreadTaskEnvironment task_environment{
++      base::test::TaskEnvironment::MainThreadType::UI,
++      base::test::TaskEnvironment::TimeSource::MOCK_TIME};
++  EXPECT_FALSE(compositing_helper()->surface_id().is_valid());
++
++  const viz::SurfaceId surface_id = MakeSurfaceId(viz::FrameSinkId(1, 1), 1);
++  compositing_helper()->SetSurfaceId(
++      surface_id,
++      ChildFrameCompositingHelper::CaptureSequenceNumberChanged::kNo,
++      ChildFrameCompositingHelper::AllowPaintHolding::kNo);
++  EXPECT_EQ(surface_id, GetSurfaceLayer().surface_id());
++  EXPECT_FALSE(GetSurfaceLayer().oldest_acceptable_fallback());
++
++  const viz::SurfaceId new_surface_id =
++      MakeSurfaceId(viz::FrameSinkId(1, 1), 2);
++  compositing_helper()->SetSurfaceId(
++      new_surface_id,
++      ChildFrameCompositingHelper::CaptureSequenceNumberChanged::kNo,
++      ChildFrameCompositingHelper::AllowPaintHolding::kYes);
++  EXPECT_EQ(new_surface_id, GetSurfaceLayer().surface_id());
++  ASSERT_TRUE(GetSurfaceLayer().oldest_acceptable_fallback());
++  EXPECT_EQ(surface_id, GetSurfaceLayer().oldest_acceptable_fallback().value());
++
++  task_environment.FastForwardUntilNoTasksRemain();
++  EXPECT_EQ(new_surface_id, GetSurfaceLayer().surface_id());
++  EXPECT_FALSE(GetSurfaceLayer().oldest_acceptable_fallback());
++}
++
+ }  // namespace blink
+diff --git a/chromium/third_party/blink/renderer/core/frame/location_report_body.cc b/chromium/third_party/blink/renderer/core/frame/location_report_body.cc
+index ccd47126403..6aa5c56f92b 100644
+--- src/3rdparty/chromium/third_party/blink/renderer/core/frame/location_report_body.cc
++++ src/3rdparty/chromium/third_party/blink/renderer/core/frame/location_report_body.cc
+@@ -3,7 +3,10 @@
+ // found in the LICENSE file.
+ 
+ #include "third_party/blink/renderer/core/frame/location_report_body.h"
++
++#include "third_party/blink/public/common/scheme_registry.h"
+ #include "third_party/blink/renderer/bindings/core/v8/capture_source_location.h"
++#include "third_party/blink/renderer/platform/weborigin/kurl.h"
+ #include "third_party/blink/renderer/platform/wtf/hash_functions.h"
+ 
+ namespace blink {
+@@ -49,4 +52,16 @@ unsigned LocationReportBody::MatchId() const {
+   return hash;
+ }
+ 
++bool LocationReportBody::IsExtensionSource() const {
++  // TODO(crbug.com/356098278): Either remove this KURL instantiation completely
++  // or store `source_file_` as a KURL and only convert to string when sending
++  // reports.
++  KURL source_file_url(source_file_);
++  if (!source_file_url.IsValid()) {
++    return false;
++  }
++  return CommonSchemeRegistry::IsExtensionScheme(
++      source_file_url.Protocol().Utf8());
++}
++
+ }  // namespace blink
+diff --git a/chromium/third_party/blink/renderer/core/frame/location_report_body.h b/chromium/third_party/blink/renderer/core/frame/location_report_body.h
+index dea5e9232f4..8dd27eed8f5 100644
+--- src/3rdparty/chromium/third_party/blink/renderer/core/frame/location_report_body.h
++++ src/3rdparty/chromium/third_party/blink/renderer/core/frame/location_report_body.h
+@@ -59,6 +59,8 @@ class CORE_EXPORT LocationReportBody : public ReportBody {
+ 
+   unsigned MatchId() const override;
+ 
++  bool IsExtensionSource() const override;
++
+  protected:
+   const String source_file_;
+   const absl::optional<uint32_t> line_number_;
+diff --git a/chromium/third_party/blink/renderer/core/frame/location_report_body_test.cc b/chromium/third_party/blink/renderer/core/frame/location_report_body_test.cc
+index 19eea3f8c71..c5ada318dbc 100644
+--- src/3rdparty/chromium/third_party/blink/renderer/core/frame/location_report_body_test.cc
++++ src/3rdparty/chromium/third_party/blink/renderer/core/frame/location_report_body_test.cc
+@@ -8,6 +8,7 @@
+ #include <vector>
+ 
+ #include "testing/gtest/include/gtest/gtest.h"
++#include "third_party/blink/public/common/scheme_registry.h"
+ 
+ namespace blink {
+ namespace {
+@@ -89,5 +90,24 @@ TEST(LocationReportBodyMatchIdTest,
+   }
+ }
+ 
++TEST(LocationReportBodyTest, ExtensionURLsAreIdentified) {
++  const char* kExtensionUrl =
++      "chrome-extension://abcdefghijklmnopabcdefghijklmnop/scripts/"
++      "script.js";
++  const char* kAboutBlankUrl = "about:blank";
++  const char* kHttpsUrl = "https://example.com/";
++
++  EXPECT_FALSE(TestLocationReportBody(kExtensionUrl, 1, 1).IsExtensionSource());
++  EXPECT_FALSE(
++      TestLocationReportBody(kAboutBlankUrl, 1, 1).IsExtensionSource());
++  EXPECT_FALSE(TestLocationReportBody(kHttpsUrl, 1, 1).IsExtensionSource());
++
++  CommonSchemeRegistry::RegisterURLSchemeAsExtension("chrome-extension");
++  EXPECT_TRUE(TestLocationReportBody(kExtensionUrl, 1, 1).IsExtensionSource());
++  EXPECT_FALSE(
++      TestLocationReportBody(kAboutBlankUrl, 1, 1).IsExtensionSource());
++  EXPECT_FALSE(TestLocationReportBody(kHttpsUrl, 1, 1).IsExtensionSource());
++}
++
+ }  // namespace
+ }  // namespace blink
+diff --git a/chromium/third_party/blink/renderer/core/frame/remote_frame.cc b/chromium/third_party/blink/renderer/core/frame/remote_frame.cc
+index 7f3f457261d..3d744cda68d 100644
+--- src/3rdparty/chromium/third_party/blink/renderer/core/frame/remote_frame.cc
++++ src/3rdparty/chromium/third_party/blink/renderer/core/frame/remote_frame.cc
+@@ -28,7 +28,6 @@
+ #include "third_party/blink/renderer/core/accessibility/ax_object_cache.h"
+ #include "third_party/blink/renderer/core/events/message_event.h"
+ #include "third_party/blink/renderer/core/exported/web_view_impl.h"
+-#include "third_party/blink/renderer/core/frame/child_frame_compositing_helper.h"
+ #include "third_party/blink/renderer/core/frame/local_dom_window.h"
+ #include "third_party/blink/renderer/core/frame/local_frame.h"
+ #include "third_party/blink/renderer/core/frame/local_frame_client.h"
+@@ -860,7 +859,8 @@ viz::FrameSinkId RemoteFrame::GetFrameSinkId() {
+   return frame_sink_id_;
+ }
+ 
+-void RemoteFrame::SetFrameSinkId(const viz::FrameSinkId& frame_sink_id) {
++void RemoteFrame::SetFrameSinkId(const viz::FrameSinkId& frame_sink_id,
++                                 bool allow_paint_holding) {
+   remote_process_gone_ = false;
+ 
+   // The same ParentLocalSurfaceIdAllocator cannot provide LocalSurfaceIds for
+@@ -873,7 +873,10 @@ void RemoteFrame::SetFrameSinkId(const viz::FrameSinkId& frame_sink_id) {
+ 
+   // Resend the FrameRects and allocate a new viz::LocalSurfaceId when the view
+   // changes.
+-  ResendVisualProperties();
++  ResendVisualPropertiesInternal(
++      allow_paint_holding
++          ? ChildFrameCompositingHelper::AllowPaintHolding::kYes
++          : ChildFrameCompositingHelper::AllowPaintHolding::kNo);
+ }
+ 
+ void RemoteFrame::ChildProcessGone() {
+@@ -922,14 +925,18 @@ void RemoteFrame::ApplyReplicatedPermissionsPolicyHeader() {
+       permissions_policy_header_, container_policy, parent_permissions_policy);
+ }
+ 
+-bool RemoteFrame::SynchronizeVisualProperties(bool propagate) {
++bool RemoteFrame::SynchronizeVisualProperties(
++    bool propagate,
++    ChildFrameCompositingHelper::AllowPaintHolding allow_paint_holding) {
+   if (!GetFrameSinkId().is_valid() || remote_process_gone_)
+     return false;
+ 
+-  bool capture_sequence_number_changed =
+-      sent_visual_properties_ &&
+-      sent_visual_properties_->capture_sequence_number !=
+-          pending_visual_properties_.capture_sequence_number;
++  auto capture_sequence_number_changed =
++      (sent_visual_properties_ &&
++       sent_visual_properties_->capture_sequence_number !=
++           pending_visual_properties_.capture_sequence_number)
++          ? ChildFrameCompositingHelper::CaptureSequenceNumberChanged::kYes
++          : ChildFrameCompositingHelper::CaptureSequenceNumberChanged::kNo;
+ 
+   if (view_) {
+     pending_visual_properties_.compositor_viewport =
+@@ -981,8 +988,8 @@ bool RemoteFrame::SynchronizeVisualProperties(bool propagate) {
+   DCHECK(surface_id.is_valid());
+   DCHECK(!remote_process_gone_);
+ 
+-  compositing_helper_->SetSurfaceId(surface_id,
+-                                    capture_sequence_number_changed);
++  compositing_helper_->SetSurfaceId(surface_id, capture_sequence_number_changed,
++                                    allow_paint_holding);
+ 
+   bool rect_changed = !sent_visual_properties_ ||
+                       sent_visual_properties_->rect_in_local_root !=
+@@ -1011,8 +1018,14 @@ void RemoteFrame::RecordSentVisualProperties() {
+ }
+ 
+ void RemoteFrame::ResendVisualProperties() {
++  ResendVisualPropertiesInternal(
++      ChildFrameCompositingHelper::AllowPaintHolding::kNo);
++}
++
++void RemoteFrame::ResendVisualPropertiesInternal(
++    ChildFrameCompositingHelper::AllowPaintHolding allow_paint_holding) {
+   sent_visual_properties_ = absl::nullopt;
+-  SynchronizeVisualProperties();
++  SynchronizeVisualProperties(/*propagate=*/true, allow_paint_holding);
+ }
+ 
+ void RemoteFrame::DidUpdateVisualProperties(
+diff --git a/chromium/third_party/blink/renderer/core/frame/remote_frame.h b/chromium/third_party/blink/renderer/core/frame/remote_frame.h
+index 9585ac3d502..2209822b702 100644
+--- src/3rdparty/chromium/third_party/blink/renderer/core/frame/remote_frame.h
++++ src/3rdparty/chromium/third_party/blink/renderer/core/frame/remote_frame.h
+@@ -16,6 +16,7 @@
+ #include "third_party/blink/public/mojom/security_context/insecure_request_policy.mojom-blink-forward.h"
+ #include "third_party/blink/renderer/core/core_export.h"
+ #include "third_party/blink/renderer/core/execution_context/remote_security_context.h"
++#include "third_party/blink/renderer/core/frame/child_frame_compositing_helper.h"
+ #include "third_party/blink/renderer/core/frame/child_frame_compositor.h"
+ #include "third_party/blink/renderer/core/frame/frame.h"
+ #include "third_party/blink/renderer/core/frame/remote_frame_view.h"
+@@ -129,7 +130,13 @@ class CORE_EXPORT RemoteFrame final : public Frame,
+   void InitializeFrameVisualProperties(const FrameVisualProperties& properties);
+   // If 'propagate' is true, updated properties will be sent to the browser.
+   // Returns true if visual properties have changed.
+-  bool SynchronizeVisualProperties(bool propagate = true);
++  // If 'allow_paint_holding' is yes, the remote frame will display stale paint
++  // (for a timeout) until a frame with the newly synchronized visual properties
++  // has been produced by the child.
++  bool SynchronizeVisualProperties(
++      bool propagate = true,
++      ChildFrameCompositingHelper::AllowPaintHolding allow_paint_holding =
++          ChildFrameCompositingHelper::AllowPaintHolding::kNo);
+   void ResendVisualProperties();
+   void SetViewportIntersection(const mojom::blink::ViewportIntersectionState&);
+   void UpdateCompositedLayerBounds();
+@@ -208,7 +215,8 @@ class CORE_EXPORT RemoteFrame final : public Frame,
+   void DisableAutoResize() override;
+   void DidUpdateVisualProperties(
+       const cc::RenderFrameMetadata& metadata) override;
+-  void SetFrameSinkId(const viz::FrameSinkId& frame_sink_id) override;
++  void SetFrameSinkId(const viz::FrameSinkId& frame_sink_id,
++                      bool allow_paint_holding) override;
+   void ChildProcessGone() override;
+   void CreateRemoteChild(
+       const RemoteFrameToken& token,
+@@ -274,6 +282,9 @@ class CORE_EXPORT RemoteFrame final : public Frame,
+   void ApplyReplicatedPermissionsPolicyHeader();
+   void RecordSentVisualProperties();
+ 
++  void ResendVisualPropertiesInternal(
++      ChildFrameCompositingHelper::AllowPaintHolding allow_paint_holding);
++
+   Member<RemoteFrameView> view_;
+   RemoteSecurityContext security_context_;
+   absl::optional<blink::FrameVisualProperties> sent_visual_properties_;
+diff --git a/chromium/third_party/blink/renderer/core/frame/report.cc b/chromium/third_party/blink/renderer/core/frame/report.cc
+index f854ddfdc18..4106efeba4a 100644
+--- src/3rdparty/chromium/third_party/blink/renderer/core/frame/report.cc
++++ src/3rdparty/chromium/third_party/blink/renderer/core/frame/report.cc
+@@ -30,4 +30,11 @@ unsigned Report::MatchId() const {
+   return hash;
+ }
+ 
++bool Report::ShouldSendReport() const {
++  // Don't report any URLs from extension code.
++  // TODO(356098278): Investigate whether extension URLs should be reported to
++  // an extension-defined endpoint, if the extension opts in to reporting.
++  return !body()->IsExtensionSource();
++}
++
+ }  // namespace blink
+diff --git a/chromium/third_party/blink/renderer/core/frame/report.h b/chromium/third_party/blink/renderer/core/frame/report.h
+index 2dcc85fe99a..0e97c298e1d 100644
+--- src/3rdparty/chromium/third_party/blink/renderer/core/frame/report.h
++++ src/3rdparty/chromium/third_party/blink/renderer/core/frame/report.h
+@@ -50,6 +50,12 @@ class CORE_EXPORT Report : public ScriptWrappable {
+   // Collision of match id is possible.
+   unsigned MatchId() const;
+ 
++  // Determines whether this report is allowed to be sent to observers or the
++  // reporting endpoints. This should return false if the report should not be
++  // sent, for example, if the body of the report would reveal private
++  // information, such as extension URLs.
++  bool ShouldSendReport() const;
++
+  private:
+   const String type_;
+   const String url_;
+diff --git a/chromium/third_party/blink/renderer/core/frame/report_body.h b/chromium/third_party/blink/renderer/core/frame/report_body.h
+index 73a07fa7355..ea19d190b71 100644
+--- src/3rdparty/chromium/third_party/blink/renderer/core/frame/report_body.h
++++ src/3rdparty/chromium/third_party/blink/renderer/core/frame/report_body.h
+@@ -25,6 +25,10 @@ class CORE_EXPORT ReportBody : public ScriptWrappable {
+   // Provides a hash-like value for identifying reports with same content.
+   // Collision of match id is possible.
+   virtual unsigned MatchId() const { return 0; }
++
++  // Returns true if this report body would contain an extension URL as the
++  // report source.
++  virtual bool IsExtensionSource() const { return false; }
+ };
+ 
+ }  // namespace blink
+diff --git a/chromium/third_party/blink/renderer/core/frame/report_test.cc b/chromium/third_party/blink/renderer/core/frame/report_test.cc
+index 1fbaa2bfa3f..2d14342315a 100644
+--- src/3rdparty/chromium/third_party/blink/renderer/core/frame/report_test.cc
++++ src/3rdparty/chromium/third_party/blink/renderer/core/frame/report_test.cc
+@@ -7,6 +7,7 @@
+ #include <vector>
+ 
+ #include "testing/gtest/include/gtest/gtest.h"
++#include "third_party/blink/public/common/scheme_registry.h"
+ #include "third_party/blink/renderer/core/frame/document_policy_violation_report_body.h"
+ #include "third_party/blink/renderer/core/frame/location_report_body.h"
+ #include "third_party/blink/renderer/core/frame/permissions_policy_violation_report_body.h"
+@@ -87,5 +88,32 @@ TEST(ReportMatchIdTest, MatchIdGeneratedShouldNotBeZero) {
+   }
+ }
+ 
++TEST(ReportTest, ExtensionURLsAreNotReported) {
++  CommonSchemeRegistry::RegisterURLSchemeAsExtension("chrome-extension");
++  EXPECT_TRUE(Report(ReportType::kDocumentPolicyViolation,
++                     "https://example.com/",
++                     MakeGarbageCollected<DocumentPolicyViolationReportBody>(
++                         "feature", "message", "disposition",
++                         "https://example.com/script.js"))
++                  .ShouldSendReport());
++  EXPECT_FALSE(Report(ReportType::kDocumentPolicyViolation,
++                      "https://example.com/",
++                      MakeGarbageCollected<DocumentPolicyViolationReportBody>(
++                          "feature", "message", "disposition",
++                          "chrome-extension://abcdefghijklmnopabcdefghijklmnop/"
++                          "scripts/script.js"))
++                   .ShouldSendReport());
++  // This is false for now; all reports from extension scripts are blocked, even
++  // if the report comes from the extension itself.
++  EXPECT_FALSE(Report(ReportType::kDocumentPolicyViolation,
++                      "chrome-extension://abcdefghijklmnopabcdefghijklmnop/"
++                      "background_page.html",
++                      MakeGarbageCollected<DocumentPolicyViolationReportBody>(
++                          "feature", "message", "disposition",
++                          "chrome-extension://abcdefghijklmnopabcdefghijklmnop/"
++                          "scripts/script.js"))
++                   .ShouldSendReport());
++}
++
+ }  // namespace
+ }  // namespace blink
+diff --git a/chromium/third_party/blink/renderer/core/frame/reporting_context.cc b/chromium/third_party/blink/renderer/core/frame/reporting_context.cc
+index dc32fd90d94..c4ade3b35c8 100644
+--- src/3rdparty/chromium/third_party/blink/renderer/core/frame/reporting_context.cc
++++ src/3rdparty/chromium/third_party/blink/renderer/core/frame/reporting_context.cc
+@@ -76,6 +76,10 @@ void ReportingContext::Bind(
+ 
+ void ReportingContext::QueueReport(Report* report,
+                                    const Vector<String>& endpoints) {
++  if (!report->ShouldSendReport()) {
++    return;
++  }
++
+   CountReport(report);
+ 
+   NotifyInternal(report);
+diff --git a/chromium/third_party/blink/renderer/core/html/parser/html_srcset_parser.cc b/chromium/third_party/blink/renderer/core/html/parser/html_srcset_parser.cc
+index 1767d68d92f..06a51f5e1a6 100644
+--- src/3rdparty/chromium/third_party/blink/renderer/core/html/parser/html_srcset_parser.cc
++++ src/3rdparty/chromium/third_party/blink/renderer/core/html/parser/html_srcset_parser.cc
+@@ -413,7 +413,7 @@ static unsigned AvoidDownloadIfHigherDensityResourceIsInCache(
+     KURL url = document->CompleteURL(
+         StripLeadingAndTrailingHTMLSpaces(image_candidates[i]->Url()));
+     if (MemoryCache::Get()->ResourceForURL(
+-            url, document->Fetcher()->GetCacheIdentifier(url)) ||
++            url, document->Fetcher()->GetCacheIdentifier(url, /*skip_service_worker=*/false)) ||
+         url.ProtocolIsData())
+       return i;
+   }
+diff --git a/chromium/third_party/blink/renderer/core/inspector/inspector_network_agent.cc b/chromium/third_party/blink/renderer/core/inspector/inspector_network_agent.cc
+index fb7a567f9f5..e9863d53647 100644
+--- src/3rdparty/chromium/third_party/blink/renderer/core/inspector/inspector_network_agent.cc
++++ src/3rdparty/chromium/third_party/blink/renderer/core/inspector/inspector_network_agent.cc
+@@ -2315,7 +2315,8 @@ bool InspectorNetworkAgent::FetchResourceContent(Document* document,
+   Resource* cached_resource = document->Fetcher()->CachedResource(url);
+   if (!cached_resource) {
+     cached_resource = MemoryCache::Get()->ResourceForURL(
+-        url, document->Fetcher()->GetCacheIdentifier(url));
++        url, document->Fetcher()->GetCacheIdentifier(
++                 url, /*skip_service_worker=*/false));
+   }
+   if (cached_resource && InspectorPageAgent::CachedResourceContent(
+                              cached_resource, content, base64_encoded)) {
+diff --git a/chromium/third_party/blink/renderer/core/inspector/inspector_page_agent.cc b/chromium/third_party/blink/renderer/core/inspector/inspector_page_agent.cc
+index 0767cdd734f..809aa7ceda5 100644
+--- src/3rdparty/chromium/third_party/blink/renderer/core/inspector/inspector_page_agent.cc
++++ src/3rdparty/chromium/third_party/blink/renderer/core/inspector/inspector_page_agent.cc
+@@ -167,7 +167,8 @@ Resource* CachedResource(LocalFrame* frame,
+   Resource* cached_resource = document->Fetcher()->CachedResource(url);
+   if (!cached_resource) {
+     cached_resource = MemoryCache::Get()->ResourceForURL(
+-        url, document->Fetcher()->GetCacheIdentifier(url));
++        url, document->Fetcher()->GetCacheIdentifier(
++                 url, /*skip_service_worker=*/false));
+   }
+   if (!cached_resource)
+     cached_resource = loader->ResourceForURL(url);
+diff --git a/chromium/third_party/blink/renderer/core/loader/image_loader.cc b/chromium/third_party/blink/renderer/core/loader/image_loader.cc
+index c647f154a13..76d72a7bc49 100644
+--- src/3rdparty/chromium/third_party/blink/renderer/core/loader/image_loader.cc
++++ src/3rdparty/chromium/third_party/blink/renderer/core/loader/image_loader.cc
+@@ -741,7 +741,8 @@ bool ImageLoader::ShouldLoadImmediately(const KURL& url) const {
+   // content when style recalc is over and DOM mutation is allowed again.
+   if (!url.IsNull()) {
+     Resource* resource = MemoryCache::Get()->ResourceForURL(
+-        url, element_->GetDocument().Fetcher()->GetCacheIdentifier(url));
++        url, element_->GetDocument().Fetcher()->GetCacheIdentifier(
++                 url, /*skip_service_worker=*/false));
+ 
+     if (resource && !resource->ErrorOccurred() &&
+         CanReuseFromListOfAvailableImages(
 diff --git a/chromium/third_party/blink/renderer/core/loader/modulescript/module_script_loader.cc b/chromium/third_party/blink/renderer/core/loader/modulescript/module_script_loader.cc
 index e6138a68698..1bd0a69801d 100644
 --- src/3rdparty/chromium/third_party/blink/renderer/core/loader/modulescript/module_script_loader.cc
@@ -275,6 +1768,32 @@ index 983d49f249e..ebc1c2a17bc 100644
  #endif
    }
  
+diff --git a/chromium/third_party/blink/renderer/core/testing/internals.cc b/chromium/third_party/blink/renderer/core/testing/internals.cc
+index e3bda97e583..a56b6d8fbb3 100644
+--- src/3rdparty/chromium/third_party/blink/renderer/core/testing/internals.cc
++++ src/3rdparty/chromium/third_party/blink/renderer/core/testing/internals.cc
+@@ -883,8 +883,8 @@ bool Internals::isLoading(const String& url) {
+   if (!document_)
+     return false;
+   const KURL full_url = document_->CompleteURL(url);
+-  const String cache_identifier =
+-      document_->Fetcher()->GetCacheIdentifier(full_url);
++  const String cache_identifier = document_->Fetcher()->GetCacheIdentifier(
++      full_url, /*skip_service_worker=*/false);
+   Resource* resource =
+       MemoryCache::Get()->ResourceForURL(full_url, cache_identifier);
+   // We check loader() here instead of isLoading(), because a multipart
+@@ -896,8 +896,8 @@ bool Internals::isLoadingFromMemoryCache(const String& url) {
+   if (!document_)
+     return false;
+   const KURL full_url = document_->CompleteURL(url);
+-  const String cache_identifier =
+-      document_->Fetcher()->GetCacheIdentifier(full_url);
++  const String cache_identifier = document_->Fetcher()->GetCacheIdentifier(
++      full_url, /*skip_service_worker=*/false);
+   Resource* resource =
+       MemoryCache::Get()->ResourceForURL(full_url, cache_identifier);
+   return resource && resource->GetStatus() == ResourceStatus::kCached;
 diff --git a/chromium/third_party/blink/renderer/modules/serial/serial_port_underlying_sink.cc b/chromium/third_party/blink/renderer/modules/serial/serial_port_underlying_sink.cc
 index 136f27f1ab0..97bb637e329 100644
 --- src/3rdparty/chromium/third_party/blink/renderer/modules/serial/serial_port_underlying_sink.cc
@@ -355,11 +1874,178 @@ index 2ca0f471f54..eed40684716 100644
  
    // TODO(crbug.com/1457493) : Remove when debugging is done.
    MojoResult invalid_data_pipe_read_result_ = MOJO_RESULT_OK;
+diff --git a/chromium/third_party/blink/renderer/platform/loader/fetch/resource_fetcher.cc b/chromium/third_party/blink/renderer/platform/loader/fetch/resource_fetcher.cc
+index 5bfbe590f32..248c049c62c 100644
+--- src/3rdparty/chromium/third_party/blink/renderer/platform/loader/fetch/resource_fetcher.cc
++++ src/3rdparty/chromium/third_party/blink/renderer/platform/loader/fetch/resource_fetcher.cc
+@@ -860,7 +860,8 @@ Resource* ResourceFetcher::CreateResourceForStaticData(
+   if (!archive_ && factory.GetType() == ResourceType::kRaw)
+     return nullptr;
+ 
+-  const String cache_identifier = GetCacheIdentifier(url);
++  const String cache_identifier = GetCacheIdentifier(
++      url, params.GetResourceRequest().GetSkipServiceWorker());
+   // Most off-main-thread resource fetches use Resource::kRaw and don't reach
+   // this point, but off-main-thread module fetches might.
+   if (IsMainThread()) {
+@@ -1347,7 +1348,10 @@ Resource* ResourceFetcher::RequestResource(FetchParameters& params,
+         resource = nullptr;
+       } else {
+         resource = MemoryCache::Get()->ResourceForURL(
+-            params.Url(), GetCacheIdentifier(params.Url()));
++            params.Url(),
++            GetCacheIdentifier(
++                params.Url(),
++                params.GetResourceRequest().GetSkipServiceWorker()));
+       }
+       if (resource) {
+         policy = DetermineRevalidationPolicy(resource_type, params, *resource,
+@@ -1604,7 +1608,8 @@ Resource* ResourceFetcher::CreateResourceForLoading(
+     const FetchParameters& params,
+     const ResourceFactory& factory) {
+   const String cache_identifier =
+-      GetCacheIdentifier(params.GetResourceRequest().Url());
++      GetCacheIdentifier(params.GetResourceRequest().Url(),
++                         params.GetResourceRequest().GetSkipServiceWorker());
+   if (!base::FeatureList::IsEnabled(
+           blink::features::kScopeMemoryCachePerContext)) {
+     DCHECK(!IsMainThread() || params.IsStaleRevalidation() ||
+@@ -2605,9 +2610,11 @@ void ResourceFetcher::UpdateAllImageResourcePriorities() {
+   to_be_removed.clear();
+ }
+ 
+-String ResourceFetcher::GetCacheIdentifier(const KURL& url) const {
+-  if (properties_->GetControllerServiceWorkerMode() !=
+-      mojom::ControllerServiceWorkerMode::kNoController) {
++String ResourceFetcher::GetCacheIdentifier(const KURL& url,
++                                           bool skip_service_worker) const {
++  if (!skip_service_worker &&
++      properties_->GetControllerServiceWorkerMode() !=
++          mojom::ControllerServiceWorkerMode::kNoController) {
+     return String::Number(properties_->ServiceWorkerId());
+   }
+ 
+diff --git a/chromium/third_party/blink/renderer/platform/loader/fetch/resource_fetcher.h b/chromium/third_party/blink/renderer/platform/loader/fetch/resource_fetcher.h
+index c437d854203..31e9774c178 100644
+--- src/3rdparty/chromium/third_party/blink/renderer/platform/loader/fetch/resource_fetcher.h
++++ src/3rdparty/chromium/third_party/blink/renderer/platform/loader/fetch/resource_fetcher.h
+@@ -260,7 +260,11 @@ class PLATFORM_EXPORT ResourceFetcher
+                          uint32_t inflight_keepalive_bytes);
+   blink::mojom::ControllerServiceWorkerMode IsControlledByServiceWorker() const;
+ 
+-  String GetCacheIdentifier(const KURL& url) const;
++  // Returns a cache identifier for MemoryCache.
++  // `url` is used for finding a matching WebBundle.
++  // If `skip_service_worker` is true, the identifier won't be a ServiceWorker's
++  // identifier to keep the cache separated.
++  String GetCacheIdentifier(const KURL& url, bool skip_service_worker) const;
+ 
+   // If `url` exists as a resource in a subresource bundle in this frame,
+   // returns its UnguessableToken; otherwise, returns absl::nullopt.
+diff --git a/chromium/third_party/blink/renderer/platform/runtime_enabled_features.json5 b/chromium/third_party/blink/renderer/platform/runtime_enabled_features.json5
+index c8c9459fad4..ff8dbd47b82 100644
+--- src/3rdparty/chromium/third_party/blink/renderer/platform/runtime_enabled_features.json5
++++ src/3rdparty/chromium/third_party/blink/renderer/platform/runtime_enabled_features.json5
+@@ -2749,6 +2749,10 @@
+       base_feature: "none",
+       settable_from_internals: true,
+     },
++    {
++      name: "PaintHoldingForIframes",
++      status: "test",
++    },
+     {
+       // PARAKEET ad serving runtime flag/JS API.
+       name: "Parakeet",
+diff --git a/chromium/third_party/dawn/src/tint/lang/wgsl/ast/transform/packed_vec3.cc b/chromium/third_party/dawn/src/tint/lang/wgsl/ast/transform/packed_vec3.cc
+index c6f47805657..53ac72c89fb 100644
+--- src/3rdparty/chromium/third_party/dawn/src/tint/lang/wgsl/ast/transform/packed_vec3.cc
++++ src/3rdparty/chromium/third_party/dawn/src/tint/lang/wgsl/ast/transform/packed_vec3.cc
+@@ -66,6 +66,14 @@ struct PackedVec3::State {
+     /// A map from type to the name of a helper function used to unpack that type.
+     Hashmap<const core::type::Type*, Symbol, 4> unpack_helpers;
+ 
++    /// @returns true if @p addrspace requires vec3 types to be packed
++    bool AddressSpaceNeedsPacking(core::AddressSpace addrspace) {
++        // Host-shareable address spaces need to be packed to match the memory layout on the host.
++        // The workgroup address space needs to be packed so that the size of generated threadgroup
++        // variables matches the size of the original WGSL declarations.
++        return core::IsHostShareable(addrspace) || addrspace == core::AddressSpace::kWorkgroup;
++    }
++
+     /// @param ty the type to test
+     /// @returns true if `ty` is a vec3, false otherwise
+     bool IsVec3(const core::type::Type* ty) {
+@@ -342,7 +350,7 @@ struct PackedVec3::State {
+         // if the transform is necessary.
+         for (auto* decl : src->AST().GlobalVariables()) {
+             auto* var = sem.Get<sem::GlobalVariable>(decl);
+-            if (var && core::IsHostShareable(var->AddressSpace()) &&
++            if (var && AddressSpaceNeedsPacking(var->AddressSpace()) &&
+                 ContainsVec3(var->Type()->UnwrapRef())) {
+                 return true;
+             }
+@@ -379,7 +387,7 @@ struct PackedVec3::State {
+                 [&](const sem::TypeExpression* type) {
+                     // Rewrite pointers to types that contain vec3s.
+                     auto* ptr = type->Type()->As<core::type::Pointer>();
+-                    if (ptr && core::IsHostShareable(ptr->AddressSpace())) {
++                    if (ptr && AddressSpaceNeedsPacking(ptr->AddressSpace())) {
+                         auto new_store_type = RewriteType(ptr->StoreType());
+                         if (new_store_type) {
+                             auto access = ptr->AddressSpace() == core::AddressSpace::kStorage
+@@ -392,7 +400,7 @@ struct PackedVec3::State {
+                     }
+                 },
+                 [&](const sem::Variable* var) {
+-                    if (!core::IsHostShareable(var->AddressSpace())) {
++                    if (!AddressSpaceNeedsPacking(var->AddressSpace())) {
+                         return;
+                     }
+ 
+@@ -408,7 +416,7 @@ struct PackedVec3::State {
+                         auto* lhs = sem.GetVal(assign->lhs);
+                         auto* rhs = sem.GetVal(assign->rhs);
+                         if (!ContainsVec3(rhs->Type()) ||
+-                            !core::IsHostShareable(
++                            !AddressSpaceNeedsPacking(
+                                 lhs->Type()->As<core::type::Reference>()->AddressSpace())) {
+                             // Skip assignments to address spaces that are not host-shareable, or
+                             // that do not contain vec3 types.
+@@ -436,7 +444,7 @@ struct PackedVec3::State {
+                 [&](const sem::Load* load) {
+                     // Unpack loads of types that contain vec3s in host-shareable address spaces.
+                     if (ContainsVec3(load->Type()) &&
+-                        core::IsHostShareable(load->ReferenceType()->AddressSpace())) {
++                        AddressSpaceNeedsPacking(load->ReferenceType()->AddressSpace())) {
+                         to_unpack.Add(load);
+                     }
+                 },
+@@ -446,7 +454,7 @@ struct PackedVec3::State {
+                     // struct.
+                     if (auto* ref = accessor->Type()->As<core::type::Reference>()) {
+                         if (IsVec3(ref->StoreType()) &&
+-                            core::IsHostShareable(ref->AddressSpace())) {
++                            AddressSpaceNeedsPacking(ref->AddressSpace())) {
+                             ctx.Replace(node, b.MemberAccessor(ctx.Clone(accessor->Declaration()),
+                                                                kStructMemberName));
+                         }
 diff --git a/chromium/third_party/dawn/src/tint/lang/wgsl/resolver/validator.cc b/chromium/third_party/dawn/src/tint/lang/wgsl/resolver/validator.cc
-index 42f7e840d1d..78e83769803 100644
+index 42f7e840d1d..f15bb8095f4 100644
 --- src/3rdparty/chromium/third_party/dawn/src/tint/lang/wgsl/resolver/validator.cc
 +++ src/3rdparty/chromium/third_party/dawn/src/tint/lang/wgsl/resolver/validator.cc
-@@ -518,6 +518,22 @@ bool Validator::AddressSpaceLayout(const core::type::Type* store_ty,
+@@ -438,10 +438,6 @@ bool Validator::AddressSpaceLayout(const core::type::Type* store_ty,
+         return true;
+     }
+ 
+-    if (!core::IsHostShareable(address_space)) {
+-        return true;
+-    }
+-
+     auto note_usage = [&] {
+         AddNote("'" + store_ty->FriendlyName() + "' used in address space '" +
+                     tint::ToString(address_space) + "' here",
+@@ -518,6 +514,22 @@ bool Validator::AddressSpaceLayout(const core::type::Type* store_ty,
                      return false;
                  }
              }
@@ -671,6 +2357,220 @@ index 8f0c68d48b4..1cf029186b0 100644
  // All these symbols have incorrect availability annotations in the 13.3 SDK.
  // These have the correct annotation. See https://crbug.com/1431897.
  // TODO(thakis): Remove this once FB12109479 is fixed and we updated to an SDK
+diff --git a/chromium/ui/views/views_features.cc b/chromium/ui/views/views_features.cc
+index 9c296ba65e0..2641a68539b 100644
+--- src/3rdparty/chromium/ui/views/views_features.cc
++++ src/3rdparty/chromium/ui/views/views_features.cc
+@@ -17,6 +17,14 @@ BASE_FEATURE(kEnablePlatformHighContrastInkDrop,
+              "EnablePlatformHighContrastInkDrop",
+              base::FEATURE_DISABLED_BY_DEFAULT);
+ 
++// Handle mouse cursor being out sync with a touch drag operation. If mouse
++// cursor is over different window, drag will not start, and cursor will be
++// moved to the window where the touch drag started. This is a kill switch
++// for this new logic,  crbug.com/370856871.
++BASE_FEATURE(kEnableTouchDragCursorSync,
++             "EnableTouchDragCursorSync",
++             base::FEATURE_ENABLED_BY_DEFAULT);
++
+ // Only paint views that are invalidated/dirty (i.e. a paint was directly
+ // scheduled on those views) as opposed to painting all views that intersect
+ // an invalid rectangle on the layer.
+diff --git a/chromium/ui/views/views_features.h b/chromium/ui/views/views_features.h
+index 3aa4134a57b..682a2cec4df 100644
+--- src/3rdparty/chromium/ui/views/views_features.h
++++ src/3rdparty/chromium/ui/views/views_features.h
+@@ -13,6 +13,7 @@ namespace views::features {
+ 
+ // Please keep alphabetized.
+ VIEWS_EXPORT BASE_DECLARE_FEATURE(kEnablePlatformHighContrastInkDrop);
++VIEWS_EXPORT BASE_DECLARE_FEATURE(kEnableTouchDragCursorSync);
+ VIEWS_EXPORT BASE_DECLARE_FEATURE(kEnableViewPaintOptimization);
+ VIEWS_EXPORT BASE_DECLARE_FEATURE(kWidgetLayering);
+ 
+diff --git a/chromium/ui/views/widget/desktop_aura/desktop_drag_drop_client_win.cc b/chromium/ui/views/widget/desktop_aura/desktop_drag_drop_client_win.cc
+index da61095385f..450530b6058 100644
+--- src/3rdparty/chromium/ui/views/widget/desktop_aura/desktop_drag_drop_client_win.cc
++++ src/3rdparty/chromium/ui/views/widget/desktop_aura/desktop_drag_drop_client_win.cc
+@@ -8,6 +8,7 @@
+ 
+ #include "base/metrics/histogram_macros.h"
+ #include "base/threading/hang_watcher.h"
++#include "ui/aura/env.h"
+ #include "ui/base/dragdrop/drag_drop_types.h"
+ #include "ui/base/dragdrop/drag_source_win.h"
+ #include "ui/base/dragdrop/drop_target_event.h"
+@@ -15,6 +16,7 @@
+ #include "ui/base/dragdrop/os_exchange_data_provider_win.h"
+ #include "ui/base/win/event_creation_utils.h"
+ #include "ui/display/win/screen_win.h"
++#include "ui/views/views_features.h"
+ #include "ui/views/widget/desktop_aura/desktop_drop_target_win.h"
+ #include "ui/views/widget/desktop_aura/desktop_window_tree_host_win.h"
+ 
+@@ -42,12 +44,34 @@ ui::mojom::DragOperation DesktopDragDropClientWin::StartDragAndDrop(
+     const gfx::Point& screen_location,
+     int allowed_operations,
+     ui::mojom::DragEventSource source) {
+-  drag_drop_in_progress_ = true;
+   gfx::Point touch_screen_point;
+   if (source == ui::mojom::DragEventSource::kTouch) {
++    display::Screen* screen = display::Screen::GetScreen();
++    CHECK(screen);
++    aura::Window* window =
++        screen->GetWindowAtScreenPoint(screen->GetCursorScreenPoint());
+     touch_screen_point =
+         screen_location + source_window->GetBoundsInScreen().OffsetFromOrigin();
+     source_window->GetHost()->ConvertDIPToPixels(&touch_screen_point);
++    bool touch_down = aura::Env::GetInstance()->is_touch_down();
++    bool touch_over_other_window =
++        !window || window->GetRootWindow() != root_window;
++    bool touch_drag_cursor_sync =
++        base::FeatureList::IsEnabled(features::kEnableTouchDragCursorSync);
++    // If attempting to start a touch drag with the cursor over another window,
++    // move cursor to this window so the next drag attempt will succeed.
++    // TODO(crbug.com/40312079): Mouse cursor needs to follow long press touch
++    // events for this to be smoother, but ::SetCursorPos needs to be called
++    // well before calling ::DoDragDrop.
++    if (touch_drag_cursor_sync && touch_down && touch_over_other_window) {
++      ::SetCursorPos(touch_screen_point.x(), touch_screen_point.y());
++    }
++    // Check that the cursor is over the window being dragged from. If not,
++    // don't start the drag because ::DoDragDrop will not do the drag.
++    if (touch_drag_cursor_sync && (!touch_down || touch_over_other_window)) {
++      return ui::PreferredDragOperation(
++          ui::DragDropTypes::DropEffectToDragOperation(DROPEFFECT_NONE));
++    }
+     desktop_host_->StartTouchDrag(touch_screen_point);
+     // Gesture state gets left in a state where you can't start
+     // another drag, unless it's cleaned up. Cleaning it up before starting
+@@ -57,6 +81,7 @@ ui::mojom::DragOperation DesktopDragDropClientWin::StartDragAndDrop(
+   }
+   base::WeakPtr<DesktopDragDropClientWin> alive(weak_factory_.GetWeakPtr());
+ 
++  drag_drop_in_progress_ = true;
+   drag_source_ = ui::DragSourceWin::Create();
+   Microsoft::WRL::ComPtr<ui::DragSourceWin> drag_source_copy = drag_source_;
+   drag_source_copy->set_data(data.get());
+diff --git a/chromium/ui/views/widget/root_view.cc b/chromium/ui/views/widget/root_view.cc
+index ace679c7cc9..1dd799a55c2 100644
+--- src/3rdparty/chromium/ui/views/widget/root_view.cc
++++ src/3rdparty/chromium/ui/views/widget/root_view.cc
+@@ -60,37 +60,6 @@ class MouseEnterExitEvent : public ui::MouseEvent {
+   }
+ };
+ 
+-// TODO(crbug.com/1295290): This class is for debug purpose only.
+-// Remove it after resolving the issue.
+-class DanglingMouseMoveHandlerOnViewDestroyingChecker
+-    : public views::ViewObserver {
+- public:
+-  explicit DanglingMouseMoveHandlerOnViewDestroyingChecker(
+-      const raw_ptr<views::View, AcrossTasksDanglingUntriaged>&
+-          mouse_move_handler)
+-      : mouse_move_handler_(mouse_move_handler) {
+-    scoped_observation.Observe(mouse_move_handler_);
+-  }
+-
+-  // views::ViewObserver:
+-  void OnViewIsDeleting(views::View* view) override {
+-    // `mouse_move_handler_` should be nulled before `view` dies. Otherwise
+-    // `mouse_move_handler_` will become a dangling pointer.
+-    CHECK(!mouse_move_handler_);
+-    scoped_observation.Reset();
+-  }
+-
+- private:
+-  base::ScopedObservation<views::View, views::ViewObserver> scoped_observation{
+-      this};
+-  // Excluded from `raw_ref` rewriter which would otherwise turn this
+-  // into a `raw_ref<raw_ptr<>>`. The current `raw_ptr&` setup is
+-  // intentional and used to observe the pointer without counting as a
+-  // live reference to the underlying memory.
+-  RAW_PTR_EXCLUSION const raw_ptr<views::View, AcrossTasksDanglingUntriaged>&
+-      mouse_move_handler_;
+-};
+-
+ }  // namespace
+ 
+ // Used by RootView to create a hidden child that can be used to make screen
+@@ -667,16 +636,21 @@ void RootView::ViewHierarchyChanged(
+   widget_->ViewHierarchyChanged(details);
+ 
+   if (!details.is_add && !details.move_view) {
+-    if (!explicit_mouse_handler_ && mouse_pressed_handler_ == details.child)
+-      mouse_pressed_handler_ = nullptr;
+-    if (mouse_move_handler_ == details.child)
++    if (mouse_pressed_handler_ == details.child) {
++      SetMouseHandler(nullptr);
++    }
++    if (mouse_move_handler_ == details.child) {
+       mouse_move_handler_ = nullptr;
+-    if (gesture_handler_ == details.child)
++    }
++    if (gesture_handler_ == details.child) {
+       gesture_handler_ = nullptr;
+-    if (event_dispatch_target_ == details.child)
++    }
++    if (event_dispatch_target_ == details.child) {
+       event_dispatch_target_ = nullptr;
+-    if (old_dispatch_target_ == details.child)
++    }
++    if (old_dispatch_target_ == details.child) {
+       old_dispatch_target_ = nullptr;
++    }
+   }
+ }
+ 
+@@ -779,8 +753,6 @@ void RootView::HandleMouseEnteredOrMoved(const ui::MouseEvent& event) {
+       mouse_move_handler_ = v;
+       // TODO(crbug.com/1295290): This is for debug purpose only.
+       // Remove it after resolving the issue.
+-      DanglingMouseMoveHandlerOnViewDestroyingChecker
+-          mouse_move_handler_dangling_checker(mouse_move_handler_);
+       if (!mouse_move_handler_->GetNotifyEnterExitOnChild() ||
+           !mouse_move_handler_->Contains(old_handler)) {
+         MouseEnterExitEvent entered(event, ui::ET_MOUSE_ENTERED);
+diff --git a/chromium/ui/views/widget/root_view.h b/chromium/ui/views/widget/root_view.h
+index 80fc491f87a..4daee866abf 100644
+--- src/3rdparty/chromium/ui/views/widget/root_view.h
++++ src/3rdparty/chromium/ui/views/widget/root_view.h
+@@ -132,6 +132,9 @@ class VIEWS_EXPORT RootView : public View,
+   const views::View* gesture_handler_for_testing() const {
+     return gesture_handler_;
+   }
++  const views::View* mouse_pressed_handler_for_testing() const {
++    return mouse_pressed_handler_.get();
++  }
+ 
+  protected:
+   // View:
+@@ -205,7 +208,7 @@ class VIEWS_EXPORT RootView : public View,
+   //                   ViewTargeter / RootViewTargeter.
+ 
+   // The view currently handing down - drag - up
+-  raw_ptr<View, AcrossTasksDanglingUntriaged> mouse_pressed_handler_ = nullptr;
++  raw_ptr<View> mouse_pressed_handler_ = nullptr;
+ 
+   // The view currently handling enter / exit
+   raw_ptr<View, AcrossTasksDanglingUntriaged> mouse_move_handler_ = nullptr;
+diff --git a/chromium/ui/views/widget/root_view_unittest.cc b/chromium/ui/views/widget/root_view_unittest.cc
+index 388dd6f1125..68a691b348a 100644
+--- src/3rdparty/chromium/ui/views/widget/root_view_unittest.cc
++++ src/3rdparty/chromium/ui/views/widget/root_view_unittest.cc
+@@ -228,10 +228,12 @@ TEST_F(RootViewTest, EventHandlersResetWhenDeleted) {
+   View* event_handler = state.AddChildView(std::make_unique<View>());
+   root_view->SetMouseAndGestureHandler(event_handler);
+   ASSERT_EQ(event_handler, root_view->gesture_handler_for_testing());
++  ASSERT_EQ(event_handler, root_view->mouse_pressed_handler_for_testing());
+ 
+   // Delete the child and expect that there is no longer a mouse handler.
+   root_view->GetContentsView()->RemoveChildViewT(event_handler);
+   EXPECT_EQ(nullptr, root_view->gesture_handler_for_testing());
++  EXPECT_EQ(nullptr, root_view->mouse_pressed_handler_for_testing());
+ }
+ 
+ TEST_F(RootViewTest, EventHandlersNotResetWhenReparented) {
 diff --git a/chromium/v8/src/compiler/access-info.cc b/chromium/v8/src/compiler/access-info.cc
 index 92405188f28..ac19b0a2178 100644
 --- src/3rdparty/chromium/v8/src/compiler/access-info.cc
@@ -812,6 +2712,19 @@ index 34851fe10da..6d4d445bc60 100644
      origin = handle(tuple->value2(), isolate);
    }
  
+diff --git a/chromium/v8/src/wasm/baseline/x64/liftoff-assembler-x64.h b/chromium/v8/src/wasm/baseline/x64/liftoff-assembler-x64.h
+index 46a756bbae2..1d4fc72fe50 100644
+--- src/3rdparty/chromium/v8/src/wasm/baseline/x64/liftoff-assembler-x64.h
++++ src/3rdparty/chromium/v8/src/wasm/baseline/x64/liftoff-assembler-x64.h
+@@ -66,7 +66,7 @@ inline Operand GetMemOp(LiftoffAssembler* assm, Register addr,
+                : Operand(addr, offset_reg, scale_factor, offset_imm32);
+   }
+   // Offset immediate does not fit in 31 bits.
+-  Register scratch = kScratchRegister;
++  Register scratch = kScratchRegister2;
+   assm->MacroAssembler::Move(scratch, offset_imm);
+   if (offset_reg != no_reg) assm->addq(scratch, offset_reg);
+   return Operand(addr, scratch, scale_factor, 0);
 diff --git a/chromium/v8/src/wasm/streaming-decoder.cc b/chromium/v8/src/wasm/streaming-decoder.cc
 index 786c5aa250f..9eb2d2fb9f1 100644
 --- src/3rdparty/chromium/v8/src/wasm/streaming-decoder.cc
