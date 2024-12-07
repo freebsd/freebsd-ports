@@ -1,4 +1,4 @@
---- command/agent/host/unix.go.orig	2024-01-15 16:55:40 UTC
+--- command/agent/host/unix.go.orig	2024-11-11 16:35:41 UTC
 +++ command/agent/host/unix.go
 @@ -69,31 +69,3 @@ func (d *df) available() uint64 {
  func (d *df) available() uint64 {
