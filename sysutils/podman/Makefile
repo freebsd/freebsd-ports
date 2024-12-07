@@ -1,7 +1,7 @@
 PORTNAME=	podman
 DISTVERSIONPREFIX=	v
 DISTVERSION=	5.2.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 
 MAINTAINER=	dfr@FreeBSD.org
@@ -12,6 +12,7 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	bash:shells/bash \
+		ggrep:textproc/gnugrep \
 		go-md2man:textproc/go-md2man \
 		gsed:textproc/gsed
 LIB_DEPENDS=	libgpgme.so:security/gpgme
