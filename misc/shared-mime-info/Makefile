@@ -1,6 +1,6 @@
 PORTNAME=	shared-mime-info
 DISTVERSION=	2.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	misc gnome
 
 MAINTAINER=	desktop@FreeBSD.org
@@ -45,7 +45,7 @@ post-patch:
 		${WRKSRC}/data/freedesktop.org.xml.in
 
 pre-configure:
-	cd ${WRKSRC}/src/xdgmime/src && ${SETENV} ${MAKE_ENV} ${GMAKE}
+	cd ${WRKSRC}/src/xdgmime/src && ${SETENVI} ${WRK_ENV} ${MAKE_ENV} ${GMAKE}
 
 post-install:
 	for dir in ${MIMESUBDIRS} ; do \
