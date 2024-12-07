@@ -23,7 +23,7 @@ INFO=		omake-doc
 OPTIONS_DEFINE=	DOCS
 
 bench: build
-	@cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE_ARGS} boot/omake bench
+	@cd ${WRKSRC}; ${SETENVI} ${WRK_ENV} ${MAKE_ENV} ${MAKE_ARGS} boot/omake bench
 
 post-install:
 	@(cd ${WRKSRC}/doc/info && ${INSTALL_DATA} omake-doc.info \
@@ -37,7 +37,7 @@ post-install-DOCS-on:
 	@(cd ${WRKSRC}/doc/html && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
 
 do-test:
-	@cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE_ARGS} boot/omake check
+	@cd ${WRKSRC}; ${SETENVI} ${WRK_ENV} ${MAKE_ENV} ${MAKE_ARGS} boot/omake check
 	@${FIND} -ds ${WRKSRC}/test -type f -name 'result.log' -print0 | \
 		${XARGS} -0tI @ ${CAT} @
 
