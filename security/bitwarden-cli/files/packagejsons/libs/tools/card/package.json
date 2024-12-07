@@ -1,7 +1,7 @@
 {
-  "name": "@bitwarden/vault-export-core",
+  "name": "@bitwarden/tools-card",
   "version": "0.0.0",
-  "description": "Home for all Bitwarden vault exporters.",
+  "description": "Angular card component",
   "keywords": [
     "bitwarden"
   ],
@@ -18,7 +18,7 @@
     "build:watch": "npm run clean && tsc -watch"
   },
   "dependencies": {
-    "@bitwarden/common": "file:../../../../common",
-    "@bitwarden/admin-console-common": "file:../../../../admin-console/src/common"
+    "@bitwarden/common": "file:../../../common",
+    "@bitwarden/components": "file:../../../components"
   }
 }

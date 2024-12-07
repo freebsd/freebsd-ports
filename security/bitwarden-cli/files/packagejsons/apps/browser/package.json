@@ -1,6 +1,6 @@
 {
   "name": "@bitwarden/browser",
-  "version": "2024.10.1",
+  "version": "2024.11.2",
   "scripts": {
     "build": "cross-env MANIFEST_VERSION=3 webpack",
     "build:mv2": "webpack",
@@ -26,7 +26,6 @@
     "dist:safari:masdev": "npm run build:prod && gulp dist:safari:masdev",
     "dist:safari:dmg": "npm run build:prod && gulp dist:safari:dmg",
     "test": "jest",
-    "test:coverage": "jest --coverage --coverageDirectory=coverage",
     "test:watch": "jest --watch",
     "test:watch:all": "jest --watchAll"
   }
