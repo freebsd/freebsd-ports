@@ -1,6 +1,6 @@
 PORTNAME=	md5
 PORTVERSION=	1.8.5
-PORTREVISION=	91
+PORTREVISION=	92
 CATEGORIES=	security lisp
 PKGNAMEPREFIX=	cl-
 DISTFILES=	# none
@@ -12,9 +12,7 @@ WWW=		https://www.cliki.net/MD5
 BUILD_DEPENDS=	${LOCALBASE}/${CL_LIBDIR_REL}/md5/md5.asd:security/cl-md5
 RUN_DEPENDS=	${LOCALBASE}/${CL_LIBDIR_REL}/md5/md5.asd:security/cl-md5
 
-USE_ASDF_FASL=	yes
+USES=		cl
 FASL_TARGET=	sbcl
-FASL_BUILD=	yes
 
-.include "${.CURDIR}/../../devel/cl-asdf/bsd.cl-asdf.mk"
 .include <bsd.port.mk>

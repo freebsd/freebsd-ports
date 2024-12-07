@@ -1,6 +1,6 @@
 PORTNAME=	trivial-features
 PORTVERSION=	2010.01.16
-PORTREVISION=	91
+PORTREVISION=	92
 CATEGORIES=	devel lisp
 PKGNAMEPREFIX=	cl-
 DISTFILES=	# none
@@ -12,9 +12,7 @@ WWW=		https://www.cliki.net/trivial-features
 BUILD_DEPENDS=	${LOCALBASE}/${CL_LIBDIR_REL}/trivial-features/trivial-features.asd:devel/cl-trivial-features
 RUN_DEPENDS=	${LOCALBASE}/${CL_LIBDIR_REL}/trivial-features/trivial-features.asd:devel/cl-trivial-features
 
-USE_ASDF_FASL=	yes
+USES=		cl
 FASL_TARGET=	sbcl
-FASL_BUILD=	yes
 
-.include "${.CURDIR}/../../devel/cl-asdf/bsd.cl-asdf.mk"
 .include <bsd.port.mk>

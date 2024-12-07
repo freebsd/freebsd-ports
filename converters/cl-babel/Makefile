@@ -1,6 +1,6 @@
 PORTNAME=	babel
 PORTVERSION=	2010.01.16
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	converters lisp
 PKGNAMEPREFIX=	cl-
 MASTER_SITES=	LOCAL/olgeni
@@ -18,7 +18,7 @@ RUN_DEPENDS=	${LOCALBASE}/${CL_LIBDIR_REL}/alexandria/alexandria.asd:devel/cl-al
 
 NO_BUILD=	yes
 
-USE_ASDF=	yes
+USES=		cl
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
@@ -36,5 +36,4 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	@${INSTALL_DATA} ${WRKSRC}/tests/* ${STAGEDIR}${EXAMPLESDIR}
 
-.include "${.CURDIR}/../../devel/cl-asdf/bsd.cl-asdf.mk"
 .include <bsd.port.mk>

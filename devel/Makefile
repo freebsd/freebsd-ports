@@ -414,7 +414,9 @@
     SUBDIR += cl-alexandria
     SUBDIR += cl-alexandria-sbcl
     SUBDIR += cl-asdf
+    SUBDIR += cl-asdf-sbcl
     SUBDIR += cl-cffi
+    SUBDIR += cl-freebsd-asdf-init
     SUBDIR += cl-infix
     SUBDIR += cl-infix-sbcl
     SUBDIR += cl-port

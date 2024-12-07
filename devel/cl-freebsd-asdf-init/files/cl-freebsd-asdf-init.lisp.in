@@ -1,0 +1,184 @@
+;; cl-freebsd-asdf-init.lisp - Configure ASDF to work with FreeBSD ports
+;;
+;; SPDX-License-Identifier: BSD-2-Clause
+;;
+;; Copyright (c) 2003 Henrik Motakef <henrik.motakef@web.de>
+;; Copyright (c) 2024 Joseph Mingrone <jrm@FreeBSD.org>
+;;
+;; This file configures ASDF to work with Common Lisp (CL) installed via
+;; FreeBSD ports.  To load it when your Lisp implementation starts, add
+;;
+;;  (load "%%PREFIX%%/etc/cl-freebsd-asdf-init.lisp")
+;;
+;; to your init file.
+;;
+;; These are the initialization files for the supported CL implementations:
+;;
+;; CLISP:
+;;   ~/.clisprc
+;;
+;; CLOZURE CL / OPENMCL:
+;;   ~/.ccl-init.lisp
+;;
+;; SBCL:
+;;   %%PREFIX%%/etc/sbclrc
+;;   ~/.sbclrc
+;;
+;; After that, use ASDF to load systems installed from ports like this:
+;;
+;;   (asdf:load-system :alexandria)
+;;
+;; ** Detailed Explanation **
+;;
+;; This ASDF initialization enables working with CL installed via FreeBSD
+;; ports by serving three key functions:
+;;
+;; 1. It configures a central registry to tell ASDF where to find systems
+;;    installed via FreeBSD CL ports.
+;;
+;; 2. It sets up output translations so no code from CL ports needs to be
+;;    compiled at load time.
+;;
+;;    CL ports have binary variants for each supported CL implementation.  For
+;;    example, devel/cl-alexandria includes the Alexandria sources, and
+;;    devel/cl-alexandria-sbcl installs the compiled code (fasl) for SBCL.
+;;    The output translations defined here tell ASDF where to look for the
+;;    binary code.
+;;
+;;    If you prefer to build systems at load time, simply install the CL port
+;;    without the associated fasl port, and ASDF will build and write fasl to
+;;    a cache under ${HOME}.
+;;
+;; 3. It configures specific ASDF output translations for building CL ports.
+;;
+
+
+
+;;;; Package declaration
+
+(defpackage :freebsd-asdf
+            (:use :common-lisp)
+            (:export #:*asdf-pathname*
+	             #:unsupported-lisp-implementation))
+
+(in-package :freebsd-asdf)
+
+;;;; Implementation-specific functions
+
+(define-condition unsupported-lisp-implementation ()
+                  ()
+                  (:report (lambda (condition stream)
+	                     (declare (ignore condition)
+		                      (type stream stream))
+	                     (format stream "Your Lisp system, ~A ~A, is ~
+currently not supported by the FreeBSD ports system."
+		                     (lisp-implementation-type)
+		                     (lisp-implementation-version)))))
+
+(defun lisp-specific-fasl-subdir ()
+  "Return the subdirectory in which fasl files for this Lisp
+implementations should be stored, as a string without any slashes.
+
+If no subdirectory for the current implementation is known, signal an
+error of type UNSUPPORTED-LISP-IMPLEMENTATION.
+
+This function has to be extended for each new Lisp implementation that
+should be able to use the ASDF-based Lisp ports."
+  #+ccl   "cclfasl"
+  #+clisp "clispfasl"
+  #+sbcl  "sbclfasl"
+  #-(or ccl clisp sbcl) (error 'unsupported-lisp-implementation))
+
+(defun lisp-specific-fasl-extension ()
+  "Return the extension used for fasl files for this Lisp implementations as a
+string.
+
+This function has to be extended for each new Lisp implementation that
+should be able to use the ASDF-based Lisp ports."
+  #+ccl   "fx64fsl"
+  #+clisp "fas"
+  #+sbcl  "fasl"
+  ;;  #-(or clisp cmu sbcl openmcl) (error 'unsupported-lisp-implementation))
+  #-(or ccl clisp sbcl) (error 'unsupported-lisp-implementation))
+
+;;;; Paths
+(defvar *asdf-pathname*
+  ;; Determine the path to the ASDF library to load.
+  (let* ((port-asdf "%%PREFIX%%/lib/common-lisp/asdf/build/asdf.lisp")
+         (port-asdf-fasl (concatenate 'string
+                                      "%%PREFIX%%/lib/common-lisp/asdf/"
+                                      (lisp-specific-fasl-subdir)
+                                      "/build/asdf."
+                                      (lisp-specific-fasl-extension)))
+         (asdf-port-p (probe-file port-asdf))
+         (asdf-port-fasl-p (probe-file port-asdf-fasl)))
+    (cond
+     ((and asdf-port-p asdf-port-fasl-p) port-asdf-fasl)
+     ((and (member :ccl *features*)) "%%PREFIX%%/lib/ccl/tools/asdf.fx64fsl")
+     ((and (member :clisp *features*)) "%%PREFIX%%/lib/clisp/asdf/asdf.fas")
+     ((and (member :sbcl *features*)) "%%PREFIX%%/lib/sbcl/contrib/asdf.fasl")
+     (asdf-port-p port-asdf)
+     (t (error "Could not find any ASDF to load.")))))
+
+(defvar *system-registry*
+  "%%PREFIX%%/lib/common-lisp/system-registry/"
+  "FreeBSD's contribution to the central registry for ASDF system
+definitions.  This will be added to asdf:*central-registry*, you should
+modify that in order to add other directories.")
+
+
+;;;; Load and configure ASDF
+
+;;(load *asdf-pathname* :verbose t :print nil)
+(load *asdf-pathname*)
+
+(pushnew *system-registry* asdf:*central-registry*)
+
+;; Set up output translations
+
+;; If we are building a port, redirect fasl files to WRKSRC.
+(if (and (uiop:getenv "FBSD_ASDF_COMPILE_PORT")
+         (uiop:getenv "PORTNAME")
+         (uiop:getenv "WRKSRC"))
+    (let* ((wrksrc (uiop:getenv "WRKSRC"))
+           (portname (uiop:getenv "PORTNAME"))
+           (source (make-pathname
+                    :directory
+                    (append (pathname-directory
+                             #P"%%PREFIX%%/lib/common-lisp/")
+                            (list portname :wild-inferiors))))
+           (target (make-pathname
+                    :directory (append (pathname-directory wrksrc)
+                                       (list :wild-inferiors))))
+           (ports-translations '(:ignore-inherited-configuration)))
+      (pushnew (list source target) ports-translations)
+      (asdf:initialize-output-translations
+       (cons :output-translations ports-translations)))
+  ;; On target systems, set up translations to point to installed fasl.
+  (let ((freebsd-translations '(:ignore-inherited-configuration)))
+    (dolist (path (directory "%%PREFIX%%/lib/common-lisp/*/"))
+      (let* ((base-dir (pathname-directory path))
+             (source (make-pathname
+                      :directory (append base-dir (list :wild-inferiors))
+                      :name :wild
+                      :type :wild))
+             (ctarget (make-pathname
+                       :directory (append
+                                   base-dir
+                                   (list (lisp-specific-fasl-subdir)))))
+             (target (make-pathname
+                      :directory (append base-dir
+                                         (list (lisp-specific-fasl-subdir)
+                                               :wild-inferiors))
+                      :name :wild
+                      :type :wild)))
+        ;; Only create translation when source is not system registry and
+        ;; ctarget exists.
+        (when (and
+               (not (string= *system-registry* (namestring path)))
+               (uiop:directory-exists-p ctarget))
+          (pushnew (list source target) freebsd-translations))))
+    (asdf:initialize-output-translations
+     (cons :output-translations freebsd-translations))))
+
+;;;; asdf-init.lisp ends here

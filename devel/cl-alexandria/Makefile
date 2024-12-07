@@ -1,6 +1,7 @@
 PORTNAME=	alexandria
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.4
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	devel lisp
 PKGNAMEPREFIX=	cl-
@@ -12,7 +13,7 @@ WWW=		https://common-lisp.net/project/alexandria/
 LICENSE=	PD
 LICENSE_FILE=	${WRKSRC}/LICENCE
 
-USE_ASDF=	yes
+USES=		cl
 USE_GITLAB=	yes
 GL_SITE=	https://gitlab.common-lisp.net
 
@@ -46,5 +47,4 @@ do-install-DOCS-on:
 	${INSTALL_DATA} ${WRKSRC}/doc/${PORTNAME}.html ${WRKSRC}/doc/${PORTNAME}.pdf \
 		${STAGEDIR}${DOCSDIR}
 
-.include "${.CURDIR}/../../devel/cl-asdf/bsd.cl-asdf.mk"
 .include <bsd.port.mk>

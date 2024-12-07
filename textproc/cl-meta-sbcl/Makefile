@@ -1,6 +1,6 @@
 PORTNAME=	meta
 PORTVERSION=	0.1
-PORTREVISION=	92
+PORTREVISION=	93
 PORTEPOCH=	1
 CATEGORIES=	textproc lisp
 PKGNAMEPREFIX=	cl-
@@ -13,9 +13,7 @@ WWW=		http://home.pipeline.com/~hbaker1/Prag-Parse.html
 BUILD_DEPENDS=	${LOCALBASE}/${CL_LIBDIR_REL}/meta/meta.asd:textproc/cl-meta
 RUN_DEPENDS=	${LOCALBASE}/${CL_LIBDIR_REL}/meta/meta.asd:textproc/cl-meta
 
-USE_ASDF_FASL=	yes
+USES=		cl
 FASL_TARGET=	sbcl
-FASL_BUILD=	yes
 
-.include "${.CURDIR}/../../devel/cl-asdf/bsd.cl-asdf.mk"
 .include <bsd.port.mk>

@@ -21,7 +21,6 @@ BUILD_DEPENDS=	sbcl:lang/sbcl \
 
 USES=		autoreconf gmake
 USE_GITHUB=	yes
-USE_SBCL=	yes
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-compression \

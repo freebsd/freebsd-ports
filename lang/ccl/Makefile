@@ -22,11 +22,9 @@ CCL_DIRECTORY=	${PREFIX}/lib/ccl
 # the following files will not be installed
 EXCLUDE=	cocoa-ide lisp-kernel scripts fx86cl fx86cl.image
 
-USE_ASDF=	yes
+USES=		cl
 
 CONFLICTS_INSTALL=	cclive # bin/ccl
-
-.include "${.CURDIR}/../../devel/cl-asdf/bsd.cl-asdf.mk"
 
 BUILD_DEPENDS+=	as:devel/binutils
 

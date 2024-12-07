@@ -1,6 +1,6 @@
 PORTNAME=	meta
 PORTVERSION=	0.1
-PORTREVISION=	3
+PORTREVISION=	4
 PORTEPOCH=	1
 CATEGORIES=	textproc lisp
 MASTER_SITES=	ftp://ftp.linux.org.uk/pub/lisp/experimental/cclan/ \
@@ -20,7 +20,7 @@ EXPIRATION_DATE=2024-12-31
 WRKSRC=		${WRKDIR}/${PORTNAME}
 NO_BUILD=	yes
 
-USE_ASDF=	yes
+USES=		cl
 
 OPTIONS_DEFINE=	DOCS
 
@@ -33,5 +33,4 @@ do-install:
 	@${INSTALL_DATA} ${WRKSRC}/Prag-Parse.* ${STAGEDIR}${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 
-.include "${.CURDIR}/../../devel/cl-asdf/bsd.cl-asdf.mk"
 .include <bsd.port.mk>

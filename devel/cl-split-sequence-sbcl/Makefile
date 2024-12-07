@@ -1,6 +1,6 @@
 PORTNAME=	split-sequence
 PORTVERSION=	20011114.1
-PORTREVISION=	91
+PORTREVISION=	92
 CATEGORIES=	devel lisp
 PKGNAMEPREFIX=	cl-
 DISTFILES=	# none
@@ -12,9 +12,7 @@ WWW=		https://www.cliki.net/SPLIT-SEQUENCE
 BUILD_DEPENDS=	${LOCALBASE}/${CL_LIBDIR_REL}/split-sequence/split-sequence.asd:devel/cl-split-sequence
 RUN_DEPENDS=	${LOCALBASE}/${CL_LIBDIR_REL}/split-sequence/split-sequence.asd:devel/cl-split-sequence
 
-USE_ASDF_FASL=	yes
+USES=		cl
 FASL_TARGET=	sbcl
-FASL_BUILD=	yes
 
-.include "${.CURDIR}/../../devel/cl-asdf/bsd.cl-asdf.mk"
 .include <bsd.port.mk>

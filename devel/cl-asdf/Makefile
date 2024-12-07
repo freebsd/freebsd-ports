@@ -11,10 +11,7 @@ WWW=		https://common-lisp.net/project/asdf/
 
 LICENSE=	MIT
 
-USES=		gmake
-
-ALL_TARGET=	build/asdf.lisp
-SUB_FILES=	pkg-message
+USES=		cl gmake
 
 OPTIONS_DEFINE=	DOCS
 
@@ -37,16 +34,10 @@ do-install:
 	${RLN} ${STAGEDIR}${ASDF_PATHNAME}/build/asdf.lisp ${STAGEDIR}${ASDF_PATHNAME}
 	${RLN} ${STAGEDIR}${ASDF_PATHNAME}/asdf.asd ${STAGEDIR}${ASDF_REGISTRY}
 	${RLN} ${STAGEDIR}${ASDF_PATHNAME}/uiop/uiop.asd ${STAGEDIR}${ASDF_REGISTRY}
-	${SED}	-e 's|%%ASDF_PATHNAME%%|${ASDF_PATHNAME}/asdf|' \
-		-e 's|%%ASDF_REGISTRY%%|${ASDF_REGISTRY}|' \
-		-e 's|%%PREFIX%%|${PREFIX}|' \
-		${FILESDIR}/asdf-init.lisp > \
-		${STAGEDIR}${PREFIX}/etc/asdf-init.lisp.default
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
 	(cd ${STAGEDIR}${DOCSDIR} && ${RM} .htaccess Changelog Makefile)
 
-.include <bsd.cl-asdf.mk>
 .include <bsd.port.mk>

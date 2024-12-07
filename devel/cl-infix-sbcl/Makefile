@@ -1,6 +1,6 @@
 PORTNAME=	infix
 PORTVERSION=	19960628
-PORTREVISION=	94
+PORTREVISION=	95
 CATEGORIES=	devel lisp
 PKGNAMEPREFIX=	cl-
 DISTFILES=	# none
@@ -18,9 +18,7 @@ LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
 BUILD_DEPENDS=	${LOCALBASE}/${CL_LIBDIR_REL}/infix/infix.asd:devel/cl-infix
 RUN_DEPENDS=	${LOCALBASE}/${CL_LIBDIR_REL}/infix/infix.asd:devel/cl-infix
 
-USE_ASDF_FASL=	yes
+USES=		cl
 FASL_TARGET=	sbcl
-FASL_BUILD=	yes
 
-.include "${.CURDIR}/../../devel/cl-asdf/bsd.cl-asdf.mk"
 .include <bsd.port.mk>
