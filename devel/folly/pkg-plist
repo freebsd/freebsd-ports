@@ -454,8 +454,6 @@ include/folly/experimental/channels/detail/IntrusivePtr.h
 include/folly/experimental/channels/detail/MultiplexerTraits.h
 include/folly/experimental/channels/detail/PointerVariant.h
 include/folly/experimental/channels/detail/Utility.h
-include/folly/experimental/coro/Accumulate-inl.h
-include/folly/experimental/coro/Accumulate.h
 include/folly/experimental/coro/AsyncGenerator.h
 include/folly/experimental/coro/AsyncPipe.h
 include/folly/experimental/coro/AsyncScope.h
