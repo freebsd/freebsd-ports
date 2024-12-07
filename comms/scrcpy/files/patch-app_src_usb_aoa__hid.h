@@ -1,6 +1,6 @@
---- app/src/usb/aoa_hid.h.orig	2024-03-02 22:22:09 UTC
+--- app/src/usb/aoa_hid.h.orig	2024-12-04 21:48:27 UTC
 +++ app/src/usb/aoa_hid.h
-@@ -4,7 +4,7 @@
+@@ -6,7 +6,7 @@
  #include <stdint.h>
  #include <stdbool.h>
  
