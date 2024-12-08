@@ -1,6 +1,6 @@
 PORTNAME=	pulseaudio-module-sndio
 DISTVERSION=	13.0
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	audio
 MASTER_SITES=	https://github.com/t6/pulseaudio-module-sndio/releases/download/${DISTVERSION}/
 
@@ -22,7 +22,7 @@ PLIST_FILES=	${PULSE_MODDIR}/module-sndio.so
 PULSE_MODDIR=	`${LOCALBASE}/bin/pkg-config --variable=modlibexecdir libpulse`
 PULSE_VERSION=	`${LOCALBASE}/bin/pkg-config --modversion libpulse`
 
-post-patch:
+pre-configure:
 	${REINPLACE_CMD} \
 		-e "/^PA_MODULE_VERSION/s/0.0/${PULSE_VERSION}/1" \
 		${WRKSRC}/module-sndio.c
