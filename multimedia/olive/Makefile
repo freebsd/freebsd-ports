@@ -1,6 +1,6 @@
 PORTNAME=	olive
-DISTVERSION=	0.1.2-20240513
-PORTREVISION=	1
+DISTVERSION=	0.2.0
+DISTVERSIONSUFFIX=	-nightly
 CATEGORIES=	multimedia
 PKGNAMESUFFIX=	-video-editor
 
@@ -9,7 +9,8 @@ PATCHFILES=	311eeb72944f93f873d1cd1784ee2bf423e1e7c2.patch:-p1 # https://github.
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Non-linear video editor
-WWW=		https://olivevideoeditor.org/
+WWW=		https://olivevideoeditor.org/ \
+		https://github.com/olive-editor/olive
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -31,7 +32,6 @@ USE_GL=		gl
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	olive-editor
-GH_TAGNAME=	f7e1bff
 GH_TUPLE=	olive-editor:core:2777928:core/ext/core \
 		KDAB:KDDockWidgets:8d2d0a5:KDDockWidgets/ext/KDDockWidgets
 
