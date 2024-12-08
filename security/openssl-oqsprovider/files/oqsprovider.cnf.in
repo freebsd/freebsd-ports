@@ -1,0 +1,14 @@
+# Replace the existing [provider_sect] and [default_provider] sections
+# with this config
+
+[provider_sect]
+default = default_sect
+oqsprovider = oqsprovider_sect
+
+[default_sect]
+activate = 1
+
+[oqsprovider_sect]
+activate = 1
+module = %%PREFIX%%/lib/ossl-modules/openssl-oqsprovider.so
+
