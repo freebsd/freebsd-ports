@@ -1,6 +1,5 @@
 PORTNAME=	libdatovka
-DISTVERSION=	0.6.2
-PORTREVISION=	1
+DISTVERSION=	0.7.0
 CATEGORIES=	devel
 MASTER_SITES=	https://secure.nic.cz/files/datove_schranky/libdatovka/
 
