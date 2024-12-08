@@ -1,22 +1,23 @@
 PORTNAME=	mpc-qt
 DISTVERSIONPREFIX=	v
-DISTVERSION=	24.06
+DISTVERSION=	24.12
 CATEGORIES=	multimedia audio
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Media Player Classic Qute Theater
 WWW=		https://github.com/mpc-qt/mpc-qt
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	mpv>=0.29,1:multimedia/mpv
 LIB_DEPENDS=	libmpv.so:multimedia/mpv
 
-USES=		compiler:c++14-lang desktop-file-utils pkgconfig qmake qt:6
+USES=		compiler:c++17-lang desktop-file-utils gl pkgconfig qmake qt:6
 USE_GITHUB=	yes
-USE_QT=		base tools:build
-QMAKE_ARGS=	MPCQT_VERSION="${DISTVERSION}${DISTVERSIONSUFFIX}"
-LDFLAGS+=	-Wl,--as-needed # GL
+USE_GL=		opengl
+USE_QT=		base svg tools:build
+QMAKE_ARGS=	MPCQT_VERSION="${DISTVERSION}"
 
 OPTIONS_DEFINE=	DOCS
 
