@@ -1,0 +1,27 @@
+#!/bin/sh
+#
+# PROVIDE: bsdfan
+# REQUIRE: DAEMON
+# KEYWORD: resume shutdown
+#
+
+. /etc/rc.subr
+
+name="bsdfan"
+desc="Control fan speed using temperature sensor"
+rcvar="bsdfan_enable"
+
+: ${bsdfan_enable="NO"}
+: ${bsdfan_flags="-d"}
+
+command="%%PREFIX%%/bin/${name}"
+extra_commands="resume"
+resume_cmd="bsdfan_resume"
+
+bsdfan_resume()
+{
+    run_rc_command restart
+}
+
+load_rc_config ${name}
+run_rc_command "$1"
