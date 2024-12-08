@@ -16,6 +16,7 @@ help/images/SetEditor_footer.png
 help/images/SetEditor_header.png
 help/images/SetEditor_window.png
 help/index.html
+help/vsp_help
 %%DATADIR%%/23015.af
 %%DATADIR%%/AirfoilExport.vspscript
 %%DATADIR%%/BezierAirfoilExample.m
