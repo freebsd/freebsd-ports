@@ -1,5 +1,5 @@
 PORTNAME=	ausweisapp2
-DISTVERSION=	2.1.1
+DISTVERSION=	2.2.2
 CATEGORIES=	deskutils security
 
 MAINTAINER=	freebsd@sysctl.cz
@@ -20,7 +20,7 @@ LIB_DEPENDS=	libhttp_parser.so:www/http-parser \
 		libudev.so:devel/libudev-devd
 
 USES=		cmake compiler:c++17-lang pkgconfig qmake qt:6 ssl
-USE_GL+=	gl opengl
+USE_GL=		gl opengl
 USE_GITHUB=	yes
 GH_ACCOUNT=	Governikus
 GH_PROJECT=	AusweisApp
