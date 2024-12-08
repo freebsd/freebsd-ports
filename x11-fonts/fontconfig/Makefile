@@ -35,7 +35,6 @@ SUB_LIST=	LOCALBASE=${LOCALBASE}
 MESON_ARGS=	-Ddefault_library=both -Ddoc=disabled -Dcache-build=disabled \
 		-Ddefault-fonts-dirs=${PREFIX}/share/fonts \
 		-Dadditional-fonts-dirs=${LOCALBASE}/lib/X11/fonts \
-		-Dlocalstatedir=/var \
 		-Dcache-dir=/var/db/fontconfig \
 		-Dtemplate-dir=${LOCALBASE}/etc/fonts/conf.avail \
 		-Dxml-dir=${LOCALBASE}/etc/fonts

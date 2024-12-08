@@ -20,7 +20,6 @@ USE_GNOME=	glib20 introspection:build
 USE_LDCONFIG=	yes
 MESON_ARGS=	-Dgtk-doc=false \
 		-Dos_backend=freebsd \
-		-Dlocalstatedir=/var \
 		-Dudevrulesdir=no \
 		-Dudevhwdbdir=no \
 		-Dsystemdsystemunitdir=no \

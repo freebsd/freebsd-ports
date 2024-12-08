@@ -30,7 +30,6 @@ MESON_ARGS=		-Dwith-libgcrypt-path=${LOCALBASE} \
 			-Dwith-shadow=false \
 			-Dwith-pgp-uam=false \
 			-Ddefault_library=both \
-			--localstatedir=/var \
 			--infodir=${PREFIX}/share/info
 
 OPTIONS_DEFINE=PAM KERBEROS5 LDAP SENDFILE KERBEROS DBUS MYSQL ACL LIBWRAP SPOTLIGHT

@@ -71,8 +71,6 @@ LIBSSH2_LIB_DEPENDS=	libssh2.so:security/libssh2
 
 ZFS_MESON_ENABLED=	storage_zfs
 
-VARDIR=		/var
-
 MESON_ARGS+=	\
 		-Dapparmor=disabled \
 		-Dapparmor_profiles=disabled \
@@ -122,8 +120,7 @@ MESON_ARGS+=	\
 		-Dwireshark_dissector=disabled \
 		-Dinit_script=none \
 		-Dbash_completion=disabled \
-		-Duserfaultfd_sysctl=disabled \
-		-Dlocalstatedir=${VARDIR}
+		-Duserfaultfd_sysctl=disabled
 
 # random_data fix can be removed when 8.x is eol
 CONFIGURE_ENV=	ac_cv_type_struct_random_data=""
@@ -203,7 +200,7 @@ post-install:
 	lib/libvirt/network \
 	lib/libvirt/qemu/channel/target \
 	cache/libvirt/qemu
-	@${MKDIR} "${STAGEDIR}/${VARDIR}/${dir}"
+	@${MKDIR} "${STAGEDIR}/var/${dir}"
 .endfor
 
 .for file in ${CONF_FILES}

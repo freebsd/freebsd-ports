@@ -22,7 +22,6 @@ USE_LDCONFIG=	yes
 MESON_ARGS=	-Dconsolekit=true \
 		-Dgdmconffile=${LOCALBASE}/etc/gdm/custom.conf \
 		-Dlightdmconffile=${LOCALBASE}/etc/lightdm/lightdm.conf \
-		-Dlocalstatedir=/var \
 		-Dsystemdsystemunitdir=no \
 		-Dvapi=false \
 		-Dtests=false
