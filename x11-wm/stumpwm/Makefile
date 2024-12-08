@@ -1,13 +1,7 @@
 PORTNAME=	stumpwm
-DISTVERSION=	23.11
-PORTREVISION=	1
+DISTVERSION=	24.11-2
+DISTVERSIONSUFFIX=	-gd54bebd
 CATEGORIES=	x11-wm lisp
-MASTER_SITES+=	https://beta.quicklisp.org/archive/alexandria/2023-10-21/:alexandria \
-		https://beta.quicklisp.org/archive/cl-ppcre/2023-06-18/:ppcre \
-		https://beta.quicklisp.org/archive/clx/2023-06-18/:clx
-DISTFILES+=	alexandria-20231021-git.tgz:alexandria \
-		cl-ppcre-20230618-git.tgz:ppcre \
-		clx-20230618-git.tgz:clx
 
 MAINTAINER=	jrm@FreeBSD.org
 COMMENT=	Tiling, keyboard driven Window Manager written in Common Lisp
@@ -16,8 +10,15 @@ WWW=		https://www.nongnu.org/stumpwm/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	sbcl:lang/sbcl \
+BUILD_DEPENDS=	cl-alexandria-sbcl>=0:devel/cl-alexandria-sbcl \
+		cl-alexandria>=0:devel/cl-alexandria \
+		cl-clx-sbcl>=0:x11/cl-clx-sbcl \
+		cl-clx>=0:x11/cl-clx \
+		cl-ppcre-sbcl>=0:textproc/cl-ppcre-sbcl \
+		cl-ppcre>=0:textproc/cl-ppcre \
+		sbcl:lang/sbcl \
 		texinfo>=0:print/texinfo
+LIB_DEPENDS=	libzstd.so:archivers/zstd
 
 USES=		autoreconf gmake
 USE_GITHUB=	yes
@@ -27,6 +28,7 @@ CONFIGURE_ARGS=	--enable-compression \
 		--with-module-dir=${DATADIR}/modules
 
 MAKE_ARGS=	destdir=${STAGEDIR}
+MAKE_JOBS_UNSAFE=	yes
 
 INFO=		${PORTNAME}
 PLIST_FILES=	bin/stumpwm
@@ -34,19 +36,6 @@ PORTDOCS=	AUTHORS COPYING HACKING NEWS README.md
 PORTEXAMPLES=	sample-stumpwmrc.lisp
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
-
-post-extract:
-	${FIND} ${WRKDIR} -type f -name \*.asd -a \! -name stumpwm\*.asd \
-		\! -name dynamic-mixins-swm.asd -exec ${LN} -s {} ${WRKSRC} \;
-
-do-build:
-	(cd ${WRKSRC} && \
-		ASDF_OUTPUT_TRANSLATIONS="/:" \
-		sbcl \
-		--noinform --non-interactive --no-sysinit --no-userinit \
-		--eval "(require :uiop)" \
-		--eval "(setf sb-impl::*default-external-format* :UTF-8)" \
-		--load ./make-image.lisp)
 
 do-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
