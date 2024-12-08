@@ -56,7 +56,7 @@ lib/cmake/llama/llama-config.cmake
 lib/cmake/llama/llama-version.cmake
 lib/libggml-base.so
 lib/libggml-cpu.so
-lib/libggml-vulkan.so
+%%VULKAN%%lib/libggml-vulkan.so
 lib/libggml.so
 lib/libllama.so
 %%EXAMPLES%%lib/libllava_shared.so
