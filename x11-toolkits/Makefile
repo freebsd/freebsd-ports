@@ -180,9 +180,9 @@
     SUBDIR += py-kivy
     SUBDIR += py-pangocffi
     SUBDIR += py-python-xlib
-    SUBDIR += py-qt5-chart
+    SUBDIR += py-qt5-charts
     SUBDIR += py-qt5-datavis3d
-    SUBDIR += py-qt6-chart
+    SUBDIR += py-qt6-charts
     SUBDIR += py-qt6-datavis3d
     SUBDIR += py-superqt
     SUBDIR += py-tkinter

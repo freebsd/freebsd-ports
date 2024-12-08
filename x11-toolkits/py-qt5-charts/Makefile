@@ -1,12 +1,12 @@
-PORTNAME=	chart
-DISTVERSION=	${PYQTCHART_VERSION}
+PORTNAME=	charts
+DISTVERSION=	${PYQTCHARTS_VERSION}
 CATEGORIES=	x11-toolkits devel python
-MASTER_SITES=	${MASTER_SITES_PYQTCHART}
+MASTER_SITES=	${MASTER_SITES_PYQTCHARTS}
 PKGNAMEPREFIX=	${PYQT_PY_RELNAME}-
-DISTNAME=	${PYQTCHART_DISTNAME}
+DISTNAME=	${PYQTCHARTS_DISTNAME}
 
 MAINTAINER=	kde@FreeBSD.org
-COMMENT=	Python bindings for the Qt5 toolkit, QtChart module
+COMMENT=	Python bindings for the Qt5 toolkit, QtCharts module
 WWW=		https://riverbankcomputing.com/software/pyqtchart
 
 LICENSE=	${PYQT5_LICENSE}
@@ -17,7 +17,7 @@ USE_PYQT=	pyqt5 qtbuilder:build sip:build
 USE_PYTHON=	concurrent flavors
 USE_QT=		charts core declarative gui qmake:build widgets
 
-PLIST_SUB=      PYQT_CHART_VERSION=${DISTVERSION}
+PLIST_SUB=      PYQTCHARTS_VERSION=${DISTVERSION}
 
 post-install:
 	@${FIND} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/PyQt5 \

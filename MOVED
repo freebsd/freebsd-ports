@@ -3750,3 +3750,5 @@ devel/py-simple-term-menu|devel/py-simple_term_menu|2024-12-02|Upstream renamed
 emulators/duckstation|emulators/fbsd-duckstation|2024-12-03|Developer asked to emphasize the port includes local patches
 www/py-httpx-gssapi|www/py-httpx_gssapi|2024-12-04|Upstream renamed
 audio/openspc||2024-12-05|Has expired: Unmaintained upstream. Use audio/libgme or audio/ocp instead
+x11-toolkits/py-qt5-chart|x11-toolkits/py-qt5-charts|2024-12-08|Renamed to be consistent with the Qt module name
+x11-toolkits/py-qt6-chart|x11-toolkits/py-qt6-charts|2024-12-08|Renamed to be consistent with the Qt module name

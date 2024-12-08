@@ -1,13 +1,12 @@
-PORTNAME=	chart
-DISTVERSION=	${PYQTCHART_VERSION}
-PORTREVISION=	1
+PORTNAME=	charts
+DISTVERSION=	${PYQTCHARTS_VERSION}
 CATEGORIES=	x11-toolkits devel python
-MASTER_SITES=	${MASTER_SITES_PYQTCHART}
+MASTER_SITES=	${MASTER_SITES_PYQTCHARTS}
 PKGNAMEPREFIX=	${PYQT_PY_RELNAME}-
-DISTNAME=	${PYQTCHART_DISTNAME}
+DISTNAME=	${PYQTCHARTS_DISTNAME}
 
 MAINTAINER=	kde@FreeBSD.org
-COMMENT=	Python bindings for the Qt6 toolkit, QtChart module
+COMMENT=	Python bindings for the Qt6 toolkit, QtCharts module
 WWW=		https://riverbankcomputing.com/software/pyqtchart
 
 LICENSE=	${PYQT6_LICENSE}
@@ -18,7 +17,7 @@ USE_PYQT=	pyqt6 qtbuilder:build sip:build
 USE_PYTHON=	concurrent flavors
 USE_QT=		base charts
 
-PLIST_SUB=	PYQTCHART_VERSION=${DISTVERSION}
+PLIST_SUB=	PYQTCHARTS_VERSION=${DISTVERSION}
 
 post-install:
 	@${FIND} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/PyQt6 \
