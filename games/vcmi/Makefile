@@ -9,8 +9,6 @@ WWW=		https://vcmi.eu/
 
 LICENSE=	GPLv2+
 
-BROKEN=		fails to build with boost-1.86+
-
 LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg \
 		libboost_atomic.so:devel/boost-libs \
 		libfuzzylite.so:devel/fuzzylite \
