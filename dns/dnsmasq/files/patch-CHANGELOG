@@ -1,0 +1,10 @@
+--- CHANGELOG.orig	2024-02-13 13:49:15 UTC
++++ CHANGELOG
+@@ -1,3 +1,7 @@
++post version 2.90
++	Fix broken dhcp-relay on *BSD. Thanks to Harold for finding
++	this problem.
++
+ version 2.90
+ 	Fix reversion in --rev-server introduced in 2.88 which
+ 	caused breakage if the prefix length is not exactly divisible

@@ -1,7 +1,7 @@
 PORTNAME=	dnsmasq
 DISTVERSION=	2.90
 # Leave the PORTREVISION in even if 0 to avoid accidental PORTEPOCH bumps:
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	dns
 MASTER_SITES=	https://www.thekelleys.org.uk/dnsmasq/ \
@@ -31,7 +31,6 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 
 CONFLICTS_INSTALL=	dnsmasq-devel
 
-PATCH_STRIP=	-p1
 SUB_FILES=	pkg-message
 
 PORTDOCS=	CHANGELOG CHANGELOG.archive FAQ doc.html setup.html
