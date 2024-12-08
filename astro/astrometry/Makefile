@@ -1,5 +1,6 @@
 PORTNAME=	astrometry
 PORTVERSION=	0.97
+PORTREVISION=	1
 CATEGORIES=	astro
 MASTER_SITES=	https://github.com/dstndstn/${PORTNAME}.net/releases/download/${DISTVERSION}/
 DISTNAME=	${PORTNAME}.net-${PORTVERSION}
@@ -31,7 +32,8 @@ USES=		gmake jpeg localbase pkgconfig python shebangfix
 #USE_PYTHON=	pytest
 USE_LDCONFIG=	yes
 
-SHEBANG_FILES=	bin/* plot/plotann.py sdss/*.py solver/*.py util/[!c]*.py
+SHEBANG_FILES=	bin/* configure gsl-an/grab-gsl-sources.sh \
+		plot/plotann.py sdss/*.py solver/*.py util/[!c]*.py
 
 MAKE_ARGS=	NETPBM_INC="-I${LOCALBASE}/include/netpbm" \
 		NETPBM_LIB="-L${LOCALBASE}/lib -lnetpbm" \
