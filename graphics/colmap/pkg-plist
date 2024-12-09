@@ -4,9 +4,9 @@ include/colmap/controllers/bundle_adjustment.h
 include/colmap/controllers/feature_extraction.h
 include/colmap/controllers/feature_matching.h
 include/colmap/controllers/feature_matching_utils.h
-include/colmap/controllers/hierarchical_mapper.h
+include/colmap/controllers/hierarchical_pipeline.h
 include/colmap/controllers/image_reader.h
-include/colmap/controllers/incremental_mapper.h
+include/colmap/controllers/incremental_pipeline.h
 include/colmap/controllers/option_manager.h
 include/colmap/estimators/absolute_pose.h
 include/colmap/estimators/affine_transform.h
@@ -25,6 +25,7 @@ include/colmap/estimators/generalized_absolute_pose_coeffs.h
 include/colmap/estimators/generalized_pose.h
 include/colmap/estimators/generalized_relative_pose.h
 include/colmap/estimators/homography_matrix.h
+include/colmap/estimators/manifold.h
 include/colmap/estimators/pose.h
 include/colmap/estimators/similarity_transform.h
 include/colmap/estimators/translation_transform.h
@@ -40,6 +41,7 @@ include/colmap/exe/mvs.h
 include/colmap/exe/sfm.h
 include/colmap/exe/vocab_tree.h
 include/colmap/feature/extractor.h
+include/colmap/feature/index.h
 include/colmap/feature/matcher.h
 include/colmap/feature/pairing.h
 include/colmap/feature/sift.h
@@ -249,7 +251,10 @@ include/colmap/util/controller_thread.h
 include/colmap/util/cuda.h
 include/colmap/util/cudacc.h
 include/colmap/util/eigen_alignment.h
+include/colmap/util/eigen_matchers.h
 include/colmap/util/endian.h
+include/colmap/util/enum_to_string.h
+include/colmap/util/file.h
 include/colmap/util/logging.h
 include/colmap/util/misc.h
 include/colmap/util/opengl_utils.h
@@ -309,6 +314,9 @@ share/applications/COLMAP.desktop
 %%PORTDOCS%%%%DOCSDIR%%/_sources/index.rst.txt
 %%PORTDOCS%%%%DOCSDIR%%/_sources/install.rst.txt
 %%PORTDOCS%%%%DOCSDIR%%/_sources/license.rst.txt
+%%PORTDOCS%%%%DOCSDIR%%/_sources/pycolmap/cost_functions.rst.txt
+%%PORTDOCS%%%%DOCSDIR%%/_sources/pycolmap/index.rst.txt
+%%PORTDOCS%%%%DOCSDIR%%/_sources/pycolmap/pycolmap.rst.txt
 %%PORTDOCS%%%%DOCSDIR%%/_sources/tutorial.rst.txt
 %%PORTDOCS%%%%DOCSDIR%%/_static/_sphinx_javascript_frameworks_compat.js
 %%PORTDOCS%%%%DOCSDIR%%/_static/basic.css
@@ -331,6 +339,7 @@ share/applications/COLMAP.desktop
 %%PORTDOCS%%%%DOCSDIR%%/_static/css/fonts/lato-normal.woff
 %%PORTDOCS%%%%DOCSDIR%%/_static/css/fonts/lato-normal.woff2
 %%PORTDOCS%%%%DOCSDIR%%/_static/css/theme.css
+%%PORTDOCS%%%%DOCSDIR%%/_static/custom.css
 %%PORTDOCS%%%%DOCSDIR%%/_static/doctools.js
 %%PORTDOCS%%%%DOCSDIR%%/_static/documentation_options.js
 %%PORTDOCS%%%%DOCSDIR%%/_static/file.png
@@ -363,6 +372,9 @@ share/applications/COLMAP.desktop
 %%PORTDOCS%%%%DOCSDIR%%/install.html
 %%PORTDOCS%%%%DOCSDIR%%/license.html
 %%PORTDOCS%%%%DOCSDIR%%/objects.inv
+%%PORTDOCS%%%%DOCSDIR%%/pycolmap/cost_functions.html
+%%PORTDOCS%%%%DOCSDIR%%/pycolmap/index.html
+%%PORTDOCS%%%%DOCSDIR%%/pycolmap/pycolmap.html
 %%PORTDOCS%%%%DOCSDIR%%/search.html
 %%PORTDOCS%%%%DOCSDIR%%/searchindex.js
 %%PORTDOCS%%%%DOCSDIR%%/tutorial.html

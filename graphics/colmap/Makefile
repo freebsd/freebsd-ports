@@ -1,6 +1,5 @@
 PORTNAME=	colmap
-DISTVERSION=	3.10
-PORTREVISION=	1
+DISTVERSION=	3.11.1
 CATEGORIES=	graphics
 
 MAINTAINER=	fuz@FreeBSD.org
@@ -17,7 +16,8 @@ LICENSE_FILE_MIT=	${WRKSRC}/src/thirdparty/PoissonRecon/LICENSE
 LICENSE_FILE_SIFTGPU=	${WRKSRC}/src/thirdparty/SiftGPU/LICENSE
 LICENSE_PERMS_SIFTGPU=	dist-mirror pkg-mirror auto-accept
 
-LIB_DEPENDS=	libboost_filesystem.so:devel/boost-libs \
+LIB_DEPENDS=	libPoseLib.so:graphics/poselib \
+		libboost_filesystem.so:devel/boost-libs \
 		libceres.so:math/ceres-solver \
 		libflann.so:math/flann \
 		libfreeimage.so:graphics/freeimage \
@@ -31,7 +31,7 @@ USE_CXXSTD=	c++17
 USE_GITHUB=	yes
 USE_GL=		gl glew
 USE_QT=		core gui widgets buildtools:build opengl:build qmake:build
-CMAKE_OFF=	BOOST_STATIC CUDA_ENABLED
+CMAKE_OFF=	BOOST_STATIC CUDA_ENABLED FETCH_POSELIB
 CMAKE_TESTING_ON=	TESTS_ENABLED
 
 LDFLAGS+=	-Wl,--as-needed # gflags, glu, xi, xmu
@@ -54,6 +54,8 @@ OPENMP_VARS=		OPENMP=gcc-
 .endif
 
 SIMD_CMAKE_BOOL=	SIMD_ENABLED
+SIMD_CFLAGS_i386=	-msse2
+SIMD_CFLAGS=		${SIMD_CFLAGS_${ARCH}}
 
 #post-patch:
 # XXX math/flann has -DUSE_OPENMP=OFF and lacks tunning:
