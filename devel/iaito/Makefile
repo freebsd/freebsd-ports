@@ -1,5 +1,5 @@
 PORTNAME=	iaito
-DISTVERSION=	5.9.8
+DISTVERSION=	5.9.9
 CATEGORIES=	devel
 
 MAINTAINER=	freebsd@sysctl.cz
