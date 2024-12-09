@@ -3752,3 +3752,4 @@ www/py-httpx-gssapi|www/py-httpx_gssapi|2024-12-04|Upstream renamed
 audio/openspc||2024-12-05|Has expired: Unmaintained upstream. Use audio/libgme or audio/ocp instead
 x11-toolkits/py-qt5-chart|x11-toolkits/py-qt5-charts|2024-12-08|Renamed to be consistent with the Qt module name
 x11-toolkits/py-qt6-chart|x11-toolkits/py-qt6-charts|2024-12-08|Renamed to be consistent with the Qt module name
+devel/sfml251|devel/sfml|2024-12-09|Removed pinned port because the last user is gone
