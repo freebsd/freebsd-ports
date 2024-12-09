@@ -1,24 +1,23 @@
 PORTNAME=	rinetd
-PORTVERSION=	0.73
-PORTREVISION=	2
+PORTVERSION=	0.62
 DISTVERSIONPREFIX=	v
+PORTEPOCH=	1
 CATEGORIES=	net
 
-MAINTAINER=	garga@FreeBSD.org
+MAINTAINER=	grembo@FreeBSD.org
 COMMENT=	Simple TCP port redirector
 WWW=		https://github.com/samhocevar/rinetd
 
 LICENSE=	GPLv2
 
-USES=		cpe dos2unix autoreconf
+USES=		cpe dos2unix
 USE_GITHUB=	yes
 GH_ACCOUNT=	samhocevar
-GH_TAGNAME=	d4e0a60
+GH_TAGNAME=	1c95abb27dbf3
 USE_RC_SUBR=	rinetd
 
-GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
-
+PLIST_FILES=	sbin/rinetd \
+		share/man/man8/rinetd.8.gz
 PORTDOCS=	index.html
 
 OPTIONS_DEFINE=	DOCS
@@ -29,11 +28,8 @@ post-patch:
 			-e "s,/usr(/sbin/rinetd),${PREFIX}\1," \
 		${WRKSRC}/rinetd.8
 	@${REINPLACE_CMD} -E "s,(/etc/rinetd.conf),${PREFIX}\1," \
-		${WRKSRC}/src/rinetd.h
-
-post-install:
-	${MV} ${STAGEDIR}${PREFIX}/etc/rinetd.conf \
-		${STAGEDIR}${PREFIX}/etc/rinetd.conf.sample
+		${WRKSRC}/rinetd.c
+	@${REINPLACE_CMD} -e "s,cc ,${CC} ,g" ${WRKSRC}/Makefile
 
 post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
