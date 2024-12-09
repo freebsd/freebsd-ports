@@ -1,5 +1,7 @@
-TIMESTAMP = 1624569629
-SHA256 (daid-EmptyEpsilon-EE-2021.06.23_GH0.tar.gz) = 878f36330a95a76039671a980a2fd680e7ddbdc5e22ff6ca046010b03d3efd01
-SIZE (daid-EmptyEpsilon-EE-2021.06.23_GH0.tar.gz) = 285211647
-SHA256 (daid-SeriousProton-EE-2021.06.23_GH0.tar.gz) = 4c79b358ad310c773dd0db265393fba829df10a6f284240acbb383288d4f33d5
-SIZE (daid-SeriousProton-EE-2021.06.23_GH0.tar.gz) = 1181117
+TIMESTAMP = 1733775767
+SHA256 (daid-EmptyEpsilon-EE-2024.12.08_GH0.tar.gz) = 8be5360270b9a616a5d749aec9653b3e36beba96b2d6b1651e18594a3314f010
+SIZE (daid-EmptyEpsilon-EE-2024.12.08_GH0.tar.gz) = 261708187
+SHA256 (daid-SeriousProton-EE-2024.12.08_GH0.tar.gz) = fa4a9873c5f8872f9f2d75d03eec06c8a40ea2e0daeb977f0445f14c1e76a236
+SIZE (daid-SeriousProton-EE-2024.12.08_GH0.tar.gz) = 2648907
+SHA256 (BinomialLLC-basis_universal-v1_15_update2_GH0.tar.gz) = 3caff917d63ed0255fc56bcdf80d305bb47ac9315a4a45409a1264a0e5e0e572
+SIZE (BinomialLLC-basis_universal-v1_15_update2_GH0.tar.gz) = 13283133

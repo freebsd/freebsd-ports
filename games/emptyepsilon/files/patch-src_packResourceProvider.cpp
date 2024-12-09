@@ -1,6 +1,6 @@
---- src/packResourceProvider.cpp.orig	2021-06-23 12:12:02 UTC
+--- src/packResourceProvider.cpp.orig	2023-06-14 07:23:22 UTC
 +++ src/packResourceProvider.cpp
-@@ -5,7 +5,7 @@
+@@ -7,7 +7,7 @@
  #ifdef _WIN32
  #include <malloc.h>
  #else
@@ -8,4 +8,4 @@
 +#include <stdlib.h>
  #endif
  
- #ifdef _MSC_VER
+ #ifdef ANDROID
