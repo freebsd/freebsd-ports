@@ -1,7 +1,7 @@
 PORTNAME=	clboss
 DISTVERSIONPREFIX=	v
 # To build from an arbitrary git commit comment DISTVERSION
-DISTVERSION=	0.14.0
+DISTVERSION=	0.14.1
 # and uncomment the following two lines (use for example -gf8d8348c where f8d8348c is a commit hash)
 #DISTVERSION=	0
 #DISTVERSIONSUFFIX=	-g0673c50e7
@@ -18,7 +18,8 @@ LICENSE=	MIT
 
 BUILD_DEPENDS=	autoconf-archive>=0:devel/autoconf-archive
 LIB_DEPENDS=	libcurl.so:ftp/curl \
-		libev.so:devel/libev
+		libev.so:devel/libev \
+		libunwind.so:devel/libunwind
 RUN_DEPENDS=	lightningd:net-p2p/c-lightning
 
 USES=		autoreconf \
