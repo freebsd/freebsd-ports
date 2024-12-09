@@ -25,4 +25,5 @@ share/postgresql/extension/powa--4.2.0.sql
 share/postgresql/extension/powa--4.2.1--4.2.2.sql
 share/postgresql/extension/powa--4.2.1.sql
 share/postgresql/extension/powa--4.2.2.sql
+share/postgresql/extension/powa--5.0.0.sql
 share/postgresql/extension/powa.control
