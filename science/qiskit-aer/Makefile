@@ -1,10 +1,6 @@
 PORTNAME=	qiskit-aer
-DISTVERSION=	0.10.4
-PORTREVISION=	5
+DISTVERSION=	0.15.1
 CATEGORIES=	science # quantum-computing
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES=	46d86944f349a177acb40fb8a3adc301c395fe60.patch:-p1 # https://github.com/Qiskit/qiskit-aer/pull/1576
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Quantum circuits simulator submodule of the Qiskit framework
@@ -17,7 +13,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 BROKEN_FreeBSD_15=	compilation fails with clang-19: error: no member named 'size_' in 'QubitVector<data_t>'
 BROKEN_i386=	undefined reference to `__atomic_load' # '
 
-BUILD_DEPENDS=	nlohmann-json>0:devel/nlohmann-json
+BUILD_DEPENDS=	nlohmann-json>0:devel/nlohmann-json \
+		pybind11>0:devel/pybind11
 LIB_DEPENDS=	libfmt.so:devel/libfmt \
 		libopenblas.so:math/openblas \
 		libspdlog.so:devel/spdlog
@@ -29,6 +26,6 @@ GH_ACCOUNT=	Qiskit
 
 CONFIGURE_ENV=	DISABLE_CONAN=yes
 
-PLIST_FILES=	bin/qasm_simulator
+PLIST_FILES=	qiskit_aer/backends/controller_wrappers
 
 .include <bsd.port.mk>
