@@ -1,7 +1,7 @@
 PORTNAME=	mlkit
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.7.5
-PORTREVISION=	1
+DISTVERSION=	4.7.13
+PORTREVISION=	0
 CATEGORIES=	lang
 
 MAINTAINER=	serpent7776@gmail.com
@@ -40,11 +40,10 @@ OPTIONS_DEFINE=	DOCS TEST
 OPTIONS_SUB=	yes
 
 post-patch:
-	@${REINPLACE_CMD} 's|gcc|${CC}|g' ${WRKSRC}/src/Common/Flags.sml
 	@${REINPLACE_CMD} 's|"gcc|"${CC}|g' ${WRKSRC}/src/Compiler/Backend/X64/ExecutionX64.sml
-	@${REINPLACE_CMD} "s|FLAGS=-no_gc -par|FLAGS=-no_gc -par -cc '${CC} -Wl,--allow-multiple-definition'|g" ${WRKSRC}/test/parallelism/Makefile
-	@${REINPLACE_CMD} "s|^DATE=.*|DATE=2023-05-22|" ${WRKSRC}/configure.ac
-	@${REINPLACE_CMD} "s|^COMMITDATE=.*|COMMITDATE=2023-05-22|" ${WRKSRC}/configure.ac
+	@${REINPLACE_CMD} "s|FLAGS=-no_gc -par|FLAGS=-no_gc -par -link_exe '${CC} -Wl,--allow-multiple-definition'|g" ${WRKSRC}/test/parallelism/Makefile
+	@${REINPLACE_CMD} "s|^DATE=.*|DATE=2024-11-27|" ${WRKSRC}/configure.ac
+	@${REINPLACE_CMD} "s|^COMMITDATE=.*|COMMITDATE=2024-11-27|" ${WRKSRC}/configure.ac
 	@${REINPLACE_CMD} "s|^GITVERSION=.*|GITVERSION=\"${PKGVERSION} built by FreeBSD ports, maintained by ${MAINTAINER}\"|" ${WRKSRC}/configure.ac
 
 post-install:
