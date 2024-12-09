@@ -8,6 +8,9 @@ MAINTAINER=	doceng@FreeBSD.org
 COMMENT=	Meta-port for the FreeBSD Legacy Documentation Project
 WWW=		https://www.freebsd.org/docproj
 
+DEPRECATED=	Old version of documentation set
+EXPIRATION_DATE=	2025-01-31
+
 RUN_DEPENDS=	${LOCALBASE}/share/xml/dtd/xhtml/xhtml.soc:textproc/xhtml \
 		${LOCALBASE}/share/xml/xmlcharent/catalog:textproc/xmlcharent \
 		${LOCALBASE}/share/xsl/iso-schematron/xslt1/iso_schematron_skeleton_for_xslt1.xsl:textproc/iso-schematron-xslt \
