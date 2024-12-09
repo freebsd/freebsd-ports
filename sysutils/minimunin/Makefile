@@ -1,5 +1,5 @@
 PORTNAME=	minimunin
-PORTVERSION=	0.5
+DISTVERSION=	0.6
 CATEGORIES=	sysutils
 MASTER_SITES=	http://erdgeist.org/arts/software/minimunin/
 
@@ -16,6 +16,9 @@ USES=	tar:bzip2
 
 PLIST_FILES=	bin/minimunin
 SUB_FILES=	pkg-message
+
+NO_ARCH=yes
+NO_BUILD=yes
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/minimunin ${STAGEDIR}${PREFIX}/bin
