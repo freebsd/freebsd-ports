@@ -1,6 +1,5 @@
 PORTNAME=	nushell
-DISTVERSION=	0.99.1
-PORTREVISION=	2
+DISTVERSION=	0.100.0
 CATEGORIES=	shells
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -60,8 +59,8 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		base64-0.21.7 \
 		base64-0.22.1 \
 		bindgen-0.69.4 \
-		bit-set-0.5.3 \
-		bit-vec-0.6.3 \
+		bit-set-0.8.0 \
+		bit-vec-0.8.0 \
 		bitflags-1.3.2 \
 		bitflags-2.6.0 \
 		bitvec-1.0.1 \
@@ -69,8 +68,8 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		block2-0.5.1 \
 		borsh-1.5.1 \
 		borsh-derive-1.5.1 \
-		bracoxide-0.1.3 \
-		brotli-5.0.0 \
+		bracoxide-0.1.4 \
+		brotli-6.0.0 \
 		brotli-decompressor-4.0.1 \
 		bstr-1.10.0 \
 		bumpalo-3.16.0 \
@@ -81,7 +80,7 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		bytemuck-1.17.0 \
 		bytemuck_derive-1.7.1 \
 		byteorder-1.5.0 \
-		bytes-1.7.1 \
+		bytes-1.8.0 \
 		bytesize-1.3.0 \
 		calamine-0.24.0 \
 		cassowary-0.3.0 \
@@ -96,9 +95,9 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		chrono-0.4.38 \
 		chrono-humanize-0.2.3 \
 		chrono-tz-0.8.6 \
-		chrono-tz-0.9.0 \
+		chrono-tz-0.10.0 \
 		chrono-tz-build-0.2.1 \
-		chrono-tz-build-0.3.0 \
+		chrono-tz-build-0.4.0 \
 		chumsky-0.9.3 \
 		clang-sys-1.8.1 \
 		clap-4.5.16 \
@@ -111,6 +110,7 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		colorz-1.1.2 \
 		comfy-table-7.1.1 \
 		compact_str-0.7.1 \
+		compact_str-0.8.0 \
 		console-0.15.8 \
 		const-random-0.1.18 \
 		const-random-macro-0.1.16 \
@@ -132,7 +132,7 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		crossterm_winapi-0.9.1 \
 		crunchy-0.2.2 \
 		crypto-common-0.1.6 \
-		cssparser-0.31.2 \
+		cssparser-0.34.0 \
 		cssparser-macros-0.6.1 \
 		csv-1.3.0 \
 		csv-core-0.1.11 \
@@ -159,7 +159,7 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		dtparse-2.0.1 \
 		dunce-1.0.5 \
 		dyn-clone-1.0.17 \
-		ego-tree-0.6.3 \
+		ego-tree-0.9.0 \
 		either-1.13.0 \
 		eml-parser-0.1.4 \
 		encode_unicode-0.3.6 \
@@ -175,7 +175,7 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		ethnum-1.5.0 \
 		fallible-iterator-0.3.0 \
 		fallible-streaming-iterator-0.1.9 \
-		fancy-regex-0.13.0 \
+		fancy-regex-0.14.0 \
 		fast-float-0.2.0 \
 		fastrand-2.1.1 \
 		fd-lock-4.0.2 \
@@ -188,7 +188,6 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		fnv-1.0.7 \
 		foreign-types-0.3.2 \
 		foreign-types-shared-0.1.1 \
-		foreign_vec-0.1.0 \
 		form_urlencoded-1.2.1 \
 		fs_extra-1.3.0 \
 		fsevent-sys-4.1.0 \
@@ -228,6 +227,7 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		hex-0.4.3 \
 		home-0.5.9 \
 		html5ever-0.27.0 \
+		html5ever-0.29.0 \
 		http-1.1.0 \
 		http-body-1.0.1 \
 		http-body-util-0.1.2 \
@@ -298,8 +298,8 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		lz4-sys-1.10.0 \
 		mac-0.1.1 \
 		mach2-0.4.2 \
-		malloc_buf-0.0.6 \
 		markup5ever-0.12.1 \
+		markup5ever-0.14.0 \
 		markup5ever_rcdom-0.3.0 \
 		md-5-0.10.6 \
 		memchr-2.7.4 \
@@ -324,7 +324,7 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		nix-0.29.0 \
 		nom-7.1.3 \
 		notify-6.1.1 \
-		notify-debouncer-full-0.3.1 \
+		notify-debouncer-full-0.3.2 \
 		now-0.1.3 \
 		ntapi-0.4.1 \
 		nu-ansi-term-0.50.1 \
@@ -339,7 +339,6 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		num-traits-0.2.19 \
 		num_threads-0.1.7 \
 		number_prefix-0.4.0 \
-		objc-0.2.7 \
 		objc-sys-0.3.5 \
 		objc2-0.5.2 \
 		objc2-app-kit-0.2.2 \
@@ -350,6 +349,7 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		objc2-metal-0.2.2 \
 		objc2-quartz-core-0.2.2 \
 		object-0.36.3 \
+		oem_cp-2.0.0 \
 		omnipath-0.1.6 \
 		once_cell-1.20.1 \
 		open-5.3.0 \
@@ -377,9 +377,7 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		pest_generator-2.7.11 \
 		pest_meta-2.7.11 \
 		petgraph-0.6.5 \
-		phf-0.10.1 \
 		phf-0.11.2 \
-		phf_codegen-0.10.0 \
 		phf_codegen-0.11.2 \
 		phf_generator-0.10.0 \
 		phf_generator-0.11.2 \
@@ -393,25 +391,26 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		planus-0.3.1 \
 		platform-info-2.0.3 \
 		plist-1.7.0 \
-		polars-0.41.3 \
-		polars-arrow-0.41.3 \
+		polars-0.43.1 \
+		polars-arrow-0.43.1 \
 		polars-arrow-format-0.1.0 \
-		polars-compute-0.41.3 \
-		polars-core-0.41.3 \
-		polars-error-0.41.3 \
-		polars-expr-0.41.3 \
-		polars-io-0.41.3 \
-		polars-json-0.41.3 \
-		polars-lazy-0.41.3 \
-		polars-mem-engine-0.41.3 \
-		polars-ops-0.41.3 \
-		polars-parquet-0.41.3 \
-		polars-pipe-0.41.3 \
-		polars-plan-0.41.3 \
-		polars-row-0.41.3 \
-		polars-sql-0.41.3 \
-		polars-time-0.41.3 \
-		polars-utils-0.41.3 \
+		polars-compute-0.43.1 \
+		polars-core-0.43.1 \
+		polars-error-0.43.1 \
+		polars-expr-0.43.1 \
+		polars-io-0.43.1 \
+		polars-json-0.43.1 \
+		polars-lazy-0.43.1 \
+		polars-mem-engine-0.43.1 \
+		polars-ops-0.43.1 \
+		polars-parquet-0.43.1 \
+		polars-pipe-0.43.1 \
+		polars-plan-0.43.1 \
+		polars-row-0.43.1 \
+		polars-schema-0.43.1 \
+		polars-sql-0.43.1 \
+		polars-time-0.43.1 \
+		polars-utils-0.43.1 \
 		pori-0.0.0 \
 		portable-atomic-1.7.0 \
 		powerfmt-0.2.0 \
@@ -456,7 +455,7 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		recvmsg-1.0.0 \
 		redox_syscall-0.5.3 \
 		redox_users-0.4.6 \
-		reedline-0.36.0 \
+		reedline-0.37.0 \
 		ref-cast-1.0.23 \
 		ref-cast-impl-1.0.23 \
 		regex-1.10.6 \
@@ -491,14 +490,14 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		schannel-0.1.23 \
 		scoped-tls-1.0.1 \
 		scopeguard-1.2.0 \
-		scraper-0.20.0 \
+		scraper-0.21.0 \
 		scroll-0.11.0 \
 		scroll_derive-0.11.1 \
 		sdd-3.0.2 \
 		seahash-4.1.0 \
 		security-framework-2.11.1 \
 		security-framework-sys-2.11.1 \
-		selectors-0.25.0 \
+		selectors-0.26.0 \
 		semver-1.0.23 \
 		serde-1.0.208 \
 		serde_derive-1.0.208 \
@@ -509,7 +508,7 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		serde_yaml-0.9.34+deprecated \
 		serial_test-3.1.1 \
 		serial_test_derive-3.1.1 \
-		servo_arc-0.3.0 \
+		servo_arc-0.4.0 \
 		sha2-0.10.8 \
 		shadow-rs-0.35.0 \
 		shell-words-1.1.0 \
@@ -524,11 +523,10 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		siphasher-0.3.11 \
 		slab-0.4.9 \
 		smallvec-1.13.2 \
-		smartstring-1.0.1 \
 		smawk-0.3.2 \
 		snap-1.1.1 \
 		socket2-0.5.7 \
-		sqlparser-0.47.0 \
+		sqlparser-0.49.0 \
 		stability-0.2.1 \
 		stable_deref_trait-1.2.0 \
 		stacker-0.1.16 \
@@ -553,7 +551,8 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		syn-2.0.75 \
 		syn_derive-0.1.8 \
 		sys-locale-0.3.1 \
-		sysinfo-0.30.13 \
+		sysinfo-0.31.4 \
+		sysinfo-0.32.0 \
 		tabled-0.16.0 \
 		tango-bench-0.6.0 \
 		tap-1.0.1 \
@@ -584,7 +583,7 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		toml_edit-0.22.20 \
 		tracing-0.1.40 \
 		tracing-core-0.1.32 \
-		trash-3.3.1 \
+		trash-5.2.0 \
 		tree_magic_mini-3.1.5 \
 		trim-in-place-0.1.7 \
 		typed-arena-1.7.0 \
@@ -594,7 +593,7 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		typetag-impl-0.2.18 \
 		ucd-trie-0.1.6 \
 		umask-2.1.0 \
-		unicase-2.7.0 \
+		unicase-2.8.0 \
 		unicode-bidi-0.3.15 \
 		unicode-ident-1.0.12 \
 		unicode-linebreak-0.1.5 \
@@ -607,6 +606,7 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		unsafe-libyaml-0.2.11 \
 		ureq-2.10.1 \
 		url-2.5.2 \
+		urlencoding-2.1.3 \
 		utf-8-0.7.6 \
 		utf8-width-0.1.7 \
 		utf8parse-0.2.2 \
@@ -619,7 +619,7 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		uucore-0.0.27 \
 		uucore_procs-0.0.27 \
 		uuhelp_parser-0.0.27 \
-		uuid-1.10.0 \
+		uuid-1.11.0 \
 		v_htmlescape-0.15.8 \
 		value-trait-0.8.1 \
 		vcpkg-0.2.15 \
@@ -650,44 +650,36 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-util-0.1.9 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
-		windows-0.44.0 \
-		windows-0.52.0 \
-		windows-0.54.0 \
+		windows-0.56.0 \
 		windows-core-0.52.0 \
-		windows-core-0.54.0 \
+		windows-core-0.56.0 \
+		windows-implement-0.56.0 \
+		windows-interface-0.56.0 \
 		windows-result-0.1.2 \
 		windows-sys-0.36.1 \
 		windows-sys-0.48.0 \
 		windows-sys-0.52.0 \
 		windows-sys-0.59.0 \
-		windows-targets-0.42.2 \
 		windows-targets-0.48.5 \
 		windows-targets-0.52.6 \
-		windows_aarch64_gnullvm-0.42.2 \
 		windows_aarch64_gnullvm-0.48.5 \
 		windows_aarch64_gnullvm-0.52.6 \
 		windows_aarch64_msvc-0.36.1 \
-		windows_aarch64_msvc-0.42.2 \
 		windows_aarch64_msvc-0.48.5 \
 		windows_aarch64_msvc-0.52.6 \
 		windows_i686_gnu-0.36.1 \
-		windows_i686_gnu-0.42.2 \
 		windows_i686_gnu-0.48.5 \
 		windows_i686_gnu-0.52.6 \
 		windows_i686_gnullvm-0.52.6 \
 		windows_i686_msvc-0.36.1 \
-		windows_i686_msvc-0.42.2 \
 		windows_i686_msvc-0.48.5 \
 		windows_i686_msvc-0.52.6 \
 		windows_x86_64_gnu-0.36.1 \
-		windows_x86_64_gnu-0.42.2 \
 		windows_x86_64_gnu-0.48.5 \
 		windows_x86_64_gnu-0.52.6 \
-		windows_x86_64_gnullvm-0.42.2 \
 		windows_x86_64_gnullvm-0.48.5 \
 		windows_x86_64_gnullvm-0.52.6 \
 		windows_x86_64_msvc-0.36.1 \
-		windows_x86_64_msvc-0.42.2 \
 		windows_x86_64_msvc-0.48.5 \
 		windows_x86_64_msvc-0.52.6 \
 		winnow-0.5.40 \
