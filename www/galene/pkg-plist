@@ -1,4 +1,5 @@
 bin/galene
+bin/galenectl
 %%DATADIR%%/404.css
 %%DATADIR%%/404.html
 %%DATADIR%%/change-password.css
@@ -7,29 +8,6 @@ bin/galene
 %%DATADIR%%/common.css
 %%DATADIR%%/example/example.html
 %%DATADIR%%/example/example.js
-%%DATADIR%%/external/contextual/LICENSE
-%%DATADIR%%/external/contextual/contextual.css
-%%DATADIR%%/external/contextual/contextual.js
-%%DATADIR%%/external/fontawesome/css/all.min.css
-%%DATADIR%%/external/fontawesome/css/brands.min.css
-%%DATADIR%%/external/fontawesome/css/fontawesome.min.css
-%%DATADIR%%/external/fontawesome/css/regular.min.css
-%%DATADIR%%/external/fontawesome/css/solid.min.css
-%%DATADIR%%/external/fontawesome/css/svg-with-js.min.css
-%%DATADIR%%/external/fontawesome/css/v4-font-face.min.css
-%%DATADIR%%/external/fontawesome/css/v4-shims.min.css
-%%DATADIR%%/external/fontawesome/css/v5-font-face.min.css
-%%DATADIR%%/external/fontawesome/webfonts/fa-brands-400.ttf
-%%DATADIR%%/external/fontawesome/webfonts/fa-brands-400.woff2
-%%DATADIR%%/external/fontawesome/webfonts/fa-regular-400.ttf
-%%DATADIR%%/external/fontawesome/webfonts/fa-regular-400.woff2
-%%DATADIR%%/external/fontawesome/webfonts/fa-solid-900.ttf
-%%DATADIR%%/external/fontawesome/webfonts/fa-solid-900.woff2
-%%DATADIR%%/external/fontawesome/webfonts/fa-v4compatibility.ttf
-%%DATADIR%%/external/fontawesome/webfonts/fa-v4compatibility.woff2
-%%DATADIR%%/external/toastify/LICENSE
-%%DATADIR%%/external/toastify/toastify.css
-%%DATADIR%%/external/toastify/toastify.js
 %%DATADIR%%/galene.css
 %%DATADIR%%/galene.html
 %%DATADIR%%/galene.js
@@ -40,8 +18,32 @@ bin/galene
 %%DATADIR%%/protocol.js
 %%DATADIR%%/stats.html
 %%DATADIR%%/stats.js
+%%DATADIR%%/third-party/contextual/LICENSE
+%%DATADIR%%/third-party/contextual/contextual.css
+%%DATADIR%%/third-party/contextual/contextual.js
+%%DATADIR%%/third-party/fontawesome/css/all.min.css
+%%DATADIR%%/third-party/fontawesome/css/brands.min.css
+%%DATADIR%%/third-party/fontawesome/css/fontawesome.min.css
+%%DATADIR%%/third-party/fontawesome/css/regular.min.css
+%%DATADIR%%/third-party/fontawesome/css/solid.min.css
+%%DATADIR%%/third-party/fontawesome/css/svg-with-js.min.css
+%%DATADIR%%/third-party/fontawesome/css/v4-font-face.min.css
+%%DATADIR%%/third-party/fontawesome/css/v4-shims.min.css
+%%DATADIR%%/third-party/fontawesome/css/v5-font-face.min.css
+%%DATADIR%%/third-party/fontawesome/webfonts/fa-brands-400.ttf
+%%DATADIR%%/third-party/fontawesome/webfonts/fa-brands-400.woff2
+%%DATADIR%%/third-party/fontawesome/webfonts/fa-regular-400.ttf
+%%DATADIR%%/third-party/fontawesome/webfonts/fa-regular-400.woff2
+%%DATADIR%%/third-party/fontawesome/webfonts/fa-solid-900.ttf
+%%DATADIR%%/third-party/fontawesome/webfonts/fa-solid-900.woff2
+%%DATADIR%%/third-party/fontawesome/webfonts/fa-v4compatibility.ttf
+%%DATADIR%%/third-party/fontawesome/webfonts/fa-v4compatibility.woff2
+%%DATADIR%%/third-party/toastify/LICENSE
+%%DATADIR%%/third-party/toastify/toastify-es.js
+%%DATADIR%%/third-party/toastify/toastify.css
+%%DATADIR%%/third-party/toastify/toastify.js
 %%DATADIR%%/tsconfig.json
-@dir(%%USERS%%,%%GROUPS%%,) /var/db/galene/data
-@dir(%%USERS%%,%%GROUPS%%,) /var/db/galene/groups
-@dir(%%USERS%%,%%GROUPS%%,) /var/db/galene/recordings
+@dir /var/db/galene/data
+@dir /var/db/galene/groups
+@dir /var/db/galene/recordings
 @dir /var/db/galene
