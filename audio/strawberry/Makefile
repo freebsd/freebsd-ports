@@ -1,10 +1,7 @@
 PORTNAME=	strawberry
-DISTVERSION=	1.2.2
+DISTVERSION=	1.2.3
 CATEGORIES=	audio
 MASTER_SITES=	https://github.com/strawberrymusicplayer/${PORTNAME}/releases/download/${DISTVERSION}/
-
-PATCH_SITES=	https://github.com/strawberrymusicplayer/strawberry/commit/
-PATCHFILES=	d396cb515d5112be866c2510127a111dab5d313a.patch:-p1 # https://github.com/strawberrymusicplayer/strawberry/issues/1610
 
 MAINTAINER=	jhale@FreeBSD.org
 COMMENT=	Music player and collection organizer
