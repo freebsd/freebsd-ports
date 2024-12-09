@@ -1,0 +1,19 @@
+--- CMakeLists.txt.orig	2024-10-27 15:47:01.856844000 +0800
++++ CMakeLists.txt	2024-10-27 16:21:30.499092000 +0800
+@@ -519,6 +519,7 @@
+     ${PHARO_CURRENT_GENERATED}/vm/include
+ PRIVATE
+     ${CMAKE_CURRENT_SOURCE_DIR}/include/semaphores
++    /usr/local/include/libepoll-shim
+ )
+ add_platform_headers()
+ 
+@@ -549,7 +550,7 @@
+   )
+ endif()
+ 
+-target_link_libraries(${VM_EXECUTABLE_NAME} ${VM_LIBRARY_NAME})
++target_link_libraries(${VM_EXECUTABLE_NAME} ${VM_LIBRARY_NAME} /usr/local/lib/libepoll-shim.so)
+ 
+ add_required_libs_per_platform()
+ 

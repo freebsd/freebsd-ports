@@ -1,7 +1,6 @@
 PORTNAME=	pharo
-DISTVERSION=	10.0.9
-DISTVERSIONSUFFIX=	de76067
-PORTREVISION=	3
+DISTVERSION=	10.3.1
+DISTVERSIONSUFFIX=	cab16b39
 CATEGORIES=	lang
 MASTER_SITES=	http://files.pharo.org/vm/pharo-spur64-headless/Linux-x86_64/source/
 DISTNAME=	PharoVM-${DISTVERSION}-${DISTVERSIONSUFFIX}-Linux-x86_64-c-src
@@ -13,6 +12,7 @@ WWW=		http://www.pharo.org/
 LICENSE=	MIT
 
 LIB_DEPENDS=	libffi.so:devel/libffi \
+		libepoll-shim.so:devel/libepoll-shim \
 		libgit2.so:devel/libgit2 \
 		libcairo.so:graphics/cairo \
 		libfreetype.so:print/freetype2 \
