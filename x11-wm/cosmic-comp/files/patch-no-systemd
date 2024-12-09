@@ -19,7 +19,7 @@ Avoid various systemd dependencies
      info!("Cosmic starting up!");
  
 +    // Advise xdg-desktop-portal which *-portals.conf to load
-+    std::env::set_var("XDG_CURRENT_DESKTOP", "cosmic");
++    std::env::set_var("XDG_CURRENT_DESKTOP", "COSMIC");
 +    // Mimic wlroots, used by https://github.com/qt/qtbase/commit/4b4870a12cd9
 +    std::env::set_var("XDG_SESSION_TYPE", "wayland");
 +
