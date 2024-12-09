@@ -590,11 +590,7 @@ USES+=			pkgconfig
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == aarch64 && ${PHP_MODNAME} == "opcache"
-CONFIGURE_ARGS+=--disable-opcache-jit
-.endif
-
-.if ${PHP_MODNAME} == "opcache"
+.if (${ARCH} == aarch64 || ${ARCH} == amd64 || ${ARCH} == i386) && ${PHP_MODNAME} == "opcache"
 post-configure:
 	@${BSDMAKE} -C ${WRKSRC} ./jit/ir/ir_fold_hash.h
 	@${BSDMAKE} -C ${WRKSRC} ./jit/ir/ir_emit.lo
