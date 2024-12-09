@@ -1,6 +1,6 @@
 PORTNAME=	mold
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.32.1
+DISTVERSION=	2.35.0
 CATEGORIES=	devel
 
 MAINTAINER=	ashish@FreeBSD.org
@@ -21,7 +21,7 @@ TEST_DEPENDS=	bash:shells/bash \
 		${LOCALBASE}/bin/readelf:devel/binutils
 
 USES=		cmake:testing compiler:c++20-lang localbase:ldflags shebangfix
-SHEBANG_FILES=	test/elf/*.sh
+SHEBANG_FILES=	test/*.sh
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	rui314
@@ -56,31 +56,31 @@ LTO_CMAKE_BOOL=	MOLD_LTO
 pre-test:
 	### BINARY_ALIAS doesn't work for tests so we need to fix it manually
 	@${REINPLACE_CMD} -e 's|OBJCOPY=objcopy|OBJCOPY=${PREFIX}/bin/objcopy|g' \
-	    ${PATCH_WRKSRC}/test/elf/common.inc
+	    ${PATCH_WRKSRC}/test/common.inc
 	@${REINPLACE_CMD} -e 's|OBJDUMP=objdump|OBJDUMP=${PREFIX}/bin/objdump|g' \
-	    ${PATCH_WRKSRC}/test/elf/common.inc
+	    ${PATCH_WRKSRC}/test/common.inc
 	@${REINPLACE_CMD} -e 's|$$GCC |gcc${GCC_DEFAULT} |g' \
-	    ${PATCH_WRKSRC}/test/elf/*.sh
+	    ${PATCH_WRKSRC}/test/*.sh
 	@${REINPLACE_CMD} -e 's|gcc |gcc${GCC_DEFAULT} |g' \
-	    ${PATCH_WRKSRC}/test/elf/*.sh
+	    ${PATCH_WRKSRC}/test/*.sh
 	@${REINPLACE_CMD} -e 's|grep -|${PREFIX}/bin/ggrep -|g' \
-	    ${PATCH_WRKSRC}/test/elf/*.sh
+	    ${PATCH_WRKSRC}/test/*.sh
 	@${REINPLACE_CMD} -e 's|readelf |${PREFIX}/bin/readelf |g' \
-	    ${PATCH_WRKSRC}/test/elf/*.sh
+	    ${PATCH_WRKSRC}/test/*.sh
 	### Depends on LLVMgold plugin which isn't built by binutils
-	@${RM} ${WRKSRC}/test/elf/defsym-lto.sh
-	@${RM} ${WRKSRC}/test/elf/lto-archive.sh
-	@${RM} ${WRKSRC}/test/elf/lto-archive2.sh
-	@${RM} ${WRKSRC}/test/elf/lto-dso.sh
-	@${RM} ${WRKSRC}/test/elf/lto-version-script.sh
-	@${RM} ${WRKSRC}/test/elf/symbol-version-lto.sh
+	@${RM} ${WRKSRC}/test/defsym-lto.sh
+	@${RM} ${WRKSRC}/test/lto-archive.sh
+	@${RM} ${WRKSRC}/test/lto-archive2.sh
+	@${RM} ${WRKSRC}/test/lto-dso.sh
+	@${RM} ${WRKSRC}/test/lto-version-script.sh
+	@${RM} ${WRKSRC}/test/symbol-version-lto.sh
 	### These tests errors out with "Unsupported relocation type 36 in non-PLT relocations"
-	@${RM} ${WRKSRC}/test/elf/tlsdesc.sh
-	@${RM} ${WRKSRC}/test/elf/tlsdesc-dlopen.sh
-	@${RM} ${WRKSRC}/test/elf/tlsdesc-initial-exec.sh
-	@${RM} ${WRKSRC}/test/elf/tlsdesc-local-dynamic.sh
-	@${RM} ${WRKSRC}/test/elf/wrap-lto.sh
-	@${RM} ${WRKSRC}/test/elf/x86_64_tlsdesc.sh
-	@${RM} ${WRKSRC}/test/elf/x86_64_tls-module-base.sh
+	@${RM} ${WRKSRC}/test/tlsdesc.sh
+	@${RM} ${WRKSRC}/test/tlsdesc-dlopen.sh
+	@${RM} ${WRKSRC}/test/tlsdesc-initial-exec.sh
+	@${RM} ${WRKSRC}/test/tlsdesc-local-dynamic.sh
+	@${RM} ${WRKSRC}/test/wrap-lto.sh
+	@${RM} ${WRKSRC}/test/x86_64_tlsdesc.sh
+	@${RM} ${WRKSRC}/test/x86_64_tls-module-base.sh
 
 .include <bsd.port.mk>
