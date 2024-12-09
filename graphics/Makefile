@@ -855,6 +855,7 @@
     SUBDIR += poppler-qt5
     SUBDIR += poppler-qt6
     SUBDIR += poppler-utils
+    SUBDIR += poselib
     SUBDIR += potrace
     SUBDIR += povray-meta
     SUBDIR += povray37
