@@ -166,6 +166,7 @@ include/fizz/server/DualTicketCipher.h
 include/fizz/server/FizzServer-inl.h
 include/fizz/server/FizzServer.h
 include/fizz/server/FizzServerContext.h
+include/fizz/server/HandshakeLogging.h
 include/fizz/server/MultiServerExtensions.h
 include/fizz/server/Negotiator.h
 include/fizz/server/ReplayCache.h
