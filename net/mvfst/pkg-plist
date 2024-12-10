@@ -26,6 +26,7 @@ include/quic/api/test/MockQuicSocket.h
 include/quic/api/test/Mocks.h
 include/quic/client/QuicClientAsyncTransport.h
 include/quic/client/QuicClientTransport.h
+include/quic/client/QuicClientTransportLite.h
 include/quic/client/connector/QuicConnector.h
 include/quic/client/handshake/CachedServerTransportParameters.h
 include/quic/client/handshake/ClientHandshake.h
