@@ -1,5 +1,6 @@
     COMMENT = Peer-to-peer network applications
 
+    SUBDIR += aeron
     SUBDIR += amule
     SUBDIR += autoscan
     SUBDIR += awgg
