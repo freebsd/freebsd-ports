@@ -1,6 +1,6 @@
 PORTNAME=		ooni-probe-cli
 DISTVERSIONPREFIX=	v
-DISTVERSION=		3.23.0
+DISTVERSION=		3.24.0
 CATEGORIES=		net www benchmarks
 
 MAINTAINER=	egypcio@FreeBSD.org
@@ -12,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	ca_root_nss>=0:security/ca_root_nss
 
-USES=		go:modules
+USES=		go:1.22,modules
 
 GO_BUILDFLAGS=	-ldflags '-s -w -extldflags "-static"'
 GO_MODULE=	github.com/ooni/probe-cli/v3
