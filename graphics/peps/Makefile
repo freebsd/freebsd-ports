@@ -11,6 +11,9 @@ WWW=		http://peps.redprince.net/peps/
 
 LICENSE=	BSD2CLAUSE
 
+DEPRECATED=	Ancient port, upstream gone
+EXPIRATION_DATE=	2025-01-31
+
 USES=		ghostscript:run
 MAKE_ENV=	GSPATH="${LOCALBASE}/bin/gs" GZPATH="/usr/bin/gzip" \
 		ETC="${PREFIX}/etc"
