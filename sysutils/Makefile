@@ -688,6 +688,7 @@
     SUBDIR += mcfly
     SUBDIR += mcron
     SUBDIR += mcweject
+    SUBDIR += mdcat
     SUBDIR += mdf2iso
     SUBDIR += megacli
     SUBDIR += megarc
