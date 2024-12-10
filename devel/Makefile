@@ -1794,7 +1794,6 @@
     SUBDIR += ocaml-rresult
     SUBDIR += ocaml-sdl
     SUBDIR += ocaml-sem
-    SUBDIR += ocaml-seq
     SUBDIR += ocaml-sexplib
     SUBDIR += ocaml-sexplib0
     SUBDIR += ocaml-stdio
