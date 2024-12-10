@@ -1,6 +1,6 @@
 PORTNAME=	quiche
 DISTVERSION=	0.22.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	net
 
 MAINTAINER=	junho.choi@gmail.com
@@ -53,7 +53,7 @@ do-install:
 	${INSTALL_LIB} ${CARGO_TARGET_DIR}/*/libquiche.so ${STAGEDIR}${PREFIX}/lib/libquiche.so.${DISTVERSION}
 	${RLN} ${STAGEDIR}${PREFIX}/lib/libquiche.so.${DISTVERSION} ${STAGEDIR}${PREFIX}/lib/libquiche.so.${MAJOR_VER}
 	${RLN} ${STAGEDIR}${PREFIX}/lib/libquiche.so.${DISTVERSION} ${STAGEDIR}${PREFIX}/lib/libquiche.so
-	${INSTALL_LIB} ${CARGO_TARGET_DIR}/*/libquiche.a ${STAGEDIR}${PREFIX}/lib
+	${INSTALL_DATA} ${CARGO_TARGET_DIR}/*/libquiche.a ${STAGEDIR}${PREFIX}/lib
 	${INSTALL_PROGRAM} ${CARGO_TARGET_DIR}/*/quiche-server ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_PROGRAM} ${CARGO_TARGET_DIR}/*/quiche-client ${STAGEDIR}${PREFIX}/bin
 
