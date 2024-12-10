@@ -1,4 +1,4 @@
-TIMESTAMP = 1732809031
+TIMESTAMP = 1733847510
 SHA256 (rust/crates/addr2line-0.24.2.crate) = dfbe277e56a376000877090da837660b4427aad530e3028d44e0bffe4f89a1c1
 SIZE (rust/crates/addr2line-0.24.2.crate) = 39015
 SHA256 (rust/crates/adler2-2.0.0.crate) = 512761e0bb2578dd7380c6baaa0f4ce03e84f95e960231d1dec8bf4d7d6e2627
@@ -681,5 +681,5 @@ SHA256 (rust/crates/zerovec-0.10.4.crate) = aa2b893d79df23bfb12d5461018d408ea19d
 SIZE (rust/crates/zerovec-0.10.4.crate) = 126398
 SHA256 (rust/crates/zerovec-derive-0.10.3.crate) = 6eafa6dfb17584ea3e2bd6e76e0cc15ad7af12b09abdd1ca55961bed9b1063c6
 SIZE (rust/crates/zerovec-derive-0.10.3.crate) = 19438
-SHA256 (AmmarAbouZor-tui-journal-v0.13.0_GH0.tar.gz) = 7f5e2b0b1b1a227cf9154c1f4749a0a645fc18a6cfa9750872b0b45400b1a0a6
-SIZE (AmmarAbouZor-tui-journal-v0.13.0_GH0.tar.gz) = 2001623
+SHA256 (AmmarAbouZor-tui-journal-v0.13.1_GH0.tar.gz) = 1f801c83c9ce62ce894779cfe37e0194b8e82ea34ff46e1dbeeb58a9b5345c00
+SIZE (AmmarAbouZor-tui-journal-v0.13.1_GH0.tar.gz) = 2003751
