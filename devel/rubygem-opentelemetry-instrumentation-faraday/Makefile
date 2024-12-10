@@ -1,5 +1,5 @@
 PORTNAME=	opentelemetry-instrumentation-faraday
-PORTVERSION=	0.24.6
+PORTVERSION=	0.24.7
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
