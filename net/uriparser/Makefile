@@ -13,24 +13,24 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	bash:shells/bash
+TEST_DEPENDS=	googletest>=1.10.0:devel/googletest
 
-USES=		cmake:noninja cpe pathfix tar:xz
+USES=		cmake:noninja,testing cpe pathfix tar:xz
 CPE_VENDOR=	uriparser_project
 USE_LDCONFIG=	yes
 
-CMAKE_OFF=	URIPARSER_BUILD_DOCS # will fetch prebuilds from the upstream, if DOCS is selected
+CMAKE_TESTING_ON=	URIPARSER_BUILD_TESTS
 
-TEST_TARGET=	test
+CMAKE_OFF=	URIPARSER_BUILD_TESTS \
+		URIPARSER_BUILD_DOCS # will fetch prebuilds from the upstream, if DOCS is selected
 
 PLIST_SUB=	DISTVERSION=${DISTVERSION}
 PORTDOCS=	*
 
-OPTIONS_DEFINE=		DOCS TEST
+OPTIONS_DEFINE=		DOCS
 DOCS_DISTFILES=		${_DISTDOCSFILE} \
 			${DISTNAME}.qch
 DOCS_EXTRACT_ONLY=	${_DISTDOCSFILE}
-TEST_BUILD_DEPENDS=	googletest>=1.10.0:devel/googletest
-TEST_CMAKE_BOOL=	URIPARSER_BUILD_TESTS
 
 _DISTDOCSFILE=	${_DISTDOCSNAME}.zip
 _DISTDOCSNAME=	${DISTNAME}-doc
