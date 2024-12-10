@@ -1,6 +1,5 @@
 PORTNAME=	lockfile-progs
-DISTVERSION=	0.1.19
-PORTREVISION=	1
+DISTVERSION=	0.1.20
 CATEGORIES=	sysutils
 MASTER_SITES=	DEBIAN_POOL
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -14,17 +13,20 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	liblockfile.so:devel/liblockfile
 
+USES=		tar:xz
+
 ALL_TARGET=	lockfile-create
 WRKSRC=		${WRKDIR}/${DISTNAME:S/_/-/}
 
-PORTDOCS=	TODO changelog
+PORTDOCS=	changelog
 
 OPTIONS_DEFINE=	DOCS
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/lockfile-create ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/lockfile-progs.1 ${STAGEDIR}${PREFIX}/share/man/man1
-.for f in lockfile-remove lockfile-touch lockfile-check mail-lock mail-unlock mail-touchlock
+.for f in lockfile-remove lockfile-touch lockfile-check mail-lock mail-unlock \
+	mail-touchlock
 	${LN} ${STAGEDIR}${PREFIX}/bin/lockfile-create ${STAGEDIR}${PREFIX}/bin/${f}
 	${LN} -s lockfile-progs.1 ${STAGEDIR}${PREFIX}/share/man/man1/${f}.1
 .endfor
@@ -32,8 +34,6 @@ do-install:
 
 do-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
-.for f in TODO debian/changelog
-	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
-.endfor
+	${INSTALL_DATA} ${WRKSRC}/debian/changelog ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
