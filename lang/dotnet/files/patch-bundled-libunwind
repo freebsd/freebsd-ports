@@ -1,0 +1,42 @@
+Use bundled libunwind until at least
+
+https://github.com/libunwind/libunwind/issues/715
+
+is fixed. It is also believed that using bundled libunwind may help against
+random crashes on amd64 too.
+
+--- src/runtime/src/native/corehost/apphost/static/CMakeLists.txt.orig
++++ src/runtime/src/native/corehost/apphost/static/CMakeLists.txt
+@@ -244,7 +244,7 @@ endif(CLR_CMAKE_TARGET_APPLE)
+
+ # On *BSD, we always use the libunwind that's part of the OS
+ if(CLR_CMAKE_TARGET_FREEBSD)
+-  set(CLR_CMAKE_USE_SYSTEM_LIBUNWIND 1)
++  set(CLR_CMAKE_USE_SYSTEM_LIBUNWIND 0)
+ endif()
+
+ if(CLR_CMAKE_USE_SYSTEM_LIBUNWIND AND NOT CLR_CMAKE_TARGET_APPLE)
+
+--- src/runtime/src/coreclr/pal/src/CMakeLists.txt.orig
++++ src/runtime/src/coreclr/pal/src/CMakeLists.txt
+@@ -1,7 +1,7 @@
+ if(CLR_CMAKE_TARGET_OSX OR CLR_CMAKE_TARGET_FREEBSD OR CLR_CMAKE_TARGET_HAIKU)
+   # On OSX and *BSD, we use the libunwind that's part of the OS
+   # On Haiku, we used a special port of libunwind
+-  set(CLR_CMAKE_USE_SYSTEM_LIBUNWIND 1)
++  set(CLR_CMAKE_USE_SYSTEM_LIBUNWIND 0)
+ endif(CLR_CMAKE_TARGET_OSX OR CLR_CMAKE_TARGET_FREEBSD OR CLR_CMAKE_TARGET_HAIKU)
+
+ if(NOT DEFINED ENV{ROOTFS_DIR})
+
+--- src/runtime/src/native/external/libunwind.cmake.orig
++++ src/runtime/src/native/external/libunwind.cmake
+@@ -96,7 +96,7 @@ elseif(CLR_CMAKE_TARGET_FREEBSD)
+     set(libunwind_la_SOURCES_arm_os             arm/Gos-freebsd.c)
+     set(libunwind_la_SOURCES_arm_os_local       arm/Los-freebsd.c)
+     set(libunwind_la_SOURCES_aarch64_os         aarch64/Gos-freebsd.c)
+-    set(libunwind_la_SOURCES_aarch64_os_local   aarch64/Los-freebsd.c)
++    set(libunwind_la_SOURCES_aarch64_os_local   aarch64/Los-freebsd.c aarch64/setcontext.S)
+     list(APPEND libunwind_coredump_la_SOURCES   coredump/_UCD_access_reg_freebsd.c)
+ elseif(CLR_CMAKE_HOST_SUNOS)
+     set(libunwind_la_SOURCES_os                 ${libunwind_la_SOURCES_os_solaris})

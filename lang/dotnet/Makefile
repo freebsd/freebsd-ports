@@ -1,7 +1,7 @@
 PORTNAME=	dotnet
 DISTVERSIONPREFIX=	v
 DISTVERSION=	${DOTNETVERSION}.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang devel
 MASTER_SITES=	https://github.com/dotnet/dotnet/releases/download/${DISTVERSIONPREFIX}${DISTVERSION}/release.json?dummy=/:dotnetmanifest \
 		https://github.com/sec/dotnet-core-freebsd-source-build/releases/download/9.0.0-rc.2-native/:bootstrap
