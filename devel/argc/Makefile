@@ -1,7 +1,6 @@
 PORTNAME=	argc
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.21.1
-PORTREVISION=	1
+DISTVERSION=	1.22.0
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -20,13 +19,13 @@ GH_ACCOUNT=	sigoden
 
 CARGO_CRATES=	aho-corasick-1.1.3 \
 		anstyle-1.0.10 \
-		anyhow-1.0.93 \
+		anyhow-1.0.94 \
 		assert_cmd-2.0.16 \
 		assert_fs-1.1.2 \
 		autocfg-1.4.0 \
 		base64-0.22.1 \
 		bitflags-2.6.0 \
-		bstr-1.10.0 \
+		bstr-1.11.0 \
 		cfg-if-1.0.0 \
 		console-0.15.8 \
 		convert_case-0.6.0 \
@@ -40,8 +39,8 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		either-1.13.0 \
 		encode_unicode-0.3.6 \
 		equivalent-1.0.1 \
-		errno-0.3.9 \
-		fastrand-2.2.0 \
+		errno-0.3.10 \
+		fastrand-2.3.0 \
 		float-cmp-0.9.0 \
 		futures-0.3.31 \
 		futures-channel-0.3.31 \
@@ -57,15 +56,15 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		glob-0.3.1 \
 		globset-0.4.15 \
 		globwalk-0.9.1 \
-		hashbrown-0.15.1 \
+		hashbrown-0.15.2 \
 		hermit-abi-0.3.9 \
 		home-0.5.9 \
 		ignore-0.4.23 \
-		indexmap-2.6.0 \
+		indexmap-2.7.0 \
 		insta-1.41.1 \
-		itoa-1.0.11 \
+		itoa-1.0.14 \
 		lazy_static-1.5.0 \
-		libc-0.2.162 \
+		libc-0.2.167 \
 		libredox-0.1.3 \
 		linked-hash-map-0.5.6 \
 		linux-raw-sys-0.4.14 \
@@ -87,38 +86,38 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		predicates-core-1.0.8 \
 		predicates-tree-1.0.11 \
 		proc-macro-crate-3.2.0 \
-		proc-macro2-1.0.89 \
+		proc-macro2-1.0.92 \
 		quote-1.0.37 \
 		redox_users-0.4.6 \
 		regex-1.11.1 \
-		regex-automata-0.4.8 \
+		regex-automata-0.4.9 \
 		regex-syntax-0.8.5 \
 		relative-path-1.9.3 \
 		roff-0.2.2 \
 		rstest-0.23.0 \
 		rstest_macros-0.23.0 \
 		rustc_version-0.4.1 \
-		rustix-0.38.39 \
+		rustix-0.38.42 \
 		ryu-1.0.18 \
 		same-file-1.0.6 \
 		semver-1.0.23 \
-		serde-1.0.214 \
-		serde_derive-1.0.214 \
-		serde_json-1.0.132 \
+		serde-1.0.215 \
+		serde_derive-1.0.215 \
+		serde_json-1.0.133 \
 		shell-words-1.1.0 \
 		similar-2.6.0 \
 		slab-0.4.9 \
 		smawk-0.3.2 \
-		syn-2.0.87 \
+		syn-2.0.90 \
 		tempfile-3.14.0 \
 		termtree-0.4.1 \
 		textwrap-0.16.1 \
-		thiserror-1.0.68 \
-		thiserror-impl-1.0.68 \
+		thiserror-1.0.69 \
+		thiserror-impl-1.0.69 \
 		threadpool-1.8.1 \
 		toml_datetime-0.6.8 \
 		toml_edit-0.22.22 \
-		unicode-ident-1.0.13 \
+		unicode-ident-1.0.14 \
 		unicode-linebreak-0.1.5 \
 		unicode-segmentation-1.12.0 \
 		unicode-width-0.1.14 \
