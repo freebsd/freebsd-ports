@@ -15,6 +15,7 @@ libexec/appjail/find-smallest-missing-number/find-smallest-missing-number
 libexec/appjail/get_assigned_rulesets/get_assigned_rulesets
 libexec/appjail/getservbyname/getservbyname
 libexec/appjail/ipcheck/ipcheck
+libexec/appjail/jexec/jexec
 libexec/appjail/network/network
 %%DATADIR%%/cmd/apply
 %%DATADIR%%/cmd/checkOld
@@ -40,6 +41,7 @@ libexec/appjail/network/network
 %%DATADIR%%/cmd/makejail
 %%DATADIR%%/cmd/nat
 %%DATADIR%%/cmd/network
+%%DATADIR%%/cmd/oci
 %%DATADIR%%/cmd/pkg
 %%DATADIR%%/cmd/quick
 %%DATADIR%%/cmd/restart
@@ -81,6 +83,7 @@ libexec/appjail/network/network
 %%DATADIR%%/lib/mksum
 %%DATADIR%%/lib/mount
 %%DATADIR%%/lib/network
+%%DATADIR%%/lib/oci
 %%DATADIR%%/lib/random
 %%DATADIR%%/lib/repeat
 %%DATADIR%%/lib/replace
@@ -169,8 +172,10 @@ libexec/appjail/network/network
 %%DATADIR%%/scripts/run_jail.sh
 %%DATADIR%%/scripts/runas.sh
 %%DATADIR%%/scripts/super-mv.sh
+%%PORTDOCS%%%%DOCSDIR%%/README.md
 %%EXAMPLESDIR%%/appjail.conf
 %%EXAMPLESDIR%%/templates/bridge.conf
+%%EXAMPLESDIR%%/templates/freebsd-oci.conf
 %%EXAMPLESDIR%%/templates/linux.conf
 %%EXAMPLESDIR%%/templates/vnet.conf
 %%EXAMPLESDIR%%/templates/xorg.conf
@@ -199,6 +204,7 @@ share/man/man1/appjail-logs.1.gz
 share/man/man1/appjail-makejail.1.gz
 share/man/man1/appjail-nat.1.gz
 share/man/man1/appjail-network.1.gz
+share/man/man1/appjail-oci.1.gz
 share/man/man1/appjail-pkg.1.gz
 share/man/man1/appjail-quick.1.gz
 share/man/man1/appjail-restart.1.gz
