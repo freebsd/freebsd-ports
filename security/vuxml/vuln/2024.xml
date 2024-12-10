@@ -1,3 +1,67 @@
+  <vuln vid="0e20e42c-b728-11ef-805a-b42e991fc52e">
+    <topic>firefox -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>firefox</name>
+	<range><lt>133.0.0,2</lt></range>
+      </package>
+      <package>
+	<name>firefox-esr</name>
+	<range><lt>128.5,1</lt></range>
+      </package>
+      <package>
+	<name>thunderbird</name>
+	<range><lt>133.0.0</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>security@mozilla.org reports:</p>
+	<blockquote cite="https://bugzilla.mozilla.org/show_bug.cgi?id=1929600">
+	<ul>
+	<li>CVE-2024-11692: An attacker could cause a select dropdown
+	to be shown over another tab; this could have led to user
+	confusion and possible spoofing attacks.</li>
+	<li>CVE-2024-11696: The application failed to account for
+	exceptions thrown by the `loadManifestFromFile` method during
+	add-on signature verification.  This flaw, triggered by an
+	invalid or unsupported extension manifest, could have caused
+	runtime errors that disrupted the signature validation process.
+	As a result, the enforcement of signature validation for
+	unrelated add-ons may have been bypassed.  Signature validation
+	in this context is used to ensure that third-party
+	applications on the user&apos;s computer have not tampered
+	with the user&apos;s extensions, limiting the impact of this
+	issue.</li>
+	<li>CVE-2024-11697: When handling keypress events, an attacker
+	may have been able to trick a user into bypassing the &quot;
+	Open Executable File?&quot; confirmation dialog.  This could
+	have led to malicious code execution.</li>
+	<li>CVE-2024-11699: Memory safety bugs present in Firefox 132,
+	Firefox ESR 128.4, and Thunderbird 128.4.  Some of these bugs
+	showed evidence of memory corruption and we presume that with
+	enough effort some of these could have been exploited to run
+	arbitrary code.</li>
+	</ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2024-11692</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2024-11692</url>
+      <cvename>CVE-2024-11696</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2024-11696</url>
+      <cvename>CVE-2024-11697</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2024-11697</url>
+      <cvename>CVE-2024-11699</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2024-11699</url>
+    </references>
+    <dates>
+      <discovery>2024-11-26</discovery>
+      <entry>2024-12-10</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="c2fd83e4-b450-11ef-b680-4ccc6adda413">
     <topic>qt6-webengine -- Multiple vulnerabilities</topic>
     <affects>
