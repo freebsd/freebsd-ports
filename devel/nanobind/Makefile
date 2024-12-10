@@ -57,6 +57,7 @@ do-test:
 			return 1; \
 		fi
 
-# cmake installs files into non-standard loctations, see https://github.com/wjakob/nanobind/issues/810
+# cmake installs files into non-standard locations, see https://github.com/wjakob/nanobind/issues/810
+# hostile upstream, do not create bug reports
 
 .include <bsd.port.mk>
