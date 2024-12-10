@@ -1,6 +1,6 @@
 PORTNAME=	tachyon
 DISTVERSION=	0.98.9
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics science
 MASTER_SITES=	http://jedi.ks.uiuc.edu/~johns/raytracer/files/${DISTVERSION}/
 
@@ -22,6 +22,6 @@ PLIST_FILES=	bin/tachyon \
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/compile/bsd/tachyon ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_LIB} ${WRKSRC}/compile/bsd/libtachyon.a ${STAGEDIR}${PREFIX}/lib
+	${INSTALL_DATA} ${WRKSRC}/compile/bsd/libtachyon.a ${STAGEDIR}${PREFIX}/lib
 
 .include <bsd.port.post.mk>

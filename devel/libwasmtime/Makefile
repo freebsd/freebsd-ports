@@ -1,6 +1,7 @@
 PORTNAME=	lib${GH_PROJECT}
 PORTVERSION=	25.0.1
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	osa@FreeBSD.org
@@ -435,7 +436,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/crates/c-api/include/wasm.h ${STAGEDIR}${PREFIX}/include
 	(cd ${WRKSRC}/crates/c-api/include && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/include)
 	${RM} ${STAGEDIR}${PREFIX}/include/wasmtime/conf.h.in
-	${INSTALL_LIB} ${WRKDIR}/target/release/libwasmtime.a ${STAGEDIR}${PREFIX}/lib
+	${INSTALL_DATA} ${WRKDIR}/target/release/libwasmtime.a ${STAGEDIR}${PREFIX}/lib
 	${INSTALL_LIB} ${WRKDIR}/target/release/libwasmtime.so ${STAGEDIR}${PREFIX}/lib
 
 .include <bsd.port.mk>
