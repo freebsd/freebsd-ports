@@ -7,3 +7,5 @@ SHA256 (webmproject-sjpeg-e5ab130_GH0.tar.gz) = 89d706381311af14e1124276266aebf4
 SIZE (webmproject-sjpeg-e5ab130_GH0.tar.gz) = 2481141
 SHA256 (jbeich-skcms-42030a7_GH0.tar.gz) = b7537267dd0fda80a98939cc4e4d15614d2d6f433cc8421b797e0f47078c2979
 SIZE (jbeich-skcms-42030a7_GH0.tar.gz) = 10050433
+SHA256 (d2411cebb0c3.patch) = 4c9e38d9a887690fa18ad0b6a4bd15b4ca5510dec88a30343e56befda7b429c3
+SIZE (d2411cebb0c3.patch) = 3853
