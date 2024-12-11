@@ -131,7 +131,7 @@ share/man/man1/pandoc.1.gz
 %%NO_EMBED_DATA%%%%DATADIR%%/data/templates/default.typst
 %%NO_EMBED_DATA%%%%DATADIR%%/data/templates/default.xwiki
 %%NO_EMBED_DATA%%%%DATADIR%%/data/templates/default.zimwiki
-%%NO_EMBED_DATA%%%%DATADIR%%/data/templates/definitions.typst
+%%NO_EMBED_DATA%%%%DATADIR%%/data/templates/font-settings.latex
 %%NO_EMBED_DATA%%%%DATADIR%%/data/templates/fonts.latex
 %%NO_EMBED_DATA%%%%DATADIR%%/data/templates/hypersetup.latex
 %%NO_EMBED_DATA%%%%DATADIR%%/data/templates/passoptions.latex
