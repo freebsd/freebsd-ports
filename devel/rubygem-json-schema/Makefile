@@ -1,5 +1,5 @@
 PORTNAME=	json-schema
-PORTVERSION=	5.1.0
+PORTVERSION=	5.1.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -10,7 +10,8 @@ WWW=		https://github.com/ruby-json-schema/json-schema
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-RUN_DEPENDS=	rubygem-addressable>=2.8<3:www/rubygem-addressable
+RUN_DEPENDS=	rubygem-addressable>=2.8<3:www/rubygem-addressable \
+		rubygem-bigdecimal>=3.1<4:math/rubygem-bigdecimal
 
 USES=		gem
 
