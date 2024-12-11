@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 ONLY_FOR_ARCHS=	aarch64 amd64 armv7 i386 powerpc powerpc64 powerpc64le
 
 USES=		dos2unix gmake zip
-DOS2UNIX_FILES=	tests/_tests.lua tests/test src/host/*.c
+DOS2UNIX_FILES=	tests/_tests.lua tests/test src/host/*.c src/host/premake.h
 
 MAKEFILE=	Bootstrap.mak
 MAKE_ARGS=	CC="${CC}" \
