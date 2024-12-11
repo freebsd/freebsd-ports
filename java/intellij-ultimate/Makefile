@@ -66,6 +66,8 @@ post-patch:
 
 .if ${ARCH} == "amd64"
 JNI_ARCH=	x86-64
+.elif ${ARCH} == "powerpc64le"
+JNI_ARCH=	ppc64le
 .else
 JNI_ARCH=	${ARCH}
 .endif
