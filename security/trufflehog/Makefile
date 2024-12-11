@@ -1,7 +1,6 @@
 PORTNAME=	trufflehog
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.63.11
-PORTREVISION=	5
+DISTVERSION=	3.86.0
 CATEGORIES=	security
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -11,8 +10,8 @@ WWW=		https://trufflesecurity.com/
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN_armv7=	compilation fails see details here: https://github.com/golang/go/issues/65187
-BROKEN_i386=	compilation fails see details here: https://github.com/golang/go/issues/65187
+#BROKEN_armv7=	compilation fails see details here: https://github.com/golang/go/issues/65187
+#BROKEN_i386=	compilation fails see details here: https://github.com/golang/go/issues/65187
 
 USES=		go:1.21,modules
 
