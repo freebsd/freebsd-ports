@@ -1,5 +1,5 @@
 PORTNAME=	chromium
-PORTVERSION=	131.0.6778.85
+PORTVERSION=	131.0.6778.139
 PULSEMV=	16
 PULSEV=		${PULSEMV}.1
 CATEGORIES=	www wayland
@@ -7,7 +7,7 @@ MASTER_SITES=	https://commondatastorage.googleapis.com/chromium-browser-official
 		https://nerd.hu/distfiles/:external \
 		https://freedesktop.org/software/pulseaudio/releases/:pulseaudio
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
-		chrome-linux-${PORTVERSION}-llvm17.profdata${EXTRACT_SUFX}:external \
+		chromium-linux-${PORTVERSION}-llvm17.profdata${EXTRACT_SUFX}:external \
 		pulseaudio-${PULSEV}.tar.gz:pulseaudio
 
 MAINTAINER=	chromium@FreeBSD.org
