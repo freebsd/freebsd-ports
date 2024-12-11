@@ -1,28 +1,37 @@
---- Makefile.orig	2015-10-16 19:45:43 UTC
-+++ Makefile
-@@ -22,8 +22,9 @@ PREFIX ?= /usr/local
- LDFLAGS ?= -s
+--- Makefile.orig	2020-04-01 23:27:59.000000000 +0200
++++ Makefile	2024-12-06 23:27:08.863198000 +0100
+@@ -23,7 +23,8 @@ LDFLAGS ?= -s
  
  BINDIR = ${PREFIX}/bin/
--MANDIR = ${PREFIX}/share/man/man1
+ MANDIR = ${PREFIX}/share/man/man1
 -LIBDIR = ${PREFIX}/lib/
-+MANDIR = ${PREFIX}/share/man/man1
 +DATDIR = ${PREFIX}/share
 +DOCDIR = ${PREFIX}/share/doc/mspdebug
  
- ifdef WITHOUT_READLINE
- 	READLINE_CFLAGS =
-@@ -70,6 +71,9 @@ else
+ UNAME_S := $(shell sh -c 'uname -s')
+ UNAME_O := $(shell sh -c 'uname -o 2> /dev/null')
+@@ -73,7 +74,7 @@ else
+     ifeq ($(UNAME_S),Darwin) # Mac OS X/MacPorts stuff
+       ifeq ($(shell fink -V > /dev/null 2>&1 && echo ok),ok)
+ 	PORTS_CFLAGS := $(shell pkg-config --cflags hidapi libusb)
+-	PORTS_LDFLAGS := $(shell pkg-config --libs hidapi libusb) -ltermcap -pthread
++	PORTS_LDFLAGS := $(shell pkg-config --libs hidapi libusb)  -pthread
+       else ifeq ($(shell brew --version > /dev/null 2>&1 && echo ok),ok)
+ 	PORTS_CFLAGS := $(shell pkg-config --cflags hidapi libusb)
+ 	PORTS_LDFLAGS := $(shell pkg-config --libs hidapi libusb) -framework IOKit -framework CoreFoundation
+@@ -89,7 +90,10 @@ else
+       LDFLAGS =
      else ifneq ($(filter $(UNAME_S),OpenBSD NetBSD DragonFly),)
  	PORTS_CFLAGS := $(shell pkg-config --cflags libusb)
- 	PORTS_LDFLAGS := $(shell pkg-config --libs libusb) -ltermcap -pthread
+-	PORTS_LDFLAGS := $(shell pkg-config --libs libusb) -ltermcap -pthread
++	PORTS_LDFLAGS := $(shell pkg-config --libs libusb)  -pthread
 +    else ifeq ($(UNAME_S),FreeBSD)
 +	PORTS_CFLAGS := -I${PREFIX}/include
 +	PORTS_LDFLAGS := -L${PREFIX}/lib
      else
  	PORTS_CFLAGS :=
  	PORTS_LDFLAGS :=
-@@ -78,7 +82,7 @@ endif
+@@ -98,12 +102,12 @@ endif
  
  INCLUDES = -I. -Isimio -Iformats -Itransport -Idrivers -Iutil -Iui
  GCC_CFLAGS = -O1 -Wall -Wno-char-subscripts -ggdb
@@ -30,8 +39,15 @@
 +CONFIG_CFLAGS = -DLIB_DIR=\"$(DATDIR)\"
  
  MSPDEBUG_LDFLAGS = $(LDFLAGS) $(PORTS_LDFLAGS)
- MSPDEBUG_LIBS = -lusb $(READLINE_LIBS) $(OS_LIBS)
-@@ -108,9 +112,12 @@ install: $(BINARY) mspdebug.man
+ MSPDEBUG_LIBS = -L. -lusb $(READLINE_LIBS) $(OS_LIBS)
+-MSPDEBUG_CFLAGS = $(CFLAGS) $(READLINE_CFLAGS) $(PORTS_CFLAGS)\
+- $(GCC_CFLAGS) $(INCLUDES) $(CONFIG_CFLAGS) $(OS_CFLAGS)
++MSPDEBUG_CFLAGS = $(CFLAGS) $(INCLUDES) $(READLINE_CFLAGS) $(PORTS_CFLAGS)\
++ $(GCC_CFLAGS) $(CONFIG_CFLAGS) $(OS_CFLAGS)
+ 
+ all: $(BINARY)
+ 
+@@ -136,9 +140,12 @@ install: $(BINARY) mspdebug.man
  	$(INSTALL) -m 0755 $(BINARY) $(DESTDIR)$(BINDIR)
  	mkdir -p $(DESTDIR)$(MANDIR)
  	$(INSTALL) -m 0644 mspdebug.man $(DESTDIR)$(MANDIR)/mspdebug.1
@@ -45,5 +61,5 @@
 +	$(INSTALL) -m 0644 README EmbeddedMode.txt \
 +		$(DESTDIR)$(DOCDIR)/
  
- .SUFFIXES: .c .o
- 
+ uninstall:
+ 	$(RM) $(DESTDIR)$(BINDIR)$(BINARY) $(DESTDIR)$(MANDIR)/mspdebug.1\
