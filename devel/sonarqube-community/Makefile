@@ -1,6 +1,6 @@
 PORTNAME=	sonarqube
 DISTVERSION=	24.12.0.100206
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	devel security www java
 MASTER_SITES=	https://binaries.sonarsource.com/Distribution/sonarqube/:m_core \
 		https://binaries.sonarsource.com/Distribution/sonar-csharp-plugin/:m_csharp \
@@ -56,9 +56,9 @@ TEMP_DIR=	${DBBASE_DIR}/temp
 # and run "make makesum".
 SONARCSHARP_VER=	10.3.0.106239
 SONARJAVA_VER=		8.7.0.37452
-SONARJAVASCRIPT_VER=	10.18.0.28572
+SONARJAVASCRIPT_VER=	10.19.0.29100
 SONARPHP_VER=		3.40.0.12590
-SONARPYTHON_VER=	4.24.0.18631
+SONARPYTHON_VER=	4.25.0.19056
 SONARVBNET_VER=		${SONARCSHARP_VER}
 
 USERS=		sonarqube
