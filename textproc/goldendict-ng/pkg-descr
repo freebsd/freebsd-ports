@@ -1,0 +1,6 @@
+GoldenDict-ng is an advanced dictionary lookup program.
+
+Supports many dictionary formats, such as MDX, DSL, StarDict, Zim...
+Presents lookup results of multiple dictionaries in the same page.
+Supports special types of "dictionaries", such as external program,
+website, audio files...

@@ -254,6 +254,7 @@
     SUBDIR += go-yq
     SUBDIR += gojq
     SUBDIR += goldendict
+    SUBDIR += goldendict-ng
     SUBDIR += google-ctemplate
     SUBDIR += gpp
     SUBDIR += grap
