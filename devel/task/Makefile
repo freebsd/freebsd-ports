@@ -1,6 +1,6 @@
 PORTNAME=	task
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.40.0
+DISTVERSION=	3.40.1
 CATEGORIES=	devel
 
 MAINTAINER=	tagattie@FreeBSD.org
@@ -16,10 +16,11 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	go-task
 GH_TUPLE=	\
 		Ladicle:tabwriter:v1.0.0:ladicle_tabwriter/vendor/github.com/Ladicle/tabwriter \
-		Masterminds:semver:v3.3.0:masterminds_semver_v3/vendor/github.com/Masterminds/semver/v3 \
+		Masterminds:semver:v3.3.1:masterminds_semver_v3/vendor/github.com/Masterminds/semver/v3 \
 		Microsoft:go-winio:v0.6.1:microsoft_go_winio/vendor/github.com/Microsoft/go-winio \
 		ProtonMail:go-crypto:v1.0.0:protonmail_go_crypto/vendor/github.com/ProtonMail/go-crypto \
 		alecthomas:chroma:v2.14.0:alecthomas_chroma_v2/vendor/github.com/alecthomas/chroma/v2 \
+		chainguard-dev:git-urls:v1.0.2:chainguard_dev_git_urls/vendor/github.com/chainguard-dev/git-urls \
 		cloudflare:circl:v1.3.7:cloudflare_circl/vendor/github.com/cloudflare/circl \
 		cyphar:filepath-securejoin:v0.2.5:cyphar_filepath_securejoin/vendor/github.com/cyphar/filepath-securejoin \
 		davecgh:go-spew:v1.1.1:davecgh_go_spew/vendor/github.com/davecgh/go-spew \
@@ -38,9 +39,9 @@ GH_TUPLE=	\
 		golang:groupcache:41bb18bfe9da:golang_groupcache/vendor/github.com/golang/groupcache \
 		golang:mod:v0.18.0:golang_mod/vendor/golang.org/x/mod \
 		golang:net:v0.27.0:golang_net/vendor/golang.org/x/net \
-		golang:sync:v0.8.0:golang_sync/vendor/golang.org/x/sync \
-		golang:sys:v0.26.0:golang_sys/vendor/golang.org/x/sys \
-		golang:term:v0.25.0:golang_term/vendor/golang.org/x/term \
+		golang:sync:v0.9.0:golang_sync/vendor/golang.org/x/sync \
+		golang:sys:v0.27.0:golang_sys/vendor/golang.org/x/sys \
+		golang:term:v0.26.0:golang_term/vendor/golang.org/x/term \
 		golang:tools:v0.22.0:golang_tools/vendor/golang.org/x/tools \
 		imdario:mergo:v1.0.0:imdario_mergo/vendor/dario.cat/mergo \
 		jbenet:go-context:d14ea06fba99:jbenet_go_context/vendor/github.com/jbenet/go-context \
@@ -62,8 +63,7 @@ GH_TUPLE=	\
 		skeema:knownhosts:v1.2.2:skeema_knownhosts/vendor/github.com/skeema/knownhosts \
 		spf13:pflag:v1.0.5:spf13_pflag/vendor/github.com/spf13/pflag \
 		stretchr:objx:v0.5.2:stretchr_objx/vendor/github.com/stretchr/objx \
-		stretchr:testify:v1.9.0:stretchr_testify/vendor/github.com/stretchr/testify \
-		whilp:git-urls:v1.0.0:whilp_git_urls/vendor/github.com/whilp/git-urls \
+		stretchr:testify:v1.10.0:stretchr_testify/vendor/github.com/stretchr/testify \
 		xanzy:ssh-agent:v0.3.3:xanzy_ssh_agent/vendor/github.com/xanzy/ssh-agent \
 		zeebo:xxh3:v1.0.2:zeebo_xxh3/vendor/github.com/zeebo/xxh3
 
