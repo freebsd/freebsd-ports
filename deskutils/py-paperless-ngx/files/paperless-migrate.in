@@ -19,6 +19,7 @@
 #					Migrate logging syslog priority.
 # paperless_migrate_log_tag (str):	Set to "paperless-migrate" by default.
 #					Migrate logging syslog tag.
+# paperless_migrate_tmpdir (str):	If set, overrides TMPDIR
 
 . /etc/rc.subr
 
@@ -32,9 +33,15 @@ paperless_migrate_user=${paperless_migrate_user:-"paperless"}
 paperless_migrate_log_facility=${paperless_migrate_log_facility:-"daemon"}
 paperless_migrate_log_priority=${paperless_migrate_log_priority:-"notice"}
 paperless_migrate_log_tag=${paperless_migrate_log_tag:-"paperless-migrate"}
+paperless_migrate_tmpdir=${paperless_migrate_tmpdir:-"$TMPDIR"}
 
 paperless_migrate_env="LANG=en_US.UTF-8 PATH=$PATH:%%PREFIX%%/bin \
   PYTHONPATH=%%PYTHONPREFIX_SITELIBDIR%%/paperless"
+
+if [ -n "$paperless_migrate_tmpdir" ]; then
+	paperless_migrate_env="$paperless_migrate_env TMPDIR=\
+$paperless_migrate_tmpdir"
+fi
 
 start_cmd="${name}_run | logger -s -t '$paperless_migrate_log_tag'"
 stop_cmd=":"

@@ -18,6 +18,7 @@
 #					Flower logging syslog priority.
 # paperless_flower_log_tag (str):	Set to "paperless-flower" by default.
 #					Flower logging syslog tag.
+# paperless_flower_tmpdir (str):	If set, overrides TMPDIR
 
 . /etc/rc.subr
 
@@ -31,9 +32,15 @@ paperless_flower_daemon_user=${paperless_flower_user:-"paperless"}
 paperless_flower_log_facility=${paperless_flower_log_facility:-"daemon"}
 paperless_flower_log_priority=${paperless_flower_log_priority:-"notice"}
 paperless_flower_log_tag=${paperless_flower_log_tag:-"paperless-flower"}
+paperless_flower_tmpdir=${paperless_flower_tmpdir:-"$TMPDIR"}
 
 paperless_flower_env="LANG=en_US.UTF-8 PATH=$PATH:%%PREFIX%%/bin \
   PYTHONPATH=%%PYTHONPREFIX_SITELIBDIR%%/paperless"
+
+if [ -n "$paperless_flower_tmpdir" ]; then
+	paperless_flower_env="$paperless_flower_env TMPDIR=\
+$paperless_flower_tmpdir"
+fi
 
 pidfile="/var/run/paperless/flower.pid"
 procname="%%PYTHON_CMD%%"
