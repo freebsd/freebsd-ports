@@ -1,6 +1,5 @@
 PORTNAME=	shared-mime-info
-DISTVERSION=	2.2
-PORTREVISION=	4
+DISTVERSION=	2.4
 CATEGORIES=	misc gnome
 
 MAINTAINER=	desktop@FreeBSD.org
@@ -21,8 +20,8 @@ USE_GITLAB=	YES
 GL_SITE=	https://gitlab.freedesktop.org/
 GL_ACCOUNT=	xdg
 GL_PROJECT=	shared-mime-info
-GL_TAGNAME=	13695c7225c2f525a435e72739c33ac32bbfbbb9
-GL_TUPLE=	xdg:xdgmime:de283fc430460b9b3a7e61432a6d273cd64cb102:xdgmime/src/xdgmime
+GL_TAGNAME=	9a6d6b8e963935f145f3a1ef446552de6996dada
+GL_TUPLE=	xdg:xdgmime:e861d3eb3d522a9c22c5a870526728e2a3d9fc04:xdgmime/src/xdgmime
 bash_CMD=	/bin/sh
 SHEBANG_FILES=	${WRKSRC}/tests/compare_iana.py \
 		${WRKSRC}/tests/mime-detection/pyside.py \
@@ -40,12 +39,9 @@ MIMESUBDIRS=	application audio image inode message model multipart \
 post-patch:
 	${REINPLACE_CMD} 's|/usr/local|${LOCALBASE}|g' \
 		${WRKSRC}/src/xdgmime/src/xdgmime.c \
-		${WRKSRC}/src/update-mime-database.c
+		${WRKSRC}/src/update-mime-database.cpp
 	${REINPLACE_CMD} 's|%%PYTHON_CMD%%|${PYTHON_CMD}|g' \
 		${WRKSRC}/data/freedesktop.org.xml.in
-
-pre-configure:
-	cd ${WRKSRC}/src/xdgmime/src && ${SETENVI} ${WRK_ENV} ${MAKE_ENV} ${GMAKE}
 
 post-install:
 	for dir in ${MIMESUBDIRS} ; do \
