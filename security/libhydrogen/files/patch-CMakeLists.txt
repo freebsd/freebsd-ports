@@ -1,6 +1,18 @@
 --- CMakeLists.txt.orig	2024-05-09 19:42:48 UTC
 +++ CMakeLists.txt
-@@ -89,8 +89,9 @@ set(compile_options
+@@ -39,11 +39,6 @@ set(arduino_files "library.properties")
+ 
+ # Compile options
+ 
+-get_setting(target_arch STRING "Target system architecture (fed to the compiler's -march=XXX).")
+-if(NOT target_arch AND NOT CMAKE_CROSSCOMPILING)
+-  set(target_arch native)
+-endif()
+-
+ get_setting(target_device STRING "Target device identifier (defines HYDRO_TARGET_DEVICE_XXX).")
+ 
+ set(compile_options
+@@ -89,8 +84,9 @@ set(compile_options
  
  # Main library
  
@@ -11,7 +23,7 @@
  
  target_sources("${PROJECT_NAME}" PRIVATE ${source_files})
  
-@@ -100,11 +101,21 @@ target_compile_options("${PROJECT_NAME}" PRIVATE ${com
+@@ -100,11 +96,21 @@ target_compile_options("${PROJECT_NAME}" PRIVATE ${com
  
  target_compile_options("${PROJECT_NAME}" PRIVATE ${compile_options})
  

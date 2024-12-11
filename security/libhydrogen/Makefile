@@ -1,5 +1,6 @@
 PORTNAME=	libhydrogen
 PORTVERSION=	0.0.0.g20240509
+PORTREVISION=	1
 CATEGORIES=	security
 
 MAINTAINER=	sunpoet@FreeBSD.org
