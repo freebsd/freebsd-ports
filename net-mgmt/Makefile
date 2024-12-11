@@ -43,6 +43,7 @@
     SUBDIR += check_nwc_health
     SUBDIR += check_ssl_cert
     SUBDIR += check_ups_health
+    SUBDIR += check_wg
     SUBDIR += chillispot
     SUBDIR += choparp
     SUBDIR += cidr

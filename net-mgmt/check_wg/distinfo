@@ -1,0 +1,5 @@
+TIMESTAMP = 1716219169
+SHA256 (go/net-mgmt_check_wg/check_wg-v0.0.7/v0.0.7.mod) = 70bf440bb65daba36df9cf87cb3314523bb0435053cd72ff796b932cd3790809
+SIZE (go/net-mgmt_check_wg/check_wg-v0.0.7/v0.0.7.mod) = 423
+SHA256 (go/net-mgmt_check_wg/check_wg-v0.0.7/v0.0.7.zip) = f4f19a8cc0090d92323a4ebeb6ded085f7d1614e18f6ab1f7d67db0b41a0d2ee
+SIZE (go/net-mgmt_check_wg/check_wg-v0.0.7/v0.0.7.zip) = 18637
