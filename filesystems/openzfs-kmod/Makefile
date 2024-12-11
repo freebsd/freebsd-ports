@@ -10,7 +10,7 @@ WWW=		https://github.com/openzfs/zfs
 
 LICENSE=	CDDL
 
-BROKEN_i386=	build fails
+BROKEN=	build fails
 
 USES=		cpe kmod
 USE_GITHUB=	yes
