@@ -6,8 +6,8 @@ DISTVERSIONPREFIX=	V
 # The version number of the project is related to the combination of
 # scripts and config. As such a more recent upstream version is most
 # of the time OK (as long as you use update-ngxblocker in crontab).
-DISTVERSION=		4.2020.03.2005
-PORTREVISION=		1
+DISTVERSION=		4.2024.11.4907
+PORTREVISION=		0
 CATEGORIES=		www security
 
 MAINTAINER=	netchild@FreeBSD.org
