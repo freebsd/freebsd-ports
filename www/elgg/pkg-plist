@@ -49,6 +49,7 @@
 %%WWWDIR%%/mod/activity/views/default/widgets/river_widget/content.php
 %%WWWDIR%%/mod/activity/views/default/widgets/river_widget/edit.php
 %%WWWDIR%%/mod/blog/actions/blog/save.php
+%%WWWDIR%%/mod/blog/classes/Elgg/Blog/FieldsHandler.php
 %%WWWDIR%%/mod/blog/classes/Elgg/Blog/Forms/PrepareFields.php
 %%WWWDIR%%/mod/blog/classes/Elgg/Blog/GroupToolContainerLogicCheck.php
 %%WWWDIR%%/mod/blog/classes/Elgg/Blog/Menus/BlogArchive.php
@@ -113,6 +114,7 @@
 %%WWWDIR%%/mod/blog/views/rss/blog/listing/group.php
 %%WWWDIR%%/mod/blog/views/rss/blog/listing/owner.php
 %%WWWDIR%%/mod/bookmarks/actions/bookmarks/save.php
+%%WWWDIR%%/mod/bookmarks/classes/Elgg/Bookmarks/FieldsHandler.php
 %%WWWDIR%%/mod/bookmarks/classes/Elgg/Bookmarks/Forms/PrepareFields.php
 %%WWWDIR%%/mod/bookmarks/classes/Elgg/Bookmarks/GroupToolContainerLogicCheck.php
 %%WWWDIR%%/mod/bookmarks/classes/Elgg/Bookmarks/Menus/Footer.php
@@ -351,6 +353,7 @@
 %%WWWDIR%%/mod/developers/views/failsafe/messages/exceptions/admin_exception.php
 %%WWWDIR%%/mod/discussions/actions/discussion/save.php
 %%WWWDIR%%/mod/discussions/actions/discussion/toggle_status.php
+%%WWWDIR%%/mod/discussions/classes/Elgg/Discussions/FieldsHandler.php
 %%WWWDIR%%/mod/discussions/classes/Elgg/Discussions/Forms/PrepareFields.php
 %%WWWDIR%%/mod/discussions/classes/Elgg/Discussions/GroupToolContainerLogicCheck.php
 %%WWWDIR%%/mod/discussions/classes/Elgg/Discussions/Menus/Entity.php
@@ -437,6 +440,7 @@
 %%WWWDIR%%/mod/externalpages/views/default/forms/expages/edit.php
 %%WWWDIR%%/mod/externalpages/views/default/resources/expages.php
 %%WWWDIR%%/mod/file/actions/file/upload.php
+%%WWWDIR%%/mod/file/classes/Elgg/File/FieldsHandler.php
 %%WWWDIR%%/mod/file/classes/Elgg/File/Forms/PrepareFields.php
 %%WWWDIR%%/mod/file/classes/Elgg/File/GroupToolContainerLogicCheck.php
 %%WWWDIR%%/mod/file/classes/Elgg/File/Icons.php
@@ -731,6 +735,7 @@
 %%WWWDIR%%/mod/likes/classes/Elgg/Likes/Delete.php
 %%WWWDIR%%/mod/likes/classes/Elgg/Likes/JsConfigHandler.php
 %%WWWDIR%%/mod/likes/classes/Elgg/Likes/Menus/Social.php
+%%WWWDIR%%/mod/likes/classes/Elgg/Likes/Notifications/CreateLikesEventHandler.php
 %%WWWDIR%%/mod/likes/classes/Elgg/Likes/Permissions.php
 %%WWWDIR%%/mod/likes/classes/Elgg/Likes/Preloader.php
 %%WWWDIR%%/mod/likes/classes/Elgg/Likes/ThreadHeadersHandler.php
@@ -2336,6 +2341,7 @@
 %%WWWDIR%%/vendor/elgg/elgg/docs/appendix/upgrade-notes/4.x-to-5.0.rst
 %%WWWDIR%%/vendor/elgg/elgg/docs/appendix/upgrade-notes/5.0-to-5.1.rst
 %%WWWDIR%%/vendor/elgg/elgg/docs/appendix/upgrade-notes/5.x-to-6.0.rst
+%%WWWDIR%%/vendor/elgg/elgg/docs/appendix/upgrade-notes/6.0-to-6.1.rst
 %%WWWDIR%%/vendor/elgg/elgg/docs/conf.py
 %%WWWDIR%%/vendor/elgg/elgg/docs/contribute/code.rst
 %%WWWDIR%%/vendor/elgg/elgg/docs/contribute/core/index.rst
@@ -2504,23 +2510,24 @@
 %%WWWDIR%%/vendor/elgg/elgg/engine/classes/Elgg/AutoloadManager.php
 %%WWWDIR%%/vendor/elgg/elgg/engine/classes/Elgg/BootData.php
 %%WWWDIR%%/vendor/elgg/elgg/engine/classes/Elgg/BootService.php
+%%WWWDIR%%/vendor/elgg/elgg/engine/classes/Elgg/Cache/AccessCache.php
+%%WWWDIR%%/vendor/elgg/elgg/engine/classes/Elgg/Cache/AutoloadCache.php
 %%WWWDIR%%/vendor/elgg/elgg/engine/classes/Elgg/Cache/BaseCache.php
-%%WWWDIR%%/vendor/elgg/elgg/engine/classes/Elgg/Cache/CacheCollection.php
+%%WWWDIR%%/vendor/elgg/elgg/engine/classes/Elgg/Cache/BootCache.php
+%%WWWDIR%%/vendor/elgg/elgg/engine/classes/Elgg/Cache/CacheService.php
 %%WWWDIR%%/vendor/elgg/elgg/engine/classes/Elgg/Cache/CompositeCache.php
 %%WWWDIR%%/vendor/elgg/elgg/engine/classes/Elgg/Cache/Config/Files.php
 %%WWWDIR%%/vendor/elgg/elgg/engine/classes/Elgg/Cache/Config/LocalFiles.php
 %%WWWDIR%%/vendor/elgg/elgg/engine/classes/Elgg/Cache/Config/Memcached.php
 %%WWWDIR%%/vendor/elgg/elgg/engine/classes/Elgg/Cache/Config/Redis.php
-%%WWWDIR%%/vendor/elgg/elgg/engine/classes/Elgg/Cache/DataCache.php
 %%WWWDIR%%/vendor/elgg/elgg/engine/classes/Elgg/Cache/EntityCache.php
 %%WWWDIR%%/vendor/elgg/elgg/engine/classes/Elgg/Cache/EventHandlers.php
-%%WWWDIR%%/vendor/elgg/elgg/engine/classes/Elgg/Cache/LRUCache.php
 %%WWWDIR%%/vendor/elgg/elgg/engine/classes/Elgg/Cache/MetadataCache.php
+%%WWWDIR%%/vendor/elgg/elgg/engine/classes/Elgg/Cache/PluginsCache.php
 %%WWWDIR%%/vendor/elgg/elgg/engine/classes/Elgg/Cache/QueryCache.php
-%%WWWDIR%%/vendor/elgg/elgg/engine/classes/Elgg/Cache/SessionCache.php
+%%WWWDIR%%/vendor/elgg/elgg/engine/classes/Elgg/Cache/ServerCache.php
 %%WWWDIR%%/vendor/elgg/elgg/engine/classes/Elgg/Cache/SimpleCache.php
 %%WWWDIR%%/vendor/elgg/elgg/engine/classes/Elgg/Cache/SystemCache.php
-%%WWWDIR%%/vendor/elgg/elgg/engine/classes/Elgg/Cache/ViewCacher.php
 %%WWWDIR%%/vendor/elgg/elgg/engine/classes/Elgg/ClassLoader.php
 %%WWWDIR%%/vendor/elgg/elgg/engine/classes/Elgg/ClassMap.php
 %%WWWDIR%%/vendor/elgg/elgg/engine/classes/Elgg/Cli.php
@@ -2890,16 +2897,19 @@
 %%WWWDIR%%/vendor/elgg/elgg/engine/classes/Elgg/Structs/Collection/InMemory.php
 %%WWWDIR%%/vendor/elgg/elgg/engine/classes/Elgg/SystemMessagesService.php
 %%WWWDIR%%/vendor/elgg/elgg/engine/classes/Elgg/Timer.php
-%%WWWDIR%%/vendor/elgg/elgg/engine/classes/Elgg/Traits/Cacheable.php
 %%WWWDIR%%/vendor/elgg/elgg/engine/classes/Elgg/Traits/Cli/PluginsHelper.php
 %%WWWDIR%%/vendor/elgg/elgg/engine/classes/Elgg/Traits/Cli/Progressing.php
 %%WWWDIR%%/vendor/elgg/elgg/engine/classes/Elgg/Traits/Database/LegacyQueryOptionsAdapter.php
 %%WWWDIR%%/vendor/elgg/elgg/engine/classes/Elgg/Traits/Debug/Profilable.php
 %%WWWDIR%%/vendor/elgg/elgg/engine/classes/Elgg/Traits/Di/ServiceFacade.php
+%%WWWDIR%%/vendor/elgg/elgg/engine/classes/Elgg/Traits/Entity/AccessCollections.php
+%%WWWDIR%%/vendor/elgg/elgg/engine/classes/Elgg/Traits/Entity/Annotations.php
 %%WWWDIR%%/vendor/elgg/elgg/engine/classes/Elgg/Traits/Entity/Friends.php
 %%WWWDIR%%/vendor/elgg/elgg/engine/classes/Elgg/Traits/Entity/Icons.php
+%%WWWDIR%%/vendor/elgg/elgg/engine/classes/Elgg/Traits/Entity/Metadata.php
 %%WWWDIR%%/vendor/elgg/elgg/engine/classes/Elgg/Traits/Entity/PluginSettings.php
 %%WWWDIR%%/vendor/elgg/elgg/engine/classes/Elgg/Traits/Entity/ProfileData.php
+%%WWWDIR%%/vendor/elgg/elgg/engine/classes/Elgg/Traits/Entity/Relationships.php
 %%WWWDIR%%/vendor/elgg/elgg/engine/classes/Elgg/Traits/Entity/Subscriptions.php
 %%WWWDIR%%/vendor/elgg/elgg/engine/classes/Elgg/Traits/Loggable.php
 %%WWWDIR%%/vendor/elgg/elgg/engine/classes/Elgg/Traits/Notifications/EventSerialization.php
@@ -2924,6 +2934,8 @@
 %%WWWDIR%%/vendor/elgg/elgg/engine/classes/Elgg/Upgrades/DeleteDiagnosticsPlugin.php
 %%WWWDIR%%/vendor/elgg/elgg/engine/classes/Elgg/Upgrades/DeleteNotificationsPlugin.php
 %%WWWDIR%%/vendor/elgg/elgg/engine/classes/Elgg/Upgrades/MigrateACLNotificationPreferences.php
+%%WWWDIR%%/vendor/elgg/elgg/engine/classes/Elgg/Upgrades/MigrateAdminValidationNotificationPreference.php
+%%WWWDIR%%/vendor/elgg/elgg/engine/classes/Elgg/Upgrades/MigrateDebugConfig.php
 %%WWWDIR%%/vendor/elgg/elgg/engine/classes/Elgg/Upgrades/MigrateEntityIconCroppingCoordinates.php
 %%WWWDIR%%/vendor/elgg/elgg/engine/classes/Elgg/Upgrades/NotificationsPrefix.php
 %%WWWDIR%%/vendor/elgg/elgg/engine/classes/Elgg/Upgrades/RemoveIcontime.php
@@ -2996,6 +3008,7 @@
 %%WWWDIR%%/vendor/elgg/elgg/engine/lib/configuration.php
 %%WWWDIR%%/vendor/elgg/elgg/engine/lib/constants.php
 %%WWWDIR%%/vendor/elgg/elgg/engine/lib/context.php
+%%WWWDIR%%/vendor/elgg/elgg/engine/lib/deprecated-6.1.php
 %%WWWDIR%%/vendor/elgg/elgg/engine/lib/elgglib.php
 %%WWWDIR%%/vendor/elgg/elgg/engine/lib/entities.php
 %%WWWDIR%%/vendor/elgg/elgg/engine/lib/events.php
@@ -3110,8 +3123,6 @@
 %%WWWDIR%%/vendor/elgg/elgg/engine/tests/classes/Elgg/Helpers/ElggObjectWithExposableAttributes.php
 %%WWWDIR%%/vendor/elgg/elgg/engine/tests/classes/Elgg/Helpers/EventsServiceTestInvokable.php
 %%WWWDIR%%/vendor/elgg/elgg/engine/tests/classes/Elgg/Helpers/MethodMatcherTestObject.php
-%%WWWDIR%%/vendor/elgg/elgg/engine/tests/classes/Elgg/Helpers/MockEntityPreloader20140623.php
-%%WWWDIR%%/vendor/elgg/elgg/engine/tests/classes/Elgg/Helpers/PreloaderMock20140623.php
 %%WWWDIR%%/vendor/elgg/elgg/engine/tests/classes/Elgg/Helpers/TestEventHandler.php
 %%WWWDIR%%/vendor/elgg/elgg/engine/tests/classes/Elgg/Helpers/TestEventResultsHandler.php
 %%WWWDIR%%/vendor/elgg/elgg/engine/tests/classes/Elgg/Helpers/Upgrade/InvalidBatch.php
@@ -3154,7 +3165,9 @@
 %%WWWDIR%%/vendor/elgg/elgg/engine/tests/classes/Elgg/TestableEvent.php
 %%WWWDIR%%/vendor/elgg/elgg/engine/tests/classes/Elgg/Testing.php
 %%WWWDIR%%/vendor/elgg/elgg/engine/tests/classes/Elgg/Traits/Entity/IconsIntegrationTestCase.php
+%%WWWDIR%%/vendor/elgg/elgg/engine/tests/classes/Elgg/Traits/Entity/MetadataIntegrationTestCase.php
 %%WWWDIR%%/vendor/elgg/elgg/engine/tests/classes/Elgg/Traits/Entity/PluginSettingsIntegrationTestCase.php
+%%WWWDIR%%/vendor/elgg/elgg/engine/tests/classes/Elgg/Traits/Entity/RelationshipsIntegrationTestCase.php
 %%WWWDIR%%/vendor/elgg/elgg/engine/tests/classes/Elgg/Traits/Entity/SubscriptionsIntegrationTestCase.php
 %%WWWDIR%%/vendor/elgg/elgg/engine/tests/classes/Elgg/UnitTestCase.php
 %%WWWDIR%%/vendor/elgg/elgg/engine/tests/classes/Elgg/Views/ViewRenderingIntegrationTestCase.php
@@ -3176,6 +3189,9 @@
 %%WWWDIR%%/vendor/elgg/elgg/engine/tests/phpunit/integration/Elgg/Ajax/ControllerIntegrationTest.php
 %%WWWDIR%%/vendor/elgg/elgg/engine/tests/phpunit/integration/Elgg/Assets/ExternalFilesServiceIntegrationTest.php
 %%WWWDIR%%/vendor/elgg/elgg/engine/tests/phpunit/integration/Elgg/Assets/ImageFetcherServiceIntegrationTest.php
+%%WWWDIR%%/vendor/elgg/elgg/engine/tests/phpunit/integration/Elgg/Cache/CacheServiceIntegrationTest.php
+%%WWWDIR%%/vendor/elgg/elgg/engine/tests/phpunit/integration/Elgg/Cache/MetadataCacheTest.php
+%%WWWDIR%%/vendor/elgg/elgg/engine/tests/phpunit/integration/Elgg/Cache/QueryCacheTest.php
 %%WWWDIR%%/vendor/elgg/elgg/engine/tests/phpunit/integration/Elgg/Cli/CacheClearCommandIntegrationTest.php
 %%WWWDIR%%/vendor/elgg/elgg/engine/tests/phpunit/integration/Elgg/Cli/CacheInvalidateCommandIntegrationTest.php
 %%WWWDIR%%/vendor/elgg/elgg/engine/tests/phpunit/integration/Elgg/Cli/CachePurgeCommandIntegrationTest.php
@@ -3237,7 +3253,6 @@
 %%WWWDIR%%/vendor/elgg/elgg/engine/tests/phpunit/integration/Elgg/Integration/ElggCoreGroupToolTest.php
 %%WWWDIR%%/vendor/elgg/elgg/engine/tests/phpunit/integration/Elgg/Integration/ElggCoreHelpersTest.php
 %%WWWDIR%%/vendor/elgg/elgg/engine/tests/phpunit/integration/Elgg/Integration/ElggCoreMetadataAPITest.php
-%%WWWDIR%%/vendor/elgg/elgg/engine/tests/phpunit/integration/Elgg/Integration/ElggCoreMetadataCacheTest.php
 %%WWWDIR%%/vendor/elgg/elgg/engine/tests/phpunit/integration/Elgg/Integration/ElggCoreMetastringsTest.php
 %%WWWDIR%%/vendor/elgg/elgg/engine/tests/phpunit/integration/Elgg/Integration/ElggCoreObjectTest.php
 %%WWWDIR%%/vendor/elgg/elgg/engine/tests/phpunit/integration/Elgg/Integration/ElggCorePluginsAPITest.php
@@ -3246,10 +3261,8 @@
 %%WWWDIR%%/vendor/elgg/elgg/engine/tests/phpunit/integration/Elgg/Integration/ElggCoreUserTest.php
 %%WWWDIR%%/vendor/elgg/elgg/engine/tests/phpunit/integration/Elgg/Integration/ElggDataFunctionsTest.php
 %%WWWDIR%%/vendor/elgg/elgg/engine/tests/phpunit/integration/Elgg/Integration/ElggEntityClassResolutionTest.php
-%%WWWDIR%%/vendor/elgg/elgg/engine/tests/phpunit/integration/Elgg/Integration/ElggEntityMetadataTest.php
 %%WWWDIR%%/vendor/elgg/elgg/engine/tests/phpunit/integration/Elgg/Integration/ElggEntityPreloaderIntegrationTest.php
 %%WWWDIR%%/vendor/elgg/elgg/engine/tests/phpunit/integration/Elgg/Integration/ElggHtmLawedTest.php
-%%WWWDIR%%/vendor/elgg/elgg/engine/tests/phpunit/integration/Elgg/Integration/ElggRelationshipTest.php
 %%WWWDIR%%/vendor/elgg/elgg/engine/tests/phpunit/integration/Elgg/Integration/ElggTempFileTest.php
 %%WWWDIR%%/vendor/elgg/elgg/engine/tests/phpunit/integration/Elgg/Integration/ResponsesIntegrationTest.php
 %%WWWDIR%%/vendor/elgg/elgg/engine/tests/phpunit/integration/Elgg/Integration/RouterIntegrationTest.php
@@ -3289,6 +3302,14 @@
 %%WWWDIR%%/vendor/elgg/elgg/engine/tests/phpunit/integration/Elgg/Traits/Entity/ElggUserIconsIntegrationTest.php
 %%WWWDIR%%/vendor/elgg/elgg/engine/tests/phpunit/integration/Elgg/Traits/Entity/ElggUserPluginSettingsIntegrationTest.php
 %%WWWDIR%%/vendor/elgg/elgg/engine/tests/phpunit/integration/Elgg/Traits/Entity/ElggUserSubscriptionsIntegrationTest.php
+%%WWWDIR%%/vendor/elgg/elgg/engine/tests/phpunit/integration/Elgg/Traits/Entity/ElggGroupMetadataIntegrationTest.php
+%%WWWDIR%%/vendor/elgg/elgg/engine/tests/phpunit/integration/Elgg/Traits/Entity/ElggGroupRelationshipsIntegrationTest.php
+%%WWWDIR%%/vendor/elgg/elgg/engine/tests/phpunit/integration/Elgg/Traits/Entity/ElggObjectMetadataIntegrationTest.php
+%%WWWDIR%%/vendor/elgg/elgg/engine/tests/phpunit/integration/Elgg/Traits/Entity/ElggObjectRelationshipsIntegrationTest.php
+%%WWWDIR%%/vendor/elgg/elgg/engine/tests/phpunit/integration/Elgg/Traits/Entity/ElggSiteMetadataIntegrationTest.php
+%%WWWDIR%%/vendor/elgg/elgg/engine/tests/phpunit/integration/Elgg/Traits/Entity/ElggSiteRelationshipsIntegrationTest.php
+%%WWWDIR%%/vendor/elgg/elgg/engine/tests/phpunit/integration/Elgg/Traits/Entity/ElggUserMetadataIntegrationTest.php
+%%WWWDIR%%/vendor/elgg/elgg/engine/tests/phpunit/integration/Elgg/Traits/Entity/ElggUserRelationshipsIntegrationTest.php
 %%WWWDIR%%/vendor/elgg/elgg/engine/tests/phpunit/integration/Elgg/Upgrade/LocatorIntegrationTest.php
 %%WWWDIR%%/vendor/elgg/elgg/engine/tests/phpunit/integration/Elgg/UserCapabilitiesIntegrationTest.php
 %%WWWDIR%%/vendor/elgg/elgg/engine/tests/phpunit/integration/Elgg/Users/AccountServiceIntegrationTest.php
@@ -3330,14 +3351,10 @@
 %%WWWDIR%%/vendor/elgg/elgg/engine/tests/phpunit/unit/Elgg/Assets/ExternalFilesUnitTest.php
 %%WWWDIR%%/vendor/elgg/elgg/engine/tests/phpunit/unit/Elgg/AuthenticationServiceUnitTest.php
 %%WWWDIR%%/vendor/elgg/elgg/engine/tests/phpunit/unit/Elgg/BatchUpgraderUnitTest.php
-%%WWWDIR%%/vendor/elgg/elgg/engine/tests/phpunit/unit/Elgg/Cache/EntityCacheUnitTest.php
 %%WWWDIR%%/vendor/elgg/elgg/engine/tests/phpunit/unit/Elgg/Cache/FileSystemCacheUnitTest.php
-%%WWWDIR%%/vendor/elgg/elgg/engine/tests/phpunit/unit/Elgg/Cache/LRUCacheUnitTest.php
 %%WWWDIR%%/vendor/elgg/elgg/engine/tests/phpunit/unit/Elgg/Cache/PersistentCacheUnitTest.php
-%%WWWDIR%%/vendor/elgg/elgg/engine/tests/phpunit/unit/Elgg/Cache/QueryCacheUnitTest.php
 %%WWWDIR%%/vendor/elgg/elgg/engine/tests/phpunit/unit/Elgg/Cache/RuntimeCacheUnitTest.php
 %%WWWDIR%%/vendor/elgg/elgg/engine/tests/phpunit/unit/Elgg/Cache/SimpleCacheUnitTest.php
-%%WWWDIR%%/vendor/elgg/elgg/engine/tests/phpunit/unit/Elgg/Cache/SystemCacheUnitTest.php
 %%WWWDIR%%/vendor/elgg/elgg/engine/tests/phpunit/unit/Elgg/Cli/CommandUnitTest.php
 %%WWWDIR%%/vendor/elgg/elgg/engine/tests/phpunit/unit/Elgg/Cli/CronCommandUnitTest.php
 %%WWWDIR%%/vendor/elgg/elgg/engine/tests/phpunit/unit/Elgg/Cli/DatabaseSeedCommandUnitTest.php
@@ -3390,7 +3407,6 @@
 %%WWWDIR%%/vendor/elgg/elgg/engine/tests/phpunit/unit/Elgg/EmailUnitTest.php
 %%WWWDIR%%/vendor/elgg/elgg/engine/tests/phpunit/unit/Elgg/EntityDirLocatorUnitTest.php
 %%WWWDIR%%/vendor/elgg/elgg/engine/tests/phpunit/unit/Elgg/EntityIconServiceUnitTest.php
-%%WWWDIR%%/vendor/elgg/elgg/engine/tests/phpunit/unit/Elgg/EntityPreloaderUnitTest.php
 %%WWWDIR%%/vendor/elgg/elgg/engine/tests/phpunit/unit/Elgg/EventsService/MethodMatcherUnitTest.php
 %%WWWDIR%%/vendor/elgg/elgg/engine/tests/phpunit/unit/Elgg/EventsServiceResultsUnitTest.php
 %%WWWDIR%%/vendor/elgg/elgg/engine/tests/phpunit/unit/Elgg/EventsServiceUnitTest.php
@@ -3668,6 +3684,7 @@
 %%WWWDIR%%/vendor/elgg/elgg/mod/activity/views/default/widgets/river_widget/content.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/activity/views/default/widgets/river_widget/edit.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/blog/actions/blog/save.php
+%%WWWDIR%%/vendor/elgg/elgg/mod/blog/classes/Elgg/Blog/FieldsHandler.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/blog/classes/Elgg/Blog/Forms/PrepareFields.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/blog/classes/Elgg/Blog/GroupToolContainerLogicCheck.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/blog/classes/Elgg/Blog/Menus/BlogArchive.php
@@ -3732,6 +3749,7 @@
 %%WWWDIR%%/vendor/elgg/elgg/mod/blog/views/rss/blog/listing/group.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/blog/views/rss/blog/listing/owner.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/bookmarks/actions/bookmarks/save.php
+%%WWWDIR%%/vendor/elgg/elgg/mod/bookmarks/classes/Elgg/Bookmarks/FieldsHandler.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/bookmarks/classes/Elgg/Bookmarks/Forms/PrepareFields.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/bookmarks/classes/Elgg/Bookmarks/GroupToolContainerLogicCheck.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/bookmarks/classes/Elgg/Bookmarks/Menus/Footer.php
@@ -3970,6 +3988,7 @@
 %%WWWDIR%%/vendor/elgg/elgg/mod/developers/views/failsafe/messages/exceptions/admin_exception.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/discussions/actions/discussion/save.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/discussions/actions/discussion/toggle_status.php
+%%WWWDIR%%/vendor/elgg/elgg/mod/discussions/classes/Elgg/Discussions/FieldsHandler.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/discussions/classes/Elgg/Discussions/Forms/PrepareFields.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/discussions/classes/Elgg/Discussions/GroupToolContainerLogicCheck.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/discussions/classes/Elgg/Discussions/Menus/Entity.php
@@ -4056,6 +4075,7 @@
 %%WWWDIR%%/vendor/elgg/elgg/mod/externalpages/views/default/forms/expages/edit.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/externalpages/views/default/resources/expages.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/file/actions/file/upload.php
+%%WWWDIR%%/vendor/elgg/elgg/mod/file/classes/Elgg/File/FieldsHandler.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/file/classes/Elgg/File/Forms/PrepareFields.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/file/classes/Elgg/File/GroupToolContainerLogicCheck.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/file/classes/Elgg/File/Icons.php
@@ -4350,6 +4370,7 @@
 %%WWWDIR%%/vendor/elgg/elgg/mod/likes/classes/Elgg/Likes/Delete.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/likes/classes/Elgg/Likes/JsConfigHandler.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/likes/classes/Elgg/Likes/Menus/Social.php
+%%WWWDIR%%/vendor/elgg/elgg/mod/likes/classes/Elgg/Likes/Notifications/CreateLikesEventHandler.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/likes/classes/Elgg/Likes/Permissions.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/likes/classes/Elgg/Likes/Preloader.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/likes/classes/Elgg/Likes/ThreadHeadersHandler.php
@@ -5284,6 +5305,7 @@
 %%WWWDIR%%/vendor/elgg/elgg/views/default/input/securitytoken.php
 %%WWWDIR%%/vendor/elgg/elgg/views/default/input/select.php
 %%WWWDIR%%/vendor/elgg/elgg/views/default/input/submit.php
+%%WWWDIR%%/vendor/elgg/elgg/views/default/input/switch.php
 %%WWWDIR%%/vendor/elgg/elgg/views/default/input/tag.php
 %%WWWDIR%%/vendor/elgg/elgg/views/default/input/tags.css
 %%WWWDIR%%/vendor/elgg/elgg/views/default/input/tags.mjs
@@ -5324,6 +5346,7 @@
 %%WWWDIR%%/vendor/elgg/elgg/views/default/notifications/subscriptions/record.php
 %%WWWDIR%%/vendor/elgg/elgg/views/default/object/admin_notice.php
 %%WWWDIR%%/vendor/elgg/elgg/views/default/object/comment.php
+%%WWWDIR%%/vendor/elgg/elgg/views/default/object/comment/sidebar.php
 %%WWWDIR%%/vendor/elgg/elgg/views/default/object/default.php
 %%WWWDIR%%/vendor/elgg/elgg/views/default/object/elements/chip.php
 %%WWWDIR%%/vendor/elgg/elgg/views/default/object/elements/field.php
@@ -13375,6 +13398,7 @@
 %%WWWDIR%%/vendor/laminas/laminas-servicemanager/src/Tool/FactoryCreator.php
 %%WWWDIR%%/vendor/laminas/laminas-servicemanager/src/Tool/FactoryCreatorCommand.php
 %%WWWDIR%%/vendor/laminas/laminas-servicemanager/src/autoload.php
+%%WWWDIR%%/vendor/laminas/laminas-stdlib/.laminas-ci.json
 %%WWWDIR%%/vendor/laminas/laminas-stdlib/COPYRIGHT.md
 %%WWWDIR%%/vendor/laminas/laminas-stdlib/LICENSE.md
 %%WWWDIR%%/vendor/laminas/laminas-stdlib/README.md
