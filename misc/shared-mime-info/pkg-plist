@@ -1,6 +1,5 @@
 bin/update-mime-database
 libdata/pkgconfig/shared-mime-info.pc
-share/man/man1/update-mime-database.1.gz
 share/gettext/its/shared-mime-info.its
 share/gettext/its/shared-mime-info.loc
 share/locale/af/LC_MESSAGES/shared-mime-info.mo
@@ -38,6 +37,7 @@ share/locale/hr/LC_MESSAGES/shared-mime-info.mo
 share/locale/hu/LC_MESSAGES/shared-mime-info.mo
 share/locale/ia/LC_MESSAGES/shared-mime-info.mo
 share/locale/id/LC_MESSAGES/shared-mime-info.mo
+share/locale/is/LC_MESSAGES/shared-mime-info.mo
 share/locale/it/LC_MESSAGES/shared-mime-info.mo
 share/locale/ja/LC_MESSAGES/shared-mime-info.mo
 share/locale/ka/LC_MESSAGES/shared-mime-info.mo
@@ -62,6 +62,7 @@ share/locale/pt_BR/LC_MESSAGES/shared-mime-info.mo
 share/locale/ro/LC_MESSAGES/shared-mime-info.mo
 share/locale/ru/LC_MESSAGES/shared-mime-info.mo
 share/locale/rw/LC_MESSAGES/shared-mime-info.mo
+share/locale/si/LC_MESSAGES/shared-mime-info.mo
 share/locale/sk/LC_MESSAGES/shared-mime-info.mo
 share/locale/sl/LC_MESSAGES/shared-mime-info.mo
 share/locale/sq/LC_MESSAGES/shared-mime-info.mo
@@ -78,16 +79,17 @@ share/locale/wa/LC_MESSAGES/shared-mime-info.mo
 share/locale/zh_CN/LC_MESSAGES/shared-mime-info.mo
 share/locale/zh_HK/LC_MESSAGES/shared-mime-info.mo
 share/locale/zh_TW/LC_MESSAGES/shared-mime-info.mo
+share/man/man1/update-mime-database.1.gz
 share/mime/packages/freedesktop.org.xml
-@dir share/mime/x-epoc
-@dir share/mime/x-content
-@dir share/mime/video
-@dir share/mime/text
-@dir share/mime/multipart
-@dir share/mime/model
-@dir share/mime/message
-@dir share/mime/inode
-@dir share/mime/image
-@dir share/mime/font
-@dir share/mime/audio
 @dir share/mime/application
+@dir share/mime/audio
+@dir share/mime/font
+@dir share/mime/image
+@dir share/mime/inode
+@dir share/mime/message
+@dir share/mime/model
+@dir share/mime/multipart
+@dir share/mime/text
+@dir share/mime/video
+@dir share/mime/x-content
+@dir share/mime/x-epoc
