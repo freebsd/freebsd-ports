@@ -14,6 +14,8 @@ LICENSE_NAME=	PGPLOT License
 LICENSE_FILE=	${WRKSRC}/copyright.notice
 LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
 
+BROKEN_armv7=	link error: /usr/local/bin/ld: error: unsupported option: -z relro
+
 LIB_DEPENDS=	libpng.so:graphics/png
 
 USES=		fortran shebangfix xorg
