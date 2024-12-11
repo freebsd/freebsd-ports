@@ -69,6 +69,7 @@ CMAKE_ARGS=	-DOBS_VERSION_OVERRIDE:STRING="${PORTVERSION}" \
 		-DQT_VERSION=6 \
 		-DPython_EXECUTABLE="${PYTHON_CMD}"
 
+CFLAGS_powerpc64le=	-Wno-error=deprecated-altivec-src-compat
 LDFLAGS+=	-fPIC # pending https://github.com/obsproject/obs-studio/issues/3436
 
 OPTIONS_DEFINE=		BROWSER PIPEWIRE VLC VST WAYLAND
