@@ -1,6 +1,6 @@
 PORTNAME=	monty
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2024.10.21
+DISTVERSION=	2024.12.10
 CATEGORIES=	devel python
 #MASTER_SITES=	PYPI # no tests
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,9 +17,13 @@ BUILD_DEPENDS=	${PY_SETUPTOOLS} \
 		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}ruamel.yaml>0:devel/py-ruamel.yaml@${PY_FLAVOR}
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}invoke>0:devel/py-invoke@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}msgpack>0:devel/py-msgpack@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}requests>=0:www/py-requests@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}tqdm>0:misc/py-tqdm@${PY_FLAVOR}
 
 USES=		python
-USE_PYTHON=	pep517 autoplist pytest
+USE_PYTHON=	pep517 autoplist pytest # 1 error in tests, see https://github.com/materialsvirtuallab/monty/issues/731
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	materialsvirtuallab
