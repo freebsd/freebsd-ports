@@ -1,3 +1,71 @@
+  <vuln vid="aeee5ebd-356c-49c1-8959-7c88981de5fd">
+    <topic>chromium -- multiple security fixes</topic>
+    <affects>
+      <package>
+       <name>chromium</name>
+       <range><lt>131.0.6778.139</lt></range>
+      </package>
+      <package>
+       <name>ungoogled-chromium</name>
+       <range><lt>131.0.6778.139</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+       <p>Chrome Releases reports:</p>
+       <blockquote cite="https://chromereleases.googleblog.com/2024/12/stable-channel-update-for-desktop_10.html">
+	 <p>This update includes 3 security fixes:</p>
+	 <ul>
+	    <li>[381696874] High CVE-2024-12381: Type Confusion in V8. Reported by Seunghyun Lee (@0x10n) on 2024-12-02</li>
+	    <li>[379516109] High CVE-2024-12382: Use after free in Translate. Reported by lime(@limeSec_) from TIANGONG Team of Legendsec at QI-ANXIN Group on 2024-11-18</li>
+	 </ul>
+       </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2024-12381</cvename>
+      <cvename>CVE-2024-12382</cvename>
+      <url>https://chromereleases.googleblog.com/2024/12/stable-channel-update-for-desktop_10.html</url>
+    </references>
+    <dates>
+      <discovery>2024-12-10</discovery>
+      <entry>2024-12-11</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="3d5b7860-48ad-48c2-aa36-601b8ab9cc43">
+    <topic>chromium -- multiple security fixes</topic>
+    <affects>
+      <package>
+       <name>chromium</name>
+       <range><lt>131.0.6778.108</lt></range>
+      </package>
+      <package>
+       <name>ungoogled-chromium</name>
+       <range><lt>131.0.6778.108</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+       <p>Chrome Releases reports:</p>
+       <blockquote cite="https://chromereleases.googleblog.com/2024/12/stable-channel-update-for-desktop.html">
+	 <p>This update includes 4 security fixes:</p>
+	 <ul>
+	    <li>[379009132] High CVE-2024-12053: Type Confusion in V8. Reported by gal1ium and chluo on 2024-11-14</li>
+	 </ul>
+       </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2024-12053</cvename>
+      <url>https://chromereleases.googleblog.com/2024/12/stable-channel-update-for-desktop.html</url>
+    </references>
+    <dates>
+      <discovery>2024-12-03</discovery>
+      <entry>2024-12-11</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="0e20e42c-b728-11ef-805a-b42e991fc52e">
     <topic>firefox -- multiple vulnerabilities</topic>
     <affects>
