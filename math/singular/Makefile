@@ -1,6 +1,7 @@
 PORTNAME=	singular
-DISTVERSIONPREFIX=	Release-
-DISTVERSION=	4-4-0
+PORTVERSION=	${GH_TAGNAME:S/Release-//:S/-/./g:S/p/./}
+#DISTVERSIONPREFIX=	Release-
+#DISTVERSION=	4-4-0
 CATEGORIES=	math
 #MASTER_SITES=	ftp://jim.mathematik.uni-kl.de/pub/Math/Singular/SOURCES/${PORTVERSION:C/\./-/g}/
 DIST_SUBDIR=	${PORTNAME}
@@ -18,11 +19,13 @@ RUN_DEPENDS=	bash:shells/bash
 
 USES=		autoreconf gmake libtool ncurses perl5 pkgconfig readline shebangfix
 USE_CXXSTD=	c++14
+USE_LDCONFIG=	yes
+USE_PERL5=	build
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	Singular
 GH_PROJECT=	Singular
-USE_LDCONFIG=	yes
-USE_PERL5=	build
+GH_TAGNAME=	Release-4-4-0p7
 
 SHEBANG_FILES=	Singular/surfex \
 		libpolys/libpolys-config.in \
@@ -43,6 +46,7 @@ OPTIONS_SUB=		yes
 
 FLINT_DESC=		Use FLINT library
 GFAN_DESC=		Build gfanlib library (bundled)
+GFAN_LIB_DEPENDS=	libcddgmp.so:math/cddlib
 NTL_DESC=		Use NTL library
 
 DOCS_MASTER_SITES=	ftp://jim.mathematik.uni-kl.de/pub/Math/Singular/SOURCES/${PORTVERSION:C/\./-/g}/:doc
