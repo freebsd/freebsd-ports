@@ -22,7 +22,7 @@ USE_XORG=	x11
 SHEBANG_FILES=	configure lib/petsc/bin/*.py lib/petsc/bin/saws/SAWs.py lib/petsc/bin/saws/*.bash config/*.py	\
 		lib/petsc/bin/petscnagfor share/petsc/chkerrconvert.py
 
-XARCH!=		uname -m
+XARCH!=		uname -p
 
 GNU_CONFIGURE=	yes
 CONFIGURE_LOG=	configure.log
