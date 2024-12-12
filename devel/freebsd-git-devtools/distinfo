@@ -1,9 +1,9 @@
-TIMESTAMP = 1715004431
-SHA256 (freebsd-git-devtools/candidatematch.lua?id=76a8625bc71da3fa63eef5abb4782553d2588f5c) = 36098f6871d1ed79ed588bd8a7bb906a5f5ab291e2e3fe32aad2adf096142918
-SIZE (freebsd-git-devtools/candidatematch.lua?id=76a8625bc71da3fa63eef5abb4782553d2588f5c) = 1748
-SHA256 (freebsd-git-devtools/git-arc.sh?id=76a8625bc71da3fa63eef5abb4782553d2588f5c) = 2125d0a57c522ab24a43091f851dbdd9b33633699eef84195c480630301335da
-SIZE (freebsd-git-devtools/git-arc.sh?id=76a8625bc71da3fa63eef5abb4782553d2588f5c) = 23024
-SHA256 (freebsd-git-devtools/git-arc.1?id=76a8625bc71da3fa63eef5abb4782553d2588f5c) = 3b7660960d39bbe310194f985d5cbc08836cad249e29da0692dfe7945275dc8e
-SIZE (freebsd-git-devtools/git-arc.1?id=76a8625bc71da3fa63eef5abb4782553d2588f5c) = 7469
-SHA256 (freebsd-git-devtools/mfc-candidates.sh?id=76a8625bc71da3fa63eef5abb4782553d2588f5c) = adc38b6815d3ba672fc0fc108a79ef76e0e5ce97d027a30b21a189951f3cb1d4
-SIZE (freebsd-git-devtools/mfc-candidates.sh?id=76a8625bc71da3fa63eef5abb4782553d2588f5c) = 4190
+TIMESTAMP = 1734016872
+SHA256 (freebsd-git-devtools_d6ed5ff4ac7d9610385b35f77539ccf5bae8cc65/git-arc.sh) = 4b00675bb46ab2203df24e35ee7e821f65e437e3c0582b311e4644ce87b81800
+SIZE (freebsd-git-devtools_d6ed5ff4ac7d9610385b35f77539ccf5bae8cc65/git-arc.sh) = 24211
+SHA256 (freebsd-git-devtools_d6ed5ff4ac7d9610385b35f77539ccf5bae8cc65/git-arc.1) = 17059970426de8fdf7a85aaa09e08ab84a90475a9c225301cfb31c62fcdd6fe5
+SIZE (freebsd-git-devtools_d6ed5ff4ac7d9610385b35f77539ccf5bae8cc65/git-arc.1) = 7907
+SHA256 (freebsd-git-devtools_d6ed5ff4ac7d9610385b35f77539ccf5bae8cc65/mfc-candidates.lua) = 0dd5ce88326076dea8ecc625c7d98621a70dba8057038ad17a2b770ddd7cc8ef
+SIZE (freebsd-git-devtools_d6ed5ff4ac7d9610385b35f77539ccf5bae8cc65/mfc-candidates.lua) = 5703
+SHA256 (freebsd-git-devtools_d6ed5ff4ac7d9610385b35f77539ccf5bae8cc65/mfc-candidates.sh) = ebc801b5159b5d49fd293838115ae725fe924084c1add4ff5fadf4b6970cdedb
+SIZE (freebsd-git-devtools_d6ed5ff4ac7d9610385b35f77539ccf5bae8cc65/mfc-candidates.sh) = 1547
