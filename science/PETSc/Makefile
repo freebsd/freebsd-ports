@@ -1,5 +1,6 @@
 PORTNAME=	PETSc
 DISTVERSION=	3.22.1
+PORTREVISION=	1
 CATEGORIES=	science devel
 MASTER_SITES=	https://web.cels.anl.gov/projects/petsc/download/release-snapshots/
 DISTNAME=	${PORTNAME:tl}-${DISTVERSION}
@@ -21,6 +22,8 @@ USE_XORG=	x11
 SHEBANG_FILES=	configure lib/petsc/bin/*.py lib/petsc/bin/saws/SAWs.py lib/petsc/bin/saws/*.bash config/*.py	\
 		lib/petsc/bin/petscnagfor share/petsc/chkerrconvert.py
 
+XARCH!=		uname -m
+
 GNU_CONFIGURE=	yes
 CONFIGURE_LOG=	configure.log
 CONFIGURE_ARGS=	--with-shared-libraries=1 \
@@ -32,7 +35,9 @@ CONFIGURE_ARGS=	--with-shared-libraries=1 \
 		MAKEFLAGS="${MAKEFLAGS}" LDFLAGS="${LDFLAGS}" LIBS=""
 CONFIGURE_ARGS_amd64=	CFLAGS="${CFLAGS} -msse2" CXXFLAGS="${CXXFLAGS} -msse2"
 CONFIGURE_ARGS_i386=	CFLAGS="${CFLAGS} -msse2" CXXFLAGS="${CXXFLAGS} -msse2"
+.if ${XARCH:M*64*} # match IDXTYPEWIDTH being set to 64 in math/metis
 CONFIGURE_ARGS+=	--with-64-bit-indices # as opposed to 32-bit indices that are default
+.endif
 
 MAKEFILE=	makefile
 TEST_TARGET=	test # 152 of 11396 tests (1.3%) fail due to missing files like /usr/local/share/petsc/datafiles/meshes/square_periodic.msh (tests expect the packe to be installed)
