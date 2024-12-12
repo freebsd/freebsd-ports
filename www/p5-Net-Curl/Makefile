@@ -11,6 +11,9 @@ WWW=		https://search.cpan.org/dist/Net-Curl/
 
 LICENSE=	MIT
 
+BROKEN=		Fails to build with curl 8.11.0
+EXPIRATION_DATE=2025-02-28
+
 LIB_DEPENDS=	libcurl.so:ftp/curl
 BUILD_DEPENDS=	p5-ExtUtils-PkgConfig>=1.16:devel/p5-ExtUtils-PkgConfig
 
