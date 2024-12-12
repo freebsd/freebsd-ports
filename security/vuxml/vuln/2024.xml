@@ -1,3 +1,53 @@
+  <vuln vid="275ac414-b847-11ef-9877-2cf05da270f3">
+    <topic>Gitlab -- Vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>gitlab-ce</name>
+	<name>gitlab-ee</name>
+	<range><ge>17.6.0</ge><lt>17.6.2</lt></range>
+	<range><ge>17.5.0</ge><lt>17.5.4</lt></range>
+	<range><ge>9.4.0</ge><lt>17.4.6</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Gitlab reports:</p>
+	<blockquote cite="https://about.gitlab.com/releases/2024/12/11/patch-release-gitlab-17-6-2-released/">
+	  <p>Injection of Network Error Logging (NEL) headers in kubernetes proxy response could lead to ATO abusing OAuth flows</p>
+	  <p>Denial of Service by repeatedly sending unauthenticated requests for diff-files</p>
+	  <p>CI_JOB_TOKEN could be used to obtain GitLab session</p>
+	  <p>Open redirect in releases API</p>
+	  <p>Client-Side Path Traversal in Harbor artifact links</p>
+	  <p>HTML injection in vulnerability details could lead to Cross Site Scripting</p>
+	  <p>Leak branch names of projects with confidential repository</p>
+	  <p>Non member can view unresolved threads marked as internal notes</p>
+	  <p>Uncontrolled Resource Consumption through a maliciously crafted file</p>
+	  <p>Certain sensitive information passed as literals inside GraphQL mutations retained in GraphQL logs</p>
+	  <p>Information disclosure of confidential incidents details to a group member in Gitlab Wiki</p>
+	  <p>Domain Confusion in GitLab Pages Unique Domain Implementation</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2024-11274</cvename>
+      <cvename>CVE-2024-8233</cvename>
+      <cvename>CVE-2024-9387</cvename>
+      <cvename>CVE-2024-8647</cvename>
+      <cvename>CVE-2024-8179</cvename>
+      <cvename>CVE-2024-8116</cvename>
+      <cvename>CVE-2024-8650</cvename>
+      <cvename>CVE-2024-9367</cvename>
+      <cvename>CVE-2024-12292</cvename>
+      <cvename>CVE-2024-12292</cvename>
+      <cvename>CVE-2024-10043</cvename>
+      <url>https://about.gitlab.com/releases/2024/12/11/patch-release-gitlab-17-6-2-released/</url>
+    </references>
+    <dates>
+      <discovery>2024-12-11</discovery>
+      <entry>2024-12-12</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="aeee5ebd-356c-49c1-8959-7c88981de5fd">
     <topic>chromium -- multiple security fixes</topic>
     <affects>
