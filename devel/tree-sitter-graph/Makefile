@@ -1,7 +1,6 @@
 PORTNAME=	tree-sitter-graph
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.11.3
-PORTREVISION=	4
+DISTVERSION=	0.12.0
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -19,89 +18,130 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	tree-sitter
 
 CARGO_FEATURES=	cli
-CARGO_CRATES=	ahash-0.4.8 \
-		aho-corasick-1.1.3 \
-		anyhow-1.0.86 \
+CARGO_CRATES=	aho-corasick-1.1.3 \
+		anyhow-1.0.94 \
 		atty-0.2.14 \
-		autocfg-1.3.0 \
+		autocfg-1.4.0 \
 		bitflags-1.3.2 \
-		bitflags-2.5.0 \
-		cc-1.0.99 \
+		bitflags-2.6.0 \
+		cc-1.2.3 \
 		cfg-if-1.0.0 \
 		clap-3.2.25 \
 		clap_lex-0.2.4 \
 		colored-2.1.0 \
-		dirs-3.0.2 \
-		dirs-sys-0.3.7 \
+		dirs-5.0.1 \
+		dirs-sys-0.4.1 \
+		displaydoc-0.2.5 \
 		env_logger-0.9.3 \
 		equivalent-1.0.1 \
+		errno-0.3.10 \
+		fastrand-2.3.0 \
+		form_urlencoded-1.2.1 \
+		fs4-0.9.1 \
 		getrandom-0.2.15 \
-		hashbrown-0.9.1 \
 		hashbrown-0.12.3 \
-		hashbrown-0.14.5 \
+		hashbrown-0.15.2 \
 		hermit-abi-0.1.19 \
 		humantime-2.1.0 \
+		icu_collections-1.5.0 \
+		icu_locid-1.5.0 \
+		icu_locid_transform-1.5.0 \
+		icu_locid_transform_data-1.5.0 \
+		icu_normalizer-1.5.0 \
+		icu_normalizer_data-1.5.0 \
+		icu_properties-1.5.1 \
+		icu_properties_data-1.5.0 \
+		icu_provider-1.5.0 \
+		icu_provider_macros-1.5.0 \
+		idna-1.0.3 \
+		idna_adapter-1.2.0 \
 		indexmap-1.9.3 \
-		indexmap-2.2.6 \
+		indexmap-2.7.0 \
 		indoc-1.0.9 \
-		itoa-1.0.11 \
-		lazy_static-1.4.0 \
-		libc-0.2.155 \
-		libloading-0.7.4 \
+		indoc-2.0.5 \
+		itoa-1.0.14 \
+		lazy_static-1.5.0 \
+		libc-0.2.168 \
+		libloading-0.8.6 \
 		libredox-0.1.3 \
-		log-0.4.21 \
+		linux-raw-sys-0.4.14 \
+		litemap-0.7.4 \
+		log-0.4.22 \
 		memchr-2.7.4 \
-		once_cell-1.19.0 \
+		once_cell-1.20.2 \
+		option-ext-0.2.0 \
 		os_str_bytes-6.6.1 \
-		proc-macro2-1.0.86 \
-		quote-1.0.36 \
-		redox_users-0.4.5 \
-		regex-1.10.5 \
-		regex-automata-0.4.7 \
-		regex-syntax-0.8.4 \
+		path-slash-0.2.1 \
+		percent-encoding-2.3.1 \
+		proc-macro2-1.0.92 \
+		quote-1.0.37 \
+		redox_users-0.4.6 \
+		regex-1.11.1 \
+		regex-automata-0.4.9 \
+		regex-syntax-0.8.5 \
+		rustix-0.38.42 \
 		ryu-1.0.18 \
-		serde-1.0.203 \
-		serde_derive-1.0.203 \
-		serde_json-1.0.117 \
+		semver-1.0.23 \
+		serde-1.0.216 \
+		serde_derive-1.0.216 \
+		serde_json-1.0.133 \
+		shlex-1.3.0 \
 		smallvec-1.13.2 \
-		string-interner-0.12.2 \
+		stable_deref_trait-1.2.0 \
+		streaming-iterator-0.1.9 \
 		strsim-0.10.0 \
-		syn-2.0.67 \
+		syn-2.0.90 \
+		synstructure-0.13.1 \
+		tempfile-3.14.0 \
 		termcolor-1.4.1 \
 		textwrap-0.16.1 \
-		thiserror-1.0.61 \
-		thiserror-impl-1.0.61 \
-		tree-sitter-0.20.10 \
-		tree-sitter-config-0.19.0 \
-		tree-sitter-highlight-0.20.1 \
-		tree-sitter-loader-0.20.0 \
-		tree-sitter-python-0.20.4 \
-		tree-sitter-tags-0.20.2 \
-		unicode-ident-1.0.12 \
+		thiserror-1.0.69 \
+		thiserror-impl-1.0.69 \
+		tinystr-0.7.6 \
+		tree-sitter-0.24.5 \
+		tree-sitter-config-0.24.5 \
+		tree-sitter-highlight-0.24.5 \
+		tree-sitter-language-0.1.3 \
+		tree-sitter-loader-0.24.5 \
+		tree-sitter-python-0.23.5 \
+		tree-sitter-tags-0.24.5 \
+		unicode-ident-1.0.14 \
+		url-2.5.4 \
+		utf16_iter-1.0.5 \
+		utf8_iter-1.0.4 \
 		wasi-0.11.0+wasi-snapshot-preview1 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
-		winapi-util-0.1.8 \
+		winapi-util-0.1.9 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
 		windows-sys-0.48.0 \
 		windows-sys-0.52.0 \
+		windows-sys-0.59.0 \
 		windows-targets-0.48.5 \
-		windows-targets-0.52.5 \
+		windows-targets-0.52.6 \
 		windows_aarch64_gnullvm-0.48.5 \
-		windows_aarch64_gnullvm-0.52.5 \
+		windows_aarch64_gnullvm-0.52.6 \
 		windows_aarch64_msvc-0.48.5 \
-		windows_aarch64_msvc-0.52.5 \
+		windows_aarch64_msvc-0.52.6 \
 		windows_i686_gnu-0.48.5 \
-		windows_i686_gnu-0.52.5 \
-		windows_i686_gnullvm-0.52.5 \
+		windows_i686_gnu-0.52.6 \
+		windows_i686_gnullvm-0.52.6 \
 		windows_i686_msvc-0.48.5 \
-		windows_i686_msvc-0.52.5 \
+		windows_i686_msvc-0.52.6 \
 		windows_x86_64_gnu-0.48.5 \
-		windows_x86_64_gnu-0.52.5 \
+		windows_x86_64_gnu-0.52.6 \
 		windows_x86_64_gnullvm-0.48.5 \
-		windows_x86_64_gnullvm-0.52.5 \
+		windows_x86_64_gnullvm-0.52.6 \
 		windows_x86_64_msvc-0.48.5 \
-		windows_x86_64_msvc-0.52.5
+		windows_x86_64_msvc-0.52.6 \
+		write16-1.0.0 \
+		writeable-0.5.5 \
+		yoke-0.7.5 \
+		yoke-derive-0.7.5 \
+		zerofrom-0.1.5 \
+		zerofrom-derive-0.1.5 \
+		zerovec-0.10.4 \
+		zerovec-derive-0.10.3
 
 PLIST_FILES=	bin/${PORTNAME}
 
