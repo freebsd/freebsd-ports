@@ -5001,6 +5001,7 @@
     SUBDIR += py-importlib-metadata6
     SUBDIR += py-importlib-metadata7
     SUBDIR += py-importlib-resources
+    SUBDIR += py-in-n-out
     SUBDIR += py-incremental
     SUBDIR += py-infinity
     SUBDIR += py-inflect
