@@ -19,6 +19,7 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING.txt
 
 BROKEN=		hoping to fix it with Python-3.9
+EXPIRATION_DATE=2024-12-31
 
 BUILD_DEPENDS=	bash:shells/bash		\
 		dash:shells/dash		\
