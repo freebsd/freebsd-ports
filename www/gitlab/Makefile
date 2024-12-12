@@ -303,7 +303,7 @@ MY_DEPENDS=	git>=2.41.0:devel/git \
 	rubygem-ed25519>=1.3.0<1.4:security/rubygem-ed25519 \
 	rubygem-cvss-suite>=3.0.1<3.1:security/rubygem-cvss-suite \
 	rubygem-arr-pm>=0.0.12<0.1:devel/rubygem-arr-pm \
-	rubygem-devfile>=0.1.0<0.2:net/rubygem-devfile \
+	rubygem-devfile>=0.1.1<0.2:net/rubygem-devfile \
 	rubygem-CFPropertyList>=3.0.0<3.1:devel/rubygem-CFPropertyList \
 	rubygem-app_store_connect>=0:net/rubygem-app_store_connect \
 	rubygem-telesignenterprise>=2.2<3:devel/rubygem-telesignenterprise \
