@@ -10,6 +10,10 @@ WWW=		https://pas2dox.sourceforge.net
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=			compilation fails: no matching function for call to 'transform'
+DEPRECATED=		doesn't compile with moddern clang and gcc, upstream last updated it in 2003
+EXPIRATION_DATE=	2025-01-15
+
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USES=		gmake
