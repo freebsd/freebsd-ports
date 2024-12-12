@@ -10,6 +10,8 @@ WWW=		https://aeron.io/ \
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+ONLY_FOR_ARCHS=	aarch64 amd64 # limited in aeron-client/src/main/c/concurrent/aeron_atomic.h
+
 TEST_DEPENDS=	googletest>0:devel/googletest
 
 USES=		cmake:testing
