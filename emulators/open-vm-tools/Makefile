@@ -1,5 +1,6 @@
 PORTNAME=	open-vm-tools
 PORTVERSION=	12.5.0
+PORTREVISION=	1
 DISTVERSIONPREFIX=	stable-
 PORTEPOCH=	2
 CATEGORIES=	emulators
@@ -14,6 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 ONLY_FOR_ARCHS=	aarch64 amd64 i386
 
 LIB_DEPENDS=	libdnet.so:net/libdnet
+RUN_DEPENDS=	open-vm-kmod>0:emulators/open-vm-kmod
 
 FLAVORS=			default nox11
 default_CONFLICTS_INSTALL=	open-vm-tools-nox11
@@ -21,7 +23,7 @@ nox11_PKGNAMESUFFIX=		-nox11
 nox11_CONFLICTS_INSTALL=	open-vm-tools
 nox11_COMMENT=			(without X11)
 
-USES=		autoreconf gettext-runtime gnome kmod libtool localbase \
+USES=		autoreconf gettext-runtime gnome libtool localbase \
 		pathfix pkgconfig
 
 USE_GITHUB=	yes
@@ -34,13 +36,12 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--disable-vgauth \
 		--enable-containerinfo=no \
 		--sysconfdir=${PREFIX}/etc \
-		--without-icu
-CONFIGURE_ENV+=	SYSDIR=${SRC_BASE}/sys
+		--without-icu \
+		--without-kernel-modules
 
 INSTALL_TARGET=	install-strip
 
 CPPFLAGS+=	-Wno-deprecated-declarations
-SSP_UNSAFE=	kernel module does not support ssp
 
 WRKSRC_SUBDIR=	open-vm-tools
 
@@ -75,16 +76,9 @@ post-patch:
 	@${REINPLACE_CMD} -e "s@%%PREFIX%%@${PREFIX}@"\
 		${WRKSRC}/lib/guestApp/guestApp.c
 
-post-build:
-	cd ${WRKSRC}/modules && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_ARGS}
-
 post-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/lib/vmware-tools/modules/drivers
 	${MKDIR} ${STAGEDIR}${PREFIX}/lib/vmware-tools/modules/input
-	${INSTALL_DATA} ${WRKSRC}/modules/freebsd/vmblock.ko \
-		${STAGEDIR}${PREFIX}/lib/vmware-tools/modules/drivers/vmblock.ko
-	${INSTALL_DATA} ${WRKSRC}/modules/freebsd/vmmemctl.ko \
-		${STAGEDIR}${PREFIX}/lib/vmware-tools/modules/drivers/vmmemctl.ko
 	${MKDIR} ${STAGEDIR}${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/tools.conf \
 		${STAGEDIR}${DATADIR}/tools.conf.sample

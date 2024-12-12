@@ -1,5 +1,5 @@
---- modules/freebsd/vmmemctl/os.c.orig	2023-03-07 22:57:07 UTC
-+++ modules/freebsd/vmmemctl/os.c
+--- vmmemctl/os.c.orig	2024-10-10 15:05:07 UTC
++++ vmmemctl/os.c
 @@ -103,7 +103,11 @@ MALLOC_DEFINE(M_VMMEMCTL, BALLOON_NAME, "vmmemctl meta
  #define KVA_FREE(offset, size) kva_free(offset, size)
  

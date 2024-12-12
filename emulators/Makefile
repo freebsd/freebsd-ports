@@ -101,6 +101,7 @@
     SUBDIR += ods2reader
     SUBDIR += open-simh
     SUBDIR += open-vm-tools
+    SUBDIR += open-vm-kmod
     SUBDIR += openmsx
     SUBDIR += p5-Acme-6502
     SUBDIR += parallels-tools

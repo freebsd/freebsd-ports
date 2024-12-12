@@ -13,9 +13,9 @@ checkvm_cmd="%%PREFIX%%/bin/vmware-checkvm > /dev/null"
 vmware_mod_load()
 {
 	echo -n "Loading $1 kernel module: "
-	if kldstat -qn %%PREFIX%%/lib/vmware-tools/modules/drivers/$1.ko; then
+	if kldstat -qn $1.ko; then
 		echo "already loaded."
-	elif kldload -q %%PREFIX%%/lib/vmware-tools/modules/drivers/$1.ko; then
+	elif kldload -q $1.ko; then
 		echo "done."
 	else
 		echo "failed."
@@ -25,7 +25,7 @@ vmware_mod_load()
 vmware_mod_status()
 {
 	echo -n "Checking $1 kernel module: "
-	if kldstat -qn %%PREFIX%%/lib/vmware-tools/modules/drivers/$1.ko; then
+	if kldstat -qn $1.ko; then
 		echo "loaded."
 	else
 		echo "not loaded"
