@@ -294,7 +294,7 @@ snmpd:*:344:344::0:0:Net-SNMP Daemon:/nonexistent:/usr/sbin/nologin
 _metronome:*:345:345::0:0:Metronome Daemon:/nonexistent:/usr/sbin/nologin
 ngircd:*:346:346::0:0:ngIRCd Daemon:/var/empty:/usr/sbin/nologin
 eturnal:*:347:347::0:0:eturnal User:/var/spool/eturnal:/bin/sh
-# free: 348
+davfs2:*:348:348::0:0:Davfs2 Daemon:/nonexistent:/usr/sbin/nologin
 # free: 349
 _sabnzbd:*:350:350::0:0:sabnzb Daemon:/nonexistent:/usr/sbin/nologin
 sonarr:*:351:351::0:0:Sonarr PVR:/nonexistent:/usr/sbin/nologin

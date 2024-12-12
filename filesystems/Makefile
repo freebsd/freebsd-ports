@@ -14,6 +14,7 @@
     SUBDIR += cryptofs
     SUBDIR += curlftpfs
     SUBDIR += darling-dmg
+    SUBDIR += davfs2
     SUBDIR += dsbmc
     SUBDIR += dsbmc-cli
     SUBDIR += dsbmd

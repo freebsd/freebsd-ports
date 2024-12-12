@@ -288,7 +288,7 @@ snmpd:*:344:
 _metronome:*:345:
 ngircd:*:346:
 eturnal:*:347:
-# free: 348
+davfs2:*:348:
 # free: 349
 _sabnzbd:*:350:
 sonarr:*:351:
