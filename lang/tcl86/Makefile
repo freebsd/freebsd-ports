@@ -49,7 +49,7 @@ ALL_TARGET=	all
 INSTALL_TARGET=	install-strip install-libraries install-private-headers
 TEST_TARGET=	test-tcl
 
-TCL_VERSION=	8.6.15
+TCL_VERSION=	8.6.16
 TCL_VER=	${TCL_VERSION:R}
 TCL_RC=
 SHORT_TCL_VER=	${TCL_VER:S/.//}

@@ -1,6 +1,6 @@
---- unix/configure.orig	2024-09-06 16:02:44.000000000 +0000
-+++ unix/configure	2024-09-09 06:50:30.736361000 +0000
-@@ -6364,6 +6364,10 @@
+--- unix/configure.orig	2024-12-05 13:33:57 UTC
++++ unix/configure
+@@ -7320,6 +7320,10 @@ fi
  
  	    case $system in
  	    DragonFly-*|FreeBSD-*)
@@ -8,6 +8,6 @@
 +		UNSHARED_LIB_SUFFIX='${TCL_TRIM_DOTS}.a'
 +		SHARED_LIB_SUFFIX='${TCL_TRIM_DOTS}.so.1'
 +		TCL_LIB_VERSIONS_OK=nodots
- 		if test "${TCL_THREADS}" = "1"
- then :
+ 		if test "${TCL_THREADS}" = "1"; then
  
+ 		    # The -pthread needs to go in the LDFLAGS, not LIBS
