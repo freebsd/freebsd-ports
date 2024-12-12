@@ -1,5 +1,5 @@
 PORTNAME=	socat
-DISTVERSION=	1.8.0.1
+DISTVERSION=	1.8.0.2
 CATEGORIES=	net
 MASTER_SITES=	http://www.dest-unreach.org/socat/download/ \
 		LOCAL/ehaupt
