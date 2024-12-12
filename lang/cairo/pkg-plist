@@ -37,6 +37,7 @@ lib/cairo-lang/corelib/src/num/traits/one.cairo
 lib/cairo-lang/corelib/src/num/traits/ops.cairo
 lib/cairo-lang/corelib/src/num/traits/ops/checked.cairo
 lib/cairo-lang/corelib/src/num/traits/ops/overflowing.cairo
+lib/cairo-lang/corelib/src/num/traits/ops/pow.cairo
 lib/cairo-lang/corelib/src/num/traits/ops/saturating.cairo
 lib/cairo-lang/corelib/src/num/traits/ops/sqrt.cairo
 lib/cairo-lang/corelib/src/num/traits/ops/widemul.cairo
@@ -99,9 +100,12 @@ lib/cairo-lang/corelib/src/test/fmt_test.cairo
 lib/cairo-lang/corelib/src/test/hash_test.cairo
 lib/cairo-lang/corelib/src/test/integer_test.cairo
 lib/cairo-lang/corelib/src/test/keccak_test.cairo
+lib/cairo-lang/corelib/src/test/language_features/block_level_items_test.cairo
+lib/cairo-lang/corelib/src/test/language_features/closure_test.cairo
 lib/cairo-lang/corelib/src/test/language_features/const_folding_test.cairo
 lib/cairo-lang/corelib/src/test/language_features/const_test.cairo
 lib/cairo-lang/corelib/src/test/language_features/for_test.cairo
+lib/cairo-lang/corelib/src/test/language_features/glob_use_test.cairo
 lib/cairo-lang/corelib/src/test/language_features/panics_test.cairo
 lib/cairo-lang/corelib/src/test/language_features/trait_test.cairo
 lib/cairo-lang/corelib/src/test/language_features/while_test.cairo

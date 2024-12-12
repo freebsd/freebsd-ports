@@ -1,7 +1,6 @@
 PORTNAME=	cairo
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.8.5
-PORTREVISION=	1
+DISTVERSION=	2.9.2
 CATEGORIES=	lang
 PKGNAMESUFFIX=	-language
 
@@ -52,15 +51,14 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		assert_fs-1.1.2 \
 		assert_matches-1.5.0 \
 		async-channel-2.3.1 \
-		async-trait-0.1.81 \
 		atomic-waker-1.1.2 \
-		auto_impl-1.2.0 \
 		autocfg-1.3.0 \
 		backtrace-0.3.73 \
 		base64-0.22.1 \
 		base64ct-1.6.0 \
 		bimap-0.6.3 \
 		bincode-2.0.0-rc.3 \
+		bincode_derive-2.0.0-rc.3 \
 		bit-set-0.5.3 \
 		bit-vec-0.6.3 \
 		bitflags-1.3.2 \
@@ -74,6 +72,9 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		bytes-1.7.1 \
 		bzip2-0.4.4 \
 		bzip2-sys-0.1.11+1.0.8 \
+		cairo-lang-macro-0.1.1 \
+		cairo-lang-macro-attributes-0.1.0 \
+		cairo-lang-macro-stable-1.0.0 \
 		cairo-vm-1.0.1 \
 		camino-1.1.7 \
 		cc-1.1.7 \
@@ -96,13 +97,16 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		core-foundation-sys-0.8.6 \
 		cpufeatures-0.2.12 \
 		crc32fast-1.4.2 \
+		crossbeam-0.8.4 \
+		crossbeam-channel-0.5.13 \
 		crossbeam-deque-0.8.5 \
 		crossbeam-epoch-0.9.18 \
+		crossbeam-queue-0.3.11 \
 		crossbeam-utils-0.8.20 \
 		crunchy-0.2.2 \
 		crypto-bigint-0.5.5 \
 		crypto-common-0.1.6 \
-		dashmap-5.5.3 \
+		data-encoding-2.6.0 \
 		deranged-0.3.11 \
 		derivative-2.2.0 \
 		diff-0.1.13 \
@@ -132,24 +136,26 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		form_urlencoded-1.2.1 \
 		funty-2.0.0 \
 		futures-0.3.30 \
-		futures-channel-0.3.30 \
-		futures-core-0.3.30 \
+		futures-channel-0.3.31 \
+		futures-core-0.3.31 \
 		futures-executor-0.3.30 \
-		futures-io-0.3.30 \
-		futures-macro-0.3.30 \
-		futures-sink-0.3.30 \
-		futures-task-0.3.30 \
+		futures-io-0.3.31 \
+		futures-macro-0.3.31 \
+		futures-sink-0.3.31 \
+		futures-task-0.3.31 \
 		futures-timer-3.0.3 \
-		futures-util-0.3.30 \
+		futures-util-0.3.31 \
 		genco-0.17.9 \
 		genco-macros-0.17.9 \
 		generic-array-0.14.7 \
+		getopts-0.2.21 \
 		getrandom-0.2.15 \
 		gimli-0.29.0 \
 		glob-0.3.1 \
 		globset-0.4.14 \
 		globwalk-0.9.1 \
 		good_lp-1.8.1 \
+		governor-0.7.0 \
 		h2-0.4.5 \
 		hashbrown-0.12.3 \
 		hashbrown-0.13.2 \
@@ -186,6 +192,7 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		itertools-0.12.1 \
 		itoa-1.0.11 \
 		jobserver-0.1.32 \
+		jod-thread-0.1.2 \
 		js-sys-0.3.69 \
 		keccak-0.1.5 \
 		lalrpop-0.20.2 \
@@ -195,11 +202,14 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		lazy_static-1.5.0 \
 		libc-0.2.155 \
 		libredox-0.1.3 \
+		linkme-0.3.31 \
+		linkme-impl-0.3.31 \
 		linux-raw-sys-0.4.14 \
 		lock_api-0.4.12 \
 		log-0.4.22 \
 		lru-0.12.4 \
-		lsp-types-0.94.1 \
+		lsp-server-0.7.7 \
+		lsp-types-0.95.0 \
 		matchers-0.1.0 \
 		matrixmultiply-0.2.4 \
 		memchr-2.7.4 \
@@ -211,7 +221,9 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		native-tls-0.2.12 \
 		ndarray-0.13.1 \
 		new_debug_unreachable-1.0.6 \
+		no-std-compat-0.4.1 \
 		nom-7.1.3 \
+		nonzero_ext-0.3.0 \
 		nu-ansi-term-0.46.0 \
 		num-bigint-0.4.6 \
 		num-complex-0.2.4 \
@@ -261,21 +273,25 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		pretty_assertions-1.4.0 \
 		proc-macro-crate-3.1.0 \
 		proc-macro2-1.0.86 \
+		pulldown-cmark-0.12.2 \
+		pulldown-cmark-escape-0.11.0 \
+		quanta-0.12.3 \
 		quote-1.0.36 \
 		radium-0.7.0 \
 		rand-0.8.5 \
 		rand_chacha-0.3.1 \
 		rand_core-0.6.4 \
+		raw-cpuid-11.2.0 \
 		rawpointer-0.2.1 \
 		rayon-1.10.0 \
 		rayon-core-1.12.1 \
 		redox_syscall-0.5.3 \
 		redox_users-0.4.5 \
-		regex-1.10.6 \
+		regex-1.11.0 \
 		regex-automata-0.1.10 \
-		regex-automata-0.4.7 \
+		regex-automata-0.4.8 \
 		regex-syntax-0.6.29 \
-		regex-syntax-0.8.4 \
+		regex-syntax-0.8.5 \
 		relative-path-1.9.3 \
 		reqwest-0.12.5 \
 		rfc6979-0.4.0 \
@@ -296,7 +312,9 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		rustversion-1.0.17 \
 		ryu-1.0.18 \
 		same-file-1.0.6 \
-		scarb-metadata-1.12.0 \
+		scarb-metadata-1.13.0 \
+		scarb-proc-macro-server-types-0.1.0 \
+		scarb-stable-hash-1.0.0 \
 		schannel-0.1.23 \
 		schemars-0.8.21 \
 		schemars_derive-0.8.21 \
@@ -322,6 +340,7 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		smol_str-0.2.2 \
 		socket2-0.5.7 \
 		spin-0.9.8 \
+		spinning_top-0.3.0 \
 		sprs-0.7.1 \
 		stable_deref_trait-1.2.0 \
 		starknet-crypto-0.6.2 \
@@ -368,8 +387,6 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		toml_edit-0.22.20 \
 		tower-0.4.13 \
 		tower-layer-0.3.2 \
-		tower-lsp-0.20.0 \
-		tower-lsp-macros-0.9.0 \
 		tower-service-0.3.2 \
 		tracing-0.1.40 \
 		tracing-attributes-0.1.27 \
@@ -377,10 +394,11 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		tracing-core-0.1.32 \
 		tracing-log-0.2.0 \
 		tracing-subscriber-0.3.18 \
-		triomphe-0.1.13 \
+		triomphe-0.1.14 \
 		try-lock-0.2.5 \
 		typenum-1.17.0 \
 		unescaper-0.1.5 \
+		unicase-2.8.0 \
 		unicode-bidi-0.3.15 \
 		unicode-ident-1.0.12 \
 		unicode-normalization-0.1.23 \
@@ -393,6 +411,7 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		valuable-0.1.0 \
 		vcpkg-0.2.15 \
 		version_check-0.9.5 \
+		virtue-0.0.13 \
 		walkdir-2.5.0 \
 		want-0.3.1 \
 		wasi-0.11.0+wasi-snapshot-preview1 \
@@ -433,6 +452,7 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		wyz-0.5.1 \
 		xshell-0.2.6 \
 		xshell-macros-0.2.6 \
+		xxhash-rust-0.8.12 \
 		yansi-0.5.1 \
 		zerocopy-0.7.35 \
 		zerocopy-derive-0.7.35 \
