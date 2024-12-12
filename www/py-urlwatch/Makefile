@@ -1,6 +1,5 @@
 PORTNAME=	urlwatch
-DISTVERSION=	2.28
-PORTREVISION=	1
+DISTVERSION=	2.29
 CATEGORIES=	www python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,9 +11,9 @@ WWW=		https://github.com/thp/urlwatch
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}minidb>=2.0.6:databases/py-minidb@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}appdirs>0:devel/py-appdirs@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}minidb>=2.0.8:databases/py-minidb@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}lxml>0:devel/py-lxml@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}platformdirs>0:devel/py-platformdirs@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyyaml>=0:devel/py-pyyaml@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}keyring>0:security/py-keyring@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}cssselect>0:www/py-cssselect@${PY_FLAVOR} \
@@ -28,6 +27,12 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}nose>0:devel/py-nose@${PY_FLAVOR} \
 
 USES=		python
 USE_PYTHON=	autoplist concurrent distutils pytest
+# These tests yields only positive results if run as regular user.
+PYTEST_IGNORED_TESTS=	test_disabled_job \
+			test_idxs_one \
+			test_idxs_none \
+			test_tags_single \
+			test_tags_multiple
 
 NO_ARCH=	yes
 
