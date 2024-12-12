@@ -11,8 +11,9 @@ WWW=		http://www.kore.io/
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN_SSL=	openssl openssl31
-BROKEN_SSL_REASON=	Requires OpenSSL 3.0.0 deprecated RSA_* routines
+BROKEN=		Fails to build, error: no member named 'gi_frame' in 'PyGenObject'
+DEPRECATED=	Unmaintained in tree for years and broken for months
+EXPIRATION_DATE=2025-01-31
 
 USES=		compiler:c11 gmake ssl
 
