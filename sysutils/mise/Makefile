@@ -1,6 +1,6 @@
 PORTNAME=	mise
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2024.12.5
+DISTVERSION=	2024.12.6
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -24,6 +24,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		adler-1.0.2 \
 		adler2-2.0.0 \
 		aes-0.8.4 \
+		ahash-0.8.11 \
 		aho-corasick-1.1.3 \
 		android-tzdata-0.1.1 \
 		android_system_properties-0.1.5 \
@@ -36,6 +37,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		anstyle-wincon-3.0.6 \
 		anyhow-1.0.94 \
 		arbitrary-1.4.1 \
+		arc-swap-1.7.1 \
 		arrayvec-0.5.2 \
 		async-compression-0.4.18 \
 		atomic-waker-1.1.2 \
@@ -43,6 +45,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		backtrace-0.3.71 \
 		base64-0.22.1 \
 		base64ct-1.6.0 \
+		beef-0.5.2 \
 		binstall-tar-0.4.42 \
 		bit-set-0.6.0 \
 		bit-vec-0.7.0 \
@@ -85,6 +88,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		core-foundation-0.9.4 \
 		core-foundation-0.10.0 \
 		core-foundation-sys-0.8.7 \
+		countme-3.0.1 \
 		cpufeatures-0.2.16 \
 		crc-3.2.1 \
 		crc-catalog-2.4.0 \
@@ -98,7 +102,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		curve25519-dalek-4.1.3 \
 		curve25519-dalek-derive-0.1.1 \
 		deflate64-0.1.9 \
-		demand-1.3.0 \
+		demand-1.4.1 \
 		der-0.7.9 \
 		deranged-0.3.11 \
 		derive_arbitrary-1.4.1 \
@@ -144,6 +148,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		futures-sink-0.3.31 \
 		futures-task-0.3.31 \
 		futures-util-0.3.31 \
+		fuzzy-matcher-0.3.7 \
 		generic-array-0.14.7 \
 		getrandom-0.2.15 \
 		gimli-0.28.1 \
@@ -153,6 +158,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		globwalk-0.9.1 \
 		h2-0.4.7 \
 		hashbrown-0.12.3 \
+		hashbrown-0.14.5 \
 		hashbrown-0.15.2 \
 		heck-0.4.1 \
 		heck-0.5.0 \
@@ -194,6 +200,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		insta-1.41.1 \
 		ipnet-2.10.1 \
 		is_terminal_polyfill-1.70.1 \
+		itertools-0.10.5 \
 		itertools-0.13.0 \
 		itoa-1.0.14 \
 		jobserver-0.1.32 \
@@ -216,6 +223,8 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		lock_api-0.4.12 \
 		lockfree-object-pool-0.1.6 \
 		log-0.4.22 \
+		logos-0.12.1 \
+		logos-derive-0.12.1 \
 		lua-src-547.0.0 \
 		luajit-src-210.5.11+97813fb \
 		lzma-rs-0.3.0 \
@@ -294,7 +303,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		rand_core-0.6.4 \
 		rayon-1.10.0 \
 		rayon-core-1.12.1 \
-		redox_syscall-0.5.7 \
+		redox_syscall-0.5.8 \
 		regex-1.11.1 \
 		regex-automata-0.1.10 \
 		regex-automata-0.4.9 \
@@ -305,11 +314,13 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		rmp-0.8.14 \
 		rmp-serde-1.3.0 \
 		roff-0.2.2 \
+		rowan-0.15.16 \
 		rustc-demangle-0.1.24 \
+		rustc-hash-1.1.0 \
 		rustc-hash-2.1.0 \
 		rustc_version-0.4.1 \
 		rustix-0.38.42 \
-		rustls-0.23.19 \
+		rustls-0.23.20 \
 		rustls-native-certs-0.8.1 \
 		rustls-pemfile-2.2.0 \
 		rustls-pki-types-1.10.0 \
@@ -325,9 +336,9 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		self-replace-1.5.0 \
 		self_update-0.41.0 \
 		semver-1.0.23 \
-		serde-1.0.215 \
+		serde-1.0.216 \
 		serde-value-0.7.0 \
-		serde_derive-1.0.215 \
+		serde_derive-1.0.216 \
 		serde_ignored-0.1.10 \
 		serde_json-1.0.133 \
 		serde_spanned-0.6.8 \
@@ -368,6 +379,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		system-configuration-sys-0.6.0 \
 		tabled-0.17.0 \
 		tabled_derive-0.9.0 \
+		taplo-0.13.2 \
 		tar-0.4.43 \
 		tempfile-3.14.0 \
 		tera-1.20.0 \
@@ -375,6 +387,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		terminal_size-0.4.1 \
 		test-log-0.2.16 \
 		test-log-macros-0.2.16 \
+		text-size-1.1.1 \
 		thiserror-1.0.69 \
 		thiserror-2.0.6 \
 		thiserror-impl-1.0.69 \
@@ -396,6 +409,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		toml_edit-0.22.22 \
 		tower-service-0.3.3 \
 		tracing-0.1.41 \
+		tracing-attributes-0.1.28 \
 		tracing-core-0.1.33 \
 		tracing-error-0.2.1 \
 		tracing-log-0.2.0 \
