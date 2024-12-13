@@ -142,8 +142,8 @@ lib/gretl-gtk%%GTK_VER%%/vif.so
 %%GUI%%lib/gretl-gtk%%GTK_VER%%/xlsx_import.so
 %%GUI%%lib/gretl-gtk%%GTK_VER%%/xml_get.so
 lib/libgretl-1.0.so
-lib/libgretl-1.0.so.49
-lib/libgretl-1.0.so.49.0.0
+lib/libgretl-1.0.so.50
+lib/libgretl-1.0.so.50.0.0
 libdata/pkgconfig/gretl.pc
 %%GUI%%share/applications/gretl.desktop
 %%GUI%%share/applications/gretl_edit.desktop
