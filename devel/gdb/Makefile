@@ -1,5 +1,6 @@
 PORTNAME=	gdb
 DISTVERSION=	15.1
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	GNU
 
@@ -79,6 +80,7 @@ PYTHON_CONFIGURE_OFF=	--without-python
 PYTHON_USES=		python
 SOURCE_HIGHLIGHT_CONFIGURE_ENABLE=	source-highlight
 SOURCE_HIGHLIGHT_LIB_DEPENDS=	\
+	libboost_regex.so:devel/boost-libs \
 	libsource-highlight.so:textproc/source-highlight
 SYSTEM_ICONV_USES=	iconv
 SYSTEM_ZLIB_CONFIGURE_WITH=	system-zlib
