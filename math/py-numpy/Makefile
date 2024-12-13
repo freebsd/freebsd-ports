@@ -30,6 +30,8 @@ LDFLAGS+=	-s
 PYDISTUTILS_BUILDARGS=		--fcompiler=gnu95
 PYDISTUTILS_CONFIGUREARGS=	--fcompiler=gnu95
 
+PIE_UNSAFE=	yes
+
 PORTDOCS=	*
 
 PORTSCOUT=	limit:^1\.
