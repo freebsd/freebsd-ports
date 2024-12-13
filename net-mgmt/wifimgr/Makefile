@@ -19,6 +19,8 @@ USES=		desktop-file-utils gnome pkgconfig tar:xz xorg
 USE_GNOME=	cairo gdkpixbuf2
 USE_XORG=	x11
 
+PIE_UNSAFE=	yes
+
 MAKE_ENV=	MANDIR="${STAGEDIR}${PREFIX}/share/man"
 
 OPTIONS_DEFINE=	GTK2 NLS
