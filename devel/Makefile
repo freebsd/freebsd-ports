@@ -4383,6 +4383,7 @@
     SUBDIR += py-apipkg
     SUBDIR += py-apispec
     SUBDIR += py-apispec-webframeworks
+    SUBDIR += py-app-model
     SUBDIR += py-appdirs
     SUBDIR += py-applicationinsights
     SUBDIR += py-apptools

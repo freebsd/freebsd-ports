@@ -1,0 +1,4 @@
+Generic application schema implemented in python.
+
+This is a schema for declarative organization of application data, such as
+menus, keybindings, actions/commands, etc.
