@@ -8,12 +8,12 @@ include/libmatekbd/matekbd-util.h
 lib/girepository-1.0/Matekbd-1.0.typelib
 lib/libmatekbd.a
 lib/libmatekbd.so
-lib/libmatekbd.so.4
-lib/libmatekbd.so.4.2.0
+lib/libmatekbd.so.6
+lib/libmatekbd.so.6.0.2
 lib/libmatekbdui.a
 lib/libmatekbdui.so
-lib/libmatekbdui.so.4
-lib/libmatekbdui.so.4.2.0
+lib/libmatekbdui.so.6
+lib/libmatekbdui.so.6.0.2
 libdata/pkgconfig/libmatekbd.pc
 libdata/pkgconfig/libmatekbdui.pc
 share/gir-1.0/Matekbd-1.0.gir
@@ -120,6 +120,7 @@ share/locale/mr/LC_MESSAGES/libmatekbd.mo
 share/locale/ms/LC_MESSAGES/libmatekbd.mo
 share/locale/my/LC_MESSAGES/libmatekbd.mo
 share/locale/nah/LC_MESSAGES/libmatekbd.mo
+share/locale/nan/LC_MESSAGES/libmatekbd.mo
 share/locale/nb/LC_MESSAGES/libmatekbd.mo
 share/locale/nds/LC_MESSAGES/libmatekbd.mo
 share/locale/ne/LC_MESSAGES/libmatekbd.mo
