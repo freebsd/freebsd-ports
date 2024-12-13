@@ -38,6 +38,8 @@ MESON_ARGS=	-Ddownload-js=false -Dlocalbase=${LOCALBASE} -Drpmmd=false
 DATADIR=	${PREFIX}/share/appstream
 OPTIONS_SUB=	yes
 
+PIE_UNSAFE=	yes
+
 post-install:
 	cd ${WRKSRC}/data && \
 		${COPYTREE_SHARE} templates ${STAGEDIR}${DATADIR}
