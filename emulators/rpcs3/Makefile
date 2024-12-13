@@ -1,8 +1,7 @@
 PORTNAME=	rpcs3
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.0.34-17173 # git rev-list --count HEAD
-DISTVERSIONSUFFIX=	-g68b7e5971d
-PORTREVISION=	1
+DISTVERSION=	0.0.34-17184 # git rev-list --count HEAD
+DISTVERSIONSUFFIX=	-g692c88f0e9
 CATEGORIES=	emulators wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -36,7 +35,8 @@ GH_TUPLE=	RPCS3:hidapi:hidapi-0.14.0-2-g8b43a97:hidapi/3rdparty/hidapi/hidapi \
 		kinetiknz:cubeb:cubeb-0.2-1425-g88585b6:cubeb/3rdparty/cubeb/cubeb \
 		miniupnp:miniupnp:miniupnpd_2_3_6:miniupnp/3rdparty/miniupnp/miniupnp \
 		nothings:stb:013ac3b:stb/3rdparty/stblib/stb \
-		wolfSSL:wolfssl:v5.7.4-stable:wolfssl/3rdparty/wolfssl/wolfssl
+		wolfSSL:wolfssl:v5.7.4-stable:wolfssl/3rdparty/wolfssl/wolfssl \
+		xioTechnologies:Fusion:v1.2.7:fusion/3rdparty/fusion/fusion
 
 USES=		cmake elfctl gl iconv:wchar_t llvm:min=16,lib localbase:ldflags \
 		openal:soft pkgconfig python:build qt:6 xorg
@@ -68,7 +68,7 @@ FAUDIO_CMAKE_BOOL=	USE_FAUDIO USE_SYSTEM_FAUDIO
 JACK_BUILD_DEPENDS=	jackit>0:audio/jack
 JACK_CMAKE_BOOL=	USE_JACK
 
-OPENCV_LIB_DEPENDS=	libopencv_imgcodecs.so:graphics/opencv
+OPENCV_LIB_DEPENDS=	libopencv_imgproc.so:graphics/opencv
 OPENCV_CMAKE_BOOL=	USE_SYSTEM_OPENCV
 
 PULSEAUDIO_BUILD_DEPENDS=pulseaudio>0:audio/pulseaudio
