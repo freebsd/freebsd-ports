@@ -13,9 +13,10 @@ LICENSE_COMB=	multi
 LICENSE_FILE_GPLv2+ =	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	itstool:textproc/itstool \
-		yelp:textproc/yelp-tools \
+		yelp-tools>0:textproc/yelp-tools \
  		yelp-xsl>0:textproc/yelp-xsl
-LIB_DEPENDS=	libcanberra-gtk3.so:audio/libcanberra-gtk3 \
+LIB_DEPENDS=	libayatana-appindicator3.so:devel/libayatana-appindicator \
+		libcanberra-gtk3.so:audio/libcanberra-gtk3 \
 		libdbus-1.so:devel/dbus \
 		libdbus-glib-1.so:devel/dbus-glib \
 		libxklavier.so:x11/libxklavier \
