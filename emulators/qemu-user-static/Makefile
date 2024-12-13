@@ -27,6 +27,8 @@ ELF_FEATURES=	+wxneeded:*-bsd-user/qemu-*
 USE_RC_SUBR=	qemu_user_static
 SUB_LIST=	NAME=qemu_user_static
 
+PIE_UNSAFE=	yes
+
 # When static linking we have a build dependency on libglib-2.0.a, otherwise
 # we use glib20 in the usual way (shared-lib runtime dependency).
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libglib-2.0.a:devel/glib20
