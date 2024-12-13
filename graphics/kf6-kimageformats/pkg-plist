@@ -9,5 +9,6 @@
 %%QT_PLUGINDIR%%/imageformats/kimg_qoi.so
 %%QT_PLUGINDIR%%/imageformats/kimg_ras.so
 %%QT_PLUGINDIR%%/imageformats/kimg_rgb.so
+%%QT_PLUGINDIR%%/imageformats/kimg_sct.so
 %%QT_PLUGINDIR%%/imageformats/kimg_tga.so
 %%QT_PLUGINDIR%%/imageformats/kimg_xcf.so

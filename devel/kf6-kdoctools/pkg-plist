@@ -976,6 +976,7 @@ share/kf6/kdoctools/customization/xsl/pt.xml
 share/kf6/kdoctools/customization/xsl/pt_br.xml
 share/kf6/kdoctools/customization/xsl/ru.xml
 share/kf6/kdoctools/customization/xsl/sl.xml
+share/kf6/kdoctools/customization/xsl/sq.xml
 share/kf6/kdoctools/customization/xsl/sr.xml
 share/kf6/kdoctools/customization/xsl/sr_ijekavian.xml
 share/kf6/kdoctools/customization/xsl/sr_ijekavianlatin.xml
@@ -1128,6 +1129,7 @@ share/man/ca/man7/kf6options.7.gz
 share/man/ca/man7/qt6options.7.gz
 share/man/es/man1/checkXML6.1.gz
 share/man/es/man1/meinproc6.1.gz
+share/man/es/man7/kf6options.7.gz
 share/man/es/man7/qt6options.7.gz
 share/man/it/man1/checkXML6.1.gz
 share/man/it/man1/meinproc6.1.gz

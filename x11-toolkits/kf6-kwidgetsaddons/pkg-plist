@@ -1,6 +1,7 @@
 include/KF6/KWidgetsAddons/KAcceleratorManager
 include/KF6/KWidgetsAddons/KActionMenu
 include/KF6/KWidgetsAddons/KActionSelector
+include/KF6/KWidgetsAddons/KAdjustingScrollArea
 include/KF6/KWidgetsAddons/KAnimatedButton
 include/KF6/KWidgetsAddons/KAssistantDialog
 include/KF6/KWidgetsAddons/KBusyIndicatorWidget
@@ -86,6 +87,7 @@ include/KF6/KWidgetsAddons/KXYSelector
 include/KF6/KWidgetsAddons/kacceleratormanager.h
 include/KF6/KWidgetsAddons/kactionmenu.h
 include/KF6/KWidgetsAddons/kactionselector.h
+include/KF6/KWidgetsAddons/kadjustingscrollarea.h
 include/KF6/KWidgetsAddons/kanimatedbutton.h
 include/KF6/KWidgetsAddons/kassistantdialog.h
 include/KF6/KWidgetsAddons/kbusyindicatorwidget.h

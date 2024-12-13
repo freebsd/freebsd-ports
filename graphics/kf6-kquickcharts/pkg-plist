@@ -1,5 +1,7 @@
 lib/cmake/KF6QuickCharts/KF6QuickChartsConfig.cmake
 lib/cmake/KF6QuickCharts/KF6QuickChartsConfigVersion.cmake
+lib/cmake/KF6QuickCharts/KF6QuickChartsTargets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/KF6QuickCharts/KF6QuickChartsTargets.cmake
 lib/libQuickCharts.so
 lib/libQuickCharts.so.1
 lib/libQuickCharts.so.%%KDE_FRAMEWORKS_VERSION%%
