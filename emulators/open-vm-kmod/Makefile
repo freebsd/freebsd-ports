@@ -5,7 +5,7 @@ PORTEPOCH=	2
 CATEGORIES=	emulators
 
 MAINTAINER=	garga@FreeBSD.org
-COMMENT=	Open VMware tools for FreeBSD VMware guests ${${FLAVOR}_COMMENT}
+COMMENT=	Open VMware kernel modules for FreeBSD VMware guests
 WWW=		https://github.com/vmware/open-vm-tools
 
 LICENSE=	BSD2CLAUSE GPLv2
