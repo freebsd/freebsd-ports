@@ -1,0 +1,19 @@
+--- cargo-crates/openssl-sys-0.9.104/Cargo.toml.orig	1970-01-01 00:00:01 UTC
++++ cargo-crates/openssl-sys-0.9.104/Cargo.toml
+@@ -55,11 +55,6 @@ version = "1.0.61"
+ [build-dependencies.cc]
+ version = "1.0.61"
+ 
+-[build-dependencies.openssl-src]
+-version = "300.2.0"
+-features = ["legacy"]
+-optional = true
+-
+ [build-dependencies.pkg-config]
+ version = "0.3.9"
+ 
+@@ -68,4 +63,3 @@ unstable_boringssl = ["bssl-sys"]
+ 
+ [features]
+ unstable_boringssl = ["bssl-sys"]
+-vendored = ["openssl-src"]
