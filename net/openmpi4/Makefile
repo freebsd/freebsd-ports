@@ -58,6 +58,8 @@ TEST_TARGET=	check
 SHEBANG_FILES=	ompi/mca/common/monitoring/profile2mat.pl \
 		ompi/mca/common/monitoring/aggregate_profile.pl
 
+PIE_UNSAFE=	yes
+
 OPTIONS_DEFINE=			AVX DEBUG IPV6 SLURM
 OPTIONS_DEFAULT=		SLURM
 OPTIONS_EXCLUDE_aarch64=	AVX
