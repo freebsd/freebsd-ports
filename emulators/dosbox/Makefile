@@ -16,6 +16,8 @@ USES=		cpe sdl
 USE_CXXSTD=	c++14
 USE_SDL=	sdl net sound
 
+PIE_UNSAFE=	yes
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-core-inline
 
