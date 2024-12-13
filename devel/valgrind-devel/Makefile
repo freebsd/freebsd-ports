@@ -27,6 +27,7 @@ GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ENV+=	ac_cv_path_PERL=${PERL}
 
+PIE_UNSAFE=	yes
 SSP_UNSAFE=	yes
 LIB32_PATH?=	/usr/lib32/libc.so
 
