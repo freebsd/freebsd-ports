@@ -1,7 +1,6 @@
 PORTNAME=	freetube
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.22.0-beta
-PORTREVISION=	1
+DISTVERSION=	0.22.1-beta
 CATEGORIES=	www
 MASTER_SITES=	https://github.com/FreeTubeApp/FreeTube/releases/download/${DISTVERSIONFULL}/ \
 		LOCAL/nivit/${PKGNAMEPREFIX}${PORTNAME}/:icons
