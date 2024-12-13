@@ -20,6 +20,8 @@ CPE_VENDOR=	gpsd_project
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	gpsd
 
+PIE_UNSAFE=	yes
+
 MAKE_ARGS=	manbuild=no \
 		mandir="share/man" \
 		pkgconfig="libdata/pkgconfig" \
