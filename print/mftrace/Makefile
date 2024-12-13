@@ -25,6 +25,8 @@ USE_TEX=	base
 GNU_CONFIGURE=	yes
 MAKEFILE=	GNUmakefile
 
+PIE_UNSAFE=	yes
+
 PLIST_FILES=	\
 		bin/gf2pbm \
 		bin/mftrace \
