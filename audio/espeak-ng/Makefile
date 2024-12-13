@@ -1,6 +1,5 @@
 PORTNAME=	espeak-ng
-PORTVERSION=	1.51.1
-PORTREVISION=	5
+PORTVERSION=	1.52.0
 CATEGORIES=	audio
 #MASTER_SITES=	https://github.com/espeak-ng/${PORTNAME}/releases/download/${PORTVERSION}/
 
