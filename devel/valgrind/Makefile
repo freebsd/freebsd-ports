@@ -23,6 +23,7 @@ SHEBANG_FILES=	callgrind/callgrind_annotate.in callgrind/callgrind_control.in \
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	ac_cv_path_PERL=${PERL}
 
+PIE_UNSAFE=	yes
 SSP_UNSAFE=	yes
 LIB32_PATH?=	/usr/lib32/libc.so
 
