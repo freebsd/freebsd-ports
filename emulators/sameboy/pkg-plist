@@ -1,4 +1,5 @@
 bin/sameboy
+bin/sameboy-thumbnailer
 %%LIBRETRO%%lib/libretro/sameboy_libretro.so
 share/applications/sameboy.desktop
 share/icons/hicolor/128x128/apps/sameboy.png
@@ -19,13 +20,20 @@ share/icons/hicolor/512x512/mimetypes/x-gameboy-rom.png
 share/icons/hicolor/64x64/apps/sameboy.png
 share/icons/hicolor/64x64/mimetypes/x-gameboy-color-rom.png
 share/icons/hicolor/64x64/mimetypes/x-gameboy-rom.png
-share/mime/packages/sameboy.xml
+share/mime/sameboy.xml
 @comment %%DATADIR%%/LICENSE
+%%DATADIR%%/Palettes/Canyon.sbp
 %%DATADIR%%/Palettes/Desert.sbp
 %%DATADIR%%/Palettes/Evening.sbp
 %%DATADIR%%/Palettes/Fog.sbp
+%%DATADIR%%/Palettes/Green Slate.sbp
+%%DATADIR%%/Palettes/Green Tea.sbp
+%%DATADIR%%/Palettes/Lavender.sbp
 %%DATADIR%%/Palettes/Magic Eggplant.sbp
+%%DATADIR%%/Palettes/Mystic Blue.sbp
+%%DATADIR%%/Palettes/Pink Pop.sbp
 %%DATADIR%%/Palettes/Radioactive Pea.sbp
+%%DATADIR%%/Palettes/Rose.sbp
 %%DATADIR%%/Palettes/Seaweed.sbp
 %%DATADIR%%/Palettes/Twilight.sbp
 %%DATADIR%%/Shaders/AAOmniScaleLegacy.fsh
@@ -53,3 +61,5 @@ share/mime/packages/sameboy.xml
 %%DATADIR%%/registers.sym
 %%DATADIR%%/sgb2_boot.bin
 %%DATADIR%%/sgb_boot.bin
+share/thumbnailers/sameboy.thumbnailer
+@dir %%DATADIR%%/BootROMs

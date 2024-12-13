@@ -1,7 +1,10 @@
 PORTNAME=	sameboy
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.16.7
+DISTVERSION=	1.0
 CATEGORIES=	emulators games
+
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES=	eadf395de607e5d4bb66dffa90b05d8a36bd4fce.patch:-p1 # Fix BSD install
 
 MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Game Boy and Game Boy Color emulator written in C
@@ -12,11 +15,12 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	rgbds>0:devel/rgbds
 
-USES=		desktop-file-utils gl gmake pkgconfig sdl shared-mime-info
+USES=		desktop-file-utils gl gmake gnome pkgconfig sdl
 USE_GITHUB=	yes
 GH_ACCOUNT=	LIJI32
 GH_PROJECT=	SameBoy
 USE_GL=		gl
+USE_GNOME=	gdkpixbuf2
 USE_SDL=	sdl2
 
 MAKE_ARGS=	FREEDESKTOP=true \
@@ -33,9 +37,6 @@ LIBRETRO_DESC=	Build libretro core
 
 post-build-LIBRETRO-on:
 	@${DO_MAKE_BUILD} -C ${WRKSRC} libretro
-
-post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 post-install-LIBRETRO-on:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/libretro
