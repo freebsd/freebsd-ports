@@ -70,6 +70,8 @@ CONFIGURE_ENV+=	AR=${_AR} RANLIB=${_RANLIB} # for embedded RawTherapee
 CFLAGS+=	-I${LOCALBASE}/include -fPIC ${_OPT_FLAGS}
 LDFLAGS+=	-Wl,--as-needed -lpthread ${_OPT_FLAGS}
 
+PIE_UNSAFE=	yes
+
 .if defined(PACKAGE_BUILDING) && empty(CFLAGS:M-march*) && (${ARCH} == i386 || ${ARCH} == amd64 || ${ARCH} == aarch64)
 # this gets translated to -mtune=generic, see ${WRKSRC}/ProcessorTargets.cmake
 # and as of GCC 8.3, it appears that among FreeBSD's supported architectures,
