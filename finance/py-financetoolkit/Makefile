@@ -1,6 +1,6 @@
 PORTNAME=	financetoolkit
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.9.8
+DISTVERSION=	1.9.9
 CATEGORIES=	finance python
 #MASTER_SITES=	PYPI # no tests
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -29,7 +29,7 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ipykernel>=6.29.5:devel/py-ipykernel@${PY_F
 		${PYTHON_PKGNAMEPREFIX}pytest-timeout>0:devel/py-pytest-timeout@${PY_FLAVOR}
 
 USES=		python
-USE_PYTHON=	pep517 autoplist pytest # 3 errors in tests, see https://github.com/JerBouma/FinanceToolkit/issues/160
+USE_PYTHON=	pep517 autoplist pytest
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	JerBouma
@@ -38,5 +38,7 @@ GH_PROJECT=	FinanceToolkit
 NO_ARCH=	yes
 
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
+
+# tests as of 1.9.9: 3 failed, 277 passed, 6 warnings, 23 errors in 121.72s (0:02:01) # too old pandas is used: https://github.com/JerBouma/FinanceToolkit/issues/160
 
 .include <bsd.port.mk>
