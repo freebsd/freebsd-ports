@@ -499,6 +499,7 @@
     SUBDIR += mrouted
     SUBDIR += mrtparse
     SUBDIR += msend
+    SUBDIR += msgraph
     SUBDIR += msoak
     SUBDIR += mtr
     SUBDIR += multicat
