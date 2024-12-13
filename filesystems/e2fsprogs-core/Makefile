@@ -44,6 +44,8 @@ CFLAGS+=	-Wno-unused-command-line-argument # -D_FILE_OFFSET_BITS=64 # the latter
 MAKE_ARGS+=	pkgconfigdir='${PREFIX}/libdata/pkgconfig'
 MAKE_ENV+=	CHECK_CMD=@true
 
+PIE_UNSAFE=	yes
+
 PORTSCOUT=	ignore:1	# cannot handle the version in the directory
 
 .if !defined(MASTERDIR)
