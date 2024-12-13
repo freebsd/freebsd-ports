@@ -5,7 +5,7 @@ MASTER_SITES=	http://www.steveshipway.org/software/rrd/ \
 		ftp://ftp.oav.oav.net/routers2/
 DISTNAME=	routers2-v${PORTVERSION}
 
-MAINTAINER=	kiwi@oav.net
+MAINTAINER=	kiwi@FreeBSD.org
 COMMENT=	Extensions of routers2 frontend
 WWW=		https://www.steveshipway.org/software/
 

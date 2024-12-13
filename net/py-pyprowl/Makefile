@@ -4,7 +4,7 @@ CATEGORIES=	net python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	kiwi@oav.net
+MAINTAINER=	kiwi@FreeBSD.org
 COMMENT=	Module for sending Prowl notifications
 WWW=		https://github.com/toddrob99/pyprowl
 

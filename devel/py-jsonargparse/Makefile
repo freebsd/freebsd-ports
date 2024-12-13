@@ -4,7 +4,7 @@ CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	kiwi@oav.net
+MAINTAINER=	kiwi@FreeBSD.org
 COMMENT=	Library for creating CLIs
 WWW=		https://github.com/omni-us/jsonargparse
 

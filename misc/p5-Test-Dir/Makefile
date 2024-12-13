@@ -5,7 +5,7 @@ CATEGORIES=	misc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	kiwi@oav.net
+MAINTAINER=	kiwi@FreeBSD.org
 COMMENT=	Test directory attributes
 WWW=		https://metacpan.org/release/Test-Dir
 

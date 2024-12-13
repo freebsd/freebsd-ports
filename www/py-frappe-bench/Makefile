@@ -5,7 +5,7 @@ CATEGORIES=	www python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	kiwi@oav.net
+MAINTAINER=	kiwi@FreeBSD.org
 COMMENT=	Frappe / ERPNext apps setup tool
 WWW=		https://github.com/frappe/bench
 

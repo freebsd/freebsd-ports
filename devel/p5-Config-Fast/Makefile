@@ -5,7 +5,7 @@ CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	kiwi@oav.net
+MAINTAINER=	kiwi@FreeBSD.org
 COMMENT=	Extremely fast configuration file parser
 WWW=		https://metacpan.org/release/Config-Fast
 

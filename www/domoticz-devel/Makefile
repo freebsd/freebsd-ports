@@ -4,7 +4,7 @@ PORTREVISION=	3
 CATEGORIES=	www
 PKGNAMESUFFIX=	-devel
 
-MAINTAINER=	kiwi@oav.net
+MAINTAINER=	kiwi@FreeBSD.org
 COMMENT=	Home Automation System (Development Branch)
 WWW=		https://www.domoticz.com
 

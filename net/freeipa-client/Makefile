@@ -4,7 +4,7 @@ CATEGORIES=	net
 MASTER_SITES=	https://releases.pagure.org/freeipa/
 DISTNAME=	freeipa-${DISTVERSION}
 
-MAINTAINER=	kiwi@oav.net
+MAINTAINER=	kiwi@FreeBSD.org
 COMMENT=	FreeIPA Client tools
 WWW=		https://www.freeipa.org/
 

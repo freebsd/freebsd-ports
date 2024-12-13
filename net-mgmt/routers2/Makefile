@@ -5,7 +5,7 @@ MASTER_SITES=	http://www.steveshipway.org/software/rrd/ \
 		ftp://ftp.oav.oav.net/routers2/
 DISTNAME=	${PORTNAME}-v${PORTVERSION}
 
-MAINTAINER=	kiwi@oav.net
+MAINTAINER=	kiwi@FreeBSD.org
 COMMENT=	Frontend for the MRTG system monitoring software
 WWW=		https://www.steveshipway.org/software/
 
