@@ -6,7 +6,8 @@ MASTER_SITES=	SF
 
 PATCH_SITES=	https://gitweb.gentoo.org/repo/gentoo.git/plain/games-board/pokerth/files/ \
 		https://raw.githubusercontent.com/gentoo/gentoo/master/games-board/pokerth/files/
-PATCHFILES=	pokerth-1.1.2-boost-1.73.patch:-p1
+PATCHFILES=	pokerth-1.1.2-boost-1.73.patch:-p1 \
+		pokerth-1.1.2-boost-1.85.patch:-p1
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Poker game written in C++/Qt
@@ -14,9 +15,6 @@ WWW=		https://www.pokerth.net/
 
 LICENSE=	AGPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
-
-BROKEN=		error: no member named 'directory_string' in 'boost::filesystem::path'
-EXPIRATION_DATE=2025-01-31
 
 LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
 		libmikmod.so:audio/libmikmod \
