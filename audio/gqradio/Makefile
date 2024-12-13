@@ -10,6 +10,9 @@ WWW=		https://gqmpeg.sourceforge.net/radio.html
 
 LICENSE=	GPLv2
 
+DEPRECATED=	BKTR devices are not supported anymore
+EXPIRATION_DATE=	2024-01-13
+
 USES=		gettext gnome pathfix pkgconfig xorg
 USE_GNOME=	gtk20
 USE_XORG=	x11
