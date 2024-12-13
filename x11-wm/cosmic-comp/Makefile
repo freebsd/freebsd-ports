@@ -1,7 +1,7 @@
 PORTNAME=	cosmic-comp
 DISTVERSIONPREFIX=	epoch-
 DISTVERSION=	1.0.0-alpha.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-wm wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -47,6 +47,10 @@ post-patch:
 # /sys by default is a symlink to /usr/src/sys
 	@${REINPLACE_CMD} -e 's,/sys,${LINUXBASE}&,' \
 		${WRKSRC}/src/debug.rs
+# https://github.com/RazrFalcon/fontdb/issues/61
+	@${REINPLACE_CMD} -e 's,/usr/share,${DATADIR:H},' \
+		-e 's,/etc,${LOCALBASE}&,' \
+		${WRKSRC_crate_fontdb}/src/lib.rs
 
 post-install:
 # Install extras similar to ${WRKSRC}/Makefile

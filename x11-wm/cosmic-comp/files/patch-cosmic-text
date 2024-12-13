@@ -1,0 +1,22 @@
+https://github.com/pop-os/cosmic-text/pull/336
+
+--- ../cosmic-text-4fe90bb6126c22f589b46768d7754d65ae300c5e/src/font/fallback/mod.rs.orig	2024-09-23 13:53:29 UTC
++++ ../cosmic-text-4fe90bb6126c22f589b46768d7754d65ae300c5e/src/font/fallback/mod.rs
+@@ -9,7 +9,7 @@ use self::platform::*;
+ 
+ use self::platform::*;
+ 
+-#[cfg(not(any(target_os = "linux", target_os = "macos", target_os = "windows",)))]
++#[cfg(not(any(unix, target_os = "windows")))]
+ #[path = "other.rs"]
+ mod platform;
+ 
+@@ -17,7 +17,7 @@ mod platform;
+ #[path = "macos.rs"]
+ mod platform;
+ 
+-#[cfg(target_os = "linux")]
++#[cfg(all(unix, not(any(target_os = "android", target_os = "macos"))))]
+ #[path = "unix.rs"]
+ mod platform;
+ 
