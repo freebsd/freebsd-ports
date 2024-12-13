@@ -1,7 +1,6 @@
 PORTNAME=	bedrust
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.8.3
-PORTREVISION=	1
+DISTVERSION=	0.8.4
 CATEGORIES=	misc # machine-learning
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -38,19 +37,20 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		avif-serialize-0.8.2 \
 		aws-config-1.5.10 \
 		aws-credential-types-1.2.1 \
-		aws-runtime-1.4.3 \
-		aws-sdk-bedrock-1.61.0 \
-		aws-sdk-bedrockruntime-1.60.0 \
+		aws-runtime-1.4.4 \
+		aws-sdk-bedrock-1.64.0 \
+		aws-sdk-bedrockruntime-1.64.0 \
 		aws-sdk-sso-1.49.0 \
 		aws-sdk-ssooidc-1.50.0 \
 		aws-sdk-sts-1.49.0 \
-		aws-sigv4-1.2.5 \
+		aws-sigv4-1.2.6 \
 		aws-smithy-async-1.2.1 \
 		aws-smithy-eventstream-0.60.5 \
 		aws-smithy-http-0.60.11 \
 		aws-smithy-json-0.60.7 \
+		aws-smithy-json-0.61.1 \
 		aws-smithy-query-0.60.7 \
-		aws-smithy-runtime-1.7.3 \
+		aws-smithy-runtime-1.7.4 \
 		aws-smithy-runtime-api-1.7.3 \
 		aws-smithy-types-1.2.9 \
 		aws-smithy-xml-0.60.9 \
