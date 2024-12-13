@@ -11,6 +11,8 @@ LICENSE=	APACHE20
 
 USES=		gem
 
+PIE_UNSAFE=	yes
+
 .include <bsd.port.options.mk>
 
 .if ${OPSYS} == FreeBSD
