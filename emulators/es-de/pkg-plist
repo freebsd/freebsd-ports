@@ -33,7 +33,7 @@ share/applications/org.es_de.frontend.desktop
 %%DATADIR%%/licenses/ICU
 %%DATADIR%%/licenses/LunaSVG
 %%DATADIR%%/licenses/MAME
-%%DATADIR%%/licenses/Nanum
+%%DATADIR%%/licenses/NanumSquareNeo
 %%DATADIR%%/licenses/NotoEmoji
 %%DATADIR%%/licenses/Ogg
 %%DATADIR%%/licenses/OpenSans
@@ -61,7 +61,7 @@ share/applications/org.es_de.frontend.desktop
 %%DATADIR%%/resources/fonts/DejaVuSans.ttf
 %%DATADIR%%/resources/fonts/DroidSansFallbackFull.ttf
 %%DATADIR%%/resources/fonts/FreeMono.ttf
-%%DATADIR%%/resources/fonts/NanumMyeongjo.ttf
+%%DATADIR%%/resources/fonts/NanumSquareNeo-bRg.ttf
 %%DATADIR%%/resources/fonts/NotoEmoji.ttf
 %%DATADIR%%/resources/fonts/Ubuntu-C.ttf
 %%DATADIR%%/resources/fonts/fontawesome-webfont.ttf
@@ -211,12 +211,16 @@ share/applications/org.es_de.frontend.desktop
 %%DATADIR%%/resources/graphics/textinput_focused.svg
 %%DATADIR%%/resources/graphics/white.png
 %%DATADIR%%/resources/graphics/window_icon_256.png
+%%NLS%%%%DATADIR%%/resources/locale/ca_ES/LC_MESSAGES/ca_ES.mo
+%%NLS%%%%DATADIR%%/resources/locale/de_DE/LC_MESSAGES/de_DE.mo
 %%NLS%%%%DATADIR%%/resources/locale/en_GB/LC_MESSAGES/en_GB.mo
 %%NLS%%%%DATADIR%%/resources/locale/en_US/LC_MESSAGES/en_US.mo
 %%NLS%%%%DATADIR%%/resources/locale/es_ES/LC_MESSAGES/es_ES.mo
 %%NLS%%%%DATADIR%%/resources/locale/fr_FR/LC_MESSAGES/fr_FR.mo
 %%NLS%%%%DATADIR%%/resources/locale/it_IT/LC_MESSAGES/it_IT.mo
 %%NLS%%%%DATADIR%%/resources/locale/ja_JP/LC_MESSAGES/ja_JP.mo
+%%NLS%%%%DATADIR%%/resources/locale/ko_KR/LC_MESSAGES/ko_KR.mo
+%%NLS%%%%DATADIR%%/resources/locale/nl_NL/LC_MESSAGES/nl_NL.mo
 %%NLS%%%%DATADIR%%/resources/locale/pl_PL/LC_MESSAGES/pl_PL.mo
 %%NLS%%%%DATADIR%%/resources/locale/pt_BR/LC_MESSAGES/pt_BR.mo
 %%NLS%%%%DATADIR%%/resources/locale/ro_RO/LC_MESSAGES/ro_RO.mo
