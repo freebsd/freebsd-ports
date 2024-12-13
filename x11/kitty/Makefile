@@ -55,6 +55,8 @@ TEST_TARGET=	test
 CPPFLAGS+=	`pkg-config --cflags epoll-shim-interpose`
 LDFLAGS+=	`pkg-config --libs epoll-shim-interpose`
 
+PIE_UNSAFE=	yes
+
 BINARY_ALIAS=	python3=${PYTHON_CMD} python=${PYTHON_CMD}
 
 BUILD_DIR=	${WRKSRC}/${OPSYS:tl}-package
