@@ -10,7 +10,7 @@ WWW=		https://github.com/KDE/clazy
 LICENSE=	LGPL20
 LICENSE_FILE=	${WRKSRC}/LICENSES/LGPL-2.0-or-later.txt
 
-USES=		cmake llvm:build,run tar:xz
+USES=		cmake llvm:max=18,build,run tar:xz
 
 CMAKE_ARGS=	-DLLVM_ROOT=${LLVM_PREFIX}
 
