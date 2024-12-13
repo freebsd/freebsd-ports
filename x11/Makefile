@@ -640,6 +640,7 @@
     SUBDIR += xscreensaver.app
     SUBDIR += xsel-conrad
     SUBDIR += xset
+    SUBDIR += xseticon
     SUBDIR += xsetroot
     SUBDIR += xsettingsd
     SUBDIR += xskyroot
