@@ -22,7 +22,9 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}in-n-out>=0.1.5:devel/py-in-n-out@${PY_FLAVO
 		${PYTHON_PKGNAMEPREFIX}typing-extensions>0:devel/py-typing-extensions@${PY_FLAVOR}
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}QtPy>0:devel/py-QtPy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}superqt>0:x11-toolkits/py-superqt@${PY_FLAVOR}
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest-qt>0:devel/py-pytest-qt@${PY_FLAVOR}
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest-qt>0:devel/py-pytest-qt@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}fonticon-fontawesome6>0:x11-toolkits/py-fonticon-fontawesome6@${PY_FLAVOR}
+TEST_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}pyconify>0:devel/py-pyconify@${PY_FLAVOR} # optional dependency in x11-toolkits/py-superqt
 
 USES=		python
 USE_PYTHON=	pep517 autoplist pytest # tests crash, see https://github.com/pyapp-kit/app-model/issues/228
