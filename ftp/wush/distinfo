@@ -1,5 +1,5 @@
-TIMESTAMP = 1727996522
-SHA256 (go/ftp_wush/wush-v0.3.0/v0.3.0.mod) = 3169b2fc690f3c7e5a9db52761dec83ab6a16aa4ac53db5e680ced4e16286418
-SIZE (go/ftp_wush/wush-v0.3.0/v0.3.0.mod) = 11866
-SHA256 (go/ftp_wush/wush-v0.3.0/v0.3.0.zip) = 26fd15d4bc2f3fcc90a83831acaaae6b068231aeac8bebaa39c5844161e4a6ea
-SIZE (go/ftp_wush/wush-v0.3.0/v0.3.0.zip) = 188248
+TIMESTAMP = 1734124317
+SHA256 (go/ftp_wush/wush-v0.4.0/v0.4.0.mod) = 2877ae8c25e51f6a65473becd7e80674b21539d367c726e226fbd3b10428fb84
+SIZE (go/ftp_wush/wush-v0.4.0/v0.4.0.mod) = 12454
+SHA256 (go/ftp_wush/wush-v0.4.0/v0.4.0.zip) = 75ed950a65dba8ce7bde3fe322d5ef9d6dbd713622eac1c6a1b1f9b984659b7e
+SIZE (go/ftp_wush/wush-v0.4.0/v0.4.0.zip) = 169279
