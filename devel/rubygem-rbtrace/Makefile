@@ -16,6 +16,8 @@ RUN_DEPENDS=	rubygem-ffi>=1.0.6:devel/rubygem-ffi \
 
 USES=		gem
 
+PIE_UNSAFE=	yes
+
 CONFIGURE_ARGS=	--with-cflags=-Wno-incompatible-function-pointer-types
 
 PLIST_FILES=	bin/rbtrace
