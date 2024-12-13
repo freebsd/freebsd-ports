@@ -52,6 +52,7 @@ CONFIGURE_ARGS+=--with-system-$L \
 		--with-$L-libdir=${LOCALBASE}/lib
 .endfor
 
+PIE_UNSAFE=		yes
 MAKE_JOBS_UNSAFE=	yes
 
 CPPFLAGS=	-I${LOCALBASE}/include/harfbuzz
