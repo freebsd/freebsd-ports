@@ -25,6 +25,7 @@ GH_ACCOUNT=	grehan-freebsd
 USES=		bison gmake
 USE_GCC=	yes:build
 PLIST_FILES=	sbin/grub-bhyve
+PIE_UNSAFE=	yes
 MAKE_JOBS_UNSAFE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-platform=emu CPP="" LEX=${LOCALBASE}/bin/flex \
