@@ -1,5 +1,5 @@
 PORTNAME=	libgdata
-PORTVERSION=	0.18.1
+DISTVERSION=	0.18.1
 PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	GNOME
@@ -11,7 +11,6 @@ WWW=		https://live.gnome.org/libgdata
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	uhttpmock>0:net/uhttpmock
 LIB_DEPENDS=	libsoup-2.4.so:devel/libsoup \
 		libjson-glib-1.0.so:devel/json-glib \
 		libp11-kit.so:security/p11-kit \
@@ -22,5 +21,7 @@ LIB_DEPENDS=	libsoup-2.4.so:devel/libsoup \
 USES=		gettext gnome localbase meson pkgconfig tar:xz vala:build
 USE_GNOME=	glib20 introspection:build libxml2
 USE_LDCONFIG=	yes
+
+MESON_ARGS=	-Dalways_build_tests=false
 
 .include <bsd.port.mk>
