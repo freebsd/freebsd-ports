@@ -360,6 +360,7 @@ MAKE_ENV+=	verbose=1
 
 BINARY_ALIAS=	sed=gsed
 
+PIE_UNSAFE=	yes
 #MAKE_JOBS_UNSAFE=	yes
 
 .include <bsd.port.options.mk>
