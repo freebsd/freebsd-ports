@@ -1,5 +1,5 @@
 PORTNAME=	dipy
-DISTVERSION=	1.9.0
+DISTVERSION=	1.10.0
 CATEGORIES=	science python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,7 +11,8 @@ WWW=		https://dipy.org/
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}meson-python>0:devel/meson-python@${PY_FLAVOR} \
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cython3>0:lang/cython3@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}meson-python>0:devel/meson-python@${PY_FLAVOR} \
 		${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}h5py>=3.1.0:science/py-h5py@${PY_FLAVOR} \
@@ -30,7 +31,7 @@ TEST_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}fury>0:graphics/py-fury@${PY_FLAVOR} \
 TEST_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}cvxpy>0:math/py-cvxpy@${PY_FLAVOR} # "doc" extra dependencies, see dipy/info.py
 
 USES=		python shebangfix
-USE_PYTHON=	pep517 concurrent cython pytest # autoplist is broken: it produces incorrect entries and unnecessary files are also placed under doc/
+USE_PYTHON=	pep517 concurrent pytest # autoplist is broken: it produces incorrect entries and unnecessary files are also placed under doc/
 
 SHEBANG_GLOB=	*.sh *.py
 
