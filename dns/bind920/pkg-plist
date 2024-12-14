@@ -139,6 +139,7 @@ include/isc/getaddresses.h
 include/isc/hash.h
 include/isc/hashmap.h
 include/isc/heap.h
+include/isc/helper.h
 include/isc/hex.h
 include/isc/histo.h
 include/isc/hmac.h
@@ -240,15 +241,15 @@ include/ns/update.h
 include/ns/xfrout.h
 lib/bind/filter-a.so
 lib/bind/filter-aaaa.so
-lib/libdns-9.20.2.so
+lib/libdns-9.20.4.so
 lib/libdns.so
-lib/libisc-9.20.2.so
+lib/libisc-9.20.4.so
 lib/libisc.so
-lib/libisccc-9.20.2.so
+lib/libisccc-9.20.4.so
 lib/libisccc.so
-lib/libisccfg-9.20.2.so
+lib/libisccfg-9.20.4.so
 lib/libisccfg.so
-lib/libns-9.20.2.so
+lib/libns-9.20.4.so
 lib/libns.so
 @comment share/man/man1/arpaname.1.gz
 @comment share/man/man1/delv.1.gz
