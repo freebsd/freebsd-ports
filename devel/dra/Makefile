@@ -1,6 +1,5 @@
 PORTNAME=	dra
-DISTVERSION=	0.6.3
-PORTREVISION=	2
+DISTVERSION=	0.7.0
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -35,9 +34,9 @@ CARGO_CRATES=	adler2-2.0.0 \
 		cc-1.1.15 \
 		cfg-if-1.0.0 \
 		cfg_aliases-0.2.1 \
-		clap-4.5.18 \
-		clap_builder-4.5.18 \
-		clap_complete-4.5.29 \
+		clap-4.5.20 \
+		clap_builder-4.5.20 \
+		clap_complete-4.5.34 \
 		clap_derive-4.5.18 \
 		clap_lex-0.7.0 \
 		colorchoice-1.0.0 \
@@ -50,6 +49,7 @@ CARGO_CRATES=	adler2-2.0.0 \
 		difflib-0.4.0 \
 		displaydoc-0.2.5 \
 		doc-comment-0.3.3 \
+		either-1.13.0 \
 		encode_unicode-0.3.6 \
 		equivalent-1.0.1 \
 		errno-0.3.9 \
@@ -66,6 +66,7 @@ CARGO_CRATES=	adler2-2.0.0 \
 		indicatif-0.17.8 \
 		instant-0.1.12 \
 		io-lifetimes-1.0.2 \
+		itertools-0.13.0 \
 		itoa-1.0.6 \
 		libc-0.2.158 \
 		libz-sys-1.1.20 \
@@ -90,7 +91,7 @@ CARGO_CRATES=	adler2-2.0.0 \
 		predicates-tree-1.0.5 \
 		proc-macro-error-1.0.4 \
 		proc-macro-error-attr-1.0.4 \
-		proc-macro2-1.0.78 \
+		proc-macro2-1.0.89 \
 		quote-1.0.35 \
 		redox_syscall-0.2.10 \
 		regex-1.5.6 \
@@ -104,8 +105,8 @@ CARGO_CRATES=	adler2-2.0.0 \
 		rustls-webpki-0.102.6 \
 		ryu-1.0.6 \
 		same-file-1.0.6 \
-		serde-1.0.210 \
-		serde_derive-1.0.210 \
+		serde-1.0.214 \
+		serde_derive-1.0.214 \
 		serde_json-1.0.99 \
 		shell-words-1.1.0 \
 		shlex-1.3.0 \
@@ -114,7 +115,7 @@ CARGO_CRATES=	adler2-2.0.0 \
 		strsim-0.11.0 \
 		subtle-2.5.0 \
 		syn-1.0.104 \
-		syn-2.0.48 \
+		syn-2.0.86 \
 		tar-0.4.42 \
 		tempfile-3.4.0 \
 		terminal_size-0.1.17 \
