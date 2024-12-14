@@ -1,6 +1,5 @@
 PORTNAME=	cargo-tarpaulin
-DISTVERSION=	0.31.2
-PORTREVISION=	4
+DISTVERSION=	0.31.3
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -43,7 +42,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		bytes-1.6.0 \
 		camino-1.1.6 \
 		cargo-platform-0.1.8 \
-		cargo_metadata-0.18.1 \
+		cargo_metadata-0.19.0 \
 		cc-1.0.97 \
 		cfg-if-1.0.0 \
 		cfg_aliases-0.2.1 \
@@ -77,7 +76,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		futures-task-0.3.30 \
 		futures-util-0.3.30 \
 		gimli-0.28.1 \
-		gimli-0.31.0 \
+		gimli-0.31.1 \
 		git2-0.19.0 \
 		glob-0.3.1 \
 		gzip-header-1.0.0 \
@@ -131,7 +130,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		num_cpus-1.16.0 \
 		object-0.26.2 \
 		object-0.32.2 \
-		object-0.36.3 \
+		object-0.36.5 \
 		once_cell-1.19.0 \
 		openssl-0.10.66 \
 		openssl-macros-0.1.1 \
@@ -143,21 +142,21 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		pin-project-lite-0.2.14 \
 		pin-utils-0.1.0 \
 		pkg-config-0.3.30 \
-		proc-macro2-1.0.86 \
-		procfs-0.16.0 \
-		procfs-core-0.16.0 \
+		proc-macro2-1.0.92 \
+		procfs-0.17.0 \
+		procfs-core-0.17.0 \
 		quick-error-1.2.3 \
-		quick-xml-0.36.1 \
-		quote-1.0.36 \
-		regex-1.10.6 \
+		quick-xml-0.37.1 \
+		quote-1.0.37 \
+		regex-1.11.1 \
 		regex-automata-0.1.10 \
-		regex-automata-0.4.6 \
+		regex-automata-0.4.8 \
 		regex-syntax-0.6.29 \
-		regex-syntax-0.8.3 \
+		regex-syntax-0.8.5 \
 		reqwest-0.11.27 \
 		rustc-demangle-0.1.24 \
 		rustc-hash-1.1.0 \
-		rustc_version-0.4.0 \
+		rustc_version-0.4.1 \
 		rustix-0.38.34 \
 		rustls-pemfile-1.0.4 \
 		rusty-fork-0.3.0 \
@@ -168,9 +167,9 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		security-framework-2.11.0 \
 		security-framework-sys-2.11.0 \
 		semver-1.0.23 \
-		serde-1.0.207 \
-		serde_derive-1.0.207 \
-		serde_json-1.0.124 \
+		serde-1.0.215 \
+		serde_derive-1.0.215 \
+		serde_json-1.0.133 \
 		serde_spanned-0.6.7 \
 		serde_urlencoded-0.7.1 \
 		sharded-slab-0.1.7 \
@@ -180,7 +179,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		stable_deref_trait-1.2.0 \
 		static_assertions-1.1.0 \
 		strsim-0.11.1 \
-		syn-2.0.61 \
+		syn-2.0.82 \
 		sync_wrapper-0.1.2 \
 		system-configuration-0.5.1 \
 		system-configuration-sys-0.5.0 \
@@ -199,9 +198,9 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		toml_datetime-0.6.8 \
 		toml_edit-0.22.20 \
 		tower-service-0.3.2 \
-		tracing-0.1.40 \
-		tracing-attributes-0.1.27 \
-		tracing-core-0.1.32 \
+		tracing-0.1.41 \
+		tracing-attributes-0.1.28 \
+		tracing-core-0.1.33 \
 		tracing-log-0.2.0 \
 		tracing-subscriber-0.3.18 \
 		try-lock-0.2.5 \
