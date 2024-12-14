@@ -274,6 +274,10 @@ libdata/pkgconfig/winpr-tools%%MAJORVERSION%%.pc
 libdata/pkgconfig/winpr%%MAJORVERSION%%.pc
 %%JSON%%%%KEYBOARD_LAYOUT%%share/FreeRDP/KeyboardLayoutMap.json
 %%JSON%%%%TIMEZONE_FILE%%share/WinPR/TimeZoneNameMap.json
+share/applications/sdl-freerdp%%MAJORVERSION%%-file.desktop
+share/applications/sdl-freerdp%%MAJORVERSION%%.desktop
+share/applications/xfreerdp%%MAJORVERSION%%-file.desktop
+share/applications/xfreerdp%%MAJORVERSION%%.desktop
 share/cmake/Modules/FreeRDP-Client%%MAJORVERSION%%/FreeRDP-ClientConfig.cmake
 share/cmake/Modules/FreeRDP-Client%%MAJORVERSION%%/FreeRDP-ClientConfigVersion.cmake
 share/cmake/Modules/FreeRDP-Client%%MAJORVERSION%%/FreeRDP-ClientTargets-%%CMAKE_BUILD_TYPE%%.cmake
@@ -290,6 +294,7 @@ share/cmake/Modules/WinPR-tools%%MAJORVERSION%%/WinPR-toolsConfig.cmake
 share/cmake/Modules/WinPR-tools%%MAJORVERSION%%/WinPR-toolsConfigVersion.cmake
 share/cmake/Modules/WinPR-tools%%MAJORVERSION%%/WinPR-toolsTargets-%%CMAKE_BUILD_TYPE%%.cmake
 share/cmake/Modules/WinPR-tools%%MAJORVERSION%%/WinPR-toolsTargets.cmake
+share/icons/hicolor/scalable/apps/FreeRDP.svg
 %%SDL%%%%MANPAGES%%share/man/man1/sdl-freerdp%%MAJORVERSION%%.1.gz
 %%MANPAGES%%share/man/man1/winpr-hash%%MAJORVERSION%%.1.gz
 %%MANPAGES%%share/man/man1/winpr-makecert%%MAJORVERSION%%.1.gz
@@ -297,4 +302,5 @@ share/cmake/Modules/WinPR-tools%%MAJORVERSION%%/WinPR-toolsTargets.cmake
 %%X11%%%%MANPAGES%%share/man/man1/xfreerdp%%MAJORVERSION%%.1.gz
 %%MANPAGES%%share/man/man7/wlog%%MAJORVERSION%%.7.gz
 @dir include/winpr%%MAJORVERSION%%/CMakeFiles
+@dir include/winpr%%MAJORVERSION%%/cfg
 @dir include/winpr%%MAJORVERSION%%/config
