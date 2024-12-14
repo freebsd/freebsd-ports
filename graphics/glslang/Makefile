@@ -1,5 +1,6 @@
 PORTNAME=	glslang
 DISTVERSION=	15.1.0
+PORTREVISION=	1
 CATEGORIES=	graphics
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -10,6 +11,7 @@ LICENSE=	APACHE20 BSD2CLAUSE BSD3CLAUSE GPLv3+ MIT
 LICENSE_COMB=	multi
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
+BUILD_DEPENDS=	spirv-tools>=2024.4.r2:graphics/spirv-tools
 TEST_DEPENDS=	bash:shells/bash \
 		gmake:devel/gmake
 
