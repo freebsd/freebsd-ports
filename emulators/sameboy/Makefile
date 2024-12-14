@@ -1,10 +1,8 @@
 PORTNAME=	sameboy
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	emulators games
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES=	eadf395de607e5d4bb66dffa90b05d8a36bd4fce.patch:-p1 # Fix BSD install
 
 MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Game Boy and Game Boy Color emulator written in C
