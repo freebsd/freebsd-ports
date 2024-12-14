@@ -3,3 +3,5 @@ SHA256 (hyprwm-hyprcursor-v0.1.10_GH0.tar.gz) = 67e845404164fee4c5694209b3d5f93a
 SIZE (hyprwm-hyprcursor-v0.1.10_GH0.tar.gz) = 26654
 SHA256 (f8e8455e998e.patch) = b72cf7ab70b9c193c62ddcee45e70106ba4b5f26e9aded6fee8b41f7630876d2
 SIZE (f8e8455e998e.patch) = 1028
+SHA256 (2b522b0350ea.patch) = 1a2cd00c853fe2cef4325da1fc71a279b0661a6d16f208a528e5f1897102e368
+SIZE (2b522b0350ea.patch) = 1830
