@@ -1,6 +1,5 @@
 PORTNAME=	openmpi
-DISTVERSION=	5.0.5
-PORTREVISION=	1
+DISTVERSION=	5.0.6
 CATEGORIES=	net parallel
 MASTER_SITES=	https://download.open-mpi.org/release/open-mpi/v${PORTVERSION:R}/
 
