@@ -1,6 +1,7 @@
 PORTNAME=	mate-control-center
 PORTVERSION=	1.28.1
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	sysutils mate
 DIST_SUBDIR=	mate
 
