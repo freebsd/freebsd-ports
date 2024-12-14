@@ -1,9 +1,9 @@
 PORTNAME=	drf-spectacular
-DISTVERSION=	0.27.2
-PORTREVISION=	2
+DISTVERSION=	0.28.0
 CATEGORIES=	www python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	drf_spectacular-${DISTVERSION}
 
 MAINTAINER=	kai@FreeBSD.org
 COMMENT=	Sane/flexible OpenAPI 3 schema generation for Django REST framework
