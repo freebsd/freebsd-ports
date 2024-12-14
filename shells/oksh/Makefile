@@ -1,5 +1,5 @@
 PORTNAME=	oksh
-DISTVERSION=	7.5
+DISTVERSION=	7.6
 PORTEPOCH=	1
 CATEGORIES=	shells
 MASTER_SITES=	https://github.com/ibara/oksh/releases/download/oksh-${DISTVERSION}/
