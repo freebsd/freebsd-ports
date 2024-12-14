@@ -54,7 +54,7 @@ CONFIGURE_ENV=		OPENSSL_CFLAGS="-I ${OPENSSLINC}" \
 			OPENSSL_LIBS="-L ${OPENSSLLIB}"
 # Workaround for:
 #   /usr/bin/ld: error: undefined symbol: SHA512_Update
-MAKE_ARGS=		libutil_ALLOW_UNDEFINED=yes
+MAKE_ARGS=		libutil_ALLOW_UNDEFINED=yes V=s
 # XXX: Tests require the port to be installed on the system. It is not enough
 # to have the port staged.
 TEST_ARGS=		nix_tests="${_PASSING_TESTS}"
