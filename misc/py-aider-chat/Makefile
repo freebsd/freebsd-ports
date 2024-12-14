@@ -1,5 +1,5 @@
 PORTNAME=	aider_chat
-DISTVERSION=	0.65.1
+DISTVERSION=	0.68.0
 CATEGORIES=	misc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -54,7 +54,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}arrow>=1.3:devel/py-arrow@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}streamlit>=1.38:www/py-streamlit@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tiktoken>=0.7.0:textproc/py-tiktoken@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tokenizers>=0.20.0:textproc/py-tokenizers@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}tree-sitter>=0.20,<0.22.2:devel/py-tree-sitter@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}tree-sitter>=0.20,<0.22.2:devel/py-tree-sitter@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}watchfiles>=0:devel/py-watchfiles@${PY_FLAVOR}
 # missing dependencies
 # playwright its a chromium browser automation library
 # watchdog is pulled in by streamlit
