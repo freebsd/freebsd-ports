@@ -1,6 +1,5 @@
 PORTNAME=	cocogitto
-DISTVERSION=	6.1.0
-PORTREVISION=	7
+DISTVERSION=	6.2.0
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -13,37 +12,40 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USES=		cargo
 USE_GITHUB=	yes
 
-CARGO_CRATES=	aho-corasick-1.1.2 \
+CARGO_CRATES=	aho-corasick-1.1.3 \
 		android-tzdata-0.1.1 \
 		android_system_properties-0.1.5 \
-		anstream-0.6.13 \
-		anstyle-1.0.6 \
-		anstyle-parse-0.2.3 \
-		anstyle-query-1.0.2 \
-		anstyle-wincon-3.0.2 \
-		anyhow-1.0.75 \
+		anstream-0.6.14 \
+		anstyle-1.0.7 \
+		anstyle-parse-0.2.4 \
+		anstyle-query-1.0.3 \
+		anstyle-wincon-3.0.3 \
+		anyhow-1.0.93 \
 		assert_cmd-2.0.14 \
-		autocfg-1.1.0 \
+		async-graphql-parser-7.0.11 \
+		async-graphql-value-7.0.11 \
+		autocfg-1.3.0 \
 		bitflags-1.3.2 \
-		bitflags-2.4.2 \
+		bitflags-2.5.0 \
 		block-buffer-0.10.4 \
 		bstr-1.9.1 \
-		bumpalo-3.15.3 \
-		cc-1.0.90 \
+		bumpalo-3.16.0 \
+		bytes-1.8.0 \
+		cc-1.0.97 \
 		cfg-if-1.0.0 \
-		chrono-0.4.35 \
+		chrono-0.4.38 \
 		chrono-tz-0.8.6 \
 		chrono-tz-build-0.2.1 \
-		clap-4.5.2 \
+		clap-4.5.4 \
 		clap_builder-4.5.2 \
-		clap_complete-4.5.1 \
+		clap_complete-4.5.2 \
 		clap_complete_nushell-4.5.1 \
-		clap_derive-4.5.0 \
+		clap_derive-4.5.4 \
 		clap_lex-0.7.0 \
 		clap_mangen-0.2.20 \
-		cmd_lib-1.9.3 \
-		cmd_lib_macros-1.9.3 \
-		colorchoice-1.0.0 \
+		cmd_lib-1.9.4 \
+		cmd_lib_macros-1.9.4 \
+		colorchoice-1.0.1 \
 		colored-2.1.0 \
 		config-0.14.0 \
 		conventional_commit_parser-0.9.4 \
@@ -53,71 +55,81 @@ CARGO_CRATES=	aho-corasick-1.1.2 \
 		crossbeam-epoch-0.9.18 \
 		crossbeam-utils-0.8.19 \
 		crypto-common-0.1.6 \
-		deunicode-1.4.3 \
+		darling-0.20.10 \
+		darling_core-0.20.10 \
+		darling_macro-0.20.10 \
+		deunicode-1.6.0 \
 		diff-0.1.13 \
 		difflib-0.4.0 \
 		digest-0.10.7 \
 		doc-comment-0.3.3 \
+		dyn-clone-1.0.17 \
 		edit-0.1.5 \
-		either-1.10.0 \
+		either-1.11.0 \
+		enumset-1.1.5 \
+		enumset_derive-0.10.0 \
 		env_logger-0.10.2 \
 		equivalent-1.0.1 \
-		errno-0.3.8 \
+		errno-0.3.9 \
 		faccess-0.2.4 \
-		fastrand-2.0.1 \
+		fastrand-2.1.0 \
 		float-cmp-0.9.0 \
 		fnv-1.0.7 \
 		form_urlencoded-1.2.1 \
 		fs_extra-1.3.0 \
 		generic-array-0.14.7 \
-		getrandom-0.2.12 \
-		git2-0.18.2 \
+		getrandom-0.2.15 \
+		git2-0.18.3 \
 		globset-0.4.14 \
 		globwalk-0.8.1 \
-		hashbrown-0.14.3 \
-		heck-0.4.1 \
+		hashbrown-0.14.5 \
+		heck-0.5.0 \
 		hermit-abi-0.3.9 \
 		home-0.5.9 \
 		humansize-2.1.3 \
 		humantime-2.1.0 \
 		iana-time-zone-0.1.60 \
 		iana-time-zone-haiku-0.1.2 \
+		ident_case-1.0.1 \
 		idna-0.5.0 \
 		ignore-0.4.22 \
-		indexmap-2.2.5 \
-		indoc-2.0.4 \
+		indexmap-2.2.6 \
+		indoc-2.0.5 \
 		is-terminal-0.4.12 \
+		is_terminal_polyfill-1.70.0 \
 		itertools-0.12.1 \
-		itoa-1.0.10 \
-		jobserver-0.1.28 \
+		itertools-0.13.0 \
+		itoa-1.0.11 \
+		jobserver-0.1.31 \
 		js-sys-0.3.69 \
 		lazy_static-1.4.0 \
-		libc-0.2.153 \
+		libc-0.2.154 \
 		libgit2-sys-0.16.2+1.7.2 \
 		libm-0.2.8 \
-		libz-sys-1.1.15 \
+		libz-sys-1.1.16 \
 		linux-raw-sys-0.4.13 \
 		log-0.4.21 \
-		memchr-2.7.1 \
+		maplit-1.0.2 \
+		memchr-2.7.2 \
 		minimal-lexical-0.2.1 \
 		nom-7.1.3 \
 		normalize-line-endings-0.3.0 \
-		num-0.4.1 \
-		num-bigint-0.4.4 \
-		num-complex-0.4.5 \
+		num-0.4.3 \
+		num-bigint-0.4.5 \
+		num-complex-0.4.6 \
 		num-integer-0.1.46 \
-		num-iter-0.1.44 \
-		num-rational-0.4.1 \
-		num-traits-0.2.18 \
+		num-iter-0.1.45 \
+		num-rational-0.4.2 \
+		num-traits-0.2.19 \
 		once_cell-1.19.0 \
 		os_pipe-1.1.5 \
-		parse-zoneinfo-0.3.0 \
+		parse-zoneinfo-0.3.1 \
 		pathdiff-0.2.1 \
 		percent-encoding-2.3.1 \
-		pest-2.7.8 \
-		pest_derive-2.7.8 \
-		pest_generator-2.7.8 \
-		pest_meta-2.7.8 \
+		pest-2.7.14 \
+		pest_derive-2.7.10 \
+		pest_generator-2.7.10 \
+		pest_meta-2.7.10 \
 		phf-0.11.2 \
 		phf_codegen-0.11.2 \
 		phf_generator-0.11.2 \
@@ -130,49 +142,71 @@ CARGO_CRATES=	aho-corasick-1.1.2 \
 		pretty_assertions-1.4.0 \
 		proc-macro-error-1.0.4 \
 		proc-macro-error-attr-1.0.4 \
-		proc-macro2-1.0.78 \
+		proc-macro2-1.0.89 \
 		quick-error-1.2.3 \
-		quote-1.0.35 \
+		quote-1.0.36 \
 		rand-0.8.5 \
 		rand_chacha-0.3.1 \
 		rand_core-0.6.4 \
-		regex-1.10.3 \
+		ref-cast-1.0.23 \
+		ref-cast-impl-1.0.23 \
+		regex-1.10.4 \
 		regex-automata-0.4.6 \
-		regex-syntax-0.8.2 \
+		regex-syntax-0.8.3 \
 		roff-0.2.1 \
-		rustix-0.38.31 \
+		rustdoc-types-0.26.0 \
+		rustdoc-types-0.28.1 \
+		rustdoc-types-0.29.1 \
+		rustdoc-types-0.30.0 \
+		rustdoc-types-0.31.0 \
+		rustdoc-types-0.32.2 \
+		rustix-0.38.34 \
 		rusty-forkfork-0.4.0 \
-		ryu-1.0.17 \
+		ryu-1.0.18 \
 		same-file-1.0.6 \
+		schemars-1.0.0-alpha.15 \
+		schemars_derive-1.0.0-alpha.15 \
 		sealed_test-1.0.0 \
 		sealed_test_derive-1.0.0 \
-		semver-1.0.22 \
-		serde-1.0.197 \
-		serde_derive-1.0.197 \
-		serde_json-1.0.114 \
+		semver-1.0.23 \
+		serde-1.0.214 \
+		serde_derive-1.0.214 \
+		serde_derive_internals-0.29.1 \
+		serde_json-1.0.132 \
 		serde_spanned-0.6.5 \
 		sha2-0.10.8 \
 		shell-words-1.1.0 \
 		siphasher-0.3.11 \
 		slug-0.1.5 \
+		smallvec-1.13.2 \
 		speculoos-0.11.0 \
 		stderrlog-0.6.0 \
-		strsim-0.11.0 \
+		strsim-0.11.1 \
 		syn-1.0.109 \
-		syn-2.0.52 \
+		syn-2.0.87 \
 		tempfile-3.10.1 \
 		tera-1.19.1 \
 		termcolor-1.1.3 \
 		termtree-0.4.1 \
-		thiserror-1.0.57 \
-		thiserror-impl-1.0.57 \
+		thiserror-1.0.60 \
+		thiserror-impl-1.0.60 \
 		thread_local-1.1.8 \
 		tinyvec-1.6.0 \
 		tinyvec_macros-0.1.1 \
 		toml-0.5.11 \
-		toml-0.8.10 \
+		toml-0.8.12 \
 		toml_datetime-0.6.5 \
-		toml_edit-0.22.6 \
+		toml_edit-0.22.12 \
+		trustfall-0.8.0 \
+		trustfall-rustdoc-adapter-30.2.0 \
+		trustfall-rustdoc-adapter-32.2.0 \
+		trustfall-rustdoc-adapter-33.2.0 \
+		trustfall-rustdoc-adapter-34.1.0 \
+		trustfall-rustdoc-adapter-35.1.0 \
+		trustfall-rustdoc-adapter-36.1.0 \
+		trustfall_core-0.8.0 \
+		trustfall_derive-0.3.1 \
+		trustfall_rustdoc-0.17.0 \
 		typenum-1.17.0 \
 		ucd-trie-0.1.6 \
 		unic-char-property-0.9.0 \
@@ -197,31 +231,33 @@ CARGO_CRATES=	aho-corasick-1.1.2 \
 		wasm-bindgen-macro-support-0.2.92 \
 		wasm-bindgen-shared-0.2.92 \
 		which-4.4.2 \
-		which-6.0.0 \
+		which-6.0.1 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
-		winapi-util-0.1.6 \
+		winapi-util-0.1.8 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
 		windows-core-0.52.0 \
 		windows-sys-0.48.0 \
 		windows-sys-0.52.0 \
 		windows-targets-0.48.5 \
-		windows-targets-0.52.4 \
+		windows-targets-0.52.5 \
 		windows_aarch64_gnullvm-0.48.5 \
-		windows_aarch64_gnullvm-0.52.4 \
+		windows_aarch64_gnullvm-0.52.5 \
 		windows_aarch64_msvc-0.48.5 \
-		windows_aarch64_msvc-0.52.4 \
+		windows_aarch64_msvc-0.52.5 \
 		windows_i686_gnu-0.48.5 \
-		windows_i686_gnu-0.52.4 \
+		windows_i686_gnu-0.52.5 \
+		windows_i686_gnullvm-0.52.5 \
 		windows_i686_msvc-0.48.5 \
-		windows_i686_msvc-0.52.4 \
+		windows_i686_msvc-0.52.5 \
 		windows_x86_64_gnu-0.48.5 \
-		windows_x86_64_gnu-0.52.4 \
+		windows_x86_64_gnu-0.52.5 \
 		windows_x86_64_gnullvm-0.48.5 \
-		windows_x86_64_gnullvm-0.52.4 \
+		windows_x86_64_gnullvm-0.52.5 \
 		windows_x86_64_msvc-0.48.5 \
-		windows_x86_64_msvc-0.52.4 \
-		winnow-0.6.5 \
+		windows_x86_64_msvc-0.52.5 \
+		winnow-0.6.8 \
+		winsafe-0.0.19 \
 		yansi-0.5.1
 
 PLIST_FILES=	bin/cog
