@@ -1,7 +1,6 @@
 PORTNAME=	audacity
 DISTVERSIONPREFIX=	Audacity-
-DISTVERSION=	3.7.0
-PORTREVISION=	1
+DISTVERSION=	3.7.1
 CATEGORIES=	audio
 MASTER_SITES+=	https://github.com/${PORTNAME}/${PORTNAME}-manual/releases/download/v${DISTVERSION}/:manual
 DISTFILES+=	${PORTNAME}-manual-${DISTVERSION}.tar.gz:manual
@@ -122,6 +121,7 @@ SBSMS_CMAKE_OFF=	-Daudacity_use_sbsms:STRING=off
 SOUNDTOUCH_LIB_DEPENDS=	libSoundTouch.so:audio/soundtouch
 SOUNDTOUCH_CMAKE_ON=	-Daudacity_use_soundtouch:STRING=system
 SOUNDTOUCH_CMAKE_OFF=	-Daudacity_use_soundtouch:STRING=off
+SOUNDTOUCH_BROKEN_OFF=	Disabling soundtouch builds are currently broken due to a bug.
 
 TWOLAME_LIB_DEPENDS=	libtwolame.so:audio/twolame
 TWOLAME_CMAKE_ON=	-Daudacity_use_twolame:STRING=system
