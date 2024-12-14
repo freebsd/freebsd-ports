@@ -1,7 +1,8 @@
 PORTNAME=	moodle
-PORTVERSION=	4.5
+PORTVERSION=	4.5.1
 CATEGORIES=	www education
-MASTER_SITES=	SF/moodle/Moodle/stable405/
+MASTER_SITES=	https://download.moodle.org/download.php/direct/stable405/ \
+		LOCAL/wen
 PKGNAMESUFFIX=	${PKGORIGIN:T:S/moodle//}${PHP_PKGNAMESUFFIX}
 
 MAINTAINER=	wen@FreeBSD.org
@@ -10,8 +11,7 @@ WWW=		https://www.moodle.org/
 
 LICENSE=	GPLv3
 
-CONFLICTS=	moodle41-4.1.[0-9]* moodle42-4.2.[0-9]* moodle43-4.3.[0-9]* \
-		moodle44-4.4.[0-9]*
+CONFLICTS=	moodle41-4.1.[0-9]* moodle43-4.3.[0-9]* moodle44-4.4.[0-9]*
 
 USES=		cpe php:flavors tar:tgz
 USE_PHP=	ctype curl dom exif fileinfo filter gd \
