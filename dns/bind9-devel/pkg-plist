@@ -29,7 +29,6 @@ include/dns/dispatch.h
 include/dns/dlz.h
 include/dns/dlz_dlopen.h
 include/dns/dns64.h
-include/dns/dnsrps.h
 include/dns/dnssec.h
 include/dns/dnstap.h
 include/dns/ds.h
@@ -52,7 +51,6 @@ include/dns/keymgr.h
 include/dns/keystore.h
 include/dns/keytable.h
 include/dns/keyvalues.h
-include/dns/librpz.h
 include/dns/master.h
 include/dns/masterdump.h
 include/dns/message.h
@@ -67,7 +65,6 @@ include/dns/order.h
 include/dns/peer.h
 include/dns/private.h
 include/dns/qp.h
-include/dns/rbt.h
 include/dns/rcode.h
 include/dns/rdata.h
 include/dns/rdataclass.h
@@ -123,6 +120,7 @@ include/isc/buffer.h
 include/isc/commandline.h
 include/isc/condition.h
 include/isc/counter.h
+include/isc/crypto.h
 include/isc/dir.h
 include/isc/dnsstream.h
 include/isc/endian.h
@@ -137,6 +135,7 @@ include/isc/getaddresses.h
 include/isc/hash.h
 include/isc/hashmap.h
 include/isc/heap.h
+include/isc/helper.h
 include/isc/hex.h
 include/isc/histo.h
 include/isc/hmac.h
@@ -236,15 +235,15 @@ include/ns/update.h
 include/ns/xfrout.h
 lib/bind/filter-a.so
 lib/bind/filter-aaaa.so
-lib/libdns-9.21.1.so
+lib/libdns-9.21.3.so
 lib/libdns.so
-lib/libisc-9.21.1.so
+lib/libisc-9.21.3.so
 lib/libisc.so
-lib/libisccc-9.21.1.so
+lib/libisccc-9.21.3.so
 lib/libisccc.so
-lib/libisccfg-9.21.1.so
+lib/libisccfg-9.21.3.so
 lib/libisccfg.so
-lib/libns-9.21.1.so
+lib/libns-9.21.3.so
 lib/libns.so
 @comment share/man/man1/arpaname.1.gz
 @comment share/man/man1/delv.1.gz
