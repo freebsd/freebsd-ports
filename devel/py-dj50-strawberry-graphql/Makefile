@@ -1,5 +1,6 @@
 PORTNAME=	strawberry-graphql
 DISTVERSION=	0.239.2
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}dj50-
@@ -43,7 +44,7 @@ AIOHTTP_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}aiohttp>=3.7.4:www/py-aiohttp@${PY_
 ASGI_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}multipart>=0.0.7:devel/py-multipart@${PY_FLAVOR} \
 				${PYTHON_PKGNAMEPREFIX}starlette>=0.18.0:www/py-starlette@${PY_FLAVOR}
 CHANNELS_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}asgiref>=3.2:www/py-asgiref@${PY_FLAVOR} \
-				${PYTHON_PKGNAMEPREFIX}channels>=3.0.5:www/py-channels@${PY_FLAVOR}
+				${PYTHON_PKGNAMEPREFIX}dj50-channels>=3.0.5:www/py-dj50-channels@${PY_FLAVOR}
 CLI_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}libcst>=1.0.0:devel/py-libcst@${PY_FLAVOR} \
 				${PYTHON_PKGNAMEPREFIX}pygments>=2.3:textproc/py-pygments@${PY_FLAVOR} \
 				${PYTHON_PKGNAMEPREFIX}rich>=12.0.0:textproc/py-rich@${PY_FLAVOR} \
