@@ -1,7 +1,6 @@
 PORTNAME=	kalc
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.3.3
-PORTREVISION=	2
+DISTVERSION=	1.4.1
 CATEGORIES=	math
 PKGNAMESUFFIX=	-calculator
 
@@ -21,7 +20,7 @@ USES=		cargo
 USE_GITHUB=	yes
 GH_ACCOUNT=	bgkillas
 
-CARGO_CRATES=	autocfg-1.3.0 \
+CARGO_CRATES=	autocfg-1.4.0 \
 		az-1.2.1 \
 		bitflags-2.6.0 \
 		cfg-if-1.0.0 \
@@ -29,43 +28,43 @@ CARGO_CRATES=	autocfg-1.3.0 \
 		crossterm_winapi-0.9.1 \
 		dirs-5.0.1 \
 		dirs-sys-0.4.1 \
-		errno-0.3.9 \
-		fastrand-2.1.1 \
+		errno-0.3.10 \
+		fastrand-2.2.0 \
 		getrandom-0.2.15 \
 		gmp-mpfr-sys-1.6.4 \
-		hermit-abi-0.3.9 \
-		libc-0.2.158 \
-		libm-0.2.8 \
+		libc-0.2.167 \
+		libm-0.2.11 \
 		libredox-0.1.3 \
 		linux-raw-sys-0.4.14 \
 		lock_api-0.4.12 \
 		log-0.4.22 \
-		mio-1.0.2 \
+		mio-1.0.3 \
 		option-ext-0.2.0 \
 		parking_lot-0.12.3 \
 		parking_lot_core-0.9.10 \
-		proc-macro2-1.0.86 \
+		proc-macro2-1.0.92 \
 		quote-1.0.37 \
-		redox_syscall-0.5.4 \
+		redox_syscall-0.5.7 \
 		redox_users-0.4.6 \
 		rug-1.26.1 \
-		rustix-0.38.37 \
+		rustix-0.38.41 \
 		scopeguard-1.2.0 \
 		signal-hook-0.3.17 \
 		signal-hook-mio-0.2.4 \
 		signal-hook-registry-1.4.2 \
 		smallvec-1.13.2 \
-		syn-2.0.77 \
+		syn-2.0.90 \
 		term_size-0.3.2 \
-		thiserror-1.0.64 \
-		thiserror-impl-1.0.64 \
-		unicode-ident-1.0.13 \
+		thiserror-1.0.69 \
+		thiserror-impl-1.0.69 \
+		unicode-ident-1.0.14 \
 		wasi-0.11.0+wasi-snapshot-preview1 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
 		windows-sys-0.48.0 \
 		windows-sys-0.52.0 \
+		windows-sys-0.59.0 \
 		windows-targets-0.48.5 \
 		windows-targets-0.52.6 \
 		windows_aarch64_gnullvm-0.48.5 \
