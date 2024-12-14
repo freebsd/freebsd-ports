@@ -1,7 +1,6 @@
 PORTNAME=	swaysettings
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.4.0
-PORTREVISION=	5
+DISTVERSION=	0.5.0
 CATEGORIES=	x11
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -11,17 +10,19 @@ WWW=		https://github.com/ErikReider/SwaySettings
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BUILD_DEPENDS=	blueprint-compiler:devel/blueprint-compiler
 LIB_DEPENDS=	libpulse.so:audio/pulseaudio \
 		libjson-glib-1.0.so:devel/json-glib \
 		libgee-0.8.so:devel/libgee \
+		libgtop-2.0.so:devel/libgtop \
 		libaccountsservice.so:sysutils/accountsservice \
-		libgtk-layer-shell.so:x11-toolkits/gtk-layer-shell \
-		libhandy-1.so:x11-toolkits/libhandy
+		libudisks2.so:sysutils/libudisks \
+		libgtk4-layer-shell.so:x11-toolkits/gtk4-layer-shell
 
-USES=		compiler:c11 gettext gnome localbase:ldflags meson pkgconfig \
+USES=		compiler:c11 gettext gnome meson pkgconfig \
 		python:build shebangfix vala:build
 USE_GITHUB=	yes
-USE_GNOME=	cairo gdkpixbuf2 gtk30 libxml2
+USE_GNOME=	gdkpixbuf2 gtk40 libadwaita libxml2
 GH_ACCOUNT=	ErikReider
 GH_PROJECT=	SwaySettings
 SHEBANG_FILES=	build-aux/meson/postinstall.py
@@ -30,23 +31,19 @@ GLIB_SCHEMAS=	org.erikreider.swaysettings.gschema.xml
 post-patch:
 # Respect PREFIX for images and XKB layouts
 	@${REINPLACE_CMD} 's,/usr/share,${DATADIR:H},' \
-		${WRKSRC}/src/Page/Input_Page.vala \
-		${WRKSRC}/src/Pages/Background/Background_Page.vala \
-		${WRKSRC}/src/Pages/Users/Users.vala
+		${WRKSRC}/src/Settings/Page/InputPage.vala \
+		${WRKSRC}/src/Settings/Pages/Background/BackgroundPage.vala \
+		${WRKSRC}/src/Settings/Pages/Users/Users.vala
 # Drop unused dependency
-	@${REINPLACE_CMD} -e 's/granite/gio-unix-2.0/' \
+	@${REINPLACE_CMD} -e 's/granite-7/gio-unix-2.0/' \
 		${WRKSRC}/src/meson.build
 # Disable Linux-only bluez and rfkill
 	@${REINPLACE_CMD} -e '/Bluetooth/d; /Rfkill/d' \
-		${WRKSRC}/src/meson.build \
-		${WRKSRC}/src/${PORTNAME}.gresource.xml
+		${WRKSRC}/src/Settings/meson.build \
+		${WRKSRC}/src/Settings/Pages/meson.build \
+		${WRKSRC}/data/swaysettings.gresource.xml
 	@${REINPLACE_CMD} -e '/bluetooth-symbolic/d' \
-		-e 's/new Bluetooth_Page.*/null;/' \
-		${WRKSRC}/src/Window/Window.vala
-
-post-configure:
-# XXX https://github.com/ErikReider/SwaySettings/issues/36
-	@${REINPLACE_CMD} -e '/pkg/s/accountsservice/AccountsService-1.0/' \
-		${BUILD_WRKSRC}/build.ninja
+		-e 's/new BluetoothPage.*/null;/' \
+		${WRKSRC}/src/Settings/Window/Window.vala
 
 .include <bsd.port.mk>
