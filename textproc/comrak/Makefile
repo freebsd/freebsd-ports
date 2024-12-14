@@ -1,7 +1,6 @@
 PORTNAME=	comrak
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.29.0
-PORTREVISION=	2
+DISTVERSION=	0.31.0
 CATEGORIES=	textproc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -28,6 +27,8 @@ CARGO_CRATES=	adler-1.0.2 \
 		bit-set-0.5.3 \
 		bit-vec-0.6.3 \
 		bitflags-1.3.2 \
+		bon-3.0.0 \
+		bon-macros-3.0.0 \
 		caseless-0.2.1 \
 		cc-1.0.78 \
 		cfg-if-1.0.0 \
@@ -35,13 +36,10 @@ CARGO_CRATES=	adler-1.0.2 \
 		clap_derive-4.0.21 \
 		clap_lex-0.3.0 \
 		crc32fast-1.3.2 \
-		darling-0.20.8 \
-		darling_core-0.20.8 \
-		darling_macro-0.20.8 \
+		darling-0.20.10 \
+		darling_core-0.20.10 \
+		darling_macro-0.20.10 \
 		derive_arbitrary-1.3.2 \
-		derive_builder-0.20.0 \
-		derive_builder_core-0.20.0 \
-		derive_builder_macro-0.20.0 \
 		deunicode-0.4.5 \
 		deunicode-1.4.4 \
 		emojis-0.6.2 \
@@ -77,15 +75,17 @@ CARGO_CRATES=	adler-1.0.2 \
 		phf_shared-0.11.1 \
 		pkg-config-0.3.26 \
 		plist-1.3.1 \
+		prettyplease-0.2.25 \
 		proc-macro-crate-1.2.1 \
 		proc-macro-error-1.0.4 \
 		proc-macro-error-attr-1.0.4 \
-		proc-macro2-1.0.81 \
+		proc-macro2-1.0.89 \
 		quote-1.0.36 \
 		regex-1.5.5 \
 		regex-syntax-0.6.28 \
 		rustix-0.36.17 \
 		rustix-0.37.27 \
+		rustversion-1.0.17 \
 		ryu-1.0.12 \
 		safemem-0.3.3 \
 		same-file-1.0.6 \
@@ -97,8 +97,9 @@ CARGO_CRATES=	adler-1.0.2 \
 		siphasher-0.3.10 \
 		slug-0.1.4 \
 		strsim-0.10.0 \
+		strsim-0.11.1 \
 		syn-1.0.107 \
-		syn-2.0.60 \
+		syn-2.0.87 \
 		syntect-5.0.0 \
 		termcolor-1.4.1 \
 		terminal_size-0.2.6 \
