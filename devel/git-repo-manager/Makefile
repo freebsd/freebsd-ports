@@ -1,13 +1,12 @@
 PORTNAME=	git-repo-manager
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.7.21
-PORTREVISION=	2
+DISTVERSION=	0.7.22
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Git tool to manage worktrees and integrate with GitHub and GitLab
 WWW=		https://hakoerber.github.io/git-repo-manager/ \
-		https://github.com/hakoerber/git-repo-manager/tags
+		https://github.com/hakoerber/git-repo-manager/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -33,30 +32,31 @@ CARGO_CRATES=	adler2-2.0.0 \
 		base64-0.22.1 \
 		bitflags-2.6.0 \
 		byteorder-1.5.0 \
-		bytes-1.8.0 \
-		cc-1.1.35 \
+		bytes-1.9.0 \
+		cc-1.2.2 \
 		cfg-if-1.0.0 \
-		clap-4.5.20 \
-		clap_builder-4.5.20 \
+		clap-4.5.21 \
+		clap_builder-4.5.21 \
 		clap_derive-4.5.18 \
-		clap_lex-0.7.2 \
+		clap_lex-0.7.3 \
 		colorchoice-1.0.3 \
-		comfy-table-7.1.1 \
+		comfy-table-7.1.3 \
 		console-0.15.8 \
 		crc32fast-1.4.2 \
-		crossterm-0.27.0 \
+		crossterm-0.28.1 \
 		crossterm_winapi-0.9.1 \
 		dirs-5.0.1 \
 		dirs-sys-0.4.1 \
 		displaydoc-0.2.5 \
 		encode_unicode-0.3.6 \
 		equivalent-1.0.1 \
-		flate2-1.0.34 \
+		errno-0.3.10 \
+		flate2-1.0.35 \
 		fnv-1.0.7 \
 		form_urlencoded-1.2.1 \
 		getrandom-0.2.15 \
 		git2-0.19.0 \
-		hashbrown-0.15.1 \
+		hashbrown-0.15.2 \
 		heck-0.5.0 \
 		http-1.1.0 \
 		icu_collections-1.5.0 \
@@ -73,14 +73,15 @@ CARGO_CRATES=	adler2-2.0.0 \
 		idna_adapter-1.2.0 \
 		indexmap-2.6.0 \
 		is_terminal_polyfill-1.70.1 \
-		itoa-1.0.11 \
+		itoa-1.0.14 \
 		jobserver-0.1.32 \
 		lazy_static-1.5.0 \
-		libc-0.2.161 \
+		libc-0.2.167 \
 		libgit2-sys-0.17.0+1.8.1 \
 		libredox-0.1.3 \
 		libssh2-sys-0.3.0 \
 		libz-sys-1.1.20 \
+		linux-raw-sys-0.4.14 \
 		litemap-0.7.3 \
 		lock_api-0.4.12 \
 		log-0.4.22 \
@@ -88,7 +89,7 @@ CARGO_CRATES=	adler2-2.0.0 \
 		miniz_oxide-0.8.0 \
 		once_cell-1.20.2 \
 		openssl-probe-0.1.5 \
-		openssl-src-300.4.0+3.4.0 \
+		openssl-src-300.4.1+3.4.0 \
 		openssl-sys-0.9.104 \
 		option-ext-0.2.0 \
 		outdir-tempdir-0.2.0 \
@@ -98,7 +99,7 @@ CARGO_CRATES=	adler2-2.0.0 \
 		percent-encoding-2.3.1 \
 		pkg-config-0.3.31 \
 		ppv-lite86-0.2.20 \
-		proc-macro2-1.0.89 \
+		proc-macro2-1.0.92 \
 		quote-1.0.37 \
 		rand-0.8.5 \
 		rand_chacha-0.3.1 \
@@ -106,18 +107,19 @@ CARGO_CRATES=	adler2-2.0.0 \
 		redox_syscall-0.5.7 \
 		redox_users-0.4.6 \
 		regex-1.11.1 \
-		regex-automata-0.4.8 \
+		regex-automata-0.4.9 \
 		regex-syntax-0.8.5 \
 		ring-0.17.8 \
-		rustls-0.23.16 \
+		rustix-0.38.41 \
+		rustls-0.23.19 \
 		rustls-pki-types-1.10.0 \
 		rustls-webpki-0.102.8 \
 		rustversion-1.0.18 \
 		ryu-1.0.18 \
 		scopeguard-1.2.0 \
-		serde-1.0.214 \
-		serde_derive-1.0.214 \
-		serde_json-1.0.132 \
+		serde-1.0.215 \
+		serde_derive-1.0.215 \
+		serde_json-1.0.133 \
 		serde_spanned-0.6.8 \
 		serde_yaml-0.9.34+deprecated \
 		shellexpand-3.1.0 \
@@ -129,20 +131,21 @@ CARGO_CRATES=	adler2-2.0.0 \
 		strum-0.26.3 \
 		strum_macros-0.26.4 \
 		subtle-2.6.1 \
-		syn-2.0.87 \
+		syn-2.0.90 \
 		synstructure-0.13.1 \
-		thiserror-1.0.68 \
-		thiserror-impl-1.0.68 \
+		thiserror-1.0.69 \
+		thiserror-impl-1.0.69 \
 		tinystr-0.7.6 \
 		toml-0.8.19 \
 		toml_datetime-0.6.8 \
 		toml_edit-0.22.22 \
-		unicode-ident-1.0.13 \
+		unicode-ident-1.0.14 \
 		unicode-width-0.1.14 \
+		unicode-width-0.2.0 \
 		unsafe-libyaml-0.2.11 \
 		untrusted-0.9.0 \
-		ureq-2.10.1 \
-		url-2.5.3 \
+		ureq-2.11.0 \
+		url-2.5.4 \
 		url-escape-0.1.1 \
 		utf16_iter-1.0.5 \
 		utf8_iter-1.0.4 \
@@ -150,7 +153,7 @@ CARGO_CRATES=	adler2-2.0.0 \
 		uuid-1.11.0 \
 		vcpkg-0.2.15 \
 		wasi-0.11.0+wasi-snapshot-preview1 \
-		webpki-roots-0.26.6 \
+		webpki-roots-0.26.7 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
@@ -178,11 +181,11 @@ CARGO_CRATES=	adler2-2.0.0 \
 		write16-1.0.0 \
 		writeable-0.5.5 \
 		yoke-0.7.4 \
-		yoke-derive-0.7.4 \
+		yoke-derive-0.7.5 \
 		zerocopy-0.7.35 \
 		zerocopy-derive-0.7.35 \
 		zerofrom-0.1.4 \
-		zerofrom-derive-0.1.4 \
+		zerofrom-derive-0.1.5 \
 		zeroize-1.8.1 \
 		zerovec-0.10.4 \
 		zerovec-derive-0.10.3
