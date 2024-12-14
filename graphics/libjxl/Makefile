@@ -5,6 +5,7 @@ PORTREVISION=	1
 CATEGORIES=	graphics
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCH_SITES+=	LOCAL/jbeich/${PORTNAME}_patches # backup
 PATCHFILES+=	d2411cebb0c3.patch:-p1 # https://github.com/libjxl/libjxl/pull/4007
 
 MAINTAINER=	jbeich@FreeBSD.org
