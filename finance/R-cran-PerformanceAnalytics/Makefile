@@ -1,6 +1,5 @@
 PORTNAME=	PerformanceAnalytics
-PORTVERSION=	2.0.4
-PORTREVISION=	2
+PORTVERSION=	2.0.8
 CATEGORIES=	finance
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
@@ -10,11 +9,9 @@ WWW=		https://cran.r-project.org/web/packages/PerformanceAnalytics/
 
 LICENSE=	GPLv2+
 
-CRAN_DEPENDS=	R-cran-xts>=0.10.0:math/R-cran-xts \
-		R-cran-quadprog>0:math/R-cran-quadprog \
+RUN_DEPENDS=	R-cran-quadprog>0:math/R-cran-quadprog \
+		R-cran-xts>=0.10.0:math/R-cran-xts \
 		R-cran-zoo>0:math/R-cran-zoo
-BUILD_DEPENDS=	${CRAN_DEPENDS}
-RUN_DEPENDS=	${CRAN_DEPENDS}
 
 USES=		cran:auto-plist,compiles
 
