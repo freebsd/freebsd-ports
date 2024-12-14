@@ -37,6 +37,7 @@ include/glaze/concepts/container_concepts.hpp
 include/glaze/containers/flat_map.hpp
 include/glaze/core/common.hpp
 include/glaze/core/context.hpp
+include/glaze/core/convert_struct.hpp
 include/glaze/core/custom.hpp
 include/glaze/core/feature_test.hpp
 include/glaze/core/meta.hpp
@@ -72,6 +73,7 @@ include/glaze/glaze.hpp
 include/glaze/glaze_exceptions.hpp
 include/glaze/hardware/volatile_array.hpp
 include/glaze/json.hpp
+include/glaze/json/escape_unicode.hpp
 include/glaze/json/invoke.hpp
 include/glaze/json/json_concepts.hpp
 include/glaze/json/json_format.hpp
@@ -97,10 +99,12 @@ include/glaze/reflection/get_name.hpp
 include/glaze/reflection/to_tuple.hpp
 include/glaze/rpc/repe/header.hpp
 include/glaze/rpc/repe/registry.hpp
-include/glaze/thread/async_map.hpp
 include/glaze/thread/async_string.hpp
 include/glaze/thread/atomic.hpp
+include/glaze/thread/shared_async_map.hpp
+include/glaze/thread/shared_async_vector.hpp
 include/glaze/thread/threadpool.hpp
+include/glaze/thread/value_proxy.hpp
 include/glaze/trace/trace.hpp
 include/glaze/tuplet/tuple.hpp
 include/glaze/util/atoi.hpp
