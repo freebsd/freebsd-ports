@@ -15,6 +15,9 @@ WWW=		https://docs.percona.com/percona-xtrabackup/8.0/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Unsupported upstream, consider migrating to databases/xtrabackup84
+EXPIRATION_DATE=2025-01-31
+
 ONLY_FOR_ARCHS=	amd64 i386
 
 RUN_DEPENDS=	qpress:archivers/qpress
