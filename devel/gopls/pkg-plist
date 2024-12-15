@@ -4,7 +4,6 @@ bin/gopls
 %%PORTDOCS%%%%DOCSDIR%%/doc/analyzers.md
 %%PORTDOCS%%%%DOCSDIR%%/doc/codelenses.md
 %%PORTDOCS%%%%DOCSDIR%%/doc/command-line.md
-%%PORTDOCS%%%%DOCSDIR%%/doc/commands.md
 %%PORTDOCS%%%%DOCSDIR%%/doc/contributing.md
 %%PORTDOCS%%%%DOCSDIR%%/doc/daemon.md
 %%PORTDOCS%%%%DOCSDIR%%/doc/design/architecture.svg
@@ -12,7 +11,15 @@ bin/gopls
 %%PORTDOCS%%%%DOCSDIR%%/doc/design/implementation.md
 %%PORTDOCS%%%%DOCSDIR%%/doc/design/integrating.md
 %%PORTDOCS%%%%DOCSDIR%%/doc/emacs.md
-%%PORTDOCS%%%%DOCSDIR%%/doc/features.md
+%%PORTDOCS%%%%DOCSDIR%%/doc/features/README.md
+%%PORTDOCS%%%%DOCSDIR%%/doc/features/completion.md
+%%PORTDOCS%%%%DOCSDIR%%/doc/features/diagnostics.md
+%%PORTDOCS%%%%DOCSDIR%%/doc/features/modfiles.md
+%%PORTDOCS%%%%DOCSDIR%%/doc/features/navigation.md
+%%PORTDOCS%%%%DOCSDIR%%/doc/features/passive.md
+%%PORTDOCS%%%%DOCSDIR%%/doc/features/templates.md
+%%PORTDOCS%%%%DOCSDIR%%/doc/features/transformation.md
+%%PORTDOCS%%%%DOCSDIR%%/doc/features/web.md
 %%PORTDOCS%%%%DOCSDIR%%/doc/generate/generate.go
 %%PORTDOCS%%%%DOCSDIR%%/doc/generate/generate_test.go
 %%PORTDOCS%%%%DOCSDIR%%/doc/helix.md
@@ -22,6 +29,7 @@ bin/gopls
 %%PORTDOCS%%%%DOCSDIR%%/doc/refactor-inline.md
 %%PORTDOCS%%%%DOCSDIR%%/doc/release/README
 %%PORTDOCS%%%%DOCSDIR%%/doc/release/v0.16.0.md
+%%PORTDOCS%%%%DOCSDIR%%/doc/release/v0.17.0.md
 %%PORTDOCS%%%%DOCSDIR%%/doc/releases.md
 %%PORTDOCS%%%%DOCSDIR%%/doc/semantictokens.md
 %%PORTDOCS%%%%DOCSDIR%%/doc/settings.md
