@@ -10,6 +10,8 @@ MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Native MD5 implementation in Common Lisp
 WWW=		https://www.cliki.net/MD5
 
+LICENSE=	PD
+
 WRKSRC=		${WRKDIR}/${PKGNAMEPREFIX}${PORTNAME}-${DISTVERSION}
 NO_BUILD=	yes
 

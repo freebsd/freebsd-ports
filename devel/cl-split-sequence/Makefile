@@ -12,6 +12,8 @@ MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Partitioning Common Lisp sequences
 WWW=		https://www.cliki.net/SPLIT-SEQUENCE
 
+LICENSE=	PD
+
 WRKSRC=		${WRKDIR}/${PORTNAME}
 NO_BUILD=	yes
 

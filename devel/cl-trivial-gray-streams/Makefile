@@ -9,6 +9,8 @@ MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Thin compatibility layer for Gray streams
 WWW=		https://www.cliki.net/trivial-gray-streams
 
+LICENSE=	MIT
+
 NO_BUILD=	yes
 
 USES=		cl

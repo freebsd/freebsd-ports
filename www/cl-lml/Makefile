@@ -10,6 +10,8 @@ MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Lisp Markup Language
 WWW=		http://lml.b9.com/
 
+LICENSE=	GPLv2
+
 NO_BUILD=	yes
 
 USES=		cl
