@@ -1,5 +1,5 @@
 PORTNAME=	c-ares
-DISTVERSION=	1.34.3
+DISTVERSION=	1.34.4
 CATEGORIES=	dns
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/v${DISTVERSION}/
 
@@ -28,8 +28,5 @@ TEST_TEST_TARGET=	test
 post-patch:
 	@${REINPLACE_CMD} -e 's|ares-test-live.cc||g' \
 		${PATCH_WRKSRC}/test/Makefile.inc
-
-post-install-STATIC-on:
-	@${RLN} libcares_static.a ${STAGEDIR}/${PREFIX}/lib/libcares.a
 
 .include <bsd.port.mk>
