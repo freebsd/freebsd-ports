@@ -1,2 +1,2 @@
 #!/bin/sh
-for i in $(%%GREP%% -o '".*"' %%CARGO_TARGET_DIR%%/%%CARGO_BUILD_TARGET%%/*/build/coreutils-*/out/uutils_map.rs | %%SED%% 's/"//g'| %%SED%% 's/$/ /g'| %%TR%% -d '\n'| %%TR%% -d '\r'); do %%RLN%% %%STAGEDIR%%%%PREFIX%%/bin/%%BINPREFIX%%coreutils %%STAGEDIR%%%%PREFIX%%/bin/%%BINPREFIX%%${i}; done
+for i in $(%%GREP%% -o '".*"' %%CARGO_TARGET_DIR%%/*/build/coreutils-*/out/uutils_map.rs | %%SED%% 's/"//g'| %%SED%% 's/$/ /g'| %%TR%% -d '\n'| %%TR%% -d '\r'); do %%RLN%% %%STAGEDIR%%%%PREFIX%%/bin/%%BINPREFIX%%coreutils %%STAGEDIR%%%%PREFIX%%/bin/%%BINPREFIX%%${i}; done

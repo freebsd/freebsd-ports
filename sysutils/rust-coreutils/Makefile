@@ -27,8 +27,6 @@ post-build:
 		${CARGO_TARGET_DIR}/symlink-install-helper.sh
 	@${REINPLACE_CMD} -e 's|%%CARGO_TARGET_DIR%%|${CARGO_TARGET_DIR}|g' \
 		${CARGO_TARGET_DIR}/symlink-install-helper.sh
-	@${REINPLACE_CMD} -e 's|%%CARGO_BUILD_TARGET%%|${CARGO_BUILD_TARGET}|g' \
-		${CARGO_TARGET_DIR}/symlink-install-helper.sh
 	@${REINPLACE_CMD} -e 's|%%SED%%|${SED}|g' \
 		${CARGO_TARGET_DIR}/symlink-install-helper.sh
 	@${REINPLACE_CMD} -e 's|%%TR%%|${TR}|g' \
