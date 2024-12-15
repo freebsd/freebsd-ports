@@ -1,6 +1,6 @@
 PORTNAME=	libfabric
 DISTVERSION=	1.15.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net
 MASTER_SITES=	https://github.com/ofiwg/${PORTNAME}/releases/download/v${DISTVERSION}/
 
@@ -33,13 +33,17 @@ OPTIONS_DEFAULT=		${OPTIONS_MULTI_PROVIDERS}
 OPTIONS_SUB=			yes
 PROVIDERS_DESC=			Providers to build:
 
-OPTIONS_MULTI_PROVIDERS+=	VERBS
-VERBS_PLIST_FILES=		share/man/man7/fi_verbs.7.gz
-
 .for p in ${OPTIONS_MULTI_PROVIDERS}
 ${p}_DESC=			'${p:tl}' provider
 ${p}_CONFIGURE_ENABLE=		${p:tl}
 .endfor
+
+.include <bsd.port.options.mk>
+
+.if ! ( ${ARCH} == armv7 && ${OSREL:R} >= 14 )
+OPTIONS_MULTI_PROVIDERS+=	VERBS
+VERBS_PLIST_FILES=		share/man/man7/fi_verbs.7.gz
+.endif
 
 SED_WRAP_CLOSE=	{ \
 		i\\\n \
