@@ -3,7 +3,7 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=		3.24.0
 CATEGORIES=		net www benchmarks
 
-MAINTAINER=	egypcio@FreeBSD.org
+MAINTAINER=	rene@FreeBSD.org
 COMMENT=	Next generation OONI Probe CLI
 WWW=		https://ooni.org/about/
 
