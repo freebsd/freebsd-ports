@@ -1,12 +1,12 @@
 PORTNAME=	qmcpack
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.15.0
-PORTREVISION=	6
+DISTVERSION=	3.17.1
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Many-body ab initio Quantum Monte Carlo code for quantum chemistry
-WWW=		https://www.qmcpack.org/
+WWW=		https://www.qmcpack.org/ \
+		https://github.com/QMCPACK/qmcpack
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
