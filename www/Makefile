@@ -108,6 +108,7 @@
     SUBDIR += civetweb
     SUBDIR += ckeditor
     SUBDIR += cl-lml
+    SUBDIR += cl-lml-clisp
     SUBDIR += cl-lml-sbcl
     SUBDIR += clearsilver
     SUBDIR += closure-compiler

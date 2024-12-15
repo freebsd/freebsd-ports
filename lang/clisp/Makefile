@@ -1,6 +1,6 @@
 PORTNAME=	clisp
 PORTVERSION=	2.49.93+
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	lang lisp
 
 MAINTAINER=	kiri@TrueFC.org
@@ -13,6 +13,7 @@ LICENSE_FILE=	${WRKSRC}/GNU-GPL
 LIB_DEPENDS=	libffcall.so:devel/libffcall \
 		libreadline.so:devel/readline \
 		libsigsegv.so:devel/libsigsegv
+RUN_DEPENDS=	cl-freebsd-asdf-init>=0:devel/cl-freebsd-asdf-init
 
 USES=		compiler gettext ghostscript gnome iconv localbase:ldflags
 USE_GCC=	yes

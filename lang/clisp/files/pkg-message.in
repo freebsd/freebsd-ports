@@ -1,6 +1,9 @@
 [
 { type: install
   message: <<EOM
+To work with Common Lisp ports, create ~/.clisprc with this line:
+(load "%%PREFIX%%/etc/cl-freebsd-asdf-init.lisp")
+
 Emacs and Vim editing facilities for CLISP were installed into:
 %%DATADIR%%
 

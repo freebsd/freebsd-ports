@@ -1,0 +1,3 @@
+A native MD5 implementation in Common Lisp.
+
+This package is compiled with CLISP.
