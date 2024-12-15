@@ -42,6 +42,7 @@
     SUBDIR += cinnamon-screensaver
     SUBDIR += cinnamon-session
     SUBDIR += cl-clx
+    SUBDIR += cl-clx-ccl
     SUBDIR += cl-clx-clisp
     SUBDIR += cl-clx-sbcl
     SUBDIR += clip

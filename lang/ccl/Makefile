@@ -1,6 +1,7 @@
 PORTNAME=	ccl
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.13
+PORTREVISION=	1
 CATEGORIES=	lang lisp
 MASTER_SITES+=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/releases/download/v${PORTVERSION}/:bootstrap
 DISTFILES=	freebsdx86.tar.gz:bootstrap
@@ -14,6 +15,8 @@ WWW=		https://www.clozure.com/ccl
 LICENSE=	APACHE20
 
 ONLY_FOR_ARCHS=	amd64
+
+RUN_DEPENDS=	cl-freebsd-asdf-init>=0:devel/cl-freebsd-asdf-init
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	Clozure

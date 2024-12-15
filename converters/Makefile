@@ -16,6 +16,7 @@
     SUBDIR += btoa
     SUBDIR += chmview
     SUBDIR += cl-babel
+    SUBDIR += cl-babel-ccl
     SUBDIR += cl-babel-clisp
     SUBDIR += cl-babel-sbcl
     SUBDIR += cmios9
