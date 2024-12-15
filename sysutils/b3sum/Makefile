@@ -1,9 +1,8 @@
 PORTNAME=	b3sum
-DISTVERSION=	1.5.3
-PORTREVISION=	4
+DISTVERSION=	1.5.5
 CATEGORIES=	sysutils
 
-MAINTAINER=	sec.research.2005@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Command line implementation of the BLAKE3 hash function
 WWW=		https://github.com/BLAKE3-team/BLAKE3
 
