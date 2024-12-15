@@ -17,4 +17,5 @@ lib/pharo10/libSurfacePlugin.so
 lib/pharo10/libTestLibrary.so
 lib/pharo10/libUUIDPlugin.so
 lib/pharo10/libUnixOSProcessPlugin.so
+lib/pharo10/libtty.so
 libexec/pharo10/pharo
