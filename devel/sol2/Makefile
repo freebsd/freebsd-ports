@@ -1,7 +1,7 @@
 PORTNAME=	sol2
 DISTVERSIONPREFIX=	v
 DISTVERSION=	4.0.0-alpha
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -25,6 +25,11 @@ NO_ARCH=	yes
 .if ${CHOSEN_COMPILER_TYPE} == clang && \
 	${COMPILER_VERSION} >= 180 && ${COMPILER_VERSION} < 190
 EXTRA_PATCHES=	${PATCHDIR}/extra-patch-include_sol_function__types__stateless.hpp
+.endif
+
+.if ${CHOSEN_COMPILER_TYPE} == clang && \
+	${COMPILER_VERSION} >= 191
+EXTRA_PATCHES=	${PATCHDIR}/extra-patch-include_sol_optional__implementation.hp
 .endif
 
 .include <bsd.port.post.mk>
