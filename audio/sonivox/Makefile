@@ -1,6 +1,6 @@
 PORTNAME=	sonivox
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.6.14
+DISTVERSION=	3.6.15
 CATEGORIES=	audio
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -21,5 +21,7 @@ GH_ACCOUNT=	pedrolcl
 CXXFLAGS+=	-DO_LARGEFILE=0 # workaround for linuxism in tests
 
 CMAKE_OFF=	BUILD_TESTING
+
+CONFIGURE_ENV=	${MAKE_ENV} TEMP=${BUILD_WRKSRC}
 
 .include <bsd.port.mk>

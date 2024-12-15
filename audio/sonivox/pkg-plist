@@ -10,7 +10,7 @@ lib/cmake/sonivox/sonivox-targets.cmake
 lib/libsonivox-static.a
 lib/libsonivox.so
 lib/libsonivox.so.3
-lib/libsonivox.so.3.6.14.0
+lib/libsonivox.so.3.6.15.0
 libdata/pkgconfig/sonivox-static.pc
 libdata/pkgconfig/sonivox.pc
 share/man/man1/sonivoxrender.1.gz
