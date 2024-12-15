@@ -58,7 +58,7 @@ common_DETECT=		${LOCALBASE}/bin/mate-autogen
 common_BUILD_DEPENDS=	${common_DETECT}:devel/mate-common
 common_RUN_DEPENDS=	${common_DETECT}:devel/mate-common
 
-controlcenter_DETECT=		${LOCALBASE}/libdata/pkgconfig/mate-window-settings-2.0.pc
+controlcenter_DETECT=		${LOCALBASE}/libdata/pkgconfig/mate-default-applications.pc
 controlcenter_BUILD_DEPENDS=	${controlcenter_DETECT}:sysutils/mate-control-center
 controlcenter_LIB_DEPENDS=	libmate-window-settings.so:sysutils/mate-control-center
 controlcenter_RUN_DEPENDS=	${controlcenter_DETECT}:sysutils/mate-control-center
