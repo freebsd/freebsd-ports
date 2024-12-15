@@ -2144,6 +2144,48 @@
     </dates>
   </vuln>
 
+  <vuln vid="3152a474-9390-11ef-87ad-a8a15998b5cb">
+    <topic>halibut -- Segmentation fault, denial of service or possibly other unspecified impact via a crafted text document</topic>
+    <affects>
+      <package>
+	<name>halibut</name>
+	<range><eq>1.2</eq></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>cve@mitre.org reports:</p>
+	<blockquote cite="https://carteryagemann.com/halibut-case-study.html#poc-halibut-text-uaf">
+	  <p>CVE-2021-42612: A use after free in cleanup_index in index.c in Halibut 1.2 allows
+	an attacker to cause a segmentation fault or possibly have other
+	unspecified impact via a crafted text document.</p>
+	</blockquote>
+	<blockquote cite="https://carteryagemann.com/halibut-case-study.html#poc-halibut-winhelp-df">
+	  <p>CVE-2021-42613: A double free in cleanup_index in index.c in Halibut 1.2 allows an
+	attacker to cause a denial of service or possibly have other
+	unspecified impact via a crafted text document.</p>
+	</blockquote>
+	<blockquote cite="https://carteryagemann.com/halibut-case-study.html#poc-halibut-info-uaf">
+	  <p>CVE-2021-42614: A use after free in info_width_internal in bk_info.c in Halibut 1.2
+	allows an attacker to cause a segmentation fault or possibly have
+	unspecified other impact via a crafted text document.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2021-42612</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2021-42612</url>
+      <cvename>CVE-2021-42613</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2021-42613</url>
+      <cvename>CVE-2021-42614</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2021-42614</url>
+    </references>
+    <dates>
+      <discovery>2022-05-24</discovery>
+      <entry>2024-10-26</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="fcb0e00f-d7d3-49b6-a4a1-852528230912">
     <topic>electron31 -- multiple vulnerabilities</topic>
     <affects>
