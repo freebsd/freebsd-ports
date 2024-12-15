@@ -2,13 +2,9 @@
 # being overriden by devel/appstream-qt slave port
 
 PORTNAME?=	AppStream
-DISTVERSION=	1.0.3
-PORTREVISION?=	1
+DISTVERSION=	1.0.4
 CATEGORIES=	devel
 MASTER_SITES=	https://www.freedesktop.org/software/${PORTNAME:tl}/releases/
-
-PATCH_SITES=	https://github.com/ximion/appstream/commit/
-PATCHFILES=	da31a9318e53cf0310637773ca26eaa910782a7d.patch:-p1
 
 MAINTAINER=	desktop@FreeBSD.org
 COMMENT?=	Machine-readable software metadata for desktop environments
@@ -30,7 +26,7 @@ LIB_DEPENDS?=	libcurl.so:ftp/curl \
 USES+=		gettext gnome localbase:ldflags meson pkgconfig \
 		python:build tar:xz vala:build
 
-USE_GNOME+=	glib20 introspection:build libxml2 libxslt:build
+USE_GNOME+=	glib20 libxml2 introspection:build libxslt:build
 USE_LDCONFIG=	yes
 
 MESON_ARGS+=	-Dstemming=true \

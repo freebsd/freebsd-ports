@@ -1,4 +1,5 @@
 include/AppStreamQt%%QT_VER_SUFFIX%%/appstreamqt_export.h
+include/AppStreamQt%%QT_VER_SUFFIX%%/branding.h
 include/AppStreamQt%%QT_VER_SUFFIX%%/bundle.h
 include/AppStreamQt%%QT_VER_SUFFIX%%/category.h
 include/AppStreamQt%%QT_VER_SUFFIX%%/component-box.h
@@ -26,5 +27,5 @@ include/AppStreamQt%%QT_VER_SUFFIX%%/video.h
 lib/cmake/AppStreamQt%%QT_VER_SUFFIX%%/AppStreamQt%%QT_VER_SUFFIX%%Config.cmake
 lib/cmake/AppStreamQt%%QT_VER_SUFFIX%%/AppStreamQt%%QT_VER_SUFFIX%%ConfigVersion.cmake
 lib/libAppStreamQt%%QT_VER_SUFFIX%%.so
-lib/libAppStreamQt%%QT_VER_SUFFIX%%.so.1.0.3
+lib/libAppStreamQt%%QT_VER_SUFFIX%%.so.1.0.4
 lib/libAppStreamQt%%QT_VER_SUFFIX%%.so.3
