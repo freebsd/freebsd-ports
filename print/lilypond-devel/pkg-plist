@@ -219,6 +219,7 @@ share/man/man1/musicxml2ly.1.gz
 %%DATADIR%%/%%DISTVERSION%%/python/__pycache__/book_snippets.cpython-%%PYTHON_SUFFIX%%.pyc
 %%DATADIR%%/%%DISTVERSION%%/python/__pycache__/book_texinfo.cpython-%%PYTHON_SUFFIX%%.pyc
 %%DATADIR%%/%%DISTVERSION%%/python/__pycache__/convertrules.cpython-%%PYTHON_SUFFIX%%.pyc
+%%DATADIR%%/%%DISTVERSION%%/python/__pycache__/dllist%%PYTHON_EXT_SUFFIX%%.pyc
 %%DATADIR%%/%%DISTVERSION%%/python/__pycache__/langdefs.cpython-%%PYTHON_SUFFIX%%.pyc
 %%DATADIR%%/%%DISTVERSION%%/python/__pycache__/lilylib.cpython-%%PYTHON_SUFFIX%%.pyc
 %%DATADIR%%/%%DISTVERSION%%/python/__pycache__/midi.cpython-%%PYTHON_SUFFIX%%.pyc
@@ -235,6 +236,7 @@ share/man/man1/musicxml2ly.1.gz
 %%DATADIR%%/%%DISTVERSION%%/python/book_snippets.py
 %%DATADIR%%/%%DISTVERSION%%/python/book_texinfo.py
 %%DATADIR%%/%%DISTVERSION%%/python/convertrules.py
+%%DATADIR%%/%%DISTVERSION%%/python/dllist.py
 %%DATADIR%%/%%DISTVERSION%%/python/langdefs.py
 %%DATADIR%%/%%DISTVERSION%%/python/lilylib.py
 %%DATADIR%%/%%DISTVERSION%%/python/midi.py
