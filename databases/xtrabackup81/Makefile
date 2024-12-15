@@ -15,6 +15,10 @@ WWW=		https://www.percona.com/doc/percona-xtrabackup/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN=		Fails to build, error: integer value -1 is outside the valid range of values [0, 3] for the enumeration type
+DEPRECATED=	Unsupported upstream, consider migrating to databases/xtrabackup84
+EXPIRATION_DATE=2025-01-31
+
 BUILD_DEPENDS=	protobuf>=3.0:devel/protobuf \
 		rapidjson>=1.1.0:devel/rapidjson \
 		libevent>=2.1:devel/libevent
