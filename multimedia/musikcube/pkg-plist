@@ -61,6 +61,7 @@ include/musikcube/musikcore/sdk/version.h
 %%DATADIR%%/musikcubed
 %%DATADIR%%/plugins/libalsaout.so
 %%DATADIR%%/plugins/libffmpegdecoder.so
+%%DATADIR%%/plugins/libgmedecoder.so
 %%DATADIR%%/plugins/libhttpdatastream.so
 %%DATADIR%%/plugins/libmpris.so
 %%DATADIR%%/plugins/libnullout.so
