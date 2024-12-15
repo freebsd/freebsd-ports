@@ -1,5 +1,6 @@
 PORTNAME=	rl9
 PORTVERSION=	${LINUX_DIST_VER}
+PORTREVISION=	1
 CATEGORIES=	emulators linux
 PKGNAMEPREFIX=	linux_base-
 EXTRACT_ONLY=	${DISTFILES:N*${SRC_SUFX}*:Nf/filesystem-*:C/:[^:]+$//}
@@ -34,6 +35,8 @@ BIN_DISTNAMES=	bash-${bash_ver} \
 		ncurses-${ncurses_ver} \
 		sed-${sed_ver} \
 		setserial-${setserial_ver} \
+		util-linux-${util_ver} \
+		util-linux-core-${util_ver} \
 		which-${which_ver}
 LIB_DISTNAMES=	bzip2-libs-${bzip2_ver} \
 		e2fsprogs-libs-${e2fsprogs_ver} \
@@ -82,9 +85,6 @@ LIB_DISTNAMES=	bzip2-libs-${bzip2_ver} \
 		slang-${slang_ver} \
 		xz-libs-${xz_ver} \
 		zlib-${zlib_ver}
-
-LIB_DISTNAMES_aarch64=	u/util-linux-${util_ver}
-LIB_DISTNAMES_amd64=	u/util-linux-${util_ver}
 
 SHARE_DISTNAMES=basesystem-${basesystem_ver} \
 		ncurses-base-${ncurses_ver} \
@@ -155,7 +155,27 @@ REMOVE_FILES=	bin/chfn bin/chsh bin/findmnt bin/login bin/lsblk bin/lscpu \
 		bin/setpriv bin/su \
 		etc/exports etc/group etc/gshadow etc/motd \
 		etc/passwd etc/printcap etc/protocols etc/services etc/shadow \
-		sbin/clock sbin/debugfs sbin/hwclock sbin/runuser sbin/zramctl
+		sbin/clock sbin/debugfs sbin/hwclock sbin/runuser sbin/zramctl \
+		usr/bin/chrt usr/bin/dmesg usr/bin/flock usr/bin/hardlink \
+		usr/bin/ionice usr/bin/ipcmk usr/bin/ipcrm usr/bin/ipcs usr/bin/kill \
+		usr/bin/logger usr/bin/nsenter usr/bin/renice usr/bin/setsid \
+		usr/bin/taskset usr/bin/unshare usr/sbin/agetty usr/sbin/blkid \
+		usr/sbin/blockdev usr/sbin/fsck usr/sbin/losetup usr/sbin/mkswap \
+		usr/sbin/partx usr/sbin/swapoff usr/sbin/swapon usr/sbin/switch_root \
+		usr/share/man/man1/chrt.1.gz usr/share/man/man1/dmesg.1.gz \
+		usr/share/man/man1/flock.1.gz usr/share/man/man1/hardlink.1.gz \
+		usr/share/man/man1/ionice.1.gz usr/share/man/man1/ipcmk.1.gz \
+		usr/share/man/man1/ipcrm.1.gz usr/share/man/man1/ipcs.1.gz \
+		usr/share/man/man1/kill.1.gz usr/share/man/man1/logger.1.gz \
+		usr/share/man/man1/nsenter.1.gz usr/share/man/man1/renice.1.gz \
+		usr/share/man/man1/setsid.1.gz usr/share/man/man1/taskset.1.gz \
+		usr/share/man/man1/unshare.1.gz usr/share/man/man8/agetty.8.gz \
+		usr/share/man/man8/blkid.8.gz usr/share/man/man8/blockdev.8.gz \
+		usr/share/man/man8/findmnt.8.gz usr/share/man/man8/fsck.8.gz \
+		usr/share/man/man8/losetup.8.gz usr/share/man/man8/mkswap.8.gz \
+		usr/share/man/man8/partx.8.gz usr/share/man/man8/swapoff.8.gz \
+		usr/share/man/man8/swapon.8.gz usr/share/man/man8/switch_root.8.gz
+
 
 .include <bsd.port.options.mk>
 

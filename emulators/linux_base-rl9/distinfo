@@ -1,4 +1,4 @@
-TIMESTAMP = 1732740699
+TIMESTAMP = 1734284630
 SHA256 (rocky/b/basesystem-11-13.el9.0.1.noarch.rpm) = 9f707e8d1046381c9b4a4df6a6674327df6ffe0298d48e1750972212c97aafad
 SIZE (rocky/b/basesystem-11-13.el9.0.1.noarch.rpm) = 6565
 SHA256 (rocky/b/bash-5.1.8-9.el9.aarch64.rpm) = f6b8bbdbd96ecb8d240a4d3c4a038f58faeab170015b07c7096d02157838279d
@@ -353,6 +353,10 @@ SHA256 (rocky/u/util-linux-2.37.4-20.el9.aarch64.rpm) = 19aed3883a7cf679e803c4ce
 SIZE (rocky/u/util-linux-2.37.4-20.el9.aarch64.rpm) = 2294383
 SHA256 (rocky/u/util-linux-2.37.4-20.el9.x86_64.rpm) = f9be4cbe6cb6cbda39ef5d471cd7f4aed50070927ff0259d092ad34d46cc8196
 SIZE (rocky/u/util-linux-2.37.4-20.el9.x86_64.rpm) = 2296252
+SHA256 (rocky/u/util-linux-core-2.37.4-20.el9.aarch64.rpm) = 5707b7c504f04a85ccf95f5f2ac329398dc480356ae7dc5e3b7bcb7559af6479
+SIZE (rocky/u/util-linux-core-2.37.4-20.el9.aarch64.rpm) = 445975
+SHA256 (rocky/u/util-linux-core-2.37.4-20.el9.x86_64.rpm) = f9a570f7927d3371d48b2207dfb2aec3dbe15862b5846e39fadd0f568d6778b9
+SIZE (rocky/u/util-linux-core-2.37.4-20.el9.x86_64.rpm) = 447799
 SHA256 (rocky/w/which-2.21-29.el9.aarch64.rpm) = e9351855af75aac7fb5c53173f262e4f87f400d7a96d48ec100a8d35269a1367
 SIZE (rocky/w/which-2.21-29.el9.aarch64.rpm) = 40717
 SHA256 (rocky/w/which-2.21-29.el9.x86_64.rpm) = c54b2c55264430eee2786fad79bd26c7a7c62204b1f7b568e5f097d850db9688
