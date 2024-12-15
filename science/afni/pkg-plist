@@ -94,6 +94,7 @@ bin/3dFFT
 bin/3dFWHMx
 bin/3dFriedman
 bin/3dGC.R
+bin/3dGLMM.R
 bin/3dGenFeatureDist
 bin/3dGenPriors
 bin/3dGetrow
