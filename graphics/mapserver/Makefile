@@ -1,6 +1,6 @@
 PORTNAME=	mapserver
 DISTVERSION=	8.2.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics www geography
 MASTER_SITES=	https://download.osgeo.org/${PORTNAME}/ \
 		https://github.com/MapServer/MapServer/releases/download/rel-${DISTVERSION:S|.|-|g}/
