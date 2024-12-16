@@ -1,5 +1,5 @@
 PORTNAME=	gotify-server
-PORTVERSION=	2.6.0
+PORTVERSION=	2.6.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net
 MASTER_SITES=	https://github.com/mfechner/freebsd-net-gotify-server/raw/refs/heads/main/:yarn_cache
@@ -65,6 +65,14 @@ post-install:
 	@${ECHO_CMD} "@group gotify" >> ${TMPPLIST}
 	@${ECHO_CMD} "@dir /var/db/gotify" >> ${TMPPLIST}
 	#@${ECHO_CMD} "@dir /var/db/gotify/certs" >> ${TMPPLIST}
+
+# To update
+# 1. comment DISTFILES
+# 2. Run 'make makesum'
+# 3. Uncomment DITSFILES
+# 4. Run 'make make-yarn-cache'
+# 5. Upload yarn cache
+# 6. Run 'make makesum'
 
 make-yarn-cache: patch
 	${RM} -r ${WRKDIR}/yarn-offline-cache
