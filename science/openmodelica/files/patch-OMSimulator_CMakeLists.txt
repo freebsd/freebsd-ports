@@ -1,0 +1,13 @@
+- workaround for https://github.com/OpenModelica/OpenModelica/issues/13415
+
+--- OMSimulator/CMakeLists.txt.orig	2024-12-16 17:36:25 UTC
++++ OMSimulator/CMakeLists.txt
+@@ -68,7 +68,7 @@ add_subdirectory(src/OMSimulatorServer)
+ add_subdirectory(src/OMSimulatorLua)
+ add_subdirectory(src/OMSimulatorPython)
+ add_subdirectory(src/OMSimulatorServer)
+-add_subdirectory(src/pip)
++#add_subdirectory(src/pip)
+ 
+ add_subdirectory(doc)
+ 

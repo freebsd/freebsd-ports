@@ -1,6 +1,6 @@
 PORTNAME=	openmodelica
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.24.2
+DISTVERSION=	1.24.3
 CATEGORIES=	science cad java
 DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 
@@ -20,7 +20,6 @@ LICENSE_PERMS=	auto-accept dist-mirror dist-sell pkg-mirror pkg-sell
 BROKEN_aarch64=	link fails: ld: cannot find -lquadmath: No such file or directory
 BROKEN_armv7=	link fails: ld: cannot find -lquadmath: No such file or directory
 BROKEN_i386=	compilation fails: /wrkdirs/usr/ports/science/openmodelica/work/OpenModelica-1.20.0/OMCompiler/3rdParty/libffi/src/x86/sysv.S:841:1: error: changed section flags for .eh_frame, expected: 0x2
-BROKEN=		fails to build with boost-1.86+
 
 BUILD_DEPENDS=	asciidoc:textproc/asciidoc \
 		autoconf>0:devel/autoconf \
@@ -56,11 +55,11 @@ SHEBANG_GLOB=	*.sh *.in *.ac
 
 GH_TUPLE=	\
 		OpenModelica:OMOptim:f1036f43db18c5015da259771004cfb80e08a110:OpenModelica_OMOptim/OMOptim \
-		OpenModelica:OMSimulator:6ed45ec:OpenModelica_OMSimulator/OMSimulator \
+		OpenModelica:OMSimulator:46fa40f:OpenModelica_OMSimulator/OMSimulator \
 		OpenModelica:OMSimulator-3rdParty:5c10de1648d1134a577d9284b58580a72383d89f:OpenModelica_OMSimulator_3rdParty/OMSimulator/3rdParty \
-		OpenModelica:OMCompiler-3rdParty:82e892e:OpenModelica_OMCompiler_3rdParty/OMCompiler/3rdParty \
-		OpenModelica:OMSens:0d804d5:OpenModelica_OMSens/OMSens \
-		OpenModelica:OMSens_Qt:a392576:OpenModelica_OMSens_Qt/OMSens_Qt \
+		OpenModelica:OMCompiler-3rdParty:4bcf74a:OpenModelica_OMCompiler_3rdParty/OMCompiler/3rdParty \
+		OpenModelica:OMSens:093ad11:OpenModelica_OMSens/OMSens \
+		OpenModelica:OMSens_Qt:bab329a:OpenModelica_OMSens_Qt/OMSens_Qt \
 		OpenModelica:OpenModelica-common:08a01802db5ba5edb540383c46718b89ff229ef2:OpenModelica_OpenModelica_common/OMOptim/common \
 		OpenModelica:OpenModelica-common:08a01802db5ba5edb540383c46718b89ff229ef2:OpenModelica_OpenModelica_common/OMSens_Qt/common
 GH_TUPLE+=	OpenModelica:OMBootstrapping:c289e97c41d00939a4a69fe504961b47283a6d8e:bootstrapping/OMCompiler/Compiler/boot/bomc # downloaded by cmake
