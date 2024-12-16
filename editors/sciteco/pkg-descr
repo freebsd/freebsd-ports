@@ -1,0 +1,5 @@
+SciTECO is an interactive TECO dialect, similar to Video TECO.
+It also adds features from classic Standard TECO-11,
+and incorporates many unique new ideas.
+It is geared towards UNIX-like operating systems but also
+natively supports Microsoft Windows NT.
