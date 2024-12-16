@@ -1,6 +1,5 @@
 PORTNAME=	tpm-key_attestation
-PORTVERSION=	0.12.0
-PORTREVISION=	1
+PORTVERSION=	0.12.1
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 
