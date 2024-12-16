@@ -1,8 +1,8 @@
 PORTNAME=	ossim
-DISTVERSIONPREFIX=v
 DISTVERSION=	2.12.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics geography
+MASTER_SITES=	https://github.com/ossimlabs/${PORTNAME}/releases/download/v${DISTVERSION}/
 
 MAINTAINER=	lbartoletti@FreeBSD.org
 COMMENT=	Powerful suite of geospatial libraries and applications
@@ -11,21 +11,20 @@ WWW=		https://github.com/ossimlabs/ossim
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/git:devel/git
-LIB_DEPENDS=	libgeos.so:graphics/geos \
+LIB_DEPENDS=	libcurl.so:ftp/curl \
+		libfreetype.so:print/freetype2 \
+		libgeos.so:graphics/geos \
 		libgeotiff.so:graphics/libgeotiff \
 		libjsoncpp.so:devel/jsoncpp \
 		libtiff.so:graphics/tiff \
-		libopenjp2.so:graphics/openjpeg \
-		libfreetype.so:print/freetype2 \
-		libOpenThreads.so:graphics/osg34
+		libproj.so:graphics/proj
 
-USES=		cmake compiler:c++11-lang jpeg localbase
-USE_GITHUB=	yes
-GH_ACCOUNT=	ossimlabs
+USES=		cmake compiler:c++17-lang jpeg sqlite
 USE_LDCONFIG=	yes
 
-CMAKE_OFF=	BUILD_OSSIM_APPS
+CMAKE_OFF=	BUILD_OSSIM_APPS \
+		BUILD_OSSIM_ID_SUPPORT
+CMAKE_ON=	CMAKE_DISABLE_FIND_PACKAGE_Git
 CMAKE_ARGS=	-DBUILD_LIBRARY_DIR:STRING=lib \
 		-DLIBSUFFIX:STRING="" \
 		-DINSTALL_ARCHIVE_DIR:STRING=lib \
@@ -35,6 +34,6 @@ CMAKE_ARGS=	-DBUILD_LIBRARY_DIR:STRING=lib \
 OPTIONS_DEFINE=	TEST
 OPTIONS_SUB=	yes
 
-TEST_CMAKE_BOOL=	BUILD_OSSIM_TESTS
+TEST_CMAKE_BOOL=       BUILD_OSSIM_TESTS
 
 .include <bsd.port.mk>
