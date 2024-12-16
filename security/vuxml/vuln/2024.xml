@@ -156,7 +156,8 @@
       </package>
       <package>
 	<name>thunderbird</name>
-	<range><lt>133.0.0</lt></range>
+	<range><lt>128.5</lt></range>
+	<range><ge>129</ge><lt>133</lt></range>
       </package>
     </affects>
     <description>
