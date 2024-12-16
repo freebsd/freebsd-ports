@@ -1,6 +1,7 @@
 PORTNAME=	usockets
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.8.8
+PORTREVISION=	1
 CATEGORIES=	net devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -25,12 +26,18 @@ CXXFLAGS+=	-fPIC
 
 ALL_TARGET=	default
 
+SUB_FILES=	libusockets.pc
+SUB_LISTS=	VERSION=${DISTVERSION}
+
 PLIST_FILES=	include/libusockets.h \
+		lib/libuSockets.so.0 \
 		lib/libuSockets.so
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/src/libusockets.h ${STAGEDIR}${PREFIX}/include
-	${INSTALL_LIB} ${WRKSRC}/libuSockets.so ${STAGEDIR}${PREFIX}/lib
+	${INSTALL_LIB} ${WRKSRC}/libuSockets.so.0 ${STAGEDIR}${PREFIX}/lib
+	${RLN} ${WRKSRC}/libuSockets.so.0 ${STAGEDIR}${PREFIX}/lib/libuSockets.so
+	${INSTALL_DATA} ${WRKDIR}/libusockets.pc ${STAGEDIR}${LOCALBASE}/libdata/pkgconfig
 
 do-test: # tests fail to compile: https://github.com/uNetworking/uSockets/issues/213
 	cd ${WRKSRC} && \
