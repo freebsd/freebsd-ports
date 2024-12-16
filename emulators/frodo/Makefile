@@ -1,5 +1,5 @@
 PORTNAME=	frodo
-PORTVERSION=	4.4
+PORTVERSION=	4.5
 PORTREVISION=	0
 CATEGORIES=	emulators tk
 MASTER_SITES=	http://frodo.cebix.net/downloads/
@@ -12,7 +12,8 @@ WWW=		https://frodo.cebix.net/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		gmake xorg pkgconfig sdl gnome desktop-file-utils
+USES=		gmake xorg pkgconfig sdl gnome \
+		desktop-file-utils shared-mime-info
 USE_XORG=	x11 xt xext sm ice
 USE_SDL=	sdl2
 USE_GNOME=	gtk30 pango cairo gdkpixbuf2 glib20

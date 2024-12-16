@@ -5,8 +5,10 @@ bin/FrodoLite
 share/applications/Frodo.desktop
 share/applications/FrodoLite.desktop
 share/icons/hicolor/128x128/apps/Frodo.png
+share/mime/packages/vnd.cbm-Frodo.xml
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/commandline.html
 %%PORTDOCS%%%%DOCSDIR%%/contact.html
 %%PORTDOCS%%%%DOCSDIR%%/emulwindow.html
 %%PORTDOCS%%%%DOCSDIR%%/files.html
