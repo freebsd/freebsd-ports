@@ -6,7 +6,6 @@ bin/kotlinc-js
 bin/kotlinc-jvm
 %%DATADIR%%/bin/kapt
 %%DATADIR%%/bin/kotlin
-%%DATADIR%%/bin/kotlin-dce-js
 %%DATADIR%%/bin/kotlinc
 %%DATADIR%%/bin/kotlinc-js
 %%DATADIR%%/bin/kotlinc-jvm
