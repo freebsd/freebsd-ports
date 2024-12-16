@@ -1,0 +1,88 @@
+--- configure.orig	2024-07-25 15:24:13 UTC
++++ configure
+@@ -5101,8 +5101,6 @@ case "${host_os}" in
+      ;;
+      dragonfly*|freebsd*)
+      ac_default_prefix=/usr/local
+-     CPPFLAGS=-I/usr/local/include
+-     LDFLAGS=-L/usr/local/lib
+      ;;
+      openbsd*)
+      ac_default_prefix=/usr/local
+@@ -21439,8 +21437,6 @@ printf "%s\n" "yes" >&6; }
+   { printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: yes" >&5
+ printf "%s\n" "yes" >&6; }
+ 
+-printf "%s\n" "#define HAVE_SYSINFO 1" >>confdefs.h
+-
+ else $as_nop
+   { printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: no" >&5
+ printf "%s\n" "no" >&6; }
+@@ -23085,6 +23081,8 @@ printf %s "checking for getifaddrs() support... " >&6;
+ 
+ 	cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */
++ #include <sys/types.h>
++ #include <sys/socket.h>
+  #include <ifaddrs.h>
+ int
+ main (void)
+@@ -31990,6 +31988,8 @@ for ver in ${LUA_VERSIONS:-5.4 5.3 5.2 5.1}; do
+ 
+ for ver in ${LUA_VERSIONS:-5.4 5.3 5.2 5.1}; do
+ 
++vernodot=`echo ${ver} | sed 's/\.//'`
++
+ if test "x${PBX_LUA}" != "x1" -a "${USE_LUA}" != "no"; then
+    pbxlibdir=""
+    # if --with-LUA=DIR has been specified, use it.
+@@ -32004,14 +32004,14 @@ if test "x${PBX_LUA}" != "x1" -a "${USE_LUA}" != "no";
+       ast_ext_lib_check_save_CFLAGS="${CFLAGS}"
+       CFLAGS="${CFLAGS} "
+       as_ac_Lib=`printf "%s\n" "ac_cv_lib_lua${ver}""_luaL_newstate" | $as_tr_sh`
+-{ printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking for luaL_newstate in -llua${ver}" >&5
+-printf %s "checking for luaL_newstate in -llua${ver}... " >&6; }
++{ printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking for luaL_newstate in -llua-${ver}" >&5
++printf %s "checking for luaL_newstate in -llua-${ver}... " >&6; }
+ if eval test \${$as_ac_Lib+y}
+ then :
+   printf %s "(cached) " >&6
+ else $as_nop
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-llua${ver} ${pbxlibdir} -lm $LIBS"
++LIBS="-llua-${ver} ${pbxlibdir} -lm $LIBS"
+ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */
+ 
+@@ -32052,7 +32052,7 @@ fi
+ 
+    # now check for the header.
+    if test "${AST_LUA_FOUND}" = "yes"; then
+-      LUA_LIB="${pbxlibdir} -llua${ver} -lm"
++      LUA_LIB="${pbxlibdir} -llua-${ver} -lm"
+       # if --with-LUA=DIR has been specified, use it.
+       if test "x${LUA_DIR}" != "x"; then
+          LUA_INCLUDE="-I${LUA_DIR}/include"
+@@ -32062,8 +32062,8 @@ fi
+          # check for the header
+          ast_ext_lib_check_saved_CPPFLAGS="${CPPFLAGS}"
+          CPPFLAGS="${CPPFLAGS} ${LUA_INCLUDE}"
+-         as_ac_Header=`printf "%s\n" "ac_cv_header_lua${ver}/lua.h" | $as_tr_sh`
+-ac_fn_c_check_header_compile "$LINENO" "lua${ver}/lua.h" "$as_ac_Header" "$ac_includes_default"
++         as_ac_Header=`printf "%s\n" "ac_cv_header_lua${vernodot}/lua.h" | $as_tr_sh`
++ac_fn_c_check_header_compile "$LINENO" "lua${vernodot}/lua.h" "$as_ac_Header" "$ac_includes_default"
+ if eval test \"x\$"$as_ac_Header"\" = x"yes"
+ then :
+   LUA_HEADER_FOUND=1
+@@ -32090,9 +32090,9 @@ fi
+ 
+ 	if test "x${PBX_LUA}" = "x1" ; then
+ 		if test x"${LUA_DIR}" = x; then
+-			LUA_INCLUDE="${LUA_INCLUDE} -I/usr/include/lua${ver}"
++			LUA_INCLUDE="${LUA_INCLUDE} -I/usr/include/lua${vernodot}"
+ 		else
+-			LUA_INCLUDE="${LUA_INCLUDE} -I${LUA_DIR}/lua${ver}"
++			LUA_INCLUDE="${LUA_INCLUDE} -I${LUA_DIR}/lua${vernodot}"
+ 		fi
+ 		break;
+ 	fi
