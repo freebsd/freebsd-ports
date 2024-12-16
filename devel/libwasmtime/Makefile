@@ -11,7 +11,7 @@ WWW=		https://wasmtime.dev/
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-NOT_FOR_ARCHS=	i386
+NOT_FOR_ARCHS=	armv7 i386
 NOT_FOR_ARCHS_REASON=	build currently failing
 
 LIB_DEPENDS=	libzstd.so:archivers/zstd
