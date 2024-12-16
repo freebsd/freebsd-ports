@@ -1,6 +1,7 @@
 PORTNAME=	wazuh
 DISTVERSIONPREFIX=	v
 DISTVERSION=	4.9.2
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	https://packages.wazuh.com/deps/30/libraries/sources/:wazuh_sources \
 		LOCAL/acm/${PORTNAME}/:wazuh_cache
@@ -389,11 +390,11 @@ do-install:
 		${MAKE_CMD} --quiet -C api install INSTALLDIR=${STAGEDIR}${WAZUHPREFIX}
 
 	@cd ${STAGEDIR}${WAZUHPREFIX}/framework/python/lib && \
-		${STAGEDIR}${WAZUHPREFIX}/framework/python/bin/python3 -m compileall -x 'bad_coding|badsyntax|lib2to3/tests/data' -f -p ${WAZUHPREFIX}/framework/python/lib/ "python3.11"
+		${STAGEDIR}${WAZUHPREFIX}/framework/python/bin/python3 -m compileall -x 'bad_coding|badsyntax|lib2to3/tests/data' -f -p ${WAZUHPREFIX}/framework/python/lib/ "${PYTHON_VERSION}"
 	@cd ${STAGEDIR}${WAZUHPREFIX}/framework/python/lib && \
-		${STAGEDIR}${WAZUHPREFIX}/framework/python/bin/python3 -O -m compileall -x 'bad_coding|badsyntax|lib2to3/tests/data' -f -p ${WAZUHPREFIX}/framework/python/lib/ "python3.11"
+		${STAGEDIR}${WAZUHPREFIX}/framework/python/bin/python3 -O -m compileall -x 'bad_coding|badsyntax|lib2to3/tests/data' -f -p ${WAZUHPREFIX}/framework/python/lib/ "${PYTHON_VERSION}"
 	@cd ${STAGEDIR}${WAZUHPREFIX}/framework/python/lib && \
-		${STAGEDIR}${WAZUHPREFIX}/framework/python/bin/python3 -OO -m compileall -x 'bad_coding|badsyntax|lib2to3/tests/data' -f -p ${WAZUHPREFIX}/framework/python/lib/ "python3.11"
+		${STAGEDIR}${WAZUHPREFIX}/framework/python/bin/python3 -OO -m compileall -x 'bad_coding|badsyntax|lib2to3/tests/data' -f -p ${WAZUHPREFIX}/framework/python/lib/ "${PYTHON_VERSION}"
 
 	${MKDIR} ${STAGEDIR}${WAZUHPREFIX}/packages_files/manager_installation_scripts/etc/templates
 	${MKDIR} ${STAGEDIR}${WAZUHPREFIX}/packages_files/manager_installation_scripts/databases
@@ -411,8 +412,12 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/src/os_dbd/mysql.schema ${STAGEDIR}${WAZUHPREFIX}/packages_files/manager_installation_scripts/databases
 	${INSTALL_DATA} ${WRKSRC}/src/os_dbd/postgresql.schema ${STAGEDIR}${WAZUHPREFIX}/packages_files/manager_installation_scripts/databases
 
+	@${FIND} ${STAGEDIR}${WAZUHPREFIX}/framework/python/lib/${PYTHON_VERSION}/site-packages/numpy/distutils/ -type f -name "*.bak" -delete -o -name "*.orig" -delete
+	@${RM} ${STAGEDIR}${WAZUHPREFIX}/framework/python/lib/${PYTHON_VERSION}/site-packages/numpy/f2py/tests/src/temp
+	@${RM} ${STAGEDIR}${WAZUHPREFIX}/framework/python/lib/${PYTHON_VERSION}/site-packages/numpy/core/tests/examples/temp
+
 post-install:
-	@${STRIP_CMD} ${STAGEDIR}${WAZUHPREFIX}/framework/python/bin/python3.11
+	@${STRIP_CMD} ${STAGEDIR}${WAZUHPREFIX}/framework/python/bin/${PYTHON_VERSION}
 	@${FIND} ${STAGEDIR}${WAZUHPREFIX}/framework -type f -name "*.so" -exec ${STRIP_CMD} "{}" \;
 .for FILE in ${WZSHEBANG_FILES}
 	@${REINPLACE_CMD} -i "" -e 's|${STAGEDIR}||g' ${STAGEDIR}${WAZUHPREFIX}/framework/python/bin/${FILE}

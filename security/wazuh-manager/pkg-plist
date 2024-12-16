@@ -15076,7 +15076,6 @@
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/numpy/core/tests/examples/limited_api/__pycache__/setup%%PYTHON_EXT_SUFFIX%%.pyc
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/numpy/core/tests/examples/limited_api/limited_api.c
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/numpy/core/tests/examples/limited_api/setup.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/numpy/core/tests/examples/temp
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/numpy/core/tests/test__exceptions.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/numpy/core/tests/test_abc.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/numpy/core/tests/test_api.py
@@ -15240,7 +15239,6 @@
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/numpy/distutils/checks/cpu_avx512_knm.c
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/numpy/distutils/checks/cpu_avx512_skx.c
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/numpy/distutils/checks/cpu_avx512_spr.c
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/numpy/distutils/checks/cpu_avx512_spr.c.orig
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/numpy/distutils/checks/cpu_avx512cd.c
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/numpy/distutils/checks/cpu_avx512f.c
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/numpy/distutils/checks/cpu_f16c.c
@@ -15347,10 +15345,8 @@
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/numpy/distutils/core.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/numpy/distutils/cpuinfo.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/numpy/distutils/exec_command.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/numpy/distutils/exec_command.py.orig
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/numpy/distutils/extension.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/numpy/distutils/fcompiler/__init__.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/numpy/distutils/fcompiler/__init__.py.orig
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/numpy/distutils/fcompiler/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/numpy/distutils/fcompiler/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/numpy/distutils/fcompiler/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.pyc
@@ -15418,8 +15414,6 @@
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/numpy/distutils/fcompiler/fujitsu.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/numpy/distutils/fcompiler/g95.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/numpy/distutils/fcompiler/gnu.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/numpy/distutils/fcompiler/gnu.py.bak
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/numpy/distutils/fcompiler/gnu.py.orig
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/numpy/distutils/fcompiler/hpux.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/numpy/distutils/fcompiler/ibm.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/numpy/distutils/fcompiler/intel.py
@@ -15448,8 +15442,6 @@
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/numpy/distutils/pathccompiler.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/numpy/distutils/setup.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/numpy/distutils/system_info.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/numpy/distutils/system_info.py.bak
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/numpy/distutils/system_info.py.orig
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/numpy/distutils/tests/__init__.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/numpy/distutils/tests/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/numpy/distutils/tests/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
@@ -15619,7 +15611,6 @@
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/numpy/f2py/crackfortran.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/numpy/f2py/diagnose.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/numpy/f2py/f2py2e.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/numpy/f2py/f2py2e.py.orig
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/numpy/f2py/f90mod_rules.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/numpy/f2py/func2subr.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/numpy/f2py/rules.py
@@ -15805,7 +15796,6 @@
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/numpy/f2py/tests/src/string/gh25286_bc.pyf
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/numpy/f2py/tests/src/string/scalar_string.f90
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/numpy/f2py/tests/src/string/string.f
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/numpy/f2py/tests/src/temp
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/numpy/f2py/tests/src/value_attrspec/gh21665.f90
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/numpy/f2py/tests/test_abstract_interface.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/numpy/f2py/tests/test_array_from_pyobj.py
@@ -30889,7 +30879,7 @@
 /var/ossec/packages_files/manager_installation_scripts/sca/debian/cis_debian9.yml.disabled
 /var/ossec/packages_files/manager_installation_scripts/sca/freebsd/cis_freebsd12.yml.disabled
 /var/ossec/packages_files/manager_installation_scripts/sca/freebsd/cis_freebsd13.yml.disabled
-/var/ossec/packages_files/manager_installation_scripts/sca/freebsd/cis_%%PYTHON_PLATFORM%%.yml.disabled
+/var/ossec/packages_files/manager_installation_scripts/sca/freebsd/cis_freebsd14.yml.disabled
 /var/ossec/packages_files/manager_installation_scripts/sca/freebsd/cis_freebsd15.yml.disabled
 /var/ossec/packages_files/manager_installation_scripts/sca/generic/sca_unix_audit.yml.disabled
 /var/ossec/packages_files/manager_installation_scripts/sca/hpux/cis_hpux_11i.yml.disabled
@@ -31272,7 +31262,7 @@
 /var/ossec/ruleset/sca/cis_debian9.yml.disabled
 /var/ossec/ruleset/sca/cis_freebsd12.yml.disabled
 /var/ossec/ruleset/sca/cis_freebsd13.yml.disabled
-/var/ossec/ruleset/sca/cis_%%PYTHON_PLATFORM%%.yml.disabled
+/var/ossec/ruleset/sca/cis_freebsd14.yml.disabled
 /var/ossec/ruleset/sca/cis_freebsd15.yml.disabled
 /var/ossec/ruleset/sca/cis_hpux_11i.yml.disabled
 /var/ossec/ruleset/sca/cis_hpux_11i_bastille.yml.disabled
