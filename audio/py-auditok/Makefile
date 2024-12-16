@@ -1,5 +1,5 @@
 PORTNAME=	auditok
-DISTVERSION=	0.2.0
+DISTVERSION=	0.3.0
 CATEGORIES=	audio python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,7 +11,6 @@ WWW=		https://github.com/amsehili/auditok/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-# dependencies aren't listed in setup.py and pyproject.toml, see https://github.com/amsehili/auditok/issues/46
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}matplotlib>0:math/py-matplotlib@${PY_FLAVOR} \
 		${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}pyaudio>0:audio/py-pyaudio@${PY_FLAVOR} \
@@ -22,5 +21,7 @@ USES=		python
 USE_PYTHON=	distutils concurrent autoplist pytest
 
 NOARCH=		yes
+
+# tests as of auditok: 7 failed, 608 passed, 218 warnings in 23.05s (failures likely to numpy-1.x while numpy-2.x would possibly work)
 
 .include <bsd.port.mk>
