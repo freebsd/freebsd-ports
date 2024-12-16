@@ -1,3 +1,30 @@
+  <vuln vid="ef56065e-81fe-4731-a1e3-606c55925bef">
+    <topic>zeek -- potential DoS vulnerability</topic>
+    <affects>
+      <package>
+	<name>zeek</name>
+	<range><lt>7.0.5</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Tim Wojtulewicz of Corelight reports:</p>
+	<blockquote cite="https://github.com/zeek/zeek/releases/tag/v7.0.5">
+	  <p> Large QUIC packets can cause Zeek to overflow memory
+	  and potentially crash. Due to the possibility of receiving
+	  these packets from remote hosts, this is a DoS risk. </p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <url>https://github.com/zeek/zeek/releases/tag/v7.0.5</url>
+    </references>
+    <dates>
+      <discovery>2024-12-16</discovery>
+      <entry>2024-12-16</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="275ac414-b847-11ef-9877-2cf05da270f3">
     <topic>Gitlab -- Vulnerabilities</topic>
     <affects>
