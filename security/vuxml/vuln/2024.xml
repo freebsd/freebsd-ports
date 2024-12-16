@@ -1,3 +1,50 @@
+  <vuln vid="71f3e9f0-bafc-11ef-885d-901b0e934d69">
+    <topic>py-matrix-synapse -- multiple vulnerabilities in versions prior to 1.120.1</topic>
+    <affects>
+      <package>
+	<name>py38-matrix-synapse</name>
+	<name>py39-matrix-synapse</name>
+	<name>py310-matrix-synapse</name>
+	<name>py311-matrix-synapse</name>
+	<range><lt>1.120.1</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+		<p>element-hq/synapse developers report:</p>
+	<blockquote cite="https://github.com/element-hq/synapse/releases/tag/v1.120.2">
+		<p>[The 1.120.1] release fixes multiple security
+		vulnerabilities, some affecting all prior versions of
+		Synapse. Server administrators are encouraged to
+		update Synapse as soon as possible. We are not aware
+		of these vulnerabilities being exploited in the
+		wild.</p>
+		<p>Administrators who are unable to update Synapse may
+		use the workarounds described in the linked GitHub
+		Security Advisory below.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2024-52805</cvename>
+      <url>https://github.com/element-hq/synapse/security/advisories/GHSA-rfq8-j7rh-8hf2</url>
+      <cvename>CVE-2024-52815</cvename>
+      <url>https://github.com/element-hq/synapse/security/advisories/GHSA-f3r3-h2mq-hx2h</url>
+      <cvename>CVE-2024-53863</cvename>
+      <url>https://github.com/element-hq/synapse/security/advisories/GHSA-vp6v-whfm-rv3g</url>
+      <cvename>CVE-2024-53867</cvename>
+      <url>https://github.com/element-hq/synapse/security/advisories/GHSA-56w4-5538-8v8h</url>
+      <cvename>CVE-2024-37302</cvename>
+      <url>https://github.com/element-hq/synapse/security/advisories/GHSA-4mhg-xv73-xq2x</url>
+      <cvename>CVE-2024-37303</cvename>
+      <url>https://github.com/element-hq/synapse/security/advisories/GHSA-gjgr-7834-rhxr</url>
+    </references>
+    <dates>
+      <discovery>2024-12-03</discovery>
+      <entry>2024-12-15</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="ef56065e-81fe-4731-a1e3-606c55925bef">
     <topic>zeek -- potential DoS vulnerability</topic>
     <affects>
