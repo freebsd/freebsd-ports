@@ -1,5 +1,5 @@
 PORTNAME=	appjail
-DISTVERSION=	3.5.0.20241209
+DISTVERSION=	3.5.0.20241212
 PORTEPOCH=	1
 CATEGORIES=	sysutils
 PKGNAMESUFFIX=	-devel
@@ -16,7 +16,7 @@ CONFLICTS=	appjail
 USE_GITHUB=	yes
 GH_ACCOUNT=	DtxdF
 GH_PROJECT=	AppJail
-GH_TAGNAME=	8749fa9abf684895345293612c207df901c70e07
+GH_TAGNAME=	4b5095673b23159c4a789a4916a23ac9ed5ea439
 
 MAKE_ARGS=	APPJAIL_VERSION=${DISTVERSION}+${GH_TAGNAME}
 ALL_TARGET=	utils-strip
@@ -25,14 +25,17 @@ SUB_FILES=	pkg-message
 
 PORTDOCS=	README.md
 
-OPTIONS_DEFINE=			DEBOOTSTRAP DOAS DOCS GIT
+OPTIONS_DEFINE=			DEBOOTSTRAP DOAS DOCS GIT OCI
 
 DEBOOTSTRAP_DESC=		Support for Debian and Ubuntu jails
 DOAS_DESC=			Add support for unprivileged users
+OCI_DESC=			Add support for OCI
 
 DEBOOTSTRAP_RUN_DEPENDS=	debootstrap>0:sysutils/debootstrap
 DOAS_RUN_DEPENDS=		doas>0:security/doas
 GIT_RUN_DEPENDS=		git>0:devel/git
+OCI_RUN_DEPENDS=		buildah>0:sysutils/buildah \
+				jq>0:textproc/jq
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}/${DOCSDIR}
