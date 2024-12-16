@@ -8,6 +8,7 @@ bin/dijkstra
 bin/dot
 bin/dot2gxl
 bin/dot_builtins
+bin/dot_sandbox
 bin/edgepaint
 bin/fdp
 bin/gc
@@ -463,6 +464,7 @@ share/man/man1/diffimg.1.gz
 share/man/man1/dijkstra.1.gz
 share/man/man1/dot.1.gz
 share/man/man1/dot2gxl.1.gz
+share/man/man1/dot_sandbox.1.gz
 share/man/man1/edgepaint.1.gz
 share/man/man1/fdp.1.gz
 share/man/man1/gc.1.gz

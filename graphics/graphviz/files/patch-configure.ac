@@ -1,6 +1,6 @@
---- configure.ac.orig	2024-11-03 19:33:36 UTC
+--- configure.ac.orig	2024-12-06 23:55:56 UTC
 +++ configure.ac
-@@ -731,13 +731,13 @@ else
+@@ -730,13 +730,13 @@ else
  	        for l in "$lua_suffix" "" "54" "5.4" "53" "5.3" "52" "5.2" "51" "5.1" ; do
  	            pkgconfig_lua_found=`$PKG_CONFIG --exists lua$l 2>/dev/null`
  	            if test "$?" = "0" ; then
@@ -16,7 +16,7 @@
  		           LUA_LIBS="$LUA_LFLAGS "`$PKG_CONFIG --libs lualib$l`
  		        fi
                          break
-@@ -1029,6 +1029,7 @@ else
+@@ -1028,6 +1028,7 @@ else
              RUBY_CFLAGS="$RUBY_CFLAGS -I`$RUBY $srcdir/config/config_ruby.rb vendorhdrdir`"
              RUBY_CFLAGS="$RUBY_CFLAGS -I`$RUBY $srcdir/config/config_ruby.rb sitehdrdir`"
              RUBY_CFLAGS="$RUBY_CFLAGS -I`$RUBY $srcdir/config/config_ruby.rb rubyhdrdir`"

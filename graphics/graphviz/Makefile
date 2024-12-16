@@ -1,5 +1,5 @@
 PORTNAME=	graphviz
-PORTVERSION=	12.2.0
+PORTVERSION=	12.2.1
 PORTREVISION=	0
 CATEGORIES=	graphics tk
 MASTER_SITES=	https://gitlab.com/api/v4/projects/4207231/packages/generic/graphviz-releases/${PORTVERSION}/
@@ -40,6 +40,7 @@ CONFLICTS_INSTALL=	ghmm
 
 INSTALL_TARGET=	install-strip
 PLIST_SUB=	PORTVERSION="${PORTVERSION}"
+SHEBANG_FILES=	cmd/dot/dot_sandbox
 
 FIX_INCLUDE=	lib/cdt/dthdr.h lib/pathplan/tri.h \
 		lib/pathplan/pathutil.h lib/pathplan/solvers.h \
@@ -162,6 +163,7 @@ TCL_CONFIGURE_ENABLE=		tcl
 TCL_CPPFLAGS=		-I${TCL_INCLUDEDIR}
 TCL_CONFIGURE_ENV=	TCLCONFIG="${TCL_LIBDIR}/tclConfig.sh"
 TCL_VARS=		SHEBANG_FILES+=tclpkg/gv/demo/modgraph.tcl \
+			SHEBANG_FILES+=tclpkg/gv/demo/modgraph.py \
 			PLIST_SUB+=TCL_VER="${TCL_VER}"
 TK_CPPFLAGS=		-I${TK_INCLUDEDIR}
 TK_CONFIGURE_ON=	--with-wish=${WISH}
@@ -193,6 +195,8 @@ CONFIGURE_ARGS+=	--program-transform-name="s/x/x/" \
 
 .if ${PORT_OPTIONS:MPYTHON} || ${PORT_OPTIONS:MTCL}
 BINARY_ALIAS+=	python3=${PYTHON_CMD}
+.else
+USES+=	python:env
 .endif
 
 .if ${PORT_OPTIONS:MRUBY}
