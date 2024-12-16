@@ -1,5 +1,5 @@
 PORTNAME=	regexp_property_values
-PORTVERSION=	1.5.1
+PORTVERSION=	1.5.2
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
