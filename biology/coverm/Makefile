@@ -11,6 +11,7 @@ WWW=		https://github.com/wwood/CoverM
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENCE.txt
 
+BROKEN_aarch64=	compilation fails, see https://github.com/wwood/CoverM/issues/234
 BROKEN_i386=	compilation fails, see https://github.com/wwood/CoverM/issues/227
 
 USES=		cargo
