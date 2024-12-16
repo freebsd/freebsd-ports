@@ -1,6 +1,6 @@
 PORTNAME=	bacon
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.5.0
+DISTVERSION=	3.6.0
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -125,6 +125,7 @@ CARGO_CRATES=	adler2-2.0.0 \
 		inotify-0.10.2 \
 		inotify-sys-0.1.5 \
 		instant-0.1.13 \
+		iq-0.2.0 \
 		is_terminal_polyfill-1.70.1 \
 		itoa-1.0.11 \
 		jiff-0.1.14 \
