@@ -13,7 +13,9 @@ etc/newsyslog.conf.d/rspamd.newsyslog.conf
 %%ETCDIR%%/composites.conf
 %%ETCDIR%%/groups.conf
 %%ETCDIR%%/lang_detection.inc
+%%ETCDIR%%/local.d/module.conf.example
 %%ETCDIR%%/logging.inc
+%%ETCDIR%%/lua.local.d/module.lua.example
 %%ETCDIR%%/maps.d/dmarc_whitelist.inc
 %%ETCDIR%%/maps.d/exe_clickbait.inc
 %%ETCDIR%%/maps.d/maillist.inc
@@ -75,7 +77,9 @@ etc/newsyslog.conf.d/rspamd.newsyslog.conf
 %%ETCDIR%%/modules.d/trie.conf
 %%ETCDIR%%/modules.d/url_redirector.conf
 %%ETCDIR%%/modules.d/whitelist.conf
+%%ETCDIR%%/modules.local.d/module.conf.example
 %%ETCDIR%%/options.inc
+%%ETCDIR%%/override.d/module.conf.example
 %%ETCDIR%%/rspamd.conf
 @sample %%ETCDIR%%/rspamd.newsyslog.conf.sample
 %%ETCDIR%%/scores.d/content_group.conf
@@ -106,8 +110,6 @@ share/man/man1/rspamadm.1.gz
 share/man/man1/rspamc.1.gz
 share/man/man8/rspamd.8.gz
 %%DATADIR%%/effective_tld_names.dat
-%%DATADIR%%/elastic/kibana.json
-%%DATADIR%%/elastic/rspamd_template.json
 %%DATADIR%%/languages/af.json
 %%DATADIR%%/languages/an.json
 %%DATADIR%%/languages/ar.json
@@ -256,6 +258,7 @@ share/man/man8/rspamd.8.gz
 %%DATADIR%%/lualib/rspamadm/mime.lua
 %%DATADIR%%/lualib/rspamadm/neural_test.lua
 %%DATADIR%%/lualib/rspamadm/publicsuffix.lua
+%%DATADIR%%/lualib/rspamadm/ratelimit.lua
 %%DATADIR%%/lualib/rspamadm/secretbox.lua
 %%DATADIR%%/lualib/rspamadm/stat_convert.lua
 %%DATADIR%%/lualib/rspamadm/statistics_dump.lua
