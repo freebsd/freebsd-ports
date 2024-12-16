@@ -16,7 +16,7 @@ BUILD_DEPENDS=	erlang-runtime${_ERLVER}>=${_ERLVER}.0:lang/erlang-runtime${_ERLV
 LIB_DEPENDS=	libicudata.so:devel/icu \
 		libmozjs-91.so:lang/spidermonkey91
 
-USES=		compiler:c++17-lang cpe gmake libtool ncurses
+USES=		compiler:c++17-lang cpe gmake libtool ncurses ssl
 CPE_VENDOR=	apache
 CPE_PRODUCT=	couchdb
 USE_RC_SUBR=	${PORTNAME}
