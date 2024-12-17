@@ -1,6 +1,6 @@
 PORTNAME=	s7
 # S7_MAJOR_VERSION / S7_MINOR_VERSION from s7.h
-PORTVERSION=	11.2.g20240910
+PORTVERSION=	11.2.g20241217
 CATEGORIES=	lang lisp
 
 MAINTAINER=	fuz@FreeBSD.org
@@ -11,22 +11,27 @@ LICENSE=	BSD0CLAUSE
 
 USES=		localbase:ldflags
 USE_GITLAB=	yes
-GL_SITE=	https://cm-gitlab.stanford.edu/
+GL_SITE=	https://cm-gitlab.stanford.edu
 GL_ACCOUNT=	bil
-GL_TAGNAME=	5c09cea71f6e619794d26d4d13c5d2905925d9e7
+GL_TAGNAME=	f09eadf4dab5b4e6f1c3c2d52e9d6bee6ed21175
 USE_LDCONFIG=	yes
 
 CFLAGS+=	-DS7_LOAD_PATH=\"${DATADIR}\" \
 		-DHAVE_COMPLEX_NUMBERS \
 		-DHAVE_COMPLEX_TRIG \
 		-DWITH_SYSTEM_EXTRAS \
-		-DWITH_C_LOADER
+		-DWITH_C_LOADER \
+		-fno-math-errno \
+		-Wno-parentheses-equality
 
 LDFLAGS+=	-Wl,-export-dynamic
 LIBS+=		-lm
 S7LIBS=		c dl m
 
-PORTDOCS=	s7.html
+MAKE_ENV+=	LD_LIBRARY_PATH=${WRKDIR} \
+		USER=${USER}
+
+PORTDOCS=	s7.html s7-ffi.html s7-scm.html
 
 OPTIONS_DEFINE=	DOCS GMP REPL NREPL
 OPTIONS_DEFAULT=	GMP REPL
@@ -44,7 +49,7 @@ do-build:
 	${CC} -fpic -shared ${CFLAGS} ${CPPFLAGS} ${LDFLAGS} -o ${WRKDIR}/libs7.so ${WRKSRC}/s7.c ${LIBS}
 	${CC} ${CFLAGS} ${CPPFLAGS} ${LDFLAGS} -L${WRKDIR} -o ${WRKDIR}/s7-repl ${WRKSRC}/repl.c -ls7
 .for l in ${S7LIBS}
-	(cd ${WRKDIR} && ${SETENV} LD_LIBRARY_PATH=${WRKDIR} ${WRKDIR}/s7-repl ${WRKSRC}/lib$l.scm)
+	(cd ${WRKDIR} && ${SETENVI} ${WRK_ENV} ${MAKE_ENV} ${WRKDIR}/s7-repl ${WRKSRC}/lib$l.scm)
 .endfor
 
 post-build-NREPL-on:
@@ -62,7 +67,9 @@ do-install:
 
 do-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/s7.html ${STAGEDIR}${DOCSDIR}/
+.for f in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/$f ${STAGEDIR}${DOCSDIR}/
+.endfor
 
 do-install-NREPL-on:
 	${INSTALL_PROGRAM} ${WRKDIR}/s7-nrepl ${STAGEDIR}${PREFIX}/bin/
@@ -71,6 +78,7 @@ do-install-REPL-on:
 	${INSTALL_PROGRAM} ${WRKDIR}/s7-repl ${STAGEDIR}${PREFIX}/bin/
 
 do-test:
-	(cd ${WRKSRC} && ${SETENV} LD_LIBRARY_PATH=${WRKDIR} ${WRKDIR}/s7-repl s7test.scm)
+	${RLN} ${WRKSRC} ${WRKDIR}/cl
+	(cd ${WRKSRC} && ${SETENVI} ${WRK_ENV} ${TEST_ENV} ${WRKDIR}/s7-repl s7test.scm)
 
 .include <bsd.port.mk>

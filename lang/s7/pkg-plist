@@ -39,6 +39,7 @@ lib/libs7.so
 %%DATADIR%%/tools/tari.scm
 %%DATADIR%%/tools/tauto.scm
 %%DATADIR%%/tools/tbig.scm
+%%DATADIR%%/tools/tbit.scm
 %%DATADIR%%/tools/tcase.scm
 %%DATADIR%%/tools/tclo.scm
 %%DATADIR%%/tools/tcomplex.scm
