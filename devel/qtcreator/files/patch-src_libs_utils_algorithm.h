@@ -4,7 +4,7 @@ Clang >= 19.1.0-rc1 enables C++17 relaxed template template argument
 matching by default. The workaround in qtcreator before this was the
 case is now causing build failures.
 
---- src/libs/utils/algorithm.h.orig	2024-09-27 01:17:49 UTC
+--- src/libs/utils/algorithm.h.orig	2024-11-27 10:00:22 UTC
 +++ src/libs/utils/algorithm.h
 @@ -258,7 +258,7 @@ Q_REQUIRED_RESULT decltype(auto) transform(SC &&contai
           typename Result = std::decay_t<std::invoke_result_t<F, Value&>>,
@@ -15,7 +15,7 @@ case is now causing build failures.
  // "Matching of template template-arguments excludes compatible templates"
  // http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2016/p0522r0.html (P0522R0)
  // in C++17 makes the above match e.g. C=std::vector even though that takes two
-@@ -809,7 +809,7 @@ Q_REQUIRED_RESULT decltype(auto) transform(SC &&contai
+@@ -833,7 +833,7 @@ Q_REQUIRED_RESULT decltype(auto) transform(SC &&contai
      return transform<ResultContainer>(std::forward<SC>(container), function);
  }
  

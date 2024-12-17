@@ -5,14 +5,14 @@ warning: unknown warning option '-Werror=maybe-uninitialized'; did you mean '-We
 
 Regressed by: https://code.qt.io/cgit/qt-creator/qt-creator.git/commit/?id=8129f886bcc50e91f55de15f751df183f0db822c
 
---- src/plugins/qmldesigner/CMakeLists.txt.orig	2024-08-06 01:26:37 UTC
+--- src/plugins/qmldesigner/CMakeLists.txt.orig	2024-11-27 10:00:24 UTC
 +++ src/plugins/qmldesigner/CMakeLists.txt
-@@ -50,7 +50,7 @@ if (TARGET QmlDesignerUtils)
+@@ -110,7 +110,7 @@ extend_qtc_plugin(QmlDesigner
+ extend_qtc_plugin(QmlDesigner
+     CONDITION ENABLE_COMPILE_WARNING_AS_ERROR
+     PROPERTIES COMPILE_WARNING_AS_ERROR ON
+-    PUBLIC_COMPILE_OPTIONS $<$<COMPILE_LANG_AND_ID:CXX,Clang,GNU>:-Wno-error=maybe-uninitialized>
++    PUBLIC_COMPILE_OPTIONS $<$<COMPILE_LANG_AND_ID:CXX,GNU>:-Wno-error=maybe-uninitialized>
  )
  
- if (TARGET QmlDesignerUtils)
--    target_compile_options(QmlDesignerUtils PUBLIC $<$<COMPILE_LANG_AND_ID:CXX,Clang,GNU>:-Wno-error=maybe-uninitialized>)
-+    target_compile_options(QmlDesignerUtils PUBLIC $<$<COMPILE_LANG_AND_ID:CXX,GNU>:-Wno-error=maybe-uninitialized>)
-     target_compile_options(QmlDesignerUtils PUBLIC $<$<COMPILE_LANG_AND_ID:CXX,Clang>:-Wno-unneeded-internal-declaration>)
- endif()
- 
+ if (QTC_STATIC_BUILD AND TARGET QmlDesigner)

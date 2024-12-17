@@ -1,13 +1,9 @@
 PORTNAME=	qtcreator
-DISTVERSION=	14.0.2
-PORTREVISION=	1
+DISTVERSION=	15.0.0
 CATEGORIES=	devel
 MASTER_SITES=	QT/official_releases/qtcreator/${DISTVERSION:R}/${DISTVERSION}
 DISTNAME=	qt-creator-opensource-src-${DISTVERSION}
 DIST_SUBDIR=	KDE/Qt/qtcreator
-
-PATCH_SITES=	https://github.com/qt-creator/qt-creator/commit/
-PATCHFILES+=	f175ec933f1c5c5d7a345edbaacc8ff90202aee2.patch:-p1 # clang-format19 fix; will be in qtcreator 15.0
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	C++ and QML IDE for Qt development
@@ -29,8 +25,9 @@ USES=		cmake compiler:c++17-lang desktop-file-utils gl \
 		qt:6 shebangfix tar:xz
 USE_GL=		gl
 USE_LDCONFIG=	${LOCALBASE}/lib/${PORTNAME}
-USE_QT=		5compat base declarative positioning quick3d quicktimeline \
-		serialport shadertools sqldriver-sqlite svg tools translations webchannel
+USE_QT=		5compat base declarative positioning quick3d \
+		quicktimeline serialport shadertools sqldriver-sqlite \
+		svg tools translations webchannel
 
 SHEBANG_GLOB=	*.pl *.py *.sh
 SHEBANG_FILES=	src/plugins/terminal/tests/* \
