@@ -1,5 +1,5 @@
 PORTNAME=	saga
-PORTVERSION=	9.6.3
+PORTVERSION=	9.7.0
 CATEGORIES=	math
 MASTER_SITES=	SF/saga-gis/SAGA%20-%20${PORTVERSION:C/\.[[:digit:]]\.[[:digit:]]*$//}/SAGA%20-%20${PORTVERSION}
 
@@ -35,7 +35,7 @@ DOS2UNIX_GLOB=	*.cpp *.h
 USE_LDCONFIG=	yes
 USE_WX=		3.2+
 
-GIT_TAGNAME=	812b8bc89
+GIT_TAGNAME=	c7dbb2788
 
 CMAKE_ARGS=	-DSVM_INCLUDE:PATH=${LOCALBASE}/include/svm.h
 CMAKE_ON=	CMAKE_VERBOSE_MAKEFILE
@@ -89,7 +89,7 @@ post-patch:
 		${WRKSRC}/src/saga_core/saga_gui/CMakeLists.txt \
 		${WRKSRC}/src/saga_core/saga_gui/dlg_about.cpp
 	@${REINPLACE_CMD} -e 's|-lgomp|-lomp|' \
-		${WRKSRC}/src/accessories/templates/template4saga-tools/my_tool_library/Makefile
+		${WRKSRC}/src/saga_core/saga_api/saga_api_to_python.py
 
 post-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}

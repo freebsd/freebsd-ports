@@ -253,7 +253,6 @@ share/pixmaps/saga.png
 %%DATADIR%%/saga_srs_preferences.txt
 %%DATADIR%%/saga_tip.txt
 %%DATADIR%%/templates/template4saga-tools/my_tool_library/CMakeLists.txt
-%%DATADIR%%/templates/template4saga-tools/my_tool_library/Makefile
 %%DATADIR%%/templates/template4saga-tools/my_tool_library/TLB_Interface.cpp
 %%DATADIR%%/templates/template4saga-tools/my_tool_library/my_tool.cpp
 %%DATADIR%%/templates/template4saga-tools/my_tool_library/my_tool.h

@@ -1,4 +1,4 @@
---- CMakeLists.txt.orig	2023-03-29 11:00:39 UTC
+--- CMakeLists.txt.orig	2024-11-13 13:14:04 UTC
 +++ CMakeLists.txt
 @@ -26,6 +26,10 @@ set(CMAKE_CXX_STANDARD_REQUIRED		ON 		CACHE STRING "Th
  set(CMAKE_CXX_STANDARD		 		14		CACHE STRING "C++ standard to be used")
@@ -8,6 +8,6 @@
 +set(COMPILER "${CMAKE_CXX_COMPILER_ID} ${CMAKE_CXX_COMPILER_VERSION}")
 +add_definitions(-DCOMPILER="${COMPILER}")
 +
- # Platform dependant compiler requirements
+ # Platform dependent compiler requirements
  if(MSVC)
  	set(CMAKE_CONFIGURATION_TYPES "Debug;Release" CACHE STRING "" FORCE)
