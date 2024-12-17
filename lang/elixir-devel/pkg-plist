@@ -3,8 +3,8 @@
 %%PORTDOCS%%%%DOCSDIR%%/eex/assets/logo.png
 %%PORTDOCS%%%%DOCSDIR%%/eex/dist/handlebars.runtime-NWIB6V2M.js
 %%PORTDOCS%%%%DOCSDIR%%/eex/dist/handlebars.templates-K7URE6B4.js
-%%PORTDOCS%%%%DOCSDIR%%/eex/dist/html-elixir-F2VRIOKR.css
-%%PORTDOCS%%%%DOCSDIR%%/eex/dist/html-YIPIRHGU.js
+%%PORTDOCS%%%%DOCSDIR%%/eex/dist/html-elixir-P45HOAC7.css
+%%PORTDOCS%%%%DOCSDIR%%/eex/dist/html-PVRIOB7F.js
 %%PORTDOCS%%%%DOCSDIR%%/eex/dist/inconsolata-latin-400-normal-RGKDDNDD.woff2
 %%PORTDOCS%%%%DOCSDIR%%/eex/dist/inconsolata-latin-700-normal-DTS2D7TO.woff2
 %%PORTDOCS%%%%DOCSDIR%%/eex/dist/inconsolata-latin-ext-400-normal-K7HVGTP7.woff2
@@ -18,7 +18,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/eex/dist/lato-latin-ext-400-normal-N27NCBWW.woff2
 %%PORTDOCS%%%%DOCSDIR%%/eex/dist/lato-latin-ext-700-normal-Q2L5DVMW.woff2
 %%PORTDOCS%%%%DOCSDIR%%/eex/dist/remixicon-NKANDIL5.woff2
-%%PORTDOCS%%%%DOCSDIR%%/eex/dist/search_data-D5053173.js
+%%PORTDOCS%%%%DOCSDIR%%/eex/dist/search_data-D27F0632.js
 %%PORTDOCS%%%%DOCSDIR%%/eex/dist/sidebar_items-0B2B143B.js
 %%PORTDOCS%%%%DOCSDIR%%/eex/docs_config.js
 %%PORTDOCS%%%%DOCSDIR%%/eex/EEx.Engine.html
@@ -38,7 +38,6 @@
 %%PORTDOCS%%%%DOCSDIR%%/elixir/Application.html
 %%PORTDOCS%%%%DOCSDIR%%/elixir/ArgumentError.html
 %%PORTDOCS%%%%DOCSDIR%%/elixir/ArithmeticError.html
-%%PORTDOCS%%%%DOCSDIR%%/elixir/assets/kv-observer.png
 %%PORTDOCS%%%%DOCSDIR%%/elixir/assets/logo.png
 %%PORTDOCS%%%%DOCSDIR%%/elixir/Atom.html
 %%PORTDOCS%%%%DOCSDIR%%/elixir/BadArityError.html
@@ -80,8 +79,8 @@
 %%PORTDOCS%%%%DOCSDIR%%/elixir/Dict.html
 %%PORTDOCS%%%%DOCSDIR%%/elixir/dist/handlebars.runtime-NWIB6V2M.js
 %%PORTDOCS%%%%DOCSDIR%%/elixir/dist/handlebars.templates-K7URE6B4.js
-%%PORTDOCS%%%%DOCSDIR%%/elixir/dist/html-elixir-F2VRIOKR.css
-%%PORTDOCS%%%%DOCSDIR%%/elixir/dist/html-YIPIRHGU.js
+%%PORTDOCS%%%%DOCSDIR%%/elixir/dist/html-elixir-P45HOAC7.css
+%%PORTDOCS%%%%DOCSDIR%%/elixir/dist/html-PVRIOB7F.js
 %%PORTDOCS%%%%DOCSDIR%%/elixir/dist/inconsolata-latin-400-normal-RGKDDNDD.woff2
 %%PORTDOCS%%%%DOCSDIR%%/elixir/dist/inconsolata-latin-700-normal-DTS2D7TO.woff2
 %%PORTDOCS%%%%DOCSDIR%%/elixir/dist/inconsolata-latin-ext-400-normal-K7HVGTP7.woff2
@@ -95,8 +94,8 @@
 %%PORTDOCS%%%%DOCSDIR%%/elixir/dist/lato-latin-ext-400-normal-N27NCBWW.woff2
 %%PORTDOCS%%%%DOCSDIR%%/elixir/dist/lato-latin-ext-700-normal-Q2L5DVMW.woff2
 %%PORTDOCS%%%%DOCSDIR%%/elixir/dist/remixicon-NKANDIL5.woff2
-%%PORTDOCS%%%%DOCSDIR%%/elixir/dist/search_data-F2D1A862.js
-%%PORTDOCS%%%%DOCSDIR%%/elixir/dist/sidebar_items-3D721A5F.js
+%%PORTDOCS%%%%DOCSDIR%%/elixir/dist/search_data-CF7A2A36.js
+%%PORTDOCS%%%%DOCSDIR%%/elixir/dist/sidebar_items-F32DEE8D.js
 %%PORTDOCS%%%%DOCSDIR%%/elixir/distributed-tasks.html
 %%PORTDOCS%%%%DOCSDIR%%/elixir/docs_config.js
 %%PORTDOCS%%%%DOCSDIR%%/elixir/docs-tests-and-with.html
@@ -144,6 +143,9 @@
 %%PORTDOCS%%%%DOCSDIR%%/elixir/IO.html
 %%PORTDOCS%%%%DOCSDIR%%/elixir/IO.Stream.html
 %%PORTDOCS%%%%DOCSDIR%%/elixir/IO.StreamError.html
+%%PORTDOCS%%%%DOCSDIR%%/elixir/JSON.DecodeError.html
+%%PORTDOCS%%%%DOCSDIR%%/elixir/JSON.Encoder.html
+%%PORTDOCS%%%%DOCSDIR%%/elixir/JSON.html
 %%PORTDOCS%%%%DOCSDIR%%/elixir/Kernel.html
 %%PORTDOCS%%%%DOCSDIR%%/elixir/Kernel.ParallelCompiler.html
 %%PORTDOCS%%%%DOCSDIR%%/elixir/Kernel.SpecialForms.html
@@ -163,6 +165,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/elixir/MapSet.html
 %%PORTDOCS%%%%DOCSDIR%%/elixir/MatchError.html
 %%PORTDOCS%%%%DOCSDIR%%/elixir/MismatchedDelimiterError.html
+%%PORTDOCS%%%%DOCSDIR%%/elixir/MissingApplicationsError.html
 %%PORTDOCS%%%%DOCSDIR%%/elixir/module-attributes.html
 %%PORTDOCS%%%%DOCSDIR%%/elixir/Module.html
 %%PORTDOCS%%%%DOCSDIR%%/elixir/modules-and-functions.html
@@ -234,8 +237,8 @@
 %%PORTDOCS%%%%DOCSDIR%%/ex_unit/assets/logo.png
 %%PORTDOCS%%%%DOCSDIR%%/ex_unit/dist/handlebars.runtime-NWIB6V2M.js
 %%PORTDOCS%%%%DOCSDIR%%/ex_unit/dist/handlebars.templates-K7URE6B4.js
-%%PORTDOCS%%%%DOCSDIR%%/ex_unit/dist/html-elixir-F2VRIOKR.css
-%%PORTDOCS%%%%DOCSDIR%%/ex_unit/dist/html-YIPIRHGU.js
+%%PORTDOCS%%%%DOCSDIR%%/ex_unit/dist/html-elixir-P45HOAC7.css
+%%PORTDOCS%%%%DOCSDIR%%/ex_unit/dist/html-PVRIOB7F.js
 %%PORTDOCS%%%%DOCSDIR%%/ex_unit/dist/inconsolata-latin-400-normal-RGKDDNDD.woff2
 %%PORTDOCS%%%%DOCSDIR%%/ex_unit/dist/inconsolata-latin-700-normal-DTS2D7TO.woff2
 %%PORTDOCS%%%%DOCSDIR%%/ex_unit/dist/inconsolata-latin-ext-400-normal-K7HVGTP7.woff2
@@ -249,8 +252,8 @@
 %%PORTDOCS%%%%DOCSDIR%%/ex_unit/dist/lato-latin-ext-400-normal-N27NCBWW.woff2
 %%PORTDOCS%%%%DOCSDIR%%/ex_unit/dist/lato-latin-ext-700-normal-Q2L5DVMW.woff2
 %%PORTDOCS%%%%DOCSDIR%%/ex_unit/dist/remixicon-NKANDIL5.woff2
-%%PORTDOCS%%%%DOCSDIR%%/ex_unit/dist/search_data-7C9C2B6E.js
-%%PORTDOCS%%%%DOCSDIR%%/ex_unit/dist/sidebar_items-80595B1B.js
+%%PORTDOCS%%%%DOCSDIR%%/ex_unit/dist/search_data-CFB90BB6.js
+%%PORTDOCS%%%%DOCSDIR%%/ex_unit/dist/sidebar_items-402A47D8.js
 %%PORTDOCS%%%%DOCSDIR%%/ex_unit/docs_config.js
 %%PORTDOCS%%%%DOCSDIR%%/ex_unit/ExUnit.AssertionError.html
 %%PORTDOCS%%%%DOCSDIR%%/ex_unit/ExUnit.Assertions.html
@@ -261,8 +264,6 @@
 %%PORTDOCS%%%%DOCSDIR%%/ex_unit/ExUnit.CaseTemplate.html
 %%PORTDOCS%%%%DOCSDIR%%/ex_unit/ExUnit.DocTest.Error.html
 %%PORTDOCS%%%%DOCSDIR%%/ex_unit/ExUnit.DocTest.html
-%%PORTDOCS%%%%DOCSDIR%%/ex_unit/ExUnit.DuplicateDescribeError.html
-%%PORTDOCS%%%%DOCSDIR%%/ex_unit/ExUnit.DuplicateTestError.html
 %%PORTDOCS%%%%DOCSDIR%%/ex_unit/ExUnit.epub
 %%PORTDOCS%%%%DOCSDIR%%/ex_unit/ExUnit.Filters.html
 %%PORTDOCS%%%%DOCSDIR%%/ex_unit/ExUnit.Formatter.html
@@ -278,8 +279,8 @@
 %%PORTDOCS%%%%DOCSDIR%%/iex/assets/logo.png
 %%PORTDOCS%%%%DOCSDIR%%/iex/dist/handlebars.runtime-NWIB6V2M.js
 %%PORTDOCS%%%%DOCSDIR%%/iex/dist/handlebars.templates-K7URE6B4.js
-%%PORTDOCS%%%%DOCSDIR%%/iex/dist/html-elixir-F2VRIOKR.css
-%%PORTDOCS%%%%DOCSDIR%%/iex/dist/html-YIPIRHGU.js
+%%PORTDOCS%%%%DOCSDIR%%/iex/dist/html-elixir-P45HOAC7.css
+%%PORTDOCS%%%%DOCSDIR%%/iex/dist/html-PVRIOB7F.js
 %%PORTDOCS%%%%DOCSDIR%%/iex/dist/inconsolata-latin-400-normal-RGKDDNDD.woff2
 %%PORTDOCS%%%%DOCSDIR%%/iex/dist/inconsolata-latin-700-normal-DTS2D7TO.woff2
 %%PORTDOCS%%%%DOCSDIR%%/iex/dist/inconsolata-latin-ext-400-normal-K7HVGTP7.woff2
@@ -293,7 +294,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/iex/dist/lato-latin-ext-400-normal-N27NCBWW.woff2
 %%PORTDOCS%%%%DOCSDIR%%/iex/dist/lato-latin-ext-700-normal-Q2L5DVMW.woff2
 %%PORTDOCS%%%%DOCSDIR%%/iex/dist/remixicon-NKANDIL5.woff2
-%%PORTDOCS%%%%DOCSDIR%%/iex/dist/search_data-1563F020.js
+%%PORTDOCS%%%%DOCSDIR%%/iex/dist/search_data-A73980CA.js
 %%PORTDOCS%%%%DOCSDIR%%/iex/dist/sidebar_items-34D826BA.js
 %%PORTDOCS%%%%DOCSDIR%%/iex/docs_config.js
 %%PORTDOCS%%%%DOCSDIR%%/iex/IEx.epub
@@ -309,8 +310,8 @@
 %%PORTDOCS%%%%DOCSDIR%%/logger/assets/logo.png
 %%PORTDOCS%%%%DOCSDIR%%/logger/dist/handlebars.runtime-NWIB6V2M.js
 %%PORTDOCS%%%%DOCSDIR%%/logger/dist/handlebars.templates-K7URE6B4.js
-%%PORTDOCS%%%%DOCSDIR%%/logger/dist/html-elixir-F2VRIOKR.css
-%%PORTDOCS%%%%DOCSDIR%%/logger/dist/html-YIPIRHGU.js
+%%PORTDOCS%%%%DOCSDIR%%/logger/dist/html-elixir-P45HOAC7.css
+%%PORTDOCS%%%%DOCSDIR%%/logger/dist/html-PVRIOB7F.js
 %%PORTDOCS%%%%DOCSDIR%%/logger/dist/inconsolata-latin-400-normal-RGKDDNDD.woff2
 %%PORTDOCS%%%%DOCSDIR%%/logger/dist/inconsolata-latin-700-normal-DTS2D7TO.woff2
 %%PORTDOCS%%%%DOCSDIR%%/logger/dist/inconsolata-latin-ext-400-normal-K7HVGTP7.woff2
@@ -324,7 +325,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/logger/dist/lato-latin-ext-400-normal-N27NCBWW.woff2
 %%PORTDOCS%%%%DOCSDIR%%/logger/dist/lato-latin-ext-700-normal-Q2L5DVMW.woff2
 %%PORTDOCS%%%%DOCSDIR%%/logger/dist/remixicon-NKANDIL5.woff2
-%%PORTDOCS%%%%DOCSDIR%%/logger/dist/search_data-F5BC2BEA.js
+%%PORTDOCS%%%%DOCSDIR%%/logger/dist/search_data-77AAA242.js
 %%PORTDOCS%%%%DOCSDIR%%/logger/dist/sidebar_items-58E83807.js
 %%PORTDOCS%%%%DOCSDIR%%/logger/docs_config.js
 %%PORTDOCS%%%%DOCSDIR%%/logger/index.html
@@ -339,8 +340,8 @@
 %%PORTDOCS%%%%DOCSDIR%%/mix/assets/logo.png
 %%PORTDOCS%%%%DOCSDIR%%/mix/dist/handlebars.runtime-NWIB6V2M.js
 %%PORTDOCS%%%%DOCSDIR%%/mix/dist/handlebars.templates-K7URE6B4.js
-%%PORTDOCS%%%%DOCSDIR%%/mix/dist/html-elixir-F2VRIOKR.css
-%%PORTDOCS%%%%DOCSDIR%%/mix/dist/html-YIPIRHGU.js
+%%PORTDOCS%%%%DOCSDIR%%/mix/dist/html-elixir-P45HOAC7.css
+%%PORTDOCS%%%%DOCSDIR%%/mix/dist/html-PVRIOB7F.js
 %%PORTDOCS%%%%DOCSDIR%%/mix/dist/inconsolata-latin-400-normal-RGKDDNDD.woff2
 %%PORTDOCS%%%%DOCSDIR%%/mix/dist/inconsolata-latin-700-normal-DTS2D7TO.woff2
 %%PORTDOCS%%%%DOCSDIR%%/mix/dist/inconsolata-latin-ext-400-normal-K7HVGTP7.woff2
@@ -354,8 +355,8 @@
 %%PORTDOCS%%%%DOCSDIR%%/mix/dist/lato-latin-ext-400-normal-N27NCBWW.woff2
 %%PORTDOCS%%%%DOCSDIR%%/mix/dist/lato-latin-ext-700-normal-Q2L5DVMW.woff2
 %%PORTDOCS%%%%DOCSDIR%%/mix/dist/remixicon-NKANDIL5.woff2
-%%PORTDOCS%%%%DOCSDIR%%/mix/dist/search_data-BEE23634.js
-%%PORTDOCS%%%%DOCSDIR%%/mix/dist/sidebar_items-0423E12A.js
+%%PORTDOCS%%%%DOCSDIR%%/mix/dist/search_data-B4638399.js
+%%PORTDOCS%%%%DOCSDIR%%/mix/dist/sidebar_items-E645B5B2.js
 %%PORTDOCS%%%%DOCSDIR%%/mix/docs_config.js
 %%PORTDOCS%%%%DOCSDIR%%/mix/index.html
 %%PORTDOCS%%%%DOCSDIR%%/mix/Mix.ElixirVersionError.html
@@ -469,8 +470,8 @@ lib/elixir/lib/elixir/ebin/elixir_expand.beam
 lib/elixir/lib/elixir/ebin/elixir_fn.beam
 lib/elixir/lib/elixir/ebin/elixir_import.beam
 lib/elixir/lib/elixir/ebin/elixir_interpolation.beam
+lib/elixir/lib/elixir/ebin/elixir_json.beam
 lib/elixir/lib/elixir/ebin/elixir_lexical.beam
-lib/elixir/lib/elixir/ebin/elixir_locals.beam
 lib/elixir/lib/elixir/ebin/elixir_map.beam
 lib/elixir/lib/elixir/ebin/elixir_module.beam
 lib/elixir/lib/elixir/ebin/elixir_overridable.beam
@@ -602,6 +603,15 @@ lib/elixir/lib/elixir/ebin/Elixir.IO.ANSI.Sequence.beam
 lib/elixir/lib/elixir/ebin/Elixir.IO.beam
 lib/elixir/lib/elixir/ebin/Elixir.IO.Stream.beam
 lib/elixir/lib/elixir/ebin/Elixir.IO.StreamError.beam
+lib/elixir/lib/elixir/ebin/Elixir.JSON.beam
+lib/elixir/lib/elixir/ebin/Elixir.JSON.DecodeError.beam
+lib/elixir/lib/elixir/ebin/Elixir.JSON.Encoder.Atom.beam
+lib/elixir/lib/elixir/ebin/Elixir.JSON.Encoder.beam
+lib/elixir/lib/elixir/ebin/Elixir.JSON.Encoder.BitString.beam
+lib/elixir/lib/elixir/ebin/Elixir.JSON.Encoder.Float.beam
+lib/elixir/lib/elixir/ebin/Elixir.JSON.Encoder.Integer.beam
+lib/elixir/lib/elixir/ebin/Elixir.JSON.Encoder.List.beam
+lib/elixir/lib/elixir/ebin/Elixir.JSON.Encoder.Map.beam
 lib/elixir/lib/elixir/ebin/Elixir.Kernel.beam
 lib/elixir/lib/elixir/ebin/Elixir.Kernel.CLI.beam
 lib/elixir/lib/elixir/ebin/Elixir.Kernel.ErrorHandler.beam
@@ -627,10 +637,11 @@ lib/elixir/lib/elixir/ebin/Elixir.Map.beam
 lib/elixir/lib/elixir/ebin/Elixir.MapSet.beam
 lib/elixir/lib/elixir/ebin/Elixir.MatchError.beam
 lib/elixir/lib/elixir/ebin/Elixir.MismatchedDelimiterError.beam
+lib/elixir/lib/elixir/ebin/Elixir.MissingApplicationsError.beam
 lib/elixir/lib/elixir/ebin/Elixir.Module.beam
 lib/elixir/lib/elixir/ebin/Elixir.Module.Behaviour.beam
-lib/elixir/lib/elixir/ebin/Elixir.Module.LocalsTracker.beam
 lib/elixir/lib/elixir/ebin/Elixir.Module.ParallelChecker.beam
+lib/elixir/lib/elixir/ebin/Elixir.Module.Types.Apply.beam
 lib/elixir/lib/elixir/ebin/Elixir.Module.Types.beam
 lib/elixir/lib/elixir/ebin/Elixir.Module.Types.Descr.beam
 lib/elixir/lib/elixir/ebin/Elixir.Module.Types.Expr.beam
@@ -754,6 +765,7 @@ lib/elixir/lib/elixir/lib/io.ex
 lib/elixir/lib/elixir/lib/io/ansi.ex
 lib/elixir/lib/elixir/lib/io/ansi/docs.ex
 lib/elixir/lib/elixir/lib/io/stream.ex
+lib/elixir/lib/elixir/lib/json.ex
 lib/elixir/lib/elixir/lib/kernel.ex
 lib/elixir/lib/elixir/lib/kernel/cli.ex
 lib/elixir/lib/elixir/lib/kernel/error_handler.ex
@@ -772,9 +784,9 @@ lib/elixir/lib/elixir/lib/map_set.ex
 lib/elixir/lib/elixir/lib/map.ex
 lib/elixir/lib/elixir/lib/module.ex
 lib/elixir/lib/elixir/lib/module/behaviour.ex
-lib/elixir/lib/elixir/lib/module/locals_tracker.ex
 lib/elixir/lib/elixir/lib/module/parallel_checker.ex
 lib/elixir/lib/elixir/lib/module/types.ex
+lib/elixir/lib/elixir/lib/module/types/apply.ex
 lib/elixir/lib/elixir/lib/module/types/descr.ex
 lib/elixir/lib/elixir/lib/module/types/expr.ex
 lib/elixir/lib/elixir/lib/module/types/helpers.ex
@@ -821,8 +833,6 @@ lib/elixir/lib/ex_unit/ebin/Elixir.ExUnit.CLIFormatter.beam
 lib/elixir/lib/ex_unit/ebin/Elixir.ExUnit.Diff.beam
 lib/elixir/lib/ex_unit/ebin/Elixir.ExUnit.DocTest.beam
 lib/elixir/lib/ex_unit/ebin/Elixir.ExUnit.DocTest.Error.beam
-lib/elixir/lib/ex_unit/ebin/Elixir.ExUnit.DuplicateDescribeError.beam
-lib/elixir/lib/ex_unit/ebin/Elixir.ExUnit.DuplicateTestError.beam
 lib/elixir/lib/ex_unit/ebin/Elixir.ExUnit.EventManager.beam
 lib/elixir/lib/ex_unit/ebin/Elixir.ExUnit.FailuresManifest.beam
 lib/elixir/lib/ex_unit/ebin/Elixir.ExUnit.Filters.beam
@@ -887,6 +897,7 @@ lib/elixir/lib/iex/ebin/Elixir.IEx.Info.Regex.beam
 lib/elixir/lib/iex/ebin/Elixir.IEx.Info.Time.beam
 lib/elixir/lib/iex/ebin/Elixir.IEx.Info.Tuple.beam
 lib/elixir/lib/iex/ebin/Elixir.IEx.Introspection.beam
+lib/elixir/lib/iex/ebin/Elixir.IEx.MixListener.beam
 lib/elixir/lib/iex/ebin/Elixir.IEx.Pry.beam
 lib/elixir/lib/iex/ebin/Elixir.IEx.Server.beam
 lib/elixir/lib/iex/ebin/iex.app
@@ -901,6 +912,7 @@ lib/elixir/lib/iex/lib/iex/helpers.ex
 lib/elixir/lib/iex/lib/iex/history.ex
 lib/elixir/lib/iex/lib/iex/info.ex
 lib/elixir/lib/iex/lib/iex/introspection.ex
+lib/elixir/lib/iex/lib/iex/mix_listener.ex
 lib/elixir/lib/iex/lib/iex/pry.ex
 lib/elixir/lib/iex/lib/iex/server.ex
 lib/elixir/lib/logger/ebin/Elixir.Logger.App.beam
@@ -952,6 +964,8 @@ lib/elixir/lib/mix/ebin/Elixir.Mix.NoProjectError.beam
 lib/elixir/lib/mix/ebin/Elixir.Mix.NoTaskError.beam
 lib/elixir/lib/mix/ebin/Elixir.Mix.Project.beam
 lib/elixir/lib/mix/ebin/Elixir.Mix.ProjectStack.beam
+lib/elixir/lib/mix/ebin/Elixir.Mix.PubSub.beam
+lib/elixir/lib/mix/ebin/Elixir.Mix.PubSub.Subscriber.beam
 lib/elixir/lib/mix/ebin/Elixir.Mix.Rebar.beam
 lib/elixir/lib/mix/ebin/Elixir.Mix.Release.beam
 lib/elixir/lib/mix/ebin/Elixir.Mix.RemoteConverger.beam
@@ -963,6 +977,8 @@ lib/elixir/lib/mix/ebin/Elixir.Mix.Shell.IO.beam
 lib/elixir/lib/mix/ebin/Elixir.Mix.Shell.Process.beam
 lib/elixir/lib/mix/ebin/Elixir.Mix.Shell.Quiet.beam
 lib/elixir/lib/mix/ebin/Elixir.Mix.State.beam
+lib/elixir/lib/mix/ebin/Elixir.Mix.Sync.Lock.beam
+lib/elixir/lib/mix/ebin/Elixir.Mix.Sync.PubSub.beam
 lib/elixir/lib/mix/ebin/Elixir.Mix.Task.beam
 lib/elixir/lib/mix/ebin/Elixir.Mix.Task.Compiler.beam
 lib/elixir/lib/mix/ebin/Elixir.Mix.Task.Compiler.Diagnostic.beam
@@ -1044,6 +1060,8 @@ lib/elixir/lib/mix/lib/mix/local.ex
 lib/elixir/lib/mix/lib/mix/local/installer.ex
 lib/elixir/lib/mix/lib/mix/project_stack.ex
 lib/elixir/lib/mix/lib/mix/project.ex
+lib/elixir/lib/mix/lib/mix/pubsub.ex
+lib/elixir/lib/mix/lib/mix/pubsub/subscriber.ex
 lib/elixir/lib/mix/lib/mix/rebar.ex
 lib/elixir/lib/mix/lib/mix/release.ex
 lib/elixir/lib/mix/lib/mix/remote_converger.ex
@@ -1055,6 +1073,8 @@ lib/elixir/lib/mix/lib/mix/shell/io.ex
 lib/elixir/lib/mix/lib/mix/shell/process.ex
 lib/elixir/lib/mix/lib/mix/shell/quiet.ex
 lib/elixir/lib/mix/lib/mix/state.ex
+lib/elixir/lib/mix/lib/mix/sync/lock.ex
+lib/elixir/lib/mix/lib/mix/sync/pubsub.ex
 lib/elixir/lib/mix/lib/mix/task.compiler.ex
 lib/elixir/lib/mix/lib/mix/task.ex
 lib/elixir/lib/mix/lib/mix/tasks_server.ex
