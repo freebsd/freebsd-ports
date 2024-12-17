@@ -1,6 +1,5 @@
 PORTNAME=	riemann
-DISTVERSION=	0.3.8
-PORTREVISION=	1
+DISTVERSION=	0.3.11
 CATEGORIES=	net-mgmt java
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/${PORTVERSION}/
 
@@ -15,7 +14,7 @@ USES=		tar:bzip2
 NO_BUILD=	yes
 NO_ARCH=	yes
 USE_JAVA=	yes
-JAVA_VERSION=	8+
+JAVA_VERSION=	21+
 
 SUB_LIST=	JAVA_HOME=${JAVA_HOME}
 
