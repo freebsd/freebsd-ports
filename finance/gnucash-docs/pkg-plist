@@ -278,7 +278,6 @@ share/help/C/gnucash-manual/gnc-gui-C.dtd
 share/help/C/gnucash-manual/gnc-gui-struct.dtd
 share/help/C/gnucash-manual/index.docbook
 share/help/C/gnucash-manual/legal.docbook
-share/help/C/gnucash-manual/tips-appendix.docbook
 share/help/C/gnucash-manual/txf-categories.docbook
 share/help/de/gnucash-guide/appendixa.docbook
 share/help/de/gnucash-guide/appendixd.docbook
@@ -550,6 +549,11 @@ share/help/de/gnucash-manual/figures/Pref_Reports.png
 share/help/de/gnucash-manual/figures/Pref_Sched.png
 share/help/de/gnucash-manual/figures/Pref_Windows.png
 share/help/de/gnucash-manual/figures/Reconcile_Screen.png
+share/help/de/gnucash-manual/figures/Report_Investment_Lots.png
+share/help/de/gnucash-manual/figures/Report_Investment_Lots_Bar.png
+share/help/de/gnucash-manual/figures/Report_Investment_Lots_StackedBar.png
+share/help/de/gnucash-manual/figures/Report_Options_Dialog.png
+share/help/de/gnucash-manual/figures/Report_Saved_Config.png
 share/help/de/gnucash-manual/figures/Report_Screen.png
 share/help/de/gnucash-manual/figures/Reset_Warnings.png
 share/help/de/gnucash-manual/figures/Scheduled_Transactions.png
