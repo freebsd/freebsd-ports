@@ -2,6 +2,10 @@ PORTNAME=	sigil
 DISTVERSION=	2.3.1
 CATEGORIES=	textproc
 
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES+=	9b2773e08ba68f3d35c9f58696d8d1b78dd42e26.patch:-p1 # Fix build with Qt 6.8.x
+PATCHFILES+=	08ed327cf220eca9c814ea2a65adace24a4cf3d9.patch:-p1 # Fix build with Qt 6.8.x
+
 MAINTAINER=	jonc@chen.org.nz
 COMMENT=	WYSIWYG ePub editor
 WWW=		https://sigil-ebook.com/
