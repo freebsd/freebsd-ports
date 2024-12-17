@@ -1,13 +1,9 @@
 PORTNAME=	freerdp
-DISTVERSION=	3.10.0
+DISTVERSION=	3.10.2
 CATEGORIES=	net comms
 MASTER_SITES=	https://pub.freerdp.com/releases/ \
 		https://github.com/FreeRDP/FreeRDP/releases/download/${DISTVERSION}/
 PKGNAMESUFFIX=	3
-
-PATCH_SITES=	https://github.com/FreeRDP/FreeRDP/commit/
-PATCHFILES+=	9f02fb017f9d84c1a0199a07efe551d162c0986a.patch:-p1 # case insensitive simd check
-PATCHFILES+=	aacb2dd10a41c254883bd33defd26893dbad7630.patch:-p1 # fix heimdal return compat
 
 MAINTAINER=	vvd@FreeBSD.org
 COMMENT=	Free implementation of Remote Desktop Protocol

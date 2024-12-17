@@ -185,7 +185,6 @@ include/freerdp%%MAJORVERSION%%/freerdp/utils/stopwatch.h
 include/freerdp%%MAJORVERSION%%/freerdp/utils/string.h
 include/freerdp%%MAJORVERSION%%/freerdp/version.h
 include/freerdp%%MAJORVERSION%%/freerdp/window.h
-include/winpr%%MAJORVERSION%%/mntent.h
 include/winpr%%MAJORVERSION%%/winpr/asn1.h
 include/winpr%%MAJORVERSION%%/winpr/assert.h
 include/winpr%%MAJORVERSION%%/winpr/bcrypt.h
@@ -301,6 +300,3 @@ share/icons/hicolor/scalable/apps/FreeRDP.svg
 %%WAYLAND%%%%MANPAGES%%share/man/man1/wlfreerdp%%MAJORVERSION%%.1.gz
 %%X11%%%%MANPAGES%%share/man/man1/xfreerdp%%MAJORVERSION%%.1.gz
 %%MANPAGES%%share/man/man7/wlog%%MAJORVERSION%%.7.gz
-@dir include/winpr%%MAJORVERSION%%/CMakeFiles
-@dir include/winpr%%MAJORVERSION%%/cfg
-@dir include/winpr%%MAJORVERSION%%/config
