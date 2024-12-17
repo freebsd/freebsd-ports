@@ -1,4 +1,5 @@
 PKGNAMESUFFIX=	-server
+PORTREVISION=	1
 
 COMMENT=	TigerVNC Server
 WWW=		https://tigervnc.org/
@@ -11,7 +12,8 @@ BUILD_DEPENDS+=	${LOCALBASE}/include/GL/internal/dri_interface.h:graphics/mesa-d
 LIB_DEPENDS=	libxshmfence.so:x11/libxshmfence \
 		libnettle.so:security/nettle \
 		libgmp.so:math/gmp \
-		libavcodec.so:multimedia/ffmpeg
+		libavcodec.so:multimedia/ffmpeg \
+		libxcvt.so:x11/libxcvt
 # almost equivalent to x11-servers/xorg-server's
 RUN_DEPENDS+=	${LOCALBASE}/share/X11/xkb/rules/base:x11/xkeyboard-config \
 		xkbcomp:x11/xkbcomp
