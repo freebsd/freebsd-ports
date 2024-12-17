@@ -21,6 +21,7 @@
     SUBDIR += beancount
     SUBDIR += beanie
     SUBDIR += chiapos
+    SUBDIR += electrs
     SUBDIR += electrum
     SUBDIR += expense
     SUBDIR += fabric
