@@ -1,6 +1,5 @@
 PORTNAME=	riemann-c-client
-PORTVERSION=	2.1.1
-PORTREVISION=	1
+PORTVERSION=	2.2.2
 CATEGORIES=	net-mgmt
 MASTER_SITES=	https://git.madhouse-project.org/algernon/${PORTNAME}/archive/
 
@@ -8,8 +7,8 @@ MAINTAINER=	dch@FreeBSD.org
 COMMENT=	C library and command-line tool for Riemann
 WWW=		https://git.madhouse-project.org/algernon/riemann-c-client
 
-LICENSE=	LGPL3+
-LICENSE_FILE=	${WRKSRC}/LICENSE
+LICENSE=	EUPL12
+LICENSE_FILE=	${WRKSRC}/LICENSES/EUPL-1.2.txt
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
@@ -25,9 +24,7 @@ GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
 TEST_TARGET=	check
-
-post-patch:
-	@${REINPLACE_CMD} 's/-ldl//' ${WRKSRC}/Makefile.am
+LDFLAGS+=	-Wl,--undefined-version
 
 # Running |make test| isn't on poudriere menu yet, so force-feed
 pre-install: do-test
