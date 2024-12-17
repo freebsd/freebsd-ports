@@ -162,7 +162,7 @@ share/bash-completion/completions/ogrtindex
 %%DATADIR%%/GDALLogoColor.svg
 %%DATADIR%%/GDALLogoGS.svg
 %%DATADIR%%/LICENSE.TXT
-%%DATADIR%%/MM_m_idofic.csv
+%%BIGENDIAN%%%%DATADIR%%/MM_m_idofic.csv
 %%HDF5%%%%DATADIR%%/bag_template.xml
 %%DATADIR%%/cubewerx_extra.wkt
 %%DATADIR%%/default.rsc

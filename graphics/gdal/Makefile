@@ -207,6 +207,14 @@ XERCES_LIB_DEPENDS=	libxerces-c.so:textproc/xerces-c3
 ZSTD_CMAKE_BOOL=	GDAL_USE_ZSTD
 ZSTD_LIB_DEPENDS=	libzstd.so:archivers/zstd
 
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == powerpc || ${ARCH} == powerpc64
+PLIST_SUB+=	BIGENDIAN="@comment "
+.else
+PLIST_SUB+=	BIGENDIAN=""
+.endif
+
 # Clean up bundled libraries
 .if !defined(MAINTAINER_MODE)
 EXTRACT_AFTER_ARGS=	--exclude ${DISTNAME}/alg/internal_libqhull \
