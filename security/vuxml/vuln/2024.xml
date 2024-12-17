@@ -1,3 +1,115 @@
+  <vuln vid="5ca064a6-bca1-11ef-8926-9b4f2d14eb53">
+    <topic>forgejo -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>forgejo</name>
+	<range><lt>9.0.2</lt></range>
+      <package>
+	<name>forgejo</name>
+	<range><lt>7.0.11</lt></range>
+      </package>
+      </package>
+    </affects>
+    <description>
+       <body xmlns="http://www.w3.org/1999/xhtml">
+       <h1>Problem Description:</h1>
+       <ul>
+       <li>It was possible to use a token sent via email for secondary email validation to reset the password instead. In other words, a token sent for a given action (registration, password reset or secondary email validation) could be used to perform a different action. It is no longer possible to use a token for an action that is different from its original purpose.</li>
+       <li>A fork of a public repository would show in the list of forks, even if its owner was not a public user or organization. Such a fork is now hidden from the list of forks of the public repository.</li>
+       <li>The members of an organization team with read access to a repository (e.g. to read issues) but no read access to the code could read the RSS or atom feeds which include the commit activity. Reading the RSS or atom feeds is now denied unless the team has read permissions on the code.</li>
+       <li>The tokens used when replying by email to issues or pull requests were weaker than the rfc2104 recommendations. The tokens are now truncated to 128 bits instead of 80 bits. It is no longer possible to reply to emails sent before the upgrade because the weaker tokens are invalid.</li>
+       <li>A registered user could modify the update frequency of any push mirror (e.g. every 4h instead of every 8h). They are now only able to do that if they have administrative permissions on the repository.</li>
+       <li>It was possible to use basic authorization (i.e. user:password) for requests to the API even when security keys were enrolled for a user. It is no longer possible, an application token must be used instead.</li>
+       <li>Some markup sanitation rules were not as strong as they could be (e.g. allowing emoji somethingelse as well as emoji). The rules are now stricter and do not allow for such cases.</li>
+       <li>When Forgejo is configured to enable instance wide search (e.g. with bleve), results found in the repositories of private or limited users were displayed to anonymous visitors. The results found in private or limited organizations were not displayed. The search results found in the repositories of private or limited user are no longer displayed to anonymous visitors.</li>
+       </ul>
+      </body>
+    </description>
+    <references>
+      <url>https://codeberg.org/forgejo/forgejo/pulls/5974</url>
+      <url>https://codeberg.org/forgejo/forgejo/pulls/5974</url>
+      <url>https://codeberg.org/forgejo/forgejo/pulls/5974</url>
+      <url>https://codeberg.org/forgejo/forgejo/pulls/5974</url>
+      <url>https://codeberg.org/forgejo/forgejo/pulls/5974</url>
+      <url>https://codeberg.org/forgejo/forgejo/pulls/5974</url>
+      <url>https://codeberg.org/forgejo/forgejo/pulls/5974</url>
+      <url>https://codeberg.org/forgejo/forgejo/pulls/5974</url>
+    </references>
+    <dates>
+      <discovery>2024-12-12</discovery>
+      <entry>2024-12-17</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="25a697de-bca1-11ef-8926-9b4f2d14eb53">
+    <topic>forgejo -- unauthorized user impersonation</topic>
+    <affects>
+      <package>
+	<name>forgejo</name>
+	<range><lt>7.0.12</lt></range>
+      </package>
+    </affects>
+    <description>
+       <body xmlns="http://www.w3.org/1999/xhtml">
+       <h1>Problem Description:</h1>
+       <ul>
+       <li>When Forgejo is configured to run the internal ssh server with
+       [server].START_SSH_SERVER=true, it was possible for a registered user
+       to impersonate another user.  The rootless container image uses the
+       internal ssh server by default and was vulnerable.  A Forgejo
+       instance running from a binary or from a root container image does
+       not use the internal ssh server by default and was not vulnerable. 
+       The incorrect use of the crypto package is the root cause of the
+       vulnerability and was fixed for the internal ssh server.</li>
+       <li>Revert "allow synchronizing user status from OAuth2 login
+       providers"</li>
+       </ul>
+      </body>
+    </description>
+    <references>
+      <url>https://codeberg.org/forgejo/forgejo/pulls/6248</url>
+    </references>
+    <dates>
+      <discovery>2024-12-12</discovery>
+      <entry>2024-12-17</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="6dcf6fc6-bca0-11ef-8926-9b4f2d14eb53">
+    <topic>forgejo -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>forgejo</name>
+	<range><lt>9.0.3</lt></range>
+      </package>
+    </affects>
+    <description>
+       <body xmlns="http://www.w3.org/1999/xhtml">
+       <h1>Problem Description:</h1>
+       <ul>
+       <li>When Forgejo is configured to run the internal ssh server with
+       [server].START_SSH_SERVER=true, it was possible for a registered user
+       to impersonate another user.  The rootless container image uses the
+       internal ssh server by default and was vulnerable.  A Forgejo
+       instance running from a binary or from a root container image does
+       not use the internal ssh server by default and was not vulnerable. 
+       The incorrect use of the crypto package is the root cause of the
+       vulnerability and was fixed for the internal ssh server.</li>
+       <li>Revert "allow synchronizing user status from OAuth2 login
+       providers"</li>
+       </ul>
+      </body>
+    </description>
+    <references>
+      <url>https://codeberg.org/forgejo/forgejo/pulls/6248</url>
+      <url>https://codeberg.org/forgejo/forgejo/pulls/6249</url>
+    </references>
+    <dates>
+      <discovery>2024-12-12</discovery>
+      <entry>2024-12-17</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="71f3e9f0-bafc-11ef-885d-901b0e934d69">
     <topic>py-matrix-synapse -- multiple vulnerabilities in versions prior to 1.120.1</topic>
     <affects>
