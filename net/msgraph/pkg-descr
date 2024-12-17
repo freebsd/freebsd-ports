@@ -1,0 +1,4 @@
+Microsoft Graph is a RESTful web API that enables you to access Microsoft
+Cloud service resources. libmsgraph is a GLib-based library for accessing this
+API licensed under LGPL.
+
