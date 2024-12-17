@@ -38,9 +38,12 @@ Licenses_db_Include_MAINTAINER=         portmgr@FreeBSD.org
 # _LICENSE_LIST_GROUPS	- List of defined license groups
 #
 
-_LICENSE_LIST= 	BSL CDDL CPAL-1.0 ClArtistic EPL GFDL GMGPL \
+_LICENSE_LIST= 	BSL CDDL CPAL-1.0 ClArtistic EPL EU GFDL GMGPL \
 				ISCL MIT NCSA ODbL OFL10 OFL11 OWL OpenSSL PD PSFL PostgreSQL \
 				RUBY UNLICENSE WTFPL1 WTFPL ZLIB ZPL21
+
+# EU family
+_LICENSE_LIST+= EUPL11 EUPL12
 
 # GNU family
 _LICENSE_LIST+= AGPLv3 GPLv1 GPLv2 GPLv3 GPLv3RLE LGPL20 LGPL21 LGPL3
@@ -78,6 +81,8 @@ _LICENSE_LIST+= MPL10 MPL11 MPL20
 _LICENSE_LIST+= NONE
 
 # List of groups (only names must be present)
+
+_LICENSE_NAME_EU=	European Union Public Licence
 
 _LICENSE_NAME_FSF=	Free Software Foundation Approved
 
@@ -268,6 +273,12 @@ _LICENSE_GROUPS_CPAL-1.0=	FSF OSI
 
 _LICENSE_NAME_EPL=	Eclipse Public License
 _LICENSE_GROUPS_EPL=	FSF OSI
+
+_LICENSE_NAME_EUPL11=	European Union Public Licence version 1.1
+_LICENSE_GROUPS_EUPL11=	EU OSI
+
+_LICENSE_NAME_EUPL12=	European Union Public Licence version 1.2
+_LICENSE_GROUPS_EUPL12=	EU OSI
 
 _LICENSE_NAME_GFDL=	GNU Free Documentation License
 _LICENSE_GROUPS_GFDL=	FSF
