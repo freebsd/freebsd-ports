@@ -525,6 +525,7 @@ share/man/man1/remind.1.gz
 %%DATADIR%%/holidays/us/mo.rem
 %%DATADIR%%/holidays/us/mp.rem
 %%DATADIR%%/holidays/us/ms.rem
+%%DATADIR%%/holidays/us/mt.rem
 %%DATADIR%%/holidays/us/nc.rem
 %%DATADIR%%/holidays/us/ne.rem
 %%DATADIR%%/holidays/us/nh.rem
@@ -532,6 +533,7 @@ share/man/man1/remind.1.gz
 %%DATADIR%%/holidays/us/nm.rem
 %%DATADIR%%/holidays/us/nv.rem
 %%DATADIR%%/holidays/us/ny.rem
+%%DATADIR%%/holidays/us/oh.rem
 %%DATADIR%%/holidays/us/ok.rem
 %%DATADIR%%/holidays/us/pa.rem
 %%DATADIR%%/holidays/us/pr.rem
@@ -575,3 +577,4 @@ share/man/man1/remind.1.gz
 %%DATADIR%%/moonphases.rem
 %%DATADIR%%/seasons.rem
 %%DATADIR%%/site/README
+%%DATADIR%%/sun.rem

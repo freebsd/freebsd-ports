@@ -1,5 +1,5 @@
 PORTNAME=	remind
-DISTVERSION=	05.01.01
+DISTVERSION=	05.02.01
 CATEGORIES=	deskutils
 # upstream moves distfiles to OLD once a new release appears
 MASTER_SITES=	https://dianne.skoll.ca/projects/remind/download/ \
@@ -28,32 +28,11 @@ EXTRA_PATCHES_riscv64=	${FILESDIR}/extra-patch-configure.in
 EXTRA_PATCHES=	${EXTRA_PATCHES_${ARCH}}
 
 OPTIONS_DEFINE=	A4 TCLTK REM2HTML REM2PDF
-OPTIONS_DEFAULT=	LANG_US REM2HTML REM2PDF
-OPTIONS_SINGLE=	LANGUAGE
-OPTIONS_SINGLE_LANGUAGE=	LANG_US LANG_DE LANG_NL LANG_FI LANG_FR \
-				LANG_NN LANG_DA LANG_PL LANG_PBR LANG_IT \
-				LANG_RO LANG_ES LANG_IS
+OPTIONS_DEFAULT=	REM2HTML REM2PDF
 OPTIONS_SUB=	yes
 A4_DESC=	Use A4 instead of Letter paper
-LANGUAGE_DESC=	User interface language
 REM2HTML_DESC=	Build and install rem2html (requires Perl)
 REM2PDF_DESC=	Build and install rem2pdf (requires Perl)
-
-# do not sort these -- correspond to enumeration in source code
-LANG.US=	ENGLISH
-LANG.DE=	GERMAN
-LANG.NL=	DUTCH
-LANG.FI=	FINNISH
-LANG.FR=	FRENCH
-LANG.NN=	NORWEGIAN
-LANG.DA=	DANISH
-LANG.PL=	POLISH
-LANG.PBR=	BRAZPORT
-LANG.IT=	ITALIAN
-LANG.RO=	ROMANIAN
-LANG.ES=	SPANISH
-LANG.IS=	ICELANDIC
-CFLAGS+=	-DLANG=${${PORT_OPTIONS:MLANG_*:S/_/./}}
 
 TCLTK_USES=	tk
 TCLTK_RUN_DEPENDS=	dtplite:devel/tcllib
