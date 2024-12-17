@@ -189,6 +189,7 @@
     SUBDIR += apache-commons-io
     SUBDIR += apache-commons-jxpath
     SUBDIR += apache-log4j2
+    SUBDIR += apache-orc
     SUBDIR += apache-rat
     SUBDIR += aphpbreakdown
     SUBDIR += aphpunit
