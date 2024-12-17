@@ -1,5 +1,5 @@
 PORTNAME=	Shell-Guess
-PORTVERSION=	0.09
+PORTVERSION=	0.10
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -16,7 +16,7 @@ USE_PERL5=	configure
 
 NO_ARCH=	yes
 
-PLIST_FILES=	${SITE_PERL_REL}/Shell/Guess.pm \
-		${SITE_MAN3_REL}/Shell::Guess.3.gz
+PLIST_FILES=	${SITE_MAN3_REL}/Shell::Guess.3.gz \
+		${SITE_PERL_REL}/Shell/Guess.pm
 
 .include <bsd.port.mk>
