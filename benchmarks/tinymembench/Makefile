@@ -17,7 +17,14 @@ GH_ACCOUNT=	ssvb
 
 PLIST_FILES=	bin/tinymembench
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH:Marmv?}
+pre-configure:
+	${REINPLACE_CMD} -e 's,@progbits,%progbits,' ${WRKSRC}/*.S
+.endif
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
