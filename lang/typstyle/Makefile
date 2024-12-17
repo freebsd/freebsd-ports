@@ -1,6 +1,6 @@
 PORTNAME=	typstyle
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.12.10
+DISTVERSION=	0.12.12
 CATEGORIES=	lang
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -294,7 +294,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		rand_core-0.6.4 \
 		rayon-1.10.0 \
 		rayon-core-1.12.1 \
-		redox_syscall-0.5.7 \
+		redox_syscall-0.5.8 \
 		redox_users-0.4.6 \
 		reflexo-0.5.1 \
 		reflexo-typst-0.5.1 \
@@ -511,5 +511,10 @@ OPENSSLINC=	/usr/include
 OPENSSLLIB=	/usr/lib
 
 PLIST_FILES=	bin/${PORTNAME}
+
+do-install: # workaround for error: found a virtual manifest at `xx` instead of a package manifest
+	${INSTALL_PROGRAM} \
+		${WRKDIR}/target/release/${PORTNAME} \
+		${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>
