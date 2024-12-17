@@ -1,6 +1,5 @@
 PORTNAME=	bzip3
-DISTVERSION=	1.4.0
-PORTREVISION=	2
+DISTVERSION=	1.5.1
 CATEGORIES=	archivers
 MASTER_SITES=	https://github.com/kspalaiologos/${PORTNAME}/releases/download/${DISTVERSION}/
 
@@ -10,7 +9,7 @@ WWW=		https://github.com/kspalaiologos/bzip3
 
 LICENSE=	APACHE20 BSD2CLAUSE LGPL3+
 LICENSE_COMB=	multi
-LICENSE_FILE_APACHE20=	${WRKSRC}/libsais-LICENSE
+LICENSE_FILE_APACHE20=	${WRKSRC}/3rdparty/libsais-LICENSE
 LICENSE_FILE_LGPL3+ =	${WRKSRC}/LICENSE
 
 USES=		cmake cpe pathfix tar:xz
