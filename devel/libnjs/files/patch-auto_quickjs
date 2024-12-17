@@ -1,5 +1,5 @@
---- ../njs-0.8.8/auto/quickjs.orig	2024-12-15 17:49:15 UTC
-+++ ../njs-0.8.8/auto/quickjs
+--- auto/quickjs.orig	2024-12-15 17:49:15 UTC
++++ auto/quickjs
 @@ -46,9 +46,9 @@ if [ $NJS_TRY_QUICKJS = YES ]; then
      fi
  

@@ -1,5 +1,5 @@
 PORTNAME=	libnjs
-DISTVERSION=	0.8.7
+DISTVERSION=	0.8.8
 CATEGORIES=	devel www
 
 MAINTAINER=	osa@FreeBSD.org
@@ -9,7 +9,8 @@ WWW=		https://nginx.org/en/docs/njs/
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libpcre2-8.so:devel/pcre2
+LIB_DEPENDS=	libpcre2-8.so:devel/pcre2 \
+		libquickjs.so:lang/quickjs
 
 USES=		cpe ssl
 
@@ -20,7 +21,8 @@ GH_TUPLE=	nginx:njs:${DISTVERSION}
 HAS_CONFIGURE=	yes
 
 post-patch:
-	@${REINPLACE_CMD} 's|%%LOCALBASE%%|${LOCALBASE}|g' \
+	${REINPLACE_CMD} 's|%%LOCALBASE%%|${LOCALBASE}|g' \
+		${WRKSRC}/auto/quickjs \
 		${WRKSRC}/src/njs.pc.in
 
 do-build:

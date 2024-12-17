@@ -1,5 +1,5 @@
 PORTNAME=	njs
-DISTVERSION=	0.8.7
+DISTVERSION=	0.8.8
 CATEGORIES=	lang www
 
 MAINTAINER=	osa@FreeBSD.org
@@ -17,9 +17,14 @@ USE_GITHUB=	yes
 GH_TUPLE=	nginx:njs:${DISTVERSION}
 HAS_CONFIGURE=	yes
 
-LIB_DEPENDS=	libpcre2-8.so:devel/pcre2
+LIB_DEPENDS=	libpcre2-8.so:devel/pcre2 \
+		libquickjs.so:lang/quickjs
 
 PLIST_FILES=	bin/njs
+
+post-patch:
+	${REINPLACE_CMD} 's|%%LOCALBASE%%|${LOCALBASE}|g' \
+		${WRKSRC}/auto/quickjs
 
 do-build:
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} njs

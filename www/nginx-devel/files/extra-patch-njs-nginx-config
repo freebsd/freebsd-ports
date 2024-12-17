@@ -1,0 +1,13 @@
+--- ../njs-0.8.8/nginx/config.orig	2024-12-16 11:16:44.892658000 -0500
++++ ../njs-0.8.8/nginx/config	2024-12-16 11:19:57.566877000 -0500
+@@ -60,8 +60,8 @@
+     fi
+ 
+     if [ $ngx_found = no ]; then
+-        ngx_feature="QuickJS library -I/usr/include/quickjs/ -L/usr/lib/quickjs/ -lquickjs"
+-        ngx_feature_libs="-L/usr/lib/quickjs/ -lquickjs -lm -ldl -lpthread"
++        ngx_feature="QuickJS library -I%%LOCALBASE%%/include/quickjs/ -L%%LOCALBASE%%/lib/ -lquickjs"
++        ngx_feature_libs="-L%%LOCALBASE%%/lib/ -lquickjs -lm -ldl -lpthread"
+ 
+         . auto/feature
+     fi

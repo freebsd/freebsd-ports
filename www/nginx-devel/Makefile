@@ -1,6 +1,6 @@
 PORTNAME?=	nginx
 PORTVERSION=	1.27.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	https://nginx.org/download/ \
 		LOCAL/osa
@@ -313,7 +313,8 @@ post-patch-ICONV-on:
 	@${REINPLACE_CMD} 's!%%PREFIX%%!${LOCALBASE}!g' ${WRKSRC_iconv}/config
 
 post-patch-NJS_QJS-on:
-	@${REINPLACE_CMD} 's!%%PREFIX%%!${LOCALBASE}!g' ${WRKSRC_njs}/auto/quickjs
+	@${REINPLACE_CMD} 's!%%LOCALBASE%%!${LOCALBASE}!g' ${WRKSRC_njs}/auto/quickjs \
+		${WRKSRC_njs}/nginx/config
 
 post-patch-PASSENGER-on:
 	@${REINPLACE_CMD} \
