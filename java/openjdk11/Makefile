@@ -157,6 +157,12 @@ CXXFLAGS+=	-Wl,-rpath=${LOCALBASE}/lib/gcc${GCC_DEFAULT}
 CONFIGURE_ARGS+=--disable-precompiled-headers
 .else
 MAKE_ENV+=	USE_CLANG=true
+.if ${ARCH:Mpowerpc64*}
+LLVM_VER=	12
+BUILD_DEPENDS+=	clang${LLVM_VER}:devel/llvm${LLVM_VER}
+CC=		${LOCALBASE}/bin/clang${LLVM_VER}
+CXX=		${LOCALBASE}/bin/clang++${LLVM_VER}
+.endif
 .endif
 
 .if ${ARCH} == aarch64 || ${ARCH:Marmv*}
