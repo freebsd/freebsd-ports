@@ -469,7 +469,6 @@ bin/dm_zdump
 %%SITE_PERL%%/Date/Manip/Offset/off404.pm
 %%SITE_PERL%%/Date/Manip/Offset/off405.pm
 %%SITE_PERL%%/Date/Manip/Offset/off406.pm
-%%SITE_PERL%%/Date/Manip/Offset/off407.pm
 %%SITE_PERL%%/Date/Manip/Problems.pod
 %%SITE_PERL%%/Date/Manip/Recur.pm
 %%SITE_PERL%%/Date/Manip/Recur.pod
@@ -637,7 +636,6 @@ bin/dm_zdump
 %%SITE_PERL%%/Date/Manip/TZ/asbeir00.pm
 %%SITE_PERL%%/Date/Manip/TZ/asbish00.pm
 %%SITE_PERL%%/Date/Manip/TZ/aschit00.pm
-%%SITE_PERL%%/Date/Manip/TZ/aschoi00.pm
 %%SITE_PERL%%/Date/Manip/TZ/ascolo00.pm
 %%SITE_PERL%%/Date/Manip/TZ/asdama00.pm
 %%SITE_PERL%%/Date/Manip/TZ/asdhak00.pm
@@ -719,10 +717,8 @@ bin/dm_zdump
 %%SITE_PERL%%/Date/Manip/TZ/ausydn00.pm
 %%SITE_PERL%%/Date/Manip/TZ/b00.pm
 %%SITE_PERL%%/Date/Manip/TZ/c00.pm
-%%SITE_PERL%%/Date/Manip/TZ/cet00.pm
 %%SITE_PERL%%/Date/Manip/TZ/d00.pm
 %%SITE_PERL%%/Date/Manip/TZ/e00.pm
-%%SITE_PERL%%/Date/Manip/TZ/eet00.pm
 %%SITE_PERL%%/Date/Manip/TZ/etgmt00.pm
 %%SITE_PERL%%/Date/Manip/TZ/etgmtm00.pm
 %%SITE_PERL%%/Date/Manip/TZ/etgmtm01.pm
@@ -799,7 +795,6 @@ bin/dm_zdump
 %%SITE_PERL%%/Date/Manip/TZ/k00.pm
 %%SITE_PERL%%/Date/Manip/TZ/l00.pm
 %%SITE_PERL%%/Date/Manip/TZ/m00.pm
-%%SITE_PERL%%/Date/Manip/TZ/met00.pm
 %%SITE_PERL%%/Date/Manip/TZ/n00.pm
 %%SITE_PERL%%/Date/Manip/TZ/o00.pm
 %%SITE_PERL%%/Date/Manip/TZ/p00.pm
@@ -841,7 +836,6 @@ bin/dm_zdump
 %%SITE_PERL%%/Date/Manip/TZ/ut00.pm
 %%SITE_PERL%%/Date/Manip/TZ/v00.pm
 %%SITE_PERL%%/Date/Manip/TZ/w00.pm
-%%SITE_PERL%%/Date/Manip/TZ/wet00.pm
 %%SITE_PERL%%/Date/Manip/TZ/x00.pm
 %%SITE_PERL%%/Date/Manip/TZ/y00.pm
 %%SITE_PERL%%/Date/Manip/TZ/z00.pm
