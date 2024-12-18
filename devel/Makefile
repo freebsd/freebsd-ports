@@ -4655,6 +4655,7 @@
     SUBDIR += py-cluster
     SUBDIR += py-cmd2
     SUBDIR += py-cmdtest
+    SUBDIR += py-cobble
     SUBDIR += py-codecov
     SUBDIR += py-codegen
     SUBDIR += py-cog
