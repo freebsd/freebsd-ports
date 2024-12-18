@@ -1,6 +1,7 @@
 PORTNAME=	dlib
 DISTVERSIONPREFIX=v
 DISTVERSION=	19.24.6
+PORTREVISION=	1
 CATEGORIES=	science devel math
 PKGNAMESUFFIX=	-cpp
 
@@ -23,10 +24,13 @@ GH_ACCOUNT=		davisking
 
 CMAKE_ON=		BUILD_SHARED_LIBS
 
-OPTIONS_DEFINE=		BLASLAPACK
+OPTIONS_DEFINE=		BLASLAPACK FFMPEG
 
 BLASLAPACK_DESC=	Use OpenBLAS for matrix operations
+FFMPEG_DESC=		Build with the FFMPEG wrappers
+
 BLASLAPACK_USES=	blaslapack:openblas
 BLASLAPACK_CMAKE_OFF=	-DDLIB_USE_BLAS=0 -DDLIB_USE_LAPACK=0
+FFMPEG_LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg
 
 .include <bsd.port.mk>
