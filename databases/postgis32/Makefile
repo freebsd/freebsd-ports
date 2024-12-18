@@ -9,6 +9,9 @@ MAINTAINER=	lbartoletti@FreeBSD.org
 COMMENT=	Geographic objects support for PostgreSQL databases
 WWW=		https://postgis.net/
 
+DEPRECATED=	Please use newer versions
+EXPIRATION_DATE=	2024-12-31
+
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
