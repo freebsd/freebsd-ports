@@ -1,6 +1,6 @@
 PORTNAME=	bhyvemgr
 DISTVERSIONPREFIX=	v
-PORTVERSION=	1.2.0
+PORTVERSION=	1.3.0
 CATEGORIES=	sysutils
 PKGNAMESUFFIX=	${LAZARUS_PKGNAMESUFFIX}
 
@@ -38,7 +38,7 @@ RUN_DEPENDS+=	u-boot-bhyve-arm64>0:sysutils/u-boot-bhyve-arm64
 RUN_DEPENDS+=	bhyve-firmware>0:sysutils/bhyve-firmware
 .endif
 
-LAZARUS_PROJECT_FILES=	bhyvemgr.lpi
+LAZARUS_PROJECT_FILES=	src/bhyvemgr.lpi
 
 LAZBUILD_ARGS=		--bm=Release -d
 
@@ -54,7 +54,7 @@ USE_GNOME+=	${USE_GNOME_${FLAVOR}}
 SUB_FILES=	pkg-message
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+	${INSTALL_PROGRAM} ${WRKSRC}/src/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 	${INSTALL_DATA} ${WRKSRC}/setup/${PORTNAME}.desktop ${STAGEDIR}${PREFIX}/share/applications/${PORTNAME}.desktop
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/512x512/apps
 	${INSTALL_DATA} ${WRKSRC}/setup/${PORTNAME}.png ${STAGEDIR}${PREFIX}/share/icons/hicolor/512x512/apps/${PORTNAME}.png
