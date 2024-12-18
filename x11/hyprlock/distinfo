@@ -1,3 +1,5 @@
-TIMESTAMP = 1729555766
-SHA256 (hyprwm-hyprlock-v0.5.0_GH0.tar.gz) = 4f8a0199de205ad21a4e3da88c0196514a0ba3c6162e44f93e7cfb96371daf99
-SIZE (hyprwm-hyprlock-v0.5.0_GH0.tar.gz) = 67016
+TIMESTAMP = 1734534184
+SHA256 (hyprwm-hyprlock-v0.6.0_GH0.tar.gz) = e1c773947566ec0cc3c836db523bb3ff7efcf07b9e8ce453864ca9bf7c033a1f
+SIZE (hyprwm-hyprlock-v0.6.0_GH0.tar.gz) = 71344
+SHA256 (d12b4a7fbaf5.patch) = 627cbca1594da61c2e117a99e016e3863ba98449c250d88c6b8f093707d97181
+SIZE (d12b4a7fbaf5.patch) = 802

@@ -14,17 +14,17 @@ so try authenticating via setuid helper first.
 -auth        include     login
 +auth        include     unix-selfauth
  
---- src/core/Auth.cpp.orig	2024-07-05 20:58:45 UTC
-+++ src/core/Auth.cpp
-@@ -56,11 +56,6 @@ CAuth::CAuth() {
- CAuth::CAuth() {
-     static auto* const PPAMMODULE = (Hyprlang::STRING*)(g_pConfigManager->getValuePtr("general:pam_module"));
+--- src/auth/Pam.cpp.orig	2024-12-18 15:03:04 UTC
++++ src/auth/Pam.cpp
+@@ -64,11 +64,6 @@ CPam::CPam() {
+     static auto* const PPAMMODULE = (Hyprlang::STRING*)(g_pConfigManager->getValuePtr("auth:pam:module"));
      m_sPamModule                  = *PPAMMODULE;
--
+ 
 -    if (!std::filesystem::exists(std::filesystem::path("/etc/pam.d/") / m_sPamModule)) {
 -        Debug::log(ERR, "Pam module \"/etc/pam.d/{}\" does not exist! Falling back to \"/etc/pam.d/su\"", m_sPamModule);
 -        m_sPamModule = "su";
 -    }
+-
+     m_sConversationState.waitForInput = [this]() { this->waitForInput(); };
  }
  
- static void passwordCheckTimerCallback(std::shared_ptr<CTimer> self, void* data) {

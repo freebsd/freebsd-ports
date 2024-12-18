@@ -1,7 +1,10 @@
 PORTNAME=	hyprlock
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.5.0
+DISTVERSION=	0.6.0
 CATEGORIES=	x11 wayland
+
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES+=	d12b4a7fbaf5.patch:-p1 # https://github.com/hyprwm/hyprlock/pull/589
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Hyprland's GPU-accelerated screen locking utility #'
@@ -14,6 +17,7 @@ BUILD_DEPENDS=	wayland-protocols>0:graphics/wayland-protocols
 LIB_DEPENDS=	libhyprlang.so:devel/hyprlang \
 		libhyprutils.so:devel/hyprutils \
 		libsdbus-c++.so:devel/sdbus-cpp \
+		libhyprgraphics.so:graphics/hyprgraphics \
 		libdrm.so:graphics/libdrm \
 		libwayland-client.so:graphics/wayland \
 		libwebp.so:graphics/webp \
