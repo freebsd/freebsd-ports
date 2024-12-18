@@ -1,14 +1,13 @@
-PORTNAME=	mdocml
+PORTNAME=	mandoc
 PORTVERSION=	1.14.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc
-MASTER_SITES=	http://mdocml.bsd.lv/snapshots/ \
+MASTER_SITES=	http://mandoc.bsd.lv/snapshots/ \
 		LOCAL/uqs
-DISTNAME=	mandoc-${DISTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	mdoc macro compiler
-WWW=		https://mdocml.bsd.lv/
+COMMENT=	Suite of for tools compiling mdoc and man macros
+WWW=		https://mandoc.bsd.lv/
 
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -27,7 +26,7 @@ post-configure:
 		-e 's|/var/www|${WWWDIR}|' \
 		-e 's|^MANDIR.*|MANDIR=${PREFIX}/share/man|' \
 		${WRKSRC}/Makefile.local
-	cp ${WRKSRC}/cgi.h.example ${WRKSRC}/cgi.h
+	${CP} ${WRKSRC}/cgi.h.example ${WRKSRC}/cgi.h
 
 post-build:
 	cd ${WRKSRC} && ${MAKE} ${MAKE_ARGS} man.cgi

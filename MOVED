@@ -3754,3 +3754,4 @@ x11-toolkits/py-qt5-chart|x11-toolkits/py-qt5-charts|2024-12-08|Renamed to be co
 x11-toolkits/py-qt6-chart|x11-toolkits/py-qt6-charts|2024-12-08|Renamed to be consistent with the Qt module name
 devel/sfml251|devel/sfml|2024-12-09|Removed pinned port because the last user is gone
 devel/ocaml-seq|lang/ocaml|2024-12-10|Has expired: Seq is provided by lang/ocaml
+textproc/mdocml|textproc/mandoc|2024-12-17|Upstream reanamed

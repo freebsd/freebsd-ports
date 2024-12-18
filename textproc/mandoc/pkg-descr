@@ -1,0 +1,8 @@
+mandoc is a suite of tools compiling mdoc, the roff macro language of
+choice for BSD manual pages, and man, the predominant historical language
+for UNIX manuals. It is small, ISO C, ISC-licensed, and quite fast. The
+main component of the toolset is the mandoc utility program, based on the
+libmandoc validating compiler, to format output for UTF-8 and ASCII UNIX
+terminals, HTML 5, PostScript, and PDF.
+
+mandoc was formerly distributed as mdocml.

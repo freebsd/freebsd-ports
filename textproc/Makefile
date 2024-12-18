@@ -473,6 +473,7 @@
     SUBDIR += makefaq
     SUBDIR += makepatch
     SUBDIR += man2html
+    SUBDIR += mandoc
     SUBDIR += mantra
     SUBDIR += markdown
     SUBDIR += markdown-mode.el
@@ -484,7 +485,6 @@
     SUBDIR += mdbook
     SUBDIR += mdbook-linkcheck
     SUBDIR += mdbook-mermaid
-    SUBDIR += mdocml
     SUBDIR += meilisearch
     SUBDIR += meld
     SUBDIR += metauml
