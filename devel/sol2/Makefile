@@ -29,7 +29,7 @@ EXTRA_PATCHES=	${PATCHDIR}/extra-patch-include_sol_function__types__stateless.hp
 
 .if ${CHOSEN_COMPILER_TYPE} == clang && \
 	${COMPILER_VERSION} >= 191
-EXTRA_PATCHES=	${PATCHDIR}/extra-patch-include_sol_optional__implementation.hp
+EXTRA_PATCHES=	${PATCHDIR}/extra-patch-include_sol_optional__implementation.hpp
 .endif
 
 .include <bsd.port.post.mk>
