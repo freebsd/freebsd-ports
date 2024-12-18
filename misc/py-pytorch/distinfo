@@ -1,5 +1,5 @@
-TIMESTAMP = 1728092741
-SHA256 (pytorch/pytorch-v2.4.1.tar.gz) = 39666a43c0c10f5fd46c1a7ca95dc74d3bc39de2678b70066481cbf02e58384f
-SIZE (pytorch/pytorch-v2.4.1.tar.gz) = 296932555
-SHA256 (pytorch/pytorch-cpuinfo-3a3b76bc8845d0f4a2ea3108e256313458c5de03_GH0.tar.gz) = 658acaf67573484abc7a093066d3766f9a3b94aff5b77e0f4e9c72cee5ebaa4a
-SIZE (pytorch/pytorch-cpuinfo-3a3b76bc8845d0f4a2ea3108e256313458c5de03_GH0.tar.gz) = 3534893
+TIMESTAMP = 1734497159
+SHA256 (pytorch/pytorch-v2.5.1.tar.gz) = 740eb5fff95e33cfe699bad43be83523f569c7cc7f9c285c2a255416443dd266
+SIZE (pytorch/pytorch-v2.5.1.tar.gz) = 298929057
+SHA256 (pytorch/pytorch-cpuinfo-1e83a2f_GH0.tar.gz) = b8945cf45d4f13054d7f52e8bd9314690ea840d4d0ff21febd95ff04de3c613e
+SIZE (pytorch/pytorch-cpuinfo-1e83a2f_GH0.tar.gz) = 3541839
