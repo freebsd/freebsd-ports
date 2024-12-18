@@ -1,4 +1,4 @@
---- config/gitlab.yml.example.orig	2024-11-20 11:30:30 UTC
+--- config/gitlab.yml.example.orig	2024-12-18 06:12:05 UTC
 +++ config/gitlab.yml.example
 @@ -473,7 +473,7 @@ production: &base
    ## GitLab Pages
@@ -63,7 +63,7 @@
  
    topology_service:
      # enabled: false
-@@ -1288,7 +1288,7 @@ production: &base
+@@ -1289,7 +1289,7 @@ production: &base
      # enabled: true
      # File that contains the secret key for verifying access for gitlab-kas.
      # Default is '.gitlab_kas_secret' relative to Rails.root (i.e. root of the GitLab app).
@@ -72,7 +72,7 @@
  
      # The URL to the external KAS API (used by the Kubernetes agents)
      # external_url: wss://kas.example.com
-@@ -1312,13 +1312,13 @@ production: &base
+@@ -1313,13 +1313,13 @@ production: &base
  
    ## GitLab Elasticsearch settings
    elasticsearch:
@@ -88,7 +88,7 @@
  
    ## Webpack settings
    # If enabled, this will tell rails to serve frontend assets from the webpack-dev-server running
-@@ -1339,18 +1339,18 @@ production: &base
+@@ -1340,18 +1340,18 @@ production: &base
  
      # Sidekiq exporter is a dedicated Prometheus metrics server optionally running alongside Sidekiq.
      sidekiq_exporter:
@@ -114,7 +114,7 @@
  
      # Web exporter is a dedicated Prometheus metrics server optionally running alongside Puma.
      web_exporter:
-@@ -1577,13 +1577,13 @@ test:
+@@ -1578,13 +1578,13 @@ test:
          gitaly_address: unix:tmp/tests/gitaly/praefect.socket
  
    gitaly:
