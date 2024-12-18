@@ -1,0 +1,180 @@
+PORTNAME=	jnv
+DISTVERSIONPREFIX=	v
+DISTVERSION=	0.4.2
+CATEGORIES=	textproc
+
+MAINTAINER=	yuri@FreeBSD.org
+COMMENT=	Interactive JSON filter using jq
+WWW=		https://github.com/ynqa/jnv
+
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+USES=		cargo
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	ynqa
+
+CARGO_CRATES=	adler-1.0.2 \
+		ahash-0.8.11 \
+		aho-corasick-1.1.3 \
+		allocator-api2-0.2.18 \
+		anstream-0.6.13 \
+		anstyle-1.0.6 \
+		anstyle-parse-0.2.3 \
+		anstyle-query-1.0.2 \
+		anstyle-wincon-3.0.2 \
+		anyhow-1.0.82 \
+		arboard-3.4.0 \
+		autocfg-1.2.0 \
+		base64-0.21.7 \
+		bincode-1.3.3 \
+		bitflags-1.3.2 \
+		bitflags-2.5.0 \
+		block2-0.5.1 \
+		bytemuck-1.16.3 \
+		byteorder-lite-0.1.0 \
+		cfg-if-1.0.0 \
+		chumsky-0.9.3 \
+		clap-4.5.4 \
+		clap_builder-4.5.2 \
+		clap_derive-4.5.4 \
+		clap_lex-0.7.0 \
+		clipboard-win-5.4.0 \
+		colorchoice-1.0.0 \
+		core-foundation-0.9.4 \
+		core-foundation-sys-0.8.6 \
+		core-graphics-0.23.2 \
+		core-graphics-types-0.1.3 \
+		crc32fast-1.4.2 \
+		crossbeam-deque-0.8.5 \
+		crossbeam-epoch-0.9.18 \
+		crossbeam-utils-0.8.20 \
+		crossterm-0.28.1 \
+		crossterm_winapi-0.9.1 \
+		deranged-0.3.11 \
+		dyn-clone-1.0.17 \
+		either-1.13.0 \
+		endian-type-0.1.2 \
+		equivalent-1.0.1 \
+		errno-0.3.9 \
+		error-code-3.2.0 \
+		fdeflate-0.3.4 \
+		filedescriptor-0.8.2 \
+		flate2-1.0.31 \
+		foreign-types-0.5.0 \
+		foreign-types-macros-0.2.3 \
+		foreign-types-shared-0.3.1 \
+		gethostname-0.4.3 \
+		getrandom-0.2.14 \
+		hashbrown-0.14.3 \
+		heck-0.5.0 \
+		hermit-abi-0.3.9 \
+		hifijson-0.2.1 \
+		image-0.25.2 \
+		indexmap-2.2.6 \
+		itoa-1.0.11 \
+		jaq-core-1.2.1 \
+		jaq-interpret-1.2.1 \
+		jaq-parse-1.0.2 \
+		jaq-std-1.2.1 \
+		jaq-syn-1.1.0 \
+		jpeg-decoder-0.3.1 \
+		libc-0.2.153 \
+		libm-0.2.8 \
+		linux-raw-sys-0.4.14 \
+		lock_api-0.4.11 \
+		log-0.4.21 \
+		memchr-2.7.2 \
+		miniz_oxide-0.7.4 \
+		mio-1.0.2 \
+		nibble_vec-0.1.0 \
+		num-conv-0.1.0 \
+		num-traits-0.2.19 \
+		objc-sys-0.3.5 \
+		objc2-0.5.2 \
+		objc2-app-kit-0.2.2 \
+		objc2-core-data-0.2.2 \
+		objc2-core-image-0.2.2 \
+		objc2-encode-4.0.3 \
+		objc2-foundation-0.2.2 \
+		objc2-metal-0.2.2 \
+		objc2-quartz-core-0.2.2 \
+		once_cell-1.19.0 \
+		parking_lot-0.12.1 \
+		parking_lot_core-0.9.9 \
+		png-0.17.13 \
+		powerfmt-0.2.0 \
+		proc-macro2-1.0.81 \
+		promkit-0.6.0 \
+		quote-1.0.36 \
+		radix_trie-0.2.1 \
+		rayon-1.10.0 \
+		rayon-core-1.12.1 \
+		redox_syscall-0.4.1 \
+		regex-1.10.4 \
+		regex-automata-0.4.6 \
+		regex-syntax-0.8.3 \
+		rustix-0.38.34 \
+		ryu-1.0.17 \
+		scopeguard-1.2.0 \
+		serde-1.0.198 \
+		serde_derive-1.0.198 \
+		serde_json-1.0.116 \
+		signal-hook-0.3.17 \
+		signal-hook-mio-0.2.4 \
+		signal-hook-registry-1.4.2 \
+		simd-adler32-0.3.7 \
+		smallvec-1.13.2 \
+		strsim-0.11.1 \
+		syn-2.0.60 \
+		thiserror-1.0.64 \
+		thiserror-impl-1.0.64 \
+		tiff-0.9.1 \
+		time-0.3.36 \
+		time-core-0.1.2 \
+		time-macros-0.2.18 \
+		unicode-ident-1.0.12 \
+		unicode-width-0.1.14 \
+		urlencoding-2.1.3 \
+		utf8parse-0.2.1 \
+		version_check-0.9.4 \
+		wasi-0.11.0+wasi-snapshot-preview1 \
+		weezl-0.1.8 \
+		winapi-0.3.9 \
+		winapi-i686-pc-windows-gnu-0.4.0 \
+		winapi-x86_64-pc-windows-gnu-0.4.0 \
+		windows-sys-0.48.0 \
+		windows-sys-0.52.0 \
+		windows-targets-0.48.5 \
+		windows-targets-0.52.5 \
+		windows_aarch64_gnullvm-0.48.5 \
+		windows_aarch64_gnullvm-0.52.5 \
+		windows_aarch64_msvc-0.48.5 \
+		windows_aarch64_msvc-0.52.5 \
+		windows_i686_gnu-0.48.5 \
+		windows_i686_gnu-0.52.5 \
+		windows_i686_gnullvm-0.52.5 \
+		windows_i686_msvc-0.48.5 \
+		windows_i686_msvc-0.52.5 \
+		windows_x86_64_gnu-0.48.5 \
+		windows_x86_64_gnu-0.52.5 \
+		windows_x86_64_gnullvm-0.48.5 \
+		windows_x86_64_gnullvm-0.52.5 \
+		windows_x86_64_msvc-0.48.5 \
+		windows_x86_64_msvc-0.52.5 \
+		x11rb-0.13.1 \
+		x11rb-protocol-0.13.1 \
+		zerocopy-0.7.32 \
+		zerocopy-derive-0.7.32
+
+PLIST_FILES=	bin/${PORTNAME}
+
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+
+do-test:
+	@cd ${WRKSRC} && \
+		${CARGO} test --frozen --all-features
+
+.include <bsd.port.mk>
