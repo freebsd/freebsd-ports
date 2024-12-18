@@ -30,6 +30,7 @@ CFLAGS_aarch64?=	-march=armv8-a+crc+crypto
 NO_WRKSUBDIR=	yes
 BUILD_WRKSRC=	${WRKSRC}/CPP/7zip/Bundles/Alone2
 DOS2UNIX_FILES=	C/CpuArch.c \
+		C/CpuArch.h \
 		C/7zCrc.c \
 		C/Aes.c \
 		C/AesOpt.c \
