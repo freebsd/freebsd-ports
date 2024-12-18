@@ -1,4 +1,4 @@
-TIMESTAMP = 1734409174
+TIMESTAMP = 1734495225
 SHA256 (rust/crates/addr2line-0.21.0.crate) = 8a30b2e23b9e17a9f90641c7ab1549cd9b44f296d3ccbf309d2863cfe398a0cb
 SIZE (rust/crates/addr2line-0.21.0.crate) = 40807
 SHA256 (rust/crates/adler-1.0.2.crate) = f26201604c87b1e01bd3d98f8d5d9a8fcbb815e8cedb41ffccbeb4bf593a35fe
@@ -1135,5 +1135,5 @@ SHA256 (rust/crates/zstd-safe-7.2.1.crate) = 54a3ab4db68cea366acc5c897c7b4d4d1b8
 SIZE (rust/crates/zstd-safe-7.2.1.crate) = 21122
 SHA256 (rust/crates/zstd-sys-2.0.13+zstd.1.5.6.crate) = 38ff0f21cfee8f97d94cef41359e0c89aa6113028ab0291aa8ca0038995a95aa
 SIZE (rust/crates/zstd-sys-2.0.13+zstd.1.5.6.crate) = 749090
-SHA256 (jdx-mise-v2024.12.12_GH0.tar.gz) = 0eeab8fbf1b25517d050776be89de35826ced39311596c8a09abec6d89fa1f4f
-SIZE (jdx-mise-v2024.12.12_GH0.tar.gz) = 4133347
+SHA256 (jdx-mise-v2024.12.13_GH0.tar.gz) = 0b60532a1512dcd28a44655b055cf17236d3c3427e0c8a41683caaade3d1c9e3
+SIZE (jdx-mise-v2024.12.13_GH0.tar.gz) = 4148808
