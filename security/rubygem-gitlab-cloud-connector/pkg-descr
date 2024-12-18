@@ -1,0 +1,2 @@
+A Ruby library that Cloud Connector token issuers (GitLab.com, CDot)
+can use to mint access tokens.

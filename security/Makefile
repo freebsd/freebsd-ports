@@ -1147,6 +1147,7 @@
     SUBDIR += rubygem-ed25519
     SUBDIR += rubygem-encryptor
     SUBDIR += rubygem-ezcrypto
+    SUBDIR += rubygem-gitlab-cloud-connector
     SUBDIR += rubygem-googleauth
     SUBDIR += rubygem-googleauth-gitlab
     SUBDIR += rubygem-gpgme
