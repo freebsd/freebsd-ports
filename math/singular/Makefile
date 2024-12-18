@@ -8,7 +8,8 @@ DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Computer algebra system for polynomial computations
-WWW=		https://www.singular.uni-kl.de/
+WWW=		https://www.singular.uni-kl.de/ \
+		https://github.com/Singular/Singular
 
 LICENSE=	GPLv3RLE
 LICENSE_FILE=	${WRKSRC}/COPYING
