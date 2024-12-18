@@ -1,6 +1,6 @@
 PORTNAME=	gomplate
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.2.0
+DISTVERSION=	4.3.0
 CATEGORIES=	sysutils
 
 MAINTAINER=	eduardo@FreeBSD.org
@@ -10,10 +10,10 @@ WWW=		https://github.com/hairyhenderson/gomplate
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:1.22,modules
+USES=		go:1.23,modules
 
 GO_MODULE=	github.com/hairyhenderson/gomplate/v4
-GH_TAG_COMMIT=	020f6d1
+GH_TAG_COMMIT=	cec14a0
 GO_TARGET=	./cmd/gomplate
 GO_BUILDFLAGS=	-ldflags "\
 		-w -s \
