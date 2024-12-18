@@ -1,6 +1,6 @@
 PORTNAME=	unftp
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.15.0
+DISTVERSION=	0.15.1
 CATEGORIES=	ftp
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -181,7 +181,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		libgit2-sys-0.17.0+1.8.1 \
 		libloading-0.8.6 \
 		libredox-0.1.3 \
-		libunftp-0.20.2 \
+		libunftp-0.20.3 \
 		libz-sys-1.1.20 \
 		linux-raw-sys-0.4.14 \
 		litemap-0.7.4 \
