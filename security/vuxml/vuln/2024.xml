@@ -1,3 +1,30 @@
+  <vuln vid="dc087dad-bd71-11ef-b5a1-000ec6d40964">
+    <topic>liboqs -- Correctness error in HQC decapsulation</topic>
+    <affects>
+      <package>
+	<name>liboqs</name>
+	<range><lt>0.12.0</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Open Quantum Safe project reports:</p>
+	<blockquote cite="https://github.com/open-quantum-safe/liboqs/security/advisories/GHSA-gpf4-vrrw-r8v7">
+	  <p>A correctness error has been identified in the reference implementation of the HQC key encapsulation mechanism. Due to an indexing error, part of the secret key is incorrectly treated as non-secret data. This results in an incorrect shared secret value being returned when the decapsulation function is called with a malformed ciphertext.</p>
+	  <p>No concrete attack exploiting the error has been identified at this point. However, the error involves mishandling of the secret key, and in principle this presents a security vulnerability.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2024-54137</cvename>
+      <url>https://github.com/open-quantum-safe/liboqs/security/advisories/GHSA-gpf4-vrrw-r8v7</url>
+    </references>
+    <dates>
+      <discovery>2024-11-29</discovery>
+      <entry>2024-12-18</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="38e6f778-bca3-11ef-8926-9b4f2d14eb53">
     <topic>gitea -- Fix misuse of PublicKeyCallback</topic>
     <affects>
