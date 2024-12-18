@@ -1,3 +1,84 @@
+  <vuln vid="38e6f778-bca3-11ef-8926-9b4f2d14eb53">
+    <topic>gitea -- Fix misuse of PublicKeyCallback</topic>
+    <affects>
+      <package>
+	<name>gitea</name>
+	<range><lt>1.22.6</lt></range>
+      </package>
+    </affects>
+    <description>
+       <body xmlns="http://www.w3.org/1999/xhtml">
+       <h1>Problem Description:</h1>
+       <ul>
+       <li>Misuse of ServerConfig.PublicKeyCallback may cause authorization
+       bypass in golang.org/x/crypto</li>
+       </ul>
+      </body>
+    </description>
+    <references>
+      <url>https://github.com/go-gitea/gitea/pull/32810</url>
+      <url>https://github.com/advisories/GHSA-v778-237x-gjrc</url>
+    </references>
+    <dates>
+      <discovery>2024-12-12</discovery>
+      <entry>2024-12-17</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="453cd84e-bca4-11ef-8926-9b4f2d14eb53">
+    <topic>gitea -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>gitea</name>
+	<range><lt>1.22.5</lt></range>
+      </package>
+    </affects>
+    <description>
+       <body xmlns="http://www.w3.org/1999/xhtml">
+       <h1>Problem Description:</h1>
+       <ul>
+       <li>Fix delete branch perm checking</li>
+       <li>Upgrade crypto library</li>
+       </ul>
+      </body>
+    </description>
+    <references>
+      <url>https://github.com/go-gitea/gitea/pull/32791</url>
+      <url>https://github.com/go-gitea/gitea/pull/32654</url>
+    </references>
+    <dates>
+      <discovery>2024-11-27</discovery>
+      <entry>2024-12-17</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="6ea20f0c-bca3-11ef-8926-9b4f2d14eb53">
+    <topic>gitea -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>gitea</name>
+	<range><lt>1.22.4</lt></range>
+      </package>
+    </affects>
+    <description>
+       <body xmlns="http://www.w3.org/1999/xhtml">
+       <h1>Problem Description:</h1>
+       <ul>
+       <li>Fix basic auth with webauthn</li>
+       <li>Refactor internal routers (partial backport, auth token const time comparing)</li>
+       </ul>
+      </body>
+    </description>
+    <references>
+      <url>https://github.com/go-gitea/gitea/pull/32531</url>
+      <url>https://github.com/go-gitea/gitea/pull/32473</url>
+    </references>
+    <dates>
+      <discovery>2024-11-16</discovery>
+      <entry>2024-12-17</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="5ca064a6-bca1-11ef-8926-9b4f2d14eb53">
     <topic>forgejo -- multiple vulnerabilities</topic>
     <affects>
