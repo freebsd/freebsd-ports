@@ -1,7 +1,8 @@
 PORTNAME=	lightning-utilities
-DISTVERSION=	0.11.2
+DISTVERSIONPREFIX=	v
+DISTVERSION=	0.11.9
 CATEGORIES=	misc python # machine-learning
-MASTER_SITES=	PYPI
+MASTER_SITES=	PYPI # no tests
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -19,8 +20,16 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mypy>=1.0.0:devel/py-mypy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}typing-extensions>0:devel/py-typing-extensions@${PY_FLAVOR}
 
 USES=		python
-USE_PYTHON=	pep517 autoplist
+USE_PYTHON=	pep517 autoplist pytest
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	Lightning-AI
+GH_PROJECT=	utilities
 
 NO_ARCH=	yes
+
+TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
+
+# tests as of 0.11.9: 37 passed, 4 warnings in 4.53s
 
 .include <bsd.port.mk>
