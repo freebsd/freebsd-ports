@@ -1,5 +1,6 @@
 PORTNAME=	bzip3
 DISTVERSION=	1.5.1
+PORTREVISION=	1
 CATEGORIES=	archivers
 MASTER_SITES=	https://github.com/kspalaiologos/${PORTNAME}/releases/download/${DISTVERSION}/
 
@@ -13,12 +14,7 @@ LICENSE_FILE_APACHE20=	${WRKSRC}/3rdparty/libsais-LICENSE
 LICENSE_FILE_LGPL3+ =	${WRKSRC}/LICENSE
 
 USES=		cmake cpe pathfix tar:xz
-USE_LDCONFIG=	yes
-
 CPE_VENDOR=	bzip3_project
-
-post-patch:
-	@${REINPLACE_CMD} -e "s|\(VERSION \)1\.3\.0|\1${DISTVERSION}|" \
-		${WRKSRC}/CMakeLists.txt
+USE_LDCONFIG=	yes
 
 .include <bsd.port.mk>
