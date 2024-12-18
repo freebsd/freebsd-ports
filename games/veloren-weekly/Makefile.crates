@@ -290,7 +290,7 @@ CARGO_CRATES=	ab_glyph-0.2.28 \
 		hex-0.4.3 \
 		hexf-parse-0.2.1 \
 		hibitset-0.6.4 \
-		hickory-proto-0.24.1 \
+		hickory-proto-0.24.2 \
 		hickory-resolver-0.24.1 \
 		home-0.5.9 \
 		hostname-0.3.1 \
@@ -305,10 +305,20 @@ CARGO_CRATES=	ab_glyph-0.2.28 \
 		hyper-util-0.1.9 \
 		iana-time-zone-0.1.61 \
 		iana-time-zone-haiku-0.1.2 \
+		icu_collections-1.5.0 \
+		icu_locid-1.5.0 \
+		icu_locid_transform-1.5.0 \
+		icu_locid_transform_data-1.5.0 \
+		icu_normalizer-1.5.0 \
+		icu_normalizer_data-1.5.0 \
+		icu_properties-1.5.1 \
+		icu_properties_data-1.5.0 \
+		icu_provider-1.5.0 \
+		icu_provider_macros-1.5.0 \
 		id-arena-2.2.1 \
 		ident_case-1.0.1 \
-		idna-0.4.0 \
-		idna-0.5.0 \
+		idna-1.0.3 \
+		idna_adapter-1.2.0 \
 		image-0.25.2 \
 		indexmap-1.9.3 \
 		indexmap-2.5.0 \
@@ -363,6 +373,7 @@ CARGO_CRATES=	ab_glyph-0.2.28 \
 		libudev-sys-0.1.4 \
 		linked-hash-map-0.5.6 \
 		linux-raw-sys-0.4.14 \
+		litemap-0.7.4 \
 		lock_api-0.4.12 \
 		log-0.4.22 \
 		loom-0.7.2 \
@@ -558,11 +569,11 @@ CARGO_CRATES=	ab_glyph-0.2.28 \
 		rustc_version-0.2.3 \
 		rustc_version-0.4.1 \
 		rustix-0.38.40 \
-		rustls-0.23.13 \
+		rustls-0.23.19 \
 		rustls-native-certs-0.7.3 \
 		rustls-native-certs-0.8.0 \
 		rustls-pemfile-2.1.3 \
-		rustls-pki-types-1.9.0 \
+		rustls-pki-types-1.10.0 \
 		rustls-platform-verifier-0.3.4 \
 		rustls-platform-verifier-android-0.1.1 \
 		rustls-webpki-0.102.8 \
@@ -651,6 +662,7 @@ CARGO_CRATES=	ab_glyph-0.2.28 \
 		sync_file-0.2.9 \
 		sync_wrapper-0.1.2 \
 		sync_wrapper-1.0.1 \
+		synstructure-0.13.1 \
 		system-interface-0.27.2 \
 		tap-1.0.1 \
 		tar-0.4.42 \
@@ -703,9 +715,7 @@ CARGO_CRATES=	ab_glyph-0.2.28 \
 		ubyte-0.10.4 \
 		unic-langid-0.9.5 \
 		unic-langid-impl-0.9.5 \
-		unicode-bidi-0.3.15 \
 		unicode-ident-1.0.13 \
-		unicode-normalization-0.1.24 \
 		unicode-segmentation-1.12.0 \
 		unicode-truncate-1.1.0 \
 		unicode-width-0.1.14 \
@@ -713,7 +723,9 @@ CARGO_CRATES=	ab_glyph-0.2.28 \
 		unicode-xid-0.1.0 \
 		unicode-xid-0.2.6 \
 		untrusted-0.9.0 \
-		url-2.5.2 \
+		url-2.5.4 \
+		utf16_iter-1.0.5 \
+		utf8_iter-1.0.4 \
 		utf8parse-0.2.2 \
 		uuid-1.10.0 \
 		valuable-0.1.0 \
@@ -838,6 +850,8 @@ CARGO_CRATES=	ab_glyph-0.2.28 \
 		winx-0.36.3 \
 		wit-parser-0.218.0 \
 		witx-0.9.1 \
+		write16-1.0.0 \
+		writeable-0.5.5 \
 		wyz-0.5.1 \
 		x11-clipboard-0.7.1 \
 		x11-dl-2.21.0 \
@@ -856,9 +870,15 @@ CARGO_CRATES=	ab_glyph-0.2.28 \
 		xmlparser-0.13.6 \
 		yansi-1.0.1 \
 		yasna-0.5.2 \
+		yoke-0.7.5 \
+		yoke-derive-0.7.5 \
 		zerocopy-0.7.35 \
 		zerocopy-derive-0.7.35 \
+		zerofrom-0.1.5 \
+		zerofrom-derive-0.1.5 \
 		zeroize-1.8.1 \
+		zerovec-0.10.4 \
+		zerovec-derive-0.10.3 \
 		zstd-0.13.2 \
 		zstd-safe-7.2.1 \
 		zstd-sys-2.0.13+zstd.1.5.6 \
