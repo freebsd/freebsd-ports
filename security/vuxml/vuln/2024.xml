@@ -85,10 +85,10 @@
       <package>
 	<name>forgejo</name>
 	<range><lt>9.0.2</lt></range>
-      <package>
-	<name>forgejo</name>
-	<range><lt>7.0.11</lt></range>
       </package>
+      <package>
+	<name>forgejo7</name>
+	<range><lt>7.0.11</lt></range>
       </package>
     </affects>
     <description>
@@ -119,6 +119,7 @@
     <dates>
       <discovery>2024-12-12</discovery>
       <entry>2024-12-17</entry>
+      <modified>2024-12-18</modified>
     </dates>
   </vuln>
 
@@ -139,7 +140,7 @@
        to impersonate another user.  The rootless container image uses the
        internal ssh server by default and was vulnerable.  A Forgejo
        instance running from a binary or from a root container image does
-       not use the internal ssh server by default and was not vulnerable. 
+       not use the internal ssh server by default and was not vulnerable.
        The incorrect use of the crypto package is the root cause of the
        vulnerability and was fixed for the internal ssh server.</li>
        <li>Revert "allow synchronizing user status from OAuth2 login
@@ -173,7 +174,7 @@
        to impersonate another user.  The rootless container image uses the
        internal ssh server by default and was vulnerable.  A Forgejo
        instance running from a binary or from a root container image does
-       not use the internal ssh server by default and was not vulnerable. 
+       not use the internal ssh server by default and was not vulnerable.
        The incorrect use of the crypto package is the root cause of the
        vulnerability and was fixed for the internal ssh server.</li>
        <li>Revert "allow synchronizing user status from OAuth2 login
