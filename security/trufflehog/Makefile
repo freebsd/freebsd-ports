@@ -5,13 +5,14 @@ CATEGORIES=	security
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Find and verify credentials
-WWW=		https://trufflesecurity.com/
+WWW=		https://trufflesecurity.com/ \
+		https://github.com/trufflesecurity/trufflehog
 
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-#BROKEN_armv7=	compilation fails see details here: https://github.com/golang/go/issues/65187
-#BROKEN_i386=	compilation fails see details here: https://github.com/golang/go/issues/65187
+BROKEN_armv7=	compilation fails see details here: https://github.com/trufflesecurity/trufflehog/issues/3791
+BROKEN_i386=	compilation fails see details here: https://github.com/trufflesecurity/trufflehog/issues/3791
 
 USES=		go:1.21,modules
 
