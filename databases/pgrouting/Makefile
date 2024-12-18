@@ -1,7 +1,6 @@
 PORTNAME=	pgrouting
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.6.2
-PORTREVISION=	2
+DISTVERSION=	3.7.0
 CATEGORIES=	databases geography
 
 MAINTAINER=	lbartoletti@FreeBSD.org
@@ -12,9 +11,9 @@ LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libboost_system.so:devel/boost-libs
-RUN_DEPENDS=	${LOCALBASE}/share/postgresql/extension/postgis.control:databases/postgis33
+RUN_DEPENDS=	${LOCALBASE}/share/postgresql/extension/postgis.control:databases/postgis35
 
-USES=		compiler:c++14-lang cmake localbase perl5 pgsql:11+ pkgconfig
+USES=		compiler:c++14-lang cmake localbase perl5 pgsql:13+ pkgconfig
 WANT_PGSQL=	lib server
 USE_LDCONFIG=	yes
 USE_GITHUB=	yes
