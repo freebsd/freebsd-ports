@@ -247,7 +247,7 @@ USES+=	gnome
 .endif
 
 .if ${PORT_OPTIONS:MCOMPILER_RT}
-LLVM_ENABLE_PROJECTS+=	compiler-rt
+LLVM_ENABLE_RUNTIMES+=	compiler-rt
 COMPILER_RT_PATTERN=	(sanitizer|include.xray|include\/(fuzzer|orc)|profile\/InstrProfData.inc|profile\/instr_prof_interface.h)
 .endif
 
@@ -301,6 +301,9 @@ POLLY_PATTERN=	include\/polly|cmake\/polly|LLVMPolly.so|libPolly
 
 .if defined(LLVM_ENABLE_PROJECTS)
 CMAKE_ARGS+=	-DLLVM_ENABLE_PROJECTS="${LLVM_ENABLE_PROJECTS:ts;}"
+.endif
+.if defined(LLVM_ENABLE_RUNTIMES)
+CMAKE_ARGS+=	-DLLVM_ENABLE_RUNTIMES="${LLVM_ENABLE_RUNTIMES:ts;}"
 .endif
 
 .include <bsd.port.pre.mk>
