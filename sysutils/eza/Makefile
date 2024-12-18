@@ -10,10 +10,8 @@ MAINTAINER=	kdeguchi@sz.tokoha-u.ac.jp
 COMMENT=	Modern, maintained replacement for ls
 WWW=		https://eza.rocks/
 
-LICENSE=	EUPL-1.2
-LICENSE_NAME=	EUROPEAN UNION PUBLIC LICENCE v. 1.2
+LICENSE=	EUPL12
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
-LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 USES=		cargo
 
