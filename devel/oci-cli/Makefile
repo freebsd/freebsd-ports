@@ -1,5 +1,7 @@
 PORTNAME=	oci-cli
 DISTVERSION=	3.51.0
+# See below comment for WRKSRC
+DISTNAME=	${PORTNAME:S/-/_/}-${DISTVERSIONPREFIX}${DISTVERSION}${DISTVERSIONSUFFIX}
 CATEGORIES=	devel
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -33,6 +35,11 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}arrow>=1.0.0:devel/py-arrow@${PY_FLAVOR} \
 
 USES=		python:3.8-3.11
 USE_PYTHON=	autoplist concurrent cryptography pep517
+
+# upstream uses underscore for the tarball name, but uses hyphen for
+# the directory name inside the tarball.
+# e.g. oci_cli-3.51.0.tar.gz vs oci-cli-3.51.0
+WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
 
 NO_ARCH=	yes
 
