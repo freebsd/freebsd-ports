@@ -47,9 +47,8 @@ At the end you need to run
 	export OPENHAB_USERDATA=/var/db/openhab/userdata
 	java -jar "%%LOCALBASE%%/libexec/openhab/runtime/bin/upgradetool.jar"
 
-In case you see issues in the logfile or outdated info in the webinterface,
-you may want to remove the cache and restart:
-	rm -r /var/db/openhab/userdata/cache/org.eclipse.osgi
+You should also remove the cache and tmp and restart:
+	rm -r /var/db/openhab/userdata/cache/org.eclipse.osgi /var/db/openhab/userdata/tmp/*
 EOM
 }
 { type: upgrade
@@ -70,8 +69,7 @@ At the end you need to run
 	export OPENHAB_USERDATA=/var/db/openhab/userdata
 	java -jar "%%LOCALBASE%%/libexec/openhab/runtime/bin/upgradetool.jar"
 
-In case you see issues in the logfile or outdated info in the webinterface,
-you may want to remove the cache and restart:
-        rm -r /var/db/openhab/userdata/cache/org.eclipse.osgi
+You should also remove the cache and tmp and restart:
+        rm -r /var/db/openhab/userdata/cache/org.eclipse.osgi /var/db/openhab/userdata/tmp/*
 EOM
 ]
