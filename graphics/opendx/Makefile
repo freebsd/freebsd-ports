@@ -7,7 +7,7 @@ DISTNAME=	dx-${PORTVERSION}
 
 MAINTAINER=	stephen@FreeBSD.org
 COMMENT=	IBM's Open Visualization Data Explorer
-WWW=		http://www.opendx.org/
+WWW=		https://en.wikipedia.org/wiki/IBM_OpenDX
 
 LICENSE=	IBM-OVDX-v1
 LICENSE_NAME=	IBM PUBLIC LICENSE - Open Visualization Data Explorer VERSION 1.0
