@@ -1,6 +1,6 @@
 PORTNAME=	mise
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2024.12.13
+DISTVERSION=	2024.12.14
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -26,7 +26,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		aead-0.5.2 \
 		aes-0.8.4 \
 		aes-gcm-0.10.3 \
-		age-0.10.0 \
+		age-0.10.1 \
 		age-core-0.10.0 \
 		ahash-0.8.11 \
 		aho-corasick-1.1.3 \
@@ -92,7 +92,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		comfy-table-7.1.3 \
 		confique-0.3.0 \
 		confique-macro-0.0.11 \
-		console-0.15.8 \
+		console-0.15.10 \
 		const-oid-0.9.6 \
 		constant_time_eq-0.3.1 \
 		contracts-0.6.3 \
@@ -140,7 +140,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		ed25519-2.2.3 \
 		ed25519-dalek-2.1.1 \
 		either-1.13.0 \
-		encode_unicode-0.3.6 \
+		encode_unicode-1.0.0 \
 		encoding_rs-0.8.35 \
 		env_filter-0.1.2 \
 		env_logger-0.11.5 \
@@ -206,8 +206,8 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		httparse-1.9.5 \
 		humansize-2.1.3 \
 		humantime-2.1.0 \
-		hyper-1.5.1 \
-		hyper-rustls-0.27.3 \
+		hyper-1.5.2 \
+		hyper-rustls-0.27.4 \
 		hyper-tls-0.6.0 \
 		hyper-util-0.1.10 \
 		i18n-config-0.4.7 \
@@ -282,7 +282,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		mime-0.3.17 \
 		minimal-lexical-0.2.1 \
 		miniz_oxide-0.7.4 \
-		miniz_oxide-0.8.0 \
+		miniz_oxide-0.8.2 \
 		mio-1.0.3 \
 		mlua-0.10.2 \
 		mlua-sys-0.6.6 \
@@ -348,7 +348,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		quick-xml-0.23.1 \
 		quinn-0.11.6 \
 		quinn-proto-0.11.9 \
-		quinn-udp-0.5.8 \
+		quinn-udp-0.5.9 \
 		quote-1.0.37 \
 		rand-0.8.5 \
 		rand_chacha-0.3.1 \
@@ -391,8 +391,8 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		scrypt-0.11.0 \
 		secrecy-0.8.0 \
 		security-framework-2.11.1 \
-		security-framework-3.0.1 \
-		security-framework-sys-2.12.1 \
+		security-framework-3.1.0 \
+		security-framework-sys-2.13.0 \
 		self-replace-1.5.0 \
 		self_cell-0.10.3 \
 		self_cell-1.1.0 \
@@ -455,9 +455,9 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		test-log-macros-0.2.16 \
 		text-size-1.1.1 \
 		thiserror-1.0.69 \
-		thiserror-2.0.7 \
+		thiserror-2.0.8 \
 		thiserror-impl-1.0.69 \
-		thiserror-impl-2.0.7 \
+		thiserror-impl-2.0.8 \
 		thread_local-1.1.8 \
 		time-0.3.37 \
 		time-core-0.1.2 \
@@ -504,7 +504,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		untrusted-0.9.0 \
 		url-2.5.4 \
 		urlencoding-2.1.3 \
-		usage-lib-1.6.0 \
+		usage-lib-1.7.2 \
 		utf16_iter-1.0.5 \
 		utf8_iter-1.0.4 \
 		utf8parse-0.2.2 \
@@ -582,7 +582,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		zeroize_derive-1.4.2 \
 		zerovec-0.10.4 \
 		zerovec-derive-0.10.3 \
-		zip-2.2.1 \
+		zip-2.2.2 \
 		zipsign-api-0.1.2 \
 		zopfli-0.8.1 \
 		zstd-0.13.2 \
