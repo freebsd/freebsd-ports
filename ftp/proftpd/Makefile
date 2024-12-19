@@ -2,7 +2,6 @@ PORTNAME?=	proftpd
 .if !defined(DISTVERSION)
 PORTVERSION?=	${PROFTPD_VERSION}
 .endif
-PORTREVISION?=	2
 CATEGORIES?=	ftp
 MASTER_SITES=	ftp://ftp.proftpd.org/distrib/source/ \
 		https://github.com/downloads/proftpd/proftpd.github.com/ \
@@ -24,7 +23,7 @@ BUILD_DEPENDS+=	${LOCALBASE}/sbin/proftpd:ftp/proftpd
 RUN_DEPENDS+=	${LOCALBASE}/sbin/proftpd:ftp/proftpd
 .endif
 
-PROFTPD_VERSION=	1.3.8b
+PROFTPD_VERSION=	1.3.8c
 
 CPE_VENDOR=	proftpd
 CPE_PRODUCT=	proftpd
@@ -50,7 +49,8 @@ PORTDOCS=	*
 .endif
 
 MAKE_JOBS_UNSAFE=	yes
-USES+=		gmake libtool
+USES=		gmake libtool perl5
+USE_PERL5=	run
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
