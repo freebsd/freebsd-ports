@@ -4,8 +4,6 @@ PORTVERSION?=	${PROFTPD_VERSION}
 .endif
 CATEGORIES?=	ftp
 MASTER_SITES=	ftp://ftp.proftpd.org/distrib/source/ \
-		https://github.com/downloads/proftpd/proftpd.github.com/ \
-		ftp://ftpmirror.uk/ftp.proftpd.org/distrib/source/ \
 		http://www.mirrorservice.org/sites/ftp.proftpd.org/distrib/source/
 .if defined(_BUILDING_PROFTPD_MODULE)
 DISTNAME=	proftpd-${PROFTPD_VERSION}
