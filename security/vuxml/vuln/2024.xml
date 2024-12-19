@@ -1,3 +1,42 @@
+  <vuln vid="e18c5c8d-be01-11ef-8c1c-a8a1599412c6">
+    <topic>chromium -- multiple security fixes</topic>
+    <affects>
+      <package>
+       <name>chromium</name>
+       <range><lt>131.0.6778.204</lt></range>
+      </package>
+      <package>
+       <name>ungoogled-chromium</name>
+       <range><lt>131.0.6778.204</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+       <p>Chrome Releases reports:</p>
+       <blockquote cite="https://chromereleases.googleblog.com/2024/12/stable-channel-update-for-desktop_18.html">
+	 <p>This update includes 3 security fixes:</p>
+	 <ul>
+	    <li>[382291459] High CVE-2024-12692: Type Confusion in V8. Reported by Seunghyun Lee (@0x10n) on 2024-12-05</li>
+	    <li>[382190919] High CVE-2024-12693: Out of bounds memory access in V8. Reported by 303f06e3 on 2024-12-04</li>
+	    <li>[368222741] High CVE-2024-12694: Use after free in Compositing. Reported by Anonymous on 2024-09-19</li>
+	    <li>[383647255] High CVE-2024-12695: Out of bounds write in V8. Reported by 303f06e3 on 2024-12-12</li>
+	 </ul>
+       </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2024-12692</cvename>
+      <cvename>CVE-2024-12693</cvename>
+      <cvename>CVE-2024-12694</cvename>
+      <cvename>CVE-2024-12695</cvename>
+      <url>https://chromereleases.googleblog.com/2024/12/stable-channel-update-for-desktop_18.html</url>
+    </references>
+    <dates>
+      <discovery>2024-12-18</discovery>
+      <entry>2024-12-19</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="dc087dad-bd71-11ef-b5a1-000ec6d40964">
     <topic>liboqs -- Correctness error in HQC decapsulation</topic>
     <affects>
