@@ -1,8 +1,0 @@
-include/blkid/blkid.h
-include/blkid/blkid_types.h
-lib/libblkid.so.1.0
-lib/libblkid.so.1
-lib/libblkid.so
-lib/libblkid.a
-libdata/pkgconfig/blkid.pc
-share/man/man3/libblkid.3.gz
