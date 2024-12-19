@@ -1,7 +1,6 @@
 PORTNAME=	xcp
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.22.0
-PORTREVISION=	2
+DISTVERSION=	0.23.0
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -17,30 +16,31 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	tarka
 
 CARGO_CRATES=	aho-corasick-1.1.3 \
-		anstream-0.6.17 \
-		anstyle-1.0.9 \
+		anstream-0.6.18 \
+		anstyle-1.0.10 \
 		anstyle-parse-0.2.6 \
 		anstyle-query-1.1.2 \
 		anstyle-wincon-3.0.6 \
-		anyhow-1.0.91 \
+		anyhow-1.0.94 \
 		autocfg-1.3.0 \
 		bitflags-2.6.0 \
 		blocking-threadpool-1.0.1 \
 		bstr-1.10.0 \
+		bumpalo-3.16.0 \
 		cfg-if-1.0.0 \
-		clap-4.5.20 \
-		clap_builder-4.5.20 \
+		clap-4.5.23 \
+		clap_builder-4.5.23 \
 		clap_derive-4.5.18 \
-		clap_lex-0.7.2 \
+		clap_lex-0.7.4 \
 		colorchoice-1.0.3 \
 		console-0.15.8 \
-		crossbeam-channel-0.5.13 \
+		crossbeam-channel-0.5.14 \
 		crossbeam-deque-0.8.5 \
 		crossbeam-epoch-0.9.18 \
 		crossbeam-utils-0.8.20 \
 		deranged-0.3.11 \
 		encode_unicode-0.3.6 \
-		errno-0.3.9 \
+		errno-0.3.10 \
 		exacl-0.12.0 \
 		fastrand-2.1.1 \
 		fslock-0.2.1 \
@@ -50,13 +50,13 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		heck-0.5.0 \
 		hermit-abi-0.3.9 \
 		ignore-0.4.23 \
-		indicatif-0.17.8 \
-		instant-0.1.13 \
+		indicatif-0.17.9 \
 		is_terminal_polyfill-1.70.1 \
 		itoa-1.0.11 \
+		js-sys-0.3.72 \
 		lazy_static-0.2.11 \
 		lazy_static-1.5.0 \
-		libc-0.2.161 \
+		libc-0.2.168 \
 		libm-0.2.8 \
 		linux-raw-sys-0.4.14 \
 		linux-raw-sys-0.6.5 \
@@ -68,10 +68,10 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		num_threads-0.1.7 \
 		number_prefix-0.4.0 \
 		once_cell-1.20.2 \
-		portable-atomic-1.6.0 \
+		portable-atomic-1.9.0 \
 		powerfmt-0.2.0 \
 		ppv-lite86-0.2.17 \
-		proc-macro2-1.0.89 \
+		proc-macro2-1.0.92 \
 		quote-1.0.37 \
 		rand-0.8.5 \
 		rand_chacha-0.3.1 \
@@ -81,31 +81,38 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		regex-1.11.1 \
 		regex-automata-0.4.8 \
 		regex-syntax-0.8.5 \
-		rustix-0.38.38 \
+		rustix-0.38.42 \
 		same-file-1.0.6 \
 		scopeguard-1.2.0 \
 		serde-1.0.210 \
 		serde_derive-1.0.210 \
 		simplelog-0.12.2 \
 		strsim-0.11.1 \
-		syn-2.0.85 \
-		tempfile-3.13.0 \
+		syn-2.0.89 \
+		tempfile-3.14.0 \
 		termcolor-1.4.1 \
 		test-case-3.3.1 \
 		test-case-core-3.3.1 \
 		test-case-macros-3.3.1 \
-		thiserror-1.0.65 \
-		thiserror-impl-1.0.65 \
+		thiserror-2.0.8 \
+		thiserror-impl-2.0.8 \
 		time-0.3.36 \
 		time-core-0.1.2 \
 		time-macros-0.2.18 \
 		unbytify-0.2.0 \
-		unicode-ident-1.0.13 \
-		unicode-width-0.1.13 \
+		unicode-ident-1.0.14 \
+		unicode-width-0.1.14 \
+		unicode-width-0.2.0 \
 		utf8parse-0.2.2 \
 		uuid-1.11.0 \
 		walkdir-2.5.0 \
 		wasi-0.11.0+wasi-snapshot-preview1 \
+		wasm-bindgen-0.2.95 \
+		wasm-bindgen-backend-0.2.95 \
+		wasm-bindgen-macro-0.2.95 \
+		wasm-bindgen-macro-support-0.2.95 \
+		wasm-bindgen-shared-0.2.95 \
+		web-time-1.1.0 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-util-0.1.8 \
