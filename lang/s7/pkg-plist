@@ -1,4 +1,3 @@
-%%NREPL%%bin/s7-nrepl
 %%REPL%%bin/s7-repl
 include/s7.h
 lib/libs7.so

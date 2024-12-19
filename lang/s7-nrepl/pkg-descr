@@ -1,0 +1,5 @@
+Nrepl is a notcurses-based repl for S7.
+
+Unlike repl, nrepl has support for the mouse, traversable, scrollable,
+and resizable panes, built-in ties to lint.scm, debug.scm, and
+profile.scm, and various other enhancements.

@@ -340,6 +340,7 @@
     SUBDIR += rust182
     SUBDIR += rustpython
     SUBDIR += s7
+    SUBDIR += s7-nrepl
     SUBDIR += sagittarius-scheme
     SUBDIR += sather-specification
     SUBDIR += sather-tutorial

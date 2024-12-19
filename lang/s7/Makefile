@@ -1,49 +1,21 @@
-PORTNAME=	s7
-# S7_MAJOR_VERSION / S7_MINOR_VERSION / S7_DATE from s7.h
-PORTVERSION=	11.2.g20241220
-CATEGORIES=	lang lisp
-
-MAINTAINER=	fuz@FreeBSD.org
 COMMENT=	Scheme interpreter
-WWW=		https://ccrma.stanford.edu/software/snd/snd/s7.html
 
-LICENSE=	BSD0CLAUSE
-
-USES=		localbase:ldflags
-USE_GITLAB=	yes
-GL_SITE=	https://cm-gitlab.stanford.edu
-GL_ACCOUNT=	bil
-GL_TAGNAME=	a5515d455f5aca49d5275a5a35ac88935f3ad401
 USE_LDCONFIG=	yes
-
-CFLAGS+=	-DS7_LOAD_PATH=\"${DATADIR}\" \
-		-DHAVE_COMPLEX_NUMBERS \
-		-DHAVE_COMPLEX_TRIG \
-		-DWITH_SYSTEM_EXTRAS \
-		-DWITH_C_LOADER \
-		-fno-math-errno \
-		-Wno-parentheses-equality
-
-LDFLAGS+=	-Wl,-export-dynamic
 LIBS+=		-lm
 LIBS7=		${WRKDIR}/libs7.so.0
 S7LIBS=		c dl m
 
-MAKE_ENV+=	LD_LIBRARY_PATH=${WRKDIR}
-
 PORTDOCS=	s7.html s7-ffi.html s7-scm.html
 
-OPTIONS_DEFINE=	DOCS GMP REPL NREPL
+OPTIONS_DEFINE=	DOCS GMP REPL
 OPTIONS_DEFAULT=	GMP REPL
 OPTIONS_SUB=	yes
-NREPL_DESC=	install notcurses repl (s7-nrepl)
 REPL_DESC=	install simple repl (s7-repl)
 GMP_LIB_DEPENDS=	libgmp.so:math/gmp \
 			libmpfr.so:math/mpfr \
 			libmpc.so:math/mpc
 GMP_CFLAGS=	-DWITH_GMP
 GMP_LIBS=	-lmpc -lmpfr -lgmp
-NREPL_LIB_DEPENDS=	libnotcurses-core.so:devel/notcurses
 
 do-build:
 	${CC} -fpic -shared ${CFLAGS} ${CPPFLAGS} ${LDFLAGS} -Wl,--soname=libs7.so.0 \
@@ -52,9 +24,6 @@ do-build:
 .for l in ${S7LIBS}
 	(cd ${WRKDIR} && ${SETENVI} ${WRK_ENV} ${MAKE_ENV} ${WRKDIR}/s7-repl ${WRKSRC}/lib$l.scm)
 .endfor
-
-post-build-NREPL-on:
-	${CC} ${CFLAGS} ${CPPFLAGS} ${LDFLAGS} -o ${WRKDIR}/s7-nrepl ${WRKSRC}/nrepl.c ${LIBS7} -lnotcurses-core
 
 do-install:
 	${INSTALL_LIB} ${LIBS7} ${STAGEDIR}${PREFIX}/lib/libs7.so.0.0.0
@@ -74,9 +43,6 @@ do-install-DOCS-on:
 	${INSTALL_DATA} ${WRKSRC}/$f ${STAGEDIR}${DOCSDIR}/
 .endfor
 
-do-install-NREPL-on:
-	${INSTALL_PROGRAM} ${WRKDIR}/s7-nrepl ${STAGEDIR}${PREFIX}/bin/
-
 do-install-REPL-on:
 	${INSTALL_PROGRAM} ${WRKDIR}/s7-repl ${STAGEDIR}${PREFIX}/bin/
 
@@ -86,4 +52,4 @@ do-test:
 	${MKDIR} ${WRKDIR}/test
 	(cd ${WRKSRC} && ${SETENVI} ${WRK_ENV} ${TEST_ENV} ${WRKDIR}/s7-repl s7test.scm)
 
-.include <bsd.port.mk>
+.include "Makefile.master"
