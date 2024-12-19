@@ -1,6 +1,6 @@
 PORTNAME=	nextest
 DISTVERSIONPREFIX=	cargo-nextest-
-DISTVERSION=	0.9.86
+DISTVERSION=	0.9.87
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -54,7 +54,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		bitflags-2.6.0 \
 		block-buffer-0.10.4 \
 		borsh-1.5.1 \
-		bstr-1.11.0 \
+		bstr-1.11.1 \
 		bumpalo-3.16.0 \
 		byteorder-1.5.0 \
 		bytes-1.9.0 \
@@ -141,7 +141,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		heck-0.5.0 \
 		hermit-abi-0.3.9 \
 		hex-0.4.3 \
-		home-0.5.9 \
+		home-0.5.11 \
 		http-1.2.0 \
 		http-body-1.0.1 \
 		http-body-util-0.1.2 \
@@ -268,7 +268,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		security-framework-sys-2.12.0 \
 		self-replace-1.5.0 \
 		self_update-0.41.0 \
-		semver-1.0.23 \
+		semver-1.0.24 \
 		serde-1.0.216 \
 		serde_derive-1.0.216 \
 		serde_ignored-0.1.10 \
@@ -317,9 +317,9 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		test-strategy-0.4.0 \
 		textwrap-0.16.1 \
 		thiserror-1.0.69 \
-		thiserror-2.0.6 \
+		thiserror-2.0.7 \
 		thiserror-impl-1.0.69 \
-		thiserror-impl-2.0.6 \
+		thiserror-impl-2.0.7 \
 		thread_local-1.1.8 \
 		tinyvec-1.8.0 \
 		tinyvec_macros-0.1.1 \
