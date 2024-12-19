@@ -14,7 +14,7 @@ LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libcurl.so:ftp/curl \
-		libuuid.so:misc/e2fsprogs-libuuid
+		libuuid.so:misc/libuuid
 
 USES=		bison:wrapper charsetfix gmake gnome libtool localbase pathfix ssl
 USE_GNOME=	libxml2

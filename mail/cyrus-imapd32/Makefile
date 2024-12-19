@@ -17,7 +17,7 @@ BROKEN_riscv64=		fails to build: lib/chartable.c: Error 1
 LIB_DEPENDS=	libsasl2.so:security/cyrus-sasl2 \
 		libicuuc.so:devel/icu \
 		libjansson.so:devel/jansson \
-		libuuid.so:misc/e2fsprogs-libuuid
+		libuuid.so:misc/libuuid
 
 CONFLICTS_INSTALL=	cyrus-imapd2? cyrus-imapd3[013-] cyrus-imapd3[013-]-http
 

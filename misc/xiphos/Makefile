@@ -25,7 +25,7 @@ LIB_DEPENDS=	libbiblesync.so:misc/biblesync \
 		libicui18n.so:devel/icu \
 		libsoup-2.4.so:devel/libsoup \
 		libsword.so:misc/sword \
-		libuuid.so:misc/e2fsprogs-libuuid \
+		libuuid.so:misc/libuuid \
 		libwebkit2gtk-4.0.so:www/webkit2-gtk@40
 
 # gettext is always needed, even if NLS is off

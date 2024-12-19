@@ -111,7 +111,7 @@ TAGLIB_LIB_DEPENDS=	libtag.so:audio/taglib
 THEORA_LIB_DEPENDS=	libtheora.so:multimedia/libtheora
 TOKYOCABINET_LIB_DEPENDS=	\
 			libtokyocabinet.so:databases/tokyocabinet
-UUID_LIB_DEPENDS=	libuuid.so:misc/e2fsprogs-libuuid
+UUID_LIB_DEPENDS=	libuuid.so:misc/libuuid
 VORBIS_LIB_DEPENDS=	libvorbis.so:audio/libvorbis
 YAJL_LIB_DEPENDS=	libyajl.so:devel/yajl
 

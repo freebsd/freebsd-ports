@@ -1,6 +1,6 @@
 PORTNAME=	xeus-zmq
 DISTVERSION=	2.0.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	cppzmq>0:net/cppzmq \
 		nlohmann-json>0:devel/nlohmann-json \
 		xtl-quant-stack>0:devel/xtl-quant-stack
-LIB_DEPENDS=	libuuid.so:misc/e2fsprogs-libuuid \
+LIB_DEPENDS=	libuuid.so:misc/libuuid \
 		libxeus.so:devel/xeus \
 		libzmq.so:net/libzmq4
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}jupyter-kernel-test>0:devel/py-jupyter-kernel-test@${PY_FLAVOR}

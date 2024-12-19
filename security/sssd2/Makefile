@@ -45,7 +45,7 @@ LIB_DEPENDS=	libcares.so:dns/c-ares \
 		libtdb.so:${SAMBA_TDB_PORT} \
 		libtevent.so:${SAMBA_TEVENT_PORT} \
 		libunistring.so:devel/libunistring \
-		libuuid.so:misc/e2fsprogs-libuuid
+		libuuid.so:misc/libuuid
 
 RUN_DEPENDS=	adcli:net-mgmt/adcli \
 		cyrus-sasl-gssapi>0:security/cyrus-sasl2-gssapi

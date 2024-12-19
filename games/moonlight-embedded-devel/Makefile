@@ -21,7 +21,7 @@ LIB_DEPENDS=	libavahi-client.so:net/avahi-app \
 		libexpat.so:textproc/expat2 \
 		libopus.so:audio/opus \
 		libudev.so:devel/libudev-devd \
-		libuuid.so:misc/e2fsprogs-libuuid \
+		libuuid.so:misc/libuuid \
 		libva.so:multimedia/libva \
 		libdrm.so:graphics/libdrm \
 		libwayland-client.so:graphics/wayland

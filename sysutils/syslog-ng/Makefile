@@ -16,7 +16,7 @@ LICENSE_COMB=	multi
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libpcre2-8.so:devel/pcre2 \
-		libuuid.so:misc/e2fsprogs-libuuid \
+		libuuid.so:misc/libuuid \
 		libivykis.so:devel/ivykis
 
 USES=		autoreconf:build compiler:c11 cpe gettext-runtime gmake gnome \

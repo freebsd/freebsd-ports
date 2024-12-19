@@ -3,6 +3,7 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	2.4.7
 PORTREVISION=	2
 DISTVERSIONSUFFIX=	-10514
+PORTREVISION=	1
 CATEGORIES=	filesystems sysutils
 
 MAINTAINER=	kbowling@FreeBSD.org
@@ -13,7 +14,7 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libicudata.so:devel/icu \
-		libuuid.so:misc/e2fsprogs-libuuid
+		libuuid.so:misc/libuuid
 
 USES=		autoreconf compiler:c11 fuse gnome libtool:build pkgconfig \
 		python shebangfix

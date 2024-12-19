@@ -22,7 +22,7 @@ LIB_DEPENDS=	libassuan.so:security/libassuan \
 		libnet.so:net/libnet \
 		libpaho-mqtt3a.so:net/libpaho-mqtt3 \
 		libssh.so:security/libssh \
-		libuuid.so:misc/e2fsprogs-libuuid \
+		libuuid.so:misc/libuuid \
 		libjson-glib-1.0.so:devel/json-glib \
 		libcurl.so:ftp/curl
 RUN_DEPENDS=	doxygen>0:devel/doxygen

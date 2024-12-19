@@ -1,6 +1,6 @@
 PORTNAME=	ignition-fuel-tools
 DISTVERSION=	1.2.0
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	misc
 MASTER_SITES=	https://bitbucket.org/${BB_ACCOUNT}/${BB_PROJECT}/get/${BB_COMMIT}.tar.gz?dummy=/
 
@@ -15,7 +15,7 @@ BUILD_DEPENDS=	ignition-cmake==2:devel/ignition-cmake
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libignition-common3.so:devel/ignition-common \
 		libjsoncpp.so:devel/jsoncpp \
-		libuuid.so:misc/e2fsprogs-libuuid \
+		libuuid.so:misc/libuuid \
 		libyaml.so:textproc/libyaml \
 		libzip.so:archivers/libzip
 

@@ -19,7 +19,7 @@ LIB_DEPENDS=	libsoup-2.4.so:devel/libsoup \
 		libdbus-glib-1.so:devel/dbus-glib \
 		libdbus-1.so:devel/dbus \
 		libgnutls.so:security/gnutls \
-		libuuid.so:misc/e2fsprogs-libuuid \
+		libuuid.so:misc/libuuid \
 		libloudmouth-1.so:net-im/loudmouth
 RUN_DEPENDS=	ca_root_nss>=0:security/ca_root_nss \
 		libnice-gst1>=0:net-im/libnice-gst1

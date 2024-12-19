@@ -1,6 +1,6 @@
 PORTNAME=	ntfs
 PORTVERSION=	2022.10.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	filesystems
 MASTER_SITES=	https://download.tuxera.com/opensource/
 PKGNAMEPREFIX=	fusefs-
@@ -13,7 +13,7 @@ WWW=		https://github.com/tuxera/ntfs-3g
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libuuid.so:misc/e2fsprogs-libuuid
+LIB_DEPENDS=	libuuid.so:misc/libuuid
 
 USES=		fuse pkgconfig iconv libtool localbase:ldflags tar:tgz
 USE_LDCONFIG=	yes

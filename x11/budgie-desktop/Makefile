@@ -18,7 +18,7 @@ BUILD_DEPENDS=	gnome-settings-daemon>0:sysutils/gnome-settings-daemon \
 		zenity>0:x11/zenity
 LIB_DEPENDS=	libpolkit-gobject-1.so:sysutils/polkit \
 		libpeas-1.0.so:devel/libpeas1 \
-		libuuid.so:misc/e2fsprogs-libuuid \
+		libuuid.so:misc/libuuid \
 		libnotify.so:devel/libnotify \
 		libaccountsservice.so:sysutils/accountsservice \
 		libpulse.so:audio/pulseaudio \

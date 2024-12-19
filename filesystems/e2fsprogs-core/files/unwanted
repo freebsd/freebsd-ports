@@ -1,8 +1,0 @@
-include/e2fsprogs/blkid/blkid.h
-include/e2fsprogs/blkid/blkid_types.h
-lib/e2fsprogs/libblkid.a
-lib/e2fsprogs/libblkid.so
-lib/e2fsprogs/libblkid.so.1
-lib/e2fsprogs/libblkid.so.1.0
-libdata/pkgconfig/blkid.pc
-man/man3/libblkid.3

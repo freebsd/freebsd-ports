@@ -10,7 +10,7 @@ WWW=		https://pwsafe.org
 LICENSE=	ART20
 
 LIB_DEPENDS=	libcurl.so:ftp/curl \
-		libuuid.so:misc/e2fsprogs-libuuid \
+		libuuid.so:misc/libuuid \
 		libxerces-c.so:textproc/xerces-c3 \
 		libqrencode.so:graphics/libqrencode
 BUILD_DEPENDS=	zip:archivers/zip

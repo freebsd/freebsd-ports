@@ -1,6 +1,6 @@
 PORTNAME=	glusterfs
 PORTVERSION=	8.4
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net
 MASTER_SITES=	http://bits.gluster.org/pub/gluster/glusterfs/src/
 
@@ -23,7 +23,7 @@ RUN_DEPENDS=	bash:shells/bash
 LIB_DEPENDS=	libargp.so:devel/argp-standalone \
 		libcurl.so:ftp/curl \
 		liburcu-bp.so:sysutils/liburcu \
-		libuuid.so:misc/e2fsprogs-libuuid
+		libuuid.so:misc/libuuid
 
 USES=		autoreconf bison compiler:c11 cpe gettext gnome libtool pkgconfig python \
 		readline shebangfix sqlite ssl

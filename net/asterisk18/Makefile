@@ -18,7 +18,7 @@ WWW=		https://www.asterisk.org
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libuuid.so:misc/e2fsprogs-libuuid \
+LIB_DEPENDS=	libuuid.so:misc/libuuid \
 		libjansson.so:devel/jansson
 
 USES=		bison compiler:c11 cpe gmake gnome iconv libedit localbase \

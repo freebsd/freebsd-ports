@@ -60,7 +60,7 @@ PORTEXAMPLES=	*
 #LIB_DEPENDS+=	libxeus.so:devel/xeus	\
 #		libzmq.so:net/libzmq4	\
 #		libxeus-zmq.so:devel/xeus-zmq	\
-#		libuuid.so:misc/e2fsprogs-libuuid
+#		libuuid.so:misc/libuuid
 CMAKE_OFF+=	WITH_XEUS
 
 # BFD:

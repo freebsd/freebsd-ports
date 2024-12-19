@@ -11,7 +11,7 @@ LICENSE=	EPL
 
 BUILD_DEPENDS=	xsltproc:textproc/libxslt \
 		docbook-xsl>0:textproc/docbook-xsl
-LIB_DEPENDS=	libuuid.so:misc/e2fsprogs-libuuid \
+LIB_DEPENDS=	libuuid.so:misc/libuuid \
 		libcjson.so:devel/libcjson
 RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
 

@@ -1,6 +1,6 @@
 PORTNAME=	util-linux
 DISTVERSION=	2.39.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	KERNEL_ORG/linux/utils/util-linux/v${DISTVERSION:R}/
 
@@ -12,7 +12,7 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	bash:shells/bash
-LIB_DEPENDS=	libuuid.so:misc/e2fsprogs-libuuid
+LIB_DEPENDS=	libuuid.so:misc/libuuid
 RUN_DEPENDS=	bash:shells/bash
 
 USES=		autoreconf gettext-tools gmake libtool ncurses pkgconfig \

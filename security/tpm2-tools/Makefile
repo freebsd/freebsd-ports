@@ -1,6 +1,6 @@
 PORTNAME=	tpm2-tools
 DISTVERSION=	5.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	https://github.com/tpm2-software/tpm2-tools/releases/download/${DISTVERSION}/
 
@@ -12,7 +12,7 @@ LICENSE=	BSD2CLAUSE
 
 LIB_DEPENDS=	libtss2-esys.so:security/tpm2-tss \
 		libcurl.so:ftp/curl \
-		libuuid.so:misc/e2fsprogs-libuuid
+		libuuid.so:misc/libuuid
 
 USES=		compiler:c11 gmake libtool pkgconfig ssl
 

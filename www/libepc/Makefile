@@ -1,6 +1,6 @@
 PORTNAME=	libepc
 PORTVERSION=	0.4.6
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www
 MASTER_SITES=	GNOME
 
@@ -11,7 +11,7 @@ WWW=		https://live.gnome.org/libepc/
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libuuid.so:misc/e2fsprogs-libuuid \
+LIB_DEPENDS=	libuuid.so:misc/libuuid \
 		libfribidi.so:converters/fribidi \
 		libsoup-2.4.so:devel/libsoup \
 		libgnutls.so:security/gnutls \

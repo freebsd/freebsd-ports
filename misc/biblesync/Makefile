@@ -1,6 +1,6 @@
 PORTNAME=	biblesync
 DISTVERSION=	2.1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	misc
 
 MAINTAINER=	ports@FreeBSD.org
@@ -10,7 +10,7 @@ WWW=		https://github.com/karlkleinpaste/biblesync
 LICENSE=	PD
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libuuid.so:misc/e2fsprogs-libuuid
+LIB_DEPENDS=	libuuid.so:misc/libuuid
 
 USES=		cmake compiler:c++11-lang gettext-runtime
 

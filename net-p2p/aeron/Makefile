@@ -12,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 ONLY_FOR_ARCHS=	aarch64 amd64 # limited in aeron-client/src/main/c/concurrent/aeron_atomic.h
 
-LIB_DEPENDS=	libuuid.so:misc/e2fsprogs-libuuid # only for uuid_generate
+LIB_DEPENDS=	libuuid.so:misc/libuuid # only for uuid_generate
 TEST_DEPENDS=	googletest>0:devel/googletest
 
 USES=		cmake:testing localbase:ldflags

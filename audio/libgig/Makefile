@@ -1,5 +1,6 @@
 PORTNAME=	libgig
 DISTVERSION=	4.5.0
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://download.linuxsampler.org/packages/ # dead?: SF/qsampler/${PORTNAME}/${PORTVERSION}
 
@@ -11,7 +12,7 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libsndfile.so:audio/libsndfile \
-		libuuid.so:misc/e2fsprogs-libuuid
+		libuuid.so:misc/libuuid
 
 USES=		compiler:c++11-lib gmake cpe libtool localbase pathfix pkgconfig tar:bzip2
 USE_LDCONFIG=	${PREFIX}/lib/libgig

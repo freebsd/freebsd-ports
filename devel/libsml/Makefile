@@ -1,6 +1,6 @@
 PORTNAME=	libsml
 PORTVERSION=	0.1.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 
 MAINTAINER=	mail+freebsd@gerritbeine.de
@@ -9,7 +9,7 @@ WWW=		https://github.com/volkszaehler/libsml
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	libuuid.so:misc/e2fsprogs-libuuid
+LIB_DEPENDS=	libuuid.so:misc/libuuid
 
 USES=		dos2unix gmake
 USE_LDCONFIG=	yes

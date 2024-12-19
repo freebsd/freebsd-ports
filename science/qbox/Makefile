@@ -1,6 +1,7 @@
 PORTNAME=	qbox
 DISTVERSIONPREFIX=	rel
 DISTVERSION=	1_78_4
+PORTREVISION=	1
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -16,7 +17,7 @@ LIB_DEPENDS=	libblas.so:math/blas \
 		liblapack.so:math/lapack \
 		libmpicxx.so:net/mpich \
 		libscalapack.so:math/scalapack \
-		libuuid.so:misc/e2fsprogs-libuuid \
+		libuuid.so:misc/libuuid \
 		libxerces-c.so:textproc/xerces-c3
 
 USES=		compiler:c++11-lang gmake iconv:wchar_t localbase:ldflags

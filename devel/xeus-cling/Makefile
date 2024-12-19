@@ -1,6 +1,6 @@
 PORTNAME=	xeus-cling
 DISTVERSION=	0.8.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -19,7 +19,7 @@ BUILD_DEPENDS=	cppzmq>0:net/cppzmq \
 		xtl-quant-stack>0:devel/xtl-quant-stack
 LIB_DEPENDS=	libclingInterpreter.so:lang/cling \
 		libpugixml.so:textproc/pugixml \
-		libuuid.so:misc/e2fsprogs-libuuid \
+		libuuid.so:misc/libuuid \
 		libxeus.so:devel/xeus \
 		libzmq.so:net/libzmq4
 

@@ -1,7 +1,7 @@
 PORTNAME=	babeltrace
 PORTVERSION=	1.5.7
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 
 MAINTAINER=	pizzamig@FreeBSD.org
@@ -17,7 +17,7 @@ LICENSE_FILE_LGPL21=	${WRKSRC}/lgpl-2.1.txt
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libpopt.so:devel/popt \
-		libuuid.so:misc/e2fsprogs-libuuid
+		libuuid.so:misc/libuuid
 
 USES=		autoreconf:build bison compiler:c11 gmake gnome libtool \
 		pathfix pkgconfig

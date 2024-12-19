@@ -1,5 +1,6 @@
 PORTNAME=	shairport-sync
 DISTVERSION=	4.3.7
+PORTREVISION=	1
 CATEGORIES=	audio
 
 MAINTAINER=	ehaupt@FreeBSD.org
@@ -45,7 +46,7 @@ AIRPLAY2_LIB_DEPENDS=	libavutil.so:multimedia/ffmpeg \
 			libgcrypt.so:security/libgcrypt \
 			libplist-2.0.so:devel/libplist \
 			libsodium.so:security/libsodium \
-			libuuid.so:misc/e2fsprogs-libuuid
+			libuuid.so:misc/libuuid
 AIRPLAY2_RUN_DEPENDS=	nqptp:net/nqptp
 AIRPLAY2_CONFIGURE_ON=	--with-airplay-2
 AIRPLAY2_SUB_FILES=	pkg-message

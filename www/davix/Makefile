@@ -13,7 +13,7 @@ LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libcurl.so:ftp/curl \
-		libuuid.so:misc/e2fsprogs-libuuid
+		libuuid.so:misc/libuuid
 TEST_DEPENDS=	googletest>0:devel/googletest
 
 USES=		cmake:testing compiler:c++11-lang gnome localbase:ldflags python:build shebangfix ssl

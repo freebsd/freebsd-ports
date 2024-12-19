@@ -59,7 +59,7 @@ SZIP_LIB_DEPENDS=	libsz.so:science/libaec
 UDUNITS_CONFIGURE_WITH=	udunits2
 UDUNITS_LIB_DEPENDS=	libudunits2.so:science/udunits
 UUID_CONFIGURE_OFF=	ac_cv_func_uuid_create=no ac_cv_have_decl_uuid_create=no ac_cv_have_decl_uuid_generate=no ac_cv_lib_uuid_uuid_generate=no
-UUID_LIB_DEPENDS=	libuuid.so:misc/e2fsprogs-libuuid
+UUID_LIB_DEPENDS=	libuuid.so:misc/libuuid
 
 post-patch:
 	@${REINPLACE_CMD} -e '/^SUBDIRS = / s| contrib||' ${WRKSRC}/Makefile.in

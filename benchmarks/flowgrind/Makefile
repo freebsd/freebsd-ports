@@ -1,7 +1,7 @@
 PORTNAME=	flowgrind
 PORTVERSION=	0.8.2
 DISTVERSIONPREFIX=	${PORTNAME}-
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	benchmarks
 
 MAINTAINER=	dbaio@FreeBSD.org
@@ -15,7 +15,7 @@ LIB_DEPENDS=	libgsl.so:math/gsl \
 		libxmlrpc.so:net/xmlrpc-c \
 		libcurl.so:ftp/curl \
 		libwwwxml.so:www/libwww \
-		libuuid.so:misc/e2fsprogs-libuuid \
+		libuuid.so:misc/libuuid \
 		libexpat.so:textproc/expat2
 
 USES=		autoreconf ssl

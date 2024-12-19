@@ -1,6 +1,6 @@
 PORTNAME=	presage
 DISTVERSION=	0.9.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	deskutils kde
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${DISTVERSION}
 
@@ -15,7 +15,7 @@ LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 		libfreetype.so:print/freetype2 \
 		libharfbuzz.so:print/harfbuzz \
 		libtinyxml.so:textproc/tinyxml \
-		libuuid.so:misc/e2fsprogs-libuuid
+		libuuid.so:misc/libuuid
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dbus>0:devel/py-dbus@${PY_FLAVOR}
 
 USES=		gmake libtool:build localbase shebangfix python sqlite

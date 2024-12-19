@@ -1,6 +1,7 @@
 PORTNAME=	seafile-gui
 DISTVERSIONPREFIX=	v
 DISTVERSION=	9.0.6
+PORTREVISION=	1
 CATEGORIES=	net-mgmt devel
 
 MAINTAINER=	ultima@FreeBSD.org
@@ -15,7 +16,7 @@ LIB_DEPENDS=	libsearpc.so:devel/libsearpc \
 		libsqlite3.so:databases/sqlite3 \
 		libjansson.so:devel/jansson \
 		libevent.so:devel/libevent \
-		libuuid.so:misc/e2fsprogs-libuuid
+		libuuid.so:misc/libuuid
 
 USES=		compiler:c++11-lang cmake gnome pkgconfig qt:5 shebangfix ssl
 SHEBANG_FILES=	extensions/*.sh scripts/*.sh fsplugin/*.sh \

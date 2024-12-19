@@ -23,7 +23,7 @@ LIB_DEPENDS=	libhyprlang.so:devel/hyprlang \
 		libhyprgraphics.so:graphics/hyprgraphics \
 		libdrm.so:graphics/libdrm \
 		libwayland-server.so:graphics/wayland \
-		libuuid.so:misc/e2fsprogs-libuuid \
+		libuuid.so:misc/libuuid \
 		libaquamarine.so:x11-toolkits/aquamarine \
 		libhyprcursor.so:x11/hyprcursor \
 		libinput.so:x11/libinput \

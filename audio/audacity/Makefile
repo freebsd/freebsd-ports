@@ -34,7 +34,7 @@ LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 		libsratom-0.so:audio/sratom \
 		libsqlite3.so:databases/sqlite3 \
 		libsuil-0.so:audio/suil \
-		libuuid.so:misc/e2fsprogs-libuuid \
+		libuuid.so:misc/libuuid \
 		libwavpack.so:audio/wavpack
 
 USES=		cmake compiler:c++20-lang cpe desktop-file-utils gettext \

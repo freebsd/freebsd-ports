@@ -25,7 +25,7 @@ LIB_DEPENDS=	libboost_atomic.so:devel/boost-libs \
 		libprotobuf.so:devel/protobuf \
 		libpugixml.so:textproc/pugixml \
 		libtiff.so:graphics/tiff \
-		libuuid.so:misc/e2fsprogs-libuuid
+		libuuid.so:misc/libuuid
 
 USES=		cmake gnome iconv jpeg lua python:build sqlite ssl
 USE_GNOME=	libxml2

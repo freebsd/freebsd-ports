@@ -1,5 +1,6 @@
 PORTNAME=	chez-scheme
 PORTVERSION=	10.2.0
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	lang
 MASTER_SITES=	https://github.com/cisco/ChezScheme/releases/download/${DISTVERSIONPREFIX}${DISTVERSION}/
@@ -14,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 ONLY_FOR_ARCHS=	amd64 i386 aarch64 armv7 powerpc
 
-LIB_DEPENDS=	libuuid.so:misc/e2fsprogs-libuuid \
+LIB_DEPENDS=	libuuid.so:misc/libuuid \
 		libossp-uuid.so:misc/ossp-uuid
 
 USES=		gmake iconv:lib ncurses

@@ -17,7 +17,7 @@ LIB_DEPENDS=	libavahi-common.so:net/avahi-app \
 		libftdi1.so:devel/libftdi1 \
 		libmicrohttpd.so:www/libmicrohttpd \
 		libprotobuf.so:devel/protobuf3 \
-		libuuid.so:misc/e2fsprogs-libuuid
+		libuuid.so:misc/libuuid
 TEST_DEPENDS=	cppunit>0:devel/cppunit
 
 USES=		bison gmake libtool localbase pkgconfig

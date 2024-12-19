@@ -33,7 +33,7 @@ LIB_DEPENDS=	libR.so:math/R \
 		libboost_thread.so:devel/boost-libs \
 		libinotify.so:devel/libinotify \
 		libsoci_core.so:databases/soci \
-		libuuid.so:misc/e2fsprogs-libuuid \
+		libuuid.so:misc/libuuid \
 		libyaml-cpp.so:devel/yaml-cpp
 
 FLAVORS=	desktop server

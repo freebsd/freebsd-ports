@@ -1,6 +1,7 @@
 PORTNAME=	seafile-server
 DISTVERSIONPREFIX=	v
 DISTVERSION=	${SEAFILE_VER}
+PORTREVISION=	1
 DISTVERSIONSUFFIX=	-server
 CATEGORIES=	net-mgmt
 
@@ -17,7 +18,7 @@ LIB_DEPENDS=	libsearpc.so:devel/libsearpc \
 		libcurl.so:ftp/curl \
 		libinotify.so:devel/libinotify \
 		libevent.so:devel/libevent \
-		libuuid.so:misc/e2fsprogs-libuuid \
+		libuuid.so:misc/libuuid \
 		libjansson.so:devel/jansson \
 		libjwt.so:www/libjwt \
 		libonig.so:devel/oniguruma

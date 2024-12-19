@@ -1,5 +1,6 @@
 PORTNAME=	linuxsampler
 DISTVERSION=	2.4.0
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	https://download.linuxsampler.org/packages/
 
@@ -17,7 +18,7 @@ BUILD_DEPENDS=	lv2>0:audio/lv2 \
 		p5-XML-Parser>0:textproc/p5-XML-Parser
 LIB_DEPENDS=	libgig.so:audio/libgig \
 		libsndfile.so:audio/libsndfile \
-		libuuid.so:misc/e2fsprogs-libuuid
+		libuuid.so:misc/libuuid
 
 USES=		bison compiler:c++14-lang gmake libtool localbase pathfix perl5 \
 		pkgconfig sqlite:3 tar:bzip2 shebangfix

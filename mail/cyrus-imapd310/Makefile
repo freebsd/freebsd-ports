@@ -23,7 +23,7 @@ CYRUS_IMAPD_VER=	310
 LIB_DEPENDS=	libsasl2.so:security/cyrus-sasl2 \
 		libicuuc.so:devel/icu \
 		libjansson.so:devel/jansson \
-		libuuid.so:misc/e2fsprogs-libuuid \
+		libuuid.so:misc/libuuid \
 		libical.so:devel/libical
 
 CONFLICTS_INSTALL=	cyrus-imapd2? cyrus-imapd3[0-9] cyrus-imapd3[0-9]-http

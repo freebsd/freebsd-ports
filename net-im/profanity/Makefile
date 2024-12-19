@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libotr.so:security/libotr \
-		libuuid.so:misc/e2fsprogs-libuuid \
+		libuuid.so:misc/libuuid \
 		libgpgme.so:security/gpgme \
 		libassuan.so:security/libassuan \
 		libgpg-error.so:security/libgpg-error \

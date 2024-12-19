@@ -26,13 +26,11 @@ USE_LDCONFIG=	${PREFIX}/lib/e2fsprogs
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
-# while we use the system blkid, we need to --enable-libblkid
-# so that the tools get built:
 CONFIGURE_ARGS?=--disable-fsck \
 		--disable-e2initrd-helper \
 		--disable-libuuid \
 		--disable-uuidd \
-		--enable-libblkid \
+		--disable-libblkid \
 		--enable-elf-shlibs \
 		--libdir='${PREFIX}/lib/e2fsprogs/' \
 		--includedir='${PREFIX}/include/e2fsprogs/' \
@@ -81,8 +79,8 @@ NLS_USES=		gettext iconv:build
 BASHTESTS_BUILD_DEPENDS=	${BASH_CMD}:shells/bash
 BASH_CMD=	${LOCALBASE}/bin/bash
 
-LIB_DEPENDS+=	libblkid.so:filesystems/e2fsprogs-libblkid
-LIB_DEPENDS+=	libuuid.so:misc/e2fsprogs-libuuid
+LIB_DEPENDS+=	libblkid.so:filesystems/libblkid \
+		libuuid.so:misc/libuuid
 
 LIBUNWIND_LIB_DEPENDS=	libunwind.so:devel/libunwind
 LIBUNWIND_LIBS+=	-L${LOCALBASE}/lib -lunwind
@@ -317,9 +315,6 @@ post-install:
 .endfor
 .endif
 	# remove or relocate files installed by other ports already, or shadowing system files:
-	cd ${STAGEDIR}${PREFIX} && \
-		${XARGS} <${FILESDIR}/unwanted ${RM} && \
-		${RMDIR} include/e2fsprogs/blkid
 	${MV} ${STAGEDIR}${PREFIX}/bin/compile_et ${STAGEDIR}${PREFIX}/bin/e2fsprogs-compile_et
 	${MV} ${STAGEDIR}${PREFIX}/share/man/man1/compile_et.1 ${STAGEDIR}${PREFIX}/share/man/man1/e2fsprogs-compile_et.1
 	${MKDIR} ${STAGEDIR}${DATADIR}/et/

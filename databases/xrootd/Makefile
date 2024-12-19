@@ -19,7 +19,7 @@ LICENSE_FILE_LGPL3=	${WRKSRC}/COPYING.LGPL
 BUILD_DEPENDS=	bash:shells/bash
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libtinyxml.so:textproc/tinyxml \
-		libuuid.so:misc/e2fsprogs-libuuid
+		libuuid.so:misc/libuuid
 TEST_DEPENDS=	cppunit>0:devel/cppunit \
 		googletest>0:devel/googletest
 

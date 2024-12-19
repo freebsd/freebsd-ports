@@ -1,5 +1,6 @@
 PORTNAME=	simpleagenda
 PORTVERSION=	0.46
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	deskutils gnustep
 DISTNAME=	SimpleAgenda-${PORTVERSION}
@@ -11,7 +12,7 @@ WWW=		https://mediawiki.gnustep.org/index.php/SimpleAgenda.app
 LICENSE=	GPLv2
 
 LIB_DEPENDS=	libical.so:devel/libical \
-		libuuid.so:misc/e2fsprogs-libuuid
+		libuuid.so:misc/libuuid
 
 USES=		gnustep localbase
 GNU_CONFIGURE=	yes

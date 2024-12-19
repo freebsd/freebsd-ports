@@ -20,7 +20,7 @@ LIB_DEPENDS=	libavahi-client.so:net/avahi-app \
 		libexpat.so:textproc/expat2 \
 		libopus.so:audio/opus \
 		libudev.so:devel/libudev-devd \
-		libuuid.so:misc/e2fsprogs-libuuid
+		libuuid.so:misc/libuuid
 
 USES=		cmake localbase:ldflags perl5 pkgconfig sdl ssl tar:xz
 USE_LDCONFIG=	yes

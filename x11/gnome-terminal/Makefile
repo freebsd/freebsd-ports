@@ -1,5 +1,6 @@
 PORTNAME=	gnome-terminal
 DISTVERSION=	3.54.5
+PORTREVISION=	1
 CATEGORIES=	x11 gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
@@ -15,8 +16,8 @@ BUILD_DEPENDS=	docbook-xsl>0:textproc/docbook-xsl \
 		gsettings-desktop-schemas>0:devel/gsettings-desktop-schemas \
 		itstool:textproc/itstool
 LIB_DEPENDS=	libpcre2-8.so:devel/pcre2 \
-		libuuid.so:misc/e2fsprogs-libuuid \
-		libhandy-1.so:x11-toolkits/libhandy
+		libhandy-1.so:x11-toolkits/libhandy \
+		libuuid.so:misc/libuuid
 RUN_DEPENDS=	gsettings-desktop-schemas>0:devel/gsettings-desktop-schemas
 
 USES=		cpe gettext gnome localbase meson pkgconfig python \

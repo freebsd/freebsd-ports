@@ -24,8 +24,8 @@ BUILD_DEPENDS+=	gsed:textproc/gsed \
 BUILD_DEPENDS+=	${COMPILER}:devel/${COMPILER}
 
 # For mkeficapsule
-BUILD_DEPENDS+=	e2fsprogs-libuuid>=0:misc/e2fsprogs-libuuid \
-		gnutls>=0:security/gnutls
+BUILD_DEPENDS+=	gnutls>=0:security/gnutls
+LIB_DEPENDS+=	libuuid.so:misc/libuuid
 
 USES=		bison compiler:c11 gmake python:build pkgconfig shebangfix ssl \
 		tar:bz2

@@ -59,6 +59,7 @@ share/man/man8/e2image.8.gz
 share/man/man8/e2label.8.gz
 share/man/man8/e2mmpstatus.8.gz
 share/man/man8/e2undo.8.gz
+share/man/man8/findfs.8.gz
 share/man/man8/mke2fs.8.gz
 share/man/man8/mklost+found.8.gz
 share/man/man8/resize2fs.8.gz
@@ -69,13 +70,10 @@ share/man/man8/fsck.ext4.8.gz
 share/man/man8/mkfs.ext2.8.gz
 share/man/man8/mkfs.ext3.8.gz
 share/man/man8/mkfs.ext4.8.gz
-share/man/man8/findfs.8.gz
-share/man/man8/blkid.8.gz
 share/man/man8/logsave.8.gz
 share/man/man8/fsck_ext2fs.8.gz
 share/man/man8/e2freefrag.8.gz
 sbin/badblocks
-sbin/blkid
 sbin/debugfs
 sbin/dumpe2fs
 sbin/e2freefrag

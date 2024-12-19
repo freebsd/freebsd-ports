@@ -1,5 +1,6 @@
 PORTNAME=	appstream-glib
 PORTVERSION=	0.8.3
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://people.freedesktop.org/~hughsient/appstream-glib/releases/
 DIST_SUBDIR=	gnome
@@ -15,7 +16,7 @@ BUILD_DEPENDS=	gcab:archivers/gcab
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libjson-glib-1.0.so:devel/json-glib \
 		libyaml.so:textproc/libyaml \
-		libuuid.so:misc/e2fsprogs-libuuid \
+		libuuid.so:misc/libuuid \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2
 RUN_DEPENDS=	gcab:archivers/gcab

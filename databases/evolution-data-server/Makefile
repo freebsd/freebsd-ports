@@ -24,7 +24,7 @@ LIB_DEPENDS=	libsoup-3.0.so:devel/libsoup3 \
 		libsecret-1.so:security/libsecret \
 		libcanberra-gtk3.so:audio/libcanberra-gtk3 \
 		libcanberra.so:audio/libcanberra \
-		libuuid.so:misc/e2fsprogs-libuuid \
+		libuuid.so:misc/libuuid \
 		libvulkan.so:graphics/vulkan-loader \
 		libgraphene-1.0.so:graphics/graphene
 

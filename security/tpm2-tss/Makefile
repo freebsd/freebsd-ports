@@ -11,7 +11,7 @@ LICENSE=	BSD2CLAUSE
 
 LIB_DEPENDS=	libjson-c.so:devel/json-c \
 		libcurl.so:ftp/curl \
-		libuuid.so:misc/e2fsprogs-libuuid
+		libuuid.so:misc/libuuid
 
 USES=		compiler:c11 gmake libtool pkgconfig ssl
 USE_LDCONFIG=	yes

@@ -1,5 +1,6 @@
 PORTNAME=	ot-recorder
 PORTVERSION=	0.9.9
+PORTREVISION=	1
 CATEGORIES=	www
 
 MAINTAINER=	dvl@FreeBSD.org
@@ -10,7 +11,6 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	curl>0:ftp/curl \
-		e2fsprogs-libuuid>0:misc/e2fsprogs-libuuid \
 		libconfig>0:devel/libconfig \
 		lmdb>0:databases/lmdb \
 		mosquitto>0:net/mosquitto \
@@ -19,7 +19,8 @@ BUILD_DEPENDS=	curl>0:ftp/curl \
 LIB_DEPENDS=	libconfig.so:devel/libconfig \
 		libcurl.so:ftp/curl \
 		liblmdb.so:databases/lmdb \
-		libmosquitto.so:net/mosquitto
+		libmosquitto.so:net/mosquitto \
+		libuuid.so:misc/libuuid
 
 USES=		gmake
 

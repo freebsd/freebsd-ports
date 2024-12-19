@@ -34,7 +34,7 @@ LIB_DEPENDS=	libsqlite3.so:databases/sqlite3 \
 		libjbig.so:graphics/jbigkit \
 		libshout.so:audio/libshout \
 		libtiff.so:graphics/tiff \
-		libuuid.so:misc/e2fsprogs-libuuid \
+		libuuid.so:misc/libuuid \
 		libmariadb.so:databases/mariadb-connector-c \
 		libspandsp.so:comms/spandsp \
 		libsofia-sip-ua.so:net/sofia-sip

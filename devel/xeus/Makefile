@@ -1,5 +1,6 @@
 PORTNAME=	xeus
 DISTVERSION=	5.0.0
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -11,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	nlohmann-json>0:devel/nlohmann-json \
 		xtl-quant-stack>0:devel/xtl-quant-stack
-LIB_DEPENDS=	libuuid.so:misc/e2fsprogs-libuuid
+LIB_DEPENDS=	libuuid.so:misc/libuuid
 TEST_DEPENDS=	doctest>0:devel/doctest
 
 USES=		cmake:testing localbase:ldflags pkgconfig

@@ -1,6 +1,7 @@
 PORTNAME=	seafile-client
 DISTVERSIONPREFIX=	v
 DISTVERSION=	9.0.6
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	ultima@FreeBSD.org
@@ -14,7 +15,7 @@ LIB_DEPENDS=	libsearpc.so:devel/libsearpc \
 		libcurl.so:ftp/curl \
 		libinotify.so:devel/libinotify \
 		libevent.so:devel/libevent \
-		libuuid.so:misc/e2fsprogs-libuuid \
+		libuuid.so:misc/libuuid \
 		libjansson.so:devel/jansson \
 		libwebsockets.so:net/libwebsockets
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR} \

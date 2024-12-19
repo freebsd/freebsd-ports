@@ -26,7 +26,7 @@ LIB_DEPENDS=	libavahi-client.so:net/avahi-app \
 		libsodium.so:security/libsodium \
 		libunistring.so:devel/libunistring \
 		libprotobuf-c.so:devel/protobuf-c \
-		libuuid.so:misc/e2fsprogs-libuuid
+		libuuid.so:misc/libuuid
 
 USES=		tar:xz localbase libtool iconv:wchar_t pkgconfig gnome gmake \
 		gperf sqlite gnome pathfix

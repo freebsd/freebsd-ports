@@ -17,7 +17,7 @@ LICENSE_COMB=	multi
 LIB_DEPENDS=	libestr.so:devel/libestr \
 		libfastjson.so:devel/libfastjson \
 		liblogging-rfc3195.so:devel/liblogging \
-		libuuid.so:misc/e2fsprogs-libuuid \
+		libuuid.so:misc/libuuid \
 		libcurl.so:ftp/curl
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}docutils>0:textproc/py-docutils@${PY_FLAVOR}
 

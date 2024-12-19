@@ -21,7 +21,7 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libjansson.so:devel/jansson \
-		libuuid.so:misc/e2fsprogs-libuuid
+		libuuid.so:misc/libuuid
 
 USES=		bison compiler:c11 cpe gmake gnome iconv libedit localbase \
 		ncurses pkgconfig shebangfix sqlite ssl
