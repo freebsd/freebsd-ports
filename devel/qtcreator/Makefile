@@ -5,6 +5,9 @@ MASTER_SITES=	QT/official_releases/qtcreator/${DISTVERSION:R}/${DISTVERSION}
 DISTNAME=	qt-creator-opensource-src-${DISTVERSION}
 DIST_SUBDIR=	KDE/Qt/qtcreator
 
+PATCH_SITES=	https://github.com/qt-creator/qt-creator/commit/
+PATCHFILES=	0e9943dd671877adbe13c9316bded21ac762e4dd.patch:-p1 # Fix build with LLVM 19
+
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	C++ and QML IDE for Qt development
 WWW=		https://qt-project.org/wiki/Category:Tools::QtCreator
