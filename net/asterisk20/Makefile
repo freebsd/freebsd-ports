@@ -1,12 +1,15 @@
 PORTNAME=	asterisk
 DISTVERSION=	20.11.0
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	https://downloads.asterisk.org/pub/telephony/%SUBDIR%/:DEFAULT,g729
 MASTER_SITE_SUBDIR=	asterisk/ \
 			asterisk/old-releases/ \
 			sounds/releases/:g729
 PKGNAMESUFFIX=	20
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
+		${ASTERISK_CORE_G729_SOUNDS}:g729 \
+		${ASTERISK_MOH_G729_SOUNDS}:g729
 DIST_SUBDIR=	${PORTNAME}
 EXTRACT_ONLY:=	${DISTNAME}${EXTRACT_SUFX}
 
@@ -129,9 +132,6 @@ FREETDS_LIB_DEPENDS=	libsybdb.so:databases/freetds
 FREETDS_CONFIGURE_ON=	--with-tds=${LOCALBASE}
 FREETDS_CONFIGURE_OFF=	--without-tds
 
-G729_DISTFILES=		${ASTERISK_CORE_G729_SOUNDS}:g729 \
-			${ASTERISK_MOH_G729_SOUNDS}:g729
-
 GEOLOCATION_USE=	GNOME=libxslt
 
 GSM_LIB_DEPENDS=	libgsm.so:audio/gsm
@@ -209,7 +209,7 @@ XMLDOC_CONFIGURE_ENABLE=	xmldoc
 XMPP_LIB_DEPENDS=	libiksemel.so:textproc/iksemel
 XMPP_CONFIGURE_WITH=	iksemel
 
-ASTERISK_CORE_G729_SOUNDS=	asterisk-core-sounds-en-g729-1.5.tar.gz
+ASTERISK_CORE_G729_SOUNDS=	asterisk-core-sounds-en-g729-1.6.tar.gz
 ASTERISK_MOH_G729_SOUNDS=	asterisk-moh-opsound-g729-2.03.tar.gz
 
 ASTERISK_USER=	asterisk
