@@ -43,6 +43,7 @@
     SUBDIR += jmtpfs
     SUBDIR += kio-fuse
     SUBDIR += libbde
+    SUBDIR += libblkid
     SUBDIR += libfsapfs
     SUBDIR += libfsext
     SUBDIR += libfsfat

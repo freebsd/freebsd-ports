@@ -1,0 +1,5 @@
+The libblkid library is used to identify block devices (disks) as to their
+content (e.g., filesystem type) as well as extracting additional information
+such as filesystem labels/volume names, unique identifiers/serial numbers.
+A common use is to allow use of LABEL= and UUID= tags instead of hard-coding
+specific block device names into configuration files.
