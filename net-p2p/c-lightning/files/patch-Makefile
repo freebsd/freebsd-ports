@@ -1,6 +1,15 @@
---- Makefile.orig	2024-08-29 06:49:21.000000000 +0200
-+++ Makefile	2024-09-03 12:56:39.050177000 +0200
-@@ -271,9 +271,9 @@
+--- Makefile.orig	2024-12-18 03:38:13 UTC
++++ Makefile
+@@ -240,7 +240,7 @@ docdir = $(datadir)/doc/$(PKGNAME)
+ plugindir = $(pkglibexecdir)/plugins
+ datadir = $(PREFIX)/share
+ docdir = $(datadir)/doc/$(PKGNAME)
+-mandir = $(datadir)/man
++mandir = $(PREFIX)/man
+ man1dir = $(mandir)/man1
+ man5dir = $(mandir)/man5
+ man7dir = $(mandir)/man7
+@@ -281,9 +281,9 @@ ifeq ($(STATIC),1)
  # For MacOS, Jacob Rapoport <jacob@rumblemonkey.com> changed this to:
  #  -L/usr/local/lib -lsqlite3 -lz -Wl,-lm -lpthread -ldl $(COVFLAGS)
  # But that doesn't static link.
@@ -12,12 +21,3 @@
  endif
  
  # If we have the postgres client library we need to link against it as well
-@@ -767,7 +767,7 @@
- plugindir = $(pkglibexecdir)/plugins
- datadir = $(PREFIX)/share
- docdir = $(datadir)/doc/$(PKGNAME)
--mandir = $(datadir)/man
-+mandir = $(PREFIX)/man
- man1dir = $(mandir)/man1
- man5dir = $(mandir)/man5
- man7dir = $(mandir)/man7
