@@ -1,6 +1,6 @@
 PORTNAME=	surrealdb
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.1.3
+DISTVERSION=	2.1.4
 CATEGORIES=	databases
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -24,21 +24,22 @@ USE_GITHUB=	yes
 
 CARGO_CRATES=	Inflector-0.11.4 \
 		actix-codec-0.5.2 \
-		actix-http-3.6.0 \
+		actix-http-3.9.0 \
 		actix-macros-0.2.4 \
-		actix-router-0.5.2 \
-		actix-rt-2.9.0 \
-		actix-server-2.3.0 \
+		actix-router-0.5.3 \
+		actix-rt-2.10.0 \
+		actix-server-2.5.0 \
 		actix-service-2.0.2 \
 		actix-utils-3.0.1 \
-		actix-web-4.5.1 \
-		actix-web-codegen-4.2.2 \
+		actix-web-4.9.0 \
+		actix-web-codegen-4.3.0 \
 		addr-0.15.6 \
 		addr2line-0.21.0 \
 		adler-1.0.2 \
 		ahash-0.7.8 \
 		ahash-0.8.11 \
 		aho-corasick-1.1.3 \
+		aligned-vec-0.6.1 \
 		alloc-no-stdlib-2.0.4 \
 		alloc-stdlib-0.2.2 \
 		allocator-api2-0.2.16 \
@@ -112,7 +113,9 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		borsh-1.4.0 \
 		borsh-derive-1.4.0 \
 		brotli-3.5.0 \
+		brotli-6.0.0 \
 		brotli-decompressor-2.5.1 \
+		brotli-decompressor-4.0.1 \
 		bstr-1.9.1 \
 		bumpalo-3.15.4 \
 		bytecheck-0.6.12 \
@@ -120,7 +123,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		bytemuck-1.16.3 \
 		byteorder-1.5.0 \
 		bytes-1.7.1 \
-		bytestring-1.3.1 \
+		bytestring-1.4.0 \
 		bzip2-sys-0.1.11+1.0.8 \
 		cast-0.3.0 \
 		castaway-0.2.3 \
@@ -173,15 +176,16 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		deranged-0.3.11 \
 		derive-new-0.5.9 \
 		derive_arbitrary-1.3.2 \
-		derive_more-0.99.17 \
+		derive_more-0.99.18 \
 		deunicode-1.4.3 \
-		devise-0.4.1 \
-		devise_codegen-0.4.1 \
-		devise_core-0.4.1 \
+		devise-0.4.2 \
+		devise_codegen-0.4.2 \
+		devise_core-0.4.2 \
 		difflib-0.4.0 \
 		digest-0.10.7 \
 		dirs-next-2.0.0 \
 		dirs-sys-next-0.1.2 \
+		displaydoc-0.2.5 \
 		dmp-0.2.0 \
 		doc-comment-0.3.3 \
 		earcutr-0.4.3 \
@@ -192,6 +196,8 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		env_filter-0.1.0 \
 		env_logger-0.10.2 \
 		env_logger-0.11.3 \
+		equator-0.2.2 \
+		equator-macro-0.2.1 \
 		equivalent-1.0.1 \
 		errno-0.3.8 \
 		error-code-2.3.1 \
@@ -203,7 +209,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		fail-0.4.0 \
 		fastrand-2.0.2 \
 		fd-lock-3.0.13 \
-		figment-0.10.15 \
+		figment-0.10.19 \
 		filetime-0.2.23 \
 		findshlibs-0.10.2 \
 		fixedbitset-0.4.2 \
@@ -277,9 +283,21 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		hyper-util-0.1.6 \
 		iana-time-zone-0.1.60 \
 		iana-time-zone-haiku-0.1.2 \
+		icu_collections-1.5.0 \
+		icu_locid-1.5.0 \
+		icu_locid_transform-1.5.0 \
+		icu_locid_transform_data-1.5.0 \
+		icu_normalizer-1.5.0 \
+		icu_normalizer_data-1.5.0 \
+		icu_properties-1.5.1 \
+		icu_properties_data-1.5.0 \
+		icu_provider-1.5.0 \
+		icu_provider_macros-1.5.0 \
 		ident_case-1.0.1 \
-		idna-0.5.0 \
+		idna-1.0.3 \
+		idna_adapter-1.2.0 \
 		ignore-0.4.22 \
+		impl-more-0.1.8 \
 		indexmap-1.9.3 \
 		indexmap-2.2.6 \
 		indxdb-0.5.0 \
@@ -307,12 +325,13 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		libloading-0.7.4 \
 		libloading-0.8.3 \
 		libm-0.2.8 \
-		libmimalloc-sys-0.1.35 \
+		libmimalloc-sys-0.1.39 \
 		libredox-0.1.3 \
 		librocksdb-sys-0.16.0+8.10.0 \
 		libz-sys-1.1.16 \
 		linfa-linalg-0.1.0 \
 		linux-raw-sys-0.4.13 \
+		litemap-0.7.4 \
 		local-channel-0.1.5 \
 		local-waker-0.1.4 \
 		lock_api-0.4.11 \
@@ -331,12 +350,11 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		memmap2-0.9.4 \
 		miette-5.10.0 \
 		miette-derive-5.10.0 \
-		mimalloc-0.1.39 \
+		mimalloc-0.1.43 \
 		mime-0.3.17 \
 		mime_guess-2.0.4 \
 		minimal-lexical-0.2.1 \
 		miniz_oxide-0.7.2 \
-		mio-0.8.11 \
 		mio-1.0.2 \
 		multer-3.1.0 \
 		multimap-0.8.3 \
@@ -404,7 +422,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		plotters-backend-0.3.5 \
 		plotters-svg-0.3.5 \
 		powerfmt-0.2.0 \
-		pprof-0.13.0 \
+		pprof-0.14.0 \
 		ppv-lite86-0.2.17 \
 		precomputed-hash-0.1.1 \
 		predicates-3.1.0 \
@@ -456,6 +474,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		regex-1.10.6 \
 		regex-automata-0.1.10 \
 		regex-automata-0.4.6 \
+		regex-lite-0.1.6 \
 		regex-syntax-0.6.29 \
 		regex-syntax-0.8.4 \
 		relative-path-1.9.2 \
@@ -521,7 +540,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		serde_html_form-0.2.6 \
 		serde_json-1.0.127 \
 		serde_path_to_error-0.1.16 \
-		serde_spanned-0.6.5 \
+		serde_spanned-0.6.8 \
 		serde_urlencoded-0.7.1 \
 		serde_with-3.7.0 \
 		serde_with_macros-3.7.0 \
@@ -573,6 +592,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		syn_derive-0.1.8 \
 		sync_wrapper-0.1.2 \
 		sync_wrapper-1.0.0 \
+		synstructure-0.13.1 \
 		take_mut-0.2.2 \
 		tap-1.0.1 \
 		tar-0.4.40 \
@@ -593,6 +613,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		time-core-0.1.2 \
 		time-macros-0.2.18 \
 		tiny-keccak-2.0.2 \
+		tinystr-0.7.6 \
 		tinytemplate-1.2.1 \
 		tinyvec-1.6.0 \
 		tinyvec_macros-0.1.1 \
@@ -610,7 +631,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		toml_datetime-0.6.5 \
 		toml_edit-0.19.15 \
 		toml_edit-0.21.1 \
-		toml_edit-0.22.9 \
+		toml_edit-0.22.12 \
 		tonic-0.10.2 \
 		tonic-0.12.3 \
 		tower-0.4.13 \
@@ -634,7 +655,6 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		ulid-1.1.2 \
 		uncased-0.9.10 \
 		unicase-2.7.0 \
-		unicode-bidi-0.3.15 \
 		unicode-ident-1.0.12 \
 		unicode-normalization-0.1.23 \
 		unicode-script-0.5.6 \
@@ -645,9 +665,11 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		untrusted-0.7.1 \
 		untrusted-0.9.0 \
 		ureq-2.10.1 \
-		url-2.5.0 \
+		url-2.5.4 \
 		urlencoding-2.1.3 \
 		utf-8-0.7.6 \
+		utf16_iter-1.0.5 \
+		utf8_iter-1.0.4 \
 		utf8parse-0.2.1 \
 		uuid-1.10.0 \
 		valuable-0.1.0 \
@@ -701,17 +723,25 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		windows_x86_64_msvc-0.48.5 \
 		windows_x86_64_msvc-0.52.6 \
 		winnow-0.5.40 \
-		winnow-0.6.5 \
+		winnow-0.6.20 \
 		wiremock-0.6.0 \
+		write16-1.0.0 \
+		writeable-0.5.5 \
 		ws_stream_wasm-0.7.4 \
 		wyz-0.5.1 \
 		xattr-1.3.1 \
 		xml-rs-0.8.20 \
 		yansi-1.0.1 \
 		yasna-0.5.2 \
+		yoke-0.7.5 \
+		yoke-derive-0.7.5 \
 		zerocopy-0.7.32 \
 		zerocopy-derive-0.7.32 \
+		zerofrom-0.1.5 \
+		zerofrom-derive-0.1.5 \
 		zeroize-1.7.0 \
+		zerovec-0.10.4 \
+		zerovec-derive-0.10.3 \
 		zip-0.6.6 \
 		zstd-0.13.1 \
 		zstd-safe-7.1.0 \
