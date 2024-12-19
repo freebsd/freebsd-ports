@@ -1,9 +1,9 @@
 PORTNAME=	timeSeries
-DISTVERSION=	4030.106
+DISTVERSION=	4041.111
 CATEGORIES=	finance
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Financial Time Series Objects (Rmetrics)
 WWW=		https://r-forge.r-project.org/scm/viewvc.php/pkg/timeSeries/?root=rmetrics
 
