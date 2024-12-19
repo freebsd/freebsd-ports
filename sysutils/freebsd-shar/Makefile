@@ -1,12 +1,12 @@
 PORTNAME=	freebsd-shar
 DISTVERSIONPREFIX=	v
 DISTVERSION=	15.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 
 MAINTAINER=	cy@FreeBSD.org
-COMMENT=	FreeBSD bsdlabel
-WWW=		https://github.com/cschuber/freebsd-bsdlabel
+COMMENT=	FreeBSD shar
+WWW=		https://github.com/cschuber/freebsd-shar
 
 LICENSE=	BSD3CLAUSE
 
