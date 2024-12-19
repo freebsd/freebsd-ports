@@ -1,6 +1,6 @@
 PORTNAME=	arpack-ng
 DISTVERSION=	3.9.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -12,16 +12,15 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libmpich.so:net/mpich # MPI is incremental: it adds the libparpack.so lib, it is a candidate for a sub-package
 
-USES=		autoreconf fortran libtool pkgconfig
+USES=		autoreconf fortran libtool localbase pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	opencollab
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-blas="${BLAS}" \
-		--with-lapack="${LAPACK}" \
+CONFIGURE_ARGS=	--with-blas="${BLASLIB}" \
+		--with-lapack="${LAPACKLIB}" \
 		--enable-mpi \
 		--disable-static \
 		--enable-icb
-LDFLAGS+=	-L${LOCALBASE}/lib
 TEST_TARGET=	check
 USE_LDCONFIG=	yes
 
@@ -32,29 +31,17 @@ PORTEXAMPLES=	*
 
 CONFLICTS_INSTALL=	arpack
 
-OPTIONS_DEFINE=	DOCS EXAMPLES
+OPTIONS_DEFINE=		DOCS EXAMPLES
+OPTIONS_SINGLE=		BLASLIB
 
-WITH_BLAS?=	blas
-
-.if ${WITH_BLAS} == "gotoblas"
-BLAS=		-lgoto2p
-LAPACK=		-lgoto2p
-LIB_DEPENDS+=	libgoto2p.so:math/gotoblas
-.elif ${WITH_BLAS} == "atlas"
-BLAS=		-lptf77blas
-LAPACK=		-lalapack -lptcblas
-LIB_DEPENDS+=	libptf77blas.so:math/atlas
-.elif ${WITH_BLAS} == "blas"
-BLAS=		-lblas
-LAPACK=		-llapack
-LIB_DEPENDS+=	libblas.so:math/blas \
-		liblapack.so:math/lapack
-.else
-IGNORE=		unknown value of WITH_BLAS: ${WITH_BLAS}
-.endif
+OPTIONS_SINGLE_BLASLIB=	ATLAS NETLIB OPENBLAS
+OPTIONS_DEFAULT=	NETLIB
+ATLAS_USES=		blaslapack:atlas
+NETLIB_USES=		blaslapack:netlib
+OPENBLAS_USES=		blaslapack:openblas
 
 pre-configure:
-	@cd ${WRKSRC}; ./bootstrap
+	cd ${WRKSRC} && ./bootstrap
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/lib*arpack.so.*.*
