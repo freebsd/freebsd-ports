@@ -1,10 +1,9 @@
 PORTNAME=	fBasics
-DISTVERSION=	4022.94
-PORTREVISION=	1
+DISTVERSION=	4041.97
 CATEGORIES=	finance
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Rmetrics - Markets and Basic Statistics
 WWW=		https://r-forge.r-project.org/scm/viewvc.php/pkg/fBasics/?root=rmetrics
 
