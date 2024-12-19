@@ -1,9 +1,9 @@
 PORTNAME=	tseries
-DISTVERSION=	0.10-54
+DISTVERSION=	0.10-58
 CATEGORIES=	finance
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Time Series Analysis and Computational Finance
 WWW=		https://CRAN.R-project.org/package=tseries
 
