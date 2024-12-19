@@ -22,7 +22,7 @@ USES=		compiler:c++11-lib cmake gnome jpeg localbase:ldflags pkgconfig
 USE_GNOME=	cairo
 USE_GITHUB=	yes
 GH_ACCOUNT=	hyprwm
-PLIST_FILES=	bin/${PORTNAME} \
+PLIST_FILES=	bin/${PORTNAME}
 
 post-patch:
 # Extract (snapshot) version from the port instead of Git
