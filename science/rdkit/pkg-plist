@@ -720,7 +720,7 @@ lib/libRDKitga.so.1.%%SHLIB_VER%%
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/rdkit/ML/Cluster/Butina.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/rdkit/ML/Cluster/ClusterUtils.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/rdkit/ML/Cluster/ClusterVis.py
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/rdkit/ML/Cluster/Clustering.so
+%%LITTLE_ENDIAN%%%%PYTHON%%%%PYTHON_SITELIBDIR%%/rdkit/ML/Cluster/Clustering.so
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/rdkit/ML/Cluster/Clusters.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/rdkit/ML/Cluster/Murtagh.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/rdkit/ML/Cluster/Resemblance.py
