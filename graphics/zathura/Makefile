@@ -1,6 +1,5 @@
 PORTNAME=	zathura
-DISTVERSION=	0.5.8
-PORTREVISION=	1
+DISTVERSION=	0.5.11
 CATEGORIES=	graphics print
 MASTER_SITES=	https://pwmt.org/projects/zathura/download/
 
@@ -14,11 +13,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libgirara-gtk3.so:x11-toolkits/girara \
 		libjson-glib-1.0.so:devel/json-glib
 
-USES=		compiler:c11 desktop-file-utils gettext-tools:build gnome meson \
-		ninja pkgconfig python sqlite tar:xz
-USE_GNOME=	cairo gdkpixbuf2 glib20 gtk30
+USES=		compiler:c17 gettext gnome meson ninja pkgconfig sqlite tar:xz
+USE_GNOME=	glib20 gtk30
 MESON_ARGS=	-Dlandlock=disabled \
-		-Dmanpages=disabled \
 		-Dseccomp=disabled \
 		-Dtests=disabled
 
@@ -30,6 +27,7 @@ SYNCTEX_DESC=	Direct and reverse synchronisation support with SyncTeX
 
 MANPAGES_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytz>0:devel/py-pytz@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}sphinx>=1.2.2,1:textproc/py-sphinx@${PY_FLAVOR}
+MANPAGES_USES=		python
 MANPAGES_MESON_ENABLED=	manpages
 
 SYNCTEX_BUILD_DEPENDS=	tex-synctex>=1.19.0:devel/tex-synctex
@@ -37,7 +35,6 @@ SYNCTEX_RUN_DEPENDS=	${SYNCTEX_BUILD_DEPENDS}
 SYNCTEX_MESON_ENABLED=	synctex
 
 post-patch:
-	@${REINPLACE_CMD} -e '/GLOBAL_RC/ s|/etc|${PREFIX}/etc|' ${WRKSRC}/zathura/config.c
 	@${REINPLACE_CMD} -e 's|^/etc|${PREFIX}/etc|' ${WRKSRC}/doc/man/zathurarc.5.rst
 
 .include <bsd.port.mk>
