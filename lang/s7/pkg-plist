@@ -2,6 +2,8 @@
 %%REPL%%bin/s7-repl
 include/s7.h
 lib/libs7.so
+lib/libs7.so.0
+lib/libs7.so.0.0.0
 %%DATADIR%%/case.scm
 %%DATADIR%%/cload.scm
 %%DATADIR%%/debug.scm

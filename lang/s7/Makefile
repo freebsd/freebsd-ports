@@ -1,6 +1,6 @@
 PORTNAME=	s7
-# S7_MAJOR_VERSION / S7_MINOR_VERSION from s7.h
-PORTVERSION=	11.2.g20241217
+# S7_MAJOR_VERSION / S7_MINOR_VERSION / S7_DATE from s7.h
+PORTVERSION=	11.2.g20241220
 CATEGORIES=	lang lisp
 
 MAINTAINER=	fuz@FreeBSD.org
@@ -13,7 +13,7 @@ USES=		localbase:ldflags
 USE_GITLAB=	yes
 GL_SITE=	https://cm-gitlab.stanford.edu
 GL_ACCOUNT=	bil
-GL_TAGNAME=	f09eadf4dab5b4e6f1c3c2d52e9d6bee6ed21175
+GL_TAGNAME=	a5515d455f5aca49d5275a5a35ac88935f3ad401
 USE_LDCONFIG=	yes
 
 CFLAGS+=	-DS7_LOAD_PATH=\"${DATADIR}\" \
@@ -26,10 +26,10 @@ CFLAGS+=	-DS7_LOAD_PATH=\"${DATADIR}\" \
 
 LDFLAGS+=	-Wl,-export-dynamic
 LIBS+=		-lm
+LIBS7=		${WRKDIR}/libs7.so.0
 S7LIBS=		c dl m
 
-MAKE_ENV+=	LD_LIBRARY_PATH=${WRKDIR} \
-		USER=${USER}
+MAKE_ENV+=	LD_LIBRARY_PATH=${WRKDIR}
 
 PORTDOCS=	s7.html s7-ffi.html s7-scm.html
 
@@ -46,17 +46,20 @@ GMP_LIBS=	-lmpc -lmpfr -lgmp
 NREPL_LIB_DEPENDS=	libnotcurses-core.so:devel/notcurses
 
 do-build:
-	${CC} -fpic -shared ${CFLAGS} ${CPPFLAGS} ${LDFLAGS} -o ${WRKDIR}/libs7.so ${WRKSRC}/s7.c ${LIBS}
-	${CC} ${CFLAGS} ${CPPFLAGS} ${LDFLAGS} -L${WRKDIR} -o ${WRKDIR}/s7-repl ${WRKSRC}/repl.c -ls7
+	${CC} -fpic -shared ${CFLAGS} ${CPPFLAGS} ${LDFLAGS} -Wl,--soname=libs7.so.0 \
+		-o ${LIBS7} ${WRKSRC}/s7.c ${LIBS}
+	${CC} ${CFLAGS} ${CPPFLAGS} ${LDFLAGS} -o ${WRKDIR}/s7-repl ${WRKSRC}/repl.c ${LIBS7}
 .for l in ${S7LIBS}
 	(cd ${WRKDIR} && ${SETENVI} ${WRK_ENV} ${MAKE_ENV} ${WRKDIR}/s7-repl ${WRKSRC}/lib$l.scm)
 .endfor
 
 post-build-NREPL-on:
-	${CC} ${CFLAGS} ${CPPFLAGS} ${LDFLAGS} -L${WRKDIR} -o ${WRKDIR}/s7-nrepl ${WRKSRC}/nrepl.c -ls7 -lnotcurses-core
+	${CC} ${CFLAGS} ${CPPFLAGS} ${LDFLAGS} -o ${WRKDIR}/s7-nrepl ${WRKSRC}/nrepl.c ${LIBS7} -lnotcurses-core
 
 do-install:
-	${INSTALL_LIB} ${WRKDIR}/libs7.so ${STAGEDIR}${PREFIX}/lib/
+	${INSTALL_LIB} ${LIBS7} ${STAGEDIR}${PREFIX}/lib/libs7.so.0.0.0
+	${RLN} ${STAGEDIR}${PREFIX}/lib/libs7.so.0.0.0 ${STAGEDIR}${PREFIX}/lib/libs7.so.0
+	${RLN} ${STAGEDIR}${PREFIX}/lib/libs7.so.0.0.0 ${STAGEDIR}${PREFIX}/lib/libs7.so
 	${INSTALL_DATA} ${WRKSRC}/s7.h ${STAGEDIR}${PREFIX}/include/
 	${MKDIR} ${STAGEDIR}${DATADIR}/tools
 .for l in ${S7LIBS}
@@ -78,7 +81,9 @@ do-install-REPL-on:
 	${INSTALL_PROGRAM} ${WRKDIR}/s7-repl ${STAGEDIR}${PREFIX}/bin/
 
 do-test:
+	${RM} -r ${WRKDIR}/cl ${WRKDIR}/test
 	${RLN} ${WRKSRC} ${WRKDIR}/cl
+	${MKDIR} ${WRKDIR}/test
 	(cd ${WRKSRC} && ${SETENVI} ${WRK_ENV} ${TEST_ENV} ${WRKDIR}/s7-repl s7test.scm)
 
 .include <bsd.port.mk>
