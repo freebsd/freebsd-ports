@@ -1,6 +1,6 @@
 PORTNAME=	futhark
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.25.23
+DISTVERSION=	0.25.25
 CATEGORIES=	lang haskell
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		cabal
 
-USE_CABAL=	Diff-0.5_1 \
+USE_CABAL=	Diff-1.0.1_1 \
 		ListLike-4.7.8.2 \
 		OneTuple-0.4.2 \
 		QuickCheck-2.15.0.1 \
@@ -24,13 +24,13 @@ USE_CABAL=	Diff-0.5_1 \
 		ansi-terminal-1.1.1 \
 		ansi-terminal-types-1.1 \
 		assoc-1.1.1 \
-		async-2.2.5_2 \
-		attoparsec-0.14.4_5 \
+		async-2.2.5_3 \
+		attoparsec-0.14.4_6 \
 		base-compat-0.14.0 \
 		base-orphans-0.9.2 \
 		base16-bytestring-1.0.2.0_1 \
-		bifunctors-5.6.2 \
-		bitvec-1.1.5.0_1 \
+		bifunctors-5.6.2_1 \
+		bitvec-1.1.5.0_2 \
 		blaze-builder-0.4.2.3 \
 		blaze-html-0.9.2.0_1 \
 		blaze-markup-0.8.3.0_2 \
@@ -48,11 +48,8 @@ USE_CABAL=	Diff-0.5_1 \
 		contravariant-1.5.5 \
 		cryptohash-md5-0.11.101.0_5 \
 		cryptohash-sha1-0.11.101.0_5 \
-		data-default-0.7.1.1 \
-		data-default-class-0.1.2.0 \
-		data-default-instances-containers-0.0.1 \
-		data-default-instances-dlist-0.0.1 \
-		data-default-instances-old-locale-0.0.1 \
+		data-default-0.8.0.0 \
+		data-default-class-0.2.0.0 \
 		data-fix-0.3.4 \
 		dense-linear-algebra-0.1.0.0 \
 		directory-tree-0.12.1 \
@@ -63,21 +60,22 @@ USE_CABAL=	Diff-0.5_1 \
 		exception-mtl-0.4.0.2 \
 		exception-transformers-0.4.0.12 \
 		fail-4.9.0.0 \
-		fgl-5.8.2.0 \
+		fgl-5.8.3.0 \
 		fgl-visualize-0.1.0.1 \
 		file-embed-0.0.16.0 \
 		fmlist-0.9.4 \
-		free-5.2_5 \
+		free-5.2_6 \
 		futhark-data-1.1.1.0 \
 		futhark-manifest-1.5.0.0 \
-		futhark-server-1.2.2.1 \
+		futhark-server-1.2.3.0 \
 		generic-deriving-1.14.5_3 \
 		generic-lens-2.2.2.0_1 \
 		generic-lens-core-2.2.1.0_2 \
 		generically-0.1.1_4 \
 		githash-0.1.7.0 \
 		half-0.3.1_2 \
-		happy-1.20.1.1 \
+		happy-2.1.2 \
+		happy-lib-2.1.2 \
 		hashable-1.5.0.0 \
 		haskell-src-exts-1.23.1 \
 		haskell-src-meta-0.8.14 \
@@ -102,9 +100,9 @@ USE_CABAL=	Diff-0.5_1 \
 		neat-interpolation-0.5.1.4 \
 		network-info-0.2.1 \
 		network-uri-2.6.4.2_1 \
-		old-locale-1.0.0.7_2 \
-		os-string-2.0.6 \
-		parallel-3.2.2.0_8 \
+		optparse-applicative-0.18.1.0 \
+		os-string-2.0.6_1 \
+		parallel-3.2.2.0_9 \
 		parser-combinators-1.3.0_1 \
 		prettyprinter-1.7.1 \
 		prettyprinter-ansi-terminal-1.1.3 \
@@ -132,6 +130,7 @@ USE_CABAL=	Diff-0.5_1 \
 		strict-0.5.1_1 \
 		syb-0.7.2.4 \
 		tagged-0.8.8_1 \
+		tasty-1.5.2 \
 		temporary-1.3 \
 		terminal-size-0.3.4_1 \
 		text-iso8601-0.1.1_1 \
@@ -140,8 +139,8 @@ USE_CABAL=	Diff-0.5_1 \
 		th-abstraction-0.7.0.0 \
 		th-compat-0.1.5_2 \
 		th-expand-syns-0.4.11.0_4 \
-		th-lift-0.8.4_3 \
-		th-orphans-0.13.14_4 \
+		th-lift-0.8.5 \
+		th-orphans-0.13.15 \
 		th-reify-many-0.1.10 \
 		these-1.2.1_1 \
 		time-compat-1.9.7_2 \
@@ -153,15 +152,15 @@ USE_CABAL=	Diff-0.5_1 \
 		utf8-string-1.0.2 \
 		uuid-1.3.16_1 \
 		uuid-types-1.0.6_1 \
-		vector-0.13.1.0_2 \
+		vector-0.13.2.0 \
 		vector-algorithms-0.9.0.2_1 \
 		vector-binary-instances-0.2.5.2_5 \
-		vector-stream-0.1.0.1_2 \
-		vector-th-unbox-0.2.2_6 \
+		vector-stream-0.1.0.1_3 \
+		vector-th-unbox-0.2.2_8 \
 		versions-6.0.7 \
 		void-0.7.3 \
 		witherable-0.5_1 \
-		zlib-0.7.1.0_1
+		zlib-0.7.1.0_2
 
 CABAL_PROJECT=	remove
 
