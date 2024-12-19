@@ -10,6 +10,8 @@ WWW=		https://github.com/curlpipe/ox/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_i386=	compilation fails, see https://github.com/zhiburt/ptyprocess/issues/17
+
 USES=		cargo
 
 USE_GITHUB=	yes
