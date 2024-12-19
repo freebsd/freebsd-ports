@@ -12,9 +12,9 @@ WWW=		http://lml.b9.com/
 
 LICENSE=	GPLv2
 
-NO_BUILD=	yes
-
 USES=		cl
+
+NO_BUILD=	yes
 
 PORTDOCS=	Makefile make.lisp readme.html readme.lml
 

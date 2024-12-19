@@ -19,10 +19,11 @@ LICENSE_NAME=	infix
 LICENSE_TEXT=	No fees or compensation can be charged
 LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
+USES=		cl
+
 NO_BUILD=	yes
 
-USES=		cl
+WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
 
 OPTIONS_DEFINE=	DOCS
 

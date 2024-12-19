@@ -14,10 +14,11 @@ WWW=		https://www.cliki.net/SPLIT-SEQUENCE
 
 LICENSE=	PD
 
-WRKSRC=		${WRKDIR}/${PORTNAME}
+USES=		cl
+
 NO_BUILD=	yes
 
-USES=		cl
+WRKSRC=		${WRKDIR}/${PORTNAME}
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${ASDF_PATHNAME} ${STAGEDIR}${ASDF_REGISTRY}

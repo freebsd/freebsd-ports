@@ -3,8 +3,8 @@ PORTVERSION=	1.8.5
 PORTREVISION=	2
 CATEGORIES=	security lisp
 MASTER_SITES=	http://ftp.de.debian.org/debian/pool/main/c/cl-md5/
-DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}_${PORTVERSION}.orig
 PKGNAMEPREFIX=	cl-
+DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}_${PORTVERSION}.orig
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Native MD5 implementation in Common Lisp
@@ -12,10 +12,11 @@ WWW=		https://www.cliki.net/MD5
 
 LICENSE=	PD
 
-WRKSRC=		${WRKDIR}/${PKGNAMEPREFIX}${PORTNAME}-${DISTVERSION}
+USES=		cl
+
 NO_BUILD=	yes
 
-USES=		cl
+WRKSRC=		${WRKDIR}/${PKGNAMEPREFIX}${PORTNAME}-${DISTVERSION}
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${ASDF_PATHNAME} ${STAGEDIR}${ASDF_REGISTRY}

@@ -11,9 +11,9 @@ WWW=		https://www.cliki.net/trivial-features
 
 LICENSE=	MIT
 
-NO_BUILD=	yes
-
 USES=		cl
+
+NO_BUILD=	yes
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
