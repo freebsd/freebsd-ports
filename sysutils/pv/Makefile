@@ -1,5 +1,5 @@
 PORTNAME=	pv
-PORTVERSION=	1.9.0
+PORTVERSION=	1.9.15
 CATEGORIES=	sysutils
 MASTER_SITES=	https://www.ivarch.com/programs/sources/
 
