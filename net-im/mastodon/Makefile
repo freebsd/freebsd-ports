@@ -1,9 +1,9 @@
 PORTNAME=	mastodon
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.3.1
+DISTVERSION=	4.3.2
 CATEGORIES=	net-im www
 
-MAINTAINER=	bofh@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNU Social-compatible microblogging server
 WWW=		https://github.com/tootsuite/mastodon
 
