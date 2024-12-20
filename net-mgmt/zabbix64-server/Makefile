@@ -1,6 +1,6 @@
 PORTNAME=	zabbix64
 DISTVERSION=	6.4.20
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	https://cdn.zabbix.com/zabbix/sources/stable/${DISTVERSION:R}/
 PKGNAMESUFFIX?=	-server
@@ -12,6 +12,9 @@ WWW=		https://www.zabbix.com/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
+
+DEPRECATED=	Zabbix 6.4 is expected to reach EoL on December 31, 2024
+EXPIRATION_DATE=	2024-12-31
 
 CONFLICTS_INSTALL=	zabbix[0-9]*${PKGNAMESUFFIX}
 
