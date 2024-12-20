@@ -24,6 +24,9 @@ LICENSE_NAME=	Multiple
 LICENSE_TEXT=	This is a collection of many independent packages and does not have a single license
 LICENSE_PERMS=	dist-mirror no-dist-sell pkg-mirror no-pkg-sell auto-accept
 
+NOT_FOR_ARCHS=	arm64 armv7
+NOT_FOR_ARCHS_REASON=	Programs/TeXAndFriends/Knuth/web/tangle.p:1: parse error before `û'
+
 LIB_DEPENDS=	libapr-1.so:devel/apr1 \
 		libboost_locale.so:devel/boost-libs \
 		libcurl.so:ftp/curl \
