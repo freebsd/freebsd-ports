@@ -1,6 +1,6 @@
 PORTNAME=	mise
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2024.12.14
+DISTVERSION=	2024.12.15
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -69,7 +69,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		bzip2-sys-0.1.11+1.0.8 \
 		calm_io-0.1.1 \
 		calmio_filters-0.1.0 \
-		cc-1.2.4 \
+		cc-1.2.5 \
 		cfg-if-1.0.0 \
 		cfg_aliases-0.2.1 \
 		chacha20-0.9.1 \
@@ -122,7 +122,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		darling_macro-0.20.10 \
 		dashmap-5.5.3 \
 		deflate64-0.1.9 \
-		demand-1.5.0 \
+		demand-1.6.0 \
 		der-0.7.9 \
 		deranged-0.3.11 \
 		derive_arbitrary-1.4.1 \
@@ -198,7 +198,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		hex-0.4.3 \
 		hkdf-0.12.4 \
 		hmac-0.12.1 \
-		home-0.5.9 \
+		home-0.5.11 \
 		homedir-0.3.4 \
 		http-1.2.0 \
 		http-body-1.0.1 \
@@ -254,7 +254,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		lazy-regex-3.3.0 \
 		lazy-regex-proc_macros-3.3.0 \
 		lazy_static-1.5.0 \
-		libc-0.2.168 \
+		libc-0.2.169 \
 		libgit2-sys-0.17.0+1.8.1 \
 		libm-0.2.11 \
 		libredox-0.1.3 \
