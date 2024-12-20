@@ -1,5 +1,6 @@
 PORTNAME=	libnjs
 DISTVERSION=	0.8.8
+PORTREVISION=	1
 CATEGORIES=	devel www
 
 MAINTAINER=	osa@FreeBSD.org
@@ -19,10 +20,12 @@ CPE_VENDOR=	f5
 USE_GITHUB=	yes
 GH_TUPLE=	nginx:njs:${DISTVERSION}
 HAS_CONFIGURE=	yes
+CONFIGURE_ARGS=	--cc-opt="-I${LOCALBASE}/include/quickjs" \
+		--ld-opt="-L${LOCALBASE}/lib" \
+		--with-quickjs
 
 post-patch:
 	${REINPLACE_CMD} 's|%%LOCALBASE%%|${LOCALBASE}|g' \
-		${WRKSRC}/auto/quickjs \
 		${WRKSRC}/src/njs.pc.in
 
 do-build:
