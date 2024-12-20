@@ -2,7 +2,16 @@
 
 cd %%PREFIX%%/share/mucommander
 JAVA_VERSION="%%JAVA_VERSION%%" exec %%LOCALBASE%%/bin/java \
--Djava.system.class.loader=com.mucommander.commons.file.AbstractFileClassLoader \
 -DGNOME_DESKTOP_SESSION_ID=$GNOME_DESKTOP_SESSION_ID \
 -DKDE_FULL_SESSION=$KDE_FULL_SESSION -DKDE_SESSION_VERSION=$KDE_SESSION_VERSION \
--jar %%PREFIX%%/share/mucommander/mucommander.jar $@
+--add-opens java.desktop/javax.swing.plaf.basic=ALL-UNNAMED \
+--add-opens java.base/java.io=ALL-UNNAMED \
+--add-opens java.base/java.net=ALL-UNNAMED \
+--add-opens java.transaction.xa/javax.transaction.xa=ALL-UNNAMED \
+--add-opens java.management/javax.management=ALL-UNNAMED \
+--add-opens java.rmi/java.rmi=ALL-UNNAMED \
+--add-opens java.security.jgss/org.ietf.jgss=ALL-UNNAMED \
+--add-opens java.sql/java.sql=ALL-UNNAMED \
+--add-opens java.base/sun.net.www.protocol.http=ALL-UNNAMED \
+--add-opens java.base/sun.net.www.protocol.https=ALL-UNNAMED \
+-jar %%PREFIX%%/share/mucommander/mucommander.jar com.mucommander.main.muCommander $@
