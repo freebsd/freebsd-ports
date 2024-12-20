@@ -608,10 +608,15 @@ lib/elixir/lib/elixir/ebin/Elixir.JSON.DecodeError.beam
 lib/elixir/lib/elixir/ebin/Elixir.JSON.Encoder.Atom.beam
 lib/elixir/lib/elixir/ebin/Elixir.JSON.Encoder.beam
 lib/elixir/lib/elixir/ebin/Elixir.JSON.Encoder.BitString.beam
+lib/elixir/lib/elixir/ebin/Elixir.JSON.Encoder.Date.beam
+lib/elixir/lib/elixir/ebin/Elixir.JSON.Encoder.DateTime.beam
+lib/elixir/lib/elixir/ebin/Elixir.JSON.Encoder.Duration.beam
 lib/elixir/lib/elixir/ebin/Elixir.JSON.Encoder.Float.beam
 lib/elixir/lib/elixir/ebin/Elixir.JSON.Encoder.Integer.beam
 lib/elixir/lib/elixir/ebin/Elixir.JSON.Encoder.List.beam
 lib/elixir/lib/elixir/ebin/Elixir.JSON.Encoder.Map.beam
+lib/elixir/lib/elixir/ebin/Elixir.JSON.Encoder.NaiveDateTime.beam
+lib/elixir/lib/elixir/ebin/Elixir.JSON.Encoder.Time.beam
 lib/elixir/lib/elixir/ebin/Elixir.Kernel.beam
 lib/elixir/lib/elixir/ebin/Elixir.Kernel.CLI.beam
 lib/elixir/lib/elixir/ebin/Elixir.Kernel.ErrorHandler.beam
