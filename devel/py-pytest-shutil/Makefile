@@ -24,5 +24,6 @@ USES=		python
 USE_PYTHON=	autoplist concurrent distutils pytest
 
 NO_ARCH=	yes
+PORTSCOUT=	skipv:1.8.1
 
 .include <bsd.port.mk>
