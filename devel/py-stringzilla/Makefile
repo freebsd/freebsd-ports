@@ -1,6 +1,6 @@
 PORTNAME=	stringzilla
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.11.1
+DISTVERSION=	3.11.2
 CATEGORIES=	devel python
 #MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -33,6 +33,6 @@ post-install:
 do-test:
 	@cd ${TEST_WRKSRC} && ${SETENV} ${TEST_ENV} pytest scripts/test.py
 
-# tests as of 3.11.1: 10195 passed in 23.19s
+# tests as of 3.11.2: 10195 passed in 30.47s
 
 .include <bsd.port.mk>

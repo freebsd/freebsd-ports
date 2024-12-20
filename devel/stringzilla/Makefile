@@ -1,6 +1,6 @@
 PORTNAME=	stringzilla
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.11.1
+DISTVERSION=	3.11.2
 CATEGORIES=	devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -29,5 +29,7 @@ CMAKE_ARGS=	-DSTRINGZILLA_INCLUDE_INSTALL_DIR=include
 post-install:
 	# workaround for https://github.com/ashvardanian/StringZilla/issues/194
 	@${RM} -r ${STAGEDIR}/usr/src
+
+# 7 tests fail on an older CPU: https://github.com/ashvardanian/StringZilla/issues/206
 
 .include <bsd.port.mk>

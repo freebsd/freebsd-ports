@@ -4,7 +4,7 @@ include/stringzilla/stringzilla.h
 include/stringzilla/stringzilla.hpp
 lib/libstringzilla_shared.so
 lib/libstringzilla_shared.so.1
-lib/libstringzilla_shared.so.3.11.1
+lib/libstringzilla_shared.so.3.11.2
 lib/libstringzillite.so
 lib/libstringzillite.so.1
-lib/libstringzillite.so.3.11.1
+lib/libstringzillite.so.3.11.2
