@@ -245,7 +245,7 @@ CFLAGS+=	-DNDEBUG
 CONFIGURE_ENV+=	EXTRA_PRE_CXXFLAGS="-std=c++14"
 .endif
 
-.if empty(PORT_OPTIONS:MMODSECURITY3)
+.if (PORT_OPTIONS:MMODSECURITY3)
 CONFIGURE_ARGS+=	--with-ld-opt="-L ${LOCALBASE}/lib -lpcre"
 LIB_DEPENDS+=		libpcre.so:devel/pcre
 .endif
