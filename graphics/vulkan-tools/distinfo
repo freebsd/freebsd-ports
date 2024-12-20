@@ -3,3 +3,5 @@ SHA256 (KhronosGroup-Vulkan-Tools-v1.4.303_GH0.tar.gz) = 958b646bbc5ac0a54908342
 SIZE (KhronosGroup-Vulkan-Tools-v1.4.303_GH0.tar.gz) = 758514
 SHA256 (zeux-volk-1.3.295-23-ge767d0e_GH0.tar.gz) = 7e8e350717f3d30bc1bc4570c4a4d1896590dd4be21c872dbe3273e9cfea3b6e
 SIZE (zeux-volk-1.3.295-23-ge767d0e_GH0.tar.gz) = 65349
+SHA256 (KhronosGroup-Vulkan-Headers-v1.4.303_GH0.tar.gz) = fdf0e2e05356b455137ff97f837c9689ba253ec7d20f87ad81575b9bdbe7fdd4
+SIZE (KhronosGroup-Vulkan-Headers-v1.4.303_GH0.tar.gz) = 2440533
