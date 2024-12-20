@@ -5412,6 +5412,7 @@
     SUBDIR += py-pew
     SUBDIR += py-pex
     SUBDIR += py-phabricator
+    SUBDIR += py-phmdoctest
     SUBDIR += py-phonenumbers
     SUBDIR += py-phply
     SUBDIR += py-phpserialize
