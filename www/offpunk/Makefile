@@ -1,6 +1,6 @@
 PORTNAME=	offpunk
-PORTVERSION=	2.2
 DISTVERSIONPREFIX=	v
+DISTVERSION=	2.4
 CATEGORIES=	www python
 MASTER_SITES=	https://git.sr.ht/~lioploum/${PORTNAME}/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/
 
