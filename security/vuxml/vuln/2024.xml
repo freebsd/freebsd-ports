@@ -1,3 +1,28 @@
+  <vuln vid="0a8dbc7f-bedc-11ef-b5a1-000ec6d40964">
+    <topic>Vaultwarden -- Admin organization permissions</topic>
+    <affects>
+      <package>
+	<name>vaultwarden</name>
+	<range><lt>1.32.7</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Vaultwarden project reports:</p>
+	<blockquote cite="https://github.com/dani-garcia/vaultwarden/pull/5291">
+	  <p>Admins from any organization were able to modify or delete groups in any other organization if they know the group's uuid.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <url>https://github.com/dani-garcia/vaultwarden/pull/5291</url>
+    </references>
+    <dates>
+      <discovery>2024-12-20</discovery>
+      <entry>2024-12-20</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="e18c5c8d-be01-11ef-8c1c-a8a1599412c6">
     <topic>chromium -- multiple security fixes</topic>
     <affects>
