@@ -1,6 +1,6 @@
 PORTNAME=	zapret
 DISTVERSIONPREFIX=	v
-DISTVERSION=	69.7
+DISTVERSION=	69.8
 CATEGORIES=	net
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -8,6 +8,7 @@ COMMENT=	DPI (Deep Packet Interderence) bypass (multi platform)
 WWW=		https://github.com/bol-van/zapret
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/docs/LICENSE.txt
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	bol-van
