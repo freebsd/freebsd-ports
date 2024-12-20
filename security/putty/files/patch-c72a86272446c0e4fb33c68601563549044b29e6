@@ -1,0 +1,40 @@
+From: Simon Tatham <anakin@pobox.com>
+Date: Thu, 28 Nov 2024 18:30:48 +0000 (+0000)
+Subject: Fix a build failure with NO_GSSAPI defined.
+X-Git-Url: https://git.tartarus.org/?p=simon%2Fputty.git;a=commitdiff_plain;h=8805cf3d9a1bb39c190345b9820ecefa9cfe801d;hp=c72a86272446c0e4fb33c68601563549044b29e6
+
+Fix a build failure with NO_GSSAPI defined.
+
+The stub no-gss.c still wanted to know the layout of the
+ssh_gss_liblist structure, in order to fill it in with nothing.
+---
+
+diff --git a/ssh/gss.h b/ssh/gss.h
+index c819d48b..d11a359f 100644
+--- a/ssh/gss.h
++++ b/ssh/gss.h
+@@ -3,6 +3,13 @@
+ #include "putty.h"
+ #include "pgssapi.h"
+ 
++/* This struct is defined even in NO_GSSAPI mode, so that stubs/no-gss.c can
++ * return an instance of it containing no libraries */
++struct ssh_gss_liblist {
++    struct ssh_gss_library *libraries;
++    int nlibraries;
++};
++
+ #ifndef NO_GSSAPI
+ 
+ #define SSH2_GSS_OIDTYPE 0x06
+@@ -49,10 +56,6 @@ struct ssh_gss_library;
+  * The free function cleans up the structure, and its associated
+  * libraries (if any).
+  */
+-struct ssh_gss_liblist {
+-    struct ssh_gss_library *libraries;
+-    int nlibraries;
+-};
+ struct ssh_gss_liblist *ssh_gss_setup(Conf *conf);
+ void ssh_gss_cleanup(struct ssh_gss_liblist *list);
+ 

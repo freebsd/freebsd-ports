@@ -1,0 +1,43 @@
+From: Simon Tatham <anakin@pobox.com>
+Date: Sat, 14 Dec 2024 11:44:28 +0000 (+0000)
+Subject: Fix assertion failure on Restart Session.
+X-Git-Url: https://git.tartarus.org/?p=simon%2Fputty.git;a=commitdiff_plain;h=edd5e13ffc976025443e0b9d75888249aa3325a9;hp=f8e1a2b3a934d750aba7c26d182f52d71952c529
+
+Fix assertion failure on Restart Session.
+
+This occurred if the SSH server closed the connection for any
+reason (in practice usually a timeout, but reproducible more easily by
+manually killing a test server process) while the user was in the
+middle of any kind of interactive prompt-based login in the GUI PuTTY
+terminal (be it simple password, k-i, private key passphrase,
+whatever).
+
+The problem was that term->userpass_state wasn't cleaned up when the
+connection died, and then if you started a fresh SSH session in the
+same terminal, the attempt to create a new term->userpass_state would
+find there was one already there.
+
+The simplest place to insert the missing cleanup is the call to
+term_provide_backend(), because that's a terminal API function which
+is already called to notify the terminal that one backend has gone
+away and the next one has turned up.
+
+(In fact, it's called twice, once to set term->backend to NULL when
+the first session closes, and again when the session is restarted. I
+see no harm in making the cleanup unconditional, not bothering to tell
+the difference between the two cases.)
+---
+
+diff --git a/terminal/terminal.c b/terminal/terminal.c
+index e127ff6e..2db81c9a 100644
+--- a/terminal/terminal.c
++++ b/terminal/terminal.c
+@@ -2374,6 +2374,8 @@ void term_resize_request_completed(Terminal *term)
+ void term_provide_backend(Terminal *term, Backend *backend)
+ {
+     term->backend = backend;
++    if (term->userpass_state)
++        term_userpass_state_free(term->userpass_state);
+     if (term->backend && term->cols > 0 && term->rows > 0)
+         backend_size(term->backend, term->cols, term->rows);
+ }

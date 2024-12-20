@@ -1,0 +1,33 @@
+From: Simon Tatham <anakin@pobox.com>
+Date: Sat, 7 Dec 2024 19:28:44 +0000 (+0000)
+Subject: Fix error message when KEXINIT negotiation fails.
+X-Git-Url: https://git.tartarus.org/?p=simon%2Fputty.git;a=commitdiff_plain;h=7da3449586ea3e6faaa92663d32774e28cf4e2e3;hp=296b6291d39c0cf118cd3081c3ab86a5889eb4d9
+
+Fix error message when KEXINIT negotiation fails.
+
+By putting the wrong error-type enum value in a ScanKexinitsResult, I
+accidentally caused nonsense messages of the form
+
+  Selected key exchange algorithm "foo,bar,baz" does not correspond to any supported algorithm
+
+where "foo,bar,baz" is the full comma-separated list sent by the
+server, so it's not even _an_ algorithm as the message suggests.
+
+Now the message is the one it should have been all along:
+
+  Couldn't agree a key exchange algorithm (available: foo,bar,baz)
+---
+
+diff --git a/ssh/transport2.c b/ssh/transport2.c
+index 5dd73cfe..b8e0d1c6 100644
+--- a/ssh/transport2.c
++++ b/ssh/transport2.c
+@@ -1166,7 +1166,7 @@ static ScanKexinitsResult ssh2_scan_kexinits(
+              * Otherwise, any match failure _is_ a fatal error.
+              */
+             ScanKexinitsResult skr = {
+-                .success = false, .error = SKR_UNKNOWN_ID,
++                .success = false, .error = SKR_NO_AGREEMENT,
+                 .kind = kexlist_descr[i], .desc = slists[i],
+             };
+             return skr;

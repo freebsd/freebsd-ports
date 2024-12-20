@@ -1,0 +1,36 @@
+From: Simon Tatham <anakin@pobox.com>
+Date: Wed, 4 Dec 2024 12:02:05 +0000 (+0100)
+Subject: Fix use of aligned_alloc() to be ASan-clean.
+X-Git-Url: https://git.tartarus.org/?p=simon%2Fputty.git;a=commitdiff_plain;h=c2d7ea8e67c462341e16d74e7a0ea42edd514635;hp=7da3449586ea3e6faaa92663d32774e28cf4e2e3
+
+Fix use of aligned_alloc() to be ASan-clean.
+
+aligned_alloc() is used by testsc for all its memory allocation, to
+avoid false-positive timing variations that depend on memory alignment
+rather than actual secret data. But I'd forgotten that aligned_alloc
+requires the allocation size to be a multiple of the requested
+alignment.
+
+This showed up when I ran testsc in dry-run mode, and my normal build
+happened to be using ASan, which complains at the invalid allocation
+size. But it was theoretically a problem in all builds of
+testsc. (Though, as far as I'm aware, not practically; and it _only_
+affected testsc.)
+---
+
+diff --git a/utils/memory.c b/utils/memory.c
+index 0ba791ad..590be002 100644
+--- a/utils/memory.c
++++ b/utils/memory.c
+@@ -35,7 +35,10 @@ void *safemalloc(size_t factor1, size_t factor2, size_t addend)
+ #ifdef MINEFIELD
+     p = minefield_c_malloc(size);
+ #elif defined ALLOCATION_ALIGNMENT
+-    p = aligned_alloc(ALLOCATION_ALIGNMENT, size);
++    /* aligned_alloc requires the allocation size to be rounded up */
++    p = aligned_alloc(
++        ALLOCATION_ALIGNMENT,
++        (size + ALLOCATION_ALIGNMENT - 1) & ~(ALLOCATION_ALIGNMENT-1));
+ #else
+     p = malloc(size);
+ #endif

@@ -1,5 +1,5 @@
 PORTNAME=	putty
-DISTVERSION=	0.81
+DISTVERSION=	0.82
 PORTREVISION=	0
 #DISTVERSIONSUFFIX=	.0c59d49
 CATEGORIES=	security
@@ -20,6 +20,8 @@ USES=		cmake cpe perl5 pkgconfig
 USE_PERL5=	build
 
 CONFLICTS_INSTALL?=	pssh* putty-nogtk*
+
+PATCH_STRIP=	-p1
 
 PLIST_FILES=	bin/pageant \
 		bin/plink \

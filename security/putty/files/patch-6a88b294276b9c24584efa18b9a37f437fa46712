@@ -1,0 +1,50 @@
+From: Simon Tatham <anakin@pobox.com>
+Date: Sat, 7 Dec 2024 09:37:15 +0000 (+0000)
+Subject: GTK: fix a crash when clicking Cancel on Change Settings.
+X-Git-Url: https://git.tartarus.org/?p=simon%2Fputty.git;a=commitdiff_plain;h=296b6291d39c0cf118cd3081c3ab86a5889eb4d9;hp=6a88b294276b9c24584efa18b9a37f437fa46712
+
+GTK: fix a crash when clicking Cancel on Change Settings.
+
+I only observed this in the GTK1 build, but I don't know for sure it
+can't happen in other situations, so there's no reason not to be
+careful.
+
+What seems to happen is that when the user clicks Cancel on the Change
+Settings dialog box, we call gtk_widget_destroy on the window, which
+emits the "destroy" signal on the window, our handler for which frees
+the whole dlgparam. But _then_ GTK goes through and cleans up all the
+sub-widgets of the dialog box, and some of those generate extra
+events. In particular, destroying a list box is done by first deleting
+all the list entries - and if one of those is selected, the list box's
+selection changes, triggering an event which calls our callback that
+tries to look up the control in the dlgparam we just freed.
+
+My simple workaround is to defer actually freeing the dlgparam, via a
+toplevel callback. Then it's still lying around empty while all those
+random events are firing.
+---
+
+diff --git a/unix/dialog.c b/unix/dialog.c
+index 835ad978..fa645b3a 100644
+--- a/unix/dialog.c
++++ b/unix/dialog.c
+@@ -3345,9 +3345,18 @@ static void dlgparam_destroy(GtkWidget *widget, gpointer data)
+             sfree(dp->selparams[i]);
+         }
+         sfree(dp->selparams);
++        dp->selparams = NULL;
+     }
+ #endif
+-    sfree(dp);
++    /*
++     * Instead of freeing dp right now, defer it until we return to
++     * the GTK main loop. Then if any other last-minute GTK events
++     * happen while the rest of the widgets are being cleaned up, our
++     * handlers will still be able to try to look things up in dp.
++     * (They won't find anything - we've just emptied it - but at
++     * least they won't crash while trying.)
++     */
++    queue_toplevel_callback(sfree, dp);
+ }
+ 
+ static void messagebox_handler(dlgcontrol *ctrl, dlgparam *dp,
