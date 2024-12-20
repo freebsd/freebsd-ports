@@ -54,15 +54,14 @@ MAKE_ENV+=	V=1
 .if ${SUBPORT} == core
 USE_RC_SUBR=	git_daemon
 .endif
-SHEBANG_FILES=	*.perl */*.perl */*/*.perl */*.pl */*/*.pl */*/*/*.pl \
-		t/*/*/pre t/*/*/post t/Git-SVN/Utils/*.t \
-		git-p4.py \
-		contrib/hooks/update-paranoid \
+SHEBANG_FILES=	contrib/*/*.perl \
+		contrib/*/*.pl \
+		contrib/*/*/*.perl \
+		contrib/*/*/*.pl \
+		contrib/buildsystems/generate \
+		contrib/contacts/git-contacts \
 		contrib/fast-import/import-zips.py \
-		contrib/remote-helpers/git-remote-bzr \
-		contrib/remote-helpers/git-remote-hg \
-		contrib/credential/netrc/git-credential-netrc.perl \
-		contrib/buildsystems/generate contrib/contacts/git-contacts \
+		contrib/hooks/update-paranoid \
 		templates/hooks--fsmonitor-watchman.sample
 TEST_TARGET=	test
 
