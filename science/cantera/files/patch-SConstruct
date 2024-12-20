@@ -1,8 +1,8 @@
 - the first part is fixing the configure failure, see https://github.com/Cantera/cantera/issues/1536
 
---- SConstruct.orig	2023-08-22 21:34:46 UTC
+--- SConstruct.orig	2024-12-16 23:22:11 UTC
 +++ SConstruct
-@@ -846,6 +846,9 @@ if os.name == "nt":
+@@ -902,6 +902,9 @@ if os.name == "nt":
      for key,val in env["ENV"].items():
          env["ENV"][key] = str(val)
  
@@ -12,7 +12,7 @@
  else:
      env["INSTALL_MANPAGES"] = True
  
-@@ -880,6 +883,9 @@ elif "icx" in env.subst("$CC"):
+@@ -933,6 +936,9 @@ elif "clang" in env.subst("$CC"):
  elif "clang" in env.subst("$CC"):
      config.select("clang")
  
@@ -20,12 +20,12 @@
 +    config.select("clang")
 +
  else:
-     logger.error(f"Unrecognized C compiler {env['CC']!r}")
-     sys.exit(1)
-@@ -945,10 +951,10 @@ if "sdist" in COMMAND_LINE_TARGETS:
-     logger.info("'sdist' target was specified. Setting 'use_pch' to False.")
-     env["use_pch"] = False
- 
+     # Assume a GCC compatible compiler if nothing else
+     logger.warning(f"Unrecognized C compiler {env['CC']!r}")
+@@ -991,10 +997,10 @@ if 'sphinx' in COMMAND_LINE_TARGETS:
+     env['doxygen_docs'] = True
+ if 'sphinx' in COMMAND_LINE_TARGETS:
+     env['sphinx_docs'] = True
 -for arg in ARGUMENTS:
 -    if arg not in config:
 -        logger.error(f"Encountered unexpected command line option: {arg!r}")
@@ -35,24 +35,5 @@
 +#        logger.error(f"Encountered unexpected command line option: {arg!r}")
 +#        sys.exit(1)
  
- env["cantera_version"] = "3.0.0"
- # For use where pre-release tags are not permitted (MSI, sonames)
-@@ -2002,12 +2008,12 @@ if env["matlab_toolbox"] == "y":
-             "SUNDIALS libraries and skip building the Matlab toolbox.")
-         sys.exit(1)
- 
--    matlab_path = Path(matlab_path)
--    env["matlab_path"] = matlab_path.as_posix()
--    if not matlab_path.is_dir() and (matlab_path / "extern").is_dir():
--        logger.error(
--            f"Path set for 'matlab_path' is not correct. Path was {matlab_path!r}")
--        sys.exit(1)
-+    #matlab_path = Path(matlab_path)
-+    #env["matlab_path"] = matlab_path.as_posix()
-+    #if not matlab_path.is_dir() and (matlab_path / "extern").is_dir():
-+    #    logger.error(
-+    #        f"Path set for 'matlab_path' is not correct. Path was {matlab_path!r}")
-+    #    sys.exit(1)
- 
- 
- # **********************************************
+ # Store full config for doc build
+ if env['sphinx_docs']:
