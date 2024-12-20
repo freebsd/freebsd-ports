@@ -71,7 +71,6 @@ include/Kokkos_AnonymousSpace.hpp
 include/Kokkos_Array.hpp
 include/Kokkos_Assert.hpp
 include/Kokkos_Atomic.hpp
-include/Kokkos_Atomics_Desul_Volatile_Wrapper.hpp
 include/Kokkos_Atomics_Desul_Wrapper.hpp
 include/Kokkos_BitManipulation.hpp
 include/Kokkos_Bitset.hpp
@@ -134,6 +133,7 @@ include/Kokkos_TaskScheduler.hpp
 include/Kokkos_TaskScheduler_fwd.hpp
 include/Kokkos_Timer.hpp
 include/Kokkos_Tuners.hpp
+include/Kokkos_TypeInfo.hpp
 include/Kokkos_UniqueToken.hpp
 include/Kokkos_UnorderedMap.hpp
 include/Kokkos_Vector.hpp
@@ -172,7 +172,9 @@ include/OpenMP/Kokkos_OpenMP_WorkGraphPolicy.hpp
 include/OpenMPTarget/Kokkos_OpenMPTarget.hpp
 include/OpenMPTarget/Kokkos_OpenMPTargetSpace.hpp
 include/OpenMPTarget/Kokkos_OpenMPTarget_Abort.hpp
+include/OpenMPTarget/Kokkos_OpenMPTarget_DeepCopy.hpp
 include/OpenMPTarget/Kokkos_OpenMPTarget_Error.hpp
+include/OpenMPTarget/Kokkos_OpenMPTarget_FunctorAdapter.hpp
 include/OpenMPTarget/Kokkos_OpenMPTarget_Instance.hpp
 include/OpenMPTarget/Kokkos_OpenMPTarget_MDRangePolicy.hpp
 include/OpenMPTarget/Kokkos_OpenMPTarget_Macros.hpp
@@ -187,7 +189,6 @@ include/OpenMPTarget/Kokkos_OpenMPTarget_ParallelScan_Range.hpp
 include/OpenMPTarget/Kokkos_OpenMPTarget_ParallelScan_Team.hpp
 include/OpenMPTarget/Kokkos_OpenMPTarget_Parallel_Common.hpp
 include/OpenMPTarget/Kokkos_OpenMPTarget_Reducer.hpp
-include/OpenMPTarget/Kokkos_OpenMPTarget_Task.hpp
 include/OpenMPTarget/Kokkos_OpenMPTarget_UniqueToken.hpp
 include/SYCL/Kokkos_SYCL.hpp
 include/SYCL/Kokkos_SYCL_Abort.hpp
@@ -237,7 +238,16 @@ include/Threads/Kokkos_Threads_Team.hpp
 include/Threads/Kokkos_Threads_UniqueToken.hpp
 include/Threads/Kokkos_Threads_WorkGraphPolicy.hpp
 include/View/Hooks/Kokkos_ViewHooks.hpp
+include/View/Kokkos_BasicView.hpp
 include/View/Kokkos_ViewAlloc.hpp
+include/View/Kokkos_ViewAtomic.hpp
+include/View/Kokkos_ViewCtor.hpp
+include/View/Kokkos_ViewDataAnalysis.hpp
+include/View/Kokkos_ViewLegacy.hpp
+include/View/Kokkos_ViewMapping.hpp
+include/View/Kokkos_ViewTracker.hpp
+include/View/Kokkos_ViewTraits.hpp
+include/View/Kokkos_ViewUniformType.hpp
 include/View/MDSpan/Kokkos_MDSpan_Accessor.hpp
 include/View/MDSpan/Kokkos_MDSpan_Extents.hpp
 include/View/MDSpan/Kokkos_MDSpan_Header.hpp
@@ -349,9 +359,7 @@ include/fwd/Kokkos_Fwd_SYCL.hpp
 include/fwd/Kokkos_Fwd_THREADS.hpp
 include/impl/KokkosExp_Host_IterateTile.hpp
 include/impl/KokkosExp_IterateTileGPU.hpp
-include/impl/KokkosExp_ViewMapping.hpp
 include/impl/Kokkos_AnalyzePolicy.hpp
-include/impl/Kokkos_Atomic_View.hpp
 include/impl/Kokkos_BitOps.hpp
 include/impl/Kokkos_Bitset_impl.hpp
 include/impl/Kokkos_CPUDiscovery.hpp
@@ -370,7 +378,6 @@ include/impl/Kokkos_DeviceManagement.hpp
 include/impl/Kokkos_EBO.hpp
 include/impl/Kokkos_Error.hpp
 include/impl/Kokkos_ExecSpaceManager.hpp
-include/impl/Kokkos_FixedBufferMemoryPool.hpp
 include/impl/Kokkos_Functional_impl.hpp
 include/impl/Kokkos_FunctorAnalysis.hpp
 include/impl/Kokkos_GraphImpl.hpp
@@ -389,7 +396,6 @@ include/impl/Kokkos_HostThreadTeam.hpp
 include/impl/Kokkos_InitializationSettings.hpp
 include/impl/Kokkos_LIFO.hpp
 include/impl/Kokkos_LinkedListNode.hpp
-include/impl/Kokkos_MemoryPoolAllocator.hpp
 include/impl/Kokkos_MultipleTaskQueue.hpp
 include/impl/Kokkos_NvidiaGpuArchitectures.hpp
 include/impl/Kokkos_OptionalRef.hpp
@@ -424,11 +430,6 @@ include/impl/Kokkos_Traits.hpp
 include/impl/Kokkos_UnorderedMap_impl.hpp
 include/impl/Kokkos_Utilities.hpp
 include/impl/Kokkos_VLAEmulation.hpp
-include/impl/Kokkos_ViewCtor.hpp
-include/impl/Kokkos_ViewDataAnalysis.hpp
-include/impl/Kokkos_ViewMapping.hpp
-include/impl/Kokkos_ViewTracker.hpp
-include/impl/Kokkos_ViewUniformType.hpp
 include/impl/Kokkos_Volatile_Load.hpp
 include/impl/Kokkos_ZeroMemset_fwd.hpp
 include/mdspan/mdarray.hpp
@@ -582,11 +583,11 @@ lib/cmake/Kokkos/KokkosConfigVersion.cmake
 lib/cmake/Kokkos/KokkosTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/Kokkos/KokkosTargets.cmake
 lib/libkokkoscontainers.so
-lib/libkokkoscontainers.so.4.4
-lib/libkokkoscontainers.so.4.4.1
+lib/libkokkoscontainers.so.4.5
+lib/libkokkoscontainers.so.4.5.0
 lib/libkokkoscore.so
-lib/libkokkoscore.so.4.4
-lib/libkokkoscore.so.4.4.1
+lib/libkokkoscore.so.4.5
+lib/libkokkoscore.so.4.5.0
 lib/libkokkossimd.so
-lib/libkokkossimd.so.4.4
-lib/libkokkossimd.so.4.4.1
+lib/libkokkossimd.so.4.5
+lib/libkokkossimd.so.4.5.0
