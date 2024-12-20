@@ -60,7 +60,6 @@ INSTALL_TARGET=	install-strip
 CPE_VENDOR=	fedoraproject
 
 CONFIGURE_ARGS=	--disable-dependency-tracking \
-		--datadir=${DATADIR} \
 		--localstatedir=/var \
 		--disable-nls \
 		--disable-cifs-idmap-plugin \
@@ -152,12 +151,6 @@ post-patch:
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/src/examples/sssd-example.conf \
 		${STAGEDIR}${ETCDIR}/sssd.conf.sample
-	${MKDIR} ${STAGEDIR}${PREFIX}/share/dbus-1/system.d
-	${INSTALL_DATA} ${WRKSRC}/src/responder/ifp/org.freedesktop.sssd.infopipe.conf \
-		${STAGEDIR}${PREFIX}/share/dbus-1/system.d/org.freedesktop.sssd.infopipe.conf
-	${MKDIR} ${STAGEDIR}${PREFIX}/share/dbus-1/system-services
-	${INSTALL_DATA} ${WRKSRC}/src/responder/ifp/org.freedesktop.sssd.infopipe.service \
-		${STAGEDIR}${PREFIX}/share/dbus-1/system-services/org.freedesktop.sssd.infopipe.service
 	${LN} -sf libnss_sss.so.2 ${STAGEDIR}${PREFIX}/lib/nss_sss.so.1
 
 .include <bsd.port.mk>
