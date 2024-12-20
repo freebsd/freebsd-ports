@@ -152,6 +152,7 @@
     SUBDIR += py-bincopy
     SUBDIR += py-bsdconv
     SUBDIR += py-gotenberg-client
+    SUBDIR += py-mammoth
     SUBDIR += py-rencode
     SUBDIR += py-svglib
     SUBDIR += py-text-unidecode
