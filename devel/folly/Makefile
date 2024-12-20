@@ -10,6 +10,7 @@ WWW=		https://github.com/facebook/folly
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_FreeBSD_13=	compilation fails: use of undeclared identifier 'clearenv'
 BROKEN_i386=	error: use of undeclared identifier 'DCHECK': https://github.com/facebook/folly/issues/1168
 BROKEN_powerpc=		compilation fails: Big endian requires a redesigned table (assert in folly/detail/base64_detail/Base64SWAR.cpp:107)
 BROKEN_powerpc64=	compilation fails: Big endian requires a redesigned table (assert in folly/detail/base64_detail/Base64SWAR.cpp:107)
