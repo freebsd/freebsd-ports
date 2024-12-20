@@ -1,7 +1,6 @@
 PORTNAME=	librewolf
-DISTVERSION=	132.0.1
+DISTVERSION=	133.0.3
 DISTVERSIONSUFFIX=	-1.source
-PORTREVISION=	1
 CATEGORIES=	www wayland
 MASTER_SITES=	https://gitlab.com/api/v4/projects/32320088/packages/generic/${PORTNAME}-source/${DISTVERSION}-1/
 
@@ -12,13 +11,15 @@ WWW=		https://librewolf.net/
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_armv7=	error: could not compile `gkrust` (lib)
+
 BUILD_DEPENDS=	nspr>=4.32:devel/nspr \
-		nss>=3.104:security/nss \
+		nss>=3.106:security/nss \
 		icu>=73.1:devel/icu \
 		libevent>=2.1.8:devel/libevent \
-		harfbuzz>=9.0.0:print/harfbuzz \
+		harfbuzz>=10.0.1:print/harfbuzz \
 		graphite2>=1.3.14:graphics/graphite2 \
-		png>=1.6.43:graphics/png \
+		png>=1.6.44:graphics/png \
 		dav1d>=1.0.0:multimedia/dav1d \
 		libvpx>=1.14.1:multimedia/libvpx \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR} \
