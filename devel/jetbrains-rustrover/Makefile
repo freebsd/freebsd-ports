@@ -1,5 +1,5 @@
 PORTNAME=	rustrover
-PORTVERSION=	2024.3
+PORTVERSION=	2024.3.2
 CATEGORIES=	devel
 MASTER_SITES=	https://download-cdn.jetbrains.com/rustrover/
 PKGNAMEPREFIX=	jetbrains-
@@ -20,7 +20,7 @@ ONLY_FOR_ARCHS=	aarch64 amd64
 BUILD_DEPENDS=	jna>0:devel/jna
 RUN_DEPENDS=	cmake:devel/cmake-core \
 		intellij-fsnotifier>0:java/intellij-fsnotifier \
-		jetbrains-pty4j>=0.12.25:devel/jetbrains-pty4j \
+		jetbrains-pty4j>=0.13.2:devel/jetbrains-pty4j \
 		jetbrains-restarter>=241.15989.150:devel/jetbrains-restarter \
 		jetbrains-sqlite>=241.15989.150:devel/jetbrains-sqlite \
 		lsof:sysutils/lsof
