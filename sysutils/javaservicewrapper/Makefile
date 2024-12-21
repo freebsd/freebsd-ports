@@ -4,7 +4,7 @@ CATEGORIES=	sysutils java
 MASTER_SITES=	https://wrapper.tanukisoftware.com/download/${PORTVERSION}/
 DISTNAME=	wrapper_${PORTVERSION}_src
 
-MAINTAINER=	michael.osipov@siemens.com
+MAINTAINER=	michael.osipov@innomotics.com
 COMMENT=	JSW enables a Java application to be run as a Unix daemon
 WWW=		https://wrapper.tanukisoftware.org/
 

@@ -4,7 +4,7 @@ CATEGORIES=	devel pear www
 MASTER_SITES=	http://pear.geshi.org/get/
 DISTNAME=	${PORTNAME}-1.0.9.0
 
-MAINTAINER=	michael.osipov@siemens.com
+MAINTAINER=	michael.osipov@innomotics.com
 COMMENT=	Generic syntax highlighter written in PHP
 WWW=		http://qbnz.com/highlighter/
 

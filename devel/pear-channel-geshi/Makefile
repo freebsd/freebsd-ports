@@ -2,7 +2,7 @@ PORTNAME=	geshi
 PORTVERSION=	20180906
 CATEGORIES=	devel www pear
 
-MAINTAINER=	michael.osipov@siemens.com
+MAINTAINER=	michael.osipov@innomotics.com
 COMMENT=	PEAR channel ${PEAR_CHANNEL_HOST}
 WWW=		http://pear.geshi.org/
 
