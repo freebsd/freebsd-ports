@@ -211,6 +211,7 @@ include/qgis/qgsauthmethod.h
 include/qgis/qgsauthmethodedit.h
 include/qgis/qgsauthmethodmetadata.h
 include/qgis/qgsauthmethodregistry.h
+include/qgis/qgsauthorizationsettings.h
 include/qgis/qgsauthserverseditor.h
 include/qgis/qgsauthsettingswidget.h
 include/qgis/qgsauthsslconfigwidget.h
