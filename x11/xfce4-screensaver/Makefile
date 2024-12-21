@@ -1,5 +1,5 @@
 PORTNAME=	xfce4-screensaver
-PORTVERSION=	4.18.3
+PORTVERSION=	4.18.4
 CATEGORIES=	x11 xfce
 MASTER_SITES=	XFCE/apps
 DIST_SUBDIR=	xfce4
@@ -26,7 +26,7 @@ USE_GNOME=	cairo gdkpixbuf2 glib20 gtk30 intltool libwnck3
 USE_XFCE=	garcon xfconf
 USE_XORG=	ice sm x11 xext xrandr xscrnsaver xxf86vm
 
-SHEBANG_FILES=	src/xfce4-screensaver-configure
+SHEBANG_FILES=	src/xfce4-screensaver-configure.py
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-maintainer-mode \
 		--with-console-kit=yes \
