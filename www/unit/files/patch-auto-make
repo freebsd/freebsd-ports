@@ -1,0 +1,31 @@
+--- auto/make.orig	2024-12-19 01:30:03 UTC
++++ auto/make
+@@ -22,7 +22,7 @@ RUST_FLAGS =
+ EXTRA_CFLAGS =
+ CFLAGS = 		$NXT_CFLAGS $NXT_CC_OPT $CFLAGS \$(EXTRA_CFLAGS)
+ RUST_FLAGS =
+-NXT_OTEL_LIB_LOC =
++NXT_OTEL_LIB_LOC =	$NXT_OTEL_LIB_DIR/target/release/libotel.a
+ 
+ NXT_EXEC_LINK =		$NXT_EXEC_LINK $NXT_LD_OPT
+ NXT_SHARED_LOCAL_LINK =	$NXT_SHARED_LOCAL_LINK $NXT_LD_OPT
+@@ -84,11 +84,6 @@ cat << END >> $NXT_MAKEFILE
+ if [ $NXT_OTEL = YES ]; then
+ cat << END >> $NXT_MAKEFILE
+ 
+-ifeq (\$D,1)
+-	NXT_OTEL_LIB_LOC = $NXT_OTEL_LIB_DIR/target/debug/libotel.a
+-else
+-	NXT_OTEL_LIB_LOC = $NXT_OTEL_LIB_DIR/target/release/libotel.a
+-endif
+ 
+ END
+ fi
+@@ -580,7 +575,5 @@ NXT_OTEL_DEPS=" \
+ 
+     cat << END >> $NXT_MAKEFILE
+ 
+-\$(NXT_OTEL_LIB_LOC): $NXT_OTEL_DEPS
+-	cargo build \$(RUST_FLAGS) --manifest-path $NXT_OTEL_LIB_DIR/Cargo.toml
+ END
+ fi

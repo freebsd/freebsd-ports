@@ -1,8 +1,11 @@
 PORTNAME=	unit
 PORTVERSION=	${UNIT_VERSION}
-PORTREVISION?=	2
 CATEGORIES=	www
 MASTER_SITES?=	https://unit.nginx.org/download/
+DISTFILES?=	${PORTNAME}-${PORTVERSION}.tar.gz
+
+PATCH_SITES=	https://github.com/nginx/unit/commit/
+PATCHFILES=	18381b103f3e6e5ffceb122d6f0fe74d749ef5e5.patch:-p1
 
 MAINTAINER=	osa@FreeBSD.org
 COMMENT?=	Dynamic web application server
@@ -11,7 +14,7 @@ WWW=		https://unit.nginx.org
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES+=		compiler:c11 cpe
+USES+=		compiler:c11 cpe gmake ssl
 
 CPE_VENDOR=	nginx
 CPE_PRODUCT=	unit
@@ -20,20 +23,13 @@ OPTIONS_DEFINE?=	\
 	DEBUG \
 	IPV6 \
 	NJS \
-	SSL \
+	OTEL \
 	UNIXSOCK
-OPTIONS_DEFAULT?=	IPV6 PCRE2 SSL UNIXSOCK
-
-OPTIONS_RADIO+=		REGEX
-OPTIONS_RADIO_REGEX=	NOPCRE PCRE PCRE2
+OPTIONS_DEFAULT?=	IPV6 UNIXSOCK
 
 DEBUG_DESC=	Enable debug logging
-REGEX_DESC=	Support regular expressions
 NJS_DESC=	Enable NGINX JavaScript
-NOPCRE_DESC=	No support for Regular Expressions
-PCRE_DESC=	Regular Expressions via devel/pcre
-PCRE2_DESC=	Regular Expressions via devel/pcre2
-SSL_DESC=	Enable SSL/TLS
+OTEL_DESC=	Enable OpenTelemetry
 UNIXSOCK_DESC=	Enable unix sockets
 
 .include <bsd.port.options.mk>
@@ -54,6 +50,7 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--log=${UNIT_LOGFILE} \
 		--logdir=${UNIT_LOGDIR} \
 		--modulesdir=${PREFIX}/libexec/unit/modules \
+		--openssl \
 		--pid=${UNIT_PIDFILE} \
 		--runstatedir=${UNIT_RUNDIR} \
 		--statedir=${UNIT_DBDIR} \
@@ -64,6 +61,8 @@ USERS?=	${WWWOWN}
 GROUPS?=${WWWGRP}
 
 ALL_TARGET=
+
+LIB_DEPENDS+=	libpcre2-8.so:devel/pcre2
 
 PLIST_DIRS?=	libexec/unit/modules \
 		libexec/unit
@@ -89,27 +88,30 @@ CONFIGURE_ARGS+=--no-ipv6
 .if ${PORT_OPTIONS:MNJS}
 USES+=	pkgconfig
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libnjs.a:devel/libnjs
+LIB_DEPENDS+=	libquickjs.so:lang/quickjs
 CONFIGURE_ARGS+=--njs \
 	--cc-opt="-I${LOCALBASE}/include" \
 	--ld-opt="-L${LOCALBASE}/lib"
 .endif
 
-.if ${PORT_OPTIONS:MNOPCRE}
-CONFIGURE_ARGS+=--no-regex
-.endif
-
-.if ${PORT_OPTIONS:MPCRE}
-CONFIGURE_ARGS+=--no-pcre2
-LIB_DEPENDS+=	libpcre.so:devel/pcre
-.endif
-
-.if ${PORT_OPTIONS:MPCRE2}
-LIB_DEPENDS+=	libpcre2-8.so:devel/pcre2
-.endif
-
-.if ${PORT_OPTIONS:MSSL}
-CONFIGURE_ARGS+=--openssl
-USES+=		ssl
+.if ${PORT_OPTIONS:MOTEL}
+# cd ${WRKSRC}/src/otel && awk -vCP=cp -vFIND=find -vGREP=grep -vCARGO_VENDOR_DIR=. \
+# -vGIT_SOURCES=. -vWRKDIR=. -vWRKSRC=. -f/usr/ports/Mk/Scripts/split-url.awk \
+# -f/usr/ports/Mk/Scripts/cargo-crates-git-common.awk \
+# -f/usr/ports/Mk/Scripts/cargo-crates.awk Cargo.lock > ../../../../Makefile.cargo
+BUILD_DEPENDS+=		${LOCALBASE}/bin/cargo:lang/rust
+USES+=			cargo
+CARGO_BUILD=		no
+CARGO_BUILD_ARGS=	--no-default-features
+WRKSRC2=		${WRKSRC}/src/otel
+CARGO_CARGOLOCK=	${WRKSRC2}/Cargo.lock
+CARGO_CARGOTOML=	${WRKSRC2}/Cargo.toml
+CARGO_CONFIGURE=	no
+CARGO_INSTALL=		no
+CARGO_TARGET_DIR=	${WRKSRC2}/target
+CARGO_VENDOR_DIR=	${WRKSRC2}/cargo-crates
+CONFIGURE_ARGS+=	--otel
+.include "${.CURDIR}/Makefile.cargo"
 .endif
 
 .if empty(PORT_OPTIONS:MUNIXSOCK)
@@ -124,6 +126,31 @@ CFLAGS+=	-Wno-compound-token-split-by-macro
 .endif
 
 .if !defined(UNIT_MODNAME)
+post-configure:
+	${MKDIR} ${WRKDIR}/.cargo
+	: > ${WRKDIR}/.cargo/config.toml
+	${ECHO_CMD} "[source.cargo]" >> ${WRKDIR}/.cargo/config.toml
+	${ECHO_CMD} "directory = '${CARGO_VENDOR_DIR}'" >> \
+		${WRKDIR}/.cargo/config.toml
+	${ECHO_CMD} "[source.crates-io]" >> ${WRKDIR}/.cargo/config.toml
+	${ECHO_CMD} "replace-with = 'cargo'" >> ${WRKDIR}/.cargo/config.toml
+	cd ${WRKSRC2} && ${LOCALBASE}/bin/cargo update \
+		--manifest-path ${CARGO_CARGOTOML} \
+		--verbose \
+		--verbose \
+		${CARGO_UPDATE_ARGS}
+
+pre-build:
+	cd ${WRKSRC2} && ${LOCALBASE}/bin/cargo build \
+		--manifest-path ${CARGO_CARGOTOML} \
+		--offline \
+		--verbose \
+		--verbose \
+		${CARGO_BUILD_ARGS}
+
+do-build:
+	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE}
+
 post-install:
 	${MKDIR} ${STAGEDIR}${UNIT_DBDIR}
 	${MKDIR} ${STAGEDIR}${UNIT_LOGDIR}
