@@ -7,6 +7,7 @@ bin/qemu-img
 bin/qemu-io
 %%GTK3%%bin/qemu-keymap
 bin/qemu-nbd
+%%BSDUSER%%bin/qemu-riscv64
 bin/qemu-storage-daemon
 %%NO_X86_TARGETS%%bin/qemu-system-aarch64
 %%NO_X86_TARGETS%%bin/qemu-system-alpha
@@ -30,7 +31,6 @@ bin/qemu-system-i386
 %%NO_X86_TARGETS%%bin/qemu-system-rx
 %%NO_X86_TARGETS%%bin/qemu-system-s390x
 %%NO_X86_TARGETS%%bin/qemu-system-sh4
-%%NO_X86_TARGETS%%bin/qemu-system-sh4eb
 %%NO_X86_TARGETS%%bin/qemu-system-sparc
 %%NO_X86_TARGETS%%bin/qemu-system-sparc64
 %%NO_X86_TARGETS%%bin/qemu-system-tricore
@@ -147,7 +147,6 @@ share/man/man7/qemu-storage-daemon-qmp-ref.7.gz
 %%DATADIR%%/qemu-nsis.bmp
 %%DATADIR%%/qemu_vga.ndrv
 %%DATADIR%%/s390-ccw.img
-%%DATADIR%%/s390-netboot.img
 %%DATADIR%%/slof.bin
 %%DATADIR%%/u-boot-sam460-20100605.bin
 %%DATADIR%%/vgabios.bin
