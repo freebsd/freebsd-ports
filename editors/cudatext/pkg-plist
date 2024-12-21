@@ -626,6 +626,7 @@ share/applications/cudatext.desktop
 %%DATADIR%%/readme/wiki/controls_autosizes.png
 %%DATADIR%%/readme/wiki/cudatext-breadcrumbs.png
 %%DATADIR%%/readme/wiki/cudatext-charmap.png
+%%DATADIR%%/readme/wiki/cudatext-cjk-len1024.png
 %%DATADIR%%/readme/wiki/cudatext-click-link.png
 %%DATADIR%%/readme/wiki/cudatext-color-text.png
 %%DATADIR%%/readme/wiki/cudatext-color-underline.png
