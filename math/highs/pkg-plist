@@ -81,6 +81,7 @@ include/highs/lp_data/HighsAnalysis.h
 include/highs/lp_data/HighsCallback.h
 include/highs/lp_data/HighsCallbackStruct.h
 include/highs/lp_data/HighsDebug.h
+include/highs/lp_data/HighsIis.h
 include/highs/lp_data/HighsInfo.h
 include/highs/lp_data/HighsInfoDebug.h
 include/highs/lp_data/HighsLp.h
@@ -89,7 +90,6 @@ include/highs/lp_data/HighsLpUtils.h
 include/highs/lp_data/HighsModelUtils.h
 include/highs/lp_data/HighsOptions.h
 include/highs/lp_data/HighsRanging.h
-include/highs/lp_data/HighsRuntimeOptions.h
 include/highs/lp_data/HighsSolution.h
 include/highs/lp_data/HighsSolutionDebug.h
 include/highs/lp_data/HighsSolve.h
@@ -106,6 +106,7 @@ include/highs/mip/HighsGFkSolve.h
 include/highs/mip/HighsImplications.h
 include/highs/mip/HighsLpAggregator.h
 include/highs/mip/HighsLpRelaxation.h
+include/highs/mip/HighsMipAnalysis.h
 include/highs/mip/HighsMipSolver.h
 include/highs/mip/HighsMipSolverData.h
 include/highs/mip/HighsModkSeparator.h
@@ -120,6 +121,7 @@ include/highs/mip/HighsSeparation.h
 include/highs/mip/HighsSeparator.h
 include/highs/mip/HighsTableauSeparator.h
 include/highs/mip/HighsTransformedLp.h
+include/highs/mip/MipTimer.h
 include/highs/model/HighsHessian.h
 include/highs/model/HighsHessianUtils.h
 include/highs/model/HighsModel.h
@@ -231,5 +233,5 @@ lib/cmake/highs/highs-targets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/highs/highs-targets.cmake
 lib/libhighs.so
 lib/libhighs.so.1
-lib/libhighs.so.1.7.2
+lib/libhighs.so.1.9.0
 libdata/pkgconfig/highs.pc
