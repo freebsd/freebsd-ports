@@ -1,16 +1,18 @@
 PORTNAME=	deal.II
-DISTVERSION=	9.5.2
-PORTREVISION=	4
+DISTVERSION=	9.6.1
 CATEGORIES=	math
 MASTER_SITES=	https://github.com/dealii/dealii/releases/download/v${DISTVERSION}/
 DISTNAME=	dealii-${DISTVERSION}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Finite element Differential Equations Analysis Library (DEAL)
-WWW=		https://www.dealii.org/
+WWW=		https://www.dealii.org/ \
+		https://github.com/dealii/dealii
 
-LICENSE=	LGPL21
-LICENSE_FILE=	${WRKSRC}/LICENSE.md
+LICENSE=	APACHE20 LGPL21
+LICENSE_COMB=	dual
+LICENSE_FILE_APACHE20=	${WRKSRC}/LICENSE.md
+LICENSE_FILE_LGPL21=	${WRKSRC}/LICENSE.md
 
 BROKEN_aarch64=		error: use of undeclared identifier '__TBB_machine_fetchadd4'
 BROKEN_armv7=		clang runs out of memory
@@ -19,7 +21,8 @@ BUILD_DEPENDS=	${LOCALBASE}/include/boost/config.hpp:devel/boost-libs
 LIB_DEPENDS=	libblis.so:math/blis \
 		libboost_serialization.so:devel/boost-libs \
 		libhdf5.so:science/hdf5 \
-		libmetis.so:math/metis
+		libmetis.so:math/metis \
+		libvtkCommonCore-${VTK_VER}.so:math/vtk${VTK_VER:R}
 #		libkokkoscore.so:devel/kokkos TMP commented out for bundled kokkos, tests fail for non-bundled kokkos, see https://github.com/dealii/dealii/issues/15692
 
 USES=		blaslapack cmake:testing compiler:c++17-lang localbase:ldflags xorg
@@ -102,4 +105,7 @@ post-patch: # unbundle boost
 post-stage:
 	@${RM} ${STAGEDIR}${PREFIX}/*.log
 
+# the testsuite is excluded from the tarball: https://github.com/dealii/dealii/issues/17951
+
+.include <../../math/vtk9/Makefile.version>
 .include <bsd.port.mk>
