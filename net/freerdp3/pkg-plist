@@ -273,10 +273,10 @@ libdata/pkgconfig/winpr-tools%%MAJORVERSION%%.pc
 libdata/pkgconfig/winpr%%MAJORVERSION%%.pc
 %%JSON%%%%KEYBOARD_LAYOUT%%share/FreeRDP/KeyboardLayoutMap.json
 %%JSON%%%%TIMEZONE_FILE%%share/WinPR/TimeZoneNameMap.json
-share/applications/sdl-freerdp%%MAJORVERSION%%-file.desktop
-share/applications/sdl-freerdp%%MAJORVERSION%%.desktop
-share/applications/xfreerdp%%MAJORVERSION%%-file.desktop
-share/applications/xfreerdp%%MAJORVERSION%%.desktop
+%%SDL%%share/applications/sdl-freerdp%%MAJORVERSION%%-file.desktop
+%%SDL%%share/applications/sdl-freerdp%%MAJORVERSION%%.desktop
+%%X11%%share/applications/xfreerdp%%MAJORVERSION%%-file.desktop
+%%X11%%share/applications/xfreerdp%%MAJORVERSION%%.desktop
 share/cmake/Modules/FreeRDP-Client%%MAJORVERSION%%/FreeRDP-ClientConfig.cmake
 share/cmake/Modules/FreeRDP-Client%%MAJORVERSION%%/FreeRDP-ClientConfigVersion.cmake
 share/cmake/Modules/FreeRDP-Client%%MAJORVERSION%%/FreeRDP-ClientTargets-%%CMAKE_BUILD_TYPE%%.cmake
