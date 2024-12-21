@@ -1,6 +1,6 @@
 PORTNAME=	mise
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2024.12.15
+DISTVERSION=	2024.12.16
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -142,8 +142,9 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		either-1.13.0 \
 		encode_unicode-1.0.0 \
 		encoding_rs-0.8.35 \
-		env_filter-0.1.2 \
-		env_logger-0.11.5 \
+		env_filter-0.1.3 \
+		env_home-0.1.0 \
+		env_logger-0.11.6 \
 		envmnt-0.10.4 \
 		equivalent-1.0.1 \
 		erased-serde-0.4.5 \
@@ -207,7 +208,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		humansize-2.1.3 \
 		humantime-2.1.0 \
 		hyper-1.5.2 \
-		hyper-rustls-0.27.4 \
+		hyper-rustls-0.27.5 \
 		hyper-tls-0.6.0 \
 		hyper-util-0.1.10 \
 		i18n-config-0.4.7 \
@@ -528,7 +529,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		web-time-1.1.0 \
 		webpki-roots-0.26.7 \
 		which-6.0.3 \
-		which-7.0.0 \
+		which-7.0.1 \
 		widestring-1.1.0 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
