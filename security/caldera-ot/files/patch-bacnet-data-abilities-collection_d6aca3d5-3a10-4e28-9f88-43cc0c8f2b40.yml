@@ -1,0 +1,21 @@
+--- bacnet/data/abilities/collection/d6aca3d5-3a10-4e28-9f88-43cc0c8f2b40.yml	2024-12-21 01:06:38.700686000 -0800
++++ bacnet/data/abilities/collection/d6aca3d5-3a10-4e28-9f88-43cc0c8f2b40.yml	2024-12-21 01:07:00.573524000 -0800
+@@ -14,6 +14,11 @@
+     name: Monitor Process State
+   repeatable: True
+   platforms:
++    freebsd:
++      sh:
++        timeout: 360
++        command: |
++          bacge #{bacnet.device.instance}
+     linux:
+       sh:
+         timeout: 360
+@@ -27,4 +32,4 @@
+         command: |
+           .\bacge.exe #{bacnet.device.instance}
+         payloads:
+-          - bacge.exe
+\ No newline at end of file
++          - bacge.exe

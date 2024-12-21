@@ -1,0 +1,21 @@
+--- bacnet/data/abilities/inhibit-response-function/bdbeabd1-0f55-4974-a720-42c15fcb75d9.yml	2024-12-21 01:09:21.529508000 -0800
++++ bacnet/data/abilities/inhibit-response-function/bdbeabd1-0f55-4974-a720-42c15fcb75d9.yml	2024-12-21 01:10:28.780129000 -0800
+@@ -21,6 +21,11 @@
+     name: Device Restart/Shutdown
+   repeatable: True
+   platforms:
++    freebsd:
++      sh:
++        timeout: 360
++        command: |
++          bacrd #{bacnet.device.instance} 0
+     linux:
+       sh:
+         timeout: 360
+@@ -34,4 +39,4 @@
+         command: |
+           .\bacrd.exe #{bacnet.device.instance} 0
+         payloads:
+-          - bacrd.exe
+\ No newline at end of file
++          - bacrd.exe

@@ -1,5 +1,5 @@
---- iec61850/src/app/CMakeLists.txt	2024-02-18 01:01:15.171907000 -0500
-+++ iec61850/src/app/CMakeLists.txt	2024-02-18 01:24:45.179116000 -0500
+--- iec61850payloads/app/CMakeLists.txt	2024-02-18 01:01:15.171907000 -0500
++++ iec61850payloads/app/CMakeLists.txt	2024-02-18 01:24:45.179116000 -0500
 @@ -5,15 +5,16 @@
                 "${CMAKE_CURRENT_BINARY_DIR}/version.h")
  
