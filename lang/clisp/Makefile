@@ -1,6 +1,5 @@
 PORTNAME=	clisp
-PORTVERSION=	2.49.93+
-PORTREVISION=	8
+PORTVERSION=	2.49.95+20241228
 CATEGORIES=	lang lisp
 
 MAINTAINER=	kiri@TrueFC.org
@@ -12,201 +11,114 @@ LICENSE_FILE=	${WRKSRC}/GNU-GPL
 
 LIB_DEPENDS=	libffcall.so:devel/libffcall \
 		libreadline.so:devel/readline \
-		libsigsegv.so:devel/libsigsegv
+		libsigsegv.so:devel/libsigsegv \
+		libunistring.so:devel/libunistring
 RUN_DEPENDS=	cl-freebsd-asdf-init>=0:devel/cl-freebsd-asdf-init
 
-USES=		compiler gettext ghostscript gnome iconv localbase:ldflags
+USES=		compiler gettext ghostscript iconv localbase:ldflags ncurses \
+		pkgconfig
 USE_GCC=	yes
 USE_GITLAB=	yes
-
 GL_ACCOUNT=	gnu-clisp
 GL_PROJECT=	clisp
-GL_TAGNAME=	df3b9f6fdcff22832898e89a989eb499c0f842ed
-USE_LDCONFIG=	yes
-HAS_CONFIGURE=	yes
-CONFIGURE_ENV=	FORCE_UNSAFE_CONFIGURE=1
-CONFIGURE_ARGS=	--prefix="${PREFIX}" --mandir="${PREFIX}/share/man" \
-		--elispdir="${DATADIR}/emacs" --vimdir="${DATADIR}/vim" \
-		--docdir="${DOCSDIR}" --with-libiconv=${ICONV_PREFIX}
+GL_TAGNAME=	c3ec11bab87cfdbeba01523ed88ac2a16b22304d
+
+HAS_CONFIGURE=		yes
+CONFIGURE_ARGS=		--docdir="${DOCSDIR}" \
+			--elispdir="${DATADIR}/emacs" \
+			--mandir="${PREFIX}/share/man" \
+			--prefix="${PREFIX}" \
+			--vimdir="${DATADIR}/vim" \
+			--with-libiconv=${ICONV_PREFIX}
+CONFIGURE_ENV=		FORCE_UNSAFE_CONFIGURE=1
 CONFIGURE_TARGET=	${ARCH:S/amd64/x86_64/}-portbld-freebsd${OSREL}
+
+MAKE_ENV=		${CONFIGURE_ENV}
+MAKE_JOBS_UNSAFE=	yes
+
 # Complaints if the environment changes between build stages.
 CFLAGS+=	-fpermissive
 LDFLAGS+=	${LDFLAGS_${CHOSEN_COMPILER_TYPE}}
 LDFLAGS_gcc=	-lthr
-MAKE_ENV=	${CONFIGURE_ENV}
+
+SUB_FILES=	pkg-message
+
 BUILD_WRKSRC=	${WRKSRC}/src
 INSTALL_WRKSRC=	${BUILD_WRKSRC}
-MAKE_JOBS_UNSAFE=yes
 
-OPTIONS_DEFINE=	ASDF BDB CLX_MIT CLX_NEW DBUS FASTCGI GDBM GLIBC GTK2 \
-		JITC MATLAB NETICA ORACLE PARI PCRE PGSQL QUEENS RAWSOCK \
-		SVM THREADS ZLIB
+OPTIONS_DEFINE=		ASDF BDB DBUS DOCS FASTCGI GDBM GTK2 NLS PARI PCRE \
+			PGSQL QUEENS RAWSOCK SVM ZLIB
+OPTIONS_DEFAULT=	ASDF BDB RAWSOCK ZLIB
+OPTIONS_RADIO=		CLX
+OPTIONS_RADIO_CLX=	CLX_MIT CLX_NEW
+OPTIONS_SUB=		YES
+
 ASDF_DESC=	Another System Definition Facility
 BDB_DESC=	Interface to Berkeley DB from Sleepycat Software
+CLX_DESC=	X11 Module Selection
 CLX_MIT_DESC=	Classical X11 Interface
 CLX_NEW_DESC=	Faster X11 Interface (replaces clx/mit-clx)
 DBUS_DESC=	Interface to the D-Bus message bus system
 FASTCGI_DESC=	FastCGI interface for web development
 GDBM_DESC=	Interface to GNU DBM
-GLIBC_DESC=	Interface to most of the GNU libc library
 GTK2_DESC=	Interface to the GTK library using glade
-JITC_DESC=	Use a given Just-In-Time Compiler
-SVM_DESC=	Support Vector Machine predictive analytics
-MATLAB_DESC=	Matrix calculations using Matlab
-NETICA_DESC=	Bayesian belief networks and influence diagrams
-ORACLE_DESC=	Oracle RDMBS interface
 PARI_DESC=	PARI Computer Algebra System
 PCRE_DESC=	Perl-compatible regular expressions
 PGSQL_DESC=	PostGreSQL RDMBS interface
 QUEENS_DESC=	The Queens Function (a toy example)
 RAWSOCK_DESC=	Low level socket interface
-THREADS_DESC=	Multithreaded Support (Experimental)
+SVM_DESC=	Support Vector Machine predictive analytics
 ZLIB_DESC=	Compress vectors
 
-OPTIONS_RADIO=	CLX
-OPTIONS_RADIO_CLX=	CLX_MIT CLX_NEW
-CLX_DESC=	X11 Module Selection
+ASDF_CONFIGURE_WITH=	module=asdf
+BDB_USES=		bdb
+BDB_CONFIGURE_WITH=	module=berkeley-db
+BDB_CPPFLAGS=		-I${LOCALBASE}/include/db${BDB_VER}
+BDB_LDFLAGS=		-L${LOCALBASE}/lib/db${BDB_VER}
+CLX_MIT_USES=		xorg
+CLX_MIT_USE=		XORG=x11
+CLX_MIT_CONFIGURE_WITH=	module=clx/mit-clx
+CLX_NEW_USES=		xorg
+CLX_NEW_USE=		XORG=x11
+CLX_NEW_CONFIGURE_WITH=	module=clx/new-clx
+DBUS_LIB_DEPENDS=	libdbus-1.so:devel/dbus
+DBUS_CONFIGURE_WITH=	module=dbus
+FASTCGI_LIB_DEPENDS=	libfcgi.so:www/fcgi
+FASTCGI_CONFIGURE_WITH=	module=fastcgi
+GDBM_LIB_DEPENDS=	libgdbm.so:databases/gdbm
+GDBM_CONFIGURE_WITH=	module=gdbm
+GTK2_USES=		gnome
+GTK2_USE=		GNOME=gtk20,libglade2
+GTK2_CONFIGURE_WITH=	module=gtk2
+PARI_LIB_DEPENDS=	libpari.so:math/pari
+PARI_CONFIGURE_WITH=	module=pari
+PCRE_LIB_DEPENDS=	libpcre.so:devel/pcre
+PCRE_CONFIGURE_WITH=	module=pcre
+PGSQL_USES=		pgsql
+PGSQL_CONFIGURE_WITH=	module=postgresql
+QUEENS_CONFIGURE_WITH=	module=queens
+RAWSOCK_CONFIGURE_WITH=	module=rawsock
+SVM_LIB_DEPENDS=	libsvm.so.2:science/libsvm
+SVM_CONFIGURE_WITH=	module=libsvm
+ZLIB_CONFIGURE_WITH=	module=zlib
 
-OPTIONS_DEFAULT=	ASDF BDB RAWSOCK ZLIB
+pre-install-CLX_MIT-on:
+	${CP} ${WRKSRC}/modules/clx/mit-clx/README.CLISP \
+		${WRKSRC}/src/clx/mit-clx/README.CLISP
 
-SUB_FILES=	pkg-message
+post-install:
+	${STRIP_CMD} $$(${FIND} ${STAGEDIR}${PREFIX}/lib/clisp/dynmod/*.so) \
+	${STAGEDIR}${PREFIX}/bin/clisp
+
+do-test:
+	@cd ${WRKSRC}/tests && \
+		${LOCALBASE}/bin/clisp -E UTF-8 -i "tests" -x "(run-all-tests)"
 
 .include <bsd.port.options.mk>
 
 # Segmentation fault in amd64 when using 'mmap(2)', errno = EINVAL.
 .if ${ARCH} == "amd64"
-CONFIGURE_ARGS+=--disable-mmap
+CONFIGURE_ARGS+=	--disable-mmap
 .endif
-
-MODULES=	ASDF BDB CLX_MIT CLX_NEW DBUS FASTCGI GDBM GLIBC GTK2 \
-		JITC MATLAB NETICA ORACLE PARI PCRE PGSQL QUEENS RAWSOCK \
-		SVM ZLIB
-
-.for mod in ${MODULES}
-.   if ${PORT_OPTIONS:M${mod}}
-PLIST_SUB+=	${mod}=""
-.   else
-PLIST_SUB+=	${mod}="@comment "
-.   endif
-.endfor
-
-.if ${PORT_OPTIONS:MASDF}
-CONFIGURE_ARGS+=--with-module=asdf
-.endif
-
-.if ${PORT_OPTIONS:MBDB}
-USES+=		bdb
-CONFIGURE_ARGS+=--with-module=berkeley-db
-CPPFLAGS+=	-I${LOCALBASE}/include/db${BDB_VER}
-LDFLAGS+=	-L${LOCALBASE}/lib/db${BDB_VER}
-.endif
-
-.if ${PORT_OPTIONS:MCLX_MIT} || ${PORT_OPTIONS:MCLX_NEW}
-USES+=		xorg
-USE_XORG=	x11
-.endif
-.if ${PORT_OPTIONS:MCLX_MIT}
-CONFIGURE_ARGS+=--with-module=clx/mit-clx
-.endif
-.if ${PORT_OPTIONS:MCLX_NEW}
-CONFIGURE_ARGS+=--with-module=clx/new-clx
-.endif
-
-.if ${PORT_OPTIONS:MDBUS}
-LIB_DEPENDS+=	libdbus-1.so:devel/dbus
-CONFIGURE_ARGS+=--with-module=dbus
-.endif
-
-.if ${PORT_OPTIONS:MFASTCGI}
-LIB_DEPENDS+=	libfcgi.so:www/fcgi
-CONFIGURE_ARGS+=--with-module=fastcgi
-.endif
-
-.if ${PORT_OPTIONS:MGDBM}
-LIB_DEPENDS+=	libgdbm.so:databases/gdbm
-CONFIGURE_ARGS+=--with-module=gdbm
-.endif
-
-.if ${PORT_OPTIONS:MGLIBC}
-USE_LINUX=	base
-CONFIGURE_ARGS+=--with-module=bindings/glibc
-.endif
-
-.if ${PORT_OPTIONS:MGTK2}
-USES+=		gnome
-USE_GNOME=	gtk20 libglade2
-CONFIGURE_ARGS+=--with-module=gtk2
-.endif
-
-.if ${PORT_OPTIONS:MJITC}
-BUILD_DEPENDS+=	${LOCALBASE}/include/lightning.h:devel/lightning
-LIB_DEPENDS+=	liblightning.so:devel/lightning
-CONFIGURE_ARGS+=--with-jitc=lightning
-.endif
-
-.if ${PORT_OPTIONS:MMATLAB}
-CONFIGURE_ARGS+=--with-module=matlab
-.endif
-
-.if ${PORT_OPTIONS:MNETICA}
-CONFIGURE_ARGS+=--with-module=netica
-.endif
-
-.if ${PORT_OPTIONS:MORACLE}
-CONFIGURE_ARGS+=--with-module=oracle
-.endif
-
-.if ${PORT_OPTIONS:MPARI}
-LIB_DEPENDS+=	libpari.so:math/pari
-CONFIGURE_ARGS+=--with-module=pari
-.endif
-
-.if ${PORT_OPTIONS:MPCRE}
-LIB_DEPENDS+=	libpcre.so:devel/pcre
-CONFIGURE_ARGS+=--with-module=pcre
-.endif
-
-.if ${PORT_OPTIONS:MPGSQL}
-USES+=		pgsql
-CONFIGURE_ARGS+=--with-module=postgresql
-.endif
-
-.if ${PORT_OPTIONS:MQUEENS}
-CONFIGURE_ARGS+=--with-module=queens
-.endif
-
-.if ${PORT_OPTIONS:MRAWSOCK}
-CONFIGURE_ARGS+=--with-module=rawsock
-.endif
-
-.if ${PORT_OPTIONS:MSVM}
-BUILD_DEPENDS+=	${LOCALBASE}/bin/svm-predict:science/libsvm
-CONFIGURE_ARGS+=--with-module=libsvm
-.endif
-
-.if ${PORT_OPTIONS:MTHREADS}
-CONFIGURE_ARGS+=--with-threads=POSIX_THREADS \
-		LDFLAGS="${PTHREAD_LIBS} ${LDFLAGS}"
-PKGNAMESUFFIX=	-threaded
-.endif
-
-.if ${PORT_OPTIONS:MZLIB}
-CONFIGURE_ARGS+=--with-module=zlib
-.endif
-
-post-patch:
-.if ${PORT_OPTIONS:MORACLE}
-	@${REINPLACE_CMD} -e 's|-ldl||; s|-lpthread|-lcompat ${PTHREAD_LIBS}|' \
-		${WRKSRC}/modules/oracle/link.sh.in
-.endif
-
-pre-install:
-.if ${PORT_OPTIONS:MCLX_MIT}
-	${CP} ${WRKSRC}/modules/clx/mit-clx/README.CLISP \
-		${WRKSRC}/src/clx/mit-clx/README.CLISP
-.endif
-
-post-install:
-	@${ECHO_CMD}; ${CAT} ${PKGMESSAGE}; ${ECHO_CMD}
 
 .include <bsd.port.mk>
