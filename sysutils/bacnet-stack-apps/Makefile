@@ -1,5 +1,5 @@
 PORTNAME=	bacnet-stack
-PORTVERSION=	1.3.5
+PORTVERSION=	1.4.0
 CATEGORIES=	sysutils
 PKGNAMESUFFIX=	-apps
 
