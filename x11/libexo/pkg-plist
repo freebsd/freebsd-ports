@@ -89,6 +89,7 @@ share/man/man1/exo-open.1.gz
 %%NLS%%share/locale/uk/LC_MESSAGES/exo.mo
 %%NLS%%share/locale/ur/LC_MESSAGES/exo.mo
 %%NLS%%share/locale/ur_PK/LC_MESSAGES/exo.mo
+%%NLS%%share/locale/uz/LC_MESSAGES/exo.mo
 %%NLS%%share/locale/vi/LC_MESSAGES/exo.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/exo.mo
 %%NLS%%share/locale/zh_HK/LC_MESSAGES/exo.mo

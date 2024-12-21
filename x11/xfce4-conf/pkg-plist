@@ -27,6 +27,7 @@ share/dbus-1/services/org.xfce.Xfconf.service
 %%NLS%%share/locale/en_CA/LC_MESSAGES/xfconf.mo
 %%NLS%%share/locale/en_GB/LC_MESSAGES/xfconf.mo
 %%NLS%%share/locale/es/LC_MESSAGES/xfconf.mo
+%%NLS%%share/locale/et/LC_MESSAGES/xfconf.mo
 %%NLS%%share/locale/eu/LC_MESSAGES/xfconf.mo
 %%NLS%%share/locale/fi/LC_MESSAGES/xfconf.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/xfconf.mo

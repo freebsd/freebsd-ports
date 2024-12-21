@@ -1,12 +1,14 @@
 bin/xdt-autogen
+bin/xdt-check-abi
 bin/xdt-csource
+bin/xdt-gen-visibility
 bin/xfce-build
 bin/xfce-do-release
 bin/xfce-get-release-notes
 bin/xfce-get-translations
 bin/xfce-update-news
-share/man/man1/xdt-csource.1.gz
 share/aclocal/xdt-depends.m4
 share/aclocal/xdt-features.m4
 share/aclocal/xdt-i18n.m4
 share/aclocal/xdt-version.m4
+share/man/man1/xdt-csource.1.gz

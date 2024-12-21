@@ -13,7 +13,7 @@
 _INCLUDE_USES_XFCE_Mk=	yes
 _USES_POST+=	xfce
 
-_USE_XFCE_ALL=	garcon libexo libmenu libutil panel thunar xfconf
+_USE_XFCE_ALL=	garcon libexo libmenu libutil panel thunar xdt xfconf windowing
 
 xfce_ARGS?=	# empty
 
@@ -37,7 +37,11 @@ libutil_LIB_DEPENDS=	libxfce4util.so:x11/libxfce4util
 thunar_LIB_DEPENDS=	libthunarx-3.so:x11-fm/thunar
 thunar_RUN_DEPENDS=	Thunar:x11-fm/thunar
 
+xdt_BUILD_DEPENDS=	xfce4-dev-tools>=4.19.4:devel/xfce4-dev-tools
+
 xfconf_LIB_DEPENDS=	libxfconf-0.so:x11/xfce4-conf
+
+windowing_LIB_DEPENDS=	libxfce4windowing-0.so:x11/libxfce4windowing
 
 .  if defined(USE_XFCE)
 # First, expand all USE_XFCE_REQ recursively.

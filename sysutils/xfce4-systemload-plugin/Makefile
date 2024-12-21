@@ -18,26 +18,26 @@ USES=		compiler:c11 gettext-tools gmake gnome libtool pkgconfig \
 USE_GNOME=	cairo gdkpixbuf2 gtk30 intltool
 USE_XFCE=	libmenu panel xfconf
 
-SSP_UNSAFE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-libgtop
 INSTALL_TARGET=	install-strip
+SSP_UNSAFE=	yes
 
 OPTIONS_DEFINE=		NLS UPOWER # LIBGTOP
 OPTIONS_DEFAULT=	UPOWER
 OPTIONS_SUB=		yes
 
 # Enabling libgtop causes crashes, needs investigation
-#LIBGTOP_DESC=		Use libgtop for network utilization monitoring
-UPOWER_DESC=		Use upower for adapting update interval to power state
+#LIBGTOP_DESC=	Use libgtop for network utilization monitoring
+UPOWER_DESC=	Use upower for adapting update interval to power state
 
+#LIBGTOP_LIB_DEPENDS=		libgtop-2.0.so:devel/libgtop
 #LIBGTOP_CONFIGURE_ENABLE=	libgtop
-#LIBGTOP_LIB_DEPENDS=	libgtop-2.0.so:devel/libgtop
 
-NLS_CONFIGURE_ENABLE=	nls
 NLS_USES=		gettext-runtime
+NLS_CONFIGURE_ENABLE=	nls
 
-UPOWER_CONFIGURE_ENABLE=upower
-UPOWER_LIB_DEPENDS=	libupower-glib.so:sysutils/upower
+UPOWER_LIB_DEPENDS=		libupower-glib.so:sysutils/upower
+UPOWER_CONFIGURE_ENABLE=	upower
 
 .include <bsd.port.mk>

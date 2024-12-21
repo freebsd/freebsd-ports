@@ -8,8 +8,10 @@ include/xfce4/libxfce4kbd-private-3/libxfce4kbd-private/xfce-shortcuts-provider.
 include/xfce4/libxfce4kbd-private-3/libxfce4kbd-private/xfce-shortcuts-xfwm4.h
 include/xfce4/libxfce4kbd-private-3/libxfce4kbd-private/xfce-shortcuts.h
 include/xfce4/libxfce4ui-2/libxfce4ui/libxfce4ui-config.h
+include/xfce4/libxfce4ui-2/libxfce4ui/libxfce4ui-enums.h
 include/xfce4/libxfce4ui-2/libxfce4ui/libxfce4ui-enum-types.h
 include/xfce4/libxfce4ui-2/libxfce4ui/libxfce4ui.h
+include/xfce4/libxfce4ui-2/libxfce4ui/xfce-clipboard-manager.h
 include/xfce4/libxfce4ui-2/libxfce4ui/xfce-dialogs.h
 include/xfce4/libxfce4ui-2/libxfce4ui/xfce-filename-input.h
 include/xfce4/libxfce4ui-2/libxfce4ui/xfce-gdk-extensions.h

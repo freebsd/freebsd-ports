@@ -5,6 +5,7 @@
 
 PORTNAME=	xfce4-notifyd
 PORTVERSION=	0.9.6
+PORTREVISION=	1
 CATEGORIES=	deskutils xfce
 MASTER_SITES=	XFCE/apps
 DIST_SUBDIR=	xfce4
@@ -18,14 +19,13 @@ LICENSE=	GPLv3
 LIB_DEPENDS=	libharfbuzz.so:print/harfbuzz \
 		libnotify.so:devel/libnotify
 
-USES=		compiler:c11 gettext-tools gmake gnome libtool pkgconfig \
-		sqlite tar:bzip2 xfce xorg
-USE_GNOME=	cairo gdkpixbuf2 glib20 gtk30 intltool
+USES=		compiler:c11 gettext-tools gmake gnome libtool pkgconfig sqlite \
+		tar:bzip2 xfce xorg
+USE_GNOME=	cairo gdkpixbuf2 glib20 gtk30
 USE_XFCE=	libmenu panel xfconf
 USE_XORG=	ice sm x11
 
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--disable-systemd
 INSTALL_TARGET=	install-strip
 

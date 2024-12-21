@@ -16,16 +16,15 @@ LIB_DEPENDS=	libharfbuzz.so:print/harfbuzz
 USES=		compiler:c11 gettext-tools gmake gnome libtool pkgconfig \
 		tar:bzip2 xfce
 USE_GNOME=	cairo gdkpixbuf2 gtk30 intltool
-USE_LDCONFIG=	yes
 USE_XFCE=	libmenu panel
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 
-OPTIONS_DEFINE=		NLS
-OPTIONS_SUB=		yes
+OPTIONS_DEFINE=	NLS
+OPTIONS_SUB=	yes
 
-NLS_CONFIGURE_ENABLE=	nls
 NLS_USES=		gettext-runtime
+NLS_CONFIGURE_ENABLE=	nls
 
 .include <bsd.port.mk>

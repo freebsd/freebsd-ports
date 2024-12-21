@@ -3,7 +3,6 @@ bin/xfce4-session
 bin/xfce4-session-logout
 bin/xfce4-session-settings
 bin/xflock4
-etc/xdg/autostart/xscreensaver.desktop
 etc/xdg/xfce4/Xft.xrdb
 etc/xdg/xfce4/xfconf/xfce-perchannel-xml/xfce4-session.xml
 @(,,755) etc/xdg/xfce4/xinitrc
@@ -45,6 +44,7 @@ share/icons/hicolor/scalable/apps/org.xfce.session.svg
 %%NLS%%share/locale/ar/LC_MESSAGES/xfce4-session.mo
 %%NLS%%share/locale/ast/LC_MESSAGES/xfce4-session.mo
 %%NLS%%share/locale/az/LC_MESSAGES/xfce4-session.mo
+%%NLS%%share/locale/az_AZ/LC_MESSAGES/xfce4-session.mo
 %%NLS%%share/locale/be/LC_MESSAGES/xfce4-session.mo
 %%NLS%%share/locale/be@tarask/LC_MESSAGES/xfce4-session.mo
 %%NLS%%share/locale/bg/LC_MESSAGES/xfce4-session.mo
@@ -76,6 +76,7 @@ share/icons/hicolor/scalable/apps/org.xfce.session.svg
 %%NLS%%share/locale/is/LC_MESSAGES/xfce4-session.mo
 %%NLS%%share/locale/it/LC_MESSAGES/xfce4-session.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/xfce4-session.mo
+%%NLS%%share/locale/ka/LC_MESSAGES/xfce4-session.mo
 %%NLS%%share/locale/kk/LC_MESSAGES/xfce4-session.mo
 %%NLS%%share/locale/ko/LC_MESSAGES/xfce4-session.mo
 %%NLS%%share/locale/lt/LC_MESSAGES/xfce4-session.mo
@@ -109,5 +110,6 @@ share/icons/hicolor/scalable/apps/org.xfce.session.svg
 %%NLS%%share/locale/zh_HK/LC_MESSAGES/xfce4-session.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/xfce4-session.mo
 share/polkit-1/actions/org.xfce.session.policy
+%%WAYLAND%%share/wayland-sessions/xfce-wayland.desktop
 share/xdg-desktop-portal/xfce-portals.conf
 share/xsessions/xfce.desktop

@@ -21,10 +21,10 @@ USE_XFCE=	libmenu panel xfconf
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 
-OPTIONS_DEFINE=		NLS
-OPTIONS_SUB=		yes
+OPTIONS_DEFINE=	NLS
+OPTIONS_SUB=	yes
 
-NLS_CONFIGURE_ENABLE=	nls
 NLS_USES=		gettext-runtime
+NLS_CONFIGURE_ENABLE=	nls
 
 .include <bsd.port.mk>

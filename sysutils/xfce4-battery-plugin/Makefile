@@ -11,24 +11,24 @@ WWW=		https://goodies.xfce.org/projects/panel-plugins/xfce4-battery-plugin
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libharfbuzz.so:print/harfbuzz
-
 ONLY_FOR_ARCHS=	amd64 i386
 
-USES=		alias gettext-tools gmake gnome libtool pkgconfig \
-		tar:bzip2 xfce
-USE_GNOME=	cairo gdkpixbuf2 gtk30 glib20 intltool
-USE_XFCE=	libmenu panel
-USE_LDCONFIG=	yes
+LIB_DEPENDS=	libharfbuzz.so:print/harfbuzz
 
-SSP_UNSAFE=	yes
+USES=		alias gettext-tools gmake gnome libtool pkgconfig tar:bzip2 \
+		xfce
+USE_GNOME=	cairo gdkpixbuf2 glib20 gtk30 intltool
+USE_LDCONFIG=	yes
+USE_XFCE=	libmenu panel
+
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
+SSP_UNSAFE=	yes
 
-OPTIONS_DEFINE=		NLS
-OPTIONS_SUB=		yes
+OPTIONS_DEFINE=	NLS
+OPTIONS_SUB=	yes
 
-NLS_CONFIGURE_ENABLE=	nls
 NLS_USES=		gettext-runtime
+NLS_CONFIGURE_ENABLE=	nls
 
 .include <bsd.port.mk>

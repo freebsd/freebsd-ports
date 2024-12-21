@@ -22,11 +22,11 @@ USE_XFCE=	libmenu panel
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 
-OPTIONS_DEFINE=		NLS
-OPTIONS_SUB=		yes
+OPTIONS_DEFINE=	NLS
+OPTIONS_SUB=	yes
 
-NLS_CONFIGURE_ENABLE=	nls
 NLS_USES=		gettext-runtime
+NLS_CONFIGURE_ENABLE=	nls
 
 post-patch:
 	@${REINPLACE_CMD} -e 's/ || defined \{0,1\}(__FreeBSD_kernel__)//' \

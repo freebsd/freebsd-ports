@@ -13,8 +13,8 @@ WWW=		https://goodies.xfce.org/projects/panel-plugins/xfce4-verve-plugin
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libpcre2-8.so:devel/pcre2 \
-		libharfbuzz.so:print/harfbuzz
+LIB_DEPENDS=	libharfbuzz.so:print/harfbuzz \
+		libpcre2-8.so:devel/pcre2
 
 USES=		compiler:c11 gettext-tools gmake gnome libtool pkgconfig \
 		tar:bzip2 xfce
@@ -22,13 +22,13 @@ USE_GNOME=	atk cairo gdkpixbuf2 glib20 gtk30 intltool pango
 USE_XFCE=	libmenu panel
 
 GNU_CONFIGURE=	yes
-INSTALL_TARGET=	install-strip
 CONFIGURE_ARGS=	--enable-dbus
+INSTALL_TARGET=	install-strip
 
-OPTIONS_DEFINE=		NLS
-OPTIONS_SUB=		yes
+OPTIONS_DEFINE=	NLS
+OPTIONS_SUB=	yes
 
-NLS_CONFIGURE_ENABLE=	nls
 NLS_USES=		gettext-runtime
+NLS_CONFIGURE_ENABLE=	nls
 
 .include <bsd.port.mk>
