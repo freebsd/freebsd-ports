@@ -1,7 +1,5 @@
 PORTNAME=	waterfox
-DISTVERSIONPREFIX=	G
-DISTVERSION=	6.0.19
-PORTREVISION=	5
+DISTVERSION=	6.5.2
 PORTEPOCH=	1
 CATEGORIES=	www
 
@@ -13,14 +11,14 @@ LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	nspr>=4.32:devel/nspr \
-		nss>=3.95:security/nss \
+		nss>=3.101:security/nss \
 		icu>=74.2:devel/icu \
 		libevent>=2.1.8:devel/libevent \
-		harfbuzz>=8.3.0:print/harfbuzz \
+		harfbuzz>=8.5.0:print/harfbuzz \
 		graphite2>=1.3.14:graphics/graphite2 \
-		png>=1.6.39:graphics/png \
+		png>=1.6.43:graphics/png \
 		dav1d>=1.0.0:multimedia/dav1d \
-		libvpx>=1.13.0:multimedia/libvpx \
+		libvpx>=1.14.0:multimedia/libvpx \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR} \
 		v4l_compat>0:multimedia/v4l_compat \
 		autoconf2.13:devel/autoconf2.13 \
@@ -32,6 +30,7 @@ USE_GECKO=	gecko
 USE_GITHUB=	yes
 GH_ACCOUNT=	BrowserWorks
 GH_PROJECT=	Waterfox
+GH_TUPLE=	BrowserWorks:l10n:3046738:l10n/waterfox/browser/locales
 USE_MOZILLA=	-sqlite
 
 # work around bindgen not finding ICU, e.g.
