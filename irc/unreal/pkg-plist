@@ -16,6 +16,7 @@
 %%ETCDIR%%/examples/example.conf
 %%ETCDIR%%/examples/example.es.conf
 %%ETCDIR%%/examples/example.fr.conf
+%%ETCDIR%%/examples/example.pt.conf
 %%ETCDIR%%/examples/example.tr.conf
 %%ETCDIR%%/help/help.conf
 %%ETCDIR%%/help/help.de.conf
@@ -32,6 +33,7 @@
 %%ETCDIR%%/modules.optional.conf
 %%ETCDIR%%/modules.sources.list
 %%ETCDIR%%/operclass.default.conf
+%%ETCDIR%%/rpc-class.default.conf
 %%ETCDIR%%/rpc.modules.default.conf
 %%ETCDIR%%/snomasks.default.conf
 %%ETCDIR%%/spamfilter.conf
@@ -51,6 +53,8 @@ lib/unreal/bot-tag.so
 lib/unreal/botmotd.so
 lib/unreal/cap.so
 lib/unreal/certfp.so
+lib/unreal/central-api.so
+lib/unreal/central-blocklist.so
 lib/unreal/chanmodes/censor.so
 lib/unreal/chanmodes/chanadmin.so
 lib/unreal/chanmodes/chanop.so
@@ -100,6 +104,7 @@ lib/unreal/connect-flood.so
 lib/unreal/connect.so
 lib/unreal/connthrottle.so
 lib/unreal/creationtime.so
+lib/unreal/crule.so
 lib/unreal/cycle.so
 lib/unreal/dccallow.so
 lib/unreal/dccdeny.so
@@ -120,6 +125,8 @@ lib/unreal/extbans/realname.so
 lib/unreal/extbans/securitygroup.so
 lib/unreal/extbans/textban.so
 lib/unreal/extbans/timedban.so
+lib/unreal/extbans/asn.so
+lib/unreal/extbans/inherit.so
 lib/unreal/extended-monitor.so
 lib/unreal/extjwt.so
 lib/unreal/geoip-tag.so
@@ -165,6 +172,7 @@ lib/unreal/names.so
 lib/unreal/netinfo.so
 lib/unreal/nick.so
 lib/unreal/nocodes.so
+lib/unreal/no-implicit-names.so
 lib/unreal/oper.so
 lib/unreal/operinfo.so
 lib/unreal/opermotd.so
@@ -208,6 +216,7 @@ lib/unreal/silence.so
 lib/unreal/sinfo.so
 lib/unreal/sjoin.so
 lib/unreal/slog.so
+lib/unreal/spamreport.so
 lib/unreal/sqline.so
 lib/unreal/squit.so
 lib/unreal/sreply.so
@@ -275,7 +284,9 @@ lib/unreal/whois.so
 lib/unreal/whowas.so
 lib/unreal/whowasdb.so
 lib/unreal/whox.so
-libexec/ircd
+libexec/unrealircd
+libexec/unrealircdctl
+sbin/unrealircd
 @dir /var/cache/ircd
 @dir /var/log/ircd
 @dir /var/run/ircd

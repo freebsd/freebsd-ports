@@ -21,7 +21,7 @@ load_rc_config $name
 : ${unrealircd_pidfile="/var/run/ircd/ircd.pid"}
 : ${unrealircd_user="ircd"}
 
-command=%%PREFIX%%/libexec/ircd
+command=%%PREFIX%%/libexec/unrealircd
 pidfile=%%RUNDIR%%/ircd.pid
 start_precmd=unreal_prestart
 
