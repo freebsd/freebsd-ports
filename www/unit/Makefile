@@ -111,6 +111,7 @@ CARGO_INSTALL=		no
 CARGO_TARGET_DIR=	${WRKSRC2}/target
 CARGO_VENDOR_DIR=	${WRKSRC2}/cargo-crates
 CONFIGURE_ARGS+=	--otel
+EXTRA_PATCHES+=		${FILESDIR}/extra-patch-auto-make
 .include "${.CURDIR}/Makefile.cargo"
 .endif
 
@@ -126,7 +127,7 @@ CFLAGS+=	-Wno-compound-token-split-by-macro
 .endif
 
 .if !defined(UNIT_MODNAME)
-post-configure:
+post-configure-OTEL-on:
 	${MKDIR} ${WRKDIR}/.cargo
 	: > ${WRKDIR}/.cargo/config.toml
 	${ECHO_CMD} "[source.cargo]" >> ${WRKDIR}/.cargo/config.toml
@@ -140,7 +141,7 @@ post-configure:
 		--verbose \
 		${CARGO_UPDATE_ARGS}
 
-pre-build:
+pre-build-OTEL-on:
 	cd ${WRKSRC2} && ${LOCALBASE}/bin/cargo build \
 		--manifest-path ${CARGO_CARGOTOML} \
 		--offline \
