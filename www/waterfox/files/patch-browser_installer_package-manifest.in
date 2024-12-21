@@ -1,6 +1,6 @@
---- browser/installer/package-manifest.in.orig	2024-04-30 12:34:17 UTC
+--- browser/installer/package-manifest.in.orig	2024-11-25 17:39:16 UTC
 +++ browser/installer/package-manifest.in
-@@ -227,13 +227,13 @@
+@@ -215,13 +215,13 @@
  @RESPATH@/chrome/toolkit.manifest
  #ifdef MOZ_GTK
  @RESPATH@/browser/chrome/icons/default/default16.png
