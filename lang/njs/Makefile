@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libpcre2-8.so:devel/pcre2 \
 		libquickjs.so:lang/quickjs
 
-USES=		cpe ssl
+USES=		compiler:c11 cpe ssl
 
 CPE_VENDOR=	f5
 
@@ -27,10 +27,17 @@ CONFIGURE_ARGS=	--cc-opt="-I${LOCALBASE}/include/quickjs" \
 
 PLIST_FILES=	bin/njs
 
+.include <bsd.port.pre.mk>
+
+# Fixes build failed for Clang 19.1.3+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1500026 && ${CHOSEN_COMPILER_TYPE} == clang
+CFLAGS+=	-Wno-error=cast-function-type-mismatch
+.endif
+
 do-build:
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} njs
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/build/njs ${STAGEDIR}${PREFIX}/bin
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
