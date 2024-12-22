@@ -6,6 +6,7 @@ include/hyprutils/math/Region.hpp
 include/hyprutils/math/Vector2D.hpp
 include/hyprutils/memory/SharedPtr.hpp
 include/hyprutils/memory/WeakPtr.hpp
+include/hyprutils/os/FileDescriptor.hpp
 include/hyprutils/os/Process.hpp
 include/hyprutils/path/Path.hpp
 include/hyprutils/signal/Listener.hpp
@@ -14,6 +15,6 @@ include/hyprutils/string/String.hpp
 include/hyprutils/string/VarList.hpp
 include/hyprutils/utils/ScopeGuard.hpp
 lib/libhyprutils.so
-lib/libhyprutils.so.1
+lib/libhyprutils.so.2
 lib/libhyprutils.so.%%VERSION%%
 libdata/pkgconfig/hyprutils.pc

@@ -1,6 +1,6 @@
 PORTNAME=	hyprutils
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.2.6
+DISTVERSION=	0.3.0
 CATEGORIES=	devel
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -16,6 +16,9 @@ USE_LDCONFIG=	yes
 USE_XORG=	pixman
 GH_ACCOUNT=	hyprwm
 PLIST_SUB=	VERSION=${DISTVERSION:C/-.*//}
+
+# XXX tests
+USES+=		localbase:ldflags 
 
 post-patch:
 # Respect PREFIX for system-wide config

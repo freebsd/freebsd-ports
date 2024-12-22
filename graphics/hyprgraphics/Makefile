@@ -1,6 +1,7 @@
 PORTNAME=	hyprgraphics
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.1.1
+PORTREVISION=	1
 CATEGORIES=	graphics
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
