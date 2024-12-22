@@ -611,6 +611,7 @@
     SUBDIR += mypaint-brushes2
     SUBDIR += nanort
     SUBDIR += nanosvg
+    SUBDIR += natron
     SUBDIR += netpbm
     SUBDIR += nip2
     SUBDIR += noaa-apt
