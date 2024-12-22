@@ -1,10 +1,10 @@
 PORTNAME=	hidden-lake
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.8.1
+DISTVERSION=	1.8.2
 CATEGORIES=	security net-p2p
 
 MAINTAINER=	alster@vinterdalen.se
-COMMENT=	F2F Anonymous network based on the QB-problem
+COMMENT=	F2F Anonymous network based on the QB-problem & GP/12 protocol stack
 WWW=		https://github.com/number571/hidden-lake/
 
 LICENSE=	MIT
