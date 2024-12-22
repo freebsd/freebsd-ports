@@ -1,9 +1,9 @@
 bin/bibtexconv
 bin/bibtexconv-odt
 bin/ietf2bibtex
-share/man/man1/bibtexconv-odt.1.gz
-share/man/man1/bibtexconv.1.gz
-share/man/man1/ietf2bibtex.1.gz
+share/bash-completion/completions/bibtexconv
+share/bash-completion/completions/bibtexconv-odt
+share/bash-completion/completions/ietf2bibtex
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ExampleReferences.bib
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/Images/ListItem-Collapsed.dia
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/Images/ListItem-Collapsed.svg
@@ -19,3 +19,6 @@ share/man/man1/ietf2bibtex.1.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/text-example.export
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/web-example.export
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/yaml-example.export
+share/man/man1/bibtexconv-odt.1.gz
+share/man/man1/bibtexconv.1.gz
+share/man/man1/ietf2bibtex.1.gz
