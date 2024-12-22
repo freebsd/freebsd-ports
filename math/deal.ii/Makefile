@@ -39,6 +39,8 @@ CMAKE_TESTING_ON=	FREEBSD_ENABLE_TESTS
 LDFLAGS+=	-lomp
 LDFLAGS+=	-lexecinfo # TMP for bundled kokkos
 
+XARCH!=		uname -p
+
 OPTIONS_DEFINE=		ADOLC ARPACK GSL LAPACK MPI OPENCASCADE PETSC SCALAPACK SLEPC SUNDIALS # for all options see contrib/docker/Dockerfile, TODO some of them need to be enabled here
 OPTIONS_DEFAULT=	GSL LAPACK MPI OPENCASCADE PETSC SCALAPACK SLEPC SUNDIALS
 
@@ -79,9 +81,12 @@ OPENCASCADE_LIB_DEPENDS=	libTKernel.so:cad/opencascade
 PETSC_DESC=		Compile with Petsc (only with MPI)
 PETSC_USES=		xorg
 PETSC_USE=		XORG=x11 # PETSc adds x11 through interface libraries
-PETSC_CMAKE_BOOL=	DEAL_II_WITH_PETSC DEAL_II_WITH_64BIT_INDICES
+PETSC_CMAKE_BOOL=	DEAL_II_WITH_PETSC
 PETSC_LIB_DEPENDS=	libpetsc.so:science/PETSc
 PETSC_IMPLIES=		MPI # has to use the same MPI as PETSc uses
+.if ${XARCH:M*64*} # match index size width being set to 64 in science/PETSc and math/metis
+PETSC_CMAKE_BOOL+=	DEAL_II_WITH_64BIT_INDICES # as opposed to 32-bit indices that are default in deal.II
+.endif
 
 SCALAPACK_DESC=		Compile with ScaLAPACK (only with MPI)
 SCALAPACK_CMAKE_BOOL=	DEAL_II_WITH_SCALAPACK
