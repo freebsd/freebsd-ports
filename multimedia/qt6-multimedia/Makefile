@@ -1,6 +1,6 @@
 PORTNAME=	multimedia
 DISTVERSION=	${QT6_VERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia
 PKGNAMEPREFIX=	qt6-
 
@@ -31,13 +31,17 @@ ALSA_CMAKE_BOOL=	FEATURE_alsa
 FFMPEG_LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg
 FFMPEG_CMAKE_BOOL=	FEATURE_ffmpeg
 
-GSTREAMER_LIB_DEPENDS=	libwayland-client.so:graphics/wayland
+GSTREAMER_LIB_DEPENDS=	libdrm.so:graphics/libdrm \
+			libwayland-client.so:graphics/wayland
 # As of 2024-09-29, Mk/Uses/xorg.mk freaks out if no modules are defined
 # via USE_XORG, so FTTB, we must duplicate USES=xorg in the GSTREAMER
 # and X11 options and cannot hoist it to the main USES declaration as a
 # noop.
 GSTREAMER_USES=		gnome gstreamer:1 xorg
-GSTREAMER_USE=		GL=egl GNOME=glib20 GSTREAMER=bad,gl,good,ugly XORG=xcb
+GSTREAMER_USE=		GL=egl \
+			GNOME=glib20 \
+			GSTREAMER=bad,gl,good,ugly,${"${PORT_OPTIONS:MALSA}":?alsa:pulse} \
+			XORG=xcb
 GSTREAMER_CMAKE_BOOL=	FEATURE_gstreamer \
 			FEATURE_gstreamer_1_0 \
 			FEATURE_gstreamer_app \
