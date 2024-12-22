@@ -1,7 +1,6 @@
 PORTNAME=	rdkit
 DISTVERSIONPREFIX=	Release_
-DISTVERSION=	2024_03_6
-PORTREVISION=	3
+DISTVERSION=	2024_09_4
 CATEGORIES=	science
 MASTER_SITES=	LOCAL/yuri/:font # unstable, changing font file: https://fonts.google.com/download?family=Comic%20Neue&dummy=/:font
 DISTFILES=	ComicNeue-Regular.ttf:font
@@ -10,7 +9,8 @@ EXTRACT_ONLY=	${DISTFILES:C/:.*//:N*.ttf}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Collection of cheminformatics and machine-learning software
-WWW=		https://www.rdkit.org/
+WWW=		https://www.rdkit.org/ \
+		https://github.com/rdkit/rdkit
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/license.txt
@@ -29,6 +29,7 @@ LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 USES=		bison:build cmake:testing compiler:c++11-lang eigen:3 python
 USE_GITHUB=	yes
 GH_TUPLE=	rareylab:RingDecomposerLib:v1.1.3_rdkit:RingDecomposerLib/External/RingFamilies/RingDecomposerLib
+GH_TUPLE+=	ncbi:pubchem-align3d:daefab3:align3d/External/pubchem_shape/pubchem-align3d
 USE_LDCONFIG=	yes
 
 CMAKE_OFF=	RDK_INSTALL_INTREE RDK_USE_FLEXBISON \
