@@ -1,6 +1,6 @@
 PORTNAME=	opa
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.70.0
+DISTVERSION=	1.0.0
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -10,7 +10,7 @@ WWW=		https://github.com/open-policy-agent/opa
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:modules
+USES=		go:1.23,modules
 
 #GO_MODULE=	github.com/open-policy-agent/opa # this fails, see https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=266813
 
@@ -27,8 +27,8 @@ GH_TUPLE=	\
 		census-instrumentation:opencensus-go:v0.24.0:census_instrumentation_opencensus_go/vendor/go.opencensus.io \
 		cespare:xxhash:v1.1.0:cespare_xxhash/vendor/github.com/cespare/xxhash \
 		cespare:xxhash:v2.3.0:cespare_xxhash_v2/vendor/github.com/cespare/xxhash/v2 \
-		containerd:containerd:v1.7.23:containerd_containerd/vendor/github.com/containerd/containerd \
-		containerd:errdefs:v0.3.0:containerd_errdefs/vendor/github.com/containerd/errdefs \
+		containerd:containerd:v1.7.24:containerd_containerd/vendor/github.com/containerd/containerd \
+		containerd:errdefs:v1.0.0:containerd_errdefs/vendor/github.com/containerd/errdefs \
 		containerd:log:v0.1.0:containerd_log/vendor/github.com/containerd/log \
 		containerd:platforms:v0.2.1:containerd_platforms/vendor/github.com/containerd/platforms \
 		cpuguy83:go-md2man:v2.0.4:cpuguy83_go_md2man_v2/vendor/github.com/cpuguy83/go-md2man/v2 \
@@ -39,7 +39,7 @@ GH_TUPLE=	\
 		felixge:httpsnoop:v1.0.4:felixge_httpsnoop/vendor/github.com/felixge/httpsnoop \
 		fortytw2:leaktest:v1.3.0:fortytw2_leaktest/vendor/github.com/fortytw2/leaktest \
 		foxcpp:go-mockdns:v1.1.0:foxcpp_go_mockdns/vendor/github.com/foxcpp/go-mockdns \
-		fsnotify:fsnotify:v1.7.0:fsnotify_fsnotify/vendor/github.com/fsnotify/fsnotify \
+		fsnotify:fsnotify:v1.8.0:fsnotify_fsnotify/vendor/github.com/fsnotify/fsnotify \
 		go-check:check:10cb98267c6c:go_check_check/vendor/gopkg.in/check.v1 \
 		go-ini:ini:v1.67.0:go_ini_ini/vendor/github.com/go-ini/ini \
 		go-logr:logr:v1.4.2:go_logr_logr/vendor/github.com/go-logr/logr \
@@ -50,22 +50,23 @@ GH_TUPLE=	\
 		golang:exp:921286631fa9:golang_exp/vendor/golang.org/x/exp \
 		golang:glog:v1.2.2:golang_glog/vendor/github.com/golang/glog \
 		golang:groupcache:41bb18bfe9da:golang_groupcache/vendor/github.com/golang/groupcache \
-		golang:mod:v0.17.0:golang_mod/vendor/golang.org/x/mod \
-		golang:net:v0.30.0:golang_net/vendor/golang.org/x/net \
+		golang:mod:v0.18.0:golang_mod/vendor/golang.org/x/mod \
+		golang:net:v0.33.0:golang_net/vendor/golang.org/x/net \
 		golang:protobuf:v1.5.4:golang_protobuf/vendor/github.com/golang/protobuf \
 		golang:snappy:v0.0.4:golang_snappy/vendor/github.com/golang/snappy \
-		golang:sync:v0.8.0:golang_sync/vendor/golang.org/x/sync \
-		golang:sys:v0.26.0:golang_sys/vendor/golang.org/x/sys \
-		golang:text:v0.19.0:golang_text/vendor/golang.org/x/text \
-		golang:time:v0.7.0:golang_time/vendor/golang.org/x/time \
-		golang:tools:e35e4ccd0d2d:golang_tools/vendor/golang.org/x/tools \
+		golang:sync:v0.10.0:golang_sync/vendor/golang.org/x/sync \
+		golang:sys:v0.28.0:golang_sys/vendor/golang.org/x/sys \
+		golang:text:v0.21.0:golang_text/vendor/golang.org/x/text \
+		golang:time:v0.8.0:golang_time/vendor/golang.org/x/time \
+		golang:tools:v0.22.0:golang_tools/vendor/golang.org/x/tools \
 		google:flatbuffers:v1.12.1:google_flatbuffers/vendor/github.com/google/flatbuffers \
 		google:go-cmp:v0.6.0:google_go_cmp/vendor/github.com/google/go-cmp \
-		google:go-genproto:ddb44dafa142:google_go_genproto/vendor/google.golang.org/genproto/googleapis/api \
+		google:go-genproto:e6fa225c2576:google_go_genproto/vendor/google.golang.org/genproto/googleapis/api \
+		google:go-genproto:e6fa225c2576:google_go_genproto_1/vendor/google.golang.org/genproto/googleapis/rpc \
 		google:uuid:v1.6.0:google_uuid/vendor/github.com/google/uuid \
 		gorilla:mux:v1.8.1:gorilla_mux/vendor/github.com/gorilla/mux \
-		grpc-ecosystem:grpc-gateway:v2.20.0:grpc_ecosystem_grpc_gateway_v2/vendor/github.com/grpc-ecosystem/grpc-gateway/v2 \
-		grpc:grpc-go:v1.67.1:grpc_grpc_go/vendor/google.golang.org/grpc \
+		grpc-ecosystem:grpc-gateway:v2.24.0:grpc_ecosystem_grpc_gateway_v2/vendor/github.com/grpc-ecosystem/grpc-gateway/v2 \
+		grpc:grpc-go:v1.69.2:grpc_grpc_go/vendor/google.golang.org/grpc \
 		hashicorp:hcl:v1.0.0:hashicorp_hcl/vendor/github.com/hashicorp/hcl \
 		inconshreveable:mousetrap:v1.1.0:inconshreveable_mousetrap/vendor/github.com/inconshreveable/mousetrap \
 		klauspost:compress:v1.17.9:klauspost_compress/vendor/github.com/klauspost/compress \
@@ -81,8 +82,9 @@ GH_TUPLE=	\
 		munnerz:goautoneg:a7dc8b61c822:munnerz_goautoneg/vendor/github.com/munnerz/goautoneg \
 		olekukonko:tablewriter:v0.0.5:olekukonko_tablewriter/vendor/github.com/olekukonko/tablewriter \
 		open-telemetry:opentelemetry-go-contrib:v1.31.0:open_telemetry_opentelemetry_go_contrib/vendor/go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp \
-		open-telemetry:opentelemetry-go:v1.28.0:open_telemetry_opentelemetry_go/vendor/go.opentelemetry.io/otel \
-		open-telemetry:opentelemetry-proto-go:v1.3.1:open_telemetry_opentelemetry_proto_go/vendor/go.opentelemetry.io/proto/otlp \
+		open-telemetry:opentelemetry-go-instrumentation:sdk/v1.1.0:open_telemetry_opentelemetry_go_instrumentation/vendor/go.opentelemetry.io/auto/sdk \
+		open-telemetry:opentelemetry-go:v1.33.0:open_telemetry_opentelemetry_go/vendor/go.opentelemetry.io/otel \
+		open-telemetry:opentelemetry-proto-go:v1.4.0:open_telemetry_opentelemetry_proto_go/vendor/go.opentelemetry.io/proto/otlp \
 		opencontainers:go-digest:v1.0.0:opencontainers_go_digest/vendor/github.com/opencontainers/go-digest \
 		opencontainers:image-spec:v1.1.0:opencontainers_image_spec/vendor/github.com/opencontainers/image-spec \
 		oras-project:oras-go:v2.3.1:oras_project_oras_go/vendor/oras.land/oras-go/v2 \
@@ -93,9 +95,9 @@ GH_TUPLE=	\
 		prometheus:client_model:v0.6.1:prometheus_client_model/vendor/github.com/prometheus/client_model \
 		prometheus:common:v0.55.0:prometheus_common/vendor/github.com/prometheus/common \
 		prometheus:procfs:v0.15.1:prometheus_procfs/vendor/github.com/prometheus/procfs \
-		protocolbuffers:protobuf-go:v1.34.2:protocolbuffers_protobuf_go/vendor/google.golang.org/protobuf \
+		protocolbuffers:protobuf-go:v1.35.2:protocolbuffers_protobuf_go/vendor/google.golang.org/protobuf \
 		rcrowley:go-metrics:10cdbea86bc0:rcrowley_go_metrics/vendor/github.com/rcrowley/go-metrics \
-		rogpeppe:go-internal:v1.12.0:rogpeppe_go_internal/vendor/github.com/rogpeppe/go-internal \
+		rogpeppe:go-internal:v1.13.1:rogpeppe_go_internal/vendor/github.com/rogpeppe/go-internal \
 		russross:blackfriday:v2.1.0:russross_blackfriday_v2/vendor/github.com/russross/blackfriday/v2 \
 		sagikazarmark:locafero:v0.4.0:sagikazarmark_locafero/vendor/github.com/sagikazarmark/locafero \
 		sagikazarmark:slog-shim:v0.1.0:sagikazarmark_slog_shim/vendor/github.com/sagikazarmark/slog-shim \
