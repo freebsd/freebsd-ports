@@ -54,7 +54,7 @@ _GST1_SOVERSION=	0.${_GST1_VERSION:R:E}${${_GST1_VERSION:E} > 9:?:0}${_GST1_VERS
 
 _GST1_CATEGORIES=	audio comms devel ftp graphics multimedia net security \
 			sysutils textproc www x11 x11-toolkits
-_GST1_PLUGINS_audio= 	a52dec amrnb amrwbdec bs2b cdparanoia chromaprint faac \
+_GST1_PLUGINS_audio= 	a52dec alsa amrnb amrwbdec bs2b cdparanoia chromaprint faac \
 			faad flac flite gme gsm jack ladspa lame lv2 modplug \
 			mpg123 ogg openmpt opus pulse shout2 sidplay \
 			sndfile sndio soundtouch speex taglib twolame vorbis \
@@ -120,6 +120,9 @@ gst-libgstreamer_PORT=	multimedia/gstreamer${_GST_VER}
 
 gst-a52dec_PORT=	audio/gstreamer${_GST_VER}-plugins-a52dec
 gst-a52dec_IMPL=	ugly
+
+gst-alsa_PORT=		audio/gstreamer${_GST_VER}-plugins-alsa
+gst-alsa_IMPL=		#
 
 gst-amrnb_PORT=		audio/gstreamer${_GST_VER}-plugins-amrnb
 gst-amrnb_IMPL=		ugly
