@@ -1,7 +1,9 @@
 PORTNAME=	rustpython
-DISTVERSION=	0.3.1
-PORTREVISION=	6
+DISTVERSION=	0.4.0
 CATEGORIES=	lang
+
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES=	94582680b4aede97f7751f4916321b11fe7e6591.patch:-p1 # https://github.com/RustPython/RustPython/pull/5430
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Python interpreter written in Rust
@@ -74,7 +76,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		crc32fast-1.3.2 \
 		criterion-0.3.6 \
 		criterion-plot-0.4.5 \
-		crossbeam-channel-0.5.6 \
+		crossbeam-channel-0.5.13 \
 		crossbeam-deque-0.8.2 \
 		crossbeam-epoch-0.9.13 \
 		crossbeam-utils-0.8.19 \
@@ -135,6 +137,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		itertools-0.11.0 \
 		itoa-1.0.5 \
 		js-sys-0.3.61 \
+		junction-1.0.0 \
 		keccak-0.1.3 \
 		lalrpop-util-0.20.0 \
 		lazy_static-0.2.11 \
@@ -145,7 +148,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		libc-0.2.153 \
 		libffi-3.1.0 \
 		libffi-sys-2.1.0 \
-		libsqlite3-sys-0.25.2 \
+		libsqlite3-sys-0.28.0 \
 		libz-sys-1.1.8 \
 		link-cplusplus-1.0.8 \
 		linked-hash-map-0.5.6 \
@@ -183,11 +186,11 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		num_enum_derive-0.7.2 \
 		once_cell-1.19.0 \
 		oorandom-11.1.3 \
-		openssl-0.10.62 \
+		openssl-0.10.66 \
 		openssl-macros-0.1.0 \
 		openssl-probe-0.1.5 \
 		openssl-src-300.2.1+3.2.0 \
-		openssl-sys-0.9.98 \
+		openssl-sys-0.9.103 \
 		optional-0.5.0 \
 		page_size-0.4.2 \
 		parking_lot-0.12.1 \
@@ -232,7 +235,13 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		result-like-derive-0.4.6 \
 		rustc-hash-1.1.0 \
 		rustc_version-0.4.0 \
-		rustix-0.38.28 \
+		rustix-0.38.32 \
+		rustpython-ast-0.4.0 \
+		rustpython-format-0.4.0 \
+		rustpython-literal-0.4.0 \
+		rustpython-parser-0.4.0 \
+		rustpython-parser-core-0.4.0 \
+		rustpython-parser-vendored-0.4.0 \
 		rustversion-1.0.11 \
 		rustyline-14.0.0 \
 		ryu-1.0.15 \
@@ -253,7 +262,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		siphasher-0.3.10 \
 		slice-group-by-0.3.0 \
 		smallvec-1.10.0 \
-		socket2-0.5.5 \
+		socket2-0.5.6 \
 		static_assertions-1.1.0 \
 		strsim-0.8.0 \
 		strum-0.24.1 \
@@ -273,8 +282,6 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		thiserror-impl-1.0.38 \
 		thread-id-3.3.0 \
 		thread_local-1.1.7 \
-		time-0.3.20 \
-		time-core-0.1.0 \
 		timsort-0.1.2 \
 		tiny-keccak-2.0.2 \
 		tinytemplate-1.2.1 \
@@ -303,8 +310,8 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		unicode-normalization-0.1.22 \
 		unicode-segmentation-1.10.1 \
 		unicode-width-0.1.10 \
-		unicode_names2-1.1.0 \
-		unicode_names2_generator-1.1.0 \
+		unicode_names2-1.2.2 \
+		unicode_names2_generator-1.2.2 \
 		unindent-0.2.3 \
 		utf8parse-0.2.0 \
 		uuid-1.3.0 \
@@ -315,12 +322,12 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		volatile-0.3.0 \
 		walkdir-2.3.2 \
 		wasi-0.11.0+wasi-snapshot-preview1 \
-		wasm-bindgen-0.2.84 \
-		wasm-bindgen-backend-0.2.84 \
+		wasm-bindgen-0.2.92 \
+		wasm-bindgen-backend-0.2.92 \
 		wasm-bindgen-futures-0.4.34 \
-		wasm-bindgen-macro-0.2.84 \
-		wasm-bindgen-macro-support-0.2.84 \
-		wasm-bindgen-shared-0.2.84 \
+		wasm-bindgen-macro-0.2.92 \
+		wasm-bindgen-macro-support-0.2.92 \
+		wasm-bindgen-shared-0.2.92 \
 		web-sys-0.3.61 \
 		which-4.4.0 \
 		widestring-1.1.0 \
@@ -368,8 +375,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		xml-rs-0.8.14 \
 		zerocopy-0.7.32 \
 		zerocopy-derive-0.7.32 \
-		rustpython-doc@git+https://github.com/RustPython/__doc__?tag=0.3.0\#8b62ce5d796d68a091969c9fa5406276cb483f79 \
-		rustpython-ast,rustpython-format,rustpython-literal,rustpython-parser,rustpython-parser-core,rustpython-parser-vendored@git+https://github.com/RustPython/Parser.git?rev=a95045bc627b2fbf84caf4f010e521846be7b37f\#a95045bc627b2fbf84caf4f010e521846be7b37f
+		rustpython-doc@git+https://github.com/RustPython/__doc__?tag=0.3.0\#8b62ce5d796d68a091969c9fa5406276cb483f79
 
 OPENSSLINC=	/usr/include
 OPENSSLLIB=	/usr/lib
