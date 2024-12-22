@@ -181,6 +181,7 @@ bin/exiftool
 %%SITE_PERL%%/Image/ExifTool/Photoshop.pm
 %%SITE_PERL%%/Image/ExifTool/PostScript.pm
 %%SITE_PERL%%/Image/ExifTool/PrintIM.pm
+%%SITE_PERL%%/Image/ExifTool/Protobuf.pm
 %%SITE_PERL%%/Image/ExifTool/Qualcomm.pm
 %%SITE_PERL%%/Image/ExifTool/QuickTime.pm
 %%SITE_PERL%%/Image/ExifTool/QuickTimeStream.pl
@@ -381,6 +382,7 @@ bin/exiftool
 %%PERL5_MAN3%%/Image::ExifTool::Photoshop.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::PostScript.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::PrintIM.3.gz
+%%PERL5_MAN3%%/Image::ExifTool::Protobuf.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::Qualcomm.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::QuickTime.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::QuickTimeStream.3.gz
