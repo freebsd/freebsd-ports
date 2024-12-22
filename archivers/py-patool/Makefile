@@ -14,7 +14,7 @@ GH_ACCOUNT=	wummel
 GH_PROJECT=	${PORTNAME}
 
 USES=		python
-USE_PYTHON=	autoplist pep517
+USE_PYTHON=	autoplist distutils
 
 NO_ARCH=	yes
 
