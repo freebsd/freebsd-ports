@@ -79,7 +79,6 @@ share/man/man8/ntopng.8.gz
 %%DATADIR%%/httpdocs/misc/lists/builtin/nocoin.list
 %%DATADIR%%/httpdocs/misc/lists/builtin/snort.list
 %%DATADIR%%/httpdocs/misc/lists/builtin/sslbl_c2.list
-%%DATADIR%%/httpdocs/misc/lists/builtin/sslbl_ja3.list
 %%DATADIR%%/httpdocs/misc/lists/builtin/stratosphere.list
 %%DATADIR%%/httpdocs/misc/lists/builtin/threatfox.list
 %%DATADIR%%/httpdocs/misc/lists/custom/README.txt
@@ -318,9 +317,9 @@ share/man/man8/ntopng.8.gz
 %%DATADIR%%/scripts/callbacks/hourly-delayed/interface/checks_cleanup.lua
 %%DATADIR%%/scripts/callbacks/hourly-delayed/interface/interface_checks.lua
 %%DATADIR%%/scripts/callbacks/hourly-delayed/interface/local_network_checks.lua
-%%DATADIR%%/scripts/callbacks/hourly-delayed/system/active_monitoring.lua
 %%DATADIR%%/scripts/callbacks/hourly-delayed/system/connectivity.lua
 %%DATADIR%%/scripts/callbacks/hourly-delayed/system/system_checks.lua
+%%DATADIR%%/scripts/callbacks/hourly/system/active_monitoring.lua
 %%DATADIR%%/scripts/callbacks/hourly/system/disk_monitor.lua
 %%DATADIR%%/scripts/callbacks/minute-delayed/interface/interface_checks.lua
 %%DATADIR%%/scripts/callbacks/minute-delayed/interface/local_network_checks.lua
@@ -358,6 +357,7 @@ share/man/man8/ntopng.8.gz
 %%DATADIR%%/scripts/historical/analysis/protos.json
 %%DATADIR%%/scripts/historical/analysis/score.json
 %%DATADIR%%/scripts/historical/analysis/sites.json
+%%DATADIR%%/scripts/historical/analysis/thpt_chart.json
 %%DATADIR%%/scripts/historical/tables/README
 %%DATADIR%%/scripts/historical/tables/alerted_domains.json
 %%DATADIR%%/scripts/historical/tables/clients.json
@@ -612,7 +612,7 @@ share/man/man8/ntopng.8.gz
 %%DATADIR%%/scripts/lua/modules/alert_definitions/flow/alert_ndpi_http_suspicious_url.lua
 %%DATADIR%%/scripts/lua/modules/alert_definitions/flow/alert_ndpi_http_suspicious_user_agent.lua
 %%DATADIR%%/scripts/lua/modules/alert_definitions/flow/alert_ndpi_malformed_packet.lua
-%%DATADIR%%/scripts/lua/modules/alert_definitions/flow/alert_ndpi_malicious_ja3.lua
+%%DATADIR%%/scripts/lua/modules/alert_definitions/flow/alert_ndpi_malicious_fingerprint.lua
 %%DATADIR%%/scripts/lua/modules/alert_definitions/flow/alert_ndpi_malicious_sha1_certificate.lua
 %%DATADIR%%/scripts/lua/modules/alert_definitions/flow/alert_ndpi_malware_host_contacted.lua
 %%DATADIR%%/scripts/lua/modules/alert_definitions/flow/alert_ndpi_numeric_ip_host.lua
@@ -817,7 +817,7 @@ share/man/man8/ntopng.8.gz
 %%DATADIR%%/scripts/lua/modules/check_definitions/flow/ndpi_http_suspicious_user_agent.lua
 %%DATADIR%%/scripts/lua/modules/check_definitions/flow/ndpi_invalid_characters.lua
 %%DATADIR%%/scripts/lua/modules/check_definitions/flow/ndpi_malformed_packet.lua
-%%DATADIR%%/scripts/lua/modules/check_definitions/flow/ndpi_malicious_ja3.lua
+%%DATADIR%%/scripts/lua/modules/check_definitions/flow/ndpi_malicious_fingerprint.lua
 %%DATADIR%%/scripts/lua/modules/check_definitions/flow/ndpi_malicious_sha1_certificate.lua
 %%DATADIR%%/scripts/lua/modules/check_definitions/flow/ndpi_malware_host_contacted.lua
 %%DATADIR%%/scripts/lua/modules/check_definitions/flow/ndpi_numeric_ip_host.lua
