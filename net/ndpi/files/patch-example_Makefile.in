@@ -1,4 +1,4 @@
---- example/Makefile.in.orig	2024-08-07 09:36:14 UTC
+--- example/Makefile.in.orig	2024-12-17 13:59:14 UTC
 +++ example/Makefile.in
 @@ -1,57 +1,28 @@ CXX=@CXX@
  AR=@AR@
@@ -18,8 +18,8 @@
 -ifneq ($(OS),Windows_NT)
 -CFLAGS+=-fPIC -DPIC
 -endif
--CFLAGS+=-I$(SRCHOME)/include @NDPI_CFLAGS@ @PCAP_INC@ @GPROF_CFLAGS@
-+CFLAGS+=-fPIC -DPIC -I$(SRCHOME)/include @NDPI_CFLAGS@ @PCAP_INC@ @GPROF_CFLAGS@
+-CFLAGS+=-I$(SRCHOME)/include @NDPI_CFLAGS@ @PCAP_INC@ @GPROF_CFLAGS@ @CUSTOM_NDPI@
++CFLAGS+=-fPIC -DPIC -I$(SRCHOME)/include @NDPI_CFLAGS@ @PCAP_INC@ @GPROF_CFLAGS@ @CUSTOM_NDPI@
  LDFLAGS+=@NDPI_LDFLAGS@
  LIBNDPI=$(SRCHOME)/lib/libndpi.a
  LIBS=$(LIBNDPI) @PCAP_LIB@ @ADDITIONAL_LIBS@ @LIBS@ @GPROF_LIBS@
@@ -61,7 +61,7 @@
  
  libndpiReader.a: $(COMMON_SOURCES:%.c=%.o) $(LIBNDPI)
  	$(AR) rsv libndpiReader.a $(COMMON_SOURCES:%.c=%.o)
-@@ -67,10 +38,10 @@ install: ndpiReader$(EXE_SUFFIX)
+@@ -67,10 +38,11 @@ install: ndpiReader$(EXE_SUFFIX)
  
  install: ndpiReader$(EXE_SUFFIX)
  	mkdir -p $(DESTDIR)$(PREFIX)/bin/
@@ -70,8 +70,9 @@
  	cp ndpiReader$(EXE_SUFFIX) $(DESTDIR)$(PREFIX)/bin/
 -	cp protos.txt $(DESTDIR)$(PREFIX)/share/ndpi/ndpiProtos.txt
 -	cp mining_hosts.txt $(DESTDIR)$(PREFIX)/share/ndpi/ndpiCustomCategory.txt
-+	cp protos.txt $(DESTDIR)$(PREFIX)/$(EXAMPLESDIR)//ndpiProtos.txt
-+	cp mining_hosts.txt $(DESTDIR)$(PREFIX)/$(EXAMPLESDIR)//ndpiCustomCategory.txt
++	cp protos.txt $(DESTDIR)$(PREFIX)/$(EXAMPLESDIR)/ndpiProtos.txt
++	cp mining_hosts.txt $(DESTDIR)$(PREFIX)/$(EXAMPLESDIR)/ndpiCustomCategory.txt
++
  	[ -f ndpiSimpleIntegration$(EXE_SUFFIX) ] && cp ndpiSimpleIntegration$(EXE_SUFFIX) $(DESTDIR)$(PREFIX)/bin/ndpiSimpleIntegration$(EXE_SUFFIX) || true
  	[ -f build/app/ndpiReader.dpdk ] && cp build/app/ndpiReader.dpdk $(DESTDIR)$(PREFIX)/bin/ || true
  	[ -f ndpiReader.dpdk ] && cp ndpiReader.dpdk $(DESTDIR)$(PREFIX)/bin/ || true
