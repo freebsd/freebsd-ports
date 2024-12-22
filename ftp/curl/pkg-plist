@@ -18,6 +18,7 @@ lib/libcurl.so.4
 lib/libcurl.so.4.8.0
 libdata/pkgconfig/libcurl.pc
 share/aclocal/libcurl.m4
+%%PORTDOCS%%%%DOCSDIR%%/ALTSVC.md
 %%PORTDOCS%%%%DOCSDIR%%/BINDINGS.md
 %%PORTDOCS%%%%DOCSDIR%%/BUG-BOUNTY.md
 %%PORTDOCS%%%%DOCSDIR%%/BUGS.md
@@ -38,6 +39,7 @@ share/aclocal/libcurl.m4
 %%PORTDOCS%%%%DOCSDIR%%/GOVERNANCE.md
 %%PORTDOCS%%%%DOCSDIR%%/HELP-US.md
 %%PORTDOCS%%%%DOCSDIR%%/HISTORY.md
+%%PORTDOCS%%%%DOCSDIR%%/HSTS.md
 %%PORTDOCS%%%%DOCSDIR%%/HTTP-COOKIES.md
 %%PORTDOCS%%%%DOCSDIR%%/HTTP3.md
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL
