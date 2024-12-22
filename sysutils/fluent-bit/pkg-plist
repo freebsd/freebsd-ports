@@ -3,6 +3,7 @@ bin/fluent-bit
 @sample %%ETCDIR%%/parsers.conf.sample
 %%ETCDIR%%/plugins.conf
 include/fluent-bit.h
+include/fluent-bit/calyptia_constants.h
 include/fluent-bit/config_format/flb_cf.h
 include/fluent-bit/config_format/flb_cf_fluentbit.h
 include/fluent-bit/config_format/flb_cf_yaml.h
@@ -15,6 +16,8 @@ include/fluent-bit/flb_bits.h
 include/fluent-bit/flb_bucket_queue.h
 include/fluent-bit/flb_byteswap.h
 include/fluent-bit/flb_callback.h
+include/fluent-bit/flb_cfl_ra_key.h
+include/fluent-bit/flb_cfl_record_accessor.h
 include/fluent-bit/flb_chunk_trace.h
 include/fluent-bit/flb_compat.h
 include/fluent-bit/flb_compression.h
