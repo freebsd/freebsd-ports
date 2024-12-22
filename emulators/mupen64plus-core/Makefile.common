@@ -1,6 +1,7 @@
 USES+=			dos2unix
 DOS2UNIX_GLOB=		*.c *.cpp *.h *.H *.ini *.conf
 
+MAKE_ENV+=		PIC=1
 PATCHDIR=		${.CURDIR}/files
 BUILD_WRKSRC?=		${WRKSRC}/projects/unix
 
