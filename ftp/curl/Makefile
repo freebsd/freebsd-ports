@@ -4,9 +4,6 @@ CATEGORIES=	ftp net www
 MASTER_SITES=	https://curl.se/download/ \
 		https://github.com/curl/curl/releases/download/curl-${PORTVERSION:S|.|_|g}/
 
-PATCH_SITES=	https://github.com/curl/curl/commit/
-PATCHFILES=	ff5091aa9f73802e894b1cbdf24ab84e103200e2.patch:-p1
-
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Command line tool and library for transferring data with URLs
 WWW=		https://curl.se/ \
