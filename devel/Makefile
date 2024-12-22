@@ -8293,6 +8293,7 @@
     SUBDIR += umlgraph
     SUBDIR += undead
     SUBDIR += unibilium
+    SUBDIR += unit-otel
     SUBDIR += universal-ctags
     SUBDIR += unordered-dense
     SUBDIR += upnp
