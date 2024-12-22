@@ -1,6 +1,6 @@
---- sandbox/policy/openbsd/sandbox_openbsd.h.orig	2022-12-06 08:09:13 UTC
+--- sandbox/policy/openbsd/sandbox_openbsd.h.orig	2024-12-22 12:24:29 UTC
 +++ sandbox/policy/openbsd/sandbox_openbsd.h
-@@ -0,0 +1,282 @@
+@@ -0,0 +1,280 @@
 +// Copyright (c) 2012 The Chromium Authors. All rights reserved.
 +// Use of this source code is governed by a BSD-style license that can be
 +// found in the LICENSE file.
@@ -168,8 +168,6 @@
 +  // this returns what will actually happen once InitializeSandbox()
 +  // is called from inside these processes.
 +  int GetStatus();
-+
-+  static std::string GetSandboxTypeInEnglish(sandbox::mojom::Sandbox sandbox_type);
 +
 +  // Returns true if the current process is single-threaded or if the number
 +  // of threads cannot be determined.

@@ -1,4 +1,4 @@
---- chrome/browser/chrome_browser_main_linux.cc.orig	2024-11-04 08:56:03 UTC
+--- chrome/browser/chrome_browser_main_linux.cc.orig	2024-12-22 12:24:29 UTC
 +++ chrome/browser/chrome_browser_main_linux.cc
 @@ -25,7 +25,7 @@
  #include "device/bluetooth/dbus/bluez_dbus_thread_manager.h"
@@ -9,7 +9,7 @@
  #include "ui/ozone/public/ozone_platform.h"
  #endif
  
-@@ -84,7 +84,9 @@ void ChromeBrowserMainPartsLinux::PostCreateMainMessag
+@@ -72,7 +72,9 @@ void ChromeBrowserMainPartsLinux::PostCreateMainMessag
  #endif  // BUILDFLAG(IS_CHROMEOS)
  
  #if !BUILDFLAG(IS_CHROMEOS)
@@ -19,7 +19,7 @@
  
    // Set up crypt config. This needs to be done before anything starts the
    // network service, as the raw encryption key needs to be shared with the
-@@ -110,7 +112,7 @@ void ChromeBrowserMainPartsLinux::PostCreateMainMessag
+@@ -98,7 +100,7 @@ void ChromeBrowserMainPartsLinux::PostCreateMainMessag
    ChromeBrowserMainPartsPosix::PostCreateMainMessageLoop();
  }
  
@@ -28,8 +28,8 @@
  void ChromeBrowserMainPartsLinux::PostMainMessageLoopRun() {
    ChromeBrowserMainPartsPosix::PostMainMessageLoopRun();
    ui::OzonePlatform::GetInstance()->PostMainMessageLoopRun();
-@@ -170,7 +172,7 @@ void ChromeBrowserMainPartsLinux::CheckIfSanitizeCompl
- #endif  // BUILDFLAG(IS_CHROMEOS_ASH)
+@@ -136,7 +138,7 @@ void ChromeBrowserMainPartsLinux::PostBrowserStart() {
+ #endif  // (defined(USE_DBUS) && !BUILDFLAG(IS_CHROMEOS))
  
  void ChromeBrowserMainPartsLinux::PostDestroyThreads() {
 -#if BUILDFLAG(IS_CHROMEOS)

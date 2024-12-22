@@ -1,6 +1,6 @@
---- chrome/browser/webauthn/chrome_authenticator_request_delegate.cc.orig	2024-11-04 08:56:03 UTC
+--- chrome/browser/webauthn/chrome_authenticator_request_delegate.cc.orig	2024-12-22 12:24:29 UTC
 +++ chrome/browser/webauthn/chrome_authenticator_request_delegate.cc
-@@ -1143,7 +1143,7 @@ void ChromeAuthenticatorRequestDelegate::ConfigureDisc
+@@ -1166,7 +1166,7 @@ void ChromeAuthenticatorRequestDelegate::ConfigureDisc
      g_observer->ConfiguringCable(request_type);
    }
  

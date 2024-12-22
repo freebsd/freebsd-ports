@@ -1,4 +1,4 @@
---- chrome/browser/browser_features.cc.orig	2024-11-04 08:56:03 UTC
+--- chrome/browser/browser_features.cc.orig	2024-12-22 12:24:29 UTC
 +++ chrome/browser/browser_features.cc
 @@ -71,7 +71,7 @@ BASE_FEATURE(kClosedTabCache,
               "ClosedTabCache",
@@ -18,7 +18,7 @@
               base::FEATURE_ENABLED_BY_DEFAULT);
  #else
               base::FEATURE_DISABLED_BY_DEFAULT);
-@@ -347,7 +347,7 @@ BASE_FEATURE(kSandboxExternalProtocolBlockedWarning,
+@@ -268,7 +268,7 @@ BASE_FEATURE(kSandboxExternalProtocolBlockedWarning,
               "SandboxExternalProtocolBlockedWarning",
               base::FEATURE_ENABLED_BY_DEFAULT);
  
@@ -27,12 +27,3 @@
  // If true, encrypt new data with the key provided by SecretPortalKeyProvider.
  // Otherwise, it will only decrypt existing data.
  BASE_FEATURE(kSecretPortalKeyProviderUseForEncryption,
-@@ -360,7 +360,7 @@ BASE_FEATURE(kSecretPortalKeyProviderUseForEncryption,
- BASE_FEATURE(kSupportSearchSuggestionForPrerender2,
-              "SupportSearchSuggestionForPrerender2",
- #if BUILDFLAG(IS_CHROMEOS_ASH) || BUILDFLAG(IS_CHROMEOS_LACROS) || \
--    BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN)
-+    BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_BSD)
-              base::FEATURE_ENABLED_BY_DEFAULT);
- #else
-              base::FEATURE_DISABLED_BY_DEFAULT);

@@ -1,6 +1,6 @@
---- chrome/browser/sessions/session_restore.cc.orig	2024-11-04 08:56:03 UTC
+--- chrome/browser/sessions/session_restore.cc.orig	2024-12-22 12:24:29 UTC
 +++ chrome/browser/sessions/session_restore.cc
-@@ -103,7 +103,7 @@
+@@ -102,7 +102,7 @@
  #include "chrome/browser/web_applications/web_app_registrar.h"
  #endif  // BUILDFLAG(IS_CHROMEOS)
  
@@ -9,7 +9,7 @@
  #include "chrome/browser/ui/webui/whats_new/whats_new_fetcher.h"
  #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
  
-@@ -1081,7 +1081,7 @@ class SessionRestoreImpl : public BrowserListObserver 
+@@ -1093,7 +1093,7 @@ class SessionRestoreImpl : public BrowserListObserver 
      bool is_first_tab = true;
      for (const auto& startup_tab : startup_tabs) {
        const GURL& url = startup_tab.url;

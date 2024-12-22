@@ -1,6 +1,6 @@
---- content/browser/child_process_launcher_helper.h.orig	2024-11-04 08:56:03 UTC
+--- content/browser/child_process_launcher_helper.h.orig	2024-12-22 12:24:29 UTC
 +++ content/browser/child_process_launcher_helper.h
-@@ -293,7 +293,7 @@ class ChildProcessLauncherHelper
+@@ -304,7 +304,7 @@ class ChildProcessLauncherHelper
    std::optional<base::ProcessId> process_id_ = std::nullopt;
  #endif  // BUILDFLAG(IS_CHROMEOS)
  

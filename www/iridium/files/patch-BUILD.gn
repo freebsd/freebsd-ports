@@ -1,4 +1,4 @@
---- BUILD.gn.orig	2024-11-04 08:56:03 UTC
+--- BUILD.gn.orig	2024-12-22 12:24:29 UTC
 +++ BUILD.gn
 @@ -66,7 +66,7 @@ declare_args() {
    root_extra_deps = []
@@ -17,7 +17,7 @@
        "//net:net_unittests",
        "//sandbox:sandbox_unittests",
        "//services:services_unittests",
-@@ -437,7 +436,7 @@ group("gn_all") {
+@@ -444,7 +443,7 @@ group("gn_all") {
        }
      }
  
@@ -26,7 +26,7 @@
        deps += [
          "//third_party/breakpad:breakpad_unittests",
          "//third_party/breakpad:core-2-minidump",
-@@ -628,6 +627,15 @@ group("gn_all") {
+@@ -634,6 +633,15 @@ group("gn_all") {
        }
      }
  
@@ -42,7 +42,7 @@
      if (is_mac) {
        deps += [
          "//third_party/breakpad:dump_syms($host_system_allocator_toolchain)",
-@@ -676,7 +684,7 @@ group("gn_all") {
+@@ -682,7 +690,7 @@ group("gn_all") {
        }
      }
  
@@ -51,7 +51,7 @@
        # The official builders use this binary from the default toolchain's
        # output directory after building in order to upload the symbols of that
        # binary. They build the binary like `ninja symupload` which requires the
-@@ -1158,7 +1166,7 @@ if (use_blink && !is_cronet_build) {
+@@ -1168,7 +1176,7 @@ if (use_blink && !is_cronet_build) {
      ]
    }
  
@@ -60,7 +60,7 @@
      script_test("chrome_wpt_tests") {
        script = "//third_party/blink/tools/run_wpt_tests.py"
        args = _common_web_test_options + [ "--product=chrome" ]
-@@ -1251,7 +1259,7 @@ if (use_blink && !is_cronet_build) {
+@@ -1261,7 +1269,7 @@ if (use_blink && !is_cronet_build) {
        data_deps += [ "//content/web_test:web_test_common_mojom_js_data_deps" ]
      }
  
@@ -69,7 +69,7 @@
        # Using the default toolchain for this tool, as it's run during tests not
        # during the build. This places a symlink in the root_build_dir for scrips
        # to use.
-@@ -1265,7 +1273,7 @@ if (use_blink && !is_cronet_build) {
+@@ -1275,7 +1283,7 @@ if (use_blink && !is_cronet_build) {
        data_deps += [ "//third_party/breakpad:dump_syms" ]
      }
  
@@ -78,7 +78,7 @@
        # Using the default toolchain for this tool, as it's run during tests not
        # during the build. This places a symlink in the root_build_dir for scrips
        # to use.
-@@ -1729,7 +1737,7 @@ group("chromium_builder_perf") {
+@@ -1739,7 +1747,7 @@ group("chromium_builder_perf") {
        data_deps += [ "//chrome/test:performance_browser_tests" ]
      }
  

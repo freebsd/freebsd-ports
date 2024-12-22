@@ -1,6 +1,6 @@
---- ui/views/widget/root_view.cc.orig	2024-11-04 08:56:03 UTC
+--- ui/views/widget/root_view.cc.orig	2024-12-22 12:24:29 UTC
 +++ ui/views/widget/root_view.cc
-@@ -139,7 +139,7 @@ class AnnounceTextView : public View {
+@@ -110,7 +110,7 @@ class AnnounceTextView : public View {
  #if BUILDFLAG(IS_CHROMEOS)
      // On ChromeOS, kAlert role can invoke an unnecessary event on reparenting.
      GetViewAccessibility().SetRole(ax::mojom::Role::kStaticText);

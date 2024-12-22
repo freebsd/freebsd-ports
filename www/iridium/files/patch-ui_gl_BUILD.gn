@@ -1,4 +1,4 @@
---- ui/gl/BUILD.gn.orig	2024-11-04 08:56:03 UTC
+--- ui/gl/BUILD.gn.orig	2024-12-22 12:24:29 UTC
 +++ ui/gl/BUILD.gn
 @@ -168,7 +168,6 @@ component("gl") {
    public_deps = [
@@ -16,7 +16,7 @@
      ]
      if (enable_swiftshader) {
        data_deps += [
-@@ -538,7 +536,6 @@ test("gl_unittests") {
+@@ -541,7 +539,6 @@ test("gl_unittests") {
  
    data_deps = [
      "//testing/buildbot/filters:gl_unittests_filters",
