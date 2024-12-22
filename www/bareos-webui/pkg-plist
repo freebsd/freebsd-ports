@@ -375,6 +375,7 @@
 %%WWWDIR%%/vendor/Bareos/library/Bareos/BSock/BareosBSockInterface.php
 %%WWWDIR%%/vendor/Bareos/library/Bareos/BSock/BareosBSockServiceFactory.php
 %%WWWDIR%%/vendor/Bareos/library/Bareos/BSock/BareosBase64.php
+%%WWWDIR%%/vendor/Bareos/library/Bareos/Util.php
 %%WWWDIR%%/vendor/README.md
 %%WWWDIR%%/vendor/autoload.php
 %%WWWDIR%%/vendor/composer/ClassLoader.php

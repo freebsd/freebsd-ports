@@ -1,6 +1,6 @@
 PORTNAME=	bareos
 DISTVERSIONPREFIX=	Release/
-DISTVERSION=	23.1.0
+DISTVERSION=	23.1.1
 PORTREVISION?=	0
 CATEGORIES?=	sysutils
 PKGNAMEPREFIX?=	#
@@ -154,7 +154,8 @@ GFAPI_LIB_DEPENDS=	libglusterfs.so:net/glusterfs
 # Client only or full server version
 .if defined(WITH_CLIENT_ONLY)
 CONFFILES=	fd
-CMAKE_ARGS+=	-Dclient-only=ON
+CMAKE_ARGS+=	-Dclient-only=ON \
+		-DENABLE_WEBUI=OFF
 
 PKGDEINSTALL=	${FILESDIR}/pkg-deinstall.client
 PKGINSTALL=	${FILESDIR}/pkg-install.client
@@ -191,6 +192,7 @@ post-patch:
 .endif
 .if ${PKGNAMESUFFIX} == "-client"
 	@${REINPLACE_CMD} -e 's|-Werror -Wall|-Wall|g' ${PATCH_WRKSRC}/core/CMakeLists.txt
+	@${REINPLACE_CMD} -e 's|enable_testing()||g' ${WRKSRC}/CMakeLists.txt
 .endif
 
 post-patch-PYTHON-off:
