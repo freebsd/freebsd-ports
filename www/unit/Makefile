@@ -1,5 +1,6 @@
 PORTNAME=	unit
 PORTVERSION=	${UNIT_VERSION}
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES?=	https://unit.nginx.org/download/
 DISTFILES?=	${PORTNAME}-${PORTVERSION}.tar.gz
@@ -95,24 +96,9 @@ CONFIGURE_ARGS+=--njs \
 .endif
 
 .if ${PORT_OPTIONS:MOTEL}
-# cd ${WRKSRC}/src/otel && awk -vCP=cp -vFIND=find -vGREP=grep -vCARGO_VENDOR_DIR=. \
-# -vGIT_SOURCES=. -vWRKDIR=. -vWRKSRC=. -f/usr/ports/Mk/Scripts/split-url.awk \
-# -f/usr/ports/Mk/Scripts/cargo-crates-git-common.awk \
-# -f/usr/ports/Mk/Scripts/cargo-crates.awk Cargo.lock > ../../../../Makefile.cargo
-BUILD_DEPENDS+=		${LOCALBASE}/bin/cargo:lang/rust
-USES+=			cargo
-CARGO_BUILD=		no
-CARGO_BUILD_ARGS=	--no-default-features
-WRKSRC2=		${WRKSRC}/src/otel
-CARGO_CARGOLOCK=	${WRKSRC2}/Cargo.lock
-CARGO_CARGOTOML=	${WRKSRC2}/Cargo.toml
-CARGO_CONFIGURE=	no
-CARGO_INSTALL=		no
-CARGO_TARGET_DIR=	${WRKSRC2}/target
-CARGO_VENDOR_DIR=	${WRKSRC2}/cargo-crates
+BUILD_DEPENDS+=		${LOCALBASE}/lib/libotel.a:devel/unit-otel
 CONFIGURE_ARGS+=	--otel
 EXTRA_PATCHES+=		${FILESDIR}/extra-patch-auto-make
-.include "${.CURDIR}/Makefile.cargo"
 .endif
 
 .if empty(PORT_OPTIONS:MUNIXSOCK)
@@ -127,27 +113,9 @@ CFLAGS+=	-Wno-compound-token-split-by-macro
 .endif
 
 .if !defined(UNIT_MODNAME)
-post-configure-OTEL-on:
-	${MKDIR} ${WRKDIR}/.cargo
-	: > ${WRKDIR}/.cargo/config.toml
-	${ECHO_CMD} "[source.cargo]" >> ${WRKDIR}/.cargo/config.toml
-	${ECHO_CMD} "directory = '${CARGO_VENDOR_DIR}'" >> \
-		${WRKDIR}/.cargo/config.toml
-	${ECHO_CMD} "[source.crates-io]" >> ${WRKDIR}/.cargo/config.toml
-	${ECHO_CMD} "replace-with = 'cargo'" >> ${WRKDIR}/.cargo/config.toml
-	cd ${WRKSRC2} && ${LOCALBASE}/bin/cargo update \
-		--manifest-path ${CARGO_CARGOTOML} \
-		--verbose \
-		--verbose \
-		${CARGO_UPDATE_ARGS}
-
-pre-build-OTEL-on:
-	cd ${WRKSRC2} && ${LOCALBASE}/bin/cargo build \
-		--manifest-path ${CARGO_CARGOTOML} \
-		--offline \
-		--verbose \
-		--verbose \
-		${CARGO_BUILD_ARGS}
+post-patch-OTEL-on:
+	${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' \
+		${WRKSRC}/auto/make
 
 do-build:
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE}
