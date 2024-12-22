@@ -1,5 +1,5 @@
 PORTNAME=	rtlbt-firmware
-DISTVERSION=	20240709
+DISTVERSION=	20240909
 DEB_REVISION=	2
 CATEGORIES=	comms
 MASTER_SITES=	DEBIAN/pool/non-free-firmware/f/firmware-nonfree/

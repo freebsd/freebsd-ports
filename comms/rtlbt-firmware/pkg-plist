@@ -4,7 +4,10 @@
 %%DATADIR%%/rtl8723b_fw.bin
 %%DATADIR%%/rtl8723bs_config-OBDA0623.bin
 %%DATADIR%%/rtl8723bs_config-OBDA8723.bin
+%%DATADIR%%/rtl8723bs_config.bin
 %%DATADIR%%/rtl8723bs_fw.bin
+%%DATADIR%%/rtl8723cs_xx_config.bin
+%%DATADIR%%/rtl8723cs_xx_fw.bin
 %%DATADIR%%/rtl8723d_config.bin
 %%DATADIR%%/rtl8723d_fw.bin
 %%DATADIR%%/rtl8761a_fw.bin
@@ -36,3 +39,5 @@
 %%DATADIR%%/rtl8852cu_config.bin
 %%DATADIR%%/rtl8852cu_fw.bin
 %%DATADIR%%/rtl8852cu_fw_v2.bin
+%%DATADIR%%/rtl8922au_config.bin
+%%DATADIR%%/rtl8922au_fw.bin
