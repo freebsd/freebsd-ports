@@ -1,6 +1,7 @@
 PORTNAME=	bareos
 DISTVERSIONPREFIX=	Release/
 DISTVERSION=	20.0.9
+PORTREVISION=	1
 CATEGORIES?=	www sysutils
 PKGNAMESUFFIX=	20-webui
 
@@ -10,6 +11,9 @@ WWW=		https://www.bareos.org/
 
 LICENSE=	AGPLv3+
 LICENSE_FILE=	${WRKSRC}/webui/LICENSE
+
+DEPRECATED=	not supported upstream
+EXPIRATION_DATE=	2025-01-21
 
 USE_GITHUB=	yes
 
