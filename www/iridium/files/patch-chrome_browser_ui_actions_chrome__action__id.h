@@ -1,6 +1,6 @@
---- chrome/browser/ui/actions/chrome_action_id.h.orig	2024-11-04 08:56:03 UTC
+--- chrome/browser/ui/actions/chrome_action_id.h.orig	2024-12-22 12:24:29 UTC
 +++ chrome/browser/ui/actions/chrome_action_id.h
-@@ -511,7 +511,7 @@
+@@ -513,7 +513,7 @@
      IDC_CONTENT_CONTEXT_QUICK_ANSWERS_INLINE_ANSWER) \
    E(kActionContentContextQuickAnswersInlineQuery, \
      IDC_CONTENT_CONTEXT_QUICK_ANSWERS_INLINE_QUERY)

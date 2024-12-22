@@ -1,4 +1,4 @@
---- build/linux/unbundle/icu.gn.orig	2024-11-04 17:00:34 UTC
+--- build/linux/unbundle/icu.gn.orig	2024-12-22 12:24:29 UTC
 +++ build/linux/unbundle/icu.gn
 @@ -17,6 +17,15 @@ config("icu_config") {
      "USING_SYSTEM_ICU=1",
@@ -35,3 +35,18 @@
  }
  
  pkg_config("system_icui18n") {
+@@ -46,6 +67,14 @@ pkg_config("system_icuuc") {
+ }
+ 
+ source_set("icui18n") {
++  deps = [ ":icui18n_shim" ]
++  public_configs = [
++    ":icu_config",
++    ":system_icui18n",
++  ]
++}
++
++source_set("icui18n_hidden_visibility") {
+   deps = [ ":icui18n_shim" ]
+   public_configs = [
+     ":icu_config",

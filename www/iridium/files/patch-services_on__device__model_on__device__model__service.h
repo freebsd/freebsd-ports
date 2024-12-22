@@ -1,7 +1,7 @@
---- services/on_device_model/on_device_model_service.h.orig	2024-11-04 08:56:03 UTC
+--- services/on_device_model/on_device_model_service.h.orig	2024-12-22 12:24:29 UTC
 +++ services/on_device_model/on_device_model_service.h
-@@ -27,6 +27,10 @@ namespace ml {
- class OnDeviceModelInternalImpl;
+@@ -31,6 +31,10 @@ class OnDeviceModelInternalImpl;
+ class TsHolder;
  }
  
 +#if BUILDFLAG(IS_BSD)
@@ -11,7 +11,7 @@
  namespace on_device_model {
  
  class COMPONENT_EXPORT(ON_DEVICE_MODEL) OnDeviceModelService
-@@ -40,7 +44,7 @@ class COMPONENT_EXPORT(ON_DEVICE_MODEL) OnDeviceModelS
+@@ -44,7 +48,7 @@ class COMPONENT_EXPORT(ON_DEVICE_MODEL) OnDeviceModelS
    // Must be called in the service's process after the run loop finished.
    [[nodiscard]] static bool Shutdown();
  

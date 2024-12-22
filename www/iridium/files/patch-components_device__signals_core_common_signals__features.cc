@@ -1,6 +1,6 @@
---- components/device_signals/core/common/signals_features.cc.orig	2023-08-28 20:17:35 UTC
+--- components/device_signals/core/common/signals_features.cc.orig	2024-12-22 12:24:29 UTC
 +++ components/device_signals/core/common/signals_features.cc
-@@ -46,7 +46,7 @@ bool IsNewFunctionEnabled(NewEvFunction new_ev_functio
+@@ -50,7 +50,7 @@ bool IsNewFunctionEnabled(NewEvFunction new_ev_functio
  }
  
  #if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || \

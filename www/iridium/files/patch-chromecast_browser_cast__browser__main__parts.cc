@@ -1,4 +1,4 @@
---- chromecast/browser/cast_browser_main_parts.cc.orig	2024-06-25 12:08:48 UTC
+--- chromecast/browser/cast_browser_main_parts.cc.orig	2024-12-22 12:24:29 UTC
 +++ chromecast/browser/cast_browser_main_parts.cc
 @@ -94,7 +94,7 @@
  #include "ui/ozone/public/ozone_platform.h"
@@ -19,7 +19,7 @@
  base::FilePath GetApplicationFontsDir() {
    std::unique_ptr<base::Environment> env(base::Environment::Create());
 @@ -313,7 +313,7 @@ const DefaultCommandLineSwitch kDefaultSwitches[] = {
-     {cc::switches::kDisableThreadedAnimation, ""},
+     {switches::kDisableThreadedAnimation, ""},
  #endif  // BUILDFLAG(IS_ANDROID)
  #endif  // BUILDFLAG(IS_CAST_AUDIO_ONLY)
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
