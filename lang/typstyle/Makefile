@@ -1,6 +1,6 @@
 PORTNAME=	typstyle
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.12.12
+DISTVERSION=	0.12.13
 CATEGORIES=	lang
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -78,6 +78,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		codespan-reporting-0.11.1 \
 		color_quant-1.1.0 \
 		colorchoice-1.0.3 \
+		colored-2.2.0 \
 		comemo-0.4.0 \
 		comemo-macros-0.4.0 \
 		console-0.15.8 \
