@@ -1,6 +1,6 @@
 PORTNAME=	mise
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2024.12.16
+DISTVERSION=	2024.12.17
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -231,8 +231,8 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		idna-1.0.3 \
 		idna_adapter-1.2.0 \
 		ignore-0.4.23 \
-		impl-tools-0.10.2 \
-		impl-tools-lib-0.11.0 \
+		impl-tools-0.10.3 \
+		impl-tools-lib-0.11.1 \
 		indenter-0.3.3 \
 		indexmap-1.9.3 \
 		indexmap-2.7.0 \
@@ -464,7 +464,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		time-core-0.1.2 \
 		time-macros-0.2.19 \
 		tinystr-0.7.6 \
-		tinyvec-1.8.0 \
+		tinyvec-1.8.1 \
 		tinyvec_macros-0.1.1 \
 		tokio-1.42.0 \
 		tokio-macros-2.4.0 \
@@ -505,7 +505,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		untrusted-0.9.0 \
 		url-2.5.4 \
 		urlencoding-2.1.3 \
-		usage-lib-1.7.2 \
+		usage-lib-1.7.4 \
 		utf16_iter-1.0.5 \
 		utf8_iter-1.0.4 \
 		utf8parse-0.2.2 \
