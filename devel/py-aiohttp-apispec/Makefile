@@ -17,7 +17,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aiohttp>0:www/py-aiohttp@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}Jinja2>0:devel/py-Jinja2@${PY_FLAVOR}
 
 USES=		python
-USE_PYTHON=	autoplist pep517
+USE_PYTHON=	autoplist distutils
 
 NO_ARCH=	yes
 
