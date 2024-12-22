@@ -1,6 +1,6 @@
-TIMESTAMP = 1713450284
-SHA256 (rizinorg-rizin-v0.7.3_GH0.tar.gz) = df369c2646cee3cfde0cccf64d1f914f01127a14dffe8d638a6fe031a96e6116
-SIZE (rizinorg-rizin-v0.7.3_GH0.tar.gz) = 7740842
+TIMESTAMP = 1734857750
+SHA256 (rizinorg-rizin-v0.7.4_GH0.tar.gz) = b56af761d04914d59b7c78fafd357f2356f4fe2955c23f7dcb61e62d7af7a22a
+SIZE (rizinorg-rizin-v0.7.4_GH0.tar.gz) = 7740938
 SHA256 (rizinorg-rz-libdemangle-0031d1a_GH0.tar.gz) = 50ddfc40f2b6e80d2bedb56b0f29f796ab4384c2c2f5e84a867ab7bce8b58d66
 SIZE (rizinorg-rz-libdemangle-0031d1a_GH0.tar.gz) = 180562
 SHA256 (rizinorg-tree-sitter-c-81d96d8_GH0.tar.gz) = a9b50dd46ced6ca35d7013c6d3effcc5e33cc663b7a1ee17e3d0d2c662e52823
