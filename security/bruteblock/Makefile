@@ -15,8 +15,8 @@ LIB_DEPENDS=	libpcre2-8.so:devel/pcre2
 SUB_FILES=	pkg-message
 
 USE_RC_SUBR=	bruteblockd
-USE_GITHUB=		yes
-GH_ACCOUNT=		samm-git
+USE_GITHUB=	yes
+GH_ACCOUNT=	samm-git
 
 CONFDIR=	${PREFIX}/etc/${PORTNAME}
 
