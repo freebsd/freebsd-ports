@@ -31,6 +31,7 @@ bin/qemu-system-i386
 %%NO_X86_TARGETS%%bin/qemu-system-rx
 %%NO_X86_TARGETS%%bin/qemu-system-s390x
 %%NO_X86_TARGETS%%bin/qemu-system-sh4
+%%NO_X86_TARGETS%%bin/qemu-system-sh4eb
 %%NO_X86_TARGETS%%bin/qemu-system-sparc
 %%NO_X86_TARGETS%%bin/qemu-system-sparc64
 %%NO_X86_TARGETS%%bin/qemu-system-tricore
