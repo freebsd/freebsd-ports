@@ -1,5 +1,5 @@
-TIMESTAMP = 1700080303
-SHA256 (go/editors_micro/micro-v2.0.13/v2.0.13.mod) = 2c376d1cfddf48cab2af71088cc52af3276814b01ca94731f151d2e27f781174
-SIZE (go/editors_micro/micro-v2.0.13/v2.0.13.mod) = 1116
-SHA256 (go/editors_micro/micro-v2.0.13/v2.0.13.zip) = 9b99f827874b5400f8c0082237955732d2dbf55156791224a7ec8f6ca6461711
-SIZE (go/editors_micro/micro-v2.0.13/v2.0.13.zip) = 696824
+TIMESTAMP = 1734926650
+SHA256 (go/editors_micro/micro-v2.0.14/v2.0.14.mod) = 2c376d1cfddf48cab2af71088cc52af3276814b01ca94731f151d2e27f781174
+SIZE (go/editors_micro/micro-v2.0.14/v2.0.14.mod) = 1116
+SHA256 (go/editors_micro/micro-v2.0.14/v2.0.14.zip) = c77960d0183b416ef0988850c55e11852c3ff134955b147e002489c75c0cdac0
+SIZE (go/editors_micro/micro-v2.0.14/v2.0.14.zip) = 712877
