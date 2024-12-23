@@ -11,7 +11,7 @@
 +        if (except_fds[i] > maxfd)
 +            maxfd = except_fds[i];
 +    maxfd++;
-+    closefrom(maxfd);
++    closefrom(MAX(maxfd, STDERR_FILENO + 1));
 +#else
      if (getrlimit(RLIMIT_NOFILE, &rl) >= 0)
          maxfd = (int) rl.rlim_max;
