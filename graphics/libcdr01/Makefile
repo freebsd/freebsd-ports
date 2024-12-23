@@ -1,5 +1,5 @@
 PORTNAME=	libcdr
-PORTVERSION=	0.1.8
+DISTVERSION=	0.1.8
 CATEGORIES=	graphics devel
 MASTER_SITES=	LODEV
 PKGNAMESUFFIX=	01
@@ -16,16 +16,16 @@ LIB_DEPENDS=	libicui18n.so:devel/icu \
 		librevenge-0.0.so:textproc/librevenge \
 		liblcms2.so:graphics/lcms2
 
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-tests --disable-werror --without-docs
-USES=		compiler:c++11-lib libtool pathfix pkgconfig tar:xz
+USES=		compiler:c++11-lib libtool localbase:ldflags pathfix pkgconfig \
+		tar:xz
 USE_LDCONFIG=	yes
+
+GNU_CONFIGURE=	yes
+
 INSTALL_TARGET=	install-strip
 
-CPPFLAGS+=	-DCMS_NO_REGISTER_KEYWORD
-CPPFLAGS+=	-I${LOCALBASE}/include
-CXXFLAGS+=	-Wno-long-long
-
 PLIST_SUB=	LIBVERSION=1.0.${PORTVERSION:E}
+
+CONFIGURE_ARGS=	--disable-tests --disable-werror --without-docs
 
 .include <bsd.port.mk>
