@@ -1,3 +1,4 @@
+bin/units_convert
 include/units/commodity_definitions.hpp
 include/units/unit_definitions.hpp
 include/units/units.hpp
