@@ -1,6 +1,5 @@
 PORTNAME=	difftastic
-DISTVERSION=	0.61.0
-PORTREVISION=	2
+DISTVERSION=	0.62.0
 CATEGORIES=	textproc
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -27,7 +26,7 @@ CARGO_CRATES=	ahash-0.8.11 \
 		bitflags-2.5.0 \
 		bstr-1.9.1 \
 		bumpalo-3.14.0 \
-		cc-1.1.30 \
+		cc-1.2.5 \
 		cfg-if-1.0.0 \
 		clap-3.2.25 \
 		clap_lex-0.2.4 \
@@ -98,9 +97,9 @@ CARGO_CRATES=	ahash-0.8.11 \
 		rayon-1.10.0 \
 		rayon-core-1.12.1 \
 		redox_syscall-0.4.1 \
-		regex-1.10.4 \
-		regex-automata-0.4.6 \
-		regex-syntax-0.8.2 \
+		regex-1.11.1 \
+		regex-automata-0.4.9 \
+		regex-syntax-0.8.5 \
 		rustc-hash-2.0.0 \
 		rustix-0.37.27 \
 		rustversion-1.0.14 \
@@ -115,6 +114,7 @@ CARGO_CRATES=	ahash-0.8.11 \
 		signal-hook-mio-0.2.3 \
 		signal-hook-registry-1.4.1 \
 		smallvec-1.13.2 \
+		streaming-iterator-0.1.9 \
 		strsim-0.10.0 \
 		strum-0.25.0 \
 		strum_macros-0.25.3 \
@@ -124,7 +124,30 @@ CARGO_CRATES=	ahash-0.8.11 \
 		termtree-0.4.1 \
 		textwrap-0.16.1 \
 		thread_local-1.1.8 \
-		tree-sitter-0.20.10 \
+		tree-sitter-0.24.5 \
+		tree-sitter-bash-0.23.3 \
+		tree-sitter-c-0.23.4 \
+		tree-sitter-c-sharp-0.23.1 \
+		tree-sitter-cpp-0.23.4 \
+		tree-sitter-css-0.23.1 \
+		tree-sitter-go-0.23.4 \
+		tree-sitter-haskell-0.23.1 \
+		tree-sitter-html-0.23.2 \
+		tree-sitter-java-0.23.4 \
+		tree-sitter-javascript-0.23.1 \
+		tree-sitter-json-0.24.8 \
+		tree-sitter-julia-0.23.1 \
+		tree-sitter-language-0.1.3 \
+		tree-sitter-lua-0.2.0 \
+		tree-sitter-objc-3.0.2 \
+		tree-sitter-ocaml-0.23.2 \
+		tree-sitter-php-0.23.11 \
+		tree-sitter-python-0.23.5 \
+		tree-sitter-ruby-0.23.1 \
+		tree-sitter-scala-0.23.3 \
+		tree-sitter-toml-ng-0.7.0 \
+		tree-sitter-typescript-0.23.2 \
+		tree-sitter-xml-0.7.0 \
 		tree_magic_mini-3.1.5 \
 		typed-arena-2.0.2 \
 		unicode-ident-1.0.12 \
