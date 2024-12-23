@@ -1,8 +1,8 @@
 PORTNAME=	unreal
-DISTVERSION=	6.1.8.1
+DISTVERSION=	6.1.9.1
 CATEGORIES=	irc
 MASTER_SITES=	https://www.unrealircd.org/downloads/
-DISTNAME=	${PORTNAME}ircd-${PORTVERSION}
+DISTNAME=	${PORTNAME}ircd-${DISTVERSION}
 
 MAINTAINER=	tanawts@gmail.com
 COMMENT=	Unreal - the next generation ircd
@@ -19,7 +19,7 @@ LIB_DEPENDS=	libcares.so:dns/c-ares \
 		libmaxminddb.so:net/libmaxminddb
 RUN_DEPENDS=	${LOCALBASE}/bin/geoipupdate:net/geoipupdate
 
-USES=		cpe gmake localbase pkgconfig ssl
+USES=		cpe gmake pkgconfig ssl
 CPE_VENDOR=	unrealircd
 CPE_PRODUCT=	unrealircd
 
