@@ -10,10 +10,11 @@ WWW=		https://github.com/levaidaniel/kc
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libxml2.so:textproc/libxml2
 TEST_DEPENDS=	bash:shells/bash
 
-USES=		ncurses pkgconfig ssl uidfix
+USES=		gnome ncurses pkgconfig ssl uidfix
+USE_GNOME=	libxml2
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	levaidaniel
 

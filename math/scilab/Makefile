@@ -14,8 +14,7 @@ LICENSE_COMB=	dual
 LICENSE_FILE_GPLv2=	${WRKSRC}/COPYING
 LICENSE_FILE_BSD3CLAUSE=	${WRKSRC}/COPYING-BSD
 
-LIB_DEPENDS=	libxml2.so:textproc/libxml2 \
-		libpcre.so:devel/pcre \
+LIB_DEPENDS=	libpcre.so:devel/pcre \
 		libcurl.so:ftp/curl \
 		libhdf5.so:science/hdf5 \
 		libarpack.so:math/arpack-ng \
@@ -28,6 +27,7 @@ RUN_DEPENDS=	xdg-open:devel/xdg-utils
 USES=		compiler:c++17-lang cpe desktop-file-utils eigen:3,build \
 		fortran gettext gmake gnome iconv:wchar_t libtool \
 		localbase ncurses pathfix pkgconfig shared-mime-info
+USE_GNOME=	libxml2
 USE_LOCALE=	en_US.UTF-8
 
 GNU_CONFIGURE=	yes

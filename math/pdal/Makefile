@@ -19,7 +19,6 @@ LIB_DEPENDS=	libgdal.so:graphics/gdal \
 		libboost_thread.so:devel/boost-libs \
 		libcurl.so:ftp/curl \
 		libgeotiff.so:graphics/libgeotiff \
-		libxml2.so:textproc/libxml2 \
 		liblaszip.so:archivers/laszip \
 		libzstd.so:archivers/zstd \
 		${LIB_DEPENDS_${ARCH}}
@@ -30,7 +29,8 @@ LIB_DEPENDS_i386=	libunwind.so:devel/libunwind
 LIB_DEPENDS_powerpc64=	libunwind.so:devel/libunwind
 LIB_DEPENDS_powerpc64le=libunwind.so:devel/libunwind
 
-USES=		cmake compiler:c++11-lib pathfix pkgconfig ssl tar:bz2
+USES=		cmake compiler:c++11-lib gnome pathfix pkgconfig ssl tar:bz2
+USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME:tu}-${DISTVERSION}-src

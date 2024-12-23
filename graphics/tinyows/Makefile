@@ -12,10 +12,10 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${LOCALBASE}/share/postgresql/extension/postgis.control:databases/postgis31
-LIB_DEPENDS=	libxml2.so:textproc/libxml2
 RUN_DEPENDS=	${LOCALBASE}/share/postgresql/extension/postgis.control:databases/postgis31
 
-USES=		autoreconf pgsql
+USES=		autoreconf gnome pgsql
+USE_GNOME=	libxml2
 
 GNU_CONFIGURE=	yes
 

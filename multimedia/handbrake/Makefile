@@ -29,7 +29,6 @@ LIB_DEPENDS=	libdbus-1.so:devel/dbus \
 		libfreetype.so:print/freetype2 \
 		libfribidi.so:converters/fribidi \
 		libturbojpeg.so:graphics/libjpeg-turbo \
-		libxml2.so:textproc/libxml2 \
 		libass.so:multimedia/libass \
 		libspeex.so:audio/speex \
 		libogg.so:audio/libogg \
@@ -43,8 +42,9 @@ LIB_DEPENDS=	libdbus-1.so:devel/dbus \
 		libopus.so:audio/opus \
 		libjansson.so:devel/jansson
 
-USES=		autoreconf:build compiler:c11 gmake iconv libtool:build \
+USES=		autoreconf:build compiler:c11 gmake gnome iconv libtool:build \
 		localbase:ldflags ninja:build pkgconfig python:build
+USE_GNOME=	libxml2
 
 CONTRIB_FILES=	SVT-AV1-v1.7.0.tar.gz \
 		fdk-aac-2.0.2.tar.gz \

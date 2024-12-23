@@ -12,10 +12,10 @@ WWW=		http://flam3.com/
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libpng.so:graphics/png \
-		libxml2.so:textproc/libxml2
+LIB_DEPENDS=	libpng.so:graphics/png
 
-USES=		gmake jpeg libtool localbase pathfix
+USES=		gmake gnome jpeg libtool localbase pathfix
+USE_GNOME=	libxml2
 USE_GITHUB=	yes
 GH_ACCOUNT=	scottdraves
 GNU_CONFIGURE=	yes

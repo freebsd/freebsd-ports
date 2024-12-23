@@ -12,10 +12,11 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	utf8cpp>=4.0.3:devel/utf8cpp
-LIB_DEPENDS=	libicuio.so:devel/icu \
-		libxml2.so:textproc/libxml2
+LIB_DEPENDS=	libicuio.so:devel/icu
 
-USES=		autoreconf compiler:c++14-lang libtool pathfix pkgconfig tar:bz2
+USES=		autoreconf compiler:c++14-lang gnome libtool pathfix pkgconfig \
+		tar:bz2
+USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes

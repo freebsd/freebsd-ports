@@ -19,11 +19,11 @@ ONLY_FOR_ARCHS_REASON=	libs/search/nucstrstr.c requires SSE2 instructions
 BUILD_DEPENDS=	bash:shells/bash \
 		libepoll-shim>0:devel/libepoll-shim
 
-LIB_DEPENDS=	libxml2.so:textproc/libxml2 \
-		libhdf5.so:science/hdf5 \
+LIB_DEPENDS=	libhdf5.so:science/hdf5 \
 		libmbedtls.so:security/mbedtls
 
-USES=		compiler:c11 gmake localbase:ldflags perl5 shebangfix
+USES=		compiler:c11 gmake gnome localbase:ldflags perl5 shebangfix
+USE_GNOME=	libxml2
 USE_PERL5=	build
 USE_LDCONFIG=	yes
 

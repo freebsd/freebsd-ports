@@ -11,8 +11,7 @@ WWW=		https://sogo.nu/
 
 LICENSE=		LGPL20
 
-LIB_DEPENDS=		libxml2.so:textproc/libxml2 \
-			libmemcached.so:databases/libmemcached
+LIB_DEPENDS=		libmemcached.so:databases/libmemcached
 
 WRKSRC=			${WRKDIR}/SOPE
 
@@ -24,7 +23,8 @@ MYSQL_DESC=		Build with MySQL support
 PGSQL_DESC=		Build with PostgreSQL support
 MEMCACHED_DESC=		Install memcached
 
-USES=			gmake iconv gnustep ssl
+USES=			gmake gnome iconv gnustep ssl
+USE_GNOME=		libxml2
 USE_GNUSTEP=		base build
 USE_LDCONFIG=		${GNUSTEP_LOCAL_LIBRARIES}
 LLD_UNSAFE=		yes # PR 230608

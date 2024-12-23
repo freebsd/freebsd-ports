@@ -12,10 +12,10 @@ WWW=		https://github.com/s3fs-fuse/s3fs-fuse
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libcurl.so:ftp/curl \
-		libxml2.so:textproc/libxml2
+LIB_DEPENDS=	libcurl.so:ftp/curl
 
-USES=		autoreconf fuse pkgconfig ssl
+USES=		autoreconf fuse gnome pkgconfig ssl
+USE_GNOME=	libxml2
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	s3fs-fuse

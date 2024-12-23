@@ -11,8 +11,7 @@ WWW=		https://libvirt.org/
 LICENSE=	LGPL3
 
 LIB_DEPENDS=	libcurl.so:ftp/curl \
-		libgnutls.so:security/gnutls \
-		libxml2.so:textproc/libxml2
+		libgnutls.so:security/gnutls
 BUILD_DEPENDS=	dnsmasq:dns/dnsmasq \
 		${LOCALBASE}/bin/grep:textproc/gnugrep \
 		gsed:textproc/gsed \
@@ -132,7 +131,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib -fstack-protector
 
 USES=		gnome charsetfix compiler:c++0x cpe gettext-runtime gmake \
 	        meson pathfix perl5 python:build pkgconfig shebangfix tar:xz
-USE_GNOME=	glib20
+USE_GNOME=	glib20 libxml2
 USE_RC_SUBR=	libvirtd virtlogd
 CPE_VENDOR=	redhat
 USE_PERL5=	build

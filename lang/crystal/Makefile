@@ -26,11 +26,11 @@ LIB_DEPENDS=	libLLVM-${LLVM_VERSION}.so:devel/llvm${LLVM_VERSION} \
 		libgmp.so:math/gmp \
 		libpcre.so:devel/pcre \
 		libpcre2-8.so:devel/pcre2 \
-		libxml2.so:textproc/libxml2 \
 		libyaml.so:textproc/libyaml
 RUN_DEPENDS=	pkg-config:devel/pkgconf
 
-USES=		compiler gmake pkgconfig ssl
+USES=		compiler gmake gnome pkgconfig ssl
+USE_GNOME=	libxml2
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	crystal-lang

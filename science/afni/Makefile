@@ -28,8 +28,7 @@ LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 		libnetcdff.so:science/netcdf-fortran \
 		libnetpbm.so:graphics/netpbm \
 		libpcre2-8.so:devel/pcre2 \
-		libpng16.so:graphics/png \
-		libxml2.so:textproc/libxml2
+		libpng16.so:graphics/png
 
 # Remote execution of suma.  Also needed for glxinfo.
 RUN_DEPENDS=	endian:sysutils/endian \
@@ -42,7 +41,7 @@ USES=		gettext gl gmake gnome iconv jpeg:run motif readline
 USES+=		perl5 python shebangfix tar:xz xorg
 USE_GITHUB=	yes
 USE_GL=		gl glu
-USE_GNOME=	glib20
+USE_GNOME=	glib20 libxml2
 USE_XORG= 	ice sm x11 xau xcb xdmcp xext xft xi xmu xrender xt
 
 SHEBANG_FILES=	scripts_install/* \

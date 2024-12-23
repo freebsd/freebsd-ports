@@ -27,7 +27,6 @@ LIB_DEPENDS=	liblzo2.so:archivers/lzo2 \
 		libfftw3_threads.so:math/fftw3 \
 		libfftw3f.so:math/fftw3-float \
 		libfreetype.so:print/freetype2 \
-		libxml2.so:textproc/libxml2 \
 		libdav1d.so:multimedia/dav1d \
 		libaom.so:multimedia/aom \
 		libdrm.so:graphics/libdrm \
@@ -42,12 +41,13 @@ LIB_DEPENDS=	liblzo2.so:archivers/lzo2 \
 BUILD_DEPENDS=	yasm:devel/yasm \
 		${LOCALBASE}/include/linux/input.h:devel/evdev-proto
 
-USES=		compiler:c++17-lang gmake gl iconv libtool pkgconfig pathfix \
+USES=		compiler:c++17-lang gmake gl gnome iconv libtool pkgconfig pathfix \
 		perl5 python qmake:no_env qt:5 shebangfix ssl xorg
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	MythTV
 USE_GL=		gl
+USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
 USE_QT=		buildtools:build core dbus gui imageformats:run \
 		linguist:build multimedia network opengl qmake:build script \

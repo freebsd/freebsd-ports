@@ -14,8 +14,7 @@ LICENSE=	LGPL3
 USE_GITHUB=	yes
 GH_TAGNAME=	ecb1f0268adde613bbcb0aa122c0c53847a600a9
 
-LIB_DEPENDS=	libxml2.so:textproc/libxml2 \
-		libxslt.so:textproc/libxslt \
+LIB_DEPENDS=	libxslt.so:textproc/libxslt \
 		libevent.so:devel/libevent \
 		libsasl2.so:security/cyrus-sasl2
 RUN_DEPENDS=	wkhtmltopdf>0:converters/wkhtmltopdf \
@@ -68,7 +67,8 @@ RUN_DEPENDS=	wkhtmltopdf>0:converters/wkhtmltopdf \
 		${PYTHON_PKGNAMEPREFIX}rjsmin>0:archivers/py-rjsmin@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}cryptography-legacy>0:security/py-cryptography-legacy@${PY_FLAVOR}
 
-USES=		cpe ldap python pgsql shebangfix
+USES=		cpe gnome ldap python pgsql shebangfix
+USE_GNOME=	libxml2
 USE_PYTHON=	distutils
 
 SHEBANG_LANG=	python

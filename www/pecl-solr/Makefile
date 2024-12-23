@@ -9,10 +9,10 @@ WWW=		https://pecl.php.net/package/solr
 LICENSE=	PHP301
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libcurl.so:ftp/curl \
-		libxml2.so:textproc/libxml2
+LIB_DEPENDS=	libcurl.so:ftp/curl
 
-USES=		php:build,pecl pkgconfig
+USES=		gnome php:build,pecl pkgconfig
+USE_GNOME=	libxml2
 IGNORE_WITH_PHP=	84
 
 CONFIGURE_ARGS=	LIBXML_CFLAGS=-I${LOCALBASE}/include/libxml2 \

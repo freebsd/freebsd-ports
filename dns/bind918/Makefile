@@ -20,12 +20,13 @@ LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libuv.so:devel/libuv \
-		libnghttp2.so:www/libnghttp2 \
-		libxml2.so:textproc/libxml2
+		libnghttp2.so:www/libnghttp2
 
 RUN_DEPENDS=	bind-tools>0:dns/bind-tools
 
-USES=		autoreconf compiler:c11 cpe libedit libtool pkgconfig ssl tar:xz
+USES=		autoreconf compiler:c11 cpe gnome libedit libtool pkgconfig ssl \
+		tar:xz
+USE_GNOME=	libxml2
 
 CPE_VENDOR=	isc
 CPE_VERSION=	${DISTVERSION:C/-.*//}

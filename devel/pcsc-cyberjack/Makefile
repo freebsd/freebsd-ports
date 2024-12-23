@@ -12,10 +12,10 @@ LICENSE_COMB=	dual
 LICENSE_FILE_GPLv2=	${WRKSRC}/COPYRIGHT.GPL
 LICENSE_FILE_LGPL20=	${WRKSRC}/COPYRIGHT.LGPL
 
-LIB_DEPENDS=	libpcsclite.so:devel/pcsc-lite \
-		libxml2.so:textproc/libxml2
+LIB_DEPENDS=	libpcsclite.so:devel/pcsc-lite
 
-USES=		autoreconf dos2unix libtool localbase pkgconfig tar:bzip2
+USES=		autoreconf dos2unix gnome libtool localbase pkgconfig tar:bzip2
+USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-release --with-usbdropdir=${PREFIX}/lib/pcsc/drivers

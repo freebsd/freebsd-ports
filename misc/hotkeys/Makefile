@@ -14,11 +14,10 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libharfbuzz.so:print/harfbuzz \
 		libfreetype.so:print/freetype2 \
-		libxml2.so:textproc/libxml2 \
 		libfontconfig.so:x11-fonts/fontconfig
 
-USES=		bdb gettext-runtime gmake xorg
-USE_GNOME=	glib20 pango
+USES=		bdb gettext-runtime gmake gnome xorg
+USE_GNOME=	glib20 libxml2 pango
 USE_XORG=	x11 xext xft xinerama xkbfile xmu
 
 GNU_CONFIGURE=	yes

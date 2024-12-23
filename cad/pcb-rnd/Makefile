@@ -14,10 +14,10 @@ LIB_DEPENDS=	libfungw.so:devel/fungw \
 		libfreetype.so:print/freetype2 \
 		libgd.so:graphics/gd \
 		libgenht.so:devel/genht \
-		librnd-hid.so:cad/librnd \
-		libxml2.so:textproc/libxml2
+		librnd-hid.so:cad/librnd
 
-USES=		gmake pkgconfig tar:bz2
+USES=		gmake gnome pkgconfig tar:bz2
+USE_GNOME=	libxml2
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--cflags/libs/sul/freetype2="-I${LOCALBASE}/include/freetype2 -I${LOCALBASE}/include/freetype2/freetype" \

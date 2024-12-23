@@ -23,8 +23,7 @@ LICENSE_COMB=	multi
 LIB_DEPENDS=	libyajl.so:devel/yajl \
 		liblzo2.so:archivers/lzo2 \
 		libpixman-1.so:x11/pixman \
-		libargp.so:devel/argp-standalone \
-		libxml2.so:textproc/libxml2
+		libargp.so:devel/argp-standalone
 BUILD_DEPENDS=	seabios>0:misc/seabios \
 		${LOCALBASE}/share/edk2-xen/XEN_X64_EFI.fd:sysutils/edk2@xen_x64 \
 		bash>0:shells/bash
@@ -45,7 +44,7 @@ ONLY_FOR_ARCHS_REASON=	not yet ported to anything other than amd64
 
 USES=		cpe gettext gmake gnome libtool localbase:ldflags perl5 \
 		pkgconfig python shebangfix iconv bison ninja:build
-USE_GNOME=	glib20
+USE_GNOME=	glib20 libxml2
 USE_LDCONFIG=	yes
 USE_PYTHON=	py3kplist
 HAS_CONFIGURE=	yes

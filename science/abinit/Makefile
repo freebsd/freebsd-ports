@@ -21,7 +21,6 @@ LIB_DEPENDS=	libelpa.so:math/elpa		\
 		libxc.so:science/libxc		\
 		libfftw3.so:math/fftw3		\
 		libhdf5.so:science/hdf5		\
-		libxml2.so:textproc/libxml2	\
 		libnetcdf.so:science/netcdf	\
 		libxmlf90.so:textproc/xmlf90	\
 		libwannier.so:science/wannier90	\

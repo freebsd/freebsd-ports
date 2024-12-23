@@ -17,12 +17,11 @@ LIB_DEPENDS=	libaspell.so:textproc/aspell \
 		libharfbuzz.so:print/harfbuzz \
 		libpcre2-8.so:devel/pcre2 \
 		libxerces-c.so:textproc/xerces-c3 \
-		libxml2.so:textproc/libxml2 \
 		libxslt.so:textproc/libxslt
 
 USES=		autoreconf compiler:c++11-lang desktop-file-utils dos2unix \
 		gettext-tools gmake gnome iconv libtool localbase pkgconfig
-USE_GNOME=	atk cairo gdkpixbuf2 glib20 gtk30 intltool pango
+USE_GNOME=	atk cairo gdkpixbuf2 glib20 gtk30 intltool libxml2 pango
 USE_WX=		3.0 # fails to build with 3.2
 WX_COMPS=	wx
 WX_CONF_ARGS=	absolute

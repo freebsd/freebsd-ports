@@ -12,10 +12,10 @@ LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libpopt.so:devel/popt \
-		libxml2.so:textproc/libxml2 \
 		libcdio.so:sysutils/libcdio
 
-USES=		gmake libtool localbase makeinfo pathfix pkgconfig
+USES=		gmake gnome libtool localbase makeinfo pathfix pkgconfig
+USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes

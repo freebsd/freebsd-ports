@@ -10,11 +10,11 @@ WWW=		https://github.com/CESNET/libfds
 LICENSE=		GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	 libxml2.so:textproc/libxml2 \
-			 liblz4.so:archivers/liblz4 \
-			 libzstd.so:archivers/zstd
+LIB_DEPENDS=	 liblz4.so:archivers/liblz4 \
+		 libzstd.so:archivers/zstd
 
-USES=		cmake localbase:ldflags pkgconfig
+USES=		cmake gnome localbase:ldflags pkgconfig
+USE_GNOME=	libxml2
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	CESNET

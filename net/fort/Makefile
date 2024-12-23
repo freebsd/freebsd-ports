@@ -9,11 +9,12 @@ WWW=		https://fortproject.net/en/validator
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libcurl.so:ftp/curl libjansson.so:devel/jansson \
-		libxml2.so:textproc/libxml2
+LIB_DEPENDS=	libcurl.so:ftp/curl \
+		libjansson.so:devel/jansson
 RUN_DEPENDS=	${LOCALBASE}/bin/rsync:net/rsync
 
-USES=		autoreconf compiler:c11 pkgconfig ssl
+USES=		autoreconf compiler:c11 gnome pkgconfig ssl
+USE_GNOME=	libxml2
 USE_GITHUB=	yes
 USE_RC_SUBR=	fort
 

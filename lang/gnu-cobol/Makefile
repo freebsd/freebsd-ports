@@ -12,10 +12,10 @@ LICENSE=	GPLv3 LGPL3
 LICENSE_COMB=	multi
 
 LIB_DEPENDS=	libgmp.so:math/gmp \
-		libcjson.so:devel/libcjson \
-		libxml2.so:textproc/libxml2
+		libcjson.so:devel/libcjson
 
-USES=		bdb gmake libtool ncurses tar:xz
+USES=		bdb gmake gnome libtool ncurses tar:xz
+USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share

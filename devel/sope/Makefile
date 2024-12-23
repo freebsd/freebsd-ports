@@ -10,10 +10,10 @@ WWW=			https://sogo.nu/
 
 LICENSE=		LGPL20
 
-LIB_DEPENDS=		libxml2.so:textproc/libxml2 \
-			libmemcached.so:databases/libmemcached
+LIB_DEPENDS=		libmemcached.so:databases/libmemcached
 
-USES=			gmake iconv gnustep
+USES=			gmake gnome iconv gnustep
+USE_GNOME=		libxml2
 USE_GNUSTEP=		base build
 USE_LDCONFIG=		${GNUSTEP_LOCAL_LIBRARIES}
 

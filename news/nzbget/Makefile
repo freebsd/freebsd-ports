@@ -10,8 +10,7 @@ WWW=		https://nzbget.net/
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libboost_json.so:devel/boost-libs \
-		libxml2.so:textproc/libxml2
+LIB_DEPENDS=	libboost_json.so:devel/boost-libs
 RUN_DEPENDS=	7-zip>0:archivers/7-zip \
 		unrar>0:archivers/unrar
 
@@ -19,7 +18,8 @@ RUN_DEPENDS=	7-zip>0:archivers/7-zip \
 # See https://github.com/nzbgetcom/nzbget/blob/v24.4/cmake/par2-turbo.cmake for the version to pull
 PAR2CMDLINE_TURBO_VERSION=1.1.1-nzbget
 
-USES=		cmake:testing ssl
+USES=		cmake:testing gnome ssl
+USE_GNOME=	libxml2
 USE_GITHUB=	yes
 GH_ACCOUNT=	nzbgetcom
 GH_PROJECT=	nzbget par2cmdline-turbo:par2

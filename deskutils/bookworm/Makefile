@@ -17,8 +17,7 @@ LIB_DEPENDS=	libappstream-glib.so:devel/appstream-glib \
 		libgranite.so:x11-toolkits/granite \
 		libpoppler-glib.so:graphics/poppler-glib \
 		libsoup-2.4.so:devel/libsoup \
-		libwebkit2gtk-4.0.so:www/webkit2-gtk3 \
-		libxml2.so:textproc/libxml2
+		libwebkit2gtk-4.0.so:www/webkit2-gtk3
 RUN_DEPENDS=	bash:shells/bash \
 		pdftohtml:graphics/poppler-utils \
 		unar:archivers/unarchiver \

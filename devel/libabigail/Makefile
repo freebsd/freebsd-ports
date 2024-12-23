@@ -11,10 +11,11 @@ WWW=		https://sourceware.org/libabigail/
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-LIB_DEPENDS=	libxml2.so:textproc/libxml2 \
-		libdw.so:devel/elfutils
+LIB_DEPENDS=	libdw.so:devel/elfutils
 
-USES=		compiler:c++11-lang gmake libtool localbase pkgconfig python
+USES=		compiler:c++11-lang gmake gnome libtool localbase pkgconfig \
+		python
+USE_GNOME=	libxml2
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-cxx11=yes
