@@ -6,7 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	freebsd@sysctl.cz
 COMMENT=	Compositing software Video
-WWW=		https://www.natron.fr/
+WWW=		https://natrongithub.github.io/
 
 LICENSE=	GPLv2
 
