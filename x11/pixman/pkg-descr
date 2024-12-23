@@ -1,1 +1,2 @@
-This package contains the pixman library.
+Pixman is a library that provides low-level pixel manipulation
+features such as image compositing and trapezoid rasterization.

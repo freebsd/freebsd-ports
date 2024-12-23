@@ -1,36 +1,67 @@
 PORTNAME=	pixman
-PORTVERSION=	0.42.2
+DISTVERSION=	0.44.2
 CATEGORIES=	x11
+MASTER_SITES=	https://cairographics.org/releases/
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	Low-level pixel manipulation library
-WWW=		http://pixman.org
+WWW=		https://pixman.org
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-PORTSCOUT=	limitw:1,even
+USES=		cpe meson pkgconfig tar:xz
+MESON_ARGS=	-Dloongson-mmi=disabled \
+		-Dgtk=disabled \
+		-Ddemos=disabled
 
-USES=		compiler:c11 cpe perl5 tar:xz xorg-cat:lib
-USE_PERL5=	build
-CONFIGURE_ARGS=	--disable-gtk
-INSTALL_TARGET=	install-strip
+OPTIONS_DEFINE=	TEST
 
-# Build the library exclusively, thus disabling the demos and the tests (which
-# do not get installed anyway).  This is to workaround a problem in powerpc64
-# where the build of the tests crashes ld; see PR bin/202284.
-MAKE_ARGS=	SUBDIRS=pixman
+TEST_LIB_DEPENDS=	libpng.so:graphics/png
+TEST_MESON_ENABLED=	libpng tests
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if ${ARCH} == "armv6" || ${ARCH} == "armv7"
-BUILD_DEPENDS+=	${LOCALBASE}/bin/as:devel/binutils
-CONFIGURE_ENV+=	CCASFLAGS="${CFLAGS} -B${LOCALBASE}/bin -no-integrated-as"
-LLD_UNSAFE=	yes
-.elif ${ARCH} == "aarch64"
-CONFIGURE_ARGS+=	--disable-arm-a64-neon
-.elif (defined(MACHINE_CPU) && !${MACHINE_CPU:Maltivec}) || (${ARCH} == powerpc && !defined(MACHINE_CPU))
-CONFIGURE_ARGS+=	--disable-vmx
+.if ${ARCH} == armv6
+MESON_ARGS+=	-Darm-simd=enabled \
+		-Dopenmp=disabled
+.else
+MESON_ARGS+=	-Darm-simd=disabled
+.endif
+.if ${ARCH} == armv7
+MESON_ARGS+=	-Dneon=enabled \
+		-Dopenmp=disabled
+.else
+MESON_ARGS+=	-Dneon=disabled
+.endif
+.if ${ARCH} == aarch64
+MESON_ARGS+=	-Da64-neon=enabled
+.else
+MESON_ARGS+=	-Da64-neon=disabled
+.endif
+.if ${ARCH} == i386 || ${ARCH} == amd64
+MESON_ARGS+=	-Dmmx=enabled \
+		-Dsse2=enabled \
+		-Dssse3=enabled
+.else
+MESON_ARGS+=	-Dmmx=disabled \
+		-Dsse2=disabled \
+		-Dssse3=disabled
+.endif
+.if ${ARCH:Mmips*}
+MESON_ARGS+=	-Dmips-dspr2=enabled
+.else
+MESON_ARGS+=	-Dmips-dspr2=disabled
+.endif
+.if ${ARCH:Mpowerpc*}
+MESON_ARGS+=	-Dvmx=enabled
+.else
+MESON_ARGS+=	-Dvmx=disabled
+.endif
+.if ${ARCH} == riscv64
+MESON_ARGS+=	-Drvv=enabled
+.else
+MESON_ARGS+=	-Drvv=disabled
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
