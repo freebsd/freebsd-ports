@@ -1,9 +1,10 @@
 PORTNAME=	libzfs
 PORTVERSION=	1.1.2023020700
+PORTREVISION=	1
 CATEGORIES=	filesystems devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	meka@tilda.center
 COMMENT=	Python libzfs bindings
 WWW=		https://github.com/freenas/py-libzfs
 
@@ -30,6 +31,11 @@ EXTRA_PATCHES+=	${FILESDIR}/extra-zpool-add.patch
 
 .if !exists(${SRC_BASE}/sys/Makefile)
 IGNORE=		requires kernel source files in ${SRC_BASE}
+.endif
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400000
+PATCH_SITES=    https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES=     0b2ab0594997c44e80e3fdfe9d2add106d81149a.diff:-p1 # backport of https://github.com/truenas/py-libzfs/pull/251
 .endif
 
 .include <bsd.port.mk>
