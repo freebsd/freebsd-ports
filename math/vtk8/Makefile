@@ -1,5 +1,5 @@
 PORTNAME=	vtk
-DISTVERSION=	8.2.0
+DISTVERSION=	8.2.0 # it has only one consumer that is possibly dead upstream but is still compiling fine
 PORTREVISION=	6
 CATEGORIES=	math graphics
 MASTER_SITES=	http://www.vtk.org/files/release/${VTK_SHORT_VER}/
@@ -12,12 +12,14 @@ WWW=		https://www.vtk.org
 
 LICENSE=	BSD3CLAUSE
 
+BROKEN_FreeBSD_15=	complation fails: error: no member named 'derived' in 'Transpose<TranspositionsBase<type-parameter-0-0>>'
+
 LIB_DEPENDS=	libtiff.so:graphics/tiff \
 		libpng.so:graphics/png \
 		libfreetype.so:print/freetype2 \
 		libexpat.so:textproc/expat2
 
-CONFLICTS=	vtk6 vtk9
+CONFLICTS=	vtk9
 
 USES=		alias cmake compiler:c++11-lang gl jpeg localbase perl5 xorg
 USE_LDCONFIG=	${PREFIX}/lib/vtk-${VTK_SHORT_VER}
