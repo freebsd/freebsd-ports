@@ -1,11 +1,11 @@
-bin/granite-7-demo
+%%DEMO%%bin/granite-7-demo
 include/granite-7/granite-7.h
 lib/girepository-1.0/Granite-7.0.typelib
 lib/libgranite-7.so
 lib/libgranite-7.so.7
 lib/libgranite-7.so.%%DISTVERSION%%
 libdata/pkgconfig/granite-7.pc
-share/applications/io.elementary.granite-7.demo.desktop
+%%DEMO%%share/applications/io.elementary.granite-7.demo.desktop
 share/gir-1.0/Granite-7.0.gir
 share/icons/hicolor/48x48/apps/io.elementary.granite-7.svg
 share/icons/hicolor/48x48@2/apps/io.elementary.granite-7.svg
@@ -34,6 +34,7 @@ share/locale/bo/LC_MESSAGES/granite-7.mo
 share/locale/br/LC_MESSAGES/granite-7.mo
 share/locale/bs/LC_MESSAGES/granite-7.mo
 share/locale/ca/LC_MESSAGES/granite-7.mo
+share/locale/ca@valencia/LC_MESSAGES/granite-7.mo
 share/locale/ce/LC_MESSAGES/granite-7.mo
 share/locale/ch/LC_MESSAGES/granite-7.mo
 share/locale/ckb/LC_MESSAGES/granite-7.mo
@@ -52,6 +53,7 @@ share/locale/el/LC_MESSAGES/granite-7.mo
 share/locale/en_AU/LC_MESSAGES/granite-7.mo
 share/locale/en_CA/LC_MESSAGES/granite-7.mo
 share/locale/en_GB/LC_MESSAGES/granite-7.mo
+share/locale/en_ZA/LC_MESSAGES/granite-7.mo
 share/locale/eo/LC_MESSAGES/granite-7.mo
 share/locale/es/LC_MESSAGES/granite-7.mo
 share/locale/et/LC_MESSAGES/granite-7.mo
@@ -64,6 +66,7 @@ share/locale/fj/LC_MESSAGES/granite-7.mo
 share/locale/fo/LC_MESSAGES/granite-7.mo
 share/locale/fr/LC_MESSAGES/granite-7.mo
 share/locale/fr_CA/LC_MESSAGES/granite-7.mo
+share/locale/frp/LC_MESSAGES/granite-7.mo
 share/locale/fy/LC_MESSAGES/granite-7.mo
 share/locale/ga/LC_MESSAGES/granite-7.mo
 share/locale/gd/LC_MESSAGES/granite-7.mo
@@ -82,6 +85,7 @@ share/locale/hy/LC_MESSAGES/granite-7.mo
 share/locale/hz/LC_MESSAGES/granite-7.mo
 share/locale/ia/LC_MESSAGES/granite-7.mo
 share/locale/id/LC_MESSAGES/granite-7.mo
+share/locale/id_ID/LC_MESSAGES/granite-7.mo
 share/locale/ie/LC_MESSAGES/granite-7.mo
 share/locale/ig/LC_MESSAGES/granite-7.mo
 share/locale/ii/LC_MESSAGES/granite-7.mo
@@ -144,6 +148,7 @@ share/locale/om/LC_MESSAGES/granite-7.mo
 share/locale/or/LC_MESSAGES/granite-7.mo
 share/locale/os/LC_MESSAGES/granite-7.mo
 share/locale/pa/LC_MESSAGES/granite-7.mo
+share/locale/pap/LC_MESSAGES/granite-7.mo
 share/locale/pi/LC_MESSAGES/granite-7.mo
 share/locale/pl/LC_MESSAGES/granite-7.mo
 share/locale/ps/LC_MESSAGES/granite-7.mo
@@ -210,5 +215,7 @@ share/locale/zh_HK/LC_MESSAGES/granite-7.mo
 share/locale/zh_TW/LC_MESSAGES/granite-7.mo
 share/locale/zu/LC_MESSAGES/granite-7.mo
 share/metainfo/granite-7.metainfo.xml
+share/themes/Granite/gtk-4.0/gtk.css
+share/themes/Granite/gtk-4.0/gtk-dark.css
 share/vala/vapi/granite-7.deps
 share/vala/vapi/granite-7.vapi
