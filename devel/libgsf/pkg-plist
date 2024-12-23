@@ -115,6 +115,7 @@ share/gtk-doc/html/gsf/up.png
 %%NLS%%share/locale/fr/LC_MESSAGES/libgsf.mo
 %%NLS%%share/locale/gl/LC_MESSAGES/libgsf.mo
 %%NLS%%share/locale/he/LC_MESSAGES/libgsf.mo
+%%NLS%%share/locale/hi/LC_MESSAGES/libgsf.mo
 %%NLS%%share/locale/hr/LC_MESSAGES/libgsf.mo
 %%NLS%%share/locale/hu/LC_MESSAGES/libgsf.mo
 %%NLS%%share/locale/id/LC_MESSAGES/libgsf.mo

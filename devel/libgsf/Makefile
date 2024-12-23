@@ -1,19 +1,19 @@
 PORTNAME=	libgsf
-DISTVERSION=	1.14.52
+DISTVERSION=	1.14.53
 CATEGORIES=	devel
 MASTER_SITES=	GNOME
-DIST_SUBDIR=	gnome2
+DIST_SUBDIR=	gnome
 
 MAINTAINER=	desktop@FreeBSD.org
-COMMENT=	Extensible I/O abstraction for dealing with structured file formats
-WWW=		http://www.gnumeric.org
+COMMENT=	Structured file library from GNOME
+WWW=		https://gitlab.gnome.org/GNOME/libgsf/
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		cpe gmake gnome libtool localbase pathfix pkgconfig tar:xz
 CPE_VENDOR=	gnome
-USE_GNOME=	gdkpixbuf2 glib20 intlhack introspection:build libxml2
+USE_GNOME=	gdkpixbuf2 glib20 libxml2 introspection:build
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
