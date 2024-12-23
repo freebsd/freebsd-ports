@@ -1,5 +1,5 @@
---- src/ssl.c.orig	2024-12-20 09:06:19 UTC
-+++ src/ssl.c
+--- src/nrpe-ssl.c.orig	2024-12-23 03:34:53 UTC
++++ src/nrpe-ssl.c
 @@ -33,7 +33,7 @@ void ssl_set_protocol_version(SslVer ssl_proto_ver, un
  
  void ssl_set_protocol_version(SslVer ssl_proto_ver, unsigned long *ssl_opts)
