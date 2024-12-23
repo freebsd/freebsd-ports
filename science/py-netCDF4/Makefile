@@ -1,6 +1,6 @@
 PORTNAME=	netCDF4
-PORTVERSION=	1.6.5
 DISTVERSIONPREFIX=	v
+DISTVERSION=	1.7.0
 DISTVERSIONSUFFIX=	rel
 CATEGORIES=	science python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -19,8 +19,10 @@ RUN_DEPENDS=	${PYNUMPY} \
 
 USES=		python
 USE_GITHUB=	yes
-GH_ACCOUNT=	Unidata
-GH_PROJECT=	netcdf4-python
+#GH_ACCOUNT=	Unidata
+#GH_PROJECT=	netcdf4-python
+GH_TUPLE=	Unidata:netcdf4-python:${DISTVERSIONFULL}:DEFAULT \
+	PlasmaFair:nc-complex:37310ed:nc_complex/external/nc_complex
 USE_PYTHON=	autoplist concurrent cython cython_run distutils
 
 DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
