@@ -1,6 +1,6 @@
 PORTNAME=	please
 DISTVERSIONPREFIX=	v
-DISTVERSION=	15.17.1
+DISTVERSION=	16.0.0
 CATEGORIES=	devel
 MASTER_SITES=	https://raw.githubusercontent.com/thought-machine/please/${DISTVERSIONFULL}/
 DISTFILES=	go.mod
@@ -25,20 +25,21 @@ USES=		go:modules
 GO_MODULE=	github.com/thought-machine/please
 GO_TARGET=	src/please.go:please \
 		tools/build_langserver/langserver_main.go:build_langserver \
+		tools/http_cache/main.go:http_cache \
 		tools/jarcat/main.go:jarcat \
+		tools/please_go_embed/main.go:please_go_embed \
 		tools/please_go_filter/please_go_filter.go:please_go_filter \
-		tools/please_go_install/please_go_install.go:please_go_install \
-		tools/please_go_test/plz_go_test_main.go:please_go_test \
+		tools/please_go/please_go.go:please_go \
 		tools/please_pex/pex_main.go:please_pex \
 		tools/release_signer/main.go:release_signer
 USE_GITHUB=	yes
 GH_ACCOUNT=	thought-machine
 
 post-extract:
-	${CP} ${WRKSRC}/tools/please_go_test/plz_go_test.go ${WRKSRC}/tools/please_go_test/plz_go_test_main.go
+	${REINPLACE_CMD} -e 's|99.0.9999|${DISTVERSION}|' ${WRKSRC}/src/core/version.go
 
 post-build:
-	cd ${WRKSRC} ; ${SETENV} ${CC} ${CFLAGS} -o please_sandbox tools/sandbox/main.c
+	cd ${WRKSRC} ; ${SETENV} ${CC} ${CFLAGS} -o please_sandbox tools/sandbox/main.c tools/sandbox/sandbox.c
 
 post-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/please_sandbox ${STAGEDIR}${PREFIX}/bin

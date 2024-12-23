@@ -1,9 +1,10 @@
 bin/build_langserver
+bin/http_cache
 bin/jarcat
 bin/please
+bin/please_go
+bin/please_go_embed
 bin/please_go_filter
-bin/please_go_install
-bin/please_go_test
 bin/please_pex
 bin/please_sandbox
 bin/release_signer
