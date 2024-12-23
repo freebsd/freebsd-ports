@@ -1,6 +1,6 @@
 PORTNAME=	openocd
 DISTVERSION=	0.12.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	devel
 MASTER_SITES=	SF
 
@@ -10,11 +10,6 @@ WWW=		https://openocd.sf.net
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
-
-# Note: A local patch would be feasible but upstream has removed support for the offending feature
-#       implementation since their last release (0.12.0). As such, this will no longer be relevant
-#       from 0.13.0 onwards. Hence we're not addressing this "limitation" right now.
-BROKEN_aarch64=	fails to build: src/target/nds32_tlb.h:25:2: error: expected identifier PAGE_SIZE_4K = 0
 
 USES=		gmake libtool makeinfo pkgconfig tar:bzip2
 GNU_CONFIGURE=	yes
