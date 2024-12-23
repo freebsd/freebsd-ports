@@ -1,5 +1,6 @@
 PORTNAME=	shared-mime-info
 DISTVERSION=	2.4
+PORTREVISION=	1
 CATEGORIES=	misc gnome
 
 MAINTAINER=	desktop@FreeBSD.org
@@ -25,13 +26,10 @@ SHEBANG_FILES=	${WRKSRC}/tests/*.py \
 		${WRKSRC}/tests/*.sh \
 		${WRKSRC}/po/check_translations.sh
 
-MIMESUBDIRS=	application audio image inode message model multipart \
-		packages text video x-epoc x-content font
+MIMESUBDIRS=	application audio chemical font image inode message model \
+		multipart packages text video x-epoc x-content x-scheme-handler
 
 post-patch:
-	${REINPLACE_CMD} 's|/usr/local|${LOCALBASE}|g' \
-		${WRKSRC}/src/xdgmime/src/xdgmime.c \
-		${WRKSRC}/src/update-mime-database.cpp
 	${REINPLACE_CMD} 's|%%PYTHON_CMD%%|${PYTHON_CMD}|g' \
 		${WRKSRC}/data/freedesktop.org.xml.in
 
