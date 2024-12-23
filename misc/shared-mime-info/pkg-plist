@@ -81,15 +81,20 @@ share/locale/zh_HK/LC_MESSAGES/shared-mime-info.mo
 share/locale/zh_TW/LC_MESSAGES/shared-mime-info.mo
 share/man/man1/update-mime-database.1.gz
 share/mime/packages/freedesktop.org.xml
+@dir share/mime/all
 @dir share/mime/application
 @dir share/mime/audio
+@dir share/mime/chemical
 @dir share/mime/font
 @dir share/mime/image
 @dir share/mime/inode
 @dir share/mime/message
 @dir share/mime/model
 @dir share/mime/multipart
+@dir share/mime/print
 @dir share/mime/text
+@dir share/mime/uri
 @dir share/mime/video
 @dir share/mime/x-content
 @dir share/mime/x-epoc
+@dir share/mime/x-scheme-handler

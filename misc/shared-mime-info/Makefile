@@ -1,5 +1,6 @@
 PORTNAME=	shared-mime-info
 DISTVERSION=	2.4
+PORTREVISION=	1
 CATEGORIES=	misc gnome
 
 MAINTAINER=	desktop@FreeBSD.org
@@ -17,7 +18,6 @@ USE_GNOME=	glib20 libxml2
 USE_GITLAB=	YES
 GL_SITE=	https://gitlab.freedesktop.org/
 GL_ACCOUNT=	xdg
-GL_PROJECT=	shared-mime-info
 GL_TUPLE=	xdg:xdgmime:e861d3eb3d522a9c22c5a870526728e2a3d9fc04:xdgmime/src/xdgmime
 bash_CMD=	/bin/sh
 SHEBANG_FILES=	${WRKSRC}/tests/*.py \
@@ -25,8 +25,9 @@ SHEBANG_FILES=	${WRKSRC}/tests/*.py \
 		${WRKSRC}/tests/*.sh \
 		${WRKSRC}/po/check_translations.sh
 
-MIMESUBDIRS=	application audio image inode message model multipart \
-		packages text video x-epoc x-content font
+# these come from update-mime-database.cpp:const char *media_types[]
+MIMESUBDIRS=	all application audio chemical font image inode message model \
+		multipart print text uri video x-content x-epoc x-scheme-handler
 
 post-patch:
 	${REINPLACE_CMD} 's|/usr/local|${LOCALBASE}|g' \
