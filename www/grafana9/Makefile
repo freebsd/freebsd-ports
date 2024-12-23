@@ -16,6 +16,9 @@ WWW=		https://github.com/grafana/grafana
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=		EOLed upstream
+EXPIRATION_DATE=	2024-12-31
+
 ONLY_FOR_ARCHS=	aarch64 amd64 i386 riscv64
 
 BUILD_DEPENDS=	wire:devel/go-wire
