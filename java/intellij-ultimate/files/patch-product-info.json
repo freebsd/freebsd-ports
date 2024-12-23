@@ -1,6 +1,6 @@
---- product-info.json.orig	1970-01-20 22:54:44 UTC
+--- product-info.json.orig	1970-01-21 01:48:22 UTC
 +++ product-info.json
-@@ -9,9 +9,9 @@
+@@ -10,9 +10,9 @@
    "launch": [
      {
        "os": "Linux",
@@ -12,34 +12,34 @@
        "vmOptionsFilePath": "bin/idea64.vmoptions",
        "startupWmClass": "jetbrains-idea",
        "bootClassPathJarNames": [
-@@ -47,7 +47,7 @@
+@@ -48,7 +48,7 @@
          "-Djava.system.class.loader=com.intellij.util.lang.PathClassLoader",
          "-Didea.vendor.name=JetBrains",
-         "-Didea.paths.selector=IntelliJIdea2024.2",
+         "-Didea.paths.selector=IntelliJIdea2024.3",
 -        "-Djna.boot.library.path=$IDE_HOME/lib/jna/amd64",
 +        "-Djna.boot.library.path=$IDE_HOME/lib/jna",
          "-Dpty4j.preferred.native.folder=$IDE_HOME/lib/pty4j",
          "-Djna.nosys=true",
          "-Djna.noclasspath=true",
-@@ -114,7 +114,7 @@
+@@ -116,7 +116,7 @@
              "-Djava.system.class.loader=com.intellij.util.lang.PathClassLoader",
              "-Didea.vendor.name=JetBrains",
-             "-Didea.paths.selector=IntelliJIdea2024.2",
+             "-Didea.paths.selector=IntelliJIdea2024.3",
 -            "-Djna.boot.library.path=$IDE_HOME/lib/jna/amd64",
 +            "-Djna.boot.library.path=$IDE_HOME/lib/jna",
              "-Dpty4j.preferred.native.folder=$IDE_HOME/lib/pty4j",
              "-Djna.nosys=true",
              "-Djna.noclasspath=true",
-@@ -184,7 +184,7 @@
+@@ -189,7 +189,7 @@
              "-Djava.system.class.loader=com.intellij.util.lang.PathClassLoader",
              "-Didea.vendor.name=JetBrains",
-             "-Didea.paths.selector=IntelliJIdea2024.2",
+             "-Didea.paths.selector=IntelliJIdea2024.3",
 -            "-Djna.boot.library.path=$IDE_HOME/lib/jna/amd64",
 +            "-Djna.boot.library.path=$IDE_HOME/lib/jna",
              "-Dpty4j.preferred.native.folder=$IDE_HOME/lib/pty4j",
              "-Djna.nosys=true",
              "-Djna.noclasspath=true",
-@@ -4204,4 +4204,4 @@
+@@ -4460,4 +4460,4 @@
        ]
      }
    ]
