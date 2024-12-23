@@ -27,6 +27,7 @@ include/xrdp_sockets.h
 libdata/pkgconfig/libpainter.pc
 libdata/pkgconfig/rfxcodec.pc
 libdata/pkgconfig/xrdp.pc
+libexec/xrdp/xrdp-droppriv
 lib/xrdp/libcommon.a
 lib/xrdp/libcommon.so
 lib/xrdp/libcommon.so.0
@@ -86,17 +87,14 @@ etc/rc.d/xrdp-sesman
 %%ETCDIR%%/km-0000100c.ini
 %%ETCDIR%%/km-19360409.ini
 %%ETCDIR%%/pulse/default.pa
-@postunexec if cmp -s %D/etc/xrdp/sesman.ini.sample %D/etc/xrdp/sesman.ini; then rm -f %D/etc/xrdp/sesman.ini; fi
-@postunexec if cmp -s %D/etc/xrdp/startwm.sh.sample %D/etc/xrdp/startwm.sh; then rm -f %D/etc/xrdp/startwm.sh; fi
-@postunexec if cmp -s %D/etc/xrdp/reconnectwm.sh.sample %D/etc/xrdp/reconnectwm.sh; then rm -f %D/etc/xrdp/reconnectwm.sh; fi
-@postunexec if cmp -s %D/etc/xrdp/xrdp.ini.sample %D/etc/xrdp/xrdp.ini; then rm -f %D/etc/xrdp/xrdp.ini; fi
-@postunexec if cmp -s %D/etc/xrdp/xrdp_keyboard.ini.sample %D/etc/xrdp/xrdp_keyboard.ini; then rm -f %D/etc/xrdp/xrdp_keyboard.ini; fi
+@sample %%ETCDIR%%/gfx.toml.sample
 @sample %%ETCDIR%%/sesman.ini.sample
 @sample %%ETCDIR%%/startwm.sh.sample
 @sample %%ETCDIR%%/reconnectwm.sh.sample
 @sample %%ETCDIR%%/xrdp.ini.sample
 @sample %%ETCDIR%%/xrdp_keyboard.ini.sample
 share/man/man1/xrdp-dis.1.gz
+share/man/man5/gfx.toml.5.gz
 share/man/man5/sesman.ini.5.gz
 share/man/man8/xrdp.8.gz
 share/man/man5/xrdp.ini.5.gz
@@ -121,3 +119,4 @@ sbin/xrdp-sesman
 %%DATADIR%%/xrdp256.bmp
 %%DATADIR%%/xrdp_logo.bmp
 %%DATADIR%%/xrdp_logo.png
+%%DATADIR%%/xrdp-chkpriv

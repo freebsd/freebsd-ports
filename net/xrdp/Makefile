@@ -1,6 +1,6 @@
 PORTNAME=	xrdp
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.10.1
+DISTVERSION=	0.10.2-rc.1
 PORTEPOCH=	1
 CATEGORIES=	net
 DIST_SUBDIR?=	${PORTNAME}
@@ -17,7 +17,9 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BUILD_DEPENDS=	${LOCALBASE}/bin/nasm:devel/nasm
 RUN_DEPENDS=	${LOCALBASE}/lib/xorg/modules/libxorgxrdp.so:x11-drivers/xorgxrdp \
 		xterm:x11/xterm
-LIB_DEPENDS=	libImlib2.so:graphics/imlib2
+LIB_DEPENDS=	libImlib2.so:graphics/imlib2 \
+		libopenh264.so:multimedia/openh264 \
+		libx264.so:multimedia/x264
 
 USES=		autoreconf:build compiler:c11 cpe jpeg libtool localbase \
 		pkgconfig ssl xorg
@@ -33,7 +35,9 @@ GH_TUPLE=	neutrinolabs:librfxcodec:c6b41af:librfxcodec/librfxcodec \
 		neutrinolabs:libpainter:2255b38:libpainter/libpainter \
 		neutrinolabs:ulalaca-xrdp:f683d17:ulalaca/ulalaca
 
-CONFIGURE_ARGS=	--enable-imlib2 \
+CONFIGURE_ARGS=	--enable-openh264 \
+		--enable-x264 \
+		--enable-imlib2 \
 		--enable-jpeg \
 		--enable-painter \
 		--enable-pam-config=freebsd \
@@ -48,6 +52,9 @@ CONFLICTS=	xrdp-devel
 INSTALL_TARGET=	install-strip
 SUB_FILES=	pkg-deinstall pkg-install pkg-message
 SUB_LIST=	OPENSSLBASE=${OPENSSLBASE}
+
+USER=		_xrdp
+GROUP=		_xrdp
 
 OPTIONS_DEFINE=			DEBUG FUSE IPV6
 OPTIONS_DEFAULT=		FDKAAC OPUS
@@ -93,7 +100,7 @@ post-stage:
 	@${RM} ${STAGEDIR}${PREFIX}/etc/xrdp/rsakeys.ini
 	@${RM} ${STAGEDIR}${PREFIX}/etc/xrdp/cert.pem
 	@${RM} ${STAGEDIR}${PREFIX}/etc/xrdp/key.pem
-.for f in sesman.ini startwm.sh reconnectwm.sh xrdp.ini xrdp_keyboard.ini
+.for f in sesman.ini startwm.sh reconnectwm.sh xrdp.ini xrdp_keyboard.ini gfx.toml
 	@${MV} ${STAGEDIR}${PREFIX}/etc/xrdp/$f ${STAGEDIR}${PREFIX}/etc/xrdp/$f.sample
 .endfor
 
