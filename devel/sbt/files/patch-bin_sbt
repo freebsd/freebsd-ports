@@ -1,7 +1,7 @@
---- bin/sbt.orig	2020-10-05 00:22:37 UTC
+--- bin/sbt.orig	2024-12-23 03:25:31 UTC
 +++ bin/sbt
-@@ -80,7 +80,7 @@ cygwinpath() {
- 
+@@ -100,7 +100,7 @@ declare -r sbt_bin_dir="$(dirname "$(realpathish "$0")
+ }
  
  declare -r sbt_bin_dir="$(dirname "$(realpathish "$0")")"
 -declare -r sbt_home="$(dirname "$sbt_bin_dir")"
@@ -9,7 +9,7 @@
  
  echoerr () {
    echo 1>&2 "$@"
-@@ -93,7 +93,7 @@ dlog () {
+@@ -122,7 +122,7 @@ jar_file () {
  }
  
  jar_file () {
@@ -17,8 +17,8 @@
 +  echo "$(cygwinpath "${sbt_home}/sbt-launch.jar")"
  }
  
- acquire_sbt_jar () {
-@@ -290,14 +290,14 @@ getPreloaded() {
+ jar_url () {
+@@ -430,14 +430,14 @@ syncPreloaded() {
  }
  
  syncPreloaded() {
@@ -35,7 +35,7 @@
      [[ -d "$source_preloaded" ]] && {
        command -v rsync >/dev/null 2>&1 && {
          mkdir -p "$target_preloaded"
-@@ -406,8 +406,8 @@ run() {
+@@ -567,8 +567,8 @@ declare -r build_props_file="$(pwd)/project/build.prop
  declare -ra noshare_opts=(-Dsbt.global.base=project/.sbtboot -Dsbt.boot.directory=project/.boot -Dsbt.ivy.home=project/.ivy)
  declare -r sbt_opts_file=".sbtopts"
  declare -r build_props_file="$(pwd)/project/build.properties"
@@ -43,10 +43,10 @@
 -# this allows /etc/sbt/sbtopts location to be changed
 +declare -r etc_sbt_opts_file="%%PREFIX%%/etc/sbt/sbtopts"
 +# this allows %%PREFIX%%/etc/sbt/sbtopts location to be changed
- declare -r etc_file="${SBT_ETC_FILE:-$etc_sbt_opts_file}"
- declare -r dist_sbt_opts_file="${sbt_home}/conf/sbtopts"
- declare -r win_sbt_opts_file="${sbt_home}/conf/sbtconfig.txt"
-@@ -455,7 +455,7 @@ Usage: `basename "$0"` [options]
+ declare machine_sbt_opts_file="${etc_sbt_opts_file}"
+ declare config_home="${XDG_CONFIG_HOME:-$HOME/.config}/sbt"
+ [[ -f "${config_home}/sbtopts" ]] && machine_sbt_opts_file="${config_home}/sbtopts"
+@@ -621,7 +621,7 @@ Usage: `basename "$0"` [options]
    SBT_OPTS            environment variable, if unset uses "$default_sbt_opts"
    .sbtopts            if this file exists in the current directory, its contents
                        are prepended to the runner args
