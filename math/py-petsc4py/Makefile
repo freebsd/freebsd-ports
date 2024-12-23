@@ -11,6 +11,8 @@ WWW=		https://gitlab.com/petsc/petsc
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.rst
 
+BROKEN_armv7=	compilation fails: LLVM ERROR: out of memory
+
 BUILD_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}cython3>0:lang/cython3
 LIB_DEPENDS=	libpetsc.so:science/PETSc
