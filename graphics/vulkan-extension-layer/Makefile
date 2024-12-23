@@ -1,6 +1,6 @@
 PORTNAME=	vulkan-extension-layer
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.4.303
+DISTVERSION=	1.4.304
 CATEGORIES=	graphics
 
 MAINTAINER=	jbeich@FreeBSD.org
