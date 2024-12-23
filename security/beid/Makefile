@@ -1,7 +1,6 @@
 PORTNAME=	beid
 DISTVERSIONPREFIX=	v
-DISTVERSION=	5.1.18
-PORTREVISION=	1
+DISTVERSION=	5.1.21
 CATEGORIES=	security
 
 MAINTAINER=	tijl@FreeBSD.org
@@ -14,6 +13,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BUILD_DEPENDS=	${LOCALBASE}/share/aclocal/ax_cxx_compile_stdcxx_11.m4:devel/autoconf-archive
 LIB_DEPENDS=	libassuan.so:security/libassuan \
 		libcurl.so:ftp/curl \
+		libgpg-error.so:security/libgpg-error \
 		libpcsclite.so:devel/pcsc-lite \
 		libproxy.so:net/libproxy
 RUN_DEPENDS=	pinentry:security/pinentry
@@ -60,6 +60,8 @@ post-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/p11-kit/modules
 	${INSTALL_DATA} ${WRKSRC}/cardcomm/pkcs11/src/beid.module \
 		${STAGEDIR}${PREFIX}/share/p11-kit/modules
+
+post-install-NLS-on:
 	${RMDIR} ${STAGEDIR}${PREFIX}/share/locale/en@boldquot/LC_MESSAGES
 	${RMDIR} ${STAGEDIR}${PREFIX}/share/locale/en@boldquot
 	${RMDIR} ${STAGEDIR}${PREFIX}/share/locale/en@quot/LC_MESSAGES
