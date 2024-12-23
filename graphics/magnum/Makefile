@@ -13,6 +13,8 @@ WWW=		https://magnum.graphics/ \
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN_FreeBSD_15_armv7=	build broken: Unsupported relocation type 160 in non-PLT relocations, see https://github.com/mosra/magnum/issues/657
+
 LIB_DEPENDS=	libCorradeUtility.so:devel/corrade
 
 USES=		cmake compiler:c++11-lang gl
