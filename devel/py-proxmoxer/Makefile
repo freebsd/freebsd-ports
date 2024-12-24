@@ -17,12 +17,16 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>=2.0.0:www/py-requests@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}coveralls>0:devel/py-coveralls@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}openssh-wrapper>0:security/py-openssh-wrapper@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}paramiko>0:security/py-paramiko@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}requests-toolbelt>0:www/py-requests-toolbelt@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}responses>0:devel/py-responses@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	autoplist pep517 pytest
+BINARY_ALIAS=	python3=${PYTHON_CMD}
 
-TESTING_UNSAFE=	https://github.com/proxmoxer/proxmoxer/issues/195
+# Sync PYPI tests with GH released version
+# See also: https://github.com/proxmoxer/proxmoxer/issues/195
+EXTRA_PATCHES=	${FILESDIR}/extra-patch-tests
 
 NO_ARCH=	yes
 
