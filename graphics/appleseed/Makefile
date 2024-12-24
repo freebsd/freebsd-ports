@@ -85,6 +85,8 @@ post-patch:
                 ${WRKSRC}/src/appleseed/foundation/math/matrix.h \
                 ${WRKSRC}/src/appleseed/foundation/math/quaternion.h \
                 ${WRKSRC}/src/appleseed/foundation/image/color.h
+	@${REINPLACE_CMD} -e '/return Product/s,trt\.derived(),trt,' \
+		${WRKSRC}/src/thirdparty/bcd/ext/eigen/Eigen/src/Core/Transpositions.h
 
 .include <bsd.port.mk>
 
