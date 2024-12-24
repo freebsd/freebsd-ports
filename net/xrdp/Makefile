@@ -1,11 +1,11 @@
 PORTNAME=	xrdp
-DISTVERSIONPREFIX=	v
-DISTVERSION=	0.10.2-rc.1
+DISTVERSION=	0.10.2
 PORTEPOCH=	1
 CATEGORIES=	net
+MASTER_SITES=	https://github.com/neutribolabs/${PORTNAME}/releases/download/v${DISTVERSION}/
 DIST_SUBDIR?=	${PORTNAME}
 
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${PORTNAME}/commit/
+PATCH_SITES=	https://github.com/neutrinolabs/${PORTNAME}/commit/
 
 MAINTAINER=	meta@FreeBSD.org
 COMMENT=	Open source Remote Desktop Protocol (RDP) server
@@ -19,21 +19,16 @@ RUN_DEPENDS=	${LOCALBASE}/lib/xorg/modules/libxorgxrdp.so:x11-drivers/xorgxrdp \
 		xterm:x11/xterm
 LIB_DEPENDS=	libImlib2.so:graphics/imlib2 \
 		libopenh264.so:multimedia/openh264 \
-		libx264.so:multimedia/x264
+		libx264.so:multimedia/libx264
 
 USES=		autoreconf:build compiler:c11 cpe jpeg libtool localbase \
 		pkgconfig ssl xorg
 CPE_VENDOR=	neutrinolabs
 USE_XORG=	ice pixman sm x11 xfixes xrandr
 USE_LDCONFIG=	${PREFIX}/lib/xrdp
-USE_GITHUB=	yes
 
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
-GH_ACCOUNT=	neutrinolabs
-GH_TUPLE=	neutrinolabs:librfxcodec:c6b41af:librfxcodec/librfxcodec \
-		neutrinolabs:libpainter:2255b38:libpainter/libpainter \
-		neutrinolabs:ulalaca-xrdp:f683d17:ulalaca/ulalaca
 
 CONFIGURE_ARGS=	--enable-openh264 \
 		--enable-x264 \

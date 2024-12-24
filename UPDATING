@@ -5,6 +5,25 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20241224:
+  AFFECTS: users of net/xrdp
+  AUTHOR: meta@FreeBSD.org
+
+  xrdp supports H.264 encoding in graphics remoting since v0.10.2.
+  It reduces the amount of data transmitted over the network and provides
+  a much smoother and more responsive experience compared to previous
+  versions. When updating from older v0.10.x versions to v0.10.2, make
+  sure to merge the new xrdp.ini with the old one because xrdp.ini has
+  some new configuration parameters for H.264. See 20240704 if updating
+  from v0.9.x.
+
+  Furthermore, xrdp v0.10.2 supports running the xrdp daemon as an
+  unprivileged user. See the xrdp.ini(5) man page for configuring xrdp to
+  run as an unprivileged user. You can also check if xrdp is properly
+  configured to run as an unprivleged user using the script located at:
+
+    %%PREFIX%%/share/xrdp/xrdp-chkpriv
+
 20241203:
   AFFECTS: users of deskutils/treesheets
   AUTHOR: eduardo@FreeBSD.org
