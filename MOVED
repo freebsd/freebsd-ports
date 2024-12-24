@@ -3756,3 +3756,4 @@ devel/sfml251|devel/sfml|2024-12-09|Removed pinned port because the last user is
 devel/ocaml-seq|lang/ocaml|2024-12-10|Has expired: Seq is provided by lang/ocaml
 textproc/mdocml|textproc/mandoc|2024-12-17|Upstream reanamed
 www/shellinabox|sysutils/ttyd|2024-12-24|Has expired: Abandonware and outdated, last release in 2016. Use sysutils/ttyd instead
+audio/spiralsynth|audio/spiralsynthmodular|2024-12-24|Has expired: SpiralSynth isn't being supported any more, use audio/spiralsynthmodular

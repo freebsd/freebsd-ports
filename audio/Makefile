@@ -760,7 +760,6 @@
     SUBDIR += speexdsp
     SUBDIR += spek
     SUBDIR += spiralloops
-    SUBDIR += spiralsynth
     SUBDIR += spiralsynthmodular
     SUBDIR += spotify-player
     SUBDIR += spotify-qt
