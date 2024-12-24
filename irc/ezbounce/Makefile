@@ -12,6 +12,8 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN=		fails to build with boost-1.85+
+DEPRECATED=	broken with modern Boost, broken with modern compilers, last release in 2009, upstream is dead
+EXPIRATION_DATE=2025-01-28
 
 OPTIONS_DEFINE=	DOCS SSL COMPRESS
 OPTIONS_DEFAULT=SSL COMPRESS
