@@ -1,12 +1,12 @@
 PORTNAME=	sundials
-DISTVERSION=	6.6.0
-PORTREVISION=	9
+DISTVERSION=	7.2.1
 CATEGORIES=	math
 MASTER_SITES=	https://github.com/LLNL/sundials/releases/download/v${DISTVERSION}/
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	SUite of Nonlinear and DIfferential/ALgebraic Equation Solvers
-WWW=		https://computing.llnl.gov/projects/sundials
+WWW=		https://computing.llnl.gov/projects/sundials \
+		https://github.com/LLNL/sundials
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
