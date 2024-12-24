@@ -1,0 +1,17 @@
+[
+{ type: install
+  message: <<EOM
+bareos client was installed
+
+1) Sample files are installed in %%PREFIX%%/etc/bareos/bareos-fd.d/ and 
+   %%PREFIX%%/etc/bareos/bconsole.d/
+
+2) Add bareos_fd_enable="YES" to /etc/rc.conf.
+
+3) If you want to retain old configuration scheme, you must add the following
+   to /etc/rc.conf
+
+  bareos_fd_config="%%PREFIX%%/etc/bareos/bareos-fd.conf"
+EOM
+}
+]
