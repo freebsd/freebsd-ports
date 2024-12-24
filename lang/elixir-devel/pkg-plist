@@ -94,8 +94,8 @@
 %%PORTDOCS%%%%DOCSDIR%%/elixir/dist/lato-latin-ext-400-normal-N27NCBWW.woff2
 %%PORTDOCS%%%%DOCSDIR%%/elixir/dist/lato-latin-ext-700-normal-Q2L5DVMW.woff2
 %%PORTDOCS%%%%DOCSDIR%%/elixir/dist/remixicon-NKANDIL5.woff2
-%%PORTDOCS%%%%DOCSDIR%%/elixir/dist/search_data-CF7A2A36.js
-%%PORTDOCS%%%%DOCSDIR%%/elixir/dist/sidebar_items-F32DEE8D.js
+%%PORTDOCS%%%%DOCSDIR%%/elixir/dist/search_data-A13C103F.js
+%%PORTDOCS%%%%DOCSDIR%%/elixir/dist/sidebar_items-A2A12042.js
 %%PORTDOCS%%%%DOCSDIR%%/elixir/distributed-tasks.html
 %%PORTDOCS%%%%DOCSDIR%%/elixir/docs_config.js
 %%PORTDOCS%%%%DOCSDIR%%/elixir/docs-tests-and-with.html
@@ -252,7 +252,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/ex_unit/dist/lato-latin-ext-400-normal-N27NCBWW.woff2
 %%PORTDOCS%%%%DOCSDIR%%/ex_unit/dist/lato-latin-ext-700-normal-Q2L5DVMW.woff2
 %%PORTDOCS%%%%DOCSDIR%%/ex_unit/dist/remixicon-NKANDIL5.woff2
-%%PORTDOCS%%%%DOCSDIR%%/ex_unit/dist/search_data-CFB90BB6.js
+%%PORTDOCS%%%%DOCSDIR%%/ex_unit/dist/search_data-E948E36B.js
 %%PORTDOCS%%%%DOCSDIR%%/ex_unit/dist/sidebar_items-402A47D8.js
 %%PORTDOCS%%%%DOCSDIR%%/ex_unit/docs_config.js
 %%PORTDOCS%%%%DOCSDIR%%/ex_unit/ExUnit.AssertionError.html
@@ -294,7 +294,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/iex/dist/lato-latin-ext-400-normal-N27NCBWW.woff2
 %%PORTDOCS%%%%DOCSDIR%%/iex/dist/lato-latin-ext-700-normal-Q2L5DVMW.woff2
 %%PORTDOCS%%%%DOCSDIR%%/iex/dist/remixicon-NKANDIL5.woff2
-%%PORTDOCS%%%%DOCSDIR%%/iex/dist/search_data-A73980CA.js
+%%PORTDOCS%%%%DOCSDIR%%/iex/dist/search_data-41AD21D7.js
 %%PORTDOCS%%%%DOCSDIR%%/iex/dist/sidebar_items-34D826BA.js
 %%PORTDOCS%%%%DOCSDIR%%/iex/docs_config.js
 %%PORTDOCS%%%%DOCSDIR%%/iex/IEx.epub
@@ -355,7 +355,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/mix/dist/lato-latin-ext-400-normal-N27NCBWW.woff2
 %%PORTDOCS%%%%DOCSDIR%%/mix/dist/lato-latin-ext-700-normal-Q2L5DVMW.woff2
 %%PORTDOCS%%%%DOCSDIR%%/mix/dist/remixicon-NKANDIL5.woff2
-%%PORTDOCS%%%%DOCSDIR%%/mix/dist/search_data-B4638399.js
+%%PORTDOCS%%%%DOCSDIR%%/mix/dist/search_data-0FE10134.js
 %%PORTDOCS%%%%DOCSDIR%%/mix/dist/sidebar_items-E645B5B2.js
 %%PORTDOCS%%%%DOCSDIR%%/mix/docs_config.js
 %%PORTDOCS%%%%DOCSDIR%%/mix/index.html
