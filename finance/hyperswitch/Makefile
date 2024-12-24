@@ -1,6 +1,6 @@
 PORTNAME=	hyperswitch
-DISTVERSION=	2024.10.25.0
-PORTREVISION=	2
+DISTVERSION=	2024.12.23.0
+PORTREVISION=	0
 CATEGORIES=	finance
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -111,9 +111,7 @@ CARGO_CRATES=	actix-codec-0.5.2 \
 		aws-smithy-xml-0.60.8 \
 		aws-types-0.55.3 \
 		aws-types-1.3.3 \
-		axum-0.6.20 \
 		axum-0.7.5 \
-		axum-core-0.3.4 \
 		axum-core-0.4.3 \
 		backtrace-0.3.73 \
 		base16ct-0.2.0 \
@@ -154,7 +152,7 @@ CARGO_CRATES=	actix-codec-0.5.2 \
 		cargo-platform-0.1.8 \
 		cargo_metadata-0.18.1 \
 		cast-0.3.0 \
-		cc-1.1.18 \
+		cc-1.2.1 \
 		cfb-0.7.3 \
 		cfg-if-0.1.10 \
 		cfg-if-1.0.0 \
@@ -162,6 +160,7 @@ CARGO_CRATES=	actix-codec-0.5.2 \
 		chrono-0.4.38 \
 		chrono-tz-0.9.0 \
 		chrono-tz-build-0.3.0 \
+		chumsky-0.9.3 \
 		ciborium-0.2.2 \
 		ciborium-io-0.2.2 \
 		ciborium-ll-0.2.2 \
@@ -245,6 +244,8 @@ CARGO_CRATES=	actix-codec-0.5.2 \
 		ed25519-dalek-2.1.1 \
 		either-1.13.0 \
 		elliptic-curve-0.13.8 \
+		email-encoding-0.3.0 \
+		email_address-0.2.9 \
 		encoding_rs-0.8.34 \
 		equivalent-1.0.1 \
 		erased-serde-0.3.31 \
@@ -309,9 +310,11 @@ CARGO_CRATES=	actix-codec-0.5.2 \
 		hermit-abi-0.3.9 \
 		hermit-abi-0.4.0 \
 		hex-0.4.3 \
+		histogram-0.6.9 \
 		hkdf-0.12.4 \
 		hmac-0.12.1 \
 		home-0.5.9 \
+		hostname-0.4.0 \
 		http-0.2.12 \
 		http-1.1.0 \
 		http-body-0.4.6 \
@@ -325,15 +328,26 @@ CARGO_CRATES=	actix-codec-0.5.2 \
 		hyper-proxy-0.9.1 \
 		hyper-rustls-0.23.2 \
 		hyper-rustls-0.24.2 \
-		hyper-timeout-0.4.1 \
 		hyper-timeout-0.5.1 \
 		hyper-tls-0.5.0 \
 		hyper-tls-0.6.0 \
-		hyper-util-0.1.7 \
+		hyper-util-0.1.10 \
 		iana-time-zone-0.1.60 \
 		iana-time-zone-haiku-0.1.2 \
+		icu_collections-1.5.0 \
+		icu_locid-1.5.0 \
+		icu_locid_transform-1.5.0 \
+		icu_locid_transform_data-1.5.0 \
+		icu_normalizer-1.5.0 \
+		icu_normalizer_data-1.5.0 \
+		icu_properties-1.5.1 \
+		icu_properties_data-1.5.0 \
+		icu_provider-1.5.0 \
+		icu_provider_macros-1.5.0 \
 		ident_case-1.0.1 \
 		idna-0.5.0 \
+		idna-1.0.3 \
+		idna_adapter-1.2.0 \
 		ignore-0.4.22 \
 		image-0.25.2 \
 		impl-more-0.1.6 \
@@ -353,6 +367,7 @@ CARGO_CRATES=	actix-codec-0.5.2 \
 		itertools-0.10.5 \
 		itertools-0.11.0 \
 		itertools-0.12.1 \
+		itertools-0.13.0 \
 		itoa-1.0.11 \
 		jobserver-0.1.32 \
 		josekit-0.8.7 \
@@ -364,6 +379,7 @@ CARGO_CRATES=	actix-codec-0.5.2 \
 		kinded_macros-0.3.0 \
 		language-tags-0.3.2 \
 		lazy_static-1.5.0 \
+		lettre-0.11.10 \
 		libc-0.2.158 \
 		libgit2-sys-0.17.0+1.8.1 \
 		libm-0.2.8 \
@@ -373,12 +389,14 @@ CARGO_CRATES=	actix-codec-0.5.2 \
 		libz-sys-1.1.20 \
 		linked-hash-map-0.5.6 \
 		linux-raw-sys-0.4.14 \
+		litemap-0.7.3 \
 		local-channel-0.1.5 \
 		local-waker-0.1.4 \
 		lock_api-0.3.4 \
 		lock_api-0.4.12 \
 		log-0.4.22 \
 		lru-cache-0.1.2 \
+		lz4_flex-0.11.3 \
 		matchers-0.1.0 \
 		matchit-0.7.3 \
 		maud-0.26.0 \
@@ -402,7 +420,7 @@ CARGO_CRATES=	actix-codec-0.5.2 \
 		miow-0.2.2 \
 		moka-0.12.7 \
 		multimap-0.10.0 \
-		mutually_exclusive_features-0.0.3 \
+		mutually_exclusive_features-0.1.0 \
 		nanoid-0.4.0 \
 		native-tls-0.2.12 \
 		net2-0.2.39 \
@@ -433,11 +451,11 @@ CARGO_CRATES=	actix-codec-0.5.2 \
 		openssl-macros-0.1.1 \
 		openssl-probe-0.1.5 \
 		openssl-sys-0.9.103 \
-		opentelemetry-0.19.0 \
-		opentelemetry-otlp-0.12.0 \
-		opentelemetry-proto-0.2.0 \
-		opentelemetry_api-0.19.0 \
-		opentelemetry_sdk-0.19.0 \
+		opentelemetry-0.27.1 \
+		opentelemetry-aws-0.15.0 \
+		opentelemetry-otlp-0.27.0 \
+		opentelemetry-proto-0.27.0 \
+		opentelemetry_sdk-0.27.1 \
 		ordered-float-2.10.1 \
 		ordered-multimap-0.6.0 \
 		outref-0.5.1 \
@@ -489,12 +507,11 @@ CARGO_CRATES=	actix-codec-0.5.2 \
 		proc-macro-error-attr-1.0.4 \
 		proc-macro2-1.0.86 \
 		proptest-1.5.0 \
-		prost-0.11.9 \
 		prost-0.13.2 \
 		prost-build-0.13.2 \
-		prost-derive-0.11.9 \
 		prost-derive-0.13.2 \
 		prost-types-0.13.2 \
+		psm-0.1.24 \
 		ptr_meta-0.1.4 \
 		ptr_meta_derive-0.1.4 \
 		qrcode-0.14.1 \
@@ -502,11 +519,13 @@ CARGO_CRATES=	actix-codec-0.5.2 \
 		quick-error-1.2.3 \
 		quick-xml-0.31.0 \
 		quote-1.0.37 \
+		quoted_printable-0.5.1 \
 		r2d2-0.8.10 \
 		radium-0.7.0 \
 		rand-0.8.5 \
 		rand_chacha-0.3.1 \
 		rand_core-0.6.4 \
+		rand_pcg-0.3.1 \
 		rand_xorshift-0.3.0 \
 		raw-cpuid-11.1.0 \
 		rayon-1.10.0 \
@@ -606,6 +625,7 @@ CARGO_CRATES=	actix-codec-0.5.2 \
 		slug-0.1.6 \
 		smallvec-0.6.14 \
 		smallvec-1.13.2 \
+		snap-1.1.1 \
 		socket2-0.5.7 \
 		spin-0.5.2 \
 		spin-0.9.8 \
@@ -619,6 +639,8 @@ CARGO_CRATES=	actix-codec-0.5.2 \
 		sqlx-postgres-0.8.2 \
 		sqlx-sqlite-0.8.2 \
 		stable_deref_trait-1.2.0 \
+		stacker-0.1.17 \
+		static_assertions-1.1.0 \
 		stringmatch-0.4.0 \
 		stringprep-0.1.5 \
 		strsim-0.10.0 \
@@ -653,6 +675,7 @@ CARGO_CRATES=	actix-codec-0.5.2 \
 		time-core-0.1.2 \
 		time-macros-0.2.18 \
 		tiny-keccak-2.0.2 \
+		tinystr-0.7.6 \
 		tinytemplate-1.2.1 \
 		tinyvec-1.8.0 \
 		tinyvec_macros-0.1.1 \
@@ -663,14 +686,13 @@ CARGO_CRATES=	actix-codec-0.5.2 \
 		tokio-executor-0.1.10 \
 		tokio-fs-0.1.7 \
 		tokio-io-0.1.13 \
-		tokio-io-timeout-1.2.0 \
 		tokio-macros-2.4.0 \
 		tokio-native-tls-0.3.1 \
 		tokio-reactor-0.1.12 \
 		tokio-rustls-0.23.4 \
 		tokio-rustls-0.24.1 \
 		tokio-rustls-0.25.0 \
-		tokio-stream-0.1.15 \
+		tokio-stream-0.1.17 \
 		tokio-sync-0.1.8 \
 		tokio-tcp-0.1.4 \
 		tokio-threadpool-0.1.18 \
@@ -684,8 +706,7 @@ CARGO_CRATES=	actix-codec-0.5.2 \
 		toml_datetime-0.6.8 \
 		toml_edit-0.19.15 \
 		toml_edit-0.22.20 \
-		tonic-0.8.3 \
-		tonic-0.12.2 \
+		tonic-0.12.3 \
 		tonic-build-0.12.2 \
 		tonic-reflection-0.12.2 \
 		tonic-types-0.12.2 \
@@ -694,18 +715,18 @@ CARGO_CRATES=	actix-codec-0.5.2 \
 		tower-layer-0.3.3 \
 		tower-service-0.3.3 \
 		tracing-0.1.40 \
-		tracing-actix-web-0.7.11 \
+		tracing-actix-web-0.7.15 \
 		tracing-appender-0.2.3 \
 		tracing-attributes-0.1.27 \
 		tracing-core-0.1.32 \
 		tracing-futures-0.2.5 \
-		tracing-log-0.1.4 \
 		tracing-log-0.2.0 \
-		tracing-opentelemetry-0.19.0 \
+		tracing-opentelemetry-0.28.0 \
 		tracing-serde-0.1.3 \
 		tracing-subscriber-0.3.18 \
 		triomphe-0.1.13 \
 		try-lock-0.2.5 \
+		twox-hash-1.6.3 \
 		typeid-1.0.2 \
 		typenum-1.17.0 \
 		ucd-trie-0.1.6 \
@@ -730,6 +751,8 @@ CARGO_CRATES=	actix-codec-0.5.2 \
 		url-2.5.2 \
 		urlencoding-2.1.3 \
 		urlparse-0.7.3 \
+		utf16_iter-1.0.5 \
+		utf8_iter-1.0.4 \
 		utf8parse-0.2.2 \
 		utoipa-4.2.3 \
 		utoipa-gen-4.3.0 \
@@ -754,6 +777,7 @@ CARGO_CRATES=	actix-codec-0.5.2 \
 		wasm-bindgen-macro-support-0.2.93 \
 		wasm-bindgen-shared-0.2.93 \
 		web-sys-0.3.70 \
+		web-time-1.1.0 \
 		webdriver-0.46.0 \
 		webpki-0.22.4 \
 		webpki-roots-0.22.6 \
@@ -765,6 +789,7 @@ CARGO_CRATES=	actix-codec-0.5.2 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-util-0.1.9 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
+		windows-0.52.0 \
 		windows-core-0.52.0 \
 		windows-registry-0.2.0 \
 		windows-result-0.2.0 \
@@ -793,20 +818,29 @@ CARGO_CRATES=	actix-codec-0.5.2 \
 		winnow-0.6.18 \
 		winreg-0.50.0 \
 		wiremock-0.6.1 \
+		write16-1.0.0 \
+		writeable-0.5.5 \
 		ws2_32-sys-0.2.1 \
 		wyz-0.5.1 \
 		x509-parser-0.16.0 \
 		xmlparser-0.13.6 \
 		yaml-rust-0.4.5 \
+		yoke-0.7.4 \
+		yoke-derive-0.7.4 \
 		zerocopy-0.7.35 \
 		zerocopy-derive-0.7.35 \
+		zerofrom-0.1.4 \
+		zerofrom-derive-0.1.4 \
 		zeroize-1.8.1 \
+		zerovec-0.10.4 \
+		zerovec-derive-0.10.3 \
 		zstd-0.13.2 \
 		zstd-safe-7.2.1 \
 		zstd-sys-2.0.13+zstd.1.5.6 \
 		rust-i18n,rust-i18n-macro,rust-i18n-support@git+https://github.com/kashif-m/rust-i18n?rev=f2d8096aaaff7a87a847c35a5394c269f75e077a\#f2d8096aaaff7a87a847c35a5394c269f75e077a \
 		async-bb8-diesel@git+https://github.com/jarnura/async-bb8-diesel?rev=53b4ab901aab7635c8215fd1c2d542c8db443094\#53b4ab901aab7635c8215fd1c2d542c8db443094 \
-		rusty-money@git+https://github.com/varunsrin/rusty_money?rev=bbc0150742a0fff905225ff11ee09388e9babdcc\#bbc0150742a0fff905225ff11ee09388e9babdcc
+		rusty-money@git+https://github.com/varunsrin/rusty_money?rev=bbc0150742a0fff905225ff11ee09388e9babdcc\#bbc0150742a0fff905225ff11ee09388e9babdcc \
+		scylla,scylla-cql,scylla-macros@git+https://github.com/juspay/scylla-rust-driver.git?rev=5700aa2847b25437cdd4fcf34d707aa90dca8b89\#5700aa2847b25437cdd4fcf34d707aa90dca8b89
 
 RUSTFLAGS+=	--cfg uuid_unstable
 
