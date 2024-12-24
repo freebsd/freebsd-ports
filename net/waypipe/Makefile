@@ -5,6 +5,7 @@ PORTREVISION=	1
 CATEGORIES=	net wayland
 
 PATCH_SITES=	${GL_SITE}/${GL_ACCOUNT}/${GL_PROJECT}/-/commit/
+PATCHFILES+=	eccbb5cbf1e3.patch:-p1 # https://gitlab.freedesktop.org/mstoeckl/waypipe/-/issues/110
 PATCHFILES+=	4216e58e3c0f.patch:-p1 # https://gitlab.freedesktop.org/mstoeckl/waypipe/-/issues/116
 
 MAINTAINER=	jbeich@FreeBSD.org
