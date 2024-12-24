@@ -10,7 +10,7 @@
 -endif()
 -if(NOT client-only)
 -  add_subdirectory(dir-plugins)
-+if(python)
++if(ENABLE_PYTHON)
 +  if(client-only)
 +    add_subdirectory(fd-plugins)
 +  endif()

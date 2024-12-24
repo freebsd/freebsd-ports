@@ -29,25 +29,28 @@ bin/bwild
 @sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/profile/operator.conf.sample
 @sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/schedule/WeeklyCycle.conf.sample
 @sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/schedule/WeeklyCycleAfterBackup.conf.sample
-%%ETCDIR%%/bareos-dir.d/storage/dedup.conf.sample
+%%ETCDIR%%/bareos-dir.d/storage/Dedupable.conf.sample
 @sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/storage/File.conf.sample
 %%GFAPI%%@sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/storage/Gluster.conf.sample
 @sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/storage/NULL.conf.sample
 @sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/storage/Tape.conf.sample
+@sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/storage/dplcompat.conf.sample
 @comment @sample(,bareos,640) %%ETCDIR%%/bareos-regress.conf.sample
 @sample(,bareos,640) %%ETCDIR%%/bareos-sd.d/autochanger/autochanger-0.conf.sample
 @sample(,bareos,640) %%ETCDIR%%/bareos-sd.d/device/FileStorage.conf.sample
 %%GFAPI%%@sample(,bareos,640) %%ETCDIR%%/bareos-sd.d/device/GlusterStorage.conf.sample
 @sample(,bareos,640) %%ETCDIR%%/bareos-sd.d/device/NULL.conf.sample
+@sample(,bareos,640) %%ETCDIR%%/bareos-sd.d/device/dplcompat.conf.sample
 @sample(,bareos,640) %%ETCDIR%%/bareos-sd.d/device/tapedrive-0.conf.sample
 @sample(,bareos,640) %%ETCDIR%%/bareos-sd.d/director/bareos-dir.conf.sample
 @sample(,bareos,640) %%ETCDIR%%/bareos-sd.d/director/bareos-mon.conf.sample
 @sample(,bareos,640) %%ETCDIR%%/bareos-sd.d/messages/Standard.conf.sample
 @sample(,bareos,640) %%ETCDIR%%/bareos-sd.d/storage/bareos-sd.conf.sample
-@sample(,bareos,640) %%ETCDIR%%/bareos-sd.d/device/dedup.conf.sample
+@sample(,bareos,640) %%ETCDIR%%/bareos-sd.d/device/Dedupable.conf.sample
 %%MTX%%@sample(,bareos,640) %%ETCDIR%%/mtx-changer.conf.sample
 etc/logrotate.d/bareos-dir
 lib/bareos/backends/libbareossd-dedupable.so
+lib/bareos/backends/libbareossd-dplcompat.so
 lib/bareos/backends/libbareossd-fifo.so
 lib/bareos/backends/libbareossd-file.so
 %%GFAPI%%lib/bareos/backends/libbareossd-gfapi.so
@@ -67,7 +70,6 @@ lib/bareos/plugins/autoxflate-sd.so
 %%SCSICRYPTO%%lib/bareos/plugins/scsitapealert-sd.so
 lib/bareos/scripts/bareos-ctl-dir
 lib/bareos/scripts/bareos-ctl-sd
-lib/bareos/scripts/bareos-explorer
 lib/bareos/scripts/bareos-glusterfind-wrapper
 lib/bareos/scripts/create_bareos_database
 %%PGSQL%%lib/bareos/scripts/ddl/creates/postgresql.sql
@@ -86,7 +88,8 @@ lib/bareos/scripts/ddl/updates/postgresql.2004_2171.sql
 lib/bareos/scripts/ddl/updates/postgresql.2171_2192.sql
 lib/bareos/scripts/ddl/updates/postgresql.2192_2210.sql
 lib/bareos/scripts/ddl/updates/postgresql.2210_2230.sql
-%%PGSQL%%lib/bareos/scripts/ddl/updates/postgresql.bee.1017_2004.sql
+lib/bareos/scripts/ddl/updates/postgresql.2230_2240.sql
+lib/bareos/scripts/ddl/updates/postgresql.bee.1017_2004.sql
 lib/bareos/scripts/ddl/versions.map
 lib/bareos/scripts/delete_catalog_backup
 lib/bareos/scripts/disk-changer
@@ -97,19 +100,19 @@ lib/bareos/scripts/make_bareos_tables
 lib/bareos/scripts/make_catalog_backup
 lib/bareos/scripts/mtx-changer
 lib/bareos/scripts/query.sql
+lib/bareos/scripts/s3cmd-wrapper.sh
 lib/bareos/scripts/update_bareos_tables
 %%NDMP%%lib/libbareosndmp.so
-%%NDMP%%lib/libbareosndmp.so.23
+%%NDMP%%lib/libbareosndmp.so.24
 %%NDMP%%lib/libbareosndmp.so.%%LIB_VERSION%%
 lib/libbareossd.so
-lib/libbareossd.so.23
+lib/libbareossd.so.24
 lib/libbareossd.so.%%LIB_VERSION%%
 lib/libbareossql.so
-lib/libbareossql.so.23
+lib/libbareossql.so.24
 lib/libbareossql.so.%%LIB_VERSION%%
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/bareosdir%%PYTHON_EXT_SUFFIX%%.so
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/bareossd%%PYTHON_EXT_SUFFIX%%.so
-share/man/man1/bareos-tray-monitor.1.gz
 share/man/man1/bregex.1.gz
 share/man/man1/bwild.1.gz
 share/man/man8/bareos-dbcheck.8.gz
@@ -126,6 +129,7 @@ sbin/bareos-dbcheck
 sbin/bareos-dir
 sbin/bareos-sd
 sbin/bcopy
+sbin/bdedupestimate
 sbin/bextract
 sbin/bls
 sbin/bpluginfo

@@ -4,15 +4,16 @@ COMMENT=	Backup archiving recovery open sourced (traymonitor)
 
 LIB_DEPENDS+=	libbareos.so:sysutils/bareos-client
 
-CONFLICTS=	bareos20-traymonitor bareos21-traymonitor bareos22-traymonitor
+CONFLICTS=	bareos20-traymonitor bareos21-traymonitor bareos22-traymonitor \
+		bareos23-traymonitor
 
 USES=		desktop-file-utils gettext-runtime pkgconfig
 
 FLAVORS=	qt5 qt6
 FLAVOR?=	${FLAVORS:[1]}
 
-qt5_CONFLICTS=		bareos-traymonitor-qt6
-qt6_CONFLICTS=		bareos-traymonitor-qt5
+qt5_CONFLICTS=		bareos23-traymonitor-qt6
+qt6_CONFLICTS=		bareos23-traymonitor-qt5
 
 .if ${FLAVOR} == qt6
 PKGNAMESUFFIX=	-traymonitor-qt6
@@ -39,6 +40,7 @@ CMAKE_ARGS+=		-Dtraymonitor=yes \
 			-Dbuild-dird=no \
 			-Dbuild-stored=no \
 			-Dclient-only=yes \
-			-Dnls=ON
+			-Dnls=ON \
+			-DENABLE_WEBUI=OFF
 
 .include "${MASTERDIR}/Makefile"

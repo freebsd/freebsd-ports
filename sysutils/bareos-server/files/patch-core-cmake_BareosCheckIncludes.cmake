@@ -1,12 +1,12 @@
---- core/cmake/BareosCheckIncludes.cmake	2023-03-24 08:05:20.000000000 -0500
-+++ core/cmake/BareosCheckIncludes.cmake	2023-04-05 16:17:56.933566000 -0500
+--- core/cmake/BareosCheckIncludes.cmake.orig	2024-12-16 09:10:50.000000000 -0800
++++ core/cmake/BareosCheckIncludes.cmake	2024-12-22 19:21:38.094235000 -0800
 @@ -62,7 +62,9 @@
  
- include(CheckSymbolExists)
+   include(CheckSymbolExists)
  
 +if(gfapi)
- check_include_files(glusterfs/api/glfs.h HAVE_GLUSTERFS_API_GLFS_H)
+   check_include_files(glusterfs/api/glfs.h HAVE_GLUSTERFS_API_GLFS_H)
 +endif()
  
- check_include_files(sys/prctl.h HAVE_SYS_PRCTL_H)
+   check_include_files(sys/prctl.h HAVE_SYS_PRCTL_H)
  
