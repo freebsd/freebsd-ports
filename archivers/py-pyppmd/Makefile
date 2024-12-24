@@ -1,5 +1,5 @@
 PORTNAME=	pyppmd
-PORTVERSION=	1.1.0
+DISTVERSION=	1.1.1
 CATEGORIES=	archivers python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -25,7 +25,26 @@ USE_PYTHON=	autoplist pep517 pytest
 TEST_ENV=	${MAKE_ENV} \
 		PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 
+PORTDOCS=	*
+
+OPTIONS_DEFINE=	DOCS
+
+DOCS_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sphinx>=0:textproc/py-sphinx@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}sphinx_rtd_theme>=0:textproc/py-sphinx_rtd_theme@${PY_FLAVOR}
+
 do-test:
 	@cd ${WRKSRC} && ${SETENV} ${TEST_ENV} ${PYTHON_CMD} -m pytest -v
+
+pre-build-DOCS-on:
+	@(cd ${BUILD_WRKSRC}; \
+	${SETENVI} ${WRK_ENV} \
+	sphinx-build-${PYTHON_VER} \
+		-b html -d _build/doctress docs/ build/sphinx/html)
+
+post-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC}/build/sphinx/html && \
+		${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR} \
+		"! -name .buildinfo -and ! -name objects.inv -and ! -name _images")
 
 .include <bsd.port.mk>
