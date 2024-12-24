@@ -28,7 +28,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}impacket>=0:net/py-impacket@${PY_FLAVOR} \
 		rsync:net/rsync \
 		nmap:security/nmap
 
-USES=		bison cmake gnome gssapi:base,flags pkgconfig python ssl
+USES=		bison cmake gnome gssapi:heimdal pkgconfig python ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	greenbone
 GH_PROJECT=	${PORTNAME}-scanner
