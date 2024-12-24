@@ -205,6 +205,7 @@ include/thrift/lib/cpp2/SerializationSwitch.h
 include/thrift/lib/cpp2/Thrift.h
 include/thrift/lib/cpp2/TrustedServerException.h
 include/thrift/lib/cpp2/TypeClass.h
+include/thrift/lib/cpp2/async/AlwaysAllowSheddingInteractionOverloadPolicy.h
 include/thrift/lib/cpp2/async/AsyncClient.h
 include/thrift/lib/cpp2/async/AsyncProcessor.h
 include/thrift/lib/cpp2/async/AsyncProcessorHelper.h
@@ -229,6 +230,7 @@ include/thrift/lib/cpp2/async/HeaderClientChannel.h
 include/thrift/lib/cpp2/async/HeaderServerChannel.h
 include/thrift/lib/cpp2/async/HibernatingRequestChannel.h
 include/thrift/lib/cpp2/async/Interaction.h
+include/thrift/lib/cpp2/async/InteractionOverloadPolicy.h
 include/thrift/lib/cpp2/async/MessageChannel.h
 include/thrift/lib/cpp2/async/MultiplexAsyncProcessor.h
 include/thrift/lib/cpp2/async/PooledRequestChannel.h
@@ -258,6 +260,7 @@ include/thrift/lib/cpp2/async/SinkBridgeUtil.h
 include/thrift/lib/cpp2/async/StreamCallbacks.h
 include/thrift/lib/cpp2/async/TAsyncTransportHandler.h
 include/thrift/lib/cpp2/async/ThreadBoundAdaptorChannel.h
+include/thrift/lib/cpp2/async/TerminateInteractionOverloadPolicy.h
 include/thrift/lib/cpp2/async/TwoWayBridge.h
 include/thrift/lib/cpp2/async/metadata/CursorBasedRequestRpcMetadataAdapter.h
 include/thrift/lib/cpp2/async/metadata/RequestRpcMetadataAdapter.h
@@ -415,6 +418,7 @@ include/thrift/lib/cpp2/reflection/variant.h
 include/thrift/lib/cpp2/runtime/BaseSchemaRegistry.h
 include/thrift/lib/cpp2/runtime/Init.h
 include/thrift/lib/cpp2/runtime/SchemaRegistry.h
+include/thrift/lib/cpp2/schema/SyntaxGraph.h
 include/thrift/lib/cpp2/security/AsyncStopTLS.h
 include/thrift/lib/cpp2/security/FizzPeeker.h
 include/thrift/lib/cpp2/security/SSLUtil.h
@@ -581,6 +585,7 @@ include/thrift/lib/cpp2/transport/rocket/payload/DefaultPayloadSerializerStrateg
 include/thrift/lib/cpp2/transport/rocket/payload/LegacyPayloadSerializerStrategy.h
 include/thrift/lib/cpp2/transport/rocket/payload/PayloadSerializer.h
 include/thrift/lib/cpp2/transport/rocket/payload/PayloadSerializerStrategy.h
+include/thrift/lib/cpp2/transport/rocket/server/InteractionOverload.h
 include/thrift/lib/cpp2/transport/rocket/server/RocketRoutingHandler.h
 include/thrift/lib/cpp2/transport/rocket/server/RocketServerConnection.h
 include/thrift/lib/cpp2/transport/rocket/server/RocketServerConnectionObserver.h
