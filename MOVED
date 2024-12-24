@@ -3755,3 +3755,4 @@ x11-toolkits/py-qt6-chart|x11-toolkits/py-qt6-charts|2024-12-08|Renamed to be co
 devel/sfml251|devel/sfml|2024-12-09|Removed pinned port because the last user is gone
 devel/ocaml-seq|lang/ocaml|2024-12-10|Has expired: Seq is provided by lang/ocaml
 textproc/mdocml|textproc/mandoc|2024-12-17|Upstream reanamed
+www/shellinabox|sysutils/ttyd|2024-12-24|Has expired: Abandonware and outdated, last release in 2016. Use sysutils/ttyd instead
