@@ -1,3 +1,47 @@
+  <vuln vid="94b2d58a-c1e9-11ef-aa3f-dcfe074bd614">
+    <topic>kanboard -- Insufficient session invalidation</topic>
+    <affects>
+      <package>
+	<name>kanboard</name>
+	<range><lt>1.2.43</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>security-advisories@github.com reports:</p>
+	<blockquote cite="https://github.com/kanboard/kanboard/blob/main/app/Core/Session/SessionHandler.php#L40">
+	  <p>Kanboard is project management software that focuses on the Kanban
+	methodology.  In affected versions sessions are still usable even
+	though their lifetime has exceeded.  Kanboard implements a cutom
+	session handler (`app/Core/Session/SessionHandler.php`), to store
+	the session data in a database.  Therefore, when a `session_id` is
+	given, kanboard queries the data from the `sessions` sql table.  At
+	this point, it does not correctly verify, if a given `session_id`
+	has already exceeded its lifetime (`expires_at`).  Thus, a session
+	which&apos;s lifetime is already `&gt; time()`, is still queried
+	from the database and hence a valid login.  The implemented
+	**SessionHandlerInterface::gc** function, that does remove invalid
+	sessions, is called only **with a certain probability** (_Cleans
+	up expired sessions.  Called by `session_start()`, based on
+	`session.gc_divisor`, `session.gc_probability` and `session.gc_maxlifetime`
+	settings_) accordingly to the php documentation.  In the official
+	Kanboard docker image these values default to: session.gc_probability=1,
+	session.gc_divisor=1000. Thus, an expired session is only terminated
+	with probability 1/1000. There are no known workarounds for
+	this vulnerability.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2024-55603</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2024-55603</url>
+    </references>
+    <dates>
+      <discovery>2024-12-19</discovery>
+      <entry>2024-12-24</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="0a8dbc7f-bedc-11ef-b5a1-000ec6d40964">
     <topic>Vaultwarden -- Admin organization permissions</topic>
     <affects>
