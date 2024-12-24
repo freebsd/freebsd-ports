@@ -5,8 +5,11 @@ DISTVERSION=	1.13.10.0
 # py-openimageio's PORTREVISION.
 # Also, just to be on the safe side, when resetting,
 # best keep PORTREVISION?=	0.
-PORTREVISION?=	3
+PORTREVISION?=	4
 CATEGORIES?=	graphics devel
+
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES=	d8c6f9a004c6fe3ae024ee17903c7ca9f9e8f9e7.patch:-p1
 
 MAINTAINER=	FreeBSD@Shaneware.biz
 COMMENT?=	Advanced shading language for production GI renderers
