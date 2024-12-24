@@ -7,6 +7,9 @@ MASTER_SITES=	ftp://ftp.penguin.cz/pub/users/mhi/vxfs/
 MAINTAINER=	mhi@penguin.cz
 COMMENT=	Command-line utilities for reading Veritas Filesystem (VxFS)
 
+DEPRECATED=	Dist files are no longer available as site returns NXDOMAIN
+EXPIRATION_DATE=	2025-01-24
+
 USES=		tar:bzip2 gmake
 GNU_CONFIGURE=	yes
 
