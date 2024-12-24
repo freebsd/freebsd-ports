@@ -25,6 +25,10 @@ FCFLAGS:=		${FFLAGS} # project checks that these flags are equal
 
 OPTIONS_DEFINE=		BLAS EXAMPLES KLU LAPACK MPI OPENMP
 OPTIONS_DEFAULT=	KLU LAPACK MPI OPENMP
+# no OpenMP on armv7
+.if !exists(/usr/include/omp.h)
+OPTIONS_EXCLUDE=	OPENMP
+.endif
 OPTIONS_GROUP=		VECTORS
 OPTIONS_GROUP_VECTORS=	HYPRE PETSC
 VECTORS_DESC=		Alternative vector libraries
