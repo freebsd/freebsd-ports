@@ -18,6 +18,9 @@ LICENSE_NAME=	Oracle
 LICENSE_TEXT=	Packaging prohibited by Oracle license
 LICENSE_PERMS=	auto-accept
 
+DEPRECATED=	Oracle no longer provides public downloads of the old JDBC drivers
+EXPIRATION_DATE=	2025-01-24
+
 USE_JAVA=	yes
 JAVA_VERSION=	8
 NO_BUILD=	yes
