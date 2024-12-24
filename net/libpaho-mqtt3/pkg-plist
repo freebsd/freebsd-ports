@@ -11,20 +11,16 @@ lib/cmake/eclipse-paho-mqtt-c/eclipse-paho-mqtt-cConfig.cmake
 lib/cmake/eclipse-paho-mqtt-c/eclipse-paho-mqtt-cConfigVersion.cmake
 lib/libpaho-mqtt3a.so
 lib/libpaho-mqtt3a.so.1
-lib/libpaho-mqtt3a.so.1.3.12
+lib/libpaho-mqtt3a.so.1.3.13
 lib/libpaho-mqtt3as.so
 lib/libpaho-mqtt3as.so.1
-lib/libpaho-mqtt3as.so.1.3.12
+lib/libpaho-mqtt3as.so.1.3.13
 lib/libpaho-mqtt3c.so
 lib/libpaho-mqtt3c.so.1
-lib/libpaho-mqtt3c.so.1.3.12
+lib/libpaho-mqtt3c.so.1.3.13
 lib/libpaho-mqtt3cs.so
 lib/libpaho-mqtt3cs.so.1
-lib/libpaho-mqtt3cs.so.1.3.12
-share/man/man1/paho_c_pub.1.gz
-share/man/man1/paho_c_sub.1.gz
-share/man/man1/paho_cs_pub.1.gz
-share/man/man1/paho_cs_sub.1.gz
+lib/libpaho-mqtt3cs.so.1.3.13
 share/doc/Eclipse Paho C/CONTRIBUTING.md
 share/doc/Eclipse Paho C/README.md
 share/doc/Eclipse Paho C/edl-v10
@@ -41,3 +37,7 @@ share/doc/Eclipse Paho C/samples/paho_c_sub.c
 share/doc/Eclipse Paho C/samples/paho_cs_pub.c
 share/doc/Eclipse Paho C/samples/paho_cs_sub.c
 share/doc/Eclipse Paho C/samples/pubsub_opts.c
+share/man/man1/paho_c_pub.1.gz
+share/man/man1/paho_c_sub.1.gz
+share/man/man1/paho_cs_pub.1.gz
+share/man/man1/paho_cs_sub.1.gz
