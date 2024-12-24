@@ -12,7 +12,7 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libdisplay-info.so:sysutils/libdisplay-info
 
-USES=		gettext-tools gmake gnome pkgconfig tar:bz2 xfce xorg
+USES=		gettext-tools gmake gnome libtool pkgconfig tar:bz2 xfce xorg
 USE_GNOME=	cairo gdkpixbuf2 glib20 gtk30 libwnck3
 USE_LDCONFIG=	yes
 USE_XFCE=	xdt
@@ -21,12 +21,13 @@ USE_XORG=	x11 xrandr
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 
-OPTIONS_DEFINE=		GIR NLS WAYLAND
+OPTIONS_DEFINE=		DOCS GIR NLS WAYLAND
 OPTIONS_DEFAULT=	GIR WAYLAND
 OPTIONS_SUB=		yes
 
-GIR_DESC=	GObject Introspection support
+DOCS_CONFIGURE_ENABLE=	gtk-doc-html
 
+GIR_DESC=	GObject Introspection support
 GIR_USE=	GNOME=introspection:build
 GIR_MESON_TRUE=	introspection
 
