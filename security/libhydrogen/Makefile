@@ -1,6 +1,5 @@
 PORTNAME=	libhydrogen
-PORTVERSION=	0.0.0.g20240509
-PORTREVISION=	1
+PORTVERSION=	0.0.0.g20241103
 CATEGORIES=	security
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -10,10 +9,12 @@ WWW=		https://github.com/jedisct1/libhydrogen
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cmake
+USES=		meson
+
+MESON_ARGS=	--default-library=both
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	jedisct1
-GH_TAGNAME=	c18e510
+GH_TAGNAME=	576a38b
 
 .include <bsd.port.mk>

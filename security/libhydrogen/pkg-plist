@@ -1,6 +1,4 @@
 include/hydrogen.h
 lib/libhydrogen.a
 lib/libhydrogen.so
-share/cmake/hydrogen/hydrogen-config.cmake
-share/cmake/hydrogen/hydrogen-targets-%%CMAKE_BUILD_TYPE%%.cmake
-share/cmake/hydrogen/hydrogen-targets.cmake
+libdata/pkgconfig/libhydrogen.pc
