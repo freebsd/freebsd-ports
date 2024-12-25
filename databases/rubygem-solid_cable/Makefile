@@ -1,5 +1,5 @@
 PORTNAME=	solid_cable
-PORTVERSION=	3.0.2
+PORTVERSION=	3.0.4
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 
