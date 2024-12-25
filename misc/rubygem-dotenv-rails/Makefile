@@ -1,5 +1,5 @@
 PORTNAME=	dotenv-rails
-PORTVERSION=	3.1.4
+PORTVERSION=	3.1.6
 CATEGORIES=	misc rubygems
 MASTER_SITES=	RG
 
