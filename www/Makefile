@@ -1758,10 +1758,10 @@
     SUBDIR += py-httpretty
     SUBDIR += py-httptools
     SUBDIR += py-httpx
-    SUBDIR += py-httpx_gssapi
     SUBDIR += py-httpx-oauth
     SUBDIR += py-httpx-socks
     SUBDIR += py-httpx-ws
+    SUBDIR += py-httpx_gssapi
     SUBDIR += py-hypercorn
     SUBDIR += py-hyperframe
     SUBDIR += py-hyperlink
