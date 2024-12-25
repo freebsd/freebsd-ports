@@ -1,3 +1,10 @@
-lib/common-lisp/split-sequence/split-sequence.lisp
+lib/common-lisp/split-sequence/api.lisp
+lib/common-lisp/split-sequence/documentation.lisp
+lib/common-lisp/split-sequence/extended-sequence.lisp
+lib/common-lisp/split-sequence/list.lisp
+lib/common-lisp/split-sequence/package.lisp
 lib/common-lisp/split-sequence/split-sequence.asd
+lib/common-lisp/split-sequence/tests.lisp
+lib/common-lisp/split-sequence/vector.lisp
+lib/common-lisp/split-sequence/version.sexp
 lib/common-lisp/system-registry/split-sequence.asd
