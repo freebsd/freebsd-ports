@@ -1,5 +1,5 @@
 PORTNAME=	ruby-lsp-rails
-PORTVERSION=	0.3.26
+PORTVERSION=	0.3.27
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -11,7 +11,7 @@ WWW=		https://shopify.github.io/ruby-lsp-rails/ \
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	rubygem-ruby-lsp>=0.21.2<0.22.0:devel/rubygem-ruby-lsp
+RUN_DEPENDS=	rubygem-ruby-lsp>=0.22.0<0.23.0:devel/rubygem-ruby-lsp
 
 USES=		gem
 
