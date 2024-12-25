@@ -1,6 +1,6 @@
-TIMESTAMP = 1732224702
-SHA256 (ddtrace-2.16.4.tar.gz) = eb6ec156d21e9752717ddf09522ac932d1ebfc0f1df9756647f5627da51ac3b7
-SIZE (ddtrace-2.16.4.tar.gz) = 7860952
+TIMESTAMP = 1734888178
+SHA256 (ddtrace-2.16.6.tar.gz) = 502f5c41439a6212ea035a35cf8e4858cda3b452bfbf9958aa2c8ab2fc3e1a1b
+SIZE (ddtrace-2.16.6.tar.gz) = 7866210
 SHA256 (abseil-cpp-20240722.0.tar.gz) = f50e5ac311a81382da7fa75b97310e4b9006474f9560ac46f54a9967f07d4ae3
 SIZE (abseil-cpp-20240722.0.tar.gz) = 2242861
 SHA256 (rust/crates/anyhow-1.0.86.crate) = b3d1d046238990b9cf5bcde22a3fb3584ee5cf65fb2765f454ed428c7a0063da
