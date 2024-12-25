@@ -6589,6 +6589,7 @@
     SUBDIR += rubygem-aws-sdk-docdb
     SUBDIR += rubygem-aws-sdk-docdbelastic
     SUBDIR += rubygem-aws-sdk-drs
+    SUBDIR += rubygem-aws-sdk-dsql
     SUBDIR += rubygem-aws-sdk-dynamodb
     SUBDIR += rubygem-aws-sdk-dynamodbstreams
     SUBDIR += rubygem-aws-sdk-ebs
