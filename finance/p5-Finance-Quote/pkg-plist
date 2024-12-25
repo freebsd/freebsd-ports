@@ -15,6 +15,7 @@
 %%SITE_PERL%%/Finance/Quote/CurrencyRates/AlphaVantage.pm
 %%SITE_PERL%%/Finance/Quote/CurrencyRates/CurrencyFreaks.pm
 %%SITE_PERL%%/Finance/Quote/CurrencyRates/ECB.pm
+%%SITE_PERL%%/Finance/Quote/CurrencyRates/FinanceAPI.pm
 %%SITE_PERL%%/Finance/Quote/CurrencyRates/Fixer.pm
 %%SITE_PERL%%/Finance/Quote/CurrencyRates/OpenExchange.pm
 %%SITE_PERL%%/Finance/Quote/CurrencyRates/YahooJSON.pm
@@ -28,7 +29,6 @@
 %%SITE_PERL%%/Finance/Quote/GoldMoney.pm
 %%SITE_PERL%%/Finance/Quote/GoogleWeb.pm
 %%SITE_PERL%%/Finance/Quote/HU.pm
-%%SITE_PERL%%/Finance/Quote/IEXCloud.pm
 %%SITE_PERL%%/Finance/Quote/IndiaMutual.pm
 %%SITE_PERL%%/Finance/Quote/MarketWatch.pm
 %%SITE_PERL%%/Finance/Quote/MorningstarAU.pm
@@ -75,6 +75,7 @@
 %%PERL5_MAN3%%/Finance::Quote::CurrencyRates::AlphaVantage.3.gz
 %%PERL5_MAN3%%/Finance::Quote::CurrencyRates::CurrencyFreaks.3.gz
 %%PERL5_MAN3%%/Finance::Quote::CurrencyRates::ECB.3.gz
+%%PERL5_MAN3%%/Finance::Quote::CurrencyRates::FinanceAPI.3.gz
 %%PERL5_MAN3%%/Finance::Quote::CurrencyRates::Fixer.3.gz
 %%PERL5_MAN3%%/Finance::Quote::CurrencyRates::OpenExchange.3.gz
 %%PERL5_MAN3%%/Finance::Quote::CurrencyRates::YahooJSON.3.gz
@@ -88,7 +89,6 @@
 %%PERL5_MAN3%%/Finance::Quote::GoldMoney.3.gz
 %%PERL5_MAN3%%/Finance::Quote::GoogleWeb.3.gz
 %%PERL5_MAN3%%/Finance::Quote::HU.3.gz
-%%PERL5_MAN3%%/Finance::Quote::IEXCloud.3.gz
 %%PERL5_MAN3%%/Finance::Quote::IndiaMutual.3.gz
 %%PERL5_MAN3%%/Finance::Quote::MarketWatch.3.gz
 %%PERL5_MAN3%%/Finance::Quote::MorningstarAU.3.gz

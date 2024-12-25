@@ -1,5 +1,5 @@
 PORTNAME=	Finance-Quote
-PORTVERSION=	1.63
+PORTVERSION=	1.64
 CATEGORIES=	finance perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -40,9 +40,7 @@ TEST_DEPENDS=	p5-Date-Manip>=0:devel/p5-Date-Manip \
 		p5-DateTime-Format-ISO8601>=0:devel/p5-DateTime-Format-ISO8601 \
 		p5-Module-CPANTS-Analyse>=0:devel/p5-Module-CPANTS-Analyse \
 		p5-Test-Kwalitee>=0:devel/p5-Test-Kwalitee \
-		p5-Test-Perl-Critic>=0:textproc/p5-Test-Perl-Critic \
-		p5-Test-Pod>=0:devel/p5-Test-Pod \
-		p5-Test-Pod-Coverage>=1.00:devel/p5-Test-Pod-Coverage
+		p5-Test-Perl-Critic>=0:textproc/p5-Test-Perl-Critic
 
 USES=		perl5
 USE_PERL5=	configure
