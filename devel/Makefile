@@ -6502,6 +6502,7 @@
     SUBDIR += rubygem-aws-sdk-bedrock
     SUBDIR += rubygem-aws-sdk-bedrockagent
     SUBDIR += rubygem-aws-sdk-bedrockagentruntime
+    SUBDIR += rubygem-aws-sdk-bedrockdataautomation
     SUBDIR += rubygem-aws-sdk-bedrockruntime
     SUBDIR += rubygem-aws-sdk-billing
     SUBDIR += rubygem-aws-sdk-billingconductor
