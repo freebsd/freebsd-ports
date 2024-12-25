@@ -1,0 +1,15 @@
+CPANSA::DB provides the CPAN Security Advisory data as a Perl data structure,
+mostly for CPAN::Audit.
+
+The db subroutine returns the CPAN Security Advisory (CPANSA) reports as a Perl
+data structure. However, anything can use this.
+
+Each release also comes with a .gpg file that has the signature for the file. If
+you cannot confirm that the module file has the right signature, it might have
+been corrupted or modified.
+
+This module is available outside of CPAN as a release on GitHub:
+https://github.com/briandfoy/cpan-security-advisory/releases. Each release on
+GitHub includes an attestation.
+
+There is also a JSON file that provides the same datastructure.
