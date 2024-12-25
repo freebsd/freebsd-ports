@@ -1,5 +1,5 @@
 PORTNAME=	CPAN-Audit
-PORTVERSION=	20240910.001
+PORTVERSION=	20241208.001
 CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -13,6 +13,7 @@ LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-CPAN-DistnameInfo>=0:devel/p5-CPAN-DistnameInfo \
+		p5-CPANSA-DB>=20241121.001:security/p5-CPANSA-DB \
 		p5-IO-Interactive>=0,1:devel/p5-IO-Interactive \
 		p5-JSON>=0:converters/p5-JSON \
 		p5-Module-CPANfile>=0:devel/p5-Module-CPANfile \
