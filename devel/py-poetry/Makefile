@@ -1,5 +1,5 @@
 PORTNAME=	poetry
-PORTVERSION=	1.8.4
+PORTVERSION=	1.8.5
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI \
 		https://github.com/python-poetry/poetry/releases/download/${PORTVERSION}/
@@ -23,7 +23,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}build>=1.0.3<2:devel/py-build@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}keyring>=23.9.0,1<25,1:security/py-keyring@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}packaging>=23.1:devel/py-packaging@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pexpect>=4.7.0<5:misc/py-pexpect@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pkginfo>=1.10.0<2:sysutils/py-pkginfo@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pkginfo>=1.12.0<2:sysutils/py-pkginfo@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}platformdirs>=3.0.0<5:devel/py-platformdirs@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}poetry-core>=1.9.1<1.9.1_99:devel/py-poetry-core@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}poetry-plugin-export>=1.6.0<2:devel/py-poetry-plugin-export@${PY_FLAVOR} \
