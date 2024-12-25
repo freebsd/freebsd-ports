@@ -1,5 +1,5 @@
 PORTNAME=	pdm
-PORTVERSION=	2.20.1
+PORTVERSION=	2.22.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -19,7 +19,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}blinker>=0:devel/py-blinker@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dep-logic>=0.4.4:devel/py-dep-logic@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}filelock>=3.13:sysutils/py-filelock@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}findpython>=0.6.0<1.0.0:devel/py-findpython@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}hishel>=0.0.32<0.1.0:devel/py-hishel@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}hishel>=0.0.32:devel/py-hishel@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}httpcore>=1.0.6:www/py-httpcore@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}httpx>=0.20<1:www/py-httpx@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}installer>=0.7<0.8:devel/py-installer@${PY_FLAVOR} \
@@ -37,7 +37,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}blinker>=0:devel/py-blinker@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}unearth>=0.17.0:devel/py-unearth@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}virtualenv>=20:devel/py-virtualenv@${PY_FLAVOR}
 
-USES=		python
+USES=		python:3.9+
 USE_PYTHON=	autoplist concurrent pep517
 
 NO_ARCH=	yes
@@ -53,10 +53,6 @@ COPIER_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}copier>=8.0.0:devel/py-copier@${PY_FL
 KEYRING_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}keyring>=0,1:security/py-keyring@${PY_FLAVOR} \
 
 .include <bsd.port.pre.mk>
-
-.if ${PYTHON_REL} < 30900
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}importlib-resources>=5:devel/py-importlib-resources@${PY_FLAVOR}
-.endif
 
 .if ${PYTHON_REL} < 31000
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}importlib-metadata>=3.6:devel/py-importlib-metadata@${PY_FLAVOR}
