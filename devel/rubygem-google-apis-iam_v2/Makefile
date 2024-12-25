@@ -1,5 +1,5 @@
 PORTNAME=	google-apis-iam_v2
-PORTVERSION=	0.10.0
+PORTVERSION=	0.11.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
