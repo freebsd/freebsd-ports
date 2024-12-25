@@ -1,6 +1,5 @@
 PORTNAME=	rubocop
-PORTVERSION=	1.68.0
-PORTREVISION=	1
+PORTVERSION=	1.69.2
 CATEGORIES=	devel ruby
 MASTER_SITES=	RG
 
@@ -18,10 +17,10 @@ RUN_DEPENDS=	rubygem-json>=2.3<3:devel/rubygem-json \
 		rubygem-parallel>=1.10<2:sysutils/rubygem-parallel \
 		rubygem-parser>=3.3.0.2:devel/rubygem-parser \
 		rubygem-rainbow>=2.2.2<4.0:devel/rubygem-rainbow \
-		rubygem-regexp_parser>=2.4<3.0:textproc/rubygem-regexp_parser \
-		rubygem-rubocop-ast>=1.31.2<2.0:devel/rubygem-rubocop-ast \
+		rubygem-regexp_parser>=2.9.3<3.0:textproc/rubygem-regexp_parser \
+		rubygem-rubocop-ast>=1.36.2<2.0:devel/rubygem-rubocop-ast \
 		rubygem-ruby-progressbar>=1.7<2:devel/rubygem-ruby-progressbar \
-		rubygem-unicode-display_width2>=2.4.0<3.0:devel/rubygem-unicode-display_width2
+		rubygem-unicode-display_width>=2.4.0<4.0:devel/rubygem-unicode-display_width
 
 USES=		cpe gem
 
