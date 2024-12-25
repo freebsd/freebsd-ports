@@ -1,5 +1,5 @@
 PORTNAME=	libaegis
-PORTVERSION=	0.1.25
+PORTVERSION=	0.3.0
 CATEGORIES=	security
 
 MAINTAINER=	sunpoet@FreeBSD.org
