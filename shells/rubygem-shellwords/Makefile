@@ -1,5 +1,5 @@
 PORTNAME=	shellwords
-PORTVERSION=	0.2.1
+PORTVERSION=	0.2.2
 CATEGORIES=	shells rubygems
 MASTER_SITES=	RG
 
