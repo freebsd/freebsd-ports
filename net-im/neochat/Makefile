@@ -1,6 +1,6 @@
 PORTNAME=	neochat
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net-im deskutils kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
@@ -23,13 +23,14 @@ RUN_DEPENDS=	kquickimageeditor>=0.2.0:graphics/kquickimageeditor \
 
 USES=		cmake compiler:c++20-lang desktop-file-utils kde:5 \
 		pkgconfig qt:5 tar:xz xorg
-USE_QT=		concurrent core dbus declarative graphicaleffects gui imageformats \
-		location multimedia network quickcontrols quickcontrols2 \
-		sql widgets xml \
+USE_QT=		concurrent core dbus declarative graphicaleffects gui \
+		imageformats location multimedia network quickcontrols \
+		quickcontrols2 sql widgets xml \
 		buildtools:build linguist:build qmake:build
-USE_KDE=	auth codecs completion config configwidgets coreaddons dbusaddons \
-		i18n itemmodels jobwidgets kio kirigami2 service solid sonnet \
-		notifications qqc2-desktop-style widgetsaddons windowsystem \
+USE_KDE=	auth codecs completion config configwidgets coreaddons \
+		dbusaddons i18n itemmodels jobwidgets kio kirigami2 \
+		kquickcharts notifications qqc2-desktop-style service \
+		solid sonnet widgetsaddons windowsystem \
 		ecm:build
 USE_XORG=	x11
 
