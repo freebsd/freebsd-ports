@@ -1,12 +1,13 @@
 PORTNAME=	multipart
-PORTVERSION=	1.1.0
+PORTVERSION=	1.2.1
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Parser for multipart/form-data
-WWW=		https://github.com/defnull/multipart
+WWW=		https://multipart.readthedocs.io/en/latest/ \
+		https://github.com/defnull/multipart
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
