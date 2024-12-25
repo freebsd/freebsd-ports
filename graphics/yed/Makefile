@@ -1,10 +1,10 @@
 PORTNAME=	yed
-DISTVERSION=	3.22
+DISTVERSION=	3.24
 CATEGORIES=	graphics java
 MASTER_SITES=	#
 DISTNAME=	yEd-${DISTVERSION}
 
-MAINTAINER=	myc@barev.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Editor for graphs and diagrams
 WWW=		https://www.yworks.com/products/yed
 
