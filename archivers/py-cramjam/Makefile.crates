@@ -12,16 +12,16 @@ CARGO_CRATES=	adler2-2.0.0 \
 		bzip2-0.4.4 \
 		bzip2-sys-0.1.11+1.0.8 \
 		cbindgen-0.24.5 \
-		cc-1.1.31 \
+		cc-1.2.4 \
 		cfg-if-1.0.0 \
 		clap-3.2.25 \
 		clap_lex-0.2.4 \
-		cmake-0.1.51 \
+		cmake-0.1.52 \
 		copy_dir-0.1.3 \
 		crc32fast-1.4.2 \
-		errno-0.3.9 \
-		fastrand-2.1.1 \
-		flate2-1.0.34 \
+		errno-0.3.10 \
+		fastrand-2.3.0 \
+		flate2-1.0.35 \
 		hashbrown-0.12.3 \
 		heck-0.4.1 \
 		heck-0.5.0 \
@@ -30,9 +30,9 @@ CARGO_CRATES=	adler2-2.0.0 \
 		indoc-2.0.5 \
 		isal-rs-0.5.3+496255c \
 		isal-sys-0.5.3+496255c \
-		itoa-1.0.11 \
+		itoa-1.0.14 \
 		jobserver-0.1.32 \
-		libc-0.2.161 \
+		libc-0.2.168 \
 		libcramjam-0.6.0 \
 		libdeflate-sys-1.19.3 \
 		libdeflater-1.19.3 \
@@ -50,42 +50,41 @@ CARGO_CRATES=	adler2-2.0.0 \
 		parking_lot-0.12.3 \
 		parking_lot_core-0.9.10 \
 		pkg-config-0.3.31 \
-		portable-atomic-1.9.0 \
-		proc-macro2-1.0.88 \
-		pyo3-0.22.5 \
-		pyo3-build-config-0.22.5 \
-		pyo3-ffi-0.22.5 \
-		pyo3-macros-0.22.5 \
-		pyo3-macros-backend-0.22.5 \
-		python3-dll-a-0.2.10 \
+		portable-atomic-1.10.0 \
+		proc-macro2-1.0.92 \
+		pyo3-0.22.6 \
+		pyo3-build-config-0.22.6 \
+		pyo3-ffi-0.22.6 \
+		pyo3-macros-0.22.6 \
+		pyo3-macros-backend-0.22.6 \
+		python3-dll-a-0.2.11 \
 		quote-1.0.37 \
-		redox_syscall-0.5.7 \
-		rustix-0.38.37 \
+		redox_syscall-0.5.8 \
+		rustix-0.38.42 \
 		ryu-1.0.18 \
 		same-file-1.0.6 \
 		scopeguard-1.2.0 \
-		serde-1.0.211 \
-		serde_derive-1.0.211 \
-		serde_json-1.0.132 \
+		serde-1.0.216 \
+		serde_derive-1.0.216 \
+		serde_json-1.0.133 \
 		shlex-1.3.0 \
 		smallvec-1.13.2 \
 		snap-1.1.1 \
 		strsim-0.10.0 \
 		syn-1.0.109 \
-		syn-2.0.82 \
+		syn-2.0.90 \
 		target-lexicon-0.12.16 \
-		tempfile-3.13.0 \
+		tempfile-3.14.0 \
 		termcolor-1.4.1 \
 		textwrap-0.16.1 \
 		toml-0.5.11 \
-		unicode-ident-1.0.13 \
+		unicode-ident-1.0.14 \
 		unindent-0.2.3 \
 		walkdir-2.5.0 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-util-0.1.9 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
-		windows-sys-0.52.0 \
 		windows-sys-0.59.0 \
 		windows-targets-0.52.6 \
 		windows_aarch64_gnullvm-0.52.6 \
