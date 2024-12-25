@@ -1,5 +1,5 @@
 PORTNAME=	google-cloud-spanner-admin-database-v1
-PORTVERSION=	1.2.1
+PORTVERSION=	1.3.0
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
@@ -13,7 +13,7 @@ WWW=		https://cloud.google.com/ruby/docs/reference/google-cloud-spanner-admin-da
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-RUN_DEPENDS=	rubygem-gapic-common>=0.21.1<2.0:devel/rubygem-gapic-common \
+RUN_DEPENDS=	rubygem-gapic-common>=0.24.0<2.0:devel/rubygem-gapic-common \
 		rubygem-google-cloud-errors>=1.0<2:net/rubygem-google-cloud-errors \
 		rubygem-grpc-google-iam-v1>=1.1<2:devel/rubygem-grpc-google-iam-v1
 
