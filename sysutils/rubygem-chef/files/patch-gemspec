@@ -1,5 +1,14 @@
---- chef.gemspec.orig	2024-09-07 15:17:22 UTC
+--- chef.gemspec.orig	2024-12-15 20:20:29 UTC
 +++ chef.gemspec
+@@ -35,7 +35,7 @@ Gem::Specification.new do |s|
+   s.add_runtime_dependency(%q<mixlib-archive>.freeze, [">= 0.4".freeze, "< 2.0".freeze])
+   s.add_runtime_dependency(%q<ohai>.freeze, ["~> 18.0".freeze])
+   s.add_runtime_dependency(%q<inspec-core>.freeze, [">= 5".freeze, "< 6".freeze])
+-  s.add_runtime_dependency(%q<ffi>.freeze, [">= 1.15.5".freeze, "<= 1.16.3".freeze])
++  s.add_runtime_dependency(%q<ffi>.freeze, [">= 1.15.5".freeze])
+   s.add_runtime_dependency(%q<ffi-yajl>.freeze, ["~> 2.2".freeze])
+   s.add_runtime_dependency(%q<net-sftp>.freeze, [">= 2.1.2".freeze, "< 5.0".freeze])
+   s.add_runtime_dependency(%q<net-ftp>.freeze, [">= 0".freeze])
 @@ -49,7 +49,7 @@ Gem::Specification.new do |s|
    s.add_runtime_dependency(%q<addressable>.freeze, [">= 0".freeze])
    s.add_runtime_dependency(%q<syslog-logger>.freeze, ["~> 1.6".freeze])
