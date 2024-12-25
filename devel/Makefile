@@ -6738,6 +6738,7 @@
     SUBDIR += rubygem-aws-sdk-neptunedata
     SUBDIR += rubygem-aws-sdk-neptunegraph
     SUBDIR += rubygem-aws-sdk-networkfirewall
+    SUBDIR += rubygem-aws-sdk-networkflowmonitor
     SUBDIR += rubygem-aws-sdk-networkmanager
     SUBDIR += rubygem-aws-sdk-networkmonitor
     SUBDIR += rubygem-aws-sdk-nimblestudio
