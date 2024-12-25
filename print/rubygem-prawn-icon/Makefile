@@ -1,5 +1,5 @@
 PORTNAME=	prawn-icon
-PORTVERSION=	3.1.0
+PORTVERSION=	4.1.0
 CATEGORIES=	print rubygems
 MASTER_SITES=	RG
 
