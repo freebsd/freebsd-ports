@@ -1,6 +1,6 @@
 PORTNAME=	matlab-installer
 PORTVERSION=	0.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	math science java
 MASTER_SITES=	http://acadix.biz/Ports/distfiles/
 
@@ -10,7 +10,7 @@ WWW=		https://acadix.biz/matlab-installer.php
 
 LICENSE=	BSD3CLAUSE
 
-RUN_DEPENDS=	mount_cd9660_image:sysutils/diskimage-tools \
+RUN_DEPENDS=	mount_image:sysutils/diskimage-tools \
 		auto-ask:sysutils/auto-admin \
 		webbrowser:www/webbrowser \
 
@@ -21,10 +21,10 @@ JAVA_OS=	linux
 JAVA_RUN=	yes
 
 NO_BUILD=	yes
-PLIST_FILES=	bin/${PORTNAME} man/man1/${PORTNAME}.1.gz
+PLIST_FILES=	bin/${PORTNAME} share/man/man1/${PORTNAME}.1.gz
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/matlab-installer.1 ${STAGEDIR}${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/matlab-installer.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 .include <bsd.port.mk>
