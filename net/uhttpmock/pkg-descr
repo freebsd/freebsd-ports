@@ -1,3 +1,3 @@
-uhttpmock is a HTTP web service mocking project for projects
-which use libsoup. It is still in its infancy, but is
-already used by https://wiki.gnome.org/libgdata for unit testing.
+uhttpmock is a project for mocking web service APIs which use HTTP
+or HTTPS. It provides a library, libuhttpmock, which implements
+recording and playback of HTTP request–response traces.

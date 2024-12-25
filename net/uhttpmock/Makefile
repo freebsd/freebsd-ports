@@ -1,13 +1,13 @@
 PORTNAME=	uhttpmock
 PORTVERSION=	0.5.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net gnome
 MASTER_SITES=	http://tecnocode.co.uk/downloads/uhttpmock/
-DIST_SUBDIR=	gnome3
+DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	HTTP web service mocking library for GNOME
-WWW=		https://gitlab.com/groups/uhttpmock
+COMMENT=	HTTP web service mocking library
+WWW=		https://gitlab.freedesktop.org/pwithnall/uhttpmock
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
