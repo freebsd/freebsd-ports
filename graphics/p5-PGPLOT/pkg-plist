@@ -58,6 +58,7 @@
 %%SITE_ARCH%%/PDL/Graphics/PGPLOT.pm
 %%SITE_ARCH%%/PDL/Graphics/PGPLOT/Window.pm
 %%SITE_ARCH%%/PDL/Graphics/PGPLOTOptions.pm
+%%SITE_ARCH%%/PDL/Graphics/State.pm
 %%SITE_ARCH%%/PGPLOT.pm
 %%SITE_ARCH%%/auto/PGPLOT/PGPLOT.so
 %%PERL5_MAN3%%/PDL::Demos::PGPLOT.3.gz
@@ -66,5 +67,6 @@
 %%PERL5_MAN3%%/PDL::Graphics::PGPLOT.3.gz
 %%PERL5_MAN3%%/PDL::Graphics::PGPLOT::Window.3.gz
 %%PERL5_MAN3%%/PDL::Graphics::PGPLOTOptions.3.gz
+%%PERL5_MAN3%%/PDL::Graphics::State.3.gz
 %%PERL5_MAN3%%/PGPLOT.3.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/test.img
