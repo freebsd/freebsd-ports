@@ -1,5 +1,5 @@
 PORTNAME=	jupyter-collaboration
-PORTVERSION=	3.0.0
+PORTVERSION=	3.1.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI \
 		https://github.com/jupyterlab/jupyter-collaboration/releases/download/v${PORTVERSION}/
@@ -15,9 +15,9 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatchling>=1.4.0:devel/py-hatchling@${PY_FLAVOR}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}jupyter-collaboration-ui>=1.0.0:devel/py-jupyter-collaboration-ui@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}jupyter-docprovider>=1.0.0:devel/py-jupyter-docprovider@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}jupyter-server-ydoc>=1.0.0:devel/py-jupyter-server-ydoc@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}jupyter-collaboration-ui>=1.1.0:devel/py-jupyter-collaboration-ui@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}jupyter-docprovider>=1.1.0:devel/py-jupyter-docprovider@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}jupyter-server-ydoc>=1.1.0:devel/py-jupyter-server-ydoc@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	autoplist concurrent pep517
