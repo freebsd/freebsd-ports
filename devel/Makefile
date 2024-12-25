@@ -7371,6 +7371,7 @@
     SUBDIR += rubygem-google-iam-credentials
     SUBDIR += rubygem-google-iam-credentials-v1
     SUBDIR += rubygem-google-iam-v1
+    SUBDIR += rubygem-google-logging-utils
     SUBDIR += rubygem-google-protobuf
     SUBDIR += rubygem-google-protobuf3
     SUBDIR += rubygem-googleapis-common-protos
