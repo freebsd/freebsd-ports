@@ -1,5 +1,6 @@
 PORTNAME=	Dancer2
 PORTVERSION=	1.1.2
+PORTREVISION=	1
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -28,6 +29,7 @@ RUN_DEPENDS=	p5-CLI-Osprey>=0:devel/p5-CLI-Osprey \
 		p5-Import-Into>=0:devel/p5-Import-Into \
 		p5-JSON>=0:converters/p5-JSON \
 		p5-JSON-MaybeXS>=0:converters/p5-JSON-MaybeXS \
+		p5-Module-Pluggable>=0:devel/p5-Module-Pluggable \
 		p5-Module-Runtime>=0:devel/p5-Module-Runtime \
 		p5-Moo>=2.000000:devel/p5-Moo \
 		p5-Path-Tiny>=0:devel/p5-Path-Tiny \
@@ -68,7 +70,6 @@ OPTIONS_DEFAULT=XS
 XS_RUN_DEPENDS=	p5-CGI-Deurl-XS>=0:www/p5-CGI-Deurl-XS \
 		p5-Class-Load-XS>=0:devel/p5-Class-Load-XS \
 		p5-JSON-XS>=0:converters/p5-JSON-XS \
-		p5-Scope-Upper>=0:devel/p5-Scope-Upper \
 		p5-URL-Encode-XS>=0:www/p5-URL-Encode-XS \
 		p5-YAML-LibYAML>=0:textproc/p5-YAML-LibYAML
 
