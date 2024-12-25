@@ -1,0 +1,40 @@
+--- Makefile.orig	2024-12-24 20:09:43 UTC
++++ Makefile
+@@ -48,8 +48,8 @@ endif
+ #
+ 
+ # keep standard at C11 and C++17
+-CFLAGS =
+-CXXFLAGS =
++CFLAGS = $(PRESET_CFLAGS)
++CXXFLAGS = $(PRESET_CXXFLAGS)
+ ifdef KCPP_DEBUG
+ 	CFLAGS = -g -O0
+ 	CXXFLAGS = -g -O0
+@@ -167,7 +167,7 @@ ifeq ($(UNAME_M),$(filter $(UNAME_M),x86_64 i686 amd64
+ 			FULLCFLAGS += -mavx2 -msse3 -mfma -mf16c -mavx
+ 		endif
+ 		else
+-		CFLAGS += -march=native -mtune=native
++		CFLAGS +=
+ 		endif
+ 	endif
+ endif
+@@ -332,8 +332,8 @@ ifneq ($(filter aarch64%,$(UNAME_M)),)
+ 				CXXFLAGS += -mcpu=native
+ 			endif
+ 		else
+-			CFLAGS += -mcpu=native
+-			CXXFLAGS += -mcpu=native
++			CFLAGS += 
++			CXXFLAGS += 
+ 		endif
+ 	endif
+ endif
+@@ -755,4 +755,4 @@ finishedmsg:
+ #phony for printing messages
+ finishedmsg:
+ 	$(NOTIFY_MSG)
+-	$(DONOTHING)
+\ No newline at end of file
++	$(DONOTHING)
