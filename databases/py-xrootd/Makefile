@@ -1,5 +1,5 @@
 PORTNAME=	xrootd
-PORTVERSION=	5.7.1
+PORTVERSION=	5.7.2
 CATEGORIES=	databases python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,7 +13,8 @@ WWW=		https://xrootd.slac.stanford.edu/ \
 LICENSE=	LGPL3+
 LICENSE_FILE=	${WRKSRC}/../../COPYING.LGPL
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=42:devel/py-setuptools@${PY_FLAVOR} \
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}certifi>=0:security/py-certifi@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}setuptools>=42:devel/py-setuptools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 LIB_DEPENDS=	libXrdCl.so:databases/xrootd
 
