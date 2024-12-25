@@ -1,5 +1,5 @@
 PORTNAME=	aws-sdk-resources
-PORTVERSION=	3.215.0
+PORTVERSION=	3.220.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -48,9 +48,12 @@ RUN_DEPENDS=	rubygem-aws-sdk-accessanalyzer>=1<2:devel/rubygem-aws-sdk-accessana
 		rubygem-aws-sdk-backupgateway>=1<2:devel/rubygem-aws-sdk-backupgateway \
 		rubygem-aws-sdk-batch>=1<2:devel/rubygem-aws-sdk-batch \
 		rubygem-aws-sdk-bcmdataexports>=1<2:devel/rubygem-aws-sdk-bcmdataexports \
+		rubygem-aws-sdk-bcmpricingcalculator>=1<2:devel/rubygem-aws-sdk-bcmpricingcalculator \
 		rubygem-aws-sdk-bedrock>=1<2:devel/rubygem-aws-sdk-bedrock \
 		rubygem-aws-sdk-bedrockagent>=1<2:devel/rubygem-aws-sdk-bedrockagent \
 		rubygem-aws-sdk-bedrockagentruntime>=1<2:devel/rubygem-aws-sdk-bedrockagentruntime \
+		rubygem-aws-sdk-bedrockdataautomation>=1<2:devel/rubygem-aws-sdk-bedrockdataautomation \
+		rubygem-aws-sdk-bedrockdataautomationruntime>=1<2:devel/rubygem-aws-sdk-bedrockdataautomationruntime \
 		rubygem-aws-sdk-bedrockruntime>=1<2:devel/rubygem-aws-sdk-bedrockruntime \
 		rubygem-aws-sdk-billing>=1<2:devel/rubygem-aws-sdk-billing \
 		rubygem-aws-sdk-billingconductor>=1<2:devel/rubygem-aws-sdk-billingconductor \
@@ -131,6 +134,7 @@ RUN_DEPENDS=	rubygem-aws-sdk-accessanalyzer>=1<2:devel/rubygem-aws-sdk-accessana
 		rubygem-aws-sdk-docdb>=1<2:devel/rubygem-aws-sdk-docdb \
 		rubygem-aws-sdk-docdbelastic>=1<2:devel/rubygem-aws-sdk-docdbelastic \
 		rubygem-aws-sdk-drs>=1<2:devel/rubygem-aws-sdk-drs \
+		rubygem-aws-sdk-dsql>=1<2:devel/rubygem-aws-sdk-dsql \
 		rubygem-aws-sdk-dynamodb>=1<2:devel/rubygem-aws-sdk-dynamodb \
 		rubygem-aws-sdk-dynamodbstreams>=1<2:devel/rubygem-aws-sdk-dynamodbstreams \
 		rubygem-aws-sdk-ebs>=1<2:devel/rubygem-aws-sdk-ebs \
@@ -186,6 +190,7 @@ RUN_DEPENDS=	rubygem-aws-sdk-accessanalyzer>=1<2:devel/rubygem-aws-sdk-accessana
 		rubygem-aws-sdk-inspector2>=1<2:devel/rubygem-aws-sdk-inspector2 \
 		rubygem-aws-sdk-inspectorscan>=1<2:devel/rubygem-aws-sdk-inspectorscan \
 		rubygem-aws-sdk-internetmonitor>=1<2:devel/rubygem-aws-sdk-internetmonitor \
+		rubygem-aws-sdk-invoicing>=1<2:devel/rubygem-aws-sdk-invoicing \
 		rubygem-aws-sdk-iot>=1<2:devel/rubygem-aws-sdk-iot \
 		rubygem-aws-sdk-iot1clickdevicesservice>=1<2:devel/rubygem-aws-sdk-iot1clickdevicesservice \
 		rubygem-aws-sdk-iot1clickprojects>=1<2:devel/rubygem-aws-sdk-iot1clickprojects \
@@ -272,11 +277,13 @@ RUN_DEPENDS=	rubygem-aws-sdk-accessanalyzer>=1<2:devel/rubygem-aws-sdk-accessana
 		rubygem-aws-sdk-neptunedata>=1<2:devel/rubygem-aws-sdk-neptunedata \
 		rubygem-aws-sdk-neptunegraph>=1<2:devel/rubygem-aws-sdk-neptunegraph \
 		rubygem-aws-sdk-networkfirewall>=1<2:devel/rubygem-aws-sdk-networkfirewall \
+		rubygem-aws-sdk-networkflowmonitor>=1<2:devel/rubygem-aws-sdk-networkflowmonitor \
 		rubygem-aws-sdk-networkmanager>=1<2:devel/rubygem-aws-sdk-networkmanager \
 		rubygem-aws-sdk-networkmonitor>=1<2:devel/rubygem-aws-sdk-networkmonitor \
 		rubygem-aws-sdk-notifications>=1<2:devel/rubygem-aws-sdk-notifications \
 		rubygem-aws-sdk-notificationscontacts>=1<2:devel/rubygem-aws-sdk-notificationscontacts \
 		rubygem-aws-sdk-oam>=1<2:devel/rubygem-aws-sdk-oam \
+		rubygem-aws-sdk-observabilityadmin>=1<2:devel/rubygem-aws-sdk-observabilityadmin \
 		rubygem-aws-sdk-omics>=1<2:devel/rubygem-aws-sdk-omics \
 		rubygem-aws-sdk-opensearchserverless>=1<2:devel/rubygem-aws-sdk-opensearchserverless \
 		rubygem-aws-sdk-opensearchservice>=1<2:devel/rubygem-aws-sdk-opensearchservice \
@@ -337,6 +344,7 @@ RUN_DEPENDS=	rubygem-aws-sdk-accessanalyzer>=1<2:devel/rubygem-aws-sdk-accessana
 		rubygem-aws-sdk-s3>=1<2:devel/rubygem-aws-sdk-s3 \
 		rubygem-aws-sdk-s3control>=1<2:devel/rubygem-aws-sdk-s3control \
 		rubygem-aws-sdk-s3outposts>=1<2:devel/rubygem-aws-sdk-s3outposts \
+		rubygem-aws-sdk-s3tables>=1<2:devel/rubygem-aws-sdk-s3tables \
 		rubygem-aws-sdk-sagemaker>=1<2:devel/rubygem-aws-sdk-sagemaker \
 		rubygem-aws-sdk-sagemakeredgemanager>=1<2:devel/rubygem-aws-sdk-sagemakeredgemanager \
 		rubygem-aws-sdk-sagemakerfeaturestoreruntime>=1<2:devel/rubygem-aws-sdk-sagemakerfeaturestoreruntime \
@@ -348,6 +356,7 @@ RUN_DEPENDS=	rubygem-aws-sdk-accessanalyzer>=1<2:devel/rubygem-aws-sdk-accessana
 		rubygem-aws-sdk-schemas>=1<2:devel/rubygem-aws-sdk-schemas \
 		rubygem-aws-sdk-secretsmanager>=1<2:devel/rubygem-aws-sdk-secretsmanager \
 		rubygem-aws-sdk-securityhub>=1<2:devel/rubygem-aws-sdk-securityhub \
+		rubygem-aws-sdk-securityir>=1<2:devel/rubygem-aws-sdk-securityir \
 		rubygem-aws-sdk-securitylake>=1<2:devel/rubygem-aws-sdk-securitylake \
 		rubygem-aws-sdk-serverlessapplicationrepository>=1<2:devel/rubygem-aws-sdk-serverlessapplicationrepository \
 		rubygem-aws-sdk-servicecatalog>=1<2:devel/rubygem-aws-sdk-servicecatalog \
