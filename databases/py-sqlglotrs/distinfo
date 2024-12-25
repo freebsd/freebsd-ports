@@ -1,6 +1,6 @@
-TIMESTAMP = 1732202520
-SHA256 (sqlglotrs-0.2.14.tar.gz) = 16dfc6c40af10d79c507afdbec9cf98e383a8296da677b614239781816c5848b
-SIZE (sqlglotrs-0.2.14.tar.gz) = 9286
+TIMESTAMP = 1734888144
+SHA256 (sqlglotrs-0.3.0.tar.gz) = e77deb4ad2a94024e07ad9c1a15ad573b5503cacc9a948b0f5fd2d6df32156de
+SIZE (sqlglotrs-0.3.0.tar.gz) = 9397
 SHA256 (rust/crates/autocfg-1.1.0.crate) = d468802bab17cbc0cc575e9b053f41e72aa36bfa6b7f55e3529ffa43161b97fa
 SIZE (rust/crates/autocfg-1.1.0.crate) = 13272
 SHA256 (rust/crates/cfg-if-1.0.0.crate) = baf1de4339761588bc0619e3cbc0120ee582ebb74b53b4efbf79117bd2da40fd
