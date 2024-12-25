@@ -1,5 +1,5 @@
 PORTNAME=	starlette
-PORTVERSION=	0.41.3
+PORTVERSION=	0.42.0
 CATEGORIES=	www python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -26,9 +26,9 @@ FULL_DESC=	Full dependencies
 
 FULL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}itsdangerous>=0:security/py-itsdangerous@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}Jinja2>=0:devel/py-Jinja2@${PY_FLAVOR} \
-			${PYTHON_PKGNAMEPREFIX}python-multipart>=0.0.7:www/py-python-multipart@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}python-multipart>=0.0.18:www/py-python-multipart@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}pyyaml>=0:devel/py-pyyaml@${PY_FLAVOR} \
-			${PYTHON_PKGNAMEPREFIX}requests>=0:www/py-requests@${PY_FLAVOR}
+			${PYTHON_PKGNAMEPREFIX}httpx>=0.27.0<0.29.0:www/py-httpx@${PY_FLAVOR}
 
 .include <bsd.port.pre.mk>
 
