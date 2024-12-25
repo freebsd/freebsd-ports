@@ -1,5 +1,5 @@
 PORTNAME=	capnproto
-PORTVERSION=	1.0.1
+PORTVERSION=	1.0.2
 DISTVERSIONPREFIX=	c++-
 CATEGORIES=	devel
 MASTER_SITES=	https://capnproto.org/
@@ -25,7 +25,7 @@ PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
 CONFLICTS_INSTALL=	capnproto
 
-# databases/tiledb requires capnproto 1.0.1
+# databases/tiledb 2.27.0+ requires capnproto 1.0.2
 PORTSCOUT=	ignore:1
 
 .include <bsd.port.mk>
