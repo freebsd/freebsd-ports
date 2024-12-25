@@ -87,7 +87,7 @@ post-extract:
 		${WRKSRC}/bin/libs/java/joml.jar
 	${LN} -s ${DISTDIR}/maven2/org/jspecify/jspecify/1.0.0/jspecify-1.0.0-sources.jar \
 		${WRKSRC}/bin/libs/java/jspecify-sources.jar
-	${LN} -s ${DISTDIR}/maven2/org/jspecify/jspecify/1.0.0/jspecify-1.0.0.jar \
+	${CP}    ${DISTDIR}/maven2/org/jspecify/jspecify/1.0.0/jspecify-1.0.0.jar \
 		${WRKSRC}/bin/libs/java/jspecify.jar
 	${LN} -s ${DISTDIR}/maven2/org/openjdk/jmh/jmh-core/1.37/jmh-core-1.37-sources.jar \
 		${WRKSRC}/bin/libs/java/jmh-core-sources.jar
