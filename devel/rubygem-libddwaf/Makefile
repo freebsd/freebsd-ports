@@ -1,5 +1,5 @@
 PORTNAME=	libddwaf
-PORTVERSION=	1.15.0.0.0
+PORTVERSION=	1.18.0.0.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -12,6 +12,7 @@ LICENSE_COMB=	dual
 LICENSE_FILE_APACHE20=	${WRKSRC}/LICENSE.Apache
 LICENSE_FILE_BSD3CLAUSE=${WRKSRC}/LICENSE.BSD3
 
+LIB_DEPENDS=	libddwaf.so:devel/libddwaf
 RUN_DEPENDS=	rubygem-ffi>=1.0<2:devel/rubygem-ffi
 
 USES=		gem
