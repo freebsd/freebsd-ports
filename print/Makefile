@@ -219,6 +219,7 @@
     SUBDIR += rubygem-prawn-format
     SUBDIR += rubygem-prawn-graph
     SUBDIR += rubygem-prawn-icon
+    SUBDIR += rubygem-prawn-icon3
     SUBDIR += rubygem-prawn-js
     SUBDIR += rubygem-prawn-layout
     SUBDIR += rubygem-prawn-rails
