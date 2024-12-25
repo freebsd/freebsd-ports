@@ -1,5 +1,5 @@
 PORTNAME=	proj-data
-PORTVERSION=	1.19
+PORTVERSION=	1.20
 CATEGORIES=	graphics geography
 MASTER_SITES=	https://download.osgeo.org/proj/ \
 		https://github.com/OSGeo/PROJ-data/releases/download/${PORTVERSION}.0/
@@ -17,5 +17,10 @@ DATADIR=	${PREFIX}/share/proj
 do-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/* ${STAGEDIR}${DATADIR}
+
+# maintainer section:
+
+genplist:
+	@${TAR} -t -v -f ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} | ${AWK} '{print $$9}' | ${SORT} | ${SED} -e 's|^|%%DATADIR%%/|' > ${PLIST}
 
 .include <bsd.port.mk>
