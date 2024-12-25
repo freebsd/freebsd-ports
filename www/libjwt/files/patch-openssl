@@ -1,0 +1,13 @@
+--- libjwt/jwt-openssl.c.orig	2024-12-03 21:35:02 UTC
++++ libjwt/jwt-openssl.c
+@@ -160,8 +160,10 @@ static int jwt_degree_for_key(EVP_PKEY *pkey, jwt_t *j
+ 	char groupNameBuffer[24] = {0};
+ 	size_t groupNameBufferLen = 0;
+ 
++#if OPENSSL_VERSION_NUMBER >= 0x30000000L
+ 	if (!EVP_PKEY_get_group_name(pkey, groupNameBuffer, sizeof(groupNameBuffer), &groupNameBufferLen))
+ 		return -EINVAL;
++#endif
+ 
+ 	groupNameBuffer[groupNameBufferLen] = '\0';
+ 
