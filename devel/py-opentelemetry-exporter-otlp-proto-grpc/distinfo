@@ -1,3 +1,3 @@
-TIMESTAMP = 1732202540
-SHA256 (opentelemetry_exporter_otlp_proto_grpc-1.28.2.tar.gz) = 07c10378380bbb01a7f621a5ce833fc1fab816e971140cd3ea1cd587840bc0e6
-SIZE (opentelemetry_exporter_otlp_proto_grpc-1.28.2.tar.gz) = 26227
+TIMESTAMP = 1734888228
+SHA256 (opentelemetry_exporter_otlp_proto_grpc-1.29.0.tar.gz) = 3d324d07d64574d72ed178698de3d717f62a059a93b6b7685ee3e303384e73ea
+SIZE (opentelemetry_exporter_otlp_proto_grpc-1.29.0.tar.gz) = 26224
