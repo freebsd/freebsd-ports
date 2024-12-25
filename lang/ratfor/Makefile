@@ -1,6 +1,6 @@
 PORTNAME=	ratfor
 PORTVERSION=	1985.06
-PORTREVISION=	16
+PORTREVISION=	17
 CATEGORIES=	lang
 MASTER_SITES=	LOCAL/obrien \
 		http://sepwww.stanford.edu/sep/prof/
@@ -12,20 +12,15 @@ COMMENT=	Rational FORTRAN compiler
 LICENSE=	PD
 LICENSE_FILE=	${WRKSRC}/README
 
-BROKEN_aarch64=		./ratfor -o test.f test.r keeps creating huge output file
-BROKEN_armv6=		./ratfor -o test.f test.r keeps creating huge output file
-BROKEN_armv7=		./ratfor -o test.f test.r keeps creating huge output file
-BROKEN_powerpc=		./ratfor -o test.f test.r keeps creating huge output file
-BROKEN_powerpc64=	./ratfor -o test.f test.r keeps creating huge output file
-BROKEN_powerpc64le=	./ratfor -o test.f test.r keeps creating huge output file
-BROKEN_powerpcspe=	./ratfor -o test.f test.r keeps creating huge output file
+USES=		fortran
 
-NO_WRKSUBDIR=	yes
+ALL_TARGET=	all tests
+
 EXTRACT_CMD=	${CAT}
 EXTRACT_BEFORE_ARGS=
 EXTRACT_AFTER_ARGS=	| ${SH}
-ALL_TARGET=	all tests
-USES=		fortran
+
+NO_WRKSUBDIR=	yes
 
 PLIST_FILES=	bin/ratfor bin/ratfor77 share/man/man1/ratfor.1.gz
 

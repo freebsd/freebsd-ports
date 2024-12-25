@@ -5,7 +5,7 @@
  #
  
 -CFLAGS+=	-DF77 -DS_CHAR="char"
-+CFLAGS+=	-DF77 -DS_CHAR="char" -Wno-error=return-type
++CFLAGS+=	-DF77 -DS_CHAR="signed char" -Wno-error=return-type
  #CFLAGS+=	-DS_CHAR="char"
  OBJS=		rat4.o lookup.o getopt.o
  
