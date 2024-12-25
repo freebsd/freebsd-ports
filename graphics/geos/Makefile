@@ -12,9 +12,11 @@ WWW=		https://libgeos.org/ \
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		cmake compiler:c++14-lang pathfix tar:bzip2
+USES=		cmake:testing compiler:c++14-lang pathfix tar:bzip2
 
-CMAKE_OFF=	BUILD_BENCHMARKS DISABLE_GEOS_INLINE
+CMAKE_OFF=	BUILD_BENCHMARKS \
+		BUILD_TESTING \
+		DISABLE_GEOS_INLINE
 CMAKE_ON=	BUILD_SHARED_LIBS
 USE_LDCONFIG=	yes
 
