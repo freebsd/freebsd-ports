@@ -14,16 +14,20 @@ LICENSE_NAME=	infobus
 LICENSE_TEXT=	See the license
 LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
 
-OPTIONS_DEFINE=		DOCS EXAMPLES
+DEPRECATED=	Outdated API and is no longer actively developed or maintained
+EXPIRATION_DATE=2025-01-25
 
 USES=		zip
 USE_JAVA=	YES
 
-NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
+
+NO_WRKSUBDIR=	yes
 
 PORTDOCS=	*
 PORTEXAMPLES=	*
+
+OPTIONS_DEFINE=		DOCS EXAMPLES
 
 .include <bsd.port.pre.mk>
 .if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})
