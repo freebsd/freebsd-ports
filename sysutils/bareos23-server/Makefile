@@ -15,6 +15,7 @@ LICENSE_COMB=	multi
 
 CONFLICTS?=	bareos20-server bareos21-server bareos22-server bareos-server
 
+BUILD_DEPENDS+=	utf8cpp>0:devel/utf8cpp
 LIB_DEPENDS+=	liblzo2.so:archivers/lzo2 \
 		libjansson.so:devel/jansson \
 		libfmt.so:devel/libfmt
