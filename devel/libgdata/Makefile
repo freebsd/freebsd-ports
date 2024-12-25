@@ -11,7 +11,7 @@ WWW=		https://live.gnome.org/libgdata
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	uhttpmock>0:net/uhttpmock
+BUILD_DEPENDS=	uhttpmock0>0:net/uhttpmock0
 LIB_DEPENDS=	libsoup-2.4.so:devel/libsoup \
 		libjson-glib-1.0.so:devel/json-glib \
 		libp11-kit.so:security/p11-kit \
