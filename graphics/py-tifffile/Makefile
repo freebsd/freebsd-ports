@@ -1,5 +1,5 @@
 PORTNAME=	tifffile
-PORTVERSION=	2024.9.20
+PORTVERSION=	2024.12.12
 CATEGORIES=	graphics python
 MASTER_SITES=	PYPI \
 		https://github.com/cgohlke/tifffile/releases/download/v${PORTVERSION}/
@@ -32,6 +32,6 @@ PLOT_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}matplotlib>=0:math/py-matplotlib@${PY_F
 XML_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}defusedxml>=0:devel/py-defusedxml@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}lxml>=0:devel/py-lxml@${PY_FLAVOR}
 ZARR_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}fsspec>=0:filesystems/py-fsspec@${PY_FLAVOR} \
-			${PYTHON_PKGNAMEPREFIX}zarr>=0:devel/py-zarr@${PY_FLAVOR}
+			${PYTHON_PKGNAMEPREFIX}zarr>=0<3:devel/py-zarr@${PY_FLAVOR}
 
 .include <bsd.port.mk>
