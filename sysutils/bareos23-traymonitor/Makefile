@@ -13,6 +13,8 @@ USES=		desktop-file-utils gettext-runtime pkgconfig
 FLAVORS=	qt5 qt6
 FLAVOR?=	${FLAVORS:[1]}
 
+CFLAGS+=	-Wno-unused-parameter
+
 qt5_CONFLICTS=		bareos-traymonitor-qt6
 qt6_CONFLICTS=		bareos-traymonitor-qt5
 
