@@ -17,9 +17,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BUILD_DEPENDS=	${LOCALBASE}/bin/nasm:devel/nasm
 RUN_DEPENDS=	${LOCALBASE}/lib/xorg/modules/libxorgxrdp.so:x11-drivers/xorgxrdp \
 		xterm:x11/xterm
-LIB_DEPENDS=	libImlib2.so:graphics/imlib2 \
-		libopenh264.so:multimedia/openh264 \
-		libx264.so:multimedia/libx264
+LIB_DEPENDS=	libImlib2.so:graphics/imlib2
 
 USES=		autoreconf:build compiler:c11 cpe jpeg libtool localbase \
 		pkgconfig ssl xorg
@@ -30,9 +28,7 @@ USE_LDCONFIG=	${PREFIX}/lib/xrdp
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
-CONFIGURE_ARGS=	--enable-openh264 \
-		--enable-x264 \
-		--enable-imlib2 \
+CONFIGURE_ARGS=	--enable-imlib2 \
 		--enable-jpeg \
 		--enable-painter \
 		--enable-pam-config=freebsd \
@@ -52,12 +48,14 @@ USER=		_xrdp
 GROUP=		_xrdp
 
 OPTIONS_DEFINE=			DEBUG FUSE IPV6
-OPTIONS_DEFAULT=		FDKAAC OPUS
-OPTIONS_GROUP=			AUDIO_CODEC
+OPTIONS_DEFAULT=		FDKAAC OPENH264 OPUS X264
+OPTIONS_GROUP=			AUDIO_CODEC VIDEO_CODEC
 OPTIONS_GROUP_AUDIO_CODEC=	FDKAAC MP3LAME OPUS
+OPTIONS_GROUP_VIDEO_CODEC=	OPENH264 X264
 FDKAAC_DESC=			Enable Fraunhofer FDK AAC for audio redirection
 FUSE_DESC=			Enable drive redirection via FUSE (experimental)
 MP3LAME_DESC=			Enable MP3 Lame for audio redirection
+OPENH264_DESC=			H.264 video codec support via OpenH264
 OPUS_DESC=			Enable Opus for audio redirection
 
 DEBUG_CONFIGURE_ENABLE=		devel-debug devel-logging
@@ -68,8 +66,12 @@ FUSE_USES=			fuse
 IPV6_CONFIGURE_ENABLE=		ipv6
 MP3LAME_CONFIGURE_ENABLE=	mp3lame
 MP3LAME_LIB_DEPENDS=		libmp3lame.so:audio/lame
+OPENH264_CONFIGURE_ENABLE=	openh264
+OPENH264_LIB_DEPENDS=		libopenh264.so:multimedia/openh264
 OPUS_CONFIGURE_ENABLE=		opus
 OPUS_LIB_DEPENDS=		libopus.so:audio/opus
+X264_CONFIGURE_ENABLE=		x264
+X264_LIB_DEPENDS=		libx264.so:multimedia/libx264
 
 .include <bsd.port.pre.mk>
 
