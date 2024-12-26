@@ -420,6 +420,10 @@
     SUBDIR += cl-asdf-clisp
     SUBDIR += cl-asdf-sbcl
     SUBDIR += cl-cffi
+    SUBDIR += cl-flexi-streams
+    SUBDIR += cl-flexi-streams-ccl
+    SUBDIR += cl-flexi-streams-clisp
+    SUBDIR += cl-flexi-streams-sbcl
     SUBDIR += cl-freebsd-asdf-init
     SUBDIR += cl-infix
     SUBDIR += cl-infix-ccl
