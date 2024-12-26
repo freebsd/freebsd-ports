@@ -1,5 +1,6 @@
 PORTNAME=	mixxx
 DISTVERSION=	2.5.0
+PORTREVISION=	1
 CATEGORIES=	audio
 
 MAINTAINER=	acm@FreeBSD.org
@@ -53,7 +54,8 @@ GH_ACCOUNT=	mixxxdj
 PKGNAMESUFFIX=  -qt6
 
 USES+=		qt:6
-USE_QT=		5compat base:run declarative:build tools:build shadertools svg
+USE_QT=		5compat base:run declarative:build tools:build shadertools \
+		sqldriver-sqlite:run svg
 CMAKE_ARGS+=	-DQT6=ON
 
 QTKEYCHAIN_LIB_DEPENDS=	libqt6keychain.so:security/qtkeychain@qt6
