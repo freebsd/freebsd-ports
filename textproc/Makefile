@@ -1945,6 +1945,7 @@
     SUBDIR += rubygem-representable
     SUBDIR += rubygem-reverse_markdown
     SUBDIR += rubygem-rexml
+    SUBDIR += rubygem-rexml-gitlab
     SUBDIR += rubygem-rexml32
     SUBDIR += rubygem-rexml33
     SUBDIR += rubygem-ri_cal

@@ -64,7 +64,7 @@ MY_DEPENDS=	gitaly>=${GITLAB_VERSION}:devel/gitaly \
 	rubygem-doorkeeper-rails70>=5.8.1<6:security/rubygem-doorkeeper-rails70 \
 	rubygem-doorkeeper-openid_connect>=1.8.10<2:security/rubygem-doorkeeper-openid_connect \
 	rubygem-doorkeeper-device_authorization_grant>=1.0.0<1.1:security/rubygem-doorkeeper-device_authorization_grant \
-	rubygem-rexml>=3.3.2<3.4:textproc/rubygem-rexml \
+	rubygem-rexml-gitlab>=3.3.2<3.4:textproc/rubygem-rexml-gitlab \
 	rubygem-ruby-saml>=1.17.0<1.18:security/rubygem-ruby-saml \
 	rubygem-omniauth>=2.1.0<3:security/rubygem-omniauth \
 	rubygem-omniauth-auth0-gitlab>=3.1.0<3.2.0:net/rubygem-omniauth-auth0-gitlab \
