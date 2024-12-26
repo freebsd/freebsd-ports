@@ -1,7 +1,11 @@
 PORTNAME=	atf
 DISTVERSION=	0.22
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/freebsd/${PORTNAME}/releases/download/${PORTNAME}-${DISTVERSION}/
+
+PATCH_SITES=	https://github.com/freebsd/${PORTNAME}/commit/
+PATCHFILES=	b42c98612cb99fa3f52766a46203263dc1de7187.patch:-p1
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	C, C++ and shell libraries to write ATF-compliant test programs
