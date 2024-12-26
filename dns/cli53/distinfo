@@ -1,6 +1,6 @@
-TIMESTAMP = 1677458637
-SHA256 (barnybug-cli53-0.8.22_GH0.tar.gz) = 5acf576662cf8cb01ecbe027dfc3531e19bd03c1cd22425125e2a0a986273a7a
-SIZE (barnybug-cli53-0.8.22_GH0.tar.gz) = 39578
+TIMESTAMP = 1735174938
+SHA256 (barnybug-cli53-0.8.23_GH0.tar.gz) = 89fca8cdc0894a5d8392432f5012b9b3634ed2b71d07c9b4ca4ca4b6a63c1f1a
+SIZE (barnybug-cli53-0.8.23_GH0.tar.gz) = 39579
 SHA256 (aws-aws-sdk-go-v1.44.207_GH0.tar.gz) = ee4e7a161a3dfc4529f0b03326e07f338b5ee4635d36dd90d7475c06aa8e33eb
 SIZE (aws-aws-sdk-go-v1.44.207_GH0.tar.gz) = 27104536
 SHA256 (cpuguy83-go-md2man-f79a8a8ca69d_GH0.tar.gz) = c117a3e3741ea39016b678b24db19b1f766277bac7c1c6d721237bb159610178
