@@ -1,6 +1,7 @@
 PORTNAME=	ipfixcol2
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.6.0
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	zarychtam@plan-b.pwste.edu.pl
