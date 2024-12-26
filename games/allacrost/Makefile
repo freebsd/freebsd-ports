@@ -13,6 +13,8 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BROKEN=		uses incompatible C++ features from different C++ standards that can't be built together due to feature deprecation restrictions
+DEPRECATED=	Fails to build and upstream is gone
+EXPIRATION_DATE=2025-01-31
 
 LIB_DEPENDS=	libpng.so:graphics/png \
 		libogg.so:audio/libogg \
