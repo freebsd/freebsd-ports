@@ -1,3 +1,11 @@
-A native MD5 implementation in Common Lisp.
+This package implements the MD5 Message-Digest Algorithm, as defined in RFC
+1321, in Common Lisp.
+
+Warning: The MD5 Message-Digest Algorithm has been compromised as a
+cryptographically secure hash for a long time, with known theoretical and
+practical attacks.  Therefore, use of this implementation is recommended only
+for legacy purposes or cases where a cryptographically secure hash is not
+required.  For all other uses, consider one of the newer SHA-2 or SHA-3 secure
+hash standards, or whatever is currently deemed cryptographically secure.
 
 This package is compiled with SBCL.
