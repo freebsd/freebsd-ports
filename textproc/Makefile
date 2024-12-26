@@ -2009,6 +2009,7 @@
     SUBDIR += rubygem-wikicloth
     SUBDIR += rubygem-wikicloth081
     SUBDIR += rubygem-xml-simple
+    SUBDIR += rubygem-xml-simple-gitlab
     SUBDIR += rubygem-ya2yaml
     SUBDIR += rubygem-yard
     SUBDIR += rubygem-yard-chef

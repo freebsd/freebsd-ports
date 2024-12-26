@@ -65,7 +65,7 @@ MY_DEPENDS=	gitaly>=${GITLAB_VERSION}:devel/gitaly \
 	rubygem-doorkeeper-openid_connect>=1.8.10<2:security/rubygem-doorkeeper-openid_connect \
 	rubygem-doorkeeper-device_authorization_grant>=1.0.0<1.1:security/rubygem-doorkeeper-device_authorization_grant \
 	rubygem-rexml-gitlab>=3.3.2<3.4:textproc/rubygem-rexml-gitlab \
-	rubygem-ruby-saml>=1.17.0<1.18:security/rubygem-ruby-saml \
+	rubygem-ruby-saml-gitlab>=1.17.0<1.18:security/rubygem-ruby-saml-gitlab \
 	rubygem-omniauth>=2.1.0<3:security/rubygem-omniauth \
 	rubygem-omniauth-auth0-gitlab>=3.1.0<3.2.0:net/rubygem-omniauth-auth0-gitlab \
 	rubygem-omniauth-azure-activedirectory-v2>=2.0<3:net/rubygem-omniauth-azure-activedirectory-v2 \
@@ -73,7 +73,7 @@ MY_DEPENDS=	gitaly>=${GITLAB_VERSION}:devel/gitaly \
 	rubygem-omniauth-github-gitlab>=2.0.1<2.1:net/rubygem-omniauth-github-gitlab \
 	rubygem-omniauth-google-oauth2-gitlab>=1.1<2:net/rubygem-omniauth-google-oauth2-gitlab \
 	rubygem-omniauth-oauth2-generic-gitlab>=0.2.2<0.3.0:security/rubygem-omniauth-oauth2-generic-gitlab \
-	rubygem-omniauth-saml>=2.2.1<3:security/rubygem-omniauth-saml \
+	rubygem-omniauth-saml-gitlab>=2.2.1<3:security/rubygem-omniauth-saml-gitlab \
 	rubygem-omniauth-shibboleth-redux>=2.0<3:security/rubygem-omniauth-shibboleth-redux \
 	rubygem-omniauth_openid_connect>=0.8.0<0.9:net/rubygem-omniauth_openid_connect \
 	rubygem-openid_connect>=2.3.0<2.4:net/rubygem-openid_connect \
@@ -113,7 +113,7 @@ MY_DEPENDS=	gitaly>=${GITLAB_VERSION}:devel/gitaly \
 	rubygem-fog-core210>=2.1.0<2.1.1:devel/rubygem-fog-core210 \
 	rubygem-fog-google-gitlab>=1.24.1<1.25:net/rubygem-fog-google-gitlab \
 	rubygem-fog-local>=0.8<1.0:net/rubygem-fog-local \
-	rubygem-fog-aliyun>=0.4<1.0:net/rubygem-fog-aliyun \
+	rubygem-fog-aliyun-gitlab>=0.4<1.0:net/rubygem-fog-aliyun-gitlab \
 	rubygem-gitlab-fog-azure-rm>=2.2.0<2.3:net/rubygem-gitlab-fog-azure-rm \
 	rubygem-google-apis-storage_v1-gitlab>=0.29<1:devel/rubygem-google-apis-storage_v1-gitlab \
 	rubygem-google-cloud-storage-gitlab>=1.45.0<1.46:net/rubygem-google-cloud-storage-gitlab \
@@ -252,7 +252,7 @@ MY_DEPENDS=	gitaly>=${GITLAB_VERSION}:devel/gitaly \
 	rubygem-opentelemetry-instrumentation-sidekiq>=0.25.7:devel/rubygem-opentelemetry-instrumentation-sidekiq \
 	rubygem-warning>=1.3.0<1.4:devel/rubygem-warning \
 	rubygem-gitlab-dangerfiles>=4.8.0<4.9:devel/rubygem-gitlab-dangerfiles \
-	rubygem-license_finder>=7.0.0<8:devel/rubygem-license_finder \
+	rubygem-license_finder-gitlab>=7.0.0<8:devel/rubygem-license_finder-gitlab \
 	rubygem-rspec>=3.0<4:devel/rubygem-rspec \
 	rubygem-octokit-gitlab>=9.0<10:net/rubygem-octokit-gitlab \
 	rubygem-faraday-multipart>=1.0<2:www/rubygem-faraday-multipart \
@@ -303,7 +303,7 @@ MY_DEPENDS=	gitaly>=${GITLAB_VERSION}:devel/gitaly \
 	rubygem-cvss-suite>=3.0.1<3.1:security/rubygem-cvss-suite \
 	rubygem-arr-pm>=0.0.12<0.1:devel/rubygem-arr-pm \
 	rubygem-devfile>=0.1.1<0.2:net/rubygem-devfile \
-	rubygem-CFPropertyList>=3.0.0<3.1:devel/rubygem-CFPropertyList \
+	rubygem-CFPropertyList-gitlab>=3.0.0<3.1:devel/rubygem-CFPropertyList-gitlab \
 	rubygem-app_store_connect>=0:net/rubygem-app_store_connect \
 	rubygem-telesignenterprise>=2.2<3:devel/rubygem-telesignenterprise \
 	rubygem-net-protocol01>=0.1.3<0.2:net/rubygem-net-protocol01 \
