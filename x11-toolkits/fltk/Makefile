@@ -1,6 +1,5 @@
 PORTNAME=	fltk
-PORTVERSION=	1.3.9
-PORTREVISION=	1
+PORTVERSION=	1.3.10
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	https://www.fltk.org/pub/${PORTNAME}/${PORTVERSION}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-source
@@ -20,7 +19,6 @@ USE_XORG=	x11 xcursor xext xfixes xft xinerama xrender
 USE_GL=		gl glu
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ARGS=	--enable-shared
 CONFIGURE_ENV=	NROFF=echo
 CPE_VENDOR=	fltk_project
