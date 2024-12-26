@@ -30,7 +30,7 @@ CMAKE_ARGS+=	-DBUILD_JAVA=OFF \
 		-DGTEST_HOME=${LOCALBASE} \
 		-DPROTOBUF_HOME=${LOCALBASE} \
 		-DZSTD_HOME=${LOCALBASE}
-CFLAGS+=	-fPIC
+CFLAGS+=	-fPIC -Wno-error=unused-parameter
 CPPFLAGS+=	-fPIC
 
 post-patch:
