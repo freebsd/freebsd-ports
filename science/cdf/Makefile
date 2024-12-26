@@ -1,12 +1,11 @@
 PORTNAME=	cdf3
-PORTVERSION=	3.8.0
-PORTREVISION=	1
+DISTVERSION=	3.9.1
 CATEGORIES=	science
-MASTER_SITES=	https://spdf.gsfc.nasa.gov/pub/software/cdf/dist/cdf38_0/
+MASTER_SITES=	https://spdf.gsfc.nasa.gov/pub/software/cdf/dist/cdf39_1/
 DISTNAME=	cdf${VER}-dist-cdf
 DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	stephen@FreeBSD.org
+MAINTAINER=	alster@vinterdalen.se
 COMMENT=	Device independent view of the CDF data model
 WWW=		https://cdf.gsfc.nasa.gov/
 

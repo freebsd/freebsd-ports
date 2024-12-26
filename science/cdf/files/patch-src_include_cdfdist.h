@@ -1,15 +1,15 @@
---- src/include/cdfdist.h.orig	2019-10-16 16:22:18 UTC
+--- src/include/cdfdist.h.orig	2024-05-06 16:47:21 UTC
 +++ src/include/cdfdist.h
-@@ -135,7 +135,7 @@
+@@ -137,7 +137,7 @@
  #  define unix
  #endif
  
--#if defined(__arm__)
-+#if defined(__arm__) || defined (__aarch64__)
+-#if defined(__arm__) || defined(__arm64__) || \
++#if defined(__arm__) || defined(__arm64__) || defined (__aarch64__) || \
+     (defined(__ARM_ARCH) && __ARM_ARCH > 0)
+ /* linux(gcc)-based or clang-based */
  #  define ARM
- #  if defined(__BYTE_ORDER__)
- #     if __BYTE_ORDER__ == __ORDER_LITTLE_ENDIAN__
-@@ -567,7 +567,7 @@ typedef sChar sByte;
+@@ -588,7 +588,7 @@ typedef sChar sByte;
  #      if defined(__DARWIN_64_BIT_INO_T)
  #         define STAT     stat
  #      else

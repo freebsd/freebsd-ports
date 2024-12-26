@@ -21,6 +21,7 @@ include/cdfconfig.h
 include/cdfdist.h
 include/cdflib.h
 include/cdflib64.h
+include/cdftools.h
 lib/cdf/help/cdf2skt.olh
 lib/cdf/help/cdf2sktj.olh
 lib/cdf/help/cdfbrow.ilh
@@ -44,14 +45,14 @@ lib/cdf/help/cdfmerge.olh
 lib/cdf/help/cdfmergej.olh
 lib/cdf/help/cdfstats.olh
 lib/cdf/help/cdfstatsj.olh
-lib/cdf/help/cdfxp.ilh
 lib/cdf/help/cdfvalidate.olh
 lib/cdf/help/cdfvalidatej.olh
+lib/cdf/help/cdfxp.ilh
 lib/cdf/help/skt2cdf.olh
 lib/cdf/help/skt2cdfj.olh
+lib/libcdf.3.9.1.so
 lib/libcdf.a
 lib/libcdf.so
-lib/libcdf.3.8.0.so
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/OperateAttributes.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/OperateCDF.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/OperateVariables.c
