@@ -1,6 +1,5 @@
 PORTNAME=	mdbtools
-DISTVERSION=	1.0.0
-PORTREVISION=	3
+DISTVERSION=	1.0.1
 CATEGORIES=	databases
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/v${DISTVERSION}/
 

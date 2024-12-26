@@ -16,7 +16,7 @@ include/mdbtools.h
 lib/libmdb.a
 lib/libmdb.so
 lib/libmdb.so.3
-lib/libmdb.so.3.1.0
+lib/libmdb.so.3.1.1
 lib/libmdbodbc.a
 lib/libmdbodbc.so
 lib/libmdbodbcW.a
@@ -24,7 +24,7 @@ lib/libmdbodbcW.so
 lib/libmdbsql.a
 lib/libmdbsql.so
 lib/libmdbsql.so.3
-lib/libmdbsql.so.3.1.0
+lib/libmdbsql.so.3.1.1
 libdata/pkgconfig/libmdb.pc
 libdata/pkgconfig/libmdbsql.pc
 share/bash-completion/completions/mdb-count
