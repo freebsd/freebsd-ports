@@ -59,8 +59,7 @@ MASTER_SITE_RBDEV=	https://www.riverbankcomputing.com/pypi/packages/%SUBDIR%/
 # Qt version-agnostic components
 MASTER_SITES_PYQTBUILDER=	PYPI/source/P/PyQt-builder
 MASTER_SITES_QSCI2=		RIVERBANK/QScintilla/${PORTVERSION} \
-				SF/pyqt/QScintilla2/QScintilla-${PORTVERSION} \
-				GENTOO
+				SF/pyqt/QScintilla2/QScintilla-${PORTVERSION}
 MASTER_SITES_SIP=		PYPI/source/s/sip
 
 # Qt 5 components
