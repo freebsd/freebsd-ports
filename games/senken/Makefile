@@ -7,10 +7,15 @@ MASTER_SITES=	GENTOO
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	City simulation game
 
+DEPRECATED=	GENTOO mastersites are no longer available
+EXPIRATION_DATE=	2025-01-27
+
 USES=		gnome pkgconfig sdl
 USE_GNOME=	gtk20
 USE_SDL=	image sdl
+
 GNU_CONFIGURE=	yes
+
 LDFLAGS+=	-lm
 
 post-patch:
