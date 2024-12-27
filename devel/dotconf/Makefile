@@ -1,8 +1,8 @@
 PORTNAME=	dotconf
-PORTVERSION=	1.3
+PORTVERSION=	1.4.1
+DISTVERSIONPREFIX=	v
 PORTREVISION=	1
 CATEGORIES=	devel
-MASTER_SITES=	GENTOO
 
 MAINTAINER=	garga@FreeBSD.org
 COMMENT=	Simple, powerful configuration-file parser
@@ -11,26 +11,27 @@ WWW=		https://github.com/williamh/dotconf
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		pathfix pkgconfig libtool
+USES=		autoreconf libtool pkgconfig
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	williamh
+
+USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
-USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
-post-patch:
-	@${REINPLACE_CMD} -e \
-		'/^SUBDIR/s|=.*|= src|' ${WRKSRC}/Makefile.in
+post-patch-DOCS-off:
+	@${REINPLACE_CMD} -e "/^SUBDIRS *=/ s,doc,," \
+		${WRKSRC}/Makefile.am
 
-post-install-DOCS-on:
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/*.txt ${STAGEDIR}${DOCSDIR}
+post-patch-EXAMPLES-on:
+	@${REINPLACE_CMD} -e "/^examplesdir *=/ s, *= *.*, = ${EXAMPLESDIR}," \
+		${WRKSRC}/examples/Makefile.am
 
-post-install-EXAMPLES-on:
-	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-.for ex in README argdouble caseinsensitive context duplicates errorhandler \
-	fallback libpool maketest.sh modules noinline simple
-	@(cd ${WRKSRC}/examples && ${COPYTREE_SHARE} ${ex} ${STAGEDIR}${EXAMPLESDIR})
-.endfor
+post-patch-EXAMPLES-off:
+	@${REINPLACE_CMD} -e "/^SUBDIRS *=/ s,examples,," \
+		${WRKSRC}/Makefile.am
 
 .include <bsd.port.mk>
