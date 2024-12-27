@@ -1,15 +1,13 @@
-Fix configure with security/libassuan 3.x
+Fix path of pkgconfig files passed to gpgrt-config.
 
---- configure.orig	2018-10-16 21:44:05 UTC
+--- configure.orig	2024-12-10 20:20:58 UTC
 +++ configure
-@@ -2256,8 +2256,8 @@ NEED_GPG_ERROR_VERSION=1.27
- 
- 
- NEED_GPG_ERROR_VERSION=1.27
--NEED_LIBASSUAN_API=2
--NEED_LIBASSUAN_VERSION=2.4.2
-+NEED_LIBASSUAN_API=3
-+NEED_LIBASSUAN_VERSION=3.0.0
- NEED_GPGME_API=1
- NEED_GPGME_VERSION=1.9.0
- 
+@@ -9283,7 +9283,7 @@ fi
+     # Get the prefix of gpgrt-config assuming it's something like:
+     #   <PREFIX>/bin/gpgrt-config
+     gpgrt_prefix=${GPGRT_CONFIG%/*/*}
+-    possible_libdir1=${gpgrt_prefix}/lib
++    possible_libdir1=${gpgrt_prefix}/libdata
+     # Determine by using system libdir-format with CC, it's like:
+     #   Normal style: /usr/lib
+     #   GNU cross style: /usr/<triplet>/lib
