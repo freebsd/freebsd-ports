@@ -35,7 +35,7 @@
  #
  # fftw3 single precision library
  #
-@@ -923,7 +941,7 @@ set (CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wall -Wextra")
+@@ -923,7 +941,7 @@ set (CMAKE_VISIBILITY_INLINES_HIDDEN ON)
  #
  set (CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wall -Wextra")
  
@@ -44,7 +44,7 @@
  
  if (NOT APPLE)
    set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-pragmas")
-@@ -1169,7 +1187,7 @@ add_executable (wsprsim ${wsprsim_CSRCS})
+@@ -1169,7 +1187,7 @@ add_executable (encode77 lib/77bit/encode77.f90)
  target_link_libraries (encode77 wsjt_fort wsjt_cxx)
  
  add_executable (wsprsim ${wsprsim_CSRCS})
@@ -53,7 +53,7 @@
  
  add_executable (jt4code lib/jt4code.f90)
  target_link_libraries (jt4code wsjt_fort wsjt_cxx)
-@@ -1211,6 +1229,12 @@ endif(WSJT_BUILD_UTILS)
+@@ -1211,6 +1229,12 @@ target_link_libraries (ldpcsim240_74 wsjt_fort wsjt_cx
  
  endif(WSJT_BUILD_UTILS)
  
@@ -66,7 +66,19 @@
  add_executable (fmtave lib/fmtave.f90)
  
  add_executable (fcal lib/fcal.f90)
-@@ -1601,12 +1625,12 @@ install (PROGRAMS
+@@ -1410,6 +1434,11 @@ if (${OPENMP_FOUND} OR APPLE)
+ else (${OPENMP_FOUND} OR APPLE)
+   target_link_libraries (jt9 wsjt_fort wsjt_cxx fort_qt)
+ endif (${OPENMP_FOUND} OR APPLE)
++if (CMAKE_SYSTEM_NAME STREQUAL "FreeBSD")
++  set_target_properties (jt9 PROPERTIES
++    LINK_FLAGS -Wl,-zexecstack
++    )
++endif ()
+ 
+ if (WIN32)
+   # build map65
+@@ -1601,12 +1630,12 @@ install (PROGRAMS
    RENAME rigctld-wsjtx${CMAKE_EXECUTABLE_SUFFIX}
    )
  
