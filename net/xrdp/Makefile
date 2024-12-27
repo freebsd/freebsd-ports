@@ -1,5 +1,6 @@
 PORTNAME=	xrdp
 DISTVERSION=	0.10.2
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	net
 MASTER_SITES=	https://github.com/neutribolabs/${PORTNAME}/releases/download/v${DISTVERSION}/
@@ -96,12 +97,13 @@ post-install:
 	${INSTALL_SCRIPT} ${FILESDIR}/startwm.sh ${STAGEDIR}${ETCDIR}
 
 post-stage:
-	@${RM} ${STAGEDIR}${PREFIX}/etc/xrdp/rsakeys.ini
-	@${RM} ${STAGEDIR}${PREFIX}/etc/xrdp/cert.pem
-	@${RM} ${STAGEDIR}${PREFIX}/etc/xrdp/key.pem
+	@${RM} ${STAGEDIR}${ETCDIR}/rsakeys.ini
+	@${RM} ${STAGEDIR}${ETCDIR}/cert.pem
+	@${RM} ${STAGEDIR}${ETCDIR}/key.pem
 .for f in sesman.ini startwm.sh reconnectwm.sh xrdp.ini xrdp_keyboard.ini \
 	gfx.toml
-	@${MV} ${STAGEDIR}${PREFIX}/etc/xrdp/$f ${STAGEDIR}${PREFIX}/etc/xrdp/$f.sample
+	@${MV} ${STAGEDIR}${ETCDIR}/$f \
+		${STAGEDIR}${ETCDIR}/$f.sample
 .endfor
 
 .include <bsd.port.post.mk>
