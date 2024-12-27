@@ -1,7 +1,6 @@
 PORTNAME=	autobahn
 DISTVERSIONPREFIX=	v
-DISTVERSION=	23.6.2
-PORTREVISION=	2
+DISTVERSION=	24.4.2
 CATEGORIES=	www python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -23,16 +22,15 @@ GH_PROJECT=	autobahn-python
 USE_PYTHON=	autoplist cryptography distutils pytest
 
 OPTIONS_DEFINE=		ACCELERATE COMPRESS ENCRYPTION SCRAM SERIALIZATION
-OPTIONS_DEFAULT=	ACCELERATE ASYNCIO ENCRYPTION SCRAM SERIALIZATION \
+OPTIONS_DEFAULT=	ACCELERATE ENCRYPTION SCRAM SERIALIZATION \
 			TWISTED
 OPTIONS_MULTI=		BACKENDS
-OPTIONS_MULTI_BACKENDS=	ASYNCIO TWISTED
+OPTIONS_MULTI_BACKENDS=	TWISTED
 OPTIONS_FILE=		${PORT_DBDIR}/${OPTIONS_NAME}/${FLAVOR}-options
 
 ACCELERATE_DESC=	C-based WebSocket Acceleration
-ASYNCIO_DESC=		Asyncronous IO Support
-COMPRESS_DESC=		Compression support
 BACKENDS_DESC=		Network Backends
+COMPRESS_DESC=		Compression support
 ENCRYPTION_DESC=	TLS Transport / Cryptosign Encryption & Authentication
 SCRAM_DESC=		WAMP-SCRAM Authentication support
 SERIALIZATION_DESC=	Serializers (MessagePack, CBOR, UBJSON, Flatbuffers)
@@ -52,24 +50,18 @@ SERIALIZATION_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cbor2>=5.2.0:devel/py-cbor2@${
 				${PYTHON_PKGNAMEPREFIX}flatbuffers>=22.12.6:devel/py-flatbuffers@${PY_FLAVOR} \
 				${PYTHON_PKGNAMEPREFIX}msgpack>=1.0.2:devel/py-msgpack@${PY_FLAVOR} \
 				${PYTHON_PKGNAMEPREFIX}py-ubjson>=0.16.1:devel/py-py-ubjson@${PY_FLAVOR} \
-				${PYTHON_PKGNAMEPREFIX}ujson>=4.0.2:devel/py-ujson@${PY_FLAVOR}
+				${PYTHON_PKGNAMEPREFIX}ujson>=4.0.2:devel/py-ujson@${PY_FLAVOR} \
+				${PYTHON_PKGNAMEPREFIX}u-msgpack-python>=2.1:devel/py-u-msgpack-python@${PY_FLAVOR}
 TWISTED_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}attrs>=20.3.0:devel/py-attrs@${PY_FLAVOR} \
-				${PYTHON_PKGNAMEPREFIX}twisted>=20.3.0:devel/py-twisted@${PY_FLAVOR} \
+				${PYTHON_PKGNAMEPREFIX}twisted>=24.3.0:devel/py-twisted@${PY_FLAVOR} \
 				${PYTHON_PKGNAMEPREFIX}zope.interface>=5.2.0:devel/py-zope.interface@${PY_FLAVOR}
 
 .include <bsd.port.options.mk>
-
-OPTIONS_MULTI_BACKENDS:=	${OPTIONS_MULTI_BACKENDS:NASYNCIO}
-COMPLETE_OPTIONS_LIST:=		${COMPLETE_OPTIONS_LIST:NASYNCIO}
-PORT_OPTIONS:=			${PORT_OPTIONS:NASYNCIO}
 
 post-stage:
 .if ${ARCH} !=	armv7
 	@${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/_nvx_utf8validator.abi3.so
 .endif
-
-do-test-ASYNCIO-on:
-	@cd ${WRKSRC} && USE_ASYNCIO=1 ${PYTHON_CMD} -m pytest -v -rs ${WRKSRC}/autobahn
 
 do-test-TWISTED-on:
 	@cd ${WRKSRC} && USE_TWISTED=1 ${PYTHON_CMD} -m twisted.trial ${WRKSRC}/autobahn
