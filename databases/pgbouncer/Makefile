@@ -1,14 +1,14 @@
 PORTNAME=	pgbouncer
-PORTVERSION=	1.22.1
+DISTVERSION=	1.23.1
 CATEGORIES=	databases
-MASTER_SITES=	https://www.pgbouncer.org/downloads/files/${PORTVERSION}/ \
-		http://www.pgbouncer.org/downloads/files/${PORTVERSION}/
+MASTER_SITES=	https://www.pgbouncer.org/downloads/files/${DISTVERSION}/
 
 MAINTAINER=	dmitry.wagin@ya.ru
 COMMENT=	Lightweight connection pooler for PostgreSQL
 WWW=		https://www.pgbouncer.org/
 
 LICENSE=	BSD2CLAUSE
+LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
 LIB_DEPENDS=	libevent.so:devel/libevent
 
