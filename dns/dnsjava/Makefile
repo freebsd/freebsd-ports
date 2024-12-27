@@ -10,10 +10,9 @@ WWW=		http://www.xbill.org/dnsjava/
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+USES=		java:ant
 USE_GITHUB=	yes
 
-USE_JAVA=	yes
-USE_ANT=	yes
 ALL_TARGET=	jar
 NO_ARCH=	yes
 

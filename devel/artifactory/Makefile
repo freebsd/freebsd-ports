@@ -20,11 +20,9 @@ RUN_DEPENDS=	bash:shells/bash
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-oss-${PORTVERSION}
 
-USES=		cpe shebangfix zip
+USES=		cpe java shebangfix zip
 CPE_VENDOR=	jfrog
 SHEBANG_FILES=	bin/artifactory.sh
-USE_JAVA=	yes
-JAVA_VERSION=	8+
 JAVA_VENDOR=	openjdk
 NO_BUILD=	yes
 NO_ARCH=	yes

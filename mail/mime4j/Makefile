@@ -13,9 +13,10 @@ LICENSE=	APACHE20
 
 RUN_DEPENDS=	${JAVALIBDIR}/commons-logging.jar:java/apache-commons-logging
 
+USES=		java
+
 OPTIONS_DEFINE=	DOCS
 
-USE_JAVA=	yes
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/apache-${PORTNAME}-${PORTVERSION}
 

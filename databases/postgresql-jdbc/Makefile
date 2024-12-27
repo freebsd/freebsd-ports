@@ -12,8 +12,7 @@ WWW=		https://jdbc.postgresql.org/
 
 LICENSE=	BSD3CLAUSE
 
-USE_JAVA=	yes
-JAVA_VERSION=	8+
+USES=		java
 NO_ARCH=	yes
 PLIST_FILES=	%%JAVAJARDIR%%/postgresql.jar
 

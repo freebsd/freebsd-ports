@@ -8,10 +8,9 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Light-weight XML encoding library for Java
 WWW=		https://xmlenc.sourceforge.net/
 
-USES=		tar:tgz
-USE_JAVA=	yes
+USES=		java:ant tar:tgz
 JAVA_VERSION=	8
-USE_ANT=	yes
+
 NO_ARCH=	yes
 
 OPTIONS_DEFINE=	DOCS

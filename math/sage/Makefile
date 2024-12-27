@@ -338,14 +338,13 @@ RUN_DEPENDS=	bash:shells/bash		\
 		pixz:archivers/pixz
 
 USES=		autoreconf blaslapack:openblas compiler:c++11-lib fortran \
-		gettext gmake gnome iconv jpeg libtool localbase magick:6,build \
+		gettext gmake gnome iconv java jpeg libtool localbase magick:6,build \
 		ncurses ninja:build perl5 pkgconfig python readline shebangfix \
 		sqlite tex tk xorg
 USE_TEX=	latex:build pdftex:build tex:build
 USE_XORG=	x11 xext xscrnsaver
 USE_GNOME=	cairo glib20 pango
 USE_PYTHON=	cython
-USE_JAVA=	yes # for science/jmol
 
 CONFLICTS=	${PYTHON_PKGNAMEPREFIX}wheel-0.*
 

@@ -13,10 +13,8 @@ LICENSE_COMB=	dual
 
 RUN_DEPENDS=	bash:shells/bash
 
-USES=		cpe
-USE_JAVA=	yes
+USES=		java cpe
 
-JAVA_VERSION=	8+
 NO_BUILD=	yes
 
 JRUBY_HOME?=	${PREFIX}/share/${PORTNAME}

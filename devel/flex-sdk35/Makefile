@@ -11,8 +11,7 @@ COMMENT=	Adobe Flex SDK
 WWW=		http://opensource.adobe.com/wiki/display/flexsdk/Flex+3
 
 CONFLICTS=	flex-sdk
-USES=		zip
-USE_JAVA=	yes
+USES=		java zip
 SUB_FILES=	${SCRIPTS:C/\$/.sh/g}
 PLIST_SUB=	PORTNAME=${PORTNAME}
 SUB_LIST=	PORTNAME=${PORTNAME}

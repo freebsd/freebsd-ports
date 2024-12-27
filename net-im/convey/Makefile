@@ -10,8 +10,7 @@ MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Instant Message (IM) program using the Jabber protocol
 WWW=		https://convey.sourceforge.net/
 
-USE_ANT=	yes
-USE_JAVA=	yes
+USES=		java:ant
 
 MAKE_ARGS=	-quiet
 

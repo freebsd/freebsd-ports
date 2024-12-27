@@ -11,7 +11,7 @@ WWW=		https://www.edumips.org/
 
 LICENSE=	GPLv2
 
-USE_JAVA=	yes
+USES=		java
 JAVA_VERSION=	17+
 
 DESKTOP_ENTRIES=	"EduMIPS64" \

@@ -15,7 +15,7 @@ RUN_DEPENDS=	${LOCALBASE}/bin/mpg123:audio/mpg123 \
 		${LOCALBASE}/bin/ogg123:audio/vorbis-tools \
 		${LOCALBASE}/bin/simplemod:audio/simplemod
 
-USE_JAVA=	yes
+USES=		java
 NO_BUILD=	yes
 PLIST_FILES=	share/java/classes/MusicControl-${PORTVERSION}.jar bin/musiccontrol
 

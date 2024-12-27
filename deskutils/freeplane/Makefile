@@ -13,8 +13,7 @@ LICENSE_FILE=	${WRKSRC}/license.txt
 
 RUN_DEPENDS=	bash:shells/bash
 
-USES=		cpe desktop-file-utils shebangfix zip
-USE_JAVA=	yes
+USES=		cpe desktop-file-utils java shebangfix zip
 
 SHEBANG_FILES=	${WRKSRC}/freeplane.sh
 

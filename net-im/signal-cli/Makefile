@@ -21,12 +21,10 @@ LIB_DEPENDS=		libsignal_jni.so:net-im/libsignal-client \
 RUN_DEPENDS=		libsignal-client>=0.9.0:net-im/libsignal-client
 TEST_DEPENDS=		qrencode:graphics/libqrencode
 
-USES=		gmake shebangfix
+USES=		gmake java shebangfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	AsamK
-USE_JAVA=	yes
 JAVA_VERSION=	11+
-JAVA_RUN=	jre
 USE_RC_SUBR=	signal_cli
 SHEBANG_FILES=	bin/${PORTNAME}
 SHEBANG_LANG=	sh

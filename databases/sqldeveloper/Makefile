@@ -18,8 +18,7 @@ LICENSE_PERMS=	no-dist-mirror no-dist-sell no-pkg-mirror
 RUN_DEPENDS=	openjfx14>=0:java/openjfx14 \
 		bash:shells/bash
 
-USES=		gnome zip
-USE_JAVA=	17
+USES=		gnome java zip
 
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}
 NO_ARCH=	yes

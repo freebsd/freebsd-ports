@@ -13,8 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	gmake:devel/gmake
 LIB_DEPENDS=	libisal.so:devel/isa-l
 
-USES=		cmake:noninja localbase:ldflags
-USE_JAVA=	yes
+USES=		cmake:noninja java localbase:ldflags
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes

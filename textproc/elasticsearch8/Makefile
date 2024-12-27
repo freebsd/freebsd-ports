@@ -15,8 +15,7 @@ BUILD_DEPENDS=	jna>0:devel/jna
 RUN_DEPENDS=	bash:shells/bash \
 		jna>0:devel/jna
 
-USES=		cpe shebangfix
-USE_JAVA=	yes
+USES=		cpe java shebangfix
 JAVA_VERSION=	17+
 USE_RC_SUBR=	${PORTNAME}
 

@@ -17,8 +17,8 @@ BUILD_DEPENDS=	${JAVALIBDIR}/jdom.jar:java/jdom \
 RUN_DEPENDS=	${JAVALIBDIR}/jdom.jar:java/jdom \
 		${JAVALIBDIR}/xercesImpl.jar:textproc/xerces-j
 
-USE_JAVA=	yes
-USE_ANT=	yes
+USES=		java:ant
+
 ALL_TARGET=	clean jar
 NO_ARCH=	yes
 

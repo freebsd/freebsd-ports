@@ -62,7 +62,7 @@ CSHARP_BUILD_DEPENDS=	swig:devel/swig
 JAVA_CMAKE_BOOL=	OGRE_BUILD_COMPONENT_JAVA
 JAVA_BUILD_DEPENDS=	swig:devel/swig
 JAVA_VARS=		CMAKE_ARGS+=-DJAVA_HOME=${JAVA_HOME}
-JAVA_USE=		JAVA=yes
+JAVA_USES=		java
 JAVA_BROKEN=		error: incompatible types: SWIGTYPE_p_std__mapT_std__string_std__string_std__lessT_std__string_t_t__iterator cannot be converted to Iterator
 
 PYTHON_CMAKE_BOOL=	OGRE_BUILD_COMPONENT_PYTHON

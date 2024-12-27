@@ -14,8 +14,9 @@ BUILD_DEPENDS=	${LOCALBASE}/share/java/classes/lwjgl/lwjgl.jar:games/lwjgl
 RUN_DEPENDS:=	${LOCALBASE}/share/java/classes/jmf.jar:java/jmf \
 		${BUILD_DEPENDS}
 
-USES=		gmake
-USE_JAVA=	8
+USES=		gmake java
+JAVA_VERSION=	8
+
 MAKEFILE=	${FILESDIR}/makefile
 MAKE_ENV=	JAVA_VERSION=${JAVA_VERSION}
 WRKSRC=		${WRKDIR}/Sokobano

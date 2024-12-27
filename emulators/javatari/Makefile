@@ -15,7 +15,8 @@ LICENSE=	AGPLv3
 
 EXTRACT_DEPENDS=	${UNZIP_CMD}:archivers/unzip
 
-USE_JAVA=	yes
+USES=		java
+
 NO_BUILD=	yes
 PLIST_FILES=	%%JAVAJARDIR%%/${DISTNAME}${EXTRACT_SUFX} \
 		bin/javatari

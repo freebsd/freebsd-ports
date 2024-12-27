@@ -12,10 +12,9 @@ WWW=		http://www.drjava.org/eclipse.shtml
 
 RUN_DEPENDS=	${LOCALBASE}/bin/eclipse:java/eclipse
 
-USES=		zip
+USES=		java zip
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
-USE_JAVA=	yes
 
 JAVA_OS=	native
 

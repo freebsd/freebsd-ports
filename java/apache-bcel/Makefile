@@ -11,8 +11,9 @@ WWW=		https://commons.apache.org/proper/commons-bcel/
 
 LICENSE=	APACHE20
 
+USES=		java
+
 NO_BUILD=	yes
-USE_JAVA=	yes
 
 NO_ARCH=	yes
 

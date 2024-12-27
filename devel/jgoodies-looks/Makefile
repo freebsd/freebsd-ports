@@ -11,7 +11,7 @@ WWW=		http://www.jgoodies.com
 
 LICENSE=	BSD3CLAUSE
 
-USE_JAVA=	yes
+USES=		java
 NO_ARCH=	yes
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes

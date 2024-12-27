@@ -25,10 +25,9 @@ RUN_DEPENDS=	cmake:devel/cmake-core \
 		jetbrains-sqlite>=241.15989.150:devel/jetbrains-sqlite \
 		lsof:sysutils/lsof
 
-USES=		cpe python:run
+USES=		cpe java python:run
 
 CPE_VENDOR=	jetbrains
-USE_JAVA=	yes
 JAVA_VERSION=	17+
 
 DATADIR=	${PREFIX}/share/jetbrains/${PORTNAME}

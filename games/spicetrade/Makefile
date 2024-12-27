@@ -11,7 +11,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Colourful 14th century Arab spice trading game
 WWW=		http://www.spicetrade.org/
 
-USE_JAVA=	yes
+USES=		java
+
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}
 NO_BUILD=	yes
 NO_ARCH=	yes

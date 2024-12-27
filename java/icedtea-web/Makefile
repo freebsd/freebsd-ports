@@ -19,9 +19,8 @@ RUN_DEPENDS=	bash:shells/bash
 
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
-USES=		autoreconf compiler:c++11-lang desktop-file-utils gmake \
+USES=		autoreconf compiler:c++11-lang desktop-file-utils gmake java \
 		pkgconfig shebangfix xorg
-USE_JAVA=	yes
 JAVA_VERSION=	8
 JAVA_OS=	native
 JAVA_VENDOR=	openjdk

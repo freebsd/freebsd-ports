@@ -11,9 +11,8 @@ WWW=		https://rundeck.org
 
 LICENSE=	APACHE20
 
-USES=		cpe
+USES=		cpe java
 CPE_VENDOR=	pagerduty
-USE_JAVA=	8+s
 USE_RC_SUBR=	rundeck
 
 CONFLICTS_INSTALL=	rundeck2

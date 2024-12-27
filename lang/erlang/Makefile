@@ -82,7 +82,7 @@ FOP_BUILD_DEPENDS=		fop:textproc/fop \
 				xsltproc:textproc/libxslt
 JAVA_CONFIGURE_WITH=		javac
 JAVA_CONFIGURE_ENV=		ac_cv_prog_JAVAC="${JAVAC}"
-JAVA_VARS=			USE_JAVA=yes
+JAVA_USES=			java
 KQUEUE_CONFIGURE_ENABLE=	kernel-poll
 MANPAGES_RUN_DEPENDS=		${LOCALBASE}/etc/man.d/erlang.conf:lang/erlang-man
 ODBC_LIB_DEPENDS=		libodbc.so:databases/unixODBC

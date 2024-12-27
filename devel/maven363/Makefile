@@ -13,8 +13,7 @@ LICENSE=	APACHE20
 
 RUN_DEPENDS=	mvn:devel/maven-wrapper
 
-USES=		cpe
-USE_JAVA=	yes
+USES=		cpe java
 
 CPE_PRODUCT=	maven
 CPE_VENDOR=	apache

@@ -15,12 +15,9 @@ ONLY_FOR_ARCHS= aarch64 amd64
 
 RUN_DEPENDS=	${LOCALBASE}/bin/bash:shells/bash
 
-USES=		cpe shebangfix
-
+USES=		cpe java shebangfix
 CPE_VENDOR=	elastic
-USE_JAVA=	yes
 JAVA_VERSION=	11+
-JAVA_RUN=	yes
 USE_RC_SUBR=	logstash
 
 SHEBANG_FILES=	bin/*

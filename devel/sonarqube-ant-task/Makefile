@@ -11,8 +11,7 @@ WWW=		https://docs.sonarqube.org/latest/analysis/scan/sonarscanner-for-ant/
 
 LICENSE=	LGPL3
 
-USES=		cpe
-USE_JAVA=	yes
+USES=		cpe java
 CPE_VENDOR=	sonarsource
 
 NO_ARCH=	yes

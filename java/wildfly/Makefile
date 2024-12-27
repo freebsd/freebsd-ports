@@ -10,7 +10,8 @@ WWW=		https://wildfly.org/
 
 LICENSE=	GPLv2
 
-USE_JAVA=	17+
+USES=		java
+JAVA_VERSION=	17+
 USE_RC_SUBR=	wildfly
 
 NO_BUILD=	yes

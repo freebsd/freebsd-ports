@@ -10,8 +10,7 @@ WWW=		https://wiki.openstreetmap.org/wiki/Osmosis
 LICENSE=	PD
 LICENSE_FILE=	${WRKSRC}/copying.txt
 
-USES=		tar
-USE_JAVA=	yes
+USES=		java tar
 JAVA_VERSION=	17+
 NO_BUILD=	yes
 NO_ARCH=	yes

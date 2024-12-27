@@ -13,10 +13,9 @@ LICENSE_NAME=	VISUALVM with ClassPath Exception
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-USES=		desktop-file-utils zip:infozip
+USES=		desktop-file-utils java zip:infozip
+
 NO_BUILD=	yes
-USE_JAVA=	yes
-JAVA_VERSION=	8+
 WRKSRC=		${WRKDIR}/visualvm_${PORTVERSION:S/.//g}
 SUB_FILES=	visualvm.desktop
 

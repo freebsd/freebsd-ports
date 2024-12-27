@@ -62,8 +62,7 @@ PLIST_FILES=	%%JAVAJARDIR%%/classgraph-${CLASSGRAPH_VERSION}.jar \
 		%%JAVAJARDIR%%/websocket-api-java${JAVA_PORT_VERSION}-${UNIT_VERSION}.jar \
 		libexec/unit/modules/${UNIT_MODNAME}.unit.so
 
-USE_JAVA=	yes
-JAVA_VERSION=	8+
+USES+=	java
 #JAVA_VERSION=	8 11 12 13 14 15
 
 USE_RC_SUBR?=	# reset to empty

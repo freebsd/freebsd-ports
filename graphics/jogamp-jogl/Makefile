@@ -17,10 +17,7 @@ RUN_DEPENDS=	${JAVALIBDIR}/swt.jar:x11-toolkits/swt
 
 ONLY_FOR_ARCHS=	i386 amd64 powerpc64 powerpc64le
 
-USES=		compiler tar:xz xorg
-
-USE_ANT=	yes
-USE_JAVA=	yes
+USES=		compiler java:ant tar:xz xorg
 USE_XORG=	x11 xcursor xrandr xrender xxf86vm
 
 PATCH_WRKSRC=	${WRKDIR}

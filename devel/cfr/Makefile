@@ -14,8 +14,7 @@ WWW=		https://www.benf.org/other/cfr/
 # http://www.benf.org/other/cfr/license.html
 LICENSE=	MIT
 
-USE_JAVA=	yes
-JAVA_RUN=	jre
+USES=		java
 
 NO_ARCH=	yes
 NO_BUILD=	yes

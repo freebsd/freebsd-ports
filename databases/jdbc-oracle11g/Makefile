@@ -21,7 +21,7 @@ LICENSE_PERMS=	auto-accept
 DEPRECATED=	Oracle no longer provides public downloads of the old JDBC drivers
 EXPIRATION_DATE=	2025-01-24
 
-USE_JAVA=	yes
+USES=		java
 JAVA_VERSION=	8
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes

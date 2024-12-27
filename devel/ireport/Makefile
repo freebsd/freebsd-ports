@@ -9,8 +9,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Visual report builder/designer for JasperReports
 WWW=		https://www.jasperforge.org/projects/ireport
 
-USES=		dos2unix
-USE_JAVA=	yes
+USES=		dos2unix java
 DOS2UNIX_GLOB=	*.txt
 NO_BUILD=	yes
 

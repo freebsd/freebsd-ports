@@ -12,10 +12,10 @@ WWW=		https://sites.google.com/site/qrcodeforwn/home/qr-code-generator-for-wirel
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+USES=		java zip:infozip
+
 NO_ARCH=	yes
 NO_BUILD=	yes
-USES=		zip:infozip
-USE_JAVA=	yes
 SUB_FILES=	qrcodegen
 
 INSTALLFILES=	FAQ.txt Installation.txt NOTICE QRCodeGen.jar Version.html

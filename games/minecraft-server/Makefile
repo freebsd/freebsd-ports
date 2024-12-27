@@ -16,7 +16,7 @@ LICENSE_NAME=	Minecraft End User License Agreement
 LICENSE_TEXT=	The license can be viewed at: https://account.mojang.com/documents/minecraft_eula
 LICENSE_PERMS=	no-dist-mirror no-dist-sell no-pkg-mirror no-pkg-sell
 
-USE_JAVA=	yes
+USES=		java
 JAVA_VERSION=	21
 
 NO_ARCH=	yes

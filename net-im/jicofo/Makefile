@@ -12,10 +12,10 @@ ONLY_FOR_ARCHS=	i386 amd64 powerpc64 powerpc64le
 
 BUILD_DEPENDS=	maven>0:devel/maven
 
+USES=		java
 USE_GITHUB=	yes
 GH_ACCOUNT=	jitsi
 GH_TAGNAME=	258eb98
-USE_JAVA=	yes
 JAVA_VERSION=	11
 
 USE_RC_SUBR=	${PORTNAME}

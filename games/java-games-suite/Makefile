@@ -8,7 +8,7 @@ MAINTAINER=	jgh@FreeBSD.org
 COMMENT=	Simple Java games collection
 WWW=		https://sourceforge.net/projects/javagamessuite/
 
-USE_JAVA=	yes
+USES=		java
 
 NO_ARCH=	yes
 

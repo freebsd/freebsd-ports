@@ -20,13 +20,11 @@ RUN_DEPENDS=	${JAVALIBDIR}/mail.jar:java/javamail
 
 OPTIONS_DEFINE=	DOCS
 
+USES=		cpe java:ant
 CPE_PRODUCT=	legion-of-the-bouncy-castle-java-crytography-api
 CPE_VENDOR=	${PORTNAME}
-USE_JAVA=	yes
-USES=		cpe
 JDKMVERSION=	1.6 # ${JAVA_PORT_VERSION:C/^([0-9]\.[0-9])(.*)$/\1/}
 JDKNVERSION=	16 # ${JAVA_PORT_VERSION:C/^([0-9])\.([0-9])(.*)$/\1\2/}
-USE_ANT=	yes
 MAKE_ENV=	ANT_INCLUDE_SHARED_JARS=YES
 MAKE_ARGS=	-f jdk${JDKNVERSION}.xml
 ALL_TARGET=	build-provider build zip-src

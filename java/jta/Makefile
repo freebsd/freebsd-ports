@@ -14,8 +14,7 @@ LICENSE_NAME=	jta
 LICENSE_TEXT=	See the license
 LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
 
-USES=		zip
-USE_JAVA=	yes
+USES=		java zip
 
 NO_BUILD=	yes
 DOWNLOAD_URL=	http://download.oracle.com/otndocs/jcp/7286-jta-${PORTVERSION}-spec-oth-JSpec/?submit=Download

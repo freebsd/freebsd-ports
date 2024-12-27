@@ -19,11 +19,9 @@ BUILD_DEPENDS=	${JAVALIBDIR}/junit.jar:java/junit \
 		${JAVALIBDIR}/mail.jar:java/javamail
 RUN_DEPENDS=	${JAVALIBDIR}/mail.jar:java/javamail
 
-USES=		cpe
+USES=		cpe java:ant
 CPE_VENDOR=	${PORTNAME}
 CPE_PRODUCT=	legion-of-the-bouncy-castle-java-crytography-api
-USE_ANT=	yes
-USE_JAVA=	yes
 
 MAKE_ARGS=	-f \
 		ant/jdk${JDKNVERSION}+.xml

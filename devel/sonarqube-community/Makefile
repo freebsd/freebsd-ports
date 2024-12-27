@@ -30,9 +30,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 RUN_DEPENDS=	bash:shells/bash #\
 #		jna>0:devel/jna
 
-USES=		cpe shebangfix zip nodejs:lts,run
+USES=		cpe java shebangfix zip nodejs:lts,run
 CPE_VENDOR=	sonarsource
-USE_JAVA=	yes
 
 SHEBANG_FILES=	elasticsearch/bin/elasticsearch-cli \
 		elasticsearch/bin/elasticsearch-env

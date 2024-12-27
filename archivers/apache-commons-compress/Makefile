@@ -11,8 +11,7 @@ WWW=		https://commons.apache.org/proper/commons-compress/
 
 LICENSE=	APACHE20
 
-USE_JAVA=	yes
-JAVA_VERSION=	8+
+USES=		java
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 NO_BUILD=	yes

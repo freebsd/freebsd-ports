@@ -57,6 +57,10 @@ CONFIGURE_ARGS+=	--enable-${ZABBIX_BUILD} \
 			--datadir=${ETCDIR} \
 			--with-iconv=${ICONV_PREFIX}
 
+.if ${ZABBIX_BUILD} == "java"
+USES+=		java
+.endif
+
 .if ${ZABBIX_BUILD} != "agent" && ${ZABBIX_BUILD} != "java"
 CPPFLAGS+=	-I${LOCALBASE}/include
 

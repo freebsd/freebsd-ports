@@ -9,10 +9,10 @@ WWW=		https://www.urbanophile.com/arenn/hacking/download.html #getopt
 
 LICENSE=	LGPL20
 
+USES=		java:ant
+
 OPTIONS_DEFINE=	DOCS
 
-USE_JAVA=	yes
-USE_ANT=	yes
 ALL_TARGET=	jar
 
 NO_WRKSUBDIR=	yes

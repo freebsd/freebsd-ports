@@ -54,7 +54,7 @@ CONFIGURE_ARGS+=	--without-netcdf
 
 .if defined(WITH_JAVA)
 ONLY_FOR_ARCHS=	i386
-USE_JAVA=	yes
+USES+=		java
 BUILD_DEPENDS+=	${JAVALIBDIR}/npcosmop211.jar:graphics/cosmoplayer
 RUN_DEPENDS+=	${JAVALIBDIR}/npcosmop211.jar:graphics/cosmoplayer
 CONFIGURE_ARGS+=	--with-cosmojar-path=${JAVALIBDIR}/npcosmop211.jar \

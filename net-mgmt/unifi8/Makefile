@@ -22,13 +22,10 @@ FLAVOR?=	${FLAVORS:[1]}
 
 externaldb_PKGNAMESUFFIX=	-externaldb
 
-USES=		cpe
-
+USES=		cpe java
 CPE_VENDOR=	ui
 CPE_PRODUCT=	unifi_controller
-USE_JAVA=	yes
 JAVA_VERSION=	17
-JAVA_RUN=	jre
 USE_RC_SUBR=	unifi
 
 CONFLICTS_INSTALL=	unifi7

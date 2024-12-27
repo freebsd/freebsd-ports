@@ -5,12 +5,8 @@ MAINTAINER=	michaelo@apache.org
 COMMENT=	Java bindings for Version control system
 WWW=		https://subversion.apache.org/
 
-USES=		compiler
-
-USE_JAVA=	yes
+USES=		compiler java
 JAVA_OS=	native
-JAVA_BUILD=	yes
-JAVA_RUN=	yes
 
 PORTREVISION_LATEST=	0
 PORTREVISION_LTS=		0

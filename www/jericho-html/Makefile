@@ -7,8 +7,7 @@ MAINTAINER=	saper@saper.info
 COMMENT=	Java library to analyse and manipulate HTML
 WWW=		https://jerichohtml.sourceforge.net/doc/index.html
 
-USES=		zip
-USE_JAVA=	yes
+USES=		java zip
 
 INTERFACES:=	"compile-time-dependencies/slf4j-api-1.6.1.jar:\
 		compile-time-dependencies/commons-logging-api-1.1.1.jar:\

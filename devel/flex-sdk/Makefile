@@ -9,8 +9,7 @@ COMMENT=	Adobe Flex SDK
 WWW=		http://opensource.adobe.com/wiki/display/flexsdk/Flex+4
 
 CONFLICTS=	flex-sdk3
-USES=		zip
-USE_JAVA=	yes
+USES=		java zip
 SUB_FILES=	${SCRIPTS:C/\$/.sh/g}
 NO_ARCH=	yes
 NO_BUILD=	yes

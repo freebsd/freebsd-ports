@@ -9,9 +9,8 @@ WWW=		https://www.payara.fish/
 LICENSE=	GPLv2 CDDL
 LICENSE_COMB=	dual
 
-USES=		zip
-USE_JAVA=	yes
-JAVA_VERSION=	8+
+USES=		java zip
+
 NO_BUILD=	yes
 
 WRKSRC=		${WRKDIR}/payara5
@@ -23,7 +22,7 @@ PKGMESSAGE?=	${WRKDIR}/pkg-message
 PLIST_SUB+=	VARDIR=${VARDIR}
 PLIST_SUB+=	VARMAIN=${VARMAIN}
 
-# Since we USE_JAVA, we propagate the received JAVA_HOME variable to the
+# Since we USES=java, we propagate the received JAVA_HOME variable to the
 # template files, since it is used by the rc script.
 SUB_LIST=	PAYARAVERSION=${PORTVERSION} \
 		JAVA_HOME=${JAVA_HOME}

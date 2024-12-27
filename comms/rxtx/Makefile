@@ -16,9 +16,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 NOT_FOR_ARCHS=		mips mips64
 NOT_FOR_ARCHS_REASON=	Java not available for this architecture
 
-USES=		gmake libtool zip
+USES=		gmake java libtool zip
 
-USE_JAVA=	yes
 JAVA_OS=	native
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	JAVA_HOME=${JAVA_HOME}

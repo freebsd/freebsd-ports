@@ -21,7 +21,7 @@ RUN_DEPENDS=	intellij-fsnotifier>0:java/intellij-fsnotifier \
 		jetbrains-restarter>=233.11799.241:devel/jetbrains-restarter \
 		jetbrains-sqlite>=232.8660.185:devel/jetbrains-sqlite
 
-USES=		cpe desktop-file-utils python:run shebangfix
+USES=		cpe desktop-file-utils java python:run shebangfix
 SHEBANG_FILES=	plugins/python-ce/helpers/pydev/pydevd_attach_to_process/linux_and_mac/compile_mac.sh \
 		plugins/python-ce/helpers/pydev/pydevd_attach_to_process/linux_and_mac/compile_linux.sh \
 		plugins/python-ce/helpers/pydev/pydevd_attach_to_process/linux_and_mac/compile_linux_aarch64.sh \
@@ -31,7 +31,6 @@ SHEBANG_FILES=	plugins/python-ce/helpers/pydev/pydevd_attach_to_process/linux_an
 		plugins/python-ce/helpers/typeshed/scripts/sync_tensorflow_protobuf_stubs.sh
 
 CPE_VENDOR=	jetbrains
-USE_JAVA=	yes
 JAVA_VERSION=	17+
 
 # Remove the bundled native Pty4J support libraries, they are replaced

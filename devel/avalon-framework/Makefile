@@ -8,7 +8,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Apache Avalon core framework for component programming
 WWW=		https://avalon.apache.org/closed.html
 
-USE_JAVA=	yes
+USES=		java
+
 NO_ARCH=	yes
 NO_BUILD=	yes
 

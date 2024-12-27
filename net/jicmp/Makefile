@@ -9,14 +9,13 @@ WWW=		https://www.opennms.org/index.php/Jicmp
 
 WRKSRC=		${WRKDIR}/jicmp-${PORTVERSION}
 
-USES=		libtool
-USE_JAVA=	yes
+USES=		java libtool
 JAVA_VENDOR=	openjdk
-JAVA_BUILD=	yes
-JAVA_RUN=	yes
+USE_LDCONFIG=	yes
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	JAVA_HOME=${JAVA_HOME}
-USE_LDCONFIG=	yes
+
 INSTALL_TARGET=	install-strip
 
 pre-everything::

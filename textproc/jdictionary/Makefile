@@ -8,9 +8,8 @@ MAINTAINER=	jmohacsi@bsd.hu
 COMMENT=	Platform independent, plugin based dictionary
 WWW=		http://jdictionary.info/
 
-USE_JAVA=	yes
+USES=		java zip
 
-USES=		zip
 WRKSRC=		${WRKDIR}/${PORTNAME}
 NO_BUILD=	yes
 

@@ -14,8 +14,7 @@ LICENSE=	GPLv2
 BUILD_DEPENDS=	projectx>=0.90.4.00:multimedia/projectx
 RUN_DEPENDS=	projectx>=0.90.4.00:multimedia/projectx
 
-USES=		zip
-USE_JAVA=	yes
+USES=		java zip
 
 CONFLICTS_INSTALL=	zenity # bin/gdialog
 

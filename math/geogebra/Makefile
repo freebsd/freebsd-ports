@@ -21,8 +21,7 @@ LICENSE_PERMS=	dist-mirror no-dist-sell pkg-mirror no-pkg-sell auto-accept
 
 ONLY_FOR_ARCHS=	amd64 i386
 
-USES=		desktop-file-utils gnome shared-mime-info shebangfix tar:bzip2
-USE_JAVA=	yes
+USES=		desktop-file-utils gnome java shared-mime-info shebangfix tar:bzip2
 JAVA_VERSION=	17+
 
 CONFLICTS=	math/geogebra-i18n

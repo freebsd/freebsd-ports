@@ -10,10 +10,10 @@ WWW=		http://jalbum.net/
 
 WRKSRC=		${WRKDIR}/jAlbum
 
-USES=		zip
+USES=		java zip
+
 NO_BUILD=	yes
 
-USE_JAVA=	yes
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}
 
 SUB_FILES=	jalbum.sh

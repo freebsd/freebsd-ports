@@ -10,11 +10,9 @@ WWW=		https://davmail.sourceforge.net/
 
 LICENSE=	GPLv2
 
-USES=		dos2unix tar:tgz
+USES=		dos2unix java:ant tar:tgz
 
 DOS2UNIX_FILES=	build.xml
-USE_ANT=	yes
-USE_JAVA=	yes
 USE_RC_SUBR=	davmail
 # 6.1.0
 REVISION=	3423

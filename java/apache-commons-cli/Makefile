@@ -11,7 +11,8 @@ WWW=		https://commons.apache.org/proper/commons-cli/
 
 LICENSE=	APACHE20
 
-USE_JAVA=	yes
+USES=		java
+
 NO_BUILD=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}

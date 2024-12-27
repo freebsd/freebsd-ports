@@ -12,12 +12,9 @@ WWW=		https://www.seleniumhq.org
 
 LICENSE=	APACHE20
 
-USES=		cpe
+USES=		cpe java
 CPE_VENDOR=	jenkins
-
-USE_JAVA=	yes
 JAVA_VERSION=	11+
-JAVA_RUN=	yes
 
 USE_RC_SUBR=	selenium
 

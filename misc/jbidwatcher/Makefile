@@ -8,9 +8,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Java-based application allowing you to monitor eBay auctions
 WWW=		https://www.jbidwatcher.com/
 
-USES=	tar:bzip2
-USE_JAVA=	yes
-USE_ANT=	yes
+USES=	java:ant tar:bzip2
+
 ALL_TARGET=	jar
 
 SUB_FILES=	jbidwatcher

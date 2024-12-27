@@ -17,8 +17,7 @@ RUN_DEPENDS=	bash>0:shells/bash \
 
 CONFLICTS?=	opensearch13 opensearch210 opensearch213
 
-USES=		cpe shebangfix
-USE_JAVA=	yes
+USES=		cpe java shebangfix
 JAVA_VERSION=	17+
 USE_RC_SUBR=	${PORTNAME}
 

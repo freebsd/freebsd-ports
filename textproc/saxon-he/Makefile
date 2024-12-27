@@ -11,8 +11,8 @@ WWW=		https://www.saxonica.com/
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/notices/LICENSE.txt
 
-USES=		zip
-USE_JAVA=	yes
+USES=		java zip
+
 NO_WRKSUBDIR=	yes
 NO_ARCH=	yes
 NO_BUILD=	yes

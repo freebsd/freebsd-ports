@@ -9,7 +9,8 @@ MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Portably control DNS clouds
 WWW=		https://github.com/Netflix/denominator
 
-USE_JAVA=	yes
+USES=		java
+
 NO_BUILD=	yes
 STRIP=		# none
 PLIST_FILES=	bin/${PORTNAME}

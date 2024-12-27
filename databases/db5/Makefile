@@ -53,7 +53,7 @@ DBLIBS=	libdb libdb_cxx libdb_stl
 DEBUG_CONFIGURE_ENABLE=	debug umrw
 CRYPTO_CONFIGURE_WITH=	cryptography=yes
 L10N_CONFIGURE_ENABLE=	localization
-JAVA_USE=		java
+JAVA_USES=		java
 # db5 is incompatible with openjdk8 and causes IllegalArgument
 # exceptions during build
 JAVA_VARS=		DBLIBS+=libdb_java JAVA_VERSION="8"

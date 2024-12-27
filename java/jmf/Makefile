@@ -14,8 +14,8 @@ LICENSE_NAME=	jmf
 LICENSE_TEXT=	Redistribution of pre-compiled binaries is not permitted
 LICENSE_PERMS=	auto-accept
 
-USES=		zip
-USE_JAVA=	yes
+USES=		java zip
+
 NO_BUILD=	YES
 
 WRKSRC=		${WRKDIR}/JMF-${PORTVERSION}

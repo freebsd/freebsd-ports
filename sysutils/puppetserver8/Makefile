@@ -19,13 +19,12 @@ RUN_DEPENDS=	bash>=0:shells/bash \
 		rubygem-semantic_puppet>=1:devel/rubygem-semantic_puppet \
 		sudo>=1:security/sudo
 
-USES=		ruby shebangfix
+USES=		ruby java shebangfix
+JAVA_VERSION=	11+
 USE_RC_SUBR=	puppetserver
 
-USE_JAVA=	yes
 NO_ARCH=	yes
 NO_BUILD=	yes
-JAVA_VERSION=	11+
 
 CONFLICTS_INSTALL=	puppetserver[0-9]
 

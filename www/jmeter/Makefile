@@ -39,8 +39,8 @@ RUN_DEPENDS=	\
 		${JAVALIBDIR}/xstream.jar:textproc/xstream	\
 		${LOCALBASE}/share/java/rhino/rhino.jar:lang/rhino
 
-USES=		tar:tgz
-USE_JAVA=	yes
+USES=		java tar:tgz
+
 NO_BUILD=	yes
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}
 SUB_FILES=	jmeter.sh

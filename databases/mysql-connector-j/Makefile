@@ -14,9 +14,7 @@ RUN_DEPENDS=	${JAVALIBDIR}/slf4j-api.jar:devel/slf4j \
 		${JAVALIBDIR}/c3p0.jar:databases/c3p0 \
 		${JAVALIBDIR}/protobuf-java.jar:devel/protobuf-java
 
-USES=		cpe
-USE_JAVA=	yes
-
+USES=		cpe java
 CPE_VENDOR=	oracle
 CPE_PRODUCT=	mysql_connector_j
 
@@ -25,7 +23,6 @@ NO_BUILD=	yes
 
 CONFLICTS_INSTALL=	mysql-connector-java51 # share/java/classes/mysql-connector-java.jar
 
-JAVA_VERSION=	8+
 EXTRADOCS=	CHANGES
 
 PLIST_FILES=	${JAVAJARDIR}/${PORTNAME}.jar

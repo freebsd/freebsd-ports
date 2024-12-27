@@ -12,11 +12,8 @@ LICENSE=	APACHE20
 
 BUILD_DEPENDS=	gradle:devel/gradle
 
-USES=		gettext-runtime
-USE_JAVA=	yes
-
+USES=		gettext-runtime java
 USE_GITHUB=	yes
-
 JAVA_VERSION=	11
 
 NO_ARCH=	yes

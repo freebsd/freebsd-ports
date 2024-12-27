@@ -13,11 +13,8 @@ LICENSE_COMB=	dual
 
 ONLY_FOR_ARCHS=	aarch64 amd64 armv6 armv7 i386 powerpc64 powerpc64le
 
-USES=		gmake iconv
-USE_JAVA=	yes
-JAVA_VERSION=	8+
+USES=		gmake iconv java:ant
 
-USE_ANT=	yes
 USE_LDCONFIG=	${PREFIX}/lib/javaservicewrapper/lib
 
 DATADIR=	${PREFIX}/lib/${PORTNAME}

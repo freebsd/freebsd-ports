@@ -11,8 +11,7 @@ WWW=		https://github.com/stathissideris/ditaa
 
 LICENSE=	LGPL3
 
-USES=		zip
-USE_JAVA=	yes
+USES=		java zip
 
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}
 

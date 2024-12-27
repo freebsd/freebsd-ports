@@ -20,7 +20,7 @@ RUN_DEPENDS=	intellij-fsnotifier>0:java/intellij-fsnotifier \
 		jetbrains-sqlite>=241.15989.150:devel/jetbrains-sqlite \
 		lsof:sysutils/lsof
 
-USE_JAVA=	yes
+USES=		java
 JAVA_VERSION=	17+
 
 CONFLICTS=	idea intellij

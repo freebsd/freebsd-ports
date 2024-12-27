@@ -15,8 +15,7 @@ RUN_DEPENDS=	bash:shells/bash \
 		pigz:archivers/pigz \
 		pbzip2:archivers/pbzip2
 
-USES=		shebangfix
-USE_JAVA=	yes
+USES=		java shebangfix
 
 SHEBANG_FILES=	${WRKSRC}/*.sh
 

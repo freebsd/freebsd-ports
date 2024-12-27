@@ -9,12 +9,11 @@ WWW=		https://servingxml.sourceforge.net/
 
 BUILD_DEPENDS=	${ANT_CMD}:devel/apache-ant
 
-USES=		zip
-USE_JAVA=	yes
+USES=		java:build zip
+
 ANT_CMD?=	${LOCALBASE}/bin/ant
 ANT=	${SETENV} JAVA_HOME=${JAVA_HOME} ${ANT_CMD}
 ANT_TARGETS=	dist
-JAVA_BUILD=	yes
 
 do-build:
 	@cd ${WRKSRC} && ${ANT} ${ANT_TARGETS}

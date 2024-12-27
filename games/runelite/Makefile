@@ -17,8 +17,7 @@ WWW=		https://runelite.net
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${DISTDIR}/${DIST_SUBDIR}/LICENSE
 
-USES=		cpe
-USE_JAVA=	yes
+USES=		cpe java
 JAVA_VERSION=	11
 
 DESKTOP_ENTRIES="RuneLite" \

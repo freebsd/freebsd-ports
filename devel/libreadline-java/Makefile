@@ -9,6 +9,9 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	JNI wrapper around GNU Readline / libedit / libgetline
 WWW=		https://sourceforge.net/projects/java-readline/
 
+USES=		gmake java libedit ncurses readline
+JAVA_VERSION=	8
+
 ALL_TARGET=	# empty
 MAKE_ENV=	JAVA_HOME="${JAVA_HOME}" JAVA="${JAVA}" JAVAC="${JAVAC}" \
 		JAVAH="${JAVAH}" JAR_="${JAR}"
@@ -18,9 +21,6 @@ PLIST_FILES=	%%JAVAJARDIR%%/libreadline-java.jar \
 		lib/libJavaEditline.so \
 		lib/libJavaGetline.so
 PORTDOCS=	README.1st README jython.sh JReadlineCompleter.py
-USES=		gmake libedit ncurses readline
-USE_JAVA=	yes
-JAVA_VERSION=	8
 USE_LDCONFIG=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 MAKE_JOBS_UNSAFE=	yes

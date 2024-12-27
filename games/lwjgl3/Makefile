@@ -47,14 +47,13 @@ LIB_DEPENDS=		libdraco.so:archivers/draco \
 			libfreetype.so:print/freetype2 \
 			libharfbuzz.so:print/harfbuzz
 
-USES=		gl gnome
-USE_ANT=	yes
+USES=		gl gnome java:ant
+JAVA_VERSION=	17+
 USE_GITHUB=	yes
 GH_ACCOUNT=	${PORTNAME:tu}
 GH_PROJECT=	${PORTNAME}${PKGNAMESUFFIX}
 USE_GL=		gl
 USE_GNOME=	glib20 gtk30
-USE_JAVA=	17+
 
 MAKE_ARGS=	-Dbuild.offline=true \
 		-Djavadoc.skip=true \

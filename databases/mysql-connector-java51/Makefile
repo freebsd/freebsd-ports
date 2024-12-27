@@ -15,14 +15,13 @@ RUN_DEPENDS=	${JAVALIBDIR}/log4j.jar:devel/log4j
 # 8.0.x is now the GA release, but drops support for java 1.6 and 1.7
 PORTSCOUT=	limit:^5\.1\..*
 
-USES=		cpe
+USES=		cpe java
 CPE_VENDOR=	oracle
 CPE_PRODUCT=	mysql_connector_j
 
 CONFLICTS_INSTALL=	mysql-connector-java # share/java/classes/mysql-connector-java.jar
 
 NO_ARCH=	yes
-USE_JAVA=	yes
 JAVA_VERSION=	8
 BUILDDIR=	${WRKDIR}/${DISTNAME}
 APIDOCSDIR=	${STAGEDIR}${DOCSDIR}/javadoc

@@ -13,9 +13,9 @@ LICENSE_FILE=	${WRKSRC}/doc/COPYING
 
 RUN_DEPENDS=	tv_cat:textproc/p5-xmltv
 
-USE_JAVA=	yes
+USES=		java:ant
 JAVA_VERSION=	8
-USE_ANT=	yes
+
 NO_ARCH=	yes
 
 MAKE_ARGS=	-Dinstall_share_dir=${STAGEDIR}${PREFIX}/share \

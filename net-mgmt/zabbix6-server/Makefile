@@ -167,6 +167,10 @@ GNUTLS_LIB_DEPENDS=	libgnutls.so:security/gnutls
 
 .endif # if ${ZABBIX_BUILD} != "java"
 
+.if ${ZABBIX_BUILD} == "java"
+USES+=         java
+.endif
+
 .include <bsd.port.pre.mk>
 
 post-patch:

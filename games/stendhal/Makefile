@@ -12,9 +12,7 @@ WWW=		https://stendhalgame.org/
 LICENSE=		BSD2CLAUSE GPLv2
 LICENSE_COMB=		multi
 
-USES=			shebangfix
-USE_JAVA=		yes
-USE_ANT=		yes
+USES=			java:ant shebangfix
 
 WRKSRC=			${WRKDIR}/${PORTNAME}-${PORTVERSION}
 

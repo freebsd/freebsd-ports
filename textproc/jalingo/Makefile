@@ -11,9 +11,7 @@ WWW=		https://jalingo.sourceforge.net/
 
 LICENSE=	GPLv2
 
-USES=		7z
-USE_ANT=	yes
-USE_JAVA=	yes
+USES=		7z java:ant
 
 ALL_TARGET=	dist
 

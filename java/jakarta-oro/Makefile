@@ -10,8 +10,8 @@ WWW=		https://jakarta.apache.org/oro/
 
 LICENSE=	APACHE20
 
-USE_JAVA=	yes
-USE_ANT=	yes
+USES=		java:ant
+
 ALL_TARGET=	jar javadocs
 
 JAVALIBNAME=	${PORTNAME}-${PORTVERSION}

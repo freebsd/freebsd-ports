@@ -17,7 +17,7 @@ RUN_DEPENDS=	lwjgl>0:games/lwjgl \
 		openjdk21>0:java/openjdk21 \
 		xrandr:x11/xrandr
 
-USES=		cmake compiler:c++17-lang desktop-file-utils gl kde:6 qt:6 \
+USES=		cmake compiler:c++17-lang desktop-file-utils gl java kde:6 qt:6 \
 		shared-mime-info
 USE_GITHUB=	yes
 GH_ACCOUNT=	PrismLauncher
@@ -25,7 +25,6 @@ GH_PROJECT=	${GH_ACCOUNT}
 GH_TUPLE=	gulrak:filesystem:2fc4b463:filesystem/libraries/filesystem \
 		PrismLauncher:libnbtplusplus:23b95512:libnbtplusplus/libraries/libnbtplusplus
 USE_GL=		opengl
-USE_JAVA=	yes
 USE_KDE=	ecm:build
 USE_QT=		5compat base networkauth
 

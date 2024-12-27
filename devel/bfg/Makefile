@@ -10,8 +10,7 @@ WWW=		https://rtyley.github.io/bfg-repo-cleaner/
 
 LICENSE=	GPLv3
 
-USE_JAVA=	yes
-JAVA_RUN=	jre
+USES=		java
 
 NO_ARCH=	yes
 NO_BUILD=	yes

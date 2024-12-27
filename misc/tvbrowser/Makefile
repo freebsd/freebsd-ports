@@ -10,7 +10,7 @@ WWW=		https://www.tvbrowser.org
 
 LICENSE=	GPLv3
 
-USE_JAVA=	yes
+USES=		java
 JAVA_VERSION=	11+
 
 NO_BUILD=	yes

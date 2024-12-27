@@ -22,8 +22,8 @@ EXPIRATION_DATE=	2025-02-28
 BROKEN=		unfetchable, upstream seems gone
 
 NO_WRKSUBDIR=	yes
-USES=		zip
-USE_JAVA=	yes
+USES=		java zip
+
 NO_BUILD=	yes
 DATAFILES=	readme.txt license.txt doc
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}

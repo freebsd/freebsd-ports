@@ -8,8 +8,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Java ID3 Tag Library
 WWW=		https://javamusictag.sourceforge.net/index.html
 
-USE_JAVA=	yes
-USE_ANT=	yes
+USES=		java:ant
 
 PLIST_FILES=	%%JAVAJARDIR%%/jid3lib.jar
 

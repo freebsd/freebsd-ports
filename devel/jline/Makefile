@@ -9,8 +9,8 @@ WWW=		https://jline.sourceforge.net/
 
 LICENSE=	BSD4CLAUSE
 
-USES=		zip
-USE_JAVA=	yes
+USES=		java zip
+
 OPTIONS_DEFINE=	JLINEPATCH DOCS
 JLINEPATCH_DESC=	Allow ConsoleRunner customized completion
 JLINEJAR=	${WRKSRC}/jline-${PORTVERSION}.jar

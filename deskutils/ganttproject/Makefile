@@ -13,8 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	openjfx14>=14:java/openjfx14
 
-USES=		desktop-file-utils shebangfix zip
-USE_JAVA=	yes
+USES=		desktop-file-utils java shebangfix zip
 JAVA_VERSION=	11+
 SHEBANG_FILES=	ganttproject
 bash_CMD=	/bin/sh

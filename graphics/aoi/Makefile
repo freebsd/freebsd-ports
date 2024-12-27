@@ -16,9 +16,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libjogl.so:graphics/jogl
 
-USES=		zip
+USES=		java zip
 DOS2UNIX_FILES=	../AoI_Manual/*.html # USES=dos2unix is optional
-USE_JAVA=	yes
+
 NO_BUILD=	yes
 
 WRKSRC=		${WRKDIR}/ArtOfIllusion${PORTVERSION:S/.//g}

@@ -16,8 +16,7 @@ WWW=		https://commons.apache.org/proper/commons-math/
 
 LICENSE=	APACHE20
 
-USE_ANT=	yes
-USE_JAVA=	yes
+USES=		java:ant
 USE_LOCALE=	en_US.ISO8859-1
 
 ALL_TARGET=	compile jar
@@ -26,17 +25,13 @@ MAKE_ARGS=	-Dlibdir=${WRKDIR} -Dnoget=true
 JARFILE=	${PORTNAME:S,3,,}-3.6.jar
 DESTJARFILE=	${PORTNAME}.jar
 PLIST_FILES+=	${JAVAJARDIR}/${DESTJARFILE}
+PORTDOCS=	LICENSE.txt NOTICE.txt RELEASE-NOTES.txt license-header.txt
 
 OPTIONS_DEFINE=	DOCS
 
+DOCS_ALL_TARGET=	javadoc
+
 NO_ARCH=	yes
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MDOCS}
-ALL_TARGET+=	javadoc
-PORTDOCS=	LICENSE.txt NOTICE.txt RELEASE-NOTES.txt license-header.txt
-.endif
 
 post-extract:
 	${MKDIR} ${WRKSRC}/lib
@@ -46,9 +41,8 @@ do-install:
 	${MKDIR} ${STAGEDIR}${JAVAJARDIR}
 	${INSTALL_DATA} ${WRKSRC}/target/${JARFILE} ${STAGEDIR}${JAVAJARDIR}/${DESTJARFILE}
 
-.if ${PORT_OPTIONS:MDOCS}
+do-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/*.txt ${STAGEDIR}${DOCSDIR}/
-.endif
 
 .include <bsd.port.mk>

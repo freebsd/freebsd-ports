@@ -11,8 +11,7 @@ WWW=		http://vrici.lojban.org/~cowan/XML/tagsoup
 
 LICENSE=	APACHE20
 
-USE_JAVA=	yes
-JAVA_RUN=	jre
+USES=		java
 
 NO_ARCH=	yes
 NO_BUILD=	yes

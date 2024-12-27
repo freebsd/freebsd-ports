@@ -14,11 +14,8 @@ LICENSE=	APACHE20
 
 RUN_DEPENDS=	libzookeeper>=${PORTVERSION}:devel/libzookeeper
 
-USES=		cpe
+USES=		cpe java
 CPE_VENDOR=	apache
-USE_JAVA=	yes
-JAVA_VERSION=	8+
-JAVA_RUN=	yes
 USE_RC_SUBR=	zookeeper
 
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}

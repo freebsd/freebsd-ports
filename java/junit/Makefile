@@ -11,10 +11,10 @@ WWW=		https://www.junit.org/
 
 RUN_DEPENDS=	${JAVALIBDIR}/hamcrest.jar:java/hamcrest
 
-USES=		cpe
+USES=		cpe java
 CPE_VENDOR=	${PORTNAME}
 CPE_PRODUCT=	${PORTNAME}4
-USE_JAVA=	yes
+
 NO_ARCH=	yes
 NO_BUILD=	yes
 

@@ -15,8 +15,7 @@ WWW=		https://www.docear.org/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/license.txt
 
-USES=		desktop-file-utils shared-mime-info
-USE_JAVA=	yes
+USES=		desktop-file-utils java shared-mime-info
 JAVA_VENDOR=	openjdk
 NO_BUILD=	yes
 JDATADIR=	${JAVASHAREDIR}/${PORTNAME}

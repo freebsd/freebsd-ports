@@ -10,8 +10,7 @@ WWW=		https://www.mkgmap.org.uk/index.html
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENCE
 
-USE_JAVA=	yes
-JAVA_VERSION=	8+
+USES=		java
 NO_BUILD=	yes
 NO_ARCH=	yes
 

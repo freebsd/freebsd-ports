@@ -13,9 +13,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 BUILD_DEPENDS=	maven>0:devel/maven
 
-USE_JAVA=	yes
+USES=		java
 USE_GITHUB=	yes
-
 JAVA_VERSION=	17 # Java 8 fails on aarch64: Internal Error (assembler_aarch64.hpp:237), pid=68892, tid=0x000000000002b995 guarantee(val < (1U << nbits)) failed: Field too big for insn
 
 NO_ARCH=	yes

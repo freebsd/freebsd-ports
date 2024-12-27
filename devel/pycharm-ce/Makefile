@@ -17,8 +17,7 @@ RUN_DEPENDS=	intellij-fsnotifier>0:java/intellij-fsnotifier \
 		jetbrains-restarter>=233.11799.241:devel/jetbrains-restarter \
 		jetbrains-sqlite>=232.8660.185:devel/jetbrains-sqlite
 
-USES=		desktop-file-utils python:run shebangfix
-USE_JAVA=	yes
+USES=		desktop-file-utils java python:run shebangfix
 JAVA_VERSION=	17+
 SHEBANG_FILES=	plugins/python-ce/helpers/pycodestyle-2.10.0.py \
 		plugins/python-ce/helpers/pycodestyle.py \

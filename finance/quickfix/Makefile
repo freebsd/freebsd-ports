@@ -38,7 +38,7 @@ PYTHON_CONFIGURE_WITH=	python3
 RUBY_USES=	ruby
 RUBY_CONFIGURE_WITH=	ruby
 RUBY_LIB_DEPENDS+=libunwind.so:devel/libunwind
-JAVA_USE=	java=yes
+JAVA_USES=	java
 JAVA_CONFIGURE_WITH=	java
 
 INSTALL_TARGET=install-strip

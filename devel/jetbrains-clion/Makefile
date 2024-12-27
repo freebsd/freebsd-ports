@@ -36,10 +36,8 @@ RUN_DEPENDS=	cmake:devel/cmake-core \
 		lsof:sysutils/lsof \
 		ninja:devel/ninja
 
-USES=		cpe python:run shebangfix
-
+USES=		cpe java python:run shebangfix
 CPE_VENDOR=	jetbrains
-USE_JAVA=	yes
 JAVA_VERSION=	17+
 
 SHEBANG_FILES=	plugins/python-ce/helpers/typeshed/scripts/generate_proto_stubs.sh

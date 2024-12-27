@@ -11,10 +11,9 @@ WWW=		https://www.sonarqube.org/
 LICENSE=	LGPL3
 
 # node -> JS analysis
-USES=		cpe nodejs:run zip
+USES=		cpe java nodejs:run zip
 CPE_VENDOR=	sonarsource
 CPE_PRODUCT=	sonarqube_scanner
-USE_JAVA=	yes
 
 WRKSRC=		${WRKDIR}/sonar-scanner-${DISTVERSION}
 

@@ -10,8 +10,7 @@ WWW=		https://forge.scilab.org/index.php/p/flexdock/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-USE_ANT=	yes
-USE_JAVA=	yes
+USES=		java:ant
 
 ALL_TARGET=	dist
 NO_ARCH=	yes

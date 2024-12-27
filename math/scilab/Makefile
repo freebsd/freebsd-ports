@@ -96,8 +96,8 @@ GUI_BUILD_DEPENDS=	${_GUI_DEPENDS} \
 GUI_RUN_DEPENDS=	${_GUI_DEPENDS}
 
 GUI_ALL_TARGET=	all doc
-GUI_USES=	gl
-GUI_USE=	GL=gl JAVA=yes
+GUI_USES=	gl java
+GUI_USE=	GL=gl
 GUI_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-bin-JAVA_HOME
 GUI_CONFIGURE_ON=	--with-jdk=${JAVA_HOME} \
 			--with-docbook=${LOCALBASE}/share/xsl/docbook \

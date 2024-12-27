@@ -8,9 +8,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Java based MathML rendering solution
 WWW=		https://jeuclid.sourceforge.net/
 
-USES=		zip
-USE_JAVA=	yes
-JAVA_RUN=	yes
+USES=		java zip
+
 NO_ARCH=	yes
 NO_BUILD=	yes
 

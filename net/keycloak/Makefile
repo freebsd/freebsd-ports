@@ -10,15 +10,11 @@ WWW=		https://www.keycloak.org/
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-USES=		cpe shebangfix
-
+USES=		cpe java shebangfix
 CPE_VENDOR=	redhat
-
-USE_JAVA=	yes
 JAVA_VERSION=	21+
 JAVA_OS=	native
 JAVA_VENDOR=	openjdk
-JAVA_RUN=	yes
 
 USE_RC_SUBR=	keycloak
 

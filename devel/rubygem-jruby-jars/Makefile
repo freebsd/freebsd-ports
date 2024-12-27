@@ -13,8 +13,7 @@ LICENSE_COMB=	dual
 BUILD_DEPENDS=	jgem:lang/jruby
 RUN_DEPENDS=	jruby:lang/jruby
 
-USES=		gem
-USE_JAVA=	yes
+USES=		gem java
 
 RUBYGEMBIN=	${LOCALBASE}/bin/jgem
 

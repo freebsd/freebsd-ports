@@ -14,12 +14,10 @@ LICENSE=	APACHE20
 
 RUN_DEPENDS=	bash:shells/bash
 
-USES=		cpe tar:tgz
+USES=		cpe java tar:tgz
 CPE_VENDOR=	apache
 CPE_PRODUCT=	solr
-USE_JAVA=	yes
 JAVA_VERSION=	11+
-JAVA_RUN=	yes
 USE_RC_SUBR=	solr
 
 NO_ARCH=	yes

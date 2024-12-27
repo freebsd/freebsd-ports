@@ -9,12 +9,11 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Java Assembler Interface
 WWW=		https://jasmin.sourceforge.net/
 
-USES=		dos2unix zip
-USE_ANT=	yes
-ALL_TARGET=	jasmin
-USE_JAVA=	yes
-JAVA_VERSION=	8
+USES=		dos2unix java:ant zip
 DOS2UNIX_REGEX=	.*\.(txt|xml|j|class|java|mf|css|bnf|html)
+JAVA_VERSION=	8
+
+ALL_TARGET=	jasmin
 
 SUB_FILES=	jasmin.sh
 

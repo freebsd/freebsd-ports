@@ -15,8 +15,7 @@ PORTSCOUT=	ignore:1
 
 NO_WRKSUBDIR=	yes
 
-USES=		zip:infozip
-USE_JAVA=	yes
+USES=		java zip:infozip
 JAVA_VERSION=	11+
 
 NO_BUILD=	yes

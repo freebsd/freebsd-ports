@@ -10,7 +10,7 @@ WWW=		https://www.cs.cmu.edu/~music/music.software.html
 
 LICENSE=	BSD3CLAUSE
 
-USES=		cmake zip
+USES=		cmake java zip
 USE_CSTD=	c99
 USE_CXXSTD=	c++14
 
@@ -18,8 +18,6 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 
 CFLAGS+=	-Dulong=uint32_t -DXL_BIG_ENDIAN -DHAVE_SYS_SOUNDCARD_H
 CFLAGS+=	-fcommon # notified the author vie e-mail on 2021-04-29
-
-USE_JAVA=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|nyquistDir = prefs.get("nyquist-dir", "");|nyquistDir = "${DATADIR}";|' ${WRKSRC}/jnyqide/MainFrame.java

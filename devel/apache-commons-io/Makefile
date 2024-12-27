@@ -12,7 +12,7 @@ WWW=		https://commons.apache.org/proper/commons-io/
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-USE_JAVA=	yes
+USES=		java
 
 NO_ARCH=	yes
 NO_BUILD=	yes

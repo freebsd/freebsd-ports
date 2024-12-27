@@ -23,9 +23,7 @@ FETCH_DEPENDS=	ant:devel/apache-ant
 RUN_DEPENDS=	snappyjava>=0:archivers/snappy-java \
 		netty>0:java/netty
 
-USES=		cpe python shebangfix
-USE_JAVA=	yes
-USE_ANT=	yes
+USES=		cpe java:ant python shebangfix
 USE_RC_SUBR=	cassandra
 SHEBANG_FILES=	bin/cqlsh.py pylib/setup.py
 TEST_TARGET=	test

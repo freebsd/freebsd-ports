@@ -12,7 +12,7 @@ WWW=		https://jedit.sourceforge.net/
 
 LICENSE=	GPLv2
 
-USES=		cpe xorg
+USES=		cpe java xorg
 
 OPTIONS_DEFINE=	MACROS DOCS
 MACROS_DESC=	Install default set of macros (highly recommended)
@@ -20,7 +20,6 @@ MACROS_DESC=	Install default set of macros (highly recommended)
 OPTIONS_DEFAULT=	MACROS
 OPTIONS_SUB=	yes
 
-USE_JAVA=	yes
 JAVA_VERSION=	11+
 
 USE_XORG=	x11

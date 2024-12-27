@@ -15,11 +15,8 @@ LICENSE=	EPL
 
 RUN_DEPENDS=	eclipse:java/eclipse
 
-USES=		zip
-USE_JAVA=	YES
+USES=		java zip
 JAVA_OS=	native
-JAVA_RUN=	YES
-JAVA_VERSION=	8+
 
 NO_BUILD=	YES
 NO_WRKSUBDIR=	YES

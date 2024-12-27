@@ -13,6 +13,25 @@ All ports committers are allowed to commit to this file.
 20241231:
 AUTHOR: bofh@FreeBSD.org
 
+  Convert bsd.java.mk to USES
+
+  The following features have been added or changed:
+  - Instead of USE_JAVA use USES=java. This defaults to
+    USES=java:build,run if NO_BUILD is undefined. Else it defaults to
+    USES=java:run
+  - Instead of USE_ANT=yes use USES=java:ant which also implies
+    USES=java:build
+  - Instead of JAVA_BUILD=yes use USES=java:build. Does not imply run or
+    extract
+  - Instead of JAVA_EXTRACT=yes use USES=java:extract does not imply
+    build or run
+  - Instead of JAVA_RUN=yes use USES=java:run does not imply extract or
+    build
+  - Instead of USE_JAVA=<version> use USES=java and JAVA_VERSION=<version>
+
+20241231:
+AUTHOR: bofh@FreeBSD.org
+
   Converted remaining bsd.ocaml.mk to Uses/ocaml.mk
 
   - Instead of USE_OCAML=yes use USES=ocaml. If empty USES=ocaml implies

@@ -15,14 +15,12 @@ ONLY_FOR_ARCHS=	aarch64 amd64 powerpc64le
 
 BUILD_DEPENDS=	bash:shells/bash
 
+USES=		java:build
 USE_GITHUB=	yes
 GH_ACCOUNT=	JetBrains
 GH_PROJECT=	intellij-community
 GH_TAGNAME=	idea/242.23726.38
-
-USE_JAVA=	yes
 JAVA_VERSION=	17+
-JAVA_BUILD=	yes
 
 DATADIR=	${PREFIX}/share/jetbrains/${PORTNAME}
 WRKSRC_SUBDIR=	platform/sqlite

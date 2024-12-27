@@ -11,26 +11,25 @@ LICENSE=	LGPL21
 
 RUN_DEPENDS=	${JAVALIBDIR}/jcommon.jar:java/jcommon
 
-USE_JAVA=	yes
-
 OPTIONS_DEFINE=	COMPILE DOCS
 OPTIONS_DEFAULT=COMPILE
+
 COMPILE_DESC=	Build from source
+
+COMPILE_USES=		java:ant
+COMPILE_USES_OFF=	java
+COMPILE_USE=	LOCALE=en_US.UTF-8
+COMPILE_ALL_TARGET=	compile
+COMPILE_VARS_OFF=	NO_BUILD=yes
 
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MCOMPILE}
-USE_ANT=	yes
-USE_LOCALE=	en_US.UTF-8
-ALL_TARGET=	compile
 BUILD_WRKSRC=	${WRKSRC}/ant
-.else
-NO_BUILD=	yes
-.endif
-
-.if ${PORT_OPTIONS:MDOCS} && ${PORT_OPTIONS:MCOMPILE}
+.if ${PORT_OPTIONS:MDOCS}
 ALL_TARGET+=	javadoc
 PORTDOCS=	*
+.endif
 .endif
 
 PLIST_FILES=	%%JAVAJARDIR%%/jfreechart.jar

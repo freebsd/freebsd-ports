@@ -16,9 +16,7 @@ RUN_DEPENDS=	${LOCALBASE}/lib/libfml.so:biology/fermi-lite \
 		gkl>0:biology/gkl \
 		mummer>0:biology/mummer
 
-USES=		gettext-runtime python:test
-USE_JAVA=	yes
-
+USES=		gettext-runtime java python:test
 JAVA_VERSION=	17 # Java 8 fails on aarch64: Internal Error (assembler_aarch64.hpp:237), pid=76025, tid=0x000000000006e359 guarantee(val < (1U << nbits)) failed: Field too big for insn
 
 USE_GITHUB=	yes

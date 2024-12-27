@@ -12,7 +12,8 @@ WWW=		https://developers.google.com/closure/compiler/
 
 LICENSE=	APACHE20
 
-USE_JAVA=	11+
+USES=		java
+JAVA_VERSION=	11+
 
 NO_ARCH=	yes
 NO_BUILD=	yes

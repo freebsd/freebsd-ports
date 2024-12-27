@@ -17,10 +17,8 @@ BUILD_DEPENDS=	bash:shells/bash \
 		gradle>=8.5:devel/gradle
 RUN_DEPENDS=	bash:shells/bash
 
-USES=		cpe shebangfix zip
+USES=		cpe java shebangfix zip
 CPE_VENDOR=	nsa
-
-USE_JAVA=	yes
 JAVA_VERSION=	17+
 
 SHEBANG_FILES=	Ghidra/Features/BSim/make-postgres.sh \

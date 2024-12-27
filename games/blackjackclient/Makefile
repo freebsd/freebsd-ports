@@ -11,8 +11,8 @@ WWW=		https://sourceforge.net/projects/t-blackjack/
 
 LICENSE=	GPLv2
 
-USES=		zip
-USE_JAVA=	yes
+USES=		java zip
+
 PLIST_FILES=	bin/${PORTNAME} \
 		${JAVAJARDIR}/${PORTNAME}.jar
 SUB_FILES=	${PORTNAME}.sh

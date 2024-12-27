@@ -16,12 +16,13 @@ WWW=		https://github.com/argouml-tigris-org/argouml/wiki
 
 LICENSE=	EPL
 
+USES=		java
+
 PORTSCOUT=	limitw:1,even \
 		site:${MASTER_SITES:S/argouml-${PORTVERSION}\///}
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 NO_BUILD=	yes
-USE_JAVA=	yes
 
 SUB_FILES=	argouml.sh
 PORTDOCS=	manual-${PORTVERSION}.pdf quickguide-${PORTVERSION}.pdf

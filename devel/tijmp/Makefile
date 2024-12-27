@@ -11,10 +11,8 @@ WWW=		https://www.khelekore.org/jmp/tijmp/
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		gmake libtool
-USE_JAVA=	yes
+USES=		gmake java:build libtool
 JAVA_OS=	native
-JAVA_BUILD=	jdk
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes

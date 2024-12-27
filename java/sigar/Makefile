@@ -15,14 +15,12 @@ BUILD_DEPENDS=	${ANT_CMD}:devel/apache-ant
 LIB_DEPENDS=	libsigar.so:devel/sigar
 TEST_DEPENDS=	${JAVALIBDIR}/junit.jar:java/junit
 
+USES=		java perl5
 USE_GITHUB=	yes
 GH_ACCOUNT=	polo-language # amishHammer
 GH_TAGNAME=	6719d4d
-
-USES=		perl5
 USE_PERL5=	build
-USE_JAVA=	yes
-JAVA_RUN=	yes
+
 NO_CCACHE=	yes
 
 BUILD_WRKSRC=	${WRKSRC}/bindings/java

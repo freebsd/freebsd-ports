@@ -12,11 +12,11 @@ LICENSE=	EPL
 
 BUILD_DEPENDS=	maven>0:devel/maven
 
+USES=		java
+JAVA_VERSION=	11+
 USE_GITHUB=	yes
 GH_ACCOUNT=	locationtech
 
-USE_JAVA=	yes
-JAVA_VERSION=	11+
 NO_ARCH=	yes
 
 VER=		${PORTVERSION:tl}

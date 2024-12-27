@@ -228,8 +228,8 @@ JAVA_DISTFILES=	17410483b5b5f267aa18b7e00b65e6e0-hsqldb_1_8_0.zip:src \
 		Java-WebSocket-1.5.6.tar.gz:src \
 		bsh-2.1.1-src.zip:src \
 		rhino-1.7.14.zip:src
-JAVA_USE=	JAVA=yes
-JAVA_VARS=	JAVA_BUILD=yes JAVA_RUN=yes JAVA_VERSION=17+
+JAVA_USES=	java
+JAVA_VARS=	JAVA_VERSION=17+
 
 KF5_CONFIGURE_ENABLE=	kf5
 KF5_USE=	kde=config,coreaddons,i18n,kio,windowsystem

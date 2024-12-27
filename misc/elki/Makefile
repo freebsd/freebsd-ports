@@ -17,7 +17,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 BUILD_DEPENDS=	gradle5:devel/gradle5
 
-USE_JAVA=	yes
+USES=		java
 JAVA_VERSION=	17 # Java 8 fails on aarch64: Java VM: OpenJDK 64-Bit Server VM (25.342-b07 mixed mode bsd-aarch64 compressed oops) Core dump written.
 
 USE_GITHUB=	yes

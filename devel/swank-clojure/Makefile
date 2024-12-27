@@ -7,9 +7,9 @@ MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Swank/SLIME support for Clojure
 WWW=		https://github.com/technomancy/swank-clojure
 
+USES=		java
 USE_GITHUB=	yes
 GH_ACCOUNT=	technomancy
-USE_JAVA=	yes
 
 PLIST_FILES=	%%JAVAJARDIR%%/swank-clojure-1.2.1.jar
 

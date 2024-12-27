@@ -9,8 +9,7 @@ WWW=		https://dmachine.sourceforge.net/
 
 LICENSE=	GPLv2
 
-USES=		zip
-USE_JAVA=	yes
+USES=		java zip
 
 NO_ARCH=	yes
 NO_BUILD=	yes

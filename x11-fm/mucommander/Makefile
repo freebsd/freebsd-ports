@@ -10,8 +10,7 @@ WWW=		https://www.mucommander.com
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKDIR}/license.txt
 
-USES=		tar:tgz
-USE_JAVA=	yes
+USES=		java tar:tgz
 JAVA_VERSION=	11+
 
 NO_ARCH=	yes

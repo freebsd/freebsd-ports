@@ -17,9 +17,7 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}virtualenv>=0:devel/py-virtualenv@${PY_FLAV
 		bash>0:shells/bash \
 		git>0:devel/git
 
-USES=		cpe python
-USE_ANT=	yes
-USE_JAVA=	yes
+USES=		cpe java:ant python
 JAVA_VERSION=	8
 JAVA_VENDOR=	openjdk
 CPE_VENDOR=	apache

@@ -12,9 +12,7 @@ WWW=		https://xmlbeans.apache.org/
 
 LICENSE=	APACHE20
 
-USES=		cpe tar:tgz
-USE_JAVA=	yes
-JAVA_VERSION=	8+
+USES=		cpe java tar:tgz
 DATE_REL=	20220819
 CPE_VENDOR=	apache
 

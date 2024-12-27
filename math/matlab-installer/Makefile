@@ -14,11 +14,9 @@ RUN_DEPENDS=	mount_image:sysutils/diskimage-tools \
 		auto-ask:sysutils/auto-admin \
 		webbrowser:www/webbrowser \
 
-USES=		linux tar:xz
+USES=		java linux tar:xz
 USE_LINUX=	dri devtools
-USE_JAVA=	yes
 JAVA_OS=	linux
-JAVA_RUN=	yes
 
 NO_BUILD=	yes
 PLIST_FILES=	bin/${PORTNAME} share/man/man1/${PORTNAME}.1.gz

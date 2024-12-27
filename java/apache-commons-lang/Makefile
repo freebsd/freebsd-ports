@@ -11,9 +11,9 @@ WWW=		https://commons.apache.org/proper/commons-lang/
 
 LICENSE=	APACHE20
 
-USE_JAVA=	yes
+USES=		java:ant
 JAVA_VERSION=	8
-USE_ANT=	yes
+
 ALL_TARGET=	jar
 NO_ARCH=	yes
 

@@ -11,15 +11,15 @@ LICENSE=	APACHE20
 
 RUN_DEPENDS=	infocmp:devel/ncurses
 
-USES=		tar:tgz
+USES=		java tar:tgz
 
 OPTIONS_DEFINE=	ADVANCED # PRELOADED
 OPTIONS_DEFAULT=ADVANCED
+
 ADVANCED_DESC=	Install advanced bash shell-script (required for Java 11+)
 
 NO_BUILD=	yes
 NO_ARCH=	yes
-USE_JAVA=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 ADVANCED_RUN_DEPENDS+=	bash:shells/bash

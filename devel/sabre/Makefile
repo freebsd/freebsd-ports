@@ -10,11 +10,10 @@ WWW=		https://sabre-library.sourceforge.net/
 
 LICENSE=	LGPL21
 
+USES=		dos2unix java:ant zip
+
 WRKSRC=		${WRKDIR}/Simple\ API\ for\ Binary\ REpresentations\ \(SABRE\)
-USES=		dos2unix zip
 DOS2UNIX_GLOB=	*.xml *.java
-USE_JAVA=	yes
-USE_ANT=	yes
 ALL_TARGET=	dist
 
 PLIST_FILES=	${JAVAJARDIR}/${PORTNAME}.jar ${JAVAJARDIR}/udflib.jar

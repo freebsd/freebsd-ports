@@ -8,8 +8,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool for analyzing Java code and documentation
 WWW=		https://doctorj.sourceforge.net/
 
-USE_JAVA=	yes
-USE_ANT=	yes
+USES=		java:ant
 
 ALL_TARGET=	jarfile
 

@@ -14,9 +14,8 @@ LICENSE_FILE=	${WRKSRC}/license/LICENSE.txt
 
 RUN_DEPENDS=	bash:shells/bash
 
-USES=	zip
+USES=	java zip
 
-USE_JAVA=	yes
 NO_ARCH=	yes
 NO_BUILD=	yes
 

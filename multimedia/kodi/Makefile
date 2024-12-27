@@ -50,7 +50,7 @@ LIB_DEPENDS=	libass.so:multimedia/libass \
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR}
 
 USES=		autoreconf:build cmake:noninja compiler:c++17-lang cpe \
-		desktop-file-utils gettext gmake gnome iconv jpeg libtool \
+		desktop-file-utils gettext gmake gnome iconv java:build jpeg libtool \
 		pkgconfig python sqlite ssl
 
 KODI_CODENAME=		Omega
@@ -78,8 +78,6 @@ KODI_ARCH_powerpc64le=	powerpc64le
 PLIST_SUB=	ARCH=${KODI_ARCH_${ARCH}}
 
 USE_LDCONFIG=	yes
-USE_JAVA=	yes
-JAVA_BUILD=	jre
 USE_GNOME=	libxml2
 CMAKE_ARGS=	-DGIT_VERSION="${DISTVERSION}-${KODI_CODENAME}" \
 		-DLIBDVDCSS_URL="${DISTDIR}/${PORTNAME}/xbmc-libdvdcss-${LIBDVDCSS_VERSION}_GH0.tar.gz" \

@@ -16,9 +16,7 @@ WWW=		https://minecraft.net/
 RUN_DEPENDS=	${JAVALIBDIR}/lwjgl/lwjgl.jar:games/lwjgl \
 		xrandr:x11/xrandr
 
-USES=		openal
-USE_JAVA=	yes
-JAVA_VERSION=	8+
+USES=		java openal
 JAVA_OS=	native
 JAVA_VENDOR=	openjdk
 

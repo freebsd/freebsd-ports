@@ -17,13 +17,9 @@ LICENSE=	APACHE20
 
 RUN_DEPENDS=	intellij-fsnotifier>0:java/intellij-fsnotifier
 
-USES=		cpe python:run shebangfix
+USES=		cpe java python:run shebangfix
 CPE_VENDOR=	jetbrains
 CPE_PRODUCT=	${PORTNAME}_idea
-
-USE_JAVA=	yes
-JAVA_VERSION=	8+
-
 SHEBANG_FILES=	bin/printenv.py bin/restart.py
 
 NO_ARCH=	yes

@@ -10,7 +10,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The State Machine Compiler
 WWW=		https://smc.sourceforge.net/
 
-USE_JAVA=	yes
+USES=		java
+
 NO_BUILD=	yes
 
 PORTEXAMPLES=	*

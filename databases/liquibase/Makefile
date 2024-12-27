@@ -9,13 +9,11 @@ WWW=		https://www.liquibase.org/
 
 LICENSE=	APACHE20
 
-USES=		cpe
+USES=		cpe java
 
 NO_ARCH=	yes
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
-
-USE_JAVA=	yes
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/liquibase ${STAGEDIR}${PREFIX}/bin

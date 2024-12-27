@@ -20,10 +20,10 @@ LICENSE=	APACHE20
 
 BUILD_DEPENDS=	maven>0:devel/maven
 
+USES=		java
 USE_GITHUB=	yes
 GH_ACCOUNT=	jeremylong
 GH_PROJECT=	DependencyCheck
-USE_JAVA=	yes
 
 NO_ARCH=	yes
 SUB_FILES=	owasp-dependency-check

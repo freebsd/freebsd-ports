@@ -15,15 +15,13 @@ BUILD_DEPENDS=	${JAVAJARDIR}/jutils/jutils.jar:games/jutils \
 		${JAVAJARDIR}/jinput/jinput.jar:games/jinput
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USES=		dos2unix xorg
+USES=		dos2unix java:ant xorg
 DOS2UNIX_REGEX=	.*.[^jp][^an][^rg]$
-USE_ANT=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	LWJGL
 GH_TAGNAME=	2df01dd
 
-USE_JAVA=	8
 USE_LDCONFIG=	yes
 USE_XORG=	x11 xcursor xext xrandr xxf86vm
 MAKE_ENV+=	CLASSPATH=${JAVAJARDIR}/jutils/jutils.jar:${JAVAJARDIR}/jinput/jinput.jar:${WRKSRC}/${DISTNAME}/jar/

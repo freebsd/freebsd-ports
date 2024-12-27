@@ -9,10 +9,8 @@ WWW=		http://www.jcraft.com/jsch
 
 LICENSE=	BSD3CLAUSE
 
-USES=		cpe zip
+USES=		cpe java:ant zip
 CPE_VENDOR=	jcraft
-USE_JAVA=	yes
-USE_ANT=	yes
 
 PLIST_FILES+=	%%JAVAJARDIR%%/${PORTNAME}.jar
 

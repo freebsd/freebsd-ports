@@ -12,9 +12,8 @@ WWW=		https://commons.apache.org/proper/commons-collections/
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-USE_JAVA=	yes
+USES=		java:ant
 JAVA_VERSION=	8 11 17 18 19 20
-USE_ANT=	yes
 
 ALL_TARGET=	jar
 NO_ARCH=	yes

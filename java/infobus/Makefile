@@ -17,8 +17,7 @@ LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
 DEPRECATED=	Outdated API and is no longer actively developed or maintained
 EXPIRATION_DATE=2025-01-25
 
-USES=		zip
-USE_JAVA=	YES
+USES=		java zip
 
 NO_BUILD=	yes
 

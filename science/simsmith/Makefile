@@ -12,8 +12,7 @@ MAINTAINER=	hamradio@FreeBSD.org
 COMMENT=	Java-based Smith Chart program
 WWW=		http://ae6ty.com/Smith_Charts.html
 
-USE_JAVA=	yes
-JAVA_RUN=	yes
+USES=		java
 
 PLIST_FILES=	%%JAVAJARDIR%%/${DISTNAME}${EXTRACT_SUFX} \
 		bin/${PORTNAME}

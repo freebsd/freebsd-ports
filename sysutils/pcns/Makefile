@@ -16,7 +16,8 @@ LICENSE_PERMS=	none
 DEPRECATED=	not supported upstream
 EXPIRATION_DATE=	2025-01-31
 
-USE_JAVA=	11+
+USES=		java
+JAVA_VERSION=	11+
 USE_RC_SUBR=	pcns
 
 SUB_FILES=	pkg-message

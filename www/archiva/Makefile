@@ -13,11 +13,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	javaservicewrapper:sysutils/javaservicewrapper
 
-USES=		cpe
+USES=		cpe java
 CPE_VENDOR=	apache
-
-USE_JAVA=	yes
-
 USE_RC_SUBR=	${PORTNAME}
 
 PLIST_SUB=	ARCHIVA_CONF=${PREFIX}/${PORTNAME} \

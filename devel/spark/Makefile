@@ -22,9 +22,8 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libsnappyjava.so:archivers/snappy-java \
 		maven>0:devel/maven
 RUN_DEPENDS=	bash:shells/bash
 
-USES=		cpe python shebangfix
+USES=		cpe java python shebangfix
 CPE_VENDOR=	apache
-USE_JAVA=	yes
 JAVA_VERSION=	8 11 17
 
 USE_RC_SUBR=	spark_master spark_worker

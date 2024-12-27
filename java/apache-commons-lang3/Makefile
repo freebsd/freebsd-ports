@@ -11,9 +11,10 @@ WWW=		https://commons.apache.org/proper/commons-lang/
 
 LICENSE=	APACHE20
 
+USES=		java
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-USE_JAVA=	yes
 NO_BUILD=	yes
 NO_ARCH=	yes
 

@@ -15,11 +15,10 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 RUN_DEPENDS=	bash:shells/bash
 
-USES=		cpe shebangfix
+USES=		cpe java shebangfix
 
 CONFLICTS=	jetty8.* jetty9.* jetty11.* jetty12.*
 
-USE_JAVA=	yes
 NO_ARCH=	yes
 CPE_VENDOR=	eclipse
 SHEBANG_FILES=	bin/jetty.sh

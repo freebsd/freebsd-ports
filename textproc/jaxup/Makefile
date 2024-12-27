@@ -16,16 +16,14 @@ JAR_DEPENDS=	${JAVALIBDIR}/jdom.jar:java/jdom \
 		${JAVALIBDIR}/jaxen-full.jar:java/jaxen \
 		${JAVALIBDIR}/xercesImpl.jar:textproc/xerces-j
 
-USES=		zip
-WRKSRC=		${WRKDIR}/${PORTNAME}
+USES=		java:ant zip
 
-USE_JAVA=	yes
+WRKSRC=		${WRKDIR}/${PORTNAME}
 
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}
 
 OPTIONS_DEFINE=	DOCS
 
-USE_ANT=	yes
 ALL_TARGET=	jar
 DOCS_ALL_TARGET=docs
 

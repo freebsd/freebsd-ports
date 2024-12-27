@@ -13,9 +13,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 OPTIONS_DEFINE=	DOCS
 
-USES=		cpe zip
+USES=		cpe java zip
 CPE_VENDOR=	${PORTNAME}_project
-USE_JAVA=	yes
+
 NO_BUILD=	yes
 NO_ARCH=	yes
 

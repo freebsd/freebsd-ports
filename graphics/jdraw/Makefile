@@ -11,8 +11,9 @@ MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Pixel oriented graphics editor
 WWW=		https://jdraw.sourceforge.net
 
+USES=		java
+
 NO_BUILD=	yes
-USE_JAVA=	yes
 
 OPTIONS_DEFINE=		PLASTIC3D
 OPTIONS_DEFAULT=	PLASTIC3D

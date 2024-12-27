@@ -12,7 +12,8 @@ WWW=		https://dst.lbl.gov/ACSSoftware/nux/
 RUN_DEPENDS=	${JAVALIBDIR}/xom.jar:textproc/xom \
 		${JAVALIBDIR}/saxon9.jar:textproc/saxon-devel
 
-USE_JAVA=	yes
+USES=		java
+
 NO_BUILD=	yes
 NO_ARCH=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}

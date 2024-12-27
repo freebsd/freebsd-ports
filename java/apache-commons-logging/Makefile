@@ -11,11 +11,12 @@ WWW=		https://commons.apache.org/proper/commons-logging/
 
 LICENSE=	APACHE20
 
+USES=		java
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 OPTIONS_DEFINE=	DOCS
 
-USE_JAVA=	yes
 NO_ARCH=	yes
 NO_BUILD=	yes
 

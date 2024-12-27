@@ -12,7 +12,7 @@ WWW=		https://xmlgraphics.apache.org/commons/
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USE_JAVA=	yes
+USES=		java
 
 NO_ARCH=	yes
 NO_BUILD=	yes

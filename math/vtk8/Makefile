@@ -85,7 +85,7 @@ OSMESA_LIB_DEPENDS=	libOSMesa.so:graphics/libosmesa
 
 # Wrapping
 JAVA_CATEGORIES=	java
-JAVA_VARS=		USE_JAVA=yes
+JAVA_USES=		java
 JAVA_CMAKE_BOOL=	VTK_WRAP_JAVA Module_vtkWrappingJava
 JAVA_CMAKE_ON=		-DJAVA_INCLUDE_PATH:PATH=${JAVA_HOME}/include \
 			-DJAVA_AWT_LIBRARY:PATH=${JAVA_HOME}/jre/lib/${ARCH}/libjawt.so \

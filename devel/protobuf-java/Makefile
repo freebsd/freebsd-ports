@@ -10,7 +10,7 @@ WWW=		https://mvnrepository.com/artifact/com.google.protobuf/protobuf-java
 
 LICENSE=	BSD3CLAUSE
 
-USE_JAVA=	yes
+USES=		java
 
 NO_WRKSUBDIR=	yes
 EXTRACT_CMD=	${CP}

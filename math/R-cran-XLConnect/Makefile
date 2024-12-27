@@ -22,8 +22,7 @@ RUN_DEPENDS=	R-cran-rJava>0:devel/R-cran-rJava	\
 TEST_DEPENDS=	R-cran-zoo>0:math/R-cran-zoo	\
 		R-cran-ggplot2>0:graphics/R-cran-ggplot2
 
-USES=		cran
-USE_JAVA=	yes
+USES=		cran java
 
 DEP_JARS=	commons-codec commons-collections4 commons-compress	\
 		log4j-api poi poi-ooxml poi-ooxml-full SparseBitSet xmlbeans

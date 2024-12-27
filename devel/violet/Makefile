@@ -12,7 +12,7 @@ WWW=		https://horstmann.com/violet/
 
 LICENSE=	GPLv2
 
-USE_JAVA=	yes
+USES=		java
 
 NO_BUILD=	YES
 

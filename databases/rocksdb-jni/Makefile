@@ -23,15 +23,11 @@ LICENSE_FILE_GPLv2=	${WRKSRC}/../COPYING
 BUILD_DEPENDS=	googletest>0:devel/googletest
 LIB_DEPENDS=	librocksdb.so:databases/rocksdb # librocksdbjni.so in the rocksdb.jar file is linked to librocksdb.so
 
-USES=		cmake compiler:c++17-lang localbase:ldflags
+USES=		cmake compiler:c++17-lang java localbase:ldflags
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	facebook
 GH_PROJECT=	rocksdb
-
-USE_JAVA=	yes
-JAVA_BUILD=	yes
-JAVA_RUN=	yes
 JAVA_VERSION=	21
 
 WRKSRC_SUBDIR=	java

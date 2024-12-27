@@ -15,7 +15,7 @@ RUN_DEPENDS=	bash:shells/bash
 USE_RC_SUBR=	puppetdb
 
 CONFLICTS_INSTALL=	puppetdb[0-9] # etc/puppetdb/bootstrap.cfg.sample
-USES=		cpe shebangfix
+USES=		cpe java shebangfix
 CPE_VENDOR=	puppet
 SHEBANG_FILES=	ext/bin/puppetdb \
 		ext/cli/anonymize \
@@ -27,7 +27,6 @@ SHEBANG_FILES=	ext/bin/puppetdb \
 		ext/cli/reload \
 		ext/cli/upgrade \
 		ext/ezbake-functions.sh
-USE_JAVA=	yes
 NO_ARCH=	yes
 NO_BUILD=	yes
 

@@ -12,8 +12,7 @@ WWW=		https://commons.apache.org/proper/commons-collections/
 
 LICENSE=	APACHE20
 
-USE_JAVA=	yes
-JAVA_VERSION=	8+
+USES=		java
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
 NO_BUILD=	yes

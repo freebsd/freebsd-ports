@@ -11,10 +11,10 @@ WWW=		https://commons.apache.org/codec/
 
 LICENSE=	APACHE20
 
+USES=		java
+
 OPTIONS_DEFINE=	DOCS
 
-USE_JAVA=	yes
-JAVA_VERSION=	8+
 NO_BUILD=	yes
 NO_ARCH=	yes
 

@@ -21,13 +21,10 @@ BUILD_DEPENDS=	bash:shells/bash \
 LIB_DEPENDS=	libantlr3c.so:devel/libantlr3c \
 		libcadical.so:math/cadical
 
-USES=		cmake:testing ncurses compiler:c++17-lang \
+USES=		cmake:testing ncurses compiler:c++17-lang java:build \
 		localbase:ldflags pkgconfig python:build
 USE_LDCONFIG=	yes
 USE_GITHUB=	yes
-
-USE_JAVA=	yes
-JAVA_BUILD=	yes
 
 CMAKE_BUILD_TYPE=	Production
 CMAKE_ARGS+=		-DFREEBSD_DISTDIR=${DISTDIR} \

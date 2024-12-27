@@ -18,9 +18,9 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	unrar:archivers/unrar
 
-USES=		dos2unix zip
+USES=		dos2unix java zip
 DOS2UNIX_GLOB=	CREDITS
-USE_JAVA=	yes
+
 NO_BUILD=	yes
 
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}

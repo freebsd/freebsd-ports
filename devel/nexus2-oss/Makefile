@@ -15,18 +15,16 @@ LICENSE=	EPL
 PATCH_DEPENDS=	zip:archivers/zip
 RUN_DEPENDS=	javaservicewrapper:sysutils/javaservicewrapper
 
-USES=		cpe
-
+USES=		cpe java
 CPE_VENDOR=	sonatype
 CPE_PRODUCT=	nexus
+# Java 8 only, see https://issues.sonatype.org/browse/NEXUS-19183
+JAVA_VERSION=	8
 
 NO_ARCH=	yes
 NO_BUILD=	yes
 NO_TEST=	yes
 
-USE_JAVA=	yes
-# Java 8 only, see https://issues.sonatype.org/browse/NEXUS-19183
-JAVA_VERSION=	8
 
 USE_RC_SUBR=	${PORTNAME}
 

@@ -13,14 +13,16 @@ WWW=		https://www.jgraph.com/
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+USES=		zip
+
+NO_WRKSUBDIR=	yes
+
 OPTIONS_DEFINE=	COMPILE DOCS
 
 COMPILE_DESC=	Compile from source instead of using prebuilt binaries
 
-USES=		zip
-NO_WRKSUBDIR=	yes
-USE_JAVA=	yes
-JAVA_RUN=	yes
+COMPILE_USES=		java:build
+COMPILE_USES_OFF=	java
 
 .include <bsd.port.options.mk>
 
@@ -28,7 +30,6 @@ JAVA_RUN=	yes
 BUILD_DEPENDS+=	${ANT_CMD}:devel/apache-ant
 ANT_CMD?=	${LOCALBASE}/bin/ant
 ANT=		${SETENV} JAVA_HOME=${JAVA_HOME} ${ANT_CMD}
-JAVA_BUILD=	yes
 ANT_TARGETS=	jar
 .  if ${PORT_OPTIONS:MDOCS}
 ANT_TARGETS+=	doc

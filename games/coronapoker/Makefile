@@ -12,7 +12,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	maven>0:devel/maven
 
-USE_JAVA=	11+
+USES=		java
+JAVA_VERSION=	11+
 USE_GITHUB=	yes
 GH_ACCOUNT=	tonikelope
 

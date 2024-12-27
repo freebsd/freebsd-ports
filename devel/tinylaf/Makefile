@@ -9,8 +9,8 @@ WWW=		http://www.muntjak.de/hans/java/tinylaf/index.html
 
 OPTIONS_DEFINE=	DOCS
 
-USES=		zip
-USE_JAVA=	yes
+USES=		java zip
+
 NO_BUILD=	yes
 
 JARFILE=	${PORTNAME}.jar tinycp.jar

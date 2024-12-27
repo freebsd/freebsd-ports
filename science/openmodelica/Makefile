@@ -39,13 +39,12 @@ RUN_DEPENDS=	bash:shells/bash \
 
 USES=		cmake compiler:c++14-lang iconv fortran gettext-runtime gl \
 		gnome blaslapack localbase:ldflags qt:5 readline pkgconfig \
-		python:build shebangfix
+		python:build shebangfix java
 USE_QT=		concurrent core declarative gui location network opengl \
 		printsupport svg webchannel webengine widgets xml xmlpatterns \
 		buildtools:build qmake:build
 USE_GL=		gl opengl
 USE_GNOME=	libxml2
-USE_JAVA=	yes
 USE_LDCONFIG=	${PREFIX}/lib/omc ${PREFIX}/lib/omc/OMSimulator ${PREFIX}/lib/omc/cpp ${PREFIX}/lib/omc/ffi # https://github.com/OpenModelica/OpenModelica/issues/9925
 
 USE_GITHUB=	yes

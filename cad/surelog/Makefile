@@ -21,12 +21,9 @@ LIB_DEPENDS=	libcapnp.so:devel/capnproto \
 		libuhdm.so:cad/uhdm
 TEST_DEPENDS=	googletest>0:devel/googletest
 
-USES=		cmake:testing compiler:c++17-lang localbase:ldflags tcl:86,build
-USE_JAVA=	17 # Java selection fails in cmake when Java 11 is also installed, see https://gitlab.kitware.com/cmake/cmake/-/issues/24674
+USES=		cmake:testing compiler:c++17-lang java:build localbase:ldflags tcl:86,build
 USE_LDCONFIG=	${PREFIX}/lib ${PREFIX}/lib/surelog
-
-JAVA_BUILD=	yes
-JAVA_RUN=	no
+JAVA_VERSION=	17 # Java selection fails in cmake when Java 11 is also installed, see https://gitlab.kitware.com/cmake/cmake/-/issues/24674
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	chipsalliance
@@ -39,7 +36,7 @@ CMAKE_ON=	BUILD_SHARED_LIBS \
 		SURELOG_USE_HOST_CAPNP \
 		SURELOG_USE_HOST_GTEST
 CMAKE_OFF=	SURELOG_BUILD_TESTS
-CMAKE_ARGS=	-DFREEBSD_JAVA_VERSION=${USE_JAVA} \
+CMAKE_ARGS=	-DFREEBSD_JAVA_VERSION=${JAVA_VERSION} \
 		-DPython3_EXECUTABLE=${PYTHON_CMD}
 CMAKE_TESTING_ON=	SURELOG_BUILD_TESTS # 2 tests fail, see https://github.com/chipsalliance/Surelog/issues/3545
 CMAKE_TESTING_TARGET=	UnitTests

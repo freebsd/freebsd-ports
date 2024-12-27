@@ -1,51 +1,42 @@
-#-*- tab-width: 4; -*-
-# ex:ts=4
+# Provide support for Java (java)
+# Feature:	java
+# Usage:	USES=java or USES=java:args
 #
-# bsd.java.mk - Support for Java-based ports.
+# Defaults to USES=java:build,run if no arguments are provided and NO_BUILD is
+# undefined. If NO_BUILD is defined, USES=java:run is used.
 #
+# Valid ARGS:	ant build extract
+#
+# ant		-	Should be defined when the port uses Apache Ant. Ant is thus
+#			considered to be the sub-make command. When no 'do-build'
+#			target is defined by the port, a default one will be set
+#			that simply runs Ant according to MAKE_ENV, MAKE_ARGS and
+#			ALL_TARGET. Read the documentation in bsd.port.mk for more
+#			information.
+#
+# build		-	Add the JDK port to the build dependencies
+#
+# extract	-	Add the JDK port to the extract dependencies
+#
+# run		-	Add the JDK port to the run dependencies
 #
 # For FreeBSD committers:
 # Please send all suggested changes to the maintainer instead of committing
 # them yourself.
 #
-
-.if !defined(Java_Include)
-
-Java_Include=				bsd.java.mk
-Java_Include_MAINTAINER=	java@FreeBSD.org
-
 #-------------------------------------------------------------------------------
 # Variables that each port can define:
 #
-# USE_JAVA			Should be defined to the remaining variables to have any
-#					effect
-#
 # JAVA_VERSION		List of space-separated suitable java versions for the
-#					port. An optional "+" allows you to specify a range of
-#					versions. (allowed values: 8[+] 11[+] 17[+] 18[+] 19[+]
-#					20[+] 21[+] 22[+] 23[+])
+#			port. An optional "+" allows you to specify a range of
+#			versions. (allowed values: 8[+] 11[+] 17[+] 18[+] 19[+]
+#			20[+] 21[+] 22[+] 23[+])
 #
-# JAVA_OS			List of space-separated suitable JDK port operating systems
-#					for the port. (allowed values: native linux)
+# JAVA_OS		List of space-separated suitable JDK port operating systems
+#			for the port. (allowed values: native linux)
 #
 # JAVA_VENDOR		List of space-separated suitable JDK port vendors for the
-#					port. (allowed values: openjdk oracle)
-#
-# JAVA_BUILD		When set, it means that the selected JDK port should be
-#					added to build dependencies for the port.
-#
-# JAVA_EXTRACT		This variable works exactly the same as JAVA_BUILD but
-#					regarding extract dependencies.
-#
-# JAVA_RUN			This variable works exactly the same as JAVA_BUILD but
-#					regarding run dependencies.
-#
-# USE_ANT			Should be defined when the port uses Apache Ant. Ant is thus
-#					considered to be the sub-make command. When no 'do-build'
-#					target is defined by the port, a default one will be set
-#					that simply runs Ant according to MAKE_ENV, MAKE_ARGS and
-#					ALL_TARGET. Read the documentation in bsd.port.mk for more
-#					information.
+#			port. (allowed values: openjdk oracle)
 #
 #-------------------------------------------------------------------------------
 # Variables defined for the port:
@@ -125,12 +116,62 @@ Java_Include_MAINTAINER=	java@FreeBSD.org
 # Stage 4: Add any dependencies if necessary
 # Stage 5: Define all settings for the port to use
 #
+# MAINTAINER:	java@FreeBSD.org
 
-.  if defined(USE_JAVA)
+.if !defined(_INCLUDE_USES_JAVA_MK)
 
-.    if !defined(JAVA_VERSION) && empty(USE_JAVA:C/[0-9]*[\.]*[0-9]*[+]*//)
-JAVA_VERSION=${USE_JAVA}
+_INCLUDE_USES_JAVA_MK=	yes
+
+_JAVA_VALID_ARGS=	ant build extract run
+_JAVA_UNKNOWN_ARGS=
+.  for arg in ${java_ARGS}
+.    if empty(_JAVA_VALID_ARGS:M${arg})
+_JAVA_UNKNOWN_ARGS+=	${arg}
 .    endif
+.  endfor
+.  if !empty(_JAVA_UNKNOWN_ARGS)
+IGNORE=	has unknown USES=java arguments: ${_JAVA_UNKNOWN_ARGS}
+.  endif
+.  if empty(java_ARGS)
+.    if defined(NO_BUILD)
+java_ARGS=	run
+.    else
+java_ARGS=	build,run
+.    endif
+.  endif
+
+.  if !empty(java_ARGS)
+.undef _USE_JAVA_ANT
+.undef _USE_JAVA_BUILD
+.undef _USE_JAVA_EXTRACT
+.undef _USE_JAVA_RUN
+_JAVA_ARGS=		${java_ARGS:S/,/ /g}
+.    if ${_JAVA_ARGS:Mextract}
+_USE_JAVA_EXTRACT=	yes
+_JAVA_ARGS:=	${_JAVA_ARGS:Nextract}
+.    endif
+.    if ${_JAVA_ARGS:Mant}
+.      if defined(NO_BUILD)
+IGNORE=		Makefile error: NO_BUILD and USES=java:ant cannot be set at the same time
+.      else
+_USE_JAVA_ANT=	yes
+_USE_JAVA_BUILD=	yes
+_JAVA_ARGS:=	${_JAVA_ARGS:Nant}
+.      endif
+.    endif
+.    if ${_JAVA_ARGS:Mbuild}
+.      if defined(NO_BUILD)
+IGNORE=		Makefile error: NO_BUILD and USES=java:build cannot be set at the same time
+.      else
+_USE_JAVA_BUILD=	yes
+_JAVA_ARGS:=	${_JAVA_ARGS:Nbuild}
+.      endif
+.    endif
+.    if ${_JAVA_ARGS:Mrun}
+_USE_JAVA_RUN=	yes
+_JAVA_ARGS:=	${_JAVA_ARGS:Nrun}
+.    endif
+.  endif # !empty(java_ARGS)
 
 #-------------------------------------------------------------------------------
 # Stage 1: Define constants
@@ -221,7 +262,6 @@ _JDK_FILE=bin/javac
 # suitable
 #
 
-# From here, the port is using bsd.java.mk v2.0
 
 # Error checking: defined JAVA_{HOME,PORT,PORT_VERSION,PORT_VENDOR,PORT_OS}
 .    for variable in JAVA_HOME JAVA_PORT JAVA_PORT_VERSION JAVA_PORT_VENDOR JAVA_PORT_OS
@@ -265,16 +305,6 @@ check-makevars::
 	@( test ! -z "${JAVA_OS}" && ( ${ECHO_CMD} "${JAVA_OS}" | ${TR} " " "\n" | ${GREP} -Eq "${_JAVA_OS_LIST_REGEXP}")) || \
 	(${ECHO_CMD} "${PKGNAME}: Makefile error: \"${JAVA_OS}\" is not a valid value for JAVA_OS. It should be one or more of: ${_JAVA_OS_LIST}"; \
 	${FALSE})
-.    endif
-
-# Set default values for JAVA_BUILD and JAVA_RUN
-# When nothing is set, assume JAVA_BUILD=jdk and JAVA_RUN=jre
-# (unless NO_BUILD is set)
-.    if !defined(JAVA_EXTRACT) && !defined(JAVA_BUILD) && !defined(JAVA_RUN)
-.      if !defined(NO_BUILD)
-JAVA_BUILD=	jdk
-.      endif
-JAVA_RUN=	jre
 .    endif
 
 # JDK dependency setting
@@ -371,46 +401,36 @@ JAVA_PORT_OS_DESCRIPTION:=		${JAVA_PORT_OS:S/^/\${_JAVA_OS_/:S/$/}/}
 # Stage 4: Add any dependencies if necessary
 #
 
-# Ant Support: USE_ANT --> JAVA_BUILD=jdk
-.    if defined(USE_ANT)
-JAVA_BUILD=		jdk
-.    endif
-
 # Add the JDK port to the dependencies
 DEPEND_JAVA=	${JAVA}:${JAVA_PORT}
-.    if defined(JAVA_EXTRACT)
+.    if defined(_USE_JAVA_EXTRACT)
 EXTRACT_DEPENDS+=	${DEPEND_JAVA}
 .    endif
-.    if defined(JAVA_BUILD)
-.      if defined(NO_BUILD)
-check-makevars::
-	@${ECHO_CMD} "${PKGNAME}: Makefile error: JAVA_BUILD and NO_BUILD cannot be set at the same time.";
-	@${FALSE}
-.      endif
+.    if defined(_USE_JAVA_BUILD)
 BUILD_DEPENDS+=		${DEPEND_JAVA}
 .    endif
-.    if defined(JAVA_RUN)
+.    if defined(_USE_JAVA_RUN)
 RUN_DEPENDS+=		${DEPEND_JAVA}
 .    endif
 
 # Ant support: default do-build target
-.    if defined(USE_ANT)
-DESTDIRNAME?=		-Dfreebsd.ports.destdir
+.    if defined(_USE_JAVA_ANT)
+DESTDIRNAME=		-Dfreebsd.ports.destdir
 ANT?=				${LOCALBASE}/bin/ant
 MAKE_ENV+=			JAVA_HOME=${JAVA_HOME}
 BUILD_DEPENDS+=		${ANT}:devel/apache-ant
 ALL_TARGET?=
 .      if !target(do-build)
 do-build:
-					@(cd ${BUILD_WRKSRC}; ${SETENVI} ${WRK_ENV} ${MAKE_ENV} \
-						${ANT} ${MAKE_ARGS} ${ALL_TARGET})
+	@(cd ${BUILD_WRKSRC}; ${SETENVI} ${WRK_ENV} ${MAKE_ENV} \
+		${ANT} ${MAKE_ARGS} ${ALL_TARGET})
 .      endif
 .      if !target(do-test) && defined(TEST_TARGET)
 TEST_DEPENDS+=		${DEPEND_JAVA}
 TEST_DEPENDS+=		${ANT}:devel/apache-ant
 do-test:
-					@(cd ${TEST_WRKSRC}; ${SETENVI} ${WRK_ENV} ${MAKE_ENV} \
-						${ANT} ${MAKE_ARGS} ${TEST_TARGET})
+	@(cd ${TEST_WRKSRC}; ${SETENVI} ${WRK_ENV} ${MAKE_ENV} \
+		${ANT} ${MAKE_ARGS} ${TEST_TARGET})
 .      endif
 .    endif
 
@@ -422,13 +442,11 @@ do-test:
 # Define the location of the Java compiler.
 
 # Only define JAVAC if a JDK is needed
-.		undef JAVAC
+#.		undef JAVAC
 
 # Then test if a JAVAC has to be set (JAVA_BUILD==jdk)
-.    if defined(JAVA_BUILD)
-.      if (${JAVA_BUILD:tu} == "JDK") && !defined(JAVAC)
+.    if defined(_USE_JAVA_BUILD) && !defined(JAVAC)
 JAVAC?=			${JAVA_HOME}/bin/javac
-.      endif
 .    endif
 
 # Define the location of some more executables.
@@ -460,9 +478,9 @@ java-debug:
 	@${ECHO_CMD} "JAVA_VERSION=                   ${JAVA_VERSION}	(${_JAVA_VERSION})"
 	@${ECHO_CMD} "JAVA_OS=                        ${JAVA_OS}	(${_JAVA_OS})"
 	@${ECHO_CMD} "JAVA_VENDOR=                    ${JAVA_VENDOR}	(${_JAVA_VENDOR})"
-	@${ECHO_CMD} "JAVA_BUILD=                     ${JAVA_BUILD}"
-	@${ECHO_CMD} "JAVA_RUN=                       ${JAVA_RUN}"
-	@${ECHO_CMD} "JAVA_EXTRACT=                   ${JAVA_EXTRACT}"
+	@${ECHO_CMD} "JAVA_BUILD=                     ${_USE_JAVA_BUILD}"
+	@${ECHO_CMD} "JAVA_RUN=                       ${_USE_JAVA_RUN}"
+	@${ECHO_CMD} "JAVA_EXTRACT=                   ${_USE_JAVA_EXTRACT}"
 	@${ECHO_CMD} "JAVA_DEFAULT=                   ${JAVA_DEFAULT}"
 	@${ECHO_CMD}
 	@${ECHO_CMD} "# JDK port dependency selection process:"
@@ -483,5 +501,4 @@ java-debug:
 	@${ECHO_CMD} "JAVAC=                          ${JAVAC}"
 	@${ECHO_CMD} "JAVA_CLASSES=                   ${JAVA_CLASSES}"
 
-.  endif
 .endif

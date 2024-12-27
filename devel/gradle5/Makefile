@@ -11,10 +11,8 @@ WWW=		https://www.gradle.org/
 
 LICENSE=	APACHE20
 
+USES=		cpe java zip
 NO_ARCH=	yes
-USES=		cpe zip
-JAVA_VERSION=	8+
-USE_JAVA=	yes
 NO_BUILD=	yes
 DATADIR=	${PREFIX}/share/${PORTNAME}${PKGNAMESUFFIX}
 PORTSCOUT=	ignore:1

@@ -11,8 +11,8 @@ WWW=		https://www.owasp.org/index.php/Category:OWASP_DirBuster_Project
 LICENSE=	LGPL21+ CC-BY-SA-3.0
 LICENSE_COMB=	multi
 
-USES=		zip
-USE_JAVA=	yes
+USES=		java zip
+
 NO_BUILD=	yes
 NO_ARCH=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}

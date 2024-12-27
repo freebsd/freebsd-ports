@@ -14,8 +14,9 @@ LICENSE_TEXT=	Full license can be found at https://www.dbvis.com/eula/
 # Redistribution is not permitted
 LICENSE_PERMS=	auto-accept
 
-USE_JAVA=	yes
+USES=		java
 JAVA_VENDOR=	openjdk
+
 NO_BUILD=	yes
 
 WRKSRC=		${WRKDIR}/DbVisualizer

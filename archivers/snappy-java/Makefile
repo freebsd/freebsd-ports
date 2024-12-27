@@ -25,7 +25,7 @@ LICENSE=	APACHE20
 BUILD_DEPENDS=	cmake:devel/cmake-core \
 		sbt:devel/sbt
 
-USES=		gmake
+USES=		gmake java:build
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	xerial
@@ -36,8 +36,6 @@ GH_TUPLE=	google:snappy:${DISTVERSION:R}:google \
 		google:googletest:b796f7d:google_googletest/google_googletest \
 		kiyo-masui:bitshuffle:${BITSHUFFLE_V}:masui
 
-USE_JAVA=	yes
-JAVA_BUILD=	jre # prevent JAVA_RUN via bsd.java.mk
 USE_LDCONFIG=	yes
 MAKE_ARGS+=	CXX="${CXX}"
 TEST_TARGET=	test

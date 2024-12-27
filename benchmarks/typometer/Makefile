@@ -11,9 +11,7 @@ WWW=		https://pavelfatin.com/typometer/
 
 LICENSE=	APACHE20
 
-USES=		zip
-USE_JAVA=	yes
-JAVA_VERSION=	8+
+USES=		java zip
 NO_BUILD=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}

@@ -11,7 +11,8 @@ WWW=		https://docs.zanata.org/en/release/client/
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING.LESSER
 
-USE_JAVA=	yes
+USES=		java
+
 NO_ARCH=	yes
 NO_BUILD=	yes
 

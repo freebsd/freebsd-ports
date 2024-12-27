@@ -14,9 +14,8 @@ RUN_DEPENDS=	bash:shells/bash
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S,-unix,,}
 NO_BUILD=	yes
-USES=		cpe shebangfix
+USES=		cpe java shebangfix
 SHEBANG_FILES=	bin/cypher-shell bin/neo4j-admin
-USE_JAVA=	yes
 JAVA_VERSION=	11
 USE_RC_SUBR=	${PORTNAME}
 SUB_FILES=	${PORTNAME}.sh

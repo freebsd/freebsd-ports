@@ -12,8 +12,7 @@ WWW=		https://sourceforge.net/projects/project-x/
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/Copying
 
-USES=		zip:infozip
-USE_JAVA=	yes
+USES=		java zip:infozip
 
 SUB_FILES=	project-x.sh
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}

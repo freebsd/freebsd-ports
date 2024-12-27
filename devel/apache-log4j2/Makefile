@@ -12,11 +12,9 @@ WWW=		https://logging.apache.org/log4j/2.x/
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-USES=		cpe zip
+USES=		cpe java zip
 
 NO_WRKSUBDIR=	yes
-USE_JAVA=	yes
-JAVA_VERSION=	8+
 NO_BUILD=	yes
 NO_ARCH=	yes
 CPE_VENDOR=	apache

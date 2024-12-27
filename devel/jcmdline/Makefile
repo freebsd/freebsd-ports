@@ -10,7 +10,8 @@ WWW=		https://jcmdline.sourceforge.net/
 LICENSE=	MPL11
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USE_JAVA=	yes
+USES=		java
+
 NO_BUILD=	yes
 NO_ARCH=	yes
 

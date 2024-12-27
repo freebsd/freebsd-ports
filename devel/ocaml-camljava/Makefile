@@ -9,12 +9,11 @@ WWW=		https://caml.inria.fr/
 
 LICENSE=	GPLv2
 
-USES=		ocaml
+USES=		java ocaml
 USE_GITHUB=	yes
 GH_ACCOUNT=	xavierleroy
 GH_PROJECT=	camljava
 GH_TAGNAME=	${PORTNAME}${DISTVERSION:S/.//}
-USE_JAVA=	yes
 
 MAKE_ARGS=	-e
 MAKE_ENV+=	CAMLJAVALIB=${PREFIX}/${OCAML_SITELIBDIR}/${PORTNAME} \

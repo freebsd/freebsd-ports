@@ -13,10 +13,10 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 RUN_DEPENDS=	${JAVALIBDIR}/httpclient.jar:www/httpclient
 
-USES=		cpe
+USES=		cpe java
 CPE_VENDOR=	apache
+
 OPTIONS_DEFINE=	DOCS
-USE_JAVA=	yes
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 NO_ARCH=	yes

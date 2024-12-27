@@ -43,7 +43,7 @@ HUNSPELL_CONFIGURE_ENABLE=	hunspell
 HUNSPELL_LIB_DEPENDS=		libhunspell-1.7.so:textproc/hunspell
 
 JAVA_CONFIGURE_ENABLE=		java-bindings
-JAVA_USE=			JAVA
+JAVA_USES=			java
 JAVA_CPPFLAGS=			-I${JAVA_HOME}/include -I${JAVA_HOME}/include/freebsd
 
 PERL_CONFIGURE_ENABLE=		perl-bindings

@@ -20,8 +20,7 @@ RUN_DEPENDS=	java3d>0:java/java3d
 
 WRKSRC=		${WRKDIR}/Impact
 
-USES=		zip
-USE_JAVA=	yes
+USES=		java zip
 NO_BUILD=	yes
 
 DATADIR=	${JAVASHAREDIR}/Impact

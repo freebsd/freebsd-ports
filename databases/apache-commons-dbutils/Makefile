@@ -12,7 +12,8 @@ WWW=		https://commons.apache.org/proper/commons-dbutils/
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-USE_JAVA=	yes
+USES=		java
+
 NO_BUILD=	yes
 NO_ARCH=	yes
 

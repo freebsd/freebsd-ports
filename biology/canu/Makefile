@@ -18,10 +18,8 @@ NOT_FOR_ARCHS_REASON=	Requires 64-bit processor
 LIB_DEPENDS=	libboost_regex.so:devel/boost-libs
 RUN_DEPENDS=	gnuplot:math/gnuplot
 
-USES=		compiler:c++11-lang gmake localbase perl5 tar:xz
+USES=		compiler:c++11-lang gmake java localbase perl5 tar:xz
 USE_CXXSTD=	c++14
-USE_JAVA=	8+
-JAVA_RUN=	yes
 
 # Upstream Makefile compiles directly into ${DESTDIR}${PREFIX} rather than
 # using a separate install target.

@@ -16,9 +16,9 @@ LICENSE_FILE_CPL=	${WRKSRC}/licenses/junit-LICENSE.txt
 LICENSE_FILE_EUPL11=	${WRKSRC}/LICENSE.txt
 LICENSE_PERMS_CPL=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-USES=		cpe
+USES=		cpe java
 CPE_VENDOR=	smartbear
-USE_JAVA=	yes
+
 WRKSRC=		${WRKDIR}/SoapUI-${PORTVERSION}
 REINPLACE_ARGS=	-i ''
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}

@@ -13,8 +13,8 @@ WWW=		https://mov.sourceforge.net/
 
 LICENSE=	GPLv2
 
-USES=		gnome
-USE_JAVA=	yes
+USES=		gnome java
+
 NO_BUILD=	yes
 
 PORTDOCS=	*

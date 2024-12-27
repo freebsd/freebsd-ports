@@ -23,7 +23,7 @@ DATADIR=	${JAVASHAREDIR}/${PORTNAME}
 
 LINEDIT_DESC=	Enable line editing in the Rhino shell
 LINEDIT_RUN_DEPENDS=	${JLINEJAR}:devel/jline
-LINEDIT_USE=	java=yes ant=yes
+LINEDIT_USES=	java:ant
 
 MAKE_ARGS=	-Dxmlbeans.url=file://${DISTDIR}/${DIST_SUBDIR}/xmlbeans-2.5.0.zip \
 		-Dswing-ex-url=file://${DISTDIR}/${DIST_SUBDIR}/src.zip

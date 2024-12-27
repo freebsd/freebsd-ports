@@ -11,8 +11,9 @@ MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Lightweight IDE for writing Java programs
 WWW=		http://www.drjava.org
 
+USES=		java
+
 NO_BUILD=	yes
-USE_JAVA=	yes
 
 SUB_FILES=	${PORTNAME}
 SUB_LIST=	DRJAVAJAR=${DRJAVAJAR}

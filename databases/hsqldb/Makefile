@@ -9,9 +9,8 @@ WWW=		https://hsqldb.org/
 
 LICENSE=	BSD3CLAUSE
 
-USE_JAVA=	yes
-USE_ANT=	yes
-USES=		zip
+USES=		java:ant zip
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/${PORTNAME}
 BUILD_WRKSRC=	${WRKSRC}/build
 ALL_TARGET=	hsqldb hsqljdbc

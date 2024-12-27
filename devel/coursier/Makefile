@@ -13,8 +13,7 @@ WWW=		https://get-coursier.io/
 
 LICENSE=	APACHE20
 
-USE_JAVA=	yes
-JAVA_VERSION=	8+
+USES=		java
 
 NO_ARCH=	yes
 NO_BUILD=	yes

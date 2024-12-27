@@ -12,9 +12,8 @@ LICENSE=	APACHE20
 
 RUN_DEPENDS=	jsvc:devel/apache-commons-daemon
 
-USES=		cpe
+USES=		cpe java
 CPE_VENDOR=	apache
-USE_JAVA=	yes
 USE_RC_SUBR=	${PKGBASE}
 
 EXTRACT_AFTER_ARGS=	--exclude *.bat \

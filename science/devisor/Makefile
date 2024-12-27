@@ -9,7 +9,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Design and Visualization Software Resource for FeatFlow
 WWW=		http://www.featflow.de/
 
-USE_JAVA=	yes
+USES=	java
+
 NO_BUILD=	yes	# Sources are available though
 
 SUB_FILES=	devisorgrid.sh

@@ -19,7 +19,8 @@ LICENSE_NAME=	ldapbrowser
 LICENSE_TEXT=	No reply from author regarding redistribution licensing
 LICENSE_PERMS=	auto-accept
 
-USE_JAVA=	yes
+USES=		java
+
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 REINPLACE_ARGS=	-i ''

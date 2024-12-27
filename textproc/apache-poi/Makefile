@@ -31,10 +31,9 @@ RUN_DEPENDS=	apache-log4j2>0:devel/apache-log4j2	\
 		apache-commons-codec>0:java/apache-commons-codec	\
 		apache-commons-collections4>0:java/apache-commons-collections4
 
-USES=		cpe
+USES=		cpe java
 CPE_VENDOR=	apache
 
-USE_JAVA=	yes
 NO_BUILD=	yes
 NO_EXTRACT=	yes
 NO_ARCH=	yes

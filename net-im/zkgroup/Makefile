@@ -12,10 +12,9 @@ WWW=		https://github.com/signalapp/zkgroup
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cargo
+USES=		cargo java
 USE_GITHUB=	yes
 GH_ACCOUNT=	signalapp
-USE_JAVA=	yes
 JAVA_VERSION=	11+
 USE_LDCONFIG=	yes
 

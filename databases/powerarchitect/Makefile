@@ -10,7 +10,7 @@ WWW=		http://www.bestofbi.com/page/architect
 
 LICENSE=	GPLv3
 
-USE_JAVA=	yes
+USES=		java
 NO_ARCH=	yes
 NO_BUILD=	yes
 SUB_FILES=	${PORTNAME}

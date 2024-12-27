@@ -15,10 +15,8 @@ LICENSE_FILE=	${WRKSRC}/src/free/jin/legal/copyright.txt
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	${JAVAJARDIR}/bsh.jar:lang/bsh
 
-USES=		dos2unix
+USES=		dos2unix java:ant
 DOS2UNIX_GLOB=	*.java *.txt
-USE_JAVA=	yes
-USE_ANT=	yes
 
 MAKE_ARGS+=	-lib ${JAVAJARDIR}/bsh.jar
 

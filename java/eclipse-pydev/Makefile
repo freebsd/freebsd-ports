@@ -13,12 +13,8 @@ LICENSE=	EPL
 
 RUN_DEPENDS=	${LOCALBASE}/bin/eclipse:java/eclipse
 
-USES=		python zip
-
-USE_JAVA=	YES
-JAVA_VERSION=	8+
+USES=		java python zip
 JAVA_OS=	native
-JAVA_RUN=	YES
 
 NO_BUILD=	YES
 NO_WRKSUBDIR=	YES
@@ -29,11 +25,7 @@ OPTIONS_DEFINE=	JYTHON
 
 JYTHON_DESC=	Use Jython as Python interpreter
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MJYTHON}
-RUN_DEPENDS+=	jython:lang/jython
-.endif
+JYTHON_RUN_DEPENDS=	jython:lang/jython
 
 PLUGINDIR=	share/eclipse/dropins/${PORTNAME}/eclipse
 

@@ -118,7 +118,7 @@ JSON_PLIST_FILES=		lib/syslog-ng/libjson-plugin.so \
 				share/syslog-ng/include/scl/cim/template.conf
 
 JAVA_CONFIGURE_ENABLE=		java
-JAVA_USE=			JAVA=yes
+JAVA_USES=			java
 JAVA_PLIST_FILES=		lib/syslog-ng/libmod-java.so \
 				lib/syslog-ng/java-modules/syslog-ng-core.jar
 
@@ -271,7 +271,7 @@ GRPC_PLIST_FILES=		lib/libgrpc-protos.so \
  				lib/syslog-ng/libbigquery.so \
 				lib/syslog-ng/libcloud_auth.so
 
-MQTT_CONFIGURE_ON=		--enable-mqtt --with-libpaho-mqtt=${PREFIX} 
+MQTT_CONFIGURE_ON=		--enable-mqtt --with-libpaho-mqtt=${PREFIX}
 MQTT_CONFIGURE_OFF=		--disable-mqtt
 MQTT_LIB_DEPENDS=		libpaho-mqtt3cs.so:net/libpaho-mqtt3
 MQTT_PLIST_FILES=		lib/syslog-ng/libmqtt.so

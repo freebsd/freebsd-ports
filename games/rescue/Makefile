@@ -12,9 +12,8 @@ WWW=		https://rescue.sourceforge.net/
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/gpl.txt
 
-USES=		dos2unix zip:infozip
+USES=		dos2unix java zip:infozip
 DOS2UNIX_GLOB=	*.css *.htm *.ini *.txt *.xml
-USE_JAVA=	yes
 
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}
 DESKTOP_ENTRIES=	"Rescue! Max" \

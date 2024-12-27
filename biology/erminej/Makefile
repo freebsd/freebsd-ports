@@ -11,8 +11,7 @@ WWW=		https://erminej.msl.ubc.ca/
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-USES=		zip
-USE_JAVA=	yes
+USES=		java zip
 
 WRKSRC=		${WRKDIR}/ermineJ-${DISTVERSION}
 NO_BUILD=	yes

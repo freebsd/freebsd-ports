@@ -14,10 +14,9 @@ LICENSE=	APACHE20
 
 RUN_DEPENDS=	erl:lang/erlang
 
-USES=		autoreconf:build gmake perl5
+USES=		autoreconf:build gmake java perl5
 USE_GITHUB=	yes
 GH_PROJECT=	otp
-USE_JAVA=	yes
 USE_PERL5=	build
 
 GNU_CONFIGURE=	yes

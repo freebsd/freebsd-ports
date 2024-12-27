@@ -9,9 +9,9 @@ WWW=		https://www.slf4j.org/
 
 LICENSE=	MIT
 
-USES=		cpe
+USES=		cpe java
 CPE_VENDOR=	qos
-USE_JAVA=	YES
+
 NO_BUILD=	YES
 
 JARFILES=	slf4j-migrator.jar \

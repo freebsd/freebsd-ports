@@ -11,8 +11,8 @@ LICENSE=	GPLv2
 
 PORTSCOUT=	limitw:1,even	# Second component is even for stable versions.
 
-USES=		zip
-USE_JAVA=	yes
+USES=		java zip
+
 NO_BUILD=	yes
 
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}

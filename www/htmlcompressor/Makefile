@@ -12,8 +12,9 @@ WWW=		https://github.com/serg472/htmlcompressor
 
 LICENSE=	APACHE20
 
+USES=		java
+
 NO_WRKSUBDIR=	yes
-USE_JAVA=	yes
 NO_BUILD=	yes
 NO_ARCH=	yes
 

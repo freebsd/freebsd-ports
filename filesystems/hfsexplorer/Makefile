@@ -11,9 +11,9 @@ LICENSE=	GPLv3
 
 BUILD_DEPENDS=	ant:devel/apache-ant
 
+USES=		java
 USE_GITHUB=	yes
 GH_ACCOUNT=	unsound
-USE_JAVA=	yes
 
 DESKTOP_ENTRIES=	"hfsexplorer" \
 			"reader Mac-formatted harddisk" \

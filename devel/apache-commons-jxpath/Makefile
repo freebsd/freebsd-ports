@@ -11,7 +11,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utilities for manipulating Java Beans using the XPath syntax
 WWW=		https://commons.apache.org/proper/commons-jxpath/
 
-USE_JAVA=	yes
+USES=		java
+
 NO_BUILD=	yes
 
 PLIST_FILES=	%%JAVAJARDIR%%/${PORTNAME}.jar

@@ -12,7 +12,8 @@ WWW=		https://sourceforge.net/projects/beepcore-java/
 
 RUN_DEPENDS=	${JAVALIBDIR}/xercesImpl.jar:textproc/xerces-j
 
-USE_JAVA=	yes
+USES=		java
+
 NO_BUILD=	yes
 
 OPTIONS_DEFINE=	DOCS EXAMPLES

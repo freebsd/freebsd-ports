@@ -13,11 +13,9 @@ LICENSE=	GPLv3
 
 RUN_DEPENDS=	${LOCALBASE}/bin/bash:shells/bash
 
-USES=		desktop-file-utils shebangfix zip
-USE_JAVA=	yes
+USES=		desktop-file-utils java shebangfix zip
 JAVA_VERSION=	11
 JAVA_VENDOR=	openjdk
-JAVA_RUN=	yes
 
 SHEBANG_FILES=		linux-install.sh OmegaT omegat.kaptn
 SHEBANG_LANG=		kaptain

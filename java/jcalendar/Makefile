@@ -7,10 +7,9 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Java Date Chooser
 WWW=		https://www.toedter.com/en/jcalendar/
 
-USES=		zip
-USE_JAVA=	yes
+USES=		java:ant zip
 JAVA_VERSION=	8
-USE_ANT=	yes
+
 WRKSRC=		${WRKDIR}/src
 PLIST_FILES=	%%JAVAJARDIR%%/${PORTNAME}.jar \
 		%%JAVAJARDIR%%/looks-2.0.1.jar

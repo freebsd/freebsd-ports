@@ -32,15 +32,11 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	ktgw0316
 GH_PROJECT=	LightZone
 
-USES=		desktop-file-utils gmake gnome jpeg pkgconfig xorg
-USE_ANT=	yes
-USE_JAVA=	yes
+USES=		desktop-file-utils gmake gnome java:ant,run jpeg pkgconfig xorg
 USE_GCC=	yes
 USE_LDCONFIG=	yes
 USE_XORG=	x11
 JAVA_VENDOR=	openjdk
-JAVA_BUILD=	yes
-JAVA_RUN=	yes
 
 PATCH_WRKSRC=	${WRKSRC:H}
 WRKSRC_SUBDIR=	linux

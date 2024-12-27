@@ -14,12 +14,8 @@ LICENSE_NAME_SSPLv1=	Server Side Public License
 LICENSE_FILE_SSPLv1=	${WRKSRC}/LICENSE
 LICENSE_PERMS_SSPLv1=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-USES=		cpe tar:tgz
-USE_JAVA=	yes
-
+USES=		cpe java:extract,run tar:tgz
 JAVA_VERSION=	17+
-JAVA_EXTRACT=	yes
-JAVA_RUN=	yes
 
 NO_BUILD=	yes
 NO_ARCH=	yes

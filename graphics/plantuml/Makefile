@@ -12,7 +12,7 @@ WWW=		https://plantuml.com/
 
 LICENSE=	GPLv3
 
-USE_JAVA= 	yes
+USES=		java
 
 NO_ARCH=	yes
 NO_BUILD=	yes

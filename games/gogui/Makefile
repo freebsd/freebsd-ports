@@ -17,10 +17,9 @@ BROKEN_aarch64=	compilation fails: Internal Error (assembler_aarch64.hpp:237) ..
 BUILD_DEPENDS=	xsltproc:textproc/libxslt \
 		docbook-xsl>0:textproc/docbook-xsl
 
+USES=		java:ant
 USE_GITHUB=	yes
 GH_ACCOUNT=	lemonsqueeze
-USE_JAVA=	yes
-USE_ANT=	yes
 
 MAKE_ARGS+=	-Ddocbook-xsl.dir=${LOCALBASE}/share/xsl/docbook
 

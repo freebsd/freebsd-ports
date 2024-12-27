@@ -41,7 +41,7 @@ JAVA_CMAKE_BOOL=	BUILD_JAVA_WRAPPING
 JAVA_CMAKE_ON=		-DJAVA_AWT_LIBRARY=${LOCALBASE}/openjdk8/jre/lib/amd64/libawt.so \
 			-DJAVA_JVM_LIBRARY=${LOCALBASE}/openjdk8/jre/lib/amd64/server/libjvm.so \
 			-DJAVA_INCLUDE_PATH=${LOCALBASE}/openjdk8/include
-JAVA_USE=		JAVA=yes
+JAVA_USES=		java
 JAVA_BUILD_DEPENDS=	swig40:devel/swig40
 JAVA_BINARY_ALIAS=	swig=swig40
 

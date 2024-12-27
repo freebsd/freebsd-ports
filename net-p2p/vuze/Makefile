@@ -18,10 +18,9 @@ BUILD_DEPENDS=	${JAVALIBDIR}/log4j.jar:devel/log4j \
 		${JAVALIBDIR}/swt.jar:x11-toolkits/swt
 RUN_DEPENDS=	${JAVALIBDIR}/swt.jar:x11-toolkits/swt
 
-USES=		cpe gnome zip
-USE_JAVA=	yes
+USES=		cpe gnome java:ant zip
 JAVA_OS=	native
-USE_ANT=	yes
+
 NO_WRKSUBDIR=	yes
 NO_ARCH=	yes
 
