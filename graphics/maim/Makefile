@@ -1,7 +1,6 @@
 PORTNAME=	maim
 DISTVERSIONPREFIX=	v
-DISTVERSION=	5.7.4
-PORTREVISION=	9
+DISTVERSION=	5.8.0
 CATEGORIES=	graphics
 
 MAINTAINER=	0mp@FreeBSD.org
@@ -9,10 +8,10 @@ COMMENT=	Screenshot utility with performance improvements over scrot
 WWW=		https://github.com/naelstrof/maim
 
 LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	${LOCALBASE}/include/glm/glm.hpp:math/glm
 LIB_DEPENDS=	libicuuc.so:devel/icu \
-		libImlib2.so:graphics/imlib2 \
 		libpng.so:graphics/png \
 		libslopy.so:x11/slop \
 		libwebp.so:graphics/webp
@@ -20,7 +19,7 @@ LIB_DEPENDS=	libicuuc.so:devel/icu \
 USES=		cmake compiler:c++11-lang gl jpeg xorg
 USE_GITHUB=	yes
 GH_ACCOUNT=	naelstrof
-USE_GL=		gl glut
+USE_GL=		gl
 USE_XORG=	ice sm x11 xcomposite xext xfixes xrandr xrender
 
 CMAKE_ARGS=	-DSLOP_LIBRARIES=${LOCALBASE}/lib/libslopy.so
