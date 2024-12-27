@@ -9,6 +9,7 @@ share/icons/hicolor/128x128/apps/org.xfce.PanelProfiles.png
 share/icons/hicolor/16x16/apps/org.xfce.PanelProfiles.png
 share/icons/hicolor/48x48/apps/org.xfce.PanelProfiles.png
 share/icons/hicolor/scalable/apps/org.xfce.PanelProfiles.svg
+%%NLS%%share/locale/ast/LC_MESSAGES/xfce4-panel-profiles.mo
 %%NLS%%share/locale/be/LC_MESSAGES/xfce4-panel-profiles.mo
 %%NLS%%share/locale/bg/LC_MESSAGES/xfce4-panel-profiles.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/xfce4-panel-profiles.mo
@@ -42,6 +43,7 @@ share/icons/hicolor/scalable/apps/org.xfce.PanelProfiles.svg
 %%NLS%%share/locale/ms/LC_MESSAGES/xfce4-panel-profiles.mo
 %%NLS%%share/locale/nb/LC_MESSAGES/xfce4-panel-profiles.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/xfce4-panel-profiles.mo
+%%NLS%%share/locale/oc/LC_MESSAGES/xfce4-panel-profiles.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/xfce4-panel-profiles.mo
 %%NLS%%share/locale/pt/LC_MESSAGES/xfce4-panel-profiles.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/xfce4-panel-profiles.mo
@@ -64,6 +66,7 @@ share/metainfo/org.xfce.PanelProfiles.appdata.xml
 %%DATADIR%%/layouts/GNOME 2.tar.bz2
 %%DATADIR%%/layouts/Redmond 7.tar.bz2
 %%DATADIR%%/layouts/Redmond.tar.bz2
+%%DATADIR%%/layouts/Unity.tar.bz2
 %%DATADIR%%/layouts/Xfce 4.12.tar.bz2
 %%DATADIR%%/layouts/Xfce 4.14.tar.bz2
 %%DATADIR%%/layouts/Xfce 4.16.tar.bz2
