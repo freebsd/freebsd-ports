@@ -1,21 +1,21 @@
 PORTNAME=	xfce4-systemload-plugin
-PORTVERSION=	1.3.2
-PORTREVISION=	3
+PORTVERSION=	1.3.3
 CATEGORIES=	sysutils xfce
 MASTER_SITES=	XFCE/panel-plugins
 DIST_SUBDIR=	xfce4
 
 MAINTAINER=	xfce@FreeBSD.org
 COMMENT=	System Load plugin for Xfce4 panel
-WWW=		https://goodies.xfce.org/projects/panel-plugins/xfce4-systemload-plugin
+WWW=		https://docs.xfce.org/panel-plugins/xfce4-systemload-plugin/start
 
 LICENSE=	BSD2CLAUSE
 
-LIB_DEPENDS=	libharfbuzz.so:print/harfbuzz
+LIB_DEPENDS=	libharfbuzz.so:print/harfbuzz \
+		libpolkit-gobject-1.so:sysutils/polkit
 
 USES=		compiler:c11 gettext-tools gmake gnome libtool pkgconfig \
 		tar:bzip2 xfce
-USE_GNOME=	cairo gdkpixbuf2 gtk30 intltool
+USE_GNOME=	cairo gdkpixbuf2 gtk30
 USE_XFCE=	libmenu panel xfconf
 
 GNU_CONFIGURE=	yes

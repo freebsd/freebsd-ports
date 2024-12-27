@@ -1,6 +1,7 @@
 lib/xfce4/panel/plugins/libsystemload.so
 share/icons/hicolor/128x128/apps/org.xfce.panel.systemload.png
 share/icons/hicolor/16x16/apps/org.xfce.panel.systemload.png
+share/icons/hicolor/24x24/apps/org.xfce.panel.systemload.png
 share/icons/hicolor/32x32/apps/org.xfce.panel.systemload.png
 share/icons/hicolor/scalable/apps/org.xfce.panel.systemload.svg
 %%NLS%%share/locale/ar/LC_MESSAGES/xfce4-systemload-plugin.mo
@@ -40,6 +41,7 @@ share/icons/hicolor/scalable/apps/org.xfce.panel.systemload.svg
 %%NLS%%share/locale/pl/LC_MESSAGES/xfce4-systemload-plugin.mo
 %%NLS%%share/locale/pt/LC_MESSAGES/xfce4-systemload-plugin.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/xfce4-systemload-plugin.mo
+%%NLS%%share/locale/ro/LC_MESSAGES/xfce4-systemload-plugin.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/xfce4-systemload-plugin.mo
 %%NLS%%share/locale/sk/LC_MESSAGES/xfce4-systemload-plugin.mo
 %%NLS%%share/locale/sl/LC_MESSAGES/xfce4-systemload-plugin.mo
