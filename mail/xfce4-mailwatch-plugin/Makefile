@@ -1,13 +1,12 @@
 PORTNAME=	xfce4-mailwatch-plugin
-PORTVERSION=	1.3.1
-PORTREVISION=	2
+PORTVERSION=	1.3.2
 CATEGORIES=	mail xfce
 MASTER_SITES=	XFCE/panel-plugins
 DIST_SUBDIR=	xfce4
 
 MAINTAINER=	xfce@FreeBSD.org
 COMMENT=	Mail notification applet for the Xfce panel
-WWW=		https://goodies.xfce.org/projects/panel-plugins/xfce4-mailwatch-plugin
+WWW=		https://docs.xfce.org/panel-plugins/xfce4-mailwatch-plugin/start
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
@@ -17,7 +16,7 @@ LIB_DEPENDS=	libgnutls.so:security/gnutls \
 
 USES=		compiler:c11 gettext-tools gmake gnome libtool pkgconfig \
 		tar:bzip2 xfce xorg
-USE_GNOME=	cairo gdkpixbuf2 glib20 gtk30 intltool
+USE_GNOME=	cairo gdkpixbuf2 glib20 gtk30
 USE_XFCE=	libexo panel
 USE_XORG=	x11
 
