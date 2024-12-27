@@ -1,6 +1,6 @@
-TIMESTAMP = 1729493191
-SHA256 (develar-app-builder-v5.0.0-alpha.11_GH0.tar.gz) = f796fb39ba07ff1f76c14a62d90cc7c1699c1c40b5a21143bb73be8c74e8c688
-SIZE (develar-app-builder-v5.0.0-alpha.11_GH0.tar.gz) = 801506
+TIMESTAMP = 1735274365
+SHA256 (develar-app-builder-v5.0.0-alpha.12_GH0.tar.gz) = c9fe4626c56a1cf6fd10ec271f5a3eb8130bed4a7754e4fc6288d08bbf73b3fe
+SIZE (develar-app-builder-v5.0.0-alpha.12_GH0.tar.gz) = 801693
 SHA256 (aclements-go-rabin-d0b643ea1a4c_GH0.tar.gz) = cb8bc66e64788ffd4acf9408aba12d19fb8c51fa428423d83780744cf34ea986
 SIZE (aclements-go-rabin-d0b643ea1a4c_GH0.tar.gz) = 11481
 SHA256 (alecthomas-kingpin-v2.2.6_GH0.tar.gz) = 4624eae43489de8a71ea60efaf6744c581b6bd62909f7514c484c1ea0efaba5a
