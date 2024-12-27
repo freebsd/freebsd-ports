@@ -12,6 +12,15 @@ etc/profile.d/system-info.sh
 etc/system-info.d/01-example
 etc/system-info.d/banner-helper
 etc/system-maintenance.d/XX-example
+share/bash-completion/completions/Fingerprint-SSH-Keys
+share/bash-completion/completions/Reset-Machine-ID
+share/bash-completion/completions/System-Info
+share/bash-completion/completions/System-Maintenance
+share/bash-completion/completions/configure-grub
+share/bash-completion/completions/get-system-info
+share/bash-completion/completions/print-utf8
+share/bash-completion/completions/random-sleep
+share/bash-completion/completions/try-hard
 share/configure-grub/grub-defaults-nornet
 share/configure-grub/grub-defaults-standard
 share/locale/de/LC_MESSAGES/Fingerprint-SSH-Keys.mo
