@@ -1,6 +1,5 @@
 PORTNAME=	gigolo
-PORTVERSION=	0.5.3
-PORTREVISION=	3
+PORTVERSION=	0.5.4
 CATEGORIES=	sysutils
 MASTER_SITES=	XFCE/apps
 
@@ -14,11 +13,10 @@ BUILD_DEPENDS=	p5-XML-Parser>=0:textproc/p5-XML-Parser
 LIB_DEPENDS=	libharfbuzz.so:print/harfbuzz
 
 USES=		gettext-tools gmake gnome pkgconfig tar:bzip2 xfce xorg
-USE_GNOME=	cairo gdkpixbuf2 gtk30 gvfs intltool
+USE_GNOME=	cairo gdkpixbuf2 gtk30 gvfs
 USE_XORG=	x11
 
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
 PORTDOCS=	AUTHORS ChangeLog NEWS THANKS TODO
 
@@ -31,9 +29,6 @@ NLS_USES=	gettext-runtime
 post-patch:
 	@${REINPLACE_CMD} -e 's|^DOCFILES.*|DOCFILES =|' \
 		${WRKSRC}/Makefile.in
-	@${REINPLACE_CMD} -e \
-		's|$$(prefix)/$$(DATADIRNAME)/locale|$$(datarootdir)/locale|' \
-		${WRKSRC}/po/Makefile.in.in
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
