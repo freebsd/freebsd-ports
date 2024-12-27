@@ -2,8 +2,7 @@ PORTNAME=	abuse_sdl
 PORTVERSION=	0.8
 PORTREVISION=	9
 CATEGORIES=	games
-MASTER_SITES=	GENTOO \
-		http://abuse.zoy.org/raw-attachment/wiki/download/
+MASTER_SITES=	http://abuse.zoy.org/raw-attachment/wiki/download/
 DISTNAME=	abuse-${DISTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
@@ -26,7 +25,6 @@ USE_GL=		gl
 USE_SDL=	mixer sdl
 
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--with-assetdir=${DATADIR} --enable-release
 
 DESKTOP_ENTRIES="Abuse-SDL" "" "abuse" \
