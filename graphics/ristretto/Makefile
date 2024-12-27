@@ -1,12 +1,12 @@
 PORTNAME=	ristretto
-PORTVERSION=	0.13.2
+PORTVERSION=	0.13.3
 CATEGORIES=	graphics xfce
 MASTER_SITES=	XFCE/apps
 DIST_SUBDIR=	xfce4
 
 MAINTAINER=	xfce@FreeBSD.org
 COMMENT=	Image viewer with Xfce integration
-WWW=		https://goodies.xfce.org/projects/applications/ristretto
+WWW=		https://docs.xfce.org/apps/ristretto/start
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
@@ -16,7 +16,7 @@ LIB_DEPENDS=	libexif.so:graphics/libexif \
 
 USES=		compiler:c11 desktop-file-utils gettext-tools gmake gnome \
 		pkgconfig tar:bzip2 xfce xorg
-USE_GNOME=	cairo gdkpixbuf2 glib20 gtk30 intltool
+USE_GNOME=	cairo gdkpixbuf2 glib20 gtk30
 USE_XFCE=	libmenu xfconf
 USE_XORG=	ice sm x11
 
