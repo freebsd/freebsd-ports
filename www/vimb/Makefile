@@ -16,7 +16,7 @@ LIB_DEPENDS=	libsoup-2.4.so:devel/libsoup \
 USES=		compiler:c11 desktop-file-utils gmake gnome pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	fanglingsu
-USE_GNOME=	cairo glib20 gtk30
+USE_GNOME=	glib20 gtk30
 
 MAKE_ARGS=	V=1 \
 		version="${DISTVERSION}"
@@ -31,11 +31,6 @@ PLIST_FILES=	bin/vimb \
 OPTIONS_DEFINE=	GSTREAMER
 GSTREAMER_USES=	gstreamer
 GSTREAMER_USE=	GSTREAMER=good,libav
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|gtk-4.1|gtk-4.0|' ${WRKSRC}/config.mk
-# .git/index needs to exist to generate version.h...
-	${MKDIR} ${WRKSRC}/.git/index
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/vimb \
