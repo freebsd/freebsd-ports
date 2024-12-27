@@ -1,7 +1,11 @@
 PORTNAME=	hyprutils
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.3.0
+PORTREVISION=	1
 CATEGORIES=	devel
+
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES+=	8f15d45b120b.patch:-p1 # https://github.com/hyprwm/hyprutils/issues/28
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Hyprland utilities library used across the ecosystem
@@ -16,9 +20,6 @@ USE_LDCONFIG=	yes
 USE_XORG=	pixman
 GH_ACCOUNT=	hyprwm
 PLIST_SUB=	VERSION=${DISTVERSION:C/-.*//}
-
-# XXX tests
-USES+=		localbase:ldflags 
 
 post-patch:
 # Respect PREFIX for system-wide config

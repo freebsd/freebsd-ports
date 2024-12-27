@@ -1,3 +1,5 @@
 TIMESTAMP = 1734908734
 SHA256 (hyprwm-hyprutils-v0.3.0_GH0.tar.gz) = 07bf2d199aeb0e41e1bfe072572742acaf201f0af2bf76ff86a718605d2431bb
 SIZE (hyprwm-hyprutils-v0.3.0_GH0.tar.gz) = 25301
+SHA256 (8f15d45b120b.patch) = 5d2b1e2b81cea89d0502b15fc0c753ead059bc152b0c71174193d9f41562d1a1
+SIZE (8f15d45b120b.patch) = 700
