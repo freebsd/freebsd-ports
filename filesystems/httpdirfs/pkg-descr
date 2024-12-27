@@ -1,11 +1,16 @@
-HTTPDirFS stands for Hyper Text Transfer Protocol Directory Filesystem. It may
-be used to to mount HTTP directory listings as if it was a partition.
+HTTPDirFS stands for Hyper Text Transfer Protocol Directory Filesystem.
 
-HTTP connections are reused due to the use of cURL-multi interface. The FUSE
-component runs in multithreaded mode.
+The performance of the program is excellent. HTTP connections are reused through
+curl-multi interface. The FUSE component runs in the multithreaded mode.
 
-There is a permanent cache system which can cache all the file segments that
-have been downloaded.
+There is a permanent cache system which can cache all the file segments you have
+downloaded, so you don't need to these segments again if you access them
+later. This feature is triggered by the --cache flag. This is similar to the
+--vfs-cache-mode full feature of rclone mount
 
-The support for Airsonic / Subsonic server is also included. This allows the
-user to mount a remote music collection locally.
+There is support for Airsonic / Subsonic server. This allows you to mount a
+remote music collection locally.
+
+If you only want to access a single file, there is also a simplified Single File
+Mode. This can be especially useful if the web server does not present a HTTP
+directory listing.
