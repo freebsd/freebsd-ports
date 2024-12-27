@@ -2,14 +2,16 @@ PORTNAME=	fbdesk
 PORTVERSION=	1.4.1
 PORTREVISION=	8
 CATEGORIES=	x11
-MASTER_SITES=	http://fluxbox.sourceforge.net/download/ \
-		GENTOO
+MASTER_SITES=	http://fluxbox.sourceforge.net/download/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fluxbox utility to create and manage icons on the desktop
 WWW=		https://fluxbox.sourceforge.net/fbdesk/
 
 LICENSE=	MIT
+
+DEPRECATED=	Upstream disapear and distfile is no more available
+EXPIRATION_DATE=2025-01-27
 
 LIB_DEPENDS=	libpng.so:graphics/png \
 		libImlib2.so:graphics/imlib2
