@@ -15,7 +15,7 @@ LICENSE_COMB=	multi
 
 LIB_DEPENDS=	libpng.so:graphics/png
 
-USES=		jpeg localbase python sdl
+USES=		jpeg localbase python:2.7+ sdl
 USE_PYTHON=	autoplist distutils cython
 USE_SDL=	image2 mixer2 ttf2
 
