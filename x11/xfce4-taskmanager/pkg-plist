@@ -50,6 +50,7 @@ share/icons/hicolor/scalable/apps/org.xfce.taskmanager.svg
 %%NLS%%share/locale/pl/LC_MESSAGES/xfce4-taskmanager.mo
 %%NLS%%share/locale/pt/LC_MESSAGES/xfce4-taskmanager.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/xfce4-taskmanager.mo
+%%NLS%%share/locale/ro/LC_MESSAGES/xfce4-taskmanager.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/xfce4-taskmanager.mo
 %%NLS%%share/locale/si/LC_MESSAGES/xfce4-taskmanager.mo
 %%NLS%%share/locale/sk/LC_MESSAGES/xfce4-taskmanager.mo
