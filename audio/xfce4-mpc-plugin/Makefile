@@ -1,13 +1,12 @@
 PORTNAME=	xfce4-mpc-plugin
-PORTVERSION=	0.5.3
-PORTREVISION=	2
+PORTVERSION=	0.5.5
 CATEGORIES=	audio xfce
 MASTER_SITES=	XFCE/panel-plugins
 DIST_SUBDIR=	xfce4
 
 MAINTAINER=	xfce@FreeBSD.org
 COMMENT=	Musicpd client plugin for the Xfce panel
-WWW=		https://goodies.xfce.org/projects/panel-plugins/xfce4-mpc-plugin
+WWW=		https://docs.xfce.org/panel-plugins/xfce4-mpc-plugin/start
 
 LICENSE=	ISCL
 
@@ -17,7 +16,7 @@ RUN_DEPENDS=	musicpd:audio/musicpd
 
 USES=		compiler:c11 gettext-tools gmake gnome libtool pkgconfig \
 		tar:bzip2 xfce
-USE_GNOME=	cairo gdkpixbuf2 gtk30 intltool
+USE_GNOME=	cairo gdkpixbuf2 gtk30
 USE_XFCE=	libmenu panel
 
 GNU_CONFIGURE=		yes
