@@ -5,6 +5,9 @@ MASTERDIR=	${.CURDIR}/../../x11/eterm
 MAINTAINER=	enlightenment@FreeBSD.org
 COMMENT=	X11 terminal emulator based on rxvt/xterm that supports traditional Chinese (Big5)
 
+DEPRECATED=	Depends on kcfonts, which is marked DEPRECATED
+EXPIRATION_DATE=	2025-01-27
+
 EXTRA_PATCHES=	${.CURDIR}/files/extra-patch-configure
 
 CONFIGURE_ARGS=	--enable-trans --enable-utmp \
