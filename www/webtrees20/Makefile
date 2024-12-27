@@ -10,6 +10,9 @@ WWW=		https://webtrees.net/
 
 LICENSE=	GPLv3+
 
+DEPRECATED=	Uses obsolete PHP version; use www/webtrees21 or www/webtrees22 instead
+EXPIRATION_DATE=	2024-12-31
+
 USES=		cpe php shebangfix zip
 
 USE_PHP=	calendar dom filter gd pdo_mysql session simplexml xml
