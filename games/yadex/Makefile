@@ -3,7 +3,7 @@ PORTVERSION=	1.7.0
 PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	http://vault.101011010.xyz/distfiles/yadex/ \
-		http://freebsd.nsu.ru/distfiles/yadex/ GENTOO
+		http://freebsd.nsu.ru/distfiles/yadex/
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	danfe@FreeBSD.org
