@@ -2,12 +2,14 @@ PORTNAME=	queue-fix
 PORTVERSION=	1.4
 PORTREVISION=	2
 CATEGORIES=	mail
-MASTER_SITES=	http://www.netmeridian.com/e-huss/ \
-		GENTOO
+MASTER_SITES=	http://www.netmeridian.com/e-huss/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Repairs or generates a qmail queue structure
 WWW=		https://cr.yp.to/qmail.html
+
+DEPRECATED=	Upstream disapeared and distfile is no more available
+EXPIRATION_DATE=2025-01-27
 
 USES=		qmail:run
 
