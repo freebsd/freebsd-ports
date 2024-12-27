@@ -37,6 +37,7 @@ share/icons/hicolor/scalable/apps/xfce-mount.svg
 %%NLS%%share/locale/pl/LC_MESSAGES/xfce4-mount-plugin.mo
 %%NLS%%share/locale/pt/LC_MESSAGES/xfce4-mount-plugin.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/xfce4-mount-plugin.mo
+%%NLS%%share/locale/ro/LC_MESSAGES/xfce4-mount-plugin.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/xfce4-mount-plugin.mo
 %%NLS%%share/locale/sk/LC_MESSAGES/xfce4-mount-plugin.mo
 %%NLS%%share/locale/sq/LC_MESSAGES/xfce4-mount-plugin.mo
