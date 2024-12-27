@@ -1,8 +1,7 @@
 PORTNAME=	dillo
-PORTVERSION=	3.1.0
-PORTREVISION=	1
+DISTVERSION=	3.1.1
 CATEGORIES=	www
-MASTER_SITES=	https://github.com/dillo-browser/dillo/releases/download/v3.1.0/ \
+MASTER_SITES=	https://github.com/dillo-browser/dillo/releases/download/v${DISTVERSION}/ \
 		LOCAL/bf/dillo/ \
 		TEX/language/hyph-utf8/tex/generic/hyph-utf8/patterns/txt/:hyphen
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
@@ -20,7 +19,8 @@ LIB_DEPENDS=	libfltk.so:x11-toolkits/fltk \
 		libfontconfig.so:x11-fonts/fontconfig
 RUN_DEPENDS=	wget:ftp/wget
 
-USES=		cpe gmake iconv pkgconfig tar:bzip2 xorg
+USES=		cpe desktop-file-utils gmake iconv:wchar_t pkgconfig \
+		tar:bzip2 xorg
 USE_XORG=	x11 xcursor xext xfixes xft xinerama xrender
 
 GNU_CONFIGURE=	yes
@@ -96,10 +96,6 @@ post-patch:
 		${WRKSRC}/dillo-install-hyphenation \
 		${WRKSRC}/doc/dillo.1.in \
 		${WRKSRC}/dpid/dpid.c
-
-post-patch-DOCS-on:
-	@${REINPLACE_CMD} -e "\|install-data-am:|s|install-dist_docDATA||" \
-		${WRKSRC}/doc/Makefile.in
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/libexec/dillo/hyphenation
