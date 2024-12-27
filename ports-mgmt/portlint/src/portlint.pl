@@ -52,7 +52,7 @@ $portdir = '.';
 # version variables
 my $major = 2;
 my $minor = 22;
-my $micro = 3;
+my $micro = 4;
 
 # default setting - for FreeBSD
 my $portsdir = '/usr/ports';
@@ -2389,8 +2389,8 @@ xargs xmkmf
 	if ($whole =~ /^USE_GCC[?:]?=\s*([^\s#]*).*$/m) {
 		my $lineno = &linenumber($`);
 		my $gcc_val = $1;
-		if ($gcc_val eq 'any' || $gcc_val eq 'yes') {
-			# Just accept these two.
+		if ($gcc_val eq 'yes') {
+			# Just accept this one.
 		} elsif ($gcc_val !~ /\+/) {
 			&perror("WARN", $file, $lineno, "Setting a specific version for ".
 				"USE_GCC should only be done as a last resort.  Unless you ".
@@ -3133,7 +3133,7 @@ DIST_SUBDIR EXTRACT_ONLY
 	#
 	print "OK: checking second section of $file (PATCH*: optional).\n"
 		if ($verbose);
-	$tmp = $sections[$idx] // '';
+	$tmp = "\n" . $sections[$idx] // '';
 
 	if ($tmp =~ /(PATCH_SITES|PATCH_SITE_SUBDIR|PATCHFILES|PATCH_DIST_STRIP)/) {
 		&checkearlier($file, $tmp, @varnames);
@@ -3329,6 +3329,8 @@ NOT_FOR_ARCHS NOT_FOR_ARCHS_REASON(_\w+)? LEGAL_TEXT
 		$idx++;
 	}
 
+	$tmp = "\n" . $tmp;
+
 	foreach my $i (@linestocheck) {
 		$tmp =~ s/$i[?+:]?=[^\n]+\n//g;
 	}
@@ -3341,7 +3343,7 @@ NOT_FOR_ARCHS NOT_FOR_ARCHS_REASON(_\w+)? LEGAL_TEXT
 	#
 	print "OK: checking seventh section of $file (*_DEPENDS).\n"
 		if ($verbose);
-	$tmp = $sections[$idx] // '';
+	$tmp = "\n" . $sections[$idx] // '';
 
 	# Check for direct assignment of BUILD_DEPENDS to RUN_DEPENDS.
 	if ($tmp =~ /\nRUN_DEPENDS=[ \t]*\$\{BUILD_DEPENDS}/) {
@@ -3384,7 +3386,7 @@ TEST_DEPENDS FETCH_DEPENDS DEPENDS_TARGET
 	#
 	print "OK: check eighth section of $file (FLAVORS: optional).\n"
 		if ($verbose);
-	$tmp = $sections[$idx] // '';
+	$tmp = "\n" . $sections[$idx] // '';
 
 	if ($tmp =~ /(FLAVORS|FLAVOR)/) {
 		&checkearlier($file, $tmp, @varnames);
@@ -3451,7 +3453,7 @@ TEST_DEPENDS FETCH_DEPENDS DEPENDS_TARGET
 	# Makefile 10: check the rest of file
 	#
 	print "OK: checking the rest of the $file.\n" if ($verbose);
-	$tmp = join("\n\n", @sections[$idx .. scalar(@sections)-1]);
+	$tmp = join("\n\n", @sections[$idx+1 .. scalar(@sections)-1]);
 
 	$tmp = "\n" . $tmp;	# to make the begin-of-line check easier
 
