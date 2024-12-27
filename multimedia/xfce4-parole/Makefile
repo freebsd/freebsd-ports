@@ -1,13 +1,12 @@
 PORTNAME=	parole
-PORTVERSION=	4.18.1
-PORTREVISION=	2
+PORTVERSION=	4.18.2
 CATEGORIES=	multimedia xfce
 MASTER_SITES=	XFCE/apps
 DIST_SUBDIR=	xfce4
 
 MAINTAINER=	xfce@FreeBSD.org
 COMMENT=	Lightweight media player for Xfce4 based on GStreamer
-WWW=		https://docs.xfce.org/apps/parole/introduction
+WWW=		https://docs.xfce.org/apps/parole/start
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
@@ -21,7 +20,7 @@ RUN_DEPENDS=	xdg-screensaver:devel/xdg-utils
 
 USES=		compiler:c++11-lang desktop-file-utils gettext-tools \
 		gmake gnome gstreamer libtool pkgconfig tar:bzip2 xfce xorg
-USE_GNOME=	cairo gdkpixbuf2 gtk30 glib20 intltool
+USE_GNOME=	cairo gdkpixbuf2 gtk30 glib20
 USE_GSTREAMER=	core faad flac wavpack x
 USE_XFCE=	libmenu xfconf
 USE_XORG=	ice sm x11
@@ -35,20 +34,20 @@ CONFIGURE_ARGS=	--enable-notify-plugin \
 INSTALL_TARGET=	install-strip
 
 OPTIONS_DEFINE=		NLS
+OPTIONS_DEFAULT=	HTTP
 OPTIONS_GROUP=		GST_PLUG
 OPTIONS_GROUP_GST_PLUG=	CDDA HTTP
-OPTIONS_DEFAULT=	HTTP
 OPTIONS_SUB=		yes
+
+GST_PLUG_DESC=		Additional GStreamer plugins
+HTTP_DESC=		HTTP streaming (libsoup)
 
 CDDA_USE=		gstreamer=cdparanoia
 
-GST_PLUG_DESC=		Additional GStreamer plugins
-
-HTTP_DESC=		HTTP streaming (libsoup)
 HTTP_USE=		gstreamer=soup
 
-NLS_CONFIGURE_ENABLE=	nls
 NLS_USES=		gettext-runtime
+NLS_CONFIGURE_ENABLE=	nls
 
 post-patch:
 # Fix .rc files path

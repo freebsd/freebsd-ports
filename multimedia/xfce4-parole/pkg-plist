@@ -61,6 +61,7 @@ share/icons/hicolor/scalable/apps/org.xfce.parole.svg
 %%NLS%%share/locale/pl/LC_MESSAGES/parole.mo
 %%NLS%%share/locale/pt/LC_MESSAGES/parole.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/parole.mo
+%%NLS%%share/locale/ro/LC_MESSAGES/parole.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/parole.mo
 %%NLS%%share/locale/sk/LC_MESSAGES/parole.mo
 %%NLS%%share/locale/sl/LC_MESSAGES/parole.mo
