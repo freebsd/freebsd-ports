@@ -93,6 +93,7 @@
     SUBDIR += openjdk20
     SUBDIR += openjdk21
     SUBDIR += openjdk22
+    SUBDIR += openjdk23
     SUBDIR += openjdk8
     SUBDIR += openjdk8-jre
     SUBDIR += openjfx14
