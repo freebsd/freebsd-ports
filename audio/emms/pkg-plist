@@ -61,6 +61,8 @@
 %%EMACS_SITE_LISPDIR%%/emms/emms-librefm-stream.elc
 %%EMACS_SITE_LISPDIR%%/emms/emms-listenbrainz-scrobbler.el
 %%EMACS_SITE_LISPDIR%%/emms/emms-listenbrainz-scrobbler.elc
+%%EMACS_SITE_LISPDIR%%/emms/emms-lyrics-lrclib.el
+%%EMACS_SITE_LISPDIR%%/emms/emms-lyrics-lrclib.elc
 %%EMACS_SITE_LISPDIR%%/emms/emms-lyrics.el
 %%EMACS_SITE_LISPDIR%%/emms/emms-lyrics.elc
 %%EMACS_SITE_LISPDIR%%/emms/emms-maint.el
