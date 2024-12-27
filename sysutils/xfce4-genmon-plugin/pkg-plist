@@ -1,4 +1,17 @@
 lib/xfce4/panel/plugins/libgenmon.so
+share/xfce4/genmon/scripts/datetime
+share/xfce4/genmon/scripts/disktemp
+share/xfce4/genmon/scripts/dkspuse
+share/xfce4/genmon/scripts/gmail
+share/xfce4/genmon/scripts/googcal
+share/xfce4/genmon/scripts/migrate_to_xfconf.sh
+share/xfce4/genmon/scripts/monBandwidth
+share/xfce4/genmon/scripts/monBat
+share/xfce4/genmon/scripts/monCPU
+share/xfce4/genmon/scripts/monTime
+share/xfce4/genmon/scripts/monUSB
+share/xfce4/genmon/scripts/monWIFI
+share/xfce4/genmon/scripts/sysstat
 share/icons/hicolor/128x128/apps/org.xfce.genmon.png
 share/icons/hicolor/16x16/apps/org.xfce.genmon.png
 share/icons/hicolor/48x48/apps/org.xfce.genmon.png
@@ -44,6 +57,7 @@ share/icons/hicolor/scalable/apps/org.xfce.genmon.svg
 %%NLS%%share/locale/pl/LC_MESSAGES/xfce4-genmon-plugin.mo
 %%NLS%%share/locale/pt/LC_MESSAGES/xfce4-genmon-plugin.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/xfce4-genmon-plugin.mo
+%%NLS%%share/locale/ro/LC_MESSAGES/xfce4-genmon-plugin.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/xfce4-genmon-plugin.mo
 %%NLS%%share/locale/sk/LC_MESSAGES/xfce4-genmon-plugin.mo
 %%NLS%%share/locale/sl/LC_MESSAGES/xfce4-genmon-plugin.mo
