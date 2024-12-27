@@ -1,6 +1,5 @@
 PORTNAME=	xfce4-places-plugin
-PORTVERSION=	1.8.3
-PORTREVISION=	3
+PORTVERSION=	1.8.4
 CATEGORIES=	sysutils xfce
 MASTER_SITES=	XFCE/panel-plugins
 DIST_SUBDIR=	xfce4
@@ -17,7 +16,7 @@ LIB_DEPENDS=	libharfbuzz.so:print/harfbuzz \
 
 USES=		compiler:c11 gettext-tools gmake gnome libtool pkgconfig \
 		tar:bzip2 xfce xorg
-USE_GNOME=	cairo gdkpixbuf2 gtk30 intltool
+USE_GNOME=	cairo gdkpixbuf2 gtk30
 USE_XFCE=	libexo libmenu panel xfconf
 USE_XORG=	ice sm x11
 
