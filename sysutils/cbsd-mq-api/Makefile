@@ -1,12 +1,13 @@
 PORTNAME=	cbsd-mq-api
-PORTVERSION=	0.4
+DISTVERSION=	0.5
 CATEGORIES=	sysutils
 
-MAINTAINER=	olevole@olevole.ru
+MAINTAINER=	fbsd-ports@convectix.com
 COMMENT=	Simplified API for creating and destroying CBSD virtual environments
-WWW=		https://github.com/cbsd/cbsd-mq-api
+WWW=		https://github.com/cbsd/cbsd-mq-api/
 
 LICENSE=	BSD2CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		go
 USE_GITHUB=	yes
