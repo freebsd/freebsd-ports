@@ -7,8 +7,12 @@ MASTER_SITES=	GENTOO
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Kuo Chauo Chinese Fonts collection
 
-USES=		fonts
+DEPRECATED=	GENTOO MASTER_SITES are no longer available
+EXPIRATION_DATE=2025-01-27
+
 BUILD_DEPENDS=	bdftopcf:x11-fonts/bdftopcf
+
+USES=		fonts
 
 MAKE_ARGS=	CFONTDIR=${FONTSDIR} EFONTDIR=${FONTSDIR}
 MAKE_JOBS_UNSAFE=yes
