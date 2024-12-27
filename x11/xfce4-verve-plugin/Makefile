@@ -1,6 +1,5 @@
 PORTNAME=	verve-plugin
-PORTVERSION=	2.0.3
-PORTREVISION=	2
+PORTVERSION=	2.0.4
 CATEGORIES=	x11 xfce
 MASTER_SITES=	XFCE/panel-plugins
 PKGNAMEPREFIX=	xfce4-
@@ -9,7 +8,7 @@ DIST_SUBDIR=	xfce4
 
 MAINTAINER=	xfce@FreeBSD.org
 COMMENT=	Command line plugin for the Xfce Desktop
-WWW=		https://goodies.xfce.org/projects/panel-plugins/xfce4-verve-plugin
+WWW=		https://docs.xfce.org/panel-plugins/xfce4-verve-plugin/start
 
 LICENSE=	GPLv2
 
@@ -18,7 +17,7 @@ LIB_DEPENDS=	libharfbuzz.so:print/harfbuzz \
 
 USES=		compiler:c11 gettext-tools gmake gnome libtool pkgconfig \
 		tar:bzip2 xfce
-USE_GNOME=	atk cairo gdkpixbuf2 glib20 gtk30 intltool pango
+USE_GNOME=	atk cairo gdkpixbuf2 glib20 gtk30 pango
 USE_XFCE=	libmenu panel
 
 GNU_CONFIGURE=	yes
