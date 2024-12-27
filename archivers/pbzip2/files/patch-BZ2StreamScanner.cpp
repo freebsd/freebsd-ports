@@ -1,4 +1,4 @@
---- BZ2StreamScanner.cpp.orig	2024-11-03 23:01:39 UTC
+--- BZ2StreamScanner.cpp.orig	2015-12-17 23:32:49 UTC
 +++ BZ2StreamScanner.cpp
 @@ -49,8 +49,8 @@ int BZ2StreamScanner::init( int hInFile, size_t inBuff
  
@@ -36,7 +36,7 @@
 -				int cmpres = pHdr->compare( hsp, pHdr->size() - hsp,
 -						getInBuffSearchPtr() + hsp, pHdr->size() - hsp );
 +				bool cmpres = equal( pHdr->begin() + hsp, pHdr->begin() + pHdr->size() - hsp,
-+						getInBuffSearchPtr() );
++						getInBuffSearchPtr() + hsp );
  
 +
  				#ifdef PBZIP_DEBUG
