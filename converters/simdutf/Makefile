@@ -1,6 +1,6 @@
 PORTNAME=	simdutf
 DISTVERSIONPREFIX=	v
-DISTVERSION=	5.7.1
+DISTVERSION=	5.7.2
 CATEGORIES=	converters textproc
 
 MAINTAINER=	fuz@FreeBSD.org
@@ -15,6 +15,10 @@ LICENSE_FILE_MIT=	${WRKSRC}/LICENSE-MIT
 USES=		cmake:testing compiler:c++17-lang pathfix python:build,test
 USE_GITHUB=	yes
 USE_LDCONFIG=	yes
+
+# test suite fails on armv7 with -fno-strict-aliasing
+# see https://github.com/simdutf/simdutf/issues/581
+WITHOUT_NO_STRICT_ALIASING=	yes
 
 CMAKE_TESTING_ON=	SIMDUTF_TESTS
 
