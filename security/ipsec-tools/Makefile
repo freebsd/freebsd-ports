@@ -15,6 +15,9 @@ WWW=		https://ipsec-tools.sourceforge.net/
 
 LICENSE=	BSD3CLAUSE
 
+DEPRECATED=	Deprecated by upstream in 2014, contains security issues
+EXPIRATION_DATE=2025-01-31
+
 USES=		cpe libtool tar:bzip2 ssl
 
 CONFLICTS=	racoon
