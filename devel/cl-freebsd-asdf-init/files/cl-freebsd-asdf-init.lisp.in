@@ -136,10 +136,34 @@ modify that in order to add other directories.")
 
 ;; Set up output translations
 
-;; If we are building a port, redirect fasl files to WRKSRC.
-(if (and (uiop:getenv "FBSD_ASDF_COMPILE_PORT")
-         (uiop:getenv "PORTNAME")
-         (uiop:getenv "WRKSRC"))
+(let* ((freebsd-translations '(:ignore-inherited-configuration)))
+  ;; Create translations to point source to fasl.
+  (dolist (path (directory "%%PREFIX%%/lib/common-lisp/*/"))
+    (let* ((base-dir (pathname-directory path))
+           (source (make-pathname
+                    :directory (append base-dir (list :wild-inferiors))
+                    :name :wild
+                    :type :wild))
+           (ctarget (make-pathname
+                     :directory (append
+                                 base-dir
+                                 (list (lisp-specific-fasl-subdir)))))
+           (target (make-pathname
+                    :directory (append base-dir
+                                       (list (lisp-specific-fasl-subdir)
+                                             :wild-inferiors))
+                    :name :wild
+                    :type :wild)))
+      ;; Only create translation when source is not system registry and
+      ;; ctarget exists.
+      (when (and
+             (not (string= *system-registry* (namestring path)))
+             (uiop:directory-exists-p ctarget))
+        (pushnew (list source target) freebsd-translations))))
+  ;; When building a port, redirect fasl files to WRKSRC.
+  (when (and (uiop:getenv "FBSD_ASDF_COMPILE_PORT")
+             (uiop:getenv "PORTNAME")
+             (uiop:getenv "WRKSRC"))
     (let* ((wrksrc (uiop:getenv "WRKSRC"))
            (portname (uiop:getenv "PORTNAME"))
            (source (make-pathname
@@ -149,36 +173,9 @@ modify that in order to add other directories.")
                             (list portname :wild-inferiors))))
            (target (make-pathname
                     :directory (append (pathname-directory wrksrc)
-                                       (list :wild-inferiors))))
-           (ports-translations '(:ignore-inherited-configuration)))
-      (pushnew (list source target) ports-translations)
-      (asdf:initialize-output-translations
-       (cons :output-translations ports-translations)))
-  ;; On target systems, set up translations to point to installed fasl.
-  (let ((freebsd-translations '(:ignore-inherited-configuration)))
-    (dolist (path (directory "%%PREFIX%%/lib/common-lisp/*/"))
-      (let* ((base-dir (pathname-directory path))
-             (source (make-pathname
-                      :directory (append base-dir (list :wild-inferiors))
-                      :name :wild
-                      :type :wild))
-             (ctarget (make-pathname
-                       :directory (append
-                                   base-dir
-                                   (list (lisp-specific-fasl-subdir)))))
-             (target (make-pathname
-                      :directory (append base-dir
-                                         (list (lisp-specific-fasl-subdir)
-                                               :wild-inferiors))
-                      :name :wild
-                      :type :wild)))
-        ;; Only create translation when source is not system registry and
-        ;; ctarget exists.
-        (when (and
-               (not (string= *system-registry* (namestring path)))
-               (uiop:directory-exists-p ctarget))
-          (pushnew (list source target) freebsd-translations))))
-    (asdf:initialize-output-translations
-     (cons :output-translations freebsd-translations))))
+                                       (list :wild-inferiors)))))
+      (pushnew (list source target) freebsd-translations)))
+  (asdf:initialize-output-translations
+   (cons :output-translations freebsd-translations)))
 
 ;;;; asdf-init.lisp ends here
