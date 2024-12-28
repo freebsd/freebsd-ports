@@ -8,6 +8,9 @@ MASTER_SITES=	LOCAL/ahze
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	UCB's MPEG-I video stream encoder
 
+DEPRECATED=	Upstream is dead and it's buggy, consider using multimedia/ffmpeg
+EXPIRATION_DATE=2025-01-31
+
 OPTIONS_DEFINE=	DOCS
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
