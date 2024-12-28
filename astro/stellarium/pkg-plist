@@ -1266,7 +1266,6 @@ share/mime/packages/stellarium.xml
 %%DATADIR%%/nebulae/default/m98.png
 %%DATADIR%%/nebulae/default/m99.png
 %%DATADIR%%/nebulae/default/n1023.png
-%%DATADIR%%/nebulae/default/n104.png
 %%DATADIR%%/nebulae/default/n1042.png
 %%DATADIR%%/nebulae/default/n1055.png
 %%DATADIR%%/nebulae/default/n1097.png
@@ -4298,7 +4297,7 @@ share/mime/packages/stellarium.xml
 %%SCRIPTS%%%%DATADIR%%/webroot/js/api/viewcontrol.js
 %%SCRIPTS%%%%DATADIR%%/webroot/js/api/viewoptions.js
 %%SCRIPTS%%%%DATADIR%%/webroot/js/globalize.js
-%%SCRIPTS%%%%DATADIR%%/webroot/js/jquery-3.6.0.js
+%%SCRIPTS%%%%DATADIR%%/webroot/js/jquery-3.7.1.js
 %%SCRIPTS%%%%DATADIR%%/webroot/js/jquery-ui.js
 %%SCRIPTS%%%%DATADIR%%/webroot/js/jquery.ui.touch-punch.js
 %%SCRIPTS%%%%DATADIR%%/webroot/js/main.js
