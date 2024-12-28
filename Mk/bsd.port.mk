@@ -357,12 +357,6 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 ##
 # LDFLAGS_${ARCH} Append the ldflags to LDFLAGS only on the specified architecture
 ##
-# USE_OPENLDAP	- If set, this port uses the OpenLDAP libraries.
-#				  Implies: WANT_OPENLDAP_VER?=24
-# WANT_OPENLDAP_VER
-#				- Legal values are: 24
-#				  If set to an unknown value, the port is marked BROKEN.
-##
 # USE_JAVA		- If set, this port relies on the Java language.
 #				  Implies inclusion of bsd.java.mk.  (Also see
 #				  that file for more information on USE_JAVA_*).
@@ -384,9 +378,6 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  program).
 #				  Implies NO_LICENSES_INSTALL=yes, NO_MTREE=yes, and causes
 #				  Linux ldconfig to be used when USE_LDCONFIG is defined.
-##
-# USE_TEX			- A list of the TeX dependencies the port has.
-#
 ##
 # USE_RC_SUBR	- If set, the ports startup/shutdown script uses the common
 #				  routines found in /etc/rc.subr.
