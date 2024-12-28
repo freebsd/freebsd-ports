@@ -1,5 +1,5 @@
 PORTNAME=	alpaca
-DISTVERSION=	2.9.0
+DISTVERSION=	3.1.0
 CATEGORIES=	misc
 
 MAINTAINER=	nivit@FreeBSD.org
@@ -13,7 +13,9 @@ LIB_DEPENDS=	libappstream.so:devel/appstream \
 		libgtksourceview-5.so:x11-toolkits/gtksourceview5
 RUN_DEPENDS=	${PY_PILLOW} \
 		${PYTHON_PKGNAMEPREFIX}html2text>=2.2.3:textproc/py-html2text@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}odfpy>=1.4.1:devel/py-odfpy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pydbus>=0.6.0:devel/py-pydbus@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pyicu>=2.13.1:devel/py-pyicu@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pypdf>=4.3.1:print/py-pypdf@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytube>=15.0.0:multimedia/py-pytube@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>=2.32.3:www/py-requests@${PY_FLAVOR} \
