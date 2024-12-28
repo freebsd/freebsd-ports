@@ -1,8 +1,8 @@
 PORTNAME=	prowlarr
-DISTVERSION=	1.26.1.4844
+DISTVERSION=	1.28.2.4885
 CATEGORIES=	net-p2p
 MASTER_SITES=	https://github.com/Prowlarr/Prowlarr/releases/download/v${PORTVERSION}/
-DISTNAME=	Prowlarr.master.${PORTVERSION}.freebsd-core-x64
+DISTNAME=	Prowlarr.master.${DISTVERSION}.freebsd-core-x64
 
 MAINTAINER=	michiel@vanbaak.eu
 COMMENT=	Indexer Manager for Usenet and BitTorrent users
