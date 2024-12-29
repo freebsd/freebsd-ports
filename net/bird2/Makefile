@@ -74,7 +74,7 @@ netlink_PKGNAMESUFFIX=	2-netlink
 rtsock_PKGNAMESUFFIX=	2
 .endif
 
-.if ${OPSYS} == FreeBSD && ( ${OSVERSION} < 1303502 || ( ${OSVERSION} >= 1500000 && ${OSVERSION} < 1500017 ))
+.if ${OPSYS} == FreeBSD && (${OSVERSION} >= 1500000 && ${OSVERSION} < 1500017)
 EXTRA_PATCHES=	${PATCHDIR}/extra-patch-netlink-route
 .endif
 

@@ -412,10 +412,6 @@ UTMP_CONFIGURE_WITH=		utmp
 ##############################################################################
 .include <bsd.port.options.mk>
 ##############################################################################
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1300076
-IGNORE=runs only on FreeBSD 13.1 and above due use of O_EMPTY_PATH
-.endif
-
 .if !${PORT_OPTIONS:MADS} && ${PORT_OPTIONS:MAD_DC}
 IGNORE=To disable ADS option you also need to disable AD_DC option
 .endif

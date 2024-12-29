@@ -140,8 +140,7 @@ post-extract:
 	${CP} -R ${WRKDIR}/imhex-bastion-pats-${GL_TAG_IMHEX_BASTION_PATS}/* ${WRKDIR}/.build/_deps/imhex_patterns_src/patterns/bastion
 	${CP} -R ${WRKDIR}/imhex-ffx-pats-${GL_TAG_IMHEX_FFX_PATS}/* ${WRKDIR}/.build/_deps/imhex_patterns_src/patterns/ffx
 # Before LLVM 18 import into the base system
-.if ((${OSREL:R} == 15 && ${OSVERSION} < 1500018) \
-    || (${OSREL:R} == 13 && ${OSVERSION} < 1303503))
+.if ${OSREL:R} == 15 && ${OSVERSION} < 1500018
 	${CP} -R ${WRKSRC_jthread}/* ${WRKSRC}/lib/third_party/jthread
 .endif
 
