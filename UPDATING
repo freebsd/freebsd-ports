@@ -5,6 +5,19 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20241230:
+  AFFECTS: users of net/xrdp-devel
+  AUTHOR: meta@FreeBSD.org
+
+  The port has been updated to the latest development snapshot.
+
+  The directory for the config files has also changed from
+  PREFIX/etc/xrdp to PREFIX/etc/xrdp-devel to prevent incompatible config
+  files for net/xrdp and net/xrdp-devel from getting mixed up.
+
+  When updating net/xrdp-devel from old verisons, move the config files to
+  the new directory.
+
 20241224:
   AFFECTS: users of net/xrdp
   AUTHOR: meta@FreeBSD.org
