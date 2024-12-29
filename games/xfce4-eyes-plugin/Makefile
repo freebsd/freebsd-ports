@@ -9,8 +9,6 @@ WWW=		https://docs.xfce.org/panel-plugins/xfce4-eyes-plugin
 
 LICENSE=	GPLv2
 
-#LIB_DEPENDS=	libharfbuzz.so:print/harfbuzz
-
 USES=		gettext-tools gmake gnome libtool pkgconfig tar:bzip2 xfce xorg
 USE_GNOME=	cairo gtk30
 USE_XFCE=	libmenu panel
