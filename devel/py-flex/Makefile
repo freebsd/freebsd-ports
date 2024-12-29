@@ -1,8 +1,7 @@
 PORTNAME=	flex
-DISTVERSION=	6.14.0
-PORTREVISION=	1
+DISTVERSIONPREFIX=	v
+DISTVERSION=	6.14.1
 CATEGORIES=	devel python
-MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	kai@FreeBSD.org
@@ -20,9 +19,21 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}click>=3.3:devel/py-click@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}strict-rfc3339>=0.7:devel/py-strict-rfc3339@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}validate_email>=1.2:mail/py-validate_email@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyyaml>=3.11:devel/py-pyyaml@${PY_FLAVOR}
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}factory-boy>=2.4.1:devel/py-factory-boy@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pytest-httpbin>=0.0.3:devel/py-pytest-httpbin@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}responses>=0.5.1:devel/py-responses@${PY_FLAVOR}
 
 USES=		python
-USE_PYTHON=	distutils concurrent autoplist
+USE_GITHUB=	yes
+GH_ACCOUNT=	pipermerriam
+USE_PYTHON=	autoplist concurrent distutils pytest
+# See following links for more details:
+# https://github.com/pipermerriam/flex/issues/234
+# https://github.com/pipermerriam/flex/pull/236
+PYTEST_BROKEN_TESTS=	test_request_parameter_array_extraction[tsv-1\t2\t3] \
+			test_werkzeug
+
+TEST_ENV=	PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 
 NO_ARCH=	yes
 
