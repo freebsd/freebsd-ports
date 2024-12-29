@@ -1,6 +1,5 @@
 PORTNAME=	xfce4-xkb-plugin
-PORTVERSION=	0.8.3
-PORTREVISION=	3
+PORTVERSION=	0.8.4
 CATEGORIES=	deskutils xfce
 MASTER_SITES=	XFCE/panel-plugins
 
@@ -15,7 +14,7 @@ LIB_DEPENDS=	libxklavier.so:x11/libxklavier \
 
 USES=		compiler:c11 gettext-tools gmake gnome libtool pkgconfig \
 		tar:bzip2 xfce xorg
-USE_GNOME=	cairo gtk30 intltool librsvg2 libwnck3
+USE_GNOME=	cairo gtk30 librsvg2 libwnck3
 USE_XFCE=	garcon libmenu panel xfconf
 USE_XORG=	x11
 
