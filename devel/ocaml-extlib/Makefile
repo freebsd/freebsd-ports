@@ -5,7 +5,7 @@ CATEGORIES=	devel
 MASTER_SITES=	https://github.com/ygrek/ocaml-extlib/releases/download/${DISTVERSION}/
 PKGNAMEPREFIX=	ocaml-
 
-MAINTAINER=	eduardo@FreeBSD.org
+MAINTAINER=	freebsd@dev.thsi.be
 COMMENT=	Complete - yet small - standard library for OCaml
 WWW=		https://github.com/ygrek/ocaml-extlib
 

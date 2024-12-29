@@ -5,7 +5,7 @@ PORTREVISION=	3
 CATEGORIES=	devel
 PKGNAMEPREFIX=	ocaml-
 
-MAINTAINER=	eduardo@FreeBSD.org
+MAINTAINER=	freebsd@dev.thsi.be
 COMMENT=	C-style preprocessor for OCaml
 WWW=		https://github.com/ocaml-community/cppo
 

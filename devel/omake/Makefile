@@ -4,7 +4,7 @@ PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://download.camlcity.org/download/
 
-MAINTAINER=	eduardo@FreeBSD.org
+MAINTAINER=	freebsd@dev.thsi.be
 COMMENT=	Flexible build system
 WWW=		http://projects.camlcity.org/projects/omake.html
 
