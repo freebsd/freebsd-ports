@@ -1,7 +1,6 @@
-@owner %%KANBOARD_USERNAME%%
-@group %%KANBOARD_GROUPNAME%%
 %%WWWDIR%%/.devcontainer/devcontainer.json
 %%WWWDIR%%/.htaccess
+%%WWWDIR%%/ChangeLog
 %%WWWDIR%%/LICENSE
 %%WWWDIR%%/app/.htaccess
 %%WWWDIR%%/app/Action/Base.php
@@ -1118,6 +1117,21 @@
 %%WWWDIR%%/libs/SimpleValidator/Validators/Timezone.php
 %%WWWDIR%%/libs/SimpleValidator/Validators/URL.php
 %%WWWDIR%%/libs/SimpleValidator/Validators/Unique.php
+%%WWWDIR%%/libs/erusev/parsedown/LICENSE.txt
+%%WWWDIR%%/libs/erusev/parsedown/Parsedown.php
+%%WWWDIR%%/libs/event-dispatcher/Attribute/AsEventListener.php
+%%WWWDIR%%/libs/event-dispatcher/CHANGELOG.md
+%%WWWDIR%%/libs/event-dispatcher/Debug/TraceableEventDispatcher.php
+%%WWWDIR%%/libs/event-dispatcher/Debug/WrappedListener.php
+%%WWWDIR%%/libs/event-dispatcher/DependencyInjection/AddEventAliasesPass.php
+%%WWWDIR%%/libs/event-dispatcher/DependencyInjection/RegisterListenersPass.php
+%%WWWDIR%%/libs/event-dispatcher/EventDispatcher.php
+%%WWWDIR%%/libs/event-dispatcher/EventDispatcherInterface.php
+%%WWWDIR%%/libs/event-dispatcher/EventSubscriberInterface.php
+%%WWWDIR%%/libs/event-dispatcher/GenericEvent.php
+%%WWWDIR%%/libs/event-dispatcher/ImmutableEventDispatcher.php
+%%WWWDIR%%/libs/event-dispatcher/LICENSE
+%%WWWDIR%%/libs/event-dispatcher/LegacyEventDispatcherProxy.php
 %%WWWDIR%%/libs/ical/Component.php
 %%WWWDIR%%/libs/ical/Component/Alarm.php
 %%WWWDIR%%/libs/ical/Component/Calendar.php
@@ -1824,8 +1838,6 @@
 %%WWWDIR%%/vendor/composer/installed.json
 %%WWWDIR%%/vendor/composer/installed.php
 %%WWWDIR%%/vendor/composer/platform_check.php
-%%WWWDIR%%/vendor/erusev/parsedown/LICENSE.txt
-%%WWWDIR%%/vendor/erusev/parsedown/Parsedown.php
 %%WWWDIR%%/vendor/pimple/pimple/.php_cs.dist
 %%WWWDIR%%/vendor/pimple/pimple/CHANGELOG
 %%WWWDIR%%/vendor/pimple/pimple/LICENSE
@@ -1986,19 +1998,6 @@
 %%WWWDIR%%/vendor/symfony/event-dispatcher-contracts/Event.php
 %%WWWDIR%%/vendor/symfony/event-dispatcher-contracts/EventDispatcherInterface.php
 %%WWWDIR%%/vendor/symfony/event-dispatcher-contracts/LICENSE
-%%WWWDIR%%/vendor/symfony/event-dispatcher/Attribute/AsEventListener.php
-%%WWWDIR%%/vendor/symfony/event-dispatcher/CHANGELOG.md
-%%WWWDIR%%/vendor/symfony/event-dispatcher/Debug/TraceableEventDispatcher.php
-%%WWWDIR%%/vendor/symfony/event-dispatcher/Debug/WrappedListener.php
-%%WWWDIR%%/vendor/symfony/event-dispatcher/DependencyInjection/AddEventAliasesPass.php
-%%WWWDIR%%/vendor/symfony/event-dispatcher/DependencyInjection/RegisterListenersPass.php
-%%WWWDIR%%/vendor/symfony/event-dispatcher/EventDispatcher.php
-%%WWWDIR%%/vendor/symfony/event-dispatcher/EventDispatcherInterface.php
-%%WWWDIR%%/vendor/symfony/event-dispatcher/EventSubscriberInterface.php
-%%WWWDIR%%/vendor/symfony/event-dispatcher/GenericEvent.php
-%%WWWDIR%%/vendor/symfony/event-dispatcher/ImmutableEventDispatcher.php
-%%WWWDIR%%/vendor/symfony/event-dispatcher/LICENSE
-%%WWWDIR%%/vendor/symfony/event-dispatcher/LegacyEventDispatcherProxy.php
 %%WWWDIR%%/vendor/symfony/finder/CHANGELOG.md
 %%WWWDIR%%/vendor/symfony/finder/Comparator/Comparator.php
 %%WWWDIR%%/vendor/symfony/finder/Comparator/DateComparator.php
@@ -2094,5 +2093,3 @@
 %%WWWDIR%%/vendor/symfony/string/UnicodeString.php
 %%WWWDIR%%/web.config
 @dir %%WWWDIR%%/plugins
-@owner
-@group
