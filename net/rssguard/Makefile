@@ -1,5 +1,5 @@
 PORTNAME=	rssguard
-PORTVERSION=	4.7.4		# don't forget to update APP_REVISION below
+PORTVERSION=	4.8.1		# don't forget to update APP_REVISION below
 CATEGORIES=	net www
 
 MAINTAINER=	danfe@FreeBSD.org
@@ -15,7 +15,7 @@ USE_QT=		buildtools:build linguisttools:build qmake:build \
 USE_GITHUB=	yes
 GH_ACCOUNT=	martinrotter
 
-CMAKE_ARGS=	-DAPP_REVISION:STRING=68c3227
+CMAKE_ARGS=	-DAPP_REVISION:STRING=3dde406
 CMAKE_ON=	NO_UPDATE_CHECK ENABLE_COMPRESSED_SITEMAP
 CMAKE_OFF=	BUILD_WITH_QT6 REVISION_FROM_GIT
 
