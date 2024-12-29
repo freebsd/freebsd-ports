@@ -3758,3 +3758,5 @@ textproc/mdocml|textproc/mandoc|2024-12-17|Upstream reanamed
 www/shellinabox|sysutils/ttyd|2024-12-24|Has expired: Abandonware and outdated, last release in 2016. Use sysutils/ttyd instead
 audio/spiralsynth|audio/spiralsynthmodular|2024-12-24|Has expired: SpiralSynth isn't being supported any more, use audio/spiralsynthmodular
 textproc/apache-solr8|textproc/apache-solr|2024-12-24|Has expired: Deprecated upstream 2024-10-25, upgrade to version 9 in textproc/apache-solr instead
+editors/ghostwriter@qt5|editors/ghostwriter|2024-12-29|Flavors removed, now supports only qt6
+editors/ghostwriter@qt6|editors/ghostwriter|2024-12-29|Flavors removed, now supports only qt6

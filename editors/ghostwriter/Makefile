@@ -1,5 +1,5 @@
 PORTNAME=	ghostwriter
-DISTVERSION=	24.02.2
+DISTVERSION=	24.12.0
 CATEGORIES=	editors kde
 
 MAINTAINER=	madpilot@FreeBSD.org
@@ -11,31 +11,16 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libhunspell-1.7.so:textproc/hunspell
 
-FLAVORS=	qt5 qt6
-FLAVOR?=	qt5
-qt5_PKGNAMESUFFIX=
-qt6_PKGNAMESUFFIX=	-qt6
-qt5_CONFLICTS_INSTALL=	${PORTNAME}-qt6
-qt6_CONFLICTS_INSTALL=	${PORTNAME}
-
-USES=		cmake compiler:c++11-lang desktop-file-utils pkgconfig
+USES=		cmake compiler:c++11-lang desktop-file-utils pkgconfig kde:6 qt:6
 USE_KDE=	configwidgets coreaddons doctools ecm:build sonnet widgetsaddons xmlgui
+KDE_INVENT=	86e8255e5b571d949826f61bd1da24f241496b01 office
+USE_QT=		base svg tools:build webchannel webengine
 
-.if ${FLAVOR} == qt5
-USES+=		kde:5 qt:5
-USE_QT=		buildtools:build core gui linguisttools:build qmake:build \
-		webchannel webengine widgets
-.else
 CMAKE_ARGS=	-DBUILD_WITH_QT6=ON \
 		-DQT_MAJOR_VERSION=6
-USES+=		kde:6 qt:6
-USE_QT=		5compat base svg tools:build webchannel webengine
-.endif
 
 # cf. PR 224488
 LDFLAGS+=	-Wl,--as-needed
-
-KDE_INVENT=	bb8b9454e5344a0aa20803881816211834dec31b office
 
 OPTIONS_DEFINE=		CMARK PANDOC
 OPTIONS_DEFAULT=	CMARK PANDOC
