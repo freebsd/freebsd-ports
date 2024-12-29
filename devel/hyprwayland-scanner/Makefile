@@ -1,6 +1,6 @@
 PORTNAME=	hyprwayland-scanner
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.4.2
+DISTVERSION=	0.4.4
 CATEGORIES=	devel
 
 MAINTAINER=	jbeich@FreeBSD.org
