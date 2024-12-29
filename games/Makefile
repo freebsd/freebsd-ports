@@ -1088,6 +1088,7 @@
     SUBDIR += xdino
     SUBDIR += xemeraldia
     SUBDIR += xeyesplus
+    SUBDIR += xfce4-eyes-plugin
     SUBDIR += xfireworks
     SUBDIR += xfrisk
     SUBDIR += xgalaga
