@@ -18,7 +18,7 @@ LIB_DEPENDS=	libcfitsio.so:astro/cfitsio \
 		libtheora.so:multimedia/libtheora \
 		libogg.so:audio/libogg \
 		libev.so:devel/libev \
-		libxisf.so:graphics/libxisf
+		libXISF.so:graphics/libxisf
 
 USES=		cmake jpeg iconv ninja pkgconfig
 USE_GITHUB=	yes
