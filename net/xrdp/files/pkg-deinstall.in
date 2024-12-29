@@ -12,8 +12,8 @@ case $2 in
         ;;
     POST-DEINSTALL)
         RSAKEYS=%%ETCDIR%%/rsakeys.ini
-        PRIVATEKEY=%%ETCDIR%%/xrdp/key.pem
-        CERTIFICATE=%%ETCDIR%%/xrdp/cert.pem
+        PRIVATEKEY=%%ETCDIR%%/key.pem
+        CERTIFICATE=%%ETCDIR%%/cert.pem
 
         # if keys are generated during post-install script, remove it
         # but do not remove user's keys

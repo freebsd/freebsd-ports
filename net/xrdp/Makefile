@@ -1,6 +1,6 @@
 PORTNAME=	xrdp
 DISTVERSION=	0.10.2
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	net
 MASTER_SITES=	https://github.com/neutribolabs/${PORTNAME}/releases/download/v${DISTVERSION}/
