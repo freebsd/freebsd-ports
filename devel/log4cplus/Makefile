@@ -1,5 +1,5 @@
 PORTNAME=	log4cplus
-DISTVERSION=	2.1.1
+DISTVERSION=	2.1.2
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/REL_${DISTVERSION:S:.:_:g}/
 
