@@ -25,7 +25,8 @@ command_args="-P $pidfile -u $minidlna_uid -f %%PREFIX%%/etc/minidlna.conf"
 start_precmd="install -d -o $minidlna_uid ${pidfile%/*} /var/db/minidlna"
 stop_postcmd="rm -f $pidfile"
 
-extra_commands=rescan
-rescan_cmd="$command -R -u $minidlna_uid -f %%PREFIX%%/etc/minidlna.conf"
+extra_commands="rescan rebuild"
+rescan_cmd="$command -r -u $minidlna_uid -f %%PREFIX%%/etc/minidlna.conf"
+rebuild_cmd="$command -R -u $minidlna_uid -f %%PREFIX%%/etc/minidlna.conf"
 
 run_rc_command $1
