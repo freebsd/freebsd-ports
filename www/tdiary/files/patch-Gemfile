@@ -1,6 +1,6 @@
 --- Gemfile.orig	2024-02-29 06:16:41 UTC
 +++ Gemfile
-@@ -7,34 +7,3 @@ gem 'rake'
+@@ -7,34 +7,4 @@ gem 'rake'
  gem 'emot'
  gem 'mail'
  gem 'rake'
@@ -35,3 +35,4 @@
 -  puts "Loading Gemfile.local ..." if $DEBUG # `ruby -d` or `bundle -v`
 -  instance_eval File.read(local_gemfile)
 -end
++gem 'base64'
