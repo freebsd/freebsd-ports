@@ -1,5 +1,4 @@
-PORTREVISION=	0
-PKGNAMESUFFIX=	23-traymonitor
+PORTREVISION=	1
 
 COMMENT=	Backup archiving recovery open sourced (traymonitor)
 
@@ -19,13 +18,13 @@ qt5_CONFLICTS=		bareos-traymonitor-qt6
 qt6_CONFLICTS=		bareos-traymonitor-qt5
 
 .if ${FLAVOR} == qt6
-PKGNAMESUFFIX=	-traymonitor-qt6
+PKGNAMESUFFIX=	23-traymonitor-qt6
 
 USES+=		qt:6
 USE_QT=		base:run declarative:build tools:build
 CMAKE_ARGS+=	-Dbat-qt6=yes
 .else
-PKGNAMESUFFIX=	-traymonitor-qt5
+PKGNAMESUFFIX=	23-traymonitor-qt5
 
 LIB_DEPENDS+=	libqwt5-qt5.so:x11-toolkits/qwt5-qt5
 USES+=		qt:5
