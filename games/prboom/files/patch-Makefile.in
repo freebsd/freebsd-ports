@@ -1,6 +1,6 @@
---- Makefile.in.orig	2008-11-09 14:22:16.000000000 -0500
-+++ Makefile.in	2008-11-18 18:16:54.000000000 -0500
-@@ -258,22 +258,8 @@
+--- Makefile.in.orig	2008-11-09 19:22:16 UTC
++++ Makefile.in
+@@ -258,22 +258,8 @@ install-docDATA: $(doc_DATA)
  prboom.spec: $(top_builddir)/config.status $(srcdir)/prboom.spec.in
  	cd $(top_builddir) && $(SHELL) ./config.status $@
  install-docDATA: $(doc_DATA)

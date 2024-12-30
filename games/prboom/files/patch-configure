@@ -1,7 +1,7 @@
---- configure.orig	Sun Nov 19 12:45:22 2006
-+++ configure	Fri Oct 12 14:02:43 2007
-@@ -1913,9 +1913,9 @@
-   DOOMWADDIR="$withval"
+--- configure.orig	2008-11-09 19:22:17 UTC
++++ configure
+@@ -2422,9 +2422,9 @@ else
+   withval=$with_waddir; DOOMWADDIR="$withval"
  else
    if test "x$prefix" != xNONE; then
 -  DOOMWADDIR="$prefix/share/games/doom"
@@ -11,4 +11,4 @@
 +  DOOMWADDIR="$ac_default_prefix/share/doom"
  fi
  
- fi;
+ fi

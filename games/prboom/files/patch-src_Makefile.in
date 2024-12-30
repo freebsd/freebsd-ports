@@ -1,6 +1,6 @@
---- src/Makefile.in.orig	Sun Nov 19 12:45:21 2006
-+++ src/Makefile.in	Fri Oct 12 14:12:30 2007
-@@ -37,7 +37,7 @@
+--- src/Makefile.in.orig	2008-11-09 19:22:16 UTC
++++ src/Makefile.in
+@@ -31,7 +31,7 @@ INSTALL_HEADER = $(INSTALL_DATA)
  install_sh_PROGRAM = $(install_sh) -c
  install_sh_SCRIPT = $(install_sh) -c
  INSTALL_HEADER = $(INSTALL_DATA)
@@ -9,9 +9,9 @@
  NORMAL_INSTALL = :
  PRE_INSTALL = :
  POST_INSTALL = :
-@@ -248,7 +248,7 @@
- target_os = @target_os@
- target_vendor = @target_vendor@
+@@ -246,7 +246,7 @@ SUBDIRS = SDL POSIX MAC
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
  SUBDIRS = SDL POSIX MAC
 -gamesdir = $(prefix)/games
 +gamesdir = $(prefix)/bin

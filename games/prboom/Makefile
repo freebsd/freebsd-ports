@@ -1,6 +1,6 @@
 PORTNAME=	prboom
-PORTVERSION=	2.5.0
-PORTREVISION=	14
+DISTVERSION=	2.5.0
+PORTREVISION=	15
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}%20stable/${PORTVERSION}
 
@@ -10,29 +10,28 @@ WWW=		https://prboom.sourceforge.net/
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libsmpeg.so:multimedia/smpeg \
-		libpng.so:graphics/png
+DEPRECATED=	Unmaintained, use games/prboom-plus instead
+EXPIRATION_DATE=	2025-01-30
 
-USES=		gmake sdl
+LIB_DEPENDS=	libpng.so:graphics/png
+
+USES=		gmake localbase:ldflags sdl
 USE_GL=		gl
 USE_SDL=	mixer net sdl
 
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--disable-i386-asm
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+
+DATADIR=	${LOCALBASE}/share/doom
+SUB_FILES=	pkg-message
+
+PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
 OPTIONS_DEFINE=	OPENGL
 OPTIONS_DEFAULT=	OPENGL
 
-DATADIR=	${LOCALBASE}/share/doom
-PLIST_SUB=	PORTVERSION=${PORTVERSION}
-
-SUB_FILES=	pkg-message
-
-OPENGL_CONFIGURE_ENABLE=	gl
 OPENGL_USES=	gl
 OPENGL_USE=	GL=glu
+OPENGL_CONFIGURE_ENABLE=	gl
 
 .include <bsd.port.mk>
