@@ -13,6 +13,9 @@ LICENSE_NAME=	Royalty-Free PowerChute Network Shutdown (PCNS)
 LICENSE_FILE=	${WRKSRC}/group1/EULA/PCNS_EULA_English.txt
 LICENSE_PERMS=	none
 
+DEPRECATED=	not supported upstream
+EXPIRATION_DATE=	2025-01-31
+
 USE_JAVA=	11+
 USE_RC_SUBR=	pcns
 
