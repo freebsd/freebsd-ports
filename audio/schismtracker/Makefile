@@ -1,5 +1,5 @@
 PORTNAME=	schismtracker
-DISTVERSION=	20241021
+DISTVERSION=	20241226
 CATEGORIES=	audio
 
 MAINTAINER=	ehaupt@FreeBSD.org
@@ -28,7 +28,7 @@ PLIST_FILES=	bin/schismtracker \
 		share/pixmaps/schism-itf-icon-128.png
 
 post-patch:
-	@${REINPLACE_CMD} -e "s|%%LAST_GIT_COMMIT%%|${DISTVERSION:C/([0-9]{4})([0-9]{2})([0-9]{2})/\1-\2-\3/}|" \
+	@${REINPLACE_CMD} -e "s|%%LAST_GIT_COMMIT%%|${DISTVERSION}|" \
 		${WRKSRC}/configure.ac
 
 post-install:
