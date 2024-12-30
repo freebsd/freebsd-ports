@@ -1,5 +1,5 @@
 PORTNAME?=	fetchmail
-DISTVERSION=	6.5.1
+DISTVERSION=	6.5.2
 PORTREVISION?=	0
 CATEGORIES=	mail
 # The next line is inherited by the fetchmailconf dependent port,
@@ -13,7 +13,7 @@ WWW=		https://www.fetchmail.info/
 LICENSE=	GPLv2+
 
 .if empty(MASTERDIR)
-USES=		cpe gmake tar:xz
+USES=		cpe gmake pkgconfig tar:xz
 IGNORE_SSL=	libressl libressl-devel
 IGNORE_SSL_REASON=	incompatible license/no GPLv2 clause 2b exception for LibreSSL
 # The Free Software Foundation asserts that a GPL v2 clause 2b exception is
@@ -51,10 +51,8 @@ OPTIONS_SINGLE_TLS=	OPENSSL WOLFSSL
 
 OPTIONS_SUB=	yes
 
-OPIE_CONFIGURE_ON=		--enable-opie
 OPIE_DESC=			Build with OPIE support (deprecated - weak/broken cryptography)
 
-RPA_CONFIGURE_ON=		--enable-RPA
 RPA_DESC=			Build with RPA support (deprecated - weak/broken cryptography)
 
 GSSAPI_BASE_USES=		gssapi
@@ -72,6 +70,10 @@ NLS_USES=		gettext
 NLS_CONFIGURE_ENABLE=	nls
 
 OPENSSL_CONFIGURE_WITH=	ssl=${OPENSSLBASE}
+
+OPIE_CONFIGURE_ON=		--enable-opie
+
+RPA_CONFIGURE_ON=		--enable-RPA
 
 WOLFSSL_LIB_DEPENDS=	libwolfssl.so:security/wolfssl
 WOLFSSL_USES_OFF=	ssl
