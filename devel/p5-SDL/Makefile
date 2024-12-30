@@ -11,6 +11,9 @@ WWW=		http://sdl.perl.org/
 
 LICENSE=	GPLv2
 
+DEPRECATED=	Depends on smpeg which is no longer available from upstream
+EXPIRATION_DATE=	2025-01-31
+
 BUILD_DEPENDS=	${RUN_DEPENDS}
 LIB_DEPENDS=	libpng.so:graphics/png \
 		libtiff.so:graphics/tiff \
