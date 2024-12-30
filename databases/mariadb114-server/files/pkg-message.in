@@ -14,7 +14,7 @@ the MariaDB tarball but the most recent version can be found in the
 databases/mytop port
 
 %%WSREP%%The Using wsrep clustering requires additional configuration.
-%%WSREP%%Edit %%PREFIX%%/etc/mysql/conf.d/wsrep.conf and change what you need there.
+%%WSREP%%Edit %%PREFIX%%/etc/mysql/conf.d/wsrep.cnf and change what you need there.
 
 The hashicorp_key_management, s3 and spider plugins must be enabled
 before they can be used, check the specific .cnf files in %%PREFIX%%/etc/mysql/conf.d/
