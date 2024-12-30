@@ -74,6 +74,7 @@ libexec/appjail/network/network
 %%DATADIR%%/lib/copy
 %%DATADIR%%/lib/devfs
 %%DATADIR%%/lib/files
+%%DATADIR%%/lib/initscript
 %%DATADIR%%/lib/jail
 %%DATADIR%%/lib/jail_types
 %%DATADIR%%/lib/kern_modules
