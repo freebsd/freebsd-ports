@@ -1,6 +1,6 @@
---- asdl/config.sh.orig	2019-10-27 12:44:07 UTC
+--- asdl/config.sh.orig	2024-10-25 16:47:17 UTC
 +++ asdl/config.sh
-@@ -40,4 +40,10 @@ fi
+@@ -40,4 +40,10 @@ export SMLNJ_CMD
  SMLNJ_CMD=$INSTALLDIR/bin/sml
  export SMLNJ_CMD
  

@@ -1,6 +1,6 @@
---- base/compiler/Parse/lex/ml.lex.orig	2018-05-28 17:11:09 UTC
+--- base/compiler/Parse/lex/ml.lex.orig	2024-10-25 16:47:18 UTC
 +++ base/compiler/Parse/lex/ml.lex
-@@ -66,7 +66,7 @@ exp=[eE](~?){num};
+@@ -66,7 +66,7 @@ hexnum={xdigit}+;
  real=(~?)(({num}{frac}?{exp})|({num}{frac}{exp}?));
  xdigit=[0-9a-fA-F];
  hexnum={xdigit}+;

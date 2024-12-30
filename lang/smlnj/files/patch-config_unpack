@@ -1,12 +1,26 @@
---- config/unpack.orig	2019-10-28 14:53:16 UTC
+--- config/unpack.orig	2024-10-25 16:47:18 UTC
 +++ config/unpack
-@@ -291,6 +291,9 @@ do
+@@ -204,6 +204,13 @@ unpack() {
+     tryfetch=yes
+     if [ -d "$2"/"$3" ]; then
+ 	vsay "$this: The $1 tree already exists."
++    elif [ x`uname` = xFreeBSD ]; then 
++	# XXX Mac OS X resource files (._*) cause tar to fail with
++	# "Cannot restore extended attributes: com.apple.metadata:..."
++	# We dont't have to use fetch_n_unpack here because the port
++	# already fetched the upstream tarballs to $ROOT.
++    	vsay "$this: Un-TAR-ing $1 archive."
++	tar -x -C "$2" --exclude "._*" -f "$ROOT"/"$4".t* || true
+     else
+ 	fetch_n_unpack "$1" "$2" "$3" "$4"
+     fi
+@@ -290,6 +297,9 @@ do
+ 	unpack "documentation" "$ROOT" doc doc
          # cd $ROOT/doc
  	# build $ROOT
- 	;;
++	;;
 +      asdl)
 +	unpack "Abstract Syntax Description Library" "$ROOT" asdl asdl
-+	;;
+ 	;;
        *)
  	echo Unknown package: ${i}.
- 	echo Trying default method...

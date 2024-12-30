@@ -1,6 +1,6 @@
---- base/runtime/objs/mk.amd64-freebsd.orig	2019-11-14 19:33:11 UTC
+--- base/runtime/objs/mk.amd64-freebsd.orig	2024-10-25 16:47:18 UTC
 +++ base/runtime/objs/mk.amd64-freebsd
-@@ -6,9 +6,10 @@
+@@ -6,9 +6,10 @@ MAKE =		make
  SHELL =		/bin/sh
  
  MAKE =		make
@@ -14,7 +14,7 @@
  CPP =		cc -x assembler-with-cpp -E -P
  XOBJS =
  XLIBS =		../c-libs/dl/libunix-dynload.a
-@@ -26,6 +27,6 @@ RUNTIME_SO =	run.amd64-freebsd.so
+@@ -26,6 +27,6 @@ all:
  RUNTIME_A =	run.amd64-freebsd.a
  
  all:

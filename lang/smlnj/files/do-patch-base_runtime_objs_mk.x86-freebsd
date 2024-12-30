@@ -1,6 +1,6 @@
---- base/runtime/objs/mk.x86-freebsd.orig	2019-11-14 19:19:39 UTC
+--- base/runtime/objs/mk.x86-freebsd.orig	2024-10-25 16:47:18 UTC
 +++ base/runtime/objs/mk.x86-freebsd
-@@ -6,20 +6,20 @@
+@@ -6,20 +6,20 @@ MAKE =		make
  SHELL =		/bin/sh
  
  MAKE =		make
@@ -23,15 +23,15 @@
 +#CHECK_HEAP =	check-heap.o
 +XDEFS =		-DASSERT_ON
  BASE_DEFS =
--DEFS =		$(BASE_DEFS) -DARCH_X86 -DDSIZE_32 -DOPSYS_UNIX -DOPSYS_FREEBSD \
--		-DGNU_ASSEMBLER -DDLOPEN -DINDIRECT_CFUNC
-+DEFS =		$(XDEFS) $(BASE_DEFS) -DARCH_X86 -DSIZE_32 \
-+		-DOPSYS_UNIX -DOPSYS_FREEBSD -D_GNU_SOURCE -DGNU_ASSEMBLER -DDLOPEN \
-+		-DINDIRECT_CFUNC
+-DEFS =		$(BASE_DEFS) -DARCH_X86 -DDSIZE_32 -DALIGN_STACK_16 \
+-		-DOPSYS_UNIX -DOPSYS_FREEBSD -DGNU_ASSEMBLER -DDLOPEN -DINDIRECT_CFUNC
++DEFS =		$(XDEFS) $(BASE_DEFS) -DARCH_X86 -DSIZE_32 -DALIGN_STACK_16 \
++		-DOPSYS_UNIX -DOPSYS_FREEBSD -D_GNU_SOURCE -DGNU_ASSEMBLER \
++		-DDLOPEN -DINDIRECT_CFUNC
  TARGET =	X86
  VERSION =	v-x86-freebsd
  RUNTIME =	run.x86-freebsd
-@@ -27,6 +27,6 @@ RUNTIME_SO =	run.x86-freebsd.so
+@@ -27,6 +27,6 @@ all:
  RUNTIME_A =	run.x86-freebsd.a
  
  all:
