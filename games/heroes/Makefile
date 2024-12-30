@@ -1,6 +1,6 @@
 PORTNAME=	heroes
 PORTVERSION=	0.21
-PORTREVISION=	20
+PORTREVISION=	21
 CATEGORIES=	games
 MASTER_SITES=	SF \
 		SF/${PORTNAME}/${PORTNAME}-data/${DATAVERSION}:data \
@@ -18,16 +18,16 @@ WWW=		https://heroes.sourceforge.net/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libsmpeg.so:multimedia/smpeg
+DEPRECATED=	Unmaintained as last release in 2002
+EXPIRATION_DATE=	2025-01-30
 
 USES=		gettext gmake iconv localbase:ldflags sdl
 USE_SDL=	mixer sdl
 
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--with-sdl_mixer=${LOCALBASE} --without-gii --without-ggi
 
-LDFLAGS+=	-lpthread -lsmpeg -lm
+LDFLAGS+=	-lpthread -lm
 
 INFO=		heroes
 
