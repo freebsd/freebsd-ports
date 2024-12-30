@@ -1,8 +1,7 @@
 PORTNAME=	filezilla
-PORTVERSION=	3.67.0
-PORTREVISION=	2
+PORTVERSION=	3.68.1
 CATEGORIES=	ftp
-MASTER_SITES=	https://download.filezilla-project.org/client/
+MASTER_SITES=	LOCAL/pi
 DISTNAME=	FileZilla_${PORTVERSION}_src
 
 MAINTAINER=	pi@FreeBSD.org

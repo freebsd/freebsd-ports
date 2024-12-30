@@ -60,10 +60,9 @@ include/libfilezilla/util.hpp
 include/libfilezilla/version.hpp
 include/libfilezilla/visibility_helper.hpp
 include/libfilezilla/xml.hpp
-lib/libfilezilla.a
 lib/libfilezilla.so
-lib/libfilezilla.so.43
-lib/libfilezilla.so.43.0.0
+lib/libfilezilla.so.46
+lib/libfilezilla.so.46.0.0
 libdata/pkgconfig/libfilezilla.pc
 share/locale/an/LC_MESSAGES/libfilezilla.mo
 share/locale/ar/LC_MESSAGES/libfilezilla.mo

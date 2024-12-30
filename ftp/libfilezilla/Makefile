@@ -1,7 +1,7 @@
 PORTNAME=	libfilezilla
-PORTVERSION=	0.47.0
+PORTVERSION=	0.49.0
 CATEGORIES=	ftp
-MASTER_SITES=	https://download.filezilla-project.org/${PORTNAME}/
+MASTER_SITES=	LOCAL/pi
 
 MAINTAINER=	pi@FreeBSD.org
 COMMENT=	C++ library for building platform-independent programs
