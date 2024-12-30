@@ -602,7 +602,7 @@ _xrdp:*:648:648::0:0:xrdp daemon:/nonexistent:/usr/sbin/nologin
 # free: 652
 # free: 653
 # free: 654
-# free: 655
+tinc:*:655:655::0:0:tinc daemon:/nonexistent:/usr/sbin/nologin
 # free: 656
 # free: 657
 # free: 658
