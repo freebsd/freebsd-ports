@@ -1,6 +1,6 @@
 PORTNAME=	flexemu
 DISTVERSIONPREFIX=	V
-DISTVERSION=	3.26
+DISTVERSION=	3.27
 CATEGORIES=	emulators
 
 MAINTAINER=	rhurlin@FreeBSD.org
@@ -9,8 +9,8 @@ WWW=		https://flexemu.neocities.org/
 
 LICENSE=	GPLv2
 
-USES=		compiler desktop-file-utils gl libtool pkgconfig \
-		qt:5 shared-mime-info xorg
+USES=		compiler desktop-file-utils gl libtool ncurses \
+		pkgconfig qt:5 shared-mime-info xorg
 USE_GITHUB=	yes
 GH_ACCOUNT=	aladur
 GH_TUPLE=	fmtlib:fmt:0c9fce2:fmt/fmt \
