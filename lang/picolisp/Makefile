@@ -1,5 +1,5 @@
 PORTNAME=	picolisp
-PORTVERSION=	24.9
+PORTVERSION=	24.12
 CATEGORIES=	lang
 MASTER_SITES=	https://software-lab.de/
 DISTNAME=	picoLisp-${PORTVERSION}
@@ -14,7 +14,7 @@ ONLY_FOR_ARCHS=	amd64
 
 LIB_DEPENDS=	libffi.so:devel/libffi
 
-USES=		gmake llvm:min=17,lib pkgconfig readline ssl tar:tgz
+USES=		gmake llvm:min=11,lib pkgconfig readline ssl tar:tgz
 
 WRKSRC=		${WRKDIR}/pil21/src
 
@@ -25,7 +25,6 @@ post-patch:
 		-e 's|llc|llc${LLVM_VERSION}|' \
 		-e 's|llvm-link|llvm-link${LLVM_VERSION}|' \
 		-e 's|llvm-config|${LLVM_CONFIG}|' \
-		-e '/^MAIN/s|$$| -L${LOCALBASE}/lib|' \
 		-e '/^.SILENT:/d' \
 		${WRKSRC}/Makefile
 	${REINPLACE_CMD} -i '' -e 's|/usr|${PREFIX}|g' ${WRKSRC}/../bin/*

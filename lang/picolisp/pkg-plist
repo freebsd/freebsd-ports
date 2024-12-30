@@ -103,6 +103,7 @@ lib/picolisp/lib/too.l
 lib/picolisp/lib/user.l
 lib/picolisp/lib/vip.l
 lib/picolisp/lib/vip/draw.l
+lib/picolisp/lib/vip/load.l
 lib/picolisp/lib/vip/html.l
 lib/picolisp/lib/xhtml.l
 lib/picolisp/lib/xhtml/area
