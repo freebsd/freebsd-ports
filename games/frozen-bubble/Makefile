@@ -10,6 +10,9 @@ WWW=		http://www.frozen-bubble.org
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Depends on deprecated devel/p5-SDL
+EXPIRATION_DATE=	2025-01-31
+
 BUILD_DEPENDS=	${RUN_DEPENDS} \
 		p5-File-Slurp>=0:devel/p5-File-Slurp
 RUN_DEPENDS=	p5-SDL>=2.511:devel/p5-SDL \
@@ -21,13 +24,12 @@ RUN_DEPENDS=	p5-SDL>=2.511:devel/p5-SDL \
 
 USES=		compiler:features gettext-runtime gnome perl5 pkgconfig sdl \
 		tar:bzip2
-USE_GNOME=	glib20
-USE_PERL5=	modbuild
-USE_SDL=	mixer pango sdl ttf
-
 USE_GITHUB=	yes
 GH_ACCOUNT=	kthakore
 GH_TAGNAME=	d6a0291
+USE_GNOME=	glib20
+USE_PERL5=	modbuild
+USE_SDL=	mixer pango sdl ttf
 SNAPDATE=	20170702
 
 DESKTOP_ENTRIES=	"Frozen Bubble" "" \
