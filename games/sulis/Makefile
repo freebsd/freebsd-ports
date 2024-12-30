@@ -1,6 +1,10 @@
 PORTNAME=	sulis
 DISTVERSION=	1.0.0
+PORTREVISION=	1
 CATEGORIES=	games
+
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES=	af773b9f09753ea8614ac82dd8033c870a5a779c.patch:-p1
 
 MAINTAINER=	alster@vinterdalen.se
 COMMENT=	Turn based tactical RPG with several campaigns, written in Rust
