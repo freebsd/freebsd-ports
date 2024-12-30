@@ -1,5 +1,6 @@
 PORTNAME=	chromium
 PORTVERSION=	131.0.6778.204
+PORTREVISION=	1
 PULSEMV=	16
 PULSEV=		${PULSEMV}.1
 CATEGORIES=	www wayland
@@ -229,7 +230,7 @@ TEST_ALL_TARGET=	${TEST_TARGETS}
 IGNORE=		you have selected HEIMDAL_BASE but do not have Heimdal installed in base
 .endif
 
-LLVM_DEFAULT=		18
+LLVM_DEFAULT=		19
 BUILD_DEPENDS+=		clang${LLVM_DEFAULT}:devel/llvm${LLVM_DEFAULT}
 BINARY_ALIAS+=		cpp=${LOCALBASE}/bin/clang-cpp${LLVM_DEFAULT} \
 			cc=${LOCALBASE}/bin/clang${LLVM_DEFAULT} \
