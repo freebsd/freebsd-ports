@@ -12,11 +12,10 @@ LICENSE=	LGPL20
 
 BUILD_DEPENDS=	ocamlbuild:devel/ocaml-ocamlbuild
 
+USES=		gmake ocaml
 USE_GITHUB=	yes
 GH_ACCOUNT=	ocaml
 
-USES=		gmake
-USE_OCAML=	yes
 HAS_CONFIGURE=	yes
 MAKE_ENV+=	DESTDIR="${STAGEDIR}"
 MAKE_JOBS_UNSAFE=yes

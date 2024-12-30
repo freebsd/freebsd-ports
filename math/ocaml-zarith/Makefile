@@ -14,13 +14,11 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libgmp.so:math/gmp
 
-USES=		gmake localbase:ldflags tar:tgz
+USES=		gmake localbase:ldflags ocaml:findlib,ldconfig tar:tgz
 USE_GITHUB=	yes
 GH_ACCOUNT=	ocaml
 GH_PROJECT=	Zarith
-USE_OCAML=	yes
-USE_OCAML_FINDLIB=	yes
-USE_OCAML_LDCONFIG=	yes
+
 HAS_CONFIGURE=	yes
 ALL_TARGET=	all
 CONFIGURE_ENV=	DESTDIR=${STAGEDIR}

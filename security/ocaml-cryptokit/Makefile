@@ -13,12 +13,10 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	${LOCALBASE}/${OCAML_SITELIBDIR}/zarith/META:math/ocaml-zarith
 RUN_DEPENDS=	${LOCALBASE}/${OCAML_SITELIBDIR}/zarith/META:math/ocaml-zarith
 
-USES=		ocaml:dune
+USES=		ocaml:dune,ldconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	xavierleroy
 GH_TAGNAME=	release${PORTVERSION:S/.//g}
-USE_OCAML=	yes
-USE_OCAML_LDCONFIG=	yes
 
 DOCSDIR=	${OCAML_DOCSDIR}/${PORTNAME}
 PORTDOCS=	*

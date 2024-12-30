@@ -13,7 +13,6 @@ USES=		ocaml:dune
 USE_GITHUB=	yes
 GH_ACCOUNT=	janestreet
 GH_PROJECT=	ocaml-compiler-libs
-USE_OCAML=	yes
 
 DOCSDIR=	${OCAML_DOCSDIR}/${PORTNAME}
 PORTDOCS=	CHANGES.md LICENSE.md README.org

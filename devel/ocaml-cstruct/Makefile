@@ -21,12 +21,10 @@ RUN_DEPENDS=	${SA_DIR}/fmt/META:devel/ocaml-fmt \
 		${SA_DIR}/ppxlib/META:devel/ocaml-ppxlib \
 		${SA_DIR}/sexplib/META:devel/ocaml-sexplib
 
-USES=		ocaml:dune
+USES=		ocaml:dune,ldconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	mirage
 GH_PROJECT=	ocaml-${PORTNAME}
-USE_OCAML=	yes
-USE_OCAML_LDCONFIG=	yes
 # missing ${PORTNAME}-async
 OCAML_PACKAGES=		${PORTNAME} ${PORTNAME}-lwt ${PORTNAME}-sexp \
 			${PORTNAME}-unix ppx_${PORTNAME}

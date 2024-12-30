@@ -12,7 +12,6 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 USES=		ocaml:dune
-USE_OCAML=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	janestreet

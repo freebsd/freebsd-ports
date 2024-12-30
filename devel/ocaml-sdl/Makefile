@@ -15,13 +15,9 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	ocaml-lablgl>0:graphics/ocaml-lablgl
 
-USE_OCAML=	yes
-USE_OCAML_FINDLIB=yes
-USE_OCAMLFIND_PLIST=yes
-USE_OCAML_LDCONFIG=yes
-
-USES=		gmake sdl
+USES=		gmake ocaml:findplist,ldconfig sdl
 USE_SDL=	sdl
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-lablgldir=${LOCALBASE}/${OCAML_SITELIBDIR}/lablGL \
 		--with-sdl-prefix=${LOCALBASE} \

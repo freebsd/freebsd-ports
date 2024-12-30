@@ -16,7 +16,6 @@ BUILD_DEPENDS=	cppo:devel/ocaml-cppo
 USES=		ocaml:dune
 USE_GITHUB=	yes
 GH_ACCOUNT=	ocaml-community
-USE_OCAML=	yes
 
 DOCSDIR=	${OCAML_DOCSDIR}/${PORTNAME}
 

@@ -23,7 +23,6 @@ USES=		ocaml:dune
 USE_GITHUB=	yes
 GH_ACCOUNT=	mirage
 GH_PROJECT=	ocaml-base64
-USE_OCAML=	yes
 
 DOCSDIR=	${OCAML_DOCSDIR}/${PORTNAME}
 PORTDOCS=	CHANGES.md LICENSE.md README.md
@@ -43,7 +42,7 @@ post-install:
 		base64/base64.cmxs \
 		base64/rfc2045/base64_rfc2045.cmxs)
 	# this port never shipped stublibs
-	# cleanup from older port's wrong USE_OCAML_LDCONFIG
+	# cleanup from older port's wrong USES=ocaml:ldconfig
 	@${ECHO_CMD} @postexec ${SED} -i "''" -e \
 		"'/^${PREFIX:S#/#\/#g}\/${OCAML_SITELIBDIR:S#/#\/#g}\/base64$$/d'" \
 		%D/${OCAML_LDCONF}  >> ${TMPPLIST}

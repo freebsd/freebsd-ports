@@ -12,12 +12,10 @@ LICENSE=	LGPL21
 
 LIB_DEPENDS=	libpcre2-8.so:devel/pcre2
 
-USES=		ocaml:dune pkgconfig
+USES=		ocaml:dune,ldconfig pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	camlp5
 GH_PROJECT=	${PORTNAME}-ocaml
-USE_OCAML=	yes
-USE_OCAML_LDCONFIG=	yes
 
 DOCSDIR=	${OCAML_DOCSDIR}/${PORTNAME}
 EXAMPLESDIR=	${OCAML_EXAMPLESDIR}/${PORTNAME}

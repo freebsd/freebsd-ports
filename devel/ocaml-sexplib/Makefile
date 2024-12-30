@@ -23,7 +23,6 @@ RUN_DEPENDS=	${SA_DIR}/num/META:math/ocaml-num \
 USES=		ocaml:dune
 USE_GITHUB=	yes
 GH_ACCOUNT=	janestreet
-USE_OCAML=	yes
 
 OPTIONS_DEFINE=	DOCS
 

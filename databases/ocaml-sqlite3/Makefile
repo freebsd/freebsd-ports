@@ -14,13 +14,10 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 BUILD_DEPENDS=	ocamlbuild:devel/ocaml-ocamlbuild
 
-USES=		ocaml:dune pkgconfig sqlite
+USES=		ocaml:dune,ldconfig pkgconfig sqlite
 USE_GITHUB=	yes
 GH_ACCOUNT=	mmottl
 GH_PROJECT=	${PORTNAME}-ocaml
-
-USE_OCAML=	yes
-USE_OCAML_LDCONFIG=	yes
 
 DOCSDIR=	${OCAML_DOCSDIR}/${PORTNAME}
 PORTDOCS=	CHANGES.md LICENSE.md README.md

@@ -97,7 +97,6 @@ GH_TUPLE=	inhabitedtype:angstrom:0.16.1:angstrom \
 		janestreet:typerep:v0.16.0:typerep \
 		janestreet:uopt:v0.17.0:uopt \
 		janestreet:variantslib:v0.16.0:variantslib
-USE_OCAML=	yes
 DUNE_ARGS=	bin/main.exe
 
 PLIST_FILES=	bin/${PORTNAME}

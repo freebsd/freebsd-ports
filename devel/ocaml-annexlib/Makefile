@@ -14,11 +14,8 @@ LICENSE=	LGPL21
 BUILD_DEPENDS=	${SA_DIR}/pcre/pcre.a:devel/ocaml-pcre
 RUN_DEPENDS=	${SA_DIR}/pcre/pcre.a:devel/ocaml-pcre
 
-USES=		gmake
-USE_OCAML=	yes
-USE_OCAML_FINDLIB=	yes
-USE_OCAML_LDCONFIG=	yes
-USE_OCAMLFIND_PLIST=	yes
+USES=		gmake ocaml:findplist,ldconfig
+
 GNU_CONFIGURE=	yes
 ALL_TARGET=	all opt
 SA_DIR=		${LOCALBASE}/${OCAML_SITELIBDIR}

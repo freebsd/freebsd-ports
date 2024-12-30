@@ -14,10 +14,8 @@ BUILD_DEPENDS=	dune:devel/ocaml-dune
 LIB_DEPENDS+=	libfreetype.so:print/freetype2 \
 		libfontconfig.so:x11-fonts/fontconfig
 
-USES=		gnome pkgconfig
+USES=		gnome ocaml pkgconfig
 USE_GNOME=	cairo
-USE_OCAML=	yes
-
 USE_GITHUB=	yes
 GH_ACCOUNT=	Chris00
 GH_PROJECT=	${PKGNAMEPREFIX}${PORTNAME}

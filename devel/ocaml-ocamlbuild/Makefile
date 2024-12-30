@@ -10,10 +10,9 @@ WWW=		https://github.com/ocaml/ocamlbuild
 
 LICENSE=	GPLv2
 
-USES=		gmake
+USES=		gmake ocaml
 USE_GITHUB=	yes
 GH_ACCOUNT=	ocaml
-USE_OCAML=	yes
 
 ALL_TARGET=	configure all
 MAKE_ENV=	OCAMLBUILD_LIBDIR=${PREFIX}/${OCAML_LIBDIR}

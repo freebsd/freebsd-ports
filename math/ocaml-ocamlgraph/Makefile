@@ -13,7 +13,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USES=			ocaml:dune
 USE_GITHUB=		yes
 GH_ACCOUNT=		backtracking
-USE_OCAML=		yes
 DUNE_INSTALL_TARGETS=	ocamlgraph
 
 ALL_TARGET=	ocamlgraph.install
@@ -31,7 +30,7 @@ post-patch:
 post-install:
 	@${STRIP_CMD} \
 		${STAGEDIR}${PREFIX}/${OCAML_SITELIBDIR}/${PORTNAME}/graph.cmxs
-# USE_OCAML_LDCONFIG cleanup
+	# USES=ocaml:ldconfig cleanup
 	@${ECHO_CMD} @postexec ${SED} -i "''" -e \
 		"'/^${PREFIX:S#/#\/#g}\/${OCAML_SITELIBDIR:S#/#\/#g}\/ocamlgraph$$/d'" \
 		%D/${OCAML_LDCONF}  >> ${TMPPLIST}

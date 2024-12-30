@@ -18,7 +18,6 @@ RUN_DEPENDS=	${SA_DIR}/sexplib0/META:devel/ocaml-sexplib0
 USES=		ocaml:dune
 USE_GITHUB=	yes
 GH_ACCOUNT=	janestreet
-USE_OCAML=	yes
 
 OPTIONS_DEFINE=	DOCS
 

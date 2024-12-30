@@ -19,7 +19,6 @@ RUN_DEPENDS=	${SA_DIR}/ppxlib/META:devel/ocaml-ppxlib
 USES=		ocaml:dune
 USE_GITHUB=	yes
 GH_ACCOUNT=	johnwhitington
-USE_OCAML=	yes
 
 DOCSDIR=	${OCAML_DOCSDIR}/${PORTNAME}
 PORTDOCS=	CHANGES.md LICENSE.txt README.md

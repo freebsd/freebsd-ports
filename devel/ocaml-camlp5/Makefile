@@ -24,9 +24,8 @@ RUN_DEPENDS=	${SA_DIR}/camlp-streams/META:devel/ocaml-camlp-streams \
 		${SA_DIR}/re/META:devel/ocaml-re \
 		${SA_DIR}/rresult/META:devel/ocaml-rresult
 
-USES=		gmake perl5 tar:tgz
+USES=		gmake ocaml perl5 tar:tgz
 USE_GITHUB=	yes
-USE_OCAML=	yes
 USE_PERL5=	build
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix ${PREFIX} --mandir ${PREFIX}/share/man

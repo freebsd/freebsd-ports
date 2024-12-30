@@ -23,7 +23,6 @@ RUN_DEPENDS=	${SA_DIR}/findlib/META:devel/ocaml-findlib \
 USES=			ocaml:dune
 USE_GITHUB=		yes
 GH_ACCOUNT=		ocaml-ppx
-USE_OCAML=		yes
 
 DOCSDIR=	${OCAML_DOCSDIR}/${PORTNAME}
 PORTDOCS=	CHANGELOG.md LICENSE.txt README.md

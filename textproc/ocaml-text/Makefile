@@ -10,20 +10,14 @@ WWW=		https://forge.ocamlcore.org/projects/ocaml-text/
 
 BUILD_DEPENDS=	ocamlbuild:devel/ocaml-ocamlbuild
 
+USES=		gmake ocaml:camlp4,findplist,ldconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	vbmithr
 GH_PROJECT=	${PKGNAMEPREFIX}${PORTNAME}
 
-USES=		gmake
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix ${PREFIX} \
 		--destdir ${STAGEDIR}
-
-USE_OCAML=		yes
-USE_OCAML_FINDLIB=	yes
-USE_OCAML_CAMLP4=	yes
-USE_OCAML_LDCONFIG=	yes
-USE_OCAMLFIND_PLIST=	yes
 
 SA_DIR=		${LOCALBASE}/${OCAML_SITELIBDIR}
 DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}

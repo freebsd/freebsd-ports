@@ -24,8 +24,6 @@ USES=		ocaml:dune
 USE_GITHUB=	yes
 GH_ACCOUNT=	c-cube
 GH_PROJECT=	ocaml-trace
-
-USE_OCAML=		yes
 OCAML_PACKAGES=		trace ppx_trace trace-tef
 DUNE_INSTALL_TARGETS=	${OCAML_PACKAGES}
 

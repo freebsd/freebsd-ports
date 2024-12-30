@@ -12,17 +12,16 @@ WWW=		https://www.xs4all.nl/~mmzeeman/ocaml
 
 LIB_DEPENDS=	libexpat.so:textproc/expat2
 
-USES=		gmake
-USE_OCAML=	yes
-USE_OCAML_FINDLIB=	yes
-USE_OCAML_LDCONFIG=	yes
+USES=		gmake ocaml:findlib,ldconfig
+
 MAKE_ARGS=	EXPAT_LIBDIR=${LOCALBASE}/lib \
 		EXPAT_INCDIR=${LOCALBASE}/include \
 		CAML_INCDIR=${LOCALBASE}/lib/ocaml
 ALL_TARGET=	all allopt doc
+
 OPTIONS_DEFINE=	DOCS
 
-post-install:
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/* ${STAGEDIR}${DOCSDIR}
 

@@ -10,11 +10,10 @@ WWW=		https://dune.build/
 
 LICENSE=	MIT
 
-USES=		gmake
+USES=		gmake ocaml:ldconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	ocaml
-USE_OCAML=	yes
-USE_OCAML_LDCONFIG=	yes
+
 SUB_FILES=	setup.ml
 SUB_LIST=	OCAML_SITELIBDIR="${PREFIX}/${OCAML_SITELIBDIR}" \
 		OCAML_LIBDIR="${PREFIX}/${OCAML_LIBDIR}" \

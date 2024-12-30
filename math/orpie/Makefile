@@ -22,7 +22,6 @@ LIB_DEPENDS=	libgsl.so:math/gsl
 USES=		ncurses ocaml:dune
 USE_GITHUB=	yes
 GH_ACCOUNT=	pelzlpj
-USE_OCAML=	yes
 #XXX DUNE_DOCSDIR=	${DOCSDIR}
 
 PORTDOCS=	LICENSE.md README.adoc manual.html manual.pdf

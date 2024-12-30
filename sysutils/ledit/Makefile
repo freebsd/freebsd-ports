@@ -12,8 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	camlp5r:devel/ocaml-camlp5 \
 		${OCAMLFIND_DEPEND}
 
-USES=		gmake
-USE_OCAML=	yes
+USES=		gmake ocaml
 USE_GITHUB=	yes
 GH_ACCOUNT=	chetmurthy
 GH_TAGNAME=	ledit-${PORTVERSION:S/./-/}

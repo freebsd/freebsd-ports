@@ -17,9 +17,7 @@ BUILD_DEPENDS=		ocaml-base>=0:devel/ocaml-base \
 			ocaml-stdio>=0:devel/ocaml-stdio
 LIB_DEPENDS=		libgsl.so:math/gsl
 
-USES=			blaslapack:openblas ocaml:dune pkgconfig
-USE_OCAML=		YES
-USE_OCAML_LDCONFIG=	YES
+USES=			blaslapack:openblas ocaml:dune,ldconfig pkgconfig
 OCAML_LDLIBS=		gsl
 OCAML_PACKAGES=		gsl
 

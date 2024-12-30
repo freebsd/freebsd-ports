@@ -13,8 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 BUILD_DEPENDS=	dune:devel/ocaml-dune
 
-USES=		gmake
-USE_OCAML=	yes
+USES=		gmake ocaml
 USE_GITHUB=	yes
 GH_ACCOUNT=	janestreet
 

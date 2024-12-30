@@ -21,10 +21,8 @@ LIB_DEPENDS=	libev.so:devel/libev
 USE_GITHUB=	yes
 GH_ACCOUNT=	ocsigen
 
-USES=			ocaml:dune
-USE_OCAML=		yes
+USES=			ocaml:dune,ldconfig
 OCAML_PACKAGES=		lwt lwt_ppx lwt_ppx_let lwt_react
-USE_OCAML_LDCONFIG=	yes
 
 DOCSDIR=	${OCAML_DOCSDIR}
 PORTDOCS=	lwt/CHANGES lwt/LICENSE.md lwt/README.md lwt/odoc-pages \

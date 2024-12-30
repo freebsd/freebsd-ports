@@ -21,7 +21,6 @@ RUN_DEPENDS=	${SA_DIR}/ocaml-compiler-libs/META:devel/ocaml-compiler-libs \
 USES=		ocaml:dune
 USE_GITHUB=	yes
 GH_ACCOUNT=	ocaml-ppx
-USE_OCAML=	yes
 
 DOCSDIR=	${OCAML_DOCSDIR}/${PORTNAME}
 PORTDOCS=	CHANGES.md HISTORY.md LICENSE.md README.md odoc-pages

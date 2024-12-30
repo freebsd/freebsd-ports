@@ -18,7 +18,6 @@ RUN_DEPENDS=	${SA_DIR}/yojson/META:textproc/ocaml-yojson
 USES=		ocaml:dune
 USE_GITHUB=	yes
 GH_ACCOUNT=	janestreet
-USE_OCAML=	yes
 
 DOCSDIR=	${OCAML_DOCSDIR}/${PORTNAME}
 PORTDOCS=	LICENSE.md

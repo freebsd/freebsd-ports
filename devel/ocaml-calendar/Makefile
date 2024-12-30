@@ -11,10 +11,8 @@ WWW=		http://calendar.forge.ocamlcore.org/
 
 LICENSE=	LGPL21
 
+USES=		gmake ocaml:findplist
+
 GNU_CONFIGURE=	yes
-USES=		gmake
-USE_OCAML=	yes
-USE_OCAML_FINDLIB=	yes
-USE_OCAMLFIND_PLIST=	yes
 
 .include <bsd.port.mk>

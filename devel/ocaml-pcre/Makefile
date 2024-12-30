@@ -14,12 +14,11 @@ LICENSE=	LGPL21
 BUILD_DEPENDS=	ocamlbuild:devel/ocaml-ocamlbuild
 LIB_DEPENDS=	libpcre.so:devel/pcre
 
+USES=		ocaml:findlib,ldconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	mmottl
 GH_PROJECT=	${PORTNAME}-ocaml
-USE_OCAML=	yes
-USE_OCAML_FINDLIB=	yes
-USE_OCAML_LDCONFIG=	yes
+
 EXAMPLESDIR=	${OCAML_EXAMPLESDIR}/${PORTNAME}
 PORTEXAMPLES=	cloc count_hash pcregrep subst
 DOCSDIR=	${PREFIX}/share/doc/pcre-ocaml

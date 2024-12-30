@@ -12,9 +12,8 @@ WWW=		https://erratique.ch/software/cmdliner
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-USES=		gmake tar:tbz
-USE_OCAML=		yes
-USE_OCAML_LDCONFIG=	yes
+USES=		gmake ocaml:ldconfig tar:tbz
+
 MAKE_JOBS_UNSAFE=	tes
 MAKE_ARGS=	DOCDIR=${STAGEDIR}${OCAML_DOCSDIR}/${PORTNAME} \
 		LIBDIR=${STAGEDIR}${PREFIX}/${OCAML_LDLIBS}

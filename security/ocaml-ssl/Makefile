@@ -11,12 +11,10 @@ WWW=		https://github.com/savonet/ocaml-ssl
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		ocaml:dune ssl
+USES=		ocaml:dune,ldconfig ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	savonet
 GH_PROJECT=	ocaml-ssl
-USE_OCAML=	yes
-USE_OCAML_LDCONFIG=	yes
 
 DOCSDIR=	${OCAML_DOCSDIR}/${PORTNAME}
 EXAMPLESDIR=	${OCAML_EXAMPLESDIR}/${PORTNAME}

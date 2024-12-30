@@ -27,7 +27,6 @@ RUN_DEPENDS=	${SA_DIR}/logs/META:devel/ocaml-logs \
 USES=		ocaml:dune
 USE_GITHUB=	yes
 GH_ACCOUNT=	c-cube
-USE_OCAML=	yes
 OCAML_PACKAGES=	${PORTNAME} ${PORTNAME}-lwt
 DUNE_INSTALL_TARGETS=	${OCAML_PACKAGES}
 

@@ -16,12 +16,10 @@ BUILD_DEPENDS=	cppo:devel/ocaml-cppo \
 		${SA_DIR}/findlib/META:devel/ocaml-findlib \
 		${SA_DIR}/stdio/META:devel/ocaml-stdio
 
-USES=		ocaml:dune
+USES=		ocaml:dune,ldconfig
 USE_GITLAB=	yes
 GL_ACCOUNT=	camlspotter
 GL_PROJECT=	camlimages
-USE_OCAML=		yes
-USE_OCAML_LDCONFIG=	yes
 OCAML_LDLIBS=
 OCAML_PACKAGES=		camlimages
 

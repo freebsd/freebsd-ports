@@ -23,7 +23,6 @@ USES=		ocaml:dune
 USE_GITHUB=	yes
 GH_ACCOUNT=	mirage
 GH_PROJECT=	ocaml-ipaddr
-USE_OCAML=		yes
 OCAML_PACKAGES=		ipaddr ipaddr-cstruct ipaddr-sexp
 OCAML_PACKAGES+=	macaddr macaddr-cstruct macaddr-sexp
 

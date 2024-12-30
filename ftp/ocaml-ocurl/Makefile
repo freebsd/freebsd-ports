@@ -16,17 +16,14 @@ BUILD_DEPENDS=	ocamlc:lang/ocaml \
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 LIB_DEPENDS=	libcurl.so:ftp/curl
 
-USES=		gmake
+USES=		gmake ocaml:camlp4,findlib,ldconfig
+
 GNU_CONFIGURE=	yes
 MAKE_JOBS_UNSAFE=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	ygrek
 
-USE_OCAML=		yes
-USE_OCAML_CAMLP4=	yes
-USE_OCAML_FINDLIB=	yes
-USE_OCAML_LDCONFIG=	yes
 OCAML_PKGDIRS=		curl
 
 OPTIONS_DEFINE=		LWT

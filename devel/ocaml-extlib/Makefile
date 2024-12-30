@@ -16,12 +16,7 @@ BROKEN_mips=	depends on Ocaml(not available for mips)
 
 BUILD_DEPENDS=	cppo:devel/ocaml-cppo
 
-USES=		gmake
-
-USE_OCAML=	yes
-USE_OCAML_CAMLP4=	yes
-USE_OCAML_FINDLIB=	yes
-USE_OCAMLFIND_PLIST=	yes
+USES=		gmake ocaml:camlp4,findplist
 
 MAKE_ARGS=	VERSION="${DISTVERSION}"
 ALL_TARGET=	all opt doc

@@ -360,9 +360,6 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 # USE_JAVA		- If set, this port relies on the Java language.
 #				  Implies inclusion of bsd.java.mk.  (Also see
 #				  that file for more information on USE_JAVA_*).
-# USE_OCAML		- If set, this port relies on the OCaml language.
-#				  Implies inclusion of bsd.ocaml.mk.  (Also see
-#				  that file for more information on USE_OCAML*).
 ##
 # USE_GECKO		- If set, this port uses the Gecko/Mozilla product.
 #				  See bsd.gecko.mk for more details.
@@ -1409,10 +1406,6 @@ PKGCOMPATDIR?=		${LOCALBASE}/lib/compat/pkg
 .include "${PORTSDIR}/Mk/bsd.java.mk"
 .    endif
 
-.    if defined(USE_OCAML)
-.include "${PORTSDIR}/Mk/bsd.ocaml.mk"
-.    endif
-
 .    if defined(USE_APACHE_BUILD)
 USES+=	apache:build,${USE_APACHE_BUILD:C/2([0-9])/2.\1/g}
 .    elif defined(USE_APACHE_RUN)
@@ -1934,10 +1927,6 @@ PKGPOSTDEINSTALL?=	${PKGDIR}/pkg-post-deinstall
 
 .    if defined(USE_JAVA)
 .include "${PORTSDIR}/Mk/bsd.java.mk"
-.    endif
-
-.    if defined(USE_OCAML)
-.include "${PORTSDIR}/Mk/bsd.ocaml.mk"
 .    endif
 
 .    if defined(USE_WX) || defined(USE_WX_NOT)

@@ -17,12 +17,10 @@ BUILD_DEPENDS=	menhir:devel/menhir \
 LIB_DEPENDS=	libpcre.so:devel/pcre
 TEST_DEPENDS=	bash:shells/bash
 
-USES=		autoreconf gmake perl5 pkgconfig:build python shebangfix
+USES=		autoreconf gmake ocaml:camlp4 perl5 pkgconfig:build python shebangfix
 USE_GITHUB=	nodefault
 # until coccinelle/stdcompat releases with ocaml 5.2 support.
 GH_TUPLE=	thierry-martinez:stdcompat:d53390d788027fe0a2282c4745eb3d1626341f99:stdcompat
-USE_OCAML=	3.0+
-USE_OCAML_CAMLP4=	yes
 USE_PERL5=	build
 SHEBANG_FILES=	tools/pycocci scripts/cpptests.sh
 GNU_CONFIGURE=	yes

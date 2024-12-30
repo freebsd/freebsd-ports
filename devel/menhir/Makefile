@@ -12,7 +12,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		ocaml:dune
 USE_GITLAB=	yes
-USE_OCAML=	yes
 GL_SITE=	https://gitlab.inria.fr/
 GL_ACCOUNT=	fpottier
 OCAML_PACKAGES=		menhir menhirLib menhirSdk

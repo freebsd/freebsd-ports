@@ -10,11 +10,10 @@ WWW=		https://forge.ocamlcore.org/projects/labltk/
 
 LICENSE=	LGPL20
 
-USES=		gmake tk
+USES=		gmake ocaml:ldconfig tk
 USE_GITHUB=	yes
 GH_ACCOUNT=	garrigue
-USE_OCAML=	yes
-USE_OCAML_LDCONFIG=	yes
+
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	-tkdefs "-I${LOCALBASE}/include -I${TCL_INCLUDEDIR}\
 		-I${TK_INCLUDEDIR}" \

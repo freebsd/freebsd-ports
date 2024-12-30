@@ -20,8 +20,6 @@ RUN_DEPENDS=	${SA_DIR}/ppx_yojson_conv_lib/META:devel/ocaml-ppx_yojson_conv_lib 
 USES=		ocaml:dune
 USE_GITHUB=	yes
 GH_ACCOUNT=	ocaml
-
-USE_OCAML=		yes
 OCAML_PACKAGES=		lsp jsonrpc
 DUNE_INSTALL_TARGETS=	${OCAML_PACKAGES}
 

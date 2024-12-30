@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 BUILD_DEPENDS=	dune:devel/ocaml-dune
 
-USE_OCAML=	yes
+USES=		ocaml
 USE_GITHUB=	yes
 GH_ACCOUNT=	mmottl
 

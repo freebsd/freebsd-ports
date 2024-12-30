@@ -18,8 +18,7 @@ BUILD_DEPENDS=	${SA_DIR}/cmdliner/META:devel/ocaml-cmdliner \
 		opam-installer:devel/ocaml-opam
 RUN_DEPENDS=	${SA_DIR}/cmdliner/META:devel/ocaml-cmdliner
 
-USES=		tar:tbz
-USE_OCAML=	yes
+USES=		ocaml tar:tbz
 
 DOCSDIR=	${OCAML_DOCSDIR}/${PORTNAME}
 PORTDOCS=	CHANGES.md LICENSE.md README.md

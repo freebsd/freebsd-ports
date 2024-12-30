@@ -30,9 +30,8 @@ x11_LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 			libfreetype.so:print/freetype2
 
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
-USES=		gmake
-USE_OCAML=	yes
-NO_OCAML_RUNDEPENDS=yes
+USES=		gmake ocaml:build
+
 MAKE_ARGS=	CFLAGS=""
 ALL_TARGET=	unison all
 TEST_TARGET=	selftest

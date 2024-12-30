@@ -12,7 +12,6 @@ LICENSE=	MIT
 USES=		ocaml:dune
 USE_GITHUB=	yes
 GH_ACCOUNT=	ocaml-ppx
-USE_OCAML=	yes
 
 DOCSDIR=	${OCAML_DOCSDIR}/ppx_derivers
 PORTDOCS=	CHANGES.md LICENSE.md README.md

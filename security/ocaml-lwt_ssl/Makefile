@@ -18,7 +18,6 @@ RUN_DEPENDS=	ocaml-lwt>=5.7.0:devel/ocaml-lwt \
 USES=		ocaml:dune
 USE_GITHUB=	yes
 GH_ACCOUNT=	ocsigen
-USE_OCAML=	yes
 
 DOCSDIR=	${OCAML_DOCSDIR}/${PORTNAME}
 PORTDOCS=	CHANGES README.md

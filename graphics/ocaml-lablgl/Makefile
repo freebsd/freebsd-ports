@@ -15,13 +15,9 @@ LICENSE=	BSD3CLAUSE
 
 CONFLICTS=	ocaml-nox11
 
-USES=		gl gmake tk xorg
+USES=		gl gmake ocaml:camlp4,ldconfig,tk tk xorg
 USE_XORG=	x11 xext xmu
 USE_GL=		gl glu glut
-USE_OCAML=	yes
-USE_OCAML_CAMLP4=	yes
-USE_OCAML_LDCONFIG=	yes
-USE_OCAML_TK=	yes
 OCAML_LDLIBS=	${OCAML_SITELIBDIR}/lablGL
 
 ALL_TARGET=	all opt

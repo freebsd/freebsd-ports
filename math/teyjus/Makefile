@@ -15,10 +15,9 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BUILD_DEPENDS=	omake:devel/omake \
 		bash:shells/bash
 
-USES=		dos2unix shebangfix
+USES=		dos2unix ocaml shebangfix
 DOS2UNIX_FILES=	source/OMakefile
 SHEBANG_GLOB=	run_test
-USE_OCAML=	yes
 USE_GITHUB=	yes
 
 CFLAGS+=	-Wno-error=comment

@@ -25,7 +25,6 @@ USES=		ocaml:dune
 USE_GITLAB=	yes
 GL_SITE=	https://git.frama-c.com
 GL_ACCOUNT=	pub
-USE_OCAML=	yes
 
 DOCSDIR=	${OCAML_DOCSDIR}/${PORTNAME}
 PORTDOCS=	CHANGES LICENSE

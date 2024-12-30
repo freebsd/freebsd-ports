@@ -9,9 +9,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Convert latex equations to HTML, MathML, PNG
 WWW=		https://www.mediawiki.org/wiki/Texvc
 
-USES=		gmake
-USE_OCAML=	yes
-NO_OCAML_RUNDEPENDS=	yes
+USES=		gmake ocaml:build
+
 BUILD_WRKSRC=	${WRKSRC}/src
 
 PLIST_FILES=	bin/texvc

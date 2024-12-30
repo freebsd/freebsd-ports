@@ -23,8 +23,7 @@ RUN_DEPENDS=	${SA_DIR}/cmdliner/META:devel/ocaml-cmdliner \
 		${SA_DIR}/fmt/META:devel/ocaml-fmt \
 		${SA_DIR}/lwt/META:devel/ocaml-lwt
 
-USES=		tar:tbz
-USE_OCAML=	yes
+USES=		ocaml tar:tbz
 
 DOCSDIR=	${OCAML_DOCSDIR}/${PORTNAME}
 PORTDOCS=	CHANGES.md LICENSE.md README.md tags.ml tool.ml

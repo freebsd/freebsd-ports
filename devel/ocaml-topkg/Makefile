@@ -15,9 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.md
 BUILD_DEPENDS=	ocamlbuild:devel/ocaml-ocamlbuild \
 		opam-installer:devel/ocaml-opam
 
-USES=		tar:tbz
-USE_OCAML=	yes
-USE_OCAML_FINDLIB=	yes
+USES=		ocaml:findlib tar:tbz
 
 OPTIONS_DEFINE=	DOCS
 

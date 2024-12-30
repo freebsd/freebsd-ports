@@ -12,10 +12,9 @@ WWW=		https://github.com/ocaml/dbm
 
 LICENSE=	LGPL20 # with a special exception to clause 6
 
+USES=		ocaml:ldconfig
 USE_GITHUB=	yes
-USE_OCAML=	yes
 GH_ACCOUNT=	ocaml
-USE_OCAML_LDCONFIG=	yes
 
 DOCSDIR=	${OCAML_DOCSDIR}/${PORTNAME}
 HAS_CONFIGURE=	yes

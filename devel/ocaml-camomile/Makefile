@@ -14,11 +14,10 @@ BUILD_DEPENDS=	${SA_DIR}/camlp-streams/META:devel/ocaml-camlp-streams \
 		dune:devel/ocaml-dune
 RUN_DEPENDS=	${SA_DIR}/camlp-streams/META:devel/ocaml-camlp-streams
 
-USES=		gmake
+USES=		gmake ocaml
 USE_GITHUB=	yes
 GH_ACCOUNT=	yoriyuki
 GH_PROJECT=	Camomile
-USE_OCAML=	yes
 
 MAKE_ENV=	LIBDIR="${PREFIX}/${OCAML_SITELIBDIR}"
 DOCSDIR=	${OCAML_DOCSDIR}/${PORTNAME}

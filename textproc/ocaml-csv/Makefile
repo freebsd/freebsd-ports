@@ -10,12 +10,11 @@ WWW=		https://forge.ocamlcore.org/projects/csv/
 
 LICENSE=	LGPL21+
 
-WRKSRC=		${WRKDIR}/csv-${PORTVERSION}
-USES=		gmake
-MAKE_ARGS=	byte native
-USE_OCAML=	yes
-USE_OCAML_FINDLIB=	yes
+USES=		gmake ocaml:findlib
 OCAML_PKGDIRS=	csv
+
+WRKSRC=		${WRKDIR}/csv-${PORTVERSION}
+MAKE_ARGS=	byte native
 TEST_TARGET=	tests
 
 MAKE_JOBS_UNSAFE=	yes

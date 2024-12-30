@@ -12,13 +12,8 @@ WWW=		http://ygrek.org.ua/p/ocaml-mysql/
 
 LICENSE=	LGPL21
 
-USES=		gmake mysql
+USES=		gmake ocaml:camlp4,findplist,ldconfig mysql
 IGNORE_WITH_MYSQL=	80 81
-USE_OCAML=		yes
-USE_OCAML_FINDLIB=	yes
-USE_OCAML_CAMLP4=	yes
-USE_OCAMLFIND_PLIST=	yes
-USE_OCAML_LDCONFIG=	yes
 
 GNU_CONFIGURE=		yes
 

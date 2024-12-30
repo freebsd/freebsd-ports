@@ -12,9 +12,7 @@ LICENSE=	GPLv2+
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/ocaml/site-lib/extlib/IO.cmi:devel/ocaml-extlib
 
-USE_OCAML=	yes
-USE_OCAML_FINDLIB=yes
-USE_OCAML_CAMLP4=yes
+USES=		ocaml:camlp4,findlib
 OCAML_PKGDIRS=	# This port uses ocaml-findlib but doesn't install one
 
 OCAMLLEX?=	${LOCALBASE}/bin/ocamllex

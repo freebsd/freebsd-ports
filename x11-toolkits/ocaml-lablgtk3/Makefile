@@ -18,12 +18,8 @@ LIB_DEPENDS=	libharfbuzz.so:print/harfbuzz \
 		libfontconfig.so:x11-fonts/fontconfig
 RUN_DEPENDS=	ocaml-cairo>0:graphics/ocaml-cairo
 
-USES=		gmake gnome pkgconfig
+USES=		gmake gnome ocaml:camlp4,findlib,ldconfig pkgconfig
 USE_GNOME=	cairo gdkpixbuf2 gtk30
-USE_OCAML=	yes
-USE_OCAML_FINDLIB=	yes
-USE_OCAML_CAMLP4=	yes
-USE_OCAML_LDCONFIG=	yes
 
 TARGETS=	${PORTNAME}
 

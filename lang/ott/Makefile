@@ -12,12 +12,9 @@ LICENSE_FILE=	${WRKSRC}/LICENCE
 BUILD_DEPENDS=	${OCAMLFIND_DEPEND} \
 		ocaml-ocamlgraph>=0:math/ocaml-ocamlgraph
 
-USES=		gmake
-
+USES=		gmake ocaml
 USE_GITHUB=	yes
 GH_ACCOUNT=	ott-lang
-
-USE_OCAML=	yes
 
 ALL_TARGET=	world
 

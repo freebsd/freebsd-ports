@@ -10,6 +10,28 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
+20241231:
+AUTHOR: bofh@FreeBSD.org
+
+  Converted remaining bsd.ocaml.mk to Uses/ocaml.mk
+
+  - Instead of USE_OCAML=yes use USES=ocaml. If empty USES=ocaml implies
+    build and run
+  - Instead of USE_OCAMLFIND_PLIST use USES=ocaml:findplist which also
+    implies USES=ocaml:findlib
+  - Instead of USE_OCAML_CAMLP4 use USES=ocaml:camlp4
+  - Instead of USE_OCAML_FINDLIB use USES=ocaml:findlib
+  - Instead of USE_OCAML_LDCONFIG use USES=ocaml:ldconfig
+  - Instead of USE_OCAML_WASH use USES=ocaml:wash
+  - Instead of NO_OCAML_BUILDDEPENDS use USES=ocaml:run
+  - Instead of NO_OCAML_RUNDDEPENDS use USES=ocaml:build
+  - Instead of USE_OCAML_TK use USES=ocaml:tk which actually implies
+    USES=ocaml:tkbuild and USES=ocaml:tkrun
+  - Instead of NO_OCAMLTK_BUILDDEPENDS use USES=ocaml:tkrun
+  - Instead of NO_OCAMLTK_RUNDEPENDS use USES=ocaml:tkbuild
+  - USES=ocaml:dune remains unchanged
+  - Prepare to add/remove keywords easily
+
 20240408:
 AUTHOR: flo@FreeBSD.org
 
@@ -442,7 +464,7 @@ AUTHOR: tcberner@FreeBSD.org
   Ports that depend on mlt should now use USES=mlt:<version> to specify
   their dependency.
 
-  At the moment the supported version is 6, but will be extended to also 
+  At the moment the supported version is 6, but will be extended to also
   allow for selection of mlt 7 shortly.
 
 20210604:
@@ -501,8 +523,8 @@ AUTHOR: pauamma@gundo.com
   purpose, such as:
   * course-writing or course-delivery applications,
   * classroom or school management applications (eg, scheduling classes),
-  * applications, utilities, or games primarily or substantially designed 
-    to help the user learn a specific topic or study in general, like typing 
+  * applications, utilities, or games primarily or substantially designed
+    to help the user learn a specific topic or study in general, like typing
     tutors, flashcard applications, or educational games.
 
 20201110:
@@ -593,7 +615,7 @@ AUTHOR: mat@FreeBSD.org
 
   USES=lua sets LUA_FLAVOR that needs to be used on all dependencies of
   flavored lua ports, in a similar way as PHP or Python flavors.
-  
+
 20200115:
 AUTHOR: bapt@FreeBSD.org
 
@@ -605,7 +627,7 @@ AUTHOR: bapt@FreeBSD.org
 
   The ipv6 virtual category is gone, it does not make sense anymore in 2019
   where the norm in applications is to have support both ipv4 and ipv6.
-  
+
 20191001:
 AUTHOR: bapt@FreeBSD.org
 

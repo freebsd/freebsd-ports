@@ -13,13 +13,10 @@ WWW=		https://sourceforge.net/projects/ocaml-magic/
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USE_OCAML=		yes
-USE_OCAML_FINDLIB=	yes
-USE_OCAML_LDCONFIG=	yes
+USES=		gmake ocaml:findlib,ldconfig
 
 MAKE_JOBS_UNSAFE=	yes
 
-USES=		gmake
 GNU_CONFIGURE=	yes
 
 ALL_TARGET=	doc examples

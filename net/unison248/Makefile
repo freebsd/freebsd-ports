@@ -28,10 +28,8 @@ x11_LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 			libfreetype.so:print/freetype2
 
 PLIST_SUB=	PORTVERSION=${PORTVERSION} VERSIONSUFFIX=${VERSIONSUFFIX}
-USES=		gmake localbase
-USE_OCAML=	yes
+USES=		gmake localbase ocaml:build
 WRKSRC_SUBDIR=	src
-NO_OCAML_RUNDEPENDS=yes
 CONFLICTS=	unison-devel
 MAKE_ENV=	CLIBS="${LIBS:S/^-/-ccopt -/}" COFLAGS="${CFLAGS:C/ *(-[^ ]*) */ -ccopt \"\1 \"/gW}"
 MAKE_JOBS_UNSAFE=	yes

@@ -11,13 +11,8 @@ WWW=		https://garrigue.github.io/lablgtk/
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		gmake gnome pkgconfig
+USES=		gmake gnome ocaml:camlp4,findlib,ldconfig,wash pkgconfig
 USE_GNOME=	cairo gdkpixbuf2 gtk20
-USE_OCAML=	yes
-USE_OCAML_FINDLIB=	yes
-USE_OCAML_CAMLP4=	yes
-USE_OCAML_LDCONFIG=	yes
-USE_OCAML_WASH=		yes
 
 HAS_CONFIGURE=	yes
 ALL_TARGET=	all opt

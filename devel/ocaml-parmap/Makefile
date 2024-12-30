@@ -16,10 +16,7 @@ BUILD_DEPENDS=	dune:devel/ocaml-dune
 USE_GITHUB=	yes
 GH_ACCOUNT=	rdicosmo
 
-USES=			gmake
-USE_OCAML=		yes
-USE_OCAML_FINDLIB=	yes
-USE_OCAML_LDCONFIG=	yes
+USES=			gmake ocaml:findlib,ldconfig
 
 TARGETS=	${PORTNAME}
 

@@ -35,8 +35,6 @@ RUN_DEPENDS=	${SA_DIR}/dolmen/META:devel/ocaml-dolmen \
 USES=		ocaml:dune
 USE_GITHUB=	yes
 GH_ACCOUNT=	OCamlPro
-
-USE_OCAML=		yes
 OCAML_PACKAGES=		alt-ergo alt-ergo-lib alt-ergo-parsers
 DUNE_INSTALL_TARGETS=	${OCAML_PACKAGES}
 

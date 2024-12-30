@@ -25,7 +25,6 @@ RUN_DEPENDS=	${SA_DIR}/base/META:devel/ocaml-base \
 USES=		ocaml:dune
 USE_GITHUB=	yes
 GH_ACCOUNT=	janestreet
-USE_OCAML=	yes
 
 DOCSDIR=	${OCAML_DOCSDIR}/${PORTNAME}
 PORTDOCS=	CHANGES.md LICENSE.md README.md

@@ -15,11 +15,9 @@ BUILD_DEPENDS=	${SA_DIR}/sexplib0/META:devel/ocaml-sexplib0 \
 		bash:shells/bash
 RUN_DEPENDS=	${SA_DIR}/sexplib0/META:devel/ocaml-sexplib0
 
-USES=		ocaml:dune
+USES=		ocaml:dune,ldconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	janestreet
-USE_OCAML=	yes
-USE_OCAML_LDCONFIG=	yes
 
 DOCSDIR=	${OCAML_DOCSDIR}/${PORTNAME}
 PORTDOCS=	CHANGES.md LICENSE.md README.org odoc-pages
