@@ -10,5 +10,5 @@ activate = 1
 
 [oqsprovider_sect]
 activate = 1
-module = %%PREFIX%%/lib/ossl-modules/openssl-oqsprovider.so
+module = %%PREFIX%%/lib/ossl-modules/oqsprovider.so
 
