@@ -1,5 +1,6 @@
 PORTNAME=	game
 DISTVERSION=	2.6.1
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,8 +17,7 @@ BROKEN_i386=	error: always_inline function '_mm_set_epi32' requires target featu
 
 BUILD_DEPENDS=	v4l_compat>0:multimedia/v4l_compat
 LIB_DEPENDS=	libfreetype.so:print/freetype2 \
-		libpng.so:graphics/png \
-		libsmpeg.so:multimedia/smpeg
+		libpng.so:graphics/png
 RUN_DEPENDS=	${PYNUMPY} \
 		v4l_compat>0:multimedia/v4l_compat
 
