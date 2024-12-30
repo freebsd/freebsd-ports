@@ -1,5 +1,5 @@
 PORTNAME=	audiowmark
-PORTVERSION=	0.6.2
+PORTVERSION=	0.6.3
 CATEGORIES=	audio
 
 MAINTAINER=	ehaupt@FreeBSD.org
@@ -8,6 +8,8 @@ WWW=		https://github.com/swesterfeld/audiowmark
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
+
+BROKEN_FreeBSD_13=	compilation fails: error: static declaration of '__builtin_bswap32' follows non-static declaration
 
 BUILD_DEPENDS=	${LOCALBASE}/include/fftw3.h:math/fftw3 \
 		autoconf-archive>=0:devel/autoconf-archive
