@@ -6,15 +6,12 @@ CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://download.tuxfamily.org/librep/rep-gtk/
 DISTNAME=	rep-gtk_${PORTVERSION}
 
-MAINTAINER=	bofh@FreeBSD.org
+MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	GTK-2 bindings for rep Lisp interpreter
 WWW=		https://sawfish.tuxfamily.org/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
-
-DEPRECATED=	Uses deprecated gtk2 library
-EXPIRATION_DATE=	2024-12-31
 
 LIB_DEPENDS=	librep.so:lang/librep \
 		libfontconfig.so:x11-fonts/fontconfig \
