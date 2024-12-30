@@ -11,6 +11,9 @@ WWW=		https://www.determinate.net/webdata/seg/tdfsb.html
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Unmaintained, uses smpeg which has no distfiles anymore
+EXPIRATION_DATE=2025-01-30
+
 LIB_DEPENDS=	libsmpeg.so:multimedia/smpeg
 
 USES=		gl pkgconfig sdl
