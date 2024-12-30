@@ -1,6 +1,6 @@
 PORTNAME=	exercism
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.4.2
+DISTVERSION=	3.5.0
 CATEGORIES=	misc
 
 MAINTAINER=	bofh@FreeBSD.org
@@ -14,7 +14,6 @@ USES=		go:1.21,modules
 USE_GITHUB=	yes
 GH_ACCOUNT=	exercism
 GH_PROJECT=	cli
-# golang:sys was bumped to 0.9.0 to fix the build on riscv64
 GH_TUPLE=	exercism:cli:v${DISTVERSION}:DEFAULT \
 		blang:semver:v3.5.1:blang_semver/vendor/github.com/blang/semver \
 		davecgh:go-spew:v1.1.1:davecgh_go_spew/vendor/github.com/davecgh/go-spew \
