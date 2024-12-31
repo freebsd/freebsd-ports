@@ -1,5 +1,5 @@
 PORTNAME=	libimobiledevice-glue
-PORTVERSION=	1.3.0
+PORTVERSION=	1.3.1
 CATEGORIES=	comms
 MASTER_SITES=	https://github.com/libimobiledevice/${PORTNAME}/releases/download/${PORTVERSION}/
 
