@@ -1,5 +1,5 @@
 PORTNAME=	s3fs
-PORTVERSION=	2024.10.0
+PORTVERSION=	2024.12.0
 CATEGORIES=	filesystems devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,7 +18,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aiobotocore>=2.5.4<3.0.0:devel/py-aiobotocor
 		${PYTHON_PKGNAMEPREFIX}aiohttp>=0:www/py-aiohttp@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}fsspec>=${PORTVERSION}<${PORTVERSION}_99:filesystems/py-fsspec@${PY_FLAVOR}
 
-USES=		python
+USES=		python:3.9+
 USE_PYTHON=	autoplist concurrent pep517
 
 NO_ARCH=	yes
