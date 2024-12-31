@@ -803,7 +803,6 @@
     SUBDIR += py-pglite
     SUBDIR += py-pgmigrate
     SUBDIR += py-pgspecial
-    SUBDIR += py-pgspecial1
     SUBDIR += py-pgxnclient
     SUBDIR += py-pickledb
     SUBDIR += py-pickleshare
