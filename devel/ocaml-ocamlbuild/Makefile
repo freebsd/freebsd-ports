@@ -19,4 +19,10 @@ MAKE_ENV=	OCAMLBUILD_LIBDIR=${PREFIX}/${OCAML_LIBDIR}
 TEST_TARGET=	test
 TEST_ENV=	VERBOSE=1
 
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == powerpc
+USE_BINUTILS=	yes
+.endif
+
 .include <bsd.port.mk>
