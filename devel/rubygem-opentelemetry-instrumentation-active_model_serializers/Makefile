@@ -1,5 +1,5 @@
 PORTNAME=	opentelemetry-instrumentation-active_model_serializers
-PORTVERSION=	0.20.3
+PORTVERSION=	0.21.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 

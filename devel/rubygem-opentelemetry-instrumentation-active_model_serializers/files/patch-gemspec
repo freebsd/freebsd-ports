@@ -1,0 +1,11 @@
+--- opentelemetry-instrumentation-active_model_serializers.gemspec.orig	2024-12-28 10:21:40 UTC
++++ opentelemetry-instrumentation-active_model_serializers.gemspec
+@@ -22,7 +22,7 @@ Gem::Specification.new do |s|
+   s.specification_version = 4
+ 
+   s.add_runtime_dependency(%q<opentelemetry-api>.freeze, ["~> 1.0".freeze])
+-  s.add_runtime_dependency(%q<opentelemetry-instrumentation-active_support>.freeze, [">= 0.7.0".freeze])
++  s.add_runtime_dependency(%q<opentelemetry-instrumentation-active_support>.freeze, [">= 0.6.0".freeze])
+   s.add_runtime_dependency(%q<opentelemetry-instrumentation-base>.freeze, ["~> 0.22.1".freeze])
+   s.add_development_dependency(%q<active_model_serializers>.freeze, [">= 0.10.0".freeze])
+   s.add_development_dependency(%q<appraisal>.freeze, ["~> 2.5".freeze])
