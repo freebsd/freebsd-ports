@@ -1,5 +1,5 @@
 PORTNAME=	rdoc
-PORTVERSION=	6.8.1
+PORTVERSION=	6.10.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -18,7 +18,9 @@ USES=		cpe gem
 
 NO_ARCH=	yes
 
-PLIST_FILES=	bin/rdoc bin/ri share/man/man1/ri.1.gz
+PLIST_FILES=	bin/rdoc \
+		bin/ri \
+		share/man/man1/ri.1.gz
 
 CPE_VENDOR=	ruby-lang
 
