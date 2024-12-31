@@ -1,0 +1,9 @@
+--- pyproject.toml.orig	2024-12-18 18:32:46 UTC
++++ pyproject.toml
+@@ -1,5 +1,5 @@
+ [project]
+-name = "Flask-SocketIO"
++name = "flask-socketio"
+ version = "5.5.0"
+ authors = [
+     { name = "Miguel Grinberg", email = "miguel.grinberg@gmail.com" },
