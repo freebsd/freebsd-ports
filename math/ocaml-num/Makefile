@@ -20,4 +20,10 @@ MAKE_ENV=	OCAMLFIND_DESTDIR="${STAGEDIR}${OCAMLFIND_DESTDIR}"
 MAKE_JOBS_UNSAFE=	yes
 TEST_TARGET=	test
 
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == powerpc
+LLD_UNSAFE=	yes
+.endif
+
 .include <bsd.port.mk>
