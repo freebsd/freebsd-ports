@@ -1,5 +1,5 @@
 PORTNAME=	aiobotocore
-PORTVERSION=	2.15.2
+PORTVERSION=	2.16.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,7 +16,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=61:devel/py-setuptools@${PY_FL
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aiohttp>=3.9.2<4.0.0:www/py-aiohttp@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}aioitertools>=0.5.1<1.0.0:devel/py-aioitertools@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}botocore>=1.35.0:devel/py-botocore@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}botocore>=1.35.16:devel/py-botocore@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wrapt>=1.10.10<2.0.0:devel/py-wrapt@${PY_FLAVOR}
 
 USES=		python
@@ -29,6 +29,6 @@ AWSCLI_DESC=	Use awscli
 BOTO3_DESC=	Use boto3
 
 AWSCLI_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}awscli>=1.29.81:devel/py-awscli@${PY_FLAVOR}
-BOTO3_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}boto3>=1.35.0:www/py-boto3@${PY_FLAVOR}
+BOTO3_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}boto3>=1.35.16:www/py-boto3@${PY_FLAVOR}
 
 .include <bsd.port.mk>
