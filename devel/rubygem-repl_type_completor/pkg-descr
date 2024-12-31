@@ -1,0 +1,3 @@
+repl_type_completor is a type based completor for REPL. It uses RBS
+type information, performs static type analytics, uses dynamic runtime
+information from binding.
