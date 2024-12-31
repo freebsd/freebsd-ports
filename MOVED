@@ -3770,3 +3770,4 @@ security/py-pysaml26|security/py-pysaml2|2024-12-31|Remove obsoleted port. Use s
 textproc/py-mistune2|textproc/py-mistune|2024-12-31|Remove obsoleted port. Use textproc/py-mistune instead
 textproc/py-rich12|textproc/py-rich|2024-12-31|Remove obsoleted port. Use textproc/py-rich instead
 www/py-tornado4|www/py-tornado|2024-12-31|Remove obsoleted port. Use www/py-tornado instead
+www/py-tornado5|www/py-tornado|2024-12-31|Remove obsoleted port. Use www/py-tornado instead
