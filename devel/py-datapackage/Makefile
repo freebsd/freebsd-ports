@@ -1,6 +1,5 @@
 PORTNAME=	datapackage
-PORTVERSION=	1.15.2
-PORTREVISION=	1
+PORTVERSION=	1.15.4
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -20,8 +19,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}chardet>=3.0,1:textproc/py-chardet@${PY_FLAV
 		${PYTHON_PKGNAMEPREFIX}jsonschema>=2.5:devel/py-jsonschema@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>=2.8:www/py-requests@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}six>=1.10:devel/py-six@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}tableschema>=1.12.1:databases/py-tableschema@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}tabulator>=1.29:devel/py-tabulator@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}tableschema>=1.20.4:databases/py-tableschema@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}dataflows-tabulator>=1.29:devel/py-dataflows-tabulator@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}unicodecsv>=0.14:devel/py-unicodecsv@${PY_FLAVOR}
 
 USES=		python
