@@ -1590,7 +1590,6 @@
     SUBDIR += py-rich-argparse
     SUBDIR += py-rich-cli
     SUBDIR += py-rich-rst
-    SUBDIR += py-rich12
     SUBDIR += py-rnc2rng
     SUBDIR += py-rst2ansi
     SUBDIR += py-rst2html5

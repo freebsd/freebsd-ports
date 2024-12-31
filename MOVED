@@ -3768,3 +3768,4 @@ devel/py-protobuf4|devel/py-protobuf|2024-12-31|Remove obsoleted port. Use devel
 math/py-blis07|math/py-blis|2024-12-31|Remove obsoleted port. Use math/py-blis instead
 security/py-pysaml26|security/py-pysaml2|2024-12-31|Remove obsoleted port. Use security/py-pysaml2 instead
 textproc/py-mistune2|textproc/py-mistune|2024-12-31|Remove obsoleted port. Use textproc/py-mistune instead
+textproc/py-rich12|textproc/py-rich|2024-12-31|Remove obsoleted port. Use textproc/py-rich instead
