@@ -3763,3 +3763,4 @@ editors/ghostwriter@qt6|editors/ghostwriter|2024-12-29|Flavors removed, now supp
 java/bouncycastle15|java/bouncycastle|2024-12-31|Instead of removing bouncycastle replace it with java/bouncycastle15
 x11-toolkits/py-fltk|x11-toolkits/py-pyfltk|2024-12-31|Rename to match upstream naming. Move x11-toolkits/py-fltk to x11-toolkits/py-pyfltk
 databases/py-pgspecial1|databases/py-pgspecial|2024-12-31|Remove obsoleted port. Use databases/py-pgspecial instead
+devel/py-prompt-toolkit1|devel/py-prompt-toolkit|2024-12-31|Remove obsoleted port. Use devel/py-prompt-toolkit instead

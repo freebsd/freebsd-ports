@@ -5493,7 +5493,6 @@
     SUBDIR += py-progress
     SUBDIR += py-promise
     SUBDIR += py-prompt-toolkit
-    SUBDIR += py-prompt-toolkit1
     SUBDIR += py-prompt-toolkit2
     SUBDIR += py-propcache
     SUBDIR += py-property-cached
