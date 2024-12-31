@@ -3761,3 +3761,4 @@ textproc/apache-solr8|textproc/apache-solr|2024-12-24|Has expired: Deprecated up
 editors/ghostwriter@qt5|editors/ghostwriter|2024-12-29|Flavors removed, now supports only qt6
 editors/ghostwriter@qt6|editors/ghostwriter|2024-12-29|Flavors removed, now supports only qt6
 java/bouncycastle15|java/bouncycastle|2024-12-31|Instead of removing bouncycastle replace it with java/bouncycastle15
+x11-toolkits/py-fltk|x11-toolkits/py-pyfltk|2024-12-31|Rename to match upstream naming. Move x11-toolkits/py-fltk to x11-toolkits/py-pyfltk
