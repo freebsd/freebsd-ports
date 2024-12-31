@@ -3778,3 +3778,4 @@ databases/rubygem-redis4|databases/rubygem-redis|2024-12-31|Remove obsoleted por
 databases/rubygem-redis52|databases/rubygem-redis|2024-12-31|Remove obsoleted port. Use databases/rubygem-redis instead
 devel/rubygem-bootsnap117|devel/rubygem-bootsnap|2024-12-31|Remove obsoleted port. Use devel/rubygem-bootsnap instead
 devel/rubygem-childprocess3|devel/rubygem-childprocess|2024-12-31|Remove obsoleted port. Use devel/rubygem-childprocess instead
+devel/rubygem-childprocess40|devel/rubygem-childprocess|2024-12-31|Remove obsoleted port. Use devel/rubygem-childprocess instead
