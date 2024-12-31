@@ -1,6 +1,6 @@
 bin/aqbanking-cli
 bin/aqbanking-config
-%%EBICS%%bin/aqebics-tool
+bin/aqebics-tool
 bin/aqhbci-tool4
 bin/aqofxconnect-tool
 bin/aqpaypal-tool
@@ -44,6 +44,7 @@ lib/aqbanking/plugins/%%AQB_SHLIB_VER%%/imexporters/xml.xml
 lib/aqbanking/plugins/%%AQB_SHLIB_VER%%/imexporters/xmldb.xml
 lib/aqbanking/plugins/%%AQB_SHLIB_VER%%/imexporters/yellownet.xml
 %%EBICS%%lib/aqbanking/plugins/%%AQB_SHLIB_VER%%/providers/aqebics.xml
+lib/aqbanking/plugins/%%AQB_SHLIB_VER%%/providers/aqgivve.xml
 lib/aqbanking/plugins/%%AQB_SHLIB_VER%%/providers/aqhbci.xml
 lib/aqbanking/plugins/%%AQB_SHLIB_VER%%/providers/aqnone.xml
 lib/aqbanking/plugins/%%AQB_SHLIB_VER%%/providers/aqofxconnect.xml
@@ -64,6 +65,8 @@ share/aclocal/aqbanking.m4
 %%EBICS%%%%DATADIR%%/backends/aqebics/dialogs/dlg_edituser.dlg
 %%EBICS%%%%DATADIR%%/backends/aqebics/dialogs/dlg_newkeyfile.dlg
 %%EBICS%%%%DATADIR%%/backends/aqebics/dialogs/dlg_user_special.dlg
+%%DATADIR%%/backends/aqgivve/dialogs/dlg_cardselect.dlg
+%%DATADIR%%/backends/aqgivve/dialogs/dlg_edituser.dlg
 %%DATADIR%%/backends/aqhbci/dialogs/chipcard.png
 %%DATADIR%%/backends/aqhbci/dialogs/dlg_choose_usertype.dlg
 %%DATADIR%%/backends/aqhbci/dialogs/dlg_ddvcard.dlg
@@ -110,6 +113,7 @@ share/aclocal/aqbanking.m4
 %%DATADIR%%/imexporters/csv/profiles/aqmoney2.conf
 %%DATADIR%%/imexporters/csv/profiles/bankaustria.conf
 %%DATADIR%%/imexporters/csv/profiles/cli-transfers.conf
+%%DATADIR%%/imexporters/csv/profiles/comdirect-prices.conf
 %%DATADIR%%/imexporters/csv/profiles/comdirect.conf
 %%DATADIR%%/imexporters/csv/profiles/consors-tagesgeld.conf
 %%DATADIR%%/imexporters/csv/profiles/default.conf
@@ -144,6 +148,8 @@ share/aclocal/aqbanking.m4
 %%DATADIR%%/imexporters/openhbci1/profiles/default.conf
 %%DATADIR%%/imexporters/q43/profiles/default.conf
 %%DATADIR%%/imexporters/sepa/profiles/001_001_02.conf
+%%DATADIR%%/imexporters/sepa/profiles/001_001_03.conf
+%%DATADIR%%/imexporters/sepa/profiles/001_001_09.conf
 %%DATADIR%%/imexporters/sepa/profiles/001_002_03.conf
 %%DATADIR%%/imexporters/sepa/profiles/001_003_03.conf
 %%DATADIR%%/imexporters/sepa/profiles/008_001_01.conf
@@ -158,19 +164,23 @@ share/aclocal/aqbanking.m4
 %%DATADIR%%/imexporters/swift/profiles/swiftmt940.conf
 %%DATADIR%%/imexporters/swift/profiles/swiftmt942.conf
 %%DATADIR%%/imexporters/xml/data/camt_052_001_02.xml
+%%DATADIR%%/imexporters/xml/data/camt_053_001_02.xml
 %%DATADIR%%/imexporters/xml/data/camt_053_001_04.xml
 %%DATADIR%%/imexporters/xml/data/ofx1.xml
 %%DATADIR%%/imexporters/xml/data/ofx2.xml
 %%DATADIR%%/imexporters/xml/data/pain_001_001_03.xml
+%%DATADIR%%/imexporters/xml/data/pain_001_001_09.xml
 %%DATADIR%%/imexporters/xml/data/pain_001_003_03.xml
 %%DATADIR%%/imexporters/xml/data/pain_008_001_02.xml
 %%DATADIR%%/imexporters/xml/data/pain_008_003_02.xml
 %%DATADIR%%/imexporters/xml/profiles/camt_052_001_02.conf
+%%DATADIR%%/imexporters/xml/profiles/camt_053_001_02.conf
 %%DATADIR%%/imexporters/xml/profiles/camt_053_001_04.conf
 %%DATADIR%%/imexporters/xml/profiles/default.conf
 %%DATADIR%%/imexporters/xml/profiles/ofx1.conf
 %%DATADIR%%/imexporters/xml/profiles/ofx2.conf
 %%DATADIR%%/imexporters/xml/profiles/pain_001_001_03.conf
+%%DATADIR%%/imexporters/xml/profiles/pain_001_001_09.conf
 %%DATADIR%%/imexporters/xml/profiles/pain_001_003_03.conf
 %%DATADIR%%/imexporters/xml/profiles/pain_008_001_02.conf
 %%DATADIR%%/imexporters/xml/profiles/pain_008_003_02.conf
@@ -229,4 +239,8 @@ share/aclocal/aqbanking.m4
 %%DATADIR%%/typemaker2/c/ab_user_list2.tm2
 %%DATADIR%%/typemaker2/c/ab_userqueue.tm2
 %%DATADIR%%/typemaker2/c/ab_userqueue_list.tm2
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+@comment %%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/README
 share/locale/de/LC_MESSAGES/aqbanking.mo
