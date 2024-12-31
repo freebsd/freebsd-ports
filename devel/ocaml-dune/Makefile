@@ -28,6 +28,12 @@ DOCSDIR=	${OCAML_DOCSDIR}/${PORTNAME}
 
 OPTIONS_DEFINE=	DOCS
 
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == powerpc
+LLD_UNSAFE=	yes
+.endif
+
 post-patch:
 # FreeBSD-specific hack, do not nag upstream (for now)
 	@${REINPLACE_CMD} -e '/doc_root = Path.relative/ \
