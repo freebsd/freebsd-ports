@@ -11,6 +11,8 @@ WWW=		https://github.com/DataDog/libdatadog
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_i386=	error: could not compile `datadog-sidecar` (lib) due to 2 previous errors
+
 USES=		cargo llvm
 
 CARGO_FEATURES=	cbindgen,crashtracker-ffi,cbindgen,datadog-profiling-ffi/ddtelemetry-ffi
