@@ -1,6 +1,6 @@
 PORTNAME=	lwjgl
 DISTVERSION=	2.9.4.20161208
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games java
 
 MAINTAINER=	freebsd@skinc.ru
@@ -15,9 +15,9 @@ BUILD_DEPENDS=	${JAVAJARDIR}/jutils/jutils.jar:games/jutils \
 		${JAVAJARDIR}/jinput/jinput.jar:games/jinput
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USES=		dos2unix java:ant xorg
+USES=		dos2unix java:ant,run xorg
 DOS2UNIX_REGEX=	.*.[^jp][^an][^rg]$
-
+JAVA_VERSION=	8
 USE_GITHUB=	yes
 GH_ACCOUNT=	LWJGL
 GH_TAGNAME=	2df01dd

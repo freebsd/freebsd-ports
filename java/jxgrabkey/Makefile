@@ -1,6 +1,6 @@
 PORTNAME=	jxgrabkey
 PORTVERSION=	0.3.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	java devel
 MASTER_SITES=	SF
 DISTFILES=	${PORTNAME}-${PORTVERSION}_src${EXTRACT_SUFX}
@@ -11,7 +11,7 @@ WWW=		https://jxgrabkey.sourceforge.net/
 
 LICENSE=	LGPL3
 
-USES=		java:ant tar:bz2
+USES=		java:ant,run tar:bz2
 
 OPTIONS_DEFINE=	TEST
 

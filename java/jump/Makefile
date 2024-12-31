@@ -1,6 +1,6 @@
 PORTNAME=	jump
 PORTVERSION=	0.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	java math
 MASTER_SITES=	SF/${PORTNAME}-math/${PORTNAME}/${PORTVERSION}
 
@@ -8,7 +8,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Java library for arbitrary precision computations
 WWW=		https://jump-math.sourceforge.net/
 
-USES=		java:ant
+USES=		java:ant,run
 
 ALL_TARGET=	jar
 

@@ -1,6 +1,6 @@
 PORTNAME=	java3d
 PORTVERSION=	1.5.2
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	java graphics games devel
 MASTER_SITES=	https://sites.google.com/site/daemonwizard/
 
@@ -15,7 +15,7 @@ BROKEN_aarch64=		fails to compile: GVector.java:168: bad use of '>'
 BROKEN_armv6=		fails to compile: build.xml: Compile failed; see the compiler error output for details
 BROKEN_armv7=		fails to compile: build.xml: Compile failed; see the compiler error output for details
 
-USES=		compiler:c11 gl java:ant tar:bzip2 xorg
+USES=		compiler:c11 gl java:ant,run tar:bzip2 xorg
 JAVA_VERSION=	8
 USE_GL=		gl
 USE_XORG=	xt

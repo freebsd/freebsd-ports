@@ -1,6 +1,6 @@
 PORTNAME=	seda
 PORTVERSION=	3.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net java
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-release-${VERSION_DATE}
@@ -9,7 +9,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Architecture for Highly Concurrent Server Applications
 WWW=		http://www.eecs.harvard.edu/~mdw/proj/seda/
 
-USES=		java:ant
+USES=		java:ant,run
 
 ALL_TARGET=	dist
 NO_ARCH=	yes

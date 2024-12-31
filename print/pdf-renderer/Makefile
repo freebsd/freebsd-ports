@@ -1,5 +1,6 @@
 PORTNAME=	pdf-renderer
 PORTVERSION=	0.9.1
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	print java
 MASTER_SITES=	http://java.net/downloads/${PORTNAME}/
@@ -14,7 +15,7 @@ LICENSE=	LGPL21
 BROKEN_armv6=		fails to install: swinglabs-build-impl.xml: Javadoc returned 1
 BROKEN_armv7=		fails to install: swinglabs-build-impl.xml: Javadoc returned 1
 
-USES=		dos2unix java:ant zip
+USES=		dos2unix java:ant,run zip
 NO_WRKSUBDIR=	yes
 
 ALL_TARGET=	jar

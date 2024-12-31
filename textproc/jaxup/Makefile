@@ -1,6 +1,6 @@
 PORTNAME=	jaxup
 PORTVERSION=	1.01
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	textproc java
 MASTER_SITES=	http://klomp.org/jaxup/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
@@ -16,7 +16,7 @@ JAR_DEPENDS=	${JAVALIBDIR}/jdom.jar:java/jdom \
 		${JAVALIBDIR}/jaxen-full.jar:java/jaxen \
 		${JAVALIBDIR}/xercesImpl.jar:textproc/xerces-j
 
-USES=		java:ant zip
+USES=		java:ant,run zip
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

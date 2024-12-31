@@ -1,6 +1,6 @@
 PORTNAME=	charva
 PORTVERSION=	1.1.4
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	devel java
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 DISTNAME=	${PORTNAME}
@@ -17,7 +17,7 @@ BROKEN_armv7=		fails to compile: build.xml: compilation failed
 
 OPTIONS_DEFINE=	DOCS
 
-USES=		dos2unix java:ant zip
+USES=		dos2unix java:ant,run zip
 DOS2UNIX_GLOB=	build.xml Makefile.freebsd.txt *.c *.java
 
 ALL_TARGET=	clean makeDLL dist

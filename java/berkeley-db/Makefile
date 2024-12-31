@@ -1,6 +1,6 @@
 PORTNAME=	je
 PORTVERSION=	7.5.11
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	java databases
 MASTER_SITES=	http://download.oracle.com/berkeley-db/	\
 		http://download-east.oracle.com/berkeley-db/	\
@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${JAVALIBDIR}/junit.jar:java/junit
 
-USES=		java:ant
+USES=		java:ant,run
 JAVA_VERSION=	8
 
 OPTIONS_DEFINE=	DOCS EXAMPLES TEST

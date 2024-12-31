@@ -1,5 +1,6 @@
 PORTNAME=	flexdock
 PORTVERSION=	1.2.4
+PORTREVISION=	1
 CATEGORIES=	devel java
 MASTER_SITES=	http://forge.scilab.org/index.php/p/${PORTNAME}/downloads/get/
 
@@ -10,7 +11,7 @@ WWW=		https://forge.scilab.org/index.php/p/flexdock/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-USES=		java:ant
+USES=		java:ant,run
 
 ALL_TARGET=	dist
 NO_ARCH=	yes

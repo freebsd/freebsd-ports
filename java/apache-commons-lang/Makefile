@@ -1,5 +1,6 @@
 PORTNAME=	commons-lang
 PORTVERSION=	2.6
+PORTREVISION=	1
 CATEGORIES=	java devel
 MASTER_SITES=	APACHE_COMMONS_SOURCE
 PKGNAMEPREFIX=	apache-
@@ -11,7 +12,7 @@ WWW=		https://commons.apache.org/proper/commons-lang/
 
 LICENSE=	APACHE20
 
-USES=		java:ant
+USES=		java:ant,run
 JAVA_VERSION=	8
 
 ALL_TARGET=	jar

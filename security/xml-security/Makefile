@@ -1,6 +1,6 @@
 PORTNAME=	xml-security
 DISTVERSION=	1_5_5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security java
 MASTER_SITES=	https://archive.apache.org/dist/santuario/java-library/${DISTVERSION}/
 DISTNAME=	${PORTNAME}-src-${DISTVERSION}
@@ -15,7 +15,7 @@ RUN_DEPENDS=	${JAVALIBDIR}/commons-logging.jar:java/apache-commons-logging
 
 LICENSE=	APACHE20
 
-USES=		cpe java:ant zip
+USES=		cpe java:ant,run zip
 CPE_PRODUCT=	xml_security_for_java
 CPE_VENDOR=	apache
 

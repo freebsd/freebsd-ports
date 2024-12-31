@@ -1,5 +1,6 @@
 PORTNAME=	jgraphx
 PORTVERSION=	4.2.2
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	java graphics
 
@@ -10,7 +11,7 @@ WWW=		https://github.com/jgraph/jgraphx
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/license.txt
 
-USES=		java:ant
+USES=		java:ant,run
 USE_GITHUB=	yes
 GH_ACCOUNT=	jgraph
 

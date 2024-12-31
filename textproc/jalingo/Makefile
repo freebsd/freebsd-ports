@@ -1,6 +1,6 @@
 PORTNAME=	jalingo
 PORTVERSION=	0.6.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	textproc java
 MASTER_SITES=	SF/${PORTNAME}/JaLingo/${PORTVERSION}
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
@@ -11,7 +11,7 @@ WWW=		https://jalingo.sourceforge.net/
 
 LICENSE=	GPLv2
 
-USES=		7z java:ant
+USES=		7z java:ant,run
 
 ALL_TARGET=	dist
 

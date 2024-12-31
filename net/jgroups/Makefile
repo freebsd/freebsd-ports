@@ -1,5 +1,6 @@
 PORTNAME=	jgroups
 PORTVERSION=	2.12.0
+PORTREVISION=	1
 CATEGORIES=	net java
 MASTER_SITES=	LOCAL/ale
 
@@ -9,7 +10,7 @@ WWW=		http://www.jgroups.org/
 
 LICENSE=	LGPL21
 
-USES=		java:ant
+USES=		java:ant,run
 
 OPTIONS_DEFINE=	DOCS
 

@@ -1,5 +1,6 @@
 PORTNAME=	bouncycastle
 DISTVERSION=	1.71
+PORTREVISION=	1
 CATEGORIES=	java security
 MASTER_SITES=	http://www.bouncycastle.org/download/ \
 		http://polydistortion.net/bc/download/
@@ -18,7 +19,7 @@ BUILD_DEPENDS=	${JAVALIBDIR}/junit.jar:java/junit \
 		${JAVALIBDIR}/mail.jar:java/javamail
 RUN_DEPENDS=	${JAVALIBDIR}/mail.jar:java/javamail
 
-USES=		cpe java:ant
+USES=		cpe java:ant,run
 CPE_VENDOR=	${PORTNAME}
 CPE_PRODUCT=	legion-of-the-bouncy-castle-java-crytography-api
 

@@ -1,6 +1,7 @@
 PORTNAME=	javamail
 DISTVERSIONPREFIX=	${PORTNAME:tu}-
 DISTVERSION=	1_6_2
+PORTREVISION=	1
 CATEGORIES=	java mail
 
 MAINTAINER=	ale@FreeBSD.org
@@ -12,7 +13,7 @@ LICENSE_COMB=	dual
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
-USES=		cpe java:ant
+USES=		cpe java:ant,run
 USE_GITHUB=	yes
 GH_ACCOUNT=	javaee
 CPE_VENDOR=	sun

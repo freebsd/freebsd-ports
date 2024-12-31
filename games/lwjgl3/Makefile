@@ -1,5 +1,6 @@
 PORTNAME=	lwjgl
 DISTVERSION=	3.3.5
+PORTREVISION=	1
 CATEGORIES=	games java
 MASTER_SITES=	https://repo1.maven.org/:source1
 PKGNAMESUFFIX=	3
@@ -47,7 +48,7 @@ LIB_DEPENDS=		libdraco.so:archivers/draco \
 			libfreetype.so:print/freetype2 \
 			libharfbuzz.so:print/harfbuzz
 
-USES=		gl gnome java:ant
+USES=		gl gnome java:ant,run
 JAVA_VERSION=	17+
 USE_GITHUB=	yes
 GH_ACCOUNT=	${PORTNAME:tu}

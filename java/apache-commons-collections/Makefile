@@ -1,5 +1,6 @@
 PORTNAME=	commons-collections
 PORTVERSION=	3.2.2
+PORTREVISION=	1
 CATEGORIES=	java devel
 MASTER_SITES=	APACHE_COMMONS_SOURCE
 PKGNAMEPREFIX=	apache-
@@ -12,7 +13,7 @@ WWW=		https://commons.apache.org/proper/commons-collections/
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-USES=		java:ant
+USES=		java:ant,run
 JAVA_VERSION=	8 11 17 18 19 20
 
 ALL_TARGET=	jar

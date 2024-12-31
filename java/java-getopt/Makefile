@@ -1,5 +1,6 @@
 PORTNAME=	java-getopt
 PORTVERSION=	1.0.14
+PORTREVISION=	1
 CATEGORIES=	java devel
 MASTER_SITES=	http://www.urbanophile.com/arenn/hacking/getopt/
 
@@ -9,7 +10,7 @@ WWW=		https://www.urbanophile.com/arenn/hacking/download.html #getopt
 
 LICENSE=	LGPL20
 
-USES=		java:ant
+USES=		java:ant,run
 
 OPTIONS_DEFINE=	DOCS
 

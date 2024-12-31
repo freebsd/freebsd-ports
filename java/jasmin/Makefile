@@ -1,6 +1,6 @@
 PORTNAME=	jasmin
 PORTVERSION=	2.4
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	java lang
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
@@ -9,7 +9,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Java Assembler Interface
 WWW=		https://jasmin.sourceforge.net/
 
-USES=		dos2unix java:ant zip
+USES=		dos2unix java:ant,run zip
 DOS2UNIX_REGEX=	.*\.(txt|xml|j|class|java|mf|css|bnf|html)
 JAVA_VERSION=	8
 

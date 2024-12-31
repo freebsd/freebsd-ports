@@ -1,6 +1,6 @@
 PORTNAME=	freeguide
 PORTVERSION=	0.11.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	misc java
 MASTER_SITES=	SF/${PORTNAME}-tv/${PORTNAME}-source/${PORTVERSION}
 
@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/doc/COPYING
 
 RUN_DEPENDS=	tv_cat:textproc/p5-xmltv
 
-USES=		java:ant
+USES=		java:ant,run
 JAVA_VERSION=	8
 
 NO_ARCH=	yes

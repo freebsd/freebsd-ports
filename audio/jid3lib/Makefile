@@ -1,6 +1,6 @@
 PORTNAME=	jid3lib
 PORTVERSION=	0.5.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio java
 MASTER_SITES=	SF/javamusictag/${PORTNAME}/beta-dev6
 
@@ -8,7 +8,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Java ID3 Tag Library
 WWW=		https://javamusictag.sourceforge.net/index.html
 
-USES=		java:ant
+USES=		java:ant,run
 
 PLIST_FILES=	%%JAVAJARDIR%%/jid3lib.jar
 

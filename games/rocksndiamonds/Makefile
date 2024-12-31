@@ -1,6 +1,5 @@
 PORTNAME=	rocksndiamonds
-DISTVERSION=	3.3.1.2
-PORTREVISION=	7
+DISTVERSION=	4.0.0.0
 CATEGORIES=	games
 MASTER_SITES=	http://www.artsoft.org/RELEASES/unix/rocksndiamonds/:game \
 		http://www.artsoft.org/RELEASES/rocksndiamonds/levels/:levels_artsoft \
@@ -24,7 +23,7 @@ WWW=		https://www.artsoft.org/rocksndiamonds/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libsmpeg.so:multimedia/smpeg
+#LIB_DEPENDS=	libsmpeg2.so:multimedia/smpeg2
 EXTRACT_DEPENDS=${UNZIP_CMD}:archivers/unzip
 
 USES=		gmake gnome iconv sdl

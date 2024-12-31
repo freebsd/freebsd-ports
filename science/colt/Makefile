@@ -1,6 +1,6 @@
 PORTNAME=	colt
 PORTVERSION=	1.2.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	science java
 MASTER_SITES=	http://acs.lbl.gov/software/colt/colt-download/releases/
 
@@ -20,7 +20,7 @@ OPTIONS_DEFAULT=COMPILE
 
 COMPILE_DESC=	Install the pre-compiled .jar file
 
-COMPILE_USES=	java:ant
+COMPILE_USES=	java:ant,run
 COMPILE_USES_OFF=	java
 COMPILE_USE=	LOCALE=en_US.ISO8859-1
 COMPILE_ALL_TARGET=	build

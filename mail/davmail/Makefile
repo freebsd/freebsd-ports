@@ -1,5 +1,6 @@
 PORTNAME=	davmail
 PORTVERSION=	6.1.0
+PORTREVISION=	1
 CATEGORIES=	mail java
 MASTER_SITES=	SF/davmail/davmail/${PORTVERSION}
 DISTNAME=	${PORTNAME}-src-${PORTVERSION}-${REVISION}
@@ -10,7 +11,7 @@ WWW=		https://davmail.sourceforge.net/
 
 LICENSE=	GPLv2
 
-USES=		dos2unix java:ant tar:tgz
+USES=		dos2unix java:ant,run tar:tgz
 
 DOS2UNIX_FILES=	build.xml
 USE_RC_SUBR=	davmail

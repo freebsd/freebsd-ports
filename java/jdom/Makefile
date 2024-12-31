@@ -1,5 +1,6 @@
 PORTNAME=	jdom
 PORTVERSION=	1.1.1
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	java textproc
 MASTER_SITES=	http://www.jdom.org/dist/source/
@@ -10,7 +11,7 @@ WWW=		http://www.jdom.org/
 
 RUN_DEPENDS=	${JAVALIBDIR}/jaxen-jdom.jar:java/jaxen
 
-USES=		java:ant
+USES=		java:ant,run
 JAVA_VERSION=	8
 
 ALL_TARGET=	package

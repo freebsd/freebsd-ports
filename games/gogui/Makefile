@@ -1,6 +1,7 @@
 PORTNAME=	gogui
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.4.10
+PORTREVISION=	1
 CATEGORIES=	games java
 MASTER_SITES=	http://www.randelshofer.ch/quaqua/files/:quaqua
 DISTFILES=	quaqua-5.2.1.nested.zip:quaqua
@@ -17,7 +18,7 @@ BROKEN_aarch64=	compilation fails: Internal Error (assembler_aarch64.hpp:237) ..
 BUILD_DEPENDS=	xsltproc:textproc/libxslt \
 		docbook-xsl>0:textproc/docbook-xsl
 
-USES=		java:ant
+USES=		java:ant,run
 USE_GITHUB=	yes
 GH_ACCOUNT=	lemonsqueeze
 

@@ -1,6 +1,6 @@
 PORTNAME=	commons-math
 PORTVERSION=	3.6.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	math java
 MASTER_SITES=	APACHE_COMMONS_SOURCE \
 		https://repo1.maven.org/maven2/junit/junit/4.8.2/:source2
@@ -16,7 +16,7 @@ WWW=		https://commons.apache.org/proper/commons-math/
 
 LICENSE=	APACHE20
 
-USES=		java:ant
+USES=		java:ant,run
 USE_LOCALE=	en_US.ISO8859-1
 
 ALL_TARGET=	compile jar

@@ -33,7 +33,7 @@ LIB_DEPENDS=	libasound.so:audio/alsa-lib \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2
 
-USES=		gettext-runtime gl gnome java  jpeg localbase:ldflags ninja pkgconfig \
+USES=		gettext-runtime gl gnome java jpeg localbase:ldflags ninja pkgconfig \
 		sqlite xorg
 
 USE_GITHUB=	yes
