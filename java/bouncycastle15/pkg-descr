@@ -1,7 +1,0 @@
-The Bouncy Castle Crypto package is a Java implementation of cryptographic
-algorithms. It was developed by the Legion of the Bouncy Castle, a registered
-Australian Charity.
-
-The package is organised so that it contains a light-weight API suitable for
-use in any environment (including the J2ME) with the additional infrastructure
-to conform the algorithms to the JCE framework.
