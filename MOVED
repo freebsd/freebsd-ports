@@ -3799,3 +3799,4 @@ textproc/rubygem-rexml32|textproc/rubygem-rexml|2024-12-31|Remove obsoleted port
 textproc/rubygem-rexml33|textproc/rubygem-rexml|2024-12-31|Remove obsoleted port. Use textproc/rubygem-rexml instead
 textproc/rubygem-rouge43|textproc/rubygem-rouge|2024-12-31|Remove obsoleted port. Use textproc/rubygem-rouge instead
 textproc/rubygem-terser11|textproc/rubygem-terser|2024-12-31|Remove obsoleted port. Use textproc/rubygem-terser instead
+www/rubygem-httparty020|www/rubygem-httparty|2024-12-31|Remove obsoleted port. Use www/rubygem-httparty instead
