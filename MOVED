@@ -3789,3 +3789,4 @@ devel/rubygem-google-apis-core011|devel/rubygem-google-apis-core|2024-12-31|Remo
 devel/rubygem-google-apis-iam_v1050|devel/rubygem-google-apis-iam_v1|2024-12-31|Remove obsoleted port. Use devel/rubygem-google-apis-iam_v1 instead
 devel/rubygem-grape1|devel/rubygem-grape|2024-12-31|Remove obsoleted port. Use devel/rubygem-grape instead
 devel/rubygem-libddprof|devel/rubygem-libdatadog|2024-12-31|Remove obsoleted port. Use devel/rubygem-libdatadog instead
+net/rubygem-google-cloud-storage145|net/rubygem-google-cloud-storage|2024-12-31|Remove obsoleted port. Use net/rubygem-google-cloud-storage instead
