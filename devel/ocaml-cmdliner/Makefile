@@ -22,4 +22,10 @@ INSTALL_TARGET=	install
 OPTIONS_DEFINE=	DOCS
 DOCS_INSTALL_TARGET=	install-doc
 
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == powerpc
+USE_BINUTILS=	yes
+.endif
+
 .include <bsd.port.mk>
