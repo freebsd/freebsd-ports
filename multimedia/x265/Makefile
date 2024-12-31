@@ -1,5 +1,6 @@
 PORTNAME=	x265
 PORTVERSION=	3.6
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	https://bitbucket.org/multicoreware/x265_git/downloads/ \
 		http://ftp.videolan.org/pub/videolan/x265/
@@ -52,7 +53,7 @@ VMAF_CMAKE_BOOL=	ENABLE_LIBVMAF
 
 .include <bsd.port.options.mk>
 
-.if ${ARCH:Mpowerpc64*}
+.if ${ARCH} == powerpc64le
 CMAKE_ARGS+=	-DCPU_POWER8=ON \
 		-DENABLE_ALTIVEC=ON
 .endif
@@ -85,7 +86,7 @@ CFLAGS:=	${CFLAGS:N-O*} -O3
 .for b in ${OTHER_DEPTHS:C/HI([0-9]+)P/\1/}
 EXTRA_LINK_FLAGS+=	-L${WRKSRC:H}/${b}bit
 
-.if ${ARCH:Mpowerpc64*}
+.if ${ARCH} == powerpc64le
 
 .if ${b} != 8
 ASSEMBLY=	false
@@ -108,7 +109,7 @@ pre-build::
 	${ECHO_MSG} "---> Built the ${b}-bit library ---"
 
 .else
-.if (${ARCH} == i386 || ${ARCH} == armv7) && $b != 8
+.if ((${ARCH} == i386 || ${ARCH} == armv7) && $b != 8) || ${ARCH} == powerpc || ${ARCH} == powerpc64
 ASSEMBLY=	false
 .else
 ASSEMBLY=	true
@@ -119,7 +120,7 @@ pre-build::
 	${MKDIR} ${WRKSRC:H}/${b}bit
 	${CMAKE_BIN} -S ${WRKSRC} -B ${WRKSRC:H}/${b}bit \
 		${CMAKE_OTHER_ARGS} ${b:C/1./-DHIGH_BIT_DEPTH:BOOL=true/} \
-		-DMAIN${b}:BOOL=true -DENABLE_ASSEMBLY:BOOL=${ASSEMBLY} \
+		-DMAIN${b}:BOOL=true -DENABLE_ASSEMBLY:BOOL=${ASSEMBLY} -DCPU_POWER8=false -DENABLE_ALTIVEC:BOOL=false \
 		-DEXPORT_C_API:BOOL=false -DENABLE_CLI=false
 	${SETENV} ${MAKE_ENV} ${MAKE_CMD} -C ${WRKSRC:H}/${b}bit ${MAKE_ARGS}
 	${LN} -f ${WRKSRC:H}/${b}bit/libx265.a ${WRKSRC:H}/${b}bit/libx265_${b}bit.a
@@ -138,11 +139,14 @@ CMAKE_ARGS+=	-DENABLE_SHARED:BOOL=true
 .if ${ARCH} == i386 && ${DEFAULT_DEPTH} != "HI8P"
 CMAKE_ARGS+=	-DENABLE_ASSEMBLY:BOOL=false
 .else
-.if !${ARCH:Mpowerpc64*}
+.if !${ARCH:Mpowerpc*}
 CMAKE_ARGS+=	-DENABLE_ASSEMBLY:BOOL=true
-.else
+.elif ${ARCH} == powerpc64le
 CMAKE_ARGS+=	-DCPU_POWER8=ON \
 		-DENABLE_ALTIVEC=ON
+.elif ${ARCH} == powerpc64
+CMAKE_ARGS+=	-DCPU_POWER8=OFF \
+		-DENABLE_ALTIVEC=OFF
 .endif
 
 do-test:
