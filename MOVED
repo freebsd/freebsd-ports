@@ -3784,3 +3784,4 @@ devel/rubygem-event_stream_parser0|devel/rubygem-event_stream_parser|2024-12-31|
 devel/rubygem-faraday_middleware-aws-sigv403|devel/rubygem-faraday_middleware-aws-sigv4|2024-12-31|Remove obsoleted port. Use devel/rubygem-faraday_middleware-aws-sigv4 instead
 devel/rubygem-fugit18|devel/rubygem-fugit|2024-12-31|Remove obsoleted port. Use devel/rubygem-fugit instead
 devel/rubygem-gettext_i18n_rails112|devel/rubygem-gettext_i18n_rails|2024-12-31|Remove obsoleted port. Use devel/rubygem-gettext_i18n_rails instead
+devel/rubygem-google-apis-cloudresourcemanager_v1035|devel/rubygem-google-apis-cloudresourcemanager_v1|2024-12-31|Remove obsoleted port. Use devel/rubygem-google-apis-cloudresourcemanager_v1 instead
