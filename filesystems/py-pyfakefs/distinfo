@@ -1,3 +1,3 @@
-TIMESTAMP = 1734888310
-SHA256 (pyfakefs-5.7.2.tar.gz) = 40da84175c5af8d9c4f3b31800b8edc4af1e74a212671dd658b21cc881c60000
-SIZE (pyfakefs-5.7.2.tar.gz) = 212401
+TIMESTAMP = 1735227942
+SHA256 (pyfakefs-5.7.3.tar.gz) = cd53790761d0fc030a9cf41fd541bfd28c1ea681b1a7c5df8834f3c9e511ac5f
+SIZE (pyfakefs-5.7.3.tar.gz) = 212705
