@@ -3765,3 +3765,4 @@ x11-toolkits/py-fltk|x11-toolkits/py-pyfltk|2024-12-31|Rename to match upstream 
 databases/py-pgspecial1|databases/py-pgspecial|2024-12-31|Remove obsoleted port. Use databases/py-pgspecial instead
 devel/py-prompt-toolkit1|devel/py-prompt-toolkit|2024-12-31|Remove obsoleted port. Use devel/py-prompt-toolkit instead
 devel/py-protobuf4|devel/py-protobuf|2024-12-31|Remove obsoleted port. Use devel/py-protobuf instead
+math/py-blis07|math/py-blis|2024-12-31|Remove obsoleted port. Use math/py-blis instead
