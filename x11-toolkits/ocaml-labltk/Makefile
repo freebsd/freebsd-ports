@@ -29,6 +29,12 @@ MAKE_JOBS_UNSAFE=	yes
 
 ALL_TARGET=	all opt
 
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == powerpc
+LLD_UNSAFE=	yes
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} \
 		-e '/exec $$(INSTALLDIR)/s|$$(INSTALLDIR)|$$(PREFIX)/$$(INSTALLDIR_REL)|g' \
