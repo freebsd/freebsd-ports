@@ -11,9 +11,9 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${JAVALIBDIR}/commons-lang3.jar:java/apache-commons-lang3 \
-	${JAVALIBDIR}/bcprov.jar:java/bouncycastle15
+	${JAVALIBDIR}/bcprov.jar:java/bouncycastle
 RUN_DEPENDS=	${JAVALIBDIR}/commons-lang3.jar:java/apache-commons-lang3 \
-	${JAVALIBDIR}/bcprov.jar:java/bouncycastle15
+	${JAVALIBDIR}/bcprov.jar:java/bouncycastle
 
 USES=		java:ant
 USE_GITLAB=	yes
