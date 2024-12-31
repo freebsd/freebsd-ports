@@ -10,6 +10,8 @@ WWW=		https://vlang.io/ \
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_i386=	error: mismatched types
+
 USES=		compiler:c11 gmake
 
 ALL_TARGET=	v
