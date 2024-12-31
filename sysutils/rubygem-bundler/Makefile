@@ -1,5 +1,5 @@
 PORTNAME=	bundler
-PORTVERSION=	2.5.23
+PORTVERSION=	2.6.2
 PORTEPOCH=	1
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
@@ -28,13 +28,17 @@ PLIST_FILES=	bin/bundle \
 		share/man/man1/bundle-config.1.gz \
 		share/man/man1/bundle-console.1.gz \
 		share/man/man1/bundle-doctor.1.gz \
+		share/man/man1/bundle-env.1.gz \
 		share/man/man1/bundle-exec.1.gz \
+		share/man/man1/bundle-fund.1.gz \
 		share/man/man1/bundle-gem.1.gz \
 		share/man/man1/bundle-help.1.gz \
 		share/man/man1/bundle-info.1.gz \
 		share/man/man1/bundle-init.1.gz \
 		share/man/man1/bundle-inject.1.gz \
 		share/man/man1/bundle-install.1.gz \
+		share/man/man1/bundle-issue.1.gz \
+		share/man/man1/bundle-licenses.1.gz \
 		share/man/man1/bundle-list.1.gz \
 		share/man/man1/bundle-lock.1.gz \
 		share/man/man1/bundle-open.1.gz \
