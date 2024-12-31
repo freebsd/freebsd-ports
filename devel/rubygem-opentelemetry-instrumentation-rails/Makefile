@@ -1,5 +1,5 @@
 PORTNAME=	opentelemetry-instrumentation-rails
-PORTVERSION=	0.33.1
+PORTVERSION=	0.34.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -13,12 +13,12 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-opentelemetry-api>=1.0<2:devel/rubygem-opentelemetry-api \
-		rubygem-opentelemetry-instrumentation-action_mailer>=0.2.0<0.3:devel/rubygem-opentelemetry-instrumentation-action_mailer \
+		rubygem-opentelemetry-instrumentation-action_mailer>=0.3.0<0.4:devel/rubygem-opentelemetry-instrumentation-action_mailer \
 		rubygem-opentelemetry-instrumentation-action_pack>=0.10.0<0.11:devel/rubygem-opentelemetry-instrumentation-action_pack \
-		rubygem-opentelemetry-instrumentation-action_view>=0.7.0<0.8:devel/rubygem-opentelemetry-instrumentation-action_view \
+		rubygem-opentelemetry-instrumentation-action_view>=0.8.0<0.9:devel/rubygem-opentelemetry-instrumentation-action_view \
 		rubygem-opentelemetry-instrumentation-active_job>=0.7.0<0.8:devel/rubygem-opentelemetry-instrumentation-active_job \
 		rubygem-opentelemetry-instrumentation-active_record>=0.8.0<0.9:devel/rubygem-opentelemetry-instrumentation-active_record \
-		rubygem-opentelemetry-instrumentation-active_support>=0.6.0<0.7:devel/rubygem-opentelemetry-instrumentation-active_support \
+		rubygem-opentelemetry-instrumentation-active_support>=0.7.0<0.8:devel/rubygem-opentelemetry-instrumentation-active_support \
 		rubygem-opentelemetry-instrumentation-base>=0.22.1<0.23:devel/rubygem-opentelemetry-instrumentation-base
 
 USES=		gem
