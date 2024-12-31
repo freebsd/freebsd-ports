@@ -1886,7 +1886,6 @@
     SUBDIR += rubygem-kramdown-gitlab
     SUBDIR += rubygem-kramdown-parser-gfm
     SUBDIR += rubygem-kramdown-parser-gfm-gitlab
-    SUBDIR += rubygem-kramdown23
     SUBDIR += rubygem-kwalify
     SUBDIR += rubygem-libxml-ruby
     SUBDIR += rubygem-linguistics
