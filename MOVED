@@ -3785,3 +3785,4 @@ devel/rubygem-faraday_middleware-aws-sigv403|devel/rubygem-faraday_middleware-aw
 devel/rubygem-fugit18|devel/rubygem-fugit|2024-12-31|Remove obsoleted port. Use devel/rubygem-fugit instead
 devel/rubygem-gettext_i18n_rails112|devel/rubygem-gettext_i18n_rails|2024-12-31|Remove obsoleted port. Use devel/rubygem-gettext_i18n_rails instead
 devel/rubygem-google-apis-cloudresourcemanager_v1035|devel/rubygem-google-apis-cloudresourcemanager_v1|2024-12-31|Remove obsoleted port. Use devel/rubygem-google-apis-cloudresourcemanager_v1 instead
+devel/rubygem-google-apis-core011|devel/rubygem-google-apis-core|2024-12-31|Remove obsoleted port. Use devel/rubygem-google-apis-core instead
