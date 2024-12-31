@@ -12,7 +12,7 @@ WWW=		https://pdfbox.apache.org/
 
 LICENSE=	APACHE20
 
-RUN_DEPENDS=	${JAVALIBDIR}/bcmail.jar:java/bouncycastle15 \
+RUN_DEPENDS=	${JAVALIBDIR}/bcmail.jar:java/bouncycastle \
 		${JAVALIBDIR}/commons-logging.jar:java/apache-commons-logging \
 		${JAVALIBDIR}/commons-io.jar:devel/apache-commons-io
 
