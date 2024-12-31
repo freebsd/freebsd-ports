@@ -3772,3 +3772,4 @@ textproc/py-rich12|textproc/py-rich|2024-12-31|Remove obsoleted port. Use textpr
 www/py-tornado4|www/py-tornado|2024-12-31|Remove obsoleted port. Use www/py-tornado instead
 www/py-tornado5|www/py-tornado|2024-12-31|Remove obsoleted port. Use www/py-tornado instead
 archivers/rubygem-minitar-cli0|archivers/rubygem-minitar-cli|2024-12-31|Remove obsoleted port. Use archivers/rubygem-minitar-cli instead
+archivers/rubygem-rubyzip20|archivers/rubygem-rubyzip|2024-12-31|Remove obsoleted port. Use archivers/rubygem-rubyzip instead
