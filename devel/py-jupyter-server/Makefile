@@ -1,5 +1,5 @@
 PORTNAME=	jupyter-server
-PORTVERSION=	2.14.2
+PORTVERSION=	2.15.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI \
 		https://github.com/jupyter-server/jupyter_server/releases/download/v${PORTVERSION}/
@@ -21,7 +21,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}anyio>=3.1.0:devel/py-anyio@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}Jinja2>=3.0.3:devel/py-Jinja2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}jupyter-client>=7.4.4:devel/py-jupyter-client@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}jupyter-core>=4.12:devel/py-jupyter-core@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}jupyter-events>=0.9.0:devel/py-jupyter-events@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}jupyter-events>=0.11.0:devel/py-jupyter-events@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}jupyter-server-terminals>=0.4.4:devel/py-jupyter-server-terminals@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}nbconvert>=6.4.4:devel/py-nbconvert@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}nbformat>=5.3.0:devel/py-nbformat@${PY_FLAVOR} \
@@ -35,7 +35,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}anyio>=3.1.0:devel/py-anyio@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}traitlets>=5.6.0:devel/py-traitlets@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}websocket-client>=1.3:www/py-websocket-client@${PY_FLAVOR}
 
-USES=		python
+USES=		python:3.9+
 USE_PYTHON=	autoplist concurrent pep517
 
 NO_ARCH=	yes
