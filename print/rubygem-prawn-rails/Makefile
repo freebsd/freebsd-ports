@@ -1,5 +1,5 @@
 PORTNAME=	prawn-rails
-PORTVERSION=	1.5.0
+PORTVERSION=	1.6.0
 CATEGORIES=	print rubygems
 MASTER_SITES=	RG
 
