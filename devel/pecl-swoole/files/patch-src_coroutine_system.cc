@@ -1,6 +1,6 @@
---- src/coroutine/system.cc.orig	2023-10-01 03:15:13 UTC
+--- src/coroutine/system.cc.orig	2024-11-28 03:39:05 UTC
 +++ src/coroutine/system.cc
-@@ -711,7 +711,8 @@ std::shared_ptr<AsyncLock> async_lock(void *resource) 
+@@ -701,7 +701,8 @@ std::shared_ptr<AsyncLock> async_lock(void *resource) 
                             "resource(%p) has already been bound to another coroutine#%ld, "
                             "%s of the same resource in coroutine#%ld at the same time is not allowed",
                             resource,
