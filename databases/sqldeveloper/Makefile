@@ -19,6 +19,7 @@ RUN_DEPENDS=	openjfx14>=0:java/openjfx14 \
 		bash:shells/bash
 
 USES=		gnome java zip
+JAVA_VERSION=	17
 
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}
 NO_ARCH=	yes
