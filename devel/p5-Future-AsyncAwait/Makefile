@@ -1,5 +1,5 @@
 PORTNAME=	Future-AsyncAwait
-PORTVERSION=	0.69
+PORTVERSION=	0.70
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:PEVANS
@@ -16,7 +16,7 @@ LICENSE_FILE_GPLv1+ =	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Future>=0.50:devel/p5-Future \
 		p5-XS-Parse-Keyword>=0.13:devel/p5-XS-Parse-Keyword \
-		p5-XS-Parse-Sublike>=0.24:devel/p5-XS-Parse-Sublike
+		p5-XS-Parse-Sublike>=0.31:devel/p5-XS-Parse-Sublike
 TEST_DEPENDS=	p5-Test-Simple>=1.302200:devel/p5-Test-Simple
 
 USES=		perl5
