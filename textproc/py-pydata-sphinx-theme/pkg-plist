@@ -1,3 +1,13 @@
+%%PYTHON_SITELIBDIR%%/pydata_sphinx_theme/locale/ca/LC_MESSAGES/sphinx.mo
+%%PYTHON_SITELIBDIR%%/pydata_sphinx_theme/locale/cs/LC_MESSAGES/sphinx.mo
+%%PYTHON_SITELIBDIR%%/pydata_sphinx_theme/locale/en/LC_MESSAGES/sphinx.mo
+%%PYTHON_SITELIBDIR%%/pydata_sphinx_theme/locale/es/LC_MESSAGES/sphinx.mo
+%%PYTHON_SITELIBDIR%%/pydata_sphinx_theme/locale/fr/LC_MESSAGES/sphinx.mo
+%%PYTHON_SITELIBDIR%%/pydata_sphinx_theme/locale/it/LC_MESSAGES/sphinx.mo
+%%PYTHON_SITELIBDIR%%/pydata_sphinx_theme/locale/ja/LC_MESSAGES/sphinx.mo
+%%PYTHON_SITELIBDIR%%/pydata_sphinx_theme/locale/ru/LC_MESSAGES/sphinx.mo
+%%PYTHON_SITELIBDIR%%/pydata_sphinx_theme/locale/zh/LC_MESSAGES/sphinx.mo
+%%PYTHON_SITELIBDIR%%/pydata_sphinx_theme/theme/pydata_sphinx_theme/components/sourcelink.h
 %%PYTHON_SITELIBDIR%%/pydata_sphinx_theme/theme/pydata_sphinx_theme/static/scripts/bootstrap.js
 %%PYTHON_SITELIBDIR%%/pydata_sphinx_theme/theme/pydata_sphinx_theme/static/scripts/bootstrap.js.LICENSE.txt
 %%PYTHON_SITELIBDIR%%/pydata_sphinx_theme/theme/pydata_sphinx_theme/static/scripts/bootstrap.js.map
