@@ -264,6 +264,7 @@ domoticz/scripts/templates/Device.dzVents
 domoticz/scripts/templates/ExecuteShellCommand.dzVents
 domoticz/scripts/templates/Group.dzVents
 domoticz/scripts/templates/HTTPRequest.dzVents
+domoticz/scripts/templates/Logging.dzVents
 domoticz/scripts/templates/Scene.dzVents
 domoticz/scripts/templates/Security.Lua
 domoticz/scripts/templates/Security.dzVents
@@ -288,6 +289,7 @@ domoticz/www/app/DPMQTTController.js
 domoticz/www/app/DashboardController.js
 domoticz/www/app/DeviceLightEdit.js
 domoticz/www/app/DummyController.js
+domoticz/www/app/EnergyDashboardController.js
 domoticz/www/app/FloorplanController.js
 domoticz/www/app/FloorplanEditController.js
 domoticz/www/app/ForecastController.js
@@ -402,6 +404,7 @@ domoticz/www/app/log/TextLog.js
 domoticz/www/app/log/chart-compare-temp.html
 domoticz/www/app/log/chart-compare.html
 domoticz/www/app/log/chart-day.html
+domoticz/www/app/log/chart-hour.html
 domoticz/www/app/log/chart-month.html
 domoticz/www/app/log/chart-week.html
 domoticz/www/app/log/chart-year.html
@@ -599,6 +602,7 @@ domoticz/www/images/Door48_Off.png
 domoticz/www/images/Door48_On.png
 domoticz/www/images/Down48.png
 domoticz/www/images/Down48_2.png
+domoticz/www/images/EHome48.png
 domoticz/www/images/Fan48_Off.png
 domoticz/www/images/Fan48_On.png
 domoticz/www/images/Fireplace.png
@@ -735,6 +739,7 @@ domoticz/www/images/doorbell48.png
 domoticz/www/images/down.png
 domoticz/www/images/edit.png
 domoticz/www/images/empty16.png
+domoticz/www/images/energy.png
 domoticz/www/images/equal.png
 domoticz/www/images/events.png
 domoticz/www/images/evohome/Auto.png
@@ -1138,6 +1143,7 @@ domoticz/www/views/dpgooglepubsub.html
 domoticz/www/views/dphttp.html
 domoticz/www/views/dpinflux.html
 domoticz/www/views/dpmqtt.html
+domoticz/www/views/energy_dashboard.html
 domoticz/www/views/floorplanedit.html
 domoticz/www/views/floorplans.html
 domoticz/www/views/forecast.html
