@@ -1,6 +1,6 @@
 PORTNAME=	rl9
 PORTVERSION=	${LINUX_DIST_VER}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	emulators linux
 PKGNAMEPREFIX=	linux_base-
 EXTRACT_ONLY=	${DISTFILES:N*${SRC_SUFX}*:Nf/filesystem-*:C/:[^:]+$//}
@@ -46,6 +46,7 @@ LIB_DISTNAMES=	bzip2-libs-${bzip2_ver} \
 		glib-networking-${glib-networking_ver} \
 		glib2-${glib2_ver} \
 		glibc-${glibc_ver} \
+		glibc-gconv-extra-${glibc_ver} \
 		gmp-${gmp_ver} \
 		json-glib-${json-glib_ver} \
 		keyutils-libs-${keyutils_ver} \
