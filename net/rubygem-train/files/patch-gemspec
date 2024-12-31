@@ -1,20 +1,24 @@
---- train.gemspec.orig	2024-03-31 08:13:08 UTC
+--- train.gemspec.orig	2024-12-30 05:09:01 UTC
 +++ train.gemspec
-@@ -31,12 +31,12 @@ Gem::Specification.new do |s|
+@@ -30,13 +30,13 @@ Gem::Specification.new do |s|
+   s.add_runtime_dependency(%q<azure_mgmt_security>.freeze, ["~> 0.18".freeze])
    s.add_runtime_dependency(%q<azure_mgmt_storage>.freeze, ["~> 0.18".freeze])
    s.add_runtime_dependency(%q<docker-api>.freeze, [">= 1.26".freeze, "< 3.0".freeze])
-   s.add_runtime_dependency(%q<googleauth>.freeze, [">= 0.16.2".freeze, "< 2.a".freeze])
+-  s.add_runtime_dependency(%q<googleauth>.freeze, [">= 0.16.2".freeze, "< 1.9.0".freeze])
 -  s.add_runtime_dependency(%q<google-apis-admin_directory_v1>.freeze, ["~> 0.46.0".freeze])
 -  s.add_runtime_dependency(%q<google-apis-cloudkms_v1>.freeze, ["~> 0.41.0".freeze])
 -  s.add_runtime_dependency(%q<google-apis-monitoring_v3>.freeze, ["~> 0.51.0".freeze])
 -  s.add_runtime_dependency(%q<google-apis-compute_v1>.freeze, ["~> 0.83.0".freeze])
+-  s.add_runtime_dependency(%q<google-apis-cloudresourcemanager_v1>.freeze, ["~> 0.35.0".freeze])
+-  s.add_runtime_dependency(%q<google-apis-storage_v1>.freeze, ["~> 0.30.0".freeze])
+-  s.add_runtime_dependency(%q<google-apis-iam_v1>.freeze, ["~> 0.50.0".freeze])
++  s.add_runtime_dependency(%q<googleauth>.freeze, [">= 0.16.2".freeze, "< 2".freeze])
 +  s.add_runtime_dependency(%q<google-apis-admin_directory_v1>.freeze, ["~> 0.46".freeze])
 +  s.add_runtime_dependency(%q<google-apis-cloudkms_v1>.freeze, ["~> 0.41".freeze])
 +  s.add_runtime_dependency(%q<google-apis-monitoring_v3>.freeze, ["~> 0.51".freeze])
 +  s.add_runtime_dependency(%q<google-apis-compute_v1>.freeze, ["~> 0.83".freeze])
-   s.add_runtime_dependency(%q<google-apis-cloudresourcemanager_v1>.freeze, ["~> 0.35.0".freeze])
--  s.add_runtime_dependency(%q<google-apis-storage_v1>.freeze, ["~> 0.30.0".freeze])
++  s.add_runtime_dependency(%q<google-apis-cloudresourcemanager_v1>.freeze, ["~> 0.35".freeze])
 +  s.add_runtime_dependency(%q<google-apis-storage_v1>.freeze, ["~> 0.30".freeze])
-   s.add_runtime_dependency(%q<google-apis-iam_v1>.freeze, ["~> 0.50.0".freeze])
++  s.add_runtime_dependency(%q<google-apis-iam_v1>.freeze, ["~> 0.50".freeze])
  end
  
