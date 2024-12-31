@@ -1,6 +1,6 @@
-TIMESTAMP = 1734888178
-SHA256 (ddtrace-2.16.6.tar.gz) = 502f5c41439a6212ea035a35cf8e4858cda3b452bfbf9958aa2c8ab2fc3e1a1b
-SIZE (ddtrace-2.16.6.tar.gz) = 7866210
+TIMESTAMP = 1735227864
+SHA256 (ddtrace-2.18.1.tar.gz) = 859d10ecf4cd2b9a58c2af38cf95d77bbaaca3c8f2527f0120f796d8afd57c53
+SIZE (ddtrace-2.18.1.tar.gz) = 8554338
 SHA256 (abseil-cpp-20240722.0.tar.gz) = f50e5ac311a81382da7fa75b97310e4b9006474f9560ac46f54a9967f07d4ae3
 SIZE (abseil-cpp-20240722.0.tar.gz) = 2242861
 SHA256 (rust/crates/anyhow-1.0.86.crate) = b3d1d046238990b9cf5bcde22a3fb3584ee5cf65fb2765f454ed428c7a0063da
@@ -87,5 +87,5 @@ SHA256 (rust/crates/windows_x86_64_gnullvm-0.52.5.crate) = 852298e482cd67c356ddd
 SIZE (rust/crates/windows_x86_64_gnullvm-0.52.5.crate) = 433246
 SHA256 (rust/crates/windows_x86_64_msvc-0.52.5.crate) = bec47e5bfd1bff0eeaf6d8b485cc1074891a197ab4225d504cb7a1ab88b02bf0
 SIZE (rust/crates/windows_x86_64_msvc-0.52.5.crate) = 827905
-SHA256 (DataDog-libdatadog-bfeef6d3f079c4f3f191176068353f82d5702b1d_GH0.tar.gz) = f4cca33d6e02e4e267edee06a66d65bdaac479830d3153014ff0946907d31d38
-SIZE (DataDog-libdatadog-bfeef6d3f079c4f3f191176068353f82d5702b1d_GH0.tar.gz) = 783268
+SHA256 (DataDog-libdatadog-48240f2588665a03c2061879345566ec7e70fabf_GH0.tar.gz) = ab91b1c8d499f2cabd1e35c8995eae72037be2a7ac4a6e572964157fd117219e
+SIZE (DataDog-libdatadog-48240f2588665a03c2061879345566ec7e70fabf_GH0.tar.gz) = 1035905

@@ -40,4 +40,4 @@ CARGO_CRATES=	anyhow-1.0.86 \
 		windows_x86_64_gnu-0.52.5 \
 		windows_x86_64_gnullvm-0.52.5 \
 		windows_x86_64_msvc-0.52.5 \
-		datadog-ddsketch@git+https://github.com/DataDog/libdatadog?rev=bfeef6d3f079c4f3f191176068353f82d5702b1d\#bfeef6d3f079c4f3f191176068353f82d5702b1d
+		datadog-ddsketch@git+https://github.com/DataDog/libdatadog?rev=v14.3.1\#48240f2588665a03c2061879345566ec7e70fabf
