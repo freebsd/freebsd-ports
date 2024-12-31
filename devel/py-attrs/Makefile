@@ -1,5 +1,5 @@
 PORTNAME=	attrs
-PORTVERSION=	24.2.0
+PORTVERSION=	24.3.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -27,11 +27,9 @@ NO_ARCH=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${PYTHON_REL} >= 30900
-TEST_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}mypy>=1.11.1:devel/py-mypy@${PY_FLAVOR}
-.if ${PYTHON_REL} < 31300
-TEST_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}pytest-mypy-plugins>=0:devel/py-pytest-mypy-plugins@${PY_FLAVOR}
-.endif
+.if ${PYTHON_REL} >= 31000
+TEST_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}mypy>=1.11.1:devel/py-mypy@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pytest-mypy-plugins>=0:devel/py-pytest-mypy-plugins@${PY_FLAVOR}
 .endif
 
 .include <bsd.port.post.mk>
