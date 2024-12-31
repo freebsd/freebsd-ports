@@ -3775,3 +3775,4 @@ archivers/rubygem-minitar-cli0|archivers/rubygem-minitar-cli|2024-12-31|Remove o
 archivers/rubygem-rubyzip20|archivers/rubygem-rubyzip|2024-12-31|Remove obsoleted port. Use archivers/rubygem-rubyzip instead
 databases/rubygem-redis-clustering52|databases/rubygem-redis-clustering|2024-12-31|Remove obsoleted port. Use databases/rubygem-redis-clustering instead
 databases/rubygem-redis4|databases/rubygem-redis|2024-12-31|Remove obsoleted port. Use databases/rubygem-redis instead
+databases/rubygem-redis52|databases/rubygem-redis|2024-12-31|Remove obsoleted port. Use databases/rubygem-redis instead
