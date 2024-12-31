@@ -1,6 +1,5 @@
 PORTNAME=	mypy
-PORTVERSION=	1.13.0
-PORTREVISION=	1
+PORTVERSION=	1.14.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,7 +13,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mypy_extensions>=1.0.0:devel/py-mypy_extensions@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}setuptools>=40.6.2:devel/py-setuptools@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}setuptools>=61:devel/py-setuptools@${PY_FLAVOR} \
 		${PY_TOMLI} \
 		${PYTHON_PKGNAMEPREFIX}types-psutil>=0:devel/py-types-psutil@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}types-setuptools>=0:devel/py-types-setuptools@${PY_FLAVOR} \
@@ -22,7 +21,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mypy_extensions>=1.0.0:devel/py-mypy_exten
 		${PYTHON_PKGNAMEPREFIX}wheel>=0.30.0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mypy_extensions>=1.0.0:devel/py-mypy_extensions@${PY_FLAVOR} \
 		${PY_TOMLI} \
-		${PYTHON_PKGNAMEPREFIX}typing-extensions>=4.1.0:devel/py-typing-extensions@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}typing-extensions>=4.6.0:devel/py-typing-extensions@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}attrs>=18.0:devel/py-attrs@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}filelock>=3.3.0:sysutils/py-filelock@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}importlib-metadata>=4.6.1<5.0.0:devel/py-importlib-metadata@${PY_FLAVOR} \
@@ -40,15 +39,17 @@ USE_PYTHON=	autoplist concurrent pep517 pytest
 NO_ARCH=	yes
 PYTEST_BROKEN_TESTS=	test_c_unit_test	# https://github.com/python/mypy/issues/12634
 
-OPTIONS_DEFINE=	DMYPY FASTER_CACHE MYPYC REPORTS
-OPTIONS_DEFAULT=DMYPY FASTER_CACHE MYPYC REPORTS
+OPTIONS_DEFINE=	DMYPY FASTER_CACHE INSTALL_TYPES MYPYC REPORTS
+OPTIONS_DEFAULT=DMYPY FASTER_CACHE INSTALL_TYPES MYPYC REPORTS
 DMYPY_DESC=	Daemon mode
 FASTER_CACHE_DESC=	Faster cache support
+INSTALL_TYPES_DESC=	Install support
 MYPYC_DESC=	Mypypc support
 REPORTS_DESC=	Coverage reports
 
 DMYPY_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}psutil>=4.0:sysutils/py-psutil@${PY_FLAVOR}
 FASTER_CACHE_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}orjson>=0:devel/py-orjson@${PY_FLAVOR}
+INSTALL_TYPES_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pip>=0:devel/py-pip@${PY_FLAVOR}
 MYPYC_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=50:devel/py-setuptools@${PY_FLAVOR}
 REPORTS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lxml>=0:devel/py-lxml@${PY_FLAVOR}
 
