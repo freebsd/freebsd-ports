@@ -1,5 +1,6 @@
 PORTNAME=	rgbds
 DISTVERSION=	0.9.0
+PORTREVISION=	1
 CATEGORIES=	devel games
 MASTER_SITES=	https://github.com/gbdev/rgbds/releases/download/v${DISTVERSION}/
 
@@ -10,17 +11,19 @@ WWW=		https://rgbds.gbdev.io/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	bash>0:shells/bash
 LIB_DEPENDS=	libpng16.so:graphics/png
 TEST_DEPENDS=	bash>0:shells/bash \
 		git>0:devel/git \
 		xxd>0:sysutils/xxd
 
-USES=		bison cmake:testing dos2unix pkgconfig shebangfix
-
+USES=		bison cmake:testing pkgconfig shebangfix
 SHEBANG_FILES=	contrib/view_palettes.sh src/bison.sh test/*.sh test/*/*.sh
-WRKSRC=		${WRKDIR}/rgbds
 
-TESTING_UNSAFE=	https://github.com/gbdev/rgbds/issues/1580
+CMAKE_OFF=	USE_NONFREE_TESTS
+
+EXTRA_PATCHES=	${FILESDIR}/extra-patch-fix_rgbfix:-p1 \
+		${FILESDIR}/extra-patch-inc_signal:-p1
+
+WRKSRC=		${WRKDIR}/rgbds
 
 .include <bsd.port.mk>
