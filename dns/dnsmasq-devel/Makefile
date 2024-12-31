@@ -1,13 +1,13 @@
 PORTNAME=	dnsmasq
-DISTVERSION=	2.91test3 # remember to bump PORTEPOCH when going from test to rc!
+DISTVERSION=	2.91test4 # remember to bump PORTEPOCH when going from test to rc!
 # Leave the PORTREVISION in even if 0 to avoid accidental PORTEPOCH bumps:
 PORTREVISION=	0
 PORTEPOCH=	5
 CATEGORIES=	dns
 #MASTER_SITES=	https://www.thekelleys.org.uk/dnsmasq/release-candidates/ \
 #		LOCAL/mandree/
-MASTER_SITES=	https://www.thekelleys.org.uk/dnsmasq/test-releases/ \
-		LOCAL/mandree/
+MASTER_SITES=	LOCAL/mandree/ \
+		https://www.thekelleys.org.uk/dnsmasq/test-releases/
 PKGNAMESUFFIX=	-devel
 
 MAINTAINER=	mandree@FreeBSD.org
