@@ -3787,3 +3787,4 @@ devel/rubygem-gettext_i18n_rails112|devel/rubygem-gettext_i18n_rails|2024-12-31|
 devel/rubygem-google-apis-cloudresourcemanager_v1035|devel/rubygem-google-apis-cloudresourcemanager_v1|2024-12-31|Remove obsoleted port. Use devel/rubygem-google-apis-cloudresourcemanager_v1 instead
 devel/rubygem-google-apis-core011|devel/rubygem-google-apis-core|2024-12-31|Remove obsoleted port. Use devel/rubygem-google-apis-core instead
 devel/rubygem-google-apis-iam_v1050|devel/rubygem-google-apis-iam_v1|2024-12-31|Remove obsoleted port. Use devel/rubygem-google-apis-iam_v1 instead
+devel/rubygem-grape1|devel/rubygem-grape|2024-12-31|Remove obsoleted port. Use devel/rubygem-grape instead
