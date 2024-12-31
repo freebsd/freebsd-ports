@@ -15,6 +15,7 @@ include/gwenhywfar5/gwenhywfar/base64.h
 include/gwenhywfar5/gwenhywfar/bindata.h
 include/gwenhywfar5/gwenhywfar/buffer.h
 include/gwenhywfar5/gwenhywfar/cgui.h
+include/gwenhywfar5/gwenhywfar/condvar.h
 include/gwenhywfar5/gwenhywfar/configmgr.h
 include/gwenhywfar5/gwenhywfar/configmgr_be.h
 include/gwenhywfar5/gwenhywfar/cryptalgo.h
@@ -43,6 +44,13 @@ include/gwenhywfar5/gwenhywfar/dialog.h
 include/gwenhywfar5/gwenhywfar/dialog_be.h
 include/gwenhywfar5/gwenhywfar/directory.h
 include/gwenhywfar5/gwenhywfar/endianfns.h
+include/gwenhywfar5/gwenhywfar/endpoint.h
+include/gwenhywfar5/gwenhywfar/endpoint_ipc.h
+include/gwenhywfar5/gwenhywfar/endpoint_msgio.h
+include/gwenhywfar5/gwenhywfar/endpoint_multilayer.h
+include/gwenhywfar5/gwenhywfar/endpoint_multilayer_p.h
+include/gwenhywfar5/gwenhywfar/endpoint_tcpc.h
+include/gwenhywfar5/gwenhywfar/endpoint_tcpd.h
 include/gwenhywfar5/gwenhywfar/error.h
 include/gwenhywfar5/gwenhywfar/fastbuffer.h
 include/gwenhywfar5/gwenhywfar/fslock.h
@@ -70,6 +78,9 @@ include/gwenhywfar5/gwenhywfar/idmap.h
 include/gwenhywfar5/gwenhywfar/inetaddr.h
 include/gwenhywfar5/gwenhywfar/inetsocket.h
 include/gwenhywfar5/gwenhywfar/inherit.h
+include/gwenhywfar5/gwenhywfar/json.h
+include/gwenhywfar5/gwenhywfar/json_dump.h
+include/gwenhywfar5/gwenhywfar/json_read.h
 include/gwenhywfar5/gwenhywfar/libloader.h
 include/gwenhywfar5/gwenhywfar/list.h
 include/gwenhywfar5/gwenhywfar/list1.h
@@ -83,6 +94,8 @@ include/gwenhywfar5/gwenhywfar/memcache.h
 include/gwenhywfar5/gwenhywfar/memory.h
 include/gwenhywfar5/gwenhywfar/misc.h
 include/gwenhywfar5/gwenhywfar/misc2.h
+include/gwenhywfar5/gwenhywfar/msg.h
+include/gwenhywfar5/gwenhywfar/msg_ipc.h
 include/gwenhywfar5/gwenhywfar/msgengine.h
 include/gwenhywfar5/gwenhywfar/multicache.h
 include/gwenhywfar5/gwenhywfar/mutex.h
@@ -97,8 +110,10 @@ include/gwenhywfar5/gwenhywfar/path.h
 include/gwenhywfar5/gwenhywfar/pathmanager.h
 include/gwenhywfar5/gwenhywfar/plugin.h
 include/gwenhywfar5/gwenhywfar/plugindescr.h
+include/gwenhywfar5/gwenhywfar/portable_endian.h
 include/gwenhywfar5/gwenhywfar/process.h
 include/gwenhywfar5/gwenhywfar/refptr.h
+include/gwenhywfar5/gwenhywfar/request.h
 include/gwenhywfar5/gwenhywfar/ringbuffer.h
 include/gwenhywfar5/gwenhywfar/sar.h
 include/gwenhywfar5/gwenhywfar/sighead.h
@@ -122,6 +137,7 @@ include/gwenhywfar5/gwenhywfar/testframework.h
 include/gwenhywfar5/gwenhywfar/testmodule.h
 include/gwenhywfar5/gwenhywfar/text.h
 include/gwenhywfar5/gwenhywfar/threadlocaldata.h
+include/gwenhywfar5/gwenhywfar/timestamp.h
 include/gwenhywfar5/gwenhywfar/tlv.h
 include/gwenhywfar5/gwenhywfar/tree.h
 include/gwenhywfar5/gwenhywfar/tree2.h
@@ -176,6 +192,7 @@ share/gwenbuild/templates/project.tmpl
 %%DATADIR%%/dialogs/dlg_progress.dlg
 %%DATADIR%%/dialogs/dlg_showbox.dlg
 %%DATADIR%%/gwenbuild/builders/posix/app.gwb
+%%DATADIR%%/gwenbuild/builders/posix/avrhexfile.gwb
 %%DATADIR%%/gwenbuild/builders/posix/cbuilder.gwb
 %%DATADIR%%/gwenbuild/builders/posix/cxxapp.gwb
 %%DATADIR%%/gwenbuild/builders/posix/cxxbuilder.gwb
@@ -212,6 +229,7 @@ share/gwenbuild/templates/project.tmpl
 %%DATADIR%%/typemaker2/c/gwen_param_tree.tm2
 %%DATADIR%%/typemaker2/c/gwen_stringlist2.tm2
 %%DATADIR%%/typemaker2/c/gwen_time.tm2
+%%DATADIR%%/typemaker2/c/gwen_timestamp.tm2
 %%DATADIR%%/typemaker2/c/gwen_xmlnode.tm2
 %%DATADIR%%/typemaker2/c/gwen_xmlnode_list.tm2
 %%DATADIR%%/typemaker2/c/gwen_xmlnode_list2.tm2

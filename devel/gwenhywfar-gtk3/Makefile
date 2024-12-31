@@ -1,11 +1,12 @@
 PORTREVISION=	0
-PKGNAMESUFFIX=	-${SLAVEPORT}
+PKGNAMESUFFIX=	-${_GWEN_GUI}
 
 MAINTAINER=	jhale@FreeBSD.org
 COMMENT=	Gwenhywfar GTK3+ support library
 
-MASTERDIR=	${.CURDIR}/../../devel/gwenhywfar
-SLAVEPORT=	gtk3
+MASTERDIR=	${.CURDIR:H:H}/devel/gwenhywfar
 PLIST=		${.CURDIR}/pkg-plist
+
+_GWEN_GUI=	gtk3
 
 .include "${MASTERDIR}/Makefile"
