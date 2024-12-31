@@ -16,5 +16,5 @@ get_pa_sock_path
 export BRAVE_PATH="%%DATADIR%%/brave"
 export BRAVE_WRAPPER="$(readlink -f "$0")"
 export LIBGL_DRI3_DISABLE=1
-/usr/local/bin/brave-watch &
+
 exec "$BRAVE_PATH" --no-sandbox --no-zygote --test-type --v=0 "$@"
