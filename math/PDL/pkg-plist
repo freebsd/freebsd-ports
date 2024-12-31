@@ -59,7 +59,6 @@ bin/pptemplate
 %%SITE_ARCH%%/PDL/Gaussian.pm
 %%SITE_ARCH%%/PDL/Graphics.pod
 %%SITE_ARCH%%/PDL/Graphics/Limits.pm
-%%SITE_ARCH%%/PDL/Graphics/State.pm
 %%SITE_ARCH%%/PDL/Graphics2D.pm
 %%SITE_ARCH%%/PDL/IO.pod
 %%SITE_ARCH%%/PDL/IO/Browser.pm
@@ -204,7 +203,6 @@ bin/pptemplate
 %%PERL5_MAN3%%/PDL::Func.3.gz
 %%PERL5_MAN3%%/PDL::Graphics2D.3.gz
 %%PERL5_MAN3%%/PDL::Graphics::Limits.3.gz
-%%PERL5_MAN3%%/PDL::Graphics::State.3.gz
 %%PERL5_MAN3%%/PDL::IFiles.3.gz
 %%PERL5_MAN3%%/PDL::IO.3.gz
 %%PERL5_MAN3%%/PDL::IO::Browser.3.gz

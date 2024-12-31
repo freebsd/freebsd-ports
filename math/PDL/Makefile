@@ -1,5 +1,6 @@
 PORTNAME=	PDL
 PORTVERSION=	2.095
+PORTREVISION=	1
 CATEGORIES=	math perl5
 MASTER_SITES=	CPAN
 
@@ -104,5 +105,7 @@ post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/PDL/Slices/Slices.so
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/PDL/Transform/Transform.so
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/PDL/Ufunc/Ufunc.so
+	${RM} ${STAGEDIR}${SITE_ARCH}/PDL/Graphics/State.pm
+	${RM} ${STAGEDIR}${SITE_MAN3}/PDL::Graphics::State.3
 
 .include <bsd.port.post.mk>
