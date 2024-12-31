@@ -2,10 +2,10 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		arc-swap-1.7.1 \
 		autocfg-1.4.0 \
 		bitflags-2.6.0 \
-		bstr-1.10.0 \
+		bstr-1.11.1 \
 		byteorder-1.5.0 \
 		castaway-0.2.3 \
-		cc-1.1.37 \
+		cc-1.2.4 \
 		cfg-if-1.0.0 \
 		chardetng-0.1.17 \
 		compact_str-0.8.0 \
@@ -22,8 +22,8 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		indoc-2.0.5 \
 		is-macro-0.3.7 \
 		itertools-0.13.0 \
-		itoa-1.0.11 \
-		libc-0.2.162 \
+		itoa-1.0.14 \
+		libc-0.2.168 \
 		log-0.4.22 \
 		memchr-2.7.4 \
 		memoffset-0.9.1 \
@@ -33,16 +33,16 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		phf_codegen-0.11.2 \
 		phf_generator-0.11.2 \
 		phf_shared-0.11.2 \
-		portable-atomic-1.9.0 \
+		portable-atomic-1.10.0 \
 		ppv-lite86-0.2.20 \
-		proc-macro2-1.0.89 \
-		pyo3-0.22.6 \
-		pyo3-build-config-0.22.6 \
-		pyo3-ffi-0.22.6 \
-		pyo3-log-0.11.0 \
-		pyo3-macros-0.22.6 \
-		pyo3-macros-backend-0.22.6 \
-		python3-dll-a-0.2.10 \
+		proc-macro2-1.0.92 \
+		pyo3-0.23.3 \
+		pyo3-build-config-0.23.3 \
+		pyo3-ffi-0.23.3 \
+		pyo3-log-0.12.0 \
+		pyo3-macros-0.23.3 \
+		pyo3-macros-backend-0.23.3 \
+		python3-dll-a-0.2.11 \
 		quote-1.0.37 \
 		rand-0.8.5 \
 		rand_chacha-0.3.1 \
@@ -50,23 +50,23 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		rayon-1.10.0 \
 		rayon-core-1.12.1 \
 		regex-1.11.1 \
-		regex-automata-0.4.8 \
+		regex-automata-0.4.9 \
 		regex-syntax-0.8.5 \
-		rustc-hash-2.0.0 \
+		rustc-hash-2.1.0 \
 		rustversion-1.0.18 \
 		ryu-1.0.18 \
 		same-file-1.0.6 \
-		serde-1.0.214 \
-		serde_derive-1.0.214 \
-		serde_json-1.0.132 \
+		serde-1.0.216 \
+		serde_derive-1.0.216 \
+		serde_json-1.0.133 \
 		shlex-1.3.0 \
 		siphasher-0.3.11 \
 		static_assertions-1.1.0 \
-		syn-2.0.87 \
+		syn-2.0.90 \
 		target-lexicon-0.12.16 \
 		tinyvec-1.8.0 \
 		tinyvec_macros-0.1.1 \
-		unicode-ident-1.0.13 \
+		unicode-ident-1.0.14 \
 		unicode-normalization-0.1.24 \
 		unicode-width-0.1.14 \
 		unicode_names2-1.3.0 \
@@ -87,4 +87,4 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		windows_x86_64_msvc-0.52.6 \
 		zerocopy-0.7.35 \
 		zerocopy-derive-0.7.35 \
-		ruff_python_ast,ruff_python_parser,ruff_python_trivia,ruff_source_file,ruff_text_size@git+https://github.com/astral-sh/ruff?tag=0.7.0\#5e6de4e0c69660e8ca8608d1ac965216197756ce
+		ruff_python_ast,ruff_python_parser,ruff_python_trivia,ruff_source_file,ruff_text_size@git+https://github.com/astral-sh/ruff?tag=0.8.1\#b3b2c982cdfb487bec7c38ca4e04cebbe0f1964e
