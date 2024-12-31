@@ -3796,3 +3796,4 @@ textproc/rubygem-elasticsearch-transport713|textproc/rubygem-elasticsearch-trans
 textproc/rubygem-kramdown1|textproc/rubygem-kramdown|2024-12-31|Remove obsoleted port. Use textproc/rubygem-kramdown instead
 textproc/rubygem-kramdown23|textproc/rubygem-kramdown|2024-12-31|Remove obsoleted port. Use textproc/rubygem-kramdown instead
 textproc/rubygem-rexml32|textproc/rubygem-rexml|2024-12-31|Remove obsoleted port. Use textproc/rubygem-rexml instead
+textproc/rubygem-rexml33|textproc/rubygem-rexml|2024-12-31|Remove obsoleted port. Use textproc/rubygem-rexml instead
