@@ -3798,3 +3798,4 @@ textproc/rubygem-kramdown23|textproc/rubygem-kramdown|2024-12-31|Remove obsolete
 textproc/rubygem-rexml32|textproc/rubygem-rexml|2024-12-31|Remove obsoleted port. Use textproc/rubygem-rexml instead
 textproc/rubygem-rexml33|textproc/rubygem-rexml|2024-12-31|Remove obsoleted port. Use textproc/rubygem-rexml instead
 textproc/rubygem-rouge43|textproc/rubygem-rouge|2024-12-31|Remove obsoleted port. Use textproc/rubygem-rouge instead
+textproc/rubygem-terser11|textproc/rubygem-terser|2024-12-31|Remove obsoleted port. Use textproc/rubygem-terser instead
