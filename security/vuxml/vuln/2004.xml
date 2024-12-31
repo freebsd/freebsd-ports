@@ -4811,7 +4811,7 @@
       </package>
       <package>
 	<name>open-motif-devel</name>
-	<range><lt>2023.02.16</lt></range>
+	<range><lt>2022.08.05</lt></range>
       </package>
       <package>
 	<name>libXpm</name>
@@ -4839,7 +4839,7 @@
       </package>
       <package>
 	<name>open-motif</name>
-	<range><lt>2.2.3_1</lt></range>
+	<range><lt>2.2.4</lt></range>
       </package>
     </affects>
     <description>
