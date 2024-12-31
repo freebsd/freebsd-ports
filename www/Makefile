@@ -1788,6 +1788,7 @@
     SUBDIR += py-nicegui
     SUBDIR += py-nicegui-highcharts
     SUBDIR += py-nicegui-nogui
+    SUBDIR += py-niquests
     SUBDIR += py-notebook
     SUBDIR += py-onetimepass
     SUBDIR += py-openbrokerapi
