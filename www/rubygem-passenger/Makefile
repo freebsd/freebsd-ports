@@ -11,6 +11,8 @@ WWW=		https://www.phusionpassenger.com/ \
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_FreeBSD_15=	no member named 'sumOfWeights' in 'DiscExpMovingAverageWithStddev<alpha, alphaTimeUnit, maxAge>' # https://github.com/phusion/passenger/issues/2580
+
 BUILD_DEPENDS=	rubygem-rack>=1.6.13,3:www/rubygem-rack \
 		rubygem-rake>=12.3.3:devel/rubygem-rake \
 		utf8cpp>=4.0.3:devel/utf8cpp
