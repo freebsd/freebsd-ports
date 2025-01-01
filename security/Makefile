@@ -135,7 +135,6 @@
     SUBDIR += diffcode
     SUBDIR += digestpp
     SUBDIR += dirbuster
-    SUBDIR += dirmngr
     SUBDIR += distcache
     SUBDIR += diswall
     SUBDIR += doas

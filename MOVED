@@ -3833,3 +3833,4 @@ databases/postgresql12-pgtcl||2025-01-01|Removed, PostgreSQL-12 is end-of-life
 databases/postgresql12-server||2025-01-01|Has expired: PostgreSQL-12 is end-of-life
 devel/kdesvn||2025-01-01|Has expired: Dwindling amount of users and streamlining of ports for the KDE Team to maintain
 databases/compass||2025-01-01|Has expired: Depends on expired devel/electron29
+security/dirmngr||2025-01-01|Has expired: Obsolete, now maintained within GNU Privacy Guard (GnuPG). Please use security/gnupg
