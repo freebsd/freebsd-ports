@@ -3834,3 +3834,4 @@ databases/postgresql12-server||2025-01-01|Has expired: PostgreSQL-12 is end-of-l
 devel/kdesvn||2025-01-01|Has expired: Dwindling amount of users and streamlining of ports for the KDE Team to maintain
 databases/compass||2025-01-01|Has expired: Depends on expired devel/electron29
 security/dirmngr|security/gnupg|2025-01-01|Has expired: Obsolete, now maintained within GNU Privacy Guard (GnuPG). Please use security/gnupg
+math/opensolaris-libm||2025-01-01|Has expired: Obsolete, consider using libm in base or math/openlibm
