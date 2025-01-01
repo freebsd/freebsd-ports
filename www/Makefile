@@ -2562,7 +2562,6 @@
     SUBDIR += websocat
     SUBDIR += websocketd
     SUBDIR += webstone
-    SUBDIR += webtrees20
     SUBDIR += webtrees21
     SUBDIR += wget2
     SUBDIR += wgetpaste
