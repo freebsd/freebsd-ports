@@ -3826,3 +3826,4 @@ databases/ldb22||2025-01-01|Has expired: Required only by security/sssd, which e
 databases/postgresql12-contrib||2025-01-01|Has expired: PostgreSQL-12 is end-of-life
 databases/postgresql12-client||2025-01-01|Has expired: PostgreSQL-12 is end-of-life
 databases/postgresql12-plperl||2025-01-01|Has expired: PostgreSQL-12 is end-of-life
+databases/postgresql12-pltcl||2025-01-01|Has expired: PostgreSQL-12 is end-of-life
