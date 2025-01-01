@@ -1,3 +1,6 @@
+include/hyprutils/animation/AnimatedVariable.hpp
+include/hyprutils/animation/AnimationManager.hpp
+include/hyprutils/animation/BezierCurve.hpp
 include/hyprutils/math/Box.hpp
 include/hyprutils/math/Edges.hpp
 include/hyprutils/math/Mat3x3.hpp
