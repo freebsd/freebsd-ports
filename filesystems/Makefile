@@ -31,7 +31,6 @@
     SUBDIR += fusefs-libs
     SUBDIR += fusefs-libs3
     SUBDIR += genromfs
-    SUBDIR += gitfs
     SUBDIR += gphotofs
     SUBDIR += gvfs
     SUBDIR += hammer2
