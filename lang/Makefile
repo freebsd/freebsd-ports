@@ -383,7 +383,6 @@
     SUBDIR += tolua
     SUBDIR += tolua++
     SUBDIR += tuareg-mode.el
-    SUBDIR += twelf
     SUBDIR += typstfmt
     SUBDIR += typstyle
     SUBDIR += ucc
