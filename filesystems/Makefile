@@ -38,7 +38,6 @@
     SUBDIR += hfsfuse
     SUBDIR += hfsutils
     SUBDIR += httpdirfs
-    SUBDIR += httpfs
     SUBDIR += ifuse
     SUBDIR += jmtpfs
     SUBDIR += kio-fuse

@@ -3839,3 +3839,4 @@ textproc/sgrep||2025-01-01|Has expired: Abandonware, primary site is dead and ac
 devel/gitflow||2025-01-01|Has expired: Upstream repo archived Jun 19, 2023
 filesystems/sqlfs||2025-01-01|Has expired: Abandoned upstream, superseded by forks
 filesystems/gitfs||2025-01-01|Has expired: Abandonware, last release on 2019
+filesystems/httpfs||2025-01-01|Has expired: Abandonware, last release in 2012 and there are multiple issues unresolved
