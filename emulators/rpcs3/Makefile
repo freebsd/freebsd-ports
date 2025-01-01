@@ -1,7 +1,7 @@
 PORTNAME=	rpcs3
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.0.34-17287 # git rev-list --count HEAD
-DISTVERSIONSUFFIX=	-gb16d267f9d
+DISTVERSION=	0.0.34-17299 # git rev-list --count HEAD
+DISTVERSIONSUFFIX=	-g8ea27b0aca
 CATEGORIES=	emulators wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -35,7 +35,7 @@ GH_TUPLE=	RPCS3:hidapi:hidapi-0.14.0-2-g8b43a97:hidapi/3rdparty/hidapi/hidapi \
 		kinetiknz:cubeb:cubeb-0.2-1425-g88585b6:cubeb/3rdparty/cubeb/cubeb \
 		miniupnp:miniupnp:miniupnpd_2_3_6:miniupnp/3rdparty/miniupnp/miniupnp \
 		nothings:stb:013ac3b:stb/3rdparty/stblib/stb \
-		wolfSSL:wolfssl:v5.7.4-stable:wolfssl/3rdparty/wolfssl/wolfssl \
+		wolfSSL:wolfssl:v5.7.6-stable:wolfssl/3rdparty/wolfssl/wolfssl \
 		xioTechnologies:Fusion:v1.2.7:fusion/3rdparty/fusion/fusion
 
 USES=		cmake elfctl gl iconv:wchar_t llvm:min=16,lib localbase:ldflags \
