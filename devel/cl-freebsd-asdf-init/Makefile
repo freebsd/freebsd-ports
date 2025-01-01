@@ -1,5 +1,5 @@
 PORTNAME=	cl-freebsd-asdf-init
-PORTVERSION=	20241228
+PORTVERSION=	20250101
 CATEGORIES=	devel
 MASTER_SITES=	# none
 DISTFILES=	# none
@@ -18,7 +18,7 @@ PLIST_FILES=	etc/asdf-init.lisp \
 SUB_FILES=	cl-freebsd-asdf-init.lisp
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME}.lisp ${STAGEDIR}${PREFIX}/etc/
+	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}.lisp ${STAGEDIR}${PREFIX}/etc/
 	${RLN} ${STAGEDIR}${PREFIX}/etc/${PORTNAME}.lisp \
 		${STAGEDIR}${PREFIX}/etc/asdf-init.lisp
 

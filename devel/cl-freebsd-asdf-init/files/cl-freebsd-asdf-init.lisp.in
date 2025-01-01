@@ -136,7 +136,7 @@ modify that in order to add other directories.")
 
 ;; Set up output translations
 
-(let* ((freebsd-translations '(:ignore-inherited-configuration)))
+(let* ((freebsd-translations '(:inherit-configuration)))
   ;; Create translations to point source to fasl.
   (dolist (path (directory "%%PREFIX%%/lib/common-lisp/*/"))
     (let* ((base-dir (pathname-directory path))
