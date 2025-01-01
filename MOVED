@@ -3817,3 +3817,4 @@ textproc/cl-meta-sbcl||2025-01-01|Removed, depends on expired and unfetchable te
 textproc/cl-meta||2025-01-01|Has expired: Upstream is gone
 databases/postgis32||2025-01-01|Has expired: Please use newer versions
 math/sage||2025-01-01|Has expired: Broken for more than two years
+security/gnome-ssh-askpass||2025-01-01|Has expired: Uses deprecated gtk2 library
