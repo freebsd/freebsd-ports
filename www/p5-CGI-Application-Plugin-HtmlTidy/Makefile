@@ -12,6 +12,9 @@ WWW=		https://metacpan.org/release/CGI-Application-Plugin-HtmlTidy
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
+DEPRECATED=	Depends on expired textproc/p5-HTML-Tidy
+EXPIRATION_DATE=2025-02-01
+
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-CGI-Application>4.01:www/p5-CGI-Application \
 		p5-CGI-Application-Plugin-DevPopup>=0:www/p5-CGI-Application-Plugin-DevPopup \
