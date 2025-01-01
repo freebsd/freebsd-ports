@@ -3829,3 +3829,4 @@ databases/postgresql12-plperl||2025-01-01|Has expired: PostgreSQL-12 is end-of-l
 databases/postgresql12-pltcl||2025-01-01|Has expired: PostgreSQL-12 is end-of-life
 databases/postgresql12-plpython||2025-01-01|Has expired: PostgreSQL-12 is end-of-life
 databases/postgresql12-docs||2025-01-01|Has expired: PostgreSQL-12 is end-of-life
+databases/postgresql12-pgtcl||2025-01-01|Removed, PostgreSQL-12 is end-of-life
