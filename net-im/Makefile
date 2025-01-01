@@ -106,7 +106,6 @@
     SUBDIR += purple-googlechat
     SUBDIR += purple-gowhatsapp
     SUBDIR += purple-mattermost
-    SUBDIR += purple-plugin-pack
     SUBDIR += purple-rocketchat
     SUBDIR += purple-slack
     SUBDIR += purple-teams
