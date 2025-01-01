@@ -110,7 +110,6 @@
     SUBDIR += securefs
     SUBDIR += simple-mtpfs
     SUBDIR += smbnetfs
-    SUBDIR += sqlfs
     SUBDIR += squashfs-tools
     SUBDIR += squashfs-tools-ng
     SUBDIR += squashfuse
