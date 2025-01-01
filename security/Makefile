@@ -374,7 +374,6 @@
     SUBDIR += lxqt-sudo
     SUBDIR += lynis
     SUBDIR += mac-robber
-    SUBDIR += maia
     SUBDIR += mailzu
     SUBDIR += makepasswd
     SUBDIR += maltrail
