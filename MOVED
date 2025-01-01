@@ -3806,3 +3806,4 @@ multimedia/recmpeg|multimedia/ffmpeg|2025-01-01|Has expired: Depends on deprecat
 net-mgmt/zabbix64-java||2025-01-01|Has expired: Zabbix 6.4 is expected to reach EoL on December 31, 2024
 net-mgmt/zabbix64-agent||2025-01-01|Has expired: Zabbix 6.4 is expected to reach EoL on December 31, 2024
 net-mgmt/zabbix64-proxy||2025-01-01|Has expired: Zabbix 6.4 is expected to reach EoL on December 31, 2024
+net-mgmt/zabbix64-frontend||2025-01-01|Has expired: Zabbix 6.4 is expected to reach EoL on December 31, 2024
