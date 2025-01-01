@@ -3825,3 +3825,4 @@ security/sssd|security/sssd2|2025-01-01|Has expired: Not supported, please use d
 databases/ldb22||2025-01-01|Has expired: Required only by security/sssd, which expires on 2024-12-31
 databases/postgresql12-contrib||2025-01-01|Has expired: PostgreSQL-12 is end-of-life
 databases/postgresql12-client||2025-01-01|Has expired: PostgreSQL-12 is end-of-life
+databases/postgresql12-plperl||2025-01-01|Has expired: PostgreSQL-12 is end-of-life
