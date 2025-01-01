@@ -35,7 +35,6 @@
     SUBDIR += closql
     SUBDIR += closql-devel
     SUBDIR += cockroach
-    SUBDIR += compass
     SUBDIR += couchdb3
     SUBDIR += courier-authlib-mysql
     SUBDIR += courier-authlib-pgsql
