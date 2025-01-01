@@ -11,6 +11,9 @@ WWW=		https://datasette.io/
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Depends on expired devel/py-pytest-runner
+EXPIRATION_DATE=2025-03-31
+
 PY_DEPENDS=	\
 		${PYTHON_PKGNAMEPREFIX}aiofiles>=0.4:devel/py-aiofiles@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}asgi-csrf>=0.9:www/py-asgi-csrf@${PY_FLAVOR} \
