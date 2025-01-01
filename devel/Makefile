@@ -1105,7 +1105,6 @@
     SUBDIR += kdesdk
     SUBDIR += kdesdk-kio
     SUBDIR += kdesdk-thumbnailers
-    SUBDIR += kdesvn
     SUBDIR += kdev-php
     SUBDIR += kdev-python
     SUBDIR += kdevelop
