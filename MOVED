@@ -3822,3 +3822,4 @@ comms/concordance||2025-01-01|Has expired: Logitech Harmony were officially disc
 lang/parrot||2025-01-01|Has expired: Development stopped in 2017
 net-im/purple-plugin-pack||2025-01-01|Has expired: Uses deprecated gtk2 libraries
 security/sssd|security/sssd2|2025-01-01|Has expired: Not supported, please use deve/sssd2
+databases/ldb22||2025-01-01|Has expired: Required only by security/sssd, which expires on 2024-12-31
