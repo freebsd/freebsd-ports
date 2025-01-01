@@ -63,6 +63,8 @@ TRANSPARENT_CMAKE_BOOL=		TRANSPARENT_PF
 .if ${PORT_OPTIONS:MSTATIC}
 BUILD_DEPENDS+=	brotli>=1.0.0:archivers/brotli \
 			boringssl>=0.0.0.0.2022.12.22.01:security/boringssl
+DEPRECATED=	Depends on expired security/mbedtls
+EXPIRATION_DATE=2025-03-31
 .else
 LIB_DEPENDS+=	libbrotlicommon.so:archivers/brotli \
 			libbrotlidec.so:security/boringssl \
