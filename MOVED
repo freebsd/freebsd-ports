@@ -3803,3 +3803,4 @@ www/rubygem-httparty020|www/rubygem-httparty|2024-12-31|Remove obsoleted port. U
 devel/rubygem-fog-core220|devel/rubygem-fog-core|2024-12-31|Remove obsoleted port. Use devel/rubygem-fog-core instead
 devel/rubygem-childprocess41|devel/rubygem-childprocess|2024-12-31|Remove obsoleted port. Use devel/rubygem-childprocess instead
 multimedia/recmpeg|multimedia/ffmpeg|2025-01-01|Has expired: Depends on deprecated and obsolete library libfame, consider migrating to multimedia/ffmpeg
+net-mgmt/zabbix64-java||2025-01-01|Has expired: Zabbix 6.4 is expected to reach EoL on December 31, 2024
