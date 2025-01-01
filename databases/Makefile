@@ -646,7 +646,6 @@
     SUBDIR += pointcloud
     SUBDIR += postgis-jdbc
     SUBDIR += postgis31
-    SUBDIR += postgis32
     SUBDIR += postgis33
     SUBDIR += postgis34
     SUBDIR += postgis35
