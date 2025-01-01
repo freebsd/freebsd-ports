@@ -14,6 +14,9 @@ LICENSE_NAME=	W3C Software Notice and License (2002/12/31)
 LICENSE_TEXT=	See https://www.w3.org/Consortium/Legal/2002/copyright-software-20021231
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
+DEPRECATED=	Depends on expired textproc/p5-HTML-Tidy
+EXPIRATION_DATE=2025-02-01
+
 RUN_DEPENDS=	onsgmls:textproc/opensp \
 		p5-CGI>=0:www/p5-CGI \
 		p5-Config-General>=0:devel/p5-Config-General \
