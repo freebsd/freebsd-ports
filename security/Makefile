@@ -1327,7 +1327,6 @@
     SUBDIR += sslproxy
     SUBDIR += sslscan
     SUBDIR += sslsplit
-    SUBDIR += sssd
     SUBDIR += sssd2
     SUBDIR += ssss
     SUBDIR += sst
