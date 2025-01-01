@@ -1,5 +1,5 @@
 PORTNAME=	rtorrent
-DISTVERSION=	0.10.0
+DISTVERSION=	0.15.1
 CATEGORIES=	net-p2p
 MASTER_SITES=	https://github.com/rakshasa/rtorrent/releases/download/v${DISTVERSION}/
 
@@ -14,8 +14,7 @@ LICENSE_FILE_GPLv2=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libtorrent.so:net-p2p/libtorrent
 
-USES=		compiler:c++11-lang ncurses pkgconfig
-
+USES=		compiler:c++14-lang ncurses pkgconfig
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-debug
 LDFLAGS+=	-lexecinfo -pthread
@@ -26,14 +25,16 @@ PLIST_FILES=	bin/rtorrent
 PORTDOCS=	README
 PORTEXAMPLES=	rtorrent.rc
 
-OPTIONS_DEFINE=		DOCS EXAMPLES IPV6 XMLRPC
-OPTIONS_DEFAULT=	XMLRPC
+OPTIONS_DEFINE=		DOCS EXAMPLES IPV6
+OPTIONS_DEFAULT=	TINYXML
+OPTIONS_RADIO=		XML
+OPTIONS_RADIO_XML=	TINYXML XMLRPC
 XMLRPC_DESC=		Compile with xmlrpc-c support
 
 IPV6_CONFIGURE_ENABLE=	ipv6
+TINYXML_CONFIGURE_ON=	--with-xmlrpc-tinyxml2
 XMLRPC_LIB_DEPENDS=	libxmlrpc.so:net/xmlrpc-c
 XMLRPC_CONFIGURE_ON=	--with-xmlrpc-c
-XMLRPC_CONFIGURE_OFF=	--with-xmlrpc-c=no
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}/

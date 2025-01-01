@@ -1,7 +1,7 @@
 PORTNAME=	libtorrent
-DISTVERSION=	0.14.0
+DISTVERSION=	0.15.1
 CATEGORIES=	net-p2p
-MASTER_SITES=	https://github.com/rakshasa/rtorrent/releases/download/v0.10.0/
+MASTER_SITES=	https://github.com/rakshasa/rtorrent/releases/download/v${DISTVERSION}/
 
 MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	BitTorrent Library written in C++
@@ -10,7 +10,7 @@ WWW=		https://github.com/rakshasa/libtorrent
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		compiler:c++11-lang cpe libtool localbase:ldflags pathfix \
+USES=		compiler:c++14-lang cpe libtool localbase:ldflags pathfix \
 		pkgconfig ssl
 USE_LDCONFIG=	yes
 
