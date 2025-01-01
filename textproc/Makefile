@@ -2036,7 +2036,6 @@
     SUBDIR += sexp
     SUBDIR += sgmlformat
     SUBDIR += sgmls
-    SUBDIR += sgrep
     SUBDIR += sgrep2
     SUBDIR += sift
     SUBDIR += sigil
