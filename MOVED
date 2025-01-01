@@ -3851,3 +3851,4 @@ databases/pgpool-II-41||2025-01-01|Has expired: Upstream EOL reaches on 2024-10-
 devel/electron29||2025-01-01|Has expired: EOLed upstream, switch to newer version
 devel/electron30||2025-01-01|Has expired: EOLed upstream, switch to newer version
 comms/libconcord||2025-01-01|Has expired: Logitech Harmony were officially discontinued in 2021, last major product in 2019
+japanese/onew||2025-01-01|Has expired: Unfetchabled and listed BROKEN for over year
