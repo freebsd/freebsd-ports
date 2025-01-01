@@ -3841,3 +3841,4 @@ filesystems/sqlfs||2025-01-01|Has expired: Abandoned upstream, superseded by for
 filesystems/gitfs||2025-01-01|Has expired: Abandonware, last release on 2019
 filesystems/httpfs||2025-01-01|Has expired: Abandonware, last release in 2012 and there are multiple issues unresolved
 multimedia/dumpmpeg|multimedia/ffmpeg|2025-01-01|Has expired: Obsolete utility, consider using multimedia/ffmpeg
+devel/cquery|devel/ccls|2025-01-01|Has expired: Abandonware, upstream repo archived Jul 30, 2020. Consider using migrating to devel/ccls
