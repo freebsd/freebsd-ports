@@ -1,5 +1,6 @@
 PORTNAME=	extract-msg
 DISTVERSION=	0.52.0
+PORTREVISION=	1
 CATEGORIES=	textproc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -26,12 +27,5 @@ USES=		python
 USE_PYTHON=	autoplist distutils
 
 NO_ARCH=	yes
-
-OPTIONS_DEFINE=		WKHTMLTOPDF
-OPTIONS_DEFAULT=	WKHTMLTOPDF
-
-WKHTMLTOPDF_DESC=		Enable support for converting the body as PDF
-
-WKHTMLTOPDF_RUN_DEPENDS=	wkhtmltopdf>0:converters/wkhtmltopdf
 
 .include <bsd.port.mk>
