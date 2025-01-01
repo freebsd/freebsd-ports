@@ -670,7 +670,6 @@
     SUBDIR += postgresql-wal2json
     SUBDIR += postgresql-zhparser
     SUBDIR += postgresql12-client
-    SUBDIR += postgresql12-contrib
     SUBDIR += postgresql12-docs
     SUBDIR += postgresql12-pgtcl
     SUBDIR += postgresql12-plperl
