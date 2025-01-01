@@ -3814,3 +3814,4 @@ science/py-nilearn||2025-01-01|Has expired: Depends on expired devel/py-codecov
 biology/ncbi-vdb||2025-01-01|Has expired: Very outdated, unmaintained and unsupported upstream
 www/grafana9|www/grafana|2025-01-01|Has expired: EOLed upstream
 textproc/cl-meta-sbcl||2025-01-01|Removed, depends on expired and unfetchable textproc/cl-meta
+textproc/cl-meta||2025-01-01|Has expired: Upstream is gone
