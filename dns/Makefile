@@ -182,7 +182,6 @@
     SUBDIR += py-dnspython1
     SUBDIR += py-easyzone
     SUBDIR += py-idna
-    SUBDIR += py-idna_ssl
     SUBDIR += py-ldns
     SUBDIR += py-libknot
     SUBDIR += py-localzone

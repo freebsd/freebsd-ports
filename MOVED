@@ -3809,3 +3809,4 @@ net-mgmt/zabbix64-proxy||2025-01-01|Has expired: Zabbix 6.4 is expected to reach
 net-mgmt/zabbix64-frontend||2025-01-01|Has expired: Zabbix 6.4 is expected to reach EoL on December 31, 2024
 net-mgmt/zabbix64-server||2025-01-01|Has expired: Zabbix 6.4 is expected to reach EoL on December 31, 2024
 www/webtrees20|www/webtrees21|2025-01-01|Has expired: Uses obsolete PHP version; use www/webtrees21 or www/webtrees22 instead
+dns/py-idna_ssl||2025-01-01|Has expired: Upstream repository has been archived on Oct 22, 2020
