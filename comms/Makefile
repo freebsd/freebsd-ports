@@ -69,7 +69,6 @@
     SUBDIR += java-simple-serial-connector
     SUBDIR += kermit
     SUBDIR += klog
-    SUBDIR += libconcord
     SUBDIR += libdc
     SUBDIR += libfap
     SUBDIR += libfec
