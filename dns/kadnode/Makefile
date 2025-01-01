@@ -70,4 +70,11 @@ do-install-NSS-on:
 	${RLN} ${STAGEDIR}${PREFIX}/lib/nss_kadnode.so.1 \
 		${STAGEDIR}${PREFIX}/lib/nss_kadnode.so
 
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MAUTH}
+DEPRECATED=	Depends on expired security/mbedtls
+EXPIRATION_DATE=2025-03-31
+.endif
+
 .include <bsd.port.mk>
