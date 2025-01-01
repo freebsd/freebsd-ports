@@ -1,0 +1,12 @@
+--- CMakeLists.txt.orig	2025-01-01 16:28:12 UTC
++++ CMakeLists.txt
+@@ -209,9 +209,6 @@ set (SOURCES
+     src/sitespec.h
+     src/snippets.c
+     src/snippets.h
+-    src/stb_image.h
+-    src/stb_image_resize2.h
+-    src/stb_truetype.h
+     src/updater.h
+     src/visited.c
+     src/visited.h
