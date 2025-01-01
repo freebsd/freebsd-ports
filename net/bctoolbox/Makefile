@@ -9,6 +9,9 @@ WWW=		https://gitlab.linphone.org/BC/public/bctoolbox
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
+DEPRECATED=	Depends on expired security/mbedtls
+EXPIRATION_DATE=2025-03-31
+
 BUILD_DEPENDS=	mbedtls>=2.3.0_2:security/mbedtls
 LIB_DEPENDS=	libbcunit.so:devel/bcunit \
 	libmbedtls.so:security/mbedtls
