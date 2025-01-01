@@ -81,4 +81,11 @@ post-install:
 	@${CHMOD} u-w ${STAGEDIR}${PREFIX}/lib/gauche-${ABI_VERSION}/${PORTVERSION}/${CONFIGURE_TARGET}/${i}
 .endfor
 
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MTLS}
+DEPRECATED=	Depends on expired security/mbedtls
+EXPIRATION_DATE=2025-03-31
+.endif
+
 .include <bsd.port.mk>
