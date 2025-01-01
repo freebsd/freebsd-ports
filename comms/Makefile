@@ -18,7 +18,6 @@
     SUBDIR += bpl+
     SUBDIR += chirp
     SUBDIR += chu
-    SUBDIR += concordance
     SUBDIR += conserver-com
     SUBDIR += cqrlog
     SUBDIR += cubicsdr
