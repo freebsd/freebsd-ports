@@ -20,7 +20,6 @@
     SUBDIR += R-cran-shiny
     SUBDIR += R-cran-shinyjs
     SUBDIR += R-cran-webshot
-    SUBDIR += Stikked
     SUBDIR += UniversalFeedCreator
     SUBDIR += adguardhome
     SUBDIR += adjuster
