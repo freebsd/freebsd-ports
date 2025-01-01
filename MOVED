@@ -3802,3 +3802,4 @@ textproc/rubygem-terser11|textproc/rubygem-terser|2024-12-31|Remove obsoleted po
 www/rubygem-httparty020|www/rubygem-httparty|2024-12-31|Remove obsoleted port. Use www/rubygem-httparty instead
 devel/rubygem-fog-core220|devel/rubygem-fog-core|2024-12-31|Remove obsoleted port. Use devel/rubygem-fog-core instead
 devel/rubygem-childprocess41|devel/rubygem-childprocess|2024-12-31|Remove obsoleted port. Use devel/rubygem-childprocess instead
+multimedia/recmpeg|multimedia/ffmpeg|2025-01-01|Has expired: Depends on deprecated and obsolete library libfame, consider migrating to multimedia/ffmpeg

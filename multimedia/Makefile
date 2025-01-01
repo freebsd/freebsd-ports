@@ -341,7 +341,6 @@
     SUBDIR += qwinff
     SUBDIR += rage
     SUBDIR += rav1e
-    SUBDIR += recmpeg
     SUBDIR += recordmydesktop
     SUBDIR += replex
     SUBDIR += ringrtc
