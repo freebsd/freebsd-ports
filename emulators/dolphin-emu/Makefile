@@ -10,6 +10,9 @@ WWW=		https://www.dolphin-emu.org
 LICENSE=	BSD3CLAUSE CC0-1.0 GPLv2+ MIT
 LICENSE_COMB=	multi
 
+DEPRECATED=	Depends on expired security/mbedtls
+EXPIRATION_DATE=2025-03-31
+
 BUILD_DEPENDS=	libfmt>=10.1:devel/libfmt \
 		vulkan-headers>0:graphics/vulkan-headers
 # Notes on dependencies:
