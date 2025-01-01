@@ -3853,3 +3853,4 @@ devel/electron30||2025-01-01|Has expired: EOLed upstream, switch to newer versio
 comms/libconcord||2025-01-01|Has expired: Logitech Harmony were officially discontinued in 2021, last major product in 2019
 japanese/onew||2025-01-01|Has expired: Unfetchabled and listed BROKEN for over year
 lang/twelf||2025-01-01|Has expired: Dead upstream and fails to build
+devel/py-codecov||2025-01-01|Has expired: Deprecated by upstream. On February 1, 2022 this uploader will be completely deprecated and will no longer be able to upload coverage to Codecov
