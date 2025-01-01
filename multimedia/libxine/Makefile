@@ -13,6 +13,9 @@ WWW=		https://www.xine-project.org/
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Depends on expired multimedia/libfame
+EXPIRATION_DATE=2025-02-01
+
 LIB_DEPENDS=	libFLAC.so:audio/flac \
 		liba52.so:audio/liba52 \
 		libvorbis.so:audio/libvorbis \

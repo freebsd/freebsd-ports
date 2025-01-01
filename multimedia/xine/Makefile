@@ -12,6 +12,9 @@ WWW=		https://www.xine-project.org
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Depends on expired multimedia/libfame (via libxine)
+EXPIRATION_DATE=2025-02-01
+
 LIB_DEPENDS=	libpng.so:graphics/png \
 		libxine.so:multimedia/libxine
 
