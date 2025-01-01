@@ -1,4 +1,4 @@
-TIMESTAMP = 1734080609
+TIMESTAMP = 1735769903
 SHA256 (rust/crates/addr2line-0.24.2.crate) = dfbe277e56a376000877090da837660b4427aad530e3028d44e0bffe4f89a1c1
 SIZE (rust/crates/addr2line-0.24.2.crate) = 39015
 SHA256 (rust/crates/adler2-2.0.0.crate) = 512761e0bb2578dd7380c6baaa0f4ce03e84f95e960231d1dec8bf4d7d6e2627
@@ -677,5 +677,5 @@ SHA256 (rust/crates/zune-inflate-0.2.54.crate) = 73ab332fe2f6680068f3582b16a24f9
 SIZE (rust/crates/zune-inflate-0.2.54.crate) = 37973
 SHA256 (rust/crates/zune-jpeg-0.4.13.crate) = 16099418600b4d8f028622f73ff6e3deaabdff330fb9a2a131dea781ee8b0768
 SIZE (rust/crates/zune-jpeg-0.4.13.crate) = 62999
-SHA256 (darko-mesaros-bedrust-v0.8.4_GH0.tar.gz) = f6b15f197f88a53fae6216c7eb38dfb18ef2bb2fbda3e49fa05bffba45375bc9
-SIZE (darko-mesaros-bedrust-v0.8.4_GH0.tar.gz) = 385347
+SHA256 (darko-mesaros-bedrust-v0.8.5_GH0.tar.gz) = 79ff6fce0042d24adfee2f35ac42e23b9e1294efce23c0d29349ac6823e5b379
+SIZE (darko-mesaros-bedrust-v0.8.5_GH0.tar.gz) = 385614
