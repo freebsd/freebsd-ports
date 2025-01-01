@@ -3819,3 +3819,4 @@ databases/postgis32||2025-01-01|Has expired: Please use newer versions
 math/sage||2025-01-01|Has expired: Broken for more than two years
 security/gnome-ssh-askpass||2025-01-01|Has expired: Uses deprecated gtk2 library
 comms/concordance||2025-01-01|Has expired: Logitech Harmony were officially discontinued in 2021, last major product in 2019
+lang/parrot||2025-01-01|Has expired: Development stopped in 2017

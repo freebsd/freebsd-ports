@@ -265,7 +265,6 @@
     SUBDIR += p5-ePerl
     SUBDIR += p5-signatures
     SUBDIR += p5-v6
-    SUBDIR += parrot
     SUBDIR += pbasic
     SUBDIR += pcc
     SUBDIR += perl5-devel
