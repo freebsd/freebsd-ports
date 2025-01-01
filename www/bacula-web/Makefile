@@ -5,7 +5,7 @@ PORTREVISION=	1
 CATEGORIES=	www sysutils
 PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ler@FreeBSD.org
 COMMENT=	Bacula-web provides a summarized output of Bacula jobs
 WWW=		https://www.bacula-web.org/
 
