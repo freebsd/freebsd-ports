@@ -9,6 +9,9 @@ WWW=		https://github.com/isaki68k/sayaka
 
 LICENSE=	BSD2CLAUSE
 
+DEPRECATED=	Depends on expired security/mbedtls
+EXPIRATION_DATE=2025-03-31
+
 LIB_DEPENDS=	libpng.so:graphics/png \
 		libmbedtls.so:security/mbedtls
 
