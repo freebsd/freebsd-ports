@@ -10,6 +10,9 @@ WWW=		https://obsproject.com/
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Depends on expired security/mbedtls
+EXPIRATION_DATE=2025-03-31
+
 BROKEN_i386=	link fails: relocation R_386_PC32 cannot be used against symbol 'strlist_split'; recompile with -fPIC, see https://github.com/obsproject/obs-studio/issues/10481
 
 BUILD_DEPENDS=	asio>0:net/asio \
