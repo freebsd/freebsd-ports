@@ -3845,3 +3845,4 @@ devel/cquery|devel/ccls|2025-01-01|Has expired: Abandonware, upstream repo archi
 security/py-first-server||2025-01-01|Has expired: Upstream project has been archived
 security/maia||2025-01-01|Has expired: Depends on deprecated dependencies and doesn't work with PHP 8
 devel/grv||2025-01-01|Has expired: Unmaintained for years, outdated
+deskutils/basket||2025-01-01|Has expired: Unmaintained for years, fails to build with libgit 1.8.1

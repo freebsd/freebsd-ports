@@ -13,7 +13,6 @@
     SUBDIR += ausweisapp2
     SUBDIR += autocutsel
     SUBDIR += baobab
-    SUBDIR += basket
     SUBDIR += belcard
     SUBDIR += bigyear
     SUBDIR += bijiben
