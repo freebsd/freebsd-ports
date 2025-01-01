@@ -10,6 +10,9 @@ WWW=		https://github.com/jarrekk/imgkit
 
 LICENSE=	MIT
 
+DEPRECATED=	Depends on expired converters/wkhtmltopdf
+EXPIRATION_DATE=2025-03-31
+
 USES=		python
 USE_PYTHON=	distutils autoplist
 
