@@ -3836,3 +3836,4 @@ databases/compass||2025-01-01|Has expired: Depends on expired devel/electron29
 security/dirmngr|security/gnupg|2025-01-01|Has expired: Obsolete, now maintained within GNU Privacy Guard (GnuPG). Please use security/gnupg
 math/opensolaris-libm||2025-01-01|Has expired: Obsolete, consider using libm in base or math/openlibm
 textproc/sgrep||2025-01-01|Has expired: Abandonware, primary site is dead and according to website not touched in 20 years. Consider migrating to textproc/p5-ack
+devel/gitflow||2025-01-01|Has expired: Upstream repo archived Jun 19, 2023
