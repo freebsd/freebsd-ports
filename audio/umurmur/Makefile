@@ -23,6 +23,8 @@ GNU_CONFIGURE=	yes
 .if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400092
 LIB_DEPENDS+=	libmbedtls.so:security/mbedtls
 CONFIGURE_ARGS=	--with-ssl=mbedtls
+DEPRECATED=	Depends on expired security/mbedtls
+EXPIRATION_DATE=2025-03-31
 .else
 USES+=		ssl
 BROKEN_SSL=	openssl openssl31
