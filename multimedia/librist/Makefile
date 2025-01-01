@@ -9,6 +9,9 @@ WWW=		https://code.videolan.org/rist/librist
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Depends on expired security/mbedtls
+EXPIRATION_DATE=2025-03-31
+
 LIB_DEPENDS=	libcjson.so:devel/libcjson \
 		libmbedcrypto.so:security/mbedtls \
 		libmicrohttpd.so:www/libmicrohttpd
