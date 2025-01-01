@@ -1,18 +1,18 @@
 PORTNAME=	rocksndiamonds
-DISTVERSION=	4.0.0.0
+DISTVERSION=	4.4.0.0
 CATEGORIES=	games
 MASTER_SITES=	http://www.artsoft.org/RELEASES/unix/rocksndiamonds/:game \
 		http://www.artsoft.org/RELEASES/rocksndiamonds/levels/:levels_artsoft \
 		SF/nemysisfreebsdp/${CATEGORIES}/${PORTNAME}/
 # Please contact the MAINTAINER if a Level is missing
-DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}:game \
+DISTFILES=	${PORTNAME}-${DISTVERSION}-linux${EXTRACT_SUFX}:game \
 		rnd_jue-3.3.0.0${EXTRACT_SUFX}:game \
 		${LEVELS_ARTSOFT:S/$/.zip/}:levels_artsoft \
 		${LEVELS_BD_FANS:S/$/.zip/} \
 		Tutorial_Alpha.zip \
 		${PORTNAME}_icons.zip
 DIST_SUBDIR=	${PORTNAME}
-EXTRACT_ONLY=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX} \
+EXTRACT_ONLY=	${PORTNAME}-${DISTVERSION}-linux${EXTRACT_SUFX} \
 		rnd_jue-3.3.0.0.tar.gz \
 		${PORTNAME}_icons.zip
 
@@ -23,15 +23,24 @@ WWW=		https://www.artsoft.org/rocksndiamonds/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-#LIB_DEPENDS=	libsmpeg2.so:multimedia/smpeg2
-EXTRACT_DEPENDS=${UNZIP_CMD}:archivers/unzip
+EXTRACT_DEPENDS=	${UNZIP_CMD}:archivers/unzip
 
 USES=		gmake gnome iconv sdl
-USE_SDL=	image mixer net sdl
-MAKE_ARGS=	CC="${CC}" MAKE="${MAKE_CMD}" OPTIONS="${CFLAGS}" \
+USE_SDL=	image2 mixer2 net2 sdl2
+MAKE_ARGS=	BASE_PATH="${DATADIR}" \
+		CC="${CC}" \
+		MAKE="${MAKE_CMD}" \
+		OPTIONS="${CFLAGS}" \
 		RO_GAME_DIR="${DATADIR}" \
+		RW_GAME_DIR="/var/games/${PORTNAME}" \
 		X11_PATH="${LOCALBASE}"
-ALL_TARGET=	sdl
+
+DESKTOP_ENTRIES=	"Rocks'n'Diamonds" \
+			"" \
+			"${PORTNAME}" \
+			"${PORTNAME}" \
+			"Game;ArcadeGame;" \
+			""
 
 SUB_FILES=	pkg-message
 
@@ -46,16 +55,13 @@ LEVELS_BD_FANS=	Bug_Hunter Classic_Boulderdash Classic_Sokoban Classic_Supaplex 
 PORTDOCS=	*
 
 DOCSRCDIR1=	${WRKSRC}
-DOC_FILES1=	CREDITS ChangeLog README
+DOC_FILES1=	CREDITS ChangeLog
 
 DOCSRCDIR2=	${WRKSRC}/docs/elements
 DOCSDIR2=	${DOCSDIR}/docs/elements
 DOC_FILES2=	*.txt
 
 ICON_SIZES=	32x32 48x48 64x64 72x72 96x96
-
-DESKTOP_ENTRIES="Rocks'n'Diamonds" "" "${PORTNAME}" \
-		"${PORTNAME}" "Game;ArcadeGame;" ""
 
 OPTIONS_DEFINE=	DOCS
 
@@ -75,17 +81,13 @@ post-extract-script:
 
 post-patch:
 	@${REINPLACE_CMD} \
-		-e 's|sdl-config|$${SDL_CONFIG}|g' ${WRKSRC}/src/Makefile
-	@${REINPLACE_CMD} \
-		-e 's|machine/soundcard.h|sys/soundcard.h|' \
-		${WRKSRC}/src/libgame/sound.c
+		-e 's|sdl2-config|$${SDL2_CONFIG}|g' ${WRKSRC}/src/Makefile
 	@${REINPLACE_CMD} \
 		-e 's|machine/joystick.h|sys/joystick.h|' \
 		${WRKSRC}/src/libgame/joystick.c
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/
-	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${PREFIX}/share/man/man1/
 
 .for dir in graphics levels music sounds
 	@(cd ${WRKSRC} && ${COPYTREE_SHARE} ${dir} ${STAGEDIR}${DATADIR})
