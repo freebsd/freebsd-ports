@@ -10,6 +10,9 @@ WWW=		http://pygal.org/
 
 LICENSE=	LGPL3
 
+DEPRECATED=	Depends on expired devel/py-pytest-runner
+EXPIRATION_DATE=2025-03-31
+
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest-runner>0:devel/py-pytest-runner@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lxml>=3.3.4:devel/py-lxml@${PY_FLAVOR}
 
