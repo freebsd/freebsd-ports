@@ -11,7 +11,7 @@ WWW=		https://pgpool.net/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		gmake libtool pgsql:12+
+USES=		gmake libtool pgsql
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	pgpool
 

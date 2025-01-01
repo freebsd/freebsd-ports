@@ -11,7 +11,7 @@ LICENSE=	PostgreSQL
 
 NOT_FOR_ARCHS=		i386
 
-USES=		gmake pgsql:12+
+USES=		gmake pgsql
 WANT_PGSQL=	server
 
 USE_GITHUB=	yes
