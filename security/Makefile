@@ -939,7 +939,6 @@
     SUBDIR += py-exscript
     SUBDIR += py-fail2ban
     SUBDIR += py-fido2
-    SUBDIR += py-first-server
     SUBDIR += py-flask-bcrypt
     SUBDIR += py-flask-httpauth
     SUBDIR += py-flask-kerberos
