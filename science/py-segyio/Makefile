@@ -10,6 +10,9 @@ WWW=		https://github.com/equinor/segyio
 
 LICENSE=	LGPL3+
 
+DEPRECATED=	Depends on expired devel/py-pytest-runner
+EXPIRATION_DATE=2025-03-31
+
 BUILD_DEPENDS=	cmake:devel/cmake-core \
 		pybind11>0:devel/pybind11 \
 		${PYTHON_PKGNAMEPREFIX}distro>0:sysutils/py-distro@${PY_FLAVOR} \
