@@ -669,7 +669,6 @@
     SUBDIR += postgresql-tds_fdw
     SUBDIR += postgresql-wal2json
     SUBDIR += postgresql-zhparser
-    SUBDIR += postgresql12-server
     SUBDIR += postgresql13-client
     SUBDIR += postgresql13-contrib
     SUBDIR += postgresql13-docs
