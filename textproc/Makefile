@@ -101,7 +101,6 @@
     SUBDIR += choose
     SUBDIR += chpp
     SUBDIR += cl-meta
-    SUBDIR += cl-meta-sbcl
     SUBDIR += cl-ppcre
     SUBDIR += cl-ppcre-ccl
     SUBDIR += cl-ppcre-clisp
