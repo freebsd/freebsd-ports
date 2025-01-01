@@ -1,4 +1,7 @@
 PORTNAME=	bareos
+
+PORTREVISION=	1
+
 PKGNAMESUFFIX=	-client
 
 COMMENT=	Backup archiving recovery open sourced (client)

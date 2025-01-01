@@ -11,14 +11,11 @@ bin/bwild
 @sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/fileset/SelfTest.conf.sample
 @sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/fileset/WindowsAllDrives.conf.sample
 %%GFAPI%%@sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/fileset/plugin-gfapi.conf.sample
-@sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/fileset/plugin-ldap.conf.sample
 @sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/job/BackupCatalog.conf.sample
 %%GFAPI%%@sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/job/BackupGFAPI.conf.sample
 @sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/job/RestoreFiles.conf.sample
 %%GFAPI%%@sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/job/RestoreGFAPI.conf.sample
 @sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/job/backup-bareos-fd.conf.sample
-@sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/job/backup-ldap.conf.sample
-@sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/job/restore-ldap.conf.sample
 @sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/jobdefs/DefaultJob.conf.sample
 @sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/messages/Daemon.conf.sample
 @sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/messages/Standard.conf.sample
@@ -118,6 +115,7 @@ share/man/man1/bwild.1.gz
 share/man/man8/bareos-dbcheck.8.gz
 share/man/man8/bareos-dir.8.gz
 share/man/man8/bareos-sd.8.gz
+share/man/man8/bareos.8.gz
 share/man/man8/bcopy.8.gz
 share/man/man8/bextract.8.gz
 share/man/man8/bls.8.gz
