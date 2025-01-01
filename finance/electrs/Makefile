@@ -1,6 +1,6 @@
 PORTNAME=	electrs
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.10.7
+DISTVERSION=	0.10.8
 CATEGORIES=	finance net-p2p
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -26,13 +26,13 @@ CARGO_CRATES=	aho-corasick-1.1.2 \
 		base64-0.13.1 \
 		bech32-0.11.0 \
 		bindgen-0.63.0 \
-		bitcoin-0.32.4 \
+		bitcoin-0.32.5 \
 		bitcoin-internals-0.3.0 \
 		bitcoin-io-0.1.2 \
 		bitcoin-test-data-0.2.0 \
 		bitcoin-units-0.1.1 \
 		bitcoin_hashes-0.14.0 \
-		bitcoin_slices-0.9.0 \
+		bitcoin_slices-0.9.1 \
 		bitcoincore-rpc-0.19.0 \
 		bitcoincore-rpc-json-0.19.0 \
 		bitflags-1.3.2 \
@@ -49,11 +49,12 @@ CARGO_CRATES=	aho-corasick-1.1.2 \
 		configure_me-0.4.0 \
 		configure_me_codegen-0.4.8 \
 		cpufeatures-0.2.11 \
-		crossbeam-channel-0.5.13 \
+		crossbeam-channel-0.5.14 \
 		crossbeam-deque-0.8.4 \
 		crossbeam-epoch-0.9.16 \
 		crossbeam-utils-0.8.18 \
 		crypto-common-0.1.6 \
+		ctrlc-3.4.2 \
 		digest-0.10.7 \
 		dirs-next-2.0.0 \
 		dirs-sys-next-0.1.2 \
@@ -83,7 +84,7 @@ CARGO_CRATES=	aho-corasick-1.1.2 \
 		jsonrpc-0.18.0 \
 		lazy_static-1.4.0 \
 		lazycell-1.3.0 \
-		libc-0.2.159 \
+		libc-0.2.162 \
 		libloading-0.7.4 \
 		libredox-0.0.1 \
 		libz-sys-1.1.12 \
@@ -95,6 +96,7 @@ CARGO_CRATES=	aho-corasick-1.1.2 \
 		memoffset-0.9.0 \
 		minimal-lexical-0.2.1 \
 		minreq-2.11.2 \
+		nix-0.27.1 \
 		nom-7.1.3 \
 		nom8-0.2.0 \
 		once_cell-1.19.0 \
@@ -121,7 +123,7 @@ CARGO_CRATES=	aho-corasick-1.1.2 \
 		regex-syntax-0.7.5 \
 		rustc-hash-1.1.0 \
 		rustix-0.36.17 \
-		rustix-0.38.37 \
+		rustix-0.38.40 \
 		ryu-1.0.16 \
 		scopeguard-1.2.0 \
 		secp256k1-0.29.0 \
@@ -137,7 +139,7 @@ CARGO_CRATES=	aho-corasick-1.1.2 \
 		smallvec-1.13.1 \
 		syn-1.0.109 \
 		syn-2.0.42 \
-		tempfile-3.13.0 \
+		tempfile-3.14.0 \
 		termcolor-1.4.1 \
 		thiserror-1.0.55 \
 		thiserror-impl-1.0.55 \
