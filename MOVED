@@ -3827,3 +3827,4 @@ databases/postgresql12-contrib||2025-01-01|Has expired: PostgreSQL-12 is end-of-
 databases/postgresql12-client||2025-01-01|Has expired: PostgreSQL-12 is end-of-life
 databases/postgresql12-plperl||2025-01-01|Has expired: PostgreSQL-12 is end-of-life
 databases/postgresql12-pltcl||2025-01-01|Has expired: PostgreSQL-12 is end-of-life
+databases/postgresql12-plpython||2025-01-01|Has expired: PostgreSQL-12 is end-of-life

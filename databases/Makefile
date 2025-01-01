@@ -671,7 +671,6 @@
     SUBDIR += postgresql-zhparser
     SUBDIR += postgresql12-docs
     SUBDIR += postgresql12-pgtcl
-    SUBDIR += postgresql12-plpython
     SUBDIR += postgresql12-server
     SUBDIR += postgresql13-client
     SUBDIR += postgresql13-contrib
