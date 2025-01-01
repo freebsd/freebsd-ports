@@ -8,6 +8,9 @@ WWW=		https://openrgb.org
 
 LICENSE=	GPLv2
 
+DEPRECATED=	Depends on expired security/mbedtls
+EXPIRATION_DATE=2025-03-31
+
 BUILD_DEPENDS=	git>0:devel/git \
 		hidapi>0:comms/hidapi \
 		mbedtls>0:security/mbedtls \
