@@ -11,6 +11,9 @@ WWW=		https://github.com/gnome-terminator/terminator
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Depends on expired devel/py-pytest-runner
+EXPIRATION_DATE=2025-03-31
+
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest-runner>0:devel/py-pytest-runner@${PY_FLAVOR}
 RUN_DEPENDS=	${LOCALBASE}/lib/libkeybinder-3.0.so:x11/keybinder-gtk3 \
 		${LOCALBASE}/lib/libnotify.so:devel/libnotify \
