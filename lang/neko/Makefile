@@ -11,6 +11,9 @@ WWW=		https://nekovm.org/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Depends on expired security/mbedtls
+EXPIRATION_DATE=2025-03-31
+
 BUILD_DEPENDS=	git:devel/git
 LIB_DEPENDS=	libgc-threaded.so:devel/boehm-gc-threaded \
 		libapr-1.so:devel/apr1 libaprutil-1.so:devel/apr1 \
