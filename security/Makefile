@@ -219,6 +219,7 @@
     SUBDIR += heimdal-devel
     SUBDIR += helib
     SUBDIR += hexl
+    SUBDIR += hidden-lake
     SUBDIR += highwayhash
     SUBDIR += hitch
     SUBDIR += hockeypuck
