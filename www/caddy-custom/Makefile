@@ -4,7 +4,6 @@
 
 PORTNAME=	caddy-custom
 PORTVERSION=	${CADDY_VERSION}.${XCADDY_VERSION}
-PORTREVISION=	4
 CATEGORIES=	www
 DISTFILES=	# none
 
@@ -28,6 +27,7 @@ SUB_FILES=	caddy
 PLIST_FILES=	bin/caddy
 
 CADDY_VERSION!=	${MAKE} -C ${.CURDIR}/../caddy  -V '$${DISTVERSION}.$${PORTREVISION}'
+CADDY_DISTVERSION!=	${MAKE} -C ${.CURDIR}/../caddy  -V '$${DISTVERSION}'
 XCADDY_VERSION!=${MAKE} -C ${.CURDIR}/../xcaddy -V '$${DISTVERSION}.$${PORTREVISION}'
 
 .for plugin in ${CADDY_CUSTOM_PLUGINS}
@@ -41,7 +41,7 @@ XCADDY_ENV+=	XCADDY_WHICH_GO="${GO_CMD}" \
 
 do-build:
 	${MKDIR} ${WRKSRC}
-	cd ${WRKSRC} && ${XCADDY_ENV} ${LOCALBASE}/bin/xcaddy build ${PLUGINS}
+	cd ${WRKSRC} && ${XCADDY_ENV} ${LOCALBASE}/bin/xcaddy build v${CADDY_DISTVERSION} ${PLUGINS}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/caddy ${STAGEDIR}${PREFIX}/bin
