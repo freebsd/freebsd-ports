@@ -41,7 +41,6 @@
     SUBDIR += dragon
     SUBDIR += droidcam
     SUBDIR += dtv-scan-tables
-    SUBDIR += dumpmpeg
     SUBDIR += dv2sub
     SUBDIR += dvb-apps
     SUBDIR += dvbcut
