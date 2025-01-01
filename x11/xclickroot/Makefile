@@ -1,14 +1,14 @@
 PORTNAME=	xclickroot
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.3
+DISTVERSION=	1.4.0
 CATEGORIES=	x11
 
 MAINTAINER=	0mp@FreeBSD.org
 COMMENT=	Run a command every time a given mouse button is pressed on the root window
 WWW=		https://github.com/phillbush/xclickroot
 
-LICENSE=	PD
-LICENSE_FILE=	${WRKSRC}/README
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		localbase:ldflags xorg
 USE_GITHUB=	yes
