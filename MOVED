@@ -3844,3 +3844,4 @@ multimedia/dumpmpeg|multimedia/ffmpeg|2025-01-01|Has expired: Obsolete utility, 
 devel/cquery|devel/ccls|2025-01-01|Has expired: Abandonware, upstream repo archived Jul 30, 2020. Consider using migrating to devel/ccls
 security/py-first-server||2025-01-01|Has expired: Upstream project has been archived
 security/maia||2025-01-01|Has expired: Depends on deprecated dependencies and doesn't work with PHP 8
+devel/grv||2025-01-01|Has expired: Unmaintained for years, outdated

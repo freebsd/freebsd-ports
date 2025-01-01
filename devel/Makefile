@@ -947,7 +947,6 @@
     SUBDIR += grcov
     SUBDIR += grex
     SUBDIR += grpc
-    SUBDIR += grv
     SUBDIR += gsettings-desktop-schemas
     SUBDIR += gsoap
     SUBDIR += gstreamer1-plugins-soup
