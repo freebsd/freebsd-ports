@@ -3848,3 +3848,4 @@ devel/grv||2025-01-01|Has expired: Unmaintained for years, outdated
 deskutils/basket||2025-01-01|Has expired: Unmaintained for years, fails to build with libgit 1.8.1
 www/Stikked||2025-01-01|Has expired: Broken with PHP 8+ (see PR 281858)
 databases/pgpool-II-41||2025-01-01|Has expired: Upstream EOL reaches on 2024-10-31
+devel/electron29||2025-01-01|Has expired: EOLed upstream, switch to newer version
