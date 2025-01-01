@@ -2,7 +2,7 @@ PORTNAME=	validator
 DISTVERSIONPREFIX=	${PORTNAME}-
 DISTVERSION=	1_3
 DISTVERSIONSUFFIX=	-release
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	www
 
 MAINTAINER=	cyberbotx@cyberbotx.com
@@ -13,9 +13,6 @@ LICENSE=	W3C2002
 LICENSE_NAME=	W3C Software Notice and License (2002/12/31)
 LICENSE_TEXT=	See https://www.w3.org/Consortium/Legal/2002/copyright-software-20021231
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
-
-DEPRECATED=	Depends on expired textproc/p5-HTML-Tidy
-EXPIRATION_DATE=2025-02-01
 
 RUN_DEPENDS=	onsgmls:textproc/opensp \
 		p5-CGI>=0:www/p5-CGI \
@@ -44,12 +41,6 @@ SHEBANG_FILES=	httpd/cgi-bin/check \
 		httpd/cgi-bin/sendfeedback.pl
 
 SUB_FILES=	pkg-message
-
-OPTIONS_DEFINE=	HTML_TIDY
-OPTIONS_DEFAULT=HTML_TIDY
-HTML_TIDY_DESC=	Enable HTML Markup Cleaning
-
-HTML_TIDY_RUN_DEPENDS=	p5-HTML-Tidy>=0:textproc/p5-HTML-Tidy
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%WWWDIR%%|${WWWDIR}|' \
