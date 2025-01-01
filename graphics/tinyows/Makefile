@@ -11,6 +11,9 @@ WWW=		https://mapserver.org/tinyows/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Depends on expired databases/postgis31
+EXPIRATION_DATE=2025-02-01
+
 BUILD_DEPENDS=	${LOCALBASE}/share/postgresql/extension/postgis.control:databases/postgis31
 RUN_DEPENDS=	${LOCALBASE}/share/postgresql/extension/postgis.control:databases/postgis31
 
