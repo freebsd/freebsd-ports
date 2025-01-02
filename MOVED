@@ -3994,3 +3994,5 @@ x11/libfmqt-l10n||2025-01-02|Unknown, port deleted long time ago, entry added to
 x11/lightdm-slick-greeter||2025-01-02|Unknown, port deleted long time ago, entry added to clean up portscout.freebsd.org
 x11/mere-about||2025-01-02|Unknown, port deleted long time ago, entry added to clean up portscout.freebsd.org
 x11/mere-utils||2025-01-02|Unknown, port deleted long time ago, entry added to clean up portscout.freebsd.org
+editors/neovim-qt@qt5|editors/neovim-qt|2025-01-02|Flavorization has been removed. Qt 5.x has been long deprecated upstream. Please use the unflavored editors/neovim-qt port based on Qt 6.x instead
+editors/neovim-qt@qt6|editors/neovim-qt|2025-01-02|Flavorization has been removed. Continue to enjoy editors/neovim-qt based on Qt 6.x as usual
