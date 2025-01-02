@@ -31,4 +31,6 @@ GH_ACCOUNT=	aws
 
 CONFLICTS_INSTALL=	boringssl libressl* openssl*
 
+PORTSCOUT=	limit:^[0-9]*\.
+
 .include <bsd.port.mk>
