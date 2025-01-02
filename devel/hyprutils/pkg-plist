@@ -1,4 +1,5 @@
 include/hyprutils/animation/AnimatedVariable.hpp
+include/hyprutils/animation/AnimationConfig.hpp
 include/hyprutils/animation/AnimationManager.hpp
 include/hyprutils/animation/BezierCurve.hpp
 include/hyprutils/math/Box.hpp
