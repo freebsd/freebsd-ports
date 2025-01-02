@@ -1,5 +1,6 @@
 PORTNAME=	pyfltk
 PORTVERSION=	1.3.9
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits python
 MASTER_SITES=	PYPI \
 		SF/pyfltk/pyfltk/pyFltk-${PORTVERSION}
@@ -8,7 +9,9 @@ DISTNAME=	pyFltk-${PORTVERSION}
 
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	Python interface to FLTK window toolkit
-WWW=		https://pyfltk.sourceforge.io/
+WWW=		https://pyfltk.sourceforge.io/ \
+		https://fltk.gitlab.io/fltk/ \
+		https://gitlab.com/fltk/fltk
 
 LICENSE=	LGPL20
 LICENSE_FILE=	${WRKSRC}/COPYING
@@ -17,14 +20,12 @@ BUILD_DEPENDS=	swig:devel/swig
 LIB_DEPENDS=	libfltk.so:x11-toolkits/fltk
 
 USES=		python shebangfix xorg
-USE_PYTHON=	autoplist distutils
+USE_PYTHON=	autoplist concurrent distutils
 USE_XORG=	x11
 
 CFLAGS+=	-DFL_LIBRARY
 PYDISTUTILS_CONFIGUREARGS=	swig
 
-DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
-EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}
 PORTDOCS=	*
 PORTEXAMPLES=	*
 
@@ -42,7 +43,7 @@ post-build:
 	${REINPLACE_CMD} -e "s|\.\./docs|${DOCSDIR}/html|g" ${WRKSRC}/fltk/test/help.py
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/fltk/_fltk*.so
+	${FIND} ${STAGEDIR}${PYTHON_SITELIBDIR} -name '*.so' -exec ${STRIP_CMD} {} +
 
 post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}/html/
