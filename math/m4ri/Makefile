@@ -1,5 +1,5 @@
 PORTNAME=	M4RI
-PORTVERSION=	20200125
+PORTVERSION=	20240729
 DISTVERSIONPREFIX=	release-
 CATEGORIES=	math
 
@@ -19,6 +19,7 @@ USES=		autoreconf libtool localbase pkgconfig
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
+INSTALL_TARGET=	install-strip
 
 .if defined(MAINTAINER_MODE)
 TEST_TARGET=	check
