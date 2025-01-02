@@ -2,6 +2,7 @@ bin/galene
 bin/galenectl
 %%DATADIR%%/404.css
 %%DATADIR%%/404.html
+%%DATADIR%%/background-blur-worker.js
 %%DATADIR%%/change-password.css
 %%DATADIR%%/change-password.html
 %%DATADIR%%/change-password.js
