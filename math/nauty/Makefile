@@ -31,6 +31,8 @@ TEST_TARGET=	check
 
 OPTIONS_DEFINE=	DOCS
 
+CFLAGS_powerpc=	-O1
+
 post-build: # build shared libraries: based on how static libraries are created
 	# rebuild .o files with -fPIC
 	@cd ${WRKSRC} ; \
