@@ -1,5 +1,5 @@
 PORTNAME=	log4j2
-PORTVERSION=	2.23.1
+PORTVERSION=	2.24.3
 CATEGORIES=	devel java
 MASTER_SITES=	APACHE/logging/log4j/${PORTVERSION}
 PKGNAMEPREFIX=	apache-
@@ -23,6 +23,10 @@ CPE_PRODUCT=	log4j
 PORTDOCS=	NOTICE.txt RELEASE-NOTES.adoc
 
 OPTIONS_DEFINE=	DOCS
+
+pre-install:
+	# log4j-slf4j-impl cannot be present with log4j-to-slf4j
+	${RM} ${WRKSRC}/log4j-to-slf4j-${PORTVERSION}.jar
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${JAVAJARDIR}
