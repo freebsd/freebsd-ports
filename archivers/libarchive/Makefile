@@ -1,5 +1,6 @@
 PORTNAME=	libarchive
 DISTVERSION=	3.7.7
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	archivers
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/v${DISTVERSION}/ \
@@ -50,7 +51,7 @@ OPENSSL_USES=		ssl
 OPENSSL_CONFIGURE_WITH=	openssl
 OPENSSL_CONFIGURE_OFF=	--without-openssl
 
-MBEDTLS_LIB_DEPENDS=	libmbedtls.so:security/mbedtls
+MBEDTLS_LIB_DEPENDS=	libmbedtls.so:security/mbedtls2
 MBEDTLS_CONFIGURE_WITH=	mbedtls
 
 .include <bsd.port.pre.mk>

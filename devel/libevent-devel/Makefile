@@ -1,6 +1,7 @@
 PORTNAME=	libevent
 DISTVERSION=	2.2.1
 DISTVERSIONSUFFIX=	-alpha-dev
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/release-${DISTVERSION}-alpha/
 PKGNAMESUFFIX=	-devel
@@ -26,7 +27,7 @@ OPTIONS_DEFINE=	OPENSSL THREADS MBEDTLS
 OPTIONS_DEFAULT=	OPENSSL THREADS
 OPTIONS_SUB=	yes
 
-MBEDTLS_LIB_DEPENDS=	libmbedtls.so:security/mbedtls
+MBEDTLS_LIB_DEPENDS=	libmbedtls.so:security/mbedtls2
 MBEDTLS_USES=	localbase:ldflags
 MBEDTLS_CONFIGURE_OFF=	--disable-mbedtls
 

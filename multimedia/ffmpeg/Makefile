@@ -1,6 +1,6 @@
 PORTNAME=	ffmpeg
 PORTVERSION=	6.1.2
-PORTREVISION=	6
+PORTREVISION=	7
 PORTEPOCH=	1
 CATEGORIES=	multimedia audio net
 MASTER_SITES=	https://ffmpeg.org/releases/
@@ -365,7 +365,7 @@ V4L_CONFIGURE_OFF=		--disable-indev=v4l2 \
 				--disable-outdev=v4l2
 
 # mbedtls
-MBEDTLS_LIB_DEPENDS=	libmbedtls.so:security/mbedtls
+MBEDTLS_LIB_DEPENDS=	libmbedtls.so:security/mbedtls2
 MBEDTLS_CONFIGURE_ENABLE=	mbedtls
 
 # mfx

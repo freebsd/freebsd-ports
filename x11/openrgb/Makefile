@@ -1,5 +1,6 @@
 PORTNAME=	openrgb
 PORTVERSION=	0.8
+PORTREVISION=	1
 CATEGORIES=	x11
 
 MAINTAINER=	vidar@karlsen.tech
@@ -8,18 +9,18 @@ WWW=		https://openrgb.org
 
 LICENSE=	GPLv2
 
-DEPRECATED=	Depends on expired security/mbedtls
+DEPRECATED=	Depends on expired security/mbedtls2
 EXPIRATION_DATE=2025-03-31
 
 BUILD_DEPENDS=	git>0:devel/git \
 		hidapi>0:comms/hidapi \
-		mbedtls>0:security/mbedtls \
+		mbedtls2>0:security/mbedtls2 \
 		qt5-qmake>0:devel/qt5-qmake
 LIB_DEPENDS=	libGL.so:graphics/libglvnd \
 		libhidapi.so:comms/hidapi \
-		libmbedcrypto.so:security/mbedtls \
-		libmbedtls.so:security/mbedtls \
-		libmbedx509.so:security/mbedtls
+		libmbedcrypto.so:security/mbedtls2 \
+		libmbedtls.so:security/mbedtls2 \
+		libmbedx509.so:security/mbedtls2
 
 USES=		gmake gl qmake qt:5
 

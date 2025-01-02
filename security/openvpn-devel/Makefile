@@ -1,6 +1,6 @@
 PORTNAME=	openvpn
 DISTVERSION=	g20240211
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	security net net-vpn
 PKGNAMESUFFIX=	-devel
@@ -82,7 +82,7 @@ EASYRSA_RUN_DEPENDS=	easy-rsa>=0:security/easy-rsa
 LZ4_LIB_DEPENDS+=	liblz4.so:archivers/liblz4
 LZ4_CONFIGURE_OFF=	--disable-lz4
 
-MBEDTLS_LIB_DEPENDS=	libmbedtls.so:security/mbedtls
+MBEDTLS_LIB_DEPENDS=	libmbedtls.so:security/mbedtls2
 MBEDTLS_CONFIGURE_ON=	--with-crypto-library=mbedtls
 
 OPENSSL_USES=		ssl

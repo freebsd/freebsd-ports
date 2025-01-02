@@ -1,6 +1,6 @@
 PORTNAME=	julia
 DISTVERSION=	1.10.3
-PORTREVISION=	3
+PORTREVISION=	4
 DISTVERSIONSUFFIX=	-full
 CATEGORIES=	lang math
 MASTER_SITES=	https://github.com/JuliaLang/${PORTNAME}/releases/download/v${DISTVERSION}/
@@ -27,7 +27,7 @@ WWW=		https://julialang.org/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-DEPRECATED=	Depends on expired security/mbedtls
+DEPRECATED=	Depends on expired security/mbedtls2
 EXPIRATION_DATE=2025-03-31
 
 ONLY_FOR_ARCHS=		amd64
@@ -45,7 +45,7 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libgit2.so:devel/libgit2 \
 		libgmp.so:math/gmp \
 		libnghttp2.so:www/libnghttp2 \
-		libmbedtls.so:security/mbedtls \
+		libmbedtls.so:security/mbedtls2 \
 		libmpfr.so:math/mpfr \
 		libopenlibm.so:math/openlibm \
 		libpcre2-8.so:devel/pcre2 \

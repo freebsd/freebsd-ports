@@ -1,5 +1,6 @@
 PORTNAME=	umurmur
 DISTVERSION=	0.2.20
+PORTREVISION=	1
 CATEGORIES=	audio net
 
 MAINTAINER=	bofh@FreeBSD.org
@@ -21,9 +22,9 @@ GNU_CONFIGURE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400092
-LIB_DEPENDS+=	libmbedtls.so:security/mbedtls
+LIB_DEPENDS+=	libmbedtls.so:security/mbedtls2
 CONFIGURE_ARGS=	--with-ssl=mbedtls
-DEPRECATED=	Depends on expired security/mbedtls
+DEPRECATED=	Depends on expired security/mbedtls2
 EXPIRATION_DATE=2025-03-31
 .else
 USES+=		ssl

@@ -1,5 +1,6 @@
 PORTNAME=	obs-studio
 DISTVERSION=	31.0.0
+PORTREVISION=	1
 CATEGORIES=	multimedia
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -10,7 +11,7 @@ WWW=		https://obsproject.com/ \
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-DEPRECATED=	Depends on expired security/mbedtls
+DEPRECATED=	Depends on expired security/mbedtls2
 EXPIRATION_DATE=2025-03-31 # removal pending https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=283782
 
 BROKEN_i386=	link fails: relocation R_386_PC32 cannot be used against symbol 'strlist_split'; recompile with -fPIC, see https://github.com/obsproject/obs-studio/issues/10481
@@ -31,7 +32,7 @@ LIB_DEPENDS=	libasound.so:audio/alsa-lib \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
 		libjansson.so:devel/jansson \
-		libmbedtls.so:security/mbedtls \
+		libmbedtls.so:security/mbedtls2 \
 		libpci.so:devel/libpci \
 		libqrcodegencpp.so:graphics/qr-code-generator \
 		librist.so:multimedia/librist \

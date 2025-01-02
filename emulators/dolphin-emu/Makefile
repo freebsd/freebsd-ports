@@ -1,6 +1,6 @@
 PORTNAME=	dolphin-emu
 PORTVERSION=	5.0.21264
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	emulators
 
 MAINTAINER=	martymac@FreeBSD.org
@@ -10,7 +10,7 @@ WWW=		https://www.dolphin-emu.org
 LICENSE=	BSD3CLAUSE CC0-1.0 GPLv2+ MIT
 LICENSE_COMB=	multi
 
-DEPRECATED=	Depends on expired security/mbedtls
+DEPRECATED=	Depends on expired security/mbedtls2
 EXPIRATION_DATE=2025-03-31
 
 BUILD_DEPENDS=	libfmt>=10.1:devel/libfmt \
@@ -44,7 +44,7 @@ LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg \
 		libsndio.so:audio/sndio \
 		libsfml-system.so:devel/sfml \
 		libminiupnpc.so:net/miniupnpc \
-		libmbedtls.so:security/mbedtls \
+		libmbedtls.so:security/mbedtls2 \
 		libcurl.so:ftp/curl \
 		libhidapi.so:comms/hidapi \
 		libxkbcommon.so:x11/libxkbcommon

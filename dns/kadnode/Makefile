@@ -1,7 +1,7 @@
 PORTNAME=	kadnode
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.3.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	dns
 
 MAINTAINER=	moritzwarning@web.de
@@ -34,7 +34,7 @@ NATPMP_DESC=	NAT-PMP support (remote port forwarding on the router)
 NSS_DESC=	Name Service Switch support to intercept host queries
 UPNP_DESC=	UPnP support (remote port forwarding on the router)
 
-AUTH_LIB_DEPENDS=	libmbedtls.so:security/mbedtls
+AUTH_LIB_DEPENDS=	libmbedtls.so:security/mbedtls2
 AUTH_VARS=		FEATURES+="bob tls"
 
 CMD_VARS=		FEATURES+="cmd"
@@ -73,7 +73,7 @@ do-install-NSS-on:
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MAUTH}
-DEPRECATED=	Depends on expired security/mbedtls
+DEPRECATED=	Depends on expired security/mbedtls2
 EXPIRATION_DATE=2025-03-31
 .endif
 

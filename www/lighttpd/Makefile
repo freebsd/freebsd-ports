@@ -1,5 +1,6 @@
 PORTNAME=	lighttpd
 PORTVERSION=	1.4.76
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	https://download.lighttpd.net/lighttpd/releases-1.4.x/
 
@@ -64,7 +65,7 @@ LUA_CMAKE_ON=		-DWITH_LUA_VERSION:STRING="lua-${LUA_VER}"
 MAXMINDDB_CMAKE_BOOL=	WITH_MAXMINDDB
 MAXMINDDB_LIB_DEPENDS=	libmaxminddb.so:net/libmaxminddb
 MBEDTLS_CMAKE_BOOL=	WITH_MBEDTLS
-MBEDTLS_LIB_DEPENDS=	libmbedtls.so:security/mbedtls
+MBEDTLS_LIB_DEPENDS=	libmbedtls.so:security/mbedtls2
 NETTLE_CMAKE_BOOL=	WITH_NETTLE
 NETTLE_LIB_DEPENDS=	libnettle.so:security/nettle
 NSS_CMAKE_BOOL=		WITH_NSS
