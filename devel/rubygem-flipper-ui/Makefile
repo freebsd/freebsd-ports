@@ -1,5 +1,6 @@
 PORTNAME=	flipper-ui
 PORTVERSION=	1.3.2
+PORTREVISION=	1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -15,7 +16,7 @@ RUN_DEPENDS=	rubygem-erubi>=1.0.0<2.0.0:www/rubygem-erubi \
 		rubygem-rack>=1.4,3<4,3:www/rubygem-rack \
 		rubygem-rack-protection>=1.5.3<5.0.0:www/rubygem-rack-protection \
 		rubygem-rack-session>=1.0.2<3.0.0:www/rubygem-rack-session \
-		rubygem-sanitize>=0<7:textproc/rubygem-sanitize
+		rubygem-sanitize>=0<8:textproc/rubygem-sanitize
 
 USES=		gem
 
