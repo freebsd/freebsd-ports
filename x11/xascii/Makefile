@@ -3,7 +3,7 @@ PORTVERSION=	1.0
 PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	http://komquats.com/distfiles/ \
-		http://people.freebsd.org/~cy/distfiles/
+		LOCAL/cy
 
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Display an ASCII table in decimal, octal, and hexadecimal

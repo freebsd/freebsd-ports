@@ -2,7 +2,7 @@ PORTNAME=	netcat
 PORTVERSION=	1.10
 PORTREVISION=	4
 CATEGORIES=	net
-MASTER_SITES=	https://people.freebsd.org/~cy/distfiles/ \
+MASTER_SITES=	LOCAL/cy \
 		https://cschubert.com/distfiles/
 		
 DISTNAME=	nc${PORTVERSION:S/.//}
