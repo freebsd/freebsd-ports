@@ -1,6 +1,6 @@
 PORTNAME=	librist
 DISTVERSION=	0.2.11
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -10,11 +10,8 @@ WWW=		https://code.videolan.org/rist/librist
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-DEPRECATED=	Depends on expired security/mbedtls2
-EXPIRATION_DATE=2025-03-31
-
 LIB_DEPENDS=	libcjson.so:devel/libcjson \
-		libmbedcrypto.so:security/mbedtls2 \
+		libmbedcrypto.so:security/mbedtls3 \
 		libmicrohttpd.so:www/libmicrohttpd
 
 USES=		localbase:ldflags meson pkgconfig
