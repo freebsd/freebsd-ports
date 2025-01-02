@@ -1,4 +1,4 @@
---- lib/third_party/jthread/includes/jthread.hpp.orig	2024-03-23 09:15:12 UTC
+--- lib/third_party/jthread/includes/jthread.hpp.orig	2024-12-28 15:09:51 UTC
 +++ lib/third_party/jthread/includes/jthread.hpp
 @@ -1,6 +1,11 @@
  #pragma once
@@ -12,4 +12,4 @@
 +    || (__FreeBSD_version >= 1300000 && __FreeBSD_version >= 1303503)
      #include <thread>
  #else
-     #include "../jthread/source/jthread.hpp"
+     #define __stop_callback_base __stop_callback_base_j

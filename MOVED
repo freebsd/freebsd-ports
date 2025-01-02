@@ -3854,3 +3854,4 @@ comms/libconcord||2025-01-01|Has expired: Logitech Harmony were officially disco
 japanese/onew||2025-01-01|Has expired: Unfetchabled and listed BROKEN for over year
 lang/twelf||2025-01-01|Has expired: Dead upstream and fails to build
 devel/py-codecov||2025-01-01|Has expired: Deprecated by upstream. On February 1, 2022 this uploader will be completely deprecated and will no longer be able to upload coverage to Codecov
+editors/imhex-current||2025-01-02||Replaced with editors/imhex
