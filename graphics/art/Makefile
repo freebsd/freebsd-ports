@@ -1,13 +1,14 @@
 PORTNAME=	art
-DISTVERSION=	1.24.1
+DISTVERSION=	1.24.5
 CATEGORIES=	graphics
-MASTER_SITES=	https://bitbucket.org/agriggio/art/downloads/
+MASTER_SITES=	https://github.com/artpixls/ART/releases/download/${DISTVERSION}/
 PKGNAMESUFFIX=	-raw-image-editor
 DISTNAME=	${PORTNAME:tu}-${DISTVERSION}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Raw image processing program
-WWW=		https://bitbucket.org/agriggio/art/wiki/Home
+WWW=		https://art.pixls.us/ \
+		https://github.com/artpixls/ART
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
