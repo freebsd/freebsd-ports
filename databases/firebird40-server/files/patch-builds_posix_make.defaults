@@ -1,7 +1,16 @@
---- builds/posix/make.defaults	2020-10-20 03:40:05.000000000 -0500
-+++ builds/posix/make.defaults	2021-06-25 00:23:49.718147000 -0500
-@@ -134,7 +134,7 @@
- MATHLIB=@MATHLIB@
+--- builds/posix/make.defaults	2024-08-08 01:59:40.000000000 -0700
++++ builds/posix/make.defaults	2025-01-01 15:53:58.882687000 -0800
+@@ -104,7 +104,7 @@
+ #____________________________________________________________________________
+ 
+ # Global c++ flags: firebird needs no RTTI, choose build standard
+-PLUSPLUS_FLAGS:= -fno-rtti -std=c++11
++PLUSPLUS_FLAGS:= -fno-rtti -std=c++17
+ 
+ # If this is defined then we use special rules useful for developers only
+ IsDeveloper = @DEVEL_FLG@
+@@ -155,7 +155,7 @@
+ endif
  
  # switch to make sed edit files inplace
 -INLINE_EDIT_SED:= -i
@@ -9,7 +18,7 @@
  
  # Default programs and tools to be used in the build process
  
-@@ -144,7 +144,7 @@
+@@ -165,7 +165,7 @@
  CHMOD=			chmod
  CHMOD_6=		chmod 666
  CHMOD_7=		chmod 777
@@ -18,7 +27,7 @@
  MV=			mv -f
  TOUCH=			touch
  CP=			cp
-@@ -219,7 +219,7 @@
+@@ -241,7 +241,7 @@
  #LibraryFileName=libfbclient
  LibraryFileName=libfbclient
  LibraryFullName=$(LibraryFileName).${SHRLIB_EXT}.${FirebirdVersion}
@@ -27,7 +36,7 @@
  LibraryBaseName=$(LibraryFileName).${SHRLIB_EXT}
  
  LIBFIREBIRD_FULLNAME = $(LIB)/$(LibraryFullName)
-@@ -240,7 +240,7 @@
+@@ -262,7 +262,7 @@
  
  ifeq ($(EDITLINE_FLG),Y)
    ifeq ($(STD_EDITLINE), true)
@@ -36,7 +45,7 @@
    else
  	LIBEDITLINE := $(LIB)/libedit.a
    endif
-@@ -362,7 +362,7 @@
+@@ -392,7 +392,7 @@
  GDS_DROP	= $(BIN)/gds_drop$(EXEC_EXT)
  FBSVCMGR	= $(BIN)/fbsvcmgr$(EXEC_EXT)
  FBTRACEMGR	= $(BIN)/fbtracemgr$(EXEC_EXT)
@@ -45,7 +54,7 @@
  NBACKUP		= $(BIN)/nbackup$(EXEC_EXT)
  LOCKPRINT	= $(BIN)/fb_lock_print$(EXEC_EXT)
  GSEC		= $(BIN)/gsec$(EXEC_EXT)
-@@ -383,13 +383,13 @@
+@@ -413,13 +413,13 @@
  QLI            = $(BIN)/qli$(EXEC_EXT)
  
  # From isql
