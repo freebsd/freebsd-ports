@@ -1,5 +1,5 @@
 PORTNAME=	fog-xml
-PORTVERSION=	0.1.4
+PORTVERSION=	0.1.5
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
