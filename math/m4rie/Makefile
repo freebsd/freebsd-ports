@@ -1,5 +1,5 @@
 PORTNAME=	M4RIE
-PORTVERSION=	20200115
+PORTVERSION=	20250102
 DISTVERSIONPREFIX=	release-
 CATEGORIES=	math
 
@@ -15,9 +15,10 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	malb
 GH_PROJECT=	${PORTNAME:tl}
 
-USES=		autoreconf libtool localbase pkgconfig
+USES=		autoreconf libtool localbase pathfix pkgconfig
 
 GNU_CONFIGURE=	yes
+INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 
 TEST_TARGET=	check
