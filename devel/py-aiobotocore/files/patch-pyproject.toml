@@ -1,4 +1,4 @@
---- pyproject.toml.orig	2024-12-17 20:18:03 UTC
+--- pyproject.toml.orig	2024-12-26 23:25:27 UTC
 +++ pyproject.toml
 @@ -1,5 +1,5 @@
  [build-system]
@@ -11,7 +11,7 @@
  dynamic = ["version", "readme"]
  
  dependencies = [
--    "botocore >=1.35.74, <1.35.82", # NOTE: When updating, always keep `project.optional-dependencies` aligned
+-    "botocore >=1.35.74, <1.35.89", # NOTE: When updating, always keep `project.optional-dependencies` aligned
 +    "botocore >=1.35.74", # NOTE: When updating, always keep `project.optional-dependencies` aligned
      "aiohttp >=3.9.2, <4.0.0",
      "wrapt >=1.10.10, <2.0.0",
@@ -20,11 +20,11 @@
  
  [project.optional-dependencies]
  awscli = [
--    "awscli >=1.36.15, <1.36.23",
+-    "awscli >=1.36.15, <1.36.30",
 +    "awscli >=1.29.81",
  ]
  boto3 = [
--    "boto3 >=1.35.74, <1.35.82",
+-    "boto3 >=1.35.74, <1.35.89",
 +    "boto3 >=1.35.74",
  ]
  
