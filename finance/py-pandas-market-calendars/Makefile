@@ -22,7 +22,6 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}python-dateutil>0:devel/py-python-dateutil@$
 
 USES=		python
 USE_PYTHON=	pep517 autoplist pytest
-# 2 tests fail due to the timezone object mismatch, see https://github.com/rsheftel/pandas_market_calendars/issues/328
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	rsheftel
@@ -30,6 +29,6 @@ GH_PROJECT=	${PORTNAME:S/-/_/g}
 
 NO_ARCH=	yes
 
-# tests as of: 74 failed, 1419 passed, 1 warning in 351.57s (0:05:51), see https://github.com/rsheftel/pandas_market_calendars/issues/365
+# tests as of 4.5.1: 2 failed, 1411 passed, 1 warning in 274.66s (0:04:34), see https://github.com/rsheftel/pandas_market_calendars/issues/328
 
 .include <bsd.port.mk>
