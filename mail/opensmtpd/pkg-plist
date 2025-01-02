@@ -17,6 +17,7 @@ share/man/man5/forward.5.gz
 share/man/man5/smtpd.conf.5.gz
 share/man/man5/table.5.gz
 share/man/man7/smtpd-filters.7.gz
+share/man/man7/smtpd-tables.7.gz
 share/man/man8/mail.lmtp.8.gz
 share/man/man8/mail.local.8.gz
 share/man/man8/mail.maildir.8.gz
