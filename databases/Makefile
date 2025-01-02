@@ -1032,6 +1032,7 @@
     SUBDIR += rubygem-sdbm
     SUBDIR += rubygem-seed-fu
     SUBDIR += rubygem-solid_cable
+    SUBDIR += rubygem-solid_cable-rails72
     SUBDIR += rubygem-solid_cache
     SUBDIR += rubygem-solid_queue
     SUBDIR += rubygem-sqlite3
