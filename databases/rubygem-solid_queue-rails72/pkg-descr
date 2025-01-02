@@ -1,0 +1,13 @@
+Solid Queue is a DB-based queuing backend for Active Job, designed with
+simplicity and performance in mind.
+
+Besides regular job enqueuing and processing, Solid Queue supports delayed jobs,
+concurrency controls, recurring jobs, pausing queues, numeric priorities per
+job, priorities by queue order, and bulk enqueuing (enqueue_all for Active Job's
+perform_all_later).
+
+Solid Queue can be used with SQL databases such as MySQL, PostgreSQL or SQLite,
+and it leverages the FOR UPDATE SKIP LOCKED clause, if available, to avoid
+blocking and waiting on locks when polling jobs. It relies on Active Job for
+retries, discarding, error handling, serialization, or delays, and it's
+compatible with Ruby on Rails's multi-threading.
