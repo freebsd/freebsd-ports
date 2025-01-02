@@ -1,5 +1,5 @@
 PORTNAME=	jh2
-PORTVERSION=	5.0.4
+PORTVERSION=	5.0.5
 CATEGORIES=	www python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,7 +13,7 @@ WWW=		https://python-hyper.org/projects/h2/en/stable/ \
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}maturin>=1.2<2.0:devel/py-maturin@${PY_FLAVOR}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}maturin>=1.7<2.0:devel/py-maturin@${PY_FLAVOR}
 
 USES=		cargo python
 USE_PYTHON=	autoplist concurrent pep517
