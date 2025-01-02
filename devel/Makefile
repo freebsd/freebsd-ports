@@ -6401,6 +6401,7 @@
     SUBDIR += rubygem-actionview70
     SUBDIR += rubygem-actionview71
     SUBDIR += rubygem-actionview72
+    SUBDIR += rubygem-actionview80
     SUBDIR += rubygem-active_hash
     SUBDIR += rubygem-active_scaffold
     SUBDIR += rubygem-activejob4
