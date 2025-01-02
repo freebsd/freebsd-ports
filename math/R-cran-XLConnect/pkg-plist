@@ -36,6 +36,7 @@
 %%R_MOD_DIR%%/demoFiles/SwitzerlandFlag.jpg
 %%R_MOD_DIR%%/demoFiles/conversion.xlsx
 %%R_MOD_DIR%%/demoFiles/errorCell.xlsx
+%%R_MOD_DIR%%/demoFiles/iris.xlsx
 %%R_MOD_DIR%%/demoFiles/mtcars.xlsx
 %%R_MOD_DIR%%/demoFiles/multiregion.xls
 %%R_MOD_DIR%%/demoFiles/multiregion.xlsx
@@ -57,12 +58,14 @@
 %%R_MOD_DIR%%/html/00Index.html
 %%R_MOD_DIR%%/html/R.css
 %%R_MOD_DIR%%/java/SparseBitSet.jar
-%%R_MOD_DIR%%/java/XLConnect-2.0.1.jar
-%%R_MOD_DIR%%/java/commons-codec-1.16.0.jar
+%%R_MOD_DIR%%/java/XLConnect-3.0.0-SNAPSHOT.jar
+%%R_MOD_DIR%%/java/commons-codec-1.17.0.jar
 %%R_MOD_DIR%%/java/commons-codec.jar
 %%R_MOD_DIR%%/java/commons-collections4.jar
 %%R_MOD_DIR%%/java/commons-compress.jar
-%%R_MOD_DIR%%/java/commons-io-2.15.0.jar
+%%R_MOD_DIR%%/java/commons-io-2.16.1.jar
+%%R_MOD_DIR%%/java/commons-lang3-3.14.0.jar
+%%R_MOD_DIR%%/java/commons-lang3.jar
 %%R_MOD_DIR%%/java/commons-math3.jar
 %%R_MOD_DIR%%/java/curvesapi-1.08.jar
 %%R_MOD_DIR%%/java/log4j-api.jar
@@ -72,6 +75,7 @@
 %%R_MOD_DIR%%/java/poi.jar
 %%R_MOD_DIR%%/java/xmlbeans.jar
 %%R_MOD_DIR%%/tests/run_tests.R
+%%R_MOD_DIR%%/unitTests/resources/test37.xlsx
 %%R_MOD_DIR%%/unitTests/resources/testBug106.xlsx
 %%R_MOD_DIR%%/unitTests/resources/testBug170.xlsx
 %%R_MOD_DIR%%/unitTests/resources/testBug181.xlsx
@@ -96,6 +100,8 @@
 %%R_MOD_DIR%%/unitTests/resources/testWorkbookExistsNameAndSheet.xlsx
 %%R_MOD_DIR%%/unitTests/resources/testWorkbookForceRecalc.xls
 %%R_MOD_DIR%%/unitTests/resources/testWorkbookForceRecalc.xlsx
+%%R_MOD_DIR%%/unitTests/resources/testWorkbookGetDefinedNamesScoped.xls
+%%R_MOD_DIR%%/unitTests/resources/testWorkbookGetDefinedNamesScoped.xlsx
 %%R_MOD_DIR%%/unitTests/resources/testWorkbookMissingValue.xls
 %%R_MOD_DIR%%/unitTests/resources/testWorkbookMissingValue.xlsx
 %%R_MOD_DIR%%/unitTests/resources/testWorkbookOverwriteFormulas.xls
