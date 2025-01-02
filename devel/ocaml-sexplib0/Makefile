@@ -21,6 +21,12 @@ OPTIONS_DEFINE=	DOCS
 DOCSDIR=	${OCAML_DOCSDIR}/${PORTNAME}
 PORTDOCS=	CHANGES.md LICENSE.md README.md
 
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == powerpc
+USE_BINUTILS=	yes
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} \
 		-e "s/(lang dune 3.11)/(lang dune 3.7)/" \
