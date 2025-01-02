@@ -1,20 +1,21 @@
---- bin/_setlib.orig	2022-07-16 12:43:26 UTC
+--- bin/_setlib.orig	1970-01-02 00:00:00 UTC
 +++ bin/_setlib
-@@ -19,19 +19,12 @@ if [ -z "$XMLBEANS_HOME" ]; then
+@@ -19,19 +19,12 @@ fi
      XMLBEANS_HOME=`dirname $0`/..
  fi
  
 -XMLBEANS_LIB=
 -if ls $XMLBEANS_HOME/build/libs/xmlbeans*.jar 1> /dev/null 2>&1; then
 -    XMLBEANS_LIB=$XMLBEANS_HOME/build/libs
--fi
++if ls %%JAVAJARDIR%%/xmlbeans.jar 1> /dev/null 2>&1; then
++    XMLBEANS_LIB=$XMLBEANS_HOME
+ fi
 -if ls $XMLBEANS_HOME/build/lib/xmlbeans*.jar 1> /dev/null 2>&1; then
 -    XMLBEANS_LIB=$XMLBEANS_HOME/build/lib
 -fi
 -if ls $XMLBEANS_HOME/lib/xmlbeans*.jar 1> /dev/null 2>&1; then
-+if ls %%JAVAJARDIR%%/xmlbeans.jar 1> /dev/null 2>&1; then
-     XMLBEANS_LIB=$XMLBEANS_HOME/lib
- fi
+-    XMLBEANS_LIB=$XMLBEANS_HOME/lib
+-fi
  
  echo XMLBEANS_LIB=$XMLBEANS_LIB
  
