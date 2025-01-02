@@ -1,6 +1,6 @@
 PORTNAME=	llama-cpp
 DISTVERSIONPREFIX=	b
-DISTVERSION=	4381
+DISTVERSION=	4404
 CATEGORIES=	misc # machine-learning
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -27,9 +27,14 @@ CMAKE_ON=	BUILD_SHARED_LIBS
 CMAKE_OFF=	LLAMA_BUILD_TESTS
 CMAKE_TESTING_ON=	LLAMA_BUILD_TESTS
 
-OPTIONS_DEFINE=		EXAMPLES VULKAN
-OPTIONS_DEFAULT=	VULKAN
+OPTIONS_DEFINE=		CURL EXAMPLES VULKAN
+OPTIONS_DEFAULT=	CURL VULKAN
 OPTIONS_SUB=		yes
+
+CURL_DESCR=		Use libcurl to download model from an URL
+CURL_CMAKE_BOOL=	LLAMA_CURL
+CURL_USES=		localbase
+CURL_LIB_DEPENDS=	libcurl.so:ftp/curl
 
 EXAMPLES_CMAKE_BOOL=	LLAMA_BUILD_EXAMPLES
 
@@ -45,6 +50,6 @@ do-test-ci: # build of tests fails, see https://github.com/ggerganov/llama.cpp/i
 	@cd ${WRKSRC} && \
 		${SETENV} ${MAKE_ENV} bash ci/run.sh ./tmp/results ./tmp/mnt
 
-# tests as of 4381: 97% tests passed, 1 tests failed out of 31
+# tests as of 4404: 97% tests passed, 1 tests failed out of 31, see https://github.com/ggerganov/llama.cpp/issues/11036
 
 .include <bsd.port.mk>
