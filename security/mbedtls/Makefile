@@ -12,7 +12,7 @@ LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 DEPRECATED=	Upstream support ends at the end of 2024
-EXPIRATION_DATE=	2024-12-31
+EXPIRATION_DATE=	2025-03-31 # not until issues in security/mbedtls3 are fixed: https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=283782
 
 USES=		cmake:testing pathfix python:build,test shebangfix tar:bz2
 USE_LDCONFIG=	yes
