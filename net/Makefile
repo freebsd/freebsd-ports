@@ -1263,6 +1263,7 @@
     SUBDIR += rubygem-activestorage70
     SUBDIR += rubygem-activestorage71
     SUBDIR += rubygem-activestorage72
+    SUBDIR += rubygem-activestorage80
     SUBDIR += rubygem-amazon-ec2
     SUBDIR += rubygem-amq-protocol
     SUBDIR += rubygem-amqp
