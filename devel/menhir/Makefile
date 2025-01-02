@@ -22,6 +22,12 @@ PORTDOCS=	${OCAML_PACKAGES:@p@$p@}
 
 OPTIONS_DEFINE=	DOCS
 
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == powerpc
+USE_BINUTILS=	yes
+.endif
+
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/menhir
 	@${STRIP_CMD} \
