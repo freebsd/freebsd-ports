@@ -1,6 +1,6 @@
 PORTNAME=	mise
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2024.12.24
+DISTVERSION=	2025.1.0
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -160,7 +160,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		filetime-0.2.25 \
 		filetime_creation-0.2.0 \
 		find-crate-0.6.3 \
-		fixedbitset-0.5.7 \
+		fixedbitset-0.4.2 \
 		flate2-1.0.35 \
 		fluent-0.16.1 \
 		fluent-bundle-0.15.3 \
@@ -193,6 +193,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		h2-0.4.7 \
 		hashbrown-0.12.3 \
 		hashbrown-0.14.5 \
+		hashbrown-0.15.2 \
 		heck-0.4.1 \
 		heck-0.5.0 \
 		hermit-abi-0.3.9 \
@@ -235,7 +236,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		impl-tools-lib-0.11.1 \
 		indenter-0.3.3 \
 		indexmap-1.9.3 \
-		indexmap-2.5.0 \
+		indexmap-2.7.0 \
 		indicatif-0.17.9 \
 		indoc-2.0.5 \
 		inout-0.1.3 \
@@ -324,7 +325,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		pest_derive-2.7.15 \
 		pest_generator-2.7.15 \
 		pest_meta-2.7.15 \
-		petgraph-0.6.6 \
+		petgraph-0.6.5 \
 		phf-0.11.2 \
 		phf_codegen-0.11.2 \
 		phf_generator-0.11.2 \
@@ -364,7 +365,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		regex-automata-0.4.9 \
 		regex-syntax-0.6.29 \
 		regex-syntax-0.8.5 \
-		reqwest-0.12.11 \
+		reqwest-0.12.12 \
 		ring-0.17.8 \
 		rmp-0.8.14 \
 		rmp-serde-1.3.0 \
@@ -571,7 +572,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		windows_x86_64_gnullvm-0.52.6 \
 		windows_x86_64_msvc-0.48.5 \
 		windows_x86_64_msvc-0.52.6 \
-		winnow-0.6.20 \
+		winnow-0.6.21 \
 		winsafe-0.0.19 \
 		write16-1.0.0 \
 		writeable-0.5.5 \
