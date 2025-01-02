@@ -5513,6 +5513,7 @@
     SUBDIR += py-pyTooling
     SUBDIR += py-py_interface
     SUBDIR += py-pyairtable
+    SUBDIR += py-pyairtable2
     SUBDIR += py-pyaml-env
     SUBDIR += py-pyasn1
     SUBDIR += py-pyasn1-modules
