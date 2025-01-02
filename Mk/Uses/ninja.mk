@@ -7,7 +7,7 @@
 # build			add a build dependency on ninja
 # make			use ninja for the build instead of make, implies "build"
 # run			add a run dependency on ninja
-# samurai		use samurai irregardless of NINJA_DEFAULT (implies make)
+# samurai		use samurai regardless of NINJA_DEFAULT (implies make)
 #
 # MAINTAINER: ports@FreeBSD.org
 
