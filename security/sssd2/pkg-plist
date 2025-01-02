@@ -131,21 +131,19 @@ share/man/man8/sssd-kcm.8.gz
 share/man/man8/sssd.8.gz
 share/man/man8/sssd_krb5_localauth_plugin.8.gz
 share/man/man8/sssd_krb5_locator_plugin.8.gz
-%%DATADIR%%/dbus-1/system-services/org.freedesktop.sssd.infopipe.service
-%%DATADIR%%/dbus-1/system.d/org.freedesktop.sssd.infopipe.conf
-%%DATADIR%%/sssd-kcm/kcm_default_ccache
-%%DATADIR%%/sssd/cfg_rules.ini
-%%DATADIR%%/sssd/krb5-snippets/enable_sssd_conf_dir
-%%DATADIR%%/sssd/krb5-snippets/sssd_enable_idp
-%%DATADIR%%/sssd/krb5-snippets/sssd_enable_passkey
-%%DATADIR%%/sssd/sssd.api.conf
-%%DATADIR%%/sssd/sssd.api.d/sssd-ad.conf
-%%DATADIR%%/sssd/sssd.api.d/sssd-files.conf
-%%DATADIR%%/sssd/sssd.api.d/sssd-ipa.conf
-%%DATADIR%%/sssd/sssd.api.d/sssd-krb5.conf
-%%DATADIR%%/sssd/sssd.api.d/sssd-ldap.conf
-%%DATADIR%%/sssd/sssd.api.d/sssd-proxy.conf
-%%DATADIR%%/sssd/sssd.api.d/sssd-simple.conf
+share/sssd-kcm/kcm_default_ccache
+%%DATADIR%%/cfg_rules.ini
+%%DATADIR%%/krb5-snippets/enable_sssd_conf_dir
+%%DATADIR%%/krb5-snippets/sssd_enable_idp
+%%DATADIR%%/krb5-snippets/sssd_enable_passkey
+%%DATADIR%%/sssd.api.conf
+%%DATADIR%%/sssd.api.d/sssd-ad.conf
+%%DATADIR%%/sssd.api.d/sssd-files.conf
+%%DATADIR%%/sssd.api.d/sssd-ipa.conf
+%%DATADIR%%/sssd.api.d/sssd-krb5.conf
+%%DATADIR%%/sssd.api.d/sssd-ldap.conf
+%%DATADIR%%/sssd.api.d/sssd-proxy.conf
+%%DATADIR%%/sssd.api.d/sssd-simple.conf
 @dir %%ETCDIR%%/conf.d
 @dir %%ETCDIR%%/pki
 @dir lib/ldb
