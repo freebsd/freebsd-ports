@@ -4209,6 +4209,7 @@
     SUBDIR += pecl-json_post
     SUBDIR += pecl-msgpack
     SUBDIR += pecl-mustache
+    SUBDIR += pecl-opentelemetry
     SUBDIR += pecl-pcov
     SUBDIR += pecl-protobuf
     SUBDIR += pecl-psr
