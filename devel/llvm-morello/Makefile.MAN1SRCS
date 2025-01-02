@@ -1,4 +1,1 @@
 .include "${.PARSEDIR}/../llvm-cheri/Makefile.MAN1SRCS"
-
-# Workaround for llvm-cheri/llvm-morello version skew
-LLVM_MAN1SRCS:=	${LLVM_MAN1SRCS:Nllvm-dwarfutil.1:Nllvm-ifs.1:Nllvm-remark-size-diff.1}
