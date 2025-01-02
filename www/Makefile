@@ -2346,6 +2346,7 @@
     SUBDIR += rubygem-tailwindcss-rails-rails71
     SUBDIR += rubygem-task_list
     SUBDIR += rubygem-thin
+    SUBDIR += rubygem-thruster
     SUBDIR += rubygem-tinyatom
     SUBDIR += rubygem-tinymce-rails
     SUBDIR += rubygem-toml-rb
