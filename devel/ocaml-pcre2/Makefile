@@ -25,6 +25,12 @@ PORTEXAMPLES=	*
 OPTIONS_DEFINE=		DOCS EXAMPLES
 DOCS_ALL_TARGET=	examples/ @install
 
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == powerpc
+USE_BINUTILS=	yes
+.endif
+
 post-patch:
 	${REINPLACE_CMD} \
 		-e "s/(name ${PORTNAME})/&\n (version ${PORTVERSION})/" \
