@@ -5,6 +5,7 @@ PORTVERSION=	1.12
 PORTREVISION?=	1
 CATEGORIES+=	deskutils
 MASTER_SITES=	https://cschubert.com/distfiles/plan/ \
+		LOCAL/cy \
 		https://plan.ftp.fu-berlin.de/
 
 MAINTAINER=	cy@FreeBSD.org
