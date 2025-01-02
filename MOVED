@@ -3855,3 +3855,5 @@ japanese/onew||2025-01-01|Has expired: Unfetchabled and listed BROKEN for over y
 lang/twelf||2025-01-01|Has expired: Dead upstream and fails to build
 devel/py-codecov||2025-01-01|Has expired: Deprecated by upstream. On February 1, 2022 this uploader will be completely deprecated and will no longer be able to upload coverage to Codecov
 editors/imhex-current||2025-01-02||Replaced with editors/imhex
+graphics/yacreader@qt5|graphics/yacreader|2025-01-02|Flavorization has been removed. Qt 5.x has been long deprecated upstream. Please use the unflavored graphics/yacreader port based on Qt 6.x instead
+graphics/yacreader@qt6|graphics/yacreader|2025-01-02|Flavorization has been removed. Continue to enjoy graphics/yacreader based on Qt 6.x as usual
