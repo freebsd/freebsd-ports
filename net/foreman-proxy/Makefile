@@ -1,5 +1,5 @@
 PORTNAME=	foreman-proxy
-PORTVERSION=	3.10.0
+DISTVERSION=	3.13.0
 CATEGORIES=	net
 MASTER_SITES=	https://downloads.theforeman.org/foreman-proxy/
 
@@ -14,11 +14,11 @@ RUN_DEPENDS=	rubygem-bundler_ext>=0.4:sysutils/rubygem-bundler_ext \
 		rubygem-concurrent-ruby>=1.0:devel/rubygem-concurrent-ruby \
 		rubygem-json>=1.8.1:devel/rubygem-json \
 		rubygem-logging>=0:devel/rubygem-logging \
-		rubygem-rack>=2.0:www/rubygem-rack \
+		rubygem-rack22>=2.0:www/rubygem-rack22 \
 		rubygem-rb-kqueue>=0.2.2:devel/rubygem-rb-kqueue \
 		rubygem-rsec>=0.4.3:devel/rubygem-rsec \
 		rubygem-sd_notify>=0.1.1:devel/rubygem-sd_notify \
-		rubygem-sinatra>=2.0:www/rubygem-sinatra \
+		rubygem-sinatra2>=2.0:www/rubygem-sinatra2 \
 		rubygem-webrick>=1.7:www/rubygem-webrick \
 		curl:ftp/curl
 
