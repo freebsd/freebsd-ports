@@ -601,6 +601,7 @@
     SUBDIR += rubygem-actionmailbox70
     SUBDIR += rubygem-actionmailbox71
     SUBDIR += rubygem-actionmailbox72
+    SUBDIR += rubygem-actionmailbox80
     SUBDIR += rubygem-actionmailer4
     SUBDIR += rubygem-actionmailer5
     SUBDIR += rubygem-actionmailer50
