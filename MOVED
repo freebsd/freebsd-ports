@@ -3996,3 +3996,5 @@ x11/mere-about||2025-01-02|Unknown, port deleted long time ago, entry added to c
 x11/mere-utils||2025-01-02|Unknown, port deleted long time ago, entry added to clean up portscout.freebsd.org
 editors/neovim-qt@qt5|editors/neovim-qt|2025-01-02|Flavorization has been removed. Qt 5.x has been long deprecated upstream. Please use the unflavored editors/neovim-qt port based on Qt 6.x instead
 editors/neovim-qt@qt6|editors/neovim-qt|2025-01-02|Flavorization has been removed. Continue to enjoy editors/neovim-qt based on Qt 6.x as usual
+deskutils/copyq@qt5|deskutils/copyq|2025-01-02|Flavorization has been removed. Qt 5.x has been long deprecated upstream. Please use the unflavored deskutils/copyq port based on Qt 6.x instead
+deskutils/copyq@qt6|deskutils/copyq|2025-01-02|Flavorization has been removed. Continue to enjoy deskutils/copyq based on Qt 6.x as usual
