@@ -1,17 +1,17 @@
 PORTNAME=	obs-studio
-DISTVERSION=	30.2.3
-PORTREVISION=	1
+DISTVERSION=	31.0.0
 CATEGORIES=	multimedia
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Open source streaming/recording software
-WWW=		https://obsproject.com/
+WWW=		https://obsproject.com/ \
+		https://github.com/obsproject/obs-studio
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 DEPRECATED=	Depends on expired security/mbedtls
-EXPIRATION_DATE=2025-03-31
+EXPIRATION_DATE=2025-03-31 # removal pending https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=283782
 
 BROKEN_i386=	link fails: relocation R_386_PC32 cannot be used against symbol 'strlist_split'; recompile with -fPIC, see https://github.com/obsproject/obs-studio/issues/10481
 
