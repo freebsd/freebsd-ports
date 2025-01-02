@@ -1,13 +1,13 @@
 PORTNAME=	m2crypto
-PORTVERSION=	0.41.0
+PORTVERSION=	0.43.0
 CATEGORIES=	security python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	M2Crypto-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Crypto and SSL toolkit for Python
-WWW=		https://gitlab.com/m2crypto/m2crypto
+WWW=		https://m2crypto.readthedocs.io/en/latest/ \
+		https://gitlab.com/m2crypto/m2crypto
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENCE
