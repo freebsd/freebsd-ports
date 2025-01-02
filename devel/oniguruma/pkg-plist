@@ -8,5 +8,5 @@ lib/cmake/oniguruma/onigurumaTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/oniguruma/onigurumaTargets.cmake
 lib/libonig.so
 lib/libonig.so.5
-lib/libonig.so.5.4.0
+lib/libonig.so.5.5.0
 libdata/pkgconfig/oniguruma.pc
