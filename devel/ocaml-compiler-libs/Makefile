@@ -19,6 +19,12 @@ PORTDOCS=	CHANGES.md LICENSE.md README.org
 
 OPTIONS_DEFINE=	DOCS
 
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == powerpc
+USE_BINUTILS=	yes
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} \
 		-e "s/(name ${PORTNAME})/&\n (version ${PORTVERSION})/" \
