@@ -1,91 +1,87 @@
-CARGO_CRATES=	ahash-0.8.7 \
-		aho-corasick-1.1.2 \
-		allocator-api2-0.2.16 \
-		autocfg-1.1.0 \
-		bindgen-0.69.2 \
+CARGO_CRATES=	ahash-0.8.11 \
+		aho-corasick-1.1.3 \
+		allocator-api2-0.2.18 \
+		autocfg-1.4.0 \
+		bindgen-0.69.4 \
 		bitflags-1.3.2 \
-		bitflags-2.4.2 \
+		bitflags-2.6.0 \
 		block-buffer-0.10.4 \
-		bstr-1.9.0 \
+		bstr-1.10.0 \
+		byteorder-1.5.0 \
 		cexpr-0.6.0 \
 		cfg-if-1.0.0 \
-		clang-sys-1.7.0 \
-		cpufeatures-0.2.12 \
+		clang-sys-1.8.1 \
+		cpufeatures-0.2.14 \
 		crypto-common-0.1.6 \
 		digest-0.10.7 \
-		errno-0.3.8 \
-		fastrand-2.0.1 \
+		either-1.13.0 \
+		errno-0.3.9 \
+		fastrand-2.1.1 \
 		generic-array-0.14.7 \
-		getrandom-0.2.12 \
+		getrandom-0.2.15 \
 		glob-0.3.1 \
-		hashbrown-0.14.3 \
-		indoc-2.0.4 \
-		itoa-1.0.10 \
-		lazy_static-1.4.0 \
+		hashbrown-0.14.5 \
+		indoc-2.0.5 \
+		itertools-0.12.1 \
+		itoa-1.0.11 \
+		lazy_static-1.5.0 \
 		lazycell-1.3.0 \
-		libc-0.2.152 \
-		libloading-0.8.1 \
-		linux-raw-sys-0.4.13 \
-		magnus-0.6.2 \
+		libc-0.2.159 \
+		libloading-0.8.5 \
+		linux-raw-sys-0.4.14 \
+		magnus-0.7.1 \
 		magnus-macros-0.6.0 \
-		memchr-2.7.1 \
-		memmap2-0.9.3 \
+		memchr-2.7.4 \
+		memmap2-0.9.5 \
 		memoffset-0.6.5 \
 		minimal-lexical-0.2.1 \
 		nix-0.25.1 \
 		nom-7.1.3 \
-		once_cell-1.19.0 \
-		peeking_take_while-0.1.2 \
+		once_cell-1.20.1 \
 		pin-utils-0.1.0 \
-		ppv-lite86-0.2.17 \
-		proc-macro2-1.0.78 \
-		quote-1.0.35 \
+		portable-atomic-1.9.0 \
+		ppv-lite86-0.2.20 \
+		proc-macro2-1.0.86 \
+		quote-1.0.37 \
 		rand-0.8.5 \
 		rand_chacha-0.3.1 \
 		rand_core-0.6.4 \
-		rb-sys-0.9.87 \
-		rb-sys-build-0.9.87 \
+		rb-sys-0.9.105 \
+		rb-sys-build-0.9.105 \
 		rb-sys-env-0.1.2 \
-		redox_syscall-0.4.1 \
-		regex-1.10.3 \
-		regex-automata-0.4.4 \
-		regex-syntax-0.8.2 \
+		rb-sys-env-0.2.1 \
+		regex-1.11.0 \
+		regex-automata-0.4.8 \
+		regex-syntax-0.8.5 \
 		rustc-hash-1.1.0 \
-		rustix-0.38.30 \
-		ryu-1.0.16 \
+		rustix-0.38.37 \
+		ryu-1.0.18 \
 		seq-macro-0.3.5 \
-		serde-1.0.195 \
-		serde_derive-1.0.195 \
-		serde_json-1.0.111 \
+		serde-1.0.210 \
+		serde_derive-1.0.210 \
+		serde_json-1.0.128 \
 		sha2-0.10.8 \
 		shell-words-1.1.0 \
 		shlex-1.3.0 \
-		smallvec-1.13.1 \
-		syn-2.0.48 \
-		tempfile-3.9.0 \
-		thiserror-1.0.56 \
-		thiserror-impl-1.0.56 \
+		smallvec-1.13.2 \
+		syn-2.0.79 \
+		tempfile-3.13.0 \
+		thiserror-1.0.64 \
+		thiserror-impl-1.0.64 \
 		typenum-1.17.0 \
-		unicode-ident-1.0.12 \
-		version_check-0.9.4 \
+		unicode-ident-1.0.13 \
+		version_check-0.9.5 \
 		wasi-0.11.0+wasi-snapshot-preview1 \
-		windows-sys-0.48.0 \
 		windows-sys-0.52.0 \
-		windows-targets-0.48.5 \
-		windows-targets-0.52.0 \
-		windows_aarch64_gnullvm-0.48.5 \
-		windows_aarch64_gnullvm-0.52.0 \
-		windows_aarch64_msvc-0.48.5 \
-		windows_aarch64_msvc-0.52.0 \
-		windows_i686_gnu-0.48.5 \
-		windows_i686_gnu-0.52.0 \
-		windows_i686_msvc-0.48.5 \
-		windows_i686_msvc-0.52.0 \
-		windows_x86_64_gnu-0.48.5 \
-		windows_x86_64_gnu-0.52.0 \
-		windows_x86_64_gnullvm-0.48.5 \
-		windows_x86_64_gnullvm-0.52.0 \
-		windows_x86_64_msvc-0.48.5 \
-		windows_x86_64_msvc-0.52.0 \
-		zerocopy-0.7.32 \
-		zerocopy-derive-0.7.32
+		windows-sys-0.59.0 \
+		windows-targets-0.52.6 \
+		windows_aarch64_gnullvm-0.52.6 \
+		windows_aarch64_msvc-0.52.6 \
+		windows_i686_gnu-0.52.6 \
+		windows_i686_gnullvm-0.52.6 \
+		windows_i686_msvc-0.52.6 \
+		windows_x86_64_gnu-0.52.6 \
+		windows_x86_64_gnullvm-0.52.6 \
+		windows_x86_64_msvc-0.52.6 \
+		zerocopy-0.7.35 \
+		zerocopy-derive-0.7.35
