@@ -1,5 +1,5 @@
 PORTNAME=	qdldl
-PORTVERSION=	0.1.7.post4
+PORTVERSION=	0.1.7.post5
 CATEGORIES=	math python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -30,5 +30,7 @@ post-install:
 
 do-test: install # this is required for some reason, and TEST_ENV doesn't work
 	@cd ${WRKSRC} && pytest
+
+# tests as of 0.1.7.post5: 4 failed, 5 passed in 12.28s, see https://github.com/osqp/qdldl-python/issues/53
 
 .include <bsd.port.mk>
