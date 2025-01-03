@@ -6,7 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	HTTP traffic mocking and expectations made easy
-WWW=		https://pook \
+WWW=		https://pook.readthedocs.io/en/v2.1.2/ \
 		https://github.com/h2non/pook
 
 LICENSE=	MIT
