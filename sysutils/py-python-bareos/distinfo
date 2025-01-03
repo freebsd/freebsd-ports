@@ -1,3 +1,3 @@
-TIMESTAMP = 1714631838
-SHA256 (python-bareos-23.0.2.tar.gz) = b11ace255493d6f3f9589738541e39b086c3f464b81db5120e61e80a5569f77e
-SIZE (python-bareos-23.0.2.tar.gz) = 36368
+TIMESTAMP = 1735940424
+SHA256 (python_bareos-24.0.0.tar.gz) = fee25b9e738ba2f3762064d7834ca7c8d91d60696cd47ed8ace6f8fb5cb58587
+SIZE (python_bareos-24.0.0.tar.gz) = 37218
