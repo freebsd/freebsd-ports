@@ -1,7 +1,6 @@
 PORTNAME=	cp2k
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2024.3
-PORTREVISION=	1
+DISTVERSION=	2025.1
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -58,7 +57,7 @@ PLIST_SUB=		SUFFIX=.${EXE_VERSION}
 do-test: install
 	@cd ${WRKSRC}/ && \
 		${SETENV} ${MAKE_ENV} CP2K_STEM=${PREFIX}/bin/cp2k \
-			./tests/do_regtest.py x ${EXE_VERSION}
+			./tests/do_regtest.py ${BUILD_WRKSRC}/bin ${EXE_VERSION}
 
 # build instructions: https://github.com/cp2k/cp2k/blob/master/INSTALL.md
 

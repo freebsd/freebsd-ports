@@ -11,6 +11,7 @@ bin/memory_utilities_unittest%%SUFFIX%%
 bin/nequip_unittest%%SUFFIX%%
 bin/parallel_rng_types_unittest%%SUFFIX%%
 bin/xyz2dcd%%SUFFIX%%
+include/cp2k/libcp2k.h
 include/cp2k/mod_files/admm_dm_methods.mod
 include/cp2k/mod_files/admm_dm_types.mod
 include/cp2k/mod_files/admm_methods.mod
@@ -98,6 +99,8 @@ include/cp2k/mod_files/block_p_types.mod
 include/cp2k/mod_files/bse_full_diag.mod
 include/cp2k/mod_files/bse_iterative.mod
 include/cp2k/mod_files/bse_main.mod
+include/cp2k/mod_files/bse_print.mod
+include/cp2k/mod_files/bse_properties.mod
 include/cp2k/mod_files/bse_util.mod
 include/cp2k/mod_files/bsse.mod
 include/cp2k/mod_files/callgraph.mod
@@ -135,7 +138,9 @@ include/cp2k/mod_files/cp_array_utils.mod
 include/cp2k/mod_files/cp_blacs_env.mod
 include/cp2k/mod_files/cp_blacs_types.mod
 include/cp2k/mod_files/cp_cfm_basic_linalg.mod
+include/cp2k/mod_files/cp_cfm_cholesky.mod
 include/cp2k/mod_files/cp_cfm_diag.mod
+include/cp2k/mod_files/cp_cfm_dlaf_api.mod
 include/cp2k/mod_files/cp_cfm_types.mod
 include/cp2k/mod_files/cp_control_types.mod
 include/cp2k/mod_files/cp_control_utils.mod
@@ -258,9 +263,13 @@ include/cp2k/mod_files/domain_submatrix_types.mod
 include/cp2k/mod_files/ec_efield_local.mod
 include/cp2k/mod_files/ec_env_types.mod
 include/cp2k/mod_files/ec_environment.mod
+include/cp2k/mod_files/ec_external.mod
 include/cp2k/mod_files/ec_methods.mod
 include/cp2k/mod_files/ec_orth_solver.mod
 include/cp2k/mod_files/ed_analysis.mod
+include/cp2k/mod_files/eeq_data.mod
+include/cp2k/mod_files/eeq_input.mod
+include/cp2k/mod_files/eeq_method.mod
 include/cp2k/mod_files/efield_tb_methods.mod
 include/cp2k/mod_files/efield_utils.mod
 include/cp2k/mod_files/eigenvalueproblems.mod
@@ -427,6 +436,7 @@ include/cp2k/mod_files/input_cp2k_field.mod
 include/cp2k/mod_files/input_cp2k_force_eval.mod
 include/cp2k/mod_files/input_cp2k_free_energy.mod
 include/cp2k/mod_files/input_cp2k_global.mod
+include/cp2k/mod_files/input_cp2k_harris.mod
 include/cp2k/mod_files/input_cp2k_hfx.mod
 include/cp2k/mod_files/input_cp2k_kpoints.mod
 include/cp2k/mod_files/input_cp2k_loc.mod
@@ -455,6 +465,7 @@ include/cp2k/mod_files/input_cp2k_restarts_util.mod
 include/cp2k/mod_files/input_cp2k_rsgrid.mod
 include/cp2k/mod_files/input_cp2k_scf.mod
 include/cp2k/mod_files/input_cp2k_se.mod
+include/cp2k/mod_files/input_cp2k_smeagol.mod
 include/cp2k/mod_files/input_cp2k_subsys.mod
 include/cp2k/mod_files/input_cp2k_tb.mod
 include/cp2k/mod_files/input_cp2k_thermostats.mod
@@ -673,6 +684,7 @@ include/cp2k/mod_files/pao_ml.mod
 include/cp2k/mod_files/pao_ml_descriptor.mod
 include/cp2k/mod_files/pao_ml_gaussprocess.mod
 include/cp2k/mod_files/pao_ml_neuralnet.mod
+include/cp2k/mod_files/pao_model.mod
 include/cp2k/mod_files/pao_optimizer.mod
 include/cp2k/mod_files/pao_param.mod
 include/cp2k/mod_files/pao_param_equi.mod
@@ -810,6 +822,9 @@ include/cp2k/mod_files/qs_dftb_types.mod
 include/cp2k/mod_files/qs_dftb_utils.mod
 include/cp2k/mod_files/qs_diis.mod
 include/cp2k/mod_files/qs_diis_types.mod
+include/cp2k/mod_files/qs_dispersion_cnum.mod
+include/cp2k/mod_files/qs_dispersion_d2.mod
+include/cp2k/mod_files/qs_dispersion_d3.mod
 include/cp2k/mod_files/qs_dispersion_d4.mod
 include/cp2k/mod_files/qs_dispersion_nonloc.mod
 include/cp2k/mod_files/qs_dispersion_pairpot.mod
@@ -818,12 +833,12 @@ include/cp2k/mod_files/qs_dispersion_utils.mod
 include/cp2k/mod_files/qs_dos.mod
 include/cp2k/mod_files/qs_efield_berry.mod
 include/cp2k/mod_files/qs_efield_local.mod
+include/cp2k/mod_files/qs_eht_guess.mod
 include/cp2k/mod_files/qs_elec_field.mod
 include/cp2k/mod_files/qs_electric_field_gradient.mod
 include/cp2k/mod_files/qs_elf_methods.mod
 include/cp2k/mod_files/qs_energy.mod
 include/cp2k/mod_files/qs_energy_init.mod
-include/cp2k/mod_files/qs_energy_matrix_w.mod
 include/cp2k/mod_files/qs_energy_types.mod
 include/cp2k/mod_files/qs_energy_utils.mod
 include/cp2k/mod_files/qs_energy_window.mod
@@ -857,6 +872,8 @@ include/cp2k/mod_files/qs_gcp_utils.mod
 include/cp2k/mod_files/qs_grid_atom.mod
 include/cp2k/mod_files/qs_gspace_mixing.mod
 include/cp2k/mod_files/qs_harmonics_atom.mod
+include/cp2k/mod_files/qs_harris_types.mod
+include/cp2k/mod_files/qs_harris_utils.mod
 include/cp2k/mod_files/qs_hash_table_functions.mod
 include/cp2k/mod_files/qs_initial_guess.mod
 include/cp2k/mod_files/qs_integral_utils.mod
@@ -919,6 +936,7 @@ include/cp2k/mod_files/qs_neighbor_list_types.mod
 include/cp2k/mod_files/qs_neighbor_lists.mod
 include/cp2k/mod_files/qs_nl_hash_table_types.mod
 include/cp2k/mod_files/qs_nonscf.mod
+include/cp2k/mod_files/qs_nonscf_utils.mod
 include/cp2k/mod_files/qs_o3c_methods.mod
 include/cp2k/mod_files/qs_o3c_types.mod
 include/cp2k/mod_files/qs_oce_methods.mod
@@ -974,6 +992,7 @@ include/cp2k/mod_files/qs_tddfpt2_methods.mod
 include/cp2k/mod_files/qs_tddfpt2_operators.mod
 include/cp2k/mod_files/qs_tddfpt2_properties.mod
 include/cp2k/mod_files/qs_tddfpt2_restart.mod
+include/cp2k/mod_files/qs_tddfpt2_smearing_methods.mod
 include/cp2k/mod_files/qs_tddfpt2_soc.mod
 include/cp2k/mod_files/qs_tddfpt2_soc_types.mod
 include/cp2k/mod_files/qs_tddfpt2_soc_utils.mod
@@ -1023,9 +1042,13 @@ include/cp2k/mod_files/rpa_im_time_force_methods.mod
 include/cp2k/mod_files/rpa_im_time_force_types.mod
 include/cp2k/mod_files/rpa_main.mod
 include/cp2k/mod_files/rpa_rse.mod
+include/cp2k/mod_files/rpa_sigma_functional.mod
 include/cp2k/mod_files/rpa_util.mod
 include/cp2k/mod_files/rs_methods.mod
 include/cp2k/mod_files/rs_pw_interface.mod
+include/cp2k/mod_files/rt_bse.mod
+include/cp2k/mod_files/rt_bse_io.mod
+include/cp2k/mod_files/rt_bse_types.mod
 include/cp2k/mod_files/rt_delta_pulse.mod
 include/cp2k/mod_files/rt_hfx_utils.mod
 include/cp2k/mod_files/rt_make_propagators.mod
@@ -1073,6 +1096,10 @@ include/cp2k/mod_files/shg_integrals_test.mod
 include/cp2k/mod_files/simpar_methods.mod
 include/cp2k/mod_files/simpar_types.mod
 include/cp2k/mod_files/sirius_interface.mod
+include/cp2k/mod_files/smeagol_control_types.mod
+include/cp2k/mod_files/smeagol_emtoptions.mod
+include/cp2k/mod_files/smeagol_interface.mod
+include/cp2k/mod_files/smeagol_matrix_utils.mod
 include/cp2k/mod_files/soc_pseudopotential_methods.mod
 include/cp2k/mod_files/soc_pseudopotential_utils.mod
 include/cp2k/mod_files/sockets_interface.mod
@@ -1161,6 +1188,7 @@ include/cp2k/mod_files/topology_xyz.mod
 include/cp2k/mod_files/torch_api.mod
 include/cp2k/mod_files/transport.mod
 include/cp2k/mod_files/transport_env_types.mod
+include/cp2k/mod_files/trexio_utils.mod
 include/cp2k/mod_files/uff_vdw_radii_table.mod
 include/cp2k/mod_files/util.mod
 include/cp2k/mod_files/velocity_verlet_control.mod
@@ -1233,12 +1261,16 @@ include/cp2k/mod_files/xc_xpbe_hole_t_c_lr.mod
 include/cp2k/mod_files/xc_xwpbe.mod
 include/cp2k/mod_files/xray_diffraction.mod
 include/cp2k/mod_files/xtb_coulomb.mod
+include/cp2k/mod_files/xtb_eeq.mod
 include/cp2k/mod_files/xtb_ehess.mod
 include/cp2k/mod_files/xtb_ehess_force.mod
+include/cp2k/mod_files/xtb_hab_force.mod
+include/cp2k/mod_files/xtb_hcore.mod
+include/cp2k/mod_files/xtb_ks_matrix.mod
 include/cp2k/mod_files/xtb_matrices.mod
 include/cp2k/mod_files/xtb_parameters.mod
+include/cp2k/mod_files/xtb_potentials.mod
 include/cp2k/mod_files/xtb_types.mod
-include/cp2k/libcp2k.h
 lib/cmake/cp2k/cp2kConfig.cmake
 lib/cmake/cp2k/cp2kConfigVersion.cmake
 lib/cmake/cp2k/cp2kTargets-%%CMAKE_BUILD_TYPE%%.cmake
@@ -1270,9 +1302,10 @@ lib/cmake/cp2k/modules/FindQuip.cmake
 lib/cmake/cp2k/modules/FindSCALAPACK.cmake
 lib/cmake/cp2k/modules/FindSCI.cmake
 lib/cmake/cp2k/modules/FindSuperLU.cmake
+lib/cmake/cp2k/modules/Finducc.cmake
 lib/cmake/cp2k/modules/cp2k_utils.cmake
 lib/libcp2k.so
-lib/libcp2k.so.2024.3
+lib/libcp2k.so.2025.1
 libdata/pkgconfig/libcp2k.pc
 %%DATADIR%%/data/ALL_BASIS_SETS
 %%DATADIR%%/data/ALL_POTENTIALS
@@ -1479,7 +1512,8 @@ libdata/pkgconfig/libcp2k.pc
 %%DATADIR%%/data/t_c_g.dat
 %%DATADIR%%/data/t_sh_p_s_c.dat
 %%DATADIR%%/data/vdW_kernel_table.dat
-%%DATADIR%%/data/xTB_parameters
+%%DATADIR%%/data/xTB0_parameters
+%%DATADIR%%/data/xTB1_parameters
 %%DATADIR%%/data/xc_section/CAM-B3LYP.sec
 %%DATADIR%%/data/xc_section/HF-3c.sec
 %%DATADIR%%/data/xc_section/PBE.sec

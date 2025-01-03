@@ -203,7 +203,8 @@
 %%DATADIR%%/t_c_g.dat
 %%DATADIR%%/t_sh_p_s_c.dat
 %%DATADIR%%/vdW_kernel_table.dat
-%%DATADIR%%/xTB_parameters
+%%DATADIR%%/xTB0_parameters
+%%DATADIR%%/xTB1_parameters
 %%DATADIR%%/xc_section/CAM-B3LYP.sec
 %%DATADIR%%/xc_section/HF-3c.sec
 %%DATADIR%%/xc_section/PBE.sec
