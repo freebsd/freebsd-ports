@@ -1265,6 +1265,7 @@
     SUBDIR += xglurbules
     SUBDIR += xgrasp
     SUBDIR += ximaging
+    SUBDIR += xiccd
     SUBDIR += xli
     SUBDIR += xmedcon
     SUBDIR += xmlgraphics-commons
