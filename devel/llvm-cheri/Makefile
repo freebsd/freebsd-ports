@@ -8,7 +8,6 @@ MAINTAINER=	brooks@FreeBSD.org
 COMMENT?=	LLVM and Clang with support for the CHERI architecture
 WWW?=		https://cheri-cpu.org
 
-LICENSE_DIR=	${WRKSRC}/llvm
 .include "${.PARSEDIR}/../llvm-devel/Makefile.LICENSE"
 
 NOT_FOR_ARCHS=		i386 armv6 armv7 powerpc mips
