@@ -8,6 +8,10 @@ MAINTAINER=	brooks@FreeBSD.org
 COMMENT?=	LLVM and Clang with support for the CHERI architecture
 WWW?=		https://cheri-cpu.org
 
+.if !defined(LLVM_SUFFIX} || ${LLVM_SUFFIX} == "-morello"
+# XXX: really (LLVM_MAJOR < 16), but it's not defined here
+LICENSE_FILE_BSD3CLAUSE=${LICENSE_DIR}/utils/unittest/googletest/LICENSE.TXT
+.endif
 .include "${.PARSEDIR}/../llvm-devel/Makefile.LICENSE"
 
 NOT_FOR_ARCHS=		i386 armv6 armv7 powerpc mips

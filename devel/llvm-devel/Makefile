@@ -9,7 +9,6 @@ COMMENT=	LLVM and Clang
 WWW=		https://llvm.org/
 
 .include "Makefile.LICENSE"
-LICENSE_FILE_BSD3CLAUSE=	${WRKSRC}/third-party/unittest/googletest/LICENSE.TXT
 
 LIB_DEPENDS=	libzstd.so:archivers/zstd
 

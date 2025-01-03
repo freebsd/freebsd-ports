@@ -13,6 +13,7 @@ COMMENT=	LLVM and Clang
 WWW=		https://llvm.org/
 
 LICENSE_DIR=	${WRKSRC}
+LICENSE_FILE_BSD3CLAUSE=${LICENSE_DIR}/utils/unittest/googletest/LICENSE.TXT
 .include "${.CURDIR}/../llvm-devel/Makefile.LICENSE"
 
 LLVM_RELEASE=	${DISTVERSION:C/rc.*//}
