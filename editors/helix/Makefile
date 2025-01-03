@@ -1,6 +1,5 @@
 PORTNAME=	helix
-DISTVERSION=	24.07
-PORTREVISION=	4
+DISTVERSION=	25.01
 CATEGORIES=	editors
 MASTER_SITES=	https://git.sr.ht/~ecs/tree-sitter-hare/archive/:treesitterhare \
 		https://git.sr.ht/~jummit/tree-sitter-wren/archive/:treesitterwren \
@@ -29,19 +28,21 @@ GH_TUPLE=	\
 		briot:tree-sitter-ada:ba0894ef:briot_tree_sitter_ada/runtime/grammars/sources/ada \
 		adl-lang:tree-sitter-adl:2787d04b:adl_lang_tree_sitter_adl/runtime/grammars/sources/adl \
 		tree-sitter:tree-sitter-agda:c21c3a0f:tree_sitter_tree_sitter_agda/runtime/grammars/sources/agda \
+		amber-lang:tree-sitter-amber:c6df3ec2:amber_lang_tree_sitter_amber/runtime/grammars/sources/amber \
 		virchau13:tree-sitter-astro:947e9308:virchau13_tree_sitter_astro/runtime/grammars/sources/astro \
 		Beaglefoot:tree-sitter-awk:a799bc5d:Beaglefoot_tree_sitter_awk/runtime/grammars/sources/awk \
 		tree-sitter:tree-sitter-bash:f8fb3274:tree_sitter_tree_sitter_bash/runtime/grammars/sources/bash \
 		vito:tree-sitter-bass:501133e2:vito_tree_sitter_bass/runtime/grammars/sources/bass \
 		polarmutex:tree-sitter-beancount:f3741a3a:polarmutex_tree_sitter_beancount/runtime/grammars/sources/beancount \
 		latex-lsp:tree-sitter-bibtex:ccfd77db:latex_lsp_tree_sitter_bibtex/runtime/grammars/sources/bibtex \
-		the-mikedavis:tree-sitter-bicep:d8e097fc:the_mikedavis_tree_sitter_bicep/runtime/grammars/sources/bicep \
+		tree-sitter-grammars:tree-sitter-bicep:0092c7d1:tree_sitter_grammars_tree_sitter_bicep/runtime/grammars/sources/bicep \
 		tree-sitter-grammars:tree-sitter-bitbake:10bacac9:tree_sitter_grammars_tree_sitter_bitbake/runtime/grammars/sources/bitbake \
 		EmranMR:tree-sitter-blade:4c66efe1:EmranMR_tree_sitter_blade/runtime/grammars/sources/blade \
 		tree-sitter:tree-sitter-c:7175a6dd:tree_sitter_tree_sitter_c/runtime/grammars/sources/c \
 		starkware-libs:tree-sitter-cairo:e3a02122:starkware_libs_tree_sitter_cairo/runtime/grammars/sources/cairo \
 		amaanq:tree-sitter-capnp:fc6e2add:amaanq_tree_sitter_capnp/runtime/grammars/sources/capnp \
 		bufbuild:tree-sitter-cel:9f2b65da:bufbuild_tree_sitter_cel/runtime/grammars/sources/cel \
+		Decurity:tree-sitter-circom:02150524:Decurity_tree_sitter_circom/runtime/grammars/sources/circom \
 		sogaiu:tree-sitter-clojure:e57c569a:sogaiu_tree_sitter_clojure/runtime/grammars/sources/clojure \
 		uyha:tree-sitter-cmake:6e51463e:uyha_tree_sitter_cmake/runtime/grammars/sources/cmake \
 		stsewd:tree-sitter-comment:aefcc281:stsewd_tree_sitter_comment/runtime/grammars/sources/comment \
@@ -50,13 +51,14 @@ GH_TUPLE=	\
 		tree-sitter:tree-sitter-c-sharp:5b60f995:tree_sitter_tree_sitter_c_sharp/runtime/grammars/sources/c-sharp \
 		tree-sitter:tree-sitter-css:769203d0:tree_sitter_tree_sitter_css/runtime/grammars/sources/css \
 		eonpatapon:tree-sitter-cue:61843e3b:eonpatapon_tree_sitter_cue/runtime/grammars/sources/cue \
+		elliotfontaine:tree-sitter-cylc:30dd40d9:elliotfontaine_tree_sitter_cylc/runtime/grammars/sources/cylc \
 		gdamore:tree-sitter-d:5566f8ce:gdamore_tree_sitter_d/runtime/grammars/sources/d \
 		UserNobody14:tree-sitter-dart:e398400a:UserNobody14_tree_sitter_dart/runtime/grammars/sources/dart \
 		dynamotn:tree-sitter-dbml:2e2fa564:dynamotn_tree_sitter_dbml/runtime/grammars/sources/dbml \
 		joelspadin:tree-sitter-devicetree:877adbfa:joelspadin_tree_sitter_devicetree/runtime/grammars/sources/devicetree \
 		jbellerb:tree-sitter-dhall:affb6ee3:jbellerb_tree_sitter_dhall/runtime/grammars/sources/dhall \
 		the-mikedavis:tree-sitter-diff:fd74c78f:the_mikedavis_tree_sitter_diff/runtime/grammars/sources/diff \
-		camdencheek:tree-sitter-dockerfile:8ee3a0f7:camdencheek_tree_sitter_dockerfile/runtime/grammars/sources/dockerfile \
+		camdencheek:tree-sitter-dockerfile:087daa20:camdencheek_tree_sitter_dockerfile/runtime/grammars/sources/dockerfile \
 		rydesun:tree-sitter-dot:91723074:rydesun_tree_sitter_dot/runtime/grammars/sources/dot \
 		KMikeeU:tree-sitter-dtd:6116becb:KMikeeU_tree_sitter_dtd/runtime/grammars/sources/dtd \
 		glehmann:tree-sitter-earthfile:dbfb970a:glehmann_tree_sitter_earthfile/runtime/grammars/sources/earthfile \
@@ -73,29 +75,31 @@ GH_TUPLE=	\
 		ram02z:tree-sitter-fish:84436cf2:ram02z_tree_sitter_fish/runtime/grammars/sources/fish \
 		alexanderbrevig:tree-sitter-forth:90189238:alexanderbrevig_tree_sitter_forth/runtime/grammars/sources/forth \
 		stadelmanma:tree-sitter-fortran:f0f2f100:stadelmanma_tree_sitter_fortran/runtime/grammars/sources/fortran \
-		kaashyapan:tree-sitter-fsharp:18da392f:kaashyapan_tree_sitter_fsharp/runtime/grammars/sources/fsharp \
+		ionide:tree-sitter-fsharp:996ea998:ionide_tree_sitter_fsharp/runtime/grammars/sources/fsharp \
 		sirius94:tree-sitter-gas:60f44364:sirius94_tree_sitter_gas/runtime/grammars/sources/gas \
-		PrestonKnopp:tree-sitter-gdscript:a4b57cc3:PrestonKnopp_tree_sitter_gdscript/runtime/grammars/sources/gdscript \
+		PrestonKnopp:tree-sitter-gdscript:1f1e782f:PrestonKnopp_tree_sitter_gdscript/runtime/grammars/sources/gdscript \
+		SamyAB:tree-sitter-gherkin:43873ee8:SamyAB_tree_sitter_gherkin/runtime/grammars/sources/gherkin \
 		mtoohey31:tree-sitter-gitattributes:3dd50808:mtoohey31_tree_sitter_gitattributes/runtime/grammars/sources/gitattributes \
 		the-mikedavis:tree-sitter-git-commit:6f193a66:the_mikedavis_tree_sitter_git_commit/runtime/grammars/sources/git-commit \
 		the-mikedavis:tree-sitter-git-config:9c2a1b78:the_mikedavis_tree_sitter_git_config/runtime/grammars/sources/git-config \
 		shunsambongi:tree-sitter-gitignore:f4685bf1:shunsambongi_tree_sitter_gitignore/runtime/grammars/sources/gitignore \
 		the-mikedavis:tree-sitter-git-rebase:d8a4207e:the_mikedavis_tree_sitter_git_rebase/runtime/grammars/sources/git-rebase \
-		gleam-lang:tree-sitter-gleam:bcf9c45b:gleam_lang_tree_sitter_gleam/runtime/grammars/sources/gleam \
+		gleam-lang:tree-sitter-gleam:426e6708:gleam_lang_tree_sitter_gleam/runtime/grammars/sources/gleam \
 		ember-tooling:tree-sitter-glimmer:5dc6d104:ember_tooling_tree_sitter_glimmer/runtime/grammars/sources/glimmer \
 		theHamsta:tree-sitter-glsl:88408ffc:theHamsta_tree_sitter_glsl/runtime/grammars/sources/glsl \
 		willcassella:tree-sitter-gn:e18d6e36:willcassella_tree_sitter_gn/runtime/grammars/sources/gn \
 		tree-sitter:tree-sitter-go:64457ea6:tree_sitter_tree_sitter_go/runtime/grammars/sources/go \
-		PrestonKnopp:tree-sitter-godot-resource:b6ef0768:PrestonKnopp_tree_sitter_godot_resource/runtime/grammars/sources/godot-resource \
+		PrestonKnopp:tree-sitter-godot-resource:2ffb90de:PrestonKnopp_tree_sitter_godot_resource/runtime/grammars/sources/godot-resource \
 		camdencheek:tree-sitter-go-mod:e8f51f8e:camdencheek_tree_sitter_go_mod/runtime/grammars/sources/gomod \
 		dannylongeuay:tree-sitter-go-template:395a33e0:dannylongeuay_tree_sitter_go_template/runtime/grammars/sources/gotmpl \
 		omertuc:tree-sitter-go-work:6dd9dd79:omertuc_tree_sitter_go_work/runtime/grammars/sources/gowork \
+		brownts:tree-sitter-gpr:cea857d3:brownts_tree_sitter_gpr/runtime/grammars/sources/gpr \
 		bkegley:tree-sitter-graphql:5e66e961:bkegley_tree_sitter_graphql/runtime/grammars/sources/graphql \
 		murtaza64:tree-sitter-groovy:235009aa:murtaza64_tree_sitter_groovy/runtime/grammars/sources/groovy \
 		tree-sitter:tree-sitter-haskell:d7ac98f4:tree_sitter_tree_sitter_haskell/runtime/grammars/sources/haskell \
 		MercuryTechnologies:tree-sitter-haskell-persistent:58a6ccfd:MercuryTechnologies_tree_sitter_haskell_persistent/runtime/grammars/sources/haskell-persistent \
-		MichaHoffmann:tree-sitter-hcl:3cb7fc28:MichaHoffmann_tree_sitter_hcl/runtime/grammars/sources/hcl \
-		phoenixframework:tree-sitter-heex:2e1348c3:phoenixframework_tree_sitter_heex/runtime/grammars/sources/heex \
+		tree-sitter-grammars:tree-sitter-hcl:9e3ec984:tree_sitter_grammars_tree_sitter_hcl/runtime/grammars/sources/hcl \
+		phoenixframework:tree-sitter-heex:f6b83f30:phoenixframework_tree_sitter_heex/runtime/grammars/sources/heex \
 		antosha417:tree-sitter-hocon:c390f105:antosha417_tree_sitter_hocon/runtime/grammars/sources/hocon \
 		urbit-pilled:tree-sitter-hoon:1d5df35a:urbit_pilled_tree_sitter_hoon/runtime/grammars/sources/hoon \
 		ath3:tree-sitter-hosts:301b9379:ath3_tree_sitter_hosts/runtime/grammars/sources/hosts \
@@ -109,22 +113,25 @@ GH_TUPLE=	\
 		tree-sitter:tree-sitter-java:09d650de:tree_sitter_tree_sitter_java/runtime/grammars/sources/java \
 		tree-sitter:tree-sitter-javascript:f772967f:tree_sitter_tree_sitter_javascript/runtime/grammars/sources/javascript \
 		varpeti:tree-sitter-jinja2:a533cd3c:varpeti_tree_sitter_jinja2/runtime/grammars/sources/jinja2 \
+		kareigu:tree-sitter-jjdescription:d09205b5:kareigu_tree_sitter_jjdescription/runtime/grammars/sources/jjdescription \
+		flurie:tree-sitter-jq:13990f53:flurie_tree_sitter_jq/runtime/grammars/sources/jq \
 		tree-sitter:tree-sitter-jsdoc:189a6a48:tree_sitter_tree_sitter_jsdoc/runtime/grammars/sources/jsdoc \
 		tree-sitter:tree-sitter-json:73076754:tree_sitter_tree_sitter_json/runtime/grammars/sources/json \
 		Joakker:tree-sitter-json5:c23f7a9b:Joakker_tree_sitter_json5/runtime/grammars/sources/json5 \
 		sourcegraph:tree-sitter-jsonnet:0475a501:sourcegraph_tree_sitter_jsonnet/runtime/grammars/sources/jsonnet \
 		tree-sitter:tree-sitter-julia:8fb38abf:tree_sitter_tree_sitter_julia/runtime/grammars/sources/julia \
-		IndianBoy42:tree-sitter-just:8af0aab7:IndianBoy42_tree_sitter_just/runtime/grammars/sources/just \
+		poliorcetics:tree-sitter-just:180bb15d:poliorcetics_tree_sitter_just/runtime/grammars/sources/just \
 		amaanq:tree-sitter-kdl:3ca569b9:amaanq_tree_sitter_kdl/runtime/grammars/sources/kdl \
 		mtoohey31:tree-sitter-koka:96d070c3:mtoohey31_tree_sitter_koka/runtime/grammars/sources/koka \
 		fwcd:tree-sitter-kotlin:a4f71eb9:fwcd_tree_sitter_kotlin/runtime/grammars/sources/kotlin \
+		koto-lang:tree-sitter-koto:b420f792:koto_lang_tree_sitter_koto/runtime/grammars/sources/koto \
 		latex-lsp:tree-sitter-latex:8c75e93c:latex_lsp_tree_sitter_latex/runtime/grammars/sources/latex \
 		mtoohey31:tree-sitter-ld:0e9695ae:mtoohey31_tree_sitter_ld/runtime/grammars/sources/ld \
 		kepet19:tree-sitter-ldif:0a917207:kepet19_tree_sitter_ldif/runtime/grammars/sources/ldif \
 		Julian:tree-sitter-lean:d9842610:Julian_tree_sitter_lean/runtime/grammars/sources/lean \
 		cbarrete:tree-sitter-ledger:1f864fb2:cbarrete_tree_sitter_ledger/runtime/grammars/sources/ledger \
-		benwilliamgraham:tree-sitter-llvm:e9948edc:benwilliamgraham_tree_sitter_llvm/runtime/grammars/sources/llvm \
-		Flakebi:tree-sitter-llvm-mir:06fabca1:Flakebi_tree_sitter_llvm_mir/runtime/grammars/sources/llvm-mir \
+		benwilliamgraham:tree-sitter-llvm:c14cb839:benwilliamgraham_tree_sitter_llvm/runtime/grammars/sources/llvm \
+		Flakebi:tree-sitter-llvm-mir:d166ff8c:Flakebi_tree_sitter_llvm_mir/runtime/grammars/sources/llvm-mir \
 		Tudyx:tree-sitter-log:62cfe307:Tudyx_tree_sitter_log/runtime/grammars/sources/log \
 		tree-sitter-grammars:tree-sitter-lua:88e44647:tree_sitter_grammars_tree_sitter_lua/runtime/grammars/sources/lua \
 		alemuller:tree-sitter-make:a4b91874:alemuller_tree_sitter_make/runtime/grammars/sources/make \
@@ -135,8 +142,8 @@ GH_TUPLE=	\
 		staysail:tree-sitter-meson:32a83e8f:staysail_tree_sitter_meson/runtime/grammars/sources/meson \
 		lsh:tree-sitter-mojo:3d7c53b8:lsh_tree_sitter_mojo/runtime/grammars/sources/mojo \
 		tzakian:tree-sitter-move:8bc0d169:tzakian_tree_sitter_move/runtime/grammars/sources/move \
-		naclsn:tree-sitter-nasm:a0db15db:naclsn_tree_sitter_nasm/runtime/grammars/sources/nasm \
-		nickel-lang:tree-sitter-nickel:e1d93378:nickel_lang_tree_sitter_nickel/runtime/grammars/sources/nickel \
+		naclsn:tree-sitter-nasm:570f3d7b:naclsn_tree_sitter_nasm/runtime/grammars/sources/nasm \
+		nickel-lang:tree-sitter-nickel:88d836a2:nickel_lang_tree_sitter_nickel/runtime/grammars/sources/nickel \
 		alaviss:tree-sitter-nim:c5f0ce3b:alaviss_tree_sitter_nim/runtime/grammars/sources/nim \
 		nix-community:tree-sitter-nix:1b69cf1f:nix_community_tree_sitter_nix/runtime/grammars/sources/nix \
 		nushell:tree-sitter-nu:358c4f50:nushell_tree_sitter_nu/runtime/grammars/sources/nu \
@@ -149,25 +156,27 @@ GH_TUPLE=	\
 		Isopod:tree-sitter-pascal:2fd40f47:Isopod_tree_sitter_pascal/runtime/grammars/sources/pascal \
 		ath3:tree-sitter-passwd:20239395:ath3_tree_sitter_passwd/runtime/grammars/sources/passwd \
 		mtoohey31:tree-sitter-pem:be67a433:mtoohey31_tree_sitter_pem/runtime/grammars/sources/pem \
-		tree-sitter-perl:tree-sitter-perl:e99bb528:tree_sitter_perl_tree_sitter_perl/runtime/grammars/sources/perl \
+		tree-sitter-perl:tree-sitter-perl:72a08a49:tree_sitter_perl_tree_sitter_perl/runtime/grammars/sources/perl \
 		pest-parser:tree-sitter-pest:a8a98a82:pest_parser_tree_sitter_pest/runtime/grammars/sources/pest \
 		tree-sitter:tree-sitter-php:f860e598:tree_sitter_tree_sitter_php/runtime/grammars/sources/php \
 		tree-sitter:tree-sitter-php:cf1f4a0f:tree_sitter_tree_sitter_php_only/runtime/grammars/sources/php-only \
 		apple:tree-sitter-pkl:c03f04a3:apple_tree_sitter_pkl/runtime/grammars/sources/pkl \
 		erasin:tree-sitter-po:417cee9a:erasin_tree_sitter_po/runtime/grammars/sources/po \
-		tree-sitter-perl:tree-sitter-pod:39da8599:tree_sitter_perl_tree_sitter_pod/runtime/grammars/sources/pod \
+		tree-sitter-perl:tree-sitter-pod:0bf83879:tree_sitter_perl_tree_sitter_pod/runtime/grammars/sources/pod \
 		mfelsche:tree-sitter-ponylang:ef66b151:mfelsche_tree_sitter_ponylang/runtime/grammars/sources/ponylang \
 		airbus-cert:tree-sitter-powershell:c9316be0:airbus_cert_tree_sitter_powershell/runtime/grammars/sources/powershell \
 		victorhqc:tree-sitter-prisma:eca2596a:victorhqc_tree_sitter_prisma/runtime/grammars/sources/prisma \
-		yusdacra:tree-sitter-protobuf:19c211a0:yusdacra_tree_sitter_protobuf/runtime/grammars/sources/protobuf \
+		sdoerner:tree-sitter-proto:778ab6ed:sdoerner_tree_sitter_proto/runtime/grammars/sources/proto \
 		PRQL:tree-sitter-prql:09e158cd:PRQL_tree_sitter_prql/runtime/grammars/sources/prql \
 		postsolar:tree-sitter-purescript:5ef55926:postsolar_tree_sitter_purescript/runtime/grammars/sources/purescript \
 		tree-sitter:tree-sitter-python:4bfdd903:tree_sitter_tree_sitter_python/runtime/grammars/sources/python \
 		yuja:tree-sitter-qmljs:0b2b25bc:yuja_tree_sitter_qmljs/runtime/grammars/sources/qmljs \
+		tree-sitter-grammars:tree-sitter-query:a6674e27:tree_sitter_grammars_tree_sitter_query/runtime/grammars/sources/query \
+		gruhn:tree-sitter-quint:eebbd01e:gruhn_tree_sitter_quint/runtime/grammars/sources/quint \
 		r-lib:tree-sitter-r:cc04302e:r_lib_tree_sitter_r/runtime/grammars/sources/r \
 		tree-sitter:tree-sitter-regex:e1cfca3c:tree_sitter_tree_sitter_regex/runtime/grammars/sources/regex \
 		FallenAngel97:tree-sitter-rego:9ac75e71:FallenAngel97_tree_sitter_rego/runtime/grammars/sources/rego \
-		jaredramirez:tree-sitter-rescript:467dcf99:jaredramirez_tree_sitter_rescript/runtime/grammars/sources/rescript \
+		rescript-lang:tree-sitter-rescript:5e2a44a9:rescript_lang_tree_sitter_rescript/runtime/grammars/sources/rescript \
 		Hubro:tree-sitter-robot:322e4cc6:Hubro_tree_sitter_robot/runtime/grammars/sources/robot \
 		zee-editor:tree-sitter-ron:7762d709:zee_editor_tree_sitter_ron/runtime/grammars/sources/ron \
 		stsewd:tree-sitter-rst:25e63288:stsewd_tree_sitter_rst/runtime/grammars/sources/rst \
@@ -176,10 +185,11 @@ GH_TUPLE=	\
 		tree-sitter:tree-sitter-scala:7891815f:tree_sitter_tree_sitter_scala/runtime/grammars/sources/scala \
 		6cdh:tree-sitter-scheme:af3af6c9:6cdh_tree_sitter_scheme/runtime/grammars/sources/scheme \
 		serenadeai:tree-sitter-scss:c478c686:serenadeai_tree_sitter_scss/runtime/grammars/sources/scss \
-		slint-ui:tree-sitter-slint:0701312b:slint_ui_tree_sitter_slint/runtime/grammars/sources/slint \
+		slint-ui:tree-sitter-slint:f11da7e6:slint_ui_tree_sitter_slint/runtime/grammars/sources/slint \
 		amaanq:tree-sitter-smali:5ae51e15:amaanq_tree_sitter_smali/runtime/grammars/sources/smali \
 		indoorvivants:tree-sitter-smithy:8327eb84:indoorvivants_tree_sitter_smithy/runtime/grammars/sources/smithy \
 		Giorbo:tree-sitter-sml:bd4055d5:Giorbo_tree_sitter_sml/runtime/grammars/sources/sml \
+		osthomas:tree-sitter-snakemake:e909815a:osthomas_tree_sitter_snakemake/runtime/grammars/sources/snakemake \
 		JoranHonig:tree-sitter-solidity:08338dce:JoranHonig_tree_sitter_solidity/runtime/grammars/sources/solidity \
 		jzelinskie:tree-sitter-spicedb:a4e46456:jzelinskie_tree_sitter_spicedb/runtime/grammars/sources/spicedb \
 		DerekStride:tree-sitter-sql:da2d1eff:DerekStride_tree_sitter_sql/runtime/grammars/sources/sql \
@@ -189,22 +199,26 @@ GH_TUPLE=	\
 		Himujjal:tree-sitter-svelte:be7f2e7d:Himujjal_tree_sitter_svelte/runtime/grammars/sources/svelte \
 		FuelLabs:tree-sitter-sway:e491a005:FuelLabs_tree_sitter_sway/runtime/grammars/sources/sway \
 		alex-pinkus:tree-sitter-swift:57c1c6d6:alex_pinkus_tree_sitter_swift/runtime/grammars/sources/swift \
-		Flakebi:tree-sitter-tablegen:568dd8a9:Flakebi_tree_sitter_tablegen/runtime/grammars/sources/tablegen \
+		Flakebi:tree-sitter-tablegen:3e9c4822:Flakebi_tree_sitter_tablegen/runtime/grammars/sources/tablegen \
 		tact-lang:tree-sitter-tact:ec57ab29:tact_lang_tree_sitter_tact/runtime/grammars/sources/tact \
 		alexanderbrevig:tree-sitter-task:f2cb435c:alexanderbrevig_tree_sitter_task/runtime/grammars/sources/task \
 		tree-sitter-grammars:tree-sitter-tcl:56ad1fa6:tree_sitter_grammars_tree_sitter_tcl/runtime/grammars/sources/tcl \
+		euclidianAce:tree-sitter-teal:3db65592:euclidianAce_tree_sitter_teal/runtime/grammars/sources/teal \
 		vrischmann:tree-sitter-templ:db662414:vrischmann_tree_sitter_templ/runtime/grammars/sources/templ \
+		PorterAtGoogle:tree-sitter-textproto:568471b8:PorterAtGoogle_tree_sitter_textproto/runtime/grammars/sources/textproto \
+		tree-sitter-grammars:tree-sitter-thrift:68fd0d80:tree_sitter_grammars_tree_sitter_thrift/runtime/grammars/sources/thrift \
 		arnarg:tree-sitter-todotxt:3937c5cd:arnarg_tree_sitter_todotxt/runtime/grammars/sources/todotxt \
 		ikatyang:tree-sitter-toml:7cff70bb:ikatyang_tree_sitter_toml/runtime/grammars/sources/toml \
-		the-mikedavis:tree-sitter-tsq:48b5e9f8:the_mikedavis_tree_sitter_tsq/runtime/grammars/sources/tsq \
 		gbprod:tree-sitter-twig:807b293f:gbprod_tree_sitter_twig/runtime/grammars/sources/twig \
 		tree-sitter:tree-sitter-typescript:b1bf4825:tree_sitter_tree_sitter_typescript/runtime/grammars/sources/typescript \
+		happenslol:tree-sitter-typespec:0ee05546:happenslol_tree_sitter_typespec/runtime/grammars/sources/typespec \
 		uben0:tree-sitter-typst:13863ddc:uben0_tree_sitter_typst/runtime/grammars/sources/typst \
 		Philipp-M:tree-sitter-ungrammar:a7e10462:Philipp_M_tree_sitter_ungrammar/runtime/grammars/sources/ungrammar \
-		kylegoetz:tree-sitter-unison:1f505e24:kylegoetz_tree_sitter_unison/runtime/grammars/sources/unison \
+		kylegoetz:tree-sitter-unison:3c97db76:kylegoetz_tree_sitter_unison/runtime/grammars/sources/unison \
 		Jummit:tree-sitter-uxntal:d6840606:Jummit_tree_sitter_uxntal/runtime/grammars/sources/uxntal \
-		v-analyzer:v-analyzer:e14fdf6e:v_analyzer_v_analyzer/runtime/grammars/sources/v \
+		vlang:v-analyzer:e14fdf6e:vlang_v_analyzer/runtime/grammars/sources/v \
 		vala-lang:tree-sitter-vala:c9eea93b:vala_lang_tree_sitter_vala/runtime/grammars/sources/vala \
+		ventojs:tree-sitter-vento:3b32474b:ventojs_tree_sitter_vento/runtime/grammars/sources/vento \
 		tree-sitter:tree-sitter-verilog:4457145e:tree_sitter_tree_sitter_verilog/runtime/grammars/sources/verilog \
 		teburd:tree-sitter-vhdl:c57313ad:teburd_tree_sitter_vhdl/runtime/grammars/sources/vhdl \
 		charmbracelet:tree-sitter-vhs:9534865e:charmbracelet_tree_sitter_vhs/runtime/grammars/sources/vhs \
@@ -222,13 +236,15 @@ USE_GITLAB=	nodefault
 GL_TUPLE=	\
 		https://gitlab.com:gabmus:tree-sitter-blueprint:863cea9f:gabmus_tree_sitter_blueprint/runtime/grammars/sources/blueprint \
 		https://gitlab.com:TheZoq2:tree-sitter-lpf:db7372e6:TheZoq2_tree_sitter_lpf/runtime/grammars/sources/lpf \
+		https://gitlab.com:joncoole:tree-sitter-nginx:b4b61db4:joncoole_tree_sitter_nginx/runtime/grammars/sources/nginx \
+		https://gitlab.com:spade-lang:tree-sitter-spade:4d5b1410:spade_lang_tree_sitter_spade/runtime/grammars/sources/spade \
 		https://gitlab.com:xasc:tree-sitter-t32:6da5e3cb:xasc_tree_sitter_t32/runtime/grammars/sources/t32
 
 TREE_SITTER_HARE_REV=	07035a248943575444aa0b893ffe306e1444c0ab
 TREE_SITTER_WREN_REV=	6748694be32f11e7ec6b5faeb1b48ca6156d4e06
 TREE_SITTER_GEMINI_REV=	3cc5e4bdf572d5df4277fc2e54d6299bd59a54b3
-TREE_SITTER_JSHIGH_REV=	4a95461c4761c624f2263725aca79eeaefd36cad
-TREE_SITTER_TSHIGH_REV=	6aac031ad88dd6317f02ac0bb27d099a553a7d8c
+TREE_SITTER_JSHIGH_REV=	936d976a782e75395d9b1c8c7c7bf4ba6fe0d86b
+TREE_SITTER_TSHIGH_REV=	0ab9d99867435a7667c5548a6617a6bf73dbd830
 CARGO_CARGOTOML=	${WRKSRC}/helix-term/Cargo.toml
 CARGO_INSTALL_PATH=	./helix-term
 
