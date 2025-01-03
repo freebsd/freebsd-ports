@@ -1,17 +1,20 @@
 PORTNAME=	emscripten
-DISTVERSION=	3.1.69
-PORTREVISION=	1
+DISTVERSION=	3.1.74
 CATEGORIES=	devel www
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	LLVM-to-Web Compiler
-WWW=		https://emscripten.org/
+WWW=		https://emscripten.org/ \
+		https://github.com/emscripten-core/emscripten
 
 LICENSE=	MIT NCSA
 LICENSE_COMB=	dual
 
+# USES doesn't support llvm:devel, so we add it here:
+BUILD_DEPENDS=	llvm-devel>0:devel/llvm-devel
 RUN_DEPENDS=	bash:shells/bash \
-		binaryen>0:devel/binaryen
+		binaryen>0:devel/binaryen \
+		llvm-devel>0:devel/llvm-devel
 		# the upstream requires to use either the latest llvm version, or their own llvm fork called emscripten-fastcomp
 
 USES=		nodejs:run python shebangfix
@@ -19,9 +22,6 @@ USES=		nodejs:run python shebangfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	emscripten-core
 
-# USES doesn't support llvm:devel, so we add this
-BUILD_DEPENDS=	llvm-devel>0:devel/llvm-devel
-RUN_DEPENDS=	llvm-devel>0:devel/llvm-devel
 LLVM_VERSION=	-devel
 
 SHEBANG_FILES=	${PYSCRIPTS} emcmake system/bin/sdl-config system/bin/sdl2-config
@@ -65,5 +65,12 @@ do-test: # some tests fail: Unknown option '--no-stack-ir', see https://github.c
 	@cd ${WRKSRC} && \
 		${SETENV} ${TEST_ENV} test/runner core3.test_*i64* && \
 		${SETENV} ${TEST_ENV} test/runner wasm2js1
+
+test-quick: install
+	@cd ${WRKSRC} && \
+		${ECHO} "==> Running the test" && \
+		${PREFIX}/bin/emcc ${FILESDIR}/hello_world.c && \
+		node a.out.js && \
+		${ECHO} "Test succeeded."
 
 .include <bsd.port.mk>
