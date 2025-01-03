@@ -25,6 +25,12 @@ EXAMPLESDIR=	${OCAML_EXAMPLESDIR}/${PORTNAME}
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == powerpc
+USE_BINUTILS=	yes
+.endif
+
 do-build:
 	cd ${BUILD_WRKSRC} && dune build --verbose -j ${MAKE_JOBS_NUMBER} -p cairo2
 
