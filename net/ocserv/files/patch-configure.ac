@@ -1,6 +1,6 @@
---- configure.ac.orig	2023-12-14 11:45:13 UTC
+--- configure.ac.orig	2024-05-05 19:06:59 UTC
 +++ configure.ac
-@@ -16,7 +16,7 @@ AM_PROG_CC_C_O
+@@ -19,7 +19,7 @@ if test "$GCC" = "yes" && ! expr "$CC" : clang >/dev/n
  AC_PROG_SED
  
  if test "$GCC" = "yes" && ! expr "$CC" : clang >/dev/null 2>&1;then
@@ -8,8 +8,8 @@
 +	CFLAGS="$CFLAGS -Wall -Wno-strict-aliasing -Wextra -Wno-unused-parameter -Wno-sign-compare -Wno-missing-field-initializers"
  fi
  
- AC_PATH_PROG(CTAGS, ctags, [:])
-@@ -219,7 +219,7 @@ if test "$test_for_geoip" = yes && test "$have_maxmind
+ AC_CHECK_PROGS([IPCALC], [ipcalc ipcalc-ng], [:])
+@@ -231,7 +231,7 @@ have_readline=no
  fi
  
  have_readline=no
@@ -18,3 +18,12 @@
  #include <stdio.h>
  #include <readline/readline.h>], [rl_replace_line(0,0);])
    if test x$ac_cv_libreadline = xyes; then
+@@ -675,8 +675,6 @@ AM_CONDITIONAL(ENABLE_OIDC_AUTH_TESTS, test "x$enable_
+ 
+ AM_CONDITIONAL(ENABLE_OIDC_AUTH,  test "x$enable_oidc_auth" = xyes)
+ AM_CONDITIONAL(ENABLE_OIDC_AUTH_TESTS, test "x$enable_oidc_auth" = xyes)
+-
+-AC_CHECK_FILE(/proc/self/exe, AC_DEFINE([PROC_FS_SUPPORTED],[1], [procfs supported]), [])
+ 
+ uid=$(id -u)
+ gid=$(id -g)
