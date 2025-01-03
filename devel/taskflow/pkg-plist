@@ -1,7 +1,8 @@
+include/taskflow/algorithm/algorithm.hpp
 include/taskflow/algorithm/data_pipeline.hpp
 include/taskflow/algorithm/find.hpp
 include/taskflow/algorithm/for_each.hpp
-include/taskflow/algorithm/launch.hpp
+include/taskflow/algorithm/module.hpp
 include/taskflow/algorithm/partitioner.hpp
 include/taskflow/algorithm/pipeline.hpp
 include/taskflow/algorithm/reduce.hpp
@@ -20,6 +21,7 @@ include/taskflow/core/freelist.hpp
 include/taskflow/core/graph.hpp
 include/taskflow/core/nonblocking_notifier.hpp
 include/taskflow/core/observer.hpp
+include/taskflow/core/runtime.hpp
 include/taskflow/core/semaphore.hpp
 include/taskflow/core/task.hpp
 include/taskflow/core/taskflow.hpp
