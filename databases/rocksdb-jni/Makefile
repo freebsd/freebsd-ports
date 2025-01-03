@@ -1,6 +1,6 @@
 PORTNAME=	rocksdb-jni
 DISTVERSIONPREFIX=	v
-DISTVERSION=	9.8.4
+DISTVERSION=	9.9.3
 CATEGORIES=	databases java
 MASTER_SITES=	https://rocksdb-deps.s3-us-west-2.amazonaws.com/jars/:deps
 DISTFILES=	assertj-core-2.9.0.jar:deps \
