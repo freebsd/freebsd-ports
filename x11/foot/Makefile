@@ -1,5 +1,5 @@
 PORTNAME=	foot
-DISTVERSION=	1.19.0
+DISTVERSION=	1.20.1
 CATEGORIES=	x11 wayland
 MASTER_SITES=	https://codeberg.org/dnkl/${PORTNAME}/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/
 
@@ -45,6 +45,7 @@ PGO_SCRIPT_ARGS=	--colors-regular --colors-bright --colors-256 --colors-rgb \
 
 UTF8PROC_DESC=		Grapheme clustering using libutf8proc
 UTF8PROC_LIB_DEPENDS=	libutf8proc.so:textproc/utf8proc
+UTF8PROC_USES=		localbase # https://codeberg.org/dnkl/foot/issues/1903
 UTF8PROC_MESON_ENABLED=	grapheme-clustering
 
 XDG_DESC=		Open files with xdg-open

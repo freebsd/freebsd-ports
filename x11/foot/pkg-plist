@@ -31,6 +31,7 @@ share/fish/vendor_completions.d/footclient.fish
 %%DATADIR%%/themes/gruvbox-dark
 %%DATADIR%%/themes/gruvbox-light
 %%DATADIR%%/themes/hacktober
+%%DATADIR%%/themes/iterm
 %%DATADIR%%/themes/jetbrains-darcula
 %%DATADIR%%/themes/kitty
 %%DATADIR%%/themes/material-amber
@@ -54,6 +55,8 @@ share/fish/vendor_completions.d/footclient.fish
 %%DATADIR%%/themes/poimandres
 %%DATADIR%%/themes/rezza
 %%DATADIR%%/themes/rose-pine
+%%DATADIR%%/themes/rose-pine-dawn
+%%DATADIR%%/themes/rose-pine-moon
 %%DATADIR%%/themes/selenized-black
 %%DATADIR%%/themes/selenized-dark
 %%DATADIR%%/themes/selenized-light
