@@ -683,7 +683,7 @@ _dnscrypt-wrapper:*:718:65534::0:0:dnscrypt-wrapper user:/var/empty:/usr/sbin/no
 # free: 733
 # free: 734
 c-lightning:*:735:735::0:0:c-lightning Daemon:/var/db/c-lightning:/usr/sbin/nologin
-# free: 736
+zonemaster:*:736:736::0:0:Zonemaster Daemon:/nonexistent:/usr/sbin/nologin
 # free: 737
 # free: 738
 # free: 739

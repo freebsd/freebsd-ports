@@ -1,0 +1,8 @@
+Zonemaster is a software package that validates the quality of a DNS
+delegation. The ambition of the Zonemaster project is to develop and
+maintain an open source DNS validation tool.
+
+This module is the core engine of Zonemaster, implementing all DNS tests
+and validation rules. It performs comprehensive checks on domain name
+delegation, including DNSSEC, IPv6 readiness, and compliance with
+relevant RFCs and industry best practices.

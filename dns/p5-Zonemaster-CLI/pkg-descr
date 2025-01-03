@@ -1,0 +1,9 @@
+Zonemaster is a software package that validates the quality of a DNS
+delegation. The ambition of the Zonemaster project is to develop and
+maintain an open source DNS validation tool.
+
+This module provides a feature-rich command-line interface to the
+Zonemaster Engine. It supports multiple output formats including
+plain text, JSON, and structured formats suitable for integration
+with other tools. The CLI allows for detailed DNS delegation testing
+with customizable test profiles and verbosity levels.

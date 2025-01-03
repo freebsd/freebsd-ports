@@ -1,0 +1,10 @@
+Zonemaster is a software package that validates the quality of a DNS
+delegation. The ambition of the Zonemaster project is to develop and
+maintain an open source DNS validation tool.
+
+This module provides the backend infrastructure for Zonemaster,
+implementing a JSON-RPC API server and test agent daemon. It manages
+test scheduling, result storage, and system configuration through
+multiple database backends (MySQL, PostgreSQL, SQLite). The Backend
+enables integration with web interfaces and automation tools while
+maintaining a persistent history of test results.
