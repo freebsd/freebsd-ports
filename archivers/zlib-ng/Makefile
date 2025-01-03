@@ -1,12 +1,13 @@
 PORTNAME=	zlib-ng
-DISTVERSION=	2.2.2
+DISTVERSION=	2.2.3
 CATEGORIES=	archivers
 
 MAINTAINER=	vvd@FreeBSD.org
 COMMENT=	Fork of the zlib data compression library
-WWW=		https://github.com/zlib-ng/zlib-ng
+WWW=		https://github.com/zlib-ng/zlib-ng/
 
 LICENSE=	ZLIB
+LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 USES=		cmake:${TESTING} compiler:c11
 USE_GITHUB=	yes
