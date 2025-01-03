@@ -1,7 +1,6 @@
 PORTNAME=	numbat
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.14.0
-PORTREVISION=	2
+DISTVERSION=	1.15.0
 CATEGORIES=	lang devel science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -21,17 +20,16 @@ GH_ACCOUNT=	sharkdp
 
 RUSTFLAGS=	${ARCH:S/i386/YES/:C/^[a-z].*//:S/YES/-C target-feature=+sse,+sse2/} # add sse sse2 target-features only on i386
 
-CARGO_CRATES=	ahash-0.8.11 \
-		aho-corasick-1.1.3 \
+CARGO_CRATES=	aho-corasick-1.1.3 \
 		android-tzdata-0.1.1 \
 		android_system_properties-0.1.5 \
 		anes-0.1.6 \
-		anstream-0.6.15 \
-		anstyle-1.0.8 \
-		anstyle-parse-0.2.5 \
-		anstyle-query-1.1.1 \
-		anstyle-wincon-3.0.4 \
-		anyhow-1.0.89 \
+		anstream-0.6.17 \
+		anstyle-1.0.10 \
+		anstyle-parse-0.2.6 \
+		anstyle-query-1.1.2 \
+		anstyle-wincon-3.0.6 \
+		anyhow-1.0.92 \
 		approx-0.5.1 \
 		arrayvec-0.7.6 \
 		assert_cmd-2.0.16 \
@@ -44,10 +42,12 @@ CARGO_CRATES=	ahash-0.8.11 \
 		bstr-1.10.0 \
 		bumpalo-3.16.0 \
 		byteorder-1.5.0 \
-		bytes-1.7.2 \
+		bytes-1.8.0 \
 		cast-0.3.0 \
-		cc-1.1.29 \
+		castaway-0.2.3 \
+		cc-1.1.34 \
 		cfg-if-1.0.0 \
+		cfg_aliases-0.1.1 \
 		chrono-0.4.38 \
 		ciborium-0.2.2 \
 		ciborium-io-0.2.2 \
@@ -58,8 +58,9 @@ CARGO_CRATES=	ahash-0.8.11 \
 		clap_lex-0.7.2 \
 		clipboard-win-5.4.0 \
 		codespan-reporting-0.11.1 \
-		colorchoice-1.0.2 \
+		colorchoice-1.0.3 \
 		colored-2.1.0 \
+		compact_str-0.8.0 \
 		console-0.15.8 \
 		core-foundation-sys-0.8.7 \
 		cpufeatures-0.2.14 \
@@ -111,31 +112,30 @@ CARGO_CRATES=	ahash-0.8.11 \
 		idna-0.5.0 \
 		indexmap-1.9.3 \
 		indexmap-2.6.0 \
-		insta-1.40.0 \
+		insta-1.41.1 \
 		is-terminal-0.4.13 \
 		is_terminal_polyfill-1.70.1 \
 		itertools-0.10.5 \
 		itertools-0.12.1 \
 		itoa-1.0.11 \
-		jiff-0.1.13 \
+		jiff-0.1.14 \
 		jiff-tzdb-0.1.1 \
 		jiff-tzdb-platform-0.1.1 \
 		js-sys-0.3.72 \
 		lazy_static-1.5.0 \
-		libc-0.2.159 \
-		libm-0.2.8 \
+		libc-0.2.161 \
+		libm-0.2.11 \
 		libredox-0.1.3 \
 		linked-hash-map-0.5.6 \
 		linux-raw-sys-0.4.14 \
-		lock_api-0.4.12 \
 		log-0.4.22 \
 		memchr-2.7.4 \
-		mendeleev-0.8.1 \
+		mendeleev-0.8.2 \
 		mime-0.3.17 \
 		mime_guess-2.0.5 \
 		minimal-lexical-0.2.1 \
 		nibble_vec-0.1.0 \
-		nix-0.27.1 \
+		nix-0.28.0 \
 		nom-7.1.3 \
 		normalize-line-endings-0.3.0 \
 		num-bigint-0.4.6 \
@@ -145,11 +145,8 @@ CARGO_CRATES=	ahash-0.8.11 \
 		num-rational-0.4.2 \
 		num-traits-0.2.19 \
 		once_cell-1.20.2 \
-		once_map-0.4.20 \
 		oorandom-11.1.4 \
 		option-ext-0.2.0 \
-		parking_lot-0.12.3 \
-		parking_lot_core-0.9.10 \
 		percent-encoding-2.3.1 \
 		plotly-0.10.0 \
 		plotly_derive-0.10.0 \
@@ -162,7 +159,7 @@ CARGO_CRATES=	ahash-0.8.11 \
 		predicates-core-1.0.8 \
 		predicates-tree-1.0.11 \
 		pretty_dtoa-0.3.0 \
-		proc-macro2-1.0.87 \
+		proc-macro2-1.0.89 \
 		quick-xml-0.31.0 \
 		quote-1.0.37 \
 		radix_trie-0.2.1 \
@@ -171,32 +168,31 @@ CARGO_CRATES=	ahash-0.8.11 \
 		rand_core-0.6.4 \
 		rayon-1.10.0 \
 		rayon-core-1.12.1 \
-		redox_syscall-0.5.7 \
 		redox_users-0.4.6 \
-		regex-1.11.0 \
+		regex-1.11.1 \
 		regex-automata-0.4.8 \
 		regex-syntax-0.8.5 \
 		ring-0.17.8 \
-		rinja-0.3.4 \
-		rinja_derive-0.3.4 \
-		rinja_parser-0.3.4 \
+		rinja-0.3.5 \
+		rinja_derive-0.3.5 \
+		rinja_parser-0.3.5 \
 		rust-embed-8.5.0 \
 		rust-embed-impl-8.5.0 \
 		rust-embed-utils-8.5.0 \
 		rustc-hash-2.0.0 \
-		rustix-0.38.37 \
+		rustix-0.38.38 \
 		rustls-0.22.4 \
-		rustls-pki-types-1.9.0 \
+		rustls-pki-types-1.10.0 \
 		rustls-webpki-0.102.8 \
-		rustyline-13.0.0 \
+		rustversion-1.0.18 \
+		rustyline-14.0.0 \
 		rustyline-derive-0.10.0 \
 		ryu-1.0.18 \
 		ryu_floating_decimal-0.1.0 \
 		same-file-1.0.6 \
-		scopeguard-1.2.0 \
-		serde-1.0.210 \
-		serde_derive-1.0.210 \
-		serde_json-1.0.128 \
+		serde-1.0.214 \
+		serde_derive-1.0.214 \
+		serde_json-1.0.132 \
 		serde_repr-0.1.19 \
 		serde_spanned-0.6.8 \
 		serde_with-3.11.0 \
@@ -207,17 +203,17 @@ CARGO_CRATES=	ahash-0.8.11 \
 		similar-2.6.0 \
 		smallvec-1.13.2 \
 		spin-0.9.8 \
-		stable_deref_trait-1.2.0 \
+		static_assertions-1.1.0 \
 		strfmt-0.2.4 \
 		strsim-0.11.1 \
 		subtle-2.6.1 \
-		syn-2.0.79 \
+		syn-2.0.87 \
 		termcolor-1.4.1 \
 		terminal_size-0.3.0 \
 		terminal_size-0.4.0 \
 		termtree-0.4.1 \
-		thiserror-1.0.64 \
-		thiserror-impl-1.0.64 \
+		thiserror-1.0.67 \
+		thiserror-impl-1.0.67 \
 		time-0.3.36 \
 		time-core-0.1.2 \
 		time-macros-0.2.18 \
@@ -229,7 +225,7 @@ CARGO_CRATES=	ahash-0.8.11 \
 		toml_edit-0.22.22 \
 		typeid-1.0.2 \
 		typenum-1.17.0 \
-		unicase-2.7.0 \
+		unicase-2.8.0 \
 		unicode-bidi-0.3.17 \
 		unicode-ident-1.0.13 \
 		unicode-normalization-0.1.24 \
@@ -250,10 +246,7 @@ CARGO_CRATES=	ahash-0.8.11 \
 		wasm-bindgen-shared-0.2.95 \
 		web-sys-0.3.72 \
 		webpki-roots-0.26.6 \
-		winapi-0.3.9 \
-		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-util-0.1.9 \
-		winapi-x86_64-pc-windows-gnu-0.4.0 \
 		windows-core-0.52.0 \
 		windows-sys-0.48.0 \
 		windows-sys-0.52.0 \
