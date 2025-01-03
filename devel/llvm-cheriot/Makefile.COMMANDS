@@ -1,11 +1,12 @@
 .include "${.CURDIR}/../llvm-cheri/Makefile.COMMANDS"
 
-# Work around version skew with llvm-cheri
-# llvm 14 additions
-LLVM_COMMANDS:=	${LLVM_COMMANDS:Nllvm-debuginfod-find:Nllvm-tli-checker}
-CLANG_COMMANDS:=${CLANG_COMMANDS:Nclang-linker-wrapper:Nclang-nvlink-wrapper:Nclang-repl}
-# llvm 14 removals
-LLD_COMMANDS+=	ld64.lld.darwinnew ld64.lld.darwinold
-# llvm 15 additions
-LLVM_COMMANDS:=	${LLVM_COMMANDS:Nllvm-debuginfod:Nllvm-dwarfutil:Nllvm-remark-size-diff}
-CLANG_COMMANDS:=${CLANG_COMMANDS:Nclang-offload-packager}
+# Work around version skew with llvm-cheri/llvm-morello
+CLANG_COMMANDS+= \
+	clang-tblgen
+CLANG_COMMANDS:=${CLANG_COMMANDS:Nclang-nvlink-wrapper:Nclang-offload-wrapper}
+LLVM_COMMANDS+= \
+	amdgpu-arch \
+	llvm-debuginfo-analyzer \
+	llvm-remarkutil \
+	nvptx-arch
+LLVM_COMMANDS:=	${LLVM_COMMANDS:Nsplit-file}

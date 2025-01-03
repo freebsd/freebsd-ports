@@ -5,6 +5,9 @@ LLVM_SUFFIX=	-cheriot
 COMMENT=	LLVM and Clang with support the CHERIoT microcontroller
 WWW=		https://www.microsoft.com/en-us/research/publication/cheriot-rethinking-security-for-low-cost-embedded-systems/
 
+# Moved in LLVM 16
+LICENSE_FILE_BSD3CLAUSE=	${WRKSRC}/third-party/unittest/googletest/LICENSE.TXT
+
 DISTINFO_FILE=	${.CURDIR}/distinfo
 DESCR=		${.CURDIR}/pkg-descr
 PLIST=		${.CURDIR}/pkg-plist
