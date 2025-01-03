@@ -433,6 +433,7 @@ llvm-devel/bin/verify-uselistorder
 %%EXTRAS%%llvm-devel/include/clang-tidy/bugprone/MultiLevelImplicitPointerConversionCheck.h
 %%EXTRAS%%llvm-devel/include/clang-tidy/bugprone/MultipleNewInOneExpressionCheck.h
 %%EXTRAS%%llvm-devel/include/clang-tidy/bugprone/MultipleStatementMacroCheck.h
+%%EXTRAS%%llvm-devel/include/clang-tidy/bugprone/NarrowingConversionsCheck.h
 %%EXTRAS%%llvm-devel/include/clang-tidy/bugprone/NoEscapeCheck.h
 %%EXTRAS%%llvm-devel/include/clang-tidy/bugprone/NonZeroEnumToBoolConversionCheck.h
 %%EXTRAS%%llvm-devel/include/clang-tidy/bugprone/NondeterministicPointerIterationOrderCheck.h
@@ -509,7 +510,6 @@ llvm-devel/bin/verify-uselistorder
 %%EXTRAS%%llvm-devel/include/clang-tidy/cppcoreguidelines/MacroUsageCheck.h
 %%EXTRAS%%llvm-devel/include/clang-tidy/cppcoreguidelines/MisleadingCaptureDefaultByValueCheck.h
 %%EXTRAS%%llvm-devel/include/clang-tidy/cppcoreguidelines/MissingStdForwardCheck.h
-%%EXTRAS%%llvm-devel/include/clang-tidy/cppcoreguidelines/NarrowingConversionsCheck.h
 %%EXTRAS%%llvm-devel/include/clang-tidy/cppcoreguidelines/NoMallocCheck.h
 %%EXTRAS%%llvm-devel/include/clang-tidy/cppcoreguidelines/NoSuspendWithLockCheck.h
 %%EXTRAS%%llvm-devel/include/clang-tidy/cppcoreguidelines/OwningMemoryCheck.h
@@ -969,6 +969,7 @@ llvm-devel/bin/verify-uselistorder
 %%CLANG%%llvm-devel/include/clang/Analysis/FlowSensitive/NoopLattice.h
 %%CLANG%%llvm-devel/include/clang/Analysis/FlowSensitive/RecordOps.h
 %%CLANG%%llvm-devel/include/clang/Analysis/FlowSensitive/SimplifyConstraints.h
+%%CLANG%%llvm-devel/include/clang/Analysis/FlowSensitive/SmartPointerAccessorCaching.h
 %%CLANG%%llvm-devel/include/clang/Analysis/FlowSensitive/Solver.h
 %%CLANG%%llvm-devel/include/clang/Analysis/FlowSensitive/StorageLocation.h
 %%CLANG%%llvm-devel/include/clang/Analysis/FlowSensitive/Transfer.h
@@ -1183,9 +1184,11 @@ llvm-devel/bin/verify-uselistorder
 %%CLANG%%llvm-devel/include/clang/Basic/riscv_vector_builtins.inc
 %%CLANG%%llvm-devel/include/clang/CIR/CIRGenerator.h
 %%CLANG%%llvm-devel/include/clang/CIR/Dialect/Builder/CIRBaseBuilder.h
+%%CLANG%%llvm-devel/include/clang/CIR/Dialect/IR/CIRAttrs.h
 %%CLANG%%llvm-devel/include/clang/CIR/Dialect/IR/CIRDialect.h
 %%CLANG%%llvm-devel/include/clang/CIR/Dialect/IR/CIRTypes.h
 %%CLANG%%llvm-devel/include/clang/CIR/FrontendAction/CIRGenAction.h
+%%CLANG%%llvm-devel/include/clang/CIR/Interfaces/CIRFPTypeInterface.h
 %%CLANG%%llvm-devel/include/clang/CodeGen/BackendUtil.h
 %%CLANG%%llvm-devel/include/clang/CodeGen/CGFunctionInfo.h
 %%CLANG%%llvm-devel/include/clang/CodeGen/CodeGenABITypes.h
@@ -1437,6 +1440,7 @@ llvm-devel/bin/verify-uselistorder
 %%CLANG%%llvm-devel/include/clang/StaticAnalyzer/Core/CheckerManager.h
 %%CLANG%%llvm-devel/include/clang/StaticAnalyzer/Core/CheckerRegistryData.h
 %%CLANG%%llvm-devel/include/clang/StaticAnalyzer/Core/PathDiagnosticConsumers.h
+%%CLANG%%llvm-devel/include/clang/StaticAnalyzer/Core/PathSensitive/APSIntPtr.h
 %%CLANG%%llvm-devel/include/clang/StaticAnalyzer/Core/PathSensitive/APSIntType.h
 %%CLANG%%llvm-devel/include/clang/StaticAnalyzer/Core/PathSensitive/AnalysisManager.h
 %%CLANG%%llvm-devel/include/clang/StaticAnalyzer/Core/PathSensitive/BasicValueFactory.h
@@ -1657,6 +1661,7 @@ llvm-devel/bin/verify-uselistorder
 %%FLANG%%llvm-devel/include/flang/Lower/ConvertVariable.h
 %%FLANG%%llvm-devel/include/flang/Lower/Cuda.h
 %%FLANG%%llvm-devel/include/flang/Lower/CustomIntrinsicCall.h
+%%FLANG%%llvm-devel/include/flang/Lower/DirectivesCommon.h
 %%FLANG%%llvm-devel/include/flang/Lower/DumpEvaluateExpr.h
 %%FLANG%%llvm-devel/include/flang/Lower/EnvironmentDefault.h
 %%FLANG%%llvm-devel/include/flang/Lower/HlfirIntrinsics.h
@@ -1681,6 +1686,7 @@ llvm-devel/bin/verify-uselistorder
 %%FLANG%%llvm-devel/include/flang/Optimizer/Analysis/AliasAnalysis.h
 %%FLANG%%llvm-devel/include/flang/Optimizer/Analysis/TBAAForest.h
 %%FLANG%%llvm-devel/include/flang/Optimizer/Builder/BoxValue.h
+%%FLANG%%llvm-devel/include/flang/Optimizer/Builder/CUFCommon.h
 %%FLANG%%llvm-devel/include/flang/Optimizer/Builder/Character.h
 %%FLANG%%llvm-devel/include/flang/Optimizer/Builder/Complex.h
 %%FLANG%%llvm-devel/include/flang/Optimizer/Builder/DoLoopHelper.h
@@ -1804,7 +1810,6 @@ llvm-devel/bin/verify-uselistorder
 %%FLANG%%llvm-devel/include/flang/Optimizer/Support/Matcher.h
 %%FLANG%%llvm-devel/include/flang/Optimizer/Support/TypeCode.h
 %%FLANG%%llvm-devel/include/flang/Optimizer/Support/Utils.h
-%%FLANG%%llvm-devel/include/flang/Optimizer/Transforms/CUFCommon.h
 %%FLANG%%llvm-devel/include/flang/Optimizer/Transforms/CUFGPUToLLVMConversion.h
 %%FLANG%%llvm-devel/include/flang/Optimizer/Transforms/CUFOpConversion.h
 %%FLANG%%llvm-devel/include/flang/Optimizer/Transforms/MemoryUtils.h
@@ -1919,6 +1924,7 @@ llvm-devel/bin/verify-uselistorder
 %%FLANG%%%%OPENMP%%llvm-devel/include/flang/omp_lib_kinds.mod
 %%LLD%%llvm-devel/include/lld/Common/Args.h
 %%LLD%%llvm-devel/include/lld/Common/Arrays.h
+%%LLD%%llvm-devel/include/lld/Common/BPSectionOrdererBase.h
 %%LLD%%llvm-devel/include/lld/Common/CommonLinkerContext.h
 %%LLD%%llvm-devel/include/lld/Common/DWARF.h
 %%LLD%%llvm-devel/include/lld/Common/Driver.h
@@ -3471,6 +3477,8 @@ llvm-devel/include/llvm/ExecutionEngine/Orc/LLJIT.h
 llvm-devel/include/llvm/ExecutionEngine/Orc/Layer.h
 llvm-devel/include/llvm/ExecutionEngine/Orc/LazyObjectLinkingLayer.h
 llvm-devel/include/llvm/ExecutionEngine/Orc/LazyReexports.h
+llvm-devel/include/llvm/ExecutionEngine/Orc/LinkGraphLayer.h
+llvm-devel/include/llvm/ExecutionEngine/Orc/LinkGraphLinkingLayer.h
 llvm-devel/include/llvm/ExecutionEngine/Orc/LoadLinkableFile.h
 llvm-devel/include/llvm/ExecutionEngine/Orc/LookupAndRecordAddrs.h
 llvm-devel/include/llvm/ExecutionEngine/Orc/MachO.h
@@ -3717,6 +3725,7 @@ llvm-devel/include/llvm/IR/ValueHandle.h
 llvm-devel/include/llvm/IR/ValueMap.h
 llvm-devel/include/llvm/IR/ValueSymbolTable.h
 llvm-devel/include/llvm/IR/VectorBuilder.h
+llvm-devel/include/llvm/IR/VectorTypeUtils.h
 llvm-devel/include/llvm/IR/Verifier.h
 llvm-devel/include/llvm/IRPrinter/IRPrintingPasses.h
 llvm-devel/include/llvm/IRReader/IRReader.h
@@ -3937,6 +3946,8 @@ llvm-devel/include/llvm/PassInfo.h
 llvm-devel/include/llvm/PassRegistry.h
 llvm-devel/include/llvm/PassSupport.h
 llvm-devel/include/llvm/Passes/CodeGenPassBuilder.h
+llvm-devel/include/llvm/Passes/DroppedVariableStats.h
+llvm-devel/include/llvm/Passes/DroppedVariableStatsIR.h
 llvm-devel/include/llvm/Passes/MachinePassRegistry.def
 llvm-devel/include/llvm/Passes/OptimizationLevel.h
 llvm-devel/include/llvm/Passes/PassBuilder.h
@@ -4257,6 +4268,7 @@ llvm-devel/include/llvm/TargetParser/TargetParser.h
 llvm-devel/include/llvm/TargetParser/Triple.h
 llvm-devel/include/llvm/TargetParser/X86TargetParser.def
 llvm-devel/include/llvm/TargetParser/X86TargetParser.h
+llvm-devel/include/llvm/Telemetry/Telemetry.h
 llvm-devel/include/llvm/Testing/ADT/StringMap.h
 llvm-devel/include/llvm/Testing/ADT/StringMapEntry.h
 llvm-devel/include/llvm/Testing/Annotations/Annotations.h
@@ -4364,11 +4376,11 @@ llvm-devel/include/llvm/Transforms/Instrumentation/PGOCtxProfFlattening.h
 llvm-devel/include/llvm/Transforms/Instrumentation/PGOCtxProfLowering.h
 llvm-devel/include/llvm/Transforms/Instrumentation/PGOForceFunctionAttrs.h
 llvm-devel/include/llvm/Transforms/Instrumentation/PGOInstrumentation.h
-llvm-devel/include/llvm/Transforms/Instrumentation/PoisonChecking.h
 llvm-devel/include/llvm/Transforms/Instrumentation/RealtimeSanitizer.h
 llvm-devel/include/llvm/Transforms/Instrumentation/SanitizerBinaryMetadata.h
 llvm-devel/include/llvm/Transforms/Instrumentation/SanitizerCoverage.h
 llvm-devel/include/llvm/Transforms/Instrumentation/ThreadSanitizer.h
+llvm-devel/include/llvm/Transforms/Instrumentation/TypeSanitizer.h
 llvm-devel/include/llvm/Transforms/ObjCARC.h
 llvm-devel/include/llvm/Transforms/Scalar.h
 llvm-devel/include/llvm/Transforms/Scalar/ADCE.h
@@ -4658,6 +4670,7 @@ llvm-devel/include/llvm/XRay/YAMLXRayRecord.h
 %%MLIR%%llvm-devel/include/mlir/AsmParser/CodeComplete.h
 %%MLIR%%llvm-devel/include/mlir/Bindings/Python/Diagnostics.h
 %%MLIR%%llvm-devel/include/mlir/Bindings/Python/IRTypes.h
+%%MLIR%%llvm-devel/include/mlir/Bindings/Python/Nanobind.h
 %%MLIR%%llvm-devel/include/mlir/Bindings/Python/NanobindAdaptors.h
 %%MLIR%%llvm-devel/include/mlir/Bindings/Python/PybindAdaptors.h
 %%MLIR%%llvm-devel/include/mlir/Bytecode/BytecodeImplementation.h
@@ -6817,6 +6830,7 @@ llvm-devel/lib/libLLVM.so.%%LLVM_MAJOR_MINOR%%git
 %%STATIC_LIBS%%llvm-devel/lib/libLLVMExegesisAArch64.a
 %%STATIC_LIBS%%llvm-devel/lib/libLLVMExegesisMips.a
 %%STATIC_LIBS%%llvm-devel/lib/libLLVMExegesisPowerPC.a
+%%STATIC_LIBS%%llvm-devel/lib/libLLVMExegesisRISCV.a
 %%STATIC_LIBS%%llvm-devel/lib/libLLVMExegesisX86.a
 %%STATIC_LIBS%%llvm-devel/lib/libLLVMExtensions.a
 %%STATIC_LIBS%%llvm-devel/lib/libLLVMFileCheck.a
@@ -6920,6 +6934,7 @@ llvm-devel/lib/libLLVM.so.%%LLVM_MAJOR_MINOR%%git
 %%STATIC_LIBS%%llvm-devel/lib/libLLVMTableGenCommon.a
 %%STATIC_LIBS%%llvm-devel/lib/libLLVMTarget.a
 %%STATIC_LIBS%%llvm-devel/lib/libLLVMTargetParser.a
+%%STATIC_LIBS%%llvm-devel/lib/libLLVMTelemetry.a
 %%STATIC_LIBS%%llvm-devel/lib/libLLVMTextAPI.a
 %%STATIC_LIBS%%llvm-devel/lib/libLLVMTextAPIBinaryReader.a
 %%STATIC_LIBS%%llvm-devel/lib/libLLVMTransformUtils.a
