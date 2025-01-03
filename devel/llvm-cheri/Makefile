@@ -10,7 +10,6 @@ WWW?=		https://cheri-cpu.org
 
 LICENSE_DIR=	${WRKSRC}/llvm
 .include "${.PARSEDIR}/../llvm-devel/Makefile.LICENSE"
-LICENSE:=       ${LICENSE:NARM}
 
 NOT_FOR_ARCHS=		i386 armv6 armv7 powerpc mips
 NOT_FOR_ARCHS_REASON=	No one will develop CHERI from 32-bit

@@ -12,24 +12,20 @@
 # Google Test         BSD3CLAUSE
 # OpenBSD regex       REGEX
 # pyyaml tests        MIT
-# ARM contributions   ARM
 # md5 contributions   PD
 
-LICENSE=	ARM BSD3CLAUSE LLVM LLVM2 MIT PD REGEX
+LICENSE=	BSD3CLAUSE LLVM LLVM2 MIT PD REGEX
 LICENSE_COMB=	multi
 
 LICENSE_DIR?=		${WRKSRC}
-LICENSE_FILE_ARM=	${LICENSE_DIR}/lib/Target/ARM/LICENSE.TXT
 LICENSE_FILE_BSD3CLAUSE?=	${LICENSE_DIR}/utils/unittest/googletest/LICENSE.TXT
 LICENSE_FILE_LLVM=	${LICENSE_DIR}/LICENSE.TXT
 LICENSE_FILE_LLVM2=	${LICENSE_DIR}/LICENSE.TXT
 LICENSE_FILE_MIT=	${LICENSE_DIR}/test/YAMLParser/LICENSE.txt
 LICENSE_FILE_REGEX=	${LICENSE_DIR}/lib/Support/COPYRIGHT.regex
-LICENSE_NAME_ARM=	ARM Limited license
 LICENSE_NAME_LLVM=	LLVM Release License
 LICENSE_NAME_LLVM2=	Apache License 2.0 with LLVM Exceptions
 LICENSE_NAME_REGEX=	OpenBSD Regex License
-LICENSE_PERMS_ARM=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 LICENSE_PERMS_LLVM=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 LICENSE_PERMS_LLVM2=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 LICENSE_PERMS_REGEX=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept

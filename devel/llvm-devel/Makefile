@@ -11,7 +11,6 @@ WWW=		https://llvm.org/
 LICENSE_DIR=	${WRKSRC}/llvm
 .include "Makefile.LICENSE"
 LICENSE_FILE_BSD3CLAUSE=	${WRKSRC}/third-party/unittest/googletest/LICENSE.TXT
-LICENSE:=	${LICENSE:NARM}
 
 LIB_DEPENDS=	libzstd.so:archivers/zstd
 
