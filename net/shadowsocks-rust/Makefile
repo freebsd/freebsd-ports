@@ -6,7 +6,8 @@ CATEGORIES=	net
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Rust port of shadowsocks
-WWW=		https://shadowsocks.org/
+WWW=		https://shadowsocks.org/ \
+		https://github.com/shadowsocks/shadowsocks-org
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
