@@ -10,11 +10,11 @@ WWW?=		https://cheri-cpu.org
 
 LICENSE_DIR=	${WRKSRC}/llvm
 .include "${.PARSEDIR}/../llvm-devel/Makefile.LICENSE"
-LICENSE:=       ${LICENSE:NARM}
 LICENSE+=	LLVM2
 LICENSE_FILE_LLVM2=	${LICENSE_DIR}/LICENSE.TXT
 LICENSE_NAME_LLVM2=	Apache License 2.0 with LLVM Exceptions
 LICENSE_PERMS_LLVM2=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
+LICENSE:=       ${LICENSE:NARM}
 
 NOT_FOR_ARCHS=		i386 armv6 armv7 powerpc mips
 NOT_FOR_ARCHS_REASON=	No one will develop CHERI from 32-bit
@@ -113,7 +113,9 @@ STRIP_LIBS=	BugpointPasses.so \
 		${LIBNAME}.0 \
 		libLTO.so
 
+.if exists(${PATCHDIR}/llvm${LLVM_MAJOR})
 EXTRA_PATCHES+=	${PATCHDIR}/llvm${LLVM_MAJOR}
+.endif
 .if ${.PARSEDIR} != ${.CURDIR} && exists(${.CURDIR}/files)
 EXTRA_PATCHES+=	${.CURDIR}/files
 .endif
