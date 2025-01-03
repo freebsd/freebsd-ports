@@ -1,8 +1,7 @@
 PORTNAME=	libepp-nicbr
-PORTVERSION=	1.19
-PORTREVISION=	1
+DISTVERSION=	1.20
 CATEGORIES=	devel
-MASTER_SITES=	ftp://ftp.registro.br/pub/libepp-nicbr/
+MASTER_SITES=	https://ftp.registro.br/pub/libepp-nicbr/
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Partial Extensible Provisioning Protocol to .br domains
@@ -15,8 +14,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libxerces-c.so:textproc/xerces-c3
 
 USES=		libtool pkgconfig ssl
-GNU_CONFIGURE=	yes
 
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-xerces-c=${LOCALBASE} \
 		--with-openssl=${OPENSSLBASE} \
 		--with-readline-includes=${LOCALBASE}/include
@@ -33,11 +32,5 @@ OPTIONS_SUB=		yes
 READLINE_USES=		ncurses readline
 READLINE_CONFIGURE_ENV_OFF=\
 			ac_cv_lib_readline_readline=no
-
-.include <bsd.port.options.mk>
-
-.if ${OPSYS} == FreeBSD
-CFLAGS+=	-Wno-error=unused-but-set-variable
-.endif
 
 .include <bsd.port.mk>
