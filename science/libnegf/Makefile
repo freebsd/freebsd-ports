@@ -10,6 +10,10 @@ WWW=		https://github.com/libnegf/libnegf
 
 LICENSE=	GPLv3
 
+.if !exists(/usr/include/omp.h)
+BROKEN=		requires OpenMP support that is missing on this architecture
+.endif
+
 LIB_DEPENDS=	libmpi.so:net/mpich \
 		libopenblas.so:math/openblas
 
