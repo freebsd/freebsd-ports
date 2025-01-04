@@ -10,6 +10,8 @@ WWW=		https://ned14.github.io/outcome/
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/Licence.txt
 
+BROKEN_armv7=	fails to compile due to inline assembly, see https://github.com/ned14/outcome/issues/309
+
 BUILD_DEPENDS=	${LOCALBASE}/include/quickcpplib/config.hpp:devel/quickcpplib
 RUN_DEPENDS=	${LOCALBASE}/include/quickcpplib/config.hpp:devel/quickcpplib
 
