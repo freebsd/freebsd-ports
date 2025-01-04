@@ -1,6 +1,6 @@
 PORTNAME=	stack
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.1.1
+DISTVERSION=	3.3.1
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -23,32 +23,29 @@ GH_ACCOUNT=	commercialhaskell
 USE_PERL5=	run
 
 USE_CABAL=	Glob-0.10.2_3 \
-		OneTuple-0.4.1.1_1 \
-		QuickCheck-2.14.3 \
+		OneTuple-0.4.2_1 \
+		QuickCheck-2.15.0.1 \
 		StateVar-1.2.2 \
-		aeson-2.1.2.1_4 \
+		aeson-2.2.3.0_2 \
 		aeson-warning-parser-0.1.1 \
 		annotated-wl-pprint-0.7.0_1 \
-		ansi-terminal-1.0.2 \
-		ansi-terminal-types-0.11.5_1 \
+		ansi-terminal-1.1.2 \
+		ansi-terminal-types-1.1 \
 		appar-0.1.8 \
 		asn1-encoding-0.9.6_2 \
 		asn1-parse-0.9.5 \
 		asn1-types-0.3.4 \
-		assoc-1.1_1 \
-		async-2.2.5_1 \
-		attoparsec-0.14.4_5 \
-		attoparsec-aeson-2.1.0.0 \
-		attoparsec-iso8601-1.1.0.1 \
-		auto-update-0.1.6 \
-		base-compat-0.13.1 \
-		base-compat-batteries-0.13.1 \
-		base-orphans-0.9.2 \
+		assoc-1.1.1_1 \
+		async-2.2.5_3 \
+		attoparsec-0.14.4_6 \
+		attoparsec-aeson-2.2.2.0 \
+		auto-update-0.2.6 \
+		base-orphans-0.9.3 \
 		base16-bytestring-1.0.2.0_1 \
 		base64-bytestring-1.2.1.0_1 \
 		basement-0.0.16 \
-		bifunctors-5.6.2 \
-		bitvec-1.1.5.0_1 \
+		bifunctors-5.6.2_1 \
+		bitvec-1.1.5.0_2 \
 		blaze-builder-0.4.2.3 \
 		blaze-html-0.9.2.0_1 \
 		blaze-markup-0.8.3.0_2 \
@@ -56,99 +53,103 @@ USE_CABAL=	Glob-0.10.2_3 \
 		casa-client-0.0.2 \
 		casa-types-0.0.2 \
 		case-insensitive-1.2.1.0 \
+		cborg-0.2.10.0_1 \
 		cereal-0.5.8.3 \
+		character-ps-0.1 \
 		clock-0.8.4 \
 		cmdargs-0.10.22 \
 		colour-2.3.6 \
-		comonad-5.0.8_2 \
+		comonad-5.0.9 \
 		companion-0.1.0 \
-		conduit-1.3.5 \
+		conduit-1.3.6 \
 		conduit-combinators-1.3.0 \
 		conduit-extra-1.3.6 \
 		contravariant-1.5.5 \
-		cookie-0.4.6 \
-		cryptohash-sha256-0.11.102.1_5 \
-		crypton-0.34 \
+		cookie-0.5.0 \
+		cryptohash-sha256-0.11.102.1_6 \
+		crypton-1.0.1 \
 		crypton-conduit-0.2.3 \
-		crypton-connection-0.3.2_1 \
-		crypton-x509-1.7.6_2 \
+		crypton-connection-0.4.3 \
+		crypton-x509-1.7.7 \
 		crypton-x509-store-1.6.9 \
 		crypton-x509-system-1.6.7 \
-		crypton-x509-validation-1.6.12 \
-		data-default-class-0.1.2.0 \
-		data-fix-0.3.2_5 \
+		crypton-x509-validation-1.6.13 \
+		data-default-0.8.0.0 \
+		data-default-class-0.2.0.0 \
+		data-fix-0.3.4_1 \
 		digest-0.0.2.1 \
 		distributive-0.6.2.1_1 \
 		dlist-1.0_2 \
 		easy-file-0.2.5 \
 		echo-0.1.4 \
 		ed25519-0.0.5.0_8 \
-		extra-1.7.14 \
-		fast-logger-3.2.2 \
+		extra-1.8 \
+		fast-logger-3.2.5 \
 		file-embed-0.0.16.0 \
 		filelock-0.1.1.7 \
-		fsnotify-0.4.1.0 \
-		generic-deriving-1.14.5_3 \
-		generically-0.1.1_3 \
+		fsnotify-0.4.1.0_1 \
+		generic-deriving-1.14.6 \
+		generically-0.1.1_4 \
 		githash-0.1.7.0 \
-		hackage-security-0.6.2.4_3 \
-		hashable-1.4.4.0_1 \
-		hi-file-parser-0.1.6.0 \
+		hackage-security-0.6.2.6_4 \
+		half-0.3.2 \
+		hashable-1.4.7.0 \
+		hi-file-parser-0.1.7.0 \
 		hourglass-0.2.12_1 \
 		hpack-0.37.0 \
-		hsc2hs-0.68.10_2 \
-		http-api-data-0.5.1 \
-		http-client-0.7.17 \
-		http-client-tls-0.3.6.3 \
-		http-conduit-2.3.8.3 \
+		hsc2hs-0.68.10_3 \
+		http-api-data-0.6.1_1 \
+		http-client-0.7.18 \
+		http-client-tls-0.3.6.4 \
+		http-conduit-2.3.9.1 \
 		http-download-0.2.1.0 \
 		http-types-0.12.4 \
-		indexed-traversable-0.1.3 \
-		indexed-traversable-instances-0.1.1.2_2 \
+		indexed-traversable-0.1.4 \
+		indexed-traversable-instances-0.1.2 \
 		infer-license-0.2.0 \
-		integer-conversion-0.1.0.1_1 \
-		integer-logarithms-1.0.3.1_6 \
-		iproute-1.7.12 \
+		integer-conversion-0.1.1_1 \
+		integer-logarithms-1.0.4 \
+		iproute-1.7.15 \
 		libyaml-0.1.4 \
 		libyaml-clib-0.2.5 \
-		lift-type-0.1.1.1 \
+		lift-type-0.1.2.0 \
 		lifted-base-0.2.3.12 \
-		lukko-0.1.1.3_5 \
-		megaparsec-9.5.0_4 \
+		lukko-0.1.2 \
+		megaparsec-9.7.0 \
 		memory-0.18.0 \
 		microlens-0.4.13.1_1 \
 		microlens-mtl-0.2.0.3_1 \
-		microlens-th-0.4.3.15 \
+		microlens-th-0.4.3.16 \
 		mime-types-0.1.2.0 \
 		monad-control-1.0.3.1 \
-		monad-logger-0.3.40 \
+		monad-logger-0.3.41 \
 		monad-loops-0.4.3 \
-		mono-traversable-1.0.17.0 \
+		mono-traversable-1.0.21.0 \
 		mtl-compat-0.2.2 \
 		mustache-2.4.2 \
 		neat-interpolation-0.5.1.4 \
-		network-3.1.4.0_1 \
+		network-3.2.7.0 \
 		network-uri-2.6.4.2_1 \
 		old-locale-1.0.0.7_2 \
 		old-time-1.1.0.4 \
 		open-browser-0.2.1.0 \
 		optparse-applicative-0.18.1.0 \
 		optparse-simple-0.1.1.4 \
-		os-string-2.0.2.1 \
-		pantry-0.10.0_1 \
+		os-string-2.0.7 \
+		pantry-0.10.0_2 \
 		parser-combinators-1.3.0_1 \
-		path-0.9.5 \
-		path-io-1.8.1_1 \
+		path-0.9.6 \
+		path-io-1.8.2 \
 		path-pieces-0.2.1_1 \
 		pem-0.2.4 \
-		persistent-2.14.6.1 \
+		persistent-2.14.6.3 \
 		persistent-sqlite-2.13.3.0 \
 		persistent-template-2.12.0.0 \
 		prettyprinter-1.7.1 \
 		prettyprinter-ansi-terminal-1.1.3 \
-		primitive-0.8.0.0_1 \
+		primitive-0.9.0.0_2 \
 		project-template-0.2.1.0 \
-		random-1.2.1.2 \
+		random-1.2.1.3 \
 		resource-pool-0.4.0.0 \
 		resourcet-1.3.0 \
 		retry-0.9.3.1 \
@@ -156,47 +157,50 @@ USE_CABAL=	Glob-0.10.2_3 \
 		rio-orphans-0.1.2.0 \
 		rio-prettyprint-0.1.8.0 \
 		safe-exceptions-0.1.7.4_1 \
-		scientific-0.3.7.0_7 \
-		semialign-1.3_1 \
+		scientific-0.3.8.0_2 \
+		semialign-1.3.1_1 \
 		semigroupoids-6.0.1_1 \
-		silently-1.2.5.3 \
+		serialise-0.2.6.1_3 \
+		silently-1.2.5.4 \
 		socks-0.6.1 \
 		split-0.2.5 \
-		splitmix-0.1.0.5_1 \
-		static-bytes-0.1.0 \
+		splitmix-0.1.1 \
+		static-bytes-0.1.1 \
 		stm-chans-3.0.0.9 \
 		streaming-commons-0.2.2.6_1 \
-		strict-0.5_1 \
-		tagged-0.8.8_1 \
-		tar-0.6.2.0 \
+		strict-0.5.1_1 \
+		tagged-0.8.9 \
+		tar-0.6.3.0_1 \
 		tar-conduit-0.4.1 \
+		tasty-1.5.2 \
 		temporary-1.3 \
-		text-metrics-0.3.2_4 \
-		text-short-0.1.5_3 \
-		th-abstraction-0.5.0.0 \
-		th-compat-0.1.5_2 \
-		th-lift-0.8.4_2 \
+		text-iso8601-0.1.1_1 \
+		text-metrics-0.3.3 \
+		text-short-0.1.6_3 \
+		th-abstraction-0.7.1.0 \
+		th-compat-0.1.6 \
+		th-lift-0.8.6 \
 		th-lift-instances-0.1.20 \
-		these-1.2_1 \
-		time-compat-1.9.6.1_6 \
-		tls-1.8.0 \
+		these-1.2.1_1 \
+		time-compat-1.9.8 \
+		tls-2.1.5 \
 		transformers-base-0.4.6 \
 		transformers-compat-0.7.2 \
-		typed-process-0.2.11.1 \
-		unix-compat-0.7.1 \
-		unix-time-0.4.12 \
+		typed-process-0.2.12.0 \
+		unix-compat-0.7.3 \
+		unix-time-0.4.16 \
 		unliftio-0.2.25.0 \
 		unliftio-core-0.2.1.0_4 \
-		unordered-containers-0.2.20_3 \
-		uuid-types-1.0.5.1 \
-		vault-0.3.1.5_7 \
-		vector-0.13.1.0_1 \
-		vector-algorithms-0.9.0.1_3 \
-		vector-stream-0.1.0.1_1 \
-		witherable-0.4.2_5 \
+		unordered-containers-0.2.20_4 \
+		uuid-types-1.0.6_2 \
+		vault-0.3.1.5_9 \
+		vector-0.13.2.0 \
+		vector-algorithms-0.9.0.3 \
+		vector-stream-0.1.0.1_3 \
+		witherable-0.5_1 \
 		yaml-0.11.11.2_2 \
 		zip-archive-0.4.3.2_1 \
-		zlib-0.6.3.0_5
+		zlib-0.7.1.0_2
 
 CABAL_FLAGS=	-support_aesni
 CABAL_PROJECT=	remove
