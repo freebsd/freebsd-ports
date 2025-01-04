@@ -1,6 +1,6 @@
 PORTNAME=	appjail
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.5.0
+DISTVERSION=	3.6.0
 CATEGORIES=	sysutils
 
 MAINTAINER=	DtxdF@disroot.org
@@ -20,14 +20,17 @@ CONFLICTS=	appjail-devel
 
 PORTDOCS=	README.md
 
-OPTIONS_DEFINE=	DEBOOTSTRAP DOAS DOCS GIT
+OPTIONS_DEFINE=	DEBOOTSTRAP DOAS DOCS GIT OCI
 
 DEBOOTSTRAP_DESC=	Support for Debian and Ubuntu jails
 DOAS_DESC=		Add support for unprivileged users
+OCI_DESC=		Add support for OCI
 
 DEBOOTSTRAP_RUN_DEPENDS=	debootstrap>0:sysutils/debootstrap
 DOAS_RUN_DEPENDS=		doas>0:security/doas
 GIT_RUN_DEPENDS=		git>0:devel/git
+OCI_RUN_DEPENDS=		buildah>0:sysutils/buildah \
+				jq>0:textproc/jq
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}/${DOCSDIR}
