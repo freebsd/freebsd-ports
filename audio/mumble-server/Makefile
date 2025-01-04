@@ -1,6 +1,5 @@
 PORTNAME=	mumble-server
-DISTVERSION=	1.5.634
-PORTREVISION=	7
+DISTVERSION=	1.5.735
 CATEGORIES=	audio net
 MASTER_SITES=	https://github.com/${PORTNAME:S/-server//}-voip/${PORTNAME:S/-server//}/releases/download/v${DISTVERSION}/
 DISTNAME=	${PORTNAME:S/-server//}-${DISTVERSION}
@@ -27,7 +26,6 @@ CMAKE_OFF=	client
 
 CXXFLAGS+=	-Wno-deprecated-declarations
 
-EXTRA_PATCHES+=	${.CURDIR}/../mumble/files/patch-src_MumbleProtocol.cpp
 SUB_LIST+=	USERS="${USERS}" GROUPS="${GROUPS}"
 
 USERS=		mumble-server
