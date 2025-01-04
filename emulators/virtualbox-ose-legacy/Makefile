@@ -1,14 +1,14 @@
 PORTNAME=	virtualbox-ose
-PORTVERSION=	5.2.44
+DISTVERSION=	5.2.44
 PORTREVISION?=	23
 CATEGORIES=	emulators
-MASTER_SITES=	https://download.oracle.com/virtualbox/${PORTVERSION}/:src \
+MASTER_SITES=	https://download.virtualbox.com/virtualbox/${DISTVERSION}/:src \
 		LOCAL/bofh/emulators/virtualbox-ose-legacy:docs
 PKGNAMESUFFIX?=	-legacy
-DISTFILES=	VirtualBox-${PORTVERSION}${EXTRACT_SUFX}:src \
-		VirtualBox-docs-${PORTVERSION}${EXTRACT_SUFX}:docs
-EXTRACT_ONLY=	VirtualBox-${PORTVERSION}${EXTRACT_SUFX} \
-		VirtualBox-docs-${PORTVERSION}${EXTRACT_SUFX}
+DISTFILES=	VirtualBox-${DISTVERSION}${EXTRACT_SUFX}:src \
+		VirtualBox-docs-${DISTVERSION}${EXTRACT_SUFX}:docs
+EXTRACT_ONLY=	VirtualBox-${DISTVERSION}${EXTRACT_SUFX} \
+		VirtualBox-docs-${DISTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	vbox@FreeBSD.org
 COMMENT=	General-purpose full virtualizer for x86 hardware
@@ -30,23 +30,25 @@ LIB_DEPENDS=	libpng.so:graphics/png \
 RUN_DEPENDS=	${LOCALBASE}/etc/rc.d/vboxnet:emulators/virtualbox-ose-kmod-legacy
 
 USES=		compiler:c++14-lang cpe gnome iconv pkgconfig ssl tar:bzip2
-USE_GNOME=	libxml2
-
 CPE_VENDOR=	oracle
 CPE_PRODUCT=	vm_virtualbox
+USE_GNOME=	libxml2
+USE_RC_SUBR=	vboxheadless vboxwatchdog
 
-HAS_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-java --passive-mesa --disable-docs
+HAS_CONFIGURE=		yes
+CONFIGURE_ARGS=		--disable-java --passive-mesa --disable-docs
 CONFIGURE_ARGS+=	--with-gcc="${CC}" --with-g++="${CXX}"
 
-CONFLICTS_INSTALL=	virtualbox-ose-additions-* \
-			virtualbox-ose-devel \
-			virtualbox-ose \
-			virtualbox-ose-lite
-
-WRKSRC=		${WRKDIR}/VirtualBox-${PORTVERSION}
+CONFLICTS_INSTALL=	virtualbox-ose \
+			virtualbox-ose-nox11
 
 PORTSCOUT=	limit:^5\.
+SUB_LIST=	VBOXDIR=${VBOX_DIR} \
+		VBOXGROUP=${VBOXGROUP} \
+		VBOXUSER=${VBOXUSER} \
+		VBOXWSUSER=${VBOXWSUSER}
+
+WRKSRC=		${WRKDIR}/VirtualBox-${DISTVERSION}
 
 VBOXUSER?=	vboxusers
 VBOXWSUSER?=	vboxusers
@@ -61,6 +63,10 @@ VBOX_PROGS=	VBoxAutostart VBoxBalloonCtrl VBoxBugReport VBoxHeadless \
 		VBoxManage
 VBOX_UTILS=	VBoxExtPackHelperApp VBoxNetAdpCtl VBoxNetDHCP VBoxNetNAT \
 		VBoxSVC VBoxXPCOMIPCD
+
+PLIST_SUB=	GUEST_VER=${DISTVERSION} \
+		PYTHON_VERU=${PYTHON_VER:S/./_/}${PYTHON_ABIVER} \
+		VBOXGROUP=${VBOXGROUP}
 
 OPTIONS_DEFINE=		ALSA DBUS DEBUG DOCS GUESTADDITIONS NLS PULSEAUDIO \
 			PYTHON QT5 R0LOGGING UDPTUNNEL VDE VNC WEBSERVICE VPX X11
@@ -78,54 +84,45 @@ VNC_DESC=		Build with VNC support
 VPX_DESC=		Use libvpx for video recording
 WEBSERVICE_DESC=	Build Webservice
 
-ALSA_CONFIGURE_OFF=	--disable-alsa
 ALSA_LIB_DEPENDS=	libasound.so:audio/alsa-lib
-DBUS_CONFIGURE_OFF=	--disable-dbus
+ALSA_CONFIGURE_OFF=	--disable-alsa
 DBUS_LIB_DEPENDS=	libdbus-1.so:devel/dbus
+DBUS_CONFIGURE_OFF=	--disable-dbus
 DEBUG_CONFIGURE_ON=	--build-debug
 NLS_IMPLIES=		QT5
-PULSEAUDIO_CONFIGURE_OFF=	--disable-pulse
 PULSEAUDIO_LIB_DEPENDS=	libpulse.so:audio/pulseaudio
+PULSEAUDIO_CONFIGURE_OFF=	--disable-pulse
 PYTHON_USES=		python
 PYTHON_USES_OFF=	python:build
 PYTHON_USE=		PYTHON=distutils,noegginfo,noflavors
 PYTHON_CONFIGURE_OFF=	--disable-python
 PYTHON_VARS=		pydistutils_pkgname=vboxapi pydistutils_pkgversion=1.0
+QT5_IMPLIES=		X11
 QT5_USES=		gl qmake:no_env qt:5 xorg
 QT5_USE=		QT=buildtools:build,core,dbus,gui,linguisttools:build,opengl \
 			QT=printsupport,widgets,x11extras XORG=xcb GL=gl
 QT5_CONFIGURE_ON=	--enable-qt5
 QT5_CONFIGURE_OFF=	--disable-qt
-QT5_IMPLIES=		X11
 R0LOGGING_IMPLIES=	DEBUG
 UDPTUNNEL_CONFIGURE_OFF=	--disable-udptunnel
-VDE_CONFIGURE_ON=	--enable-vde
 VDE_RUN_DEPENDS=	vde_switch:net/vde2
-VNC_CONFIGURE_ON=	--enable-vnc
+VDE_CONFIGURE_ON=	--enable-vde
 VNC_LIB_DEPENDS=	libvncserver.so:net/libvncserver
-VPX_CONFIGURE_OFF=	--disable-libvpx
+VNC_CONFIGURE_ON=	--enable-vnc
 VPX_LIB_DEPENDS=	libvpx.so:multimedia/libvpx
+VPX_CONFIGURE_OFF=	--disable-libvpx
 WEBSERVICE_BUILD_DEPENDS=	soapcpp2:devel/gsoap
 X11_USES=		sdl xorg
 X11_USE=		SDL=sdl XORG=x11,xcursor,xext,xinerama,xmu,xorgproto,xt
 X11_CONFIGURE_OFF=	--build-headless
 
-PLIST_SUB=	GUEST_VER=${PORTVERSION} \
-		PYTHON_VERU=${PYTHON_VER:S/./_/}${PYTHON_ABIVER} \
-		VBOXGROUP=${VBOXGROUP}
-SUB_LIST=	VBOXDIR=${VBOX_DIR} \
-		VBOXGROUP=${VBOXGROUP} \
-		VBOXUSER=${VBOXUSER} \
-		VBOXWSUSER=${VBOXWSUSER}
-USE_RC_SUBR=	vboxheadless vboxwatchdog
-
 .include <bsd.port.options.mk>
 
 .if ${SLAVE_PORT} == no
-CONFLICTS_INSTALL+=	virtualbox-ose-nox11
+CONFLICTS_INSTALL+=	virtualbox-ose-nox11-legacy
 OPTIONS_DEFAULT+=	PYTHON
 .else
-CONFLICTS_INSTALL+=	virtualbox-ose
+CONFLICTS_INSTALL+=	virtualbox-ose-legacy
 .endif
 
 .if ${ARCH} == "amd64"
@@ -140,11 +137,11 @@ KMK_BUILDTYPE=	release
 .endif
 
 .if ${PORT_OPTIONS:MGUESTADDITIONS}
-GUESTADDITIONS=	VBoxGuestAdditions_${PORTVERSION}.iso
-DISTFILES+=	${GUESTADDITIONS}:src
-LICENSE+=	Additions
-LICENSE_COMB=	multi
-LICENSE_NAME_Additions=	Guest Additions
+GUESTADDITIONS=			VBoxGuestAdditions_${DISTVERSION}.iso
+DISTFILES+=			${GUESTADDITIONS}:src
+LICENSE+=			Additions
+LICENSE_COMB=			multi
+LICENSE_NAME_Additions=		Guest Additions
 LICENSE_PERMS_Additions=	auto-accept
 LICENSE_DISTFILES_Additions=	${GUESTADDITIONS}
 .endif
@@ -357,7 +354,7 @@ do-install:
 
 .if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKDIR}/VirtualBox-docs-${PORTVERSION}/UserManual.pdf \
+	${INSTALL_DATA} ${WRKDIR}/VirtualBox-docs-${DISTVERSION}/UserManual.pdf \
 	    ${STAGEDIR}${DOCSDIR}
 .endif
 
