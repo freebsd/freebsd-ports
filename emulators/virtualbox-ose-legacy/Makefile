@@ -2,7 +2,7 @@ PORTNAME=	virtualbox-ose
 DISTVERSION=	5.2.44
 PORTREVISION?=	23
 CATEGORIES=	emulators
-MASTER_SITES=	https://download.virtualbox.com/virtualbox/${DISTVERSION}/:src \
+MASTER_SITES=	https://download.virtualbox.org/virtualbox/${DISTVERSION}/:src \
 		LOCAL/bofh/emulators/virtualbox-ose-legacy:docs
 PKGNAMESUFFIX?=	-legacy
 DISTFILES=	VirtualBox-${DISTVERSION}${EXTRACT_SUFX}:src \
