@@ -1,5 +1,6 @@
 PORTNAME=	python-lsp-server
 PORTVERSION=	1.12.0
+PORTREVISION=	1
 CATEGORIES=	textproc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -27,7 +28,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}autopep8>0:textproc/py-autopep8@${PY_FLAVOR}
 		${PYTHON_PKGNAMEPREFIX}pydocstyle>0:devel/py-pydocstyle@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyflakes>0:devel/py-pyflakes@${PY_FLAVOR} \
 		pylint${PYTHON_PKGNAMESUFFIX}>0:devel/pylint@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pyls-black>0:devel/py-pyls-black@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}python-lsp-black>0:textproc/py-python-lsp-black@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}python-lsp-jsonrpc>0:textproc/py-python-lsp-jsonrpc@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}rope>0:devel/py-rope@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}ruff>0:devel/py-ruff@${PY_FLAVOR} \
@@ -58,12 +59,12 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}coverage>=0:devel/py-coverage@${PY_FLAVOR} 
 USES=		python
 USE_PYTHON=	autoplist concurrent pep517 pytest
 
-TEST_USES=	qt:5
-TEST_USE_PYQT=	pyqt5:test
-TEST_USE_QT=	testlib
-
 NO_ARCH=	yes
 
 WRKSRC=		${WRKDIR}/${DISTFILES:R:R}
+
+TEST_USES=	qt:5
+TEST_USE_PYQT=	pyqt5:test
+TEST_USE_QT=	testlib
 
 .include <bsd.port.mk>
