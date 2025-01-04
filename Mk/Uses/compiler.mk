@@ -184,7 +184,7 @@ CHOSEN_COMPILER_TYPE=	gcc
 .    if ${_COMPILER_ARGS:Mc++2b-lang}
 _LLVM_MINVER=	14
 .    elif ${_COMPILER_ARGS:Mc++20-lang}
-_LLVM_MINVER=	11
+_LLVM_MINVER=	12
 .    else
 _LLVM_MINVER=	0
 .    endif
