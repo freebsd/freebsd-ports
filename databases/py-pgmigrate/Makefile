@@ -1,6 +1,5 @@
 PORTNAME=	pgmigrate
-PORTVERSION=	1.0.8
-PORTREVISION=	1
+DISTVERSION=	1.0.9
 CATEGORIES=	databases python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -12,8 +11,8 @@ LICENSE=	PostgreSQL
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}psycopg2>=2.8.2:databases/py-psycopg2@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}sqlparse>=0.3.0:databases/py-sqlparse@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pyyaml>=5.2:devel/py-pyyaml@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}pyyaml>=5.2:devel/py-pyyaml@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}sqlparse>=0.3.0:databases/py-sqlparse@${PY_FLAVOR}
 
 USES=		python
 USE_GITHUB=	yes
