@@ -3997,3 +3997,4 @@ editors/neovim-qt@qt5|editors/neovim-qt|2025-01-02|Flavorization has been remove
 editors/neovim-qt@qt6|editors/neovim-qt|2025-01-02|Flavorization has been removed. Continue to enjoy editors/neovim-qt based on Qt 6.x as usual
 deskutils/copyq@qt5|deskutils/copyq|2025-01-02|Flavorization has been removed. Qt 5.x has been long deprecated upstream. Please use the unflavored deskutils/copyq port based on Qt 6.x instead
 deskutils/copyq@qt6|deskutils/copyq|2025-01-02|Flavorization has been removed. Continue to enjoy deskutils/copyq based on Qt 6.x as usual
+devel/py-pyls-black||2025-01-04|Repository has been archived by the owner. Use textproc/py-python-lsp-black instead
