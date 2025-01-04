@@ -10,6 +10,8 @@ WWW=		https://github.com/romanz/electrs
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_armv7=	link fails: error: undefined symbol: _Unwind_SjLj_Register, see https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=283841
+
 LIB_DEPENDS=	libzstd.so:archivers/zstd
 
 USES=		cargo llvm
