@@ -10,8 +10,6 @@ WWW=		https://ned14.github.io/outcome/
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/Licence.txt
 
-BROKEN_armv7=	fails to compile due to inline assembly, see https://github.com/ned14/outcome/issues/309
-
 BUILD_DEPENDS=	${LOCALBASE}/include/quickcpplib/config.hpp:devel/quickcpplib
 RUN_DEPENDS=	${LOCALBASE}/include/quickcpplib/config.hpp:devel/quickcpplib
 
@@ -26,8 +24,14 @@ CMAKE_TESTING_ON=	BUILD_TESTING OUTCOME_ENABLE_DEPENDENCY_SMOKE_TEST
 CMAKE_ARGS=	-Dquickcpplib_DIR=${LOCALBASE}/lib/cmake/quickcpplib
 
 NO_BUILD=	yes
-NO_ARCH=	yes
 
 PORTSCOUT=	limit:^.*[0-9]\.[0-9].*
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH:Marmv?}
+pre-configure:
+	${FIND} ${WRKDIR} \( -name \*.hpp -o -name \*.h \) -exec ${REINPLACE_CMD} -e 's,@progbits,%progbits,' {} +
+.endif
+
+.include <bsd.port.post.mk>
