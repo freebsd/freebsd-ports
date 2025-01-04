@@ -1,6 +1,6 @@
 PORTNAME=	littlejet
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.0.2
+DISTVERSION=	0.1.0
 CATEGORIES=	sysutils
 
 MAINTAINER=	DtxdF@disroot.org
@@ -10,8 +10,8 @@ WWW=		https://github.com/DtxdF/LittleJet/
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	jq>=0:textproc/jq \
-		cpdup>=0:sysutils/cpdup \
+RUN_DEPENDS=	cpdup>=0:sysutils/cpdup \
+		jq>=0:textproc/jq \
 		sansi>=0:textproc/sansi
 
 USE_GITHUB=	yes
