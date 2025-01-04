@@ -18,6 +18,8 @@ PY_DEPENDS=	${PYTHON_PKGNAMEPREFIX}evdev>=1.3:devel/py-evdev@${PY_FLAVOR} \
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sphinx>=1.3.1:textproc/py-sphinx@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}twine>=4.0:devel/py-twine@${PY_FLAVOR} \
 		${PY_DEPENDS}
+BUILD_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}pkginfo>0:sysutils/py-pkginfo@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PY_DEPENDS}
 
 USES=		python
