@@ -11,8 +11,7 @@ WWW=		https://github.com/dalance/procs
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN_armv7=	compilation fails: cannot find value `CRED_FLAG_CAPMODE` in crate `bsd_kvm_sys`, see https://github.com/dalance/bsd-kvm/issues/4
-#BROKEN_i386=	compilation fails due to the broken bsd-kvm-0.1.4 crate, see https://github.com/dalance/bsd-kvm/issues/1#issuecomment-1902529988
+BROKEN_FreeBSD_15=	compilation fails: cannot find value `CRED_FLAG_CAPMODE` in crate `bsd_kvm_sys`, see https://github.com/dalance/bsd-kvm/issues/4, https://github.com/dalance/bsd-kvm-sys/issues/1, https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=283410
 
 USES=		cargo llvm:lib
 
