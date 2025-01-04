@@ -12,6 +12,7 @@ WWW=		https://github.com/WorksApplications/sudachi.rs
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_armv7=	compilation fails, see https://github.com/WorksApplications/sudachi.rs/issues/271
 BROKEN_i386=	compilation fails, see https://github.com/WorksApplications/sudachi.rs/issues/271
 
 USES=		cargo
