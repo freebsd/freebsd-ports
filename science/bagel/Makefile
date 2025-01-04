@@ -12,6 +12,7 @@ WWW=		https://nubakery.org/
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN_armv7=	error: static_assert failed "size_t is assumed to be the same size as unsigned long long"
 BROKEN_i386=	error: static_assert failed "size_t is assumed to be the same size as unsigned long long"
 
 LIB_DEPENDS=	libboost_serialization.so:devel/boost-libs
