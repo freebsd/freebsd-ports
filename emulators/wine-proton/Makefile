@@ -115,11 +115,7 @@ PULSEAUDIO_CONFIGURE_OFF=	--without-pulse
 
 .include <bsd.port.pre.mk>
 
-.if ${LLVM_DEFAULT} == 11
-_LLVM_VERSION=	15
-.else
 _LLVM_VERSION=	${LLVM_DEFAULT}
-.endif
 
 .if ${ARCH} == amd64
 PLIST_SUB+=	WINE32="@comment " WINE64="" WINEARCH="x86_64"
