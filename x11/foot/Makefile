@@ -3,6 +3,9 @@ DISTVERSION=	1.20.1
 CATEGORIES=	x11 wayland
 MASTER_SITES=	https://codeberg.org/dnkl/${PORTNAME}/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/
 
+PATCH_SITES=	https://codeberg.org/dnkl/${PORTNAME}/commit/
+PATCHFILES+=	a2960aa457d8.patch:-p1 # https://codeberg.org/dnkl/foot/issues/1903
+
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Fast, lightweight and minimalistic Wayland terminal emulator
 WWW=		https://codeberg.org/dnkl/foot
@@ -45,7 +48,6 @@ PGO_SCRIPT_ARGS=	--colors-regular --colors-bright --colors-256 --colors-rgb \
 
 UTF8PROC_DESC=		Grapheme clustering using libutf8proc
 UTF8PROC_LIB_DEPENDS=	libutf8proc.so:textproc/utf8proc
-UTF8PROC_USES=		localbase # https://codeberg.org/dnkl/foot/issues/1903
 UTF8PROC_MESON_ENABLED=	grapheme-clustering
 
 XDG_DESC=		Open files with xdg-open
