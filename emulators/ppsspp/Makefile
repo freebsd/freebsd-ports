@@ -1,6 +1,7 @@
 PORTNAME=	ppsspp
 DISTVERSIONPREFIX=	v
 DISTVERSION?=	1.18.1
+PORTREVISION?=	1
 CATEGORIES=	emulators
 # XXX Get from Debian once #697821 lands
 MASTER_SITES=	https://bazaar.launchpad.net/~sergio-br2/${PORTNAME}/debian-sdl/download/5/${PORTNAME}.1-20140802045408-dd26dik367ztj5xg-8/:manpage
@@ -69,16 +70,16 @@ LIBRETRO_CMAKE_BOOL=	LIBRETRO
 LIBRETRO_PLIST_FILES=	lib/libretro/${PORTNAME}_libretro.so
 LIBRETRO_VARS=		CONFLICTS_INSTALL= DESKTOP_ENTRIES= PLIST= PORTDATA= PKGMESSAGE= SUB_FILES=
 QT5_LIB_DEPENDS=	libpng.so:graphics/png
-QT5_USES=		desktop-file-utils elfctl qt:5 shared-mime-info sdl
+QT5_USES=		desktop-file-utils qt:5 shared-mime-info sdl
 QT5_USE=		QT=qmake:build,buildtools:build,linguisttools:build,core,gui,multimedia,opengl,widgets
 QT5_USE+=		SDL=sdl2 # audio, joystick
 QT5_CMAKE_BOOL=		USING_QT_UI
-QT5_VARS=		EXENAME=PPSSPPQt ELF_FEATURES=+wxneeded:PPSSPPQt
+QT5_VARS=		EXENAME=PPSSPPQt
 SDL_CATEGORIES=		wayland
 SDL_LIB_DEPENDS=	libpng.so:graphics/png
-SDL_USES=		elfctl shared-mime-info sdl
+SDL_USES=		shared-mime-info sdl
 SDL_USE=		SDL=sdl2
-SDL_VARS=		EXENAME=PPSSPPSDL ELF_FEATURES=+wxneeded:PPSSPPSDL
+SDL_VARS=		EXENAME=PPSSPPSDL
 VULKAN_RUN_DEPENDS=	${LOCALBASE}/lib/libvulkan.so:graphics/vulkan-loader
 
 post-patch:
@@ -97,6 +98,9 @@ do-install-LIBRETRO-on:
 .endif
 
 do-install-QT5-on do-install-SDL-on:
+.if exists(/usr/bin/elfctl)
+	${ELFCTL} -e +wxneeded ${STAGEDIR}${PREFIX}/bin/*
+.endif
 	${MV} ${STAGEDIR}${PREFIX}/bin/${EXENAME} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 	${INSTALL_MAN} ${_DISTDIR}/${PORTNAME}.1 ${STAGEDIR}${PREFIX}/share/man/man1
 

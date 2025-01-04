@@ -1,6 +1,6 @@
 PORTNAME=	yuzu
 PORTVERSION=	s20240301
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	emulators wayland
 .if make(makesum)
 MASTER_SITES=	https://api.yuzu-emu.org/gamedb/?dummy=/:gamedb
@@ -66,7 +66,7 @@ GH_TUPLE=	yuzu-mirror:mbedtls:v2.16.9-115-g8c88150ca:mbedtls/externals/mbedtls \
 		lat9nq:tzdb_to_nx:221202-15-g9792969:tzdb_to_nx/externals/nx_tzdb/tzdb_to_nx \
 		yhirose:cpp-httplib:v0.14.1:cpp_httplib/externals/cpp-httplib
 
-USES=		cmake:testing elfctl localbase:ldflags pkgconfig sdl ssl
+USES=		cmake:testing localbase:ldflags pkgconfig sdl ssl
 USE_SDL=	sdl2
 WRKSRC=		${WRKDIR}/${PORTNAME}
 CMAKE_ON=	Boost_USE_STATIC_LIBS
@@ -79,7 +79,6 @@ CMAKE_OFF+=	${ARCH:Maarch64:C/.+/YUZU_USE_PRECOMPILED_HEADERS DYNARMIC_USE_PRECO
 CMAKE_OFF+=	${CMAKE_TESTING_ON}
 CMAKE_TESTING_ON=	YUZU_TESTS
 LDFLAGS+=	-Wl,--as-needed # Qt5Network
-ELF_FEATURES=	${PLIST_FILES:Mbin/*:S/^/+wxneeded:/}
 PLIST_FILES=	bin/${PORTNAME}-cmd \
 		bin/${PORTNAME}-room
 
@@ -159,5 +158,10 @@ post-patch:
 post-patch-VAAPI-off:
 	@${REINPLACE_CMD} -i .nova '/pkg_check.*libva/d' \
 		${WRKSRC}/CMakeLists.txt
+
+post-install:
+.if exists(/usr/bin/elfctl)
+	${ELFCTL} -e +wxneeded ${STAGEDIR}${PREFIX}/bin/*
+.endif
 
 .include <bsd.port.mk>
