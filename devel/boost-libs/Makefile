@@ -1,5 +1,5 @@
 PORTNAME=	boost-libs
-PORTREVISION?=	0
+PORTREVISION?=	1
 
 COMMENT=	Free portable C++ libraries (without Boost.Python)
 WWW=		https://www.boost.org/
@@ -64,6 +64,13 @@ PLIST_SUB+=	SFE=""
 MAKE_ARGS+=	boost.stacktrace.from_exception=off
 PLIST_SUB+=	SFE="@comment "
 
+.endif
+
+.if ${ARCH:Marmv?}
+pre-configure:
+	${REINPLACE_CMD} -e 's,@progbits,%progbits,' \
+		${WRKSRC}/boost/outcome/experimental/status-code/status_code.hpp \
+		${WRKSRC}/boost/outcome/outcome_gdb.h
 .endif
 
 do-install:
