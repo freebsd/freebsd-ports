@@ -1,6 +1,6 @@
 PORTNAME=	python-lsp-server
 PORTVERSION=	1.12.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -28,7 +28,6 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}autopep8>0:textproc/py-autopep8@${PY_FLAVOR}
 		${PYTHON_PKGNAMEPREFIX}pydocstyle>0:devel/py-pydocstyle@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyflakes>0:devel/py-pyflakes@${PY_FLAVOR} \
 		pylint${PYTHON_PKGNAMESUFFIX}>0:devel/pylint@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}python-lsp-black>0:textproc/py-python-lsp-black@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}python-lsp-jsonrpc>0:textproc/py-python-lsp-jsonrpc@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}rope>0:devel/py-rope@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}ruff>0:devel/py-ruff@${PY_FLAVOR} \
