@@ -1,6 +1,6 @@
 PORTNAME=	elldata
 DISTVERSION=	2021-03-21
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math
 MASTER_SITES=	https://pari.math.u-bordeaux.fr/pub/pari/packages/
 PKGNAMEPREFIX=	pari-

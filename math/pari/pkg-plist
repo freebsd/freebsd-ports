@@ -22,7 +22,7 @@ include/pari/parisys.h
 include/pari/paritune.h
 lib/libpari.so
 lib/libpari.so.%%PORTVERSION%%
-lib/libpari.so.8
+lib/libpari.so.9
 lib/pari/pari.cfg
 share/man/man1/gp-%%GP_VERSION%%.1.gz
 share/man/man1/gp.1.gz
