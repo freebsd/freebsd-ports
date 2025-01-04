@@ -653,6 +653,7 @@ include/d/std/internal/memory.d
 include/d/std/internal/scopebuffer.d
 include/d/std/internal/test/dummyrange.d
 include/d/std/internal/test/range.d
+include/d/std/internal/test/sumtype_example_overloads.d
 include/d/std/internal/test/uda.d
 include/d/std/internal/unicode_comp.d
 include/d/std/internal/unicode_decomp.d
@@ -722,22 +723,22 @@ include/d/std/zip.d
 include/d/std/zlib.d
 lib/ldc_rt.dso.o
 lib/libdruntime-ldc-debug-shared.so
-lib/libdruntime-ldc-debug-shared.so.109
-lib/libdruntime-ldc-debug-shared.so.109.1
+lib/libdruntime-ldc-debug-shared.so.110
+lib/libdruntime-ldc-debug-shared.so.110.0
 lib/libdruntime-ldc-debug.a
 lib/libdruntime-ldc-lto.a
 lib/libdruntime-ldc-shared.so
-lib/libdruntime-ldc-shared.so.109
-lib/libdruntime-ldc-shared.so.109.1
+lib/libdruntime-ldc-shared.so.110
+lib/libdruntime-ldc-shared.so.110.0
 lib/libdruntime-ldc.a
 lib/libphobos2-ldc-debug-shared.so
-lib/libphobos2-ldc-debug-shared.so.109
-lib/libphobos2-ldc-debug-shared.so.109.1
+lib/libphobos2-ldc-debug-shared.so.110
+lib/libphobos2-ldc-debug-shared.so.110.0
 lib/libphobos2-ldc-debug.a
 lib/libphobos2-ldc-lto.a
 lib/libphobos2-ldc-shared.so
-lib/libphobos2-ldc-shared.so.109
-lib/libphobos2-ldc-shared.so.109.1
+lib/libphobos2-ldc-shared.so.110
+lib/libphobos2-ldc-shared.so.110.0
 lib/libphobos2-ldc.a
 @dir include/d/etc/c/zlib/doc
 @dir include/d/etc/c/zlib/test
