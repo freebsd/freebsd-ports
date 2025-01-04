@@ -316,6 +316,7 @@ lib/petsc/bin/petsclogformat.py
 lib/petsc/bin/petscmpiexec
 lib/petsc/bin/petscnagfor
 lib/petsc/bin/petscnagupgrade.py
+lib/petsc/bin/petscversion
 lib/petsc/bin/saws/SAWs.py
 lib/petsc/bin/saws/getSAWs.bash
 lib/petsc/bin/saws/getStack.bash
