@@ -1,5 +1,5 @@
 PORTNAME=	Mail-BIMI
-PORTVERSION=	3.20241111
+PORTVERSION=	3.20241209
 CATEGORIES=	mail perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -29,7 +29,9 @@ RUN_DEPENDS=	p5-App-Cmd>0:devel/p5-App-Cmd \
 		p5-Sub-Install>0:devel/p5-Sub-Install \
 		p5-Term-ANSIColor>0:devel/p5-Term-ANSIColor \
 		p5-XML-LibXML>2.0202:textproc/p5-XML-LibXML
-TEST_DEPENDS=	p5-Test-Class>0:devel/p5-Test-Class \
+TEST_DEPENDS=	p5-Mail-SPF>0:mail/p5-Mail-SPF \
+		p5-Net-DNS-Resolver-Mock>=1.20200214:dns/p5-Net-DNS-Resolver-Mock \
+		p5-Test-Class>0:devel/p5-Test-Class \
 		p5-Test-Differences>0:devel/p5-Test-Differences \
 		p5-Test-Exception>0:devel/p5-Test-Exception \
 		p5-Test-Pod>0:devel/p5-Test-Pod \
