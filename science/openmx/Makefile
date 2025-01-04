@@ -14,6 +14,10 @@ WWW=		https://www.openmx-square.org/
 
 LICENSE=	GPLv2
 
+.if !exists(/usr/include/omp.h)
+BROKEN=		requires OpenMP support that is missing on this architecture
+.endif
+
 BROKEN_i386=	undefined reference to `__atomic_load', see bug#229605 and https://reviews.llvm.org/D42154
 
 LIB_DEPENDS=	libblas.so:math/blas \
