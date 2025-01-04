@@ -12,6 +12,10 @@ LICENSE_COMB=	dual
 LICENSE_FILE_APACHE20=	${WRKSRC}/../LICENSE-APACHE
 LICENSE_FILE_MIT=	${WRKSRC}/../LICENSE-MIT
 
+.if !exists(/usr/include/omp.h)
+BROKEN=		requires OpenMP support that is missing on this architecture
+.endif
+
 LIB_DEPENDS=	libsuperlu.so:math/superlu
 
 USES=		blaslapack:openblas cmake:testing fortran localbase
