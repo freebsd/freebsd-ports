@@ -1,6 +1,6 @@
 PORTNAME=	godns
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.2.0
+DISTVERSION=	3.2.1
 CATEGORIES=	dns
 MASTER_SITES=	https://raw.githubusercontent.com/TimothyYe/${PORTNAME}/${DISTVERSIONFULL}/:gomod
 DISTFILES=	go.mod:gomod
