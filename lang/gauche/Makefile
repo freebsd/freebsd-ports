@@ -41,7 +41,7 @@ GDBM_LIB_DEPENDS=	libgdbm.so:databases/gdbm
 GDBM_CONFIGURE_ON=	--with-dbm=gdbm,ndbm
 GDBM_CONFIGURE_OFF=	--with-dbm=ndbm
 
-TLS_LIB_DEPENDS=	libmbedtls.so:security/mbedtls2
+TLS_LIB_DEPENDS=	libmbedtls.so:security/mbedtls3
 TLS_RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
 TLS_CONFIGURE_ON=	--with-ca-bundle=${LOCALBASE}/share/certs/ca-root-nss.crt
 TLS_CONFIGURE_OFF=	--with-tls=no
@@ -81,12 +81,5 @@ post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/gauche-${ABI_VERSION}/${PORTVERSION}/${CONFIGURE_TARGET}/${i}
 	@${CHMOD} u-w ${STAGEDIR}${PREFIX}/lib/gauche-${ABI_VERSION}/${PORTVERSION}/${CONFIGURE_TARGET}/${i}
 .endfor
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MTLS}
-DEPRECATED=	Depends on expired security/mbedtls2
-EXPIRATION_DATE=2025-03-31
-.endif
 
 .include <bsd.port.mk>
