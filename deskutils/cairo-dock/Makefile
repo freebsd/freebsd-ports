@@ -1,5 +1,6 @@
 PORTNAME=	cairo-dock
 DISTVERSION=	3.5.1
+PORTREVISION=	1
 CATEGORIES=	deskutils
 
 MAINTAINER=	nxjoseph@protonmail.com
@@ -18,7 +19,8 @@ RUN_DEPENDS=	bash:shells/bash \
 		compiz:x11-wm/compiz \
 		sox:audio/sox
 
-USES=		cmake gettext gl gnome localbase:ldflags pkgconfig shebangfix
+USES=		cmake gettext gl gnome localbase:ldflags pathfix pkgconfig \
+		shebangfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	Cairo-Dock
 GH_PROJECT=	${PORTNAME}-core
