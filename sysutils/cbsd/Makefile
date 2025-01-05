@@ -1,8 +1,8 @@
 PORTNAME=	cbsd
-DISTVERSION=	14.2.1
+DISTVERSION=	14.2.2
 CATEGORIES=	sysutils
 
-MAINTAINER=	olevole@olevole.ru
+MAINTAINER=	fbsd-ports@convectix.com
 COMMENT=	Yet another FreeBSD Jail, XEN and Bhyve Management Utility
 WWW=		https://github.com/cbsd/cbsd
 

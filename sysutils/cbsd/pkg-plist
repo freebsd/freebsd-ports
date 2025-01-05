@@ -283,10 +283,10 @@ cbsd/etc/defaults/vm-linux-TinyCore-x86-15.conf
 cbsd/etc/defaults/vm-linux-TrueNAS-Scale-24.conf
 cbsd/etc/defaults/vm-linux-VoidLinux-2024-x86_64.conf
 cbsd/etc/defaults/vm-linux-cloud-Alma-9-x86_64.conf
+cbsd/etc/defaults/vm-linux-cloud-AltServer-x86-10.conf
 cbsd/etc/defaults/vm-linux-cloud-Arch-x86-2022.conf
 cbsd/etc/defaults/vm-linux-cloud-CentOS-7-x86_64.conf
 cbsd/etc/defaults/vm-linux-cloud-CentOS-stream-9-x86_64.conf
-cbsd/etc/defaults/vm-linux-cloud-Debian-x86-10.conf
 cbsd/etc/defaults/vm-linux-cloud-Debian-x86-11.conf
 cbsd/etc/defaults/vm-linux-cloud-Debian-x86-12.conf
 cbsd/etc/defaults/vm-linux-cloud-Debian-x86-9.conf
@@ -297,7 +297,6 @@ cbsd/etc/defaults/vm-linux-cloud-Fedora-40-x86_64.conf
 cbsd/etc/defaults/vm-linux-cloud-Fedora-41-x86_64.conf
 cbsd/etc/defaults/vm-linux-cloud-FreePBX-16-x86_64.conf
 cbsd/etc/defaults/vm-linux-cloud-HomeAssistantOS-2024.conf
-cbsd/etc/defaults/vm-linux-cloud-Kali-2022-amd64.conf
 cbsd/etc/defaults/vm-linux-cloud-Kali-2024-amd64.conf
 cbsd/etc/defaults/vm-linux-cloud-Oracle-7-x86_64.conf
 cbsd/etc/defaults/vm-linux-cloud-Oracle-8-x86_64.conf
@@ -328,7 +327,8 @@ cbsd/etc/defaults/vm-linux-ubuntuserver-amd64-20.conf
 cbsd/etc/defaults/vm-linux-ubuntuserver-amd64-22.conf
 cbsd/etc/defaults/vm-linux-ubuntuserver-amd64-24.conf
 cbsd/etc/defaults/vm-linux-vyos-1.5.conf
-cbsd/etc/defaults/vm-netbsd-cloud-netbsd-x86-10.conf
+cbsd/etc/defaults/vm-netbsd-cloud-netbsd-x86-10.0.conf
+cbsd/etc/defaults/vm-netbsd-cloud-netbsd-x86-10.1.conf
 cbsd/etc/defaults/vm-netbsd-cloud-netbsd-x86-9.conf
 cbsd/etc/defaults/vm-netbsd-x86-10.conf
 cbsd/etc/defaults/vm-netbsd-x86-9.conf
@@ -1160,6 +1160,7 @@ cbsd/tools/netinv
 cbsd/tools/nexttask
 cbsd/tools/nic_info
 cbsd/tools/nics-list
+cbsd/tools/nodeip-expose
 cbsd/tools/objls
 cbsd/tools/path2jail
 cbsd/tools/pkgbrowsecat
@@ -1211,6 +1212,10 @@ cbsd/upgrade/patch/efi.fd
 cbsd/upgrade/patch/efigop.fd
 cbsd/upgrade/patch/efirefd.fd
 cbsd/upgrade/patch/efirefn.fd
+cbsd/upgrade/patch/gvtd-15.0/patch-15x-sys-x86-pci-pci_early_quirks.c
+cbsd/upgrade/patch/gvtd-15.0/patch-15x-usr-sbin-bhyve-pci_passthru.c
+cbsd/upgrade/patch/gvtd-15.0/patch-15x-usr-sbin-bhyve-pci_passthru.h
+cbsd/upgrade/patch/gvtd-15.0/patch-x15-usr-sbin-bhyve-amd64-pci_gvt-d.c
 cbsd/upgrade/patch/iov-13.0/README.md
 cbsd/upgrade/patch/iov-13.0/patch-usr-sbin-bhyve-block_if.h
 cbsd/upgrade/patch/iov-13.0/patch-usr-sbin-bhyve-virtio.c
