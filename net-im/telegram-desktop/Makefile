@@ -1,5 +1,6 @@
 PORTNAME=	telegram-desktop
 DISTVERSION=	5.10.0
+PORTREVISION=	1
 CATEGORIES=	net-im
 MASTER_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/releases/download/v${DISTVERSION}/
 DISTNAME=	tdesktop-${DISTVERSION}-full
@@ -44,36 +45,21 @@ LIB_DEPENDS=	libabsl_base.so:devel/abseil \
 		libxxhash.so:devel/xxhash \
 		libvpx.so:multimedia/libvpx
 
-FLAVORS=	qt5 qt6
-FLAVOR?=	${FLAVORS:[1]}
-qt5_PKGNAMESUFFIX=
-qt6_PKGNAMESUFFIX=	-qt6
-qt5_CONFLICTS_INSTALL=	${PORTNAME}-qt6
-qt6_CONFLICTS_INSTALL=	${PORTNAME}
-
-USES=		cmake compiler:c++20-lang desktop-file-utils gl gnome jpeg localbase \
-		minizip openal pkgconfig python:build ssl
+USES=		cmake compiler:c++20-lang desktop-file-utils gl gnome jpeg kde:6 localbase \
+		minizip openal pkgconfig python:build qt:6 ssl
 
 USE_GITHUB=	nodefault
 GH_ACCOUNT=	telegramdesktop
 GH_PROJECT=	tdesktop
 
-.if ${FLAVOR} == qt5
-USES+=		kde:5 qt:5
-USE_QT=		buildtools:build core dbus declarative gui imageformats network qmake:build \
-		svg widgets
-USE_KDE=	coreaddons kimageformats
-.else
-USES+=		kde:6 qt:6
 USE_QT=		5compat base declarative imageformats lottie shadertools svg tools:build
 USE_KDE=	coreaddons kimageformats
-.endif
 
 USE_GL=		gl
 USE_GNOME=	glib20 glibmm26 introspection
 
 CMAKE_ARGS=	-DTDESKTOP_API_ID=${TELEGRAM_API_ID} -DTDESKTOP_API_HASH=${TELEGRAM_API_HASH} \
-		-DQT_VERSION_MAJOR=${FLAVOR:S/qt//}
+		-DQT_VERSION_MAJOR=6
 CMAKE_ON=	DESKTOP_APP_USE_PACKAGED DESKTOP_APP_DISABLE_CRASH_REPORTS \
 		DESKTOP_APP_DISABLE_JEMALLOC \
 		DESKTOP_APP_DISABLE_SCUDO
