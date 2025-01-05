@@ -1,3 +1,5 @@
-TIMESTAMP = 1734129756
-SHA256 (hyprwm-aquamarine-v0.5.1_GH0.tar.gz) = a52ce6a8bec37982c6029ad38c6046e89d7eca932af91cfa3ea8e18fda7e5003
-SIZE (hyprwm-aquamarine-v0.5.1_GH0.tar.gz) = 76404
+TIMESTAMP = 1736102453
+SHA256 (hyprwm-aquamarine-v0.6.0_GH0.tar.gz) = eb5e17ae9a9b8e08037b0e8325e4939dbe0cf886883829fd71bffb862d3fcc48
+SIZE (hyprwm-aquamarine-v0.6.0_GH0.tar.gz) = 78703
+SHA256 (6a4f096a9486.patch) = be5feada857e18cbe530e25b9dfe91549e6a3f38a7db034df5197c174c9ce743
+SIZE (6a4f096a9486.patch) = 1048
