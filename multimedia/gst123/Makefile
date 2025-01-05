@@ -10,6 +10,9 @@ WWW=		https://space.twc.de/~stefan/gst123.php
 
 LICENSE=	LGPL20
 
+DEPRECATED=	Outdated, unsupported upstream and depends on deprecated library GTK2
+EXPIRATION_DATE=2024-02-28
+
 GNU_CONFIGURE=	yes
 USES=		compiler:c++11-lang localbase gmake gnome gstreamer ncurses pkgconfig \
 		tar:bzip2
