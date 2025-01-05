@@ -14,6 +14,10 @@ LICENSE_NAME=	University of Minnesota METIS License
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 LICENSE_PERMS=	auto-accept
 
+BROKEN=		Unfetchable
+DEPRECATED=	Fails to fetch, unmaintained for years in tree
+EXPIRATION_DATE=2025-02-28
+
 USES=		cmake:insource,noninja gmake
 USE_LDCONFIG=	${PREFIX}/lib/parmetis
 
