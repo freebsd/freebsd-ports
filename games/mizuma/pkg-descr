@@ -4,4 +4,4 @@ Written in Bash with a GUI provided by Zentiy.
 A predefined library is used to manage the Windows applications.
 
 Note: In order to avoid conflicts with the KDE environment,
-you need to build this port with the MESA-DEMOS option instead.
+you need to build this port with the MESA_DEMOS option instead.
