@@ -14,7 +14,7 @@ WWW=		https://www.doxygen.org/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		bison cmake:noninja compiler:c++17-lang cpe dos2unix \
+USES=		bison cmake compiler:c++17-lang cpe dos2unix \
 		iconv python shebangfix
 
 ALL_TARGET=	all
@@ -39,8 +39,6 @@ DOCS_PLIST_FILES=	share/man/man1/doxygen.1.gz \
 			share/man/man1/doxyindexer.1.gz \
 			share/man/man1/doxysearch.1.gz \
 			share/man/man1/doxywizard.1.gz
-# Parallel jobs break when the DOCS option is on
-DOCS_VARS=		MAKE_JOBS_UNSAFE=yes
 
 PORTDOCS=		*
 
