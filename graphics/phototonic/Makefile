@@ -12,6 +12,9 @@ WWW=		https://github.com/oferkv/phototonic
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Abandonware, upstream repo archived Oct 4, 2023. Consider migrating to graphics/geeqie
+EXPIRATION_DATE=2025-02-28
+
 LIB_DEPENDS=	libexiv2.so:graphics/exiv2
 
 USES=		compiler:c++11-lang desktop-file-utils gettext gl qmake qt:5
