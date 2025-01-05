@@ -1,8 +1,10 @@
 PORTNAME=	aquamarine
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.5.1
-PORTREVISION=	1
+DISTVERSION=	0.6.0
 CATEGORIES=	x11-toolkits
+
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES+=	6a4f096a9486.patch:-p1 # https://github.com/hyprwm/aquamarine/pull/129
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Very light linux rendering backend library
