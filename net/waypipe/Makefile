@@ -1,33 +1,31 @@
 PORTNAME=	waypipe
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.9.2
-PORTREVISION=	2
+DISTVERSION=	0.10.4
 CATEGORIES=	net wayland
-
-PATCH_SITES=	${GL_SITE}/${GL_ACCOUNT}/${GL_PROJECT}/-/commit/
-PATCHFILES+=	eccbb5cbf1e3.patch:-p1 # https://gitlab.freedesktop.org/mstoeckl/waypipe/-/issues/110
-PATCHFILES+=	4216e58e3c0f.patch:-p1 # https://gitlab.freedesktop.org/mstoeckl/waypipe/-/issues/116
-PATCHFILES+=	853cfbb482be.patch:-p1 # https://gitlab.freedesktop.org/mstoeckl/waypipe/-/issues/115
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Network transparency with Wayland
 WWW=		https://gitlab.freedesktop.org/mstoeckl/waypipe
 
-LICENSE=	MIT
-LICENSE_FILE=	${WRKSRC}/COPYING
+LICENSE=	GPLv3+
+LICENSE_FILE=	${WRKSRC}/LICENSE.GPLv3
 
-LIB_DEPENDS=	libwayland-client.so:graphics/wayland
-
-USES=		compiler:c11 localbase:ldflags meson pkgconfig
+USES=		cargo meson pkgconfig
 USE_GITLAB=	yes
 GL_SITE=	https://gitlab.freedesktop.org
 GL_ACCOUNT=	mstoeckl
+MAKE_ENV=	${CARGO_ENV}
+CARGO_BUILD=	no
+CARGO_INSTALL=	no
+CARGO_TEST=	no
 PLIST_FILES=	bin/${PORTNAME}
 
-OPTIONS_DEFINE=	FFMPEG LZ4 MANPAGES OPENGL VAAPI ZSTD
-OPTIONS_DEFAULT=FFMPEG LZ4 MANPAGES OPENGL VAAPI ZSTD
+OPTIONS_DEFINE=	FFMPEG LZ4 MANPAGES VULKAN ZSTD
+OPTIONS_DEFAULT=FFMPEG LZ4 MANPAGES VULKAN ZSTD
 
-FFMPEG_LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg
+FFMPEG_BUILD_DEPENDS=	vulkan-headers>0:graphics/vulkan-headers \
+			glslc:graphics/shaderc \
+			ffmpeg>0:multimedia/ffmpeg
 FFMPEG_MESON_ENABLED=	with_video
 
 LZ4_LIB_DEPENDS=	liblz4.so:archivers/liblz4
@@ -37,14 +35,10 @@ MANPAGES_BUILD_DEPENDS=	scdoc:textproc/scdoc
 MANPAGES_MESON_ENABLED=	man-pages
 MANPAGES_PLIST_FILES=	share/man/man1/${PORTNAME}.1.gz
 
-OPENGL_USES=		gl
-OPENGL_USE=		GL=gbm
-OPENGL_LIB_DEPENDS=	libdrm.so:graphics/libdrm
-OPENGL_MESON_ENABLED=	with_dmabuf
-
-VAAPI_LIB_DEPENDS=	libva.so:multimedia/libva
-VAAPI_MESON_ENABLED=	with_vaapi
-VAAPI_IMPLIES=		FFMPEG
+VULKAN_BUILD_DEPENDS=	bindgen:devel/rust-bindgen-cli \
+			vulkan-loader>0:graphics/vulkan-loader \
+			${GL_DEFAULT}>0:graphics/${GL_DEFAULT}
+VULKAN_MESON_ENABLED=	with_dmabuf with_gbm
 
 ZSTD_LIB_DEPENDS=	libzstd.so:archivers/zstd
 ZSTD_MESON_ENABLED=	with_zstd
@@ -54,5 +48,10 @@ post-patch:
 	@${REINPLACE_CMD} -i .nogit -e 's/git.found()/false/' \
 		-e '/project_version/s/@0@/${DISTVERSIONFULL}/' \
 		${WRKSRC}/meson.build
+# Make each cargo subcommand very verbose
+	@${REINPLACE_CMD} -e "/cargo test/,/^[[:space:]]*)/s/-v/&', '&/" \
+		${WRKSRC}/meson.build
+	@${REINPLACE_CMD} -e '/cargo/s/-v/& &/' \
+		${WRKSRC}/compile_wrapper.sh
 
 .include <bsd.port.mk>
