@@ -1,6 +1,5 @@
 PORTNAME=	libvmod-fileserver
-PORTVERSION=	0.0.5
-PORTREVISION=	22
+PORTVERSION=	0.0.7
 CATEGORIES=	www
 PKGNAMEPREFIX=	varnish-
 
@@ -25,74 +24,91 @@ USE_LDCONFIG=	yes
 PLIST_FILES=	lib/varnish/vmods/libvmod_fileserver.so
 
 CARGO_ENV+=	PYTHONDONTWRITEBYTECODE=1
-CARGO_CRATES=	android_system_properties-0.1.5 \
-		autocfg-1.1.0 \
-		bindgen-0.64.0 \
-		bitflags-1.3.2 \
-		bumpalo-3.12.0 \
-		cc-1.0.79 \
+CARGO_CRATES=	aho-corasick-1.1.3 \
+		android-tzdata-0.1.1 \
+		android_system_properties-0.1.5 \
+		autocfg-1.4.0 \
+		bindgen-0.70.1 \
+		bindgen_helpers-0.2.0 \
+		bitflags-2.6.0 \
+		block-buffer-0.10.4 \
+		bumpalo-3.16.0 \
+		cc-1.1.31 \
 		cexpr-0.6.0 \
 		cfg-if-1.0.0 \
-		chrono-0.4.24 \
-		clang-sys-1.6.0 \
-		codespan-reporting-0.11.1 \
-		core-foundation-sys-0.8.3 \
-		cxx-1.0.93 \
-		cxx-build-1.0.93 \
-		cxxbridge-flags-1.0.93 \
-		cxxbridge-macro-1.0.93 \
-		either-1.8.1 \
+		chrono-0.4.38 \
+		clang-sys-1.8.1 \
+		convert_case-0.6.0 \
+		core-foundation-sys-0.8.7 \
+		cpufeatures-0.2.14 \
+		crypto-common-0.1.6 \
+		darling-0.20.10 \
+		darling_core-0.20.10 \
+		darling_macro-0.20.10 \
+		digest-0.10.7 \
+		either-1.13.0 \
+		fnv-1.0.7 \
+		generic-array-0.14.7 \
 		glob-0.3.1 \
-		iana-time-zone-0.1.53 \
-		iana-time-zone-haiku-0.1.1 \
-		js-sys-0.3.61 \
-		lazy_static-1.4.0 \
-		lazycell-1.3.0 \
-		libc-0.2.140 \
-		libloading-0.7.4 \
-		link-cplusplus-1.0.8 \
-		log-0.4.17 \
-		memchr-2.5.0 \
+		iana-time-zone-0.1.61 \
+		iana-time-zone-haiku-0.1.2 \
+		ident_case-1.0.1 \
+		itertools-0.13.0 \
+		itoa-1.0.11 \
+		js-sys-0.3.72 \
+		libc-0.2.161 \
+		libloading-0.8.5 \
+		log-0.4.22 \
+		memchr-2.7.4 \
 		minimal-lexical-0.2.1 \
 		nom-7.1.3 \
-		num-integer-0.1.45 \
-		num-traits-0.2.15 \
-		once_cell-1.17.1 \
-		peeking_take_while-0.1.2 \
-		pkg-config-0.3.26 \
-		proc-macro2-1.0.52 \
-		quote-1.0.26 \
-		regex-1.7.1 \
-		regex-syntax-0.6.28 \
+		num-traits-0.2.19 \
+		once_cell-1.20.2 \
+		pkg-config-0.3.31 \
+		prettyplease-0.2.25 \
+		proc-macro2-1.0.89 \
+		quote-1.0.37 \
+		regex-1.11.1 \
+		regex-automata-0.4.8 \
+		regex-syntax-0.8.5 \
 		rustc-hash-1.1.0 \
-		scratch-1.0.5 \
-		serde-1.0.157 \
-		serde_derive-1.0.157 \
-		shlex-1.1.0 \
-		syn-1.0.109 \
-		syn-2.0.2 \
-		termcolor-1.2.0 \
-		time-0.1.45 \
-		unicode-ident-1.0.8 \
-		unicode-width-0.1.10 \
-		varnish-0.0.17 \
-		varnish-sys-0.0.17 \
-		wasi-0.10.0+wasi-snapshot-preview1 \
-		wasm-bindgen-0.2.84 \
-		wasm-bindgen-backend-0.2.84 \
-		wasm-bindgen-macro-0.2.84 \
-		wasm-bindgen-macro-support-0.2.84 \
-		wasm-bindgen-shared-0.2.84 \
-		which-4.4.0 \
-		winapi-0.3.9 \
-		winapi-i686-pc-windows-gnu-0.4.0 \
-		winapi-util-0.1.5 \
-		winapi-x86_64-pc-windows-gnu-0.4.0
+		ryu-1.0.18 \
+		serde-1.0.213 \
+		serde_derive-1.0.213 \
+		serde_json-1.0.132 \
+		sha2-0.10.8 \
+		shlex-1.3.0 \
+		strsim-0.11.1 \
+		syn-2.0.87 \
+		thiserror-2.0.3 \
+		thiserror-impl-2.0.3 \
+		typenum-1.17.0 \
+		unicode-ident-1.0.13 \
+		unicode-segmentation-1.12.0 \
+		varnish-0.1.0 \
+		varnish-macros-0.1.0 \
+		varnish-sys-0.1.0 \
+		version_check-0.9.5 \
+		wasm-bindgen-0.2.95 \
+		wasm-bindgen-backend-0.2.95 \
+		wasm-bindgen-macro-0.2.95 \
+		wasm-bindgen-macro-support-0.2.95 \
+		wasm-bindgen-shared-0.2.95 \
+		windows-core-0.52.0 \
+		windows-targets-0.52.6 \
+		windows_aarch64_gnullvm-0.52.6 \
+		windows_aarch64_msvc-0.52.6 \
+		windows_i686_gnu-0.52.6 \
+		windows_i686_gnullvm-0.52.6 \
+		windows_i686_msvc-0.52.6 \
+		windows_x86_64_gnu-0.52.6 \
+		windows_x86_64_gnullvm-0.52.6 \
+		windows_x86_64_msvc-0.52.6
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	gquintard
-GH_PROJECT=	vmod_fileserver
-GH_TAGNAME=	20ef23b
+GH_PROJECT=	vmod-fileserver
+GH_TAGNAME=	c6593f7
 
 BINARY_ALIAS=	python3=${PYTHON_CMD}
 
