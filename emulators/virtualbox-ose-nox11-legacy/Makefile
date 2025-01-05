@@ -1,4 +1,4 @@
-PORTREVISION=	19
+PORTREVISION=	24
 PKGNAMESUFFIX=	-nox11-legacy
 
 MASTERDIR=	${.CURDIR}/../virtualbox-ose-legacy
