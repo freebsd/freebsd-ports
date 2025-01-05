@@ -1,5 +1,5 @@
 PORTNAME=	pcsc-lite
-PORTVERSION=	2.3.0
+PORTVERSION=	2.3.1
 PORTEPOCH=	2
 CATEGORIES=	devel security
 MASTER_SITES=	https://pcsclite.apdu.fr/files/
@@ -48,6 +48,7 @@ POLKIT_MESON_TRUE=	polkit
 post-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/lib/pcsc/drivers
 	${MKDIR} ${STAGEDIR}${PREFIX}/lib/pcsc/services
+	${MV} ${STAGEDIR}${PREFIX}/etc/default/pcscd ${STAGEDIR}${PREFIX}/etc/default/pcscd.sample
 
 post-install-EXAMPLES-on:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}

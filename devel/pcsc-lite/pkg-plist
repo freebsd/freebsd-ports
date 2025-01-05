@@ -1,10 +1,12 @@
 bin/pcsc-spy
+@sample etc/default/pcscd.sample
 include/PCSC/debuglog.h
 include/PCSC/ifdhandler.h
 include/PCSC/pcsclite.h
 include/PCSC/reader.h
 include/PCSC/winscard.h
 include/PCSC/wintypes.h
+lib/libpcsclite.a
 lib/libpcsclite.so
 lib/libpcsclite.so.1
 lib/libpcsclite_real.so
