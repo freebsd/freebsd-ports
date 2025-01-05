@@ -1,7 +1,6 @@
 PORTNAME=	sqlx
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.8.2
-PORTREVISION=	3
+DISTVERSION=	0.8.3
 CATEGORIES=	databases
 PKGNAMESUFFIX=	-cli
 
@@ -46,7 +45,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		async-io-2.3.2 \
 		async-lock-2.8.0 \
 		async-lock-3.3.0 \
-		async-std-1.12.0 \
+		async-std-1.13.0 \
 		async-task-4.7.0 \
 		async-trait-0.1.77 \
 		atoi-2.0.0 \
@@ -131,13 +130,13 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		digest-0.10.7 \
 		dirs-next-2.0.0 \
 		dirs-sys-next-0.1.2 \
+		displaydoc-0.2.5 \
 		doc-comment-0.3.3 \
 		dotenvy-0.15.7 \
 		downcast-0.11.0 \
 		dunce-1.0.4 \
 		either-1.10.0 \
 		encode_unicode-0.3.6 \
-		encoding_rs-0.8.33 \
 		endian-type-0.1.2 \
 		env_filter-0.1.0 \
 		env_logger-0.11.3 \
@@ -158,6 +157,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		float-cmp-0.9.0 \
 		flume-0.11.0 \
 		fnv-1.0.7 \
+		foldhash-0.1.3 \
 		foreign-types-0.3.2 \
 		foreign-types-shared-0.1.1 \
 		form_urlencoded-1.2.1 \
@@ -180,11 +180,12 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		getrandom-0.2.12 \
 		gimli-0.28.1 \
 		glob-0.3.1 \
-		gloo-timers-0.2.6 \
+		gloo-timers-0.3.0 \
 		half-2.4.0 \
 		hashbrown-0.12.3 \
 		hashbrown-0.14.5 \
-		hashlink-0.9.0 \
+		hashbrown-0.15.2 \
+		hashlink-0.10.0 \
 		heck-0.4.1 \
 		heck-0.5.0 \
 		hermit-abi-0.3.9 \
@@ -201,9 +202,20 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		hyper-0.14.28 \
 		iana-time-zone-0.1.60 \
 		iana-time-zone-haiku-0.1.2 \
+		icu_collections-1.5.0 \
+		icu_locid-1.5.0 \
+		icu_locid_transform-1.5.0 \
+		icu_locid_transform_data-1.5.0 \
+		icu_normalizer-1.5.0 \
+		icu_normalizer_data-1.5.0 \
+		icu_properties-1.5.1 \
+		icu_properties_data-1.5.0 \
+		icu_provider-1.5.0 \
+		icu_provider_macros-1.5.0 \
 		ident_case-1.0.1 \
 		idna-0.4.0 \
-		idna-0.5.0 \
+		idna-1.0.3 \
+		idna_adapter-1.2.0 \
 		if_chain-1.0.2 \
 		indexmap-1.9.3 \
 		indexmap-2.2.5 \
@@ -227,6 +239,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		libsqlite3-sys-0.30.1 \
 		linux-raw-sys-0.3.8 \
 		linux-raw-sys-0.4.13 \
+		litemap-0.7.3 \
 		lock_api-0.4.11 \
 		log-0.4.21 \
 		lru-0.12.3 \
@@ -292,7 +305,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		proc-macro-crate-3.1.0 \
 		proc-macro-error-1.0.4 \
 		proc-macro-error-attr-1.0.4 \
-		proc-macro2-1.0.79 \
+		proc-macro2-1.0.89 \
 		promptly-0.3.1 \
 		ptr_meta-0.1.4 \
 		ptr_meta_derive-0.1.4 \
@@ -322,6 +335,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		rustix-0.37.27 \
 		rustix-0.38.31 \
 		rustls-0.23.11 \
+		rustls-native-certs-0.8.0 \
 		rustls-pemfile-2.1.2 \
 		rustls-pki-types-1.7.0 \
 		rustls-webpki-0.102.5 \
@@ -356,8 +370,8 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		spin-0.5.2 \
 		spin-0.9.8 \
 		spki-0.7.3 \
-		sqlformat-0.2.3 \
 		stability-0.2.1 \
+		stable_deref_trait-1.2.0 \
 		static_assertions-1.1.0 \
 		str-buf-1.0.6 \
 		stringprep-0.1.4 \
@@ -367,18 +381,22 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		strum_macros-0.26.4 \
 		subtle-2.5.0 \
 		syn-1.0.109 \
-		syn-2.0.52 \
+		syn-2.0.87 \
 		syn_derive-0.1.8 \
 		sync_wrapper-0.1.2 \
+		synstructure-0.13.1 \
 		tap-1.0.1 \
 		tempfile-3.10.1 \
 		termcolor-1.4.1 \
 		termtree-0.4.1 \
 		thiserror-1.0.58 \
+		thiserror-2.0.0 \
 		thiserror-impl-1.0.58 \
+		thiserror-impl-2.0.0 \
 		time-0.3.36 \
 		time-core-0.1.2 \
 		time-macros-0.2.18 \
+		tinystr-0.7.6 \
 		tinytemplate-1.2.1 \
 		tinyvec-1.6.0 \
 		tinyvec_macros-0.1.1 \
@@ -403,9 +421,10 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		unicode-segmentation-1.11.0 \
 		unicode-truncate-1.1.0 \
 		unicode-width-0.1.13 \
-		unicode_categories-0.1.1 \
 		untrusted-0.9.0 \
-		url-2.5.0 \
+		url-2.5.3 \
+		utf16_iter-1.0.5 \
+		utf8_iter-1.0.4 \
 		utf8parse-0.2.1 \
 		uuid-1.7.0 \
 		validator-0.16.1 \
@@ -454,11 +473,19 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		windows_x86_64_msvc-0.48.5 \
 		windows_x86_64_msvc-0.52.4 \
 		winnow-0.5.40 \
+		write16-1.0.0 \
+		writeable-0.5.5 \
 		wyz-0.5.1 \
+		yoke-0.7.4 \
+		yoke-derive-0.7.4 \
 		zerocopy-0.7.32 \
 		zerocopy-derive-0.7.32 \
+		zerofrom-0.1.4 \
+		zerofrom-derive-0.1.4 \
 		zeroize-1.7.0 \
-		zeroize_derive-1.4.2
+		zeroize_derive-1.4.2 \
+		zerovec-0.10.4 \
+		zerovec-derive-0.10.3
 CARGO_BUILD_ARGS=	--package=sqlx-cli
 CARGO_INSTALL_PATH=	sqlx-cli
 
