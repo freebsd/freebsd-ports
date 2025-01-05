@@ -52,7 +52,7 @@ $portdir = '.';
 # version variables
 my $major = 2;
 my $minor = 22;
-my $micro = 4;
+my $micro = 5;
 
 # default setting - for FreeBSD
 my $portsdir = '/usr/ports';
@@ -2368,10 +2368,10 @@ xargs xmkmf
 	# whole file: USE_KDE check
 	#
 	if ($whole =~ /^USE_KDE[?:]?=\s*(.*)$/m) {
-		if ($makevar{USES} !~ /\bkde:[45]/) {
+		if ($makevar{USES} !~ /\bkde:[56]/) {
 			my $lineno = &linenumber($`);
 			&perror("WARN", $file, $lineno, "USE_KDE is defined without ".
-				"defining USES=kde:[45]");
+				"defining USES=kde:[56]");
 		}
 	}
 
