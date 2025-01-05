@@ -10,6 +10,9 @@ WWW=		https://asciimoo.github.io/searx/
 
 LICENSE=	AGPLv3
 
+DEPRECATED=	Upstream repo archived Sep 7 2023
+EXPIRATION_DATE=2025-01-31
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}certifi>0:security/py-certifi@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}python-dateutil>0:devel/py-python-dateutil@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}flask>0:www/py-flask@${PY_FLAVOR} \
