@@ -30,7 +30,6 @@ bin/qmake6
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qabstractitemmodel_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qabstractproxymodel_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qanimationgroup_p.h
-%%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qbytearray_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qbytedata_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qcalendarbackend_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qcalendarmath_p.h
@@ -40,7 +39,6 @@ bin/qmake6
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qconfig_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qcore_unix_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qcoreapplication_p.h
-%%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qcorecmdlineargs_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qcoreevent_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qdatastream_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qdataurl_p.h
@@ -48,6 +46,7 @@ bin/qmake6
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qdatetimeparser_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qdebug_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qdir_p.h
+%%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qdirentryinfo_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qdoublescanprint_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qduplicatetracker_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qelfparser_p.h
@@ -116,6 +115,7 @@ bin/qmake6
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qmimeprovider_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qmimetype_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qmimetypeparser_p.h
+%%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qminimalflatset_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qmutex_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qnativeinterface_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qnoncontiguousbytedevice_p.h
@@ -146,6 +146,7 @@ bin/qmake6
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qsimd_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qsimd_x86_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qsingleshottimer_p.h
+%%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qsmallbytearray_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qspan_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qstorageinfo_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qstringalgorithms_p.h
@@ -161,6 +162,7 @@ bin/qmake6
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qthreadpool_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qtimer_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qtimerinfo_unix_p.h
+%%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qtimezonelocale_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qtimezoneprivate_data_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qtimezoneprivate_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qtipccommon_p.h
@@ -171,6 +173,7 @@ bin/qmake6
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qunicodetables_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qunicodetools_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/quniquehandle_p.h
+%%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/quniquehandle_types_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qurl_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qvariant_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qvariantanimation_p.h
@@ -184,6 +187,7 @@ bin/qmake6
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qzipwriter_p.h
 %%QT_INCDIR%%/QtCore/QAbstractAnimation
 %%QT_INCDIR%%/QtCore/QAbstractEventDispatcher
+%%QT_INCDIR%%/QtCore/QAbstractEventDispatcherV2
 %%QT_INCDIR%%/QtCore/QAbstractItemModel
 %%QT_INCDIR%%/QtCore/QAbstractListModel
 %%QT_INCDIR%%/QtCore/QAbstractNativeEventFilter
@@ -192,6 +196,7 @@ bin/qmake6
 %%QT_INCDIR%%/QtCore/QAnimationDriver
 %%QT_INCDIR%%/QtCore/QAnimationGroup
 %%QT_INCDIR%%/QtCore/QAnyStringView
+%%QT_INCDIR%%/QtCore/QApplicationStatic
 %%QT_INCDIR%%/QtCore/QArgument
 %%QT_INCDIR%%/QtCore/QArrayData
 %%QT_INCDIR%%/QtCore/QArrayDataOps
@@ -236,6 +241,7 @@ bin/qmake6
 %%QT_INCDIR%%/QtCore/QCborValueRef
 %%QT_INCDIR%%/QtCore/QChar
 %%QT_INCDIR%%/QtCore/QChildEvent
+%%QT_INCDIR%%/QtCore/QChronoTimer
 %%QT_INCDIR%%/QtCore/QCollator
 %%QT_INCDIR%%/QtCore/QCollatorSortKey
 %%QT_INCDIR%%/QtCore/QCommandLineOption
@@ -257,6 +263,7 @@ bin/qmake6
 %%QT_INCDIR%%/QtCore/QDebugStateSaver
 %%QT_INCDIR%%/QtCore/QDir
 %%QT_INCDIR%%/QtCore/QDirIterator
+%%QT_INCDIR%%/QtCore/QDirListing
 %%QT_INCDIR%%/QtCore/QDynamicPropertyChangeEvent
 %%QT_INCDIR%%/QtCore/QEasingCurve
 %%QT_INCDIR%%/QtCore/QElapsedTimer
@@ -291,6 +298,7 @@ bin/qmake6
 %%QT_INCDIR%%/QtCore/QHash
 %%QT_INCDIR%%/QtCore/QHashDummyValue
 %%QT_INCDIR%%/QtCore/QHashFunctions
+%%QT_INCDIR%%/QtCore/QHashHeterogeneousSearch
 %%QT_INCDIR%%/QtCore/QHashIterator
 %%QT_INCDIR%%/QtCore/QHashSeed
 %%QT_INCDIR%%/QtCore/QIODevice
@@ -600,6 +608,7 @@ bin/qmake6
 %%QT_INCDIR%%/QtCore/q20vector.h
 %%QT_INCDIR%%/QtCore/q23functional.h
 %%QT_INCDIR%%/QtCore/q23utility.h
+%%QT_INCDIR%%/QtCore/q26numeric.h
 %%QT_INCDIR%%/QtCore/qabstractanimation.h
 %%QT_INCDIR%%/QtCore/qabstracteventdispatcher.h
 %%QT_INCDIR%%/QtCore/qabstractitemmodel.h
@@ -637,6 +646,7 @@ bin/qmake6
 %%QT_INCDIR%%/QtCore/qcborstreamwriter.h
 %%QT_INCDIR%%/QtCore/qcborvalue.h
 %%QT_INCDIR%%/QtCore/qchar.h
+%%QT_INCDIR%%/QtCore/qchronotimer.h
 %%QT_INCDIR%%/QtCore/qcollator.h
 %%QT_INCDIR%%/QtCore/qcommandlineoption.h
 %%QT_INCDIR%%/QtCore/qcommandlineparser.h
@@ -662,6 +672,7 @@ bin/qmake6
 %%QT_INCDIR%%/QtCore/qdebug.h
 %%QT_INCDIR%%/QtCore/qdir.h
 %%QT_INCDIR%%/QtCore/qdiriterator.h
+%%QT_INCDIR%%/QtCore/qdirlisting.h
 %%QT_INCDIR%%/QtCore/qeasingcurve.h
 %%QT_INCDIR%%/QtCore/qelapsedtimer.h
 %%QT_INCDIR%%/QtCore/qendian.h
@@ -802,6 +813,7 @@ bin/qmake6
 %%QT_INCDIR%%/QtCore/qtcore-config.h
 %%QT_INCDIR%%/QtCore/qtcoreexports.h
 %%QT_INCDIR%%/QtCore/qtcoreversion.h
+%%QT_INCDIR%%/QtCore/qtdeprecationdefinitions.h
 %%QT_INCDIR%%/QtCore/qtdeprecationmarkers.h
 %%QT_INCDIR%%/QtCore/qtemporarydir.h
 %%QT_INCDIR%%/QtCore/qtemporaryfile.h
@@ -924,6 +936,20 @@ bin/qmake6
 %%QT_INCDIR%%/QtDeviceDiscoverySupport/QtDeviceDiscoverySupportVersion
 %%QT_INCDIR%%/QtDeviceDiscoverySupport/qtdevicediscoverysupportversion.h
 %%QT_INCDIR%%/QtExampleIcons/QtExampleIconsDepends
+%%QT_INCDIR%%/QtExamplesAssetDownloader/QtExamplesAssetDownloader
+%%QT_INCDIR%%/QtExamplesAssetDownloader/QtExamplesAssetDownloaderDepends
+%%QT_INCDIR%%/QtExamplesAssetDownloader/QtExamplesAssetDownloaderVersion
+%%QT_INCDIR%%/QtExamplesAssetDownloader/assetdownloader.h
+%%QT_INCDIR%%/QtExamplesAssetDownloader/barrier.h
+%%QT_INCDIR%%/QtExamplesAssetDownloader/concurrentcall.h
+%%QT_INCDIR%%/QtExamplesAssetDownloader/conditional.h
+%%QT_INCDIR%%/QtExamplesAssetDownloader/networkquery.h
+%%QT_INCDIR%%/QtExamplesAssetDownloader/qprocesstask.h
+%%QT_INCDIR%%/QtExamplesAssetDownloader/qtexamplesassetdownloaderversion.h
+%%QT_INCDIR%%/QtExamplesAssetDownloader/tasking_global.h
+%%QT_INCDIR%%/QtExamplesAssetDownloader/tasktree.h
+%%QT_INCDIR%%/QtExamplesAssetDownloader/tasktreerunner.h
+%%QT_INCDIR%%/QtExamplesAssetDownloader/tcpsocket.h
 %%QT_INCDIR%%/QtFbSupport/%%FULLVER%%/QtFbSupport/private/qfbbackingstore_p.h
 %%QT_INCDIR%%/QtFbSupport/%%FULLVER%%/QtFbSupport/private/qfbcursor_p.h
 %%QT_INCDIR%%/QtFbSupport/%%FULLVER%%/QtFbSupport/private/qfbscreen_p.h
@@ -951,10 +977,13 @@ bin/qmake6
 %%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qblendfunctions_p.h
 %%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qblittable_p.h
 %%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qbmphandler_p.h
+%%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qcmyk_p.h
 %%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qcolor_p.h
+%%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qcolorclut_p.h
 %%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qcolormatrix_p.h
 %%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qcolorspace_p.h
 %%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qcolortransferfunction_p.h
+%%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qcolortransfergeneric_p.h
 %%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qcolortransfertable_p.h
 %%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qcolortransform_p.h
 %%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qcolortrc_p.h
@@ -1173,7 +1202,9 @@ bin/qmake6
 %%QT_INCDIR%%/QtGui/QAbstractUndoItem
 %%QT_INCDIR%%/QtGui/QAccessible
 %%QT_INCDIR%%/QtGui/QAccessibleActionInterface
+%%QT_INCDIR%%/QtGui/QAccessibleAnnouncementEvent
 %%QT_INCDIR%%/QtGui/QAccessibleApplication
+%%QT_INCDIR%%/QtGui/QAccessibleAttributesInterface
 %%QT_INCDIR%%/QtGui/QAccessibleBridge
 %%QT_INCDIR%%/QtGui/QAccessibleBridgePlugin
 %%QT_INCDIR%%/QtGui/QAccessibleEditableTextInterface
@@ -1295,6 +1326,7 @@ bin/qmake6
 %%QT_INCDIR%%/QtGui/QPainterPath
 %%QT_INCDIR%%/QtGui/QPainterPathStroker
 %%QT_INCDIR%%/QtGui/QPalette
+%%QT_INCDIR%%/QtGui/QPdfOutputIntent
 %%QT_INCDIR%%/QtGui/QPdfWriter
 %%QT_INCDIR%%/QtGui/QPen
 %%QT_INCDIR%%/QtGui/QPicture
@@ -1316,6 +1348,7 @@ bin/qmake6
 %%QT_INCDIR%%/QtGui/QResizeEvent
 %%QT_INCDIR%%/QtGui/QRgb
 %%QT_INCDIR%%/QtGui/QRgba64
+%%QT_INCDIR%%/QtGui/QRgbaFloat
 %%QT_INCDIR%%/QtGui/QRgbaFloat16
 %%QT_INCDIR%%/QtGui/QRgbaFloat32
 %%QT_INCDIR%%/QtGui/QScreen
@@ -1398,6 +1431,7 @@ bin/qmake6
 %%X11%%%%QT_INCDIR%%/QtGui/bus_interface.h
 %%X11%%%%QT_INCDIR%%/QtGui/cache_adaptor.h
 %%X11%%%%QT_INCDIR%%/QtGui/deviceeventcontroller_adaptor.h
+%%QT_INCDIR%%/QtGui/properties_interface.h
 %%QT_INCDIR%%/QtGui/qabstractfileiconprovider.h
 %%QT_INCDIR%%/QtGui/qabstracttextdocumentlayout.h
 %%QT_INCDIR%%/QtGui/qaccessible.h
@@ -1460,6 +1494,7 @@ bin/qmake6
 %%QT_INCDIR%%/QtGui/qpainter.h
 %%QT_INCDIR%%/QtGui/qpainterpath.h
 %%QT_INCDIR%%/QtGui/qpalette.h
+%%QT_INCDIR%%/QtGui/qpdfoutputintent.h
 %%QT_INCDIR%%/QtGui/qpdfwriter.h
 %%QT_INCDIR%%/QtGui/qpen.h
 %%QT_INCDIR%%/QtGui/qpicture.h
@@ -1562,6 +1597,7 @@ bin/qmake6
 %%QT_INCDIR%%/QtNetwork/%%FULLVER%%/QtNetwork/private/qhttp2connection_p.h
 %%QT_INCDIR%%/QtNetwork/%%FULLVER%%/QtNetwork/private/qhttp2protocolhandler_p.h
 %%QT_INCDIR%%/QtNetwork/%%FULLVER%%/QtNetwork/private/qhttpheaderparser_p.h
+%%QT_INCDIR%%/QtNetwork/%%FULLVER%%/QtNetwork/private/qhttpheadershelper_p.h
 %%QT_INCDIR%%/QtNetwork/%%FULLVER%%/QtNetwork/private/qhttpmultipart_p.h
 %%QT_INCDIR%%/QtNetwork/%%FULLVER%%/QtNetwork/private/qhttpnetworkconnection_p.h
 %%QT_INCDIR%%/QtNetwork/%%FULLVER%%/QtNetwork/private/qhttpnetworkconnectionchannel_p.h
@@ -1602,6 +1638,7 @@ bin/qmake6
 %%QT_INCDIR%%/QtNetwork/%%FULLVER%%/QtNetwork/private/qocspresponse_p.h
 %%QT_INCDIR%%/QtNetwork/%%FULLVER%%/QtNetwork/private/qrestaccessmanager_p.h
 %%QT_INCDIR%%/QtNetwork/%%FULLVER%%/QtNetwork/private/qrestreply_p.h
+%%QT_INCDIR%%/QtNetwork/%%FULLVER%%/QtNetwork/private/qsocketabstraction_p.h
 %%QT_INCDIR%%/QtNetwork/%%FULLVER%%/QtNetwork/private/qsocks5socketengine_p.h
 %%QT_INCDIR%%/QtNetwork/%%FULLVER%%/QtNetwork/private/qssl_p.h
 %%QT_INCDIR%%/QtNetwork/%%FULLVER%%/QtNetwork/private/qsslcertificate_p.h
@@ -1618,7 +1655,6 @@ bin/qmake6
 %%QT_INCDIR%%/QtNetwork/%%FULLVER%%/QtNetwork/private/qtldurl_p.h
 %%QT_INCDIR%%/QtNetwork/%%FULLVER%%/QtNetwork/private/qtlsbackend_p.h
 %%QT_INCDIR%%/QtNetwork/%%FULLVER%%/QtNetwork/private/qtnetwork-config_p.h
-%%QT_INCDIR%%/QtNetwork/%%FULLVER%%/QtNetwork/private/qtnetworkexports_p.h
 %%QT_INCDIR%%/QtNetwork/%%FULLVER%%/QtNetwork/private/qtnetworkglobal_p.h
 %%QT_INCDIR%%/QtNetwork/QAbstractNetworkCache
 %%QT_INCDIR%%/QtNetwork/QAbstractSocket
@@ -1629,14 +1665,17 @@ bin/qmake6
 %%QT_INCDIR%%/QtNetwork/QDnsMailExchangeRecord
 %%QT_INCDIR%%/QtNetwork/QDnsServiceRecord
 %%QT_INCDIR%%/QtNetwork/QDnsTextRecord
+%%QT_INCDIR%%/QtNetwork/QDnsTlsAssociationRecord
 %%DTLS%%%%QT_INCDIR%%/QtNetwork/QDtls
 %%DTLS%%%%QT_INCDIR%%/QtNetwork/QDtlsClientVerifier
-%%QT_INCDIR%%/QtNetwork/QHttpHeaders
+%%QT_INCDIR%%/QtNetwork/QFormDataBuilder
+%%QT_INCDIR%%/QtNetwork/QFormDataPartBuilder
 %%QT_INCDIR%%/QtNetwork/QHostAddress
 %%QT_INCDIR%%/QtNetwork/QHostInfo
 %%QT_INCDIR%%/QtNetwork/QHstsPolicy
 %%QT_INCDIR%%/QtNetwork/QHttp1Configuration
 %%QT_INCDIR%%/QtNetwork/QHttp2Configuration
+%%QT_INCDIR%%/QtNetwork/QHttpHeaders
 %%QT_INCDIR%%/QtNetwork/QHttpMultiPart
 %%QT_INCDIR%%/QtNetwork/QHttpPart
 %%QT_INCDIR%%/QtNetwork/QIPv6Address
@@ -1685,6 +1724,7 @@ bin/qmake6
 %%QT_INCDIR%%/QtNetwork/qauthenticator.h
 %%QT_INCDIR%%/QtNetwork/qdnslookup.h
 %%DTLS%%%%QT_INCDIR%%/QtNetwork/qdtls.h
+%%QT_INCDIR%%/QtNetwork/qformdatabuilder.h
 %%QT_INCDIR%%/QtNetwork/qhostaddress.h
 %%QT_INCDIR%%/QtNetwork/qhostinfo.h
 %%QT_INCDIR%%/QtNetwork/qhstspolicy.h
@@ -1931,6 +1971,7 @@ bin/qmake6
 %%QT_INCDIR%%/QtSql/qtsqlexports.h
 %%QT_INCDIR%%/QtSql/qtsqlglobal.h
 %%QT_INCDIR%%/QtSql/qtsqlversion.h
+%%QT_INCDIR%%/QtTest/%%FULLVER%%/QtTest/private/catch_p.h
 %%QT_INCDIR%%/QtTest/%%FULLVER%%/QtTest/private/cycle_p.h
 %%QT_INCDIR%%/QtTest/%%FULLVER%%/QtTest/private/qabstracttestlogger_p.h
 %%QT_INCDIR%%/QtTest/%%FULLVER%%/QtTest/private/qbenchmark_p.h
@@ -1951,6 +1992,7 @@ bin/qmake6
 %%QT_INCDIR%%/QtTest/%%FULLVER%%/QtTest/private/qtestblacklist_p.h
 %%QT_INCDIR%%/QtTest/%%FULLVER%%/QtTest/private/qtestcase_p.h
 %%QT_INCDIR%%/QtTest/%%FULLVER%%/QtTest/private/qtestcoreelement_p.h
+%%QT_INCDIR%%/QtTest/%%FULLVER%%/QtTest/private/qtestcrashhandler_p.h
 %%QT_INCDIR%%/QtTest/%%FULLVER%%/QtTest/private/qtestelement_p.h
 %%QT_INCDIR%%/QtTest/%%FULLVER%%/QtTest/private/qtestelementattribute_p.h
 %%QT_INCDIR%%/QtTest/%%FULLVER%%/QtTest/private/qtesthelpers_p.h
@@ -1958,7 +2000,6 @@ bin/qmake6
 %%QT_INCDIR%%/QtTest/%%FULLVER%%/QtTest/private/qtestlog_p.h
 %%QT_INCDIR%%/QtTest/%%FULLVER%%/QtTest/private/qtestresult_p.h
 %%QT_INCDIR%%/QtTest/%%FULLVER%%/QtTest/private/qtesttable_p.h
-%%QT_INCDIR%%/QtTest/%%FULLVER%%/QtTest/private/qttestexports_p.h
 %%QT_INCDIR%%/QtTest/%%FULLVER%%/QtTest/private/qttestlib-config_p.h
 %%QT_INCDIR%%/QtTest/%%FULLVER%%/QtTest/private/qxmltestlogger_p.h
 %%QT_INCDIR%%/QtTest/QAbstractItemModelTester
@@ -1999,7 +2040,9 @@ bin/qmake6
 %%QT_INCDIR%%/QtTest/qtestmouse.h
 %%QT_INCDIR%%/QtTest/qtestspontaneevent.h
 %%QT_INCDIR%%/QtTest/qtestsystem.h
+%%QT_INCDIR%%/QtTest/qtesttostring.h
 %%QT_INCDIR%%/QtTest/qtesttouch.h
+%%QT_INCDIR%%/QtTest/qtestwheel.h
 %%QT_INCDIR%%/QtTest/qttestexports.h
 %%QT_INCDIR%%/QtTest/qttestglobal.h
 %%QT_INCDIR%%/QtTest/qttestlib-config.h
@@ -2474,6 +2517,7 @@ bin/qmake6
 %%QT_INCDIR%%/QtXml/qtxmlglobal.h
 %%QT_INCDIR%%/QtXml/qtxmlversion.h
 lib/cmake/Qt6/3rdparty/extra-cmake-modules/COPYING-CMAKE-SCRIPTS
+lib/cmake/Qt6/3rdparty/extra-cmake-modules/REUSE.toml
 lib/cmake/Qt6/3rdparty/extra-cmake-modules/find-modules/ECMFindModuleHelpersStub.cmake
 lib/cmake/Qt6/3rdparty/extra-cmake-modules/find-modules/FindEGL.cmake
 lib/cmake/Qt6/3rdparty/extra-cmake-modules/find-modules/FindGLIB2.cmake
@@ -2489,6 +2533,7 @@ lib/cmake/Qt6/3rdparty/kwin/FindLibdrm.cmake
 lib/cmake/Qt6/3rdparty/kwin/FindLibinput.cmake
 lib/cmake/Qt6/3rdparty/kwin/FindXKB.cmake
 lib/cmake/Qt6/3rdparty/kwin/Findgbm.cmake
+lib/cmake/Qt6/3rdparty/kwin/REUSE.toml
 lib/cmake/Qt6/3rdparty/kwin/qt_attribution.json
 lib/cmake/Qt6/FindATSPI2.cmake
 lib/cmake/Qt6/FindDB2.cmake
@@ -2554,6 +2599,7 @@ lib/cmake/Qt6/Qt6ConfigVersion.cmake
 lib/cmake/Qt6/Qt6ConfigVersionImpl.cmake
 lib/cmake/Qt6/Qt6Dependencies.cmake
 lib/cmake/Qt6/Qt6Targets.cmake
+lib/cmake/Qt6/Qt6VersionlessAliasTargets.cmake
 lib/cmake/Qt6/Qt6VersionlessTargets.cmake
 lib/cmake/Qt6/QtAndroidHelpers.cmake
 lib/cmake/Qt6/QtAppHelpers.cmake
@@ -2567,6 +2613,7 @@ lib/cmake/Qt6/QtBuildOptionsHelpers.cmake
 lib/cmake/Qt6/QtBuildPathsHelpers.cmake
 lib/cmake/Qt6/QtBuildRepoExamplesHelpers.cmake
 lib/cmake/Qt6/QtBuildRepoHelpers.cmake
+lib/cmake/Qt6/QtBuildStaticDocToolsScript.cmake
 lib/cmake/Qt6/QtCMakeHelpers.cmake
 lib/cmake/Qt6/QtCMakePackageVersionFile.cmake.in
 lib/cmake/Qt6/QtCMakeVersionHelpers.cmake
@@ -2597,6 +2644,7 @@ lib/cmake/Qt6/QtGlobalStateHelpers.cmake
 lib/cmake/Qt6/QtHeadersClean.cmake
 lib/cmake/Qt6/QtInitProject.cmake
 lib/cmake/Qt6/QtInstallHelpers.cmake
+lib/cmake/Qt6/QtInstallPaths.cmake
 lib/cmake/Qt6/QtJavaHelpers.cmake
 lib/cmake/Qt6/QtLalrHelpers.cmake
 lib/cmake/Qt6/QtMkspecHelpers.cmake
@@ -2630,7 +2678,10 @@ lib/cmake/Qt6/QtPublicDependencyHelpers.cmake
 lib/cmake/Qt6/QtPublicExternalProjectHelpers.cmake
 lib/cmake/Qt6/QtPublicFinalizerHelpers.cmake
 lib/cmake/Qt6/QtPublicFindPackageHelpers.cmake
+lib/cmake/Qt6/QtPublicGitHelpers.cmake
 lib/cmake/Qt6/QtPublicPluginHelpers.cmake
+lib/cmake/Qt6/QtPublicSbomGenerationHelpers.cmake
+lib/cmake/Qt6/QtPublicSbomHelpers.cmake
 lib/cmake/Qt6/QtPublicTargetHelpers.cmake
 lib/cmake/Qt6/QtPublicTestHelpers.cmake
 lib/cmake/Qt6/QtPublicToolHelpers.cmake
@@ -2640,6 +2691,7 @@ lib/cmake/Qt6/QtQmakeHelpers.cmake
 lib/cmake/Qt6/QtResourceHelpers.cmake
 lib/cmake/Qt6/QtRpathHelpers.cmake
 lib/cmake/Qt6/QtSanitizerHelpers.cmake
+lib/cmake/Qt6/QtSbomHelpers.cmake
 lib/cmake/Qt6/QtScopeFinalizerHelpers.cmake
 lib/cmake/Qt6/QtSeparateDebugInfo.Info.plist.in
 lib/cmake/Qt6/QtSeparateDebugInfo.cmake
@@ -2653,6 +2705,8 @@ lib/cmake/Qt6/QtTestHelpers.cmake
 lib/cmake/Qt6/QtToolHelpers.cmake
 lib/cmake/Qt6/QtToolchainHelpers.cmake
 lib/cmake/Qt6/QtUnityBuildHelpers.cmake
+lib/cmake/Qt6/QtVersionlessAliasTargets.cmake.in
+lib/cmake/Qt6/QtVersionlessTargets.cmake.in
 lib/cmake/Qt6/QtWasmHelpers.cmake
 lib/cmake/Qt6/QtWrapperScriptHelpers.cmake
 lib/cmake/Qt6/QtWriteArgsFile.cmake
@@ -2668,8 +2722,9 @@ lib/cmake/Qt6/libexec/qt-internal-ninja.in
 lib/cmake/Qt6/libexec/qt-internal-strip.bat.in
 lib/cmake/Qt6/libexec/qt-internal-strip.in
 lib/cmake/Qt6/modulecppexports.h.in
-lib/cmake/Qt6/modulecppexports_p.h.in
 lib/cmake/Qt6/platforms/FindIntegrityPlatformGraphics.cmake
+lib/cmake/Qt6/platforms/FindPlatformGraphics.cmake
+lib/cmake/Qt6/platforms/FindVxWorksPlatformGraphics.cmake
 lib/cmake/Qt6/platforms/Platform/Integrity.cmake
 lib/cmake/Qt6/qbatchedtestrunner.in.cpp
 lib/cmake/Qt6/qt.toolchain.cmake
@@ -2687,6 +2742,7 @@ lib/cmake/Qt6Concurrent/Qt6ConcurrentConfigVersionImpl.cmake
 lib/cmake/Qt6Concurrent/Qt6ConcurrentDependencies.cmake
 lib/cmake/Qt6Concurrent/Qt6ConcurrentTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/Qt6Concurrent/Qt6ConcurrentTargets.cmake
+lib/cmake/Qt6Concurrent/Qt6ConcurrentVersionlessAliasTargets.cmake
 lib/cmake/Qt6Concurrent/Qt6ConcurrentVersionlessTargets.cmake
 lib/cmake/Qt6Core/Qt6CTestMacros.cmake
 lib/cmake/Qt6Core/Qt6CoreAdditionalTargetInfo.cmake
@@ -2701,8 +2757,8 @@ lib/cmake/Qt6Core/Qt6CoreMacros.cmake
 lib/cmake/Qt6Core/Qt6CoreResourceInit.in.cpp
 lib/cmake/Qt6Core/Qt6CoreTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/Qt6Core/Qt6CoreTargets.cmake
+lib/cmake/Qt6Core/Qt6CoreVersionlessAliasTargets.cmake
 lib/cmake/Qt6Core/Qt6CoreVersionlessTargets.cmake
-lib/cmake/Qt6Core/QtInstallPaths.cmake
 lib/cmake/Qt6CoreTools/Qt6CoreToolsAdditionalTargetInfo.cmake
 lib/cmake/Qt6CoreTools/Qt6CoreToolsConfig.cmake
 lib/cmake/Qt6CoreTools/Qt6CoreToolsConfigVersion.cmake
@@ -2719,6 +2775,7 @@ lib/cmake/Qt6DBus/Qt6DBusDependencies.cmake
 lib/cmake/Qt6DBus/Qt6DBusMacros.cmake
 lib/cmake/Qt6DBus/Qt6DBusTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/Qt6DBus/Qt6DBusTargets.cmake
+lib/cmake/Qt6DBus/Qt6DBusVersionlessAliasTargets.cmake
 lib/cmake/Qt6DBus/Qt6DBusVersionlessTargets.cmake
 lib/cmake/Qt6DBusTools/Qt6DBusToolsAdditionalTargetInfo.cmake
 lib/cmake/Qt6DBusTools/Qt6DBusToolsConfig.cmake
@@ -2735,6 +2792,7 @@ lib/cmake/Qt6DeviceDiscoverySupportPrivate/Qt6DeviceDiscoverySupportPrivateConfi
 lib/cmake/Qt6DeviceDiscoverySupportPrivate/Qt6DeviceDiscoverySupportPrivateDependencies.cmake
 lib/cmake/Qt6DeviceDiscoverySupportPrivate/Qt6DeviceDiscoverySupportPrivateTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/Qt6DeviceDiscoverySupportPrivate/Qt6DeviceDiscoverySupportPrivateTargets.cmake
+lib/cmake/Qt6DeviceDiscoverySupportPrivate/Qt6DeviceDiscoverySupportPrivateVersionlessAliasTargets.cmake
 lib/cmake/Qt6DeviceDiscoverySupportPrivate/Qt6DeviceDiscoverySupportPrivateVersionlessTargets.cmake
 lib/cmake/Qt6ExampleIconsPrivate/Qt6ExampleIconsPrivateAdditionalTargetInfo.cmake
 lib/cmake/Qt6ExampleIconsPrivate/Qt6ExampleIconsPrivateConfig.cmake
@@ -2742,7 +2800,17 @@ lib/cmake/Qt6ExampleIconsPrivate/Qt6ExampleIconsPrivateConfigVersion.cmake
 lib/cmake/Qt6ExampleIconsPrivate/Qt6ExampleIconsPrivateConfigVersionImpl.cmake
 lib/cmake/Qt6ExampleIconsPrivate/Qt6ExampleIconsPrivateTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/Qt6ExampleIconsPrivate/Qt6ExampleIconsPrivateTargets.cmake
+lib/cmake/Qt6ExampleIconsPrivate/Qt6ExampleIconsPrivateVersionlessAliasTargets.cmake
 lib/cmake/Qt6ExampleIconsPrivate/Qt6ExampleIconsPrivateVersionlessTargets.cmake
+lib/cmake/Qt6ExamplesAssetDownloaderPrivate/Qt6ExamplesAssetDownloaderPrivateAdditionalTargetInfo.cmake
+lib/cmake/Qt6ExamplesAssetDownloaderPrivate/Qt6ExamplesAssetDownloaderPrivateConfig.cmake
+lib/cmake/Qt6ExamplesAssetDownloaderPrivate/Qt6ExamplesAssetDownloaderPrivateConfigVersion.cmake
+lib/cmake/Qt6ExamplesAssetDownloaderPrivate/Qt6ExamplesAssetDownloaderPrivateConfigVersionImpl.cmake
+lib/cmake/Qt6ExamplesAssetDownloaderPrivate/Qt6ExamplesAssetDownloaderPrivateDependencies.cmake
+lib/cmake/Qt6ExamplesAssetDownloaderPrivate/Qt6ExamplesAssetDownloaderPrivateTargets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/Qt6ExamplesAssetDownloaderPrivate/Qt6ExamplesAssetDownloaderPrivateTargets.cmake
+lib/cmake/Qt6ExamplesAssetDownloaderPrivate/Qt6ExamplesAssetDownloaderPrivateVersionlessAliasTargets.cmake
+lib/cmake/Qt6ExamplesAssetDownloaderPrivate/Qt6ExamplesAssetDownloaderPrivateVersionlessTargets.cmake
 lib/cmake/Qt6FbSupportPrivate/Qt6FbSupportPrivateAdditionalTargetInfo.cmake
 lib/cmake/Qt6FbSupportPrivate/Qt6FbSupportPrivateConfig.cmake
 lib/cmake/Qt6FbSupportPrivate/Qt6FbSupportPrivateConfigVersion.cmake
@@ -2750,6 +2818,7 @@ lib/cmake/Qt6FbSupportPrivate/Qt6FbSupportPrivateConfigVersionImpl.cmake
 lib/cmake/Qt6FbSupportPrivate/Qt6FbSupportPrivateDependencies.cmake
 lib/cmake/Qt6FbSupportPrivate/Qt6FbSupportPrivateTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/Qt6FbSupportPrivate/Qt6FbSupportPrivateTargets.cmake
+lib/cmake/Qt6FbSupportPrivate/Qt6FbSupportPrivateVersionlessAliasTargets.cmake
 lib/cmake/Qt6FbSupportPrivate/Qt6FbSupportPrivateVersionlessTargets.cmake
 lib/cmake/Qt6Gui/Qt6GuiAdditionalTargetInfo.cmake
 lib/cmake/Qt6Gui/Qt6GuiConfig.cmake
@@ -2759,6 +2828,7 @@ lib/cmake/Qt6Gui/Qt6GuiDependencies.cmake
 lib/cmake/Qt6Gui/Qt6GuiPlugins.cmake
 lib/cmake/Qt6Gui/Qt6GuiTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/Qt6Gui/Qt6GuiTargets.cmake
+lib/cmake/Qt6Gui/Qt6GuiVersionlessAliasTargets.cmake
 lib/cmake/Qt6Gui/Qt6GuiVersionlessTargets.cmake
 lib/cmake/Qt6Gui/Qt6QComposePlatformInputContextPluginAdditionalTargetInfo.cmake
 lib/cmake/Qt6Gui/Qt6QComposePlatformInputContextPluginConfig.cmake
@@ -2896,6 +2966,7 @@ lib/cmake/Qt6InputSupportPrivate/Qt6InputSupportPrivateConfigVersionImpl.cmake
 lib/cmake/Qt6InputSupportPrivate/Qt6InputSupportPrivateDependencies.cmake
 lib/cmake/Qt6InputSupportPrivate/Qt6InputSupportPrivateTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/Qt6InputSupportPrivate/Qt6InputSupportPrivateTargets.cmake
+lib/cmake/Qt6InputSupportPrivate/Qt6InputSupportPrivateVersionlessAliasTargets.cmake
 lib/cmake/Qt6InputSupportPrivate/Qt6InputSupportPrivateVersionlessTargets.cmake
 lib/cmake/Qt6KmsSupportPrivate/Qt6KmsSupportPrivateAdditionalTargetInfo.cmake
 lib/cmake/Qt6KmsSupportPrivate/Qt6KmsSupportPrivateConfig.cmake
@@ -2904,6 +2975,7 @@ lib/cmake/Qt6KmsSupportPrivate/Qt6KmsSupportPrivateConfigVersionImpl.cmake
 lib/cmake/Qt6KmsSupportPrivate/Qt6KmsSupportPrivateDependencies.cmake
 lib/cmake/Qt6KmsSupportPrivate/Qt6KmsSupportPrivateTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/Qt6KmsSupportPrivate/Qt6KmsSupportPrivateTargets.cmake
+lib/cmake/Qt6KmsSupportPrivate/Qt6KmsSupportPrivateVersionlessAliasTargets.cmake
 lib/cmake/Qt6KmsSupportPrivate/Qt6KmsSupportPrivateVersionlessTargets.cmake
 lib/cmake/Qt6Network/Qt6NetworkAdditionalTargetInfo.cmake
 lib/cmake/Qt6Network/Qt6NetworkConfig.cmake
@@ -2913,6 +2985,7 @@ lib/cmake/Qt6Network/Qt6NetworkDependencies.cmake
 lib/cmake/Qt6Network/Qt6NetworkPlugins.cmake
 lib/cmake/Qt6Network/Qt6NetworkTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/Qt6Network/Qt6NetworkTargets.cmake
+lib/cmake/Qt6Network/Qt6NetworkVersionlessAliasTargets.cmake
 lib/cmake/Qt6Network/Qt6NetworkVersionlessTargets.cmake
 lib/cmake/Qt6Network/Qt6QGlibNetworkInformationPluginAdditionalTargetInfo.cmake
 lib/cmake/Qt6Network/Qt6QGlibNetworkInformationPluginConfig.cmake
@@ -2939,6 +3012,7 @@ lib/cmake/Qt6OpenGL/Qt6OpenGLConfigVersionImpl.cmake
 lib/cmake/Qt6OpenGL/Qt6OpenGLDependencies.cmake
 lib/cmake/Qt6OpenGL/Qt6OpenGLTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/Qt6OpenGL/Qt6OpenGLTargets.cmake
+lib/cmake/Qt6OpenGL/Qt6OpenGLVersionlessAliasTargets.cmake
 lib/cmake/Qt6OpenGL/Qt6OpenGLVersionlessTargets.cmake
 lib/cmake/Qt6OpenGLWidgets/Qt6OpenGLWidgetsAdditionalTargetInfo.cmake
 lib/cmake/Qt6OpenGLWidgets/Qt6OpenGLWidgetsConfig.cmake
@@ -2947,6 +3021,7 @@ lib/cmake/Qt6OpenGLWidgets/Qt6OpenGLWidgetsConfigVersionImpl.cmake
 lib/cmake/Qt6OpenGLWidgets/Qt6OpenGLWidgetsDependencies.cmake
 lib/cmake/Qt6OpenGLWidgets/Qt6OpenGLWidgetsTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/Qt6OpenGLWidgets/Qt6OpenGLWidgetsTargets.cmake
+lib/cmake/Qt6OpenGLWidgets/Qt6OpenGLWidgetsVersionlessAliasTargets.cmake
 lib/cmake/Qt6OpenGLWidgets/Qt6OpenGLWidgetsVersionlessTargets.cmake
 lib/cmake/Qt6PrintSupport/Qt6PrintSupportAdditionalTargetInfo.cmake
 lib/cmake/Qt6PrintSupport/Qt6PrintSupportConfig.cmake
@@ -2956,6 +3031,7 @@ lib/cmake/Qt6PrintSupport/Qt6PrintSupportDependencies.cmake
 %%CUPS%%lib/cmake/Qt6PrintSupport/Qt6PrintSupportPlugins.cmake
 lib/cmake/Qt6PrintSupport/Qt6PrintSupportTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/Qt6PrintSupport/Qt6PrintSupportTargets.cmake
+lib/cmake/Qt6PrintSupport/Qt6PrintSupportVersionlessAliasTargets.cmake
 lib/cmake/Qt6PrintSupport/Qt6PrintSupportVersionlessTargets.cmake
 %%CUPS%%lib/cmake/Qt6PrintSupport/Qt6QCupsPrinterSupportPluginAdditionalTargetInfo.cmake
 %%CUPS%%lib/cmake/Qt6PrintSupport/Qt6QCupsPrinterSupportPluginConfig.cmake
@@ -2971,6 +3047,7 @@ lib/cmake/Qt6Sql/Qt6SqlDependencies.cmake
 lib/cmake/Qt6Sql/Qt6SqlPlugins.cmake
 lib/cmake/Qt6Sql/Qt6SqlTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/Qt6Sql/Qt6SqlTargets.cmake
+lib/cmake/Qt6Sql/Qt6SqlVersionlessAliasTargets.cmake
 lib/cmake/Qt6Sql/Qt6SqlVersionlessTargets.cmake
 lib/cmake/Qt6Test/Qt6TestAdditionalTargetInfo.cmake
 lib/cmake/Qt6Test/Qt6TestConfig.cmake
@@ -2979,6 +3056,7 @@ lib/cmake/Qt6Test/Qt6TestConfigVersionImpl.cmake
 lib/cmake/Qt6Test/Qt6TestDependencies.cmake
 lib/cmake/Qt6Test/Qt6TestTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/Qt6Test/Qt6TestTargets.cmake
+lib/cmake/Qt6Test/Qt6TestVersionlessAliasTargets.cmake
 lib/cmake/Qt6Test/Qt6TestVersionlessTargets.cmake
 lib/cmake/Qt6Widgets/Qt6WidgetsAdditionalTargetInfo.cmake
 lib/cmake/Qt6Widgets/Qt6WidgetsConfig.cmake
@@ -2989,6 +3067,7 @@ lib/cmake/Qt6Widgets/Qt6WidgetsMacros.cmake
 lib/cmake/Qt6Widgets/Qt6WidgetsPlugins.cmake
 lib/cmake/Qt6Widgets/Qt6WidgetsTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/Qt6Widgets/Qt6WidgetsTargets.cmake
+lib/cmake/Qt6Widgets/Qt6WidgetsVersionlessAliasTargets.cmake
 lib/cmake/Qt6Widgets/Qt6WidgetsVersionlessTargets.cmake
 lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsAdditionalTargetInfo.cmake
 lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsConfig.cmake
@@ -3005,6 +3084,7 @@ lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsVersionlessTargets.cmake
 %%X11%%lib/cmake/Qt6XcbQpaPrivate/Qt6XcbQpaPrivateDependencies.cmake
 %%X11%%lib/cmake/Qt6XcbQpaPrivate/Qt6XcbQpaPrivateTargets-%%CMAKE_BUILD_TYPE%%.cmake
 %%X11%%lib/cmake/Qt6XcbQpaPrivate/Qt6XcbQpaPrivateTargets.cmake
+%%X11%%lib/cmake/Qt6XcbQpaPrivate/Qt6XcbQpaPrivateVersionlessAliasTargets.cmake
 %%X11%%lib/cmake/Qt6XcbQpaPrivate/Qt6XcbQpaPrivateVersionlessTargets.cmake
 lib/cmake/Qt6Xml/Qt6XmlAdditionalTargetInfo.cmake
 lib/cmake/Qt6Xml/Qt6XmlConfig.cmake
@@ -3013,6 +3093,7 @@ lib/cmake/Qt6Xml/Qt6XmlConfigVersionImpl.cmake
 lib/cmake/Qt6Xml/Qt6XmlDependencies.cmake
 lib/cmake/Qt6Xml/Qt6XmlTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/Qt6Xml/Qt6XmlTargets.cmake
+lib/cmake/Qt6Xml/Qt6XmlVersionlessAliasTargets.cmake
 lib/cmake/Qt6Xml/Qt6XmlVersionlessTargets.cmake
 %%QT_BINDIR%%/androiddeployqt
 %%QT_BINDIR%%/androiddeployqt6
@@ -3042,6 +3123,8 @@ lib/cmake/Qt6Xml/Qt6XmlVersionlessTargets.cmake
 %%QT_LIBDIR%%/libQt6DeviceDiscoverySupport.prl
 %%QT_LIBDIR%%/libQt6ExampleIcons.a
 %%QT_LIBDIR%%/libQt6ExampleIcons.prl
+%%QT_LIBDIR%%/libQt6ExamplesAssetDownloader.a
+%%QT_LIBDIR%%/libQt6ExamplesAssetDownloader.prl
 %%QT_LIBDIR%%/libQt6FbSupport.a
 %%QT_LIBDIR%%/libQt6FbSupport.prl
 %%QT_LIBDIR%%/libQt6Gui.prl
@@ -3093,6 +3176,7 @@ lib/cmake/Qt6Xml/Qt6XmlVersionlessTargets.cmake
 %%QT_LIBDIR%%/metatypes/qt6dbus_%%CMAKE_BUILD_TYPE%%_metatypes.json
 %%QT_LIBDIR%%/metatypes/qt6devicediscoverysupportprivate_%%CMAKE_BUILD_TYPE%%_metatypes.json
 %%QT_LIBDIR%%/metatypes/qt6exampleiconsprivate_%%CMAKE_BUILD_TYPE%%_metatypes.json
+%%QT_LIBDIR%%/metatypes/qt6examplesassetdownloaderprivate_%%CMAKE_BUILD_TYPE%%_metatypes.json
 %%QT_LIBDIR%%/metatypes/qt6fbsupportprivate_%%CMAKE_BUILD_TYPE%%_metatypes.json
 %%QT_LIBDIR%%/metatypes/qt6gui_%%CMAKE_BUILD_TYPE%%_metatypes.json
 %%QT_LIBDIR%%/metatypes/qt6inputsupportprivate_%%CMAKE_BUILD_TYPE%%_metatypes.json
@@ -3108,6 +3192,7 @@ lib/cmake/Qt6Xml/Qt6XmlVersionlessTargets.cmake
 %%QT_LIBDIR%%/metatypes/qt6xml_%%CMAKE_BUILD_TYPE%%_metatypes.json
 %%DEBUG%%%%QT_LIBDIR%%/objects-Debug/ExampleIconsPrivate_resources_1/.qt/rcc/qrc_example_icons_init.cpp.o
 %%NO_DEBUG%%%%QT_LIBDIR%%/objects-Release/ExampleIconsPrivate_resources_1/.qt/rcc/qrc_example_icons_init.cpp.o
+%%QT_MKSPECDIR%%/REUSE.toml
 %%QT_MKSPECDIR%%/aix-g++-64/qmake.conf
 %%QT_MKSPECDIR%%/aix-g++-64/qplatformdefs.h
 %%QT_MKSPECDIR%%/aix-g++/qmake.conf
@@ -3473,9 +3558,13 @@ lib/cmake/Qt6Xml/Qt6XmlVersionlessTargets.cmake
 %%QT_MKSPECDIR%%/macx-ios-clang/Info.plist.dSYM.in
 %%QT_MKSPECDIR%%/macx-ios-clang/Info.plist.lib
 %%QT_MKSPECDIR%%/macx-ios-clang/LaunchScreen.storyboard
-%%QT_MKSPECDIR%%/macx-ios-clang/features/default_post.prf
 %%QT_MKSPECDIR%%/macx-ios-clang/qmake.conf
 %%QT_MKSPECDIR%%/macx-ios-clang/qplatformdefs.h
+%%QT_MKSPECDIR%%/macx-visionos-clang/Info.plist.app
+%%QT_MKSPECDIR%%/macx-visionos-clang/Info.plist.dSYM.in
+%%QT_MKSPECDIR%%/macx-visionos-clang/Info.plist.lib
+%%QT_MKSPECDIR%%/macx-visionos-clang/qmake.conf
+%%QT_MKSPECDIR%%/macx-visionos-clang/qplatformdefs.h
 %%QT_MKSPECDIR%%/macx-xcode/QtTest.plist
 %%QT_MKSPECDIR%%/macx-xcode/WorkspaceSettings.xcsettings
 %%QT_MKSPECDIR%%/macx-xcode/default.xcscheme
@@ -3490,6 +3579,7 @@ lib/cmake/Qt6Xml/Qt6XmlVersionlessTargets.cmake
 %%QT_MKSPECDIR%%/modules/qt_lib_dbus_private.pri
 %%QT_MKSPECDIR%%/modules/qt_lib_devicediscovery_support_private.pri
 %%QT_MKSPECDIR%%/modules/qt_lib_example_icons_private.pri
+%%QT_MKSPECDIR%%/modules/qt_lib_examples_asset_downloader_private.pri
 %%QT_MKSPECDIR%%/modules/qt_lib_fb_support_private.pri
 %%QT_MKSPECDIR%%/modules/qt_lib_gui.pri
 %%QT_MKSPECDIR%%/modules/qt_lib_gui_private.pri
@@ -3603,6 +3693,7 @@ lib/cmake/Qt6Xml/Qt6XmlVersionlessTargets.cmake
 %%QT_PLUGINDIR%%/tls/libqopensslbackend.so
 %%X11%%%%QT_PLUGINDIR%%/xcbglintegrations/libqxcb-egl-integration.so
 %%X11%%%%QT_PLUGINDIR%%/xcbglintegrations/libqxcb-glx-integration.so
+%%QT_SBOMDIR%%/qtbase-%%FULLVER%%.spdx
 libdata/pkgconfig/Qt6Concurrent.pc
 libdata/pkgconfig/Qt6Core.pc
 libdata/pkgconfig/Qt6DBus.pc
@@ -3620,6 +3711,7 @@ libdata/pkgconfig/Qt6Xml.pc
 %%QT_TOOLDIR%%/ensure_pro_file.cmake
 %%QT_TOOLDIR%%/moc
 %%QT_TOOLDIR%%/qlalr
+%%QT_TOOLDIR%%/qt-android-runner.py
 %%QT_TOOLDIR%%/qt-cmake-private
 %%QT_TOOLDIR%%/qt-cmake-private-install.cmake
 %%QT_TOOLDIR%%/qt-cmake-standalone-test
@@ -3681,6 +3773,7 @@ libdata/pkgconfig/Qt6Xml.pc
 %%QT_DOCDIR%%/global/externalsites/qtdesignstudio.qdoc
 %%QT_DOCDIR%%/global/externalsites/rfc.qdoc
 %%QT_DOCDIR%%/global/fileextensions.qdocconf
+%%QT_DOCDIR%%/global/grid.qdocconf
 %%QT_DOCDIR%%/global/html-config.qdocconf
 %%QT_DOCDIR%%/global/html-footer-online.qdocconf
 %%QT_DOCDIR%%/global/html-footer.qdocconf
@@ -3766,6 +3859,7 @@ libdata/pkgconfig/Qt6Xml.pc
 %%QT_DATADIR%%/modules/DBus.json
 %%QT_DATADIR%%/modules/DeviceDiscoverySupportPrivate.json
 %%QT_DATADIR%%/modules/ExampleIconsPrivate.json
+%%QT_DATADIR%%/modules/ExamplesAssetDownloaderPrivate.json
 %%QT_DATADIR%%/modules/FbSupportPrivate.json
 %%QT_DATADIR%%/modules/Gui.json
 %%QT_DATADIR%%/modules/InputSupportPrivate.json

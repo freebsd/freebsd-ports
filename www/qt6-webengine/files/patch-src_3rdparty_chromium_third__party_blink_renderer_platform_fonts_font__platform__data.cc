@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/third_party/blink/renderer/platform/fonts/font_platform_data.cc.orig	2023-12-12 22:08:45 UTC
+--- src/3rdparty/chromium/third_party/blink/renderer/platform/fonts/font_platform_data.cc.orig	2024-07-03 01:14:49 UTC
 +++ src/3rdparty/chromium/third_party/blink/renderer/platform/fonts/font_platform_data.cc
 @@ -51,7 +51,7 @@ namespace {
  namespace blink {

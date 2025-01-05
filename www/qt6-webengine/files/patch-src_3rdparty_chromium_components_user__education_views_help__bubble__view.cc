@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/components/user_education/views/help_bubble_view.cc.orig	2023-09-13 12:11:42 UTC
+--- src/3rdparty/chromium/components/user_education/views/help_bubble_view.cc.orig	2024-01-30 07:53:34 UTC
 +++ src/3rdparty/chromium/components/user_education/views/help_bubble_view.cc
-@@ -991,7 +991,7 @@ gfx::Rect HelpBubbleView::GetAnchorRect() const {
+@@ -1009,7 +1009,7 @@ gfx::Rect HelpBubbleView::GetAnchorRect() const {
  void HelpBubbleView::OnBeforeBubbleWidgetInit(views::Widget::InitParams* params,
                                                views::Widget* widget) const {
    BubbleDialogDelegateView::OnBeforeBubbleWidgetInit(params, widget);

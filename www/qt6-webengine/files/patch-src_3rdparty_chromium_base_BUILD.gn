@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/base/BUILD.gn.orig	2023-12-12 22:08:45 UTC
+--- src/3rdparty/chromium/base/BUILD.gn.orig	2024-07-03 01:14:49 UTC
 +++ src/3rdparty/chromium/base/BUILD.gn
-@@ -199,7 +199,7 @@ buildflag_header("ios_cronet_buildflags") {
+@@ -188,7 +188,7 @@ buildflag_header("ios_cronet_buildflags") {
    flags = [ "CRONET_BUILD=$is_cronet_build" ]
  }
  
@@ -9,7 +9,7 @@
  buildflag_header("message_pump_buildflags") {
    header = "message_pump_buildflags.h"
    header_dir = "base/message_loop"
-@@ -1117,11 +1117,23 @@ jumbo_component("base") {
+@@ -1125,11 +1125,23 @@ jumbo_component("base") {
    # Needed for <atomic> if using newer C++ library than sysroot, except if
    # building inside the cros_sdk environment - use host_toolchain as a
    # more robust check for this.
@@ -34,7 +34,7 @@
    if (use_allocator_shim) {
      if (is_apple) {
        sources += [ "allocator/early_zone_registration_apple.h" ]
-@@ -1141,7 +1153,7 @@ jumbo_component("base") {
+@@ -1149,7 +1161,7 @@ jumbo_component("base") {
  
    # Allow more direct string conversions on platforms with native utf8
    # strings
@@ -43,7 +43,7 @@
      defines += [ "SYSTEM_NATIVE_UTF8" ]
    }
  
-@@ -2091,6 +2103,22 @@ jumbo_component("base") {
+@@ -2100,6 +2112,22 @@ jumbo_component("base") {
      ]
    }
  
@@ -66,7 +66,7 @@
    # iOS
    if (is_ios) {
      sources += [
-@@ -2223,6 +2251,29 @@ jumbo_component("base") {
+@@ -2230,6 +2258,31 @@ jumbo_component("base") {
      }
    }
  
@@ -84,6 +84,8 @@
 +      "profiler/thread_delegate_posix.cc",
 +      "profiler/thread_delegate_posix.h",
 +      "threading/platform_thread_linux.cc",
++      "stack_canary_linux.cc",
++      "stack_canary_linux.h",
 +    ]
 +    sources += [
 +      "files/file_path_watcher_kqueue.cc",
@@ -96,7 +98,7 @@
    if (use_blink) {
      sources += [
        "files/file_path_watcher.cc",
-@@ -2233,7 +2284,7 @@ jumbo_component("base") {
+@@ -2240,7 +2293,7 @@ jumbo_component("base") {
    }
  
    if (dep_libevent) {
@@ -105,7 +107,16 @@
    }
  
    if (use_libevent) {
-@@ -3607,7 +3658,7 @@ test("base_unittests") {
+@@ -3005,7 +3058,7 @@ if (is_apple) {
+   }
+ }
+ 
+-if (!is_nacl && (is_linux || is_chromeos)) {
++if (!is_nacl && !is_bsd && (is_linux || is_chromeos)) {
+   # This test must compile with -fstack-protector-all
+   source_set("stack_canary_linux_unittests") {
+     testonly = true
+@@ -3642,14 +3695,14 @@ test("base_unittests") {
      ]
    }
  
@@ -114,7 +125,15 @@
      sources += [
        "debug/proc_maps_linux_unittest.cc",
        "files/scoped_file_linux_unittest.cc",
-@@ -3628,7 +3679,7 @@ test("base_unittests") {
+       "nix/mime_util_xdg_unittest.cc",
+     ]
+ 
+-    if (!is_nacl) {
++    if (!is_nacl && !is_bsd) {
+       deps += [ ":stack_canary_linux_unittests" ]
+     }
+   }
+@@ -3664,7 +3717,7 @@ test("base_unittests") {
        "posix/file_descriptor_shuffle_unittest.cc",
        "posix/unix_domain_socket_unittest.cc",
      ]
@@ -123,7 +142,7 @@
        sources += [
          "profiler/stack_base_address_posix_unittest.cc",
          "profiler/stack_copier_signal_unittest.cc",
-@@ -3639,7 +3690,7 @@ test("base_unittests") {
+@@ -3675,7 +3728,7 @@ test("base_unittests") {
  
    # Allow more direct string conversions on platforms with native utf8
    # strings
@@ -132,7 +151,7 @@
      defines += [ "SYSTEM_NATIVE_UTF8" ]
    }
  
-@@ -3895,7 +3946,7 @@ test("base_unittests") {
+@@ -3938,7 +3991,7 @@ test("base_unittests") {
      }
    }
  

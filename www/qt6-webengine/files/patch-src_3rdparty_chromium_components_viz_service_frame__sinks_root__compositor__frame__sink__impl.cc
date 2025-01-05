@@ -1,20 +1,20 @@
---- src/3rdparty/chromium/components/viz/service/frame_sinks/root_compositor_frame_sink_impl.cc.orig	2023-10-11 18:22:24 UTC
+--- src/3rdparty/chromium/components/viz/service/frame_sinks/root_compositor_frame_sink_impl.cc.orig	2024-01-30 07:53:34 UTC
 +++ src/3rdparty/chromium/components/viz/service/frame_sinks/root_compositor_frame_sink_impl.cc
-@@ -110,7 +110,7 @@ RootCompositorFrameSinkImpl::Create(
+@@ -109,7 +109,7 @@ RootCompositorFrameSinkImpl::Create(
+   output_surface->SetNeedsSwapSizeNotifications(
+       params->send_swap_size_notifications);
  
- // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
- // of lacros-chrome is complete.
--#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)
-+#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS) || BUILDFLAG(IS_BSD)
+-#if BUILDFLAG(IS_LINUX) && BUILDFLAG(IS_OZONE_X11)
++#if (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)) && BUILDFLAG(IS_OZONE_X11)
    // For X11, we need notify client about swap completion after resizing, so the
    // client can use it for synchronize with X11 WM.
    output_surface->SetNeedsSwapSizeNotifications(true);
-@@ -709,7 +709,7 @@ void RootCompositorFrameSinkImpl::DisplayDidCompleteSw
+@@ -713,7 +713,7 @@ void RootCompositorFrameSinkImpl::DisplayDidCompleteSw
+ #if BUILDFLAG(IS_ANDROID)
+   if (display_client_ && enable_swap_competion_callback_)
      display_client_->DidCompleteSwapWithSize(pixel_size);
- // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
- // of lacros-chrome is complete.
--#elif BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)
-+#elif BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS) || BUILDFLAG(IS_BSD)
+-#elif BUILDFLAG(IS_LINUX) && BUILDFLAG(IS_OZONE_X11)
++#elif (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)) && BUILDFLAG(IS_OZONE_X11)
    if (display_client_ && pixel_size != last_swap_pixel_size_) {
      last_swap_pixel_size_ = pixel_size;
      display_client_->DidCompleteSwapWithNewSize(last_swap_pixel_size_);

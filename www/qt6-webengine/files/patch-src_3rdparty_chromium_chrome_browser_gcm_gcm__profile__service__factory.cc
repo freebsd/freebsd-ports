@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/chrome/browser/gcm/gcm_profile_service_factory.cc.orig	2023-12-12 22:08:45 UTC
+--- src/3rdparty/chromium/chrome/browser/gcm/gcm_profile_service_factory.cc.orig	2024-07-03 01:14:49 UTC
 +++ src/3rdparty/chromium/chrome/browser/gcm/gcm_profile_service_factory.cc
 @@ -91,7 +91,7 @@ GCMProfileService* GCMProfileServiceFactory::GetForPro
  // static

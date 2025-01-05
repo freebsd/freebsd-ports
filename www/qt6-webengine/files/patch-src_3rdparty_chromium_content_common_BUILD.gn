@@ -1,6 +1,40 @@
---- src/3rdparty/chromium/content/common/BUILD.gn.orig	2023-12-12 22:08:45 UTC
+--- src/3rdparty/chromium/content/common/BUILD.gn.orig	2024-07-03 01:14:49 UTC
 +++ src/3rdparty/chromium/content/common/BUILD.gn
-@@ -452,6 +452,9 @@ if (is_linux || is_chromeos) {
+@@ -452,19 +452,28 @@ jumbo_source_set("common") {
+   }
+ 
+   if (is_linux || is_chromeos) {
+-    sources += [
+-      "gpu_pre_sandbox_hook_linux.cc",
+-      "gpu_pre_sandbox_hook_linux.h",
+-    ]
++    if (is_bsd) {
++      sources += [
++        "gpu_pre_sandbox_hook_bsd.cc",
++        "gpu_pre_sandbox_hook_bsd.h",
++      ]
++    } else {
++      sources += [
++        "gpu_pre_sandbox_hook_linux.cc",
++        "gpu_pre_sandbox_hook_linux.h",
++      ]
++    }
+     public_deps += [ "//sandbox/policy" ]
+     deps += [
+       ":sandbox_support_linux",
+       ":set_process_title_linux",
+       "//media/gpu:buildflags",
+       "//sandbox/linux:sandbox_services",
+-      "//sandbox/linux:seccomp_bpf",
+       "//sandbox/policy:chromecast_sandbox_allowlist_buildflags",
+     ]
++    if (use_seccomp_bpf) {
++      deps += [ "//sandbox/linux:seccomp_bpf" ]
++    }
+     if (use_v4l2_codec) {
+       deps += [ "//media/gpu/v4l2" ]
+     }
+@@ -543,6 +552,9 @@ if (is_linux || is_chromeos) {
      public = [ "set_process_title_linux.h" ]
      sources = [ "set_process_title_linux.cc" ]
      deps = [ "//base" ]
@@ -10,12 +44,3 @@
    }
  }
  
-@@ -498,7 +501,7 @@ mojom("mojo_bindings") {
-   if (enable_ipc_logging) {
-     enabled_features += [ "ipc_logging" ]
-   }
--  if (is_linux || is_chromeos) {
-+  if (!is_bsd && (is_linux || is_chromeos)) {
-     enabled_features += [ "supports_thread_types" ]
-   }
-   if (use_clang_profiling_inside_sandbox) {

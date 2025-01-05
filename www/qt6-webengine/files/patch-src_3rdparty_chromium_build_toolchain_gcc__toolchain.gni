@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/build/toolchain/gcc_toolchain.gni.orig	2023-12-12 22:08:45 UTC
+--- src/3rdparty/chromium/build/toolchain/gcc_toolchain.gni.orig	2024-07-03 01:14:49 UTC
 +++ src/3rdparty/chromium/build/toolchain/gcc_toolchain.gni
 @@ -53,6 +53,13 @@ if (enable_resource_allowlist_generation) {
        "enable_resource_allowlist_generation=true does not work for target_os=$target_os")
@@ -14,7 +14,7 @@
  # This template defines a toolchain for something that works like gcc
  # (including clang).
  #
-@@ -888,22 +895,12 @@ template("clang_toolchain") {
+@@ -900,22 +907,12 @@ template("clang_toolchain") {
  # use_gold too.
  template("clang_toolchain") {
    gcc_toolchain(target_name) {
@@ -40,5 +40,5 @@
 +    ar = "ar"
 +    nm = "nm"
  
-     forward_variables_from(invoker,
-                            [
+     forward_variables_from(invoker, "*", [ "toolchain_args" ])
+ 

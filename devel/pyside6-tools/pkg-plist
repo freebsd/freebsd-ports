@@ -14,6 +14,8 @@
 %%PYSIDE_BINDIR_REL%%/deploy_lib/__pycache__/dependency_util%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYSIDE_BINDIR_REL%%/deploy_lib/__pycache__/deploy_util%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%PYSIDE_BINDIR_REL%%/deploy_lib/__pycache__/deploy_util%%PYTHON_EXT_SUFFIX%%.pyc
+%%PYSIDE_BINDIR_REL%%/deploy_lib/__pycache__/design_studio%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+%%PYSIDE_BINDIR_REL%%/deploy_lib/__pycache__/design_studio%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYSIDE_BINDIR_REL%%/deploy_lib/__pycache__/nuitka_helper%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%PYSIDE_BINDIR_REL%%/deploy_lib/__pycache__/nuitka_helper%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYSIDE_BINDIR_REL%%/deploy_lib/__pycache__/python_helper%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
@@ -37,6 +39,7 @@
 %%PYSIDE_BINDIR_REL%%/deploy_lib/default.spec
 %%PYSIDE_BINDIR_REL%%/deploy_lib/dependency_util.py
 %%PYSIDE_BINDIR_REL%%/deploy_lib/deploy_util.py
+%%PYSIDE_BINDIR_REL%%/deploy_lib/design_studio.py
 %%PYSIDE_BINDIR_REL%%/deploy_lib/nuitka_helper.py
 %%PYSIDE_BINDIR_REL%%/deploy_lib/pyside_icon.icns
 %%PYSIDE_BINDIR_REL%%/deploy_lib/pyside_icon.ico
@@ -97,4 +100,5 @@
 %%PYSIDE_BINDIR_REL%%/qtpy2cpp_lib/visitor.py
 %%PYSIDE_BINDIR_REL%%/rcc
 %%PYSIDE_BINDIR_REL%%/requirements-android.txt
+%%PYSIDE_BINDIR_REL%%/svgtoqml
 %%PYSIDE_BINDIR_REL%%/uic

@@ -5,12 +5,14 @@
 %%PYQT_SIPDIR%%/QtWebEngineCore/qwebenginecertificateerror.sip
 %%PYQT_SIPDIR%%/QtWebEngineCore/qwebengineclientcertificateselection.sip
 %%PYQT_SIPDIR%%/QtWebEngineCore/qwebengineclientcertificatestore.sip
+%%PYQT_SIPDIR%%/QtWebEngineCore/qwebengineclienthints.sip
 %%PYQT_SIPDIR%%/QtWebEngineCore/qwebenginecontextmenurequest.sip
 %%PYQT_SIPDIR%%/QtWebEngineCore/qwebenginecookiestore.sip
 %%PYQT_SIPDIR%%/QtWebEngineCore/qwebenginedesktopmediarequest.sip
 %%PYQT_SIPDIR%%/QtWebEngineCore/qwebenginedownloadrequest.sip
 %%PYQT_SIPDIR%%/QtWebEngineCore/qwebenginefilesystemaccessrequest.sip
 %%PYQT_SIPDIR%%/QtWebEngineCore/qwebenginefindtextresult.sip
+%%PYQT_SIPDIR%%/QtWebEngineCore/qwebengineframe.sip
 %%PYQT_SIPDIR%%/QtWebEngineCore/qwebenginefullscreenrequest.sip
 %%PYQT_SIPDIR%%/QtWebEngineCore/qwebengineglobalsettings.sip
 %%PYQT_SIPDIR%%/QtWebEngineCore/qwebenginehistory.sip
@@ -20,6 +22,7 @@
 %%PYQT_SIPDIR%%/QtWebEngineCore/qwebenginenewwindowrequest.sip
 %%PYQT_SIPDIR%%/QtWebEngineCore/qwebenginenotification.sip
 %%PYQT_SIPDIR%%/QtWebEngineCore/qwebenginepage.sip
+%%PYQT_SIPDIR%%/QtWebEngineCore/qwebenginepermission.sip
 %%PYQT_SIPDIR%%/QtWebEngineCore/qwebengineprofile.sip
 %%PYQT_SIPDIR%%/QtWebEngineCore/qwebenginequotarequest.sip
 %%PYQT_SIPDIR%%/QtWebEngineCore/qwebengineregisterprotocolhandlerrequest.sip

@@ -5,7 +5,6 @@
 %%QT_INCDIR%%/QtPdf/%%FULLVER%%/QtPdf/private/qpdfsearchmodel_p.h
 %%QT_INCDIR%%/QtPdf/%%FULLVER%%/QtPdf/private/qpdfselection_p.h
 %%QT_INCDIR%%/QtPdf/%%FULLVER%%/QtPdf/private/qtpdf-config_p.h
-%%QT_INCDIR%%/QtPdf/%%FULLVER%%/QtPdf/private/qtpdfexports_p.h
 %%QT_INCDIR%%/QtPdf/QPdfBookmarkModel
 %%QT_INCDIR%%/QtPdf/QPdfDocument
 %%QT_INCDIR%%/QtPdf/QPdfDocumentRenderOptions
@@ -74,6 +73,7 @@ lib/cmake/Qt6Pdf/Qt6PdfConfigVersionImpl.cmake
 lib/cmake/Qt6Pdf/Qt6PdfDependencies.cmake
 lib/cmake/Qt6Pdf/Qt6PdfTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/Qt6Pdf/Qt6PdfTargets.cmake
+lib/cmake/Qt6Pdf/Qt6PdfVersionlessAliasTargets.cmake
 lib/cmake/Qt6Pdf/Qt6PdfVersionlessTargets.cmake
 lib/cmake/Qt6PdfQuick/Qt6PdfQuickAdditionalTargetInfo.cmake
 lib/cmake/Qt6PdfQuick/Qt6PdfQuickConfig.cmake
@@ -82,6 +82,7 @@ lib/cmake/Qt6PdfQuick/Qt6PdfQuickConfigVersionImpl.cmake
 lib/cmake/Qt6PdfQuick/Qt6PdfQuickDependencies.cmake
 lib/cmake/Qt6PdfQuick/Qt6PdfQuickTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/Qt6PdfQuick/Qt6PdfQuickTargets.cmake
+lib/cmake/Qt6PdfQuick/Qt6PdfQuickVersionlessAliasTargets.cmake
 lib/cmake/Qt6PdfQuick/Qt6PdfQuickVersionlessTargets.cmake
 lib/cmake/Qt6PdfWidgets/Qt6PdfWidgetsAdditionalTargetInfo.cmake
 lib/cmake/Qt6PdfWidgets/Qt6PdfWidgetsConfig.cmake
@@ -90,6 +91,7 @@ lib/cmake/Qt6PdfWidgets/Qt6PdfWidgetsConfigVersionImpl.cmake
 lib/cmake/Qt6PdfWidgets/Qt6PdfWidgetsDependencies.cmake
 lib/cmake/Qt6PdfWidgets/Qt6PdfWidgetsTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/Qt6PdfWidgets/Qt6PdfWidgetsTargets.cmake
+lib/cmake/Qt6PdfWidgets/Qt6PdfWidgetsVersionlessAliasTargets.cmake
 lib/cmake/Qt6PdfWidgets/Qt6PdfWidgetsVersionlessTargets.cmake
 lib/cmake/Qt6Qml/QmlPlugins/Qt6PdfQuickpluginAdditionalTargetInfo.cmake
 lib/cmake/Qt6Qml/QmlPlugins/Qt6PdfQuickpluginConfig.cmake

@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/content/test/BUILD.gn.orig	2023-12-12 22:08:45 UTC
+--- src/3rdparty/chromium/content/test/BUILD.gn.orig	2024-07-03 01:14:49 UTC
 +++ src/3rdparty/chromium/content/test/BUILD.gn
-@@ -2235,7 +2235,7 @@ static_library("run_all_unittests") {
+@@ -2271,7 +2271,7 @@ static_library("run_all_unittests") {
      ":test_support",
      "//base/test:test_support",
    ]
@@ -9,7 +9,7 @@
      deps += [ "//content/common:set_process_title_linux" ]
    }
  }
-@@ -3304,7 +3304,7 @@ test("content_unittests") {
+@@ -3375,7 +3375,7 @@ test("content_unittests") {
      deps += [ "//third_party/boringssl" ]
    }
  

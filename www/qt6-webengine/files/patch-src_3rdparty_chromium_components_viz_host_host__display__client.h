@@ -1,11 +1,11 @@
---- src/3rdparty/chromium/components/viz/host/host_display_client.h.orig	2023-01-11 09:17:16 UTC
+--- src/3rdparty/chromium/components/viz/host/host_display_client.h.orig	2024-01-30 07:53:34 UTC
 +++ src/3rdparty/chromium/components/viz/host/host_display_client.h
-@@ -54,7 +54,7 @@ class VIZ_HOST_EXPORT HostDisplayClient : public mojom
- 
- // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
- // of lacros-chrome is complete.
--#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)
-+#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS) || BUILDFLAG(IS_BSD)
-   void DidCompleteSwapWithNewSize(const gfx::Size& size) override;
+@@ -52,7 +52,7 @@ class VIZ_HOST_EXPORT HostDisplayClient : public mojom
+   void AddChildWindowToBrowser(gpu::SurfaceHandle child_window) override;
  #endif
+ 
+-#if BUILDFLAG(IS_LINUX) && BUILDFLAG(IS_OZONE_X11)
++#if (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)) && BUILDFLAG(IS_OZONE_X11)
+   void DidCompleteSwapWithNewSize(const gfx::Size& size) override;
+ #endif  // BUILDFLAG(IS_LINUX) && BUILDFLAG(IS_OZONE_X11)
  

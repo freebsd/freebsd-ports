@@ -5,6 +5,8 @@
 %%QT_INCDIR%%/QtNetworkAuth/%%FULLVER%%/QtNetworkAuth/private/qoauth1signature_p.h
 %%QT_INCDIR%%/QtNetworkAuth/%%FULLVER%%/QtNetworkAuth/private/qoauth2authorizationcodeflow_p.h
 %%QT_INCDIR%%/QtNetworkAuth/%%FULLVER%%/QtNetworkAuth/private/qoauthhttpserverreplyhandler_p.h
+%%QT_INCDIR%%/QtNetworkAuth/%%FULLVER%%/QtNetworkAuth/private/qoauthoobreplyhandler_p.h
+%%QT_INCDIR%%/QtNetworkAuth/%%FULLVER%%/QtNetworkAuth/private/qtnetworkauth-config_p.h
 %%QT_INCDIR%%/QtNetworkAuth/QAbstractOAuth
 %%QT_INCDIR%%/QtNetworkAuth/QAbstractOAuth2
 %%QT_INCDIR%%/QtNetworkAuth/QAbstractOAuthReplyHandler
@@ -13,6 +15,7 @@
 %%QT_INCDIR%%/QtNetworkAuth/QOAuth2AuthorizationCodeFlow
 %%QT_INCDIR%%/QtNetworkAuth/QOAuthHttpServerReplyHandler
 %%QT_INCDIR%%/QtNetworkAuth/QOAuthOobReplyHandler
+%%QT_INCDIR%%/QtNetworkAuth/QOAuthUriSchemeReplyHandler
 %%QT_INCDIR%%/QtNetworkAuth/QtNetworkAuth
 %%QT_INCDIR%%/QtNetworkAuth/QtNetworkAuthDepends
 %%QT_INCDIR%%/QtNetworkAuth/QtNetworkAuthVersion
@@ -25,6 +28,8 @@
 %%QT_INCDIR%%/QtNetworkAuth/qoauthglobal.h
 %%QT_INCDIR%%/QtNetworkAuth/qoauthhttpserverreplyhandler.h
 %%QT_INCDIR%%/QtNetworkAuth/qoauthoobreplyhandler.h
+%%QT_INCDIR%%/QtNetworkAuth/qoauthurischemereplyhandler.h
+%%QT_INCDIR%%/QtNetworkAuth/qtnetworkauth-config.h
 %%QT_INCDIR%%/QtNetworkAuth/qtnetworkauthversion.h
 lib/cmake/Qt6BuildInternals/StandaloneTests/QtNetworkAuthTestsConfig.cmake
 lib/cmake/Qt6NetworkAuth/Qt6NetworkAuthAdditionalTargetInfo.cmake
@@ -34,6 +39,7 @@ lib/cmake/Qt6NetworkAuth/Qt6NetworkAuthConfigVersionImpl.cmake
 lib/cmake/Qt6NetworkAuth/Qt6NetworkAuthDependencies.cmake
 lib/cmake/Qt6NetworkAuth/Qt6NetworkAuthTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/Qt6NetworkAuth/Qt6NetworkAuthTargets.cmake
+lib/cmake/Qt6NetworkAuth/Qt6NetworkAuthVersionlessAliasTargets.cmake
 lib/cmake/Qt6NetworkAuth/Qt6NetworkAuthVersionlessTargets.cmake
 %%QT_LIBDIR%%/libQt6NetworkAuth.prl
 %%QT_LIBDIR%%/libQt6NetworkAuth.so
@@ -42,5 +48,6 @@ lib/cmake/Qt6NetworkAuth/Qt6NetworkAuthVersionlessTargets.cmake
 %%QT_LIBDIR%%/metatypes/qt6networkauth_%%CMAKE_BUILD_TYPE%%_metatypes.json
 %%QT_MKSPECDIR%%/modules/qt_lib_networkauth.pri
 %%QT_MKSPECDIR%%/modules/qt_lib_networkauth_private.pri
+%%QT_SBOMDIR%%/qtnetworkauth-%%FULLVER%%.spdx
 libdata/pkgconfig/Qt6NetworkAuth.pc
 %%QT_DATADIR%%/modules/NetworkAuth.json

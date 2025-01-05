@@ -186,6 +186,7 @@
     SUBDIR += py-qt5-datavis3d
     SUBDIR += py-qt6-charts
     SUBDIR += py-qt6-datavis3d
+    SUBDIR += py-qt6-graphs
     SUBDIR += py-superqt
     SUBDIR += py-tkinter
     SUBDIR += py-tktreectrl

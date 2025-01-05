@@ -300,6 +300,7 @@ bin/pyuic6
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtGui/qpainter.sip
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtGui/qpainterpath.sip
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtGui/qpalette.sip
+%%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtGui/qpdfoutputintent.sip
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtGui/qpdfwriter.sip
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtGui/qpen.sip
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtGui/qpicture.sip
@@ -309,6 +310,7 @@ bin/pyuic6
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtGui/qpointingdevice.sip
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtGui/qpolygon.sip
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtGui/qpygui_qlist.sip
+%%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtGui/qpygui_vulkan.sip
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtGui/qquaternion.sip
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtGui/qrasterwindow.sip
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtGui/qrawfont.sip
@@ -345,6 +347,7 @@ bin/pyuic6
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtHelp/QtHelp.toml
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtHelp/QtHelpmod.sip
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtHelp/qcompressedhelpinfo.sip
+%%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtHelp/qhelpcontentitem.sip
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtHelp/qhelpcontentwidget.sip
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtHelp/qhelpengine.sip
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtHelp/qhelpenginecore.sip
@@ -354,12 +357,16 @@ bin/pyuic6
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtHelp/qhelpindexwidget.sip
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtHelp/qhelplink.sip
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtHelp/qhelpsearchengine.sip
+%%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtHelp/qhelpsearchenginecore.sip
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtHelp/qhelpsearchquerywidget.sip
+%%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtHelp/qhelpsearchresult.sip
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtHelp/qhelpsearchresultwidget.sip
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtMultimedia/QtMultimedia.toml
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtMultimedia/QtMultimediamod.sip
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtMultimedia/qaudio.sip
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtMultimedia/qaudiobuffer.sip
+%%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtMultimedia/qaudiobufferinput.sip
+%%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtMultimedia/qaudiobufferoutput.sip
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtMultimedia/qaudiodecoder.sip
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtMultimedia/qaudiodevice.sip
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtMultimedia/qaudioformat.sip
@@ -384,6 +391,7 @@ bin/pyuic6
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtMultimedia/qtvideo.sip
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtMultimedia/qvideoframe.sip
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtMultimedia/qvideoframeformat.sip
+%%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtMultimedia/qvideoframeinput.sip
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtMultimedia/qvideosink.sip
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtMultimedia/qwindowcapture.sip
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtMultimediaWidgets/QtMultimediaWidgets.toml
@@ -396,6 +404,7 @@ bin/pyuic6
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtNetwork/qabstractsocket.sip
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtNetwork/qauthenticator.sip
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtNetwork/qdnslookup.sip
+%%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtNetwork/qformdatabuilder.sip
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtNetwork/qhostaddress.sip
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtNetwork/qhostinfo.sip
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtNetwork/qhstspolicy.sip
@@ -415,11 +424,14 @@ bin/pyuic6
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtNetwork/qnetworkproxy.sip
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtNetwork/qnetworkreply.sip
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtNetwork/qnetworkrequest.sip
+%%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtNetwork/qnetworkrequestfactory.sip
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtNetwork/qocspresponse.sip
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtNetwork/qpassworddigestor.sip
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtNetwork/qpynetwork_qhash.sip
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtNetwork/qpynetwork_qlist.sip
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtNetwork/qpynetwork_qmap.sip
+%%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtNetwork/qrestaccessmanager.sip
+%%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtNetwork/qrestreply.sip
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtNetwork/qssl.sip
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtNetwork/qsslcertificate.sip
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtNetwork/qsslcertificateextension.sip

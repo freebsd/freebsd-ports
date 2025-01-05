@@ -40,6 +40,7 @@ lib/cmake/Qt6WebSockets/Qt6WebSocketsConfigVersionImpl.cmake
 lib/cmake/Qt6WebSockets/Qt6WebSocketsDependencies.cmake
 lib/cmake/Qt6WebSockets/Qt6WebSocketsTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/Qt6WebSockets/Qt6WebSocketsTargets.cmake
+lib/cmake/Qt6WebSockets/Qt6WebSocketsVersionlessAliasTargets.cmake
 lib/cmake/Qt6WebSockets/Qt6WebSocketsVersionlessTargets.cmake
 %%QT_LIBDIR%%/libQt6WebSockets.prl
 %%QT_LIBDIR%%/libQt6WebSockets.so
@@ -51,5 +52,6 @@ lib/cmake/Qt6WebSockets/Qt6WebSocketsVersionlessTargets.cmake
 %%QT_QMLDIR%%/QtWebSockets/libqmlwebsocketsplugin.so
 %%QT_QMLDIR%%/QtWebSockets/plugins.qmltypes
 %%QT_QMLDIR%%/QtWebSockets/qmldir
+%%QT_SBOMDIR%%/qtwebsockets-%%FULLVER%%.spdx
 libdata/pkgconfig/Qt6WebSockets.pc
 %%QT_DATADIR%%/modules/WebSockets.json

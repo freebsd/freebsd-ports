@@ -34,6 +34,7 @@ lib/cmake/Qt6WebChannel/Qt6WebChannelConfigVersionImpl.cmake
 lib/cmake/Qt6WebChannel/Qt6WebChannelDependencies.cmake
 lib/cmake/Qt6WebChannel/Qt6WebChannelTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/Qt6WebChannel/Qt6WebChannelTargets.cmake
+lib/cmake/Qt6WebChannel/Qt6WebChannelVersionlessAliasTargets.cmake
 lib/cmake/Qt6WebChannel/Qt6WebChannelVersionlessTargets.cmake
 lib/cmake/Qt6WebChannelQuick/Qt6WebChannelQuickAdditionalTargetInfo.cmake
 lib/cmake/Qt6WebChannelQuick/Qt6WebChannelQuickConfig.cmake
@@ -42,6 +43,7 @@ lib/cmake/Qt6WebChannelQuick/Qt6WebChannelQuickConfigVersionImpl.cmake
 lib/cmake/Qt6WebChannelQuick/Qt6WebChannelQuickDependencies.cmake
 lib/cmake/Qt6WebChannelQuick/Qt6WebChannelQuickTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/Qt6WebChannelQuick/Qt6WebChannelQuickTargets.cmake
+lib/cmake/Qt6WebChannelQuick/Qt6WebChannelQuickVersionlessAliasTargets.cmake
 lib/cmake/Qt6WebChannelQuick/Qt6WebChannelQuickVersionlessTargets.cmake
 %%QT_LIBDIR%%/libQt6WebChannel.prl
 %%QT_LIBDIR%%/libQt6WebChannel.so
@@ -60,6 +62,7 @@ lib/cmake/Qt6WebChannelQuick/Qt6WebChannelQuickVersionlessTargets.cmake
 %%QT_QMLDIR%%/QtWebChannel/libwebchannelquickplugin.so
 %%QT_QMLDIR%%/QtWebChannel/plugins.qmltypes
 %%QT_QMLDIR%%/QtWebChannel/qmldir
+%%QT_SBOMDIR%%/qtwebchannel-%%FULLVER%%.spdx
 libdata/pkgconfig/Qt6WebChannel.pc
 libdata/pkgconfig/Qt6WebChannelQuick.pc
 %%QT_DATADIR%%/modules/WebChannel.json

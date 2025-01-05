@@ -1,11 +1,11 @@
---- src/3rdparty/chromium/services/network/public/cpp/features.cc.orig	2023-12-12 22:08:45 UTC
+--- src/3rdparty/chromium/services/network/public/cpp/features.cc.orig	2024-07-03 01:14:49 UTC
 +++ src/3rdparty/chromium/services/network/public/cpp/features.cc
-@@ -383,7 +383,7 @@ CONSTINIT const base::Feature kOutOfProcessSystemDnsRe
- // that can be adequately sandboxed.
- CONSTINIT const base::Feature kOutOfProcessSystemDnsResolution(
-              "OutOfProcessSystemDnsResolution",
--#if BUILDFLAG(IS_LINUX)
-+#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
-              base::FEATURE_ENABLED_BY_DEFAULT
- #else
-              base::FEATURE_DISABLED_BY_DEFAULT
+@@ -96,7 +96,7 @@ BASE_FEATURE(kSplitAuthCacheByNetworkIsolationKey,
+ 
+ // Enable usage of hardcoded DoH upgrade mapping for use in automatic mode.
+ #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_MAC) || \
+-    BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_LINUX)
++    BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+ BASE_FEATURE(kDnsOverHttpsUpgrade,
+              "DnsOverHttpsUpgrade",
+              base::FEATURE_ENABLED_BY_DEFAULT);

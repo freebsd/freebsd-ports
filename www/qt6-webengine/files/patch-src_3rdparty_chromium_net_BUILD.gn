@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/net/BUILD.gn.orig	2023-12-12 22:08:45 UTC
+--- src/3rdparty/chromium/net/BUILD.gn.orig	2024-07-03 01:14:49 UTC
 +++ src/3rdparty/chromium/net/BUILD.gn
 @@ -126,7 +126,7 @@ net_configs = [
    "//build/config/compiler:wexit_time_destructors",
@@ -9,8 +9,8 @@
    net_configs += [ "//build/config/linux:libresolv" ]
  }
  
-@@ -1255,6 +1255,19 @@ component("net") {
-     deps += [ "//third_party/xdg_shared_mime_info" ]
+@@ -1183,6 +1183,19 @@ component("net") {
+     ]
    }
  
 +  if (is_bsd) {
@@ -29,7 +29,7 @@
    if (is_mac) {
      sources += [
        "base/network_notification_thread_mac.cc",
-@@ -1410,7 +1423,7 @@ component("net") {
+@@ -1340,7 +1353,7 @@ component("net") {
    }
  
    # Use getifaddrs() on POSIX platforms, except Linux.
@@ -38,7 +38,7 @@
      sources += [
        "base/network_interfaces_getifaddrs.cc",
        "base/network_interfaces_getifaddrs.h",
-@@ -2905,7 +2918,7 @@ test("net_unittests") {
+@@ -2810,7 +2823,7 @@ test("net_unittests") {
      ]
    }
  
@@ -47,9 +47,9 @@
      sources += [
        "base/address_tracker_linux_unittest.cc",
        "base/network_interfaces_linux_unittest.cc",
-@@ -2973,6 +2986,10 @@ test("net_unittests") {
-     "//url:buildflags",
-   ]
+@@ -2898,6 +2911,10 @@ test("net_unittests") {
+     ]
+   }
  
 +  if (is_bsd) {
 +    deps += [ "//sandbox/policy" ]
@@ -58,7 +58,7 @@
    if (enable_websockets) {
      deps += [ "//net/server:tests" ]
    }
-@@ -3055,7 +3072,7 @@ test("net_unittests") {
+@@ -2968,7 +2985,7 @@ test("net_unittests") {
      ]
    }
  
@@ -67,7 +67,7 @@
      sources += [ "tools/quic/quic_simple_server_test.cc" ]
    }
  
-@@ -3190,7 +3207,7 @@ test("net_unittests") {
+@@ -3103,7 +3120,7 @@ test("net_unittests") {
    }
  
    # Use getifaddrs() on POSIX platforms, except Linux.

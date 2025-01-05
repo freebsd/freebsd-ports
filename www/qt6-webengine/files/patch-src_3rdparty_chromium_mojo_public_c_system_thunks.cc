@@ -1,14 +1,14 @@
---- src/3rdparty/chromium/mojo/public/c/system/thunks.cc.orig	2022-11-30 08:12:58 UTC
+--- src/3rdparty/chromium/mojo/public/c/system/thunks.cc.orig	2024-02-23 21:04:38 UTC
 +++ src/3rdparty/chromium/mojo/public/c/system/thunks.cc
-@@ -23,7 +23,7 @@
+@@ -24,7 +24,7 @@
  #include "mojo/public/c/system/message_pipe.h"
  
  #if BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_WIN) || \
 -    BUILDFLAG(IS_FUCHSIA)
 +    BUILDFLAG(IS_FUCHSIA) || BUILDFLAG(IS_BSD)
+ #include <optional>
  #include "base/environment.h"
  #include "base/files/file_path.h"
- #include "base/scoped_native_library.h"
 @@ -72,7 +72,7 @@ class CoreLibraryInitializer {
  
    MojoResult LoadLibrary(base::FilePath library_path) {
@@ -33,6 +33,6 @@
  #if BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_WIN) || \
 -    BUILDFLAG(IS_FUCHSIA)
 +    BUILDFLAG(IS_FUCHSIA) || BUILDFLAG(IS_BSD)
-   absl::optional<base::ScopedNativeLibrary> library_;
+   std::optional<base::ScopedNativeLibrary> library_;
  #endif
  };

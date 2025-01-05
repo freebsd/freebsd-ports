@@ -1,42 +1,42 @@
---- src/3rdparty/chromium/content/public/common/content_features.cc.orig	2023-12-12 22:08:45 UTC
+--- src/3rdparty/chromium/content/public/common/content_features.cc.orig	2024-10-02 15:40:01 UTC
 +++ src/3rdparty/chromium/content/public/common/content_features.cc
-@@ -53,7 +53,7 @@ CONSTINIT const base::Feature kAudioServiceOutOfProces
-              "AudioServiceOutOfProcess",
- // TODO(crbug.com/1052397): Remove !IS_CHROMEOS_LACROS once lacros starts being
- // built with OS_CHROMEOS instead of OS_LINUX.
+@@ -36,7 +36,7 @@ BASE_FEATURE(kAudioServiceLaunchOnStartup,
+              base::FEATURE_DISABLED_BY_DEFAULT);
+ 
+ // Runs the audio service in a separate process.
 -#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || \
 +#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_BSD) || \
      (BUILDFLAG(IS_LINUX) && !BUILDFLAG(IS_CHROMEOS_LACROS))
-              base::FEATURE_ENABLED_BY_DEFAULT
- #else
-@@ -65,7 +65,7 @@ CONSTINIT const base::Feature kAudioServiceSandbox(
+ BASE_FEATURE(kAudioServiceOutOfProcess,
+              "AudioServiceOutOfProcess",
+@@ -51,7 +51,7 @@ BASE_FEATURE(kAudioServiceOutOfProcess,
+ 
+ // Enables the audio-service sandbox. This feature has an effect only when the
  // kAudioServiceOutOfProcess feature is enabled.
- CONSTINIT const base::Feature kAudioServiceSandbox(
-              "AudioServiceSandbox",
 -#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_FUCHSIA)
 +#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_FUCHSIA) || BUILDFLAG(IS_BSD)
-              base::FEATURE_ENABLED_BY_DEFAULT
- #else
-              base::FEATURE_DISABLED_BY_DEFAULT
-@@ -553,7 +553,7 @@ BASE_FEATURE(kGreaseUACH, "GreaseUACH", base::FEATURE_
- // (activated by kUserAgentClientHint)
- BASE_FEATURE(kGreaseUACH, "GreaseUACH", base::FEATURE_ENABLED_BY_DEFAULT);
+ BASE_FEATURE(kAudioServiceSandbox,
+              "AudioServiceSandbox",
+              base::FEATURE_ENABLED_BY_DEFAULT);
+@@ -670,7 +670,7 @@ BASE_FEATURE(kOverscrollHistoryNavigation,
+              base::FEATURE_ENABLED_BY_DEFAULT);
  
--#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
-+#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
- // Supports proxying thread type changes of renderer processes to browser
- // process and having browser process handle adjusting thread properties (nice
- // value, c-group, latency sensitivity...) for renderers which have sandbox
-@@ -1463,7 +1463,7 @@ CONSTINIT const base::Feature kWebAssemblyTrapHandler(
- CONSTINIT const base::Feature kWebAssemblyTrapHandler(
-              "WebAssemblyTrapHandler",
+ // Setting to control overscroll history navigation.
+-#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+ BASE_FEATURE(kOverscrollHistoryNavigationSetting,
+              "OverscrollHistoryNavigationSetting",
+              base::FEATURE_ENABLED_BY_DEFAULT);
+@@ -1220,7 +1220,7 @@ BASE_FEATURE(kWebAssemblyTiering,
+ 
+ // Enable WebAssembly trap handler.
  #if ((BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_WIN) || \
 -      BUILDFLAG(IS_MAC)) &&                                                 \
 +      BUILDFLAG(IS_MAC) || BUILDFLAG(IS_BSD)) &&                            \
       defined(ARCH_CPU_X86_64)) ||                                           \
      (BUILDFLAG(IS_MAC) && defined(ARCH_CPU_ARM64))
-              base::FEATURE_ENABLED_BY_DEFAULT
-@@ -1515,7 +1515,11 @@ BASE_FEATURE(kWebUICodeCache,
+ BASE_FEATURE(kWebAssemblyTrapHandler,
+@@ -1265,7 +1265,11 @@ BASE_FEATURE(kWebUICodeCache,
  
  // Controls whether the WebUSB API is enabled:
  // https://wicg.github.io/webusb

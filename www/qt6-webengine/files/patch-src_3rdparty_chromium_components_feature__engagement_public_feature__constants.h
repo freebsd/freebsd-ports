@@ -1,21 +1,29 @@
---- src/3rdparty/chromium/components/feature_engagement/public/feature_constants.h.orig	2023-10-11 18:22:24 UTC
+--- src/3rdparty/chromium/components/feature_engagement/public/feature_constants.h.orig	2024-02-23 21:04:38 UTC
 +++ src/3rdparty/chromium/components/feature_engagement/public/feature_constants.h
-@@ -23,7 +23,7 @@ BASE_DECLARE_FEATURE(kUseClientConfigIPH);
+@@ -25,7 +25,7 @@ BASE_DECLARE_FEATURE(kUseClientConfigIPH);
  BASE_DECLARE_FEATURE(kIPHDummyFeature);
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_APPLE) || BUILDFLAG(IS_LINUX) || \
 -    BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_FUCHSIA)
 +    BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_FUCHSIA) || BUILDFLAG(IS_BSD)
- BASE_DECLARE_FEATURE(kIPHAutofillFeedbackNewBadgeFeature);
  BASE_DECLARE_FEATURE(kIPHBatterySaverModeFeature);
  BASE_DECLARE_FEATURE(kIPHCompanionSidePanelFeature);
-@@ -211,7 +211,8 @@ BASE_DECLARE_FEATURE(kIPHiOSPromoPasswordManagerWidget
+ BASE_DECLARE_FEATURE(kIPHCompanionSidePanelRegionSearchFeature);
+@@ -252,7 +252,7 @@ extern const base::FeatureParam<int>
+     kDefaultBrowserEligibilitySlidingWindowParam;
  #endif  // BUILDFLAG(IS_IOS)
  
- #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_APPLE) || BUILDFLAG(IS_LINUX) || \
--    BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_FUCHSIA)
-+    BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_FUCHSIA) || \
-+    BUILDFLAG(IS_BSD)
+-#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_APPLE) || BUILDFLAG(IS_LINUX) || \
++#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_APPLE) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD) || \
+     BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_FUCHSIA)
  BASE_DECLARE_FEATURE(kIPHAutofillExternalAccountProfileSuggestionFeature);
  BASE_DECLARE_FEATURE(kIPHAutofillVirtualCardCVCSuggestionFeature);
- BASE_DECLARE_FEATURE(kIPHAutofillVirtualCardSuggestionFeature);
+@@ -300,7 +300,7 @@ BASE_DECLARE_FEATURE(kIPHScalableIphHelpAppBasedTenFea
+ BASE_DECLARE_FEATURE(kIPHScalableIphGamingFeature);
+ #endif
+ 
+-#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+ BASE_DECLARE_FEATURE(kIPHDesktopPWAsLinkCapturingLaunch);
+ #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
+ 

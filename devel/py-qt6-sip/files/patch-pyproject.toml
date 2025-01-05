@@ -1,0 +1,11 @@
+Reduce setuptools requirement until [1] is resolved. Seems to work fine
+with 63.x.
+
+[1] https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=270358
+
+--- pyproject.toml.orig	2024-12-12 10:04:05 UTC
++++ pyproject.toml
+@@ -1,2 +1,2 @@
+ [build-system]
+-requires = ["setuptools >=69.5"]
++requires = ["setuptools >=63"]

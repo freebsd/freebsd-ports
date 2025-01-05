@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/components/network_session_configurator/browser/network_session_configurator.cc.orig	2023-09-13 12:11:42 UTC
+--- src/3rdparty/chromium/components/network_session_configurator/browser/network_session_configurator.cc.orig	2024-02-23 21:04:38 UTC
 +++ src/3rdparty/chromium/components/network_session_configurator/browser/network_session_configurator.cc
-@@ -793,7 +793,7 @@ net::URLRequestContextBuilder::HttpCacheParams::Type C
+@@ -827,7 +827,7 @@ net::URLRequestContextBuilder::HttpCacheParams::Type C
    // backport, having it behave differently than in stable would be a bigger
    // problem. TODO: Does this work in later macOS releases?
  #if BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || \

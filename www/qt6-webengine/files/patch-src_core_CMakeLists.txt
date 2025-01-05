@@ -1,6 +1,6 @@
---- src/core/CMakeLists.txt.orig	2023-12-12 22:08:45 UTC
+--- src/core/CMakeLists.txt.orig	2024-10-02 15:40:01 UTC
 +++ src/core/CMakeLists.txt
-@@ -20,7 +20,7 @@ add_subdirectory(tools/qwebengine_convert_dict)
+@@ -21,7 +21,7 @@ add_subdirectory(tools/qwebengine_convert_dict)
  #   TOOLCHAIN SETUP
  ##
  
@@ -9,16 +9,34 @@
      setup_toolchains()
  endif()
  
-@@ -409,7 +409,7 @@ foreach(arch ${archs})
-             CONDITION QT_FEATURE_webengine_embedded_build
+@@ -200,7 +200,7 @@ foreach(arch ${archs})
+                 accessibility_activation_observer.cpp accessibility_activation_observer.h
+         )
+ 
+-        extend_gn_target(${buildGn} CONDITION LINUX OR WIN32
++        extend_gn_target(${buildGn} CONDITION LINUX OR FREEBSD OR WIN32
+             SOURCES
+                 compositor/content_gpu_client_qt.cpp compositor/content_gpu_client_qt.h
+                 ozone/gl_context_qt.cpp ozone/gl_context_qt.h
+@@ -213,7 +213,7 @@ foreach(arch ${archs})
+                 ozone/gl_surface_wgl_qt.cpp ozone/gl_surface_wgl_qt.h
+         )
+ 
+-        extend_gn_target(${buildGn} CONDITION LINUX
++        extend_gn_target(${buildGn} CONDITION LINUX OR FREEBSD
+             SOURCES
+                 ozone/gl_ozone_angle_qt.cpp ozone/gl_ozone_angle_qt.h
+                 ozone/gl_ozone_egl_qt.cpp ozone/gl_ozone_egl_qt.h
+@@ -436,7 +436,7 @@ foreach(arch ${archs})
+             CONDITION QT_FEATURE_webenginedriver
          )
  
 -        if(LINUX)
 +        if(LINUX OR FREEBSD)
              list(APPEND gnArgArg
+                 angle_enable_gl=true
                  use_gtk=false # GTK toolkit bindings
-                 use_qt=false # Qt5 toolkit bindings
-@@ -418,7 +418,7 @@ foreach(arch ${archs})
+@@ -445,7 +445,7 @@ foreach(arch ${archs})
                  use_bundled_fontconfig=false
                  use_glib=false
                  use_bluez=false
@@ -27,7 +45,7 @@
                  is_cfi=false
                  use_ozone=true
                  ozone_auto_platforms=false
-@@ -477,6 +477,10 @@ foreach(arch ${archs})
+@@ -504,6 +504,10 @@ foreach(arch ${archs})
              extend_gn_list(gnArgArg
                  ARGS use_pulseaudio
                  CONDITION QT_FEATURE_webengine_system_pulseaudio

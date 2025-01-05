@@ -1,11 +1,11 @@
---- src/3rdparty/chromium/ui/compositor/compositor.h.orig	2023-05-31 08:12:17 UTC
+--- src/3rdparty/chromium/ui/compositor/compositor.h.orig	2024-02-23 21:04:38 UTC
 +++ src/3rdparty/chromium/ui/compositor/compositor.h
-@@ -458,7 +458,7 @@ class COMPOSITOR_EXPORT Compositor : public base::Powe
+@@ -461,7 +461,7 @@ class COMPOSITOR_EXPORT Compositor : public base::Powe
+   // base::PowerSuspendObserver:
+   void OnResume() override;
  
- // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
- // of lacros-chrome is complete.
--#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)
-+#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS) || BUILDFLAG(IS_BSD)
+-#if BUILDFLAG(IS_LINUX) && BUILDFLAG(IS_OZONE_X11)
++#if (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)) && BUILDFLAG(IS_OZONE_X11)
    void OnCompleteSwapWithNewSize(const gfx::Size& size);
- #endif
+ #endif  // BUILDFLAG(IS_LINUX) && BUILDFLAG(IS_OZONE_X11)
  

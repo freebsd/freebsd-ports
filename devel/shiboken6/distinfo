@@ -1,3 +1,5 @@
-TIMESTAMP = 1727499878
-SHA256 (pyside-setup-everywhere-src-6.7.3.tar.xz) = a4c414be013d5051a2d10a9a1151e686488a3172c08a57461ea04b0a0ab74e09
-SIZE (pyside-setup-everywhere-src-6.7.3.tar.xz) = 14591496
+TIMESTAMP = 1734031404
+SHA256 (KDE/Qt/6.8.0.2/pyside-setup-everywhere-src-6.8.0.tar.xz) = 1a1a219a8f327e340d258275fad3a9f261b8f04bc57041747e73dd6ad252b4e1
+SIZE (KDE/Qt/6.8.0.2/pyside-setup-everywhere-src-6.8.0.tar.xz) = 14646216
+SHA256 (KDE/Qt/6.8.0.2/dfe3819559ed1e04089f9d5bc009268a7b48b7c2.patch) = 16ad2512a5516fdf3484bedd59a700396429ba99f5cf897566174c8e25bc3d9e
+SIZE (KDE/Qt/6.8.0.2/dfe3819559ed1e04089f9d5bc009268a7b48b7c2.patch) = 6314

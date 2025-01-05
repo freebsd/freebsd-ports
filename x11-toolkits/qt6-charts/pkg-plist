@@ -128,7 +128,6 @@
 %%QT_INCDIR%%/QtCharts/%%FULLVER%%/QtCharts/private/qsplineseries_p.h
 %%QT_INCDIR%%/QtCharts/%%FULLVER%%/QtCharts/private/qstackedbarseries_p.h
 %%QT_INCDIR%%/QtCharts/%%FULLVER%%/QtCharts/private/qtcharts-config_p.h
-%%QT_INCDIR%%/QtCharts/%%FULLVER%%/QtCharts/private/qtchartsexports_p.h
 %%QT_INCDIR%%/QtCharts/%%FULLVER%%/QtCharts/private/qvalueaxis_p.h
 %%QT_INCDIR%%/QtCharts/%%FULLVER%%/QtCharts/private/qxylegendmarker_p.h
 %%QT_INCDIR%%/QtCharts/%%FULLVER%%/QtCharts/private/qxymodelmapper_p.h
@@ -281,7 +280,6 @@
 %%QT_INCDIR%%/QtChartsQml/%%FULLVER%%/QtChartsQml/private/declarativesplineseries_p.h
 %%QT_INCDIR%%/QtChartsQml/%%FULLVER%%/QtChartsQml/private/declarativexypoint_p.h
 %%QT_INCDIR%%/QtChartsQml/%%FULLVER%%/QtChartsQml/private/declarativexyseries_p.h
-%%QT_INCDIR%%/QtChartsQml/%%FULLVER%%/QtChartsQml/private/qtchartsqmlexports_p.h
 %%QT_INCDIR%%/QtChartsQml/QtChartsQml
 %%QT_INCDIR%%/QtChartsQml/QtChartsQmlDepends
 %%QT_INCDIR%%/QtChartsQml/QtChartsQmlVersion
@@ -295,6 +293,7 @@ lib/cmake/Qt6Charts/Qt6ChartsConfigVersionImpl.cmake
 lib/cmake/Qt6Charts/Qt6ChartsDependencies.cmake
 lib/cmake/Qt6Charts/Qt6ChartsTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/Qt6Charts/Qt6ChartsTargets.cmake
+lib/cmake/Qt6Charts/Qt6ChartsVersionlessAliasTargets.cmake
 lib/cmake/Qt6Charts/Qt6ChartsVersionlessTargets.cmake
 lib/cmake/Qt6ChartsQml/Qt6ChartsQmlAdditionalTargetInfo.cmake
 lib/cmake/Qt6ChartsQml/Qt6ChartsQmlConfig.cmake
@@ -303,6 +302,7 @@ lib/cmake/Qt6ChartsQml/Qt6ChartsQmlConfigVersionImpl.cmake
 lib/cmake/Qt6ChartsQml/Qt6ChartsQmlDependencies.cmake
 lib/cmake/Qt6ChartsQml/Qt6ChartsQmlTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/Qt6ChartsQml/Qt6ChartsQmlTargets.cmake
+lib/cmake/Qt6ChartsQml/Qt6ChartsQmlVersionlessAliasTargets.cmake
 lib/cmake/Qt6ChartsQml/Qt6ChartsQmlVersionlessTargets.cmake
 lib/cmake/Qt6Qml/QmlPlugins/Qt6qtchartsqml2AdditionalTargetInfo.cmake
 lib/cmake/Qt6Qml/QmlPlugins/Qt6qtchartsqml2Config.cmake
@@ -377,6 +377,7 @@ lib/cmake/Qt6Qml/QmlPlugins/Qt6qtchartsqml2Targets.cmake
 %%QT_QMLDIR%%/QtCharts/libqtchartsqml2plugin.so
 %%QT_QMLDIR%%/QtCharts/plugins.qmltypes
 %%QT_QMLDIR%%/QtCharts/qmldir
+%%QT_SBOMDIR%%/qtcharts-%%FULLVER%%.spdx
 libdata/pkgconfig/Qt6Charts.pc
 libdata/pkgconfig/Qt6ChartsQml.pc
 %%QT_DATADIR%%/modules/Charts.json

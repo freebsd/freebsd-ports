@@ -1,11 +1,11 @@
---- src/3rdparty/chromium/components/viz/host/host_display_client.cc.orig	2023-03-09 06:31:50 UTC
+--- src/3rdparty/chromium/components/viz/host/host_display_client.cc.orig	2024-01-30 07:53:34 UTC
 +++ src/3rdparty/chromium/components/viz/host/host_display_client.cc
-@@ -67,7 +67,7 @@ void HostDisplayClient::AddChildWindowToBrowser(
+@@ -64,7 +64,7 @@ void HostDisplayClient::AddChildWindowToBrowser(
+ }
+ #endif
  
- // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
- // of lacros-chrome is complete.
--#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)
-+#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS) || BUILDFLAG(IS_BSD)
+-#if BUILDFLAG(IS_LINUX) && BUILDFLAG(IS_OZONE_X11)
++#if (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)) && BUILDFLAG(IS_OZONE_X11)
  void HostDisplayClient::DidCompleteSwapWithNewSize(const gfx::Size& size) {
    NOTIMPLEMENTED();
  }

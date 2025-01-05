@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/ui/color/color_id.h.orig	2023-10-11 18:22:24 UTC
+--- src/3rdparty/chromium/ui/color/color_id.h.orig	2024-01-30 07:53:34 UTC
 +++ src/3rdparty/chromium/ui/color/color_id.h
-@@ -567,7 +567,7 @@
+@@ -610,7 +610,7 @@
    E_CPONLY(kColorNativeColor6) \
    E_CPONLY(kColorNativeBaseColor) \
    E_CPONLY(kColorNativeSecondaryColor)

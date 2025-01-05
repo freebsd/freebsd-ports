@@ -34,7 +34,7 @@ include/shiboken6/signature.h
 include/shiboken6/signature_p.h
 include/shiboken6/threadstatesaver.h
 include/shiboken6/voidptr.h
-lib/cmake/Shiboken6/Shiboken6Config.abi3.cmake
+lib/cmake/Shiboken6/Shiboken6Config.abi%%PYTHON_MAJOR_VER%%.cmake
 lib/cmake/Shiboken6/Shiboken6Config.cmake
 lib/cmake/Shiboken6/Shiboken6ConfigVersion.cmake
 lib/cmake/Shiboken6/Shiboken6Targets-%%CMAKE_BUILD_TYPE%%.cmake
@@ -44,10 +44,10 @@ lib/cmake/Shiboken6Tools/Shiboken6ToolsConfig.cmake
 lib/cmake/Shiboken6Tools/Shiboken6ToolsConfigVersion.cmake
 lib/cmake/Shiboken6Tools/Shiboken6ToolsTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/Shiboken6Tools/Shiboken6ToolsTargets.cmake
-lib/libshiboken6.abi3.so
-lib/libshiboken6.abi3.so.6.7
-lib/libshiboken6.abi3.so.%%DISTVERSION%%
-%%PYTHON_SITELIBDIR%%/shiboken6/Shiboken.abi3.so
+lib/libshiboken6.abi%%PYTHON_MAJOR_VER%%.so
+lib/libshiboken6.abi%%PYTHON_MAJOR_VER%%.so.%%SHLIB_VER%%
+lib/libshiboken6.abi%%PYTHON_MAJOR_VER%%.so.%%SHLIB_VERSION%%
+%%PYTHON_SITELIBDIR%%/shiboken6/Shiboken.abi%%PYTHON_MAJOR_VER%%.so
 %%PYTHON_SITELIBDIR%%/shiboken6/Shiboken.pyi
 %%PYTHON_SITELIBDIR%%/shiboken6/__init__.py
 %%PYTHON_SITELIBDIR%%/shiboken6/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.opt-1.pyc

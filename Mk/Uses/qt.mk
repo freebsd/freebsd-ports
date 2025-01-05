@@ -23,8 +23,8 @@ _QT_MK_INCLUDED=	qt.mk
 # Qt versions currently supported by the framework.
 _QT_SUPPORTED?=		5 6
 QT5_VERSION?=		5.15.16
-QT6_VERSION?=		6.7.3
-PYSIDE6_VERSION?=	6.7.3
+QT6_VERSION?=		6.8.1
+PYSIDE6_VERSION?=	6.8.0.2
 
 # Support for intermediate Qt6 releases. This partially defines
 # _QT6_MASTER_SITE_SUBDIR and would probably be better in qt-dist.mk,
@@ -74,6 +74,7 @@ QT_DESCRIPTIONSDIR_REL?=${QT_DATADIR_REL}/modules
 QT_LIBEXECDIR_REL?=	libexec/${_QT_RELNAME}
 QT_IMPORTDIR_REL?=	${QT_ARCHDIR_REL}/imports
 QT_QMLDIR_REL?=		${QT_ARCHDIR_REL}/qml
+QT_SBOMDIR_REL?=	${QT_ARCHDIR_REL}/sbom
 QT_DATADIR_REL?=	share/${_QT_RELNAME}
 QT_DOCDIR_REL?=		share/doc/${_QT_RELNAME}
 QT_L10NDIR_REL?=	${QT_DATADIR_REL}/translations
@@ -111,7 +112,7 @@ QMAKESPEC?=		${QT_MKSPECDIR}/${QMAKESPECNAME}
 QMAKE_COMPILER=	$$(ccver="$$(${CXX} --version)"; case "$$ccver" in *clang*) echo clang ;; *) echo g++ ;; esac)
 
 .  for dir in BIN INC LIB ARCH PLUGIN LIBEXEC IMPORT \
-	QML DATA DOC L10N ETC EXAMPLE TEST MKSPEC \
+	QML SBOM DATA DOC L10N ETC EXAMPLE TEST MKSPEC \
 	CMAKE TOOL
 QT_${dir}DIR=	${PREFIX}/${QT_${dir}DIR_REL}
 # Export all directories to the plist substituion for QT_DIST ports.
@@ -251,7 +252,7 @@ qt-imageformats_PORT=	graphics/${_QT_RELNAME}-imageformats
 qt-imageformats_PATH=	${LOCALBASE}/${QT_PLUGINDIR_REL}/imageformats/libqtiff.so
 
 qt-languageserver_PORT=	devel/${_QT_RELNAME}-languageserver
-qt-languageserver_LIB=	libQt${_QT_LIBVER}LanguageServer.so
+qt-languageserver_PATH=	${LOCALBASE}/${QT_LIBDIR_REL}/libQt6LanguageServer.a
 
 qt-lottie_PORT=		graphics/${_QT_RELNAME}-lottie
 qt-lottie_LIB=		libQt${_QT_LIBVER}Bodymovin.so

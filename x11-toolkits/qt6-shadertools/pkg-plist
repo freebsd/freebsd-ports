@@ -2,7 +2,6 @@
 %%QT_INCDIR%%/QtShaderTools/%%FULLVER%%/QtShaderTools/private/qspirvcompiler_p.h
 %%QT_INCDIR%%/QtShaderTools/%%FULLVER%%/QtShaderTools/private/qspirvshader_p.h
 %%QT_INCDIR%%/QtShaderTools/%%FULLVER%%/QtShaderTools/private/qspirvshaderremap_p.h
-%%QT_INCDIR%%/QtShaderTools/%%FULLVER%%/QtShaderTools/private/qtshadertoolsexports_p.h
 %%QT_INCDIR%%/QtShaderTools/%%FULLVER%%/QtShaderTools/private/qtshadertoolsglobal_p.h
 %%QT_INCDIR%%/QtShaderTools/%%FULLVER%%/QtShaderTools/rhi/qshaderbaker.h
 %%QT_INCDIR%%/QtShaderTools/QtShaderTools
@@ -19,6 +18,7 @@ lib/cmake/Qt6ShaderTools/Qt6ShaderToolsConfigVersionImpl.cmake
 lib/cmake/Qt6ShaderTools/Qt6ShaderToolsDependencies.cmake
 lib/cmake/Qt6ShaderTools/Qt6ShaderToolsTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/Qt6ShaderTools/Qt6ShaderToolsTargets.cmake
+lib/cmake/Qt6ShaderTools/Qt6ShaderToolsVersionlessAliasTargets.cmake
 lib/cmake/Qt6ShaderTools/Qt6ShaderToolsVersionlessTargets.cmake
 lib/cmake/Qt6ShaderToolsTools/Qt6ShaderToolsMacros.cmake
 lib/cmake/Qt6ShaderToolsTools/Qt6ShaderToolsToolsAdditionalTargetInfo.cmake
@@ -37,5 +37,6 @@ lib/cmake/Qt6ShaderToolsTools/Qt6ShaderToolsToolsVersionlessTargets.cmake
 %%QT_LIBDIR%%/metatypes/qt6shadertools_%%CMAKE_BUILD_TYPE%%_metatypes.json
 %%QT_MKSPECDIR%%/modules/qt_lib_shadertools.pri
 %%QT_MKSPECDIR%%/modules/qt_lib_shadertools_private.pri
+%%QT_SBOMDIR%%/qtshadertools-%%FULLVER%%.spdx
 libdata/pkgconfig/Qt6ShaderTools.pc
 %%QT_DATADIR%%/modules/ShaderTools.json

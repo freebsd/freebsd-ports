@@ -1,5 +1,7 @@
 %%QT_INCDIR%%/QtHttpServer/%%FULLVER%%/QtHttpServer/private/qabstracthttpserver_p.h
 %%QT_INCDIR%%/QtHttpServer/%%FULLVER%%/QtHttpServer/private/qhttpserver_p.h
+%%QT_INCDIR%%/QtHttpServer/%%FULLVER%%/QtHttpServer/private/qhttpserverhttp1protocolhandler_p.h
+%%QT_INCDIR%%/QtHttpServer/%%FULLVER%%/QtHttpServer/private/qhttpserverhttp2protocolhandler_p.h
 %%QT_INCDIR%%/QtHttpServer/%%FULLVER%%/QtHttpServer/private/qhttpserverliterals_p.h
 %%QT_INCDIR%%/QtHttpServer/%%FULLVER%%/QtHttpServer/private/qhttpserverrequest_p.h
 %%QT_INCDIR%%/QtHttpServer/%%FULLVER%%/QtHttpServer/private/qhttpserverresponder_p.h
@@ -9,13 +11,13 @@
 %%QT_INCDIR%%/QtHttpServer/%%FULLVER%%/QtHttpServer/private/qhttpserverstream_p.h
 %%QT_INCDIR%%/QtHttpServer/QAbstractHttpServer
 %%QT_INCDIR%%/QtHttpServer/QHttpServer
-%%QT_INCDIR%%/QtHttpServer/QHttpServerAfterRequestViewTraits
 %%QT_INCDIR%%/QtHttpServer/QHttpServerRequest
 %%QT_INCDIR%%/QtHttpServer/QHttpServerResponder
 %%QT_INCDIR%%/QtHttpServer/QHttpServerResponse
 %%QT_INCDIR%%/QtHttpServer/QHttpServerRouter
 %%QT_INCDIR%%/QtHttpServer/QHttpServerRouterRule
 %%QT_INCDIR%%/QtHttpServer/QHttpServerRouterViewTraits
+%%QT_INCDIR%%/QtHttpServer/QHttpServerWebSocketUpgradeResponse
 %%QT_INCDIR%%/QtHttpServer/QtHttpServer
 %%QT_INCDIR%%/QtHttpServer/QtHttpServerDepends
 %%QT_INCDIR%%/QtHttpServer/QtHttpServerVersion
@@ -27,8 +29,8 @@
 %%QT_INCDIR%%/QtHttpServer/qhttpserverrouter.h
 %%QT_INCDIR%%/QtHttpServer/qhttpserverrouterrule.h
 %%QT_INCDIR%%/QtHttpServer/qhttpserverrouterviewtraits.h
-%%QT_INCDIR%%/QtHttpServer/qhttpserverviewtraits.h
 %%QT_INCDIR%%/QtHttpServer/qhttpserverviewtraits_impl.h
+%%QT_INCDIR%%/QtHttpServer/qhttpserverwebsocketupgraderesponse.h
 %%QT_INCDIR%%/QtHttpServer/qthttpserverexports.h
 %%QT_INCDIR%%/QtHttpServer/qthttpserverglobal.h
 %%QT_INCDIR%%/QtHttpServer/qthttpserverversion.h
@@ -40,6 +42,7 @@ lib/cmake/Qt6HttpServer/Qt6HttpServerConfigVersionImpl.cmake
 lib/cmake/Qt6HttpServer/Qt6HttpServerDependencies.cmake
 lib/cmake/Qt6HttpServer/Qt6HttpServerTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/Qt6HttpServer/Qt6HttpServerTargets.cmake
+lib/cmake/Qt6HttpServer/Qt6HttpServerVersionlessAliasTargets.cmake
 lib/cmake/Qt6HttpServer/Qt6HttpServerVersionlessTargets.cmake
 %%QT_LIBDIR%%/libQt6HttpServer.prl
 %%QT_LIBDIR%%/libQt6HttpServer.so
@@ -48,5 +51,6 @@ lib/cmake/Qt6HttpServer/Qt6HttpServerVersionlessTargets.cmake
 %%QT_LIBDIR%%/metatypes/qt6httpserver_%%CMAKE_BUILD_TYPE%%_metatypes.json
 %%QT_MKSPECDIR%%/modules/qt_lib_httpserver.pri
 %%QT_MKSPECDIR%%/modules/qt_lib_httpserver_private.pri
+%%QT_SBOMDIR%%/qthttpserver-%%FULLVER%%.spdx
 libdata/pkgconfig/Qt6HttpServer.pc
 %%QT_DATADIR%%/modules/HttpServer.json
