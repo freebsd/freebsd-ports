@@ -1,0 +1,13 @@
+https://gitlab.freedesktop.org/mstoeckl/waypipe/-/issues/128
+
+--- src/dmabuf.rs.orig	2025-02-27 19:21:52 UTC
++++ src/dmabuf.rs
+@@ -2806,7 +2806,7 @@ pub fn get_dev_for_drm_node_path(path: &PathBuf) -> Re
+ 
+ pub fn get_dev_for_drm_node_path(path: &PathBuf) -> Result<u64, String> {
+     let r = nix::sys::stat::stat(path).map_err(|_| "Failed to get device for drm node path")?;
+-    Ok(r.st_rdev)
++    Ok(r.st_rdev.into())
+ }
+ 
+ impl VulkanDevice {

@@ -1,0 +1,20 @@
+https://gitlab.freedesktop.org/mstoeckl/waypipe/-/issues/129
+
+--- meson.build.orig	2025-02-27 19:21:52 UTC
++++ meson.build
+@@ -103,6 +103,6 @@ if get_option('build_rs')
+     )
+     libavutil = dependency(
+         'libavutil',
+-        version: '>=59.39.100',
++        version: '>=58.29.100',
+         required: get_option('with_video'),
+     )
+@@ -109,6 +109,6 @@
+     libavcodec = dependency(
+         'libavcodec',
+-        version: '>=61.19.100',
++        version: '>=60.19.100',
+         required: get_option('with_video'),
+     )
+     if bindgen.found() and libavcodec.found() and libavutil.found() and glslc.found()
