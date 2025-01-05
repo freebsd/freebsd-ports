@@ -1,0 +1,71 @@
+#!/bin/sh
+
+# PROVIDE: tempo
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+
+# Add the following lines to /etc/rc.conf to enable tempo
+# tempo_enable="YES"
+#
+# tempo_enable (bool):
+#     Set it to YES to enable grafana
+#     Set to NO by default
+# tempo_user (string):
+#     Set user that grafana will run under
+#     Default is "%%tempo_USER%%"
+# tempo_group (string):
+#     Set group that own grafana files
+#     Default is "%%tempo_GROUP%%"
+# tempo_config (string)
+#     Set full path to config file
+#     Default is "%%PREFIX%%/etc/tempo.yaml"
+# tempo_logfile (string)
+#     Set full path to log file
+#     Default is "/var/log/tempo/tempo.log"
+# tempo_loglevel (string)
+#     Set log level. Only log messages with the given severity or above.
+#     Valid levels: [debug, info, warn, error]
+#     Default is "warn"
+# tempo_args (string)
+#     Set additional command line arguments
+#     Default is ""
+
+. /etc/rc.subr
+
+name=tempo
+rcvar=tempo_enable
+
+load_rc_config $name
+
+: ${tempo_enable:="NO"}
+: ${tempo_user:="%%TEMPO_USER%%"}
+: ${tempo_group:="%%TEMPO_GROUP%%"}
+: ${tempo_config:="%%PREFIX%%/etc/tempo.yaml"}
+: ${tempo_logfile:="/var/log/tempo/tempo.log"}
+: ${tempo_loglevel:="warn"}
+
+pidfile="/var/run/${name}/${name}.pid"
+required_files="${tempo_config}"
+
+procname="%%PREFIX%%/bin/tempo"
+command="/usr/sbin/daemon"
+command_args="-p ${pidfile} -t ${name} -o ${tempo_logfile} \
+	${procname} \
+	-config.file=${tempo_config} \
+	-log.level=${tempo_loglevel} \
+	${tempo_args}"
+
+start_precmd="tempo_start_precmd"
+
+tempo_start_precmd()
+{
+	if [ ! -d "/var/run/${name}" ]; then
+		install -d -m 0750 -o ${tempo_user} -g ${tempo_group} "/var/run/${name}"
+	fi
+
+	if [ ! -d "/var/log/tempo" ]; then
+		install -d -m 0750 -o ${tempo_user} -g ${tempo_group} "/var/log/tempo"
+	fi
+}
+
+run_rc_command "$1"

@@ -1,0 +1,12 @@
+bin/tempo
+bin/tempo-query
+bin/tempo-cli
+bin/tempo-vulture
+@sample etc/tempo.yaml.sample
+@owner %%TEMPO_USER%%
+@group %%TEMPO_GROUP%%
+@mode 750
+@dir %%TEMPO_DATADIR%%
+@mode
+@group
+@owner

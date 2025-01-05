@@ -295,7 +295,7 @@ _metronome:*:345:345::0:0:Metronome Daemon:/nonexistent:/usr/sbin/nologin
 ngircd:*:346:346::0:0:ngIRCd Daemon:/var/empty:/usr/sbin/nologin
 eturnal:*:347:347::0:0:eturnal User:/var/spool/eturnal:/bin/sh
 davfs2:*:348:348::0:0:Davfs2 Daemon:/nonexistent:/usr/sbin/nologin
-# free: 349
+tempo:*:349:349::0:0:Tempo Daemon:/nonexistent:/usr/sbin/nologin
 _sabnzbd:*:350:350::0:0:sabnzb Daemon:/nonexistent:/usr/sbin/nologin
 sonarr:*:351:351::0:0:Sonarr PVR:/nonexistent:/usr/sbin/nologin
 radarr:*:352:352::0:0:Radarr Daemon:/nonexistent:/usr/sbin/nologin

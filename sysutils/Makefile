@@ -1363,6 +1363,7 @@
     SUBDIR += tcplist
     SUBDIR += tdir
     SUBDIR += tealdeer
+    SUBDIR += tempo
     SUBDIR += tenshi
     SUBDIR += tere
     SUBDIR += terraform
