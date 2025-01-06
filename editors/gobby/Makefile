@@ -1,49 +1,42 @@
 PORTNAME=	gobby
-PORTVERSION=	0.4.13
-PORTREVISION=	11
+DISTVERSION=	0.6.0
 CATEGORIES=	editors
 MASTER_SITES=	http://releases.0x539.de/gobby/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	nxjoseph@protonmail.com
 COMMENT=	Free collaborative editor
 WWW=		http://gobby.0x539.de
 
-LICENSE=	GPLv2
+LICENSE=	ISCL
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libobby.so:devel/obby \
-		libnet6.so:net/net6 \
-		libxml++-2.6.so:textproc/libxml++26 \
-		libgtkmm-2.4.so:x11-toolkits/gtkmm24
+BUILD_DEPENDS=	itstool:textproc/itstool
+LIB_DEPENDS=	libgnutls.so:security/gnutls \
+		libgsasl.so:security/libgsasl \
+		libinfgtk-0.7.so:textproc/libinfinity \
+		libinfinity-0.7.so:textproc/libinfinity \
+		libinftext-0.7.so:textproc/libinfinity \
+		libinftextgtk-0.7.so:textproc/libinfinity
 
-OPTIONS_DEFINE=	GTKSPELL NLS
-GTKSPELL_DESC=	Enable GtkSpell support
-
-USE_GNOME=	gtksourceview2 intltool
-USES=		compiler:c++11-lang cpe gmake gnome pathfix pkgconfig
-CPE_VENDOR=	${PORTNAME}_project
+USES=		compiler:c++11-lang desktop-file-utils gettext-tools gmake \
+		gnome pathfix pkgconfig
 USE_CXXSTD=	c++11
+USE_GNOME=	atkmm cairomm glibmm gtkmm30 gtksourceview3 intltool \
+		libsigc++20 libxml++26 pangomm
+
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
-.include <bsd.port.options.mk>
+OPTIONS_DEFINE=	NLS
+OPTIONS_SUB=	yes
 
-.if ${PORT_OPTIONS:MGTKSPELL}
-LIB_DEPENDS+=	libgtkspell.so:textproc/gtkspell
-CONFIGURE_ARGS+=--with-gtkspell
-.else
-CONFIGURE_ARGS+=--without-gtkspell
-.endif
+NLS_CONFIGURE_ENABLE=	nls
 
-.if ${PORT_OPTIONS:MNLS}
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib -lintl
-CONFIGURE_ARGS+=	--enable-nls
-USES+=		cpe gettext
-CPE_VENDOR=	${PORTNAME}_project
-PLIST_SUB+=	NLS=""
-.else
-CONFIGURE_ARGS+=	--disable-nls
-PLIST_SUB+=	NLS="@comment "
-.endif
+post-install:
+	@cd ${STAGEDIR}${PREFIX}/bin && \
+		${MV} gobby-0.5 \
+		gobby
+	@cd ${STAGEDIR}${PREFIX}/share/man/man1 && \
+		${MV} gobby-0.5.1 \
+		gobby.1
 
 .include <bsd.port.mk>
