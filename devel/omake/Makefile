@@ -20,6 +20,12 @@ INFO=		omake-doc
 
 OPTIONS_DEFINE=	DOCS
 
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == powerpc
+USE_BINUTILS=	yes
+.endif
+
 bench: build
 	@cd ${WRKSRC}; ${SETENVI} ${WRK_ENV} ${MAKE_ENV} ${MAKE_ARGS} boot/omake bench
 
