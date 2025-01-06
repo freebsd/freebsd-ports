@@ -1,6 +1,6 @@
 PORTNAME=	digital
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.29
+DISTVERSION=	0.31
 CATEGORIES=	cad java
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -30,6 +30,8 @@ NO_ARCH=	yes
 #   5. make clean makesum
 
 DEV_UPDATE_MODE=	no
+
+MAKE_ENV=	MAVEN_HOME=/usr/local/share/java/apache-maven-3.8 # workaround for https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=283883
 
 .if (${DEV_UPDATE_MODE} == "yes")
 post-build:
