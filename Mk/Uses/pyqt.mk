@@ -108,7 +108,7 @@ MASTER_SITES_PYQTWEBENGINE=	${MASTER_SITES_PYQT${_PYQT_VERSION}WEBENGINE}
 # below, should have a suitable epoch appended to the version.
 
 # Qt version-agnostic components
-PYQTBUILDER_VERSION=		1.17.0
+PYQTBUILDER_VERSION=		1.17.1
 QSCI2_VERSION=			2.14.1
 SIP_VERSION=			6.9.1	# ,1
 
