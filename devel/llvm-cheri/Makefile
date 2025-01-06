@@ -111,13 +111,6 @@ STRIP_LIBS=	BugpointPasses.so \
 		${LIBNAME}.0 \
 		libLTO.so
 
-.if exists(${PATCHDIR}/llvm${LLVM_MAJOR})
-EXTRA_PATCHES+=	${PATCHDIR}/llvm${LLVM_MAJOR}
-.endif
-.if ${.PARSEDIR} != ${.CURDIR} && exists(${.CURDIR}/files)
-EXTRA_PATCHES+=	${.CURDIR}/files
-.endif
-
 .include <bsd.port.options.mk>
 
 # keep in sync with /usr/src/lib/clang/clang.build.mk
@@ -156,6 +149,14 @@ _USES_PYTHON?=	python:build
 USES+=		${_USES_PYTHON}
 
 .include <bsd.port.pre.mk>
+
+.if exists(${PATCHDIR}/llvm${LLVM_MAJOR})
+EXTRA_PATCHES+=	${PATCHDIR}/llvm${LLVM_MAJOR}
+.endif
+.if ${.PARSEDIR} != ${.CURDIR} && exists(${.CURDIR}/files)
+EXTRA_PATCHES+=	${.CURDIR}/files
+.endif
+
 .include "${.CURDIR}/Makefile.COMMANDS"
 .sinclude "${.CURDIR}/Makefile.MAN1SRCS"
 
