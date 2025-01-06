@@ -5,7 +5,9 @@ CATEGORIES=	biology
 
 MAINTAINER=	alster@vinterdalen.se
 COMMENT=	Burrows-Wheeler sequence aligner
-WWW=		https://github.com/lh3/bwa/
+WWW=		https://bio-bwa.sourceforge.net/ \
+		https://sourceforge.net/projects/bio-bwa/ \
+		https://github.com/lh3/bwa/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
@@ -16,7 +18,7 @@ BROKEN_mips64=	fails to compile: cc1: unrecognized command line option "-msse2"
 
 BUILD_DEPENDS=	simde>0:devel/simde
 
-USES=		gmake localbase perl5 shebangfix tar:bzip2
+USES=		gmake localbase perl5 shebangfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	lh3
 USE_PERL5=	run
