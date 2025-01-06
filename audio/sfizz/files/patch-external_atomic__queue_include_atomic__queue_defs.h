@@ -1,6 +1,6 @@
---- external/atomic_queue/include/atomic_queue/defs.h.orig	2024-12-22 21:57:08 UTC
+--- external/atomic_queue/include/atomic_queue/defs.h.orig	2024-01-14 20:23:08 UTC
 +++ external/atomic_queue/include/atomic_queue/defs.h
-@@ -36,6 +36,13 @@ static inline void spin_loop_pause() noexcept {
+@@ -36,6 +36,16 @@ static inline void spin_loop_pause() noexcept {
  #endif
  }
  } // namespace atomic_queue
@@ -12,5 +12,11 @@
 +}
 +} // namespace atomic_queue
  #else
- #error "Unknown CPU architecture."
+-#error "Unknown CPU architecture."
++namespace atomic_queue {
++constexpr int CACHE_LINE_SIZE = 64;
++static inline void spin_loop_pause() noexcept {}
++} // namespace atomic_queue
  #endif
+ 
+ ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
