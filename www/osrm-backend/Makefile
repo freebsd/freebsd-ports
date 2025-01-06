@@ -11,7 +11,7 @@ WWW=		https://project-osrm.org/
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.TXT
 
-NOT_FOR_ARCHS=	armv7 i386
+NOT_FOR_ARCHS=	armv7 i386 powerpc
 NOT_FOR_ARCHS_REASON=	Building on a 32 bit system is not supported
 
 BUILD_DEPENDS=	${LOCALBASE}/include/sol:devel/sol2
