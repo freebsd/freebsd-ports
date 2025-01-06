@@ -5,6 +5,16 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20250106:
+  AFFECTS: users of comms/zigbee2mqtt
+  AUTHOR: otis@FreeBSD.org
+
+  There are possibly breaking changes, see
+  https://github.com/Koenkk/zigbee2mqtt/discussions/24198 for full details.
+
+  Users are STRONGLY advised to take backup of /var/db/z2m directory
+  prior to the upgrade.
+
 20241230:
   AFFECTS: users of net/xrdp-devel
   AUTHOR: meta@FreeBSD.org

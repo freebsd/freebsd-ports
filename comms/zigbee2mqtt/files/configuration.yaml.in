@@ -21,12 +21,22 @@ mqtt:
 serial:
     # Location of ITead Sonoff Zigbee 3.0 USB Dongle Plus
     port: /dev/ttyU0
+    # See https://github.com/Koenkk/zigbee2mqtt.io/blob/dev/docs/guide/configuration/adapter-settings.md#basic-configuration
+    # for more details.
+    adapter: zstack
+
+# Disable device legacy options
+device_options:
+    legacy: false
 
 # Advanced settings
 advanced:
+    homeassistant_legacy_entity_attributes: false
+    homeassistant_legacy_triggers: false
+    legacy_api: false
+    legacy_availability_payload: false
     log_output: [ "file" ]
     log_level: info
     log_symlink_current: true
     log_directory: "%%Z2M_LOGDIR%%/%TIMESTAMP%"
     log_file: "z2m.log"
-

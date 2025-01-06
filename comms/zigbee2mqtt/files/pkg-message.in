@@ -6,4 +6,23 @@ zigbee2mqtt file locations are as following:
   - log directory is %%Z2M_LOGDIR%%
 EOM
 }
+{ type: upgrade
+  minimum_version: "1.42.0"
+  message: <<EOM
+There are some breaking changes:
+
+- Improved adapter discovery; when upgrading from Zigbee2MQTT 1.x.x, this might
+  result in USB adapter discovery error (No valid USB adapter found), see
+  https://github.com/Koenkk/zigbee2mqtt/discussions/24198 for details.
+
+- zstack is no longer the default for adapter setting. If Zigbee2MQTT fails to
+  start saying the adapter could not be discovered, it means your adapter uses
+  an identification not currently recognized by Zigbee2MQTT, make sure to
+  specify the adapter setting if that's the case.
+
+See https://github.com/Koenkk/zigbee2mqtt/discussions/24198 for full details
+on (possibly) breaking changes.
+
+Take a backup of %%Z2M_DATADIR%% before restarting the service!
+}
 ]

@@ -1,5 +1,5 @@
 PORTNAME=	zigbee2mqtt
-DISTVERSION=	1.42.0
+DISTVERSION=	2.0.0
 CATEGORIES=	comms
 MASTER_SITES=	LOCAL/otis/:nodemodules
 DISTFILES=	${DISTCACHEFILES_nodemodules}:nodemodules
@@ -58,7 +58,7 @@ post-extract:
 		.prettierrc .release-please-manifest.json CHANGELOG.md \
 		CODE_OF_CONDUCT.md CONTRIBUTING.md README.md docker \
 		update.sh \
-		data; do \
+		data test; do \
 		${RM} -rf ${WRKSRC}/$${f}; \
 	done
 
@@ -69,13 +69,22 @@ do-install:
 	cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${Z2M_HOME}
 	${INSTALL_DATA} ${WRKDIR}/configuration.yaml ${STAGEDIR}${Z2M_DATADIR}/configuration.yaml.sample
 	${INSTALL} -lrs ${STAGEDIR}${Z2M_DATADIR} ${STAGEDIR}${Z2M_HOME}/data
+	${RM} ${STAGEDIR}${Z2M_HOME}/scripts/zigbee2socat_installer.sh
 
 # This should be run after DISTVERSION change
+# Required global node modules:
+#   - pnpm
+#   - rimraf
+#   - typescript
+#
+# Then run:
+# make create-caches-tarball
 create-caches-tarball: ${WRKSRC}
 	cd ${WRKSRC} && \
-		${SETENV} ${MAKE_ENV} npm install --ignore-scripts --no-progress --no-audit --no-fund && \
+		${SETENV} ${MAKE_ENV} pnpm install --ignore-scripts && \
+		${SETENV} ${MAKE_ENV} pnpm run prepack && \
 		${FIND} ${WRKSRC}/node_modules -type d -a \( -name build -o -name dist \) -print0 | xargs -0 ${RM} -rf && \
 		${TAR} czf ${WRKDIR}/zigbee2mqtt-nodemodules-${PKGVERSION}.tar.gz \
-		node_modules package-lock.json
+		node_modules pnpm-lock.yaml
 
 .include <bsd.port.mk>
