@@ -1,6 +1,7 @@
 PORTNAME=	octave-forge-onsas
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.3.0
+DISTVERSION=	0.2.5
+PORTEPOCH=	1
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org
@@ -9,8 +10,6 @@ WWW=		https://packages.octave.org/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKDIR}/${OCTAVE_SRC}/COPYING
-
-BROKEN=		does not install properly
 
 USES=		octave
 USE_GITHUB=	yes
