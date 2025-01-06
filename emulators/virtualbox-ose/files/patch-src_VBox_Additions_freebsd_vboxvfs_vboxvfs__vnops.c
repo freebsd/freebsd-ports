@@ -1,6 +1,6 @@
---- src/VBox/Additions/freebsd/vboxvfs/vboxvfs_vnops.c.orig	2022-07-19 20:51:58 UTC
+--- src/VBox/Additions/freebsd/vboxvfs/vboxvfs_vnops.c.orig	2023-07-12 15:59:35 UTC
 +++ src/VBox/Additions/freebsd/vboxvfs/vboxvfs_vnops.c
-@@ -14,228 +14,1364 @@
+@@ -14,228 +14,1416 @@
   * VirtualBox OSE distribution. VirtualBox OSE is distributed in the
   * hope that it will be useful, but WITHOUT ANY WARRANTY of any kind.
   */
@@ -83,7 +83,8 @@
 +static vop_fsync_t	vboxfs_fsync;
 +static vop_remove_t	vboxfs_remove;
 +static vop_link_t	vboxfs_link;
-+static vop_cachedlookup_t	vboxfs_lookup;
++static vop_lookup_t	vboxfs_lookup;
++static vop_cachedlookup_t	vboxfs_cachedlookup;
 +static vop_rename_t	vboxfs_rename;
 +static vop_mkdir_t	vboxfs_mkdir;
 +static vop_rmdir_t	vboxfs_rmdir;
@@ -140,8 +141,8 @@
 +	.vop_inactive	= vboxfs_inactive,
 +	.vop_ioctl	= vboxfs_ioctl,
 +	.vop_link	= vboxfs_link,
-+	.vop_lookup	= vfs_cache_lookup,
-+	.vop_cachedlookup	= vboxfs_lookup,
++	.vop_lookup	= vboxfs_lookup,
++	.vop_cachedlookup	= vboxfs_cachedlookup,
 +	.vop_mkdir	= vboxfs_mkdir,
 +	.vop_mknod	= VOP_EOPNOTSUPP,
 +	.vop_open	= vboxfs_open,
@@ -462,13 +463,15 @@
  {
 -    return 0;
 +	char *p;
++	size_t dstsz;
 +
 +	if (len <= 2 && tail[0] == '.' && (len == 1 || tail[1] == '.'))
 +		panic("construct path for %s", tail);
-+	p = malloc(strlen(node->sf_path) + 1 + len + 1, M_VBOXVFS, M_WAITOK);
++	dstsz = strlen(node->sf_path) + 1 + len + 1;
++	p = malloc(dstsz, M_VBOXVFS, M_WAITOK);
 +	strcpy(p, node->sf_path);
 +	strcat(p, "/");
-+	strcat(p, tail);
++	strlcat(p, tail, dstsz);
 +	return (p);
  }
  
@@ -531,38 +534,85 @@
  
 -static int vboxvfs_symlink(struct vop_symlink_args *ap)
 +static int
-+vboxfs_open(struct vop_open_args *ap)
++vboxfs_get_sfp_file(struct vboxfs_node *np)
  {
 -    return EOPNOTSUPP;
-+	struct vboxfs_node *np;
 +	sfp_file_t *fp;
++	int error;
++
++	fp = NULL;
++	VBOXFS_NODE_LOCK(np);
++	for (;;) {
++		if (np->sf_file != NULL) {
++			if (fp != NULL)
++				(void) sfprov_close(fp);
++			np->sf_opencnt++;
++			fp = np->sf_file;
++			break;
++		} else if (fp != NULL) {
++			np->sf_file = fp;
++			KASSERT(np->sf_opencnt == 0,
++				("np %p opencnt (%d) must be zero.",
++				 np, np->sf_opencnt));
++			np->sf_opencnt = 1;
++			break;
++		}
++		VBOXFS_NODE_UNLOCK(np);
++		error = sfprov_open(np->vboxfsmp->sf_handle, np->sf_path, &fp);
++		if (error != 0)
++			return (error);
++		VBOXFS_NODE_LOCK(np);
++	}
++	VBOXFS_NODE_UNLOCK(np);
++
++	return (0);
+ }
+ 
+-static int vboxvfs_mknod(struct vop_mknod_args *ap)
++static void
++vboxfs_put_sfp_file(struct vboxfs_node *np)
+ {
+-    return EOPNOTSUPP;
++	VBOXFS_NODE_LOCK(np);
++	np->sf_opencnt--;
++	if (np->sf_opencnt == 0) {
++		(void) sfprov_close(np->sf_file);
++		np->sf_file = NULL;
++	}
++	VBOXFS_NODE_UNLOCK(np);
+ }
+ 
+-static int vboxvfs_mkdir(struct vop_mkdir_args *ap)
++static int
++vboxfs_open(struct vop_open_args *ap)
+ {
+-    return 0;
++	struct vboxfs_node *np;
 +	int error;
 +
 +	MPASS(VOP_ISLOCKED(vp));
 +
 +	np = VP_TO_VBOXFS_NODE(ap->a_vp);
-+	error = sfprov_open(np->vboxfsmp->sf_handle, np->sf_path, &fp);
++	error = vboxfs_get_sfp_file(np);
 +	if (error != 0)
 +		goto out;
 +
-+	np->sf_file = fp;
 +	vnode_create_vobject(ap->a_vp, 0, ap->a_td);
-+
 +out:
 +	MPASS(VOP_ISLOCKED(vp));
 +
 +	return (error);
  }
  
--static int vboxvfs_mknod(struct vop_mknod_args *ap)
+-static int vboxvfs_rmdir(struct vop_rmdir_args *ap)
 +static void
 +vfsnode_invalidate_stat_cache(struct vboxfs_node *np)
  {
--    return EOPNOTSUPP;
+-    return 0;
 +	np->sf_stat_time = 0;
  }
  
--static int vboxvfs_mkdir(struct vop_mkdir_args *ap)
+-static int vboxvfs_readdir(struct vop_readdir_args *ap)
 +static int
 +vboxfs_close(struct vop_close_args *ap)
  {
@@ -585,15 +635,12 @@
 +
 +	vfsnode_invalidate_stat_cache(np);
 +
-+	if (np->sf_file != NULL && vp->v_usecount <= 1) {
-+		(void) sfprov_close(np->sf_file);
-+		np->sf_file = NULL;
-+	}
++	vboxfs_put_sfp_file(np);
 +
 +	return (0);
  }
  
--static int vboxvfs_rmdir(struct vop_rmdir_args *ap)
+-static int vboxvfs_fsync(struct vop_fsync_args *ap)
 +static int
 +vboxfs_getattr(struct vop_getattr_args *ap)
  {
@@ -674,7 +721,7 @@
 +	return (error);
  }
  
--static int vboxvfs_readdir(struct vop_readdir_args *ap)
+-static int vboxvfs_print (struct vop_print_args *ap)
 +static int
 +vboxfs_setattr(struct vop_setattr_args *ap)
  {
@@ -738,7 +785,7 @@
 +	return (error);
  }
  
--static int vboxvfs_fsync(struct vop_fsync_args *ap)
+-static int vboxvfs_pathconf (struct vop_pathconf_args *ap)
 +#define blkoff(vboxfsmp, loc)	((loc) & (vboxfsmp)->bmask)
 +
 +static int
@@ -776,6 +823,13 @@
 +	if (tmpbuf == 0)
 +		return (ENOMEM);
 +
++	/*
++	 * XXX VOP_READ() is called without VOP_OPEN() on exec case.
++	 * We need to ensure the file is opened here.
++	 */
++	error = vboxfs_get_sfp_file(np);
++	if (error != 0)	/* Maybe removed on the host. */
++		return (EIO);
 +	do {
 +		offset = uio->uio_offset;
 +		done = bytes = min(PAGE_SIZE, uio->uio_resid);
@@ -784,6 +838,7 @@
 +		if (error == 0 && done > 0)
 +			error = uiomove(tmpbuf, done, uio);
 +	} while (error == 0 && uio->uio_resid > 0 && done > 0);
++	vboxfs_put_sfp_file(np);
 +
 +	contigfree(tmpbuf, PAGE_SIZE, M_DEVBUF);
 +
@@ -794,7 +849,7 @@
 +	return (error);
  }
  
--static int vboxvfs_print (struct vop_print_args *ap)
+-static int vboxvfs_strategy (struct vop_strategy_args *ap)
 +static int
 +vboxfs_write(struct vop_write_args *ap)
  {
@@ -855,11 +910,11 @@
 +	return (error);
  }
  
--static int vboxvfs_pathconf (struct vop_pathconf_args *ap)
+-static int vboxvfs_ioctl(struct vop_ioctl_args *ap)
 +static int
 +vboxfs_create(struct vop_create_args *ap)
  {
--    return 0;
+-    return ENOTTY;
 +	struct vnode *dvp = ap->a_dvp;
 +	struct vnode **vpp = ap->a_vpp;
 +	struct componentname *cnp = ap->a_cnp;
@@ -867,7 +922,6 @@
 +	sffs_stat_t	stat;
 +	char	*fullpath = NULL;
 +	struct vboxfs_node *dir = VP_TO_VBOXFS_NODE(dvp);
-+	sfp_file_t *fp;
 +	int error;
 +	struct 	vboxfs_mnt *vboxfsmp = dir->vboxfsmp;
 +
@@ -875,7 +929,7 @@
 +
 +	fullpath = sfnode_construct_path(dir, cnp->cn_nameptr, cnp->cn_namelen);
 +	error = sfprov_create(dir->vboxfsmp->sf_handle, fullpath, vap->va_mode,
-+	    &fp, &stat);
++	    &stat);
 +
 +	if (error)
 +		goto out;
@@ -895,7 +949,7 @@
 +	return (error);
  }
  
--static int vboxvfs_strategy (struct vop_strategy_args *ap)
+-static int vboxvfs_getextattr(struct vop_getextattr_args *ap)
 +static int
 +vboxfs_remove(struct vop_remove_args *ap)
  {
@@ -914,22 +968,6 @@
 +	np = VP_TO_VBOXFS_NODE(vp);
 +	dir = VP_TO_VBOXFS_NODE(vp);
 +
-+	/*
-+	 * If anything else is using this vnode, then fail the remove.
-+	 * Why?  Windows hosts can't sfprov_remove() a file that is open,
-+	 * so we have to sfprov_close() it first.
-+	 * There is no errno for this - since it's not a problem on UNIX,
-+	 * but ETXTBSY is the closest.
-+	 */
-+	if (np->sf_file != NULL) {
-+		if (vp->v_usecount > 1) {
-+			error = ETXTBSY;
-+			goto out;
-+		}
-+		sfprov_close(np->sf_file);
-+		np->sf_file = NULL;
-+	}
-+
 +	error = sfprov_remove(np->vboxfsmp->sf_handle, np->sf_path,
 +	    np->sf_type == VLNK);
 +
@@ -945,11 +983,11 @@
 +	return (error);
  }
  
--static int vboxvfs_ioctl(struct vop_ioctl_args *ap)
+-static int vboxvfs_advlock(struct vop_advlock_args *ap)
 +static int
 +vboxfs_rename(struct vop_rename_args *ap)
  {
--    return ENOTTY;
+-    return 0;
 +	struct vnode *fvp;
 +	struct vnode *fdvp;
 +	struct vnode *tvp;
@@ -989,7 +1027,7 @@
 +	return (ret);
  }
  
--static int vboxvfs_getextattr(struct vop_getextattr_args *ap)
+-static int vboxvfs_lookup(struct vop_lookup_args *ap)
 +static int
 +vboxfs_link(struct vop_link_args *ap)
  {
@@ -997,7 +1035,7 @@
 +	return (EOPNOTSUPP);
  }
  
--static int vboxvfs_advlock(struct vop_advlock_args *ap)
+-static int vboxvfs_inactive(struct vop_inactive_args *ap)
 +static int
 +vboxfs_symlink(struct vop_symlink_args *ap)
  {
@@ -1032,7 +1070,7 @@
 +	return (error);
  }
  
--static int vboxvfs_lookup(struct vop_lookup_args *ap)
+-static int vboxvfs_reclaim(struct vop_reclaim_args *ap)
 +static int
 +vboxfs_mkdir(struct vop_mkdir_args *ap)
  {
@@ -1044,7 +1082,6 @@
 +	sffs_stat_t	stat;
 +	char	*fullpath = NULL;
 +	struct vboxfs_node *dir = VP_TO_VBOXFS_NODE(dvp);
-+	sfp_file_t *fp;
 +	int error;
 +	struct 	vboxfs_mnt *vboxfsmp = dir->vboxfsmp;
 +
@@ -1052,7 +1089,7 @@
 +
 +	fullpath = sfnode_construct_path(dir, cnp->cn_nameptr, cnp->cn_namelen);
 +	error = sfprov_mkdir(dir->vboxfsmp->sf_handle, fullpath, vap->va_mode,
-+	    &fp, &stat);
++	    &stat);
 +
 +	if (error)
 +		goto out;
@@ -1069,7 +1106,7 @@
 +	return (error);
  }
  
--static int vboxvfs_inactive(struct vop_inactive_args *ap)
+-static int vboxvfs_getpages(struct vop_getpages_args *ap)
 +static int
 +vboxfs_rmdir(struct vop_rmdir_args *ap)
  {
@@ -1088,22 +1125,6 @@
 +	np = VP_TO_VBOXFS_NODE(vp);
 +	dir = VP_TO_VBOXFS_NODE(vp);
 +
-+	/*
-+	 * If anything else is using this vnode, then fail the remove.
-+	 * Why?  Windows hosts can't sfprov_remove() a file that is open,
-+	 * so we have to sfprov_close() it first.
-+	 * There is no errno for this - since it's not a problem on UNIX,
-+	 * but ETXTBSY is the closest.
-+	 */
-+	if (np->sf_file != NULL) {
-+		if (vp->v_usecount > 1) {
-+			error = ETXTBSY;
-+			goto out;
-+		}
-+		sfprov_close(np->sf_file);
-+		np->sf_file = NULL;
-+	}
-+
 +	error = sfprov_rmdir(np->vboxfsmp->sf_handle, np->sf_path);
 +
 +#if 0
@@ -1118,7 +1139,7 @@
 +	return (error);
  }
  
--static int vboxvfs_reclaim(struct vop_reclaim_args *ap)
+-static int vboxvfs_putpages(struct vop_putpages_args *ap)
 +static int
 +vboxfs_readdir(struct vop_readdir_args *ap)
  {
@@ -1243,11 +1264,9 @@
 +	return (error);
  }
  
--static int vboxvfs_getpages(struct vop_getpages_args *ap)
 +static int
 +vboxfs_readlink(struct vop_readlink_args *v)
- {
--    return 0;
++{
 +	struct vnode *vp = v->a_vp;
 +	struct uio *uio = v->a_uio;
 +
@@ -1275,13 +1294,11 @@
 +	if (tmpbuf)
 +		contigfree(tmpbuf, MAXPATHLEN, M_DEVBUF);
 +	return (error);
- }
- 
--static int vboxvfs_putpages(struct vop_putpages_args *ap)
++}
++
 +static int
 +vboxfs_fsync(struct vop_fsync_args *ap)
- {
--    return 0;
++{
 +	struct vnode *vp;
 +	struct vboxfs_node *np;
 +	int ret;
@@ -1292,8 +1309,8 @@
 +		return (0);
 +	ret = sfprov_fsync(np->sf_file);
 +	return (ret);
- }
- 
++}
++
 +static int
 +vboxfs_print(struct vop_print_args *ap)
 +{
@@ -1349,17 +1366,10 @@
 + * Lookup an entry in a directory and create a new vnode if found.
 + */
 +static int
-+vboxfs_lookup(struct vop_cachedlookup_args /* {
-+		struct vnodeop_desc *a_desc;
-+		struct vnode *a_dvp;
-+		struct vnode **a_vpp;
-+		struct componentname *a_cnp;
-+	} */ *ap)
++vboxfs_lookup1(struct vnode *dvp, struct vnode **vpp,
++    struct componentname *cnp)
 +{
-+	struct 	componentname *cnp = ap->a_cnp;
-+	struct 	vnode *dvp = ap->a_dvp;		/* the directory vnode */
 +	char	*nameptr = cnp->cn_nameptr;	/* the name of the file or directory */
-+	struct	vnode **vpp = ap->a_vpp;	/* the vnode we found or NULL */
 +	struct  vnode *tdp = NULL;
 +	struct 	vboxfs_node *node = VP_TO_VBOXFS_NODE(dvp);
 +	struct 	vboxfs_mnt *vboxfsmp = node->vboxfsmp;
@@ -1372,6 +1382,7 @@
 +	int 	lkflags = cnp->cn_lkflags;
 +	char	*fullpath = NULL;
 +
++	*vpp = NULLVP;
 +	error = ENOENT;
 +	if (cnp->cn_flags & ISDOTDOT) {
 +		error = vn_vget_ino_gen(dvp, vboxfs_vn_get_ino_alloc,
@@ -1441,6 +1452,47 @@
 +		free(fullpath, M_VBOXVFS);
 +
 +	return (error);
++}
++
++static int
++vboxfs_cachedlookup(struct vop_cachedlookup_args *ap)
++{
++	return (vboxfs_lookup1(ap->a_dvp, ap->a_vpp, ap->a_cnp));
++}
++
++static int
++vboxfs_lookup(struct vop_lookup_args *ap)
++{
++	struct vnode *dvp = ap->a_dvp;
++	struct componentname *cnp = ap->a_cnp;
++	struct vboxfs_node *np = VP_TO_VBOXFS_NODE(dvp);
++	struct timespec mtime;
++	int flags = cnp->cn_flags;
++	int error;
++
++	if (dvp->v_type != VDIR)
++		return (ENOTDIR);
++
++	if ((flags & ISLASTCN) && (dvp->v_mount->mnt_flag & MNT_RDONLY) &&
++	    (cnp->cn_nameiop == DELETE || cnp->cn_nameiop == RENAME))
++		return (EROFS);
++
++	error = vn_dir_check_exec(dvp, cnp);
++	if (error != 0)
++		return (error);
++
++	/* Check if the directory is unmodified on the host. */
++	mtime = np->sf_stat.sf_mtime;
++	error = vsfnode_update_stat_cache(np);
++	if (error == 0) {
++		if (mtime.tv_sec == np->sf_stat.sf_mtime.tv_sec &&
++		    mtime.tv_nsec == np->sf_stat.sf_mtime.tv_nsec)
++			return (vfs_cache_lookup(ap));
++	}
++
++	cache_purge(dvp);
++
++	return (vboxfs_lookup1(ap->a_dvp, ap->a_vpp, ap->a_cnp));
 +}
 +
 +static int
