@@ -1,4 +1,4 @@
-PORTREVISION=	0
+PORTREVISION=	1
 PKGNAMESUFFIX=	-additions-nox11
 
 MASTERDIR=	${.CURDIR}/../virtualbox-ose-additions
