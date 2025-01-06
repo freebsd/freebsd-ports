@@ -5,7 +5,8 @@ CATEGORIES=	databases
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Open-source, cloud-native, distributed time-series database
-WWW=		https://greptime.com/
+WWW=		https://greptime.com/ \
+		https://github.com/GreptimeTeam/greptimedb
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
