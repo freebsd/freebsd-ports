@@ -21,6 +21,7 @@ include/fluent-bit/flb_cfl_record_accessor.h
 include/fluent-bit/flb_chunk_trace.h
 include/fluent-bit/flb_compat.h
 include/fluent-bit/flb_compression.h
+include/fluent-bit/flb_conditionals.h
 include/fluent-bit/flb_config.h
 include/fluent-bit/flb_config_format.h
 include/fluent-bit/flb_config_map.h
