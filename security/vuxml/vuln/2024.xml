@@ -3505,15 +3505,15 @@
     <affects>
       <package>
 	<name>sqlite3</name>
-	<range><lt>3.43.2,1</lt></range>
+	<range><ge>3.43.0</ge><lt>3.43.2,1</lt></range>
       </package>
       <package>
 	<name>linux-rl9-sqlite</name>
-	<range><lt>3.43.2</lt></range>
+	<range><ge>3.43.0</ge><lt>3.43.2</lt></range>
       </package>
       <package>
 	<name>linux-c7-sqlite</name>
-	<range><lt>3.43.2</lt></range>
+	<range><ge>3.43.0</ge><lt>3.43.2</lt></range>
       </package>
     </affects>
     <description>
