@@ -1,7 +1,7 @@
 [
 { type: install
   message: <<EOM
-You installed qTox: Qt 5 based Tox client.
+You installed qTox: Qt based Tox client.
 
 To have video working, you need:
 1. Have multimedia/webcamd installed and running. The usual way to

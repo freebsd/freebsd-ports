@@ -1,12 +1,12 @@
 PORTNAME=	qTox
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.17.6
-PORTREVISION=	7
+DISTVERSION=	1.18.1
 CATEGORIES=	net-im net-p2p
 
 MAINTAINER=	yuri@FreeBSD.org
-COMMENT=	Qt 5 based Tox client
-WWW=		https://qtox.github.io/
+COMMENT=	Qt based Tox client
+WWW=		https://qtox.github.io/ \
+		https://github.com/TokTok/qTox
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -25,10 +25,12 @@ LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg \
 		libtoxext.so:net-im/toxext \
 		libvpx.so:multimedia/libvpx
 
-USES=		cmake compiler:c++11-lib desktop-file-utils gettext openal:soft pkgconfig qt:5
+USES=		cmake compiler:c++11-lib desktop-file-utils gettext gl openal:soft pkgconfig qt:6
+USE_GL=		opengl
+USE_QT=		base sqldriver-sqlite:run svg
+
 USE_GITHUB=	yes
-USE_QT=		core gui network xml opengl sql sql-sqlite3:run widgets svg \
-		concurrent:build buildtools:build linguisttools:build qmake:build testlib:build
+GH_ACCOUNT=	TokTok
 
 CMAKE_ARGS=	-DGIT_DESCRIBE:STRING=${DISTVERSIONPREFIX}${DISTVERSION}${DISTVERSIONSUFFIX}
 CMAKE_OFF=	USE_CCACHE
@@ -46,7 +48,7 @@ PLATFORM_EXTENSIONS_USES=	xorg
 PLATFORM_EXTENSIONS_USE=	XORG=x11,xscrnsaver
 
 SPELL_CHECK_DESC=	Spell checking support
-SPELL_CHECK_USES=	kde:5
+SPELL_CHECK_USES=	kde:6
 SPELL_CHECK_USE=	KDE=sonnet
 SPELL_CHECK_CMAKE_BOOL=	SPELL_CHECK
 
