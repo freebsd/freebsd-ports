@@ -1,6 +1,6 @@
 PORTNAME=	rumur
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2024.07.14
+DISTVERSION=	2025.01.05
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -29,5 +29,7 @@ BINARY_ALIAS=	python3=${PYTHON_CMD}
 do-test: # the test command outputs only in the end of the run
 	@cd ${BUILD_WRKSRC} && \
 		${SETENV} ${CONFIGURE_ENV} ${CMAKE_BIN} --build . --target check
+
+# tests as of 2025.01.05: 2 failed, 5381 passed, 238 skipped in 1032.03s (0:17:12), see https://github.com/Smattr/rumur/issues/289
 
 .include <bsd.port.mk>

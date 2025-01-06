@@ -1,3 +1,4 @@
+bin/murphi-format
 bin/murphi2c
 bin/murphi2murphi
 bin/murphi2smv
@@ -26,14 +27,18 @@ include/rumur/parse.h
 include/rumur/parser.yy.hh
 include/rumur/position.hh
 include/rumur/resolve-symbols.h
-include/rumur/rumur-get-version.h
 include/rumur/rumur.h
 include/rumur/sanitise_rule_names.h
 include/rumur/scanner.h
 include/rumur/stack.hh
 include/rumur/traverse.h
 include/rumur/validate.h
+include/rumur/version.h
+lib/cmake/rumur/librumurConfig-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/rumur/librumurConfig.cmake
+lib/cmake/rumur/rumurConfig.cmake
 lib/librumur.so
+share/man/man1/murphi-format.1.gz
 share/man/man1/murphi2c.1.gz
 share/man/man1/murphi2murphi.1.gz
 share/man/man1/murphi2smv.1.gz
@@ -41,3 +46,7 @@ share/man/man1/murphi2uclid.1.gz
 share/man/man1/murphi2xml.1.gz
 share/man/man1/rumur-run.1.gz
 share/man/man1/rumur.1.gz
+%%DATADIR%%/lib/README.rst
+%%DATADIR%%/lib/list
+%%DATADIR%%/lib/v2025.01.04/list
+%%DATADIR%%/lib/v2025.01.05/list
