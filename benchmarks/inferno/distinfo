@@ -1,4 +1,4 @@
-TIMESTAMP = 1734140760
+TIMESTAMP = 1736139309
 SHA256 (rust/crates/adler32-1.2.0.crate) = aae1277d39aeec15cb388266ecc24b11c80469deae6067e17a1a7aa9e5c1f234
 SIZE (rust/crates/adler32-1.2.0.crate) = 6411
 SHA256 (rust/crates/ahash-0.8.11.crate) = e89da841a80418a9b391ebaea17f5c112ffaaa96f621d2c285b5174da76b9011
@@ -263,5 +263,5 @@ SHA256 (rust/crates/zerocopy-0.7.35.crate) = 1b9b4fd18abc82b8136838da5d50bae7bde
 SIZE (rust/crates/zerocopy-0.7.35.crate) = 152645
 SHA256 (rust/crates/zerocopy-derive-0.7.35.crate) = fa4f8080344d4671fb4e831a13ad1e68092748387dfc4f55e356242fae12ce3e
 SIZE (rust/crates/zerocopy-derive-0.7.35.crate) = 37829
-SHA256 (jonhoo-inferno-v0.12.0_GH0.tar.gz) = 7c045ad20db6284b0f1312a60e13438723bc6273e49ca2544000027794638396
-SIZE (jonhoo-inferno-v0.12.0_GH0.tar.gz) = 662001
+SHA256 (jonhoo-inferno-v0.12.1_GH0.tar.gz) = 913145c6087a5dd24c8ca976c079309a4fdd15983e392b1dbd13b8658daceb57
+SIZE (jonhoo-inferno-v0.12.1_GH0.tar.gz) = 662495
