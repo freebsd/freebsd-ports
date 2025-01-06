@@ -1,4 +1,4 @@
-TIMESTAMP = 1736184617
+TIMESTAMP = 1736205292
 SHA256 (nginx-1.27.3.tar.gz) = ba23a9568f442036b61cd0e29bd66a47b90634efa91e0b2cf2d719057a9b7903
 SIZE (nginx-1.27.3.tar.gz) = 1271526
 SHA256 (nginx_mogilefs_module-1.0.4.tar.gz) = 7ac230d30907f013dff8d435a118619ea6168aa3714dba62c6962d350c6295ae
@@ -99,8 +99,8 @@ SHA256 (openresty-stream-lua-nginx-module-bea8a0c_GH0.tar.gz) = 8f3b589426933637
 SIZE (openresty-stream-lua-nginx-module-bea8a0c_GH0.tar.gz) = 383699
 SHA256 (openresty-memc-nginx-module-v0.19_GH0.tar.gz) = 8c2bdbe875e4f5225d0778bfb09a2668f9281d7de6218c7b462a7ba2cee06fe8
 SIZE (openresty-memc-nginx-module-v0.19_GH0.tar.gz) = 34654
-SHA256 (SpiderLabs-ModSecurity-nginx-v1.0.3_GH0.tar.gz) = 32a42256616cc674dca24c8654397390adff15b888b77eb74e0687f023c8751b
-SIZE (SpiderLabs-ModSecurity-nginx-v1.0.3_GH0.tar.gz) = 34063
+SHA256 (SpiderLabs-ModSecurity-nginx-ef64996_GH0.tar.gz) = eb116c4b6c39b0f095cb8ee218e5a1cedf6912fe587f92333f3bf1ac7032fca2
+SIZE (SpiderLabs-ModSecurity-nginx-ef64996_GH0.tar.gz) = 52118
 SHA256 (wargio-naxsi-1.6_GH0.tar.gz) = e5920fdd09cae155b89eb21a94a21c029ebfdb056c284130221525be54044aae
 SIZE (wargio-naxsi-1.6_GH0.tar.gz) = 1116227
 SHA256 (libinjection-libinjection-4aa3894_GH0.tar.gz) = ededea133e89e238ef2e60d0d62ef7ef9e741449eed8c5d856007132505bcd5b
