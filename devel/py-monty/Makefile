@@ -1,6 +1,6 @@
 PORTNAME=	monty
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2024.12.10
+DISTVERSION=	2025.1.3
 CATEGORIES=	devel python
 #MASTER_SITES=	PYPI # no tests
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -23,7 +23,7 @@ RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}invoke>0:devel/py-invoke@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tqdm>0:misc/py-tqdm@${PY_FLAVOR}
 
 USES=		python
-USE_PYTHON=	pep517 autoplist pytest # 1 error in tests, see https://github.com/materialsvirtuallab/monty/issues/731
+USE_PYTHON=	pep517 autoplist pytest
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	materialsvirtuallab
@@ -31,5 +31,7 @@ GH_ACCOUNT=	materialsvirtuallab
 NO_ARCH=	yes
 
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
+
+# tests as of 2025.1.3: 2 failed, 193 passed, 9 skipped, 9 warnings in 83.57s (0:01:23), see https://github.com/materialsvirtuallab/monty/issues/736
 
 .include <bsd.port.mk>
