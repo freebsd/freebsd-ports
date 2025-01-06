@@ -401,6 +401,7 @@
     SUBDIR += libfolia
     SUBDIR += libfyaml
     SUBDIR += libgepub
+    SUBDIR += libinfinity
     SUBDIR += libixion
     SUBDIR += libjcat
     SUBDIR += libkmfl
