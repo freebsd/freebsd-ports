@@ -1,10 +1,7 @@
 PORTNAME=	hyprutils
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.3.2
+DISTVERSION=	0.3.3
 CATEGORIES=	devel
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	111985ee8ade.patch:-p1 # https://github.com/hyprwm/hyprutils/pull/30
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Hyprland utilities library used across the ecosystem
@@ -19,7 +16,6 @@ USE_LDCONFIG=	yes
 USE_XORG=	pixman
 GH_ACCOUNT=	hyprwm
 PLIST_SUB=	VERSION=${DISTVERSION:C/-.*//}
-PLIST_SUB=	VERSION=0.3.1 # XXX Drop after 0.3.3
 
 post-patch:
 # Respect PREFIX for system-wide config
