@@ -1,7 +1,6 @@
 bin/lcalc
 include/lcalc/L.h
 include/lcalc/Lcommon.h
-include/lcalc/Lcomplex.h
 include/lcalc/Ldirichlet_series.h
 include/lcalc/Ldokchitser.h
 include/lcalc/Lelliptic.h
