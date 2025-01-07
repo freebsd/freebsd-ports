@@ -1628,6 +1628,7 @@
     SUBDIR += py-django-templatetag-sugar
     SUBDIR += py-django-timezone-field
     SUBDIR += py-django-tinymce
+    SUBDIR += py-django-tree-queries
     SUBDIR += py-django-treebeard
     SUBDIR += py-django-unfold
     SUBDIR += py-django-voting
