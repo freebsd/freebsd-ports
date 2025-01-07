@@ -6,7 +6,8 @@ CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	C++14 library for reporting and handling function failures
-WWW=		https://ned14.github.io/outcome/
+WWW=		https://ned14.github.io/outcome/ \
+		https://github.com/ned14/outcome
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/Licence.txt
