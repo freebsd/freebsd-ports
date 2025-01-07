@@ -1,6 +1,6 @@
 PORTNAME=	gitoxide
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.39.0
+DISTVERSION=	0.40.0
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -49,8 +49,8 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		async-trait-0.1.83 \
 		atomic-waker-1.1.2 \
 		autocfg-1.4.0 \
-		aws-lc-rs-1.10.0 \
-		aws-lc-sys-0.22.0 \
+		aws-lc-rs-1.11.1 \
+		aws-lc-sys-0.23.1 \
 		backtrace-0.3.74 \
 		base64-0.22.1 \
 		bindgen-0.69.5 \
@@ -58,7 +58,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		bitflags-2.6.0 \
 		block-buffer-0.10.4 \
 		blocking-1.6.1 \
-		bstr-1.10.0 \
+		bstr-1.11.0 \
 		bumpalo-3.16.0 \
 		byteorder-1.5.0 \
 		bytes-1.8.0 \
@@ -67,7 +67,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		cassowary-0.3.0 \
 		cast-0.3.0 \
 		castaway-0.2.3 \
-		cc-1.1.37 \
+		cc-1.2.1 \
 		cesu8-1.1.0 \
 		cexpr-0.6.0 \
 		cfg-if-1.0.0 \
@@ -76,11 +76,11 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		ciborium-io-0.2.2 \
 		ciborium-ll-0.2.2 \
 		clang-sys-1.8.1 \
-		clap-4.5.20 \
-		clap_builder-4.5.20 \
-		clap_complete-4.5.37 \
+		clap-4.5.21 \
+		clap_builder-4.5.21 \
+		clap_complete-4.5.38 \
 		clap_derive-4.5.18 \
-		clap_lex-0.7.2 \
+		clap_lex-0.7.3 \
 		clru-0.6.2 \
 		cmake-0.1.51 \
 		colorchoice-1.0.3 \
@@ -91,7 +91,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		console-0.15.8 \
 		core-foundation-0.9.4 \
 		core-foundation-sys-0.8.7 \
-		cpufeatures-0.2.15 \
+		cpufeatures-0.2.16 \
 		crc-3.2.1 \
 		crc-catalog-2.4.0 \
 		crc32fast-1.4.2 \
@@ -134,7 +134,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		faster-hex-0.9.0 \
 		fastrand-2.2.0 \
 		filetime-0.2.25 \
-		flate2-1.0.34 \
+		flate2-1.0.35 \
 		fnv-1.0.7 \
 		foldhash-0.1.3 \
 		foreign-types-0.3.2 \
@@ -156,8 +156,8 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		gimli-0.31.1 \
 		gix-actor-0.31.5 \
 		gix-attributes-0.22.5 \
-		gix-bitmap-0.2.12 \
-		gix-chunk-0.4.9 \
+		gix-bitmap-0.2.13 \
+		gix-chunk-0.4.10 \
 		gix-commitgraph-0.24.3 \
 		gix-date-0.8.7 \
 		gix-discover-0.32.0 \
@@ -170,11 +170,11 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		gix-index-0.33.1 \
 		gix-lock-14.0.0 \
 		gix-object-0.42.3 \
-		gix-path-0.10.12 \
-		gix-quote-0.4.13 \
+		gix-path-0.10.13 \
+		gix-quote-0.4.14 \
 		gix-ref-0.44.1 \
 		gix-revwalk-0.13.2 \
-		gix-sec-0.10.9 \
+		gix-sec-0.10.10 \
 		gix-tempfile-14.0.2 \
 		gix-trace-0.1.11 \
 		gix-traverse-0.39.2 \
@@ -183,10 +183,10 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		gix-worktree-0.34.1 \
 		glob-0.3.1 \
 		gloo-timers-0.3.0 \
-		h2-0.4.6 \
+		h2-0.4.7 \
 		half-2.4.1 \
 		hashbrown-0.14.5 \
-		hashbrown-0.15.1 \
+		hashbrown-0.15.2 \
 		hashlink-0.9.1 \
 		heck-0.5.0 \
 		hermit-abi-0.3.9 \
@@ -198,7 +198,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		httparse-1.9.5 \
 		human_format-1.1.0 \
 		humantime-2.1.0 \
-		hyper-1.5.0 \
+		hyper-1.5.1 \
 		hyper-rustls-0.27.3 \
 		hyper-tls-0.6.0 \
 		hyper-util-0.1.10 \
@@ -227,7 +227,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		itertools-0.10.5 \
 		itertools-0.12.1 \
 		itertools-0.13.0 \
-		itoa-1.0.11 \
+		itoa-1.0.13 \
 		jiff-0.1.14 \
 		jiff-tzdb-0.1.1 \
 		jiff-tzdb-platform-0.1.1 \
@@ -242,7 +242,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		layout-rs-0.1.2 \
 		lazy_static-1.5.0 \
 		lazycell-1.3.0 \
-		libc-0.2.162 \
+		libc-0.2.164 \
 		libloading-0.8.5 \
 		libredox-0.1.3 \
 		libsqlite3-sys-0.30.1 \
@@ -250,7 +250,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		libz-sys-1.1.20 \
 		linked-hash-map-0.5.6 \
 		linux-raw-sys-0.4.14 \
-		litemap-0.7.3 \
+		litemap-0.7.4 \
 		litrs-0.4.1 \
 		lock_api-0.4.12 \
 		lockfree-object-pool-0.1.6 \
@@ -267,7 +267,6 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		miniz_oxide-0.8.0 \
 		mio-0.8.11 \
 		mio-1.0.2 \
-		mirai-annotations-1.12.0 \
 		native-tls-0.2.12 \
 		nix-0.26.4 \
 		nom-7.1.3 \
@@ -281,7 +280,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		object-0.36.5 \
 		once_cell-1.20.2 \
 		oorandom-11.1.4 \
-		open-5.3.0 \
+		open-5.3.1 \
 		openssl-0.10.68 \
 		openssl-macros-0.1.1 \
 		openssl-probe-0.1.5 \
@@ -302,17 +301,17 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		plotters-backend-0.3.7 \
 		plotters-svg-0.3.7 \
 		polling-3.7.4 \
-		portable-atomic-1.9.0 \
+		portable-atomic-1.10.0 \
 		powerfmt-0.2.0 \
 		ppv-lite86-0.2.20 \
 		pretty_assertions-1.4.1 \
 		prettyplease-0.2.25 \
-		proc-macro2-1.0.89 \
+		proc-macro2-1.0.92 \
 		prodash-28.0.0 \
 		prodash-29.0.0 \
 		ptyprocess-0.4.1 \
-		quinn-0.11.5 \
-		quinn-proto-0.11.8 \
+		quinn-0.11.6 \
+		quinn-proto-0.11.9 \
 		quinn-udp-0.5.7 \
 		quote-1.0.37 \
 		rand-0.8.5 \
@@ -331,9 +330,9 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		rustc-demangle-0.1.24 \
 		rustc-hash-1.1.0 \
 		rustc-hash-2.0.0 \
-		rustix-0.38.40 \
-		rustls-0.23.16 \
-		rustls-ffi-0.14.0 \
+		rustix-0.38.41 \
+		rustls-0.23.18 \
+		rustls-ffi-0.14.1 \
 		rustls-native-certs-0.7.3 \
 		rustls-pemfile-2.2.0 \
 		rustls-pki-types-1.10.0 \
@@ -343,15 +342,15 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		rustversion-1.0.18 \
 		ryu-1.0.18 \
 		same-file-1.0.6 \
-		scc-2.2.4 \
-		schannel-0.1.26 \
+		scc-2.2.5 \
+		schannel-0.1.27 \
 		scopeguard-1.2.0 \
 		sdd-3.0.4 \
 		security-framework-2.11.1 \
 		security-framework-sys-2.12.1 \
 		serde-1.0.215 \
 		serde_derive-1.0.215 \
-		serde_json-1.0.132 \
+		serde_json-1.0.133 \
 		serde_spanned-0.6.8 \
 		serde_urlencoded-0.7.1 \
 		serial_test-3.2.0 \
@@ -380,8 +379,8 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		subtle-2.6.1 \
 		symlink-0.1.0 \
 		syn-1.0.109 \
-		syn-2.0.87 \
-		sync_wrapper-1.0.1 \
+		syn-2.0.89 \
+		sync_wrapper-1.0.2 \
 		synstructure-0.13.1 \
 		sysinfo-0.31.4 \
 		system-configuration-0.6.1 \
@@ -424,13 +423,13 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		typenum-1.17.0 \
 		uluru-3.1.0 \
 		unicode-bom-2.0.3 \
-		unicode-ident-1.0.13 \
+		unicode-ident-1.0.14 \
 		unicode-normalization-0.1.24 \
 		unicode-segmentation-1.12.0 \
 		unicode-truncate-1.1.0 \
 		unicode-width-0.1.14 \
 		untrusted-0.9.0 \
-		url-2.5.3 \
+		url-2.5.4 \
 		utf16_iter-1.0.5 \
 		utf8_iter-1.0.4 \
 		utf8parse-0.2.2 \
@@ -448,7 +447,8 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		wasm-bindgen-macro-support-0.2.95 \
 		wasm-bindgen-shared-0.2.95 \
 		web-sys-0.3.72 \
-		webpki-roots-0.26.6 \
+		web-time-1.1.0 \
+		webpki-roots-0.26.7 \
 		which-4.4.2 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
@@ -502,16 +502,16 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		xattr-1.3.1 \
 		xz2-0.1.7 \
 		yansi-1.0.1 \
-		yoke-0.7.4 \
-		yoke-derive-0.7.4 \
+		yoke-0.7.5 \
+		yoke-derive-0.7.5 \
 		zerocopy-0.7.35 \
 		zerocopy-derive-0.7.35 \
-		zerofrom-0.1.4 \
-		zerofrom-derive-0.1.4 \
+		zerofrom-0.1.5 \
+		zerofrom-derive-0.1.5 \
 		zeroize-1.8.1 \
 		zerovec-0.10.4 \
 		zerovec-derive-0.10.3 \
-		zip-2.2.0 \
+		zip-2.2.1 \
 		zopfli-0.8.1
 
 OPENSSLINC=	/usr/include
