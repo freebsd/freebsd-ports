@@ -1,6 +1,6 @@
 PORTNAME=	jnv
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.4.2
+DISTVERSION=	0.5.0
 CATEGORIES=	textproc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -15,18 +15,21 @@ USES=		cargo
 USE_GITHUB=	yes
 GH_ACCOUNT=	ynqa
 
-CARGO_CRATES=	adler-1.0.2 \
+CARGO_CRATES=	addr2line-0.22.0 \
+		adler-1.0.2 \
 		ahash-0.8.11 \
 		aho-corasick-1.1.3 \
 		allocator-api2-0.2.18 \
 		anstream-0.6.13 \
-		anstyle-1.0.6 \
+		anstyle-1.0.10 \
 		anstyle-parse-0.2.3 \
 		anstyle-query-1.0.2 \
 		anstyle-wincon-3.0.2 \
-		anyhow-1.0.82 \
-		arboard-3.4.0 \
+		anyhow-1.0.95 \
+		arboard-3.4.1 \
+		async-trait-0.1.83 \
 		autocfg-1.2.0 \
+		backtrace-0.3.73 \
 		base64-0.21.7 \
 		bincode-1.3.3 \
 		bitflags-1.3.2 \
@@ -34,12 +37,14 @@ CARGO_CRATES=	adler-1.0.2 \
 		block2-0.5.1 \
 		bytemuck-1.16.3 \
 		byteorder-lite-0.1.0 \
+		bytes-1.9.0 \
+		cc-1.2.5 \
 		cfg-if-1.0.0 \
 		chumsky-0.9.3 \
-		clap-4.5.4 \
-		clap_builder-4.5.2 \
-		clap_derive-4.5.4 \
-		clap_lex-0.7.0 \
+		clap-4.5.23 \
+		clap_builder-4.5.23 \
+		clap_derive-4.5.18 \
+		clap_lex-0.7.4 \
 		clipboard-win-5.4.0 \
 		colorchoice-1.0.0 \
 		core-foundation-0.9.4 \
@@ -65,8 +70,19 @@ CARGO_CRATES=	adler-1.0.2 \
 		foreign-types-0.5.0 \
 		foreign-types-macros-0.2.3 \
 		foreign-types-shared-0.3.1 \
+		futures-0.3.31 \
+		futures-channel-0.3.31 \
+		futures-core-0.3.31 \
+		futures-executor-0.3.31 \
+		futures-io-0.3.31 \
+		futures-macro-0.3.31 \
+		futures-sink-0.3.31 \
+		futures-task-0.3.31 \
+		futures-timer-3.0.3 \
+		futures-util-0.3.31 \
 		gethostname-0.4.3 \
 		getrandom-0.2.14 \
+		gimli-0.29.0 \
 		hashbrown-0.14.3 \
 		heck-0.5.0 \
 		hermit-abi-0.3.9 \
@@ -100,13 +116,16 @@ CARGO_CRATES=	adler-1.0.2 \
 		objc2-foundation-0.2.2 \
 		objc2-metal-0.2.2 \
 		objc2-quartz-core-0.2.2 \
+		object-0.36.7 \
 		once_cell-1.19.0 \
 		parking_lot-0.12.1 \
 		parking_lot_core-0.9.9 \
+		pin-project-lite-0.2.15 \
+		pin-utils-0.1.0 \
 		png-0.17.13 \
 		powerfmt-0.2.0 \
 		proc-macro2-1.0.81 \
-		promkit-0.6.0 \
+		promkit-0.6.2 \
 		quote-1.0.36 \
 		radix_trie-0.2.1 \
 		rayon-1.10.0 \
@@ -115,17 +134,21 @@ CARGO_CRATES=	adler-1.0.2 \
 		regex-1.10.4 \
 		regex-automata-0.4.6 \
 		regex-syntax-0.8.3 \
+		rustc-demangle-0.1.24 \
 		rustix-0.38.34 \
 		ryu-1.0.17 \
 		scopeguard-1.2.0 \
 		serde-1.0.198 \
 		serde_derive-1.0.198 \
 		serde_json-1.0.116 \
+		shlex-1.3.0 \
 		signal-hook-0.3.17 \
 		signal-hook-mio-0.2.4 \
 		signal-hook-registry-1.4.2 \
 		simd-adler32-0.3.7 \
+		slab-0.4.9 \
 		smallvec-1.13.2 \
+		socket2-0.5.8 \
 		strsim-0.11.1 \
 		syn-2.0.60 \
 		thiserror-1.0.64 \
@@ -134,6 +157,9 @@ CARGO_CRATES=	adler-1.0.2 \
 		time-0.3.36 \
 		time-core-0.1.2 \
 		time-macros-0.2.18 \
+		tokio-1.42.0 \
+		tokio-macros-2.4.0 \
+		tokio-stream-0.1.17 \
 		unicode-ident-1.0.12 \
 		unicode-width-0.1.14 \
 		urlencoding-2.1.3 \
