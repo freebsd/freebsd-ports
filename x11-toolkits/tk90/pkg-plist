@@ -274,6 +274,7 @@ libdata/pkgconfig/tk.pc
 %%TKMAN%%share/man/man3/Tk_DistanceToTextLayout.tk%%SHORT_TK_VER%%.3.gz
 %%TKMAN%%share/man/man3/Tk_Draw3DPolygon.tk%%SHORT_TK_VER%%.3.gz
 %%TKMAN%%share/man/man3/Tk_Draw3DRectangle.tk%%SHORT_TK_VER%%.3.gz
+%%TKMAN%%share/man/man3/Tk_DrawCharsInContext.tk%%SHORT_TK_VER%%.3.gz
 %%TKMAN%%share/man/man3/Tk_DrawChars.tk%%SHORT_TK_VER%%.3.gz
 %%TKMAN%%share/man/man3/Tk_DrawFocusHighlight.tk%%SHORT_TK_VER%%.3.gz
 %%TKMAN%%share/man/man3/Tk_DrawHighlightBorder.tk%%SHORT_TK_VER%%.3.gz
@@ -385,6 +386,7 @@ libdata/pkgconfig/tk.pc
 %%TKMAN%%share/man/man3/Tk_MakeWindowExist.tk%%SHORT_TK_VER%%.3.gz
 %%TKMAN%%share/man/man3/Tk_ManageGeometry.tk%%SHORT_TK_VER%%.3.gz
 %%TKMAN%%share/man/man3/Tk_MapWindow.tk%%SHORT_TK_VER%%.3.gz
+%%TKMAN%%share/man/man3/Tk_MeasureCharsInContext.tk%%SHORT_TK_VER%%.3.gz
 %%TKMAN%%share/man/man3/Tk_MeasureChars.tk%%SHORT_TK_VER%%.3.gz
 %%TKMAN%%share/man/man3/Tk_MinReqHeight.tk%%SHORT_TK_VER%%.3.gz
 %%TKMAN%%share/man/man3/Tk_MinReqWidth.tk%%SHORT_TK_VER%%.3.gz
@@ -456,7 +458,6 @@ libdata/pkgconfig/tk.pc
 %%TKMAN%%share/man/man3/Tk_TextWidth.tk%%SHORT_TK_VER%%.3.gz
 %%TKMAN%%share/man/man3/Tk_Uid.tk%%SHORT_TK_VER%%.3.gz
 %%TKMAN%%share/man/man3/Tk_UndefineCursor.tk%%SHORT_TK_VER%%.3.gz
-%%TKMAN%%share/man/man3/Tk_UnderlineChars.tk%%SHORT_TK_VER%%.3.gz
 %%TKMAN%%share/man/man3/Tk_UnderlineTextLayout.tk%%SHORT_TK_VER%%.3.gz
 %%TKMAN%%share/man/man3/Tk_Ungrab.tk%%SHORT_TK_VER%%.3.gz
 %%TKMAN%%share/man/man3/Tk_UnmaintainGeometry.tk%%SHORT_TK_VER%%.3.gz
