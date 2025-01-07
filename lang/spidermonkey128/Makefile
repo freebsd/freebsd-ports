@@ -13,8 +13,8 @@ WWW=		https://spidermonkey.dev/
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${RUST_DEFAULT}>=1.81:lang/${RUST_DEFAULT} \
-		autoconf2.13:devel/autoconf2.13 \
+BUILD_DEPENDS=	gm4:devel/m4 \
+		${RUST_DEFAULT}>=1.81:lang/${RUST_DEFAULT} \
 		rust-cbindgen>=0.26.0:devel/rust-cbindgen
 LIB_DEPENDS=	libicudata.so:devel/icu \
 		libnspr4.so:devel/nspr
