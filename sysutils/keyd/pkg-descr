@@ -9,6 +9,6 @@ unique to keyd. Some of the more interesting ones include:
 - A client-server model that facilitates scripting and display server
   agnostic application remapping. (Currently ships with support for X,
   sway, and gnome).
-- System wide config (works in a VT).
+- System wide config (works in a VT but only on Linux).
 - First class support for modifier overloading.
 - Unicode support.
