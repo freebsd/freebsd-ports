@@ -420,7 +420,7 @@
 + */
 +static int
 +vboxfs_alloc_file(struct vboxfs_mnt *vboxfsmp, const char *fullpath,
-+    enum vtype type, mode_t mode, struct vboxfs_node *parent,
++    enum_vtype_t type, mode_t mode, struct vboxfs_node *parent,
 +    int lkflag, struct vnode **vpp)
  {
 -    return 0;

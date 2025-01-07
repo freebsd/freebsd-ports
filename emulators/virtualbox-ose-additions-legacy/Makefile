@@ -134,10 +134,6 @@ post-patch:
 .if ${PORT_OPTIONS:MPAE}
 	@${ECHO_CMD} 'VBOX_FREEBSD = -DPAE' >> ${WRKSRC}/LocalConfig.kmk
 .endif
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400093
-	@${REINPLACE_CMD} -e 's|enum vtype|enum enum_vtype_uint8|g' \
-		${WRKSRC}/src/VBox/Additions/freebsd/vboxvfs/vboxvfs*.[ch]
-.endif
 
 post-patch-X11-on:
 	@${ECHO_CMD} 'VBOX_USE_SYSTEM_XORG_HEADERS = 1' >> \
