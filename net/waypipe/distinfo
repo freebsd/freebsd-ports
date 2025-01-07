@@ -5,3 +5,5 @@ SHA256 (eccbb5cbf1e3.patch) = e9f2cb8f771deda59be2041c625bb8da4af068cefbfb40fa88
 SIZE (eccbb5cbf1e3.patch) = 543
 SHA256 (4216e58e3c0f.patch) = 25de12dad5de8f7e409751653adeb07380e248dfc7e08c625fef64cbb610ee06
 SIZE (4216e58e3c0f.patch) = 828
+SHA256 (853cfbb482be.patch) = 2ae021c59e45ca8f9883538432f0de9750c7d307e64234fe57b9f7cd4789056c
+SIZE (853cfbb482be.patch) = 786
