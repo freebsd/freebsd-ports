@@ -1,5 +1,6 @@
 PORTNAME=	gtypist
 PORTVERSION=	2.10
+PORTREVISION=	1
 CATEGORIES=	games education
 MASTER_SITES=	GNU
 
@@ -9,8 +10,7 @@ WWW=		https://www.gnu.org/software/gtypist/
 
 LICENSE=	GPLv3
 
-# botched release: gtypist-2.10.tar.xz has .gz format
-USES=		iconv localbase ncurses shebangfix #tar:xz
+USES=		iconv localbase ncurses shebangfix tar:xz
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	EMACS=no
 CPPFLAGS+=	-I${NCURSESINC}
