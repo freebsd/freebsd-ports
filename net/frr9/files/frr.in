@@ -36,7 +36,7 @@
 #  watchfrr_enable="NO"
 
 # Global tuning
-#  frr_flags=""
+#  frr_flags="--limit-fds 100000" (restricting fds for each daemons)
 #  frr_default_profile="datacenter" (default: traditional)
 # Per daemon tuning may be done with daemon-name_flags
 #  zebra_flags="-P 0"
@@ -66,7 +66,7 @@ command_args="-d"
 
 load_rc_config $name
 : ${frr_enable:="NO"}
-: ${frr_flags:=""}
+: ${frr_flags:="--limit-fds 100000"}
 : ${watchfrr_enable:="YES"}
 : ${frr_daemons:="mgmtd zebra babeld bfdd bgpd eigrpd fabricd isisd ospfd ospf6d ripd ripngd staticd"}
 : ${watchfrr_flags:="-r /usr/sbin/servicebBfrrbBrestartbB%s -s /usr/sbin/servicebBfrrbBstartbB%s -k /usr/sbin/servicebBfrrbBstopbB%s -b bB -t 30"}
