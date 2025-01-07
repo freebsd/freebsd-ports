@@ -1,5 +1,5 @@
 PORTNAME=	ruff
-DISTVERSION=	0.8.3
+DISTVERSION=	0.8.6
 CATEGORIES=	devel python
 #MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -37,7 +37,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		anstyle-parse-0.2.3 \
 		anstyle-query-1.0.2 \
 		anstyle-wincon-3.0.2 \
-		anyhow-1.0.94 \
+		anyhow-1.0.95 \
 		append-only-vec-0.1.5 \
 		arc-swap-1.7.1 \
 		argfile-0.2.1 \
@@ -51,7 +51,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		bitflags-2.6.0 \
 		block-buffer-0.10.4 \
 		boxcar-0.2.7 \
-		bstr-1.11.0 \
+		bstr-1.11.1 \
 		bumpalo-3.16.0 \
 		byteorder-1.5.0 \
 		cachedir-0.3.1 \
@@ -63,7 +63,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		cfg_aliases-0.1.1 \
 		cfg_aliases-0.2.1 \
 		chic-1.2.2 \
-		chrono-0.4.38 \
+		chrono-0.4.39 \
 		ciborium-0.2.2 \
 		ciborium-io-0.2.2 \
 		ciborium-ll-0.2.2 \
@@ -78,8 +78,8 @@ CARGO_CRATES=	adler-1.0.2 \
 		codspeed-2.7.2 \
 		codspeed-criterion-compat-2.7.2 \
 		colorchoice-1.0.0 \
-		colored-2.1.0 \
-		compact_str-0.8.0 \
+		colored-2.2.0 \
+		compact_str-0.8.1 \
 		console-0.15.8 \
 		console_error_panic_hook-0.1.7 \
 		console_log-1.0.0 \
@@ -120,12 +120,12 @@ CARGO_CRATES=	adler-1.0.2 \
 		either-1.11.0 \
 		encode_unicode-0.3.6 \
 		env_filter-0.1.0 \
-		env_logger-0.11.5 \
+		env_logger-0.11.6 \
 		equivalent-1.0.1 \
 		errno-0.3.8 \
 		etcetera-0.8.0 \
 		fastrand-2.1.1 \
-		fern-0.7.0 \
+		fern-0.7.1 \
 		filetime-0.2.25 \
 		flate2-1.0.28 \
 		fnv-1.0.7 \
@@ -135,7 +135,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		generic-array-0.14.7 \
 		getopts-0.2.21 \
 		getrandom-0.2.14 \
-		glob-0.3.1 \
+		glob-0.3.2 \
 		globset-0.4.15 \
 		globwalk-0.9.1 \
 		half-2.4.1 \
@@ -185,7 +185,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		kqueue-1.0.8 \
 		kqueue-sys-1.0.4 \
 		lazy_static-1.4.0 \
-		libc-0.2.167 \
+		libc-0.2.169 \
 		libcst-1.5.1 \
 		libcst_derive-1.4.0 \
 		libmimalloc-sys-0.1.39 \
@@ -195,7 +195,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		litemap-0.7.3 \
 		lock_api-0.4.11 \
 		log-0.4.22 \
-		lsp-server-0.7.7 \
+		lsp-server-0.7.8 \
 		matchers-0.1.0 \
 		matches-0.1.10 \
 		matchit-0.8.5 \
@@ -257,7 +257,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		quick-xml-0.37.1 \
 		quickcheck-1.0.3 \
 		quickcheck_macros-1.0.0 \
-		quote-1.0.37 \
+		quote-1.0.38 \
 		rand-0.8.5 \
 		rand_chacha-0.3.1 \
 		rand_core-0.6.4 \
@@ -288,16 +288,16 @@ CARGO_CRATES=	adler-1.0.2 \
 		scoped-tls-1.0.1 \
 		scopeguard-1.2.0 \
 		seahash-4.1.0 \
-		serde-1.0.215 \
+		serde-1.0.217 \
 		serde-wasm-bindgen-0.6.5 \
-		serde_derive-1.0.215 \
+		serde_derive-1.0.217 \
 		serde_derive_internals-0.29.0 \
-		serde_json-1.0.133 \
+		serde_json-1.0.134 \
 		serde_repr-0.1.19 \
 		serde_spanned-0.6.7 \
 		serde_test-1.0.177 \
-		serde_with-3.11.0 \
-		serde_with_macros-3.11.0 \
+		serde_with-3.12.0 \
+		serde_with_macros-3.12.0 \
 		sha2-0.10.8 \
 		sharded-slab-0.1.7 \
 		shellexpand-3.1.0 \
@@ -315,7 +315,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		strum_macros-0.26.4 \
 		subtle-2.5.0 \
 		syn-1.0.109 \
-		syn-2.0.90 \
+		syn-2.0.93 \
 		synstructure-0.13.1 \
 		tempfile-3.14.0 \
 		terminal_size-0.4.0 \
@@ -325,9 +325,9 @@ CARGO_CRATES=	adler-1.0.2 \
 		test-case-core-3.3.1 \
 		test-case-macros-3.3.1 \
 		thiserror-1.0.67 \
-		thiserror-2.0.6 \
+		thiserror-2.0.9 \
 		thiserror-impl-1.0.67 \
-		thiserror-impl-2.0.6 \
+		thiserror-impl-2.0.9 \
 		thread_local-1.1.8 \
 		tikv-jemalloc-sys-0.6.0+5.3.0-1-ge13ca993e8ccb9ba9847cc330696e02839f328f7 \
 		tikv-jemallocator-0.6.0 \
@@ -435,7 +435,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		zstd-0.11.2+zstd.1.5.2 \
 		zstd-safe-5.0.2+zstd.1.5.2 \
 		zstd-sys-2.0.11+zstd.1.5.6 \
-		salsa,salsa-macro-rules,salsa-macros@git+https://github.com/salsa-rs/salsa.git?rev=254c749b02cde2fd29852a7463a33e800b771758\#254c749b02cde2fd29852a7463a33e800b771758 \
+		salsa,salsa-macro-rules,salsa-macros@git+https://github.com/salsa-rs/salsa.git?rev=88a1d7774d78f048fbd77d40abca9ebd729fd1f0\#88a1d7774d78f048fbd77d40abca9ebd729fd1f0 \
 		lsp-types@git+https://github.com/astral-sh/lsp-types.git?rev=3512a9f\#3512a9f33eadc5402cfab1b8f7340824c8ca1439
 
 CARGO_BUILD=	no
