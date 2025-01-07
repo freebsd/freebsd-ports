@@ -12,6 +12,9 @@ WWW=		https://redis.io/
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Has already reached its EoL
+EXPIRATION_DATE=	2025-02-15
+
 USES+=		compiler:c11 cpe gmake tcl:test
 CPE_VENDOR=	redislabs
 
