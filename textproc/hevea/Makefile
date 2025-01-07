@@ -20,6 +20,12 @@ OPTIONS_DEFINE=	DOCS
 DOCS_DISTFILES+=	${PORTNAME}-${PORTVERSION}-manual.pdf \
 			${PORTNAME}-${PORTVERSION}-manual.tar.gz
 
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == powerpc
+USE_BINUTILS=	yes
+.endif
+
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/esponja
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/bibhva
