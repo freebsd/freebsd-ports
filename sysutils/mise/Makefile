@@ -1,6 +1,6 @@
 PORTNAME=	mise
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2025.1.0
+DISTVERSION=	2025.1.1
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -44,7 +44,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		arc-swap-1.7.1 \
 		arrayvec-0.5.2 \
 		async-compression-0.4.18 \
-		async-trait-0.1.83 \
+		async-trait-0.1.84 \
 		atomic-waker-1.1.2 \
 		autocfg-1.4.0 \
 		backtrace-0.3.71 \
@@ -59,7 +59,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		bit-vec-0.7.0 \
 		bitflags-2.6.0 \
 		block-buffer-0.10.4 \
-		bstr-1.11.1 \
+		bstr-1.11.3 \
 		built-0.7.5 \
 		bumpalo-3.16.0 \
 		bytecount-0.6.8 \
@@ -70,7 +70,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		bzip2-sys-0.1.11+1.0.8 \
 		calm_io-0.1.1 \
 		calmio_filters-0.1.0 \
-		cc-1.2.6 \
+		cc-1.2.7 \
 		cfg-if-1.0.0 \
 		cfg_aliases-0.2.1 \
 		chacha20-0.9.1 \
@@ -153,14 +153,14 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		errno-0.3.10 \
 		errno-dragonfly-0.1.2 \
 		exec-0.3.1 \
-		expr-lang-0.2.1 \
+		expr-lang-0.2.2 \
 		eyre-0.6.12 \
 		fastrand-2.3.0 \
 		fiat-crypto-0.2.9 \
 		filetime-0.2.25 \
 		filetime_creation-0.2.0 \
 		find-crate-0.6.3 \
-		fixedbitset-0.4.2 \
+		fixedbitset-0.5.7 \
 		flate2-1.0.35 \
 		fluent-0.16.1 \
 		fluent-bundle-0.15.3 \
@@ -193,7 +193,6 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		h2-0.4.7 \
 		hashbrown-0.12.3 \
 		hashbrown-0.14.5 \
-		hashbrown-0.15.2 \
 		heck-0.4.1 \
 		heck-0.5.0 \
 		hermit-abi-0.3.9 \
@@ -236,11 +235,11 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		impl-tools-lib-0.11.1 \
 		indenter-0.3.3 \
 		indexmap-1.9.3 \
-		indexmap-2.7.0 \
+		indexmap-2.5.0 \
 		indicatif-0.17.9 \
 		indoc-2.0.5 \
 		inout-0.1.3 \
-		insta-1.41.1 \
+		insta-1.42.0 \
 		intl-memoizer-0.5.2 \
 		intl_pluralrules-7.0.2 \
 		io_tee-0.1.1 \
@@ -248,6 +247,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		is_terminal_polyfill-1.70.1 \
 		itertools-0.10.5 \
 		itertools-0.13.0 \
+		itertools-0.14.0 \
 		itoa-1.0.14 \
 		jobserver-0.1.32 \
 		js-sys-0.3.76 \
@@ -325,7 +325,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		pest_derive-2.7.15 \
 		pest_generator-2.7.15 \
 		pest_meta-2.7.15 \
-		petgraph-0.6.5 \
+		petgraph-0.7.0 \
 		phf-0.11.2 \
 		phf_codegen-0.11.2 \
 		phf_generator-0.11.2 \
@@ -348,7 +348,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		proc-macro-error-attr2-2.0.0 \
 		proc-macro-error2-2.0.1 \
 		proc-macro2-1.0.92 \
-		quick-xml-0.23.1 \
+		quick-xml-0.37.2 \
 		quinn-0.11.6 \
 		quinn-proto-0.11.9 \
 		quinn-udp-0.5.9 \
@@ -401,7 +401,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		self-replace-1.5.0 \
 		self_cell-0.10.3 \
 		self_cell-1.1.0 \
-		self_update-0.41.0 \
+		self_update-0.42.0 \
 		semver-1.0.24 \
 		serde-1.0.217 \
 		serde-value-0.7.0 \
@@ -444,7 +444,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		strum_macros-0.26.4 \
 		subtle-2.6.1 \
 		syn-1.0.109 \
-		syn-2.0.93 \
+		syn-2.0.95 \
 		sync_wrapper-1.0.2 \
 		synstructure-0.13.1 \
 		sys-info-0.9.1 \
@@ -454,7 +454,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		tabled_derive-0.9.0 \
 		taplo-0.13.2 \
 		tar-0.4.43 \
-		tempfile-3.14.0 \
+		tempfile-3.15.0 \
 		tera-1.20.0 \
 		termcolor-1.4.1 \
 		terminal_size-0.4.1 \
@@ -572,12 +572,12 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		windows_x86_64_gnullvm-0.52.6 \
 		windows_x86_64_msvc-0.48.5 \
 		windows_x86_64_msvc-0.52.6 \
-		winnow-0.6.21 \
+		winnow-0.6.22 \
 		winsafe-0.0.19 \
 		write16-1.0.0 \
 		writeable-0.5.5 \
 		x25519-dalek-2.0.1 \
-		xattr-1.3.1 \
+		xattr-1.4.0 \
 		xx-2.0.3 \
 		xz2-0.1.7 \
 		yansi-1.0.1 \
