@@ -21,6 +21,12 @@ HAS_CONFIGURE=	yes
 MAKE_ENV+=	LIBDIR="${STAGEDIR}${PREFIX}/${OCAML_SITELIBDIR}/dbm" \
 		STUBLIBDIR="${STAGEDIR}${PREFIX}/${OCAML_SITELIBDIR}/dbm"
 
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == powerpc
+USE_BINUTILS=	yes
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} \
 		-E 's/^(LIBDIR|STUBLIBDIR)=/\1?=/' ${WRKSRC}/Makefile
