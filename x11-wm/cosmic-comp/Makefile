@@ -1,7 +1,6 @@
 PORTNAME=	cosmic-comp
 DISTVERSIONPREFIX=	epoch-
-DISTVERSION=	1.0.0-alpha.4
-PORTREVISION=	2
+DISTVERSION=	1.0.0-alpha.5
 CATEGORIES=	x11-wm wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -12,6 +11,7 @@ LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libudev.so:devel/libudev-devd \
+		libdisplay-info.so:sysutils/libdisplay-info \
 		libseat.so:sysutils/seatd \
 		libinput.so:x11/libinput \
 		libxkbcommon.so:x11/libxkbcommon
@@ -24,7 +24,7 @@ USE_GITHUB=	yes
 USE_GL=		gbm
 USE_XORG=	pixman
 GH_ACCOUNT=	pop-os
-GH_TUPLE=	pop-os:iced:0.4.2-2018-gb645ecac:iced/../${WRKSRC_crate_iced:T}/iced
+GH_TUPLE=	pop-os:iced:0.4.2-2974-g23869067:iced/../${WRKSRC_crate_iced:T}/iced
 CARGO_FEATURES=	--no-default-features # disable systemd
 PLIST_FILES=	bin/${PORTNAME} \
 		share/cosmic/com.system76.CosmicSettings.Shortcuts/v1/defaults/keybindings.ron \
