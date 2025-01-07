@@ -1,7 +1,7 @@
 PORTNAME=	povray
 DISTVERSIONPREFIX=	v
 DISTVERSION=	3.7.0.10
-PORTREVISION=	18
+PORTREVISION=	19
 CATEGORIES=	graphics
 PKGNAMESUFFIX=	37
 
@@ -43,7 +43,7 @@ IO_DESC=	Without I/O restrictions (security risk)
 IO_CONFIGURE_ON=	--disable-io-restrictions
 
 JPEG_USES=		jpeg
-JPEG_CONFIGURE_OFF=	--without-jpeg
+JPEG_CONFIGURE_OFF=	--without-libjpeg
 
 OPENEXR_LIB_DEPENDS=	libImath.so:math/Imath \
 			libOpenEXR.so:graphics/openexr
