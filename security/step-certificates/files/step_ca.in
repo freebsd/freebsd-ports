@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# PROVIDE: step-ca
+# PROVIDE: step_ca
 # REQUIRE: LOGIN networking
 # KEYWORD: shutdown
 #
@@ -32,6 +32,7 @@ load_rc_config $name
 : ${step_ca_stepdir:=%%PREFIX%%/etc/step}
 : ${step_ca_steppath:=${step_ca_stepdir}/ca}
 : ${step_ca_password:=${step_ca_stepdir}/password.txt}
+: ${step_ca_env:=STEPPATH=${step_ca_steppath}}
 
 pidfile="/var/run/${name}.pid"
 step_ca_command="%%PREFIX%%/sbin/step-ca"
@@ -60,7 +61,7 @@ step_ca_startprecmd()
 
 	if [ ! -e ${step_ca_steppath} ]; then
 		echo "No configured Step CA found."
-		echo "Please run service step-ca configure"
+		echo "Please run service step_ca configure"
 		exit 1
 	else
 		export STEPPATH=${step_ca_steppath}
@@ -68,7 +69,7 @@ step_ca_startprecmd()
 
 	if [ ! -e ${step_ca_password} ]; then
 		echo "Step CA Password file for auto-start not found"
-		echo "Please run service step-ca configure"
+		echo "Please run service step_ca configure"
 		exit 1
 	fi
 
@@ -90,7 +91,7 @@ step_ca_configure() {
 	if [ ! -e ${step_ca_steppath} ]; then
 		echo "No configured Step CA found."
 		echo "Creating new one...."
-		install -d -m 600 -o ${step_ca_user} -g ${step_ca_group} ${step_ca_steppath}
+		install -d -m 700 -o ${step_ca_user} -g ${step_ca_group} ${step_ca_steppath}
 		export STEPPATH=${step_ca_steppath}
 		%%PREFIX%%/bin/step ca init --ssh
 		chown -R ${step_ca_user}:${step_ca_group} ${step_ca_stepdir}

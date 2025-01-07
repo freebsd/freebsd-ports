@@ -21,6 +21,8 @@ Following are the defaults for step certificates and can be overridden by rc.con
 * The password required for automatic startup is in step_ca_password (%%PREFIX%%/etc/step/password.txt)
 * By default step certificates logs to syslog with a tag of step_ca
 
+Due to an inconsistency between this message and the rc-script, the rc-script has been renamed from step-ca to step_ca in v0.28.1.
+Please be aware of this if you call the rc-script from a custom script.
 ================================================================================
 EOM
 }
