@@ -9,7 +9,7 @@
  /*
   * Copyright (C) 2010-2017 Oracle Corporation
   *
-@@ -21,72 +16,413 @@
+@@ -21,72 +16,419 @@
  #define VBOXVFS_VFSNAME "vboxvfs"
  #define VBOXVFS_VERSION 1
  
@@ -175,6 +175,12 @@
 -    int             caseopt;
 -    int             didrele;
 +#include <VBox/VBoxGuestLibSharedFolders.h>
++
++#if __FreeBSD_version >= 1400093
++typedef __enum_uint8(vtype) enum_vtype_t;
++#else
++typedef enum vtype enum_vtype_t;
++#endif
 +
 +#define	VBOXVFS_DEBUG(lvl, ...)	do {					\
 +	if (vboxvfs_debug >= (lvl)) {					\
@@ -365,7 +371,7 @@
 +void vboxfs_free_vp(struct vnode *);
 +
 +int vboxfs_alloc_node(struct mount *, struct vboxfs_mnt *, const char*,
-+    enum vtype, uid_t, gid_t, mode_t, struct vboxfs_node *,
++    enum_vtype_t, uid_t, gid_t, mode_t, struct vboxfs_node *,
 +    struct vboxfs_node **);
 +void vboxfs_free_node(struct vboxfs_mnt *, struct vboxfs_node *);
 +
