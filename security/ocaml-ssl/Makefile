@@ -21,6 +21,12 @@ EXAMPLESDIR=	${OCAML_EXAMPLESDIR}/${PORTNAME}
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == powerpc
+USE_BINUTILS=	yes
+.endif
+
 do-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/examples/* ${STAGEDIR}${EXAMPLESDIR}
