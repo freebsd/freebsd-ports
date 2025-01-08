@@ -1,5 +1,5 @@
 PORTNAME=	valkey
-DISTVERSION=	8.0.1
+DISTVERSION=	8.0.2
 CATEGORIES=	databases
 
 MAINTAINER=	yasu@FreeBSD.org
