@@ -1,7 +1,6 @@
 PORTNAME=	ctris
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.42.1
-PORTREVISION=	1
+DISTVERSION=	0.43
 CATEGORIES=	games
 
 MAINTAINER=	ehaupt@FreeBSD.org
@@ -21,7 +20,7 @@ PLIST_FILES=	bin/ctris \
 		share/man/man6/ctris.6.gz
 
 post-patch:
-	@${REINPLACE_CMD} -e "s|v0\.42|v${PORTVERSION}|" ${WRKSRC}/ctris.h
+	@${REINPLACE_CMD} -e "s|^\(#define VERSION\).*|\1 \"v${PORTVERSION}\"|" ${WRKSRC}/ctris.h
 	@${REINPLACE_CMD} -e "s|gcc|${CC}|" -e "s|CFLAGS=.*|CFLAGS+=-Wall|" \
 		 ${WRKSRC}/Makefile
 
