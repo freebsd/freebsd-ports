@@ -1,13 +1,12 @@
 PORTNAME=	orage
-PORTVERSION=	4.18.0
-PORTREVISION=	3
+PORTVERSION=	4.20.0
 CATEGORIES=	deskutils xfce
 MASTER_SITES=	XFCE/apps
 DIST_SUBDIR=	xfce4
 
 MAINTAINER=	xfce@FreeBSD.org
 COMMENT=	Calendar application for the Xfce Desktop
-WWW=		https://git.xfce.org/apps/orage/about/
+WWW=		https://docs.xfce.org/apps/orage/start
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
@@ -17,7 +16,7 @@ LIB_DEPENDS=	libical.so:devel/libical \
 
 USES=		compiler:c++11-lang desktop-file-utils gettext gmake gnome \
 		libtool pkgconfig tar:bzip2 xfce xorg
-USE_GNOME=	cairo gdkpixbuf2 glib20 gtk30 intltool
+USE_GNOME=	cairo gdkpixbuf2 glib20 gtk30
 USE_XFCE=	libmenu
 USE_XORG=	ice sm x11
 
