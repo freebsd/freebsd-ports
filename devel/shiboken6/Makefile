@@ -1,13 +1,10 @@
 PORTNAME=	shiboken6
 DISTVERSION=	${PYSIDE6_VERSION}
 CATEGORIES=	devel
-MASTER_SITES=	QT/official_releases/QtForPython/${PORTNAME}/PySide6-${DISTVERSION}-src
+MASTER_SITES=	QT/official_releases/QtForPython/${PORTNAME}/PySide6-${DISTVERSION:R}-src
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	pyside-setup-everywhere-src-${DISTVERSION:R}
+DISTNAME=	pyside-setup-everywhere-src-${DISTVERSION}
 DIST_SUBDIR=	KDE/Qt/${PYSIDE6_VERSION}
-
-PATCH_SITES=	https://github.com/pyside/pyside-setup/commit/
-PATCHFILES+=	dfe3819559ed1e04089f9d5bc009268a7b48b7c2.patch:-p3 # Fix signature handling for 32-bit
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Python binding generator for C++ libraries
@@ -32,6 +29,7 @@ CMAKE_ARGS=	-DClang_DIR:PATH="${LLVM_PREFIX}/lib/cmake/clang" \
 		-DBUILD_TESTS:BOOL=false
 CONFIGURE_ENV=	LLVM_INSTALL_DIR="${LLVM_PREFIX}/lib/cmake/llvm"
 
+WRKSRC=		${WRKDIR}/${DISTNAME:R}
 WRKSRC_SUBDIR=	sources/shiboken6
 PLIST_SUB=	PYTHON_MAJOR_VER=${PYTHON_MAJOR_VER} \
 		SHLIB_VER=${DISTVERSION:R:R} \
