@@ -840,6 +840,7 @@
     SUBDIR += plantuml
     SUBDIR += plasma-kmod
     SUBDIR += plotutils
+    SUBDIR += plutosvg
     SUBDIR += plutovg
     SUBDIR += png
     SUBDIR += png++

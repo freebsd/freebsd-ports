@@ -1,0 +1,6 @@
+include/plutosvg/plutosvg.h
+%%STATIC%%lib/libplutosvg.a
+lib/libplutosvg.so
+lib/libplutosvg.so.0
+lib/libplutosvg.so.%%SOVERSION%%
+libdata/pkgconfig/plutosvg.pc
