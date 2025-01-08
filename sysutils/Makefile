@@ -190,10 +190,12 @@
     SUBDIR += cfengine-masterfiles322
     SUBDIR += cfengine-masterfiles323
     SUBDIR += cfengine-masterfiles324
+    SUBDIR += cfengine-masterfiles325
     SUBDIR += cfengine321
     SUBDIR += cfengine322
     SUBDIR += cfengine323
     SUBDIR += cfengine324
+    SUBDIR += cfengine325
     SUBDIR += chaoskube
     SUBDIR += checkrestart
     SUBDIR += chezmoi
