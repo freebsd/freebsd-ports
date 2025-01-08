@@ -568,6 +568,7 @@
     SUBDIR += linux-rl9-webp
     SUBDIR += lua-gd
     SUBDIR += luminance-qt5
+    SUBDIR += lunasvg
     SUBDIR += lux
     SUBDIR += lximage-qt
     SUBDIR += magnum
