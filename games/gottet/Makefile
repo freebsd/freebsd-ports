@@ -1,5 +1,5 @@
 PORTNAME=	gottet
-PORTVERSION=	1.2.4
+PORTVERSION=	1.2.5
 CATEGORIES=	games
 MASTER_SITES=	https://gottcode.org/gottet/
 
