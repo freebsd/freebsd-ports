@@ -1,5 +1,5 @@
 PORTNAME=	dnsmasq
-DISTVERSION=	2.91test4 # remember to bump PORTEPOCH when going from test to rc!
+DISTVERSION=	2.91test6 # remember to bump PORTEPOCH when going from test to rc!
 # Leave the PORTREVISION in even if 0 to avoid accidental PORTEPOCH bumps:
 PORTREVISION=	0
 PORTEPOCH=	5
