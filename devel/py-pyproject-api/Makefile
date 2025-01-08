@@ -1,10 +1,10 @@
 PORTNAME=	pyproject_api
-DISTVERSION=	1.7.1
+DISTVERSION=	1.8.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	thierry@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	API to interact with the python pyproject.toml based projects
 WWW=		https://pyproject-api.readthedocs.io/
 
