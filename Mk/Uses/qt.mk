@@ -24,7 +24,7 @@ _QT_MK_INCLUDED=	qt.mk
 _QT_SUPPORTED?=		5 6
 QT5_VERSION?=		5.15.16
 QT6_VERSION?=		6.8.1
-PYSIDE6_VERSION?=	6.8.0.2
+PYSIDE6_VERSION?=	6.8.1.1
 
 # Support for intermediate Qt6 releases. This partially defines
 # _QT6_MASTER_SITE_SUBDIR and would probably be better in qt-dist.mk,

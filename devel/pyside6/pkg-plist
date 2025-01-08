@@ -273,6 +273,11 @@ lib/libpyside6qml.abi%%PYTHON_MAJOR_VER%%.so.%%SHLIB_VERSION%%
 %%PYTHON_SITELIBDIR%%/PySide6/support/generate_pyi.py
 %%QT_PLUGINDIR%%/designer/libPySidePlugin.so
 libdata/pkgconfig/pyside6.pc
+share/PySide6/doc/qtcore.rst
+share/PySide6/doc/qtqml.rst
+share/PySide6/doc/qtquicktest.rst
+share/PySide6/doc/qtuitools.rst
+%%WEBENGINE%%share/PySide6/doc/qtwebenginecore.rst
 share/PySide6/glue/qtcharts.cpp
 share/PySide6/glue/qtcore.cpp
 share/PySide6/glue/qtdatavisualization.cpp
@@ -287,6 +292,7 @@ share/PySide6/glue/qtpositioning.cpp
 share/PySide6/glue/qtprintsupport.cpp
 share/PySide6/glue/qtqml.cpp
 share/PySide6/glue/qtquick.cpp
+share/PySide6/glue/qtquick3d.cpp
 share/PySide6/glue/qtquicktest.cpp
 share/PySide6/glue/qtserialbus.cpp
 share/PySide6/glue/qtsql.cpp
