@@ -1,6 +1,5 @@
 PORTNAME=	cargo-deny
-DISTVERSION=	0.16.2
-PORTREVISION=	1
+DISTVERSION=	0.16.3
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -50,7 +49,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		camino-1.1.9 \
 		cargo-lock-10.0.1 \
 		cc-1.2.1 \
-		cfg-expr-0.17.0 \
+		cfg-expr-0.17.1 \
 		cfg-if-1.0.0 \
 		cfg_aliases-0.2.1 \
 		clap-4.5.21 \
@@ -103,54 +102,54 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		generic-array-0.14.7 \
 		getrandom-0.2.15 \
 		gimli-0.31.1 \
-		gix-0.67.0 \
-		gix-actor-0.33.0 \
-		gix-attributes-0.23.0 \
-		gix-bitmap-0.2.12 \
-		gix-chunk-0.4.9 \
-		gix-command-0.3.10 \
-		gix-commitgraph-0.25.0 \
-		gix-config-0.41.0 \
-		gix-config-value-0.14.9 \
-		gix-credentials-0.25.0 \
-		gix-date-0.9.1 \
-		gix-diff-0.47.0 \
-		gix-discover-0.36.0 \
-		gix-features-0.39.0 \
-		gix-filter-0.14.0 \
+		gix-0.68.0 \
+		gix-actor-0.33.1 \
+		gix-attributes-0.23.1 \
+		gix-bitmap-0.2.13 \
+		gix-chunk-0.4.10 \
+		gix-command-0.3.11 \
+		gix-commitgraph-0.25.1 \
+		gix-config-0.42.0 \
+		gix-config-value-0.14.10 \
+		gix-credentials-0.25.1 \
+		gix-date-0.9.2 \
+		gix-diff-0.48.0 \
+		gix-discover-0.37.0 \
+		gix-features-0.39.1 \
+		gix-filter-0.15.0 \
 		gix-fs-0.12.0 \
-		gix-glob-0.17.0 \
-		gix-hash-0.15.0 \
+		gix-glob-0.17.1 \
+		gix-hash-0.15.1 \
 		gix-hashtable-0.6.0 \
-		gix-ignore-0.12.0 \
-		gix-index-0.36.0 \
+		gix-ignore-0.12.1 \
+		gix-index-0.37.0 \
 		gix-lock-15.0.0 \
-		gix-negotiate-0.16.0 \
-		gix-object-0.45.0 \
-		gix-odb-0.64.0 \
-		gix-pack-0.54.0 \
-		gix-packetline-0.18.0 \
-		gix-packetline-blocking-0.18.0 \
-		gix-path-0.10.12 \
-		gix-pathspec-0.8.0 \
-		gix-prompt-0.8.8 \
-		gix-protocol-0.46.0 \
-		gix-quote-0.4.13 \
-		gix-ref-0.48.0 \
-		gix-refspec-0.26.0 \
-		gix-revision-0.30.0 \
-		gix-revwalk-0.16.0 \
-		gix-sec-0.10.9 \
-		gix-submodule-0.15.0 \
+		gix-negotiate-0.17.0 \
+		gix-object-0.46.0 \
+		gix-odb-0.65.0 \
+		gix-pack-0.55.0 \
+		gix-packetline-0.18.1 \
+		gix-packetline-blocking-0.18.1 \
+		gix-path-0.10.13 \
+		gix-pathspec-0.8.1 \
+		gix-prompt-0.8.9 \
+		gix-protocol-0.46.1 \
+		gix-quote-0.4.14 \
+		gix-ref-0.49.0 \
+		gix-refspec-0.27.0 \
+		gix-revision-0.31.0 \
+		gix-revwalk-0.17.0 \
+		gix-sec-0.10.10 \
+		gix-submodule-0.16.0 \
 		gix-tempfile-15.0.0 \
 		gix-trace-0.1.11 \
-		gix-transport-0.43.0 \
-		gix-traverse-0.42.0 \
-		gix-url-0.28.0 \
+		gix-transport-0.43.1 \
+		gix-traverse-0.43.0 \
+		gix-url-0.28.1 \
 		gix-utils-0.1.13 \
-		gix-validate-0.9.1 \
-		gix-worktree-0.37.0 \
-		gix-worktree-state-0.14.0 \
+		gix-validate-0.9.2 \
+		gix-worktree-0.38.0 \
+		gix-worktree-state-0.15.0 \
 		globset-0.4.15 \
 		goblin-0.9.2 \
 		h2-0.4.6 \
@@ -246,7 +245,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		rustc-demangle-0.1.24 \
 		rustc-hash-2.0.0 \
 		rustix-0.38.40 \
-		rustls-0.23.16 \
+		rustls-0.23.19 \
 		rustls-native-certs-0.8.0 \
 		rustls-pemfile-2.2.0 \
 		rustls-pki-types-1.10.0 \
@@ -278,7 +277,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		smallvec-1.13.2 \
 		smol_str-0.3.2 \
 		socket2-0.5.7 \
-		spdx-0.10.6 \
+		spdx-0.10.7 \
 		spin-0.9.8 \
 		stable_deref_trait-1.2.0 \
 		static_assertions-1.1.0 \
@@ -291,7 +290,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		synstructure-0.13.1 \
 		system-configuration-0.6.1 \
 		system-configuration-sys-0.6.0 \
-		tame-index-0.15.0 \
+		tame-index-0.16.0 \
 		tap-1.0.1 \
 		target-lexicon-0.12.16 \
 		tempfile-3.14.0 \
@@ -324,7 +323,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		unicode-normalization-0.1.24 \
 		unicode-width-0.1.14 \
 		untrusted-0.9.0 \
-		url-2.5.3 \
+		url-2.5.4 \
 		utf16_iter-1.0.5 \
 		utf8_iter-1.0.4 \
 		utf8parse-0.2.2 \
