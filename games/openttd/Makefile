@@ -5,7 +5,8 @@ MASTER_SITES=	https://cdn.openttd.org/openttd-releases/${DISTVERSION}/
 DISTNAME=	${PORTNAME}-${DISTVERSION}-source
 
 PATCH_SITES=	https://github.com/OpenTTD/OpenTTD/commit/
-PATCHFILES=	db36e61807955c896267d6585de0577efd30465d.patch:-p1
+PATCHFILES=	db36e61807955c896267d6585de0577efd30465d.patch:-p1 \
+		14fac2ad37bfb9cec56b4f9169d864f6f1c7b96e.patch:-p1
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Open source clone of Microprose Transport Tycoon Deluxe
