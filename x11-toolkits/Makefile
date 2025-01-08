@@ -49,6 +49,7 @@
     SUBDIR += gtksourceview5
     SUBDIR += gtksourceviewmm3
     SUBDIR += guile-gnome-platform
+    SUBDIR += hyprland-qt-support
     SUBDIR += imgui
     SUBDIR += irrlicht
     SUBDIR += itk

@@ -1,0 +1,13 @@
+lib/libhyprland-quick-style-impl.so
+lib/libhyprland-quick-style.so
+%%QT_QMLDIR%%/org/hyprland/style/Button.qml
+%%QT_QMLDIR%%/org/hyprland/style/CheckBox.qml
+%%QT_QMLDIR%%/org/hyprland/style/TextField.qml
+%%QT_QMLDIR%%/org/hyprland/style/hyprland-quick-style.qmltypes
+%%QT_QMLDIR%%/org/hyprland/style/impl/HyprlandStyle.qml
+%%QT_QMLDIR%%/org/hyprland/style/impl/MotionBehavior.qml
+%%QT_QMLDIR%%/org/hyprland/style/impl/hyprland-quick-style-impl.qmltypes
+%%QT_QMLDIR%%/org/hyprland/style/impl/libhyprland-quick-style-implplugin.so
+%%QT_QMLDIR%%/org/hyprland/style/impl/qmldir
+%%QT_QMLDIR%%/org/hyprland/style/libhyprland-quick-styleplugin.so
+%%QT_QMLDIR%%/org/hyprland/style/qmldir
