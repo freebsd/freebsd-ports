@@ -1,6 +1,6 @@
 PORTNAME=	discover
 DISTVERSION=	${KDE_PLASMA_VERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils kde kde-plasma
 
 MAINTAINER=	kde@FreeBSD.org
@@ -9,6 +9,7 @@ WWW=		https://www.kde.org/plasma-desktop
 
 LIB_DEPENDS=	libAppStreamQt5.so:devel/appstream-qt@qt5 \
 		libpackagekitqt5.so:ports-mgmt/packagekit-qt@qt5
+RUN_DEPENDS=	PackageKit>0:ports-mgmt/packagekit
 
 USES=		cmake compiler:c++11-lib cpe desktop-file-utils gettext kde:5 \
 		pkgconfig qt:5 tar:xz xorg
