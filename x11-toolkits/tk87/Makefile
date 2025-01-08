@@ -1,6 +1,6 @@
 PORTNAME=	tk
 DISTVERSION=	${TK_VERSION}${TK_RC}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	SF/tcl/Tcl/${TK_VERSION} \
 		TCLTK/tcl8_7
@@ -15,6 +15,9 @@ LICENSE=	TclTk
 LICENSE_NAME=	Tcl/Tk License
 LICENSE_FILE=	${WRKSRC}/../license.terms
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
+
+DEPRECATED=	Tcl/Tk 8.7 is not scheduled for release, use 8.6 or 9.0
+EXPIRATION_DATE=2025-02-07
 
 LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 		libfontconfig.so:x11-fonts/fontconfig
