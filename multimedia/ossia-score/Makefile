@@ -48,4 +48,19 @@ CMAKE_ARGS=	-DSCORE_DISABLED_PLUGINS="score-plugin-pd;score-plugin-vst3" \
 
 CXXFLAGS+=	-fexperimental-library # to fix libossia/src/ossia/detail/jthread.hpp:10:8: error: Rebuild with -fexperimental-library, clang 18 ships headers which are incompatible with this file but hides half of them behind that flag
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "amd64" || ${ARCH} == "i386"
+PLIST_FILES=	lib/libkfr_dft_avx.a \
+		lib/libkfr_dft_avx2.a \
+		lib/libkfr_dft_avx512.a \
+		lib/libkfr_dft_sse2.a \
+		lib/libkfr_dft_sse41.a \
+		lib/libkfr_dsp_avx.a \
+		lib/libkfr_dsp_avx2.a \
+		lib/libkfr_dsp_avx512.a \
+		lib/libkfr_dsp_sse2.a \
+		lib/libkfr_dsp_sse41.a
+.endif
+
+.include <bsd.port.post.mk>
