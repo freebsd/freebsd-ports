@@ -88,7 +88,7 @@ MY_DEPENDS=	gitaly>=${GITLAB_VERSION}:devel/gitaly \
 	rubygem-rqrcode>=2.2.0<3:www/rubygem-rqrcode \
 	rubygem-validates_hostname>=1.0.13<1.1.0:dns/rubygem-validates_hostname \
 	rubygem-rubyzip>=2.3.2<2.4:archivers/rubygem-rubyzip \
-	rubygem-acme-client-gitlab>=2.0.18<3:security/rubygem-acme-client-gitlab \
+	rubygem-acme-client-gitlab>=2.0.19<3:security/rubygem-acme-client-gitlab \
 	rubygem-browser5>=5.3.1<5.4:www/rubygem-browser5 \
 	rubygem-ohai>=18.1<19:sysutils/rubygem-ohai \
 	rubygem-gpgme>=2.0.24<2.1.0:security/rubygem-gpgme \
