@@ -52,6 +52,7 @@
     SUBDIR += clifm
     SUBDIR += cloc
     SUBDIR += clpbar
+    SUBDIR += code2prompt
     SUBDIR += colortail
     SUBDIR += coloursum
     SUBDIR += colwide
