@@ -1,0 +1,34 @@
+  <vuln vid="2bfde261-cdf2-11ef-b6b2-2cf05da270f3">
+    <topic>Gitlab -- Vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>gitlab-ce</name>
+	<name>gitlab-ee</name>
+	<range><ge>17.7.0</ge><lt>17.7.1</lt></range>
+	<range><ge>17.6.0</ge><lt>17.6.3</lt></range>
+	<range><ge>11.0.0</ge><lt>17.5.5</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Gitlab reports:</p>
+	<blockquote cite="https://about.gitlab.com/releases/2025/01/08/patch-release-gitlab-17-7-1-released/">
+	  <p>Possible access token exposure in GitLab logs</p>
+	  <p>Cyclic reference of epics leads resource exhaustion</p>
+	  <p>Unauthorized user can manipulate status of issues in public projects</p>
+	  <p>Instance SAML does not respect external_provider configuration</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-0194</cvename>
+      <cvename>CVE-2024-6324</cvename>
+      <cvename>CVE-2024-12431</cvename>
+      <cvename>CVE-2024-13041</cvename>
+      <url>https://about.gitlab.com/releases/2025/01/08/patch-release-gitlab-17-7-1-released/</url>
+    </references>
+    <dates>
+      <discovery>2025-01-08</discovery>
+      <entry>2025-01-08</entry>
+    </dates>
+  </vuln>

@@ -22,6 +22,7 @@
 <!ENTITY vuln-2022 SYSTEM "vuln/2022.xml">
 <!ENTITY vuln-2023 SYSTEM "vuln/2023.xml">
 <!ENTITY vuln-2024 SYSTEM "vuln/2024.xml">
+<!ENTITY vuln-2025 SYSTEM "vuln/2025.xml">
 ]>
 <!--
 Copyright 2003-2024 Jacques Vidrine and contributors
@@ -80,6 +81,7 @@ Notes:
   * Do not forget port variants (linux-f10-libxml2, libxml2, etc.)
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+&vuln-2025;
 &vuln-2024;
 &vuln-2023;
 &vuln-2022;
