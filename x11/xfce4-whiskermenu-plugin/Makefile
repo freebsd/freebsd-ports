@@ -1,12 +1,12 @@
 PORTNAME=	xfce4-whiskermenu-plugin
-PORTVERSION=	2.8.3
+PORTVERSION=	2.8.4
 CATEGORIES=	x11 xfce
 MASTER_SITES=	XFCE/panel-plugins
 DIST_SUBDIR=	xfce4
 
 MAINTAINER=	xfce@FreeBSD.org
 COMMENT=	Alternate menu for the Xfce Desktop
-WWW=		https://goodies.xfce.org/projects/panel-plugins/xfce4-whiskermenu-plugin
+WWW=		https://docs.xfce.org/panel-plugins/xfce4-whiskermenu-plugin
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
