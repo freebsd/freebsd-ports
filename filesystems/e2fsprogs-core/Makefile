@@ -1,5 +1,5 @@
 PORTNAME=	e2fsprogs
-PORTVERSION=	1.47.1
+PORTVERSION=	1.47.2
 PORTREVISION?=	0	# NOTE: when bumping PORTREVISION, also bump ../e2fsprogs/Makefile!
 CATEGORIES?=	filesystems sysutils
 MASTER_SITES=	KERNEL_ORG/linux/kernel/people/tytso/${PORTNAME}/v${PORTVERSION}
@@ -145,6 +145,9 @@ libintl=
 .if ${MASTERDIR} == ${.CURDIR} && (${ARCH} == "aarch64" || ${ARCH} == "riscv64")
 EXTRA_PATCHES+=	${FILESDIR}/extrapatch-no-sbrk
 .endif
+
+post-extract: # the symlink RELEASE-NOTES is stale in v1.47.1 and v1.47.2 tarballs, fix:
+	${RLN} ${WRKSRC}/doc/RelNotes/v1.47.2.txt ${WRKSRC}/RELEASE-NOTES
 
 post-patch::
 .if !empty(DISTFILES)
