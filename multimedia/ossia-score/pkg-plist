@@ -269,16 +269,6 @@ lib/cmake/kfr/KFRConfigVersion.cmake
 lib/cmake/libartnet/artnet-exports-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/libartnet/artnet-exports.cmake
 lib/libartnet.a
-lib/libkfr_dft_avx.a
-lib/libkfr_dft_avx2.a
-lib/libkfr_dft_avx512.a
-lib/libkfr_dft_sse2.a
-lib/libkfr_dft_sse41.a
-lib/libkfr_dsp_avx.a
-lib/libkfr_dsp_avx2.a
-lib/libkfr_dsp_avx512.a
-lib/libkfr_dsp_sse2.a
-lib/libkfr_dsp_sse41.a
 lib/libkfr_io.a
 share/async-mqtt5/async-mqtt5Config.cmake
 share/async-mqtt5/async-mqtt5ConfigVersion.cmake
