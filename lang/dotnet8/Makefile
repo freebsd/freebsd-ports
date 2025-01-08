@@ -1,7 +1,7 @@
 PORTNAME=	dotnet
 DISTVERSIONPREFIX=	v
 DISTVERSION=	${DOTNETVERSION}.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang devel
 MASTER_SITES=	https://github.com/dotnet/dotnet/releases/download/${DISTVERSIONPREFIX}${DISTVERSION}/release.json?dummy=/:dotnetmanifest \
 		LOCAL/arrowd/dotnet/:bootstrap
@@ -97,14 +97,14 @@ do-build:
 		-maxcpucount:${MAKE_JOBS_NUMBER}
 
 do-install:
-	${MKDIR} ${STAGEDIR}${PREFIX}/dotnet
-	${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${WRKSRC}/artifacts/${DOTNET_ARCH}/Release/${SDK_DISTNAME}${EXTRACT_SUFX} -C ${STAGEDIR}${PREFIX}/dotnet ${EXTRACT_AFTER_ARGS}
-	${RM} -r ${STAGEDIR}${PREFIX}/dotnet/packs/NETStandard.Library.Ref
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${WRKSRC}/artifacts/${DOTNET_ARCH}/Release/${SDK_DISTNAME}${EXTRACT_SUFX} -C ${STAGEDIR}${DATADIR} ${EXTRACT_AFTER_ARGS}
+	${RM} -r ${STAGEDIR}${DATADIR}/packs/NETStandard.Library.Ref
 
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/dotnet/sdk/${SDKVERSION}/AppHostTemplate/apphost
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/dotnet/packs/Microsoft.NETCore.App.Host.freebsd-${DOTNET_ARCH}/${DISTVERSION}/runtimes/freebsd-${DOTNET_ARCH}/native/apphost
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/dotnet/packs/Microsoft.NETCore.App.Host.freebsd-${DOTNET_ARCH}/${DISTVERSION}/runtimes/freebsd-${DOTNET_ARCH}/native/singlefilehost
-	${FIND} ${STAGEDIR}${PREFIX}/dotnet -name "*.so" -exec ${STRIP_CMD} -s "{}" ";"
+	${STRIP_CMD} ${STAGEDIR}${DATADIR}/sdk/${SDKVERSION}/AppHostTemplate/apphost
+	${STRIP_CMD} ${STAGEDIR}${DATADIR}/packs/Microsoft.NETCore.App.Host.freebsd-${DOTNET_ARCH}/${DISTVERSION}/runtimes/freebsd-${DOTNET_ARCH}/native/apphost
+	${STRIP_CMD} ${STAGEDIR}${DATADIR}/packs/Microsoft.NETCore.App.Host.freebsd-${DOTNET_ARCH}/${DISTVERSION}/runtimes/freebsd-${DOTNET_ARCH}/native/singlefilehost
+	${FIND} ${STAGEDIR}${DATADIR} -name "*.so" -exec ${STRIP_CMD} -s "{}" ";"
 
 bootstrap-makesum:
 	cd ${WRKSRC}/artifacts/${DOTNET_ARCH}/Release && sha256 ${SOURCEBUILT_ARTIFACTS_DISTNAME}${EXTRACT_SUFX}
