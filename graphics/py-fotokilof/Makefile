@@ -1,5 +1,5 @@
 PORTNAME=	fotokilof
-PORTVERSION=	5.1.2
+PORTVERSION=	5.1.7
 CATEGORIES=	graphics
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -26,13 +26,12 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	TeaM-TL
 GH_PROJECT=	FotoKilof
 
-# the project really doesn't have PEP-517 support, but distutils/setuptools
-# creates a "wrong" entry_points script, so we use our pep517 feature
 USE_PYTHON=	autoplist pep517
 
 # fix Python wheel name (lower case)
 post-patch:
-	${REINPLACE_CMD} -e 's/\(__appname__ = \)"${PORTNAME}"/\1"${PORTNAME}"/1i' \
-		${WRKSRC}/fotokilof/version.py
+	${REINPLACE_CMD} -E -e 's/^((__app)?name(__)? = )"${PORTNAME}"/\1"${PORTNAME}"/1i' \
+		${WRKSRC}/fotokilof/version.py \
+		${WRKSRC}/pyproject.toml
 
 .include <bsd.port.mk>
