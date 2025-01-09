@@ -1,5 +1,5 @@
 PORTNAME=	webstorm
-PORTVERSION=	2024.3.1
+PORTVERSION=	2024.3.1.1
 CATEGORIES=	devel
 MASTER_SITES=	https://download-cdn.jetbrains.com/webstorm/
 PKGNAMEPREFIX=	jetbrains-
@@ -37,7 +37,7 @@ NO_BUILD=	yes
 SUB_FILES=	${PORTNAME} ${PORTNAME}.desktop pkg-message
 SUB_LIST=	JAVA_HOME=${JAVA_HOME}
 
-WRKSRC=		${WRKDIR}/WebStorm-243.22562.112
+WRKSRC=		${WRKDIR}/WebStorm-243.22562.222
 
 _PTY4J_ARCH=	freebsd/${ARCH:S/amd64/x86-64/}
 _SQLITE_ARCH=	linux-${ARCH:S/amd64/x86_64/}
