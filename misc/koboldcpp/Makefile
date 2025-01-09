@@ -10,8 +10,8 @@ WWW=		https://github.com/lostruins/koboldcpp
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-BROKEN_armv7=	compilation fails, see https://github.com/LostRuins/koboldcpp/issues/1129
-BROKEN_i386=	compilation fails, see https://github.com/LostRuins/koboldcpp/issues/1129
+#BROKEN_armv7=	compilation fails, see https://github.com/LostRuins/koboldcpp/issues/1129
+#BROKEN_i386=	compilation fails, see https://github.com/LostRuins/koboldcpp/issues/1129
 
 FLAVORS=	default portable
 FLAVOR?=	${FLAVORS:[1]}
@@ -66,4 +66,10 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/${embd} ${STAGEDIR}${DATADIR}
 .endfor
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == aarch64 && ${FLAVOR} == portable
+IGNORE=	portable flavor isn't defined on aarch64 because it is based on AVX2, etc. (?)
+.endif
+
+.include <bsd.port.post.mk>
