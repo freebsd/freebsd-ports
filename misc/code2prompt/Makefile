@@ -10,6 +10,8 @@ WWW=		https://github.com/mufeedvh/code2prompt
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_i386=	link fails: error: undefined symbol: __atomic_fetch_add_8, etc
+
 BUILD_DEPENDS=	gmake:devel/gmake
 
 USES=		cargo perl5
