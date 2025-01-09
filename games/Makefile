@@ -965,6 +965,7 @@
     SUBDIR += tenebrae
     SUBDIR += tesseract
     SUBDIR += tesseract-data
+    SUBDIR += tetrigo
     SUBDIR += tetrinet
     SUBDIR += tetrinet-x
     SUBDIR += tetzle
