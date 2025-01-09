@@ -20,7 +20,7 @@ share/applications/goland.desktop
 %%DATADIR%%/lib/app-client.jar
 %%DATADIR%%/lib/app.jar
 %%DATADIR%%/lib/bouncy-castle.jar
-%%DATADIR%%/lib/build-marker-GO-243.21565.208
+%%DATADIR%%/lib/build-marker-GO-243.22562.186
 %%DATADIR%%/lib/cds/classesLogAgent.jar
 %%DATADIR%%/lib/ext/platform-main.jar
 %%DATADIR%%/lib/external-system-rt.jar
@@ -162,8 +162,8 @@ share/applications/goland.desktop
 %%DATADIR%%/plugins/go-plugin/license/golang-license.txt
 %%DATADIR%%/plugins/go-plugin/license/gopher-license.txt
 %%DATADIR%%/plugins/go-plugin/license/re2j-license.txt
-%%DATADIR%%/plugins/go-sharedIndexes-bundled/gosdk/gosdk-d297c17c1fbd-b87a2f8923ed.ijx
-%%DATADIR%%/plugins/go-sharedIndexes-bundled/gosdk/gosdk-d297c17c1fbd-b87a2f8923ed.txt
+%%DATADIR%%/plugins/go-sharedIndexes-bundled/gosdk/gosdk-d297c17c1fbd-d82d926f19eb.ijx
+%%DATADIR%%/plugins/go-sharedIndexes-bundled/gosdk/gosdk-d297c17c1fbd-d82d926f19eb.txt
 %%DATADIR%%/plugins/go-sharedIndexes-bundled/lib/go-sharedIndexes-bundled.jar
 %%DATADIR%%/plugins/go-template/lib/go-template.jar
 %%DATADIR%%/plugins/grazie/lib/grazie.jar
@@ -226,8 +226,8 @@ share/applications/goland.desktop
 %%DATADIR%%/plugins/javascript-plugin/helpers/vitest-intellij/node_modules/vitest-intellij-reporter-safe.js
 %%DATADIR%%/plugins/javascript-plugin/helpers/vitest-intellij/vitest-intellij-reporter.js
 %%DATADIR%%/plugins/javascript-plugin/helpers/vitest-intellij/vitest-intellij-util.js
-%%DATADIR%%/plugins/javascript-plugin/js/js-predefined-d6986cc7102b-e768b9ed790e.ijx
-%%DATADIR%%/plugins/javascript-plugin/js/js-predefined-d6986cc7102b-e768b9ed790e.txt
+%%DATADIR%%/plugins/javascript-plugin/js/js-predefined-d6986cc7102b-deb605915726.ijx
+%%DATADIR%%/plugins/javascript-plugin/js/js-predefined-d6986cc7102b-deb605915726.txt
 %%DATADIR%%/plugins/javascript-plugin/jsLanguageServicesImpl/external/!HowToUpdateBundledTypeScript.md
 %%DATADIR%%/plugins/javascript-plugin/jsLanguageServicesImpl/external/browser.d.ts
 %%DATADIR%%/plugins/javascript-plugin/jsLanguageServicesImpl/external/cancellationToken.js
@@ -438,6 +438,7 @@ share/applications/goland.desktop
 %%DATADIR%%/plugins/jsonpath/lib/jsonpath.jar
 %%DATADIR%%/plugins/keymap-vscode/lib/keymap-vscode.jar
 %%DATADIR%%/plugins/llmInstaller/lib/llmInstaller.jar
+%%DATADIR%%/plugins/llmInstaller/promo/GoLand/AIEnterprise.png
 %%DATADIR%%/plugins/llmInstaller/promo/GoLand/CloudCompletion.png
 %%DATADIR%%/plugins/llmInstaller/promo/GoLand/CloudCompletion_dark.png
 %%DATADIR%%/plugins/llmInstaller/promo/GoLand/CommandGenerationInTerminal.png
