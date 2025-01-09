@@ -1,4 +1,4 @@
---- Cargo.toml.orig	2024-12-11 16:41:25 UTC
+--- Cargo.toml.orig	2025-01-09 04:24:20 UTC
 +++ Cargo.toml
 @@ -140,7 +140,6 @@ git = ["git2"]
  [features]
