@@ -16,14 +16,15 @@ LIB_DEPENDS?=	libcurl.so:ftp/curl \
 		libopus.so:audio/opus \
 		libpopt.so:devel/popt \
 		librtlsdr.so:comms/rtl-sdr \
-		libsigc-2.0.so:devel/libsigc++20 \
 		libspeex.so:audio/speex
 BUILD_DEPENDS=	${LOCALBASE}/include/linux/input.h:devel/evdev-proto
 
-USES+=		cmake:noninja compiler:c++11-lang groff pkgconfig tcl
+USES+=		cmake:noninja compiler:c++11-lang gnome groff pkgconfig tcl:86
 USE_GITHUB=	yes
 GH_ACCOUNT=	sm0svx
 GH_PROJECT=	svxlink
+
+USE_GNOME=	libsigc++20
 
 CMAKE_SOURCE_PATH=	${WRKSRC}/src
 CMAKE_ARGS+=	-DLOCAL_STATE_DIR=/var \
@@ -47,14 +48,12 @@ OPTIONS_DEFAULT=	ALSA OSS
 OPTIONS_MULTI=		SOUND
 OPTIONS_MULTI_SOUND=	ALSA OSS
 ALSA_LIB_DEPENDS=	libasound.so:audio/alsa-lib
-ALSA_CMAKE_OFF=		-DUSE_ALSA:BOOL=OFF
-ALSA_CMAKE_ON=		-DUSE_ALSA:BOOL=ON
-OSS_CMAKE_OFF=		-DUSE_OSS:BOOL=OFF
-OSS_CMAKE_ON=		-DUSE_OSS:BOOL=ON
+ALSA_CMAKE_BOOL=	USE_ALSA
+OSS_CMAKE_BOOL=		USE_OSS
 .endif
 DOXYGEN_IMPLIES=	DOCS
 DOXYGEN_ALL_TARGET=	doc
-DOXYGEN_CMAKE_OFF=	-DCMAKE_DISABLE_FIND_PACKAGE_Doxygen:BOOL=TRUE
+DOXYGEN_CMAKE_BOOL_OFF=	CMAKE_DISABLE_FIND_PACKAGE_Doxygen
 DOXYGEN_BUILD_DEPENDS=	dot:graphics/graphviz \
 			doxygen:devel/doxygen
 OPTIONS_SUB=		yes
