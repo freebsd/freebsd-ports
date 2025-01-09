@@ -1,6 +1,6 @@
 PORTNAME=			${SAMBA4_BASENAME}419
 PORTVERSION=			${SAMBA4_VERSION}
-PORTREVISION=			3
+PORTREVISION=			4
 CATEGORIES?=			net
 MASTER_SITES=			SAMBA/samba/stable SAMBA/samba/rc
 DISTNAME=			${SAMBA4_DISTNAME}
@@ -45,6 +45,7 @@ EXTRA_PATCHES=			\
 				${PATCHDIR}/0026-vfs-add-a-compatibility-option-to-the-vfs_streams_xa.patch:-p1 \
 				${PATCHDIR}/0027-Add-VFS-module-vfs_freebsd-that-implements-FreeBSD-s.patch:-p1 \
 				${PATCHDIR}/0028-Fix-rl_completion_func_t.patch:-p1 \
+				${PATCHDIR}/0028-s3-lib-system-add-FreeBSD-proc_fd_pattern.patch:-p1 \
 				${PATCHDIR}/0100-Fix-pathref-handling-for-FreeBSD-13plus.patch
 
 SAMBA4_BASENAME=		samba
