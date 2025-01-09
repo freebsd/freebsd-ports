@@ -1389,6 +1389,7 @@ share/applications/librecad.desktop
 %%DATADIR%%/plugins/liblist.so
 %%DATADIR%%/plugins/libpicfile.so
 %%DATADIR%%/plugins/libplotequation.so
+%%DATADIR%%/plugins/libpointstocsv.so
 %%DATADIR%%/plugins/libsameprop.so
 %%DATADIR%%/plugins/libsample.so
 %%DATADIR%%/qm/librecad_ar.qm
@@ -1424,11 +1425,13 @@ share/applications/librecad.desktop
 %%DATADIR%%/qm/librecad_fi.qm
 %%DATADIR%%/qm/librecad_fr.qm
 %%DATADIR%%/qm/librecad_gl.qm
+%%DATADIR%%/qm/librecad_he.qm
 %%DATADIR%%/qm/librecad_hi.qm
 %%DATADIR%%/qm/librecad_hu.qm
 %%DATADIR%%/qm/librecad_id_ID.qm
 %%DATADIR%%/qm/librecad_it.qm
 %%DATADIR%%/qm/librecad_ja.qm
+%%DATADIR%%/qm/librecad_ka.qm
 %%DATADIR%%/qm/librecad_ko.qm
 %%DATADIR%%/qm/librecad_lv.qm
 %%DATADIR%%/qm/librecad_mk.qm
@@ -1443,8 +1446,10 @@ share/applications/librecad.desktop
 %%DATADIR%%/qm/librecad_sk.qm
 %%DATADIR%%/qm/librecad_sl.qm
 %%DATADIR%%/qm/librecad_sq_al.qm
+%%DATADIR%%/qm/librecad_sr.qm
 %%DATADIR%%/qm/librecad_sv.qm
 %%DATADIR%%/qm/librecad_ta.qm
+%%DATADIR%%/qm/librecad_th.qm
 %%DATADIR%%/qm/librecad_tr.qm
 %%DATADIR%%/qm/librecad_uk.qm
 %%DATADIR%%/qm/librecad_zh_cn.qm
