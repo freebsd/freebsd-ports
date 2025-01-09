@@ -1,6 +1,5 @@
 PORTNAME=	gp2c
-DISTVERSION=	0.0.13
-PORTREVISION=	1
+DISTVERSION=	0.0.14
 CATEGORIES=	math
 MASTER_SITES=	http://pari.math.u-bordeaux.fr/pub/pari/GP2C/
 
