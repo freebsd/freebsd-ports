@@ -62,6 +62,7 @@ include/analysismodule_wrp.mod
 include/chebyshevsolversmodule.mod
 include/chebyshevsolversmodule_wrp.mod
 include/choleskymodule.mod
+include/convergencemonitor.mod
 include/datatypesmodule.mod
 include/densitymatrixsolversmodule.mod
 include/densitymatrixsolversmodule_wrp.mod
