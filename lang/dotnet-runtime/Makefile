@@ -1,7 +1,7 @@
 PORTNAME=	dotnet-host
 DISTVERSIONPREFIX=	v
 DISTVERSION=	9.0.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang devel
 
 MAINTAINER=	arrowd@FreeBSD.org
@@ -21,10 +21,12 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	dotnet
 GH_PROJECT=	runtime
 
+DATADIR=	${PREFIX}/share/dotnet
+
 PLIST_FILES=	bin/dotnet \
-		dotnet/LICENSE.TXT \
-		dotnet/THIRD-PARTY-NOTICES.TXT \
-		dotnet/dotnet
+		share/dotnet/LICENSE.TXT \
+		share/dotnet/THIRD-PARTY-NOTICES.TXT \
+		share/dotnet/dotnet
 
 DOTNET_ARCH=	${ARCH:S|amd64|x64|:C|aarch64|arm64|}
 
@@ -41,11 +43,11 @@ post-build:
 	${ELFCTL} -e +noaslr ${WRKSRC}/artifacts/bin/freebsd-${DOTNET_ARCH}.${BUILD_TYPE}/corehost/dotnet
 
 do-install:
-	${MKDIR} ${STAGEDIR}${PREFIX}/dotnet
+	${MKDIR} ${STAGEDIR}${DATADIR}
 	${INSTALL_PROGRAM} ${WRKSRC}/artifacts/bin/freebsd-${DOTNET_ARCH}.${BUILD_TYPE}/corehost/dotnet \
-		${STAGEDIR}${PREFIX}/dotnet/
+		${STAGEDIR}${DATADIR}/
 	${INSTALL_DATA} ${WRKSRC}/LICENSE.TXT ${WRKSRC}/THIRD-PARTY-NOTICES.TXT \
-		${STAGEDIR}${PREFIX}/dotnet/
-	${RLN} ${STAGEDIR}${PREFIX}/dotnet/dotnet ${STAGEDIR}${PREFIX}/bin/dotnet
+		${STAGEDIR}${DATADIR}
+	${RLN} ${STAGEDIR}${DATADIR}/dotnet ${STAGEDIR}${PREFIX}/bin/dotnet
 
 .include <bsd.port.mk>
