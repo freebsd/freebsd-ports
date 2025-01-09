@@ -42,6 +42,7 @@
     SUBDIR += check_mysql_health
     SUBDIR += check_nwc_health
     SUBDIR += check_ssl_cert
+    SUBDIR += check_syncthing
     SUBDIR += check_ups_health
     SUBDIR += check_wg
     SUBDIR += chillispot
