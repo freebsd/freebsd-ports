@@ -5,6 +5,26 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20250109:
+  AFFECTS: users of www/kiwix-tools and devel/libkiwix
+  AUTHOR: olce@FreeBSD.org
+
+  Upstream released a new version (14.0.0) of kiwix-tools' dependency libkiwix
+  that the latest release of kiwix-tools (unchanged at 3.7.0) does not
+  support, and the devel/libkiwix port was updated to it by mistake.
+
+  In order to fix the situation without reverting devel/libkiwix to 13.1.0 and
+  bumping its PORTEPOCH, the new port devel/libkiwix13 has been created and
+  www/kiwix-tools has been updated to depend on it rather than devel/libkiwix.
+  This is expected to be temporary.
+
+  As devel/libkiwix13 and devel/libkiwix conflict with each other, which
+  apparently can confuse pkg (which proposes to delete www/kiwix-tools), users
+  having www/kiwix-tools installed are advised to upgrade it first separately,
+  e.g., by running:
+
+  # pkg upgrade www/kiwix-tools
+
 20250106:
   AFFECTS: users of comms/zigbee2mqtt
   AUTHOR: otis@FreeBSD.org
