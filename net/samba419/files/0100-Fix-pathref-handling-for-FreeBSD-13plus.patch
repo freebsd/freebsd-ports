@@ -1,16 +1,5 @@
 https://bugzilla.samba.org/show_bug.cgi?id=15376
 
---- source3/lib/system.c	2023-01-18 16:32:24.174553200 +0100
-+++ source3/lib/system.c	2023-06-19 23:35:30.132465000 +0200
-@@ -1022,6 +1022,8 @@
- } proc_fd_patterns[] = {
- 	/* Linux */
- 	{ "/proc/self/fd/%d", "/proc/self/fd/0" },
-+	/* FreeBSD */
-+	{ "/var/run/samba4/fd/%d", "/var/run/samba4/fd/0" },
- 	{ NULL, NULL },
- };
- 
 --- source3/modules/vfs_zfsacl.c	2023-11-27 13:09:10.612012900 +0100
 +++ source3/modules/vfs_zfsacl.c	2025-01-07 18:53:05.292522000 +0100
 @@ -169,6 +169,7 @@ 
