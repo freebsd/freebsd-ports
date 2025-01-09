@@ -1,0 +1,30 @@
+#!/bin/sh
+
+# PROVIDE: bird dynamicrouting
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# bird_enable (bool):   Set to NO by default.
+#               Set it to YES to enable bird.
+# bird_config (path):   Set to %%PREFIX%%/etc/bird.conf
+#               by default.
+#
+
+. /etc/rc.subr
+
+name="bird"
+rcvar=bird_enable
+
+load_rc_config $name
+
+: ${bird_enable="NO"}
+: ${bird_config="%%PREFIX%%/etc/bird.conf"}
+: ${bird_group="birdvty"}
+
+command=%%PREFIX%%/sbin/${name}
+command_args="-c $bird_config -g $bird_group"
+
+run_rc_command "$1"

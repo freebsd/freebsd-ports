@@ -1,21 +1,18 @@
 PORTNAME=	bird
-DISTVERSION=	2.16
+DISTVERSION=	3.0.0
 CATEGORIES=	net
 MASTER_SITES=	https://bird.network.cz/download/
-PKGNAMESUFFIX=	2
+PKGNAMESUFFIX=	3
 
 MAINTAINER=	olivier@FreeBSD.org
-COMMENT=	Dynamic IP routing daemon
+COMMENT=	Dynamic multithreaded IP routing daemon
 WWW=		https://bird.network.cz/
 
 LICENSE=	GPLv2
 
-FLAVORS=	netlink rtsock
-rtsock_PKGNAMESUFFIX=	2-rtsock
-
 USES=		bison cpe gmake ncurses readline
 
-CONFLICTS=	bird3
+CONFLICTS=	bird2
 
 CPE_VENDOR=	nic
 
@@ -59,22 +56,7 @@ RPKI_VARS=	rt_prot+=rpki
 STATIC_VARS=	rt_prot+=static
 
 CONFIGURE_ARGS+=--with-protocols="${RT_PROT}"
-RPKI_LIB_DEPENDS=	libssh.so:security/libssh
-
-.include <bsd.port.options.mk>
-
-.if ${FLAVOR:U} != rtsock
 CONFIGURE_ARGS+=--with-sysconfig=bsd-netlink
-.endif
-
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1400000
-FLAVORS=	rtsock netlink
-netlink_PKGNAMESUFFIX=	2-netlink
-rtsock_PKGNAMESUFFIX=	2
-.endif
-
-.if ${OPSYS} == FreeBSD && (${OSVERSION} >= 1500000 && ${OSVERSION} < 1500017)
-EXTRA_PATCHES=	${PATCHDIR}/extra-patch-netlink-route
-.endif
+RPKI_LIB_DEPENDS=	libssh.so:security/libssh
 
 .include <bsd.port.mk>

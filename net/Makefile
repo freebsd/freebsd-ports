@@ -57,6 +57,7 @@
     SUBDIR += bindtest
     SUBDIR += binkd
     SUBDIR += bird2
+    SUBDIR += bird3
     SUBDIR += bittwist
     SUBDIR += bmon
     SUBDIR += boinc-client
