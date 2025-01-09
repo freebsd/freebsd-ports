@@ -1,12 +1,12 @@
 PORTNAME=	corrosion
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.5
-PORTREVISION=	6
+DISTVERSION=	0.5.1
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Easy Rust and C/C++ integration
-WWW=		https://corrosion-rs.github.io/corrosion/
+WWW=		https://corrosion-rs.github.io/corrosion/ \
+		https://github.com/corrosion-rs/corrosion
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -28,5 +28,7 @@ PLIST_FILES=	lib/cmake/Corrosion/CorrosionConfig.cmake \
 CMAKE_TESTING_ON=	CORROSION_BUILD_TESTS # 2 tests fail
 
 NO_ARCH=	yes
+
+# tests as of 0.5.1: 97% tests passed, 2 tests failed out of 72, see https://github.com/corrosion-rs/corrosion/issues/602
 
 .include <bsd.port.mk>
