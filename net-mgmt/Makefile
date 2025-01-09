@@ -404,6 +404,7 @@
     SUBDIR += triton-guesttools
     SUBDIR += unbound_exporter
     SUBDIR += unifi8
+    SUBDIR += unifi9
     SUBDIR += victoria-logs
     SUBDIR += victoria-metrics
     SUBDIR += virt-viewer
