@@ -1,3 +1,30 @@
-KadNode is a small decentralized DNS resolver that can use existing
-public key infrastructures. It utilizes the BitTorrent P2P network
-and mbedtls for TLS/crypto support.
+KadNode finds the IP address of other instances on the Internet or local
+network. It is used like DNS, but is based on the decentralized BitTorrent
+network.
+
+KadNode intercepts .p2p domain queries on the systems level and resolves them
+using a decentralized Kademlia DHT network. Additionally, TLS authentication can
+be used to make sure the correct IP address was found. If successful, the IP
+address is passed to the application making the request.
+
+Features:
+
+* Support for two kinds of domains:
+**  public key domains as <public-key>.p2p
+***   No need to exchange any further keys/certificates
+***   Uses secp256r1 ECC key pairs
+**  named domains like yourdomain.com.p2p
+***   Needs pre-shared certificates (self-signed root certificates or e.g.
+      Let's Encrypt)
+***   Uses TLS session handshake for authentication
+* IPv4/IPv6 support
+* UPnP/NAT-PMP support
+* Local peer discovery
+* Small size / ~100KB depending on features / ~50KB compressed
+* Command line control program
+* NSS support through /etc/nsswitch.conf
+* DNS server interface and DNS proxy
+**  Handles A (IPv4 address),AAAA (IPv6), and SRV requests
+* Packages for ArchLinux, Debian, FreeBSD, MacOSX, OpenWrt, Windows
+* Peer file import/export on startup/shutdown and every 24h
+* Uses sha256 hash method
