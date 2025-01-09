@@ -1,5 +1,5 @@
 PORTNAME=	tor-browser
-DISTVERSION=	14.0.3
+DISTVERSION=	14.0.4
 CATEGORIES=	www net security wayland
 MASTER_SITES=	TOR \
 		https://build-sources.tbb.torproject.org/:source1 \
@@ -7,8 +7,8 @@ MASTER_SITES=	TOR \
 		https://secure.informaction.com/%SUBDIR%/:source3
 MASTER_SITE_SUBDIR=	torbrowser/${DISTVERSION}/:DEFAULT \
 			download/releases/:source3
-DISTNAME=	src-firefox-tor-browser-128.5.0esr-14.0-1-build2
-NOSCRIPT=	noscript-11.5.2.xpi
+DISTNAME=	src-firefox-tor-browser-128.6.0esr-14.0-1-build1
+NOSCRIPT=	noscript-12.1.1.xpi
 DISTFILES=	${DISTNAME}.tar.xz \
 		manual_215922.zip:source1 \
 		fonts-3--4348e1.tar.zst:source2 \
@@ -22,14 +22,14 @@ LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	nspr>=4.32:devel/nspr \
-		nss>=3.94:security/nss \
+		nss>=3.101:security/nss \
 		icu>=73.1:devel/icu \
 		libevent>=2.1.8:devel/libevent \
-		harfbuzz>=8.2.2:print/harfbuzz \
+		harfbuzz>=8.5.0:print/harfbuzz \
 		graphite2>=1.3.14:graphics/graphite2 \
-		png>=1.6.39:graphics/png \
+		png>=1.6.43:graphics/png \
 		dav1d>=1.0.0:multimedia/dav1d \
-		libvpx>=1.13.1:multimedia/libvpx \
+		libvpx>=1.14:multimedia/libvpx \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR} \
 		v4l_compat>0:multimedia/v4l_compat \
 		autoconf2.13:devel/autoconf2.13 \
