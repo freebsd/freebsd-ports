@@ -1,5 +1,5 @@
 PORTNAME=	meson
-PORTVERSION=	1.6.1
+PORTVERSION=	1.7.0
 CATEGORIES=	devel python
 MASTER_SITES=	https://github.com/mesonbuild/${PORTNAME}/releases/download/${PORTVERSION}/
 
