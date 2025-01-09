@@ -1,5 +1,6 @@
 PORTNAME=	kiwix-tools
 DISTVERSION=	3.7.0
+PORTREVISION=	1
 CATEGORIES=	www
 
 MAINTAINER=	olce.freebsd.ports@certner.fr
@@ -9,7 +10,7 @@ WWW=		https://www.kiwix.org/
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libkiwix.so:devel/libkiwix \
+LIB_DEPENDS=	libkiwix.so.13:devel/libkiwix13 \
 		libzim.so:devel/libzim
 
 USES=		compiler:c++17-lang meson pkgconfig
