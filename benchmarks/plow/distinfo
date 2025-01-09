@@ -1,7 +1,5 @@
-TIMESTAMP = 1679678974
-SHA256 (go/benchmarks_plow/plow-v1.3.1/v1.3.1.mod) = 3ac99f55827a991f72a1d5ae368ae18355e4dfb1904cc10310416ca916ad3035
-SIZE (go/benchmarks_plow/plow-v1.3.1/v1.3.1.mod) = 1187
-SHA256 (go/benchmarks_plow/plow-v1.3.1/v1.3.1.zip) = 264c905be837d437f5b761f8a9a98609f23eec5189ed0d60c1fab6d21c9b7f43
-SIZE (go/benchmarks_plow/plow-v1.3.1/v1.3.1.zip) = 2645687
-SHA256 (go/benchmarks_plow/plow-v1.3.1/golang-sys-v0.6.0_GH0.tar.gz) = b4f6d17c7a128f76169964b437cb66b3f2dbf9a33361928ec19dfecf7b03fc54
-SIZE (go/benchmarks_plow/plow-v1.3.1/golang-sys-v0.6.0_GH0.tar.gz) = 1434234
+TIMESTAMP = 1736433758
+SHA256 (go/benchmarks_plow/plow-v1.3.2/v1.3.2.mod) = 604c7ecc2a1de16d2678a9db02bbb0494b117a46ba4700e03b25dfbc404d1247
+SIZE (go/benchmarks_plow/plow-v1.3.2/v1.3.2.mod) = 1080
+SHA256 (go/benchmarks_plow/plow-v1.3.2/v1.3.2.zip) = 55637ee7820128032b5f6bd9c2692bf843c086bae36620b859d4b9c75310365d
+SIZE (go/benchmarks_plow/plow-v1.3.2/v1.3.2.zip) = 2646224
