@@ -1,28 +1,35 @@
---- sly.el.orig	2023-05-23 12:54:52 UTC
+--- sly.el.orig	2024-08-09 21:19:04 UTC
 +++ sly.el
-@@ -7475,22 +7475,30 @@ can be found."
- ;;;###autoload
- (add-hook 'lisp-mode-hook 'sly-editing-mode)
+@@ -7487,24 +7487,35 @@ other non-nil value to unconditionally replace SLIME."
+                  (const :tag "Do not replace SLIME" nil)
+                  (const :tag "Do replace SLIME" t)))
  
 -(cond
 - ((or (not (memq 'slime-lisp-mode-hook lisp-mode-hook))
 -      noninteractive
 -      (prog1
--          (y-or-n-p "[sly] SLIME detected in `lisp-mode-hook', causes keybinding conflicts.  Remove it for this Emacs session?")
+-          (if (eq sly-replace-slime 'ask)
+-              (y-or-n-p "[sly] SLIME detected in `lisp-mode-hook', causes keybinding conflicts.  Remove it for this Emacs session?")
+-            sly-replace-slime)
 -        (warn "To restore SLIME in this session, customize `lisp-mode-hook'
 -and replace `sly-editing-mode' with `slime-lisp-mode-hook'.")))
 -  (remove-hook 'lisp-mode-hook 'slime-lisp-mode-hook)
 +(let ((proceed-p
 +       (if noninteractive
-+           (lambda () t)
++           (lambda ()
++             (if (eq sly-replace-slime 'ask)
++                 t
++               sly-replace-slime))
 +         (let (asked resp)
 +           (lambda ()
 +             (unless asked
 +               (setq resp
-+                     (y-or-n-p
-+                      (eval-when-compile
-+                        (concat "[sly] SLIME detected. Try to disable it "
-+                                "for this Emacs session?")))
++                     (if (eq sly-replace-slime 'ask)
++                         (y-or-n-p
++                          (eval-when-compile
++                            (concat "[sly] SLIME detected. Try to disable it "
++                                    "for this Emacs session?")))
++                       sly-replace-slime)
 +                     asked t))
 +             resp)))))
 +  (when (and (memq 'slime-lisp-mode-hook lisp-mode-hook)
