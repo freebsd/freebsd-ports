@@ -1,5 +1,5 @@
-TIMESTAMP = 1725734160
-SHA256 (go/sysutils_infracost/infracost-v0.10.39/v0.10.39.mod) = c8071c1c1aad541fccfcab7ea6c1bf09774645ceedb9971bf93dba0c84c32e75
-SIZE (go/sysutils_infracost/infracost-v0.10.39/v0.10.39.mod) = 13367
-SHA256 (go/sysutils_infracost/infracost-v0.10.39/v0.10.39.zip) = 562b00851739bc7a1acae2d3f1a9cf601a09717273f11be6671a34d69e39dedb
-SIZE (go/sysutils_infracost/infracost-v0.10.39/v0.10.39.zip) = 3535596
+TIMESTAMP = 1736435974
+SHA256 (go/sysutils_infracost/infracost-v0.10.40/v0.10.40.mod) = 1e2b518aab27beee16c29a71217ba8de0089a72186117da2a5fe3477661fdba4
+SIZE (go/sysutils_infracost/infracost-v0.10.40/v0.10.40.mod) = 13383
+SHA256 (go/sysutils_infracost/infracost-v0.10.40/v0.10.40.zip) = a96a4393b5af37393b0901ff43c9e6e541887365e093a3dbb65efda0b26005f0
+SIZE (go/sysutils_infracost/infracost-v0.10.40/v0.10.40.zip) = 3602611
