@@ -1,6 +1,6 @@
 PORTNAME=	syncthingtray
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.6.4
+DISTVERSION=	1.7.0
 CATEGORIES=	deskutils
 
 MAINTAINER=	dsh@bamus.cz
@@ -33,11 +33,11 @@ CMAKE_SOURCE_PATH=	${WRKDIR}/subdirs/syncthingtray
 USE_GITHUB=	nodefault
 GH_ACCOUNT=	Martchus
 GH_TUPLE:=	${GH_ACCOUNT}:${PORTNAME}:${DISTVERSIONPREFIX}${DISTVERSION}:${PORTNAME}/../${PORTNAME} \
-		${GH_ACCOUNT}:cpp-utilities:v5.27.0:cpputilities/../c++utilities \
-		${GH_ACCOUNT}:qtutilities:v6.14.4:qtutilities/../qtutilities \
+		${GH_ACCOUNT}:cpp-utilities:v5.27.1:cpputilities/../c++utilities \
+		${GH_ACCOUNT}:qtutilities:v6.14.5:qtutilities/../qtutilities \
 		${GH_ACCOUNT}:qtforkawesome:v0.2.3:qtforkawesome/../qtforkawesome \
 		ForkAwesome:Fork-Awesome:4fef70f:ForkAwesome/../forkawesome \
-		${GH_ACCOUNT}:subdirs:870d9f6:subdirs/../subdirs
+		${GH_ACCOUNT}:subdirs:993f383:subdirs/../subdirs
 
 USE_KDE=	ecm:build
 USE_QT=		declarative svg
