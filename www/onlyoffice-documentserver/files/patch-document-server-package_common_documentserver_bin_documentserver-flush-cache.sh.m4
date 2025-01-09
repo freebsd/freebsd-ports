@@ -5,7 +5,7 @@
  
  # Save the hash to a variable in the configuration file
 -echo "set \$cache_tag \"$HASH\";" > /etc/nginx/includes/ds-cache.conf
-+echo "set \$cache_tag \"$HASH\";" > %%ETCDIR%%/etc/nginx/includes/ds-cache.conf
++echo "set \$cache_tag \"$HASH\";" > %%ETCDIR%%/documentserver/nginx/includes/ds-cache.conf
  
 -API_PATH="/var/www/M4_DS_PREFIX/web-apps/apps/api/documents/api.js"
 +API_PATH="%%LOCALBASE%%/www/M4_DS_PREFIX/web-apps/apps/api/documents/api.js"
