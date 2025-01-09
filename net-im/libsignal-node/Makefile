@@ -50,10 +50,6 @@ NODEJS_VERSION=	20
 NODE_ARCH=	${ARCH:S/aarch64/arm64/:S/amd64/x64/}
 RUST_ARCH=	${ARCH:S/amd64/x86_64/}
 
-YARN_TIMESTAMP=	1661146515
-
-#BINARY_ALIAS=	python=${PYTHON_CMD}
-
 .include <bsd.port.options.mk>
 
 post-patch:
