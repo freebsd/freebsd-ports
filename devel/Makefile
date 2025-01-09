@@ -1346,6 +1346,7 @@
     SUBDIR += libjodycode
     SUBDIR += libk8055
     SUBDIR += libkiwix
+    SUBDIR += libkiwix13
     SUBDIR += libklel
     SUBDIR += liblangtag
     SUBDIR += liblnk
