@@ -1,5 +1,5 @@
 PORTNAME=	rust
-PORTVERSION?=	1.83.0
+PORTVERSION?=	1.84.0
 PORTREVISION?=	0
 CATEGORIES=	lang
 MASTER_SITES=	https://static.rust-lang.org/dist/:src \
@@ -72,8 +72,8 @@ WASM_VARS=		_COMPONENTS+="rust-analysis-${_PACKAGE_VERS}-wasm32-unknown-unknown 
 			_RUST_TARGETS+=wasm32-unknown-unknown
 
 # See WRKSRC/src/stage0 for the date and version values
-BOOTSTRAPS_DATE?=		2024-10-17
-RUST_BOOTSTRAP_VERSION?=	1.82.0
+BOOTSTRAPS_DATE?=		2024-11-28
+RUST_BOOTSTRAP_VERSION?=	1.83.0
 
 CARGO_VENDOR_DIR?=		${WRKSRC}/vendor
 
@@ -188,6 +188,7 @@ do-configure:
 	@${ECHO_CMD} 'default-linker="${CC}"' >> ${WRKSRC}/config.toml
 	@${ECHO_CMD} 'deny-warnings=false' >> ${WRKSRC}/config.toml
 	@${ECHO_CMD} 'verbose-tests=true' >> ${WRKSRC}/config.toml
+	@${ECHO_CMD} 'download-rustc=false' >> ${WRKSRC}/config.toml
 .if ${PORT_OPTIONS:MWASM} && !${PORT_OPTIONS:MPORT_LLVM}
 	@${ECHO_CMD} 'lld=true' >> ${WRKSRC}/config.toml
 .else
