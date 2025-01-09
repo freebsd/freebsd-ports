@@ -1,4 +1,4 @@
-TIMESTAMP = 1730745101
+TIMESTAMP = 1736441045
 SHA256 (rust/crates/aho-corasick-1.1.3.crate) = 8e60d3430d3a69478ad0993f19238d2df97c507009a52b3c10addcd7f6bcb916
 SIZE (rust/crates/aho-corasick-1.1.3.crate) = 183311
 SHA256 (rust/crates/anstream-0.6.17.crate) = 23a1e53f0f5d86382dafe1cf314783b2044280f406e7e1506368220ad11b1338
@@ -133,5 +133,5 @@ SHA256 (rust/crates/windows_x86_64_msvc-0.52.6.crate) = 589f6da84c646204747d1270
 SIZE (rust/crates/windows_x86_64_msvc-0.52.6.crate) = 832564
 SHA256 (rust/crates/yansi-1.0.1.crate) = cfe53a6657fd280eaa890a3bc59152892ffa3e30101319d168b781ed6529b049
 SIZE (rust/crates/yansi-1.0.1.crate) = 75497
-SHA256 (sharkdp-hexyl-v0.15.0_GH0.tar.gz) = 017ab7fe18caa3d13427fb13fd6050a9d8bf9aa26d1e1fe02924dfd7f86cd3cf
-SIZE (sharkdp-hexyl-v0.15.0_GH0.tar.gz) = 42536
+SHA256 (sharkdp-hexyl-v0.16.0_GH0.tar.gz) = 52853b4edede889b40fd6ff132e1354d957d1f26ee0c26ebdea380f8ce82cb0b
+SIZE (sharkdp-hexyl-v0.16.0_GH0.tar.gz) = 42826
