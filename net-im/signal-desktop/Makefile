@@ -1,7 +1,6 @@
 PORTNAME=	signal-desktop
 DISTVERSIONPREFIX=	v
-DISTVERSION=	7.35.0
-PORTREVISION=	1
+DISTVERSION=	7.36.1
 CATEGORIES=	net-im
 MASTER_SITES=	LOCAL/mikael/signal-desktop/:npm \
 		https://build-artifacts.signal.org/desktop/:sqlcipher
@@ -66,8 +65,6 @@ USE_GL=		gbm gl
 USE_GNOME=	atk cairo gdkpixbuf2 glib20 gtk30 libxml2 libxslt pango
 USE_XORG=	x11 xcb xcomposite xdamage xext xfixes xi xrandr xrender xtst
 
-PIE_UNSAFE=	yes
-
 PACKAGE_ENV=	SIGNAL_ENV=production \
 		npm_config_runtime=electron \
 		npm_config_target=${ELECTRON_VER_MAJOR} \
@@ -90,7 +87,7 @@ MAKE_ENV+=	ESBUILD_BINARY_PATH=${LOCALBASE}/bin/esbuild
 _BUILD_DATE=	$$(date +'%s')
 
 ELECTRON_VER_MAJOR=	32
-ESBUILD_VERSION=	0.21.2
+ESBUILD_VERSION=	0.24.0
 
 SQLCIPHER=	sqlcipher-v2-4.6.1-signal-patch2--0.2.0-b0dbebe5b2d81879984bfa2318ba364fb4d436669ddc1668d2406eaaaee40b7e
 
