@@ -1,5 +1,5 @@
 PORTNAME=	pillar
-PORTVERSION=	1.10.0
+PORTVERSION=	1.10.1
 CATEGORIES=	devel
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
@@ -10,7 +10,6 @@ WWW=		https://cran.r-project.org/web/packages/pillar/
 LICENSE=	MIT
 
 RUN_DEPENDS=	R-cran-cli>=2.3.0:devel/R-cran-cli \
-		R-cran-fansi>0:devel/R-cran-fansi \
 		R-cran-glue>0:devel/R-cran-glue \
 		R-cran-lifecycle>0:devel/R-cran-lifecycle \
 		R-cran-rlang>=1.0.2:devel/R-cran-rlang \
