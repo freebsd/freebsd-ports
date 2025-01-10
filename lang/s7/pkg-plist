@@ -29,6 +29,7 @@ lib/libs7.so.0.0.0
 %%DATADIR%%/snd-lint.scm
 %%DATADIR%%/stuff.scm
 %%DATADIR%%/tools/auto-tester.scm
+%%DATADIR%%/tools/cb.scm
 %%DATADIR%%/tools/compare-calls.scm
 %%DATADIR%%/tools/concordance.scm
 %%DATADIR%%/tools/dup.scm
