@@ -1,6 +1,6 @@
 PORTNAME=	monty
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2025.1.3
+DISTVERSION=	2025.1.9
 CATEGORIES=	devel python
 #MASTER_SITES=	PYPI # no tests
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -33,5 +33,6 @@ NO_ARCH=	yes
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 
 # tests as of 2025.1.3: 2 failed, 193 passed, 9 skipped, 9 warnings in 83.57s (0:01:23), see https://github.com/materialsvirtuallab/monty/issues/736
+# 2025.1.9: error in tests: https://github.com/materialsvirtuallab/monty/issues/740
 
 .include <bsd.port.mk>
