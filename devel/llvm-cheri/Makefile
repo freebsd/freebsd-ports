@@ -1,6 +1,6 @@
 PORTNAME=	llvm
 PORTVERSION=	${LLVM_MAJOR}.0.d${SNAPDATE}
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	devel lang
 PKGNAMESUFFIX=	${LLVM_SUFFIX}
 
@@ -18,6 +18,7 @@ NOT_FOR_ARCHS=		i386 armv6 armv7 powerpc mips
 NOT_FOR_ARCHS_REASON=	No one will develop CHERI from 32-bit
 
 LLVM_SUFFIX?=	-cheri
+LLVM_DIR=	llvm${LLVM_SUFFIX}
 LLVM_PREFIX=	${PREFIX}/llvm${LLVM_SUFFIX}
 COMMAND_SUFFIX=	${LLVM_SUFFIX}
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}${LLVM_SUFFIX}
@@ -65,8 +66,8 @@ GH_TAGNAME=	${LLVM_COMMIT}
 
 .include "${.CURDIR}/Makefile.snapshot"
 
-OPTIONS_DEFINE=	CLANG DOCS LIT LLD STATIC_LIBS XTOOLCHAIN
-OPTIONS_DEFAULT=	CLANG LIT LLD XTOOLCHAIN
+OPTIONS_DEFINE=	CLANG DOCS EXTRAS LIT LLD STATIC_LIBS XTOOLCHAIN
+OPTIONS_DEFAULT=	CLANG EXTRAS LIT LLD XTOOLCHAIN
 OPTIONS_SUB=	yes
 
 CLANG_DESC=		Build clang
@@ -82,6 +83,9 @@ DOCS_CMAKE_ON=		-DLLVM_ENABLE_SPHINX=ON \
 			-DLLVM_BUILD_DOCS=ON
 DOCS_PLIST_FILES=	${MAN1SRCS:S|^|share/man/man1/|:S|.1$|${LLVM_SUFFIX}.1.gz|}
 DOCS_PORTDOCS=		llvm
+EXTRAS_DESC=		Extra clang tools
+EXTRAS_IMPLIES=		CLANG
+EXTRAS_PLIST_DIRS=	${LLVM_DIR}/include/clang-tidy/plugin
 LIT_DESC=		Install lit and FileCheck test tools
 LIT_MOD_NAME=		lit${LLVM_SUFFIX:S/-/_/g}
 LIT_PLIST_SUB=		LIT_MOD_NAME=${LIT_MOD_NAME}
@@ -111,6 +115,28 @@ STRIP_LIBS=	BugpointPasses.so \
 		${LIBNAME}.0 \
 		libLTO.so
 
+EXTRAS_LIBS=	libclangApplyReplacements \
+		libclangChangeNamespace \
+		libclangDaemon \
+		libclangDoc \
+		libclangIncludeCleaner \
+		libclangIncludeFixer \
+		libclangMove \
+		libclangPseudo \
+		libclangQuery \
+		libclangRename \
+		libclangReorderFields \
+		libclangTidy \
+		libclangTidyGoogleModule \
+		libclangTidyLLVMModule \
+		libclangTidyMiscModule \
+		libclangTidyReadabilityModule \
+		libclangTidyUtils \
+		libfindAllSymbols \
+		libmodernizeCore
+EXTRAS_FILES=	index.js
+EXTRAS_PATTERN=	${EXTRAS_COMMANDS:tW:C/  */|/g}|${EXTRAS_LIBS:tW:C/  */|/g}|${EXTRAS_FILES:tW:C/  */|/g}
+
 .include <bsd.port.options.mk>
 
 # keep in sync with /usr/src/lib/clang/clang.build.mk
@@ -120,7 +146,15 @@ CONFIGURE_TARGET:=${ARCH:C/amd64/x86_64/:C/armv6hf/armv6/}-portbld-${OPSYS:tl}${
 LLVM_ENABLE_PROJECTS+=	clang
 COMMANDS+=	${CLANG_COMMANDS}
 MAN1SRCS+=	${CLANG_MAN1SRCS}
+CLANG_PATTERN=	(c-index-test|clang|diagtool|hmaptool|intercept-|libear|libscanbuild|analyze-|scan-|Reporter.py|ScanView.py|scanview.css|sorttable.js|startfile.py|-analyzer|AnalyzerPlugin.so)
 USES+=		gnome
+.endif
+
+.if ${PORT_OPTIONS:MEXTRAS}
+LLVM_ENABLE_PROJECTS+=	clang-tools-extra
+COMMANDS+=	${EXTRAS_COMMANDS}
+MAN1SRCS+=	${EXTRAS_MAN1SRCS}
+PORTDOCS+=	clang-tools
 .endif
 
 .if ${PORT_OPTIONS:MLIT}
@@ -207,22 +241,12 @@ post-install-DOCS-on:
 	${RMDIR} ${STAGEDIR}${LLVM_PREFIX}/share/man/man1/
 	${RMDIR} ${STAGEDIR}${LLVM_PREFIX}/share/man/
 
-post-install-LLD-on:
-	${LN} -s ld.lld ${STAGEDIR}${LLVM_PREFIX}/bin/ld
-
-post-install-LLDB-on:
-.if ${OPSYS} != "FreeBSD" || ${CHOSEN_COMPILER_TYPE} == clang
-	${RM} ${STAGEDIR}${LLVM_PREFIX}/lib/python*/site-packages/lib
-.endif
-
-post-install-XTOOLCHAIN-on:
-	${MKDIR} ${STAGEDIR}${PREFIX}/share/toolchains
-	${INSTALL_DATA} ${WRKDIR}/xtoolchain.mk \
-	    ${STAGEDIR}${PREFIX}/share/toolchains/llvm${LLVM_SUFFIX}.mk
-
 post-install-CLANG-on:
 	${LN} -f ${STAGEDIR}${LLVM_PREFIX}/bin/clang \
 	    ${STAGEDIR}${LLVM_PREFIX}/bin/clang-cpp
+
+post-install-EXTRAS-on:
+	${RMDIR} ${STAGEDIR}${LLVM_PREFIX}/include/clang-tidy/misc/ConfusableTable
 
 post-install-LIT-on:
 	${INSTALL_SCRIPT} ${PATCH_WRKSRC}/llvm/utils/lit/lit.py \
@@ -241,8 +265,21 @@ post-install-LIT-on:
 	${LN} -f ${STAGEDIR}${LLVM_PREFIX}/bin/FileCheck \
 	    ${STAGEDIR}${PREFIX}/bin/${COMMAND_PREFIX}FileCheck${COMMAND_SUFFIX}
 
+post-install-LLD-on:
+	${LN} -s ld.lld ${STAGEDIR}${LLVM_PREFIX}/bin/ld
+
+post-install-LLDB-on:
+.if ${OPSYS} != "FreeBSD" || ${CHOSEN_COMPILER_TYPE} == clang
+	${RM} ${STAGEDIR}${LLVM_PREFIX}/lib/python*/site-packages/lib
+.endif
+
 post-install-STATIC_LIBS-off:
 	${RM} ${STAGEDIR}${LLVM_PREFIX}/lib/lib*.a
+
+post-install-XTOOLCHAIN-on:
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/toolchains
+	${INSTALL_DATA} ${WRKDIR}/xtoolchain.mk \
+	    ${STAGEDIR}${PREFIX}/share/toolchains/llvm${LLVM_SUFFIX}.mk
 
 TEST_CMD=	'(cd ${WRKSRC}/llvm/test; ${SETENV} ${MAKE_ENV} LD_LIBRARY_PATH=${WRKSRC}/Release/lib ${MAKE_CMD} check-local-lit)'
 do-test:
@@ -280,7 +317,8 @@ build-plist:
 	    | ${SORT} >> ${PLIST}.tmp
 	awk '{ \
 	    if ($$0 ~ /lib.lib[a-zA-Z].*\.a$$/) {printf "%%%%STATIC_LIBS%%%%"} \
-	    if ($$0 ~ /clang/ && $$0 !~ /omp.h/) {printf "%%%%CLANG%%%%"} \
+	    if ($$0 ~ /${CLANG_PATTERN}/ && $$0 !~ /(${EXTRAS_PATTERN})/) {printf "%%%%CLANG%%%%"} \
+	    if ($$0 ~ /(${EXTRAS_PATTERN})/) {printf "%%%%EXTRAS%%%%"} \
 	    if ($$0 ~ /(bin\/(ld|lld|wasm-ld))|liblld[^b]|\/lld\// && $$0 !~ /lldb/) {printf "%%%%LLD%%%%"} \
 	    if ($$0 ~ /(argdumper|lldb)/) {printf "%%%%LLDB%%%%"} \
 	    print \

@@ -94,6 +94,22 @@ CLANG_COMMANDS=	\
 		scan-build-py \
 		scan-view
 
+EXTRAS_COMMANDS= \
+		clangd \
+		clang-apply-replacements \
+		clang-change-namespace \
+		clang-doc \
+		clang-include-fixer \
+		clang-move \
+		clang-pseudo \
+		clang-query \
+		clang-reorder-fields \
+		clang-tidy \
+		find-all-symbols \
+		modularize \
+		pp-trace \
+		run-clang-tidy
+
 LIT_COMMANDS=	\
 		FileCheck \
 		lit \

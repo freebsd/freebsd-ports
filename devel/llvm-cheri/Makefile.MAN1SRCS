@@ -52,6 +52,9 @@ CLANG_MAN1SRCS= \
 	diagtool.1 \
 	scan-build.1
 
+EXTRAS_MAN1SRCS= \
+	extraclangtools.1
+
 LIT_MAN1SRCS= \
 	lit.1 \
 	FileCheck.1
