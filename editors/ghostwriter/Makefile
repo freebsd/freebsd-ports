@@ -1,5 +1,5 @@
 PORTNAME=	ghostwriter
-DISTVERSION=	24.12.0
+DISTVERSION=	24.12.1
 CATEGORIES=	editors kde
 
 MAINTAINER=	madpilot@FreeBSD.org
@@ -13,7 +13,7 @@ LIB_DEPENDS=	libhunspell-1.7.so:textproc/hunspell
 
 USES=		cmake compiler:c++11-lang desktop-file-utils pkgconfig kde:6 qt:6
 USE_KDE=	configwidgets coreaddons doctools ecm:build sonnet widgetsaddons xmlgui
-KDE_INVENT=	86e8255e5b571d949826f61bd1da24f241496b01 office
+KDE_INVENT=	a88e594e783bc8366f5246efd546da654c4da5b8 office
 USE_QT=		base svg tools:build webchannel webengine
 
 CMAKE_ARGS=	-DBUILD_WITH_QT6=ON \
