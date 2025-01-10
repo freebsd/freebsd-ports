@@ -1,11 +1,12 @@
 PORTNAME=	conan
-DISTVERSION=	2.9.2
+DISTVERSION=	2.11.0
 CATEGORIES=	sysutils python
 MASTER_SITES=	PYPI
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	C/C++ package manager
-WWW=		https://conan.io/
+WWW=		https://conan.io/ \
+		https://github.com/conan-io/conan
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
