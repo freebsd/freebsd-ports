@@ -78,7 +78,7 @@ FLTK_CMAKE_OFF=		-DBUILD_CSOUND_AC:BOOL=OFF \
 
 FAUST_DESC=		Build the Faust opcodes
 FAUST_USES=		ssl
-FAUST_LLVM_VERSION=	11 # should be the same as in audio/faust
+FAUST_LLVM_VERSION=	15 # should be the same as in audio/faust
 FAUST_LIB_DEPENDS=	libfaust.so:audio/faust
 FAUST_CMAKE_BOOL=	BUILD_FAUST_OPCODES
 FAUST_CMAKE_ON=		-DFAUST_LLVM_VERSION:STRING=${FAUST_LLVM_VERSION}
