@@ -1,11 +1,10 @@
 PORTNAME=	kamailio
-PORTVERSION=	5.7.3
-PORTREVISION=	1
+DISTVERSION=	5.8.4
 CATEGORIES=	net
 MASTER_SITES=	http://www.kamailio.org/pub/kamailio/${PORTVERSION}/src/
-DISTNAME=	${PORTNAME}-${PORTVERSION}_src
+DISTNAME=	${PORTNAME}-${DISTVERSION}_src
 
-MAINTAINER=	dmitry.wagin@ya.ru
+MAINTAINER=	drtr0jan@yandex.ru
 COMMENT=	Very fast and configurable open source SIP proxy
 WWW=		https://www.kamailio.org/
 
@@ -39,10 +38,11 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USERS=		${KAMAILIO_USER}
 GROUPS=		${KAMAILIO_GROUP}
 
-OPTIONS_DEFINE=			DATABASE DIALPLAN DLGS DOCS EVAPI HTTP_CLIENT \
-				JWT KAFKA LOST LWSC MQTT OUTBOUND PERL \
-				PHONENUM POSOPS PRESENCE RADIUS SCTP SECSIPID \
-				SIPREPO SLACK SWORKER TLS WEBSOCKET
+OPTIONS_DEFINE=			DATABASE DIALPLAN DLGS DOCS EVAPI GCRYPT \
+				HTTP_CLIENT JWT KAFKA LOST LWSC MICROHTTPD \
+				MQTT OUTBOUND PERL PHONENUM POSOPS PRESENCE \
+				RADIUS SCTP SECSIPID SIPREPO SLACK SWORKER \
+				TLS WEBSOCKET
 OPTIONS_DEFAULT=		MYSQL PRESENCE RADIUS SQLITE TLS
 OPTIONS_GROUP=			DATABASE_DRIVERS KEMI_LANGS
 OPTIONS_GROUP_DATABASE_DRIVERS=	MYSQL PGSQL SQLITE UNIXODBC
@@ -54,6 +54,7 @@ DATABASE_DRIVERS_DESC=	Database drivers
 DIALPLAN_DESC=		String translations based on rules
 DLGS_DESC=		Lightweight, stateless dialog tracking and statistics
 EVAPI_DESC=		Network event broadcast API
+GCRYPT_DESC=		Cryptography functions
 HTTP_CLIENT_DESC=	HTTP-client module
 JWT_DESC=		JSON Web Token generation and validation
 KAFKA_DESC=		Produces and sends messages to a Kafka server
@@ -61,6 +62,7 @@ KEMI_LANGS_DESC=	Kamailio Embedded Interface Interpreters
 LOST_DESC=		HELD (RFC6155) and LOST (RFC5222) location-based routing
 LUAJIT_DESC=		Execute embedded Lua scripts
 LWSC_DESC=		Websocket client connector using libwebsockets
+MICROHTTPD_DESC=	Simple HTTP server implementation
 MQTT_DESC=		MQTT connector for bi-directional publish-subscribe communication
 OUTBOUND_DESC=		SIP Outbound support
 PHONENUM_DESC=		Phone number lookup and normalization using libphonenumber
@@ -76,13 +78,16 @@ WEBSOCKET_DESC=		WebSocket transport layer
 
 DATABASE_VARS=	EXTRA_GROUPS+=db
 
-DIALPLAN_LIB_DEPENDS=	libpcre.so:devel/pcre
+DIALPLAN_LIB_DEPENDS=	libpcre2-8.so:devel/pcre2
 DIALPLAN_VARS=		EXTRA_MODULES+=dialplan
 
 DLGS_VARS=	EXTRA_MODULES+=dlgs
 
 EVAPI_LIB_DEPENDS=	libev.so:devel/libev
 EVAPI_VARS=		EXTRA_MODULES+=evapi
+
+GCRYPT_LIB_DEPENDS=	libgcrypt.so:security/libgcrypt
+GCRYPT_VARS=		EXTRA_MODULES+=gcrypt
 
 HTTP_CLIENT_LIB_DEPENDS=	libcurl.so:ftp/curl
 HTTP_CLIENT_VARS=		EXTRA_MODULES+=http_client
@@ -103,6 +108,9 @@ LUAJIT_VARS=		EXTRA_MODULES+=app_lua
 
 LWSC_LIB_DEPENDS=	libwebsockets.so:net/libwebsockets
 LWSC_VARS=		EXTRA_MODULES+=lwsc
+
+MICROHTTPD_LIB_DEPENDS=	libmicrohttpd.so:www/libmicrohttpd
+MICROHTTPD_VARS=	EXTRA_MODULES+=microhttpd
 
 MQTT_LIB_DEPENDS=	libev.so:devel/libev \
 			libmosquitto.so:net/mosquitto

@@ -148,7 +148,9 @@
 %%DLGS%%lib/kamailio/modules/dlgs.so
 %%EVAPI%%%%PORTDOCS%%%%DOCSDIR%%/modules/README.evapi
 %%EVAPI%%lib/kamailio/modules/evapi.so
-%%HTTP_CLIENT%%%%PORTDOCS%%%%DOCSDIR%%/modules/README.http_connect
+%%GCRYPT%%%%PORTDOCS%%%%DOCSDIR%%/modules/README.gcrypt
+%%GCRYPT%%lib/kamailio/modules/gcrypt.so
+%%HTTP_CLIENT%%%%PORTDOCS%%%%DOCSDIR%%/modules/README.http_client
 %%HTTP_CLIENT%%lib/kamailio/modules/http_client.so
 %%JWT%%%%PORTDOCS%%%%DOCSDIR%%/modules/README.jwt
 %%JWT%%lib/kamailio/modules/jwt.so
@@ -160,6 +162,8 @@
 %%LUAJIT%%lib/kamailio/modules/app_lua.so
 %%LWSC%%%%PORTDOCS%%%%DOCSDIR%%/modules/README.lwsc
 %%LWSC%%lib/kamailio/modules/lwsc.so
+%%MICROHTTPD%%%%PORTDOCS%%%%DOCSDIR%%/modules/README.microhttpd
+%%MICROHTTPD%%lib/kamailio/modules/microhttpd.so
 %%MQTT%%%%PORTDOCS%%%%DOCSDIR%%/modules/README.mqtt
 %%MQTT%%lib/kamailio/modules/mqtt.so
 %%MYSQL%%%%DATADIR%%/mysql/acc-create.sql
@@ -292,7 +296,6 @@
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/modules/README.acc_diameter
 %%PORTDOCS%%%%DOCSDIR%%/modules/README.app_jsdt
-%%PORTDOCS%%%%DOCSDIR%%/modules/README.app_sqlang
 %%PORTDOCS%%%%DOCSDIR%%/modules/README.async
 %%PORTDOCS%%%%DOCSDIR%%/modules/README.auth
 %%PORTDOCS%%%%DOCSDIR%%/modules/README.auth_diameter
@@ -317,6 +320,8 @@
 %%PORTDOCS%%%%DOCSDIR%%/modules/README.enum
 %%PORTDOCS%%%%DOCSDIR%%/modules/README.evrexec
 %%PORTDOCS%%%%DOCSDIR%%/modules/README.exec
+%%PORTDOCS%%%%DOCSDIR%%/modules/README.file_out
+%%PORTDOCS%%%%DOCSDIR%%/modules/README.influxdbc
 %%PORTDOCS%%%%DOCSDIR%%/modules/README.ipops
 %%PORTDOCS%%%%DOCSDIR%%/modules/README.jsonrpcs
 %%PORTDOCS%%%%DOCSDIR%%/modules/README.keepalive
@@ -489,7 +494,6 @@
 %%TLS%%%%PORTDOCS%%%%DOCSDIR%%/modules/README.tls
 %%TLS%%@sample %%ETCDIR%%/tls.cfg.sample
 %%TLS%%lib/kamailio/modules/tls.so
-%%TLS%%lib/kamailio/openssl_mutex_shared/openssl_mutex_shared.so
 %%UNIXODBC%%%%PORTDOCS%%%%DOCSDIR%%/modules/README.db_unixodbc
 %%UNIXODBC%%lib/kamailio/modules/db_unixodbc.so
 %%WEBSOCKET%%%%PORTDOCS%%%%DOCSDIR%%/modules/README.websocket
@@ -510,7 +514,6 @@ lib/kamailio/libtrie.so
 lib/kamailio/libtrie.so.1
 lib/kamailio/modules/acc_diameter.so
 lib/kamailio/modules/app_jsdt.so
-lib/kamailio/modules/app_sqlang.so
 lib/kamailio/modules/async.so
 lib/kamailio/modules/auth.so
 lib/kamailio/modules/auth_diameter.so
@@ -535,6 +538,8 @@ lib/kamailio/modules/domainpolicy.so
 lib/kamailio/modules/enum.so
 lib/kamailio/modules/evrexec.so
 lib/kamailio/modules/exec.so
+lib/kamailio/modules/file_out.so
+lib/kamailio/modules/influxdbc.so
 lib/kamailio/modules/ipops.so
 lib/kamailio/modules/jsonrpcs.so
 lib/kamailio/modules/keepalive.so
