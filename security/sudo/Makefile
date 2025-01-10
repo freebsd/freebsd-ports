@@ -13,6 +13,10 @@ LICENSE_NAME=	Sudo license
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
+FLAVORS=	default sssd
+FLAVOR?=	${FLAVORS:[1]}
+sssd_PKGNAMESUFFIX=	-sssd
+
 USES=		cpe libtool pkgconfig
 CPE_VENDOR=	todd_miller
 USE_LDCONFIG=	yes
@@ -85,6 +89,10 @@ PYTHON_CONFIGURE_ENABLE=python
 
 SSL_USES=		ssl
 SSL_CONFIGURE_ON=	--enable-openssl=${OPENSSLBASE}
+
+.if ${FLAVOR:U} == sssd
+OPTIONS_DEFAULTS+=	SSSD2
+.endif
 
 SSSD2_RUN_DEPENDS=	sssd:security/sssd2
 SSSD2_CONFIGURE_ON=	--with-sssd
