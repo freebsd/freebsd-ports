@@ -402,7 +402,8 @@ kde-baloo_LIB=			libKF${_KDE_VERSION}Baloo.so
 kde-bookmarks_PORT=		devel/kf${_KDE_VERSION}-kbookmarks
 kde-bookmarks_LIB=		libKF${_KDE_VERSION}Bookmarks.so
 
-kde-breeze-icons_PORT=		x11-themes/kf${_KDE_VERSION}-breeze-icons
+# Use the latest icons from KDE Frameworks 6
+kde-breeze-icons_PORT=		x11-themes/kf6-breeze-icons
 kde-breeze-icons_PATH=		${KDE_PREFIX}/share/icons/breeze/index.theme
 
 kde-codecs_PORT=		textproc/kf${_KDE_VERSION}-kcodecs
