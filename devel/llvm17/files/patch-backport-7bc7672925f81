@@ -1,0 +1,76 @@
+commit 7bc7672925f8154be3b8220365d3f269ac43621c
+Author: David Spickett <david.spickett@linaro.org>
+Date:   Mon Jun 3 15:21:26 2024 +0100
+
+    [flang] Fix compilation errors due to new clang template requirements (#94204)
+    
+    Since https://github.com/llvm/llvm-project/pull/80801 clang requires a
+    template argument list after the use of the template keyword.
+    
+    https://lab.llvm.org/buildbot/#/builders/176/builds/10230
+    
+    error: a template argument list is expected after a name prefixed by the
+    template keyword [-Wmissing-template-arg-list-after-template-kw]
+    
+    This fixes the instances found by the AArch64 Linux builds.
+
+diff --git flang/include/flang/Evaluate/integer.h flang/include/flang/Evaluate/integer.h
+index 10a13115a39e..4c7d88328a71 100644
+--- flang/include/flang/Evaluate/integer.h
++++ flang/include/flang/Evaluate/integer.h
+@@ -315,7 +315,7 @@ public:
+       }
+       result.overflow = false;
+     } else if constexpr (bits < FROM::bits) {
+-      auto back{FROM::template ConvertSigned(result.value)};
++      auto back{FROM::template ConvertSigned<Integer>(result.value)};
+       result.overflow = back.value.CompareUnsigned(that) != Ordering::Equal;
+     }
+     return result;
+diff --git flang/lib/Evaluate/fold-real.cpp flang/lib/Evaluate/fold-real.cpp
+index 238ce34adfb7..f71addcc4094 100644
+--- flang/lib/Evaluate/fold-real.cpp
++++ flang/lib/Evaluate/fold-real.cpp
+@@ -245,7 +245,7 @@
+ #ifndef _MSC_VER
+                                                            template
+ #endif
+-                                                           SCALE(y)};
++                                                           SCALE<Scalar<TBY>>(y)};
+                       if (result.flags.test(RealFlag::Overflow)) {
+                         context.messages().Say(
+                             "SCALE intrinsic folding overflow"_warn_en_US);
+diff --git flang/runtime/reduction-templates.h flang/runtime/reduction-templates.h
+index d102e5642547..a51404c96376 100644
+--- flang/runtime/reduction-templates.h
++++ flang/runtime/reduction-templates.h
+@@ -85,9 +85,9 @@
+   DoTotalReduction<CppType>(x, dim, mask, accumulator, intrinsic, terminator);
+   CppType result;
+ #ifdef _MSC_VER // work around MSVC spurious error
+-  accumulator.GetResult(&result);
++  accumulator.GetResult<CppType>(&result);
+ #else
+-  accumulator.template GetResult(&result);
++  accumulator.template GetResult<CppType>(&result);
+ #endif
+   return result;
+ }
+@@ -128,7 +128,7 @@
+ #ifdef _MSC_VER // work around MSVC spurious error
+   accumulator.GetResult(result, zeroBasedDim);
+ #else
+-  accumulator.template GetResult(result, zeroBasedDim);
++  accumulator.template GetResult<TYPE>(result, zeroBasedDim);
+ #endif
+ }
+ 
+@@ -156,7 +156,7 @@
+ #ifdef _MSC_VER // work around MSVC spurious error
+   accumulator.GetResult(result, zeroBasedDim);
+ #else
+-  accumulator.template GetResult(result, zeroBasedDim);
++  accumulator.template GetResult<TYPE>(result, zeroBasedDim);
+ #endif
+ }
+ 
