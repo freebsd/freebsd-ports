@@ -1,4 +1,4 @@
-TIMESTAMP = 1735986514
+TIMESTAMP = 1736487192
 SHA256 (rust/crates/aho-corasick-1.1.3.crate) = 8e60d3430d3a69478ad0993f19238d2df97c507009a52b3c10addcd7f6bcb916
 SIZE (rust/crates/aho-corasick-1.1.3.crate) = 183311
 SHA256 (rust/crates/anstream-0.6.18.crate) = 8acc5369981196006228e28809f761875c0327210a891e941f4c683b3a99529b
@@ -379,5 +379,5 @@ SHA256 (rust/crates/zerovec-0.10.4.crate) = aa2b893d79df23bfb12d5461018d408ea19d
 SIZE (rust/crates/zerovec-0.10.4.crate) = 126398
 SHA256 (rust/crates/zerovec-derive-0.10.3.crate) = 6eafa6dfb17584ea3e2bd6e76e0cc15ad7af12b09abdd1ca55961bed9b1063c6
 SIZE (rust/crates/zerovec-derive-0.10.3.crate) = 19438
-SHA256 (loco-rs-loco-v0.13.2_GH0.tar.gz) = 4adf188b5f2f445009caa952fa7a45527c425d82191618373ccfde0712f78cc7
-SIZE (loco-rs-loco-v0.13.2_GH0.tar.gz) = 2460474
+SHA256 (loco-rs-loco-v0.14.0_GH0.tar.gz) = a27050f8d301ad9c338fa1f26756a24b96d8f121bd17f3289425cb36694e252b
+SIZE (loco-rs-loco-v0.14.0_GH0.tar.gz) = 2519452
