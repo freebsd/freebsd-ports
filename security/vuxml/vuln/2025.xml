@@ -1,3 +1,85 @@
+  <vuln vid="4d79fd1a-cc93-11ef-abed-08002784c58d">
+    <topic>redis,valkey -- Denial-of-service valnerability due to malformed ACL selectors</topic>
+    <affects>
+      <package>
+	<name>redis</name>
+	<range><ge>7.0.0</ge><lt>7.4.2</lt></range>
+      </package>
+      <package>
+	<name>redis72</name>
+	<range><lt>7.2.7</lt></range>
+      </package>
+      <package>
+	<name>valkey</name>
+	<range><lt>8.0.2</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Redis core team reports:</p>
+	<blockquote cite="https://github.com/redis/redis/security/advisories/GHSA-prpq-rh5h-46g9">
+	  <p>
+	    An authenticated with sufficient privileges may create a
+	    malformed ACL selector which, when accessed, triggers a
+	    server panic and subsequent denial of service.The problem
+	    exists in Redis 7.0.0 or newer.
+	  </p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2024-51741</cvename>
+      <url>https://github.com/redis/redis/security/advisories/GHSA-prpq-rh5h-46g9</url>
+    </references>
+    <dates>
+      <discovery>2025-01-06</discovery>
+      <entry>2025-01-10</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="5f19ac58-cc90-11ef-abed-08002784c58d">
+    <topic>redis,valkey -- Remote code execution valnerability</topic>
+    <affects>
+      <package>
+	<name>redis</name>
+	<range><lt>7.4.2</lt></range>
+      </package>
+      <package>
+	<name>redis72</name>
+	<range><lt>7.2.7</lt></range>
+      </package>
+      <package>
+	<name>redis62</name>
+	<range><lt>6.2.17</lt></range>
+      </package>
+      <package>
+	<name>valkey</name>
+	<range><lt>8.0.2</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Redis core team reports:</p>
+	<blockquote cite="https://github.com/redis/redis/security/advisories/GHSA-39h2-x6c4-6w4c">
+	  <p>
+	    An authenticated user may use a specially crafted Lua
+	    script to manipulate the garbage collector and potentially
+	    lead to remote code execution. The problem exists in all
+	    versions of Redis with Lua scripting.
+	  </p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2024-46981</cvename>
+      <url>https://github.com/redis/redis/security/advisories/GHSA-39h2-x6c4-6w4c</url>
+    </references>
+    <dates>
+      <discovery>2025-01-06</discovery>
+      <entry>2025-01-10</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="2bfde261-cdf2-11ef-b6b2-2cf05da270f3">
     <topic>Gitlab -- Vulnerabilities</topic>
     <affects>
