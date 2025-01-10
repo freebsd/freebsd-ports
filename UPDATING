@@ -25,7 +25,7 @@ you update your ports collection, before attempting any port upgrades.
   PREFIX/etc/xrdp to PREFIX/etc/xrdp-devel to prevent incompatible config
   files for net/xrdp and net/xrdp-devel from getting mixed up.
 
-  When updating net/xrdp-devel from old verisons, move the config files to
+  When updating net/xrdp-devel from old versions, move the config files to
   the new directory.
 
 20241224:
@@ -43,7 +43,7 @@ you update your ports collection, before attempting any port upgrades.
   Furthermore, xrdp v0.10.2 supports running the xrdp daemon as an
   unprivileged user. See the xrdp.ini(5) man page for configuring xrdp to
   run as an unprivileged user. You can also check if xrdp is properly
-  configured to run as an unprivleged user using the script located at:
+  configured to run as an unprivileged user using the script located at:
 
     %%PREFIX%%/share/xrdp/xrdp-chkpriv
 
