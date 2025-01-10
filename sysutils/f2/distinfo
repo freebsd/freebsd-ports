@@ -1,5 +1,5 @@
-TIMESTAMP = 1731095972
-SHA256 (go/sysutils_f2/f2-v2.0.1/v2.0.1.mod) = d71b4032733123d1729e729f2781786890eeaa317514137b24527fa39c7398b3
-SIZE (go/sysutils_f2/f2-v2.0.1/v2.0.1.mod) = 1729
-SHA256 (go/sysutils_f2/f2-v2.0.1/v2.0.1.zip) = 4cf0bb124265bfe2fccbb44e03b366f40fe26fce5036b43d57a6c0b2f297f55b
-SIZE (go/sysutils_f2/f2-v2.0.1/v2.0.1.zip) = 573280
+TIMESTAMP = 1736490129
+SHA256 (go/sysutils_f2/f2-v2.0.3/v2.0.3.mod) = d71b4032733123d1729e729f2781786890eeaa317514137b24527fa39c7398b3
+SIZE (go/sysutils_f2/f2-v2.0.3/v2.0.3.mod) = 1729
+SHA256 (go/sysutils_f2/f2-v2.0.3/v2.0.3.zip) = 2c08434cc61de05499c69a02f6d1c28a724148087acf66e7ce8b40233598e58a
+SIZE (go/sysutils_f2/f2-v2.0.3/v2.0.3.zip) = 573589
