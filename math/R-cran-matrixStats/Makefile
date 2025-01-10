@@ -1,5 +1,5 @@
 PORTNAME=	matrixStats
-DISTVERSION=	1.4.1
+DISTVERSION=	1.5.0
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
@@ -10,5 +10,10 @@ WWW=		https://cran.r-project.org/web/packages/matrixStats/
 LICENSE=	ART20
 
 USES=		cran:auto-plist,compiles
+
+pre-test:
+# R-cran-R.rsp package does not exist yet
+	@${LOCALBASE}/bin/Rscript -e 'install.packages("R.rsp", \
+		repos = "https://cloud.r-project.org")'
 
 .include <bsd.port.mk>
