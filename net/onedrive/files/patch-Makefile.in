@@ -1,6 +1,6 @@
---- Makefile.in.orig	2022-09-26 19:30:30 UTC
+--- Makefile.in.orig	2024-09-16 01:14:46 UTC
 +++ Makefile.in
-@@ -25,6 +25,7 @@ systemdsystemunitdir = @systemdsystemunitdir@
+@@ -25,6 +25,7 @@ notify_LIBS = @notify_LIBS@
  curl_LIBS = @curl_LIBS@
  sqlite_LIBS = @sqlite_LIBS@
  notify_LIBS = @notify_LIBS@
@@ -8,15 +8,15 @@
  COMPLETIONS = @COMPLETIONS@
  BASH_COMPLETION_DIR = @BASH_COMPLETION_DIR@
  ZSH_COMPLETION_DIR = @ZSH_COMPLETION_DIR@
-@@ -67,6 +68,7 @@ endif
- 
- SOURCES = \
- 	src/config.d \
+@@ -84,6 +85,7 @@ SOURCES = \
+ 	src/sqlite.d \
+ 	src/clientSideFiltering.d \
+ 	src/monitor.d \
 +	src/freebsd_inotify.d \
- 	src/itemdb.d \
- 	src/log.d \
- 	src/main.d \
-@@ -103,14 +105,15 @@ onedrive: $(SOURCES)
+ 	src/arsd/cgi.d
+ 
+ ifeq ($(NOTIFICATIONS),yes)
+@@ -107,14 +109,15 @@ onedrive: $(SOURCES)
  	else \
  		echo $(version) > version ; \
  	fi
@@ -37,7 +37,7 @@
  ifeq ($(HAVE_SYSTEMD),yes)
  	$(INSTALL) -d -m 0755 $(DESTDIR)$(systemduserunitdir) $(DESTDIR)$(systemdsystemunitdir)
  ifeq ($(RHEL),1)
-@@ -127,9 +130,12 @@ ifeq ($(RHEL_VERSION),6)
+@@ -131,9 +134,12 @@ ifeq ($(COMPLETIONS),yes)
  endif
  endif
  ifeq ($(COMPLETIONS),yes)
@@ -52,4 +52,4 @@
 +	$(INSTALL) -m 0644 contrib/completions/complete.fish $(DESTDIR)$(FISH_COMPLETION_DIR)/onedrive.fish
  endif
  
- 
+ uninstall:

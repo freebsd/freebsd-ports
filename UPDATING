@@ -5,6 +5,19 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20250111:
+  AFFECTS: users of net/onedrive
+  AUTHOR: hiroo.ono+freebsd@gmail.com
+
+  The version 2.5.x introduces significant changes regarding how the
+  integrity and validation of your data is determined and is not backwards
+  compatible with v2.4.x.
+  OneDrive Business Shared Folder Sync has been 100% re-written in v2.5.0.
+  If you are using this feature, please read the new documentation
+  carefully.
+  The application function --download-only no longer automatically deletes
+  local files. Please read the new documentation regarding this feature.
+
 20250109:
   AFFECTS: users of www/kiwix-tools and devel/libkiwix
   AUTHOR: olce@FreeBSD.org

@@ -1,9 +1,12 @@
---- src/monitor.d.orig	2019-04-24 07:47:09 UTC
+--- src/monitor.d.orig	2024-09-18 07:16:29 UTC
 +++ src/monitor.d
-@@ -1,4 +1,5 @@
+@@ -4,7 +4,8 @@ import core.stdc.stdlib;
+ // What does this module require to function?
+ import core.stdc.errno;
+ import core.stdc.stdlib;
 -import core.sys.linux.sys.inotify;
 +// import core.sys.linux.sys.inotify;
 +import freebsd_inotify;
- import core.stdc.errno;
- import core.sys.posix.poll, core.sys.posix.unistd;
- import std.exception, std.file, std.path, std.regex, std.stdio, std.string;
+ import core.sys.posix.poll;
+ import core.sys.posix.unistd;
+ import core.sys.posix.sys.select;
