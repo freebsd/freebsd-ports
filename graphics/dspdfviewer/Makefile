@@ -1,7 +1,7 @@
 PORTNAME=	dspdfviewer
 PORTVERSION=	1.15.1
 DISTVERSIONPREFIX=	v
-PORTREVISION=	69
+PORTREVISION=	70
 CATEGORIES=	graphics
 
 MAINTAINER=	fox@FreeBSD.org
@@ -67,7 +67,7 @@ CFLAGS+=       -Wno-error=unsafe-buffer-usage
 .endif
 
 # Fixes build failure for Clang 18.1.4
-.if ${OPSYS} == FreeBSD && (${OSVERSION} >= 1401000 || ${OSVERSION} >= 1500018) && ${CHOSEN_COMPILER_TYPE} == clang
+.if ${OPSYS} == FreeBSD && (${OSVERSION} >= 1304000 || ${OSVERSION} >= 1401000 || ${OSVERSION} >= 1500018) && ${CHOSEN_COMPILER_TYPE} == clang
 CFLAGS+=       -Wno-error=switch-default
 .endif
 
