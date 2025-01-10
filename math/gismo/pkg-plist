@@ -1,3 +1,4 @@
+bin/L2projection_example
 bin/adaptRefinementThb_example
 bin/adaptiveConvectionDiffusionReaction_example
 bin/as_parameterization_example
@@ -37,6 +38,7 @@ bin/nonlinear_example
 bin/optimizer_example
 bin/pMultiGrid_example
 bin/parametrization_example
+bin/paraview_example
 bin/patches_from_mesh
 bin/poisson2_example
 bin/poissonTHB_example
@@ -487,6 +489,8 @@ include/gismo/gsHSplines/gsHDomainSliceIter.h
 include/gismo/gsHSplines/gsHFitting.h
 include/gismo/gsHSplines/gsHTensorBasis.h
 include/gismo/gsHSplines/gsKdNode.h
+include/gismo/gsHSplines/gsRationalTHBSpline.h
+include/gismo/gsHSplines/gsRationalTHBSplineBasis.h
 include/gismo/gsHSplines/gsTHBSpline.h
 include/gismo/gsHSplines/gsTHBSplineBasis.h
 include/gismo/gsHSplines/gsVSegment.h
@@ -500,6 +504,7 @@ include/gismo/gsIO/gsIOUtils.h
 include/gismo/gsIO/gsOptionList.h
 include/gismo/gsIO/gsParaviewCollection.h
 include/gismo/gsIO/gsParaviewDataSet.h
+include/gismo/gsIO/gsParaviewUtils.h
 include/gismo/gsIO/gsReadFile.h
 include/gismo/gsIO/gsWriteParaview.h
 include/gismo/gsIO/gsXml.h
@@ -520,6 +525,7 @@ include/gismo/gsMatrix/BlockTranspose.h
 include/gismo/gsMatrix/VecAsSymmMatrix.h
 include/gismo/gsMatrix/gsAsMatrix.h
 include/gismo/gsMatrix/gsEigenDeclarations.h
+include/gismo/gsMatrix/gsFiberMatrix.h
 include/gismo/gsMatrix/gsMatrix.h
 include/gismo/gsMatrix/gsMatrixAddons.h
 include/gismo/gsMatrix/gsMatrixBlockView.h
@@ -578,6 +584,7 @@ include/gismo/gsOpennurbs/gsReadOpenNurbs.h
 include/gismo/gsOpennurbs/gsWriteOpenNurbs.h
 include/gismo/gsOptimizer/gsFunctionAdaptor.h
 include/gismo/gsOptimizer/gsGradientDescent.h
+include/gismo/gsOptimizer/gsLevenbergMarquardt.h
 include/gismo/gsOptimizer/gsOptProblem.h
 include/gismo/gsOptimizer/gsOptimizer.h
 include/gismo/gsParallel/gsBinaryFunctions.h
@@ -703,8 +710,9 @@ lib/gismo/ofa/cpuinfo_arm.c
 lib/gismo/ofa/cpuinfo_x86.cxx
 lib/libgismo.a
 lib/libgismo.so
-lib/libgismo.so.24
-lib/libgismo.so.24.8.0
+lib/libgismo.so.25
+lib/libgismo.so.25.1.0
+libdata/pkgconfig/gismo.pc
 %%DATADIR%%data/breps/2D/duck_BRep.xml
 %%DATADIR%%data/breps/3D/duck_BRep.xml
 %%DATADIR%%data/breps/other/TUDflame.xml
@@ -728,6 +736,8 @@ lib/libgismo.so.24.8.0
 %%DATADIR%%data/fitting/acc_chess_ptcloud.xml
 %%DATADIR%%data/fitting/chess.xml
 %%DATADIR%%data/fitting/deepdrawingC.xml
+%%DATADIR%%data/fitting/face.xml
+%%DATADIR%%data/fitting/shiphull.xml
 %%DATADIR%%data/gsBoundaryConditions/bc.xml
 %%DATADIR%%data/msplines/star3_0.xml.gz
 %%DATADIR%%data/msplines/star3_1.xml.gz
