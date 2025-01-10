@@ -970,6 +970,7 @@ lib/calibre/calibre/gui2/qt_file_dialogs.py
 lib/calibre/calibre/gui2/save.py
 lib/calibre/calibre/gui2/search_box.py
 lib/calibre/calibre/gui2/search_restriction_mixin.py
+lib/calibre/calibre/gui2/series_mapper.py
 lib/calibre/calibre/gui2/splash_screen.py
 lib/calibre/calibre/gui2/store/__init__.py
 lib/calibre/calibre/gui2/store/amazon_base.py
