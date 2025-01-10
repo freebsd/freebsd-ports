@@ -1,10 +1,11 @@
 PORTNAME=	faust
-DISTVERSION=	2.75.7
+DISTVERSION=	2.77.3
 CATEGORIES=	audio devel
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Functional programming language for realtime audio signal processing
-WWW=		https://faust.grame.fr/
+WWW=		https://faust.grame.fr/ \
+		https://github.com/grame-cncm/faust
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING.txt
@@ -15,16 +16,20 @@ LIB_DEPENDS=	libLLVM-${LLVM_VERSION}.so:devel/llvm${LLVM_VERSION} \
 		libzstd.so:archivers/zstd
 RUN_DEPENDS=	bash:shells/bash
 
-USES=		compiler:c++14-lang cmake localbase:ldflags llvm:min=15,lib ncurses python pkgconfig shebangfix # llvm: versions <11 lacked dump() function(s) that cause unresolved symbols in libfaust.so
+USES=		compiler:c++17-lang cmake localbase:ldflags llvm:min=${LLVM_VER},lib ncurses python pkgconfig shebangfix # llvm: versions <11 lacked dump() function(s) that cause unresolved symbols in libfaust.so
 USE_LDCONFIG=	yes
+USE_CXXSTD=	c++17
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	grame-cncm
 GH_TUPLE=	\
-		grame-cncm:faustlibraries:3e74c39:grame_cncm_faustlibraries/libraries \
+		grame-cncm:faustlibraries:ef8dbf7:grame_cncm_faustlibraries/libraries \
 		ccrma:faust2ck:db879cb:faust2ck/tools/faust2ck \
 		shakfu:py2max:3aaa8ca:py2max/architecture/max-msp/py2max \
 		yixuan:spectra:8c7242e:spectra/tools/physicalModeling/mesh2faust/spectra
+
+#LLVM_VER=	15 # not c++17 by default
+LLVM_VER=	19
 
 SHEBANG_FILES=	tools/faust-config \
 		tools/faust2appls/* \
@@ -86,7 +91,10 @@ post-install-HIGHLIGHT-on:
 do-test:
 	@${CP} ${FILESDIR}/example-freeverb_demo.dsp ${TEST_WRKSRC}
 	@cd ${TEST_WRKSRC} && \
-		${SETENV} ${TEST_ENV} faust2jaqt example-freeverb_demo.dsp && \
+		${SETENV} ${MAKE_ENV} ${TEST_ENV} faust2jaqt example-freeverb_demo.dsp && \
 		${SETENV} ${TEST_ENV} ./example-freeverb_demo
+
+# test fails to build with Qt6 because of wrong C++11 option written into Makefile: https://github.com/grame-cncm/faust/issues/1109
+# once this is corrected, test builds and works fine
 
 .include <bsd.port.mk>

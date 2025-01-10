@@ -45,6 +45,7 @@ bin/faust2juce
 bin/faust2ladspa
 bin/faust2linuxunity
 bin/faust2lv2
+bin/faust2magtk
 bin/faust2mathdoc
 bin/faust2mathviewer
 bin/faust2max6
@@ -117,6 +118,7 @@ include/faust/audio/esp32-dsp.h
 include/faust/audio/fpe.h
 include/faust/audio/jack-dsp.h
 include/faust/audio/juce-dsp.h
+include/faust/audio/miniaudio-dsp.h
 include/faust/audio/netjack-dsp.h
 include/faust/audio/oboe-dsp.h
 include/faust/audio/ofaudio-dsp.h
@@ -167,6 +169,7 @@ include/faust/dsp/poly-wasm-dsp.h
 include/faust/dsp/proxy-dsp.h
 include/faust/dsp/proxy-osc-dsp.h
 include/faust/dsp/rnbo-dsp.h
+include/faust/dsp/signal-dsp.h
 include/faust/dsp/sound-player.h
 include/faust/dsp/timed-dsp.h
 include/faust/dsp/timed-dsp.h.orig
@@ -204,6 +207,7 @@ include/faust/gui/MapUI.h
 include/faust/gui/MemoryReader.h
 include/faust/gui/MetaDataUI.h
 include/faust/gui/MidiUI.h
+include/faust/gui/MiniaudioReader.h
 include/faust/gui/OCVUI.h
 include/faust/gui/OSCControler.h
 include/faust/gui/OSCIO.h
@@ -250,6 +254,7 @@ include/faust/midi/juce-midi.h
 include/faust/midi/midi.h
 include/faust/midi/rt-midi.h
 include/faust/midi/teensy-midi.h
+include/faust/miniaudio.h
 include/faust/misc.h
 include/faust/osc/FaustFactory.h
 include/faust/osc/FaustNode.h
@@ -271,7 +276,7 @@ lib/ios-libsndfile.a
 lib/libOSCFaust.a
 lib/libfaust.so
 lib/libfaust.so.2
-lib/libfaust.so.2.75.7
+lib/libfaust.so.2.77.3
 %%HIGHLIGHT%%share/apps/katepart/syntax/faust.xml
 %%DATADIR%%/AU/AUPublic/AUBase/AUBase.cpp
 %%DATADIR%%/AU/AUPublic/AUBase/AUBase.h
@@ -676,9 +681,11 @@ lib/libfaust.so.2.75.7
 %%DATADIR%%/julia/portaudio-gtk.jl
 %%DATADIR%%/ladspa.cpp
 %%DATADIR%%/latexheader.tex
+%%DATADIR%%/linearalgebra.lib
 %%DATADIR%%/lv2.cpp
 %%DATADIR%%/lv2qtgui.h
 %%DATADIR%%/lv2ui.cpp
+%%DATADIR%%/ma-gtk.cpp
 %%DATADIR%%/math.lib
 %%DATADIR%%/mathdoctexts-de.txt
 %%DATADIR%%/mathdoctexts-default.txt
