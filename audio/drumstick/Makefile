@@ -1,6 +1,5 @@
 PORTNAME=	drumstick
-DISTVERSION=	2.9.1
-PORTREVISION=	1
+DISTVERSION=	2.10.0
 CATEGORIES=	audio multimedia
 MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION}/
 
@@ -10,6 +9,8 @@ WWW=		https://sourceforge.net/projects/drumstick
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
+
+LIB_DEPENDS=	libpipewire-0.3.so:multimedia/pipewire
 
 USES=		compiler:c++17-lang cmake desktop-file-utils gl pkgconfig qt:6 shared-mime-info tar:bz2
 USE_QT=		base svg 5compat tools:build
