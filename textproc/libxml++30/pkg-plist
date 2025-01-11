@@ -1,4 +1,3 @@
-include/libxml++-%%API_VERSION%%/include/libxml++config.h
 include/libxml++-%%API_VERSION%%/libxml++/attribute.h
 include/libxml++-%%API_VERSION%%/libxml++/attributedeclaration.h
 include/libxml++-%%API_VERSION%%/libxml++/attributenode.h
@@ -43,4 +42,5 @@ lib/libxml++-%%VERSION%%.a
 lib/libxml++-%%VERSION%%.so
 lib/libxml++-%%VERSION%%.so.1
 lib/libxml++-%%VERSION%%.so.1.0.0
+lib/libxml++-%%API_VERSION%%/include/libxml++config.h
 libdata/pkgconfig/libxml++-%%API_VERSION%%.pc
