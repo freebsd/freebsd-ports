@@ -1,5 +1,6 @@
 PORTNAME=	dovecot-pigeonhole
 DISTVERSION=	0.5.21.1
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	https://pigeonhole.dovecot.org/releases/${DOVECOTVERSION}/
 DISTNAME=	${PORTNAME:C/-/-${DOVECOTVERSION}-/}-${PORTVERSION}
@@ -15,10 +16,8 @@ FLAVORS=	default mysql pgsql
 FLAVOR?=	${FLAVORS[1]}
 mysql_PKGNAMESUFFIX=	-mysql
 pgsql_PKGNAMESUFFIX=	-pgsql
-.if ${FLAVOR:U} == default
-BUILD_DEPENDS=	dovecot>=2.3.9:mail/dovecot
-RUN_DEPENDS=	dovecot>=2.3.9:mail/dovecot
-.endif
+BUILD_DEPENDS=	dovecot>=2.3.9:mail/dovecot@default
+RUN_DEPENDS=	dovecot>=2.3.9:mail/dovecot@default
 .if ${FLAVOR:U} == mysql
 BUILD_DEPENDS=	dovecot-mysql>=2.3.9:mail/dovecot@mysql
 RUN_DEPENDS=	dovecot-mysql>=2.3.9:mail/dovecot@mysql
