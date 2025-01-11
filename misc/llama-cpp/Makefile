@@ -1,6 +1,6 @@
 PORTNAME=	llama-cpp
 DISTVERSIONPREFIX=	b
-DISTVERSION=	4419
+DISTVERSION=	4458
 CATEGORIES=	misc # machine-learning
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -50,6 +50,6 @@ do-test-ci: # build of tests fails, see https://github.com/ggerganov/llama.cpp/i
 	@cd ${WRKSRC} && \
 		${SETENV} ${MAKE_ENV} bash ci/run.sh ./tmp/results ./tmp/mnt
 
-# tests as of 4404: 97% tests passed, 1 tests failed out of 31, see https://github.com/ggerganov/llama.cpp/issues/11036
+# tests as of 4458: 97% tests passed, 1 tests failed out of 31, see https://github.com/ggerganov/llama.cpp/issues/11036
 
 .include <bsd.port.mk>
