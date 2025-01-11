@@ -16,6 +16,7 @@ LICENSE_NAME=	lsof
 LICENSE_FILE=	${FILESDIR}/LICENSE
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
+
 USES=		compiler cpe shebangfix
 CPE_VENDOR=	lsof_project
 USE_GITHUB=	yes
