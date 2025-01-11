@@ -5,7 +5,8 @@ MASTER_SITES=	https://github.com/OpenLightingProject/libartnet/releases/download
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	ArtNet protocol to transfer DMX data controlling theater equipment
-WWW=		https://www.openlighting.org/libartnet-main/
+WWW=		https://www.openlighting.org/libartnet-main/ \
+		https://github.com/OpenLightingProject/libartnet
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
