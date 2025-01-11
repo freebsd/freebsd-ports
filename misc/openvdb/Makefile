@@ -1,12 +1,12 @@
 PORTNAME=	openvdb
 DISTVERSIONPREFIX=	v
-DISTVERSION=	11.0.0
-PORTREVISION=	5
+DISTVERSION=	12.0.0
 CATEGORIES=	misc
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Tools for storage and manipulation of sparse volumetric data
-WWW=		https://www.openvdb.org/
+WWW=		https://www.openvdb.org/ \
+		https://github.com/AcademySoftwareFoundation/openvdb
 
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -44,5 +44,7 @@ TOOLS_USE=		GL=gl,glu XORG=ice,sm,x11,xcursor,xext,xi,xinerama,xrandr,xxf86vm
 #DOCS_BUILD_DEPENDS=	doxygen:devel/doxygen
 
 #PORTDOCS=	*
+
+# 100% tests passed, 0 tests failed out of 1
 
 .include <bsd.port.mk>
