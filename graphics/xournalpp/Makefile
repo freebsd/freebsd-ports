@@ -12,6 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN_armv7=	compilation fails: error: redefinition of 'getGVariantValue<unsigned int>': see https://github.com/xournalpp/xournalpp/issues/5873
 BROKEN_i386=	compilation fails: error: redefinition of 'getGVariantValue<unsigned int>': see https://github.com/xournalpp/xournalpp/issues/5873
+BROKEN_powerpc=	compilation fails: error: redefinition of 'getGVariantValue<unsigned int>': see https://github.com/xournalpp/xournalpp/issues/5873
 
 BUILD_DEPENDS=	help2man:misc/help2man
 LIB_DEPENDS=	libgtksourceview-4.so:x11-toolkits/gtksourceview4 \
