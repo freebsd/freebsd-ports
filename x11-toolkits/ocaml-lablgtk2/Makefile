@@ -64,6 +64,12 @@ LIBRSVG2_CONFIGURE_WITH=rsvg
 LIBRSVG2_USE=		GNOME=librsvg2
 LIBRSVG2_VARS=		EXAMPLES_SUBDIRS+=rsvg
 
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == powerpc
+USE_BINUTILS=	yes
+.endif
+
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
