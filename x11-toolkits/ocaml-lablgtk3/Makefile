@@ -47,6 +47,12 @@ GTKSPELL_LIB_DEPENDS=	libgtkspell3-3.so:textproc/gtkspell3 \
 			libenchant-2.so:textproc/enchant2
 GTKSPELL_VARS=		TARGETS+=lablgtk3-gtkspell3
 
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == powerpc
+USE_BINUTILS=	yes
+.endif
+
 do-build:
 	cd ${BUILD_WRKSRC} && dune build --verbose -p ${TARGETS:ts,} -j ${MAKE_JOBS_NUMBER}
 
