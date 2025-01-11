@@ -1,6 +1,5 @@
 PORTNAME=	zim
-DISTVERSION=	0.75.2
-PORTREVISION=	5
+DISTVERSION=	0.76.0
 CATEGORIES=	deskutils python
 MASTER_SITES=	https://www.zim-wiki.org/downloads/
 
@@ -43,10 +42,5 @@ MERCURIAL_DESC=		Version control for notebooks using hg
 MERCURIAL_RUN_DEPENDS=	${PY_MERCURIAL}
 SCROT_DESC=		Screenshot taking and inserting support
 SCROT_RUN_DEPENDS=	scrot:graphics/scrot
-
-post-patch:
-	@${REINPLACE_CMD} -e \
-		'/.command.install /s|distutils|setuptools|' \
-		${WRKSRC}/setup.py
 
 .include <bsd.port.mk>
