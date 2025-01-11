@@ -91,7 +91,7 @@ SSL_USES=		ssl
 SSL_CONFIGURE_ON=	--enable-openssl=${OPENSSLBASE}
 
 .if ${FLAVOR:U} == sssd
-OPTIONS_DEFAULTS+=	SSSD2
+OPTIONS_DEFAULT+=	SSSD2
 .endif
 
 SSSD2_RUN_DEPENDS=	sssd:security/sssd2
