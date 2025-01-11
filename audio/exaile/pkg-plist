@@ -26,6 +26,7 @@ lib/exaile/xl/metadata/aac.py
 lib/exaile/xl/metadata/aiff.py
 lib/exaile/xl/metadata/ape.py
 lib/exaile/xl/metadata/asf.py
+lib/exaile/xl/metadata/au.py
 lib/exaile/xl/metadata/flac.py
 lib/exaile/xl/metadata/mka.py
 lib/exaile/xl/metadata/mod.py
@@ -312,6 +313,14 @@ share/exaile/plugins/currentsong/PLUGININFO
 share/exaile/plugins/currentsong/__init__.py
 share/exaile/plugins/currentsong/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 share/exaile/plugins/currentsong/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.pyc
+share/exaile/plugins/customcollectionorders/PLUGININFO
+share/exaile/plugins/customcollectionorders/__init__.py
+share/exaile/plugins/customcollectionorders/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+share/exaile/plugins/customcollectionorders/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.pyc
+share/exaile/plugins/customcollectionorders/__pycache__/cco_prefs%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+share/exaile/plugins/customcollectionorders/__pycache__/cco_prefs%%PYTHON_EXT_SUFFIX%%.pyc
+share/exaile/plugins/customcollectionorders/cco_pane.ui
+share/exaile/plugins/customcollectionorders/cco_prefs.py
 share/exaile/plugins/daapclient/PLUGININFO
 share/exaile/plugins/daapclient/__init__.py
 share/exaile/plugins/daapclient/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
@@ -614,6 +623,10 @@ share/exaile/plugins/shutdown/PLUGININFO
 share/exaile/plugins/shutdown/__init__.py
 share/exaile/plugins/shutdown/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 share/exaile/plugins/shutdown/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.pyc
+share/exaile/plugins/shutdown/__pycache__/shutdown_preferences%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+share/exaile/plugins/shutdown/__pycache__/shutdown_preferences%%PYTHON_EXT_SUFFIX%%.pyc
+share/exaile/plugins/shutdown/shutdown_preferences.py
+share/exaile/plugins/shutdown/shutdown_preferences.ui
 share/exaile/plugins/somafm/PLUGININFO
 share/exaile/plugins/somafm/__init__.py
 share/exaile/plugins/somafm/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
