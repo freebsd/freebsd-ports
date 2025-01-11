@@ -33,6 +33,12 @@ TOOLBOX_CONFIGURE_ON=	-with-toolbox
 TOOLBOX_RUN_DEPENDS=	labltk:x11-toolkits/ocaml-labltk
 TOOLBOX_BUILD_DEPENDS=	${TOOLBOX_RUN_DEPENDS}
 
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == powerpc
+USE_BINUTILS=	yes
+.endif
+
 .include <bsd.port.pre.mk>
 
 post-install:
