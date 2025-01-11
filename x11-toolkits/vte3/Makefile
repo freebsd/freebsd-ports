@@ -22,7 +22,7 @@ LICENSE=	LGPL21
 BUILD_DEPENDS=	bash:shells/bash \
 		${LOCALBASE}/include/fast_float/fast_float.h:math/fast_float
 LIB_DEPENDS=	libpcre2-8.so:devel/pcre2 \
-		liblz4.so:archivers/lz4 \
+		liblz4.so:archivers/liblz4 \
 		libicuuc.so:devel/icu
 
 PORTSCOUT=	limitw:1,even
