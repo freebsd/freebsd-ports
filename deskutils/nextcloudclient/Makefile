@@ -1,5 +1,5 @@
 PORTNAME=	nextcloudclient
-PORTVERSION=	3.15.2
+PORTVERSION=	3.15.3
 DISTVERSIONPREFIX=	v
 CATEGORIES=	deskutils
 
@@ -72,10 +72,6 @@ CMAKE_ARGS+=	-DCMAKE_BUILD_TYPE:STRING=Debug
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|.lst |.lst.sample |' ${WRKSRC}/CMakeLists.txt
-
-post-patch-DOCS-on:
-	@${MV} ${WRKSRC}/doc/images/macosvfs-file-sharing.png.png \
-		${WRKSRC}/doc/images/macosvfs-file-sharing.png
 
 post-patch-GUIADDONS-off:
 	@${REINPLACE_CMD} -e '/^find_package.*KF6GuiAddons/d' \
