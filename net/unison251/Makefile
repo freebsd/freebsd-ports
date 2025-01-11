@@ -60,6 +60,12 @@ USES+=			gettext-runtime gnome
 PLIST_SUB+=		X11=""
 .endif
 
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == powerpc
+USE_BINUTILS=	yes
+.endif
+
 post-patch-FSMONITOR-off:
 	@${REINPLACE_CMD} -e 's/-include fsmonitor/#&/' \
 		${WRKSRC}/Makefile.OCaml
