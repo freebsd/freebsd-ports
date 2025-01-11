@@ -1,6 +1,6 @@
 PORTNAME=	chatterino2
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.5.1
+DISTVERSION=	2.5.2
 CATEGORIES=	net-im
 
 MAINTAINER=	bofh@FreeBSD.org
@@ -15,20 +15,21 @@ BUILD_DEPENDS=	${LOCALBASE}/include/magic_enum/magic_enum.hpp:devel/magic_enum \
 		rapidjson>0:devel/rapidjson \
 		websocketpp>=0:devel/websocketpp
 LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
-		libqt5keychain.so:security/qtkeychain@qt5
+		libqt6keychain.so:security/qtkeychain@qt6
 
 USES=		cmake compiler:c++17-lang desktop-file-utils gl pkgconfig \
-		qt:5 ssl
+		qt:6 ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	chatterino
 GH_TUPLE=	Chatterino:libcommuni:030710a:communi/lib/libcommuni \
-		arsenm:sanitizers-cmake:3f0542e:sanitizers/cmake/sanitizers-cmake \
+		martinmoene:expected-lite:5b5caad:expectedlite/lib/expected-lite \
+		arsenm:sanitizers-cmake:0573e2e:sanitizers/cmake/sanitizers-cmake \
 		pajlada:serialize:17946d6:serialize/lib/serialize \
-		pajlada:settings:70fbc72:settings/lib/settings \
+		pajlada:settings:9e9c2f6:settings/lib/settings \
 		pajlada:signals:d067706:signals/lib/signals
 USE_GL=	gl
-USE_QT=	concurrent core dbus gui multimedia network svg widgets \
-		buildtools:build qmake:build
+#USE_QT=multimedia svg
+USE_QT=	5compat
 
 CMAKE_ARGS=	-DUSE_SYSTEM_QTKEYCHAIN=on
 
