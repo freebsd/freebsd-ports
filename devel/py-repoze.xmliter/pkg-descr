@@ -1,3 +1,0 @@
-This package provides a wrapper for lxml trees which serializes
-to string on iteration, but otherwise makes the tree available
-in an attribute.

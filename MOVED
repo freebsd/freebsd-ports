@@ -4001,3 +4001,8 @@ devel/py-pyls-black||2025-01-04|Repository has been archived by the owner. Use t
 net-im/telegram-desktop@qt5|net-im/telegram-desktop|2025-01-05|Flavorization has been removed. Qt 5.x has been long deprecated upstream. Please use unflavored net-im/telegram-desktop port based on Qt 6.x instead
 net-im/telegram-desktop@qt6|net-im/telegram-desktop|2025-01-05|Flavorization has been removed. Continue to enjoy net-im/telegram-desktop based on Qt 6.x as usual
 deskutils/iconbrowser|deskutils/elementary-iconbrowser|2025-01-06|Switch to reverse domain name notation
+devel/py-Products.ExternalEditor||2025-01-11|Remove leaf zope ports that have no sense in absence of zope itself
+devel/py-Products.PloneLanguageTool||2025-01-11|Remove leaf zope ports that have no sense in absence of zope itself
+devel/py-collective.monkeypatcher||2025-01-11|Remove leaf zope ports that have no sense in absence of zope itself
+devel/py-diazo||2025-01-11|Remove leaf zope ports that have no sense in absence of zope itself
+devel/py-repoze.xmliter||2025-01-11|Remove leaf zope ports that have no sense in absence of zope itself
