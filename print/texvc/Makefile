@@ -24,6 +24,12 @@ RASTER_USE=	TEX=latex,dvipsk
 
 MAKE_JOBS_UNSAFE=	yes
 
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == powerpc
+USE_BINUTILS=	yes
+.endif
+
 do-install:
 	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/texvc ${STAGEDIR}${PREFIX}/bin
 
