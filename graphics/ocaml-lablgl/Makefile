@@ -35,6 +35,10 @@ THREADS_DESC=	Threaded Tcl/Tk (must match lang/ocaml)
 
 .include <bsd.port.options.mk>
 
+.if ${ARCH} == powerpc
+USE_BINUTILS=	yes
+.endif
+
 .if ${PORT_OPTIONS:MTHREADS}
 THR_LD=		-lpthread
 .endif
