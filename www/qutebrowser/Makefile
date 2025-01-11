@@ -1,6 +1,5 @@
 PORTNAME=	qutebrowser
-DISTVERSION=	3.3.1
-PORTREVISION=	1
+DISTVERSION=	3.4.0
 CATEGORIES=	www
 MASTER_SITES=	PYPI
 
@@ -23,7 +22,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}colorama>=0:devel/py-colorama@${PY_FLAVOR} \
 FLAVORS=	qt6 qt5
 FLAVOR?=	${FLAVORS:[1]}
 
-USES=		cpe desktop-file-utils python
+USES=		cpe desktop-file-utils python:3.9+
 USE_PYQT=	webengine
 USE_PYTHON=	autoplist noflavors pep517
 
