@@ -15,7 +15,8 @@ WWW=		https://pytorch.org/
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN_aarch64=	build fails: CMake Error at third_party/QNNPACK/CMakeLists.txt:47 (MESSAGE): Unrecognized CMAKE_SYSTEM_NAME = FreeBSD
+BROKEN_aarch64=	build fails: CMake Error at third_party/QNNPACK/CMakeLists.txt:47 (MESSAGE): Unrecognized CMAKE_SYSTEM_NAME = FreeBSD, see https://github.com/pytorch/pytorch/issues/144608
+BROKEN_armv7=	build fails: CMake Error at third_party/QNNPACK/CMakeLists.txt:47 (MESSAGE): Unrecognized CMAKE_SYSTEM_NAME = FreeBSD, see https://github.com/pytorch/pytorch/issues/144608
 BROKEN_i386=	build fails: DispatchStub.cpp:162:29: [0m[0;1;31merror: [0m[1muse of undeclared identifier 'AVX2'[0m
 
 BUILD_DEPENDS=	cmake:devel/cmake-core \
