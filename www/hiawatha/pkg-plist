@@ -25,5 +25,5 @@ sbin/hiawatha
 %%LEFH%%sbin/lefh
 sbin/wigwam
 @sample %%WWWDIR%%/index.html.sample
-@dir /var/log/hiawatha
 @dir /var/db/hiawatha
+@dir /var/log/hiawatha
