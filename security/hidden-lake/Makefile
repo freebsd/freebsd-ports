@@ -1,6 +1,6 @@
 PORTNAME=	hidden-lake
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.8.2
+DISTVERSION=	1.8.3
 CATEGORIES=	security net-p2p
 
 MAINTAINER=	alster@vinterdalen.se
@@ -13,10 +13,11 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USES=		go:1.23,modules
 
 GO_MODULE=	github.com/number571/hidden-lake
-GO_TARGET=	./cmd/hla/hla_tcp:hla-tcp \
+GO_TARGET=	./cmd/hla/hla_tcp:hla_tcp \
 		./cmd/hlc:hlc \
 		./cmd/hlf:hlf \
 		./cmd/hlm:hlm \
+		./cmd/hlm:hlp \
 		./cmd/hlr:hlr \
 		./cmd/hls:hls
 

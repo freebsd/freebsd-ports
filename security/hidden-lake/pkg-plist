@@ -1,7 +1,8 @@
-bin/hla-tcp
+bin/hla_tcp
 bin/hlc
 bin/hlf
 bin/hlm
+bin/hlp
 bin/hlr
 bin/hls
 %%PORTDOCS%%%%DOCSDIR%%/CODESTYLE.md
