@@ -31,6 +31,8 @@ PLIST_SUB=	PLIST_VER=${PORTVERSION:R}
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
+CFLAGS+=	-Wno-error=incompatible-function-pointer-types
+
 post-patch:
 	${TOUCH} ${WRKSRC}/man/${PORTNAME}.sgml
 
