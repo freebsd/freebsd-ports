@@ -1,5 +1,6 @@
 PORTNAME=	zdaemon
 PORTVERSION=	4.1.0
+PORTREVISION=	1
 CATEGORIES=	sysutils python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,7 +12,7 @@ WWW=		https://pypi.org/project/zdaemon/
 LICENSE=	ZPL21
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}zconfig>0:devel/py-zconfig@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ZConfig>0:devel/py-zconfig@${PY_FLAVOR}
 
 NO_ARCH=	yes
 USES=		python zip
