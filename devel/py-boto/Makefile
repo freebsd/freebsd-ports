@@ -10,6 +10,8 @@ COMMENT=	Python interface to Amazon Web Services
 WWW=		https://github.com/boto/boto/
 
 LICENSE=	MIT
+DEPRECATED=	This version is discontinued upstream, please use www/py-boto3
+EXPIRATION_DATE=	2025-02-11
 
 USES=		python
 USE_PYTHON=	autoplist concurrent distutils
