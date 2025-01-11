@@ -4011,3 +4011,4 @@ devel/py-repoze.sphinx.autointerface||2025-01-11|Remove leaf zope ports that hav
 devel/py-ExtensionClass||2025-01-11|Remove leaf zope ports that have no sense in absence of zope itself
 security/py-RestrictedPython||2025-01-11|Remove leaf zope ports that have no sense in absence of zope itself
 sysutils/py-zdaemon||2025-01-11|Remove leaf zope ports that have no sense in absence of zope itself
+devel/py-DateTime||2025-01-11|Remove leaf zope ports that have no sense in absence of zope itself

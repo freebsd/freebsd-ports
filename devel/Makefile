@@ -4340,7 +4340,6 @@
     SUBDIR += pushmi
     SUBDIR += py-Automat
     SUBDIR += py-BTrees
-    SUBDIR += py-DateTime
     SUBDIR += py-Dumper
     SUBDIR += py-Faker
     SUBDIR += py-IBMQuantumExperience
