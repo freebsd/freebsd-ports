@@ -11,6 +11,9 @@ WWW=		https://linalg.org/
 LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	dual
 
+# See https://github.com/linbox-team/linbox/issues/320
+BROKEN_FreeBSD_15=	compilation errors with clang19
+
 BUILD_DEPENDS=	fflas-ffpack-config:math/fflas-ffpack
 LIB_DEPENDS=	libgmp.so:math/gmp		\
 		libgivaro.so:math/givaro
