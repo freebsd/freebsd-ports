@@ -1,6 +1,4 @@
-include/suitesparse/ParU.hpp
-include/suitesparse/ParU_C.h
-include/suitesparse/ParU_definitions.h
+include/suitesparse/ParU.h
 lib/cmake/ParU/ParUConfig.cmake
 lib/cmake/ParU/ParUConfigVersion.cmake
 lib/cmake/ParU/ParUTargets-%%CMAKE_BUILD_TYPE%%.cmake
