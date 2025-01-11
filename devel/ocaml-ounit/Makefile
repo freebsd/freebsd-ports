@@ -21,6 +21,12 @@ PORTDOCS=	${OCAML_PACKAGES:@p@\
 
 OPTIONS_DEFINE=	DOCS
 
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == powerpc
+USE_BINUTILS=	yes
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} \
 		-e "s/^(version v${DISTVERSION})/(version ${DISTVERSION})/" \
