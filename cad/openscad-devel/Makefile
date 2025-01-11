@@ -1,6 +1,6 @@
 PORTNAME=	openscad
-PORTVERSION=	2024.10.11
-PORTREVISION=	5
+PORTVERSION=	${GIT_SRC_DATE}
+#PORTREVISION=	1
 CATEGORIES=	cad
 PKGNAMESUFFIX=	-devel
 
@@ -17,7 +17,6 @@ WWW=		https://www.openscad.org/
 BUILD_DEPENDS=	cgal>0:math/cgal \
 		evdev-proto>0:devel/evdev-proto \
 		${LOCALBASE}/include/glm/glm.hpp:math/glm \
-		${LOCALBASE}/include/clipper2/clipper.h:cad/Clipper2 \
 		${PYTHON_PKGNAMEPREFIX}numpy>0:math/py-numpy@${PY_FLAVOR}
 LIB_DEPENDS=	libzip.so:archivers/libzip \
 		libhidapi.so:comms/hidapi \
@@ -41,17 +40,24 @@ USE_GL=		gl glu glew
 USE_GNOME=	cairo glib20 libxml2
 USE_QT=		buildtools:build core concurrent:build dbus gui multimedia qmake svg widgets
 USE_XORG=	x11
-GH_ACCOUNT=	microsoft:mimalloc elalish:manifold arsenm:sanitizerscmake openscad:opencsg
-GH_PROJECT=	MCAD:mcad mimalloc:mimalloc manifold:manifold sanitizers-cmake:sanitizerscmake OpenCSG:opencsg
-GH_TAGNAME=	19a4d67 bd0a7ba3f042bfbced5ca1894b236cea08904e26:mcad \
-		fe61be8:mimalloc 22c6605:manifold c3dc841:sanitizerscmake 059a173:opencsg
+GH_ACCOUNT=	microsoft:mimalloc elalish:manifold arsenm:sanitizerscmake \
+		openscad:opencsg AngusJohnson:clipper2
+GH_PROJECT=	MCAD:mcad mimalloc:mimalloc manifold:manifold sanitizers-cmake:sanitizerscmake \
+		OpenCSG:opencsg Clipper2:clipper2
+GH_TAGNAME=	${GIT_SRC_HASH} ${GIT_MCAD_HASH}:mcad \
+		${GIT_CLIPPER2_HASH}:clipper2 ${GIT_OPENCSG_HASH}:opencsg \
+		${GIT_MANIFOLD_HASH}:manifold ${GIT_MIMALLOC_HASH}:mimalloc \
+		${GIT_SANITIZERSCMAKE_HASH}:sanitizerscmake
 GH_SUBDIR=	libraries/MCAD:mcad submodules/mimalloc:mimalloc submodules/manifold:manifold \
-		submodules/sanitizers-cmake:sanitizerscmake submodules/OpenCSG:opencsg
+		submodules/sanitizers-cmake:sanitizerscmake submodules/OpenCSG:opencsg \
+		submodules/Clipper2:clipper2
 # Avoid overlinking: kvm, procstat, boost(thread, system), Qt5(concurrent, network, printsupport)
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-Wl,--as-needed -L${LOCALBASE}/lib
 #CMAKE_OFF=	USE_GLAD:BOOL=OFF
 #CMAKE_ON=	USE_GLEW:BOOL=ON
+
+.include "Makefile.git_rev"
 
 .include <bsd.port.pre.mk>
 
