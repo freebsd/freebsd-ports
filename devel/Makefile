@@ -4342,7 +4342,6 @@
     SUBDIR += py-BTrees
     SUBDIR += py-DateTime
     SUBDIR += py-Dumper
-    SUBDIR += py-ExtensionClass
     SUBDIR += py-Faker
     SUBDIR += py-IBMQuantumExperience
     SUBDIR += py-Jinja2
@@ -5805,7 +5804,6 @@
     SUBDIR += py-regress
     SUBDIR += py-remote-pdb
     SUBDIR += py-repoze.lru
-    SUBDIR += py-repoze.sphinx.autointerface
     SUBDIR += py-repoze.tm2
     SUBDIR += py-repoze.who
     SUBDIR += py-represent

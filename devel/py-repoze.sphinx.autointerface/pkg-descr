@@ -1,3 +1,0 @@
-This package defines an extension for the Sphinx documentation system.
-The extension allows generation of API documentation by introspection of
-zope.interface instances in code.
