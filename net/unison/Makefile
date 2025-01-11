@@ -59,6 +59,10 @@ DOCS=		NEWS.md README.md
 
 .include <bsd.port.options.mk>
 
+.if ${ARCH} == powerpc
+USE_BINUTILS=	yes
+.endif
+
 .if ${PORT_OPTIONS:MFSMONITOR}
 ALL_TARGET+=	fsmonitor
 .endif
