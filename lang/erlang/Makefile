@@ -1,7 +1,6 @@
 PORTNAME=	erlang
 DISTVERSIONPREFIX=	OTP-
-DISTVERSION=	25.3.2.15
-PORTREVISION=	1
+DISTVERSION=	26.2.5.6
 PORTEPOCH=	4
 CATEGORIES=	lang parallel java
 DIST_SUBDIR=	erlang
@@ -16,6 +15,8 @@ USES=		compiler cpe gmake ncurses perl5
 CPE_VENDOR=	erlang
 CPE_PRODUCT=	erlang/otp
 USE_GITHUB=	nodefault
+
+MAKE_ENV+=	ERL_LIBS=${WRKSRC}/lib
 GH_ACCOUNT=	erlang:otp,corba
 GH_PROJECT=	otp:otp corba:corba
 GH_TAGNAME=	5.2.1:corba
@@ -29,19 +30,21 @@ CONFIGURE_ARGS=	--enable-dirty-schedulers \
 		--enable-threads
 MAKE_ARGS=	all
 
+_ERLANG_LIB=	${PORTNAME}
+
 SUB_FILES=	pkg-message
-SUB_LIST=	TOOLS_VSN=${TOOLS_VSN}
+SUB_LIST=	_TOOLS_VSN=${_TOOLS_VSN}
 
 WRKSRC=		${WRKSRC_otp}
 
-ERLANG_LIB=	${PORTNAME}
-EI_VSN=		5.3.2.1
-SNMP_VSN=	5.13.5
-TOOLS_VSN=	3.5.3
+_EI_VSN=	5.5.1
+_SNMP_VSN=	5.15
+_TOOLS_VSN=	3.6
 
-OPTIONS_DEFINE=		CHUNKS CORBA DIRTY DTRACE FOP JAVA KQUEUE MANPAGES ODBC \
+OPTIONS_DEFINE=		CHUNKS CORBA DTRACE FOP JAVA KQUEUE MANPAGES ODBC \
 			OPENSSL PDF SCTP SHARING WX
-OPTIONS_DEFAULT=	CHUNKS CORBA DIRTY DTRACE KQUEUE MANPAGES OPENSSL SCTP
+OPTIONS_DEFAULT=	CHUNKS CORBA DTRACE KQUEUE MANPAGES OPENSSL SCTP \
+			SHARING
 
 .if !exists(/usr/sbin/dtrace)
 OPTIONS_EXCLUDE+=	DTRACE
@@ -59,7 +62,6 @@ OPTIONS_SUB=	yes
 
 CHUNKS_DESC=	Enable in-line documentation in Erlang console
 CORBA_DESC=	Enable Corba support
-DIRTY_DESC=	Enable dirty schedulers
 FOP_DESC=	Build full documentation with Apache FOP
 KQUEUE_DESC=	Enable Kernel Poll (kqueue) support
 PDF_DESC=	Build PDF documentation
@@ -73,16 +75,15 @@ WX_DESC=	Enable WX application
 
 CHUNKS_MAKE_ARGS+=		DOC_TARGETS=chunks \
 				docs
-DIRTY_CONFIGURE_WITH=		dirty-schedulers
 DTRACE_CONFIGURE_WITH=		dynamic-trace=dtrace
 DTRACE_CFLAGS=			-fno-omit-frame-pointer
 DTRACE_VARS=			STRIP=""
 FOP_PREVENTS=			MANPAGES
 FOP_BUILD_DEPENDS=		fop:textproc/fop \
 				xsltproc:textproc/libxslt
+JAVA_USES=			java
 JAVA_CONFIGURE_WITH=		javac
 JAVA_CONFIGURE_ENV=		ac_cv_prog_JAVAC="${JAVAC}"
-JAVA_USES=			java
 KQUEUE_CONFIGURE_ENABLE=	kernel-poll
 MANPAGES_RUN_DEPENDS=		${LOCALBASE}/etc/man.d/erlang.conf:lang/erlang-man
 ODBC_LIB_DEPENDS=		libodbc.so:databases/unixODBC
@@ -119,14 +120,14 @@ MAKE_ARGS+=	ARCH=arm
 .endif
 
 pre-configure:
-	@if [ ! $$(${CAT} ${WRKSRC}/lib/erl_interface/vsn.mk | ${GREP} "EI_VSN *=" | ${CUT} -w -f3) = ${EI_VSN} ]; then \
-		${ECHO_MSG} "===>  EI_VSN (${EI_VSN}) in Makefile does not match value in lib/erl_interface/vsn.mk"; exit 1; \
+	@if [ ! $$(${CAT} ${WRKSRC}/lib/erl_interface/vsn.mk | ${GREP} "_EI_VSN *=" | ${CUT} -w -f3) = ${_EI_VSN} ]; then \
+		${ECHO_MSG} "===>  _EI_VSN (${_EI_VSN}) in Makefile does not match value in lib/erl_interface/vsn.mk"; exit 1; \
 	fi
-	@if [ ! $$(${CAT} ${WRKSRC}/lib/tools/vsn.mk | ${GREP} "TOOLS_VSN *=" | ${CUT} -w -f3) = ${TOOLS_VSN} ]; then \
-		${ECHO_MSG} "===>  TOOLS_VSN (${TOOLS_VSN}) in Makefile does not match value in lib/tools/vsn.mk"; exit 1; \
+	@if [ ! $$(${CAT} ${WRKSRC}/lib/tools/vsn.mk | ${GREP} "_TOOLS_VSN *=" | ${CUT} -w -f3) = ${_TOOLS_VSN} ]; then \
+		${ECHO_MSG} "===>  _TOOLS_VSN (${_TOOLS_VSN}) in Makefile does not match value in lib/tools/vsn.mk"; exit 1; \
 	fi
-	@if [ ! $$(${CAT} ${WRKSRC}/lib/snmp/vsn.mk | ${GREP} -E "SNMP_VSN *=" | ${CUT} -w -f3) = ${SNMP_VSN} ]; then \
-		${ECHO_MSG} "===>  SNMP_VSN (${SNMP_VSN}) in Makefile does not match value in lib/snmp/vsn.mk"; exit 1; \
+	@if [ ! $$(${CAT} ${WRKSRC}/lib/snmp/vsn.mk | ${GREP} -E "_SNMP_VSN *=" | ${CUT} -w -f3) = ${_SNMP_VSN} ]; then \
+		${ECHO_MSG} "===>  _SNMP_VSN (${_SNMP_VSN}) in Makefile does not match value in lib/snmp/vsn.mk"; exit 1; \
 	fi
 
 pre-configure-WX-off:
@@ -161,15 +162,21 @@ post-build-FOP-on:
 .endif
 
 post-install:
-	${LN} -sf ../lib/${ERLANG_LIB}/lib/erl_interface-${EI_VSN}/bin/erl_call \
+	${LN} -sf ../lib/${_ERLANG_LIB}/lib/erl_interface-${_EI_VSN}/bin/erl_call \
 		${STAGEDIR}${PREFIX}/bin/erl_call
-	${LN} -sf ../lib/${ERLANG_LIB}/lib/snmp-${SNMP_VSN}/bin/snmpc \
+	${LN} -sf ../lib/${_ERLANG_LIB}/lib/snmp-${_SNMP_VSN}/bin/snmpc \
 		${STAGEDIR}${PREFIX}/bin/snmpc
 
 post-install-CORBA-on:
 	cd ${WRKSRC_corba} && \
 		${SETENV} OVERRIDE_TARGET=${CONFIGURE_TARGET} ERL_TOP=${WRKSRC_otp} \
-		${MAKE_CMD} release RELEASE_ROOT=${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}
+		${MAKE_CMD} release RELEASE_ROOT=${STAGEDIR}${PREFIX}/lib/${_ERLANG_LIB}
+
+post-install-CHUNKS-on:
+	cd ${WRKSRC_otp} && \
+		${SETENV} ERL_TOP=${WRKSRC_otp} \
+		${MAKE_CMD} release_docs DOC_TARGETS=chunks \
+		RELEASE_ROOT=${STAGEDIR}${PREFIX}/lib/${_ERLANG_LIB}
 
 post-install-DTRACE-on:
 	${MKDIR} ${STAGEDIR}${DATADIR}/dtrace
@@ -221,10 +228,10 @@ post-install-WX-off:
 	${RM} -r ${STAGEDIR}${PREFIX}/lib/erlang/lib/wx-*
 
 post-stage:
-	${FIND} ${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}/* -type d -empty \
+	${FIND} ${STAGEDIR}${PREFIX}/lib/${_ERLANG_LIB}/* -type d -empty \
 		-delete
 	@cd ${STAGEDIR}${PREFIX}; \
-		${FIND} lib/${ERLANG_LIB}/* ${DATADIR_REL}/* -type f -o \
+		${FIND} lib/${_ERLANG_LIB}/* ${DATADIR_REL}/* -type f -o \
 		-type l | \
 		${SORT} >> ${TMPPLIST}
 	@if [ -d ${STAGEDIR}/${DOCSDIR} ]; then \
