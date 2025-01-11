@@ -11,3 +11,5 @@ SHA256 (bootstrap-openjdk11-powerpc64-elfv2-11.0.5.10.1.tar.xz) = b3bd1ac3fbfe6b
 SIZE (bootstrap-openjdk11-powerpc64-elfv2-11.0.5.10.1.tar.xz) = 97626680
 SHA256 (bootstrap-openjdk11-powerpc64le-11.0.5.10.1.tar.xz) = 37fcadc9a4a27d5cc82c64bba322acf4ae398ed0fd1a566829394413ac471d5d
 SIZE (bootstrap-openjdk11-powerpc64le-11.0.5.10.1.tar.xz) = 149744680
+SHA256 (bootstrap-openjdk11-powerpc-11.0.5.10.1.tar.xz) = 2a333e562031725294d4ae122f8c375771d08292e6d88baa43b199a62f5f1ab1
+SIZE (bootstrap-openjdk11-powerpc-11.0.5.10.1.tar.xz) = 92076636

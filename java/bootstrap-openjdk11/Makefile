@@ -12,7 +12,7 @@ WWW=		https://openjdk.java.net/
 
 LICENSE=	GPLv2
 
-ONLY_FOR_ARCHS=	aarch64 amd64 armv6 armv7 i386 powerpc64 powerpc64le
+ONLY_FOR_ARCHS=	aarch64 amd64 armv6 armv7 i386 powerpc powerpc64 powerpc64le
 
 USES=		tar:xz
 
@@ -31,10 +31,16 @@ INSTALLDIR=	${STAGEDIR}${PREFIX}/${JDK_ROOT}
 
 .if ${ARCH} == aarch64 || ${ARCH:Marmv*}
 DISTNAME=	${JDK_PORT}-${JDK_ARCH}-12-${PORTVERSION}
+PLIST_SUB+=	PPC=""
 PLIST_SUB+=	PPC64LE=""
 .elif ${ARCH} == powerpc64le
+PLIST_SUB+=	PPC=""
 PLIST_SUB+=	PPC64LE="@comment "
+.elif ${ARCH} == powerpc
+PLIST_SUB+=	PPC="@comment "
+PLIST_SUB+=	PPC64LE=""
 .else
+PLIST_SUB+=	PPC=""
 PLIST_SUB+=	PPC64LE=""
 .endif
 
