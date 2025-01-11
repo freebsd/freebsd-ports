@@ -20,7 +20,6 @@ share/man/man8/dbmail-imapd.8.gz
 share/man/man8/dbmail-lmtpd.8.gz
 share/man/man8/dbmail-pop3d.8.gz
 share/man/man8/dbmail-sievecmd.8.gz
-share/man/man8/dbmail-timsieved.8.gz
 share/man/man8/dbmail-users.8.gz
 share/man/man8/dbmail-util.8.gz
 sbin/dbmail-deliver
@@ -33,7 +32,6 @@ sbin/dbmail-users
 sbin/dbmail-util
 %%SIEVE%%sbin/dbmail-sievecmd
 %%SIEVE%%sbin/dbmail-sieved
-%%SIEVE%%sbin/dbmail-timsieved
 %%DATADIR%%/dbmail.schema
 %%DATADIR%%/mysql/2_1_7-2_2_0.mysql
 %%DATADIR%%/mysql/2_2-3_0.mysql
@@ -54,7 +52,8 @@ sbin/dbmail-util
 %%DATADIR%%/mysql/upgrades/32004.mysql
 %%DATADIR%%/mysql/upgrades/32005.mysql
 %%DATADIR%%/mysql/upgrades/32006.mysql
-%%DATADIR%%/mysql/upgrades/upgrade.mysql
+%%DATADIR%%/mysql/upgrades/35001.mysql
+%%DATADIR%%/mysql/upgrades/create_tables.mysql
 %%DATADIR%%/oracle/dbmail_grant.sql
 %%DATADIR%%/oracle/dbmail_schema.sql
 %%DATADIR%%/oracle/dbmail_ts.sql
@@ -74,7 +73,8 @@ sbin/dbmail-util
 %%DATADIR%%/postgresql/upgrades/32004.psql
 %%DATADIR%%/postgresql/upgrades/32005.psql
 %%DATADIR%%/postgresql/upgrades/32006.psql
-%%DATADIR%%/postgresql/upgrades/upgrade.psql
+%%DATADIR%%/postgresql/upgrades/35001.psql
+%%DATADIR%%/postgresql/upgrades/create_tables.psql
 %%DATADIR%%/sqlite/2_1_7-2_2_0.sqlite
 %%DATADIR%%/sqlite/2_2-3_0.sqlite
 %%DATADIR%%/sqlite/2_2_5-2_3_0.sqlite
@@ -90,7 +90,7 @@ sbin/dbmail-util
 %%DATADIR%%/sqlite/upgrades/32004.sqlite
 %%DATADIR%%/sqlite/upgrades/32005.sqlite
 %%DATADIR%%/sqlite/upgrades/32006.sqlite
-%%DATADIR%%/sqlite/upgrades/upgrade.sqlite
+%%DATADIR%%/sqlite/upgrades/35001.sqlite
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/CHANGELOG.md
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL
