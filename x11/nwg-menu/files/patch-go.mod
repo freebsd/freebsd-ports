@@ -2,7 +2,7 @@ Drop after lang/go122 appears (switch to USES=go:1.22,modules)
 
 github.com/nwg-piotr/nwg-menu: cannot compile Go 1.22 code
 
---- go.mod.orig	2024-08-29 23:11:28 UTC
+--- go.mod.orig	2025-01-11 00:07:37 UTC
 +++ go.mod
 @@ -1,6 +1,6 @@ module github.com/nwg-piotr/nwg-menu
  module github.com/nwg-piotr/nwg-menu
