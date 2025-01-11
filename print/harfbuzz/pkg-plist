@@ -36,7 +36,7 @@ include/harfbuzz/hb-set.h
 include/harfbuzz/hb-shape-plan.h
 include/harfbuzz/hb-shape.h
 include/harfbuzz/hb-style.h
-include/harfbuzz/hb-subset-repacker.h
+include/harfbuzz/hb-subset-serialize.h
 include/harfbuzz/hb-subset.h
 include/harfbuzz/hb-unicode.h
 include/harfbuzz/hb-version.h
@@ -101,6 +101,7 @@ share/gir-1.0/HarfBuzz-0.0.gir
 %%DOCS%%share/gtk-doc/html/harfbuzz/api-index-1-9-0.html
 %%DOCS%%share/gtk-doc/html/harfbuzz/api-index-10-0-0.html
 %%DOCS%%share/gtk-doc/html/harfbuzz/api-index-10-1-0.html
+%%DOCS%%share/gtk-doc/html/harfbuzz/api-index-10-2-0.html
 %%DOCS%%share/gtk-doc/html/harfbuzz/api-index-2-0-0.html
 %%DOCS%%share/gtk-doc/html/harfbuzz/api-index-2-1-0.html
 %%DOCS%%share/gtk-doc/html/harfbuzz/api-index-2-2-0.html
