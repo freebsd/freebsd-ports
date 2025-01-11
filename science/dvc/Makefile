@@ -1,6 +1,6 @@
 PORTNAME=	dvc
 DISTVERSION=	0.30.1
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	science python
 MASTER_SITES=	PYPI
 
@@ -27,7 +27,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}appdirs>=1.4.3:devel/py-appdirs@${PY_FLAVOR}
 		${PYTHON_PKGNAMEPREFIX}pyyaml>=3.12:devel/py-pyyaml@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>=2.18.4:www/py-requests@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}schema>=0.6.7:devel/py-schema@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}zclockfile>0:devel/py-zclockfile@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}zc.lockfile>0:devel/py-zc.lockfile@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	distutils autoplist noflavors
