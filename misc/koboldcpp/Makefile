@@ -68,8 +68,8 @@ do-install:
 
 .include <bsd.port.pre.mk>
 
-.if (${ARCH} == aarch64 || ${ARCH} == armv7) && ${FLAVOR} == portable
-IGNORE=	portable flavor isn't defined on arm* because it is based on AVX2, etc. (?)
+.if ${ARCH} != amd64
+IGNORE=	portable flavor isn't defined on ${ARCH} because it is based on AVX2, etc. (?)
 .endif
 
 .include <bsd.port.post.mk>
