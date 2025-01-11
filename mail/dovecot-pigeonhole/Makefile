@@ -11,8 +11,22 @@ WWW=		https://pigeonhole.dovecot.org/
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING.LGPL
 
+FLAVORS=	default mysql pgsql
+FLAVOR?=	${FLAVORS[1]}
+mysql_PKGNAMESUFFIX=	-mysql
+pgsql_PKGNAMESUFFIX=	-pgsql
+.if ${FLAVOR:U} == default
 BUILD_DEPENDS=	dovecot>=2.3.9:mail/dovecot
 RUN_DEPENDS=	dovecot>=2.3.9:mail/dovecot
+.endif
+.if ${FLAVOR:U} == mysql
+BUILD_DEPENDS=	dovecot-mysql>=2.3.9:mail/dovecot@mysql
+RUN_DEPENDS=	dovecot-mysql>=2.3.9:mail/dovecot@mysql
+.endif
+.if ${FLAVOR:U} == pgsql
+BUILD_DEPENDS=	dovecot-pgsql>=2.3.9:mail/dovecot@pgsql
+RUN_DEPENDS=	dovecot-pgsql>=2.3.9:mail/dovecot@pgsql
+.endif
 
 DOVECOTVERSION=	2.3
 
