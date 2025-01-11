@@ -4012,3 +4012,4 @@ devel/py-ExtensionClass||2025-01-11|Remove leaf zope ports that have no sense in
 security/py-RestrictedPython||2025-01-11|Remove leaf zope ports that have no sense in absence of zope itself
 sysutils/py-zdaemon||2025-01-11|Remove leaf zope ports that have no sense in absence of zope itself
 devel/py-DateTime||2025-01-11|Remove leaf zope ports that have no sense in absence of zope itself
+devel/py-zclockfile|devel/py-zc.lockfile|2025-01-11|Switch consumers to latest package version
