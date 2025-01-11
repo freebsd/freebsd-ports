@@ -3,6 +3,7 @@
 
 PORTNAME=	lsof
 DISTVERSION=	4.99.4
+PORTREVISION=	1
 PORTEPOCH=	8
 CATEGORIES=	sysutils
 
@@ -40,7 +41,7 @@ BOOKE_CFLAGS=	-DBOOKE
 CONFIGURE_SCRIPT=	Configure
 CONFIGURE_ARGS=		-n freebsd
 CONFIGURE_ENV=		FREEBSD_SYS="${SRC_BASE}/sys" \
-			LSOF_CC="${CC}"
+			LSOF_CC="${CC} -idirafter /usr/src" 
 BUILD_DEPENDS=		${LOCALBASE}/bin/bash:shells/bash
 
 # GCC needs -lzfs -lzpool for reasons unknown.  If someone can
