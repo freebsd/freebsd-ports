@@ -20,6 +20,10 @@ PLIST_FILES=	bin/ximaging \
 		etc/X11/app-defaults/XImaging \
 		share/man/man1/ximaging.1.gz
 
+.if !exists(/usr/include/omp.h)
+USES+=		compiler:gcc-c++11-lib
+.endif
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/man/man1
