@@ -1,6 +1,6 @@
 PORTNAME=	sudachi
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.6.9
+DISTVERSION=	0.6.10
 CATEGORIES=	japanese
 MASTER_SITES=	http://sudachi.s3-website-ap-northeast-1.amazonaws.com/sudachidict/:dict
 DISTFILES=	sudachi-dictionary-20220519-core.zip:dict # see ${WRKSRC}/fetch_dictionary.sh
@@ -89,11 +89,11 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		plotters-svg-0.3.6 \
 		portable-atomic-1.6.0 \
 		proc-macro2-1.0.85 \
-		pyo3-0.22.6 \
-		pyo3-build-config-0.22.6 \
-		pyo3-ffi-0.22.6 \
-		pyo3-macros-0.22.6 \
-		pyo3-macros-backend-0.22.6 \
+		pyo3-0.23.0 \
+		pyo3-build-config-0.23.0 \
+		pyo3-ffi-0.23.0 \
+		pyo3-macros-0.23.0 \
+		pyo3-macros-backend-0.23.0 \
 		quote-1.0.36 \
 		rayon-1.10.0 \
 		rayon-core-1.12.1 \
