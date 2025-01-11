@@ -1,12 +1,13 @@
 PORTNAME=	pyscf
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.7.0
+DISTVERSION=	2.8.0
 CATEGORIES=	science python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Python module for quantum chemistry
-WWW=		https://pyscf.org/
+WWW=		https://pyscf.org/ \
+		https://github.com/pyscf/pyscf
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -24,7 +25,7 @@ LIB_DEPENDS=	libcint.so:science/libcint \
 RUN_DEPENDS=	${PY_DEPENDS}
 
 USES=		fortran blaslapack:openblas compiler:c++11-lang python
-USE_PYTHON=	distutils autoplist pytest # 3818 warnings, 57 errors in tests, see https://github.com/pyscf/pyscf/issues/1536
+USE_PYTHON=	distutils autoplist pytest
 USE_GITHUB=	yes
 
 POST_PLIST=	fix-plist
@@ -42,5 +43,7 @@ fix-plist:
 post-test:
 	@${ECHO} "==> simple test ..."
 	@${SETENV} ${TEST_ENV} ${PYTHON_CMD} ${FILESDIR}/test.py
+
+# tests fail to run: https://github.com/pyscf/pyscf/issues/2601
 
 .include <bsd.port.mk>
