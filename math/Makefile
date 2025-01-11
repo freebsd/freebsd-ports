@@ -272,7 +272,6 @@
     SUBDIR += csdp
     SUBDIR += ctl-sat
     SUBDIR += cudd
-    SUBDIR += curv
     SUBDIR += cvc5
     SUBDIR += dbcsr
     SUBDIR += ddfun

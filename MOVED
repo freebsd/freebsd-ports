@@ -4001,3 +4001,4 @@ devel/py-pyls-black||2025-01-04|Repository has been archived by the owner. Use t
 net-im/telegram-desktop@qt5|net-im/telegram-desktop|2025-01-05|Flavorization has been removed. Qt 5.x has been long deprecated upstream. Please use unflavored net-im/telegram-desktop port based on Qt 6.x instead
 net-im/telegram-desktop@qt6|net-im/telegram-desktop|2025-01-05|Flavorization has been removed. Continue to enjoy net-im/telegram-desktop based on Qt 6.x as usual
 deskutils/iconbrowser|deskutils/elementary-iconbrowser|2025-01-06|Switch to reverse domain name notation
+math/curv||2025-01-10|Fails to build with boost-1.85+ and GitHub repository is marked archived
