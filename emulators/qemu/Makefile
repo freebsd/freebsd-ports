@@ -1,5 +1,6 @@
 PORTNAME=	qemu
 DISTVERSION=	9.2.0
+PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	https://download.qemu.org/
 DIST_SUBDIR=	qemu/${PORTVERSION}
@@ -16,11 +17,13 @@ ONLY_FOR_ARCHS=	aarch64 amd64 powerpc64 powerpc64le
 .endif
 
 BUILD_DEPENDS=	bash:shells/bash
+.if ${FLAVOR:U} != guestagent
+LIB_DEPENDS+=	libzstd.so:archivers/zstd
+.endif
 .if ${FLAVOR:U} != tools && ${FLAVOR:U} != guestagent
 LIB_DEPENDS+=	libfdt.so:sysutils/dtc \
 		libinotify.so:devel/libinotify \
-		libslirp.so:net/libslirp \
-		libzstd.so:archivers/zstd
+		libslirp.so:net/libslirp
 .endif
 .if (${FLAVOR:U} != nox11 && ${FLAVOR:U} != tools && ${FLAVOR:U} != guestagent)
 LIB_DEPENDS+=	libepoxy.so:graphics/libepoxy
@@ -114,7 +117,7 @@ CONFIGURE_ARGS+=	--disable-attr \
 			--disable-vnc
 .endif
 .if ${FLAVOR:U} == tools
-CONFIGURE_ARGS+=	--enable-tools
+CONFIGURE_ARGS+=	--enable-tools --enable-zstd
 .endif
 
 CFLAGS:=	${CFLAGS:C/-fno-tree-vrp//}
@@ -215,6 +218,14 @@ X86_TARGETS_CONFIGURE_ON=	--target-list='i386-softmmu i386-bsd-user x86_64-softm
 .endif
 
 .include <bsd.port.options.mk>
+
+.if ${FLAVOR:U} == tools || ${FLAVOR:U} == guestagent
+.if ${ARCH} == "i386"
+PLIST_SUB+=	NO_I386="@comment "
+.else
+PLIST_SUB+=	NO_I386=""
+.endif
+.endif
 
 .if (empty(FLAVOR) || ${FLAVOR:U} == default || ${FLAVOR:U} == nox11) && \
 	(${FLAVOR:U} != tools || ${PKGNAMESUFFIX} != "-guest-agent")

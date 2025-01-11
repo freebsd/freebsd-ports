@@ -1,5 +1,5 @@
 bin/qemu-ga
-include/qemu-plugin.h
+%%NO_I386%%include/qemu-plugin.h
 %%PORTDOCS%%share/man/man1/qemu.1.gz
 %%PORTDOCS%%share/man/man7/qemu-block-drivers.7.gz
 %%PORTDOCS%%share/man/man7/qemu-cpu-models.7.gz
