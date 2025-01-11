@@ -1,12 +1,12 @@
 PORTNAME=	pulsar-client-cpp # this port requres instruction sets crc32, pclmul above the default sse2
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.6.0
-PORTREVISION=	1
+DISTVERSION=	3.7.0
 CATEGORIES=	net-p2p
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Apache Pulsar C++ client library
-WWW=		https://pulsar.apache.org/
+WWW=		https://pulsar.apache.org/ \
+		https://github.com/apache/pulsar-client-cpp
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -28,6 +28,7 @@ GH_ACCOUNT=	apache
 CMAKE_OFF=	BUILD_TESTS
 CMAKE_ARGS=	-DCMAKE_CXX_STANDARD=17 \
 		-DOPENSSL_ROOT_DIR=/usr
+CMAKE_TESTING_ON=	BUILD_TESTS # tests fail to compile, see https://github.com/apache/pulsar-client-cpp/issues/472
 
 CXXFLAGS+=	-mcrc32 -mpclmul
 
