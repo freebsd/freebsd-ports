@@ -4,7 +4,7 @@
  
  	capacity = block_length * (rc16->returned_lba + 1);
  	if (offset > capacity) {
-+#if defined(__i386__) || defined(__arm__)
++#ifndef __LP64__
 +		fprintf(stderr,"Offset(%llu) exceeds capacity(%llu)\n", offset, capacity);
 +#else
  		fprintf(stderr,"Offset(%lu) exceeds capacity(%lu)\n", offset, capacity);
