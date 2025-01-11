@@ -1,5 +1,5 @@
 PORTNAME=	rpki-client
-DISTVERSION=	9.3
+DISTVERSION=	9.4
 CATEGORIES=	net
 MASTER_SITES=	OPENBSD
 MASTER_SITE_SUBDIR=rpki-client
@@ -11,7 +11,7 @@ WWW=		https://www.rpki-client.org/
 LICENSE=	ISCL
 
 NOT_FOR_ARCHS=	i386
-NOT_FOR_ARCHS_REASON=	Does support broken OS with small time_t
+NOT_FOR_ARCHS_REASON=	Does not support broken OS with small time_t
 
 BUILD_DEPENDS=	rsync>0:net/rsync
 LIB_DEPENDS=	libexpat.so:textproc/expat2 \
