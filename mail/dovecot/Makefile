@@ -21,6 +21,11 @@ WWW=		https://www.dovecot.org/
 LICENSE=	LGPL21 MIT
 LICENSE_COMB=	dual
 
+FLAVORS=	default mysql pgsql
+FLAVOR?=	${FLAVORS[1]}
+mysql_PKGNAMESUFFIX=	-mysql
+pgsql_PKGNAMESUFFIX=	-pgsql
+
 LIB_DEPENDS=	libzstd.so:archivers/zstd
 
 USES=		cpe iconv libtool pkgconfig ssl
@@ -112,9 +117,17 @@ LUCENE_CONFIGURE_WITH=		lucene stemmer
 LZ4_LIB_DEPENDS=		liblz4.so:archivers/liblz4
 LZ4_CONFIGURE_WITH=		lz4
 
+.if ${FLAVOR:U} == mysql
+OPTIONS_DEFAULT+=	MYSQL
+.endif
+
 MYSQL_USES=			mysql
 MYSQL_CONFIGURE_WITH=		mysql
 MYSQL_VARS=			_REQUIRE+=mysql
+
+.if ${FLAVOR:U} == pgsql
+OPTIONS_DEFAULT+=	PGSQL
+.endif
 
 PGSQL_USES=			pgsql
 PGSQL_CONFIGURE_WITH=		pgsql
