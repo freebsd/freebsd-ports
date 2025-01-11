@@ -394,7 +394,7 @@ PLIST_FILES=	bin/${PORTNAME}
 
 .include <bsd.port.options.mk>
 
-.if ${ARCH} == i386
+.if ${ARCH} == i386 || ${ARCH} == powerpc
 LTO_UNSAFE=	yes
 .endif
 
