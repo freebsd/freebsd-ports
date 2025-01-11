@@ -290,4 +290,11 @@ CARGO_CRATES=	addr2line-0.24.2 \
 
 PLIST_FILES=	bin/${PORTNAME}
 
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == powerpc
+LIB_DEPENDS+=	libatomic.so:lang/gcc${GCC_DEFAULT}
+LDFLAGS+=	-L/usr/local/lib/gcc${GCC_DEFAULT} -latomic
+.endif
+
 .include <bsd.port.mk>
