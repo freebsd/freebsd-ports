@@ -22,6 +22,12 @@ PORTEXAMPLES=	bunzip2.ml
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == powerpc
+USE_BINUTILS=	yes
+.endif
+
 post-install:
 	@${STRIP_CMD} \
 		${STAGEDIR}${PREFIX}/${OCAML_SITELIBDIR}/bz2/bz2.cmxs \
