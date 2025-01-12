@@ -34,4 +34,10 @@ CARGO_TEST=	no
 CARGO_TARGET_DIR=	${WRKSRC}/${MESON_BUILD_DIR}/target
 MAKE_ENV+=	${CARGO_ENV}
 
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == powerpc
+LTO_UNSAFE=	yes
+.endif
+
 .include <bsd.port.mk>
