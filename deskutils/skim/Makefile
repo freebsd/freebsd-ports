@@ -1,6 +1,6 @@
 PORTNAME=	skim
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.15.5
+DISTVERSION=	0.15.6
 CATEGORIES=	deskutils
 PKGNAMESUFFIX=	-fuzzy-finder
 
@@ -36,14 +36,14 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		cc-1.2.1 \
 		cfg-if-1.0.0 \
 		cfg_aliases-0.2.1 \
-		chrono-0.4.38 \
-		clap-4.5.21 \
-		clap_builder-4.5.21 \
-		clap_complete-4.5.38 \
+		chrono-0.4.39 \
+		clap-4.5.23 \
+		clap_builder-4.5.23 \
+		clap_complete-4.5.40 \
 		clap_complete_fig-4.5.2 \
 		clap_complete_nushell-4.5.4 \
 		clap_derive-4.5.18 \
-		clap_lex-0.7.3 \
+		clap_lex-0.7.4 \
 		clap_mangen-0.2.24 \
 		colorchoice-1.0.3 \
 		core-foundation-sys-0.8.7 \
@@ -65,7 +65,8 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		dirs-sys-next-0.1.2 \
 		either-1.13.0 \
 		env_filter-0.1.2 \
-		env_logger-0.11.5 \
+		env_home-0.1.0 \
+		env_logger-0.11.6 \
 		equivalent-1.0.1 \
 		errno-0.3.9 \
 		fastrand-2.2.0 \
@@ -75,7 +76,6 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		hashbrown-0.15.2 \
 		heck-0.5.0 \
 		hermit-abi-0.1.19 \
-		home-0.5.9 \
 		humantime-2.1.0 \
 		iana-time-zone-0.1.61 \
 		iana-time-zone-haiku-0.1.2 \
@@ -137,7 +137,7 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		wasm-bindgen-macro-0.2.95 \
 		wasm-bindgen-macro-support-0.2.95 \
 		wasm-bindgen-shared-0.2.95 \
-		which-7.0.0 \
+		which-7.0.1 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
