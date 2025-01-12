@@ -130,6 +130,7 @@
     SUBDIR += R-cran-quantreg
     SUBDIR += R-cran-raster
     SUBDIR += R-cran-recipes
+    SUBDIR += R-cran-reformulas
     SUBDIR += R-cran-rgenoud
     SUBDIR += R-cran-robustbase
     SUBDIR += R-cran-sandwich
