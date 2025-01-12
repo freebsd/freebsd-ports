@@ -1,7 +1,6 @@
 PORTNAME=	vitables
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.0.3
-PORTREVISION=	1
+DISTVERSION=	3.1.0
 CATEGORIES=	devel science python
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -15,7 +14,6 @@ BUILD_DEPENDS=	${PY_SETUPTOOLS} \
 		${PYTHON_PKGNAMEPREFIX}hatchling>0:devel/py-hatchling@${PY_FLAVOR}
 RUN_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}QtPy>=2.2:devel/py-QtPy@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}numexpr>=2.0:math/py-numexpr@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tables>=3.0:devel/py-tables@${PY_FLAVOR}
 
 USES=		dos2unix python pyqt:5
