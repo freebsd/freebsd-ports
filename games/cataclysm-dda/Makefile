@@ -53,6 +53,8 @@ CMAKE_ARGS+=	-DCURSES_INCLUDE_PATH:STRING="${NCURSESINC}"
 
 PORTSCOUT=	limit:^0\.[A-Z]
 
+CXXFLAGS+=	-Wno-error=for-loop-analysis
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%DISTVERSION%%|${DISTVERSION}|' ${WRKSRC}/src/version.cmake
 
