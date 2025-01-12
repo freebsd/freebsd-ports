@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2025-01-12 20:38:45 UTC
++++ CMakeLists.txt
+@@ -267,7 +267,7 @@ add_subdirectory(${PROJECT_SOURCE_DIR}/interfaces/acad
+ add_subdirectory(${PROJECT_SOURCE_DIR}/interfaces/acados_c)
+ 
+ # Configure external libraries
+-add_subdirectory(${EXTERNAL_SRC_DIR})
++#add_subdirectory(${EXTERNAL_SRC_DIR})
+ 
+ # Configure examples
+ if(ACADOS_EXAMPLES)
