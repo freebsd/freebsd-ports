@@ -1,6 +1,6 @@
 PORTNAME=	mise
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2025.1.5
+DISTVERSION=	2025.1.6
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -70,7 +70,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		bzip2-sys-0.1.11+1.0.8 \
 		calm_io-0.1.1 \
 		calmio_filters-0.1.0 \
-		cc-1.2.8 \
+		cc-1.2.9 \
 		cfg-if-1.0.0 \
 		cfg_aliases-0.2.1 \
 		chacha20-0.9.1 \
@@ -269,7 +269,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		litrs-0.4.1 \
 		lock_api-0.4.12 \
 		lockfree-object-pool-0.1.6 \
-		log-0.4.24 \
+		log-0.4.22 \
 		logos-0.12.1 \
 		logos-derive-0.12.1 \
 		lua-src-547.0.0 \
@@ -413,7 +413,6 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		serde-1.0.217 \
 		serde-value-0.7.0 \
 		serde_derive-1.0.217 \
-		serde_fmt-1.0.3 \
 		serde_ignored-0.1.10 \
 		serde_json-1.0.135 \
 		serde_regex-1.1.0 \
@@ -450,14 +449,6 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		strum-0.26.3 \
 		strum_macros-0.26.4 \
 		subtle-2.6.1 \
-		sval-2.13.2 \
-		sval_buffer-2.13.2 \
-		sval_dynamic-2.13.2 \
-		sval_fmt-2.13.2 \
-		sval_json-2.13.2 \
-		sval_nested-2.13.2 \
-		sval_ref-2.13.2 \
-		sval_serde-2.13.2 \
 		syn-1.0.109 \
 		syn-2.0.96 \
 		sync_wrapper-1.0.2 \
@@ -533,9 +524,6 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		utf8_iter-1.0.4 \
 		utf8parse-0.2.2 \
 		valuable-0.1.0 \
-		value-bag-1.10.0 \
-		value-bag-serde1-1.10.0 \
-		value-bag-sval2-1.10.0 \
 		vcpkg-0.2.15 \
 		version_check-0.9.5 \
 		versions-6.3.2 \
