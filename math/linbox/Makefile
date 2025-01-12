@@ -11,9 +11,6 @@ WWW=		https://linalg.org/
 LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	dual
 
-# See https://github.com/linbox-team/linbox/issues/320
-BROKEN_FreeBSD_15=	compilation errors with clang19
-
 BUILD_DEPENDS=	fflas-ffpack-config:math/fflas-ffpack
 LIB_DEPENDS=	libgmp.so:math/gmp		\
 		libgivaro.so:math/givaro
@@ -71,4 +68,11 @@ CONFIGURE_ARGS+=--disable-sse --disable-sse2 --disable-sse3 --disable-ssse3	\
 		--disable-avx --disable-avx2
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${COMPILER_TYPE} == clang && ${COMPILER_VERSION} >= 180
+# See https://github.com/linbox-team/linbox/issues/320
+BROKEN=		compilation errors with clang19
+.endif
+
+.include <bsd.port.post.mk>
