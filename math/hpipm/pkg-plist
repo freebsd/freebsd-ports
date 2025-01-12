@@ -34,6 +34,7 @@ include/hpipm_d_ocp_qp_kkt.h
 include/hpipm_d_ocp_qp_red.h
 include/hpipm_d_ocp_qp_res.h
 include/hpipm_d_ocp_qp_sol.h
+include/hpipm_d_ocp_qp_solver.h
 include/hpipm_d_ocp_qp_utils.h
 include/hpipm_d_part_cond.h
 include/hpipm_d_part_cond_qcqp.h
