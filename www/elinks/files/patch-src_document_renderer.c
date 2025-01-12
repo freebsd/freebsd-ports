@@ -1,4 +1,4 @@
---- src/document/renderer.c.orig	2023-12-27 03:03:28 UTC
+--- src/document/renderer.c.orig	2024-12-26 11:02:09 UTC
 +++ src/document/renderer.c
 @@ -415,11 +415,11 @@ struct conv_table *
  }
