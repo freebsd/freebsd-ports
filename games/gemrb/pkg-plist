@@ -56,7 +56,6 @@ share/applications/gemrb.desktop
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README.md
 %%PORTDOCS%%%%DOCSDIR%%/en/CheatKeys.txt
-%%PORTDOCS%%%%DOCSDIR%%/en/CodingStyle.txt
 %%PORTDOCS%%%%DOCSDIR%%/en/Engine/Charcolors.txt
 %%PORTDOCS%%%%DOCSDIR%%/en/Engine/Containers.txt
 %%PORTDOCS%%%%DOCSDIR%%/en/Engine/Doors.txt
@@ -119,6 +118,7 @@ share/applications/gemrb.desktop
 %%PORTDOCS%%%%DOCSDIR%%/en/Tables/wildmag.txt
 %%PORTDOCS%%%%DOCSDIR%%/en/default_ini.txt
 %%PORTDOCS%%%%DOCSDIR%%/en/gemrb_ini.txt
+%%DATADIR%%/GUIScripts/ActionsWindow.py
 %%DATADIR%%/GUIScripts/Actor.py
 %%DATADIR%%/GUIScripts/AutodetectCommon.py
 %%DATADIR%%/GUIScripts/BGCommon.py
@@ -160,6 +160,7 @@ share/applications/gemrb.desktop
 %%DATADIR%%/GUIScripts/MetaClasses.py
 %%DATADIR%%/GUIScripts/PartyReform.py
 %%DATADIR%%/GUIScripts/Portrait.py
+%%DATADIR%%/GUIScripts/PortraitWindow.py
 %%DATADIR%%/GUIScripts/Spellbook.py
 %%DATADIR%%/GUIScripts/TextScreen.py
 %%DATADIR%%/GUIScripts/bg1/Autodetect.py
@@ -322,6 +323,7 @@ share/applications/gemrb.desktop
 %%DATADIR%%/GUIScripts/pst/Maze.py
 %%DATADIR%%/GUIScripts/pst/MessageWindow.py
 %%DATADIR%%/GUIScripts/pst/NewLife.py
+%%DATADIR%%/GUIScripts/pst/PortraitWindow.py
 %%DATADIR%%/GUIScripts/pst/QuitGame.py
 %%DATADIR%%/GUIScripts/pst/Start.py
 %%DATADIR%%/GUIScripts/test/Autodetect.py
@@ -377,6 +379,7 @@ share/applications/gemrb.desktop
 %%DATADIR%%/demo/override/ZHMW1TW.bam
 %%DATADIR%%/demo/override/action.ids
 %%DATADIR%%/demo/override/amntwin.png
+%%DATADIR%%/demo/override/animfps.2da
 %%DATADIR%%/demo/override/ar0100.are
 %%DATADIR%%/demo/override/ar0100.bcs
 %%DATADIR%%/demo/override/ar0100.mos
@@ -518,7 +521,7 @@ share/applications/gemrb.desktop
 %%DATADIR%%/demo/override/riddler.dlg
 %%DATADIR%%/demo/override/ruby.itm
 %%DATADIR%%/demo/override/ruby128.png
-%%DATADIR%%/demo/override/ruby32.png
+%%DATADIR%%/demo/override/ruby32.bam
 %%DATADIR%%/demo/override/scene01.bcs
 %%DATADIR%%/demo/override/script.2da
 %%DATADIR%%/demo/override/scrlbar1.bam
@@ -530,6 +533,7 @@ share/applications/gemrb.desktop
 %%DATADIR%%/demo/override/source/carot.bmp
 %%DATADIR%%/demo/override/source/cav0end.baf
 %%DATADIR%%/demo/override/source/riddler.d
+%%DATADIR%%/demo/override/source/ruby32.png
 %%DATADIR%%/demo/override/source/scene01.baf
 %%DATADIR%%/demo/override/spell_02.ogg
 %%DATADIR%%/demo/override/sprklclr.2da
@@ -574,6 +578,7 @@ share/applications/gemrb.desktop
 %%DATADIR%%/demo/sounds/male001j.ogg
 %%DATADIR%%/demo/sounds/male001k.ogg
 %%DATADIR%%/demo/sounds/wb.ogg
+%%DATADIR%%/demo/tester.cfg
 %%DATADIR%%/minimal/README
 %%DATADIR%%/minimal/chitin.key
 %%DATADIR%%/minimal/data/action.ids
@@ -604,7 +609,6 @@ share/applications/gemrb.desktop
 %%DATADIR%%/minimal/data/trigger.ids
 %%DATADIR%%/minimal/dialog.tlk
 %%DATADIR%%/minimal/fhs.cfg
-%%DATADIR%%/minimal/test.cfg
 %%DATADIR%%/override/bg1/CMakeLists.txt
 %%DATADIR%%/override/bg1/efftext.2da
 %%DATADIR%%/override/bg1/minorglb.vvc
@@ -617,6 +621,7 @@ share/applications/gemrb.desktop
 %%DATADIR%%/override/bg2ee/clearair.2da
 %%DATADIR%%/override/bg2ee/cut17d.bcs
 %%DATADIR%%/override/bg2ee/efftext.2da
+%%DATADIR%%/override/bg2ee/itemtype.2da
 %%DATADIR%%/override/bg2ee/minorglb.vvc
 %%DATADIR%%/override/bg2ee/spells.2da
 %%DATADIR%%/override/how/baldur.bcs
@@ -722,6 +727,7 @@ share/applications/gemrb.desktop
 %%DATADIR%%/unhardcoded/bg1/lightsto.pro
 %%DATADIR%%/unhardcoded/bg1/magesch.2da
 %%DATADIR%%/unhardcoded/bg1/magicmis.pro
+%%DATADIR%%/unhardcoded/bg1/moverate.2da
 %%DATADIR%%/unhardcoded/bg1/mpal256.bmp
 %%DATADIR%%/unhardcoded/bg1/music.2da
 %%DATADIR%%/unhardcoded/bg1/overlay.2da
@@ -945,7 +951,6 @@ share/applications/gemrb.desktop
 %%DATADIR%%/unhardcoded/bg2ee/item_use.2da
 %%DATADIR%%/unhardcoded/bg2ee/itemsnd.2da
 %%DATADIR%%/unhardcoded/bg2ee/itemspec.2da
-%%DATADIR%%/unhardcoded/bg2ee/itemtype.2da
 %%DATADIR%%/unhardcoded/bg2ee/itemuse.2da
 %%DATADIR%%/unhardcoded/bg2ee/k_bn_d.2da
 %%DATADIR%%/unhardcoded/bg2ee/k_bn_e.2da
@@ -1755,6 +1760,7 @@ share/applications/gemrb.desktop
 %%DATADIR%%/unhardcoded/iwd/ssswarm.pro
 %%DATADIR%%/unhardcoded/iwd/sstone.pro
 %%DATADIR%%/unhardcoded/iwd/sstoneh.pro
+%%DATADIR%%/unhardcoded/iwd/stances.2da
 %%DATADIR%%/unhardcoded/iwd/start.2da
 %%DATADIR%%/unhardcoded/iwd/stone.pro
 %%DATADIR%%/unhardcoded/iwd/strengh.pro
@@ -1962,6 +1968,7 @@ share/applications/gemrb.desktop
 %%DATADIR%%/unhardcoded/iwd2/dispel.pro
 %%DATADIR%%/unhardcoded/iwd2/divinh.pro
 %%DATADIR%%/unhardcoded/iwd2/divint.pro
+%%DATADIR%%/unhardcoded/iwd2/dmginfo.2da
 %%DATADIR%%/unhardcoded/iwd2/dsclass.2da
 %%DATADIR%%/unhardcoded/iwd2/dspell.pro
 %%DATADIR%%/unhardcoded/iwd2/dspellh.pro
@@ -1971,6 +1978,7 @@ share/applications/gemrb.desktop
 %%DATADIR%%/unhardcoded/iwd2/effects.ids
 %%DATADIR%%/unhardcoded/iwd2/electrh.pro
 %%DATADIR%%/unhardcoded/iwd2/electrh.vvc
+%%DATADIR%%/unhardcoded/iwd2/eloop.pro
 %%DATADIR%%/unhardcoded/iwd2/emotion.pro
 %%DATADIR%%/unhardcoded/iwd2/enchah.pro
 %%DATADIR%%/unhardcoded/iwd2/enchan.pro
@@ -2098,6 +2106,7 @@ share/applications/gemrb.desktop
 %%DATADIR%%/unhardcoded/iwd2/msumm5h.pro
 %%DATADIR%%/unhardcoded/iwd2/msumm6h.pro
 %%DATADIR%%/unhardcoded/iwd2/msumm7h.pro
+%%DATADIR%%/unhardcoded/iwd2/mswarm.pro
 %%DATADIR%%/unhardcoded/iwd2/mswordh.pro
 %%DATADIR%%/unhardcoded/iwd2/mtouchh.pro
 %%DATADIR%%/unhardcoded/iwd2/necroh.pro
@@ -2541,6 +2550,7 @@ share/applications/gemrb.desktop
 %%DATADIR%%/unhardcoded/pst/spscoric.pro
 %%DATADIR%%/unhardcoded/pst/sshadow.pro
 %%DATADIR%%/unhardcoded/pst/sshadow.spl
+%%DATADIR%%/unhardcoded/pst/stances.2da
 %%DATADIR%%/unhardcoded/pst/start.2da
 %%DATADIR%%/unhardcoded/pst/states.2da
 %%DATADIR%%/unhardcoded/pst/stone.pro
