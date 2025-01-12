@@ -100,7 +100,7 @@ do-build-EXAMPLES-on:
 do-install:
 	@${ECHO} "*** Installation of gprbuild"
 	(cd ${WRKSRC} &&	\
-	${SETENV} ${MAKE_ENV:C|PATH=|PATH=${WRKSRC}/bootstrap/bin:|} ${FAKEROOT}	\
+	${SETENVI} ${WRK_ENV} ${MAKE_ENV:C|PATH=|PATH=${WRKSRC}/bootstrap/bin:|} ${FAKEROOT} \
 	${MAKE_CMD} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${INSTALL_TARGET} )
 .for p in ${P2STRIP}
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/gnat${GCC_VER}/${p}
