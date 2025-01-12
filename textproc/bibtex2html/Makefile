@@ -30,4 +30,10 @@ PDFDOCS_USE=	TEX=latex:build
 PDFDOCS_CONFIGURE_ENABLE=	doc
 PDFDOCS_INSTALL_TARGET=	install install-doc
 
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == powerpc
+USE_BINUTILS=	yes
+.endif
+
 .include <bsd.port.mk>
