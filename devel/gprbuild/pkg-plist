@@ -52,6 +52,7 @@ gnat%%GCC_VER%%/share/gprconfig/fortran.xml
 gnat%%GCC_VER%%/share/gprconfig/gnat.xml
 gnat%%GCC_VER%%/share/gprconfig/gprconfig.xsd
 gnat%%GCC_VER%%/share/gprconfig/linker.xml
+gnat%%GCC_VER%%/share/gprconfig/morello-vx7r2.xml
 gnat%%GCC_VER%%/share/gprconfig/nocompiler.xml
 gnat%%GCC_VER%%/share/gprconfig/ppc-vx6.xml
 gnat%%GCC_VER%%/share/gprconfig/ppc-vx653.xml
