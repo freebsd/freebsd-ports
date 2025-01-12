@@ -1,11 +1,10 @@
 # Establish Ada-capable compiler as a build dependency
-# To change default compiler, define ADA_DEFAULT in make.conf
 #
 # Feature:      ada
 # Usage:        USES=ada:ARGS
 # Valid ARGS:   [<version>],[run]
 #
-# version	The chooseable versions are 6 (default), 12 or 13
+# version	The chooseable versions are 6 , 12 (default) or 13
 #
 # run		Add run depends
 #
