@@ -1,7 +1,6 @@
 PORTNAME=	gurk-rs
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.4.1
-PORTREVISION=	11
+DISTVERSION=	0.6.0
 CATEGORIES=	net-im
 
 MAINTAINER=	bsd@orsolic.org
@@ -11,8 +10,11 @@ WWW=		https://github.com/boxdot/gurk-rs
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE-AGPL-3.0
 
-BUILD_DEPENDS=	protoc:devel/protobuf
-USES=		cargo
+BUILD_DEPENDS=	gmake:devel/gmake \
+		protoc:devel/protobuf
+
+USES=		cargo perl5
+USE_PERL5=	build
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	boxdot
