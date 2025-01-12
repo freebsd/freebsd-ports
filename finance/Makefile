@@ -20,6 +20,7 @@
     SUBDIR += aqbanking
     SUBDIR += beancount
     SUBDIR += beangulp
+    SUBDIR += beanquery
     SUBDIR += beanie
     SUBDIR += chiapos
     SUBDIR += electrs
