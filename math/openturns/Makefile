@@ -1,7 +1,6 @@
 PORTNAME=	openturns
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.23
-PORTREVISION=	6
+DISTVERSION=	1.24
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -98,5 +97,7 @@ PORTEXAMPLES=		*
 
 post-install:
 	@${RM} -r ${STAGEDIR}${DOCSDIR}
+
+# tests as of 1.24: 99% tests passed, 1 tests failed out of 537, see https://github.com/openturns/openturns/issues/2862
 
 .include <bsd.port.mk>
