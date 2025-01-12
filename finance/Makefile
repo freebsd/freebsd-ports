@@ -19,6 +19,7 @@
     SUBDIR += alkimia
     SUBDIR += aqbanking
     SUBDIR += beancount
+    SUBDIR += beangulp
     SUBDIR += beanie
     SUBDIR += chiapos
     SUBDIR += electrs
