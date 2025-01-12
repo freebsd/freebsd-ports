@@ -1,6 +1,6 @@
 PORTNAME=	stringzilla
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.11.2
+DISTVERSION=	3.11.3
 CATEGORIES=	devel python
 #MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -27,6 +27,8 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	ashvardanian
 GH_PROJECT=	StringZilla
 
+TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
+
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/stringzilla${PYTHON_EXT_SUFFIX}.so
 
@@ -34,5 +36,6 @@ do-test:
 	@cd ${TEST_WRKSRC} && ${SETENV} ${TEST_ENV} pytest scripts/test.py
 
 # tests as of 3.11.2: 10195 passed in 30.47s
+# tests fail to run for 3.11.3, see https://github.com/ashvardanian/StringZilla/issues/210
 
 .include <bsd.port.mk>
