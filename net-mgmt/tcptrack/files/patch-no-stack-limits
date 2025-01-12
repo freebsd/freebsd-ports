@@ -158,3 +158,18 @@ too low).
 +	if (pthread_create(&displayer_tid, NULL, displayer_thread_func, this) != 0)
  		throw GenericError("pthread_create() returned an error.");
  
+@@ -309,11 +303,11 @@
+ 
+ 		move(row,58);
+ 		if( ic->getIdleSeconds() < 60 )
+-			printw("%ds",ic->getIdleSeconds());
++			printw("%ds",(int)(ic->getIdleSeconds()));
+ 		else if( ic->getIdleSeconds() > 59 ) 
+-			printw("%dm",ic->getIdleSeconds()/60);
++			printw("%dm",(int)(ic->getIdleSeconds())/60);
+ 		else if( ic->getIdleSeconds() > 3559 )
+-			printw("%dh",ic->getIdleSeconds()/3600);
++			printw("%dh",(int)(ic->getIdleSeconds())/3600);
+ 
+ 		move(row,63);
+ 		if( ic->activityToggle() )
