@@ -1,5 +1,6 @@
 PORTNAME=	wireshark
 DISTVERSION=	4.4.3
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	https://1.na.dl.wireshark.org/src/ \
 		https://1.eu.dl.wireshark.org/src/ \
@@ -17,10 +18,11 @@ WWW=		https://www.wireshark.org/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libgpg-error.so:security/libgpg-error \
+LIB_DEPENDS=	libpcre2-8.so:devel/pcre2 \
 		libgcrypt.so:security/libgcrypt \
 		liblz4.so:archivers/liblz4 \
 		libnghttp2.so:www/libnghttp2 \
+		libnghttp3.so:www/libnghttp3 \
 		libbrotlidec.so:archivers/brotli \
 		libsnappy.so:archivers/snappy \
 		libcares.so:dns/c-ares \
@@ -31,7 +33,7 @@ FLAVORS=	default nox11
 FLAVOR?=	${FLAVORS:[1]}
 nox11_PKGNAMESUFFIX=	-nox11
 
-USES=		cmake compiler:c++11-lang cpe gettext-runtime gnome \
+USES=		cmake compiler:c++11-lang cpe gettext-runtime:build gnome \
 		localbase pathfix perl5 pkgconfig python ssl tar:xz
 USE_GNOME=	glib20 libxml2
 USE_PERL5=	build
@@ -39,7 +41,8 @@ USE_LDCONFIG=	yes
 
 CONFLICTS_INSTALL=	wireshark-lite tshark tshark-lite
 
-CMAKE_OFF=	ENABLE_ILBC ENABLE_MINIZIP ENABLE_SBC
+CMAKE_OFF=	ENABLE_ILBC ENABLE_MINIZIP ENABLE_SBC ENABLE_SINSP \
+		ENABLE_AMRNB ENABLE_MINIZIPNG ENABLE_ZLIBNG
 CMAKE_ARGS=	-DCMAKE_DISABLE_FIND_PACKAGE_DOXYGEN:BOOL=True \
 		-DCMAKE_DISABLE_FIND_PACKAGE_Git:BOOL=True
 
@@ -80,7 +83,7 @@ GSSAPI_NONE_CONFIGURE_ENV_OFF=	KRB5_CONFIG=${KRB5CONFIG}
 GSSAPI_NONE_CMAKE_BOOL=	ENABLE_KERBEROS
 
 GUI_USES=		desktop-file-utils shared-mime-info qt:6
-GUI_USE=		qt=5compat,base,multimedia,svg,tools
+GUI_USE=		qt=5compat,base,multimedia,tools
 GUI_CONFIGURE_ENV=	PATH="${PATH}:${QT_BINDIR}"
 GUI_MAKE_ENV=		PATH="${PATH}:${QT_BINDIR}"
 GUI_CMAKE_BOOL=		BUILD_wireshark
