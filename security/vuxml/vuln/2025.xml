@@ -1,3 +1,35 @@
+  <vuln vid="7624c151-d116-11ef-b232-b42e991fc52e">
+    <topic>asterisk - path traversal</topic>
+    <affects>
+      <package>
+	<name>asterisk18</name>
+	<range><lt>18.26.20</lt></range>
+      </package>
+      <package>
+	<name>asterisk20</name>
+	<range><lt>20.11.0</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>cve@mitre.org reports:</p>
+	<blockquote cite="https://gist.github.com/hyp164D1/e7c0f44ffb38c00320aa1a6d98bee616">
+	  <p>An issue in the action_listcategories() function of Sangoma Asterisk
+	v22/22.0.0/22.0.0-rc1/22.0.0-rc2/22.0.0-pre1 allows attackers to
+	execute a path traversal.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2024-53566</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2024-53566</url>
+    </references>
+    <dates>
+      <discovery>2024-12-02</discovery>
+      <entry>2025-01-12</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="4d79fd1a-cc93-11ef-abed-08002784c58d">
     <topic>redis,valkey -- Denial-of-service valnerability due to malformed ACL selectors</topic>
     <affects>
