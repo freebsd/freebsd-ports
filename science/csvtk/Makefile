@@ -1,11 +1,12 @@
 PORTNAME=	csvtk
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.31.0
+DISTVERSION=	0.32.0
 CATEGORIES=	science
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Cross-platform and ultrafast toolkit for CSV/TSV processing
-WWW=		https://bioinf.shenwei.me/csvtk/
+WWW=		https://bioinf.shenwei.me/csvtk/ \
+		https://github.com/shenwei356/csvtk/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
