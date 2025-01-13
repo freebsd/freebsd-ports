@@ -1,6 +1,6 @@
 PORTNAME=	wstunnel
 DISTVERSIONPREFIX=	v
-DISTVERSION=	10.1.7
+DISTVERSION=	10.1.8
 CATEGORIES=	net
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -52,7 +52,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		bumpalo-3.16.0 \
 		byteorder-1.5.0 \
 		bytes-1.9.0 \
-		cc-1.2.3 \
+		cc-1.2.4 \
 		cexpr-0.6.0 \
 		cfg-if-1.0.0 \
 		cfg_aliases-0.2.1 \
@@ -217,7 +217,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		rand_core-0.6.4 \
 		rcgen-0.13.1 \
 		redox_syscall-0.3.5 \
-		redox_syscall-0.5.7 \
+		redox_syscall-0.5.8 \
 		regex-1.11.1 \
 		regex-automata-0.1.10 \
 		regex-automata-0.4.9 \
@@ -230,13 +230,13 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		rusticata-macros-4.1.0 \
 		rustix-0.38.42 \
 		rustls-0.21.12 \
-		rustls-0.23.19 \
+		rustls-0.23.20 \
 		rustls-native-certs-0.6.3 \
 		rustls-native-certs-0.7.3 \
 		rustls-native-certs-0.8.1 \
 		rustls-pemfile-1.0.4 \
 		rustls-pemfile-2.2.0 \
-		rustls-pki-types-1.10.0 \
+		rustls-pki-types-1.10.1 \
 		rustls-webpki-0.101.7 \
 		rustls-webpki-0.102.8 \
 		ryu-1.0.18 \
