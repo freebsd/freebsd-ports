@@ -856,6 +856,7 @@ share/man/man7/gitworkflows.7.gz
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.46.2.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.47.0.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.47.1.txt
+%%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.48.0.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.2.0.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.2.1.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.2.2.txt
@@ -1350,6 +1351,7 @@ share/emacs/site-lisp/git/git.el
 %%CONTRIB%%share/git-core/contrib/buildsystems/Generators/Vcxproj.pm
 %%CONTRIB%%share/git-core/contrib/buildsystems/engine.pl
 %%CONTRIB%%share/git-core/contrib/buildsystems/generate
+%%CONTRIB%%share/git-core/contrib/buildsystems/git-version.in
 %%CONTRIB%%share/git-core/contrib/buildsystems/parse.pl
 %%CONTRIB%%share/git-core/contrib/coccinelle/README
 %%CONTRIB%%share/git-core/contrib/coccinelle/array.cocci
@@ -1379,6 +1381,7 @@ share/emacs/site-lisp/git/git.el
 %%CONTRIB%%share/git-core/contrib/completion/git-completion.tcsh
 %%CONTRIB%%share/git-core/contrib/completion/git-completion.zsh
 %%CONTRIB%%share/git-core/contrib/completion/git-prompt.sh
+%%CONTRIB%%share/git-core/contrib/completion/meson.build
 %%CONTRIB%%share/git-core/contrib/contacts/Makefile
 %%CONTRIB%%share/git-core/contrib/contacts/git-contacts
 %%CONTRIB%%share/git-core/contrib/contacts/git-contacts.txt
@@ -1426,6 +1429,7 @@ share/emacs/site-lisp/git/git.el
 %%CONTRIB%%share/git-core/contrib/hooks/setgitperms.perl
 %%CONTRIB%%share/git-core/contrib/hooks/update-paranoid
 %%CONTRIB%%share/git-core/contrib/long-running-filter/example.pl
+%%CONTRIB%%share/git-core/contrib/meson.build
 %%CONTRIB%%share/git-core/contrib/mw-to-git/.gitignore
 %%CONTRIB%%share/git-core/contrib/mw-to-git/.perlcriticrc
 %%CONTRIB%%share/git-core/contrib/mw-to-git/Git/Mediawiki.pm
@@ -1515,4 +1519,3 @@ share/git-core/templates/info/exclude
 %%NLS%%share/locale/vi/LC_MESSAGES/git.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/git.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/git.mo
-@dir share/git-core/templates/branches
