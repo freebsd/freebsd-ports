@@ -43,7 +43,7 @@ BOOKE_CFLAGS=	-DBOOKE
 CONFIGURE_SCRIPT=	Configure
 CONFIGURE_ARGS=		-n freebsd
 CONFIGURE_ENV=		FREEBSD_SYS="${SRC_BASE}/sys" \
-			LSOF_CC="${CC} -idirafter ${SRC_BASE}"
+			LSOF_CC="${CC}"
 
 # GCC needs -lzfs -lzpool for reasons unknown.  If someone can
 # figure out why, I (ler) am all ears.
