@@ -6,6 +6,8 @@ lib/io.elementary.code/plugins/detect-indent/detect-indent.plugin
 lib/io.elementary.code/plugins/detect-indent/libdetect-indent.so
 lib/io.elementary.code/plugins/editorconfig/editorconfig.plugin
 lib/io.elementary.code/plugins/editorconfig/libeditorconfig.so
+lib/io.elementary.code/plugins/fuzzy-search/fuzzy-search.plugin
+lib/io.elementary.code/plugins/fuzzy-search/libfuzzy-search.so
 lib/io.elementary.code/plugins/highlight-word-selection/highlight-word-selection.plugin
 lib/io.elementary.code/plugins/highlight-word-selection/libhighlight-word-selection.so
 lib/io.elementary.code/plugins/markdown-actions/libmarkdown-actions.so
