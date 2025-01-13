@@ -1,5 +1,5 @@
-TIMESTAMP = 1724127020
-SHA256 (go/deskutils_pet/pet-v0.9.0/v0.9.0.mod) = 86997420f842b90fa0d71428d13183156fe9eed250f898ed4f0357475bac3faf
-SIZE (go/deskutils_pet/pet-v0.9.0/v0.9.0.mod) = 1916
-SHA256 (go/deskutils_pet/pet-v0.9.0/v0.9.0.zip) = 89b8a883ed4ffb764c861167d11dec465a4f06bf02145588c54d626f0f5add62
-SIZE (go/deskutils_pet/pet-v0.9.0/v0.9.0.zip) = 2778751
+TIMESTAMP = 1736751850
+SHA256 (go/deskutils_pet/pet-v1.0.1/v1.0.1.mod) = d1e6f1e58299eaebb9a95edc60c1d6da11b44ccea9e0da162534375db7218477
+SIZE (go/deskutils_pet/pet-v1.0.1/v1.0.1.mod) = 1556
+SHA256 (go/deskutils_pet/pet-v1.0.1/v1.0.1.zip) = b4605147a20da02e3f69a2d91fb2eaf0171b6f3965cb38d0cac8b8b8c20cb685
+SIZE (go/deskutils_pet/pet-v1.0.1/v1.0.1.zip) = 2716983
