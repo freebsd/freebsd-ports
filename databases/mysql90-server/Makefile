@@ -11,6 +11,9 @@ WWW=		https://www.mysql.com/
 
 LICENSE=		GPLv2
 
+DEPRECATED=	MySQL 9.0 is no longer supported by the vendor
+EXPIRATION_DATE=2025-01-31
+
 # MySQL8.2+ supports only 64-bit platforms
 # Review list after 13.x EoL
 NOT_FOR_ARCHS= armv6 armv7 i386 powerpc
