@@ -1,11 +1,12 @@
 PORTNAME=	kahip
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.16
+DISTVERSION=	3.17
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Karlsruhe high quality graph partitioning
-WWW=		https://kahip.github.io/
+WWW=		https://kahip.github.io/ \
+		https://github.com/KaHIP/KaHIP
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

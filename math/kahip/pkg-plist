@@ -1,4 +1,5 @@
 bin/dspac
+bin/edge_evaluator
 bin/edge_list_to_metis_graph
 bin/edge_partitioning
 bin/evaluator
