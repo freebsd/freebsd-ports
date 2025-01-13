@@ -1,6 +1,6 @@
 PORTNAME=	tk
 DISTVERSION=	${TK_VERSION}${TK_RC}
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	SF/tcl/Tcl/${TK_VERSION}
 PKGNAMESUFFIX=	${SHORT_TK_VER}
@@ -91,8 +91,8 @@ post-patch:
 
 post-install:
 	# Make sure users of USES=tk:90 are able to look up the library
-	${LN} -fs libtk${TK_VER}.so ${STAGEDIR}${PREFIX}/lib/libtk${PKGNAMESUFFIX}.so
-	${LN} -fs libtk${PKGNAMESUFFIX}.so ${STAGEDIR}${PREFIX}/lib/libtk${PKGNAMESUFFIX}.so.1
+	${LN} -fs lib${TCL_PKG_LIB_PREFIX}tk${TK_VER}.so ${STAGEDIR}${PREFIX}/lib/libtk${PKGNAMESUFFIX}.so
+	${LN} -fs lib${TCL_PKG_LIB_PREFIX}tk${TK_VER}.so ${STAGEDIR}${PREFIX}/lib/libtk${PKGNAMESUFFIX}.so.1
 
 do-test:
 	cd ${WRKSRC} && ${MAKE} test
