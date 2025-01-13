@@ -1,6 +1,6 @@
 PORTNAME=	vfc
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.1.4
+DISTVERSION=	2.1.5
 CATEGORIES=	misc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -20,8 +20,8 @@ USES=		cmake:testing compiler:c++14-lang
 USE_GITHUB=	yes
 GH_ACCOUNT=	akb825
 GH_PROJECT=	VertexFormatConvert
-GH_TUPLE=	g-truc:glm:bf71a834948186f4097caa076cd2663c69a10e1e:g_truc_glm/lib/glm \
-		Tencent:rapidjson:a95e013:Tencent_rapidjson/tool/rapidjson
+GH_TUPLE=	g-truc:glm:0af55cc:g_truc_glm/lib/glm \
+		Tencent:rapidjson:858451e:Tencent_rapidjson/tool/rapidjson
 
 CMAKE_ON=	VFC_SHARED
 CMAKE_OFF=	VFC_BUILD_TESTS
@@ -29,5 +29,7 @@ CMAKE_TESTING_ON=	VFC_BUILD_TESTS
 
 CXXFLAGS+=	${CXXFLAGS_${ARCH}}
 CXXFLAGS_armv7=	-mfpu=neon-fp16
+
+# 100% tests passed, 0 tests failed out of 4
 
 .include <bsd.port.mk>
