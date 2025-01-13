@@ -1,5 +1,5 @@
 PORTNAME=	cmap
-DISTVERSION=	0.3.0
+DISTVERSION=	0.5.0
 CATEGORIES=	misc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -28,10 +28,12 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}bokeh>0:www/py-bokeh@${PY_FLAVOR} \
 		# TEST_DEPENDS also needs napari, pygfx, viscm
 
 USES=		python
-USE_PYTHON=	pep517 autoplist pytest # 3 tests fail because the $DISPLAY variable is missing
+USE_PYTHON=	pep517 autoplist pytest
 
 NO_ARCH=	yes
 
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
+
+# tests as of 0.5.0: 3 failed, 214 passed, 3 skipped in 160.75s (0:02:40) - because the $DISPLAY variable is missing
 
 .include <bsd.port.mk>
