@@ -249,6 +249,7 @@ bin/yt-dlp-devel
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/drooble.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/dropbox.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/dropout.py
+%%PYTHON_SITELIBDIR%%/yt_dlp/extractor/drtalks.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/drtuber.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/drtv.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/dtube.py
@@ -663,6 +664,7 @@ bin/yt-dlp-devel
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/playwire.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/pluralsight.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/plutotv.py
+%%PYTHON_SITELIBDIR%%/yt_dlp/extractor/plvideo.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/podbayfm.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/podchaser.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/podomatic.py
@@ -968,7 +970,6 @@ bin/yt-dlp-devel
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/viki.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/vimeo.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/vimm.py
-%%PYTHON_SITELIBDIR%%/yt_dlp/extractor/vine.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/viously.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/viqeo.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/viu.py
