@@ -168,7 +168,7 @@ index ab0a241b937..3743753504c 100644
  
  # a bind9 dlz module giving access to the Samba DNS SAM
 -bld.SAMBA_LIBRARY('dlz_bind9_10',
-+for bind_version in (910, 911, 912, 914, 916, 918):
++for bind_version in (910, 911, 912, 914, 916, 918, 920):
 +    string_version='%d_%d' % (bind_version // 100, bind_version % 100)
 +    bld.SAMBA_LIBRARY('dlz_bind%s' % (string_version),
                    source='dlz_bind9.c',
@@ -236,7 +236,7 @@ index ab0a241b937..3743753504c 100644
  bld.SAMBA_LIBRARY('dlz_bind9_for_torture',
                    source='dlz_bind9.c',
 -                  cflags='-DBIND_VERSION_9_16',
-+                  cflags='-DBIND_VERSION=918',
++                  cflags='-DBIND_VERSION=920',
                    private_library=True,
                    deps='samba-hostconfig samdb-common gensec popt dnsserver_common',
                    enabled=bld.AD_DC_BUILD_IS_ENABLED())
@@ -283,7 +283,7 @@ index 0b40e03e370..bf7415ff88a 100644
  		subsystem='smbtorture',
  		init_function='torture_bind_dns_init',
 -		cflags='-DBIND_VERSION_9_16',
-+		cflags='-DBIND_VERSION=918',
++		cflags='-DBIND_VERSION=920',
  		deps='torture talloc torturemain dlz_bind9_for_torture',
  		internal_module=True
  		)
