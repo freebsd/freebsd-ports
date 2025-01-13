@@ -17,7 +17,7 @@ bin/llvm-cov-devel
 bin/llvm-ctxprof-util-devel
 bin/llvm-cvtres-devel
 bin/llvm-cxxmap-devel
-%%CLANG%%bin/llvm-debuginfo-analyzer-devel
+bin/llvm-debuginfo-analyzer-devel
 bin/llvm-debuginfod-devel
 bin/llvm-debuginfod-find-devel
 bin/llvm-diff-devel
@@ -242,7 +242,7 @@ llvm-devel/bin/llvm-cvtres
 llvm-devel/bin/llvm-cxxdump
 llvm-devel/bin/llvm-cxxfilt
 llvm-devel/bin/llvm-cxxmap
-%%CLANG%%llvm-devel/bin/llvm-debuginfo-analyzer
+llvm-devel/bin/llvm-debuginfo-analyzer
 llvm-devel/bin/llvm-debuginfod
 llvm-devel/bin/llvm-debuginfod-find
 llvm-devel/bin/llvm-diff
