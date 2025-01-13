@@ -1,5 +1,5 @@
 PORTNAME=	libcdio
-DISTVERSION=	2.1.1
+DISTVERSION=	2.2.0
 CATEGORIES=	sysutils
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/${DISTVERSION}/
 
