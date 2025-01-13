@@ -1,12 +1,12 @@
 PORTNAME=	spirv-llvm-translator
 DISTVERSIONPREFIX=	v
 DISTVERSION=	${DISTVERSION_${FLAVOR}}
-DISTVERSION_llvm19=	19.1.3
-DISTVERSION_llvm18=	18.1.8
-DISTVERSION_llvm17=	17.0.8
-DISTVERSION_llvm16=	16.0.8
-DISTVERSION_llvm15=	15.0.8
-DISTVERSION_llvm14=	14.0.8
+DISTVERSION_llvm19=	19.1.4
+DISTVERSION_llvm18=	18.1.9
+DISTVERSION_llvm17=	17.0.9
+DISTVERSION_llvm16=	16.0.9
+DISTVERSION_llvm15=	15.0.9
+DISTVERSION_llvm14=	14.0.9
 DISTVERSION_llvm13=	13.0.1
 DISTVERSION_llvm12=	12.0.1
 DISTVERSION_llvm11=	11.0.1
@@ -33,6 +33,8 @@ GH_PROJECT=	SPIRV-LLVM-Translator
 .if !defined(FLAVOR) || ${FLAVOR} == llvm19
 # https://github.com/KhronosGroup/SPIRV-LLVM-Translator/issues/2415#issuecomment-2358890668
 GH_TUPLE=	KhronosGroup:SPIRV-Headers:1.5.4.raytracing.fixed-350-gb73e168:headers/projects/SPIRV-Headers
+.elif ${FLAVOR} == llvm16 || ${FLAVOR} == llvm14
+GH_TUPLE=	KhronosGroup:SPIRV-Headers:1.5.4.raytracing.fixed-390-g2b2e05e:headers/projects/SPIRV-Headers
 .else
 GH_TUPLE=	${${FLAVOR:S/llvm//}<13:?:KhronosGroup:SPIRV-Headers:1.5.4.raytracing.fixed-332-g1c6bb27:headers/projects/SPIRV-Headers}
 .endif
