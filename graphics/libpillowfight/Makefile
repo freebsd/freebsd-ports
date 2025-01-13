@@ -1,5 +1,5 @@
 PORTNAME=	libpillowfight
-DISTVERSION=	0.3.0
+DISTVERSION=	0.3.1
 CATEGORIES=	graphics python
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -14,11 +14,12 @@ TEST_DEPENDS=	gmake:devel/gmake \
 		tox:devel/py-tox@${PY_FLAVOR}
 
 USES=		cmake python:test
+USE_LDCONFIG=	yes
+
 USE_GITLAB=	yes
 GL_SITE=	https://gitlab.gnome.org/World
 GL_ACCOUNT=	OpenPaperwork
-GL_TAGNAME=	dae21f97de872e4ad2e94f1b0fc53302a00259fd
-USE_LDCONFIG=	yes
+GL_TAGNAME=	254018aad15710af6e9bdc5eb61aaa7dbac6f747
 
 PLIST_FILES=	include/pillowfight/pillowfight.h \
 		include/pillowfight/util.h \
