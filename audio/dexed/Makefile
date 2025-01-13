@@ -11,6 +11,8 @@ WWW=		https://asb2m10.github.io/dexed/
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_armv7=	compilation fails due to the 'mb' variable conflict, pending https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=283492
+
 BUILD_DEPENDS=	libX11>0:x11/libX11 \
 		libXcursor>0:x11/libXcursor \
 		libXinerama>0:x11/libXinerama \
@@ -25,7 +27,7 @@ USES=		cmake dos2unix localbase:ldflags pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	asb2m10
 
-GH_TUPLE= \
+GH_TUPLE=	\
 		steinbergmedia:vst3sdk:e9895dc9ef20bedd93a0fde5ad664bc8b56d4338:steinbergmedia_vst3sdk/libs/vst3sdk \
 		surge-synthesizer:tuning-library:601c0eabff31fff8a543b49d3e48073f338f413c:surge_synthesizer_tuning_library/libs/tuning-library \
 		surge-synthesizer:surgesynthteam_tuningui:54f9a74cd55cdb33fb4d32d706067626857cfc75:surge_synthesizer_surgesynthteam_tuningui/libs/surgesynthteam_tuningui \
