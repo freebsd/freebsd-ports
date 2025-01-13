@@ -10,7 +10,7 @@ WWW=		https://github.com/tsl0922/ttyd
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	xxd:editors/vim
+BUILD_DEPENDS=	xxd:sysutils/xxd
 LIB_DEPENDS=	libjson-c.so:devel/json-c \
 		libuv.so:devel/libuv \
 		libwebsockets.so:net/libwebsockets
