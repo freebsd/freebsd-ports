@@ -1,10 +1,11 @@
 PORTNAME=	nanopb
-DISTVERSION=	0.4.9
+DISTVERSION=	0.4.9.1
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Protocol Buffers with small code size
-WWW=		https://jpa.kapsi.fi/nanopb/
+WWW=		https://jpa.kapsi.fi/nanopb/ \
+		https://github.com/nanopb/nanopb
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
