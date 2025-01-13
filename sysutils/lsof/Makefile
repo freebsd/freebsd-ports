@@ -1,9 +1,8 @@
 # note: If someone has a fix for a particular ARCH please feel free
 #       to commit it.  I (ler) don't have access to all the ARCH's
-
 PORTNAME=	lsof
 DISTVERSION=	4.99.4
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	8
 CATEGORIES=	sysutils
 
@@ -43,7 +42,9 @@ BOOKE_CFLAGS=	-DBOOKE
 CONFIGURE_SCRIPT=	Configure
 CONFIGURE_ARGS=		-n freebsd
 CONFIGURE_ENV=		FREEBSD_SYS="${SRC_BASE}/sys" \
-			LSOF_CC="${CC}"
+			LSOF_CC="${CC}" \
+                        LSOF_OPINC="-idirafter ${SRC_BASE}/sys"
+
 
 # GCC needs -lzfs -lzpool for reasons unknown.  If someone can
 # figure out why, I (ler) am all ears.
