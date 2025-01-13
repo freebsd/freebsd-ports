@@ -1,3 +1,7 @@
-TIMESTAMP = 1707484822
-SHA256 (ESS-24.01.1.tar.gz) = 8780b3bf80b3de0091f67c1275006b4666dc4c10224b002cef9d5e766acd7fde
-SIZE (ESS-24.01.1.tar.gz) = 701216
+TIMESTAMP = 1736769446
+SHA256 (ess-25.01.0.tgz) = f2c839e9b1be6c88602b9e220ca756247a48ef85635c743d9865ad4a396e2ce6
+SIZE (ess-25.01.0.tgz) = 796083
+SHA256 (julia-emacs/refs/heads/master/julia-mode.el) = 301b0f55d77046b617fd67498169bdf8565c5a8d7666c99346473d102f61fcab
+SIZE (julia-emacs/refs/heads/master/julia-mode.el) = 44716
+SHA256 (julia-emacs/refs/heads/master/julia-mode-latexsubs.el) = 8df3be3fe0e262feba2193372d396c30e0632596521ff6bed2f06eb2c6fc9583
+SIZE (julia-emacs/refs/heads/master/julia-mode-latexsubs.el) = 453405
