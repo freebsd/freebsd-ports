@@ -10,6 +10,10 @@ WWW=		https://github.com/vgvassilev/clad
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/License.txt
 
+.if !exists(/usr/include/omp.h)
+BROKEN=		requires OpenMP support that is missing on this architecture
+.endif
+
 TEST_DEPENDS=	kokkos>0:devel/kokkos
 
 USES=		cmake:testing llvm:16,build,run localbase
