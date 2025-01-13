@@ -29,8 +29,10 @@ GH_TAGNAME=	2024.10.09
 
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 
+BINARY_ALIAS=	python3=${PYTHON_CMD} # for tests
+
 NO_ARCH=	yes
 
-# tests as of 2024.10.09: 22 failed, 520 passed, 31 skipped, 1 xpassed in 609.35s (0:10:09), see https://github.com/wntrblm/nox/issues/820
+# tests as of 2024.10.09: 542 passed, 31 skipped, 1 xpassed in 52.39s
 
 .include <bsd.port.mk>
