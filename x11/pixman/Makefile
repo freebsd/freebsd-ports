@@ -58,6 +58,9 @@ MESON_ARGS+=	-Dvmx=enabled
 .else
 MESON_ARGS+=	-Dvmx=disabled
 .endif
+.if ${ARCH} == powerpc
+MESON_ARGS+=	-Dopenmp=disabled
+.endif
 .if ${ARCH} == riscv64
 MESON_ARGS+=	-Drvv=enabled
 .else
