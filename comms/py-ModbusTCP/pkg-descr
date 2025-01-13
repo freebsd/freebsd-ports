@@ -1,0 +1,2 @@
+A simple Modbus/TCP client library for Python. pyModbusTCP is pure Python
+code without any extension or external module dependency.
