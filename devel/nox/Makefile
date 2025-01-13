@@ -21,12 +21,16 @@ RUN_DEPENDS=	${PY_DEPENDS} \
 		${PY_TOMLI}
 
 USES=		python
-USE_PYTHON=	pep517 autoplist pytest # 37 tests fail, see https://github.com/wntrblm/nox/issues/820
+USE_PYTHON=	pep517 autoplist pytest
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	wntrblm
-GH_TAGNAME=	2024.04.15
+GH_TAGNAME=	2024.10.09
+
+TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 
 NO_ARCH=	yes
+
+# tests as of 2024.10.09: 22 failed, 520 passed, 31 skipped, 1 xpassed in 609.35s (0:10:09), see https://github.com/wntrblm/nox/issues/820
 
 .include <bsd.port.mk>
