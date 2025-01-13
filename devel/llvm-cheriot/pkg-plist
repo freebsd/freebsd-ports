@@ -68,7 +68,7 @@ bin/llvm-xray%%COMMAND_SUFFIX%%
 bin/opt%%COMMAND_SUFFIX%%
 bin/sancov%%COMMAND_SUFFIX%%
 bin/amdgpu-arch%%COMMAND_SUFFIX%%
-%%CLANG%%bin/llvm-debuginfo-analyzer%%COMMAND_SUFFIX%%
+bin/llvm-debuginfo-analyzer%%COMMAND_SUFFIX%%
 bin/llvm-remarkutil%%COMMAND_SUFFIX%%
 bin/nvptx-arch%%COMMAND_SUFFIX%%
 %%CLANG%%bin/analyze-build%%COMMAND_SUFFIX%%
@@ -175,7 +175,7 @@ llvm%%LLVM_SUFFIX%%/bin/llvm-cvtres
 llvm%%LLVM_SUFFIX%%/bin/llvm-cxxdump
 llvm%%LLVM_SUFFIX%%/bin/llvm-cxxfilt
 llvm%%LLVM_SUFFIX%%/bin/llvm-cxxmap
-%%CLANG%%llvm%%LLVM_SUFFIX%%/bin/llvm-debuginfo-analyzer
+llvm%%LLVM_SUFFIX%%/bin/llvm-debuginfo-analyzer
 llvm%%LLVM_SUFFIX%%/bin/llvm-debuginfod
 llvm%%LLVM_SUFFIX%%/bin/llvm-debuginfod-find
 llvm%%LLVM_SUFFIX%%/bin/llvm-diff
