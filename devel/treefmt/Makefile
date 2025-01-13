@@ -1,6 +1,6 @@
 PORTNAME=	treefmt
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.1.0
+DISTVERSION=	2.1.1
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -58,7 +58,7 @@ GH_TUPLE=	\
 		spf13:cobra:v1.8.1:spf13_cobra/vendor/github.com/spf13/cobra \
 		spf13:pflag:v1.0.5:spf13_pflag/vendor/github.com/spf13/pflag \
 		spf13:viper:v1.19.0:spf13_viper/vendor/github.com/spf13/viper \
-		stretchr:testify:v1.9.0:stretchr_testify/vendor/github.com/stretchr/testify \
+		stretchr:testify:v1.10.0:stretchr_testify/vendor/github.com/stretchr/testify \
 		subosito:gotenv:v1.6.0:subosito_gotenv/vendor/github.com/subosito/gotenv \
 		uber-go:atomic:v1.9.0:uber_go_atomic/vendor/go.uber.org/atomic \
 		uber-go:multierr:v1.9.0:uber_go_multierr/vendor/go.uber.org/multierr
