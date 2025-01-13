@@ -219,7 +219,6 @@
     SUBDIR += gogglesmm
     SUBDIR += gonic
     SUBDIR += goobox
-    SUBDIR += gqradio
     SUBDIR += gramofile
     SUBDIR += grip
     SUBDIR += gsequencer

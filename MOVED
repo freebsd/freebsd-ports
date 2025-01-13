@@ -4015,3 +4015,4 @@ devel/py-DateTime||2025-01-11|Remove leaf zope ports that have no sense in absen
 devel/py-zclockfile|devel/py-zc.lockfile|2025-01-11|Switch consumers to latest package version
 devel/elixir-hex||2025-01-11|No longer used by any consumers, newer versions are expected to be installed per-user by mix
 devel/elixir-make||2025-01-11|No longer used by any consumers, newer versions are expected to be installed per-user by mix
+audio/gqradio||2025-01-13|Has expired: BKTR devices are not supported anymore
