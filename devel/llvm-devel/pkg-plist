@@ -420,6 +420,7 @@ llvm-devel/bin/verify-uselistorder
 %%EXTRAS%%llvm-devel/include/clang-tidy/bugprone/InaccurateEraseCheck.h
 %%EXTRAS%%llvm-devel/include/clang-tidy/bugprone/IncDecInConditionsCheck.h
 %%EXTRAS%%llvm-devel/include/clang-tidy/bugprone/IncorrectEnableIfCheck.h
+%%EXTRAS%%llvm-devel/include/clang-tidy/bugprone/IncorrectEnableSharedFromThisCheck.h
 %%EXTRAS%%llvm-devel/include/clang-tidy/bugprone/IncorrectRoundingsCheck.h
 %%EXTRAS%%llvm-devel/include/clang-tidy/bugprone/InfiniteLoopCheck.h
 %%EXTRAS%%llvm-devel/include/clang-tidy/bugprone/IntegerDivisionCheck.h
@@ -1022,14 +1023,14 @@ llvm-devel/bin/verify-uselistorder
 %%CLANG%%llvm-devel/include/clang/Basic/BuiltinsRISCV.inc
 %%CLANG%%llvm-devel/include/clang/Basic/BuiltinsRISCVVector.def
 %%CLANG%%llvm-devel/include/clang/Basic/BuiltinsSME.def
+%%CLANG%%llvm-devel/include/clang/Basic/BuiltinsSPIRV.inc
 %%CLANG%%llvm-devel/include/clang/Basic/BuiltinsSVE.def
 %%CLANG%%llvm-devel/include/clang/Basic/BuiltinsSystemZ.def
 %%CLANG%%llvm-devel/include/clang/Basic/BuiltinsVE.def
 %%CLANG%%llvm-devel/include/clang/Basic/BuiltinsVEVL.gen.def
 %%CLANG%%llvm-devel/include/clang/Basic/BuiltinsWebAssembly.def
-%%CLANG%%llvm-devel/include/clang/Basic/BuiltinsX86.def
 %%CLANG%%llvm-devel/include/clang/Basic/BuiltinsX86.inc
-%%CLANG%%llvm-devel/include/clang/Basic/BuiltinsX86_64.def
+%%CLANG%%llvm-devel/include/clang/Basic/BuiltinsX86_64.inc
 %%CLANG%%llvm-devel/include/clang/Basic/BuiltinsXCore.def
 %%CLANG%%llvm-devel/include/clang/Basic/CFProtectionOptions.def
 %%CLANG%%llvm-devel/include/clang/Basic/CFProtectionOptions.h
@@ -1393,6 +1394,7 @@ llvm-devel/bin/verify-uselistorder
 %%CLANG%%llvm-devel/include/clang/Sema/SemaPPC.h
 %%CLANG%%llvm-devel/include/clang/Sema/SemaPseudoObject.h
 %%CLANG%%llvm-devel/include/clang/Sema/SemaRISCV.h
+%%CLANG%%llvm-devel/include/clang/Sema/SemaSPIRV.h
 %%CLANG%%llvm-devel/include/clang/Sema/SemaSYCL.h
 %%CLANG%%llvm-devel/include/clang/Sema/SemaSwift.h
 %%CLANG%%llvm-devel/include/clang/Sema/SemaSystemZ.h
@@ -2169,6 +2171,7 @@ llvm-devel/bin/verify-uselistorder
 %%LLDB%%llvm-devel/include/lldb/Host/ThreadLauncher.h
 %%LLDB%%llvm-devel/include/lldb/Host/Time.h
 %%LLDB%%llvm-devel/include/lldb/Host/XML.h
+%%LLDB%%llvm-devel/include/lldb/Host/aix/HostInfoAIX.h
 %%LLDB%%llvm-devel/include/lldb/Host/android/HostInfoAndroid.h
 %%LLDB%%llvm-devel/include/lldb/Host/common/GetOptInc.h
 %%LLDB%%llvm-devel/include/lldb/Host/common/NativeBreakpointList.h
@@ -2807,6 +2810,7 @@ llvm-devel/include/llvm/BinaryFormat/ELFRelocs/Mips.def
 llvm-devel/include/llvm/BinaryFormat/ELFRelocs/PowerPC.def
 llvm-devel/include/llvm/BinaryFormat/ELFRelocs/PowerPC64.def
 llvm-devel/include/llvm/BinaryFormat/ELFRelocs/RISCV.def
+llvm-devel/include/llvm/BinaryFormat/ELFRelocs/RISCV_nonstandard.def
 llvm-devel/include/llvm/BinaryFormat/ELFRelocs/Sparc.def
 llvm-devel/include/llvm/BinaryFormat/ELFRelocs/SystemZ.def
 llvm-devel/include/llvm/BinaryFormat/ELFRelocs/VE.def
@@ -3686,7 +3690,7 @@ llvm-devel/include/llvm/IR/Module.h
 llvm-devel/include/llvm/IR/ModuleSlotTracker.h
 llvm-devel/include/llvm/IR/ModuleSummaryIndex.h
 llvm-devel/include/llvm/IR/ModuleSummaryIndexYAML.h
-llvm-devel/include/llvm/IR/NVVMIntrinsicFlags.h
+llvm-devel/include/llvm/IR/NVVMIntrinsicUtils.h
 llvm-devel/include/llvm/IR/NoFolder.h
 llvm-devel/include/llvm/IR/OperandTraits.h
 llvm-devel/include/llvm/IR/Operator.h
@@ -4247,6 +4251,7 @@ llvm-devel/include/llvm/Target/TargetPfmCounters.td
 llvm-devel/include/llvm/Target/TargetSchedule.td
 llvm-devel/include/llvm/Target/TargetSelectionDAG.td
 llvm-devel/include/llvm/TargetParser/AArch64CPUFeatures.inc
+llvm-devel/include/llvm/TargetParser/AArch64FeatPriorities.inc
 llvm-devel/include/llvm/TargetParser/AArch64TargetParser.h
 llvm-devel/include/llvm/TargetParser/AArch64TargetParserDef.inc
 llvm-devel/include/llvm/TargetParser/ARMTargetParser.def
@@ -5124,6 +5129,7 @@ llvm-devel/include/llvm/XRay/YAMLXRayRecord.h
 %%MLIR%%llvm-devel/include/mlir/Dialect/GPU/IR/ParallelLoopMapperAttr.td
 %%MLIR%%llvm-devel/include/mlir/Dialect/GPU/IR/ParallelLoopMapperEnums.cpp.inc
 %%MLIR%%llvm-devel/include/mlir/Dialect/GPU/IR/ParallelLoopMapperEnums.h.inc
+%%MLIR%%llvm-devel/include/mlir/Dialect/GPU/IR/ValueBoundsOpInterfaceImpl.h
 %%MLIR%%llvm-devel/include/mlir/Dialect/GPU/Pipelines/Passes.h
 %%MLIR%%llvm-devel/include/mlir/Dialect/GPU/TransformOps/GPUTransformOps.cpp.inc
 %%MLIR%%llvm-devel/include/mlir/Dialect/GPU/TransformOps/GPUTransformOps.h
