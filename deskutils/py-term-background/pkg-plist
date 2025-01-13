@@ -1,3 +1,8 @@
+%%PYTHON_SITELIBDIR%%/term_background-%%VER%%-py%%PYTHON_VER%%.egg-info/PKG-INFO
+%%PYTHON_SITELIBDIR%%/term_background-%%VER%%-py%%PYTHON_VER%%.egg-info/SOURCES.txt
+%%PYTHON_SITELIBDIR%%/term_background-%%VER%%-py%%PYTHON_VER%%.egg-info/dependency_links.txt
+%%PYTHON_SITELIBDIR%%/term_background-%%VER%%-py%%PYTHON_VER%%.egg-info/requires.txt
+%%PYTHON_SITELIBDIR%%/term_background-%%VER%%-py%%PYTHON_VER%%.egg-info/top_level.txt
 %%PYTHON_SITELIBDIR%%/term_background/__init__.py
 %%PYTHON_SITELIBDIR%%/term_background/__main__.py
 %%PYTHON_SITELIBDIR%%/term_background/__pycache__/__init__.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
