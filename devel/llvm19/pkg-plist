@@ -15,7 +15,7 @@ bin/llvm-config%%LLVM_SUFFIX%%
 bin/llvm-cov%%LLVM_SUFFIX%%
 bin/llvm-cvtres%%LLVM_SUFFIX%%
 bin/llvm-cxxmap%%LLVM_SUFFIX%%
-%%CLANG%%bin/llvm-debuginfo-analyzer%%LLVM_SUFFIX%%
+bin/llvm-debuginfo-analyzer%%LLVM_SUFFIX%%
 bin/llvm-debuginfod%%LLVM_SUFFIX%%
 bin/llvm-debuginfod-find%%LLVM_SUFFIX%%
 bin/llvm-diff%%LLVM_SUFFIX%%
@@ -236,7 +236,7 @@ llvm%%LLVM_SUFFIX%%/bin/llvm-cvtres
 llvm%%LLVM_SUFFIX%%/bin/llvm-cxxdump
 llvm%%LLVM_SUFFIX%%/bin/llvm-cxxfilt
 llvm%%LLVM_SUFFIX%%/bin/llvm-cxxmap
-%%CLANG%%llvm%%LLVM_SUFFIX%%/bin/llvm-debuginfo-analyzer
+llvm%%LLVM_SUFFIX%%/bin/llvm-debuginfo-analyzer
 llvm%%LLVM_SUFFIX%%/bin/llvm-debuginfod
 llvm%%LLVM_SUFFIX%%/bin/llvm-debuginfod-find
 llvm%%LLVM_SUFFIX%%/bin/llvm-diff
