@@ -6,7 +6,8 @@ CATEGORIES=	audio
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Audio plugin host for Jack and PulseAudio
-WWW=		https://kx.studio/Applications:Carla
+WWW=		https://kx.studio/Applications:Carla \
+		https://github.com/falkTX/Carla
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/doc/GPL.txt
