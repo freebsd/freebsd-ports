@@ -1,5 +1,5 @@
 PORTNAME=	json-dto
-DISTVERSION=	0.3.1
+DISTVERSION=	0.3.4
 CATEGORIES=	devel textproc
 MASTER_SITES=	https://github.com/Stiffstream/json_dto/releases/download/v.${DISTVERSION}/
 DISTNAME=	json_dto-${DISTVERSION}-full
@@ -35,5 +35,7 @@ post-extract:
 		${RM} -rf ${WRKSRC}/catch2
 		${RM} -rf ${WRKSRC}/rapidjson
 		${RM} -rf ${WRKSRC}/rapidjson_mxxru
+
+# 100% tests passed, 0 tests failed out of 20
 
 .include <bsd.port.mk>
