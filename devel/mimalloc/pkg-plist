@@ -7,6 +7,6 @@ lib/cmake/mimalloc/mimalloc-config.cmake
 lib/cmake/mimalloc/mimalloc.cmake
 lib/libmimalloc.a
 lib/libmimalloc.so
-lib/libmimalloc.so.2
-lib/libmimalloc.so.2.1
+lib/libmimalloc.so.3
+lib/libmimalloc.so.3.0
 libdata/pkgconfig/mimalloc.pc
