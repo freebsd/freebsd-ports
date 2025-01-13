@@ -1,12 +1,13 @@
 PORTNAME=	novelwriter
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.5.2
+DISTVERSION=	2.5.3
 CATEGORIES=	editors python
 MASTER_SITES=	PYPI
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Text editor designed for writing novels
-WWW=		https://novelwriter.io/
+WWW=		https://novelwriter.io/ \
+		https://github.com/vkbo/novelwriter
 
 LICENSE=	GPLv3
 
