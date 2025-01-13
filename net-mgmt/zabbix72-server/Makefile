@@ -1,5 +1,5 @@
 PORTNAME=	zabbix72
-DISTVERSION=	7.2.1
+DISTVERSION=	7.2.4
 PORTREVISION?=	0
 CATEGORIES=	net-mgmt
 MASTER_SITES=	https://cdn.zabbix.com/zabbix/sources/stable/${DISTVERSION:R}/
@@ -166,6 +166,7 @@ GNUTLS_LIB_DEPENDS=	libgnutls.so:security/gnutls
 
 .if ${ZABBIX_BUILD} == "java"
 USES+=         java
+JAVA_VERSION=	11+
 .endif
 
 .include <bsd.port.pre.mk>

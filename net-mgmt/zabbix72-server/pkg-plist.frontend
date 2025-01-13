@@ -519,7 +519,6 @@
 %%WWWDIR%%/app/views/js/monitoring.charts.view.js.php
 %%WWWDIR%%/app/views/js/monitoring.dashboard.print.js.php
 %%WWWDIR%%/app/views/js/monitoring.dashboard.view.js.php
-%%WWWDIR%%/app/views/js/monitoring.discovery.view.js.php
 %%WWWDIR%%/app/views/js/monitoring.host.dashboard.view.js.php
 %%WWWDIR%%/app/views/js/monitoring.host.view.js.php
 %%WWWDIR%%/app/views/js/monitoring.latest.view.js.php
@@ -560,7 +559,6 @@
 %%WWWDIR%%/app/views/js/reports.scheduledreport.edit.js.php
 %%WWWDIR%%/app/views/js/reports.toptriggers.list.js.php
 %%WWWDIR%%/app/views/js/script.userinput.edit.js.php
-%%WWWDIR%%/app/views/js/search.js.php
 %%WWWDIR%%/app/views/js/service.edit.js.php
 %%WWWDIR%%/app/views/js/service.list.js.php
 %%WWWDIR%%/app/views/js/sla.edit.js.php
@@ -1399,6 +1397,7 @@
 %%WWWDIR%%/js/class.dashboard.print.js
 %%WWWDIR%%/js/class.dashboard.widget.placeholder.js
 %%WWWDIR%%/js/class.event-hub.js
+%%WWWDIR%%/js/class.event-hub.event.js
 %%WWWDIR%%/js/class.expandable.subfilter.js
 %%WWWDIR%%/js/class.form.fieldset.collapsible.js
 %%WWWDIR%%/js/class.geomaps.js
@@ -1412,7 +1411,8 @@
 %%WWWDIR%%/js/class.notifications.js
 %%WWWDIR%%/js/class.overlay.js
 %%WWWDIR%%/js/class.overlaycollection.js
-%%WWWDIR%%/js/class.popupmanager.js
+%%WWWDIR%%/js/class.popup-manager.event.js
+%%WWWDIR%%/js/class.popup-manager.js
 %%WWWDIR%%/js/class.rpc.js
 %%WWWDIR%%/js/class.script.js
 %%WWWDIR%%/js/class.scrollable.js
@@ -1547,6 +1547,8 @@
 %%WWWDIR%%/locale/sr/LC_MESSAGES/frontend.po
 %%WWWDIR%%/locale/sv_SE/LC_MESSAGES/frontend.mo
 %%WWWDIR%%/locale/sv_SE/LC_MESSAGES/frontend.po
+%%WWWDIR%%/locale/th/LC_MESSAGES/frontend.mo
+%%WWWDIR%%/locale/th/LC_MESSAGES/frontend.po
 %%WWWDIR%%/locale/tr/LC_MESSAGES/frontend.mo
 %%WWWDIR%%/locale/tr/LC_MESSAGES/frontend.po
 %%WWWDIR%%/locale/uk/LC_MESSAGES/frontend.mo
