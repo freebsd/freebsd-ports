@@ -33,7 +33,6 @@ include/osmium/geom/geos.hpp
 include/osmium/geom/haversine.hpp
 include/osmium/geom/mercator_projection.hpp
 include/osmium/geom/ogr.hpp
-include/osmium/geom/projection.hpp
 include/osmium/geom/rapid_geojson.hpp
 include/osmium/geom/relations.hpp
 include/osmium/geom/tile.hpp
