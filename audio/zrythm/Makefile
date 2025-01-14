@@ -1,7 +1,7 @@
 PORTNAME=	zrythm
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.0.0-alpha.26.0.13
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	audio
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BUILD_DEPENDS=	bash:shells/bash \
 		help2man:misc/help2man \
 		${LOCALBASE}/lib/libbacktrace.a:devel/libbacktrace \
-		kf5-breeze-icons>0:x11-themes/kf5-breeze-icons
+		kf6-breeze-icons>0:x11-themes/kf6-breeze-icons
 LIB_DEPENDS=	libaudec.so:audio/libaudec \
 		libavcodec.so:multimedia/ffmpeg \
 		libcyaml.so:textproc/libcyaml \
@@ -45,7 +45,7 @@ LIB_DEPENDS=	libaudec.so:audio/libaudec \
 		libyaml.so:textproc/libyaml \
 		libzstd.so:archivers/zstd
 RUN_DEPENDS=	gsettings-desktop-schemas>=0:devel/gsettings-desktop-schemas \
-		kf5-breeze-icons>0:x11-themes/kf5-breeze-icons
+		kf6-breeze-icons>0:x11-themes/kf6-breeze-icons
 
 USES=		compiler:c11 desktop-file-utils gettext-tools gettext-runtime \
 		guile:2.2,3.0,alias,conflicts gnome libtool localbase:ldflags \
