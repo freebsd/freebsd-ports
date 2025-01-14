@@ -37,25 +37,25 @@
     </dates>
   </vuln>
 
-  <vuln vid="7d7a28cd-7f5a-450a-852f-c49aaab3fa7e">
+  <vuln vid="5e2bd238-d2bb-11ef-bc0e-1c697a616631">
     <topic>keycloak -- Multiple security fixes</topic>
     <affects>
       <package>
-        <name>keycloak</name>
-        <range><lt>26.0.8</lt></range>
+	<name>keycloak</name>
+	<range><lt>26.0.8</lt></range>
       </package>
     </affects>
     <description>
-      <body xmlns="http://www.w3.org/1999/xhtml">
-        <p>Keycloak reports:</p>
-        <blockquote cite="https://www.keycloak.org/2024/11/keycloak-2606-released.html">
-          <p>This update includes 2 security fixes:</p>
-          <ul>
-            <li>CVE-2024-11734: Unrestricted admin use of system and environment variables</li>
-            <li>CVE-2024-11736: Denial of Service in Keycloak Server via Security Headers</li>
-          </ul>
-        </blockquote>
-      </body>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Keycloak reports:</p>
+	<blockquote cite="https://www.keycloak.org/2024/11/keycloak-2606-released.html">
+	  <p>This update includes 2 security fixes:</p>
+	  <ul>
+	    <li>CVE-2024-11734: Unrestricted admin use of system and environment variables</li>
+	    <li>CVE-2024-11736: Denial of Service in Keycloak Server via Security Headers</li>
+	  </ul>
+	</blockquote>
+	</body>
     </description>
     <references>
       <cvename>CVE-2024-11734</cvename>
