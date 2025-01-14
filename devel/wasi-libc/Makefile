@@ -18,6 +18,7 @@ LICENSE_NAME_LLVM2=	Apache License 2.0 with LLVM Exceptions
 LICENSE_PERMS_LLVM2=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 FLAVORS=	18 19 17
+FLAVOR?=	${FLAVORS:[1]}
 
 USES=		gmake llvm:${FLAVOR}
 USE_GITHUB=	yes
