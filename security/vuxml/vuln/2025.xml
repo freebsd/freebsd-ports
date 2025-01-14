@@ -1,3 +1,42 @@
+  <vuln vid="3445e4b6-d2b8-11ef-9ff3-43c2b5d6c4c8">
+    <topic>git -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>git</name>
+	<name>git-cvs</name>
+	<name>git-gui</name>
+	<name>git-p4</name>
+	<name>git-svn</name>
+	<range><lt>2.48.1</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Git development team reports:</p>
+	<blockquote cite="https://lore.kernel.org/git/xmqq5xmh46oc.fsf@gitster.g/">
+	  <p>CVE-2024-50349: Printing unsanitized URLs when asking for credentials made the
+	  user susceptible to crafted URLs (e.g. in recursive clones) that
+	  mislead the user into typing in passwords for trusted sites that
+	  would then be sent to untrusted sites instead.</p>
+	  <p>CVE-2024-52006: Git may pass on Carriage Returns via the credential protocol to
+	  credential helpers which use line-reading functions that
+	  interpret said Carriage Returns as line endings, even though Git
+	  did not intend that.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2024-50349</cvename>
+      <url>https://github.com/git/git/security/advisories/GHSA-hmg8-h7qf-7cxr</url>
+      <cvename>CVE-2024-52006</cvename>
+      <url>https://github.com/git/git/security/advisories/GHSA-r5ph-xg7q-xfrp</url>
+    </references>
+    <dates>
+      <discovery>2024-10-29</discovery>
+      <entry>2025-01-14</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="7d7a28cd-7f5a-450a-852f-c49aaab3fa7e">
     <topic>keycloak -- Multiple security fixes</topic>
     <affects>
