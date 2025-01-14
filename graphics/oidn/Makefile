@@ -1,17 +1,17 @@
 PORTNAME=	oidn
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.3.0
-PORTREVISION=	2
+DISTVERSION=	2.3.2
 CATEGORIES=	graphics
 MASTER_SITES=	http://freebsd.org/:weights # bogus URL to make the framework happy, the fetch uses Git URL below
 DISTFILES=	${PORTNAME}-weights-${WEIGHTS_GIT_HASH}${EXTRACT_SUFX}:weights
 
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES=	e5e52d335c58365b6cbd91f9a8a6f9ee9a085bf5.patch:-p1 # fix compile error when using old libc++
+#PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+#PATCHFILES=	e5e52d335c58365b6cbd91f9a8a6f9ee9a085bf5.patch:-p1 # fix compile error when using old libc++
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Intel(R) Open Image Denoise library
-WWW=		https://www.openimagedenoise.org/
+WWW=		https://www.openimagedenoise.org/ \
+		https://github.com/RenderKit/oidn
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
@@ -29,7 +29,7 @@ USES=		cmake:noninja compiler:c++14-lang python:build
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	OpenImageDenoise
+GH_ACCOUNT=	RenderKit
 GH_TUPLE=	OpenImageDenoise:mkl-dnn:9bea36e:m/external/mkl-dnn \
 		ROCmSoftwarePlatform:composable_kernel:e85178b:composable_kernel/external/composable_kernel \
 		NVIDIA:cutlass:66d9cdd:cutlass/external/cutlass
@@ -45,14 +45,14 @@ OPTIONS_SUB=			yes
 APPS_DESC=			Build example and test apps
 APPS_CMAKE_BOOL=		OIDN_APPS
 
-DOCSDIR=			share/doc/${GH_ACCOUNT}
+DOCSDIR=			share/doc/OpenImageDenoise
 
 OPENIMAGEIO_DESC=		Build with OpenImageIO for image formats support
 OPENIMAGEIO_CMAKE_BOOL=		OIDN_APPS_OPENIMAGEIO
 OPENIMAGEIO_LIB_DEPENDS=	libOpenImageIO.so:graphics/openimageio
 OPENIMAGEIO_IMPLIES=		APPS # OpenImageIO is only used by apps and examples
 
-WEIGHTS_GIT_URL=	https://github.com/OpenImageDenoise/oidn-weights.git
+WEIGHTS_GIT_URL=	https://github.com/RenderKit/oidn-weights.git
 WEIGHTS_GIT_HASH=	28883d1769d5930e13cf7f1676dd852bd81ed9e7
 
 pre-fetch:
