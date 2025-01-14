@@ -30,6 +30,12 @@ OPTIONS_DEFINE=	DOCS
 DUNE_INSTALL_TARGETS=	${PORTNAME}
 SA_DIR=			${LOCALBASE}/${OCAML_SITELIBDIR}
 
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == powerpc
+USE_BINUTILS=	yes
+.endif
+
 post-patch:
 	@(cd ${WRKSRC}; \
 	${REINPLACE_CMD} -e s/stdlib-shims//g \
