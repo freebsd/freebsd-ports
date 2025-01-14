@@ -1,6 +1,6 @@
 PORTNAME=	benchmark
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.9.0
+DISTVERSION=	1.9.1
 PORTEPOCH=	1
 CATEGORIES=	devel
 
@@ -32,6 +32,6 @@ BINARY_ALIAS=	git=false
 
 PLIST_SUB=	VERSION=${DISTVERSION}
 
-# tests fail to compile, due to https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=280382
+# 100% tests passed, 0 tests failed out of 77
 
 .include <bsd.port.mk>
