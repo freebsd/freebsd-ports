@@ -1,5 +1,5 @@
 PORTNAME=	glib-networking
-PORTVERSION=	2.80.0
+PORTVERSION=	2.80.1
 CATEGORIES=	net
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
@@ -21,22 +21,23 @@ USE_GNOME=	glib20
 
 BINARY_ALIAS=	python3=${PYTHON_VERSION}
 
-OPTIONS_DEFINE=	GNUTLS PROXY
+OPTIONS_DEFINE=	OPENSSL PROXY
 PROXY_DESC=	Proxy configuration support via libproxy
 OPTIONS_SUB=	yes
-OPTIONS_DEFAULT=	GNUTLS PROXY
+OPTIONS_DEFAULT=	PROXY
 
-GNUTLS_LIB_DEPENDS=	libgnutls.so:security/gnutls
-GNUTLS_USES_OFF=	ssl
-GNUTLS_CONFIGURE_OFF=	-Dgnutls=disabled -Dopenssl=enabled
+OPENSSL_LIB_DEPENDS_OFF=	libgnutls.so:security/gnutls
+OPENSSL_USES=			ssl
+OPENSSL_MESON_ENABLED=		openssl
+OPENSSL_MESON_DISABLED=		gnutls
 
 PROXY_LIB_DEPENDS=	libproxy.so:net/libproxy
-PROXY_CONFIGURE_OFF=	-Dlibproxy=disabled -Denvironment_proxy=enabled
+PROXY_MESON_ENABLED=	libproxy
+PROXY_MESON_DISABLED=	environment_proxy
 
 post-install:
 	${RM} -r ${STAGEDIR}${PREFIX}/lib/systemd
-	${RM} -r ${STAGEDIR}${PREFIX}/share/installed-tests
 
 .include <bsd.port.mk>
 
-GNUTLS_DESC+=	(OpenSSL if off)
+OPENSSL_DESC+=	(instead of GnuTLS)
