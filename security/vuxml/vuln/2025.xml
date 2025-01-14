@@ -1,3 +1,33 @@
+  <vuln vid="7d7a28cd-7f5a-450a-852f-c49aaab3fa7e">
+    <topic>keycloak -- Multiple security fixes</topic>
+    <affects>
+      <package>
+        <name>keycloak</name>
+        <range><lt>26.0.8</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>Keycloak reports:</p>
+        <blockquote cite="https://www.keycloak.org/2024/11/keycloak-2606-released.html">
+          <p>This update includes 2 security fixes:</p>
+          <ul>
+            <li>CVE-2024-11734: Unrestricted admin use of system and environment variables</li>
+            <li>CVE-2024-11736: Denial of Service in Keycloak Server via Security Headers</li>
+          </ul>
+        </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2024-11734</cvename>
+      <cvename>CVE-2024-11736</cvename>
+    </references>
+    <dates>
+      <discovery>2025-01-13</discovery>
+      <entry>2025-01-13</entry>
+     </dates>
+  </vuln>
+
   <vuln vid="7624c151-d116-11ef-b232-b42e991fc52e">
     <topic>asterisk - path traversal</topic>
     <affects>
