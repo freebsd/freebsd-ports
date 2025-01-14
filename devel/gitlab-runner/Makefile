@@ -1,6 +1,6 @@
 PORTNAME=	gitlab-runner
 DISTVERSIONPREFIX=	v
-DISTVERSION=	17.6.0
+DISTVERSION=	17.7.0
 CATEGORIES=	devel
 MASTER_SITES=	https://gitlab-runner-downloads.s3.amazonaws.com/master/docker/:dockerx64 \
 		https://gitlab-runner-downloads.s3.amazonaws.com/master/docker/:dockerarm
@@ -22,7 +22,7 @@ RUN_DEPENDS=	bash:shells/bash \
 		ca_root_nss>=0:security/ca_root_nss \
 		git:devel/git
 
-USES=		go:modules,1.22
+USES=		go:modules,1.23
 USE_GITLAB=	yes
 GL_ACCOUNT=	gitlab-org
 USE_RC_SUBR=	gitlab_runner
