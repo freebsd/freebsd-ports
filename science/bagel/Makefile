@@ -7,7 +7,8 @@ CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Brilliantly Advanced General Electronic-structure Library
-WWW=		https://nubakery.org/
+WWW=		https://nubakery.org/ \
+		https://github.com/qsimulate-open/bagel
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
