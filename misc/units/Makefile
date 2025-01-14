@@ -1,6 +1,6 @@
 PORTNAME=	units
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.12.0
+DISTVERSION=	0.12.1
 CATEGORIES=	misc
 PKGNAMESUFFIX=	-library
 
@@ -22,5 +22,7 @@ CMAKE_ON=	UNITS_BUILD_OBJECT_LIBRARY \
 		UNITS_BUILD_SHARED_LIBRARY
 CMAKE_OFF=	UNITS_ENABLE_TESTS
 CMAKE_TESTING_ON=	UNITS_ENABLE_TESTS # tests expect the googletest source tree, see https://github.com/LLNL/units/issues/340
+
+# 100% tests passed, 0 tests failed out of 21
 
 .include <bsd.port.mk>
