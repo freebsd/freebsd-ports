@@ -10,8 +10,8 @@ WWW=		https://github.com/nickg/nvc
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN_armv6=	compilation fails: no member named '_gregs' in 'mcontext_t'; did you mean '__gregs', see https://github.com/nickg/nvc/issues/534
 BROKEN_armv7=	compilation fails: no member named '_gregs' in 'mcontext_t'; did you mean '__gregs', see https://github.com/nickg/nvc/issues/534
+BROKEN_i386=	compilation fails: static assertion failed due to requirement 'sizeof(jit_ir_t) == 40': Static assertion failed, see https://github.com/nickg/nvc/issues/1133
 BROKEN_FreeBSD_14_i386=	clang creashes, see https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=265826
 
 BUILD_DEPENDS=	llvm-config${LLVM_VERSION}:devel/llvm${LLVM_VERSION}
