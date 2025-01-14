@@ -1,33 +1,24 @@
 PORTNAME=	pyspacewar
-PORTVERSION=	1.1.1
-PORTREVISION=	3
+DISTVERSION=	1.2.0
 CATEGORIES=	games python
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DIST_SUBDIR=	python
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	nxjoseph@protonmail.com
 COMMENT=	Game loosely based on the original Spacewar!
-WWW=		https://mg.pov.lt/pyspacewar/
+WWW=		https://pypi.org/project/pyspacewar \
+		https://github.com/mgedmin/pyspacewar
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PYGAME}
 
-USE_GITHUB=	yes
-GH_ACCOUNT=	mgedmin
-#GH_TAGNAME=	f872564
-
 USES=		gnome python
-USE_PYTHON=	distutils autoplist
+USE_PYTHON=	distutils
+
 NO_ARCH=	yes
-
-PORTDOCS=	*.rst
-
-DESKTOP_ENTRIES="PySpaceWar" "" ${PORTNAME} \
-		"${PORTNAME}" "Game;ArcadeGame;" ""
-
-OPTIONS_DEFINE=	DOCS
 
 post-install:
 .for i in 16 22 32 48
@@ -38,9 +29,12 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/src/${PORTNAME}/icons/${PORTNAME}${i}.svg \
 		${STAGEDIR}${PREFIX}/share/icons/hicolor/scalable/apps/${PORTNAME}${i}.svg
 .endfor
-
-post-install-DOCS-on:
+	${INSTALL_DATA} ${WRKSRC}/src/${PORTNAME}/icons/${PORTNAME}32.png \
+		${STAGEDIR}${PREFIX}/share/pixmaps/${PORTNAME}.png
+	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.desktop \
+		${STAGEDIR}${PREFIX}/share/applications/${PORTNAME}.desktop
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/*.rst \
+		${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
