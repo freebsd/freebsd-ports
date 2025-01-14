@@ -1,10 +1,11 @@
 PORTNAME=	abinit
-DISTVERSION=	10.0.9
+DISTVERSION=	10.2.5
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Full-featured atomic-scale first-principles simulation software
-WWW=		https://www.abinit.org
+WWW=		https://www.abinit.org \
+		https://github.com/abinit/abinit
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
