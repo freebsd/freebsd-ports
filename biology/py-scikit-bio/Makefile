@@ -1,5 +1,5 @@
 PORTNAME=	scikit-bio
-DISTVERSION=	0.6.2
+DISTVERSION=	0.6.3
 CATEGORIES=	biology education python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -34,10 +34,9 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}biom-format>0:biology/py-biom-format@${PY_FL
 		${PYTHON_PKGNAMEPREFIX}statsmodels>=0.14.0:math/py-statsmodels@${PY_FLAVOR}
 
 USES=		python
-USE_PYTHON=	pep517 cython autoplist pytest # tests fail to run, see https://github.com/biocore/scikit-bio/issues/1846
+USE_PYTHON=	pep517 cython autoplist pytest
 
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
-TEST_WRKSRC=	${WRKSRC}/skbio/tests
 
 CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}ddtrace # lib/python3.8/site-packages/benchmarks/__init__.py
 
@@ -52,5 +51,11 @@ post-install:
 	@${STRIP_CMD} \
 		${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/skbio/*/*${PYTHON_EXT_SUFFIX}.so \
 		${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/skbio/*/*/*${PYTHON_EXT_SUFFIX}.so
+
+do-test: # tests fail to run in a regular way, see https://github.com/biocore/scikit-bio/issues/1846
+	@cd ${STAGEDIR}${PYTHON_SITELIBDIR} && \
+		${SETENV} ${TEST_ENV} pytest .
+
+# tests as of 0.6.3: 2792 passed, 30 skipped, 56 warnings in 250.28s (0:04:10)
 
 .include <bsd.port.mk>
