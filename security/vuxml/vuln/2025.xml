@@ -1,3 +1,41 @@
+  <vuln vid="163edccf-d2ba-11ef-b10e-589cfc10a551">
+    <topic>rsync -- Multiple security fixes</topic>
+    <affects>
+      <package>
+	<name>rsync</name>
+	<range><lt>3.4.0</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>rsync reports:</p>
+	<blockquote cite="https://kb.cert.org/vuls/id/952657">
+	  <p>This update includes multiple security fixes:</p>
+	  <ul>
+	    <li>CVE-2024-12084: Heap Buffer Overflow in Checksum Parsing</li>
+	    <li>CVE-2024-12085: Info Leak via uninitialized Stack contents defeats ASLR</li>
+	    <li>CVE-2024-12086: Server leaks arbitrary client files</li>
+	    <li>CVE-2024-12087: Server can make client write files outside of destination directory using symbolic links</li>
+	    <li>CVE-2024-12088: --safe-links Bypass</li>
+	    <li>CVE-2024-12747: symlink race condition</li>
+	  </ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVS-2024-12084</cvename>
+      <cvename>CVS-2024-12085</cvename>
+      <cvename>CVS-2024-12086</cvename>
+      <cvename>CVS-2024-12087</cvename>
+      <cvename>CVS-2024-12088</cvename>
+      <cvename>CVS-2024-12747</cvename>
+    </references>
+    <dates>
+      <discovery>2025-01-14</discovery>
+      <entry>2025-01-14</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="3445e4b6-d2b8-11ef-9ff3-43c2b5d6c4c8">
     <topic>git -- multiple vulnerabilities</topic>
     <affects>
