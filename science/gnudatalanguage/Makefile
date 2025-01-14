@@ -1,11 +1,12 @@
 PORTNAME=	gnudatalanguage
-PORTVERSION=	1.0.6
-PORTREVISION=	3
+PORTVERSION=	1.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	science lang
+MASTER_SITES=	https://github.com/${PORTNAME}/gdl/releases/download/v${PORTVERSION}/
 .if defined(BUILD_PYTHON_MODULE)
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 .endif
+DISTNAME=	gdl-${DISTVERSIONPREFIX}${PORTVERSION}
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT?=	Free IDL-compatible incremental compiler
@@ -15,18 +16,20 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS+=	libGraphicsMagick.so:graphics/GraphicsMagick	\
 		libgeotiff.so:graphics/libgeotiff	\
+		libfreetype.so:print/freetype2	\
 		libexpat.so:textproc/expat2	\
 		libplplot.so:math/plplot	\
 		libtiff.so:graphics/tiff	\
+		libhpdf.so:print/libharu	\
 		libshp.so:devel/shapelib	\
 		libpng.so:graphics/png		\
 		libsz.so:science/libaec		\
+		libglpk.so:math/glpk		\
 		libps.so:print/pslib		\
 		libgsl.so:math/gsl
 
-USE_GITHUB=	yes
-GH_PROJECT=	gdl
-GH_TAGNAME=	6546898e7f2d23ae1bf67ebe70dc0f38886e5de7
+#USE_GITHUB=	yes
+#GH_PROJECT=	gdl
 
 USES=		cmake compiler:c++11-lang fortran ncurses pkgconfig readline \
 		xorg
@@ -51,9 +54,9 @@ SLAVEDIRS=	science/py-gnudatalanguage
 # Upstream prefer GraphicsMagick over ImageMackick
 # see https://github.com/gnudatalanguage/gdl/issues/611
 # and https://github.com/gnudatalanguage/gdl/issues/1044 for ImageMagick 7
-OPTIONS_DEFINE=	EIGEN EXAMPLES FFTW GLPK GRIB HDF5 LIBPROJ4	\
+OPTIONS_DEFINE=	EIGEN EXAMPLES FFTW GRIB HDF5 LIBPROJ4	\
 		MPICH NETCDF PYTHON QHULL UDUNITS
-OPTIONS_DEFAULT=EIGEN FFTW GLPK GRIB HDF5 LIBPROJ4 NETCDF PYTHON	\
+OPTIONS_DEFAULT=EIGEN FFTW GRIB HDF5 LIBPROJ4 NETCDF PYTHON	\
 		QHULL UDUNITS
 
 EIGEN_DESC=		Eigen3 support (boost performance)
@@ -65,11 +68,6 @@ FFTW_LIB_DEPENDS=	libfftw3.so:math/fftw3		\
 			libfftw3f.so:math/fftw3-float
 FFTW_CMAKE_ON=		-DFFTW:BOOL=YES
 FFTW_CMAKE_OFF=		-DFFTW:BOOL=NO
-
-GLPK_DESC=		Support GLPK for Simplex (Linear programming)
-GLPK_LIB_DEPENDS=	libglpk.so:math/glpk
-GLPK_CMAKE_ON=		-DGLPK=ON:BOOL=YES
-GLPK_CMAKE_OFF=		-DGLPK=OFF:BOOL=NO
 
 GRIB_DESC=		Support GRIB messages
 GRIB_LIB_DEPENDS=	libeccodes.so:science/eccodes
