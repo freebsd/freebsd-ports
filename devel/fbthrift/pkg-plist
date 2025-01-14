@@ -255,6 +255,8 @@ include/thrift/lib/cpp2/async/ServerStream-inl.h
 include/thrift/lib/cpp2/async/ServerStream.h
 include/thrift/lib/cpp2/async/ServerStreamDetail.h
 include/thrift/lib/cpp2/async/ServerStreamMultiPublisher.h
+include/thrift/lib/cpp2/async/ServiceInfoHolder.h
+include/thrift/lib/cpp2/async/ServiceRequestInfo.h
 include/thrift/lib/cpp2/async/Sink.h
 include/thrift/lib/cpp2/async/SinkBridgeUtil.h
 include/thrift/lib/cpp2/async/StreamCallbacks.h
@@ -331,6 +333,7 @@ include/thrift/lib/cpp2/op/Encode.h
 include/thrift/lib/cpp2/op/Get.h
 include/thrift/lib/cpp2/op/Hash.h
 include/thrift/lib/cpp2/op/Patch.h
+include/thrift/lib/cpp2/op/PatchTraits.h
 include/thrift/lib/cpp2/op/Serializer.h
 include/thrift/lib/cpp2/op/Sha256Hasher.h
 include/thrift/lib/cpp2/op/StdHasher.h
@@ -358,6 +361,7 @@ include/thrift/lib/cpp2/op/detail/ValueOp.h
 include/thrift/lib/cpp2/op/detail/ValuePatch.h
 include/thrift/lib/cpp2/patch/DynamicPatch.h
 include/thrift/lib/cpp2/patch/detail/PatchBadge.h
+include/thrift/lib/cpp2/patch/detail/Scuba.h
 include/thrift/lib/cpp2/patch/detail/TaggedPatch.h
 include/thrift/lib/cpp2/protocol/BinaryProtocol-inl.h
 include/thrift/lib/cpp2/protocol/BinaryProtocol.h
