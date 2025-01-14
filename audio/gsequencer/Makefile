@@ -1,5 +1,5 @@
 PORTNAME=	gsequencer
-DISTVERSION=	7.4.12
+DISTVERSION=	7.5.1
 CATEGORIES=	audio
 
 MAINTAINER=	yuri@FreeBSD.org

@@ -67,6 +67,7 @@ include/ags/audio/ags_recall_recycling.h
 include/ags/audio/ags_recycling.h
 include/ags/audio/ags_recycling_context.h
 include/ags/audio/ags_resample_util.h
+include/ags/audio/ags_seq_synth_util.h
 include/ags/audio/ags_sequencer_util.h
 include/ags/audio/ags_sf2_synth_generator.h
 include/ags/audio/ags_sf2_synth_util.h
@@ -210,6 +211,12 @@ include/ags/audio/fx/ags_fx_playback_audio_signal.h
 include/ags/audio/fx/ags_fx_playback_channel.h
 include/ags/audio/fx/ags_fx_playback_channel_processor.h
 include/ags/audio/fx/ags_fx_playback_recycling.h
+include/ags/audio/fx/ags_fx_seq_synth_audio.h
+include/ags/audio/fx/ags_fx_seq_synth_audio_processor.h
+include/ags/audio/fx/ags_fx_seq_synth_audio_signal.h
+include/ags/audio/fx/ags_fx_seq_synth_channel.h
+include/ags/audio/fx/ags_fx_seq_synth_channel_processor.h
+include/ags/audio/fx/ags_fx_seq_synth_recycling.h
 include/ags/audio/fx/ags_fx_sf2_synth_audio.h
 include/ags/audio/fx/ags_fx_sf2_synth_audio_processor.h
 include/ags/audio/fx/ags_fx_sf2_synth_audio_signal.h
@@ -495,6 +502,7 @@ include/ags/widget/ags_dial.h
 include/ags/widget/ags_expander.h
 include/ags/widget/ags_expander_set.h
 include/ags/widget/ags_file_dialog.h
+include/ags/widget/ags_file_entry.h
 include/ags/widget/ags_file_widget.h
 include/ags/widget/ags_icon_link.h
 include/ags/widget/ags_indicator.h
