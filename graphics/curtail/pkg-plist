@@ -13,12 +13,14 @@ share/icons/hicolor/symbolic/apps/com.github.huluti.Curtail-symbolic.svg
 share/locale/bg/LC_MESSAGES/curtail.mo
 share/locale/cs/LC_MESSAGES/curtail.mo
 share/locale/de/LC_MESSAGES/curtail.mo
+share/locale/en_GB/LC_MESSAGES/curtail.mo
 share/locale/es/LC_MESSAGES/curtail.mo
 share/locale/fr/LC_MESSAGES/curtail.mo
 share/locale/gl/LC_MESSAGES/curtail.mo
 share/locale/hi/LC_MESSAGES/curtail.mo
 share/locale/hr/LC_MESSAGES/curtail.mo
 share/locale/it/LC_MESSAGES/curtail.mo
+share/locale/ka/LC_MESSAGES/curtail.mo
 share/locale/ko/LC_MESSAGES/curtail.mo
 share/locale/nb/LC_MESSAGES/curtail.mo
 share/locale/nl/LC_MESSAGES/curtail.mo
@@ -27,6 +29,7 @@ share/locale/pl/LC_MESSAGES/curtail.mo
 share/locale/pt_BR/LC_MESSAGES/curtail.mo
 share/locale/ru/LC_MESSAGES/curtail.mo
 share/locale/sk/LC_MESSAGES/curtail.mo
+share/locale/sl/LC_MESSAGES/curtail.mo
 share/locale/sv/LC_MESSAGES/curtail.mo
 share/locale/tr/LC_MESSAGES/curtail.mo
 share/locale/uk/LC_MESSAGES/curtail.mo
