@@ -1,5 +1,5 @@
 PORTNAME=	keycloak
-DISTVERSION=	26.0.7
+DISTVERSION=	26.0.8
 CATEGORIES=	net java
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/${DISTVERSION}/
 
