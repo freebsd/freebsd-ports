@@ -1,7 +1,7 @@
-TIMESTAMP = 1736486130
-SHA256 (go/devel_gitleaks/gitleaks-v8.22.1/v8.22.1.mod) = 3a23729ffc02f7acf6348feaed805ce5c646a452cf9d48ca0acf911fc0fd1242
-SIZE (go/devel_gitleaks/gitleaks-v8.22.1/v8.22.1.mod) = 2454
-SHA256 (go/devel_gitleaks/gitleaks-v8.22.1/v8.22.1.zip) = da5a171f574169809228e1b6852292acce864234d699d9b5f54c1cc8411d3a44
-SIZE (go/devel_gitleaks/gitleaks-v8.22.1/v8.22.1.zip) = 377674
-SHA256 (go/devel_gitleaks/gitleaks-v8.22.1/golang-sys-v0.6.0_GH0.tar.gz) = b4f6d17c7a128f76169964b437cb66b3f2dbf9a33361928ec19dfecf7b03fc54
-SIZE (go/devel_gitleaks/gitleaks-v8.22.1/golang-sys-v0.6.0_GH0.tar.gz) = 1434234
+TIMESTAMP = 1736819849
+SHA256 (go/devel_gitleaks/gitleaks-v8.23.0/v8.23.0.mod) = 3a23729ffc02f7acf6348feaed805ce5c646a452cf9d48ca0acf911fc0fd1242
+SIZE (go/devel_gitleaks/gitleaks-v8.23.0/v8.23.0.mod) = 2454
+SHA256 (go/devel_gitleaks/gitleaks-v8.23.0/v8.23.0.zip) = 10c95bc731120530a90f5c3a0dc959e61e5dee6e99893cdae6fe7b3da1a0c439
+SIZE (go/devel_gitleaks/gitleaks-v8.23.0/v8.23.0.zip) = 378093
+SHA256 (go/devel_gitleaks/gitleaks-v8.23.0/golang-sys-v0.6.0_GH0.tar.gz) = b4f6d17c7a128f76169964b437cb66b3f2dbf9a33361928ec19dfecf7b03fc54
+SIZE (go/devel_gitleaks/gitleaks-v8.23.0/golang-sys-v0.6.0_GH0.tar.gz) = 1434234
