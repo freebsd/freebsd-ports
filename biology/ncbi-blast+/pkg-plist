@@ -1,5 +1,4 @@
 bin/blast_formatter
-bin/blast_report
 bin/blastdb_aliastool
 bin/blastdb_convert
 bin/blastdb_path
@@ -31,6 +30,7 @@ bin/run_with_lock
 bin/seedtop
 bin/segmasker
 bin/seqdb_demo
+bin/tax4blast
 bin/tblastn
 bin/tblastx
 bin/update_blastdb.pl
@@ -255,6 +255,8 @@ include/ncbi-tools++/algo/winmask/win_mask_dup_table.hpp
 include/ncbi-tools++/algo/winmask/win_mask_gen_counts.hpp
 include/ncbi-tools++/algo/winmask/win_mask_util.hpp
 include/ncbi-tools++/cgi/caf.hpp
+include/ncbi-tools++/cgi/caf_encoded.hpp
+include/ncbi-tools++/cgi/caf_plain.hpp
 include/ncbi-tools++/cgi/cgi_exception.hpp
 include/ncbi-tools++/cgi/cgi_serial.hpp
 include/ncbi-tools++/cgi/cgi_session.hpp
@@ -277,6 +279,7 @@ include/ncbi-tools++/common/config/ncbiconf_xcode.h
 include/ncbi-tools++/common/header_template.hpp
 include/ncbi-tools++/common/metamodules_doxygen.h
 include/ncbi-tools++/common/ncbi_build_info.h
+include/ncbi-tools++/common/ncbi_build_ver.cmake_nodep
 include/ncbi-tools++/common/ncbi_build_ver.h
 include/ncbi-tools++/common/ncbi_build_ver.h.last
 include/ncbi-tools++/common/ncbi_export.h
@@ -1162,6 +1165,8 @@ include/ncbi-tools++/objects/gbproj/FolderInfo.hpp
 include/ncbi-tools++/objects/gbproj/FolderInfo_.hpp
 include/ncbi-tools++/objects/gbproj/GBProject_ver2.hpp
 include/ncbi-tools++/objects/gbproj/GBProject_ver2_.hpp
+include/ncbi-tools++/objects/gbproj/HugeFileProjectItem.hpp
+include/ncbi-tools++/objects/gbproj/HugeFileProjectItem_.hpp
 include/ncbi-tools++/objects/gbproj/LoaderDescriptor.hpp
 include/ncbi-tools++/objects/gbproj/LoaderDescriptor_.hpp
 include/ncbi-tools++/objects/gbproj/NCBI_GBProject_module.hpp
@@ -3490,11 +3495,13 @@ include/ncbi-tools++/objtools/blast/seqdb_reader/impl/seqdbgeneral.hpp
 include/ncbi-tools++/objtools/blast/seqdb_reader/impl/seqdbisam.hpp
 include/ncbi-tools++/objtools/blast/seqdb_reader/impl/seqdbtax.hpp
 include/ncbi-tools++/objtools/blast/seqdb_reader/impl/seqdbvol.hpp
+include/ncbi-tools++/objtools/blast/seqdb_reader/itax4blast.hpp
 include/ncbi-tools++/objtools/blast/seqdb_reader/seqdb.hpp
 include/ncbi-tools++/objtools/blast/seqdb_reader/seqdbblob.hpp
 include/ncbi-tools++/objtools/blast/seqdb_reader/seqdbcommon.hpp
 include/ncbi-tools++/objtools/blast/seqdb_reader/seqdbexpert.hpp
 include/ncbi-tools++/objtools/blast/seqdb_reader/seqidlist_reader.hpp
+include/ncbi-tools++/objtools/blast/seqdb_reader/tax4blastsqlite.hpp
 include/ncbi-tools++/objtools/blast/seqdb_writer/build_db.hpp
 include/ncbi-tools++/objtools/blast/seqdb_writer/impl/criteria.hpp
 include/ncbi-tools++/objtools/blast/seqdb_writer/multisource_util.hpp
@@ -3514,7 +3521,7 @@ include/ncbi-tools++/objtools/cleanup/cleanup_change.hpp
 include/ncbi-tools++/objtools/cleanup/cleanup_message.hpp
 include/ncbi-tools++/objtools/cleanup/cleanup_pub.hpp
 include/ncbi-tools++/objtools/cleanup/fix_feature_id.hpp
-include/ncbi-tools++/objtools/cleanup/huge_file_cleanup.hpp
+include/ncbi-tools++/objtools/cleanup/influenza_set.hpp
 include/ncbi-tools++/objtools/data_loaders/blastdb/bdbloader.hpp
 include/ncbi-tools++/objtools/data_loaders/blastdb/bdbloader_rmt.hpp
 include/ncbi-tools++/objtools/data_loaders/blastdb/blastdb_adapter.hpp
@@ -3588,7 +3595,6 @@ include/ncbi-tools++/objtools/edit/gaps_edit.hpp
 include/ncbi-tools++/objtools/edit/gb_block_field.hpp
 include/ncbi-tools++/objtools/edit/gene_utils.hpp
 include/ncbi-tools++/objtools/edit/huge_asn_loader.hpp
-include/ncbi-tools++/objtools/edit/huge_asn_macro_reader.hpp
 include/ncbi-tools++/objtools/edit/huge_asn_reader.hpp
 include/ncbi-tools++/objtools/edit/huge_file.hpp
 include/ncbi-tools++/objtools/edit/huge_file_process.hpp
@@ -4445,6 +4451,7 @@ include/ncbi-tools++/objtools/format/feature_gather.hpp
 include/ncbi-tools++/objtools/format/flat_expt.hpp
 include/ncbi-tools++/objtools/format/flat_file_config.hpp
 include/ncbi-tools++/objtools/format/flat_file_generator.hpp
+include/ncbi-tools++/objtools/format/flat_file_html.hpp
 include/ncbi-tools++/objtools/format/format_item_ostream.hpp
 include/ncbi-tools++/objtools/format/formatter.hpp
 include/ncbi-tools++/objtools/format/ftable_formatter.hpp
@@ -4690,6 +4697,7 @@ include/ncbi-tools++/sra/readers/sra/limited_resource_map.hpp
 include/ncbi-tools++/sra/readers/sra/sdk.hpp
 include/ncbi-tools++/sra/readers/sra/snpread.hpp
 include/ncbi-tools++/sra/readers/sra/sraread.hpp
+include/ncbi-tools++/sra/readers/sra/vdbcache.hpp
 include/ncbi-tools++/sra/readers/sra/vdbread.hpp
 include/ncbi-tools++/sra/readers/sra/wgsread.hpp
 include/ncbi-tools++/sra/readers/sra/wgsresolver.hpp
