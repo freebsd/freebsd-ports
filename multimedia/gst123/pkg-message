@@ -1,0 +1,8 @@
+[
+{ type: install
+  message: <<EOM
+Since version 0.4.0, migrate the configuration file from ~/.gst123rc
+to $XDG_CONFIG_HOME/gst123rc which defaults to ~/.config/gst123rc.
+EOM
+}
+]
