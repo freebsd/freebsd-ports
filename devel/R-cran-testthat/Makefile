@@ -1,5 +1,5 @@
 PORTNAME=	testthat
-DISTVERSION=	3.2.2
+DISTVERSION=	3.2.3
 CATEGORIES=	devel
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
@@ -31,7 +31,8 @@ RUN_DEPENDS=	R-cran-brio>=1.1.3:devel/R-cran-brio \
 
 USES=		cran:auto-plist,compiles
 
-TESTING_UNSAFE=	https://github.com/r-lib/testthat/issues/1924 \
+TESTING_UNSAFE=	Error in `edition_require(3, "expect_snapshot()")`: `expect_snapshot()` requires the 3rd edition. \
+		https://github.com/r-lib/testthat/issues/1924 \
 		https://github.com/r-lib/testthat/issues/1347
 
 .include <bsd.port.mk>
