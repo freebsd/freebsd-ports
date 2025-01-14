@@ -43,8 +43,7 @@ CONFIGURE_SCRIPT=	Configure
 CONFIGURE_ARGS=		-n freebsd
 CONFIGURE_ENV=		FREEBSD_SYS="${SRC_BASE}/sys" \
 			LSOF_CC="${CC}" \
-                        LSOF_OPINC="-idirafter ${SRC_BASE}/sys"
-
+			LSOF_OPINC="-idirafter ${SRC_BASE}/sys"
 
 # GCC needs -lzfs -lzpool for reasons unknown.  If someone can
 # figure out why, I (ler) am all ears.
