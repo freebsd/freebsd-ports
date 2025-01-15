@@ -1,11 +1,10 @@
 PORTNAME=	tcpslice
-DISTVERSION=	1.6
-PORTREVISION=	1
+DISTVERSION=	1.8
 PORTEPOCH=	1
 CATEGORIES=	net
 MASTER_SITES=	https://www.tcpdump.org/release/
 
-MAINTAINER=	sbz@FreeBSD.org
+MAINTAINER=	jadawin@FreeBSD.org
 COMMENT=	Tool for extracting portions of pcap files
 WWW=		https://www.tcpdump.org/related.html
 
