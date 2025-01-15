@@ -1,5 +1,8 @@
 The development of Algol played an important role in establishing
-computer science as an academic discipline. The Algol 68 Genie project
+computer science as an academic discipline.  The Algol 68 Genie project
 preserves Algol 68 out of educational as well as scientific-historical
-interest, by making available Algol 68 Genie; a recent, well-featured
-implementation written from scratch.
+interest, by making a modern, well-featured hybrid compiler-interpreter
+written from scratch, which ranks among the most complete Algol 68
+implementations.  It features arbitrary precision arithmetic, complex
+numbers, parallel processing, partial parameterization, and formatted
+transput, as well as support for curses, regular expressions, and sound.
