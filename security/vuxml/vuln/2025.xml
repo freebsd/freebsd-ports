@@ -23,12 +23,12 @@
 	</body>
     </description>
     <references>
-      <cvename>CVS-2024-12084</cvename>
-      <cvename>CVS-2024-12085</cvename>
-      <cvename>CVS-2024-12086</cvename>
-      <cvename>CVS-2024-12087</cvename>
-      <cvename>CVS-2024-12088</cvename>
-      <cvename>CVS-2024-12747</cvename>
+      <cvename>CVE-2024-12084</cvename>
+      <cvename>CVE-2024-12085</cvename>
+      <cvename>CVE-2024-12086</cvename>
+      <cvename>CVE-2024-12087</cvename>
+      <cvename>CVE-2024-12088</cvename>
+      <cvename>CVE-2024-12747</cvename>
     </references>
     <dates>
       <discovery>2025-01-14</discovery>
