@@ -1,5 +1,5 @@
 PORTNAME=	opentelemetry-instrumentation-rails
-PORTVERSION=	0.34.0
+PORTVERSION=	0.34.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -19,7 +19,8 @@ RUN_DEPENDS=	rubygem-opentelemetry-api>=1.0<2:devel/rubygem-opentelemetry-api \
 		rubygem-opentelemetry-instrumentation-active_job>=0.7.0<0.8:devel/rubygem-opentelemetry-instrumentation-active_job \
 		rubygem-opentelemetry-instrumentation-active_record>=0.8.0<0.9:devel/rubygem-opentelemetry-instrumentation-active_record \
 		rubygem-opentelemetry-instrumentation-active_support>=0.7.0<0.8:devel/rubygem-opentelemetry-instrumentation-active_support \
-		rubygem-opentelemetry-instrumentation-base>=0.22.1<0.23:devel/rubygem-opentelemetry-instrumentation-base
+		rubygem-opentelemetry-instrumentation-base>=0.22.1<0.23:devel/rubygem-opentelemetry-instrumentation-base \
+		rubygem-opentelemetry-instrumentation-concurrent_ruby>=0.21.4<0.22:devel/rubygem-opentelemetry-instrumentation-concurrent_ruby
 
 USES=		gem
 
