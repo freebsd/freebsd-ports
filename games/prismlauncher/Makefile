@@ -1,5 +1,5 @@
 PORTNAME=	prismlauncher
-DISTVERSION=	9.0
+DISTVERSION=	9.2
 CATEGORIES=	games java
 
 MAINTAINER=	Alexander88207@protonmail.com
