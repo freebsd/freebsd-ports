@@ -5,7 +5,7 @@ MASTER_SITES=	https://github.com/svaarala/${PORTNAME}/releases/download/v${DISTV
 		https://duktape.org/
 PKGNAMESUFFIX=	-lib
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	desktop@FreeBSD.org
 COMMENT=	Embeddable Javascript engine (shared lib)
 WWW=		https://duktape.org/
 
