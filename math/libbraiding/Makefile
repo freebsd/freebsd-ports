@@ -1,5 +1,5 @@
 PORTNAME=	libbraiding
-PORTVERSION=	1.2
+PORTVERSION=	1.3.1
 CATEGORIES=	math
 
 MAINTAINER=	thierry@FreeBSD.org
@@ -11,7 +11,7 @@ LICENSE=	GPLv3
 USE_GITHUB=	yes
 GH_ACCOUNT=	miguelmarco
 
-USES=		autoreconf  compiler:c++11-lang libtool
+USES=		autoreconf compiler:c++11-lang libtool pathfix pkgconfig
 
 CXXFLAGS+=	-std=c++17
 GNU_CONFIGURE=	yes
