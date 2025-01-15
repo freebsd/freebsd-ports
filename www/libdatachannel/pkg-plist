@@ -10,7 +10,6 @@ include/rtc/global.hpp
 include/rtc/h264rtpdepacketizer.hpp
 include/rtc/h264rtppacketizer.hpp
 include/rtc/h265nalunit.hpp
-include/rtc/h265rtpdepacketizer.hpp
 include/rtc/h265rtppacketizer.hpp
 include/rtc/mediahandler.hpp
 include/rtc/message.hpp
@@ -40,4 +39,4 @@ lib/cmake/LibDataChannel/LibDataChannelTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/LibDataChannel/LibDataChannelTargets.cmake
 lib/libdatachannel.so
 lib/libdatachannel.so.0.22
-lib/libdatachannel.so.0.22.3
+lib/libdatachannel.so.0.22.4
