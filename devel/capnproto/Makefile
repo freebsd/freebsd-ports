@@ -1,5 +1,5 @@
 PORTNAME=	capnproto
-DISTVERSION=	1.0.2
+DISTVERSION=	1.1.0
 CATEGORIES=	devel
 MASTER_SITES=	https://capnproto.org/
 DISTNAME=	${PORTNAME}-c++-${DISTVERSION}
@@ -15,8 +15,6 @@ USES=		cmake:testing compiler:c++14-lang cpe pathfix ssl
 USE_LDCONFIG=	yes
 
 CONFLICTS_INSTALL=	capnproto080
-
-CMAKE_TESTING_ON=	BUILD_TESTING
 
 PLIST_SUB=	DISTVERSION="${DISTVERSION}"
 
