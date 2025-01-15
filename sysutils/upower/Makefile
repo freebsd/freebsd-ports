@@ -1,5 +1,5 @@
 PORTNAME=	upower
-DISTVERSION=	1.90.6
+DISTVERSION=	1.90.7
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
 
@@ -24,7 +24,8 @@ MESON_ARGS=	-Dgtk-doc=false \
 		-Dudevhwdbdir=no \
 		-Dsystemdsystemunitdir=no \
 		-Didevice=disabled \
-		-Dpolkit=enabled
+		-Dpolkit=enabled \
+		-Dzshcompletiondir=no
 LDFLAGS+=	-lkvm
 
 OPTIONS_DEFINE=			MANPAGES
