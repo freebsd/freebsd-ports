@@ -1,6 +1,6 @@
 PORTNAME=	mise
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2025.1.6
+DISTVERSION=	2025.1.7
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -38,7 +38,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		anstyle-1.0.10 \
 		anstyle-parse-0.2.6 \
 		anstyle-query-1.1.2 \
-		anstyle-wincon-3.0.6 \
+		anstyle-wincon-3.0.7 \
 		anyhow-1.0.95 \
 		arbitrary-1.4.1 \
 		arc-swap-1.7.1 \
@@ -251,7 +251,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		itertools-0.14.0 \
 		itoa-1.0.14 \
 		jobserver-0.1.32 \
-		js-sys-0.3.76 \
+		js-sys-0.3.77 \
 		junction-1.2.0 \
 		kdl-6.2.2 \
 		lazy-regex-3.4.1 \
@@ -269,7 +269,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		litrs-0.4.1 \
 		lock_api-0.4.12 \
 		lockfree-object-pool-0.1.6 \
-		log-0.4.22 \
+		log-0.4.25 \
 		logos-0.12.1 \
 		logos-derive-0.12.1 \
 		lua-src-547.0.0 \
@@ -286,7 +286,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		minimal-lexical-0.2.1 \
 		minisign-verify-0.2.3 \
 		miniz_oxide-0.7.4 \
-		miniz_oxide-0.8.2 \
+		miniz_oxide-0.8.3 \
 		mio-1.0.3 \
 		mlua-0.10.2 \
 		mlua-sys-0.6.6 \
@@ -533,13 +533,13 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		walkdir-2.5.0 \
 		want-0.3.1 \
 		wasi-0.11.0+wasi-snapshot-preview1 \
-		wasm-bindgen-0.2.99 \
-		wasm-bindgen-backend-0.2.99 \
-		wasm-bindgen-futures-0.4.49 \
-		wasm-bindgen-macro-0.2.99 \
-		wasm-bindgen-macro-support-0.2.99 \
-		wasm-bindgen-shared-0.2.99 \
-		web-sys-0.3.76 \
+		wasm-bindgen-0.2.100 \
+		wasm-bindgen-backend-0.2.100 \
+		wasm-bindgen-futures-0.4.50 \
+		wasm-bindgen-macro-0.2.100 \
+		wasm-bindgen-macro-support-0.2.100 \
+		wasm-bindgen-shared-0.2.100 \
+		web-sys-0.3.77 \
 		web-time-1.1.0 \
 		webpki-roots-0.26.7 \
 		which-6.0.3 \
