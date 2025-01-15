@@ -15,7 +15,5 @@ USE_PYTHON=		distutils autoplist
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	krig
-GH_PROJECT=	parallax
-GH_TAG=		6713276
 
 .include <bsd.port.mk>
