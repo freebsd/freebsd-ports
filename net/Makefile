@@ -418,13 +418,6 @@
     SUBDIR += libpcapnav
     SUBDIR += libpfctl
     SUBDIR += libproxy
-    SUBDIR += libproxy-duktape
-    SUBDIR += libproxy-gnome3
-    SUBDIR += libproxy-kde
-    SUBDIR += libproxy-pacrunner
-    SUBDIR += libproxy-perl
-    SUBDIR += libproxy-python
-    SUBDIR += libproxy-webkit3
     SUBDIR += librdkafka
     SUBDIR += librespeed-cli
     SUBDIR += librespeed-go

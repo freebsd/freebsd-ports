@@ -4022,3 +4022,10 @@ devel/pas2dox||2025-01-15|Has expired: doesn't compile with moddern clang and gc
 x11-toolkits/kirigami-addons|x11-toolkits/kirigami-addons-qt5|2025-01-16|Moved to have symmetric names with Qt6
 x11-toolkits/kirigami-addons-devel|x11-toolkits/kirigami-addons-qt6|2025-01-16|Moved to have symmetric names with Qt6
 audio/guitarix-lv2||2025-01-18|Has expired: Broken for more than a year
+net/libproxy-duktape||2025-01-19|Completely rewritten, plugins now built directly into the library
+net/libproxy-gnome3||2025-01-19|Completely rewritten, plugins now built directly into the library
+net/libproxy-kde||2025-01-19|Completely rewritten, plugins now built directly into the library
+net/libproxy-pacrunner||2025-01-19|Completely rewritten, plugins now built directly into the library
+net/libproxy-perl||2025-01-19|Completely rewritten, plugins now built directly into the library
+net/libproxy-python||2025-01-19|Completely rewritten, plugins now built directly into the library
+net/libproxy-webkit3||2025-01-19|Completely rewritten, plugins now built directly into the library
