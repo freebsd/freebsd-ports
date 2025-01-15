@@ -1,6 +1,6 @@
 PORTNAME=	zycore-c
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.5.0
+DISTVERSION=	1.5.1
 CATEGORIES=	devel
 
 MAINTAINER=	freebsd@sysctl.cz
@@ -12,6 +12,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 ONLY_FOR_ARCHS=		aarch64 amd64 armv6 armv7 i386 powerpc powerpc64 powerpc64le riscv64
 ONLY_FOR_ARCHS_REASON=	see definitions in include/Zycore/Defines.h
+
+TEST_DEPENDS=	googletest>0:devel/googletest
 
 USES=		cmake:testing compiler:c++17-lang cpe
 CPE_VENDOR=	zyantific
