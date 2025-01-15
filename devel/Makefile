@@ -6305,7 +6305,6 @@
     SUBDIR += radian
     SUBDIR += radicle
     SUBDIR += ragel
-    SUBDIR += raknet
     SUBDIR += random123
     SUBDIR += rang
     SUBDIR += range-v3
