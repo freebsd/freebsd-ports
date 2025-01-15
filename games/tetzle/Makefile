@@ -1,5 +1,5 @@
 PORTNAME=	tetzle
-PORTVERSION=	3.0.0
+PORTVERSION=	3.0.1
 CATEGORIES=	games
 MASTER_SITES=	https://gottcode.org/${PORTNAME}/
 
