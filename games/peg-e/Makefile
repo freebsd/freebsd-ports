@@ -1,5 +1,5 @@
 PORTNAME=	peg-e
-PORTVERSION=	1.3.3
+PORTVERSION=	1.3.4
 CATEGORIES=	games
 MASTER_SITES=	https://gottcode.org/${PORTNAME}/
 
