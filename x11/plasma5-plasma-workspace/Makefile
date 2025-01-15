@@ -1,6 +1,6 @@
 PORTNAME=	plasma-workspace
 DISTVERSION=	${KDE_PLASMA_VERSION}.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11 kde kde-plasma
 
 PATCH_SITES=	https://invent.kde.org/plasma/plasma-workspace/-/commit/
@@ -34,7 +34,7 @@ RUN_DEPENDS=	ck-launch-session:sysutils/consolekit2 \
 		iso-codes>=0:misc/iso-codes \
 		${LOCALBASE}/bin/genv:sysutils/coreutils \
 		accountsservice>=0:sysutils/accountsservice \
-		kf5-oxygen-icons>=0:x11-themes/kf5-oxygen-icons5
+		oxygen-icons>=0:x11-themes/oxygen-icons
 
 USES=		cmake compiler:c++11-lib cpe desktop-file-utils gettext gl \
 		kde:5 pkgconfig qt:5 tar:xz xorg
