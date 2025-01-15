@@ -1,5 +1,5 @@
 PORTNAME=	nanosvg
-DISTVERSION=	g20221204
+DISTVERSION=	20241219 # use date because this tiny library is unlikely to ever have releases
 CATEGORIES=	graphics
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -13,7 +13,7 @@ USES=		cpe
 CPE_VENDOR=	${PORTNAME}_project
 USE_GITHUB=	yes
 GH_ACCOUNT=	memononen
-GH_TAGNAME=	9da543e
+GH_TAGNAME=	ea6a6ac
 
 NO_BUILD=	yes
 NO_ARCH=	yes
