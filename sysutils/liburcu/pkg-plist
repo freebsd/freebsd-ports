@@ -5,6 +5,7 @@ include/urcu-flavor.h
 include/urcu-pointer.h
 include/urcu-qsbr.h
 include/urcu.h
+include/urcu/annotate.h
 include/urcu/arch.h
 include/urcu/arch/aarch64.h
 include/urcu/arch/alpha.h
@@ -13,6 +14,7 @@ include/urcu/arch/gcc.h
 include/urcu/arch/generic.h
 include/urcu/arch/hppa.h
 include/urcu/arch/ia64.h
+include/urcu/arch/loongarch.h
 include/urcu/arch/m68k.h
 include/urcu/arch/mips.h
 include/urcu/arch/nios2.h
@@ -39,7 +41,6 @@ include/urcu/map/urcu-bp.h
 include/urcu/map/urcu-mb.h
 include/urcu/map/urcu-memb.h
 include/urcu/map/urcu-qsbr.h
-include/urcu/map/urcu-signal.h
 include/urcu/map/urcu.h
 include/urcu/pointer.h
 include/urcu/rcuhlist.h
@@ -57,8 +58,6 @@ include/urcu/static/urcu-common.h
 include/urcu/static/urcu-mb.h
 include/urcu/static/urcu-memb.h
 include/urcu/static/urcu-qsbr.h
-include/urcu/static/urcu-signal-nr.h
-include/urcu/static/urcu-signal.h
 include/urcu/static/urcu.h
 include/urcu/static/wfcqueue.h
 include/urcu/static/wfqueue.h
@@ -69,11 +68,15 @@ include/urcu/tls-compat.h
 include/urcu/uatomic.h
 include/urcu/uatomic/aarch64.h
 include/urcu/uatomic/alpha.h
+include/urcu/uatomic/api.h
 include/urcu/uatomic/arm.h
+include/urcu/uatomic/builtins-generic.h
+include/urcu/uatomic/builtins.h
 include/urcu/uatomic/gcc.h
 include/urcu/uatomic/generic.h
 include/urcu/uatomic/hppa.h
 include/urcu/uatomic/ia64.h
+include/urcu/uatomic/loongarch.h
 include/urcu/uatomic/m68k.h
 include/urcu/uatomic/mips.h
 include/urcu/uatomic/nios2.h
@@ -90,7 +93,6 @@ include/urcu/urcu-mb.h
 include/urcu/urcu-memb.h
 include/urcu/urcu-poll.h
 include/urcu/urcu-qsbr.h
-include/urcu/urcu-signal.h
 include/urcu/urcu.h
 include/urcu/urcu_ref.h
 include/urcu/wfcqueue.h
@@ -120,10 +122,6 @@ lib/liburcu-qsbr.a
 lib/liburcu-qsbr.so
 lib/liburcu-qsbr.so.8
 lib/liburcu-qsbr.so.8.1.0
-lib/liburcu-signal.a
-lib/liburcu-signal.so
-lib/liburcu-signal.so.8
-lib/liburcu-signal.so.8.1.0
 lib/liburcu.a
 lib/liburcu.so
 lib/liburcu.so.8
@@ -133,9 +131,8 @@ libdata/pkgconfig/liburcu-cds.pc
 libdata/pkgconfig/liburcu-mb.pc
 libdata/pkgconfig/liburcu-memb.pc
 libdata/pkgconfig/liburcu-qsbr.pc
-libdata/pkgconfig/liburcu-signal.pc
 libdata/pkgconfig/liburcu.pc
-%%PORTDOCS%%%%DOCSDIR%%/LICENSE
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE.md
 %%PORTDOCS%%%%DOCSDIR%%/README.md
 %%PORTDOCS%%%%DOCSDIR%%/cds-api.md
 %%PORTDOCS%%%%DOCSDIR%%/examples/Makefile
@@ -195,12 +192,10 @@ libdata/pkgconfig/liburcu.pc
 %%PORTDOCS%%%%DOCSDIR%%/examples/urcu-flavors/Makefile.mb
 %%PORTDOCS%%%%DOCSDIR%%/examples/urcu-flavors/Makefile.membarrier
 %%PORTDOCS%%%%DOCSDIR%%/examples/urcu-flavors/Makefile.qsbr
-%%PORTDOCS%%%%DOCSDIR%%/examples/urcu-flavors/Makefile.signal
 %%PORTDOCS%%%%DOCSDIR%%/examples/urcu-flavors/bp.c
 %%PORTDOCS%%%%DOCSDIR%%/examples/urcu-flavors/mb.c
 %%PORTDOCS%%%%DOCSDIR%%/examples/urcu-flavors/membarrier.c
 %%PORTDOCS%%%%DOCSDIR%%/examples/urcu-flavors/qsbr.c
-%%PORTDOCS%%%%DOCSDIR%%/examples/urcu-flavors/signal.c
 %%PORTDOCS%%%%DOCSDIR%%/examples/wfcqueue/Makefile
 %%PORTDOCS%%%%DOCSDIR%%/examples/wfcqueue/Makefile.cds_wfcq_dequeue
 %%PORTDOCS%%%%DOCSDIR%%/examples/wfcqueue/Makefile.cds_wfcq_enqueue
