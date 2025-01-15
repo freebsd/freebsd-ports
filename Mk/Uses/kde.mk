@@ -274,7 +274,7 @@ _USE_KDE_BOTH=		akonadi libkcddb libkcompactdisc libkdcraw libkdegames \
 # that our list of frameworks matches the structure offered upstream.
 _USE_FRAMEWORKS_TIER1=	apidox archive attica breeze-icons codecs config \
 			coreaddons dbusaddons dnssd holidays i18n idletime itemmodels \
-			itemviews kirigami2 kquickcharts oxygen-icons5 plotting prison \
+			itemviews kirigami2 kquickcharts plotting prison \
 			qqc2-desktop-style solid sonnet syntaxhighlighting \
 			threadweaver wayland widgetsaddons windowsystem
 # NOT LISTED TIER1: modemmanagerqt networkmanagerqt (not applicable)
@@ -313,7 +313,7 @@ _USE_FRAMEWORKS6_ALL=	ecm colorscheme \
 			plasma-wayland-protocols \
 			texttemplate \
 			userfeedback \
-			${_USE_FRAMEWORKS_TIER1:Noxygen-icons5:Nwayland} \
+			${_USE_FRAMEWORKS_TIER1:Nwayland} \
 			${_USE_FRAMEWORKS_TIER2} \
 			${_USE_FRAMEWORKS_TIER3:Nemoticons:Ndesignerplugin:Nactivities:Nactivities-stats:Ninit:Nplasma-framework:Nxmlrpcclient:Nkpipewire} \
 			${_USE_FRAMEWORKS_TIER4} \
@@ -542,10 +542,6 @@ kde-notifications_LIB=		libKF${_KDE_VERSION}Notifications.so
 
 kde-notifyconfig_PORT=		devel/kf${_KDE_VERSION}-knotifyconfig
 kde-notifyconfig_LIB=		libKF${_KDE_VERSION}NotifyConfig.so
-
-kde-oxygen-icons5_PORT=		x11-themes/kf${_KDE_VERSION}-oxygen-icons5
-kde-oxygen-icons5_PATH=		${KDE_PREFIX}/share/icons/oxygen/index.theme
-kde-oxygen-icons5_TYPE=		run
 
 kde-oxygen-sounds_PORT=		audio/plasma${_KDE_VERSION}-oxygen-sounds
 kde-oxygen-sounds_PATH=		${KDE_PREFIX}/share/sounds/Oxygen-Sys-Log-In.ogg

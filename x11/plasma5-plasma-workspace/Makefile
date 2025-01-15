@@ -33,7 +33,8 @@ RUN_DEPENDS=	ck-launch-session:sysutils/consolekit2 \
 		${LOCALBASE}/libdata/pkgconfig/xkeyboard-config.pc:x11/xkeyboard-config \
 		iso-codes>=0:misc/iso-codes \
 		${LOCALBASE}/bin/genv:sysutils/coreutils \
-		accountsservice>=0:sysutils/accountsservice
+		accountsservice>=0:sysutils/accountsservice \
+		kf5-oxygen-icons>=0:x11-themes/kf5-oxygen-icons5
 
 USES=		cmake compiler:c++11-lib cpe desktop-file-utils gettext gl \
 		kde:5 pkgconfig qt:5 tar:xz xorg
@@ -51,7 +52,7 @@ USE_KDE=	activities activities-stats activitymanagerd archive attica \
 		widgetsaddons windowsystem xmlgui xmlrpcclient \
 		doctools:build ecm:build plasma-wayland-protocols:build \
 		breeze-icons:run breeze:run kded:run kquickcharts:run \
-		milou:run oxygen-icons5:run
+		milou:run
 USE_QT=		concurrent core dbus declarative graphicaleffects gui network \
 		printsupport qdbus script sql svg wayland \
 		widgets x11extras xml \
