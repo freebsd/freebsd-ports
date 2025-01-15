@@ -113,6 +113,8 @@ V4L_CONFIGURE_WITH=	v4l2
 V4L_BUILD_DEPENDS=	${LOCALBASE}/include/linux/videodev2.h:multimedia/v4l_compat
 V4L_LIB_DEPENDS=	libv4l2.so:multimedia/libv4l
 
+WAYLAND_CONFIGURE_WITH=	wayland
+
 WINEMAKER_RUN_DEPENDS=	p5-XML-LibXML>0:textproc/p5-XML-LibXML
 
 X11_CONFIGURE_WITH=	x fontconfig freetype opengl xinerama xinput2 xrandr xrender
@@ -130,14 +132,6 @@ PLIST_SUB+=		GSTREAMER=""
 .else
 CONFIGURE_ARGS+=	--without-gstreamer
 PLIST_SUB+=		GSTREAMER="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MWAYLAND}
-CONFIGURE_ARGS+=	--with-wayland
-PLIST_SUB+=		WAYLAND=""
-.else
-CONFIGURE_ARGS+=	--without-wayland
-PLIST_SUB+=		WAYLAND="@comment "
 .endif
 
 .if ${ARCH} == amd64
