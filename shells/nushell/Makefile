@@ -10,9 +10,6 @@ WWW=		https://www.nushell.sh/ \
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN_FreeBSD_15_armv7=	compilation fails, see https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=282712
-BROKEN_aarch64=	compilation fails, see https://github.com/nushell/nushell/issues/13194
-
 USES=		cargo localbase ssl
 
 USE_GITHUB=	yes
