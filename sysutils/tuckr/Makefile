@@ -1,6 +1,5 @@
 PORTNAME=	tuckr
-DISTVERSION=	0.10.0
-PORTREVISION=	2
+DISTVERSION=	0.10.1
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -17,44 +16,72 @@ GH_ACCOUNT=	RaphGL
 GH_PROJECT=	Tuckr
 
 CARGO_CRATES=	aead-0.5.2 \
+		aho-corasick-1.1.3 \
 		ansi-str-0.5.0 \
 		ansitok-0.2.0 \
-		anstream-0.6.17 \
-		anstyle-1.0.9 \
+		anstream-0.6.18 \
+		anstyle-1.0.10 \
 		anstyle-parse-0.2.6 \
 		anstyle-query-1.1.2 \
 		anstyle-wincon-3.0.6 \
+		arc-swap-1.7.1 \
 		arrayvec-0.5.2 \
+		base62-2.0.3 \
+		bitflags-1.3.2 \
 		bitflags-2.6.0 \
 		block-buffer-0.10.4 \
+		bstr-1.11.1 \
 		bytecount-0.6.8 \
 		byteorder-1.5.0 \
 		cfg-if-1.0.0 \
 		chacha20-0.9.1 \
 		chacha20poly1305-0.10.1 \
 		cipher-0.4.4 \
-		clap-4.5.20 \
-		clap_builder-4.5.20 \
+		clap-4.5.23 \
+		clap_builder-4.5.23 \
 		clap_derive-4.5.18 \
-		clap_lex-0.7.2 \
+		clap_lex-0.7.4 \
 		colorchoice-1.0.3 \
-		cpufeatures-0.2.14 \
+		cpufeatures-0.2.16 \
+		crossbeam-deque-0.8.6 \
+		crossbeam-epoch-0.9.18 \
+		crossbeam-utils-0.8.21 \
 		crypto-common-0.1.6 \
 		digest-0.10.7 \
 		dirs-4.0.0 \
 		dirs-sys-0.3.7 \
+		either-1.13.0 \
+		enumflags2-0.7.10 \
+		enumflags2_derive-0.7.10 \
+		equivalent-1.0.1 \
+		errno-0.3.10 \
+		fastrand-2.3.0 \
 		fnv-1.0.7 \
 		generic-array-0.14.7 \
 		getrandom-0.2.15 \
+		glob-0.3.2 \
+		globset-0.4.15 \
+		globwalk-0.8.1 \
+		hashbrown-0.15.2 \
 		heck-0.4.1 \
 		heck-0.5.0 \
+		ignore-0.4.23 \
+		indexmap-2.7.0 \
 		inout-0.1.3 \
 		is_terminal_polyfill-1.70.1 \
-		libc-0.2.161 \
+		itertools-0.11.0 \
+		itoa-1.0.14 \
+		lazy_static-1.5.0 \
+		libc-0.2.169 \
 		libredox-0.1.3 \
+		libyml-0.0.4 \
+		linux-raw-sys-0.4.14 \
+		log-0.4.22 \
 		memchr-2.7.4 \
 		minimal-lexical-0.2.1 \
 		nom-7.1.3 \
+		normpath-1.3.0 \
+		once_cell-1.20.2 \
 		opaque-debug-0.3.1 \
 		owo-colors-3.5.0 \
 		papergrid-0.7.1 \
@@ -62,34 +89,59 @@ CARGO_CRATES=	aead-0.5.2 \
 		ppv-lite86-0.2.20 \
 		proc-macro-error-1.0.4 \
 		proc-macro-error-attr-1.0.4 \
-		proc-macro2-1.0.89 \
-		quote-1.0.37 \
+		proc-macro2-1.0.92 \
+		quote-1.0.38 \
 		rand-0.8.5 \
 		rand_chacha-0.3.1 \
 		rand_core-0.6.4 \
 		redox_users-0.4.6 \
+		regex-1.11.1 \
+		regex-automata-0.4.9 \
+		regex-syntax-0.8.5 \
 		rpassword-7.3.1 \
 		rtoolbox-0.0.2 \
+		rust-i18n-3.1.2 \
+		rust-i18n-macro-3.1.2 \
+		rust-i18n-support-3.1.2 \
+		rustix-0.38.42 \
+		ryu-1.0.18 \
+		same-file-1.0.6 \
+		serde-1.0.217 \
+		serde_derive-1.0.217 \
+		serde_json-1.0.134 \
+		serde_spanned-0.6.8 \
+		serde_yml-0.0.11 \
 		sha2-0.10.8 \
+		siphasher-1.0.1 \
+		smallvec-1.13.2 \
+		stable_deref_trait-1.2.0 \
 		strsim-0.11.1 \
 		subtle-2.6.1 \
 		syn-1.0.109 \
-		syn-2.0.85 \
+		syn-2.0.93 \
+		sys-locale-0.3.2 \
 		tabled-0.10.0 \
 		tabled_derive-0.5.0 \
-		thiserror-1.0.65 \
-		thiserror-impl-1.0.65 \
+		tempfile-3.14.0 \
+		thiserror-1.0.69 \
+		thiserror-impl-1.0.69 \
+		toml-0.7.8 \
+		toml_datetime-0.6.8 \
+		toml_edit-0.19.15 \
+		triomphe-0.1.14 \
 		typenum-1.17.0 \
-		unicode-ident-1.0.13 \
+		unicode-ident-1.0.14 \
 		unicode-width-0.1.14 \
 		universal-hash-0.5.1 \
 		utf8parse-0.2.2 \
 		version_check-0.9.5 \
 		vte-0.10.1 \
 		vte_generate_state_changes-0.1.2 \
+		walkdir-2.5.0 \
 		wasi-0.11.0+wasi-snapshot-preview1 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
+		winapi-util-0.1.9 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
 		windows-sys-0.48.0 \
 		windows-sys-0.59.0 \
@@ -110,6 +162,7 @@ CARGO_CRATES=	aead-0.5.2 \
 		windows_x86_64_gnullvm-0.52.6 \
 		windows_x86_64_msvc-0.48.5 \
 		windows_x86_64_msvc-0.52.6 \
+		winnow-0.5.40 \
 		zerocopy-0.7.35 \
 		zerocopy-derive-0.7.35 \
 		zeroize-1.8.1
