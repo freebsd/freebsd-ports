@@ -1,5 +1,5 @@
 PORTNAME=	simsu
-PORTVERSION=	1.4.3
+PORTVERSION=	1.4.4
 CATEGORIES=	games
 MASTER_SITES=	https://gottcode.org/${PORTNAME}/
 
