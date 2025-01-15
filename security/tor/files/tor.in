@@ -12,6 +12,7 @@
 # tor_instances (str):	List of instances. Default: ""
 # tor_conf (str):	Points to your torrc file.
 #			Default: %%PREFIX%%/etc/tor/torrc
+# tor_flags (str):	Additional flags.  Common to all instances.
 # tor_user (str):	Tor daemon user. Default: %%USER%%
 # tor_group (str):	Tor group. Default: %%GROUP%%
 # tor_pidfile (str):	Tor pid file.  Default: /var/run/tor/tor.pid
@@ -36,6 +37,7 @@ load_rc_config ${name}
 : ${tor_enable="NO"}
 : ${tor_instances=""}
 : ${tor_conf="%%PREFIX%%/etc/tor/torrc"}
+: ${tor_flags=""}
 : ${tor_user="%%USER%%"}
 : ${tor_group="%%GROUP%%"}
 : ${tor_pidfile="/var/run/tor/tor.pid"}
@@ -109,7 +111,7 @@ required_files=${tor_conf}
 required_dirs=${tor_datadir}
 pidfile=${tor_pidfile}
 command="%%PREFIX%%/bin/${name}"
-command_args="-f ${tor_conf} --PidFile ${tor_pidfile} --RunAsDaemon 1 --DataDirectory ${tor_datadir}"
+command_args="-f ${tor_conf} --PidFile ${tor_pidfile} --RunAsDaemon 1 --DataDirectory ${tor_datadir} ${tor_flags}"
 extra_commands="reload"
 
 # clear user setting in conf file: it should be done through the command line
