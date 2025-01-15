@@ -1802,6 +1802,7 @@ share/pixmaps/scribus.png
 %%DATADIR%%/dicts/hyph/README_fi_FI.txt
 %%DATADIR%%/dicts/hyph/README_hu_HU.txt
 %%DATADIR%%/dicts/hyph/README_hyph_da_DK.txt
+%%DATADIR%%/dicts/hyph/README_hyph_de_AT.txt
 %%DATADIR%%/dicts/hyph/README_hyph_de_CH.txt
 %%DATADIR%%/dicts/hyph/README_hyph_de_DE.txt
 %%DATADIR%%/dicts/hyph/README_hyph_en_GB.txt
@@ -1829,9 +1830,10 @@ share/pixmaps/scribus.png
 %%DATADIR%%/dicts/hyph/hyph_ca.dic
 %%DATADIR%%/dicts/hyph/hyph_cs.dic
 %%DATADIR%%/dicts/hyph/hyph_da.dic
-%%DATADIR%%/dicts/hyph/hyph_de.dic
 %%DATADIR%%/dicts/hyph/hyph_de_1901.dic
+%%DATADIR%%/dicts/hyph/hyph_de_AT.dic
 %%DATADIR%%/dicts/hyph/hyph_de_CH.dic
+%%DATADIR%%/dicts/hyph/hyph_de_DE.dic
 %%DATADIR%%/dicts/hyph/hyph_el.dic
 %%DATADIR%%/dicts/hyph/hyph_en_GB.dic
 %%DATADIR%%/dicts/hyph/hyph_en_US.dic
@@ -3549,7 +3551,6 @@ share/pixmaps/scribus.png
 %%DATADIR%%/translations/scribus.oc.qm
 %%DATADIR%%/translations/scribus.pl_PL.qm
 %%DATADIR%%/translations/scribus.pms.qm
-%%DATADIR%%/translations/scribus.pt.qm
 %%DATADIR%%/translations/scribus.pt_BR.qm
 %%DATADIR%%/translations/scribus.pt_PT.qm
 %%DATADIR%%/translations/scribus.ro.qm
