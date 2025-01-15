@@ -4016,3 +4016,4 @@ devel/py-zclockfile|devel/py-zc.lockfile|2025-01-11|Switch consumers to latest p
 devel/elixir-hex||2025-01-11|No longer used by any consumers, newer versions are expected to be installed per-user by mix
 devel/elixir-make||2025-01-11|No longer used by any consumers, newer versions are expected to be installed per-user by mix
 audio/gqradio||2025-01-13|Has expired: BKTR devices are not supported anymore
+x11-themes/kf5-breeze-icons|x11-themes/kf6-breeze-icons|2025-01-15|Replaced by the KF6 version
