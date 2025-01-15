@@ -52,9 +52,9 @@
 +        return err;
 +    }
 +
-+    err = ENOENT;
++    err = table != NULL ? 0 : ENOENT;
 +    for (size_t i = 0; i < sz / sizeof(struct kinfo_proc); i++) {
-+        if (kp[i].ki_uid == 0) {
++        if (kp[i].ki_pid == 0) {
 +            continue;
 +        }
 +
