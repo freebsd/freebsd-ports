@@ -1,6 +1,5 @@
 PORTNAME=	emacs
-DISTVERSION=	31.0.50.20241231
-PORTREVISION=	1
+DISTVERSION=	31.0.50.20250115
 PORTEPOCH=	3
 CATEGORIES=	editors
 PKGNAMESUFFIX=	-devel
@@ -25,7 +24,7 @@ USES=		autoreconf:build cpe gmake localbase:ldflags makeinfo ncurses \
 CPE_VENDOR=	gnu
 USE_GITHUB=	yes
 GH_ACCOUNT=	emacs-mirror
-GH_TAGNAME=	643e32340d1
+GH_TAGNAME=	16c89c5ae5e
 
 GNU_CONFIGURE=		yes
 CONFIGURE_ARGS=		--disable-build-details \
@@ -168,7 +167,7 @@ M17N_LIB_DEPENDS=		libm17n.so:devel/m17n-lib
 M17N_CONFIGURE_WITH=		m17n-flt
 MAGICK_USES=			magick:7
 MAGICK_CONFIGURE_WITH=		imagemagick
-MAILUTILS_LIB_DEPENDS=		libmailutils.so:mail/mailutils
+MAILUTILS_RUN_DEPENDS=		mailutils:mail/mailutils
 MAILUTILS_CONFIGURE_WITH=	mailutils
 MAILUTILS_CONFIGURE_ENV_OFF=	ac_cv_lib_lockfile_maillock=no \
 				ac_cv_prog_liblockfile=no
@@ -184,7 +183,7 @@ PGTK_IMPLIES=			CAIRO GTK3 SCROLLBARS
 PGTK_PREVENTS=			M17N XFT XPM
 PGTK_CATEGORIES=		wayland
 PGTK_CONFIGURE_WITH=		pgtk
-PNG_LIB_DEPENDS=		libpng.so:graphics/png
+PNG_LIB_DEPENDS=		libpng16.so:graphics/png
 PNG_CONFIGURE_WITH=		png
 SCROLLBARS_CONFIGURE_WITH=	toolkit-scroll-bars
 SQLITE3_USES=			sqlite:3
@@ -198,7 +197,7 @@ TIFF_CONFIGURE_WITH=		tiff
 TREESITTER_IMPLIES=		MODULES
 TREESITTER_LIB_DEPENDS=		libtree-sitter.so:devel/tree-sitter
 TREESITTER_CONFIGURE_WITH=	tree-sitter
-WEBP_LIB_DEPENDS=		libwebp.so:graphics/webp
+WEBP_LIB_DEPENDS=		libwebpdemux.so:graphics/webp
 WEBP_CONFIGURE_WITH=		webp
 XAW3D_LIB_DEPENDS=		libXaw3d.so:x11-toolkits/Xaw3d
 XAW3D_CONFIGURE_ON=		--with-x-toolkit=athena

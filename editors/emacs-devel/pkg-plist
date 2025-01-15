@@ -4227,6 +4227,8 @@ share/applications/emacsclient.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/windmove.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/window-tool-bar.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/window-tool-bar.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/window-x.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/window-x.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/window.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/window.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/winner.el.gz
