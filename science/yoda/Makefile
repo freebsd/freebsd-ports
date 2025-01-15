@@ -1,5 +1,5 @@
 PORTNAME=	yoda
-DISTVERSION=	1.9.8
+DISTVERSION=	2.0.2
 CATEGORIES=	science
 MASTER_SITES=	https://yoda.hepforge.org/downloads/
 DISTNAME=	${PORTNAME:tu}-${DISTVERSION}
@@ -15,7 +15,7 @@ TEST_DEPENDS=	bash:shells/bash \
 		${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}matplotlib>0:math/py-matplotlib@${PY_FLAVOR}
 
-USES=		compiler:c++11-lang gettext-runtime gmake libtool python:test shebangfix
+USES=		compiler:c++11-lang gettext-runtime gmake libtool shebangfix
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
@@ -29,13 +29,20 @@ OPTIONS_DEFINE=		PYTHON
 OPTIONS_DEFAULT=	PYTHON
 OPTIONS_SUB=		yes
 
-PYTHON_USES=			python:run
+PYTHON_USES=			python
 PYTHON_USE=			PYTHON=cython
 PYTHON_CONFIGURE_ENABLE=	pyext
 PYTHON_MAKE_ENV=		PYTHON_VERSION=${PYTHON_VER} PYTHON=${PYTHON_CMD}
-PYTHON_VARS=			SHEBANG_FILES="bin/${PORTNAME}* bin/aida2yoda bin/aida2flat bin/flat2yoda"
+PYTHON_VARS=			SHEBANG_FILES="bin/${PORTNAME}*" \
+				BINARY_ALIAS="python=${PYTHON_CMD}"
 
 TEST_ENV=	${MAKE_ENV} PATH=${STAGEDIR}${PREFIX}/bin:${PATH} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
+
+.include <bsd.port.options.mk>
+
+.if !${PORT_OPTIONS:MPYTHON}
+USES+=	python:test
+.endif
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libYODA.so
