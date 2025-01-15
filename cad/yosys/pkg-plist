@@ -18,7 +18,9 @@ bin/yosys-witness
 %%DATADIR%%/anlogic/lutrams.txt
 %%DATADIR%%/anlogic/lutrams_map.v
 %%DATADIR%%/cells.lib
+%%DATADIR%%/choices/han-carlson.v
 %%DATADIR%%/choices/kogge-stone.v
+%%DATADIR%%/choices/sklansky.v
 %%DATADIR%%/cmp2lcu.v
 %%DATADIR%%/cmp2lut.v
 %%DATADIR%%/cmp2softlogic.v
@@ -74,7 +76,9 @@ bin/yosys-witness
 %%DATADIR%%/gowin/brams_map.v
 %%DATADIR%%/gowin/cells_map.v
 %%DATADIR%%/gowin/cells_sim.v
-%%DATADIR%%/gowin/cells_xtra.v
+%%DATADIR%%/gowin/cells_xtra_gw1n.v
+%%DATADIR%%/gowin/cells_xtra_gw2a.v
+%%DATADIR%%/gowin/cells_xtra_gw5a.v
 %%DATADIR%%/gowin/lutrams.txt
 %%DATADIR%%/gowin/lutrams_map.v
 %%DATADIR%%/greenpak4/cells_blackbox.v
