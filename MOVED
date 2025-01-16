@@ -4021,3 +4021,4 @@ x11-themes/kf5-oxygen-icons5|x11-themes/oxygen-icons|2025-01-15|Rename in accord
 devel/raknet||2025-01-15|Has expired: Unmaintained upstream, only builds with EOL toolchain
 devel/pas2dox||2025-01-15|Has expired: doesn't compile with moddern clang and gcc, upstream last updated it in 2003
 x11-toolkits/kirigami-addons|x11-toolkits/kirigami-addons-qt5|2025-01-16|Moved to have symmetric names with Qt6
+x11-toolkits/kirigami-addons-devel|x11-toolkits/kirigami-addons-qt6|2025-01-16|Moved to have symmetric names with Qt6
