@@ -27,6 +27,12 @@ PORTDOCS=	api
 OPTIONS_DEFINE=	DOCS EXAMPLES
 DOCS_CONFIGURE_OFF=	--disable-docs
 
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == powerpc
+USE_BINUTILS=	yes
+.endif
+
 post-patch:
 	${REINPLACE_CMD} -e 's|$$prefix"/"share|${STAGEDIR}${PREFIX}/share|' \
 	    -e '/datarootdir/s|$$pkg_name|&-ocaml|' \
