@@ -23,6 +23,12 @@ DOCSDIR=	${OCAML_DOCSDIR}/${PORTNAME}
 
 OPTIONS_DEFINE=	DOCS
 
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == powerpc
+USE_BINUTILS=	yes
+.endif
+
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
