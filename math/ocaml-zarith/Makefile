@@ -32,6 +32,12 @@ OPTIONS_DEFINE=	DOCS
 
 DOCS_ALL_TARGET=doc
 
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == powerpc
+USE_BINUTILS=	yes
+.endif
+
 post-install:
 	@${STRIP_CMD} \
 		${STAGEDIR}${PREFIX}/${OCAML_SITELIBDIR}/${PORTNAME}/dllzarith.so \
