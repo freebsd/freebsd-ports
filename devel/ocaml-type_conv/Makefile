@@ -25,6 +25,12 @@ MAKE_JOBS_UNSAFE=	yes
 DOCSDIR=	${OCAML_DOCSDIR}/${PORTNAME}
 PORTDOCS=	*
 
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == powerpc
+USE_BINUTILS=	yes
+.endif
+
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${OCAML_SITELIBDIR}/type_conv/pa_type_conv.cmxs
 
