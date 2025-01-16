@@ -1,5 +1,5 @@
 PORTNAME=	dra
-DISTVERSION=	0.7.0
+DISTVERSION=	0.7.1
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -29,16 +29,16 @@ CARGO_CRATES=	adler2-2.0.0 \
 		bitflags-2.4.0 \
 		bstr-1.6.0 \
 		bumpalo-3.16.0 \
-		bzip2-0.4.4 \
+		bzip2-0.5.0 \
 		bzip2-sys-0.1.11+1.0.8 \
 		cc-1.1.15 \
 		cfg-if-1.0.0 \
 		cfg_aliases-0.2.1 \
-		clap-4.5.20 \
-		clap_builder-4.5.20 \
-		clap_complete-4.5.34 \
+		clap-4.5.23 \
+		clap_builder-4.5.23 \
+		clap_complete-4.5.40 \
 		clap_derive-4.5.18 \
-		clap_lex-0.7.0 \
+		clap_lex-0.7.4 \
 		colorchoice-1.0.0 \
 		console-0.15.0 \
 		crc32fast-1.4.2 \
@@ -55,27 +55,39 @@ CARGO_CRATES=	adler2-2.0.0 \
 		errno-0.3.9 \
 		fastrand-1.9.0 \
 		filetime-0.2.17 \
-		flate2-1.0.34 \
-		float-cmp-0.9.0 \
-		form_urlencoded-1.0.1 \
+		flate2-1.0.35 \
+		float-cmp-0.10.0 \
+		form_urlencoded-1.2.1 \
 		getrandom-0.2.10 \
-		hashbrown-0.15.0 \
+		hashbrown-0.15.2 \
 		heck-0.5.0 \
-		idna-0.2.3 \
+		icu_collections-1.5.0 \
+		icu_locid-1.5.0 \
+		icu_locid_transform-1.5.0 \
+		icu_locid_transform_data-1.5.0 \
+		icu_normalizer-1.5.0 \
+		icu_normalizer_data-1.5.0 \
+		icu_properties-1.5.1 \
+		icu_properties_data-1.5.0 \
+		icu_provider-1.5.0 \
+		icu_provider_macros-1.5.0 \
+		idna-1.0.3 \
+		idna_adapter-1.2.0 \
 		indexmap-2.6.0 \
-		indicatif-0.17.8 \
+		indicatif-0.17.9 \
 		instant-0.1.12 \
 		io-lifetimes-1.0.2 \
-		itertools-0.13.0 \
+		itertools-0.14.0 \
 		itoa-1.0.6 \
+		js-sys-0.3.74 \
 		libc-0.2.158 \
 		libz-sys-1.1.20 \
 		linux-raw-sys-0.1.3 \
 		linux-raw-sys-0.4.14 \
+		litemap-0.7.4 \
 		lockfree-object-pool-0.1.6 \
 		log-0.4.22 \
 		lzma-sys-0.1.19 \
-		matches-0.1.9 \
 		memchr-2.7.4 \
 		miniz_oxide-0.8.0 \
 		nix-0.29.0 \
@@ -83,15 +95,15 @@ CARGO_CRATES=	adler2-2.0.0 \
 		num-traits-0.2.15 \
 		number_prefix-0.4.0 \
 		once_cell-1.19.0 \
-		percent-encoding-2.1.0 \
+		percent-encoding-2.3.1 \
 		pkg-config-0.3.25 \
 		portable-atomic-1.3.3 \
-		predicates-3.1.2 \
+		predicates-3.1.3 \
 		predicates-core-1.0.6 \
 		predicates-tree-1.0.5 \
 		proc-macro-error-1.0.4 \
 		proc-macro-error-attr-1.0.4 \
-		proc-macro2-1.0.89 \
+		proc-macro2-1.0.92 \
 		quote-1.0.35 \
 		redox_syscall-0.2.10 \
 		regex-1.5.6 \
@@ -100,23 +112,26 @@ CARGO_CRATES=	adler2-2.0.0 \
 		ring-0.17.3 \
 		rustix-0.36.16 \
 		rustix-0.38.37 \
-		rustls-0.23.12 \
-		rustls-pki-types-1.7.0 \
-		rustls-webpki-0.102.6 \
+		rustls-0.23.20 \
+		rustls-pki-types-1.10.1 \
+		rustls-webpki-0.102.8 \
 		ryu-1.0.6 \
 		same-file-1.0.6 \
-		serde-1.0.214 \
-		serde_derive-1.0.214 \
+		serde-1.0.217 \
+		serde_derive-1.0.217 \
 		serde_json-1.0.99 \
 		shell-words-1.1.0 \
 		shlex-1.3.0 \
 		simd-adler32-0.3.7 \
+		smallvec-1.13.2 \
 		spin-0.9.8 \
+		stable_deref_trait-1.2.0 \
 		strsim-0.11.0 \
 		subtle-2.5.0 \
 		syn-1.0.104 \
-		syn-2.0.86 \
-		tar-0.4.42 \
+		syn-2.0.90 \
+		synstructure-0.13.1 \
+		tar-0.4.43 \
 		tempfile-3.4.0 \
 		terminal_size-0.1.17 \
 		termtree-0.2.4 \
@@ -124,17 +139,19 @@ CARGO_CRATES=	adler2-2.0.0 \
 		test-case-core-3.2.1 \
 		test-case-macros-3.2.1 \
 		thiserror-1.0.65 \
+		thiserror-2.0.3 \
 		thiserror-impl-1.0.65 \
-		tinyvec-1.5.1 \
-		tinyvec_macros-0.1.0 \
-		unicode-bidi-0.3.7 \
+		thiserror-impl-2.0.3 \
+		tinystr-0.7.6 \
 		unicode-ident-1.0.5 \
-		unicode-normalization-0.1.19 \
 		unicode-width-0.1.9 \
+		unicode-width-0.2.0 \
 		untrusted-0.9.0 \
-		ureq-2.10.1 \
-		url-2.2.2 \
+		ureq-2.12.1 \
+		url-2.5.4 \
 		urlencoding-2.1.3 \
+		utf16_iter-1.0.5 \
+		utf8_iter-1.0.4 \
 		utf8parse-0.2.1 \
 		uuid-1.11.0 \
 		vcpkg-0.2.15 \
@@ -142,6 +159,12 @@ CARGO_CRATES=	adler2-2.0.0 \
 		wait-timeout-0.2.0 \
 		walkdir-2.5.0 \
 		wasi-0.11.0+wasi-snapshot-preview1 \
+		wasm-bindgen-0.2.97 \
+		wasm-bindgen-backend-0.2.97 \
+		wasm-bindgen-macro-0.2.97 \
+		wasm-bindgen-macro-support-0.2.97 \
+		wasm-bindgen-shared-0.2.97 \
+		web-time-1.1.0 \
 		webpki-roots-0.26.1 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
@@ -183,10 +206,18 @@ CARGO_CRATES=	adler2-2.0.0 \
 		windows_x86_64_msvc-0.42.1 \
 		windows_x86_64_msvc-0.48.0 \
 		windows_x86_64_msvc-0.52.6 \
+		write16-1.0.0 \
+		writeable-0.5.5 \
 		xattr-1.3.1 \
 		xz2-0.1.7 \
+		yoke-0.7.5 \
+		yoke-derive-0.7.5 \
+		zerofrom-0.1.5 \
+		zerofrom-derive-0.1.5 \
 		zeroize-1.8.1 \
-		zip-2.2.0 \
+		zerovec-0.10.4 \
+		zerovec-derive-0.10.3 \
+		zip-2.2.2 \
 		zopfli-0.8.1
 
 PLIST_FILES=	bin/${PORTNAME}
