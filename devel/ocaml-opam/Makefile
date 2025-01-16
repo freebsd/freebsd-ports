@@ -46,6 +46,9 @@ LDFLAGS+=	-Wl,-z,notext
 RUN_DEPENDS+=	${LOCALBASE}/bin/as:devel/binutils
 USE_BINUTILS=	yes
 .endif
+.if ${ARCH} == powerpc
+LLD_UNSAFE=	yes
+.endif
 
 pre-configure:
 	@(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} compiler)
