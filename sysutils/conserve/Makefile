@@ -340,4 +340,10 @@ CARGO_CRATES=	addr2line-0.21.0 \
 
 PLIST_FILES=	bin/${PORTNAME}
 
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == armv7 || ${ARCH} == powerpc
+LTO_UNSAFE=	yes
+.endif
+
 .include <bsd.port.mk>
