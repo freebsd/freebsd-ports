@@ -24,6 +24,12 @@ CFLAGS+=	-Wno-error=comment
 EXES=		tjcc tjdepend tjdis tjlink tjsim
 PLIST_FILES=	${EXES:S/^/bin\//}
 
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == powerpc
+USE_BINUTILS=	yes
+.endif
+
 # replacing bundled and outdated OCaml headers with a symlink to
 # the current headers
 post-patch:
