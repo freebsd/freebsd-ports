@@ -1,8 +1,7 @@
 PORTNAME=	calendar
-PORTVERSION=	2.03.2
-PORTREVISION=	3
+PORTVERSION=	2.04
 CATEGORIES=	devel
-MASTER_SITES=	http://forge.ocamlcore.org/frs/download.php/915/
+MASTER_SITES=	https://download.ocamlcore.org/calendar/calendar/${PORTVERSION}/
 PKGNAMEPREFIX=	ocaml-
 
 MAINTAINER=	ports@FreeBSD.org
@@ -14,5 +13,11 @@ LICENSE=	LGPL21
 USES=		gmake ocaml:findplist
 
 GNU_CONFIGURE=	yes
+
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == powerpc
+USE_BINUTILS=	yes
+.endif
 
 .include <bsd.port.mk>
