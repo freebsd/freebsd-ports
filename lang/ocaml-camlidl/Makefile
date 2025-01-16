@@ -23,6 +23,12 @@ DOCSDIR=	${OCAML_DOCSDIR}/${PORTNAME}
 OPTIONS_DEFINE=		DOCS
 DOCS_BUILD_DEPENDS=	hevea>=0:textproc/hevea
 
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == powerpc
+USE_BINUTILS=	yes
+.endif
+
 post-patch:
 	@${LN} -sf ${WRKSRC}/config/Makefile.unix ${WRKSRC}/config/Makefile
 
