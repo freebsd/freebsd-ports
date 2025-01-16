@@ -1,4 +1,4 @@
-%%ETCDIR%%/%%APP_NAME%%.sample
+@sample %%ETCDIR%%/%%APP_NAME%%.sample
 %%APP_NAME%%/LICENSE.txt
 %%APP_NAME%%/NOTICE.txt
 %%APP_NAME%%/README.adoc
