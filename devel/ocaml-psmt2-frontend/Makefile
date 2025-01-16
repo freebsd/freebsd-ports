@@ -24,6 +24,12 @@ PORTDOCS=	${OCAML_PACKAGES:@p@$p/CHANGES.md $p/LICENSE $p/LICENSE.md $p/README.m
 
 OPTIONS_DEFINE=	DOCS
 
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == powerpc
+USE_BINUTILS=	yes
+.endif
+
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/${OCAML_SITELIBDIR}/psmt2-frontend/psmt2Frontend.cmxs
 
