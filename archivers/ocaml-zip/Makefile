@@ -18,6 +18,12 @@ GH_ACCOUNT=	xavierleroy
 GH_PROJECT=	camlzip
 GH_TAGNAME=	rel${PORTVERSION:S/.//}
 
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == powerpc
+USE_BINUTILS=	yes
+.endif
+
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/ocaml/site-lib/zip/zip.cmxs \
 		${STAGEDIR}${PREFIX}/lib/ocaml/site-lib/zip/dllcamlzip.so
