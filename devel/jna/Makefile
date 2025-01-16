@@ -32,7 +32,7 @@ PORTDOCS=	javadoc platform-${PORTVERSION}-javadoc.jar
 
 OPTIONS_DEFINE=	DOCS
 
-ANT_ARCH=	${ARCH:S/amd64/x86-64/:S/armv6/arm/:S/armv7/arm/:S/i386/x86/:S/powerpc64/ppc64/}
+ANT_ARCH=	${ARCH:S/amd64/x86-64/:S/armv6/arm/:S/armv7/arm/:S/i386/x86/:S/powerpc/ppc/}
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' \
