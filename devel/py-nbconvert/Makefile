@@ -1,6 +1,5 @@
 PORTNAME=	nbconvert
-PORTVERSION=	7.16.4
-PORTREVISION=	1
+PORTVERSION=	7.16.5
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI \
 		https://github.com/jupyter/nbconvert/releases/download/v${PORTVERSION}/
