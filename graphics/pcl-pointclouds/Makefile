@@ -5,7 +5,7 @@ DISTVERSIONSUFFIX=	-g1590ba5f6
 CATEGORIES=	graphics math
 #MASTER_SITES=	https://github.com/PointCloudLibrary/${PORTNAME}/releases/download/${PORTNAME}-${DISTVERSION}/
 PKGNAMESUFFIX=	-pointclouds
-DISTNAME=	source
+#DISTNAME=	source
 DIST_SUBDIR=	${PORTNAME}${PKGNAMESUFFIX}/${DISTVERSION}
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -35,10 +35,10 @@ USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 #GH_ACCOUNT=	google:gtest
 GH_ACCOUNT=	PointCloudLibrary google:gtest
-GH_PROJECT=	googletest:gtest
+GH_PROJECT=	${PORTNAME} googletest:gtest
 GH_TAGNAME=	release-1.11.0:gtest
 
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} # workaround, otherwise USE_GITHUB=nodefault doesn't work #'
+#DISTFILES=	${DISTNAME}${EXTRACT_SUFX} # workaround, otherwise USE_GITHUB=nodefault doesn't work #'
 
 CMAKE_TESTING_ON=	BUILD_global_tests # 6 tests are known to fail: https://github.com/PointCloudLibrary/pcl/issues/5127
 CMAKE_TESTING_TARGET=	tests
