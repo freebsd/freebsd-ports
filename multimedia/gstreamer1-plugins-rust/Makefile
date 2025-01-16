@@ -1,14 +1,13 @@
 PORTNAME=	gstreamer1-plugins-rust
 DISTVERSION=	${gst-rust_VERSION}
-PORTREVISION=	2
 CATEGORIES=	multimedia
 
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Various GStreamer plugins written in Rust
 WWW=		https://gitlab.freedesktop.org/gstreamer/gst-plugins-rs
 
-LICENSE=	APACHE20 LGPL21+ MIT MPL20
-LICENSE_COMB=	multi
+LICENSE=		APACHE20 LGPL21+ MIT MPL20
+LICENSE_COMB=		multi
 LICENSE_FILE_APACHE20=	${WRKSRC}/LICENSE-APACHE
 LICENSE_FILE_LGPL21+ =	${WRKSRC}/LICENSE-LGPLv2
 LICENSE_FILE_MIT=	${WRKSRC}/LICENSE-MIT
@@ -39,11 +38,6 @@ MAKE_ENV=	${CARGO_ENV}
 # https://github.com/rust-lang/rust/issues/85598
 LTO_UNSAFE=	yes
 CARGO_ENV+=	CARGO_PROFILE_RELEASE_LTO=false
-.endif
-
-.if ${MACHINE_ARCH} == i386
-# https://github.com/briansmith/ring/issues/1832
-RUSTFLAGS+=	-C target-feature=+sse,+sse2
 .endif
 
 OPTIONS_DEFINE=		ASM CAIRO CSOUND DAV1D GTK4 PANGO SODIUM WEBP
