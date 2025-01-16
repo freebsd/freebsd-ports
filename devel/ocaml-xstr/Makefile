@@ -17,4 +17,10 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 
 ALL_TARGET=	all opt
 
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == powerpc
+USE_BINUTILS=	yes
+.endif
+
 .include <bsd.port.mk>
