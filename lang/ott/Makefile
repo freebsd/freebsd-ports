@@ -20,6 +20,12 @@ ALL_TARGET=	world
 
 PLIST_FILES=	bin/ott
 
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == powerpc
+USE_BINUTILS=	yes
+.endif
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/ott ${STAGEDIR}${PREFIX}/bin
 
