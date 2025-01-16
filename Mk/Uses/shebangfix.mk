@@ -65,6 +65,7 @@ ${lang}_OLD_CMD+= /usr/local/bin/${lang}
 .  endfor
 
 .  for pyver in 2 3
+python_OLD_CMD+= "/bin/env python${pyver}"
 python_OLD_CMD+= "/usr/bin/env python${pyver}"
 python_OLD_CMD+= /bin/python${pyver}
 python_OLD_CMD+= /usr/bin/python${pyver}
