@@ -48,6 +48,12 @@ SDL_MIXER_CONFIGURE_OFF=--disable-sdl-mixer
 SDL_TTF_USE=		SDL=ttf
 SDL_TTF_CONFIGURE_OFF=	--disable-sdl-ttf
 
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == powerpc
+USE_BINUTILS=	yes
+.endif
+
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/ocaml/site-lib/sdl/*.so
 	${INSTALL_DATA} ${WRKSRC}/doc/ocamlsdl.info ${STAGEDIR}${PREFIX}/${INFO_PATH}
