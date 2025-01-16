@@ -16,6 +16,12 @@ RUN_DEPENDS=	cppo:devel/ocaml-cppo
 
 USES=		ocaml:findplist,ldconfig tar:tbz
 
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == powerpc
+USE_BINUTILS=	yes
+.endif
+
 do-build:
 	cd ${WRKSRC} && ocamlbuild react.cmxs react.cma react.a
 
