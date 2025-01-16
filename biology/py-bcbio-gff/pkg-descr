@@ -1,1 +1,8 @@
 Read and write Generic Feature Format (GFF) with Biopython integration.
+
+Generic Feature Format (GFF) is a biological sequence file format for
+representing features and annotations on sequences. It is a tab delimited
+format, making it accessible to biologists and editable in text editors and
+spreadsheet programs. It is also well defined and can be parsed via automated
+programs. GFF files are available from many of the large sequencing and
+annotation centers.
