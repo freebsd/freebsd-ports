@@ -1,5 +1,5 @@
 PORTNAME=	bbmap
-DISTVERSION=	39.14
+DISTVERSION=	39.15
 CATEGORIES=	biology java
 MASTER_SITES=	SF/bbmap/
 DISTNAME=	BBMap_${PORTVERSION}
@@ -7,7 +7,8 @@ DISTNAME=	BBMap_${PORTVERSION}
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	BBMap short read aligner, and other bioinformatic tools
 WWW=		https://jgi.doe.gov/data-and-tools/bbtools/ \
-		https://sourceforge.net/projects/bbmap/
+		https://sourceforge.net/projects/bbmap/ \
+		https://bitbucket.org/berkeleylab/jgi-bbtools/src/master/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/license.txt
