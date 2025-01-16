@@ -1,4 +1,4 @@
-PORTREVISION=	1
+PORTREVISION=	0
 CATEGORIES=	sysutils
 
 COMMENT=	GStreamer compact disc input and control library
