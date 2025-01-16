@@ -1,5 +1,6 @@
 PORTNAME=	juce
 DISTVERSION=	8.0.6
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -89,6 +90,8 @@ post-install:
 .endfor
 	# strip juceaide
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/JUCE-${PORTVERSION}/juceaide
+	# workaround for https://github.com/juce-framework/JUCE/issues/1502
+	@${REINPLACE_CMD} -e 's|.*VST3_HELPER\.cmake.*||' ${STAGEDIR}${PREFIX}/lib/cmake/JUCE-8.0.6/JUCEConfig.cmake
 
 do-install-DEMOS-on:
 .for e in ${DEMO_FILES}
