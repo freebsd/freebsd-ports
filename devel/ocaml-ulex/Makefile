@@ -22,6 +22,12 @@ OPTIONS_DEFINE=	DOCS
 
 DOCS_ALL_TARGET=	doc
 
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == powerpc
+USE_BINUTILS=	yes
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e '/^let latin1_sub_lexeme/,+3 \
 		s,^  s,  Bytes.to_string s,' ${WRKSRC}/ulexing.ml
