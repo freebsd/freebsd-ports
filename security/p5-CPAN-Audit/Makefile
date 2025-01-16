@@ -1,10 +1,10 @@
 PORTNAME=	CPAN-Audit
-PORTVERSION=	20250109.001
+PORTVERSION=	20250115.001
 CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	perl@FreeBSD.org
+MAINTAINER=	jadawin@FreeBSD.org
 COMMENT=	Audit CPAN distributions for known vulnerabilities
 WWW=		https://metacpan.org/dist/CPAN-Audit
 
