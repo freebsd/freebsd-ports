@@ -1,8 +1,8 @@
---- requirements/base.txt.orig	2023-11-26 11:34:24 UTC
+--- requirements/base.txt.orig	2025-01-16 10:30:29 UTC
 +++ requirements/base.txt
-@@ -8,5 +8,3 @@ looseversion
- psutil>=5.0.0
+@@ -14,5 +14,3 @@ croniter>=0.3.0,!=0.3.22; sys_platform != 'win32'
  packaging>=21.3
  looseversion
+ croniter>=0.3.0,!=0.3.22; sys_platform != 'win32'
 -# We need contextvars for salt-ssh
 -contextvars
