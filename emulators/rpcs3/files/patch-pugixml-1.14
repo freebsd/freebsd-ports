@@ -1,0 +1,69 @@
+Revert https://github.com/RPCS3/rpcs3/commit/196617183870
+until textproc/pugixml >= 1.15 update
+
+--- Utilities/File.cpp.orig	2025-01-15 23:43:33 UTC
++++ Utilities/File.cpp
+@@ -21,7 +21,7 @@ using namespace std::literals::string_literals;
+ #include <cwchar>
+ #include <Windows.h>
+ 
+-static std::unique_ptr<wchar_t[]> to_wchar(std::string_view source)
++static std::unique_ptr<wchar_t[]> to_wchar(const std::string& source)
+ {
+ 	// String size + null terminator
+ 	const usz buf_size = source.size() + 1;
+@@ -44,7 +44,7 @@ static std::unique_ptr<wchar_t[]> to_wchar(std::string
+ 		std::memcpy(buffer.get() + 32768 + 4, L"UNC\\", 4 * sizeof(wchar_t));
+ 	}
+ 
+-	ensure(MultiByteToWideChar(CP_UTF8, 0, source.data(), size, buffer.get() + 32768 + (unc ? 8 : 4), size)); // "to_wchar"
++	ensure(MultiByteToWideChar(CP_UTF8, 0, source.c_str(), size, buffer.get() + 32768 + (unc ? 8 : 4), size)); // "to_wchar"
+ 
+ 	// Canonicalize wide path (replace '/', ".", "..", \\ repetitions, etc)
+ 	ensure(GetFullPathNameW(buffer.get() + 32768, 32768, buffer.get(), nullptr) - 1 < 32768 - 1); // "to_wchar"
+--- Utilities/rXml.cpp.orig	2025-01-15 23:43:33 UTC
++++ Utilities/rXml.cpp
+@@ -49,11 +49,12 @@ std::string rXmlNode::GetName()
+ 	return {};
+ }
+ 
+-std::string rXmlNode::GetAttribute(std::string_view name)
++std::string rXmlNode::GetAttribute(const std::string& name)
+ {
+ 	if (handle)
+ 	{
+-		if (const pugi::xml_attribute attr = handle.attribute(name))
++		const auto pred = [&name](const pugi::xml_attribute& attr) { return (name == attr.name()); };
++		if (const pugi::xml_attribute attr = handle.find_attribute(pred))
+ 		{
+ 			if (const pugi::char_t* value = attr.value())
+ 			{
+@@ -85,7 +86,7 @@ rXmlDocument::rXmlDocument()
+ {
+ }
+ 
+-pugi::xml_parse_result rXmlDocument::Read(std::string_view data)
++pugi::xml_parse_result rXmlDocument::Read(const std::string& data)
+ {
+ 	if (handle)
+ 	{
+--- Utilities/rXml.h.orig	2025-01-15 23:43:33 UTC
++++ Utilities/rXml.h
+@@ -23,7 +23,7 @@ struct rXmlNode
+ 	std::shared_ptr<rXmlNode> GetChildren();
+ 	std::shared_ptr<rXmlNode> GetNext();
+ 	std::string GetName();
+-	std::string GetAttribute(std::string_view name);
++	std::string GetAttribute(const std::string& name);
+ 	std::string GetNodeContent();
+ 
+ 	pugi::xml_node handle{};
+@@ -34,7 +34,7 @@ struct rXmlDocument
+ 	rXmlDocument();
+ 	rXmlDocument(const rXmlDocument& other) = delete;
+ 	rXmlDocument &operator=(const rXmlDocument& other) = delete;
+-	pugi::xml_parse_result Read(std::string_view data);
++	pugi::xml_parse_result Read(const std::string& data);
+ 	virtual std::shared_ptr<rXmlNode> GetRoot();
+ 
+ 	pugi::xml_document handle{};
