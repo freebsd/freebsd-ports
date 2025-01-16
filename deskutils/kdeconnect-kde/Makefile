@@ -15,11 +15,11 @@ LIB_DEPENDS=	libfakekey.so:x11/libfakekey \
 BUILD_DEPENDS=	kpeoplevcard>0:net/kpeoplevcard \
 		${LOCALBASE}/include/linux/input.h:devel/evdev-proto \
 		wayland-protocols>=0:graphics/wayland-protocols \
-		kirigami-addons>=0.6.1:x11-toolkits/kirigami-addons
+		kirigami-addons-qt5>=0.6.1:x11-toolkits/kirigami-addons-qt5
 RUN_DEPENDS=	sshpass:security/sshpass \
 		sshfs:filesystems/sshfs \
 		kpeoplevcard>0:net/kpeoplevcard \
-		kirigami-addons>=0.6.1:x11-toolkits/kirigami-addons
+		kirigami-addons-qt5>=0.6.1:x11-toolkits/kirigami-addons-qt5
 
 USES=		cmake compiler:c++11-lang desktop-file-utils gettext kde:5 \
 		pkgconfig qca qt:5 tar:xz xorg

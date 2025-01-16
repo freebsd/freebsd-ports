@@ -798,9 +798,7 @@ kde-xdg-desktop-portal-kde_PATH=	${KDE_PREFIX}/lib/libexec/xdg-desktop-portal-kd
 kde-plasma5support_PORT=	devel/plasma${_KDE_VERSION}-plasma5support
 kde-plasma5support_LIB=		libPlasma5Support.so
 
-kde-kirigami-addons_PORT5=	x11-toolkits/kirigami-addons
-kde-kirigami-addons_PORT6=	x11-toolkits/kirigami-addons-devel
-kde-kirigami-addons_PORT=	${kde-kirigami-addons_PORT${_KDE_VERSION}}
+kde-kirigami-addons_PORT=	x11-toolkits/kirigami-addons-qt${_KDE_VERSION}
 kde-kirigami-addons_PATH=	${QT_QMLDIR}/org/kde/kirigamiaddons/components/libcomponentsplugin.so
 
 kde-globalacceld_PORT=		x11/plasma${_KDE_VERSION}-kglobalacceld

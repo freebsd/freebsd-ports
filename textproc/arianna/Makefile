@@ -8,8 +8,8 @@ WWW=		https://apps.kde.org/arianna/
 
 LICENSE=	GPLv3
 
-BUILD_DEPENDS=	kirigami-addons>=0.6.1:x11-toolkits/kirigami-addons
-RUN_DEPENDS=	kirigami-addons>=0.6.1:x11-toolkits/kirigami-addons
+BUILD_DEPENDS=	kirigami-addons-qt5>=0.6.1:x11-toolkits/kirigami-addons-qt5
+RUN_DEPENDS=	kirigami-addons-qt5>=0.6.1:x11-toolkits/kirigami-addons-qt5
 
 USES=		cmake desktop-file-utils gettext kde:5 qt:5 tar:xz xorg
 USE_KDE=	archive baloo config coreaddons  dbusaddons filemetadata \

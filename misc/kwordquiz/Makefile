@@ -6,8 +6,8 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Flash card trainer for KDE Applications
 WWW=		https://www.kde.org/applications/education/kwordquiz
 
-BUILD_DEPENDS=	kirigami-addons>=0:x11-toolkits/kirigami-addons
-RUN_DEPENDS=	kirigami-addons>=0:x11-toolkits/kirigami-addons
+BUILD_DEPENDS=	kirigami-addons-qt5>=0:x11-toolkits/kirigami-addons-qt5
+RUN_DEPENDS=	kirigami-addons-qt5>=0:x11-toolkits/kirigami-addons-qt5
 
 USES=		cmake compiler:c++11-lang desktop-file-utils gettext \
 		kde:5 qt:5 tar:xz xorg

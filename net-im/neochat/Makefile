@@ -16,10 +16,10 @@ LIB_DEPENDS=	libQCoro5Core.so:devel/qcoro@qt5 \
 		libolm.so:security/olm
 BUILD_DEPENDS=	libquotient-qt5>=0.8.1.2:net-im/libquotient@qt5 \
 		kquickimageeditor>=0.2.0:graphics/kquickimageeditor \
-		kirigami-addons>=0.6.1:x11-toolkits/kirigami-addons
+		kirigami-addons-qt5>=0.6.1:x11-toolkits/kirigami-addons-qt5
 # Quotient is a static lib, doesn't need to be in RUN_DEPENDS
 RUN_DEPENDS=	kquickimageeditor>=0.2.0:graphics/kquickimageeditor \
-		kirigami-addons>=0.6.1:x11-toolkits/kirigami-addons
+		kirigami-addons-qt5>=0.6.1:x11-toolkits/kirigami-addons-qt5
 
 USES=		cmake compiler:c++20-lang desktop-file-utils kde:5 \
 		pkgconfig qt:5 tar:xz xorg

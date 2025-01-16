@@ -9,10 +9,10 @@ WWW=		https://apps.kde.org/tokodon/
 
 LICENSE=	GPLv3
 
-BUILD_DEPENDS=	kirigami-addons>=0.6.1:x11-toolkits/kirigami-addons
+BUILD_DEPENDS=	kirigami-addons-qt5>=0.6.1:x11-toolkits/kirigami-addons-qt5
 LIB_DEPENDS=	libqt5keychain.so:security/qtkeychain@qt5 \
 		libmpv.so:multimedia/mpv
-RUN_DEPENDS=	kirigami-addons>=0.6.1:x11-toolkits/kirigami-addons
+RUN_DEPENDS=	kirigami-addons-qt5>=0.6.1:x11-toolkits/kirigami-addons-qt5
 
 USES=		cmake desktop-file-utils gettext kde:5 pkgconfig qt:5 tar:xz xorg
 USE_KDE=	auth codecs completion config configwidgets coreaddons \

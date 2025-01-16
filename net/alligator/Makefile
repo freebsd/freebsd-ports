@@ -8,8 +8,8 @@ WWW=		https://apps.kde.org/alligator/
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	kirigami-addons>=0:x11-toolkits/kirigami-addons
-RUN_DEPENDS=	kirigami-addons>=0:x11-toolkits/kirigami-addons
+BUILD_DEPENDS=	kirigami-addons-qt5>=0:x11-toolkits/kirigami-addons-qt5
+RUN_DEPENDS=	kirigami-addons-qt5>=0:x11-toolkits/kirigami-addons-qt5
 
 USES=		cmake desktop-file-utils kde:5 qt:5 tar:xz
 USE_KDE=	config coreaddons ecm:build i18n syndication
