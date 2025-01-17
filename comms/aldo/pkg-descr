@@ -1,3 +1,14 @@
-Aldo is a Morse code tutor.  At the moment it has four kinds of
-exercises: Classic exercise, the Koch method, Callsign exercise, and
-exercises read from files.
+Aldo is a Morse code tutor.
+
+At this moment Aldo has four kinds of exercises:
+
+1. Classic exercise:
+   With this exercise you must guess some random strings of characters
+   that Aldo plays in Morse code.
+2. Koch method.
+3. Read from file:
+   With this exercise you can write something in a text file
+   and read this file with Aldo.
+4. Call sign exercise:
+   With this exercise you can training yourself receiving random
+   generated call signs.
