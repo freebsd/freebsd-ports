@@ -1,12 +1,12 @@
 PORTNAME=	onnx
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.16.2
-PORTREVISION=	6
+DISTVERSION=	1.17.0
 CATEGORIES=	misc # machine-learning
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Open Neural Network eXchange
-WWW=		https://onnx.ai/
+WWW=		https://onnx.ai/ \
+		https://github.com/onnx/onnx
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -31,5 +31,7 @@ post-install:
 
 post-test:
 	cd ${BUILD_WRKSRC} && ./onnx_gtests
+
+# tests as of 1.17.0: 84 tests from 11 test suites ran. (160 ms total)
 
 .include <bsd.port.mk>
