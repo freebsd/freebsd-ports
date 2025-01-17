@@ -1,5 +1,5 @@
 PORTNAME=	cacti
-DISTVERSION=	1.2.26
+DISTVERSION=	1.2.28
 CATEGORIES=	net-mgmt www
 MASTER_SITES=	http://www.cacti.net/downloads/ \
 		ftp://ftpmirror.uk/freebsd-ports/cacti/
@@ -47,7 +47,7 @@ SUB_LIST=	CACTIDIR=${CACTIDIR} CACTIUSER=${CACTIUSER} \
 
 post-patch:
 	@${FIND} ${WRKSRC} -name \*.orig -delete; \
-	${MV} ${WRKSRC}/include/config.php ${WRKSRC}/include/config.php.sample
+	${MV} ${WRKSRC}/include/config.php.dist ${WRKSRC}/include/config.php.sample
 	${RM} -r ${WRKSRC}/log ${WRKSRC}/rra
 
 do-install:
