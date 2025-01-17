@@ -3468,6 +3468,7 @@
 %%WWWDIR%%/core/lib/Drupal/Core/DefaultContent/ImportException.php
 %%WWWDIR%%/core/lib/Drupal/Core/DefaultContent/Importer.php
 %%WWWDIR%%/core/lib/Drupal/Core/DefaultContent/InvalidEntityException.php
+%%WWWDIR%%/core/lib/Drupal/Core/DefaultContent/PreImportEvent.php
 %%WWWDIR%%/core/lib/Drupal/Core/DependencyInjection/AutowireTrait.php
 %%WWWDIR%%/core/lib/Drupal/Core/DependencyInjection/ClassResolver.php
 %%WWWDIR%%/core/lib/Drupal/Core/DependencyInjection/ClassResolverInterface.php
@@ -8919,6 +8920,7 @@
 %%WWWDIR%%/core/modules/media/tests/modules/media_test_source/src/Plugin/Validation/Constraint/MediaTestConstraintValidator.php
 %%WWWDIR%%/core/modules/media/tests/modules/media_test_source/src/Plugin/media/Source/Test.php
 %%WWWDIR%%/core/modules/media/tests/modules/media_test_source/src/Plugin/media/Source/TestDifferentDisplays.php
+%%WWWDIR%%/core/modules/media/tests/modules/media_test_source/src/Plugin/media/Source/TestSourceWithAReallyLongName.php
 %%WWWDIR%%/core/modules/media/tests/modules/media_test_source/src/Plugin/media/Source/TestTranslation.php
 %%WWWDIR%%/core/modules/media/tests/modules/media_test_source/src/Plugin/media/Source/TestWithConstraints.php
 %%WWWDIR%%/core/modules/media/tests/modules/media_test_source/src/Plugin/media/Source/TestWithHiddenSourceField.php
@@ -9864,6 +9866,7 @@
 %%WWWDIR%%/core/modules/navigation/tests/src/Functional/NavigationTopBarTest.php
 %%WWWDIR%%/core/modules/navigation/tests/src/Functional/NavigationUserBlockTest.php
 %%WWWDIR%%/core/modules/navigation/tests/src/FunctionalJavascript/NavigationBlockUiTest.php
+%%WWWDIR%%/core/modules/navigation/tests/src/FunctionalJavascript/TopBarPerformanceTest.php
 %%WWWDIR%%/core/modules/navigation/tests/src/Kernel/ConfigAction/AddNavigationBlockConfigActionTest.php
 %%WWWDIR%%/core/modules/navigation/tests/src/Kernel/NavigationMenuBlockTest.php
 %%WWWDIR%%/core/modules/navigation/tests/src/Kernel/NavigationMenuMarkupTest.php
@@ -12244,6 +12247,7 @@
 %%WWWDIR%%/core/modules/system/tests/modules/menu_test/src/Access/AccessCheck.php
 %%WWWDIR%%/core/modules/system/tests/modules/menu_test/src/Controller/MenuTestController.php
 %%WWWDIR%%/core/modules/system/tests/modules/menu_test/src/Hook/MenuTestHooks.php
+%%WWWDIR%%/core/modules/system/tests/modules/menu_test/src/MenuTestServiceProvider.php
 %%WWWDIR%%/core/modules/system/tests/modules/menu_test/src/Plugin/Derivative/LocalActionTest.php
 %%WWWDIR%%/core/modules/system/tests/modules/menu_test/src/Plugin/Derivative/LocalTaskTest.php
 %%WWWDIR%%/core/modules/system/tests/modules/menu_test/src/Plugin/Derivative/LocalTaskTestWithUnsafeTitle.php
@@ -12255,6 +12259,7 @@
 %%WWWDIR%%/core/modules/system/tests/modules/menu_test/src/Plugin/Menu/LocalAction/TestLocalActionWithConfig.php
 %%WWWDIR%%/core/modules/system/tests/modules/menu_test/src/Plugin/Menu/LocalTask/TestTaskWithUserInput.php
 %%WWWDIR%%/core/modules/system/tests/modules/menu_test/src/Plugin/Menu/LocalTask/TestTasksSettingsSub1.php
+%%WWWDIR%%/core/modules/system/tests/modules/menu_test/src/SkippablePathBasedBreadcrumbBuilder.php
 %%WWWDIR%%/core/modules/system/tests/modules/menu_test/src/TestControllers.php
 %%WWWDIR%%/core/modules/system/tests/modules/menu_test/src/Theme/TestThemeNegotiator.php
 %%WWWDIR%%/core/modules/system/tests/modules/module_autoload_test/module_autoload_test.info.yml
@@ -12676,6 +12681,7 @@
 %%WWWDIR%%/core/modules/system/tests/modules/url_alter_test/url_alter_test.services.yml
 %%WWWDIR%%/core/modules/system/tests/src/Functional/Ajax/FrameworkTest.php
 %%WWWDIR%%/core/modules/system/tests/src/Functional/Ajax/OffCanvasDialogTest.php
+%%WWWDIR%%/core/modules/system/tests/src/Functional/Batch/BatchNotFoundTest.php
 %%WWWDIR%%/core/modules/system/tests/src/Functional/Batch/PageTest.php
 %%WWWDIR%%/core/modules/system/tests/src/Functional/Batch/ProcessingTest.php
 %%WWWDIR%%/core/modules/system/tests/src/Functional/Bootstrap/DrupalMessengerServiceTest.php
@@ -14007,6 +14013,7 @@
 %%WWWDIR%%/core/modules/user/tests/src/Kernel/UserMailNotifyTest.php
 %%WWWDIR%%/core/modules/user/tests/src/Kernel/UserNameValidatorTest.php
 %%WWWDIR%%/core/modules/user/tests/src/Kernel/UserPassRehashTest.php
+%%WWWDIR%%/core/modules/user/tests/src/Kernel/UserRequirementsTest.php
 %%WWWDIR%%/core/modules/user/tests/src/Kernel/UserRoleDeleteTest.php
 %%WWWDIR%%/core/modules/user/tests/src/Kernel/UserRoleEntityTest.php
 %%WWWDIR%%/core/modules/user/tests/src/Kernel/UserSaveStatusTest.php
@@ -14876,6 +14883,8 @@
 %%WWWDIR%%/core/modules/views/tests/src/Unit/Plugin/filter/InOperatorTest.php
 %%WWWDIR%%/core/modules/views/tests/src/Unit/Plugin/pager/PagerPluginBaseTest.php
 %%WWWDIR%%/core/modules/views/tests/src/Unit/Plugin/pager/SqlBaseTest.php
+%%WWWDIR%%/core/modules/views/tests/src/Unit/Plugin/pager/StubPagerPluginBase.php
+%%WWWDIR%%/core/modules/views/tests/src/Unit/Plugin/pager/StubSqlBase.php
 %%WWWDIR%%/core/modules/views/tests/src/Unit/Plugin/query/SqlTest.php
 %%WWWDIR%%/core/modules/views/tests/src/Unit/Plugin/views/display/BlockTest.php
 %%WWWDIR%%/core/modules/views/tests/src/Unit/Plugin/views/field/BulkFormTest.php
@@ -16249,6 +16258,7 @@
 %%WWWDIR%%/core/tests/Drupal/FunctionalJavascriptTests/Theme/ClaroTableDragTest.php
 %%WWWDIR%%/core/tests/Drupal/FunctionalJavascriptTests/Theme/ClaroViewsBulkOperationsTest.php
 %%WWWDIR%%/core/tests/Drupal/FunctionalJavascriptTests/Theme/ClaroViewsUiTest.php
+%%WWWDIR%%/core/tests/Drupal/FunctionalJavascriptTests/Theme/OliveroAvoidStorageUsingTest.php
 %%WWWDIR%%/core/tests/Drupal/FunctionalJavascriptTests/Theme/OliveroMessagesTest.php
 %%WWWDIR%%/core/tests/Drupal/FunctionalJavascriptTests/WebDriverCurlService.php
 %%WWWDIR%%/core/tests/Drupal/FunctionalJavascriptTests/WebDriverTestBase.php
@@ -19471,7 +19481,6 @@
 %%WWWDIR%%/vendor/drupal/core-vendor-hardening/TESTING.txt
 %%WWWDIR%%/vendor/drupal/core-vendor-hardening/VendorHardeningPlugin.php
 %%WWWDIR%%/vendor/drupal/core-vendor-hardening/composer.json
-%%WWWDIR%%/vendor/egulias/email-validator/CHANGELOG.md
 %%WWWDIR%%/vendor/egulias/email-validator/CONTRIBUTING.md
 %%WWWDIR%%/vendor/egulias/email-validator/LICENSE
 %%WWWDIR%%/vendor/egulias/email-validator/composer.json
