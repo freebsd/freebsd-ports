@@ -2157,8 +2157,8 @@
 %%WWWDIR%%/vendor/doctrine/deprecations/LICENSE
 %%WWWDIR%%/vendor/doctrine/deprecations/README.md
 %%WWWDIR%%/vendor/doctrine/deprecations/composer.json
-%%WWWDIR%%/vendor/doctrine/deprecations/lib/Doctrine/Deprecations/Deprecation.php
-%%WWWDIR%%/vendor/doctrine/deprecations/lib/Doctrine/Deprecations/PHPUnit/VerifyDeprecations.php
+%%WWWDIR%%/vendor/doctrine/deprecations/src/Deprecation.php
+%%WWWDIR%%/vendor/doctrine/deprecations/src/PHPUnit/VerifyDeprecations.php
 %%WWWDIR%%/vendor/dragonmantank/cron-expression/CHANGELOG.md
 %%WWWDIR%%/vendor/dragonmantank/cron-expression/LICENSE
 %%WWWDIR%%/vendor/dragonmantank/cron-expression/README.md
