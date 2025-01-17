@@ -1,6 +1,6 @@
 PORTNAME=	mise
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2025.1.7
+DISTVERSION=	2025.1.8
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -57,7 +57,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		binstall-tar-0.4.42 \
 		bit-set-0.6.0 \
 		bit-vec-0.7.0 \
-		bitflags-2.7.0 \
+		bitflags-2.8.0 \
 		block-buffer-0.10.4 \
 		bstr-1.11.3 \
 		built-0.7.5 \
@@ -500,7 +500,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		type-map-0.5.0 \
 		typeid-1.0.2 \
 		typenum-1.17.0 \
-		ubi-0.3.0 \
+		ubi-0.4.0 \
 		ucd-trie-0.1.7 \
 		unic-char-property-0.9.0 \
 		unic-char-range-0.9.0 \
