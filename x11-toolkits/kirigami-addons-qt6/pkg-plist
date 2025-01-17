@@ -8,7 +8,7 @@ lib/cmake/KF6KirigamiAddons/KF6KirigamiAddonsConfigVersion.cmake
 lib/cmake/KF6KirigamiAddons/KirigamiAddonsTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/KF6KirigamiAddons/KirigamiAddonsTargets.cmake
 lib/libKirigamiAddonsStatefulApp.so
-lib/libKirigamiAddonsStatefulApp.so.1.4.0
+lib/libKirigamiAddonsStatefulApp.so.%%SHLIB_VER%%
 lib/libKirigamiAddonsStatefulApp.so.6
 %%QT_QMLDIR%%/org/kde/kirigamiaddons/components/Avatar.qml
 %%QT_QMLDIR%%/org/kde/kirigamiaddons/components/AvatarButton.qml

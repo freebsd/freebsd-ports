@@ -19,4 +19,6 @@ USE_KDE=	config coreaddons globalaccel guiaddons i18n kirigami2 \
 		ecm:build
 USE_QT=		base declarative
 
+PLIST_SUB=	SHLIB_VER=${PORTVERSION}
+
 .include <bsd.port.mk>
