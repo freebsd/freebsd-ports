@@ -1,5 +1,5 @@
 PORTNAME=	cargo-tarpaulin
-DISTVERSION=	0.31.4
+DISTVERSION=	0.31.5
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -76,7 +76,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		futures-util-0.3.30 \
 		gimli-0.28.1 \
 		gimli-0.31.1 \
-		git2-0.19.0 \
+		git2-0.20.0 \
 		glob-0.3.2 \
 		gzip-header-1.0.0 \
 		h2-0.3.26 \
@@ -107,7 +107,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		lcov-0.8.1 \
 		leb128-0.2.5 \
 		libc-0.2.169 \
-		libgit2-sys-0.17.0+1.8.1 \
+		libgit2-sys-0.18.0+1.9.0 \
 		libssh2-sys-0.3.0 \
 		libz-sys-1.1.16 \
 		linux-raw-sys-0.4.13 \
@@ -141,7 +141,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		pin-project-lite-0.2.14 \
 		pin-utils-0.1.0 \
 		pkg-config-0.3.30 \
-		proc-macro2-1.0.92 \
+		proc-macro2-1.0.93 \
 		procfs-0.17.0 \
 		procfs-core-0.17.0 \
 		quick-error-1.2.3 \
@@ -168,7 +168,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		semver-1.0.23 \
 		serde-1.0.217 \
 		serde_derive-1.0.217 \
-		serde_json-1.0.134 \
+		serde_json-1.0.135 \
 		serde_spanned-0.6.7 \
 		serde_urlencoded-0.7.1 \
 		sharded-slab-0.1.7 \
