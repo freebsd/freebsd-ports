@@ -1,8 +1,8 @@
 PORTNAME=	putty
 # https://tartarus.org/~simon/putty-prerel-snapshots/putty-0.83~pre20250105.1e45199.tar.gz
-DISTVERSION=	0.83~pre20250114
+DISTVERSION=	0.83~pre20250117
 PORTREVISION=	0
-DISTVERSIONSUFFIX=	.e7acb9f
+DISTVERSIONSUFFIX=	.1979851
 CATEGORIES=	security
 #MASTER_SITES=	http://the.earth.li/~sgtatham/putty/${PORTVERSION}/ \
 #		ftp://ftp.chiark.greenend.org.uk/users/sgtatham/putty-latest/ \
