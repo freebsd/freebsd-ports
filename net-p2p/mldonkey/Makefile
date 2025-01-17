@@ -16,7 +16,7 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/ocaml/nums.cma:math/ocaml-num
 
 USES=		compiler:c++11-lang cpe gmake iconv ocaml:camlp4 pkgconfig tar:bzip2
 ARCH!=		uname -p
-.if ${ARCH} == i386
+.if ${ARCH} == i386 || ${ARCH} == powerpc
 # `as' is used to compile src/utils/lib/md4_i386.s
 USE_BINUTILS=	yes
 .endif
