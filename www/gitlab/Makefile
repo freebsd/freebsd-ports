@@ -428,6 +428,7 @@ do-install:
 	${MKDIR} ${STAGEDIR}${WWWDIR}/tmp/sessions
 	${MKDIR} ${STAGEDIR}${WWWDIR}/tmp/backups
 	${MKDIR} ${STAGEDIR}${WWWDIR}/tmp/sockets/private/internal
+	${MKDIR} ${STAGEDIR}${WWWDIR}/shared/external-diffs
 	${MKDIR} ${STAGEDIR}${WWWDIR}/shared/tmp
 	${MKDIR} ${STAGEDIR}${WWWDIR}/shared/artifacts/tmp/work
 	${MKDIR} ${STAGEDIR}${WWWDIR}/vendor/assets/stylesheets
@@ -442,6 +443,7 @@ post-install:
 		${SED} -e 's#^${STAGEDIR}${PREFIX}/##' | \
 		${SED} -E -e '/sample$$/ s#^#@sample #; \
 		/secrets.yml.sample$$/ s#^@sample #@sample(git,www,0600) #; \
+		/database.yml.sample$$/ s#^@sample #@sample(git,www,0600) #; \
 		s#${WWWDIR_REL}/bin#@(git,,544) ${WWWDIR_REL}/bin#; \
 		/db\/schema.rb$$|gitlab.po$$|gitlab.pot$$|gitlab.po.time_stamp$$|locale\/index.js$$/ s#^#@(git,,) #;' >> ${TMPPLIST}
 	@${ECHO_CMD} "@owner git" >> ${TMPPLIST}
@@ -502,6 +504,7 @@ post-install:
 	@${ECHO_CMD} "@dir(,,770) ${WWWDIR_REL}/shared/pages" >> ${TMPPLIST}
 	@${ECHO_CMD} "@group www" >> ${TMPPLIST}
 	@${ECHO_CMD} "@dir(,,700) ${WWWDIR_REL}/shared/terraform_state" >> ${TMPPLIST}
+	@${ECHO_CMD} "@dir(,,700) ${WWWDIR_REL}/shared/external-diffs" >> ${TMPPLIST}
 	@${ECHO_CMD} "@dir(,,700) ${WWWDIR_REL}/shared/tmp" >> ${TMPPLIST}
 	@${ECHO_CMD} "@dir(,,700) ${WWWDIR_REL}/shared/lfs-objects" >> ${TMPPLIST}
 	@${ECHO_CMD} "@dir(,,700) ${WWWDIR_REL}/shared/registry" >> ${TMPPLIST}
