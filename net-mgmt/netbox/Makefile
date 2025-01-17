@@ -1,6 +1,6 @@
 PORTNAME=	netbox
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.1.10
+DISTVERSION=	4.1.11
 CATEGORIES=	net-mgmt python
 
 MAINTAINER=	kai@FreeBSD.org
@@ -33,14 +33,14 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django50>=5.0.10<5.1:www/py-django50@${PY_FL
 		${PYTHON_PKGNAMEPREFIX}dj50-django-redis>=5.4.0<6:www/py-dj50-django-redis@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj50-django-rich>=1.13.0<2:www/py-dj50-django-rich@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj50-django-rq>=3.0<3.1:devel/py-dj50-django-rq@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}dj50-django-tables2>=2.7.0<2.8:www/py-dj50-django-tables2@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}dj50-django-tables2>=2.7.5<2.8:www/py-dj50-django-tables2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj50-django-taggit>=6.1.0<7:www/py-dj50-django-taggit@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj50-django-timezone-field>=7.0<8:www/py-dj50-django-timezone-field@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj50-djangorestframework>=3.15.2<3.16.0:www/py-dj50-djangorestframework@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj50-drf-spectacular>=0.28.0<1:www/py-dj50-drf-spectacular@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj50-drf-spectacular-sidecar>=2024.12.1:www/py-dj50-drf-spectacular-sidecar@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}dj50-strawberry-graphql>=0.254.0<0.300:devel/py-dj50-strawberry-graphql@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}dj50-strawberry-graphql-django>=0.52.0<1:www/py-dj50-strawberry-graphql-django@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}dj50-strawberry-graphql>=0.256.1<0.300:devel/py-dj50-strawberry-graphql@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}dj50-strawberry-graphql-django>=0.53.1<1:www/py-dj50-strawberry-graphql-django@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}django-pglocks>=1.0.4<1.1:www/py-django-pglocks@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}feedparser>=6.0.11<7:textproc/py-feedparser@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}Jinja2>=3.1.4<4:devel/py-Jinja2@${PY_FLAVOR} \
@@ -55,7 +55,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django50>=5.0.10<5.1:www/py-django50@${PY_FL
 		${PYTHON_PKGNAMEPREFIX}psycopg-c>=3.1.20<4:databases/py-psycopg-c@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}psycopg-pool>=3.2.3<4:databases/py-psycopg-pool@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>=2.32.3<3:www/py-requests@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}rq>=2.0<3:devel/py-rq@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}rq>=2.1.0<3:devel/py-rq@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}social-auth-app-django>=5.4.2<6:www/py-social-auth-app-django@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}social-auth-core>=4.5.4<5:security/py-social-auth-core@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}svgwrite>=1.4.3<2:graphics/py-svgwrite@${PY_FLAVOR} \
