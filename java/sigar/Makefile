@@ -32,7 +32,7 @@ INVOKE_ANT=	${SETENV} PATH=${PATH}:${WRKSRC}/bin JAVA_HOME=${JAVA_HOME} \
 .include <bsd.port.pre.mk>
 
 .if ${OPSYS} == FreeBSD
-LIBNAME=	libsigar-${ARCH:S,armv6,arm,:S,armv7,arm,:S,i386,x86,:S,powerpc64,ppc64,}-${OPSYS:tl}-1
+LIBNAME=	libsigar-${ARCH:S,armv6,arm,:S,armv7,arm,:S,i386,x86,:S,powerpc,ppc,}-${OPSYS:tl}-1
 .else
 IGNORE=		${OPSYS} platform is not supported
 .endif
