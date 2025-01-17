@@ -1,0 +1,9 @@
+[
+{ type: install
+  message: <<EOM
+To set up databases, and configure the Zonemaster GUI, as well as
+subsidiary RPC services, see the extensive documentation at
+https://doc.zonemaster.net/latest/installation/zonemaster-gui.html#3-freebsd
+EOM
+}
+]
