@@ -19,6 +19,12 @@ MAKE_ARGS=	-e
 MAKE_ENV+=	CAMLJAVALIB=${PREFIX}/${OCAML_SITELIBDIR}/${PORTNAME} \
 		JDKHOME=${JAVA_HOME}
 
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == powerpc
+USE_BINUTILS=	yes
+.endif
+
 .include <bsd.port.pre.mk>
 
 .if ${JAVA_PORT_VERSION} >= 11
