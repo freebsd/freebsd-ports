@@ -32,6 +32,8 @@ USE_QT=		concurrent core dbus declarative gui network opengl printsupport script
 USE_XORG=	x11
 USE_LDCONFIG=	yes
 
+PIE_UNSAFE=	yes
+
 OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.mk>
