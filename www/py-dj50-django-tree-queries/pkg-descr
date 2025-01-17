@@ -1,0 +1,5 @@
+Query Django model trees using adjacency lists and recursive common table
+expressions.
+
+Supports PostgreSQL, sqlite3 (3.8.3 or higher) and MariaDB (10.2.2 or higher)
+and MySQL (8.0 or higher, if running without ONLY_FULL_GROUP_BY).
