@@ -1,6 +1,6 @@
 PORTNAME=	emacs
 DISTVERSION=	29.4
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	3
 CATEGORIES=	editors
 MASTER_SITES=	GNU
@@ -252,10 +252,6 @@ XWIDGETS_USE=			XORG=xcomposite
 XWIDGETS_CONFIGURE_WITH=	xwidgets
 
 .include <bsd.port.options.mk>
-
-.if ${ARCH:Mpowerpc64*}
-USE_GCC=	yes
-.endif
 
 .if ${FLAVOR:U} != nox
 USES+=		desktop-file-utils gnome
