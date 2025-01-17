@@ -1,11 +1,7 @@
 PORTNAME=	hyprpicker
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.4.1
-PORTREVISION=	2
+DISTVERSION=	0.4.2
 CATEGORIES=	x11 wayland
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	444c40e5e3dc.patch:-p1 # hyprwayland-scanner 0.4.4
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Color picker and magnifier for Wayland
