@@ -23,8 +23,8 @@ LIB_DEPENDS=	libevdev.so:devel/libevdev \
 		libsndfile.so:audio/libsndfile \
 		libxkbcommon.so:x11/libxkbcommon
 
-FLAVORS=		qt5 qt6
-FLAVOR?=		${FLAVORS:[2]}
+FLAVORS=		qt6 qt5
+FLAVOR?=		qt6
 qt5_PKGNAMESUFFIX=	-qt5
 qt6_PKGNAMESUFFIX=	-qt6
 
