@@ -1,5 +1,6 @@
 PORTNAME=	postgresql
-PORTREVISION=	0
+PORTREVISION=	1
+
 COMMENT=	PostgreSQL database (client)
 
 MASTERDIR=	${.CURDIR}/../postgresql17-server

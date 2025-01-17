@@ -20,7 +20,7 @@ postgresql-odbc
   method. Not needed to access unix PostgreSQL servers from Win32
   using ODBC. See below.
 
-ruby-postgres, py-psycopg2
+ruby-postgres, py-psycopg
   For client access to PostgreSQL databases using the ruby & python
   languages.
 
