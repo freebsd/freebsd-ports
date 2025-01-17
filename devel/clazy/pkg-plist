@@ -82,8 +82,8 @@ lib/ClazyPlugin.so
 %%PORTDOCS%%%%DOCSDIR%%/manuallevel/README-qproperty-type-mismatch.md
 %%PORTDOCS%%%%DOCSDIR%%/manuallevel/README-qrequiredresult-candidates.md
 %%PORTDOCS%%%%DOCSDIR%%/manuallevel/README-qstring-varargs.md
-%%PORTDOCS%%%%DOCSDIR%%/manuallevel/README-qt-keywords.md
 %%PORTDOCS%%%%DOCSDIR%%/manuallevel/README-qt-keyword-emit.md
+%%PORTDOCS%%%%DOCSDIR%%/manuallevel/README-qt-keywords.md
 %%PORTDOCS%%%%DOCSDIR%%/manuallevel/README-qt6-deprecated-api-fixes.md
 %%PORTDOCS%%%%DOCSDIR%%/manuallevel/README-qt6-fwd-fixes.md
 %%PORTDOCS%%%%DOCSDIR%%/manuallevel/README-qt6-header-fixes.md
@@ -101,5 +101,6 @@ lib/ClazyPlugin.so
 %%PORTDOCS%%%%DOCSDIR%%/manuallevel/README-unused-result-check.md
 %%PORTDOCS%%%%DOCSDIR%%/manuallevel/README-use-arrow-operator-instead-of-data.md
 %%PORTDOCS%%%%DOCSDIR%%/manuallevel/README-use-chrono-in-qtimer.md
-%%PORTDOCS%%share/man/man1/clazy.1.gz
+%%PORTDOCS%%%%DOCSDIR%%/manuallevel/README-used-qunused-variable.md
+share/man/man1/clazy.1.gz
 share/metainfo/org.kde.clazy.metainfo.xml
