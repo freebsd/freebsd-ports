@@ -7,7 +7,7 @@ bin/zonemaster_backend_rpcapi.psgi
 bin/zonemaster_backend_testagent
 etc/rc.d/zm_rpcapi
 etc/rc.d/zm_testagent
-etc/zonemaster/backend_config.ini.sample
+@sample etc/zonemaster/backend_config.ini.sample
 %%SITE_PERL%%/Zonemaster/Backend.pm
 %%SITE_PERL%%/Zonemaster/Backend/Config.pm
 %%SITE_PERL%%/Zonemaster/Backend/Config/DCPlugin.pm

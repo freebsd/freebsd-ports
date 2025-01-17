@@ -16,7 +16,6 @@ BUILD_DEPENDS=	p5-Devel-CheckLib>0:devel/p5-Devel-CheckLib \
 RUN_DEPENDS=	jq>0:textproc/jq \
 		p5-Class-Method-Modifiers>=0:devel/p5-Class-Method-Modifiers \
 		p5-Config-IniFiles>=0:devel/p5-Config-IniFiles \
-		p5-Module-CoreList>=0:devel/p5-Module-CoreList \
 		p5-Daemon-Control>=0:devel/p5-Daemon-Control \
 		p5-DBD-SQLite>=0:databases/p5-DBD-SQLite \
 		p5-DBI>=0:databases/p5-DBI \
@@ -37,7 +36,9 @@ RUN_DEPENDS=	jq>0:textproc/jq \
 		p5-Role-Tiny>=0:devel/p5-Role-Tiny \
 		p5-Router-Simple>=0:www/p5-Router-Simple \
 		p5-Starman>=0:www/p5-Starman \
-		p5-YAML-LibYAML>=0:textproc/p5-YAML-LibYAML
+		p5-YAML-LibYAML>=0:textproc/p5-YAML-LibYAML \
+		p5-Zonemaster-Engine>0:dns/p5-Zonemaster-Engine
+
 
 USES=		gmake localbase perl5
 USE_PERL5=	configure

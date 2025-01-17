@@ -21,8 +21,7 @@ RUN_DEPENDS=	p5-JSON-XS>=0:converters/p5-JSON-XS \
 		p5-Net-IP>=0:net-mgmt/p5-Net-IP \
 		p5-Text-Reflow>0:textproc/p5-Text-Reflow \
 		p5-Try-Tiny>0:lang/p5-Try-Tiny \
-		p5-Zonemaster-Engine>0:dns/p5-Zonemaster-Engine \
-		p5-Zonemaster-LDNS>0:dns/p5-Zonemaster-LDNS
+		p5-Zonemaster-Engine>0:dns/p5-Zonemaster-Engine
 
 USES=		gmake localbase perl5
 USE_PERL5=	configure
