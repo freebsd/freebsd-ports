@@ -46,6 +46,10 @@ PLIST_FILES=	${JAVAJARDIR}/snappy-java.jar \
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == powerpc
+MAKE_ENV+=	_JAVA_OPTIONS="-Xmx768m -Xms768m"
+.endif
+
 post-extract:
 	${MKDIR} ${WRKSRC}/target
 	${RM} ${WRKSRC}/sbt
@@ -73,6 +77,8 @@ PLATFORM_DIR_SUFFIX=	FreeBSD-x86
 PLATFORM_DIR_SUFFIX=	FreeBSD-aarch64
 . elif ${ARCH} == armv6 || ${ARCH} == armv7
 PLATFORM_DIR_SUFFIX=	FreeBSD-arm
+. elif ${ARCH} == powerpc
+PLATFORM_DIR_SUFFIX=	FreeBSD-ppc
 . elif ${ARCH} == powerpc64
 PLATFORM_DIR_SUFFIX=	FreeBSD-ppc64
 . elif ${ARCH} == powerpc64le
