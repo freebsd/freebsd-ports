@@ -1,6 +1,5 @@
 PORTNAME=	wimlib
-PORTVERSION=	1.13.0
-PORTREVISION=	3
+DISTVERSION=	1.14.4
 CATEGORIES=	filesystems sysutils
 MASTER_SITES=	https://wimlib.net/downloads/
 
@@ -11,20 +10,19 @@ WWW=		https://wimlib.net/
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING.GPLv3
 
-USES=		gmake gnome fuse libtool pkgconfig
-USE_GNOME=	libxml2
+USES=		gmake libtool pkgconfig
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--disable-static
+INSTALL_TARGET=	install-strip
 
 OPTIONS_DEFINE=		NTFS
 OPTIONS_DEFAULT=	NTFS
 
-NTFS_DESC=	Build with libntfs-3g for NTFS support (recommended)
+NTFS_DESC=		Build with libntfs-3g for NTFS support (recommended)
 
-NTFS_CONFIGURE_WITH=	ntfs-3g
 NTFS_LIB_DEPENDS=	libntfs-3g.so:filesystems/ntfs
+NTFS_CONFIGURE_WITH=	ntfs-3g
 
 .include <bsd.port.mk>
