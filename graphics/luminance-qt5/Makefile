@@ -24,8 +24,7 @@ LIB_DEPENDS=	libImath.so:math/Imath \
 
 CFLAGS+=	-I${LOCALBASE}/include/Imath
 
-USES=		cmake compiler:c++14-lang desktop-file-utils \
-		eigen:3 jpeg pkgconfig qt:5 tar:bzip2
+USES=		cmake desktop-file-utils eigen:3 jpeg pkgconfig qt:5 tar:bzip2
 USE_QT=		concurrent core declarative gui location network \
 		printsupport sql svg widgets xml \
 		buildtools:build linguisttools:build qmake:build
@@ -46,6 +45,8 @@ HELPBROWSER_CMAKE_BOOL=	WITH_HELPBROWSER
 
 .if !exists(/usr/include/omp.h)
 USES+=	compiler:gcc-c++11-lib
+.else
+USES+=	compiler:c++14-lang
 .endif
 
 .include <bsd.port.options.mk>
