@@ -8,6 +8,9 @@ WWW=		https://www.kde.org/
 
 LICENSE=	LGPL21
 
+DEPRECATED=	Unmaintained and no longer released by the KDE community
+EXPIRATION_DATE=	2025-03-31
+
 LIB_DEPENDS=	libical.so:devel/libical
 
 USES=		cmake compiler:c++11-lib gettext grantlee:5 kde:5 qt:5 tar:xz \
