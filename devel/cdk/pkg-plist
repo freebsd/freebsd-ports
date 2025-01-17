@@ -232,6 +232,7 @@ share/man/man3/drawCDKUSlider.3.gz
 share/man/man3/drawCDKViewer.3.gz
 share/man/man3/drawCdkTitle.3.gz
 share/man/man3/dumpCDKSwindow.3.gz
+share/man/man3/enableCursesMarkup.3.gz
 share/man/man3/endCDK.3.gz
 share/man/man3/eraseCDKAlphalist.3.gz
 share/man/man3/eraseCDKButton.3.gz
