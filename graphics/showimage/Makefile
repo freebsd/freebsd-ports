@@ -10,6 +10,9 @@ WWW=		https://store.kde.org/p/1126798
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Depends on unmaintained libkipi
+EXPIRATION_DATE=	2025-03-31
+
 USES=		cmake compiler:c++11-lang desktop-file-utils kde:5 qt:5 \
 		tar:xz xorg
 USE_KDE=	auth bookmarks codecs completion config configwidgets \
