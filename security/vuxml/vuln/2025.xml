@@ -1,3 +1,32 @@
+  <vuln vid="47bc292a-d472-11ef-aaab-7d43732cb6f5">
+    <topic>openvpn -- too long a username or password from a client can confuse openvpn servers</topic>
+    <affects>
+      <package>
+	<name>openvpn</name>
+	<range><lt>2.6.13</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Frank Lichtenheld reports:</p>
+	<blockquote cite="https://github.com/OpenVPN/openvpn/releases/tag/v2.6.13">
+	  <p>[OpenVPN v2.6.13 ...] improve server-side handling of clients sending
+	    usernames or passwords longer than USER_PASS_LEN - this would not
+	    result in a crash, buffer overflow or other security issues, but the
+	    server would then misparse incoming IV variables and produce misleading
+	    error messages.</p>
+	</blockquote>
+       </body>
+    </description>
+    <references>
+      <url>https://github.com/OpenVPN/openvpn/releases/tag/v2.6.13</url>
+    </references>
+    <dates>
+      <discovery>2024-10-28</discovery>
+      <entry>2025-01-17</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="163edccf-d2ba-11ef-b10e-589cfc10a551">
     <topic>rsync -- Multiple security fixes</topic>
     <affects>
