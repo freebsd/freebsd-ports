@@ -5,7 +5,7 @@
 -PREFIX_MAN=$(PREFIX)/man
 +PREFIX:=$(PREFIX)
 +PREFIX_MAN=$(PREFIX)/share/man
- CFLAGS?=-g -Wall -Wextra
+ CFLAGS?=-g -Wall -Wextra -pedantic
  
  all: snac
 @@ -18,14 +18,14 @@ install:
