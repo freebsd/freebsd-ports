@@ -1321,7 +1321,9 @@ share/locale/da/LC_MESSAGES/kcm_kded.mo
 share/locale/da/LC_MESSAGES/kcm_keyboard.mo
 share/locale/da/LC_MESSAGES/kcm_keys.mo
 share/locale/da/LC_MESSAGES/kcm_krunnersettings.mo
+share/locale/da/LC_MESSAGES/kcm_landingpage.mo
 share/locale/da/LC_MESSAGES/kcm_plasmasearch.mo
+share/locale/da/LC_MESSAGES/kcm_recentFiles.mo
 share/locale/da/LC_MESSAGES/kcm_smserver.mo
 share/locale/da/LC_MESSAGES/kcm_solid_actions.mo
 share/locale/da/LC_MESSAGES/kcm_splashscreen.mo
@@ -1332,8 +1334,10 @@ share/locale/da/LC_MESSAGES/kcmmouse.mo
 share/locale/da/LC_MESSAGES/kcmqtquicksettings.mo
 share/locale/da/LC_MESSAGES/knetattach.mo
 share/locale/da/LC_MESSAGES/org.kde.plasma.emojier.mo
+share/locale/da/LC_MESSAGES/plasma-desktop-sddm-theme.mo
 share/locale/da/LC_MESSAGES/plasma_applet_org.kde.desktopcontainment.mo
 share/locale/da/LC_MESSAGES/plasma_applet_org.kde.panel.mo
+share/locale/da/LC_MESSAGES/plasma_applet_org.kde.plasma.keyboardlayout.mo
 share/locale/da/LC_MESSAGES/plasma_applet_org.kde.plasma.kicker.mo
 share/locale/da/LC_MESSAGES/plasma_applet_org.kde.plasma.kickoff.mo
 share/locale/da/LC_MESSAGES/plasma_applet_org.kde.plasma.kimpanel.mo
@@ -3132,6 +3136,7 @@ share/locale/sk/LC_MESSAGES/kcmmouse.mo
 share/locale/sk/LC_MESSAGES/kcmqtquicksettings.mo
 share/locale/sk/LC_MESSAGES/knetattach.mo
 share/locale/sk/LC_MESSAGES/org.kde.plasma.emojier.mo
+share/locale/sk/LC_MESSAGES/plasma-desktop-sddm-theme.mo
 share/locale/sk/LC_MESSAGES/plasma_applet_org.kde.desktopcontainment.mo
 share/locale/sk/LC_MESSAGES/plasma_applet_org.kde.panel.mo
 share/locale/sk/LC_MESSAGES/plasma_applet_org.kde.plasma.keyboardlayout.mo
