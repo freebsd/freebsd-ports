@@ -1,5 +1,5 @@
 PORTNAME=	pffft
-PORTVERSION=	g20210806
+PORTVERSION=	2022.12.19 # use date because this library is unlikely to ever have releases
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -14,7 +14,7 @@ USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	marton78
-GH_TAGNAME=	9603871
+GH_TAGNAME=	e0bf595
 
 CMAKE_ON=	BUILD_SHARED_LIBS INSTALL_PFDSP INSTALL_PFFASTCONV
 
