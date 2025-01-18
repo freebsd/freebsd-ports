@@ -19,8 +19,15 @@ GNU_CONFIGURE=	yes
 
 PLIST_FILES=	bin/${PORTNAME} share/man/man1/${PORTNAME}.1.gz
 
+.include <bsd.port.pre.mk>
+
+.if ${OPSYS}_${OSREL:R} == FreeBSD_13
+CONFIGURE_ENV=	NCURSES_CFLAGS=-I${NCURSESINC} NCURSES_LIBS=-L${NCURSESLIB}
+LDFLAGS+=	${TINFO_LIB}
+.endif
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/docs/${PORTNAME}.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
