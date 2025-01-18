@@ -1,12 +1,9 @@
 bin/lfortran
 include/lfortran/impure/lfortran_intrinsics.h
-lib/lfortran_intrinsic_builtin.mod
 lib/lfortran_intrinsic_custom.mod
 lib/lfortran_intrinsic_ieee_arithmetic.mod
 lib/lfortran_intrinsic_iso_c_binding.mod
 lib/lfortran_intrinsic_iso_fortran_env.mod
-lib/lfortran_intrinsic_math.mod
-lib/lfortran_intrinsic_string.mod
 lib/liblfortran_runtime.so
 lib/liblfortran_runtime.so.0
 lib/liblfortran_runtime.so.%%VER%%
