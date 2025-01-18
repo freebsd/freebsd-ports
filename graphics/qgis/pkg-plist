@@ -3809,10 +3809,6 @@ share/metainfo/org.qgis.qgis.appdata.xml
 %%DATADIR%%/i18n/qgis_sk.qm
 %%DATADIR%%/i18n/qgis_sv.qm
 %%DATADIR%%/i18n/qgis_tr.qm
-%%DATADIR%%/i18n/qgis_uk.qm
-%%DATADIR%%/i18n/qgis_vi.qm
-%%DATADIR%%/i18n/qgis_zh-Hans.qm
-%%DATADIR%%/i18n/qgis_zh-Hant.qm
 %%DATADIR%%/images/icons/qbrowser-icon.png
 %%DATADIR%%/images/icons/qgis-full.png
 %%DATADIR%%/images/icons/qgis-icon-16x16.png
@@ -4384,6 +4380,7 @@ share/metainfo/org.qgis.qgis.appdata.xml
 %%DATADIR%%/python/qgis/PyQt/QtGui.py
 %%DATADIR%%/python/qgis/PyQt/QtNetwork.py
 %%DATADIR%%/python/qgis/PyQt/QtPrintSupport.py
+%%DATADIR%%/python/qgis/PyQt/QtQuickWidgets.py
 %%DATADIR%%/python/qgis/PyQt/QtSerialPort.py
 %%DATADIR%%/python/qgis/PyQt/QtSql.py
 %%DATADIR%%/python/qgis/PyQt/QtSvg.py
