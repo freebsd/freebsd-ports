@@ -1,6 +1,7 @@
 PORTNAME=	fts-flatcurve
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.0.5
+PORTREVISION=	1
 CATEGORIES=	mail
 PKGNAMEPREFIX=	dovecot-
 
@@ -10,10 +11,23 @@ WWW=		https://github.com/slusarz/dovecot-fts-flatcurve
 
 LICENSE=	LGPL21
 
-BUILD_DEPENDS=	dovecot>=2.3.17:mail/dovecot
+FLAVORS=        default mysql pgsql
+FLAVOR?=        ${FLAVORS[1]}
+mysql_PKGNAMESUFFIX=    -mysql
+pgsql_PKGNAMESUFFIX=    -pgsql
+BUILD_DEPENDS=  dovecot>=2.3.17:mail/dovecot@default
+RUN_DEPENDS=    dovecot>=2.3.17:mail/dovecot@default
+.if ${FLAVOR:U} == mysql
+BUILD_DEPENDS=  dovecot-mysql>=2.3.17:mail/dovecot@mysql
+RUN_DEPENDS=    dovecot-mysql>=2.3.17:mail/dovecot@mysql
+.endif
+.if ${FLAVOR:U} == pgsql
+BUILD_DEPENDS=  dovecot-pgsql>=2.3.17:mail/dovecot@pgsql
+RUN_DEPENDS=    dovecot-pgsql>=2.3.17:mail/dovecot@pgsql
+.endif
+
 LIB_DEPENDS=	libicuuc.so:devel/icu \
 		libxapian.so:databases/xapian-core
-RUN_DEPENDS=	dovecot>=2.3.17:mail/dovecot
 
 USES=		autoreconf libtool pkgconfig
 USE_GITHUB=	yes
