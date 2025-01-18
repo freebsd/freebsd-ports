@@ -1,7 +1,12 @@
 PORTNAME=	declarative
 DISTVERSION=	${QT6_VERSION}
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits
 PKGNAMEPREFIX=	qt6-
+
+PATCH_SITES=	https://invent.kde.org/qt/qt/qtdeclarative/-/commit/
+PATCHFILES+=	6e6add5406eb5d8daca0992fa3f2362d34b002e5.patch:-p1 # QTBUG-131898
+PATCHFILES+=	eff776c676b042bd75604105a3876f999b9808d5.patch:-p1 # QTBUG-132421
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt declarative framework for dynamic user interfaces
@@ -12,9 +17,9 @@ LIB_DEPENDS=	libxkbcommon.so:x11/libxkbcommon
 USES=		cmake compiler:c++17-lang gl pkgconfig python \
 		qt-dist:6
 USE_GL=		opengl
+USE_LDCONFIG=	${PREFIX}/${QT_LIBDIR_REL}
 USE_QT=		base svg \
 		languageserver:build shadertools:build
-USE_LDCONFIG=	${PREFIX}/${QT_LIBDIR_REL}
 
 CMAKE_ON=	CMAKE_DISABLE_FIND_PACKAGE_LTTngUST
 
