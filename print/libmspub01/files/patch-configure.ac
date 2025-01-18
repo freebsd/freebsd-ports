@@ -1,0 +1,11 @@
+--- configure.ac.orig	2025-01-04 20:17:51 UTC
++++ configure.ac
+@@ -104,7 +104,7 @@ AC_CHECK_HEADERS(
+ # ========
+ # Find icu
+ # ========
+-PKG_CHECK_MODULES([ICU], [icu-i18n])
++PKG_CHECK_MODULES([ICU], [icu-i18n icu-uc])
+ AC_SUBST(ICU_CFLAGS)
+ AC_SUBST(ICU_LIBS)
+ 
