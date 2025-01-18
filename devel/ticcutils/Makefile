@@ -12,13 +12,14 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libicui18n.so:devel/icu
 
-USES=		compiler:c++11-lib gmake gnome libtool localbase:ldflags \
+USES=		compiler:c++17-lang gmake gnome libtool localbase:ldflags \
 		pathfix pkgconfig
 USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
 
+USE_CXXSTD=	c++17
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
+
 CONFIGURE_ARGS=	--disable-static
 
 INSTALL_TARGET=	install-strip
