@@ -2289,6 +2289,7 @@ share/locale/fi/LC_MESSAGES/kcm_style.mo
 share/locale/fi/LC_MESSAGES/kcm_users.mo
 share/locale/fi/LC_MESSAGES/kcminit.mo
 share/locale/fi/LC_MESSAGES/kded_devicenotifications.mo
+share/locale/fi/LC_MESSAGES/kded_donationmessage.mo
 share/locale/fi/LC_MESSAGES/kfontinst.mo
 share/locale/fi/LC_MESSAGES/kio_applications.mo
 share/locale/fi/LC_MESSAGES/kio_desktop.mo
@@ -3490,6 +3491,7 @@ share/locale/ko/LC_MESSAGES/kcm_style.mo
 share/locale/ko/LC_MESSAGES/kcm_users.mo
 share/locale/ko/LC_MESSAGES/kcminit.mo
 share/locale/ko/LC_MESSAGES/kded_devicenotifications.mo
+share/locale/ko/LC_MESSAGES/kded_donationmessage.mo
 share/locale/ko/LC_MESSAGES/kfontinst.mo
 share/locale/ko/LC_MESSAGES/kio_applications.mo
 share/locale/ko/LC_MESSAGES/kio_desktop.mo
@@ -3525,6 +3527,7 @@ share/locale/ko/LC_MESSAGES/plasma_engine_notifications.mo
 share/locale/ko/LC_MESSAGES/plasma_engine_powermanagement.mo
 share/locale/ko/LC_MESSAGES/plasma_engine_time.mo
 share/locale/ko/LC_MESSAGES/plasma_engine_weather.mo
+share/locale/ko/LC_MESSAGES/plasma_interactiveconsole.mo
 share/locale/ko/LC_MESSAGES/plasma_lookandfeel_org.kde.lookandfeel.mo
 share/locale/ko/LC_MESSAGES/plasma_runner_appstream.mo
 share/locale/ko/LC_MESSAGES/plasma_runner_baloosearch.mo
@@ -4458,6 +4461,7 @@ share/locale/pt_BR/LC_MESSAGES/kcm_style.mo
 share/locale/pt_BR/LC_MESSAGES/kcm_users.mo
 share/locale/pt_BR/LC_MESSAGES/kcminit.mo
 share/locale/pt_BR/LC_MESSAGES/kded_devicenotifications.mo
+share/locale/pt_BR/LC_MESSAGES/kded_donationmessage.mo
 share/locale/pt_BR/LC_MESSAGES/kfontinst.mo
 share/locale/pt_BR/LC_MESSAGES/kio_applications.mo
 share/locale/pt_BR/LC_MESSAGES/kio_desktop.mo
@@ -4732,6 +4736,7 @@ share/locale/sk/LC_MESSAGES/kcm_style.mo
 share/locale/sk/LC_MESSAGES/kcm_users.mo
 share/locale/sk/LC_MESSAGES/kcminit.mo
 share/locale/sk/LC_MESSAGES/kded_devicenotifications.mo
+share/locale/sk/LC_MESSAGES/kded_donationmessage.mo
 share/locale/sk/LC_MESSAGES/kfontinst.mo
 share/locale/sk/LC_MESSAGES/kio_applications.mo
 share/locale/sk/LC_MESSAGES/kio_desktop.mo
@@ -4767,6 +4772,7 @@ share/locale/sk/LC_MESSAGES/plasma_engine_notifications.mo
 share/locale/sk/LC_MESSAGES/plasma_engine_powermanagement.mo
 share/locale/sk/LC_MESSAGES/plasma_engine_time.mo
 share/locale/sk/LC_MESSAGES/plasma_engine_weather.mo
+share/locale/sk/LC_MESSAGES/plasma_interactiveconsole.mo
 share/locale/sk/LC_MESSAGES/plasma_lookandfeel_org.kde.lookandfeel.mo
 share/locale/sk/LC_MESSAGES/plasma_runner_appstream.mo
 share/locale/sk/LC_MESSAGES/plasma_runner_baloosearch.mo
@@ -4785,6 +4791,7 @@ share/locale/sk/LC_MESSAGES/plasma_wallpaper_org.kde.image.mo
 share/locale/sk/LC_MESSAGES/plasmashell.mo
 share/locale/sk/LC_MESSAGES/plasmashellprivateplugin.mo
 share/locale/sk/LC_MESSAGES/plasmawindowed.mo
+share/locale/sk/LC_MESSAGES/session-shortcuts-kded.mo
 share/locale/sk/LC_MESSAGES/soliduiserver.mo
 share/locale/sl/LC_MESSAGES/freespacenotifier.mo
 share/locale/sl/LC_MESSAGES/kcm_autostart.mo
