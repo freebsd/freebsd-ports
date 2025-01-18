@@ -1,19 +1,18 @@
 PORTNAME=	LAStools
-DISTVERSION=	2.0.0
-PORTREVISION=	1
+DISTVERSIONPREFIX=	v
+DISTVERSION=	2.0.3
 CATEGORIES=	misc
-MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/v${DISTVERSION}/
-DISTNAME=	${PORTNAME}
-DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Efficient tools for LiDAR processing
-WWW=		https://rapidlasso.com/lastools/
+WWW=		https://rapidlasso.com/lastools/ \
+		https://github.com/LAStools/LAStools
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING.txt
 
-USES=		cmake:insource zip
+USES=		cmake:insource
+USE_GITHUB=	yes
 
 CMAKE_ON=	BUILD_SHARED_LIBS
 
@@ -21,7 +20,7 @@ CONFLICTS_INSTALL=	liblas
 
 EXECUTABLES=	lasindex las2txt las2las txt2las lasdiff lasinfo laszip lasmerge lasprecision
 
-pre-install:
+xpre-install:
 	${MV} ${WRKSRC}/LASlib/src/LASlib-config.cmake ${WRKSRC}/LASlib/src/laslib-config.cmake
 
 post-install: # strip the "64" suffix from executables
