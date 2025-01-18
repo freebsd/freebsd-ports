@@ -26,7 +26,7 @@ USE_PERL5=	build
 USE_GITHUB=	yes
 GH_ACCOUNT=	Singular
 GH_PROJECT=	Singular
-GH_TAGNAME=	Release-4-4-0p7
+GH_TAGNAME=	Release-4-4-1
 
 SHEBANG_FILES=	Singular/surfex \
 		libpolys/libpolys-config.in \
