@@ -1,0 +1,11 @@
+--- configure.ac.orig	2025-01-04 19:00:12 UTC
++++ configure.ac
+@@ -127,7 +127,7 @@ AC_SUBST([BOOST_CFLAGS])
+ # ========
+ # Find icu
+ # ========
+-PKG_CHECK_MODULES([ICU], [icu-i18n])
++PKG_CHECK_MODULES([ICU], [icu-i18n icu-uc])
+ AC_SUBST(ICU_CFLAGS)
+ AC_SUBST(ICU_LIBS)
+ 
