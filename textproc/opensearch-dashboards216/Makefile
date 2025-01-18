@@ -1,5 +1,7 @@
 DISTVERSION=    2.16.0
 
+PORTREVISION=	0
+
 PKGNAMESUFFIX=  216
 
 COMMENT=        Visualization dashboards for OpenSearch

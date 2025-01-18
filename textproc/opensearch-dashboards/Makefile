@@ -1,5 +1,6 @@
 PORTNAME=	opensearch-dashboards
 DISTVERSION?=	2.17.1
+PORTREVISION?=	1
 DISTVERSIONSUFFIX=	-linux-x64
 CATEGORIES=	textproc www
 MASTER_SITES=	https://artifacts.opensearch.org/releases/bundle/${PORTNAME}/${DISTVERSION}/
@@ -11,7 +12,7 @@ WWW=		https://opensearch.org
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-CONFLICTS?=	opensearch-dashboards210
+CONFLICTS?=	opensearch-dashboards210 opensearch-dashboards213 opensearch-dashboards216
 
 BUILD_DEPENDS=	npm-node18>0:www/npm-node18
 
