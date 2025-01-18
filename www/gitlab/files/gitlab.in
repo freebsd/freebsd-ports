@@ -47,6 +47,8 @@ stop_precmd=${name}_init
 : ${gitlab_allow_conflicts:="NO"}
 : ${gitlab_wait:="120"}
 : ${gitlab_svcj_options:="net_basic"}
+# Use debug, info, warn, error
+: ${gitlab_log_level:="info"}
 
 load_rc_config $name
 
@@ -377,14 +379,14 @@ start_gitlab() {
     # Remove old socket if it exists
     rm -f "$rails_socket" 2>/dev/null
     # Start the web server
-    RAILS_ENV=$RAILS_ENV USE_WEB_SERVER=$use_web_server bin/web start
+    GITLAB_LOG_LEVEL=${gitlab_log_level} RAILS_ENV=$RAILS_ENV USE_WEB_SERVER=$use_web_server bin/web start
   fi
 
   # If sidekiq is already running, don't start it again.
   if [ "$sidekiq_status" = "0" ]; then
     echo "The Sidekiq job dispatcher is already running with pid $spid, not restarting"
   else
-    RAILS_ENV=$RAILS_ENV SIDEKIQ_WORKERS=$SIDEKIQ_WORKERS bin/background_jobs start > /dev/null &
+    GITLAB_LOG_LEVEL=${gitlab_log_level} RAILS_ENV=$RAILS_ENV SIDEKIQ_WORKERS=$SIDEKIQ_WORKERS bin/background_jobs start > /dev/null &
   fi
 
   if [ "$gitlab_workhorse_status" = "0" ]; then
@@ -394,7 +396,7 @@ start_gitlab() {
     # Because gitlab-workhorse has multiple executables we need to fix
     # the PATH.
     $app_root/bin/daemon_with_pidfile $gitlab_workhorse_pid_path  \
-      /usr/bin/env PATH=$gitlab_workhorse_dir:$PATH \
+      /usr/bin/env PATH=$gitlab_workhorse_dir:$PATH GITLAB_LOG_LEVEL=${gitlab_log_level} \
       gitlab-workhorse $gitlab_workhorse_options \
       >> $gitlab_workhorse_log 2>&1 &
   fi
@@ -404,7 +406,7 @@ start_gitlab() {
     if [ "$mail_room_status" = "0" ]; then
       echo "The MailRoom email processor is already running with pid $mpid, not restarting"
     else
-      RAILS_ENV=$RAILS_ENV bin/mail_room start &
+      GITLAB_LOG_LEVEL=${gitlab_log_level} RAILS_ENV=$RAILS_ENV bin/mail_room start &
     fi
   fi
 
@@ -413,6 +415,7 @@ start_gitlab() {
       echo "The GitLab Pages is already running with pid $gppid, not restarting"
     else
       $app_root/bin/daemon_with_pidfile $gitlab_pages_pid_path  \
+        /usr/bin/env GITLAB_LOG_LEVEL=${gitlab_log_level} \
         $gitlab_pages_dir/gitlab-pages $gitlab_pages_options \
         >> $gitlab_pages_log 2>&1 &
     fi
@@ -423,6 +426,7 @@ start_gitlab() {
       echo "Gitaly is already running with pid $gapid, not restarting"
     else
       $app_root/bin/daemon_with_pidfile $gitaly_pid_path \
+        /usr/bin/env GITLAB_LOG_LEVEL=${gitlab_log_level} \
         $gitaly_dir/bin/gitaly $gitaly_dir/config.toml >> $gitaly_log 2>&1 &
     fi
   fi
@@ -439,11 +443,11 @@ stop_gitlab() {
 
   if [ "$web_status" = "0" ]; then
     echo "Shutting down GitLab web server"
-    RAILS_ENV=$RAILS_ENV USE_WEB_SERVER=$use_web_server bin/web stop
+    GITLAB_LOG_LEVEL=${gitlab_log_level} RAILS_ENV=$RAILS_ENV USE_WEB_SERVER=$use_web_server bin/web stop
   fi
   if [ "$sidekiq_status" = "0" ]; then
     echo "Shutting down GitLab Sidekiq"
-    RAILS_ENV=$RAILS_ENV SIDEKIQ_WORKERS=$SIDEKIQ_WORKERS bin/background_jobs stop
+    GITLAB_LOG_LEVEL=${gitlab_log_level} RAILS_ENV=$RAILS_ENV SIDEKIQ_WORKERS=$SIDEKIQ_WORKERS bin/background_jobs stop
   fi
   if [ "$gitlab_workhorse_status" = "0" ]; then
     echo "Shutting down GitLab Workhorse"
@@ -451,7 +455,7 @@ stop_gitlab() {
   fi
   if [ "$mail_room_enabled" = true ] && [ "$mail_room_status" = "0" ]; then
     echo "Shutting down GitLab MailRoom"
-    RAILS_ENV=$RAILS_ENV bin/mail_room stop
+    GITLAB_LOG_LEVEL=${gitlab_log_level} RAILS_ENV=$RAILS_ENV bin/mail_room stop
   fi
   if [ "$gitlab_pages_status" = "0" ]; then
     echo "Shutting down gitlab-pages"
@@ -543,15 +547,15 @@ reload_gitlab(){
     exit 1
   fi
   printf "Reloading GitLab web server configuration... "
-  RAILS_ENV=$RAILS_ENV USE_WEB_SERVER=$use_web_server bin/web reload
+  GITLAB_LOG_LEVEL=${gitlab_log_level} RAILS_ENV=$RAILS_ENV USE_WEB_SERVER=$use_web_server bin/web reload
   echo "Done."
 
   echo "Restarting GitLab Sidekiq since it isn't capable of reloading its config..."
-  RAILS_ENV=$RAILS_ENV SIDEKIQ_WORKERS=$SIDEKIQ_WORKERS bin/background_jobs restart & /dev/null &
+  GITLAB_LOG_LEVEL=${gitlab_log_level} RAILS_ENV=$RAILS_ENV SIDEKIQ_WORKERS=$SIDEKIQ_WORKERS bin/background_jobs restart & /dev/null &
 
   if [ "$mail_room_enabled" != true ]; then
     echo "Restarting GitLab MailRoom since it isn't capable of reloading its config..."
-    RAILS_ENV=$RAILS_ENV bin/mail_room restart
+    GITLAB_LOG_LEVEL=${gitlab_log_level} RAILS_ENV=$RAILS_ENV bin/mail_room restart
   fi
 
   wait_for_pids
