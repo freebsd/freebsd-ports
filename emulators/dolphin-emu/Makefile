@@ -1,6 +1,5 @@
 PORTNAME=	dolphin-emu
-PORTVERSION=	5.0.21264
-PORTREVISION=	6
+PORTVERSION=	2412
 CATEGORIES=	emulators
 
 MAINTAINER=	martymac@FreeBSD.org
@@ -10,17 +9,16 @@ WWW=		https://www.dolphin-emu.org
 LICENSE=	BSD3CLAUSE CC0-1.0 GPLv2+ MIT
 LICENSE_COMB=	multi
 
-BUILD_DEPENDS=	libfmt>=10.1:devel/libfmt \
-		vulkan-headers>0:graphics/vulkan-headers
+BUILD_DEPENDS=	vulkan-headers>0:graphics/vulkan-headers
 # Notes on dependencies:
 # - alsa support has been disabled (not optimal)
 # - enet and soundtouch come from Externals/ as Dolphin's versions diverge
 #   (see comments in CMakeLists.txt)
-# - mbedtls2 comes from Externals/ as it has been deprecated in the ports tree
 # Various problems that may be addressed in the future:
 # - freesurround comes from Externals/ as it is not available from ports yet
 # - cubeb comes from Externals/ as it is not available from ports yet
 # - gtest detection is missing (Externals/ version enforced by CMakeLists.txt)
+# - mbedtls2 comes from Externals/ as it has been deprecated in the ports tree
 LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg \
 		libavdevice.so:multimedia/ffmpeg \
 		libavfilter.so:multimedia/ffmpeg \
@@ -47,15 +45,14 @@ LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg \
 		libxkbcommon.so:x11/libxkbcommon
 
 USES=		cmake compiler:c++17-lang desktop-file-utils elfctl gl iconv \
-		pkgconfig qmake qt:6 sdl xorg
+		pkgconfig python qmake qt:6 sdl xorg
 
 ELF_FEATURES=	+noaslr:Binaries/dolphin-emu*
 
-# See: https://fr.dolphin-emu.org/download/?ref=btn
-# for latest beta version and associated commit
+# See: https://dolphin-emu.org/download/ for latest release
 USE_GITHUB=	yes
 GH_PROJECT=	dolphin
-GH_TAGNAME=	1efda86
+GH_TAGNAME=	${PORTVERSION}
 .include "${.CURDIR}/Makefile.tuples"
 
 USE_GL=		egl gl
@@ -63,7 +60,7 @@ USE_SDL=	sdl2
 USE_XORG=	ice sm x11 xext xi xrandr
 USE_QT=		base svg
 
-# XXX USE_MGBA crashes configure step
+# XXX Does not build with USE_MGBA or ENABLE_EVDEV
 CMAKE_ARGS+=	-DUSE_UPNP:BOOL=ON \
 		-DENABLE_QT:BOOL=ON \
 		-DENABLE_ALSA:BOOL=OFF \
