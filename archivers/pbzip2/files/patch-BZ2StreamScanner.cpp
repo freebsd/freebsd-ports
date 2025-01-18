@@ -1,6 +1,16 @@
 --- BZ2StreamScanner.cpp.orig	2015-12-17 23:32:49 UTC
 +++ BZ2StreamScanner.cpp
-@@ -49,8 +49,8 @@ int BZ2StreamScanner::init( int hInFile, size_t inBuff
+@@ -42,15 +42,15 @@ int BZ2StreamScanner::init( int hInFile, size_t inBuff
+ {
+ 	dispose();
+ 
+-	CharType bz2header[] = "BZh91AY&SY";
+-	// zero-terminated string
++	CharType bz2header[] =
++		{ 'B', 'Z', 'h', '9', '1', 'A', 'Y', '&', 'S', 'Y' };
+ 	CharType bz2ZeroHeader[] =
+-		{ 'B', 'Z', 'h', '9', 0x17, 0x72, 0x45, 0x38, 0x50, 0x90, 0 };
++		{ 'B', 'Z', 'h', '9', 0x17, 0x72, 0x45, 0x38, 0x50, 0x90 };
  
  	_hInFile = hInFile;
  	_eof = false;
@@ -35,7 +45,7 @@
  				// compare the remaining part of magic header
 -				int cmpres = pHdr->compare( hsp, pHdr->size() - hsp,
 -						getInBuffSearchPtr() + hsp, pHdr->size() - hsp );
-+				bool cmpres = equal( pHdr->begin() + hsp, pHdr->begin() + pHdr->size() - hsp,
++				bool cmpres = equal( pHdr->begin() + hsp, pHdr->end(),
 +						getInBuffSearchPtr() + hsp );
  
 +
