@@ -1,6 +1,6 @@
---- tests/Makefile.am.orig	2021-03-08 17:51:22 UTC
+--- tests/Makefile.am.orig	2024-11-12 14:33:12 UTC
 +++ tests/Makefile.am
-@@ -129,9 +129,9 @@ tnfd_SOURCES=tnfd.cc
+@@ -145,9 +145,9 @@ tnfd_SOURCES=tnfd.cc
  # This is the name of a directory which will be used for newform
  # input/output in the "make check" tests and removed afterwards.
  
