@@ -63,7 +63,7 @@ SRC_LIBXC = libxcifc_stub.f90
 # copy the files libxcf90.a and libxc.a to the elk/src directory and uncomment
 # the following lines.
 LIB_LIBXC = -lxcf90 -lxc
-SRC_LIBXC = libxcf90.f90 libxcifc.f90
+SRC_LIBXC = libxcf03.f90 libxcifc.f90
 #-------------------------------------------------------------------------------
 
 #-------------------------------------------------------------------------------
