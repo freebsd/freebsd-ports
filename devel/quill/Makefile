@@ -1,6 +1,6 @@
 PORTNAME=	quill
 DISTVERSIONPREFIX=	v
-DISTVERSION=	7.5.0
+DISTVERSION=	8.0.0
 CATEGORIES=	devel
 PKGNAMESUFFIX=	-logging-library
 
@@ -19,5 +19,7 @@ GH_ACCOUNT=	odygrd
 CMAKE_TESTING_ON=	QUILL_BUILD_TESTS # 1 tests fails, see https://github.com/odygrd/quill/issues/550
 
 NO_ARCH=	yes
+
+# tests fail to compile: https://github.com/odygrd/quill/issues/646
 
 .include <bsd.port.mk>
