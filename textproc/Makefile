@@ -537,9 +537,11 @@
     SUBDIR += opensearch-dashboards
     SUBDIR += opensearch-dashboards210
     SUBDIR += opensearch-dashboards213
+    SUBDIR += opensearch-dashboards216
     SUBDIR += opensearch13
     SUBDIR += opensearch210
     SUBDIR += opensearch213
+    SUBDIR += opensearch216
     SUBDIR += opensp
     SUBDIR += openvanilla-framework
     SUBDIR += or-aspell
