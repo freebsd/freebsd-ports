@@ -4021,3 +4021,4 @@ devel/raknet||2025-01-15|Has expired: Unmaintained upstream, only builds with EO
 devel/pas2dox||2025-01-15|Has expired: doesn't compile with moddern clang and gcc, upstream last updated it in 2003
 x11-toolkits/kirigami-addons|x11-toolkits/kirigami-addons-qt5|2025-01-16|Moved to have symmetric names with Qt6
 x11-toolkits/kirigami-addons-devel|x11-toolkits/kirigami-addons-qt6|2025-01-16|Moved to have symmetric names with Qt6
+audio/guitarix-lv2||2025-01-18|Has expired: Broken for more than a year

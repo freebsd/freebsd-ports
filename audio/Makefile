@@ -266,7 +266,6 @@
     SUBDIR += gtultra
     SUBDIR += guidoar
     SUBDIR += guidolib
-    SUBDIR += guitarix-lv2
     SUBDIR += gula-plugins-lv2
     SUBDIR += guspat
     SUBDIR += gvolwheel
