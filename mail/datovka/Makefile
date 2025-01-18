@@ -1,5 +1,5 @@
 PORTNAME=	datovka
-DISTVERSION=	4.24.2
+DISTVERSION=	4.25.0
 CATEGORIES=	mail
 MASTER_SITES=	https://secure.nic.cz/files/datove_schranky/${DISTVERSION}/
 
@@ -14,11 +14,9 @@ BUILD_DEPENDS=	libglvnd>0:graphics/libglvnd \
 		pkgconf:devel/pkgconf
 LIB_DEPENDS=	libdatovka.so:devel/libdatovka
 
-USES=		compiler:c++11-lang desktop-file-utils gl pkgconfig qmake qt:5 \
-		ssl tar:xz
-USE_GL=		gl
-USE_QT=		buildtools core gui network printsupport sql svg websockets \
-		widgets
+USES=		compiler:c++17-lang gl pkgconfig qmake qt:6 ssl tar:xz
+USE_GL=		opengl
+USE_QT=		5compat base svg websockets
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/datovka
