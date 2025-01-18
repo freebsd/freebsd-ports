@@ -1,5 +1,5 @@
 PORTNAME=	snac
-DISTVERSION=	2.57
+DISTVERSION=	2.68
 CATEGORIES=	net-im www
 MASTER_SITES=	https://codeberg.org/grunfink/snac2/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/
 
