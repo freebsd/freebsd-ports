@@ -1,3 +1,33 @@
+  <vuln vid="d9b0fea0-d564-11ef-b9bc-d05099c0ae8c">
+    <topic>age -- age vulnerable to malicious plugin names, recipients, or identities causing arbitrary binary execution</topic>
+    <affects>
+      <package>
+	<name>age</name>
+	<range><lt>1.2.1</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Filippo Valsorda reports:</p>
+	<blockquote cite="https://github.com/advisories/GHSA-32gq-x56h-299c">
+	  <p>A plugin name containing a path separator may allow an
+	    attacker to execute an arbitrary binary.</p>
+	  <p>Such a plugin name can be provided to the age CLI through
+	    an attacker-controlled recipient or identity string, or to
+	    the plugin.NewIdentity, plugin.NewIdentityWithoutData, or
+	    plugin.NewRecipient APIs.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <url>https://github.com/advisories/GHSA-32gq-x56h-299c</url>
+    </references>
+    <dates>
+      <discovery>2024-12-18</discovery>
+      <entry>2025-01-18</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="47bc292a-d472-11ef-aaab-7d43732cb6f5">
     <topic>openvpn -- too long a username or password from a client can confuse openvpn servers</topic>
     <affects>
