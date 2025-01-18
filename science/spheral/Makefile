@@ -1,7 +1,7 @@
 PORTNAME=	spheral
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2024.06.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	science # physics
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -12,7 +12,7 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/License.txt
 
 BUILD_DEPENDS=	${LOCALBASE}/include/polyclipper2d.hh:math/polyclipper
-LIB_DEPENDS=	libaxom.so:science/axom \
+LIB_DEPENDS=	libaxom_core.so:science/axom \
 		libboost_filesystem.so:devel/boost-libs \
 		libconduit.so:science/conduit \
 		libhdf5.so:science/hdf5 \
