@@ -1,5 +1,5 @@
 PORTNAME=	pkgbuild
-DISTVERSION=	1.4.5
+DISTVERSION=	1.4.6
 CATEGORIES=	devel
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
@@ -24,7 +24,8 @@ TEST_DEPENDS=	R-cran-covr>0:devel/R-cran-covr \
 		R-cran-mockery>0:devel/R-cran-mockery \
 		R-cran-Rcpp>0:devel/R-cran-Rcpp \
 		R-cran-rmarkdown>0:textproc/R-cran-rmarkdown \
-		R-cran-testthat>0:devel/R-cran-testthat
+		R-cran-testthat>=3.2.0:devel/R-cran-testthat \
+		R-cran-withr>=2.3.0:devel/R-cran-withr
 
 USES=		cran:auto-plist
 
