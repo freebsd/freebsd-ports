@@ -1,7 +1,7 @@
---- compiler/rustc_target/src/callconv/powerpc64.rs.orig	2020-03-09 22:11:17 UTC
+--- compiler/rustc_target/src/callconv/powerpc64.rs.orig	2024-12-10 13:16:09 UTC
 +++ compiler/rustc_target/src/callconv/powerpc64.rs
-@@ -95,7 +95,7 @@ where
-         ELFv2
+@@ -105,7 +105,7 @@ where
+         AIX
      } else {
          match cx.data_layout().endian {
 -            Endian::Big => ELFv1,
