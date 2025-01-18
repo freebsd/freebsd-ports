@@ -1,5 +1,5 @@
 PORTNAME=	pika
-DISTVERSION=	0.30.0
+DISTVERSION=	0.31.0
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -33,8 +33,9 @@ post-install:
 	@${RM} -r ${STAGEDIR}${DATADIR} # remove copy of license
 
 post-test: # run the tests according to https://pikacpp.org/usage.html#testing (make tests test doesn't work)
-	# some tests fail because freebsd_environ isn't initialized, see https://github.com/pika-org/pika/issues/895
 	@cd ${BUILD_WRKSRC} && \
 		${MAKE_CMD} test
+
+# tests as of 0.31.0: 100% tests passed, 0 tests failed out of 515
 
 .include <bsd.port.mk>
