@@ -21,6 +21,12 @@ USES=		gmake
 
 PLIST_FILES=	bin/${PORTNAME}
 
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == powerpc
+USE_BINUTILS=	yes
+.endif
+
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/_build/default/src/${PORTNAME}.exe ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
