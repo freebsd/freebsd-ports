@@ -1,5 +1,5 @@
 PORTNAME=	gcli
-DISTVERSION=	2.6.0
+DISTVERSION=	2.6.1
 CATEGORIES=	devel net
 MASTER_SITES=	https://herrhotzenplotz.de/gcli/releases/gcli-${DISTVERSION}/
 
