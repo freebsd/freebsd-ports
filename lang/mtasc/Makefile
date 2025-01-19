@@ -31,6 +31,12 @@ PORTDATA=	std std8
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == powerpc
+USE_BINUTILS=	yes
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -E 's,n(read|write) ch,n\1_string ch,' \
 		${WRKSRC}/swflib/actionScript.ml \
