@@ -1,5 +1,5 @@
---- src/external/cpython/Makefile.pre.in.orig	2024-10-20 14:05:43.000000000 -0700
-+++ src/external/cpython/Makefile.pre.in	2024-10-20 18:54:46.292821000 -0700
+--- src/external/cpython/Makefile.pre.in	2025-01-14 18:42:57.000000000 -0800
++++ src/external/cpython/Makefile.pre.in	2025-01-17 18:04:15.924706000 -0800
 @@ -71,14 +71,14 @@
  INSTALL_DATA=	@INSTALL_DATA@
  # Shared libraries must be installed with executable mode on some systems;
@@ -107,6 +107,15 @@
  # bpo-21536: Misc/python-config.sh is generated in the build directory
  # from $(srcdir)Misc/python-config.sh.in.
  python-config: $(srcdir)/Misc/python-config.in Misc/python-config.sh
+@@ -2235,7 +2207,7 @@
+ LIBPL=		@LIBPL@
+ 
+ # pkgconfig directory
+-LIBPC=		$(PREFIX)/libdata/pkgconfig
++LIBPC=		$(prefix)/libdata/pkgconfig
+ 
+ libainstall: all python-config
+ 	@for i in $(LIBDIR) $(LIBPL) $(LIBPC) $(BINDIR); \
 @@ -2292,7 +2264,7 @@
  # Install the dynamically loadable modules
  # This goes into $(exec_prefix)

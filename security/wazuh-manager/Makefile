@@ -1,9 +1,8 @@
 PORTNAME=	wazuh
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.9.2
-PORTREVISION=	1
+DISTVERSION=	4.10.1
 CATEGORIES=	security
-MASTER_SITES=	https://packages.wazuh.com/deps/30/libraries/sources/:wazuh_sources \
+MASTER_SITES=	https://packages.wazuh.com/deps/35/libraries/sources/:wazuh_sources \
 		LOCAL/acm/${PORTNAME}/:wazuh_cache
 PKGNAMESUFFIX=	-manager
 DISTFILES=	${EXTERNAL_DISTFILES} \
@@ -50,7 +49,7 @@ EXTERNAL_DISTFILES=	audit-userspace.tar.gz:wazuh_sources \
 			bzip2.tar.gz:wazuh_sources \
 			cJSON.tar.gz:wazuh_sources \
 			cpp-httplib.tar.gz:wazuh_sources \
-			cpython.tar.gz:wazuh_cache \
+			cpython-3.11.11.tar.gz:wazuh_cache \
 			curl.tar.gz:wazuh_sources \
 			flatbuffers.tar.gz:wazuh_sources \
 			googletest.tar.gz:wazuh_sources \
@@ -140,9 +139,9 @@ WAZUHMOD770=	/etc/decoders /etc/lists /etc/lists/amazon /etc/rootcheck \
 WAZUHPREFIX=	/var/ossec
 
 WZPYTHONWHEELS=	cffi-1.15.1-cp311-cp311-${FBSD_VERSION_BASE}_${ARCH_BASE}.whl \
-		cryptography-42.0.4-cp311-cp311-${FBSD_VERSION_BASE}_${ARCH_BASE}.whl \
+		cryptography-43.0.1-cp37-abi3-${FBSD_VERSION_BASE}_${ARCH_BASE}.whl \
 		greenlet-2.0.2-cp311-cp311-${FBSD_VERSION_BASE}_${ARCH_BASE}.whl \
-		grpcio-1.66.2-cp311-cp311-${FBSD_VERSION_BASE}_${ARCH_BASE}.whl \
+		grpcio-1.69.0-cp311-cp311-${FBSD_VERSION_BASE}_${ARCH_BASE}.whl \
 		lazy_object_proxy-1.10.0-cp311-cp311-${FBSD_VERSION_BASE}_${ARCH_BASE}.whl \
 		MarkupSafe-2.1.2-cp311-cp311-${FBSD_VERSION_BASE}_${ARCH_BASE}.whl \
 		multidict-5.2.0-cp311-cp311-${FBSD_VERSION_BASE}_${ARCH_BASE}.whl \
@@ -165,7 +164,6 @@ IGNORE=		FreeBSD ${OSVERSION} ${ARCH} is not supported
 
 .if ${ARCH} != "aarch64"
 FBSD13_PATCH_LEVEL=	_p1
-FBSD14_PATCH_LEVEL=	_p5
 .endif
 
 .if ${OSVERSION} >= 1300139 && ${OSVERSION} < 1400000
@@ -174,7 +172,7 @@ FBSD_MAJOR_VERSION=13
 WAZUH_CACHENAME=${PORTNAME}-cache-fbsd13-${ARCH}-${DISTVERSION}
 DISTFILES+=	${WAZUH_CACHENAME}${EXTRACT_SUFX}:wazuh_cache
 .elif ${OSVERSION} >= 1400000 && ${OSVERSION} < 1500000
-FBSD_VERSION_BASE=freebsd_14_1_release${FBSD14_PATCH_LEVEL}
+FBSD_VERSION_BASE=freebsd_14_2_release${FBSD14_PATCH_LEVEL}
 FBSD_MAJOR_VERSION=14
 WAZUH_CACHENAME=${PORTNAME}-cache-fbsd14-${ARCH}-${DISTVERSION}
 DISTFILES+=	${WAZUH_CACHENAME}${EXTRACT_SUFX}:wazuh_cache

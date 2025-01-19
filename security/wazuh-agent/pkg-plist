@@ -344,6 +344,7 @@
 /var/ossec/packages_files/agent_installation_scripts/sca/ubuntu/cis_ubuntu22-04.yml
 /var/ossec/packages_files/agent_installation_scripts/sca/windows/cis_win10_enterprise.yml
 /var/ossec/packages_files/agent_installation_scripts/sca/windows/cis_win11_enterprise.yml
+/var/ossec/packages_files/agent_installation_scripts/sca/windows/cis_win2012_non_r2.yml
 /var/ossec/packages_files/agent_installation_scripts/sca/windows/cis_win2012r2.yml
 /var/ossec/packages_files/agent_installation_scripts/sca/windows/cis_win2016.yml
 /var/ossec/packages_files/agent_installation_scripts/sca/windows/cis_win2019.yml
