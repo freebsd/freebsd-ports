@@ -34,6 +34,12 @@ OPTIONS_DEFINE=	DOCS
 
 SA_DIR=		${LOCALBASE}/${OCAML_SITELIBDIR}
 
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == powerpc
+USE_BINUTILS=	yes
+.endif
+
 do-configure:
 	@(cd ${WRKSRC}; \
 	${SETENVI} ${WRK_ENV} ${SCRIPT_ENV} ${DUNE_CMD} exec \
