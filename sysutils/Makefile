@@ -148,6 +148,7 @@
     SUBDIR += bsdhwmon
     SUBDIR += bsdinfo
     SUBDIR += bsdisks
+    SUBDIR += bsdsensors
     SUBDIR += bsdstats
     SUBDIR += bstack
     SUBDIR += btop
