@@ -1,5 +1,5 @@
 PORTNAME=	pybind11-json
-DISTVERSION=	0.2.14
+DISTVERSION=	0.2.15
 CATEGORIES=	devel python
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -35,5 +35,7 @@ PLIST_FILES=	include/pybind11_json/pybind11_json.hpp \
 
 post-test: # workaround for https://github.com/pybind/pybind11_json/issues/60
 	@${BUILD_WRKSRC}/test/test_pybind11_json
+
+# [  PASSED  ] 29 tests.
 
 .include <bsd.port.mk>
