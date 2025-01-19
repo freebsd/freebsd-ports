@@ -1,5 +1,5 @@
 PORTNAME=	commons-collections4
-DISTVERSION=	4.5.0-M2
+DISTVERSION=	4.5.0-M3
 CATEGORIES=	java devel
 MASTER_SITES=	APACHE_COMMONS_BINARIES
 MASTER_SITE_SUBDIR=	collections
@@ -11,6 +11,7 @@ COMMENT=	Classes that extend/augment the Java Collections Framework
 WWW=		https://commons.apache.org/proper/commons-collections/
 
 LICENSE=	APACHE20
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 USES=		java
 
