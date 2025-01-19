@@ -25,4 +25,10 @@ PORTDOCS=	CHANGES LICENSE README.md
 
 OPTIONS_DEFINE= DOCS
 
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == powerpc
+USE_BINUTILS=	yes
+.endif
+
 .include <bsd.port.mk>
