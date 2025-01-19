@@ -290,6 +290,7 @@
     SUBDIR += opensmtpd-extras-table-sqlite
     SUBDIR += opensmtpd-filter-rspamd
     SUBDIR += opensmtpd-filter-senderscore
+    SUBDIR += opensmtpd-table-sqlite
     SUBDIR += osbf-lua
     SUBDIR += ovs
     SUBDIR += p5-CGP-CLI
