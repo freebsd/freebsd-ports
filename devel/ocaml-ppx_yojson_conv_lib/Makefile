@@ -26,6 +26,12 @@ OPTIONS_DEFINE=	DOCS
 
 SA_DIR=		${LOCALBASE}/${OCAML_SITELIBDIR}
 
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == powerpc
+USE_BINUTILS=	yes
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} \
 		-e "s/(lang dune 3.11)/(lang dune 3.7)/" \
