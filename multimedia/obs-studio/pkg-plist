@@ -1050,11 +1050,13 @@ share/obs/obs-plugins/obs-webrtc/locale/nl-NL.ini
 share/obs/obs-plugins/obs-webrtc/locale/pl-PL.ini
 share/obs/obs-plugins/obs-webrtc/locale/pt-BR.ini
 share/obs/obs-plugins/obs-webrtc/locale/pt-PT.ini
+share/obs/obs-plugins/obs-webrtc/locale/ro-RO.ini
 share/obs/obs-plugins/obs-webrtc/locale/ru-RU.ini
 share/obs/obs-plugins/obs-webrtc/locale/si-LK.ini
 share/obs/obs-plugins/obs-webrtc/locale/sk-SK.ini
 share/obs/obs-plugins/obs-webrtc/locale/sl-SI.ini
 share/obs/obs-plugins/obs-webrtc/locale/sv-SE.ini
+share/obs/obs-plugins/obs-webrtc/locale/th-TH.ini
 share/obs/obs-plugins/obs-webrtc/locale/tr-TR.ini
 share/obs/obs-plugins/obs-webrtc/locale/ug-CN.ini
 share/obs/obs-plugins/obs-webrtc/locale/uk-UA.ini
@@ -1343,6 +1345,7 @@ share/obs/obs-plugins/rtmp-services/services.json
 %%SNDIO%%share/obs/obs-plugins/sndio/locale/si-LK.ini
 %%SNDIO%%share/obs/obs-plugins/sndio/locale/sk-SK.ini
 %%SNDIO%%share/obs/obs-plugins/sndio/locale/sl-SI.ini
+%%SNDIO%%share/obs/obs-plugins/sndio/locale/sr-SP.ini
 %%SNDIO%%share/obs/obs-plugins/sndio/locale/sv-SE.ini
 %%SNDIO%%share/obs/obs-plugins/sndio/locale/szl-PL.ini
 %%SNDIO%%share/obs/obs-plugins/sndio/locale/th-TH.ini

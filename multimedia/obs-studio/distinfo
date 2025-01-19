@@ -1,6 +1,6 @@
-TIMESTAMP = 1735782824
-SHA256 (obsproject-obs-studio-31.0.0_GH0.tar.gz) = a22966ff07aba38833ba57c36c9e0d190d083be5dec5048d0a60cd9e6b997242
-SIZE (obsproject-obs-studio-31.0.0_GH0.tar.gz) = 16012774
+TIMESTAMP = 1737257479
+SHA256 (obsproject-obs-studio-31.0.1_GH0.tar.gz) = 535a8a5e36b3701e1fcea5dc46458fcd96d4be0eae5720249080a77bdb8fce72
+SIZE (obsproject-obs-studio-31.0.1_GH0.tar.gz) = 16033476
 SHA256 (obsproject-libdshowcapture-ef8c1d2e19c93e664100dd41e1a0df4f8ad45430_GH0.tar.gz) = dadddf5e8cc6e626feaeed5021d6621df04bb6e3a4363017ee78510d62b9d141
 SIZE (obsproject-libdshowcapture-ef8c1d2e19c93e664100dd41e1a0df4f8ad45430_GH0.tar.gz) = 56677
 SHA256 (obsproject-obs-browser-e4e523df775bd6fa216d40a7488b76f3b21c1733_GH0.tar.gz) = 9655d83468262d9e88bcbd42890671f790d3d6a6a0137b72400169a08ac0a369
