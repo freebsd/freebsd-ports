@@ -1,5 +1,5 @@
 PORTNAME=	aifad
-PORTVERSION=	2.3.0
+PORTVERSION=	2.3.1
 CATEGORIES=	devel
 
 MAINTAINER=	ports@FreeBSD.org
@@ -26,6 +26,12 @@ PLIST_FILES=	bin/aifad %%OCAML_SITELIBDIR%%/aifad/META \
 		%%OCAML_SITELIBDIR%%/aifad/dune-package \
 		%%OCAML_SITELIBDIR%%/aifad/opam
 OPTIONS_DEFINE=	DOCS EXAMPLES
+
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == powerpc
+USE_BINUTILS=	yes
+.endif
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/aifad
