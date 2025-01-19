@@ -20,6 +20,12 @@ USES=			gmake ocaml:findlib,ldconfig
 
 TARGETS=	${PORTNAME}
 
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == powerpc
+USE_BINUTILS=	yes
+.endif
+
 do-build:
 	cd ${BUILD_WRKSRC} && dune build --verbose -p ${TARGETS:ts,} -j ${MAKE_JOBS_NUMBER}
 
