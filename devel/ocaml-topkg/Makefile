@@ -19,6 +19,12 @@ USES=		ocaml:findlib tar:tbz
 
 OPTIONS_DEFINE=	DOCS
 
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == powerpc
+USE_BINUTILS=	yes
+.endif
+
 do-build:
 	cd ${BUILD_WRKSRC} && ocaml pkg/pkg.ml build
 
