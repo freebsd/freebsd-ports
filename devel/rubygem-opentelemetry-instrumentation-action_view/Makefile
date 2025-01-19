@@ -1,5 +1,5 @@
 PORTNAME=	opentelemetry-instrumentation-action_view
-PORTVERSION=	0.8.0
+PORTVERSION=	0.9.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-opentelemetry-api>=1.0<2:devel/rubygem-opentelemetry-api \
 		rubygem-opentelemetry-instrumentation-active_support>=0.7<1:devel/rubygem-opentelemetry-instrumentation-active_support \
-		rubygem-opentelemetry-instrumentation-base>=0.22.1<0.23:devel/rubygem-opentelemetry-instrumentation-base
+		rubygem-opentelemetry-instrumentation-base>=0.23.0<0.24:devel/rubygem-opentelemetry-instrumentation-base
 
 USES=		gem
 
