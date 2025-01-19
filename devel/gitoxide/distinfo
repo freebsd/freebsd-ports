@@ -1,4 +1,4 @@
-TIMESTAMP = 1736231849
+TIMESTAMP = 1737275380
 SHA256 (rust/crates/addr2line-0.24.2.crate) = dfbe277e56a376000877090da837660b4427aad530e3028d44e0bffe4f89a1c1
 SIZE (rust/crates/addr2line-0.24.2.crate) = 39015
 SHA256 (rust/crates/adler2-2.0.0.crate) = 512761e0bb2578dd7380c6baaa0f4ce03e84f95e960231d1dec8bf4d7d6e2627
@@ -987,5 +987,5 @@ SHA256 (rust/crates/zip-2.2.1.crate) = 99d52293fc86ea7cf13971b3bb81eb21683636e7a
 SIZE (rust/crates/zip-2.2.1.crate) = 107205
 SHA256 (rust/crates/zopfli-0.8.1.crate) = e5019f391bac5cf252e93bbcc53d039ffd62c7bfb7c150414d61369afe57e946
 SIZE (rust/crates/zopfli-0.8.1.crate) = 50972
-SHA256 (Byron-gitoxide-v0.40.0_GH0.tar.gz) = fe0ed165f3325176e7e7abff1d2a819a473a332ecf48921931756c3289405e86
-SIZE (Byron-gitoxide-v0.40.0_GH0.tar.gz) = 9853469
+SHA256 (Byron-gitoxide-v0.41.0_GH0.tar.gz) = 6c90676da83e4aa202ac08c6ce849d31031310953569d5fee7529437778b6273
+SIZE (Byron-gitoxide-v0.41.0_GH0.tar.gz) = 10023728
