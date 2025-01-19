@@ -8,7 +8,8 @@ DISTNAME=	${PORTNAME}gtk-${PORTVERSION}
 DIST_SUBDIR=	gnome
 
 PATCH_SITES=	https://github.com/WebKit/WebKit/commit/
-PATCHFILES=	285ff73b5f6d46d6e502aca30061667e41a3114b.diff:-p1
+PATCHFILES=	285ff73b5f6d46d6e502aca30061667e41a3114b.patch:-p1 \
+		aa29001ade54425699e1345ce41bbd227dba805c.patch:-p1
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Opensource browser engine using the GTK 4 toolkit
