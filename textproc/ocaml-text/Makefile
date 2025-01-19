@@ -29,6 +29,12 @@ PCRE_CONFIGURE_ENABLE=	pcre
 PCRE_BUILD_DEPENDS=	${SA_DIR}/pcre/pcre.a:devel/ocaml-pcre
 PCRE_RUN_DEPENDS=	${SA_DIR}/pcre/pcre.a:devel/ocaml-pcre
 
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == powerpc
+USE_BINUTILS=	yes
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's,"install" :: findlib_name,"install" :: "-destdir ${STAGEDIR}${PREFIX}/lib/ocaml/site-lib" :: "-ldconf /dev/null" :: findlib_name,' \
 		${WRKSRC}/setup.ml
