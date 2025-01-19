@@ -13,7 +13,7 @@ WWW=		https://github.com/googledrive/PyDrive
 LICENSE=	APACHE20
 
 DEPRECATED=	Upstream repo archived on Jul 22, 2021
-EXPIRATION_DATE=2024-01-31
+EXPIRATION_DATE=2025-01-31
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}google-api-python-client>=1.5.2:www/py-google-api-python-client@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}oauth2client>=4.0.0:security/py-oauth2client@${PY_FLAVOR} \
