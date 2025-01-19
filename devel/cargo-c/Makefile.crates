@@ -7,7 +7,7 @@ CARGO_CRATES=	adler2-2.0.0 \
 		anstyle-1.0.10 \
 		anstyle-parse-0.2.6 \
 		anstyle-query-1.1.2 \
-		anstyle-wincon-3.0.6 \
+		anstyle-wincon-3.0.7 \
 		anyhow-1.0.95 \
 		arc-swap-1.7.1 \
 		arrayref-0.3.9 \
@@ -16,7 +16,7 @@ CARGO_CRATES=	adler2-2.0.0 \
 		base16ct-0.2.0 \
 		base64-0.22.1 \
 		base64ct-1.6.0 \
-		bitflags-2.7.0 \
+		bitflags-2.8.0 \
 		bitmaps-2.1.0 \
 		blake3-1.5.5 \
 		block-buffer-0.10.4 \
@@ -33,8 +33,8 @@ CARGO_CRATES=	adler2-2.0.0 \
 		cargo-platform-0.1.9 \
 		cargo-util-0.2.17 \
 		cargo-util-schemas-0.7.1 \
-		cbindgen-0.27.0 \
-		cc-1.2.7 \
+		cbindgen-0.28.0 \
+		cc-1.2.10 \
 		cfg-if-1.0.0 \
 		clap-4.5.26 \
 		clap_builder-4.5.26 \
@@ -93,14 +93,14 @@ CARGO_CRATES=	adler2-2.0.0 \
 		git2-0.19.0 \
 		git2-curl-0.20.0 \
 		gix-0.67.0 \
-		gix-actor-0.33.1 \
+		gix-actor-0.33.2 \
 		gix-attributes-0.23.1 \
-		gix-bitmap-0.2.13 \
-		gix-chunk-0.4.10 \
+		gix-bitmap-0.2.14 \
+		gix-chunk-0.4.11 \
 		gix-command-0.3.11 \
 		gix-commitgraph-0.25.1 \
 		gix-config-0.41.0 \
-		gix-config-value-0.14.10 \
+		gix-config-value-0.14.11 \
 		gix-credentials-0.25.1 \
 		gix-date-0.9.3 \
 		gix-diff-0.47.0 \
@@ -119,26 +119,26 @@ CARGO_CRATES=	adler2-2.0.0 \
 		gix-object-0.45.0 \
 		gix-odb-0.64.0 \
 		gix-pack-0.54.0 \
-		gix-packetline-0.18.2 \
-		gix-packetline-blocking-0.18.1 \
-		gix-path-0.10.13 \
+		gix-packetline-0.18.3 \
+		gix-packetline-blocking-0.18.2 \
+		gix-path-0.10.14 \
 		gix-pathspec-0.8.1 \
 		gix-prompt-0.8.9 \
 		gix-protocol-0.46.1 \
-		gix-quote-0.4.14 \
+		gix-quote-0.4.15 \
 		gix-ref-0.48.0 \
 		gix-refspec-0.26.0 \
 		gix-revision-0.30.0 \
 		gix-revwalk-0.16.0 \
-		gix-sec-0.10.10 \
+		gix-sec-0.10.11 \
 		gix-submodule-0.15.0 \
 		gix-tempfile-15.0.0 \
-		gix-trace-0.1.11 \
+		gix-trace-0.1.12 \
 		gix-transport-0.43.1 \
 		gix-traverse-0.42.0 \
 		gix-url-0.28.2 \
-		gix-utils-0.1.13 \
-		gix-validate-0.9.2 \
+		gix-utils-0.1.14 \
+		gix-validate-0.9.3 \
 		gix-worktree-0.37.0 \
 		glob-0.3.2 \
 		globset-0.4.15 \
@@ -168,18 +168,18 @@ CARGO_CRATES=	adler2-2.0.0 \
 		idna_adapter-1.2.0 \
 		ignore-0.4.23 \
 		im-rc-15.1.0 \
-		implib-0.3.3 \
+		implib-0.3.4 \
 		indexmap-2.7.0 \
 		is_executable-1.0.4 \
 		is_terminal_polyfill-1.70.1 \
 		itertools-0.13.0 \
 		itertools-0.14.0 \
 		itoa-1.0.14 \
-		jiff-0.1.21 \
-		jiff-tzdb-0.1.1 \
-		jiff-tzdb-platform-0.1.1 \
+		jiff-0.1.24 \
+		jiff-tzdb-0.1.2 \
+		jiff-tzdb-platform-0.1.2 \
 		jobserver-0.1.32 \
-		js-sys-0.3.76 \
+		js-sys-0.3.77 \
 		kstring-2.0.2 \
 		lazy_static-1.5.0 \
 		lazycell-1.3.0 \
@@ -187,7 +187,7 @@ CARGO_CRATES=	adler2-2.0.0 \
 		libdbus-sys-0.2.5 \
 		libgit2-sys-0.17.0+1.8.1 \
 		libloading-0.8.6 \
-		libnghttp2-sys-0.1.10+1.61.0 \
+		libnghttp2-sys-0.1.11+1.64.0 \
 		libredox-0.1.3 \
 		libsqlite3-sys-0.30.1 \
 		libssh2-sys-0.3.0 \
@@ -195,14 +195,14 @@ CARGO_CRATES=	adler2-2.0.0 \
 		linux-raw-sys-0.4.15 \
 		litemap-0.7.4 \
 		lock_api-0.4.12 \
-		log-0.4.22 \
+		log-0.4.25 \
 		matchers-0.1.0 \
 		maybe-async-0.2.10 \
 		memchr-2.7.4 \
 		memmap2-0.9.5 \
 		memoffset-0.9.1 \
 		minimal-lexical-0.2.1 \
-		miniz_oxide-0.8.2 \
+		miniz_oxide-0.8.3 \
 		miow-0.6.0 \
 		nom-7.1.3 \
 		normpath-1.3.0 \
@@ -236,7 +236,7 @@ CARGO_CRATES=	adler2-2.0.0 \
 		powerfmt-0.2.0 \
 		ppv-lite86-0.2.20 \
 		primeorder-0.13.6 \
-		proc-macro2-1.0.92 \
+		proc-macro2-1.0.93 \
 		prodash-29.0.0 \
 		quote-1.0.38 \
 		rand-0.8.5 \
@@ -267,7 +267,7 @@ CARGO_CRATES=	adler2-2.0.0 \
 		serde-value-0.7.0 \
 		serde_derive-1.0.217 \
 		serde_ignored-0.1.10 \
-		serde_json-1.0.135 \
+		serde_json-1.0.136 \
 		serde_spanned-0.6.8 \
 		sha1-0.10.6 \
 		sha1_smol-1.0.1 \
@@ -293,9 +293,9 @@ CARGO_CRATES=	adler2-2.0.0 \
 		tempfile-3.15.0 \
 		terminal_size-0.4.1 \
 		thiserror-1.0.69 \
-		thiserror-2.0.10 \
+		thiserror-2.0.11 \
 		thiserror-impl-1.0.69 \
-		thiserror-impl-2.0.10 \
+		thiserror-impl-2.0.11 \
 		thread_local-1.1.8 \
 		time-0.3.37 \
 		time-core-0.1.2 \
@@ -324,16 +324,16 @@ CARGO_CRATES=	adler2-2.0.0 \
 		utf16_iter-1.0.5 \
 		utf8_iter-1.0.4 \
 		utf8parse-0.2.2 \
-		valuable-0.1.0 \
+		valuable-0.1.1 \
 		vcpkg-0.2.15 \
 		version_check-0.9.5 \
 		walkdir-2.5.0 \
 		wasi-0.11.0+wasi-snapshot-preview1 \
-		wasm-bindgen-0.2.99 \
-		wasm-bindgen-backend-0.2.99 \
-		wasm-bindgen-macro-0.2.99 \
-		wasm-bindgen-macro-support-0.2.99 \
-		wasm-bindgen-shared-0.2.99 \
+		wasm-bindgen-0.2.100 \
+		wasm-bindgen-backend-0.2.100 \
+		wasm-bindgen-macro-0.2.100 \
+		wasm-bindgen-macro-support-0.2.100 \
+		wasm-bindgen-shared-0.2.100 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-util-0.1.9 \
@@ -358,7 +358,7 @@ CARGO_CRATES=	adler2-2.0.0 \
 		windows_x86_64_gnullvm-0.52.6 \
 		windows_x86_64_msvc-0.48.5 \
 		windows_x86_64_msvc-0.52.6 \
-		winnow-0.6.22 \
+		winnow-0.6.24 \
 		write16-1.0.0 \
 		writeable-0.5.5 \
 		yoke-0.7.5 \
