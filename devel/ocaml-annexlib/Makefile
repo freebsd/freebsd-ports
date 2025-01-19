@@ -26,6 +26,12 @@ OPTIONS_DEFINE=	DOCS
 
 MAKE_JOBS_UNSAFE=	yes
 
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == powerpc
+USE_BINUTILS=	yes
+.endif
+
 post-install:
 	cd  ${STAGEDIR}${PREFIX} && \
 	    ${STRIP_CMD} lib/ocaml/site-lib/annexlib/dllannexlib_stubs.so
