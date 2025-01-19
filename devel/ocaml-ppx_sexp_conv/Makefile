@@ -32,6 +32,12 @@ OPTIONS_DEFINE=	DOCS
 
 SA_DIR=		${LOCALBASE}/${OCAML_SITELIBDIR}
 
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == powerpc
+USE_BINUTILS=	yes
+.endif
+
 post-install:
 	@${STRIP_CMD} \
 		${STAGEDIR}${PREFIX}/${OCAML_SITELIBDIR}/ppx_sexp_conv/expander/ppx_sexp_conv_expander.cmxs \
