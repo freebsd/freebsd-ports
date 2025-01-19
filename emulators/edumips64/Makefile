@@ -1,13 +1,14 @@
 PORTNAME=	edumips64
-DISTVERSION=	1.2.10
+DISTVERSION=	1.3.0
 CATEGORIES=	emulators education java
-MASTER_SITES=	https://github.com/lupino3/${PORTNAME}/releases/download/v${DISTVERSION}/
+MASTER_SITES=	https://github.com/EduMIPS64/${PORTNAME}/releases/download/v${DISTVERSION}/
 EXTRACT_SUFX=	.jar
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	0mp@FreeBSD.org
 COMMENT=	Free, cross-platform, educational, visual MIPS64 CPU simulator
-WWW=		https://www.edumips.org/
+WWW=		https://www.edumips.org/ \
+		https://github.com/EduMIPS64/edumips64/
 
 LICENSE=	GPLv2
 
@@ -39,8 +40,10 @@ PLIST_FILES=	${JAVAJARDIR}/${_JARFILE} \
 PORTDOCS=	${DOCS_DISTFILES}
 
 OPTIONS_DEFINE=	DOCS
+
 DOCS_DISTFILES=	EduMIPS64.v${DISTVERSION}.-.English.Manual.pdf \
-		EduMIPS64.v${DISTVERSION}.-.Italian.Manual.pdf
+		EduMIPS64.v${DISTVERSION}.-.Italian.Manual.pdf \
+		EduMIPS64.v${DISTVERSION}.-.Simplified.Chinese.Manual.pdf
 
 _JARFILE=	${PORTNAME}.jar
 

@@ -1,7 +1,9 @@
-TIMESTAMP = 1647341465
-SHA256 (edumips64-1.2.10.jar) = d971d3a2ccfd11ed9f98937be2a8cea2ff4077f6fb5d799443e069a9a6ba9d7f
-SIZE (edumips64-1.2.10.jar) = 2313289
-SHA256 (EduMIPS64.v1.2.10.-.English.Manual.pdf) = 1f0aad1a9b5c427d51940365f68759b4a8d60c3b546281c3d29408ae86d97035
-SIZE (EduMIPS64.v1.2.10.-.English.Manual.pdf) = 253460
-SHA256 (EduMIPS64.v1.2.10.-.Italian.Manual.pdf) = ef08c03c7552ab50be569cb9eb9d090877cd2e427aade1cc39709c1ed74994ce
-SIZE (EduMIPS64.v1.2.10.-.Italian.Manual.pdf) = 263303
+TIMESTAMP = 1737324770
+SHA256 (edumips64-1.3.0.jar) = 499e473a9ddd6d62007c36f1448345a1909194f40a1adf9b6c57a92df0fd08bb
+SIZE (edumips64-1.3.0.jar) = 2953929
+SHA256 (EduMIPS64.v1.3.0.-.English.Manual.pdf) = 60c30b4a61251fa08530697d59b0bfbe20c3abfe9ba70355c8ca076ad6acfc1f
+SIZE (EduMIPS64.v1.3.0.-.English.Manual.pdf) = 263984
+SHA256 (EduMIPS64.v1.3.0.-.Italian.Manual.pdf) = e83801f33bbc3722a65ae4bdfcfab9f1978075df35375784a6809a69c0ac3c8d
+SIZE (EduMIPS64.v1.3.0.-.Italian.Manual.pdf) = 269845
+SHA256 (EduMIPS64.v1.3.0.-.Simplified.Chinese.Manual.pdf) = a83d4ae1b1628f9aae64f241b5abd52362e3e0cdcbddbbfa8b5d993b32fd4768
+SIZE (EduMIPS64.v1.3.0.-.Simplified.Chinese.Manual.pdf) = 447059
