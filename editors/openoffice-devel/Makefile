@@ -1,6 +1,6 @@
 PORTNAME=	apache-openoffice
 PORTVERSION=	${AOOVERSION1}.${AOOVERSION2}.${TIMESTAMP}
-PORTREVISION=	0
+PORTREVISION=	1
 PORTEPOCH=	4
 CATEGORIES=	editors java
 MASTER_SITES=	https://dist.apache.org/repos/dist/dev/openoffice/${AOOVERSION}-${AOORC}-${TIMESTAMP}/source/ \
@@ -114,7 +114,7 @@ RUN_DEPENDS+=	gcc${GCC_DEFAULT}>0:lang/gcc${GCC_DEFAULT}
 
 USES=		autoreconf bison compiler:c++11-lib cpe desktop-file-utils \
 		gettext-runtime gl gmake gnome iconv java jpeg perl5 pkgconfig \
-		python:3.9 shared-mime-info ssl tar:${TARTYPE} xorg
+		python shared-mime-info ssl tar:${TARTYPE} xorg
 USE_GL=		gl glu
 USE_GNOME=	gdkpixbuf2 gdkpixbuf2xlib gtk20 libxslt glib20
 JAVA_VENDOR=	openjdk
