@@ -1,3 +1,5 @@
-TIMESTAMP = 1736755672
-SHA256 (FontManager-font-manager-0.9.1_GH0.tar.gz) = f2617c14b69947deffdfff8c3e43da5fa8bd5cdabe9ae7d74fd84aa0e337e688
-SIZE (FontManager-font-manager-0.9.1_GH0.tar.gz) = 4114949
+TIMESTAMP = 1737286669
+SHA256 (FontManager-font-manager-0.9.2_GH0.tar.gz) = 2e4eff44d9cee01ae14cf7271ae27170c327ddfbc776f4c0908b7589f2eb1bfb
+SIZE (FontManager-font-manager-0.9.2_GH0.tar.gz) = 4115371
+SHA256 (31bf41a306a079a29f3da861bfa53247e1b61ba3.patch) = bd42eda5f0ebcaed8257da8766cbbc60f23a4cc95bd0a04cfd5459d197d73a82
+SIZE (31bf41a306a079a29f3da861bfa53247e1b61ba3.patch) = 6156

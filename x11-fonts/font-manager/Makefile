@@ -1,6 +1,9 @@
 PORTNAME=	font-manager
-DISTVERSION=	0.9.1
+DISTVERSION=	0.9.2
 CATEGORIES=	x11-fonts gnome
+
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES=	31bf41a306a079a29f3da861bfa53247e1b61ba3.patch:-p1
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Font management application for the GNOME desktop
