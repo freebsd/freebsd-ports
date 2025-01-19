@@ -88,6 +88,9 @@ DISTFILES+=	${PORTNAME}-patches-${DISTVERSION}${EXTRACT_SUFX}
 CONFIGURE_ARGS+=	ac_cv_search_libiconv_open=no
 .endif
 
+pre-patch:
+	@${REINPLACE_CMD} 's:+int module_dirlen = 0;:+:' ${WRKSRC}/patches/fileflags.diff
+
 post-patch:
 	@${REINPLACE_CMD} -e 's:/etc/r{1,2}sync:${ETCDIR}/:g' \
 					  -e 's:/etc/letsencrypt:${PREFIX}/etc/letsencrypt:g' \
