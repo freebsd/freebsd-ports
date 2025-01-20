@@ -1,6 +1,6 @@
 PORTNAME=	rapidfuzz-cpp
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.2.0
+DISTVERSION=	3.3.0
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -10,7 +10,7 @@ WWW=		https://github.com/rapidfuzz/rapidfuzz-cpp
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-TEST_DEPENDS=	catch2>0:devel/catch2
+TEST_DEPENDS=	catch>0:devel/catch
 
 USES=		cmake:testing compiler:c++17-lang
 
@@ -20,5 +20,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	rapidfuzz
 
 NO_ARCH=	yes
+
+# tests as of 3.3.0: 100% tests passed, 0 tests failed out of 10
 
 .include <bsd.port.mk>
