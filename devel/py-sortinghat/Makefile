@@ -1,5 +1,5 @@
 PORTNAME=	sortinghat
-DISTVERSION=	1.6.0
+DISTVERSION=	1.6.1
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -22,7 +22,7 @@ RUN_DEPENDS=	\
 		${PYTHON_PKGNAMEPREFIX}django-treebeard>=4.5.1:www/py-django-treebeard@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}google-auth>=2.18.0:security/py-google-auth@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}graphene-django>=2.15:devel/py-graphene-django@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}grimoirelab-toolkit>=0.3:devel/py-grimoirelab-toolkit@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}grimoirelab-toolkit>=1.0.9:devel/py-grimoirelab-toolkit@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}importlib-resources>=5.2.0:devel/py-importlib-resources@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}Jinja2>=3.1.1:devel/py-Jinja2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}mysqlclient>=2.0.3:databases/py-mysqlclient@${PY_FLAVOR} \
