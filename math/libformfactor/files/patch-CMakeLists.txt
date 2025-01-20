@@ -1,9 +1,9 @@
---- CMakeLists.txt.orig	2023-01-24 07:39:32 UTC
+--- CMakeLists.txt.orig	2023-08-02 16:06:12 UTC
 +++ CMakeLists.txt
-@@ -42,7 +42,9 @@ message(STATUS "LibHeinz: found=${LibHeinz_FOUND}, inc
- include(CTest)
+@@ -62,7 +62,9 @@ include(CTest)
+ ## Tests.
  
- add_subdirectory(ff)
+ include(CTest)
 +if (BUILD_TESTING)
  add_subdirectory(test)
 +endif()
