@@ -1,5 +1,5 @@
 PORTNAME=	tremotesf
-DISTVERSION=	2.7.4
+DISTVERSION=	2.7.5
 CATEGORIES=	net-p2p
 MASTER_SITES=	https://github.com/equeim/${PORTNAME}2/releases/download/${DISTVERSION}/
 
