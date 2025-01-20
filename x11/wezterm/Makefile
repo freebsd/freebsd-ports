@@ -56,6 +56,13 @@ DOCS_BUILD_DEPENDS=	mdbook:textproc/mdbook \
 			mdbook-mermaid:textproc/mdbook-mermaid
 PORTDOCS=		html
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH:Marmv?}
+LTO_UNSAFE=     yes
+CARGO_ENV+=     CARGO_PROFILE_RELEASE_LTO=false
+.endif
+
 post-patch:
 # Extract (snapshot) version from the port instead of .tag file
 	@${ECHO_CMD} '${DISTVERSIONFULL}' >${WRKSRC}/.tag
@@ -91,4 +98,4 @@ post-install:
 		${WRKSRC}/termwiz/data/${PORTNAME}.terminfo
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
