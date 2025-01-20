@@ -24,4 +24,11 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/docs/iamb.1 ${STAGEDIR}${PREFIX}/share/man/man1
 	${INSTALL_DATA} ${WRKSRC}/docs/iamb.5 ${STAGEDIR}${PREFIX}/share/man/man5
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH:Marmv?}
+LTO_UNSAFE=	yes
+CARGO_ENV+=	CARGO_PROFILE_RELEASE_LTO=false
+.endif
+
+.include <bsd.port.post.mk>
