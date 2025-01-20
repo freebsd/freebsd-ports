@@ -1,12 +1,12 @@
 PORTNAME=	nyquist
-DISTVERSION=	3.16
+DISTVERSION=	3.23
 CATEGORIES=	audio java
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${DISTVERSION}/
 DISTNAME=	nyqsrc${DISTVERSION:S/.//}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Language for sound synthesis and music composition (sound is broken) # likely caused by outdated bundled PortAudio, reported to upstream Apr 18, 2021
-WWW=		https://www.cs.cmu.edu/~music/music.software.html
+WWW=		https://www.cs.cmu.edu/~music/nyquist/
 
 LICENSE=	BSD3CLAUSE
 

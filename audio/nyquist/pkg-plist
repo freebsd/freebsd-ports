@@ -9,6 +9,8 @@ bin/ny
 %%DATADIR%%/demos/audio/labels.txt
 %%DATADIR%%/demos/audio/pv.wav
 %%DATADIR%%/demos/index.htm
+%%DATADIR%%/demos/osc/getosc.sal
+%%DATADIR%%/demos/osc/nyquistosc.py
 %%DATADIR%%/demos/pitch_change.htm
 %%DATADIR%%/demos/probability_distributions.htm
 %%DATADIR%%/demos/src/osc-test.lsp
@@ -65,8 +67,12 @@ bin/ny
 %%DATADIR%%/doc/part9.html
 %%DATADIR%%/doc/poisson-fig.gif
 %%DATADIR%%/doc/readme-linux.txt
+%%DATADIR%%/doc/readme-mac.txt
+%%DATADIR%%/doc/readme-win.txt
 %%DATADIR%%/doc/sdl-man.pdf
 %%DATADIR%%/doc/title.html
+%%DATADIR%%/lib/csvread.lsp
+%%DATADIR%%/lib/csvwrite.lsp
 %%DATADIR%%/lib/dist-test.lsp
 %%DATADIR%%/lib/distributions.lsp
 %%DATADIR%%/lib/examples.lsp
@@ -75,8 +81,8 @@ bin/ny
 %%DATADIR%%/lib/gnuplot.sal
 %%DATADIR%%/lib/grapheq.lsp
 %%DATADIR%%/lib/instruments.txt
+%%DATADIR%%/lib/json.sal
 %%DATADIR%%/lib/lpc.lsp
-%%DATADIR%%/lib/midishow.lsp
 %%DATADIR%%/lib/piano/att11025.pcm
 %%DATADIR%%/lib/piano/att16000.pcm
 %%DATADIR%%/lib/piano/att22050.pcm
@@ -165,7 +171,6 @@ bin/ny
 %%DATADIR%%/runtime/sal.lsp
 %%DATADIR%%/runtime/seq.lsp
 %%DATADIR%%/runtime/seqfnint.lsp
-%%DATADIR%%/runtime/seqmidi.lsp
 %%DATADIR%%/runtime/sliders.lsp
 %%DATADIR%%/runtime/sndfnint.lsp
 %%DATADIR%%/runtime/spec-plot.lsp
@@ -177,6 +182,7 @@ bin/ny
 %%DATADIR%%/runtime/velocity.lsp
 %%DATADIR%%/runtime/xlinit.lsp
 %%DATADIR%%/runtime/xm.lsp
+%%DATADIR%%/runtime/xmseq.lsp
 @dir %%DATADIR%%/demos/images
 @dir %%DATADIR%%/demos/mateos
 @dir %%DATADIR%%/demos/pmorales
