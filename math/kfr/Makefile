@@ -1,5 +1,5 @@
 PORTNAME=	kfr
-DISTVERSION=	6.0.4
+DISTVERSION=	6.1.1
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -43,5 +43,7 @@ PLIST_FILES=	lib/libkfr_dft_avx.so \
 post-test: # see https://github.com/kfrlib/kfr/issues/164
 	@cd ${BUILD_WRKSRC} && \
 		${BUILD_WRKSRC}/bin/all_tests
+
+# tests as of 6.1.1: [--SUCCESS--] 199/199 tests 2810450/2810450 checks
 
 .include <bsd.port.mk>
