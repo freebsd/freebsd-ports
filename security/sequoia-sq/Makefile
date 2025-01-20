@@ -30,6 +30,13 @@ OPTIONS_SUB=	yes
 
 ELVISH_DESC=	Install Elvish module
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH:Marmv?}
+LTO_UNSAFE=	yes
+CARGO_ENV+=	CARGO_PROFILE_RELEASE_LTO=false
+.endif
+
 post-install-BASH-on:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/bash-completion/completions
 	${INSTALL_DATA} ${CARGO_TARGET_DIR}/shell-completions/${PORTNAME}.bash \
@@ -55,4 +62,4 @@ post-install-ZSH-on:
 	${CARGO_TARGET_DIR}/shell-completions/_${PORTNAME}.ps1 \
 		${STAGEDIR}${PREFIX}/share/zsh/site-functions
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
