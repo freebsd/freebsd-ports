@@ -1,14 +1,13 @@
 PORTNAME=	optparse
-DISTVERSION=	1.6.6
-PORTREVISION=	1
+DISTVERSION=	1.7.5
 CATEGORIES=	devel
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	jwb@FreeBSD.org
-COMMENT=	Command line flag parser inspired by Python's optparse
+COMMENT=	Command line flag parser inspired by Python\'s optparse
 WWW=		https://cran.r-project.org/web/packages/optparse/
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 CRAN_DEPENDS=	R-cran-getopt>=1.20.2:devel/R-cran-getopt
