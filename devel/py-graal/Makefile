@@ -1,5 +1,5 @@
 PORTNAME=	graal
-DISTVERSION=	1.1.1
+DISTVERSION=	1.1.2
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -25,10 +25,10 @@ RUN_DEPENDS=	\
 		${PYTHON_PKGNAMEPREFIX}cloc>=0.2.5:devel/py-cloc@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}execnet>=1.9.0:sysutils/py-execnet@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}flake8>=7.1.1:devel/py-flake8@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}grimoirelab-toolkit>=0.3:devel/py-grimoirelab-toolkit@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}grimoirelab-toolkit>=1.0.9:devel/py-grimoirelab-toolkit@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}lizard>=1.16.6:devel/py-lizard@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}networkx>=2.1:math/py-networkx@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}perceval>=0.19:devel/py-perceval@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}perceval>=1.1.1:devel/py-perceval@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pydot>=1.2.4:graphics/py-pydot@${PY_FLAVOR} \
 		pylint${PYTHON_PKGNAMESUFFIX}>=1.8.4:devel/pylint \
 		rubygem-github-linguist>0:textproc/rubygem-github-linguist \
