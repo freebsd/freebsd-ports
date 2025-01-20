@@ -1,6 +1,6 @@
 PORTNAME=	signal-desktop
 DISTVERSIONPREFIX=	v
-DISTVERSION=	7.36.1
+DISTVERSION=	7.38.0
 CATEGORIES=	net-im
 MASTER_SITES=	LOCAL/mikael/signal-desktop/:npm \
 		https://build-artifacts.signal.org/desktop/:sqlcipher
@@ -111,10 +111,14 @@ post-extract:
 	# Update node engine
 	${PREFIX}/bin/jq '.engines.node = ""' ${WRKSRC}/package.json > ${WRKSRC}/package.json.tmp.1
 	${PREFIX}/bin/jq '.devDependencies.esbuild = "${ESBUILD_VERSION}"' ${WRKSRC}/package.json.tmp.1 > ${WRKSRC}/package.json.tmp.2
-	${MV} ${WRKSRC}/package.json.tmp.2 ${WRKSRC}/package.json
+	${PREFIX}/bin/jq '.devDependencies."electron-builder"= "24.13.3"' ${WRKSRC}/package.json.tmp.2 > ${WRKSRC}/package.json.tmp.3
+	${MV} ${WRKSRC}/package.json.tmp.3 ${WRKSRC}/package.json
 	# remove mock-server as it doesn't build and is useless
 	${PREFIX}/bin/jq 'del(.devDependencies."@signalapp/mock-server")' ${WRKSRC}/package.json > ${WRKSRC}/package.json.tmp
 	${MV} ${WRKSRC}/package.json.tmp ${WRKSRC}/package.json
+	${RM} ${WRKSRC}/patches/app-builder-lib* ${WRKSRC}/patches/dmg-builder*
+	${CP} ${FILESDIR}/app-builder-lib+24.13.3.patch ${WRKSRC}/patches
+	${CP} ${FILESDIR}/dmg-builder+24.13.3.patch ${WRKSRC}/patches
 
 #	# for online build
 #	cd ${WRKSRC} && \
@@ -144,7 +148,6 @@ do-build:
 	${CP} ${DISTDIR}/${SQLCIPHER}.tar.gz \
 		${WRKSRC}/node_modules/@signalapp/better-sqlite3/deps/sqlcipher.tar.gz
 
-	# patch-package can't patch sqlite3 on aarch64, patch the yarn cache instead
 	cd ${WRKSRC} && ${PATCH} -s -N -i ${FILESDIR}/sqlite3.gyp.diff
 
 	@${RM} -r ${WRKSRC}/node_modules/fs-xattr
@@ -168,7 +171,6 @@ do-install:
 	cd ${WRKSRC} && \
 		${SETENV} ${MAKE_ENV} ${PACKAGE_ENV} npm run build:electron -- \
 			--linux --dir --config.npmRebuild=false \
-			--config.electronVersion=${ELECTRON_VER} \
 			--config.electronDist=${WRKDIR}/electron${ELECTRON_VER_MAJOR}
 
 	${MKDIR} ${STAGEDIR}${DATADIR}
