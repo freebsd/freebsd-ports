@@ -1,6 +1,6 @@
 #!/bin/sh
 
-WEBRTC_REV=6723a
+WEBRTC_REV=6723c
 
 base_url="https://chromium.googlesource.com/chromium/src/base.git/+archive/"
 boringssl_url="https://boringssl.googlesource.com/boringssl.git/+archive/"
@@ -15,6 +15,7 @@ libyuv_url="https://chromium.googlesource.com/libyuv/libyuv.git/+archive/"
 nasm_url="https://chromium.googlesource.com/chromium/deps/nasm.git/+archive/"
 perfetto_url="https://android.googlesource.com/platform/external/perfetto.git/+archive/"
 protobuf_javascript_url="https://chromium.googlesource.com/external/github.com/protocolbuffers/protobuf-javascript.git/+archive/"
+re2_url="https://chromium.googlesource.com/external/github.com/google/re2.git/+archive/"
 testing_url="https://chromium.googlesource.com/chromium/src/testing.git/+archive/"
 third_party_url="https://chromium.googlesource.com/chromium/src/third_party.git/+archive/"
 tools_url="https://chromium.googlesource.com/chromium/src/tools.git/+archive/"
@@ -77,6 +78,10 @@ protobuf_javascript_hash=$(grep "protobuf-javascript' + '@'" /tmp/DEPS | awk -F 
 printf "PROTOBUFJS_REV=\t${protobuf_javascript_hash}\n"
 printf "PROTOBUFJS_REV=\t${protobuf_javascript_hash}\n" | portedit merge -i Makefile
 
+re2_hash=$(grep 're2.git@' /tmp/DEPS | awk -F '@' '{print $2}' | sed -e "s#',##" -e "s#'##")
+printf "RE2_REV=\t${re2_hash}\n"
+printf "RE2_REV=\t${re2_hash}\n" | portedit merge -i Makefile
+
 testing_hash=$(grep 'testing@' /tmp/DEPS | awk -F '@' '{print $2}' | sed -e "s#',##" -e "s#'##")
 printf "TESTING_REV=\t${testing_hash}\n"
 printf "TESTING_REV=\t${testing_hash}\n" | portedit merge -i Makefile
@@ -91,7 +96,7 @@ printf "TOOLS_REV=\t${tools_hash}\n" | portedit merge -i Makefile
 
 mkdir -p dist_good
 
-for c in base boringssl build buildtools catapult icu libjpeg_turbo libsrtp libvpx libyuv nasm perfetto protobuf_javascript testing third_party tools
+for c in base boringssl build buildtools catapult icu libjpeg_turbo libsrtp libvpx libyuv nasm perfetto protobuf_javascript re2 testing third_party tools
 do
 	hash=$(echo ${c}_hash)
 	eval "hash=\$$hash"
