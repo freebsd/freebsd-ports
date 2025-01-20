@@ -1,5 +1,4 @@
 bin/halftone
-share/appdata/io.github.tfuxu.Halftone.appdata.xml
 share/applications/io.github.tfuxu.Halftone.desktop
 share/glib-2.0/schemas/io.github.tfuxu.Halftone.gschema.xml
 %%DATADIR%%/halftone.gresource
@@ -34,3 +33,4 @@ share/locale/sk/LC_MESSAGES/halftone.mo
 share/locale/tr/LC_MESSAGES/halftone.mo
 share/locale/uk/LC_MESSAGES/halftone.mo
 share/locale/zh_CN/LC_MESSAGES/halftone.mo
+share/metainfo/io.github.tfuxu.Halftone.metainfo.xml
