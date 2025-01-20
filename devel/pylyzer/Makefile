@@ -1,6 +1,6 @@
 PORTNAME=	pylyzer
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.0.76
+DISTVERSION=	0.0.77
 CATEGORIES=	devel python
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -33,21 +33,21 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		backtrace-0.3.74 \
 		backtrace-on-stack-overflow-0.3.0 \
 		bitflags-1.3.2 \
-		bitflags-2.6.0 \
+		bitflags-2.8.0 \
 		bumpalo-3.16.0 \
 		byteorder-1.5.0 \
-		cc-1.2.6 \
+		cc-1.2.9 \
 		cfg-if-1.0.0 \
 		convert_case-0.4.0 \
 		crunchy-0.2.2 \
 		derive_more-0.99.18 \
 		displaydoc-0.2.5 \
 		either-1.13.0 \
-		els-0.1.63-nightly.0 \
-		erg_common-0.6.51-nightly.0 \
-		erg_compiler-0.6.51-nightly.0 \
-		erg_parser-0.6.51-nightly.0 \
-		erg_proc_macros-0.6.51-nightly.0 \
+		els-0.1.64-nightly.0 \
+		erg_common-0.6.52-nightly.0 \
+		erg_compiler-0.6.52-nightly.0 \
+		erg_parser-0.6.52-nightly.0 \
+		erg_proc_macros-0.6.52-nightly.0 \
 		form_urlencoded-1.2.1 \
 		getopts-0.2.21 \
 		getrandom-0.2.15 \
@@ -74,7 +74,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		libm-0.2.11 \
 		litemap-0.7.4 \
 		lock_api-0.4.12 \
-		log-0.4.22 \
+		log-0.4.25 \
 		lsp-types-0.93.2 \
 		malachite-0.4.16 \
 		malachite-base-0.4.16 \
@@ -83,7 +83,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		malachite-q-0.4.16 \
 		memchr-2.7.4 \
 		memoffset-0.6.5 \
-		miniz_oxide-0.8.2 \
+		miniz_oxide-0.8.3 \
 		molc-0.3.0 \
 		nix-0.23.2 \
 		num-integer-0.1.46 \
@@ -94,12 +94,12 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		parking_lot_core-0.9.10 \
 		paste-1.0.15 \
 		percent-encoding-2.3.1 \
-		phf-0.11.2 \
-		phf_codegen-0.11.2 \
-		phf_generator-0.11.2 \
-		phf_shared-0.11.2 \
+		phf-0.11.3 \
+		phf_codegen-0.11.3 \
+		phf_generator-0.11.3 \
+		phf_shared-0.11.3 \
 		ppv-lite86-0.2.20 \
-		proc-macro2-1.0.92 \
+		proc-macro2-1.0.93 \
 		quote-1.0.38 \
 		rand-0.8.5 \
 		rand_chacha-0.3.1 \
@@ -108,20 +108,21 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		rustc-demangle-0.1.24 \
 		rustc-hash-1.1.0 \
 		rustc_version-0.4.1 \
+		rustversion-1.0.19 \
 		ryu-1.0.18 \
 		scopeguard-1.2.0 \
 		semver-1.0.24 \
 		serde-1.0.217 \
 		serde_derive-1.0.217 \
-		serde_json-1.0.134 \
+		serde_json-1.0.135 \
 		serde_repr-0.1.19 \
 		shlex-1.3.0 \
-		siphasher-0.3.11 \
+		siphasher-1.0.1 \
 		smallvec-1.13.2 \
 		stable_deref_trait-1.2.0 \
 		static_assertions-1.1.0 \
 		syn-1.0.109 \
-		syn-2.0.93 \
+		syn-2.0.96 \
 		synstructure-0.13.1 \
 		thread_local-1.1.8 \
 		tiny-keccak-2.0.2 \
@@ -143,11 +144,11 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		version_check-0.9.5 \
 		w-boson-0.1.0 \
 		wasi-0.11.0+wasi-snapshot-preview1 \
-		wasm-bindgen-0.2.99 \
-		wasm-bindgen-backend-0.2.99 \
-		wasm-bindgen-macro-0.2.99 \
-		wasm-bindgen-macro-support-0.2.99 \
-		wasm-bindgen-shared-0.2.99 \
+		wasm-bindgen-0.2.100 \
+		wasm-bindgen-backend-0.2.100 \
+		wasm-bindgen-macro-0.2.100 \
+		wasm-bindgen-macro-support-0.2.100 \
+		wasm-bindgen-shared-0.2.100 \
 		windows-0.58.0 \
 		windows-core-0.58.0 \
 		windows-implement-0.58.0 \
