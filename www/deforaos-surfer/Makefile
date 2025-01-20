@@ -17,7 +17,7 @@ LIB_DEPENDS=	libDesktop.so:x11/deforaos-libdesktop \
 		libharfbuzz.so:print/harfbuzz \
 		libsoup-2.4.so:devel/libsoup \
 		libSystem.so:devel/deforaos-libsystem \
-		libwebkit2gtk-4.0.so:www/webkit2-gtk3
+		libwebkit2gtk-4.0.so:www/webkit2-gtk@40
 
 USES=		desktop-file-utils gnome pkgconfig xorg
 USE_GNOME=	cairo gdkpixbuf2 gtk30

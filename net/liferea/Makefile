@@ -14,7 +14,7 @@ BUILD_DEPENDS=	gsettings-desktop-schemas>=0:devel/gsettings-desktop-schemas
 LIB_DEPENDS=	libfribidi.so:converters/fribidi \
 		libharfbuzz.so:print/harfbuzz \
 		libsoup-2.4.so:devel/libsoup \
-		libwebkit2gtk-4.0.so:www/webkit2-gtk3 \
+		libwebkit2gtk-4.0.so:www/webkit2-gtk@40 \
 		libpeas-1.0.so:devel/libpeas \
 		libjson-glib-1.0.so:devel/json-glib
 RUN_DEPENDS=	gsettings-desktop-schemas>=0:devel/gsettings-desktop-schemas \

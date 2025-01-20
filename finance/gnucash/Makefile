@@ -17,7 +17,7 @@ LIB_DEPENDS=	libboost_date_time.so:devel/boost-libs \
 		libicudata.so:devel/icu \
 		libsecret-1.so:security/libsecret \
 		libsoup-2.4.so:devel/libsoup \
-		libwebkit2gtk-4.0.so:www/webkit2-gtk3
+		libwebkit2gtk-4.0.so:www/webkit2-gtk@40
 RUN_DEPENDS=	p5-Finance-Quote>=0:finance/p5-Finance-Quote \
 		p5-JSON-Parse>=0:devel/p5-JSON-Parse \
 		p5-libwww>=0:www/p5-libwww \

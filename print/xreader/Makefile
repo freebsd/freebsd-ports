@@ -49,7 +49,7 @@ DVI_USE=		TEX=kpathsea
 DVI_MESON_ON=		-Ddvi=true
 
 EPUB_BUILD_DEPENDS=	${MATHJAX_DIR}/MathJax.js:www/mathjax
-EPUB_LIB_DEPENDS=	libwebkit2gtk-4.0.so:www/webkit2-gtk3
+EPUB_LIB_DEPENDS=	libwebkit2gtk-4.0.so:www/webkit2-gtk@40
 EPUB_RUN_DEPENDS=	${EPUB_BUILD_DEPENDS}
 EPUB_MESON_ON=		-Dmathjax-directory=${MATHJAX_DIR}
 EPUB_MESON_OFF=		-Depub=false

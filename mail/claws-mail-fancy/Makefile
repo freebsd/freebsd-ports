@@ -11,7 +11,7 @@ LIB_DEPENDS=	libcurl.so:ftp/curl
 IGNORE=		depends on www/webkit-gtk2, which has been removed
 .endif
 .if ${MASTER_OPTIONS:MGTK3}
-LIB_DEPENDS+=	libwebkit2gtk-4.0.so:www/webkit2-gtk3
+LIB_DEPENDS+=	libwebkit2gtk-4.0.so:www/webkit2-gtk@40
 .endif
 
 CLAWS_PLUGINS_BUILD=	${PORTNAME}

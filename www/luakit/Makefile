@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING.GPLv3
 BUILD_DEPENDS=	${LUA_MODLIBDIR}/lfs.so:devel/luafilesystem@${LUA_FLAVOR}
 LIB_DEPENDS=	libharfbuzz.so:print/harfbuzz \
 		libsoup-2.4.so:devel/libsoup \
-		libwebkit2gtk-4.0.so:www/webkit2-gtk3
+		libwebkit2gtk-4.0.so:www/webkit2-gtk@40
 RUN_DEPENDS=	${LUA_PKGNAMEPREFIX}luafilesystem>=0:devel/luafilesystem@${LUA_FLAVOR}
 
 USES=		compiler:c++11-lang desktop-file-utils gettext-runtime gmake \

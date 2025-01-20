@@ -12,7 +12,7 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS+=	libharfbuzz.so:print/harfbuzz \
-		libwebkit2gtk-4.0.so:www/webkit2-gtk3
+		libwebkit2gtk-4.0.so:www/webkit2-gtk@40
 
 USES=		desktop-file-utils gnome ninja pkgconfig
 USE_GNOME=	atk cairo gdkpixbuf2 gtk30 libxml2 pango

@@ -26,7 +26,7 @@ LIB_DEPENDS=	libbiblesync.so:misc/biblesync \
 		libsoup-2.4.so:devel/libsoup \
 		libsword.so:misc/sword \
 		libuuid.so:misc/e2fsprogs-libuuid \
-		libwebkit2gtk-4.0.so:www/webkit2-gtk3
+		libwebkit2gtk-4.0.so:www/webkit2-gtk@40
 
 # gettext is always needed, even if NLS is off
 USES=		cmake compiler:c11 gettext gnome minizip pkgconfig

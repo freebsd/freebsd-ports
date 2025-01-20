@@ -20,7 +20,7 @@ LIB_DEPENDS=	libsoup-2.4.so:devel/libsoup \
 		libsecret-1.so:security/libsecret \
 		libnspr4.so:devel/nspr \
 		libnss3.so:security/nss \
-		libwebkit2gtk-4.0.so:www/webkit2-gtk3 \
+		libwebkit2gtk-4.0.so:www/webkit2-gtk@40 \
 		libical.so:devel/libical \
 		libjson-glib-1.0.so:devel/json-glib
 RUN_DEPENDS=	evolution>=3.0.0:mail/evolution

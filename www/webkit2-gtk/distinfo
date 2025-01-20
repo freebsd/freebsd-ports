@@ -1,0 +1,5 @@
+TIMESTAMP = 1737410953
+SHA256 (gnome/webkitgtk-2.46.5.tar.xz) = bad4020bb0cfb3e740df3082c2d9cbf67cf4095596588a56aecdde6702137805
+SIZE (gnome/webkitgtk-2.46.5.tar.xz) = 42898600
+SHA256 (gnome/aa29001ade54425699e1345ce41bbd227dba805c.patch) = 9b3e89e1a903f8763c3f4149d24e4ab02938b7ff72b6b24e870af0c7efe2d9c4
+SIZE (gnome/aa29001ade54425699e1345ce41bbd227dba805c.patch) = 1301

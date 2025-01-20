@@ -15,7 +15,7 @@ LICENSE=	LGPL20+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	docbook-xsl>=0:textproc/docbook-xsl
-LIB_DEPENDS=	libwebkit2gtk-4.0.so:www/webkit2-gtk3 \
+LIB_DEPENDS=	libwebkit2gtk-4.0.so:www/webkit2-gtk@40 \
 		libjson-glib-1.0.so:devel/json-glib \
 		libsecret-1.so:security/libsecret \
 		libsoup-2.4.so:devel/libsoup \

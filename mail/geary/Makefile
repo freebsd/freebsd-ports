@@ -36,7 +36,7 @@ LIB_DEPENDS=	libappstream-glib.so:devel/appstream-glib \
 		libsoup-2.4.so:devel/libsoup \
 		libstemmer.so:textproc/snowballstemmer \
 		libunwind.so:devel/libunwind \
-		libwebkit2gtk-4.0.so:www/webkit2-gtk3 \
+		libwebkit2gtk-4.0.so:www/webkit2-gtk@40 \
 		libytnef.so:converters/ytnef
 
 USES=		compiler:c11 cpe desktop-file-utils gettext gnome meson pkgconfig \

@@ -11,7 +11,7 @@ LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libsoup-2.4.so:devel/libsoup \
-		libwebkit2gtk-4.0.so:www/webkit2-gtk3
+		libwebkit2gtk-4.0.so:www/webkit2-gtk@40
 
 USES=		compiler:c11 desktop-file-utils gmake gnome pkgconfig
 USE_GITHUB=	yes

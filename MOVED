@@ -4029,3 +4029,5 @@ net/libproxy-pacrunner||2025-01-19|Completely rewritten, plugins now built direc
 net/libproxy-perl||2025-01-19|Completely rewritten, plugins now built directly into the library
 net/libproxy-python||2025-01-19|Completely rewritten, plugins now built directly into the library
 net/libproxy-webkit3||2025-01-19|Completely rewritten, plugins now built directly into the library
+www/webkit2-gtk3|www/webkit2-gtk@40|2025-01-20|Flavoured
+www/webkit2-gtk4|www/webkit2-gtk@60|2025-01-20|Flavoured

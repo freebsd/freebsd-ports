@@ -82,7 +82,7 @@ MSPACK_CONFIGURE_WITH=	libmspack
 
 NLS_USES=	gettext
 
-WEBKIT_LIB_DEPENDS=		libwebkit2gtk-4.0.so:www/webkit2-gtk3
+WEBKIT_LIB_DEPENDS=		libwebkit2gtk-4.0.so:www/webkit2-gtk@40
 WEBKIT_CONFIGURE_ENABLE=	webview
 
 .if ${FLAVOR} == gtk3

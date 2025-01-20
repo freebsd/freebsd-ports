@@ -26,9 +26,9 @@ LIB_DEPENDS=	libdazzle-1.0.so:x11-toolkits/libdazzle \
 		libnss3.so:security/nss \
 		libp11-kit.so:security/p11-kit \
 		libsecret-1.so:security/libsecret \
-		libsoup-2.4.so:devel/libsoup \
+		libsoup-3.0.so:devel/libsoup3 \
 		libstartup-notification-1.so:x11/startup-notification \
-		libwebkit2gtk-4.0.so:www/webkit2-gtk3
+		libwebkit2gtk-4.1.so:www/webkit2-gtk@41
 RUN_DEPENDS=	gnome-icon-theme-symbolic>=0:x11-themes/gnome-icon-theme-symbolic \
 		gnome-icon-theme>=0:misc/gnome-icon-theme \
 		gsettings-desktop-schemas>=0:devel/gsettings-desktop-schemas \

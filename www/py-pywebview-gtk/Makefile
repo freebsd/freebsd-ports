@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools-scm>=0:devel/py-setuptools-scm@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
-LIB_DEPENDS=	libwebkit2gtk-4.0.so:www/webkit2-gtk3
+LIB_DEPENDS=	libwebkit2gtk-4.0.so:www/webkit2-gtk@40
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}bottle>=0:www/py-bottle@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}proxy_tools>=0:www/py-proxy_tools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}typing-extensions>=0:devel/py-typing-extensions@${PY_FLAVOR}

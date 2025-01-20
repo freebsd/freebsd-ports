@@ -36,7 +36,7 @@ LIB_DEPENDS=	libcryptui.so:security/libcryptui \
 		libp11-kit.so:security/p11-kit \
 		libsecret-1.so:security/libsecret \
 		libsoup-2.4.so:devel/libsoup \
-		libwebkit2gtk-4.0.so:www/webkit2-gtk3
+		libwebkit2gtk-4.0.so:www/webkit2-gtk@40
 RUN_DEPENDS=	highlight:textproc/highlight \
 		iso-codes>=0:misc/iso-codes
 

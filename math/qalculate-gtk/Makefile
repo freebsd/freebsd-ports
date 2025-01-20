@@ -26,7 +26,7 @@ OPTIONS_SUB=		yes
 
 WEBKIT_DESC=		Use WebKitGTK for display of the user manual
 WEBKIT_LIB_DEPENDS=	libsoup-2.4.so:devel/libsoup \
-			libwebkit2gtk-4.0.so:www/webkit2-gtk3
+			libwebkit2gtk-4.0.so:www/webkit2-gtk@40
 WEBKIT_CONFIGURE_ON=	--with-webkitgtk=4.0
 
 post-patch-NLS-off:

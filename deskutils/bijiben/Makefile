@@ -17,7 +17,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	itstool:textproc/itstool
 LIB_DEPENDS=	libtracker-sparql-3.0.so:sysutils/tracker3 \
-		libwebkit2gtk-4.0.so:www/webkit2-gtk3 \
+		libwebkit2gtk-4.0.so:www/webkit2-gtk@40 \
 		libgoa-1.0.so:net/gnome-online-accounts \
 		libical.so:devel/libical \
 		libuuid.so:misc/e2fsprogs-libuuid \

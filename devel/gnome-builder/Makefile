@@ -32,7 +32,7 @@ LIB_DEPENDS=	libcmark.so:textproc/cmark \
 		libportal-gtk3.so:deskutils/libportal-gtk3 \
 		libsoup-2.4.so:devel/libsoup \
 		libtemplate_glib-1.0.so:devel/template-glib \
-		libwebkit2gtk-4.0.so:www/webkit2-gtk3
+		libwebkit2gtk-4.0.so:www/webkit2-gtk@40
 
 PORTSCOUT=	limitw:1,even
 PORTDOCS=	*

@@ -26,7 +26,7 @@ LIB_DEPENDS=	libasound.so:audio/alsa-lib \
 		libsoup-3.0.so:devel/libsoup3 \
 		libuuid.so:misc/e2fsprogs-libuuid \
 		libvulkan.so:graphics/vulkan-loader \
-		libwebkit2gtk-4.0.so:www/webkit2-gtk3
+		libwebkit2gtk-4.0.so:www/webkit2-gtk@40
 RUN_DEPENDS=	dssi>0:audio/dssi
 
 USES=		autoreconf desktop-file-utils gettext-runtime gettext-tools gmake gnome gstreamer \
