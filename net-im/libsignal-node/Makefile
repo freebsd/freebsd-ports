@@ -1,7 +1,6 @@
 PORTNAME=	libsignal
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.62.0
-PORTREVISION=	1
+DISTVERSION=	0.64.1
 CATEGORIES=	net-im
 PKGNAMESUFFIX=	-node
 MASTER_SITES=	LOCAL/mikael/signal-desktop/:npm
@@ -58,10 +57,10 @@ post-patch:
 		${WRKSRC}/node/binding.gyp
 
 # to get the hash:
-# fetch -o - https://raw.githubusercontent.com/signalapp/libsignal/v0.56.1/Cargo.lock | grep https://github.com/signalapp/boring
+# fetch -o - https://raw.githubusercontent.com/signalapp/libsignal/v0.64.1/Cargo.lock | grep https://github.com/signalapp/boring
 post-extract:
-	${MV} ${WRKDIR}/boringssl-44b3df6f03d85c901767250329c571db405122d5/* ${WRKDIR}/boring-signal-v4.9.0b/boring-sys/deps/boringssl
-	${MV} ${WRKDIR}/boringssl-853ca1ea1168dff08011e5d42d94609cc0ca2e27/* ${WRKDIR}/boring-signal-v4.9.0b/boring-sys/deps/boringssl-fips
+	${MV} ${WRKDIR}/boringssl-44b3df6f03d85c901767250329c571db405122d5/* ${WRKDIR}/boring-signal-v4.13.0/boring-sys/deps/boringssl
+	${MV} ${WRKDIR}/boringssl-853ca1ea1168dff08011e5d42d94609cc0ca2e27/* ${WRKDIR}/boring-signal-v4.13.0/boring-sys/deps/boringssl-fips
 
 do-build:
 	${ECHO_CMD} offline=true >> ${WRKSRC}/.npmrc
