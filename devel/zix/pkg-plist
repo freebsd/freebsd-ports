@@ -3,6 +3,7 @@ include/zix-0/zix/attributes.h
 include/zix-0/zix/btree.h
 include/zix-0/zix/bump_allocator.h
 include/zix-0/zix/digest.h
+include/zix-0/zix/environment.h
 include/zix-0/zix/filesystem.h
 include/zix-0/zix/hash.h
 include/zix-0/zix/path.h
