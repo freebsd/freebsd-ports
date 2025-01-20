@@ -35,6 +35,13 @@ USE_GITLAB=	yes
 GL_ACCOUNT=	famedly
 GL_TAGNAME=	f8d7ef04e664580e882bac852877b68e7bd3ab1e
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH:Marmv?}
+LTO_UNSAFE=	yes
+CARGO_ENV+=	CARGO_PROFILE_RELEASE_LTO=false
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's,/etc/conduit.toml,${PREFIX}/etc/conduit.toml,' \
 		${WRKSRC}/src/main.rs
@@ -47,4 +54,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/conduit-example.toml ${STAGEDIR}${PREFIX}/etc/${PORTNAME}.toml.sample
 	@${MKDIR} ${STAGEDIR}${DBDIR}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
