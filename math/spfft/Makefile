@@ -1,10 +1,7 @@
 PORTNAME=	spfft
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.1.0
+DISTVERSION=	1.1.1
 CATEGORIES=	math
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES=	c91e7ec9f420d477a8144dee2bc36cd8dde434c4.patch:-p1 # https://github.com/eth-cscs/SpFFT/pull/57
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Sparse 3D FFT library
@@ -59,5 +56,7 @@ post-test:
 	@cd ${BUILD_WRKSRC}/tests && \
 		./run_local_tests && \
 		./run_mpi_tests
+
+# tests as of 1.1.1: [  PASSED  ] 6500 tests.
 
 .include <bsd.port.mk>
