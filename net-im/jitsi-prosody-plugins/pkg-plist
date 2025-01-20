@@ -1,4 +1,3 @@
-lib/jitsi-prosody-plugins/ext_events.lib.lua
 lib/jitsi-prosody-plugins/luajwtjitsi.lib.lua
 lib/jitsi-prosody-plugins/mod_auth_jitsi-anonymous.lua
 lib/jitsi-prosody-plugins/mod_auth_jitsi-shared-secret.lua
@@ -15,6 +14,7 @@ lib/jitsi-prosody-plugins/mod_external_services.lua
 lib/jitsi-prosody-plugins/mod_filter_iq_jibri.lua
 lib/jitsi-prosody-plugins/mod_filter_iq_rayo.lua
 lib/jitsi-prosody-plugins/mod_fmuc.lua
+lib/jitsi-prosody-plugins/mod_jibri_session.lua
 lib/jitsi-prosody-plugins/mod_jiconop.lua
 lib/jitsi-prosody-plugins/mod_jitsi_session.lua
 lib/jitsi-prosody-plugins/mod_limits_exception.lua
@@ -32,7 +32,7 @@ lib/jitsi-prosody-plugins/mod_muc_filter_access.lua
 lib/jitsi-prosody-plugins/mod_muc_flip.lua
 lib/jitsi-prosody-plugins/mod_muc_hide_all.lua
 lib/jitsi-prosody-plugins/mod_muc_jigasi_invite.lua
-lib/jitsi-prosody-plugins/mod_muc_kick_jigasi.lua
+lib/jitsi-prosody-plugins/mod_muc_kick_participant.lua
 lib/jitsi-prosody-plugins/mod_muc_limit_messages.lua
 lib/jitsi-prosody-plugins/mod_muc_lobby_rooms.lua
 lib/jitsi-prosody-plugins/mod_muc_max_occupants.lua
@@ -42,7 +42,6 @@ lib/jitsi-prosody-plugins/mod_muc_password_whitelist.lua
 lib/jitsi-prosody-plugins/mod_muc_poltergeist.lua
 lib/jitsi-prosody-plugins/mod_muc_rate_limit.lua
 lib/jitsi-prosody-plugins/mod_muc_size.lua
-lib/jitsi-prosody-plugins/mod_muc_transcription_filter.lua
 lib/jitsi-prosody-plugins/mod_muc_wait_for_host.lua
 lib/jitsi-prosody-plugins/mod_persistent_lobby.lua
 lib/jitsi-prosody-plugins/mod_polls.lua
@@ -61,6 +60,7 @@ lib/jitsi-prosody-plugins/mod_secure_interfaces.lua
 lib/jitsi-prosody-plugins/mod_smacks.lua
 lib/jitsi-prosody-plugins/mod_speakerstats.lua
 lib/jitsi-prosody-plugins/mod_speakerstats_component.lua
+lib/jitsi-prosody-plugins/mod_system_chat_message.lua
 lib/jitsi-prosody-plugins/mod_token_verification.lua
 lib/jitsi-prosody-plugins/mod_turncredentials.lua
 lib/jitsi-prosody-plugins/mod_turncredentials_http.lua

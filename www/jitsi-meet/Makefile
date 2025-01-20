@@ -1,5 +1,5 @@
 PORTNAME=	jitsi
-PORTVERSION=	1.0.7762
+PORTVERSION=	1.0.8339
 DISTVERSIONPREFIX=	meet-
 CATEGORIES=	www net-im
 MASTER_SITES=	https://download.jitsi.org/jitsi-meet/src/
