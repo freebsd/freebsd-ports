@@ -1,5 +1,5 @@
 PORTNAME=	sord
-DISTVERSION=	0.16.16
+DISTVERSION=	0.16.18
 CATEGORIES=	devel
 MASTER_SITES=	http://download.drobilla.net/
 
