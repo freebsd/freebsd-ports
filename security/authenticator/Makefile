@@ -29,6 +29,13 @@ CARGO_INSTALL=	no
 CARGO_TEST=	no
 GLIB_SCHEMAS=	com.belmoussaoui.Authenticator.gschema.xml
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH:Marmv?}
+LTO_UNSAFE=	yes
+CARGO_ENV+=	CARGO_PROFILE_RELEASE_LTO=false
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e '/gstreamer.*bad/d' \
 		${WRKSRC}/meson.build
@@ -36,4 +43,4 @@ post-patch:
 	@${REINPLACE_CMD} -e "/cargo_options =/s/ '--/&verbose', &verbose', &/" \
 		${WRKSRC}/src/meson.build
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
