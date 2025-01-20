@@ -1,17 +1,17 @@
 PORTNAME=	orbiton
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.65.12
-PORTREVISION=	3
+DISTVERSION=	2.68.7
 CATEGORIES=	editors
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Small, fast and limited text editor in Go
-WWW=		https://orbiton.zip/
+WWW=		https://roboticoverlords.org/orbiton/ \
+		https://github.com/xyproto/orbiton
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:1.22,modules
+USES=		go:1.23,modules
 
 GO_MODULE=	github.com/xyproto/orbiton/v2
 
