@@ -1,5 +1,5 @@
 PORTNAME=	polyphone
-DISTVERSION=	2.5.0
+DISTVERSION=	2.5.1
 CATEGORIES=	audio
 
 MAINTAINER=	yuri@FreeBSD.org
