@@ -1,3 +1,38 @@
+  <vuln vid="3161429b-3897-4593-84a0-b41ffbbfa36b">
+    <topic>electron31 -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>electron31</name>
+	<range><lt>31.7.7</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Electron developers report:</p>
+	<blockquote cite="https://github.com/electron/electron/releases/tag/v31.7.7">
+	  <p>This update fixes the following vulnerabilities:</p>
+	  <ul>
+	    <li>Security: backported fix for CVE-2024-12053.</li>
+	    <li>Security: backported fix for CVE-2024-12693.</li>
+	    <li>Security: backported fix for CVE-2024-12694.</li>
+	  </ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2024-12053</cvename>
+      <url>https://github.com/advisories/GHSA-wvx7-72hc-rp32</url>
+      <cvename>CVE-2024-12693</cvename>
+      <url>https://github.com/advisories/GHSA-m84q-p89f-6cc5</url>
+      <cvename>CVE-2024-12694</cvename>
+      <url>https://github.com/advisories/GHSA-cgc6-4xgf-5q5x</url>
+    </references>
+    <dates>
+      <discovery>2025-01-14</discovery>
+      <entry>2025-01-20</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="d9b0fea0-d564-11ef-b9bc-d05099c0ae8c">
     <topic>age -- age vulnerable to malicious plugin names, recipients, or identities causing arbitrary binary execution</topic>
     <affects>
