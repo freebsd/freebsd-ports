@@ -52,32 +52,32 @@ bin/zaproxy
 %%JAVAJARDIR%%/zaproxy/lang/Messages_zh_CN.properties
 %%JAVAJARDIR%%/zaproxy/lang/Messages_zh_TW.properties
 %%JAVAJARDIR%%/zaproxy/lib/commons-beanutils-1.9.4.jar
-%%JAVAJARDIR%%/zaproxy/lib/commons-codec-1.16.0.jar
+%%JAVAJARDIR%%/zaproxy/lib/commons-codec-1.17.1.jar
 %%JAVAJARDIR%%/zaproxy/lib/commons-collections-3.2.2.jar
 %%JAVAJARDIR%%/zaproxy/lib/commons-configuration-1.10.jar
-%%JAVAJARDIR%%/zaproxy/lib/commons-csv-1.10.0.jar
+%%JAVAJARDIR%%/zaproxy/lib/commons-csv-1.12.0.jar
 %%JAVAJARDIR%%/zaproxy/lib/commons-httpclient-3.1.jar
-%%JAVAJARDIR%%/zaproxy/lib/commons-io-2.13.0.jar
+%%JAVAJARDIR%%/zaproxy/lib/commons-io-2.18.0.jar
 %%JAVAJARDIR%%/zaproxy/lib/commons-lang-2.6.jar
-%%JAVAJARDIR%%/zaproxy/lib/commons-lang3-3.13.0.jar
-%%JAVAJARDIR%%/zaproxy/lib/commons-logging-1.2.jar
-%%JAVAJARDIR%%/zaproxy/lib/commons-text-1.10.0.jar
+%%JAVAJARDIR%%/zaproxy/lib/commons-lang3-3.17.0.jar
+%%JAVAJARDIR%%/zaproxy/lib/commons-logging-1.3.4.jar
+%%JAVAJARDIR%%/zaproxy/lib/commons-text-1.12.0.jar
 %%JAVAJARDIR%%/zaproxy/lib/ezmorph-1.0.6.jar
-%%JAVAJARDIR%%/zaproxy/lib/flatlaf-3.2.1.jar
+%%JAVAJARDIR%%/zaproxy/lib/flatlaf-3.5.4.jar
 %%JAVAJARDIR%%/zaproxy/lib/harlib-1.1.3.jar
-%%JAVAJARDIR%%/zaproxy/lib/hsqldb-2.7.2.jar
+%%JAVAJARDIR%%/zaproxy/lib/hsqldb-2.7.4.jar
 %%JAVAJARDIR%%/zaproxy/lib/jackson-core-asl-1.9.13.jar
-%%JAVAJARDIR%%/zaproxy/lib/java-semver-0.9.0.jar
+%%JAVAJARDIR%%/zaproxy/lib/java-semver-0.10.2.jar
 %%JAVAJARDIR%%/zaproxy/lib/javahelp-2.0.05.jar
 %%JAVAJARDIR%%/zaproxy/lib/jericho-html-3.4.jar
-%%JAVAJARDIR%%/zaproxy/lib/jfreechart-1.5.4.jar
+%%JAVAJARDIR%%/zaproxy/lib/jfreechart-1.5.5.jar
 %%JAVAJARDIR%%/zaproxy/lib/jgrapht-core-0.9.0.jar
 %%JAVAJARDIR%%/zaproxy/lib/json-lib-2.4-jdk15.jar
-%%JAVAJARDIR%%/zaproxy/lib/log4j-1.2-api-2.20.0.jar
-%%JAVAJARDIR%%/zaproxy/lib/log4j-api-2.20.0.jar
-%%JAVAJARDIR%%/zaproxy/lib/log4j-core-2.20.0.jar
-%%JAVAJARDIR%%/zaproxy/lib/log4j-jul-2.20.0.jar
-%%JAVAJARDIR%%/zaproxy/lib/rsyntaxtextarea-3.3.4.jar
+%%JAVAJARDIR%%/zaproxy/lib/log4j-1.2-api-2.24.2.jar
+%%JAVAJARDIR%%/zaproxy/lib/log4j-api-2.24.2.jar
+%%JAVAJARDIR%%/zaproxy/lib/log4j-core-2.24.2.jar
+%%JAVAJARDIR%%/zaproxy/lib/log4j-jul-2.24.2.jar
+%%JAVAJARDIR%%/zaproxy/lib/rsyntaxtextarea-3.5.3.jar
 %%JAVAJARDIR%%/zaproxy/lib/swingx-all-1.6.5-1.jar
 %%JAVAJARDIR%%/zaproxy/lib/xom-1.3.9.jar
 %%JAVAJARDIR%%/zaproxy/license/ApacheLicense-2.0.txt
@@ -91,71 +91,57 @@ bin/zaproxy
 %%JAVAJARDIR%%/zaproxy/license/hypersonic_lic.txt
 %%JAVAJARDIR%%/zaproxy/license/lgpl-3.0.txt
 %%JAVAJARDIR%%/zaproxy/plugin/Readme.txt
-%%JAVAJARDIR%%/zaproxy/plugin/alertFilters-release-18.zap
-%%JAVAJARDIR%%/zaproxy/plugin/ascanrules-release-58.zap
-%%JAVAJARDIR%%/zaproxy/plugin/authhelper-beta-0.10.0.zap
-%%JAVAJARDIR%%/zaproxy/plugin/automation-beta-0.33.0.zap
-%%JAVAJARDIR%%/zaproxy/plugin/bruteforce-beta-15.zap
-%%JAVAJARDIR%%/zaproxy/plugin/callhome-release-0.8.0.zap
-%%JAVAJARDIR%%/zaproxy/plugin/commonlib-release-1.18.0.zap
-%%JAVAJARDIR%%/zaproxy/plugin/database-alpha-0.3.0.zap
-%%JAVAJARDIR%%/zaproxy/plugin/diff-beta-14.zap
-%%JAVAJARDIR%%/zaproxy/plugin/directorylistv1-release-7.zap
-%%JAVAJARDIR%%/zaproxy/plugin/domxss-release-18.zap
-%%JAVAJARDIR%%/zaproxy/plugin/encoder-release-1.4.0.zap
-%%JAVAJARDIR%%/zaproxy/plugin/exim-beta-0.7.0.zap
-%%JAVAJARDIR%%/zaproxy/plugin/formhandler-beta-6.5.0.zap
-%%JAVAJARDIR%%/zaproxy/plugin/fuzz-beta-13.12.0.zap
-%%JAVAJARDIR%%/zaproxy/plugin/gettingStarted-release-16.zap
-%%JAVAJARDIR%%/zaproxy/plugin/graaljs-alpha-0.5.0.zap
-%%JAVAJARDIR%%/zaproxy/plugin/graphql-alpha-0.20.0.zap
-%%JAVAJARDIR%%/zaproxy/plugin/help-release-17.zap
-%%JAVAJARDIR%%/zaproxy/plugin/hud-beta-0.18.0.zap
-%%JAVAJARDIR%%/zaproxy/plugin/invoke-beta-14.zap
-%%JAVAJARDIR%%/zaproxy/plugin/network-beta-0.12.0.zap
-%%JAVAJARDIR%%/zaproxy/plugin/oast-beta-0.17.0.zap
-%%JAVAJARDIR%%/zaproxy/plugin/onlineMenu-release-12.zap
-%%JAVAJARDIR%%/zaproxy/plugin/openapi-beta-37.zap
-%%JAVAJARDIR%%/zaproxy/plugin/postman-alpha-0.2.0.zap
-%%JAVAJARDIR%%/zaproxy/plugin/pscanrules-release-52.zap
-%%JAVAJARDIR%%/zaproxy/plugin/quickstart-release-43.zap
-%%JAVAJARDIR%%/zaproxy/plugin/replacer-release-15.zap
-%%JAVAJARDIR%%/zaproxy/plugin/reports-release-0.26.0.zap
-%%JAVAJARDIR%%/zaproxy/plugin/requester-beta-7.4.0.zap
-%%JAVAJARDIR%%/zaproxy/plugin/retest-alpha-0.8.0.zap
-%%JAVAJARDIR%%/zaproxy/plugin/retire-release-0.26.0.zap
-%%JAVAJARDIR%%/zaproxy/plugin/reveal-release-7.zap
-%%JAVAJARDIR%%/zaproxy/plugin/scripts-release-42.zap
-%%JAVAJARDIR%%/zaproxy/plugin/selenium-release-15.15.0.zap
-%%JAVAJARDIR%%/zaproxy/plugin/soap-beta-20.zap
-%%JAVAJARDIR%%/zaproxy/plugin/spider-release-0.7.0.zap
-%%JAVAJARDIR%%/zaproxy/plugin/spiderAjax-release-23.17.0.zap
-%%JAVAJARDIR%%/zaproxy/plugin/tips-beta-12.zap
-%%JAVAJARDIR%%/zaproxy/plugin/webdriverlinux-release-64.zap
-%%JAVAJARDIR%%/zaproxy/plugin/webdrivermacos-release-64.zap
-%%JAVAJARDIR%%/zaproxy/plugin/webdriverwindows-release-64.zap
-%%JAVAJARDIR%%/zaproxy/plugin/websocket-release-30.zap
-%%JAVAJARDIR%%/zaproxy/plugin/zest-beta-42.zap
-%%JAVAJARDIR%%/zaproxy/scripts/templates/active/Active default template.js
-%%JAVAJARDIR%%/zaproxy/scripts/templates/authentication/Authentication default template.js
-%%JAVAJARDIR%%/zaproxy/scripts/templates/authentication/BodgeIt Store Authentication.js
-%%JAVAJARDIR%%/zaproxy/scripts/templates/authentication/Simple Form-Based Authentication.js
-%%JAVAJARDIR%%/zaproxy/scripts/templates/authentication/Wordpress Authentication.js
-%%JAVAJARDIR%%/zaproxy/scripts/templates/httpsender/AddZapHeader.js
-%%JAVAJARDIR%%/zaproxy/scripts/templates/httpsender/HttpSender default template.js
-%%JAVAJARDIR%%/zaproxy/scripts/templates/passive/Passive default template.js
-%%JAVAJARDIR%%/zaproxy/scripts/templates/proxy/Proxy default template.js
-%%JAVAJARDIR%%/zaproxy/scripts/templates/session/Juice Shop Session Management.js
-%%JAVAJARDIR%%/zaproxy/scripts/templates/session/Session Management default template.js
-%%JAVAJARDIR%%/zaproxy/scripts/templates/standalone/Loop through history table.js
-%%JAVAJARDIR%%/zaproxy/scripts/templates/standalone/Standalone default template.js
-%%JAVAJARDIR%%/zaproxy/scripts/templates/standalone/Traverse sites tree.js
-%%JAVAJARDIR%%/zaproxy/scripts/templates/targeted/Find HTML comments.js
-%%JAVAJARDIR%%/zaproxy/scripts/templates/targeted/Targeted default template.js
-%%JAVAJARDIR%%/zaproxy/scripts/templates/variant/Input Vector default template.js
-%%JAVAJARDIR%%/zaproxy/scripts/templates/variant/Site modifying JSON example.js
+%%JAVAJARDIR%%/zaproxy/plugin/alertFilters-release-23.zap
+%%JAVAJARDIR%%/zaproxy/plugin/ascanrules-release-70.zap
+%%JAVAJARDIR%%/zaproxy/plugin/authhelper-beta-0.17.0.zap
+%%JAVAJARDIR%%/zaproxy/plugin/automation-beta-0.44.0.zap
+%%JAVAJARDIR%%/zaproxy/plugin/bruteforce-beta-17.zap
+%%JAVAJARDIR%%/zaproxy/plugin/callhome-release-0.14.0.zap
+%%JAVAJARDIR%%/zaproxy/plugin/client-alpha-0.10.0.zap
+%%JAVAJARDIR%%/zaproxy/plugin/commonlib-release-1.30.0.zap
+%%JAVAJARDIR%%/zaproxy/plugin/database-alpha-0.7.0.zap
+%%JAVAJARDIR%%/zaproxy/plugin/diff-beta-17.zap
+%%JAVAJARDIR%%/zaproxy/plugin/directorylistv1-release-9.zap
+%%JAVAJARDIR%%/zaproxy/plugin/domxss-release-21.zap
+%%JAVAJARDIR%%/zaproxy/plugin/encoder-release-1.6.0.zap
+%%JAVAJARDIR%%/zaproxy/plugin/exim-beta-0.13.0.zap
+%%JAVAJARDIR%%/zaproxy/plugin/formhandler-beta-6.7.0.zap
+%%JAVAJARDIR%%/zaproxy/plugin/fuzz-beta-13.15.0.zap
+%%JAVAJARDIR%%/zaproxy/plugin/gettingStarted-release-19.zap
+%%JAVAJARDIR%%/zaproxy/plugin/graaljs-alpha-0.9.0.zap
+%%JAVAJARDIR%%/zaproxy/plugin/graphql-alpha-0.26.0.zap
+%%JAVAJARDIR%%/zaproxy/plugin/help-release-19.zap
+%%JAVAJARDIR%%/zaproxy/plugin/hud-beta-0.19.0.zap
+%%JAVAJARDIR%%/zaproxy/plugin/invoke-beta-16.zap
+%%JAVAJARDIR%%/zaproxy/plugin/network-beta-0.20.0.zap
+%%JAVAJARDIR%%/zaproxy/plugin/oast-beta-0.21.0.zap
+%%JAVAJARDIR%%/zaproxy/plugin/onlineMenu-release-14.zap
+%%JAVAJARDIR%%/zaproxy/plugin/openapi-beta-44.zap
+%%JAVAJARDIR%%/zaproxy/plugin/postman-alpha-0.5.0.zap
+%%JAVAJARDIR%%/zaproxy/plugin/pscan-alpha-0.1.0.zap
+%%JAVAJARDIR%%/zaproxy/plugin/pscanrules-release-62.zap
+%%JAVAJARDIR%%/zaproxy/plugin/quickstart-release-51.zap
+%%JAVAJARDIR%%/zaproxy/plugin/replacer-release-20.zap
+%%JAVAJARDIR%%/zaproxy/plugin/reports-release-0.35.0.zap
+%%JAVAJARDIR%%/zaproxy/plugin/requester-beta-7.8.0.zap
+%%JAVAJARDIR%%/zaproxy/plugin/retest-alpha-0.11.0.zap
+%%JAVAJARDIR%%/zaproxy/plugin/retire-release-0.44.0.zap
+%%JAVAJARDIR%%/zaproxy/plugin/reveal-release-9.zap
+%%JAVAJARDIR%%/zaproxy/plugin/scanpolicies-alpha-0.2.0.zap
+%%JAVAJARDIR%%/zaproxy/plugin/scripts-release-45.8.0.zap
+%%JAVAJARDIR%%/zaproxy/plugin/selenium-release-15.32.0.zap
+%%JAVAJARDIR%%/zaproxy/plugin/sequence-beta-8.zap
+%%JAVAJARDIR%%/zaproxy/plugin/soap-beta-24.zap
+%%JAVAJARDIR%%/zaproxy/plugin/spider-release-0.13.0.zap
+%%JAVAJARDIR%%/zaproxy/plugin/spiderAjax-release-23.22.0.zap
+%%JAVAJARDIR%%/zaproxy/plugin/tips-beta-14.zap
+%%JAVAJARDIR%%/zaproxy/plugin/webdriverlinux-release-119.zap
+%%JAVAJARDIR%%/zaproxy/plugin/webdrivermacos-release-119.zap
+%%JAVAJARDIR%%/zaproxy/plugin/webdriverwindows-release-119.zap
+%%JAVAJARDIR%%/zaproxy/plugin/websocket-release-32.zap
+%%JAVAJARDIR%%/zaproxy/plugin/zest-beta-48.0.0.zap
 %%JAVAJARDIR%%/zaproxy/xml/config.xml
 %%JAVAJARDIR%%/zaproxy/xml/drivers.dtd
 %%JAVAJARDIR%%/zaproxy/xml/reportCompare.xsl
-%%JAVAJARDIR%%/zaproxy/zap-2.14.0.jar
+%%JAVAJARDIR%%/zaproxy/zap-2.16.0.jar
 share/pixmaps/zaproxy.png
