@@ -1,6 +1,5 @@
 PORTNAME=	ibus-typing-booster
-PORTVERSION=	2.25.9
-PORTREVISION=	1
+PORTVERSION=	2.27.10
 CATEGORIES=	textproc
 
 MAINTAINER=	thierry@FreeBSD.org
@@ -46,6 +45,7 @@ sh_CMD=		${SH}
 USE_GNOME=	glib20 gtk30 pygobject3
 USE_LOCALE=	en_US.UTF-8
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--libexecdir=${PREFIX}/libexec
 NO_ARCH=	yes
 GLIB_SCHEMAS=	org.freedesktop.ibus.engine.typing-booster.gschema.xml
 
@@ -59,14 +59,11 @@ OPTIONS_DEFAULT=HUNSPELL
 HUNSPELL_RUN_DEPENDS=	hunspell:textproc/hunspell
 
 SPELL2FIX=	engine/itb_util.py setup/user_transliteration.py
-PY2FIX=		setup/user_transliteration.py tests/test_m17n_db_info.py	\
-		tests/test_itb.py tests/test_compose_sequences.py		\
-		tests/test_hunspell_suggest.py tests/test_keyvals_to_keycodes.py\
-		tests/test_m17n_translit.py tests/test_emoji_unicode_version.py	\
-		tests/test_emoji_similar.py tests/test_emoji_candidates.py
 SHR2FIX=	engine/itb_util.py engine/itb_emoji.py engine/hunspell_table.py	\
-		tests/test_compose_sequences.py typing-booster.appdata.xml	\
-		setup/user_transliteration.py ${GLIB_SCHEMAS} engine/itb_sound.py
+		tests/test_compose_sequences.py engine/itb_sound.py		\
+		setup/user_transliteration.py ${GLIB_SCHEMAS}
+XML2FIX=	org.freedesktop.ibus.engine.typing_booster.metainfo.xml.in	\
+		org.freedesktop.ibus.engine.typing_booster.emoji_picker.metainfo.xml.in
 COMP2DEL=	engine/Makefile setup/Makefile
 
 pre-configure:
@@ -74,12 +71,12 @@ pre-configure:
 	${REINPLACE_CMD} -e 's|/usr/share/myspell|${LOCALBASE}/share/hunspell|'	\
 		${WRKSRC}/${f}
 .endfor
-.for f in ${PY2FIX}
-	${REINPLACE_CMD} -e 's|/usr/bin/python3| ${PYTHON_CMD}|' ${WRKSRC}/${f}
+	${FIND} ${WRKSRC} -name "*.py" | ${XARGS}	\
+	${REINPLACE_CMD} -e 's|/usr/bin/python3| ${PYTHON_CMD}|'
+.for f in ${XML2FIX}
+	${REINPLACE_CMD} -e 's|/usr/libexec|${PREFIX}/libexec|'	${WRKSRC}/${f}
 .endfor
-	${REINPLACE_CMD} -e 's|/usr/libexec|${PREFIX}/libexec|'	\
-		${WRKSRC}/typing-booster.appdata.xml
-.for f in ${SHR2FIX}
+.for f in ${SHR2FIX} ${XML2FIX}
 	${REINPLACE_CMD} -e 's|/usr/share/ibus-typing-booster|${DATADIR}|'	\
 		-e 's|/usr/share|${LOCALBASE}/share|' ${WRKSRC}/${f}
 .endfor
