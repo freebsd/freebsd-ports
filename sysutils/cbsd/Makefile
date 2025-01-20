@@ -1,5 +1,5 @@
 PORTNAME=	cbsd
-DISTVERSION=	14.2.3
+DISTVERSION=	14.2.4
 CATEGORIES=	sysutils
 
 MAINTAINER=	fbsd-ports@convectix.com
@@ -12,8 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libsqlite3.so:databases/sqlite3 \
 		libssh2.so:security/libssh2
-RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss \
-		curl:ftp/curl \
+RUN_DEPENDS=	curl:ftp/curl \
 		jq:textproc/jq \
 		rsync:net/rsync \
 		sqlite3:databases/sqlite3 \
