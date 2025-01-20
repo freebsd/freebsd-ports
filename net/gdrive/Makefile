@@ -1,5 +1,6 @@
 PORTNAME=	gdrive
 DISTVERSION=	3.9.1
+PORTREVISION=	1
 CATEGORIES=	net
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/

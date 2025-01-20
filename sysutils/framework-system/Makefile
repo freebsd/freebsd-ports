@@ -1,6 +1,6 @@
 PORTNAME=	framework-system
 DISTVERSION=	0.1.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	sysutils
 
 MAINTAINER=	dhs@frame.work
