@@ -1,11 +1,12 @@
 PORTNAME=	siril
-DISTVERSION=	1.2.4
+DISTVERSION=	1.2.5
 CATEGORIES=	astro graphics
 MASTER_SITES=	https://free-astro.org/download/
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Astronomical image processing software
-WWW=		https://siril.org/
+WWW=		https://siril.org/ \
+		https://gitlab.com/free-astro/siril
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
