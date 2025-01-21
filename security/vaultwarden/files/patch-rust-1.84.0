@@ -13,8 +13,8 @@ Subject: [PATCH] Allow building with Rust v1.84.0 or newer (#5371)
 
 diff --git a/Cargo.toml b/Cargo.toml
 index a5c320d8e0..547de58e3a 100644
---- a/Cargo.toml
-+++ b/Cargo.toml
+--- Cargo.toml
++++ Cargo.toml
 @@ -230,6 +230,10 @@ unused_import_braces = "deny"
  unused_lifetimes = "deny"
  unused_qualifications = "deny"
@@ -28,8 +28,8 @@ index a5c320d8e0..547de58e3a 100644
  [lints.clippy]
 diff --git a/src/api/notifications.rs b/src/api/notifications.rs
 index 8c925e37bb..9a53b95ffc 100644
---- a/src/api/notifications.rs
-+++ b/src/api/notifications.rs
+--- src/api/notifications.rs
++++ src/api/notifications.rs
 @@ -101,6 +101,7 @@ impl Drop for WSAnonymousEntryMapGuard {
      }
  }
