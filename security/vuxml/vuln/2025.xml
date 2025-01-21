@@ -1,3 +1,45 @@
+  <vuln vid="704aa72a-d840-11ef-a205-901b0e9408dc">
+    <topic>go -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>go122</name>
+	<range><lt>1.22.11</lt></range>
+      </package>
+      <package>
+	<name>go123</name>
+	<range><lt>1.23.5</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Go project reports:</p>
+	<blockquote cite="https://go.dev/issue/71156">
+	  <p>crypto/x509: usage of IPv6 zone IDs can bypass URI name constraints</p>
+	  <p>A certificate with a URI which has a IPv6 address with a
+	  zone ID may incorrectly satisfy a URI name constraint that
+	  applies to the certificate chain.</p>
+	</blockquote>
+	<blockquote cite="https://go.dev/issue/70530">
+	  <p>net/http: sensitive headers incorrectly sent after cross-domain redirect</p>
+	  <p>The HTTP client drops sensitive headers after following a
+	  cross-domain redirect.  For example, a request to a.com/
+	  containing an Authorization header which is redirected to
+	  b.com/ will not send that header to b.com.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2024-45341</cvename>
+      <cvename>CVE-2024-45336</cvename>
+      <url>https://go.dev/issue/71156</url>
+      <url>https://go.dev/issue/70530</url>
+    </references>
+    <dates>
+      <discovery>2025-01-07</discovery>
+      <entry>2025-01-21</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="3161429b-3897-4593-84a0-b41ffbbfa36b">
     <topic>electron31 -- multiple vulnerabilities</topic>
     <affects>
