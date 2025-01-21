@@ -1,3 +1,4 @@
+CHANGELOG.md
 README.md
 bin/vsp
 bin/vspaero
@@ -8,6 +9,7 @@ bin/vsploads
 bin/vspscript
 bin/vspviewer
 help/AdvLink.html
+help/AttributeExplorer.html
 help/SetEdit.html
 help/github-pandoc.css
 help/images/AdvLink_example.png
