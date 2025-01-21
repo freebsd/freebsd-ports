@@ -1,5 +1,6 @@
 PORTNAME=	webkit
 DISTVERSION=	2.46.5
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	https://webkitgtk.org/releases/
 PKGNAMESUFFIX=	2-gtk_${FLAVOR}
@@ -124,9 +125,7 @@ GSTREAMER_CMAKE_BOOL=	ENABLE_VIDEO ENABLE_WEB_AUDIO
 
 WAYLAND_CMAKE_BOOL=	ENABLE_WAYLAND_TARGET
 WAYLAND_BUILD_DEPENDS=	wayland-protocols>=1.12:graphics/wayland-protocols
-WAYLAND_LIB_DEPENDS=	libwayland-egl.so:graphics/wayland \
-			libwpe-1.0.so:www/libwpe \
-			libWPEBackend-fdo-1.0.so:www/wpebackend-fdo
+WAYLAND_LIB_DEPENDS=	libwayland-egl.so:graphics/wayland
 
 .include <bsd.port.options.mk>
 
