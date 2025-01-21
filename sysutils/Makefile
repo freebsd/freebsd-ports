@@ -101,7 +101,6 @@
     SUBDIR += bareos-traymonitor
     SUBDIR += bareos20-client
     SUBDIR += bareos20-server
-    SUBDIR += bareos20-traymonitor
     SUBDIR += bareos21-client
     SUBDIR += bareos21-server
     SUBDIR += bareos22-client
