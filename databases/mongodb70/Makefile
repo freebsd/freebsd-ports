@@ -1,7 +1,7 @@
 PORTNAME=	mongodb
 DISTVERSIONPREFIX=	r
 DISTVERSION=	7.0.16
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases net
 MASTER_SITES=	https://hg.mozilla.org/mozilla-central/raw-rev/:patches
 PKGNAMESUFFIX=	${DISTVERSION:R:S/.//}
@@ -32,7 +32,6 @@ BUILD_DEPENDS=	${PY_SETUPTOOLS} \
 BUILD_DEPENDS+=	gm4:devel/m4 \
 		gsed:textproc/gsed
 LIB_DEPENDS=	libcurl.so:ftp/curl \
-		libpcre2-8.so:devel/pcre2 \
 		libsnappy.so:archivers/snappy \
 		libstemmer.so:textproc/snowballstemmer \
 		libunwind.so:devel/libunwind \
@@ -63,7 +62,6 @@ MAKE_ARGS=	--allocator=system \
 		--runtime-hardening=on \
 		--ssl \
 		--use-system-libunwind \
-		--use-system-pcre2 \
 		--use-system-snappy \
 		--use-system-stemmer \
 		--use-system-yaml \
@@ -78,8 +76,7 @@ CFLAGS+=	-DBOOST_NO_CXX98_FUNCTION_BASE
 
 CONFLICTS_INSTALL=	mongodb[0-9][0-9]
 
-EXTRACT_AFTER_ARGS=	--exclude src/third_party/pcre2 \
-			--exclude src/third_party/snappy-* \
+EXTRACT_AFTER_ARGS=	--exclude src/third_party/snappy-* \
 			--exclude src/third_party/libstemmer_c \
 			--exclude src/third_party/unwind \
 			--exclude src/third_party/yaml-cpp \
