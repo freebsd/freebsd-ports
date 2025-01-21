@@ -1,5 +1,5 @@
 PORTNAME=	ibus-m17n
-DISTVERSION=	1.4.34
+DISTVERSION=	1.4.35
 CATEGORIES=	textproc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -11,8 +11,6 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libibus-1.0.so:textproc/ibus \
 		libm17n.so:devel/m17n-lib \
-		libfreetype.so:print/freetype2 \
-		libfontconfig.so:x11-fonts/fontconfig \
 		libharfbuzz.so:print/harfbuzz
 RUN_DEPENDS=	ibus-daemon:textproc/ibus
 

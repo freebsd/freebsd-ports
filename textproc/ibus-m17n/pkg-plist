@@ -38,4 +38,4 @@ share/icons/hicolor/64x64/apps/ibus-m17n.png
 %%NLS%%share/locale/uk/LC_MESSAGES/ibus-m17n.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/ibus-m17n.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/ibus-m17n.mo
-share/metainfo/m17n.appdata.xml
+share/metainfo/org.freedesktop.ibus.engine.m17n.metainfo.xml
