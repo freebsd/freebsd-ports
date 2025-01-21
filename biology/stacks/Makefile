@@ -10,7 +10,12 @@ WWW=		https://catchenlab.life.illinois.edu/stacks/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		compiler:c++11-lang gmake python shebangfix
+USES=		gmake python shebangfix
+.if !exists(/usr/include/omp.h)
+USES+=	compiler:gcc-c++11-lib
+.else
+USES+=	compiler:c++11-lang
+.endif
 
 SHEBANG_FILES=	scripts/*
 
