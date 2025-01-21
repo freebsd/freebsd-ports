@@ -1,5 +1,3 @@
-TIMESTAMP = 1733903040
-SHA256 (ColinIanKing-stress-ng-V0.18.04_GH0.tar.gz) = c76cf067e582fb8a066d47207bbccc6d0d4175ba700b5d122909132d79e7f6ea
-SIZE (ColinIanKing-stress-ng-V0.18.04_GH0.tar.gz) = 6649901
-SHA256 (ef5575c.patch) = a784bc14ab66e14c4af72f7367354bc7e9d9d2cae6a4f4b3759ad002ca95472c
-SIZE (ef5575c.patch) = 2941
+TIMESTAMP = 1737473350
+SHA256 (ColinIanKing-stress-ng-V0.18.09_GH0.tar.gz) = 0694f2c24eb5d839fe11f41adc2c0ea31bb7e9c1a53316fc251847d1d55f6344
+SIZE (ColinIanKing-stress-ng-V0.18.09_GH0.tar.gz) = 6710486

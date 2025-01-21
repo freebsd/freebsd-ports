@@ -1,15 +1,12 @@
 PORTNAME=	stress-ng
 DISTVERSIONPREFIX=	V
-DISTVERSION=	0.18.04
-PORTREVISION=	1
+DISTVERSION=	0.18.09
+PORTREVISION=	0
 CATEGORIES=	benchmarks
 
 MAINTAINER=	pizzamig@FreeBSD.org
 COMMENT=	Stress test benchmarks
 WWW=		https://github.com/ColinIanKing/stress-ng
-
-PATCH_SITES=	${WWW}/commit/
-PATCHFILES=	ef5575c.patch:-p1
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
