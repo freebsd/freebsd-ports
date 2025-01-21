@@ -4,7 +4,7 @@ DISTVERSION=	1.0.6
 PORTREVISION=	8
 CATEGORIES=	benchmarks
 
-MAINTAINER=	dutra@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	High-performance load testing tool
 WWW=		https://github.com/ddosify/ddosify
 
