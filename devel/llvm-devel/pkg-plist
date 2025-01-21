@@ -1684,7 +1684,6 @@ llvm-devel/bin/verify-uselistorder
 %%FLANG%%llvm-devel/include/flang/Lower/Support/Verifier.h
 %%FLANG%%llvm-devel/include/flang/Lower/SymbolMap.h
 %%FLANG%%llvm-devel/include/flang/Lower/VectorSubscripts.h
-%%FLANG%%%%OPENMP%%llvm-devel/include/flang/OpenMP/omp_lib.h
 %%FLANG%%llvm-devel/include/flang/Optimizer/Analysis/AliasAnalysis.h
 %%FLANG%%llvm-devel/include/flang/Optimizer/Analysis/TBAAForest.h
 %%FLANG%%llvm-devel/include/flang/Optimizer/Builder/BoxValue.h
@@ -1920,9 +1919,8 @@ llvm-devel/bin/verify-uselistorder
 %%FLANG%%llvm-devel/include/flang/iso_fortran_env.mod
 %%FLANG%%llvm-devel/include/flang/iso_fortran_env_impl.mod
 %%FLANG%%llvm-devel/include/flang/mma.mod
-%%FLANG%%%%OPENMP%%llvm-devel/include/flang/omp_lib.f18.mod
+%%FLANG%%%%OPENMP%%llvm-devel/include/flang/omp_lib.h
 %%FLANG%%%%OPENMP%%llvm-devel/include/flang/omp_lib.mod
-%%FLANG%%%%OPENMP%%llvm-devel/include/flang/omp_lib_kinds.f18.mod
 %%FLANG%%%%OPENMP%%llvm-devel/include/flang/omp_lib_kinds.mod
 %%LLD%%llvm-devel/include/lld/Common/Args.h
 %%LLD%%llvm-devel/include/lld/Common/Arrays.h

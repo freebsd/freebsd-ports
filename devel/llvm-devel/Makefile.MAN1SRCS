@@ -66,8 +66,7 @@ LIT_MAN1SRCS= \
 	lit.1 \
 	FileCheck.1
 
-OPENMP_MAN1SRCS= \
-	llvmopenmp.1
+OPENMP_MAN1SRCS=
 
 POLLY_MAN1SRCS= \
 	polly.1
