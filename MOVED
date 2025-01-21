@@ -4031,3 +4031,4 @@ net/libproxy-python||2025-01-19|Completely rewritten, plugins now built directly
 net/libproxy-webkit3||2025-01-19|Completely rewritten, plugins now built directly into the library
 www/webkit2-gtk3|www/webkit2-gtk@40|2025-01-20|Flavoured
 www/webkit2-gtk4|www/webkit2-gtk@60|2025-01-20|Flavoured
+sysutils/bareos21-traymonitor||2025-01-21|Has expired: not supported upstream
