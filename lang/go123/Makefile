@@ -1,4 +1,4 @@
-DISTVERSION=	1.23.3
+DISTVERSION=	1.23.5
 # Always set PORTREVISION explicitly as otherwise they are inherited from lang/go-devel
 MASTER_SITES=	https://golang.org/dl/ \
 		https://github.com/dmgk/go-bootstrap/releases/download/${BOOTSTRAP_TAG}/:bootstrap \
