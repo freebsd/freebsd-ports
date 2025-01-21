@@ -70,6 +70,7 @@ lib/cmake/hoomd/hoomd-targets.cmake
 %%PYTHON_SITELIBDIR%%/hoomd/hpmc/pytest/test_kt.py
 %%PYTHON_SITELIBDIR%%/hoomd/hpmc/pytest/test_move_size_tuner.py
 %%PYTHON_SITELIBDIR%%/hoomd/hpmc/pytest/test_muvt.py
+%%PYTHON_SITELIBDIR%%/hoomd/hpmc/pytest/test_nec.py
 %%PYTHON_SITELIBDIR%%/hoomd/hpmc/pytest/test_pair_angular_step.py
 %%PYTHON_SITELIBDIR%%/hoomd/hpmc/pytest/test_pair_expanded_gaussian.py
 %%PYTHON_SITELIBDIR%%/hoomd/hpmc/pytest/test_pair_lennard_jones.py
