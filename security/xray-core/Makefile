@@ -1,6 +1,7 @@
 PORTNAME=	xray-core
 DISTVERSIONPREFIX=	v
 DISTVERSION=	24.11.21
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	https://github.com/v2fly/geoip/releases/download/202411210054/:geoip \
 		https://github.com/v2fly/domain-list-community/releases/download/20241112092643/:geosite
