@@ -15,6 +15,7 @@ ONLY_FOR_ARCHS=	aarch64 amd64 i386 powerpc64 powerpc64le
 # On FreeBSD 14 and 15 the i386 build fails with a segfault in java during the
 # buildtools_create_symbols_javac__the.COMPILE_CREATE_SYMBOLS_batch build step.
 #
+BROKEN_FreeBSD_13_i386=	Build failed for target 'images' in configuration 'bsd-x86-server-release'
 BROKEN_FreeBSD_14_i386=	Build failed for target 'images' in configuration 'bsd-x86-server-release'
 BROKEN_FreeBSD_15_i386=	Build failed for target 'images' in configuration 'bsd-x86-server-release'
 
