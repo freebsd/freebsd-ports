@@ -1,6 +1,6 @@
 PORTNAME=	freerdp
 DISTVERSION=	3.10.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net comms
 MASTER_SITES=	https://pub.freerdp.com/releases/ \
 		https://github.com/FreeRDP/FreeRDP/releases/download/${DISTVERSION}/
@@ -192,9 +192,9 @@ WEBENGINE_USE_QT=	core declarative gui location network printsupport \
 WEBENGINE_CMAKE_BOOL=	WITH_WEBVIEW_QT
 WEBENGINE_CMAKE_ON=	-DWITH_WEBVIEW:BOOL=ON
 
-WEBKIT_LIB_DEPENDS_=	libsoup-2.4.so:devel/libsoup \
+WEBKIT_LIB_DEPENDS=	libsoup-2.4.so:devel/libsoup \
 			libharfbuzz.so:print/harfbuzz \
-			libwebkit2gtk-4.0.so:www/webkit2-gtk3
+			libwebkit2gtk-4.0.so:www/webkit2-gtk@40
 WEBKIT_USES_=		gettext gnome
 WEBKIT_USE_GNOME=	atk cairo gdkpixbuf2 glib20 gtk30 pango
 WEBKIT_CMAKE_ON=	-DWITH_WEBVIEW:BOOL=ON
