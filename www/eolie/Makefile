@@ -1,6 +1,6 @@
 PORTNAME=	eolie
 PORTVERSION=	0.9.101
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	www gnome
 MASTER_SITES=	https://adishatz.org/eolie/
 

@@ -1,6 +1,6 @@
 PORTNAME=	birdfont
 DISTVERSION=	2.33.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics x11-fonts
 MASTER_SITES=	https://birdfont.org/releases/
 
