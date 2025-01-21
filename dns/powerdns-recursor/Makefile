@@ -13,8 +13,6 @@ WWW=		https://www.PowerDNS.com/recursor.html
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN_armv6=	fails to compile: use of overloaded operator << is ambiguous
-BROKEN_armv7=	fails to compile: use of overloaded operator << is ambiguous
 NOT_FOR_ARCHS=	i386
 NOT_FOR_ARCHS_REASON=	archs with 32-bits time_t are no longer supported by upstream
 
