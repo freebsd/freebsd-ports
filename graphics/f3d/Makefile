@@ -1,11 +1,15 @@
 PORTNAME=	f3d
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.5.1
+DISTVERSION=	3.0.0
 CATEGORIES=	graphics
+
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES+=	af299dfc670160f01886461b5904797f0aa67cb1.patch:-p1 # https://github.com/f3d-app/f3d/pull/1936
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Fast and minimalist 3D viewer
-WWW=		https://f3d.app/
+WWW=		https://f3d.app/ \
+		https://github.com/f3d-app/f3d
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
@@ -29,6 +33,7 @@ USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	f3d-app
 
+CMAKE_ON=	F3D_LINUX_INSTALL_DEFAULT_CONFIGURATION_FILE_IN_PREFIX
 CMAKE_OFF=	F3D_STRICT_BUILD # disable -Werror
 CMAKE_OFF+=	F3D_LINUX_APPLICATION_LINK_FILESYSTEM
 
