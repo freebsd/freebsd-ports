@@ -36,7 +36,7 @@ LDFLAGS+=	-lgcc
 PORTSCOUT=	ignore:1
 
 OPTIONS_DEFINE=		AUDIT DISABLE_AUTH DISABLE_ROOT_SUDO DOCS EXAMPLES \
-			INSULTS LDAP NLS NOARGS_SHELL OPIE PAM PYTHON SSL SSSD2
+			INSULTS LDAP NLS NOARGS_SHELL OPIE PAM PYTHON SSL
 OPTIONS_DEFAULT=	AUDIT PAM SSL
 OPTIONS_RADIO=		KERBEROS
 OPTIONS_RADIO_KERBEROS=	GSSAPI_BASE GSSAPI_HEIMDAL GSSAPI_MIT
@@ -51,7 +51,6 @@ NOARGS_SHELL_DESC=	Run a shell if no arguments are given
 OPIE_DESC=		Enable one-time passwords (no PAM support)
 PYTHON_DESC=		Enable python plugin support
 SSL_DESC=		Use OpenSSL TLS and SHA2 functions
-SSSD2_DESC=		Enable SSSD2 backend support
 
 AUDIT_CONFIGURE_WITH=	bsm-audit
 
@@ -91,11 +90,9 @@ SSL_USES=		ssl
 SSL_CONFIGURE_ON=	--enable-openssl=${OPENSSLBASE}
 
 .if ${FLAVOR:U} == sssd
-OPTIONS_DEFAULT+=	SSSD2
+RUN_DEPENDS+=		sssd:security/sssd2
+CONFIGURE_ARGS+=	--with-sssd
 .endif
-
-SSSD2_RUN_DEPENDS=	sssd:security/sssd2
-SSSD2_CONFIGURE_ON=	--with-sssd
 
 LOGFAC?=		authpriv
 SUDO_LDAP_CONF?=	ldap.conf
