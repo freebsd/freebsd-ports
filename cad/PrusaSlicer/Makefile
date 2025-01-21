@@ -43,7 +43,7 @@ LIB_DEPENDS+=	libbgcode_convert.so:cad/libbgcode \
 		libwayland-egl.so:graphics/wayland \
 		libwebkit2gtk-4.0.so:www/webkit2-gtk@40 \
 		libsoup-2.4.so:devel/libsoup \
-		libjavascriptcoregtk-4.0.so:www/webkit2-gtk3
+		libjavascriptcoregtk-4.0.so:www/webkit2-gtk@40
 
 USES=		cmake cpe desktop-file-utils eigen:3 gettext gl gnome iconv \
 		jpeg pkgconfig xorg ssl tcl tk
