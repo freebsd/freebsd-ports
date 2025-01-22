@@ -1,5 +1,4 @@
 include/parallel_hashmap/btree.h
-include/parallel_hashmap/conanfile.py
 include/parallel_hashmap/meminfo.h
 include/parallel_hashmap/phmap.h
 include/parallel_hashmap/phmap_base.h
