@@ -10,6 +10,9 @@ WWW=		https://github.com/mjg59/shim
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
+DEPRECATED=			upstream has been inactive for 10 years and does not build with GCC 14
+EXPIRATION_DATE=	2025-02-22
+
 BUILD_DEPENDS=	${LOCALBASE}/lib/libgnuefi.a:devel/gnu-efi \
 		bash:shells/bash
 
