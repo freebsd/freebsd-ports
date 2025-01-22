@@ -102,7 +102,7 @@ VAR_TO_SUBMAKE_NOEXPAND=	CONFIGURE_ENV MAKE_ENV
 #.endif
 
 .if ${OPSYS} == FreeBSD
-USE_GCC=	yes
+USE_GCC=	13
 .endif
 
 post-extract:
