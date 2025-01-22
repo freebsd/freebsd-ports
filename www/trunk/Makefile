@@ -1,6 +1,6 @@
 PORTNAME=	trunk
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.21.6
+DISTVERSION=	0.21.7
 CATEGORIES=	www devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -44,8 +44,8 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		autocfg-1.4.0 \
 		aws-lc-rs-1.12.1 \
 		aws-lc-sys-0.25.0 \
-		axum-0.8.1 \
-		axum-core-0.5.0 \
+		axum-0.8.2 \
+		axum-core-0.5.1 \
 		axum-server-0.7.1 \
 		backtrace-0.3.74 \
 		base64-0.22.1 \
@@ -74,8 +74,8 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		chrono-0.4.39 \
 		cipher-0.4.4 \
 		clang-sys-1.8.1 \
-		clap-4.5.26 \
-		clap_builder-4.5.26 \
+		clap-4.5.27 \
+		clap_builder-4.5.27 \
 		clap_derive-4.5.24 \
 		clap_lex-0.7.4 \
 		cmake-0.1.52 \
@@ -440,7 +440,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		utf16_iter-1.0.5 \
 		utf8_iter-1.0.4 \
 		utf8parse-0.2.2 \
-		uuid-1.12.0 \
+		uuid-1.12.1 \
 		valuable-0.1.1 \
 		vcpkg-0.2.15 \
 		version_check-0.9.5 \
