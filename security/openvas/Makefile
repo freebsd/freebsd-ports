@@ -1,5 +1,6 @@
 PORTNAME=	openvas
 DISTVERSION=	23.14.0
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	security
 
@@ -28,7 +29,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}impacket>=0:net/py-impacket@${PY_FLAVOR} \
 		rsync:net/rsync \
 		nmap:security/nmap
 
-USES=		bison cmake gnome gssapi:heimdal pkgconfig python ssl
+USES=		bison cmake gnome gssapi:mit pkgconfig python ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	greenbone
 GH_PROJECT=	${PORTNAME}-scanner
