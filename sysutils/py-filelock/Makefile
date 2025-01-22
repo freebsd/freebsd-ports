@@ -1,5 +1,5 @@
 PORTNAME=	filelock
-DISTVERSION=	3.16.1
+DISTVERSION=	3.17.0
 CATEGORIES=	sysutils python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -28,5 +28,7 @@ USE_PYTHON=	pep517 autoplist pytest
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 
 NO_ARCH=	yes
+
+# tests as of 3.17.0: 135 passed, 20 skipped, 1 warning in 54.52s
 
 .include <bsd.port.mk>
