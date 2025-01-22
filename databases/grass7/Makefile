@@ -20,6 +20,9 @@ MAINTAINER=	lbartoletti@FreeBSD.org
 COMMENT=	Open source Geographical Information System (GIS)
 WWW=		https://grass.osgeo.org/
 
+DEPRECATED=	Please use databases/grass8
+EXPIRATION_DATE=	2025-03-31
+
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/GPL.TXT
 
