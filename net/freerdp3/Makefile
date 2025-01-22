@@ -1,6 +1,6 @@
 PORTNAME=	freerdp
 DISTVERSION=	3.10.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net comms
 MASTER_SITES=	https://pub.freerdp.com/releases/ \
 		https://github.com/FreeRDP/FreeRDP/releases/download/${DISTVERSION}/
@@ -186,16 +186,16 @@ WAYLAND_LIB_DEPENDS=	libwayland-client.so:graphics/wayland \
 WAYLAND_RUN_DEPENDS=	wayland-scanner:graphics/wayland
 WAYLAND_CMAKE_BOOL=	WITH_WAYLAND
 
-WEBENGINE_USES_=	qt:5
+_WEBENGINE_USES=	qt:5
 WEBENGINE_USE_QT=	core declarative gui location network printsupport \
 			webchannel webengine widgets buildtools:build qmake:build
 WEBENGINE_CMAKE_BOOL=	WITH_WEBVIEW_QT
 WEBENGINE_CMAKE_ON=	-DWITH_WEBVIEW:BOOL=ON
 
-WEBKIT_LIB_DEPENDS=	libsoup-2.4.so:devel/libsoup \
+_WEBKIT_LIB_DEPENDS=	libsoup-2.4.so:devel/libsoup \
 			libharfbuzz.so:print/harfbuzz \
 			libwebkit2gtk-4.0.so:www/webkit2-gtk@40
-WEBKIT_USES_=		gettext gnome
+_WEBKIT_USES=		gettext gnome
 WEBKIT_USE_GNOME=	atk cairo gdkpixbuf2 glib20 gtk30 pango
 WEBKIT_CMAKE_ON=	-DWITH_WEBVIEW:BOOL=ON
 
@@ -215,11 +215,11 @@ X11_CMAKE_OFF=		-DWITH_X11:BOOL=OFF -DWITH_XKBFILE:BOOL=OFF
 
 .if ${PORT_OPTIONS:MAAD}
 .  if ${PORT_OPTIONS:MWEBENGINE}
-USES+=		${WEBENGINE_USES_}
+USES+=		${_WEBENGINE_USES}
 USE_QT+=	${WEBENGINE_USE_QT}
 .  elif ${PORT_OPTIONS:MWEBKIT}
-LIB_DEPENDS+=	${WEBKIT_LIB_DEPENDS_}
-USES+=		${WEBKIT_USES_}
+LIB_DEPENDS+=	${_WEBKIT_LIB_DEPENDS}
+USES+=		${_WEBKIT_USES}
 USE_GNOME+=	${WEBKIT_USE_GNOME}
 .  else
 CMAKE_OFF+=	WITH_WEBVIEW
