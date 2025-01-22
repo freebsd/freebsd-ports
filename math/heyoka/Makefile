@@ -32,11 +32,23 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	bluescarni
 
 CMAKE_ON=		HEYOKA_WITH_MPPP HEYOKA_WITH_SLEEF
-CMAKE_ARGS=		-DFREEBSD_LLVM_VERSION=${LLVM_VERSION}
 CMAKE_TESTING_ON=	HEYOKA_BUILD_TESTS # 1 test fails, see https://github.com/bluescarni/heyoka/issues/338
 
 # 2 tests fail:
 # * https://github.com/bluescarni/heyoka/issues/429
 # * https://github.com/bluescarni/heyoka/issues/430
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+# LLVM 18 and later use 1 for their minor version, while 17 and earlier use 0.
+# CMake's find_package() needs the minor version set correctly, otherwise it
+# will not be able to find the LLVM package.
+.if ${LLVM_VERSION} >= 18
+LLVM_VERSION_MINOR=     1
+.else
+LLVM_VERSION_MINOR=     0
+.endif
+
+CMAKE_ARGS+=		-DFREEBSD_LLVM_VERSION=${LLVM_VERSION}.${LLVM_VERSION_MINOR}
+
+.include <bsd.port.post.mk>
