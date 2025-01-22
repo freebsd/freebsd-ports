@@ -1,6 +1,6 @@
 PORTNAME=	rapidfuzz-cpp
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.3.0
+DISTVERSION=	3.3.1
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -21,6 +21,6 @@ GH_ACCOUNT=	rapidfuzz
 
 NO_ARCH=	yes
 
-# tests as of 3.3.0: 100% tests passed, 0 tests failed out of 10
+# tests as of 3.3.1: 100% tests passed, 0 tests failed out of 10
 
 .include <bsd.port.mk>
