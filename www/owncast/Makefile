@@ -1,7 +1,6 @@
 PORTNAME=	owncast
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.1.2
-PORTREVISION=	5
+DISTVERSION=	0.2.1
 CATEGORIES=	www
 DIST_SUBDIR=	${PORTNAME}
 
@@ -14,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	ffmpeg:multimedia/ffmpeg
 
-USES=		cpe go:modules
+USES=		cpe go:1.23,modules
 USE_RC_SUBR=	owncast
 
 CPE_VENDOR=	owncast_project
