@@ -1,14 +1,10 @@
 PORTNAME=	wxPython
-PORTVERSION=	4.2.0
-PORTREVISION=	2
+PORTVERSION=	4.2.2
 CATEGORIES=	x11-toolkits python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 PKGNAMESUFFIX=	42
 DIST_SUBDIR=	python
-
-PATCH_SITES=	https://github.com/wxWidgets/Phoenix/commit/
-PATCHFILES=	2e9169effa9abf14f34f8436a791b8829eea7774.patch:-p1
 
 MAINTAINER=	desktop@FreeBSD.org
 COMMENT=	GUI toolkit for the Python programming language
