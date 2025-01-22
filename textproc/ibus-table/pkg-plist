@@ -68,4 +68,4 @@ share/icons/hicolor/scalable/apps/ibus-table.svg
 %%NLS%%share/locale/zh_HK/LC_MESSAGES/ibus-table.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/ibus-table.mo
 share/man/man1/ibus-table-createdb.1.gz
-%%NLS%%share/metainfo/ibus-table.appdata.xml
+share/metainfo/org.freedesktop.ibus.engine.table.metainfo.xml
