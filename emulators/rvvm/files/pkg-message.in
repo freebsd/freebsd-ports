@@ -1,0 +1,11 @@
+RVVM has been installed.
+
+To execute a disk image, run
+
+    rvvm %%DATADIR%%/fw_payload.bin [flags] -i $disk.img
+
+To execute a custom kernel payload, run
+
+    rvvm %%DATADIR%%/fw_jump.bin [flags] -k $kernel.bin
+
+For further details, execute rvvm --help.

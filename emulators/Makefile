@@ -128,6 +128,7 @@
     SUBDIR += riscv-isa-sim
     SUBDIR += rpcs3
     SUBDIR += rubygem-fission
+    SUBDIR += rvvm
     SUBDIR += sameboy
     SUBDIR += simh
     SUBDIR += simh-hp2100
