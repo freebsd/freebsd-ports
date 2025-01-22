@@ -18,7 +18,7 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libgnuefi.a:devel/gnu-efi \
 
 USES=		compiler gmake shebangfix
 USE_CSTD=	gnu99
-USE_GCC=	yes
+USE_GCC=	13
 
 SHEBANG_FILES=	make-certs
 
