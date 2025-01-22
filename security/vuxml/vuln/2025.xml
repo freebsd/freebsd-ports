@@ -1,3 +1,32 @@
+  <vuln vid="7d17676d-4828-4a43-85d6-1ee14362de6e">
+    <topic>electron32 -- Type Confusion in V8</topic>
+    <affects>
+      <package>
+	<name>electron32</name>
+	<range><lt>32.2.8</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Electron developers report:</p>
+	<blockquote cite="https://github.com/electron/electron/releases/tag/v32.2.8">
+	  <p>This update fixes the following vulnerability:</p>
+	  <ul>
+	    <li>Security: backported fix for CVE-2024-12053.</li>
+	  </ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2024-12053</cvename>
+      <url>https://github.com/advisories/GHSA-wvx7-72hc-rp32</url>
+    </references>
+    <dates>
+      <discovery>2025-01-06</discovery>
+      <entry>2025-01-22</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="704aa72a-d840-11ef-a205-901b0e9408dc">
     <topic>go -- multiple vulnerabilities</topic>
     <affects>
