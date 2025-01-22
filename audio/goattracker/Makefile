@@ -1,5 +1,5 @@
 PORTNAME=	goattracker
-PORTVERSION=	2.76
+PORTVERSION=	2.77
 CATEGORIES=	audio
 MASTER_SITES=	SF/goattracker2/GoatTracker%202/${PORTVERSION} \
 		LOCAL/ehaupt
