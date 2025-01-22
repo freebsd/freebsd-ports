@@ -1,5 +1,5 @@
 PORTNAME=	pango
-PORTVERSION=	1.56.0
+PORTVERSION=	1.56.1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
@@ -24,31 +24,28 @@ USE_LDCONFIG=	yes
 
 PORTSCOUT=	limit:^1\.[^9]
 
-VERSION=	1.8.0
-LIBVERSION=	0.5600.0
-PLIST_SUB=	LIBVERSION=${LIBVERSION} \
-		VERSION=${VERSION}
+PLIST_SUB=	LIBVERSION=0.${PORTVERSION:R:E}00.${PORTVERSION:E}
 
-OPTIONS_DEFINE=	X11 DOCS MANPAGES THAI
-OPTIONS_DEFAULT=X11 MANPAGES THAI
-OPTIONS_SUB=	yes
-
-THAI_DESC=	Thai language support via libThai
+OPTIONS_DEFINE=		DOCS LANG_TH MANPAGES X11
+OPTIONS_DEFAULT=	LANG_TH MANPAGES X11
+OPTIONS_SUB=		yes
 
 DOCS_BUILD_DEPENDS=	gi-docgen:textproc/py-gi-docgen \
 			rst2man:textproc/py-docutils
 DOCS_MESON_TRUE=	documentation
 
+LANG_TH_LIB_DEPENDS=	libthai.so:devel/libthai
+LANG_TH_MESON_ENABLED=	libthai
+
 MANPAGES_MESON_TRUE=	man-pages
 MANPAGES_IMPLIES=	DOCS
 
-THAI_LIB_DEPENDS=	libthai.so:devel/libthai
-THAI_MESON_ENABLED=	libthai
-
-X11_USES=	xorg
-X11_USE=	XORG=x11,xft,xrender
+X11_USES=		xorg
+X11_USE=		XORG=x11,xft,xrender
 X11_MESON_ENABLED=	xft
 
-TESTING_UNSAFE=	1 out of 24 tests fail
+pre-test:
+# Don't test backup files. Silly Meson.
+	@${FIND} ${WRKSRC}/tests/fontsets/ -name "*.orig" -delete
 
 .include <bsd.port.mk>
