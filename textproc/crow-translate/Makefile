@@ -15,12 +15,11 @@ LICENSE_FILE_CC-BY-SA-4.0=	${WRKSRC}/LICENSES/CC-BY-SA-4.0.txt
 LICENSE_FILE_CC0-1.0=	${WRKSRC}/LICENSES/CC0-1.0.txt
 LICENSE_FILE_GPLv3+ =	${WRKSRC}/LICENSES/GPL-3.0-or-later.txt
 
-BUILD_DEPENDS=	${LOCALBASE}/share/ECM/cmake/ECMConfig.cmake:devel/kf6-extra-cmake-modules
 LIB_DEPENDS=	libleptonica.so:graphics/leptonica \
 		libtesseract.so:graphics/tesseract
 
 USES=		cmake desktop-file-utils gstreamer kde:5 qt:5 xorg
-USE_KDE=	wayland
+USE_KDE=	wayland ecm:build
 USE_QT=		concurrent core dbus gui multimedia network svg widgets \
 		x11extras buildtools:build linguisttools:build qmake:build
 USE_XORG=	ice sm x11 xcb xext
