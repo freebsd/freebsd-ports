@@ -4043,3 +4043,4 @@ www/mediawiki141||2025-01-22|Has expired: EOL upstream
 audio/plasma5-oxygen-sounds|audio/plasma6-oxygen-sounds|2025-01-23|Superseded by its Plasma 6 counterpart
 devel/kf5-extra-cmake-modules|devel/kf6-extra-cmake-modules|2025-01-23|Superseded by its KF6 counterpart
 devel/kf5-kapidox|devel/kf6-kapidox|2025-01-23|Superseded by its KF6 counterpart
+devel/rubygem-strong_migrations61|devel/rubygem-strong_migrations|2025-01-23|Has expired: Ruby on Rails 6.1.x reached EOL on 2024-10-01
