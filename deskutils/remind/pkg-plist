@@ -385,6 +385,17 @@ share/man/man1/remind.1.gz
 %%DATADIR%%/holidays/kw.rem
 %%DATADIR%%/holidays/kz.rem
 %%DATADIR%%/holidays/la.rem
+%%DATADIR%%/holidays/lgbtq.rem
+%%DATADIR%%/holidays/lgbtq/au.rem
+%%DATADIR%%/holidays/lgbtq/br.rem
+%%DATADIR%%/holidays/lgbtq/ca.rem
+%%DATADIR%%/holidays/lgbtq/cl.rem
+%%DATADIR%%/holidays/lgbtq/ie.rem
+%%DATADIR%%/holidays/lgbtq/in.rem
+%%DATADIR%%/holidays/lgbtq/nl.rem
+%%DATADIR%%/holidays/lgbtq/ua.rem
+%%DATADIR%%/holidays/lgbtq/uk.rem
+%%DATADIR%%/holidays/lgbtq/us.rem
 %%DATADIR%%/holidays/li.rem
 %%DATADIR%%/holidays/ls.rem
 %%DATADIR%%/holidays/lt.rem
