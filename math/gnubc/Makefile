@@ -1,11 +1,10 @@
 PORTNAME=	bc
-DISTVERSION=	1.07.1
-PORTREVISION=	3
+DISTVERSION=	1.08.1
 CATEGORIES=	math
 MASTER_SITES=	GNU
 PKGNAMEPREFIX=	gnu
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	wen@FreeBSD.org
 COMMENT=	GNU bc/dc calculator
 WWW=		https://www.gnu.org/software/bc/
 
