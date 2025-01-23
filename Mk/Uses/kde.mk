@@ -383,7 +383,8 @@ kde-activities-stats_LIB5=	libKF${_KDE_VERSION}ActivitiesStats.so
 kde-activities-stats_LIB6=	libPlasmaActivitiesStats.so
 kde-activities-stats_LIB=	${kde-activities-stats_LIB${_KDE_VERSION}}
 
-kde-apidox_PORT=		devel/kf${_KDE_VERSION}-kapidox
+# Use KApiDox tools from KDE Frameworks 6
+kde-apidox_PORT=		devel/kf6-kapidox
 kde-apidox_PATH=		${KDE_PREFIX}/bin/kapidox-generate
 kde-apidox_TYPE=		run
 
@@ -543,7 +544,8 @@ kde-notifications_LIB=		libKF${_KDE_VERSION}Notifications.so
 kde-notifyconfig_PORT=		devel/kf${_KDE_VERSION}-knotifyconfig
 kde-notifyconfig_LIB=		libKF${_KDE_VERSION}NotifyConfig.so
 
-kde-oxygen-sounds_PORT=		audio/plasma${_KDE_VERSION}-oxygen-sounds
+# Use the latest sounds from Plasma 6
+kde-oxygen-sounds_PORT=		audio/plasma6-oxygen-sounds
 kde-oxygen-sounds_PATH=		${KDE_PREFIX}/share/sounds/Oxygen-Sys-Log-In.ogg
 kde-oxygen-sounds_TYPE=		run
 
