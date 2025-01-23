@@ -1,6 +1,6 @@
---- src/UdpDataProtocol.cpp.orig	2024-09-14 06:44:01 UTC
+--- src/UdpDataProtocol.cpp.orig	2025-01-21 17:04:33 UTC
 +++ src/UdpDataProtocol.cpp
-@@ -383,12 +383,14 @@ bool UdpDataProtocol::setSocketQos(socket_type& sock_f
+@@ -388,12 +388,14 @@ bool UdpDataProtocol::setSocketQos(socket_type& sock_f
      }
  
      // Set 802.1q QoS priority
