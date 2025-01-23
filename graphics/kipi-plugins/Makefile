@@ -9,6 +9,9 @@ WWW=		https://github.com/kde/kipi-plugins
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Unmaintained and no longer released by the KDE community
+EXPIRATION_DATE=	2025-03-31
+
 USES=		cmake compiler:c++11-lib gettext kde:5 pkgconfig \
 		qt:5 tar:xz xorg
 USE_KDE=	kio libkipi solid archive auth bookmarks codecs completion \
