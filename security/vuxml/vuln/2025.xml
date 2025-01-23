@@ -1,3 +1,38 @@
+  <vuln vid="2def27c7-7dd0-42cb-adf6-8e5a7afe4db3">
+    <topic>electron33 -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>electron33</name>
+	<range><lt>33.3.2</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Electron developers report:</p>
+	<blockquote cite="https://github.com/electron/electron/releases/tag/v33.3.2">
+	  <p>This update fixes the following vulnerabilities:</p>
+	  <ul>
+	    <li>Security: backported fix for CVE-2025-0434.</li>
+	    <li>Security: backported fix for CVE-2025-0436.</li>
+	    <li>Security: backported fix for CVE-2025-0437.</li>
+	  </ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-0434</cvename>
+      <url>https://github.com/advisories/GHSA-fpmx-pfpg-92xg</url>
+      <cvename>CVE-2025-0436</cvename>
+      <url>https://github.com/advisories/GHSA-ww3g-8h77-wr7v</url>
+      <cvename>CVE-2025-0437</cvename>
+      <url>https://github.com/advisories/GHSA-4353-vp82-4qq4</url>
+    </references>
+    <dates>
+      <discovery>2025-01-22</discovery>
+      <entry>2025-01-23</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="24c93a28-d95b-11ef-b6b2-2cf05da270f3">
     <topic>Gitlab -- Vulnerabilities</topic>
     <affects>
