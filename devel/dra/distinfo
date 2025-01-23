@@ -1,4 +1,4 @@
-TIMESTAMP = 1737002585
+TIMESTAMP = 1737615396
 SHA256 (rust/crates/adler2-2.0.0.crate) = 512761e0bb2578dd7380c6baaa0f4ce03e84f95e960231d1dec8bf4d7d6e2627
 SIZE (rust/crates/adler2-2.0.0.crate) = 13529
 SHA256 (rust/crates/aho-corasick-0.7.19.crate) = b4f55bd91a0978cbfd91c457a164bab8b4001c833b7f323132c0a4e1922dd44e
@@ -409,5 +409,5 @@ SHA256 (rust/crates/zip-2.2.2.crate) = ae9c1ea7b3a5e1f4b922ff856a129881167511563
 SIZE (rust/crates/zip-2.2.2.crate) = 108809
 SHA256 (rust/crates/zopfli-0.8.1.crate) = e5019f391bac5cf252e93bbcc53d039ffd62c7bfb7c150414d61369afe57e946
 SIZE (rust/crates/zopfli-0.8.1.crate) = 50972
-SHA256 (devmatteini-dra-0.7.1_GH0.tar.gz) = 6a607eeb65ed97703f746de228398ff560a812e7b6794eb654e96b5a64aacc1b
-SIZE (devmatteini-dra-0.7.1_GH0.tar.gz) = 581320
+SHA256 (devmatteini-dra-0.8.0_GH0.tar.gz) = 3ce5648614b10369e6b158596b17bad0c2411d02ea317dca4dd06b26712fe279
+SIZE (devmatteini-dra-0.8.0_GH0.tar.gz) = 582656
