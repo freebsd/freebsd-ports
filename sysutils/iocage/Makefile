@@ -1,7 +1,13 @@
 PORTNAME=	iocage
 PORTVERSION=	1.10
+PORTREVISION=	1
 CATEGORIES=	sysutils python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+
+# Pull in PR #58 to fix stopping jails that contain
+# dots in their hostuuid
+PATCH_SITES=    https://github.com/freebsd/iocage/commit/
+PATCHFILES=     c55e05aebb305b4013554ec80298113c50d1c74c.patch:-p1
 
 MAINTAINER=	grembo@FreeBSD.org
 COMMENT=	FreeBSD jail manager written in Python3
