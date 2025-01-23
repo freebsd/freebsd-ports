@@ -1,5 +1,6 @@
 PORTNAME=	calf
 DISTVERSION=	0.90.4
+PORTREVISION=	1
 CATEGORIES=	audio
 #MASTER_SITES=	http://calf-studio-gear.org/files/
 PKGNAMESUFFIX=	-lv2
@@ -19,7 +20,7 @@ LIB_DEPENDS=	libfluidsynth.so:audio/fluidsynth \
 		libjack.so:audio/jack \
 		libexpat.so:textproc/expat2
 
-USES=		autoreconf desktop-file-utils gmake gnome libtool localbase pkgconfig
+USES=		autoreconf compiler:c++11-lang desktop-file-utils gmake gnome libtool localbase pkgconfig
 USE_GNOME=	cairo gdkpixbuf2 gtk20
 USE_CXXSTD=	c++11
 USE_LDCONFIG=	yes
@@ -51,19 +52,9 @@ PORTDOCS=	*
 
 PORTSCOUT=		limit:^[0-9\.]*$$ # prevet tags like 'works'
 
-.include <bsd.port.options.mk>
-
-.if ${ARCH} == powerpc64le
-USES+=		compiler:gcc-c++11-lib
-.else
-USES+=		compiler:c++11-lang
-.endif
-
-.include <bsd.port.pre.mk>
-
 post-install: # fix absolute symbolic link to be relative
 	@${RM} ${STAGEDIR}${PREFIX}/lib/lv2/calf.lv2/calf.so
 	@${RLN} ${STAGEDIR}${PREFIX}/lib/calf/libcalf.so ${STAGEDIR}${PREFIX}/lib/lv2/calf.lv2/calf.so
 	@${RLN} ${STAGEDIR}${PREFIX}/lib/calf/libcalflv2gui.so ${STAGEDIR}${PREFIX}/lib/lv2/calf.lv2/calflv2gui.so
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
