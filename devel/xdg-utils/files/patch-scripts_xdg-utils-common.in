@@ -1,15 +1,16 @@
---- scripts/xdg-utils-common.in.orig	2019-01-08 19:02:17 UTC
+--- scripts/xdg-utils-common.in.orig	2024-02-06 01:55:07 UTC
 +++ scripts/xdg-utils-common.in
-@@ -304,12 +304,50 @@ detectDE()
-          XFCE)
-            DE=xfce
+@@ -305,6 +305,9 @@ detectDE()
+          LXQt)
+            DE=lxqt;
             ;;
 +         Lumina)
 +           DE=lumina
 +           ;;
-          X-Generic)
-            DE=generic
+          MATE)
+            DE=mate;
             ;;
+@@ -317,6 +320,44 @@ detectDE()
        esac
      fi
  
@@ -30,8 +31,14 @@
 +         KDE)
 +           DE=kde;
 +           ;;
++         LUMINA)
++           DE=lumina
++           ;;
 +         LXDE)
 +           DE=lxde;
++           ;;
++         LXQT)
++           DE=lxqt;
 +           ;;
 +         MATE)
 +           DE=mate;
@@ -39,24 +46,21 @@
 +         XFCE)
 +           DE=xfce
 +           ;;
-+         LUMINA)
-+           DE=lumina
-+           ;;
 +         X-Generic)
 +           DE=generic
 +           ;;
 +      esac
 +    fi
 +
-     if [ x"$DE" = x"" ]; then
+     # shellcheck disable=SC2153
+     if [ -z "$DE" ]; then
        # classic fallbacks
-       if [ x"$KDE_FULL_SESSION" != x"" ]; then DE=kde;
-@@ -319,6 +357,8 @@ detectDE()
+@@ -327,6 +368,8 @@ detectDE()
        elif xprop -root _DT_SAVE_MODE 2> /dev/null | grep ' = \"xfce4\"$' >/dev/null 2>&1; then DE=xfce;
        elif xprop -root 2> /dev/null | grep -i '^xfce_desktop_window' >/dev/null 2>&1; then DE=xfce
-       elif echo $DESKTOP | grep -q '^Enlightenment'; then DE=enlightenment;
+       elif echo "$DESKTOP" | grep -q '^Enlightenment'; then DE=enlightenment;
 +      #Simple fallback for non-XDG window managers if Lumina is installed in the normal place (no heavy runtime dependencies)
-+      elif [ -x "/usr/local/bin/lumina-open" ]; then DE=lumina;
-       elif [ x"$LXQT_SESSION_CONFIG" != x"" ]; then DE=lxqt;
++      elif [ -x "%%LOCALBASE%%/bin/lumina-open" ]; then DE=lumina;
+       elif [ -n "$LXQT_SESSION_CONFIG" ]; then DE=lxqt;
        fi
      fi
