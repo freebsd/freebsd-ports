@@ -1,17 +1,6 @@
 Revert https://github.com/RPCS3/rpcs3/commit/196617183870
 until textproc/pugixml >= 1.15 update
 
---- 3rdparty/CMakeLists.txt.orig	2025-01-22 19:47:07 UTC
-+++ 3rdparty/CMakeLists.txt
-@@ -44,7 +44,7 @@ if (USE_SYSTEM_PUGIXML)
- 
- # pugixml
- if (USE_SYSTEM_PUGIXML)
--	pkg_check_modules(PUGIXML REQUIRED IMPORTED_TARGET pugixml>=1.15)
-+	pkg_check_modules(PUGIXML REQUIRED IMPORTED_TARGET pugixml>=1.11)
- 	add_library(pugixml INTERFACE)
- 	target_link_libraries(pugixml INTERFACE PkgConfig::PUGIXML)
- else()
 --- Utilities/File.cpp.orig	2025-01-15 23:43:33 UTC
 +++ Utilities/File.cpp
 @@ -21,7 +21,7 @@ using namespace std::literals::string_literals;
