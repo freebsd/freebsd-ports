@@ -18,7 +18,6 @@ GH_ACCOUNT=	lh3
 PLIST_FILES=	bin/trimadap-mt
 
 CFLAGS_i386=	-msse2
-CFLAGS_powerpc64le=	-DNO_WARN_X86_INTRINSICS
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/trimadap-mt ${STAGEDIR}${PREFIX}/bin
