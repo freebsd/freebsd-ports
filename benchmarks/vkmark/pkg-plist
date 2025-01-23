@@ -1,4 +1,6 @@
 bin/vkmark
+lib/vkmark/display.so
+lib/vkmark/headless.so
 %%DRM%%lib/vkmark/kms.so
 %%WAYLAND%%lib/vkmark/wayland.so
 %%X11%%lib/vkmark/xcb.so
