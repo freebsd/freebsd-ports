@@ -164,6 +164,8 @@ share/man/man8/clamd.8.gz
 %%PORTDOCS%%%%DOCSDIR%%/html/sitemap.xml
 %%PORTDOCS%%%%DOCSDIR%%/html/theme-dawn.js
 %%PORTDOCS%%%%DOCSDIR%%/html/theme-tomorrow_night.js
+%%PORTDOCS%%%%DOCSDIR%%/html/toc.html
+%%PORTDOCS%%%%DOCSDIR%%/html/toc.js
 %%PORTDOCS%%%%DOCSDIR%%/html/tomorrow-night.css
 %%MILTER%%sbin/clamav-milter
 sbin/clamd
