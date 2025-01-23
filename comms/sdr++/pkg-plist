@@ -44,6 +44,7 @@ share/sdrpp/bandplans/general.json
 share/sdrpp/bandplans/germany-mobile-lte-bands.json
 share/sdrpp/bandplans/germany-mobile-networks.json
 share/sdrpp/bandplans/germany.json
+share/sdrpp/bandplans/ireland.json
 share/sdrpp/bandplans/italy.json
 share/sdrpp/bandplans/netherlands.json
 share/sdrpp/bandplans/qo-100.json

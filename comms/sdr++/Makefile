@@ -1,5 +1,5 @@
 PORTNAME=	sdr++
-DISTVERSION=	20241022 # rolling (nightly) release is the current release model (see README)
+DISTVERSION=	20250105 # rolling (nightly) release is the current release model (see README)
 CATEGORIES=	comms hamradio
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -21,7 +21,7 @@ USE_XORG=	x11
 USE_GITHUB=	yes
 GH_ACCOUNT=	AlexandreRouma
 GH_PROJECT=	SDRPlusPlus
-GH_TAGNAME=	3982db7
+GH_TAGNAME=	ea3675d
 
 PORTSCOUT=	ignore:1 # rolling release
 
@@ -55,6 +55,7 @@ BLADERF_LIB_DEPENDS=		libbladeRF.so:comms/bladerf
 FOBOS_DESC=			FobosSDR Source Module
 FOBOS_CMAKE_BOOL=		OPT_BUILD_FOBOSSDR_SOURCE
 FOBOS_LIB_DEPENDS=		libfobos.so:comms/libfobos
+FOBOS_BROKEN=			https://github.com/AlexandreRouma/SDRPlusPlus/issues/1572
 
 PLUTOSDR_DESC=			PlutoSDR Source Module
 PLUTOSDR_CMAKE_BOOL=		OPT_BUILD_PLUTOSDR_SOURCE
