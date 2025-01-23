@@ -5,7 +5,7 @@ CATEGORIES=	comms hamradio
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	RigExpert Fobos SDR API
-WWW=		https://github.com/AlexandreRouma/SDRPlusPlus
+WWW=		https://github.com/rigexpert/libfobos
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/LICENSE
