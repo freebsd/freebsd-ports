@@ -1,21 +1,7 @@
 bin/lms
 bin/lms-metadata
-bin/lms-recommendation
 @sample etc/lms.conf.sample
 etc/pam.d/lms
-lib/liblmsartwork.so
-lib/liblmsauth.so
-lib/liblmsav.so
-lib/liblmscore.so
-lib/liblmsdatabase.so
-lib/liblmsfeedback.so
-lib/liblmsimage.so
-lib/liblmsmetadata.so
-lib/liblmsrecommendation.so
-lib/liblmsscanner.so
-lib/liblmsscrobbling.so
-lib/liblmssom.so
-lib/liblmssubsonic.so
 %%DATADIR%%/approot/admin-initwizard.xml
 %%DATADIR%%/approot/admin-medialibraries.xml
 %%DATADIR%%/approot/admin-medialibrary.xml
