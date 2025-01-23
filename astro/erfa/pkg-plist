@@ -5,5 +5,5 @@ include/erfam.h
 lib/liberfa.a
 lib/liberfa.so
 lib/liberfa.so.1
-lib/liberfa.so.1.8.0
+lib/liberfa.so.1.8.1
 libdata/pkgconfig/erfa.pc

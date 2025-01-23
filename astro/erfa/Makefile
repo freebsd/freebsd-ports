@@ -1,5 +1,5 @@
 PORTNAME=	erfa
-DISTVERSION=	2.0.0
+DISTVERSION=	2.0.1
 CATEGORIES=	astro
 MASTER_SITES=	https://github.com/liberfa/erfa/releases/download/v${DISTVERSION}/
 
@@ -10,7 +10,7 @@ WWW=		https://github.com/liberfa/erfa
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		autoreconf gmake libtool
+USES=		autoreconf gmake libtool tar:xz
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
