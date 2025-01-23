@@ -1,5 +1,5 @@
 PORTNAME=	angie-module-auth-jwt
-GH_TUPLE=	kjdev:nginx-auth-jwt:2a2bd643295610606734298e5afc1875203664e1:module
+GH_TUPLE=	kjdev:nginx-auth-jwt:0.9.0:module
 
 COMMENT=	Angie auth-jwt dynamic module
 
