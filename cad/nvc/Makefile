@@ -1,6 +1,6 @@
 PORTNAME=	nvc
 DISTVERSIONPREFIX=	r
-DISTVERSION=	1.15.0
+DISTVERSION=	1.15.1
 CATEGORIES=	cad
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -15,7 +15,7 @@ BROKEN_i386=	compilation fails: static assertion failed due to requirement 'size
 BROKEN_FreeBSD_14_i386=	clang creashes, see https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=265826
 
 BUILD_DEPENDS=	llvm-config${LLVM_VERSION}:devel/llvm${LLVM_VERSION}
-LIB_DEPENDS=	libelf.so:devel/elfutils \
+LIB_DEPENDS=	libelf.so:devel/libelf \
 		libffi.so:devel/libffi \
 		libzstd.so:archivers/zstd
 RUN_DEPENDS=	llvm${LLVM_VERSION}>0:devel/llvm${LLVM_VERSION} \
