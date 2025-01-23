@@ -1,11 +1,12 @@
 PORTNAME=	angie-module-njs
-GH_TUPLE=	nginx:njs:0.8.2:module
+GH_TUPLE=	nginx:njs:0.8.9:module
 
 COMMENT=	Angie NJS dynamic module
 
 LIB_DEPENDS=	libxslt.so:textproc/libxslt
 
-USES=		libedit
+USES=		gnome
+USE_GNOME=	libxml2
 
 CONFIGURE_ADD=	--add-dynamic-module=${WRKSRC_module}/nginx
 
@@ -19,7 +20,7 @@ do-install:
 	${INSTALL_LIB} ${WRKSRC}/objs/${i}.so ${STAGEDIR}${MODDIR}
 .endfor
 
-.for i in CHANGES README
+.for i in CHANGES README.md SECURITY.md SUPPORT.md
 	${INSTALL_MAN} ${WRKSRC_module}/${i} ${STAGEDIR}${DOCSDIR}
 .endfor
 

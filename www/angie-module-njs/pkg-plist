@@ -1,5 +1,7 @@
 %%DOCSDIR%%/CHANGES
-%%DOCSDIR%%/README
+%%DOCSDIR%%/README.md
+%%DOCSDIR%%/SECURITY.md
+%%DOCSDIR%%/SUPPORT.md
 %%MODDIR%%/ngx_http_js_module.so
 %%MODDIR%%/ngx_stream_js_module.so
 %%DEBUG%%%%MODDIR%%/ngx_http_js_module-debug.so
