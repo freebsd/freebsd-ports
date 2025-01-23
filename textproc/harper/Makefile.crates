@@ -26,22 +26,27 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		ciborium-0.2.2 \
 		ciborium-io-0.2.2 \
 		ciborium-ll-0.2.2 \
-		clap-4.5.23 \
-		clap_builder-4.5.23 \
-		clap_derive-4.5.18 \
+		clap-4.5.27 \
+		clap_builder-4.5.27 \
+		clap_derive-4.5.24 \
 		clap_lex-0.7.4 \
 		colorchoice-1.0.3 \
 		console_error_panic_hook-0.1.7 \
 		criterion-0.5.1 \
 		criterion-plot-0.5.0 \
+		crossbeam-deque-0.8.5 \
+		crossbeam-epoch-0.9.18 \
+		crossbeam-utils-0.8.20 \
 		crunchy-0.2.2 \
 		dashmap-5.5.3 \
 		dirs-4.0.0 \
-		dirs-5.0.1 \
+		dirs-6.0.0 \
 		dirs-sys-0.3.7 \
-		dirs-sys-0.4.1 \
+		dirs-sys-0.5.0 \
 		displaydoc-0.2.5 \
+		ecow-0.2.3 \
 		either-1.13.0 \
+		env_logger-0.8.4 \
 		equivalent-1.0.1 \
 		foldhash-0.1.4 \
 		form_urlencoded-1.2.1 \
@@ -76,6 +81,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		icu_provider_macros-1.5.0 \
 		idna-1.0.3 \
 		idna_adapter-1.2.0 \
+		indexmap-2.6.0 \
 		is-docker-0.2.0 \
 		is-macro-0.3.7 \
 		is-terminal-0.4.13 \
@@ -113,16 +119,22 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		pin-project-internal-1.1.8 \
 		pin-project-lite-0.2.16 \
 		pin-utils-0.1.0 \
+		portable-atomic-1.10.0 \
 		ppv-lite86-0.2.20 \
 		proc-macro2-1.0.92 \
 		pulldown-cmark-0.12.2 \
 		pulldown-cmark-escape-0.11.0 \
+		quickcheck-1.0.3 \
+		quickcheck_macros-1.0.0 \
 		quote-1.0.38 \
 		rand-0.8.5 \
 		rand_chacha-0.3.1 \
 		rand_core-0.6.4 \
+		rayon-1.10.0 \
+		rayon-core-1.12.1 \
 		redox_syscall-0.5.8 \
 		redox_users-0.4.6 \
+		redox_users-0.5.0 \
 		regex-1.11.1 \
 		regex-automata-0.4.9 \
 		regex-syntax-0.8.5 \
@@ -134,26 +146,33 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		serde-1.0.217 \
 		serde-wasm-bindgen-0.6.5 \
 		serde_derive-1.0.217 \
-		serde_json-1.0.134 \
+		serde_json-1.0.137 \
 		serde_repr-0.1.19 \
+		serde_spanned-0.6.8 \
 		sharded-slab-0.1.7 \
+		siphasher-1.0.1 \
 		slab-0.4.9 \
 		smallvec-1.13.2 \
 		socket2-0.5.8 \
 		stable_deref_trait-1.2.0 \
 		strsim-0.11.1 \
+		syn-1.0.109 \
 		syn-2.0.95 \
 		synstructure-0.13.1 \
+		thin-vec-0.2.13 \
 		thiserror-1.0.69 \
-		thiserror-2.0.9 \
+		thiserror-2.0.11 \
 		thiserror-impl-1.0.69 \
-		thiserror-impl-2.0.9 \
+		thiserror-impl-2.0.11 \
 		thread_local-1.1.8 \
 		tinystr-0.7.6 \
 		tinytemplate-1.2.1 \
-		tokio-1.42.0 \
-		tokio-macros-2.4.0 \
+		tokio-1.43.0 \
+		tokio-macros-2.5.0 \
 		tokio-util-0.7.13 \
+		toml-0.8.19 \
+		toml_datetime-0.6.8 \
+		toml_edit-0.22.22 \
 		tower-0.4.13 \
 		tower-layer-0.3.3 \
 		tower-lsp-0.20.0 \
@@ -184,11 +203,17 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		tree-sitter-swift-0.4.0 \
 		tree-sitter-toml-0.20.0 \
 		tree-sitter-typescript-0.20.5 \
+		typst-syntax-0.12.0 \
+		typst-utils-0.12.0 \
 		unicase-2.8.1 \
 		unicode-blocks-0.1.9 \
 		unicode-ident-1.0.14 \
+		unicode-math-class-0.1.0 \
+		unicode-script-0.5.7 \
+		unicode-segmentation-1.12.0 \
 		unicode-width-0.1.14 \
 		unicode-width-0.2.0 \
+		unscanny-0.1.0 \
 		url-2.5.4 \
 		utf16_iter-1.0.5 \
 		utf8_iter-1.0.4 \
@@ -205,26 +230,18 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-util-0.1.9 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
-		windows-sys-0.48.0 \
 		windows-sys-0.52.0 \
 		windows-sys-0.59.0 \
-		windows-targets-0.48.5 \
 		windows-targets-0.52.6 \
-		windows_aarch64_gnullvm-0.48.5 \
 		windows_aarch64_gnullvm-0.52.6 \
-		windows_aarch64_msvc-0.48.5 \
 		windows_aarch64_msvc-0.52.6 \
-		windows_i686_gnu-0.48.5 \
 		windows_i686_gnu-0.52.6 \
 		windows_i686_gnullvm-0.52.6 \
-		windows_i686_msvc-0.48.5 \
 		windows_i686_msvc-0.52.6 \
-		windows_x86_64_gnu-0.48.5 \
 		windows_x86_64_gnu-0.52.6 \
-		windows_x86_64_gnullvm-0.48.5 \
 		windows_x86_64_gnullvm-0.52.6 \
-		windows_x86_64_msvc-0.48.5 \
 		windows_x86_64_msvc-0.52.6 \
+		winnow-0.6.20 \
 		write16-1.0.0 \
 		writeable-0.5.5 \
 		yansi-1.0.1 \
