@@ -1,10 +1,12 @@
 PORTNAME=	avogadro2
-DISTVERSION=	1.99.0
+DISTVERSION=	1.100.0
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Chemical editor and visualization application
-WWW=		https://two.avogadro.cc/ # also https://www.openchemistry.org/projects/avogadro2/
+WWW=		https://two.avogadro.cc \
+		https://www.openchemistry.org/projects/avogadro2 \
+		https://github.com/OpenChemistry/avogadroapp
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

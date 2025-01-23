@@ -1,5 +1,5 @@
 bin/avogadro2
-share/applications/avogadro2.desktop
+share/applications/org.openchemistry.Avogadro2.desktop
 %%DATADIR%%/i18n/avogadroapp-af.qm
 %%DATADIR%%/i18n/avogadroapp-ar.qm
 %%DATADIR%%/i18n/avogadroapp-bg.qm
@@ -113,5 +113,11 @@ share/applications/avogadro2.desktop
 %%DATADIR%%/i18n/avogadrolibs-vi.qm
 %%DATADIR%%/i18n/avogadrolibs-zh_CN.qm
 %%DATADIR%%/i18n/avogadrolibs-zh_TW.qm
-share/metainfo/avogadro2.appdata.xml
-share/pixmaps/avogadro2.png
+share/icons/hicolor/128x128/apps/org.openchemistry.Avogadro2.png
+share/icons/hicolor/16x16@2/apps/org.openchemistry.Avogadro2.png
+share/icons/hicolor/256x256/apps/org.openchemistry.Avogadro2.png
+share/icons/hicolor/32x32/apps/org.openchemistry.Avogadro2.png
+share/icons/hicolor/32x32@2/apps/org.openchemistry.Avogadro2.png
+share/icons/hicolor/64x64/apps/org.openchemistry.Avogadro2.png
+share/icons/hicolor/scalable/apps/org.openchemistry.Avogadro2.svg
+share/metainfo/org.openchemistry.Avogadro2.metainfo.xml
