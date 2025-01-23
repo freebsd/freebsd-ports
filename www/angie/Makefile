@@ -1,5 +1,5 @@
 PORTNAME?=		angie
-PORTVERSION=		1.3.2
+DISTVERSION=		1.8.1
 CATEGORIES+=		www
 MASTER_SITES+=		https://download.angie.software/files/:angie
 DISTNAME=		angie-${DISTVERSIONFULL}
@@ -159,7 +159,7 @@ do-install:
 	${LN} -fs angie-nodebug ${STAGEDIR}${PREFIX}/sbin/angie
 
 	${INSTALL_MAN} ${WRKSRC}/objs/angie.8 ${STAGEDIR}${PREFIX}/share/man/man8
-.for i in CHANGES CHANGES.ru README.rst
+.for i in CHANGES CHANGES.ru
 	${INSTALL_MAN} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
 .endfor
 
