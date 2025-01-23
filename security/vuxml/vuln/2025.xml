@@ -1,3 +1,37 @@
+  <vuln vid="1e109b60-d92e-11ef-a661-08002784c58d">
+    <topic>clamav -- Possbile denial-of-service vulnerability</topic>
+    <affects>
+      <package>
+	<name>clamav</name>
+	<range><ge>1.0.0,1</ge><lt>1.4.2,1</lt></range>
+      </package>
+      <package>
+	<name>clamav-lts</name>
+	<range><ge>1.0.0,1</ge><lt>1.0.8,1</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The ClamAV project reports:</p>
+	<blockquote cite="https://blog.clamav.net/2025/01/clamav-142-and-108-security-patch.html">
+	  <p>
+	    A possible buffer overflow read bug is found in the OLE2
+	    file parser that could cause a denial-of-service (DoS)
+	    condition.
+	  </p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-20128</cvename>
+      <url>https://blog.clamav.net/2025/01/clamav-142-and-108-security-patch.html</url>
+    </references>
+    <dates>
+      <discovery>2025-01-22</discovery>
+      <entry>2025-01-23</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="7d17676d-4828-4a43-85d6-1ee14362de6e">
     <topic>electron32 -- Type Confusion in V8</topic>
     <affects>
