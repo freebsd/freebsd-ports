@@ -1,7 +1,7 @@
 PORTNAME=	angie-module-lua
-GH_TUPLE=	openresty:lua-nginx-module:v0.10.25:lua
-GH_TUPLE+=	openresty:stream-lua-nginx-module:v0.0.13:lua_stream
-GH_TUPLE+=	vision5:ngx_devel_kit:v0.3.2:ndk
+GH_TUPLE=	openresty:lua-nginx-module:v0.10.28:lua
+GH_TUPLE+=	openresty:stream-lua-nginx-module:v0.0.16:lua_stream
+GH_TUPLE+=	vision5:ngx_devel_kit:v0.3.3:ndk
 
 COMMENT=	Angie Lua dynamic module
 
@@ -17,7 +17,7 @@ CONFIGURE_ENV=	LUAJIT_INC=${LUAJIT_INCDIR} \
 		LUAJIT_LIB=${LOCALBASE}/lib
 
 RUN_DEPENDS=	angie-module-ndk==${PKGVERSION}:www/angie-module-ndk \
-		lua-resty-core==0.1.27:www/lua-resty-core
+		lua-resty-core>=0.1.29:www/lua-resty-core
 
 USES= 		luajit:luajit-openresty
 
