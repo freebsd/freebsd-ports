@@ -1,3 +1,36 @@
+  <vuln vid="24c93a28-d95b-11ef-b6b2-2cf05da270f3">
+    <topic>Gitlab -- Vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>gitlab-ce</name>
+	<name>gitlab-ee</name>
+	<range><ge>17.8.0</ge><lt>17.8.1</lt></range>
+	<range><ge>17.7.0</ge><lt>17.7.3</lt></range>
+	<range><ge>15.7.0</ge><lt>17.6.4</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Gitlab reports:</p>
+	<blockquote cite="https://about.gitlab.com/releases/2025/01/22/patch-release-gitlab-17-8-1-released/">
+	  <p>Stored XSS via Asciidoctor render</p>
+	  <p>Developer could exfiltrate protected CI/CD variables via CI lint</p>
+	  <p>Cyclic reference of epics leads resource exhaustion</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-0314</cvename>
+      <cvename>CVE-2024-11931</cvename>
+      <cvename>CVE-2024-6324</cvename>
+      <url>https://about.gitlab.com/releases/2025/01/22/patch-release-gitlab-17-8-1-released/</url>
+    </references>
+    <dates>
+      <discovery>2025-01-22</discovery>
+      <entry>2025-01-23</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="1e109b60-d92e-11ef-a661-08002784c58d">
     <topic>clamav -- Possbile denial-of-service vulnerability</topic>
     <affects>
