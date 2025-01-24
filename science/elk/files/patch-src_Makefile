@@ -1,11 +1,11 @@
---- src/Makefile.orig	2024-10-06 11:14:46 UTC
+--- src/Makefile.orig	2025-01-24 06:32:12 UTC
 +++ src/Makefile
 @@ -97,7 +97,7 @@ SRC_main1 = \
-  trimrfg.f90 rfirftoc.f90 zfirftoc.f90 zfirctof.f90 hflocal.f90 match.f90 \
-  genvsig.f90 zpotcoul.f90 cpotcoul.f90 clebgor.f90 wigner3j.f90 zfmtftoc.f90 \
-  writeefield.f90 potcoul.f90 eveqnfvz.f90 rfmtint.f90 zfmtint.f90 rbsht.f90 \
-- rfsht.f90 olprad.f90 checkrst.f90 writegsvars.f90
-+ rfsht.f90 olprad.f90 checkrst.f90 writegsvars.f90 mkl_stub.f90
+  hflocal.f90 match.f90 genvsig.f90 zpotcoul.f90 cpotcoul.f90 clebgor.f90 \
+  wigner3j.f90 zfmtftoc.f90 writeefield.f90 potcoul.f90 eveqnfvz.f90 \
+  rfmtint.f90 zfmtint.f90 rbsht.f90 rfsht.f90 olprad.f90 checkrst.f90 \
+- writegsvars.f90 trimrfg.f90
++ writegsvars.f90 trimrfg.f90 mkl_stub.f90
  
  SRC_main = $(SRC_main0) $(SRC_main1)
  
