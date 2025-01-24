@@ -47,5 +47,5 @@ SHA256 (kyprizel-testcookie-nginx-module-64137c2f7e66e8866f56fdecaaf09ac10a034da
 SIZE (kyprizel-testcookie-nginx-module-64137c2f7e66e8866f56fdecaaf09ac10a034da9_GH0.tar.gz) = 20732
 SHA256 (fdintino-nginx-upload-module-2.3.0_GH0.tar.gz) = c86e318addb9c88d70fdbd58ff1f6ef6f404a93070f6db8017a1f880c97946c4
 SIZE (fdintino-nginx-upload-module-2.3.0_GH0.tar.gz) = 40139
-SHA256 (kaltura-nginx-vod-module-1.32_GH0.tar.gz) = 958bbe7084704f9df49f8b71e8b90700591cd3edca7409f74bf0d8721621402f
-SIZE (kaltura-nginx-vod-module-1.32_GH0.tar.gz) = 471031
+SHA256 (kaltura-nginx-vod-module-1.33_GH0.tar.gz) = 9c9600e5da4ee02ef6820d056da9eb5f3449f715468334ddab41727b76d478d8
+SIZE (kaltura-nginx-vod-module-1.33_GH0.tar.gz) = 471858
