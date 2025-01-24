@@ -42,6 +42,8 @@ CFLAGS:=	${CFLAGS:N-mretpoline} -D__USE_ISOC11
 CXXFLAGS:=	${CXXFLAGS:N-mretpoline}
 
 OPTIONS_DEFINE=		GRAPHITE
+OPTIONS_DEFAULT_armv6=	STANDARD_BOOTSTRAP
+OPTIONS_DEFAULT_armv7=	STANDARD_BOOTSTRAP
 OPTIONS_DEFAULT_aarch64=STANDARD_BOOTSTRAP
 OPTIONS_DEFAULT_amd64=	STANDARD_BOOTSTRAP
 OPTIONS_DEFAULT_i386=	STANDARD_BOOTSTRAP
@@ -140,7 +142,7 @@ INFO=		gcc${SUFFIX}/cpp \
 .if ${ARCH} == amd64 || ${ARCH} == i386
 INFO+=		gcc${SUFFIX}/libquadmath
 .endif
-.if ${ARCH} == amd64 || ${ARCH} == i386 || ${ARCH} == aarch64
+.if ${ARCH} == amd64 || ${ARCH} == i386 || ${ARCH} == aarch64 || ${ARCH:Marmv?}
 INFO+=		gcc${SUFFIX}/libitm
 .endif
 SUB_FILES=	pkg-message
