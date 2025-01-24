@@ -5,7 +5,7 @@ CATEGORIES=	security
 
 MAINTAINER=	adamw@FreeBSD.org
 COMMENT=	Analyze and report TLS/SSL configuration/misconfiguration
-WWW=		https://github.com/drwetter/testssl.sh
+WWW=		https://github.com/testssl/testssl.sh
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -16,7 +16,7 @@ TEST_DEPENDS=	p5-JSON>=0:converters/p5-JSON
 
 USES=		perl5 shebangfix
 USE_GITHUB=	yes
-GH_ACCOUNT=	drwetter
+GH_ACCOUNT=	testssl
 
 SHEBANG_FILES=	testssl.sh utils/*
 
