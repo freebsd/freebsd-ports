@@ -1,5 +1,6 @@
 PORTNAME=	dlib
 DISTVERSION=	19.24.6
+PORTREVISION=	1
 CATEGORIES=	science devel math python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,7 +17,7 @@ LIB_DEPENDS=		${PY_BOOST} \
 			libgif.so:graphics/giflib
 
 USES=			cmake:indirect compiler:c++11-lang pkgconfig python shebangfix \
-			sqlite
+			sqlite xorg
 USE_PYTHON=		autoplist distutils
 USE_XORG=		ice sm x11 xext
 SHEBANG_FILES=		python_examples/*.py
