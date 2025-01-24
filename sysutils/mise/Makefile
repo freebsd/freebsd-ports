@@ -1,7 +1,7 @@
 PORTNAME=	mise
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2025.1.9
-PORTREVISION=	1
+DISTVERSION=	2025.1.13
+PORTREVISION=	0
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -44,6 +44,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		arbitrary-1.4.1 \
 		arc-swap-1.7.1 \
 		arrayvec-0.5.2 \
+		assert-json-diff-2.0.2 \
 		async-compression-0.4.18 \
 		async-trait-0.1.85 \
 		atomic-waker-1.1.2 \
@@ -81,8 +82,8 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		chrono-tz-build-0.3.0 \
 		ci_info-0.14.14 \
 		cipher-0.4.4 \
-		clap-4.5.26 \
-		clap_builder-4.5.26 \
+		clap-4.5.27 \
+		clap_builder-4.5.27 \
 		clap_derive-4.5.24 \
 		clap_lex-0.7.4 \
 		clap_mangen-0.2.26 \
@@ -91,6 +92,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		color-print-proc-macro-0.3.7 \
 		color-spantrace-0.2.1 \
 		colorchoice-1.0.3 \
+		colored-2.2.0 \
 		comfy-table-7.1.3 \
 		confique-0.3.0 \
 		confique-macro-0.0.11 \
@@ -201,12 +203,12 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		hex-0.4.3 \
 		hkdf-0.12.4 \
 		hmac-0.12.1 \
-		home-0.5.11 \
 		homedir-0.3.4 \
 		http-1.2.0 \
 		http-body-1.0.1 \
 		http-body-util-0.1.2 \
 		httparse-1.9.5 \
+		httpdate-1.0.3 \
 		humansize-2.1.3 \
 		humantime-2.1.0 \
 		hyper-1.5.2 \
@@ -237,7 +239,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		impl-tools-lib-0.11.1 \
 		indenter-0.3.3 \
 		indexmap-1.9.3 \
-		indexmap-2.7.0 \
+		indexmap-2.7.1 \
 		indicatif-0.17.9 \
 		indoc-2.0.5 \
 		inout-0.1.3 \
@@ -245,7 +247,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		intl-memoizer-0.5.2 \
 		intl_pluralrules-7.0.2 \
 		io_tee-0.1.1 \
-		ipnet-2.10.1 \
+		ipnet-2.11.0 \
 		is_terminal_polyfill-1.70.1 \
 		itertools-0.10.5 \
 		itertools-0.13.0 \
@@ -274,7 +276,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		logos-0.12.1 \
 		logos-derive-0.12.1 \
 		lua-src-547.0.0 \
-		luajit-src-210.5.11+97813fb \
+		luajit-src-210.5.12+a4f56a4 \
 		lzma-rs-0.3.0 \
 		lzma-rust-0.1.7 \
 		lzma-sys-0.1.20 \
@@ -292,6 +294,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		mlua-0.10.2 \
 		mlua-sys-0.6.6 \
 		mlua_derive-0.10.1 \
+		mockito-1.6.1 \
 		native-tls-0.2.12 \
 		nix-0.29.0 \
 		nom-7.1.3 \
@@ -312,7 +315,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		opaque-debug-0.3.1 \
 		openssl-0.10.68 \
 		openssl-macros-0.1.1 \
-		openssl-probe-0.1.5 \
+		openssl-probe-0.1.6 \
 		openssl-sys-0.9.104 \
 		option-ext-0.2.0 \
 		ordered-float-2.10.1 \
@@ -387,7 +390,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		rustc-hash-1.1.0 \
 		rustc-hash-2.1.0 \
 		rustc_version-0.4.1 \
-		rustix-0.38.43 \
+		rustix-0.38.44 \
 		rustls-0.23.21 \
 		rustls-native-certs-0.8.1 \
 		rustls-pemfile-2.2.0 \
@@ -410,12 +413,12 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		self_cell-0.10.3 \
 		self_cell-1.1.0 \
 		self_update-0.42.0 \
-		semver-1.0.24 \
+		semver-1.0.25 \
 		serde-1.0.217 \
 		serde-value-0.7.0 \
 		serde_derive-1.0.217 \
 		serde_ignored-0.1.10 \
-		serde_json-1.0.135 \
+		serde_json-1.0.137 \
 		serde_regex-1.1.0 \
 		serde_spanned-0.6.8 \
 		serde_urlencoded-0.7.1 \
@@ -436,7 +439,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		signal-hook-registry-1.4.2 \
 		signature-2.2.0 \
 		simd-adler32-0.3.7 \
-		similar-2.6.0 \
+		similar-2.7.0 \
 		siphasher-1.0.1 \
 		slab-0.4.9 \
 		slug-0.1.6 \
@@ -465,8 +468,8 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		tera-1.20.0 \
 		termcolor-1.4.1 \
 		terminal_size-0.4.1 \
-		test-log-0.2.16 \
-		test-log-macros-0.2.16 \
+		test-log-0.2.17 \
+		test-log-macros-0.2.17 \
 		text-size-1.1.1 \
 		thiserror-1.0.69 \
 		thiserror-2.0.11 \
@@ -501,7 +504,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		type-map-0.5.0 \
 		typeid-1.0.2 \
 		typenum-1.17.0 \
-		ubi-0.4.0 \
+		ubi-0.4.1 \
 		ucd-trie-0.1.7 \
 		unic-char-property-0.9.0 \
 		unic-char-range-0.9.0 \
@@ -511,7 +514,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		unic-segment-0.9.0 \
 		unic-ucd-segment-0.9.0 \
 		unic-ucd-version-0.9.0 \
-		unicode-ident-1.0.14 \
+		unicode-ident-1.0.15 \
 		unicode-segmentation-1.12.0 \
 		unicode-width-0.1.14 \
 		unicode-width-0.2.0 \
@@ -543,7 +546,6 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		web-sys-0.3.77 \
 		web-time-1.1.0 \
 		webpki-roots-0.26.7 \
-		which-6.0.3 \
 		which-7.0.1 \
 		widestring-1.1.0 \
 		winapi-0.3.9 \
