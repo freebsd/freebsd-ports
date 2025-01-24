@@ -10,6 +10,7 @@ bin/korgwm
 %%SITE_PERL%%/X11/korgwm/Hotkeys.pm
 %%SITE_PERL%%/X11/korgwm/Layout.pm
 %%SITE_PERL%%/X11/korgwm/Mouse.pm
+%%SITE_PERL%%/X11/korgwm/Notifications.pm
 %%SITE_PERL%%/X11/korgwm/Panel.pm
 %%SITE_PERL%%/X11/korgwm/Panel/Battery.pm
 %%SITE_PERL%%/X11/korgwm/Panel/Clock.pm
