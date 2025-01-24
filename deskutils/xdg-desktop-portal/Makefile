@@ -20,9 +20,16 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	flatpak
 USE_GNOME=	gdkpixbuf2 glib20
 
-MESON_ARGS=	-Ddocbook-docs=disabled -Dman-pages=disabled -Dpytest=disabled \
+MESON_ARGS=	-Ddocbook-docs=disabled -Dpytest=disabled \
 		-Dflatpak-interfaces=disabled -Dsandboxed-image-validation=false \
 		-Dsystemd=disabled
+
+OPTIONS_DEFINE=	MANPAGES
+
+MANPAGES_BUILD_DEPENDS=	rst2man:textproc/py-docutils
+MANPAGES_MESON_ENABLED=	man-pages
+
+OPTIONS_SUB=	yes
 
 post-install:
 	@${RM} -r ${STAGEDIR}${PREFIX}/lib/systemd
