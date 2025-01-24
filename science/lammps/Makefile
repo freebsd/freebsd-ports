@@ -1,11 +1,11 @@
 PORTNAME=	lammps
-PORTVERSION=	${GH_TAGNAME:C/(stable|patch)_([0-9]{1,2})([A-Z][a-z][a-z])([0-9]{4})/\4.\3.\2/S/Jan/01/S/Feb/02/S/Mar/03/S/Apr/04/S/May/05/S/Jun/06/S/Jul/07/S/Aug/08/S/Sep/09/S/Oct/10/S/Nov/11/S/Dec/12/S/_update/./:C/\.([1-9])$/.0\1/}
-PORTREVISION=	6
+PORTVERSION=	${GH_TAGNAME:C/(stable|patch)_([0-9]{1,2})([A-Z][a-z][a-z])([0-9]{4})/\4.\3.\2/S/Jan/01/S/Feb/02/S/Mar/03/S/Apr/04/S/May/05/S/Jun/06/S/Jul/07/S/Aug/08/S/Sep/09/S/Oct/10/S/Nov/11/S/Dec/12/S/_update/./:C/\.([1-9])$/.0\1/:S/.//g}
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Classical molecular dynamics code with a focus on materials modeling
-WWW=		https://lammps.sandia.gov/
+WWW=		https://lammps.sandia.gov/ \
+		https://github.com/lammps/lammps
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -20,13 +20,13 @@ LIB_DEPENDS=	libevent.so:devel/libevent \
 		libssh2.so:security/libssh2 \
 		libzstd.so:archivers/zstd
 
-USES=		blaslapack:openblas cmake:noninja,testing compiler:c++14-lang eigen:3 fortran gnome localbase:ldflags python shebangfix
+USES=		blaslapack:openblas cmake:noninja,testing compiler:c++17-lang eigen:3 fortran gnome localbase:ldflags python shebangfix
 USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
 USE_PYTHON=	cython
 
 USE_GITHUB=	yes
-GH_TAGNAME=	patch_21Nov2023
+GH_TAGNAME=	patch_19Nov2024
 
 SHEBANG_GLOB=	*.sh *.bash
 SHEBANG_FILES=	lib/kokkos/bin/nvcc_wrapper
@@ -39,15 +39,7 @@ CMAKE_ARGS_gcc=	-DBUILD_OMP:BOOL=false
 CMAKE_TESTING_ON=	ENABLE_TESTING # 3 tests fail, see https://github.com/lammps/lammps/issues/3875
 
 # enable packages (for a complete list see STANDARD_PACKAGES in cmake/CMakeLists.txt)
-CMAKE_ON+=	PKG_ASPHERE PKG_ATC PKG_AWPMD PKG_BOCS PKG_BODY PKG_BROWNIAN PKG_CG-DNA PKG_CG-SDK PKG_CLASS2
-CMAKE_ON+=	PKG_COLLOID PKG_COLVARS PKG_COMPRESS PKG_DIELECTRIC PKG_DIFFRACTION PKG_DIPOLE PKG_DPD-BASIC PKG_DPD-MESO PKG_DPD-REACT PKG_DPD-SMOOTH
-CMAKE_ON+=	PKG_DRUDE PKG_EFF PKG_EXTRA-COMPUTE PKG_EXTRA-DUMP PKG_EXTRA-FIX PKG_EXTRA-MOLECULE PKG_EXTRA-PAIR PKG_FEP PKG_GRANULAR PKG_H5MD
-CMAKE_ON+=	PKG_INTERLAYER PKG_KIM PKG_KSPACE PKG_LATBOLTZ PKG_LATTE PKG_MACHDYN PKG_MANIFOLD PKG_MANYBODY PKG_MC
-CMAKE_ON+=	PKG_MEAM PKG_MESSAGE PKG_MGPT PKG_MISC PKG_ML-IAP PKG_ML-RANN
-CMAKE_ON+=	PKG_ML-SNAP PKG_MOFFF PKG_MOLECULE PKG_MOLFILE PKG_MPIIO PKG_ORIENT PKG_PERI PKG_PHONON
-CMAKE_ON+=	PKG_PLUGIN PKG_PLUMED PKG_POEMS PKG_PTM PKG_PYTHON PKG_QEQ PKG_QMMM PKG_QTB PKG_REACTION PKG_REAXFF
-CMAKE_ON+=	PKG_REPLICA PKG_RIGID PKG_SHOCK PKG_SMTBQ PKG_SPH PKG_SPIN PKG_SRD PKG_TALLY PKG_UEF
-CMAKE_ON+=	PKG_VORONOI PKG_YAFF
+CMAKE_ON+=	${LAMMPS_STANDARD_PACKAGES:S/^/PKG_/} # LAMMPS_STANDARD_PACKAGES is defined in Makefile.packages
 # Packages requiring extra downloades or dependencies: PKG_MSCG PKG_ADIOS PKG_MDI PKG_MESONT PKG_ML-PACE PKG_NETCDF PKG_ML-QUIP PKG_SCAFACOS PKG_VTK
 # PKG_ML-HDNNP downloads https://github.com/CompPhysVienna/n2p2/archive/v2.1.4.tar.gz
 
@@ -82,8 +74,7 @@ GZIP_CMAKE_BOOL=	WITH_GZIP
 
 H5MD_DESC=		H5MD package based on the libhdf5 library
 H5MD_CMAKE_BOOL=	PKG_H5MD
-H5MD_LIB_DEPENDS=	libhdf5.so:science/hdf5 \
-			libsz.so:science/libaec
+H5MD_LIB_DEPENDS=	libhdf5.so:science/hdf5
 
 KIM_DESC=		KIM package based on the OpenKim library/repository
 KIM_USES=		pkgconfig
@@ -154,5 +145,6 @@ post-patch-FFMPEG-off:
 post-install:
 	@${RM} -r ${STAGEDIR}${PREFIX}/lib/python*
 
+.include "Makefile.packages"
 .include <../../math/vtk9/Makefile.version>
 .include <bsd.port.mk>
