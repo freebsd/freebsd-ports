@@ -1,6 +1,6 @@
 PORTNAME=	ghemical
 PORTVERSION=	3.0.0
-PORTREVISION=	27
+PORTREVISION=	28
 CATEGORIES=	science
 MASTER_SITES=	http://bioinformatics.org/ghemical/download/%SUBDIR%/
 MASTER_SITE_SUBDIR=	release20111012 current

@@ -1,5 +1,6 @@
 PORTNAME=	kaldi # kaldi-vosk is for audio/vosk-api
 PORTVERSION=	g20231219
+PORTREVISION=	1
 CATEGORIES=	audio # machine-learning
 PKGNAMESUFFIX=	-vosk
 
