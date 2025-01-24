@@ -1,6 +1,6 @@
 PORTNAME=	openblas
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.3.27
+DISTVERSION=	0.3.29
 PORTEPOCH=	2
 CATEGORIES=	math
 MASTER_SITES=	NL/lapack/timing/:lapack_tmg
@@ -31,7 +31,7 @@ USE_PERL5=	build
 OPENBLAS_SVER=	0
 TEST_TARGET=	tests
 
-PLIST_SUB+=	PORTVERSION=${PORTVERSION}
+PLIST_SUB+=	PORTVERSION=${PORTVERSION:C/9/7/}
 
 OPTIONS_DEFINE=			DYNAMIC_ARCH INTERFACE64 OPENMP
 OPTIONS_DEFAULT=		OPENMP
@@ -141,7 +141,10 @@ benchmark: build
 	cd ${WRKSRC} ; ${SETENV} ${MAKE_CMD} ${MAKE_ARGS} hpl
 	cd ${WRKSRC}/benchmark ; ${SETENV} ${BENCHMARK_THREADS_FLAG} ${MAKE_CMD} ${MAKE_ARGS}
 
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libopenblasp-r${PORTVERSION:C/9/7/}.so
+
 post-install-DYNAMIC_ARCH-off:
-	cd ${STAGEDIR}${PREFIX} && ls lib/libopenblas_*p-r${PORTVERSION}.* >> ${TMPPLIST}
+	cd ${STAGEDIR}${PREFIX} && ls lib/libopenblas_*p-r${PORTVERSION:C/9/7/}.* >> ${TMPPLIST}
 
 .include <bsd.port.post.mk>
