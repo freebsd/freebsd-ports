@@ -1,6 +1,6 @@
 PORTNAME=	mesa
-DISTVERSION=	24.3-branchpoint-3175
-DISTVERSIONSUFFIX=	-gd46b80249bd
+DISTVERSION=	24.3-branchpoint-3302
+DISTVERSIONSUFFIX=	-g433004dcff8
 CATEGORIES=	graphics
 PKGNAMESUFFIX=	-devel
 
@@ -129,7 +129,7 @@ VDPAU_IMPLIES=		X11
 VKLAYERS_DESC=		Vulkan layers: ${VKLAYERS_MESON_ON:C/.*=//} (implies ${VKLAYERS_IMPLIES})
 VKLAYERS_BUILD_DEPENDS=	glslangValidator:graphics/glslang
 VKLAYERS_LIB_DEPENDS=	libpng.so:graphics/png
-VKLAYERS_MESON_ON=	-Dvulkan-layers=device-select,overlay,screenshot
+VKLAYERS_MESON_ON=	-Dvulkan-layers=device-select,overlay,screenshot,vram-report-limit
 VKLAYERS_IMPLIES=	${"${PORT_OPTIONS:Manv}":?anv:radv} # any from OPTIONS_GROUP_VULKAN
 
 WAYLAND_BUILD_DEPENDS=	wayland-protocols>0:graphics/wayland-protocols
