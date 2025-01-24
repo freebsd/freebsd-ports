@@ -15,10 +15,8 @@ _INCLUDE_USES_BLASLAPACK_MK=	yes
 
 _valid_ARGS=	atlas blis flexiblas netlib openblas openblas64
 
-_DEFAULT_BLASLAPACK=	netlib
-
 .  if empty(blaslapack_ARGS)
-blaslapack_ARGS=	${_DEFAULT_BLASLAPACK}
+blaslapack_ARGS=	${BLASLAPACK_DEFAULT}
 .  endif
 
 LDFLAGS+=	-L${LOCALBASE}/lib
@@ -40,7 +38,7 @@ BLA_VENDOR=	FLAME
 LIB_DEPENDS+=	libflexiblas.so:math/flexiblas
 _BLASLIB=	flexiblas
 BLA_VENDOR=	FlexiBLAS
-.  elif ${blaslapack_ARGS} == netlib
+.  elif ${blaslapack_ARGS} == netlib || empty(blaslapack_ARGS)
 LIB_DEPENDS+=	libblas.so:math/blas
 LIB_DEPENDS+=	liblapack.so:math/lapack
 _BLASLIB=	blas
