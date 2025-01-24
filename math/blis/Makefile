@@ -1,9 +1,8 @@
 PORTNAME=	blis
-PORTVERSION=	0.9.0
-PORTREVISION=	2
+PORTVERSION=	1.1
 CATEGORIES=	math
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Software framework for high-performance BLAS-like libraries
 WWW=		https://github.com/flame/blis
 
@@ -12,17 +11,20 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	bash:shells/bash
 
-USES=		compiler gmake perl5 python shebangfix
+USES=		compiler fortran gmake perl5 python shebangfix
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	flame
-USE_LDCONFIG=	yes
+
 USE_PERL5=	build
 SHEBANG_FILES=	build/flatten-headers.py
+BIN_ALIAS=	gfortran=${FC}
+USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=	PARA CBLAS
 PARA_DESC=	use pthread parallelization
 CBLAS_DESC=	build the CBLAS compatibility layer
-OPTIONS_DEFAULT=	PARA CBLAS
+OPTIONS_DEFAULT=	PARA
 OPTIONS_SUB=		yes
 
 CFLAGS_riscv64=	-mno-relax
@@ -37,7 +39,6 @@ CONFIGURE_ARGS+=	--enable-blas \
 			--prefix=${PREFIX} \
 			--enable-shared \
 			--enable-static
-#--prefix=PREFIX
 
 .if ${PORT_OPTIONS:MPARA}
 CONFIGURE_ARGS+=	-t pthreads
@@ -45,6 +46,7 @@ CONFIGURE_ARGS+=	-t pthreads
 
 .if ${PORT_OPTIONS:MCBLAS}
 CONFIGURE_ARGS+=	--enable-cblas
+CONFLICTS_INSTALL=	openblas-*
 .endif
 
 .if ${ARCH} == amd64

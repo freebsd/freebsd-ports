@@ -1,3 +1,4 @@
+include/blis.h
 include/blis/blis.h
 %%CBLAS%%include/blis/cblas.h
 lib/libblis.a
