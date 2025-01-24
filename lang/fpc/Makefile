@@ -1,5 +1,6 @@
 PORTNAME=	fpc
 PORTVERSION=	3.2.3
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://leaf.dragonflybsd.org/~marino/dports-src/:DragonFlybootstrap \
 		LOCAL/acm/freepascal/:bootstrap \
@@ -25,8 +26,9 @@ USE_GITLAB=	yes
 GL_SITE=	https://gitlab.com/freepascal.org
 GL_ACCOUNT=	fpc
 GL_PROJECT=	source
-GL_TAGNAME=	3d2b1f062e1e79d64b56a496f9eecd6084fa5803
+GL_TAGNAME=	57e84ef714df2404341229bd795dd69a8a6a38bb
 
+FPC_COMMIT_DATE=20241120
 FPCSRCDIR=	source-${GL_TAGNAME}
 
 .include <bsd.port.pre.mk>
