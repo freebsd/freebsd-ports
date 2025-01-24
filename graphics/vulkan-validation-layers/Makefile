@@ -21,7 +21,7 @@ GH_PROJECT=	Vulkan-ValidationLayers
 GH_TUPLE=	KhronosGroup:SPIRV-Headers:1.5.4.raytracing.fixed-386-g3f17b2a:headers/SPIRV-Headers
 CMAKE_OFF=	BUILD_TESTS
 
-.if ${DISTVERSION:E} < 303
+.if ${DISTVERSION:E} < 306
 GH_TUPLE+=	KhronosGroup:Vulkan-Headers:${DISTVERSIONFULL}:vkheaders/Vulkan-Headers \
 		KhronosGroup:Vulkan-Utility-Libraries:${DISTVERSIONFULL}:vkutils/Vulkan-Utility-Libraries
 CFLAGS+=	-I${WRKSRC_vkheaders}/include -I${WRKSRC_vkutils}/include
