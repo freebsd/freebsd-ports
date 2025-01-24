@@ -1,5 +1,6 @@
 PORTNAME=	calendar
 DISTVERSION=	7.0.0
+PORTREVISION=	1
 CATEGORIES=	deskutils
 PKGNAMEPREFIX=	elementary-
 
