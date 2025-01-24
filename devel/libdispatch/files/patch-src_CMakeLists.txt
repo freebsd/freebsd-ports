@@ -1,6 +1,14 @@
---- src/CMakeLists.txt.orig	2021-09-17 04:54:52 UTC
+--- src/CMakeLists.txt.orig	2024-06-13 00:13:26 UTC
 +++ src/CMakeLists.txt
-@@ -127,7 +127,7 @@ target_compile_options(dispatch PRIVATE -fblocks)
+@@ -1,6 +1,6 @@ if(NOT CMAKE_SYSTEM_NAME STREQUAL Darwin)
+ 
+ if(NOT CMAKE_SYSTEM_NAME STREQUAL Darwin)
+-  add_subdirectory(BlocksRuntime)
++#  add_subdirectory(BlocksRuntime)
+ endif()
+ 
+ add_library(dispatch
+@@ -145,7 +145,7 @@ target_compile_options(dispatch PRIVATE -fblocks)
  # FIXME(compnerd) add check for -fblocks?
  target_compile_options(dispatch PRIVATE -fblocks)
  
@@ -9,3 +17,14 @@
  if (C_SUPPORTS_OMIT_LEAF_FRAME_POINTER)
    target_compile_options(dispatch PRIVATE -momit-leaf-frame-pointer)
  endif()
+@@ -176,6 +176,10 @@ if(NOT CMAKE_SYSTEM_NAME MATCHES "Darwin|Windows")
+ 
+ if(NOT CMAKE_SYSTEM_NAME MATCHES "Darwin|Windows")
+   set_target_properties(dispatch PROPERTIES INSTALL_RPATH "$ORIGIN")
++  set_target_properties(dispatch PROPERTIES
++        VERSION ${PROJECT_VERSION}
++        SOVERSION ${PROJECT_VERSION_MAJOR}
++        EXPORT_NAME dispatch )
+ endif()
+ 
+ if(ENABLE_SWIFT)

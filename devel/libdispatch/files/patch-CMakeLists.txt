@@ -1,0 +1,13 @@
+--- CMakeLists.txt.orig	2024-06-13 00:13:26 UTC
++++ CMakeLists.txt
+@@ -187,6 +187,10 @@ endif()
+   find_package(LibRT)
+ endif()
+ 
++if(CMAKE_SYSTEM_NAME STREQUAL FreeBSD)
++  find_package(BlocksRuntime)
++endif()
++
+ check_function_exists(_pthread_workqueue_init HAVE__PTHREAD_WORKQUEUE_INIT)
+ check_function_exists(getprogname HAVE_GETPROGNAME)
+ check_function_exists(mach_absolute_time HAVE_MACH_ABSOLUTE_TIME)

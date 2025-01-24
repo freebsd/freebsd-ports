@@ -1,8 +1,8 @@
---- cmake/modules/DispatchCompilerWarnings.cmake.orig	2021-09-17 04:54:52 UTC
+--- cmake/modules/DispatchCompilerWarnings.cmake.orig	2024-06-13 00:13:26 UTC
 +++ cmake/modules/DispatchCompilerWarnings.cmake
-@@ -2,7 +2,6 @@ else()
- if("${CMAKE_C_SIMULATE_ID}" STREQUAL "MSVC")
-   # TODO: someone needs to provide the msvc equivalent warning flags
+@@ -6,7 +6,6 @@ else()
+   # so that we can use __popcnt64
+   add_compile_options($<$<OR:$<COMPILE_LANGUAGE:C>,$<COMPILE_LANGUAGE:CXX>>:-fms-extensions>)
  else()
 -  add_compile_options($<$<OR:$<COMPILE_LANGUAGE:C>,$<COMPILE_LANGUAGE:CXX>>:-Werror>)
    add_compile_options($<$<OR:$<COMPILE_LANGUAGE:C>,$<COMPILE_LANGUAGE:CXX>>:-Wall>)
