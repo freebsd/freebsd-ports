@@ -1,5 +1,5 @@
 PORTNAME=	opensmtpd-filter-senderscore
-PORTVERSION=	0.1.1
+PORTVERSION=	0.1.2
 PORTREVISION=	22
 CATEGORIES=	mail
 
