@@ -1,23 +1,22 @@
 PORTNAME=	ddosify
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.0.6
-PORTREVISION=	8
+DISTVERSION=	2.6.0
 CATEGORIES=	benchmarks
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	High-performance load testing tool
-WWW=		https://github.com/ddosify/ddosify
+MAINTAINER=	grembo@FreeBSD.org
+COMMENT=	High-performance load testing tool, part of anteon
+WWW=		https://github.com/getanteon/anteon/ddosify_engine
 
 LICENSE=	AGPLv3
-LICENSE_FILE=	${WRKSRC}/LICENSE
-
-BROKEN=		Unfetchable
-DEPRECATED=	Abandoned upstream
-EXPIRATION_DATE=2025-02-28
+LICENSE_FILE=	${WRKSRC}/../LICENSE
 
 USES=		go:modules
-
 USE_GITHUB=	yes
+GH_ACCOUNT=	getanteon
+GH_PROJECT=	anteon
+GH_TAGNAME=	selfhosted-${DISTVERSION}
+GITID=		b38549c259cf8
+
 GH_TUPLE=	\
 		antchfx:htmlquery:v1.3.0:antchfx_htmlquery/vendor/github.com/antchfx/htmlquery \
 		antchfx:xmlquery:v1.3.13:antchfx_xmlquery/vendor/github.com/antchfx/xmlquery \
@@ -45,6 +44,13 @@ GH_TUPLE=	\
 		tklauser:go-sysconf:v0.3.11:tklauser_go_sysconf/vendor/github.com/tklauser/go-sysconf \
 		tklauser:numcpus:v0.6.0:tklauser_numcpus/vendor/github.com/tklauser/numcpus \
 		yusufpapurcu:wmi:v1.2.2:yusufpapurcu_wmi/vendor/github.com/yusufpapurcu/wmi
+
+GO_BUILDFLAGS=	-ldflags='\
+		-s -w \
+		-X main.GitVersion=${DISTVERSIONPREFIX}${DISTVERSION} \
+		-X main.GitCommit=${GITID}'
+
+WRKSRC_SUBDIR=	ddosify_engine
 
 PLIST_FILES=	bin/${PORTNAME}
 
