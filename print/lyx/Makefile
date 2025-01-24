@@ -1,12 +1,10 @@
 PORTNAME=	lyx
-PORTVERSION=	${MAJOR_VERSION}.2
-PORTREVISION=	1
+PORTVERSION=	${MAJOR_VERSION}.3
 CATEGORIES=	print editors
 MASTER_SITES=	ftp://ftp.lyx.org/pub/lyx/stable/${MAJOR_VERSION}.x/ \
 		http://www-ftp.lip6.fr/ftp/pub/lyx/stable/${MAJOR_VERSION}.x/ \
 		ftp://ftp.ntua.gr/pub/X11/LyX/stable/${MAJOR_VERSION}.x/ \
 		http://sunsite.icm.edu.pl/pub/unix/editors/lyx/stable/${MAJOR_VERSION}.x/
-DISTNAME=	${PORTNAME}-${PORTVERSION}.1
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Document processor interfaced with LaTeX (nearly WYSIWYG)
