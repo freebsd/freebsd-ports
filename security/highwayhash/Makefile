@@ -1,6 +1,5 @@
 PORTNAME=	highwayhash
-PORTVERSION=	g20201021
-PORTREVISION=	1
+PORTVERSION=	g20240418
 PORTEPOCH=	1
 CATEGORIES=	security
 
@@ -15,10 +14,11 @@ ONLY_FOR_ARCHS=		aarch64 amd64 powerpc powerpc64 powerpc64le
 ONLY_FOR_ARCHS_REASON=	assembly is implemented only for specific architectures in highwayhash/tsc_timer.h
 
 USES=		compiler:c++11-lang gmake
+USE_LDCONFIG=	yes
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	google
-GH_TAGNAME=	bdd572de8cfa3a1fbef6ba32307c2629db7c4773
-USE_LDCONFIG=	yes
+GH_TAGNAME=	f8381f3
 
 .include <bsd.port.options.mk>
 
