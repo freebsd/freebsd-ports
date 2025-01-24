@@ -1,6 +1,6 @@
 PORTNAME=	gogui
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.5.4a
+PORTVERSION=	1.5.4a
 CATEGORIES=	games java
 MASTER_SITES=	http://www.randelshofer.ch/quaqua/files/:quaqua
 DISTFILES=	quaqua-5.2.1.nested.zip:quaqua
