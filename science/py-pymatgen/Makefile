@@ -1,6 +1,6 @@
 PORTNAME=	pymatgen
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2024.11.13
+DISTVERSION=	2025.1.23
 CATEGORIES=	science python
 #MASTER_SITES=	PYPI # no tests
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,7 +18,7 @@ BUILD_DEPENDS=	${PYNUMPY} \
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}beautifulsoup>0:www/py-beautifulsoup@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}joblib>=1:devel/py-joblib@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}matplotlib>=3.8:math/py-matplotlib@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}monty>=2024.10.21:devel/py-monty@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}monty>=2025.1.9:devel/py-monty@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}networkx>=2.7:math/py-networkx@${PY_FLAVOR} \
 		${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}palettable>=3.3.3:misc/py-palettable@${PY_FLAVOR} \
@@ -28,7 +28,6 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}beautifulsoup>0:www/py-beautifulsoup@${PY_FL
 		${PYTHON_PKGNAMEPREFIX}requests>=2.32:www/py-requests@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}ruamel.yaml>=0.17.0:devel/py-ruamel.yaml@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}scipy>=1.13.0:science/py-scipy@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}scipy>=1.14.1:science/py-scipy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}spglib>=2.5.0:science/py-spglib@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sympy>=1.3:math/py-sympy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tabulate>=0.9:devel/py-tabulate@${PY_FLAVOR} \
@@ -42,7 +41,10 @@ USE_PYTHON=	pep517 cython concurrent autoplist pytest
 USE_GITHUB=	yes
 GH_ACCOUNT=	materialsproject
 
-TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
+TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR} \
+		PMG_TEST_FILES_DIR=${WRKSRC}/tests/files \
+		DISPLAY=${DISPLAY} \
+		XAUTHORITY=${XAUTHORITY}
 TEST_WRKSRC=	${WRKSRC}/tests
 
 post-install: # strip binaries
@@ -51,8 +53,19 @@ post-install: # strip binaries
 		optimization/neighbors*.so \
 		util/coord_cython*.so
 
-# tests fail to find some files: https://github.com/materialsproject/pymatgen/issues/4172
-xpre-test:
-	@cd ${TEST_WRKSRC} && ${PYTHON_CMD} ${PYSETUP} build_ext --inplace
+#tests as of 2025.1.23:
+# Results (4206.00s (1:10:05)):
+#    2743 passed
+#       9 failed
+#         - tests/analysis/test_chempot_diagram.py:71 TestChemicalPotentialDiagram.test_pca
+#         - tests/cli/test_pmg_analyze.py:13 test_pmg_analyze
+#         - tests/cli/test_pmg_diff.py:12 test_pmg_diff
+#         - tests/cli/test_pmg_plot.py:15 test_plot_xrd
+#         - tests/cli/test_pmg_plot.py:31 test_plot_dos
+#         - tests/cli/test_pmg_plot.py:47 test_plot_chgint
+#         - tests/cli/test_pmg_plot.py:63 test_plot_wrong_arg
+#         - tests/cli/test_pmg_structure.py:13 test_pmg_structure
+#         - tests/core/test_structure.py:1770 TestStructure.test_charge
+#     194 skipped
 
 .include <bsd.port.mk>
