@@ -70,7 +70,9 @@ bin/hx
 %%DATADIR%%/runtime/grammars/gowork.so
 %%DATADIR%%/runtime/grammars/gpr.so
 %%DATADIR%%/runtime/grammars/graphql.so
+%%DATADIR%%/runtime/grammars/gren.so
 %%DATADIR%%/runtime/grammars/groovy.so
+%%DATADIR%%/runtime/grammars/hare.so
 %%DATADIR%%/runtime/grammars/haskell-persistent.so
 %%DATADIR%%/runtime/grammars/haskell.so
 %%DATADIR%%/runtime/grammars/hcl.so
@@ -149,6 +151,7 @@ bin/hx
 %%DATADIR%%/runtime/grammars/prql.so
 %%DATADIR%%/runtime/grammars/purescript.so
 %%DATADIR%%/runtime/grammars/python.so
+%%DATADIR%%/runtime/grammars/ql.so
 %%DATADIR%%/runtime/grammars/qmljs.so
 %%DATADIR%%/runtime/grammars/query.so
 %%DATADIR%%/runtime/grammars/quint.so
@@ -284,6 +287,8 @@ bin/hx
 %%DATADIR%%/runtime/queries/cmake/indents.scm
 %%DATADIR%%/runtime/queries/cmake/injections.scm
 %%DATADIR%%/runtime/queries/cmake/textobjects.scm
+%%DATADIR%%/runtime/queries/codeql/highlights.scm
+%%DATADIR%%/runtime/queries/codeql/textobjects.scm
 %%DATADIR%%/runtime/queries/comment/highlights.scm
 %%DATADIR%%/runtime/queries/common-lisp/highlights.scm
 %%DATADIR%%/runtime/queries/common-lisp/indents.scm
@@ -443,6 +448,10 @@ bin/hx
 %%DATADIR%%/runtime/queries/gpr/highlights.scm
 %%DATADIR%%/runtime/queries/graphql/highlights.scm
 %%DATADIR%%/runtime/queries/graphql/textobjects.scm
+%%DATADIR%%/runtime/queries/gren/highlights.scm
+%%DATADIR%%/runtime/queries/gren/locals.scm
+%%DATADIR%%/runtime/queries/gren/tags.scm
+%%DATADIR%%/runtime/queries/gren/textobjects.scm
 %%DATADIR%%/runtime/queries/groovy/folds.scm
 %%DATADIR%%/runtime/queries/groovy/highlights.scm
 %%DATADIR%%/runtime/queries/groovy/injections.scm

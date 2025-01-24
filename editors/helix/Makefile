@@ -1,6 +1,5 @@
 PORTNAME=	helix
-DISTVERSION=	25.01
-PORTREVISION=	1
+DISTVERSION=	25.01.1
 CATEGORIES=	editors
 MASTER_SITES=	https://git.sr.ht/~ecs/tree-sitter-hare/archive/:treesitterhare \
 		https://git.sr.ht/~jummit/tree-sitter-wren/archive/:treesitterwren \
@@ -96,6 +95,7 @@ GH_TUPLE=	\
 		omertuc:tree-sitter-go-work:6dd9dd79:omertuc_tree_sitter_go_work/runtime/grammars/sources/gowork \
 		brownts:tree-sitter-gpr:cea857d3:brownts_tree_sitter_gpr/runtime/grammars/sources/gpr \
 		bkegley:tree-sitter-graphql:5e66e961:bkegley_tree_sitter_graphql/runtime/grammars/sources/graphql \
+		MaeBrooks:tree-sitter-gren:76554f4f:MaeBrooks_tree_sitter_gren/runtime/grammars/sources/gren \
 		murtaza64:tree-sitter-groovy:235009aa:murtaza64_tree_sitter_groovy/runtime/grammars/sources/groovy \
 		tree-sitter:tree-sitter-haskell:d7ac98f4:tree_sitter_tree_sitter_haskell/runtime/grammars/sources/haskell \
 		MercuryTechnologies:tree-sitter-haskell-persistent:58a6ccfd:MercuryTechnologies_tree_sitter_haskell_persistent/runtime/grammars/sources/haskell-persistent \
@@ -138,7 +138,7 @@ GH_TUPLE=	\
 		alemuller:tree-sitter-make:a4b91874:alemuller_tree_sitter_make/runtime/grammars/sources/make \
 		markdoc-extra:tree-sitter-markdoc:5ffe71b2:markdoc_extra_tree_sitter_markdoc/runtime/grammars/sources/markdoc \
 		tree-sitter-grammars:tree-sitter-markdown:62516e8c:tree_sitter_grammars_tree_sitter_markdown/runtime/grammars/sources/markdown \
-		acristoffers:tree-sitter-matlab:6071891a:acristoffers_tree_sitter_matlab/runtime/grammars/sources/matlab \
+		acristoffers:tree-sitter-matlab:b0a0198b:acristoffers_tree_sitter_matlab/runtime/grammars/sources/matlab \
 		monaqa:tree-sitter-mermaid:d787c662:monaqa_tree_sitter_mermaid/runtime/grammars/sources/mermaid \
 		staysail:tree-sitter-meson:32a83e8f:staysail_tree_sitter_meson/runtime/grammars/sources/meson \
 		lsh:tree-sitter-mojo:3d7c53b8:lsh_tree_sitter_mojo/runtime/grammars/sources/mojo \
@@ -171,6 +171,7 @@ GH_TUPLE=	\
 		PRQL:tree-sitter-prql:09e158cd:PRQL_tree_sitter_prql/runtime/grammars/sources/prql \
 		postsolar:tree-sitter-purescript:5ef55926:postsolar_tree_sitter_purescript/runtime/grammars/sources/purescript \
 		tree-sitter:tree-sitter-python:4bfdd903:tree_sitter_tree_sitter_python/runtime/grammars/sources/python \
+		tree-sitter:tree-sitter-ql:1fd627a4:tree_sitter_tree_sitter_ql/runtime/grammars/sources/ql \
 		yuja:tree-sitter-qmljs:0b2b25bc:yuja_tree_sitter_qmljs/runtime/grammars/sources/qmljs \
 		tree-sitter-grammars:tree-sitter-query:a6674e27:tree_sitter_grammars_tree_sitter_query/runtime/grammars/sources/query \
 		gruhn:tree-sitter-quint:eebbd01e:gruhn_tree_sitter_quint/runtime/grammars/sources/quint \
@@ -191,7 +192,7 @@ GH_TUPLE=	\
 		indoorvivants:tree-sitter-smithy:8327eb84:indoorvivants_tree_sitter_smithy/runtime/grammars/sources/smithy \
 		Giorbo:tree-sitter-sml:bd4055d5:Giorbo_tree_sitter_sml/runtime/grammars/sources/sml \
 		osthomas:tree-sitter-snakemake:e909815a:osthomas_tree_sitter_snakemake/runtime/grammars/sources/snakemake \
-		JoranHonig:tree-sitter-solidity:08338dce:JoranHonig_tree_sitter_solidity/runtime/grammars/sources/solidity \
+		JoranHonig:tree-sitter-solidity:f7f5251a:JoranHonig_tree_sitter_solidity/runtime/grammars/sources/solidity \
 		jzelinskie:tree-sitter-spicedb:a4e46456:jzelinskie_tree_sitter_spicedb/runtime/grammars/sources/spicedb \
 		DerekStride:tree-sitter-sql:da2d1eff:DerekStride_tree_sitter_sql/runtime/grammars/sources/sql \
 		metio:tree-sitter-ssh-client-config:e45c6d5c:metio_tree_sitter_ssh_client_config/runtime/grammars/sources/sshclientconfig \
@@ -238,7 +239,7 @@ GL_TUPLE=	\
 		https://gitlab.com:gabmus:tree-sitter-blueprint:863cea9f:gabmus_tree_sitter_blueprint/runtime/grammars/sources/blueprint \
 		https://gitlab.com:TheZoq2:tree-sitter-lpf:db7372e6:TheZoq2_tree_sitter_lpf/runtime/grammars/sources/lpf \
 		https://gitlab.com:joncoole:tree-sitter-nginx:b4b61db4:joncoole_tree_sitter_nginx/runtime/grammars/sources/nginx \
-		https://gitlab.com:spade-lang:tree-sitter-spade:4d5b1410:spade_lang_tree_sitter_spade/runtime/grammars/sources/spade \
+		https://gitlab.com:spade-lang:tree-sitter-spade:78bf09a8:spade_lang_tree_sitter_spade/runtime/grammars/sources/spade \
 		https://gitlab.com:xasc:tree-sitter-t32:6da5e3cb:xasc_tree_sitter_t32/runtime/grammars/sources/t32
 
 TREE_SITTER_HARE_REV=	07035a248943575444aa0b893ffe306e1444c0ab
