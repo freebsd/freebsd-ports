@@ -1,5 +1,5 @@
 PORTNAME=	cudatext
-PORTVERSION=	1.220.0.3
+PORTVERSION=	1.220.6.1
 CATEGORIES=	editors
 PKGNAMESUFFIX=	${LAZARUS_PKGNAMESUFFIX}
 
@@ -9,7 +9,7 @@ WWW=		https://uvviewsoft.com/
 
 LICENSE=	MPL20
 
-ONLY_FOR_ARCHS=	i386 amd64
+ONLY_FOR_ARCHS=	aarch64 amd64 i386
 
 USES=		desktop-file-utils dos2unix fpc gnome lazarus:flavors python xorg
 USE_XORG=	x11
@@ -19,9 +19,9 @@ GH_PROJECT=	CudaText
 GH_TUPLE=	bgrabitmap:bgrabitmap:d2a9b15:bgrabitmap/bgrabitmap \
 		Alexey-T:Python-for-Lazarus:fda3fdb:python4lazarus/python4lazarus \
 		Alexey-T:ATFlatControls:b42bf82:atflatcontrols/atflatcontrols  \
-		Alexey-T:ATSynEdit:07c7cda:atsynedit/atsynedit \
+		Alexey-T:ATSynEdit:57d40d8:atsynedit/atsynedit \
 		Alexey-T:Emmet-Pascal:df69312:emmet/emmet \
-		Alexey-T:EControl:0a70b9e:econtrol/econtrol \
+		Alexey-T:EControl:4c0ab4c:econtrol/econtrol \
 		Alexey-T:ATSynEdit_Ex:f98242d:atsyneditex/atsyneditex \
 		Alexey-T:ATSynEdit_Cmp:a35a75d:atsyneditcmp/atsyneditcmp \
 		Alexey-T:ATBinHex-Lazarus:f043a0e:atbinhex/atbinhex \
@@ -58,7 +58,8 @@ USE_GNOME+=	${USE_GNOME_${FLAVOR}}
 
 post-patch:
 	${REINPLACE_CMD} 's|-512||g' ${WRKSRC}/setup/debfiles/${PORTNAME}.desktop
-	${REINPLACE_CMD} 's|%%DATADIR%%|${DATADIR}|g' ${WRKSRC}/app/proc_globdata.pas
+	${REINPLACE_CMD} -e 's|%%DATADIR%%|${DATADIR}|g' -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
+		${WRKSRC}/app/proc_globdata.pas
 	${REINPLACE_CMD} 's|TEncoding.UTF8|True|g' ${WRKSRC}/app/formmain_py_pluginwork.inc
 	${REINPLACE_CMD} 's|ifdef LCLGTK2|if defined(LCLGTK2) and not defined(freebsd)|g' ${WRKSRC}/atsynedit/atsynedit/atsynedit.pas
 
