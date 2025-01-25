@@ -1,6 +1,6 @@
---- src/uGlobsPaths.pas.orig	2024-07-22 23:07:50 UTC
+--- src/uGlobsPaths.pas.orig	2025-01-24 23:48:47 UTC
 +++ src/uGlobsPaths.pas
-@@ -3,7 +3,7 @@ unit uGlobsPaths;
+@@ -3,7 +3,7 @@ var
  interface
  
  var
@@ -17,7 +17,7 @@
  
  //Global Configuration Filename
  const
-@@ -87,7 +88,7 @@ procedure Initialize;
+@@ -87,7 +88,7 @@ begin
  begin
    gpExeFile := ParamStr(0);
    gpExeFile := TryReadAllLinks(gpExeFile);
