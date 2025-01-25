@@ -1,11 +1,7 @@
 PORTNAME=	poppler
-DISTVERSION=	24.02.0
-PORTREVISION=	2
+DISTVERSION=	24.12.0
 CATEGORIES=	graphics print
 MASTER_SITES=	https://poppler.freedesktop.org/
-
-PATCH_SITES=	https://gitlab.freedesktop.org/poppler/${PORTNAME}/-/commit/
-PATCHFILES+=	b4ac7d9a.patch:-p1 # deprecated char_traits template has been removed in libc++ 19
 
 MAINTAINER?=	desktop@FreeBSD.org
 COMMENT?=	PDF rendering library
@@ -16,34 +12,37 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libnspr4.so:devel/nspr \
 		liblcms2.so:graphics/lcms2 \
-		libpng.so:graphics/png \
+		libpng16.so:graphics/png \
 		libtiff.so:graphics/tiff \
 		libfreetype.so:print/freetype2 \
 		libnss3.so:security/nss \
 		libfontconfig.so:x11-fonts/fontconfig \
-		libgpgmepp.so:security/gpgme-cpp
+		libgpgme.so:security/gpgme \
+		libgpgmepp.so:security/gpgme-cpp \
+		libassuan.so:security/libassuan
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/container/small_vector.hpp:devel/boost-libs \
 		gsed:textproc/gsed
 RUN_DEPENDS=	poppler-data>0:graphics/poppler-data
 
-USES=		cmake:insource compiler:c++17-lang cpe gnome gperf jpeg \
+USES=		cmake:insource compiler:c++17-lang cpe gperf jpeg \
 		localbase pathfix pkgconfig tar:xz
 CPE_VENDOR=	freedesktop
-USE_GNOME=	cairo libxml2
 USE_LDCONFIG=	yes
-CMAKE_ON=	ENABLE_LIBJPEG  \
-		ENABLE_LIBPNG \
+CMAKE_ON=	ENABLE_BOOST \
+		ENABLE_GPGME \
+		ENABLE_LCMS \
 		ENABLE_LIBTIFF \
+		ENABLE_NSS3 \
 		ENABLE_UNSTABLE_API_ABI_HEADERS \
-		ENABLE_ZLIB \
-		ENABLE_NSS \
-		ENABLE_SPLASH
+		ENABLE_ZLIB_UNCOMPRESS \
+		RUN_GPERF_IF_PRESENT
 CMAKE_OFF=	BUILD_GTK_TESTS
 # Ensure that path ordering does not lead to openjpeg15 being found and picked
 # instead of openjpeg2 on systems that have both installed
 # Note: since f3ba77e14cac05d43caf35100848eeaee3bc64b4 graphics/openjpeg15 installs
 # its cmake files to ${PREFIX}/lib/openjpeg15
-CMAKE_ARGS+=	-DCMAKE_IGNORE_PATH:PATH=${PREFIX}/lib/openjpeg-1.5
+CMAKE_ARGS+=	-DCMAKE_IGNORE_PATH:PATH=${PREFIX}/lib/openjpeg-1.5 \
+		-DENABLE_DCTDECODER:STRING="libjpeg"
 
 # Slave ports.
 _POPPLER_SLAVES=	library glib qt5 qt6 utils
@@ -60,7 +59,7 @@ CMAKE_OFF+=	${_POPPLER_SLAVES:N${_SLAVE_PORT}:tu:S/^/ENABLE_/}
 PORTSCOUT=	limitw:1,even
 USES+=		iconv
 CMAKE_ON+=	ENABLE_CPP
-PLIST_SUB+=	SHLIB_VER=134
+PLIST_SUB+=	SHLIB_VER=144
 
 OPTIONS_DEFINE=		CURL OPENJPEG
 OPTIONS_DEFAULT=	OPENJPEG
@@ -78,8 +77,8 @@ CMAKE_ARGS+=		-DENABLE_LIBOPENJPEG:STRING="none" \
 			-DENABLE_LIBCURL:BOOL=FALSE
 
 .  if ${_SLAVE_PORT} == glib
-USES+=			python:build
-USE_GNOME+=		glib20 introspection:Build
+USES+=			gnome python:build
+USE_GNOME+=		cairo glib20 introspection:Build libxml2
 BINARY_ALIAS+=		python3=${PYTHON_CMD}
 .  elif ${_SLAVE_PORT} == qt5
 USES+=			qt:5
