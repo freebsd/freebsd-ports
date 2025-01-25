@@ -1,6 +1,6 @@
---- media/mojo/mojom/stable/stable_video_decoder_types_mojom_traits.cc.orig	2024-10-22 08:31:56 UTC
+--- media/mojo/mojom/stable/stable_video_decoder_types_mojom_traits.cc.orig	2025-01-15 09:18:26 UTC
 +++ media/mojo/mojom/stable/stable_video_decoder_types_mojom_traits.cc
-@@ -841,7 +841,7 @@ const gfx::GpuMemoryBufferId& StructTraits<
+@@ -854,7 +854,7 @@ const gfx::GpuMemoryBufferId& StructTraits<
    return input.id;
  }
  
@@ -9,7 +9,7 @@
  // static
  gfx::NativePixmapHandle StructTraits<
      media::stable::mojom::NativeGpuMemoryBufferHandleDataView,
-@@ -862,7 +862,7 @@ bool StructTraits<media::stable::mojom::NativeGpuMemor
+@@ -875,7 +875,7 @@ bool StructTraits<media::stable::mojom::NativeGpuMemor
  
    output->type = gfx::NATIVE_PIXMAP;
  

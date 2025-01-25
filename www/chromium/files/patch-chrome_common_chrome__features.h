@@ -1,4 +1,4 @@
---- chrome/common/chrome_features.h.orig	2024-11-14 07:57:23 UTC
+--- chrome/common/chrome_features.h.orig	2025-01-15 09:18:26 UTC
 +++ chrome/common/chrome_features.h
 @@ -60,13 +60,13 @@ BASE_DECLARE_FEATURE(kUseAdHocSigningForWebAppShims);
  #endif  // BUILDFLAG(IS_MAC)
@@ -16,7 +16,7 @@
  COMPONENT_EXPORT(CHROME_FEATURES)
  BASE_DECLARE_FEATURE(kBackgroundModeAllowRestart);
  #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
-@@ -179,7 +179,7 @@ BASE_DECLARE_FEATURE(kDesktopPWAsPreventClose);
+@@ -163,7 +163,7 @@ BASE_DECLARE_FEATURE(kDesktopPWAsPreventClose);
  COMPONENT_EXPORT(CHROME_FEATURES)
  BASE_DECLARE_FEATURE(kDesktopPWAsTabStripSettings);
  
@@ -25,7 +25,16 @@
  COMPONENT_EXPORT(CHROME_FEATURES) BASE_DECLARE_FEATURE(kChromeAppsDeprecation);
  COMPONENT_EXPORT(CHROME_FEATURES)
  BASE_DECLARE_FEATURE(kShortcutsNotApps);
-@@ -503,7 +503,7 @@ BASE_DECLARE_FEATURE(kKAnonymityServiceOHTTPRequests);
+@@ -218,7 +218,7 @@ BASE_DECLARE_FEATURE(kForcedAppRelaunchOnPlaceholderUp
+ 
+ COMPONENT_EXPORT(CHROME_FEATURES) BASE_DECLARE_FEATURE(kGeoLanguage);
+ 
+-#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+ COMPONENT_EXPORT(CHROME_FEATURES) BASE_DECLARE_FEATURE(kGlic);
+ #endif
+ 
+@@ -493,7 +493,7 @@ BASE_DECLARE_FEATURE(kKAnonymityServiceOHTTPRequests);
  COMPONENT_EXPORT(CHROME_FEATURES)
  BASE_DECLARE_FEATURE(kKAnonymityServiceStorage);
  
@@ -34,7 +43,7 @@
  COMPONENT_EXPORT(CHROME_FEATURES) BASE_DECLARE_FEATURE(kLinuxLowMemoryMonitor);
  COMPONENT_EXPORT(CHROME_FEATURES)
  extern const base::FeatureParam<int> kLinuxLowMemoryMonitorModerateLevel;
-@@ -511,7 +511,7 @@ COMPONENT_EXPORT(CHROME_FEATURES)
+@@ -501,7 +501,7 @@ COMPONENT_EXPORT(CHROME_FEATURES)
  extern const base::FeatureParam<int> kLinuxLowMemoryMonitorCriticalLevel;
  #endif  // BUILDFLAG(IS_LINUX) && !BUILDFLAG(IS_CHROMEOS)
  

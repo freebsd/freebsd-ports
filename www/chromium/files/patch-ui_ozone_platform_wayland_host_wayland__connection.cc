@@ -1,6 +1,6 @@
---- ui/ozone/platform/wayland/host/wayland_connection.cc.orig	2024-10-22 08:31:56 UTC
+--- ui/ozone/platform/wayland/host/wayland_connection.cc.orig	2025-01-15 09:18:26 UTC
 +++ ui/ozone/platform/wayland/host/wayland_connection.cc
-@@ -541,7 +541,7 @@ bool WaylandConnection::ShouldUseOverlayDelegation() c
+@@ -540,7 +540,7 @@ bool WaylandConnection::ShouldUseOverlayDelegation() c
    // isn't present on any non-exo Wayland compositors.
    bool should_use_overlay_delegation =
        IsWaylandOverlayDelegationEnabled() && !fractional_scale_manager_v1();

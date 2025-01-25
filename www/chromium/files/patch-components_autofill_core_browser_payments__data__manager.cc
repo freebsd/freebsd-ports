@@ -1,6 +1,6 @@
---- components/autofill/core/browser/payments_data_manager.cc.orig	2024-11-14 07:57:23 UTC
+--- components/autofill/core/browser/payments_data_manager.cc.orig	2025-01-15 09:18:26 UTC
 +++ components/autofill/core/browser/payments_data_manager.cc
-@@ -1095,7 +1095,7 @@ bool PaymentsDataManager::ShouldShowCardsFromAccountOp
+@@ -1090,7 +1090,7 @@ bool PaymentsDataManager::ShouldShowCardsFromAccountOp
  // The feature is only for Linux, Windows, Mac, and Fuchsia.
  // TODO(crbug.com/40118868): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.

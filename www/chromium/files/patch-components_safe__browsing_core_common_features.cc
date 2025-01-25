@@ -1,6 +1,6 @@
---- components/safe_browsing/core/common/features.cc.orig	2024-11-14 07:57:23 UTC
+--- components/safe_browsing/core/common/features.cc.orig	2025-01-15 09:18:26 UTC
 +++ components/safe_browsing/core/common/features.cc
-@@ -249,7 +249,7 @@ constexpr base::FeatureParam<std::string> kRedWarningS
+@@ -256,7 +256,7 @@ constexpr base::FeatureParam<std::string> kRedWarningS
  BASE_FEATURE(kSafeBrowsingAsyncRealTimeCheck,
               "SafeBrowsingAsyncRealTimeCheck",
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \

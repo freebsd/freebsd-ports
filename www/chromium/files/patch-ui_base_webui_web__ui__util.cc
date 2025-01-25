@@ -1,6 +1,6 @@
---- ui/base/webui/web_ui_util.cc.orig	2024-09-30 07:45:04 UTC
+--- ui/base/webui/web_ui_util.cc.orig	2025-01-15 09:18:26 UTC
 +++ ui/base/webui/web_ui_util.cc
-@@ -44,7 +44,7 @@ namespace {
+@@ -43,7 +43,7 @@ namespace {
  constexpr float kMaxScaleFactor = 1000.0f;
  
  std::string GetFontFamilyMd() {
@@ -9,12 +9,12 @@
    return "Roboto, " + GetFontFamily();
  #else
    return GetFontFamily();
-@@ -221,7 +221,7 @@ std::string GetFontFamily() {
+@@ -218,7 +218,7 @@ void AppendWebUiCssTextDefaults(std::string* html) {
+ std::string GetFontFamily() {
+   std::string font_family = l10n_util::GetStringUTF8(IDS_WEB_FONT_FAMILY);
  
- // TODO(crbug.com/40118868): Revisit the macro expression once build flag switch
- // of lacros-chrome is complete.
--#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)
-+#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS) || BUILDFLAG(IS_BSD)
+-#if BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
    std::string font_name = ui::ResourceBundle::GetSharedInstance()
                                .GetFont(ui::ResourceBundle::BaseFont)
                                .GetFontName();

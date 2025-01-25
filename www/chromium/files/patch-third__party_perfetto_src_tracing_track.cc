@@ -1,4 +1,4 @@
---- third_party/perfetto/src/tracing/track.cc.orig	2024-11-14 07:57:23 UTC
+--- third_party/perfetto/src/tracing/track.cc.orig	2025-01-15 09:18:26 UTC
 +++ third_party/perfetto/src/tracing/track.cc
 @@ -60,8 +60,9 @@ protos::gen::TrackDescriptor ProcessTrack::Serialize()
    auto desc = Track::Serialize();
@@ -12,7 +12,7 @@
    std::string cmdline;
    if (base::ReadFile("/proc/self/cmdline", &cmdline)) {
      // Since cmdline is a zero-terminated list of arguments, this ends up
-@@ -155,7 +156,7 @@ namespace internal {
+@@ -170,7 +171,7 @@ namespace internal {
  namespace {
  
  uint64_t GetProcessStartTime() {

@@ -1,6 +1,6 @@
---- chrome/browser/ui/views/profiles/profile_menu_view_base.cc.orig	2024-11-14 07:57:23 UTC
+--- chrome/browser/ui/views/profiles/profile_menu_view_base.cc.orig	2025-01-15 09:18:26 UTC
 +++ chrome/browser/ui/views/profiles/profile_menu_view_base.cc
-@@ -693,7 +693,7 @@ void ProfileMenuViewBase::SetProfileIdentityInfo(
+@@ -698,7 +698,7 @@ void ProfileMenuViewBase::SetProfileIdentityInfo(
        image_model, management_badge, this,
        ProfileMenuViewBase::kIdentityImageSize, kIdentityImageBorder);
  

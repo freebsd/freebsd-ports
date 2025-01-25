@@ -1,4 +1,4 @@
---- chrome/browser/download/download_prefs.cc.orig	2024-10-22 08:31:56 UTC
+--- chrome/browser/download/download_prefs.cc.orig	2025-01-15 09:18:26 UTC
 +++ chrome/browser/download/download_prefs.cc
 @@ -11,6 +11,7 @@
  #include <vector>
@@ -37,7 +37,7 @@
    should_open_pdf_in_system_reader_ =
        prefs->GetBoolean(prefs::kOpenPdfDownloadInSystemReader);
  #endif
-@@ -300,7 +305,7 @@ void DownloadPrefs::RegisterProfilePrefs(
+@@ -301,7 +306,7 @@ void DownloadPrefs::RegisterProfilePrefs(
    registry->RegisterFilePathPref(prefs::kSaveFileDefaultDirectory,
                                   default_download_path);
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || \
@@ -46,7 +46,7 @@
    registry->RegisterBooleanPref(prefs::kOpenPdfDownloadInSystemReader, false);
  #endif
  #if BUILDFLAG(IS_ANDROID)
-@@ -467,7 +472,7 @@ void DownloadPrefs::DisableAutoOpenByUserBasedOnExtens
+@@ -468,7 +473,7 @@ void DownloadPrefs::DisableAutoOpenByUserBasedOnExtens
  }
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || \
@@ -55,7 +55,7 @@
  void DownloadPrefs::SetShouldOpenPdfInSystemReader(bool should_open) {
    if (should_open_pdf_in_system_reader_ == should_open)
      return;
-@@ -493,7 +498,7 @@ bool DownloadPrefs::ShouldOpenPdfInSystemReader() cons
+@@ -494,7 +499,7 @@ bool DownloadPrefs::ShouldOpenPdfInSystemReader() cons
  
  void DownloadPrefs::ResetAutoOpenByUser() {
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || \
@@ -64,7 +64,7 @@
    SetShouldOpenPdfInSystemReader(false);
  #endif
    auto_open_by_user_.clear();
-@@ -530,7 +535,7 @@ void DownloadPrefs::SaveAutoOpenState() {
+@@ -531,7 +536,7 @@ void DownloadPrefs::SaveAutoOpenState() {
  bool DownloadPrefs::CanPlatformEnableAutoOpenForPdf() const {
  #if BUILDFLAG(IS_CHROMEOS)
    return false;  // There is no UI for auto-open on ChromeOS.
@@ -73,7 +73,7 @@
    return ShouldOpenPdfInSystemReader();
  #else
    return false;
-@@ -682,7 +687,14 @@ base::FilePath DownloadPrefs::SanitizeDownloadTargetPa
+@@ -683,7 +688,14 @@ base::FilePath DownloadPrefs::SanitizeDownloadTargetPa
  #else
    // If the stored download directory is an absolute path, we presume it's
    // correct; there's not really much more validation we can do here.

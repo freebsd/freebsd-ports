@@ -1,4 +1,4 @@
---- chrome/browser/web_applications/os_integration/web_app_shortcut.h.orig	2023-12-10 06:10:27 UTC
+--- chrome/browser/web_applications/os_integration/web_app_shortcut.h.orig	2025-01-15 09:18:26 UTC
 +++ chrome/browser/web_applications/os_integration/web_app_shortcut.h
 @@ -21,7 +21,7 @@
  #include "ui/gfx/image/image_family.h"
@@ -9,10 +9,10 @@
  #include "chrome/browser/web_applications/os_integration/web_app_shortcut_linux.h"
  #endif  // BUILDFLAG(IS_LINUX)
  
-@@ -70,7 +70,7 @@ struct ShortcutInfo {
-   std::set<std::string> file_handler_extensions;
-   std::set<std::string> file_handler_mime_types;
-   std::set<std::string> protocol_handlers;
+@@ -74,7 +74,7 @@ struct ShortcutInfo {
+   // the installed PWA experience and thus the icons are not designed to be
+   // displayed on an OS dock.
+   bool is_diy_app = false;
 -#if BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
    std::set<DesktopActionInfo> actions;

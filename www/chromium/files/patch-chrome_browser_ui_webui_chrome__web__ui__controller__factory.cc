@@ -1,6 +1,6 @@
---- chrome/browser/ui/webui/chrome_web_ui_controller_factory.cc.orig	2024-11-14 07:57:23 UTC
+--- chrome/browser/ui/webui/chrome_web_ui_controller_factory.cc.orig	2025-01-15 09:18:26 UTC
 +++ chrome/browser/ui/webui/chrome_web_ui_controller_factory.cc
-@@ -130,16 +130,16 @@
+@@ -123,16 +123,16 @@
  #endif
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -20,7 +20,7 @@
  #include "chrome/browser/ui/webui/whats_new/whats_new_ui.h"
  #endif
  
-@@ -465,7 +465,7 @@ base::RefCountedMemory* ChromeWebUIControllerFactory::
+@@ -412,7 +412,7 @@ base::RefCountedMemory* ChromeWebUIControllerFactory::
    if (page_url.host_piece() == chrome::kChromeUINewTabPageHost)
      return NewTabPageUI::GetFaviconResourceBytes(scale_factor);
  
@@ -29,7 +29,7 @@
    if (page_url.host_piece() == chrome::kChromeUIWhatsNewHost)
      return WhatsNewUI::GetFaviconResourceBytes(scale_factor);
  #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
-@@ -493,7 +493,7 @@ base::RefCountedMemory* ChromeWebUIControllerFactory::
+@@ -440,7 +440,7 @@ base::RefCountedMemory* ChromeWebUIControllerFactory::
      return ManagementUI::GetFaviconResourceBytes(scale_factor);
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \

@@ -1,6 +1,6 @@
---- gpu/config/gpu_finch_features.cc.orig	2024-11-14 07:57:23 UTC
+--- gpu/config/gpu_finch_features.cc.orig	2025-01-15 09:18:26 UTC
 +++ gpu/config/gpu_finch_features.cc
-@@ -147,7 +147,8 @@ const base::FeatureParam<std::string>
+@@ -166,7 +166,8 @@ BASE_FEATURE(kAllowHardwareBufferUsageFlagsFromVulkanF
  BASE_FEATURE(kDefaultEnableGpuRasterization,
               "DefaultEnableGpuRasterization",
  #if BUILDFLAG(IS_APPLE) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_CHROMEOS) || \

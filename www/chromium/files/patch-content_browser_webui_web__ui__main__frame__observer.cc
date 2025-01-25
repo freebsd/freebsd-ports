@@ -1,6 +1,6 @@
---- content/browser/webui/web_ui_main_frame_observer.cc.orig	2024-06-17 12:56:06 UTC
+--- content/browser/webui/web_ui_main_frame_observer.cc.orig	2025-01-15 09:18:26 UTC
 +++ content/browser/webui/web_ui_main_frame_observer.cc
-@@ -13,7 +13,7 @@
+@@ -14,7 +14,7 @@
  #include "content/public/browser/navigation_handle.h"
  #include "content/public/browser/web_ui_controller.h"
  
@@ -9,7 +9,7 @@
  #include "base/feature_list.h"
  #include "base/functional/callback_helpers.h"
  #include "base/logging.h"
-@@ -31,7 +31,7 @@ namespace content {
+@@ -32,7 +32,7 @@ namespace content {
  
  namespace {
  
@@ -18,7 +18,7 @@
  // Remove the pieces of the URL we don't want to send back with the error
  // reports. In particular, do not send query or fragments as those can have
  // privacy-sensitive information in them.
-@@ -55,7 +55,7 @@ WebUIMainFrameObserver::WebUIMainFrameObserver(WebUIIm
+@@ -56,7 +56,7 @@ WebUIMainFrameObserver::WebUIMainFrameObserver(WebUIIm
  
  WebUIMainFrameObserver::~WebUIMainFrameObserver() = default;
  
@@ -27,7 +27,7 @@
  void WebUIMainFrameObserver::OnDidAddMessageToConsole(
      RenderFrameHost* source_frame,
      blink::mojom::ConsoleMessageLevel log_level,
-@@ -167,7 +167,7 @@ void WebUIMainFrameObserver::ReadyToCommitNavigation(
+@@ -171,7 +171,7 @@ void WebUIMainFrameObserver::ReadyToCommitNavigation(
  
  // TODO(crbug.com/40149439) This is currently disabled due to Windows DLL
  // thunking issues. Fix & re-enable.

@@ -1,6 +1,6 @@
---- ui/gfx/switches.h.orig	2024-04-19 13:02:56 UTC
+--- ui/gfx/switches.h.orig	2025-01-15 09:18:26 UTC
 +++ ui/gfx/switches.h
-@@ -19,7 +19,7 @@ GFX_SWITCHES_EXPORT extern const char kForcePrefersRed
+@@ -18,7 +18,7 @@ GFX_SWITCHES_EXPORT extern const char kForcePrefersRed
  GFX_SWITCHES_EXPORT extern const char kForcePrefersNoReducedMotion[];
  GFX_SWITCHES_EXPORT extern const char kHeadless[];
  

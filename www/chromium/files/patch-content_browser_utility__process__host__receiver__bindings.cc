@@ -1,22 +1,15 @@
---- content/browser/utility_process_host_receiver_bindings.cc.orig	2024-11-14 07:57:23 UTC
+--- content/browser/utility_process_host_receiver_bindings.cc.orig	2025-01-15 09:18:26 UTC
 +++ content/browser/utility_process_host_receiver_bindings.cc
-@@ -10,13 +10,13 @@
- #include "content/public/browser/content_browser_client.h"
+@@ -10,7 +10,7 @@
  #include "content/public/common/content_client.h"
+ #include "media/media_buildflags.h"
  
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
  #include "components/services/font/public/mojom/font_service.mojom.h"  // nogncheck
  #include "content/browser/font_service.h"  // nogncheck
  #endif
- 
- #if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_CHROMEOS_ASH) || \
--    BUILDFLAG(IS_MAC)
-+    BUILDFLAG(IS_MAC) || BUILDFLAG(IS_BSD)
- #include "components/viz/host/gpu_client.h"
- #include "content/public/browser/gpu_client.h"
- #endif
-@@ -25,14 +25,14 @@ namespace content {
+@@ -24,7 +24,7 @@ namespace content {
  
  void UtilityProcessHost::BindHostReceiver(
      mojo::GenericPendingReceiver receiver) {
@@ -25,11 +18,3 @@
    if (auto font_receiver = receiver.As<font_service::mojom::FontService>()) {
      ConnectToFontService(std::move(font_receiver));
      return;
-   }
- #endif
- #if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_CHROMEOS_ASH) || \
--    BUILDFLAG(IS_MAC)
-+    BUILDFLAG(IS_MAC) || BUILDFLAG(IS_BSD)
-   if (allowed_gpu_) {
-     // TODO(crbug.com/328099369) Remove once all clients get this directly.
-     if (auto gpu_receiver = receiver.As<viz::mojom::Gpu>()) {

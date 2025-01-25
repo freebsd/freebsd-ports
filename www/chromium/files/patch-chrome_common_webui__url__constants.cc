@@ -1,4 +1,4 @@
---- chrome/common/webui_url_constants.cc.orig	2024-08-26 12:06:38 UTC
+--- chrome/common/webui_url_constants.cc.orig	2025-01-15 09:18:26 UTC
 +++ chrome/common/webui_url_constants.cc
 @@ -197,21 +197,21 @@ base::span<const base::cstring_view> ChromeURLHosts() 
        kChromeUIAssistantOptInHost,
@@ -26,7 +26,7 @@
        kChromeUISandboxHost,
  #endif
  #if BUILDFLAG(IS_WIN)
-@@ -284,7 +284,7 @@ base::span<const base::cstring_view> ChromeDebugURLs()
+@@ -282,7 +282,7 @@ base::span<const base::cstring_view> ChromeDebugURLs()
         blink::kChromeUIGpuJavaCrashURL,
         kChromeUIJavaCrashURL,
  #endif

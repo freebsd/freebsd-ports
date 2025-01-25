@@ -1,6 +1,6 @@
---- third_party/blink/public/platform/web_vector.h.orig	2024-11-14 07:57:23 UTC
+--- third_party/blink/public/platform/web_vector.h.orig	2025-01-15 09:18:26 UTC
 +++ third_party/blink/public/platform/web_vector.h
-@@ -86,7 +86,7 @@ class WebVector {
+@@ -91,7 +91,7 @@ class WebVector {
    // The vector can be populated using reserve() and emplace_back().
    WebVector() = default;
  

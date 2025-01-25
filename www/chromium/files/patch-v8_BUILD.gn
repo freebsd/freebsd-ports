@@ -1,4 +1,4 @@
---- v8/BUILD.gn.orig	2024-11-14 07:57:23 UTC
+--- v8/BUILD.gn.orig	2025-01-15 09:18:26 UTC
 +++ v8/BUILD.gn
 @@ -929,6 +929,8 @@ external_v8_defines = [
    "V8_TARGET_OS_MACOS",
@@ -22,7 +22,7 @@
  }
  
  disabled_external_v8_defines = external_v8_defines - enabled_external_v8_defines
-@@ -2563,6 +2571,12 @@ template("run_mksnapshot") {
+@@ -2572,6 +2580,12 @@ template("run_mksnapshot") {
        if (!v8_enable_builtins_profiling && v8_enable_builtins_reordering) {
          args += [ "--reorder-builtins" ]
        }
@@ -35,7 +35,7 @@
      }
  
      if (v8_enable_turboshaft_csa) {
-@@ -6636,7 +6650,7 @@ v8_component("v8_libbase") {
+@@ -6645,7 +6659,7 @@ v8_component("v8_libbase") {
      }
    }
  
@@ -44,7 +44,7 @@
      sources += [
        "src/base/debug/stack_trace_posix.cc",
        "src/base/platform/platform-linux.cc",
-@@ -6647,6 +6661,18 @@ v8_component("v8_libbase") {
+@@ -6656,6 +6670,18 @@ v8_component("v8_libbase") {
        "dl",
        "rt",
      ]

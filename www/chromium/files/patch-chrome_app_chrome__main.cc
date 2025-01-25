@@ -1,6 +1,6 @@
---- chrome/app/chrome_main.cc.orig	2024-10-22 08:31:56 UTC
+--- chrome/app/chrome_main.cc.orig	2025-01-15 09:18:26 UTC
 +++ chrome/app/chrome_main.cc
-@@ -30,11 +30,11 @@
+@@ -28,11 +28,11 @@
  #include "chrome/app/chrome_main_mac.h"
  #endif
  
@@ -14,16 +14,16 @@
  #include "chrome/app/chrome_main_linux.h"
  #endif
  
-@@ -55,7 +55,7 @@
- #endif  // BUILDFLAG(IS_WIN)
- 
+@@ -57,7 +57,7 @@
+ // sometime after old headless code is removed from Chrome.
+ // See https://crbug.com/373672160.
  #if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_MAC) || \
 -    BUILDFLAG(IS_WIN)
 +    BUILDFLAG(IS_WIN) || BUILDFLAG(IS_BSD)
- #define ENABLE_OLD_HEADLESS
+ #define ENABLE_OLD_HEADLESS_INFO
  #endif
  
-@@ -120,7 +120,7 @@ int ChromeMain(int argc, const char** argv) {
+@@ -115,7 +115,7 @@ int ChromeMain(int argc, const char** argv) {
  #error Unknown platform.
  #endif
  
@@ -32,7 +32,7 @@
    PossiblyDetermineFallbackChromeChannel(argv[0]);
  #endif
  
-@@ -186,7 +186,7 @@ int ChromeMain(int argc, const char** argv) {
+@@ -181,7 +181,7 @@ int ChromeMain(int argc, const char** argv) {
    SetUpBundleOverrides();
  #endif
  

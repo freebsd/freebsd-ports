@@ -1,15 +1,15 @@
---- components/supervised_user/core/common/features.cc.orig	2024-11-14 07:57:23 UTC
+--- components/supervised_user/core/common/features.cc.orig	2025-01-15 09:18:26 UTC
 +++ components/supervised_user/core/common/features.cc
-@@ -66,7 +66,7 @@ BASE_FEATURE(kUpdatedSupervisedUserExtensionApprovalSt
+@@ -60,7 +60,7 @@ BASE_FEATURE(kUpdatedSupervisedUserExtensionApprovalSt
               "UpdatedSupervisedUserExtensionApprovalStrings",
-              base::FEATURE_DISABLED_BY_DEFAULT);
+              base::FEATURE_ENABLED_BY_DEFAULT);
  
 -#if BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_WIN)
 +#if BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_BSD)
  BASE_FEATURE(kEnableExtensionsPermissionsForSupervisedUsersOnDesktop,
               "EnableExtensionsPermissionsForSupervisedUsersOnDesktop",
-              base::FEATURE_DISABLED_BY_DEFAULT);
-@@ -81,7 +81,7 @@ bool IsSupervisedUserSkipParentApprovalToInstallExtens
+              base::FEATURE_ENABLED_BY_DEFAULT);
+@@ -75,7 +75,7 @@ bool IsSupervisedUserSkipParentApprovalToInstallExtens
  #if BUILDFLAG(IS_CHROMEOS)
    return base::FeatureList::IsEnabled(
        kEnableSupervisedUserSkipParentApprovalToInstallExtensions);
@@ -18,8 +18,8 @@
    bool skipParentApprovalEnabled = base::FeatureList::IsEnabled(
        kEnableSupervisedUserSkipParentApprovalToInstallExtensions);
    bool permissionExtensionsForSupervisedUsersEnabled =
-@@ -106,13 +106,13 @@ BASE_FEATURE(kSupervisedUserProfileSigninIPH,
-              "SupervisedUserProfileSigninIPH",
+@@ -96,13 +96,13 @@ BASE_FEATURE(kCustomProfileStringsForSupervisedUsers,
+              "CustomProfileStringsForSupervisedUsers",
               base::FEATURE_DISABLED_BY_DEFAULT);
  
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN)
@@ -34,7 +34,7 @@
  BASE_FEATURE(kHideGuestModeForSupervisedUsers,
               "HideGuestModeForSupervisedUsers",
               base::FEATURE_DISABLED_BY_DEFAULT);
-@@ -122,7 +122,7 @@ BASE_FEATURE(kForceSafeSearchForUnauthenticatedSupervi
+@@ -112,7 +112,7 @@ BASE_FEATURE(kForceSafeSearchForUnauthenticatedSupervi
               "ForceSafeSearchForUnauthenticatedSupervisedUsers",
               base::FEATURE_DISABLED_BY_DEFAULT);
  
@@ -43,7 +43,7 @@
  BASE_FEATURE(kForceSupervisedUserReauthenticationForYouTube,
               "ForceSupervisedUserReauthenticationForYouTube",
               base::FEATURE_DISABLED_BY_DEFAULT);
-@@ -172,7 +172,7 @@ BASE_FEATURE(kReplaceSupervisionSystemCapabilitiesWith
+@@ -162,7 +162,7 @@ BASE_FEATURE(kReplaceSupervisionSystemCapabilitiesWith
  
  BASE_FEATURE(kFetchListFamilyMembersWithCapability,
               "FetchListFamilyMembersWithCapability",

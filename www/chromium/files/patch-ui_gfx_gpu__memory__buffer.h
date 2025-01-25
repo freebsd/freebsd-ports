@@ -1,15 +1,15 @@
---- ui/gfx/gpu_memory_buffer.h.orig	2024-03-22 08:19:40 UTC
+--- ui/gfx/gpu_memory_buffer.h.orig	2025-01-15 09:18:26 UTC
 +++ ui/gfx/gpu_memory_buffer.h
 @@ -15,7 +15,7 @@
+ #include "ui/gfx/generic_shared_memory_id.h"
  #include "ui/gfx/geometry/rect.h"
- #include "ui/gfx/gfx_export.h"
  
 -#if BUILDFLAG(IS_OZONE) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
 +#if BUILDFLAG(IS_OZONE) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
  #include "ui/gfx/native_pixmap_handle.h"
  #elif BUILDFLAG(IS_APPLE)
  #include "ui/gfx/mac/io_surface.h"
-@@ -76,7 +76,7 @@ struct GFX_EXPORT GpuMemoryBufferHandle {
+@@ -76,7 +76,7 @@ struct COMPONENT_EXPORT(GFX) GpuMemoryBufferHandle {
    base::UnsafeSharedMemoryRegion region;
    uint32_t offset = 0;
    uint32_t stride = 0;

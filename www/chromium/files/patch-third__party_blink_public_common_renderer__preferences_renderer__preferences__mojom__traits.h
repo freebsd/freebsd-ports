@@ -1,6 +1,6 @@
---- third_party/blink/public/common/renderer_preferences/renderer_preferences_mojom_traits.h.orig	2024-04-19 13:02:56 UTC
+--- third_party/blink/public/common/renderer_preferences/renderer_preferences_mojom_traits.h.orig	2025-01-15 09:18:26 UTC
 +++ third_party/blink/public/common/renderer_preferences/renderer_preferences_mojom_traits.h
-@@ -166,7 +166,7 @@ struct BLINK_COMMON_EXPORT
+@@ -173,7 +173,7 @@ struct BLINK_COMMON_EXPORT
      return data.send_subresource_notification;
    }
  

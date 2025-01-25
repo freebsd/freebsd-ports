@@ -1,20 +1,20 @@
---- components/viz/service/display_embedder/software_output_surface.h.orig	2024-09-30 07:45:04 UTC
+--- components/viz/service/display_embedder/software_output_surface.h.orig	2025-01-15 09:18:26 UTC
 +++ components/viz/service/display_embedder/software_output_surface.h
-@@ -44,7 +44,7 @@ class VIZ_SERVICE_EXPORT SoftwareOutputSurface : publi
+@@ -42,7 +42,7 @@ class VIZ_SERVICE_EXPORT SoftwareOutputSurface : publi
+       UpdateVSyncParametersCallback callback) override;
+   void SetDisplayTransformHint(gfx::OverlayTransform transform) override {}
    gfx::OverlayTransform GetDisplayTransform() override;
- // TODO(crbug.com/40118868): Revisit the macro expression once build flag switch
- // of lacros-chrome is complete.
--#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)
-+#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS) || BUILDFLAG(IS_BSD)
+-#if BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
    void SetNeedsSwapSizeNotifications(
        bool needs_swap_size_notifications) override;
  #endif
-@@ -64,7 +64,7 @@ class VIZ_SERVICE_EXPORT SoftwareOutputSurface : publi
+@@ -60,7 +60,7 @@ class VIZ_SERVICE_EXPORT SoftwareOutputSurface : publi
+   base::TimeTicks refresh_timebase_;
+   base::TimeDelta refresh_interval_ = BeginFrameArgs::DefaultInterval();
  
- // TODO(crbug.com/40118868): Revisit the macro expression once build flag switch
- // of lacros-chrome is complete.
--#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)
-+#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS) || BUILDFLAG(IS_BSD)
+-#if BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
    bool needs_swap_size_notifications_ = false;
  #endif
  

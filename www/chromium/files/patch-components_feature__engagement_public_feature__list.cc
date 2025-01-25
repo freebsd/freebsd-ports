@@ -1,6 +1,6 @@
---- components/feature_engagement/public/feature_list.cc.orig	2024-11-14 07:57:23 UTC
+--- components/feature_engagement/public/feature_list.cc.orig	2025-01-15 09:18:26 UTC
 +++ components/feature_engagement/public/feature_list.cc
-@@ -162,7 +162,7 @@ const base::Feature* const kAllFeatures[] = {
+@@ -160,7 +160,7 @@ const base::Feature* const kAllFeatures[] = {
      &kIPHiOSLensOverlayEntrypointTipFeature,
  #endif  // BUILDFLAG(IS_IOS)
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_APPLE) || BUILDFLAG(IS_LINUX) || \
@@ -19,12 +19,12 @@
      &kIPHAutofillCreditCardBenefitFeature,
      &kIPHAutofillDisabledVirtualCardSuggestionFeature,
      &kIPHAutofillExternalAccountProfileSuggestionFeature,
-@@ -282,7 +283,7 @@ const base::Feature* const kAllFeatures[] = {
+@@ -283,7 +284,7 @@ const base::Feature* const kAllFeatures[] = {
      &kIPHScalableIphGamingFeature,
  #endif  // BUILDFLAG(IS_CHROMEOS_ASH)
  
 -#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
      &kIPHDesktopPWAsLinkCapturingLaunch,
+     &kIPHDesktopPWAsLinkCapturingLaunchAppInTab,
      &kIPHToolbarManagementButtonFeature,
- #endif  // BUILDFLAG(IS_WIN) ||  BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)

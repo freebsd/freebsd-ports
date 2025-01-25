@@ -1,6 +1,6 @@
---- third_party/blink/renderer/core/origin_trials/origin_trial_context.cc.orig	2024-11-14 07:57:23 UTC
+--- third_party/blink/renderer/core/origin_trials/origin_trial_context.cc.orig	2025-01-15 09:18:26 UTC
 +++ third_party/blink/renderer/core/origin_trials/origin_trial_context.cc
-@@ -553,7 +553,7 @@ bool OriginTrialContext::CanEnableTrialFromName(const 
+@@ -551,7 +551,7 @@ bool OriginTrialContext::CanEnableTrialFromName(const 
    }
  
    if (trial_name == "TranslationAPI") {
