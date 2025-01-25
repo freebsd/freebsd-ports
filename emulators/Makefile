@@ -170,7 +170,6 @@
     SUBDIR += vmsbackup
     SUBDIR += vmw
     SUBDIR += vt100
-    SUBDIR += vxtools
     SUBDIR += wine
     SUBDIR += wine-devel
     SUBDIR += wine-gecko
