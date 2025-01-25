@@ -7,13 +7,10 @@ DISTNAME=	${PORTNAME}-ui-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	X11 multimedia player
-WWW=		https://www.xine-project.org
+WWW=		https://xine.sourceforge.net/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
-
-DEPRECATED=	Depends on expired multimedia/libfame (via libxine)
-EXPIRATION_DATE=2025-02-01
 
 LIB_DEPENDS=	libpng.so:graphics/png \
 		libxine.so:multimedia/libxine
@@ -22,7 +19,6 @@ USES=		cpe desktop-file-utils gmake gnome iconv jpeg localbase pkgconfig \
 		readline shared-mime-info tar:xz xorg
 USE_XORG=	x11 xext xinerama xscrnsaver xt xtst xv xxf86vm
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--enable-vdr-keys \
 		--disable-nvtvsimple \
 		--disable-rpath

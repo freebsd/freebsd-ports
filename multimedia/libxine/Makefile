@@ -1,6 +1,6 @@
 PORTNAME=	xine
 DISTVERSION=	1.2.13
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	multimedia
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-lib/${DISTVERSION}
 PKGNAMEPREFIX=	lib
@@ -8,26 +8,20 @@ DISTNAME=	${PORTNAME}-lib-${DISTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Libraries for xine multimedia player
-WWW=		https://www.xine-project.org/
+WWW=		https://xine.sourceforge.net/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-DEPRECATED=	Depends on expired multimedia/libfame
-EXPIRATION_DATE=2025-02-01
-
 LIB_DEPENDS=	libFLAC.so:audio/flac \
 		liba52.so:audio/liba52 \
 		libvorbis.so:audio/libvorbis \
-		libspeex.so:audio/speex \
 		libmng.so:graphics/libmng \
 		libpng.so:graphics/png \
 		libdvdread.so:multimedia/libdvdread \
+		libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
-		libfame.so:multimedia/libfame \
-		libcdio_paranoia.so:sysutils/libcdio-paranoia \
 		libmodplug.so:audio/libmodplug \
-		libvcdinfo.so:multimedia/vcdimager \
 		libtheora.so:multimedia/libtheora \
 		libmad.so:audio/libmad \
 		libdca.so:multimedia/libdca \
@@ -35,10 +29,8 @@ LIB_DEPENDS=	libFLAC.so:audio/flac \
 		libfaad.so:audio/faad \
 		libvdpau.so:multimedia/libvdpau \
 		libvpx.so:multimedia/libvpx \
-		libiso9660.so:sysutils/libcdio \
 		libogg.so:audio/libogg \
-		libdvdnav.so:multimedia/libdvdnav \
-		libwayland-client.so:graphics/wayland
+		libdvdnav.so:multimedia/libdvdnav
 
 USES=		compiler cpe gl gmake gnome iconv libtool:keepla jpeg \
 		localbase pathfix perl5 pkgconfig tar:xz xorg
@@ -46,12 +38,13 @@ LLD_UNSAFE=	yes
 CPE_PRODUCT=	xine-lib
 CPE_VENDOR=	xine
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 USE_XORG=	x11 xcb xv xinerama xext sm ice
 USE_GL=		gl glu
 USE_PERL5=	build
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--with-libflac \
+		--with-fontconfig \
+		--with-freetype \
 		--enable-musepack \
 		--enable-real-codecs \
 		--without-esound \
@@ -71,9 +64,10 @@ PLUGINSDIR=	lib/xine/plugins/2.11
 PLIST_SUB=	PLUGINSDIR="${PLUGINSDIR}"
 
 OPTIONS_DEFINE=		AALIB ALSA AOM CACA DAV1D DOCS DMX_IMAGE DVB \
-			IMAGEMAGICK IPV6 JACK LIBBLURAY NFS NLS PIXBUF PULSEAUDIO \
-			SDL SFTP SMB SNDIO V4L VAAPI WAVPACK WAYLAND XVMC
-OPTIONS_DEFAULT=	DVB OPENSSL PIXBUF VAAPI
+			IMAGEMAGICK IPV6 JACK LIBBLURAY NFS NLS PIXBUF \
+			PULSEAUDIO SDL SFTP SMB SNDIO SPEEX V4L VAAPI \
+			VCD WAVPACK WAYLAND XVMC
+OPTIONS_DEFAULT=	DVB OPENSSL PIXBUF SPEEX VAAPI VCD WAVPACK
 OPTIONS_DEFINE_i386=	W32DLL
 OPTIONS_DEFAULT_i386=	W32DLL
 OPTIONS_GROUP=		TLS
@@ -88,8 +82,8 @@ NFS_DESC=		Enable NFS support using libnfs
 SDL_DESC=		Enable support for SDL 1 video output
 SFTP_DESC=		Enable SFTP support using libssh2
 TLS_DESC=		Enable TLS support for https and ftps
+VCD_DESC=		Enable VCD (VideoCD) support
 W32DLL_DESC=		Win32 codec support
-WAYLAND_DESC=		Enable Wayland support
 
 AALIB_LIB_DEPENDS=		libaa.so:graphics/aalib
 AALIB_CONFIGURE_ENABLE=		aalib
@@ -137,17 +131,21 @@ SMB_CONFIGURE_ENV=		LIBSMBCLIENT_LIBS="-L${SAMBALIBS} -lsmbclient" \
 SMB_CONFIGURE_ENABLE=		samba
 SNDIO_LIB_DEPENDS=		libsndio.so:audio/sndio
 SNDIO_CONFIGURE_ENABLE=		sndio
+SPEEX_LIB_DEPENDS=		libspeex.so:audio/speex
+SPEEX_CONFIGURE_WITH=		speex
 VAAPI_LIB_DEPENDS=		libva.so:multimedia/libva
 VAAPI_CONFIGURE_ENABLE=		vaapi
 V4L_BUILD_DEPENDS=		v4l_compat>=1.0.20100321:multimedia/v4l_compat
 V4L_LIB_DEPENDS=		libv4l2.so:multimedia/libv4l
 V4L_CONFIGURE_ENABLE=		libv4l v4l v4l2
+VCD_LIB_DEPENDS=		libvcdinfo.so:multimedia/vcdimager \
+				libcdio.so:sysutils/libcdio
+VCD_CONFIGURE_ENABLE=		vcd
 W32DLL_CONFIGURE_ENABLE=	w32dll
 W32DLL_PLIST_FILES=		${PLUGINSDIR}/xineplug_decode_w32dll.so
 WAVPACK_LIB_DEPENDS=		libwavpack.so:audio/wavpack
 WAVPACK_CONFIGURE_WITH=		wavpack
-WAYLAND_LIB_DEPENDS=		libwayland-egl.so:graphics/wayland \
-				libwayland-client.so:graphics/wayland
+WAYLAND_LIB_DEPENDS=		libwayland-client.so:graphics/wayland
 WAYLAND_CONFIGURE_ENABLE=	wayland
 
 .if defined(WITH_NVIDIA304_GL) || exists(${LOCALBASE}/lib/libXvMCNVIDIA.so.1)
@@ -169,10 +167,6 @@ BUILD_DEPENDS+=	as:devel/binutils
 CONFIGURE_ARGS+=	--disable-tls
 .endif
 
-pre-configure-GNUTLS-off:
-	@${REINPLACE_CMD} -e 's|have_gnutls=yes|have_gnutls=no|' \
-		${WRKSRC}/configure
-
 post-patch:
 	@${REINPLACE_CMD} -e '/xine_set_flags/s/XINE_PROTECTED//' \
 		${WRKSRC}/include/xine.h
@@ -180,6 +174,14 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|-fno-rename-registers||' \
 		${WRKSRC}/src/libw32dll/Makefile.in
 .endif
+
+post-patch-GNUTLS-off:
+	@${REINPLACE_CMD} -e '/have_gnutls=/s|yes|no|' \
+		${WRKSRC}/configure
+
+post-patch-WAYLAND-off:
+	@${REINPLACE_CMD} -e '/have_vaapi_wayland=/s|yes|no|' \
+		${WRKSRC}/configure
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/*.so

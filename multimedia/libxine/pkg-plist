@@ -120,8 +120,8 @@ lib/libxine.so.2.11.0
 %%SFTP%%%%PLUGINSDIR%%/xineplug_inp_ssh.so
 %%V4L%%%%PLUGINSDIR%%/xineplug_inp_v4l.so
 %%V4L%%%%PLUGINSDIR%%/xineplug_inp_v4l2.so
-%%PLUGINSDIR%%/xineplug_inp_vcd.so
-%%PLUGINSDIR%%/xineplug_inp_vcdo.so
+%%VCD%%%%PLUGINSDIR%%/xineplug_inp_vcd.so
+%%VCD%%%%PLUGINSDIR%%/xineplug_inp_vcdo.so
 %%PLUGINSDIR%%/xineplug_nsf.so
 %%PLUGINSDIR%%/xineplug_sputext.so
 %%GNUTLS%%%%PLUGINSDIR%%/xineplug_tls_gnutls.so
