@@ -106,7 +106,6 @@
     SUBDIR += ipa_sdb
     SUBDIR += iplike
     SUBDIR += jdb
-    SUBDIR += jdbc-oracle11g
     SUBDIR += jetbrains-datagrip
     SUBDIR += jlog
     SUBDIR += jrobin
