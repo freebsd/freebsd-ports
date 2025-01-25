@@ -1,10 +1,10 @@
 PORTNAME=	loaders-update
-DISTVERSION=	1.1.0
+DISTVERSION=	1.2.0
 CATEGORIES=	sysutils
 MASTER_SITES=	GH
 
 MAINTAINER=	kmachine@free.fr
-COMMENT=	Update bootcode and loaders
+COMMENT=	Update bootcodes and loaders
 WWW=		https://github.com/emrion/uploaders/
 
 LICENSE=	BSD2CLAUSE
