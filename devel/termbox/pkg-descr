@@ -1,2 +1,5 @@
-termbox is a minimal, legacy-free alternative to ncurses, suitable
-for building text-based user interfaces.
+termbox is a minimal, legacy-free alternative to ncurses,
+suitable for building text-based user interfaces.
+
+New projects should consider using termbox2, a rewrite of termbox
+with stricter error checking and some additional features.
