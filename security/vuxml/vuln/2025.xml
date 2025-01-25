@@ -1,3 +1,95 @@
+  <vuln vid="c53cd328-8131-4fc2-a083-a9e9d45e3028">
+    <topic>chromium -- multiple security fixes</topic>
+    <affects>
+      <package>
+       <name>chromium</name>
+       <range><lt>132.0.6834.110</lt></range>
+      </package>
+      <package>
+       <name>ungoogled-chromium</name>
+       <range><lt>132.0.6834.110</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+       <p>Chrome Releases reports:</p>
+       <blockquote cite="https://chromereleases.googleblog.com/2025/01/stable-channel-update-for-desktop_22.html">
+	 <p>This update includes 3 security fixes:</p>
+	 <ul>
+	    <li>[386143468] High CVE-2025-0611: Object corruption in V8. Reported by 303f06e3 on 2024-12-26</li>
+	    <li>[385155406] High CVE-2025-0612: Out of bounds memory access in V8. Reported by Alan Goodman on 2024-12-20</li>
+	 </ul>
+       </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2025-0611</cvename>
+      <cvename>CVE-2025-0612</cvename>
+      <url>https://chromereleases.googleblog.com/2025/01/stable-channel-update-for-desktop_22.html</url>
+    </references>
+    <dates>
+      <discovery>2025-01-22</discovery>
+      <entry>2025-01-25</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="756839e1-cd78-4082-9f9e-d0da616ca8dd">
+    <topic>chromium -- multiple security fixes</topic>
+    <affects>
+      <package>
+       <name>chromium</name>
+       <range><lt>132.0.6834.83</lt></range>
+      </package>
+      <package>
+       <name>ungoogled-chromium</name>
+       <range><lt>132.0.6834.83</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+       <p>Chrome Releases reports:</p>
+       <blockquote cite="https://chromereleases.googleblog.com/2025/01/stable-channel-update-for-desktop_14.html">
+	 <p>This update includes 16 security fixes:</p>
+	 <ul>
+	    <li>[374627491] High CVE-2025-0434: Out of bounds memory access in V8. Reported by ddme on 2024-10-21</li>
+	    <li>[379652406] High CVE-2025-0435: Inappropriate implementation in Navigation. Reported by Alesandro Ortiz on 2024-11-18</li>
+	    <li>[382786791] High CVE-2025-0436: Integer overflow in Skia. Reported by Han Zheng (HexHive) on 2024-12-08</li>
+	    <li>[378623799] High CVE-2025-0437: Out of bounds read in Metrics. Reported by Xiantong Hou of Wuheng Lab and Pisanbao on 2024-11-12</li>
+	    <li>[384186539] High CVE-2025-0438: Stack buffer overflow in Tracing. Reported by Han Zheng (HexHive) on 2024-12-15</li>
+	    <li>[371247941] Medium CVE-2025-0439: Race in Frames. Reported by Hafiizh on 2024-10-03</li>
+	    <li>[40067914] Medium CVE-2025-0440: Inappropriate implementation in Fullscreen. Reported by Umar Farooq on 2023-07-22</li>
+	    <li>[368628042] Medium CVE-2025-0441: Inappropriate implementation in Fenced Frames. Reported by someoneverycurious on 2024-09-21</li>
+	    <li>[40940854] Medium CVE-2025-0442: Inappropriate implementation in Payments. Reported by Ahmed ElMasry on 2023-11-08</li>
+	    <li>[376625003] Medium CVE-2025-0443: Insufficient data validation in Extensions. Reported by Anonymous on 2024-10-31</li>
+	    <li>[359949844] Low CVE-2025-0446: Inappropriate implementation in Extensions. Reported by Hafiizh on 2024-08-15</li>
+	    <li>[375550814] Low CVE-2025-0447: Inappropriate implementation in Navigation. Reported by Khiem Tran (@duckhiem) on 2024-10-25</li>
+	    <li>[377948403] Low CVE-2025-0448: Inappropriate implementation in Compositing. Reported by Dahyeon Park on 2024-11-08</li>
+	 </ul>
+       </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2025-0434</cvename>
+      <cvename>CVE-2025-0435</cvename>
+      <cvename>CVE-2025-0436</cvename>
+      <cvename>CVE-2025-0437</cvename>
+      <cvename>CVE-2025-0438</cvename>
+      <cvename>CVE-2025-0439</cvename>
+      <cvename>CVE-2025-0440</cvename>
+      <cvename>CVE-2025-0441</cvename>
+      <cvename>CVE-2025-0442</cvename>
+      <cvename>CVE-2025-0443</cvename>
+      <cvename>CVE-2025-0446</cvename>
+      <cvename>CVE-2025-0447</cvename>
+      <cvename>CVE-2025-0448</cvename>
+      <url>https://chromereleases.googleblog.com/2025/01/stable-channel-update-for-desktop_14.html</url>
+    </references>
+    <dates>
+      <discovery>2025-01-14</discovery>
+      <entry>2025-01-25</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="ef303b6a-7d9e-4e28-b92e-21f39d519d9e">
     <topic>electron32 -- multiple vulnerabilities</topic>
     <affects>
