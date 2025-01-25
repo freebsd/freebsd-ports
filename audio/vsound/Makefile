@@ -2,18 +2,15 @@ PORTNAME=	vsound
 PORTVERSION=	0.6
 PORTREVISION=	7
 CATEGORIES=	audio
-MASTER_SITES=	http://down1.chinaunix.net/distfiles/ \
-		http://freebsd.nsu.ru/distfiles/
+MASTER_SITES=	http://download.nus.edu.sg/mirror/gentoo/distfiles/65/ \
+		http://freebsd.nsu.ru/distfiles/ LOCAL/danfe
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Utility for capturing audio streams from programs with OSS output
-WWW=		http://www.vsound.org/
+WWW=		http://web.archive.org/web/20210502033331/http://www.vsound.org/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
-
-DEPRECATED=	Upstream disappeared
-EXPIRATION_DATE=2025-01-27
 
 BROKEN_riscv64=		fails to compile: vsound.c:101:4: Endian guess seems incorrect.
 
@@ -21,7 +18,6 @@ BUILD_DEPENDS=	sox:audio/sox
 RUN_DEPENDS=	sox:audio/sox
 
 USES=		alias libtool
-
 GNU_CONFIGURE=	yes
 
 OPTIONS_DEFINE=	DOCS
