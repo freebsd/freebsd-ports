@@ -4048,3 +4048,4 @@ databases/rubygem-active_model_serializers61|databases/rubygem-active_model_seri
 www/rubygem-gollum-grit_adapter10|www/rubygem-gollum-grit_adapter|2025-01-25|Obsolete, use www/rubygem-gollum-grit_adapter instead
 databases/jdbc-oracle11g||2025-01-25|Has expired: Oracle no longer provides public downloads of the old JDBC drivers
 emulators/vxtools||2025-01-25|Has expired: Dist files are no longer available as site returns NXDOMAIN
+java/infobus||2025-01-25|Has expired: Outdated API and is no longer actively developed or maintained
