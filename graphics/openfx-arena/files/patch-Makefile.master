@@ -1,0 +1,20 @@
+--- Makefile.master.orig	2025-01-25 14:35:14 UTC
++++ Makefile.master
+@@ -2,7 +2,7 @@ include $(PATHTOROOT)/Plugins/Makefile.master
+ 
+ include $(PATHTOROOT)/Plugins/Makefile.master
+ 
+-CXXFLAGS += -DOFX_EXTENSIONS_VEGAS -DOFX_EXTENSIONS_NUKE -DOFX_EXTENSIONS_TUTTLE -DOFX_EXTENSIONS_NATRON -DOFX_SUPPORTS_OPENGLRENDER -I$(SRCDIR)/SupportExt -std=c++11
++CXXFLAGS += -DOFX_EXTENSIONS_VEGAS -DOFX_EXTENSIONS_NUKE -DOFX_EXTENSIONS_TUTTLE -DOFX_EXTENSIONS_NATRON -DOFX_SUPPORTS_OPENGLRENDER -I$(SRCDIR)/SupportExt -std=c++20
+ VPATH += $(SRCDIR)/SupportExt
+ 
+ # ImageMagick
+@@ -87,7 +87,7 @@ ifeq ($(FREEBSD),1)
+ 
+ # FreeBSD
+ ifeq ($(FREEBSD),1)
+-  CXXFLAGS += -I/usr/local/include -std=c++11
++  CXXFLAGS += -I/usr/local/include
+   LDFLAGS += -L/usr/local/lib
+ endif
+ 

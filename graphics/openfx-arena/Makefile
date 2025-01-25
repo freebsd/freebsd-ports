@@ -35,7 +35,7 @@ LIB_DEPENDS=	libOpenColorIO.so:graphics/opencolorio \
 		libpoppler.so:graphics/poppler \
 		libraqm.so:print/libraqm
 
-USES=		gl gmake gnome iconv magick:6 ssl xorg
+USES=		compiler:c++20-lang gl gmake gnome iconv magick:6 ssl xorg
 USE_GITHUB=	yes
 GH_ACCOUNT=	NatronGitHub
 GH_TUPLE=	NatronGitHub:openfx-supportext:79d8c22:openfx_supportext/SupportExt \
