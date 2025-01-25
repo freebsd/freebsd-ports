@@ -1,7 +1,6 @@
 PORTNAME=	rustls-ffi
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.13.0
-PORTREVISION=	6
+DISTVERSION=	0.14.0
 CATEGORIES=	security
 
 MAINTAINER=	brnrd@FreeBSD.org
@@ -14,7 +13,8 @@ LICENSE_FILE_APACHE20=	${WRKSRC}/LICENSE-APACHE
 LICENSE_FILE_ISCL=	${WRKSRC}/LICENSE-ISC
 LICENSE_FILE_MIT=	${WRKSRC}/LICENSE-MIT
 
-BUILD_DEPENDS=	cargo-cbuild:devel/cargo-c
+BUILD_DEPENDS=	cargo-cbuild:devel/cargo-c \
+		bindgen:devel/rust-bindgen-cli
 
 USES=		cargo
 USE_LDCONFIG=	yes
