@@ -1,9 +1,10 @@
 PORTNAME=	video-trimmer
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.9.0
+PORTREVISION=	1
 CATEGORIES=	multimedia
 
-MAINTAINER=	eduardo@FreeBSD.org
+MAINTAINER=	nxjoseph@protonmail.com
 COMMENT=	Trim videos quickly
 WWW=		https://gitlab.gnome.org/YaLTeR/video-trimmer
 
@@ -11,9 +12,10 @@ LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	blueprint-compiler:devel/blueprint-compiler
+LIB_DEPENDS=	libgraphene-1.0.so:graphics/graphene
 RUN_DEPENDS=	ffmpeg:multimedia/ffmpeg
 
-USES=		cargo desktop-file-utils gettext gnome gstreamer meson \
+USES=		cargo desktop-file-utils gettext-tools gnome gstreamer meson \
 		pkgconfig
 USE_GITLAB=	yes
 GL_SITE=	https://gitlab.gnome.org
