@@ -5,6 +5,17 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20250125:
+  AFFECTS: users of www/apache24
+  AUTHOR: brnrd@FreeBSD.org
+
+  Apache 2.4.63 removed the (experimental, non-default) mod_tls module due
+  to rustls-ffi API instability and it was moved to a standalone module.
+
+  Users of the TLS option can use the new www/mod_tls port as a replacement.
+
+  # pkg install ap24-mod_tls
+
 20250111:
   AFFECTS: users of net/onedrive
   AUTHOR: hiroo.ono+freebsd@gmail.com
