@@ -1,1 +1,4 @@
-Adapter for Gollum to use Rugged (libgit2) at the backend.
+Adapter for gollum to use Rugged (libgit2) at the backend.
+See the gollum wiki https://github.com/gollum/gollum/wiki/Git-adapters
+for more information on adapters.
+Currently this is the default adapter for gollum.
