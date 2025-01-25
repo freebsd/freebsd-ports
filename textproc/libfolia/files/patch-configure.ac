@@ -1,0 +1,11 @@
+--- configure.ac.orig	2025-01-25 10:56:56 UTC
++++ configure.ac
+@@ -71,7 +71,7 @@ LIBS="$ticcutils_LIBS $LIBS"
+ CXXFLAGS="$CXXFLAGS $ticcutils_CFLAGS"
+ LIBS="$ticcutils_LIBS $LIBS"
+ 
+-PKG_CHECK_MODULES([ICU], [icu-uc >= 50 icu-io] )
++PKG_CHECK_MODULES([ICU], [icu-i18n icu-uc icu-io] )
+ CXXFLAGS="$CXXFLAGS $ICU_CFLAGS"
+ LIBS="$ICU_LIBS $LIBS"
+ 

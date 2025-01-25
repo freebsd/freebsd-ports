@@ -13,7 +13,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libicui18n.so:devel/icu \
 		libticcutils.so:devel/ticcutils
 
-USES=		compiler:c++14-lang gmake gnome libtool pkgconfig
+USES=		autoreconf compiler:c++17-lang gmake gnome libtool \
+		pathfix pkgconfig
 USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
 
@@ -21,9 +22,5 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-static
 
 INSTALL_TARGET=	install-strip
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|-g -O3||g' \
-		${PATCH_WRKSRC}/src/Makefile.in
 
 .include <bsd.port.mk>
