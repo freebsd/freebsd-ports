@@ -1,6 +1,24 @@
---- CMakeLists.txt.orig	2021-11-05 17:23:17 UTC
+--- CMakeLists.txt.orig	2022-08-05 07:45:35 UTC
 +++ CMakeLists.txt
-@@ -521,6 +521,7 @@ endif(WITH_LIBDB)
+@@ -6,7 +6,7 @@ project(evolution-data-server
+ project(evolution-data-server
+ 	VERSION 3.44.4
+ 	LANGUAGES C CXX)
+-set(CMAKE_CXX_STANDARD 14)
++set(CMAKE_CXX_STANDARD 17)
+ set(PROJECT_BUGREPORT "https://gitlab.gnome.org/GNOME/evolution-data-server/issues/")
+ 
+ # Base Version: This is for API/version tracking for things like
+@@ -358,7 +358,7 @@ endif(WIN32)
+ # ICU started shipping pkg-config files but it's not present
+ # on many systems, if we don't find the pkg-config
+ # file then let's fallback on a manual check
+-pkg_check_modules(ICU icu-i18n)
++pkg_check_modules(ICU icu-i18n icu-uc)
+ 
+ if(NOT ICU_FOUND)
+ 	CHECK_INCLUDE_FILE(unicode/ucol.h HAVE_UNICODE_UCOL_H)
+@@ -526,6 +526,7 @@ set(CMAKE_REQUIRED_LIBRARIES "-liconv")
  # ******************************
  
  set(CMAKE_REQUIRED_LIBRARIES "-liconv")
