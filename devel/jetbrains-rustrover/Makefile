@@ -1,5 +1,5 @@
 PORTNAME=	rustrover
-PORTVERSION=	2024.3.2
+PORTVERSION=	2024.3.3
 CATEGORIES=	devel
 MASTER_SITES=	https://download-cdn.jetbrains.com/rustrover/
 PKGNAMEPREFIX=	jetbrains-
@@ -63,8 +63,7 @@ do-install:
 		${WRKSRC}/lib/native \
 		${WRKSRC}/lib/pty4j \
 		${WRKSRC}/plugins/cwm-plugin \
-		${WRKSRC}/plugins/gateway-plugin \
-		${WRKSRC}/plugins/gateway-terminal \
+		${WRKSRC}/plugins/gateway-plugin/lib/remote-dev-workers \
 		${WRKSRC}/plugins/intellij-rust/bin \
 		${WRKSRC}/plugins/remote-dev-server
 	${MKDIR} ${STAGEDIR}${DATADIR}
