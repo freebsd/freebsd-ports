@@ -1,6 +1,6 @@
 PORTNAME=	emkatic
 PORTVERSION=	0.44
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	russian emulators
 PKGNAMESUFFIX=	${LAZARUS_PKGNAMESUFFIX}
 MASTER_SITES=	SF/${PORTNAME}/eMKatic%20Source
@@ -13,7 +13,7 @@ WWW=		https://sourceforge.net/projects/emkatic/
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING.txt
 
-ONLY_FOR_ARCHS=	i386 amd64
+ONLY_FOR_ARCHS=	amd64 i386
 
 USES=		fpc lazarus:flavors xorg
 USE_XORG=	x11
