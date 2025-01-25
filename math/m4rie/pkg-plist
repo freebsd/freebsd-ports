@@ -14,7 +14,7 @@ include/m4rie/permutation.h
 include/m4rie/ple.h
 include/m4rie/strassen.h
 include/m4rie/trsm.h
-lib/libm4rie-0.0.20250102.so
+lib/libm4rie-0.0.%%VER%%.so
 lib/libm4rie.a
 lib/libm4rie.so
 libdata/pkgconfig/m4rie.pc
