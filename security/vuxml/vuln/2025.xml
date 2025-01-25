@@ -1,3 +1,47 @@
+  <vuln vid="ef303b6a-7d9e-4e28-b92e-21f39d519d9e">
+    <topic>electron32 -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>electron32</name>
+	<range><lt>32.3.0</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Electron developers report:</p>
+	<blockquote cite="https://github.com/electron/electron/releases/tag/v32.3.0">
+	  <p>This update fixes the following vulnerabilities:</p>
+	  <ul>
+	    <li>Security: backported fix for CVE-2024-12693.</li>
+	    <li>Security: backported fix for CVE-2024-12694.</li>
+	    <li>Security: backported fix for CVE-2024-12695.</li>
+	    <li>Security: backported fix for CVE-2025-0434.</li>
+	    <li>Security: backported fix for CVE-2025-0436.</li>
+	    <li>Security: backported fix for CVE-2025-0437.</li>
+	  </ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2024-12693</cvename>
+      <url>https://github.com/advisories/GHSA-m84q-p89f-6cc5</url>
+      <cvename>CVE-2024-12694</cvename>
+      <url>https://github.com/advisories/GHSA-cgc6-4xgf-5q5x</url>
+      <cvename>CVE-2024-12695</cvename>
+      <url>https://github.com/advisories/GHSA-6895-2frg-pq5j</url>
+      <cvename>CVE-2025-0434</cvename>
+      <url>https://github.com/advisories/GHSA-fpmx-pfpg-92xg</url>
+      <cvename>CVE-2025-0436</cvename>
+      <url>https://github.com/advisories/GHSA-ww3g-8h77-wr7v</url>
+      <cvename>CVE-2025-0437</cvename>
+      <url>https://github.com/advisories/GHSA-4353-vp82-4qq4</url>
+    </references>
+    <dates>
+      <discovery>2025-01-23</discovery>
+      <entry>2025-01-25</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="2def27c7-7dd0-42cb-adf6-8e5a7afe4db3">
     <topic>electron33 -- multiple vulnerabilities</topic>
     <affects>
