@@ -1,8 +1,7 @@
 PORTNAME=	rpcs3
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.0.34-17383 # git rev-list --count HEAD
-PORTREVISION=	1
-DISTVERSIONSUFFIX=	-gf1f85335a7
+DISTVERSION=	0.0.34-17411 # git rev-list --count HEAD
+DISTVERSIONSUFFIX=	-g67703b49d8
 CATEGORIES=	emulators wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -39,7 +38,7 @@ GH_TUPLE=	RPCS3:hidapi:hidapi-0.14.0-2-g8b43a97:hidapi/3rdparty/hidapi/hidapi \
 		wolfSSL:wolfssl:v5.7.6-stable:wolfssl/3rdparty/wolfssl/wolfssl \
 		xioTechnologies:Fusion:v1.2.7:fusion/3rdparty/fusion/fusion
 
-USES=		cmake gl iconv:wchar_t llvm:min=16,lib localbase:ldflags \
+USES=		cmake gl iconv:wchar_t llvm:min=18,lib localbase:ldflags \
 		openal:soft pkgconfig python:build qt:6 xorg
 USE_GL=		gl glew
 USE_QT=		base multimedia svg
