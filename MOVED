@@ -4045,3 +4045,4 @@ devel/kf5-extra-cmake-modules|devel/kf6-extra-cmake-modules|2025-01-23|Supersede
 devel/kf5-kapidox|devel/kf6-kapidox|2025-01-23|Superseded by its KF6 counterpart
 devel/rubygem-strong_migrations61|devel/rubygem-strong_migrations|2025-01-23|Has expired: Ruby on Rails 6.1.x reached EOL on 2024-10-01
 databases/rubygem-active_model_serializers61|databases/rubygem-active_model_serializers|2025-01-23|Has expired: Ruby on Rails 6.1.x reached EOL on 2024-10-01
+www/rubygem-gollum-grit_adapter10|www/rubygem-gollum-grit_adapter|2025-01-25|Obsolete, use www/rubygem-gollum-grit_adapter instead
