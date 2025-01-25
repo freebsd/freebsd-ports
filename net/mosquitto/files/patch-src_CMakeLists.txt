@@ -1,6 +1,6 @@
---- src/CMakeLists.txt.orig	2023-02-13 19:40:35 UTC
-+++ src/CMakeLists.txt
-@@ -194,13 +194,13 @@ endif (WIN32)
+--- src/CMakeLists.txt.orig	2024-12-18 09:43:22.511844000 +0200
++++ src/CMakeLists.txt	2024-12-18 09:45:34.368783000 +0200
+@@ -194,7 +194,7 @@
  
  if (WITH_WEBSOCKETS)
  	if (STATIC_WEBSOCKETS)
@@ -9,10 +9,3 @@
  		if (WIN32)
  			set (MOSQ_LIBS ${MOSQ_LIBS} iphlpapi)
  			link_directories(${mosquitto_SOURCE_DIR})
- 		endif (WIN32)
- 	else (STATIC_WEBSOCKETS)
--		set (MOSQ_LIBS ${MOSQ_LIBS} websockets)
-+		set (MOSQ_LIBS ${MOSQ_LIBS} websockets_shared)
- 	endif (STATIC_WEBSOCKETS)
- endif (WITH_WEBSOCKETS)
- 
