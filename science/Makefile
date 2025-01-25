@@ -430,6 +430,7 @@
     SUBDIR += py-scipy
     SUBDIR += py-scoria
     SUBDIR += py-sdf
+    SUBDIR += py-seekpath
     SUBDIR += py-segregation
     SUBDIR += py-segyio
     SUBDIR += py-signac
