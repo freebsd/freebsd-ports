@@ -1,0 +1,10 @@
+Prometheus exporter for MongoDB including sharding, replication
+and storage engines.
+
+these metric sources are implemented:
+ - $collStats
+ - $indexStats
+ - getDiagnosticData
+ - replSetGetStatus
+ - replSetGetConfig
+ - serverStatus
