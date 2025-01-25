@@ -1,11 +1,11 @@
---- extensions/shell/browser/api/runtime/shell_runtime_api_delegate.cc.orig	2024-10-27 06:40:35 UTC
+--- extensions/shell/browser/api/runtime/shell_runtime_api_delegate.cc.orig	2025-01-25 09:34:31 UTC
 +++ extensions/shell/browser/api/runtime/shell_runtime_api_delegate.cc
 @@ -45,7 +45,7 @@ void ShellRuntimeAPIDelegate::OpenURL(const GURL& unin
  bool ShellRuntimeAPIDelegate::GetPlatformInfo(PlatformInfo* info) {
- #if BUILDFLAG(IS_CHROMEOS_ASH)
+ #if BUILDFLAG(IS_CHROMEOS)
    info->os = api::runtime::PlatformOs::kCros;
--#elif BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)
-+#elif BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS) || BUILDFLAG(IS_BSD)
+-#elif BUILDFLAG(IS_LINUX)
++#elif BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
    info->os = api::runtime::PlatformOs::kLinux;
  #endif
    return true;

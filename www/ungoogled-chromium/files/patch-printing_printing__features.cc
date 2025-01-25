@@ -1,7 +1,7 @@
---- printing/printing_features.cc.orig	2024-07-31 14:19:23 UTC
+--- printing/printing_features.cc.orig	2025-01-25 09:34:31 UTC
 +++ printing/printing_features.cc
 @@ -21,12 +21,12 @@ BASE_FEATURE(kAddPrinterViaPrintscanmgr,
-              base::FEATURE_DISABLED_BY_DEFAULT);
+              base::FEATURE_ENABLED_BY_DEFAULT);
  #endif  // BUILDFLAG(IS_CHROMEOS)
  
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC)

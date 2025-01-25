@@ -1,4 +1,4 @@
---- chrome/browser/ui/webui/searchbox/searchbox_handler.cc.orig	2024-11-16 12:20:41 UTC
+--- chrome/browser/ui/webui/searchbox/searchbox_handler.cc.orig	2025-01-25 09:34:31 UTC
 +++ chrome/browser/ui/webui/searchbox/searchbox_handler.cc
 @@ -109,7 +109,7 @@ const char* kMacShareIconResourceName =
  #elif BUILDFLAG(IS_WIN)
@@ -18,7 +18,7 @@
    kLinuxShareIconResourceName =
        "//resources/cr_components/searchbox/icons/share_cr23.svg";
  #else
-@@ -654,7 +654,7 @@ std::string SearchboxHandler::ActionVectorIconToResour
+@@ -613,7 +613,7 @@ std::string SearchboxHandler::ActionVectorIconToResour
        icon.name == omnibox::kShareWinChromeRefreshIcon.name) {
      return kWinShareIconResourceName;
    }

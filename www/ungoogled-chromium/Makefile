@@ -1,6 +1,5 @@
 PORTNAME=	ungoogled-chromium
-PORTVERSION=	131.0.6778.204
-PORTREVISION=	1
+PORTVERSION=	132.0.6834.110
 PULSEMV=	16
 PULSEV=		${PULSEMV}.1
 UGVERSION=	${DISTVERSION}-1
@@ -137,7 +136,6 @@ GN_ARGS+=	build_with_tflite_lib=false \
 		clang_use_chrome_plugins=false \
 		disable_fieldtrial_testing_config=true \
 		enable_backup_ref_ptr_support=false \
-		enable_log_error_not_reached=true \
 		enable_hangout_services_extension=false \
 		enable_mdns=false \
 		enable_nacl=false \
@@ -312,7 +310,7 @@ pre-configure:
 	#./build/linux/unbundle/remove_bundled_libraries.py [list of preserved]
 	cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} ${PYTHON_CMD} \
 		./build/linux/unbundle/replace_gn_files.py --system-libraries \
-		dav1d flac fontconfig harfbuzz-ng icu libdrm libevent libpng \
+		dav1d flac fontconfig harfbuzz-ng libdrm libevent libpng \
 		libusb libwebp libxml libxslt openh264 opus || ${FALSE}
 	# Chromium uses an unreleased version of FFmpeg, so configure it
 	cd ${WRKSRC}/media/ffmpeg && \
@@ -325,7 +323,8 @@ pre-configure:
 .endfor
 	touch ${WRKDIR}/pulseaudio-${PULSEV}/src/pulse/version.h
 	@${REINPLACE_CMD} -e 's|$${LOCALBASE}|${LOCALBASE}|;s|$${MODCLANG_VERSION}|${LLVM_DEFAULT}|' \
-		${WRKSRC}/build/rust/rust_bindgen.gni
+		${WRKSRC}/build/rust/rust_bindgen.gni \
+		${WRKSRC}/build/rust/rust_bindgen_generator.gni
 
 do-configure:
 	# GN generator bootstrapping and generating ninja files

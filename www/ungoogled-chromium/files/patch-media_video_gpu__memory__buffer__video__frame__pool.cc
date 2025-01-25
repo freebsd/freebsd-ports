@@ -1,4 +1,4 @@
---- media/video/gpu_memory_buffer_video_frame_pool.cc.orig	2024-11-16 12:20:41 UTC
+--- media/video/gpu_memory_buffer_video_frame_pool.cc.orig	2025-01-25 09:34:31 UTC
 +++ media/video/gpu_memory_buffer_video_frame_pool.cc
 @@ -641,7 +641,7 @@ void GpuMemoryBufferVideoFramePool::PoolImpl::CreateHa
    }
@@ -18,12 +18,12 @@
    is_webgpu_compatible =
        handle.native_pixmap_handle.supports_zero_copy_webgpu_import;
  #endif
-@@ -1236,7 +1236,7 @@ GpuMemoryBufferVideoFramePool::PoolImpl::GetOrCreateFr
+@@ -1229,7 +1229,7 @@ GpuMemoryBufferVideoFramePool::PoolImpl::GetOrCreateFr
        si_usage |= gpu::SHARED_IMAGE_USAGE_SCANOUT;
      }
  
--#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_MAC)
-+#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_BSD)
+-#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
      // TODO(crbug.com/40194712): Always add the flag once the
      // OzoneImageBacking is by default turned on.
      if (base::CommandLine::ForCurrentProcess()->HasSwitch(

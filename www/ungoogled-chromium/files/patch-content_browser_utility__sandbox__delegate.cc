@@ -1,6 +1,6 @@
---- content/browser/utility_sandbox_delegate.cc.orig	2024-11-16 12:20:41 UTC
+--- content/browser/utility_sandbox_delegate.cc.orig	2025-01-25 09:34:31 UTC
 +++ content/browser/utility_sandbox_delegate.cc
-@@ -76,10 +76,10 @@ UtilitySandboxedProcessLauncherDelegate::
+@@ -83,10 +83,10 @@ UtilitySandboxedProcessLauncherDelegate::
  #if BUILDFLAG(IS_FUCHSIA)
        sandbox_type_ == sandbox::mojom::Sandbox::kVideoCapture ||
  #endif
@@ -13,7 +13,7 @@
        sandbox_type_ == sandbox::mojom::Sandbox::kHardwareVideoEncoding ||
  #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
  #if BUILDFLAG(IS_CHROMEOS_ASH)
-@@ -93,10 +93,10 @@ UtilitySandboxedProcessLauncherDelegate::
+@@ -100,10 +100,10 @@ UtilitySandboxedProcessLauncherDelegate::
  #if BUILDFLAG(ENABLE_SCREEN_AI_SERVICE)
        sandbox_type_ == sandbox::mojom::Sandbox::kScreenAI ||
  #endif
@@ -26,7 +26,7 @@
        sandbox_type_ == sandbox::mojom::Sandbox::kOnDeviceTranslation ||
  #endif
        sandbox_type_ == sandbox::mojom::Sandbox::kAudio ||
-@@ -142,10 +142,10 @@ ZygoteCommunication* UtilitySandboxedProcessLauncherDe
+@@ -149,10 +149,10 @@ ZygoteCommunication* UtilitySandboxedProcessLauncherDe
    // process upon startup.
    if (sandbox_type_ == sandbox::mojom::Sandbox::kNetwork ||
        sandbox_type_ == sandbox::mojom::Sandbox::kOnDeviceModelExecution ||
@@ -39,7 +39,7 @@
        sandbox_type_ == sandbox::mojom::Sandbox::kHardwareVideoEncoding ||
  #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
  #if BUILDFLAG(IS_CHROMEOS_ASH)
-@@ -163,7 +163,7 @@ ZygoteCommunication* UtilitySandboxedProcessLauncherDe
+@@ -170,7 +170,7 @@ ZygoteCommunication* UtilitySandboxedProcessLauncherDe
  #if BUILDFLAG(ENABLE_SCREEN_AI_SERVICE)
        sandbox_type_ == sandbox::mojom::Sandbox::kScreenAI ||
  #endif

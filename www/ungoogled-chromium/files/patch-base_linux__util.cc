@@ -1,4 +1,4 @@
---- base/linux_util.cc.orig	2024-05-23 20:04:36 UTC
+--- base/linux_util.cc.orig	2025-01-25 09:34:31 UTC
 +++ base/linux_util.cc
 @@ -154,10 +154,14 @@ void SetLinuxDistro(const std::string& distro) {
  }
@@ -7,7 +7,7 @@
 +#if BUILDFLAG(IS_BSD)
 +  return false;
 +#else
-   // 25 > strlen("/proc//task") + strlen(std::to_string(INT_MAX)) + 1 = 22
+   // 25 > strlen("/proc//task") + strlen(base::NumberToString(INT_MAX)) + 1 = 22
    char buf[25];
    strings::SafeSPrintf(buf, "/proc/%d/task", pid);
    return GetThreadsFromProcessDir(buf, tids);

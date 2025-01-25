@@ -1,4 +1,4 @@
---- components/feature_engagement/public/feature_constants.cc.orig	2024-11-16 12:20:41 UTC
+--- components/feature_engagement/public/feature_constants.cc.orig	2025-01-25 09:34:31 UTC
 +++ components/feature_engagement/public/feature_constants.cc
 @@ -18,7 +18,7 @@ BASE_FEATURE(kIPHDemoMode, "IPH_DemoMode", base::FEATU
  BASE_FEATURE(kIPHDummyFeature, "IPH_Dummy", base::FEATURE_DISABLED_BY_DEFAULT);
@@ -19,7 +19,7 @@
  BASE_FEATURE(kIPHAutofillCreditCardBenefitFeature,
               "IPH_AutofillCreditCardBenefit",
               base::FEATURE_DISABLED_BY_DEFAULT);
-@@ -786,7 +787,7 @@ BASE_FEATURE(kIPHScalableIphGamingFeature,
+@@ -789,7 +790,7 @@ BASE_FEATURE(kIPHScalableIphGamingFeature,
               base::FEATURE_DISABLED_BY_DEFAULT);
  #endif
  

@@ -1,17 +1,17 @@
---- third_party/blink/renderer/platform/peerconnection/rtc_video_encoder_factory.cc.orig	2024-10-01 07:26:23 UTC
+--- third_party/blink/renderer/platform/peerconnection/rtc_video_encoder_factory.cc.orig	2025-01-25 09:34:31 UTC
 +++ third_party/blink/renderer/platform/peerconnection/rtc_video_encoder_factory.cc
-@@ -260,12 +260,12 @@ SupportedFormats GetSupportedFormatsInternal(
-       supported_formats.scalability_modes.push_back(profile.scalability_modes);
+@@ -317,12 +317,12 @@ SupportedFormats GetSupportedFormatsInternal(
+       supported_formats.profiles.push_back(profile.profile);
        supported_formats.sdp_formats.push_back(std::move(*format));
  
--#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX)
-+#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+-#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
++#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
  #if BUILDFLAG(IS_WIN)
        const bool kShouldAddH264Cbp =
            base::FeatureList::IsEnabled(kMediaFoundationH264CbpEncoding) &&
            profile.profile == media::VideoCodecProfile::H264PROFILE_BASELINE;
--#elif BUILDFLAG(IS_LINUX)
-+#elif BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+-#elif BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
++#elif BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
        const bool kShouldAddH264Cbp =
            profile.profile == media::VideoCodecProfile::H264PROFILE_BASELINE;
  #endif

@@ -1,15 +1,15 @@
---- components/autofill/core/common/autofill_payments_features.cc.orig	2024-11-16 12:20:41 UTC
+--- components/autofill/core/common/autofill_payments_features.cc.orig	2025-01-25 09:34:31 UTC
 +++ components/autofill/core/common/autofill_payments_features.cc
-@@ -8,7 +8,7 @@
- 
- namespace autofill::features {
+@@ -13,7 +13,7 @@ BASE_FEATURE(kAutofillDisableLocalCardMigration,
+              "AutofillDisableLocalCardMigration",
+              base::FEATURE_DISABLED_BY_DEFAULT);
  
 -#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || \
 +#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_BSD) || \
      (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS))
  // When enabled, Chrome will extract the checkout amount from the checkout page
  // of the allowlisted merchant websites.
-@@ -331,7 +331,7 @@ BASE_FEATURE(kAutofillSyncEwalletAccounts,
+@@ -319,7 +319,7 @@ BASE_FEATURE(kAutofillSyncEwalletAccounts,
  bool ShouldShowImprovedUserConsentForCreditCardSave() {
  // TODO(crbug.com/40118868): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.

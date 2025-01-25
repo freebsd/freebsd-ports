@@ -1,6 +1,6 @@
---- ui/gl/BUILD.gn.orig	2024-11-16 12:20:41 UTC
+--- ui/gl/BUILD.gn.orig	2025-01-25 09:34:31 UTC
 +++ ui/gl/BUILD.gn
-@@ -168,7 +168,6 @@ component("gl") {
+@@ -166,7 +166,6 @@ component("gl") {
    public_deps = [
      ":gl_enums",
      "//base",
@@ -8,7 +8,7 @@
      "//ui/events/platform",
      "//ui/gfx",
      "//ui/gfx/geometry",
-@@ -316,7 +315,6 @@ component("gl") {
+@@ -314,7 +313,6 @@ component("gl") {
      data_deps += [
        "//third_party/angle:libEGL",
        "//third_party/angle:libGLESv2",
@@ -16,7 +16,7 @@
      ]
      if (enable_swiftshader) {
        data_deps += [
-@@ -541,7 +539,6 @@ test("gl_unittests") {
+@@ -539,7 +537,6 @@ test("gl_unittests") {
  
    data_deps = [
      "//testing/buildbot/filters:gl_unittests_filters",

@@ -1,6 +1,6 @@
---- third_party/blink/renderer/platform/runtime_enabled_features.json5.orig	2024-12-19 12:29:17 UTC
+--- third_party/blink/renderer/platform/runtime_enabled_features.json5.orig	2025-01-25 09:34:31 UTC
 +++ third_party/blink/renderer/platform/runtime_enabled_features.json5
-@@ -388,7 +388,7 @@
+@@ -389,7 +389,7 @@
        name: "AppTitle",
        status: "experimental",
        origin_trial_feature_name: "AppTitle",
@@ -9,7 +9,16 @@
        base_feature: "WebAppEnableAppTitle",
      },
      {
-@@ -1845,7 +1845,7 @@
+@@ -1564,7 +1564,7 @@
+       name: "DocumentIsolationPolicy",
+       status: "experimental",
+       origin_trial_feature_name: "DocumentIsolationPolicy",
+-      origin_trial_os: ["win", "mac", "linux", "chromeos"],
++      origin_trial_os: ["win", "mac", "linux", "chromeos", "openbsd", "freebsd"],
+       base_feature: "none",
+     },
+     {
+@@ -1858,7 +1858,7 @@
        base_feature: "none",
        public: true,
        origin_trial_feature_name: "FedCmMultipleIdentityProviders",
@@ -18,16 +27,25 @@
        origin_trial_allows_third_party: true,
      },
      {
-@@ -3242,7 +3242,7 @@
+@@ -1997,7 +1997,7 @@
+       depends_on: ["FileSystemAccess"],
+       status: "experimental",
+       origin_trial_feature_name: "FileSystemObserver",
+-      origin_trial_os: ["win", "mac", "linux", "chromeos"],
++      origin_trial_os: ["win", "mac", "linux", "chromeos", "openbsd", "freebsd"],
+     },
+     {
+       // The unobserve function of the FileSystemObserver.
+@@ -3258,7 +3258,7 @@
        // Tracking bug for the implementation: https://crbug.com/1462930
        name: "PermissionElement",
        origin_trial_feature_name: "PermissionElement",
 -      origin_trial_os: ["win", "mac", "linux", "fuchsia", "chromeos"],
 +      origin_trial_os: ["win", "mac", "linux", "fuchsia", "chromeos", "openbsd", "freebsd"],
-       status: "experimental",
+       status: {"Android": "", "default": "experimental"},
        public: true,
        base_feature_status: "enabled",
-@@ -3378,7 +3378,7 @@
+@@ -3395,7 +3395,7 @@
      {
        name: "PrivateNetworkAccessPermissionPrompt",
        origin_trial_feature_name: "PrivateNetworkAccessPermissionPrompt",
@@ -36,7 +54,7 @@
        status: "stable",
        public: true,
        base_feature: "none",
-@@ -4393,7 +4393,7 @@
+@@ -4448,7 +4448,7 @@
        name: "UnrestrictedSharedArrayBuffer",
        base_feature: "none",
        origin_trial_feature_name: "UnrestrictedSharedArrayBuffer",
@@ -45,7 +63,7 @@
      },
      // Enables using policy-controlled feature "usb-unrestricted" to allow
      // isolated context to access protected USB interface classes and to
-@@ -4558,7 +4558,7 @@
+@@ -4627,7 +4627,7 @@
      {
        name: "WebAppScopeExtensions",
        origin_trial_feature_name: "WebAppScopeExtensions",
@@ -54,7 +72,7 @@
        status: "experimental",
        base_feature: "none",
      },
-@@ -4601,7 +4601,7 @@
+@@ -4666,7 +4666,7 @@
        status: "experimental",
        base_feature: "none",
        origin_trial_feature_name: "WebAppUrlHandling",

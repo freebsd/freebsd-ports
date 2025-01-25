@@ -1,4 +1,4 @@
---- third_party/blink/renderer/core/scroll/scrollbar_theme_aura.cc.orig	2024-10-01 07:26:23 UTC
+--- third_party/blink/renderer/core/scroll/scrollbar_theme_aura.cc.orig	2025-01-25 09:34:31 UTC
 +++ third_party/blink/renderer/core/scroll/scrollbar_theme_aura.cc
 @@ -148,7 +148,7 @@ bool ScrollbarThemeAura::SupportsDragSnapBack() const 
  // is true for at least GTK and QT apps).
@@ -9,7 +9,7 @@
    return false;
  #else
    return true;
-@@ -418,7 +418,7 @@ bool ScrollbarThemeAura::ShouldCenterOnThumb(const Scr
+@@ -423,7 +423,7 @@ bool ScrollbarThemeAura::ShouldCenterOnThumb(const Scr
                                               const WebMouseEvent& event) const {
  // TODO(crbug.com/1052397): Revisit once build flag switch of lacros-chrome is
  // complete.

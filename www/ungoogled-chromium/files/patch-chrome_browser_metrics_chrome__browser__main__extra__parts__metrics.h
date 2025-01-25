@@ -1,4 +1,4 @@
---- chrome/browser/metrics/chrome_browser_main_extra_parts_metrics.h.orig	2024-07-31 14:19:23 UTC
+--- chrome/browser/metrics/chrome_browser_main_extra_parts_metrics.h.orig	2025-01-25 09:34:31 UTC
 +++ chrome/browser/metrics/chrome_browser_main_extra_parts_metrics.h
 @@ -29,7 +29,7 @@ class PowerMetricsReporter;
  class ProcessMonitor;
@@ -9,8 +9,8 @@
  class PressureMetricsReporter;
  #endif  // BUILDFLAG(IS_LINUX)
  
-@@ -119,7 +119,7 @@ class ChromeBrowserMainExtraPartsMetrics : public Chro
-       performance_intervention_metrics_reporter_;
+@@ -126,7 +126,7 @@ class ChromeBrowserMainExtraPartsMetrics : public Chro
+   std::unique_ptr<web_app::SamplingMetricsProvider> web_app_metrics_provider_;
  #endif  // !BUILDFLAG(IS_ANDROID)
  
 -#if BUILDFLAG(IS_LINUX)

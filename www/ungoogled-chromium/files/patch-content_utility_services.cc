@@ -1,4 +1,4 @@
---- content/utility/services.cc.orig	2024-11-16 12:20:41 UTC
+--- content/utility/services.cc.orig	2025-01-25 09:34:31 UTC
 +++ content/utility/services.cc
 @@ -74,7 +74,7 @@
  extern sandbox::TargetServices* g_utility_target_services;
@@ -18,16 +18,7 @@
      (BUILDFLAG(USE_VAAPI) || BUILDFLAG(USE_V4L2_CODEC))
  #include "content/common/features.h"
  #include "media/mojo/services/stable_video_decoder_factory_process_service.h"  // nogncheck
-@@ -120,7 +120,7 @@ extern sandbox::TargetServices* g_utility_target_servi
- #endif  // BUILDFLAG(ENABLE_ACCESSIBILITY_SERVICE)
- 
- #if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_CHROMEOS_ASH) || \
--    BUILDFLAG(IS_MAC)
-+    BUILDFLAG(IS_MAC) || BUILDFLAG(IS_BSD)
- #include "media/capture/capture_switches.h"
- #include "services/viz/public/cpp/gpu/gpu.h"
- #include "services/viz/public/mojom/gpu.mojom.h"
-@@ -240,7 +240,7 @@ auto RunAudio(mojo::PendingReceiver<audio::mojom::Audi
+@@ -238,7 +238,7 @@ auto RunAudio(mojo::PendingReceiver<audio::mojom::Audi
        << "task_policy_set TASK_QOS_POLICY";
  #endif
  
@@ -36,16 +27,7 @@
    auto* command_line = base::CommandLine::ForCurrentProcess();
    if (sandbox::policy::SandboxTypeFromCommandLine(*command_line) ==
        sandbox::mojom::Sandbox::kNoSandbox) {
-@@ -337,7 +337,7 @@ auto RunVideoCapture(
-   auto service = std::make_unique<UtilityThreadVideoCaptureServiceImpl>(
-       std::move(receiver), base::SingleThreadTaskRunner::GetCurrentDefault());
- #if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_CHROMEOS_ASH) || \
--    BUILDFLAG(IS_MAC)
-+    BUILDFLAG(IS_MAC) || BUILDFLAG(IS_BSD)
- #if BUILDFLAG(IS_CHROMEOS_ASH)
-   {
- #else
-@@ -392,7 +392,7 @@ auto RunOOPArcVideoAcceleratorFactoryService(
+@@ -388,7 +388,7 @@ auto RunOOPArcVideoAcceleratorFactoryService(
  #endif  // BUILDFLAG(IS_CHROMEOS_ASH) && (BUILDFLAG(USE_VAAPI) ||
          // BUILDFLAG(USE_V4L2_CODEC))
  
@@ -54,7 +36,7 @@
      (BUILDFLAG(USE_VAAPI) || BUILDFLAG(USE_V4L2_CODEC))
  auto RunStableVideoDecoderFactoryProcessService(
      mojo::PendingReceiver<
-@@ -403,7 +403,7 @@ auto RunStableVideoDecoderFactoryProcessService(
+@@ -399,7 +399,7 @@ auto RunStableVideoDecoderFactoryProcessService(
  #endif  // (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_ASH)) &&
          // (BUILDFLAG(USE_VAAPI) || BUILDFLAG(USE_V4L2_CODEC))
  
@@ -63,7 +45,7 @@
  auto RunVideoEncodeAcceleratorProviderFactory(
      mojo::PendingReceiver<media::mojom::VideoEncodeAcceleratorProviderFactory>
          receiver) {
-@@ -426,7 +426,7 @@ void RegisterIOThreadServices(mojo::ServiceFactory& se
+@@ -422,7 +422,7 @@ void RegisterIOThreadServices(mojo::ServiceFactory& se
    // loop of type IO that can get notified when pipes have data.
    services.Add(RunNetworkService);
  
@@ -72,7 +54,7 @@
      (BUILDFLAG(USE_VAAPI) || BUILDFLAG(USE_V4L2_CODEC))
    if (base::FeatureList::IsEnabled(
            features::kRunStableVideoDecoderFactoryProcessServiceOnIOThread)) {
-@@ -482,7 +482,7 @@ void RegisterMainThreadServices(mojo::ServiceFactory& 
+@@ -478,7 +478,7 @@ void RegisterMainThreadServices(mojo::ServiceFactory& 
  #endif  // BUILDFLAG(IS_CHROMEOS_ASH) && (BUILDFLAG(USE_VAAPI) ||
          // BUILDFLAG(USE_V4L2_CODEC))
  
@@ -81,7 +63,7 @@
      (BUILDFLAG(USE_VAAPI) || BUILDFLAG(USE_V4L2_CODEC))
    if (!base::FeatureList::IsEnabled(
            features::kRunStableVideoDecoderFactoryProcessServiceOnIOThread)) {
-@@ -491,7 +491,7 @@ void RegisterMainThreadServices(mojo::ServiceFactory& 
+@@ -487,7 +487,7 @@ void RegisterMainThreadServices(mojo::ServiceFactory& 
  #endif  // (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_ASH)) &&
          // (BUILDFLAG(USE_VAAPI) || BUILDFLAG(USE_V4L2_CODEC))
  

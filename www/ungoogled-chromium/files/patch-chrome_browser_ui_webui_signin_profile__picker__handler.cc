@@ -1,6 +1,6 @@
---- chrome/browser/ui/webui/signin/profile_picker_handler.cc.orig	2024-11-16 12:20:41 UTC
+--- chrome/browser/ui/webui/signin/profile_picker_handler.cc.orig	2025-01-25 09:34:31 UTC
 +++ chrome/browser/ui/webui/signin/profile_picker_handler.cc
-@@ -209,7 +209,7 @@ base::Value::Dict CreateProfileEntry(const ProfileAttr
+@@ -195,7 +195,7 @@ base::Value::Dict CreateProfileEntry(const ProfileAttr
  
    if (AccountInfo::IsManaged(entry->GetHostedDomain())) {
      profile_entry.Set("avatarBadge", "cr:domain");
@@ -9,7 +9,7 @@
    } else if (base::FeatureList::IsEnabled(
                   supervised_user::kShowKiteForSupervisedUsers) &&
               entry->IsSupervised()) {
-@@ -1211,7 +1211,7 @@ void ProfilePickerHandler::BeginFirstWebContentsProfil
+@@ -1074,7 +1074,7 @@ void ProfilePickerHandler::BeginFirstWebContentsProfil
  }
  
  void ProfilePickerHandler::MaybeUpdateGuestMode() {

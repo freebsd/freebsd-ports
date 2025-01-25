@@ -1,4 +1,4 @@
---- content/browser/webui/web_ui_main_frame_observer.h.orig	2024-06-22 08:49:42 UTC
+--- content/browser/webui/web_ui_main_frame_observer.h.orig	2025-01-25 09:34:31 UTC
 +++ content/browser/webui/web_ui_main_frame_observer.h
 @@ -44,7 +44,7 @@ class CONTENT_EXPORT WebUIMainFrameObserver : public W
  
@@ -9,10 +9,10 @@
    // On official Google builds, capture and report JavaScript error messages on
    // WebUI surfaces back to Google. This allows us to fix JavaScript errors and
    // exceptions.
-@@ -60,7 +60,7 @@ class CONTENT_EXPORT WebUIMainFrameObserver : public W
-   void ReadyToCommitNavigation(NavigationHandle* navigation_handle) override;
- 
+@@ -64,7 +64,7 @@ class CONTENT_EXPORT WebUIMainFrameObserver : public W
   private:
+   const GURL& GetUrlForLogging() const;
+ 
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
    void MaybeEnableWebUIJavaScriptErrorReporting(

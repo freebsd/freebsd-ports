@@ -1,15 +1,15 @@
---- chrome/browser/browser_features.h.orig	2024-11-16 12:20:41 UTC
+--- chrome/browser/browser_features.h.orig	2025-01-25 09:34:31 UTC
 +++ chrome/browser/browser_features.h
-@@ -38,7 +38,7 @@ BASE_DECLARE_FEATURE(kCertificateTransparencyAskBefore
+@@ -37,7 +37,7 @@ BASE_DECLARE_FEATURE(kBookmarkTriggerForPrerender2);
+ BASE_DECLARE_FEATURE(kCertificateTransparencyAskBeforeEnabling);
  BASE_DECLARE_FEATURE(kCertVerificationNetworkTime);
- BASE_DECLARE_FEATURE(kClosedTabCache);
  
 -#if BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
  BASE_DECLARE_FEATURE(kDbusSecretPortal);
  #endif
  
-@@ -117,7 +117,7 @@ BASE_DECLARE_FEATURE(kRestartNetworkServiceUnsandboxed
+@@ -111,7 +111,7 @@ BASE_DECLARE_FEATURE(kRestartNetworkServiceUnsandboxed
  BASE_DECLARE_FEATURE(kSandboxExternalProtocolBlocked);
  BASE_DECLARE_FEATURE(kSandboxExternalProtocolBlockedWarning);
  

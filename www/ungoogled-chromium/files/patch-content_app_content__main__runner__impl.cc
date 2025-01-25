@@ -1,4 +1,4 @@
---- content/app/content_main_runner_impl.cc.orig	2024-10-27 06:40:35 UTC
+--- content/app/content_main_runner_impl.cc.orig	2025-01-25 09:34:31 UTC
 +++ content/app/content_main_runner_impl.cc
 @@ -147,18 +147,20 @@
  #include "content/browser/posix_file_descriptor_info_impl.h"
@@ -34,7 +34,7 @@
  #if BUILDFLAG(IS_ANDROID)
  #include "base/system/sys_info.h"
  #include "content/browser/android/battery_metrics.h"
-@@ -400,7 +406,7 @@ void InitializeZygoteSandboxForBrowserProcess(
+@@ -399,7 +405,7 @@ void InitializeZygoteSandboxForBrowserProcess(
  }
  #endif  // BUILDFLAG(USE_ZYGOTE)
  
@@ -43,7 +43,7 @@
  
  #if BUILDFLAG(ENABLE_PPAPI)
  // Loads the (native) libraries but does not initialize them (i.e., does not
-@@ -438,7 +444,10 @@ void PreloadLibraryCdms() {
+@@ -437,7 +443,10 @@ void PreloadLibraryCdms() {
  
  void PreSandboxInit() {
    // Ensure the /dev/urandom is opened.
@@ -54,7 +54,7 @@
  
    // May use sysinfo(), sched_getaffinity(), and open various /sys/ and /proc/
    // files.
-@@ -450,9 +459,16 @@ void PreSandboxInit() {
+@@ -449,9 +458,16 @@ void PreSandboxInit() {
    // https://boringssl.9oo91esource.qjz9zk/boringssl/+/HEAD/SANDBOXING.md
    CRYPTO_pre_sandbox_init();
  
@@ -71,7 +71,7 @@
  
  #if BUILDFLAG(ENABLE_PPAPI)
    // Ensure access to the Pepper plugins before the sandbox is turned on.
-@@ -764,7 +780,7 @@ NO_STACK_PROTECTOR int RunOtherNamedProcessTypeMain(
+@@ -762,7 +778,7 @@ NO_STACK_PROTECTOR int RunOtherNamedProcessTypeMain(
      unregister_thread_closure = base::HangWatcher::RegisterThread(
          base::HangWatcher::ThreadType::kMainThread);
      bool start_hang_watcher_now;
@@ -80,7 +80,7 @@
      // On Linux/ChromeOS, the HangWatcher can't start until after the sandbox is
      // initialized, because the sandbox can't be started with multiple threads.
      // TODO(mpdenton): start the HangWatcher after the sandbox is initialized.
-@@ -874,11 +890,10 @@ int ContentMainRunnerImpl::Initialize(ContentMainParam
+@@ -872,11 +888,10 @@ int ContentMainRunnerImpl::Initialize(ContentMainParam
                   base::GlobalDescriptors::kBaseDescriptor);
  #endif  // !BUILDFLAG(IS_ANDROID)
  
@@ -94,7 +94,7 @@
  
  #endif  // !BUILDFLAG(IS_WIN)
  
-@@ -1059,8 +1074,20 @@ int ContentMainRunnerImpl::Initialize(ContentMainParam
+@@ -1057,8 +1072,20 @@ int ContentMainRunnerImpl::Initialize(ContentMainParam
        process_type == switches::kZygoteProcess) {
      PreSandboxInit();
    }
@@ -115,7 +115,7 @@
    delegate_->SandboxInitialized(process_type);
  
  #if BUILDFLAG(USE_ZYGOTE)
-@@ -1157,6 +1184,11 @@ NO_STACK_PROTECTOR int ContentMainRunnerImpl::Run() {
+@@ -1155,6 +1182,11 @@ NO_STACK_PROTECTOR int ContentMainRunnerImpl::Run() {
    content_main_params_.reset();
  
    RegisterMainThreadFactories();

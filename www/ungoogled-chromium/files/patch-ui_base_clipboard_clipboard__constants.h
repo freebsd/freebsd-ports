@@ -1,6 +1,6 @@
---- ui/base/clipboard/clipboard_constants.h.orig	2023-12-23 12:33:28 UTC
+--- ui/base/clipboard/clipboard_constants.h.orig	2025-01-25 09:34:31 UTC
 +++ ui/base/clipboard/clipboard_constants.h
-@@ -48,7 +48,7 @@ extern const char kMimeTypeDataTransferEndpoint[];
+@@ -41,7 +41,7 @@ extern const char kMimeTypeWindowDrag[];
  
  // ----- LINUX & CHROMEOS & FUCHSIA MIME TYPES -----
  

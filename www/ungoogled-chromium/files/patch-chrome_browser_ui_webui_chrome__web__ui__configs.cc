@@ -1,6 +1,6 @@
---- chrome/browser/ui/webui/chrome_web_ui_configs.cc.orig	2024-11-16 12:20:41 UTC
+--- chrome/browser/ui/webui/chrome_web_ui_configs.cc.orig	2025-01-25 09:34:31 UTC
 +++ chrome/browser/ui/webui/chrome_web_ui_configs.cc
-@@ -136,30 +136,30 @@
+@@ -140,30 +140,30 @@
  #include "chrome/browser/ui/webui/conflicts/conflicts_ui.h"
  #endif  // BUILDFLAG(IS_WIN)
  
@@ -36,7 +36,7 @@
  #include "chrome/browser/ui/webui/discards/discards_ui.h"
  #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) ||
          // BUILDFLAG(IS_CHROMEOS)
-@@ -195,7 +195,7 @@
+@@ -199,7 +199,7 @@
  #include "chrome/browser/ui/webui/signin/signin_error_ui.h"
  #endif  //  !BUILDFLAG(IS_CHROMEOS_ASH) && !BUILDFLAG(IS_ANDROID)
  
@@ -45,7 +45,7 @@
  #include "chrome/browser/ui/webui/on_device_translation_internals/on_device_translation_internals_ui.h"
  #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
  
-@@ -317,14 +317,14 @@ void RegisterChromeWebUIConfigs() {
+@@ -326,14 +326,14 @@ void RegisterChromeWebUIConfigs() {
    map.AddWebUIConfig(std::make_unique<WebuiGalleryUIConfig>());
  #endif  // BUILDFLAG(IS_ANDROID)
  
@@ -63,7 +63,7 @@
  
  #if BUILDFLAG(ENABLE_EXTENSIONS)
    map.AddWebUIConfig(std::make_unique<extensions::ExtensionsUIConfig>());
-@@ -346,7 +346,7 @@ void RegisterChromeWebUIConfigs() {
+@@ -355,7 +355,7 @@ void RegisterChromeWebUIConfigs() {
    map.AddWebUIConfig(std::make_unique<ConflictsUIConfig>());
  #endif  // BUILDFLAG(IS_WIN)
  
@@ -72,7 +72,7 @@
    map.AddWebUIConfig(std::make_unique<BrowserSwitchUIConfig>());
    map.AddWebUIConfig(std::make_unique<WebAppSettingsUIConfig>());
    map.AddWebUIConfig(std::make_unique<WhatsNewUIConfig>());
-@@ -354,20 +354,20 @@ void RegisterChromeWebUIConfigs() {
+@@ -363,20 +363,20 @@ void RegisterChromeWebUIConfigs() {
  #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || \

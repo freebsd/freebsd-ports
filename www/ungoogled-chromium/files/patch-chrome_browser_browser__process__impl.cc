@@ -1,4 +1,4 @@
---- chrome/browser/browser_process_impl.cc.orig	2024-11-16 12:20:41 UTC
+--- chrome/browser/browser_process_impl.cc.orig	2025-01-25 09:34:31 UTC
 +++ chrome/browser/browser_process_impl.cc
 @@ -239,7 +239,7 @@
  #include "chrome/browser/ui/profiles/profile_picker.h"
@@ -18,7 +18,7 @@
  #include "chrome/browser/browser_features.h"
  #include "components/os_crypt/async/browser/secret_portal_key_provider.h"
  #endif
-@@ -1136,7 +1136,7 @@ void BrowserProcessImpl::RegisterPrefs(PrefRegistrySim
+@@ -1135,7 +1135,7 @@ void BrowserProcessImpl::RegisterPrefs(PrefRegistrySim
                                  GoogleUpdateSettings::GetCollectStatsConsent());
    registry->RegisterBooleanPref(prefs::kDevToolsRemoteDebuggingAllowed, true);
  
@@ -27,7 +27,7 @@
    os_crypt_async::SecretPortalKeyProvider::RegisterLocalPrefs(registry);
  #endif
  }
-@@ -1311,7 +1311,7 @@ void BrowserProcessImpl::PreMainMessageLoopRun() {
+@@ -1306,7 +1306,7 @@ void BrowserProcessImpl::PreMainMessageLoopRun() {
  
    ApplyMetricsReportingPolicy();
  
@@ -36,7 +36,7 @@
    ChromeJsErrorReportProcessor::Create();
  #endif
  
-@@ -1398,7 +1398,7 @@ void BrowserProcessImpl::PreMainMessageLoopRun() {
+@@ -1393,7 +1393,7 @@ void BrowserProcessImpl::PreMainMessageLoopRun() {
                features::kUseAppBoundEncryptionProviderForEncryption))));
  #endif  // BUILDFLAG(IS_WIN)
  
@@ -45,7 +45,7 @@
    if (base::FeatureList::IsEnabled(features::kDbusSecretPortal)) {
      providers.emplace_back(
          /*precedence=*/10u,
-@@ -1628,7 +1628,7 @@ void BrowserProcessImpl::Unpin() {
+@@ -1623,7 +1623,7 @@ void BrowserProcessImpl::Unpin() {
  // Mac is currently not supported.
  // TODO(crbug.com/40118868): Revisit once build flag switch of lacros-chrome is
  // complete.

@@ -1,7 +1,7 @@
---- chrome/browser/browser_features.cc.orig	2024-11-16 12:20:41 UTC
+--- chrome/browser/browser_features.cc.orig	2025-01-25 09:34:31 UTC
 +++ chrome/browser/browser_features.cc
-@@ -71,7 +71,7 @@ BASE_FEATURE(kClosedTabCache,
-              "ClosedTabCache",
+@@ -65,7 +65,7 @@ BASE_FEATURE(kCertVerificationNetworkTime,
+              "CertVerificationNetworkTime",
               base::FEATURE_DISABLED_BY_DEFAULT);
  
 -#if BUILDFLAG(IS_LINUX)
@@ -9,7 +9,7 @@
  // Enables usage of os_crypt_async::SecretPortalKeyProvider.  Once
  // `kSecretPortalKeyProviderUseForEncryption` is enabled, this flag cannot be
  // disabled without losing data.
-@@ -87,7 +87,7 @@ BASE_FEATURE(kDbusSecretPortal,
+@@ -81,7 +81,7 @@ BASE_FEATURE(kDbusSecretPortal,
  BASE_FEATURE(kDestroyProfileOnBrowserClose,
               "DestroyProfileOnBrowserClose",
  #if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN) || \
@@ -18,7 +18,7 @@
               base::FEATURE_ENABLED_BY_DEFAULT);
  #else
               base::FEATURE_DISABLED_BY_DEFAULT);
-@@ -268,7 +268,7 @@ BASE_FEATURE(kSandboxExternalProtocolBlockedWarning,
+@@ -248,7 +248,7 @@ BASE_FEATURE(kSandboxExternalProtocolBlockedWarning,
               "SandboxExternalProtocolBlockedWarning",
               base::FEATURE_ENABLED_BY_DEFAULT);
  
