@@ -1,5 +1,5 @@
 PORTNAME=	hyphy
-DISTVERSION=	2.5.65
+DISTVERSION=	2.5.66
 CATEGORIES=	biology
 
 MAINTAINER=	jrm@FreeBSD.org
@@ -19,7 +19,6 @@ USES=		cmake:insource,testing localbase:ldflags # tests fail in outsource build,
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	veg
-GH_TAGNAME=	840701205917b27f1074d6c41fb2bfdece62431a
 
 OPTIONS_DEFINE=	AVX
 AVX_DESC=	Advanced vector extensions support
