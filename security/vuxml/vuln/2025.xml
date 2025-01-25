@@ -1,3 +1,30 @@
+  <vuln vid="41711c0d-db27-11ef-873e-8447094a420f">
+    <topic>Vaultwarden -- Muiltiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>vaultwarden</name>
+	<range><lt>1.33.0</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Vaultwarden project reports:</p>
+	<blockquote cite="https://github.com/dani-garcia/vaultwarden/releases/tag/1.33.0">
+	  <p>RCE in the admin panel.</p>
+	  <p>Getting access to the Admin Panel via CSRF.</p>
+	  <p>Escalation of privilege via variable confusion in OrgHeaders trait.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <url>https://github.com/dani-garcia/vaultwarden/releases/tag/1.33.0</url>
+    </references>
+    <dates>
+      <discovery>2025-01-25</discovery>
+      <entry>2025-01-25</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="c53cd328-8131-4fc2-a083-a9e9d45e3028">
     <topic>chromium -- multiple security fixes</topic>
     <affects>
