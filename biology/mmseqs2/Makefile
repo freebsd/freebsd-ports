@@ -1,5 +1,5 @@
 PORTNAME=	MMseqs2
-DISTVERSION=	16-747c6
+DISTVERSION=	17-b804f
 CATEGORIES=	biology
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -11,13 +11,13 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 NOT_FOR_ARCHS=	armv6 armv7 i386 mips powerpc powerpcspe
 
-LIB_DEPENDS=	libzstd.so:archivers/zstd
+BUILD_DEPENDS=	zstd>0:archivers/zstd
 
 USES=		cmake perl5 shebangfix
 USE_GITHUB=	yes
+GH_ACCOUNT=	soedinglab
 USE_PERL5=	build
 
-GH_ACCOUNT=	soedinglab
 SHEBANG_GLOB=	*.sh
 
 CMAKE_ARGS+=	-DVERSION_OVERRIDE=${DISTVERSION}
