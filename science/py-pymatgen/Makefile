@@ -1,6 +1,6 @@
 PORTNAME=	pymatgen
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2025.1.23
+DISTVERSION=	2025.1.24
 CATEGORIES=	science python
 #MASTER_SITES=	PYPI # no tests
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -33,6 +33,11 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}beautifulsoup>0:www/py-beautifulsoup@${PY_FL
 		${PYTHON_PKGNAMEPREFIX}tabulate>=0.9:devel/py-tabulate@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tqdm>=4.60:misc/py-tqdm@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}uncertainties>=3.1.4:math/py-uncertainties@${PY_FLAVOR}
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}ase>0:science/py-ase@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}icet>0:science/py-icet@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}openbabel>0:science/py-openbabel@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}phonopy>0:science/py-phonopy@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}seekpath>0:science/py-seekpath@${PY_FLAVOR} # optional dependencies
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pybtex>0:textproc/py-pybtex@${PY_FLAVOR}
 
 USES=		compiler:c++11-lang python
@@ -53,19 +58,11 @@ post-install: # strip binaries
 		optimization/neighbors*.so \
 		util/coord_cython*.so
 
-#tests as of 2025.1.23:
-# Results (4206.00s (1:10:05)):
-#    2743 passed
-#       9 failed
-#         - tests/analysis/test_chempot_diagram.py:71 TestChemicalPotentialDiagram.test_pca
-#         - tests/cli/test_pmg_analyze.py:13 test_pmg_analyze
-#         - tests/cli/test_pmg_diff.py:12 test_pmg_diff
-#         - tests/cli/test_pmg_plot.py:15 test_plot_xrd
-#         - tests/cli/test_pmg_plot.py:31 test_plot_dos
-#         - tests/cli/test_pmg_plot.py:47 test_plot_chgint
-#         - tests/cli/test_pmg_plot.py:63 test_plot_wrong_arg
-#         - tests/cli/test_pmg_structure.py:13 test_pmg_structure
-#         - tests/core/test_structure.py:1770 TestStructure.test_charge
+# tests as of 2025.1.23: see https://github.com/materialsproject/pymatgen/issues/4264
+# Results (4376.26s (1:12:56)):
+#    2814 passed
+#      36 failed
 #     194 skipped
+#     141 skipped
 
 .include <bsd.port.mk>
