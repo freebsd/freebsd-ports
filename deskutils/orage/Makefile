@@ -25,14 +25,18 @@ INSTALL_TARGET=	install-strip
 
 PORTSCOUT=	limitw:1,even
 
-OPTIONS_DEFINE=		NLS NOTIFY
+OPTIONS_DEFINE=		NLS NOTIFY TRAY
 OPTIONS_DEFAULT=	NOTIFY
 OPTIONS_SUB=		yes
+
+TRAY_DESC=		Enable Tray Icon Support (incompatible with wayland)
 
 NLS_CONFIGURE_ENABLE=	nls
 NLS_USES=		gettext-runtime
 
 NOTIFY_LIB_DEPENDS=	libnotify.so:devel/libnotify
 NOTIFY_CONFIGURE_ENABLE=libnotify
+
+TRAY_CONFIGURE_ENABLE=	x11-tray-icon
 
 .include <bsd.port.mk>
