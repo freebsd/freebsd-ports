@@ -1,15 +1,12 @@
 PORTNAME=	dcmtk
 DISTVERSIONPREFIX=	${PORTNAME:tu}-
-DISTVERSION=	3.6.8
-PORTREVISION=	1
+DISTVERSION=	3.6.9
 CATEGORIES=	graphics devel
-
-PATCH_SITES=	https://github.com/DCMTK/${PORTNAME}/commit/
-PATCHFILES+=	c29bebcd19bb963d72dcd00ca8745f60f6b9a39e.patch:-p1 # fix compilation with clang 19, gcc 15
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	DICOM ToolKit, libraries and applications for DICOM/MEDICOM standard
-WWW=		https://dcmtk.org
+WWW=		https://dcmtk.org/en/ \
+		https://github.com/DCMTK/dcmtk
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
@@ -48,5 +45,7 @@ BUILD_DEPENDS+=	clang${LLVM_VER}:devel/llvm${LLVM_VER}
 CC=		${LOCALBASE}/bin/clang${LLVM_VER}
 CXX=		${LOCALBASE}/bin/clang++${LLVM_VER}
 .endif
+
+# tests as of 3.6.9: 100% tests passed, 0 tests failed out of 366
 
 .include <bsd.port.post.mk>
