@@ -1,5 +1,5 @@
 PORTNAME=	magic
-DISTVERSION=	8.3.513
+DISTVERSION=	8.3.515
 CATEGORIES=	cad
 MASTER_SITES=	http://opencircuitdesign.com/magic/archive/
 
