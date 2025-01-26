@@ -185,6 +185,7 @@ include/KastenGui/Kasten/ToolViewDockWidget
 include/KastenGui/Kasten/ViewAreaSplitable
 include/KastenGui/Kasten/ViewManager
 include/KastenGui/Kasten/WidgetsDockable
+include/KastenGui/Kasten/ZoomLevelsQueryable
 include/KastenGui/Kasten/Zoomable
 include/KastenGui/kasten/abstractdocumentstrategy.hpp
 include/KastenGui/kasten/abstractgroupedviews.hpp
@@ -229,6 +230,7 @@ include/KastenGui/kasten/viewareasplitable.hpp
 include/KastenGui/kasten/viewmanager.hpp
 include/KastenGui/kasten/widgetsdockable.hpp
 include/KastenGui/kasten/zoomable.hpp
+include/KastenGui/kasten/zoomlevelsqueryable.hpp
 include/OktetaCore/Okteta/AbstractByteArrayModel
 include/OktetaCore/Okteta/Address
 include/OktetaCore/Okteta/AddressRange
