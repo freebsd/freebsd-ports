@@ -29,10 +29,10 @@ rcvar=starman_enable
 command="%%PREFIX%%/bin/${name}"
 load_rc_config $name
 
-starman_enable=${starman_enable-"NO"}
-starman_config=${starman_config-"%%PREFIX%%/etc/starman.psgi"}
-starman_user=${starman_user-"www"}
-starman_group=${starman_group-"www"}
+starman_enable=${starman_enable:-"NO"}
+starman_config=${starman_config:-"%%PREFIX%%/etc/starman.psgi"}
+starman_user=${starman_user:-"www"}
+starman_group=${starman_group:-"www"}
 
 pidfile=${starman_pidfile:-/var/run/starman/starman.pid}
 command_args="--daemonize --user ${starman_user} --group ${starman_group} --pid ${pidfile} --app ${starman_config}"
