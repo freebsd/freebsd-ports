@@ -1,7 +1,6 @@
 PORTNAME=	bacon
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.8.0
-PORTREVISION=	1
+DISTVERSION=	3.9.0
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -12,7 +11,9 @@ WWW=		https://dystroy.org/bacon/ \
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cargo
+LIB_DEPENDS=	libasound.so:audio/alsa-lib
+
+USES=		cargo pkgconfig
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	Canop
@@ -21,6 +22,8 @@ CARGO_CRATES=	adler2-2.0.0 \
 		ahash-0.8.11 \
 		aho-corasick-1.1.3 \
 		allocator-api2-0.2.21 \
+		alsa-0.9.1 \
+		alsa-sys-0.3.1 \
 		android-tzdata-0.1.1 \
 		android_system_properties-0.1.5 \
 		anstream-0.6.18 \
@@ -32,19 +35,26 @@ CARGO_CRATES=	adler2-2.0.0 \
 		arboard-3.4.1 \
 		arc-swap-1.7.1 \
 		arrayvec-0.5.2 \
+		arrayvec-0.7.6 \
 		autocfg-1.4.0 \
+		bindgen-0.70.1 \
 		bitflags-1.3.2 \
 		bitflags-2.6.0 \
 		block2-0.5.1 \
 		bstr-1.11.1 \
 		bumpalo-3.16.0 \
+		bytemuck-1.21.0 \
+		bytes-1.9.0 \
 		camino-1.1.9 \
 		cargo-platform-0.1.9 \
 		cargo_metadata-0.19.1 \
 		cc-1.2.6 \
+		cesu8-1.1.0 \
+		cexpr-0.6.0 \
 		cfg-if-1.0.0 \
 		cfg_aliases-0.2.1 \
 		chrono-0.4.39 \
+		clang-sys-1.8.1 \
 		clap-4.5.23 \
 		clap-help-1.3.1 \
 		clap_builder-4.5.23 \
@@ -54,8 +64,12 @@ CARGO_CRATES=	adler2-2.0.0 \
 		clipboard-win-5.4.0 \
 		clru-0.6.2 \
 		colorchoice-1.0.3 \
+		combine-4.6.7 \
 		coolor-1.0.0 \
 		core-foundation-sys-0.8.7 \
+		coreaudio-rs-0.11.3 \
+		coreaudio-sys-0.2.16 \
+		cpal-0.15.3 \
 		crc32fast-1.4.2 \
 		crokey-1.1.0 \
 		crokey-proc_macros-1.1.0 \
@@ -68,10 +82,13 @@ CARGO_CRATES=	adler2-2.0.0 \
 		crossterm-0.28.1 \
 		crossterm_winapi-0.9.1 \
 		ctrlc-3.4.5 \
+		dasp_sample-0.11.0 \
 		directories-next-2.0.0 \
 		dirs-sys-next-0.1.2 \
 		displaydoc-0.2.5 \
 		dunce-1.0.5 \
+		either-1.13.0 \
+		encoding_rs-0.8.35 \
 		equivalent-1.0.1 \
 		errno-0.3.10 \
 		error-code-3.3.1 \
@@ -145,30 +162,45 @@ CARGO_CRATES=	adler2-2.0.0 \
 		instant-0.1.13 \
 		iq-0.2.1 \
 		is_terminal_polyfill-1.70.1 \
+		itertools-0.13.0 \
 		itoa-1.0.14 \
 		jiff-0.1.16 \
 		jiff-tzdb-0.1.1 \
 		jiff-tzdb-platform-0.1.1 \
+		jni-0.21.1 \
+		jni-sys-0.3.0 \
+		jobserver-0.1.32 \
 		js-sys-0.3.76 \
 		kqueue-1.0.8 \
 		kqueue-sys-1.0.4 \
 		lazy-regex-3.4.1 \
 		lazy-regex-proc_macros-3.4.1 \
+		lazy_static-1.5.0 \
 		libc-0.2.169 \
+		libloading-0.8.6 \
 		libredox-0.1.3 \
 		linux-raw-sys-0.4.14 \
 		litemap-0.7.4 \
 		lock_api-0.4.12 \
 		log-0.4.22 \
+		mach2-0.4.2 \
 		memchr-2.7.4 \
 		memmap2-0.9.5 \
 		minimad-0.13.1 \
+		minimal-lexical-0.2.1 \
 		miniz_oxide-0.8.2 \
 		mio-1.0.3 \
+		ndk-0.8.0 \
+		ndk-context-0.1.1 \
+		ndk-sys-0.5.0+25.2.9519653 \
 		nix-0.29.0 \
+		nom-7.1.3 \
 		notify-7.0.0 \
 		notify-types-1.0.1 \
+		num-derive-0.4.2 \
 		num-traits-0.2.19 \
+		num_enum-0.7.3 \
+		num_enum_derive-0.7.3 \
 		objc-sys-0.3.5 \
 		objc2-0.5.2 \
 		objc2-app-kit-0.2.2 \
@@ -178,10 +210,14 @@ CARGO_CRATES=	adler2-2.0.0 \
 		objc2-foundation-0.2.2 \
 		objc2-metal-0.2.2 \
 		objc2-quartz-core-0.2.2 \
+		oboe-0.6.1 \
+		oboe-sys-0.6.1 \
 		once_cell-1.20.2 \
 		parking_lot-0.12.3 \
 		parking_lot_core-0.9.10 \
 		percent-encoding-2.3.1 \
+		pkg-config-0.3.31 \
+		proc-macro-crate-3.2.0 \
 		proc-macro2-1.0.92 \
 		proc-status-0.1.1 \
 		prodash-29.0.0 \
@@ -191,6 +227,8 @@ CARGO_CRATES=	adler2-2.0.0 \
 		regex-1.11.1 \
 		regex-automata-0.4.9 \
 		regex-syntax-0.8.5 \
+		rodio-0.20.1 \
+		rustc-hash-1.1.0 \
 		rustc-hash-2.1.0 \
 		rustix-0.38.42 \
 		ryu-1.0.18 \
@@ -210,6 +248,10 @@ CARGO_CRATES=	adler2-2.0.0 \
 		stable_deref_trait-1.2.0 \
 		strict-0.2.0 \
 		strsim-0.11.1 \
+		symphonia-0.5.4 \
+		symphonia-bundle-mp3-0.5.4 \
+		symphonia-core-0.5.4 \
+		symphonia-metadata-0.5.4 \
 		syn-1.0.109 \
 		syn-2.0.92 \
 		synstructure-0.13.1 \
@@ -242,31 +284,45 @@ CARGO_CRATES=	adler2-2.0.0 \
 		wasi-0.11.0+wasi-snapshot-preview1 \
 		wasm-bindgen-0.2.99 \
 		wasm-bindgen-backend-0.2.99 \
+		wasm-bindgen-futures-0.4.49 \
 		wasm-bindgen-macro-0.2.99 \
 		wasm-bindgen-macro-support-0.2.99 \
 		wasm-bindgen-shared-0.2.99 \
+		web-sys-0.3.76 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-util-0.1.9 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
+		windows-0.54.0 \
 		windows-core-0.52.0 \
+		windows-core-0.54.0 \
+		windows-result-0.1.2 \
+		windows-sys-0.45.0 \
 		windows-sys-0.52.0 \
 		windows-sys-0.59.0 \
+		windows-targets-0.42.2 \
 		windows-targets-0.48.5 \
 		windows-targets-0.52.6 \
+		windows_aarch64_gnullvm-0.42.2 \
 		windows_aarch64_gnullvm-0.48.5 \
 		windows_aarch64_gnullvm-0.52.6 \
+		windows_aarch64_msvc-0.42.2 \
 		windows_aarch64_msvc-0.48.5 \
 		windows_aarch64_msvc-0.52.6 \
+		windows_i686_gnu-0.42.2 \
 		windows_i686_gnu-0.48.5 \
 		windows_i686_gnu-0.52.6 \
 		windows_i686_gnullvm-0.52.6 \
+		windows_i686_msvc-0.42.2 \
 		windows_i686_msvc-0.48.5 \
 		windows_i686_msvc-0.52.6 \
+		windows_x86_64_gnu-0.42.2 \
 		windows_x86_64_gnu-0.48.5 \
 		windows_x86_64_gnu-0.52.6 \
+		windows_x86_64_gnullvm-0.42.2 \
 		windows_x86_64_gnullvm-0.48.5 \
 		windows_x86_64_gnullvm-0.52.6 \
+		windows_x86_64_msvc-0.42.2 \
 		windows_x86_64_msvc-0.48.5 \
 		windows_x86_64_msvc-0.52.6 \
 		winnow-0.6.20 \
