@@ -1,6 +1,6 @@
 PORTNAME=	minidlna
 PORTVERSION=	1.3.3
-PORTREVISION=	3
+PORTREVISION=	4
 PORTEPOCH=	1
 CATEGORIES=	net multimedia www
 
@@ -27,7 +27,7 @@ CPE_VENDOR=	minidlna_project
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	glebius
-GH_TAGNAME=	bb12721
+GH_TAGNAME=	ae2141d
 
 PKGMESSAGE=	${WRKSRC}/pkg-message
 SUB_FILES+=	pkg-message
