@@ -1,11 +1,12 @@
 PORTNAME=	flint
 DISTVERSION=	3.1.2
 CATEGORIES=	math
-MASTER_SITES=	http://www.flintlib.org/
+MASTER_SITES=	http://www.flintlib.org/download/
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Fast library for number theory
-WWW=		https://www.flintlib.org/
+WWW=		https://flintlib.org \
+		https://github.com/flintlib/flint
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
