@@ -1,10 +1,7 @@
 PORTNAME=	libdivide
-DISTVERSION=	5.0
-PORTREVISION=	1
+DISTVERSIONPREFIX=v
+DISTVERSION=	5.2.0
 CATEGORIES=	math
-
-PATCH_SITES=	https://github.com/ridiculousfish/${PORTNAME}/commit/
-PATCHFILES+=	fa020f3b3e7ab3e80a2b23ab70bad0f46dbab795.patch:-p1 # https://github.com/ridiculousfish/libdivide/pull/113
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Fast prime counting function implementations
@@ -33,6 +30,6 @@ OPTIONS_DEFINE=		NATIVE
 NATIVE_CMAKE_BOOL=	FREEBSD_NATIVE
 
 do-test:
-	${CONFIGURE_WRKSRC}/tester
+	${CONFIGURE_WRKSRC}/OFFtester
 
 .include <bsd.port.mk>
