@@ -1,6 +1,6 @@
 PORTNAME=	git-lfs
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.5.1
+DISTVERSION=	3.6.1
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/v${DISTVERSION}/
 
