@@ -1,5 +1,6 @@
 PORTNAME=	pcdtojpeg
 DISTVERSION=	1_0_17
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}%20${PORTVERSION}
 DISTNAME=	${PORTNAME}_${DISTVERSION}
@@ -12,15 +13,16 @@ LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/../gpl.txt
 
 USES=		zip localbase:ldflags jpeg
+CXXFLAGS+=	-DmNoPThreads
 WRKSRC_SUBDIR=	src
-LIBS+=		-ljpeg -lpthread
+LIBS+=		-ljpeg
 DOCLIST=	Documentation Documentation.html ReadMe.txt Release.txt
 
 OPTIONS_DEFINE=	DOCS
 
 do-build:
 	(cd ${WRKSRC} && \
-	${CXX} ${CPPFLAGS} ${CXXFLASG} ${LDFLAGS} ${LIBS} -o ${PORTNAME} main.cpp pcdDecode.cpp)
+	${CXX} ${CPPFLAGS} ${CXXFLAGS} ${LDFLAGS} ${LIBS} -o ${PORTNAME} main.cpp pcdDecode.cpp)
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/
