@@ -1,9 +1,9 @@
---- pyproject.toml.orig	2024-11-12 05:52:20 UTC
+--- pyproject.toml.orig	2025-01-25 17:56:53 UTC
 +++ pyproject.toml
 @@ -1,7 +1,7 @@ requires = [
  [build-system]
  requires = [
--  "setuptools ~= 75.5",
+-  "setuptools ~= 75.8",
 -  "wheel ~= 0.45",
 +  "setuptools",
 +  "wheel",
