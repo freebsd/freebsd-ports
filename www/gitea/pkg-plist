@@ -1,3 +1,6 @@
 @sample %%ETCDIR%%/conf/app.ini.sample
 %%ETCDIR%%/conf/app.ini.defaults
 sbin/gitea
+@dir(git,git,755) /var/db/gitea
+@dir(git,git,755) /var/db/gitea/gitea-repositories
+@dir(git,git,755) /var/log/gitea
