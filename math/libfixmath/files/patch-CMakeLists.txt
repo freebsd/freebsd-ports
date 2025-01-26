@@ -1,28 +1,27 @@
---- CMakeLists.txt.orig	2022-09-15 10:24:31 UTC
+--- CMakeLists.txt.orig	2023-08-08 06:08:53 UTC
 +++ CMakeLists.txt
-@@ -11,17 +11,23 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
- set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -pedantic -Wextra -Werror=return-type")
+@@ -14,16 +14,22 @@ if(CMAKE_CURRENT_SOURCE_DIR STREQUAL CMAKE_SOURCE_DIR)
  
- include(libfixmath/libfixmath.cmake)
-+if (BUILD_TESTING)
- include(tests/tests.cmake)
-+endif()
+ if(CMAKE_CURRENT_SOURCE_DIR STREQUAL CMAKE_SOURCE_DIR)
+     # We're in the root, define additional targets for developers.
++    if (BUILD_TESTING)
+     include(tests/tests.cmake)
++    endif()
  
- file(GLOB fixsingen-srcs fixsingen/*.c)
-+if (BUILD_TESTING)
- file(GLOB fixtest-srcs fixtest/*.c fixtest/*.h)
-+endif()
+     file(GLOB fixsingen-srcs fixsingen/*.c)
++    if (BUILD_TESTING)
+     file(GLOB fixtest-srcs fixtest/*.c fixtest/*.h)
++    endif()
  
-+if (BUILD_TESTING)
- add_executable(fixtest ${fixtest-srcs})
--target_link_libraries(fixtest PRIVATE libfixmath m)
-+target_link_libraries(fixtest PRIVATE fixmath m)
- target_include_directories(fixtest PRIVATE ${CMAKE_SOURCE_DIR})
-+endif()
++    if (BUILD_TESTING)
+     add_executable(fixtest ${fixtest-srcs})
+-    target_link_libraries(fixtest PRIVATE libfixmath m)
++    target_link_libraries(fixtest PRIVATE m)
+     target_include_directories(fixtest PRIVATE ${CMAKE_SOURCE_DIR})
++    endif()
  
- add_executable(fixsingen ${fixsingen-srcs})
--target_link_libraries(fixsingen PRIVATE libfixmath m)
-+target_link_libraries(fixsingen PRIVATE fixmath m)
- target_include_directories(fixsingen PRIVATE ${CMAKE_SOURCE_DIR})
- 
- 
+     add_executable(fixsingen ${fixsingen-srcs})
+-    target_link_libraries(fixsingen PRIVATE libfixmath m)
++    target_link_libraries(fixsingen PRIVATE m)
+     target_include_directories(fixsingen PRIVATE ${CMAKE_SOURCE_DIR})
+ endif()
