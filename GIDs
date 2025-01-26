@@ -328,7 +328,7 @@ omada:*:384:
 mtail:*:385:
 # free: 386
 # free: 387
-# free: 388
+autopulse:*:388:
 ldap:*:389:
 # free: 390
 # free: 391

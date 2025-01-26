@@ -334,7 +334,7 @@ omada:*:384:384::0:0:Omada Wireless Controller:/nonexistent:/usr/sbin/nologin
 mtail:*:385:385::0:0:mtail:/nonexistent:/usr/sbin/nologin
 # free: 386
 # free: 387
-# free: 388
+autopulse:*:388:388::0:0:Autopulse Daemon:/nonexistent:/usr/sbin/nologin
 ldap:*:389:389::0:0:OpenLDAP Server:/nonexistent:/usr/sbin/nologin
 # free: 390
 # free: 391

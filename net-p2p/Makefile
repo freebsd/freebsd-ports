@@ -2,6 +2,7 @@
 
     SUBDIR += aeron
     SUBDIR += amule
+    SUBDIR += autopulse
     SUBDIR += autoscan
     SUBDIR += awgg
     SUBDIR += bazarr

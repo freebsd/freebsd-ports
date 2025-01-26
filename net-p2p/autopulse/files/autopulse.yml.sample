@@ -1,0 +1,22 @@
+app:
+  hostname: 0.0.0.0
+  port: 2875
+  database_url: sqlite:///var/db/autopulse/autopulse.db
+  log_level: info
+
+auth:
+  username: admin
+  password: password
+
+opts:
+  check_path: false
+  max_retries: 5
+  default_timer_wait: 300
+  cleanup_days: 10
+
+triggers:
+  manual:
+    type: manual
+
+targets: {}
+webhooks: {}
