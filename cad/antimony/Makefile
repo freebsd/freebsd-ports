@@ -6,7 +6,8 @@ PKGNAMESUFFIX=	-cad
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	CAD from a parallel universe
-WWW=		https://www.mattkeeter.com/projects/antimony/3/
+WWW=		https://www.mattkeeter.com/projects/antimony/3/ \
+		https://github.com/mkeeter/antimony
 
 LICENSE=	MIT
 
