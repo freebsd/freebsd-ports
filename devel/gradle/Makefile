@@ -1,5 +1,5 @@
 PORTNAME=	gradle
-PORTVERSION=	8.6
+PORTVERSION=	8.12.1
 CATEGORIES=	devel java
 MASTER_SITES=	https://services.gradle.org/distributions/
 EXTRACT_SUFX=	-bin.zip
