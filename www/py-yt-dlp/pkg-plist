@@ -210,7 +210,6 @@ bin/yt-dlp-devel
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/crooksandliars.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/crowdbunker.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/crtvg.py
-%%PYTHON_SITELIBDIR%%/yt_dlp/extractor/crunchyroll.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/cspan.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/ctsnews.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/ctv.py
@@ -262,6 +261,7 @@ bin/yt-dlp-devel
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/ebaumsworld.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/ebay.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/egghead.py
+%%PYTHON_SITELIBDIR%%/yt_dlp/extractor/eggs.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/eighttracks.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/eitb.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/elementorembed.py
@@ -317,7 +317,6 @@ bin/yt-dlp-devel
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/freetv.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/frontendmasters.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/fujitv.py
-%%PYTHON_SITELIBDIR%%/yt_dlp/extractor/funimation.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/funk.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/funker530.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/fuyintv.py
@@ -560,6 +559,7 @@ bin/yt-dlp-devel
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/nebula.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/nekohacker.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/nerdcubed.py
+%%PYTHON_SITELIBDIR%%/yt_dlp/extractor/nest.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/neteasemusic.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/netverse.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/netzkino.py
@@ -654,6 +654,7 @@ bin/yt-dlp-devel
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/piksel.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/pinkbike.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/pinterest.py
+%%PYTHON_SITELIBDIR%%/yt_dlp/extractor/piramidetv.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/pixivsketch.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/pladform.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/planetmarathi.py
@@ -824,6 +825,7 @@ bin/yt-dlp-devel
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/stretchinternet.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/stripchat.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/stv.py
+%%PYTHON_SITELIBDIR%%/yt_dlp/extractor/subsplash.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/substack.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/sunporno.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/sverigesradio.py
