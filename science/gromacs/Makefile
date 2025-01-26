@@ -1,13 +1,13 @@
 PORTNAME=	gromacs
-DISTVERSION=	2024.4
-PORTREVISION=	1
+DISTVERSION=	2024.5
 CATEGORIES=	science
 MASTER_SITES=	https://ftp.gromacs.org/pub/gromacs/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} # only for googletest
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Compute molecular dynamics
-WWW=		https://www.gromacs.org/
+WWW=		https://www.gromacs.org \
+		https://github.com/gromacs/gromacs
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
