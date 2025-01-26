@@ -1,1 +1,4 @@
 A Python wrapper for fplll.
+
+The basic BKZ algorithm can be implemented in about 60 pretty readable lines
+of Python code.
