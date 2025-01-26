@@ -1,5 +1,5 @@
 PORTNAME=	ticcutils
-DISTVERSION=	0.34
+DISTVERSION=	0.36
 CATEGORIES=	devel textproc
 MASTER_SITES=	https://github.com/LanguageMachines/${PORTNAME}/releases/download/v${DISTVERSION}/
 
