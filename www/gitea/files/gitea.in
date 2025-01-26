@@ -41,6 +41,7 @@ gitea_start() {
 	done
 	/usr/sbin/daemon %%DAEMONARGS%% \
 		-u ${gitea_user} -p ${pidfile} \
+		-l daemon -s warning \
 		/usr/bin/env -i \
 		"GITEA_WORK_DIR=${gitea_shared}" \
 		"GITEA_CUSTOM=${gitea_custom}" \
