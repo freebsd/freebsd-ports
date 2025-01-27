@@ -24,6 +24,7 @@ share/pixmaps/goldendict-ng.png
 %%DATADIR%%/locale/it_IT.qm
 %%DATADIR%%/locale/ja_JP.qm
 %%DATADIR%%/locale/jbo_EN.qm
+%%DATADIR%%/locale/kab_KAB.qm
 %%DATADIR%%/locale/ko_KR.qm
 %%DATADIR%%/locale/lt_LT.qm
 %%DATADIR%%/locale/mk_MK.qm
@@ -31,10 +32,6 @@ share/pixmaps/goldendict-ng.png
 %%DATADIR%%/locale/pl_PL.qm
 %%DATADIR%%/locale/pt_BR.qm
 %%DATADIR%%/locale/pt_PT.qm
-%%DATADIR%%/locale/qt_extra_es.qm
-%%DATADIR%%/locale/qt_extra_it.qm
-%%DATADIR%%/locale/qt_extra_lt.qm
-%%DATADIR%%/locale/qtwebengine_zh_CN.qm
 %%DATADIR%%/locale/qu_PE.qm
 %%DATADIR%%/locale/ru_RU.qm
 %%DATADIR%%/locale/sk_SK.qm
