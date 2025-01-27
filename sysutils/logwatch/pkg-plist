@@ -16,8 +16,8 @@
 %%ETCDIR%%/defaults/logfiles/exim.conf
 %%ETCDIR%%/defaults/logfiles/extreme-networks.conf
 %%ETCDIR%%/defaults/logfiles/fail2ban.conf
-%%ETCDIR%%/defaults/logfiles/http.conf
 %%ETCDIR%%/defaults/logfiles/http-error.conf
+%%ETCDIR%%/defaults/logfiles/http.conf
 %%ETCDIR%%/defaults/logfiles/iptables.conf
 %%ETCDIR%%/defaults/logfiles/kernel.conf
 %%ETCDIR%%/defaults/logfiles/maillog.conf
@@ -56,6 +56,7 @@
 %%ETCDIR%%/defaults/services/barracuda.conf
 %%ETCDIR%%/defaults/services/bfd.conf
 %%ETCDIR%%/defaults/services/cisco.conf
+%%ETCDIR%%/defaults/services/citadel.conf
 %%ETCDIR%%/defaults/services/clam-update.conf
 %%ETCDIR%%/defaults/services/clamav-milter.conf
 %%ETCDIR%%/defaults/services/clamav.conf
@@ -63,6 +64,9 @@
 %%ETCDIR%%/defaults/services/cron.conf
 %%ETCDIR%%/defaults/services/denyhosts.conf
 %%ETCDIR%%/defaults/services/dhcpd.conf
+%%ETCDIR%%/defaults/services/dirsrv.conf
+%%ETCDIR%%/defaults/services/dnf-automatic.conf
+%%ETCDIR%%/defaults/services/dnf-rpm.conf
 %%ETCDIR%%/defaults/services/dnssec.conf
 %%ETCDIR%%/defaults/services/dovecot.conf
 %%ETCDIR%%/defaults/services/dpkg.conf
@@ -77,10 +81,11 @@
 %%ETCDIR%%/defaults/services/extreme-networks.conf
 %%ETCDIR%%/defaults/services/fail2ban.conf
 %%ETCDIR%%/defaults/services/fetchmail.conf
+%%ETCDIR%%/defaults/services/freeradius.conf
 %%ETCDIR%%/defaults/services/ftpd-messages.conf
 %%ETCDIR%%/defaults/services/ftpd-xferlog.conf
-%%ETCDIR%%/defaults/services/http.conf
 %%ETCDIR%%/defaults/services/http-error.conf
+%%ETCDIR%%/defaults/services/http.conf
 %%ETCDIR%%/defaults/services/identd.conf
 %%ETCDIR%%/defaults/services/imapd.conf
 %%ETCDIR%%/defaults/services/in.qpopper.conf
@@ -88,27 +93,35 @@
 %%ETCDIR%%/defaults/services/ipop3d.conf
 %%ETCDIR%%/defaults/services/iptables.conf
 %%ETCDIR%%/defaults/services/kernel.conf
+%%ETCDIR%%/defaults/services/knockd.conf
+%%ETCDIR%%/defaults/services/lvm.conf
 %%ETCDIR%%/defaults/services/mailscanner.conf
+%%ETCDIR%%/defaults/services/mdadm.conf
+%%ETCDIR%%/defaults/services/mod_security2.conf
 %%ETCDIR%%/defaults/services/modprobe.conf
 %%ETCDIR%%/defaults/services/mountd.conf
+%%ETCDIR%%/defaults/services/mysql-mmm.conf
 %%ETCDIR%%/defaults/services/mysql.conf
 %%ETCDIR%%/defaults/services/named.conf
 %%ETCDIR%%/defaults/services/netopia.conf
 %%ETCDIR%%/defaults/services/netscreen.conf
 %%ETCDIR%%/defaults/services/nut.conf
 %%ETCDIR%%/defaults/services/oidentd.conf
+%%ETCDIR%%/defaults/services/omsa.conf
 %%ETCDIR%%/defaults/services/openvpn.conf
-%%ETCDIR%%/defaults/services/pam.conf
 %%ETCDIR%%/defaults/services/pam_pwdb.conf
 %%ETCDIR%%/defaults/services/pam_unix.conf
+%%ETCDIR%%/defaults/services/pam.conf
 %%ETCDIR%%/defaults/services/php.conf
 %%ETCDIR%%/defaults/services/pix.conf
 %%ETCDIR%%/defaults/services/pluto.conf
 %%ETCDIR%%/defaults/services/pop3.conf
 %%ETCDIR%%/defaults/services/portsentry.conf
 %%ETCDIR%%/defaults/services/postfix.conf
+%%ETCDIR%%/defaults/services/postgresql.conf
 %%ETCDIR%%/defaults/services/pound.conf
 %%ETCDIR%%/defaults/services/proftpd-messages.conf
+%%ETCDIR%%/defaults/services/puppet.conf
 %%ETCDIR%%/defaults/services/pureftpd.conf
 %%ETCDIR%%/defaults/services/qmail-pop3d.conf
 %%ETCDIR%%/defaults/services/qmail-pop3ds.conf
@@ -118,6 +131,7 @@
 %%ETCDIR%%/defaults/services/raid.conf
 %%ETCDIR%%/defaults/services/resolver.conf
 %%ETCDIR%%/defaults/services/rsnapshot.conf
+%%ETCDIR%%/defaults/services/rsyslogd.conf
 %%ETCDIR%%/defaults/services/rt314.conf
 %%ETCDIR%%/defaults/services/samba.conf
 %%ETCDIR%%/defaults/services/saslauthd.conf
@@ -133,18 +147,24 @@
 %%ETCDIR%%/defaults/services/spamassassin.conf
 %%ETCDIR%%/defaults/services/sshd.conf
 %%ETCDIR%%/defaults/services/sshd2.conf
+%%ETCDIR%%/defaults/services/sssd.conf
 %%ETCDIR%%/defaults/services/stunnel.conf
 %%ETCDIR%%/defaults/services/sudo.conf
-%%ETCDIR%%/defaults/services/syslogd.conf
 %%ETCDIR%%/defaults/services/syslog-ng.conf
+%%ETCDIR%%/defaults/services/syslogd.conf
+%%ETCDIR%%/defaults/services/systemd.conf
 %%ETCDIR%%/defaults/services/tac_acc.conf
+%%ETCDIR%%/defaults/services/tivoli-smc.conf
 %%ETCDIR%%/defaults/services/up2date.conf
+%%ETCDIR%%/defaults/services/vdr.conf
 %%ETCDIR%%/defaults/services/vpopmail.conf
 %%ETCDIR%%/defaults/services/vsftpd.conf
 %%ETCDIR%%/defaults/services/windows.conf
 %%ETCDIR%%/defaults/services/xntpd.conf
 %%ETCDIR%%/defaults/services/yum.conf
+%%ETCDIR%%/defaults/services/zypp.conf
 %%ETCDIR%%/defaults/services/zz-disk_space.conf
+%%ETCDIR%%/defaults/services/zz-lm_sensors.conf
 %%ETCDIR%%/defaults/services/zz-network.conf
 %%ETCDIR%%/defaults/services/zz-runtime.conf
 %%ETCDIR%%/defaults/services/zz-sys.conf
@@ -170,6 +190,7 @@ libexec/logwatch/defaults/services/autorpm
 libexec/logwatch/defaults/services/barracuda
 libexec/logwatch/defaults/services/bfd
 libexec/logwatch/defaults/services/cisco
+libexec/logwatch/defaults/services/citadel
 libexec/logwatch/defaults/services/clam-update
 libexec/logwatch/defaults/services/clamav
 libexec/logwatch/defaults/services/clamav-milter
@@ -177,6 +198,9 @@ libexec/logwatch/defaults/services/courier
 libexec/logwatch/defaults/services/cron
 libexec/logwatch/defaults/services/denyhosts
 libexec/logwatch/defaults/services/dhcpd
+libexec/logwatch/defaults/services/dirsrv
+libexec/logwatch/defaults/services/dnf-automatic
+libexec/logwatch/defaults/services/dnf-rpm
 libexec/logwatch/defaults/services/dnssec
 libexec/logwatch/defaults/services/dovecot
 libexec/logwatch/defaults/services/dpkg
@@ -191,6 +215,7 @@ libexec/logwatch/defaults/services/eximstats
 libexec/logwatch/defaults/services/extreme-networks
 libexec/logwatch/defaults/services/fail2ban
 libexec/logwatch/defaults/services/fetchmail
+libexec/logwatch/defaults/services/freeradius
 libexec/logwatch/defaults/services/ftpd-messages
 libexec/logwatch/defaults/services/ftpd-xferlog
 libexec/logwatch/defaults/services/http
@@ -202,15 +227,21 @@ libexec/logwatch/defaults/services/init
 libexec/logwatch/defaults/services/ipop3d
 libexec/logwatch/defaults/services/iptables
 libexec/logwatch/defaults/services/kernel
+libexec/logwatch/defaults/services/knockd
+libexec/logwatch/defaults/services/lvm
 libexec/logwatch/defaults/services/mailscanner
+libexec/logwatch/defaults/services/mdadm
+libexec/logwatch/defaults/services/mod_security2
 libexec/logwatch/defaults/services/modprobe
 libexec/logwatch/defaults/services/mountd
 libexec/logwatch/defaults/services/mysql
+libexec/logwatch/defaults/services/mysql-mmm
 libexec/logwatch/defaults/services/named
 libexec/logwatch/defaults/services/netopia
 libexec/logwatch/defaults/services/netscreen
 libexec/logwatch/defaults/services/nut
 libexec/logwatch/defaults/services/oidentd
+libexec/logwatch/defaults/services/omsa
 libexec/logwatch/defaults/services/openvpn
 libexec/logwatch/defaults/services/pam
 libexec/logwatch/defaults/services/pam_pwdb
@@ -221,8 +252,10 @@ libexec/logwatch/defaults/services/pluto
 libexec/logwatch/defaults/services/pop3
 libexec/logwatch/defaults/services/portsentry
 libexec/logwatch/defaults/services/postfix
+libexec/logwatch/defaults/services/postgresql
 libexec/logwatch/defaults/services/pound
 libexec/logwatch/defaults/services/proftpd-messages
+libexec/logwatch/defaults/services/puppet
 libexec/logwatch/defaults/services/pureftpd
 libexec/logwatch/defaults/services/qmail
 libexec/logwatch/defaults/services/qmail-pop3d
@@ -232,6 +265,7 @@ libexec/logwatch/defaults/services/qmail-smtpd
 libexec/logwatch/defaults/services/raid
 libexec/logwatch/defaults/services/resolver
 libexec/logwatch/defaults/services/rsnapshot
+libexec/logwatch/defaults/services/rsyslogd
 libexec/logwatch/defaults/services/rt314
 libexec/logwatch/defaults/services/samba
 libexec/logwatch/defaults/services/saslauthd
@@ -247,18 +281,24 @@ libexec/logwatch/defaults/services/sonicwall
 libexec/logwatch/defaults/services/spamassassin
 libexec/logwatch/defaults/services/sshd
 libexec/logwatch/defaults/services/sshd2
+libexec/logwatch/defaults/services/sssd
 libexec/logwatch/defaults/services/stunnel
 libexec/logwatch/defaults/services/sudo
-libexec/logwatch/defaults/services/syslogd
 libexec/logwatch/defaults/services/syslog-ng
+libexec/logwatch/defaults/services/syslogd
+libexec/logwatch/defaults/services/systemd
 libexec/logwatch/defaults/services/tac_acc
+libexec/logwatch/defaults/services/tivoli-smc
 libexec/logwatch/defaults/services/up2date
+libexec/logwatch/defaults/services/vdr
 libexec/logwatch/defaults/services/vpopmail
 libexec/logwatch/defaults/services/vsftpd
 libexec/logwatch/defaults/services/windows
 libexec/logwatch/defaults/services/xntpd
 libexec/logwatch/defaults/services/yum
+libexec/logwatch/defaults/services/zypp
 libexec/logwatch/defaults/services/zz-disk_space
+libexec/logwatch/defaults/services/zz-lm_sensors
 libexec/logwatch/defaults/services/zz-network
 libexec/logwatch/defaults/services/zz-runtime
 libexec/logwatch/defaults/services/zz-sys
@@ -274,6 +314,7 @@ libexec/logwatch/defaults/shared/eventlogremoveservice
 libexec/logwatch/defaults/shared/expandrepeats
 libexec/logwatch/defaults/shared/hosthash
 libexec/logwatch/defaults/shared/hostlist
+libexec/logwatch/defaults/shared/journalctl
 libexec/logwatch/defaults/shared/multiservice
 libexec/logwatch/defaults/shared/onlycontains
 libexec/logwatch/defaults/shared/onlyhost
@@ -284,7 +325,7 @@ libexec/logwatch/defaults/shared/removeservice
 sbin/logwatch.pl
 share/man/man8/logwatch.8.gz
 %%SITE_PERL%%/Logwatch.pm
-@dir var/logwatch
-@dir etc/logwatch/services
-@dir etc/logwatch/logfiles
 @dir etc/logwatch/html
+@dir etc/logwatch/logfiles
+@dir etc/logwatch/services
+@dir var/logwatch

@@ -1,7 +1,7 @@
 PORTNAME=	logwatch
-DISTVERSION=	7.11
+DISTVERSION=	7.12
 CATEGORIES=	sysutils
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-${PORTVERSION}
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-${DISTVERSION}
 
 MAINTAINER=	trashcan@ellael.org
 COMMENT=	Log file analysis program
@@ -10,15 +10,23 @@ WWW=		https://www.logwatch.org
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+RUN_DEPENDS=	p5-HTML-HTML5-Entities>=0:textproc/p5-HTML-HTML5-Entities
+
 USES=		perl5 shebangfix
 USE_PERL5=	run
-RUN_DEPENDS=	p5-HTML-HTML5-Entities>=0:textproc/p5-HTML-HTML5-Entities
+
 SHEBANG_FILES=	scripts/logwatch.pl
-PORTDOCS=	HOWTO-Customize-LogWatch README
-NO_BUILD=	yes
-NO_ARCH=	yes
+
 MAKE_ENV+=	SITE_PERL_REL=${SITE_PERL_REL}
-OPTIONS_DEFINE=	DOCS
+
+NO_ARCH=	yes
+NO_BUILD=	yes
+
+PORTDOCS=	HOWTO-Customize-LogWatch README
+
+OPTIONS_DEFINE=		DATEMANIP DOCS
+DATEMANIP_DESC=		Install Date::Manip perl module for all valid --range parameters
+DATEMANIP_RUN_DEPENDS=	p5-Date-Manip>=0:devel/p5-Date-Manip
 
 pre-configure:
 	${REINPLACE_CMD}  -E \
