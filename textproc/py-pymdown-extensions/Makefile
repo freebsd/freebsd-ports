@@ -1,5 +1,5 @@
 PORTNAME=	pymdown-extensions
-DISTVERSION=	10.13
+DISTVERSION=	10.14.1
 CATEGORIES=	textproc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -20,5 +20,11 @@ USES=		python
 USE_PYTHON=	autoplist pep517
 
 NO_ARCH=	yes
+
+OPTIONS_DEFINE=		EXTRA
+OPTIONS_DEFAULT=	EXTRA
+
+EXTRA_DESC=	Enable support for extended lexer options
+EXTRA_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pygments>=2.19.1:textproc/py-pygments@${PY_FLAVOR}
 
 .include <bsd.port.mk>
