@@ -65,8 +65,8 @@ share/bash-completion/completions/clifm
 %%DATADIR%%/plugins/ihelp.sh
 %%DATADIR%%/plugins/img_viewer.sh
 %%DATADIR%%/plugins/jumper.sh
-%%DATADIR%%/plugins/kbgen.c
 %%DATADIR%%/plugins/m_git_prompt_status
+%%DATADIR%%/plugins/m_hostname_color
 %%DATADIR%%/plugins/mime_list.sh
 %%DATADIR%%/plugins/music_player.sh
 %%DATADIR%%/plugins/pager.sh
