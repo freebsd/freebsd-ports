@@ -55,7 +55,6 @@
     SUBDIR += ibus-rime
     SUBDIR += ibus-table-chinese
     SUBDIR += jis2gb
-    SUBDIR += kcfonts
     SUBDIR += libcangjie
     SUBDIR += libchewing
     SUBDIR += libime

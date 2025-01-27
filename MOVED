@@ -4052,3 +4052,4 @@ java/infobus||2025-01-25|Has expired: Outdated API and is no longer actively dev
 chinese/eterm||2025-01-27|Has expired: Depends on kcfonts, which is marked DEPRECATED
 mail/queue-fix||2025-01-27|Has expired: Upstream disapeared and distfile is no more available
 games/senken||2025-01-27|Has expired: GENTOO mastersites are no longer available
+chinese/kcfonts||2025-01-27|Has expired: GENTOO MASTER_SITES are no longer available
