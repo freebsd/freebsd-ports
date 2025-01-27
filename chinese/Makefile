@@ -22,7 +22,6 @@
     SUBDIR += dictd-database
     SUBDIR += elffont
     SUBDIR += enscript
-    SUBDIR += eterm
     SUBDIR += fandol
     SUBDIR += fcitx
     SUBDIR += fcitx-chewing
