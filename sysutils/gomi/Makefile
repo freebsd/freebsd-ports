@@ -1,11 +1,11 @@
 PORTNAME=	gomi
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.1.9
+DISTVERSION=	1.2.2
 CATEGORIES=	sysutils
 
 MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Unix rm(1) command that can restore deleted files
-WWW=		https://github.com/b4b4r07/gomi
+WWW=		https://github.com/babarot/gomi
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -13,13 +13,15 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USES=		go:1.23,modules
 
 _BUILD_VERSION=		${DISTVERSIONFULL}
-_BUILD_REVISION=	01c4325
+_BUILD_REVISION=	495a2a3
+_BUILD_DATE=		$$(date +%Y-%m-%dT%H:%M:%SZ)
 
-GO_MODULE=	github.com/b4b4r07/gomi
+GO_MODULE=	github.com/babarot/gomi
 GO_BUILDFLAGS=	-ldflags "\
 		-s -w \
-		-X main.Version=${_BUILD_VERSION} \
-		-X main.Revision=${_BUILD_REVISION}"
+		-X main.version=${_BUILD_VERSION} \
+		-X main.revision=${_BUILD_REVISION} \
+		-X main.date=${_BUILD_DATE}"
 
 PLIST_FILES=	bin/${PORTNAME}
 PORTDOCS=	README.md
