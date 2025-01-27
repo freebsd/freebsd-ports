@@ -1,6 +1,6 @@
 PORTNAME=	thunderbird
 DISTVERSION=	128.6.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	mail news net-im wayland
 MASTER_SITES=	MOZILLA/${PORTNAME}/releases/${DISTVERSION}esr/source \
 		MOZILLA/${PORTNAME}/candidates/${DISTVERSION}esr-candidates/build3/source
@@ -23,7 +23,10 @@ BUILD_DEPENDS=	nspr>=4.32:devel/nspr \
 		autoconf2.13:devel/autoconf2.13 \
 		nasm:devel/nasm \
 		yasm:devel/yasm \
-		zip:archivers/zip
+		zip:archivers/zip \
+		${LOCALBASE}/share/wasi-sysroot/lib/wasm32-wasi/libc++abi.a:devel/wasi-libcxx${LLVM_VERSION} \
+		${LOCALBASE}/share/wasi-sysroot/lib/wasm32-wasi/libc.a:devel/wasi-libc@${LLVM_VERSION} \
+		wasi-compiler-rt${LLVM_VERSION}>0:devel/wasi-compiler-rt${LLVM_VERSION}
 LIB_DEPENDS=	libjson-c.so:devel/json-c
 
 USE_GECKO=	gecko
@@ -36,6 +39,7 @@ USES=		tar:xz
 
 MOZ_OPTIONS=	--enable-application=comm/mail --enable-official-branding
 MOZ_OPTIONS+=	--with-system-bz2 --with-system-jsonc
+MOZ_OPTIONS+=	--with-wasi-sysroot=${LOCALBASE}/share/wasi-sysroot
 MOZ_MK_OPTIONS=	MOZ_THUNDERBIRD=1 MAIL_PKG_SHARED=1
 MOZ_EXPORT=		MOZ_THUNDERBIRD=1 MAIL_PKG_SHARED=1
 
@@ -47,17 +51,6 @@ SYSTEM_PREFS=	${FAKEDIR}/lib/${PORTNAME}/defaults/pref/${PORTNAME}.js
 OPTIONS_DEFAULT=CANBERRA
 
 .include "${.CURDIR}/../../www/firefox/Makefile.options"
-
-.include <bsd.port.options.mk>
-
-.if ${ARCH} == powerpc64
-MOZ_OPTIONS+=	--without-wasm-sandboxed-libraries
-.else
-BUILD_DEPENDS+=	${LOCALBASE}/share/wasi-sysroot/lib/wasm32-wasi/libc++abi.a:devel/wasi-libcxx${LLVM_VERSION} \
-		${LOCALBASE}/share/wasi-sysroot/lib/wasm32-wasi/libc.a:devel/wasi-libc@${LLVM_VERSION} \
-		wasi-compiler-rt${LLVM_VERSION}>0:devel/wasi-compiler-rt${LLVM_VERSION}
-MOZ_OPTIONS+=	--with-wasi-sysroot=${LOCALBASE}/share/wasi-sysroot
-.endif
 
 post-extract:
 	@${SED} -e 's|@PORTNAME_ICON@|${PORTNAME_ICON:R}|;s|@MOZILLA@|${MOZILLA}|' \
