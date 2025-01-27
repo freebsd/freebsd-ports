@@ -1,6 +1,0 @@
-  HERMES, named after the messenger of the gods, is a library whose
-only purpose is to convert graphic data from one pixel format to another in
-the fastest possible way.
-
-  HERMES will also do surface clearing. And it will do it FAST (even with
-x86 and MMX routines if you're on those platforms).
