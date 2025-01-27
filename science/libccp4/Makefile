@@ -1,8 +1,7 @@
 PORTNAME=	libccp4
-DISTVERSION=	6.5.1
-PORTREVISION=	5
+DISTVERSION=	8.0.0
 CATEGORIES=	science education
-MASTER_SITES=	ftp://ftp.ccp4.ac.uk/opensource/
+MASTER_SITES=	https://ftp.ccp4.ac.uk/opensource/
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Protein X-ray crystallography toolkit

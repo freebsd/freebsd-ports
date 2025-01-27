@@ -33,8 +33,8 @@ lib/libccp4c.so.0.0.0
 lib/libccp4f.so
 lib/libccp4f.so.0
 lib/libccp4f.so.0.0.0
-libdata/pkgconfig/libccp4c.pc
-libdata/pkgconfig/libccp4f.pc
+libdata/pkgconfig/ccp4c.pc
+libdata/pkgconfig/ccp4f.pc
 share/atomsf.lib
 share/atomsf_electron.lib
 share/atomsf_neutron.lib
