@@ -30,6 +30,8 @@ PLIST_SUB=	atic=adacurses/terminal_interface-curses
 
 OPTIONS_DEFINE=	DOCS
 
+PIE_UNSAFE=	yes
+
 post-patch:
 	@${REINPLACE_CMD} -e '/(INSTALL_PROG)/d' -e 's|@ADAGEN_LDFLAGS@||' \
 		${WRKSRC}/gen/Makefile.in
