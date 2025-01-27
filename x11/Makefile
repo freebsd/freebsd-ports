@@ -80,7 +80,6 @@
     SUBDIR += evilvte
     SUBDIR += evtest
     SUBDIR += eww
-    SUBDIR += fbdesk
     SUBDIR += fbpanel
     SUBDIR += find-cursor
     SUBDIR += fireflies

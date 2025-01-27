@@ -4053,3 +4053,4 @@ chinese/eterm||2025-01-27|Has expired: Depends on kcfonts, which is marked DEPRE
 mail/queue-fix||2025-01-27|Has expired: Upstream disapeared and distfile is no more available
 games/senken||2025-01-27|Has expired: GENTOO mastersites are no longer available
 chinese/kcfonts||2025-01-27|Has expired: GENTOO MASTER_SITES are no longer available
+x11/fbdesk||2025-01-27|Has expired: Upstream disapear and distfile is no more available
