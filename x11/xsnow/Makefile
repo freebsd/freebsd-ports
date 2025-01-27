@@ -1,5 +1,6 @@
 PORTNAME=	xsnow
-PORTVERSION=	3.7.9
+DISTVERSION=	3.8.4
+DISTVERSIONSUFFIX=	~pre01
 CATEGORIES=	x11
 MASTER_SITES=	https://ratrabbit.nl/downloads/xsnow/ \
 		SF/${PORTNAME}/
