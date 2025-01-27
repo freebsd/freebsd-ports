@@ -4051,3 +4051,4 @@ emulators/vxtools||2025-01-25|Has expired: Dist files are no longer available as
 java/infobus||2025-01-25|Has expired: Outdated API and is no longer actively developed or maintained
 chinese/eterm||2025-01-27|Has expired: Depends on kcfonts, which is marked DEPRECATED
 mail/queue-fix||2025-01-27|Has expired: Upstream disapeared and distfile is no more available
+games/senken||2025-01-27|Has expired: GENTOO mastersites are no longer available
