@@ -353,6 +353,7 @@
     SUBDIR += lzr
     SUBDIR += man2web
     SUBDIR += manpageblog
+    SUBDIR += marmite
     SUBDIR += mathjax
     SUBDIR += mathjax3
     SUBDIR += mathopd

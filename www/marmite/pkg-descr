@@ -1,0 +1,20 @@
+Marmite [Markdown makes sites] is a very! simple static site generator.
+
+Features:
+ - Everything embedded in a single binary
+ - Zero-Config to get started
+ - Common-mark + Github Flavoured Markdown + Extensions
+ - Raw HTML allowed
+ - Emojis :smile:, spoiler ||secret||
+ - Wikilinks [[name|url]] and Obsidian links [[page]]
+ - Backlinks
+ - Tags
+ - Multi authors
+ - Multi streams
+ - Pagination
+ - Static Search Index
+ - RSS Feeds
+ - Built-in HTTP server
+ - Auto rebuild when content changes
+ - Built-in theme
+ - CLI to start a new theme from scratch
