@@ -1,13 +1,13 @@
 PORTNAME=	restinio
-DISTVERSION=	0.7.2
-PORTREVISION=	2
+DISTVERSION=	0.7.3
 CATEGORIES=	www devel
 MASTER_SITES=	https://github.com/Stiffstream/${PORTNAME}/releases/download/v.${DISTVERSION}/
 DISTNAME=	${PORTNAME}-${DISTVERSION}-full
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Asynchronous HTTP/WebSocket server C++17 library
-WWW=		https://stiffstream.com/en/products/restinio.html
+WWW=		https://stiffstream.com/en/products/restinio.html \
+		https://github.com/Stiffstream/restinio
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/../LICENSE
@@ -63,5 +63,6 @@ SAMPLES_VARS_OFF=	NO_ARCH=yes
 SAMPLES_BUILD_DEPENDS=	json-dto>0:devel/json-dto
 
 # many tests fail due to port being in use, see https://github.com/Stiffstream/restinio/issues/223
+# 0.7.3: Tests fail to run, see https://github.com/Stiffstream/restinio/issues/230
 
 .include <bsd.port.mk>
