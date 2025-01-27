@@ -1,6 +1,6 @@
 --- meson.build.orig	2024-09-08 18:40:36 UTC
 +++ meson.build
-@@ -17,10 +17,10 @@ endif
+@@ -17,15 +17,16 @@ endif
    endif
  endif
  
@@ -14,3 +14,10 @@
  
  find_library_in_compiler = meson.version().version_compare('>=0.31.0')
  rt_dep = dependency('rt', required:false)
+ docopt_dep = dependency('docopt', static:static_linkage)
+-icu_dep = dependency('icu-i18n', static:static_linkage)
++icu_dep = [dependency('icu-i18n', static:static_linkage), \
++           dependency('icu-uc', static:static_linkage)]
+ 
+ with_writer = host_machine.system() != 'windows'
+ 
