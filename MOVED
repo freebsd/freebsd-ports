@@ -4050,3 +4050,4 @@ databases/jdbc-oracle11g||2025-01-25|Has expired: Oracle no longer provides publ
 emulators/vxtools||2025-01-25|Has expired: Dist files are no longer available as site returns NXDOMAIN
 java/infobus||2025-01-25|Has expired: Outdated API and is no longer actively developed or maintained
 chinese/eterm||2025-01-27|Has expired: Depends on kcfonts, which is marked DEPRECATED
+mail/queue-fix||2025-01-27|Has expired: Upstream disapeared and distfile is no more available

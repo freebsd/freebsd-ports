@@ -564,7 +564,6 @@
     SUBDIR += qmhandle
     SUBDIR += qpopper
     SUBDIR += qsf
-    SUBDIR += queue-fix
     SUBDIR += queue-repair
     SUBDIR += rainloop
     SUBDIR += ratelimit-policyd
