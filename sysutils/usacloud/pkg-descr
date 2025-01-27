@@ -1,0 +1,24 @@
+usacloud is the official CLI client for SAKURA cloud which is provided by
+SAKURA internet Inc. in Japan.
+
+The following feactures are available to SARKUA cloud users via RESTful APIs:
+
+- Configuration
+- Authentication
+- Computing / Storage / Networking
+- Appliance / Networking
+- Secure Mobile
+- Common service items
+- Billing
+- Lab
+- WebAccelerator
+- Region/Zone information
+- Service/Product information
+- Other services / commands
+
+SEE ALSO following manuals:
+https://docs.usacloud.jp/usacloud/installation/start_guide/
+https://docs.usacloud.jp/usacloud/guides/basic_usage/
+https://docs.usacloud.jp/usacloud/references/global/
+https://docs.usacloud.jp/usacloud/references/profile/
+https://docs.usacloud.jp/usacloud/references/env/
