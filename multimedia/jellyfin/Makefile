@@ -1,6 +1,5 @@
 PORTNAME=	jellyfin
-DISTVERSION=	10.10.3
-PORTREVISION=	1
+DISTVERSION=	10.10.5
 CATEGORIES=	multimedia
 DISTFILES+=	${PREFETCH_FILE}:prefetch
 EXTRACT_ONLY+=	${PORTNAME}-${PORTNAME}-${GH_TAGNAME}_GH0.tar.gz \
@@ -44,8 +43,8 @@ AutoFixture.AutoMoq:4.18.1 \
 AutoFixture.Xunit2:4.18.1 \
 AutoFixture:4.18.1 \
 BDInfo:0.8.0 \
-BlurHashSharp.SkiaSharp:1.3.3 \
-BlurHashSharp:1.3.3 \
+BlurHashSharp.SkiaSharp:1.3.4 \
+BlurHashSharp:1.3.4 \
 CacheManager.Core:1.2.0 \
 Castle.Core:5.1.1 \
 CommandLineParser:2.9.1 \
@@ -178,7 +177,7 @@ Mono.Nat:3.0.4 \
 Mono.TextTemplating:2.2.1 \
 Moq:4.18.4 \
 NETStandard.Library:1.6.1 \
-NEbml:0.11.0 \
+NEbml:0.12.0 \
 Newtonsoft.Json:13.0.1 \
 Newtonsoft.Json:13.0.3 \
 PlaylistsNET:1.4.1 \
@@ -374,7 +373,7 @@ runtime.unix.system.io.filesystem:4.3.0 \
 runtime.unix.system.net.primitives:4.3.0 \
 runtime.unix.system.private.uri:4.3.0 \
 runtime.unix.system.runtime.extensions:4.3.0 \
-z440.atl.core:6.8.0 \
+z440.atl.core:6.11.0 \
 Ude.NetStandard:1.2.0 \
 
 SUB_FILES=	jellyfin pkg-message
