@@ -56,6 +56,8 @@ include/ggml.h
 include/gguf.h
 include/llama-cpp.h
 include/llama.h
+lib/cmake/ggml/ggml-config.cmake
+lib/cmake/ggml/ggml-version.cmake
 lib/cmake/llama/llama-config.cmake
 lib/cmake/llama/llama-version.cmake
 lib/libggml-base.so
