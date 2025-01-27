@@ -1,5 +1,5 @@
 PORTNAME=	rofi
-DISTVERSION?=	1.7.7
+DISTVERSION?=	1.7.8
 PORTREVISION?=	0
 CATEGORIES=	x11 ${EXTRA_CATEGORIES}
 
@@ -25,8 +25,8 @@ USE_GITHUB=	yes # required by rofi-wayland
 USE_GNOME=	cairo gdkpixbuf2 librsvg2 pango
 USE_XORG=	xcb
 GH_ACCOUNT?=	davatorium
-GH_TUPLE=	sardemff7:libgwater:d86f990:libgwater/subprojects/libgwater \
-		sardemff7:libnkutils:72bd7fb:libnkutils/subprojects/libnkutils
+GH_TUPLE=	sardemff7:libgwater:d86f9903efb9c490c0e3b0316d7f2da5b5a5632c:libgwater/subprojects/libgwater \
+		sardemff7:libnkutils:72bd7fb07f627a864e724639eea9fab6cccbd77c:libnkutils/subprojects/libnkutils
 SHEBANG_FILES=	script/get_git_rev.sh \
 		script/rofi-sensible-terminal
 bash_CMD=	${SH}
