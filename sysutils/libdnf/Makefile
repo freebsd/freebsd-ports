@@ -1,6 +1,5 @@
 PORTNAME=	libdnf
-DISTVERSION=	0.70.2
-PORTREVISION=	2
+DISTVERSION=	0.73.4
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -11,26 +10,17 @@ LICENSE=	LGPL21 # no LICENSE tag for Version 2.1
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	check>0:devel/check
-LIB_DEPENDS=	libassuan.so:security/libassuan \
-		libcurl.so:ftp/curl \
+LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libexpat.so:textproc/expat2 \
 		libffi.so:devel/libffi \
-		libgcrypt.so:security/libgcrypt \
-		libgpgme.so:security/gpgme \
-		libgpg-error.so:security/libgpg-error \
-		libidn2.so:dns/libidn2 \
 		libjson-c.so:devel/json-c \
 		libmodulemd.so:misc/libmodulemd \
 		libnghttp2.so:www/libnghttp2 \
-		libpsl.so:dns/libpsl \
-		libpcre.so:devel/pcre \
 		libpopt.so:devel/popt \
 		librepo.so:misc/librepo \
 		librpmio.so:archivers/rpm4 \
 		libsmartcols.so:devel/util-linux \
 		libsolv.so:misc/libsolv \
-		libssh2.so:security/libssh2 \
-		libunistring.so:devel/libunistring \
 		libyaml.so:textproc/libyaml \
 		libzstd.so:archivers/zstd
 TEST_DEPENDS=	cppunit>0:devel/cppunit
