@@ -13,9 +13,11 @@ etc/rc.d/bastille
 %%DATADIR%%/create.sh
 %%DATADIR%%/destroy.sh
 %%DATADIR%%/edit.sh
+%%DATADIR%%/etcupdate.sh
 %%DATADIR%%/export.sh
 %%DATADIR%%/htop.sh
 %%DATADIR%%/import.sh
+%%DATADIR%%/jcp.sh
 %%DATADIR%%/limits.sh
 %%DATADIR%%/list.sh
 %%DATADIR%%/mount.sh

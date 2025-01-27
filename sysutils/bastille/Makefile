@@ -1,5 +1,5 @@
 PORTNAME=	bastille
-DISTVERSION=	0.12.20250111
+DISTVERSION=	0.13.20250126
 CATEGORIES=	sysutils
 
 MAINTAINER=	christer.edwards@gmail.com
