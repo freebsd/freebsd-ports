@@ -1,6 +1,6 @@
 PORTNAME=	llvm
 PORTVERSION=	${LLVM_MAJOR}.0.d${SNAPDATE}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel lang
 PKGNAMESUFFIX=	${LLVM_SUFFIX}
 
@@ -45,8 +45,16 @@ SHEBANG_FILES=	\
 		llvm/utils/lit/lit.py \
 		llvm/utils/llvm-lit/llvm-lit.in
 
-SUB_FILES+=	llvm-wrapper.sh
-SUB_LIST+=	LLVM_PREFIX="${LLVM_PREFIX}" LLVM_SUFFIX="${LLVM_SUFFIX}"
+.if ${LLVM_SUFFIX} == "-cheriot"
+WRAPPER=	wrapper-cheriot.sh
+.else
+WRAPPER=	wrapper-cheri.sh
+.endif
+SUB_FILES+=	${WRAPPER}
+SUB_LIST+=	\
+		CONFIGURE_TARGET="${CONFIGURE_TARGET}" \
+		LLVM_PREFIX="${LLVM_PREFIX}" \
+		LLVM_SUFFIX="${LLVM_SUFFIX}"
 
 CMAKE_INSTALL_PREFIX=	${LLVM_PREFIX}
 CMAKE_SOURCE_PATH=	${WRKSRC}/llvm
@@ -205,7 +213,7 @@ post-patch-LLD-on:
 			${PATCH_WRKSRC}/lld/docs/conf.py
 
 post-install:
-	${INSTALL_SCRIPT} ${WRKDIR}/llvm-wrapper.sh \
+	${INSTALL_SCRIPT} ${WRKDIR}/${WRAPPER} \
 	    ${STAGEDIR}${PREFIX}/bin/${COMMAND_PREFIX}${FIRST_COMMAND}${COMMAND_SUFFIX}
 .for command in ${COMMANDS:C/^/XXXX/1:NXXXX*}
 	${LN} -f ${STAGEDIR}${PREFIX}/bin/${COMMAND_PREFIX}${FIRST_COMMAND}${COMMAND_SUFFIX} \
@@ -251,18 +259,18 @@ post-install-EXTRAS-on:
 post-install-LIT-on:
 	${INSTALL_SCRIPT} ${PATCH_WRKSRC}/llvm/utils/lit/lit.py \
 	    ${STAGEDIR}${LLVM_PREFIX}/bin/lit
-	${LN} -f ${STAGEDIR}${LLVM_PREFIX}/bin/lit \
+	${LN} -sf ${STAGEDIR}${LLVM_PREFIX}/bin/lit \
 	    ${STAGEDIR}${LLVM_PREFIX}/bin/llvm-lit
-	${LN} -f ${STAGEDIR}${LLVM_PREFIX}/bin/lit \
+	${LN} -sf ${STAGEDIR}${LLVM_PREFIX}/bin/lit \
 	    ${STAGEDIR}${PREFIX}/bin/${COMMAND_PREFIX}lit${LLVM_SUFFIX}
-	${LN} -f ${STAGEDIR}${LLVM_PREFIX}/bin/lit \
+	${LN} -sf ${STAGEDIR}${LLVM_PREFIX}/bin/lit \
 	    ${STAGEDIR}${PREFIX}/bin/${COMMAND_PREFIX}llvm-lit${LLVM_SUFFIX}
 	${MKDIR} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/${LIT_MOD_NAME}
 	${INSTALL_DATA} ${WRKSRC}/llvm/utils/lit/lit/*.py \
 	    ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/${LIT_MOD_NAME}
 	${INSTALL_PROGRAM} ${WRKDIR}/.build/bin/FileCheck \
 	    ${STAGEDIR}${LLVM_PREFIX}/bin/
-	${LN} -f ${STAGEDIR}${LLVM_PREFIX}/bin/FileCheck \
+	${LN} -sf ${STAGEDIR}${LLVM_PREFIX}/bin/FileCheck \
 	    ${STAGEDIR}${PREFIX}/bin/${COMMAND_PREFIX}FileCheck${COMMAND_SUFFIX}
 
 post-install-LLD-on:

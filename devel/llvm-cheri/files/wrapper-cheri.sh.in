@@ -1,0 +1,202 @@
+#!/bin/sh
+#-
+# SPDX-License-Identifier: BSD-2-Clause
+#
+# Copyright (c) 2022 SRI International
+#
+# This software was developed by SRI International and the University of
+# Cambridge Computer Laboratory (Department of Computer Science and
+# Technology) under Defense Advanced Research Projects Agency (DARPA)
+# Contract No. HR001122C0110 ("ETC").
+#
+# Redistribution and use in source and binary forms, with or without
+# modification, are permitted provided that the following conditions
+# are met:
+# 1. Redistributions of source code must retain the above copyright
+#    notice, this list of conditions and the following disclaimer.
+# 2. Redistributions in binary form must reproduce the above copyright
+#    notice, this list of conditions and the following disclaimer in the
+#    documentation and/or other materials provided with the distribution.
+#
+# THIS SOFTWARE IS PROVIDED BY THE AUTHOR AND CONTRIBUTORS ``AS IS'' AND
+# ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+# IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+# ARE DISCLAIMED.  IN NO EVENT SHALL THE AUTHOR OR CONTRIBUTORS BE LIABLE
+# FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+# DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+# OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+# HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+# LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+# OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+# SUCH DAMAGE.
+#
+
+LOCALBASE="%%LOCALBASE%%"
+LLVM_PREFIX="%%LLVM_PREFIX%%"
+LLVM_SUFFIX="%%LLVM_SUFFIX%%"
+_TARGET=${_TARGET:-%%CONFIGURE_TARGET%%}
+_SYSROOT=${_SYSROOT:-""}
+
+VERBOSE=${VERBOSE:-0}
+
+err()
+{
+	ret=$1
+	shift
+	echo >&2 "$@"
+	exit "$ret"
+}
+
+debug()
+{
+	if [ "$VERBOSE" -ne 0 ]; then
+		echo >&2 "$@"
+	fi
+}
+
+run()
+{
+	debug "Running:" "$@"
+	"$@"
+}
+
+run_tool()
+{
+	local tool=$1
+	shift
+	run env LD_LIBRARY_PATH="${LD_LIBRARY_PATH:+${LD_LIBRARY_PATH}:}${LLVM_PREFIX}/lib" \
+	    "${LLVM_PREFIX}/bin/$tool" "$@"
+}
+
+set_sysroot()
+{
+	local sysroot="$1"
+	# Clang doesn't seem to care if the sysroot exists, but we'll
+	# blow up trying to get __CheriBSD_version if it doesn't so require
+	# it to exist.
+	if [ ! -d "$sysroot" ]; then
+		err 1 "nonexistant sysroot: '$sysroot'"
+	fi
+	_SYSROOT="$sysroot"
+}
+
+set_target()
+{
+	local target="$1"
+	case "$target" in
+	*-*-*)
+		_TARGET="$target"
+		;;
+	*)
+		echo "malformed target triple: '$target'"
+		;;
+	esac
+}
+
+tool=$0
+[ -L "$tool" ] && tool=$(/bin/realpath $tool)
+tool=${tool##*/}
+basetool=${tool%${LLVM_SUFFIX}}
+
+next_arg_is_target=0
+next_arg_is_sysroot=0
+for arg in "$@"; do
+	if [ $next_arg_is_target -ne 0 ]; then
+		set_target "$arg"
+		next_arg_is_target=0
+		continue
+	fi
+	if [ $next_arg_is_sysroot -ne 0 ]; then
+		set_sysroot "$arg"
+		next_arg_is_sysroot=0
+		continue
+	fi
+	case "$arg" in
+	--sysroot)
+		next_arg_is_sysroot=1
+		;;
+	--sysroot=*)
+		set_sysroot "${arg#--sysroot=}"
+		;;
+	-target)
+		next_arg_is_target=1
+		;;
+	--target=*)
+		set_target "${arg#--target=}"
+		;;
+	esac
+done
+if [ $next_arg_is_target -ne 0 ]; then
+	err 1 "-target without target argument"
+fi
+
+if [ -z "$CHERIBSD_VERSION" -a -e "${_SYSROOT}/usr/include/sys/param.h" ]; then
+	CHERIBSD_VERSION=$(awk '/^#define[[:space:]]+__CheriBSD_version/{print $3}' ${_SYSROOT}/usr/include/sys/param.h)
+fi
+if [ -z "$CHERIBSD_VERSION" ]; then
+	CHERIBSD_VERSION=0
+fi
+
+arch_cflags=
+arch_objdump_flags=
+
+# If we're targeting CheriBSD, assume we want to produce CHERI binaries
+# (either hybrid or purecap) and choose which one based on the default
+# libc in the sysroot.  This isn't quite right, but isn't much worse
+# than a misguided -mcpu flag.
+if [ $CHERIBSD_VERSION -gt 0 ]; then
+	case "$_TARGET" in
+	aarch64-*-freebsd*)
+		if run_tool llvm-readelf -h ${_SYSROOT}/lib/libc.so.7 | grep -q "Flags:.*purecap"; then
+			tls_flags=
+			vararg_flags=
+			if [ "$CHERIBSD_VERSION" -le 20220314 ]; then
+				tls_flags="-femulated-tls"
+			elif [ "$CHERIBSD_VERSION" -le 20220828 ]; then
+				vararg_flags="-Xclang -morello-vararg=new"
+			elif [ "$CHERIBSD_VERSION" -le 20230804 ]; then
+				vararg_flags="-Xclang -morello-vararg=new -Xclang -morello-bounded-memargs=caller-only"
+			else
+				vararg_flags="-Xclang -morello-vararg=new -Xclang -morello-bounded-memargs"
+			fi
+
+			arch_cflags="-march=morello -mabi=purecap $tls_flags $vararg_flags"
+			arch_objdump_flags="--mattr=+morello"
+		else
+			vararg_flags=
+			if [ "$CHERIBSD_VERSION" -gt 20220314 ]; then
+				vararg_flags="-Xclang -morello-vararg=new"
+			fi
+			arch_cflags="-march=morello $vararg_flags"
+			arch_objdump_flags="--mattr=+morello"
+		fi
+		;;
+	riscv64-*-freebsd*)
+		if run_tool llvm-readelf -h ${_SYSROOT}/lib/libc.so.7 | grep -q "Flags:.*cheriabi"; then
+			mabi=l64pc128d
+		else
+			mabi=lp64d
+		fi
+		arch_cflags="-march=rv64gcxcheri -mabi=$mabi -mno-relax"
+		;;
+	esac
+fi
+
+case $basetool in
+clang|clang++|clang-cpp)
+	toolflags=$arch_cflags
+	;;
+ld.lld|ld64.lld)
+	# no flags should be required as ld can see what it's doing from
+	# the binaries
+	toolflags=
+	;;
+objdump)
+	toolflags=$arch_objdump_flags
+	;;
+*)
+	debug no special args for $tool
+	;;
+esac
+
+run_tool "${basetool}" $toolflags "$@"
