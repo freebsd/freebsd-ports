@@ -96,12 +96,6 @@ PORTDOCS=	Authors.txt Bugs.txt ChangeLog Developers.txt \
 ALL_TARGET+=	\
 		mld_hash
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH:Mpowerpc64*}
-LLD_UNSAFE=	yes
-.endif
-
 post-patch:
 	@${SED} \
 		-e "s|%%PREFIX%%|${PREFIX}|" \
@@ -160,4 +154,4 @@ install-user: extract
 		${HOME}/.mldonkey_gui_messages.ini
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
