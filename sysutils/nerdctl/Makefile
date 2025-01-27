@@ -1,6 +1,6 @@
 PORTNAME=	nerdctl
 DISTVERSIONPREFIX=v
-DISTVERSION=	2.0.2
+DISTVERSION=	2.0.3
 CATEGORIES=	sysutils
 
 MAINTAINER=	laurent.chardon@gmail.com
@@ -10,7 +10,7 @@ WWW=		https://github.com/containerd/nerdctl
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:modules
+USES=		go:1.22,modules
 
 GO_MODULE=	github.com/containerd/nerdctl/v2
 GO_TARGET=	./cmd/${PORTNAME}
