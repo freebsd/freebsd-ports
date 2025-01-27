@@ -1,7 +1,7 @@
 Has been upstreamed via https://github.com/kiwix/libkiwix/pull/1173 and will be
 included in next release (14.1.0), so remove this patch at next update.
 
---- meson.build.orig	2024-10-09 17:18:52 UTC
+--- meson.build.orig	2024-02-25 14:11:31 UTC
 +++ meson.build
 @@ -4,14 +4,40 @@ compiler = meson.get_compiler('cpp')
    default_options : ['c_std=c11', 'cpp_std=c++17', 'werror=true'])
@@ -50,3 +50,13 @@ included in next release (14.1.0), so remove this patch at next update.
  endif
  
  if (compiler.get_id() == 'gcc' and build_machine.system() == 'linux') or host_machine.system() == 'freebsd'
+@@ -20,7 +46,8 @@ endif
+ else
+   thread_dep = dependency('', required:false)
+ endif
+-libicu_dep = dependency('icu-i18n', static:static_deps)
++libicu_dep = [dependency('icu-i18n', static:static_deps), \
++              dependency('icu-uc', static:static_deps)]
+ pugixml_dep = dependency('pugixml', static:static_deps)
+ libcurl_dep = dependency('libcurl', static:static_deps)
+ microhttpd_dep = dependency('libmicrohttpd', static:static_deps)
