@@ -2000,6 +2000,7 @@
 %%WWWDIR%%/plugins/af_comics/filters/af_comics_comicpress.php
 %%WWWDIR%%/plugins/af_comics/filters/af_comics_darklegacy.php
 %%WWWDIR%%/plugins/af_comics/filters/af_comics_dilbert.php
+%%WWWDIR%%/plugins/af_comics/filters/af_comics_dumbingofage.php
 %%WWWDIR%%/plugins/af_comics/filters/af_comics_explosm.php
 %%WWWDIR%%/plugins/af_comics/filters/af_comics_gocomics.php
 %%WWWDIR%%/plugins/af_comics/filters/af_comics_gocomics_farside.php
