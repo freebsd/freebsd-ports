@@ -1,9 +1,9 @@
 PORTNAME=	meta1
-PORTVERSION=	1.1.0a.20.1
+PORTVERSION=	1.1.1a.21.0
 PORTREVISION=	0
 CATEGORIES=	mail
-MASTER_SITES=	http://www.MeTA1.org/download/.alpha/evilinc/
-DISTNAME=	${PORTNAME}-1.1.Alpha20.1
+MASTER_SITES=	http://www.MeTA1.org/download/.alpha/bdconf/
+DISTNAME=	${PORTNAME}-1.1.Alpha21.0
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Secure and efficient mail gateway
@@ -74,7 +74,7 @@ TLS_LDFLAGS=		-L${LOCALBASE}/lib
 .include <bsd.port.pre.mk>
 
 .if ${OPSYS} == FreeBSD
-CFLAGS+=	-Wno-error=int-conversion
+CFLAGS+=	-Wno-error=int-conversion -Wno-incompatible-pointer-types
 .endif
 
 post-configure:
