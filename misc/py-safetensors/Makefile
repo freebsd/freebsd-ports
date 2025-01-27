@@ -1,7 +1,6 @@
 PORTNAME=	safetensors
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.5.1
-PORTREVISION=	1
+DISTVERSION=	0.5.2
 CATEGORIES=	misc python # machine-learning
 #MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -46,8 +45,8 @@ CARGO_CRATES=	autocfg-1.4.0 \
 		ryu-1.0.18 \
 		serde-1.0.217 \
 		serde_derive-1.0.217 \
-		serde_json-1.0.134 \
-		syn-2.0.94 \
+		serde_json-1.0.135 \
+		syn-2.0.95 \
 		target-lexicon-0.12.16 \
 		unicode-ident-1.0.14 \
 		unindent-0.2.3
