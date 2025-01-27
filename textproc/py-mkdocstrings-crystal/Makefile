@@ -20,7 +20,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}markdown-callouts>=0.1.0:textproc/py-markdow
 # textproc/py-mkdocstrings belongs to RUN_DEPENDS as well but would cause
 # a circular dependency (via py-mkdocstrings' CRYSTAL option)
 
-USES=		python
+USES=		python:3.9+ # textproc/py-mkdocs-autorefs requires Python 3.9+
 USE_PYTHON=	autoplist pep517
 
 NO_ARCH=	yes

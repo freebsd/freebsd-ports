@@ -21,7 +21,7 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mkdocs-material>0:textproc/py-mkdocs-materi
 # a circular dependency (via py-mkdocstrings' PYTHONLEGACY option).  It was
 # therefore # moved to TEST_DEPENDS to at least allow the test suite to run.
 
-USES=		python
+USES=		python:3.9+ # textproc/py-mkdocs-autorefs requires Python 3.9+
 USE_PYTHON=	autoplist pep517 pytest
 
 TEST_ENV=	PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
