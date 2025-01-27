@@ -1,5 +1,5 @@
 PORTNAME=	telegram-desktop
-DISTVERSION=	5.10.4
+DISTVERSION=	5.10.6
 CATEGORIES=	net-im
 MASTER_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/releases/download/v${DISTVERSION}/
 DISTNAME=	tdesktop-${DISTVERSION}-full
@@ -109,7 +109,7 @@ CMAKE_ARGS+=	-DCMAKE_CC_COMPILER_LAUNCHER="${LOCALBASE}/bin/ccache" \
 .endif
 
 .if ${OPSYS} == FreeBSD && ${COMPILER_TYPE} == clang && ${COMPILER_VERSION} < 190
-EXTRA_PATCHES=	${PATCHDIR}/extrapatch-Telegram_lib__base_base_qt_qt__compare.h
+EXTRA_PATCHES=		${PATCHDIR}/extrapatch-Telegram_lib__base_base_qt_qt__compare.h
 .endif
 
 post-extract:
