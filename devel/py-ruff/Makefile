@@ -1,6 +1,5 @@
 PORTNAME=	ruff
-DISTVERSION=	0.9.2
-PORTREVISION=	1
+DISTVERSION=	0.9.3
 CATEGORIES=	devel python
 #MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -50,7 +49,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		base64-0.22.0 \
 		bincode-1.3.3 \
 		bitflags-1.3.2 \
-		bitflags-2.7.0 \
+		bitflags-2.8.0 \
 		block-buffer-0.10.4 \
 		boxcar-0.2.7 \
 		bstr-1.11.3 \
@@ -168,14 +167,13 @@ CARGO_CRATES=	adler-1.0.2 \
 		ignore-0.4.23 \
 		imara-diff-0.1.7 \
 		imperative-1.0.6 \
-		indexmap-2.7.0 \
+		indexmap-2.7.1 \
 		indicatif-0.17.9 \
 		indoc-2.0.5 \
-		inotify-0.10.2 \
+		inotify-0.11.0 \
 		inotify-sys-0.1.5 \
 		insta-1.42.0 \
 		insta-cmd-0.6.0 \
-		instant-0.1.12 \
 		is-docker-0.2.0 \
 		is-macro-0.3.7 \
 		is-terminal-0.4.12 \
@@ -201,7 +199,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		linux-raw-sys-0.4.14 \
 		litemap-0.7.3 \
 		lock_api-0.4.11 \
-		log-0.4.22 \
+		log-0.4.25 \
 		lsp-server-0.7.8 \
 		matchers-0.1.0 \
 		matches-0.1.10 \
@@ -217,8 +215,8 @@ CARGO_CRATES=	adler-1.0.2 \
 		nix-0.29.0 \
 		nom-7.1.3 \
 		normalize-line-endings-0.3.0 \
-		notify-7.0.0 \
-		notify-types-1.0.0 \
+		notify-8.0.0 \
+		notify-types-2.0.0 \
 		nu-ansi-term-0.46.0 \
 		nu-ansi-term-0.50.1 \
 		num-traits-0.2.18 \
@@ -227,7 +225,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		once_cell-1.20.2 \
 		oorandom-11.1.3 \
 		option-ext-0.2.0 \
-		ordermap-0.5.4 \
+		ordermap-0.5.5 \
 		os_pipe-1.2.1 \
 		os_str_bytes-7.0.0 \
 		overload-0.1.1 \
@@ -301,7 +299,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		serde-wasm-bindgen-0.6.5 \
 		serde_derive-1.0.217 \
 		serde_derive_internals-0.29.0 \
-		serde_json-1.0.135 \
+		serde_json-1.0.137 \
 		serde_repr-0.1.19 \
 		serde_spanned-0.6.7 \
 		serde_test-1.0.177 \
@@ -311,7 +309,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		sharded-slab-0.1.7 \
 		shellexpand-3.1.0 \
 		shlex-1.3.0 \
-		similar-2.6.0 \
+		similar-2.7.0 \
 		siphasher-0.3.11 \
 		smallvec-1.13.2 \
 		snapbox-0.6.21 \
@@ -355,7 +353,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		tracing-attributes-0.1.28 \
 		tracing-core-0.1.33 \
 		tracing-flame-0.2.0 \
-		tracing-indicatif-0.3.8 \
+		tracing-indicatif-0.3.9 \
 		tracing-log-0.2.0 \
 		tracing-subscriber-0.3.19 \
 		tracing-tree-0.4.0 \
@@ -383,8 +381,8 @@ CARGO_CRATES=	adler-1.0.2 \
 		utf8-width-0.1.7 \
 		utf8_iter-1.0.4 \
 		utf8parse-0.2.1 \
-		uuid-1.11.1 \
-		uuid-macro-internal-1.11.1 \
+		uuid-1.12.0 \
+		uuid-macro-internal-1.12.0 \
 		valuable-0.1.0 \
 		version-ranges-0.1.1 \
 		version_check-0.9.4 \
