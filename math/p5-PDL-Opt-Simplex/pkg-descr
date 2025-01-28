@@ -1,0 +1,4 @@
+PDL::Opt::Simplex implements the commonly used simplex optimization algorithm.
+The basic idea of the algorithm is to move a "simplex" of N+1 points in the
+N-dimensional search space according to certain rules. The main benefit of the
+algorithm is that you do not need to calculate the derivatives of your function.
