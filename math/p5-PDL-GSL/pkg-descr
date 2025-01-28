@@ -1,0 +1,13 @@
+PDL::GSL is an interface to the GNU Scientific Library. It contains the
+following packages:
+- PDL::GSL::CDF: PDL interface to GSL Cumulative Distribution Functions
+- PDL::GSL::DIFF: PDL interface to numerical differentiation routines in GSL
+- PDL::GSL::INTEG: PDL interface to numerical integration routines in GSL
+- PDL::GSL::INTERP: PDL interface to Interpolation routines in GSL
+- PDL::GSL::LINALG: PDL interface to linear algebra routines in GSL
+- PDL::GSL::MROOT: PDL interface to multidimensional root-finding routines in
+  GSL
+- PDL::GSL::RNG: PDL interface to RNG and randist routines in GSL
+- PDL::GSL::SF: PDL interface to GSL Special Functions
+- PDL::Stats::Distr: Parameter estimations and probability density functions for
+  distributions
