@@ -10,9 +10,6 @@ WWW=		http://www.frozen-bubble.org
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-DEPRECATED=	Depends on deprecated devel/p5-SDL
-EXPIRATION_DATE=	2025-01-31
-
 BUILD_DEPENDS=	${RUN_DEPENDS} \
 		p5-File-Slurp>=0:devel/p5-File-Slurp
 RUN_DEPENDS=	p5-SDL>=2.511:devel/p5-SDL \

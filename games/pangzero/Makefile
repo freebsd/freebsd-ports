@@ -14,9 +14,6 @@ WWW=		http://apocalypse.rulez.org/pangzero
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-DEPRECATED=	Depends on expiring devel/p5-SDL
-EXPIRATION_DATE=2025-01-31
-
 RUN_DEPENDS=	p5-SDL>=0:devel/p5-SDL
 
 USES=		perl5
