@@ -1,5 +1,5 @@
-TIMESTAMP = 1737277175
-SHA256 (go/net_go-tcping/pouriyajamshidi-tcping-v2.7.0_GH0/go.mod) = dd2cc877531042b2ed53a64c1e99d40e293c226949b8b3924baf58b1186d4ab8
-SIZE (go/net_go-tcping/pouriyajamshidi-tcping-v2.7.0_GH0/go.mod) = 1056
-SHA256 (go/net_go-tcping/pouriyajamshidi-tcping-v2.7.0_GH0/pouriyajamshidi-tcping-v2.7.0_GH0.tar.gz) = f5d70320fe4cdb7a3dfb6f40899287fb1212a8c74e1527f63915174c0533e4fb
-SIZE (go/net_go-tcping/pouriyajamshidi-tcping-v2.7.0_GH0/pouriyajamshidi-tcping-v2.7.0_GH0.tar.gz) = 1934415
+TIMESTAMP = 1738045439
+SHA256 (go/net_go-tcping/pouriyajamshidi-tcping-v2.7.1_GH0/go.mod) = dd2cc877531042b2ed53a64c1e99d40e293c226949b8b3924baf58b1186d4ab8
+SIZE (go/net_go-tcping/pouriyajamshidi-tcping-v2.7.1_GH0/go.mod) = 1056
+SHA256 (go/net_go-tcping/pouriyajamshidi-tcping-v2.7.1_GH0/pouriyajamshidi-tcping-v2.7.1_GH0.tar.gz) = 61ae7054c28b9fd80e925b130f10c8967223a947f99e00af19a3987ec676954e
+SIZE (go/net_go-tcping/pouriyajamshidi-tcping-v2.7.1_GH0/pouriyajamshidi-tcping-v2.7.1_GH0.tar.gz) = 1936339
