@@ -164,7 +164,6 @@ OPENMP_CMAKE_ON= \
 	-DLIBOMPTARGET_BUILD_DEVICERTL_BCLIB=OFF \
 	-DLIBOMPTARGET_DEP_LIBFFI_INCLUDE_DIR="" \
 	-DLIBOMPTARGET_DEP_LIBFFI_LIBRARIES=""
-OPENMP_PORTDOCS=	openmp
 POLLY_DESC=		Polyhedral loop and data-locality optimizer
 POLLY_PORTDOCS=	polly
 STATIC_LIBS_DESC= Install static libraries (does not effect sanitizers)
