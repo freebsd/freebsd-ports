@@ -1,7 +1,6 @@
 PORTNAME=	ncspot
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.1.2
-PORTREVISION=	5
+DISTVERSION=	1.2.1
 CATEGORIES=	audio
 
 MAINTAINER=	rodrigo@FreeBSD.org
@@ -11,6 +10,7 @@ WWW=		https://github.com/hrkfdn/ncspot
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BUILD_DEPENDS=	bindgen:devel/rust-bindgen-cli
 LIB_DEPENDS=	libdbus-1.so:devel/dbus
 
 USES=		cargo ssl
