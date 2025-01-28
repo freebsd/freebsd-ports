@@ -1,5 +1,6 @@
 PORTNAME=	mumble-server
 DISTVERSION=	1.5.735
+PORTREVISION=	1
 CATEGORIES=	audio net
 MASTER_SITES=	https://github.com/${PORTNAME:S/-server//}-voip/${PORTNAME:S/-server//}/releases/download/v${DISTVERSION}/
 DISTNAME=	${PORTNAME:S/-server//}-${DISTVERSION}

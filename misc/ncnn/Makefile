@@ -1,5 +1,6 @@
 PORTNAME=	ncnn
 DISTVERSION=	20241226
+PORTREVISION=	1
 CATEGORIES=	misc # machine-learning
 
 MAINTAINER=	yuri@FreeBSD.org
