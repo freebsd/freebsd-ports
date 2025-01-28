@@ -821,6 +821,7 @@
     SUBDIR += p5-PDL-Fit
     SUBDIR += p5-PDL-GSL
     SUBDIR += p5-PDL-Graphics-IIS
+    SUBDIR += p5-PDL-Graphics-Limits
     SUBDIR += p5-Parse-Range
     SUBDIR += p5-Roman
     SUBDIR += p5-Set-IntSpan
