@@ -49,12 +49,14 @@ include/cgnstypes.h
 include/cgnstypes_f.h
 include/cgnstypes_f03.h
 include/cgnswin_f.h
+lib/cmake/cgns/cgns-config-version.cmake
+lib/cmake/cgns/cgns-config.cmake
 lib/cmake/cgns/cgns-targets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/cgns/cgns-targets.cmake
 lib/libcgns.a
 lib/libcgns.so
 lib/libcgns.so.4
-lib/libcgns.so.4.4
+lib/libcgns.so.4.5
 %%TOOLS%%share/cgnstools/aflr3.tcl
 %%TOOLS%%share/cgnstools/balloon.tcl
 %%TOOLS%%share/cgnstools/cgns-icon.xbm

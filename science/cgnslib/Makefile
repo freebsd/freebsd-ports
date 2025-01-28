@@ -1,5 +1,5 @@
 PORTNAME=	cgnslib
-PORTVERSION=	4.4.0
+PORTVERSION=	4.5.0
 DISTVERSIONPREFIX=	v
 PORTEPOCH=	1
 CATEGORIES=	science
@@ -13,10 +13,11 @@ LICENSE_NAME=	AS-IS
 LICENSE_FILE=	${WRKSRC}/license.txt
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-USES=		cmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	CGNS
 GH_PROJECT=	CGNS
+
+USES=		cmake
 USE_LDCONFIG=	yes
 MAKE_JOBS_UNSAFE=	yes
 
@@ -57,6 +58,9 @@ TOOLS_CMAKE_ON=		-DTCL_INCLUDE_PATH:STRING="${TCL_INCLUDEDIR}" \
 .if ${OPSYS} == FreeBSD
 CFLAGS+=	-Wno-error=incompatible-function-pointer-types
 .endif
+
+pre-configure:
+	${REINPLACE_CMD} -e 's|tk-private/||' ${WRKSRC}/src/cgnstools/tkogl/tkogl.c
 
 post-install:
 	${RLN} ${STAGEDIR}${PREFIX}/lib/libcgns.so.${PORTVERSION:R} \
