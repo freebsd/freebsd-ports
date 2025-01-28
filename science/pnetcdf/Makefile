@@ -9,6 +9,11 @@ COMMENT=	Library providing high-performance I/O
 WWW=		https://parallel-netcdf.github.io/ \
 		https://github.com/Parallel-NetCDF/PnetCDF
 
+LICENSE=	NetCDF
+LICENSE_NAME=	NetCDF License
+LICENSE_FILE=	${WRKSRC}/COPYRIGHT
+LICENSE_PERMS=	auto-accept dist-mirror dist-sell pkg-mirror pkg-sell
+
 USES=		fortran gmake libtool mpi:${FLAVOR} pathfix perl5
 USE_PERL5=	build
 
