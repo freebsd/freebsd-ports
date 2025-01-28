@@ -1,5 +1,6 @@
 PORTNAME=	Config-Model-Tester
 PORTVERSION=	4.007
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -11,9 +12,9 @@ WWW=		https://metacpan.org/release/Config-Model-Tester
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-# Do not add p5-Config-Model to TEST_DEPENDS to avoid cyclic dependency
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	p5-File-Copy-Recursive>=0:devel/p5-File-Copy-Recursive \
+RUN_DEPENDS=	p5-Config-Model>=0:devel/p5-Config-Model \
+		p5-File-Copy-Recursive>=0:devel/p5-File-Copy-Recursive \
 		p5-Log-Log4perl>=1.11:devel/p5-Log-Log4perl \
 		p5-Path-Tiny>=0:devel/p5-Path-Tiny \
 		p5-Test-Differences>=0:devel/p5-Test-Differences \
