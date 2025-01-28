@@ -1,0 +1,2 @@
+PDL::IO::HDF provides functions to manipulate HDF files with the SD, VS, and V
+HDF interfaces.

@@ -1,0 +1,10 @@
+%%SITE_ARCH%%/PDL/IO/HDF.pm
+%%SITE_ARCH%%/PDL/IO/HDF/SD.pm
+%%SITE_ARCH%%/PDL/IO/HDF/SD/Install/typemap
+%%SITE_ARCH%%/PDL/IO/HDF/VS.pm
+%%SITE_ARCH%%/PDL/IO/HDF/VS/Install/typemap
+%%SITE_ARCH%%/auto/PDL/IO/HDF/SD/SD.so
+%%SITE_ARCH%%/auto/PDL/IO/HDF/VS/VS.so
+%%PERL5_MAN3%%/PDL::IO::HDF.3.gz
+%%PERL5_MAN3%%/PDL::IO::HDF::SD.3.gz
+%%PERL5_MAN3%%/PDL::IO::HDF::VS.3.gz

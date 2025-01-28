@@ -1,0 +1,36 @@
+--- Makefile.PL.orig	2024-12-09 01:33:50 UTC
++++ Makefile.PL
+@@ -16,7 +16,6 @@ WriteMakefile(
+     'ExtUtils::MakeMaker' => 0,
+     'PDL' => '2.094',
+     'ExtUtils::Depends' => '0.402',
+-    'Alien::HDF4' => 0,
+   },
+   PREREQ_PM => {
+     'PDL' => '2.094',
+--- SD/Makefile.PL.orig	2024-12-03 03:29:01 UTC
++++ SD/Makefile.PL
+@@ -4,8 +4,9 @@ my $package = [ qw(SD.pd SD PDL::IO::HDF::SD) ];
+ use Config;
+ 
+ my $package = [ qw(SD.pd SD PDL::IO::HDF::SD) ];
+-my $pkg = ExtUtils::Depends->new(qw(PDL::IO::HDF::SD Alien::HDF4));
++my $pkg = ExtUtils::Depends->new(qw(PDL::IO::HDF::SD));
+ $pkg->set_inc(&PDL_INCLUDE());
++$pkg->set_libs("-ldf -lmfhdf");
+ $pkg->add_typemaps(&PDL_TYPEMAP());
+ $pkg->add_pm(
+     'SD.pm' => '$(INST_LIBDIR)/SD.pm',
+--- VS/Makefile.PL.orig	2024-12-03 03:29:08 UTC
++++ VS/Makefile.PL
+@@ -8,8 +8,9 @@ undef &MY::postamble; # suppress warning
+ undef &MY::postamble; # suppress warning
+ *MY::postamble = sub { pdlpp_postamble($package); };
+ 
+-my $pkg = ExtUtils::Depends->new(qw(PDL::IO::HDF::VS Alien::HDF4));
++my $pkg = ExtUtils::Depends->new(qw(PDL::IO::HDF::VS));
+ $pkg->set_inc(&PDL_INCLUDE());
++$pkg->set_libs("-ldf -lmfhdf");
+ $pkg->add_typemaps(&PDL_TYPEMAP());
+ $pkg->add_pm(
+     'VS.pm' => '$(INST_LIBDIR)/VS.pm',
