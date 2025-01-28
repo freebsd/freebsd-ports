@@ -1,6 +1,6 @@
 PORTNAME=	gajim
 DISTVERSION=	1.9.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-im
 MASTER_SITES=	https://gajim.org/downloads/${DISTVERSION:R}/
 
@@ -31,7 +31,7 @@ LIB_DEPENDS=	libsoup-3.0.so:devel/libsoup3 \
 
 USES=		cpe gettext gnome python:3.10+ xorg
 USE_PYTHON=	autoplist cryptography pep517 noflavors
-USE_GNOME=	pygobject3
+USE_GNOME=	gtksourceview4 pygobject3
 USE_XORG=	x11 xext xscrnsaver
 
 NO_ARCH=	yes
