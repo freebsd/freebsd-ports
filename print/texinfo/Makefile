@@ -26,9 +26,6 @@ RUN_DEPENDS=	p5-Locale-libintl>=0:devel/p5-Locale-libintl \
 		p5-Text-Unidecode>=0:converters/p5-Text-Unidecode \
 		p5-Unicode-EastAsianWidth>=0:textproc/p5-Unicode-EastAsianWidth
 
-OPTIONS_DEFINE=	NLS
-OPTIONS_SUB=	yes
-
 USES=		charsetfix cpe gmake iconv:wchar_t libtool ncurses perl5 tar:xz tex
 
 CONFIGURE_ARGS=	--with-external-libintl-perl \
@@ -42,14 +39,16 @@ PKGDEINSTALL=	${PKGINSTALL}
 
 INFO=		info-stnd texi2any_api texi2any_internals texinfo
 
+CPE_VENDOR=	gnu
+
 # Use the date on https://ftp.gnu.org/gnu/texinfo/
 HTMLXREF_CNF_RELDATE=	20241223
 TEXI2DVI_RELDATE=	20241223
 TEXI2PDF_RELDATE=	20241223
 TEXINFO_TEX_RELDATE=	20241220
 
-CPE_VENDOR=	gnu
-CPE_VERSION=	${PORTVERSION:R}
+OPTIONS_DEFINE=	NLS
+OPTIONS_SUB=	yes
 
 NLS_CONFIGURE_ENABLE=	nls
 NLS_USES=		gettext
