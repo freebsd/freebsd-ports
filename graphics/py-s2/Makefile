@@ -1,5 +1,6 @@
 PORTNAME=	s2
 PORTVERSION=	0.11.1
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	graphics python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -26,12 +27,6 @@ WRKSRC_SUBDIR=	src/python
 GH_ACCOUNT=	google
 GH_PROJECT=	s2geometry
 USE_GITHUB=	yes
-
-.include <bsd.port.options.mk>
-
-.if ${ARCH} == powerpc64 && !defined(CPUTYPE)
-CXXFLAGS+=	-mcpu=power7
-.endif
 
 post-install:
 	${PYTHON_CMD} -m compileall -d ${PYTHON_SITELIBDIR} -f ${STAGEDIR}${PYTHON_SITELIBDIR}
