@@ -830,6 +830,7 @@
     SUBDIR += p5-PDL-IO-HDF
     SUBDIR += p5-PDL-IO-IDL
     SUBDIR += p5-PDL-LinearAlgebra
+    SUBDIR += p5-PDL-Minuit
     SUBDIR += p5-Parse-Range
     SUBDIR += p5-Roman
     SUBDIR += p5-Set-IntSpan

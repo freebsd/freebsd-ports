@@ -1,0 +1,3 @@
+%%SITE_ARCH%%/PDL/Minuit.pm
+%%SITE_ARCH%%/auto/PDL/Minuit/Minuit.so
+%%PERL5_MAN3%%/PDL::Minuit.3.gz
