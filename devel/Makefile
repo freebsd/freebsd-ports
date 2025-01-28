@@ -6044,6 +6044,7 @@
     SUBDIR += py-types-MarkupSafe
     SUBDIR += py-types-Pillow
     SUBDIR += py-types-PyYAML
+    SUBDIR += py-types-Pygments
     SUBDIR += py-types-Werkzeug
     SUBDIR += py-types-click
     SUBDIR += py-types-cryptography
@@ -6061,6 +6062,7 @@
     SUBDIR += py-types-setuptools
     SUBDIR += py-types-toml
     SUBDIR += py-types-typed-ast
+    SUBDIR += py-types-ujson
     SUBDIR += py-types-urllib3
     SUBDIR += py-typeshed-client
     SUBDIR += py-typing-extensions
