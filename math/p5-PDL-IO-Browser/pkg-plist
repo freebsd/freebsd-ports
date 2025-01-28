@@ -1,0 +1,3 @@
+%%SITE_ARCH%%/PDL/IO/Browser.pm
+%%SITE_ARCH%%/auto/PDL/IO/Browser/Browser.so
+%%PERL5_MAN3%%/PDL::IO::Browser.3.gz
