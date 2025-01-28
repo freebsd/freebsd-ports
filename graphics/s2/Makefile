@@ -1,7 +1,7 @@
 PORTNAME=	s2
 PORTVERSION=	0.11.1
 DISTVERSIONPREFIX=	v
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -33,12 +33,6 @@ USE_GITHUB=	yes
 OPTIONS_DEFINE=	EXAMPLES
 
 EXAMPLES_CMAKE_BOOL=	BUILD_EXAMPLES
-
-.include <bsd.port.options.mk>
-
-.if ${ARCH} == powerpc64 && !defined(CPUTYPE)
-CXXFLAGS+=	-mcpu=power7
-.endif
 
 post-install-EXAMPLES-on:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
