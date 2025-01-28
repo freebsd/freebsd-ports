@@ -5,7 +5,7 @@ CATEGORIES=	science archivers graphics
 MASTER_SITES=	https://github.com/HDFGroup/hdf4/releases/download/hdf${DISTVERSION}/
 DISTNAME=	hdf${DISTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Hierarchical Data Format library (from NCSA)
 WWW=		https://www.hdfgroup.org/solutions/hdf4/
 
