@@ -1,0 +1,11 @@
+--- wscript.orig	2017-07-22 22:25:22 UTC
++++ wscript
+@@ -88,7 +88,7 @@ def build(bld):
+         SRC += ' tevent_port.c'
+ 
+     if bld.env.standalone_tevent:
+-        bld.env.PKGCONFIGDIR = '${LIBDIR}/pkgconfig'
++        bld.env.PKGCONFIGDIR = '%%PKGCONFIGDIR%%'
+         private_library = False
+     else:
+         private_library = True
