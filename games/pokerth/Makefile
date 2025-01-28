@@ -36,6 +36,7 @@ USE_SDL=	mixer
 CXXFLAGS+=	-D_LIBCPP_ENABLE_CXX17_REMOVED_UNARY_BINARY_FUNCTION
 LDFLAGS+=	-labsl_log_internal_check_op \
 		-labsl_log_internal_message \
+		-labsl_log_internal_nullguard \
 		-lprotobuf
 QMAKE_SOURCE_PATH=	pokerth.pro
 QMAKE_ARGS+=	CONFIG+="client"
