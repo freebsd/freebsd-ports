@@ -1,0 +1,11 @@
+--- wscript.orig	2019-02-26 07:02:52 UTC
++++ wscript
+@@ -121,7 +121,7 @@ def build(bld):
+     COMMON_SRC = bld.SUBDIR('common', COMMON_FILES)
+ 
+     if bld.env.standalone_tdb:
+-        bld.env.PKGCONFIGDIR = '${LIBDIR}/pkgconfig'
++        bld.env.PKGCONFIGDIR = '%%PKGCONFIGDIR%%'
+         private_library = False
+     else:
+         private_library = True
