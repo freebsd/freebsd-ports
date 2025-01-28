@@ -6,14 +6,13 @@ Subject: [PATCH 22/28] Clean up UTMP handling code and add FreeBSD support.
 
 Signed-off-by: Timur I. Bakeyev <timur@FreeBSD.org>
 ---
- source3/smbd/utmp.c | 156 ++++++++++++--------------------------------
- source3/wscript     |  37 ++++++-----
- 2 files changed, 63 insertions(+), 130 deletions(-)
+ source3/smbd/utmp.c |  152 +++++++++++-------------------------------
+ source3/wscript     |   36 +++++----
+ 2 files changed, 60 insertions(+), 128 deletions(-)
 
-diff --git a/source3/smbd/utmp.c b/source3/smbd/utmp.c
-index 4327301e3b1..f4a8362dd56 100644
---- a/source3/smbd/utmp.c
-+++ b/source3/smbd/utmp.c
+diff -Naurp a/source3/smbd/utmp.c b/source3/smbd/utmp.c
+--- a/source3/smbd/utmp.c	2024-02-02 04:33:51.316490200 -0500
++++ b/source3/smbd/utmp.c	2024-08-05 12:50:57.691687000 -0400
 @@ -257,7 +257,7 @@ static char *uw_pathname(TALLOC_CTX *ctx,
   Update utmp file directly.  No subroutine interface: probably a BSD system.
  ****************************************************************************/
@@ -23,7 +22,7 @@ index 4327301e3b1..f4a8362dd56 100644
  {
  	DEBUG(1,("pututline_my: not yet implemented\n"));
  	/* BSD implementor: may want to consider (or not) adjusting "lastlog" */
-@@ -271,7 +271,7 @@ static void pututline_my(const char *uname, struct utmp *u, bool claim)
+@@ -271,7 +271,7 @@ static void pututline_my(const char *uname, struct utm
   Credit: Michail Vidiassov <master@iaas.msu.ru>
  ****************************************************************************/
  
@@ -32,7 +31,7 @@ index 4327301e3b1..f4a8362dd56 100644
  {
  	int fd;
  	struct stat buf;
-@@ -303,7 +303,7 @@ static void updwtmp_my(const char *wname, struct utmp *u, bool claim)
+@@ -303,7 +303,7 @@ static void updwtmp_my(const char *wname, struct utmp 
  	if ((fd = open(wname, O_WRONLY|O_APPEND, 0)) < 0)
  		return;
  	if (fstat(fd, &buf) == 0) {
@@ -41,7 +40,7 @@ index 4327301e3b1..f4a8362dd56 100644
  		(void) ftruncate(fd, buf.st_size);
  	}
  	(void) close(fd);
-@@ -314,12 +314,12 @@ static void updwtmp_my(const char *wname, struct utmp *u, bool claim)
+@@ -314,12 +314,12 @@ static void updwtmp_my(const char *wname, struct utmp 
   Update via utmp/wtmp (not utmpx/wtmpx).
  ****************************************************************************/
  
@@ -56,7 +55,7 @@ index 4327301e3b1..f4a8362dd56 100644
  #endif /* PUTUTLINE_RETURNS_UTMP */
  
  	uname = uw_pathname(talloc_tos(), "utmp", ut_pathname);
-@@ -376,127 +376,52 @@ static void utmp_nox_update(struct utmp *u, bool claim)
+@@ -376,127 +376,52 @@ static void utmp_nox_update(struct utmp *u, bool claim
  	}
  }
  
@@ -67,7 +66,7 @@ index 4327301e3b1..f4a8362dd56 100644
 -static void utmp_strcpy(char *dest, const char *src, size_t n)
 -{
 -	size_t len = 0;
--
+ 
 -	memset(dest, '\0', n);
 -	if (src)
 -		len = strlen(src);
@@ -78,9 +77,8 @@ index 4327301e3b1..f4a8362dd56 100644
 -			memcpy(dest, src, len);
 -	}
 -}
-+
-+
  
++
  /****************************************************************************
   Update via utmpx/wtmpx (preferred) or via utmp/wtmp.
  ****************************************************************************/
@@ -107,7 +105,8 @@ index 4327301e3b1..f4a8362dd56 100644
 -	char *uname = NULL;
 -	char *wname = NULL;
 -	struct utmpx ux, *uxrc;
--
++	STRUCT_UTMP *urc;
+ 
 -	getutmpx(u, &ux);
 -
 -#if defined(HAVE_UX_UT_SYSLEN)
@@ -124,9 +123,14 @@ index 4327301e3b1..f4a8362dd56 100644
 -	wname = uw_pathname(talloc_tos(), "wtmpx", wx_pathname);
 -	if (uname && wname) {
 -		DEBUG(2,("utmp_update: uname:%s wname:%s\n", uname, wname));
--	}
-+	STRUCT_UTMP *urc;
- 
++	setutxent();
++	urc = pututxline(u);
++	endutxent();
++	if (urc == NULL) {
++		DEBUG(2,("utmp_update: pututxline() failed\n"));
++		return;
+ 	}
+-
 -	/*
 -	 * Check for either uname or wname being empty.
 -	 * Some systems, such as Redhat 6, have a "utmpx.h" which doesn't
@@ -146,13 +150,7 @@ index 4327301e3b1..f4a8362dd56 100644
 -			return;
 -		}
 -		updwtmpx(wname, &ux);
-+	setutxent();
-+	urc = pututxline(u);
-+	endutxent();
-+	if (urc == NULL) {
-+		DEBUG(2,("utmp_update: pututxline() failed\n"));
-+		return;
- 	}
+-	}
 -#endif /* HAVE_UTMPX_H */
  }
  
@@ -173,7 +171,12 @@ index 4327301e3b1..f4a8362dd56 100644
 - * Example: digits would produce the base-10 numbers from '001'.
 - */
 -	nbase = strlen(ut_id_encstr);
--
++	int nbase = sizeof(ut_id_encstr) - 1;
++	/*
++	 * 'ut_id_encstr' is the character set on which modulo arithmetic is done.
++	 * Example: digits would produce the base-10 numbers from '001'.
++	 */
+ 
 -	fourbyte[0] = ut_id_encstr[i % nbase];
 -	i /= nbase;
 -	fourbyte[1] = ut_id_encstr[i % nbase];
@@ -185,12 +188,6 @@ index 4327301e3b1..f4a8362dd56 100644
 -
 -	/* we do not care about overflows as i is a random number */
 -	return 0;
-+	int nbase = sizeof(ut_id_encstr) - 1;
-+	/*
-+	 * 'ut_id_encstr' is the character set on which modulo arithmetic is done.
-+	 * Example: digits would produce the base-10 numbers from '001'.
-+	 */
-+
 +	for(int i = 0; i < buf_size; i++) {
 +		buf[i] = ut_id_encstr[id % nbase];
 +		id /= nbase;
@@ -244,9 +241,9 @@ index 4327301e3b1..f4a8362dd56 100644
 +		strncpy(u->ut_host, hostname, sizeof(u->ut_host));
 +#if defined(HAVE_UT_UT_SYSLEN)
 +		u->ut_syslen = strlen(hostname) + 1;	/* include trailing NULL */
-+#endif
-+	}
  #endif
++	}
++#endif
  
  #if defined(HAVE_UT_UT_ID)
 -	if (ut_id_encode(id_num, u->ut_id) != 0) {
@@ -257,7 +254,7 @@ index 4327301e3b1..f4a8362dd56 100644
  #endif
  
  	return True;
-@@ -561,7 +489,7 @@ static bool sys_utmp_fill(struct utmp *u,
+@@ -561,7 +489,7 @@ void sys_utmp_yield(const char *username, const char *
  void sys_utmp_yield(const char *username, const char *hostname,
  		    const char *id_str, int id_num)
  {
@@ -266,7 +263,7 @@ index 4327301e3b1..f4a8362dd56 100644
  
  	ZERO_STRUCT(u);
  
-@@ -587,7 +515,7 @@ void sys_utmp_yield(const char *username, const char *hostname,
+@@ -587,7 +515,7 @@ void sys_utmp_claim(const char *username, const char *
  void sys_utmp_claim(const char *username, const char *hostname,
  		    const char *id_str, int id_num)
  {
@@ -275,16 +272,15 @@ index 4327301e3b1..f4a8362dd56 100644
  
  	ZERO_STRUCT(u);
  
-diff --git a/source3/wscript b/source3/wscript
-index 6209472c6c8..65961851e17 100644
---- a/source3/wscript
-+++ b/source3/wscript
-@@ -807,34 +807,39 @@ msg.msg_accrightslen = sizeof(fd);
+diff -Naurp a/source3/wscript b/source3/wscript
+--- a/source3/wscript	2024-08-05 12:50:16.286549000 -0400
++++ b/source3/wscript	2024-08-05 13:02:31.909769000 -0400
+@@ -804,34 +804,38 @@ msg.msg_accrightslen = sizeof(fd);
  
      if Options.options.with_utmp:
          conf.env.with_utmp = True
 -        if not conf.CHECK_HEADERS('utmp.h'): conf.env.with_utmp = False
--        conf.CHECK_FUNCS('pututline pututxline updwtmp updwtmpx getutmpx getutxent')
+-        conf.CHECK_FUNCS('pututline pututxline updwtmp updwtmpx getutmpx')
 -        conf.CHECK_STRUCTURE_MEMBER('struct utmp', 'ut_name', headers='utmp.h',
 +        if not conf.CHECK_HEADERS('utmpx.h') and not conf.CHECK_HEADERS('utmp.h'):
 +            conf.env.with_utmp = False
@@ -297,7 +293,6 @@ index 6209472c6c8..65961851e17 100644
 +        conf.CHECK_STRUCTURE_MEMBER('STRUCT_UTMP', 'ut_name', headers='utmpx.h utmp.h',
                                      define='HAVE_UT_UT_NAME')
 -        conf.CHECK_STRUCTURE_MEMBER('struct utmp', 'ut_user', headers='utmp.h',
-+
 +        conf.CHECK_STRUCTURE_MEMBER('STRUCT_UTMP', 'ut_user', headers='utmpx.h utmp.h',
                                      define='HAVE_UT_UT_USER')
 -        conf.CHECK_STRUCTURE_MEMBER('struct utmp', 'ut_id', headers='utmp.h',
@@ -335,6 +330,3 @@ index 6209472c6c8..65961851e17 100644
                            define='SIZEOF_UTMP_UT_LINE', critical=False)
          if not conf.CONFIG_SET('SIZEOF_UTMP_UT_LINE'):
              conf.env.with_utmp = False
--- 
-2.37.1
-

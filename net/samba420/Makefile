@@ -1,6 +1,5 @@
-PORTNAME=			${SAMBA4_BASENAME}419
+PORTNAME=			${SAMBA4_BASENAME}420
 PORTVERSION=			${SAMBA4_VERSION}
-PORTREVISION=			5
 CATEGORIES?=			net
 MASTER_SITES=			SAMBA/samba/stable SAMBA/samba/rc
 DISTNAME=			${SAMBA4_DISTNAME}
@@ -45,12 +44,14 @@ EXTRA_PATCHES=			\
 				${PATCHDIR}/0026-vfs-add-a-compatibility-option-to-the-vfs_streams_xa.patch:-p1 \
 				${PATCHDIR}/0027-Add-VFS-module-vfs_freebsd-that-implements-FreeBSD-s.patch:-p1 \
 				${PATCHDIR}/0028-Fix-rl_completion_func_t.patch:-p1 \
-				${PATCHDIR}/0028-s3-lib-system-add-FreeBSD-proc_fd_pattern.patch:-p1 \
-				${PATCHDIR}/0100-Fix-pathref-handling-for-FreeBSD-13plus.patch
+				${PATCHDIR}/0028-s3-lib-system-add-FreeBSD-proc_fd_pattern.patch \
+				${PATCHDIR}/0100-Fix-pathref-handling-for-FreeBSD-13plus_samba42x.patch:-p1 \
+				${PATCHDIR}/0101-FreeBSD-add-fdescfs-paths-workaround.patch:-p1 \
+				${PATCHDIR}/0102-FreeBSD-vfs_freebsd-fix-sys_proc_fd_path-args.patch:-p1
 
 SAMBA4_BASENAME=		samba
 SAMBA4_PORTNAME=		${SAMBA4_BASENAME}4
-SAMBA4_VERSION=			4.19.9
+SAMBA4_VERSION=			4.20.7
 SAMBA4_DISTNAME=		${SAMBA4_BASENAME}-${SAMBA4_VERSION:S|.p|pre|:S|.r|rc|:S|.t|tp|:S|.a|alpha|}
 
 WRKSRC?=			${WRKDIR}/${DISTNAME}
@@ -219,8 +220,8 @@ PLIST_SUB+=			SAMBA4_BUNDLED_TALLOC=""
 SUB_LIST+=			SAMBA4_BUNDLED_TALLOC=""
 .else
 SAMBA4_BUNDLED_LIBS+=		!talloc
-BUILD_DEPENDS+=			talloc>=2.4.1:devel/talloc
-RUN_DEPENDS+=			talloc>=2.4.1:devel/talloc
+BUILD_DEPENDS+=			talloc>=2.4.2:devel/talloc242
+RUN_DEPENDS+=			talloc>=2.4.2:devel/talloc242
 PLIST_SUB+=			SAMBA4_BUNDLED_TALLOC="@comment "
 SUB_LIST+=			SAMBA4_BUNDLED_TALLOC="@comment "
 .endif
@@ -232,8 +233,8 @@ PLIST_SUB+=			SAMBA4_BUNDLED_TEVENT=""
 SUB_LIST+=			SAMBA4_BUNDLED_TEVENT=""
 .else
 SAMBA4_BUNDLED_LIBS+=		!tevent
-BUILD_DEPENDS+=			tevent>=0.15.0:devel/tevent
-RUN_DEPENDS+=			tevent>=0.15.0:devel/tevent
+BUILD_DEPENDS+=			tevent>=0.16.1:devel/tevent016
+RUN_DEPENDS+=			tevent>=0.16.1:devel/tevent016
 PLIST_SUB+=			SAMBA4_BUNDLED_TEVENT="@comment "
 SUB_LIST+=			SAMBA4_BUNDLED_TEVENT="@comment "
 .endif
@@ -245,8 +246,8 @@ PLIST_SUB+=			SAMBA4_BUNDLED_TDB=""
 SUB_LIST+=			SAMBA4_BUNDLED_TDB=""
 .else
 SAMBA4_BUNDLED_LIBS+=		!tdb
-BUILD_DEPENDS+=			tdb>=1.4.9:databases/tdb
-RUN_DEPENDS+=			tdb>=1.4.9:databases/tdb
+BUILD_DEPENDS+=			tdb>=1.4.10:databases/tdb1410
+RUN_DEPENDS+=			tdb>=1.4.10:databases/tdb1410
 PLIST_SUB+=			SAMBA4_BUNDLED_TDB="@comment "
 SUB_LIST+=			SAMBA4_BUNDLED_TDB="@comment "
 .endif
@@ -259,8 +260,8 @@ SUB_LIST+=			SAMBA4_BUNDLED_LDB=""
 SAMBA4_MODULEDIR=		${SAMBA4_LIBDIR}/modules
 .else
 SAMBA4_BUNDLED_LIBS+=		!ldb
-BUILD_DEPENDS+=			ldb28>=2.8.1:databases/ldb28
-RUN_DEPENDS+=			ldb28>=2.8.1:databases/ldb28
+BUILD_DEPENDS+=			ldb29>=2.9.1:databases/ldb29
+RUN_DEPENDS+=			ldb29>=2.9.1:databases/ldb29
 PLIST_SUB+=			SAMBA4_BUNDLED_LDB="@comment "
 SUB_LIST+=			SAMBA4_BUNDLED_LDB="@comment "
 SAMBA4_MODULEDIR=		${PREFIX}/lib/shared-modules

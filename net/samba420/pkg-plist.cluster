@@ -24,7 +24,7 @@ etc/ctdb/nfs-linux-kernel-callout
 etc/ctdb/notify.sh
 etc/ctdb/statd-callout
 etc/sudoers.d/ctdb
-lib/samba4/private/libctdb-event-client-samba4.so
+lib/samba4/private/libctdb-event-client-private-samba.so
 libexec/ctdb/ctdb_killtcp
 libexec/ctdb/ctdb_lock_helper
 libexec/ctdb/ctdb_lvs

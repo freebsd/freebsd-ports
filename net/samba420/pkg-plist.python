@@ -5,8 +5,8 @@ share/man/man8/samba-gpupdate.8.gz
 include/samba4/policy.h
 lib/samba4/libsamba-policy%%PYTHON_EXT_SUFFIX%%.so
 lib/samba4/libsamba-policy%%PYTHON_EXT_SUFFIX%%.so.0
-lib/samba4/private/libsamba-net%%PYTHON_EXT_SUFFIX%%-samba4.so
-lib/samba4/private/libsamba-python%%PYTHON_EXT_SUFFIX%%-samba4.so
+lib/samba4/private/libsamba-net%%PYTHON_EXT_SUFFIX%%-private-samba.so
+lib/samba4/private/libsamba-python%%PYTHON_EXT_SUFFIX%%-private-samba.so
 %%PKGCONFIGDIR%%/samba-policy%%PYTHON_EXT_SUFFIX%%.pc
 @comment Python block
 %%AD_DC%%%%PYTHON_SITELIBDIR%%/samba/dckeytab%%PYTHON_EXT_SUFFIX%%.so
@@ -197,7 +197,6 @@ lib/samba4/private/libsamba-python%%PYTHON_EXT_SUFFIX%%-samba4.so
 %%PYTHON_SITELIBDIR%%/samba/netcmd/sites.py
 %%PYTHON_SITELIBDIR%%/samba/netcmd/spn.py
 %%PYTHON_SITELIBDIR%%/samba/netcmd/testparm.py
-%%PYTHON_SITELIBDIR%%/samba/netcmd/user.py
 %%PYTHON_SITELIBDIR%%/samba/netcmd/validators.py
 %%PYTHON_SITELIBDIR%%/samba/netcmd/visualize.py
 %%PYTHON_SITELIBDIR%%/samba/ntacls.py
@@ -381,7 +380,6 @@ lib/samba4/private/libsamba-python%%PYTHON_EXT_SUFFIX%%-samba4.so
 %%PYTHON_SITELIBDIR%%/samba/tests/logfiles.py
 %%PYTHON_SITELIBDIR%%/samba/tests/lsa_string.py
 %%PYTHON_SITELIBDIR%%/samba/tests/messaging.py
-%%PYTHON_SITELIBDIR%%/samba/tests/ndr.py
 %%PYTHON_SITELIBDIR%%/samba/tests/net_join.py
 %%PYTHON_SITELIBDIR%%/samba/tests/net_join_no_spnego.py
 %%PYTHON_SITELIBDIR%%/samba/tests/netbios.py
@@ -429,7 +427,6 @@ lib/samba4/private/libsamba-python%%PYTHON_EXT_SUFFIX%%-samba4.so
 %%PYTHON_SITELIBDIR%%/samba/tests/samba_tool/contact.py
 %%PYTHON_SITELIBDIR%%/samba/tests/samba_tool/demote.py
 %%PYTHON_SITELIBDIR%%/samba/tests/samba_tool/dnscmd.py
-%%PYTHON_SITELIBDIR%%/samba/tests/samba_tool/domain_auth_base.py
 %%PYTHON_SITELIBDIR%%/samba/tests/samba_tool/domain_auth_policy.py
 %%PYTHON_SITELIBDIR%%/samba/tests/samba_tool/domain_auth_silo.py
 %%PYTHON_SITELIBDIR%%/samba/tests/samba_tool/domain_claim.py

@@ -9,19 +9,15 @@ FreeBSD extended attributes.
 
 Signed-off-by: Timur I. Bakeyev <timur@FreeBSD.org>
 ---
- docs-xml/manpages/vfs_freebsd.8.xml | 169 +++++++
- docs-xml/wscript_build              |   1 +
- source3/modules/vfs_freebsd.c       | 699 ++++++++++++++++++++++++++++
- source3/modules/wscript_build       |   7 +
+ docs-xml/manpages/vfs_freebsd.8.xml |  169 ++++++
+ docs-xml/wscript_build              |    1
+ source3/modules/vfs_freebsd.c       |  699 ++++++++++++++++++++++++++
+ source3/modules/wscript_build       |    7
  4 files changed, 876 insertions(+)
- create mode 100644 docs-xml/manpages/vfs_freebsd.8.xml
- create mode 100644 source3/modules/vfs_freebsd.c
 
-diff --git a/docs-xml/manpages/vfs_freebsd.8.xml b/docs-xml/manpages/vfs_freebsd.8.xml
-new file mode 100644
-index 00000000000..6640a1c51f7
---- /dev/null
-+++ b/docs-xml/manpages/vfs_freebsd.8.xml
+diff -Naurp a/docs-xml/manpages/vfs_freebsd.8.xml b/docs-xml/manpages/vfs_freebsd.8.xml
+--- a/docs-xml/manpages/vfs_freebsd.8.xml	1969-12-31 19:00:00.000000000 -0500
++++ b/docs-xml/manpages/vfs_freebsd.8.xml	2024-08-05 13:57:36.246690000 -0400
 @@ -0,0 +1,169 @@
 +<?xml version="1.0" encoding="iso-8859-1"?>
 +<!DOCTYPE refentry PUBLIC "-//Samba-Team//DTD DocBook V4.2-Based Variant V1.0//EN" "http://www.samba.org/samba/DTD/samba-doc">
@@ -192,11 +188,10 @@ index 00000000000..6640a1c51f7
 +</refsect1>
 +
 +</refentry>
-diff --git a/docs-xml/wscript_build b/docs-xml/wscript_build
-index c8c4b68e514..4dc4b34ca40 100644
---- a/docs-xml/wscript_build
-+++ b/docs-xml/wscript_build
-@@ -86,6 +86,7 @@ vfs_module_manpages = ['vfs_acl_tdb',
+diff -Naurp a/docs-xml/wscript_build b/docs-xml/wscript_build
+--- a/docs-xml/wscript_build	2024-08-02 07:54:09.597892000 -0400
++++ b/docs-xml/wscript_build	2024-08-05 13:57:36.246975000 -0400
+@@ -87,6 +87,7 @@ vfs_module_manpages = ['vfs_acl_tdb',
                         'vfs_extd_audit',
                         'vfs_fake_perms',
                         'vfs_fileid',
@@ -204,11 +199,9 @@ index c8c4b68e514..4dc4b34ca40 100644
                         'vfs_fruit',
                         'vfs_full_audit',
                         'vfs_glusterfs',
-diff --git a/source3/modules/vfs_freebsd.c b/source3/modules/vfs_freebsd.c
-new file mode 100644
-index 00000000000..07d26d9c516
---- /dev/null
-+++ b/source3/modules/vfs_freebsd.c
+diff -Naurp a/source3/modules/vfs_freebsd.c b/source3/modules/vfs_freebsd.c
+--- a/source3/modules/vfs_freebsd.c	1969-12-31 19:00:00.000000000 -0500
++++ b/source3/modules/vfs_freebsd.c	2024-08-05 13:57:36.247358000 -0400
 @@ -0,0 +1,699 @@
 +/*
 + * This module implements VFS calls specific to FreeBSD
@@ -909,11 +902,10 @@ index 00000000000..07d26d9c516
 +
 +	return ret;
 +}
-diff --git a/source3/modules/wscript_build b/source3/modules/wscript_build
-index ff318c3fa06..f88d054d524 100644
---- a/source3/modules/wscript_build
-+++ b/source3/modules/wscript_build
-@@ -636,6 +636,13 @@ bld.SAMBA3_MODULE('vfs_delay_inject',
+diff -Naurp a/source3/modules/wscript_build b/source3/modules/wscript_build
+--- a/source3/modules/wscript_build	2024-02-02 04:33:51.236489800 -0500
++++ b/source3/modules/wscript_build	2024-08-05 13:57:36.247658000 -0400
+@@ -631,6 +631,13 @@ bld.SAMBA3_MODULE('vfs_delay_inject',
                   enabled=bld.SAMBA3_IS_ENABLED_MODULE('vfs_delay_inject'),
                   install=False)
  
@@ -927,6 +919,3 @@ index ff318c3fa06..f88d054d524 100644
  bld.SAMBA3_MODULE('vfs_widelinks',
                   subsystem='vfs',
                   source='vfs_widelinks.c',
--- 
-2.37.1
-
