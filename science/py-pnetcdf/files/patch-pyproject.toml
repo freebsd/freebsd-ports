@@ -1,0 +1,11 @@
+--- pyproject.toml.orig	2024-09-10 15:35:50 UTC
++++ pyproject.toml
+@@ -2,7 +2,7 @@ requires = [
+ requires = [
+     "Cython>=0.29",
+     "numpy",
+-    "setuptools>=65",
++    "setuptools>=61",
+     "mpi4py>=3.1.4",
+     "packaging>=23.1",
+     "wheel"
