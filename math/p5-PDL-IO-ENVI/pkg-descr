@@ -1,0 +1,1 @@
+PDL::IO::ENVI allows you to read ENVI data into an ndarray.
