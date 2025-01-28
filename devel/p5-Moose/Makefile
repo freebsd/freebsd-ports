@@ -58,10 +58,11 @@ TEST_DEPENDS=	p5-CPAN-Meta-Check>=0.011:devel/p5-CPAN-Meta-Check \
 		p5-Type-Tiny>=0:devel/p5-Type-Tiny \
 		p5-URI>=0:net/p5-URI
 
+USES=		perl5
+USE_PERL5=	configure
+
 CFLAGS+=	-I.	# mop.h
 MAKE_JOBS_UNSAFE=	yes
-USES=		perl5
-USE_PERL5=	configure extract
 
 post-patch:
 	@${REINPLACE_CMD} -e '/^check_conflicts()/d' ${WRKSRC}/Makefile.PL
