@@ -18,7 +18,7 @@ samba_ARGS=	build run
 IGNORE=		USES=samba has invalid arguments: ${samba_ARGS:Nbuild:Nenv:Nlib:Nrun}
 .  endif
 
-.  if ${SAMBA_DEFAULT} != 4.16 && ${SAMBA_DEFAULT} != 4.19
+.  if ${SAMBA_DEFAULT} != 4.16 && ${SAMBA_DEFAULT} != 4.19 && ${SAMBA_DEFAULT} != 4.20
 IGNORE=		Invalid version of samba: ${SAMBA_DEFAULT}
 .  endif
 
@@ -28,6 +28,8 @@ SAMBA_PORT_416=		net/samba416
 SAMBA_LDB_PORT_416=	databases/ldb25
 SAMBA_PORT_419=		net/samba419
 SAMBA_LDB_PORT_419=	databases/ldb28
+SAMBA_PORT_420=		net/samba420
+SAMBA_LDB_PORT_420=	databases/ldb29
 
 SAMBA_PORT=		${SAMBA_PORT_${SAMBA_SUFFIX}}
 SAMBA_INCLUDEDIR=	${LOCALBASE}/include/samba4
