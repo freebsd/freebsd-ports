@@ -18,7 +18,9 @@ USES=		compiler:c++17-lang localbase
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-development --with-protobuf=${LOCALBASE}
-LDFLAGS+=	-labsl_log_internal_check_op -labsl_log_internal_message
+LDFLAGS+=	-labsl_log_internal_check_op \
+		-labsl_log_internal_message \
+		-labsl_log_internal_nullguard
 USE_CXXSTD=	c++17
 
 PORTDOCS=	README
