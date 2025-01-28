@@ -25,7 +25,9 @@ USE_GL=		gl glu
 USE_SDL=	mixer
 SUB_FILES=	pink-pony.sh
 
-LDFLAGS+=	-labsl_log_internal_check_op -labsl_log_internal_message
+LDFLAGS+=	-labsl_log_internal_check_op \
+		-labsl_log_internal_message \
+		-labsl_log_internal_nullguard
 
 PORTDOCS=	*
 PORTDATA=	*
