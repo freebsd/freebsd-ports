@@ -1,0 +1,29 @@
+From 2b3ee747cdf83b80d07aaf1b261956bc9894ff36 Mon Sep 17 00:00:00 2001
+From: "Timur I. Bakeyev" <timur@FreeBSD.org>
+Date: Thu, 8 Sep 2022 00:06:37 +0200
+Subject: [PATCH 16/28] Make ldb_schema_attribute_compare() a stable
+ comparision function.
+
+Signed-off-by: Timur I. Bakeyev <timur@FreeBSD.org>
+---
+ lib/ldb/ldb_key_value/ldb_kv_cache.c | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+diff --git a/lib/ldb/ldb_key_value/ldb_kv_cache.c b/lib/ldb/ldb_key_value/ldb_kv_cache.c
+index 4a3c9f29020..cb200aeb9ba 100644
+--- a/lib/ldb/ldb_key_value/ldb_kv_cache.c
++++ b/lib/ldb/ldb_key_value/ldb_kv_cache.c
+@@ -92,7 +92,9 @@ static int ldb_schema_attribute_compare(const void *p1, const void *p2)
+ {
+ 	const struct ldb_schema_attribute *sa1 = (const struct ldb_schema_attribute *)p1;
+ 	const struct ldb_schema_attribute *sa2 = (const struct ldb_schema_attribute *)p2;
+-	return ldb_attr_cmp(sa1->name, sa2->name);
++	int res = ldb_attr_cmp(sa1->name, sa2->name);
++
++	return (res) ? res : (sa1->flags > sa2->flags) ? 1 : (sa1->flags < sa2->flags) ? -1 : 0;
+ }
+ 
+ /*
+-- 
+2.37.1
+

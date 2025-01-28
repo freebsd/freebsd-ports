@@ -1,0 +1,166 @@
+'\" t
+.\"     Title: mdfind
+.\"    Author: [see the "AUTHOR" section]
+.\" Generator: DocBook XSL Stylesheets v1.79.1 <http://docbook.sf.net/>
+.\"      Date: 09/23/2020
+.\"    Manual: User Commands
+.\"    Source: Samba 4.12.7
+.\"  Language: English
+.\"
+.TH "MDFIND" "1" "09/23/2020" "Samba 4\&.12\&.7" "User Commands"
+.\" -----------------------------------------------------------------
+.\" * Define some portability stuff
+.\" -----------------------------------------------------------------
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.\" http://bugs.debian.org/507673
+.\" http://lists.gnu.org/archive/html/groff/2009-02/msg00013.html
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.ie \n(.g .ds Aq \(aq
+.el       .ds Aq '
+.\" -----------------------------------------------------------------
+.\" * set default formatting
+.\" -----------------------------------------------------------------
+.\" disable hyphenation
+.nh
+.\" disable justification (adjust text to left margin only)
+.ad l
+.\" -----------------------------------------------------------------
+.\" * MAIN CONTENT STARTS HERE *
+.\" -----------------------------------------------------------------
+.SH "NAME"
+mdfind \- Run Spotlight searches against an SMB server
+.SH "SYNOPSIS"
+.HP \w'\ 'u
+mvxattr {server} {sharename} {query} [\-p,\ \-\-path] [\-L,\ \-\-live]
+.SH "DESCRIPTION"
+.PP
+This tool is part of the
+\fBsamba\fR(1)
+suite\&.
+.PP
+mdfind is a simple utility to run Spotlight searches against an SMB server that runs the Spotlight
+\fImdssvc\fR
+RPC service\&.
+.SH "OPTIONS"
+.PP
+server
+.RS 4
+The SMB server name or IP address to connect to\&.
+.RE
+.PP
+sharename
+.RS 4
+The name of a share on the server\&.
+.RE
+.PP
+query
+.RS 4
+The query expression syntax is a simplified form of filename globbing familiar to shell users\&. Queries have the following format:
+.sp
+attribute=="value"
+.sp
+For queries against a Samba server with Spotlight enabled using the Elasticsearch backend, the list of supported metadata attributes is given by the JSON attribute mapping file, typically installed at
+/usr/share/samba/mdssvc/elasticsearch_mappings\&.json
+.RE
+.PP
+\-p PATH, \-\-path=PATH
+.RS 4
+Server side path to search, defaults to
+\fI"/"\fR
+.RE
+.PP
+\-L, \-\-live
+.RS 4
+Query remains running\&.
+.RE
+.SH "EXAMPLES"
+.PP
+Search all indexed metadata attributes, exact match:
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
+      \*(Aq*=="Samba"\*(Aq
+    
+.fi
+.if n \{\
+.RE
+.\}
+.PP
+Search all indexed metadata attributes, prefix match:
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
+      \*(Aq*=="Samba*"\*(Aq
+    
+.fi
+.if n \{\
+.RE
+.\}
+.PP
+Search by filename:
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
+      \*(AqkMDItemFSName=="Samba*"\*(Aq
+    
+.fi
+.if n \{\
+.RE
+.\}
+.PP
+Search by date:
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
+      \*(AqkMDItemFSContentChangeDate<$time\&.iso(2018\-10\-01T10:00:00Z)\*(Aq
+    
+.fi
+.if n \{\
+.RE
+.\}
+.PP
+Search files\*(Aqs content:
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
+      \*(AqkMDItemTextContent=="Samba*"\*(Aq
+    
+.fi
+.if n \{\
+.RE
+.\}
+.PP
+Expressions:
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
+      kMDItemFSName=="Samba*"||kMDItemTextContent=="Tango*"\*(Aq
+    
+.fi
+.if n \{\
+.RE
+.\}
+.SH "SEE ALSO"
+.PP
+File Metadata Search Programming Guide
+https://developer\&.apple\&.com/library/archive/documentation/Carbon/Conceptual/SpotlightQuery/Concepts/Introduction\&.html
+.SH "VERSION"
+.PP
+This man page is part of version 4\&.12\&.7 of the Samba suite\&.
+.SH "AUTHOR"
+.PP
+The original Samba software and related utilities were created by Andrew Tridgell\&. Samba is now developed by the Samba Team as an Open Source project similar to the way the Linux kernel is developed\&.
+.PP
+The mdfind manpage was written by Ralph Boehme\&.
