@@ -1,0 +1,52 @@
+--- configure.orig	2018-02-28 12:02:05 UTC
++++ configure
+@@ -18856,12 +18856,12 @@ if test -n "$ICU_CFLAGS"; then
+     pkg_cv_ICU_CFLAGS="$ICU_CFLAGS"
+  elif test -n "$PKG_CONFIG"; then
+     if test -n "$PKG_CONFIG" && \
+-    { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"icu-i18n\""; } >&5
+-  ($PKG_CONFIG --exists --print-errors "icu-i18n") 2>&5
++    { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"icu-i18n icu-uc\""; } >&5
++  ($PKG_CONFIG --exists --print-errors "icu-i18n icu-uc") 2>&5
+   ac_status=$?
+   $as_echo "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
+   test $ac_status = 0; }; then
+-  pkg_cv_ICU_CFLAGS=`$PKG_CONFIG --cflags "icu-i18n" 2>/dev/null`
++  pkg_cv_ICU_CFLAGS=`$PKG_CONFIG --cflags "icu-i18n icu-uc" 2>/dev/null`
+ 		      test "x$?" != "x0" && pkg_failed=yes
+ else
+   pkg_failed=yes
+@@ -18873,12 +18873,12 @@ if test -n "$ICU_LIBS"; then
+     pkg_cv_ICU_LIBS="$ICU_LIBS"
+  elif test -n "$PKG_CONFIG"; then
+     if test -n "$PKG_CONFIG" && \
+-    { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"icu-i18n\""; } >&5
+-  ($PKG_CONFIG --exists --print-errors "icu-i18n") 2>&5
++    { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"icu-i18n icu-uc\""; } >&5
++  ($PKG_CONFIG --exists --print-errors "icu-i18n icu-uc") 2>&5
+   ac_status=$?
+   $as_echo "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
+   test $ac_status = 0; }; then
+-  pkg_cv_ICU_LIBS=`$PKG_CONFIG --libs "icu-i18n" 2>/dev/null`
++  pkg_cv_ICU_LIBS=`$PKG_CONFIG --libs "icu-i18n icu-uc" 2>/dev/null`
+ 		      test "x$?" != "x0" && pkg_failed=yes
+ else
+   pkg_failed=yes
+@@ -18899,14 +18899,14 @@ fi
+         _pkg_short_errors_supported=no
+ fi
+         if test $_pkg_short_errors_supported = yes; then
+-	        ICU_PKG_ERRORS=`$PKG_CONFIG --short-errors --print-errors --cflags --libs "icu-i18n" 2>&1`
++	        ICU_PKG_ERRORS=`$PKG_CONFIG --short-errors --print-errors --cflags --libs "icu-i18n icu-uc" 2>&1`
+         else
+-	        ICU_PKG_ERRORS=`$PKG_CONFIG --print-errors --cflags --libs "icu-i18n" 2>&1`
++	        ICU_PKG_ERRORS=`$PKG_CONFIG --print-errors --cflags --libs "icu-i18n icu-uc" 2>&1`
+         fi
+ 	# Put the nasty error message in config.log where it belongs
+ 	echo "$ICU_PKG_ERRORS" >&5
+ 
+-	as_fn_error $? "Package requirements (icu-i18n) were not met:
++	as_fn_error $? "Package requirements (icu-i18n icu-uc) were not met:
+ 
+ $ICU_PKG_ERRORS
+ 
