@@ -1,5 +1,5 @@
 PORTNAME=	you-get
-PORTVERSION=	0.4.1718
+PORTVERSION=	0.4.1743
 CATEGORIES=	www
 MASTER_SITES=	PYPI \
 		https://github.com/soimort/you-get/releases/download/v${PORTVERSION}/
