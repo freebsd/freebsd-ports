@@ -832,6 +832,7 @@
     SUBDIR += p5-PDL-LinearAlgebra
     SUBDIR += p5-PDL-Minuit
     SUBDIR += p5-PDL-Opt-Simplex
+    SUBDIR += p5-PDL-Perldl2
     SUBDIR += p5-Parse-Range
     SUBDIR += p5-Roman
     SUBDIR += p5-Set-IntSpan
