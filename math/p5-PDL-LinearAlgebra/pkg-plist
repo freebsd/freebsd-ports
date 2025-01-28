@@ -1,0 +1,10 @@
+%%SITE_ARCH%%/PDL/LinearAlgebra.pm
+%%SITE_ARCH%%/PDL/LinearAlgebra/Complex.pm
+%%SITE_ARCH%%/PDL/LinearAlgebra/Real.pm
+%%SITE_ARCH%%/PDL/LinearAlgebra/Special.pm
+%%SITE_ARCH%%/PDL/LinearAlgebra/Trans.pm
+%%SITE_ARCH%%/auto/PDL/LinearAlgebra/Complex/Complex.so
+%%SITE_ARCH%%/auto/PDL/LinearAlgebra/Real/Real.so
+%%SITE_ARCH%%/auto/PDL/LinearAlgebra/Trans/Trans.so
+%%PERL5_MAN3%%/PDL::LinearAlgebra.3.gz
+%%PERL5_MAN3%%/PDL::LinearAlgebra::Special.3.gz
