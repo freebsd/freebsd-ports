@@ -1,15 +1,12 @@
 PORTNAME=	openshadinglanguage
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.13.10.0
+DISTVERSION=	1.13.12.0
 # PORTREVISION must be set with ?= so as not to stomp over
 # py-openimageio's PORTREVISION.
 # Also, just to be on the safe side, when resetting,
 # best keep PORTREVISION?=	0.
-PORTREVISION?=	4
+PORTREVISION?=	0
 CATEGORIES?=	graphics devel
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES=	d8c6f9a004c6fe3ae024ee17903c7ca9f9e8f9e7.patch:-p1
 
 MAINTAINER=	FreeBSD@Shaneware.biz
 COMMENT?=	Advanced shading language for production GI renderers
@@ -42,7 +39,7 @@ CMAKE_ON=	ENABLE_RTTI OSL_BUILD_TESTS USE_LIBCPLUSPLUS USE_LLVM_BITCODE
 
 # DISTVERSION has an extra digit which isn't in the lib name
 # for LIBVERS we want the first three digits
-PLIST_SUB=	SHL2=${PORTVERSION:R:R} SHL3=${PORTVERSION:R}
+PLIST_SUB=	SHL2=${DISTVERSION:R:R} SHL3=${DISTVERSION:R}
 
 OPTIONS_DEFINE=		OSLTOY
 OPTIONS_SUB=		yes
