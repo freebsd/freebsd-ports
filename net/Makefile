@@ -1653,6 +1653,7 @@
     SUBDIR += waypipe
     SUBDIR += wayvnc
     SUBDIR += webalizer-geodb
+    SUBDIR += wgcf
     SUBDIR += whois
     SUBDIR += widentd
     SUBDIR += wifi-firmware-ath10k-kmod
