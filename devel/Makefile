@@ -3884,6 +3884,7 @@
     SUBDIR += p5-Type-Tiny
     SUBDIR += p5-Type-Tiny-Signatures
     SUBDIR += p5-Type-Tiny-XS
+    SUBDIR += p5-Type-TinyX-Facets
     SUBDIR += p5-Types-Core
     SUBDIR += p5-Types-PDL
     SUBDIR += p5-Types-Path-Tiny
