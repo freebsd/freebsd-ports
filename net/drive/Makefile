@@ -11,6 +11,9 @@ WWW=		https://github.com/odeke-em/drive
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Broken and unmaintained upstream
+EXPIRATION_DATE=2025-02-28
+
 USES=		go
 
 GO_PKGNAME=	github.com/odeke-em/drive
