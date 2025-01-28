@@ -1,6 +1,6 @@
 PORTNAME=	Search-VectorSpace
 PORTVERSION=	0.02
-PORTREVISION=	14
+PORTREVISION=	15
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -10,8 +10,8 @@ COMMENT=	Very basic vector-space search engine perl module
 WWW=		https://metacpan.org/release/Search-VectorSpace
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	PDL>=0:math/PDL \
-		p5-Lingua-Stem>=0:textproc/p5-Lingua-Stem
+RUN_DEPENDS=	p5-Lingua-Stem>=0:textproc/p5-Lingua-Stem \
+		p5-PDL>=0:math/p5-PDL
 
 USES=		perl5
 USE_PERL5=	configure

@@ -1,6 +1,6 @@
 PORTNAME=	Geo-GDAL-FFI
 PORTVERSION=	0.12
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,9 +15,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	${RUN_DEPENDS}
 LIB_DEPENDS=	libgdal.so:graphics/gdal
 RUN_DEPENDS=	p5-FFI-Platypus>=0:devel/p5-FFI-Platypus \
+		p5-PDL>=0:math/p5-PDL \
 		p5-PkgConfig>=0.23026:devel/p5-PkgConfig \
-		p5-Sort-Versions>=0:devel/p5-Sort-Versions \
-		PDL>=0:math/PDL
+		p5-Sort-Versions>=0:devel/p5-Sort-Versions
 TEST_DEPENDS=	p5-JSON>=0:converters/p5-JSON \
 		p5-Path-Tiny>=0:devel/p5-Path-Tiny \
 		p5-Test-Exception>=0:devel/p5-Test-Exception \

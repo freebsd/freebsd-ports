@@ -1,6 +1,6 @@
 PORTNAME=	Mcstas-Tools
 PORTVERSION=	2.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	science
 MASTER_SITES=	http://download.mcstas.org/mcstas-${PORTVERSION}/unix/
 PKGNAMEPREFIX=	p5-
@@ -14,9 +14,9 @@ WWW=		https://www.mcstas.org
 LICENSE=	GPLv2
 
 RUN_DEPENDS=	mcstas:science/mcstas \
+		p5-PDL>0:math/p5-PDL \
 		p5-PGPLOT>=2.21:graphics/p5-PGPLOT \
-		p5-Tk>0:x11-toolkits/p5-Tk \
-		PDL>0:math/PDL
+		p5-Tk>0:x11-toolkits/p5-Tk
 
 USES=		cmake perl5 shebangfix
 

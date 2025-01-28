@@ -1,5 +1,6 @@
 PORTNAME=	Gimp
 PORTVERSION=	2.37
+PORTREVISION=	1
 CATEGORIES=	graphics perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -21,8 +22,8 @@ RUN_DEPENDS=	p5-Gtk2>=1.0:x11-toolkits/p5-Gtk2 \
 		p5-IO-All>=0:devel/p5-IO-All \
 		p5-IO-Stringy>=0:devel/p5-IO-Stringy \
 		p5-HTML-Parser>=0:www/p5-HTML-Parser \
-		p5-Web-Scraper>=0:www/p5-Web-Scraper \
-		PDL>=2.064:math/PDL
+		p5-PDL>=2.064:math/p5-PDL \
+		p5-Web-Scraper>=0:www/p5-Web-Scraper
 
 USES=		perl5
 USE_PERL5=	configure

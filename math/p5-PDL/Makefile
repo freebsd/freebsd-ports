@@ -3,6 +3,7 @@ PORTVERSION=	2.095
 PORTREVISION=	1
 CATEGORIES=	math perl5
 MASTER_SITES=	CPAN
+PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Perl Data Language
@@ -12,10 +13,10 @@ WWW=		https://metacpan.org/dist/PDL \
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
+BROKEN_aarch64=	ld: error: relocation R_AARCH64_ADR_PREL_PG_HI21 cannot be used against symbol __stack_chk_guard; recompile with -fPIC
 .if ${/usr/bin/ld:L:tA} == /usr/bin/ld.lld
 BROKEN_i386=	ld: error: can't create dynamic relocation R_386_32 against local symbol in readonly segment; recompile object files with -fPIC or pass '-Wl,-z,notext' to allow text relocations in the output
 .endif
-BROKEN_aarch64=	ld: error: relocation R_AARCH64_ADR_PREL_PG_HI21 cannot be used against symbol __stack_chk_guard; recompile with -fPIC
 
 BUILD_DEPENDS=	p5-Devel-CheckLib>=1.01:devel/p5-Devel-CheckLib \
 		p5-ExtUtils-Depends>=0.402:devel/p5-ExtUtils-Depends \

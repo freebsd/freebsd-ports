@@ -3,7 +3,6 @@
     SUBDIR += 4ti2
     SUBDIR += GiNaC
     SUBDIR += Imath
-    SUBDIR += PDL
     SUBDIR += R
     SUBDIR += R-cran-ADGofTest
     SUBDIR += R-cran-Amelia
@@ -817,6 +816,7 @@
     SUBDIR += p5-Number-Uncertainty
     SUBDIR += p5-Number-WithError
     SUBDIR += p5-Number-WithError-LaTeX
+    SUBDIR += p5-PDL
     SUBDIR += p5-Parse-Range
     SUBDIR += p5-Roman
     SUBDIR += p5-Set-IntSpan
