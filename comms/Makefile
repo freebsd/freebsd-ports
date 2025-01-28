@@ -131,6 +131,7 @@
     SUBDIR += picocom
     SUBDIR += pr
     SUBDIR += predict
+    SUBDIR += py-ModbusTCP
     SUBDIR += py-adafruit-ampy
     SUBDIR += py-elelabs-zigbee-ezsp-utility
     SUBDIR += py-esptool
@@ -140,7 +141,6 @@
     SUBDIR += py-libimobiledevice
     SUBDIR += py-libscrc
     SUBDIR += py-libusbsio
-    SUBDIR += py-ModbusTCP
     SUBDIR += py-nkdfu
     SUBDIR += py-pylink-square
     SUBDIR += py-pymodbus
