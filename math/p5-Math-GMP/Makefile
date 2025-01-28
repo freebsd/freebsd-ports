@@ -15,10 +15,6 @@ LIB_DEPENDS=	libgmp.so:math/gmp
 USES=		localbase perl5
 USE_PERL5=	configure
 
-post-patch:
-	@${REINPLACE_CMD} -e '/Alien::GMP/d' ${WRKSRC}/META.json ${WRKSRC}/META.yml ${WRKSRC}/Makefile.PL
-	@${REINPLACE_CMD} -e 's|Alien::Base::Wrapper->mm_args|"LIBS" => ["-lgmp"]|' ${WRKSRC}/Makefile.PL
-
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Math/GMP/GMP.so
 
