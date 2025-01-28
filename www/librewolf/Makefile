@@ -1,6 +1,7 @@
 PORTNAME=	librewolf
 DISTVERSION=	134.0.2
 DISTVERSIONSUFFIX=	-1.source
+PORTREVISION=	1
 CATEGORIES=	www wayland
 MASTER_SITES=	https://gitlab.com/api/v4/projects/32320088/packages/generic/${PORTNAME}-source/${DISTVERSION}-1/
 
@@ -27,7 +28,10 @@ BUILD_DEPENDS=	nspr>=4.32:devel/nspr \
 		autoconf2.13:devel/autoconf2.13 \
 		nasm:devel/nasm \
 		yasm:devel/yasm \
-		zip:archivers/zip
+		zip:archivers/zip \
+		${LOCALBASE}/share/wasi-sysroot/lib/wasm32-wasi/libc++abi.a:devel/wasi-libcxx${LLVM_VERSION} \
+		${LOCALBASE}/share/wasi-sysroot/lib/wasm32-wasi/libc.a:devel/wasi-libc@${LLVM_VERSION} \
+		wasi-compiler-rt${LLVM_VERSION}>0:devel/wasi-compiler-rt${LLVM_VERSION}
 
 USE_GECKO=	gecko
 USE_MOZILLA=	-sqlite
@@ -36,6 +40,7 @@ USE_MOZILLA=	-sqlite
 # dist/include/mozilla/intl/ICU4CGlue.h:8:10: fatal error: 'unicode/uenum.h' file not found, err: true
 CONFIGURE_ENV+=	BINDGEN_CFLAGS="-I${LOCALBASE}/include"
 CONFIGURE_ENV+=	MOZ_REQUIRE_SIGNING=""
+#CFLAGS_powerpc64=	-DHWY_COMPILE_ONLY_SCALAR
 CFLAGS_powerpc64le=	-DSQLITE_BYTEORDER=1234
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}-1
@@ -62,6 +67,7 @@ MOZ_OPTIONS=	--enable-application=browser \
 		--with-branding=browser/branding/${MOZILLA} \
 		--with-unsigned-addon-scopes=app,system \
 		--enable-bootstrap \
+		--with-wasi-sysroot=${LOCALBASE}/share/wasi-sysroot \
 		MOZ_CRASHREPORTER=0 \
 		MOZ_DATA_REPORTING=0
 
@@ -74,16 +80,6 @@ FIREFOX_ICON_SRC=	${PREFIX}/lib/${MOZILLA}/browser/chrome/icons/default/default4
 
 .if ${ARCH} == amd64
 MOZ_OPTIONS+=	--enable-rust-simd
-.endif
-
-.if ${ARCH} == powerpc64
-CFLAGS+=	-DHWY_COMPILE_ONLY_SCALAR
-MOZ_OPTIONS+=	--without-wasm-sandboxed-libraries
-.else
-BUILD_DEPENDS+=	${LOCALBASE}/share/wasi-sysroot/lib/wasm32-wasi/libc++abi.a:devel/wasi-libcxx${LLVM_VERSION} \
-		${LOCALBASE}/share/wasi-sysroot/lib/wasm32-wasi/libc.a:devel/wasi-libc@${LLVM_VERSION} \
-		wasi-compiler-rt${LLVM_VERSION}>0:devel/wasi-compiler-rt${LLVM_VERSION}
-MOZ_OPTIONS+=	--with-wasi-sysroot=${LOCALBASE}/share/wasi-sysroot
 .endif
 
 post-extract:
