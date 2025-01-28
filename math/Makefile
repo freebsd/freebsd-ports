@@ -818,6 +818,7 @@
     SUBDIR += p5-Number-WithError-LaTeX
     SUBDIR += p5-PDL
     SUBDIR += p5-PDL-DateTime
+    SUBDIR += p5-PDL-Fit
     SUBDIR += p5-Parse-Range
     SUBDIR += p5-Roman
     SUBDIR += p5-Set-IntSpan
