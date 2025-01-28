@@ -1,5 +1,5 @@
 PORTNAME=	Crypt-URandom
-PORTVERSION=	0.40
+PORTVERSION=	0.44
 CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -16,6 +16,7 @@ TEST_DEPENDS=	p5-Test-Pod>=1.14:devel/p5-Test-Pod
 USES=		perl5
 USE_PERL5=	configure
 
-NO_ARCH=	yes
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Crypt/URandom/URandom.so
 
 .include <bsd.port.mk>
