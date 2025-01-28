@@ -1,0 +1,68 @@
+--- lib/PDL/Transform/Proj4.pd.orig	2025-01-03 22:39:08 UTC
++++ lib/PDL/Transform/Proj4.pd
+@@ -5,8 +5,8 @@ use warnings;
+ 
+ use strict;
+ use warnings;
++use Capture::Tiny ':all';
+ use File::Spec;
+-use Alien::proj;
+ 
+ our $VERSION = "2.097";
+ pp_setversion($VERSION);
+@@ -104,7 +104,7 @@ sub load_projection_information {
+   fixed Earth For CH1903
+ );
+ sub load_projection_information {
+-    my ($text, $stderr, $exit_code) = Alien::proj->run_utility ("proj", "-lP");
++    my ($text, $stderr, $exit_code) = capture{system "proj", "-lP"};
+     warn $stderr if $stderr;
+     die "proj -lP error $exit_code. See above for error text." if $exit_code;
+     my @chunks = $text =~ /(.+?)(?=(?:^\S|\z))/gms;
+@@ -175,7 +175,6 @@ use PDL::Transform;
+ use warnings;
+ use PDL::LiteF;
+ use PDL::Transform;
+-use Alien::proj;
+ 
+ =head1 NAME
+ 
+--- Makefile.PL.orig	2025-01-03 22:41:17 UTC
++++ Makefile.PL
+@@ -2,7 +2,6 @@ use PDL::Core::Dev;
+ use warnings;
+ use ExtUtils::MakeMaker;
+ use PDL::Core::Dev;
+-use Alien::proj;
+ 
+ my @pd_srcs;
+ undef &MY::init_PM; # suppress warning
+@@ -22,7 +21,6 @@ WriteMakefile(
+   CONFIGURE_REQUIRES => {
+     'ExtUtils::MakeMaker' => 0,
+     'PDL' => '2.096',
+-    'Alien::proj' => '1.29', # guarantee minimum PROJ 7.1 as need degree_output
+   },
+   PREREQ_PM => {
+     'PDL' => '2.096',
+@@ -30,8 +28,7 @@ WriteMakefile(
+   TEST_REQUIRES => {
+     'Test::More' => '0.88',
+   },
+-  INC => Alien::proj->cflags,
+-  LIBS => [Alien::proj->libs],
++  LIBS => ['-lproj'],
+   clean => { FILES => join ' ', qw(MANIFEST.bak) },
+   NO_MYMETA => 1,
+ );
+--- t/gis_proj.t.orig	2024-12-03 06:57:09 UTC
++++ t/gis_proj.t
+@@ -9,8 +9,6 @@ use PDL::Transform::Proj4;
+     LC_RUN_PATH);
+ }
+ use PDL::Transform::Proj4;
+-use Alien::proj;
+-diag "Alien::proj version $Alien::proj::VERSION";
+ 
+ my @version = eval { PDL::Transform::Proj4::proj_version() };
+ is $@, '', 'proj_version no die';
