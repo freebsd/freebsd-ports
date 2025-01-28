@@ -8206,6 +8206,7 @@
     SUBDIR += tagref
     SUBDIR += tailor
     SUBDIR += talloc
+    SUBDIR += talloc242
     SUBDIR += task
     SUBDIR += taskctl
     SUBDIR += taskflow
