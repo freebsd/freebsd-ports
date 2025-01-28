@@ -314,6 +314,7 @@
     SUBDIR += python39
     SUBDIR += qmasm
     SUBDIR += quickjs
+    SUBDIR += quickjs-ng
     SUBDIR += quilc
     SUBDIR += racket
     SUBDIR += racket-minimal
