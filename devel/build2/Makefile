@@ -12,8 +12,6 @@ WWW=		https://build2.org
 LICENSE=	BSD2CLAUSE BSD3CLAUSE MIT
 LICENSE_COMB=	multi
 
-BROKEN_powerpc=	fails in stage: Invalid data memory access
-
 USES=		gmake pkgconfig sqlite tar:xz
 
 PIE_UNSAFE=	yes
