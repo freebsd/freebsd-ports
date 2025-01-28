@@ -1,5 +1,5 @@
 PORTNAME=	MooseX-Getopt
-PORTVERSION=	0.76
+PORTVERSION=	0.78
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN/MooseX CPAN
 MASTER_SITE_SUBDIR=	CPAN:ETHER
@@ -34,4 +34,10 @@ USE_PERL5=	modbuildtiny
 
 NO_ARCH=	yes
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 504000
+TEST_DEPENDS+=	p5-Test-Simple>=1.302200:devel/p5-Test-Simple
+.endif
+
+.include <bsd.port.post.mk>
