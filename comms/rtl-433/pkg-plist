@@ -2,6 +2,7 @@ bin/rtl_433
 @sample etc/rtl_433.conf etc/rtl_433.conf.sample
 @sample etc/rtl_433/CAME-TOP432.conf etc/rtl_433/CAME-TOP432.conf.sample
 @sample etc/rtl_433/ContinentalRemote.conf etc/rtl_433/ContinentalRemote.conf.sample
+@sample etc/rtl_433/Dewenwils_BHV.conf etc/rtl_433/Dewenwils_BHV.conf.sample
 @sample etc/rtl_433/DrivewayAlert.conf etc/rtl_433/DrivewayAlert.conf.sample
 @sample etc/rtl_433/EV1527-4Button-Universal-Remote.conf etc/rtl_433/EV1527-4Button-Universal-Remote.conf.sample
 @sample etc/rtl_433/EV1527-DDS-Sgooway.conf etc/rtl_433/EV1527-DDS-Sgooway.conf.sample
@@ -27,9 +28,14 @@ bin/rtl_433
 @sample etc/rtl_433/ge_smartremote_plus.conf etc/rtl_433/ge_smartremote_plus.conf.sample
 @sample etc/rtl_433/heatilator.conf etc/rtl_433/heatilator.conf.sample
 @sample etc/rtl_433/honeywell-fan.conf etc/rtl_433/honeywell-fan.conf.sample
+@sample etc/rtl_433/hornbach-msrc-sal.conf etc/rtl_433/hornbach-msrc-sal.conf.sample
+@sample etc/rtl_433/ivac_pro.conf etc/rtl_433/ivac_pro.conf.sample
 @sample etc/rtl_433/led-light-remote.conf etc/rtl_433/led-light-remote.conf.sample
+@sample etc/rtl_433/oma-blind-remote.conf etc/rtl_433/oma-blind-remote.conf.sample
 @sample etc/rtl_433/pir-ef4.conf etc/rtl_433/pir-ef4.conf.sample
 @sample etc/rtl_433/rtl_433.example.conf etc/rtl_433/rtl_433.example.conf.sample
+@sample etc/rtl_433/qx-30x.conf etc/rtl_433/qx-30x.conf.sample
+@sample etc/rtl_433/rolleaseacmedia.conf etc/rtl_433/rolleaseacmedia.conf.sample
 @sample etc/rtl_433/silverline_doorbell.conf etc/rtl_433/silverline_doorbell.conf.sample
 @sample etc/rtl_433/sonoff_rm433.conf etc/rtl_433/sonoff_rm433.conf.sample
 @sample etc/rtl_433/steffen_switch.conf etc/rtl_433/steffen_switch.conf.sample
@@ -42,6 +48,7 @@ bin/rtl_433
 @sample etc/rtl_433/PHOX.conf etc/rtl_433/PHOX.conf.sample
 @sample etc/rtl_433/Reolink-doorbell.conf etc/rtl_433/Reolink-doorbell.conf.sample
 @sample etc/rtl_433/SWETUP-garage-opener.conf etc/rtl_433/SWETUP-garage-opener.conf.sample
+@sample etc/rtl_433/Thomson-doorbell.conf etc/rtl_433/Thomson-doorbell.conf.sample
 include/rtl_433.h
 include/rtl_433_devices.h
 share/man/man1/rtl_433.1.gz
