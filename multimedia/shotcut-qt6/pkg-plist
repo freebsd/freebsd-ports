@@ -251,6 +251,9 @@ share/mime/packages/org.shotcut.Shotcut.xml
 %%DATADIR%%/qml/filters/gradient/meta.qml
 %%DATADIR%%/qml/filters/gradient/ui.qml
 %%DATADIR%%/qml/filters/gradient/vui.qml
+%%DATADIR%%/qml/filters/gradientmap/icon.webp
+%%DATADIR%%/qml/filters/gradientmap/meta.qml
+%%DATADIR%%/qml/filters/gradientmap/ui.qml
 %%DATADIR%%/qml/filters/grain/meta.qml
 %%DATADIR%%/qml/filters/grain/ui.qml
 %%DATADIR%%/qml/filters/grid/icon.webp
@@ -262,6 +265,12 @@ share/mime/packages/org.shotcut.Shotcut.xml
 %%DATADIR%%/qml/filters/hqdn3d/icon.webp
 %%DATADIR%%/qml/filters/hqdn3d/meta.qml
 %%DATADIR%%/qml/filters/hqdn3d/ui.qml
+%%DATADIR%%/qml/filters/hslprimaries/icon.webp
+%%DATADIR%%/qml/filters/hslprimaries/meta.qml
+%%DATADIR%%/qml/filters/hslprimaries/ui.qml
+%%DATADIR%%/qml/filters/hslrange/icon.webp
+%%DATADIR%%/qml/filters/hslrange/meta.qml
+%%DATADIR%%/qml/filters/hslrange/ui.qml
 %%DATADIR%%/qml/filters/hue_lightness_saturation/icon.webp
 %%DATADIR%%/qml/filters/hue_lightness_saturation/meta.qml
 %%DATADIR%%/qml/filters/hue_lightness_saturation/ui.qml
@@ -463,6 +472,7 @@ share/mime/packages/org.shotcut.Shotcut.xml
 %%DATADIR%%/qml/modules/Shotcut/Controls/Button.qml
 %%DATADIR%%/qml/modules/Shotcut/Controls/ColorPicker.qml
 %%DATADIR%%/qml/modules/Shotcut/Controls/ComboBox.qml
+%%DATADIR%%/qml/modules/Shotcut/Controls/CurveComboBox.qml
 %%DATADIR%%/qml/modules/Shotcut/Controls/DoubleSpinBox.qml
 %%DATADIR%%/qml/modules/Shotcut/Controls/EditMenu.qml
 %%DATADIR%%/qml/modules/Shotcut/Controls/Gauge.qml
@@ -527,6 +537,7 @@ share/mime/packages/org.shotcut.Shotcut.xml
 %%DATADIR%%/translations/shotcut_eu.qm
 %%DATADIR%%/translations/shotcut_fi.qm
 %%DATADIR%%/translations/shotcut_fr.qm
+%%DATADIR%%/translations/shotcut_ga.qm
 %%DATADIR%%/translations/shotcut_gd.qm
 %%DATADIR%%/translations/shotcut_gl.qm
 %%DATADIR%%/translations/shotcut_he_IL.qm
