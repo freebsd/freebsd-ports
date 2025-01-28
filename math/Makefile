@@ -826,6 +826,7 @@
     SUBDIR += p5-PDL-IO-Browser
     SUBDIR += p5-PDL-IO-Dicom
     SUBDIR += p5-PDL-IO-ENVI
+    SUBDIR += p5-PDL-IO-GD
     SUBDIR += p5-Parse-Range
     SUBDIR += p5-Roman
     SUBDIR += p5-Set-IntSpan
