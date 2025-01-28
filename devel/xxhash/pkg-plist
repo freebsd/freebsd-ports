@@ -1,5 +1,6 @@
 bin/xxh128sum
 bin/xxh32sum
+bin/xxh3sum
 bin/xxh64sum
 bin/xxhsum
 include/xxh3.h
@@ -11,5 +12,6 @@ lib/libxxhash.so.%%PORTVERSION%%
 libdata/pkgconfig/libxxhash.pc
 share/man/man1/xxh128sum.1.gz
 share/man/man1/xxh32sum.1.gz
+share/man/man1/xxh3sum.1.gz
 share/man/man1/xxh64sum.1.gz
 share/man/man1/xxhsum.1.gz
