@@ -1,0 +1,46 @@
+--- lib/Geo/LibProj/FFI.pm.orig	2024-05-12 18:33:31 UTC
++++ lib/Geo/LibProj/FFI.pm
+@@ -5,7 +5,6 @@ package Geo::LibProj::FFI 1.00;
+ package Geo::LibProj::FFI 1.00;
+ 
+ 
+-use Alien::proj 1.07;
+ use FFI::Platypus 1.50;
+ use FFI::C 0.08;
+ use Convert::Binary::C 0.04;
+@@ -92,7 +91,7 @@ my $ffi = FFI::Platypus->new(
+ my $ffi = FFI::Platypus->new(
+ 	api => 2,
+ 	lang => 'C',
+-	lib => [Alien::proj->dynamic_libs],
++	lib => ['%%LOCALBASE%%/lib/libproj.so'], 
+ );
+ FFI::C->ffi($ffi);
+ 
+--- Makefile.PL.orig	2024-05-12 18:33:31 UTC
++++ Makefile.PL
+@@ -17,7 +17,6 @@ my %WriteMakefileArgs = (
+   "MIN_PERL_VERSION" => "5.014000",
+   "NAME" => "Geo::LibProj::FFI",
+   "PREREQ_PM" => {
+-    "Alien::proj" => "1.07",
+     "Convert::Binary::C" => "0.04",
+     "Exporter::Easy" => 0,
+     "FFI::C" => "0.08",
+--- t/00-report-prereqs.dd.orig	2024-05-12 18:33:31 UTC
++++ t/00-report-prereqs.dd
+@@ -13,7 +13,6 @@ do { my $x = {
+                     },
+        'runtime' => {
+                       'requires' => {
+-                                      'Alien::proj' => '1.07',
+                                       'Convert::Binary::C' => '0.04',
+                                       'Exporter::Easy' => '0',
+                                       'FFI::C' => '0.08',
+@@ -35,4 +34,4 @@ do { my $x = {
+                  }
+      };
+   $x;
+- }
+\ No newline at end of file
++ }

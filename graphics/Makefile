@@ -714,6 +714,7 @@
     SUBDIR += p5-Geo-GDAL-FFI
     SUBDIR += p5-Geo-GML
     SUBDIR += p5-Geo-Gpx
+    SUBDIR += p5-Geo-LibProj-FFI
     SUBDIR += p5-Geometry-Primitive
     SUBDIR += p5-Gimp
     SUBDIR += p5-Google-Chart

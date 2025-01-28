@@ -1,0 +1,9 @@
+Geo::LibProj::FFI is a foreign function interface to the PROJ coordinate
+transformation / projection library. Please see the PROJ library's C function
+reference for further documentation. You should be able to use those C functions
+as if they were Perl.
+
+Geo::LibProj::FFI offers a large portion of the most commonly used PROJ
+functions, but more could be added later. If you need a function that isn't yet
+available in this module, please open a GitHub issue with a description of your
+use case.
