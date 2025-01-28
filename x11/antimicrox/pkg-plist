@@ -12,10 +12,12 @@ bin/antimicrox
 %%DATADIR%%/translations/antimicrox_fi.qm
 %%DATADIR%%/translations/antimicrox_fr.qm
 %%DATADIR%%/translations/antimicrox_hr.qm
+%%DATADIR%%/translations/antimicrox_id.qm
 %%DATADIR%%/translations/antimicrox_it.qm
 %%DATADIR%%/translations/antimicrox_ja.qm
 %%DATADIR%%/translations/antimicrox_ko.qm
 %%DATADIR%%/translations/antimicrox_nb_NO.qm
+%%DATADIR%%/translations/antimicrox_nl.qm
 %%DATADIR%%/translations/antimicrox_pl.qm
 %%DATADIR%%/translations/antimicrox_pt.qm
 %%DATADIR%%/translations/antimicrox_pt_BR.qm
@@ -23,6 +25,7 @@ bin/antimicrox
 %%DATADIR%%/translations/antimicrox_rue.qm
 %%DATADIR%%/translations/antimicrox_sr.qm
 %%DATADIR%%/translations/antimicrox_sv.qm
+%%DATADIR%%/translations/antimicrox_ta.qm
 %%DATADIR%%/translations/antimicrox_tr.qm
 %%DATADIR%%/translations/antimicrox_uk.qm
 %%DATADIR%%/translations/antimicrox_vi.qm
