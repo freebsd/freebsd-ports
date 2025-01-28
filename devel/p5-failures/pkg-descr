@@ -1,0 +1,15 @@
+This module lets you define an exception hierarchy quickly and simply.
+
+Here were my design goals:
+- minimalist interface
+- 80% of features in 20% of lines of code
+- depend only on core modules (nearly achieved)
+- support hierarchical error types
+- identify errors types by name (class) not by parsing strings
+- leave (possibly expensive) trace decisions to the thrower
+
+Currently, failures is implemented in under 70 lines of code.
+
+Failure objects are implemented with Class::Tiny to allow easy subclassing (see
+custom::failures), but Class::Tiny only requires core modules, so other than
+that exception, the 'core only' goal is achieved.
