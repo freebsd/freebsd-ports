@@ -8,7 +8,8 @@ DISTNAME=	pycrdt_websocket-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	WebSocket connector for pycrdt
-WWW=		https://github.com/jupyter-server/pycrdt-websocket
+WWW=		https://jupyter-server.github.io/pycrdt-websocket/ \
+		https://github.com/jupyter-server/pycrdt-websocket
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
