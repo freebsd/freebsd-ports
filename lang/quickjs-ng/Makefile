@@ -1,6 +1,7 @@
 PORTNAME=	quickjs
-PORTVERSION=	0.8.0
+DISTVERSION=	0.8.0
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	lang devel
 PKGNAMESUFFIX=	-ng
 
@@ -11,7 +12,7 @@ WWW=		https://quickjs-ng.github.io/quickjs/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		compiler:c11 cmake:testing,noninja cmake cpe tar:xz
+USES=		cmake:testing,noninja compiler:c11 cpe
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
