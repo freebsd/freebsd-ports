@@ -1,6 +1,6 @@
 PORTNAME=	ladybird
 PORTVERSION=	g20240505
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	https://github.com/unicode-org/cldr-json/releases/download/${CLDRVERSION}/:cldr \
 		https://www.unicode.org/Public/${UCDVERSION}/ucd/:ucd \
@@ -15,6 +15,9 @@ DISTFILES=	cldr-${CLDRVERSION}-json-modern.zip:cldr \
 DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 EXTRACT_ONLY=	${_DISTFILES:M*${GH_ACCOUNT}*}
 
+PATCH_SITES=	https://github.com/LadybirdBrowser/ladybird/commit/
+PATCHFILES=	397774d42272fff8dbc6d8d53616d79667d6608a.diff:-p1
+
 MAINTAINER=	fuz@FreeBSD.org
 COMMENT=	SerenityOS web browser
 WWW=		https://ladybird.dev/
@@ -25,7 +28,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 # see Userland/Libraries/LibWeb/Loader/ResourceLoader.h
 ONLY_FOR_ARCHS=	aarch64 amd64 i386 riscv64
 ONLY_FOR_ARCHS_REASON=	other architectures not recognised by build system
-BROKEN_FreeBSD_15_amd64=	clang crashes, see https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=276703
 
 BUILD_DEPENDS=	${LOCALBASE}/share/public_suffix_list/public_suffix_list.dat:dns/public_suffix_list \
 		${LOCALBASE}/share/color/Adobe/CMYK/USWebCoatedSWOP.icc:graphics/icc-profiles-adobe-cs4
