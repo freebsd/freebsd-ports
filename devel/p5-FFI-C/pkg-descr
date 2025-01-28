@@ -1,0 +1,11 @@
+FFI::C provides tools for building classes to interface for common C data types.
+Arrays, struct, union and nested types based on those are supported.
+
+Core FFI::Platypus also provides FFI::Platypus::Record for manipulating and
+passing structured data. Typically you want to use FFI::C instead, the main
+exception is when you need to pass structured data by value instead of by
+reference.
+
+To work with C APIs that work with C file pointers you can use FFI::C::File and
+FFI::C::PosixFile. For C APIs that expose the POSIX stat structure use
+FFI::C::Stat.
