@@ -8332,6 +8332,7 @@
     SUBDIR += wf-config
     SUBDIR += wininfo
     SUBDIR += wizardkit
+    SUBDIR += wizer
     SUBDIR += woff2
     SUBDIR += wrangler
     SUBDIR += wxformbuilder
