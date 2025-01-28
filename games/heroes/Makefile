@@ -11,15 +11,12 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		${SOUNDISTNAME}${EXTRACT_SUFX}:sound \
 		${MUSICDISTNAME}${EXTRACT_SUFX}:music
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Game of yore similar to the "Tron" and "Nibbles"
 WWW=		https://heroes.sourceforge.net/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
-
-DEPRECATED=	Unmaintained as last release in 2002
-EXPIRATION_DATE=	2025-01-30
 
 USES=		gettext gmake iconv localbase:ldflags sdl
 USE_SDL=	mixer sdl
