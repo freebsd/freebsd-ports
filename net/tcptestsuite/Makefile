@@ -1,5 +1,5 @@
 PORTNAME=	tcptestsuite
-DISTVERSION=	g20230719
+DISTVERSION=	g20250128
 PORTEPOCH=	1
 CATEGORIES=	net
 
@@ -13,7 +13,7 @@ RUN_DEPENDS=	packetdrill:net/packetdrill
 USE_GITHUB=	yes
 GH_ACCOUNT=	freebsd-net
 GH_PROJECT=	tcp-testsuite
-GH_TAGNAME=	38d231c
+GH_TAGNAME=	d8ec638
 
 NO_ARCH=	yes
 NO_BUILD=	yes
