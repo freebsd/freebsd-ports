@@ -1,5 +1,6 @@
 PORTNAME=	qiskit-aer
 DISTVERSION=	0.16.0.1
+PORTREVISION=	1
 CATEGORIES=	science # quantum-computing
 
 MAINTAINER=	yuri@FreeBSD.org

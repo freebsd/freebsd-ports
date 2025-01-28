@@ -1,5 +1,6 @@
 PORTNAME=	${MPORTNAME:tl}
 PORTVERSION=	5.3.0
+PORTREVISION=	1
 CATEGORIES=	math
 
 COMMENT=	Sparse CHOLesky MODification package

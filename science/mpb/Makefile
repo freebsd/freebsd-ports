@@ -1,6 +1,6 @@
 PORTNAME=	mpb
 DISTVERSION=	1.11.1
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	science
 MASTER_SITES=	https://github.com/NanoComp/mpb/releases/download/v${DISTVERSION}/
 

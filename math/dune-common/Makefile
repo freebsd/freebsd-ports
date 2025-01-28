@@ -1,7 +1,7 @@
 PORTNAME=	dune-common
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.8.0
-PORTREVISION=	15
+PORTREVISION=	16
 CATEGORIES=	math
 
 PATCH_SITES=	https://gitlab.dune-project.org/core/${PORTNAME}/-/commit/

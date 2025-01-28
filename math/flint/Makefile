@@ -1,5 +1,6 @@
 PORTNAME=	flint
 DISTVERSION=	3.1.2
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	http://www.flintlib.org/download/
 
