@@ -1,13 +1,12 @@
 PORTNAME=	libgee
-PORTVERSION=	0.20.6
-PORTREVISION=	1
+PORTVERSION=	0.20.8
 CATEGORIES=	devel
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
 
 MAINTAINER=	kwm@FreeBSD.org
 COMMENT=	GObject collection library
-WWW=		https://wiki.gnome.org/Projects/Libgee
+WWW=		https://gitlab.gnome.org/GNOME/libgee
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
