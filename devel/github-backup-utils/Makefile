@@ -1,6 +1,7 @@
 PORTNAME=	github-backup-utils
 PORTVERSION=	3.15.1
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/github/backup-utils/releases/download/v${PORTVERSION}/
 
