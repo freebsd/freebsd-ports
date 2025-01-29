@@ -32,7 +32,8 @@ post-patch:
 
 do-build:
 	cd ${BUILD_WRKSRC} && nimble build --nim=${LOCALBASE}/nim/bin/nim \
-	--localdeps --offline --reject --verbose -d:release -d:nimDebugDlOpen
+	--nimcache:${WRKDIR}/.nimcache --localdeps --offline --reject \
+	--verbose -d:release -d:nimDebugDlOpen
 
 do-install:
 	${INSTALL_PROGRAM} ${INSTALL_WRKSRC}/${PORTNAME} \
