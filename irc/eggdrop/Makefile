@@ -1,4 +1,5 @@
 PORTNAME=	eggdrop
+PORTREVISION=	1
 DISTVERSION=	1.10.0
 CATEGORIES=	irc
 MASTER_SITES=	https://github.com/eggheads/${PORTNAME}/releases/download/v${DISTVERSION}/
@@ -23,7 +24,7 @@ SUB_FILES=	pkg-message
 OPTIONS_DEFINE=	DOCS
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|tcl.h|tcl${TCL_VER}/tcl.h|g' ${WRKSRC}/src/mod/python.mod/pycmds.c
+	@${SED} -i '' -e '25d' ${WRKSRC}/src/mod/python.mod/pycmds.c
 	@${SED} -e 's#%%PREFIX%%#${PREFIX}#g' ${WRKSRC}/eggdrop.conf \
 		> ${WRKSRC}/eggdrop.conf.sample
 
