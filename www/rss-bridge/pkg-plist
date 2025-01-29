@@ -27,6 +27,7 @@
 %%WWWDIR%%/bridges/AnidexBridge.php
 %%WWWDIR%%/bridges/AnimeUltimeBridge.php
 %%WWWDIR%%/bridges/AnisearchBridge.php
+%%WWWDIR%%/bridges/AnthropicBridge.php
 %%WWWDIR%%/bridges/AppleAppStoreBridge.php
 %%WWWDIR%%/bridges/AppleMusicBridge.php
 %%WWWDIR%%/bridges/ArsTechnicaBridge.php
@@ -170,7 +171,6 @@
 %%WWWDIR%%/bridges/ForensicArchitectureBridge.php
 %%WWWDIR%%/bridges/Formula1Bridge.php
 %%WWWDIR%%/bridges/FourchanBridge.php
-%%WWWDIR%%/bridges/FragDenStaatBridge.php
 %%WWWDIR%%/bridges/FreeCodeCampBridge.php
 %%WWWDIR%%/bridges/FreeTelechargerBridge.php
 %%WWWDIR%%/bridges/FunkBridge.php
@@ -265,6 +265,7 @@
 %%WWWDIR%%/bridges/LegifranceJOBridge.php
 %%WWWDIR%%/bridges/LegoIdeasBridge.php
 %%WWWDIR%%/bridges/LesJoiesDuCodeBridge.php
+%%WWWDIR%%/bridges/LfcPlBridge.php
 %%WWWDIR%%/bridges/ListverseBridge.php
 %%WWWDIR%%/bridges/LogicMastersBridge.php
 %%WWWDIR%%/bridges/LolibooruBridge.php
@@ -324,6 +325,7 @@
 %%WWWDIR%%/bridges/OLXBridge.php
 %%WWWDIR%%/bridges/OMonlineBridge.php
 %%WWWDIR%%/bridges/OglafBridge.php
+%%WWWDIR%%/bridges/OllamaBridge.php
 %%WWWDIR%%/bridges/OnVaSortirBridge.php
 %%WWWDIR%%/bridges/OneFortuneADayBridge.php
 %%WWWDIR%%/bridges/OpenCVEBridge.php
@@ -476,7 +478,6 @@
 %%WWWDIR%%/bridges/WordPressBridge.php
 %%WWWDIR%%/bridges/WordPressMadaraBridge.php
 %%WWWDIR%%/bridges/WordPressPluginUpdateBridge.php
-%%WWWDIR%%/bridges/WorldCosplayBridge.php
 %%WWWDIR%%/bridges/WorldOfTanksBridge.php
 %%WWWDIR%%/bridges/WorldbankBridge.php
 %%WWWDIR%%/bridges/XPathBridge.php
