@@ -58,11 +58,6 @@ NLS_CONFIGURE_ENABLE=	nls
 CFLAGS+=	-fheinous-gnu-extensions
 .endif
 
-.if ${ARCH} == "powerpc" && ${COMPILER_TYPE} == "clang"
-BUILD_DEPENDS+=	as:devel/binutils
-CFLAGS+=	-fno-integrated-as
-.endif
-
 post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in doc/DETAILS doc/FAQ doc/HACKING doc/OpenPGP \
