@@ -1,0 +1,11 @@
+--- ngs/ngs-java/examples/CMakeLists.txt.orig	2024-11-18 12:32:32 UTC
++++ ngs/ngs-java/examples/CMakeLists.txt
+@@ -71,7 +71,7 @@ if ( Java_FOUND )
+ 
+         endif()
+ 
+-        set( INSTALL_DEST ${CMAKE_INSTALL_PREFIX}/share/examples-java )
++        set( INSTALL_DEST ${CMAKE_INSTALL_PREFIX}/share/examples/sra-tools/java )
+ 
+         install(FILES ${SOURCES}
+             DESTINATION ${INSTALL_DEST}/examples )
