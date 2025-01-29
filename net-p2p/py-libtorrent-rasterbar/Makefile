@@ -1,6 +1,6 @@
 PORTNAME=	libtorrent-rasterbar
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.2.19
+DISTVERSION=	1.2.20
 PORTEPOCH=	2
 CATEGORIES=	net-p2p python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,7 +13,8 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/../../COPYING
 
 BUILD_DEPENDS=	b2:devel/boost_build
-LIB_DEPENDS=	libtorrent-rasterbar.so:net-p2p/libtorrent-rasterbar \
+LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
+		libtorrent-rasterbar.so:net-p2p/libtorrent-rasterbar \
 		${PY_BOOST}
 
 USES=		compiler:c11 iconv localbase:ldflags python
@@ -38,7 +39,12 @@ CONFIGURE_ENV=	PYTHON_INCLUDEDIR="${PYTHON_INCLUDEDIR}" \
 
 PORTSCOUT=	limit:^1.* # 2.x is WIP and we don't accept it before qBittorrent does
 
-PLIST_FILES+=	${PYTHON_SITELIBDIR}/${PYDISTUTILS_PKGNAME}/__init__${PYTHON_EXT_SUFFIX}.so
+PLIST_FILES+=	${PYTHON_SITELIBDIR}/${PYDISTUTILS_PKGNAME}/__init__${PYTHON_EXT_SUFFIX}.so \
+		${PYTHON_SITELIBDIR}/libtorrent-_${DISTVERSION}_-py${PYTHON_VER}.egg-info/PKG-INFO \
+		${PYTHON_SITELIBDIR}/libtorrent-_${DISTVERSION}_-py${PYTHON_VER}.egg-info/SOURCES.txt \
+		${PYTHON_SITELIBDIR}/libtorrent-_${DISTVERSION}_-py${PYTHON_VER}.egg-info/dependency_links.txt \
+		${PYTHON_SITELIBDIR}/libtorrent-_${DISTVERSION}_-py${PYTHON_VER}.egg-info/top_level.txt
+
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/${PYDISTUTILS_PKGNAME}/__init__${PYTHON_EXT_SUFFIX}.so
 
