@@ -1,5 +1,5 @@
 PORTNAME=	aerc
-DISTVERSION=	0.20.0
+DISTVERSION=	0.20.1
 CATEGORIES=	mail
 
 MAINTAINER=	iamsleepy@ryuki.me
@@ -35,7 +35,6 @@ GH_TUPLE=	ProtonMail:go-crypto:v1.1.4:protonmail_go_crypto/vendor/github.com/Pro
 		emersion:go-smtp:v0.21.3:emersion_go_smtp/vendor/github.com/emersion/go-smtp \
 		fsnotify:fsevents:v0.2.0:fsnotify_fsevents/vendor/github.com/fsnotify/fsevents \
 		fsnotify:fsnotify:v1.8.0:fsnotify_fsnotify/vendor/github.com/fsnotify/fsnotify \
-		gatherstars-com:jwz:v1.4.0:gatherstars_com_jwz/vendor/github.com/gatherstars-com/jwz \
 		go-check:check:10cb98267c6c:go_check_check/vendor/gopkg.in/check.v1 \
 		go-ini:ini:v1.67.0:go_ini_ini/vendor/github.com/go-ini/ini \
 		go-yaml:yaml:v3.0.1:go_yaml_yaml/vendor/gopkg.in/yaml.v3 \
@@ -48,6 +47,7 @@ GH_TUPLE=	ProtonMail:go-crypto:v1.1.4:protonmail_go_crypto/vendor/github.com/Pro
 		golang:sys:v0.28.0:golang_sys/vendor/golang.org/x/sys \
 		golang:text:v0.21.0:golang_text/vendor/golang.org/x/text \
 		golang:tools:v0.24.0:golang_tools/vendor/golang.org/x/tools \
+		konimarti:jwz:81c07e9284c3:konimarti_jwz/vendor/github.com/gatherstars-com/jwz \
 		kr:pretty:v0.3.0:kr_pretty/vendor/github.com/kr/pretty \
 		lithammer:fuzzysearch:v1.1.8:lithammer_fuzzysearch/vendor/github.com/lithammer/fuzzysearch \
 		mattn:go-isatty:v0.0.20:mattn_go_isatty/vendor/github.com/mattn/go-isatty \
