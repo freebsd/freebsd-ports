@@ -10,8 +10,10 @@ LLVM_COMMANDS=	\
 		llvm-bitcode-strip \
 		llvm-cat \
 		llvm-cfi-verify \
+		llvm-cgdata \
 		llvm-config \
 		llvm-cov \
+		llvm-ctxprof-util \
 		llvm-cvtres \
 		llvm-cxxmap \
 		llvm-debuginfo-analyzer \
@@ -83,6 +85,7 @@ CLANG_COMMANDS=	\
 		clang-offload-packager \
 		clang-repl \
 		clang-scan-deps \
+		clang-sycl-linker \
 		clang-tblgen \
 		diagtool \
 		hmaptool \
@@ -102,9 +105,7 @@ EXTRAS_COMMANDS= \
 		clang-installapi \
 		clang-move \
 		clang-nvlink-wrapper \
-		clang-pseudo \
 		clang-query \
-		clang-rename \
 		clang-reorder-fields \
 		clang-tidy \
 		find-all-symbols \
@@ -114,8 +115,9 @@ EXTRAS_COMMANDS= \
 FLANG_COMMANDS=	\
 		bbc \
 		f18-parse-demo \
+		fir-lsp-server \
 		fir-opt \
-		flang-new \
+		flang \
 		tco
 
 LIT_COMMANDS=	\
@@ -139,7 +141,6 @@ LLDB_COMMANDS=	\
 
 MLIR_COMMANDS=	\
 		mlir-cat \
-		mlir-cpu-runner \
 		mlir-lsp-server \
 		mlir-minimal-opt \
 		mlir-minimal-opt-canonicalize \
@@ -148,6 +149,8 @@ MLIR_COMMANDS=	\
 		mlir-pdll-lsp-server \
 		mlir-query \
 		mlir-reduce \
+		mlir-rewrite \
+		mlir-runner \
 		mlir-tblgen \
 		mlir-transform-opt \
 		mlir-translate \

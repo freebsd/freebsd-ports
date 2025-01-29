@@ -1,6 +1,6 @@
 PORTNAME=	llvm
-DISTVERSION=	19.1.7
-PORTREVISION=	1
+DISTVERSION=	20.1.0-rc1
+PORTREVISION=	0
 CATEGORIES=	devel lang
 MASTER_SITES=	https://github.com/llvm/llvm-project/releases/download/llvmorg-${DISTVERSION}/
 #MASTER_SITES=	https://github.com/llvm/llvm-project/releases/download/llvmorg-${DISTVERSION:S/rc/-rc/}/
@@ -155,7 +155,9 @@ CLANG_USES=		perl5
 CLANG_USE=		PERL5=build
 .endif
 COMPILER_RT_DESC=	Sanitizer libraries
-COMPILER_RT_CMAKE_ON=	-DCOMPILER_RT_INSTALL_PATH=${LLVM_PREFIX}/lib/clang/${LLVM_RELEASE}
+COMPILER_RT_CMAKE_ON=	\
+	-DCOMPILER_RT_INSTALL_PATH=${LLVM_PREFIX}/lib/clang/${LLVM_RELEASE} \
+	-DCOMPILER_RT_DEFAULT_TARGET_ONLY=On
 COMPILER_RT_PLIST_FILES=${_COMPILER_RT_LIBS}
 COMPILER_RT_CONFLICTS_BUILD=${ARCH}-binutils
 DOCS_BUILD_DEPENDS= \
@@ -205,7 +207,6 @@ OPENMP_CMAKE_ON= \
 	-DLIBOMPTARGET_BUILD_DEVICERTL_BCLIB=OFF \
 	-DLIBOMPTARGET_DEP_LIBFFI_INCLUDE_DIR="" \
 	-DLIBOMPTARGET_DEP_LIBFFI_LIBRARIES=""
-OPENMP_PORTDOCS=	openmp
 PYCLANG_DESC=		Install python bindings to libclang
 PYCLANG_IMPLIES=	CLANG
 PYCLANG_VARS=		_USES_PYTHON=python
@@ -291,7 +292,7 @@ USES+=		gnome
 .endif
 
 .if ${PORT_OPTIONS:MCOMPILER_RT}
-LLVM_ENABLE_PROJECTS+=	compiler-rt
+LLVM_ENABLE_RUNTIMES+=	compiler-rt
 COMPILER_RT_PATTERN=	(sanitizer|include.xray|include\/(fuzzer|orc)|profile\/InstrProfData.inc|profile\/instr_prof_interface.h)
 .endif
 
@@ -330,7 +331,7 @@ COMMANDS+=	${MLIR_COMMANDS}
 .endif
 
 .if ${PORT_OPTIONS:MOPENMP}
-LLVM_ENABLE_PROJECTS+=	openmp
+LLVM_ENABLE_RUNTIMES+=	openmp
 USE_LDCONFIG+=	${LLVM_PREFIX}/lib/${CONFIGURE_TARGET}
 MAN1SRCS+=	${OPENMP_MAN1SRCS}
 COMMANDS+=	${OPENMP_COMMANDS}
@@ -349,6 +350,9 @@ PYCLANG_PATTERN=	(clang\/(__init__|cindex|enumerations).py)$$
 
 .if defined(LLVM_ENABLE_PROJECTS)
 CMAKE_ARGS+=	-DLLVM_ENABLE_PROJECTS="${LLVM_ENABLE_PROJECTS:ts;}"
+.endif
+.if defined(LLVM_ENABLE_RUNTIMES)
+CMAKE_ARGS+=	-DLLVM_ENABLE_RUNTIMES="${LLVM_ENABLE_RUNTIMES:ts;}"
 .endif
 
 .include <bsd.port.pre.mk>
@@ -406,6 +410,7 @@ _BE_LIBS_BACKWARDS_PowerPC=Exegesis
 _BE_MODS_PowerPC=	__ppc_intrinsics.mod mma.mod
 _BE_INCS_RISCV=		riscv_vector.h
 _BE_LIBS_RISCV=		AsmParser Disassembler TargetMCA
+_BE_LIBS_BACKWARDS_RISCV=Exegesis
 _BE_LIBS_Sparc=		AsmParser Disassembler
 _BE_LIBS_SystemZ=	AsmParser Disassembler
 _BE_LIBS_VE=		AsmParser Disassembler
@@ -435,18 +440,18 @@ BE_${BE}_PLIST_FILES+= \
 COMPILER_RT_ARCHS=	aarch64
 .elif ${ARCH} == "amd64"
 COMPILER_RT_ARCHS=	x86_64
-.if exists(/usr/lib32/libc.so.7)
-COMPILER_RT_ARCHS+=	i386
-.endif
+#.if exists(/usr/lib32/libc.so.7)
+#COMPILER_RT_ARCHS+=	i386
+#.endif
 .elif ${ARCH} == "i386"
 COMPILER_RT_ARCHS=	i386
 .elif ${ARCH} == "powerpc"
 COMPILER_RT_ARCHS=	powerpc
 .elif ${ARCH} == "powerpc64"
 COMPILER_RT_ARCHS=	powerpc64
-.if exists(/usr/lib32/libc.so.7)
-COMPILER_RT_ARCHS+=	powerpc
-.endif
+#.if exists(/usr/lib32/libc.so.7)
+#COMPILER_RT_ARCHS+=	powerpc
+#.endif
 .elif ${ARCH} == "powerpc64le"
 COMPILER_RT_ARCHS=	powerpc64le
 .elif ${ARCH} == "riscv64"
@@ -559,6 +564,7 @@ post-install-CLANG-on:
 	    ${STAGEDIR}${PREFIX}/share/toolchains/llvm${LLVM_SUFFIX}.mk
 	${RMDIR} ${STAGEDIR}${LLVM_PREFIX}/include/clang/Basic/Target/MSP430/
 	${RMDIR} ${STAGEDIR}${LLVM_PREFIX}/include/clang/Basic/Target/
+	${RMDIR} ${STAGEDIR}${LLVM_PREFIX}/include/clang/CIRFrontendAction
 
 post-install-EXTRAS-on:
 	${RMDIR} ${STAGEDIR}${LLVM_PREFIX}/include/clang-tidy/misc/ConfusableTable
@@ -569,6 +575,7 @@ post-install-FLANG-on:
 	${RMDIR} ${STAGEDIR}${LLVM_PREFIX}/include/flang/Optimizer/Dialect/CUF/Attributes/CMakeFiles
 	${RMDIR} ${STAGEDIR}${LLVM_PREFIX}/include/flang/Optimizer/Dialect/CUF/CMakeFiles
 	${RMDIR} ${STAGEDIR}${LLVM_PREFIX}/include/flang/Optimizer/HLFIR/CMakeFiles
+	${RMDIR} ${STAGEDIR}${LLVM_PREFIX}/include/flang/Optimizer/OpenMP/CMakeFiles
 	${RMDIR} ${STAGEDIR}${LLVM_PREFIX}/include/flang/Optimizer/Transforms/CMakeFiles
 	${RMDIR} ${STAGEDIR}${LLVM_PREFIX}/include/flang/Optimizer/CMakeFiles
 	${RMDIR} ${STAGEDIR}${LLVM_PREFIX}/include/flang/CMakeFiles
