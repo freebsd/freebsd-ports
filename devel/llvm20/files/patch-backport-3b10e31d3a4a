@@ -1,0 +1,107 @@
+commit 3b10e31d3a4a1c660c82287d3b9f6515f37a32ca
+Author: hitmoon <zxq_yx_007@163.com>
+Date:   Fri Dec 13 10:34:53 2024 +0800
+
+    [clang][LoongArch] Add FreeBSD targets (#119191)
+    
+    Add support for freebsd on loongarch
+    
+    Signed-off-by: xiaoqiang zhao <zxq_yx_007@163.com>
+    Co-authored-by: yu shan wei <mpysw@vip.163.com>
+
+diff --git clang/lib/Basic/Targets.cpp clang/lib/Basic/Targets.cpp
+index 0021d33c45d7..706a391023b3 100644
+--- clang/lib/Basic/Targets.cpp
++++ clang/lib/Basic/Targets.cpp
+@@ -726,6 +726,9 @@ std::unique_ptr<TargetInfo> AllocateTarget(const llvm::Triple &Triple,
+     case llvm::Triple::Linux:
+         return std::make_unique<LinuxTargetInfo<LoongArch32TargetInfo>>(Triple,
+                                                                         Opts);
++    case llvm::Triple::FreeBSD:
++      return std::make_unique<FreeBSDTargetInfo<LoongArch32TargetInfo>>(Triple,
++                                                                        Opts);
+     default:
+         return std::make_unique<LoongArch32TargetInfo>(Triple, Opts);
+     }
+@@ -734,6 +737,9 @@ std::unique_ptr<TargetInfo> AllocateTarget(const llvm::Triple &Triple,
+     case llvm::Triple::Linux:
+         return std::make_unique<LinuxTargetInfo<LoongArch64TargetInfo>>(Triple,
+                                                                         Opts);
++    case llvm::Triple::FreeBSD:
++      return std::make_unique<FreeBSDTargetInfo<LoongArch64TargetInfo>>(Triple,
++                                                                        Opts);
+     default:
+         return std::make_unique<LoongArch64TargetInfo>(Triple, Opts);
+     }
+diff --git clang/lib/Basic/Targets/OSTargets.h clang/lib/Basic/Targets/OSTargets.h
+index c0351f26e9be..cd9b3760ca58 100644
+--- clang/lib/Basic/Targets/OSTargets.h
++++ clang/lib/Basic/Targets/OSTargets.h
+@@ -231,6 +231,9 @@ public:
+     case llvm::Triple::riscv32:
+     case llvm::Triple::riscv64:
+       break;
++    case llvm::Triple::loongarch32:
++    case llvm::Triple::loongarch64:
++      break;
+     }
+   }
+ };
+diff --git clang/lib/Driver/ToolChains/FreeBSD.cpp clang/lib/Driver/ToolChains/FreeBSD.cpp
+index c78f4e26a2f1..678efefb1afc 100644
+--- clang/lib/Driver/ToolChains/FreeBSD.cpp
++++ clang/lib/Driver/ToolChains/FreeBSD.cpp
+@@ -213,6 +213,14 @@ void freebsd::Linker::ConstructJob(Compilation &C, const JobAction &JA,
+     CmdArgs.push_back("-m");
+     CmdArgs.push_back("elf64lriscv");
+     break;
++  case llvm::Triple::loongarch32:
++    CmdArgs.push_back("-m");
++    CmdArgs.push_back("elf32loongarch");
++    break;
++  case llvm::Triple::loongarch64:
++    CmdArgs.push_back("-m");
++    CmdArgs.push_back("elf64loongarch");
++    break;
+   default:
+     break;
+   }
+@@ -223,6 +231,12 @@ void freebsd::Linker::ConstructJob(Compilation &C, const JobAction &JA,
+       CmdArgs.push_back("--no-relax");
+   }
+ 
++  if (Triple.isLoongArch64()) {
++    CmdArgs.push_back("-X");
++    if (Args.hasArg(options::OPT_mno_relax))
++      CmdArgs.push_back("--no-relax");
++  }
++
+   if (Arg *A = Args.getLastArg(options::OPT_G)) {
+     if (ToolChain.getTriple().isMIPS()) {
+       StringRef v = A->getValue();
+diff --git clang/test/Driver/freebsd.c clang/test/Driver/freebsd.c
+index 10fe155fee87..a0787bab4feb 100644
+--- clang/test/Driver/freebsd.c
++++ clang/test/Driver/freebsd.c
+@@ -77,6 +77,21 @@
+ // RUN:   | FileCheck --check-prefix=CHECK-RV64I-LD %s
+ // CHECK-RV64I-LD: ld{{.*}}" {{.*}} "-m" "elf64lriscv"
+ //
++// Check that LoongArch passes the correct linker emulation.
++//
++// RUN: %clang --target=loongarch32-freebsd -### %s %s 2>&1 \
++// RUN:   | FileCheck --check-prefix=CHECK-LA32-LD %s
++// CHECK-LA32-LD: ld{{.*}}" {{.*}} "-m" "elf32loongarch"
++// RUN: %clang --target=loongarch64-freebsd -### %s %s 2>&1 \
++// RUN:   | FileCheck --check-prefix=CHECK-LA64-LD %s
++// CHECK-LA64-LD: ld{{.*}}" {{.*}} "-m" "elf64loongarch"
++//
++// Check options passed to the linker on LoongArch
++//
++// RUN: %clang --target=loongarch64-freebsd -mno-relax -### %s %s 2>&1 \
++// RUN:   | FileCheck --check-prefix=CHECK-LA64-LD-OPTS %s
++// CHECK-LA64-LD-OPTS: ld{{.*}}" {{.*}} "-X" "--no-relax"
++//
+ // Check that the new linker flags are passed to FreeBSD
+ // RUN: %clang --target=x86_64-pc-freebsd10.0 -m32 %s \
+ // RUN:   --sysroot=%S/Inputs/multiarch_freebsd64_tree -### 2>&1 \
