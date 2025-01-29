@@ -1,14 +1,13 @@
 PORTNAME=	yatex
-PORTVERSION=	1.82
-PORTREVISION=	11
+DISTVERSION=	1.83
 CATEGORIES?=	print elisp
-MASTER_SITES=	http://www.yatex.org/
+MASTER_SITES=	https://www.yatex.org/
 PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
-DISTNAME=	${PORTNAME}${PORTVERSION}
+DISTNAME=	${PORTNAME}${DISTVERSION}
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Yet Another LaTeX mode and html mode on Emacs
-WWW=		http://www.yatex.org/
+WWW=		https://www.yatex.org/
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKDIR}/LICENSE
@@ -17,16 +16,18 @@ USES=		dos2unix emacs
 
 EMACS_NO_DEPENDS=	yes
 
+NO_ARCH=	yes
 NO_BUILD=	yes
 SUB_FILES=	pkg-message yatex-startup.el
 SUB_LIST=	EMACS_SITE_LISPDIR="${EMACS_SITE_LISPDIR}"
 
-OPTIONS_DEFINE=	DOCS
+INFO=		yahtmle yahtmlj yatexe yatexj
 
 PORTDOCS=	00readme readme.meadow.j yatex.new yatexj.tex yatex.ref	\
 		yahtmlj.tex htmlqa yatexadd.doc yatexgen.doc qanda \
 		yatexe.tex htmlqa.eng yahtmle.tex yatexref.eng qanda.eng
-INFO=		yahtmle yahtmlj yatexe yatexj
+
+OPTIONS_DEFINE=	DOCS
 
 ELFILES=yahtml.el yatex.el yatex19.el yatex23.el yatexadd.el		\
 	yatexenv.el yatexflt.el yatexgen.el yatexhie.el yatexhks.el	\
