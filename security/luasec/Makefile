@@ -4,7 +4,7 @@ DISTVERSIONPREFIX=	v
 CATEGORIES=	security
 PKGNAMEPREFIX=	${LUA_PKGNAMEPREFIX}
 
-MAINTAINER=	thomas@beingboiled.info
+MAINTAINER=	twm@pdp11.pw
 COMMENT=	Lua binding for the OpenSSL library to provide TLS/SSL communication
 WWW=		https://github.com/brunoos/luasec
 
