@@ -1,3 +1,31 @@
+  <vuln vid="258a58a9-6583-4808-986b-e785c27b0a18">
+    <topic>oauth2-proxy -- Non-linear parsing of case-insensitive content</topic>
+    <affects>
+      <package>
+        <name>oauth2-proxy</name>
+        <range><lt>7.8.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>Golang reports:</p>
+        <blockquote cite="https://github.com/advisories/GHSA-w32m-9786-jp63">
+          <p>This update include security fixes:</p>
+          <ul>
+            <li>CVE-2024-45338: Non-linear parsing of case-insensitive content</li>
+          </ul>
+        </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2024-45338</cvename>
+    </references>
+    <dates>
+      <discovery>2025-01-14</discovery>
+      <entry>2025-01-30</entry>
+     </dates>
+  </vuln>
+
   <vuln vid="41711c0d-db27-11ef-873e-8447094a420f">
     <topic>Vaultwarden -- Muiltiple vulnerabilities</topic>
     <affects>
