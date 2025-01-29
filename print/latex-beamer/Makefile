@@ -1,15 +1,16 @@
 PORTNAME=	latex-beamer
-PORTVERSION=	3.57
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
+DISTVERSION=	3.71
 CATEGORIES=	print
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	LaTeX class to create a beamer presentation
-WWW=		https://github.com/josephwright/beamer
+WWW=		https://github.com/josephwright/beamer/
 
-LICENSE=	GPLv2 LPPL13c
-LICENSE_COMB=	dual
+LICENSE=		GPLv2 LPPL13c
+LICENSE_COMB=		dual
+LICENSE_FILE_GPLv2=	${WRKSRC}/doc/licenses/gpl-2.0.txt
+LICENSE_FILE_LPPL13c=	${WRKSRC}/doc/licenses/lppl-1-3c.txt
 
 USES=	tex
 USE_GITHUB=	yes
