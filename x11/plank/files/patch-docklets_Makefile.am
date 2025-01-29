@@ -1,0 +1,12 @@
+--- docklets/Makefile.am.orig	2025-01-08 03:02:39 UTC
++++ docklets/Makefile.am
+@@ -1,9 +1,7 @@ SUBDIRS = \
+ SUBDIRS = \
+ 	Applications \
+-	Battery \
+ 	Clippy \
+ 	Clock \
+-	CPUMonitor \
+ 	Desktop \
+ 	Trash \
+ 	$(NULL)

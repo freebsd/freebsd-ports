@@ -4,7 +4,6 @@ lib/libplank.so
 lib/libplank.so.1
 lib/libplank.so.1.0.0
 lib/plank/docklets/libdocklet-applications.so
-lib/plank/docklets/libdocklet-battery.so
 lib/plank/docklets/libdocklet-clippy.so
 lib/plank/docklets/libdocklet-clock.so
 lib/plank/docklets/libdocklet-desktop.so
@@ -22,9 +21,11 @@ share/icons/hicolor/48x48/apps/plank.svg
 share/icons/hicolor/64x64/apps/plank.svg
 %%NLS%%share/locale/am/LC_MESSAGES/plank.mo
 %%NLS%%share/locale/ar/LC_MESSAGES/plank.mo
+%%NLS%%share/locale/be/LC_MESSAGES/plank.mo
 %%NLS%%share/locale/bg/LC_MESSAGES/plank.mo
 %%NLS%%share/locale/bs/LC_MESSAGES/plank.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/plank.mo
+%%NLS%%share/locale/ckb/LC_MESSAGES/plank.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/plank.mo
 %%NLS%%share/locale/da/LC_MESSAGES/plank.mo
 %%NLS%%share/locale/de/LC_MESSAGES/plank.mo
@@ -48,6 +49,7 @@ share/icons/hicolor/64x64/apps/plank.svg
 %%NLS%%share/locale/it/LC_MESSAGES/plank.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/plank.mo
 %%NLS%%share/locale/ka/LC_MESSAGES/plank.mo
+%%NLS%%share/locale/kab/LC_MESSAGES/plank.mo
 %%NLS%%share/locale/ko/LC_MESSAGES/plank.mo
 %%NLS%%share/locale/lt/LC_MESSAGES/plank.mo
 %%NLS%%share/locale/lv/LC_MESSAGES/plank.mo
@@ -69,6 +71,7 @@ share/icons/hicolor/64x64/apps/plank.svg
 %%NLS%%share/locale/sr/LC_MESSAGES/plank.mo
 %%NLS%%share/locale/sr@latin/LC_MESSAGES/plank.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/plank.mo
+%%NLS%%share/locale/szl/LC_MESSAGES/plank.mo
 %%NLS%%share/locale/ta/LC_MESSAGES/plank.mo
 %%NLS%%share/locale/te/LC_MESSAGES/plank.mo
 %%NLS%%share/locale/th/LC_MESSAGES/plank.mo
