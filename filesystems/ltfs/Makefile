@@ -12,11 +12,10 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libicudata.so:devel/icu \
-		libpkg.so:${PKG_ORIGIN} \
 		libuuid.so:misc/e2fsprogs-libuuid
 
 USES=		autoreconf compiler:c11 fuse gnome libtool:build pkgconfig \
-		python shebangfix ssl
+		python shebangfix
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	LinearTapeFileSystem
@@ -25,7 +24,7 @@ USE_LDCONFIG=	yes
 
 SHEBANG_FILES=	src/utils/ltfs_ordered_copy
 
-GNU_CONFIGURE=	yes
+GNU_CONFIGURE=			yes
 GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
 CONFIGURE_ARGS+=	--enable-icu-6x
