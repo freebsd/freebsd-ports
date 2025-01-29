@@ -1,8 +1,13 @@
 PORTNAME=	flightgear
 PORTVERSION=	2020.3.19
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games
 MASTER_SITES=	SF/flightgear/release-${PORTVERSION:R}
+
+# Fix for CVE-2025-0781
+# See: https://gitlab.com/frougon/flightgear-flightgear/-/commits/2020.3.6-minimal-fix-for-CVE-2025-0781
+PATCH_SITES=	https://gitlab.com/frougon/flightgear-${PORTNAME}/-/commit/
+PATCHFILES+=	cf99dc921aadab502ff90a1dd943d8bbb897de91.patch:-p1
 
 MAINTAINER=	martymac@FreeBSD.org
 COMMENT=	FlightGear flight simulator
