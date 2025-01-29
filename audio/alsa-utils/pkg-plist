@@ -8,8 +8,10 @@ bin/amidi
 bin/amixer
 bin/aplay
 bin/aplaymidi
+bin/aplaymidi2
 bin/arecord
 bin/arecordmidi
+bin/arecordmidi2
 bin/aseqdump
 bin/aseqsend
 bin/aseqnet
@@ -32,8 +34,10 @@ lib/udev/90-alsa-restore.rules
 %%MANPAGES%%share/man/man1/amixer.1.gz
 %%MANPAGES%%share/man/man1/aplay.1.gz
 %%MANPAGES%%share/man/man1/aplaymidi.1.gz
+%%MANPAGES%%share/man/man1/aplaymidi2.1.gz
 %%MANPAGES%%share/man/man1/arecord.1.gz
 %%MANPAGES%%share/man/man1/arecordmidi.1.gz
+%%MANPAGES%%share/man/man1/arecordmidi2.1.gz
 %%MANPAGES%%share/man/man1/aseqdump.1.gz
 %%MANPAGES%%share/man/man1/aseqsend.1.gz
 %%MANPAGES%%share/man/man1/aseqnet.1.gz
