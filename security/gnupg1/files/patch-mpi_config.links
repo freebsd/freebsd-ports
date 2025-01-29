@@ -1,4 +1,4 @@
---- mpi/config.links.orig	2015-12-19 14:08:22 UTC
+--- mpi/config.links.orig	2016-04-22 07:30:18 UTC
 +++ mpi/config.links
 @@ -40,7 +40,7 @@ case "${host}" in
         ;;
@@ -22,7 +22,7 @@
      sparc9*-*-*     | \
      ultrasparc*-*-* )
  	echo '/* configured for sparc9 or higher */' >>./mpi/asm-syntax.h
-@@ -230,8 +236,8 @@ case "${host}" in
+@@ -230,11 +236,10 @@ case "${host}" in
  	path="powerpc32"
  	;;
  
@@ -32,4 +32,7 @@
 +       echo '/* configured for {Free,Open,Net}BSD on powerpc */' >>./mpi/asm-syntax.h
         echo '#define ELF_SYNTAX'                 >>./mpi/asm-syntax.h
         cat   $srcdir/mpi/powerpc32/syntax.h	 >>./mpi/asm-syntax.h
-        mpi_sflags="-Wa,-mppc"
+-       mpi_sflags="-Wa,-mppc"
+        path="powerpc32"
+        ;;
+ 
