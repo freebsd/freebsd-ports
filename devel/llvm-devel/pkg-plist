@@ -1859,6 +1859,7 @@ llvm-devel/bin/verify-uselistorder
 %%FLANG%%llvm-devel/include/flang/Runtime/CUDA/allocator.h
 %%FLANG%%llvm-devel/include/flang/Runtime/CUDA/common.h
 %%FLANG%%llvm-devel/include/flang/Runtime/CUDA/descriptor.h
+%%FLANG%%llvm-devel/include/flang/Runtime/CUDA/init.h
 %%FLANG%%llvm-devel/include/flang/Runtime/CUDA/kernel.h
 %%FLANG%%llvm-devel/include/flang/Runtime/CUDA/memmove-function.h
 %%FLANG%%llvm-devel/include/flang/Runtime/CUDA/memory.h
@@ -2718,6 +2719,7 @@ llvm-devel/include/llvm/Analysis/InstructionPrecedenceTracking.h
 llvm-devel/include/llvm/Analysis/InstructionSimplify.h
 llvm-devel/include/llvm/Analysis/InteractiveModelRunner.h
 llvm-devel/include/llvm/Analysis/IteratedDominanceFrontier.h
+llvm-devel/include/llvm/Analysis/KernelInfo.h
 llvm-devel/include/llvm/Analysis/LastRunTrackingAnalysis.h
 llvm-devel/include/llvm/Analysis/LazyBlockFrequencyInfo.h
 llvm-devel/include/llvm/Analysis/LazyBranchProbabilityInfo.h
@@ -4755,7 +4757,6 @@ llvm-devel/include/llvm/XRay/YAMLXRayRecord.h
 %%MLIR%%llvm-devel/include/mlir/Conversion/ConvertToLLVM/ToLLVMOpInterface.cpp.inc
 %%MLIR%%llvm-devel/include/mlir/Conversion/ConvertToLLVM/ToLLVMOpInterface.h.inc
 %%MLIR%%llvm-devel/include/mlir/Conversion/ConvertToLLVM/ToLLVMPass.h
-%%MLIR%%llvm-devel/include/mlir/Conversion/ConvertToSPIRV/ConvertToSPIRVPass.h
 %%MLIR%%llvm-devel/include/mlir/Conversion/FuncToEmitC/FuncToEmitC.h
 %%MLIR%%llvm-devel/include/mlir/Conversion/FuncToEmitC/FuncToEmitCPass.h
 %%MLIR%%llvm-devel/include/mlir/Conversion/FuncToLLVM/ConvertFuncToLLVM.h
@@ -7118,7 +7119,6 @@ llvm-devel/lib/libLTO.so.%%LLVM_MAJOR_MINOR%%git
 %%STATIC_LIBS%%%%MLIR%%llvm-devel/lib/libMLIRControlFlowTransforms.a
 %%STATIC_LIBS%%%%MLIR%%llvm-devel/lib/libMLIRConvertToLLVMInterface.a
 %%STATIC_LIBS%%%%MLIR%%llvm-devel/lib/libMLIRConvertToLLVMPass.a
-%%STATIC_LIBS%%%%MLIR%%llvm-devel/lib/libMLIRConvertToSPIRVPass.a
 %%STATIC_LIBS%%%%MLIR%%llvm-devel/lib/libMLIRCopyOpInterface.a
 %%STATIC_LIBS%%%%MLIR%%llvm-devel/lib/libMLIRDLTIDialect.a
 %%STATIC_LIBS%%%%MLIR%%llvm-devel/lib/libMLIRDLTITestPasses.a
