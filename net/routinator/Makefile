@@ -1,7 +1,6 @@
 PORTNAME=	routinator
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.14.0
-PORTREVISION=	6
+DISTVERSION=	0.14.1
 CATEGORIES=	net
 
 MAINTAINER=	jaap@NLnetLabs.nl
@@ -30,14 +29,8 @@ SUB_LIST+=	GROUPS=${GROUPS} \
 USERS=		${PORTNAME}
 GROUPS=		${PORTNAME}
 
-ROUTINATOR_UI_VERSION=	0.3.4
+ROUTINATOR_UI_VERSION=	0.4.3
 ROUTINATOR_UI_URL=	https://github.com/NLnetLabs/routinator-ui/releases/download/
-
-OPTIONS_DEFINE=	ASPA
-OPTIONS_SUB=	yes
-
-ASPA_DESC=	(Experimental) enable aspa support
-ASPA_VARS=	CARGO_FEATURES+=aspa
 
 .include <bsd.port.options.mk>
 
