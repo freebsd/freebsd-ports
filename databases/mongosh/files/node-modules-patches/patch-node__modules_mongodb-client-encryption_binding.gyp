@@ -1,35 +1,15 @@
---- node_modules/mongodb-client-encryption/binding.gyp.orig	2024-05-13 14:10:24 UTC
+--- node_modules/mongodb-client-encryption/binding.gyp.orig	2024-11-15 19:23:54 UTC
 +++ node_modules/mongodb-client-encryption/binding.gyp
-@@ -38,9 +38,14 @@
+@@ -42,7 +42,11 @@
            }
        }],
-       ['build_type=="dynamic"', {
-+        'defines': [ 'NODE_API_EXPERIMENTAL_NOGC_ENV_OPT_OUT' ],
+       ['libmongocrypt_link_type=="dynamic"', {
+-        'link_settings': { 'libraries': ['-lmongocrypt'] }
 +        'include_dirs': [
 +          '/usr/include',
 +          '/usr/local/include'
 +        ],
-         'link_settings': {
-           'libraries': [
--            '-lmongocrypt'
-+            '-L/usr/local/lib -lmongocrypt'
-           ]
-         }
++        'link_settings': { 'libraries': ['-L/usr/local/lib -lmongocrypt'] }
        }],
-@@ -48,13 +53,12 @@
+       ['libmongocrypt_link_type=="static"', {
          'conditions': [
-           ['OS!="win"', {
-             'include_dirs': [
--              '<(module_root_dir)/deps/include'
-+              '/usr/include',
-+              '/usr/local/include'
-             ],
-             'link_settings': {
-               'libraries': [
--                '<(module_root_dir)/deps/lib/libmongocrypt-static.a',
--                '<(module_root_dir)/deps/lib/libkms_message-static.a',
--                '<(module_root_dir)/deps/lib/libbson-static-for-libmongocrypt.a'
-+                '-L/usr/local/lib -lmongocrypt'
-               ]
-             }
-           }],

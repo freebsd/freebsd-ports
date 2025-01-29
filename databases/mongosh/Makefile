@@ -1,6 +1,6 @@
 PORTNAME=	mongosh
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.2.5
+DISTVERSION=	2.3.8
 CATEGORIES=	databases shells net
 MASTER_SITES=	https://registry.npmjs.org/mongodb-client-encryption/-/:mongocrypt \
 		https://registry.npmjs.org/kerberos/-/:kerberos \
@@ -10,7 +10,7 @@ MASTER_SITES=	https://registry.npmjs.org/mongodb-client-encryption/-/:mongocrypt
 DISTFILES=	mongodb-client-encryption-${MONGO_CRYPT_VER}.tgz:mongocrypt \
 		kerberos-${KERBEROS_VER}.tgz:kerberos \
 		os-dns-native-${OSDNSNATIVE_VER}.tgz:dns \
-		${NODE_MODULES_TARBALL}:modules \
+		${NODE_MODULES_TARBALL}:modules
 #		${NODEJS_TARBALL}:node \
 #		SHASUMS256.txt:node
 DIST_SUBDIR=	${PORTNAME}
@@ -22,33 +22,31 @@ WWW=		https://github.com/mongodb-js/mongosh/
 
 LICENSE=	APACHE20
 
-BROKEN_aarch64=	fails to compile: nx/src/native/index.js:147 Error: Unsupported architecture on FreeBSD: arm64
-BROKEN_armv7=	fails to compile: nx/src/native/index.js:147 Error: Unsupported architecture on FreeBSD: arm
-BROKEN_i386=	fails to compile: nx/src/native/index.js:147 Error: Unsupported architecture on FreeBSD: ia32
-BROKEN_FreeBSD_15=	clang19?, string:820:42: error: implicit instantiation of undefined template 'std::char_traits<unsigned short>'
+ONLY_FOR_ARCHS=	amd64
+# issue created upstream https://github.com/nrwl/nx/issues/29257
 
-FETCH_DEPENDS=	npm${NODEJS_SUFFIX}>0:www/npm${NODEJS_SUFFIX}
-BUILD_DEPENDS=	bash>0:shells/bash \
-		brotli>=1.0.9,1:archivers/brotli \
+PATCH_DEPENDS=	npm${NODEJS_SUFFIX}>0:www/npm${NODEJS_SUFFIX}
+BUILD_DEPENDS=	brotli>=1.0.9,1:archivers/brotli \
 		c-ares>=1.17.2:dns/c-ares \
 		libnghttp2>=1.45.1:www/libnghttp2 \
 		libuv>=1.42.0:devel/libuv \
 		objdump:devel/binutils \
+		bash>0:shells/bash \
 		git>0:devel/git
-LIB_DEPENDS=	libmongocrypt.so:databases/libmongocrypt \
-		libbrotlidec.so:archivers/brotli \
+LIB_DEPENDS=	libbrotlidec.so:archivers/brotli \
 		libcares.so:dns/c-ares \
 		libnghttp2.so:www/libnghttp2 \
-		libuv.so:devel/libuv
+		libuv.so:devel/libuv \
+		libmongocrypt.so:databases/libmongocrypt
 RUN_DEPENDS=	ca_root_nss>=0:security/ca_root_nss
 
-USES=		compiler:c++11-lib gmake gssapi:mit localbase pkgconfig nodejs:20,build python:build ssl
+USES=		compiler:c++11-lib gmake gssapi:mit localbase nodejs:lts,build pkgconfig python:build ssl tar:xz
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	VultureProject
 GH_PROJECT=	mongosh
 
-CUSTOM_ENV=	SEGMENT_API_KEY=dummy BUILD_TYPE=dynamic
+CUSTOM_ENV=	SEGMENT_API_KEY=dummy GYP_DEFINES="libmongocrypt_link_type=dynamic"
 CONFIGURE_ENV=	${CUSTOM_ENV}
 MAKE_ENV=	${CUSTOM_ENV} \
 		NODE_JS_VERSION=file://${_DISTDIR}/${NODEJS_TARBALL} \
@@ -60,11 +58,11 @@ REINPLACE_ARGS=	-i ''
 
 MPROTECT_DISABLE=	bin/mongosh
 
-MONGO_CRYPT_VER=6.0.0
+MONGO_CRYPT_VER=6.1.0
 KERBEROS_VER=	2.1.0
-OSDNSNATIVE_VER=1.2.0
+OSDNSNATIVE_VER=1.2.1
 NODE_MODULES_DIR=	${WRKSRC}/node_modules
-NODE_MODULES_TARBALL=	${PORTNAME}-${DISTVERSIONFULL}-node-modules.tar.xz
+NODE_MODULES_TARBALL=	${PORTNAME}-${DISTVERSIONFULL}-${ARCH}-node-modules.tar.xz
 NPM_CACHE_DIR=	/tmp/.npm
 NODEJS_TARBALL=	node-v${NODEJS_PORTVERSION}.tar.gz
 
@@ -77,7 +75,7 @@ post-fetch:
 
 post-extract:
 .if !exists(${NODE_MODULES_DIR})
-	${TAR} -xzf /${_DISTDIR}/${NODE_MODULES_TARBALL} -C ${WRKSRC}
+	${TAR} -xzf ${_DISTDIR}/${NODE_MODULES_TARBALL} -C ${WRKSRC}
 	${REINPLACE_CMD} -e "s/'make'/'gmake'/g" \
 		-e "s/'V='/'V=0'/g" \
 		-e 's/(await (0, nv_1.default)(range)).pop()/{"version": "${NODEJS_PORTVERSION}"}/g' \
@@ -106,6 +104,7 @@ do-build:
 	cd ${NODE_MODULES_DIR}/${module} && ${MAKE_ENV} ${MAKE_CMD} BUILDTYPE=Release -C build -d
 .endfor
 	${REINPLACE_CMD} 's/"version": "0.0.0-dev.0"/"version": "${DISTVERSION}"/g' ${WRKSRC}/packages/cli-repl/package.json
+	${RM} ${WRKSRC}/scripts/nodejs-patches/005-windows-escape-product-dir-abs-in-openssl-node-56111.patch
 	cd ${WRKSRC} && ${MAKE_ENV} ${LOCALBASE}/bin/npm run compile-exec
 
 do-install:
@@ -128,23 +127,22 @@ npm-pkg-list: extract
 		> ${FILESDIR}/npm-pkg-${module}.list
 .endfor
 
-node-modules-archive: build
-	${RM} -R ${NODE_MODULES_DIR}
+node-modules-archive: patch
+	cd ${WRKSRC} && ${LOCALBASE}/bin/npx cross-env PUPPETEER_SKIP_DOWNLOAD=1 ${LOCALBASE}/bin/npm install --cache ${NPM_CACHE_DIR} --no-audit --no-fund --no-prune
+	cd ${WRKSRC} && ${LOCALBASE}/bin/npx cross-env ${LOCALBASE}/bin/npm install ipv6-normalize --cache ${NPM_CACHE_DIR} --no-audit --no-fund --no-prune
+
 .for module in mongodb-client-encryption kerberos os-dns-native
 	${MKDIR} -v ${NODE_MODULES_DIR}/${module}
 	${TAR} -xzf ${_DISTDIR}/${module}-*.tgz -C ${NODE_MODULES_DIR}/${module} --strip-components 1
 .endfor
 	for f in ${FILESDIR}/node-modules-patches/*; do ${PATCH} -N -d ${WRKSRC} < $$f; done
-
-	cd ${WRKSRC} && npx cross-env PUPPETEER_SKIP_DOWNLOAD=1 ${LOCALBASE}/bin/npm install --cache ${NPM_CACHE_DIR}
-
-.for module in mongodb-client-encryption kerberos os-dns-native mongodb-crypt-library-version glibc-version
-	${LOCALBASE}/bin/npm cache add $$(cat ${FILESDIR}/npm-pkg-${module}.list) --cache ${NPM_CACHE_DIR} || true
-	cd ${NODE_MODULES_DIR}/${module} && ${CONFIGURE_ENV} ${LOCALBASE}/bin/npm install --ignore-scripts --cache ${NPM_CACHE_DIR}
-.endfor
 	${FIND} ${WRKSRC} -name "*.orig" -or -name "*.bak" -delete
 
-	cd ${WRKSRC} && ${TAR} -cJf /tmp/${NODE_MODULES_TARBALL} node_modules
+.for module in mongodb-client-encryption kerberos os-dns-native mongodb-crypt-library-version glibc-version
+	cd ${NODE_MODULES_DIR}/${module} && ${CONFIGURE_ENV} ${LOCALBASE}/bin/npm install --ignore-scripts --cache ${NPM_CACHE_DIR} --no-audit --no-fund --no-prune
+.endfor
+
+	cd ${WRKSRC} && ${TAR} cf - node_modules | ${LOCALBASE}/bin/pv -s $$(du -sAk node_modules | awk '{print $$1}')000 | xz > /tmp/${NODE_MODULES_TARBALL}
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/www/node${NODEJS_VERSION}/Makefile.version"

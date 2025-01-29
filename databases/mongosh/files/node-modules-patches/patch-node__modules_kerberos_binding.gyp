@@ -1,6 +1,6 @@
 --- node_modules/kerberos/binding.gyp.orig	2024-05-13 15:16:38 UTC
 +++ node_modules/kerberos/binding.gyp
-@@ -34,14 +34,18 @@
+@@ -34,14 +34,17 @@
                'GCC_SYMBOLS_PRIVATE_EXTERN': 'YES', # -fvisibility=hidden
              }
          }],
@@ -14,7 +14,6 @@
          }],
 -        ['(OS=="mac" or OS=="linux") and (kerberos_use_rtld!="true")', {
 +        ['(OS=="mac" or OS=="linux" or OS=="freebsd") and (kerberos_use_rtld!="true")', {
-+          'defines': ['NODE_API_EXPERIMENTAL_NOGC_ENV_OPT_OUT'],
 +          'include_dirs': [
 +            '/usr/local/include'
 +          ],
