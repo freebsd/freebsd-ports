@@ -1,24 +1,24 @@
---- Makefile.orig	2015-06-25 22:20:28 UTC
+--- Makefile.orig	2017-01-27 09:37:38 UTC
 +++ Makefile
-@@ -18,8 +18,8 @@ DEMOS := $(wildcard demos/*.c)
- DEMOS_OBJ := $(addprefix obj/,$(notdir $(DEMOS:.c=.o)))
- DEMOS_EXE := $(DEMOS:.c=)
+@@ -18,7 +18,7 @@ EXAMPLES_EXE := $(EXAMPLES:.c=)
+ EXAMPLES_OBJ := $(addprefix obj/,$(notdir $(EXAMPLES:.c=.o)))
+ EXAMPLES_EXE := $(EXAMPLES:.c=)
  
--CFLAGS = -I ./include -std=gnu99 -Wall -Werror -Wno-unused -O3 -g
--LFLAGS = -shared -g -ggdb
-+CFLAGS += -I ./include -std=gnu99 -Wall -Werror -Wno-unused
-+LFLAGS = ${LDFLAGS} -shared
+-CFLAGS = -I ./include -std=gnu99 -Wall -Wno-unused -g -ggdb
++CFLAGS += -I ./include -std=gnu99 -Wall -Wno-unused -g -ggdb
  
  PLATFORM := $(shell uname)
  COMPILER := $(shell $(CC) -v 2>&1 )
-@@ -42,8 +42,8 @@ else
- 
- 	CFLAGS += -fPIC
- 
+@@ -85,9 +85,9 @@ else ifeq ($(findstring FreeBSD,$(PLATFORM)),FreeBSD)
+ 		CFLAGS += -DCELLO_NSTRACE
+ 	endif
+   
 -	INSTALL_LIB = mkdir -p ${LIBDIR} && cp -f ${STATIC} ${LIBDIR}/$(STATIC)
--	INSTALL_INC = mkdir -p ${INCDIR} && cp -r include/* ${INCDIR}
-+	INSTALL_LIB = mkdir -p ${DESTDIR}${LIBDIR} && cp -f ${STATIC} ${DESTDIR}${LIBDIR}/$(STATIC)
-+	INSTALL_INC = mkdir -p ${DESTDIR}${INCDIR} && cp -r include/* ${DESTDIR}${INCDIR}
- endif
- 
- ifeq ($(findstring clang,$(COMPILER)),clang)
+-	INSTALL_INC = mkdir -p ${INCDIR} && cp -r include/Cello.h ${INCDIR}
+-	UNINSTALL_LIB = rm -f ${LIBDIR}/$(STATIC)
++	INSTALL_LIB = mkdir -p ${DESTDIR}${LIBDIR} && cp -f ${DYNAMIC} ${STATIC} ${DESTDIR}${LIBDIR}
++	INSTALL_INC = mkdir -p ${DESTDIR}${INCDIR} && cp -r include/Cello.h ${DESTDIR}${INCDIR}
++	UNINSTALL_LIB = rm -f ${DESTDIR}${LIBDIR}/{$(DYNAMIC),$(STATIC)}
+ 	UNINSTALL_INC = rm -f ${INCDIR}/Cello.h
+ else
+ 	PREFIX ?= /usr/local
