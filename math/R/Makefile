@@ -122,12 +122,6 @@ X11_CONFIGURE_WITH=		x
 
 _MAJORVER=	${DISTVERSION:R:R}
 
-.include <bsd.port.options.mk>
-
-.if ${ARCH} == powerpc
-LLD_UNSAFE=	yes
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} \
 		-e "s|%%FULLVER%%|${DISTVERSION}|" \
