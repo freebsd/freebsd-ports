@@ -4,8 +4,8 @@ include/aws/event-stream/event_stream_exports.h
 include/aws/event-stream/event_stream_rpc.h
 include/aws/event-stream/event_stream_rpc_client.h
 include/aws/event-stream/event_stream_rpc_server.h
-lib/aws-c-event-stream/cmake/aws-c-event-stream-config.cmake
-lib/aws-c-event-stream/cmake/shared/aws-c-event-stream-targets-release.cmake
-lib/aws-c-event-stream/cmake/shared/aws-c-event-stream-targets.cmake
+lib/cmake/aws-c-event-stream/aws-c-event-stream-config.cmake
+lib/cmake/aws-c-event-stream/shared/aws-c-event-stream-targets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/aws-c-event-stream/shared/aws-c-event-stream-targets.cmake
 lib/libaws-c-event-stream.so
 lib/libaws-c-event-stream.so.1.0.0
