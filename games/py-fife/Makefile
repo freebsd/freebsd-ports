@@ -11,8 +11,6 @@ WWW=		https://www.fifengine.net/
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-BROKEN=		error: no member named 'extension' in namespace 'boost::filesystem'; did you mean 'GetExtension'?
-
 LIB_DEPENDS=	libvorbisfile.so:audio/libvorbis \
 		libtinyxml.so:textproc/tinyxml \
 		libboost_filesystem.so:devel/boost-libs \
@@ -65,5 +63,12 @@ LIBRARY_CMAKE_BOOL=	build-library
 # For static library build
 # LIBRARY_CMAKE_ON=	-Dbuild-library=ON -DBUILD_SHARED_LIBS=OFF
 # LIBRARY_CMAKE_OFF=	-Dbuild-library=OFF
+
+post-patch:
+	@${REINPLACE_CMD} -e 's,bfs::extension,GetExtension,g' \
+		${WRKSRC}/engine/core/loaders/native/map/atlasloader.cpp \
+		${WRKSRC}/engine/core/loaders/native/map/maploader.cpp \
+		${WRKSRC}/engine/core/loaders/native/map/objectloader.cpp \
+		${WRKSRC}/engine/core/gui/fifechan/fifechanmanager.cpp
 
 .include <bsd.port.mk>
