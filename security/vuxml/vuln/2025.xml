@@ -2,19 +2,19 @@
     <topic>oauth2-proxy -- Non-linear parsing of case-insensitive content</topic>
     <affects>
       <package>
-        <name>oauth2-proxy</name>
-        <range><lt>7.8.0</lt></range>
+	<name>oauth2-proxy</name>
+	<range><lt>7.8.0</lt></range>
       </package>
     </affects>
     <description>
-      <body xmlns="http://www.w3.org/1999/xhtml">
-        <p>Golang reports:</p>
-        <blockquote cite="https://github.com/advisories/GHSA-w32m-9786-jp63">
-          <p>This update include security fixes:</p>
-          <ul>
-            <li>CVE-2024-45338: Non-linear parsing of case-insensitive content</li>
-          </ul>
-        </blockquote>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Golang reports:</p>
+	<blockquote cite="https://github.com/advisories/GHSA-w32m-9786-jp63">
+	  <p>This update include security fixes:</p>
+	  <ul>
+	    <li>CVE-2024-45338: Non-linear parsing of case-insensitive content</li>
+	  </ul>
+	</blockquote>
       </body>
     </description>
     <references>
