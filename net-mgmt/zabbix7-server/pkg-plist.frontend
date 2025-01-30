@@ -1544,6 +1544,8 @@
 %%WWWDIR%%/locale/sk/LC_MESSAGES/frontend.po
 %%WWWDIR%%/locale/sv_SE/LC_MESSAGES/frontend.mo
 %%WWWDIR%%/locale/sv_SE/LC_MESSAGES/frontend.po
+%%WWWDIR%%/locale/th/LC_MESSAGES/frontend.mo
+%%WWWDIR%%/locale/th/LC_MESSAGES/frontend.po
 %%WWWDIR%%/locale/tr/LC_MESSAGES/frontend.mo
 %%WWWDIR%%/locale/tr/LC_MESSAGES/frontend.po
 %%WWWDIR%%/locale/uk/LC_MESSAGES/frontend.mo
