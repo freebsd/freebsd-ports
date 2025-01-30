@@ -1,6 +1,5 @@
 PORTNAME=	auctex
-PORTVERSION=	13.2
-PORTREVISION=	5
+DISTVERSION=	13.3
 CATEGORIES=	print elisp
 MASTER_SITES=	GNU
 PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
@@ -10,6 +9,7 @@ COMMENT=	Integrated environment for writing LaTeX using GNU Emacs
 WWW=		https://www.gnu.org/software/auctex/
 
 LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		emacs ghostscript gmake tex
 USE_TEX=	latex texhash
