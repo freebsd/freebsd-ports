@@ -1,6 +1,7 @@
 PORTNAME=	phonon-mpv
-DISTVERSION=	0.1.0
 DISTVERSIONPREFIX=	v
+DISTVERSION=	0.1.0
+PORTREVISION=	1
 CATEGORIES=	multimedia kde
 DIST_SUBDIR=	KDE/phonon
 
@@ -16,7 +17,7 @@ LIB_DEPENDS=	libmpv.so:multimedia/mpv
 USES=		cmake compiler:c++17-lang kde:6 pkgconfig \
 		qt:6 tar:xz
 USE_KDE=	phonon ecm:build
-USE_QT=		base tools
+USE_QT=		base tools:build
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	OpenProgger
