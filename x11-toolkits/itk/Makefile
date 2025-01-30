@@ -1,6 +1,6 @@
 PORTNAME=	itk
 PORTVERSION=	3.4.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-toolkits tk
 MASTER_SITES=	SF/incrtcl/%5BIncr%20Tcl_Tk%5D-source/Itk%20${PORTVERSION}
 DISTNAME=	${PORTNAME}${PORTVERSION}
@@ -9,10 +9,16 @@ MAINTAINER=	erik@bz.bzflag.bz
 COMMENT=	Object-oriented extension to Tk [incr Tk]
 WWW=		https://sourceforge.net/projects/incrtcl/
 
+LICENSE=	LUCENT
+LICENSE_NAME=	Lucent License
+LICENSE_FILE=	${WRKSRC}/license.terms
+LICENSE_PERMS=	auto-accept dist-mirror dist-sell pkg-mirror pkg-sell
+
 LIB_DEPENDS=	libitcl.so:lang/itcl
 
 USES=		tk:85,86 uidfix
 USE_LDCONFIG=	yes
+
 WRKSRC=		${WRKDIR}/${PORTNAME}${PORTVERSION:R}
 MAKE_ENV+=	${PLIST_SUB} \
 		SHLIB_MAJOR=${SHLIB_MAJOR} SHLIB_MINOR=${SHLIB_MINOR} \
