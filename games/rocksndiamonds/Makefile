@@ -1,5 +1,5 @@
 PORTNAME=	rocksndiamonds
-DISTVERSION=	4.4.0.2
+DISTVERSION=	4.4.0.3
 CATEGORIES=	games
 MASTER_SITES=	http://www.artsoft.org/RELEASES/unix/rocksndiamonds/:game \
 		http://www.artsoft.org/RELEASES/rocksndiamonds/levels/:levels_artsoft \
