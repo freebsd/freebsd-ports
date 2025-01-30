@@ -15,7 +15,7 @@ USE_KDE=	 \
 		 ${_USE_PLASMA_ALL:Nplasma-pa:Nhotkeys:Nksysguard:Nkwayland-integration:Ndiscover}
 
 OPTIONS_DEFINE=		PULSEAUDIO QT5
-OPTIONS_DEFAULT=	${OPTIONS_DEFINE}
+OPTIONS_DEFAULT=	PULSEAUDIO
 
 PULSEAUDIO_USE=		KDE=plasma-pa:run
 QT5_DESC=		Install Plasma 6 integration plugins for Qt5 applications
