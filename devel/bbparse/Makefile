@@ -11,7 +11,7 @@ WWW=		https://github.com/Netflix/bbparse
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-ONLY_FOR_ARCHS=	amd64 powerpc64 powerpc64le
+ONLY_FOR_ARCHS=	aarch64 amd64 powerpc64 powerpc64le riscv64
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	Netflix
