@@ -4002,3 +4002,4 @@ net-im/telegram-desktop@qt5|net-im/telegram-desktop|2025-01-05|Flavorization has
 net-im/telegram-desktop@qt6|net-im/telegram-desktop|2025-01-05|Flavorization has been removed. Continue to enjoy net-im/telegram-desktop based on Qt 6.x as usual
 devel/elixir-hex||2025-01-11|No longer used by any consumers, newer versions are expected to be installed per-user by mix
 devel/elixir-make||2025-01-11|No longer used by any consumers, newer versions are expected to be installed per-user by mix
+lang/rust182||2025-01-29|No consumers in ports
