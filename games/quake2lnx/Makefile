@@ -201,6 +201,8 @@ post-patch: .SILENT
 		${WRKSRC}/src/linux/vid_so.c
 	${REINPLACE_CMD} -e 's|dllname, RTLD_LAZY|& \| RTLD_GLOBAL|' \
 		${WRKSRC}/src/linux/qgl_linux.c
+	${REINPLACE_CMD} -e '/param\.h/s|machine|sys|' \
+		${WRKSRC}/src/linux/q_shlinux.c
 	${REINPLACE_CMD} -e 's|/js|/joy|' ${WRKSRC}/src/linux/joystick.c
 	${REINPLACE_CMD} -e 's|jpeg_mem_src|local_&|' \
 		${WRKSRC}/src/ref_candygl/gl_image.c
