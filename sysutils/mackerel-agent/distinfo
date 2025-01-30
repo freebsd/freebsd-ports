@@ -1,5 +1,5 @@
-TIMESTAMP = 1733280857
-SHA256 (go/sysutils_mackerel-agent/mackerel-agent-v0.83.0/v0.83.0.mod) = 59cd0f49c00ff057c9096694425bf1a71b522ac93d17975c70ac3afb90649d1a
-SIZE (go/sysutils_mackerel-agent/mackerel-agent-v0.83.0/v0.83.0.mod) = 1985
-SHA256 (go/sysutils_mackerel-agent/mackerel-agent-v0.83.0/v0.83.0.zip) = 0a6db1257ab76aeddf155c6c777c1c73d466a9f4697e7b8e9295da1771d44e84
-SIZE (go/sysutils_mackerel-agent/mackerel-agent-v0.83.0/v0.83.0.zip) = 250493
+TIMESTAMP = 1738223708
+SHA256 (go/sysutils_mackerel-agent/mackerel-agent-v0.84.0/v0.84.0.mod) = acd6d1b9f7b4302665b32874f04c581c521efcdefb117fa90c6ef5ad538a279e
+SIZE (go/sysutils_mackerel-agent/mackerel-agent-v0.84.0/v0.84.0.mod) = 1957
+SHA256 (go/sysutils_mackerel-agent/mackerel-agent-v0.84.0/v0.84.0.zip) = 565aa11661e67f7103c19dc42d19f29d52bc75daece99e67560de6df99eb7cfb
+SIZE (go/sysutils_mackerel-agent/mackerel-agent-v0.84.0/v0.84.0.zip) = 251056
