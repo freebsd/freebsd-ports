@@ -1,6 +1,5 @@
 PORTNAME?=	arcanist
-PORTVERSION?=	2024.19
-PORTREVISION?=	1
+PORTVERSION?=	2024.35
 PORTEPOCH?=	1
 CATEGORIES?=	devel
 PKGNAMEPREFIX=	phorgeit-
@@ -27,7 +26,6 @@ SHEBANG_FILES=	bin/arc bin/phage scripts/*.php scripts/hgdaemon/*.php \
 
 NO_ARCH=	yes
 NO_BUILD=	yes
-PORTSCOUT=	ignore:1
 SLAVEPORT?=	lib
 
 PLIST=		${.CURDIR}/pkg-plist
