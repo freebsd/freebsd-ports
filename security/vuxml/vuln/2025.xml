@@ -1,3 +1,29 @@
+  <vuln vid="cd2ace09-df23-11ef-a205-901b0e9408dc">
+    <topic>dendrite -- Server-side request forgery vulnerability</topic>
+    <affects>
+      <package>
+	<name>dendrite</name>
+	<range><lt>0.14.1</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Dendrite team reports:</p>
+	<blockquote cite="https://github.com/matrix-org/gomatrixserverlib/security/advisories/GHSA-4ff6-858j-r822">
+	  <p>This is a security release, gomatrixserverlib was vulnerable to server-side request forgery, serving content from a private network it can access, under certain conditions.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2024-52594</cvename>
+      <url>https://github.com/matrix-org/gomatrixserverlib/security/advisories/GHSA-4ff6-858j-r822</url>
+    </references>
+    <dates>
+      <discovery>2025-01-16</discovery>
+      <entry>2025-01-30</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="2830b374-debd-11ef-87ba-002590c1f29c">
     <topic>FreeBSD -- Uninitialized kernel memory disclosure via ktrace(2)</topic>
     <affects>
