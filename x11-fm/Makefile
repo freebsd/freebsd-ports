@@ -26,7 +26,6 @@
     SUBDIR += rodent
     SUBDIR += rox-filer
     SUBDIR += sushi
-    SUBDIR += tdfsb
     SUBDIR += thunar
     SUBDIR += worker
     SUBDIR += xcruise
