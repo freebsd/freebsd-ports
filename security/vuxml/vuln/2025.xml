@@ -191,7 +191,7 @@
   </vuln>
 
   <vuln vid="41711c0d-db27-11ef-873e-8447094a420f">
-    <topic>Vaultwarden -- Muiltiple vulnerabilities</topic>
+    <topic>Vaultwarden -- Multiple vulnerabilities</topic>
     <affects>
       <package>
 	<name>vaultwarden</name>
@@ -209,7 +209,10 @@
 	</body>
     </description>
     <references>
-      <url>https://github.com/dani-garcia/vaultwarden/releases/tag/1.33.0</url>
+      <cvename>CVE-2025-24364</cvename>
+      <url>https://github.com/dani-garcia/vaultwarden/security/advisories/GHSA-j4h8-vch3-f797</url>
+      <cvename>CVE-2025-24365</cvename>
+      <url>https://github.com/dani-garcia/vaultwarden/security/advisories/GHSA-h6cc-rc6q-23j4</url>
     </references>
     <dates>
       <discovery>2025-01-25</discovery>
