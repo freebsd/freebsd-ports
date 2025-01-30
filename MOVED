@@ -4057,3 +4057,4 @@ x11/fbdesk||2025-01-27|Has expired: Upstream disapear and distfile is no more av
 graphics/Hermes||2025-01-27|Has expired: Unmaintained, and no more public distfiles
 math/PDL|math/p5-PDL|2025-01-28|Move math/PDL to math/p5-PDL
 irc/ezbounce||2025-01-28|Has expired: broken with modern Boost, broken with modern compilers, last release in 2009, upstream is dead
+lang/rust182||2025-01-29|No consumers in ports

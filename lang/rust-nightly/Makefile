@@ -8,7 +8,7 @@ DISTNAME=	rustc-nightly-src
 ONLY_FOR_ARCHS=	amd64
 ONLY_FOR_ARCHS_REASON=	upstream does not provide bootstraps for other architectures
 
-CONFLICTS_INSTALL=	rust rust182
+CONFLICTS_INSTALL=	rust
 
 MASTERDIR=	${.CURDIR}/../rust
 PATCHDIR=	${.CURDIR}/files

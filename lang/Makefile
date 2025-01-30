@@ -337,7 +337,6 @@
     SUBDIR += rust
     SUBDIR += rust-bootstrap
     SUBDIR += rust-nightly
-    SUBDIR += rust182
     SUBDIR += rustpython
     SUBDIR += s7
     SUBDIR += s7-nrepl
