@@ -1,3 +1,141 @@
+  <vuln vid="2830b374-debd-11ef-87ba-002590c1f29c">
+    <topic>FreeBSD -- Uninitialized kernel memory disclosure via ktrace(2)</topic>
+    <affects>
+      <package>
+	<name>FreeBSD-kernel</name>
+	<range><ge>14.2</ge><lt>14.2_1</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Problem Description:</h1>
+	<p>In some cases, the ktrace facility will log the contents of
+	kernel structures to userspace.  In one such case, ktrace dumps a
+	variable-sized sockaddr to userspace.  There, the full sockaddr is
+	copied, even when it is shorter than the full size.  This can result
+	in up to 14 uninitialized bytes of kernel memory being copied out
+	to userspace.</p>
+	<h1>Impact:</h1>
+	<p>It is possible for an unprivileged userspace program to leak
+	14 bytes of a kernel heap allocation to userspace.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2025-0662</cvename>
+      <freebsdsa>SA-25:04.ktrace</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2025-01-29</discovery>
+      <entry>2025-01-30</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="fa9ae646-debc-11ef-87ba-002590c1f29c">
+    <topic>FreeBSD -- Unprivileged access to system files</topic>
+    <affects>
+      <package>
+	<name>FreeBSD</name>
+	<range><ge>14.2</ge><lt>14.2_1</lt></range>
+	<range><ge>14.1</ge><lt>14.1_7</lt></range>
+	<range><ge>13.4</ge><lt>13.4_3</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Problem Description:</h1>
+	<p>When etcupdate encounters conflicts while merging files, it
+	saves a version containing conflict markers in /var/db/etcupdate/conflicts.
+	This version does not preserve the mode of the input file, and is
+	world-readable.  This applies to files that would normally have
+	restricted visibility, such as /etc/master.passwd.</p>
+	<h1>Impact:</h1>
+	<p>An unprivileged local user may be able to read encrypted root
+	and user passwords from the temporary master.passwd file created
+	in /var/db/etcupdate/conflicts.  This is possible only when conflicts
+	within the password file arise during an update, and the unprotected
+	file is deleted when conflicts are resolved.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2025-0374</cvename>
+      <freebsdsa>SA-25:03.etcupdate</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2025-01-29</discovery>
+      <entry>2025-01-30</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="ab0cbe3f-debc-11ef-87ba-002590c1f29c">
+    <topic>FreeBSD -- Buffer overflow in some filesystems via NFS</topic>
+    <affects>
+      <package>
+	<name>FreeBSD-kernel</name>
+	<range><ge>14.2</ge><lt>14.2_1</lt></range>
+	<range><ge>14.1</ge><lt>14.1_7</lt></range>
+	<range><ge>13.4</ge><lt>13.4_3</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Problem Description:</h1>
+	<p>In order to export a file system via NFS, the file system must
+	define a file system identifier (FID) for all exported files.  Each
+	FreeBSD file system implements operations to translate between FIDs
+	and vnodes, the kernel's in-memory representation of files.  These
+	operations are VOP_VPTOFH(9) and VFS_FHTOVP(9).</p>
+	<p>On 64-bit systems, the implementation of VOP_VPTOFH() in the
+	cd9660, tarfs and ext2fs filesystems overflows the destination FID
+	buffer by 4 bytes, a stack buffer overflow.</p>
+	<h1>Impact:</h1>
+	<p>A NFS server that exports a cd9660, tarfs, or ext2fs file system
+	can be made to panic by mounting and accessing the export with an
+	NFS client.  Further exploitation (e.g., bypassing file permission
+	checking or remote kernel code execution) is potentially possible,
+	though this has not been demonstrated.  In particular, release
+	kernels are compiled with stack protection enabled, and some instances
+	of the overflow are caught by this mechanism, causing a panic.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2025-0373</cvename>
+      <freebsdsa>SA-25:02.fs</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2025-01-29</discovery>
+      <entry>2025-01-30</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="69e19c0b-debc-11ef-87ba-002590c1f29c">
+    <topic>FreeBSD -- OpenSSH Keystroke Obfuscation Bypass</topic>
+    <affects>
+      <package>
+	<name>FreeBSD</name>
+	<range><ge>14.1</ge><lt>14.1_7</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Problem Description:</h1>
+	<p>A logic error in the ssh(1) ObscureKeystrokeTiming feature (on
+	by default) rendered this feature ineffective.</p>
+	<h1>Impact:</h1>
+	<p>A passive observer could detect which network packets contain
+	real keystrokes, and infer the specific characters being transmitted
+	from packet timing.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2024-39894</cvename>
+      <freebsdsa>SA-25:01.openssh</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2025-01-29</discovery>
+      <entry>2025-01-30</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="258a58a9-6583-4808-986b-e785c27b0a18">
     <topic>oauth2-proxy -- Non-linear parsing of case-insensitive content</topic>
     <affects>
