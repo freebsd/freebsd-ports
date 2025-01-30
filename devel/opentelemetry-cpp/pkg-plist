@@ -112,11 +112,13 @@ include/opentelemetry/sdk/common/empty_attributes.h
 include/opentelemetry/sdk/common/env_variables.h
 include/opentelemetry/sdk/common/exporter_utils.h
 include/opentelemetry/sdk/common/global_log_handler.h
+include/opentelemetry/sdk/common/thread_instrumentation.h
 include/opentelemetry/sdk/instrumentationlibrary/instrumentation_library.h
 include/opentelemetry/sdk/instrumentationscope/instrumentation_scope.h
 include/opentelemetry/sdk/logs/batch_log_record_processor.h
 include/opentelemetry/sdk/logs/batch_log_record_processor_factory.h
 include/opentelemetry/sdk/logs/batch_log_record_processor_options.h
+include/opentelemetry/sdk/logs/batch_log_record_processor_runtime_options.h
 include/opentelemetry/sdk/logs/event_logger.h
 include/opentelemetry/sdk/logs/event_logger_provider.h
 include/opentelemetry/sdk/logs/event_logger_provider_factory.h
@@ -161,6 +163,7 @@ include/opentelemetry/sdk/metrics/export/metric_producer.h
 include/opentelemetry/sdk/metrics/export/periodic_exporting_metric_reader.h
 include/opentelemetry/sdk/metrics/export/periodic_exporting_metric_reader_factory.h
 include/opentelemetry/sdk/metrics/export/periodic_exporting_metric_reader_options.h
+include/opentelemetry/sdk/metrics/export/periodic_exporting_metric_reader_runtime_options.h
 include/opentelemetry/sdk/metrics/instrument_metadata_validator.h
 include/opentelemetry/sdk/metrics/instruments.h
 include/opentelemetry/sdk/metrics/meter.h
@@ -198,6 +201,7 @@ include/opentelemetry/sdk/resource/semantic_conventions.h
 include/opentelemetry/sdk/trace/batch_span_processor.h
 include/opentelemetry/sdk/trace/batch_span_processor_factory.h
 include/opentelemetry/sdk/trace/batch_span_processor_options.h
+include/opentelemetry/sdk/trace/batch_span_processor_runtime_options.h
 include/opentelemetry/sdk/trace/exporter.h
 include/opentelemetry/sdk/trace/id_generator.h
 include/opentelemetry/sdk/trace/multi_recordable.h
@@ -262,6 +266,7 @@ include/opentelemetry/semconv/incubating/file_attributes.h
 include/opentelemetry/semconv/incubating/gcp_attributes.h
 include/opentelemetry/semconv/incubating/gen_ai_attributes.h
 include/opentelemetry/semconv/incubating/gen_ai_metrics.h
+include/opentelemetry/semconv/incubating/geo_attributes.h
 include/opentelemetry/semconv/incubating/graphql_attributes.h
 include/opentelemetry/semconv/incubating/heroku_attributes.h
 include/opentelemetry/semconv/incubating/host_attributes.h
@@ -304,6 +309,7 @@ include/opentelemetry/semconv/incubating/url_attributes.h
 include/opentelemetry/semconv/incubating/user_agent_attributes.h
 include/opentelemetry/semconv/incubating/user_attributes.h
 include/opentelemetry/semconv/incubating/vcs_attributes.h
+include/opentelemetry/semconv/incubating/vcs_metrics.h
 include/opentelemetry/semconv/incubating/webengine_attributes.h
 include/opentelemetry/semconv/network_attributes.h
 include/opentelemetry/semconv/otel_attributes.h
