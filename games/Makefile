@@ -790,7 +790,6 @@
     SUBDIR += powder-toy-devel
     SUBDIR += powermanga
     SUBDIR += powwow
-    SUBDIR += prboom
     SUBDIR += prboom-plus
     SUBDIR += primateplunge
     SUBDIR += prismlauncher
