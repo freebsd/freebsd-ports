@@ -8,7 +8,7 @@ WWW=		https://www.mesa3d.org/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/docs/license.rst
 
-ONLY_FOR_ARCHS=		aarch64 amd64 i386 powerpc64 powerpc64le
+ONLY_FOR_ARCHS=		aarch64 amd64 powerpc64 powerpc64le
 ONLY_FOR_ARCHS_REASON=	used only by AMD/Radeon hardware
 
 BUILD_DEPENDS=	libva>=0:multimedia/libva
