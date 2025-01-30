@@ -87,6 +87,7 @@ bin/dbiproxy
 %%PERL5_MAN3%%/DBD::Proxy.3.gz
 %%PERL5_MAN3%%/DBD::Sponge.3.gz
 %%PERL5_MAN3%%/DBI.3.gz
+%%PERL5_MAN3%%/DBI::Changes.3.gz
 %%PERL5_MAN3%%/DBI::Const::GetInfo::ANSI.3.gz
 %%PERL5_MAN3%%/DBI::Const::GetInfo::ODBC.3.gz
 %%PERL5_MAN3%%/DBI::Const::GetInfoReturn.3.gz
