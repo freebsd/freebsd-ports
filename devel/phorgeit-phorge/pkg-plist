@@ -1758,6 +1758,7 @@ lib/php/phorge/resources/sql/autopatches/20220525.slowvote.08.status-type.sql
 lib/php/phorge/resources/sql/autopatches/20220525.slowvote.09.status-value.sql
 lib/php/phorge/resources/sql/autopatches/20220525.slowvote.10.status-xactions.sql
 lib/php/phorge/resources/sql/autopatches/20230902.repository.01.rebuild-index.php
+lib/php/phorge/resources/sql/autopatches/20230917.fileattachment.01.delete.sql
 lib/php/phorge/resources/sql/patches/000.project.sql
 lib/php/phorge/resources/sql/patches/0000.legacy.sql
 lib/php/phorge/resources/sql/patches/001.maniphest_projects.sql
@@ -4589,6 +4590,7 @@ lib/php/phorge/src/applications/files/engine/PhabricatorMySQLFileStorageEngine.p
 lib/php/phorge/src/applications/files/engine/PhabricatorS3FileStorageEngine.php
 lib/php/phorge/src/applications/files/engine/PhabricatorTestStorageEngine.php
 lib/php/phorge/src/applications/files/engine/__tests__/PhabricatorFileStorageEngineTestCase.php
+lib/php/phorge/src/applications/files/engineextension/PhabricatorFileAttachmentDestructionEngineExtension.php
 lib/php/phorge/src/applications/files/engineextension/PhabricatorFilesCurtainExtension.php
 lib/php/phorge/src/applications/files/exception/PhabricatorFileIntegrityException.php
 lib/php/phorge/src/applications/files/exception/PhabricatorFileStorageConfigurationException.php
@@ -4667,6 +4669,8 @@ lib/php/phorge/src/applications/flag/controller/PhabricatorFlagController.php
 lib/php/phorge/src/applications/flag/controller/PhabricatorFlagDeleteController.php
 lib/php/phorge/src/applications/flag/controller/PhabricatorFlagEditController.php
 lib/php/phorge/src/applications/flag/controller/PhabricatorFlagListController.php
+lib/php/phorge/src/applications/flag/customfield/PhorgeFlagFlaggedObjectCustomField.php
+lib/php/phorge/src/applications/flag/customfield/PhorgeFlagFlaggedObjectFieldStorage.php
 lib/php/phorge/src/applications/flag/engineextension/PhabricatorFlagDestructionEngineExtension.php
 lib/php/phorge/src/applications/flag/events/PhabricatorFlagsUIEventListener.php
 lib/php/phorge/src/applications/flag/herald/PhabricatorFlagAddFlagHeraldAction.php
@@ -5227,6 +5231,7 @@ lib/php/phorge/src/applications/maniphest/engineextension/ManiphestMailEngineExt
 lib/php/phorge/src/applications/maniphest/engineextension/ManiphestProjectNameFulltextEngineExtension.php
 lib/php/phorge/src/applications/maniphest/field/ManiphestConfiguredCustomField.php
 lib/php/phorge/src/applications/maniphest/field/ManiphestCustomField.php
+lib/php/phorge/src/applications/maniphest/field/ManiphestFlagCustomField.php
 lib/php/phorge/src/applications/maniphest/field/parser/ManiphestCustomFieldStatusParser.php
 lib/php/phorge/src/applications/maniphest/field/parser/__tests__/ManiphestCustomFieldStatusParserTestCase.php
 lib/php/phorge/src/applications/maniphest/herald/HeraldManiphestTaskAdapter.php
@@ -5355,6 +5360,7 @@ lib/php/phorge/src/applications/metamta/controller/PhabricatorMetaMTASendGridRec
 lib/php/phorge/src/applications/metamta/edge/PhabricatorMetaMTAMailHasRecipientEdgeType.php
 lib/php/phorge/src/applications/metamta/editor/PhabricatorMetaMTAApplicationEmailEditor.php
 lib/php/phorge/src/applications/metamta/engine/PhabricatorMailEmailEngine.php
+lib/php/phorge/src/applications/metamta/engine/PhabricatorMailEmailEngine.php.orig
 lib/php/phorge/src/applications/metamta/engine/PhabricatorMailEngineExtension.php
 lib/php/phorge/src/applications/metamta/engine/PhabricatorMailMessageEngine.php
 lib/php/phorge/src/applications/metamta/engine/PhabricatorMailSMSEngine.php
@@ -6406,6 +6412,7 @@ lib/php/phorge/src/applications/phriction/codex/PhrictionDocumentPolicyCodex.php
 lib/php/phorge/src/applications/phriction/conduit/PhrictionConduitAPIMethod.php
 lib/php/phorge/src/applications/phriction/conduit/PhrictionContentSearchConduitAPIMethod.php
 lib/php/phorge/src/applications/phriction/conduit/PhrictionCreateConduitAPIMethod.php
+lib/php/phorge/src/applications/phriction/conduit/PhrictionDocumentEditConduitAPIMethod.php
 lib/php/phorge/src/applications/phriction/conduit/PhrictionDocumentSearchConduitAPIMethod.php
 lib/php/phorge/src/applications/phriction/conduit/PhrictionEditConduitAPIMethod.php
 lib/php/phorge/src/applications/phriction/conduit/PhrictionHistoryConduitAPIMethod.php
@@ -6773,12 +6780,14 @@ lib/php/phorge/src/applications/project/storage/PhabricatorProjectTrigger.php
 lib/php/phorge/src/applications/project/storage/PhabricatorProjectTriggerTransaction.php
 lib/php/phorge/src/applications/project/storage/PhabricatorProjectTriggerUsage.php
 lib/php/phorge/src/applications/project/trigger/PhabricatorProjectTriggerAddProjectsRule.php
+lib/php/phorge/src/applications/project/trigger/PhabricatorProjectTriggerAddSubscribersRule.php
 lib/php/phorge/src/applications/project/trigger/PhabricatorProjectTriggerInvalidRule.php
 lib/php/phorge/src/applications/project/trigger/PhabricatorProjectTriggerManiphestOwnerRule.php
 lib/php/phorge/src/applications/project/trigger/PhabricatorProjectTriggerManiphestPriorityRule.php
 lib/php/phorge/src/applications/project/trigger/PhabricatorProjectTriggerManiphestStatusRule.php
 lib/php/phorge/src/applications/project/trigger/PhabricatorProjectTriggerPlaySoundRule.php
 lib/php/phorge/src/applications/project/trigger/PhabricatorProjectTriggerRemoveProjectsRule.php
+lib/php/phorge/src/applications/project/trigger/PhabricatorProjectTriggerRemoveSubscribersRule.php
 lib/php/phorge/src/applications/project/trigger/PhabricatorProjectTriggerRule.php
 lib/php/phorge/src/applications/project/trigger/PhabricatorProjectTriggerRuleRecord.php
 lib/php/phorge/src/applications/project/trigger/PhabricatorProjectTriggerUnknownRule.php
@@ -6824,6 +6833,11 @@ lib/php/phorge/src/applications/project/xaction/column/PhabricatorProjectColumnT
 lib/php/phorge/src/applications/project/xaction/trigger/PhabricatorProjectTriggerNameTransaction.php
 lib/php/phorge/src/applications/project/xaction/trigger/PhabricatorProjectTriggerRulesetTransaction.php
 lib/php/phorge/src/applications/project/xaction/trigger/PhabricatorProjectTriggerTransactionType.php
+lib/php/phorge/src/applications/reference/src/application/ReferenceApplication.php
+lib/php/phorge/src/applications/reference/src/controller/CowsayReferenceController.php
+lib/php/phorge/src/applications/reference/src/controller/FigletReferenceController.php
+lib/php/phorge/src/applications/reference/src/controller/ReferenceController.php
+lib/php/phorge/src/applications/reference/src/controller/RemarkupReferenceController.php
 lib/php/phorge/src/applications/remarkup/RemarkupValue.php
 lib/php/phorge/src/applications/remarkup/conduit/RemarkupProcessConduitAPIMethod.php
 lib/php/phorge/src/applications/remarkup/engineextension/PhabricatorRemarkupHyperlinkEngineExtension.php
@@ -7580,6 +7594,7 @@ lib/php/phorge/src/applications/typeahead/datasource/__tests__/PhabricatorTypeah
 lib/php/phorge/src/applications/typeahead/datasource/__tests__/PhabricatorTypeaheadTestNumbersDatasource.php
 lib/php/phorge/src/applications/typeahead/engineextension/PhabricatorMonogramDatasourceEngineExtension.php
 lib/php/phorge/src/applications/typeahead/exception/PhabricatorTypeaheadInvalidTokenException.php
+lib/php/phorge/src/applications/typeahead/exception/PhabricatorTypeaheadLoginRequiredException.php
 lib/php/phorge/src/applications/typeahead/storage/PhabricatorTypeaheadResult.php
 lib/php/phorge/src/applications/typeahead/view/PhabricatorTypeaheadTokenView.php
 lib/php/phorge/src/applications/uiexample/application/PhabricatorUIExamplesApplication.php
@@ -8094,6 +8109,7 @@ lib/php/phorge/src/infrastructure/markup/blockrule/PhutilRemarkupReplyBlockRule.
 lib/php/phorge/src/infrastructure/markup/blockrule/PhutilRemarkupSimpleTableBlockRule.php
 lib/php/phorge/src/infrastructure/markup/blockrule/PhutilRemarkupTableBlockRule.php
 lib/php/phorge/src/infrastructure/markup/blockrule/PhutilRemarkupTestInterpreterRule.php
+lib/php/phorge/src/infrastructure/markup/interface/RemarkupSyntaxDocumentationProvider.php
 lib/php/phorge/src/infrastructure/markup/interpreter/PhabricatorRemarkupCowsayBlockInterpreter.php
 lib/php/phorge/src/infrastructure/markup/interpreter/PhabricatorRemarkupFigletBlockInterpreter.php
 lib/php/phorge/src/infrastructure/markup/markuprule/PhutilRemarkupAnchorRule.php
@@ -8255,7 +8271,9 @@ lib/php/phorge/src/infrastructure/markup/syntax/highlighter/xhpast/PhutilXHPASTS
 lib/php/phorge/src/infrastructure/markup/view/PHUIRemarkupImageView.php
 lib/php/phorge/src/infrastructure/markup/view/PHUIRemarkupView.php
 lib/php/phorge/src/infrastructure/parser/PhutilPygmentizeParser.php
+lib/php/phorge/src/infrastructure/parser/PhutilURIHelper.php
 lib/php/phorge/src/infrastructure/parser/__tests__/PhutilPygmentizeParserTestCase.php
+lib/php/phorge/src/infrastructure/parser/__tests__/PhutilURIHelperTestCase.php
 lib/php/phorge/src/infrastructure/query/PhabricatorOffsetPagedQuery.php
 lib/php/phorge/src/infrastructure/query/PhabricatorQuery.php
 lib/php/phorge/src/infrastructure/query/constraint/PhabricatorQueryConstraint.php
