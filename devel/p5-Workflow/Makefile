@@ -1,5 +1,5 @@
 PORTNAME=	Workflow
-DISTVERSION=	2.03
+DISTVERSION=	2.04
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -39,7 +39,15 @@ USE_PERL5=	configure
 
 NO_ARCH=	yes
 
-OPTIONS_DEFINE=	EXAMPLES
+OPTIONS_DEFINE=		EXAMPLES LINKS
+LINKS_DESC=		Test if pod web links are reachable during "make test"
+LINKS_TEST_DEPENDS=	p5-Test-Pod-Links>=0:devel/p5-Test-Pod-Links
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MLINKS}
+TEST_ENV+=	POD_LINKS=yes
+.endif
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}
