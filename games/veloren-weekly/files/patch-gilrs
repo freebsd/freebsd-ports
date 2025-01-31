@@ -23,71 +23,9 @@ error[E0432]: unresolved imports `nix::sys::epoll`, `nix::sys::eventfd`
    |                |      help: a similar name exists in the module: `event`
    |                no `epoll` in `sys`
 
---- Cargo.lock.orig	2025-01-29 18:05:18 UTC
+--- Cargo.lock.orig	2025-01-31 17:34:17 UTC
 +++ Cargo.lock
-@@ -1096,7 +1096,7 @@ dependencies = [
-  "bitflags 1.3.2",
-  "block",
-  "cocoa-foundation",
-- "core-foundation 0.9.4",
-+ "core-foundation",
-  "core-graphics 0.23.2",
-  "foreign-types 0.5.0",
-  "libc",
-@@ -1111,7 +1111,7 @@ checksum = "8c6234cbb2e4c785b456c0644748b1ac416dd045799740356f8363dfe00c93f7"
- dependencies = [
-  "bitflags 1.3.2",
-  "block",
-- "core-foundation 0.9.4",
-+ "core-foundation",
-  "core-graphics-types",
-  "libc",
-  "objc",
-@@ -1255,16 +1255,6 @@ dependencies = [
-  "libc",
- ]
- 
--[[package]]
--name = "core-foundation"
--version = "0.10.0"
--source = "registry+https://github.com/rust-lang/crates.io-index"
--checksum = "b55271e5c8c478ad3f38ad24ef34923091e0548492a266d19b3c0b4d82574c63"
--dependencies = [
-- "core-foundation-sys",
-- "libc",
--]
--
- [[package]]
- name = "core-foundation-sys"
- version = "0.8.7"
-@@ -1278,7 +1268,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
- checksum = "2581bbab3b8ffc6fcbd550bf46c355135d16e9ff2a6ea032ad6b9bf1d7efe4fb"
- dependencies = [
-  "bitflags 1.3.2",
-- "core-foundation 0.9.4",
-+ "core-foundation",
-  "core-graphics-types",
-  "foreign-types 0.3.2",
-  "libc",
-@@ -1291,7 +1281,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
- checksum = "c07782be35f9e1140080c6b96f0d44b739e2278479f64e02fdab4e32dfd8b081"
- dependencies = [
-  "bitflags 1.3.2",
-- "core-foundation 0.9.4",
-+ "core-foundation",
-  "core-graphics-types",
-  "foreign-types 0.5.0",
-  "libc",
-@@ -1304,7 +1294,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
- checksum = "45390e6114f68f718cc7a830514a96f903cccd70d02a8f6d9f643ac4ba45afaf"
- dependencies = [
-  "bitflags 1.3.2",
-- "core-foundation 0.9.4",
-+ "core-foundation",
-  "libc",
- ]
- 
-@@ -2657,9 +2647,9 @@ dependencies = [
+@@ -2623,9 +2623,9 @@ dependencies = [
  
  [[package]]
  name = "gilrs"
@@ -99,19 +37,19 @@ error[E0432]: unresolved imports `nix::sys::epoll`, `nix::sys::eventfd`
  dependencies = [
   "fnv",
   "gilrs-core",
-@@ -2671,24 +2661,23 @@ dependencies = [
+@@ -2637,24 +2637,23 @@ dependencies = [
  
  [[package]]
  name = "gilrs-core"
--version = "0.6.0"
+-version = "0.6.1"
 +version = "0.5.7"
  source = "registry+https://github.com/rust-lang/crates.io-index"
--checksum = "495af945e45efd6386227613cd9fb7bd7c43d3c095040e30c5304c489e6abed5"
+-checksum = "0ed2326d21aa97752d41b2c195aee1d99cd84456ff4d5a7f5e6e1cdbd3dcb0b8"
 +checksum = "5ccc99e9b8d63ffcaa334c4babfa31f46e156618a11f63efb6e8e6bcb37b830d"
  dependencies = [
 - "core-foundation 0.10.0",
 - "inotify 0.11.0",
-+ "core-foundation",
++ "core-foundation 0.9.4",
   "io-kit-sys",
   "js-sys",
   "libc",
@@ -129,7 +67,7 @@ error[E0432]: unresolved imports `nix::sys::epoll`, `nix::sys::eventfd`
  ]
  
  [[package]]
-@@ -3585,9 +3574,9 @@ dependencies = [
+@@ -3550,9 +3549,9 @@ dependencies = [
  
  [[package]]
  name = "io-kit-sys"
@@ -141,25 +79,7 @@ error[E0432]: unresolved imports `nix::sys::epoll`, `nix::sys::eventfd`
  dependencies = [
   "core-foundation-sys",
   "mach2",
-@@ -3897,7 +3886,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
- checksum = "4979f22fdb869068da03c9f7528f8297c6fd2606bc3a4affe42e6a823fdb8da4"
- dependencies = [
-  "cfg-if 1.0.0",
-- "windows-targets 0.52.6",
-+ "windows-targets 0.48.5",
- ]
- 
- [[package]]
-@@ -4320,7 +4309,7 @@ dependencies = [
-  "ascii",
-  "block",
-  "cocoa",
-- "core-foundation 0.9.4",
-+ "core-foundation",
-  "dirs-next",
-  "objc",
-  "objc-foundation",
-@@ -4420,6 +4409,17 @@ dependencies = [
+@@ -4381,6 +4380,17 @@ dependencies = [
   "memoffset 0.6.5",
  ]
  
@@ -177,25 +97,7 @@ error[E0432]: unresolved imports `nix::sys::epoll`, `nix::sys::eventfd`
  [[package]]
  name = "nix"
  version = "0.29.0"
-@@ -6017,7 +6017,7 @@ version = "0.3.4"
- source = "registry+https://github.com/rust-lang/crates.io-index"
- checksum = "afbb878bdfdf63a336a5e63561b1835e7a8c91524f51621db870169eac84b490"
- dependencies = [
-- "core-foundation 0.9.4",
-+ "core-foundation",
-  "core-foundation-sys",
-  "jni 0.19.0",
-  "log",
-@@ -6192,7 +6192,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
- checksum = "897b2245f0b511c87893af39b033e5ca9cce68824c4d7e7630b5a1d339658d02"
- dependencies = [
-  "bitflags 2.8.0",
-- "core-foundation 0.9.4",
-+ "core-foundation",
-  "core-foundation-sys",
-  "libc",
-  "num-bigint 0.4.6",
-@@ -7404,7 +7404,7 @@ version = "1.6.3"
+@@ -7371,7 +7381,7 @@ version = "1.6.3"
  source = "registry+https://github.com/rust-lang/crates.io-index"
  checksum = "97fee6b57c6a41524a810daee9286c02d7752c4253064d0b05472833a438f675"
  dependencies = [
@@ -204,15 +106,6 @@ error[E0432]: unresolved imports `nix::sys::epoll`, `nix::sys::eventfd`
   "rand",
   "static_assertions",
  ]
-@@ -9455,7 +9455,7 @@ dependencies = [
-  "android-activity",
-  "bitflags 1.3.2",
-  "cfg_aliases 0.1.1",
-- "core-foundation 0.9.4",
-+ "core-foundation",
-  "core-graphics 0.22.3",
-  "dispatch",
-  "instant",
 --- cargo-crates/gilrs-0.10.2/examples/ev.rs.orig	1970-01-01 00:00:00 UTC
 +++ cargo-crates/gilrs-0.10.2/examples/ev.rs
 @@ -9,6 +9,8 @@ use std::process;
