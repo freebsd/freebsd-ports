@@ -234,7 +234,8 @@ post-install:
 
 .if ${ZABBIX_BUILD} != "agent" && ${ZABBIX_BUILD} != "java"
 	${MKDIR} ${STAGEDIR}${DATADIR}/${ZABBIX_BUILD:Q}/database
-	@${RM} ${WRKSRC}/database/*/Makefile*
+	${FIND} ${WRKSRC}/database -type f -name 'Makefile*' -exec ${RM} {} +
+	# @${RM} ${WRKSRC}/database/*/*/Makefile*
 	(cd ${WRKSRC}/database/ && \
 		${COPYTREE_SHARE} "mysql oracle postgresql sqlite3" \
 		${STAGEDIR}${DATADIR}/${ZABBIX_BUILD:Q}/database/)
