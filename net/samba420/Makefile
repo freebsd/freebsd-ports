@@ -530,7 +530,7 @@ DEBUG_FLAGS?=			-g -ggdb3 -O0
 .	if defined(SAMBA4_BUNDLED_LDB) && ${SAMBA4_BUNDLED_LDB} == yes && (${PORT_OPTIONS:MAD_DC} || ${PORT_OPTIONS:MDEVELOPER})
 # LMDB
 SAMBA4_LMDB_DEPENDS=		lmdb>=0.9.16:databases/lmdb
-PLIST_FILES+=			${SAMBA4_LIBDIR}/private/libldb-mdb-int-samba4.so \
+PLIST_FILES+=			${SAMBA4_LIBDIR}/private/libldb-mdb-int-private-samba.so \
 				${SAMBA4_MODULEDIR}/ldb/mdb.so
 .	endif
 .endif
