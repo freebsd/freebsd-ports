@@ -1,5 +1,5 @@
 PORTNAME=	pentobi
-PORTVERSION=	25.2
+PORTVERSION=	26.0
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION}
 
@@ -10,8 +10,6 @@ WWW=		https://pentobi.sourceforge.io/ \
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
-
-BUILD_DEPENDS=	itstool:textproc/itstool
 
 USES=		compiler:c++20-lang cmake desktop-file-utils gettext-tools gnome qt:6 \
 		shared-mime-info tar:xz
