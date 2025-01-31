@@ -1,0 +1,8 @@
+XT::Files is the Tests that know what they want to check (e.g. module files),
+but it's the distribution that knows where these files can be found (e.g. in
+the lib directory and in the t/lib directory). Without XT::Files you may add
+the same code to multiple .t files under xt that iterate over a check function
+of the test. XT::Files is a standard interface that makes it easy for author
+tests to ask the distribution for the kind of files it would like to test. And
+it can easily be used for author tests that don't support XT::Files to have the
+same set of files tested with every test.
