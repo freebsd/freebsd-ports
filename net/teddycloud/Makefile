@@ -1,6 +1,6 @@
 PORTNAME=	teddycloud
 DISTVERSIONPREFIX=	tc_v
-DISTVERSION=	0.6.2
+DISTVERSION=	0.6.3
 CATEGORIES=	net
 # Get the latest commit hashes here: https://github.com/toniebox-reverse-engineering/tonies-json/commits/release/
 # NOTE: remove the existing tonies.json and tonieboxes.json from DISTDIR before you do a `make makesum`
@@ -15,7 +15,8 @@ WWW=		https://tonies-wiki.revvox.de/docs/tools/teddycloud/
 
 LICENSE=	GPLv2+
 
-NOT_FOR_ARCHS=	i386
+NOT_FOR_ARCHS=		armv6 armv7 i386 powerpc powerpcspe
+NOT_FOR_ARCHS_REASON=	32bit targets do not build due to type issues, upstream library assumes FreeBSD to be 64bit
 
 BUILD_DEPENDS+=	curl:ftp/curl \
 		protoc-c:devel/protobuf-c
@@ -39,25 +40,23 @@ GH_SUBDIR=	cJSON:cJSON ogg:ogg opus:opus teddycloud_web:teddycloud_web \
 GH_TAGNAME=	v1.7.15-33-gacc7623:cJSON \
 		v1.3.5-9-gdb5c7a4:ogg \
 		v1.4-7-g101a71e0:opus \
-		tcw_v0.6.2:teddycloud_web \
+		tcw_v0.6.3:teddycloud_web \
 		v2.3.2:cyclone_common,cyclone_crypto,cyclone_ssl,cyclone_tcp
 
 USE_RC_SUBR=	teddycloudd
 MAKE_ENV+=	CONFIG_RUNTIME_BASE_PATH=${PREFIX}/etc/teddycloud \
 		RUNTIME_BASE_PATH=${PREFIX}/share/teddycloud \
-		NO_SANITIZERS=1
-# can be used if https://github.com/toniebox-reverse-engineering/teddycloud/pull/243 is included
-# and patch for Makefile is then obsolete
-#		GIT_DIRTY=0 \
-#		GIT_BUILD_TIME="2024-10-26 18:14:34 +0000" \
-#		GIT_SHORT_SHA=203f12d \
-#		GIT_SHA=203f12d3d357d16268b83c7bdedb332820b9e87a \
-#		GIT_TAG=tc_v0.6.2 \
-#		WEB_GIT_DIRTY=0 \
-#		WEB_GIT_BUILD_TIME="2024-10-26 06:25:22 +0200" \
-#		WEB_GIT_SHORT_SHA=e4d9fc1 \
-#		WEB_GIT_SHA=e4d9fc19e493933c2020be2d40ee5de2f07d7eef \
-#		WEB_GIT_TAG=tcw_v0.6.2
+		NO_SANITIZERS=1 \
+		GIT_DIRTY=0 \
+		GIT_BUILD_TIME="2025-01-06 08:31:53 +0000" \
+		GIT_SHORT_SHA=39b2f89 \
+		GIT_SHA=39b2f89bb0c4f7e40cea0efdced012c5715c1f59 \
+		GIT_TAG=tc_v0.6.3 \
+		WEB_GIT_DIRTY=0 \
+		WEB_GIT_BUILD_TIME="2025-01-06 09:28:23 +0100" \
+		WEB_GIT_SHORT_SHA=514140d \
+		WEB_GIT_SHA=514140d169f5e821299a452fa33dac155eef3a85 \
+		WEB_GIT_TAG=tcw_v0.6.3
 # This did reliably fail due to some unknown deps when using parallel build
 MAKE_JOBS_UNSAFE=	yes
 ALL_TARGET=	preinstall
