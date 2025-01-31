@@ -187,6 +187,7 @@
     SUBDIR += mindforger
     SUBDIR += moregroupware
     SUBDIR += mozo
+    SUBDIR += mybee-qt
     SUBDIR += mytetra
     SUBDIR += nanonote
     SUBDIR += nautilus-sendto
