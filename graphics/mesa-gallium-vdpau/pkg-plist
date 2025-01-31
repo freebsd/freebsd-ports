@@ -19,14 +19,14 @@
 @comment lib/libglapi.so
 @comment lib/libglapi.so.0
 @comment lib/libglapi.so.0.0.0
-lib/vdpau/libvdpau_r600.so
-lib/vdpau/libvdpau_r600.so.1
-lib/vdpau/libvdpau_r600.so.1.0
-lib/vdpau/libvdpau_r600.so.1.0.0
-lib/vdpau/libvdpau_radeonsi.so
-lib/vdpau/libvdpau_radeonsi.so.1
-lib/vdpau/libvdpau_radeonsi.so.1.0
-lib/vdpau/libvdpau_radeonsi.so.1.0.0
+%%r600%%lib/vdpau/libvdpau_r600.so
+%%r600%%lib/vdpau/libvdpau_r600.so.1
+%%r600%%lib/vdpau/libvdpau_r600.so.1.0
+%%r600%%lib/vdpau/libvdpau_r600.so.1.0.0
+%%radeonsi%%lib/vdpau/libvdpau_radeonsi.so
+%%radeonsi%%lib/vdpau/libvdpau_radeonsi.so.1
+%%radeonsi%%lib/vdpau/libvdpau_radeonsi.so.1.0
+%%radeonsi%%lib/vdpau/libvdpau_radeonsi.so.1.0.0
 @comment libdata/pkgconfig/dri.pc
 @comment libdata/pkgconfig/egl.pc
 @comment share/drirc.d/00-mesa-defaults.conf
