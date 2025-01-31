@@ -1,5 +1,5 @@
 PORTNAME=	graylog
-DISTVERSION=	6.1.4
+DISTVERSION=	6.1.5
 CATEGORIES=	sysutils java
 MASTER_SITES=	https://downloads.graylog.org/releases/
 DISTFILES=	graylog/${DISTNAME}${EXTRACT_SUFX}
@@ -15,7 +15,7 @@ LICENSE_FILE_SSPLv1=	${WRKSRC}/LICENSE
 LICENSE_PERMS_SSPLv1=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 USES=		cpe java:extract,run tar:tgz
-JAVA_VERSION=	17+
+JAVA_VERSION=	21+
 
 NO_BUILD=	yes
 NO_ARCH=	yes
