@@ -1,7 +1,6 @@
 PORTNAME=	lib${GH_PROJECT}
-PORTVERSION=	28.0.1
+PORTVERSION=	29.0.1
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	osa@FreeBSD.org
@@ -44,7 +43,7 @@ CARGO_CRATES=	addr2line-0.24.1 \
 		anstyle-query-1.0.0 \
 		anstyle-wincon-3.0.4 \
 		anyhow-1.0.93 \
-		arbitrary-1.3.1 \
+		arbitrary-1.4.1 \
 		arrayvec-0.7.6 \
 		async-trait-0.1.71 \
 		autocfg-1.1.0 \
@@ -110,7 +109,7 @@ CARGO_CRATES=	addr2line-0.24.1 \
 		cty-0.2.2 \
 		debugid-0.8.0 \
 		deranged-0.3.11 \
-		derive_arbitrary-1.3.1 \
+		derive_arbitrary-1.4.0 \
 		digest-0.10.7 \
 		directories-next-2.0.0 \
 		dirs-next-2.0.0 \
@@ -144,11 +143,11 @@ CARGO_CRATES=	addr2line-0.24.1 \
 		fslock-0.2.1 \
 		futures-0.3.27 \
 		futures-channel-0.3.27 \
-		futures-core-0.3.27 \
+		futures-core-0.3.31 \
 		futures-io-0.3.28 \
-		futures-sink-0.3.27 \
-		futures-task-0.3.27 \
-		futures-util-0.3.27 \
+		futures-sink-0.3.31 \
+		futures-task-0.3.31 \
+		futures-util-0.3.31 \
 		fxhash-0.2.1 \
 		fxprof-processed-profile-0.6.0 \
 		generic-array-0.14.5 \
@@ -164,7 +163,7 @@ CARGO_CRATES=	addr2line-0.24.1 \
 		hashbrown-0.15.2 \
 		heck-0.4.1 \
 		heck-0.5.0 \
-		hermit-abi-0.3.0 \
+		hermit-abi-0.3.9 \
 		hmac-0.12.1 \
 		home-0.5.9 \
 		http-1.0.0 \
@@ -174,7 +173,7 @@ CARGO_CRATES=	addr2line-0.24.1 \
 		httpdate-1.0.2 \
 		humantime-2.1.0 \
 		hyper-1.0.1 \
-		iana-time-zone-0.1.59 \
+		iana-time-zone-0.1.61 \
 		iana-time-zone-haiku-0.1.2 \
 		id-arena-2.2.1 \
 		idna-0.3.0 \
@@ -195,7 +194,7 @@ CARGO_CRATES=	addr2line-0.24.1 \
 		ittapi-0.4.0 \
 		ittapi-sys-0.4.0 \
 		jobserver-0.1.32 \
-		js-sys-0.3.57 \
+		js-sys-0.3.74 \
 		lazy_static-1.4.0 \
 		lazycell-1.3.0 \
 		leb128-0.2.5 \
@@ -311,7 +310,7 @@ CARGO_CRATES=	addr2line-0.24.1 \
 		socket2-0.5.7 \
 		souper-ir-2.1.0 \
 		spdx-0.10.1 \
-		spin-0.9.4 \
+		spin-0.9.8 \
 		sptr-0.3.2 \
 		stable_deref_trait-1.2.0 \
 		static_assertions-1.1.0 \
@@ -325,7 +324,7 @@ CARGO_CRATES=	addr2line-0.24.1 \
 		syn-2.0.90 \
 		system-interface-0.27.1 \
 		tar-0.4.41 \
-		target-lexicon-0.12.16 \
+		target-lexicon-0.13.0 \
 		tch-0.17.0 \
 		tempfile-3.8.0 \
 		termcolor-1.4.1 \
@@ -353,6 +352,7 @@ CARGO_CRATES=	addr2line-0.24.1 \
 		tracing-core-0.1.31 \
 		tracing-log-0.1.3 \
 		tracing-subscriber-0.3.17 \
+		trait-variant-0.1.2 \
 		try-lock-0.2.4 \
 		typenum-1.15.0 \
 		unicode-bidi-0.3.8 \
@@ -374,12 +374,13 @@ CARGO_CRATES=	addr2line-0.24.1 \
 		walkdir-2.3.3 \
 		want-0.3.0 \
 		wasi-0.11.0+wasi-snapshot-preview1 \
+		wasi-0.13.3+wasi-0.2.2 \
 		wasi-nn-0.6.0 \
-		wasm-bindgen-0.2.87 \
-		wasm-bindgen-backend-0.2.87 \
-		wasm-bindgen-macro-0.2.87 \
-		wasm-bindgen-macro-support-0.2.87 \
-		wasm-bindgen-shared-0.2.87 \
+		wasm-bindgen-0.2.97 \
+		wasm-bindgen-backend-0.2.97 \
+		wasm-bindgen-macro-0.2.97 \
+		wasm-bindgen-macro-support-0.2.97 \
+		wasm-bindgen-shared-0.2.97 \
 		wasm-encoder-0.220.0 \
 		wasm-encoder-0.221.2 \
 		wasm-metadata-0.220.0 \
@@ -435,6 +436,7 @@ CARGO_CRATES=	addr2line-0.24.1 \
 		winx-0.36.3 \
 		wit-bindgen-0.35.0 \
 		wit-bindgen-core-0.35.0 \
+		wit-bindgen-rt-0.33.0 \
 		wit-bindgen-rt-0.35.0 \
 		wit-bindgen-rust-0.35.0 \
 		wit-bindgen-rust-macro-0.35.0 \
