@@ -113,14 +113,7 @@ OPENMP_LDFLAGS=		-lm -lomp
 # up to twice as fast as clang-16.0 compiled code.
 # So we shall stick to a modern GCC for now.
 #
-# However, libstdc++14 appears to have some parts spill over into
-# GCC14, and that breaks at link time with a linker error
-#    `undefined reference to `__cxa_call_terminate'
-# that stems from our using the FreeBSD base system libc++
-# because otherwise all other C++ libraries would have to
-# be compiled with libstdc++ instead.
-# See https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=284487
-USE_GCC=	13 # default as of 2025-01-31
+USE_GCC=	yes # default
 
 .if (${OPSYS} == FreeBSD) && (${OSVERSION} >= 1500000)
 # don't waste everybody's time with Tier-2 and moving targets.
