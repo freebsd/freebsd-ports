@@ -5,6 +5,21 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20250131:
+  AFFECTS: users of security/easy-rsa
+  AUTHOR: mandree@FreeBSD.org
+
+  easy-rsa (easyrsa) versions between 3.0.5 and 3.1.7 inclusively
+  may have chosen the wrong, a weak, cipher (des-ede3-cbc) when
+  encrypting the CA private keys with the build-ca command, when
+  running on a system where openssl was OpenSSL 3.
+
+  Such CA private keys should be re-encrypted with a stronger cipher
+  in order to protect them better, after upgrading EasyRSA to 3.2.1.
+  To that end, the   easyrsa set-pass ca    command can be used.
+
+  Details: https://community.openvpn.net/openvpn/wiki/CVE-2024-13454
+
 20250125:
   AFFECTS: users of www/apache24
   AUTHOR: brnrd@FreeBSD.org
