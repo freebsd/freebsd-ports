@@ -24,7 +24,7 @@ when a CA was created with the   easyrsa build-ca   command.
 Such mistakes cannot be corrected by upgrading Easy-RSA alone.
 
 The standing recommendation for CA private keys is to 
-re-encrypt the CA privat keys with the aes-256-cbc cipher,
+re-encrypt the CA private keys with the aes-256-cbc cipher,
 by using the   easyrsa set-pass ca   command.
 
 For details, see https://community.openvpn.net/openvpn/wiki/CVE-2024-13454.
