@@ -1,5 +1,5 @@
 PORTNAME=	fpc-devel
-PORTVERSION=	3.3.1.20250122
+PORTVERSION=	3.3.1.20250130
 CATEGORIES=	lang
 PKGNAMESUFFIX=	-source
 DIST_SUBDIR=	freepascal
@@ -15,7 +15,7 @@ USE_GITLAB=	yes
 GL_SITE=	https://gitlab.com/freepascal.org
 GL_ACCOUNT=	fpc
 GL_PROJECT=	source
-GL_TAGNAME=	bf41de879a50447193b8ac33bab610d3cf0ba381
+GL_TAGNAME=	212b0fb7a834df33f9192ad64dac8eebe35921ec
 
 PLIST=		${WRKDIR}/pkg-plist
 PATCHDIR=	${PORTSDIR}/lang/fpc-devel/files
