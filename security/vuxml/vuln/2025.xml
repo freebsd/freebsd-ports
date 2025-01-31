@@ -1,3 +1,36 @@
+  <vuln vid="186101b4-dfa6-11ef-8c1c-a8a1599412c6">
+    <topic>chromium -- multiple security fixes</topic>
+    <affects>
+      <package>
+       <name>chromium</name>
+       <range><lt>132.0.6834.159</lt></range>
+      </package>
+      <package>
+       <name>ungoogled-chromium</name>
+       <range><lt>132.0.6834.159</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+       <p>Chrome Releases reports:</p>
+       <blockquote cite="https://chromereleases.googleblog.com/2025/01/stable-channel-update-for-desktop_28.html">
+	 <p>This update includes 2 security fixes:</p>
+	 <ul>
+	    <li>[384844003] Medium CVE-2025-0762: Use after free in DevTools. Reported by Sakana.S on 2024-12-18</li>
+	 </ul>
+       </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2025-0762</cvename>
+      <url>https://chromereleases.googleblog.com/2025/01/stable-channel-update-for-desktop_28.html</url>
+    </references>
+    <dates>
+      <discovery>2025-01-18</discovery>
+      <entry>2025-01-31</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="cd2ace09-df23-11ef-a205-901b0e9408dc">
     <topic>dendrite -- Server-side request forgery vulnerability</topic>
     <affects>
