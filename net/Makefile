@@ -887,6 +887,7 @@
     SUBDIR += p5-Socket-Class
     SUBDIR += p5-Socket-GetAddrInfo
     SUBDIR += p5-Socket-Multicast6
+    SUBDIR += p5-Socket-Netlink
     SUBDIR += p5-Socket6
     SUBDIR += p5-Socks
     SUBDIR += p5-Sort-Key-IPv4

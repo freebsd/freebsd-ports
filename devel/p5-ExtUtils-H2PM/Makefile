@@ -13,6 +13,7 @@ LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	p5-Module-Build>=0.4004:devel/p5-Module-Build
+TEST_DEPENDS=	p5-Test-Pod>=1.00:devel/p5-Test-Pod
 
 USES=		perl5
 USE_PERL5=	configure
