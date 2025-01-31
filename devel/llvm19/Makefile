@@ -1,6 +1,6 @@
 PORTNAME=	llvm
 DISTVERSION=	19.1.7
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	devel lang
 MASTER_SITES=	https://github.com/llvm/llvm-project/releases/download/llvmorg-${DISTVERSION}/
 #MASTER_SITES=	https://github.com/llvm/llvm-project/releases/download/llvmorg-${DISTVERSION:S/rc/-rc/}/
@@ -87,7 +87,7 @@ OPTIONS_DEFAULT=	CLANG LLD
 # BE_NATIVE for 32-bit
 OPTIONS_DEFAULT_armv6=		BE_NATIVE
 OPTIONS_DEFAULT_armv7=		BE_NATIVE
-OPTIONS_DEFAULT_i386=		BE_NATIVE
+OPTIONS_DEFAULT_i386=		BE_NATIVE BE_AMDGPU BE_WASM
 OPTIONS_DEFAULT_powerpc=	BE_NATIVE
 OPTIONS_DEFAULT_powerpcspe=	BE_NATIVE
 # FLAVOR-dependent BE for 64-bit
