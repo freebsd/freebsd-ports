@@ -1,8 +1,12 @@
 PORTNAME=	sfwbar
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.0_beta15
-PORTREVISION=	1
+DISTVERSION=	1.0_beta16
 CATEGORIES=	x11 wayland
+
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES=	f101b45ae0ace422052463febe85c19dca8ad2ff.patch:-p1 \
+		30db8085d15f6892a175f976e36dd32ec63261ad.patch:-p1 \
+		5f460019b79c54ae782ccb661e9f4c1a160246b8.patch:-p1
 
 MAINTAINER=	tino.engel@mail.de
 COMMENT=	Flexible taskbar application for wayland compositors
