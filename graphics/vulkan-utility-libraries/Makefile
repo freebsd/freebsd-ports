@@ -1,6 +1,6 @@
 PORTNAME=	vulkan-utility-libraries
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.4.306
+DISTVERSION=	1.4.307
 CATEGORIES=	graphics
 
 MAINTAINER=	jbeich@FreeBSD.org
