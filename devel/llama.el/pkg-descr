@@ -1,0 +1,20 @@
+This package implements a macro named ##, which provides a compact way
+to write short lambda expressions.
+
+The signature of the macro is (## FN &rest BODY) and it expands to a
+lambda expression, which calls the function FN with the arguments BODY
+and returns the value of that. The arguments of the lambda expression
+are derived from symbols found in BODY.
+
+Each symbol from %1 through %9, which appears in an unquoted part of
+BODY, specifies a mandatory argument. Each symbol from &1 through &9,
+which appears in an unquoted part of BODY, specifies an optional
+argument. The symbol &* specifies extra (&rest) arguments.
+
+The shorter symbol % can be used instead of %1, but using both in the
+same expression is not allowed. Likewise & can be used instead of
+&1. These shorthands are not recognized in function position.
+
+To support binding forms that use a vector as VARLIST (such as -let
+from the dash package), argument symbols are also detected inside of
+vectors.

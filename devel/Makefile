@@ -1566,6 +1566,7 @@
     SUBDIR += linux_libusb
     SUBDIR += listserialc
     SUBDIR += liteide
+    SUBDIR += llama.el
     SUBDIR += llbuild
     SUBDIR += lldb-mi
     SUBDIR += llnextgen
