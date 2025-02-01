@@ -1,6 +1,6 @@
 PORTNAME=	webkit
 DISTVERSION=	2.46.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	https://webkitgtk.org/releases/
 PKGNAMESUFFIX=	2-gtk_${FLAVOR}
@@ -52,9 +52,8 @@ USES=		bison cmake compiler:c++23-lang cpe gettext gl gnome gperf \
 USE_GNOME=	cairo gdkpixbuf2 introspection:build libxml2 libxslt
 USE_GL=		egl gbm gl glesv2
 USE_LDCONFIG=	yes
-USE_GCC=	yes
 USE_PERL5=	build
-USE_XORG=	ice x11 xcomposite xdamage xext xrender xt
+USE_XORG=	x11
 
 CPE_VENDOR=	webkitgtk
 CPE_PRODUCT=	webkitgtk
