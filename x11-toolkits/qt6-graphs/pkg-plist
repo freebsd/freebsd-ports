@@ -8,6 +8,7 @@
 %%QT_INCDIR%%/QtGraphs/%%FULLVER%%/QtGraphs/private/baritemmodelhandler_p.h
 %%QT_INCDIR%%/QtGraphs/%%FULLVER%%/QtGraphs/private/barsrenderer_p.h
 %%QT_INCDIR%%/QtGraphs/%%FULLVER%%/QtGraphs/private/charthelpers_p.h
+%%QT_INCDIR%%/QtGraphs/%%FULLVER%%/QtGraphs/private/commonutils_p.h
 %%QT_INCDIR%%/QtGraphs/%%FULLVER%%/QtGraphs/private/foreigntypes_p.h
 %%QT_INCDIR%%/QtGraphs/%%FULLVER%%/QtGraphs/private/foreigntypesbars_p.h
 %%QT_INCDIR%%/QtGraphs/%%FULLVER%%/QtGraphs/private/foreigntypesscatter_p.h

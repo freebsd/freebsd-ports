@@ -3,9 +3,6 @@ DISTVERSION=	${QT6_VERSION}
 CATEGORIES=	devel
 PKGNAMEPREFIX=	qt6-
 
-PATCH_SITES=	https://github.com/qt/qtbase/commit/
-PATCHFILES+=	df30953228f0e364e9a3915d97f522efd8e67489.patch:-p1 # Fix configure of sqldrivers
-
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt base (core, gui, widgets, network,...)
 

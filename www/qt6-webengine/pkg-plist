@@ -254,6 +254,7 @@ lib/cmake/Qt6WebEngineWidgets/Qt6WebEngineWidgetsVersionlessTargets.cmake
 %%QT_QMLDIR%%/QtWebEngine/libqtwebenginequickplugin.so
 %%QT_QMLDIR%%/QtWebEngine/plugins.qmltypes
 %%QT_QMLDIR%%/QtWebEngine/qmldir
+%%QT_SBOMDIR%%/qtpdf-%%FULLVER%%.spdx
 %%QT_SBOMDIR%%/qtwebengine-%%FULLVER%%.spdx
 libdata/pkgconfig/Qt6WebEngineCore.pc
 libdata/pkgconfig/Qt6WebEngineQuick.pc

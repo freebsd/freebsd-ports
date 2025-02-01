@@ -1,4 +1,4 @@
---- src/corelib/io/qlockfile_unix.cpp.orig	2024-08-13 19:47:11 UTC
+--- src/corelib/io/qlockfile_unix.cpp.orig	2024-11-14 11:02:40 UTC
 +++ src/corelib/io/qlockfile_unix.cpp
 @@ -46,6 +46,8 @@
  #   include <sys/sysctl.h>
@@ -9,7 +9,7 @@
  # endif
  #endif
  
-@@ -223,23 +225,44 @@ QString QLockFilePrivate::processNameByPid(qint64 pid)
+@@ -237,23 +239,44 @@ QString QLockFilePrivate::processNameByPid(qint64 pid)
      struct kinfo_proc kp;
      int mib[6] = { CTL_KERN, KERN_PROC, KERN_PROC_PID, (int)pid, sizeof(struct kinfo_proc), 1 };
  # else
