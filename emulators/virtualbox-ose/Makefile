@@ -220,7 +220,6 @@ VBOX_LLVM_VER?=	${LLVM_DEFAULT}
 .endif
 .endif
 PATCH_DEPENDS+=	${LOCALBASE}/share/kBuild/tools/GXX3.kmk:devel/kBuild
-EXTRA_PATCHES+=	${PATCHDIR}/extrapatch-src-VBox-Devices-PC-ipxe-Makefile.kmk
 .endif
 
 .if ${PYTHON_MAJOR_VER} >= 3
