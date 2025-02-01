@@ -1,11 +1,11 @@
---- Cargo.toml.orig	2024-04-12 00:28:10.859741000 -0300
-+++ Cargo.toml	2024-04-12 00:28:17.686120000 -0300
-@@ -58,7 +58,7 @@
+--- Cargo.toml.orig	2025-01-21 16:17:22 UTC
++++ Cargo.toml
+@@ -59,7 +59,7 @@ clircle = { version = "0.6.1", default-features = fals
  semver = "1.0"
  path_abs = { version = "0.5", default-features = false }
- clircle = "0.4"
+ clircle = { version = "0.6.1", default-features = false }
 -bugreport = { version = "0.5.0", optional = true }
 +bugreport = { version = "0.5.0", optional = true, default-features = false, features = ["git_hash", "format_markdown"]}
  etcetera = { version = "0.8.0", optional = true }
- grep-cli = { version = "0.1.9", optional = true }
- regex = { version = "1.8.3", optional = true }
+ grep-cli = { version = "0.1.11", optional = true }
+ regex = { version = "1.10.6", optional = true }
