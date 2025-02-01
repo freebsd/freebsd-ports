@@ -1,6 +1,5 @@
 PORTNAME=	tinyows
-PORTVERSION=	1.2.0
-PORTREVISION=	5
+PORTVERSION=	1.2.2
 CATEGORIES=	graphics www geography
 MASTER_SITES=	https://download.osgeo.org/mapserver/
 
@@ -9,13 +8,10 @@ COMMENT=	High Performance WFS-T server
 WWW=		https://mapserver.org/tinyows/
 
 LICENSE=	MIT
-LICENSE_FILE=	${WRKSRC}/LICENSE
+LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-DEPRECATED=	Depends on expired databases/postgis31
-EXPIRATION_DATE=2025-02-01
-
-BUILD_DEPENDS=	${LOCALBASE}/share/postgresql/extension/postgis.control:databases/postgis31
-RUN_DEPENDS=	${LOCALBASE}/share/postgresql/extension/postgis.control:databases/postgis31
+BUILD_DEPENDS=	shp2pgsql:databases/postgis33
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		autoreconf gnome pgsql
 USE_GNOME=	libxml2
@@ -30,6 +26,6 @@ FASTCGI_CONFIGURE_WITH=	fastcgi=${LOCALBASE}
 
 post-install:
 	${MKDIR} ${STAGEDIR}${WWWDIR}/cgi-bin/
-	${INSTALL_PROGRAM} ${WRKSRC}/tinyows ${STAGEDIR}${WWWDIR}/cgi-bin/tinyows
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${WWWDIR}/cgi-bin
 
 .include <bsd.port.mk>
