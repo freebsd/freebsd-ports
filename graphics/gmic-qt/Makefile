@@ -1,6 +1,6 @@
 PORTNAME=	gmic-qt
 DISTVERSIONPREFIX=	v.
-DISTVERSION=	3.5.0
+DISTVERSION=	3.5.2
 PORTEPOCH=	1
 CATEGORIES=	graphics kde
 MASTER_SITES=	https://github.com/GreycLab/gmic/releases/download/${DISTVERSIONFULL}/ \
@@ -55,6 +55,6 @@ PLUGINS_DIR=	libexec/gimp/2.2/plug-ins/gmic_gimp_qt
 PLUGINS_DIR=	bin
 .endif
 
-PLIST_FILES=	${PLUGINS_DIR}/gmic_${FLAVOR:S/$/_/:S/none_//}qt
+PLIST_FILES=	${PLUGINS_DIR}/gmic_${FLAVOR:S|$|_|:S|none_||}qt
 
 .include <bsd.port.mk>
