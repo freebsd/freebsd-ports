@@ -4325,7 +4325,6 @@ share/applications/emacsclient.desktop
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/eval.c
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/fileio.c
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/filelock.c
-%%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/firstfile.c
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/floatfns.c
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/fns.c
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/font.c
@@ -4374,7 +4373,6 @@ share/applications/emacsclient.desktop
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/keymap.c
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/keymap.h
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/kqueue.c
-%%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/lastfile.c
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/lcms.c
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/lisp.h
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/lread.c
@@ -4411,7 +4409,6 @@ share/applications/emacsclient.desktop
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/process.c
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/process.h
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/profiler.c
-%%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/puresize.h
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/ralloc.c
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/regex-emacs.c
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/regex-emacs.h
@@ -4424,8 +4421,6 @@ share/applications/emacsclient.desktop
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/sfntfont-android.c
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/sfntfont.c
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/sfntfont.h
-%%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/sheap.c
-%%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/sheap.h
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/sort.c
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/sound.c
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/sqlite.c
@@ -4458,15 +4453,6 @@ share/applications/emacsclient.desktop
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/treesit.c
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/treesit.h
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/undo.c
-%%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/unexaix.c
-%%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/unexcoff.c
-%%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/unexcw.c
-%%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/unexec.h
-%%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/unexelf.c
-%%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/unexhp9k800.c
-%%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/unexmacosx.c
-%%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/unexsol.c
-%%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/unexw32.c
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/vm-limit.c
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/w16select.c
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/w32.c
