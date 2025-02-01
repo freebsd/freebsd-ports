@@ -30,6 +30,7 @@ CONFIGURE_ARGS=	--disable-static \
 CONFLICTS_INSTALL=	exult-devel
 SUB_FILES=		pkg-message
 PLIST?=			${.CURDIR}/pkg-plist
+PORTDOCS=	*
 
 .if !defined(MASTERDIR)
 MASTER_SITES=	http://prdownloads.sourceforge.net/exult/
