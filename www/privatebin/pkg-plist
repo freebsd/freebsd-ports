@@ -111,7 +111,7 @@
 %%WWWDIR%%/js/pastemeta.jsonld
 %%WWWDIR%%/js/prettify.js
 %%WWWDIR%%/js/privatebin.js
-%%WWWDIR%%/js/purify-3.1.7.js
+%%WWWDIR%%/js/purify-3.2.4.js
 %%WWWDIR%%/js/rawinflate-0.3.js
 %%WWWDIR%%/js/showdown-2.1.0.js
 %%WWWDIR%%/js/types.jsonld
@@ -150,6 +150,7 @@
 %%WWWDIR%%/tpl/yourlsproxy.php
 %%WWWDIR%%/vendor/.htaccess
 %%WWWDIR%%/vendor/autoload.php
+%%WWWDIR%%/vendor/composer/autoload_files.php
 %%WWWDIR%%/vendor/composer/ClassLoader.php
 %%WWWDIR%%/vendor/composer/InstalledVersions.php
 %%WWWDIR%%/vendor/composer/autoload_classmap.php
@@ -212,6 +213,17 @@
 %%WWWDIR%%/vendor/mlocati/ip-lib/src/Service/BinaryMath.php
 %%WWWDIR%%/vendor/mlocati/ip-lib/src/Service/RangesFromBoundaryCalculator.php
 %%WWWDIR%%/vendor/mlocati/ip-lib/src/Service/UnsignedIntegerMath.php
+%%WWWDIR%%/vendor/symfony/polyfill-ctype/Ctype.php
+%%WWWDIR%%/vendor/symfony/polyfill-ctype/bootstrap.php
+%%WWWDIR%%/vendor/symfony/polyfill-ctype/bootstrap80.php
+%%WWWDIR%%/vendor/symfony/polyfill-php80/Php80.php
+%%WWWDIR%%/vendor/symfony/polyfill-php80/PhpToken.php
+%%WWWDIR%%/vendor/symfony/polyfill-php80/Resources/stubs/Attribute.php
+%%WWWDIR%%/vendor/symfony/polyfill-php80/Resources/stubs/PhpToken.php
+%%WWWDIR%%/vendor/symfony/polyfill-php80/Resources/stubs/Stringable.php
+%%WWWDIR%%/vendor/symfony/polyfill-php80/Resources/stubs/UnhandledMatchError.php
+%%WWWDIR%%/vendor/symfony/polyfill-php80/Resources/stubs/ValueError.php
+%%WWWDIR%%/vendor/symfony/polyfill-php80/bootstrap.php
 %%WWWDIR%%/vendor/yzalis/identicon/src/Identicon/Generator/BaseGenerator.php
 %%WWWDIR%%/vendor/yzalis/identicon/src/Identicon/Generator/GdGenerator.php
 %%WWWDIR%%/vendor/yzalis/identicon/src/Identicon/Generator/GeneratorInterface.php
