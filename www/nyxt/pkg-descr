@@ -1,0 +1,3 @@
+Nyxt is a keyboard-driven web browser designed for hackers. Inspired by Emacs
+and Vim, it has familiar keybindings (Emacs, vi, CUA), and is infinitely
+extensible in Lisp.
