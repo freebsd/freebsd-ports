@@ -1349,6 +1349,7 @@ bin/qmlscene6
 %%QT_INCDIR%%/QtQuickTemplates2/%%FULLVER%%/QtQuickTemplates2/private/qquickswitchdelegate_p.h
 %%QT_INCDIR%%/QtQuickTemplates2/%%FULLVER%%/QtQuickTemplates2/private/qquicktabbar_p.h
 %%QT_INCDIR%%/QtQuickTemplates2/%%FULLVER%%/QtQuickTemplates2/private/qquicktabbutton_p.h
+%%QT_INCDIR%%/QtQuickTemplates2/%%FULLVER%%/QtQuickTemplates2/private/qquicktemplatesutils_p.h
 %%QT_INCDIR%%/QtQuickTemplates2/%%FULLVER%%/QtQuickTemplates2/private/qquicktextarea_p.h
 %%QT_INCDIR%%/QtQuickTemplates2/%%FULLVER%%/QtQuickTemplates2/private/qquicktextarea_p_p.h
 %%QT_INCDIR%%/QtQuickTemplates2/%%FULLVER%%/QtQuickTemplates2/private/qquicktextfield_p.h
@@ -1831,6 +1832,7 @@ lib/cmake/Qt6Qml/Qt6QmlConfig.cmake
 lib/cmake/Qt6Qml/Qt6QmlConfigExtras.cmake
 lib/cmake/Qt6Qml/Qt6QmlConfigVersion.cmake
 lib/cmake/Qt6Qml/Qt6QmlConfigVersionImpl.cmake
+lib/cmake/Qt6Qml/Qt6QmlCopyFiles.cmake
 lib/cmake/Qt6Qml/Qt6QmlDependencies.cmake
 lib/cmake/Qt6Qml/Qt6QmlDeploySupport.cmake
 lib/cmake/Qt6Qml/Qt6QmlFindQmlscInternal.cmake
@@ -2630,8 +2632,8 @@ lib/cmake/Qt6QuickWidgets/Qt6QuickWidgetsVersionlessTargets.cmake
 %%QT_QMLDIR%%/Assets/Downloader/libqmlassetdownloaderplugin.a
 %%QT_QMLDIR%%/Assets/Downloader/libqmlassetdownloaderplugin.prl
 %%DEBUG%%%%QT_QMLDIR%%/Assets/Downloader/objects-Debug/QmlAssetDownloader_resources_1/.qt/rcc/qrc_qmake_Assets_Downloader_init.cpp.o
-%%NO_DEBUG%%%%QT_QMLDIR%%/Assets/Downloader/objects-Release/QmlAssetDownloader_resources_1/.qt/rcc/qrc_qmake_Assets_Downloader_init.cpp.o
 %%DEBUG%%%%QT_QMLDIR%%/Assets/Downloader/objects-Debug/QmlAssetDownloaderplugin_init/QmlAssetDownloaderplugin_init.cpp.o
+%%NO_DEBUG%%%%QT_QMLDIR%%/Assets/Downloader/objects-Release/QmlAssetDownloader_resources_1/.qt/rcc/qrc_qmake_Assets_Downloader_init.cpp.o
 %%NO_DEBUG%%%%QT_QMLDIR%%/Assets/Downloader/objects-Release/QmlAssetDownloaderplugin_init/QmlAssetDownloaderplugin_init.cpp.o
 %%QT_QMLDIR%%/Assets/Downloader/plugins.qmltypes
 %%QT_QMLDIR%%/Assets/Downloader/qmldir

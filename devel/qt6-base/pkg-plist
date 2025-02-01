@@ -2680,8 +2680,17 @@ lib/cmake/Qt6/QtPublicFinalizerHelpers.cmake
 lib/cmake/Qt6/QtPublicFindPackageHelpers.cmake
 lib/cmake/Qt6/QtPublicGitHelpers.cmake
 lib/cmake/Qt6/QtPublicPluginHelpers.cmake
+lib/cmake/Qt6/QtPublicSbomAttributionHelpers.cmake
+lib/cmake/Qt6/QtPublicSbomCpeHelpers.cmake
+lib/cmake/Qt6/QtPublicSbomDepHelpers.cmake
+lib/cmake/Qt6/QtPublicSbomFileHelpers.cmake
 lib/cmake/Qt6/QtPublicSbomGenerationHelpers.cmake
 lib/cmake/Qt6/QtPublicSbomHelpers.cmake
+lib/cmake/Qt6/QtPublicSbomLicenseHelpers.cmake
+lib/cmake/Qt6/QtPublicSbomOpsHelpers.cmake
+lib/cmake/Qt6/QtPublicSbomPurlHelpers.cmake
+lib/cmake/Qt6/QtPublicSbomPythonHelpers.cmake
+lib/cmake/Qt6/QtPublicSbomSystemDepHelpers.cmake
 lib/cmake/Qt6/QtPublicTargetHelpers.cmake
 lib/cmake/Qt6/QtPublicTestHelpers.cmake
 lib/cmake/Qt6/QtPublicToolHelpers.cmake
@@ -2708,6 +2717,7 @@ lib/cmake/Qt6/QtUnityBuildHelpers.cmake
 lib/cmake/Qt6/QtVersionlessAliasTargets.cmake.in
 lib/cmake/Qt6/QtVersionlessTargets.cmake.in
 lib/cmake/Qt6/QtWasmHelpers.cmake
+lib/cmake/Qt6/QtWindowsHelpers.cmake
 lib/cmake/Qt6/QtWrapperScriptHelpers.cmake
 lib/cmake/Qt6/QtWriteArgsFile.cmake
 lib/cmake/Qt6/config.tests/binary_for_strip/CMakeLists.txt
@@ -3766,6 +3776,7 @@ libdata/pkgconfig/Qt6Xml.pc
 %%QT_DOCDIR%%/config/exampleurl-qtxmlpatterns.qdocconf
 %%QT_DOCDIR%%/global/compat.qdocconf
 %%QT_DOCDIR%%/global/config.qdocconf
+%%QT_DOCDIR%%/global/cpp-doc-macros.qdocconf
 %%QT_DOCDIR%%/global/externalsites.qdocconf
 %%QT_DOCDIR%%/global/externalsites/external-resources.qdoc
 %%QT_DOCDIR%%/global/externalsites/qt-webpages.qdoc

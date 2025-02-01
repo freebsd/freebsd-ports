@@ -389,6 +389,7 @@
 %%QT_DOCDIR%%/qtdoc/restoring-geometry.html
 %%QT_DOCDIR%%/qtdoc/sbom.html
 %%QT_DOCDIR%%/qtdoc/scalability.html
+%%QT_DOCDIR%%/qtdoc/security.html
 %%QT_DOCDIR%%/qtdoc/session.html
 %%QT_DOCDIR%%/qtdoc/sharedlibrary.html
 %%QT_DOCDIR%%/qtdoc/signalsandslots-syntaxes.html
@@ -423,6 +424,7 @@
 %%QT_DOCDIR%%/qtdoc/uic.html
 %%QT_DOCDIR%%/qtdoc/unicode.html
 %%QT_DOCDIR%%/qtdoc/unix-signals.html
+%%QT_DOCDIR%%/qtdoc/untrusteddata.html
 %%QT_DOCDIR%%/qtdoc/vxworks.html
 %%QT_DOCDIR%%/qtdoc/wasm.html
 %%QT_DOCDIR%%/qtdoc/wayland-and-qt.html

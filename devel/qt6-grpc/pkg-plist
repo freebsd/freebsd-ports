@@ -50,11 +50,15 @@
 %%QT_INCDIR%%/QtGrpcQuick/qtgrpcquickversion.h
 %%QT_INCDIR%%/QtGrpcQuick/qtqmlgrpcstreamsender.h
 %%QT_INCDIR%%/QtProtobuf/%%FULLVER%%/QtProtobuf/private/protobuffieldpresencechecker_p.h
+%%QT_INCDIR%%/QtProtobuf/%%FULLVER%%/QtProtobuf/private/protobufscalarjsonserializers_p.h
+%%QT_INCDIR%%/QtProtobuf/%%FULLVER%%/QtProtobuf/private/protobufscalarserializers_p.h
+%%QT_INCDIR%%/QtProtobuf/%%FULLVER%%/QtProtobuf/private/qprotobufdeserializerbase_p.h
 %%QT_INCDIR%%/QtProtobuf/%%FULLVER%%/QtProtobuf/private/qprotobufmessage_p.h
 %%QT_INCDIR%%/QtProtobuf/%%FULLVER%%/QtProtobuf/private/qprotobufpropertyorderingbuilder_p.h
 %%QT_INCDIR%%/QtProtobuf/%%FULLVER%%/QtProtobuf/private/qprotobufregistration_p.h
 %%QT_INCDIR%%/QtProtobuf/%%FULLVER%%/QtProtobuf/private/qprotobufselfcheckiterator_p.h
 %%QT_INCDIR%%/QtProtobuf/%%FULLVER%%/QtProtobuf/private/qprotobufserializer_p.h
+%%QT_INCDIR%%/QtProtobuf/%%FULLVER%%/QtProtobuf/private/qprotobufserializerbase_p.h
 %%QT_INCDIR%%/QtProtobuf/%%FULLVER%%/QtProtobuf/private/qtprotobuf-config_p.h
 %%QT_INCDIR%%/QtProtobuf/%%FULLVER%%/QtProtobuf/private/qtprotobufdefs_p.h
 %%QT_INCDIR%%/QtProtobuf/%%FULLVER%%/QtProtobuf/private/qtprotobuflogging_p.h
