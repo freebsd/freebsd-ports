@@ -31,6 +31,7 @@ lib/samba4/private/libsamba-python%%PYTHON_EXT_SUFFIX%%-private-samba.so
 %%PYTHON_SITELIBDIR%%/samba/dcerpc/auth%%PYTHON_EXT_SUFFIX%%.so
 %%PYTHON_SITELIBDIR%%/samba/dcerpc/base%%PYTHON_EXT_SUFFIX%%.so
 %%PYTHON_SITELIBDIR%%/samba/dcerpc/claims%%PYTHON_EXT_SUFFIX%%.so
+%%PYTHON_SITELIBDIR%%/samba/dcerpc/conditional_ace%%PYTHON_EXT_SUFFIX%%.so
 %%PYTHON_SITELIBDIR%%/samba/dcerpc/dcerpc%%PYTHON_EXT_SUFFIX%%.so
 %%PYTHON_SITELIBDIR%%/samba/dcerpc/dfs%%PYTHON_EXT_SUFFIX%%.so
 %%PYTHON_SITELIBDIR%%/samba/dcerpc/dns%%PYTHON_EXT_SUFFIX%%.so
@@ -40,6 +41,8 @@ lib/samba4/private/libsamba-python%%PYTHON_EXT_SUFFIX%%-private-samba.so
 %%PYTHON_SITELIBDIR%%/samba/dcerpc/drsuapi%%PYTHON_EXT_SUFFIX%%.so
 %%PYTHON_SITELIBDIR%%/samba/dcerpc/echo%%PYTHON_EXT_SUFFIX%%.so
 %%PYTHON_SITELIBDIR%%/samba/dcerpc/epmapper%%PYTHON_EXT_SUFFIX%%.so
+%%PYTHON_SITELIBDIR%%/samba/dcerpc/gkdi%%PYTHON_EXT_SUFFIX%%.so
+%%PYTHON_SITELIBDIR%%/samba/dcerpc/gmsa%%PYTHON_EXT_SUFFIX%%.so
 %%PYTHON_SITELIBDIR%%/samba/dcerpc/idmap%%PYTHON_EXT_SUFFIX%%.so
 %%PYTHON_SITELIBDIR%%/samba/dcerpc/initshutdown%%PYTHON_EXT_SUFFIX%%.so
 %%PYTHON_SITELIBDIR%%/samba/dcerpc/irpc%%PYTHON_EXT_SUFFIX%%.so
@@ -55,8 +58,11 @@ lib/samba4/private/libsamba-python%%PYTHON_EXT_SUFFIX%%-private-samba.so
 %%PYTHON_SITELIBDIR%%/samba/dcerpc/ntlmssp%%PYTHON_EXT_SUFFIX%%.so
 %%PYTHON_SITELIBDIR%%/samba/dcerpc/preg%%PYTHON_EXT_SUFFIX%%.so
 %%PYTHON_SITELIBDIR%%/samba/dcerpc/samr%%PYTHON_EXT_SUFFIX%%.so
+%%PYTHON_SITELIBDIR%%/samba/dcerpc/schannel%%PYTHON_EXT_SUFFIX%%.so
 %%PYTHON_SITELIBDIR%%/samba/dcerpc/security%%PYTHON_EXT_SUFFIX%%.so
 %%PYTHON_SITELIBDIR%%/samba/dcerpc/server_id%%PYTHON_EXT_SUFFIX%%.so
+%%PYTHON_SITELIBDIR%%/samba/dcerpc/smb3posix%%PYTHON_EXT_SUFFIX%%.so
+%%PYTHON_SITELIBDIR%%/samba/dcerpc/smbXsrv%%PYTHON_EXT_SUFFIX%%.so
 %%PYTHON_SITELIBDIR%%/samba/dcerpc/smb_acl%%PYTHON_EXT_SUFFIX%%.so
 %%PYTHON_SITELIBDIR%%/samba/dcerpc/spoolss%%PYTHON_EXT_SUFFIX%%.so
 %%PYTHON_SITELIBDIR%%/samba/dcerpc/srvsvc%%PYTHON_EXT_SUFFIX%%.so
@@ -81,11 +87,13 @@ lib/samba4/private/libsamba-python%%PYTHON_EXT_SUFFIX%%-private-samba.so
 %%PYTHON_SITELIBDIR%%/samba/functional_level.py
 %%PYTHON_SITELIBDIR%%/samba/gensec%%PYTHON_EXT_SUFFIX%%.so
 %%PYTHON_SITELIBDIR%%/samba/getopt.py
+%%PYTHON_SITELIBDIR%%/samba/gkdi.py
 %%PYTHON_SITELIBDIR%%/samba/gp/__init__.py
 %%PYTHON_SITELIBDIR%%/samba/gp/gp_centrify_crontab_ext.py
 %%PYTHON_SITELIBDIR%%/samba/gp/gp_centrify_sudoers_ext.py
 %%PYTHON_SITELIBDIR%%/samba/gp/gp_cert_auto_enroll_ext.py
 %%PYTHON_SITELIBDIR%%/samba/gp/gp_chromium_ext.py
+%%PYTHON_SITELIBDIR%%/samba/gp/gp_drive_maps_ext.py
 %%PYTHON_SITELIBDIR%%/samba/gp/gp_ext_loader.py
 %%PYTHON_SITELIBDIR%%/samba/gp/gp_firefox_ext.py
 %%PYTHON_SITELIBDIR%%/samba/gp/gp_firewalld_ext.py
@@ -114,6 +122,7 @@ lib/samba4/private/libsamba-python%%PYTHON_EXT_SUFFIX%%-private-samba.so
 %%PYTHON_SITELIBDIR%%/samba/gpo%%PYTHON_EXT_SUFFIX%%.so
 %%PYTHON_SITELIBDIR%%/samba/graph.py
 %%PYTHON_SITELIBDIR%%/samba/hostconfig.py
+%%PYTHON_SITELIBDIR%%/samba/hresult%%PYTHON_EXT_SUFFIX%%.so
 %%PYTHON_SITELIBDIR%%/samba/idmap.py
 %%PYTHON_SITELIBDIR%%/samba/join.py
 %%PYTHON_SITELIBDIR%%/samba/kcc/__init__.py
@@ -165,7 +174,9 @@ lib/samba4/private/libsamba-python%%PYTHON_EXT_SUFFIX%%-private-samba.so
 %%PYTHON_SITELIBDIR%%/samba/netcmd/domain/models/claim_type.py
 %%PYTHON_SITELIBDIR%%/samba/netcmd/domain/models/exceptions.py
 %%PYTHON_SITELIBDIR%%/samba/netcmd/domain/models/fields.py
+%%PYTHON_SITELIBDIR%%/samba/netcmd/domain/models/group.py
 %%PYTHON_SITELIBDIR%%/samba/netcmd/domain/models/model.py
+%%PYTHON_SITELIBDIR%%/samba/netcmd/domain/models/query.py
 %%PYTHON_SITELIBDIR%%/samba/netcmd/domain/models/schema.py
 %%PYTHON_SITELIBDIR%%/samba/netcmd/domain/models/site.py
 %%PYTHON_SITELIBDIR%%/samba/netcmd/domain/models/subnet.py
@@ -194,11 +205,39 @@ lib/samba4/private/libsamba-python%%PYTHON_EXT_SUFFIX%%-private-samba.so
 %%PYTHON_SITELIBDIR%%/samba/netcmd/pso.py
 %%PYTHON_SITELIBDIR%%/samba/netcmd/rodc.py
 %%PYTHON_SITELIBDIR%%/samba/netcmd/schema.py
+%%PYTHON_SITELIBDIR%%/samba/netcmd/shell.py
 %%PYTHON_SITELIBDIR%%/samba/netcmd/sites.py
 %%PYTHON_SITELIBDIR%%/samba/netcmd/spn.py
 %%PYTHON_SITELIBDIR%%/samba/netcmd/testparm.py
+%%PYTHON_SITELIBDIR%%/samba/netcmd/user/__init__.py
+%%PYTHON_SITELIBDIR%%/samba/netcmd/user/add.py
+%%PYTHON_SITELIBDIR%%/samba/netcmd/user/add_unix_attrs.py
+%%PYTHON_SITELIBDIR%%/samba/netcmd/user/auth/__init__.py
+%%PYTHON_SITELIBDIR%%/samba/netcmd/user/auth/policy.py
+%%PYTHON_SITELIBDIR%%/samba/netcmd/user/auth/silo.py
+%%PYTHON_SITELIBDIR%%/samba/netcmd/user/delete.py
+%%PYTHON_SITELIBDIR%%/samba/netcmd/user/disable.py
+%%PYTHON_SITELIBDIR%%/samba/netcmd/user/edit.py
+%%PYTHON_SITELIBDIR%%/samba/netcmd/user/enable.py
+%%PYTHON_SITELIBDIR%%/samba/netcmd/user/getgroups.py
+%%PYTHON_SITELIBDIR%%/samba/netcmd/user/list.py
+%%PYTHON_SITELIBDIR%%/samba/netcmd/user/move.py
+%%PYTHON_SITELIBDIR%%/samba/netcmd/user/password.py
+%%PYTHON_SITELIBDIR%%/samba/netcmd/user/readpasswords/__init__.py
+%%PYTHON_SITELIBDIR%%/samba/netcmd/user/readpasswords/common.py
+%%PYTHON_SITELIBDIR%%/samba/netcmd/user/readpasswords/get_kerberos_ticket.py
+%%PYTHON_SITELIBDIR%%/samba/netcmd/user/readpasswords/getpassword.py
+%%PYTHON_SITELIBDIR%%/samba/netcmd/user/readpasswords/show.py
+%%PYTHON_SITELIBDIR%%/samba/netcmd/user/readpasswords/syncpasswords.py
+%%PYTHON_SITELIBDIR%%/samba/netcmd/user/rename.py
+%%PYTHON_SITELIBDIR%%/samba/netcmd/user/sensitive.py
+%%PYTHON_SITELIBDIR%%/samba/netcmd/user/setexpiry.py
+%%PYTHON_SITELIBDIR%%/samba/netcmd/user/setpassword.py
+%%PYTHON_SITELIBDIR%%/samba/netcmd/user/setprimarygroup.py
+%%PYTHON_SITELIBDIR%%/samba/netcmd/user/unlock.py
 %%PYTHON_SITELIBDIR%%/samba/netcmd/validators.py
 %%PYTHON_SITELIBDIR%%/samba/netcmd/visualize.py
+%%PYTHON_SITELIBDIR%%/samba/nt_time.py
 %%PYTHON_SITELIBDIR%%/samba/ntacls.py
 %%PYTHON_SITELIBDIR%%/samba/ntstatus%%PYTHON_EXT_SUFFIX%%.so
 %%PYTHON_SITELIBDIR%%/samba/param%%PYTHON_EXT_SUFFIX%%.so
@@ -248,6 +287,7 @@ lib/samba4/private/libsamba-python%%PYTHON_EXT_SUFFIX%%-private-samba.so
 %%PYTHON_SITELIBDIR%%/samba/tests/blackbox/__init__.py
 %%PYTHON_SITELIBDIR%%/samba/tests/blackbox/bug13653.py
 %%PYTHON_SITELIBDIR%%/samba/tests/blackbox/check_output.py
+%%PYTHON_SITELIBDIR%%/samba/tests/blackbox/claims.py
 %%PYTHON_SITELIBDIR%%/samba/tests/blackbox/downgradedatabase.py
 %%PYTHON_SITELIBDIR%%/samba/tests/blackbox/http_chunk.py
 %%PYTHON_SITELIBDIR%%/samba/tests/blackbox/http_content.py
@@ -256,11 +296,13 @@ lib/samba4/private/libsamba-python%%PYTHON_EXT_SUFFIX%%-private-samba.so
 %%PYTHON_SITELIBDIR%%/samba/tests/blackbox/ndrdump.py
 %%PYTHON_SITELIBDIR%%/samba/tests/blackbox/netads_dns.py
 %%PYTHON_SITELIBDIR%%/samba/tests/blackbox/netads_json.py
+%%PYTHON_SITELIBDIR%%/samba/tests/blackbox/rpcd_witness_samba_only.py
 %%PYTHON_SITELIBDIR%%/samba/tests/blackbox/samba_dnsupdate.py
 %%PYTHON_SITELIBDIR%%/samba/tests/blackbox/smbcacls.py
 %%PYTHON_SITELIBDIR%%/samba/tests/blackbox/smbcacls_basic.py
 %%PYTHON_SITELIBDIR%%/samba/tests/blackbox/smbcacls_dfs_propagate_inherit.py
 %%PYTHON_SITELIBDIR%%/samba/tests/blackbox/smbcacls_propagate_inhertance.py
+%%PYTHON_SITELIBDIR%%/samba/tests/blackbox/smbcacls_save_restore.py
 %%PYTHON_SITELIBDIR%%/samba/tests/blackbox/smbcontrol.py
 %%PYTHON_SITELIBDIR%%/samba/tests/blackbox/smbcontrol_process.py
 %%PYTHON_SITELIBDIR%%/samba/tests/blackbox/traffic_learner.py
@@ -269,6 +311,9 @@ lib/samba4/private/libsamba-python%%PYTHON_EXT_SUFFIX%%-private-samba.so
 %%PYTHON_SITELIBDIR%%/samba/tests/common.py
 %%PYTHON_SITELIBDIR%%/samba/tests/complex_expressions.py
 %%PYTHON_SITELIBDIR%%/samba/tests/compression.py
+%%PYTHON_SITELIBDIR%%/samba/tests/conditional_ace_assembler.py
+%%PYTHON_SITELIBDIR%%/samba/tests/conditional_ace_bytes.py
+%%PYTHON_SITELIBDIR%%/samba/tests/conditional_ace_claims.py
 %%PYTHON_SITELIBDIR%%/samba/tests/core.py
 %%PYTHON_SITELIBDIR%%/samba/tests/cred_opt.py
 %%PYTHON_SITELIBDIR%%/samba/tests/credentials.py
@@ -318,6 +363,7 @@ lib/samba4/private/libsamba-python%%PYTHON_EXT_SUFFIX%%-private-samba.so
 %%PYTHON_SITELIBDIR%%/samba/tests/gensec.py
 %%PYTHON_SITELIBDIR%%/samba/tests/get_opt.py
 %%PYTHON_SITELIBDIR%%/samba/tests/getdcname.py
+%%PYTHON_SITELIBDIR%%/samba/tests/gkdi.py
 %%PYTHON_SITELIBDIR%%/samba/tests/glue.py
 %%PYTHON_SITELIBDIR%%/samba/tests/gpo.py
 %%PYTHON_SITELIBDIR%%/samba/tests/gpo_member.py
@@ -338,14 +384,17 @@ lib/samba4/private/libsamba-python%%PYTHON_EXT_SUFFIX%%-private-samba.so
 %%PYTHON_SITELIBDIR%%/samba/tests/krb5/claims_in_pac.py
 %%PYTHON_SITELIBDIR%%/samba/tests/krb5/claims_tests.py
 %%PYTHON_SITELIBDIR%%/samba/tests/krb5/compatability_tests.py
+%%PYTHON_SITELIBDIR%%/samba/tests/krb5/conditional_ace_tests.py
 %%PYTHON_SITELIBDIR%%/samba/tests/krb5/device_tests.py
 %%PYTHON_SITELIBDIR%%/samba/tests/krb5/etype_tests.py
 %%PYTHON_SITELIBDIR%%/samba/tests/krb5/fast_tests.py
+%%PYTHON_SITELIBDIR%%/samba/tests/krb5/gkdi_tests.py
 %%PYTHON_SITELIBDIR%%/samba/tests/krb5/group_tests.py
 %%PYTHON_SITELIBDIR%%/samba/tests/krb5/kcrypto.py
 %%PYTHON_SITELIBDIR%%/samba/tests/krb5/kdc_base_test.py
 %%PYTHON_SITELIBDIR%%/samba/tests/krb5/kdc_tests.py
 %%PYTHON_SITELIBDIR%%/samba/tests/krb5/kdc_tgs_tests.py
+%%PYTHON_SITELIBDIR%%/samba/tests/krb5/kdc_tgt_tests.py
 %%PYTHON_SITELIBDIR%%/samba/tests/krb5/kpasswd_tests.py
 %%PYTHON_SITELIBDIR%%/samba/tests/krb5/lockout_tests.py
 %%PYTHON_SITELIBDIR%%/samba/tests/krb5/ms_kile_client_principal_lookup_tests.py
@@ -356,6 +405,7 @@ lib/samba4/private/libsamba-python%%PYTHON_EXT_SUFFIX%%-private-samba.so
 %%PYTHON_SITELIBDIR%%/samba/tests/krb5/raw_testcase.py
 %%PYTHON_SITELIBDIR%%/samba/tests/krb5/rfc4120_constants.py
 %%PYTHON_SITELIBDIR%%/samba/tests/krb5/rfc4120_pyasn1.py
+%%PYTHON_SITELIBDIR%%/samba/tests/krb5/rfc4120_pyasn1_generated.py
 %%PYTHON_SITELIBDIR%%/samba/tests/krb5/rodc_tests.py
 %%PYTHON_SITELIBDIR%%/samba/tests/krb5/s4u_tests.py
 %%PYTHON_SITELIBDIR%%/samba/tests/krb5/salt_tests.py
@@ -380,6 +430,9 @@ lib/samba4/private/libsamba-python%%PYTHON_EXT_SUFFIX%%-private-samba.so
 %%PYTHON_SITELIBDIR%%/samba/tests/logfiles.py
 %%PYTHON_SITELIBDIR%%/samba/tests/lsa_string.py
 %%PYTHON_SITELIBDIR%%/samba/tests/messaging.py
+%%PYTHON_SITELIBDIR%%/samba/tests/ndr/gkdi.py
+%%PYTHON_SITELIBDIR%%/samba/tests/ndr/gmsa.py
+%%PYTHON_SITELIBDIR%%/samba/tests/ndr/wbint.py
 %%PYTHON_SITELIBDIR%%/samba/tests/net_join.py
 %%PYTHON_SITELIBDIR%%/samba/tests/net_join_no_spnego.py
 %%PYTHON_SITELIBDIR%%/samba/tests/netbios.py
@@ -452,10 +505,15 @@ lib/samba4/private/libsamba-python%%PYTHON_EXT_SUFFIX%%-private-samba.so
 %%PYTHON_SITELIBDIR%%/samba/tests/samba_tool/provision_userPassword_crypt.py
 %%PYTHON_SITELIBDIR%%/samba/tests/samba_tool/rodc.py
 %%PYTHON_SITELIBDIR%%/samba/tests/samba_tool/schema.py
+%%PYTHON_SITELIBDIR%%/samba/tests/samba_tool/silo_base.py
 %%PYTHON_SITELIBDIR%%/samba/tests/samba_tool/sites.py
 %%PYTHON_SITELIBDIR%%/samba/tests/samba_tool/timecmd.py
 %%PYTHON_SITELIBDIR%%/samba/tests/samba_tool/user.py
+%%PYTHON_SITELIBDIR%%/samba/tests/samba_tool/user_auth_policy.py
+%%PYTHON_SITELIBDIR%%/samba/tests/samba_tool/user_auth_silo.py
 %%PYTHON_SITELIBDIR%%/samba/tests/samba_tool/user_check_password_script.py
+%%PYTHON_SITELIBDIR%%/samba/tests/samba_tool/user_get_kerberos_ticket.py
+%%PYTHON_SITELIBDIR%%/samba/tests/samba_tool/user_getpassword_gmsa.py
 %%PYTHON_SITELIBDIR%%/samba/tests/samba_tool/user_virtualCryptSHA.py
 %%PYTHON_SITELIBDIR%%/samba/tests/samba_tool/user_virtualCryptSHA_base.py
 %%PYTHON_SITELIBDIR%%/samba/tests/samba_tool/user_virtualCryptSHA_gpg.py
@@ -467,7 +525,9 @@ lib/samba4/private/libsamba-python%%PYTHON_EXT_SUFFIX%%-private-samba.so
 %%PYTHON_SITELIBDIR%%/samba/tests/samdb.py
 %%PYTHON_SITELIBDIR%%/samba/tests/samdb_api.py
 %%PYTHON_SITELIBDIR%%/samba/tests/sddl.py
+%%PYTHON_SITELIBDIR%%/samba/tests/sddl_conditional_ace.py
 %%PYTHON_SITELIBDIR%%/samba/tests/security.py
+%%PYTHON_SITELIBDIR%%/samba/tests/security_descriptors.py
 %%PYTHON_SITELIBDIR%%/samba/tests/segfault.py
 %%PYTHON_SITELIBDIR%%/samba/tests/sid_strings.py
 %%PYTHON_SITELIBDIR%%/samba/tests/smb-notify.py
@@ -483,6 +543,7 @@ lib/samba4/private/libsamba-python%%PYTHON_EXT_SUFFIX%%-private-samba.so
 %%PYTHON_SITELIBDIR%%/samba/tests/strings.py
 %%PYTHON_SITELIBDIR%%/samba/tests/subunitrun.py
 %%PYTHON_SITELIBDIR%%/samba/tests/tdb_util.py
+%%PYTHON_SITELIBDIR%%/samba/tests/token_factory.py
 %%PYTHON_SITELIBDIR%%/samba/tests/upgrade.py
 %%PYTHON_SITELIBDIR%%/samba/tests/upgradeprovision.py
 %%PYTHON_SITELIBDIR%%/samba/tests/upgradeprovisionneeddc.py
@@ -495,11 +556,15 @@ lib/samba4/private/libsamba-python%%PYTHON_EXT_SUFFIX%%-private-samba.so
 %%PYTHON_SITELIBDIR%%/samba/werror%%PYTHON_EXT_SUFFIX%%.so
 %%PYTHON_SITELIBDIR%%/samba/xattr.py
 @dir %%PYTHON_SITELIBDIR%%/samba/tests/samba_tool
+@dir %%PYTHON_SITELIBDIR%%/samba/tests/ndr
 @dir %%PYTHON_SITELIBDIR%%/samba/tests/dcerpc
 @dir %%PYTHON_SITELIBDIR%%/samba/tests/blackbox
 @dir %%PYTHON_SITELIBDIR%%/samba/tests
 @dir %%PYTHON_SITELIBDIR%%/samba/samba3
 @dir %%PYTHON_SITELIBDIR%%/samba/provision
+@dir %%PYTHON_SITELIBDIR%%/samba/netcmd/user/readpasswords
+@dir %%PYTHON_SITELIBDIR%%/samba/netcmd/user/auth
+@dir %%PYTHON_SITELIBDIR%%/samba/netcmd/user
 @dir %%PYTHON_SITELIBDIR%%/samba/netcmd
 @dir %%PYTHON_SITELIBDIR%%/samba/dcerpc
 @dir %%PYTHON_SITELIBDIR%%/samba
