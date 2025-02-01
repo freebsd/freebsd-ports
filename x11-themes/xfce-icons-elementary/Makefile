@@ -1,5 +1,5 @@
 PORTNAME=	elementary
-PORTVERSION=	0.20
+PORTVERSION=	0.20.1
 DISTVERSIONPREFIX=v
 CATEGORIES=	x11-themes xfce
 PKGNAMEPREFIX=	xfce-icons-
@@ -8,7 +8,7 @@ MAINTAINER=	xfce@FreeBSD.org
 COMMENT=	Elementary icons, extended and maintained for Xfce
 WWW=		https://github.com/shimmerproject/elementary-xfce
 
-LICENSE=	GPLv2
+LICENSE=	GPLv3
 
 BUILD_DEPENDS=	optipng:graphics/optipng
 

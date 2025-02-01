@@ -4909,6 +4909,7 @@ share/icons/elementary-xfce/mimetypes/128/application-postscript.png
 share/icons/elementary-xfce/mimetypes/128/application-rss+xml.png
 share/icons/elementary-xfce/mimetypes/128/application-rtf.png
 share/icons/elementary-xfce/mimetypes/128/application-sql.png
+share/icons/elementary-xfce/mimetypes/128/application-toml.png
 share/icons/elementary-xfce/mimetypes/128/application-typescript.png
 share/icons/elementary-xfce/mimetypes/128/application-vnd.adobe.flash.movie.png
 share/icons/elementary-xfce/mimetypes/128/application-vnd.amazon.mobi8-ebook.png
@@ -5138,6 +5139,7 @@ share/icons/elementary-xfce/mimetypes/128/text-x-makefile.png
 share/icons/elementary-xfce/mimetypes/128/text-x-meson.png
 share/icons/elementary-xfce/mimetypes/128/text-x-modelica.png
 share/icons/elementary-xfce/mimetypes/128/text-x-nfo.png
+share/icons/elementary-xfce/mimetypes/128/text-x-nim.png
 share/icons/elementary-xfce/mimetypes/128/text-x-objcsrc.png
 share/icons/elementary-xfce/mimetypes/128/text-x-pascal.png
 share/icons/elementary-xfce/mimetypes/128/text-x-preview.png
@@ -5191,6 +5193,7 @@ share/icons/elementary-xfce/mimetypes/16/application-postscript.png
 share/icons/elementary-xfce/mimetypes/16/application-rss+xml.png
 share/icons/elementary-xfce/mimetypes/16/application-rtf.png
 share/icons/elementary-xfce/mimetypes/16/application-sql.png
+share/icons/elementary-xfce/mimetypes/16/application-toml.png
 share/icons/elementary-xfce/mimetypes/16/application-typescript.png
 share/icons/elementary-xfce/mimetypes/16/application-vnd.adobe.flash.movie.png
 share/icons/elementary-xfce/mimetypes/16/application-vnd.amazon.mobi8-ebook.png
@@ -5420,6 +5423,7 @@ share/icons/elementary-xfce/mimetypes/16/text-x-makefile.png
 share/icons/elementary-xfce/mimetypes/16/text-x-meson.png
 share/icons/elementary-xfce/mimetypes/16/text-x-modelica.png
 share/icons/elementary-xfce/mimetypes/16/text-x-nfo.png
+share/icons/elementary-xfce/mimetypes/16/text-x-nim.png
 share/icons/elementary-xfce/mimetypes/16/text-x-objcsrc.png
 share/icons/elementary-xfce/mimetypes/16/text-x-pascal.png
 share/icons/elementary-xfce/mimetypes/16/text-x-preview.png
@@ -5472,6 +5476,7 @@ share/icons/elementary-xfce/mimetypes/24/application-postscript.png
 share/icons/elementary-xfce/mimetypes/24/application-rss+xml.png
 share/icons/elementary-xfce/mimetypes/24/application-rtf.png
 share/icons/elementary-xfce/mimetypes/24/application-sql.png
+share/icons/elementary-xfce/mimetypes/24/application-toml.png
 share/icons/elementary-xfce/mimetypes/24/application-typescript.png
 share/icons/elementary-xfce/mimetypes/24/application-vnd.adobe.flash.movie.png
 share/icons/elementary-xfce/mimetypes/24/application-vnd.amazon.mobi8-ebook.png
@@ -5701,6 +5706,7 @@ share/icons/elementary-xfce/mimetypes/24/text-x-makefile.png
 share/icons/elementary-xfce/mimetypes/24/text-x-meson.png
 share/icons/elementary-xfce/mimetypes/24/text-x-modelica.png
 share/icons/elementary-xfce/mimetypes/24/text-x-nfo.png
+share/icons/elementary-xfce/mimetypes/24/text-x-nim.png
 share/icons/elementary-xfce/mimetypes/24/text-x-objcsrc.png
 share/icons/elementary-xfce/mimetypes/24/text-x-pascal.png
 share/icons/elementary-xfce/mimetypes/24/text-x-preview.png
@@ -5754,6 +5760,7 @@ share/icons/elementary-xfce/mimetypes/32/application-postscript.png
 share/icons/elementary-xfce/mimetypes/32/application-rss+xml.png
 share/icons/elementary-xfce/mimetypes/32/application-rtf.png
 share/icons/elementary-xfce/mimetypes/32/application-sql.png
+share/icons/elementary-xfce/mimetypes/32/application-toml.png
 share/icons/elementary-xfce/mimetypes/32/application-typescript.png
 share/icons/elementary-xfce/mimetypes/32/application-vnd.adobe.flash.movie.png
 share/icons/elementary-xfce/mimetypes/32/application-vnd.amazon.mobi8-ebook.png
@@ -5983,6 +5990,7 @@ share/icons/elementary-xfce/mimetypes/32/text-x-makefile.png
 share/icons/elementary-xfce/mimetypes/32/text-x-meson.png
 share/icons/elementary-xfce/mimetypes/32/text-x-modelica.png
 share/icons/elementary-xfce/mimetypes/32/text-x-nfo.png
+share/icons/elementary-xfce/mimetypes/32/text-x-nim.png
 share/icons/elementary-xfce/mimetypes/32/text-x-objcsrc.png
 share/icons/elementary-xfce/mimetypes/32/text-x-pascal.png
 share/icons/elementary-xfce/mimetypes/32/text-x-preview.png
@@ -6036,6 +6044,7 @@ share/icons/elementary-xfce/mimetypes/48/application-postscript.png
 share/icons/elementary-xfce/mimetypes/48/application-rss+xml.png
 share/icons/elementary-xfce/mimetypes/48/application-rtf.png
 share/icons/elementary-xfce/mimetypes/48/application-sql.png
+share/icons/elementary-xfce/mimetypes/48/application-toml.png
 share/icons/elementary-xfce/mimetypes/48/application-typescript.png
 share/icons/elementary-xfce/mimetypes/48/application-vnd.adobe.flash.movie.png
 share/icons/elementary-xfce/mimetypes/48/application-vnd.amazon.mobi8-ebook.png
@@ -6265,6 +6274,7 @@ share/icons/elementary-xfce/mimetypes/48/text-x-makefile.png
 share/icons/elementary-xfce/mimetypes/48/text-x-meson.png
 share/icons/elementary-xfce/mimetypes/48/text-x-modelica.png
 share/icons/elementary-xfce/mimetypes/48/text-x-nfo.png
+share/icons/elementary-xfce/mimetypes/48/text-x-nim.png
 share/icons/elementary-xfce/mimetypes/48/text-x-objcsrc.png
 share/icons/elementary-xfce/mimetypes/48/text-x-pascal.png
 share/icons/elementary-xfce/mimetypes/48/text-x-preview.png
@@ -6318,6 +6328,7 @@ share/icons/elementary-xfce/mimetypes/64/application-postscript.png
 share/icons/elementary-xfce/mimetypes/64/application-rss+xml.png
 share/icons/elementary-xfce/mimetypes/64/application-rtf.png
 share/icons/elementary-xfce/mimetypes/64/application-sql.png
+share/icons/elementary-xfce/mimetypes/64/application-toml.png
 share/icons/elementary-xfce/mimetypes/64/application-typescript.png
 share/icons/elementary-xfce/mimetypes/64/application-vnd.adobe.flash.movie.png
 share/icons/elementary-xfce/mimetypes/64/application-vnd.amazon.mobi8-ebook.png
@@ -6547,6 +6558,7 @@ share/icons/elementary-xfce/mimetypes/64/text-x-makefile.png
 share/icons/elementary-xfce/mimetypes/64/text-x-meson.png
 share/icons/elementary-xfce/mimetypes/64/text-x-modelica.png
 share/icons/elementary-xfce/mimetypes/64/text-x-nfo.png
+share/icons/elementary-xfce/mimetypes/64/text-x-nim.png
 share/icons/elementary-xfce/mimetypes/64/text-x-objcsrc.png
 share/icons/elementary-xfce/mimetypes/64/text-x-pascal.png
 share/icons/elementary-xfce/mimetypes/64/text-x-preview.png
@@ -6600,6 +6612,7 @@ share/icons/elementary-xfce/mimetypes/96/application-postscript.png
 share/icons/elementary-xfce/mimetypes/96/application-rss+xml.png
 share/icons/elementary-xfce/mimetypes/96/application-rtf.png
 share/icons/elementary-xfce/mimetypes/96/application-sql.png
+share/icons/elementary-xfce/mimetypes/96/application-toml.png
 share/icons/elementary-xfce/mimetypes/96/application-typescript.png
 share/icons/elementary-xfce/mimetypes/96/application-vnd.adobe.flash.movie.png
 share/icons/elementary-xfce/mimetypes/96/application-vnd.amazon.mobi8-ebook.png
@@ -6829,6 +6842,7 @@ share/icons/elementary-xfce/mimetypes/96/text-x-makefile.png
 share/icons/elementary-xfce/mimetypes/96/text-x-meson.png
 share/icons/elementary-xfce/mimetypes/96/text-x-modelica.png
 share/icons/elementary-xfce/mimetypes/96/text-x-nfo.png
+share/icons/elementary-xfce/mimetypes/96/text-x-nim.png
 share/icons/elementary-xfce/mimetypes/96/text-x-objcsrc.png
 share/icons/elementary-xfce/mimetypes/96/text-x-pascal.png
 share/icons/elementary-xfce/mimetypes/96/text-x-preview.png
