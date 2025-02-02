@@ -1,3 +1,48 @@
+  <vuln vid="72b8729e-e134-11ef-9e76-4ccc6adda413">
+    <topic>qt6-webengine -- Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>qt6-webengine</name>
+	<range><lt>6.8.2</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Qt qtwebengine-chromium repo reports:</p>
+	<blockquote cite="https://code.qt.io/cgit/qt/qtwebengine-chromium.git/log/?h=122-based">
+	  <p>Backports for 9 security bugs in Chromium:</p>
+	  <ul>
+	    <li>CVE-2024-12693: Out of bounds memory access in V8</li>
+	    <li>CVE-2024-12694: Use after free in Compositing</li>
+	    <li>CVE-2025-0436: Integer overflow in Skia</li>
+	    <li>CVE-2025-0437: Out of bounds read in Metrics</li>
+	    <li>CVE-2025-0438: Stack buffer overflow in Tracing</li>
+	    <li>CVE-2025-0441: Inappropriate implementation in Fenced Frames</li>
+	    <li>CVE-2025-0443: Insufficient data validation in Extensions</li>
+	    <li>CVE-2025-0447: Inappropriate implementation in Navigation</li>
+	    <li>CVE-2025-0611: Object corruption in V8</li>
+	  </ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2024-12693</cvename>
+      <cvename>CVE-2024-12694</cvename>
+      <cvename>CVE-2025-0436</cvename>
+      <cvename>CVE-2025-0437</cvename>
+      <cvename>CVE-2025-0438</cvename>
+      <cvename>CVE-2025-0441</cvename>
+      <cvename>CVE-2025-0443</cvename>
+      <cvename>CVE-2025-0447</cvename>
+      <cvename>CVE-2025-0611</cvename>
+      <url>https://code.qt.io/cgit/qt/qtwebengine-chromium.git/log/?h=122-based</url>
+    </references>
+    <dates>
+      <discovery>2025-01-09</discovery>
+      <entry>2025-02-02</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="186101b4-dfa6-11ef-8c1c-a8a1599412c6">
     <topic>chromium -- multiple security fixes</topic>
     <affects>
