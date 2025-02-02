@@ -1,0 +1,8 @@
+Oracle VM VirtualBox is a hosted hypervisor for x86 virtualisation.
+Supported guests include BSD, Haiku, Linux, OS/2, ReactOS, Solaris and
+Windows.
+
+Guest Additions are available from: emulators/virtualbox-ose-additions
+
+For the Extension Pack: FreeBSD is not a supported host platform.
+Installation of the Pack will not extend the feature set.

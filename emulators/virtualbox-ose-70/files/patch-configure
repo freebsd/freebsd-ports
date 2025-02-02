@@ -1,0 +1,126 @@
+--- configure.orig	2021-10-18 17:47:25 UTC
++++ configure
+@@ -139,10 +139,14 @@ CXX_FLAGS=""
+ if [ "$OS" = "freebsd" ]; then
+   INCCURL="-I/usr/local/include"
+   LIBCURL="-L/usr/local/lib -lcurl"
++  INCALSA="-I/usr/local/include"
++  LIBALSA="-L/usr/local/lib"
+   INCPULSE="-I/usr/local/include"
+   LIBPULSE="-L/usr/local/lib"
+   INCPNG="-I/usr/local/include"
+   LIBPNG="-L/usr/local/lib -lpng"
++  INCVNCSERVER="-I/usr/local/include"
++  LIBVNCSERVER="-L/usr/local/lib"
+ else
+   INCCURL=""
+   LIBCURL="-lcurl"
+@@ -1173,6 +1177,9 @@ extern "C" int main(int argc, char** arg
+   printf("found version %d.%d.%d",
+          SDL_MAJOR_VERSION, SDL_MINOR_VERSION, SDL_PATCHLEVEL);
+ #if SDL_VERSION_ATLEAST(1,2,7)
++#if !defined(SDL_VIDEO_DRIVER_X11)
++#error SDL must be compiled with X11 support
++#endif
+   printf(", OK.\n");
+   return 0;
+ #else
+@@ -1257,7 +1264,7 @@ extern "C" int main(void)
+ #endif
+ }
+ EOF
+-  if test_compile "-lasound" asound asound; then
++  if test_compile "$INCALSA $LIBALSA -lasound" asound asound; then
+     test_execute
+   fi
+ }
+@@ -1564,6 +1571,7 @@ EOF
+           FLGQT5=`pkg-config Qt5Core --cflags`
+           # gcc 4.8 is able to compile with C++11 (see also VBOX_GCC_std in Config.kmk)
+           [ $(($cc_maj * 100 + $cc_min)) -ge 408 ] && FLGQT5="$FLGQT5 -std=c++11"
++          FLGQT5="$FLGQT5 -std=c++11"
+           INCQT5=`strip_I "$FLGQT5"`
+           LIBDIR5=`pkg-config Qt5Core --variable=libdir`
+           LIBQT5=`pkg-config Qt5Core Qt5Gui --libs`
+@@ -1702,7 +1710,7 @@ check_libopus()
+       fi
+       cat > $ODIR.tmp_src.cc << EOF
+ #include <cstdio>
+-#include <opus/opus.h>
++#include <opus.h>
+ extern "C" int main(void)
+ {
+   OpusEncoder *test;
+@@ -2034,8 +2042,8 @@ EOF
+         echo "compiling the following source file:" >> $LOG
+         cat $ODIR.tmp_src.cc >> $LOG
+         echo "using the following command line:" >> $LOG
+-        echo "$CXX -O -Wall -o $ODIR.tmp_out $ODIR.tmp_src.cc -I$p/include/$d $p/$b/lib$d.so" >> $LOG
+-        $CXX -O -Wall -o $ODIR.tmp_out $ODIR.tmp_src.cc -I$p/include/$d $p/$b/lib$d.so >> $LOG 2>&1
++        echo "$CXX -O -Wall -o $ODIR.tmp_out $ODIR.tmp_src.cc -I$p/include/$d $p/$b/lib$d.so -pthread" >> $LOG
++        $CXX -O -Wall -o $ODIR.tmp_out $ODIR.tmp_src.cc -I$p/include/$d $p/$b/lib$d.so -pthread >> $LOG 2>&1
+         if [ $? -eq 0 ]; then
+           found=1
+           break
+@@ -2151,7 +2159,7 @@ check_gsoap()
+         else
+           cnf_append "VBOX_GSOAP_CXX_SOURCES" ""
+         fi
+-        cnf_append "VBOX_GSOAP_CXX_LIBS"    "`strip_l "$GSOAP_CXX_LIBS"`"
++        cnf_append "VBOX_GSOAP_CXX_LIBS"    "`strip_l "$GSOAP_CXX_LIBS"` z"
+         gsoap_version=`pkg-config gsoapssl++ --modversion`
+         log_success "found version $gsoap_version"
+         return
+@@ -2519,7 +2527,7 @@ for option in "$@"; do
+     --with-openssl-dir=*)
+       OPENSSLDIR=`echo $option | cut -d'=' -f2`
+       INCCRYPTO="-I${OPENSSLDIR}/include"
+-      LIBCRYPTO="${OPENSSLDIR}/lib/libssl.a ${OPENSSLDIR}/lib/libcrypto.a"
++      LIBCRYPTO="-L${OPENSSLDIR}/lib -lssl -lcrypto"
+       # On Linux static OpenSSL typically needs a few additional libraries.
+       [ "$OS" = "linux" ] && LIBCRYPTO="-ldl $LIBPTHREAD -lm"
+       ;;
+@@ -2865,12 +2873,22 @@ if [ $ONLY_ADDITIONS -eq 0 ]; then
+   [ $WITH_JAVA   -eq 1 ] && check_java
+ 
+   # PulseAudio
+-  if [ $WITH_PULSE -eq 1 ]; then
+-    check_pulse
+-  elif [ $WITH_PULSE -eq 0 ]; then # Force disabling PulseAudio.
+-    cnf_append "VBOX_WITH_AUDIO_PULSE" ""
+-  elif [ $WITH_PULSE -eq 2 ]; then # --enable-pulse was passed, force PulseAudio.
+-    cnf_append "VBOX_WITH_AUDIO_PULSE" "1"
++  if [ "$OS" = "linux" -o "$OS" = "freebsd" -o "$OS" = "netbsd" ]; then
++    if [ $WITH_ALSA -eq 1 ]; then
++      check_alsa
++    else
++      cnf_append "VBOX_WITH_AUDIO_ALSA" ""
++    fi
++    if [ $WITH_PULSE -eq 1 ]; then
++      check_pulse
++    elif [ $WITH_PULSE -eq 0 ]; then # Force disabling PulseAudio.
++      cnf_append "VBOX_WITH_AUDIO_PULSE" ""
++    elif [ $WITH_PULSE -eq 2 ]; then # --enable-pulse was passed, force PulseAudio.
++      cnf_append "VBOX_WITH_AUDIO_PULSE" "1"
++    fi
++    if [ $WITH_DBUS -eq 0 ]; then
++      cnf_append "VBOX_WITH_DBUS" ""
++    fi
+   fi
+ fi
+ 
+@@ -2886,14 +2904,6 @@ if [ "$OS" = "linux" ]; then
+     cnf_append "VBOX_WITHOUT_LINUX_TEST_BUILDS" "1"
+   fi
+   if [ $ONLY_ADDITIONS -eq 0 ]; then
+-    if [ $WITH_ALSA -eq 1 ]; then
+-      check_alsa
+-    else
+-      cnf_append "VBOX_WITH_AUDIO_ALSA" ""
+-    fi
+-    if [ $WITH_DBUS -eq 0 ]; then
+-      cnf_append "VBOX_WITH_DBUS" ""
+-    fi
+     if [ $WITH_DEVMAPPER -eq 1 ]; then
+       check_libdevmapper
+     else
