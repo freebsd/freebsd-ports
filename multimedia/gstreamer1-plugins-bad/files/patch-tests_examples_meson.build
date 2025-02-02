@@ -30,7 +30,7 @@
 +if get_option('applemedia').enabled()
 +  subdir('avsamplesink')
 +endif
-+if get_option('camerabin2').enabled()
++if get_option('camerabin2').enabled() and use_wayland
 +  subdir('camerabin2', if_found: gtk_dep)
 +endif
 +if get_option('codecparsers').enabled()
@@ -63,7 +63,7 @@
 +if get_option('msdk').enabled()
 +  subdir('msdk')
 +endif
-+if get_option('mxf').enabled()
++if get_option('mxf').enabled() and use_wayland
 +  subdir('mxf', if_found: gtk_dep)
 +endif
 +if get_option('nvcodec').enabled()
