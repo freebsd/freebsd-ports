@@ -40,7 +40,9 @@ CONFIGURE_ARGS=		--disable-java --passive-mesa --disable-docs
 CONFIGURE_ARGS+=	--with-gcc="${CC}" --with-g++="${CXX}"
 
 CONFLICTS_INSTALL=	virtualbox-ose \
-			virtualbox-ose-nox11
+			virtualbox-ose-nox11 \
+			virtualbox-ose-70 \
+			virtualbox-ose-nox11-70
 
 PORTSCOUT=	limit:^5\.
 SUB_LIST=	VBOXDIR=${VBOX_DIR} \

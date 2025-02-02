@@ -38,10 +38,13 @@ CONFIGURE_ARGS+=	--nofatal --with-gcc="${CC}" --with-g++="${CXX}"
 MAKE_JOBS_UNSAFE=	yes
 
 CONFLICTS_INSTALL=	virtualbox-ose-additions-legacy \
-			virtualbox-ose-additions-nox11-legacy
+			virtualbox-ose-additions-nox11-legacy \
+			virtualbox-ose-additions-70 \
+			virtualbox-ose-additions-nox11-70
 
 PATCHDIR=		${.CURDIR}/../${PORTNAME}/files
 EXTRACT_AFTER_ARGS=	--exclude tools/*.x86 --exclude tools/*.amd64 --exclude Firmware
+PORTSCOUT=		limit:^6\.
 
 WRKSRC=			${WRKDIR}/VirtualBox-${DISTVERSION}
 

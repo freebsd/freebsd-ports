@@ -34,7 +34,8 @@ CONFIGURE_ARGS+=	--disable-alsa \
 			--disable-xpcom
 CONFIGURE_ARGS+=	--nofatal --with-gcc="${CC}" --with-g++="${CXX}"
 
-CONFLICTS_INSTALL=	virtualbox-ose-kmod
+CONFLICTS_INSTALL=	virtualbox-ose-kmod \
+			virtualbox-ose-kmod-70
 
 PATCHDIR=		${.CURDIR}/../${PORTNAME}-legacy/files
 PORTSCOUT=		limit:^5\.
