@@ -1,6 +1,7 @@
 PORTNAME=	zaproxy
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.16.0
+PORTREVISION=	1
 CATEGORIES=	security java
 
 MAINTAINER=	acm@FreeBSD.org
@@ -9,11 +10,11 @@ WWW=		https://www.zaproxy.org/
 
 LICENSE=	APACHE20
 
-BUILD_DEPENDS=	gradle:devel/gradle
+BUILD_DEPENDS=	gradle8:devel/gradle8
 
 USES=		gettext-runtime java
 USE_GITHUB=	yes
-JAVA_VERSION=	17
+JAVA_VERSION=	22
 
 NO_ARCH=	yes
 
@@ -61,7 +62,7 @@ post-patch:
 .endif
 
 do-build:
-	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} gradle \
+	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} gradle8 \
 		--gradle-user-home ${DEPS_CACHE_DIR}/gradle-${PORTNAME} --project-cache-dir ${DEPS_CACHE_DIR}/gradle-${PORTNAME} \
 		${GRADLE_ARGS} --build-cache :zap:distCore ${EXCLUDE_TASK}
 
