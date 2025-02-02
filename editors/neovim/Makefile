@@ -11,15 +11,15 @@ LICENSE=	APACHE20
 
 BUILD_DEPENDS=	${LUA_REFMODLIBDIR}/bit.so:devel/lua-bitop@${LUA_FLAVOR} \
 		${LUA_REFMODLIBDIR}/lpeg.so:devel/lua-lpeg@${LUA_FLAVOR}
-RUN_DEPENDS=	${LUA_REFMODLIBDIR}/bit.so:devel/lua-bitop@${LUA_FLAVOR} \
-		${LUA_REFMODLIBDIR}/lpeg.so:devel/lua-lpeg@${LUA_FLAVOR}
-TEST_DEPENDS=	gmake:devel/gmake
 LIB_DEPENDS=	libluv.so:devel/luv \
 		libmsgpack-c.so:devel/msgpack-c \
 		libtree-sitter.so:devel/tree-sitter \
 		libunibilium.so:devel/unibilium \
 		libuv.so:devel/libuv \
 		libvterm.so:devel/libvterm
+RUN_DEPENDS=	${LUA_REFMODLIBDIR}/bit.so:devel/lua-bitop@${LUA_FLAVOR} \
+		${LUA_REFMODLIBDIR}/lpeg.so:devel/lua-lpeg@${LUA_FLAVOR}
+TEST_DEPENDS=	gmake:devel/gmake
 
 USES=		cmake cpe gettext iconv lua:51,build luajit \
 		pathfix pkgconfig
