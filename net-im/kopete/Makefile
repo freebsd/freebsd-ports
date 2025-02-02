@@ -7,6 +7,7 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE multi-protocol instant messenger
 WWW=		https://apps.kde.org/kopete/
 
+IGNORE=		does not build with KF6
 DEPRECATED=	Unmaintained and no longer released by the KDE community
 EXPIRATION_DATE=	2025-03-31
 

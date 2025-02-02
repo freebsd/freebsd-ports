@@ -6,6 +6,8 @@ CATEGORIES=	sysutils kde kde-frameworks
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KF5 secure and unified container for user passwords
 
+DEPRECATED=	has its functionality stripped compared to a kf6 variant
+
 LIB_DEPENDS=	libassuan.so:security/libassuan \
 		libgcrypt.so:security/libgcrypt \
 		libgpg-error.so:security/libgpg-error \
@@ -21,6 +23,9 @@ USE_KDE=	auth codecs config configwidgets coreaddons dbusaddons \
 USE_QT=		core dbus gui testlib widgets xml \
 		buildtools:build qmake:build
 USE_XORG=	x11
+
+# KF6 coinstallability
+CMAKE_OFF=	BUILD_KWALLET_QUERY
 
 OPTIONS_DEFINE=		PINENTRY
 OPTIONS_DEFAULT=	PINENTRY

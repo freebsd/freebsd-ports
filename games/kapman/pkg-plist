@@ -13,7 +13,6 @@ share/icons/hicolor/64x64/apps/kapman.png
 %%DATADIR%%/themes/matches.desktop
 %%DATADIR%%/themes/matches.svgz
 %%DATADIR%%/themes/matches_preview.png
-%%DATADIR%%/themes/mountain.copyright
 %%DATADIR%%/themes/mountain.desktop
 %%DATADIR%%/themes/mountain.svgz
 %%DATADIR%%/themes/mountain_preview.png
@@ -24,6 +23,7 @@ share/icons/hicolor/64x64/apps/kapman.png
 %%DATADIR%%/themes/retro.svgz
 %%DATADIR%%/themes/retro_preview.png
 share/locale/ar/LC_MESSAGES/kapman.mo
+share/locale/ast/LC_MESSAGES/kapman.mo
 share/locale/bg/LC_MESSAGES/kapman.mo
 share/locale/bs/LC_MESSAGES/kapman.mo
 share/locale/ca/LC_MESSAGES/kapman.mo
@@ -42,9 +42,11 @@ share/locale/fr/LC_MESSAGES/kapman.mo
 share/locale/ga/LC_MESSAGES/kapman.mo
 share/locale/gl/LC_MESSAGES/kapman.mo
 share/locale/gu/LC_MESSAGES/kapman.mo
+share/locale/he/LC_MESSAGES/kapman.mo
 share/locale/hi/LC_MESSAGES/kapman.mo
 share/locale/hr/LC_MESSAGES/kapman.mo
 share/locale/hu/LC_MESSAGES/kapman.mo
+share/locale/ia/LC_MESSAGES/kapman.mo
 share/locale/id/LC_MESSAGES/kapman.mo
 share/locale/is/LC_MESSAGES/kapman.mo
 share/locale/it/LC_MESSAGES/kapman.mo

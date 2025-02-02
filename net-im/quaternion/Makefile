@@ -9,10 +9,12 @@ WWW=		https://github.com/quotient-im/Quaternion/
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSES/GPL-3.0-or-later.txt
 
+BROKEN=		Does not build againt new libquotient
+
 LIB_DEPENDS=	libqt5keychain.so:security/qtkeychain@qt5 \
 		libsecret-1.so:security/libsecret \
 		libolm.so:security/olm
-BUILD_DEPENDS=	libquotient-qt5>=0.8.1.2:net-im/libquotient@qt5
+BUILD_DEPENDS=	libquotient>=0.8.1.2:net-im/libquotient
 # Quotient is a static lib, doesn't need to be in RUN_DEPENDS
 
 USES=		cmake compiler:c++17-lang desktop-file-utils \

@@ -1,6 +1,5 @@
 PORTNAME=	spectacle
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
-PORTREVISION=	2
 CATEGORIES=	graphics kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
@@ -9,19 +8,20 @@ WWW=		https://projects.kde.org/projects/kde/kdegraphics/spectacle
 
 LIB_DEPENDS=	libxcb-cursor.so:x11/xcb-util-cursor \
 		libxcb-image.so:x11/xcb-util-image \
-		libxcb-util.so:x11/xcb-util
-RUN_DEPENDS=	kipi-plugins>=0:graphics/kipi-plugins
+		libxcb-util.so:x11/xcb-util \
+		libkImageAnnotator-Qt6.so:graphics/kimageannotator@qt6 \
+		libZXing.so:textproc/zxing-cpp \
+		libopencv_core.so:graphics/opencv
 
-USES=		cmake compiler:c++11-lang gettext kde:5 pkgconfig qt:5 tar:xz \
+USES=		cmake compiler:c++11-lang gettext kde:6 pkgconfig qt:6 tar:xz \
 		xorg
 USE_KDE=	attica auth codecs completion config configwidgets coreaddons \
 		dbusaddons globalaccel guiaddons i18n jobwidgets kdeclarative \
-		kio libkipi newstuff notifications package purpose \
-		service solid wayland widgetsaddons windowsystem xmlgui \
+		kio layer-shell-qt newstuff notifications package prison \
+		purpose service solid statusnotifieritem wayland \
+		widgetsaddons windowsystem xmlgui \
 		doctools:build ecm:build plasma-wayland-protocols:build
-USE_QT=		concurrent core dbus declarative gui network printsupport \
-		quickcontrols svg widgets x11extras xml \
-		buildtools:build qmake:build testlib:build
+USE_QT=		base multimedia
 USE_XORG=	x11 xcb xext xfixes
 
 OPTIONS_DEFINE=			DOCS PIPEWIRE

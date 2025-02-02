@@ -51,6 +51,10 @@ share/man/ru/man1/po2xml.1.gz
 share/man/ru/man1/split2po.1.gz
 share/man/ru/man1/swappo.1.gz
 share/man/ru/man1/xml2pot.1.gz
+share/man/sl/man1/po2xml.1.gz
+share/man/sl/man1/split2po.1.gz
+share/man/sl/man1/swappo.1.gz
+share/man/sl/man1/xml2pot.1.gz
 share/man/sv/man1/po2xml.1.gz
 share/man/sv/man1/split2po.1.gz
 share/man/sv/man1/swappo.1.gz

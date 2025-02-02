@@ -17,7 +17,7 @@ share/icons/hicolor/64x64/apps/kbounce.png
 %%DATADIR%%/themes/egyptian_bounce.svgz
 %%DATADIR%%/themes/geometry.desktop
 %%DATADIR%%/themes/geometry.png
-%%DATADIR%%/themes/kbounce.svg
+%%DATADIR%%/themes/kbounce.svgz
 %%DATADIR%%/themes/oxygen.desktop
 %%DATADIR%%/themes/oxygen.png
 %%DATADIR%%/themes/oxygen.svgz
@@ -29,6 +29,7 @@ share/icons/hicolor/64x64/apps/kbounce.png
 %%DATADIR%%/themes/thebeach_preview.png
 share/locale/af/LC_MESSAGES/kbounce.mo
 share/locale/ar/LC_MESSAGES/kbounce.mo
+share/locale/ast/LC_MESSAGES/kbounce.mo
 share/locale/be/LC_MESSAGES/kbounce.mo
 share/locale/bg/LC_MESSAGES/kbounce.mo
 share/locale/bn/LC_MESSAGES/kbounce.mo
@@ -57,6 +58,7 @@ share/locale/hi/LC_MESSAGES/kbounce.mo
 share/locale/hne/LC_MESSAGES/kbounce.mo
 share/locale/hr/LC_MESSAGES/kbounce.mo
 share/locale/hu/LC_MESSAGES/kbounce.mo
+share/locale/ia/LC_MESSAGES/kbounce.mo
 share/locale/id/LC_MESSAGES/kbounce.mo
 share/locale/is/LC_MESSAGES/kbounce.mo
 share/locale/it/LC_MESSAGES/kbounce.mo
@@ -105,4 +107,5 @@ share/locale/xh/LC_MESSAGES/kbounce.mo
 share/locale/zh_CN/LC_MESSAGES/kbounce.mo
 share/locale/zh_TW/LC_MESSAGES/kbounce.mo
 share/metainfo/org.kde.kbounce.appdata.xml
-share/qlogging-categories5/kbounce.categories
+share/qlogging-categories6/kbounce.categories
+share/qlogging-categories6/kbounce.renamecategories

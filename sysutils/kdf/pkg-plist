@@ -21,9 +21,9 @@ share/icons/hicolor/48x48/apps/kdf.png
 share/icons/hicolor/48x48/apps/kwikdisk.png
 share/icons/hicolor/64x64/apps/kdf.png
 share/icons/hicolor/64x64/apps/kwikdisk.png
-share/kxmlgui5/kdf/kdfui.rc
 share/locale/af/LC_MESSAGES/kdf.mo
 share/locale/ar/LC_MESSAGES/kdf.mo
+share/locale/ast/LC_MESSAGES/kdf.mo
 share/locale/be/LC_MESSAGES/kdf.mo
 share/locale/bg/LC_MESSAGES/kdf.mo
 share/locale/br/LC_MESSAGES/kdf.mo
@@ -97,4 +97,4 @@ share/locale/xh/LC_MESSAGES/kdf.mo
 share/locale/zh_CN/LC_MESSAGES/kdf.mo
 share/locale/zh_TW/LC_MESSAGES/kdf.mo
 share/metainfo/org.kde.kdf.appdata.xml
-share/qlogging-categories5/kdf.categories
+share/qlogging-categories6/kdf.categories

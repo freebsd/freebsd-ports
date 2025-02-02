@@ -1,11 +1,12 @@
 bin/kdebugsettings
 lib/libkdebugsettings.so.%%KDE_APPLICATIONS_VERSION%%
-lib/libkdebugsettings.so.5
+lib/libkdebugsettings.so.6
 lib/libkdebugsettingscore.so.%%KDE_APPLICATIONS_VERSION%%
-lib/libkdebugsettingscore.so.5
+lib/libkdebugsettingscore.so.6
 share/applications/org.kde.kdebugsettings.desktop
 %%DATADIR%%/groups/Full Debug Ruqola
 share/locale/ar/LC_MESSAGES/kdebugsettings.mo
+share/locale/ast/LC_MESSAGES/kdebugsettings.mo
 share/locale/az/LC_MESSAGES/kdebugsettings.mo
 share/locale/ca/LC_MESSAGES/kdebugsettings.mo
 share/locale/ca@valencia/LC_MESSAGES/kdebugsettings.mo
@@ -14,12 +15,14 @@ share/locale/da/LC_MESSAGES/kdebugsettings.mo
 share/locale/de/LC_MESSAGES/kdebugsettings.mo
 share/locale/el/LC_MESSAGES/kdebugsettings.mo
 share/locale/en_GB/LC_MESSAGES/kdebugsettings.mo
+share/locale/eo/LC_MESSAGES/kdebugsettings.mo
 share/locale/es/LC_MESSAGES/kdebugsettings.mo
 share/locale/et/LC_MESSAGES/kdebugsettings.mo
 share/locale/eu/LC_MESSAGES/kdebugsettings.mo
 share/locale/fi/LC_MESSAGES/kdebugsettings.mo
 share/locale/fr/LC_MESSAGES/kdebugsettings.mo
 share/locale/gl/LC_MESSAGES/kdebugsettings.mo
+share/locale/he/LC_MESSAGES/kdebugsettings.mo
 share/locale/hu/LC_MESSAGES/kdebugsettings.mo
 share/locale/ia/LC_MESSAGES/kdebugsettings.mo
 share/locale/it/LC_MESSAGES/kdebugsettings.mo
@@ -46,5 +49,5 @@ share/locale/uk/LC_MESSAGES/kdebugsettings.mo
 share/locale/zh_CN/LC_MESSAGES/kdebugsettings.mo
 share/locale/zh_TW/LC_MESSAGES/kdebugsettings.mo
 share/metainfo/org.kde.kdebugsettings.appdata.xml
-share/qlogging-categories5/kde.renamecategories
-share/qlogging-categories5/kdebugsettings.categories
+share/qlogging-categories6/kde.renamecategories
+share/qlogging-categories6/kdebugsettings.categories

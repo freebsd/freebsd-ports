@@ -1,6 +1,5 @@
 PORTNAME=	dragon
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
-PORTREVISION=	1
 CATEGORIES=	multimedia kde kde-applications
 PKGNAMESUFFIX=	-player
 
@@ -10,15 +9,14 @@ WWW=		https://www.kde.org/applications/multimedia/dragonplayer/
 
 LICENSE=	GPLv2
 
-USES=		cmake compiler:c++11-lang desktop-file-utils gettext kde:5 qt:5 \
-		tar:xz xorg
+USES=		cmake compiler:c++11-lang desktop-file-utils gettext kde:6 \
+		qt:6 tar:xz xorg
 USE_KDE=	auth codecs completion config configwidgets coreaddons crash \
-		dbusaddons doctools kio service sonnet textwidgets i18n \
-		iconthemes jobwidgets notifications parts phonon solid widgetsaddons \
-		windowsystem xmlgui \
+		dbusaddons doctools i18n iconthemes jobwidgets kio \
+		notifications parts phonon service solid sonnet textwidgets \
+		widgetsaddons windowsystem xmlgui \
 		ecm:build
-USE_QT=		concurrent core dbus gui network widgets xml \
-		buildtools:build qmake:build
+USE_QT=		base
 USE_XORG=	x11
 
 CONFLICTS_INSTALL=	dragon # bin/dragon

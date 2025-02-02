@@ -1,5 +1,6 @@
 PORTNAME=	plasma-desktop
 DISTVERSION=	${KDE_PLASMA_VERSION}
+PORTREVISION=	1
 CATEGORIES=	x11 kde kde-plasma
 
 MAINTAINER=	kde@FreeBSD.org
@@ -37,6 +38,12 @@ USE_KDE=	activities activities-stats attica auth baloo bookmarks \
 USE_QT=		5compat base declarative svg
 USE_XORG=	x11 xcb xcursor xext xfixes xi xrender
 
-#SHEBANG_FILES=	kcms/keyboard/*.py kcms/ksmserver/kconf_update/*.py
+OPTIONS_DEFINE=	SDL
+OPTIONS_SUB=	yes
+
+SDL_DESC=	Enable gamecontroller System Settings module (requires SDL)
+SDL_USES=	sdl
+SDL_USE=	sdl=sdl2
+SDL_CMAKE_OFF=	-DCMAKE_DISABLE_FIND_PACKAGE_SDL2:BOOL=On
 
 .include <bsd.port.mk>

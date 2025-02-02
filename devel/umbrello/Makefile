@@ -1,6 +1,5 @@
 PORTNAME=	umbrello
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
-PORTREVISION=	2
 CATEGORIES=	devel kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
@@ -9,12 +8,13 @@ WWW=		https://umbrello.kde.org/
 
 LIB_DEPENDS=	libboost_thread.so:devel/boost-libs
 
-USES=		cmake compiler:c++11-lang desktop-file-utils gnome kde:5 qt:5 tar:xz xorg
+USES=		cmake compiler:c++11-lang desktop-file-utils gnome kde:5 qt:5 \
+		tar:xz xorg
 USE_GNOME=	libxml2 libxslt
 USE_KDE=	archive auth bookmarks codecs completion config configwidgets \
 		coreaddons crash guiaddons i18n iconthemes init itemviews \
-		jobwidgets kdelibs4support kio notifications parts service \
-		solid sonnet syntaxhighlighting texteditor textwidgets unitconversion \
+		jobwidgets kio notifications parts service solid sonnet \
+		syntaxhighlighting texteditor textwidgets unitconversion \
 		widgetsaddons windowsystem xmlgui \
 		ecm:build
 USE_QT=		concurrent core dbus gui network printsupport svg widgets xml \

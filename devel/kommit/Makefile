@@ -1,7 +1,7 @@
 PORTNAME=	kommit
-DISTVERSION=	1.3.1-20
-PORTREVISION=	2
+DISTVERSION=	1.6.0
 CATEGORIES=	devel kde
+MASTER_SITES=	KDE/stable/${PORTNAME}/
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Git GUI client for KDE
@@ -13,17 +13,14 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libgit2.so:devel/libgit2 \
 		libdolphinvcs.so:x11-fm/dolphin
 
-USES=		cmake compiler:c++17-lang kde:5 localbase:ldflags \
-		pkgconfig qt:5 xorg
+USES=		cmake compiler:c++17-lang gettext kde:6 localbase:ldflags \
+		pkgconfig qt:6 tar:xz xorg
 USE_KDE=	auth bookmarks codecs completion config configwidgets \
 		coreaddons crash dbusaddons doctools i18n itemviews jobwidgets \
 		kio parts service solid sonnet syntaxhighlighting texteditor \
 		textwidgets widgetsaddons windowsystem xmlgui \
 		ecm:build
-USE_QT=		concurrent core dbus gui network widgets xml \
-		buildtools:build qmake:build testlib:build
+USE_QT=		base
 USE_XORG=	x11
-
-KDE_INVENT=	fdfe7a23d95413007bbd6e26182dc423b2d6efa0 sdk
 
 .include <bsd.port.mk>

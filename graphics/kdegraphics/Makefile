@@ -1,13 +1,12 @@
 PORTNAME=	kdegraphics
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
-PORTREVISION=	1
 CATEGORIES=	graphics kde
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Graphics utilities for KDE (meta port)
 WWW=		https://www.kde.org
 
-USES=		kde:5 metaport qt:5
+USES=		kde:6 metaport qt:6
 USE_QT=		#
 
 OPTIONS_DEFINE=	GPHOTO \
@@ -45,7 +44,7 @@ SPECTACLE_DESC=			Screen capture program
 SPECTACLE_RUN_DEPENDS=		spectacle>=${KDE_APPLICATIONS_VERSION}:graphics/spectacle
 
 MOBIPOCKET_DESC=		Mobipocket plugins for Strigi indexing and thumbnailers
-MOBIPOCKET_RUN_DEPENDS=		kdegraphics-mobipocket>=${KDE_APPLICATIONS_VERSION}:graphics/kdegraphics-mobipocket
+MOBIPOCKET_RUN_DEPENDS=		kdegraphics-mobipocket-qt6>=${KDE_APPLICATIONS_VERSION}:graphics/kdegraphics-mobipocket@qt6
 
 SVG_DESC=			SVG KPart
 SVG_RUN_DEPENDS=		kdegraphics-svgpart>=${KDE_APPLICATIONS_VERSION}:graphics/kdegraphics-svgpart

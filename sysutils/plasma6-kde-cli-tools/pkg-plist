@@ -99,6 +99,7 @@ share/locale/af/LC_MESSAGES/kdesu.mo
 share/locale/af/LC_MESSAGES/kstart.mo
 share/locale/ar/LC_MESSAGES/kbroadcastnotification.mo
 share/locale/ar/LC_MESSAGES/kcm_filetypes.mo
+share/locale/ar/LC_MESSAGES/kde-inhibit.mo
 share/locale/ar/LC_MESSAGES/kdesu.mo
 share/locale/ar/LC_MESSAGES/kioclient.mo
 share/locale/ar/LC_MESSAGES/kmimetypefinder.mo

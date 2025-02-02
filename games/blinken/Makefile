@@ -6,12 +6,11 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Memory enhancement game
 WWW=		https://edu.kde.org/blinken/
 
-USES=		cmake compiler:c++11-lang gettext kde:5 qt:5 tar:xz
+USES=		cmake compiler:c++11-lang gettext kde:6 qt:6 tar:xz
 USE_KDE=	auth codecs config configwidgets coreaddons crash dbusaddons \
 		doctools guiaddons i18n phonon widgetsaddons xmlgui \
 		ecm:build
-USE_QT=		core dbus gui svg widgets xml \
-		buildtools:build qmake:build
+USE_QT=		base
 
 OPTIONS_DEFINE=	DOCS
 

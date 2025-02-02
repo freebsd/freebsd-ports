@@ -13,17 +13,7 @@ share/icons/hicolor/48x48/actions/konv_message.png
 share/icons/hicolor/48x48/apps/konversation.png
 share/icons/hicolor/64x64/actions/konv_message.png
 share/icons/hicolor/64x64/apps/konversation.png
-share/kconf_update/konversation-0.19-appearance.pl
-share/kconf_update/konversation-0.19-colorcodes.pl
-share/kconf_update/konversation-0.19-colors.pl
-share/kconf_update/konversation-0.19-custombrowser.pl
-share/kconf_update/konversation-0.19-notifylists.pl
-share/kconf_update/konversation-0.19-sortorder.pl
-share/kconf_update/konversation-0.19-tabplacement.pl
-share/kconf_update/konversation-0.20-customfonts.pl
-share/kconf_update/konversation-0.20-quickbuttons.pl
-share/kconf_update/konversation.upd
-share/knotifications5/konversation.notifyrc
+share/knotifications6/konversation.notifyrc
 share/knsrcfiles/konversation_nicklist_theme.knsrc
 %%DATADIR%%/scripting_support/python/konversation/__init__.py
 %%DATADIR%%/scripting_support/python/konversation/dbus.py
@@ -113,6 +103,7 @@ share/knsrcfiles/konversation_nicklist_theme.knsrc
 %%DATADIR%%/themes/square/irc_owner.png
 %%DATADIR%%/themes/square/irc_voice.png
 share/locale/ar/LC_MESSAGES/konversation.mo
+share/locale/ast/LC_MESSAGES/konversation.mo
 share/locale/bg/LC_MESSAGES/konversation.mo
 share/locale/br/LC_MESSAGES/konversation.mo
 share/locale/bs/LC_MESSAGES/konversation.mo
@@ -146,6 +137,7 @@ share/locale/kk/LC_MESSAGES/konversation.mo
 share/locale/km/LC_MESSAGES/konversation.mo
 share/locale/ko/LC_MESSAGES/konversation.mo
 share/locale/lt/LC_MESSAGES/konversation.mo
+share/locale/lv/LC_MESSAGES/konversation.mo
 share/locale/mr/LC_MESSAGES/konversation.mo
 share/locale/ms/LC_MESSAGES/konversation.mo
 share/locale/mt/LC_MESSAGES/konversation.mo
@@ -176,4 +168,4 @@ share/locale/uk/LC_MESSAGES/konversation.mo
 share/locale/zh_CN/LC_MESSAGES/konversation.mo
 share/locale/zh_TW/LC_MESSAGES/konversation.mo
 share/metainfo/org.kde.konversation.appdata.xml
-share/qlogging-categories5/konversation.categories
+share/qlogging-categories6/konversation.categories

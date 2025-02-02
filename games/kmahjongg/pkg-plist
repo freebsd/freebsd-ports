@@ -154,6 +154,7 @@ share/icons/hicolor/scalable/apps/kmahjongg.svgz
 %%DATADIR%%/layouts/well.layout
 share/locale/af/LC_MESSAGES/kmahjongg.mo
 share/locale/ar/LC_MESSAGES/kmahjongg.mo
+share/locale/ast/LC_MESSAGES/kmahjongg.mo
 share/locale/be/LC_MESSAGES/kmahjongg.mo
 share/locale/bg/LC_MESSAGES/kmahjongg.mo
 share/locale/bn/LC_MESSAGES/kmahjongg.mo
@@ -182,6 +183,7 @@ share/locale/hi/LC_MESSAGES/kmahjongg.mo
 share/locale/hne/LC_MESSAGES/kmahjongg.mo
 share/locale/hr/LC_MESSAGES/kmahjongg.mo
 share/locale/hu/LC_MESSAGES/kmahjongg.mo
+share/locale/ia/LC_MESSAGES/kmahjongg.mo
 share/locale/id/LC_MESSAGES/kmahjongg.mo
 share/locale/is/LC_MESSAGES/kmahjongg.mo
 share/locale/it/LC_MESSAGES/kmahjongg.mo
@@ -228,4 +230,5 @@ share/locale/xh/LC_MESSAGES/kmahjongg.mo
 share/locale/zh_CN/LC_MESSAGES/kmahjongg.mo
 share/locale/zh_TW/LC_MESSAGES/kmahjongg.mo
 share/metainfo/org.kde.kmahjongg.appdata.xml
-share/qlogging-categories5/kmahjongg.categories
+share/qlogging-categories6/kmahjongg.categories
+share/qlogging-categories6/kmahjongg.renamecategories

@@ -10,19 +10,24 @@ WWW=		https://invent.kde.org/utilities/skanpage
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSES/GPL-3.0-only.txt
 
-BUILD_DEPENDS=	kquickimageeditor>=0:graphics/kquickimageeditor
-RUN_DEPENDS=	kquickimageeditor>=0:graphics/kquickimageeditor
+BUILD_DEPENDS=	kquickimageeditor-qt6>=0:graphics/kquickimageeditor@qt6
+RUN_DEPENDS=	kquickimageeditor-qt6>=0:graphics/kquickimageeditor@qt6
 
-LIB_DEPENDS=	libKSaneCore.so:graphics/ksanecore \
+LIB_DEPENDS=	libKSaneCore6.so:graphics/ksanecore \
 		libpng.so:graphics/png
 
-USES=		cmake compiler:c++11-lang gettext kde:5 qt:5 tar:xz
-USE_KDE=	auth config configwidgets codecs completion \
-		coreaddons crash i18n jobwidgets kio kirigami2 purpose \
-		service widgetsaddons xmlgui \
+USES=		cmake compiler:c++11-lang gettext kde:6 qt:6 tar:xz
+USE_KDE=	auth codecs completion config configwidgets coreaddons crash \
+		i18n jobwidgets kio kirigami2 purpose service widgetsaddons \
+		xmlgui \
 		doctools:build ecm:build
-USE_QT=		core concurrent dbus declarative gui network printsupport \
-		quickcontrols2 widgets xml \
-		buildtools:build qmake:build testlib:build
+USE_QT=		base pdf
+
+OPTIONS_DEFINE=	OCR
+OPTIONS_DEFAULT=	OCR
+
+OCR_DESC=	Text recognition via Tesseract OCR
+OCR_LIB_DEPENDS=	libleptonica.so:graphics/leptonica \
+			libtesseract.so:graphics/tesseract
 
 .include <bsd.port.mk>

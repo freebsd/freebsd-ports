@@ -1,8 +1,5 @@
 bin/ksirk
 bin/ksirkskineditor
-lib/libiris_ksirk.so
-lib/libiris_ksirk.so.2
-lib/libiris_ksirk.so.2.0.0
 share/applications/org.kde.ksirk.desktop
 share/applications/org.kde.ksirkskineditor.desktop
 share/config.kcfg/ksirksettings.kcfg
@@ -15,7 +12,6 @@ share/icons/hicolor/48x48/apps/ksirk.png
 share/icons/hicolor/64x64/apps/ksirk.png
 share/icons/hicolor/scalable/apps/ksirk.svgz
 share/knsrcfiles/ksirk.knsrc
-%%DATADIR%%/jabber.png
 %%DATADIR%%/skins/default/Data/world.desktop
 %%DATADIR%%/skins/default/Images/2DownArrow.png
 %%DATADIR%%/skins/default/Images/2UpArrow.png
@@ -55,9 +51,9 @@ share/knsrcfiles/ksirk.knsrc
 %%DATADIR%%/skins/skinsdir
 %%DATADIR%%skineditor/cross.png
 %%DATADIR%%skineditor/target.png
-share/kxmlgui5/ksirk/ksirkui.rc
-share/kxmlgui5/ksirkskineditor/ksirkskineditorui.rc
 share/locale/ar/LC_MESSAGES/ksirk.mo
+share/locale/ast/LC_MESSAGES/ksirk.mo
+share/locale/ast/LC_MESSAGES/ksirkskineditor.mo
 share/locale/be/LC_MESSAGES/ksirk.mo
 share/locale/bg/LC_MESSAGES/ksirk.mo
 share/locale/bg/LC_MESSAGES/ksirkskineditor.mo
@@ -92,12 +88,15 @@ share/locale/ga/LC_MESSAGES/ksirk.mo
 share/locale/ga/LC_MESSAGES/ksirkskineditor.mo
 share/locale/gl/LC_MESSAGES/ksirk.mo
 share/locale/gl/LC_MESSAGES/ksirkskineditor.mo
+share/locale/he/LC_MESSAGES/ksirk.mo
 share/locale/hi/LC_MESSAGES/ksirk.mo
 share/locale/hne/LC_MESSAGES/ksirk.mo
 share/locale/hr/LC_MESSAGES/ksirk.mo
 share/locale/hr/LC_MESSAGES/ksirkskineditor.mo
 share/locale/hu/LC_MESSAGES/ksirk.mo
 share/locale/hu/LC_MESSAGES/ksirkskineditor.mo
+share/locale/ia/LC_MESSAGES/ksirk.mo
+share/locale/ia/LC_MESSAGES/ksirkskineditor.mo
 share/locale/is/LC_MESSAGES/ksirk.mo
 share/locale/is/LC_MESSAGES/ksirkskineditor.mo
 share/locale/it/LC_MESSAGES/ksirk.mo
@@ -165,4 +164,5 @@ share/locale/zh_CN/LC_MESSAGES/ksirkskineditor.mo
 share/locale/zh_TW/LC_MESSAGES/ksirk.mo
 share/locale/zh_TW/LC_MESSAGES/ksirkskineditor.mo
 share/metainfo/org.kde.ksirk.appdata.xml
-share/qlogging-categories5/ksirk.categories
+share/qlogging-categories6/ksirk.categories
+share/qlogging-categories6/ksirk.renamecategories

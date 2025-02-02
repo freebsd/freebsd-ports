@@ -1,6 +1,5 @@
 PORTNAME=	kleopatra
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
-PORTREVISION=	3
 CATEGORIES=	security kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
@@ -12,17 +11,18 @@ LIB_DEPENDS=	libassuan.so:security/libassuan \
 		libgpgme.so:security/gpgme \
 		libgpg-error.so:security/libgpg-error \
 		libgpgmepp.so:security/gpgme-cpp \
-		libqgpgme.so:security/gpgme-qt@qt5
+		libqgpgmeqt6.so:security/gpgme-qt@qt6
 
-USES=		cmake compiler:c++11-lang desktop-file-utils gettext kde:5 \
-		shared-mime-info qt:5 tar:xz xorg
+USES=		cmake compiler:c++11-lang desktop-file-utils gettext kde:6 \
+		qt:6 shared-mime-info tar:xz xorg
 USE_KDE=	auth codecs config configwidgets coreaddons crash dbusaddons \
-		doctools i18n iconthemes itemmodels kcmutils notifications \
-		service sonnet textwidgets widgetsaddons windowsystem xmlgui \
-		libkleo mime \
+		doctools i18n iconthemes itemmodels kcmutils libkleo mime \
+		mimetreeparser notifications service sonnet statusnotifieritem \
+		textwidgets widgetsaddons windowsystem xmlgui \
 		ecm:build
-USE_QT=		core dbus gui network printsupport testlib widgets xml \
-		buildtools:build qmake:build
+# KDE Pim
+USE_KDE+=	akonadimime identitymanagement mailtransport
+USE_QT=		base
 USE_XORG=	x11
 
 OPTIONS_DEFINE=	DOCS

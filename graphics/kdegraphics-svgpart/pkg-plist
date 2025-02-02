@@ -1,6 +1,6 @@
-%%QT_PLUGINDIR%%/kf5/parts/svgpart.so
-share/kservices5/svgpart.desktop
+%%QT_PLUGINDIR%%/kf6/parts/svgpart.so
 share/locale/ar/LC_MESSAGES/svgpart.mo
+share/locale/ast/LC_MESSAGES/svgpart.mo
 share/locale/be/LC_MESSAGES/svgpart.mo
 share/locale/bg/LC_MESSAGES/svgpart.mo
 share/locale/bs/LC_MESSAGES/svgpart.mo
@@ -19,6 +19,7 @@ share/locale/fi/LC_MESSAGES/svgpart.mo
 share/locale/fr/LC_MESSAGES/svgpart.mo
 share/locale/ga/LC_MESSAGES/svgpart.mo
 share/locale/gl/LC_MESSAGES/svgpart.mo
+share/locale/he/LC_MESSAGES/svgpart.mo
 share/locale/hi/LC_MESSAGES/svgpart.mo
 share/locale/hr/LC_MESSAGES/svgpart.mo
 share/locale/hu/LC_MESSAGES/svgpart.mo
@@ -48,6 +49,7 @@ share/locale/pt/LC_MESSAGES/svgpart.mo
 share/locale/pt_BR/LC_MESSAGES/svgpart.mo
 share/locale/ro/LC_MESSAGES/svgpart.mo
 share/locale/ru/LC_MESSAGES/svgpart.mo
+share/locale/sa/LC_MESSAGES/svgpart.mo
 share/locale/si/LC_MESSAGES/svgpart.mo
 share/locale/sk/LC_MESSAGES/svgpart.mo
 share/locale/sl/LC_MESSAGES/svgpart.mo

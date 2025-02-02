@@ -1,6 +1,5 @@
 PORTNAME=	kdepim-runtime
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
-PORTREVISION=	4
 CATEGORIES=	deskutils kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
@@ -14,27 +13,24 @@ LIB_DEPENDS=	libboost_date_time.so:devel/boost-libs \
 		libkolabxml.so:textproc/libkolabxml \
 		libsasl2.so:security/cyrus-sasl2 \
 		libxerces-c.so:textproc/xerces-c3 \
-		libqt5keychain.so:security/qtkeychain@qt5
+		libqt6keychain.so:security/qtkeychain@qt6
 
-USES=		cmake:noninja compiler:c++11-lib gettext grantlee:5 kde:5 qca \
-		qt:5 shared-mime-info tar:xz xorg
+USES=		cmake:noninja compiler:c++11-lib gettext kde:6 qca qt:6 \
+		shared-mime-info tar:xz xorg
 USE_KDE=	auth bookmarks codecs completion config configwidgets \
 		coreaddons crash dbusaddons guiaddons holidays i18n iconthemes \
-		itemmodels itemviews jobwidgets kcmutils kdav kdelibs4support \
-		kio kross notifications notifyconfig parts service solid \
-		sonnet textwidgets unitconversion wallet widgetsaddons \
-		windowsystem xmlgui \
+		itemmodels itemviews jobwidgets kcmutils kdav kio \
+		notifications notifyconfig parts service solid sonnet \
+		textwidgets unitconversion wallet widgetsaddons windowsystem \
+		xmlgui \
 		ecm:build
 # pim components
 USE_KDE+=	akonadi akonadicalendar akonadicontacts akonadimime \
-		akonadinotes akonadisearch calendarcore calendarutils contacts \
+		akonadisearch calendarcore calendarutils contacts \
 		gapi grantleetheme identitymanagement imap kontactinterface \
 		ldap libkdepim mailtransport mbox mime pimcommon pimtextedit \
 		syndication
-USE_QT=		concurrent core dbus declarative gui location network \
-		networkauth printsupport script speech webchannel webengine \
-		widgets xml xmlpatterns \
-		buildtools:build qmake:build
+USE_QT=		base networkauth
 USE_XORG=	x11
 USE_LDCONFIG=	yes
 

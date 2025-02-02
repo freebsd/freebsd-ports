@@ -6,14 +6,15 @@ share/icons/hicolor/22x22/apps/knavalbattle.png
 share/icons/hicolor/32x32/apps/knavalbattle.png
 share/icons/hicolor/48x48/apps/knavalbattle.png
 share/icons/hicolor/64x64/apps/knavalbattle.png
-%%DATADIR%%/pictures/default.desktop
-%%DATADIR%%/pictures/default_theme.svgz
 %%DATADIR%%/sounds/ship-player-shoot-water.ogg
 %%DATADIR%%/sounds/ship-player1-shoot.ogg
 %%DATADIR%%/sounds/ship-player2-shoot.ogg
 %%DATADIR%%/sounds/ship-sink.ogg
+%%DATADIR%%/themes/default.desktop
+%%DATADIR%%/themes/default.svgz
 share/locale/af/LC_MESSAGES/knavalbattle.mo
 share/locale/ar/LC_MESSAGES/knavalbattle.mo
+share/locale/ast/LC_MESSAGES/knavalbattle.mo
 share/locale/be/LC_MESSAGES/knavalbattle.mo
 share/locale/bg/LC_MESSAGES/knavalbattle.mo
 share/locale/bn/LC_MESSAGES/knavalbattle.mo
@@ -42,6 +43,7 @@ share/locale/hi/LC_MESSAGES/knavalbattle.mo
 share/locale/hne/LC_MESSAGES/knavalbattle.mo
 share/locale/hr/LC_MESSAGES/knavalbattle.mo
 share/locale/hu/LC_MESSAGES/knavalbattle.mo
+share/locale/ia/LC_MESSAGES/knavalbattle.mo
 share/locale/id/LC_MESSAGES/knavalbattle.mo
 share/locale/is/LC_MESSAGES/knavalbattle.mo
 share/locale/it/LC_MESSAGES/knavalbattle.mo
@@ -88,4 +90,5 @@ share/locale/xh/LC_MESSAGES/knavalbattle.mo
 share/locale/zh_CN/LC_MESSAGES/knavalbattle.mo
 share/locale/zh_TW/LC_MESSAGES/knavalbattle.mo
 share/metainfo/org.kde.knavalbattle.appdata.xml
-share/qlogging-categories5/knavalbattle.categories
+share/qlogging-categories6/knavalbattle.categories
+share/qlogging-categories6/knavalbattle.renamecategories

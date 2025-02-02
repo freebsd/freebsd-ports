@@ -1,13 +1,12 @@
 PORTNAME=	kdeaccessibility
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
-PORTREVISION=	1
 CATEGORIES=	accessibility kde
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Accessibility applications for KDE 5
 WWW=		https://www.kde.org/
 
-USES=		kde:5 metaport
+USES=		kde:6 metaport
 
 OPTIONS_DEFINE=	KMAG KMOUSETOOL KMOUTH
 OPTIONS_DEFAULT:=	${OPTIONS_DEFINE}

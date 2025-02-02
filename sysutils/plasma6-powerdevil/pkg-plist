@@ -141,6 +141,7 @@ share/locale/csb/LC_MESSAGES/plasma_runner_powerdevil.mo
 share/locale/da/LC_MESSAGES/kcm_powerdevilprofilesconfig.mo
 share/locale/da/LC_MESSAGES/libpowerdevilcommonconfig.mo
 share/locale/da/LC_MESSAGES/plasma_applet_org.kde.plasma.battery.mo
+share/locale/da/LC_MESSAGES/plasma_applet_org.kde.plasma.brightness.mo
 share/locale/da/LC_MESSAGES/plasma_runner_powerdevil.mo
 share/locale/da/LC_MESSAGES/powerdevil.mo
 share/locale/de/LC_MESSAGES/kcm_powerdevilprofilesconfig.mo

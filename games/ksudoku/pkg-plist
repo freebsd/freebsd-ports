@@ -115,15 +115,16 @@ share/icons/hicolor/32x32/apps/ksudoku.png
 %%DATADIR%%/icons/hicolor/64x64/actions/ksudoku-xsudoku.png
 %%DATADIR%%/icons/hicolor/64x64/actions/ksudoku.png
 %%DATADIR%%/themes/abstraction.desktop
-%%DATADIR%%/themes/abstraction.svg
+%%DATADIR%%/themes/abstraction.svgz
 %%DATADIR%%/themes/abstraction_preview.png
 %%DATADIR%%/themes/default.desktop
 %%DATADIR%%/themes/egyptian_preview.png
-%%DATADIR%%/themes/ksudoku_egyptian.svg
+%%DATADIR%%/themes/ksudoku_egyptian.svgz
 %%DATADIR%%/themes/ksudoku_scrible.desktop
-%%DATADIR%%/themes/ksudoku_scrible.svg
+%%DATADIR%%/themes/ksudoku_scrible.svgz
 %%DATADIR%%/themes/scribble_preview.png
 share/locale/ar/LC_MESSAGES/ksudoku.mo
+share/locale/ast/LC_MESSAGES/ksudoku.mo
 share/locale/be/LC_MESSAGES/ksudoku.mo
 share/locale/bg/LC_MESSAGES/ksudoku.mo
 share/locale/bs/LC_MESSAGES/ksudoku.mo
@@ -143,6 +144,7 @@ share/locale/fi/LC_MESSAGES/ksudoku.mo
 share/locale/fr/LC_MESSAGES/ksudoku.mo
 share/locale/ga/LC_MESSAGES/ksudoku.mo
 share/locale/gl/LC_MESSAGES/ksudoku.mo
+share/locale/he/LC_MESSAGES/ksudoku.mo
 share/locale/hi/LC_MESSAGES/ksudoku.mo
 share/locale/hne/LC_MESSAGES/ksudoku.mo
 share/locale/hr/LC_MESSAGES/ksudoku.mo

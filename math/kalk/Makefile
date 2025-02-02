@@ -9,11 +9,13 @@ WWW=		https://apps.kde.org/kalk
 LICENSE=	GPLv3+
 
 LIB_DEPENDS=	libgmp.so:math/gmp \
-		libmpfr.so:math/mpfr
+		libmpfr.so:math/mpfr \
+		libqalculate.so:math/libqalculate
 
-USES=		bison cmake desktop-file-utils kde:5 qt:5 tar:xz
-USE_KDE=	config coreaddons ecm:build i18n kirigami2 unitconversion
-USE_QT=		core declarative gui network quickcontrols2 testlib widgets \
-		buildtools:build qmake:build
+USES=		bison cmake desktop-file-utils gettext kde:6 pkgconfig qt:6 \
+		tar:xz
+USE_KDE=	config coreaddons i18n kirigami2 unitconversion \
+		ecm:build
+USE_QT=		base declarative
 
 .include <bsd.port.mk>

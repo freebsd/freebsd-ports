@@ -1,13 +1,13 @@
-bin/kglobalaccel5
+@comment bin/kglobalaccel5
 include/KF5/KGlobalAccel/KGlobalAccel
 include/KF5/KGlobalAccel/KGlobalShortcutInfo
 include/KF5/KGlobalAccel/kglobalaccel.h
 include/KF5/KGlobalAccel/kglobalaccel_export.h
+include/KF5/KGlobalAccel/kglobalaccel_version.h
 include/KF5/KGlobalAccel/kglobalshortcutinfo.h
 include/KF5/KGlobalAccel/private/kf5globalaccelprivate_export.h
 include/KF5/KGlobalAccel/private/kglobalaccel_interface.h
 include/KF5/KGlobalAccel/private/kglobalacceld.h
-include/KF5/KGlobalAccel/kglobalaccel_version.h
 lib/cmake/KF5GlobalAccel/KF5GlobalAccelConfig.cmake
 lib/cmake/KF5GlobalAccel/KF5GlobalAccelConfigVersion.cmake
 lib/cmake/KF5GlobalAccel/KF5GlobalAccelTargets-%%CMAKE_BUILD_TYPE%%.cmake
@@ -17,13 +17,13 @@ lib/libKF5GlobalAccel.so.5
 lib/libKF5GlobalAccel.so.%%KDE_FRAMEWORKS_VERSION%%
 lib/libKF5GlobalAccelPrivate.so.5
 lib/libKF5GlobalAccelPrivate.so.%%KDE_FRAMEWORKS_VERSION%%
-%%QT_PLUGINDIR%%/org.kde.kglobalaccel5.platforms/KF5GlobalAccelPrivateXcb.so
+@comment %%QT_PLUGINDIR%%/org.kde.kglobalaccel5.platforms/KF5GlobalAccelPrivateXcb.so
 %%QT_MKSPECDIR%%/modules/qt_KGlobalAccel.pri
-lib/systemd/user/plasma-kglobalaccel.service
+@comment lib/systemd/user/plasma-kglobalaccel.service
 share/dbus-1/interfaces/kf5_org.kde.KGlobalAccel.xml
 share/dbus-1/interfaces/kf5_org.kde.kglobalaccel.Component.xml
-share/dbus-1/services/org.kde.kglobalaccel.service
-share/kservices5/kglobalaccel5.desktop
+@comment share/dbus-1/services/org.kde.kglobalaccel.service
+@comment share/kservices5/kglobalaccel5.desktop
 share/locale/af/LC_MESSAGES/kglobalaccel5_qt.qm
 share/locale/ar/LC_MESSAGES/kglobalaccel5_qt.qm
 share/locale/as/LC_MESSAGES/kglobalaccel5_qt.qm

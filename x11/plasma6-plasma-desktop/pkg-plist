@@ -21,6 +21,7 @@ lib/libexec/kf6/kauth/kcmdatetimehelper
 %%QT_PLUGINDIR%%/plasma/kcms/systemsettings/kcm_baloofile.so
 %%QT_PLUGINDIR%%/plasma/kcms/systemsettings/kcm_componentchooser.so
 %%QT_PLUGINDIR%%/plasma/kcms/systemsettings/kcm_desktoppaths.so
+%%SDL%%%%QT_PLUGINDIR%%/plasma/kcms/systemsettings/kcm_gamecontroller.so
 %%QT_PLUGINDIR%%/plasma/kcms/systemsettings/kcm_kded.so
 %%QT_PLUGINDIR%%/plasma/kcms/systemsettings/kcm_keyboard.so
 %%QT_PLUGINDIR%%/plasma/kcms/systemsettings/kcm_keys.so
@@ -73,6 +74,7 @@ share/applications/kcm_baloofile.desktop
 share/applications/kcm_clock.desktop
 share/applications/kcm_componentchooser.desktop
 share/applications/kcm_desktoppaths.desktop
+%%SDL%%share/applications/kcm_gamecontroller.desktop
 share/applications/kcm_kded.desktop
 share/applications/kcm_keyboard.desktop
 share/applications/kcm_keys.desktop
@@ -4191,6 +4193,7 @@ share/plasma/shells/org.kde.plasma.desktop/contents/views/Panel.qml
 share/plasma/shells/org.kde.plasma.desktop/contents/views/PreviewBanner.qml
 share/plasma/shells/org.kde.plasma.desktop/metadata.json
 share/polkit-1/actions/org.kde.kcontrol.kcmclock.policy
+%%SDL%%share/qlogging-categories6/kcm_gamecontroller.categories
 share/qlogging-categories6/kcm_kded.categories
 share/qlogging-categories6/kcm_keyboard.categories
 share/qlogging-categories6/kcm_mouse.categories

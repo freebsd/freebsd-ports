@@ -13,7 +13,6 @@
     SUBDIR += akonadi-calendar
     SUBDIR += akonadi-contacts
     SUBDIR += akonadi-mime
-    SUBDIR += akonadi-notes
     SUBDIR += akonadi-search
     SUBDIR += alligator
     SUBDIR += aluminum
@@ -473,6 +472,7 @@
     SUBDIR += micro_inetd
     SUBDIR += micro_proxy
     SUBDIR += microsocks
+    SUBDIR += mimetreeparser
     SUBDIR += minidlna
     SUBDIR += minissdpd
     SUBDIR += miniupnpc

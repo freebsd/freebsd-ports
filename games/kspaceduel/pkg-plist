@@ -31,6 +31,7 @@ share/icons/hicolor/64x64/apps/kspaceduel.png
 %%DATADIR%%/sprites/playerinfo/win.png
 share/locale/af/LC_MESSAGES/kspaceduel.mo
 share/locale/ar/LC_MESSAGES/kspaceduel.mo
+share/locale/ast/LC_MESSAGES/kspaceduel.mo
 share/locale/be/LC_MESSAGES/kspaceduel.mo
 share/locale/bg/LC_MESSAGES/kspaceduel.mo
 share/locale/br/LC_MESSAGES/kspaceduel.mo
@@ -57,6 +58,7 @@ share/locale/hi/LC_MESSAGES/kspaceduel.mo
 share/locale/hne/LC_MESSAGES/kspaceduel.mo
 share/locale/hr/LC_MESSAGES/kspaceduel.mo
 share/locale/hu/LC_MESSAGES/kspaceduel.mo
+share/locale/ia/LC_MESSAGES/kspaceduel.mo
 share/locale/is/LC_MESSAGES/kspaceduel.mo
 share/locale/it/LC_MESSAGES/kspaceduel.mo
 share/locale/ja/LC_MESSAGES/kspaceduel.mo

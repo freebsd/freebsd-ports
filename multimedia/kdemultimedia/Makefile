@@ -1,13 +1,12 @@
 PORTNAME=	kdemultimedia
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
-PORTREVISION=	3
 CATEGORIES=	multimedia kde
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE Multimedia applications (meta port)
 WWW=		https://multimedia.kde.org
 
-USES=		kde:5 metaport qt:5
+USES=		kde:6 metaport qt:6
 USE_QT=		#
 
 OPTIONS_DEFINE=		DRAGON FFMPEG AUDIOCD_KIO KDENLIVE KMIX

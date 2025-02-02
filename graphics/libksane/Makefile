@@ -7,13 +7,12 @@ COMMENT=	SANE library interface for KDE
 WWW=		http://www.kipi-plugins.org
 
 LIB_DEPENDS=	libsane.so:graphics/sane-backends \
-		libKSaneCore.so:graphics/ksanecore
+		libKSaneCore6.so:graphics/ksanecore
 
-USES=		cmake compiler:c++11-lang gettext kde:5 qt:5 tar:xz
+USES=		cmake compiler:c++11-lang gettext kde:6 qt:6 tar:xz
 USE_KDE=	config i18n sonnet textwidgets wallet widgetsaddons \
 		ecm:build
-USE_QT=		core gui widgets \
-		buildtools:build qmake:build testlib:build
+USE_QT=		base
 USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=	DOCS

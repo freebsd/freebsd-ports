@@ -299,9 +299,6 @@ share/katepart5/syntax/python-kig.xml
 %%DATADIR%%/icons/hicolor/scalable/actions/vectordifference.svgz
 %%DATADIR%%/icons/hicolor/scalable/actions/vectorsum.svgz
 %%DATADIR%%/icons/hicolor/scalable/actions/w.svgz
-%%DATADIR%%/tips
-share/kxmlgui5/kig/kigpartui.rc
-share/kxmlgui5/kig/kigui.rc
 share/locale/ar/LC_MESSAGES/kig.mo
 share/locale/be/LC_MESSAGES/kig.mo
 share/locale/bg/LC_MESSAGES/kig.mo
@@ -380,4 +377,4 @@ share/man/pt_BR/man1/kig.1.gz
 share/man/ru/man1/kig.1.gz
 share/man/sv/man1/kig.1.gz
 share/man/uk/man1/kig.1.gz
-share/metainfo/org.kde.kig.appdata.xml
+share/metainfo/org.kde.kig.metainfo.xml

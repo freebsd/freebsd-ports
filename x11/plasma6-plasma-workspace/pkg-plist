@@ -160,6 +160,7 @@ lib/libweather_ion.so.7.0.0
 %%QT_PLUGINDIR%%/kf6/krunner/calculator.so
 %%QT_PLUGINDIR%%/kf6/krunner/helprunner.so
 %%QT_PLUGINDIR%%/kf6/krunner/kcms/kcm_krunner_kill.so
+%%QT_PLUGINDIR%%/kf6/krunner/krunner_appstream.so
 %%QT_PLUGINDIR%%/kf6/krunner/krunner_bookmarksrunner.so
 %%QT_PLUGINDIR%%/kf6/krunner/krunner_kill.so
 %%QT_PLUGINDIR%%/kf6/krunner/krunner_placesrunner.so

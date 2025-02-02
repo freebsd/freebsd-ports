@@ -10,16 +10,14 @@ LICENSE=	LGPL21
 
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/range/algorithm.hpp:devel/boost-libs
 
-USES=		cmake gettext compiler:c++11-lib kde:5 qt:5 tar:xz
-USE_KDE=	auth codecs completion config configwidgets coreaddons \
-		i18n iconthemes itemmodels itemviews jobwidgets kcmutils \
-		kio service wallet widgetsaddons \
+USES=		cmake compiler:c++11-lib gettext kde:6 qt:6 tar:xz
+USE_KDE=	auth codecs completion config configwidgets coreaddons i18n \
+		iconthemes itemmodels itemviews jobwidgets kcmutils kio \
+		service wallet widgetsaddons \
 		ecm:build
 # pim components
 USE_KDE+=	akonadi akonadicontacts akonadisearch contacts ldap mime
-USE_QT=		concurrent core dbus designer gui network uiplugin uitools \
-		widgets xml \
-		buildtools:build qmake:build testlib:build
+USE_QT=		base
 
 USE_LDCONFIG=	yes
 

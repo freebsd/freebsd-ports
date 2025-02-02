@@ -1,6 +1,5 @@
 PORTNAME=	akonadi
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
-PORTREVISION=	3
 CATEGORIES=	databases kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
@@ -10,24 +9,20 @@ WWW=		https://community.kde.org/KDE_PIM/Akonadi
 LICENSE=	LGPL21
 
 LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
-		libkaccounts.so:net-im/kaccounts-integration \
-		libaccounts-qt5.so:net-im/libaccounts-qt@qt5
+		libkaccounts6.so:net-im/kaccounts-integration \
+		libaccounts-qt6.so:net-im/libaccounts-qt@qt6
 # Let process generate meaningful backtrace on core dump.
 BUILD_DEPENDS=	xsltproc:textproc/libxslt
 
-CONFLICTS=	akonadi akonadi-kf5-git
-
-USES=		cmake compiler:c++11-lib gettext gnome kde:5 qt:5 \
+USES=		cmake compiler:c++11-lib gettext gnome kde:6 qt:6 \
 		shared-mime-info sqlite:3 tar:xz xorg
 USE_GNOME=	libxml2
 USE_KDE=	auth codecs completion config configwidgets coreaddons crash \
-		dbusaddons guiaddons i18n iconthemes itemmodels itemviews \
-		kio service windowsystem widgetsaddons xmlgui \
-		designerplugin:build ecm:build \
-		designerplugin:run
-USE_QT=		concurrent core dbus designer gui network sql testlib widgets xml \
-		buildtools:build qmake:build \
-		sql-sqlite3:run
+		dbusaddons guiaddons i18n iconthemes itemmodels itemviews kio \
+		service widgetsaddons windowsystem xmlgui \
+		ecm:build
+USE_QT=		base \
+		sqldriver-sqlite:run
 USE_XORG=	x11
 CMAKE_ARGS+=	-DCMAKE_REQUIRED_INCLUDES:STRING="${LOCALBASE}/include" \
 		-DMYSQLD_EXECUTABLE:FILEPATH="${LOCALBASE}/libexec/mysqld" \
@@ -43,10 +38,10 @@ OPTIONS_DEFAULT=	MYSQL
 
 MYSQL_DESC=		Install MySQL Qt plugin and server
 MYSQL_USES=		mysql:server
-MYSQL_USE=		QT=sql-mysql:run
+MYSQL_USE=		QT=sqldriver-mysql:run
 
 PGSQL_DESC=		Install PostgreSQL Qt plugin
-PGSQL_USE=		QT=sql-pgsql:run
+PGSQL_USE=		QT=sqldriver-psql:run
 
 .include <bsd.port.options.mk>
 

@@ -6,13 +6,12 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Educational programming environment for KDE
 WWW=		https://edu.kde.org/kturtle
 
-USES=		cmake compiler:c++11-lang gettext kde:5 qt:5 tar:xz
-USE_KDE=	attica auth codecs config configwidgets coreaddons crash \
-		emoticons i18n init itemmodels kio newstuff \
-		service sonnet textwidgets widgetsaddons xmlgui \
+USES=		cmake compiler:c++11-lang gettext kde:6 qt:6 tar:xz
+USE_KDE=	attica auth codecs config configwidgets coreaddons crash i18n \
+		itemmodels kio newstuff service sonnet textwidgets \
+		widgetsaddons xmlgui \
 		doctools:build ecm:build
-USE_QT=		concurrent core dbus gui network printsupport svg widgets xml \
-		buildtools:build qmake:build
+USE_QT=		base
 
 OPTIONS_DEFINE=	DOCS
 

@@ -10,6 +10,7 @@ share/icons/hicolor/64x64/apps/kanagram.png
 share/icons/hicolor/80x80/apps/kanagram-harmattan.png
 share/icons/hicolor/scalable/apps/kanagram.svgz
 %%DATADIR%%/ui/Blackboard.qml
+%%DATADIR%%/ui/IconButton.qml
 %%DATADIR%%/ui/LetterButton.qml
 %%DATADIR%%/ui/icons/1player.png
 %%DATADIR%%/ui/icons/2player.png
@@ -39,6 +40,7 @@ share/icons/hicolor/scalable/apps/kanagram.svgz
 %%DATADIR%%/ui/sounds/wrong.wav
 share/knsrcfiles/kanagram.knsrc
 share/locale/ar/LC_MESSAGES/kanagram.mo
+share/locale/ast/LC_MESSAGES/kanagram.mo
 share/locale/be/LC_MESSAGES/kanagram.mo
 share/locale/bg/LC_MESSAGES/kanagram.mo
 share/locale/bn/LC_MESSAGES/kanagram.mo
@@ -67,6 +69,7 @@ share/locale/hi/LC_MESSAGES/kanagram.mo
 share/locale/hne/LC_MESSAGES/kanagram.mo
 share/locale/hr/LC_MESSAGES/kanagram.mo
 share/locale/hu/LC_MESSAGES/kanagram.mo
+share/locale/ia/LC_MESSAGES/kanagram.mo
 share/locale/id/LC_MESSAGES/kanagram.mo
 share/locale/it/LC_MESSAGES/kanagram.mo
 share/locale/ja/LC_MESSAGES/kanagram.mo

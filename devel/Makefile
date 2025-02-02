@@ -619,7 +619,6 @@
     SUBDIR += doctest
     SUBDIR += doctorj
     SUBDIR += dolphin-plugins
-    SUBDIR += dolphin-plugins-devel
     SUBDIR += dotconf
     SUBDIR += double-conversion
     SUBDIR += doxygen
@@ -1167,6 +1166,7 @@
     SUBDIR += kodi-platform
     SUBDIR += kokkos
     SUBDIR += kommit
+    SUBDIR += kopeninghours
     SUBDIR += kore
     SUBDIR += kpublictransport
     SUBDIR += kronosnet
@@ -4307,9 +4307,6 @@
     SUBDIR += pkgconf
     SUBDIR += plan9port
     SUBDIR += plasma
-    SUBDIR += plasma5-khotkeys
-    SUBDIR += plasma5-kwrited
-    SUBDIR += plasma5-plasma-sdk
     SUBDIR += plasma6-kwrited
     SUBDIR += plasma6-plasma-sdk
     SUBDIR += plasma6-plasma5support

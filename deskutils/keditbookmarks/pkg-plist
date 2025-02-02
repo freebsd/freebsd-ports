@@ -1,11 +1,11 @@
 bin/kbookmarkmerger
 bin/keditbookmarks
-lib/libkbookmarkmodel_private.so
 lib/libkbookmarkmodel_private.so.5.97.0
 lib/libkbookmarkmodel_private.so.6
 share/applications/org.kde.keditbookmarks.desktop
 share/config.kcfg/keditbookmarks.kcfg
 share/locale/ar/LC_MESSAGES/keditbookmarks.mo
+share/locale/ast/LC_MESSAGES/keditbookmarks.mo
 share/locale/be/LC_MESSAGES/keditbookmarks.mo
 share/locale/be@latin/LC_MESSAGES/keditbookmarks.mo
 share/locale/bg/LC_MESSAGES/keditbookmarks.mo
@@ -103,10 +103,11 @@ share/man/pl/man1/kbookmarkmerger.1.gz
 share/man/pt/man1/kbookmarkmerger.1.gz
 share/man/pt_BR/man1/kbookmarkmerger.1.gz
 share/man/ru/man1/kbookmarkmerger.1.gz
+share/man/sl/man1/kbookmarkmerger.1.gz
 share/man/sr/man1/kbookmarkmerger.1.gz
 share/man/sr@latin/man1/kbookmarkmerger.1.gz
 share/man/sv/man1/kbookmarkmerger.1.gz
 share/man/tr/man1/kbookmarkmerger.1.gz
 share/man/uk/man1/kbookmarkmerger.1.gz
 share/man/zh_CN/man1/kbookmarkmerger.1.gz
-share/qlogging-categories5/keditbookmarks.categories
+share/qlogging-categories6/keditbookmarks.categories

@@ -75,6 +75,7 @@ share/icons/hicolor/64x64/apps/kgoldrunner.png
 %%DATADIR%%/themes/nostalgia/set.svgz
 share/knsrcfiles/kgoldrunner.knsrc
 share/locale/ar/LC_MESSAGES/kgoldrunner.mo
+share/locale/ast/LC_MESSAGES/kgoldrunner.mo
 share/locale/be/LC_MESSAGES/kgoldrunner.mo
 share/locale/bg/LC_MESSAGES/kgoldrunner.mo
 share/locale/bn/LC_MESSAGES/kgoldrunner.mo
@@ -101,6 +102,7 @@ share/locale/hi/LC_MESSAGES/kgoldrunner.mo
 share/locale/hne/LC_MESSAGES/kgoldrunner.mo
 share/locale/hr/LC_MESSAGES/kgoldrunner.mo
 share/locale/hu/LC_MESSAGES/kgoldrunner.mo
+share/locale/ia/LC_MESSAGES/kgoldrunner.mo
 share/locale/id/LC_MESSAGES/kgoldrunner.mo
 share/locale/is/LC_MESSAGES/kgoldrunner.mo
 share/locale/it/LC_MESSAGES/kgoldrunner.mo
@@ -145,4 +147,5 @@ share/locale/uk/LC_MESSAGES/kgoldrunner.mo
 share/locale/zh_CN/LC_MESSAGES/kgoldrunner.mo
 share/locale/zh_TW/LC_MESSAGES/kgoldrunner.mo
 share/metainfo/org.kde.kgoldrunner.appdata.xml
-share/qlogging-categories5/kgoldrunner.categories
+share/qlogging-categories6/kgoldrunner.categories
+share/qlogging-categories6/kgoldrunner.renamecategories

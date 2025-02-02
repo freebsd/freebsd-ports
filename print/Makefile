@@ -160,7 +160,6 @@
     SUBDIR += plasma6-print-manager
     SUBDIR += pnm2ppa
     SUBDIR += posterazor
-    SUBDIR += print-manager
     SUBDIR += ps2eps
     SUBDIR += pscal
     SUBDIR += psdim

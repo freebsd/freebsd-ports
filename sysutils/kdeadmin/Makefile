@@ -1,13 +1,12 @@
 PORTNAME=	kdeadmin
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
-PORTREVISION=	1
 CATEGORIES=	sysutils kde
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE Administration applications (meta port)
 WWW=		https://www.kde.org
 
-USES=		kde:5 metaport
+USES=		kde:6 metaport
 
 OPTIONS_DEFINE=		KCRON KSYSTEMLOG
 OPTIONS_DEFAULT=	KCRON KSYSTEMLOG

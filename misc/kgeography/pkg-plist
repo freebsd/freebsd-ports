@@ -1043,8 +1043,9 @@ share/icons/hicolor/scalable/apps/kgeography.svgz
 %%DATADIR%%/zimbabwe.png
 %%DATADIR%%/zimbabwe_districts.kgm
 %%DATADIR%%/zimbabwe_districts.png
-share/kxmlgui5/kgeography/kgeographyui.rc
 share/locale/ar/LC_MESSAGES/kgeography.mo
+share/locale/ast/LC_MESSAGES/kgeography.mo
+share/locale/az/LC_MESSAGES/kgeography.mo
 share/locale/be/LC_MESSAGES/kgeography.mo
 share/locale/bg/LC_MESSAGES/kgeography.mo
 share/locale/br/LC_MESSAGES/kgeography.mo
@@ -1076,6 +1077,7 @@ share/locale/hi/LC_MESSAGES/kgeography.mo
 share/locale/hne/LC_MESSAGES/kgeography.mo
 share/locale/hr/LC_MESSAGES/kgeography.mo
 share/locale/hu/LC_MESSAGES/kgeography.mo
+share/locale/ia/LC_MESSAGES/kgeography.mo
 share/locale/is/LC_MESSAGES/kgeography.mo
 share/locale/it/LC_MESSAGES/kgeography.mo
 share/locale/ja/LC_MESSAGES/kgeography.mo

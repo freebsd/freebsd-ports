@@ -11,12 +11,11 @@ LIB_DEPENDS=	libgmp.so:math/gmp \
 BUILD_DEPENDS=	${LOCALBASE}/share/xsl/docbook/html/docbook.xsl:textproc/docbook-xsl \
 		docbook-xml>0:textproc/docbook-xml
 
-USES=		cmake compiler:c++11-lang gettext kde:5 qt:5 tar:xz
+USES=		cmake compiler:c++11-lang gettext kde:6 qt:6 tar:xz
 USE_KDE=	auth codecs config configwidgets coreaddons crash doctools \
-		guiaddons i18n init notifications widgetsaddons xmlgui \
+		guiaddons i18n notifications widgetsaddons xmlgui \
 		ecm:build
-USE_QT=		core dbus gui widgets xml \
-		buildtools:build qmake:build
+USE_QT=		5compat base
 
 OPTIONS_DEFINE=	DOCS
 
