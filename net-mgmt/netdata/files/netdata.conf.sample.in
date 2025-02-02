@@ -10,6 +10,7 @@
 
 [plugins]
 	freebsd = yes
+	statsd = no
 
 [web]
 	respect do not track policy = yes

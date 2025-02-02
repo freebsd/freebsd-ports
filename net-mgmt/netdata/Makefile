@@ -1,9 +1,13 @@
 PORTNAME=	netdata
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.43.2
-PORTREVISION=	8
+DISTVERSION=	2.2.3
 CATEGORIES=	net-mgmt
-MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/v${DISTVERSION}/
+MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/v${DISTVERSION}/:netdata \
+				https://raw.githubusercontent.com/netdata/netdata/refs/tags/v${DISTVERSION}/src/go/:goplugin \
+				https://dl.nkeor.me/freebsd/netdata/:nkeor
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:netdata
+DIST_SUBDIR=	${PORTNAME}
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	nk@nkeor.me
 COMMENT=	Scalable distributed realtime performance and health monitoring
@@ -12,89 +16,130 @@ WWW=		https://github.com/netdata/netdata
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libjson-c.so:devel/json-c \
-		libyaml.so:textproc/libyaml \
+BUILD_DEPENDS=	${LOCALBASE}/bin/mmv:misc/mmv
+LIB_DEPENDS=	libabsl_base.so:devel/abseil \
+		libbrotlicommon.so:archivers/brotli \
+		libcurl.so:ftp/curl \
+		libjson-c.so:devel/json-c \
+		liblz4.so:archivers/liblz4 \
+		libpcre2-8.so:devel/pcre2 \
+		libprotobuf.so:devel/protobuf \
 		libuuid.so:misc/e2fsprogs-libuuid \
-		libuv.so:devel/libuv
+		libuv.so:devel/libuv \
+		libyaml.so:textproc/libyaml \
+		libzstd.so:archivers/zstd
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}urllib3>0:net/py-urllib3@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyyaml>=0:devel/py-pyyaml@${PY_FLAVOR} \
-		bash:shells/bash \
-		curl:ftp/curl
+		bash:shells/bash
 
-USES=		autoreconf compiler:c++17-lang cpe gmake localbase:ldflags pathfix \
-		pkgconfig:both python shebangfix ssl
+USES=		cmake compiler:c++17-lang cpe localbase:ldflags \
+		pathfix pkgconfig:both python shebangfix ssl
+USE_GITHUB=	nodefault
 USE_RC_SUBR=	${PORTNAME}
 SHEBANG_GLOB=	*
-BINARY_ALIAS=	ar=llvm-ar ranlib=llvm-ranlib
+
+CMAKE_ON=	DISABLE_HARDENING ENABLE_DASHBOARD
+# DebugFS and below are Linux exclusive
+CMAKE_OFF=	ENABLE_PLUGIN_EBPF \
+		ENABLE_PLUGIN_NFACCT \
+		ENABLE_PLUGIN_XENSTAT \
+		ENABLE_PLUGIN_DEBUGFS \
+		ENABLE_PLUGIN_PERF \
+		ENABLE_PLUGIN_SLABINFO \
+		ENABLE_PLUGIN_SYSTEMD_JOURNAL \
+		ENABLE_PLUGIN_CGROUP_NETWORK \
+		ENABLE_PLUGIN_LOCAL_LISTENERS \
+		ENABLE_PLUGIN_NETWORK_VIEWER
+
+CFLAGS+=	-D_WANT_VMMETER
 
 # Libs that you can't unbundle...
 # SQLite3, --exclude database/sqlite/sqlite3*
 # (lib)judy, --exclude libnetdata/libjudy
-EXTRACT_AFTER_ARGS=	--exclude ml/dlib --exclude web/server/h2o
-
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-h2o --disable-unit-tests --with-user=netdata
-
-INSTALL_TARGET=	install-strip
-CPPFLAGS+=	-D_WANT_VMMETER
-USE_CXXSTD=	c++17
+EXTRACT_AFTER_ARGS=	--exclude ml/dlib \
+	--exclude collectors/python.d.plugin/python_modules/pyyaml2 \
+	--exclude collectors/python.d.plugin/python_modules/pyyaml3 \
+	--exclude collectors/python.d.plugin/python_modules/urllib3
 
 SUB_FILES=	${PORTNAME}.conf.sample
 SUB_LIST=	NETDATA_CACHE=${NETDATA_CACHE} \
 		NETDATA_LOG=${NETDATA_LOG} \
-		NETDATA_PERST=${NETDATA_PERST}
+		NETDATA_PERST=${NETDATA_PERST} \
+		NETDATA_RUN=${NETDATA_RUN}
 
 USERS=		netdata
 GROUPS=		netdata
 
-PLIST_SUB=	NETDATA_CACHE=${NETDATA_CACHE} \
-		NETDATA_LOG=${NETDATA_LOG} \
-		NETDATA_PERST=${NETDATA_PERST}
-
-OPTIONS_DEFINE=		CLOUD CUPS DBENGINE FREEIPMI GOPLUGIN LTO ML
-OPTIONS_DEFAULT=	CLOUD DBENGINE LTO ML
-OPTIONS_EXCLUDE_riscv64=	LTO
-OPTIONS_EXCLUDE_powerpc64le=	ML
-OPTIONS_SUB=		YES
-
-CLOUD_DESC=		Enable cloud functionality
-CUPS_DESC=		Enable support for cups
-DBENGINE_DESC=		Enable support for database engine
-FREEIPMI_DESC=		Enable support for freeipmi
-GOPLUGIN_DESC=		Enable the go collector plugin
-ML_DESC=			Enable anomaly detection via dlib
-
-CLOUD_LIB_DEPENDS=		libprotobuf.so:devel/protobuf
-CLOUD_CONFIGURE_OFF=		--disable-cloud
-CUPS_LIB_DEPENDS=		libcups.so:print/cups
-CUPS_CONFIGURE_ENABLE=		plugin-cups
-DBENGINE_LIB_DEPENDS=		liblz4.so:archivers/liblz4
-DBENGINE_CONFIGURE_ENABLE=	dbengine
-FREEIPMI_LIB_DEPENDS=		libfreeipmi.so:sysutils/freeipmi
-FREEIPMI_CONFIGURE_ENABLE=	plugin-freeipmi
-GOPLUGIN_RUN_DEPENDS=		${LOCALBASE}/libexec/netdata/plugins.d/god.plugin:net-mgmt/netdata-go
-LTO_USES=			compiler:c11
-LTO_CONFIGURE_ENABLE=		lto
-ML_BUILD_DEPENDS=		${LOCALBASE}/include/dlib/matrix.h:science/dlib-cpp
-ML_CONFIGURE_ENABLE=		ml
-
 NETDATA_CACHE=	/var/cache/${PORTNAME}
 NETDATA_LOG=	/var/log/${PORTNAME}
 NETDATA_PERST=	/var/db/${PORTNAME}
+NETDATA_RUN=	/var/run/${PORTNAME}
+NETDATA_CLOUDVERSION=	20250202
+
+PLIST_SUB=	NETDATA_CACHE=${NETDATA_CACHE} \
+		NETDATA_LOG=${NETDATA_LOG} \
+		NETDATA_PERST=${NETDATA_PERST} \
+		NETDATA_RUN=${NETDATA_RUN}
+
+OPTIONS_DEFINE=		CUPS CLOUD_DASHBOARD FREEIPMI GOPLUGIN ML PROMETHEUS
+OPTIONS_DEFAULT=	ML
+OPTIONS_EXCLUDE_powerpc64le=	ML
+OPTIONS_SUB=		YES
+
+CUPS_DESC=		Enable support for cups
+CLOUD_DASHBOARD_DESC=		Enable proprietary v3 dashboard
+FREEIPMI_DESC=		Enable support for freeipmi
+GOPLUGIN_DESC=		Enable the go collector plugin
+ML_DESC=		Enable anomaly detection via dlib
+PROMETHEUS_DESC=	Enable prometheus remote write exporter
+CUPS_LIB_DEPENDS=	libcups.so:print/cups
+CUPS_CMAKE_BOOL=	ENABLE_PLUGIN_CUPS
+CLOUD_DASHBOARD_DISTFILES=	agent_${NETDATA_CLOUDVERSION}.tar.gz:nkeor
+CLOUD_DASHBOARD_EXTRACT_ONLY=	agent_${NETDATA_CLOUDVERSION}.tar.gz
+FREEIPMI_LIB_DEPENDS=	libfreeipmi.so:sysutils/freeipmi
+FREEIPMI_CMAKE_BOOL=	ENABLE_PLUGIN_FREEIPMI
+GOPLUGIN_DISTFILES=	go.mod:goplugin
+GOPLUGIN_USES=	go:1.23,no_targets,modules
+GOPLUGIN_FETCH_DEPENDS=	go123:lang/go123
+GOPLUGIN_CMAKE_BOOL=	ENABLE_PLUGIN_GO
+ML_BUILD_DEPENDS=	${LOCALBASE}/include/dlib/matrix.h:science/dlib-cpp
+ML_CMAKE_BOOL=		ENABLE_ML
+PROMETHEUS_LIB_DEPENDS=	libsnappy.so:archivers/snappy \
+			libabsl_base.so:devel/abseil \
+			libprotobuf.so:devel/protobuf
+PROMETHEUS_CMAKE_BOOL=	ENABLE_EXPORTER_PROMETHEUS_REMOTE_WRITE
+
+post-fetch-GOPLUGIN-on:
+	@(cd ${DISTDIR}/${DIST_SUBDIR}; \
+		${SETENVI} ${WRK_ENV} \
+		${GO_ENV} GOPROXY=${GO_GOPROXY} ${GO_CMD} mod download -x all)
+
+post-extract-GOPLUGIN-on:
+	@${ECHO_MSG} "===> Tidying god.plugin dependencies";
+	@(cd ${WRKSRC}/src/go; ${SETENVI} ${WRK_ENV} ${MAKE_ENV} ${GO_ENV} GOPROXY=${GO_MODCACHE} ${GO_CMD} mod tidy -e)
+	@${ECHO_MSG} "===> Vendoring god.plugin dependencies";
+	@(cd ${WRKSRC}/src/go; ${SETENVI} ${WRK_ENV} ${MAKE_ENV} ${GO_ENV} GOPROXY=${GO_MODCACHE} ${GO_CMD} mod vendor -e)
+
+pre-patch:
+	@${REINPLACE_CMD} -e 's|usr/lib/|lib/|g' ${WRKSRC}/CMakeLists.txt
+	@${REINPLACE_CMD} -e 's|usr/libexec/|libexec/|g' ${WRKSRC}/CMakeLists.txt
+	@${REINPLACE_CMD} -e 's|usr/share/|share/|g' ${WRKSRC}/CMakeLists.txt
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%DISTVERSION%%|${DISTVERSION}|g' \
-	    ${PATCH_WRKSRC}/configure.ac
+	    ${PATCH_WRKSRC}/packaging/cmake/Modules/NetdataVersion.cmake
 	@${REINPLACE_CMD} -e 's|%%NETDATA_CACHE%%|${NETDATA_CACHE}|g' \
-	    ${PATCH_WRKSRC}/configure.ac
+	    ${PATCH_WRKSRC}/CMakeLists.txt
 	@${REINPLACE_CMD} -e 's|%%NETDATA_LOG%%|${NETDATA_LOG}|g' \
-	    ${PATCH_WRKSRC}/configure.ac
+	    ${PATCH_WRKSRC}/CMakeLists.txt
 	@${REINPLACE_CMD} -e 's|%%NETDATA_PERST%%|${NETDATA_PERST}|g' \
-	    ${PATCH_WRKSRC}/configure.ac
+	    ${PATCH_WRKSRC}/CMakeLists.txt
+	@${REINPLACE_CMD} -e 's|%%NETDATA_RUN%%|${NETDATA_RUN}|g' \
+	    ${PATCH_WRKSRC}/CMakeLists.txt
 	@${REINPLACE_CMD} -e 's|%%ETCDIR%%|${ETCDIR}|g' \
-	    ${PATCH_WRKSRC}/configure.ac
-	@${REINPLACE_CMD} -e 's|%%PYTHON%%|${PYTHON_CMD}|g' \
-	    ${PATCH_WRKSRC}/collectors/python.d.plugin/python.d.plugin.in
+	    ${PATCH_WRKSRC}/CMakeLists.txt
+	@${REINPLACE_CMD} -e 's|%%PYTHON_VERSION%%|${PYTHON_VERSION}|g' \
+	    ${PATCH_WRKSRC}/src/collectors/python.d.plugin/python.d.plugin.in
 
 post-install:
 	${MKDIR} ${STAGEDIR}${ETCDIR}
@@ -103,15 +148,15 @@ post-install:
 	${MKDIR} ${STAGEDIR}${NETDATA_CACHE}
 	${MKDIR} ${STAGEDIR}${NETDATA_LOG}
 	${MKDIR} ${STAGEDIR}${NETDATA_PERST}
-	(for fi in 	${STAGEDIR}${LOCALBASE}/lib/${PORTNAME}/conf.d/*.conf \
-			${STAGEDIR}${LOCALBASE}/lib/${PORTNAME}/conf.d/*/*.conf \
-			${STAGEDIR}${LOCALBASE}/lib/${PORTNAME}/conf.d/*/*.txt ; do \
-		${MV} $$fi $$fi".sample"; \
-	done)
+	@cd ${STAGEDIR}${LOCALBASE}/lib/${PORTNAME} && mmv ";*.conf" "#1#2.conf.sample"
 	${RM} ${STAGEDIR}${ETCDIR}/netdata-updater.conf
+	${RM} ${STAGEDIR}${LOCALBASE}/libexec/netdata/netdata-updater.sh
 	${RM} -r ${STAGEDIR}${PREFIX}/lib/netdata/system
 
-post-install-CLOUD-off:
-	rm ${STAGEDIR}${PREFIX}/sbin/netdata-claim.sh
+post-install-CLOUD_DASHBOARD-on:
+	@(cd ${WRKDIR}/dist/agent && ${COPYTREE_SHARE} . ${STAGEDIR}/${DATADIR}/web)
+
+post-install-CLOUD_DASHBOARD-off:
+	${INSTALL_DATA} ${STAGEDIR}/${DATADIR}/web/v1/index.html ${STAGEDIR}/${DATADIR}/web/index.html
 
 .include <bsd.port.mk>

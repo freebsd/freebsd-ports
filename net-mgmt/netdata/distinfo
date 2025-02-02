@@ -1,3 +1,7 @@
-TIMESTAMP = 1698687088
-SHA256 (netdata-v1.43.2.tar.gz) = d4a7ea2717ac7c8f04865f18e13aeaa0a36784156059f1b5ced75a44f74afc4d
-SIZE (netdata-v1.43.2.tar.gz) = 46462665
+TIMESTAMP = 1738522786
+SHA256 (netdata/netdata-v2.2.3.tar.gz) = 0250afe498d21fe450d7438824f203fc70390549bc53d4664f963ec7677ec583
+SIZE (netdata/netdata-v2.2.3.tar.gz) = 50390364
+SHA256 (netdata/agent_20250202.tar.gz) = c8f2be37c167ab4033ee25226b159a38668e85a5fa9d206bb3b1eb823f4a8ffa
+SIZE (netdata/agent_20250202.tar.gz) = 2992115
+SHA256 (netdata/go.mod) = 1fce1d5b3a3cb018e3bc4dacf3b9e29d2801a2f66b5434549bcdfffdd1cd3389
+SIZE (netdata/go.mod) = 7534

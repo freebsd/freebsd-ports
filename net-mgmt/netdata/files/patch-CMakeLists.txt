@@ -1,0 +1,105 @@
+--- CMakeLists.txt.orig	2025-01-02 17:07:23 UTC
++++ CMakeLists.txt
+@@ -33,7 +33,7 @@ set(CMAKE_C_STANDARD 11)
+ set(CMAKE_INSTALL_MESSAGE LAZY)
+ 
+ set(CMAKE_C_STANDARD 11)
+-set(CMAKE_CXX_STANDARD 14)
++set(CMAKE_CXX_STANDARD 17)
+ set(CMAKE_INSTALL_DEFAULT_COMPONENT_NAME "netdata")
+ 
+ option(USE_CXX_11 "Use C++11 instead of C++14 (should only be used on legacy systems that cannot support C++14, may disable some features)" False)
+@@ -94,7 +94,7 @@ set(NETDATA_RUNTIME_PREFIX "${CMAKE_INSTALL_PREFIX}")
+ set(OS_WINDOWS     False)
+ 
+ set(NETDATA_RUNTIME_PREFIX "${CMAKE_INSTALL_PREFIX}")
+-set(BINDIR usr/sbin)
++set(BINDIR sbin)
+ 
+ if("${CMAKE_SYSTEM_NAME}" STREQUAL "Darwin")
+         set(OS_MACOS True)
+@@ -1307,7 +1307,6 @@ if(ENABLE_ML)
+         set(ML_FILES
+                 src/ml/ad_charts.h
+                 src/ml/ad_charts.cc
+-                src/ml/dlib/dlib/all/source.cpp
+                 src/ml/ml.cc
+                 src/ml/ml_calculated_number.h
+                 src/ml/ml_host.h
+@@ -2682,10 +2681,6 @@ endif()
+         target_compile_options(NetdataClaim PUBLIC -mwindows)
+ endif()
+ 
+-target_compile_definitions(netdata PRIVATE
+-        "$<$<BOOL:${ENABLE_ML}>:DLIB_NO_GUI_SUPPORT>"
+-)
+-
+ target_compile_options(netdata PRIVATE
+         "$<$<BOOL:${ENABLE_EXPORTER_MONGODB}>:${MONGOC_CFLAGS_OTHER}>"
+         "$<$<BOOL:${ENABLE_EXPORTER_PROMETHEUS_REMOTE_WRITE}>:${SNAPPY_CFLAGS_OTHER}>"
+@@ -2809,13 +2804,14 @@ endif()
+   string(REGEX REPLACE "/$" "" NETDATA_RUNTIME_PREFIX "${NETDATA_RUNTIME_PREFIX}")
+ endif()
+ 
+-set(CACHE_DIR "${NETDATA_RUNTIME_PREFIX}/var/cache/netdata")
+-set(CONFIG_DIR "${NETDATA_RUNTIME_PREFIX}/etc/netdata")
+-set(LIBCONFIG_DIR "${NETDATA_RUNTIME_PREFIX}/lib/netdata/conf.d")
+-set(LOG_DIR "${NETDATA_RUNTIME_PREFIX}/var/log/netdata")
+-set(PLUGINS_DIR "${NETDATA_RUNTIME_PREFIX}/libexec/netdata/plugins.d")
+-set(VARLIB_DIR "${NETDATA_RUNTIME_PREFIX}/var/lib/netdata")
++set(CACHE_DIR "%%NETDATA_CACHE%%")
++set(CONFIG_DIR "%%ETCDIR%%")
++set(LIBCONFIG_DIR "${CMAKE_INSTALL_PREFIX}/lib/netdata/conf.d")
++set(LOG_DIR "%%NETDATA_LOG%%")
++set(PLUGINS_DIR "${CMAKE_INSTALL_PREFIX}/libexec/netdata/plugins.d")
++set(VARLIB_DIR "%%NETDATA_PERST%%")
+ 
++
+ # A non-default value is only used when building Debian packages (/var/lib/netdata/www)
+ if(NOT DEFINED WEB_DIR)
+   set(WEB_DIR "share/netdata/web")
+@@ -2839,11 +2835,11 @@ install(TARGETS netdata COMPONENT netdata DESTINATION 
+ 
+ install(TARGETS netdata COMPONENT netdata DESTINATION "${BINDIR}")
+ 
+-install(DIRECTORY COMPONENT netdata DESTINATION var/cache/netdata)
+-install(DIRECTORY COMPONENT netdata DESTINATION var/log/netdata)
+-install(DIRECTORY COMPONENT netdata DESTINATION var/lib/netdata/registry)
+-install(DIRECTORY COMPONENT netdata DESTINATION var/lib/netdata/cloud.d)
+-install(DIRECTORY COMPONENT netdata DESTINATION var/run/netdata)
++install(DIRECTORY COMPONENT netdata DESTINATION %%NETDATA_CACHE%%)
++install(DIRECTORY COMPONENT netdata DESTINATION %%NETDATA_LOG%%)
++install(DIRECTORY COMPONENT netdata DESTINATION %%NETDATA_PERST%%/registery)
++install(DIRECTORY COMPONENT netdata DESTINATION %%NETDATA_PERST%%/cloud.d)
++install(DIRECTORY COMPONENT netdata DESTINATION %%NETDATA_RUN%%)
+ install(DIRECTORY COMPONENT netdata DESTINATION etc/netdata)
+ install(DIRECTORY COMPONENT netdata DESTINATION etc/netdata/custom-plugins.d)
+ install(DIRECTORY COMPONENT netdata DESTINATION etc/netdata/health.d)
+@@ -2858,11 +2854,11 @@ set(sbindir_POST "${NETDATA_RUNTIME_PREFIX}/${BINDIR}"
+ set(pkglibexecdir_POST "${NETDATA_RUNTIME_PREFIX}/libexec/netdata")
+ set(localstatedir_POST "${NETDATA_RUNTIME_PREFIX}/var")
+ set(sbindir_POST "${NETDATA_RUNTIME_PREFIX}/${BINDIR}")
+-set(configdir_POST "${NETDATA_RUNTIME_PREFIX}/etc/netdata")
+-set(libconfigdir_POST "${NETDATA_RUNTIME_PREFIX}/lib/netdata/conf.d")
+-set(cachedir_POST "${NETDATA_RUNTIME_PREFIX}/var/cache/netdata")
+-set(registrydir_POST "${NETDATA_RUNTIME_PREFIX}/var/lib/netdata/registry")
+-set(varlibdir_POST "${NETDATA_RUNTIME_PREFIX}/var/lib/netdata")
++set(configdir_POST "%%ETCDIR%%")
++set(libconfigdir_POST "${CMAKE_INSTALL_PREFIX}/lib/netdata/conf.d")
++set(cachedir_POST "%%NETDATA_CACHE%%")
++set(registrydir_POST "%%NETDATA_PERST%%/registery")
++set(varlibdir_POST "%%NETDATA_PERST%%")
+ set(netdata_user_POST "${NETDATA_USER}")
+ set(netdata_group_POST "${NETDATA_USER}")
+ 
+@@ -3368,8 +3364,8 @@ if(ENABLE_DASHBOARD)
+ #
+ 
+ if(ENABLE_DASHBOARD)
+-  include(NetdataDashboard)
+-  bundle_dashboard()
++  #include(NetdataDashboard)
++  #bundle_dashboard()
+ 
+   include(src/web/gui/v1/dashboard_v1.cmake)
+   include(src/web/gui/gui.cmake)
