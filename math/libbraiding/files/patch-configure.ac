@@ -1,7 +1,0 @@
---- configure.ac.orig	2024-11-06 18:51:29 UTC
-+++ configure.ac
-@@ -8,4 +8,3 @@ AC_OUTPUT
- LT_INIT
- AC_CONFIG_FILES([Makefile lib/Makefile libbraiding.pc])
- AC_OUTPUT
--s
