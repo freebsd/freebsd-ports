@@ -1,5 +1,6 @@
 PORTNAME=	lxqt-notificationd
 PORTVERSION=	2.1.1
+PORTREVISION=	1
 CATEGORIES=	deskutils
 MASTER_SITES=	LXQT
 
