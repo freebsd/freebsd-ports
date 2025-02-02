@@ -3,7 +3,7 @@ DISTVERSION=	1.3.1
 CATEGORIES=	math
 MASTER_SITES=	https://github.com/miguelmarco/${PORTNAME}/releases/download/${DISTVERSION}/
 
-MAINTAINER=	thierry@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C++ library for computations on braid groups
 WWW=		https://github.com/jeanluct/braidlab
 

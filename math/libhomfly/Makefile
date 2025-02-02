@@ -3,7 +3,7 @@ DISTVERSION=	1.02r6
 CATEGORIES=	math
 MASTER_SITES=	https://github.com/miguelmarco/${PORTNAME}/releases/download/${DISTVERSION}/
 
-MAINTAINER=	thierry@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library to compute the homfly polynomial of knots and link
 WWW=		https://github.com/miguelmarco/libhomfly
 

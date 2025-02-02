@@ -6,7 +6,7 @@ CATEGORIES=	net-im net-p2p
 MASTER_SITES=	https://github.com/TokTok/c-${PORTNAME}/releases/download/v${DISTVERSION}/
 DISTNAME=	c-${PORTNAME}-${DISTVERSION}
 
-MAINTAINER=	thierry@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	ProjectTox-Core library, a decentralized and secure messenger
 WWW=		https://tox.chat/
 
