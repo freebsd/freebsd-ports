@@ -640,6 +640,7 @@
     SUBDIR += rubygem-roadie-rails-rails4
     SUBDIR += rubygem-roadie-rails-rails52
     SUBDIR += rubygem-roadie-rails-rails61
+    SUBDIR += rubygem-roadie-rails-rails72
     SUBDIR += rubygem-roadie3
     SUBDIR += rubygem-ruby-qmail
     SUBDIR += rubygem-valid_email
