@@ -55,10 +55,10 @@ CARGO_CRATES=	aho-corasick-1.1.1 \
 		ring-0.17.5 \
 		rustc-hash-1.1.0 \
 		rustix-0.38.34 \
-		rustls-0.23.13 \
+		rustls-0.23.18 \
 		rustls-native-certs-0.7.1 \
 		rustls-pemfile-2.1.3 \
-		rustls-pki-types-1.7.0 \
+		rustls-pki-types-1.10.0 \
 		rustls-platform-verifier-0.3.4 \
 		rustls-platform-verifier-android-0.1.1 \
 		rustls-webpki-0.102.8 \
