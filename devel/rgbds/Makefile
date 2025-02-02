@@ -1,6 +1,5 @@
 PORTNAME=	rgbds
-DISTVERSION=	0.9.0
-PORTREVISION=	1
+DISTVERSION=	0.9.1
 CATEGORIES=	devel games
 MASTER_SITES=	https://github.com/gbdev/rgbds/releases/download/v${DISTVERSION}/
 
@@ -20,9 +19,6 @@ USES=		bison cmake:testing pkgconfig shebangfix
 SHEBANG_FILES=	contrib/view_palettes.sh src/bison.sh test/*.sh test/*/*.sh
 
 CMAKE_OFF=	USE_NONFREE_TESTS
-
-EXTRA_PATCHES=	${FILESDIR}/extra-patch-fix_rgbfix:-p1 \
-		${FILESDIR}/extra-patch-inc_signal:-p1
 
 WRKSRC=		${WRKDIR}/rgbds
 
