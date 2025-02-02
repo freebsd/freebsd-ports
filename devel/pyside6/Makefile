@@ -1,7 +1,7 @@
 PORTNAME=	pyside6
 DISTVERSION=	${PYSIDE6_VERSION}
 CATEGORIES=	devel
-MASTER_SITES=	QT/official_releases/QtForPython/shiboken6/PySide6-${DISTVERSION:R}-src
+MASTER_SITES=	QT/official_releases/QtForPython/${PORTNAME}/PySide6-${DISTVERSION}-src
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	pyside-setup-everywhere-src-${DISTVERSION}
 DIST_SUBDIR=	KDE/Qt/${PYSIDE6_VERSION}
@@ -28,11 +28,10 @@ USE_QT=		3d base charts connectivity datavis3d declarative doc graphs \
 
 CONFIGURE_ENV=	LLVM_INSTALL_DIR="${LLVM_PREFIX}/lib/cmake/llvm"
 
-WRKSRC=		${WRKDIR}/${DISTNAME:R}
 PATCH_WRKSRC=	${WRKSRC:H:H}
 WRKSRC_SUBDIR=	sources/pyside6
 PLIST_SUB=	PYTHON_MAJOR_VER=${PYTHON_MAJOR_VER} \
-		SHLIB_VER=${DISTVERSION:R:R} \
+		SHLIB_VER=${DISTVERSION:R} \
 		SHLIB_VERSION=${DISTVERSION}
 
 .include <bsd.port.pre.mk>
