@@ -1,9 +1,8 @@
 PORTNAME=	fping
-PORTVERSION=	5.0
-PORTREVISION=	3
+DISTVERSION=	5.3
 CATEGORIES=	net
 MASTER_SITES=	http://fping.org/dist/ \
-		https://github.com/schweikert/${PORTNAME}/releases/download/v${PORTVERSION}/
+		https://github.com/schweikert/${PORTNAME}/releases/download/v${DISTVERSION}/
 
 MAINTAINER=	jharris@widomaker.com
 COMMENT=	Quickly ping multiple hosts without flooding the network
@@ -15,18 +14,17 @@ LICENSE_NAME=	Previous BSD License
 LICENSE_FILE=	${WRKSRC}/COPYING
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-USES=		autoreconf
-
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
+
 INSTALL_TARGET=	install-strip
 
 OPTIONS_DEFINE=	IPV6
 OPTIONS_SUB=	yes
-IPV6_CONFIGURE_OFF=--disable-ipv6
+
+IPV6_CONFIGURE_OFF=	--disable-ipv6
 
 post-install-IPV6-on:
-	${RLN} ${STAGEDIR}${PREFIX}/sbin/fping  ${STAGEDIR}${PREFIX}/sbin/fping6
+	${RLN} ${STAGEDIR}${PREFIX}/sbin/fping ${STAGEDIR}${PREFIX}/sbin/fping6
 	${RLN} ${STAGEDIR}${PREFIX}/share/man/man8/fping.8 ${STAGEDIR}${PREFIX}/share/man/man8/fping6.8
 
 .include <bsd.port.mk>
