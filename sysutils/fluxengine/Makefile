@@ -10,6 +10,10 @@ WWW=		https://cowlark.com/fluxengine/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING.md
 
+BROKEN=		Fails to build, Illegal instruction (core dumped)
+DEPRECATED=	Broken for several months
+EXPIRATION_DATE=2025-02-28
+
 USES=		gmake ninja:build pkgconfig sqlite
 
 USE_GITHUB=	yes
