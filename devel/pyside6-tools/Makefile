@@ -1,7 +1,7 @@
 PORTNAME=	pyside6
 DISTVERSION=	${PYSIDE6_VERSION}
 CATEGORIES=	devel
-MASTER_SITES=	QT/official_releases/QtForPython/shiboken6/PySide6-${DISTVERSION:R}-src
+MASTER_SITES=	QT/official_releases/QtForPython/${PORTNAME}/PySide6-${DISTVERSION}-src
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 PKGNAMESUFFIX=	-tools
 DISTNAME=	pyside-setup-everywhere-src-${DISTVERSION}
@@ -27,7 +27,6 @@ USE_QT=		base declarative languageserver quick3d shadertools tools
 SHEBANG_FILES=	pyside_tool.py \
 		qtpy2cpp_lib/tests/baseline/basic_test.py
 
-WRKSRC=		${WRKDIR}/${DISTNAME:R}
 WRKSRC_SUBDIR=	sources/pyside-tools
 
 PLIST_SUB=	PYSIDE_BINDIR_REL=${PYSIDE_BINDIR_REL}
@@ -48,7 +47,7 @@ post-install:
 # Temporarily relocate them to avoid errors.
 	@${MV} ${STAGEDIR}${PREFIX}/${PYSIDE_BINDIR_REL}/deploy_lib/android/recipes ${WRKDIR}
 
-.for d in deploy_lib project qtpy2cpp_lib
+.for d in deploy_lib project_lib qtpy2cpp_lib
 	${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py \
 		-f -d ${PREFIX}/${PYSIDE_BINDIR_REL}/${d} \
 		${STAGEDIR}${PREFIX}/${PYSIDE_BINDIR_REL}/${d}
