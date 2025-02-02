@@ -1,5 +1,5 @@
-TIMESTAMP = 1717866416
-SHA256 (go/sysutils_popeye/popeye-v0.21.3/v0.21.3.mod) = 9b67f70e29a5001d715ea3dd2e281e73b8520450d83aaa9a85c3cc58a2b314b5
-SIZE (go/sysutils_popeye/popeye-v0.21.3/v0.21.3.mod) = 6973
-SHA256 (go/sysutils_popeye/popeye-v0.21.3/v0.21.3.zip) = a7a042e2bc535698325762d4b237d0ef65ac6cb3e26b07ad0e592c9038669f66
-SIZE (go/sysutils_popeye/popeye-v0.21.3/v0.21.3.zip) = 2852179
+TIMESTAMP = 1738385953
+SHA256 (go/sysutils_popeye/popeye-v0.22.1/v0.22.1.mod) = 370d10455cd57d4e67476f65ad02ecb08c4c10e70b230a34dad0d42c609771e7
+SIZE (go/sysutils_popeye/popeye-v0.22.1/v0.22.1.mod) = 8018
+SHA256 (go/sysutils_popeye/popeye-v0.22.1/v0.22.1.zip) = 0cb77d16ef18be802e6730d928cf69bbff86e6d2817b60bacec57e65196b111f
+SIZE (go/sysutils_popeye/popeye-v0.22.1/v0.22.1.zip) = 2866442
