@@ -14,6 +14,10 @@ LICENSE_TEXT=	Full license can be found at https://www.dbvis.com/eula/
 # Redistribution is not permitted
 LICENSE_PERMS=	auto-accept
 
+BROKEN=		Unfetchable
+DEPRECATED=	Unfetchable, outdated and unsupported upstream
+EXPIRATION_DATE=2025-02-28
+
 USES=		java
 JAVA_VENDOR=	openjdk
 
