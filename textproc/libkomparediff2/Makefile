@@ -6,12 +6,12 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Library to compare files and strings
 WWW=		https://www.kde.org
 
-USES=		cmake compiler:c++11-lang gettext kde:5 qt:5 tar:xz
+USES=		cmake compiler:c++11-lang gettext kde:6 \
+		qt:6 tar:xz
 USE_KDE=	auth codecs config configwidgets coreaddons i18n kio parts \
 		service widgetsaddons xmlgui \
 		ecm:build
-USE_QT=		concurrent core dbus gui network widgets xml \
-		buildtools:build qmake:build
+USE_QT=		base
 USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=	DOCS

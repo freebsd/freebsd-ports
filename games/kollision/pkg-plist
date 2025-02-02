@@ -12,12 +12,13 @@ share/icons/oxygen/22x22/apps/kollision.png
 share/icons/oxygen/32x32/apps/kollision.png
 share/icons/oxygen/48x48/apps/kollision.png
 share/icons/oxygen/64x64/apps/kollision.png
-%%DATADIR%%/pictures/theme.svgz
 %%DATADIR%%/sounds/ball_leaving.ogg
 %%DATADIR%%/sounds/hit_wall.ogg
 %%DATADIR%%/sounds/start.ogg
 %%DATADIR%%/sounds/you_lose.ogg
+%%DATADIR%%/themes/default.svgz
 share/locale/ar/LC_MESSAGES/kollision.mo
+share/locale/ast/LC_MESSAGES/kollision.mo
 share/locale/bg/LC_MESSAGES/kollision.mo
 share/locale/bs/LC_MESSAGES/kollision.mo
 share/locale/ca/LC_MESSAGES/kollision.mo
@@ -36,8 +37,10 @@ share/locale/fr/LC_MESSAGES/kollision.mo
 share/locale/ga/LC_MESSAGES/kollision.mo
 share/locale/gl/LC_MESSAGES/kollision.mo
 share/locale/gu/LC_MESSAGES/kollision.mo
+share/locale/he/LC_MESSAGES/kollision.mo
 share/locale/hr/LC_MESSAGES/kollision.mo
 share/locale/hu/LC_MESSAGES/kollision.mo
+share/locale/ia/LC_MESSAGES/kollision.mo
 share/locale/id/LC_MESSAGES/kollision.mo
 share/locale/is/LC_MESSAGES/kollision.mo
 share/locale/it/LC_MESSAGES/kollision.mo

@@ -4060,3 +4060,60 @@ irc/ezbounce||2025-01-28|Has expired: broken with modern Boost, broken with mode
 lang/rust182||2025-01-29|No consumers in ports
 x11-fm/tdfsb||2025-01-30|Has expired: Unmaintained, uses smpeg which has no distfiles anymore
 games/prboom|games/prboom-plus|2025-01-30|Has expired: Unmaintained, use games/prboom-plus instead
+net/akonadi-notes||2025-02-03|Discontinued upstream
+print/print-manager|print/plasma6-print-manager|2025-02-03|Moved to Plasma 6
+archivers/ark-devel|archivers/ark|2025-02-03|Obsoleted by non-devel version
+audio/plasma5-kpipewire|audio/plasma6-kpipewire|2025-02-03|Moved to Plasma 6
+audio/plasma5-plasma-pa|audio/plasma6-plasma-pa|2025-02-03|Moved to Plasma 6
+deskutils/plasma5-milou|deskutils/plasma6-milou|2025-02-03|Moved to Plasma 6
+deskutils/plasma5-sddm-kcm|deskutils/plasma6-sddm-kcm|2025-02-03|Moved to Plasma 6
+deskutils/plasma5-xdg-desktop-portal-kde|deskutils/plasma6-xdg-desktop-portal-kde|2025-02-03|Moved to Plasma 6
+devel/dolphin-plugins-devel|devel/dolphin-plugins|2025-02-03|Obsoleted by non-devel version
+devel/plasma5-khotkeys||2025-02-03|Discontinued upstream
+devel/plasma5-kwrited|devel/plasma6-kwrited|2025-02-03|Moved to Plasma 6
+devel/plasma5-plasma-sdk|devel/plasma6-plasma-sdk|2025-02-03|Moved to Plasma 6
+editors/kate-devel|editors/kate|2025-02-03|Obsoleted by non-devel version
+graphics/gwenview-devel|graphics/gwenview|2025-02-03|Obsoleted by non-devel version
+graphics/libkexiv2-devel|graphics/libkexiv2|2025-02-03|Obsoleted by non-devel version
+graphics/okular-devel|graphics/okular|2025-02-03|Obsoleted by non-devel version
+graphics/spectacle-devel|graphics/spectacle|2025-02-03|Obsoleted by non-devel version
+multimedia/plasma5-plank-player||2025-02-03|No releases for Plasma 6
+security/plasma5-kscreenlocker|security/plasma6-kscreenlocker|2025-02-03|Moved to Plasma 6
+security/plasma5-ksshaskpass|security/plasma6-ksshaskpass|2025-02-03|Moved to Plasma 6
+security/plasma5-kwallet-pam|security/plasma6-kwallet-pam|2025-02-03|Moved to Plasma 6
+sysutils/plasma5-discover|sysutils/plasma6-discover|2025-02-03|Moved to Plasma 6
+sysutils/plasma5-drkonqi|sysutils/plasma6-drkonqi|2025-02-03|Moved to Plasma 6
+sysutils/plasma5-kde-cli-tools|sysutils/plasma6-kde-cli-tools|2025-02-03|Moved to Plasma 6
+sysutils/plasma5-kinfocenter|sysutils/plasma6-kinfocenter|2025-02-03|Moved to Plasma 6
+sysutils/plasma5-kmenuedit|sysutils/plasma6-kmenuedit|2025-02-03|Moved to Plasma 6
+sysutils/plasma5-ksysguard||2025-02-03|Discontinued upstream
+sysutils/plasma5-ksystemstats|sysutils/plasma6-ksystemstats|2025-02-03|Moved to Plasma 6
+sysutils/plasma5-plasma-disks|sysutils/plasma6-plasma-disks|2025-02-03|Moved to Plasma 6
+sysutils/plasma5-plasma-systemmonitor|sysutils/plasma6-plasma-systemmonitor|2025-02-03|Moved to Plasma 6
+sysutils/plasma5-polkit-kde-agent-1|sysutils/plasma6-polkit-kde-agent-1|2025-02-03|Moved to Plasma 6
+sysutils/plasma5-powerdevil|sysutils/plasma6-powerdevil|2025-02-03|Moved to Plasma 6
+sysutils/plasma5-systemsettings|sysutils/plasma6-systemsettings|2025-02-03|Moved to Plasma 6
+www/plasma5-plasma-browser-integration|www/plasma6-plasma-browser-integration|2025-02-03|Moved to Plasma 6
+x11-fm/dolphin-devel|x11-fm/dolphin|2025-02-03|Obsoleted by non-devel version
+x11-themes/plasma5-breeze|x11-themes/plasma6-breeze|2025-02-03|Moved to Plasma 6
+x11-themes/plasma5-breeze-gtk|x11-themes/plasma6-breeze-gtk|2025-02-03|Moved to Plasma 6
+x11-themes/plasma5-kde-gtk-config|x11-themes/plasma6-kde-gtk-config|2025-02-03|Moved to Plasma 6
+x11-themes/plasma5-oxygen|x11-themes/plasma6-oxygen|2025-02-03|Moved to Plasma 6
+x11-themes/plasma5-plasma-workspace-wallpapers|x11-themes/plasma6-plasma-workspace-wallpapers|2025-02-03|Moved to Plasma 6
+x11-toolkits/plasma5-kdeplasma-addons|x11-toolkits/plasma6-kdeplasma-addons|2025-02-03|Moved to Plasma 6
+x11-wm/plasma5-kdecoration|x11-wm/plasma6-kdecoration|2025-02-03|Moved to Plasma 6
+x11-wm/plasma5-kwin|x11-wm/plasma6-kwin|2025-02-03|Moved to Plasma 6
+x11/kde5|x11/kde|2025-02-03|Remove version from KDE metaport
+x11/kde6|x11/kde|2025-02-03|Remove version from KDE metaport
+x11/konsole-devel|x11/konsole|2025-02-03|Obsoleted by non-devel version
+x11/plasma5-kactivitymanagerd|x11/plasma6-kactivitymanagerd|2025-02-03|Moved to Plasma 6
+x11/plasma5-kgamma5|x11/plasma6-kgamma|2025-02-03|Moved to Plasma 6
+x11/plasma5-kscreen|x11/plasma6-kscreen|2025-02-03|Moved to Plasma 6
+x11/plasma5-kwayland-integration||2025-02-03|Not relevant for Plasma 6
+x11/plasma5-layer-shell-qt|x11/plasma6-layer-shell-qt|2025-02-03|Moved to Plasma 6
+x11/plasma5-libkscreen|x11/plasma6-libkscreen|2025-02-03|Moved to Plasma 6
+x11/plasma5-plasma|x11/plasma6-plasma|2025-02-03|Moved to Plasma 6
+x11/plasma5-plasma-bigscreen||2025-02-03|No releases for Plasma 6
+x11/plasma5-plasma-desktop|x11/plasma6-plasma-desktop|2025-02-03|Moved to Plasma 6
+x11/plasma5-plasma-integration|x11/plasma6-plasma-integration|2025-02-03|Moved to Plasma 6
+x11/plasma5-plasma-workspace|x11/plasma6-plasma-workspace|2025-02-03|Moved to Plasma 6

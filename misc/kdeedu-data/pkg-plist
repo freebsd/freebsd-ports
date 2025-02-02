@@ -114,6 +114,10 @@ share/apps/kvtml/en_GB/sport.kvtml
 share/apps/kvtml/en_GB/transportation.kvtml
 share/apps/kvtml/en_GB/vegetables.kvtml
 share/apps/kvtml/en_GB/worldcapitals.kvtml
+share/apps/kvtml/eo/animals.kvtml
+share/apps/kvtml/eo/easy.kvtml
+share/apps/kvtml/eo/hard.kvtml
+share/apps/kvtml/eo/medium.kvtml
 share/apps/kvtml/es/animals.kvtml
 share/apps/kvtml/es/computadoras.kvtml
 share/apps/kvtml/es/deportes.kvtml

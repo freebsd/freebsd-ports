@@ -10,11 +10,10 @@ LICENSE=	LGPL21
 
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/range/algorithm.hpp:devel/boost-libs
 
-USES=		cmake compiler:c++11-lib gettext kde:5 qt:5 tar:xz
-USE_KDE=	codecs emoticons i18n init itemmodels itemviews \
+USES=		cmake compiler:c++11-lib gettext kde:6 qt:6 tar:xz
+USE_KDE=	codecs \
 		ecm:build
-USE_QT=		core \
-		buildtools:build qmake:build
+USE_QT=		base
 USE_LDCONFIG=	yes
 
 DESCR=		${.CURDIR:H:H}/deskutils/kdepim/pkg-descr

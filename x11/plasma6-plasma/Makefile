@@ -9,10 +9,8 @@ WWW=		https://www.kde.org/plasma-desktop
 
 USES=		kde:6 metaport qt:6
 # remove:
-#   * bluedevil we do not have bluez at all
 #   * plasma-pa no plasma-pa (pulseaudio) by default
-USE_KDE=	 \
-		 ${_USE_PLASMA_ALL:Nplasma-pa:Nhotkeys:Nksysguard:Nkwayland-integration:Ndiscover}
+USE_KDE=	${_USE_PLASMA_ALL:Nplasma-pa}
 
 OPTIONS_DEFINE=		PULSEAUDIO QT5
 OPTIONS_DEFAULT=	PULSEAUDIO

@@ -11,7 +11,6 @@
     SUBDIR += arc
     SUBDIR += arj
     SUBDIR += ark
-    SUBDIR += ark-devel
     SUBDIR += arqiver
     SUBDIR += atool
     SUBDIR += bicom

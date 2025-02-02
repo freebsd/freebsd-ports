@@ -1,7 +1,7 @@
 bin/ksystemlog
 share/applications/org.kde.ksystemlog.desktop
-share/kxmlgui5/ksystemlog/ksystemlogui.rc
 share/locale/ar/LC_MESSAGES/ksystemlog.mo
+share/locale/ast/LC_MESSAGES/ksystemlog.mo
 share/locale/az/LC_MESSAGES/ksystemlog.mo
 share/locale/be/LC_MESSAGES/ksystemlog.mo
 share/locale/bg/LC_MESSAGES/ksystemlog.mo
@@ -61,4 +61,4 @@ share/locale/uk/LC_MESSAGES/ksystemlog.mo
 share/locale/zh_CN/LC_MESSAGES/ksystemlog.mo
 share/locale/zh_TW/LC_MESSAGES/ksystemlog.mo
 share/metainfo/org.kde.ksystemlog.appdata.xml
-share/qlogging-categories5/ksystemlog.categories
+share/qlogging-categories6/ksystemlog.categories

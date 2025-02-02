@@ -5,7 +5,7 @@ CATEGORIES=	devel kde
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE Software Development Kit
 
-USES=		kde:5 metaport qt:5
+USES=		kde:6 metaport qt:6
 USE_QT=		#
 
 OPTIONS_DEFINE=	CERVISIA \

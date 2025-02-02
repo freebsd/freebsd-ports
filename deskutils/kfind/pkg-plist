@@ -9,6 +9,7 @@ share/icons/hicolor/64x64/apps/kfind.png
 share/icons/hicolor/scalable/apps/kfind.svgz
 share/locale/af/LC_MESSAGES/kfind.mo
 share/locale/ar/LC_MESSAGES/kfind.mo
+share/locale/ast/LC_MESSAGES/kfind.mo
 share/locale/az/LC_MESSAGES/kfind.mo
 share/locale/be/LC_MESSAGES/kfind.mo
 share/locale/be@latin/LC_MESSAGES/kfind.mo
@@ -112,10 +113,11 @@ share/man/pl/man1/kfind.1.gz
 share/man/pt/man1/kfind.1.gz
 share/man/pt_BR/man1/kfind.1.gz
 share/man/ru/man1/kfind.1.gz
+share/man/sl/man1/kfind.1.gz
 share/man/sr/man1/kfind.1.gz
 share/man/sr@latin/man1/kfind.1.gz
 share/man/sv/man1/kfind.1.gz
 share/man/tr/man1/kfind.1.gz
 share/man/uk/man1/kfind.1.gz
 share/metainfo/org.kde.kfind.appdata.xml
-share/qlogging-categories5/kfind.categories
+share/qlogging-categories6/kfind.categories

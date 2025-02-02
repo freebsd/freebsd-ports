@@ -1,5 +1,5 @@
 bin/kdiff3
-%%QT_PLUGINDIR%%/kf5/kfileitemaction/kdiff3fileitemaction.so
+%%QT_PLUGINDIR%%/kf6/kfileitemaction/kdiff3fileitemaction.so
 share/applications/org.kde.kdiff3.desktop
 %%PORTDOCS%%%%DOCSDIR%%/ca/kdiff3/index.cache.bz2
 %%PORTDOCS%%%%DOCSDIR%%/ca/kdiff3/index.docbook

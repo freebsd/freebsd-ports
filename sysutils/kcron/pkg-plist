@@ -1,10 +1,11 @@
-lib/libexec/kauth/kcron_helper
-%%QT_PLUGINDIR%%/plasma/kcms/systemsettings_qwidgets/kcm_cron.so
+lib/libexec/kf6/kauth/kcron_helper
+%%QT_PLUGINDIR%%/plasma/kcms/systemsettings/kcm_cron.so
 share/applications/kcm_cron.desktop
 share/dbus-1/system-services/local.kcron.crontab.service
 share/dbus-1/system.d/local.kcron.crontab.conf
 share/locale/af/LC_MESSAGES/kcron.mo
 share/locale/ar/LC_MESSAGES/kcron.mo
+share/locale/ast/LC_MESSAGES/kcron.mo
 share/locale/be/LC_MESSAGES/kcron.mo
 share/locale/bg/LC_MESSAGES/kcron.mo
 share/locale/br/LC_MESSAGES/kcron.mo
@@ -80,4 +81,4 @@ share/locale/zh_HK/LC_MESSAGES/kcron.mo
 share/locale/zh_TW/LC_MESSAGES/kcron.mo
 share/metainfo/org.kde.kcron.metainfo.xml
 share/polkit-1/actions/local.kcron.crontab.policy
-share/qlogging-categories5/kcron.categories
+share/qlogging-categories6/kcron.categories

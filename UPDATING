@@ -5,6 +5,27 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20250203:
+  AFFECTS: users of x11/kde5 and x11/kde6
+  AUTHOR: arrowd@FreeBSD.org
+
+  All KDE ports were fully switched to Qt6/KF6. Plasma 5 ports were removed.
+  KDE Applications were updated to 24.12.
+
+  If you installed KDE via kde5 or kde6 packages, the upgrade path is
+
+  # pkg remove -f kde[56] && pkg install kde
+
+  If you installed KDE via the plasma5-plasma metapackage, the upgrade path
+
+  # pkg remove -f plasma5-plasma && pkg install plasma6-plasma
+
+  Running "pkg autoremove" after the upgrade would clean unused dependencies.
+
+  For the uncommon cases of building on the host with synth, portmaster, etc.
+  the idea stays roughly the same - replace every plasma5 package with its
+  plasma6 counterpart.
+
 20250131:
   AFFECTS: users of security/easy-rsa
   AUTHOR: mandree@FreeBSD.org
@@ -180,7 +201,7 @@ you update your ports collection, before attempting any port upgrades.
   results in a non-compatible database format.
 
   After upgrading, you must rebuild all BerkeleyDB databases used by
-  apr-util (example: Apache databases created with `httxt2dbm -F db` 
+  apr-util (example: Apache databases created with `httxt2dbm -F db`
 
 20241109:
   AFFECTS: all users of i386

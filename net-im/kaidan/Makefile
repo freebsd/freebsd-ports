@@ -1,5 +1,6 @@
 PORTNAME=	kaidan
 DISTVERSION=	0.10.1
+PORTREVISION=	1
 CATEGORIES=	net-im kde
 MASTER_SITES=	KDE/unstable/${PORTNAME}/${DISTVERSION}
 
@@ -10,11 +11,10 @@ WWW=		https://apps.kde.org/kaidan/
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSES/GPL-3.0-or-later.txt
 
-BUILD_DEPENDS=	kquickimageeditor>0:graphics/kquickimageeditor
+BUILD_DEPENDS=	kquickimageeditor-qt5>0:graphics/kquickimageeditor@qt5
 LIB_DEPENDS=	libQXmppQt5.so:net-im/qxmpp@qt5 \
-		libZXing.so:textproc/zxing-cpp \
-		libicuuc.so:devel/icu
-RUN_DEPENDS=	kquickimageeditor>0:graphics/kquickimageeditor
+		libZXing.so:textproc/zxing-cpp
+RUN_DEPENDS=	kquickimageeditor-qt5>0:graphics/kquickimageeditor@qt5
 
 USES=		cmake compiler:c++11-lang desktop-file-utils kde:5 pkgconfig \
 		qt:5 tar:xz xorg

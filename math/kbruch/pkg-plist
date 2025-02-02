@@ -21,10 +21,8 @@ share/icons/hicolor/scalable/apps/kbruch.svgz
 %%DATADIR%%/pics/icon_learning_1.png
 %%DATADIR%%/pics/icon_test_case.png
 %%DATADIR%%/pics/icon_test_case_1.png
-share/kxmlgui5/kbruch/AppMenuWidgetui.rc
-share/kxmlgui5/kbruch/FractionRingWidgetui.rc
-share/kxmlgui5/kbruch/kbruchui.rc
 share/locale/ar/LC_MESSAGES/kbruch.mo
+share/locale/ast/LC_MESSAGES/kbruch.mo
 share/locale/be/LC_MESSAGES/kbruch.mo
 share/locale/bg/LC_MESSAGES/kbruch.mo
 share/locale/bn/LC_MESSAGES/kbruch.mo
@@ -104,6 +102,7 @@ share/man/nl/man1/kbruch.1.gz
 share/man/pt/man1/kbruch.1.gz
 share/man/pt_BR/man1/kbruch.1.gz
 share/man/ru/man1/kbruch.1.gz
+share/man/sl/man1/kbruch.1.gz
 share/man/sv/man1/kbruch.1.gz
 share/man/uk/man1/kbruch.1.gz
 share/metainfo/org.kde.kbruch.appdata.xml

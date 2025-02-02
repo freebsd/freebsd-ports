@@ -1,33 +1,32 @@
 PORTNAME=	kio-extras
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
-PORTREVISION=	3
 CATEGORIES=	devel kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
-COMMENT=	Plasma5 library to increase the functionality of KIO
+COMMENT=	Plasma6 library to increase the functionality of KIO
 WWW=		https://projects.kde.org/projects/kde/workspace/kio-extras
 
 LIB_DEPENDS=	libtag.so:audio/taglib \
 		libImath.so:math/Imath \
-		libkdsoap.so:www/kdsoap@qt5
+		libkdsoap-qt6.so:www/kdsoap@qt6 \
+		libKDSoapWSDiscoveryClient.so:www/kdsoap-ws-discovery-client\
+		libQCoro6Core.so:devel/qcoro@qt6
 
-USES=		cmake compiler:c++11-lib gettext gperf kde:5 \
-		pkgconfig qt:5 shared-mime-info shebangfix tar:xz xorg
-USE_KDE=	activities archive auth bookmarks codecs completion config \
-		configwidgets coreaddons crash dbusaddons dnssd doctools \
-		emoticons guiaddons i18n iconthemes init itemmodels itemviews \
-		jobwidgets js kdelibs4support khtml kio notifications parts \
-		phonon pty service solid sonnet syntaxhighlighting textwidgets unitconversion \
+USES=		cmake compiler:c++11-lib gettext gperf kde:6 pkgconfig qt:6 \
+		shared-mime-info shebangfix tar:xz xorg
+USE_KDE=	activities activities-stats archive auth bookmarks codecs \
+		completion config configwidgets coreaddons crash dbusaddons \
+		dnssd doctools guiaddons i18n iconthemes itemmodels itemviews \
+		jobwidgets kcmutils kio notifications parts phonon pty service \
+		solid sonnet syntaxhighlighting textwidgets unitconversion \
 		widgetsaddons windowsystem xmlgui \
 		ecm:build
-USE_QT=		concurrent core dbus declarative gui location network printsupport \
-		sql svg testlib webchannel widgets xml \
-		buildtools:build qmake:build
+USE_QT=		base declarative
 USE_XORG=	x11 xcursor
 SHEBANG_FILES=	info/kde-info2html
 
 # CVE-2018-19120
-CMAKE_ON=	CMAKE_DISABLE_FIND_PACKAGE_Qt5WebEngineWidget
+CMAKE_ON=	CMAKE_DISABLE_FIND_PACKAGE_Qt6WebEngineWidget
 
 OPTIONS_DEFINE=	SAMBA AFC MTP EXR EXIV SLP SSH TAGLIB DOCS
 OPTIONS_DEFAULT=	SAMBA AFC MTP EXR EXIV SLP SSH TAGLIB
@@ -52,7 +51,7 @@ EXR_CMAKE_BOOL_OFF=	CMAKE_DISABLE_FIND_PACKAGE_OpenEXR
 EXR_LIB_DEPENDS=	libOpenEXR.so:graphics/openexr
 
 EXIV_DESC=		Provides support for automatic rotation of JPEGs in the thumbnail kioslave
-EXIV_CMAKE_BOOL_OFF=	CMAKE_DISABLE_FIND_PACKAGE_KF5kExiv2
+EXIV_CMAKE_BOOL_OFF=	CMAKE_DISABLE_FIND_PACKAGE_KF6kExiv2
 EXIV_USE=		KDE=libkexiv2
 
 SLP_DESC=		Provides SLP support in the network:/ kioslave

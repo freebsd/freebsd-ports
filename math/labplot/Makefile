@@ -41,12 +41,13 @@ DATADIR=	${PREFIX}/share/labplot2
 
 OPTIONS_DEFINE=		CANTOR FITS FFTW3 HDF5 LIBCERF MATLAB NETCDF ORCUS \
 			ORIGINLAB READSTAT
-OPTIONS_DEFAULT=	${OPTIONS_DEFINE}
+OPTIONS_DEFAULT:=	${OPTIONS_DEFINE:NCANTOR}
 
 CANTOR_DESC=		KDE Cantor support
 CANTOR_LIB_DEPENDS=	libcantorlibs.so:math/cantor \
 			libspectre.so:print/libspectre
 CANTOR_CMAKE_BOOL=	ENABLE_CANTOR
+CANTOR_IGNORE=		has to be ported to KF6/Qt6 for Cantor support
 
 FFTW3_DESC=		Speedier FFTs in the numerical and stats lib (NSL)
 FFTW3_LIB_DEPENDS=	libfftw3.so:math/fftw3

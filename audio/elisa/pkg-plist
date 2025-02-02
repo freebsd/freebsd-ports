@@ -1,9 +1,6 @@
 bin/elisa
 lib/elisa/libelisaLib.so.0
 lib/elisa/libelisaLib.so.0.1
-%%QT_QMLDIR%%/org/kde/elisa/libelisaqmlplugin.so
-%%QT_QMLDIR%%/org/kde/elisa/plugins.qmltypes
-%%QT_QMLDIR%%/org/kde/elisa/qmldir
 share/applications/org.kde.elisa.desktop
 share/dbus-1/services/org.kde.elisa.service
 share/icons/hicolor/128x128/apps/elisa.png
@@ -14,6 +11,7 @@ share/icons/hicolor/48x48/apps/elisa.png
 share/icons/hicolor/64x64/apps/elisa.png
 share/icons/hicolor/scalable/apps/elisa.svg
 share/locale/ar/LC_MESSAGES/elisa.mo
+share/locale/ast/LC_MESSAGES/elisa.mo
 share/locale/az/LC_MESSAGES/elisa.mo
 share/locale/be/LC_MESSAGES/elisa.mo
 share/locale/bg/LC_MESSAGES/elisa.mo
@@ -25,21 +23,25 @@ share/locale/da/LC_MESSAGES/elisa.mo
 share/locale/de/LC_MESSAGES/elisa.mo
 share/locale/el/LC_MESSAGES/elisa.mo
 share/locale/en_GB/LC_MESSAGES/elisa.mo
+share/locale/eo/LC_MESSAGES/elisa.mo
 share/locale/es/LC_MESSAGES/elisa.mo
 share/locale/et/LC_MESSAGES/elisa.mo
 share/locale/eu/LC_MESSAGES/elisa.mo
 share/locale/fi/LC_MESSAGES/elisa.mo
 share/locale/fr/LC_MESSAGES/elisa.mo
 share/locale/gl/LC_MESSAGES/elisa.mo
+share/locale/he/LC_MESSAGES/elisa.mo
 share/locale/hi/LC_MESSAGES/elisa.mo
 share/locale/hu/LC_MESSAGES/elisa.mo
 share/locale/ia/LC_MESSAGES/elisa.mo
 share/locale/id/LC_MESSAGES/elisa.mo
+share/locale/is/LC_MESSAGES/elisa.mo
 share/locale/it/LC_MESSAGES/elisa.mo
 share/locale/ja/LC_MESSAGES/elisa.mo
 share/locale/ka/LC_MESSAGES/elisa.mo
 share/locale/ko/LC_MESSAGES/elisa.mo
 share/locale/lt/LC_MESSAGES/elisa.mo
+share/locale/lv/LC_MESSAGES/elisa.mo
 share/locale/nl/LC_MESSAGES/elisa.mo
 share/locale/nn/LC_MESSAGES/elisa.mo
 share/locale/pa/LC_MESSAGES/elisa.mo
@@ -48,6 +50,7 @@ share/locale/pt/LC_MESSAGES/elisa.mo
 share/locale/pt_BR/LC_MESSAGES/elisa.mo
 share/locale/ro/LC_MESSAGES/elisa.mo
 share/locale/ru/LC_MESSAGES/elisa.mo
+share/locale/sa/LC_MESSAGES/elisa.mo
 share/locale/sk/LC_MESSAGES/elisa.mo
 share/locale/sl/LC_MESSAGES/elisa.mo
 share/locale/sv/LC_MESSAGES/elisa.mo
@@ -57,4 +60,4 @@ share/locale/uk/LC_MESSAGES/elisa.mo
 share/locale/zh_CN/LC_MESSAGES/elisa.mo
 share/locale/zh_TW/LC_MESSAGES/elisa.mo
 share/metainfo/org.kde.elisa.appdata.xml
-share/qlogging-categories5/elisa.categories
+share/qlogging-categories6/elisa.categories

@@ -8,7 +8,7 @@ share/icons/hicolor/32x32/apps/kamoso.png
 share/icons/hicolor/48x48/apps/kamoso.png
 share/icons/hicolor/64x64/apps/kamoso.png
 share/icons/hicolor/scalable/actions/burst.svgz
-share/icons/hicolor/scalable/apps/kamoso.svgz
+share/icons/hicolor/scalable/apps/kamoso.svg
 share/knotifications5/kamoso.notifyrc
 share/locale/ar/LC_MESSAGES/kamoso.mo
 share/locale/bg/LC_MESSAGES/kamoso.mo
@@ -61,4 +61,3 @@ share/locale/uk/LC_MESSAGES/kamoso.mo
 share/locale/zh_CN/LC_MESSAGES/kamoso.mo
 share/locale/zh_TW/LC_MESSAGES/kamoso.mo
 share/metainfo/org.kde.kamoso.appdata.xml
-share/sounds/kamoso-shutter.wav

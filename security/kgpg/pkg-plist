@@ -43,13 +43,11 @@ share/icons/hicolor/scalable/apps/kgpg.svg
 share/icons/hicolor/scalable/status/key-group.svgz
 share/icons/hicolor/scalable/status/key-pair.svgz
 share/icons/hicolor/scalable/status/key-single.svgz
-%%DATADIR%%/tips
 share/kio/servicemenus/kgpg_encryptfile.desktop
 share/kio/servicemenus/kgpg_encryptfolder.desktop
 share/kio/servicemenus/kgpg_viewdecrypted.desktop
-share/kxmlgui5/kgpg/keysmanager.rc
-share/kxmlgui5/kgpg/kgpgeditor.rc
 share/locale/ar/LC_MESSAGES/kgpg.mo
+share/locale/ast/LC_MESSAGES/kgpg.mo
 share/locale/be/LC_MESSAGES/kgpg.mo
 share/locale/bg/LC_MESSAGES/kgpg.mo
 share/locale/br/LC_MESSAGES/kgpg.mo
@@ -118,4 +116,4 @@ share/locale/uk/LC_MESSAGES/kgpg.mo
 share/locale/zh_CN/LC_MESSAGES/kgpg.mo
 share/locale/zh_TW/LC_MESSAGES/kgpg.mo
 share/metainfo/org.kde.kgpg.appdata.xml
-share/qlogging-categories5/kgpg.categories
+share/qlogging-categories6/kgpg.categories

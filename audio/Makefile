@@ -596,8 +596,6 @@
     SUBDIR += pipewire-module-xrdp
     SUBDIR += pipewire-spa-oss
     SUBDIR += pithos
-    SUBDIR += plasma5-kpipewire
-    SUBDIR += plasma5-plasma-pa
     SUBDIR += plasma6-kpipewire
     SUBDIR += plasma6-ocean-sound-theme
     SUBDIR += plasma6-oxygen-sounds

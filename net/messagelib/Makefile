@@ -1,6 +1,5 @@
 PORTNAME=	messagelib
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
-PORTREVISION=	1
 CATEGORIES=	net kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
@@ -14,24 +13,23 @@ LIB_DEPENDS=	libassuan.so:security/libassuan \
 		libgpg-error.so:security/libgpg-error \
 		libgpgme.so:security/gpgme \
 		libgpgmepp.so:security/gpgme-cpp \
-		libqgpgme.so:security/gpgme-qt@qt5
+		libqgpgmeqt6.so:security/gpgme-qt@qt6
 
-USES=		cmake compiler:c++11-lib cpe gettext grantlee:5 kde:5 qca \
-		qt:5 tar:xz xorg
+USES=		cmake compiler:c++11-lib cpe gettext kde:6 qca qt:6 tar:xz \
+		xorg
 CPE_VENDOR=	kde
 USE_KDE=	archive auth bookmarks codecs completion config configwidgets \
-		coreaddons guiaddons i18n iconthemes imap itemmodels itemviews jobwidgets \
-		kio ktextaddons notifications service solid sonnet syntaxhighlighting \
-		textwidgets wallet widgetsaddons windowsystem xmlgui \
+		coreaddons guiaddons i18n iconthemes imap itemmodels itemviews \
+		jobwidgets kio ktextaddons notifications service solid sonnet \
+		syntaxhighlighting textwidgets wallet widgetsaddons \
+		windowsystem xmlgui \
 		ecm:build
 # pim components
 USE_KDE+=	akonadi akonadicontacts akonadimime akonadisearch calendarcore \
-		contacts grantleetheme gravatar identitymanagement \
-		ldap libkdepim libkleo mailtransport mbox \
-		mime pimcommon pimtextedit
-USE_QT=		concurrent core dbus declarative gui location network printsupport \
-		uitools webchannel webengine widgets xml \
-		buildtools:build qmake:build testlib:build
+		contacts grantleetheme gravatar identitymanagement ldap \
+		libkdepim libkleo mailtransport mbox mime pimcommon \
+		pimtextedit
+USE_QT=		base
 USE_XORG=	x11
 USE_LDCONFIG=	yes
 

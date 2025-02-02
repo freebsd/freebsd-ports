@@ -8,6 +8,7 @@ WWW=		https://www.kde.org/
 
 LICENSE=	LGPL21
 
+IGNORE=		does not build with recent KDE Pim
 DEPRECATED=	Unmaintained and no longer released by the KDE community
 EXPIRATION_DATE=	2025-03-31
 

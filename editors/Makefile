@@ -74,7 +74,6 @@
     SUBDIR += kakoune
     SUBDIR += kakoune-lsp
     SUBDIR += kate
-    SUBDIR += kate-devel
     SUBDIR += kibi
     SUBDIR += kile
     SUBDIR += komodo-edit

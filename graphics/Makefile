@@ -329,7 +329,6 @@
     SUBDIR += guile-cairo
     SUBDIR += guilib
     SUBDIR += gwenview
-    SUBDIR += gwenview-devel
     SUBDIR += h3
     SUBDIR += halftone
     SUBDIR += hdr_tools
@@ -480,7 +479,6 @@
     SUBDIR += libjxr
     SUBDIR += libkdcraw
     SUBDIR += libkexiv2
-    SUBDIR += libkexiv2-devel
     SUBDIR += libkipi
     SUBDIR += libksane
     SUBDIR += libliftoff
@@ -637,7 +635,6 @@
     SUBDIR += ogre3d19
     SUBDIR += oidn
     SUBDIR += okular
-    SUBDIR += okular-devel
     SUBDIR += open3d
     SUBDIR += opencollada
     SUBDIR += opencolorio
@@ -1176,7 +1173,6 @@
     SUBDIR += skanlite
     SUBDIR += skanpage
     SUBDIR += spectacle
-    SUBDIR += spectacle-devel
     SUBDIR += spirv-cross
     SUBDIR += spirv-tools
     SUBDIR += springgraph

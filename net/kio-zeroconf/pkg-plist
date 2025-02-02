@@ -1,5 +1,5 @@
-%%QT_PLUGINDIR%%/kf5/kded/dnssdwatcher.so
-%%QT_PLUGINDIR%%/kf5/kio/zeroconf.so
+%%QT_PLUGINDIR%%/kf6/kded/dnssdwatcher.so
+%%QT_PLUGINDIR%%/kf6/kio/zeroconf.so
 share/dbus-1/interfaces/org.kde.kdnssd.xml
 share/locale/ar/LC_MESSAGES/kio5_zeroconf.mo
 share/locale/be/LC_MESSAGES/kio5_zeroconf.mo
@@ -24,6 +24,7 @@ share/locale/fi/LC_MESSAGES/kio5_zeroconf.mo
 share/locale/fr/LC_MESSAGES/kio5_zeroconf.mo
 share/locale/ga/LC_MESSAGES/kio5_zeroconf.mo
 share/locale/gl/LC_MESSAGES/kio5_zeroconf.mo
+share/locale/he/LC_MESSAGES/kio5_zeroconf.mo
 share/locale/hi/LC_MESSAGES/kio5_zeroconf.mo
 share/locale/hne/LC_MESSAGES/kio5_zeroconf.mo
 share/locale/hr/LC_MESSAGES/kio5_zeroconf.mo

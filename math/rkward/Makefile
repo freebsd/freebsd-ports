@@ -24,7 +24,7 @@ USE_QT=		buildtools concurrent core dbus declarative gui location	\
 		widgets xml
 USE_XORG=	ice x11 xext
 USE_KDE=	archive auth bookmarks codecs completion config configwidgets coreaddons\
-		crash doctools ecm i18n itemviews jobwidgets kate:run kio	\
+		crash doctools ecm i18n itemviews jobwidgets kio	\
 		notifications parts service solid sonnet syntaxhighlighting texteditor	\
 		textwidgets widgetsaddons windowsystem xmlgui
 

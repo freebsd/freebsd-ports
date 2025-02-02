@@ -404,297 +404,297 @@ share/man/pt/man1/plasmapkg2.1.gz
 share/man/pt_BR/man1/plasmapkg2.1.gz
 share/man/sv/man1/plasmapkg2.1.gz
 share/man/uk/man1/plasmapkg2.1.gz
-share/plasma/desktoptheme/air/colors
-share/plasma/desktoptheme/air/dialogs/background.svgz
-share/plasma/desktoptheme/air/dialogs/kickoff.svgz
-share/plasma/desktoptheme/air/dialogs/krunner.svgz
-share/plasma/desktoptheme/air/icons/akonadi.svgz
-share/plasma/desktoptheme/air/icons/akregator.svgz
-share/plasma/desktoptheme/air/icons/amarok.svgz
-share/plasma/desktoptheme/air/icons/applications.svgz
-share/plasma/desktoptheme/air/icons/apport.svgz
-share/plasma/desktoptheme/air/icons/audio.svgz
-share/plasma/desktoptheme/air/icons/battery.svgz
-share/plasma/desktoptheme/air/icons/bookmarks.svgz
-share/plasma/desktoptheme/air/icons/computer.svgz
-share/plasma/desktoptheme/air/icons/configure.svgz
-share/plasma/desktoptheme/air/icons/device.svgz
-share/plasma/desktoptheme/air/icons/edit.svgz
-share/plasma/desktoptheme/air/icons/kdeconnect.svgz
-share/plasma/desktoptheme/air/icons/keyboard.svgz
-share/plasma/desktoptheme/air/icons/kget.svgz
-share/plasma/desktoptheme/air/icons/klipper.svgz
-share/plasma/desktoptheme/air/icons/konv_message.svgz
-share/plasma/desktoptheme/air/icons/konversation.svgz
-share/plasma/desktoptheme/air/icons/kopete.svgz
-share/plasma/desktoptheme/air/icons/korgac.svgz
-share/plasma/desktoptheme/air/icons/kpackagekit.svgz
-share/plasma/desktoptheme/air/icons/ktorrent.svgz
-share/plasma/desktoptheme/air/icons/nepomuk.svgz
-share/plasma/desktoptheme/air/icons/network.svgz
-share/plasma/desktoptheme/air/icons/notification.svgz
-share/plasma/desktoptheme/air/icons/preferences.svgz
-share/plasma/desktoptheme/air/icons/printer.svgz
-share/plasma/desktoptheme/air/icons/quassel.svgz
-share/plasma/desktoptheme/air/icons/slc.svgz
-share/plasma/desktoptheme/air/icons/start.svgz
-share/plasma/desktoptheme/air/icons/system.svgz
-share/plasma/desktoptheme/air/icons/view.svgz
-share/plasma/desktoptheme/air/icons/wallet.svgz
-share/plasma/desktoptheme/air/metadata.json
-share/plasma/desktoptheme/air/opaque/dialogs/background.svgz
-share/plasma/desktoptheme/air/opaque/dialogs/krunner.svgz
-share/plasma/desktoptheme/air/opaque/widgets/extender-background.svgz
-share/plasma/desktoptheme/air/opaque/widgets/panel-background.svgz
-share/plasma/desktoptheme/air/opaque/widgets/tooltip.svgz
-share/plasma/desktoptheme/air/plasmarc
-share/plasma/desktoptheme/air/translucent/dialogs/background.svgz
-share/plasma/desktoptheme/air/translucent/dialogs/krunner.svgz
-share/plasma/desktoptheme/air/translucent/widgets/background.svgz
-share/plasma/desktoptheme/air/translucent/widgets/extender-background.svgz
-share/plasma/desktoptheme/air/translucent/widgets/panel-background.svgz
-share/plasma/desktoptheme/air/translucent/widgets/tooltip.svgz
-share/plasma/desktoptheme/air/widgets/action-overlays.svgz
-share/plasma/desktoptheme/air/widgets/actionbutton.svgz
-share/plasma/desktoptheme/air/widgets/analog_meter.svgz
-share/plasma/desktoptheme/air/widgets/arrows.svgz
-share/plasma/desktoptheme/air/widgets/background.svgz
-share/plasma/desktoptheme/air/widgets/bar_meter_horizontal.svgz
-share/plasma/desktoptheme/air/widgets/bar_meter_vertical.svgz
-share/plasma/desktoptheme/air/widgets/branding.svgz
-share/plasma/desktoptheme/air/widgets/busywidget.svgz
-share/plasma/desktoptheme/air/widgets/button.svgz
-share/plasma/desktoptheme/air/widgets/checkmarks.svgz
-share/plasma/desktoptheme/air/widgets/clock.svgz
-share/plasma/desktoptheme/air/widgets/containment-controls.svgz
-share/plasma/desktoptheme/air/widgets/dragger.svgz
-share/plasma/desktoptheme/air/widgets/frame.svgz
-share/plasma/desktoptheme/air/widgets/glowbar.svgz
-share/plasma/desktoptheme/air/widgets/identiconshapes.svgz
-share/plasma/desktoptheme/air/widgets/identicontheme.svgz
-share/plasma/desktoptheme/air/widgets/labeltexture.svgz
-share/plasma/desktoptheme/air/widgets/line.svgz
-share/plasma/desktoptheme/air/widgets/lineedit.svgz
-share/plasma/desktoptheme/air/widgets/listitem.svgz
-share/plasma/desktoptheme/air/widgets/media-delegate.svgz
-share/plasma/desktoptheme/air/widgets/monitor.svgz
-share/plasma/desktoptheme/air/widgets/pager.svgz
-share/plasma/desktoptheme/air/widgets/panel-background.svgz
-share/plasma/desktoptheme/air/widgets/picker.svgz
-share/plasma/desktoptheme/air/widgets/plot-background.svgz
-share/plasma/desktoptheme/air/widgets/scrollbar.svgz
-share/plasma/desktoptheme/air/widgets/scrollwidget.svgz
-share/plasma/desktoptheme/air/widgets/slider.svgz
-share/plasma/desktoptheme/air/widgets/systemtray.svgz
-share/plasma/desktoptheme/air/widgets/tabbar.svgz
-share/plasma/desktoptheme/air/widgets/tasks.svgz
-share/plasma/desktoptheme/air/widgets/toolbar.svgz
-share/plasma/desktoptheme/air/widgets/toolbox.svgz
-share/plasma/desktoptheme/air/widgets/tooltip.svgz
-share/plasma/desktoptheme/air/widgets/translucentbackground.svgz
-share/plasma/desktoptheme/air/widgets/viewitem.svgz
-share/plasma/desktoptheme/breeze-dark/colors
-share/plasma/desktoptheme/breeze-dark/metadata.json
-share/plasma/desktoptheme/breeze-dark/plasmarc
-share/plasma/desktoptheme/breeze-light/colors
-share/plasma/desktoptheme/breeze-light/metadata.json
-share/plasma/desktoptheme/breeze-light/plasmarc
-share/plasma/desktoptheme/default/dialogs/background.svgz
-share/plasma/desktoptheme/default/icons/akonadi.svgz
-share/plasma/desktoptheme/default/icons/akregator.svgz
-share/plasma/desktoptheme/default/icons/amarok.svgz
-share/plasma/desktoptheme/default/icons/applications.svgz
-share/plasma/desktoptheme/default/icons/apport.svgz
-share/plasma/desktoptheme/default/icons/audio.svgz
-share/plasma/desktoptheme/default/icons/battery.svgz
-share/plasma/desktoptheme/default/icons/bookmarks.svgz
-share/plasma/desktoptheme/default/icons/cantata.svgz
-share/plasma/desktoptheme/default/icons/computer.svgz
-share/plasma/desktoptheme/default/icons/configure.svgz
-share/plasma/desktoptheme/default/icons/device.svgz
-share/plasma/desktoptheme/default/icons/disk.svgz
-share/plasma/desktoptheme/default/icons/distribute.svgz
-share/plasma/desktoptheme/default/icons/document.svgz
-share/plasma/desktoptheme/default/icons/drive.svgz
-share/plasma/desktoptheme/default/icons/edit.svgz
-share/plasma/desktoptheme/default/icons/fcitx.svgz
-share/plasma/desktoptheme/default/icons/go.svgz
-share/plasma/desktoptheme/default/icons/ime.svgz
-share/plasma/desktoptheme/default/icons/input.svgz
-share/plasma/desktoptheme/default/icons/kalarm.svgz
-share/plasma/desktoptheme/default/icons/kdeconnect.svgz
-share/plasma/desktoptheme/default/icons/keyboard.svgz
-share/plasma/desktoptheme/default/icons/kget.svgz
-share/plasma/desktoptheme/default/icons/kgpg.svgz
-share/plasma/desktoptheme/default/icons/kleopatra.svgz
-share/plasma/desktoptheme/default/icons/klipper.svgz
-share/plasma/desktoptheme/default/icons/kmail.svgz
-share/plasma/desktoptheme/default/icons/konv_message.svgz
-share/plasma/desktoptheme/default/icons/konversation.svgz
-share/plasma/desktoptheme/default/icons/kopete.svgz
-share/plasma/desktoptheme/default/icons/korgac.svgz
-share/plasma/desktoptheme/default/icons/kpackagekit.svgz
-share/plasma/desktoptheme/default/icons/kruler.svgz
-share/plasma/desktoptheme/default/icons/kteatime.svgz
-share/plasma/desktoptheme/default/icons/ktorrent.svgz
-share/plasma/desktoptheme/default/icons/kup.svgz
-share/plasma/desktoptheme/default/icons/list.svgz
-share/plasma/desktoptheme/default/icons/mail.svgz
-share/plasma/desktoptheme/default/icons/media.svgz
-share/plasma/desktoptheme/default/icons/mobile.svgz
-share/plasma/desktoptheme/default/icons/network.svgz
-share/plasma/desktoptheme/default/icons/notification.svgz
-share/plasma/desktoptheme/default/icons/osd.svgz
-share/plasma/desktoptheme/default/icons/phone.svgz
-share/plasma/desktoptheme/default/icons/plasmavault.svgz
-share/plasma/desktoptheme/default/icons/plasmavault_error.svgz
-share/plasma/desktoptheme/default/icons/preferences.svgz
-share/plasma/desktoptheme/default/icons/printer.svgz
-share/plasma/desktoptheme/default/icons/quassel.svgz
-share/plasma/desktoptheme/default/icons/search.svgz
-share/plasma/desktoptheme/default/icons/slc.svgz
-share/plasma/desktoptheme/default/icons/software.svgz
-share/plasma/desktoptheme/default/icons/start.svgz
-share/plasma/desktoptheme/default/icons/system.svgz
-share/plasma/desktoptheme/default/icons/touchpad.svgz
-share/plasma/desktoptheme/default/icons/user.svgz
-share/plasma/desktoptheme/default/icons/video-card.svgz
-share/plasma/desktoptheme/default/icons/video.svgz
-share/plasma/desktoptheme/default/icons/view.svgz
-share/plasma/desktoptheme/default/icons/vlc.svgz
-share/plasma/desktoptheme/default/icons/wallet.svgz
-share/plasma/desktoptheme/default/icons/window.svgz
-share/plasma/desktoptheme/default/icons/yakuake.svgz
-share/plasma/desktoptheme/default/icons/zoom.svgz
-share/plasma/desktoptheme/default/metadata.json
-share/plasma/desktoptheme/default/opaque/dialogs/background.svgz
-share/plasma/desktoptheme/default/opaque/widgets/panel-background.svgz
-share/plasma/desktoptheme/default/opaque/widgets/tooltip.svgz
-share/plasma/desktoptheme/default/plasmarc
-share/plasma/desktoptheme/default/solid/dialogs/background.svgz
-share/plasma/desktoptheme/default/solid/widgets/background.svgz
-share/plasma/desktoptheme/default/solid/widgets/panel-background.svgz
-share/plasma/desktoptheme/default/solid/widgets/tooltip.svgz
-share/plasma/desktoptheme/default/translucent/dialogs/background.svgz
-share/plasma/desktoptheme/default/translucent/widgets/background.svgz
-share/plasma/desktoptheme/default/translucent/widgets/panel-background.svgz
-share/plasma/desktoptheme/default/translucent/widgets/tooltip.svgz
-share/plasma/desktoptheme/default/widgets/action-overlays.svgz
-share/plasma/desktoptheme/default/widgets/actionbutton.svgz
-share/plasma/desktoptheme/default/widgets/analog_meter.svgz
-share/plasma/desktoptheme/default/widgets/arrows.svgz
-share/plasma/desktoptheme/default/widgets/background.svgz
-share/plasma/desktoptheme/default/widgets/bar_meter_horizontal.svgz
-share/plasma/desktoptheme/default/widgets/bar_meter_vertical.svgz
-share/plasma/desktoptheme/default/widgets/branding.svgz
-share/plasma/desktoptheme/default/widgets/busywidget.svgz
-share/plasma/desktoptheme/default/widgets/button.svgz
-share/plasma/desktoptheme/default/widgets/calendar.svgz
-share/plasma/desktoptheme/default/widgets/checkmarks.svgz
-share/plasma/desktoptheme/default/widgets/clock.svgz
-share/plasma/desktoptheme/default/widgets/configuration-icons.svgz
-share/plasma/desktoptheme/default/widgets/containment-controls.svgz
-share/plasma/desktoptheme/default/widgets/dragger.svgz
-share/plasma/desktoptheme/default/widgets/frame.svgz
-share/plasma/desktoptheme/default/widgets/glowbar.svgz
-share/plasma/desktoptheme/default/widgets/line.svgz
-share/plasma/desktoptheme/default/widgets/lineedit.svgz
-share/plasma/desktoptheme/default/widgets/listitem.svgz
-share/plasma/desktoptheme/default/widgets/margins-highlight.svgz
-share/plasma/desktoptheme/default/widgets/media-delegate.svgz
-share/plasma/desktoptheme/default/widgets/menubaritem.svgz
-share/plasma/desktoptheme/default/widgets/monitor.svgz
-share/plasma/desktoptheme/default/widgets/notes.svgz
-share/plasma/desktoptheme/default/widgets/pager.svgz
-share/plasma/desktoptheme/default/widgets/panel-background.svgz
-share/plasma/desktoptheme/default/widgets/picker.svgz
-share/plasma/desktoptheme/default/widgets/plasmoidheading.svgz
-share/plasma/desktoptheme/default/widgets/plot-background.svgz
-share/plasma/desktoptheme/default/widgets/radiobutton.svgz
-share/plasma/desktoptheme/default/widgets/scrollbar.svgz
-share/plasma/desktoptheme/default/widgets/scrollwidget.svgz
-share/plasma/desktoptheme/default/widgets/slider.svgz
-share/plasma/desktoptheme/default/widgets/tabbar.svgz
-share/plasma/desktoptheme/default/widgets/tasks.svgz
-share/plasma/desktoptheme/default/widgets/toolbar.svgz
-share/plasma/desktoptheme/default/widgets/tooltip.svgz
-share/plasma/desktoptheme/default/widgets/translucentbackground.svgz
-share/plasma/desktoptheme/default/widgets/viewitem.svgz
-share/plasma/desktoptheme/oxygen/colors
-share/plasma/desktoptheme/oxygen/dialogs/background.svgz
-share/plasma/desktoptheme/oxygen/icons/akonadi.svgz
-share/plasma/desktoptheme/oxygen/icons/akregator.svgz
-share/plasma/desktoptheme/oxygen/icons/amarok.svgz
-share/plasma/desktoptheme/oxygen/icons/applications.svgz
-share/plasma/desktoptheme/oxygen/icons/apport.svgz
-share/plasma/desktoptheme/oxygen/icons/audio.svgz
-share/plasma/desktoptheme/oxygen/icons/battery.svgz
-share/plasma/desktoptheme/oxygen/icons/bookmarks.svgz
-share/plasma/desktoptheme/oxygen/icons/computer.svgz
-share/plasma/desktoptheme/oxygen/icons/configure.svgz
-share/plasma/desktoptheme/oxygen/icons/device.svgz
-share/plasma/desktoptheme/oxygen/icons/edit.svgz
-share/plasma/desktoptheme/oxygen/icons/kdeconnect.svgz
-share/plasma/desktoptheme/oxygen/icons/keyboard.svgz
-share/plasma/desktoptheme/oxygen/icons/kget.svgz
-share/plasma/desktoptheme/oxygen/icons/klipper.svgz
-share/plasma/desktoptheme/oxygen/icons/konv_message.svgz
-share/plasma/desktoptheme/oxygen/icons/konversation.svgz
-share/plasma/desktoptheme/oxygen/icons/kopete.svgz
-share/plasma/desktoptheme/oxygen/icons/korgac.svgz
-share/plasma/desktoptheme/oxygen/icons/kpackagekit.svgz
-share/plasma/desktoptheme/oxygen/icons/ktorrent.svgz
-share/plasma/desktoptheme/oxygen/icons/nepomuk.svgz
-share/plasma/desktoptheme/oxygen/icons/network.svgz
-share/plasma/desktoptheme/oxygen/icons/notification.svgz
-share/plasma/desktoptheme/oxygen/icons/preferences.svgz
-share/plasma/desktoptheme/oxygen/icons/printer.svgz
-share/plasma/desktoptheme/oxygen/icons/quassel.svgz
-share/plasma/desktoptheme/oxygen/icons/slc.svgz
-share/plasma/desktoptheme/oxygen/icons/start.svgz
-share/plasma/desktoptheme/oxygen/icons/system.svgz
-share/plasma/desktoptheme/oxygen/icons/view.svgz
-share/plasma/desktoptheme/oxygen/icons/wallet.svgz
-share/plasma/desktoptheme/oxygen/metadata.json
-share/plasma/desktoptheme/oxygen/opaque/dialogs/background.svgz
-share/plasma/desktoptheme/oxygen/opaque/dialogs/krunner.svgz
-share/plasma/desktoptheme/oxygen/opaque/widgets/extender-background.svgz
-share/plasma/desktoptheme/oxygen/opaque/widgets/panel-background.svgz
-share/plasma/desktoptheme/oxygen/opaque/widgets/tooltip.svgz
-share/plasma/desktoptheme/oxygen/plasmarc
-share/plasma/desktoptheme/oxygen/widgets/action-overlays.svgz
-share/plasma/desktoptheme/oxygen/widgets/actionbutton.svgz
-share/plasma/desktoptheme/oxygen/widgets/analog_meter.svgz
-share/plasma/desktoptheme/oxygen/widgets/arrows.svgz
-share/plasma/desktoptheme/oxygen/widgets/background.svgz
-share/plasma/desktoptheme/oxygen/widgets/bar_meter_horizontal.svgz
-share/plasma/desktoptheme/oxygen/widgets/bar_meter_vertical.svgz
-share/plasma/desktoptheme/oxygen/widgets/branding.svgz
-share/plasma/desktoptheme/oxygen/widgets/busywidget.svgz
-share/plasma/desktoptheme/oxygen/widgets/button.svgz
-share/plasma/desktoptheme/oxygen/widgets/clock.svgz
-share/plasma/desktoptheme/oxygen/widgets/containment-controls.svgz
-share/plasma/desktoptheme/oxygen/widgets/dragger.svgz
-share/plasma/desktoptheme/oxygen/widgets/extender-background.svgz
-share/plasma/desktoptheme/oxygen/widgets/extender-dragger.svgz
-share/plasma/desktoptheme/oxygen/widgets/frame.svgz
-share/plasma/desktoptheme/oxygen/widgets/glowbar.svgz
-share/plasma/desktoptheme/oxygen/widgets/line.svgz
-share/plasma/desktoptheme/oxygen/widgets/lineedit.svgz
-share/plasma/desktoptheme/oxygen/widgets/media-delegate.svgz
-share/plasma/desktoptheme/oxygen/widgets/monitor.svgz
-share/plasma/desktoptheme/oxygen/widgets/pager.svgz
-share/plasma/desktoptheme/oxygen/widgets/panel-background.svgz
-share/plasma/desktoptheme/oxygen/widgets/plot-background.svgz
-share/plasma/desktoptheme/oxygen/widgets/scrollbar.svgz
-share/plasma/desktoptheme/oxygen/widgets/scrollwidget.svgz
-share/plasma/desktoptheme/oxygen/widgets/slider.svgz
-share/plasma/desktoptheme/oxygen/widgets/tabbar.svgz
-share/plasma/desktoptheme/oxygen/widgets/tasks.svgz
-share/plasma/desktoptheme/oxygen/widgets/timer.svgz
-share/plasma/desktoptheme/oxygen/widgets/tooltip.svgz
-share/plasma/desktoptheme/oxygen/widgets/translucentbackground.svgz
-share/plasma/desktoptheme/oxygen/widgets/viewitem.svgz
+@comment share/plasma/desktoptheme/air/colors
+@comment share/plasma/desktoptheme/air/dialogs/background.svgz
+@comment share/plasma/desktoptheme/air/dialogs/kickoff.svgz
+@comment share/plasma/desktoptheme/air/dialogs/krunner.svgz
+@comment share/plasma/desktoptheme/air/icons/akonadi.svgz
+@comment share/plasma/desktoptheme/air/icons/akregator.svgz
+@comment share/plasma/desktoptheme/air/icons/amarok.svgz
+@comment share/plasma/desktoptheme/air/icons/applications.svgz
+@comment share/plasma/desktoptheme/air/icons/apport.svgz
+@comment share/plasma/desktoptheme/air/icons/audio.svgz
+@comment share/plasma/desktoptheme/air/icons/battery.svgz
+@comment share/plasma/desktoptheme/air/icons/bookmarks.svgz
+@comment share/plasma/desktoptheme/air/icons/computer.svgz
+@comment share/plasma/desktoptheme/air/icons/configure.svgz
+@comment share/plasma/desktoptheme/air/icons/device.svgz
+@comment share/plasma/desktoptheme/air/icons/edit.svgz
+@comment share/plasma/desktoptheme/air/icons/kdeconnect.svgz
+@comment share/plasma/desktoptheme/air/icons/keyboard.svgz
+@comment share/plasma/desktoptheme/air/icons/kget.svgz
+@comment share/plasma/desktoptheme/air/icons/klipper.svgz
+@comment share/plasma/desktoptheme/air/icons/konv_message.svgz
+@comment share/plasma/desktoptheme/air/icons/konversation.svgz
+@comment share/plasma/desktoptheme/air/icons/kopete.svgz
+@comment share/plasma/desktoptheme/air/icons/korgac.svgz
+@comment share/plasma/desktoptheme/air/icons/kpackagekit.svgz
+@comment share/plasma/desktoptheme/air/icons/ktorrent.svgz
+@comment share/plasma/desktoptheme/air/icons/nepomuk.svgz
+@comment share/plasma/desktoptheme/air/icons/network.svgz
+@comment share/plasma/desktoptheme/air/icons/notification.svgz
+@comment share/plasma/desktoptheme/air/icons/preferences.svgz
+@comment share/plasma/desktoptheme/air/icons/printer.svgz
+@comment share/plasma/desktoptheme/air/icons/quassel.svgz
+@comment share/plasma/desktoptheme/air/icons/slc.svgz
+@comment share/plasma/desktoptheme/air/icons/start.svgz
+@comment share/plasma/desktoptheme/air/icons/system.svgz
+@comment share/plasma/desktoptheme/air/icons/view.svgz
+@comment share/plasma/desktoptheme/air/icons/wallet.svgz
+@comment share/plasma/desktoptheme/air/metadata.json
+@comment share/plasma/desktoptheme/air/opaque/dialogs/background.svgz
+@comment share/plasma/desktoptheme/air/opaque/dialogs/krunner.svgz
+@comment share/plasma/desktoptheme/air/opaque/widgets/extender-background.svgz
+@comment share/plasma/desktoptheme/air/opaque/widgets/panel-background.svgz
+@comment share/plasma/desktoptheme/air/opaque/widgets/tooltip.svgz
+@comment share/plasma/desktoptheme/air/plasmarc
+@comment share/plasma/desktoptheme/air/translucent/dialogs/background.svgz
+@comment share/plasma/desktoptheme/air/translucent/dialogs/krunner.svgz
+@comment share/plasma/desktoptheme/air/translucent/widgets/background.svgz
+@comment share/plasma/desktoptheme/air/translucent/widgets/extender-background.svgz
+@comment share/plasma/desktoptheme/air/translucent/widgets/panel-background.svgz
+@comment share/plasma/desktoptheme/air/translucent/widgets/tooltip.svgz
+@comment share/plasma/desktoptheme/air/widgets/action-overlays.svgz
+@comment share/plasma/desktoptheme/air/widgets/actionbutton.svgz
+@comment share/plasma/desktoptheme/air/widgets/analog_meter.svgz
+@comment share/plasma/desktoptheme/air/widgets/arrows.svgz
+@comment share/plasma/desktoptheme/air/widgets/background.svgz
+@comment share/plasma/desktoptheme/air/widgets/bar_meter_horizontal.svgz
+@comment share/plasma/desktoptheme/air/widgets/bar_meter_vertical.svgz
+@comment share/plasma/desktoptheme/air/widgets/branding.svgz
+@comment share/plasma/desktoptheme/air/widgets/busywidget.svgz
+@comment share/plasma/desktoptheme/air/widgets/button.svgz
+@comment share/plasma/desktoptheme/air/widgets/checkmarks.svgz
+@comment share/plasma/desktoptheme/air/widgets/clock.svgz
+@comment share/plasma/desktoptheme/air/widgets/containment-controls.svgz
+@comment share/plasma/desktoptheme/air/widgets/dragger.svgz
+@comment share/plasma/desktoptheme/air/widgets/frame.svgz
+@comment share/plasma/desktoptheme/air/widgets/glowbar.svgz
+@comment share/plasma/desktoptheme/air/widgets/identiconshapes.svgz
+@comment share/plasma/desktoptheme/air/widgets/identicontheme.svgz
+@comment share/plasma/desktoptheme/air/widgets/labeltexture.svgz
+@comment share/plasma/desktoptheme/air/widgets/line.svgz
+@comment share/plasma/desktoptheme/air/widgets/lineedit.svgz
+@comment share/plasma/desktoptheme/air/widgets/listitem.svgz
+@comment share/plasma/desktoptheme/air/widgets/media-delegate.svgz
+@comment share/plasma/desktoptheme/air/widgets/monitor.svgz
+@comment share/plasma/desktoptheme/air/widgets/pager.svgz
+@comment share/plasma/desktoptheme/air/widgets/panel-background.svgz
+@comment share/plasma/desktoptheme/air/widgets/picker.svgz
+@comment share/plasma/desktoptheme/air/widgets/plot-background.svgz
+@comment share/plasma/desktoptheme/air/widgets/scrollbar.svgz
+@comment share/plasma/desktoptheme/air/widgets/scrollwidget.svgz
+@comment share/plasma/desktoptheme/air/widgets/slider.svgz
+@comment share/plasma/desktoptheme/air/widgets/systemtray.svgz
+@comment share/plasma/desktoptheme/air/widgets/tabbar.svgz
+@comment share/plasma/desktoptheme/air/widgets/tasks.svgz
+@comment share/plasma/desktoptheme/air/widgets/toolbar.svgz
+@comment share/plasma/desktoptheme/air/widgets/toolbox.svgz
+@comment share/plasma/desktoptheme/air/widgets/tooltip.svgz
+@comment share/plasma/desktoptheme/air/widgets/translucentbackground.svgz
+@comment share/plasma/desktoptheme/air/widgets/viewitem.svgz
+@comment share/plasma/desktoptheme/breeze-dark/colors
+@comment share/plasma/desktoptheme/breeze-dark/metadata.json
+@comment share/plasma/desktoptheme/breeze-dark/plasmarc
+@comment share/plasma/desktoptheme/breeze-light/colors
+@comment share/plasma/desktoptheme/breeze-light/metadata.json
+@comment share/plasma/desktoptheme/breeze-light/plasmarc
+@comment share/plasma/desktoptheme/default/dialogs/background.svgz
+@comment share/plasma/desktoptheme/default/icons/akonadi.svgz
+@comment share/plasma/desktoptheme/default/icons/akregator.svgz
+@comment share/plasma/desktoptheme/default/icons/amarok.svgz
+@comment share/plasma/desktoptheme/default/icons/applications.svgz
+@comment share/plasma/desktoptheme/default/icons/apport.svgz
+@comment share/plasma/desktoptheme/default/icons/audio.svgz
+@comment share/plasma/desktoptheme/default/icons/battery.svgz
+@comment share/plasma/desktoptheme/default/icons/bookmarks.svgz
+@comment share/plasma/desktoptheme/default/icons/cantata.svgz
+@comment share/plasma/desktoptheme/default/icons/computer.svgz
+@comment share/plasma/desktoptheme/default/icons/configure.svgz
+@comment share/plasma/desktoptheme/default/icons/device.svgz
+@comment share/plasma/desktoptheme/default/icons/disk.svgz
+@comment share/plasma/desktoptheme/default/icons/distribute.svgz
+@comment share/plasma/desktoptheme/default/icons/document.svgz
+@comment share/plasma/desktoptheme/default/icons/drive.svgz
+@comment share/plasma/desktoptheme/default/icons/edit.svgz
+@comment share/plasma/desktoptheme/default/icons/fcitx.svgz
+@comment share/plasma/desktoptheme/default/icons/go.svgz
+@comment share/plasma/desktoptheme/default/icons/ime.svgz
+@comment share/plasma/desktoptheme/default/icons/input.svgz
+@comment share/plasma/desktoptheme/default/icons/kalarm.svgz
+@comment share/plasma/desktoptheme/default/icons/kdeconnect.svgz
+@comment share/plasma/desktoptheme/default/icons/keyboard.svgz
+@comment share/plasma/desktoptheme/default/icons/kget.svgz
+@comment share/plasma/desktoptheme/default/icons/kgpg.svgz
+@comment share/plasma/desktoptheme/default/icons/kleopatra.svgz
+@comment share/plasma/desktoptheme/default/icons/klipper.svgz
+@comment share/plasma/desktoptheme/default/icons/kmail.svgz
+@comment share/plasma/desktoptheme/default/icons/konv_message.svgz
+@comment share/plasma/desktoptheme/default/icons/konversation.svgz
+@comment share/plasma/desktoptheme/default/icons/kopete.svgz
+@comment share/plasma/desktoptheme/default/icons/korgac.svgz
+@comment share/plasma/desktoptheme/default/icons/kpackagekit.svgz
+@comment share/plasma/desktoptheme/default/icons/kruler.svgz
+@comment share/plasma/desktoptheme/default/icons/kteatime.svgz
+@comment share/plasma/desktoptheme/default/icons/ktorrent.svgz
+@comment share/plasma/desktoptheme/default/icons/kup.svgz
+@comment share/plasma/desktoptheme/default/icons/list.svgz
+@comment share/plasma/desktoptheme/default/icons/mail.svgz
+@comment share/plasma/desktoptheme/default/icons/media.svgz
+@comment share/plasma/desktoptheme/default/icons/mobile.svgz
+@comment share/plasma/desktoptheme/default/icons/network.svgz
+@comment share/plasma/desktoptheme/default/icons/notification.svgz
+@comment share/plasma/desktoptheme/default/icons/osd.svgz
+@comment share/plasma/desktoptheme/default/icons/phone.svgz
+@comment share/plasma/desktoptheme/default/icons/plasmavault.svgz
+@comment share/plasma/desktoptheme/default/icons/plasmavault_error.svgz
+@comment share/plasma/desktoptheme/default/icons/preferences.svgz
+@comment share/plasma/desktoptheme/default/icons/printer.svgz
+@comment share/plasma/desktoptheme/default/icons/quassel.svgz
+@comment share/plasma/desktoptheme/default/icons/search.svgz
+@comment share/plasma/desktoptheme/default/icons/slc.svgz
+@comment share/plasma/desktoptheme/default/icons/software.svgz
+@comment share/plasma/desktoptheme/default/icons/start.svgz
+@comment share/plasma/desktoptheme/default/icons/system.svgz
+@comment share/plasma/desktoptheme/default/icons/touchpad.svgz
+@comment share/plasma/desktoptheme/default/icons/user.svgz
+@comment share/plasma/desktoptheme/default/icons/video-card.svgz
+@comment share/plasma/desktoptheme/default/icons/video.svgz
+@comment share/plasma/desktoptheme/default/icons/view.svgz
+@comment share/plasma/desktoptheme/default/icons/vlc.svgz
+@comment share/plasma/desktoptheme/default/icons/wallet.svgz
+@comment share/plasma/desktoptheme/default/icons/window.svgz
+@comment share/plasma/desktoptheme/default/icons/yakuake.svgz
+@comment share/plasma/desktoptheme/default/icons/zoom.svgz
+@comment share/plasma/desktoptheme/default/metadata.json
+@comment share/plasma/desktoptheme/default/opaque/dialogs/background.svgz
+@comment share/plasma/desktoptheme/default/opaque/widgets/panel-background.svgz
+@comment share/plasma/desktoptheme/default/opaque/widgets/tooltip.svgz
+@comment share/plasma/desktoptheme/default/plasmarc
+@comment share/plasma/desktoptheme/default/solid/dialogs/background.svgz
+@comment share/plasma/desktoptheme/default/solid/widgets/background.svgz
+@comment share/plasma/desktoptheme/default/solid/widgets/panel-background.svgz
+@comment share/plasma/desktoptheme/default/solid/widgets/tooltip.svgz
+@comment share/plasma/desktoptheme/default/translucent/dialogs/background.svgz
+@comment share/plasma/desktoptheme/default/translucent/widgets/background.svgz
+@comment share/plasma/desktoptheme/default/translucent/widgets/panel-background.svgz
+@comment share/plasma/desktoptheme/default/translucent/widgets/tooltip.svgz
+@comment share/plasma/desktoptheme/default/widgets/action-overlays.svgz
+@comment share/plasma/desktoptheme/default/widgets/actionbutton.svgz
+@comment share/plasma/desktoptheme/default/widgets/analog_meter.svgz
+@comment share/plasma/desktoptheme/default/widgets/arrows.svgz
+@comment share/plasma/desktoptheme/default/widgets/background.svgz
+@comment share/plasma/desktoptheme/default/widgets/bar_meter_horizontal.svgz
+@comment share/plasma/desktoptheme/default/widgets/bar_meter_vertical.svgz
+@comment share/plasma/desktoptheme/default/widgets/branding.svgz
+@comment share/plasma/desktoptheme/default/widgets/busywidget.svgz
+@comment share/plasma/desktoptheme/default/widgets/button.svgz
+@comment share/plasma/desktoptheme/default/widgets/calendar.svgz
+@comment share/plasma/desktoptheme/default/widgets/checkmarks.svgz
+@comment share/plasma/desktoptheme/default/widgets/clock.svgz
+@comment share/plasma/desktoptheme/default/widgets/configuration-icons.svgz
+@comment share/plasma/desktoptheme/default/widgets/containment-controls.svgz
+@comment share/plasma/desktoptheme/default/widgets/dragger.svgz
+@comment share/plasma/desktoptheme/default/widgets/frame.svgz
+@comment share/plasma/desktoptheme/default/widgets/glowbar.svgz
+@comment share/plasma/desktoptheme/default/widgets/line.svgz
+@comment share/plasma/desktoptheme/default/widgets/lineedit.svgz
+@comment share/plasma/desktoptheme/default/widgets/listitem.svgz
+@comment share/plasma/desktoptheme/default/widgets/margins-highlight.svgz
+@comment share/plasma/desktoptheme/default/widgets/media-delegate.svgz
+@comment share/plasma/desktoptheme/default/widgets/menubaritem.svgz
+@comment share/plasma/desktoptheme/default/widgets/monitor.svgz
+@comment share/plasma/desktoptheme/default/widgets/notes.svgz
+@comment share/plasma/desktoptheme/default/widgets/pager.svgz
+@comment share/plasma/desktoptheme/default/widgets/panel-background.svgz
+@comment share/plasma/desktoptheme/default/widgets/picker.svgz
+@comment share/plasma/desktoptheme/default/widgets/plasmoidheading.svgz
+@comment share/plasma/desktoptheme/default/widgets/plot-background.svgz
+@comment share/plasma/desktoptheme/default/widgets/radiobutton.svgz
+@comment share/plasma/desktoptheme/default/widgets/scrollbar.svgz
+@comment share/plasma/desktoptheme/default/widgets/scrollwidget.svgz
+@comment share/plasma/desktoptheme/default/widgets/slider.svgz
+@comment share/plasma/desktoptheme/default/widgets/tabbar.svgz
+@comment share/plasma/desktoptheme/default/widgets/tasks.svgz
+@comment share/plasma/desktoptheme/default/widgets/toolbar.svgz
+@comment share/plasma/desktoptheme/default/widgets/tooltip.svgz
+@comment share/plasma/desktoptheme/default/widgets/translucentbackground.svgz
+@comment share/plasma/desktoptheme/default/widgets/viewitem.svgz
+@comment share/plasma/desktoptheme/oxygen/colors
+@comment share/plasma/desktoptheme/oxygen/dialogs/background.svgz
+@comment share/plasma/desktoptheme/oxygen/icons/akonadi.svgz
+@comment share/plasma/desktoptheme/oxygen/icons/akregator.svgz
+@comment share/plasma/desktoptheme/oxygen/icons/amarok.svgz
+@comment share/plasma/desktoptheme/oxygen/icons/applications.svgz
+@comment share/plasma/desktoptheme/oxygen/icons/apport.svgz
+@comment share/plasma/desktoptheme/oxygen/icons/audio.svgz
+@comment share/plasma/desktoptheme/oxygen/icons/battery.svgz
+@comment share/plasma/desktoptheme/oxygen/icons/bookmarks.svgz
+@comment share/plasma/desktoptheme/oxygen/icons/computer.svgz
+@comment share/plasma/desktoptheme/oxygen/icons/configure.svgz
+@comment share/plasma/desktoptheme/oxygen/icons/device.svgz
+@comment share/plasma/desktoptheme/oxygen/icons/edit.svgz
+@comment share/plasma/desktoptheme/oxygen/icons/kdeconnect.svgz
+@comment share/plasma/desktoptheme/oxygen/icons/keyboard.svgz
+@comment share/plasma/desktoptheme/oxygen/icons/kget.svgz
+@comment share/plasma/desktoptheme/oxygen/icons/klipper.svgz
+@comment share/plasma/desktoptheme/oxygen/icons/konv_message.svgz
+@comment share/plasma/desktoptheme/oxygen/icons/konversation.svgz
+@comment share/plasma/desktoptheme/oxygen/icons/kopete.svgz
+@comment share/plasma/desktoptheme/oxygen/icons/korgac.svgz
+@comment share/plasma/desktoptheme/oxygen/icons/kpackagekit.svgz
+@comment share/plasma/desktoptheme/oxygen/icons/ktorrent.svgz
+@comment share/plasma/desktoptheme/oxygen/icons/nepomuk.svgz
+@comment share/plasma/desktoptheme/oxygen/icons/network.svgz
+@comment share/plasma/desktoptheme/oxygen/icons/notification.svgz
+@comment share/plasma/desktoptheme/oxygen/icons/preferences.svgz
+@comment share/plasma/desktoptheme/oxygen/icons/printer.svgz
+@comment share/plasma/desktoptheme/oxygen/icons/quassel.svgz
+@comment share/plasma/desktoptheme/oxygen/icons/slc.svgz
+@comment share/plasma/desktoptheme/oxygen/icons/start.svgz
+@comment share/plasma/desktoptheme/oxygen/icons/system.svgz
+@comment share/plasma/desktoptheme/oxygen/icons/view.svgz
+@comment share/plasma/desktoptheme/oxygen/icons/wallet.svgz
+@comment share/plasma/desktoptheme/oxygen/metadata.json
+@comment share/plasma/desktoptheme/oxygen/opaque/dialogs/background.svgz
+@comment share/plasma/desktoptheme/oxygen/opaque/dialogs/krunner.svgz
+@comment share/plasma/desktoptheme/oxygen/opaque/widgets/extender-background.svgz
+@comment share/plasma/desktoptheme/oxygen/opaque/widgets/panel-background.svgz
+@comment share/plasma/desktoptheme/oxygen/opaque/widgets/tooltip.svgz
+@comment share/plasma/desktoptheme/oxygen/plasmarc
+@comment share/plasma/desktoptheme/oxygen/widgets/action-overlays.svgz
+@comment share/plasma/desktoptheme/oxygen/widgets/actionbutton.svgz
+@comment share/plasma/desktoptheme/oxygen/widgets/analog_meter.svgz
+@comment share/plasma/desktoptheme/oxygen/widgets/arrows.svgz
+@comment share/plasma/desktoptheme/oxygen/widgets/background.svgz
+@comment share/plasma/desktoptheme/oxygen/widgets/bar_meter_horizontal.svgz
+@comment share/plasma/desktoptheme/oxygen/widgets/bar_meter_vertical.svgz
+@comment share/plasma/desktoptheme/oxygen/widgets/branding.svgz
+@comment share/plasma/desktoptheme/oxygen/widgets/busywidget.svgz
+@comment share/plasma/desktoptheme/oxygen/widgets/button.svgz
+@comment share/plasma/desktoptheme/oxygen/widgets/clock.svgz
+@comment share/plasma/desktoptheme/oxygen/widgets/containment-controls.svgz
+@comment share/plasma/desktoptheme/oxygen/widgets/dragger.svgz
+@comment share/plasma/desktoptheme/oxygen/widgets/extender-background.svgz
+@comment share/plasma/desktoptheme/oxygen/widgets/extender-dragger.svgz
+@comment share/plasma/desktoptheme/oxygen/widgets/frame.svgz
+@comment share/plasma/desktoptheme/oxygen/widgets/glowbar.svgz
+@comment share/plasma/desktoptheme/oxygen/widgets/line.svgz
+@comment share/plasma/desktoptheme/oxygen/widgets/lineedit.svgz
+@comment share/plasma/desktoptheme/oxygen/widgets/media-delegate.svgz
+@comment share/plasma/desktoptheme/oxygen/widgets/monitor.svgz
+@comment share/plasma/desktoptheme/oxygen/widgets/pager.svgz
+@comment share/plasma/desktoptheme/oxygen/widgets/panel-background.svgz
+@comment share/plasma/desktoptheme/oxygen/widgets/plot-background.svgz
+@comment share/plasma/desktoptheme/oxygen/widgets/scrollbar.svgz
+@comment share/plasma/desktoptheme/oxygen/widgets/scrollwidget.svgz
+@comment share/plasma/desktoptheme/oxygen/widgets/slider.svgz
+@comment share/plasma/desktoptheme/oxygen/widgets/tabbar.svgz
+@comment share/plasma/desktoptheme/oxygen/widgets/tasks.svgz
+@comment share/plasma/desktoptheme/oxygen/widgets/timer.svgz
+@comment share/plasma/desktoptheme/oxygen/widgets/tooltip.svgz
+@comment share/plasma/desktoptheme/oxygen/widgets/translucentbackground.svgz
+@comment share/plasma/desktoptheme/oxygen/widgets/viewitem.svgz
 share/plasma/services/dataengineservice.operations
 share/plasma/services/plasmoidservice.operations
 share/plasma/services/storage.operations

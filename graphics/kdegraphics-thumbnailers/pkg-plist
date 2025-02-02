@@ -1,5 +1,5 @@
-%%QT_PLUGINDIR%%/kf5/thumbcreator/blenderthumbnail.so
-%%QT_PLUGINDIR%%/kf5/thumbcreator/gsthumbnail.so
-%%QT_PLUGINDIR%%/kf5/thumbcreator/mobithumbnail.so
-%%QT_PLUGINDIR%%/kf5/thumbcreator/rawthumbnail.so
+%%QT_PLUGINDIR%%/kf6/thumbcreator/blenderthumbnail.so
+%%QT_PLUGINDIR%%/kf6/thumbcreator/gsthumbnail.so
+%%QT_PLUGINDIR%%/kf6/thumbcreator/mobithumbnail.so
+%%QT_PLUGINDIR%%/kf6/thumbcreator/rawthumbnail.so
 share/metainfo/org.kde.kdegraphics-thumbnailers.metainfo.xml

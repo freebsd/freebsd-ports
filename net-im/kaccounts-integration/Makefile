@@ -1,25 +1,22 @@
 PORTNAME=	kaccounts-integration
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
-PORTREVISION=	5
 CATEGORIES=	net-im kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	System to administer web accounts for the KDE desktop
 WWW=		https://projects.kde.org/projects/kdereview/kaccounts-integration
 
-LIB_DEPENDS=	libQCoro5Core.so:devel/qcoro@qt5 \
-		libaccounts-qt5.so:net-im/libaccounts-qt@qt5 \
-		libsignon-qt5.so:sysutils/signond@qt5
-RUN_DEPENDS=	signon-ui:sysutils/signon-ui
+LIB_DEPENDS=	libQCoro6Core.so:devel/qcoro@qt6 \
+		libaccounts-qt6.so:net-im/libaccounts-qt@qt6 \
+		libsignon-qt6.so:sysutils/signond@qt6
 
-USES=		cmake compiler:c++11-lang gettext-tools pkgconfig kde:5 \
-		qt:5 tar:xz
+USES=		cmake compiler:c++11-lang gettext-tools kde:6 pkgconfig qt:6 \
+		tar:xz
 USE_KDE=	config coreaddons dbusaddons i18n kcmutils kdeclarative kio \
 		service wallet \
 		ecm:build package:build \
 		iconthemes:run
-USE_QT=		concurrent core dbus declarative gui network widgets xml \
-		buildtools:build qmake:build
+USE_QT=		base declarative
 
 .include <bsd.port.options.mk>
 

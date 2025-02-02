@@ -98,7 +98,6 @@ share/icons/hicolor/scalable/apps/kolourpaint.svgz
 %%DATADIR%%/icons/hicolor/scalable/actions/tool_rounded_rectangle.svgz
 %%DATADIR%%/icons/hicolor/scalable/actions/tool_spraycan.svgz
 %%DATADIR%%/icons/hicolor/scalable/actions/tool_text.svgz
-share/kxmlgui5/kolourpaint/kolourpaintui.rc
 share/locale/ar/LC_MESSAGES/kolourpaint.mo
 share/locale/be/LC_MESSAGES/kolourpaint.mo
 share/locale/bg/LC_MESSAGES/kolourpaint.mo

@@ -1,7 +1,6 @@
 PORTNAME=	kile
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.0b3
-PORTREVISION=	45
+DISTVERSION=	3.0b4
 CATEGORIES=	editors kde
 
 MAINTAINER=	kde@FreeBSD.org
@@ -14,20 +13,19 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libpoppler.so:graphics/poppler \
 		libpoppler-qt5.so:graphics/poppler-qt5
 
-USES=		cmake compiler:c++11-lang cpe desktop-file-utils kde:5 qt:5 \
-		shared-mime-info shebangfix xorg
+USES=		cmake compiler:c++11-lang cpe desktop-file-utils gettext-tools \
+		kde:6 qt:6 shared-mime-info shebangfix xorg
 USE_KDE=	auth bookmarks codecs completion config configwidgets \
-		coreaddons crash dbusaddons guiaddons i18n iconthemes init \
-		itemviews jobwidgets js khtml kio okular parts service solid \
+		coreaddons crash dbusaddons guiaddons i18n iconthemes \
+		itemviews jobwidgets kio okular parts service solid \
 		sonnet syntaxhighlighting texteditor textwidgets widgetsaddons \
 		windowsystem xmlgui \
 		doctools:build ecm:build
-USE_QT=		concurrent core dbus gui network script widgets xml \
-		buildtools:build qmake:build
+USE_QT=		base
 USE_XORG=	x11
 SHEBANG_FILES=	*.pl
 
-KDE_INVENT=	09ee4ef0417165b93da82c1fc057b9e1713a0c05 office
+KDE_INVENT=	ce7af7fc0ea36d275e0bd435d8f484d80310e6ea office
 
 OPTIONS_DEFINE=	DOCS
 

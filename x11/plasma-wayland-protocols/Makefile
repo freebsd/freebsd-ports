@@ -1,5 +1,6 @@
 PORTNAME=	plasma-wayland-protocols
 DISTVERSION=	1.15.0
+PORTREVISION=	1
 CATEGORIES=	x11 kde
 MASTER_SITES=	KDE/stable/${PORTNAME}/
 
@@ -10,9 +11,9 @@ WWW=		https://github.com/kde/plasma-wayland-protocols
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING.LIB
 
-USES=		cmake kde:5 qt:5 tar:xz
+USES=		cmake kde:6 qt:6 tar:xz
 USE_KDE=	ecm:build
-USE_QT=		buildtools:build core:build qmake:build
+USE_QT=		base:build
 
 NO_ARCH=	yes
 

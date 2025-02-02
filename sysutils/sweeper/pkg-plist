@@ -1,9 +1,9 @@
 bin/sweeper
 share/applications/org.kde.sweeper.desktop
 share/dbus-1/interfaces/org.kde.sweeper.xml
-share/kxmlgui5/sweeper/sweeperui.rc
 share/locale/af/LC_MESSAGES/sweeper.mo
 share/locale/ar/LC_MESSAGES/sweeper.mo
+share/locale/ast/LC_MESSAGES/sweeper.mo
 share/locale/be/LC_MESSAGES/sweeper.mo
 share/locale/bg/LC_MESSAGES/sweeper.mo
 share/locale/bn/LC_MESSAGES/sweeper.mo
@@ -81,4 +81,4 @@ share/locale/uz@cyrillic/LC_MESSAGES/sweeper.mo
 share/locale/zh_CN/LC_MESSAGES/sweeper.mo
 share/locale/zh_TW/LC_MESSAGES/sweeper.mo
 share/metainfo/org.kde.sweeper.appdata.xml
-share/qlogging-categories5/sweeper.categories
+share/qlogging-categories6/sweeper.categories

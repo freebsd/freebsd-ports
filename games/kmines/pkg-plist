@@ -8,6 +8,10 @@ share/icons/hicolor/48x48/apps/kmines.png
 share/icons/hicolor/64x64/apps/kmines.png
 %%DATADIR%%/themes/classic.desktop
 %%DATADIR%%/themes/classic_preview.png
+%%DATADIR%%/themes/clean_blue.desktop
+%%DATADIR%%/themes/clean_blue_dark.desktop
+%%DATADIR%%/themes/clean_blue_dark_preview.png
+%%DATADIR%%/themes/clean_blue_preview.png
 %%DATADIR%%/themes/default.desktop
 %%DATADIR%%/themes/default_preview.png
 %%DATADIR%%/themes/graveyard-mayhem-preview.png
@@ -16,10 +20,13 @@ share/icons/hicolor/64x64/apps/kmines.png
 %%DATADIR%%/themes/green.desktop
 %%DATADIR%%/themes/green.png
 %%DATADIR%%/themes/kmines_classic.svgz
+%%DATADIR%%/themes/kmines_clean_blue.svgz
+%%DATADIR%%/themes/kmines_clean_blue_dark.svgz
 %%DATADIR%%/themes/kmines_green.svgz
 %%DATADIR%%/themes/kmines_oxygen.svgz
 share/locale/af/LC_MESSAGES/kmines.mo
 share/locale/ar/LC_MESSAGES/kmines.mo
+share/locale/ast/LC_MESSAGES/kmines.mo
 share/locale/be/LC_MESSAGES/kmines.mo
 share/locale/bg/LC_MESSAGES/kmines.mo
 share/locale/bn/LC_MESSAGES/kmines.mo
@@ -47,6 +54,7 @@ share/locale/hi/LC_MESSAGES/kmines.mo
 share/locale/hne/LC_MESSAGES/kmines.mo
 share/locale/hr/LC_MESSAGES/kmines.mo
 share/locale/hu/LC_MESSAGES/kmines.mo
+share/locale/ia/LC_MESSAGES/kmines.mo
 share/locale/id/LC_MESSAGES/kmines.mo
 share/locale/is/LC_MESSAGES/kmines.mo
 share/locale/it/LC_MESSAGES/kmines.mo
@@ -94,4 +102,5 @@ share/locale/xh/LC_MESSAGES/kmines.mo
 share/locale/zh_CN/LC_MESSAGES/kmines.mo
 share/locale/zh_TW/LC_MESSAGES/kmines.mo
 share/metainfo/org.kde.kmines.appdata.xml
-share/qlogging-categories5/kmines.categories
+share/qlogging-categories6/kmines.categories
+share/qlogging-categories6/kmines.renamecategories

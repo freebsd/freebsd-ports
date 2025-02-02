@@ -14,7 +14,7 @@ LIB_DEPENDS=	libxcb.so:x11/libxcb \
 		libxcb-keysyms.so:x11/xcb-util-keysyms \
 		libxkbcommon.so:x11/libxkbcommon
 
-USES=		cmake compiler:c++17-lang desktop-file-utils gl kde:5 \
+USES=		cmake compiler:c++17-lang desktop-file-utils gl kde:6 \
 		libarchive pkgconfig qt:6 sqlite xorg
 USE_GITHUB=	yes
 GH_ACCOUNT=	zealdocs

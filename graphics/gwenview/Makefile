@@ -1,6 +1,5 @@
 PORTNAME=	gwenview
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
-PORTREVISION=	3
 CATEGORIES=	graphics kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
@@ -14,21 +13,19 @@ LIB_DEPENDS=	libexiv2.so:graphics/exiv2 \
 		liblcms2.so:graphics/lcms2 \
 		libpng.so:graphics/png \
 		libtiff.so:graphics/tiff \
-		libwayland-client.so:graphics/wayland \
-		libkImageAnnotator-Qt5.so:graphics/kimageannotator@qt5
+		libkImageAnnotator-Qt6.so:graphics/kimageannotator@qt6 \
+		libwayland-client.so:graphics/wayland
 
-USES=		compiler:c++11-lang cmake desktop-file-utils gettext-tools \
-		jpeg pkgconfig kde:5 qt:5 tar:xz xorg
+USES=		cmake compiler:c++11-lang desktop-file-utils gettext jpeg \
+		kde:6 pkgconfig qt:6 tar:xz xorg
 USE_KDE=	activities auth baloo bookmarks codecs completion config \
 		configwidgets coreaddons filemetadata guiaddons i18n \
-		iconthemes init itemmodels itemviews jobwidgets \
+		iconthemes itemmodels itemviews jobwidgets \
 		kimageformats kio libkdcraw notifications parts phonon \
 		purpose service solid sonnet textwidgets widgetsaddons \
 		windowsystem xmlgui \
 		ecm:build
-USE_QT=		concurrent core dbus gui network printsupport \
-		svg wayland widgets x11extras xml \
-		buildtools:build qmake:build
+USE_QT=		base
 USE_XORG=	x11
 
 OPTIONS_DEFINE=	DOCS

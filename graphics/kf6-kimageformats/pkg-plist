@@ -1,6 +1,12 @@
 %%QT_PLUGINDIR%%/imageformats/kimg_ani.so
+%%AVIF%%%%QT_PLUGINDIR%%/imageformats/kimg_avif.so
 %%QT_PLUGINDIR%%/imageformats/kimg_eps.so
+%%OPENEXR%%%%QT_PLUGINDIR%%/imageformats/kimg_exr.so
 %%QT_PLUGINDIR%%/imageformats/kimg_hdr.so
+%%HEIF%%%%QT_PLUGINDIR%%/imageformats/kimg_heif.so
+%%JXL%%%%QT_PLUGINDIR%%/imageformats/kimg_jxl.so
+%%QT_PLUGINDIR%%/imageformats/kimg_kra.so
+%%QT_PLUGINDIR%%/imageformats/kimg_ora.so
 %%QT_PLUGINDIR%%/imageformats/kimg_pcx.so
 %%QT_PLUGINDIR%%/imageformats/kimg_pfm.so
 %%QT_PLUGINDIR%%/imageformats/kimg_pic.so
@@ -8,6 +14,7 @@
 %%QT_PLUGINDIR%%/imageformats/kimg_pxr.so
 %%QT_PLUGINDIR%%/imageformats/kimg_qoi.so
 %%QT_PLUGINDIR%%/imageformats/kimg_ras.so
+%%RAW%%%%QT_PLUGINDIR%%/imageformats/kimg_raw.so
 %%QT_PLUGINDIR%%/imageformats/kimg_rgb.so
 %%QT_PLUGINDIR%%/imageformats/kimg_sct.so
 %%QT_PLUGINDIR%%/imageformats/kimg_tga.so

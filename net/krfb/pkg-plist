@@ -5,7 +5,6 @@ lib/libkrfbprivate.so.5.0
 %%QT_PLUGINDIR%%/krfb/events/x11.so
 %%PIPEWIRE%%%%QT_PLUGINDIR%%/krfb/events/xdp.so
 %%PIPEWIRE%%%%QT_PLUGINDIR%%/krfb/framebuffer/pw.so
-%%QT_PLUGINDIR%%/krfb/framebuffer/qt.so
 %%QT_PLUGINDIR%%/krfb/framebuffer/xcb.so
 share/applications/org.kde.krfb.desktop
 share/applications/org.kde.krfb.virtualmonitor.desktop
@@ -14,6 +13,7 @@ share/icons/hicolor/scalable/apps/krfb.svgz
 %%DATADIR%%/krfb.notifyrc
 share/locale/af/LC_MESSAGES/krfb.mo
 share/locale/ar/LC_MESSAGES/krfb.mo
+share/locale/ast/LC_MESSAGES/krfb.mo
 share/locale/be/LC_MESSAGES/krfb.mo
 share/locale/bg/LC_MESSAGES/krfb.mo
 share/locale/br/LC_MESSAGES/krfb.mo
@@ -89,4 +89,4 @@ share/locale/xh/LC_MESSAGES/krfb.mo
 share/locale/zh_CN/LC_MESSAGES/krfb.mo
 share/locale/zh_TW/LC_MESSAGES/krfb.mo
 share/metainfo/org.kde.krfb.appdata.xml
-share/qlogging-categories5/krfb.categories
+share/qlogging-categories6/krfb.categories

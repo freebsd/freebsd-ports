@@ -5,15 +5,14 @@ CATEGORIES=	devel kde kde-applications
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE development utilities
 
-USES=		compiler:c++11-lang cmake desktop-file-utils gl kde:5 \
-		qt:5 tar:xz xorg
+USES=		cmake compiler:c++11-lang desktop-file-utils gettext gl kde:6 \
+		qt:6 tar:xz xorg
 USE_GL=		gl
 USE_KDE=	auth bookmarks codecs completion config configwidgets \
-		coreaddons i18n itemviews jobwidgets kio parts service \
-		solid sonnet textwidgets widgetsaddons windowsystem xmlgui \
+		coreaddons i18n itemviews jobwidgets kio parts service solid \
+		sonnet textwidgets widgetsaddons windowsystem xmlgui \
 		ecm:build
-USE_QT=		concurrent core dbus designer gui network widgets xml \
-		buildtools:build qmake:build
+USE_QT=		base
 USE_XORG=	x11
 
 OPTIONS_DEFINE=	DOCS
