@@ -225,6 +225,7 @@
     SUBDIR += makemkv
     SUBDIR += mediaelch
     SUBDIR += mediainfo
+    SUBDIR += mediamtx
     SUBDIR += mencoder
     SUBDIR += minisatip
     SUBDIR += minitube

@@ -1,0 +1,49 @@
+#!/bin/sh
+
+# PROVIDE: mediamtx
+# REQUIRE: DAEMON
+# KEYWORD: shutdown
+
+#
+# Add the following line to /etc/rc.conf to enable mediamtx:
+# mediamtx_enable (bool):	Set to "NO" by default.
+#				Set it to "YES" to enable mediamtx.
+# mediamtx_conf_dir (str):	Directory where ${name} configuration
+#				data is stored.
+
+. /etc/rc.subr
+
+name="mediamtx"
+rcvar=mediamtx_enable
+
+load_rc_config ${name}
+
+: ${mediamtx_enable:="NO"}
+: ${mediamtx_user:="%%USER%%"}
+: ${mediamtx_group:="%%GROUP%%"}
+: ${mediamtx_conf_dir="%%PREFIX%%/etc"}
+
+start_precmd=mediamtx_precmd
+stop_postcmd=mediamtx_stop_postcmd
+
+procname="%%PREFIX%%/bin/${name}"
+pidfile="/var/run/mediamtx/mediamtx.pid"
+required_files="${mediamtx_conf_dir}/mediamtx.yml"
+
+command="/usr/sbin/daemon"
+command_args="-f -t ${name} -p ${pidfile} ${procname} ${required_files}"
+
+mediamtx_precmd()
+{
+        local rundir=${pidfile%/*}
+        if [ ! -d $rundir ] ; then
+                install -d -m 0755 -o %%USER%% -g %%GROUP%% $rundir
+        fi
+}
+
+mediamtx_stop_postcmd()
+{
+	rm -f "$rundir"
+}
+
+run_rc_command "$1"
