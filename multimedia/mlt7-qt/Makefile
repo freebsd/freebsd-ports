@@ -16,11 +16,13 @@ LIB_DEPENDS=	libexif.so:graphics/libexif \
 FLAVORS=	qt5 qt6
 FLAVOR?=	qt5
 
-USES=		qt:${FLAVOR:S/qt//} xorg
+USES=		gl qt:${FLAVOR:S/qt//} xorg
+USE_GL=		${_USE_GL_${FLAVOR}}
 USE_QT=		${_USE_QT_${FLAVOR}}
 USE_XORG=	x11
 
 # Flavor handling
+_USE_GL_qt6=	opengl
 _USE_QT_qt5=	core gui svg widgets xml \
 		buildtools:build qmake:build
 _USE_QT_qt6=	5compat base svg

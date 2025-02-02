@@ -169,8 +169,10 @@ share/man/man1/melt-7.1.gz
 %%JACKRACK%%%%DATADIR%%/jackrack/filter_jack.yml
 %%JACKRACK%%%%DATADIR%%/jackrack/filter_jackrack.yml
 %%JACKRACK%%%%DATADIR%%/jackrack/filter_ladspa.yml
+%%JACKRACK%%%%DATADIR%%/jackrack/filter_lv2.yml
 %%JACKRACK%%%%DATADIR%%/jackrack/filter_vst2.yml
 %%JACKRACK%%%%DATADIR%%/jackrack/producer_ladspa.yml
+%%JACKRACK%%%%DATADIR%%/jackrack/producer_lv2.yml
 %%JACKRACK%%%%DATADIR%%/jackrack/producer_vst2.yml
 %%KDENLIVE%%%%DATADIR%%/kdenlive/filter_boxblur.yml
 %%KDENLIVE%%%%DATADIR%%/kdenlive/filter_freeze.yml
@@ -225,6 +227,9 @@ share/man/man1/melt-7.1.gz
 %%PLUS%%%%DATADIR%%/plus/filter_dynamic_loudness.yml
 %%PLUS%%%%DATADIR%%/plus/filter_dynamictext.yml
 %%PLUS%%%%DATADIR%%/plus/filter_fft.yml
+%%PLUS%%%%DATADIR%%/plus/filter_gradientmap.yml
+%%PLUS%%%%DATADIR%%/plus/filter_hslprimaries.yml
+%%PLUS%%%%DATADIR%%/plus/filter_hslrange.yml
 %%PLUS%%%%DATADIR%%/plus/filter_invert.yml
 %%PLUS%%%%DATADIR%%/plus/filter_lift_gamma_gain.yml
 %%PLUS%%%%DATADIR%%/plus/filter_loudness.yml
@@ -450,6 +455,7 @@ share/man/man1/melt-7.1.gz
 %%XINE%%%%DATADIR%%/xine/link_deinterlace.yml
 %%DATADIR%%/xml/consumer_xml.yml
 %%DATADIR%%/xml/mlt-xml.dtd
+%%DATADIR%%/xml/producer_xml-clip.yml
 %%DATADIR%%/xml/producer_xml-nogl.yml
 %%DATADIR%%/xml/producer_xml-string.yml
 %%DATADIR%%/xml/producer_xml.yml

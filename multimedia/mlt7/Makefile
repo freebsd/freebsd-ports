@@ -1,14 +1,9 @@
 PORTNAME=	${_MLT_PORTNAME}
 DISTVERSION=	${_MLT_VERSION}
-PORTREVISION?=	2
+PORTREVISION?=	0
 CATEGORIES?=	multimedia
 MASTER_SITES=	https://github.com/mltframework/mlt/releases/download/v${DISTVERSION}/
 DISTFILES=	mlt-${DISTVERSION}${EXTRACT_SUFX}
-
-PATCH_SITES=	https://github.com/mltframework/mlt/commit/
-PATCHFILES+=	6f533e7b8999bc4017c1a6685bf2baea6570d44c.patch:-p1 # Fix export of Mlt::Producer::set_creation_time() on 32-bit archs
-PATCHFILES+=	2072c6b3596854f1a7165d7ddd5994204e741db8.patch:-p1 # Fix export of Mlt::Producer::set_creation_time() on 32-bit archs
-PATCHFILES+=	63953cf7338181c82eb6eb9f93c8c9a11aaee5f7.patch:-p1 # Fix export of Mlt::Producer::set_creation_time() on 32-bit archs
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT?=	Multimedia framework for TV broadcasting
@@ -75,7 +70,8 @@ GDK_CMAKE_BOOL=		MOD_GDK
 
 JACKRACK_DESC=		Enable jackrack module
 JACKRACK_BUILD_DEPENDS=	${LOCALBASE}/include/ladspa.h:audio/ladspa
-JACKRACK_LIB_DEPENDS=	libjack.so:audio/jack
+JACKRACK_LIB_DEPENDS=	libjack.so:audio/jack \
+			liblilv-0.so:audio/lilv
 JACKRACK_USE=		gnome=glib20
 JACKRACK_CMAKE_BOOL=	MOD_JACKRACK
 
@@ -112,8 +108,7 @@ RESAMPLE_LIB_DEPENDS=	libsamplerate.so:audio/libsamplerate
 RESAMPLE_CMAKE_BOOL=	MOD_RESAMPLE
 
 RTAUDIO_DESC=		Enable RtAudio module
-RTAUDIO_LIB_DEPENDS=	librtaudio.so:audio/rtaudio \
-			libpulse-simple.so:audio/pulseaudio
+RTAUDIO_LIB_DEPENDS=	librtaudio.so:audio/rtaudio
 RTAUDIO_CMAKE_BOOL=	MOD_RTAUDIO
 
 RUBBERBAND_DESC=	Enable rubberband module
@@ -122,7 +117,7 @@ RUBBERBAND_CMAKE_BOOL=	MOD_RUBBERBAND
 
 SDL2_DESC=		Enable SDL2 module
 SDL2_USES=		sdl
-SDL2_USE=		sdl=image2
+SDL2_USE=		sdl=sdl2
 SDL2_CMAKE_BOOL=	MOD_SDL2
 
 SOX_DESC=		Enable SoX module
@@ -134,8 +129,7 @@ VIDSTAB_LIB_DEPENDS=	libvidstab.so:multimedia/vid.stab
 VIDSTAB_CMAKE_BOOL=	MOD_VIDSTAB
 
 VORBIS_DESC=		Enable Vorbis module
-VORBIS_LIB_DEPENDS=	libvorbis.so:audio/libvorbis \
-			libogg.so:audio/libogg
+VORBIS_LIB_DEPENDS=	libvorbis.so:audio/libvorbis
 VORBIS_CMAKE_BOOL=	MOD_VORBIS
 
 XINE_DESC=		Enable xine module
