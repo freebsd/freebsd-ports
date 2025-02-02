@@ -142,7 +142,7 @@ share/icons/hicolor/56x56/apps/qmmp.png
 share/icons/hicolor/64x64/apps/qmmp.png
 share/icons/hicolor/scalable/apps/qmmp-simple.svgz
 share/icons/hicolor/scalable/apps/qmmp.svgz
-share/metainfo/qmmp.appdata.xml
+share/metainfo/com.ylsoftware.qmmp.metainfo.xml
 %%DATADIR%%/images/app_icon.png
 %%DATADIR%%/images/empty_cover.png
 %%DATADIR%%/scripts/kwin.sh
