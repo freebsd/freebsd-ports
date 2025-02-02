@@ -3,7 +3,6 @@ bin/VBoxBalloonCtrl
 bin/VBoxBugReport
 bin/VBoxHeadless
 bin/VBoxManage
-%%X11%%bin/VBoxSDL
 bin/VBoxVRDP
 %%QT%%bin/VirtualBox
 %%QT%%bin/VirtualBoxVM
@@ -13,7 +12,6 @@ bin/vboxbugreport
 bin/vboxheadless
 %%VBOXIMG%%bin/vboximg-mount
 bin/vboxmanage
-%%X11%%bin/vboxsdl
 %%WEBSERVICE%%bin/vboxwebsrv
 %%QT%%bin/virtualbox
 %%QT%%bin/virtualboxvm
@@ -396,7 +394,7 @@ lib/virtualbox/VBoxGuestPropSvc.so
 @(root,%%VBOXGROUP%%,4510) lib/virtualbox/VBoxHeadless
 lib/virtualbox/VBoxHeadless.so
 lib/virtualbox/VBoxHostChannel.so
-%%X11%%lib/virtualbox/VBoxKeyboard.so
+%%QT%%lib/virtualbox/VBoxKeyboard.so
 lib/virtualbox/VBoxManage
 @(root,%%VBOXGROUP%%,4510) lib/virtualbox/VBoxNetAdpCtl
 @(root,%%VBOXGROUP%%,4510) lib/virtualbox/VBoxNetDHCP
@@ -404,8 +402,6 @@ lib/virtualbox/VBoxNetDHCP.so
 @(root,%%VBOXGROUP%%,4510) lib/virtualbox/VBoxNetNAT
 lib/virtualbox/VBoxNetNAT.so
 lib/virtualbox/VBoxRT.so
-%%X11%%@(root,%%VBOXGROUP%%,4510) lib/virtualbox/VBoxSDL
-%%X11%%lib/virtualbox/VBoxSDL.so
 lib/virtualbox/VBoxSVC
 %%X11%%lib/virtualbox/VBoxSVGA3D.so
 lib/virtualbox/VBoxSharedClipboard.so

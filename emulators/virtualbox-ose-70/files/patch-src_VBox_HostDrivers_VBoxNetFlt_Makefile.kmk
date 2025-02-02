@@ -1,6 +1,6 @@
---- src/VBox/HostDrivers/VBoxNetFlt/Makefile.kmk.orig	2019-05-13 13:33:07 UTC
+--- src/VBox/HostDrivers/VBoxNetFlt/Makefile.kmk.orig	2025-01-21 14:06:16 UTC
 +++ src/VBox/HostDrivers/VBoxNetFlt/Makefile.kmk
-@@ -565,7 +565,7 @@ $(PATH_OUT)/opt_netgraph.h:
+@@ -543,7 +543,7 @@ ifeq ($(KBUILD_TARGET),freebsd)
  	$(QUIET)$(RM) -f -- $@
  	$(QUIET)$(CP) -f $< $@
   ifndef VBOX_WITH_HARDENING

@@ -1,6 +1,6 @@
---- src/VBox/Frontends/VBoxManage/VBoxManageModifyVM.cpp.orig	2021-01-07 15:40:49 UTC
-+++ src/VBox/Frontends/VBoxManage/VBoxManageModifyVM.cpp
-@@ -153,7 +153,7 @@ enum
+--- src/VBox/Frontends/VBoxManage/VBoxManageModifyVM.cpp.orig	2022-10-06 19:10:28.000000000 +0200
++++ src/VBox/Frontends/VBoxManage/VBoxManageModifyVM.cpp	2024-12-26 16:08:30.624183000 +0100
+@@ -170,7 +170,7 @@
      MODIFYVM_UARTMODE,
      MODIFYVM_UARTTYPE,
      MODIFYVM_UART,
@@ -9,16 +9,16 @@
      MODIFYVM_LPTMODE,
      MODIFYVM_LPT,
  #endif
-@@ -348,7 +348,7 @@ static const RTGETOPTDEF g_aModifyVMOptions[] =
-     { "--uartmode",                 MODIFYVM_UARTMODE,                  RTGETOPT_REQ_STRING | RTGETOPT_FLAG_INDEX },
-     { "--uarttype",                 MODIFYVM_UARTTYPE,                  RTGETOPT_REQ_STRING | RTGETOPT_FLAG_INDEX },
-     { "--uart",                     MODIFYVM_UART,                      RTGETOPT_REQ_STRING | RTGETOPT_FLAG_INDEX },
+@@ -382,7 +382,7 @@
+     OPT2("--uart-mode",                     "--uartmode",               MODIFYVM_UARTMODE,                  RTGETOPT_REQ_STRING | RTGETOPT_FLAG_INDEX),
+     OPT2("--uart-type",                     "--uarttype",               MODIFYVM_UARTTYPE,                  RTGETOPT_REQ_STRING | RTGETOPT_FLAG_INDEX),
+     OPT1("--uart",                                                      MODIFYVM_UART,                      RTGETOPT_REQ_STRING | RTGETOPT_FLAG_INDEX),
 -#if defined(RT_OS_LINUX) || defined(RT_OS_WINDOWS)
-+#if defined(RT_OS_FREEBSD) || defined(RT_OS_LINUX) || defined(RT_OS_WINDOWS)
-     { "--lptmode",                  MODIFYVM_LPTMODE,                   RTGETOPT_REQ_STRING | RTGETOPT_FLAG_INDEX },
-     { "--lpt",                      MODIFYVM_LPT,                       RTGETOPT_REQ_STRING | RTGETOPT_FLAG_INDEX },
++#if defined(RT_OS_LINUX) || defined(RT_OS_WINDOWS) || defined(RT_OS_FREEBSD)
+     OPT2("--lpt-mode",                      "--lptmode",                MODIFYVM_LPTMODE,                   RTGETOPT_REQ_STRING | RTGETOPT_FLAG_INDEX),
+     OPT1("--lpt",                                                       MODIFYVM_LPT,                       RTGETOPT_REQ_STRING | RTGETOPT_FLAG_INDEX),
  #endif
-@@ -2278,7 +2278,7 @@ RTEXITCODE handleModifyVM(HandlerArg *a)
+@@ -2496,7 +2496,7 @@
                  break;
              }
  

@@ -1,9 +1,11 @@
 PORTNAME=	virtualbox-ose
-DISTVERSION=	6.1.50
-PORTREVISION?=	8
+DISTVERSION=	7.0.24
+PORTREVISION?=	0
 CATEGORIES=	emulators
 MASTER_SITES=	https://download.virtualbox.org/virtualbox/${DISTVERSION}/:src \
-		LOCAL/bofh/emulators/virtualbox-ose:docs
+		LOCAL/bofh/emulators/virtualbox-ose:docs \
+		LOCAL/vvd:docs
+PKGNAMESUFFIX?=	-70
 DISTFILES=	VirtualBox-${DISTVERSION}${EXTRACT_SUFX}:src \
 		VirtualBox-docs-${DISTVERSION}${EXTRACT_SUFX}:docs
 EXTRACT_ONLY=	VirtualBox-${DISTVERSION}${EXTRACT_SUFX} \
@@ -25,12 +27,13 @@ BUILD_DEPENDS=	gtar:archivers/gtar \
 		xsltproc:textproc/libxslt
 LIB_DEPENDS=	libpng.so:graphics/png \
 		libcurl.so:ftp/curl
-RUN_DEPENDS=	${LOCALBASE}/etc/rc.d/vboxnet:emulators/virtualbox-ose-kmod
+RUN_DEPENDS=	${LOCALBASE}/etc/rc.d/vboxnet:emulators/virtualbox-ose-kmod-70
 
-USES=		compiler:c++14-lang cpe gnome iconv pkgconfig ssl tar:bzip2
+USES=		compiler:c++14-lang cpe gnome iconv qt:5 pkgconfig ssl tar:bzip2
 CPE_VENDOR=	oracle
 CPE_PRODUCT=	vm_virtualbox
 USE_GNOME=	libxml2
+USE_QT=		buildtools:build linguisttools:build
 USE_RC_SUBR=	vboxheadless vboxwatchdog
 
 HAS_CONFIGURE=		yes
@@ -39,10 +42,10 @@ CONFIGURE_ARGS+=	--with-gcc="${CC}" --with-g++="${CXX}"
 
 CONFLICTS_INSTALL=	virtualbox-ose-legacy \
 			virtualbox-ose-nox11-legacy \
-			virtualbox-ose-70 \
-			virtualbox-ose-nox11-70
+			virtualbox-ose \
+			virtualbox-ose-nox11
 
-PORTSCOUT=	limit:^6\.
+PORTSCOUT=	limit:^7\.0\.
 SUB_FILES=	pkg-message
 SUB_LIST=	VBOXDIR=${VBOX_DIR} \
 		VBOX_ETC=${VBOX_ETC} \
@@ -72,7 +75,7 @@ PLIST_SUB=	GUEST_VER=${DISTVERSION} \
 
 SLAVE_PORT?=	no
 
-OPTIONS_DEFINE=		AIO ALSA DBUS DEBUG DOCS GUESTADDITIONS NLS OPUS PULSEAUDIO \
+OPTIONS_DEFINE=		AIO ALSA DBUS DEBUG DOCS GUESTADDITIONS NLS PULSEAUDIO \
 			PYTHON QT5 R0LOGGING UDPTUNNEL VBOXIMG VDE VNC WEBSERVICE VPX X11
 OPTIONS_DEFAULT=	AIO DBUS QT5 UDPTUNNEL VNC WEBSERVICE X11
 .if ${SLAVE_PORT} == no
@@ -87,7 +90,6 @@ AIO_DESC=		Enable Asyncronous IO support (check pkg-message)
 DEBUG_DESC=		Debug symbols, additional logs and assertions
 GUESTADDITIONS_DESC=	Build with Guest Additions
 NLS_DESC=		Native language support (requires QT5)
-OPUS_DESC=		Use libvpx for audio recording (requires VPX)
 QT5_DESC=		Build with QT5 frontend (requires X11)
 R0LOGGING_DESC=		Enable R0 logging (requires DEBUG)
 UDPTUNNEL_DESC=		Build with UDP tunnel support
@@ -103,9 +105,6 @@ DBUS_LIB_DEPENDS=	libdbus-1.so:devel/dbus
 DBUS_CONFIGURE_OFF=	--disable-dbus
 DEBUG_CONFIGURE_ON=	--build-debug
 NLS_IMPLIES=		QT5
-OPUS_IMPLIES=		VPX
-OPUS_LIB_DEPENDS=	libopus.so:audio/opus
-OPUS_CONFIGURE_OFF=	--disable-libopus
 PULSEAUDIO_LIB_DEPENDS=	libpulse.so:audio/pulseaudio
 PULSEAUDIO_CONFIGURE_OFF=	--disable-pulse
 PYTHON_USES=		python
@@ -116,7 +115,7 @@ PYTHON_VARS=		pydistutils_pkgname=vboxapi pydistutils_pkgversion=1.0
 QT5_IMPLIES=		X11
 QT5_USES=		gl qmake:no_env qt:5 xorg
 QT5_USE=		QT=buildtools:build,core,dbus,gui,linguisttools:build,opengl \
-			QT=printsupport,widgets,x11extras XORG=xcb GL=gl
+			QT=printsupport,widgets,x11extras,xml XORG=xcb GL=gl
 QT5_CONFIGURE_ON=	--enable-qt5
 QT5_CONFIGURE_OFF=	--disable-qt
 R0LOGGING_IMPLIES=	DEBUG
@@ -129,8 +128,8 @@ VNC_CONFIGURE_ON=	--enable-vnc
 VPX_LIB_DEPENDS=	libvpx.so:multimedia/libvpx
 VPX_CONFIGURE_OFF=	--disable-libvpx
 WEBSERVICE_BUILD_DEPENDS=	soapcpp2:devel/gsoap
-X11_USES=		sdl xorg
-X11_USE=		SDL=sdl XORG=x11,xcursor,xext,xinerama,xmu,xorgproto,xt
+X11_USES=		gl sdl xorg
+X11_USE=		GL=gl SDL=sdl XORG=x11,xcursor,xext,xinerama,xmu,xorgproto,xt
 X11_CONFIGURE_OFF=	--build-headless
 
 ENV=
@@ -139,9 +138,9 @@ ENV=
 .include <bsd.port.options.mk>
 
 .if ${SLAVE_PORT} == no
-CONFLICTS_INSTALL+=	virtualbox-ose-nox11
+CONFLICTS_INSTALL+=	virtualbox-ose-nox11-70
 .else
-CONFLICTS_INSTALL+=	virtualbox-ose
+CONFLICTS_INSTALL+=	virtualbox-ose-70
 .endif
 
 .if ${PORT_OPTIONS:MDEBUG}
@@ -177,7 +176,7 @@ VBOX_UTILS+=	vboxwebsrv webtest
 .endif
 
 .if ${PORT_OPTIONS:MX11}
-VBOX_PROGS+=	VBoxSDL
+#VBOX_PROGS+=	VBoxSDL
 .endif
 
 .if ${PORT_OPTIONS:MPYTHON} || ${PORT_OPTIONS:MWEBSERVICE}
@@ -204,24 +203,6 @@ KMK_FLAGS+=	-j${MAKE_JOBS_NUMBER}
 .include <bsd.port.pre.mk>
 
 .if ${CHOSEN_COMPILER_TYPE} == clang
-# 1) llvm10 in FreeBSD before r364284 miscompiles virtualbox 6.1 causing errors.
-# 2) llvm15 in FreeBSD miscompiles virtualbox 6.1 causing errors: PR#270189.
-# Force llvm from ports.
-.if ${OPSYS} == FreeBSD
-# USES must be before .include <bsd.port.pre.mk>, but CHOSEN_COMPILER_TYPE must be after.
-# This is a workaround with possibility to define different llvm via VBOX_LLVM_VER in make.conf.
-#USES+=		llvm:min=11,max=14
-#CC=		clang${LLVM_VERSION}
-#CXX=		clang++${LLVM_VERSION}
-BUILD_DEPENDS+=	clang${VBOX_LLVM_VER}:devel/llvm${VBOX_LLVM_VER}
-CC=		clang${VBOX_LLVM_VER}
-CXX=		clang++${VBOX_LLVM_VER}
-.if ${LLVM_DEFAULT} < 11 || ${LLVM_DEFAULT} > 14
-VBOX_LLVM_VER?=	14
-.else
-VBOX_LLVM_VER?=	${LLVM_DEFAULT}
-.endif
-.endif
 PATCH_DEPENDS+=	${LOCALBASE}/share/kBuild/tools/GXX3.kmk:devel/kBuild
 .endif
 
@@ -402,7 +383,7 @@ do-install:
 	    ${WRKSRC}/src/VBox/Frontends/VirtualBox/images/OSE/VirtualBox_48px.png \
 	    ${STAGEDIR}${PREFIX}/share/pixmaps/VBox.png
 	${INSTALL_DATA} \
-	    ${WRKSRC}/src/VBox/Installer/freebsd/virtualbox.desktop \
+	    ${FILESDIR}/virtualbox.desktop \
 	    ${STAGEDIR}${PREFIX}/share/applications/virtualbox.desktop
 .endif
 

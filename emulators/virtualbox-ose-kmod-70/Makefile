@@ -1,9 +1,8 @@
 PORTNAME=	virtualbox-ose
-DISTVERSION=	6.1.50
-PORTREVISION=	1
+DISTVERSION=	7.0.24
 CATEGORIES=	emulators
 MASTER_SITES=	https://download.virtualbox.org/virtualbox/${DISTVERSION}/
-PKGNAMESUFFIX=	-kmod
+PKGNAMESUFFIX=	-kmod-70
 DISTNAME=	VirtualBox-${DISTVERSION}
 
 MAINTAINER=	vbox@FreeBSD.org
@@ -34,11 +33,11 @@ CONFIGURE_ARGS+=	--disable-alsa \
 			--disable-xpcom
 CONFIGURE_ARGS+=	--nofatal --with-gcc="${CC}" --with-g++="${CXX}"
 
-CONFLICTS_INSTALL=	virtualbox-ose-kmod-legacy \
-			virtualbox-ose-kmod-70
+CONFLICTS_INSTALL=	virtualbox-ose-kmod \
+			virtualbox-ose-kmod-legacy
 
-PATCHDIR=		${.CURDIR}/../${PORTNAME}/files
-PORTSCOUT=		limit:^6\.
+PATCHDIR=		${.CURDIR}/../${PORTNAME}-70/files
+PORTSCOUT=		limit:^7\.0\.
 SUB_FILES=		pkg-message
 SUB_LIST=		OPSYS=${OPSYS} OSREL=${OSREL}
 

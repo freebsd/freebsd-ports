@@ -1,9 +1,11 @@
---- src/VBox/HostDrivers/Support/freebsd/SUPDrv-freebsd.c.orig	2022-07-19 20:58:42 UTC
+--- src/VBox/HostDrivers/Support/freebsd/SUPDrv-freebsd.c.orig	2025-01-21 14:06:14 UTC
 +++ src/VBox/HostDrivers/Support/freebsd/SUPDrv-freebsd.c
-@@ -44,8 +44,11 @@
+@@ -44,9 +44,13 @@
  #include <sys/fcntl.h>
  #include <sys/conf.h>
  #include <sys/uio.h>
++#include <vm/vm.h>
+ #include <vm/pmap.h> /* for pmap_map() */
 +#include <sys/mutex.h>
 +#include <sys/smp.h>				/* mp_maxcpus */
  
@@ -12,12 +14,13 @@
  #include <VBox/version.h>
  #include <iprt/initterm.h>
  #include <iprt/string.h>
-@@ -57,7 +60,14 @@
+@@ -58,7 +62,15 @@
  #include <iprt/alloc.h>
  #include <iprt/err.h>
  #include <iprt/asm.h>
 +#include <iprt/x86.h>
  
++ 
 +#ifdef VBOX_WITH_EFLAGS_AC_SET_IN_VBOXDRV
 +# include <machine/cpufunc.h>
 +# include <machine/md_var.h>
@@ -27,7 +30,7 @@
  #ifdef VBOX_WITH_HARDENING
  # define VBOXDRV_PERM 0600
  #else
-@@ -76,7 +86,9 @@ static d_ioctl_t    VBoxDrvFreeBSDIOCtl;
+@@ -77,7 +89,9 @@ static d_ioctl_t    VBoxDrvFreeBSDIOCtl;
  static d_open_t     VBoxDrvFreeBSDOpenSys;
  static void         vboxdrvFreeBSDDtr(void *pvData);
  static d_ioctl_t    VBoxDrvFreeBSDIOCtl;
@@ -37,7 +40,7 @@
  
  
  /*********************************************************************************************************************************
-@@ -93,7 +105,8 @@ static moduledata_t         g_VBoxDrvFreeBSDModule =
+@@ -94,7 +108,8 @@ static moduledata_t         g_VBoxDrvFreeBSDModule =
  };
  
  /** Declare the module as a pseudo device. */
@@ -47,7 +50,7 @@
  MODULE_VERSION(vboxdrv, 1);
  
  /**
-@@ -140,6 +153,13 @@ static int VBoxDrvFreeBSDModuleEvent(struct module *pM
+@@ -141,6 +156,13 @@ static int VBoxDrvFreeBSDModuleEvent(struct module *pM
  static int VBoxDrvFreeBSDModuleEvent(struct module *pMod, int enmEventType, void *pvArg)
  {
      int rc;
@@ -61,7 +64,7 @@
      switch (enmEventType)
      {
          case MOD_LOAD:
-@@ -182,6 +202,13 @@ static int VBoxDrvFreeBSDLoad(void)
+@@ -183,6 +205,13 @@ static int VBoxDrvFreeBSDLoad(void)
          rc = supdrvInitDevExt(&g_VBoxDrvFreeBSDDevExt, sizeof(SUPDRVSESSION));
          if (RT_SUCCESS(rc))
          {
@@ -75,10 +78,11 @@
              /*
               * Configure character devices. Add symbolic links for compatibility.
               */
-@@ -324,6 +351,45 @@ static int VBoxDrvFreeBSDIOCtl(struct cdev *pDev, u_lo
+@@ -322,7 +351,45 @@ static int VBoxDrvFreeBSDIOCtl(struct cdev *pDev, u_lo
+     return VBoxDrvFreeBSDIOCtlSlow(pSession, ulCmd, pvData, pTd);
+ }
  
- 
- /**
++/**
 + * Alternative Device I/O Control entry point on hosts with SMAP support.
 + *
 + * @returns depends...
@@ -95,7 +99,7 @@
 +     * SMAP check.
 +     */
 +    RTCCUINTREG fSavedEfl = ASMAddFlags(X86_EFL_AC);
-+
+ 
 +    int rc = VBoxDrvFreeBSDIOCtl(pDev, ulCmd, pvData, fFile, pTd);
 +
 +#ifdef VBOX_WITH_EFLAGS_AC_SET_IN_VBOXDRV
@@ -117,11 +121,10 @@
 +}
 +
 +
-+/**
+ /**
   * Deal with the 'slow' I/O control requests.
   *
-  * @returns 0 on success, appropriate errno on failure.
-@@ -372,11 +438,10 @@ static int VBoxDrvFreeBSDIOCtlSlow(PSUPDRVSESSION pSes
+@@ -372,11 +439,10 @@ static int VBoxDrvFreeBSDIOCtlSlow(PSUPDRVSESSION pSes
           */
          SUPREQHDR Hdr;
          pvUser = *(void **)pvData;
@@ -136,7 +139,7 @@
          }
          if (RT_UNLIKELY((Hdr.fFlags & SUPREQHDR_FLAGS_MAGIC_MASK) != SUPREQHDR_FLAGS_MAGIC))
          {
-@@ -401,13 +466,12 @@ static int VBoxDrvFreeBSDIOCtlSlow(PSUPDRVSESSION pSes
+@@ -401,13 +467,12 @@ static int VBoxDrvFreeBSDIOCtlSlow(PSUPDRVSESSION pSes
              OSDBGPRINT(("VBoxDrvFreeBSDIOCtlSlow: failed to allocate buffer of %d bytes; ulCmd=%#lx\n", cbReq, ulCmd));
              return ENOMEM;
          }
@@ -154,7 +157,7 @@
          }
          if (Hdr.cbIn < cbReq)
              RT_BZERO((uint8_t *)pHdr + Hdr.cbIn, cbReq - Hdr.cbIn);
-@@ -435,9 +499,8 @@ static int VBoxDrvFreeBSDIOCtlSlow(PSUPDRVSESSION pSes
+@@ -435,9 +500,8 @@ static int VBoxDrvFreeBSDIOCtlSlow(PSUPDRVSESSION pSes
                  OSDBGPRINT(("VBoxDrvFreeBSDIOCtlSlow: too much output! %#x > %#x; uCmd=%#lx!\n", cbOut, cbReq, ulCmd));
                  cbOut = cbReq;
              }
@@ -166,7 +169,7 @@
  
              Log(("VBoxDrvFreeBSDIOCtlSlow: returns %d / %d ulCmd=%lx\n", 0, pHdr->rc, ulCmd));
  
-@@ -540,8 +603,7 @@ bool VBOXCALL  supdrvOSAreCpusOfflinedOnSuspend(void)
+@@ -540,8 +604,7 @@ bool VBOXCALL  supdrvOSAreCpusOfflinedOnSuspend(void)
  
  bool VBOXCALL  supdrvOSAreCpusOfflinedOnSuspend(void)
  {
@@ -176,23 +179,30 @@
  }
  
  
-@@ -624,20 +686,44 @@ int VBOXCALL    supdrvOSMsrProberModify(RTCPUID idCpu,
+@@ -637,31 +700,44 @@ int VBOXCALL    supdrvOSMsrProberModify(RTCPUID idCpu,
  #endif /* SUPDRV_WITH_MSR_PROBER */
  
  
+-#if defined(RT_ARCH_AMD64) || defined(RT_ARCH_ARM64)
+-SUPR0DECL(int) SUPR0HCPhysToVirt(RTHCPHYS HCPhys, void **ppv)
 +/**
 + * Check if the CPU has SMAP support.
 + */
 +static bool VBoxDrvFreeBSDCpuHasSMAP(void)
-+{
+ {
+-    AssertReturn(!(HCPhys & PAGE_OFFSET_MASK), VERR_INVALID_POINTER);
+-    AssertReturn(HCPhys != NIL_RTHCPHYS, VERR_INVALID_POINTER);
+-    *ppv = (void *)(uintptr_t)pmap_map(NULL, HCPhys, (HCPhys | PAGE_OFFSET_MASK) + 1, VM_PROT_WRITE | VM_PROT_READ);
+-    return VINF_SUCCESS;
+-}
 +#ifdef VBOX_WITH_EFLAGS_AC_SET_IN_VBOXDRV
 +    if ((cpu_stdext_feature & CPUID_STDEXT_SMAP) != 0)
 +        return true;
-+#endif
+ #endif
 +    return false;
 +}
-+
-+
+ 
+ 
  SUPR0DECL(int) SUPR0PrintfV(const char *pszFormat, va_list va)
  {
      char szMsg[256];

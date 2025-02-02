@@ -1,6 +1,6 @@
---- src/VBox/HostDrivers/Support/freebsd/Makefile.orig	2021-10-18 17:58:03 UTC
-+++ src/VBox/HostDrivers/Support/freebsd/Makefile
-@@ -82,6 +82,7 @@ SRCS += \
+--- src/VBox/HostDrivers/Support/freebsd/Makefile.orig	2022-10-06 19:11:13.000000000 +0200
++++ src/VBox/HostDrivers/Support/freebsd/Makefile	2024-12-26 16:15:26.678480000 +0100
+@@ -93,6 +93,7 @@
  	assert.c \
  	handletable.c \
  	handletablectx.c \
@@ -8,23 +8,13 @@
  	once.c \
  	term.c \
  	thread.c
-@@ -94,16 +95,17 @@ SRCS += \
- 	RTStrCopy.c \
- 	RTStrCopyEx.c \
- 	RTStrCopyP.c \
-+	memchr.c \
- 	strformat.c \
- 	RTStrFormat.c \
- 	strformatnum.c \
- 	strformatrt.c \
- 	strformattype.c \
-+	stringalloc.c \
- 	strprintf.c \
- 	strprintf-ellipsis.c \
+@@ -117,7 +118,8 @@
+ 	strprintf2-ellipsis.c \
  	strtonum.c \
--	memchr.c \
+ 	memchr.c \
 -	stringalloc.c
-+	utf-8.c
++	stringalloc.c \
++	utf-8.c 
  
  .PATH:	${.CURDIR}/common/rand
  SRCS += \

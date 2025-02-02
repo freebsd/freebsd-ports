@@ -1,11 +1,13 @@
---- src/VBox/HostDrivers/Support/SUPDrv.cpp.orig	2018-10-15 14:30:56 UTC
-+++ src/VBox/HostDrivers/Support/SUPDrv.cpp
-@@ -104,7 +104,7 @@
- /** @def SUPDRV_CHECK_SMAP_CHECK
-  * Checks that the AC flag is set if SMAP is enabled.  If AC is not set, it
-  * will be logged and @a a_BadExpr is executed. */
--#if (defined(RT_OS_DARWIN) || defined(RT_OS_LINUX)) && !defined(VBOX_WITHOUT_EFLAGS_AC_SET_IN_VBOXDRV)
-+#if (defined(RT_OS_DARWIN) || defined(RT_OS_FREEBSD) || defined(RT_OS_LINUX)) && !defined(VBOX_WITHOUT_EFLAGS_AC_SET_IN_VBOXDRV)
- # define SUPDRV_CHECK_SMAP_SETUP() uint32_t const fKernelFeatures = SUPR0GetKernelFeatures()
- # define SUPDRV_CHECK_SMAP_CHECK(a_pDevExt, a_BadExpr) \
-     do { \
+--- src/VBox/HostDrivers/Support/SUPDrv.cpp.orig	2024-12-27 08:34:02.157677000 +0100
++++ src/VBox/HostDrivers/Support/SUPDrv.cpp	2024-12-27 08:34:25.419134000 +0100
+@@ -317,8 +317,8 @@
+     SUPEXP_STK_BACK(    2,  SUPR0PageFree),
+     SUPEXP_STK_BACK(    6,  SUPR0PageMapKernel),
+     SUPEXP_STK_BACK(    6,  SUPR0PageProtect),
+-#if defined(RT_OS_LINUX) || defined(RT_OS_SOLARIS) || defined(RT_OS_FREEBSD)
+-    SUPEXP_STK_OKAY(    2,  SUPR0HCPhysToVirt),         /* only-linux, only-solaris, only-freebsd */
++#if defined(RT_OS_LINUX) || defined(RT_OS_SOLARIS)
++    SUPEXP_STK_OKAY(    2,  SUPR0HCPhysToVirt),         /* only-linux, only-solaris */
+ #endif
+     SUPEXP_STK_BACK(    2,  SUPR0PrintfV),
+     SUPEXP_STK_BACK(    1,  SUPR0GetSessionGVM),
