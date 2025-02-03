@@ -1,19 +1,18 @@
 PORTNAME=	xml-format
-PORTVERSION=	0.2
-PORTREVISION=	1
+DISTVERSION=	0.2.0-3
+DISTVERSIONSUFFIX=	-g4448d89
 CATEGORIES=	textproc
-MASTER_SITES=	http://acadix.biz/Ports/distfiles/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	XML beautifier
-WWW=		https://acadix.biz/xml-format.php
+WWW=		https://github.com/outpaddling/xml-format/
 
-MAKE_ENV+=	DATADIR=${DATADIR}
+LICENSE=	BSD2CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${PREFIX}/share/man/man1
-	${MKDIR} ${STAGEDIR}${DATADIR}
-	cd ${WRKSRC} && ${COPYTREE_SHARE} Config ${STAGEDIR}${DATADIR}
+USE_GITHUB=	yes
+GH_ACCOUNT=	outpaddling
+
+MAKE_ENV+=	DATADIR=${DATADIR} MANPREFIX=${PREFIX}/share
 
 .include <bsd.port.mk>
