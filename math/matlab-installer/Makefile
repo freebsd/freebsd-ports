@@ -10,6 +10,9 @@ WWW=		https://acadix.biz/matlab-installer.php
 
 LICENSE=	BSD3CLAUSE
 
+DEPRECATED=     Unmaintained, does not support recent Matlab
+EXPIRATION_DATE=2025-04-03
+
 RUN_DEPENDS=	mount_image:sysutils/diskimage-tools \
 		auto-ask:sysutils/auto-admin \
 		webbrowser:www/webbrowser \
