@@ -1,0 +1,2 @@
+This is a fork of the standard library modules cgi and cgitb. They are slated to
+be removed from the Python standard libary in Python 3.13 by PEP-594.
