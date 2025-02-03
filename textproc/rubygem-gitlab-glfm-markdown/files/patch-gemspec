@@ -1,0 +1,11 @@
+--- gitlab-glfm-markdown.gemspec.orig	2025-01-29 15:52:40 UTC
++++ gitlab-glfm-markdown.gemspec
+@@ -23,7 +23,7 @@ Gem::Specification.new do |s|
+ 
+   s.specification_version = 4
+ 
+-  s.add_runtime_dependency(%q<rb_sys>.freeze, ["= 0.9.107".freeze])
++  s.add_runtime_dependency(%q<rb_sys>.freeze, [">= 0.9.107".freeze, "<= 0.9.108".freeze])
+   s.add_development_dependency(%q<rake>.freeze, ["~> 13.0".freeze])
+   s.add_development_dependency(%q<rake-compiler>.freeze, ["~> 1.2".freeze])
+   s.add_development_dependency(%q<rake-compiler-dock>.freeze, ["~> 1.8".freeze])
