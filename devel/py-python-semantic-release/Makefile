@@ -1,5 +1,5 @@
 PORTNAME=	python-semantic-release
-PORTVERSION=	9.15.2
+PORTVERSION=	9.17.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI \
 		https://github.com/python-semantic-release/python-semantic-release/releases/download/v${PORTVERSION}/
