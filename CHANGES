@@ -10,6 +10,21 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
+20250203:
+AUTHOR: yasu@FreeBSD.org
+
+Following legacy variables are removed from Mk/Uses/samba.mk
+
+* SAMBAPORT
+* SAMBAINCLUDES
+* SAMBALIBS
+
+And ones below should be used instead.
+
+* SAMBA_PORT
+* SAMBA_INCLUDEDIR
+* SAMBA_LIBDIR
+
 20241231:
 AUTHOR: bofh@FreeBSD.org
 

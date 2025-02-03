@@ -45,10 +45,4 @@ LIB_DEPENDS+=	libsmbclient.so:${SAMBA_PORT}
 .  if ${samba_ARGS:Mrun}
 RUN_DEPENDS+=	smbd:${SAMBA_PORT}
 .  endif
-
-# Legacy variables. Removing those requires a tree-wide update
-# and a note in the CHANGES file
-SAMBAPORT=		${SAMBA_PORT}
-SAMBAINCLUDES=		${SAMBA_INCLUDEDIR}
-SAMBALIBS=		${SAMBA_LIBDIR}
 .endif

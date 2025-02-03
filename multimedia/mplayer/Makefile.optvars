@@ -115,7 +115,7 @@ SKINS_RUN_DEPENDS=	mplayer-skins>=0:multimedia/mplayer-skins
 SKINS_IMPLIES=		GUI
 
 SMB_USES=		samba:lib
-SMB_CONFIGURE_ON=	--extra-ldflags="-L${SAMBALIBS}"
+SMB_CONFIGURE_ON=	--extra-ldflags="-L${SAMBA_LIBDIR}"
 SMB_CONFIGURE_OFF=	--disable-smb
 
 SPEEX_LIB_DEPENDS=	libspeex.so:audio/speex
