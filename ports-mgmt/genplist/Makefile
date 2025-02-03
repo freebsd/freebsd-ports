@@ -10,6 +10,9 @@ WWW=		http://personalpages.tds.net/~jwbacon/Ports
 
 LICENSE=	BSD2CLAUSE
 
+DEPRECATED=     Unmaintained, obsoleted by "make makeplist"
+EXPIRATION_DATE=2025-04-03
+
 NO_BUILD=	yes
 USES=		tar:xz
 
