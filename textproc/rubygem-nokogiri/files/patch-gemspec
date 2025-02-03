@@ -1,6 +1,6 @@
 % sed -i .orig 's|, "patches/[^"]*".freeze||g; s|, "ports/[^"]*".freeze||g; /mini_portile2/d' nokogiri.gemspec
 
---- nokogiri.gemspec.orig	2025-01-01 11:34:00 UTC
+--- nokogiri.gemspec.orig	2025-01-29 15:45:03 UTC
 +++ nokogiri.gemspec
 @@ -16,7 +16,7 @@ Gem::Specification.new do |s|
    s.executables = ["nokogiri".freeze]
