@@ -29,11 +29,13 @@ libdata/pkgconfig/libexif.pc
 %%NLS%%share/locale/fr/LC_MESSAGES/libexif-12.mo
 %%NLS%%share/locale/it/LC_MESSAGES/libexif-12.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/libexif-12.mo
+%%NLS%%share/locale/ka/LC_MESSAGES/libexif-12.mo
 %%NLS%%share/locale/ms/LC_MESSAGES/libexif-12.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/libexif-12.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/libexif-12.mo
 %%NLS%%share/locale/pt/LC_MESSAGES/libexif-12.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/libexif-12.mo
+%%NLS%%share/locale/ro/LC_MESSAGES/libexif-12.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/libexif-12.mo
 %%NLS%%share/locale/sk/LC_MESSAGES/libexif-12.mo
 %%NLS%%share/locale/sq/LC_MESSAGES/libexif-12.mo
