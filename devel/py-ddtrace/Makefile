@@ -1,6 +1,5 @@
 PORTNAME=	ddtrace
-PORTVERSION=	2.18.1
-PORTREVISION=	1
+PORTVERSION=	2.19.2
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI \
 		https://github.com/abseil/abseil-cpp/releases/download/${ABSEIL_VERSION}/:abseil
@@ -23,7 +22,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLA
 		${PYTHON_PKGNAMEPREFIX}setuptools-scm>=4:devel/py-setuptools-scm@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 LIB_DEPENDS=	libddwaf.so:devel/libddwaf
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}bytecode>=0.15.0:devel/py-bytecode@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}bytecode>=0.16.0:devel/py-bytecode@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}envier>=0.5<1:devel/py-envier@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}opentelemetry-api>=1:devel/py-opentelemetry-api@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}protobuf>=3,1:devel/py-protobuf@${PY_FLAVOR} \
