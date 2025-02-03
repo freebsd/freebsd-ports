@@ -1,0 +1,10 @@
+--- CMakeLists.txt.orig	2024-10-23 17:31:50 UTC
++++ CMakeLists.txt
+@@ -82,6 +82,7 @@ else()
+     add_subdirectory(crt/aws-c-event-stream)
+     add_subdirectory(crt/aws-checksums)
+ else()
++    find_package(aws-c-common REQUIRED)
+     include(AwsFindPackage)
+     set(IN_SOURCE_BUILD OFF)
+ endif()
