@@ -1,34 +1,25 @@
 PORTNAME=	diskimage-tools
-DISTVERSION=	0.2
-PORTREVISION=	1
+DISTVERSION=	0.3.1-1
+DISTVERSIONSUFFIX=	-g5728747
 CATEGORIES=	sysutils
-MASTER_SITES=	http://acadix.biz/Ports/distfiles/
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Convenience tools for manipulating disk images
-WWW=		https://acadix.biz/diskimage-tools.php
+WWW=		https://github.com/outpaddling/diskimage-tools
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		tar:xz
+USE_GITHUB=	yes
+GH_ACCOUNT=	outpaddling
 
 NO_BUILD=	yes
 NO_ARCH=	yes
+MANPREFIX=	${PREFIX}/share
 
 do-install:
-	@${MKDIR} ${PREFIX}/sbin
-	${INSTALL_SCRIPT} ${WRKSRC}/mount_image \
-		${STAGEDIR}${PREFIX}/sbin
-	${INSTALL_SCRIPT} ${WRKSRC}/umount_image \
-		${STAGEDIR}${PREFIX}/sbin
-	${INSTALL_SCRIPT} ${WRKSRC}/img2dev \
-		${STAGEDIR}${PREFIX}/sbin
-	${INSTALL_MAN} ${WRKSRC}/mount_image.1 \
-		${STAGEDIR}${PREFIX}/share/man/man1
-	${INSTALL_MAN} ${WRKSRC}/umount_image.1 \
-		${STAGEDIR}${PREFIX}/share/man/man1
-	${INSTALL_MAN} ${WRKSRC}/img2dev.1 \
-		${STAGEDIR}${PREFIX}/share/man/man1
+	@${MKDIR} ${PREFIX}/sbin ${MANPREFIX}/man/man1
+	${INSTALL_SCRIPT} ${WRKSRC}/Scripts/* ${STAGEDIR}${PREFIX}/sbin
+	${INSTALL_MAN} ${WRKSRC}/Man/*.1 ${STAGEDIR}${MANPREFIX}/man/man1
 
 .include <bsd.port.mk>
