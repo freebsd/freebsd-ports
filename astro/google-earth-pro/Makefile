@@ -3,7 +3,7 @@
 # https://support.google.com/earth/answer/168344
 
 PORTNAME=	google-earth-pro
-DISTVERSION=	7.3.6.10155
+DISTVERSION=	7.3.6.10201
 DISTVERSIONSUFFIX=	-0
 CATEGORIES=	astro deskutils geography
 MASTER_SITES=	http://dl.google.com/linux/earth/rpm/stable/x86_64/
@@ -46,7 +46,6 @@ do-install:
 		${STAGEDIR}${DESKTOPDIR}
 	${MKDIR} ${STAGEDIR}${LINUXBASE}
 	(cd ${WRKSRC} && ${COPYTREE_SHARE} opt ${STAGEDIR}${LINUXBASE})
-	${CHMOD} +x ${STAGEDIR}${LINUXBASE}/opt/google/earth/pro/googleearth-bin
 	${INSTALL_SCRIPT} ${WRKDIR}/google-earth-pro ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>
