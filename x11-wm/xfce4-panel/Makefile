@@ -1,5 +1,5 @@
 PORTNAME=	xfce4-panel
-PORTVERSION=	4.20.0
+PORTVERSION=	4.20.2
 CATEGORIES=	x11-wm xfce
 MASTER_SITES=	XFCE
 DIST_SUBDIR=	xfce4
@@ -21,7 +21,7 @@ USES=		compiler:c11 desktop-file-utils gettext-tools gmake gnome \
 USE_GNOME=	cairo gdkpixbuf2 glib20 gtk30 libwnck3
 USE_LDCONFIG=	yes
 USE_PERL5=	build
-USE_XFCE=	garcon libexo windowing xfconf
+USE_XFCE=	garcon libexo windowing xdt xfconf
 USE_XORG=	ice sm x11 xext
 
 GNU_CONFIGURE=	yes
