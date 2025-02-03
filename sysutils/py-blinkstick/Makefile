@@ -15,6 +15,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyusb>=1.2.1:devel/py-pyusb@${PY_FLAVOR}
 
 USES=		python
 
+NO_ARCH=	yes
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	arvydas
 GH_PROJECT=	${PORTNAME}-python
