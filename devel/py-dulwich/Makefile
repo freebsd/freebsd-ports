@@ -1,9 +1,9 @@
 PORTNAME=	dulwich
-PORTVERSION=	0.21.7
-PORTREVISION=	1
+PORTVERSION=	0.22.7
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTFILES=	dulwich-${PORTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Python Git Library
@@ -15,6 +15,7 @@ LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=61:devel/py-setuptools@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}setuptools-rust>=0:devel/py-setuptools-rust@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}urllib3>=1.25,1:net/py-urllib3@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}fastimport>=0:devel/py-fastimport@${PY_FLAVOR} \
@@ -22,8 +23,11 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}fastimport>=0:devel/py-fastimport@${PY_FLAV
 		${PYTHON_PKGNAMEPREFIX}geventhttpclient>=0:devel/py-geventhttpclient@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}setuptools>=17.1:devel/py-setuptools@${PY_FLAVOR}
 
-USES=		cpe python shebangfix
+USES=		cargo cpe python:3.9+ shebangfix
 USE_PYTHON=	autoplist concurrent pep517 unittest
+
+CARGO_BUILD=	no
+CARGO_INSTALL=	no
 
 CPE_VENDOR=	dulwich_project
 
