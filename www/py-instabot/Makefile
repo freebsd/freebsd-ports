@@ -11,6 +11,9 @@ WWW=		https://github.com/instagrambot/instabot
 
 LICENSE=	APACHE20
 
+DEPRECATED=	Upstream repository has been archived on Feb 25, 2024
+EXPIRATION_DATE=2025-02-28
+
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}certifi>=2019.11.28:security/py-certifi@${PY_FLAVOR} \
