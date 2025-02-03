@@ -163,6 +163,7 @@ libexec/appjail/network/network
 %%DATADIR%%/scripts/create-bridge.sh
 %%DATADIR%%/scripts/dns.sh
 %%DATADIR%%/scripts/dnsmasq-hook.sh
+%%DATADIR%%/scripts/dummy-hook.sh
 %%DATADIR%%/scripts/escape-env-val.sh
 %%DATADIR%%/scripts/get_depends.sh
 %%DATADIR%%/scripts/git.sh
