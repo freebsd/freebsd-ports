@@ -1,5 +1,5 @@
 PORTNAME=	anndata
-PORTVERSION=	0.11.1
+PORTVERSION=	0.11.3
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,7 +16,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatch-vcs>=0:devel/py-hatch-vcs@${PY_FLAVO
 		${PYTHON_PKGNAMEPREFIX}hatchling>=0:devel/py-hatchling@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}array-api-compat>=1.4:devel/py-array-api-compat@${PY_FLAVOR} \
 		${PY_EXCEPTIONGROUP} \
-		${PYTHON_PKGNAMEPREFIX}h5py>=3.6:science/py-h5py@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}h5py>=3.7:science/py-h5py@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}natsort>=0:devel/py-natsort@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}numpy>=1.23,1:math/py-numpy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}packaging>=20.0:devel/py-packaging@${PY_FLAVOR} \
