@@ -17,6 +17,8 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}poetry-core>=1.0.0:devel/py-poetry-core@${
 USES=		python shebangfix
 USE_PYTHON=	autoplist pep517
 
+NO_ARCH=	yes
+
 SHEBANG_FILES=	${WRKSRC}/src/epy_reader/tools/KindleUnpack/*.py
 
 .include <bsd.port.mk>
