@@ -18,4 +18,6 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}docopt>0:devel/py-docopt@${PY_FLAVOR} \
 USES=		python
 USE_PYTHON=	autoplist concurrent pep517
 
+NO_ARCH=	yes
+
 .include <bsd.port.mk>
