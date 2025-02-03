@@ -1,5 +1,6 @@
 PORTNAME=	incidenceeditor
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
+PORTREVISION=	1
 CATEGORIES=	net kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
@@ -9,7 +10,7 @@ WWW=		https://github.com/KDE/mailcommon
 LICENSE=	LGPL21
 
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/range/algorithm.hpp:devel/boost-libs
-LIB_DEPENDS=	libKGantt.so:graphics/kdiagram
+LIB_DEPENDS=	libKChart6.so:graphics/kdiagram-qt6
 
 USES=		cmake compiler:c++11-lib gettext kde:6 qt:6 tar:xz xorg
 USE_KDE=	auth codecs completion config configwidgets coreaddons i18n \
