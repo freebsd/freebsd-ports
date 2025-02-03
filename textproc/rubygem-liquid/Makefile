@@ -1,5 +1,5 @@
 PORTNAME=	liquid
-PORTVERSION=	5.6.0
+PORTVERSION=	5.7.1
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
@@ -12,7 +12,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-bigdecimal>=0:math/rubygem-bigdecimal \
-		rubygem-strscan>=0:devel/rubygem-strscan
+		rubygem-strscan>=3.1.1:devel/rubygem-strscan
 
 USES=		gem
 
