@@ -1,3 +1,3 @@
-TIMESTAMP = 1735227980
-SHA256 (flask_socketio-5.5.0.tar.gz) = 2b58a8015d7aece71d5e822bacdf28672d363e72b33366d77da6fc9bacc86641
-SIZE (flask_socketio-5.5.0.tar.gz) = 37386
+TIMESTAMP = 1738089156
+SHA256 (flask_socketio-5.5.1.tar.gz) = d946c944a1074ccad8e99485a6f5c79bc5789e3ea4df0bb9c864939586c51ec4
+SIZE (flask_socketio-5.5.1.tar.gz) = 37401
