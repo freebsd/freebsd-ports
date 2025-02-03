@@ -92,6 +92,7 @@ lib/%%ARDOUR_MAJOR%%/panners/libpanvbap.so
 lib/%%ARDOUR_MAJOR%%/sanityCheck
 lib/%%ARDOUR_MAJOR%%/surfaces/libardour_cc121.so
 lib/%%ARDOUR_MAJOR%%/surfaces/libardour_console1.so
+%%LIBUSB%%lib/%%ARDOUR_MAJOR%%/surfaces/libardour_contourdesign.so
 lib/%%ARDOUR_MAJOR%%/surfaces/libardour_faderport.so
 lib/%%ARDOUR_MAJOR%%/surfaces/libardour_faderport16.so
 lib/%%ARDOUR_MAJOR%%/surfaces/libardour_faderport2.so
@@ -104,6 +105,7 @@ lib/%%ARDOUR_MAJOR%%/surfaces/libardour_launchpad_pro.so
 lib/%%ARDOUR_MAJOR%%/surfaces/libardour_launchpad_x.so
 lib/%%ARDOUR_MAJOR%%/surfaces/libardour_mcp.so
 lib/%%ARDOUR_MAJOR%%/surfaces/libardour_osc.so
+%%LIBUSB%%lib/%%ARDOUR_MAJOR%%/surfaces/libardour_push2.so
 lib/%%ARDOUR_MAJOR%%/surfaces/libardour_ssl_uf8.so
 lib/%%ARDOUR_MAJOR%%/surfaces/libardour_us2400.so
 lib/%%ARDOUR_MAJOR%%/surfaces/libardour_websockets.so
