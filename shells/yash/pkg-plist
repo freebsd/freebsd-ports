@@ -63,6 +63,7 @@ share/man/man1/yash.1.gz
 %%DATADIR%%/completion/file
 %%DATADIR%%/completion/find
 %%DATADIR%%/completion/fold
+%%DATADIR%%/completion/fzy
 %%DATADIR%%/completion/gawk
 %%DATADIR%%/completion/getconf
 %%DATADIR%%/completion/getopts
@@ -101,6 +102,7 @@ share/man/man1/yash.1.gz
 %%DATADIR%%/completion/git-remote
 %%DATADIR%%/completion/git-request-pull
 %%DATADIR%%/completion/git-reset
+%%DATADIR%%/completion/git-restore
 %%DATADIR%%/completion/git-rev-list
 %%DATADIR%%/completion/git-rev-parse
 %%DATADIR%%/completion/git-revert
