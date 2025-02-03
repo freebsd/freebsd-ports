@@ -1,0 +1,23 @@
+[
+{ type: install
+  message: <<EOM
+Redmine was installed.
+
+You now need to setup your Redmine installation so
+please have a look at the Installation Guide.
+
+https://www.redmine.org/projects/redmine/wiki/RedmineInstall
+
+If you are upgrading please read the Upgrading Guide
+before starting the new version.
+
+https://www.redmine.org/projects/redmine/wiki/RedmineUpgrade
+
+For users upgrading from Redmine 5.x to 6.x, please note that
+the default web server has changed from Thin to Puma.
+Existing redmine_flags should be moved to redmine_args with
+appropriate changes.
+
+EOM
+}
+]
