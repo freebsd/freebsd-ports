@@ -1,5 +1,5 @@
 PORTNAME=	mime-types-data
-PORTVERSION=	3.2024.1105
+PORTVERSION=	3.2025.0107
 CATEGORIES=	misc rubygems
 MASTER_SITES=	RG
 
@@ -8,7 +8,7 @@ COMMENT=	MIME Type registry data
 WWW=		https://github.com/mime-types/mime-types-data
 
 LICENSE=	MIT
-LICENSE_FILE=	${WRKSRC}/Licence.md
+LICENSE_FILE=	${WRKSRC}/LICENCE.md
 
 USES=		gem
 
