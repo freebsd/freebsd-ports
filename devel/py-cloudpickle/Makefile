@@ -1,7 +1,8 @@
 PORTNAME=	cloudpickle
-PORTVERSION=	3.1.0
+PORTVERSION=	3.1.1
 CATEGORIES=	devel python
-MASTER_SITES=	PYPI
+MASTER_SITES=	PYPI \
+		https://github.com/cloudpipe/cloudpickle/releases/download/v${PORTVERSION}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -9,7 +10,6 @@ COMMENT=	Extended pickling support for Python objects
 WWW=		https://github.com/cloudpipe/cloudpickle
 
 LICENSE=	BSD3CLAUSE
-LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}flit-core>=0:devel/py-flit-core@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=0,1:math/py-numpy@${PY_FLAVOR} \
