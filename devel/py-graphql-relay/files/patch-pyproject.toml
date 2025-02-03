@@ -1,0 +1,9 @@
+--- pyproject.toml.orig	2022-04-16 11:03:39 UTC
++++ pyproject.toml
+@@ -67,5 +67,5 @@ target-version = ['py36', 'py37', 'py38', 'py39', 'py3
+ target-version = ['py36', 'py37', 'py38', 'py39', 'py310']
+ 
+ [build-system]
+-requires = ["poetry_core>=1,<2", "setuptools>=59,<70"]
++requires = ["poetry_core>=1"]
+ build-backend = "poetry.core.masonry.api"
