@@ -1,6 +1,6 @@
---- configure.orig	2024-01-04 16:04:42 UTC
+--- configure.orig	2025-01-13 23:08:14 UTC
 +++ configure
-@@ -31688,30 +31688,6 @@ fi
+@@ -33838,32 +33838,6 @@ fi
  
  
  
@@ -9,22 +9,24 @@
 -
 -        { printf "%s\n" "$as_me:${as_lineno-$LINENO}: Found a RHEL 8 or equivalent system..." >&5
 -printf "%s\n" "$as_me: Found a RHEL 8 or equivalent system..." >&6;}
--        if grep -q -v tirpc <<< $CPPFLAGS || grep -q -v tirpc <<< $LDFLAGS
+-        if echo $CPPFLAGS | grep -q -v tirpc || echo $LDFLAGS | grep -q -v tirpc
 -then :
 -
 -            as_fn_error $? "Libdap4 on Redhat Linux 8 requires the tirpc library be included on CPPFLAGS and LDFLAGS" "$LINENO" 5
 -
--else $as_nop
--  { printf "%s\n" "$as_me:${as_lineno-$LINENO}: and CPPFLAGS and LDFLAGS are set" >&5
+-else case e in #(
+-  e) { printf "%s\n" "$as_me:${as_lineno-$LINENO}: and CPPFLAGS and LDFLAGS are set" >&5
 -printf "%s\n" "$as_me: and CPPFLAGS and LDFLAGS are set" >&6;}
--
+-         ;;
+-esac
 -fi
 -
--else $as_nop
--
+-else case e in #(
+-  e)
 -        { printf "%s\n" "$as_me:${as_lineno-$LINENO}: Not a RHEL 8 or equivalent system" >&5
 -printf "%s\n" "$as_me: Not a RHEL 8 or equivalent system" >&6;}
--
+-     ;;
+-esac
 -fi
 -
 -
