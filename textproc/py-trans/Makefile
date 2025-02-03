@@ -11,6 +11,9 @@ WWW=		https://github.com/zzzsochi/trans
 
 LICENSE=	BSD2CLAUSE
 
+DEPRECATED=	Upstream is inactive for almost 8.5 years
+EXPIRATION_DATE=2025-02-28
+
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 
