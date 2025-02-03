@@ -178,6 +178,7 @@
 %%SITE_PERL%%/Test2/Util/HashBase.pm
 %%SITE_PERL%%/Test2/Util/Importer.pm
 %%SITE_PERL%%/Test2/Util/Ref.pm
+%%SITE_PERL%%/Test2/Util/Sig.pm
 %%SITE_PERL%%/Test2/Util/Stash.pm
 %%SITE_PERL%%/Test2/Util/Sub.pm
 %%SITE_PERL%%/Test2/Util/Table.pm
@@ -358,6 +359,7 @@
 %%PERL5_MAN3%%/Test2::Util::HashBase.3.gz
 %%PERL5_MAN3%%/Test2::Util::Importer.3.gz
 %%PERL5_MAN3%%/Test2::Util::Ref.3.gz
+%%PERL5_MAN3%%/Test2::Util::Sig.3.gz
 %%PERL5_MAN3%%/Test2::Util::Stash.3.gz
 %%PERL5_MAN3%%/Test2::Util::Sub.3.gz
 %%PERL5_MAN3%%/Test2::Util::Table.3.gz
