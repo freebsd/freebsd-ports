@@ -92,6 +92,7 @@ libdata/pkgconfig/libxfce4windowingui-0.pc
 %%NLS%%share/locale/gl/LC_MESSAGES/libxfce4windowing.mo
 %%NLS%%share/locale/he/LC_MESSAGES/libxfce4windowing.mo
 %%NLS%%share/locale/hr/LC_MESSAGES/libxfce4windowing.mo
+%%NLS%%share/locale/hu/LC_MESSAGES/libxfce4windowing.mo
 %%NLS%%share/locale/id/LC_MESSAGES/libxfce4windowing.mo
 %%NLS%%share/locale/ie/LC_MESSAGES/libxfce4windowing.mo
 %%NLS%%share/locale/it/LC_MESSAGES/libxfce4windowing.mo
@@ -107,6 +108,7 @@ libdata/pkgconfig/libxfce4windowingui-0.pc
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/libxfce4windowing.mo
 %%NLS%%share/locale/ro/LC_MESSAGES/libxfce4windowing.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/libxfce4windowing.mo
+%%NLS%%share/locale/sk/LC_MESSAGES/libxfce4windowing.mo
 %%NLS%%share/locale/sl/LC_MESSAGES/libxfce4windowing.mo
 %%NLS%%share/locale/sq/LC_MESSAGES/libxfce4windowing.mo
 %%NLS%%share/locale/sr/LC_MESSAGES/libxfce4windowing.mo
