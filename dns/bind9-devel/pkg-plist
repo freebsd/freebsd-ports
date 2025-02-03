@@ -144,7 +144,6 @@ include/isc/httpd.h
 include/isc/interfaceiter.h
 include/isc/iterated_hash.h
 include/isc/job.h
-include/isc/lang.h
 include/isc/lex.h
 include/isc/list.h
 include/isc/log.h
@@ -228,22 +227,21 @@ include/ns/listenlist.h
 include/ns/notify.h
 include/ns/query.h
 include/ns/server.h
-include/ns/sortlist.h
 include/ns/stats.h
 include/ns/types.h
 include/ns/update.h
 include/ns/xfrout.h
 lib/bind/filter-a.so
 lib/bind/filter-aaaa.so
-lib/libdns-9.21.3.so
+lib/libdns-9.21.4.so
 lib/libdns.so
-lib/libisc-9.21.3.so
+lib/libisc-9.21.4.so
 lib/libisc.so
-lib/libisccc-9.21.3.so
+lib/libisccc-9.21.4.so
 lib/libisccc.so
-lib/libisccfg-9.21.3.so
+lib/libisccfg-9.21.4.so
 lib/libisccfg.so
-lib/libns-9.21.3.so
+lib/libns-9.21.4.so
 lib/libns.so
 @comment share/man/man1/arpaname.1.gz
 @comment share/man/man1/delv.1.gz
