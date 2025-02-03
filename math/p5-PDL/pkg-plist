@@ -40,7 +40,6 @@ bin/pptemplate
 %%SITE_ARCH%%/PDL/DeveloperGuide.pod
 %%SITE_ARCH%%/PDL/DiskCache.pm
 %%SITE_ARCH%%/PDL/Doc.pm
-%%SITE_ARCH%%/PDL/Doc/Config.pm
 %%SITE_ARCH%%/PDL/Doc/Perldl.pm
 %%SITE_ARCH%%/PDL/Exporter.pm
 %%SITE_ARCH%%/PDL/FAQ.pod
@@ -118,6 +117,7 @@ bin/pptemplate
 %%SITE_ARCH%%/PDL/Transform/Cartography/earth_night.jpg
 %%SITE_ARCH%%/PDL/Transform/Cartography/earth_water-2048x1024.png
 %%SITE_ARCH%%/PDL/Tutorials.pod
+%%SITE_ARCH%%/PDL/Type.pod
 %%SITE_ARCH%%/PDL/Types.pm
 %%SITE_ARCH%%/PDL/Ufunc.pm
 %%SITE_ARCH%%/PDL/default.perldlrc
@@ -204,6 +204,7 @@ bin/pptemplate
 %%PERL5_MAN3%%/PDL::Tips.3.gz
 %%PERL5_MAN3%%/PDL::Transform::Cartography.3.gz
 %%PERL5_MAN3%%/PDL::Tutorials.3.gz
+%%PERL5_MAN3%%/PDL::Type.3.gz
 %%PERL5_MAN3%%/PDL::Types.3.gz
 %%PERL5_MAN3%%/PDLdb.3.gz
 %%PERL5_MAN3%%/Test::Deep::PDL.3.gz
