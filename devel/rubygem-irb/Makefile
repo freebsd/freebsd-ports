@@ -1,5 +1,5 @@
 PORTNAME=	irb
-PORTVERSION=	1.14.3
+PORTVERSION=	1.15.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -10,7 +10,8 @@ WWW=		https://github.com/ruby/irb
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	rubygem-rdoc>=4.0.0:devel/rubygem-rdoc \
+RUN_DEPENDS=	rubygem-pp>=0.6.0:devel/rubygem-pp \
+		rubygem-rdoc>=4.0.0:devel/rubygem-rdoc \
 		rubygem-reline>=0.4.2:devel/rubygem-reline
 
 USES=		gem
@@ -21,7 +22,6 @@ PLIST_FILES=	bin/irb \
 		share/man/man1/irb.1.gz
 
 post-install:
-	${MKDIR} ${STAGEDIR}${PREFIX}/share/man/man1
 	${INSTALL_DATA} ${WRKSRC}/man/irb.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 .include <bsd.port.mk>
