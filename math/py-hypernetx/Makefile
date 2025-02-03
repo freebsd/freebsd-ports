@@ -19,4 +19,6 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}decorator>=4.3.0:devel/py-decorator@${PY_FLA
 USES=		cpe python shebangfix
 USE_PYTHON=	autoplist concurrent pep517 pytest
 
+NO_ARCH=	yes
+
 .include <bsd.port.mk>
