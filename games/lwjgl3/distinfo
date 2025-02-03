@@ -1,4 +1,4 @@
-TIMESTAMP = 1734337752
+TIMESTAMP = 1738591564
 SHA256 (maven2/com/beust/jcommander/1.78/jcommander-1.78.jar) = 7891debb84b5f83e9bd57593ebece3399abbe0fd938cf306b3534c57913b9615
 SIZE (maven2/com/beust/jcommander/1.78/jcommander-1.78.jar) = 83782
 SHA256 (maven2/net/sf/jopt-simple/jopt-simple/5.0.4/jopt-simple-5.0.4.jar) = df26cc58f235f477db07f753ba5a3ab243ebe5789d9f89ecf68dd62ea9a66c28
@@ -29,5 +29,5 @@ SHA256 (maven2/org/testng/testng/7.5/testng-7.5.jar) = e549db50dcc421f9501d6af93
 SIZE (maven2/org/testng/testng/7.5/testng-7.5.jar) = 941401
 SHA256 (maven2/org/webjars/jquery/3.5.1/jquery-3.5.1.jar) = 83168112220ac912a3dba0eebae90a4da5bf1e24b1bafd401e3d4f9f598bb2cb
 SIZE (maven2/org/webjars/jquery/3.5.1/jquery-3.5.1.jar) = 313070
-SHA256 (LWJGL-lwjgl3-3.3.5_GH0.tar.gz) = c33df881648b1e561ae9a0d745bb210bec3c79f042ead590857a10709e3c6f84
-SIZE (LWJGL-lwjgl3-3.3.5_GH0.tar.gz) = 16433511
+SHA256 (LWJGL-lwjgl3-3.3.6_GH0.tar.gz) = be7e38712236908aa7ff0bf84af034c241a0624a7387414c7ed3aa742a5a44b3
+SIZE (LWJGL-lwjgl3-3.3.6_GH0.tar.gz) = 16438665
