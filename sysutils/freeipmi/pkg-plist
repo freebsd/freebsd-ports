@@ -255,11 +255,11 @@ include/ipmidetect.h
 lib/libfreeipmi.a
 lib/libfreeipmi.so
 lib/libfreeipmi.so.17
-lib/libfreeipmi.so.17.2.12
+lib/libfreeipmi.so.17.2.13
 lib/libipmiconsole.a
 lib/libipmiconsole.so
 lib/libipmiconsole.so.2
-lib/libipmiconsole.so.2.3.6
+lib/libipmiconsole.so.2.3.7
 lib/libipmidetect.a
 lib/libipmidetect.so
 lib/libipmidetect.so.0
