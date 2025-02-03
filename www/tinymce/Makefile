@@ -1,5 +1,5 @@
 PORTNAME=	tinymce
-PORTVERSION=	7.6.0
+PORTVERSION=	7.6.1
 CATEGORIES=	www
 MASTER_SITES=	http://download.tiny.cloud/tinymce/community/ \
 		LOCAL/sunpoet
