@@ -1,12 +1,13 @@
 PORTNAME=	josepy
-PORTVERSION=	1.14.0
+PORTVERSION=	1.15.0
 CATEGORIES=	security python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	JOSE protocol implementation in Python
-WWW=		https://josepy.readthedocs.io/en/latest/
+WWW=		https://josepy.readthedocs.io/en/latest/ \
+		https://github.com/certbot/josepy
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
