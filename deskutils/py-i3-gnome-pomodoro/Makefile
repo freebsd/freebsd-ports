@@ -26,6 +26,8 @@ USES=		python shebangfix
 
 USE_PYTHON=	autoplist pep517
 
+NO_ARCH=	yes
+
 SHEBANG_FILES=	${WRKSRC}/${PYDISTNAME}/pomodoro_client.py
 
 PYDISTNAME=	${PORTNAME:S/-/_/g}
