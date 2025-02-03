@@ -498,6 +498,7 @@
     SUBDIR += spglib
     SUBDIR += spheral
     SUBDIR += step
+    SUBDIR += sz3
     SUBDIR += tblite
     SUBDIR += teem
     SUBDIR += tfel

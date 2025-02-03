@@ -1,0 +1,16 @@
+SZ is a modular parametrizable lossy compressor framework for scientific data
+(floating point and integers). It has applications in simulations, AI and
+instruments. It is a production quality software and a research platform for
+lossy compression. SZ is open and transparent. Open because all interested
+researchers and students can study or contribute to it. Transparent because all
+performance improvements are detailed in publications.
+
+SZ can be used for classic use-cases: visualization, accelerating I/O, reducing
+memory and storage footprint and more advanced use-cases like compression of DNN
+models and training sets, acceleration of computation, checkpoint/restart,
+reducing streaming intensity and running efficiently large problems that cannot
+fit in memory. Other use-cases will augment this list as users find new
+opportunities to benefit from lossy compression of scientific data.
+
+SZ has implementations on CPU, GPU, and FPGA and is integrated in the main I/O
+libraries: HFD5, ADIOS, PnetCDF.
