@@ -1,11 +1,10 @@
 PORTNAME=	dq
-PORTVERSION=	20240101
-PORTREVISION=	1
+PORTVERSION=	20250201
 CATEGORIES=	dns
 
 MAINTAINER=	pkubaj@FreeBSD.org
 COMMENT=	Recursive DNS/DNSCurve server
-WWW=		https://mojzis.com/software/dq/
+WWW=		https://github.com/janmojzis/dq
 
 LICENSE=	CC0
 LICENSE_FILE=	${WRKSRC}/LICENCE
