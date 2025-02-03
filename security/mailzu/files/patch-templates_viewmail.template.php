@@ -27,7 +27,17 @@
  }
  
  /**
-@@ -81,7 +81,9 @@ function MsgPrintHeader($struct,$hdr_list) {
+@@ -50,7 +50,8 @@ function endMessage() {
+ * $param The mime structure object and the specific header name
+ */
+ function MsgPrintHeader($struct,$hdr_list) {
+-	
++	global $header_value;
++
+ 	foreach ($hdr_list as $hdr) {
+ 	  $header_value = $struct->headers[strtolower($hdr)];
+ 	  if (is_array($header_value)) {
+@@ -81,7 +82,9 @@ function MsgPrintHeader($struct,$hdr_list) {
  function MsgPrintHeaderFull($struct,$hdr_list) {
         
          foreach ($hdr_list as $hdr) {
@@ -38,7 +48,7 @@
  	  if (!$header_value) continue;
            if (is_array($header_value)) {
              $value_array = $header_value;
-@@ -116,17 +118,17 @@ function MsgDisplayOptions($mail_id, $recip_email) {
+@@ -116,17 +119,17 @@ function MsgDisplayOptions($mail_id, $recip_email) {
  <table class="stdFont" width="100%">
    <tr>
      <td align="left">
@@ -60,7 +70,7 @@
  }
  
  /**
-@@ -138,14 +140,14 @@ function MsgOriginalOptions() {
+@@ -138,14 +141,14 @@ function MsgOriginalOptions() {
    <table width="100%">
     <tr>
      <td class="stdFont" align="right">
