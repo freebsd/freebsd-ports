@@ -1,22 +1,20 @@
 PORTNAME=	endian
-PORTVERSION=	1.1
-PORTREVISION=	1
+DISTVERSION=	1.1-6
+DISTVERSIONSUFFIX=	-g5688773
 CATEGORIES=	sysutils
-MASTER_SITES=	http://acadix.biz/Ports/distfiles/
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Report endianness of a system
+WWW=		https://github.com/outpaddling/endian/
 
 LICENSE=	BSD2CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		tar:xz
+USE_GITHUB=	yes
+GH_ACCOUNT=	outpaddling
+
+INSTALL_TARGET=	install-strip
 
 PLIST_FILES=	bin/endian share/man/man1/endian.1.gz
-
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} \
-		${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 \
-		${STAGEDIR}${PREFIX}/share/man/man1
 
 .include <bsd.port.mk>
