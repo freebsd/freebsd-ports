@@ -1,6 +1,6 @@
 PORTNAME=	securefs
-DISTVERSION=	0.14.3
-PORTREVISION=	2
+DISTVERSION=	1.0.0
+DISTVERSIONPREFIX=	v
 CATEGORIES=	filesystems
 PKGNAMEPREFIX=	fusefs-
 
@@ -12,22 +12,25 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 BUILD_DEPENDS=	${LOCALBASE}/include/tclap/TCLAPConfig.h:devel/tclap
-LIB_DEPENDS=	libutf8proc.so:textproc/utf8proc \
+LIB_DEPENDS=	libabsl_strings.so:devel/abseil \
 		libargon2.so:security/libargon2 \
-		libjsoncpp.so:devel/jsoncpp \
 		libcryptopp.so:security/cryptopp \
-		libabsl_strings.so:devel/abseil
+		libfruit.so:devel/fruit \
+		libprotobuf.so:devel/protobuf \
+		libuni-algo.so:textproc/uni-algo
 
-USES=		cmake compiler:c++17-lang fuse pkgconfig
+USES=		cmake compiler:c++17-lang fuse pkgconfig sqlite
 
-USE_GITHUB=	yes
-GH_ACCOUNT=	netheril96
+CMAKE_OFF=	SECUREFS_ADDRESS_SANITIZE \
+		SECUREFS_ENABLE_INTEGRATION_TEST \
+		SECUREFS_ENABLE_UNIT_TEST \
+		SECUREFS_LINK_PROFILER \
+		SECUREFS_USE_FUSET \
+		SECUREFS_USE_VCPKG
 
 PLIST_FILES=	bin/securefs
 
-CMAKE_OFF=	SECUREFS_ENABLE_BUILD_TEST \
-		SECUREFS_ENABLE_UNIT_TEST \
-		SECUREFS_USE_VCPKG
-CMAKE_ARGS=	-DCMAKE_CXX_STANDARD=17
+USE_GITHUB=	yes
+GH_ACCOUNT=	netheril96
 
 .include <bsd.port.mk>
