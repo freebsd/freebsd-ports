@@ -1,5 +1,5 @@
 PORTNAME=	googleapis-common-protos-types
-PORTVERSION=	1.16.0
+PORTVERSION=	1.18.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
