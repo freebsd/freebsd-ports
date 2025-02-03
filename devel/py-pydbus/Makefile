@@ -16,4 +16,6 @@ USES=		gnome python
 USE_GNOME=	pygobject3:run
 USE_PYTHON=	autoplist distutils
 
+NO_ARCH=	yes
+
 .include <bsd.port.mk>
