@@ -1,5 +1,5 @@
 PORTNAME=	atk
-PORTVERSION=	4.2.5
+PORTVERSION=	4.2.6
 CATEGORIES=	accessibility rubygems
 MASTER_SITES=	RG
 
