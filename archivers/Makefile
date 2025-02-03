@@ -2,6 +2,7 @@
 
     SUBDIR += 7-zip
     SUBDIR += 9e
+    SUBDIR += R-cran-brotli
     SUBDIR += R-cran-zip
     SUBDIR += advancecomp
     SUBDIR += amigadepacker
