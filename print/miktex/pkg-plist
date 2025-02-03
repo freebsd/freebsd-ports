@@ -34,7 +34,6 @@ bin/miktex-dvisvgm
 bin/miktex-dvitype
 bin/miktex-epsffit
 bin/miktex-epstopdf
-bin/miktex-eptex
 bin/miktex-euptex
 bin/miktex-extconv
 bin/miktex-fribidixetex
@@ -179,8 +178,8 @@ lib/libmiktex-poppler.so
 lib/libmiktex-poppler.so.4
 lib/libmiktex-poppler.so.4.1.0
 lib/libmiktex-ptexenc.so
-lib/libmiktex-ptexenc.so.1.8.0
-lib/libmiktex-ptexenc.so.4
+lib/libmiktex-ptexenc.so.1.9.0
+lib/libmiktex-ptexenc.so.5
 lib/libmiktex-res.so
 lib/libmiktex-res.so.1
 lib/libmiktex-res.so.1.0.0
