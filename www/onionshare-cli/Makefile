@@ -34,4 +34,6 @@ RUN_DEPENDS=	meek-client:security/meek \
 USES=		cpe python
 USE_PYTHON=	autoplist distutils
 
+NO_ARCH=	yes
+
 .include <bsd.port.mk>
