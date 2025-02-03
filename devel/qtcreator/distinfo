@@ -1,5 +1,3 @@
-TIMESTAMP = 1734596168
-SHA256 (KDE/Qt/qtcreator/qt-creator-opensource-src-15.0.0.tar.xz) = 23b1c6b478ca760997ecddd4c728f0da280b0696008a9bddd9a1068f16d48f72
-SIZE (KDE/Qt/qtcreator/qt-creator-opensource-src-15.0.0.tar.xz) = 53254544
-SHA256 (KDE/Qt/qtcreator/0e9943dd671877adbe13c9316bded21ac762e4dd.patch) = 469e93983b09ac5f339a943318e1f29f899955779bac88e303656cf8e07790be
-SIZE (KDE/Qt/qtcreator/0e9943dd671877adbe13c9316bded21ac762e4dd.patch) = 3095
+TIMESTAMP = 1738580018
+SHA256 (KDE/Qt/qtcreator/qt-creator-opensource-src-15.0.1.tar.xz) = 743bad5bbe35ed7f5009f7ce161f1da2f26c17bb5131473e061ce65b3a7ae093
+SIZE (KDE/Qt/qtcreator/qt-creator-opensource-src-15.0.1.tar.xz) = 53250336
