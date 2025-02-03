@@ -2140,6 +2140,7 @@
     SUBDIR += uncle
     SUBDIR += uncrustify
     SUBDIR += uni
+    SUBDIR += uni-algo
     SUBDIR += uni2ascii
     SUBDIR += unoconv
     SUBDIR += unroff
