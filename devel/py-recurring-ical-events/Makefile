@@ -1,12 +1,12 @@
 PORTNAME=	recurring-ical-events
-PORTVERSION=	3.4.0
+PORTVERSION=	3.4.1
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	recurring_ical_events-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
-COMMENT=	Python module which repeats ICalendar events by RRULE, RDATE and EXDATE
+COMMENT=	Calculate recurrence times of events, todos, alarms and journals based on icalendar RFC5545
 WWW=		https://github.com/niccokunzmann/python-recurring-ical-events
 
 LICENSE=	LGPL3+
