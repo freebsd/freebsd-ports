@@ -5011,6 +5011,7 @@
     SUBDIR += py-icalendar
     SUBDIR += py-ice
     SUBDIR += py-ice37
+    SUBDIR += py-id
     SUBDIR += py-identify
     SUBDIR += py-ijson
     SUBDIR += py-imgkit
