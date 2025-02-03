@@ -733,6 +733,7 @@
     SUBDIR += freebsd-git-devtools
     SUBDIR += freebsd-sysroot
     SUBDIR += frink
+    SUBDIR += fruit
     SUBDIR += fsmtrie
     SUBDIR += fstrcmp
     SUBDIR += fstrm
