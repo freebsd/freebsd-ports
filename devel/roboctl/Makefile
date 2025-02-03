@@ -1,36 +1,43 @@
 PORTNAME=	roboctl
-PORTVERSION=	0.3.8
-PORTREVISION=	1
+DISTVERSION=	0.3.9-4
+DISTVERSIONSUFFIX=	-gcae3172
 CATEGORIES=	devel
-MASTER_SITES=	http://acadix.biz/Ports/distfiles/
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	API and tools for communicating with Lego and Vex robots
-WWW=		http://personalpages.tds.net/~jwbacon/Ports
+WWW=		https://github.com/outpaddling/RoboCTL/
 
-LICENSE=	GPLv3
+LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libgamepad.a:devel/libgamepad
 
-MAKE_ENV=	EXTRALIBS=-lbluetooth
-MAKE_FLAGS+=	PREFIX=${STAGEDIR}${PREFIX} \
-		MANPREFIX=${STAGEDIR}${PREFIX}/share
-MAKE_JOBS_UNSAFE=	yes
+USE_GITHUB=	yes
+GH_ACCOUNT=	outpaddling
+GH_PROJECT=	RoboCTL
 
-USES=		tar:xz
+MAKE_ENV=		EXTRALIBS=-lbluetooth
+MAKE_JOBS_UNSAFE=	yes
 
 OPTIONS_DEFINE=	CUTECOM
 CUTECOM_DESC=	Install cutecom for Vex debugging
 
-CUTECOM_RUN_DEPENDS=	cutecom:comms/cutecom
+MANPREFIX=	${PREFIX}/share
+MAKE_ENV+=	PREFIX=${PREFIX} MANPREFIX=${MANPREFIX} LOCALBASE=${LOCALBASE}
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MCUTECOM}
+RUN_DEPENDS+=	cutecom:comms/cutecom
+.endif
 
 pre-build:
 	(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} depend)
 
 post-install:
-	(cd ${WRKSRC}/Commands/NXTRemote; ${MAKE})
+	(cd ${WRKSRC}/Commands/NXTRemote && ${SETENV} ${MAKE_ENV} ${MAKE})
 	${INSTALL_PROGRAM} ${WRKSRC}/Commands/NXTRemote/nxtremote ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/Scripts/lego_bluetooth_config ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/Commands/NXTRemote/nxtremote.1 ${STAGEDIR}${PREFIX}/share/man/man1
+	${INSTALL_MAN} ${WRKSRC}/Commands/NXTRemote/nxtremote.1 ${STAGEDIR}${MANDIRS}/man1
 
 .include <bsd.port.mk>
