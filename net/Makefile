@@ -1664,6 +1664,7 @@
     SUBDIR += wifi-firmware-iwlwifi-kmod
     SUBDIR += wifi-firmware-kmod
     SUBDIR += wifi-firmware-mt76-kmod
+    SUBDIR += wifi-firmware-mtw-kmod
     SUBDIR += wifi-firmware-rtw88-kmod
     SUBDIR += wifi-firmware-rtw89-kmod
     SUBDIR += wifibox
