@@ -1,0 +1,37 @@
+PORTNAME=	libultrahdr
+PORTVERSION=	1.4.0
+DISTVERSIONPREFIX=	v
+CATEGORIES=	graphics
+
+MAINTAINER=	sunpoet@FreeBSD.org
+COMMENT=	Reference codec for the Ultra HDR format
+WWW=		https://developer.android.com/media/platform/hdr-image-format \
+		https://github.com/google/libultrahdr
+
+LICENSE=	APACHE20
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+USES=		cmake jpeg pathfix
+
+CMAKE_OFF=	UHDR_BUILD_BENCHMARK \
+		UHDR_BUILD_DEPS \
+		UHDR_BUILD_FUZZERS \
+		UHDR_BUILD_JAVA \
+		UHDR_BUILD_PACKAGING \
+		UHDR_BUILD_TESTS \
+		UHDR_ENABLE_GLES \
+		UHDR_ENABLE_LOGS \
+		UHDR_ENABLE_WERROR \
+		UHDR_WRITE_XMP
+CMAKE_ON=	BUILD_SHARED_LIBS \
+		BUILD_STATIC_LIBS \
+		UHDR_BUILD_EXAMPLES \
+		UHDR_ENABLE_INSTALL \
+		UHDR_ENABLE_INTRINSICS \
+		UHDR_WRITE_ISO
+USE_LDCONFIG=	yes
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	google
+
+.include <bsd.port.mk>

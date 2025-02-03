@@ -511,6 +511,7 @@
     SUBDIR += libspiro
     SUBDIR += libspng
     SUBDIR += libsvgtiny
+    SUBDIR += libultrahdr
     SUBDIR += libvisual
     SUBDIR += libvisual04
     SUBDIR += libvisual04-plugins

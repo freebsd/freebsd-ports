@@ -1,0 +1,7 @@
+bin/ultrahdr_app
+include/ultrahdr_api.h
+lib/libuhdr.a
+lib/libuhdr.so
+lib/libuhdr.so.1
+lib/libuhdr.so.1.4.0
+libdata/pkgconfig/libuhdr.pc
