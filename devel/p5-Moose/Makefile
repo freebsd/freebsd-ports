@@ -13,7 +13,6 @@ WWW=		https://metacpan.org/release/Moose
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-# Do not add p5-Data-Visitor to TEST_DEPENDS to avoid cyclic dependency
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Class-Load>=0.09:devel/p5-Class-Load \
 		p5-Class-Load-XS>=0.01:devel/p5-Class-Load-XS \
