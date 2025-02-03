@@ -1,10 +1,10 @@
---- pyproject.toml.orig	2024-12-26 06:59:54 UTC
+--- pyproject.toml.orig	2025-01-20 15:50:25 UTC
 +++ pyproject.toml
 @@ -36,7 +36,6 @@ dependencies = [
      "Development Status :: 5 - Production/Stable"
  ]
  dependencies = [
--  "certifi; (platform_python_implementation != 'CPython' or python_full_version < '3.7.10') or (platform_system != 'Darwin' and platform_system != 'Windows' and platform_system != 'Linux') or (platform_machine != 'x86_64' and platform_machine != 's390x' and platform_machine != 'aarch64' and platform_machine != 'armv7l' and platform_machine != 'ppc64le' and platform_machine != 'ppc64' and platform_machine != 'AMD64' and platform_machine != 'arm64' and platform_machine != 'ARM64' and platform_machine != 'i686') or (platform_python_implementation == 'PyPy' and python_version >= '3.11')",
+-  "certifi; (platform_python_implementation != 'CPython' or python_full_version < '3.7.10') or (platform_system != 'Darwin' and platform_system != 'Windows' and platform_system != 'Linux') or (platform_machine != 'x86_64' and platform_machine != 's390x' and platform_machine != 'aarch64' and platform_machine != 'armv7l' and platform_machine != 'ppc64le' and platform_machine != 'ppc64' and platform_machine != 'AMD64' and platform_machine != 'arm64' and platform_machine != 'ARM64' and platform_machine != 'i686' and platform_machine != 'x86') or (platform_python_implementation == 'PyPy' and python_version >= '3.11')",
  ]
  dynamic = ["version"]
  
