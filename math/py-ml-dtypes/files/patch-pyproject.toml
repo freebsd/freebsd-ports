@@ -1,4 +1,4 @@
---- pyproject.toml.orig	2024-09-13 21:53:12 UTC
+--- pyproject.toml.orig	2025-01-07 02:25:37 UTC
 +++ pyproject.toml
 @@ -17,11 +17,7 @@ dependencies = [
  # pip dependencies of the project
@@ -18,7 +18,7 @@
      # We build against the most recent supported NumPy 2.0 release;
      # see https://github.com/numpy/numpy/issues/27265
 -    "numpy~=2.0",
--    "setuptools~=73.0.1",
+-    "setuptools~=75.7.0",
 +    "numpy>=1.26.0",
 +    "setuptools",
  ]
