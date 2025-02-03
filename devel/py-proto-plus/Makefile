@@ -1,5 +1,5 @@
 PORTNAME=	proto-plus
-PORTVERSION=	1.25.0
+PORTVERSION=	1.26.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -7,7 +7,8 @@ DISTNAME=	proto_plus-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Beautiful, Pythonic protocol buffers
-WWW=		https://github.com/googleapis/proto-plus-python
+WWW=		https://googleapis.dev/python/proto-plus/latest/ \
+		https://github.com/googleapis/proto-plus-python
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
