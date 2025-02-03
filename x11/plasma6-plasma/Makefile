@@ -13,7 +13,7 @@ USES=		kde:6 metaport qt:6
 USE_KDE=	${_USE_PLASMA_ALL:Nplasma-pa}
 
 OPTIONS_DEFINE=		PULSEAUDIO QT5
-OPTIONS_DEFAULT=	PULSEAUDIO
+OPTIONS_DEFAULT=	${OPTIONS_DEFINE}
 
 PULSEAUDIO_USE=		KDE=plasma-pa:run
 QT5_DESC=		Install Plasma 6 integration plugins for Qt5 applications
