@@ -1,5 +1,5 @@
 PORTNAME=	oslo.concurrency
-PORTVERSION=	6.2.0
+PORTVERSION=	7.0.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -28,6 +28,6 @@ NO_ARCH=	yes
 OPTIONS_DEFINE=	EVENTLET
 EVENTLET_DESC=	Concurrent support via eventlet
 
-EVENTLET_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}eventlet>=0.27.0:net/py-eventlet@${PY_FLAVOR}
+EVENTLET_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}eventlet>=0.35.2:net/py-eventlet@${PY_FLAVOR}
 
 .include <bsd.port.mk>
