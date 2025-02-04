@@ -1,7 +1,6 @@
 PORTNAME=	signal-desktop
 DISTVERSIONPREFIX=	v
-DISTVERSION=	7.38.0
-PORTREVISION=	2
+DISTVERSION=	7.40.0
 CATEGORIES=	net-im
 MASTER_SITES=	LOCAL/mikael/signal-desktop/:npm \
 		https://build-artifacts.signal.org/desktop/:sqlcipher
@@ -52,6 +51,7 @@ LIB_DEPENDS=	libasound.so:audio/alsa-lib \
 		libpci.so:devel/libpci \
 		libpng16.so:graphics/png \
 		libsnappy.so:archivers/snappy \
+		libsndio.so:audio/sndio \
 		libwayland-client.so:graphics/wayland \
 		libwebp.so:graphics/webp \
 		libxkbcommon.so:x11/libxkbcommon \
@@ -90,7 +90,7 @@ _BUILD_DATE=	$$(date +'%s')
 ELECTRON_VER_MAJOR=	32
 ESBUILD_VERSION=	0.24.0
 
-SQLCIPHER=	sqlcipher-v2-4.6.1-signal-patch2--0.2.0-b0dbebe5b2d81879984bfa2318ba364fb4d436669ddc1668d2406eaaaee40b7e
+SQLCIPHER=	sqlcipher-v2-4.6.1-signal-patch2--0.2.1-9d2afebba9bfd8f18afd36a90a800df84fcf6975defacbfa1e1c5e1e8a6d05f1
 
 NODE_ARCH=	${ARCH:S/aarch64/arm64/:S/amd64/x64/}
 APP_OUT_DIR=	linux-${ARCH:S/aarch64/arm64-/:S/amd64//}unpacked
