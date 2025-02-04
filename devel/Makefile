@@ -5556,7 +5556,6 @@
     SUBDIR += py-pydevd
     SUBDIR += py-pydispatcher
     SUBDIR += py-pydocstyle
-    SUBDIR += py-pydrive
     SUBDIR += py-pyee
     SUBDIR += py-pyee11
     SUBDIR += py-pyelftools
