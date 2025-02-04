@@ -3674,7 +3674,6 @@
     SUBDIR += p5-Test-Fixture-DBIC-Schema
     SUBDIR += p5-Test-Future-IO-Impl
     SUBDIR += p5-Test-Group
-    SUBDIR += p5-Test-HTML-Tidy
     SUBDIR += p5-Test-Harness
     SUBDIR += p5-Test-Harness-Straps
     SUBDIR += p5-Test-HasVersion
