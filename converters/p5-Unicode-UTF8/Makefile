@@ -1,6 +1,6 @@
 PORTNAME=	Unicode-UTF8
 PORTVERSION=	0.62
-CATEGORIES=	textproc converters perl5
+CATEGORIES=	converters perl5 textproc
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
