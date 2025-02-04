@@ -582,7 +582,6 @@
     SUBDIR += p5-CGI-Application-Plugin-Forward
     SUBDIR += p5-CGI-Application-Plugin-HTDot
     SUBDIR += p5-CGI-Application-Plugin-HTMLPrototype
-    SUBDIR += p5-CGI-Application-Plugin-HtmlTidy
     SUBDIR += p5-CGI-Application-Plugin-JSON
     SUBDIR += p5-CGI-Application-Plugin-LinkIntegrity
     SUBDIR += p5-CGI-Application-Plugin-LogDispatch
