@@ -1,5 +1,6 @@
 PORTNAME=	squid
 DISTVERSION=	6.12
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://www2.pl.squid-cache.org/Versions/v6/ \
 		http://www1.il.squid-cache.org/Versions/v6/ \
@@ -194,6 +195,7 @@ STACKTRACES_LDFLAGS=		-lunwind
 STACKTRACES_EXTRA_PATCHES=	${FILESDIR}/extra-patch-gen-stacktrace
 STACKTRACES_VARS=		STRIP=""
 TDB_LIB_DEPENDS=		libtdb.so:databases/tdb
+TDB_USES=			pkgconfig:build
 TDB_CONFIGURE_WITH=		tdb
 TDB_VARS=			EXTERNAL_ACL+="time_quota session"
 TP_IPFW_CONFIGURE_ENABLE=	ipfw-transparent
