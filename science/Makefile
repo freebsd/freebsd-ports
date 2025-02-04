@@ -251,6 +251,7 @@
     SUBDIR += p5-Chemistry-MidasPattern
     SUBDIR += p5-Chemistry-Mok
     SUBDIR += p5-Chemistry-Mol
+    SUBDIR += p5-Chemistry-OpenSMILES
     SUBDIR += p5-Chemistry-Pattern
     SUBDIR += p5-Chemistry-Reaction
     SUBDIR += p5-Chemistry-Ring
