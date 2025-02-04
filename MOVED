@@ -4123,3 +4123,4 @@ x11-toolkits/qml-box2d@qt5||2025-02-03|Unflavorize port, qt5 flavor is no longer
 x11-toolkits/qml-box2d@qt6|x11-toolkits/qml-box2d|2025-02-03|Unflavorize port, as it is now qt6 only
 databases/mysql90-client|databases/mysql91-client|2025-02-04|Has expired: MySQL 9.0 is no longer supported by the vendor
 databases/mysql90-server|databases/mysql91-server|2025-02-04|Has expired: MySQL 9.0 is no longer supported by the vendor
+textproc/docproj-legacy|textproc/docproj|2025-02-04|Has expired: Old version of documentation set
