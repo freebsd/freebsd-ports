@@ -24,8 +24,7 @@ SUB_FILES=	pkg-message
 OPTIONS_DEFINE=	DOCS
 
 post-patch:
-	@${SED} -i '' -e '25d' ${WRKSRC}/src/mod/python.mod/pycmds.c
-	@${SED} -e 's#%%PREFIX%%#${PREFIX}#g' ${WRKSRC}/eggdrop.conf \
+	@${REINPLACE_CMD} -e 's#%%PREFIX%%#${PREFIX}#g' ${WRKSRC}/eggdrop.conf \
 		> ${WRKSRC}/eggdrop.conf.sample
 
 post-configure:
