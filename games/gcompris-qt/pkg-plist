@@ -178,6 +178,7 @@ share/applications/org.kde.gcompris.desktop
 %%DATADIR%%/rcc/scalesboard_weight_avoirdupois.rcc
 %%DATADIR%%/rcc/share.rcc
 %%DATADIR%%/rcc/simplepaint.rcc
+%%DATADIR%%/rcc/sketch.rcc
 %%DATADIR%%/rcc/smallnumbers.rcc
 %%DATADIR%%/rcc/smallnumbers2.rcc
 %%DATADIR%%/rcc/solar_system.rcc
@@ -186,12 +187,16 @@ share/applications/org.kde.gcompris.desktop
 %%DATADIR%%/rcc/superbrain.rcc
 %%DATADIR%%/rcc/tangram.rcc
 %%DATADIR%%/rcc/target.rcc
+%%DATADIR%%/rcc/tens_complement_calculate.rcc
 %%DATADIR%%/rcc/tens_complement_find.rcc
 %%DATADIR%%/rcc/tens_complement_swap.rcc
 %%DATADIR%%/rcc/tens_complement_use.rcc
 %%DATADIR%%/rcc/tic_tac_toe.rcc
 %%DATADIR%%/rcc/tic_tac_toe_2players.rcc
 %%DATADIR%%/rcc/traffic.rcc
+%%DATADIR%%/rcc/vertical_addition.rcc
+%%DATADIR%%/rcc/vertical_subtraction.rcc
+%%DATADIR%%/rcc/vertical_subtraction_compensation.rcc
 %%DATADIR%%/rcc/watercycle.rcc
 %%DATADIR%%/rcc/wordsgame.rcc
 %%DATADIR%%/translations/gcompris_ar.qm
@@ -218,6 +223,7 @@ share/applications/org.kde.gcompris.desktop
 %%DATADIR%%/translations/gcompris_hu.qm
 %%DATADIR%%/translations/gcompris_id.qm
 %%DATADIR%%/translations/gcompris_it.qm
+%%DATADIR%%/translations/gcompris_ka.qm
 %%DATADIR%%/translations/gcompris_lt.qm
 %%DATADIR%%/translations/gcompris_lv.qm
 %%DATADIR%%/translations/gcompris_mk.qm
@@ -229,6 +235,7 @@ share/applications/org.kde.gcompris.desktop
 %%DATADIR%%/translations/gcompris_pt_BR.qm
 %%DATADIR%%/translations/gcompris_ro.qm
 %%DATADIR%%/translations/gcompris_ru.qm
+%%DATADIR%%/translations/gcompris_sa.qm
 %%DATADIR%%/translations/gcompris_sk.qm
 %%DATADIR%%/translations/gcompris_sl.qm
 %%DATADIR%%/translations/gcompris_sq.qm

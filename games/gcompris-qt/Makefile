@@ -1,5 +1,5 @@
 PORTNAME=	gcompris-qt
-DISTVERSION=	4.3
+DISTVERSION=	25.0
 CATEGORIES=	games education kde
 MASTER_SITES=	https://gcompris.net/download/qt/src/
 
@@ -12,18 +12,27 @@ LICENSE_COMB=		multi
 LICENSE_FILE_AGPLv3=	${WRKSRC}/LICENSES/AGPL-3.0-only.txt
 LICENSE_FILE_GPLv3=	${WRKSRC}/LICENSES/GPL-3.0-or-later.txt
 
-# libqmlbox2d.so is a QML plugin...don't use LIB_DEPENDS
-BUILD_DEPENDS=	${_BOX2D_PATH}/libqmlbox2d.so:x11-toolkits/qml-box2d@qt5
-RUN_DEPENDS=	${_BOX2D_PATH}/libqmlbox2d.so:x11-toolkits/qml-box2d@qt5
+BUILD_DEPENDS=	${LOCALBASE}/include/vulkan/vulkan.h:graphics/vulkan-headers
 
-USES=		cmake kde:5 qt:5 tar:xz
+# libqmlbox2d.so is a QML plugin...don't use LIB_DEPENDS
+BUILD_DEPENDS=	${_BOX2D_PATH}/libqmlbox2d.so:x11-toolkits/qml-box2d
+RUN_DEPENDS=	${_BOX2D_PATH}/libqmlbox2d.so:x11-toolkits/qml-box2d
+
+USES=		cmake compiler:c++17-lang gettext-tools gl kde:6 qt:6 tar:xz
+USE_GL=		gl opengl # GLX
 USE_KDE=	doctools:build ecm:build
-USE_QT=		charts core declarative graphicaleffects gui multimedia \
-		network quickcontrols2 sensors svg widgets \
-		buildtools:build linguisttools:build qmake:build testlib:build \
-		imageformats:run
+USE_QT=		base charts declarative multimedia sensors svg \
+		tools:build imageformats:run
 
 CMAKE_ARGS=	-DQML_BOX2D_LIBRARY=${_BOX2D_PATH}
+
+OPTIONS_DEFINE=		WAYLAND
+OPTIONS_DEFAULT=	WAYLAND
+
+WAYLAND_LIB_DEPENDS=	libwayland-client.so:graphics/wayland \
+			libxkbcommon.so:x11/libxkbcommon
+WAYLAND_USE=		QT=wayland
+WAYLAND_CMAKE_BOOL_OFF=	CMAKE_DISABLE_FIND_PACKAGE_Qt6WaylandClient
 
 _BOX2D_PATH=	${QT_QMLDIR}/Box2D
 
