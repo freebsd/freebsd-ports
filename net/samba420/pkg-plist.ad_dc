@@ -30,6 +30,7 @@ include/samba4/dcerpc_server.h
 %%SAMBA4_MODULEDIR%%/ldb/aclread.so
 %%SAMBA4_MODULEDIR%%/ldb/anr.so
 %%SAMBA4_MODULEDIR%%/ldb/audit_log.so
+%%SAMBA4_MODULEDIR%%/ldb/count_attrs.so
 %%SAMBA4_MODULEDIR%%/ldb/descriptor.so
 %%SAMBA4_MODULEDIR%%/ldb/dirsync.so
 %%SAMBA4_MODULEDIR%%/ldb/dns_notify.so
@@ -39,8 +40,10 @@ include/samba4/dcerpc_server.h
 %%SAMBA4_MODULEDIR%%/ldb/extended_dn_out.so
 %%SAMBA4_MODULEDIR%%/ldb/extended_dn_store.so
 %%SAMBA4_MODULEDIR%%/ldb/group_audit_log.so
+%%SAMBA4_MODULEDIR%%/ldb/ildap.so
 %%SAMBA4_MODULEDIR%%/ldb/instancetype.so
 %%SAMBA4_MODULEDIR%%/ldb/lazy_commit.so
+%%SAMBA4_MODULEDIR%%/ldb/ldbsamba_extensions.so
 %%SAMBA4_MODULEDIR%%/ldb/linked_attributes.so
 %%SAMBA4_MODULEDIR%%/ldb/new_partition.so
 %%SAMBA4_MODULEDIR%%/ldb/objectclass_attrs.so
