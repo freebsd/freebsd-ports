@@ -1,5 +1,5 @@
 PORTNAME=	grimoire-elk
-DISTVERSION=	1.3.3
+DISTVERSION=	1.3.4
 CATEGORIES=	textproc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -27,7 +27,7 @@ RUN_DEPENDS=	\
 	${PYTHON_PKGNAMEPREFIX}perceval-puppet>=1.0.11:devel/py-perceval-puppet@${PY_FLAVOR} \
 	${PYTHON_PKGNAMEPREFIX}perceval-weblate>=1.0.11:devel/py-perceval-weblate@${PY_FLAVOR} \
 	${PYTHON_PKGNAMEPREFIX}requests>=2.7.0:www/py-requests@${PY_FLAVOR} \
-	${PYTHON_PKGNAMEPREFIX}sortinghat>=1.6.1:devel/py-sortinghat@${PY_FLAVOR} \
+	${PYTHON_PKGNAMEPREFIX}sortinghat>=1.6.2:devel/py-sortinghat@${PY_FLAVOR} \
 	${PYTHON_PKGNAMEPREFIX}statsmodels>=0.9.0:math/py-statsmodels@${PY_FLAVOR} \
 	${PYTHON_PKGNAMEPREFIX}urllib3>=1.26:net/py-urllib3@${PY_FLAVOR}
 
