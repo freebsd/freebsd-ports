@@ -4127,3 +4127,4 @@ textproc/docproj-legacy|textproc/docproj|2025-02-04|Has expired: Old version of 
 devel/kore||2025-02-04|Has expired: Unmaintained in tree for years and broken for months
 www/searx||2025-02-04|Has expired: Upstream repo archived Sep 7 2023
 databases/xtrabackup81|databases/xtrabackup84|2025-02-04|Has expired: Unsupported upstream, consider migrating to databases/xtrabackup84
+games/allacrost||2025-02-04|Has expired: Fails to build and upstream is gone

@@ -44,7 +44,6 @@
     SUBDIR += alienarena-data
     SUBDIR += alienblaster
     SUBDIR += alienwave
-    SUBDIR += allacrost
     SUBDIR += amnesia-tdd
     SUBDIR += amoebax
     SUBDIR += an
