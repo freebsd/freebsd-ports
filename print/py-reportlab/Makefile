@@ -1,5 +1,5 @@
 PORTNAME=	reportlab
-DISTVERSION=	4.2.0
+DISTVERSION=	4.2.2
 CATEGORIES=	print python
 MASTER_SITES=	PYPI \
 		https://www.reportlab.com/ftp/
