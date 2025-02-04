@@ -130,6 +130,7 @@
     SUBDIR += p5-Unicode-RecursiveDowngrade
     SUBDIR += p5-Unicode-String
     SUBDIR += p5-Unicode-Stringprep
+    SUBDIR += p5-Unicode-UTF8
     SUBDIR += p5-Unicode-UTF8simple
     SUBDIR += p5-WAP-wbxml
     SUBDIR += p5-XML-WBXML

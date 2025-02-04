@@ -1,0 +1,4 @@
+Unicode::UTF8 - Encoding and decoding of UTF-8 encoding form
+
+This module provides functions to encode and decode UTF-8 encoding form as
+specified by Unicode and ISO/IEC 10646:2011.
