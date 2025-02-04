@@ -1,6 +1,5 @@
 PORTNAME=	sympa
-DISTVERSION=	6.2.72
-PORTREVISION=	2
+DISTVERSION=	6.2.76
 CATEGORIES=	mail
 
 MAINTAINER=	dgeo@centrale-med.fr
@@ -50,6 +49,7 @@ RUN_DEPENDS=	mhonarc>=0:www/mhonarc \
 		p5-Term-ProgressBar>=2.09:devel/p5-Term-ProgressBar \
 		p5-Time-HiRes>=1.29:devel/p5-Time-HiRes \
 		p5-Unicode-LineBreak>=2019.001:textproc/p5-Unicode-LineBreak \
+		p5-Unicode-UTF8>=0.62:converters/p5-Unicode-UTF8 \
 		p5-URI>=1.35:net/p5-URI \
 		p5-XML-LibXML>=1.70:textproc/p5-XML-LibXML
 

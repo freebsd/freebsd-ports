@@ -3,7 +3,7 @@ AddDefaultCharset UTF-8
 DirectoryIndex wws
 Options +Indexes
 # you may replace 'fcgid' by 'fastcgi'
-LoadModule fcgid_module libexec/apache2/mod_fcgid.so
+LoadModule fcgid_module libexec/apache24/mod_fcgid.so
 
 <Location /wws>
     SetHandler fcgid-script
@@ -14,5 +14,5 @@ LoadModule fcgid_module libexec/apache2/mod_fcgid.so
 <Directory %%PREFIX%%/libexec/sympa>
     Require all granted
 </Directory>
-Alias /sympa-static %%DATADIR%%/static
+Alias /static-sympa %%DATADIR%%/static
 ScriptAlias /wws %%PREFIX%%/libexec/sympa/wwsympa-wrapper

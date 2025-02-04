@@ -218,11 +218,12 @@ libexec/sympa/Sympa/Tracking.pm
 libexec/sympa/Sympa/Upgrade.pm
 libexec/sympa/Sympa/User.pm
 libexec/sympa/Sympa/WWW/Auth.pm
+libexec/sympa/Sympa/WWW/Crawlers.pm
 libexec/sympa/Sympa/WWW/FastCGI.pm
 libexec/sympa/Sympa/WWW/Marc.pm
 libexec/sympa/Sympa/WWW/Marc/Search.pm
 libexec/sympa/Sympa/WWW/SOAP.pm
-libexec/sympa/Sympa/WWW/SOAP/Transport.pm
+libexec/sympa/Sympa/WWW/SOAP/FastCGI.pm
 libexec/sympa/Sympa/WWW/Session.pm
 libexec/sympa/Sympa/WWW/SharedDocument.pm
 libexec/sympa/Sympa/WWW/Tools.pm
@@ -451,6 +452,7 @@ share/man/man3/Sympa::Tools::Text.3Sympa.gz
 share/man/man3/Sympa::Tools::Time.3Sympa.gz
 share/man/man3/Sympa::Tracking.3Sympa.gz
 share/man/man3/Sympa::User.3Sympa.gz
+share/man/man3/Sympa::WWW::Crawlers.3Sympa.gz
 share/man/man3/Sympa::WWW::FastCGI.3Sympa.gz
 share/man/man3/Sympa::WWW::Marc::Search.3Sympa.gz
 share/man/man3/Sympa::WWW::Session.3Sympa.gz
@@ -458,7 +460,6 @@ share/man/man3/Sympa::WWW::SharedDocument.3Sympa.gz
 share/man/man5/auth.conf.5.gz
 share/man/man5/automatic_lists_description.conf.5.gz
 share/man/man5/charset.conf.5.gz
-share/man/man5/crawlers_detection.conf.5.gz
 share/man/man5/edit_list.conf.5.gz
 share/man/man5/ldap_alias_manager.conf.5.gz
 share/man/man5/list_config.5.gz
@@ -565,7 +566,6 @@ share/locale/zh_TW/LC_MESSAGES/sympa.mo
 share/locale/zh_TW/LC_MESSAGES/web_help.mo
 %%DATADIR%%/defaults/auth.conf
 %%DATADIR%%/defaults/charset.conf
-%%DATADIR%%/defaults/crawlers_detection.conf
 %%DATADIR%%/defaults/create_list.conf
 %%DATADIR%%/defaults/create_list_templates/confidential/comment.tt2
 %%DATADIR%%/defaults/create_list_templates/confidential/config.tt2
@@ -974,6 +974,7 @@ share/locale/zh_TW/LC_MESSAGES/web_help.mo
 %%DATADIR%%/static/js/jquery-minicolors/jquery.minicolors.js
 %%DATADIR%%/static/js/jquery-minicolors/jquery.minicolors.min.js
 %%DATADIR%%/static/js/jquery-minicolors/jquery.minicolors.png
+%%DATADIR%%/static/js/jquery-ui/LICENSE.txt
 %%DATADIR%%/static/js/jquery-ui/images/ui-bg_flat_0_aaaaaa_40x100.png
 %%DATADIR%%/static/js/jquery-ui/images/ui-bg_flat_75_ffffff_40x100.png
 %%DATADIR%%/static/js/jquery-ui/images/ui-bg_glass_55_fbf9ee_1x400.png
