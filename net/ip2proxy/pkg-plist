@@ -1,5 +1,7 @@
+bin/ip2proxy
 include/IP2Proxy.h
 lib/libIP2Proxy.a
 lib/libIP2Proxy.so
 lib/libIP2Proxy.so.2
 lib/libIP2Proxy.so.2.0.0
+share/man/man1/ip2proxy.1.gz
