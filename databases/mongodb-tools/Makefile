@@ -1,6 +1,5 @@
 PORTNAME=	mongodb-tools
-DISTVERSION=	100.10.0
-PORTREVISION=	1
+DISTVERSION=	100.11.0
 CATEGORIES=	databases
 
 MAINTAINER=	ronald@FreeBSD.org
@@ -10,13 +9,18 @@ WWW=		https://www.mongodb.com/docs/database-tools/
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-USES=		compiler:c++14-lang go localbase
+USES=		compiler:c++14-lang go:1.22 localbase
 USE_GITHUB=	yes
 GH_ACCOUNT=	mongodb
 GH_PROJECT=	mongo-tools
 
 GO_PKGNAME=	github.com/${GH_ACCOUNT}/${GH_PROJECT}
 GO_BUILDFLAGS=	-tags "${USE_MY_TAGS}"
+
+# This should be TEST_ENV according to bsd.port.mk, but Uses/go.mk passes
+# MAKE_ENV instead of TEST_ENV in the do-test target.
+# https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=284387
+MAKE_ENV+=		TOOLS_TESTING_UNIT=true
 
 CONFLICTS_INSTALL=	mongodb42-tools
 
