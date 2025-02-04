@@ -1,5 +1,5 @@
 PORTNAME=	podman-suite
-PORTVERSION=	20241023
+PORTVERSION=	20250203
 CATEGORIES=	sysutils
 
 MAINTAINER=	dfr@FreeBSD.org
@@ -8,7 +8,8 @@ WWW=		https://podman.io/
 
 USES=		metaport
 
-RUN_DEPENDS=	buildah>=0:sysutils/buildah  \
+RUN_DEPENDS=	buildah>=0:sysutils/buildah \
+		catatonit>=0:sysutils/catatonit \
 		podman>=0:sysutils/podman \
 		skopeo>=0:sysutils/skopeo
 
