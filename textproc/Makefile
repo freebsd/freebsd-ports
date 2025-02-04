@@ -2095,7 +2095,6 @@
     SUBDIR += textql
     SUBDIR += the_silver_searcher
     SUBDIR += ti-hunspell
-    SUBDIR += tidyp
     SUBDIR += tinyxml
     SUBDIR += tinyxml2
     SUBDIR += tk-aspell
