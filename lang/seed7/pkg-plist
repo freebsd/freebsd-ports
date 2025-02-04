@@ -10,6 +10,7 @@ lib/seed7/lib/aes.s7i
 lib/seed7/lib/ar.s7i
 lib/seed7/lib/arc4.s7i
 lib/seed7/lib/archive_base.s7i
+lib/seed7/lib/archive.s7i
 lib/seed7/lib/array.s7i
 lib/seed7/lib/asn1.s7i
 lib/seed7/lib/basearray.s7i
@@ -28,6 +29,7 @@ lib/seed7/lib/boolean.s7i
 lib/seed7/lib/browser.s7i
 lib/seed7/lib/bstring.s7i
 lib/seed7/lib/bytedata.s7i
+lib/seed7/lib/bzip2.s7i
 lib/seed7/lib/cards.s7i
 lib/seed7/lib/category.s7i
 lib/seed7/lib/cc_conf.s7i
@@ -200,6 +202,7 @@ lib/seed7/lib/rpmext.s7i
 lib/seed7/lib/scanfile.s7i
 lib/seed7/lib/scanjson.s7i
 lib/seed7/lib/scanstri.s7i
+lib/seed7/lib/scantoml.s7i
 lib/seed7/lib/seed7_05.s7i
 lib/seed7/lib/set.s7i
 lib/seed7/lib/shell.s7i
