@@ -4,15 +4,14 @@ DISTVERSION=	8.0.2
 PORTREVISION=	2
 CATEGORIES=	net
 
-MAINTAINER=	ler@FreeBSD.org
+MAINTAINER=	alster@vinterdalen.se
 COMMENT=	Berkeley Open Infrastructure for Network Computing client
-WWW=		https://boinc.berkeley.edu/
+WWW=		https://boinc.berkeley.edu/ \
+		https://github.com/BOINC/boinc/
 
 LICENSE=	LGPL3
 
-USES=		autoreconf compiler:c++11-lang dos2unix gmake libtool \
-		pkgconfig ssl tar
-DOS2UNIX_GLOB=	*.xpm
+USES=		autoreconf compiler:c++11-lang gmake libtool pkgconfig ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	BOINC
 GH_PROJECT=	boinc
