@@ -16,6 +16,7 @@ bin/yed
 %%DATADIR%%/lib/imageio-tga.jar
 %%DATADIR%%/lib/imageio-thumbsdb.jar
 %%DATADIR%%/lib/imageio-tiff.jar
+%%DATADIR%%/lib/imageio-webp.jar
 %%DATADIR%%/lib/vectorgraphics.jar
 %%DATADIR%%/license.html
 %%DATADIR%%/thirdpartylicenses.html
