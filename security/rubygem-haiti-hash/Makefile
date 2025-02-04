@@ -1,5 +1,5 @@
 PORTNAME=	haiti-hash
-DISTVERSION=	2.1.0
+DISTVERSION=	3.0.0
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 
@@ -11,7 +11,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 RUN_DEPENDS=	rubygem-docopt>=0.6<1:devel/rubygem-docopt \
-		rubygem-paint>=2.2<3:devel/rubygem-paint
+		rubygem-paint>=2.3<3:devel/rubygem-paint
 
 USES=		gem
 
