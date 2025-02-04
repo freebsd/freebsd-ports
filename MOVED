@@ -4117,3 +4117,5 @@ x11/plasma5-plasma-bigscreen||2025-02-03|No releases for Plasma 6
 x11/plasma5-plasma-desktop|x11/plasma6-plasma-desktop|2025-02-03|Moved to Plasma 6
 x11/plasma5-plasma-integration|x11/plasma6-plasma-integration|2025-02-03|Moved to Plasma 6
 x11/plasma5-plasma-workspace|x11/plasma6-plasma-workspace|2025-02-03|Moved to Plasma 6
+www/falkon@default|www/falkon@kf6|2025-02-03|Flavor was renamed to use a more standard PKGNAMESUFFIX
+www/falkon@qtonly|www/falkon@qt6|2025-02-03|Flavor was renamed to use a more standard PKGNAMESUFFIX
