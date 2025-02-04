@@ -4122,3 +4122,4 @@ www/falkon@qtonly|www/falkon@qt6|2025-02-03|Flavor was renamed to use a more sta
 x11-toolkits/qml-box2d@qt5||2025-02-03|Unflavorize port, qt5 flavor is no longer used in ports tree
 x11-toolkits/qml-box2d@qt6|x11-toolkits/qml-box2d|2025-02-03|Unflavorize port, as it is now qt6 only
 databases/mysql90-client|databases/mysql91-client|2025-02-04|Has expired: MySQL 9.0 is no longer supported by the vendor
+databases/mysql90-server|databases/mysql91-server|2025-02-04|Has expired: MySQL 9.0 is no longer supported by the vendor
