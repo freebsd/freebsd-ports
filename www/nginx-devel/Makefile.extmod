@@ -118,7 +118,7 @@ HTTP_IP2LOCATION_GH_TUPLE=	ip2location:ip2location-nginx:5f2c59a:ip2location
 HTTP_IP2LOCATION_LIB_DEPENDS=	libIP2Location.so:net/ip2location
 HTTP_IP2LOCATION_VARS=		DSO_EXTMODS+=ip2location
 
-HTTP_IP2PROXY_GH_TUPLE=		ip2location:ip2proxy-nginx:02ce447:ip2proxy
+HTTP_IP2PROXY_GH_TUPLE=		ip2location:ip2proxy-nginx:f3e7e7d:ip2proxy
 HTTP_IP2PROXY_LIB_DEPENDS=	libIP2Proxy.so:net/ip2proxy
 HTTP_IP2PROXY_VARS=		DSO_EXTMODS+=ip2proxy
 
@@ -218,7 +218,6 @@ LUASTREAM_CONFIGURE_ENV=LUAJIT_INC=${LOCALBASE}/include/luajit-2.1 \
 			LUAJIT_LIB=${LOCALBASE}/lib
 LUASTREAM_GH_TUPLE=	openresty:stream-lua-nginx-module:v0.0.16:luastream
 LUASTREAM_VARS=		DSO_EXTMODS+=luastream
-LUASTREAM_EXTRA_PATCHES=${PATCHDIR}/extra-patch-stream-lua-nginx-module_config
 
 LINK_GH_TUPLE=		Taymindis:nginx-link-function:3.2.4:link
 LINK_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-nginx-link-function-config \
