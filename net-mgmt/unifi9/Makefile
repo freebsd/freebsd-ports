@@ -1,5 +1,5 @@
 PORTNAME=	unifi9
-PORTVERSION=	9.0.108
+PORTVERSION=	9.0.114
 PORTREVISION?=	0
 CATEGORIES=	net-mgmt java
 MASTER_SITES=	http://dl.ubnt.com/unifi/%SUBDIR%/:unifi \
@@ -12,7 +12,7 @@ DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 EXTRACT_ONLY=	unifi_sysvinit_all.deb
 
 MAINTAINER=	otis@FreeBSD.org
-COMMENT=	UniFi Controller v8
+COMMENT=	UniFi Controller v9
 WWW=		https://help.ui.com/hc/en-us/categories/200320654-UniFi-Wireless
 
 RUN_DEPENDS=	snappyjava>0:archivers/snappy-java
