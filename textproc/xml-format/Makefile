@@ -5,12 +5,15 @@ CATEGORIES=	textproc
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	XML beautifier
-WWW=		https://github.com/outpaddling/xml-format/
+WWW=		https://github.com/outpaddling/xml-format
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+LIB_DEPENDS+=	libxtend.so:devel/libxtend
+
 USE_GITHUB=	yes
+
 GH_ACCOUNT=	outpaddling
 
 MAKE_ENV+=	DATADIR=${DATADIR} MANPREFIX=${PREFIX}/share
