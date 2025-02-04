@@ -10,6 +10,7 @@
     SUBDIR += R-cran-httpuv
     SUBDIR += R-cran-httr
     SUBDIR += R-cran-httr2
+    SUBDIR += R-cran-jose
     SUBDIR += R-cran-jquerylib
     SUBDIR += R-cran-miniUI
     SUBDIR += R-cran-pkgdown
