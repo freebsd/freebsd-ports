@@ -721,7 +721,7 @@ kde-ksystemstats_PORT=		sysutils/plasma${_KDE_VERSION}-ksystemstats
 kde-ksystemstats_PATH=		${KDE_PREFIX}/bin/ksystemstats
 
 kde-kwallet-pam_PORT=		security/plasma${_KDE_VERSION}-kwallet-pam
-kde-kwallet-pam_PATH=		${KDE_PREFIX}/lib/security/pam_kwallet5.so
+kde-kwallet-pam_PATH=		${KDE_PREFIX}/lib/pam_kwallet5.so
 
 kde-kwin_PORT=			x11-wm/plasma${_KDE_VERSION}-kwin
 kde-kwin_PATH=			${KDE_PREFIX}/bin/kwin_x11
