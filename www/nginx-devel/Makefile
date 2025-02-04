@@ -1,6 +1,6 @@
 PORTNAME?=	nginx
 PORTVERSION=	1.27.3
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	www
 MASTER_SITES=	https://nginx.org/download/ \
 		LOCAL/osa

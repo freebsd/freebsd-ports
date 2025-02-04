@@ -217,7 +217,7 @@ LUASTREAM_LIB_DEPENDS=	libluajit-5.1.so:lang/luajit-openresty
 LUASTREAM_RUN_DEPENDS=	lua-resty-core>0:www/lua-resty-core
 LUASTREAM_CONFIGURE_ENV=LUAJIT_INC=${LOCALBASE}/include/luajit-2.1 \
 			LUAJIT_LIB=${LOCALBASE}/lib
-LUASTREAM_GH_TUPLE=	openresty:stream-lua-nginx-module:bea8a0c:luastream
+LUASTREAM_GH_TUPLE=	openresty:stream-lua-nginx-module:v0.0.16:luastream
 LUASTREAM_VARS=		DSO_EXTMODS+=luastream
 LUASTREAM_EXTRA_PATCHES=${PATCHDIR}/extra-patch-stream-lua-nginx-module_config
 
@@ -226,7 +226,7 @@ LINK_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-nginx-link-function-config \
 			${PATCHDIR}/extra-patch-ngx_link_func_module.c
 LINK_VARS=		DSO_EXTMODS+=link
 
-MEMC_GH_TUPLE=		openresty:memc-nginx-module:v0.19:memc
+MEMC_GH_TUPLE=		openresty:memc-nginx-module:v0.20:memc
 MEMC_VARS=		DSO_EXTMODS+=memc
 
 MODSECURITY3_IMPLIES=		HTTP_ADDITION HTTP_IMAGE_FILTER HTTP_GUNZIP_FILTER HTTP_XSLT
