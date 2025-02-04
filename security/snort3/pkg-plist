@@ -205,6 +205,7 @@ include/snort/pub_sub/opportunistic_tls_event.h
 include/snort/pub_sub/packet_events.h
 include/snort/pub_sub/reputation_events.h
 include/snort/pub_sub/rna_events.h
+include/snort/pub_sub/shadowtraffic_aggregator.h
 include/snort/pub_sub/sip_events.h
 include/snort/pub_sub/smb_events.h
 include/snort/pub_sub/ssh_events.h
