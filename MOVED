@@ -4133,3 +4133,4 @@ sysutils/pcns||2025-02-04|Has expired: not supported upstream
 devel/py-pydrive||2025-02-04|Has expired: Upstream repo archived on Jul 22, 2021
 devel/p5-Test-HTML-Tidy||2025-02-04|Has expired: Depends on expired textproc/p5-HTML-Tidy
 www/p5-CGI-Application-Plugin-HtmlTidy||2025-02-04|Has expired: Depends on expired textproc/p5-HTML-Tidy
+textproc/p5-HTML-Tidy||2025-02-04|Has expired: Depends on expired textproc/tidyp
