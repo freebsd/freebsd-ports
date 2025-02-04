@@ -1172,7 +1172,6 @@
     SUBDIR += kokkos
     SUBDIR += kommit
     SUBDIR += kopeninghours
-    SUBDIR += kore
     SUBDIR += kpublictransport
     SUBDIR += kronosnet
     SUBDIR += ksql
