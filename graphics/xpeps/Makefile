@@ -12,6 +12,9 @@ WWW=		http://peps.redprince.net/peps/
 
 LICENSE=	BSD2CLAUSE
 
+DEPRECATED=	Depends on expired graphics/peps
+EXPIRATION_DATE=2025-02-28
+
 RUN_DEPENDS=	peps>=2.0_6:graphics/peps
 
 USES=		ghostscript:x11,run
