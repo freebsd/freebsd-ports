@@ -4128,3 +4128,4 @@ devel/kore||2025-02-04|Has expired: Unmaintained in tree for years and broken fo
 www/searx||2025-02-04|Has expired: Upstream repo archived Sep 7 2023
 databases/xtrabackup81|databases/xtrabackup84|2025-02-04|Has expired: Unsupported upstream, consider migrating to databases/xtrabackup84
 games/allacrost||2025-02-04|Has expired: Fails to build and upstream is gone
+multimedia/mpeg_encode||2025-02-04|Has expired: Upstream is dead and it's buggy, consider using multimedia/ffmpeg

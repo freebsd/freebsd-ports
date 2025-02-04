@@ -240,7 +240,6 @@
     SUBDIR += mp3cd
     SUBDIR += mp4v2
     SUBDIR += mpc-qt
-    SUBDIR += mpeg_encode
     SUBDIR += mplayer
     SUBDIR += mplayer-skins
     SUBDIR += mplex
