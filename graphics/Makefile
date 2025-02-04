@@ -1150,6 +1150,7 @@
     SUBDIR += sdl2_gpu
     SUBDIR += sdl2_image
     SUBDIR += sdl2_ttf
+    SUBDIR += sdl3_image
     SUBDIR += sdl_gfx
     SUBDIR += sdl_image
     SUBDIR += sdl_ttf

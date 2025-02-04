@@ -1,0 +1,4 @@
+This is a simple library to load images of various formats as SDL surfaces.
+It can load BMP, GIF, JPEG, LBM, PCX, PNG, PNM (PPM/PGM/PBM), QOI,
+TGA, XCF, XPM, and simple SVG format images. It can also load AVIF,
+JPEG-XL, TIFF, and WebP images, depending on build options

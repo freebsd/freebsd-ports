@@ -1,0 +1,11 @@
+include/SDL3_image/SDL_image.h
+%%JXL%%lib/cmake/SDL3_image/Findlibjxl.cmake
+%%WEBP%%lib/cmake/SDL3_image/Findwebp.cmake
+lib/cmake/SDL3_image/SDL3_image-shared-targets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/SDL3_image/SDL3_image-shared-targets.cmake
+lib/cmake/SDL3_image/SDL3_imageConfig.cmake
+lib/cmake/SDL3_image/SDL3_imageConfigVersion.cmake
+lib/libSDL3_image.so
+lib/libSDL3_image.so.0
+lib/libSDL3_image.so.0.2.0
+libdata/pkgconfig/sdl3-image.pc

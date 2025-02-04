@@ -1,0 +1,52 @@
+PORTNAME=	sdl3_image
+DISTVERSIONPREFIX=	release-
+DISTVERSION=	3.2.0
+CATEGORIES=	graphics
+
+MAINTAINER=	amdmi3@FreeBSD.org
+COMMENT=	Simple library to load images of various formats as SDL surfaces
+WWW=		https://github.com/libsdl-org/SDL_image
+
+LICENSE=	ZLIB
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
+
+USES=		cmake sdl
+USE_GITHUB=	yes
+GH_ACCOUNT=	libsdl-org
+GH_PROJECT=	SDL_image
+USE_SDL=	sdl3
+CMAKE_OFF=	SDLIMAGE_DEPS_SHARED \
+		SDLIMAGE_SAMPLES \
+		SDLIMAGE_BACKEND_STB
+USE_LDCONFIG=	yes
+
+OPTIONS_DEFINE=	AVIF JPEG JXL PNG TIFF WEBP TEST
+OPTIONS_DEFAULT=AVIF JPEG JXL PNG TIFF WEBP
+OPTIONS_SUB=	yes
+
+AVIF_LIB_DEPENDS=	libavif.so:graphics/libavif
+AVIF_CMAKE_BOOL=	SDLIMAGE_AVIF
+
+JPEG_USES=		jpeg
+JPEG_CMAKE_BOOL=	SDLIMAGE_JPG
+
+JXL_LIB_DEPENDS=	libjxl.so:graphics/libjxl
+JXL_CMAKE_BOOL=		SDLIMAGE_JXL
+
+PNG_LIB_DEPENDS=	libpng.so:graphics/png
+PNG_CMAKE_BOOL=		SDLIMAGE_PNG
+
+TIFF_LIB_DEPENDS=	libtiff.so:graphics/tiff
+TIFF_CMAKE_BOOL=	SDLIMAGE_TIF
+
+TEST_USES=		display:test
+TEST_CMAKE_BOOL=	SDLIMAGE_TESTS
+TEST_TEST_TARGET=	test
+
+WEBP_LIB_DEPENDS=	libwebp.so:graphics/webp
+WEBP_CMAKE_BOOL=	SDLIMAGE_WEBP
+
+post-extract:
+	@${RM} -rf ${WRKSRC}/external
+
+.include <bsd.port.mk>
