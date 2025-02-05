@@ -128,6 +128,7 @@
 %%CACTIDIR%%/docs/How-To-Existing-SNMP-Data-Queries.html
 %%CACTIDIR%%/docs/How-To-New-SNMP-Data-Queries.html
 %%CACTIDIR%%/docs/How-To-Poller-5-to-1-min.html
+%%CACTIDIR%%/docs/How-To-SNMP-Custom-Script.html
 %%CACTIDIR%%/docs/How-To-SSH-Tunnels.html
 %%CACTIDIR%%/docs/How-To-Script-Data-Queries.html
 %%CACTIDIR%%/docs/How-To-Setup-Remote-Pollers.html
@@ -146,6 +147,7 @@
 %%CACTIDIR%%/docs/Plugin-Guidelines.html
 %%CACTIDIR%%/docs/Plugin-Hook-API-Ref.html
 %%CACTIDIR%%/docs/Plugin-Reference.html
+%%CACTIDIR%%/docs/Plugin-Syslog.html
 %%CACTIDIR%%/docs/Plugins.html
 %%CACTIDIR%%/docs/Principles-of-Operation.html
 %%CACTIDIR%%/docs/RRDproxy.html
@@ -199,7 +201,6 @@
 %%CACTIDIR%%/docs/Variables.html
 %%CACTIDIR%%/docs/Version-Specific-Release-Notes.html
 %%CACTIDIR%%/docs/Viewing-Graphs.html
-%%CACTIDIR%%/docs/apache_template_config.html
 %%CACTIDIR%%/docs/audit_schema.sql
 %%CACTIDIR%%/docs/convert-from-package-to-source-debian-ubuntu.html
 %%CACTIDIR%%/docs/images/apache-template-preview.png
@@ -622,7 +623,9 @@
 %%CACTIDIR%%/docs/images/vdefs-edit4.png
 %%CACTIDIR%%/docs/images/vdefs.png
 %%CACTIDIR%%/docs/index.php
-%%CACTIDIR%%/docs/syslog-plugin.html
+%%CACTIDIR%%/docs/supported-plugins.html
+%%CACTIDIR%%/docs/template_apache_config.html
+%%CACTIDIR%%/docs/template_esxi_config.html
 %%CACTIDIR%%/formats/cacti_group.format
 %%CACTIDIR%%/formats/cacti_group_dark.format
 %%CACTIDIR%%/formats/cacti_monitor.format
@@ -4010,6 +4013,7 @@
 %%CACTIDIR%%/install/templates/ESXi_Device.xml.gz
 %%CACTIDIR%%/install/templates/Fortigate.xml.gz
 %%CACTIDIR%%/install/templates/Generic_SNMP_Device.xml.gz
+%%CACTIDIR%%/install/templates/HPE_NimbleAlletra_storage.xml.gz
 %%CACTIDIR%%/install/templates/HPE_iLO.xml.gz
 %%CACTIDIR%%/install/templates/Local_Linux_Machine.xml.gz
 %%CACTIDIR%%/install/templates/MikroTik_Device.xml.gz
