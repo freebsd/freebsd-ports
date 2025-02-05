@@ -4135,4 +4135,3 @@ devel/p5-Test-HTML-Tidy||2025-02-04|Has expired: Depends on expired textproc/p5-
 www/p5-CGI-Application-Plugin-HtmlTidy||2025-02-04|Has expired: Depends on expired textproc/p5-HTML-Tidy
 textproc/p5-HTML-Tidy||2025-02-04|Has expired: Depends on expired textproc/tidyp
 textproc/tidyp||2025-02-04|Has expired: The repository has been archived by upstream on Apr 14, 2019
-security/ipsec-tools||2025-02-04|Has expired: Deprecated by upstream in 2014, contains security issues

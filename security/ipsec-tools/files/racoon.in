@@ -1,0 +1,51 @@
+#!/bin/sh
+
+# PROVIDE: racoon
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Define these racoon_* variables in one of these files:
+#	/etc/rc.conf
+#	/etc/rc.conf.local
+#	/etc/rc.conf.d/racoon
+#
+# DO NOT CHANGE THESE DEFAULT VALUES HERE
+
+. /etc/rc.subr
+
+name="racoon"
+rcvar=racoon_enable
+
+load_rc_config $name
+
+racoon_enable=${racoon_enable:-"NO"}		# Disable by default
+racoon_dirs=${racoon_dirs:-"%%STATEDIR%%"}	# For controlling socket
+racoon_create_dirs=${racoon_create_dirs:-"NO"}	# Create $racoon_dirs
+#racoon_flags=""				# Flags to racoon program
+
+command="%%PREFIX%%/sbin/${name}"
+pidfile="/var/run/${name}.pid"
+
+start_precmd="${name}_prestart"
+stop_postcmd="${name}_cleanup"
+
+socketfile="%%STATEDIR%%/${name}.sock"
+required_files="%%PREFIX%%/etc/${name}/${name}.conf"
+required_modules="%%REQUIREMOD%%"
+
+racoon_cleanup()
+{
+	/bin/rm -f ${pidfile}
+	/bin/rm -f ${socketfile}
+}
+
+racoon_prestart()
+{
+	racoon_cleanup
+
+	if checkyesno "${name}_create_dirs"; then
+		install -m 0755 -d $racoon_dirs
+	fi
+}
+
+run_rc_command "$1"

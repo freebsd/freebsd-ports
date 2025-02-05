@@ -1,0 +1,176 @@
+--- src/racoon/cfparse.y	22 Aug 2006 18:17:17 -0000	1.66
++++ src/racoon/cfparse.y	13 May 2018 01:53:57 -0000
+@@ -284,7 +284,7 @@ static int process_rmconf()
+ 	/* algorithm */
+ %token ALGORITHM_CLASS ALGORITHMTYPE STRENGTHTYPE
+ 	/* sainfo */
+-%token SAINFO FROM
++%token SAINFO FROM REQID
+ 	/* remote */
+ %token REMOTE ANONYMOUS CLIENTADDR INHERIT REMOTE_ADDRESS
+ %token EXCHANGE_MODE EXCHANGETYPE DOI DOITYPE SITUATION SITUATIONTYPE
+@@ -1571,6 +1571,11 @@ sainfo_spec
+ 	|	REMOTEID NUMBER
+ 		{
+ 			cur_sainfo->remoteid = $2;
++		}
++		EOS
++	|	REQID NUMBER
++		{
++			cur_sainfo->reqid = $2;
+ 		}
+ 		EOS
+ 	|	LIFETIME LIFETYPE_TIME NUMBER unittype_time
+--- src/racoon/cftoken.l	22 Aug 2006 18:17:17 -0000	1.53
++++ src/racoon/cftoken.l	13 May 2018 01:53:57 -0000
+@@ -290,6 +290,7 @@
+ <S_SAINFS>identifier	{ YYD; yywarn("it is obsoleted.  use \"my_identifier\"."); return(IDENTIFIER); }
+ <S_SAINFS>my_identifier	{ YYD; return(MY_IDENTIFIER); }
+ <S_SAINFS>lifetime	{ YYD; return(LIFETIME); }
++<S_SAINFS>reqid		{ YYD; return(REQID); }
+ <S_SAINFS>time		{ YYD; return(LIFETYPE_TIME); }
+ <S_SAINFS>byte		{ YYD; return(LIFETYPE_BYTE); }
+ <S_SAINFS>encryption_algorithm { YYD; yylval.num = algclass_ipsec_enc; return(ALGORITHM_CLASS); }
+--- src/racoon/proposal.c	27 Apr 2006 03:41:54 -0000	1.19
++++ src/racoon/proposal.c	13 May 2018 01:53:58 -0000
+@@ -1253,8 +1253,8 @@ set_proposal_from_proposal(iph2)
+ 				if(g_nextreqid >= IPSEC_MANUAL_REQID_MAX)
+ 					g_nextreqid = 1;
+ 			}else{
+-				newpr->reqid_in = 0;
+-				newpr->reqid_out = 0;
++				newpr->reqid_in = iph2->sainfo->reqid;
++				newpr->reqid_out = iph2->sainfo->reqid;
+ 			}
+  
+ 			if (set_satrnsbysainfo(newpr, iph2->sainfo) < 0)
+--- src/racoon/sainfo.c	11 Aug 2006 16:07:05 -0000	1.9
++++ src/racoon/sainfo.c	13 May 2018 01:53:58 -0000
+@@ -383,8 +383,8 @@ sainfo2str(si)
+         else
+                 id_i = ipsecdoi_id2str(si->id_i);
+  
+-        snprintf(buf, 255, "loc=\'%s\', rmt=\'%s\', peer=\'%s\', id=%u",
+-		idloc, idrmt, id_i, si->remoteid);
++        snprintf(buf, 255, "loc=\'%s\', rmt=\'%s\', peer=\'%s\', id=%u, reqid=%u",
++		idloc, idrmt, id_i, si->remoteid, si->reqid);
+  
+         racoon_free(idloc);
+         racoon_free(idrmt);
+--- src/racoon/sainfo.h	9 Jul 2006 17:19:38 -0000	1.5
++++ src/racoon/sainfo.h	13 May 2018 01:53:58 -0000
+@@ -51,6 +51,7 @@
+ 	time_t lifetime;
+ 	int lifebyte;
+ 	int pfs_group;		/* only use when pfs is required. */
++	uint32_t reqid;
+ 	vchar_t *id_i;		/* identifier of the authorized initiator */
+ 	struct sainfoalg *algs[MAXALGCLASS];
+ 
+--- src/racoon/policy.h	2018-05-13 07:42:14.828102000 +0300
++++ src/racoon/policy.h	2018-05-13 07:41:44.807564000 +0300
+@@ -66,6 +66,7 @@ struct policyindex {
+ 	u_int16_t ul_proto;		/* upper layer Protocol */
+ 	u_int32_t priority;		/* priority for the policy */
+  	u_int64_t created;		/* Used for generated SPD entries deletion */
++	u_int32_t reqid;		/* Reqid used for if_ipsec(4) */
+ #ifdef HAVE_SECCTX
+ 	struct security_ctx sec_ctx;    /* Security Context */
+ #endif
+--- src/racoon/isakmp_quick.c	2018-05-13 08:07:07.378039000 +0300
++++ src/racoon/isakmp_quick.c	2018-05-13 08:11:12.268612000 +0300
+@@ -2473,6 +2473,7 @@ get_proposal_r(iph2)
+ #endif /* HAVE_SECCTX */
+ 
+ 	/* get inbound policy */
++	spidx.reqid = iph2->sainfo->reqid;
+ 	sp_in = getsp_r(&spidx);
+ 	if (sp_in == NULL) {
+ 		if (iph2->ph1->rmconf->gen_policy) {
+@@ -2521,6 +2522,7 @@ get_proposal_r(iph2)
+ 	spidx.prefs = spidx.prefd;
+ 	spidx.prefd = pref;
+ 
++	spidx.reqid = iph2->sainfo->reqid;
+ 	sp_out = getsp_r(&spidx);
+ 	if (!sp_out) {
+ 		plog(LLV_WARNING, LOCATION, NULL,
+--- src/racoon/pfkey.c	2018-05-13 08:12:05.730604000 +0300
++++ src/racoon/pfkey.c	2018-05-13 08:48:02.708803000 +0300
+@@ -1888,6 +1888,10 @@ pk_recvacquire(mhp)
+ 	spidx.prefs = sp_out->spidx.prefd;
+ 	spidx.prefd = sp_out->spidx.prefs;
+ 	spidx.ul_proto = sp_out->spidx.ul_proto;
++#ifdef IPSEC_POLICYSCOPE_IFNET
++	/* XXX: reuse reqid from outbound policy */
++	spidx.reqid = sp_out->spidx.reqid;
++#endif
+ 
+ #ifdef HAVE_SECCTX
+ 	if (m_sec_ctx) {
+@@ -2787,6 +2791,25 @@ pk_recvspddump(mhp)
+ 	}
+ #endif /* HAVE_SECCTX */
+ 
++#ifdef IPSEC_POLICYSCOPE_IFNET
++	if (xpl->sadb_x_policy_scope == IPSEC_POLICYSCOPE_IFNET) {
++		struct sadb_x_ipsecrequest *xisr;
++
++		if (PFKEY_EXTLEN(xpl) < sizeof(*xpl)) {
++			plog(LLV_ERROR, LOCATION, NULL,
++				"invalid xpl msg length.\n");
++			return (-1);
++		}
++		xisr = (struct sadb_x_ipsecrequest *)(xpl + 1);
++		if (xisr->sadb_x_ipsecrequest_len < sizeof(*xisr)) {
++			plog(LLV_ERROR, LOCATION, NULL,
++				"invalid xisr msg length.\n");
++			return (-1);
++		}
++		spidx.reqid = xisr->sadb_x_ipsecrequest_reqid;
++	}
++#endif /* IPSEC_POLICYSCOPE_IFNET */
++
+ 	sp = getsp(&spidx);
+ 	if (sp != NULL) {
+ 		plog(LLV_ERROR, LOCATION, NULL,
+@@ -3909,6 +3932,15 @@ addnewsp(mhp, local, remote)
+ 			created,
+ 			&new->spidx);
+ #endif
++
++#ifdef IPSEC_POLICYSCOPE_IFNET
++	if (xpl->sadb_x_policy_scope == IPSEC_POLICYSCOPE_IFNET) {
++		struct sadb_x_ipsecrequest *xisr;
++
++		xisr = (struct sadb_x_ipsecrequest *)(xpl + 1);
++		new->spidx.reqid = xisr->sadb_x_ipsecrequest_reqid;
++	}
++#endif /* IPSEC_POLICYSCOPE_IFNET */
+ 
+ #ifdef HAVE_SECCTX
+ 	if (mhp[SADB_X_EXT_SEC_CTX] != NULL) {
+--- src/racoon/policy.c	2018-05-13 07:17:32.815475000 +0300
++++ src/racoon/policy.c	2018-05-13 07:44:40.838093000 +0300
+@@ -197,7 +197,8 @@ cmpspidxstrict(a, b)
+ 	if (a->dir != b->dir
+ 	 || a->prefs != b->prefs
+ 	 || a->prefd != b->prefd
+-	 || a->ul_proto != b->ul_proto)
++	 || a->ul_proto != b->ul_proto
++	 || a->reqid != b->reqid)
+ 		return 1;
+ 
+ 	if (cmpsaddr((struct sockaddr *) &a->src,
+@@ -482,8 +483,9 @@ spidx2str(spidx)
+ 	p += i;
+ 	blen -= i;
+ 
+-	i = snprintf(p, blen, "proto=%s dir=%s",
+-		s_proto(spidx->ul_proto), s_direction(spidx->dir));
++	i = snprintf(p, blen, "proto=%s dir=%s reqid=%u",
++		s_proto(spidx->ul_proto), s_direction(spidx->dir),
++		spidx->reqid);
+ 
+ #ifdef HAVE_SECCTX
+ 	if (spidx->sec_ctx.ctx_strlen) {

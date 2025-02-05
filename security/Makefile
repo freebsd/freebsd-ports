@@ -240,6 +240,7 @@
     SUBDIR += intel-ipsec-mb
     SUBDIR += ipfmeta
     SUBDIR += ipguard
+    SUBDIR += ipsec-tools
     SUBDIR += ipv6toolkit
     SUBDIR += isal-kmod
     SUBDIR += ismtp
