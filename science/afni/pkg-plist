@@ -547,6 +547,7 @@ bin/byteorder
 bin/cat_matvec
 bin/ccalc
 bin/cifti_tool
+bin/colorbar_tool.py
 bin/column_cat
 bin/compute_ROI_stats.tcsh
 bin/convert_cdiflist_to_grads.py
@@ -854,6 +855,7 @@ lib/afni/plug_zeropad.so
 %%PYTHON_SITELIBDIR%%/afnipy/lib_apqc_tcsh.py
 %%PYTHON_SITELIBDIR%%/afnipy/lib_b0_corr.py
 %%PYTHON_SITELIBDIR%%/afnipy/lib_cbar_pbar.py
+%%PYTHON_SITELIBDIR%%/afnipy/lib_cbar_tool.py
 %%PYTHON_SITELIBDIR%%/afnipy/lib_cdiflist.py
 %%PYTHON_SITELIBDIR%%/afnipy/lib_csv.py
 %%PYTHON_SITELIBDIR%%/afnipy/lib_decay_timing.py
