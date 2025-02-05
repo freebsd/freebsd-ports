@@ -1,8 +1,10 @@
 --- lp_solve/ccc.orig	2009-01-25 18:39:03 UTC
 +++ lp_solve/ccc
-@@ -2,31 +2,33 @@
+@@ -1,34 +1,35 @@
+ :
  src='../lp_MDO.c ../shared/commonlib.c ../colamd/colamd.c ../shared/mmio.c ../shared/myblas.c ../ini.c ../fortify.c ../lp_rlp.c ../lp_crash.c ../bfp/bfp_LUSOL/lp_LUSOL.c ../bfp/bfp_LUSOL/LUSOL/lusol.c ../lp_Hash.c ../lp_lib.c ../lp_wlp.c ../lp_matrix.c ../lp_mipbb.c ../lp_MPS.c ../lp_params.c ../lp_presolve.c ../lp_price.c ../lp_pricePSE.c ../lp_report.c ../lp_scale.c ../lp_simplex.c lp_solve.c ../lp_SOS.c ../lp_utils.c ../yacc_read.c'
  c=cc
++opts='-O3'
  
 +tmp="${TMPDIR:-/tmp}"
 +
@@ -18,7 +20,7 @@
 +echo '#include <stdlib.h>'>>"${tmp}"/platform.c
 +echo '#include <stdio.h>'>>"${tmp}"/platform.c
 +echo 'main(){printf("ux%d", (int) (sizeof(void *)*8));}'>>"${tmp}"/platform.c
-+$c "${tmp}"/platform.c -o "${tmp}"/platform
++$c $opts "${tmp}"/platform.c -o "${tmp}"/platform
 +PLATFORM=`"${tmp}"/platform`
 +rm "${tmp}"/platform "${tmp}"/platform.c >/dev/null 2>&1
  
@@ -38,21 +40,25 @@
 +echo '#include <stdlib.h>'>>"${tmp}"/isnan.c
 +echo '#include <math.h>'>>"${tmp}"/isnan.c
 +echo 'main(){isnan(0);}'>>"${tmp}"/isnan.c
-+$c "${tmp}"/isnan.c -o "${tmp}"/isnan $math >/dev/null 2>&1
++$c $opts "${tmp}"/isnan.c -o "${tmp}"/isnan $math >/dev/null 2>&1
  if [ $? = 0 ]
  then NOISNAN=
  else NOISNAN=-DNOISNAN
  fi
 -rm /tmp/isnan.c /tmp/isnan >/dev/null 2>&1
+-
+-opts='-O3'
 +rm "${tmp}"/isnan.c "${tmp}"/isnan >/dev/null 2>&1
  
- opts='-O3'
- 
+ def=
+ if [ "$PLATFORM" = "SCO_UNIX" ]
 --- lpsolve55/ccc.orig	2009-03-25 00:27:18 UTC
 +++ lpsolve55/ccc
-@@ -2,29 +2,31 @@
+@@ -1,30 +1,33 @@
+ :
  src='../lp_MDO.c ../shared/commonlib.c ../shared/mmio.c ../shared/myblas.c ../ini.c ../fortify.c ../colamd/colamd.c ../lp_rlp.c ../lp_crash.c ../bfp/bfp_LUSOL/lp_LUSOL.c ../bfp/bfp_LUSOL/LUSOL/lusol.c ../lp_Hash.c ../lp_lib.c ../lp_wlp.c ../lp_matrix.c ../lp_mipbb.c ../lp_MPS.c ../lp_params.c ../lp_presolve.c ../lp_price.c ../lp_pricePSE.c ../lp_report.c ../lp_scale.c ../lp_simplex.c ../lp_SOS.c ../lp_utils.c ../yacc_read.c'
  c=cc
++opts='-O3'
  
 +tmp="${TMPDIR:-/tmp}"
 +
@@ -68,7 +74,7 @@
 +echo '#include <stdlib.h>'>>"${tmp}"/platform.c
 +echo '#include <stdio.h>'>>"${tmp}"/platform.c
 +echo 'main(){printf("ux%d", (int) (sizeof(void *)*8));}'>>"${tmp}"/platform.c
-+$c "${tmp}"/platform.c -o "${tmp}"/platform
++$c $opts "${tmp}"/platform.c -o "${tmp}"/platform
 +PLATFORM=`"${tmp}"/platform`
 +rm "${tmp}"/platform "${tmp}"/platform.c >/dev/null 2>&1
  
@@ -86,7 +92,7 @@
 +echo '#include <stdlib.h>'>>"${tmp}"/isnan.c
 +echo '#include <math.h>'>>"${tmp}"/isnan.c
 +echo 'main(){isnan(0);}'>>"${tmp}"/isnan.c
-+$c "${tmp}"/isnan.c -o "${tmp}"/isnan $math >/dev/null 2>&1
++$c $opts "${tmp}"/isnan.c -o "${tmp}"/isnan $math >/dev/null 2>&1
  if [ $? = 0 ]
  then NOISNAN=
  else NOISNAN=-DNOISNAN
@@ -96,3 +102,12 @@
  
  def=
  so=
+@@ -34,8 +37,6 @@ then def='-dy -K PIC -DNOLONGLONG'
+ else dl=-ldl
+      so=y
+ fi
+-
+-opts='-O3'
+ 
+ $c -s -c -I.. -I../shared -I../bfp -I../bfp/bfp_LUSOL -I../bfp/bfp_LUSOL/LUSOL -I../colamd $opts $def $NOISNAN -DYY_NEVER_INTERACTIVE -DPARSER_LP -DINVERSE_ACTIVE=INVERSE_LUSOL -DRoleIsExternalInvEngine $src
+ ar rv bin/$PLATFORM/liblpsolve55.a `echo $src|sed s/[.]c/.o/g|sed 's/[^ ]*\///g'`
