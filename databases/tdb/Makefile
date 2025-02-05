@@ -27,6 +27,8 @@ CONFIGURE_ARGS+=		--disable-rpath \
 CONFIGURE_ENV=			PYTHONHASHSEED=1
 MAKE_ENV=			PYTHONHASHSEED=1
 
+CONFLICTS_INSTALL=		tdb[0-9]*
+
 MANPAGES_DESC=			Build and install manpages (requires textproc/docbook-xsl)
 
 OPTIONS_DEFINE=			MANPAGES DEBUG PYTHON

@@ -1,8 +1,10 @@
 PORTNAME=			tevent
 DISTVERSION=			0.16.1
+PORTREVISION=			1
 PORTEPOCH=			0
 CATEGORIES=			devel
 MASTER_SITES=			SAMBA
+PKGNAMESUFFIX=			016
 
 MAINTAINER=			samba@FreeBSD.org
 COMMENT=			Talloc based event loop library
@@ -10,8 +12,8 @@ WWW=				https://tevent.samba.org/
 
 LICENSE=			LGPL3
 
-BUILD_DEPENDS=			talloc>=2.4.2:devel/talloc242
-RUN_DEPENDS=			talloc>=2.4.2:devel/talloc242
+BUILD_DEPENDS=			talloc242>=2.4.2:devel/talloc242
+RUN_DEPENDS=			talloc242>=2.4.2:devel/talloc242
 
 USES=				compiler pkgconfig shebangfix waf
 USE_LDCONFIG=			yes
@@ -29,6 +31,8 @@ CONFIGURE_ARGS=			--disable-rpath \
 				--without-gettext
 CONFIGURE_ENV=			PYTHONHASHSEED=1
 MAKE_ENV=			PYTHONHASHSEED=1
+
+CONFLICTS_INSTALL=		tevent
 
 MANPAGES_DESC=			Build and install manpages (requires textproc/docbook-xsl)
 

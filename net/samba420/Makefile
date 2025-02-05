@@ -1,5 +1,6 @@
 PORTNAME=			${SAMBA4_BASENAME}420
 PORTVERSION=			${SAMBA4_VERSION}
+PORTREVISION=			1
 CATEGORIES?=			net
 MASTER_SITES=			SAMBA/samba/stable SAMBA/samba/rc
 DISTNAME=			${SAMBA4_DISTNAME}
@@ -220,8 +221,8 @@ PLIST_SUB+=			SAMBA4_BUNDLED_TALLOC=""
 SUB_LIST+=			SAMBA4_BUNDLED_TALLOC=""
 .else
 SAMBA4_BUNDLED_LIBS+=		!talloc
-BUILD_DEPENDS+=			talloc>=2.4.2:devel/talloc242
-RUN_DEPENDS+=			talloc>=2.4.2:devel/talloc242
+BUILD_DEPENDS+=			talloc242>=2.4.2:devel/talloc242
+RUN_DEPENDS+=			talloc242>=2.4.2:devel/talloc242
 PLIST_SUB+=			SAMBA4_BUNDLED_TALLOC="@comment "
 SUB_LIST+=			SAMBA4_BUNDLED_TALLOC="@comment "
 .endif
@@ -233,8 +234,8 @@ PLIST_SUB+=			SAMBA4_BUNDLED_TEVENT=""
 SUB_LIST+=			SAMBA4_BUNDLED_TEVENT=""
 .else
 SAMBA4_BUNDLED_LIBS+=		!tevent
-BUILD_DEPENDS+=			tevent>=0.16.1:devel/tevent016
-RUN_DEPENDS+=			tevent>=0.16.1:devel/tevent016
+BUILD_DEPENDS+=			tevent016>=0.16.1:devel/tevent016
+RUN_DEPENDS+=			tevent016>=0.16.1:devel/tevent016
 PLIST_SUB+=			SAMBA4_BUNDLED_TEVENT="@comment "
 SUB_LIST+=			SAMBA4_BUNDLED_TEVENT="@comment "
 .endif
@@ -246,8 +247,8 @@ PLIST_SUB+=			SAMBA4_BUNDLED_TDB=""
 SUB_LIST+=			SAMBA4_BUNDLED_TDB=""
 .else
 SAMBA4_BUNDLED_LIBS+=		!tdb
-BUILD_DEPENDS+=			tdb>=1.4.10:databases/tdb1410
-RUN_DEPENDS+=			tdb>=1.4.10:databases/tdb1410
+BUILD_DEPENDS+=			tdb1410>=1.4.10:databases/tdb1410
+RUN_DEPENDS+=			tdb1410>=1.4.10:databases/tdb1410
 PLIST_SUB+=			SAMBA4_BUNDLED_TDB="@comment "
 SUB_LIST+=			SAMBA4_BUNDLED_TDB="@comment "
 .endif
