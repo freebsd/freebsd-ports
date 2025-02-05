@@ -194,8 +194,8 @@ STACKTRACES_CFLAGS=		-g
 STACKTRACES_LDFLAGS=		-lunwind
 STACKTRACES_EXTRA_PATCHES=	${FILESDIR}/extra-patch-gen-stacktrace
 STACKTRACES_VARS=		STRIP=""
-TDB_LIB_DEPENDS=		libtdb.so:databases/tdb
-TDB_USES=			pkgconfig:build
+TDB_LIB_DEPENDS=		libtdb.so:${SAMBA_TDB_PORT}
+TDB_USES=			pkgconfig:build samba:env
 TDB_CONFIGURE_WITH=		tdb
 TDB_VARS=			EXTERNAL_ACL+="time_quota session"
 TP_IPFW_CONFIGURE_ENABLE=	ipfw-transparent
