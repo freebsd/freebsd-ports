@@ -34,6 +34,9 @@ DESKTOP_ENTRIES="SeaView" "" "${PREFIX}/share/pixmaps/seaview.xpm" "seaview" \
 		"Biology;Science;" true
 
 post-patch:
+# Ignore FLTK patch version because >=10 breaks the comparison logic
+	${REINPLACE_CMD} -e 's, + FL_PATCH_VERSION,,' \
+		${WRKSRC}/FL/Fl_SVG_Image.cxx
 	${REINPLACE_CMD} -e \
 		's|^\(CC\) |#\1 | ; s|-ldl || ; \
 		s|^\(CXX\) |#\1 |' ${WRKSRC}/Makefile
