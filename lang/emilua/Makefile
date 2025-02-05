@@ -1,6 +1,6 @@
 PORTNAME=	emilua
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.10.1
+DISTVERSION=	0.11.0
 CATEGORIES=	lang devel
 
 MAINTAINER=	manipuladordedados@gmail.com
@@ -27,9 +27,6 @@ LIB_DEPENDS=	libserd-0.so:devel/serd \
 
 USES=		localbase luajit:luajit-devel meson ncurses pathfix \
 		pkgconfig ssl
-USE_GITHUB=	nodefault
-GH_TUPLE=	breese:trial.protocol:79149f6:trial_protocol/subprojects/trial-protocol \
-		chriskohlhoff:asio:c586e95:asio/subprojects/asio
 USE_GITLAB=	yes
 
 CONFIGURE_ENV+=	BOOST_INCLUDEDIR="${LOCALBASE}/include" \
@@ -40,10 +37,5 @@ MESON_ARGS=	--buildtype=plain \
 		-Db_pch=false \
 		-Denable_manpages=true \
 		-Denable_tests=true \
-		-Duse_standalone_asio=true
-
-post-extract:
-	${CP} ${WRKSRC}/subprojects/packagefiles/trial.protocol/meson.build \
-		${WRKSRC}/subprojects/trial-protocol/
 
 .include <bsd.port.mk>
