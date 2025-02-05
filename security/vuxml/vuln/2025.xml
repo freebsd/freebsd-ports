@@ -1,3 +1,32 @@
+  <vuln vid="9761af78-e3e4-11ef-9f4a-589cfc10a551">
+    <topic>nginx-devel -- SSL session reuse vulnerability</topic>
+    <affects>
+      <package>
+	<name>nginx-devel</name>
+	<range><lt>1.27.4</lt></range>
+      </package>
+      <package>
+	<name>nginx</name>
+	<range><lt>1.26.3</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The nginx development team reports:</p>
+	<blockquote cite="http://nginx.org/en/security_advisories.html">
+	  <p>This update fixes the SSL session reuse vulnerability.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-23419</cvename>
+    </references>
+    <dates>
+      <discovery>2025-02-05</discovery>
+      <entry>2025-02-05</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="72b8729e-e134-11ef-9e76-4ccc6adda413">
     <topic>qt6-webengine -- Multiple vulnerabilities</topic>
     <affects>
