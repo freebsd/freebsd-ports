@@ -1,17 +1,18 @@
+- Avoid needless CMake < 3.10 deprecation warnings
 - Support symbol visibility with Clang
 - Don't put linker flags in CXXFLAGS
 
---- CMakeLists.txt.orig	2014-10-02 14:05:46 UTC
+--- CMakeLists.txt.orig	2024-11-24 17:34:23 UTC
 +++ CMakeLists.txt
-@@ -1,4 +1,5 @@
- cmake_minimum_required(VERSION 2.8.6)
-+cmake_policy(SET CMP0043 OLD)
+@@ -1,4 +1,4 @@
+-cmake_minimum_required(VERSION 3.6)
++cmake_minimum_required(VERSION 3.10)
  project(liblastfm)
  
- set(CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake/modules)
-@@ -62,11 +63,11 @@ else()
+ # general settings
+@@ -68,11 +68,11 @@ endif()
+     add_feature_info(FFTW3F FFTW3F_FOUND "Required for lastfm-fingerprint library")
  endif()
- 
  
 -if(CMAKE_COMPILER_IS_GNUCXX)
 +if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")

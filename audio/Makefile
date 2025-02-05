@@ -353,7 +353,7 @@
     SUBDIR += libkcddb
     SUBDIR += libkcompactdisc
     SUBDIR += libkeyfinder
-    SUBDIR += liblastfm-qt5
+    SUBDIR += liblastfm
     SUBDIR += liblo
     SUBDIR += liblscp
     SUBDIR += libltc
