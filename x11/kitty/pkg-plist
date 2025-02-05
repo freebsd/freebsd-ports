@@ -15,7 +15,7 @@ share/applications/kitty.desktop
 %%PORTDOCS%%%%DOCSDIR%%/_images/social_previews/summary_actions_1745a1bd.png
 %%PORTDOCS%%%%DOCSDIR%%/_images/social_previews/summary_binary_478594b0.png
 %%PORTDOCS%%%%DOCSDIR%%/_images/social_previews/summary_build_7ee1e14e.png
-%%PORTDOCS%%%%DOCSDIR%%/_images/social_previews/summary_changelog_67e69324.png
+%%PORTDOCS%%%%DOCSDIR%%/_images/social_previews/summary_changelog_c9c504f3.png
 %%PORTDOCS%%%%DOCSDIR%%/_images/social_previews/summary_clipboard_673291d1.png
 %%PORTDOCS%%%%DOCSDIR%%/_images/social_previews/summary_color-stack_b2e66ffc.png
 %%PORTDOCS%%%%DOCSDIR%%/_images/social_previews/summary_conf_6d817f14.png
@@ -57,6 +57,7 @@ share/applications/kitty.desktop
 %%PORTDOCS%%%%DOCSDIR%%/_images/social_previews/summary_layouts_49b07683.png
 %%PORTDOCS%%%%DOCSDIR%%/_images/social_previews/summary_mapping_aea5afa6.png
 %%PORTDOCS%%%%DOCSDIR%%/_images/social_previews/summary_marks_66066db1.png
+%%PORTDOCS%%%%DOCSDIR%%/_images/social_previews/summary_misc-protocol_baba0cc2.png
 %%PORTDOCS%%%%DOCSDIR%%/_images/social_previews/summary_open_actions_c69b3759.png
 %%PORTDOCS%%%%DOCSDIR%%/_images/social_previews/summary_overview_249bd848.png
 %%PORTDOCS%%%%DOCSDIR%%/_images/social_previews/summary_performance_fb7e6752.png
@@ -120,6 +121,7 @@ share/applications/kitty.desktop
 %%PORTDOCS%%%%DOCSDIR%%/_sources/layouts.rst.txt
 %%PORTDOCS%%%%DOCSDIR%%/_sources/mapping.rst.txt
 %%PORTDOCS%%%%DOCSDIR%%/_sources/marks.rst.txt
+%%PORTDOCS%%%%DOCSDIR%%/_sources/misc-protocol.rst.txt
 %%PORTDOCS%%%%DOCSDIR%%/_sources/open_actions.rst.txt
 %%PORTDOCS%%%%DOCSDIR%%/_sources/overview.rst.txt
 %%PORTDOCS%%%%DOCSDIR%%/_sources/performance.rst.txt
@@ -219,6 +221,7 @@ share/applications/kitty.desktop
 %%PORTDOCS%%%%DOCSDIR%%/layouts.html
 %%PORTDOCS%%%%DOCSDIR%%/mapping.html
 %%PORTDOCS%%%%DOCSDIR%%/marks.html
+%%PORTDOCS%%%%DOCSDIR%%/misc-protocol.html
 %%PORTDOCS%%%%DOCSDIR%%/objects.inv
 %%PORTDOCS%%%%DOCSDIR%%/open_actions.html
 %%PORTDOCS%%%%DOCSDIR%%/overview.html
@@ -498,6 +501,9 @@ share/icons/hicolor/scalable/apps/kitty.svg
 %%DATADIR%%/kitty/__pycache__/clipboard%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%DATADIR%%/kitty/__pycache__/clipboard%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
 %%DATADIR%%/kitty/__pycache__/clipboard%%PYTHON_EXT_SUFFIX%%.pyc
+%%DATADIR%%/kitty/__pycache__/colors%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+%%DATADIR%%/kitty/__pycache__/colors%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
+%%DATADIR%%/kitty/__pycache__/colors%%PYTHON_EXT_SUFFIX%%.pyc
 %%DATADIR%%/kitty/__pycache__/config%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%DATADIR%%/kitty/__pycache__/config%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
 %%DATADIR%%/kitty/__pycache__/config%%PYTHON_EXT_SUFFIX%%.pyc
@@ -621,6 +627,7 @@ share/icons/hicolor/scalable/apps/kitty.svg
 %%DATADIR%%/kitty/cli_stub.py
 %%DATADIR%%/kitty/client.py
 %%DATADIR%%/kitty/clipboard.py
+%%DATADIR%%/kitty/colors.py
 %%DATADIR%%/kitty/conf/__init__.py
 %%DATADIR%%/kitty/conf/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%DATADIR%%/kitty/conf/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
@@ -922,6 +929,8 @@ share/icons/hicolor/scalable/apps/kitty.svg
 %%DATADIR%%/kitty/terminfo.py
 %%DATADIR%%/kitty/tint_fragment.glsl
 %%DATADIR%%/kitty/tint_vertex.glsl
+%%DATADIR%%/kitty/trail_fragment.glsl
+%%DATADIR%%/kitty/trail_vertex.glsl
 %%DATADIR%%/kitty/types.py
 %%DATADIR%%/kitty/typing.py
 %%DATADIR%%/kitty/update_check.py
