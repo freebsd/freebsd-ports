@@ -4135,3 +4135,4 @@ devel/p5-Test-HTML-Tidy||2025-02-04|Has expired: Depends on expired textproc/p5-
 www/p5-CGI-Application-Plugin-HtmlTidy||2025-02-04|Has expired: Depends on expired textproc/p5-HTML-Tidy
 textproc/p5-HTML-Tidy||2025-02-04|Has expired: Depends on expired textproc/tidyp
 textproc/tidyp||2025-02-04|Has expired: The repository has been archived by upstream on Apr 14, 2019
+audio/kid3@kf5|audio/kid3@kf6|2025-02-05|kf5 support has been removed. Use kf6 flavor instead
