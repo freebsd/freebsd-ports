@@ -1,6 +1,5 @@
 PORTNAME=	openmpi
-PORTVERSION=	4.1.6
-PORTREVISION=	1
+PORTVERSION=	4.1.8
 CATEGORIES=	net parallel
 MASTER_SITES=	https://download.open-mpi.org/release/open-mpi/v${PORTVERSION:R}/
 PKGNAMESUFFIX=	4
@@ -29,9 +28,6 @@ MPIBASE?=	mpi
 MPIDIR?=	${MPIBASE}/${PORTNAME}
 
 PLIST_SUB+=	MPIDIR=${MPIDIR}
-
-# Workaround for https://github.com/open-mpi/ompi/issues/7516
-CONFIGURE_ENV+=		DISABLE_gds_ds12=1 DISABLE_gds_ds21=1
 
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_PREFIX=	${PREFIX}/${MPIDIR}
