@@ -52,7 +52,7 @@ CONFIGURE_ENV+=	LSOF_CFGL="-lzfs -lzpool"
 .endif
 
 .if !exists(${SRC_BASE}/sys/kern/kern_lockf.c)
-IGNORE+=	requires kernel sources
+IGNORE+=	requires kernel sources (or set SRC_BASE)
 .endif
 
 do-install:
