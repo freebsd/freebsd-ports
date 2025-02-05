@@ -1,6 +1,6 @@
 PORTNAME=	mesa
-DISTVERSION=	25.0-branchpoint-78
-DISTVERSIONSUFFIX=	-g46454f01d39
+DISTVERSION=	25.0-branchpoint-343
+DISTVERSIONSUFFIX=	-g1ade9a05d8b
 CATEGORIES=	graphics
 PKGNAMESUFFIX=	-devel
 
@@ -9,7 +9,6 @@ PATCHFILES+=	700efacda59c.patch:-p1:github
 PATCH_SITES+=	${GL_SITE}/${GL_ACCOUNT}/${GL_PROJECT}/-/commit/
 PATCHFILES+=	2930dcbb3329.patch:-p1 # https://gitlab.freedesktop.org/mesa/mesa/-/merge_requests/22246
 PATCHFILES+=	11aaf934112c.patch:-p1 # https://gitlab.freedesktop.org/mesa/mesa/-/merge_requests/22941
-PATCHFILES+=	5d48fb19553c.patch:-p1 # https://gitlab.freedesktop.org/mesa/mesa/-/merge_requests/31931
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Bleeding edge Mesa drivers (OpenCL, OpenGL, Vulkan)
@@ -98,7 +97,7 @@ COINST_SUB_LIST=	SUFFIX=${PKGNAMESUFFIX}
 COINST_PLIST_SUB_OFF=	SUFFIX=
 
 LLVM_DESC=		Build with LLVM support (see implies)
-LLVM_USES=		llvm:min=15,lib,noexport
+LLVM_USES=		llvm:min=18,lib,noexport
 LLVM_CONFIGURE_ENV=	LLVM_CONFIG=${LLVM_CONFIG}
 LLVM_MESON_ENABLED=	llvm
 LLVM_MESON_TRUE=	amd-use-llvm
