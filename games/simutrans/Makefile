@@ -1,9 +1,6 @@
 PORTNAME=	simutrans
-DISTVERSION=	124-2-2
-PORTREVISION=	1
+DISTVERSION=	124.3
 CATEGORIES=	games
-MASTER_SITES=	SF/simutrans/simutrans/${DISTVERSION}
-DISTNAME=	simutrans-src-${DISTVERSION}
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Transportation simulator
@@ -18,14 +15,13 @@ LIB_DEPENDS=	libpng.so:graphics/png \
 		libfreetype.so:print/freetype2 \
 		libzstd.so:archivers/zstd
 
-USES=		cmake compiler:c++14-lang pkgconfig sdl zip
+USES=		cmake compiler:c++14-lang pkgconfig sdl
+USE_GITHUB=	yes
 USE_SDL=	sdl2
 CMAKE_ON=	CMAKE_DISABLE_FIND_PACKAGE_CCache \
 		CMAKE_DISABLE_FIND_PACKAGE_Git \
 		CMAKE_DISABLE_FIND_PACKAGE_Subversion
 CMAKE_ARGS=	-DSIMUTRANS_USE_REVISION=1
-
-WRKSRC=		${WRKDIR}/simutrans-master
 
 PORTDATA=	*
 PORTDOCS=	change_request.txt \
