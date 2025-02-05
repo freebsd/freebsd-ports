@@ -10,6 +10,27 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
+20250205:
+AUTHOR: yasu@FreeBSD.org
+
+  3 new variables are defined if you add 'USES=samba' in Makefile.
+
+  * SAMBA_TALLOC_PORT
+  * SAMBA_TDB_PORT
+  * SAMBA_TEVENT_PORT
+
+  They are intended to be used by ports that works with Samba to
+  specify proper version of talloc, tdb and/or tevent as dependency
+  such as bellow.
+
+      LIB_DEPENDS=	ibtalloc.so:${SAMBA_TALLOC_PORT} \
+			libtdb.so:${SAMBA_TDB_PORT} \
+			libtevent.so:${SAMBA_TEVENT_PORT}
+      USES=		samba:env
+
+  You need not use them if port just depends on talloc, tdb and/or
+  tevent and it has nothing to do with Samba.
+
 20250203:
 AUTHOR: yasu@FreeBSD.org
 
