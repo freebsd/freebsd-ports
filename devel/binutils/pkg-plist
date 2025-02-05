@@ -28,7 +28,7 @@ include/sframe-api.h
 include/sframe.h
 include/symcat.h
 %%SHARED%%lib/bfd-plugins/libdep.so
-%%SHARED%%lib/libbfd-2.43.1.so
+%%SHARED%%lib/libbfd-2.44.so
 lib/libbfd.a
 %%SHARED%%lib/libbfd.so
 lib/libctf-nobfd.a
@@ -39,7 +39,7 @@ lib/libctf.a
 %%SHARED%%lib/libctf.so
 %%SHARED%%lib/libctf.so.0
 %%SHARED%%lib/libctf.so.0.0.0
-%%SHARED%%lib/libopcodes-2.43.1.so
+%%SHARED%%lib/libopcodes-2.44.so
 lib/libopcodes.a
 %%SHARED%%lib/libopcodes.so
 lib/libsframe.a
