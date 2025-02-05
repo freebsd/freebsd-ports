@@ -5,6 +5,19 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20250205:
+  AFFECTS: users of www/gitlab
+  AUTHOR: mfechner@FreeBSD.org
+
+  Make sure you compare your /usr/local/www/gitlab/config/puma.rb with
+  /usr/local/www/gitlab/config/puma.rb.sample and make sure you have the:
+  require "logger"
+  line in your puma.rb.
+  This fixes an error:
+  /usr/local/lib/ruby/gems/3.2/gems/activesupport-7.0.8.7/lib/active_support/logger_thread_safe_level.rb:12:in `<module:LoggerThreadSafeLevel>': uninitialized constant ActiveSupport::LoggerThreadSafeLevel::Logger (NameError)
+
+    Logger::Severity.constants.each do |severity|
+
 20250131:
   AFFECTS: users of security/easy-rsa
   AUTHOR: mandree@FreeBSD.org
