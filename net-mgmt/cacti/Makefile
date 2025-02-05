@@ -1,11 +1,11 @@
 PORTNAME=	cacti
-DISTVERSION=	1.2.28
+DISTVERSION=	1.2.29
 CATEGORIES=	net-mgmt www
 MASTER_SITES=	http://www.cacti.net/downloads/ \
 		ftp://ftpmirror.uk/freebsd-ports/cacti/
 PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 
-MAINTAINER=	m.muenz@gmail.com
+MAINTAINER=	rodrigo@FreeBSD.org
 COMMENT=	Web-driven graphing interface for RRDTool
 WWW=		https://www.cacti.net/
 
