@@ -7,6 +7,9 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Interoperability between desktops and collaborative environments
 WWW=		https://oscaf.sourceforge.net
 
+DEPRECATED=	Abandonedware, not used by KDE for a long time
+EXPIRATION_DATE=	2025-03-31
+
 CMAKE_ARGS+=	-DPKGCONFIG_INSTALL_DIR:PATH="libdata/pkgconfig/"
 INSTALL_TARGET=	install
 
