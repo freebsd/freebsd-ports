@@ -1,11 +1,9 @@
 PORTNAME=	0ad
-PORTVERSION=	0.0.26
-PORTREVISION=	36
+DISTVERSION=	0.27.0
 CATEGORIES=	games
-MASTER_SITES=	http://releases.wildfiregames.com/ \
-		SF/zero-ad/releases
-DISTFILES=	${PORTNAME}-${PORTVERSION}-alpha-unix-build.tar.xz \
-		${PORTNAME}-${PORTVERSION}-alpha-unix-data.tar.xz
+MASTER_SITES=	https://releases.wildfiregames.com/
+DISTFILES=	${PORTNAME}-${DISTVERSION}-unix-build.tar.xz \
+		${PORTNAME}-${DISTVERSION}-unix-data.tar.xz
 
 MAINTAINER=	madpilot@FreeBSD.org
 COMMENT=	Real-time strategy (RTS) game of ancient warfare
@@ -29,7 +27,8 @@ LIB_DEPENDS=	libboost_filesystem.so:devel/boost-libs \
 		libminiupnpc.so:net/miniupnpc \
 		libenet.so:net/enet \
 		libsodium.so:security/libsodium \
-		libfmt.so:devel/libfmt
+		libfmt.so:devel/libfmt \
+		libmozjs-115.so:lang/spidermonkey115
 
 USES=		compiler:c++11-lib desktop-file-utils dos2unix gmake gnome \
 		iconv openal:al perl5 pkgconfig python:3.9,build sdl tar:xz \
@@ -40,7 +39,7 @@ USE_SDL=	sdl2
 USE_XORG=	x11 xcursor
 USE_PERL5=	build
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-alpha
+WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
 BUILD_WRKSRC=	${WRKSRC}/build/workspaces/gcc
 MAKE_ARGS=	config=release verbose=1
 CPPFLAGS+=	-DU_USING_ICU_NAMESPACE=1
@@ -57,25 +56,29 @@ PORTDATA=	*
 
 .include <bsd.port.pre.mk>
 
+post-extract:
+	@(cd ${WRKSRC}/libraries/source/nvtt && ${TAR} xf nvtt-28209.tar.xz)
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' \
 			-e 's|%%CC%%|${CC}|' \
-		${WRKSRC}/build/premake/premake5.lua ${WRKSRC}/build/premake/extern_libs5.lua
+		${WRKSRC}/build/premake/extern_libs5.lua
 .if ${ARCH} == i386 && ${CHOSEN_COMPILER_TYPE} == gcc
-	@${REINPLACE_CMD} -e '1055,1251s/-rdynamic/-lssp_nonshared &/' \
-			-e '1441s/"execinfo",/& "ssp_nonshared",/' \
+	@${REINPLACE_CMD} -e '1130,1530s/-rdynamic/-lssp_nonshared &/' \
+			-e '1112,1502s/"execinfo",/& "ssp_nonshared",/' \
 		${WRKSRC}/build/premake/premake5.lua
 .endif
 
 pre-build:
-	(cd ${WRKSRC}/build/workspaces && ${SETENV} ${MAKE_ENV} ./update-workspaces.sh --bindir=${PREFIX}/bin --datadir=${DATADIR} --libdir=${PREFIX}/lib/${PORTNAME})
+	(cd ${WRKSRC}/libraries && ${SETENV} ${MAKE_ENV} ./build-source-libs.sh --with-system-mozjs -j ${_MAKE_JOBS})
+	(cd ${WRKSRC}/build/workspaces && ${SETENV} ${MAKE_ENV} ./update-workspaces.sh --with-system-mozjs --bindir=${PREFIX}/bin --datadir=${DATADIR} --libdir=${PREFIX}/lib/${PORTNAME})
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/binaries/system/pyrogenesis ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/build/resources/0ad.sh ${STAGEDIR}${PREFIX}/bin/0ad
 	${INSTALL_PROGRAM} ${WRKSRC}/binaries/system/ActorEditor ${STAGEDIR}${PREFIX}/bin
 	${MKDIR} ${STAGEDIR}${PREFIX}/lib/${PORTNAME}
-	(cd ${WRKSRC}/binaries/system && ${INSTALL_LIB} libAtlasUI.so libCollada.so libmozjs78-ps-release.so libnvcore.so libnvimage.so libnvmath.so libnvtt.so ${STAGEDIR}${PREFIX}/lib/${PORTNAME})
+	(cd ${WRKSRC}/binaries/system && ${INSTALL_LIB} libAtlasUI.so libCollada.so libnvcore.so libnvimage.so libnvmath.so libnvtt.so ${STAGEDIR}${PREFIX}/lib/${PORTNAME})
 	${INSTALL_DATA} ${WRKSRC}/build/resources/0ad.desktop ${STAGEDIR}${PREFIX}/share/applications
 	${INSTALL_DATA} ${WRKSRC}/build/resources/0ad.png ${STAGEDIR}${PREFIX}/share/pixmaps
 	${MKDIR} ${STAGEDIR}${DATADIR}

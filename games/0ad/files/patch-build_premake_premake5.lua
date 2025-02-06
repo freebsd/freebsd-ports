@@ -1,6 +1,6 @@
---- build/premake/premake5.lua.orig	2022-09-23 19:16:45 UTC
+--- build/premake/premake5.lua.orig	2025-01-28 19:57:28 UTC
 +++ build/premake/premake5.lua
-@@ -76,14 +76,10 @@ else
+@@ -85,14 +85,10 @@ else
  	end
  else
  	local machine = "x86_64"
@@ -17,14 +17,5 @@
 +	machine = f:read("*line")
 +	f:close()
  	-- Special handling on mac os where xcode needs special flags.
+ 	-- TODO: We should look into "universal" macOS compilation.
  	if os.istarget("macosx") then
- 		if string.find(machine, "arm64") then
-@@ -380,7 +376,7 @@ function project_set_build_flags()
- 
- 		if os.istarget("linux") or os.istarget("bsd") then
- 			if _OPTIONS["prefer-local-libs"] then
--				libdirs { "/usr/local/lib" }
-+				libdirs { "%%LOCALBASE%%/lib" }
- 			end
- 
- 			-- To use our local shared libraries, they need to be found in the
