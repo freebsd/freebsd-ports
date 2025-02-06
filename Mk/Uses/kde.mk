@@ -308,7 +308,7 @@ _USE_FRAMEWORKS6_ALL=	ecm colorscheme \
 _USE_FRAMEWORKS_ALL=	${_USE_FRAMEWORKS${_KDE_VERSION}_ALL}
 
 # List of components of the KDE Plasma distribution.
-_USE_PLASMA5_ALL=	libksysguard
+_USE_PLASMA5_ALL=	libksysguard oxygen-sounds
 
 _USE_PLASMA6_ALL=	activities activities-stats activitymanagerd \
 			breeze breeze-gtk decoration discover drkonqi \
