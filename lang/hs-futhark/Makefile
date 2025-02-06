@@ -1,6 +1,6 @@
 PORTNAME=	futhark
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.25.26
+DISTVERSION=	0.25.27
 CATEGORIES=	lang haskell
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -19,7 +19,7 @@ USE_CABAL=	Diff-1.0.2 \
 		QuickCheck-2.15.0.1 \
 		StateVar-1.2.2 \
 		adjunctions-4.4.2_2 \
-		aeson-2.2.3.0_2 \
+		aeson-2.2.3.0_3 \
 		alex-3.5.2.0 \
 		ansi-terminal-1.1.2 \
 		ansi-terminal-types-1.1 \
@@ -137,7 +137,7 @@ USE_CABAL=	Diff-1.0.2 \
 		tasty-1.5.3 \
 		temporary-1.3 \
 		terminal-size-0.3.4_1 \
-		text-iso8601-0.1.1_1 \
+		text-iso8601-0.1.1_2 \
 		text-rope-0.3 \
 		text-short-0.1.6_3 \
 		th-abstraction-0.7.1.0 \
