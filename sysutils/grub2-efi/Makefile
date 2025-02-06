@@ -32,6 +32,7 @@ CPE_VENDOR=	gnu
 CONFIGURE_ARGS=	--with-platform=efi --disable-werror --localedir=${PREFIX}/share/locale
 CONFIGURE_ENV=	CPP="${CC} -E" \
 		LEX=${LOCALBASE}/bin/flex
+CFLAGS+=	-fpermissive
 
 .include <bsd.port.pre.mk>
 
