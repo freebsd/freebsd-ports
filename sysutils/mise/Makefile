@@ -11,6 +11,8 @@ WWW=		https://mise.jdx.dev/ \
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_armv7=	compoilation fails: LLVM ERROR: out of memory
+
 LIB_DEPENDS=	libgit2.so:devel/libgit2 \
 		libssh2.so:security/libssh2 \
 		libzstd.so:archivers/zstd
