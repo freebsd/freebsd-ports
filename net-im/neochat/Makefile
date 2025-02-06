@@ -9,15 +9,16 @@ WWW=		https://invent.kde.org/network/neochat
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSES/GPL-3.0-only.txt
 
+# Quotient is a static lib, doesn't need to be in RUN_DEPENDS
+BUILD_DEPENDS=	libquotient>=0.9.0:net-im/libquotient \
+		kquickimageeditor-qt6>=0.2.0:graphics/kquickimageeditor@qt6
 LIB_DEPENDS=	libQCoro6Core.so:devel/qcoro@qt6 \
 		libcmark.so:textproc/cmark \
 		libqt6keychain.so:security/qtkeychain@qt6 \
 		libdbus-1.so:devel/dbus \
 		libolm.so:security/olm
-BUILD_DEPENDS=	libquotient>=0.9.0:net-im/libquotient \
-		kquickimageeditor-qt6>=0.2.0:graphics/kquickimageeditor@qt6
-# Quotient is a static lib, doesn't need to be in RUN_DEPENDS
-RUN_DEPENDS=	kquickimageeditor-qt6>=0.2.0:graphics/kquickimageeditor@qt6
+RUN_DEPENDS=	kquickimageeditor-qt6>=0.2.0:graphics/kquickimageeditor@qt6 \
+		qt6-location>=0:devel/qt6-location
 
 USES=		cmake compiler:c++20-lang desktop-file-utils gettext kde:6 \
 		pkgconfig qt:6 tar:xz xorg
