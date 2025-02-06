@@ -30,6 +30,8 @@ SUB_FILES=	pkg-message
 PLIST_SUB=	LOGDIR=${LOGDIR} RUNDIR=${RUNDIR} DBDIR=${DBDIR}
 SUB_LIST=	LOGDIR=${LOGDIR} RUNDIR=${RUNDIR} DBDIR=${DBDIR}
 
+CFLAGS+=	-fpermissive
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-confdir=${PREFIX}/etc/${PORTNAME}		\
 		--with-logdir=/var/log/${PORTNAME}			\
