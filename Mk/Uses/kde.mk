@@ -116,9 +116,6 @@ KDE_APPLICATIONS6_SHLIB_VER?=	6.3.0
 KDE_APPLICATIONS6_SHLIB_G_VER?=	${KDE_APPLICATIONS6_VERSION}
 KDE_APPLICATIONS6_BRANCH?=	stable
 
-# Extended KDE universe applications.
-CALLIGRA_VERSION?=		2.9.11
-CALLIGRA_BRANCH?=		stable
 # ==============================================================================
 
 # === INSTALLATION PREFIXES AND HEADER LOCATION ================================
