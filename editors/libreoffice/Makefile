@@ -109,8 +109,8 @@ RUN_DEPENDS=	xdg-open:devel/xdg-utils \
 DISTFILES+=	f543e6e2d7275557a839a164941c0a86e5f2c3f2a0042bfc434c88c6dde9e140-opens___.ttf:ext
 DISTFILES+=	dtoa-20180411.tgz:src
 DISTFILES+=	dragonbox-1.1.3.tar.gz:src
-DISTFILES+=	frozen-1.1.1.tar.gz:src
-DISTFILES+=	skia-m116-2ddcf183eb260f63698aa74d1bb380f247ad7ccd.tar.xz:src
+DISTFILES+=	frozen-1.2.0.tar.gz:src
+DISTFILES+=	skia-m130-3c64459d5df2fa9794b277f0959ed8a92552bf4c.tar.xz:src
 DISTFILES+=	zxcvbn-c-2.5.tar.gz:src
 
 NOT_FOR_ARCHS=		armv6 armv7
@@ -205,6 +205,7 @@ JAVA_CONFIGURE_ON=	--with-ant-home=${LOCALBASE}/share/java/apache-ant \
 			--with-hamcrest=${JAVAJARDIR}/hamcrest.jar \
 			--with-system-jars \
 			--without-system-beanshell \
+			--without-system-java-websocket \
 			--without-system-jfreereport \
 			--without-system-rhino
 JAVA_CONFIGURE_WITH=	java
@@ -225,9 +226,9 @@ JAVA_DISTFILES=	17410483b5b5f267aa18b7e00b65e6e0-hsqldb_1_8_0.zip:src \
 		db60e4fde8dd6d6807523deb71ee34dc-liblayout-0.2.10.zip:src \
 		eeb2c7ddf0d302fba4bfc6e97eac9624-libbase-1.1.6.zip:src \
 		f94d9870737518e3b597f9265f4e9803-libserializer-1.1.6.zip:src \
-		Java-WebSocket-1.5.6.tar.gz:src \
+		Java-WebSocket-1.6.0.tar.gz:src \
 		bsh-2.1.1-src.zip:src \
-		rhino-1.7.14.zip:src
+		rhino-1.7.15.zip:src
 JAVA_USES=	java
 JAVA_VARS=	JAVA_VERSION=17+
 
@@ -251,7 +252,7 @@ MMEDIA_USES=		gstreamer
 MMEDIA_CONFIGURE_ENABLE=	gstreamer-1-0
 
 PDFIUM_CONFIGURE_ENABLE=	pdfium
-PDFIUM_DISTFILES=	pdfium-6425.tar.bz2:src
+PDFIUM_DISTFILES=	pdfium-6764.tar.bz2:src
 PDFIUM_LIB_DEPENDS=	libabsl_strings.so:devel/abseil \
 			libopenjp2.so:graphics/openjpeg
 
@@ -300,7 +301,6 @@ CONFIGURE_ARGS=	--disable-dependency-tracking \
 		--enable-release-build \
 		--enable-extension-integration \
 		--disable-mpl-subset \
-		--disable-report-builder \
 		--exec-prefix=${PREFIX} \
 		--with-boost=${LOCALBASE} \
 		--with-build-version="FreeBSD ports ${PKGVERSION}" \

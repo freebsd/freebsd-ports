@@ -1,6 +1,6 @@
---- configure.orig	2022-12-22 00:21:43 UTC
+--- configure.orig	2024-11-22 20:15:41 UTC
 +++ configure
-@@ -14720,6 +14720,11 @@ freebsd*)
+@@ -15372,6 +15372,11 @@ freebsd*)
          RTL_ARCH=PowerPC_64
          PLATFORMID=freebsd_powerpc64
          ;;
@@ -12,7 +12,7 @@
      powerpc|powerpcspe)
          CPUNAME=POWERPC
          RTL_ARCH=PowerPC
-@@ -37429,7 +37434,7 @@ ac_compiler_gnu=$ac_cv_cxx_compiler_gnu
+@@ -39457,7 +39462,7 @@ ac_compiler_gnu=$ac_cv_cxx_compiler_gnu
          save_CXXFLAGS=$CXXFLAGS
          save_IFS=$IFS
          IFS=$P_SEP
@@ -21,7 +21,25 @@
                                                                          IFS=$save_IFS
                                      if test -z "$i"; then
                  continue
-@@ -45541,7 +45546,7 @@ if test -z "$SHA256SUM"; then
+@@ -44422,7 +44427,7 @@ printf "%s\n" "no (oss-fuzz)" >&6; }
+ elif test "$enable_fuzzers" = "yes"; then
+     { printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: no (oss-fuzz)" >&5
+ printf "%s\n" "no (oss-fuzz)" >&6; }
+-elif test \( \( "$_os" = "Linux" -o "$_os" = "Darwin" \) -a "$ENABLE_NSS" = TRUE \) -o "$_os" = "WINNT" ; then
++elif test \( \( "$_os" = "FreeBSD" -o "$_os" = "Linux" -o "$_os" = "Darwin" \) -a "$ENABLE_NSS" = TRUE \) -o "$_os" = "WINNT" ; then
+     { printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: yes" >&5
+ printf "%s\n" "yes" >&6; }
+                 { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking which gpgmepp to use" >&5
+@@ -44436,7 +44441,7 @@ then :
+         ac_fn_c_check_header_compile "$LINENO" "gpgme++/gpgmepp_version.h" "ac_cv_header_gpgmepp_gpgmepp_version_h" "$ac_includes_default"
+ if test "x$ac_cv_header_gpgmepp_gpgmepp_version_h" = xyes
+ then :
+-   GPGMEPP_CFLAGS=-I/usr/include/gpgme++
++   GPGMEPP_CFLAGS=-I/usr/local/include/gpgme++
+ else $as_nop
+   as_fn_error $? "gpgmepp headers not found, install gpgmepp >= 1.14 development package" "$LINENO" 5
+ fi
+@@ -48095,7 +48100,7 @@ if test -z "$SHA256SUM"; then
  done
  
  if test -z "$SHA256SUM"; then
