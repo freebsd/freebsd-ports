@@ -13,6 +13,8 @@ WWW=		https://github.com/alescdb/air
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
+BROKEN_armv7=	compilation fails: In file included from ./llama.cpp/k_quants.c:50: /usr/local/llvm15/lib/clang/15.0.7/include/immintrin.h:14:2: error: "This header is only meant to be used on x86 and x64 architecture"
+
 USES=		cargo llvm:15 ssl
 
 USE_GITHUB=	yes
