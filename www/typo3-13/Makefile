@@ -1,5 +1,6 @@
 PORTNAME=	typo3
 DISTVERSION=	${PORT_V_MAJOR}.${PORT_V_MINOR}.${PORT_V_PATCH}
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	https://cdn.typo3.com/typo3/${DISTVERSION}/
 PKGNAMESUFFIX=	-${PORT_V_MAJOR}${PHP_PKGNAMESUFFIX}
@@ -16,7 +17,7 @@ IGNORE_WITH_PHP=	81
 
 USES=		cpe php:web,flavors shebangfix
 # php openssl extension is required but it's statically linked in default php
-USE_PHP=	ctype dom fileinfo filter gd intl mbstring pdo session \
+USE_PHP=	ctype dom exif fileinfo filter gd intl mbstring pdo session \
 		simplexml tokenizer xml zip zlib
 
 WRKSRC=		${WRKDIR}/${PORTNAME}_src-${DISTVERSION}
