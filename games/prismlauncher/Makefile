@@ -1,5 +1,6 @@
 PORTNAME=	prismlauncher
 DISTVERSION=	9.2
+PORTREVISION=	1
 CATEGORIES=	games java
 
 MAINTAINER=	Alexander88207@protonmail.com
@@ -12,7 +13,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING.md
 LIB_DEPENDS=	libcmark.so:textproc/cmark \
 		libquazip1-qt6.so:archivers/quazip@qt6 \
 		libtomlplusplus.so:devel/tomlplusplus
-RUN_DEPENDS=	lwjgl>0:games/lwjgl \
+RUN_DEPENDS=	ca_root_nss>=0:security/ca_root_nss \
+		lwjgl>0:games/lwjgl \
 		lwjgl3>0:games/lwjgl3 \
 		openjdk21>0:java/openjdk21 \
 		xrandr:x11/xrandr
