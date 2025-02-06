@@ -1,6 +1,6 @@
 PORTNAME=	duckdb
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.1.3
+DISTVERSION=	1.2.0
 CATEGORIES=	databases
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -13,15 +13,21 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		cmake:testing compiler:c++11-lang ssl
 USE_GITHUB=	yes
-GH_TUPLE=	duckdb:duckdb_inet:51d7ad789f34eecb36a2071bac5aef0e12747d70:inet/extension/inet \
-		duckdb:duckdb_spatial:7ea79b614755d2bdee4be468691e4e17b39b8dbc:spatial/extension/spatial \
-		duckdb:sqlite_scanner:d5d62657702d33cb44a46cddc7ffc4b67bf7e961:sqlite/extension/sqlite_scanner \
-		duckdb:duckdb_sqlsmith:d6d62c1cba6b1369ba79db4bff3c67f24aaa95c2:sqlsmith/extension/sqlsmith \
-		duckdb:duckdb_vss:96374099476b3427c9ab43c1821e610b0465c864:vss/extension/vss
+GH_TUPLE=	\
+		duckdb:duckdb-excel:e243577956f36a898d5485189e5288839c2c4b73:excel/extension/excel \
+		duckdb:duckdb-fts:0477abaf2484aa7b9aabf8ace9dc0bde80a15554:fts/extension/fts \
+		duckdb:duckdb-httpfs:85ac4667bcb0d868199e156f8dd918b0278db7b9:httpfs/extension/httpfs \
+		duckdb:duckdb-inet:a8b361ab5d43f6390d7cb48c9a9f0638e9581cf9:inet/extension/inet \
+		duckdb:duckdb-spatial:79bf2b6f55db3bf7201f375662616663b4b0954a:spatial/extension/spatial \
+		duckdb:duckdb-sqlite:96e451c043afa40ee39b7581009ba0c72a523a12:sqlite/extension/sqlite_scanner \
+		duckdb:duckdb-sqlsmith:b13723fe701f1e38d2cd65b3b6eb587c6553a251:sqlsmith/extension/sqlsmith \
+		duckdb:duckdb-vss:580e8918eb89f478cf2d233ca908ffbd3ec752c5:vss/extension/vss
 # the list of out-of-tree extensions is here: .github/config/out_of_tree_extensions.cmake
 
-CXXFLAGS+=	-I${WRKSRC}/extension/inet/src/include \
-		-I${WRKSRC}/extension/sqlsmith/src/include # https://github.com/duckdb/duckdb/issues/13971
+CXXFLAGS+=	-I${WRKSRC}/extension/inet/src/include 
+CXXFLAGS+=	-I${WRKSRC}/extension/sqlsmith/src/include # https://github.com/duckdb/duckdb/issues/13971
+CXXFLAGS+=	-I${WRKSRC}/extension/fts/extension/fts/include # --""--
+CXXFLAGS+=	-I${WRKSRC}/extension/httpfs/extension/httpfs/include # --""--
 CMAKE_ON=	BUILD_SHARED_LIBS
 CMAKE_OFF=	BUILD_UNITTESTS
 CMAKE_ARGS=	-DOVERRIDE_GIT_DESCRIBE=v${DISTVERSION}-0-g0000000000
@@ -66,6 +72,8 @@ post-extract: # remove the jemalloc extension directory just in case
 post-test: # run tests
 	@cd ${TEST_WRKSRC} && test/unittest
 
-# tests as of 1.1.3: All tests passed (53 skipped tests, 458453 assertions in 3305 test cases)
+# tests as of 1.2.0:
+# test cases:   3631 |   3630 passed | 1 failed | 48 skipped
+# assertions: 403428 | 403427 passed | 1 failed | 48 skipped
 
 .include <bsd.port.mk>
