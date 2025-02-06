@@ -10,7 +10,7 @@ lib/libkrdccore.so.5
 %%QT_PLUGINDIR%%/krdc/kcms/libkcm_krdc_vncplugin.so
 %%QT_PLUGINDIR%%/krdc/krdc_testplugin.so
 %%QT_PLUGINDIR%%/krdc/krdc_vncplugin.so
-%%FREERDP%%%%QT_PLUGINDIR%%/krdc/libkrdc_rdpplugin.so
+%%FREERDP%%%%QT_PLUGINDIR%%/krdc/krdc_rdpplugin.so
 share/applications/org.kde.krdc.desktop
 share/config.kcfg/krdc.kcfg
 share/locale/af/LC_MESSAGES/krdc.mo
