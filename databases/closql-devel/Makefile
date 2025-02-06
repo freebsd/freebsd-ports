@@ -22,6 +22,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	magit
 
 MAKE_ENV+=	LOAD_PATH="${LOAD_PATH}"
+MAKE_JOBS_UNSAFE=	Opening input file: No such file or directory, /wrkdirs/usr/ports/databases/closql-devel/work-full/closql-2.2.0/.#closql-autoloads.el
 
 CONFLICTS_INSTALL=	closql closql-emacs_* # share/doc/closql/README.md
 
