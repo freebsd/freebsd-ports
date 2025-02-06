@@ -1,6 +1,5 @@
 PORTNAME=	botan
-DISTVERSION=	3.6.1
-PORTREVISION=	1
+DISTVERSION=	3.7.1
 CATEGORIES=	security
 MASTER_SITES=	http://botan.randombit.net/releases/
 PKGNAMESUFFIX=	${_BOTANMAJOR}
@@ -38,7 +37,7 @@ LDFLAGS+=		-pthread
 
 DOCSDIR=	${LOCALBASE}/share/doc/${PORTNAME}-${PORTVERSION}
 
-_SOABIVER=	6
+_SOABIVER=	7
 _BOTANMAJOR=	${DISTVERSION:S/./ /g:[1]}
 _SHLIBVER=	${DISTVERSION:S/./ /g:[2]}
 _SHLIBVERPATCH=	${DISTVERSION:S/./ /g:[3]}
@@ -52,7 +51,8 @@ OPTIONS_DEFINE=			DOCS MANPAGES PYTHON SQLITE3
 OPTIONS_DEFAULT=		MANPAGES
 OPTIONS_SUB=			yes
 
-MANPAGES_BUILD_DEPENDS=		${PYTHON_PKGNAMEPREFIX}sphinx>=0:textproc/py-sphinx@${PY_FLAVOR}
+MANPAGES_BUILD_DEPENDS=		${PYTHON_PKGNAMEPREFIX}sphinx>=0:textproc/py-sphinx@${PY_FLAVOR} \
+				${PYTHON_PKGNAMEPREFIX}furo>=2022.6.21:textproc/py-furo@${PY_FLAVOR}
 MANPAGES_CONFIGURE_WITH=	sphinx
 
 PYTHON_USES=		python
@@ -67,13 +67,11 @@ SQLITE3_CONFIGURE_WITH=	sqlite3
 
 .if ${ARCH} == aarch64
 CONFIGURE_ARGS+=	--cc-abi="-march=armv8-a+crypto"
-.elif ${ARCH} == powerpc64
+.elif ${ARCH:Mpowerpc64*}
 CONFIGURE_ARGS+=	--cpu="ppc64"
 .if !defined(MACHINE_CPU) || (defined(MACHINE_CPU) && !${MACHINE_ABI:Mvsx2})
 CONFIGURE_ARGS+=	--disable-powercrypto
 .endif
-.elif ${ARCH} == powerpc64le
-CONFIGURE_ARGS+=	--cpu="ppc64le"
 .endif
 
 .if ${ARCH} == i386 || ${ARCH} == amd64

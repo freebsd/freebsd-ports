@@ -1,6 +1,7 @@
 bin/botan%%BOTANMAJOR%%
 include/botan-%%BOTANMAJOR%%/botan/aead.h
 include/botan-%%BOTANMAJOR%%/botan/allocator.h
+include/botan-%%BOTANMAJOR%%/botan/api.h
 include/botan-%%BOTANMAJOR%%/botan/argon2.h
 include/botan-%%BOTANMAJOR%%/botan/argon2fmt.h
 include/botan-%%BOTANMAJOR%%/botan/asio_async_ops.h
@@ -30,6 +31,8 @@ include/botan-%%BOTANMAJOR%%/botan/certstor.h
 include/botan-%%BOTANMAJOR%%/botan/certstor_system.h
 include/botan-%%BOTANMAJOR%%/botan/chacha_rng.h
 include/botan-%%BOTANMAJOR%%/botan/cipher_mode.h
+include/botan-%%BOTANMAJOR%%/botan/cmce.h
+include/botan-%%BOTANMAJOR%%/botan/cmce_parameter_set.h
 include/botan-%%BOTANMAJOR%%/botan/compiler.h
 include/botan-%%BOTANMAJOR%%/botan/compression.h
 include/botan-%%BOTANMAJOR%%/botan/concepts.h
@@ -47,6 +50,7 @@ include/botan-%%BOTANMAJOR%%/botan/dl_group.h
 include/botan-%%BOTANMAJOR%%/botan/dlies.h
 include/botan-%%BOTANMAJOR%%/botan/dsa.h
 include/botan-%%BOTANMAJOR%%/botan/ec_point.h
+include/botan-%%BOTANMAJOR%%/botan/ec_point_format.h
 include/botan-%%BOTANMAJOR%%/botan/ec_group.h
 include/botan-%%BOTANMAJOR%%/botan/ec_apoint.h
 include/botan-%%BOTANMAJOR%%/botan/ec_scalar.h
@@ -91,6 +95,7 @@ include/botan-%%BOTANMAJOR%%/botan/p11.h
 include/botan-%%BOTANMAJOR%%/botan/p11_ecc_key.h
 include/botan-%%BOTANMAJOR%%/botan/p11_ecdh.h
 include/botan-%%BOTANMAJOR%%/botan/p11_ecdsa.h
+include/botan-%%BOTANMAJOR%%/botan/p11_mechanism.h
 include/botan-%%BOTANMAJOR%%/botan/p11_object.h
 include/botan-%%BOTANMAJOR%%/botan/p11_randomgenerator.h
 include/botan-%%BOTANMAJOR%%/botan/p11_rsa.h
@@ -115,6 +120,7 @@ include/botan-%%BOTANMAJOR%%/botan/pkix_enums.h
 include/botan-%%BOTANMAJOR%%/botan/pkix_types.h
 %%HAS_PROCESSOR_RNG%%include/botan-%%BOTANMAJOR%%/botan/processor_rng.h
 include/botan-%%BOTANMAJOR%%/botan/psk_db.h
+include/botan-%%BOTANMAJOR%%/botan/pss_params.h
 include/botan-%%BOTANMAJOR%%/botan/pubkey.h
 include/botan-%%BOTANMAJOR%%/botan/pwdhash.h
 include/botan-%%BOTANMAJOR%%/botan/reducer.h
@@ -192,4 +198,4 @@ lib/libbotan-%%BOTANMAJOR%%.so.%%SOABIVER%%
 lib/libbotan-%%BOTANMAJOR%%.so.%%SOABIVER%%.%%SHLIBVER%%.%%SHLIBVERPATCH%%
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/botan%%BOTANMAJOR%%.py
 libdata/pkgconfig/botan-%%BOTANMAJOR%%.pc
-%%MANPAGES%%share/man/man1/botan.1.gz
+%%MANPAGES%%share/man/man1/botan%%BOTANMAJOR%%.1.gz
