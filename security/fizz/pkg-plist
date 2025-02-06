@@ -75,6 +75,7 @@ include/fizz/crypto/hpke/test/Mocks.h
 include/fizz/crypto/test/HashTest.h
 include/fizz/crypto/test/HmacTest.h
 include/fizz/crypto/test/Mocks.h
+include/fizz/crypto/test/Signature.h
 include/fizz/crypto/test/SignatureTestData.h
 include/fizz/crypto/test/TestKeys.h
 include/fizz/crypto/test/TestUtil.h
