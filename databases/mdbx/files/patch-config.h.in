@@ -1,0 +1,11 @@
+--- config.h.in.orig	2025-02-06 19:00:19 UTC
++++ config.h.in
+@@ -38,6 +38,8 @@
+ #cmakedefine01 MDBX_ENABLE_DBI_SPARSE
+ #cmakedefine01 MDBX_ENABLE_DBI_LOCKFREE
+ 
++#include <sys/types.h>
++
+ /* Windows */
+ #if defined(MDBX_BUILD_TEST) || !defined(MDBX_BUILD_CXX) || MDBX_BUILD_CXX
+ #define MDBX_WITHOUT_MSVC_CRT 0
