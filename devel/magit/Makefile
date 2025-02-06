@@ -1,6 +1,6 @@
 PORTNAME=	magit
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.2.0
+DISTVERSION=	4.3.0
 CATEGORIES=	devel elisp
 PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
 
@@ -11,15 +11,15 @@ WWW=		https://magit.vc/
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	compat.el${EMACS_PKGNAMESUFFIX}>=30.0.1.0:misc/compat.el@${EMACS_FLAVOR} \
-		dash.el${EMACS_PKGNAMESUFFIX}>=2.19.1:devel/dash.el@${EMACS_FLAVOR} \
+BUILD_DEPENDS=	compat.el${EMACS_PKGNAMESUFFIX}>=30.0.2.0:misc/compat.el@${EMACS_FLAVOR} \
 		git:devel/git \
-		transient${EMACS_PKGNAMESUFFIX}>=0.8.2:devel/transient@${EMACS_FLAVOR} \
+		llama.el${EMACS_PKGNAMESUFFIX}>=0.6.0:devel/llama.el@${EMACS_FLAVOR} \
+		transient${EMACS_PKGNAMESUFFIX}>=0.8.4:devel/transient@${EMACS_FLAVOR} \
 		with-editor${EMACS_PKGNAMESUFFIX}>=3.4.3:editors/with-editor@${EMACS_FLAVOR}
-RUN_DEPENDS=	compat.el${EMACS_PKGNAMESUFFIX}>=30.0.1.0:misc/compat.el@${EMACS_FLAVOR} \
-		dash.el${EMACS_PKGNAMESUFFIX}>=2.19.1:devel/dash.el@${EMACS_FLAVOR} \
+RUN_DEPENDS=	compat.el${EMACS_PKGNAMESUFFIX}>=30.0.2.0:misc/compat.el@${EMACS_FLAVOR} \
 		git:devel/git \
-		transient${EMACS_PKGNAMESUFFIX}>=0.8.2:devel/transient@${EMACS_FLAVOR} \
+		llama.el${EMACS_PKGNAMESUFFIX}>=0.6.0:devel/llama.el@${EMACS_FLAVOR} \
+		transient${EMACS_PKGNAMESUFFIX}>=0.8.4:devel/transient@${EMACS_FLAVOR} \
 		with-editor${EMACS_PKGNAMESUFFIX}>=3.4.3:editors/with-editor@${EMACS_FLAVOR}
 
 USES=		emacs gmake makeinfo
