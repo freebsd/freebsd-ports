@@ -12,8 +12,9 @@ WWW=		https://github.com/WorksApplications/sudachi.rs
 
 LICENSE=	APACHE20
 
-BROKEN_i386=	compilation fails: error[E0425]: cannot find value `SEED` in this scope ; constant `crate::hash::SEED` exists but is inaccessible
-BROKEN_powerpc=	compilation fails: error[E0425]: cannot find value `SEED` in this scope ; constant `crate::hash::SEED` exists but is inaccessible
+BROKEN_armv7=	compilation fails: error[E0425]: cannot find value `SEED` in this scope ; constant `crate::hash::SEED` exists but is inaccessible, see https://github.com/WorksApplications/sudachi.rs/issues/298
+BROKEN_i386=	compilation fails: error[E0425]: cannot find value `SEED` in this scope ; constant `crate::hash::SEED` exists but is inaccessible, see https://github.com/WorksApplications/sudachi.rs/issues/298
+BROKEN_powerpc=	compilation fails: error[E0425]: cannot find value `SEED` in this scope ; constant `crate::hash::SEED` exists but is inaccessible, see https://github.com/WorksApplications/sudachi.rs/issues/298
 
 BUILD_DEPENDS=	${PY_SETUPTOOLS} \
 		${PYTHON_PKGNAMEPREFIX}setuptools-rust>0:devel/py-setuptools-rust@${PY_FLAVOR} \
