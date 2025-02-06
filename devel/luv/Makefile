@@ -1,8 +1,8 @@
 PORTNAME=	luv
-DISTVERSIONPREFIX=	v
-DISTVERSION=	1.50.0-0
+#DISTVERSIONPREFIX=	v
+DISTVERSION=	1.50.0-1
 CATEGORIES=	devel
-MASTER_SITES=	https://github.com/luvit/${PORTNAME}/releases/download/v${DISTVERSION}/
+MASTER_SITES=	https://github.com/luvit/${PORTNAME}/releases/download/${DISTVERSION}/
 
 MAINTAINER=	adamw@FreeBSD.org
 COMMENT=	libuv bindings for lua
