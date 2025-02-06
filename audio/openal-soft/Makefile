@@ -1,8 +1,10 @@
 PORTNAME=	openal-soft
-PORTVERSION=	1.23.1
-PORTREVISION=	1
+PORTVERSION=	1.24.2
 CATEGORIES=	audio
 MASTER_SITES=	https://openal-soft.org/openal-releases/
+
+PATCH_SITES=	https://github.com/kcat/openal-soft/commit/
+PATCHFILES+=	9fdf662bcbd86cf26202f8718d6c5ca24655652e.patch:-p1 # Fix casts on 32-bit archs
 
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Software implementation of the OpenAL specification
@@ -13,13 +15,13 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libdbus-1.so:devel/dbus
 
-USES=		cmake compiler:c++14-lang pkgconfig tar:bzip2
+USES=		cmake compiler:c++17-lang pathfix pkgconfig tar:bzip2
 USE_LDCONFIG=	yes
 
 CMAKE_ARGS=	-DCMAKE_INSTALL_DATADIR:STRING="${PREFIX}/etc"
 CMAKE_ON=	ALSOFT_BACKEND_WAVE
 CMAKE_OFF=	ALSOFT_BACKEND_ALSA ALSOFT_DLOPEN ALSOFT_EXAMPLES \
-		ALSOFT_REQUIRE_QSA ALSOFT_REQUIRE_SOLARIS
+		ALSOFT_REQUIRE_SOLARIS
 
 # do not link with librt and libdl.
 LDFLAGS+=	-Wl,--as-needed
@@ -42,10 +44,10 @@ OPTIONS_SUB=		yes
 CONFIG_DESC=	Install configuration utility (needs Qt 5)
 UTILS_DESC=	Build and install utility programs
 
+CONFIG_IMPLIES=		UTILS
 CONFIG_USES=		qt:5
 CONFIG_USE=		QT=core,gui,widgets,buildtools:build,qmake:build
 CONFIG_CMAKE_BOOL_OFF=	ALSOFT_NO_CONFIG_UTIL
-CONFIG_CMAKE_ON=	-DALSOFT_NO_QT5:BOOL=OFF
 
 JACK_LIB_DEPENDS=	libjack.so:audio/jack
 JACK_CMAKE_BOOL=	ALSOFT_BACKEND_JACK ALSOFT_REQUIRE_JACK

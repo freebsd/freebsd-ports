@@ -25,9 +25,11 @@ lib/libopenal.so.1
 lib/libopenal.so.%%SOVERSION%%
 libdata/pkgconfig/openal.pc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/alconvolve.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/alstreamcb.cpp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/aldebug.cpp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/aldirect.cpp
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/alffplay.cpp
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/alhrtf.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/allafplay.cpp
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/allatency.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/alloopback.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/almultireverb.c
@@ -35,6 +37,7 @@ libdata/pkgconfig/openal.pc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/alrecord.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/alreverb.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/alstream.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/alstreamcb.cpp
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/altonegen.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/common/alhelpers.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/common/alhelpers.h
