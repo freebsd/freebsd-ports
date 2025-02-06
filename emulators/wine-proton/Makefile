@@ -96,7 +96,7 @@ CONFIGURE_ARGS=	--verbose \
 
 CONFIGURE_ENV=	CPPBIN="false" CPPFLAGS="" FLEX="${LOCALBASE}/bin/flex" JXRLIB_CFLAGS="-I${LOCALBASE}/include/jxrlib"
 
-CFLAGS+=	-D__NR_futex="-1" -Werror=implicit-function-declaration
+CFLAGS+=	-D__NR_futex="-1" -Werror=implicit-function-declaration -Wno-int-conversion
 CFLAGS_i386+=	-mpreferred-stack-boundary=4 -mstackrealign
 PIE_UNSAFE=	yes
 
