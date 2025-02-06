@@ -1,6 +1,6 @@
 PORTNAME=	pysam
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.22.1
+DISTVERSION=	0.23.0
 CATEGORIES=	biology python
 #MASTER_SITES=	PYPI # no tests
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -31,5 +31,7 @@ TEST_WRKSRC=	${WRKSRC}/tests
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/pysam/lib*${PYTHON_EXT_SUFFIX}.so
+
+# tests as of 0.23.0: 958 passed, 13 skipped, 1 warning in 502.60s (0:08:22)
 
 .include <bsd.port.mk>
