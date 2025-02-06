@@ -1,6 +1,6 @@
 PORTNAME=	asmutils
 PORTVERSION=	0.18
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	devel
 MASTER_SITES=	http://asm.sourceforge.net/asmutils/
 
@@ -10,12 +10,14 @@ WWW=		https://asm.sourceforge.net/
 
 LICENSE=	GPLv2
 
+DEPRECATED=		latest upstream release is 19 years ago, replaced by a-Linux, does not build with GCC 14
+EXPIRATION_DATE=	2025-03-02
 ONLY_FOR_ARCHS=	i386
 
 BUILD_DEPENDS=	nasm:devel/nasm
 
 USES=		gmake
-USE_GCC=	yes
+USE_GCC=	13
 MAKE_ARGS=	OS="${OPSYS:tu}" KERNEL="${OSREL:S/.//g}" CC="${CC}" LD="${LD}"
 MAKE_JOBS_UNSAFE=yes
 
