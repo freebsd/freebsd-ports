@@ -1,6 +1,6 @@
 PORTNAME=	llama-cpp
 DISTVERSIONPREFIX=	b
-DISTVERSION=	4576
+DISTVERSION=	4649
 CATEGORIES=	misc # machine-learning
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -44,12 +44,21 @@ VULKAN_BUILD_DEPENDS=	glslc:graphics/shaderc \
 			vulkan-headers>0:graphics/vulkan-headers
 VULKAN_LIB_DEPENDS=	libvulkan.so:graphics/vulkan-loader
 
-BINARY_ALIAS=	git=false
+BINARY_ALIAS=	git=false \
+		python=${PYTHON_CMD} # for tests
 
 do-test-ci: # build of tests fails, see https://github.com/ggerganov/llama.cpp/issues/10955
 	@cd ${WRKSRC} && \
 		${SETENV} ${MAKE_ENV} bash ci/run.sh ./tmp/results ./tmp/mnt
 
 # tests as of 4458: 97% tests passed, 1 tests failed out of 31, see https://github.com/ggerganov/llama.cpp/issues/11036
+
+# tests as of 4649:
+# 88% tests passed, 4 tests failed out of 32
+# The following tests FAILED:
+#         18 - test-chat (Subprocess aborted)                    main   # see https://github.com/ggerganov/llama.cpp/issues/11705
+#         24 - test-gguf (SEGFAULT)                              main
+#         25 - test-backend-ops (SEGFAULT)                       main
+#         32 - test-eval-callback (SEGFAULT)                     curl eval-callback
 
 .include <bsd.port.mk>
