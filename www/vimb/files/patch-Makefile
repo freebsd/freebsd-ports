@@ -1,15 +1,14 @@
---- Makefile.orig	2024-12-23 06:28:27 UTC
+--- Makefile.orig	2025-01-26 14:39:03 UTC
 +++ Makefile
-@@ -3,10 +3,9 @@ all: version.h src.subdir-all
+@@ -3,11 +3,6 @@ all: version.h src.subdir-all
  
  all: version.h src.subdir-all
  
 -version.h: Makefile $(wildcard .git/index)
-+version.h:
- 	@echo "create $@"
+-	@echo "create $@"
 -	$(Q)v="$$(git describe --tags 2>/dev/null)"; \
 -	echo "#define VERSION \"$${v:-$(version)}\"" > $@
-+	echo "#define VERSION \"$(version)\"" > $@
- 
+-
  options:
  	@echo "vimb build options:"
+ 	@echo "LIBS      = $(LIBS)"
