@@ -20,7 +20,7 @@ GH_ACCOUNT=	tarsius
 GH_PROJECT=	llama
 
 MAKE_ARGS=	LOAD_PATH=" -L ${PREFIX}/${EMACS_VERSION_SITE_LISPDIR} -L ${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/compat -L ."
-MAKE_JOBS_UNSAFE=	yes
+MAKE_JOBS_UNSAFE=	Opening input file: No such file or directory, /wrkdirs/usr/ports/devel/llama.el/work-nox/llama-0.6.0/.#llama-autoloads.el
 
 NO_ARCH=	yes
 PLIST_FILES=	${EMACS_VERSION_SITE_LISPDIR}/llama-autoloads.el \
