@@ -6,8 +6,8 @@ MASTER_SITES=	RG
 MAINTAINER=	mfechner@FreeBSD.org
 COMMENT=	ActiveSupport instrumentation for the OpenTelemetry framework
 WWW=		https://opentelemetry.io/ \
-		https://github.com/open-telemetry/opentelemetry-ruby \
-		https://github.com/open-telemetry/opentelemetry-ruby-contrib/tree/main/instrumentation/active_support
+		https://github.com/open-telemetry/opentelemetry-ruby-contrib/tree/main/instrumentation/active_support \
+		https://github.com/open-telemetry/opentelemetry-ruby-contrib
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
