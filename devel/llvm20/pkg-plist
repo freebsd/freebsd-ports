@@ -6809,7 +6809,7 @@ llvm%%LLVM_SUFFIX%%/lib/cmake/llvm/llvm-driver-template.cpp.in
 %%STATIC_LIBS%%%%FLANG%%llvm%%LLVM_SUFFIX%%/lib/libFIRTestAnalysis.a
 %%STATIC_LIBS%%%%FLANG%%llvm%%LLVM_SUFFIX%%/lib/libFIRTestOpenACCInterfaces.a
 %%STATIC_LIBS%%%%FLANG%%llvm%%LLVM_SUFFIX%%/lib/libFIRTransforms.a
-%%STATIC_LIBS%%llvm%%LLVM_SUFFIX%%/lib/libFlangOpenMPTransforms.a
+%%STATIC_LIBS%%%%FLANG%%llvm%%LLVM_SUFFIX%%/lib/libFlangOpenMPTransforms.a
 %%STATIC_LIBS%%%%FLANG%%llvm%%LLVM_SUFFIX%%/lib/libFortranCommon.a
 %%STATIC_LIBS%%%%FLANG%%llvm%%LLVM_SUFFIX%%/lib/libFortranDecimal.a
 %%STATIC_LIBS%%%%FLANG%%llvm%%LLVM_SUFFIX%%/lib/libFortranEvaluate.a
