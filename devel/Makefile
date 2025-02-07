@@ -6173,6 +6173,7 @@
     SUBDIR += py-xsdata
     SUBDIR += py-xsdata-attrs
     SUBDIR += py-xsdata-plantuml
+    SUBDIR += py-xsdata-pydantic
     SUBDIR += py-xstatic
     SUBDIR += py-xstatic-angular
     SUBDIR += py-xstatic-angular-bootstrap
