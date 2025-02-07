@@ -1,7 +1,7 @@
-commit 9d36885c30adb54fc4e4a8b0112a6e7379706390
+commit a5f947661b12af9fbe95bd197027a6ab64019440
 Author: Christoph Moench-Tegeder <cmt@FreeBSD.org>
 
-    regenerate FreeBSD libwebrtc patch for Firefox 128esr
+    regenerate FreeBSD libwebrtc patch for Firefox 128.7esr
 
 diff --git third_party/libwebrtc/api/adaptation/resource_adaptation_api_gn/moz.build third_party/libwebrtc/api/adaptation/resource_adaptation_api_gn/moz.build
 index 2dbd5881583e..332ca04819ee 100644
@@ -57649,10 +57649,10 @@ index a4fb8b3162bd..f70faede2fba 100644
  Library("desktop_capture_gn")
 diff --git third_party/libwebrtc/modules/desktop_capture/desktop_capture_objc_gn/moz.build third_party/libwebrtc/modules/desktop_capture/desktop_capture_objc_gn/moz.build
 deleted file mode 100644
-index 6b5cd9286eb3..000000000000
+index 88222c2ec906..000000000000
 --- third_party/libwebrtc/modules/desktop_capture/desktop_capture_objc_gn/moz.build
 +++ /dev/null
-@@ -1,77 +0,0 @@
+@@ -1,79 +0,0 @@
 -# This Source Code Form is subject to the terms of the Mozilla Public
 -# License, v. 2.0. If a copy of the MPL was not distributed with this
 -# file, You can obtain one at http://mozilla.org/MPL/2.0/.
@@ -57702,7 +57702,9 @@ index 6b5cd9286eb3..000000000000
 -    "/third_party/libwebrtc/modules/desktop_capture/mac/desktop_frame_cgimage.mm",
 -    "/third_party/libwebrtc/modules/desktop_capture/mac/desktop_frame_iosurface.mm",
 -    "/third_party/libwebrtc/modules/desktop_capture/mac/desktop_frame_provider.mm",
+-    "/third_party/libwebrtc/modules/desktop_capture/mac/sck_picker_handle.mm",
 -    "/third_party/libwebrtc/modules/desktop_capture/mac/screen_capturer_mac.mm",
+-    "/third_party/libwebrtc/modules/desktop_capture/mac/screen_capturer_sck.mm",
 -    "/third_party/libwebrtc/modules/desktop_capture/mouse_cursor_monitor_mac.mm",
 -    "/third_party/libwebrtc/modules/desktop_capture/screen_capturer_darwin.mm",
 -    "/third_party/libwebrtc/modules/desktop_capture/window_capturer_mac.mm",
