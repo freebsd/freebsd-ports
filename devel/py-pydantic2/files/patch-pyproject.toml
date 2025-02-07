@@ -1,0 +1,11 @@
+--- pyproject.toml.orig	2020-02-02 00:00:00 UTC
++++ pyproject.toml
+@@ -46,7 +46,7 @@ dependencies = [
+ dependencies = [
+     'typing-extensions>=4.12.2',
+     'annotated-types>=0.6.0',
+-    'pydantic-core==2.27.2',
++    'pydantic-core==2.28.0',
+ ]
+ dynamic = ['version', 'readme']
+ 
