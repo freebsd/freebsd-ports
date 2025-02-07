@@ -1,5 +1,5 @@
 PORTNAME=	google-cloud-spanner
-PORTVERSION=	2.24.0
+PORTVERSION=	2.25.0
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
@@ -14,10 +14,10 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-bigdecimal>=3.0<4:math/rubygem-bigdecimal \
 		rubygem-concurrent-ruby>=1.0<2:devel/rubygem-concurrent-ruby \
-		rubygem-google-cloud-core>=1.5<2:net/rubygem-google-cloud-core \
-		rubygem-google-cloud-spanner-admin-database-v1>=0.19.0<2.0:net/rubygem-google-cloud-spanner-admin-database-v1 \
-		rubygem-google-cloud-spanner-admin-instance-v1>=0.16.0<2.0:net/rubygem-google-cloud-spanner-admin-instance-v1 \
-		rubygem-google-cloud-spanner-v1>=0.27.0<2.0:net/rubygem-google-cloud-spanner-v1
+		rubygem-google-cloud-core>=1.7<2:net/rubygem-google-cloud-core \
+		rubygem-google-cloud-spanner-admin-database-v1>=1.4<2:net/rubygem-google-cloud-spanner-admin-database-v1 \
+		rubygem-google-cloud-spanner-admin-instance-v1>=1.6<2:net/rubygem-google-cloud-spanner-admin-instance-v1 \
+		rubygem-google-cloud-spanner-v1>=1.6<2:net/rubygem-google-cloud-spanner-v1
 
 USES=		gem
 
