@@ -4137,3 +4137,4 @@ textproc/p5-HTML-Tidy||2025-02-04|Has expired: Depends on expired textproc/tidyp
 textproc/tidyp||2025-02-04|Has expired: The repository has been archived by upstream on Apr 14, 2019
 audio/kid3@kf5|audio/kid3@kf6|2025-02-05|kf5 support has been removed. Use kf6 flavor instead
 audio/liblastfm-qt5||2025-02-05|No ports depend on this. New ports should used Qt6-based audio/liblastfm
+devel/rubygem-cucumber-messages26|devel/rubygem-cucumber-messages|2025-02-07|Remove obsoleted port. Use devel/rubygem-cucumber-messages instead
