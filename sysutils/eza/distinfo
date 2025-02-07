@@ -1,6 +1,6 @@
-TIMESTAMP = 1738297458
-SHA256 (eza-man-0.20.19.tar.gz) = b81a64db336a67570f7aaea321c904320fc1c01cc55be29f0ce3a5372e6e7fd7
-SIZE (eza-man-0.20.19.tar.gz) = 9527
+TIMESTAMP = 1738911988
+SHA256 (eza-man-0.20.20.tar.gz) = 545aed0b6620ed7e7a480a8087e43f539d6000bf90c3f4d903a686c1aa966bde
+SIZE (eza-man-0.20.20.tar.gz) = 9585
 SHA256 (rust/crates/addr2line-0.24.2.crate) = dfbe277e56a376000877090da837660b4427aad530e3028d44e0bffe4f89a1c1
 SIZE (rust/crates/addr2line-0.24.2.crate) = 39015
 SHA256 (rust/crates/adler2-2.0.0.crate) = 512761e0bb2578dd7380c6baaa0f4ce03e84f95e960231d1dec8bf4d7d6e2627
@@ -435,5 +435,5 @@ SHA256 (rust/crates/zerovec-derive-0.10.3.crate) = 6eafa6dfb17584ea3e2bd6e76e0cc
 SIZE (rust/crates/zerovec-derive-0.10.3.crate) = 19438
 SHA256 (rust/crates/zoneinfo_compiled-0.5.1.crate) = 64fbebe65e899530f43bd760b23fda8f141118f4db49952b02998cbd0907a5de
 SIZE (rust/crates/zoneinfo_compiled-0.5.1.crate) = 8837
-SHA256 (eza-community-eza-v0.20.19_GH0.tar.gz) = b749e7b04c173f33cf15f0022d103bb59e79e7d2a88ec00721f2be0316cc9ef9
-SIZE (eza-community-eza-v0.20.19_GH0.tar.gz) = 1419634
+SHA256 (eza-community-eza-v0.20.20_GH0.tar.gz) = 8731184ff1b1d3dbd6bb8fda8f750780a58ccac682fd6344d92160dc518937de
+SIZE (eza-community-eza-v0.20.20_GH0.tar.gz) = 1419589
