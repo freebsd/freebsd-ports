@@ -1,6 +1,7 @@
 #!/bin/sh
 
 # PROVIDE: swtpm
+# REQUIRE: FILESYSTEMS ldconfig
 # KEYWORD: shutdown
 
 #
