@@ -25,11 +25,12 @@ CARGO_CRATES=	ahash-0.8.11 \
 		icu_provider-1.5.0 \
 		icu_provider_macros-1.5.0 \
 		idna-0.5.0 \
-		idna-1.0.2 \
+		idna-1.0.3 \
+		idna_adapter-1.2.0 \
 		indexmap-2.2.6 \
 		indoc-2.0.5 \
 		itoa-1.0.11 \
-		jiter-0.7.1 \
+		jiter-0.8.2 \
 		lexical-parse-float-0.8.5 \
 		lexical-parse-integer-0.8.6 \
 		lexical-util-0.8.5 \
@@ -44,12 +45,12 @@ CARGO_CRATES=	ahash-0.8.11 \
 		percent-encoding-2.3.1 \
 		portable-atomic-1.6.0 \
 		proc-macro2-1.0.86 \
-		pyo3-0.22.6 \
-		pyo3-build-config-0.22.6 \
-		pyo3-ffi-0.22.6 \
-		pyo3-macros-0.22.6 \
-		pyo3-macros-backend-0.22.6 \
-		python3-dll-a-0.2.10 \
+		pyo3-0.23.4 \
+		pyo3-build-config-0.23.4 \
+		pyo3-ffi-0.23.4 \
+		pyo3-macros-0.23.4 \
+		pyo3-macros-backend-0.23.4 \
+		python3-dll-a-0.2.12 \
 		quote-1.0.36 \
 		radium-0.7.0 \
 		regex-1.11.1 \
@@ -57,9 +58,9 @@ CARGO_CRATES=	ahash-0.8.11 \
 		regex-syntax-0.8.5 \
 		rustversion-1.0.17 \
 		ryu-1.0.18 \
-		serde-1.0.214 \
-		serde_derive-1.0.214 \
-		serde_json-1.0.132 \
+		serde-1.0.217 \
+		serde_derive-1.0.217 \
+		serde_json-1.0.134 \
 		smallvec-1.13.2 \
 		speedate-0.15.0 \
 		stable_deref_trait-1.2.0 \
