@@ -1,7 +1,6 @@
 PORTNAME=	neocmakelsp
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.8.16
-PORTREVISION=	1
+DISTVERSION=	0.8.17
 CATEGORIES=	lang
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -23,21 +22,21 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		anstyle-1.0.10 \
 		anstyle-parse-0.2.6 \
 		anstyle-query-1.1.2 \
-		anstyle-wincon-3.0.6 \
+		anstyle-wincon-3.0.7 \
 		anyhow-1.0.95 \
-		async-trait-0.1.85 \
-		auto_impl-1.2.0 \
+		async-trait-0.1.86 \
+		auto_impl-1.2.1 \
 		autocfg-1.4.0 \
 		backtrace-0.3.74 \
 		bitflags-1.3.2 \
-		bitflags-2.7.0 \
+		bitflags-2.8.0 \
 		bstr-1.11.3 \
 		bytes-1.9.0 \
-		cc-1.2.7 \
+		cc-1.2.11 \
 		cfg-if-1.0.0 \
-		clap-4.5.26 \
-		clap_builder-4.5.26 \
-		clap_complete-4.5.42 \
+		clap-4.5.27 \
+		clap_builder-4.5.27 \
+		clap_complete-4.5.44 \
 		clap_derive-4.5.24 \
 		clap_lex-0.7.4 \
 		cli-table-0.4.9 \
@@ -48,7 +47,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		crossbeam-deque-0.8.6 \
 		crossbeam-epoch-0.9.18 \
 		crossbeam-utils-0.8.21 \
-		crunchy-0.2.2 \
+		crunchy-0.2.3 \
 		csv-1.3.1 \
 		csv-core-0.1.11 \
 		dashmap-6.1.0 \
@@ -67,13 +66,14 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		futures-task-0.3.31 \
 		futures-util-0.3.31 \
 		getrandom-0.2.15 \
+		getrandom-0.3.1 \
 		gimli-0.31.1 \
 		glob-0.3.2 \
 		globset-0.4.15 \
 		hashbrown-0.14.5 \
 		hashbrown-0.15.2 \
 		heck-0.5.0 \
-		httparse-1.9.5 \
+		httparse-1.10.0 \
 		icu_collections-1.5.0 \
 		icu_locid-1.5.0 \
 		icu_locid_transform-1.5.0 \
@@ -87,7 +87,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		idna-1.0.3 \
 		idna_adapter-1.2.0 \
 		ignore-0.4.23 \
-		indexmap-2.7.0 \
+		indexmap-2.7.1 \
 		is_terminal_polyfill-1.70.1 \
 		itoa-1.0.14 \
 		lazy_static-1.5.0 \
@@ -95,10 +95,10 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		linux-raw-sys-0.4.15 \
 		litemap-0.7.4 \
 		lock_api-0.4.12 \
-		log-0.4.22 \
+		log-0.4.25 \
 		lsp-types-0.95.1 \
 		memchr-2.7.4 \
-		miniz_oxide-0.8.2 \
+		miniz_oxide-0.8.3 \
 		mio-1.0.3 \
 		nu-ansi-term-0.46.0 \
 		object-0.36.7 \
@@ -109,10 +109,11 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		parking_lot_core-0.9.10 \
 		path-absolutize-3.1.1 \
 		path-dedot-3.1.1 \
+		pathdiff-0.2.3 \
 		percent-encoding-2.3.1 \
 		pin-project-lite-0.2.16 \
 		pin-utils-0.1.0 \
-		proc-macro2-1.0.92 \
+		proc-macro2-1.0.93 \
 		quote-1.0.38 \
 		redox_syscall-0.5.8 \
 		regex-1.11.1 \
@@ -120,13 +121,13 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		regex-syntax-0.8.5 \
 		rust-ini-0.21.1 \
 		rustc-demangle-0.1.24 \
-		rustix-0.38.43 \
-		ryu-1.0.18 \
+		rustix-0.38.44 \
+		ryu-1.0.19 \
 		same-file-1.0.6 \
 		scopeguard-1.2.0 \
 		serde-1.0.217 \
 		serde_derive-1.0.217 \
-		serde_json-1.0.135 \
+		serde_json-1.0.138 \
 		serde_repr-0.1.19 \
 		serde_spanned-0.6.8 \
 		sharded-slab-0.1.7 \
@@ -142,7 +143,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		syn-2.0.96 \
 		sync_wrapper-1.0.2 \
 		synstructure-0.13.1 \
-		tempfile-3.15.0 \
+		tempfile-3.16.0 \
 		termcolor-1.4.1 \
 		thread_local-1.1.8 \
 		tiny-keccak-2.0.2 \
@@ -152,7 +153,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		tokio-util-0.7.13 \
 		toml-0.8.19 \
 		toml_datetime-0.6.8 \
-		toml_edit-0.22.22 \
+		toml_edit-0.22.23 \
 		tower-0.5.2 \
 		tower-layer-0.3.3 \
 		tower-lsp-f-0.21.0 \
@@ -163,20 +164,21 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		tracing-core-0.1.33 \
 		tracing-log-0.2.0 \
 		tracing-subscriber-0.3.19 \
-		tree-sitter-0.24.6 \
+		tree-sitter-0.25.0 \
 		tree-sitter-cmake-0.5.0 \
-		tree-sitter-language-0.1.3 \
+		tree-sitter-language-0.1.4 \
 		treesitter_kind_collector-0.2.0 \
 		trim-in-place-0.1.7 \
-		unicode-ident-1.0.14 \
+		unicode-ident-1.0.16 \
 		unicode-width-0.1.14 \
 		url-2.5.4 \
 		utf16_iter-1.0.5 \
 		utf8_iter-1.0.4 \
 		utf8parse-0.2.2 \
-		valuable-0.1.0 \
+		valuable-0.1.1 \
 		walkdir-2.5.0 \
 		wasi-0.11.0+wasi-snapshot-preview1 \
+		wasi-0.13.3+wasi-0.2.2 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-util-0.1.9 \
@@ -192,7 +194,8 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		windows_x86_64_gnu-0.52.6 \
 		windows_x86_64_gnullvm-0.52.6 \
 		windows_x86_64_msvc-0.52.6 \
-		winnow-0.6.22 \
+		winnow-0.7.0 \
+		wit-bindgen-rt-0.33.0 \
 		write16-1.0.0 \
 		writeable-0.5.5 \
 		yoke-0.7.5 \
