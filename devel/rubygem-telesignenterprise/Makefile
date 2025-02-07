@@ -1,5 +1,5 @@
 PORTNAME=	telesignenterprise
-PORTVERSION=	2.2.2
+PORTVERSION=	2.3.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
