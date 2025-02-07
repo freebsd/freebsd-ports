@@ -1,7 +1,6 @@
 PORTNAME=	galera
-PORTVERSION=	26.4.16
-PORTREVISION=	4
-DISTVERSIONPREFIX=	release_
+PORTVERSION=	26.4.21
+DISTVERSIONPREFIX=	mariadb-
 CATEGORIES=	databases
 PKGNAMESUFFIX=	26
 
@@ -31,8 +30,8 @@ LIB_DEPENDS=	libboost_date_time.so:devel/boost-libs
 USES=		compiler:c++11-lang python:build cmake ssl
 
 USE_GITHUB=	yes
-GH_TUPLE?=	codership:galera:${DISTVERSIONPREFIX}${PORTVERSION}${DISTVERSIONSUFFIX} \
-		codership:wsrep-API:694d6ca47f5eec7873be99b7d6babccf633d1231:dummy/wsrep/src
+GH_TUPLE?=	mariadb:galera:${DISTVERSIONPREFIX}${PORTVERSION}${DISTVERSIONSUFFIX} \
+		codership:wsrep-API:b03acea3661835a48f52ed44dc0f6e7f037390a0:dummy/wsrep/src
 
 CMAKE_ARGS+=	-DGALERA_REVISION=${GH_TAGNAME}
 
