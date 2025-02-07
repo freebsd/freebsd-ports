@@ -1,0 +1,11 @@
+--- Makefile.orig	2024-10-15 12:27:32 UTC
++++ Makefile
+@@ -66,7 +66,7 @@ PREFS        = pref/latex-encoding                pref
+                pref/cp936raw.txt                  pref/cp932raw.txt                  \
+                pref/rtf-encoding.cp1251
+ 
+-DOCS         = doc/GPL_license      doc/ChangeLog     \
++DOCS         = doc/GPL_license      doc/Changelog     \
+                doc/rtf2latexDoc.tex doc/rtf2latex2e.1 \
+                doc/Makefile                           \
+ 
