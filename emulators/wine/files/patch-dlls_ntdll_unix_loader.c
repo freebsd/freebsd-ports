@@ -1,7 +1,6 @@
---- UTC
---- dlls/ntdll/unix/loader.c.orig	2024-01-16 20:55:47
-+++ dlls/ntdll/unix/loader.c	2024-05-10 07:03:04
-@@ -480,6 +480,21 @@
+--- dlls/ntdll/unix/loader.c.orig	2024-04-05 17:03:05 UTC
++++ dlls/ntdll/unix/loader.c
+@@ -480,6 +480,21 @@ char *get_alternate_wineloader( WORD machine )
  
      if (machine == current_machine) return NULL;
  
@@ -20,6 +19,6 @@
 +        }
 +    }
 +
-     if (machine == IMAGE_FILE_MACHINE_AMD64)  /* try the 64-bit loader */
+     /* try the 64-bit loader */
+     if (current_machine == IMAGE_FILE_MACHINE_I386 && machine == IMAGE_FILE_MACHINE_AMD64)
      {
-         size_t len = strlen(wineloader);

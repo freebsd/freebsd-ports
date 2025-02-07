@@ -1,9 +1,8 @@
 PORTNAME=	wine
-DISTVERSION=	9.0
-PORTREVISION=	6
+DISTVERSION=	10.0
 PORTEPOCH=	1
 CATEGORIES=	emulators
-MASTER_SITES=	https://dl.winehq.org/wine/source/9.0/
+MASTER_SITES=	https://dl.winehq.org/wine/source/10.0/
 
 MAINTAINER=	gerald@FreeBSD.org
 COMMENT=	Microsoft Windows compatibility environment
@@ -42,6 +41,7 @@ CONFIGURE_ARGS+=--verbose \
 		--without-krb5 \
 		--with-mingw CROSSCC="clang" \
 		--without-netapi \
+		--without-odbc \
 		--without-opencl \
 		--without-osmesa \
 		--without-pcap \
