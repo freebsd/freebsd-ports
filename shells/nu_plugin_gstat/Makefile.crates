@@ -1,5 +1,4 @@
 CARGO_CRATES=	adler2-2.0.0 \
-		ahash-0.7.8 \
 		aho-corasick-1.1.3 \
 		alloc-no-stdlib-2.0.4 \
 		alloc-stdlib-0.2.2 \
@@ -12,15 +11,9 @@ CARGO_CRATES=	adler2-2.0.0 \
 		bit-set-0.8.0 \
 		bit-vec-0.8.0 \
 		bitflags-2.6.0 \
-		bitvec-1.0.1 \
-		borsh-1.5.3 \
-		borsh-derive-1.5.3 \
-		brotli-6.0.0 \
+		brotli-7.0.0 \
 		brotli-decompressor-4.0.1 \
 		bumpalo-3.16.0 \
-		byte-unit-5.1.6 \
-		bytecheck-0.6.12 \
-		bytecheck_derive-0.6.12 \
 		byteorder-1.5.0 \
 		bytes-1.9.0 \
 		cc-1.2.3 \
@@ -49,11 +42,9 @@ CARGO_CRATES=	adler2-2.0.0 \
 		flate2-1.0.35 \
 		foldhash-0.1.3 \
 		form_urlencoded-1.2.1 \
-		funty-2.0.0 \
 		getrandom-0.2.15 \
-		git2-0.19.0 \
+		git2-0.20.0 \
 		glob-0.3.1 \
-		hashbrown-0.12.3 \
 		hashbrown-0.15.2 \
 		heck-0.5.0 \
 		hex-0.4.3 \
@@ -80,7 +71,7 @@ CARGO_CRATES=	adler2-2.0.0 \
 		jobserver-0.1.32 \
 		js-sys-0.3.76 \
 		libc-0.2.168 \
-		libgit2-sys-0.17.0+1.8.1 \
+		libgit2-sys-0.18.0+1.9.0 \
 		libloading-0.8.6 \
 		libproc-0.14.10 \
 		libredox-0.1.3 \
@@ -103,22 +94,22 @@ CARGO_CRATES=	adler2-2.0.0 \
 		nom-7.1.3 \
 		ntapi-0.4.1 \
 		nu-ansi-term-0.50.1 \
-		nu-derive-value-0.101.0 \
-		nu-engine-0.101.0 \
-		nu-glob-0.101.0 \
-		nu-path-0.101.0 \
-		nu-plugin-0.101.0 \
-		nu-plugin-core-0.101.0 \
-		nu-plugin-protocol-0.101.0 \
-		nu-protocol-0.101.0 \
-		nu-system-0.101.0 \
-		nu-utils-0.101.0 \
+		nu-derive-value-0.102.0 \
+		nu-engine-0.102.0 \
+		nu-glob-0.102.0 \
+		nu-path-0.102.0 \
+		nu-plugin-0.102.0 \
+		nu-plugin-core-0.102.0 \
+		nu-plugin-protocol-0.102.0 \
+		nu-protocol-0.102.0 \
+		nu-system-0.102.0 \
+		nu-utils-0.102.0 \
 		num-format-0.4.4 \
 		num-traits-0.2.19 \
 		omnipath-0.1.6 \
 		once_cell-1.20.2 \
 		openssl-probe-0.1.5 \
-		openssl-sys-0.9.104 \
+		openssl-sys-0.9.105 \
 		option-ext-0.2.0 \
 		os_pipe-1.2.1 \
 		owo-colors-4.1.0 \
@@ -127,41 +118,30 @@ CARGO_CRATES=	adler2-2.0.0 \
 		paste-1.0.15 \
 		percent-encoding-2.3.1 \
 		pkg-config-0.3.31 \
-		ppv-lite86-0.2.20 \
-		proc-macro-crate-3.2.0 \
 		proc-macro-error-1.0.4 \
 		proc-macro-error-attr-1.0.4 \
 		proc-macro2-1.0.92 \
 		procfs-0.17.0 \
 		procfs-core-0.17.0 \
-		ptr_meta-0.1.4 \
-		ptr_meta_derive-0.1.4 \
 		pure-rust-locales-0.8.1 \
 		pwd-1.4.0 \
 		quote-1.0.37 \
-		radium-0.7.0 \
-		rand-0.8.5 \
-		rand_chacha-0.3.1 \
-		rand_core-0.6.4 \
 		rayon-1.10.0 \
 		rayon-core-1.12.1 \
 		recvmsg-1.0.0 \
 		redox_syscall-0.5.8 \
 		redox_users-0.4.6 \
+		ref-cast-1.0.23 \
+		ref-cast-impl-1.0.23 \
 		regex-1.11.1 \
 		regex-automata-0.4.9 \
 		regex-syntax-0.8.5 \
-		rend-0.4.2 \
-		rkyv-0.7.45 \
-		rkyv_derive-0.7.45 \
 		rmp-0.8.14 \
 		rmp-serde-1.3.0 \
-		rust_decimal-1.36.0 \
 		rustc-hash-1.1.0 \
 		rustix-0.38.42 \
 		ryu-1.0.18 \
 		scopeguard-1.2.0 \
-		seahash-4.1.0 \
 		semver-1.0.23 \
 		serde-1.0.216 \
 		serde_derive-1.0.216 \
@@ -170,19 +150,16 @@ CARGO_CRATES=	adler2-2.0.0 \
 		signal-hook-0.3.17 \
 		signal-hook-mio-0.2.4 \
 		signal-hook-registry-1.4.2 \
-		simdutf8-0.1.5 \
 		smallvec-1.13.2 \
 		stable_deref_trait-1.2.0 \
 		strip-ansi-escapes-0.2.0 \
 		supports-color-3.0.2 \
 		supports-hyperlinks-3.1.0 \
 		supports-unicode-3.0.0 \
-		syn-1.0.109 \
 		syn-2.0.90 \
 		synstructure-0.13.1 \
 		sys-locale-0.3.2 \
-		sysinfo-0.32.1 \
-		tap-1.0.1 \
+		sysinfo-0.33.1 \
 		terminal_size-0.4.1 \
 		textwrap-0.16.1 \
 		thiserror-1.0.69 \
@@ -190,10 +167,6 @@ CARGO_CRATES=	adler2-2.0.0 \
 		thiserror-impl-1.0.69 \
 		thiserror-impl-2.0.6 \
 		tinystr-0.7.6 \
-		tinyvec-1.8.0 \
-		tinyvec_macros-0.1.1 \
-		toml_datetime-0.6.8 \
-		toml_edit-0.22.22 \
 		typeid-1.0.2 \
 		typetag-0.2.18 \
 		typetag-impl-0.2.18 \
@@ -203,10 +176,8 @@ CARGO_CRATES=	adler2-2.0.0 \
 		unicode-width-0.1.11 \
 		url-2.5.4 \
 		utf16_iter-1.0.5 \
-		utf8-width-0.1.7 \
 		utf8_iter-1.0.4 \
 		utf8parse-0.2.2 \
-		uuid-1.11.0 \
 		vcpkg-0.2.15 \
 		version_check-0.9.5 \
 		vte-0.11.1 \
@@ -217,6 +188,7 @@ CARGO_CRATES=	adler2-2.0.0 \
 		wasm-bindgen-macro-0.2.99 \
 		wasm-bindgen-macro-support-0.2.99 \
 		wasm-bindgen-shared-0.2.99 \
+		web-time-1.1.0 \
 		widestring-1.1.0 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
@@ -251,14 +223,10 @@ CARGO_CRATES=	adler2-2.0.0 \
 		windows_x86_64_gnullvm-0.52.6 \
 		windows_x86_64_msvc-0.48.5 \
 		windows_x86_64_msvc-0.52.6 \
-		winnow-0.6.20 \
 		write16-1.0.0 \
 		writeable-0.5.5 \
-		wyz-0.5.1 \
 		yoke-0.7.5 \
 		yoke-derive-0.7.5 \
-		zerocopy-0.7.35 \
-		zerocopy-derive-0.7.35 \
 		zerofrom-0.1.5 \
 		zerofrom-derive-0.1.5 \
 		zerovec-0.10.4 \
