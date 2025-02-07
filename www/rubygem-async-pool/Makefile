@@ -1,5 +1,5 @@
 PORTNAME=	async-pool
-PORTVERSION=	0.10.2
+PORTVERSION=	0.10.3
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -11,8 +11,7 @@ WWW=		https://socketry.github.io/async-pool/ \
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/license.md
 
-RUN_DEPENDS=	rubygem-async>=1.25:devel/rubygem-async \
-		rubygem-traces>=0:devel/rubygem-traces
+RUN_DEPENDS=	rubygem-async>=1.25:devel/rubygem-async
 
 USES=		gem
 
