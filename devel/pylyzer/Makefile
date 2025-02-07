@@ -1,7 +1,6 @@
 PORTNAME=	pylyzer
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.0.77
-PORTREVISION=	1
+DISTVERSION=	0.0.78
 CATEGORIES=	devel python
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -35,20 +34,20 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		backtrace-on-stack-overflow-0.3.0 \
 		bitflags-1.3.2 \
 		bitflags-2.8.0 \
-		bumpalo-3.16.0 \
+		bumpalo-3.17.0 \
 		byteorder-1.5.0 \
-		cc-1.2.9 \
+		cc-1.2.10 \
 		cfg-if-1.0.0 \
 		convert_case-0.4.0 \
-		crunchy-0.2.2 \
+		crunchy-0.2.3 \
 		derive_more-0.99.18 \
 		displaydoc-0.2.5 \
 		either-1.13.0 \
-		els-0.1.64-nightly.0 \
-		erg_common-0.6.52-nightly.0 \
-		erg_compiler-0.6.52-nightly.0 \
-		erg_parser-0.6.52-nightly.0 \
-		erg_proc_macros-0.6.52-nightly.0 \
+		els-0.1.64-nightly.1 \
+		erg_common-0.6.52-nightly.1 \
+		erg_compiler-0.6.52-nightly.1 \
+		erg_parser-0.6.52-nightly.1 \
+		erg_proc_macros-0.6.52-nightly.1 \
 		form_urlencoded-1.2.1 \
 		getopts-0.2.21 \
 		getrandom-0.2.15 \
@@ -77,11 +76,11 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		lock_api-0.4.12 \
 		log-0.4.25 \
 		lsp-types-0.93.2 \
-		malachite-0.4.16 \
-		malachite-base-0.4.16 \
+		malachite-0.4.18 \
+		malachite-base-0.4.18 \
 		malachite-bigint-0.2.0 \
-		malachite-nz-0.4.16 \
-		malachite-q-0.4.16 \
+		malachite-nz-0.4.18 \
+		malachite-q-0.4.18 \
 		memchr-2.7.4 \
 		memoffset-0.6.5 \
 		miniz_oxide-0.8.3 \
@@ -110,12 +109,12 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		rustc-hash-1.1.0 \
 		rustc_version-0.4.1 \
 		rustversion-1.0.19 \
-		ryu-1.0.18 \
+		ryu-1.0.19 \
 		scopeguard-1.2.0 \
-		semver-1.0.24 \
+		semver-1.0.25 \
 		serde-1.0.217 \
 		serde_derive-1.0.217 \
-		serde_json-1.0.135 \
+		serde_json-1.0.138 \
 		serde_repr-0.1.19 \
 		shlex-1.3.0 \
 		siphasher-1.0.1 \
@@ -134,7 +133,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		unic-emoji-char-0.9.0 \
 		unic-ucd-ident-0.9.0 \
 		unic-ucd-version-0.9.0 \
-		unicode-ident-1.0.14 \
+		unicode-ident-1.0.16 \
 		unicode-width-0.1.14 \
 		unicode-xid-0.2.6 \
 		unicode_names2-1.3.0 \
@@ -175,7 +174,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		zerofrom-derive-0.1.5 \
 		zerovec-0.10.4 \
 		zerovec-derive-0.10.3 \
-		rustpython-ast,rustpython-parser,rustpython-parser-core,rustpython-parser-vendored@git+https://github.com/RustPython/Parser\#5e9d9853e751240b28138efd165e793a7ee5dad4
+		rustpython-ast,rustpython-parser,rustpython-parser-core,rustpython-parser-vendored@git+https://github.com/RustPython/Parser\#f07b97cef396d573364639904d767c9ff3e3e701
 
 CARGO_BUILD=	no
 CARGO_INSTALL=	no
