@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=Halloy
+Comment=IRC client written in Rust
+Type=Application
+Keywords=IRC;IM;Chat;
+Categories=Network;IRCClient;
+Exec=halloy %U
+Icon=halloy
+StartupWMClass=halloy
+MimeType=x-scheme-handler/irc;x-scheme-handler/ircs;x-scheme-handler/halloy;
+Terminal=false

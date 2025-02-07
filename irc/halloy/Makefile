@@ -1,6 +1,5 @@
 PORTNAME=	halloy
-DISTVERSION=	2024.14
-PORTREVISION=	1
+DISTVERSION=	2025.1
 CATEGORIES=	irc
 
 MAINTAINER=	pokeysquirrel@gmail.com
@@ -10,21 +9,16 @@ WWW=		https://halloy.squidowl.org
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libasound.so:audio/alsa-lib
+LIB_DEPENDS=	libasound.so:audio/alsa-lib \
+		libzstd.so:archivers/zstd
 
-USES=		cargo ssl
+USES=		cargo desktop-file-utils ssl
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	squidowl
 
-DESKTOP_ENTRIES="Halloy" \
-		"IRC Client" \
-		"${PORTNAME}" \
-		"${PORTNAME}" \
-		"Network;IRCClient;" \
-		false
-
 post-install:
+	${INSTALL_DATA} ${FILESDIR}/halloy.desktop ${STAGEDIR}${DESKTOPDIR}
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor
 	(cd ${WRKSRC}/assets/linux/icons/hicolor && for f in \
 		*/apps/org.squidowl.halloy.png; do ${MV} $${f} \
