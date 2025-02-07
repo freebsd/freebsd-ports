@@ -1,12 +1,8 @@
 PORTNAME=	openmodelica
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.24.3
-PORTREVISION=	2
+DISTVERSION=	1.24.4
 CATEGORIES=	science cad java
 DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES=	0d83043bf3815a75549353acf15d333c3b675675.patch:-p1 # https://github.com/OpenModelica/OpenModelica/pull/12515
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Modelica-based modeling and simulation environment
@@ -57,7 +53,7 @@ GH_TUPLE=	\
 		OpenModelica:OMOptim:f1036f43db18c5015da259771004cfb80e08a110:OpenModelica_OMOptim/OMOptim \
 		OpenModelica:OMSimulator:46fa40f:OpenModelica_OMSimulator/OMSimulator \
 		OpenModelica:OMSimulator-3rdParty:5c10de1648d1134a577d9284b58580a72383d89f:OpenModelica_OMSimulator_3rdParty/OMSimulator/3rdParty \
-		OpenModelica:OMCompiler-3rdParty:4bcf74a:OpenModelica_OMCompiler_3rdParty/OMCompiler/3rdParty \
+		OpenModelica:OMCompiler-3rdParty:520663f:OpenModelica_OMCompiler_3rdParty/OMCompiler/3rdParty \
 		OpenModelica:OMSens:093ad11:OpenModelica_OMSens/OMSens \
 		OpenModelica:OMSens_Qt:bab329a:OpenModelica_OMSens_Qt/OMSens_Qt \
 		OpenModelica:OpenModelica-common:08a01802db5ba5edb540383c46718b89ff229ef2:OpenModelica_OpenModelica_common/OMOptim/common \
