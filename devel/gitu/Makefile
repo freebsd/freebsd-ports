@@ -1,7 +1,6 @@
 PORTNAME=	gitu
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.27.0
-PORTREVISION=	3
+DISTVERSION=	0.28.0
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -29,6 +28,7 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		arboard-3.4.1 \
 		atomic-0.6.0 \
 		autocfg-1.4.0 \
+		bitflags-1.3.2 \
 		bitflags-2.6.0 \
 		block2-0.5.1 \
 		bstr-1.10.0 \
@@ -39,14 +39,14 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		castaway-0.2.3 \
 		cc-1.0.106 \
 		cfg-if-1.0.0 \
-		chrono-0.4.38 \
+		chrono-0.4.39 \
 		ciborium-0.2.2 \
 		ciborium-io-0.2.2 \
 		ciborium-ll-0.2.2 \
-		clap-4.5.20 \
-		clap_builder-4.5.20 \
-		clap_derive-4.5.18 \
-		clap_lex-0.7.2 \
+		clap-4.5.26 \
+		clap_builder-4.5.26 \
+		clap_derive-4.5.24 \
+		clap_lex-0.7.4 \
 		clipboard-win-5.4.0 \
 		colorchoice-1.0.2 \
 		compact_str-0.8.0 \
@@ -64,12 +64,14 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		either-1.13.0 \
 		encode_unicode-0.3.6 \
 		equivalent-1.0.1 \
-		errno-0.3.9 \
+		errno-0.3.10 \
 		error-code-3.3.1 \
 		etcetera-0.8.0 \
 		figment-0.10.19 \
+		filetime-0.2.25 \
 		foldhash-0.1.3 \
 		form_urlencoded-1.2.1 \
+		fsevent-sys-4.1.0 \
 		futures-0.3.31 \
 		futures-channel-0.3.31 \
 		futures-core-0.3.31 \
@@ -83,8 +85,9 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		gethostname-0.4.3 \
 		git-version-0.3.9 \
 		git-version-macro-0.3.9 \
-		git2-0.19.0 \
+		git2-0.20.0 \
 		glob-0.3.1 \
+		globset-0.4.15 \
 		half-2.4.1 \
 		hashbrown-0.15.0 \
 		heck-0.5.0 \
@@ -94,30 +97,40 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		iana-time-zone-0.1.61 \
 		iana-time-zone-haiku-0.1.2 \
 		idna-0.5.0 \
+		ignore-0.4.23 \
 		indexmap-2.6.0 \
 		indoc-2.0.5 \
-		insta-1.40.0 \
+		inotify-0.10.2 \
+		inotify-sys-0.1.5 \
+		insta-1.42.0 \
 		instability-0.3.2 \
+		instant-0.1.13 \
 		is-terminal-0.4.13 \
 		is_terminal_polyfill-1.70.1 \
 		itertools-0.10.5 \
 		itertools-0.13.0 \
+		itertools-0.14.0 \
 		itoa-1.0.11 \
 		jobserver-0.1.32 \
 		js-sys-0.3.72 \
+		kqueue-1.0.8 \
+		kqueue-sys-1.0.4 \
 		lazy_static-1.5.0 \
-		libc-0.2.159 \
-		libgit2-sys-0.17.0+1.8.1 \
+		libc-0.2.168 \
+		libgit2-sys-0.18.0+1.9.0 \
+		libredox-0.1.3 \
 		libz-sys-1.1.20 \
 		linked-hash-map-0.5.6 \
 		linux-raw-sys-0.4.14 \
 		lock_api-0.4.12 \
-		log-0.4.22 \
+		log-0.4.25 \
 		lru-0.12.5 \
 		memchr-2.7.4 \
 		minimal-lexical-0.2.1 \
 		mio-1.0.2 \
 		nom-7.1.3 \
+		notify-7.0.0 \
+		notify-types-1.0.0 \
 		num-traits-0.2.19 \
 		objc-sys-0.3.5 \
 		objc2-0.5.2 \
@@ -157,14 +170,14 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		rstest-0.23.0 \
 		rstest_macros-0.23.0 \
 		rustc_version-0.4.1 \
-		rustix-0.38.37 \
+		rustix-0.38.42 \
 		rustversion-1.0.18 \
 		ryu-1.0.18 \
 		same-file-1.0.6 \
 		scopeguard-1.2.0 \
 		semver-1.0.23 \
-		serde-1.0.213 \
-		serde_derive-1.0.213 \
+		serde-1.0.217 \
+		serde_derive-1.0.217 \
 		serde_json-1.0.128 \
 		serde_spanned-0.6.8 \
 		signal-hook-0.3.17 \
