@@ -144,8 +144,8 @@
     SUBDIR += jgmenu
     SUBDIR += kanshi
     SUBDIR += kb2mb2
-    SUBDIR += kde-baseapps
     SUBDIR += kde
+    SUBDIR += kde-baseapps
     SUBDIR += kdisplay
     SUBDIR += keybinder
     SUBDIR += keybinder-gtk3
