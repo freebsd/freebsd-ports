@@ -186,11 +186,13 @@ include/freerdp%%MAJORVERSION%%/freerdp/utils/string.h
 include/freerdp%%MAJORVERSION%%/freerdp/version.h
 include/freerdp%%MAJORVERSION%%/freerdp/window.h
 include/winpr%%MAJORVERSION%%/winpr/asn1.h
+include/winpr%%MAJORVERSION%%/winpr/assert-api.h
 include/winpr%%MAJORVERSION%%/winpr/assert.h
 include/winpr%%MAJORVERSION%%/winpr/bcrypt.h
 include/winpr%%MAJORVERSION%%/winpr/bitstream.h
 include/winpr%%MAJORVERSION%%/winpr/build-config.h
 include/winpr%%MAJORVERSION%%/winpr/buildflags.h
+include/winpr%%MAJORVERSION%%/winpr/cast.h
 include/winpr%%MAJORVERSION%%/winpr/clipboard.h
 include/winpr%%MAJORVERSION%%/winpr/cmdline.h
 include/winpr%%MAJORVERSION%%/winpr/collections.h
