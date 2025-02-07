@@ -1,8 +1,7 @@
 PORTNAME=	virt-manager
-PORTVERSION=	4.1.0
-PORTREVISION=	5
+PORTVERSION=	5.0.0
 CATEGORIES=	deskutils net-mgmt
-MASTER_SITES=	https://virt-manager.org/download/sources/${PORTNAME}/
+MASTER_SITES=	https://releases.pagure.org/${PORTNAME}/
 
 MAINTAINER=	novel@FreeBSD.org
 COMMENT=	Toolkit to interact with virtualization capabilities
@@ -10,7 +9,6 @@ WWW=		https://virt-manager.org/
 
 LICENSE=	LGPL3
 
-LIB_DEPENDS=	libvirt.so:devel/libvirt
 BUILD_DEPENDS=	rst2man:textproc/py-docutils@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dbus>=0.83.2:devel/py-dbus@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}libxml2>=2.7.8:textproc/py-libxml2@${PY_FLAVOR} \
@@ -24,29 +22,18 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dbus>=0.83.2:devel/py-dbus@${PY_FLAVOR} \
 		spice-gtk>=0.26:deskutils/spice-gtk \
 		ssh-askpass:security/openssh-askpass
 
-PYDISTUTILS_INSTALLNOSINGLE=	yes
-PYDISTUTILS_CONFIGURE_TARGET=	configure
-PYDISTUTILS_CONFIGUREARGS=	--prefix=${PREFIX}
-USES=		python gettext gnome shebangfix
-USE_PYTHON=	noegginfo autoplist distutils noflavors
+USES=		desktop-file-utils gettext gnome meson tar:xz python
+USE_GNOME=	gtksourceview4 introspection:run intltool librsvg2 pygobject3
+GLIB_SCHEMAS=	org.virt-manager.virt-manager.gschema.xml
+
+CONFIGURE_ARGS=	-Dtests=disabled
 
 NO_ARCH=	yes
 
-USE_GNOME=	gtksourceview4 introspection:run intltool librsvg2 pygobject3
-
-SHEBANG_FILES=	virt-manager \
-		virt-install \
-		virt-clone \
-		virt-xml \
-		virtManager/virtmanager.py
-
-GLIB_SCHEMAS=	org.virt-manager.virt-manager.gschema.xml
-
-#add workaround for two autoplist functions
-post-install:
-	@${MKDIR} ${STAGEDIR}/${PREFIX}/share/glib-2.0/schemas/
-.for file in ${GLIB_SCHEMAS}
-	${INSTALL_DATA} ${WRKSRC}/data/${file} ${STAGEDIR}/${PREFIX}/share/glib-2.0/schemas
-.endfor
+post-patch:
+	${REINPLACE_CMD} -e "s|'python3'|'${PYTHON_CMD}'|" \
+		${WRKSRC}/meson.build
+	${REINPLACE_CMD} -e 's|"""#!/usr/bin/env python3|"""#!${PYTHON_CMD}|' \
+		${WRKSRC}/scripts/make_bin_wrapper.py
 
 .include <bsd.port.mk>
