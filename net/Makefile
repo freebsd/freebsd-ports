@@ -10,6 +10,7 @@
     SUBDIR += addrwatch
     SUBDIR += afpfs-ng
     SUBDIR += aget
+    SUBDIR += akhq
     SUBDIR += akonadi-calendar
     SUBDIR += akonadi-contacts
     SUBDIR += akonadi-mime
