@@ -15,7 +15,7 @@ load_rc_config $name
 : ${akhq_config:=%%LOCALBASE%%/etc/akhq/application.yml}
 : ${akhq_jar:=%%LOCALBASE%%/share/java/akhq/akhq.jar}
 : ${akhq_java:=%%LOCALBASE%%/bin/java}
-: ${akhq_user:=www}
+: ${akhq_user:=%%WWWOWN%%}
 : ${akhq_pidfile:=/var/run/${name}.pid}
 
 command="/usr/sbin/daemon"
