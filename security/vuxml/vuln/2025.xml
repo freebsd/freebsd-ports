@@ -1,3 +1,41 @@
+  <vuln vid="7bcfca95-e563-11ef-873e-8447094a420f">
+    <topic>MariaDB -- DoS vulnerability in InnoDB</topic>
+    <affects>
+      <package>
+	<name>mariadb105-server</name>
+	<range><lt>10.5.28</lt></range>
+      </package>
+      <package>
+	<name>mariadb106-server</name>
+	<range><lt>10.6.21</lt></range>
+      </package>
+      <package>
+	<name>mariadb1011-server</name>
+	<range><lt>10.11.11</lt></range>
+      </package>
+      <package>
+	<name>mariadb114-server</name>
+	<range><lt>11.4.5</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>MariaDB reports:</p>
+	<blockquote cite="https://mariadb.com/kb/en/security/">
+	  <p>Easily exploitable vulnerability allows high privileged attacker with network access via multiple protocols to compromise MySQL Server. Successful attacks of this vulnerability can result in unauthorized ability to cause a hang or frequently repeatable crash (complete DOS) of MySQL Server.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-21490</cvename>
+      <url>http://mariadb.com/kb/en/security/</url>
+    </references>
+    <dates>
+      <discovery>2025-02-04</discovery>
+      <entry>2025-02-07</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="c10b639c-e51c-11ef-9e76-4ccc6adda413">
     <topic>libcaca -- Multiple vulnerabilities</topic>
     <affects>
