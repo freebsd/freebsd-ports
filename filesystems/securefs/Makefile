@@ -4,7 +4,7 @@ DISTVERSIONPREFIX=	v
 CATEGORIES=	filesystems
 PKGNAMEPREFIX=	fusefs-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Filesystem in userspace with transparent encryption and decryption
 WWW=		https://github.com/netheril96/securefs
 
