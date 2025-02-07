@@ -1,7 +1,6 @@
 PORTNAME=	aws-crt-ffi
-PORTVERSION=	0.4.0
+PORTVERSION=	0.4.2
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -25,13 +24,11 @@ LIB_DEPENDS=	libaws-c-auth.so:security/aws-c-auth \
 
 USES=		cmake ssl
 
-CMAKE_ARGS=	-DCMAKE_PREFIX_PATH=${LOCALBASE} \
-		-DLIBRARY_DIRECTORY=${PREFIX}/lib
 CMAKE_OFF=	BUILD_DEPS BUILD_TESTING
 CMAKE_ON=	BUILD_SHARED_LIBS
 USE_LDCONFIG=	yes
 
-PLIST_FILES=	lib/aws-crt-ffi/cmake/aws-crt-ffi-config.cmake \
+PLIST_FILES=	lib/cmake/aws-crt-ffi/aws-crt-ffi-config.cmake \
 		lib/libaws-crt-ffi.so
 
 USE_GITHUB=	yes
