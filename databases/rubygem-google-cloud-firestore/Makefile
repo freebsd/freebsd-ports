@@ -1,5 +1,5 @@
 PORTNAME=	google-cloud-firestore
-PORTVERSION=	2.16.0
+PORTVERSION=	2.16.1
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 
