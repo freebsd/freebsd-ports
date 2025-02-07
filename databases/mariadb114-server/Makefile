@@ -1,5 +1,5 @@
 PORTNAME?=	mariadb
-PORTVERSION=	11.4.4
+PORTVERSION=	11.4.5
 CATEGORIES=	databases
 MASTER_SITES=	https://mirror.nodesdirect.com/${SITESDIR}/ \
 		https://mirror.one.com/${SITESDIR}/ \
@@ -109,6 +109,7 @@ CMAKE_ARGS+=	-DCMAKE_PREFIX_PATH=${PREFIX} \
 		-DINSTALL_UNIX_ADDRDIR="${MARIADB_RUNDIR}/${MARIADB_SOCK}" \
 		-DWITH_PCRE=system \
 		-DPCRE_LIBRARY_DIRS=${PREFIX}/lib \
+		-DPCRE_FOUND=true \
 		-DWITH_LIBFMT=system \
 		-DLIBFMT_INCLUDE_DIR=${PREFIX}/include \
 		-DHAVE_SYSTEM_LIBFMT=yes \
