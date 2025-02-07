@@ -1,5 +1,5 @@
 PORTNAME=	ncpamixer
-DISTVERSION=	1.3.8
+DISTVERSION=	1.3.9
 CATEGORIES=	audio
 
 MAINTAINER=	yuri@FreeBSD.org
