@@ -1,16 +1,16 @@
 PORTNAME=	mopac
 DISTVERSIONPREFIX=	v
-DISTVERSION=	23.0.3
-PORTREVISION=	1
+DISTVERSION=	23.1.0
 PORTEPOCH=	1
 CATEGORIES=	science # chemistry
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Semi-empirical (MNDO, etc.) molecular orbital calculation
-WWW=		http://openmopac.net/
+WWW=		http://openmopac.net \
+		https://github.com/openmopac/mopac
 
-LICENSE=	GPLv3
-LICENSE_FILE=	${WRKSRC}/COPYING
+LICENSE=	APACHE20
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 TEST_DEPENDS=	${PYNUMPY}
 
@@ -30,5 +30,7 @@ PLIST_FILES=	bin/mopac \
 		include/mopac.h \
 		lib/libmopac.so \
 		lib/libmopac.so.2
+
+# tests as of 23.1.0: 100% tests passed, 0 tests failed out of 125
 
 .include <bsd.port.mk>
