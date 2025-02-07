@@ -1,6 +1,7 @@
 bin/winpr-hash%%MAJORVERSION%%
 bin/winpr-makecert%%MAJORVERSION%%
-%%SDL%%bin/sdl-freerdp%%MAJORVERSION%%
+%%SDL2%%bin/sdl2-freerdp%%MAJORVERSION%%
+%%SDL3%%bin/sdl3-freerdp%%MAJORVERSION%%
 %%WAYLAND%%bin/wlfreerdp%%MAJORVERSION%%
 %%X11%%bin/xfreerdp%%MAJORVERSION%%
 include/freerdp%%MAJORVERSION%%/freerdp/addin.h
@@ -291,12 +292,15 @@ libdata/pkgconfig/winpr-tools%%MAJORVERSION%%.pc
 libdata/pkgconfig/winpr%%MAJORVERSION%%.pc
 %%JSON%%%%KEYBOARD_LAYOUT%%share/FreeRDP/KeyboardLayoutMap.json
 %%JSON%%%%TIMEZONE_FILE%%share/WinPR/TimeZoneNameMap.json
-%%SDL%%share/applications/sdl-freerdp%%MAJORVERSION%%-file.desktop
-%%SDL%%share/applications/sdl-freerdp%%MAJORVERSION%%.desktop
+%%SDL2%%share/applications/sdl2-freerdp%%MAJORVERSION%%-file.desktop
+%%SDL2%%share/applications/sdl2-freerdp%%MAJORVERSION%%.desktop
+%%SDL3%%share/applications/sdl3-freerdp%%MAJORVERSION%%-file.desktop
+%%SDL3%%share/applications/sdl3-freerdp%%MAJORVERSION%%.desktop
 %%X11%%share/applications/xfreerdp%%MAJORVERSION%%-file.desktop
 %%X11%%share/applications/xfreerdp%%MAJORVERSION%%.desktop
 share/icons/hicolor/scalable/apps/FreeRDP.svg
-%%SDL%%%%MANPAGES%%share/man/man1/sdl-freerdp%%MAJORVERSION%%.1.gz
+%%SDL2%%%%MANPAGES%%share/man/man1/sdl2-freerdp%%MAJORVERSION%%.1.gz
+%%SDL3%%%%MANPAGES%%share/man/man1/sdl3-freerdp%%MAJORVERSION%%.1.gz
 %%MANPAGES%%share/man/man1/winpr-hash%%MAJORVERSION%%.1.gz
 %%MANPAGES%%share/man/man1/winpr-makecert%%MAJORVERSION%%.1.gz
 %%WAYLAND%%%%MANPAGES%%share/man/man1/wlfreerdp%%MAJORVERSION%%.1.gz
