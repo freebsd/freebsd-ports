@@ -1,5 +1,6 @@
 PORTNAME=	vips
 PORTVERSION=	8.16.0
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	https://github.com/libvips/libvips/releases/download/v${PORTVERSION}/
 
@@ -19,9 +20,7 @@ RUN_DEPENDS=	bash:shells/bash
 USES=		compiler:c++11-lang cpe gettext-tools gnome localbase meson pkgconfig python shebangfix tar:xz
 USE_GNOME=	glib20
 
-# --default-library=both is broken after https://github.com/mesonbuild/meson/commit/7b3169f46481
-# but not reproducible outside of ports/ build
-MESON_ARGS=	\
+MESON_ARGS=	--default-library=both \
 		-Danalyze=true \
 		-Dcplusplus=true \
 		-Ddeprecated=true \
