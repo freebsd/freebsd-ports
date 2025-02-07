@@ -1,11 +1,13 @@
 PORTNAME=	xgboost
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.1.2
+DISTVERSION=	2.1.4
 CATEGORIES=	misc # machine-learning
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Scalable, Portable and Distributed Gradient Boosting (GBDT, GBRT, GBM)
-WWW=		https://xgboost.ai/
+WWW=		https://xgboost.ai \ \
+		https://xgboost.readthedocs.io/en/stable/ \
+		https://github.com/dmlc/xgboost
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -34,7 +36,6 @@ OPTIONS_DEFINE=		OPENMP
 
 OPENMP_CMAKE_BOOL=	USE_OPENMP
 
-# 1 test fails, see https://github.com/dmlc/xgboost/issues/8425
-# 2.1.0: tests fail to compile, see https://github.com/dmlc/xgboost/issues/10468
+# tests as of 2.1.4: 100% tests passed, 0 tests failed out of 1 (failures when machine is loaded, see https://github.com/dmlc/xgboost/issues/11214)
 
 .include <bsd.port.mk>

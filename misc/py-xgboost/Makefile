@@ -1,6 +1,6 @@
 PORTNAME=	xgboost
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.1.2
+DISTVERSION=	2.1.4
 CATEGORIES=	misc # machine-learning
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -19,10 +19,12 @@ BUILD_DEPENDS=	cmake:devel/cmake-core \
 LIB_DEPENDS=	libdmlc.so:devel/dmlc-core
 RUN_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}scipy>0:science/py-scipy@${PY_FLAVOR}
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}scikit-learn>0:science/py-scikit-learn@${PY_FLAVOR}
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}pandas>=1.2:math/py-pandas@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pyarrow>0:databases/py-pyarrow@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}scikit-learn>0:science/py-scikit-learn@${PY_FLAVOR}
 
 USES=		compiler:c11 python localbase:ldflags
-USE_PYTHON=	pep517 autoplist pytest # Python tests are broken because py-scikit-learn is missing the py-threadpoolctl dependency which is also currently broken
+USE_PYTHON=	pep517 autoplist pytest
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
