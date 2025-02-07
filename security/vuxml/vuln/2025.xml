@@ -1,3 +1,46 @@
+  <vuln vid="c10b639c-e51c-11ef-9e76-4ccc6adda413">
+    <topic>libcaca -- Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>libcaca</name>
+	<range><lt>0.99.b20</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Sam Hocevar reports:</p>
+	<blockquote cite="https://github.com/cacalabs/libcaca/releases/tag/v0.99.beta20">
+	  <p>Multiple memory leaks and invalid memory accesses:</p>
+	  <ul>
+	    <li>CVE-2018-20545: Illegal WRITE memory access at common-image.c</li>
+	    <li>CVE-2018-20546: Illegal READ memory access at caca/dither.c</li>
+	    <li>CVE-2018-20547: Illegal READ memory access at caca/dither.c</li>
+	    <li>CVE-2018-20548: Illegal WRITE memory access at common-image.c</li>
+	    <li>CVE-2018-20549: Illegal WRITE memory access at caca/file.c</li>
+	    <li>CVE-2021-3410:  Buffer overflow in libcaca/caca/canvas.c in function caca_resize</li>
+	    <li>CVE-2021-30498: Heap buffer overflow in export.c in function export_tga</li>
+	    <li>CVE-2021-30499: Buffer overflow in export.c in function export_troff</li>
+	  </ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2018-20545</cvename>
+      <cvename>CVE-2018-20546</cvename>
+      <cvename>CVE-2018-20547</cvename>
+      <cvename>CVE-2018-20548</cvename>
+      <cvename>CVE-2018-20549</cvename>
+      <cvename>CVE-2021-3410</cvename>
+      <cvename>CVE-2021-30498</cvename>
+      <cvename>CVE-2021-30499</cvename>
+      <url>https://github.com/cacalabs/libcaca/releases/tag/v0.99.beta20</url>
+    </references>
+    <dates>
+      <discovery>2021-10-19</discovery>
+      <entry>2025-02-07</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="e7974ca5-e4c8-11ef-aab3-40b034429ecf">
     <topic>cacti -- Multiple vulnerabilities</topic>
     <affects>
