@@ -6171,6 +6171,7 @@
     SUBDIR += py-xerox
     SUBDIR += py-xmltodict
     SUBDIR += py-xsdata
+    SUBDIR += py-xsdata-attrs
     SUBDIR += py-xstatic
     SUBDIR += py-xstatic-angular
     SUBDIR += py-xstatic-angular-bootstrap
