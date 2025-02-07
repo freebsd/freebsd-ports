@@ -4,7 +4,8 @@ CATEGORIES=	science math
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Graphical modeler for Bayesian networks, influence diagrams, etc
-WWW=		https://agrum.gitlab.io/
+WWW=		https://agrum.gitlab.io \
+		https://gitlab.com/agrumery/aGrUM
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
