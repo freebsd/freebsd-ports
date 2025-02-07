@@ -6,8 +6,8 @@ MASTER_SITES=	RG
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Rack instrumentation for the OpenTelemetry framework
 WWW=		https://opentelemetry.io/ \
-		https://github.com/open-telemetry/opentelemetry-ruby-contrib \
-		https://github.com/open-telemetry/opentelemetry-ruby-contrib/tree/main/instrumentation/rack
+		https://github.com/open-telemetry/opentelemetry-ruby-contrib/tree/main/instrumentation/rack \
+		https://github.com/open-telemetry/opentelemetry-ruby-contrib
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
