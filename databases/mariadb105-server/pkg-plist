@@ -86,6 +86,7 @@ include/mysql/server/my_alloc.h
 include/mysql/server/my_alloca.h
 include/mysql/server/my_attribute.h
 include/mysql/server/my_byteorder.h
+include/mysql/server/my_cmp.h
 include/mysql/server/my_compiler.h
 include/mysql/server/my_config.h
 include/mysql/server/my_dbug.h
