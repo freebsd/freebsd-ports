@@ -1,5 +1,6 @@
 PORTNAME=	mod_tls
 PORTVERSION=	0.14.0
+PORTREVISION=	1
 CATEGORIES=	www security
 MASTER_SITES=	https://github.com/icing/mod_tls/releases/download/v${DISTVERSION}/
 PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}
@@ -11,7 +12,7 @@ WWW=		https://github.com/icing/mod_tls
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	rustls-ffi==0.14.0:security/rustls-ffi
+BUILD_DEPENDS=	rustls-ffi>0.14.0:security/rustls-ffi
 LIB_DEPENDS=	librustls.so:security/rustls-ffi
 
 INSTALL_TARGET=	install-strip
