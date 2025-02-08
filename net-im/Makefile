@@ -9,6 +9,7 @@
     SUBDIR += convey
     SUBDIR += coyim
     SUBDIR += cutegram
+    SUBDIR += debugtox
     SUBDIR += dendrite
     SUBDIR += dino
     SUBDIR += discordo
