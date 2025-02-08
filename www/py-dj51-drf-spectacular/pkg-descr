@@ -1,0 +1,24 @@
+This project has 3 goals:
+
+* Extract as much schema information from DRF as possible.
+* Provide flexibility to make the schema usable in the real world (not only
+  toy examples).
+* Generate a schema that works well with the most popular client generators.
+
+The code is a heavily modified fork of the DRF OpenAPI generator, which is/was
+lacking all of the below listed features:
+
+* Serializers modelled as components. (arbitrary nesting + recursion supported)
+* @extend_schema decorator for customization of APIView, Viewsets,
+  function-based views, and @action
+* Authentication support (DRF natives included, easily extendable)
+* Custom serializer class support (easily extendable)
+* SerializerMethodField() type via type hinting or @extend_schema_field
+* i18n support, Tags extraction, Description extraction from docstrings
+* Request/response/parameter examples, Callback operations
+* Vendor specification extensions (x-*) in info, operations, parameters,
+  components, and security schemes
+* Sane fallbacks and sane operation_id naming (based on path)
+* Schema serving with SpectacularAPIView (Redoc and Swagger-UI views are
+  also available)
+* Optional input/output serializer component split
