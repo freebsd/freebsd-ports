@@ -4138,3 +4138,4 @@ textproc/tidyp||2025-02-04|Has expired: The repository has been archived by upst
 audio/kid3@kf5|audio/kid3@kf6|2025-02-05|kf5 support has been removed. Use kf6 flavor instead
 audio/liblastfm-qt5||2025-02-05|No ports depend on this. New ports should used Qt6-based audio/liblastfm
 devel/rubygem-cucumber-messages26|devel/rubygem-cucumber-messages|2025-02-07|Remove obsoleted port. Use devel/rubygem-cucumber-messages instead
+x11-toolkits/tk87||2025-02-08|Has expired: Tcl/Tk 8.7 is not scheduled for release, use 8.6 or 9.0
