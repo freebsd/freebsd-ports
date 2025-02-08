@@ -12,7 +12,14 @@ bin/mailbimi
 %%SITE_PERL%%/Mail/BIMI/CacheBackend/Null.pm
 %%SITE_PERL%%/Mail/BIMI/Constants.pm
 %%SITE_PERL%%/Mail/BIMI/Data/asn1.txt
-%%SITE_PERL%%/Mail/BIMI/Data/CA.pem
+%%SITE_PERL%%/Mail/BIMI/Data/CA.manifest
+%%SITE_PERL%%/Mail/BIMI/Data/CA/06c167cfebf48d35d62410185e11c5eb-DigiCert-Verified-Mark-Root-CA.pem
+%%SITE_PERL%%/Mail/BIMI/Data/CA/0c5b6f7eebb3f1c2acdda13a989dbd82-DigiCert-Verified-Mark-Root-CA.pem
+%%SITE_PERL%%/Mail/BIMI/Data/CA/699d8fd758c2c39c1e53d1aa1476d1e6-Entrust-Verified-Mark-Root-Certification-Authority---VMCR1.pem
+%%SITE_PERL%%/Mail/BIMI/Data/CA/743900bd5b07fc63d7e9150452c89bb701680463-Entrust-Verified-Mark-Root-Certification-Authority---VMCR1.pem
+%%SITE_PERL%%/Mail/BIMI/Data/CA/7fe530038198a75f7d17c00f242cabf3-GlobalSign-Verified-Mark-Root-R42.pem
+%%SITE_PERL%%/Mail/BIMI/Data/CA/7fe530930b864a36ef80ba8686c1a9ae-GlobalSign-Verified-Mark-Root-R42.pem
+%%SITE_PERL%%/Mail/BIMI/Data/CA/b3d227db33085e170000000051d3931f-Entrust-Root-Certification-Authority---G2.pem
 %%SITE_PERL%%/Mail/BIMI/Data/SVG_1.2_BIMI.rng
 %%SITE_PERL%%/Mail/BIMI/Data/SVG_1.2_PS.rng
 %%SITE_PERL%%/Mail/BIMI/Data/Tiny-1.2.rng
