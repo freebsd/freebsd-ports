@@ -1,6 +1,6 @@
 PORTNAME=	M4RI
-PORTVERSION=	20240729
 DISTVERSIONPREFIX=	release-
+DISTVERSION=	20240729
 CATEGORIES=	math
 
 MAINTAINER=	thierry@FreeBSD.org
@@ -15,10 +15,11 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	malb
 GH_PROJECT=	${PORTNAME:tl}
 
-USES=		autoreconf libtool localbase pkgconfig
+USES=		autoreconf libtool:ldflags localbase pathfix pkgconfig
+USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
-USE_LDCONFIG=	yes
+
 INSTALL_TARGET=	install-strip
 
 .if defined(MAINTAINER_MODE)

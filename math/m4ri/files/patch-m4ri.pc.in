@@ -1,8 +1,8 @@
---- m4ri.pc.in.orig	2024-07-29 12:30:45 UTC
+--- m4ri.pc.in.orig	2025-01-26 11:44:34 UTC
 +++ m4ri.pc.in
 @@ -8,4 +8,4 @@ Libs: -L${libdir} -lm4ri @RAW_LIBPNG@ @LIBM@ @LIBPNG_L
  Version: @PACKAGE_VERSION@
  Requires: @M4RI_USE_PNG_PC@
  Libs: -L${libdir} -lm4ri @RAW_LIBPNG@ @LIBM@ @LIBPNG_LIBADD@
 -Cflags: -I${includedir} @SIMD_CFLAGS@ @OPENMP_CFLAGS@ @LIBPNG_CFLAGS@
-+Cflags: -I${includedir} @SIMD_FLAGS@ @OPENMP_CFLAGS@ @LIBPNG_CFLAGS@
++Cflags: -I${includedir} @OPENMP_CFLAGS@ @LIBPNG_CFLAGS@
