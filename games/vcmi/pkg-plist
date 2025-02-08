@@ -77,11 +77,13 @@ share/icons/hicolor/scalable/apps/vcmiclient.svg
 %%DATADIR%%/Mods/vcmi/Content/Sprites/heroWindow/backpackButtonIcon.png
 %%DATADIR%%/Mods/vcmi/Content/Sprites/heroWindow/commanderButtonIcon.png
 %%DATADIR%%/Mods/vcmi/Content/Sprites/itpa.json
+%%DATADIR%%/Mods/vcmi/Content/Sprites/lobby/addChannel.png
 %%DATADIR%%/Mods/vcmi/Content/Sprites/lobby/checkbox.json
 %%DATADIR%%/Mods/vcmi/Content/Sprites/lobby/checkboxBlueOff.png
 %%DATADIR%%/Mods/vcmi/Content/Sprites/lobby/checkboxBlueOn.png
 %%DATADIR%%/Mods/vcmi/Content/Sprites/lobby/checkboxOff.png
 %%DATADIR%%/Mods/vcmi/Content/Sprites/lobby/checkboxOn.png
+%%DATADIR%%/Mods/vcmi/Content/Sprites/lobby/closeChannel.png
 %%DATADIR%%/Mods/vcmi/Content/Sprites/lobby/delete-normal.png
 %%DATADIR%%/Mods/vcmi/Content/Sprites/lobby/delete-pressed.png
 %%DATADIR%%/Mods/vcmi/Content/Sprites/lobby/deleteButton.json
@@ -173,6 +175,9 @@ share/icons/hicolor/scalable/apps/vcmiclient.svg
 %%DATADIR%%/Mods/vcmi/Content/Sprites/vcmi/creatureIcons/towerSmall.png
 %%DATADIR%%/Mods/vcmi/Content/Sprites2x/battle/queueDefend.png
 %%DATADIR%%/Mods/vcmi/Content/Sprites2x/battle/queueWait.png
+%%DATADIR%%/Mods/vcmi/Content/Sprites2x/lobby/addChannel.png
+%%DATADIR%%/Mods/vcmi/Content/Sprites2x/lobby/closeChannel.png
+%%DATADIR%%/Mods/vcmi/Content/Sprites2x/lobby/iconPlayer.png
 %%DATADIR%%/Mods/vcmi/Content/Sprites2x/mapFormatIcons/vcmi1.png
 %%DATADIR%%/Mods/vcmi/Content/Sprites2x/minimapIcons/bordergate.png
 %%DATADIR%%/Mods/vcmi/Content/Sprites2x/minimapIcons/borderguard.png
@@ -185,10 +190,16 @@ share/icons/hicolor/scalable/apps/vcmiclient.svg
 %%DATADIR%%/Mods/vcmi/Content/Sprites2x/settingsWindow/gear.png
 %%DATADIR%%/Mods/vcmi/Content/Sprites2x/stackWindow/icons.png
 %%DATADIR%%/Mods/vcmi/Content/Sprites3x/battle/queueDefend.png
+%%DATADIR%%/Mods/vcmi/Content/Sprites3x/lobby/addChannel.png
+%%DATADIR%%/Mods/vcmi/Content/Sprites3x/lobby/closeChannel.png
+%%DATADIR%%/Mods/vcmi/Content/Sprites3x/lobby/iconPlayer.png
 %%DATADIR%%/Mods/vcmi/Content/Sprites3x/mapFormatIcons/vcmi1.png
 %%DATADIR%%/Mods/vcmi/Content/Sprites3x/settingsWindow/gear.png
 %%DATADIR%%/Mods/vcmi/Content/Sprites3x/stackWindow/icons.png
 %%DATADIR%%/Mods/vcmi/Content/Sprites4x/battle/queueDefend.png
+%%DATADIR%%/Mods/vcmi/Content/Sprites4x/lobby/addChannel.png
+%%DATADIR%%/Mods/vcmi/Content/Sprites4x/lobby/closeChannel.png
+%%DATADIR%%/Mods/vcmi/Content/Sprites4x/lobby/iconPlayer.png
 %%DATADIR%%/Mods/vcmi/Content/Sprites4x/mapFormatIcons/vcmi1.png
 %%DATADIR%%/Mods/vcmi/Content/Sprites4x/settingsWindow/gear.png
 %%DATADIR%%/Mods/vcmi/Content/Sprites4x/stackWindow/icons.png
@@ -204,6 +215,7 @@ share/icons/hicolor/scalable/apps/vcmiclient.svg
 %%DATADIR%%/Mods/vcmi/Content/config/english.json
 %%DATADIR%%/Mods/vcmi/Content/config/french.json
 %%DATADIR%%/Mods/vcmi/Content/config/german.json
+%%DATADIR%%/Mods/vcmi/Content/config/hungarian.json
 %%DATADIR%%/Mods/vcmi/Content/config/polish.json
 %%DATADIR%%/Mods/vcmi/Content/config/portuguese.json
 %%DATADIR%%/Mods/vcmi/Content/config/rmg/hdmod/aroundamarsh.json
@@ -480,6 +492,8 @@ share/icons/hicolor/scalable/apps/vcmiclient.svg
 %%DATADIR%%/config/widgets/buttons/castleInterfaceQuickAccess.json
 %%DATADIR%%/config/widgets/buttons/heroBackpack.json
 %%DATADIR%%/config/widgets/buttons/heroCommander.json
+%%DATADIR%%/config/widgets/buttons/lobbyAddChannel.json
+%%DATADIR%%/config/widgets/buttons/lobbyCloseChannel.json
 %%DATADIR%%/config/widgets/buttons/lobbyCreateRoom.json
 %%DATADIR%%/config/widgets/buttons/lobbyHideWindow.json
 %%DATADIR%%/config/widgets/buttons/lobbyJoinRoom.json
