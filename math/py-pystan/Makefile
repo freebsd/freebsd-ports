@@ -32,4 +32,4 @@ SHEBANG_FILES=	${WRKSRC}/pystan/stan/lib/stan_math/lib/upgrade-sundials.sh \
 NO_ARCH=	yes
 NO_ARCH_IGNORE=	_api.so _chains.so _misc.so
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
