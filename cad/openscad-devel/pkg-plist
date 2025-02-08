@@ -180,8 +180,8 @@ share/mime/packages/openscad.xml
 %%DATADIR%%/locale/zh_TW/LC_MESSAGES/openscad.mo
 %%DATADIR%%/shaders/MouseSelector.frag
 %%DATADIR%%/shaders/MouseSelector.vert
-%%DATADIR%%/shaders/Preview.frag
-%%DATADIR%%/shaders/Preview.vert
+%%DATADIR%%/shaders/ViewEdges.frag
+%%DATADIR%%/shaders/ViewEdges.vert
 %%DATADIR%%/templates/CC0.json
 %%DATADIR%%/templates/difference.json
 %%DATADIR%%/templates/for.json
