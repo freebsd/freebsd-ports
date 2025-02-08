@@ -11,6 +11,8 @@ WWW=		https://github.com/pipermerriam/flex
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Upstream is inactive since 6 years
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}click>=3.3:devel/py-click@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}jsonpointer>=1.7:devel/py-jsonpointer@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>=2.4.3:www/py-requests@${PY_FLAVOR} \
