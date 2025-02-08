@@ -1,3 +1,3 @@
-TIMESTAMP = 1724832263
-SHA256 (python_lsp_server-1.12.0.tar.gz) = b6a336f128da03bd9bac1e61c3acca6e84242b8b31055a1ccf49d83df9dc053b
-SIZE (python_lsp_server-1.12.0.tar.gz) = 114328
+TIMESTAMP = 1739034752
+SHA256 (python_lsp_server-1.12.2.tar.gz) = fea039a36b3132774d0f803671184cf7dde0c688e7b924f23a6359a66094126d
+SIZE (python_lsp_server-1.12.2.tar.gz) = 115054

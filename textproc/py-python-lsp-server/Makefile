@@ -1,6 +1,5 @@
 PORTNAME=	python-lsp-server
-PORTVERSION=	1.12.0
-PORTREVISION=	2
+PORTVERSION=	1.12.2
 CATEGORIES=	textproc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -54,7 +53,7 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}coverage>=0:devel/py-coverage@${PY_FLAVOR} 
 # python_lsp_server-1.12.0/test/plugins/test_autoimport.py:l277ff
 # if math/openblas is built with option INTERFACE64=ON (nondefault)!
 #
-# make test: 4 failed, 186 passed, 8 skipped, 10 warnings
+# make test: 5 failed, 185 passed, 8 skipped, 10 warnings
 USES=		python
 USE_PYTHON=	autoplist concurrent pep517 pytest
 
