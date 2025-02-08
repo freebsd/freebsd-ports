@@ -1,6 +1,8 @@
 PORTNAME=	BRiAl
-PORTVERSION=	1.2.12
+DISTVERSION=	1.2.12
 CATEGORIES=	math
+MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/${DISTVERSION}/
+DISTNAME=	${PORTNAME:tl}-${DISTVERSION}
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Library for polynomials over boolean rings
@@ -13,13 +15,11 @@ LIB_DEPENDS=	libm4ri.so:math/m4ri		\
 		libpng.so:graphics/png		\
 		libboost_thread.so:devel/boost-libs
 
-USE_GITHUB=	yes
-GH_ACCOUNT=	BRiAl
-
-USES=		autoreconf compiler:c++11-lang libtool localbase pkgconfig
+USES=		autoreconf compiler:c++11-lang libtool localbase:ldflags \
+		pkgconfig tar:bz2
+USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
-USE_LDCONFIG=	yes
 
 INSTALL_TARGET=	install-strip
 TEST_TARGET=	check
