@@ -1,4 +1,4 @@
-TIMESTAMP = 1725493857
+TIMESTAMP = 1739053067
 SHA256 (rust/crates/aead-0.5.2.crate) = d122413f284cf2d62fb1b7db97e02edb8cda96d769b16e443a4f6195e35662b0
 SIZE (rust/crates/aead-0.5.2.crate) = 15509
 SHA256 (rust/crates/aes-0.8.4.crate) = b169f7a6d4742236a0a00c541b845991d0ac43e546831af1249753ab4c3aa3a0
@@ -25,8 +25,8 @@ SHA256 (rust/crates/base64ct-1.6.0.crate) = 8c3c1a368f70d6cf7302d78f8f7093da241f
 SIZE (rust/crates/base64ct-1.6.0.crate) = 28870
 SHA256 (rust/crates/bindgen-0.66.1.crate) = f2b84e06fc203107bfbad243f4aba2af864eb7db3b1cf46ea0a023b0b433d2a7
 SIZE (rust/crates/bindgen-0.66.1.crate) = 218860
-SHA256 (rust/crates/bindgen-0.69.4.crate) = a00dc851838a2120612785d195287475a3ac45514741da670b735818822129a0
-SIZE (rust/crates/bindgen-0.69.4.crate) = 221092
+SHA256 (rust/crates/bindgen-0.69.5.crate) = 271383c67ccabffb7381723dea0672a673f292304fcb45c01cc648c7a8d58088
+SIZE (rust/crates/bindgen-0.69.5.crate) = 221128
 SHA256 (rust/crates/bitflags-2.6.0.crate) = b048fb63fd8b5923fc5aa7b340d8e156aec7ec02f0c78fa8a6ddc2613f6f71de
 SIZE (rust/crates/bitflags-2.6.0.crate) = 45357
 SHA256 (rust/crates/block-buffer-0.10.4.crate) = 3078c7629b62d3f0439517fa394996acacc5cbc91c5a20d8c658e77abd503a71
