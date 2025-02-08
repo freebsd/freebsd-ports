@@ -12,15 +12,12 @@ WWW=		https://github.com/stan-dev/pystan
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN=		several build errors
+DEPRECATED=	Marked as BROKEN for years
+EXPIRATION_DATE=2025-02-28
+
 USES=		compiler:c++14-lang python shebangfix
 USE_PYTHON=	autoplist distutils
-
-.include <bsd.port.pre.mk>
-
-.if ${PYTHON_REL} >= 30900
-# See PR 262797 - to be upgraded after the modernization of OCaml ports
-BROKEN=		several build errors
-.endif
 
 BUILD_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}cython>0:lang/cython@${PY_FLAVOR}
 BUILD_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}numpy>0:math/py-numpy@${PY_FLAVOR}
