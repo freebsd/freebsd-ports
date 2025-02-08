@@ -39,7 +39,6 @@ USES=		compiler:c11 cpe desktop-file-utils gettext-runtime gl gmake \
 		terminfo xorg
 CPE_VENDOR=	kitty_project
 
-USE_GCC=	yes
 USE_GL=		gl
 USE_XORG=	x11 xcb xcursor xi xinerama xrandr
 
