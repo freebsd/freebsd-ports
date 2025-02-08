@@ -1,3 +1,4 @@
+bin/ast2json
 %%PYTHON_SITELIBDIR%%/ast2json/__init__.py
 %%PYTHON_SITELIBDIR%%/ast2json/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/ast2json/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.pyc
