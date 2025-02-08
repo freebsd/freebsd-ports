@@ -141,14 +141,6 @@ include/arrow/extension_type.h
 %%FLIGHT%%include/arrow/flight/server_auth.h
 %%FLIGHT%%include/arrow/flight/server_middleware.h
 %%FLIGHT%%include/arrow/flight/server_tracing_middleware.h
-%%FLIGHT_SQL%%include/arrow/flight/sql/api.h
-%%FLIGHT_SQL%%include/arrow/flight/sql/client.h
-%%FLIGHT_SQL%%include/arrow/flight/sql/column_metadata.h
-%%FLIGHT_SQL%%include/arrow/flight/sql/server.h
-%%FLIGHT_SQL%%include/arrow/flight/sql/server_session_middleware.h
-%%FLIGHT_SQL%%include/arrow/flight/sql/server_session_middleware_factory.h
-%%FLIGHT_SQL%%include/arrow/flight/sql/types.h
-%%FLIGHT_SQL%%include/arrow/flight/sql/visibility.h
 %%FLIGHT%%include/arrow/flight/test_auth_handlers.h
 %%FLIGHT%%include/arrow/flight/test_definitions.h
 %%FLIGHT%%include/arrow/flight/test_flight_server.h
@@ -223,7 +215,6 @@ include/arrow/testing/generator.h
 include/arrow/testing/gtest_compat.h
 include/arrow/testing/gtest_util.h
 include/arrow/testing/matchers.h
-include/arrow/testing/math.h
 include/arrow/testing/pch.h
 include/arrow/testing/process.h
 include/arrow/testing/random.h
@@ -486,7 +477,6 @@ include/arrow/visitor_generate.h
 %%PARQUET%%include/parquet/printer.h
 %%PARQUET%%include/parquet/properties.h
 %%PARQUET%%include/parquet/schema.h
-%%PARQUET%%include/parquet/size_statistics.h
 %%PARQUET%%include/parquet/statistics.h
 %%PARQUET%%include/parquet/stream_reader.h
 %%PARQUET%%include/parquet/stream_writer.h
@@ -513,12 +503,7 @@ lib/cmake/Arrow/arrow-config.cmake
 %%FLIGHT%%lib/cmake/ArrowFlight/ArrowFlightTargets-%%CMAKE_BUILD_TYPE%%.cmake
 %%FLIGHT%%lib/cmake/ArrowFlight/ArrowFlightTargets.cmake
 %%FLIGHT%%lib/cmake/ArrowFlight/FindProtobufAlt.cmake
-%%FLIGHT%%lib/cmake/ArrowFlight/FindabslAlt.cmake
 %%FLIGHT%%lib/cmake/ArrowFlight/FindgRPCAlt.cmake
-%%FLIGHT_SQL%%lib/cmake/ArrowFlightSql/ArrowFlightSqlConfig.cmake
-%%FLIGHT_SQL%%lib/cmake/ArrowFlightSql/ArrowFlightSqlConfigVersion.cmake
-%%FLIGHT_SQL%%lib/cmake/ArrowFlightSql/ArrowFlightSqlTargets-%%CMAKE_BUILD_TYPE%%.cmake
-%%FLIGHT_SQL%%lib/cmake/ArrowFlightSql/ArrowFlightSqlTargets.cmake
 %%TESTINGFLIGHT%%lib/cmake/ArrowFlightTesting/ArrowFlightTestingConfig.cmake
 %%TESTINGFLIGHT%%lib/cmake/ArrowFlightTesting/ArrowFlightTestingConfigVersion.cmake
 %%TESTINGFLIGHT%%lib/cmake/ArrowFlightTesting/ArrowFlightTestingTargets-%%CMAKE_BUILD_TYPE%%.cmake
@@ -552,7 +537,6 @@ lib/cmake/Arrow/arrow-config.cmake
 %%GANDIVA%%lib/cmake/Gandiva/GandivaTargets-%%CMAKE_BUILD_TYPE%%.cmake
 %%GANDIVA%%lib/cmake/Gandiva/GandivaTargets.cmake
 %%PARQUET%%lib/cmake/Parquet/FindThriftAlt.cmake
-%%GANDIVA%%%%ZSTD%%lib/cmake/Gandiva/FindzstdAlt.cmake
 %%PARQUET%%lib/cmake/Parquet/ParquetConfig.cmake
 %%PARQUET%%lib/cmake/Parquet/ParquetConfigVersion.cmake
 %%PARQUET%%lib/cmake/Parquet/ParquetTargets-%%CMAKE_BUILD_TYPE%%.cmake
@@ -569,9 +553,6 @@ lib/libarrow.so.%%LIBVERSION%%.0.0
 %%FLIGHT%%lib/libarrow_flight.so
 %%FLIGHT%%lib/libarrow_flight.so.%%LIBVERSION%%
 %%FLIGHT%%lib/libarrow_flight.so.%%LIBVERSION%%.0.0
-%%FLIGHT_SQL%%lib/libarrow_flight_sql.so
-%%FLIGHT_SQL%%lib/libarrow_flight_sql.so.%%LIBVERSION%%
-%%FLIGHT_SQL%%lib/libarrow_flight_sql.so.%%LIBVERSION%%.0.0
 %%TESTING%%lib/libarrow_testing.so
 %%TESTING%%lib/libarrow_testing.so.%%LIBVERSION%%
 %%TESTING%%lib/libarrow_testing.so.%%LIBVERSION%%.0.0
@@ -587,7 +568,6 @@ lib/libarrow.so.%%LIBVERSION%%.0.0
 %%DATASET%%libdata/pkgconfig/arrow-dataset.pc
 %%FILESYSTEM%%libdata/pkgconfig/arrow-filesystem.pc
 %%FLIGHT%%libdata/pkgconfig/arrow-flight.pc
-%%FLIGHT_SQL%%libdata/pkgconfig/arrow-flight-sql.pc
 %%JSON%%libdata/pkgconfig/arrow-json.pc
 %%PYTHONFLIGHT%%libdata/pkgconfig/arrow-python%%PYTHON_SUFFIX%%-flight.pc
 %%TESTING%%libdata/pkgconfig/arrow-testing.pc
