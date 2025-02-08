@@ -113,6 +113,7 @@ share/ART/dcpprofiles/Olympus E-M5.dcp
 share/ART/dcpprofiles/Olympus E-P2.dcp
 share/ART/dcpprofiles/Olympus XZ-1.dcp
 share/ART/dcpprofiles/PANASONIC DC-S5.dcp
+share/ART/dcpprofiles/PANASONIC DC-S5M2.dcp
 share/ART/dcpprofiles/PANASONIC DMC-LX100.dcp
 share/ART/dcpprofiles/PENTAX K-5 II.dcp
 share/ART/dcpprofiles/PENTAX K-5.dcp
@@ -202,6 +203,7 @@ share/ART/iccprofiles/input/sd1_merrill_tungsten8130-CROP-WP11.icm
 share/ART/iccprofiles/output/RTv2_Medium.icc
 share/ART/iccprofiles/output/RTv2_sRGB.icc
 share/ART/iccprofiles/output/RTv4_ACES-AP0.icc
+share/ART/iccprofiles/output/RTv4_DisplayP3.icc
 share/ART/iccprofiles/output/RTv4_Large.icc
 share/ART/iccprofiles/output/RTv4_Linear_Rec2020.icc
 share/ART/iccprofiles/output/RTv4_Linear_Rec709.icc

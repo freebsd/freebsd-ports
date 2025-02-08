@@ -1,5 +1,14 @@
---- CMakeLists.txt.orig	2024-02-04 08:11:18 UTC
+--- CMakeLists.txt.orig	2025-02-02 16:44:30 UTC
 +++ CMakeLists.txt
+@@ -604,7 +604,7 @@ set(ART_MIMALLOC_VERSION_INFO "N/A")
+ endif()
+ 
+ set(ART_MIMALLOC_VERSION_INFO "N/A")
+-if(NOT APPLE)
++if(NOT APPLE AND ENABLE_MIMALLOC)
+     set(HAS_MIMALLOC)
+     if(NOT WITH_SAN)
+         find_package(mimalloc)
 @@ -644,7 +644,7 @@ if(ENABLE_CTL)
  endif()
  
@@ -8,4 +17,4 @@
 +    find_path(CTL_INCLUDE_DIR NAMES "CtlVersion.h" PATH_SUFFIXES "CTL")
      pkg_check_modules(OPENEXR OpenEXR>=3)
      #find_path(_openexr_half OpenEXR/half.h)
-     find_library(_ctl_lib IlmCtl)
+     if(CTL_LIBRARY_DIR)
