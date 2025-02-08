@@ -1,6 +1,5 @@
 PORTNAME=	mtools
-PORTVERSION=	4.0.43
-PORTREVISION=	1
+PORTVERSION=	4.0.47
 CATEGORIES=	filesystems emulators
 MASTER_SITES=	GNU
 
@@ -16,7 +15,6 @@ USES=		gmake makeinfo tar:lz
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ac_cv_header_malloc_h=no
 CONFIGURE_ARGS=	--enable-xdf
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
 SUB_FILES=	pkg-message
 
@@ -49,8 +47,7 @@ MAKE_ENV+=	WITHOUT_X11=yes
 post-patch:
 	@${REINPLACE_CMD} -e '/LOCAL_CONF_FILE/s,/etc/default,${LOCALBASE}/etc,' \
 		${WRKSRC}/mtoolsPaths.h
-	@${REINPLACE_CMD} -e 's|^\(SAMPLE FILE\)$$|#\1|' \
-		${WRKSRC}/mtools.conf
+	@${REINPLACE_CMD} -e '/^SAMPLE FILE/s,^,#,' ${WRKSRC}/mtools.conf
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/mtools.conf ${STAGEDIR}${PREFIX}/etc/mtools.conf.sample
