@@ -1,10 +1,7 @@
---- CMakeLists.txt.orig	2016-06-09 17:30:46 UTC
+--- CMakeLists.txt.orig	2024-02-28 16:26:45 UTC
 +++ CMakeLists.txt
-@@ -147,10 +147,11 @@ SET_TARGET_PROPERTIES(board-dynamic PROP
- 
- install(DIRECTORY include/ DESTINATION include FILES_MATCHING PATTERN "*.h")
+@@ -183,8 +183,8 @@ install(TARGETS board-dynamic DESTINATION lib)
  install(DIRECTORY include/board/ DESTINATION include/board FILES_MATCHING PATTERN "*.h")
-+install(DIRECTORY include/board/ DESTINATION include/board FILES_MATCHING PATTERN "*.ih")
  install(TARGETS board DESTINATION lib)
  install(TARGETS board-dynamic DESTINATION lib)
 -install(DIRECTORY examples/ DESTINATION share/libboard/examples FILES_MATCHING PATTERN "*.cpp")
@@ -12,5 +9,12 @@
 +install(DIRECTORY examples/ DESTINATION share/examples/libboard FILES_MATCHING PATTERN "*.cpp")
 +install(FILES README.md LICENSE AUTHORS DESTINATION share/doc/libboard )
  
- FOREACH( EXAMPLE logo example1 example2 example3 example4
-     arithmetic ellipse graph arrows  ruler koch clipping
+ FILE(GLOB EXAMPLES examples/*.cpp)
+ 
+@@ -203,5 +203,6 @@ FOREACH( EXAMPLE_SRC_PATH ${EXAMPLES} )
+    ${EXAMPLE_EXE}
+    ${ImageMagick_LIBRARIES}
+   )
++  SET_TARGET_PROPERTIES(${EXAMPLE_EXE} PROPERTIES RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/examples-bin")
+   SET_TARGET_PROPERTIES(${EXAMPLE_EXE} PROPERTIES DEBUG_POSTFIX _d)
+ ENDFOREACH(EXAMPLE_SRC_PATH)
