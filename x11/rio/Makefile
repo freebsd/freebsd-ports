@@ -1,7 +1,6 @@
 PORTNAME=	rio
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.2.4
-PORTREVISION=	1
+DISTVERSION=	0.2.6
 CATEGORIES=	x11 wayland
 PKGNAMESUFFIX=	-terminal-emulator
 
@@ -56,7 +55,7 @@ CARGO_CRATES=	ab_glyph-0.2.29 \
 		blake3-1.5.5 \
 		block-0.1.6 \
 		block2-0.5.1 \
-		borsh-1.5.4 \
+		borsh-1.5.5 \
 		bumpalo-3.16.0 \
 		bytecount-0.6.8 \
 		bytemuck-1.21.0 \
@@ -75,8 +74,8 @@ CARGO_CRATES=	ab_glyph-0.2.29 \
 		ciborium-0.2.2 \
 		ciborium-io-0.2.2 \
 		ciborium-ll-0.2.2 \
-		clap-4.5.26 \
-		clap_builder-4.5.26 \
+		clap-4.5.27 \
+		clap_builder-4.5.27 \
 		clap_derive-4.5.24 \
 		clap_lex-0.7.4 \
 		clipboard-win-3.1.1 \
@@ -109,9 +108,9 @@ CARGO_CRATES=	ab_glyph-0.2.29 \
 		data-encoding-2.7.0 \
 		deflate-1.0.0 \
 		diff-0.1.13 \
-		dirs-5.0.1 \
+		dirs-6.0.0 \
 		dirs-next-1.0.2 \
-		dirs-sys-0.4.1 \
+		dirs-sys-0.5.0 \
 		dirs-sys-next-0.1.2 \
 		dispatch-0.2.0 \
 		displaydoc-0.2.5 \
@@ -188,7 +187,7 @@ CARGO_CRATES=	ab_glyph-0.2.29 \
 		idna_adapter-1.2.0 \
 		image-0.25.5 \
 		image-webp-0.2.1 \
-		indexmap-2.7.0 \
+		indexmap-2.7.1 \
 		inotify-0.10.2 \
 		inotify-sys-0.1.5 \
 		instant-0.1.13 \
@@ -249,6 +248,7 @@ CARGO_CRATES=	ab_glyph-0.2.29 \
 		num-traits-0.2.19 \
 		objc-0.2.7 \
 		objc-foundation-0.1.1 \
+		objc-rs-0.2.8 \
 		objc-sys-0.3.5 \
 		objc2-0.5.2 \
 		objc2-app-kit-0.2.2 \
@@ -306,6 +306,7 @@ CARGO_CRATES=	ab_glyph-0.2.29 \
 		redox_syscall-0.4.1 \
 		redox_syscall-0.5.8 \
 		redox_users-0.4.6 \
+		redox_users-0.5.0 \
 		regex-1.11.1 \
 		regex-automata-0.1.10 \
 		regex-automata-0.4.9 \
@@ -326,7 +327,7 @@ CARGO_CRATES=	ab_glyph-0.2.29 \
 		sctk-adwaita-0.10.1 \
 		serde-1.0.217 \
 		serde_derive-1.0.217 \
-		serde_json-1.0.135 \
+		serde_json-1.0.137 \
 		serde_spanned-0.6.8 \
 		sharded-slab-0.1.7 \
 		shlex-1.3.0 \
@@ -417,7 +418,7 @@ CARGO_CRATES=	ab_glyph-0.2.29 \
 		web-sys-0.3.77 \
 		web-time-1.1.0 \
 		weezl-0.1.8 \
-		wgpu-24.0.0 \
+		wgpu-24.0.1 \
 		wgpu-core-24.0.0 \
 		wgpu-hal-24.0.0 \
 		wgpu-types-24.0.0 \
