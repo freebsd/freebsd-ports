@@ -1,5 +1,6 @@
 PORTNAME=	openal-soft
 PORTVERSION=	1.24.2
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	https://openal-soft.org/openal-releases/
 
@@ -23,6 +24,8 @@ CMAKE_ON=	ALSOFT_BACKEND_WAVE
 CMAKE_OFF=	ALSOFT_BACKEND_ALSA ALSOFT_DLOPEN ALSOFT_EXAMPLES \
 		ALSOFT_REQUIRE_SOLARIS
 
+# Use pthread instead of C11 threads
+CFLAGS+=	-D__STDC_NO_THREADS__
 # do not link with librt and libdl.
 LDFLAGS+=	-Wl,--as-needed
 LDFLAGS_i386=	-Wl,-z,notext
