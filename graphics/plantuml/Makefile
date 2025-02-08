@@ -1,6 +1,5 @@
 PORTNAME=	plantuml
-PORTVERSION=	1.2024.0
-PORTREVISION=	1
+PORTVERSION=	1.2024.8
 CATEGORIES=	graphics java textproc
 MASTER_SITES=	https://github.com/plantuml/plantuml/releases/download/v${PORTVERSION}/
 EXTRACT_SUFX=	.jar
