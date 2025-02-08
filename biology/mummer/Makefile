@@ -1,6 +1,6 @@
 PORTNAME=	mummer
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.0.0
+DISTVERSION=	4.0.1
 CATEGORIES=	biology
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -34,6 +34,13 @@ post-install:
 	# fix conflict with libgd
 	@${MV} ${STAGEDIR}${PREFIX}/bin/annotate ${STAGEDIR}${PREFIX}/bin/${PORTNAME}-annotate
 
-# 4.0.0: tests fail to compile, see https://github.com/mummer4/mummer/issues/221
+# tests as of 4.0.1, see https://github.com/mummer4/mummer/issues/224:
+# TOTAL: 9
+# PASS:  3
+# SKIP:  0
+# XFAIL: 0
+# FAIL:  6
+# XPASS: 0
+# ERROR: 0
 
 .include <bsd.port.mk>
