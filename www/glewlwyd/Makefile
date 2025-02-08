@@ -11,6 +11,9 @@ WWW=		https://github.com/babelouest/glewlwyd
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Upstream repo archived on Oct 20, 2024
+EXPIRATION_DATE=2025-02-28
+
 BUILD_DEPENDS=	yder>1.4.14:devel/yder \
 		orcania>2.2.1:devel/orcania \
 		ulfius>2.7.7:www/ulfius \
