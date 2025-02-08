@@ -1,5 +1,5 @@
 PORTNAME=	amazon-ssm-plugin
-DISTVERSION=	1.2.694.0
+DISTVERSION=	1.2.707.0
 PORTREVISION=	0
 CATEGORIES=	sysutils
 
@@ -45,6 +45,8 @@ LOGDIR=		${DESTDIR}/var/log/${PORTNAME}
 
 OPTIONS_DEFINE=	DOCS
 
+RECOMMEND_VERSION=	1.3.0.0
+
 post-extract:
 	@${MKDIR} ${WRKDIR}/src
 	@${LN} -s ${WRKSRC} ${GO_WRKSRC}
@@ -56,7 +58,8 @@ post-extract:
 	${LN} -s  ${WRKSRC}                             ${WRKDIR}/src/vendor/github.com/${GH_ACCOUNT}/${GH_PROJECT}
 
 post-patch:
-	${REINPLACE_CMD} -e 's|%%VERSION%%|${DISTVERSION}|' ${WRKSRC}/src/version/version.go
+	${REINPLACE_CMD} -e 's|%%VERSION%%|${RECOMMEND_VERSION}|' ${WRKSRC}/VERSION
+	${REINPLACE_CMD} -e 's|%%VERSION%%|${RECOMMEND_VERSION}|' ${WRKSRC}/src/version/version.go
 	${REINPLACE_CMD} -e 's|%%ETCDIR%%|${ETCDIR}|g; s|%%LOGDIR%%|${LOGDIR}|g' ${WRKSRC}/seelog_unix.xml
 	${REINPLACE_CMD} -e 's|%%ETCDIR%%|${ETCDIR}|g; s|%%LOGDIR%%|${LOGDIR}|g' ${WRKSRC}/src/log/log_unix.go
 
