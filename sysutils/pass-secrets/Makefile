@@ -10,6 +10,8 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN=		https://github.com/nullobsi/pass-secrets/issues/17
+DEPRECATED=	Listed as BROKEN and unmaintained for months
+EXPIRATION_DATE=2025-02-28 
 
 LIB_DEPENDS=	libsdbus-c++.so:devel/sdbus-cpp
 RUN_DEPENDS=	pass:sysutils/password-store
