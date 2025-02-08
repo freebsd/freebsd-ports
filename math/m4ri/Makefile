@@ -3,7 +3,7 @@ DISTVERSIONPREFIX=	release-
 DISTVERSION=	20240729
 CATEGORIES=	math
 
-MAINTAINER=	thierry@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library for fast arithmetic with dense matrices over F2
 WWW=		https://bitbucket.org/malb/m4ri/src/master/
 

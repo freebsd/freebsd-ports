@@ -4,7 +4,7 @@ CATEGORIES=	math
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/${DISTVERSION}/
 DISTNAME=	${PORTNAME:tl}-${DISTVERSION}
 
-MAINTAINER=	thierry@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library for polynomials over boolean rings
 WWW=		https://github.com/BRiAl/BRiAl
 

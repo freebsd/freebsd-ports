@@ -4,7 +4,7 @@ CATEGORIES=	math
 MASTER_SITES=	https://bitbucket.org/malb/${PORTNAME:tl}/downloads/
 DISTNAME=	${PORTNAME:tl}-${DISTVERSION}
 
-MAINTAINER=	thierry@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library for fast arithmetic with dense matrices over GF(2^e)
 WWW=		https://bitbucket.org/malb/m4rie/src/master/
 

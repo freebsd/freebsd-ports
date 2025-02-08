@@ -4,7 +4,7 @@ DISTVERSION=	0.9.6
 PORTREVISION=	1
 CATEGORIES=	graphics
 
-MAINTAINER=	thierry@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Vector graphics C++ library
 WWW=		https://github.com/c-koi/libboard
 
