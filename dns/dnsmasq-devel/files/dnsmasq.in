@@ -1,8 +1,8 @@
 #!/bin/sh
 
 # PROVIDE: dnsmasq
-# REQUIRE: SERVERS ldconfig
-# BEFORE:  DAEMON named
+# REQUIRE: NETWORKING ldconfig ntpdate
+# BEFORE:  DAEMON chrony named
 # KEYWORD: shutdown
 #
 # Start before named so as not to break named_wait if named is
