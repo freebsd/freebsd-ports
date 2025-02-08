@@ -225,6 +225,9 @@ include/freeradius/vqp.h
 %%LIBDIR%%/rlm_preprocess.a
 %%LIBDIR%%/rlm_preprocess.la
 %%LIBDIR%%/rlm_preprocess.so
+%%LIBDIR%%/rlm_proxy_rate_limit.a
+%%LIBDIR%%/rlm_proxy_rate_limit.la
+%%LIBDIR%%/rlm_proxy_rate_limit.so
 %%PYTHON%%%%LIBDIR%%/rlm_python3.a
 %%PYTHON%%%%LIBDIR%%/rlm_python3.la
 %%PYTHON%%%%LIBDIR%%/rlm_python3.so
@@ -689,6 +692,7 @@ sbin/radmin
 %%EXAMPLESDIR%%/raddb/mods-available/passwd
 %%EXAMPLESDIR%%/raddb/mods-available/perl
 %%EXAMPLESDIR%%/raddb/mods-available/preprocess
+%%EXAMPLESDIR%%/raddb/mods-available/proxy_rate_limit
 %%EXAMPLESDIR%%/raddb/mods-available/python
 %%EXAMPLESDIR%%/raddb/mods-available/python3
 %%EXAMPLESDIR%%/raddb/mods-available/radutmp
@@ -844,6 +848,7 @@ sbin/radmin
 %%EXAMPLESDIR%%/raddb/mods-enabled/pap
 %%EXAMPLESDIR%%/raddb/mods-enabled/passwd
 %%EXAMPLESDIR%%/raddb/mods-enabled/preprocess
+%%EXAMPLESDIR%%/raddb/mods-enabled/proxy_rate_limit
 %%EXAMPLESDIR%%/raddb/mods-enabled/radutmp
 %%EXAMPLESDIR%%/raddb/mods-enabled/realm
 %%EXAMPLESDIR%%/raddb/mods-enabled/replicate
@@ -1012,6 +1017,7 @@ sbin/radmin
 %%DATADIR%%/dictionary.hillstone
 %%DATADIR%%/dictionary.hp
 %%DATADIR%%/dictionary.huawei
+%%DATADIR%%/dictionary.huawei.v2
 %%DATADIR%%/dictionary.iana
 %%DATADIR%%/dictionary.iea
 %%DATADIR%%/dictionary.infinera
