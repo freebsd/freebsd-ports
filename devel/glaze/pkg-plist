@@ -100,6 +100,7 @@ include/glaze/rpc/repe/header.hpp
 include/glaze/rpc/repe/registry.hpp
 include/glaze/stencil/stencil.hpp
 include/glaze/stencil/stencilcount.hpp
+include/glaze/thread/async.hpp
 include/glaze/thread/async_string.hpp
 include/glaze/thread/atomic.hpp
 include/glaze/thread/shared_async_map.hpp
