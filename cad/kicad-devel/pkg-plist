@@ -21,13 +21,13 @@ lib/kicad/plugins/3d/libs3d_plugin_idf.so
 lib/kicad/plugins/3d/libs3d_plugin_oce.so
 lib/kicad/plugins/3d/libs3d_plugin_vrml.so
 lib/libkiapi.so
-lib/libkiapi.so.8.99.0
+lib/libkiapi.so.9.0.0
 lib/libkicad_3dsg.so
 lib/libkicad_3dsg.so.2.0.0
 lib/libkicommon.so
-lib/libkicommon.so.8.99.0
+lib/libkicommon.so.9.0.0
 lib/libkigal.so
-lib/libkigal.so.8.99.0
+lib/libkigal.so.9.0.0
 %%PYTHON_SITELIBDIR%%/_pcbnew.so
 %%PYTHON_SITELIBDIR%%/pcbnew.py
 %%DESKTOPDIR%%/org.kicad.bitmap2component.desktop
@@ -222,7 +222,6 @@ share/icons/hicolor/scalable/mimetypes/application-x-kicad-worksheet.svg
 %%DATADIR%%/demos/kit-dev-coldfire-xilinx_5213/prj.3dshapes/Device.switch_toggle_horizontal_right_angle_PC_terminal.wrl
 %%DATADIR%%/demos/kit-dev-coldfire-xilinx_5213/prj.3dshapes/Jack.wings
 %%DATADIR%%/demos/kit-dev-coldfire-xilinx_5213/prj.3dshapes/Jack.wrl
-%%DATADIR%%/demos/kit-dev-coldfire-xilinx_5213/prj.3dshapes/db9_female_pin90deg.wrl
 %%DATADIR%%/demos/kit-dev-coldfire-xilinx_5213/prj.3dshapes/push_butt_4pads.wings
 %%DATADIR%%/demos/kit-dev-coldfire-xilinx_5213/prj.3dshapes/push_butt_4pads.wrl
 %%DATADIR%%/demos/kit-dev-coldfire-xilinx_5213/sym-lib-table
@@ -264,6 +263,8 @@ share/icons/hicolor/scalable/mimetypes/application-x-kicad-worksheet.svg
 %%DATADIR%%/demos/simulation/gain_control/sym-lib-table
 %%DATADIR%%/demos/simulation/gain_control/vca810.lib
 %%DATADIR%%/demos/simulation/generic_models/generic_opamp_bip.kicad_pro
+%%DATADIR%%/demos/simulation/generic_models/generic_opamp_bip.kicad_sch
+%%DATADIR%%/demos/simulation/generic_models/generic_opamp_bip.wbk
 %%DATADIR%%/demos/simulation/ibis/ibis.kicad_pro
 %%DATADIR%%/demos/simulation/ibis/ibis.kicad_sch
 %%DATADIR%%/demos/simulation/ibis/ibis.wbk
@@ -325,9 +326,12 @@ share/icons/hicolor/scalable/mimetypes/application-x-kicad-worksheet.svg
 %%DATADIR%%/demos/simulation/sallen_key/sallen_key.kicad_sch
 %%DATADIR%%/demos/simulation/sallen_key/sallen_key_schlib.kicad_sym
 %%DATADIR%%/demos/simulation/sallen_key/sym-lib-table
+%%DATADIR%%/demos/simulation/subsheets/mainsheet.kicad_pro
+%%DATADIR%%/demos/simulation/subsheets/mainsheet.kicad_sch
+%%DATADIR%%/demos/simulation/subsheets/project.kicad_sym
 %%DATADIR%%/demos/simulation/subsheets/subsheet1.kicad_sch
 %%DATADIR%%/demos/simulation/subsheets/subsheet2.kicad_sch
-%%DATADIR%%/demos/simulation/subsheets/subsheets.kicad_sch
+%%DATADIR%%/demos/simulation/subsheets/sym-lib-table
 %%DATADIR%%/demos/simulation/up-down-counter/README
 %%DATADIR%%/demos/simulation/up-down-counter/state-3bit-count.in
 %%DATADIR%%/demos/simulation/up-down-counter/state-machine-3b-count.lib
@@ -488,6 +492,7 @@ share/icons/hicolor/scalable/mimetypes/application-x-kicad-worksheet.svg
 %%DATADIR%%/internat/fi/kicad.mo
 %%DATADIR%%/internat/fr/kicad.mo
 %%DATADIR%%/internat/he/kicad.mo
+%%DATADIR%%/internat/hr/kicad.mo
 %%DATADIR%%/internat/hu/kicad.mo
 %%DATADIR%%/internat/id/kicad.mo
 %%DATADIR%%/internat/it/kicad.mo
@@ -525,6 +530,7 @@ share/icons/hicolor/scalable/mimetypes/application-x-kicad-worksheet.svg
 %%DATADIR%%/plugins/kicad_netlist_reader.py
 %%DATADIR%%/plugins/kicad_utils.py
 %%DATADIR%%/resources/images.tar.gz
+%%DATADIR%%/schemas/api.v1.schema.json
 %%DATADIR%%/schemas/pcm.v1.schema.json
 %%DATADIR%%/scripting/kicad_pyshell/__init__.py
 %%DATADIR%%/scripting/kicad_pyshell/kicad_pyeditor.py
@@ -541,6 +547,7 @@ share/icons/hicolor/scalable/mimetypes/application-x-kicad-worksheet.svg
 %%DATADIR%%/scripting/plugins/qfn_wizard.py
 %%DATADIR%%/scripting/plugins/qfp_wizard.py
 %%DATADIR%%/scripting/plugins/qrcode_footprint_wizard.py
+%%DATADIR%%/scripting/plugins/scrollwheel_wizard.py
 %%DATADIR%%/scripting/plugins/sdip_wizard.py
 %%DATADIR%%/scripting/plugins/touch_slider_wizard.py
 %%DATADIR%%/scripting/plugins/uss39_barcode.py
