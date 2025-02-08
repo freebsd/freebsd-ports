@@ -39,7 +39,7 @@ CARGO_CRATES=	aead-0.5.2 \
 		base64-0.22.1 \
 		base64ct-1.6.0 \
 		bindgen-0.66.1 \
-		bindgen-0.69.4 \
+		bindgen-0.69.5 \
 		bitflags-2.6.0 \
 		block-buffer-0.10.4 \
 		block-padding-0.3.3 \
