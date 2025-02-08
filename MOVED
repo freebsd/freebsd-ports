@@ -4140,3 +4140,6 @@ audio/liblastfm-qt5||2025-02-05|No ports depend on this. New ports should used Q
 devel/rubygem-cucumber-messages26|devel/rubygem-cucumber-messages|2025-02-07|Remove obsoleted port. Use devel/rubygem-cucumber-messages instead
 x11-toolkits/tk87||2025-02-08|Has expired: Tcl/Tk 8.7 is not scheduled for release, use 8.6 or 9.0
 lang/tcl87||2025-02-08|Has expired: Tcl/Tk 8.7 is not scheduled for release, use 8.6 or 9.0
+devel/lattice-ice40-examples-hx1k||2025-02-08|Listed as BROKEN for months in tree and unmaintained
+devel/lattice-ice40-examples-hx8k||2025-02-08|Listed as BROKEN for months in tree and unmaintained
+devel/lattice-ice40-tools||2025-02-08|Listed as BROKEN for months in tree and unmaintained
