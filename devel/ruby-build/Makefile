@@ -1,5 +1,6 @@
 PORTNAME=	ruby-build
 PORTVERSION=	20250205
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel ruby
 
@@ -14,7 +15,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 # warnings by portlint are not correct. keep this.
 RUN_DEPENDS=	autoconf>0:devel/autoconf \
 		curl:ftp/curl \
-		gmake:devel/gmake
+		gmake:devel/gmake \
+		${LOCALBASE}/libdata/pkgconfig/libffi.pc:devel/libffi \
+		${LOCALBASE}/libdata/pkgconfig/yaml-0.1.pc:textproc/libyaml
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	rbenv
