@@ -23,4 +23,10 @@ USE_PYTHON=	autoplist concurrent pep517
 
 NO_ARCH=	yes
 
+OPTIONS_DEFINE=	MYSQL POSTGRES
+POSTGRES_DESC=	PostgreSQL database support
+
+MYSQL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mysqlclient>=0:databases/py-mysqlclient@${PY_FLAVOR}
+POSTGRES_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}psycopg>=0:databases/py-psycopg@${PY_FLAVOR}
+
 .include <bsd.port.mk>
