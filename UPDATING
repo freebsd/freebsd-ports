@@ -5,6 +5,17 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20250208:
+  AFFECTS: users of net-mgmt/netbox
+  AUTHOR: kai@FreeBSD.org
+
+  1. Please make sure that the PostgreSQL server for the NetBox instance is
+     running version 13 or higher.  This is because PostgreSQL 12 reached
+     its End of Life (EOL) on November 14, 2024 and was also removed from
+     the ports tree at the beginning of 2025.
+
+  2. Please also check the pkg-message and the changelogs for further info.
+
 20250205:
   AFFECTS: users of www/gitlab
   AUTHOR: mfechner@FreeBSD.org
