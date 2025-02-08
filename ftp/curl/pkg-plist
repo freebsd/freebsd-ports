@@ -42,6 +42,8 @@ share/aclocal/libcurl.m4
 %%PORTDOCS%%%%DOCSDIR%%/HSTS.md
 %%PORTDOCS%%%%DOCSDIR%%/HTTP-COOKIES.md
 %%PORTDOCS%%%%DOCSDIR%%/HTTP3.md
+%%PORTDOCS%%%%DOCSDIR%%/HTTPSRR.md
+%%PORTDOCS%%%%DOCSDIR%%/INFRASTRUCTURE.md
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL-CMAKE.md
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL.md
@@ -75,12 +77,13 @@ share/aclocal/libcurl.m4
 %%PORTDOCS%%%%DOCSDIR%%/internals/CONNECTION-FILTERS.md
 %%PORTDOCS%%%%DOCSDIR%%/internals/DYNBUF.md
 %%PORTDOCS%%%%DOCSDIR%%/internals/HASH.md
-%%PORTDOCS%%%%DOCSDIR%%/internals/HYPER.md
 %%PORTDOCS%%%%DOCSDIR%%/internals/LLIST.md
 %%PORTDOCS%%%%DOCSDIR%%/internals/MQTT.md
 %%PORTDOCS%%%%DOCSDIR%%/internals/NEW-PROTOCOL.md
 %%PORTDOCS%%%%DOCSDIR%%/internals/README.md
 %%PORTDOCS%%%%DOCSDIR%%/internals/SPLAY.md
+%%PORTDOCS%%%%DOCSDIR%%/internals/STRPARSE.md
+%%PORTDOCS%%%%DOCSDIR%%/internals/TLS-SESSIONS.md
 %%PORTDOCS%%%%DOCSDIR%%/internals/WEBSOCKET.md
 %%PORTDOCS%%%%DOCSDIR%%/libcurl/ABI.md
 %%PORTDOCS%%%%DOCSDIR%%/libcurl/libcurl.m4
@@ -91,11 +94,11 @@ share/aclocal/libcurl.m4
 %%PORTDOCS%%%%DOCSDIR%%/options-in-versions
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/10-at-a-time.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/Makefile.example
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Makefile.mk
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/README.md
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/address-scope.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/altsvc.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/anyauthput.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/block_ip.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/cacertinmem.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/certinfo.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/chkspeed.c
@@ -246,6 +249,7 @@ share/man/man3/CURLINFO_FILETIME_T.3.gz
 share/man/man3/CURLINFO_FTP_ENTRY_PATH.3.gz
 share/man/man3/CURLINFO_HEADER_SIZE.3.gz
 share/man/man3/CURLINFO_HTTPAUTH_AVAIL.3.gz
+share/man/man3/CURLINFO_HTTPAUTH_USED.3.gz
 share/man/man3/CURLINFO_HTTP_CONNECTCODE.3.gz
 share/man/man3/CURLINFO_HTTP_VERSION.3.gz
 share/man/man3/CURLINFO_LASTSOCKET.3.gz
@@ -263,6 +267,7 @@ share/man/man3/CURLINFO_PRIMARY_PORT.3.gz
 share/man/man3/CURLINFO_PRIVATE.3.gz
 share/man/man3/CURLINFO_PROTOCOL.3.gz
 share/man/man3/CURLINFO_PROXYAUTH_AVAIL.3.gz
+share/man/man3/CURLINFO_PROXYAUTH_USED.3.gz
 share/man/man3/CURLINFO_PROXY_ERROR.3.gz
 share/man/man3/CURLINFO_PROXY_SSL_VERIFYRESULT.3.gz
 share/man/man3/CURLINFO_QUEUE_TIME_T.3.gz
@@ -641,6 +646,8 @@ share/man/man3/curl_easy_recv.3.gz
 share/man/man3/curl_easy_reset.3.gz
 share/man/man3/curl_easy_send.3.gz
 share/man/man3/curl_easy_setopt.3.gz
+share/man/man3/curl_easy_ssls_export.3.gz
+share/man/man3/curl_easy_ssls_import.3.gz
 share/man/man3/curl_easy_strerror.3.gz
 share/man/man3/curl_easy_unescape.3.gz
 share/man/man3/curl_easy_upkeep.3.gz
