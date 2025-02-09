@@ -5,7 +5,8 @@ MASTER_SITES=	https://github.com/LLNL/${PORTNAME}/releases/download/${DISTVERSIO
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	High throughput library for compressed floating-point arrays
-WWW=		https://computing.llnl.gov/projects/zfp
+WWW=		https://computing.llnl.gov/projects/zfp \
+		https://github.com/LLNL/zfp
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
