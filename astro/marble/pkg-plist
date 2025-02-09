@@ -279,6 +279,7 @@ share/icons/hicolor/scalable/apps/org.kde.marble.behaim.svg
 share/icons/hicolor/scalable/apps/org.kde.marble.maps.svg
 share/kxmlgui5/marble/marble_part.rc
 share/kxmlgui5/marble/marbleui.rc
+share/locale/ar/LC_MESSAGES/marble-behaim.mo
 share/locale/ar/LC_MESSAGES/marble-maps.mo
 share/locale/ar/LC_MESSAGES/marble.mo
 share/locale/ar/LC_MESSAGES/marble_qt.qm
@@ -416,7 +417,9 @@ share/locale/hr/LC_MESSAGES/marble_qt.qm
 share/locale/hu/LC_MESSAGES/marble-maps.mo
 share/locale/hu/LC_MESSAGES/marble.mo
 share/locale/hu/LC_MESSAGES/marble_qt.qm
+share/locale/hu/LC_MESSAGES/plasma_applet_org.kde.plasma.worldclock.mo
 share/locale/hu/LC_MESSAGES/plasma_runner_marble.mo
+share/locale/hu/LC_MESSAGES/plasma_wallpaper_org.kde.plasma.worldmap.mo
 share/locale/id/LC_MESSAGES/marble-maps.mo
 share/locale/id/LC_MESSAGES/marble.mo
 share/locale/id/LC_MESSAGES/marble_qt.qm

@@ -1,6 +1,7 @@
 bin/keysmith
 share/applications/org.kde.keysmith.desktop
 share/icons/hicolor/scalable/apps/keysmith.svg
+share/locale/ar/LC_MESSAGES/keysmith.mo
 share/locale/ast/LC_MESSAGES/keysmith.mo
 share/locale/ca/LC_MESSAGES/keysmith.mo
 share/locale/ca@valencia/LC_MESSAGES/keysmith.mo

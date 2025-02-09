@@ -50,6 +50,7 @@ share/icons/hicolor/scalable/apps/kwave.svgz
 %%DATADIR%%/pics/sound_device.png
 %%DATADIR%%/pics/sound_note.png
 %%DATADIR%%/pics/sound_subdevice.png
+share/locale/ar/LC_MESSAGES/kwave.mo
 share/locale/bs/LC_MESSAGES/kwave.mo
 share/locale/ca/LC_MESSAGES/kwave.mo
 share/locale/ca@valencia/LC_MESSAGES/kwave.mo

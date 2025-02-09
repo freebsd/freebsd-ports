@@ -46,7 +46,7 @@ CMAKE_OFF=	USE_QTWEBKIT
 
 # Versioning values, to reduce plist churn
 SO_VER=		61
-SO_VER_LONG=	6.1.241200
+SO_VER_LONG=	6.1.241202
 PLIST_SUB+=	SO_VER=${SO_VER} SO_VER_LONG=${SO_VER_LONG}
 
 SHEBANG_LANG=	zsh

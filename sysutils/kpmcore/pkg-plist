@@ -90,6 +90,7 @@ lib/libkpmcore.so.%%KDE_APPLICATIONS_VERSION%%
 %%QT_PLUGINDIR%%/kpmcore/pmdummybackendplugin.so
 share/dbus-1/system-services/org.kde.kpmcore.helperinterface.service
 share/dbus-1/system.d/org.kde.kpmcore.helperinterface.conf
+share/locale/ar/LC_MESSAGES/kpmcore._policy_.mo
 share/locale/ar/LC_MESSAGES/kpmcore.mo
 share/locale/ast/LC_MESSAGES/kpmcore._policy_.mo
 share/locale/ast/LC_MESSAGES/kpmcore.mo

@@ -223,6 +223,7 @@ include/KPim6/MessageList/MessageList/Enums
 include/KPim6/MessageList/MessageList/MessageListUtil
 include/KPim6/MessageList/MessageList/Pane
 include/KPim6/MessageList/MessageList/QuickSearchLine
+include/KPim6/MessageList/MessageList/SearchLineCommand
 include/KPim6/MessageList/MessageList/SearchMessageByButtons
 include/KPim6/MessageList/MessageList/StorageModel
 include/KPim6/MessageList/MessageList/StorageModelBase
@@ -239,6 +240,7 @@ include/KPim6/MessageList/messagelist/messagelistsettings.h
 include/KPim6/MessageList/messagelist/messagelistutil.h
 include/KPim6/MessageList/messagelist/pane.h
 include/KPim6/MessageList/messagelist/quicksearchline.h
+include/KPim6/MessageList/messagelist/searchlinecommand.h
 include/KPim6/MessageList/messagelist/searchmessagebybuttons.h
 include/KPim6/MessageList/messagelist/storagemodel.h
 include/KPim6/MessageList/messagelist/storagemodelbase.h

@@ -30,6 +30,7 @@ share/icons/hicolor/64x64/apps/kubrick.png
 %%DATADIR%%/p333X2.kbk
 %%DATADIR%%/p333X6.kbk
 %%DATADIR%%/themes/default.svgz
+share/locale/ar/LC_MESSAGES/kubrick.mo
 share/locale/ast/LC_MESSAGES/kubrick.mo
 share/locale/bg/LC_MESSAGES/kubrick.mo
 share/locale/bs/LC_MESSAGES/kubrick.mo
