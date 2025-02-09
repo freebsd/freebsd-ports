@@ -1,5 +1,5 @@
 PORTNAME=	searxng
-DISTVERSION=	20241108
+DISTVERSION=	20250203
 CATEGORIES=	www python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 PKGNAMESUFFIX=	-devel
@@ -20,6 +20,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Babel>=0:devel/py-babel@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}flask>=0:www/py-flask@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}httpx-socks>=0:www/py-httpx-socks@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}httpx>=0:www/py-httpx@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}isodate>=0:devel/py-isodate@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}Jinja2>=0:devel/py-Jinja2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}langdetect>=0:textproc/py-langdetect@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}lxml>=0:devel/py-lxml@${PY_FLAVOR} \
@@ -38,7 +39,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Babel>=0:devel/py-babel@${PY_FLAVOR} \
 
 USES=		python
 USE_GITHUB=	yes
-GH_TAGNAME=	2fbf15eccbbc3af70f8b93257c9a39d26603f097
+GH_TAGNAME=	4ab7984edde27b36b158f678d83b993ad4126619
 USE_PYTHON=	autoplist distutils
 USE_RC_SUBR=	searxng
 
