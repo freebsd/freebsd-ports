@@ -1,5 +1,5 @@
 PORTNAME=	duplicity
-DISTVERSION=	3.0.3.2
+DISTVERSION=	3.0.4
 CATEGORIES=	sysutils
 MASTER_SITES=	PYPI
 
@@ -22,13 +22,18 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}fasteners>=0:devel/py-fasteners@${PY_FLAVOR}
 		${PYTHON_PKGNAMEPREFIX}pexpect>0:misc/py-pexpect@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>=0:www/py-requests@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}urllib3>=0:net/py-urllib3@${PY_FLAVOR}
-TEST_DEPENDS=	gtar>0:archivers/gtar \
-		par2cmdline>0:archivers/par2cmdline
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}black>0:devel/py-black@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pytest-pycodestyle>0:devel/py-pytest-pycodestyle@${PY_FLAVOR} \
+		gtar>0:archivers/gtar \
+		par2cmdline>0:archivers/par2cmdline \
+		pylint${PYTHON_PKGNAMESUFFIX}>0:devel/pylint@${PY_FLAVOR}
 
 USES=		cpe localbase python shebangfix
 CPE_VENDOR=	${PORTNAME}_project
 USE_LDCONFIG=	yes
 USE_PYTHON=	autoplist noflavors pep517 pytest
+
+PYTEST_IGNORED_TESTS=	test_code.py #https://lists.nongnu.org/archive/html/duplicity-talk/2025-02/msg00007.html
 
 SHEBANG_FILES=	duplicity/__main__.py testing/overrides/bin/*
 
