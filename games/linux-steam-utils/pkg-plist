@@ -37,7 +37,10 @@ steam-utils/lxbin/dbus-launch
 steam-utils/lxbin/file
 steam-utils/lxbin/file.rb
 steam-utils/lxbin/lsof
+steam-utils/lxbin/lsof.rb
 steam-utils/lxbin/lspci
+steam-utils/lxbin/lsu-bwrap-stub
+steam-utils/lxbin/lsu-bwrap-stub.rb
 steam-utils/lxbin/lsu-linux-to-freebsd-env.sh
 steam-utils/lxbin/lsu-webhelper-chroot
 steam-utils/lxbin/lsu-webhelper-chroot.rb
