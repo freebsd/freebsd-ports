@@ -1,3 +1,4 @@
-A hierarchical note taking application, featuring rich text and syntax
-highlighting, storing data in either a single file (XML or SQLite) or
-multiple files and directories.
+CherryTree is a hierarchical note-taking application, featuring rich text,
+syntax highlighting, images handling, hyperlinks, import/export with support
+for multiple formats, support for multiple languages, and more.  It stores
+data in either a single file (XML or SQLite) or multiple files/directories.
