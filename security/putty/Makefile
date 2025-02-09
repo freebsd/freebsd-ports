@@ -1,14 +1,13 @@
 PORTNAME=		putty
 # https://tartarus.org/~simon/putty-prerel-snapshots/putty-0.83~pre20250105.1e45199.tar.gz
-DISTVERSION=		0.83~pre20250121
+DISTVERSION=		0.83
 PORTREVISION=		0
-DISTVERSIONSUFFIX=	.ec158a2
-CATEGORIES=	security
-#MASTER_SITES=	http://the.earth.li/~sgtatham/putty/${PORTVERSION}/ \
-#		ftp://ftp.chiark.greenend.org.uk/users/sgtatham/putty-latest/ \
-#		LOCAL/mandree/
-MASTER_SITES=	https://tartarus.org/~simon/putty-prerel-snapshots/ \
-		LOCAL/mandree/
+#DISTVERSIONSUFFIX=	.ec158a2
+CATEGORIES=		security
+MASTER_SITES=		http://the.earth.li/~sgtatham/putty/${PORTVERSION}/ \
+			LOCAL/mandree/
+#MASTER_SITES=		https://tartarus.org/~simon/putty-prerel-snapshots/ \
+#			LOCAL/mandree/
 
 MAINTAINER=	mandree@FreeBSD.org
 COMMENT=	Secure shell and telnet client including xterm emulator
