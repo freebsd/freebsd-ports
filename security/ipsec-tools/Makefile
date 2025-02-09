@@ -10,7 +10,7 @@ WWW=		http://cvsweb.netbsd.org/bsdweb.cgi/src/crypto/dist/ipsec-tools/src/racoon
 
 LICENSE=	BSD3CLAUSE
 
-USES=		cpe libtool tar:bzip2 ssl
+USES=		compiler cpe libtool tar:bzip2 ssl
 
 CONFLICTS=	racoon
 INSTALL_TARGET=	install-strip
@@ -70,6 +70,11 @@ NATT_EXTRA_PATCHES=		${FILESDIR}/natt.diff
 WCPSKEY_EXTRA_PATCHES=	${FILESDIR}/wildcard-psk.diff ${FILESDIR}/wildcard-psk-oakley.c.diff
 
 .include <bsd.port.pre.mk>
+
+.if ${COMPILER_TYPE} == clang && ${COMPILER_VERSION} >= 190
+CFLAGS+=	-Wno-deprecated-declarations -Wno-deprecated-non-prototype \
+		-Wno-incompatible-pointer-types-discards-qualifiers
+.endif
 
 .if ${OPSYS} == FreeBSD
 REQUIREMOD?=	ipsec
