@@ -1,5 +1,5 @@
 PORTNAME=	cfn-lint
-DISTVERSION=	1.22.3
+DISTVERSION=	1.24.0
 CATEGORIES=	devel python textproc
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -25,7 +25,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aws-sam-translator>=1.94.0:devel/py-aws-sam-
 		${PYTHON_PKGNAMEPREFIX}sarif-om>=1.0.4:devel/py-sarif-om@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sympy>=1.0.0:math/py-sympy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}typing-extensions>0:devel/py-typing-extensions@${PY_FLAVOR}
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}defusedxml>0:devel/py-defusedxml@${PY_FLAVOR}
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}defusedxml>0:devel/py-defusedxml@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pydot>0:graphics/py-pydot@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	autoplist concurrent pep517 pytest unittest
