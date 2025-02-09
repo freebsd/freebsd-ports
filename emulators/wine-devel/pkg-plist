@@ -294,6 +294,8 @@ include/wine/windows/d3d8caps.h
 include/wine/windows/d3d8types.h
 include/wine/windows/d3d9.h
 include/wine/windows/d3d9caps.h
+include/wine/windows/d3d9on12.h
+include/wine/windows/d3d9on12.idl
 include/wine/windows/d3d9types.h
 include/wine/windows/d3dcaps.h
 include/wine/windows/d3dcommon.h
@@ -2558,6 +2560,7 @@ lib/wine/%%WINEARCH%%-windows/windows.security.credentials.ui.userconsentverifie
 lib/wine/%%WINEARCH%%-windows/windows.storage.applicationdata.dll
 lib/wine/%%WINEARCH%%-windows/windows.system.profile.systemmanufacturers.dll
 lib/wine/%%WINEARCH%%-windows/windows.ui.dll
+lib/wine/%%WINEARCH%%-windows/windows.ui.xaml.dll
 lib/wine/%%WINEARCH%%-windows/windows.web.dll
 lib/wine/%%WINEARCH%%-windows/windowscodecs.dll
 lib/wine/%%WINEARCH%%-windows/windowscodecsext.dll

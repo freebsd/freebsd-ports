@@ -1,8 +1,8 @@
 PORTNAME=	wine
-DISTVERSION=	10.0-rc5
+DISTVERSION=	10.1
 PORTEPOCH=	1
 CATEGORIES=	emulators
-MASTER_SITES=	https://dl.winehq.org/wine/source/10.0/
+MASTER_SITES=	https://dl.winehq.org/wine/source/10.x/
 PKGNAMESUFFIX=	-devel
 
 MAINTAINER=	ports@FreeBSD.org
