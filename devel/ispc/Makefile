@@ -1,6 +1,6 @@
 PORTNAME=	ispc
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.25.3
+DISTVERSION=	1.26.0
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -19,7 +19,7 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/flex:textproc/flex \
 LIB_DEPENDS=	libLLVM.so:devel/llvm${LLVM_VERSION} \
 		libtbb.so:devel/onetbb
 
-USES=		bison cmake compiler:c++17-lang llvm:lib,min=16,max=16 python:build,test shebangfix
+USES=		bison cmake compiler:c++17-lang llvm:lib,min=19,max=19 python:build,test shebangfix
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
@@ -78,5 +78,7 @@ run-examples: build
 	${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} && \
 	./${e}
 .endfor
+
+# tests as of 1.26.0: PASSRATE (1389/1389) = 100%
 
 .include <bsd.port.mk>
