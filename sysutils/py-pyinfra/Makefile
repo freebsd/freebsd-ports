@@ -1,6 +1,6 @@
 PORTNAME=	pyinfra
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.1.1
+DISTVERSION=	3.2
 CATEGORIES=	sysutils python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -41,6 +41,10 @@ PYTEST_IGNORED_TESTS=	test_int_docker_install_package_ubuntu \
 			test_int_local_line_no_changes \
 			test_int_local_line_ensure_newline_true \
 			test_int_local_line_ensure_newline_false
+
+# TestSSHUserConfig.test_missing_hostkey is failing currently, due to an
+# undocumented dependency on code only available in paramiko >= 3.2:
+# https://github.com/pyinfra-dev/pyinfra/issues/1290
 
 .include <bsd.port.pre.mk>
 
