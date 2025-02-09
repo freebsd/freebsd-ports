@@ -28,6 +28,7 @@ include/malloy/core/http/session/storage_memory.hpp
 include/malloy/core/http/session/types.hpp
 include/malloy/core/http/type_traits.hpp
 include/malloy/core/http/types.hpp
+include/malloy/core/http/url.hpp
 include/malloy/core/http/utils.hpp
 include/malloy/core/tcp/rate_policy.hpp
 include/malloy/core/tcp/stream.hpp
