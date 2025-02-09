@@ -1,10 +1,7 @@
 PORTNAME=	kicad
-PORTVERSION=	7.0.2
-PORTREVISION=	2
+DISTVERSION=	9.0.0-rc3
 CATEGORIES=	cad
-MASTER_SITES=	https://gitlab.com/kicad/libraries/${PORTNAME}-templates/-/archive/${DISTVERSION}${DISTVERSIONSUFFIX}/
 PKGNAMESUFFIX=	-library-tmpl
-DISTNAME=	${PORTNAME}-templates-${DISTVERSION}${DISTVERSIONSUFFIX}
 
 MAINTAINER=	cmt@FreeBSD.org
 COMMENT=	Official KiCad project templates
@@ -15,6 +12,10 @@ LICENSE=	GPLv2
 RUN_DEPENDS=	kicad:cad/kicad
 
 USES=		cmake tar:bz2
+
+USE_GITLAB=	yes
+GL_ACCOUNT=	kicad/libraries
+GL_PROJECT=	kicad-templates
 
 CONFLICTS_INSTALL=	kicad-library-tmpl-devel # share/kicad/template/A2_ISO5457-1999_ISO7200-2004-compact_ASMEY1435-2014_EN.kicad_wks
 

@@ -1,10 +1,7 @@
 PORTNAME=	kicad
-PORTVERSION=	7.0.2
-PORTREVISION=	2
+DISTVERSION=	9.0.0-rc3
 CATEGORIES=	cad
-MASTER_SITES=	https://gitlab.com/kicad/libraries/${PORTNAME}-footprints/-/archive/${DISTVERSION}${DISTVERSIONSUFFIX}/
 PKGNAMESUFFIX=	-library-footprints
-DISTNAME=	${PORTNAME}-footprints-${DISTVERSION}${DISTVERSIONSUFFIX}
 
 MAINTAINER=	cmt@FreeBSD.org
 COMMENT=	Official KiCad Footprint Libraries
@@ -15,6 +12,10 @@ LICENSE=	GPLv2
 RUN_DEPENDS=	kicad:cad/kicad
 
 USES=		cmake tar:bz2
+
+USE_GITLAB=	yes
+GL_ACCOUNT=	kicad/libraries
+GL_PROJECT=	kicad-footprints
 
 CONFLICTS_INSTALL=	kicad-library-footprints-devel # share/kicad/footprints/Audio_Module.pretty/Reverb_BTDR-1H.kicad_mod
 

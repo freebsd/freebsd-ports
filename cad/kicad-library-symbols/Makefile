@@ -1,10 +1,7 @@
 PORTNAME=	kicad
-PORTVERSION=	7.0.2
-PORTREVISION=	2
+DISTVERSION=	9.0.0-rc3
 CATEGORIES=	cad
-MASTER_SITES=	https://gitlab.com/kicad/libraries/${PORTNAME}-symbols/-/archive/${DISTVERSION}${DISTVERSIONSUFFIX}/
 PKGNAMESUFFIX=	-library-symbols
-DISTNAME=	${PORTNAME}-symbols-${DISTVERSION}${DISTVERSIONSUFFIX}
 
 MAINTAINER=	cmt@FreeBSD.org
 COMMENT=	Official KiCad schematic symbol libraries
@@ -15,6 +12,10 @@ LICENSE=	GPLv2
 RUN_DEPENDS=	kicad:cad/kicad
 
 USES=		cmake tar:bz2
+
+USE_GITLAB=	yes
+GL_ACCOUNT=	kicad/libraries
+GL_PROJECT=	kicad-symbols
 
 CONFLICTS_INSTALL=	kicad-library-symbols-devel # share/kicad/symbols/4xxx.kicad_sym
 

@@ -1,9 +1,7 @@
 PORTNAME=	kicad
-PORTVERSION=	7.0.2
-PORTREVISION=	10
+DISTVERSION=	9.0.0-rc3
 PORTEPOCH=	2
 CATEGORIES=	cad
-MASTER_SITES=	https://gitlab.com/${PORTNAME}/code/${PORTNAME}/-/archive/${DISTVERSION}${DISTVERSIONSUFFIX}/
 
 MAINTAINER=	cmt@FreeBSD.org
 COMMENT=	Schematic and PCB editing software
@@ -13,37 +11,54 @@ LICENSE=	GPLv2
 
 BUILD_DEPENDS=	${LOCALBASE}/include/glm/glm.hpp:math/glm	\
 		swig:devel/swig
-LIB_DEPENDS=	libboost_thread.so:devel/boost-libs	\
+LIB_DEPENDS=	libboost_locale.so:devel/boost-libs	\
+		libabsl_log_internal_check_op.so:devel/abseil		\
+		libgit2.so:devel/libgit2		\
+		libprotobuf.so:devel/protobuf		\
+		libnng.so:net/nng			\
 		libharfbuzz.so:print/harfbuzz		\
 		libngspice.so:cad/ngspice_rework@shlib	\
 		libTKernel.so:cad/opencascade		\
 		libpixman-1.so:x11/pixman		\
-		libpng.so:graphics/png			\
+		libzstd.so:archivers/zstd		\
 		libcurl.so:ftp/curl			\
-		libGLEW-wayland.so:graphics/glew-wayland \
-		libfreetype.so:print/freetype2	\
+		libwayland-client.so:graphics/wayland	\
+		libfreetype.so:print/freetype2		\
+		libsecret-1.so:security/libsecret	\
 		libfontconfig.so:x11-fonts/fontconfig	\
 		libodbc.so:databases/unixODBC
 
-USES=		cmake:noninja compiler:c++17-lang desktop-file-utils gl \
+USES=		cmake:noninja compiler:c++20-lang desktop-file-utils \
 		gnome pkgconfig python shared-mime-info shebangfix \
 		tar:bz2 xorg
 SHEBANG_FILES=	pcbnew/python/plugins/touch_slider_wizard.py
 
 USE_XORG=	ice x11 xext
-USE_GL=		gl glu glut
+USE_GL=		egl gl glu glut opengl
 USE_WX=		3.2
 WX_COMPS=	python:lib wx
 USE_GNOME=	atk cairo gdkpixbuf2 gtk30 pango
-CXXFLAGS+=	-std=c++11 -I${WRKSRC}/include -I${LOCALBASE}/include
+
+USE_GITLAB=	yes
+GL_ACCOUNT=	kicad/code
+GL_PROJECT=	kicad
+
+CXXFLAGS+=	-I${WRKSRC}/include -I${LOCALBASE}/include
 CXXFLAGS_powerpc=	-O0
 # not using "bundled glew" breaks the 3d viewer
 CMAKE_ARGS=	-DwxWidgets_CONFIG_EXECUTABLE=${WX_CONFIG}	\
 		-DwxWidgets_USE_UNICODE=ON			\
 		-DwxWidgets_wxrc_EXECUTABLE=${WXRC_CMD}		\
+		-DKICAD_SPICE_QA=ON				\
+		-DKICAD_USE_SENTRY=OFF				\
+		-DKICAD_SIGNAL_INTEGRITY=ON			\
+		-DKICAD_BUILD_QA_TESTS=ON			\
 		-DKICAD_SCRIPTING_WXPYTHON=ON			\
+		-DKICAD_UPDATE_CHECK=OFF			\
 		-DKICAD_USE_EGL=ON				\
 		-DKICAD_USE_BUNDLED_GLEW=ON 			\
+		-DKICAD_WAYLAND=ON				\
+		-DKICAD_INSTALL_DEMOS=ON			\
 		-DNANODBC_ENABLE_BOOST=ON			\
 		-DOCC_INCLUDE_DIR=${LOCALBASE}/include/OpenCASCADE
 CMAKE_ENV+=	DODBC_PATH=${LOCALBASE}
@@ -51,14 +66,11 @@ USE_LDCONFIG=	yes
 
 PLIST_SUB=	DESKTOPDIR=${DESKTOPDIR:S|^${PREFIX}/||}
 
-OPTIONS_DEFINE=	DOXYGEN NLS
+OPTIONS_DEFINE=	NLS
 OPTIONS_SUB=	yes
 
 NLS_USES=	gettext
-
-DOXYGEN_VARS=	LICENSE+=GFDL LICENSE_COMB=multi
-DOXYGEN_BUILD_DEPENDS=	doxygen:devel/doxygen
-DOXYGEN_ALL_TARGET=	all doxygen-docs
+NLS_CMAKE_BOOL= KICAD_BUILD_I18N
 
 CONFLICTS_INSTALL=	kicad-devel # bin/_cvpcb.kiface
 
