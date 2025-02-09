@@ -1,5 +1,5 @@
 PORTNAME=	simplejpeg
-DISTVERSION=	1.7.6
+DISTVERSION=	1.8.0
 CATEGORIES=	graphics python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -27,5 +27,7 @@ post-extract: # force cythonization because pre-cythonized _jpeg.c fails to comp
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/simplejpeg/_jpeg${PYTHON_EXT_SUFFIX}.so
+
+# tests as of 1.8.0: 61 passed in 10.57s
 
 .include <bsd.port.mk>
