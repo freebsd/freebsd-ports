@@ -66,6 +66,7 @@ share/locale/gl/LC_MESSAGES/kwalletd6.mo
 share/locale/gu/LC_MESSAGES/kwalletd6.mo
 share/locale/he/LC_MESSAGES/kwallet6-query.mo
 share/locale/he/LC_MESSAGES/kwalletd6.mo
+share/locale/hi/LC_MESSAGES/kwallet6-query.mo
 share/locale/hi/LC_MESSAGES/kwalletd6.mo
 share/locale/hr/LC_MESSAGES/kwalletd6.mo
 share/locale/hsb/LC_MESSAGES/kwalletd6.mo
@@ -118,6 +119,8 @@ share/locale/ro/LC_MESSAGES/kwallet6-query.mo
 share/locale/ro/LC_MESSAGES/kwalletd6.mo
 share/locale/ru/LC_MESSAGES/kwallet6-query.mo
 share/locale/ru/LC_MESSAGES/kwalletd6.mo
+share/locale/sa/LC_MESSAGES/kwallet6-query.mo
+share/locale/sa/LC_MESSAGES/kwalletd6.mo
 share/locale/si/LC_MESSAGES/kwalletd6.mo
 share/locale/sk/LC_MESSAGES/kwallet6-query.mo
 share/locale/sk/LC_MESSAGES/kwalletd6.mo

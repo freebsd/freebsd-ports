@@ -728,10 +728,12 @@ share/locale/is/LC_MESSAGES/kio6.mo
 share/locale/it/LC_MESSAGES/kio6.mo
 share/locale/ja/LC_MESSAGES/kio6.mo
 share/locale/ka/LC_MESSAGES/kio6.mo
+share/locale/kab/LC_MESSAGES/kio6.mo
 share/locale/kk/LC_MESSAGES/kio6.mo
 share/locale/km/LC_MESSAGES/kio6.mo
 share/locale/ko/LC_MESSAGES/kio6.mo
 share/locale/ku/LC_MESSAGES/kio6.mo
+share/locale/lg/LC_MESSAGES/kio6.mo
 share/locale/lt/LC_MESSAGES/kio6.mo
 share/locale/lv/LC_MESSAGES/kio6.mo
 share/locale/mai/LC_MESSAGES/kio6.mo

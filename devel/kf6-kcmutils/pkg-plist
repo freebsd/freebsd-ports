@@ -117,6 +117,7 @@ share/locale/gu/LC_MESSAGES/kcmutils6.mo
 share/locale/ha/LC_MESSAGES/kcmutils6.mo
 share/locale/he/LC_MESSAGES/kcmshell6.mo
 share/locale/he/LC_MESSAGES/kcmutils6.mo
+share/locale/hi/LC_MESSAGES/kcmshell6.mo
 share/locale/hi/LC_MESSAGES/kcmutils6.mo
 share/locale/hne/LC_MESSAGES/kcmutils6.mo
 share/locale/hr/LC_MESSAGES/kcmutils6.mo
@@ -171,6 +172,8 @@ share/locale/ro/LC_MESSAGES/kcmshell6.mo
 share/locale/ro/LC_MESSAGES/kcmutils6.mo
 share/locale/ru/LC_MESSAGES/kcmshell6.mo
 share/locale/ru/LC_MESSAGES/kcmutils6.mo
+share/locale/sa/LC_MESSAGES/kcmshell6.mo
+share/locale/sa/LC_MESSAGES/kcmutils6.mo
 share/locale/se/LC_MESSAGES/kcmutils6.mo
 share/locale/si/LC_MESSAGES/kcmutils6.mo
 share/locale/sk/LC_MESSAGES/kcmshell6.mo

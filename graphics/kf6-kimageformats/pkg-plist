@@ -1,5 +1,6 @@
 %%QT_PLUGINDIR%%/imageformats/kimg_ani.so
 %%AVIF%%%%QT_PLUGINDIR%%/imageformats/kimg_avif.so
+%%QT_PLUGINDIR%%/imageformats/kimg_dds.so
 %%QT_PLUGINDIR%%/imageformats/kimg_eps.so
 %%OPENEXR%%%%QT_PLUGINDIR%%/imageformats/kimg_exr.so
 %%QT_PLUGINDIR%%/imageformats/kimg_hdr.so
