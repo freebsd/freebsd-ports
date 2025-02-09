@@ -3,7 +3,7 @@
   message: <<EOM
 Add %%PREFIX%%/etc/python-gitlab.cfg or ~/.python-gitlab.cfg
 
-See https://github.com/python-gitlab/python-gitlab/blob/master/docs/cli.rst
+See https://python-gitlab.readthedocs.io/en/stable/cli-usage.html
 for CLI configutation details
 EOM
 }
