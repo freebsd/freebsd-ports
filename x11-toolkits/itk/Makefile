@@ -1,6 +1,6 @@
 PORTNAME=	itk
 PORTVERSION=	3.4.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-toolkits tk
 MASTER_SITES=	SF/incrtcl/%5BIncr%20Tcl_Tk%5D-source/Itk%20${PORTVERSION}
 DISTNAME=	${PORTNAME}${PORTVERSION}
@@ -9,7 +9,7 @@ MAINTAINER=	erik@bz.bzflag.bz
 COMMENT=	Object-oriented extension to Tk [incr Tk]
 WWW=		https://sourceforge.net/projects/incrtcl/
 
-LIB_DEPENDS=	libitcl.so.${MAJOR}:lang/itcl
+LIB_DEPENDS=	libitcl.so:lang/itcl
 
 USES=		tk:85,86 uidfix
 USE_LDCONFIG=	yes
