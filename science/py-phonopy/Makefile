@@ -1,5 +1,5 @@
 PORTNAME=	phonopy
-DISTVERSION=	2.33.3
+DISTVERSION=	2.37.0
 CATEGORIES=	science python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -35,6 +35,6 @@ TEST_WRKSRC=	${WRKSRC}/test
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/phonopy/_phonopy${PYTHON_EXT_SUFFIX}.so
 
-# tests as of 2.33.3: 1 failed, 254 passed, 4 skipped, 1 error in 1033.15s (0:17:13) (failure is likely in science/py-symfc with -9999 error)
+# tests as of 2.37.0: 3 failed, 270 passed, 4 skipped, 4 warnings, 5 errors in 1448.81s (0:24:08) (failures are likely in science/py-symfc with -9999 error)
 
 .include <bsd.port.mk>
