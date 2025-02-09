@@ -1,5 +1,4 @@
 bin/sq
-bin/sq_static
 include/sqconfig.h
 include/sqstdaux.h
 include/sqstdblob.h
@@ -11,8 +10,10 @@ include/squirrel.h
 lib/libsqstdlib.so
 lib/libsqstdlib.so.0
 lib/libsqstdlib.so.0.0.0
-lib/libsqstdlib_static.a
 lib/libsquirrel.so
 lib/libsquirrel.so.0
 lib/libsquirrel.so.0.0.0
-lib/libsquirrel_static.a
+lib/cmake/squirrel/squirrel-config-version.cmake
+lib/cmake/squirrel/squirrel-config.cmake
+lib/cmake/squirrel/squirrel-targets.cmake
+lib/cmake/squirrel/squirrel-targets-release.cmake
