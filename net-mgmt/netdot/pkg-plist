@@ -178,7 +178,7 @@
 %%WWWDIR%%/htdocs/masondata/obj/.__obj_create_marker
 %%WWWDIR%%/htdocs/menu_admin.mhtml
 %%WWWDIR%%/htdocs/menu_user.mhtml
-%%WWWDIR%%/htdocs/reports/addr_poll_stats.html 
+%%WWWDIR%%/htdocs/reports/addr_poll_stats.html
 %%WWWDIR%%/htdocs/reports/asset_inventory.html
 %%WWWDIR%%/htdocs/reports/autohandler
 %%WWWDIR%%/htdocs/reports/dev_poll_stats.html
