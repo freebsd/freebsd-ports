@@ -9,6 +9,8 @@ WWW=		https://calligra.org/
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+IGNORE_i386=	is not supported on 32-bit systems
+
 LIB_DEPENDS=	libImath.so:math/Imath \
 		libboost_thread.so:devel/boost-libs \
 		libgit2.so:devel/libgit2 \
