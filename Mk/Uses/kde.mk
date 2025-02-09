@@ -102,13 +102,6 @@ KDE_FRAMEWORKS5_BRANCH?=	stable
 KDE_FRAMEWORKS6_VERSION?=	6.9.0
 KDE_FRAMEWORKS6_BRANCH?=	stable
 
-# Legacy KDE applications.
-KDE_APPLICATIONS5_VERSION?=	23.08.5
-KDE_APPLICATIONS5_SHLIB_VER?=	5.24.5
-# G as in KDE Gear, and as in "don't make the variable name longer than required"
-KDE_APPLICATIONS5_SHLIB_G_VER?=	23.8.5
-KDE_APPLICATIONS5_BRANCH?=	stable
-
 # Current KDE applications.
 KDE_APPLICATIONS6_VERSION?=	24.12.0
 KDE_APPLICATIONS6_SHLIB_VER?=	6.3.0
@@ -201,8 +194,7 @@ DESCR=			${.CURDIR:H:H}/x11/plasma6-plasma/pkg-descr
 PORTVERSION?=		${KDE_FRAMEWORKS_VERSION}
 PKGNAMEPREFIX?=		kf${_KDE_VERSION}-
 WWW?=			https://api.kde.org/frameworks/${PORTNAME}/html/index.html
-# This is a slight duplication of _USE_FRAMEWORKS_PORTING -- it maybe would be
-# better to rely on ${_USE_FRAMEWORKS_PORTING:S/^/k/g}
+# This is a slight duplication of _USE_PORTINGAIDS_ALL
 _PORTINGAIDS=		kjs kjsembed kdelibs4support kdesignerplugin khtml kmediaplayer kross kxmlrpcclient
 .        if ${_KDE_VERSION:M5}
 .          if ${_PORTINGAIDS:M*${PORTNAME}*}
@@ -256,55 +248,48 @@ PLIST_SUB+=		KDE_APPLICATIONS_VERSION="${KDE_APPLICATIONS_VERSION}" \
 			KDE_PLASMA_VERSION="${KDE_PLASMA_VERSION}"
 # ==============================================================================
 
-# List of components of the KDE Frameworks distribution.
-# The *_TIER<n> variables are internal, primarily for checking
-# that our list of frameworks matches the structure offered upstream.
-_USE_FRAMEWORKS_TIER1=	apidox archive attica breeze-icons codecs config \
-			coreaddons dbusaddons dnssd holidays i18n idletime itemmodels \
-			itemviews kirigami2 kquickcharts plotting prison \
-			qqc2-desktop-style solid sonnet syntaxhighlighting \
-			threadweaver wayland widgetsaddons windowsystem
-# NOT LISTED TIER1: modemmanagerqt networkmanagerqt (not applicable)
-
-_USE_FRAMEWORKS_TIER2=	auth completion crash doctools \
-			filemetadata kimageformats jobwidgets notifications \
-			package pty syndication unitconversion
-
-_USE_FRAMEWORKS_TIER3=	activities activities-stats baloo bookmarks configwidgets \
-			designerplugin emoticons globalaccel guiaddons \
-			iconthemes init kcmutils kdav kdeclarative \
-			kded kdesu kio newstuff notifyconfig parts \
-			people plasma-framework purpose runner service texteditor \
-			textwidgets wallet xmlgui xmlrpcclient
-
-_USE_FRAMEWORKS_TIER4=	frameworkintegration calendarcore contacts
+# List of all USE_KDE components.
+# TODO for KDE 7: do not mangle upstream naming: use the same name
+# for port directory, PORTNAME, and USE_KDE component.
 
 # Porting Aids frameworks provide code and utilities to ease the transition from
-# kdelibs 4 to KDE Frameworks 5. Code should aim to port away from this framework,
-# new projects should avoid using these libraries.
-_USE_FRAMEWORKS_PORTING=js jsembed kdelibs4support khtml mediaplayer kross
+# kdelibs 4 to KDE Frameworks 5.
+_USE_PORTINGAIDS_ALL=	js jsembed kdelibs4support khtml mediaplayer kross
 
-_USE_FRAMEWORKS5_ALL=	ecm \
-			${_USE_FRAMEWORKS_TIER1} \
-			${_USE_FRAMEWORKS_TIER2} \
-			${_USE_FRAMEWORKS_TIER3} \
-			${_USE_FRAMEWORKS_TIER4} \
-			${_USE_FRAMEWORKS_PORTING} \
-			${_USE_FRAMEWORKS_EXTRA} \
-			kpublictransport kosm \
-			plasma-wayland-protocols
-# TODO: fix
-_USE_FRAMEWORKS6_ALL=	ecm colorscheme \
-			svg \
-			statusnotifieritem \
-			plasma-wayland-protocols \
-			texttemplate \
-			userfeedback \
-			${_USE_FRAMEWORKS_TIER1:Nwayland} \
-			${_USE_FRAMEWORKS_TIER2} \
-			${_USE_FRAMEWORKS_TIER3:Nemoticons:Ndesignerplugin:Nactivities:Nactivities-stats:Ninit:Nplasma-framework:Nxmlrpcclient} \
-			${_USE_FRAMEWORKS_TIER4} \
-			${_USE_FRAMEWORKS_EXTRA}
+# List of components of the KDE Frameworks distribution.
+# Not ported to FreeBSD: bluez-qt modemmanagerqt networkmanagerqt
+_USE_FRAMEWORKS5_ALL=	activities activities-stats apidox archive attica \
+			auth baloo bookmarks breeze-icons calendarcore \
+			codecs completion config configwidgets contacts \
+			coreaddons crash dbusaddons designerplugin dnssd \
+			doctools ecm emoticons filemetadata frameworkintegration \
+			globalaccel guiaddons holidays i18n iconthemes \
+			idletime init itemmodels itemviews jobwidgets \
+			kcmutils kdav kdeclarative kded kdesu kimageformats \
+			kio kirigami2 kquickcharts newstuff notifications \
+			notifyconfig package parts people plasma-framework \
+			plotting prison pty purpose qqc2-desktop-style \
+			runner service solid sonnet syndication \
+			syntaxhighlighting texteditor textwidgets \
+			threadweaver unitconversion wallet wayland \
+			widgetsaddons windowsystem xmlgui xmlrpcclient \
+			${_USE_PORTINGAIDS_ALL}
+
+_USE_FRAMEWORKS6_ALL=	apidox archive attica auth baloo bookmarks \
+			breeze-icons calendarcore codecs colorscheme \
+			completion config configwidgets contacts coreaddons \
+			crash dbusaddons dnssd doctools ecm filemetadata \
+			frameworkintegration globalaccel guiaddons holidays \
+			i18n iconthemes idletime itemmodels itemviews \
+			jobwidgets kcmutils kdav kdeclarative kded kdesu \
+			kimageformats kio kirigami2 kquickcharts newstuff \
+			notifications notifyconfig package parts people \
+			plasma-wayland-protocols plotting prison pty purpose \
+			qqc2-desktop-style runner service solid sonnet \
+			statusnotifieritem svg syndication \
+			syntaxhighlighting texteditor texttemplate \
+			textwidgets threadweaver unitconversion userfeedback \
+			wallet widgetsaddons windowsystem xmlgui
 _USE_FRAMEWORKS_ALL=	${_USE_FRAMEWORKS${_KDE_VERSION}_ALL}
 
 # List of components of the KDE Plasma distribution.
@@ -327,52 +312,42 @@ _USE_PLASMA6_ALL=	activities activities-stats activitymanagerd \
 			systemsettings wayland xdg-desktop-portal-kde
 _USE_PLASMA_ALL=	${_USE_PLASMA${_KDE_VERSION}_ALL}
 
-# List of components of the KDE PIM distribution (part of applications).
-_USE_KDEPIM_ALL=	akonadicontacts akonadiimportwizard akonadimime \
-			akonadicalendar akonadisearch \
-			calendarcore calendarsupport calendarutils \
-			contacts eventviews gapi grantleetheme \
-			gravatar identitymanagement imap \
-			incidenceeditor kdepim-addons \
-			kdepim-runtime kitinerary kontactinterface kpkpass \
-			ksmtp ldap libkdepim libkleo libksieve mailcommon \
-			mailimporter mailtransport mbox messagelib \
-			mime pimcommon pimtextedit tnef \
-			kalarm kontact kmail mbox-importer \
-			akonadiconsole akregator grantlee-editor kaddressbook \
-			kalarm kmail-account-wizard kmail knotes kontact \
-			korganizer pim-data-exporter ktextaddons \
-			mimetreeparser
+# List of frequently used components of the KDE Gears distribution.
+_USE_GEAR_ALL=		baloo-widgets kate kosm kpublictransport \
+			libkcddb libkcompactdisc libkdcraw \
+			libkdegames libkeduvocdocument libkexiv2 \
+			libksane marble okular
 
-_USE_PHONON_ALL=	phonon phonon-backend
+# List of components of the KDE PIM distribution (part of KDE Gears).
+_USE_KDEPIM_ALL=	akonadi akonadicalendar akonadiconsole \
+			akonadicontacts akonadiimportwizard akonadimime \
+			akonadisearch akregator calendarsupport \
+			calendarutils eventviews gapi grantlee-editor \
+			grantleetheme gravatar identitymanagement imap \
+			incidenceeditor kaddressbook kalarm kdepim-addons \
+			kdepim-runtime kitinerary kmail kmail-account-wizard \
+			kontact kontactinterface korganizer kpkpass ksmtp \
+			ldap libkdepim libkleo libksieve mailcommon \
+			mailimporter mailtransport mbox mbox-importer \
+			messagelib mime mimetreeparser pim-data-exporter \
+			pimcommon pimtextedit tnef
+
+# List of frequently used KDE releated software for any KDE/Qt version.
+_USE_KDE_EXTRA5_ALL=	kirigami-addons phonon phonon-backend \
+			plasma-wayland-protocols
+_USE_KDE_EXTRA6_ALL=	kirigami-addons phonon phonon-backend \
+			plasma-wayland-protocols ktextaddons
+_USE_KDE_EXTRA_ALL=	${_USE_KDE_EXTRA${_KDE_VERSION}_ALL}
 
 _USE_KDE5_ALL=		${_USE_FRAMEWORKS_ALL} \
 			${_USE_PLASMA_ALL} \
-			${_USE_PHONON_ALL} \
-			kirigami-addons \
-			akonadi \
-			libkexiv2 \
-			libkdcraw
+			${_USE_KDE_EXTRA_ALL}
 
-# TODO: fix
-_USE_KDE6_ALL=		ecm colorscheme \
-			svg \
-			plasma-wayland-protocols \
-			mediaplayer \
-			${_USE_FRAMEWORKS_ALL}  \
+_USE_KDE6_ALL=		${_USE_FRAMEWORKS_ALL}  \
 			${_USE_PLASMA_ALL} \
-			${_USE_PHONON_ALL} \
-			kirigami-addons \
-			akonadi \
-			kpublictransport \
-			libkdegames \
-			libksane \
-			baloo-widgets \
-			libkdcraw \
 			${_USE_KDEPIM_ALL} \
-			libkeduvocdocument \
-			libkexiv2 \
-			okular
+			${_USE_GEAR_ALL} \
+			${_USE_KDE_EXTRA_ALL}
 
 # ====================== frameworks components =================================
 kde-activities_PORT5=		x11/kf${_KDE_VERSION}-kactivities
@@ -818,9 +793,6 @@ kde-akonadiimportwizard_LIB=	libKPim${_KDE_VERSION}ImportWizard.so
 kde-akonadimime_PORT=		net/akonadi-mime
 kde-akonadimime_LIB=		libKPim${_KDE_VERSION}AkonadiMime.so
 
-kde-akonadinotes_PORT=		net/akonadi-notes
-kde-akonadinotes_LIB=		libKPim${_KDE_VERSION}AkonadiNotes.so
-
 kde-akonadicalendar_PORT=	net/akonadi-calendar
 kde-akonadicalendar_LIB=	libKPim${_KDE_VERSION}AkonadiCalendar.so
 
@@ -936,9 +908,6 @@ kde-kmail_PATH=			${KDE_PREFIX}/bin/kmail
 kde-kmail-account-wizard_PORT=	deskutils/kmail-account-wizard
 kde-kmail-account-wizard_PATH=	${KDE_PREFIX}/bin/accountwizard
 
-kde-knotes_PORT=		deskutils/knotes
-kde-knotex_PATH=		${KDE_PREFIX}/bin/knotes
-
 kde-kontact_PORT=		deskutils/kontact
 kde-kontact_PATH=		${KDE_PREFIX}/bin/kontact
 
@@ -966,7 +935,7 @@ kde-kate_PORT=			editors/kate
 kde-kate_PATH=			${QT_PLUGINDIR}/ktexteditor/katebacktracebrowserplugin.so
 
 kde-libkcddb_PORT=		audio/libkcddb
-kde-libkcddb_LIB=		libKF${_KDE_VERSION}Cddb.so
+kde-libkcddb_LIB=		libKCddb${_KDE_VERSION}.so
 
 kde-libkcompactdisc_PORT=	audio/libkcompactdisc
 kde-libkcompactdisc_LIB=	libKF${_KDE_VERSION}CompactDisc.so
@@ -986,9 +955,6 @@ kde-libkexiv2_PORT=		graphics/libkexiv2@qt${_KDE_VERSION}
 kde-libkexiv2_LIB5=		libKF${_KDE_VERSION}KExiv2.so
 kde-libkexiv2_LIB6=		libKExiv2Qt${_KDE_VERSION}.so
 kde-libkexiv2_LIB=		${kde-libkexiv2_LIB${_KDE_VERSION}}
-
-kde-libkipi_PORT=		graphics/libkipi
-kde-libkipi_LIB=		libKF${_KDE_VERSION}Kipi.so
 
 kde-libksane_PORT=		graphics/libksane
 kde-libksane_LIB=		libKSaneWidgets${_KDE_VERSION}.so
