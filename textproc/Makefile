@@ -2086,6 +2086,7 @@
     SUBDIR += te-aspell
     SUBDIR += te-hunspell
     SUBDIR += teckit
+    SUBDIR += television
     SUBDIR += termshot
     SUBDIR += tet-aspell
     SUBDIR += texi2db
