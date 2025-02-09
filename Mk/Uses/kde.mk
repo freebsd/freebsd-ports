@@ -313,10 +313,12 @@ _USE_PLASMA6_ALL=	activities activities-stats activitymanagerd \
 _USE_PLASMA_ALL=	${_USE_PLASMA${_KDE_VERSION}_ALL}
 
 # List of frequently used components of the KDE Gears distribution.
-_USE_GEAR_ALL=		baloo-widgets kate kosm kpublictransport \
+_USE_GEAR5_ALL=		libkdcraw libkexiv2
+_USE_GEAR6_ALL=		baloo-widgets kate kosm kpublictransport \
 			libkcddb libkcompactdisc libkdcraw \
 			libkdegames libkeduvocdocument libkexiv2 \
 			libksane marble okular
+_USE_GEAR_ALL=		${_USE_GEAR${_KDE_VERSION}_ALL}
 
 # List of components of the KDE PIM distribution (part of KDE Gears).
 _USE_KDEPIM_ALL=	akonadi akonadicalendar akonadiconsole \
@@ -341,6 +343,7 @@ _USE_KDE_EXTRA_ALL=	${_USE_KDE_EXTRA${_KDE_VERSION}_ALL}
 
 _USE_KDE5_ALL=		${_USE_FRAMEWORKS_ALL} \
 			${_USE_PLASMA_ALL} \
+			${_USE_GEAR_ALL} \
 			${_USE_KDE_EXTRA_ALL}
 
 _USE_KDE6_ALL=		${_USE_FRAMEWORKS_ALL}  \
