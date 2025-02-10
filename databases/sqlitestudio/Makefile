@@ -1,5 +1,5 @@
 PORTNAME=	sqlitestudio
-DISTVERSION=	3.4.15
+DISTVERSION=	3.4.16
 CATEGORIES=	databases
 
 MAINTAINER=	yuri@FreeBSD.org
