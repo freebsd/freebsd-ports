@@ -1,6 +1,6 @@
---- src/ES2FileFormat/Header/IO/FKSource.h.orig	2021-11-25 00:56:57 UTC
+--- src/ES2FileFormat/Header/IO/FKSource.h.orig	2024-09-12 07:10:33 UTC
 +++ src/ES2FileFormat/Header/IO/FKSource.h
-@@ -40,7 +40,7 @@ class CFKSource : public IFKSource (public)
+@@ -37,7 +37,7 @@ class CFKSource : public IFKSource (public)
   {
    return m_bFull;
   }

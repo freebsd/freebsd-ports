@@ -1,6 +1,6 @@
---- src/CommonUtility/utils/ESFile.cpp.orig	2021-11-25 00:56:55 UTC
+--- src/CommonUtility/utils/ESFile.cpp.orig	2024-09-12 07:10:38 UTC
 +++ src/CommonUtility/utils/ESFile.cpp
-@@ -48,6 +48,9 @@ CESFile* CESFile::CreateFileInstanceWithPath(ESString 
+@@ -45,6 +45,9 @@ CESFile* CESFile::CreateTempFileInstanceWithPrefix( ES
   }
  }
  CESFile* CESFile::CreateTempFileInstanceWithPrefix( ESString strFolder, ESString strPrefix, ES_OPEN_MODE eOpenMode ){

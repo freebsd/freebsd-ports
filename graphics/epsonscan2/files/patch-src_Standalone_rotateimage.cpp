@@ -1,7 +1,7 @@
---- src/Standalone/rotateimage.cpp.orig	2021-11-25 00:56:56 UTC
+--- src/Standalone/rotateimage.cpp.orig	2024-09-12 07:10:40 UTC
 +++ src/Standalone/rotateimage.cpp
-@@ -28,34 +28,34 @@ RotateImage::RotateImage(ColorType type)
- void RotateImage::Rotate(std::string image_path, int angle, ImageFormat format, bool multiTiffEnabled)
+@@ -25,37 +25,37 @@ void RotateImage::Rotate(std::string image_path, int a
+ void RotateImage::Rotate(std::string image_path, int angle, ImageFormat format, bool multiTiffEnabled, int OFDEnabled)
  {
      std::string file_format;
 -    if (format == kSDIImageFormatJPEG)
@@ -32,6 +32,10 @@
 +    }else if (format == (ImageFormat)kSDIImageFormatPNM && multiTiffEnabled)
      {
          file_format = "PPM";
+-    }else if (format == kSDIImageFormatPNM && OFDEnabled)
++    }else if (format == (ImageFormat)kSDIImageFormatPNM && OFDEnabled)
+     {
+         file_format = "OFD";
      }
      QImage srcImg(image_path.c_str());
      QPoint center = srcImg.rect().center();

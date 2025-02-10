@@ -1,6 +1,6 @@
---- src/Controller/Src/Filter/DTR.cpp.orig	2021-11-25 00:56:57 UTC
+--- src/Controller/Src/Filter/DTR.cpp.orig	2024-09-12 07:10:36 UTC
 +++ src/Controller/Src/Filter/DTR.cpp
-@@ -26,6 +26,9 @@
+@@ -23,6 +23,9 @@
  #include <utils/ESFile.h>
  #include <ES2Command/ES2CommandAPI.h>
  #include <math.h>
@@ -10,7 +10,7 @@
  namespace epsonscan
  {
  static const int kMaxBuf = 256;
-@@ -409,7 +412,7 @@ ESNumber CustomSkipLevelAsPercent(ESNumber inLevel)
+@@ -584,7 +587,7 @@ ESNumber CustomSkipLevelAsPercent(ESNumber inLevel)
          dtrExecCommand << " ";
          dtrExecCommand << "0";
          dtrExecCommand << " ";

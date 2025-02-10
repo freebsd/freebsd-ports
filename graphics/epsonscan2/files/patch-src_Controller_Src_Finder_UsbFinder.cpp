@@ -1,6 +1,6 @@
---- src/Controller/Src/Finder/UsbFinder.cpp.orig	2021-11-25 00:56:57 UTC
+--- src/Controller/Src/Finder/UsbFinder.cpp.orig	2024-09-12 07:10:37 UTC
 +++ src/Controller/Src/Finder/UsbFinder.cpp
-@@ -25,7 +25,11 @@
+@@ -22,7 +22,11 @@ extern "C" {
  #include "ModelInfo.hpp"
  #include "Utility.hpp"
  extern "C" {

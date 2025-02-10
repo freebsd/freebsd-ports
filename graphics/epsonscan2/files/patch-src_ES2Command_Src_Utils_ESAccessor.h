@@ -1,6 +1,6 @@
---- src/ES2Command/Src/Utils/ESAccessor.h.orig	2021-11-25 00:56:55 UTC
+--- src/ES2Command/Src/Utils/ESAccessor.h.orig	2024-09-12 07:10:32 UTC
 +++ src/ES2Command/Src/Utils/ESAccessor.h
-@@ -177,7 +177,7 @@ class CESAccessor{ (protected)
+@@ -174,7 +174,7 @@ class CESAccessor{ (protected)
    {
    }
    CSetterFunc(const CSetterFunc& rhs)
