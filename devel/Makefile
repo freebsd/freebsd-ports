@@ -4778,6 +4778,7 @@
     SUBDIR += py-defusedxml
     SUBDIR += py-demjson
     SUBDIR += py-dep-logic
+    SUBDIR += py-dependency-groups
     SUBDIR += py-deprecat
     SUBDIR += py-deprecated
     SUBDIR += py-deprecation
