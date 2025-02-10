@@ -211,6 +211,7 @@ share/man/man1/shp2pgsql.1.gz
 %%ADDRSTD%%share/postgresql/extension/address_standardizer--3.3.5--ANY.sql
 %%ADDRSTD%%share/postgresql/extension/address_standardizer--3.4.0--ANY.sql
 %%ADDRSTD%%share/postgresql/extension/address_standardizer--3.4.1--ANY.sql
+%%ADDRSTD%%share/postgresql/extension/address_standardizer--%%VER%%.1--ANY.sql
 %%ADDRSTD%%share/postgresql/extension/address_standardizer--ANY--%%PORTVERSION%%.sql
 %%ADDRSTD%%share/postgresql/extension/address_standardizer--%%PORTVERSION%%--ANY.sql
 %%ADDRSTD%%share/postgresql/extension/address_standardizer--TEMPLATED--TO--ANY.sql
@@ -316,6 +317,7 @@ share/man/man1/shp2pgsql.1.gz
 %%ADDRSTD%%share/postgresql/extension/address_standardizer_data_us--3.3.5--ANY.sql
 %%ADDRSTD%%share/postgresql/extension/address_standardizer_data_us--3.4.0--ANY.sql
 %%ADDRSTD%%share/postgresql/extension/address_standardizer_data_us--3.4.1--ANY.sql
+%%ADDRSTD%%share/postgresql/extension/address_standardizer_data_us--%%VER%%.1--ANY.sql
 %%ADDRSTD%%share/postgresql/extension/address_standardizer_data_us--ANY--%%PORTVERSION%%.sql
 %%ADDRSTD%%share/postgresql/extension/address_standardizer_data_us--TEMPLATED--TO--ANY.sql
 %%ADDRSTD%%share/postgresql/extension/address_standardizer_data_us.control
@@ -323,6 +325,7 @@ share/postgresql/extension/postgis--3.3.4--ANY.sql
 share/postgresql/extension/postgis--3.3.5--ANY.sql
 share/postgresql/extension/postgis--3.4.0--ANY.sql
 share/postgresql/extension/postgis--3.4.1--ANY.sql
+share/postgresql/extension/postgis--%%VER%%.1--ANY.sql
 share/postgresql/extension/postgis--%%PORTVERSION%%.sql
 share/postgresql/extension/postgis--%%PORTVERSION%%--ANY.sql
 share/postgresql/extension/postgis--ANY--%%PORTVERSION%%.sql
@@ -438,6 +441,7 @@ share/postgresql/extension/postgis--unpackaged--%%PORTVERSION%%.sql
 %%RASTER%%share/postgresql/extension/postgis_raster--3.3.5--ANY.sql
 %%RASTER%%share/postgresql/extension/postgis_raster--3.4.0--ANY.sql
 %%RASTER%%share/postgresql/extension/postgis_raster--3.4.1--ANY.sql
+%%RASTER%%share/postgresql/extension/postgis_raster--%%VER%%.1--ANY.sql
 %%RASTER%%share/postgresql/extension/postgis_raster--%%PORTVERSION%%--ANY.sql
 %%RASTER%%share/postgresql/extension/postgis_raster--ANY--%%PORTVERSION%%.sql
 %%RASTER%%share/postgresql/extension/postgis_raster--TEMPLATED--TO--ANY.sql
@@ -546,6 +550,7 @@ share/postgresql/extension/postgis--unpackaged--%%PORTVERSION%%.sql
 %%SFCGAL%%share/postgresql/extension/postgis_sfcgal--3.3.5--ANY.sql
 %%SFCGAL%%share/postgresql/extension/postgis_sfcgal--3.4.0--ANY.sql
 %%SFCGAL%%share/postgresql/extension/postgis_sfcgal--3.4.1--ANY.sql
+%%SFCGAL%%share/postgresql/extension/postgis_sfcgal--%%VER%%.1--ANY.sql
 %%SFCGAL%%share/postgresql/extension/postgis_sfcgal--%%PORTVERSION%%--ANY.sql
 %%SFCGAL%%share/postgresql/extension/postgis_sfcgal--ANY--%%PORTVERSION%%.sql
 %%SFCGAL%%share/postgresql/extension/postgis_sfcgal--TEMPLATED--TO--ANY.sql
@@ -653,6 +658,7 @@ share/postgresql/extension/postgis--unpackaged--%%PORTVERSION%%.sql
 %%TOPOLOGY%%share/postgresql/extension/postgis_topology--3.3.5--ANY.sql
 %%TOPOLOGY%%share/postgresql/extension/postgis_topology--3.4.0--ANY.sql
 %%TOPOLOGY%%share/postgresql/extension/postgis_topology--3.4.1--ANY.sql
+%%TOPOLOGY%%share/postgresql/extension/postgis_topology--%%VER%%.1--ANY.sql
 %%TOPOLOGY%%share/postgresql/extension/postgis_topology.control
 %%TOPOLOGY%%share/postgresql/extension/postgis_topology--%%PORTVERSION%%.sql
 %%TOPOLOGY%%share/postgresql/extension/postgis_topology--%%PORTVERSION%%--ANY.sql
@@ -870,6 +876,7 @@ share/postgresql/extension/postgis_tiger_geocoder--3.3.4--ANY.sql
 share/postgresql/extension/postgis_tiger_geocoder--3.3.5--ANY.sql
 share/postgresql/extension/postgis_tiger_geocoder--3.4.0--ANY.sql
 share/postgresql/extension/postgis_tiger_geocoder--3.4.1--ANY.sql
+share/postgresql/extension/postgis_tiger_geocoder--%%VER%%.1--ANY.sql
 share/postgresql/extension/postgis_tiger_geocoder.control
 %%DATADIR%%/utils/check_lang_enabled.sh
 share/postgresql/extension/address_standardizer--3.0.11--ANY.sql
