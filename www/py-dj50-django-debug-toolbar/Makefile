@@ -1,5 +1,5 @@
 PORTNAME=	django-debug-toolbar
-PORTVERSION=	4.4.6
+PORTVERSION=	5.0.1
 CATEGORIES=	www python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}dj50-
@@ -7,7 +7,7 @@ DISTNAME=	django_debug_toolbar-${PORTVERSION}
 
 MAINTAINER=	kai@FreeBSD.org
 COMMENT=	Configurable set of panels to display debug information
-WWW=		https://github.com/jazzband/django-debug-toolbar
+WWW=		https://github.com/django-commons/django-debug-toolbar
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
