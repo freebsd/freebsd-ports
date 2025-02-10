@@ -1,5 +1,5 @@
---- JuceLibraryCode/modules/juce_core/native/juce_linux_Network.cpp.orig	2020-09-11 12:10:25 UTC
-+++ JuceLibraryCode/modules/juce_core/native/juce_linux_Network.cpp
+--- JuceLibraryCode/modules/juce_core/native/juce_Network_linux.cpp.orig	2020-09-11 12:10:25 UTC
++++ JuceLibraryCode/modules/juce_core/native/juce_Network_linux.cpp
 @@ -35,6 +35,14 @@ void MACAddress::findAllAddresses (Array<MACAddress>& 
          {
              for (auto* i = addrs; i != nullptr; i = i->ifa_next)
