@@ -8,7 +8,8 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Library implementing the algebra of Taylor polynomials
-WWW=		http://darioizzo.github.io/audi/
+WWW=		http://darioizzo.github.io/audi/ \
+		https://github.com/darioizzo/audi
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/../LICENSE
