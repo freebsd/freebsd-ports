@@ -23,6 +23,8 @@ CMAKE_ON=	CMAKE_DISABLE_FIND_PACKAGE_CCache \
 		CMAKE_DISABLE_FIND_PACKAGE_Subversion
 CMAKE_ARGS=	-DSIMUTRANS_USE_REVISION=1
 
+PORTSCOUT=	skipv:nightly
+
 PORTDATA=	*
 PORTDOCS=	change_request.txt \
 		history.txt \
