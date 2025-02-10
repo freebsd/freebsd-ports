@@ -279,6 +279,7 @@
     SUBDIR += debootstrap
     SUBDIR += deltarpm
     SUBDIR += deltup
+    SUBDIR += deskflow
     SUBDIR += desktop-installer
     SUBDIR += detox
     SUBDIR += devctl-jail-kmod
