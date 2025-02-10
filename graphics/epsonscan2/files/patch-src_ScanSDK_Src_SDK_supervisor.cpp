@@ -1,6 +1,6 @@
---- src/ScanSDK/Src/SDK/supervisor.cpp.orig	2021-11-25 00:56:59 UTC
+--- src/ScanSDK/Src/SDK/supervisor.cpp.orig	2024-09-12 07:10:37 UTC
 +++ src/ScanSDK/Src/SDK/supervisor.cpp
-@@ -282,7 +282,7 @@ bool Supervisor::DeviceInfoResolve(SDIDeviceInfo* devI
+@@ -284,7 +284,7 @@ bool Supervisor::CheckScanningError(SDIError outError)
  }
  bool Supervisor::CheckScanningError(SDIError outError)
  {
@@ -9,7 +9,7 @@
          if(outError != kSDIErrorNone){
              m_LastError = outError;
              return false;
-@@ -2541,7 +2541,7 @@ bool Supervisor::Set_All_Value(void)
+@@ -2627,7 +2627,7 @@ bool Supervisor::Set_All_Value(void)
          }
          {
              SDIInt current;
@@ -18,7 +18,7 @@
                  current = device_data.ScanArea.PaperEndDetection.select;
              }else {
                  current = false;
-@@ -3487,7 +3487,7 @@ bool Supervisor::Set_Exclusion_Value(void)
+@@ -3607,7 +3607,7 @@ bool Supervisor::Set_Exclusion_Value(void)
          }
          {
              SDIInt current;

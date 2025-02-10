@@ -1,6 +1,6 @@
---- src/Standalone/custommessagebox.cpp.orig	2021-11-25 00:56:56 UTC
+--- src/Standalone/custommessagebox.cpp.orig	2024-09-12 07:10:40 UTC
 +++ src/Standalone/custommessagebox.cpp
-@@ -153,7 +153,7 @@ void CustomMessageBox::ErrorMessageBox(Supervisor* sv,
+@@ -150,7 +150,7 @@ void CustomMessageBox::ErrorMessageBox(Supervisor* sv,
              type = Critical;
              error_message = TranslationString::GetString().translation_str.E_ENV_001;
              sv->scanning_status = ERROR;

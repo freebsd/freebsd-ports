@@ -1,8 +1,7 @@
 PORTNAME=	epsonscan2
-DISTVERSION=	6.6.40.0
-PORTREVISION=	11
+DISTVERSION=	6.7.70.0
 CATEGORIES=	graphics
-MASTER_SITES=	https://support.epson.net/linux/src/scanner/epsonscan2/
+MASTER_SITES=	https://download3.ebz.epson.net/dsc/f/03/00/16/14/37/7577ee65efdad48ee2d2f38d9eda75418e490552/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-1.src
 
 MAINTAINER=	fbsd@opal.com
@@ -14,24 +13,10 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	sane-config:graphics/sane-backends
 LIB_DEPENDS=	libboost_serialization.so:devel/boost-libs \
-		libdouble-conversion.so:devel/double-conversion \
-		libfreetype.so:print/freetype2 \
-		libglib-2.0.so:devel/glib20 \
-		libGL.so:graphics/libglvnd \
-		libgraphite2.so:graphics/graphite2 \
-		libicuuc.so:devel/icu \
-		libiconv.so:converters/libiconv \
-		libintl.so:devel/gettext-runtime \
-		libharfbuzz.so:print/harfbuzz \
-		libpcre.so:devel/pcre \
-		libpcre2-16.so:devel/pcre2 \
 		libpng.so:graphics/png \
-		libtiff.so:graphics/tiff \
-		libzstd.so:archivers/zstd
-RUN_DEPENDS=	avahi-browse:net/avahi-app
+		libtiff.so:graphics/tiff
 
-USES=		cmake gettext-runtime gnome jpeg localbase qt:5 xorg
-USE_GNOME=	glib20
+USES=		cmake jpeg localbase qt:5 xorg
 USE_LDCONFIG=	${PREFIX}/lib/epsonscan2
 USE_QT=		buildtools:build core gui qmake:build widgets
 USE_XORG=	x11 xau xcb xdmcp
@@ -46,6 +31,14 @@ SUB_FILES=	pkg-message \
 		Read_me.FreeBSD
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-1
+
+OPTIONS_DEFINE=		AVAHI
+OPTIONS_DEFAULT=	AVAHI
+AVAHI_DESC=		Use avahi to find scanners
+AVAHI_RUN_DEPENDS=	avahi-browse:net/avahi-app
+
+pre-configure:
+		${RM} ${WRKSRC}/CMakeCache.txt
 
 post-install:
 		${RM} -rf ${STAGEDIR}${DOCSDIR}

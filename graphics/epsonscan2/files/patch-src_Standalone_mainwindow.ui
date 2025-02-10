@@ -1,6 +1,6 @@
---- src/Standalone/mainwindow.ui.orig	2022-02-17 18:30:36 UTC
+--- src/Standalone/mainwindow.ui.orig	2024-09-12 07:10:30 UTC
 +++ src/Standalone/mainwindow.ui
-@@ -1653,7 +1653,7 @@
+@@ -1701,7 +1701,7 @@
         <number>0</number>
        </property>
        <widget class="QWidget" name="page">
@@ -9,7 +9,7 @@
          <property name="geometry">
           <rect>
            <x>13</x>
-@@ -1719,7 +1719,7 @@
+@@ -1767,7 +1767,7 @@
         </widget>
        </widget>
        <widget class="QWidget" name="page_2">
@@ -18,7 +18,7 @@
          <property name="geometry">
           <rect>
            <x>11</x>
-@@ -1786,7 +1786,7 @@
+@@ -1834,7 +1834,7 @@
           </item>
          </layout>
         </widget>
@@ -27,7 +27,7 @@
          <property name="geometry">
           <rect>
            <x>10</x>
-@@ -1856,7 +1856,7 @@
+@@ -1904,7 +1904,7 @@
           </item>
          </layout>
         </widget>

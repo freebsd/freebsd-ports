@@ -1,6 +1,6 @@
---- src/Controller/Src/KeysValues/All/ScanWidthMax.cpp.orig	2021-11-25 00:56:58 UTC
+--- src/Controller/Src/KeysValues/All/ScanWidthMax.cpp.orig	2024-09-12 07:10:35 UTC
 +++ src/Controller/Src/KeysValues/All/ScanWidthMax.cpp
-@@ -58,6 +58,8 @@ void ScanWidthMax::GetValue(SDIInt& intVal)
+@@ -55,6 +55,8 @@ void ScanWidthMax::GetValue(SDIInt& intVal)
    case kSDIFunctionalUnitDocumentFeeder:
      intVal = ADFValue();
     return;

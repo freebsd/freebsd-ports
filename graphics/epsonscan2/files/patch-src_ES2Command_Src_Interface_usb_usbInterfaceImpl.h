@@ -1,10 +1,9 @@
---- src/ES2Command/Src/Interface/usb/usbInterfaceImpl.h.orig	2021-11-25 00:56:54 UTC
+--- src/ES2Command/Src/Interface/usb/usbInterfaceImpl.h.orig	2024-09-12 07:10:32 UTC
 +++ src/ES2Command/Src/Interface/usb/usbInterfaceImpl.h
-@@ -20,8 +20,11 @@
- //  usbInterfaceImpl.h -- template and derived ESC/I ESC/I-2 protocol commands
+@@ -18,7 +18,11 @@
  #pragma once
  
--       
+        
 +#if __FreeBSD__
 +#include <libusb.h>
 +#else
@@ -12,4 +11,4 @@
 +#endif
  #include "../interfaceImpl.h"
  #include "../interface.h"
- class USBInterfaceImpl : public IInterfaceImpl
+ #include "CommonUtility/ESCommonTypedef.h"

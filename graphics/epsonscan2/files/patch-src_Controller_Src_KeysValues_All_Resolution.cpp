@@ -1,6 +1,6 @@
---- src/Controller/Src/KeysValues/All/Resolution.cpp.orig	2021-11-25 00:56:58 UTC
+--- src/Controller/Src/KeysValues/All/Resolution.cpp.orig	2024-09-12 07:10:35 UTC
 +++ src/Controller/Src/KeysValues/All/Resolution.cpp
-@@ -142,7 +142,7 @@ ESDictionary Resolution::GetSeolutionTable(bool isXRes
+@@ -145,7 +145,7 @@ ESDictionary Resolution::GetSeolutionTable(bool isXRes
      ES_CMN_FUNCS::JSON::JSONFiletoDictionary(resTablePath, resTable);
     }else
     {

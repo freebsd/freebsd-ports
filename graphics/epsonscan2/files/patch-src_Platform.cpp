@@ -1,6 +1,6 @@
---- src/Platform.cpp.orig	2021-11-25 00:56:59 UTC
+--- src/Platform.cpp.orig	2024-09-12 07:10:37 UTC
 +++ src/Platform.cpp
-@@ -22,6 +22,10 @@
+@@ -19,6 +19,10 @@
  #include "Platform.h"
  #include "CommonUtility/utils/PathUtils.h"
  #include <fstream>
@@ -11,7 +11,7 @@
  #ifndef WIN32
  errno_t fopen_s(
      FILE** pFile,
-@@ -105,7 +109,7 @@ DWORD WaitForSingleObject(
+@@ -102,7 +106,7 @@ DWORD ES2WaitForSingleObject(
    case THREAD_HANDLE_ID:
    {
     LPTHREAD_HANDLE hThreadHandle = (LPTHREAD_HANDLE) hHandle;
@@ -20,7 +20,7 @@
      return WAIT_OBJECT_0;
     }
     int thread_status = 0;
-@@ -121,7 +125,7 @@ DWORD WaitForSingleObject(
+@@ -118,7 +122,7 @@ DWORD ES2WaitForSingleObject(
      {
       intptr_t lRet = (intptr_t)pStatus;
       hThreadHandle->dwThreadStatus = (DWORD)lRet;
@@ -29,8 +29,8 @@
      }
     }
     while (EBUSY == thread_status);
-@@ -180,7 +184,7 @@ BOOL CloseHandle(HANDLE hObject)
-     WaitForSingleObject(hObject, INFINITE);
+@@ -177,7 +181,7 @@ BOOL CloseHandle(HANDLE hObject)
+     ES2WaitForSingleObject(hObject, INFINITE);
      LPTHREAD_HANDLE pThreadHandle = (LPTHREAD_HANDLE)hObject;
      pThreadHandle->dwThreadStatus = 0;
 -    pThreadHandle->threadID = (int)NULL;
@@ -38,19 +38,7 @@
  #endif
     }
      break;
-@@ -347,7 +351,11 @@ DWORD GetModuleFileName(LPTSTR lpFilename, DWORD buf_s
- {
-  DWORD dwRet = 0;
-     memset(lpFilename, 0, buf_size);
-+#ifdef __FreeBSD__
-+ readlink( "/proc/curproc/file", lpFilename, buf_size - 1 );
-+#else
-  readlink( "/proc/self/exe", lpFilename, buf_size - 1 );
-+#endif
-  dwRet = (DWORD)strlen(lpFilename);
-  return dwRet;
- }
-@@ -397,14 +405,14 @@ errno_t strcat_s(
+@@ -325,14 +329,14 @@ errno_t strcat_s(
   }
   if (NULL == strSource)
   {

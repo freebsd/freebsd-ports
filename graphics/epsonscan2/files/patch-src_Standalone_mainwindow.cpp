@@ -1,6 +1,6 @@
---- src/Standalone/mainwindow.cpp.orig	2021-11-25 00:56:57 UTC
+--- src/Standalone/mainwindow.cpp.orig	2024-09-12 07:10:39 UTC
 +++ src/Standalone/mainwindow.cpp
-@@ -682,7 +682,7 @@ bool MainWindow::SelectionRestrictions(int value){
+@@ -730,7 +730,7 @@ bool MainWindow::SelectionRestrictions(int value){
          limit_resolution = 300;
      }
      if(obj == ui->Resolution_comb){
@@ -9,7 +9,7 @@
              return UserDefineSizeRestrictions();
          }else if(ui->Document_size_comb->current_item == Auto_Detect_long){
              if(ui->Resolution_comb->currentText().toInt() > limit_resolution){
-@@ -1234,7 +1234,7 @@ bool MainWindow::CheckAutoFunctionalUnit(bool isPrevie
+@@ -1436,7 +1436,7 @@ bool MainWindow::CheckAutoFunctionalUnit(bool isPrevie
      if(this->m_viewPreviewWindow){
          if(isPreview && sv->device_data.FunctionalUnit_Auto){
              if(sv->GetPaperLoadedStatus()){
@@ -18,7 +18,7 @@
                      sv->device_data.FunctionalUnit.select = kSDIFunctionalUnitDocumentFeeder;
                  }else {
                      if(m_messageBox->CreateSelectableMessageBox(TranslationString::GetString().translation_str.C_UI_005, Warning)){
-@@ -1247,7 +1247,7 @@ bool MainWindow::CheckAutoFunctionalUnit(bool isPrevie
+@@ -1449,7 +1449,7 @@ bool MainWindow::CheckAutoFunctionalUnit(bool isPrevie
                      }
                  }
              }else {
@@ -27,7 +27,7 @@
                      sv->device_data.FunctionalUnit.select = kSDIFunctionalUnitFlatbed;
                  }else {
                      if(m_messageBox->CreateSelectableMessageBox(TranslationString::GetString().translation_str.C_UI_005, Warning)){
-@@ -1332,7 +1332,7 @@ bool MainWindow::CheckBeforeScan()
+@@ -1545,7 +1545,7 @@ bool MainWindow::CheckBeforeScan(bool isPreview)
          }
      }
      if(!sv->device_data.DNShow_LongPaperWarning_dialog){
