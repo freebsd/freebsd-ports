@@ -8391,6 +8391,7 @@
     SUBDIR += xeus-zmq
     SUBDIR += xfce4-dev-tools
     SUBDIR += xmake
+    SUBDIR += xmake-io
     SUBDIR += xmltooling
     SUBDIR += xopcodecalc
     SUBDIR += xorg-macros

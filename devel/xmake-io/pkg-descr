@@ -1,0 +1,7 @@
+What is Xmake?
+
+ - Xmake is a cross-platform build utility based on the Lua scripting language
+ - Xmake is very lightweight and has no dependencies outside of
+   the standard library.
+ - Uses the xmake.lua file to maintain project builds with a simple and
+   readable syntax
