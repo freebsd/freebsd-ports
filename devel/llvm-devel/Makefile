@@ -423,7 +423,6 @@ post-install-CLANG-on:
 	    ${STAGEDIR}${PREFIX}/share/toolchains/llvm${LLVM_SUFFIX}.mk
 	${RMDIR} ${STAGEDIR}${LLVM_PREFIX}/include/clang/Basic/Target/MSP430/
 	${RMDIR} ${STAGEDIR}${LLVM_PREFIX}/include/clang/Basic/Target/
-	${RMDIR} ${STAGEDIR}${LLVM_PREFIX}/include/clang/CIRFrontendAction
 
 post-install-EXTRAS-on:
 	${RMDIR} ${STAGEDIR}${LLVM_PREFIX}/include/clang-tidy/misc/ConfusableTable
@@ -526,6 +525,7 @@ build-plist:
 	    if ($$0 ~ /(${OPENMP_PATTERN})/) {printf "%%%%OPENMP%%%%"} \
 	    if ($$0 ~ /(${POLLY_PATTERN})/) {printf "%%%%POLLY%%%%"} \
 	    if ($$0 !~ /(lib[a-z]*_rt|LLVMgold)/) {print} \
+	    if ($$0 ~ /libflang_rt.runtime.a/) {print} \
 	}' ${PLIST}.tmp >> ${PLIST}
 	${ECHO_CMD} '@postexec if type ccache-update-links >/dev/null 2>&1; then ccache-update-links -v; fi' >> ${PLIST}
 	${ECHO_CMD} '@postunexec if type ccache-update-links >/dev/null 2>&1; then ccache-update-links -v; fi' >> ${PLIST}
