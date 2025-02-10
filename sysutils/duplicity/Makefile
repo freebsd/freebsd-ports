@@ -1,5 +1,6 @@
 PORTNAME=	duplicity
 DISTVERSION=	3.0.4
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	PYPI
 
@@ -60,7 +61,7 @@ B2_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}b2sdk>=0.1.8:devel/py-b2sdk@${PY_FLAVOR}
 DROPBOX_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dropbox>0:www/py-dropbox@${PY_FLAVOR}
 FTP_RUN_DEPENDS=	ncftp>=3.2.2:ftp/ncftp3
 FTPS_RUN_DEPENDS=	lftp>=3.7.15:ftp/lftp
-GDOCS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pydrive>0:devel/py-pydrive@${PY_FLAVOR}
+GDOCS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}PyDrive2>0:www/py-pydrive2@${PY_FLAVOR}
 GNUPG_RUN_DEPENDS=	gnupg1>=1.4.7:security/gnupg1
 GNUPG2_RUN_DEPENDS=	gpg2:security/gnupg
 NLS_USES=		gettext-tools
