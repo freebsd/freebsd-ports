@@ -1,13 +1,13 @@
---- Makefile.orig	2025-02-07 18:11:10 UTC
+--- Makefile.orig	2025-02-09 08:59:56 UTC
 +++ Makefile
 @@ -45,8 +45,8 @@ endif
  #
  
  # keep standard at C11 and C++17
--CFLAGS ?=
--CXXFLAGS ?=
-+CFLAGS ?= $(PRESET_CFLAGS)
-+CXXFLAGS ?= $(PRESET_CXXFLAGS)
+-CFLAGS =
+-CXXFLAGS =
++CFLAGS = $(PRESET_CFLAGS)
++CXXFLAGS = $(PRESET_CXXFLAGS)
  ifdef KCPP_DEBUG
  	CFLAGS = -g -O0
  	CXXFLAGS = -g -O0
