@@ -6899,10 +6899,6 @@ llvm%%LLVM_SUFFIX%%/lib/libLLVM.so.%%LLVM_MAJOR_MINOR%%
 %%STATIC_LIBS%%llvm%%LLVM_SUFFIX%%/lib/libLLVMProfileData.a
 %%STATIC_LIBS%%llvm%%LLVM_SUFFIX%%/lib/libLLVMRemarks.a
 %%STATIC_LIBS%%llvm%%LLVM_SUFFIX%%/lib/libLLVMRuntimeDyld.a
-%%STATIC_LIBS%%llvm%%LLVM_SUFFIX%%/lib/libLLVMSPIRVAnalysis.a
-%%STATIC_LIBS%%llvm%%LLVM_SUFFIX%%/lib/libLLVMSPIRVCodeGen.a
-%%STATIC_LIBS%%llvm%%LLVM_SUFFIX%%/lib/libLLVMSPIRVDesc.a
-%%STATIC_LIBS%%llvm%%LLVM_SUFFIX%%/lib/libLLVMSPIRVInfo.a
 %%STATIC_LIBS%%llvm%%LLVM_SUFFIX%%/lib/libLLVMSandboxIR.a
 %%STATIC_LIBS%%llvm%%LLVM_SUFFIX%%/lib/libLLVMScalarOpts.a
 %%STATIC_LIBS%%llvm%%LLVM_SUFFIX%%/lib/libLLVMSelectionDAG.a
