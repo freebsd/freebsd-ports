@@ -1,6 +1,6 @@
 PORTNAME=	gomi
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.2.2
+DISTVERSION=	1.3.0
 CATEGORIES=	sysutils
 
 MAINTAINER=	eduardo@FreeBSD.org
@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USES=		go:1.23,modules
 
 _BUILD_VERSION=		${DISTVERSIONFULL}
-_BUILD_REVISION=	495a2a3
+_BUILD_REVISION=	a65ce3a
 _BUILD_DATE=		$$(date +%Y-%m-%dT%H:%M:%SZ)
 
 GO_MODULE=	github.com/babarot/gomi
@@ -21,7 +21,7 @@ GO_BUILDFLAGS=	-ldflags "\
 		-s -w \
 		-X main.version=${_BUILD_VERSION} \
 		-X main.revision=${_BUILD_REVISION} \
-		-X main.date=${_BUILD_DATE}"
+		-X main.buildDate=${_BUILD_DATE}"
 
 PLIST_FILES=	bin/${PORTNAME}
 PORTDOCS=	README.md
