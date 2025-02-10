@@ -1,6 +1,6 @@
 PORTNAME=	openshot
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.2.1
+DISTVERSION=	3.3.0
 CATEGORIES=	multimedia
 
 MAINTAINER=	tatsuki_makino@hotmail.com
@@ -35,10 +35,6 @@ DOCS_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sphinx>=0:textproc/py-sphinx@${PY_FLA
 			${PYTHON_PKGNAMEPREFIX}sphinx_rtd_theme>=0:textproc/py-sphinx_rtd_theme@${PY_FLAVOR}
 DOCS_BINARY_ALIAS=	sphinx-build=sphinx-build-${PYTHON_VER}
 DOCS_PORTDOCS=	*
-
-post-patch:
-	${GREP} -r -m 1 -l -e '\blibx264\b' ${WRKSRC}/src/presets ${WRKSRC}/src/windows |\
-		${XARGS} ${REINPLACE_CMD} -e 's,[[:<:]]libx264[[:>:]],&rgb,g;' --
 
 do-build-DOCS-on:
 	@(cd ${BUILD_WRKSRC}/doc; if ! ${DO_MAKE_BUILD} html; then \
