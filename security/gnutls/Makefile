@@ -1,5 +1,5 @@
 PORTNAME=	gnutls
-DISTVERSION=	3.8.8
+DISTVERSION=	3.8.9
 CATEGORIES=	security net
 MASTER_SITES=	GNUPG/${PORTNAME}/v${DISTVERSION:C/(\.[^.]*).*/\1/}
 
@@ -7,10 +7,10 @@ MAINTAINER=	tijl@FreeBSD.org
 COMMENT=	GNU Transport Layer Security library
 WWW=		https://gnutls.org/
 
-LICENSE=	GPLv3 LGPL21
+LICENSE=	GPLv3+ LGPL21+
 LICENSE_COMB=	multi
-LICENSE_FILE_GPLv3=	${WRKSRC}/doc/COPYING
-LICENSE_FILE_LGPL21=	${WRKSRC}/doc/COPYING.LESSER
+LICENSE_FILE_GPLv3+ =	${WRKSRC}/COPYING
+LICENSE_FILE_LGPL21+ =	${WRKSRC}/COPYING.LESSERv2
 
 LIB_DEPENDS=	libgmp.so:math/gmp \
 		libnettle.so:security/nettle \
