@@ -8,7 +8,7 @@
 #		flags is a special suffix to define CFLAGS, LDFLAGS, and LDADD.
 #		("base,flags")
 #
-# MAINTAINER:	hrs@FreeBSD.org
+# MAINTAINER:	hrs@FreeBSD.org, cy@FreeBSD.org
 #
 # User defined variables:
 #  HEIMDAL_HOME (default: ${LOCALBASE})
