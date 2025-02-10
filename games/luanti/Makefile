@@ -1,5 +1,5 @@
 PORTNAME=	luanti
-PORTVERSION=	5.10.0
+DISTVERSION=	5.11.0
 CATEGORIES=	games
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -13,9 +13,9 @@ LIB_DEPENDS=	libgmp.so:math/gmp \
 		libjsoncpp.so:devel/jsoncpp \
 		libzstd.so:archivers/zstd
 
-USES=		cmake compiler:c++17-lang cpe iconv:wchar_t sqlite
-GH_ACCOUNT=	minetest
-GH_PROJECT=	minetest
+USES=		cmake compiler:c++17-lang cpe iconv:wchar_t ssl sqlite
+GH_ACCOUNT=	luanti-org
+GH_PROJECT=	luanti
 USE_GITHUB=	yes
 CMAKE_ARGS=	-DCUSTOM_EXAMPLE_CONF_DIR="${PREFIX}/etc" \
 CMAKE_ON=	ENABLE_SYSTEM_JSONCPP
@@ -108,10 +108,10 @@ post-patch:
 
 do-test-TEST-on:
 .if ${PORT_OPTIONS:MCLIENT}
-	cd ${WRKDIR} && ${SETENV} ${TEST_ENV} ${STAGEDIR}${PREFIX}/bin/minetest --run-unittests
+	cd ${WRKDIR} && ${SETENV} ${TEST_ENV} ${STAGEDIR}${PREFIX}/bin/luanti --run-unittests
 .endif
 .if ${PORT_OPTIONS:MSERVER}
-	cd ${WRKDIR} && ${SETENV} ${TEST_ENV} ${STAGEDIR}${PREFIX}/bin/minetestserver --run-unittests
+	cd ${WRKDIR} && ${SETENV} ${TEST_ENV} ${STAGEDIR}${PREFIX}/bin/luantiserver --run-unittests
 .endif
 
 .include <bsd.port.mk>
