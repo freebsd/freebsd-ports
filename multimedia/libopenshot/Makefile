@@ -1,7 +1,6 @@
 PORTNAME=	libopenshot
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.3.3
-PORTREVISION=	7
+DISTVERSION=	0.4.0
 CATEGORIES=	multimedia
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -24,7 +23,6 @@ LIB_DEPENDS=	libavformat.so:multimedia/ffmpeg \
 		libzmq.so:net/libzmq4
 
 USES=		cmake pkgconfig python:build qt:5
-USE_CXXSTD=	c++17
 USE_GITHUB=	yes
 GH_ACCOUNT=	OpenShot
 USE_LDCONFIG=	yes
