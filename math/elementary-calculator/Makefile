@@ -1,5 +1,5 @@
 PORTNAME=	calculator
-DISTVERSION=	2.0.3
+DISTVERSION=	8.0.0
 CATEGORIES=	math
 PKGNAMEPREFIX=	elementary-
 
