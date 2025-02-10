@@ -8,7 +8,9 @@ DISTNAME=	${PORTNAME:tu}-${DISTVERSION}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Visualization toolkit
-WWW=		https://vtk.org/
+WWW=		https://vtk.org \
+		https://gitlab.kitware.com/vtk/vtk \
+		https://github.com/Kitware/VTK
 
 LICENSE=	BSD3CLAUSE
 
