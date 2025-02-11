@@ -2,6 +2,7 @@ PORTNAME=	openssl
 PORTVERSION=	3.0.16
 PORTEPOCH=	1
 CATEGORIES=	security devel
+MASTER_SITES=	https://github.com/openssl/openssl/releases/download/${DISTNAME}/
 
 MAINTAINER=	brnrd@FreeBSD.org
 COMMENT=	TLSv1.3 capable SSL and crypto library
@@ -16,8 +17,6 @@ CONFLICTS_INSTALL=	boringssl libressl libressl-devel openssl111 openssl3* openss
 
 USES=		cpe perl5
 USE_PERL5=	build
-USE_GITHUB=	yes
-GH_TAGNAME=	${PORTNAME}-${PORTVERSION}
 TEST_TARGET=	test
 
 HAS_CONFIGURE=	yes
