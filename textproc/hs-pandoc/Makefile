@@ -1,5 +1,5 @@
 PORTNAME=	pandoc
-DISTVERSION=	3.6.2
+DISTVERSION=	3.6.3
 CATEGORIES=	textproc haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -18,7 +18,7 @@ USE_CABAL=	Glob-0.10.2_3 \
 		Only-0.1_2 \
 		QuickCheck-2.15.0.1 \
 		StateVar-1.2.2 \
-		aeson-2.2.3.0_2 \
+		aeson-2.2.3.0_3 \
 		aeson-pretty-0.8.10 \
 		alex-3.5.2.0 \
 		ansi-terminal-1.1.2 \
@@ -53,15 +53,15 @@ USE_CABAL=	Glob-0.10.2_3 \
 		cborg-0.2.10.0_1 \
 		cereal-0.5.8.3 \
 		character-ps-0.1 \
-		citeproc-0.8.1.2 \
+		citeproc-0.8.1.3 \
 		cmdargs-0.10.22 \
 		colour-2.3.6 \
 		commonmark-0.2.6.1 \
-		commonmark-extensions-0.2.5.6 \
-		commonmark-pandoc-0.2.2.3 \
+		commonmark-extensions-0.2.6 \
+		commonmark-pandoc-0.2.3 \
 		comonad-5.0.9 \
 		conduit-1.3.6 \
-		conduit-extra-1.3.6 \
+		conduit-extra-1.3.7 \
 		constraints-0.14.2_1 \
 		contravariant-1.5.5 \
 		cookie-0.5.0 \
@@ -89,8 +89,8 @@ USE_CABAL=	Glob-0.10.2_3 \
 		gridtables-0.1.0.0_1 \
 		haddock-library-1.11.0_5 \
 		half-0.3.2 \
-		happy-2.1.3 \
-		happy-lib-2.1.3 \
+		happy-2.1.5 \
+		happy-lib-2.1.5 \
 		hashable-1.5.0.0_1 \
 		haskell-lexer-1.1.2 \
 		hourglass-0.2.12_1 \
@@ -139,14 +139,14 @@ USE_CABAL=	Glob-0.10.2_3 \
 		mono-traversable-1.0.21.0 \
 		network-3.2.7.0 \
 		network-byte-order-0.1.7 \
-		network-control-0.1.3 \
+		network-control-0.1.4 \
 		network-uri-2.6.4.2_1 \
 		old-locale-1.0.0.7_2 \
 		old-time-1.1.0.4 \
 		optparse-applicative-0.18.1.0_1 \
 		ordered-containers-0.2.4 \
 		os-string-2.0.7 \
-		pandoc-3.6.2 \
+		pandoc-3.6.3 \
 		pandoc-lua-engine-0.4.1 \
 		pandoc-lua-marshal-0.3.0 \
 		pandoc-server-0.1.0.10 \
@@ -156,7 +156,7 @@ USE_CABAL=	Glob-0.10.2_3 \
 		prettyprinter-1.7.1 \
 		prettyprinter-ansi-terminal-1.1.3 \
 		primitive-0.9.0.0_2 \
-		psqueues-0.2.8.0_2 \
+		psqueues-0.2.8.1 \
 		random-1.2.1.3 \
 		recv-0.1.0 \
 		regex-base-0.94.0.2_4 \
@@ -172,7 +172,7 @@ USE_CABAL=	Glob-0.10.2_3 \
 		simple-sendfile-0.2.32 \
 		singleton-bool-0.1.8_1 \
 		skylighting-0.14.6 \
-		skylighting-core-0.14.6 \
+		skylighting-core-0.14.6_1 \
 		skylighting-format-ansi-0.1 \
 		skylighting-format-blaze-html-0.1.1.3 \
 		skylighting-format-context-0.1.0.2 \
@@ -183,7 +183,7 @@ USE_CABAL=	Glob-0.10.2_3 \
 		sop-core-0.5.0.2_5 \
 		split-0.2.5 \
 		splitmix-0.1.1 \
-		streaming-commons-0.2.2.6_1 \
+		streaming-commons-0.2.3.0 \
 		strict-0.5.1_1 \
 		syb-0.7.2.4 \
 		tagged-0.8.9 \
@@ -192,7 +192,7 @@ USE_CABAL=	Glob-0.10.2_3 \
 		temporary-1.3 \
 		texmath-0.12.8.13 \
 		text-conversions-0.3.1.1 \
-		text-iso8601-0.1.1_1 \
+		text-iso8601-0.1.1_2 \
 		text-short-0.1.6_3 \
 		th-abstraction-0.7.1.0 \
 		th-compat-0.1.6 \
@@ -201,18 +201,18 @@ USE_CABAL=	Glob-0.10.2_3 \
 		these-1.2.1_2 \
 		time-compat-1.9.8 \
 		time-manager-0.2.2 \
-		tls-2.1.6 \
+		tls-2.1.7 \
 		toml-parser-2.0.1.0_1 \
 		transformers-base-0.4.6 \
 		transformers-compat-0.7.2 \
 		typed-process-0.2.12.0 \
-		typst-0.6.1 \
+		typst-0.6.2 \
 		typst-symbols-0.1.7 \
-		unicode-collation-0.1.3.6_1 \
+		unicode-collation-0.1.3.6_2 \
 		unicode-data-0.6.0_2 \
-		unicode-transforms-0.4.0.1_6 \
+		unicode-transforms-0.4.0.1_7 \
 		uniplate-1.6.13_1 \
-		unix-compat-0.7.3 \
+		unix-compat-0.7.3_1 \
 		unix-time-0.4.16 \
 		unliftio-core-0.2.1.0_4 \
 		unordered-containers-0.2.20_4 \
@@ -220,7 +220,7 @@ USE_CABAL=	Glob-0.10.2_3 \
 		uuid-types-1.0.6_2 \
 		vault-0.3.1.5_9 \
 		vector-0.13.2.0_1 \
-		vector-algorithms-0.9.0.3 \
+		vector-algorithms-0.9.1.0 \
 		vector-stream-0.1.0.1_3 \
 		wai-3.2.4 \
 		wai-app-static-3.1.9 \
@@ -231,7 +231,7 @@ USE_CABAL=	Glob-0.10.2_3 \
 		witherable-0.5_1 \
 		word8-0.1.3 \
 		xml-1.3.14_2 \
-		xml-conduit-1.9.1.4 \
+		xml-conduit-1.10.0.0 \
 		xml-types-0.3.8 \
 		yaml-0.11.11.2_2 \
 		zip-archive-0.4.3.2_1 \
