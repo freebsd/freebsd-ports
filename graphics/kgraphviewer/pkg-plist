@@ -5,7 +5,7 @@ lib/cmake/KGraphViewerPart/KGraphViewerPartConfigVersion.cmake
 lib/cmake/KGraphViewerPart/KGraphViewerPartTargets.cmake
 lib/libkgraphviewer.so
 lib/libkgraphviewer.so.0
-lib/libkgraphviewer.so.%%SHLIB_VER%%
+lib/libkgraphviewer.so.%%SHLIB_VER_LONG%%
 %%QT_PLUGINDIR%%/kf6/parts/kgraphviewerpart.so
 share/applications/org.kde.kgraphviewer.desktop
 share/config.kcfg/kgraphviewer_partsettings.kcfg
@@ -57,6 +57,8 @@ share/doc/HTML/it/kgraphviewer/index.cache.bz2
 share/doc/HTML/it/kgraphviewer/index.docbook
 share/doc/HTML/nl/kgraphviewer/index.cache.bz2
 share/doc/HTML/nl/kgraphviewer/index.docbook
+share/doc/HTML/sl/kgraphviewer/index.cache.bz2
+share/doc/HTML/sl/kgraphviewer/index.docbook
 share/doc/HTML/sv/kgraphviewer/index.cache.bz2
 share/doc/HTML/sv/kgraphviewer/index.docbook
 share/doc/HTML/sv/kgraphviewer/kgraphviewer-snap-ask1.png
@@ -97,6 +99,7 @@ share/locale/fi/LC_MESSAGES/kgraphviewer.mo
 share/locale/fr/LC_MESSAGES/kgraphviewer.mo
 share/locale/ga/LC_MESSAGES/kgraphviewer.mo
 share/locale/gl/LC_MESSAGES/kgraphviewer.mo
+share/locale/he/LC_MESSAGES/kgraphviewer.mo
 share/locale/hi/LC_MESSAGES/kgraphviewer.mo
 share/locale/hne/LC_MESSAGES/kgraphviewer.mo
 share/locale/hr/LC_MESSAGES/kgraphviewer.mo
