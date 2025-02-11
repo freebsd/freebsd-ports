@@ -1,6 +1,6 @@
 PORTNAME=	bacon
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.9.1
+DISTVERSION=	3.10.0
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -30,7 +30,7 @@ CARGO_CRATES=	adler2-2.0.0 \
 		anstyle-1.0.10 \
 		anstyle-parse-0.2.6 \
 		anstyle-query-1.1.2 \
-		anstyle-wincon-3.0.6 \
+		anstyle-wincon-3.0.7 \
 		anyhow-1.0.95 \
 		arboard-3.4.1 \
 		arc-swap-1.7.1 \
@@ -39,26 +39,26 @@ CARGO_CRATES=	adler2-2.0.0 \
 		autocfg-1.4.0 \
 		bindgen-0.70.1 \
 		bitflags-1.3.2 \
-		bitflags-2.6.0 \
+		bitflags-2.8.0 \
 		block2-0.5.1 \
-		bstr-1.11.1 \
-		bumpalo-3.16.0 \
+		bstr-1.11.3 \
+		bumpalo-3.17.0 \
 		bytemuck-1.21.0 \
-		bytes-1.9.0 \
+		bytes-1.10.0 \
 		camino-1.1.9 \
 		cargo-platform-0.1.9 \
 		cargo_metadata-0.19.1 \
-		cc-1.2.6 \
+		cc-1.2.13 \
 		cesu8-1.1.0 \
 		cexpr-0.6.0 \
 		cfg-if-1.0.0 \
 		cfg_aliases-0.2.1 \
 		chrono-0.4.39 \
 		clang-sys-1.8.1 \
-		clap-4.5.23 \
+		clap-4.5.28 \
 		clap-help-1.3.1 \
-		clap_builder-4.5.23 \
-		clap_derive-4.5.18 \
+		clap_builder-4.5.27 \
+		clap_derive-4.5.28 \
 		clap_lex-0.7.4 \
 		cli-log-2.1.0 \
 		clipboard-win-5.4.0 \
@@ -102,13 +102,14 @@ CARGO_CRATES=	adler2-2.0.0 \
 		fsevent-sys-4.1.0 \
 		gethostname-0.4.3 \
 		getrandom-0.2.15 \
+		getrandom-0.3.1 \
 		gix-0.67.0 \
-		gix-actor-0.33.1 \
-		gix-bitmap-0.2.13 \
-		gix-chunk-0.4.10 \
+		gix-actor-0.33.2 \
+		gix-bitmap-0.2.14 \
+		gix-chunk-0.4.11 \
 		gix-commitgraph-0.25.1 \
 		gix-config-0.41.0 \
-		gix-config-value-0.14.10 \
+		gix-config-value-0.14.11 \
 		gix-date-0.9.3 \
 		gix-diff-0.47.0 \
 		gix-discover-0.36.0 \
@@ -123,21 +124,21 @@ CARGO_CRATES=	adler2-2.0.0 \
 		gix-object-0.45.0 \
 		gix-odb-0.64.0 \
 		gix-pack-0.54.0 \
-		gix-path-0.10.13 \
-		gix-quote-0.4.14 \
+		gix-path-0.10.14 \
+		gix-quote-0.4.15 \
 		gix-ref-0.48.0 \
 		gix-refspec-0.26.0 \
 		gix-revision-0.30.0 \
 		gix-revwalk-0.16.0 \
-		gix-sec-0.10.10 \
+		gix-sec-0.10.11 \
 		gix-tempfile-15.0.0 \
-		gix-trace-0.1.11 \
+		gix-trace-0.1.12 \
 		gix-traverse-0.42.0 \
 		gix-url-0.28.2 \
-		gix-utils-0.1.13 \
-		gix-validate-0.9.2 \
+		gix-utils-0.1.14 \
+		gix-validate-0.9.3 \
 		gix-worktree-0.37.0 \
-		glob-0.3.1 \
+		glob-0.3.2 \
 		hashbrown-0.14.5 \
 		hashbrown-0.15.2 \
 		heck-0.5.0 \
@@ -156,21 +157,21 @@ CARGO_CRATES=	adler2-2.0.0 \
 		icu_provider_macros-1.5.0 \
 		idna-1.0.3 \
 		idna_adapter-1.2.0 \
-		indexmap-2.7.0 \
+		indexmap-2.7.1 \
 		inotify-0.10.2 \
 		inotify-sys-0.1.5 \
 		instant-0.1.13 \
-		iq-0.2.1 \
+		iq-0.2.2 \
 		is_terminal_polyfill-1.70.1 \
 		itertools-0.13.0 \
 		itoa-1.0.14 \
-		jiff-0.1.16 \
-		jiff-tzdb-0.1.1 \
-		jiff-tzdb-platform-0.1.1 \
+		jiff-0.1.29 \
+		jiff-tzdb-0.1.2 \
+		jiff-tzdb-platform-0.1.2 \
 		jni-0.21.1 \
 		jni-sys-0.3.0 \
 		jobserver-0.1.32 \
-		js-sys-0.3.76 \
+		js-sys-0.3.77 \
 		kqueue-1.0.8 \
 		kqueue-sys-1.0.4 \
 		lazy-regex-3.4.1 \
@@ -179,16 +180,16 @@ CARGO_CRATES=	adler2-2.0.0 \
 		libc-0.2.169 \
 		libloading-0.8.6 \
 		libredox-0.1.3 \
-		linux-raw-sys-0.4.14 \
+		linux-raw-sys-0.4.15 \
 		litemap-0.7.4 \
 		lock_api-0.4.12 \
-		log-0.4.22 \
+		log-0.4.25 \
 		mach2-0.4.2 \
 		memchr-2.7.4 \
 		memmap2-0.9.5 \
 		minimad-0.13.1 \
 		minimal-lexical-0.2.1 \
-		miniz_oxide-0.8.2 \
+		miniz_oxide-0.8.3 \
 		mio-1.0.3 \
 		ndk-0.8.0 \
 		ndk-context-0.1.1 \
@@ -206,19 +207,21 @@ CARGO_CRATES=	adler2-2.0.0 \
 		objc2-app-kit-0.2.2 \
 		objc2-core-data-0.2.2 \
 		objc2-core-image-0.2.2 \
-		objc2-encode-4.0.3 \
+		objc2-encode-4.1.0 \
 		objc2-foundation-0.2.2 \
 		objc2-metal-0.2.2 \
 		objc2-quartz-core-0.2.2 \
 		oboe-0.6.1 \
 		oboe-sys-0.6.1 \
-		once_cell-1.20.2 \
+		once_cell-1.20.3 \
 		parking_lot-0.12.3 \
 		parking_lot_core-0.9.10 \
 		percent-encoding-2.3.1 \
 		pkg-config-0.3.31 \
+		portable-atomic-1.10.0 \
+		portable-atomic-util-0.2.4 \
 		proc-macro-crate-3.2.0 \
-		proc-macro2-1.0.92 \
+		proc-macro2-1.0.93 \
 		proc-status-0.1.1 \
 		prodash-29.0.0 \
 		quote-1.0.38 \
@@ -229,15 +232,16 @@ CARGO_CRATES=	adler2-2.0.0 \
 		regex-syntax-0.8.5 \
 		rodio-0.20.1 \
 		rustc-hash-1.1.0 \
-		rustc-hash-2.1.0 \
-		rustix-0.38.42 \
-		ryu-1.0.18 \
+		rustc-hash-2.1.1 \
+		rustix-0.38.44 \
+		rustversion-1.0.19 \
+		ryu-1.0.19 \
 		same-file-1.0.6 \
 		scopeguard-1.2.0 \
-		semver-1.0.24 \
-		serde-1.0.216 \
-		serde_derive-1.0.216 \
-		serde_json-1.0.134 \
+		semver-1.0.25 \
+		serde-1.0.217 \
+		serde_derive-1.0.217 \
+		serde_json-1.0.138 \
 		serde_spanned-0.6.8 \
 		sha1_smol-1.0.1 \
 		shlex-1.3.0 \
@@ -253,23 +257,23 @@ CARGO_CRATES=	adler2-2.0.0 \
 		symphonia-core-0.5.4 \
 		symphonia-metadata-0.5.4 \
 		syn-1.0.109 \
-		syn-2.0.92 \
+		syn-2.0.98 \
 		synstructure-0.13.1 \
-		tempfile-3.14.0 \
-		termimad-0.31.1 \
+		tempfile-3.16.0 \
+		termimad-0.31.2 \
 		terminal-light-1.7.0 \
 		thiserror-1.0.69 \
-		thiserror-2.0.9 \
+		thiserror-2.0.11 \
 		thiserror-impl-1.0.69 \
-		thiserror-impl-2.0.9 \
+		thiserror-impl-2.0.11 \
 		tinystr-0.7.6 \
 		tinyvec-1.8.1 \
 		tinyvec_macros-0.1.1 \
-		toml-0.8.19 \
+		toml-0.8.20 \
 		toml_datetime-0.6.8 \
-		toml_edit-0.22.22 \
+		toml_edit-0.22.23 \
 		unicode-bom-2.0.3 \
-		unicode-ident-1.0.14 \
+		unicode-ident-1.0.16 \
 		unicode-normalization-0.1.24 \
 		unicode-width-0.1.14 \
 		unicode-width-0.2.0 \
@@ -282,13 +286,14 @@ CARGO_CRATES=	adler2-2.0.0 \
 		vte_generate_state_changes-0.1.2 \
 		walkdir-2.5.0 \
 		wasi-0.11.0+wasi-snapshot-preview1 \
-		wasm-bindgen-0.2.99 \
-		wasm-bindgen-backend-0.2.99 \
-		wasm-bindgen-futures-0.4.49 \
-		wasm-bindgen-macro-0.2.99 \
-		wasm-bindgen-macro-support-0.2.99 \
-		wasm-bindgen-shared-0.2.99 \
-		web-sys-0.3.76 \
+		wasi-0.13.3+wasi-0.2.2 \
+		wasm-bindgen-0.2.100 \
+		wasm-bindgen-backend-0.2.100 \
+		wasm-bindgen-futures-0.4.50 \
+		wasm-bindgen-macro-0.2.100 \
+		wasm-bindgen-macro-support-0.2.100 \
+		wasm-bindgen-shared-0.2.100 \
+		web-sys-0.3.77 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-util-0.1.9 \
@@ -325,7 +330,9 @@ CARGO_CRATES=	adler2-2.0.0 \
 		windows_x86_64_msvc-0.42.2 \
 		windows_x86_64_msvc-0.48.5 \
 		windows_x86_64_msvc-0.52.6 \
-		winnow-0.6.20 \
+		winnow-0.6.26 \
+		winnow-0.7.1 \
+		wit-bindgen-rt-0.33.0 \
 		write16-1.0.0 \
 		writeable-0.5.5 \
 		x11rb-0.13.1 \
