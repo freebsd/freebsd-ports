@@ -84,13 +84,13 @@ post-patch:
 		${WRKSRC}/doc/invoke-gnutls-serv.texi \
 		${WRKSRC}/doc/invoke-p11tool.texi \
 		${WRKSRC}/doc/invoke-srptool.texi \
+		${WRKSRC}/doc/srptool-examples.texi \
 		${WRKSRC}/doc/manpages/certtool.1 \
 		${WRKSRC}/doc/manpages/gnutls_priority_init2.3 \
 		${WRKSRC}/doc/manpages/gnutls-cli.1 \
 		${WRKSRC}/doc/manpages/gnutls-serv.1 \
 		${WRKSRC}/doc/manpages/p11tool.1 \
 		${WRKSRC}/doc/manpages/srptool.1 \
-		${WRKSRC}/doc/srptool-examples.texi \
 		${WRKSRC}/lib/includes/gnutls/pkcs11.h \
 		${WRKSRC}/lib/pkcs11.c \
 		${WRKSRC}/src/p11tool-options.c \
