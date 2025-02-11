@@ -15,6 +15,9 @@ LICENSE_COMB=	dual
 LICENSE_FILE_APACHE20=	${WRKSRC}/LICENSE-Apache2.0
 LICENSE_FILE_GPLv3=	${WRKSRC}/LICENSE-GPLv3
 
+DEPRECATED=	Depends on expired devel/py-boto
+EXPIRATION_DATE=2025-03-31
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}boto>0:devel/py-boto@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}configobj>0:devel/py-configobj@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}Jinja2>0:devel/py-Jinja2@${PY_FLAVOR} \
@@ -54,7 +57,7 @@ ETCDIR=		${PREFIX}/etc/cloud
 .include <bsd.port.options.mk>
 
 .if ${OPSYS} == FreeBSD && ${OSVERSION} > 1400000
-EXTRA_PATCHES= ${PATCHDIR}/extra-cloudinit_distros_freebsd.py
+EXTRA_PATCHES=	${PATCHDIR}/extra-cloudinit_distros_freebsd.py
 .endif
 
 NO_ARCH=	yes
