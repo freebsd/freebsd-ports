@@ -1,10 +1,9 @@
 PORTNAME=	vkoverhead
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.2
+DISTVERSION=	1.3
 CATEGORIES=	benchmarks
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	1a37beb59ac8.patch:-p1 # https://github.com/zmike/vkoverhead/pull/18
 PATCHFILES+=	62c8ad1a795f.patch:-p1 # https://github.com/zmike/vkoverhead/pull/12
 
 MAINTAINER=	jbeich@FreeBSD.org
