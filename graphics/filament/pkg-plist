@@ -178,6 +178,7 @@ include/viewer/AutomationSpec.h
 include/viewer/RemoteServer.h
 include/viewer/Settings.h
 include/viewer/ViewerGui.h
+lib/libabseil.a
 lib/libbackend.a
 lib/libbasis_transcoder.a
 lib/libbluegl.a
