@@ -6364,10 +6364,10 @@ bin/openshot-qt
 %%PYTHON_SITELIBDIR%%/openshot_qt/windows/__pycache__/preview_thread%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/openshot_qt/windows/__pycache__/process_effect%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/openshot_qt/windows/__pycache__/process_effect%%PYTHON_EXT_SUFFIX%%.pyc
-%%PYTHON_SITELIBDIR%%/openshot_qt/windows/__pycache__/profile_edit%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
-%%PYTHON_SITELIBDIR%%/openshot_qt/windows/__pycache__/profile_edit%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/openshot_qt/windows/__pycache__/profile%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/openshot_qt/windows/__pycache__/profile%%PYTHON_EXT_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/openshot_qt/windows/__pycache__/profile_edit%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/openshot_qt/windows/__pycache__/profile_edit%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/openshot_qt/windows/__pycache__/region%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/openshot_qt/windows/__pycache__/region%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/openshot_qt/windows/__pycache__/title_editor%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
@@ -6423,8 +6423,8 @@ bin/openshot-qt
 %%PYTHON_SITELIBDIR%%/openshot_qt/windows/preferences.py
 %%PYTHON_SITELIBDIR%%/openshot_qt/windows/preview_thread.py
 %%PYTHON_SITELIBDIR%%/openshot_qt/windows/process_effect.py
-%%PYTHON_SITELIBDIR%%/openshot_qt/windows/profile_edit.py
 %%PYTHON_SITELIBDIR%%/openshot_qt/windows/profile.py
+%%PYTHON_SITELIBDIR%%/openshot_qt/windows/profile_edit.py
 %%PYTHON_SITELIBDIR%%/openshot_qt/windows/region.py
 %%PYTHON_SITELIBDIR%%/openshot_qt/windows/title_editor.py
 %%PYTHON_SITELIBDIR%%/openshot_qt/windows/ui/about.ui
