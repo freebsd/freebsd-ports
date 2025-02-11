@@ -1,26 +1,26 @@
 PORTNAME=	blockattack
-DISTVERSIONPREFIX=	v.
-DISTVERSION=	2.9.0
+DISTVERSIONPREFIX=	v
+DISTVERSION=	2.9.1
 CATEGORIES=	games
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	nxjoseph@protonmail.com
 COMMENT=	Puzzle game inspired by Tetris
 WWW=		https://blockattack.net/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	zip:archivers/zip \
-		boost-libs>0:devel/boost-libs
+BUILD_DEPENDS=	boost-libs>0:devel/boost-libs \
+		zip:archivers/zip
 LIB_DEPENDS=	libphysfs.so:devel/physfs
 
-USES=		cmake compiler:c++11-lib gettext localbase:ldflags \
+USES=		cmake compiler:c++11-lib gettext-tools localbase:ldflags \
 		pkgconfig sdl shebangfix
 USE_GITHUB=	yes
-USE_SDL=	image2 mixer2 ttf2
 GH_PROJECT=	${PORTNAME}-game
+USE_SDL=	image2 mixer2 ttf2
 SHEBANG_FILES=	packdata.sh source/misc/translation/*.sh
-bash_CMD=	/bin/sh
+bash_CMD=	${SH}
 CMAKE_ON=	Boost_USE_STATIC_LIBS
 LDFLAGS+=	-lintl
 
@@ -35,6 +35,7 @@ post-patch:
 
 post-build:
 # Generate game data and translations
-	@(cd ${WRKSRC} && ${WRKSRC}/packdata.sh)
+	@(cd ${WRKSRC} && \
+		${WRKSRC}/packdata.sh)
 
 .include <bsd.port.mk>
