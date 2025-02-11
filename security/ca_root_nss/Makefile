@@ -1,6 +1,5 @@
 PORTNAME=	ca_root_nss
 PORTVERSION=	${VERSION_NSS}
-PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	MOZILLA/security/nss/releases/${DISTNAME:tu:C/[-.]/_/g}_RTM/src
 DISTNAME=	nss-${VERSION_NSS}${NSS_SUFFIX}
@@ -28,7 +27,7 @@ ETCSYMLINK_CONFLICTS_INSTALL=	ca-roots-[0-9]*
 CERTDIR?=	share/certs
 PLIST_SUB+=	CERTDIR=${CERTDIR}
 
-VERSION_NSS=	3.104
+VERSION_NSS=	3.108
 CERTDATA_TXT_PATH=	lib/ckfw/builtins/certdata.txt
 BUNDLE_PROCESSOR=	MAca-bundle.pl
 
