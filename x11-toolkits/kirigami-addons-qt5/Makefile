@@ -17,4 +17,6 @@ USE_KDE=	i18n kirigami2 \
 USE_QT=		core declarative gui network quickcontrols2 \
 		buildtools:build qmake:build
 
+PORTSCOUT=	limit:^0 # limit for Qt5
+
 .include <bsd.port.mk>
