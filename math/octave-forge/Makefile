@@ -7,6 +7,8 @@ MAINTAINER=	stephen@FreeBSD.org
 COMMENT=	Octave-forge metaport for math/octave
 WWW=		http://octave.sourceforge.net/
 
+BROKEN_armv7=	takes very long time in post-install due to O(n^2) behaviour
+
 USES=		metaport
 
 OPTIONS_DEFINE=	AUDIO ACTUARIAL AUTOMATIC_DIFFERENTIATION \
