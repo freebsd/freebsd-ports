@@ -1,33 +1,31 @@
 PORTNAME=	CharisSILCompact
-PORTVERSION=	4.114
-PORTREVISION=	2
+DISTVERSION=	6.200
 CATEGORIES=	x11-fonts
-#unfortunately, the SIL server embeds timestamps in the distfile, so we use a static local copy
-.if defined(MAINTAINER_MODE)
-MASTER_SITES=	http://scripts.sil.org/ttw/fonts2go.cgi?family=CharisSIL&pkg=Compact&ver=${PORTVERSION}&filename=/
-.else
-MASTER_SITES=	LOCAL/bf
-.endif
+# Use the port maintainer's GitHub to fetch the font, since the SIL server
+# embeds dynamic content into the file.
+MASTER_SITES=	https://raw.githubusercontent.com/zoliky/distfiles/refs/heads/main/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ports@zoltankiraly.com
 COMMENT=	Charis SIL TrueType font collection, compact variant
-WWW=		https://scripts.sil.org/cms/scripts/page.php?item_id=CharisSILfont
+WWW=		https://software.sil.org/charis/
 
 LICENSE=	OFL11
+LICENSE_FILE=	${WRKSRC}/OFL.txt
 
 USES=		fonts zip
 
+NO_ARCH=	yes
 NO_BUILD=	yes
 
-.for type in B BI I R
+SUB_FILES=	pkg-message
+
+.for type in Bold BoldItalic Italic Regular
 PLIST_FILES+=	${FONTSDIR}/${PORTNAME}-${type}.ttf
 .endfor
 
+PORTDOCS=	FONTLOG.txt OFL-FAQ.txt README.txt
+
 OPTIONS_DEFINE=	DOCS
-
-PORTDOCS=	FONTLOG.txt OFL-FAQ.txt OFL.txt README.txt feat_set_tuned.xml
-
-SUB_FILES=	pkg-message
 
 do-install:
 	${MKDIR} ${STAGEDIR}${FONTSDIR}
