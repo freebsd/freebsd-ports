@@ -1,3 +1,38 @@
+  <vuln vid="a64761a1-e895-11ef-873e-8447094a420f">
+    <topic>OpenSSL -- Man-in-the-Middle vulnerability</topic>
+    <affects>
+      <package>
+	<name>openssl32</name>
+	<range><lt>3.2.4</lt></range>
+      </package>
+      <package>
+	<name>openssl33</name>
+	<range><lt>3.3.2</lt></range>
+      </package>
+      <package>
+	<name>openssl34</name>
+	<range><lt>3.4.1</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The OpenSSL project reports:</p>
+	<blockquote cite="https://openssl-library.org/news/secadv/20250211.txt">
+	  <p>RFC7250 handshakes with unauthenticated servers don't abort as expected (High).
+	    Clients using RFC7250 Raw Public Keys (RPKs) to authenticate a server may fail to notice that the server was not authenticated, because handshakes don't abort as expected when the SSL_VERIFY_PEER verification mode is set.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2024-12797</cvename>
+      <url>https://openssl-library.org/news/secadv/20250211.txt</url>
+    </references>
+    <dates>
+      <discovery>2025-02-11</discovery>
+      <entry>2025-02-11</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="20485d27-e540-11ef-a845-b42e991fc52e">
     <topic>mozilla -- multiple vulnerabilities</topic>
     <affects>
