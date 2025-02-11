@@ -11,6 +11,9 @@ WWW=		https://github.com/FlipPath/ec2-cli-tools
 
 LICENSE=	MIT
 
+DEPRECATED=	Depends on expired devel/py-boto
+EXPIRATION_DATE=2025-03-31
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}boto>=1.0:devel/py-boto@${PY_FLAVOR} \
 		bash:shells/bash
 
