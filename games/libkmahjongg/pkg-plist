@@ -12,7 +12,7 @@ lib/cmake/KMahjongglib6/KMahjongglib6Targets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/KMahjongglib6/KMahjongglib6Targets.cmake
 lib/libKMahjongg6.so
 lib/libKMahjongg6.so.%%SHLIB_SHVER%%
-lib/libKMahjongg6.so.%%SHLIB_VER%%
+lib/libKMahjongg6.so.%%SHLIB_VER_LONG%%
 share/kmahjongglib/backgrounds/chinese_landscape.desktop
 share/kmahjongglib/backgrounds/chinese_landscape.svgz
 share/kmahjongglib/backgrounds/color_plain.desktop

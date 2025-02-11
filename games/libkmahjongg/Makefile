@@ -13,10 +13,9 @@ USE_KDE=	auth codecs completion config configwidgets coreaddons i18n \
 USE_QT=		base svg
 USE_LDCONFIG=	yes
 
-OPTIONS_DEFINE=	DOCS
+_${PORTNAME}_PROJECT_VERSION=	6.0
+PLIST_SUB+=	SHLIB_SHVER="${_${PORTNAME}_PROJECT_VERSION:R}"
 
-SHLIB_VER=	6.0.241202
-PLIST_SUB+=	SHLIB_VER="${SHLIB_VER}" \
-		SHLIB_SHVER="${SHLIB_VER:R:R}"
+OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.mk>
