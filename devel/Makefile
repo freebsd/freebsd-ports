@@ -6213,7 +6213,6 @@
     SUBDIR += py-yacs
     SUBDIR += py-yamllint
     SUBDIR += py-yamlordereddictloader
-    SUBDIR += py-yandex-money-sdk
     SUBDIR += py-yappi
     SUBDIR += py-yapps2
     SUBDIR += py-yarg

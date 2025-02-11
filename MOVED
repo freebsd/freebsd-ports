@@ -4143,3 +4143,4 @@ lang/tcl87||2025-02-08|Has expired: Tcl/Tk 8.7 is not scheduled for release, use
 devel/lattice-ice40-examples-hx1k||2025-02-08|Listed as BROKEN for months in tree and unmaintained
 devel/lattice-ice40-examples-hx8k||2025-02-08|Listed as BROKEN for months in tree and unmaintained
 devel/lattice-ice40-tools||2025-02-08|Listed as BROKEN for months in tree and unmaintained
+devel/py-yandex-money-sdk||2025-02-11|Has expired: Dead project. Yandex.Money is no more
