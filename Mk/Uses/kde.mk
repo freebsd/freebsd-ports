@@ -85,6 +85,10 @@ KDE_APPLICATIONS_BRANCH?=	${KDE_APPLICATIONS6_BRANCH}
 KDE_APPLICATIONS_VERSION?=	${KDE_APPLICATIONS6_VERSION}
 KDE_APPLICATIONS_SHLIB_VER?=	${KDE_APPLICATIONS6_SHLIB_VER}
 KDE_APPLICATIONS_SHLIB_G_VER?=	${KDE_APPLICATIONS6_SHLIB_G_VER}
+# Some projects despite being a part of Gear distribution continue to use
+# their own versioning with mangled KDE_APPLICATIONS_VERSION as a patchlevel.
+# Provide more variables to ease their maintenance.
+KDE_APPS_BASED_PATCHLEVEL?=	${KDE_APPLICATIONS_VERSION:R:S/.//}0${KDE_APPLICATIONS_VERSION:E}
 
 # Legacy KDE Plasma.
 KDE_PLASMA5_VERSION?=		5.27.12
@@ -102,7 +106,8 @@ KDE_FRAMEWORKS5_BRANCH?=	stable
 KDE_FRAMEWORKS6_VERSION?=	6.10.0
 KDE_FRAMEWORKS6_BRANCH?=	stable
 
-# Current KDE applications.
+# Current KDE applications. Update _${PORTNAME}_PROJECT_VERSION for the following ports:
+# devel/kdevelop, games/libkdegames, games/libkmahjongg, graphics/kgraphviewer
 KDE_APPLICATIONS6_VERSION?=	24.12.2
 KDE_APPLICATIONS6_SHLIB_VER?=	6.3.2
 # G as in KDE Gear, and as in "don't make the variable name longer than required".
@@ -181,6 +186,9 @@ USE_KDE+=		doctools:build
 # Further pass along a SHLIB_VER PLIST_SUB
 PLIST_SUB+=		KDE_APPLICATIONS_SHLIB_VER=${KDE_APPLICATIONS_SHLIB_VER} \
 			KDE_APPLICATIONS_VERSION_SHORT="${KDE_APPLICATIONS_VERSION:R:R}"
+.        if defined(_${PORTNAME}_PROJECT_VERSION)
+PLIST_SUB+=		SHLIB_VER_LONG=${_${PORTNAME}_PROJECT_VERSION}.${KDE_APPS_BASED_PATCHLEVEL}
+.        endif
 DIST_SUBDIR?=		KDE/release-service/${KDE_APPLICATIONS_VERSION}
 .      elif ${_KDE_CATEGORY:Mkde-plasma}
 PORTVERSION?=		${KDE_PLASMA_VERSION}
