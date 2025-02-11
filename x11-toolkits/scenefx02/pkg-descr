@@ -1,0 +1,9 @@
+wlroots is the de-facto library for building wayland compositors, and
+its scene api is a great stride in simplifying wayland compositor
+development. The problem with the scene api (for compositors looking
+for eye candy), however, is that it forces you to use the wlr
+renderer, which is powerful yet simple. SceneFX is a project that
+takes the scene api and replaces the wlr renderer with our own fx
+renderer, capable of rendering surfaces with eye-candy effects
+including blur, shadows, and rounded corners, while maintaining the
+benefits of simplicity gained from using the scene api.
