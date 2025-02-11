@@ -1,79 +1,10 @@
---- src/syncterm/GNUmakefile.orig	2025-01-18 18:57:48 UTC
+--- src/syncterm/GNUmakefile.orig	2025-02-11 19:11:48 UTC
 +++ src/syncterm/GNUmakefile
-@@ -39,43 +39,42 @@ else
-  CRYPT_LIBS += $(CRYPT_LIB)
- endif
+@@ -83,6 +83,7 @@ $(MTOBJODIR)$(DIRSEP)conn$(OFILE): $(CRYPT_LIBS)
+ $(MTOBJODIR)$(DIRSEP)ssh$(OFILE): $(CRYPT_LIBS)
+ $(MTOBJODIR)$(DIRSEP)syncterm$(OFILE): $(CRYPT_LIBS) $(CIOLIB-MT)
+ $(MTOBJODIR)$(DIRSEP)telnets$(OFILE): $(CRYPT_LIBS)
++$(MTOBJODIR)$(DIRSEP)webget$(OFILE): $(CRYPT_LIBS)
+ $(CIOLIB_INTERPOLATE_OBJS): $(CIOLIB-MT_BUILD)
  
--ifdef win
-- CFLAGS += -I${3RDP_ROOT}/win32.release/libjxl/include -DJXL_THREADS_STATIC_DEFINE -DJXL_STATIC_DEFINE -DDLLIFY
-- LDFLAGS += -L${3RDP_ROOT}/${os}.release/libjxl/lib -static-libstdc++ -static-libgcc
-- EXTRA_LIBS += -ljxl
-- EXTRA_LIBS += -ljxl_threads
-- EXTRA_LIBS += -lbrotlidec
-- EXTRA_LIBS += -lbrotlicommon
-- EXTRA_LIBS += -lhwy
-- EXTRA_LIBS += -mdll
-- CFLAGS += -DWITH_JPEG_XL -DWITH_STATIC_JXL
-- CFLAGS += -DWITH_JPEG_XL_THREADS
-- OBJS += $(MTOBJODIR)$(DIRSEP)libjxl$(OFILE)
-- OBJS += $(MTOBJODIR)$(DIRSEP)conn_conpty$(OFILE)
--else
-- ifeq ($(shell pkg-config libjxl --exists && echo YES), YES)
--  CFLAGS += $(shell pkg-config libjxl --cflags)
--  EXTRA_LIBS += $(shell pkg-config libjxl --libs)
--  CFLAGS += -DWITH_JPEG_XL
-+ifndef WITHOUT_JPEG_XL
-+ ifdef win
-+  CFLAGS += -I${3RDP_ROOT}/win32.release/libjxl/include -DJXL_THREADS_STATIC_DEFINE -DJXL_STATIC_DEFINE -DDLLIFY
-+  LDFLAGS += -L${3RDP_ROOT}/${os}.release/libjxl/lib -static-libstdc++ -static-libgcc
-+  EXTRA_LIBS += -ljxl
-+  EXTRA_LIBS += -ljxl_threads
-+  EXTRA_LIBS += -lbrotlidec
-+  EXTRA_LIBS += -lbrotlicommon
-+  EXTRA_LIBS += -lhwy
-+  EXTRA_LIBS += -mdll
-+  CFLAGS += -DWITH_JPEG_XL -DWITH_STATIC_JXL
-+  CFLAGS += -DWITH_JPEG_XL_THREADS
-   OBJS += $(MTOBJODIR)$(DIRSEP)libjxl$(OFILE)
--  ifeq ($(shell pkg-config libjxl_threads --exists && echo YES), YES)
--   CFLAGS += $(shell pkg-config libjxl_threads --cflags)
--   EXTRA_LIBS += $(shell pkg-config libjxl_threads --libs)
--   CFLAGS += -DWITH_JPEG_XL_THREADS
--  endif
-+  OBJS += $(MTOBJODIR)$(DIRSEP)conn_conpty$(OFILE)
-  else
--  # TODO: Add x86 libs too!
--  ifeq ($(os),darwin)
--   CFLAGS += -I$(3RDP_ROOT)/$(os).release/libjxl/include -DJXL_THREADS_STATIC_DEFINE -DJXL_STATIC_DEFINE
--   LDFLAGS += -L$(3RDP_ROOT)/$(os).release/libjxl/lib
--   EXTRA_LIBS += -ljxl
--   EXTRA_LIBS += -ljxl_threads
--   EXTRA_LIBS += -lbrotlidec
--   EXTRA_LIBS += -lbrotlicommon
--   EXTRA_LIBS += -lhwy
--   CFLAGS += -DWITH_JPEG_XL -DWITH_STATIC_JXL
--   CFLAGS += -DWITH_JPEG_XL_THREADS
-+  ifeq ($(shell pkg-config libjxl --exists && echo YES), YES)
-+   CFLAGS += $(shell pkg-config libjxl --cflags)
-+   CFLAGS += -DWITH_JPEG_XL
-    OBJS += $(MTOBJODIR)$(DIRSEP)libjxl$(OFILE)
-+   ifeq ($(shell pkg-config libjxl_threads --exists && echo YES), YES)
-+    CFLAGS += $(shell pkg-config libjxl_threads --cflags)
-+    CFLAGS += -DWITH_JPEG_XL_THREADS
-+   endif
-+  else
-+   ifeq ($(os),darwin)
-+    CFLAGS += -I$(3RDP_ROOT)/$(os).release/libjxl/include -DJXL_THREADS_STATIC_DEFINE -DJXL_STATIC_DEFINE
-+    LDFLAGS += -L$(3RDP_ROOT)/$(os).release/libjxl/lib
-+    EXTRA_LIBS += -ljxl
-+    EXTRA_LIBS += -ljxl_threads
-+    EXTRA_LIBS += -lbrotlidec
-+    EXTRA_LIBS += -lbrotlicommon
-+    EXTRA_LIBS += -lhwy
-+    CFLAGS += -DWITH_JPEG_XL -DWITH_STATIC_JXL
-+    CFLAGS += -DWITH_JPEG_XL_THREADS
-+    OBJS += $(MTOBJODIR)$(DIRSEP)libjxl$(OFILE)
-+   endif
-   endif
-  endif
- endif
+ ifeq ($(os),darwin)
