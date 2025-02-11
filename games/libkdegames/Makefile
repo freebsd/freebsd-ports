@@ -18,9 +18,8 @@ USE_KDE=	archive attica auth bookmarks codecs completion config \
 USE_QT=		base declarative
 USE_LDCONFIG=	yes
 
-SHLIB_VER=	6.0.241202
-PLIST_SUB+=	SHLIB_VER="${SHLIB_VER}" \
-		SHLIB_SHVER="${SHLIB_VER:R:R}"
+_${PORTNAME}_PROJECT_VERSION=	6.0
+PLIST_SUB+=	SHLIB_SHVER="${_${PORTNAME}_PROJECT_VERSION:R}"
 
 OPTIONS_DEFINE=	DOCS
 

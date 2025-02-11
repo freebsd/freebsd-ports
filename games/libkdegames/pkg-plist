@@ -59,10 +59,10 @@ lib/cmake/KDEGames6/KDEGames6Targets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/KDEGames6/KDEGames6Targets.cmake
 lib/libKDEGames%%SHLIB_SHVER%%.so
 lib/libKDEGames%%SHLIB_SHVER%%.so.%%SHLIB_SHVER%%
-lib/libKDEGames%%SHLIB_SHVER%%.so.%%SHLIB_VER%%
+lib/libKDEGames%%SHLIB_SHVER%%.so.%%SHLIB_VER_LONG%%
 lib/libKDEGames%%SHLIB_SHVER%%Private.so
 lib/libKDEGames%%SHLIB_SHVER%%Private.so.%%SHLIB_SHVER%%
-lib/libKDEGames%%SHLIB_SHVER%%Private.so.%%SHLIB_VER%%
+lib/libKDEGames%%SHLIB_SHVER%%Private.so.%%SHLIB_VER_LONG%%
 %%QT_QMLDIR%%/org/kde/games/core/KGameItem.qml
 %%QT_QMLDIR%%/org/kde/games/core/corebindingsplugin.qmltypes
 %%QT_QMLDIR%%/org/kde/games/core/kde-qmlmodule.version
