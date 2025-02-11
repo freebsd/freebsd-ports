@@ -117,7 +117,7 @@ include/eclib/xsplit_data.h
 lib/libec.a
 lib/libec.so
 lib/libec.so.14
-lib/libec.so.14.0.0
+lib/libec.so.14.0.1
 libdata/pkgconfig/eclib.pc
 %%PORTDOCS%%%%DOCSDIR%%/g0n.txt
 %%PORTDOCS%%%%DOCSDIR%%/howto.txt
