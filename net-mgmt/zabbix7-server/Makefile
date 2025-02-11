@@ -168,6 +168,7 @@ GNUTLS_LIB_DEPENDS=	libgnutls.so:security/gnutls
 
 .if ${ZABBIX_BUILD} == "java"
 USES+=         java
+JAVA_VERSION=	11+
 .endif
 
 .include <bsd.port.pre.mk>
