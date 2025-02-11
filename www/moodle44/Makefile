@@ -1,7 +1,7 @@
 PORTNAME=	moodle
-PORTVERSION=	4.4.5
+PORTVERSION=	4.4.6
 CATEGORIES=	www education
-MASTER_SITES=	SF/moodle/Moodle/stable404/ \
+MASTER_SITES=	https://packaging.moodle.org/stable404/ \
 		LOCAL/wen
 PKGNAMESUFFIX=	${PKGORIGIN:T:S/moodle//}${PHP_PKGNAMESUFFIX}
 
