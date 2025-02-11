@@ -242,7 +242,6 @@
     SUBDIR += asmjit
     SUBDIR += asmutils
     SUBDIR += asmx
-    SUBDIR += astah-community
     SUBDIR += astyle
     SUBDIR += asyncplusplus
     SUBDIR += atf
