@@ -20,4 +20,6 @@ USE_QT=		core gui linguisttools printsupport sql svg widgets \
 PLIST_SUB=	SHLIB_VER="${PORTVERSION}" \
 		SHLIB_SHVER="${PORTVERSION:R:R}"
 
+PORTSCOUT=	limit:^2 # limit for Qt5
+
 .include <bsd.port.mk>
