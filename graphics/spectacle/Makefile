@@ -1,5 +1,6 @@
 PORTNAME=	spectacle
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
+PORTREVISION=	1
 CATEGORIES=	graphics kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
@@ -26,7 +27,7 @@ USE_XORG=	x11 xcb xext xfixes
 
 OPTIONS_DEFINE=			DOCS PIPEWIRE
 OPTIONS_DEFAULT=		PIPEWIRE
-PIPEWIRE_DESC=			Screen capture via PipeWire
+PIPEWIRE_DESC=			Screen capture via PipeWire (required for Wayland)
 PIPEWIRE_USE=			KDE=kpipewire
 PIPEWIRE_CMAKE_BOOL_OFF=	DISABLE_PIPEWIRE
 PIPEWIRE_EXTRA_PATCHES_OFF=	${FILESDIR}/extra-patch-pipewire-off
