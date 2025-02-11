@@ -59,14 +59,24 @@ crowdsec_stop_precmd() {
 }
 
 crowdsec_stop_postcmd() {
-    # don't trust sbin/daemon to send the signal
-    kill -TERM "$_CROWDSECPID" 2>/dev/null
-    # wait for process to exit before restarting, or it will find the http port in use
     if [ -n "$_CROWDSECPID" ]; then
-        wait_for_pids "$_CROWDSECPID"
+        # don't trust sbin/daemon to send the signal
+        kill -TERM "$_CROWDSECPID" 2>/dev/null
     fi
     if [ -n "$_CROWDSEC_CHILDREN" ]; then
         kill -TERM $_CROWDSEC_CHILDREN 2>/dev/null
+    fi
+
+    sleep 5
+
+    if [ -n "$_CROWDSECPID" ]; then
+        # in case a datasource didn't respond
+        kill -KILL "$_CROWDSECPID" 2>/dev/null
+        # ensure the process is not running before restart, or it will find the http port in use
+        wait_for_pids "$_CROWDSECPID"
+    fi
+    if [ -n "$_CROWDSEC_CHILDREN" ]; then
+        kill -KILL $_CROWDSEC_CHILDREN 2>/dev/null
         wait_for_pids $_CROWDSEC_CHILDREN
     fi
 }
