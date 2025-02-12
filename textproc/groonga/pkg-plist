@@ -12,6 +12,7 @@ include/groonga/groonga/aggregator.h
 include/groonga/groonga/array.h
 include/groonga/groonga/arrow.h
 include/groonga/groonga/arrow.hpp
+include/groonga/groonga/build_option.h
 include/groonga/groonga/bulk.hpp
 include/groonga/groonga/cache.h
 include/groonga/groonga/cast.h
@@ -25,6 +26,7 @@ include/groonga/groonga/dump.h
 include/groonga/groonga/error.h
 include/groonga/groonga/expr.h
 include/groonga/groonga/file_reader.h
+include/groonga/groonga/float.h
 include/groonga/groonga/geo.h
 include/groonga/groonga/groonga.h
 include/groonga/groonga/hash.h
