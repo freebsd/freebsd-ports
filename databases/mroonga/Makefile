@@ -1,8 +1,7 @@
 PORTNAME=	mroonga
-DISTVERSION=	14.07
+DISTVERSION=	14.08
 CATEGORIES=	databases textproc
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/v${DISTVERSION}/
-#DISTNAME=	${PORTNAME}-${DISTVERSION}
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Open-source fulltext search engine for MySQL
