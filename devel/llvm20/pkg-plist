@@ -3538,6 +3538,7 @@ llvm%%LLVM_SUFFIX%%/include/llvm/ExecutionEngine/Orc/SimpleRemoteEPC.h
 llvm%%LLVM_SUFFIX%%/include/llvm/ExecutionEngine/Orc/SpeculateAnalyses.h
 llvm%%LLVM_SUFFIX%%/include/llvm/ExecutionEngine/Orc/Speculation.h
 llvm%%LLVM_SUFFIX%%/include/llvm/ExecutionEngine/Orc/SymbolStringPool.h
+llvm%%LLVM_SUFFIX%%/include/llvm/ExecutionEngine/Orc/TargetProcess/DefaultHostBootstrapValues.h
 llvm%%LLVM_SUFFIX%%/include/llvm/ExecutionEngine/Orc/TargetProcess/ExecutorBootstrapService.h
 llvm%%LLVM_SUFFIX%%/include/llvm/ExecutionEngine/Orc/TargetProcess/ExecutorSharedMemoryMapperService.h
 llvm%%LLVM_SUFFIX%%/include/llvm/ExecutionEngine/Orc/TargetProcess/JITLoaderGDB.h
@@ -3548,8 +3549,10 @@ llvm%%LLVM_SUFFIX%%/include/llvm/ExecutionEngine/Orc/TargetProcess/SimpleExecuto
 llvm%%LLVM_SUFFIX%%/include/llvm/ExecutionEngine/Orc/TargetProcess/SimpleExecutorMemoryManager.h
 llvm%%LLVM_SUFFIX%%/include/llvm/ExecutionEngine/Orc/TargetProcess/SimpleRemoteEPCServer.h
 llvm%%LLVM_SUFFIX%%/include/llvm/ExecutionEngine/Orc/TargetProcess/TargetExecutionUtils.h
+llvm%%LLVM_SUFFIX%%/include/llvm/ExecutionEngine/Orc/TargetProcess/UnwindInfoManager.h
 llvm%%LLVM_SUFFIX%%/include/llvm/ExecutionEngine/Orc/TaskDispatch.h
 llvm%%LLVM_SUFFIX%%/include/llvm/ExecutionEngine/Orc/ThreadSafeModule.h
+llvm%%LLVM_SUFFIX%%/include/llvm/ExecutionEngine/Orc/UnwindInfoRegistrationPlugin.h
 llvm%%LLVM_SUFFIX%%/include/llvm/ExecutionEngine/RTDyldMemoryManager.h
 llvm%%LLVM_SUFFIX%%/include/llvm/ExecutionEngine/RuntimeDyld.h
 llvm%%LLVM_SUFFIX%%/include/llvm/ExecutionEngine/RuntimeDyldChecker.h
