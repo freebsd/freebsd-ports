@@ -1,5 +1,5 @@
 PORTNAME=	microcode
-PORTVERSION=	20240810
+PORTVERSION=	20241121
 CATEGORIES=	sysutils
 MASTER_SITES=	https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/plain/amd-ucode/
 PKGNAMEPREFIX=	cpu-
@@ -36,7 +36,7 @@ NO_WRKSUBDIR=	yes
 PLIST_FILES=	${DISTFILES:S/^/${DATADIR}\//g:C/\?.*//} \
 		${FWDIR}/amd-ucode.bin
 
-_REV=		091bd5adf19c7ab01214c64689952acb4833b21d
+_REV=		48bb90cceb882cab8e9ab692bc5779d3bf3a13b8
 
 post-extract:
 	${CAT} ${WRKSRC}/microcode_amd* > ${WRKSRC}/amd-ucode.bin
