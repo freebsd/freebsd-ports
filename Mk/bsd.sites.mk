@@ -105,8 +105,7 @@ MASTER_SITE_CRAN+= \
 	https://cran.csiro.au/%SUBDIR%/ \
 	https://mirrors.tuna.tsinghua.edu.cn/CRAN/%SUBDIR%/ \
 	https://mirror.las.iastate.edu/CRAN/%SUBDIR%/ \
-	https://cran.ma.imperial.ac.uk/%SUBDIR%/ \
-	https://cran.ism.ac.jp/%SUBDIR%/
+	https://cran.ma.imperial.ac.uk/%SUBDIR%/
 .endif
 
 .if !defined(IGNORE_MASTER_SITE_CRAN_ARCHIVE)
