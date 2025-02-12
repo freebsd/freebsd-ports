@@ -1,0 +1,10 @@
+--- cmaple/unittest/CMakeLists.txt.orig	2025-02-11 20:40:54 UTC
++++ cmaple/unittest/CMakeLists.txt
+@@ -16,7 +16,6 @@ target_link_libraries(
+ )
+ target_link_libraries(
+   cmaple_maintest
+-  GTest::gtest_main    ## contains the main() function. No need to write one yourself
+   cmaple_utils
+   ncl nclextra
+   cmaple_model
