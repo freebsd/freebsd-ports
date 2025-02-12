@@ -1,3 +1,69 @@
+  <vuln vid="d598266d-7772-4a31-9594-83b76b1fb837">
+    <topic>Intel CPUs -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>cpu-microcode-intel</name>
+	<range><lt>20250211</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Intel reports:</p>
+	<blockquote cite="https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-01166.html">
+	 <p>
+	  A potential security vulnerability in some Intel Processors may allow
+	  denial of service.  Intel released microcode updates to mitigate this
+	  potential vulnerability.
+	 </p>
+	</blockquote>
+	<blockquote cite="https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-01213.html">
+	 <p>
+	  A potential security vulnerability in some Intel Software Guard
+	  Extensions (Intel SGX) Platforms may allow denial of service.  Intel
+	  is released microcode updates to mitigate this potential
+	  vulnerability.
+	 </p>
+	</blockquote>
+	<blockquote cite="https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-01139.html">
+	 <p>
+	  Potential security vulnerabilities in the UEFI firmware for some Intel
+	  Processors may allow escalation of privilege, denial of service, or
+	  information disclosure. Intel released UEFI firmware and CPU microcode
+	  updates to mitigate these potential vulnerabilities.
+	 </p>
+	</blockquote>
+	<blockquote cite="https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-01228.html">
+	 <p>
+	  A potential security vulnerability in some 13th and 14th Generation
+	  Intel Core™ Processors may allow denial of service.  Intel released
+	  microcode and UEFI reference code updates to mitigate this potential
+	  vulnerability.
+	 </p>
+	</blockquote>
+	<blockquote cite="https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-01194.html">
+	 <p>
+	  A potential security vulnerability in the Intel Data Streaming
+	  Accelerator (Intel DSA) for some Intel Xeon Processors may allow
+	  denial of service.  Intel released software updates to mitigate this
+	  potential vulnerability.
+	 </p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2024-31068</cvename>
+      <cvename>CVE-2024-36293</cvename>
+      <cvename>CVE-2023-43758</cvename>
+      <cvename>CVE-2024-39355</cvename>
+      <cvename>CVE-2024-37020</cvename>
+      <url>https://github.com/intel/Intel-Linux-Processor-Microcode-Data-Files/releases/tag/microcode-20250211</url>
+    </references>
+    <dates>
+      <discovery>2025-02-11</discovery>
+      <entry>2025-02-12</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="a64761a1-e895-11ef-873e-8447094a420f">
     <topic>OpenSSL -- Man-in-the-Middle vulnerability</topic>
     <affects>
