@@ -1096,6 +1096,7 @@
     SUBDIR += jwasm
     SUBDIR += kBuild
     SUBDIR += kapptemplate
+    SUBDIR += kassert
     SUBDIR += kcachegrind
     SUBDIR += kconfig-frontends
     SUBDIR += kcov
