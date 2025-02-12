@@ -7,7 +7,7 @@ DISTNAME=	${ORIGINAL_PACKAGE_NAME}-src
 
 MAINTAINER=	lev@FreeBSD.org
 COMMENT=	Complete gcc-based toolcahin for embedded ARM development
-WWW=		https://launchpad.net/gcc-arm-embedded
+WWW=		https://developer.arm.com/Tools%20and%20Software/GNU%20Toolchain
 
 LICENSE=	GPLv2 LGPL20 LGPL21 GPLv3 LGPL3
 LICENSE_COMB=	multi
