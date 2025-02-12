@@ -1,5 +1,5 @@
 PORTNAME=	fcitx5-mcbopomofo
-DISTVERSION=	2.8.1
+DISTVERSION=	2.9.0
 CATEGORIES=	chinese textproc
 
 MAINTAINER=	lwhsu@FreeBSD.org
