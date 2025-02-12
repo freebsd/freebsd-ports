@@ -1,6 +1,6 @@
 PORTNAME=	plutosvg
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.0.4
+DISTVERSION=	0.0.5
 CATEGORIES=	graphics
 
 MAINTAINER=	alster@vinterdalen.se
