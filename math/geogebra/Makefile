@@ -1,5 +1,5 @@
 PORTNAME=	geogebra
-DISTVERSION=	5-2-866-0
+DISTVERSION=	5-2-874-1
 CATEGORIES=	math education java
 MASTER_SITES=	http://download.geogebra.org/installers/5.2/ \
 		https://static.geogebra.org/images/ \
@@ -21,7 +21,8 @@ LICENSE_PERMS=	dist-mirror no-dist-sell pkg-mirror no-pkg-sell auto-accept
 
 ONLY_FOR_ARCHS=	amd64 i386
 
-USES=		desktop-file-utils gnome java shared-mime-info shebangfix tar:bzip2
+USES=		desktop-file-utils gnome java shared-mime-info shebangfix \
+		tar:bzip2
 JAVA_VERSION=	17+
 
 CONFLICTS=	math/geogebra-i18n
