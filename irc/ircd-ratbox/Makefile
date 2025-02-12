@@ -32,7 +32,7 @@ SUB_LIST=	LOGDIR=${LOGDIR} RUNDIR=${RUNDIR} DBDIR=${DBDIR}
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-confdir=${PREFIX}/etc/${PORTNAME}		\
-		--with-logdir=/var/log/${PORTNAME}			\
+		--with-logdir=${LOGDIR}					\
 		--with-moduledir=${PREFIX}/lib/${PORTNAME}/modules	\
 		--libexecdir=${PREFIX}/libexec				\
 		--with-helpdir=${DATADIR}/help				\
