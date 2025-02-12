@@ -1,6 +1,6 @@
 PORTNAME=	sakisafe
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.5.1
+DISTVERSION=	2.5.2
 CATEGORIES=	net
 
 MAINTAINER=	teru-sama@riseup.net
@@ -11,10 +11,9 @@ LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libconfig.so:devel/libconfig \
-		libcurl.so:ftp/curl \
-		libnghttp2.so:www/libnghttp2
+		libcurl.so:ftp/curl
 
-USES=		localbase ssl
+USES=		localbase
 USE_GITHUB=	yes
 GH_ACCOUNT=	rfc-2549
 
