@@ -1,7 +1,6 @@
 PORTNAME=	walk
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.10.0
-PORTREVISION=	1
+DISTVERSION=	1.12.0
 CATEGORIES=	sysutils
 
 MAINTAINER=	DtxdF@disroot.org
@@ -24,6 +23,7 @@ GH_TUPLE=	antonmedv:clipboard:v1.0.1:antonmedv_clipboard/vendor/github.com/anton
 		charmbracelet:x:term/v0.1.1:charmbracelet_x_term \
 		charmbracelet:x:windows/v0.1.2:charmbracelet_x_windows \
 		erikgeiser:coninput:1c3628e74d0f:erikgeiser_coninput/vendor/github.com/erikgeiser/coninput \
+		expr-lang:expr:v1.16.9:expr_lang_expr/vendor/github.com/expr-lang/expr \
 		golang:sync:v0.7.0:golang_sync/vendor/golang.org/x/sync \
 		golang:sys:v0.21.0:golang_sys/vendor/golang.org/x/sys \
 		golang:text:v0.16.0:golang_text/vendor/golang.org/x/text \
