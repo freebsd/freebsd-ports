@@ -1,5 +1,5 @@
 PORTNAME=	pelican
-DISTVERSION=	4.10.2
+DISTVERSION=	4.11.0
 CATEGORIES=	www textproc python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -33,7 +33,7 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}beautifulsoup>=4.9:www/py-beautifulsoup@${P
 		${PYTHON_PKGNAMEPREFIX}lxml>=4.3:devel/py-lxml@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-cov>0:devel/py-pytest-cov@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-xdist>2.0:devel/py-pytest-xdist@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}typogrify>=2.0:textproc/py-typogrify@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}typogrify>=2.1:textproc/py-typogrify@${PY_FLAVOR} \
 		git>0:devel/git \
 		hs-pandoc>:textproc/hs-pandoc
 
