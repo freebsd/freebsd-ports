@@ -63,9 +63,9 @@ PLIST_SUB=	DOTNET_ARCH=${DOTNET_ARCH} FULL_DOTNETVERSION=${PORTVERSION} \
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == amd64
-PLIST_SUB+=	VXSORT= CLRJIT=
+PLIST_SUB+=	VXSORT=
 .else
-PLIST_SUB+=	VXSORT="@comment " CLRJIT="@comment "
+PLIST_SUB+=	VXSORT="@comment "
 .endif
 
 post-extract:
