@@ -1,7 +1,6 @@
 PORTNAME=	mcfly
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.9.2
-PORTREVISION=	5
+DISTVERSION=	0.9.3
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -17,188 +16,166 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	cantino
 
 CARGO_CRATES=	adler32-1.2.0 \
-		ahash-0.8.11 \
 		aho-corasick-1.1.3 \
 		android-tzdata-0.1.1 \
 		android_system_properties-0.1.5 \
-		anstream-0.6.15 \
-		anstyle-1.0.8 \
-		anstyle-parse-0.2.5 \
-		anstyle-query-1.1.1 \
-		anstyle-wincon-3.0.4 \
-		async-trait-0.1.81 \
-		autocfg-1.3.0 \
+		anstream-0.6.18 \
+		anstyle-1.0.10 \
+		anstyle-parse-0.2.6 \
+		anstyle-query-1.1.2 \
+		anstyle-wincon-3.0.7 \
+		autocfg-1.4.0 \
 		autopilot-0.4.0 \
-		base64-0.21.7 \
 		bitflags-1.3.2 \
-		bitflags-2.6.0 \
+		bitflags-2.8.0 \
 		block-0.1.6 \
-		block-buffer-0.10.4 \
-		bumpalo-3.16.0 \
+		bumpalo-3.17.0 \
 		byteorder-1.5.0 \
-		cc-1.1.10 \
+		cc-1.2.13 \
 		cfg-if-1.0.0 \
-		chrono-0.4.38 \
+		chrono-0.4.39 \
 		chrono-systemd-time-0.3.0 \
-		clap-4.5.15 \
-		clap_builder-4.5.15 \
-		clap_derive-4.5.13 \
-		clap_lex-0.7.2 \
+		clap-4.5.28 \
+		clap_builder-4.5.27 \
+		clap_derive-4.5.28 \
+		clap_lex-0.7.4 \
 		cocoa-0.20.2 \
 		color_quant-1.1.0 \
-		colorchoice-1.0.2 \
-		config-0.14.0 \
-		const-random-0.1.18 \
-		const-random-macro-0.1.16 \
-		convert_case-0.6.0 \
+		colorchoice-1.0.3 \
+		config-0.15.7 \
 		core-foundation-0.7.0 \
 		core-foundation-sys-0.7.0 \
 		core-foundation-sys-0.8.7 \
 		core-graphics-0.19.2 \
-		cpufeatures-0.2.12 \
 		crc32fast-1.4.2 \
-		crossbeam-deque-0.8.5 \
+		crossbeam-deque-0.8.6 \
 		crossbeam-epoch-0.9.18 \
-		crossbeam-utils-0.8.20 \
-		crossterm-0.27.0 \
+		crossbeam-utils-0.8.21 \
+		crossterm-0.28.1 \
 		crossterm_winapi-0.9.1 \
-		crunchy-0.2.2 \
-		crypto-common-0.1.6 \
-		csv-1.3.0 \
+		csv-1.3.1 \
 		csv-core-0.1.11 \
 		deflate-0.7.20 \
-		digest-0.10.7 \
 		directories-next-2.0.0 \
 		dirs-5.0.1 \
 		dirs-sys-0.4.1 \
 		dirs-sys-next-0.1.2 \
-		dlv-list-0.5.2 \
 		either-1.13.0 \
 		equivalent-1.0.1 \
+		errno-0.3.10 \
 		fallible-iterator-0.3.0 \
 		fallible-streaming-iterator-0.1.9 \
 		filedescriptor-0.8.2 \
+		foldhash-0.1.4 \
 		foreign-types-0.3.2 \
 		foreign-types-shared-0.1.1 \
-		generic-array-0.14.7 \
 		getrandom-0.1.16 \
 		getrandom-0.2.15 \
+		getrandom-0.3.1 \
 		gif-0.10.3 \
-		hashbrown-0.13.2 \
-		hashbrown-0.14.5 \
-		hashlink-0.9.1 \
+		hashbrown-0.15.2 \
+		hashlink-0.10.0 \
 		heck-0.5.0 \
 		humantime-2.1.0 \
-		iana-time-zone-0.1.60 \
+		iana-time-zone-0.1.61 \
 		iana-time-zone-haiku-0.1.2 \
 		image-0.22.5 \
-		indexmap-2.3.0 \
+		indexmap-2.7.1 \
 		inflate-0.4.5 \
 		is_terminal_polyfill-1.70.1 \
-		itertools-0.12.1 \
-		itoa-1.0.11 \
+		itertools-0.14.0 \
+		itoa-1.0.14 \
 		jpeg-decoder-0.1.22 \
-		js-sys-0.3.69 \
-		json5-0.4.1 \
-		lazy_static-1.5.0 \
-		libc-0.2.155 \
+		js-sys-0.3.77 \
+		libc-0.2.169 \
 		libredox-0.1.3 \
-		libsqlite3-sys-0.28.0 \
-		linked-hash-map-0.5.6 \
+		libsqlite3-sys-0.31.0 \
+		linux-raw-sys-0.4.15 \
 		lock_api-0.4.12 \
-		log-0.4.22 \
+		log-0.4.25 \
 		lzw-0.10.0 \
 		malloc_buf-0.0.6 \
 		memchr-2.7.4 \
-		minimal-lexical-0.2.1 \
-		mio-0.8.11 \
-		nom-7.1.3 \
+		mio-1.0.3 \
 		num-derive-0.2.5 \
 		num-integer-0.1.46 \
 		num-iter-0.1.45 \
 		num-rational-0.2.4 \
 		num-traits-0.2.19 \
 		objc-0.2.7 \
-		once_cell-1.19.0 \
+		once_cell-1.20.3 \
 		option-ext-0.2.0 \
-		ordered-multimap-0.6.0 \
 		parking_lot-0.12.3 \
 		parking_lot_core-0.9.10 \
 		path-absolutize-3.1.1 \
 		path-dedot-3.1.1 \
-		pathdiff-0.2.1 \
-		pest-2.7.11 \
-		pest_derive-2.7.11 \
-		pest_generator-2.7.11 \
-		pest_meta-2.7.11 \
-		pkg-config-0.3.30 \
+		pathdiff-0.2.3 \
+		pkg-config-0.3.31 \
 		png-0.15.3 \
 		ppv-lite86-0.2.20 \
 		proc-macro2-0.4.30 \
-		proc-macro2-1.0.86 \
+		proc-macro2-1.0.93 \
 		quote-0.6.13 \
-		quote-1.0.36 \
+		quote-1.0.38 \
 		rand-0.7.3 \
-		rand-0.8.5 \
+		rand-0.9.0 \
 		rand_chacha-0.2.2 \
-		rand_chacha-0.3.1 \
+		rand_chacha-0.9.0 \
 		rand_core-0.5.1 \
-		rand_core-0.6.4 \
+		rand_core-0.9.0 \
 		rand_hc-0.2.0 \
 		rayon-1.10.0 \
 		rayon-core-1.12.1 \
-		redox_syscall-0.5.3 \
-		redox_users-0.4.5 \
-		regex-1.10.6 \
-		regex-automata-0.4.7 \
-		regex-syntax-0.8.4 \
-		ron-0.8.1 \
-		rusqlite-0.31.0 \
-		rust-ini-0.19.0 \
-		ryu-1.0.18 \
+		redox_syscall-0.5.8 \
+		redox_users-0.4.6 \
+		regex-1.11.1 \
+		regex-automata-0.4.9 \
+		regex-syntax-0.8.5 \
+		rusqlite-0.33.0 \
+		rustix-0.38.44 \
+		rustversion-1.0.19 \
+		ryu-1.0.19 \
 		scoped_threadpool-0.1.9 \
 		scopeguard-1.2.0 \
-		serde-1.0.206 \
-		serde_derive-1.0.206 \
-		serde_json-1.0.124 \
-		serde_spanned-0.6.7 \
-		sha2-0.10.8 \
+		serde-1.0.217 \
+		serde_derive-1.0.217 \
+		serde_json-1.0.138 \
+		serde_spanned-0.6.8 \
 		shellexpand-3.1.0 \
+		shlex-1.3.0 \
 		signal-hook-0.3.17 \
 		signal-hook-mio-0.2.4 \
 		signal-hook-registry-1.4.2 \
 		smallvec-1.13.2 \
 		strsim-0.11.1 \
 		syn-0.15.44 \
-		syn-2.0.74 \
-		thiserror-1.0.63 \
-		thiserror-impl-1.0.63 \
+		syn-2.0.98 \
+		thiserror-1.0.69 \
+		thiserror-impl-1.0.69 \
 		tiff-0.3.1 \
-		tiny-keccak-2.0.2 \
-		toml-0.8.19 \
+		toml-0.8.20 \
 		toml_datetime-0.6.8 \
-		toml_edit-0.22.20 \
-		typenum-1.17.0 \
-		ucd-trie-0.1.6 \
-		unicode-ident-1.0.12 \
-		unicode-segmentation-1.11.0 \
+		toml_edit-0.22.23 \
+		unicode-ident-1.0.16 \
+		unicode-segmentation-1.12.0 \
 		unicode-xid-0.1.0 \
 		utf8parse-0.2.2 \
 		vcpkg-0.2.15 \
-		version_check-0.9.5 \
 		wasi-0.9.0+wasi-snapshot-preview1 \
 		wasi-0.11.0+wasi-snapshot-preview1 \
-		wasm-bindgen-0.2.92 \
-		wasm-bindgen-backend-0.2.92 \
-		wasm-bindgen-macro-0.2.92 \
-		wasm-bindgen-macro-support-0.2.92 \
-		wasm-bindgen-shared-0.2.92 \
+		wasi-0.13.3+wasi-0.2.2 \
+		wasm-bindgen-0.2.100 \
+		wasm-bindgen-backend-0.2.100 \
+		wasm-bindgen-macro-0.2.100 \
+		wasm-bindgen-macro-support-0.2.100 \
+		wasm-bindgen-shared-0.2.100 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
 		windows-core-0.52.0 \
 		windows-sys-0.48.0 \
 		windows-sys-0.52.0 \
+		windows-sys-0.59.0 \
 		windows-targets-0.48.5 \
 		windows-targets-0.52.6 \
 		windows_aarch64_gnullvm-0.48.5 \
@@ -216,11 +193,13 @@ CARGO_CRATES=	adler32-1.2.0 \
 		windows_x86_64_gnullvm-0.52.6 \
 		windows_x86_64_msvc-0.48.5 \
 		windows_x86_64_msvc-0.52.6 \
-		winnow-0.6.18 \
+		winnow-0.7.1 \
+		wit-bindgen-rt-0.33.0 \
 		x11-2.21.0 \
-		yaml-rust-0.4.5 \
 		zerocopy-0.7.35 \
-		zerocopy-derive-0.7.35
+		zerocopy-0.8.17 \
+		zerocopy-derive-0.7.35 \
+		zerocopy-derive-0.8.17
 PLIST_FILES=	bin/${PORTNAME} \
 		etc/bash_completion.d/${PORTNAME}.bash \
 		share/fish/vendor_completions.d/${PORTNAME}.fish \
