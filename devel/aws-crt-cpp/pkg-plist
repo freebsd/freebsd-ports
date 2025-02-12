@@ -2,6 +2,7 @@ include/aws/crt/Allocator.h
 include/aws/crt/Api.h
 include/aws/crt/Config.h
 include/aws/crt/DateTime.h
+include/aws/crt/DnsUtils.h
 include/aws/crt/Exports.h
 include/aws/crt/ImdsClient.h
 include/aws/crt/JsonObject.h
