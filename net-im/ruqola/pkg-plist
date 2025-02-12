@@ -17,7 +17,7 @@ share/icons/hicolor/128x128/apps/ruqola.png
 share/icons/hicolor/22x22/apps/ruqola.png
 share/icons/hicolor/32x32/apps/ruqola.png
 share/icons/hicolor/48x48/apps/ruqola.png
-share/knotifications5/ruqola.notifyrc
+share/knotifications6/ruqola.notifyrc
 share/locale/ca/LC_MESSAGES/ruqola.mo
 share/locale/ca@valencia/LC_MESSAGES/ruqola.mo
 share/locale/cs/LC_MESSAGES/ruqola.mo
@@ -46,5 +46,5 @@ share/locale/uk/LC_MESSAGES/ruqola.mo
 share/locale/zh_CN/LC_MESSAGES/ruqola.mo
 share/locale/zh_TW/LC_MESSAGES/ruqola.mo
 share/metainfo/org.kde.ruqola.appdata.xml
-share/qlogging-categories5/ruqola.categories
-share/qlogging-categories5/ruqola.renamecategories
+share/qlogging-categories6/ruqola.categories
+share/qlogging-categories6/ruqola.renamecategories
