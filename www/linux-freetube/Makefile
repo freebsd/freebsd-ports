@@ -1,11 +1,11 @@
 PORTNAME=	freetube
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.22.1-beta
+DISTVERSION=	0.23.1-beta
 CATEGORIES=	www
 MASTER_SITES=	https://github.com/FreeTubeApp/FreeTube/releases/download/${DISTVERSIONFULL}/ \
 		LOCAL/nivit/${PKGNAMEPREFIX}${PORTNAME}/:icons
 PKGNAMEPREFIX=	linux-
-DISTFILES=	freetube-${PORTVERSION:R}-linux-portable-x64.zip \
+DISTFILES=	freetube-${PORTVERSION:R}-linux-x64-portable.zip \
 		${PKGNAMEPREFIX}${PORTNAME}-icons-0.1.3.zip:icons
 
 MAINTAINER=	nivit@FreeBSD.org
