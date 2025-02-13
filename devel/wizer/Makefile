@@ -10,6 +10,8 @@ WWW=		https://github.com/bytecodealliance/wizer
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_i386=	compilation fails: unresolved import `wasmtime_asm_macros::asm_sym`
+
 LIB_DEPENDS=	libzstd.so:archivers/zstd
 
 USES=		cargo
