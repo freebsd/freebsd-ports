@@ -1,7 +1,6 @@
 PORTNAME=	syncthingtray
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.7.1
-PORTREVISION=	1
+DISTVERSION=	1.7.2
 CATEGORIES=	deskutils
 
 MAINTAINER=	dsh@bamus.cz
@@ -12,16 +11,14 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKDIR}/syncthingtray/LICENSE
 
 BUILD_DEPENDS=	p5-YAML-LibYAML>0:textproc/p5-YAML-LibYAML
-LIB_DEPENDS=	libboost_iostreams.so:devel/boost-libs \
-		libboost_regex.so:devel/boost-libs
+LIB_DEPENDS=	libboost_iostreams.so:devel/boost-libs
 
 FLAVORS=	qt5 qt6
 FLAVOR?=	${FLAVORS:[1]}
 FLAVORS_SUB=	yes
 
-qt5_CONFLICTS_INSTALL=	${PORTNAME}-qt6
 qt6_PKGNAMESUFFIX=	-qt6
-qt6_CONFLICTS_INSTALL=	${PORTNAME}
+CONFLICTS_INSTALL=	${PORTNAME} ${PORTNAME}-*
 
 USES=		cmake:insource iconv perl5 xorg
 
@@ -34,38 +31,49 @@ CMAKE_SOURCE_PATH=	${WRKDIR}/subdirs/syncthingtray
 USE_GITHUB=	nodefault
 GH_ACCOUNT=	Martchus
 GH_TUPLE:=	${GH_ACCOUNT}:${PORTNAME}:${DISTVERSIONPREFIX}${DISTVERSION}:${PORTNAME}/../${PORTNAME} \
-		${GH_ACCOUNT}:cpp-utilities:v5.27.1:cpputilities/../c++utilities \
-		${GH_ACCOUNT}:qtutilities:v6.14.5:qtutilities/../qtutilities \
-		${GH_ACCOUNT}:qtforkawesome:v0.2.3:qtforkawesome/../qtforkawesome \
+		${GH_ACCOUNT}:cpp-utilities:v5.27.3:cpputilities/../c++utilities \
+		${GH_ACCOUNT}:qtutilities:v6.14.6:qtutilities/../qtutilities \
+		${GH_ACCOUNT}:qtforkawesome:v0.3.0:qtforkawesome/../qtforkawesome \
 		ForkAwesome:Fork-Awesome:4fef70f:ForkAwesome/../forkawesome \
 		${GH_ACCOUNT}:subdirs:993f383:subdirs/../subdirs
 
-USE_KDE=	ecm:build
 USE_QT=		declarative svg
 USE_XORG=	x11
 
 .if ${FLAVOR} == qt5
-USES+=		kde:5 qt:5
-USE_KDE+=	plasma-framework:build
-USE_QT+=	concurrent core dbus gui location network qdbus \
-		quickcontrols2:build widgets x11extras:build buildtools:build \
-		linguist:build qmake:build testlib:build
-WEBENGINE_USE=	QT=printsupport,webchannel,webengine
+USES+=		qt:5
+USE_QT+=	concurrent core dbus gui network qdbus quickcontrols2:build \
+		widgets x11extras:build buildtools:build linguist:build \
+		qmake:build testlib:build
 .else
 CMAKE_ARGS+=	-DQT_PACKAGE_PREFIX:STRING=Qt6 -DKF_PACKAGE_PREFIX:STRING=KF6
-USES+=		gl kde:6 qt:6
+USES+=		gl qt:6
 USE_GL=		opengl
-USE_KDE+=	libplasma:build
-USE_QT+=	base positioning
-WEBENGINE_USE=	QT=webchannel,webengine
+USE_QT+=	base tools:build
 .endif
 
-OPTIONS_DEFINE=		WEBENGINE
-OPTIONS_DEFAULT=	WEBENGINE
+OPTIONS_DEFINE=		PLASMA WEBENGINE
+OPTIONS_DEFAULT=	PLASMA WEBENGINE
+
+PLASMA_DESC=	Plasma integration (KF dependency)
+PLASMA_USE=	KDE=ecm:build
+PLASMA_CMAKE_BOOL_OFF=	NO_FILE_ITEM_ACTION_PLUGIN NO_PLASMOID
 
 WEBENGINE_DESC=		Built-in web view (webengine dependency)
 WEBENGINE_CMAKE_ON=	-DWEBVIEW_PROVIDER:STRING=webengine
 WEBENGINE_CMAKE_OFF=	-DWEBVIEW_PROVIDER:STRING=none
+
+OPTIONS_SUB=	yes
+
+.if ${FLAVOR} == qt5
+PLASMA_USES=	kde:5
+PLASMA_USE+=	KDE=plasma-framework:build
+WEBENGINE_USE=	QT=printsupport,webchannel,webengine
+.else
+PLASMA_USES=	kde:6
+PLASMA_USE+=	KDE=libplasma:build
+WEBENGINE_USE=	QT=webchannel,webengine
+.endif
 
 USE_PERL5=	build
 
