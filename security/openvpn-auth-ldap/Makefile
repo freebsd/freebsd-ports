@@ -1,6 +1,6 @@
 PORTNAME=	openvpn-auth-ldap
 PORTVERSION=	2.0.4
-PORTREVISION=	2
+PORTREVISION=	3
 DISTVERSIONPREFIX=	auth-ldap-
 CATEGORIES=	security net-vpn
 
