@@ -21,9 +21,7 @@ USE_QT=		base
 USE_XORG=	x11
 
 # Versioning values, to reduce plist churn (match with devel/kdevelop)
-PLATFORM_VER=	61
-PRIVATE_VER=	6.0
-PLIST_SUB+=	PLATFORM_VER=${PLATFORM_VER} PRIVATE_VER=${PRIVATE_VER}
+.include "${.CURDIR}/../kdevelop/kdevelop.mk"
 
 # Does not build with jobs.
 MAKE_JOBS_UNSAFE=	yes
