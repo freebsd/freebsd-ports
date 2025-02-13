@@ -11,6 +11,9 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Pseudo cannaserver which wraps some other input engines
 WWW=		http://esecanna.netfort.gr.jp/
 
+DEPRECATED=	Upstream disapeared and distfile is no more available
+EXPIRATION_DATE=2025-03-31
+
 USE_RC_SUBR=	esecanna
 
 GNU_CONFIGURE=	yes

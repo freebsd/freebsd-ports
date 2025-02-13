@@ -11,6 +11,9 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Esecanna module for VJE-Delta 3.0
 WWW=		http://esecanna.netfort.gr.jp/
 
+DEPRECATED=	Upstream disapeared and distfile is no more available
+EXPIRATION_DATE=2025-03-31
+
 RUN_DEPENDS=	${LOCALBASE}/sbin/esecannaserver:japanese/esecanna
 
 USES=		gmake perl5
