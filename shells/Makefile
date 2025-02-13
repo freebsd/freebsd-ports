@@ -75,5 +75,6 @@
     SUBDIR += zsh-fast-syntax-highlighting
     SUBDIR += zsh-navigation-tools
     SUBDIR += zsh-syntax-highlighting
+    SUBDIR += zsh-you-should-use
 
 .include <bsd.port.subdir.mk>
