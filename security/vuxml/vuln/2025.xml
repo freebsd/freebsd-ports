@@ -1,3 +1,35 @@
+  <vuln vid="cbf5d976-656b-4bb6-805f-3af038e2de3e">
+    <topic>vscode -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>vscode</name>
+	<range><lt>1.97.1</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>VSCode developers report:</p>
+	<blockquote cite="https://github.com/microsoft/vscode/releases/tag/1.97.1">
+	  <p>The update addresses these issues, including a fix for a security vulnerability.</p>
+	  <ul>
+	    <li>Scope node_module binary resolution in js-debug</li>
+	    <li>Elevation of Privilege Vulnerability with VS Code server for web UI</li>
+	  </ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-24042</cvename>
+      <url>https://github.com/microsoft/vscode/security/advisories/GHSA-f85p-3684-2g3j</url>
+      <cvename>CVE-2025-24039</cvename>
+      <url>https://github.com/microsoft/vscode/security/advisories/GHSA-532g-4pv9-25f2</url>
+    </references>
+    <dates>
+      <discovery>2025-02-11</discovery>
+      <entry>2025-02-13</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="e915b60e-ea25-11ef-a1c0-0050569f0b83">
     <topic>security/openvpn-auth-ldap -- Fix buffer overflow in challenge/response</topic>
     <affects>
