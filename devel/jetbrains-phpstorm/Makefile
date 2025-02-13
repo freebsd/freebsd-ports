@@ -1,5 +1,5 @@
 PORTNAME=	phpstorm
-PORTVERSION=	2024.3.1.1
+DISTVERSION=	2024.3.2.1
 CATEGORIES=	devel
 MASTER_SITES=	https://download-cdn.jetbrains.com/webide/
 PKGNAMEPREFIX=	jetbrains-
@@ -37,7 +37,7 @@ NO_BUILD=	yes
 SUB_FILES=	${PORTNAME} ${PORTNAME}.desktop pkg-message
 SUB_LIST=	JAVA_HOME=${JAVA_HOME}
 
-WRKSRC=		${WRKDIR}/PhpStorm-243.22562.233
+WRKSRC=		${WRKDIR}/PhpStorm-243.23654.168
 
 _PTY4J_ARCH=	freebsd/${ARCH:S/amd64/x86-64/}
 _SQLITE_ARCH=	linux-${ARCH:S/amd64/x86_64/}
@@ -60,8 +60,7 @@ do-install:
 		${WRKSRC}/lib/native \
 		${WRKSRC}/lib/pty4j \
 		${WRKSRC}/plugins/cwm-plugin \
-		${WRKSRC}/plugins/gateway-plugin \
-		${WRKSRC}/plugins/gateway-terminal \
+		${WRKSRC}/plugins/gateway-plugin/lib/remote-dev-workers \
 		${WRKSRC}/plugins/remote-dev-server \
 		${WRKSRC}/plugins/webp/lib/libwebp
 	${MKDIR} ${STAGEDIR}${DATADIR}
