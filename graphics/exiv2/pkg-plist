@@ -66,8 +66,8 @@ lib/cmake/exiv2/exiv2ConfigVersion.cmake
 lib/cmake/exiv2/exiv2Export-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/exiv2/exiv2Export.cmake
 lib/libexiv2.so
-lib/libexiv2.so.0.28.3
-lib/libexiv2.so.28
+lib/libexiv2.so.%%SOVERSION%%
+lib/libexiv2.so.%%SOVER%%
 libdata/pkgconfig/exiv2.pc
 %%NLS%%share/locale/bs/LC_MESSAGES/exiv2.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/exiv2.mo
