@@ -1,13 +1,11 @@
 PORTNAME=	easy-rsa
-DISTVERSION=	3.2.1
-PORTREVISION=	3
+DISTVERSION=	3.2.2
+PORTREVISION=	0  # leave in if 0 to avoid accidental PORTEPOCH bumps
 PORTEPOCH=	1
 CATEGORIES=	security net-mgmt
 MASTER_SITES=	https://github.com/OpenVPN/easy-rsa/releases/download/v${DISTVERSION}/ \
-		LOCAL/mandree/ \
-		https://github.com/OpenVPN/easy-rsa/raw/refs/tags/v${DISTVERSION}/dev/:lib
-DISTFILES=	${EXTRACT_ONLY} easyrsa-tools.lib:lib
-EXTRACT_ONLY=	EasyRSA-${DISTVERSION}${EXTRACT_SUFX}
+		LOCAL/mandree/
+DISTFILES=	EasyRSA-${DISTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	mandree@FreeBSD.org
 COMMENT=	Small RSA key management package based on openssl
@@ -27,7 +25,7 @@ SUB_FILES=	pkg-message
 WRKSRC=		${WRKDIR}/EasyRSA-${DISTVERSION}
 
 PORTDATA=	x509-types/
-_pd_files=	ChangeLog COPYING.md README.md README.quickstart.md mktemp.txt
+_pd_files=	ChangeLog COPYING.md README.md README.quickstart.md
 _pd_dirs=	doc/
 PORTDOCS=	${_pd_dirs} ${_pd_files}
 
@@ -37,7 +35,6 @@ do-install:
 		${MKDIR} ${STAGEDIR}${PREFIX}/bin
 		${MKDIR} ${STAGEDIR}${DATADIR}/x509-types/
 		${INSTALL_SCRIPT} ${WRKSRC}/easyrsa ${STAGEDIR}${PREFIX}/bin/
-		${INSTALL_SCRIPT} ${DISTDIR}/easyrsa-tools.lib ${STAGEDIR}${PREFIX}/bin/
 		${LN} -fh ${STAGEDIR}${PREFIX}/bin/easyrsa ${STAGEDIR}${PREFIX}/bin/easy-rsa
 		${INSTALL_DATA} ${WRKSRC}/vars.example ${STAGEDIR}${DATADIR}/
 		${INSTALL_DATA} ${WRKSRC}/openssl-easyrsa.cnf ${STAGEDIR}${DATADIR}/openssl-easyrsa.cnf.example
