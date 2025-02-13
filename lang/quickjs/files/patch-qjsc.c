@@ -1,6 +1,6 @@
---- qjsc.c.orig	2023-10-23 23:25:39 UTC
+--- qjsc.c.orig	2024-07-27 21:40:48 UTC
 +++ qjsc.c
-@@ -446,7 +446,7 @@ static int output_executable(const char *out_filename,
+@@ -445,7 +445,7 @@ static int output_executable(const char *out_filename,
      if (dynamic_export)
          *arg++ = "-rdynamic";
      *arg++ = cfilename;

@@ -1,4 +1,4 @@
---- Makefile.orig	2024-05-30 14:41:37 UTC
+--- Makefile.orig	2024-07-27 21:40:48 UTC
 +++ Makefile
 @@ -94,6 +94,7 @@ ifdef CONFIG_CLANG
    HOST_CC=clang
@@ -27,31 +27,35 @@
 -libquickjs$(LTOEXT).a: $(QJS_LIB_OBJS)
 -	$(AR) rcs $@ $^
 +libquickjs$(LTOEXT).so: $(QJS_LIB_OBJS)
-+	$(CC) -shared $(LDFLAGS) -o $@ $^
++	$(CC) -shared -Wl,-soname=$@.0 $(LDFLAGS) -o $@ $^
  
  ifdef CONFIG_LTO
 -libquickjs.a: $(patsubst %.o, %.nolto.o, $(QJS_LIB_OBJS))
 -	$(AR) rcs $@ $^
 +libquickjs.so: $(patsubst %.o, %.nolto.o, $(QJS_LIB_OBJS))
-+	$(CC) -shared $(LDFLAGS) -o $@ $^
++	$(CC) -shared -Wl,-soname=$@.0 $(LDFLAGS) -o $@ $^
  endif # CONFIG_LTO
  
  libquickjs.fuzz.a: $(patsubst %.o, %.fuzz.o, $(QJS_LIB_OBJS))
-@@ -384,10 +385,10 @@ install: all
+@@ -384,10 +385,14 @@ install: all
  	$(STRIP) qjs$(EXE) qjsc$(EXE)
  	install -m755 qjs$(EXE) qjsc$(EXE) "$(DESTDIR)$(PREFIX)/bin"
  	ln -sf qjs$(EXE) "$(DESTDIR)$(PREFIX)/bin/qjscalc$(EXE)"
 -	mkdir -p "$(DESTDIR)$(PREFIX)/lib/quickjs"
 -	install -m644 libquickjs.a "$(DESTDIR)$(PREFIX)/lib/quickjs"
 +	mkdir -p "$(DESTDIR)$(PREFIX)/lib"
-+	install -m644 libquickjs.so "$(DESTDIR)$(PREFIX)/lib"
++	install -m644 libquickjs.so "$(DESTDIR)$(PREFIX)/lib/libquickjs.so.0.0.0"
++	install -l rs "$(DESTDIR)$(PREFIX)/lib/libquickjs.so.0.0.0" "$(DESTDIR)$(PREFIX)/lib/libquickjs.so"
++	install -l rs "$(DESTDIR)$(PREFIX)/lib/libquickjs.so.0.0.0" "$(DESTDIR)$(PREFIX)/lib/libquickjs.so.0"
  ifdef CONFIG_LTO
 -	install -m644 libquickjs.lto.a "$(DESTDIR)$(PREFIX)/lib/quickjs"
-+	install -m644 libquickjs.lto.so "$(DESTDIR)$(PREFIX)/lib"
++	install -m644 libquickjs.lto.so "$(DESTDIR)$(PREFIX)/lib/libquickjs.so.0.0.0"
++	install -l rs "$(DESTDIR)$(PREFIX)/lib/libquickjs.lto.so.0.0.0" "$(DESTDIR)$(PREFIX)/lib/libquickjs.lto.so"
++	install -l rs "$(DESTDIR)$(PREFIX)/lib/libquickjs.lto.so.0.0.0" "$(DESTDIR)$(PREFIX)/lib/libquickjs.lto.so.0"
  endif
  	mkdir -p "$(DESTDIR)$(PREFIX)/include/quickjs"
  	install -m644 quickjs.h quickjs-libc.h "$(DESTDIR)$(PREFIX)/include/quickjs"
-@@ -417,7 +418,7 @@ HELLO_MODULE_OPTS=-fno-string-normalize -fno-map -fno-
+@@ -417,7 +422,7 @@ HELLO_MODULE_OPTS=-fno-string-normalize -fno-map -fno-
  HELLO_MODULE_OPTS=-fno-string-normalize -fno-map -fno-promise -fno-typedarray \
             -fno-typedarray -fno-regexp -fno-json -fno-eval -fno-proxy \
             -fno-date -m
@@ -60,7 +64,7 @@
  	$(QJSC) $(HELLO_MODULE_OPTS) -o $@ $(HELLO_MODULE_SRCS)
  
  # use of an external C module (static compilation)
-@@ -425,7 +426,7 @@ test_fib.c: $(QJSC) examples/test_fib.js
+@@ -425,7 +430,7 @@ test_fib.c: $(QJSC) examples/test_fib.js
  test_fib.c: $(QJSC) examples/test_fib.js
  	$(QJSC) -e -M examples/fib.so,fib -m -o $@ examples/test_fib.js
  
