@@ -1,3 +1,60 @@
+  <vuln vid="fadf3b41-ea19-11ef-a540-6cc21735f730">
+    <topic>PostgreSQL -- PostgreSQL quoting APIs miss neutralizing quoting syntax in text that fails encoding validation</topic>
+    <affects>
+      <package>
+	<name>postgresql17-client</name>
+	<range><lt>17.3</lt></range>
+      </package>
+      <package>
+	<name>postgresql16-client</name>
+	<range><lt>16.7</lt></range>
+      </package>
+      <package>
+	<name>postgresql15-client</name>
+	<range><lt>15.11</lt></range>
+      </package>
+      <package>
+	<name>postgresql14-client</name>
+	<range><lt>14.16</lt></range>
+      </package>
+      <package>
+	<name>postgresql13-client</name>
+	<range><lt>13.19</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The PostgreSQL Project reports:</p>
+	<blockquote cite="https://www.postgresql.org/support/security/CVE-2025-1094/">
+	<p>
+	  Improper neutralization of quoting syntax in PostgreSQL
+	  libpq functions PQescapeLiteral(), PQescapeIdentifier(),
+	  PQescapeString(), and PQescapeStringConn() allows a
+	  database input provider to achieve SQL injection in
+	  certain usage patterns. Specifically, SQL injection
+	  requires the application to use the function result to
+	  construct input to psql, the PostgreSQL interactive
+	  terminal. Similarly, improper neutralization of quoting
+	  syntax in PostgreSQL command line utility programs
+	  allows a source of command line arguments to achieve SQL
+	  injection when client_encoding is BIG5 and
+	  server_encoding is one of EUC_TW or MULE_INTERNAL.
+	  Versions before PostgreSQL 17.3, 16.7, 15.11, 14.16, and
+	  13.19 are affected.
+	</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-1094</cvename>
+      <url>https://www.postgresql.org/support/security/CVE-2025-1094/</url>
+    </references>
+    <dates>
+      <discovery>2025-02-13</discovery>
+      <entry>2025-02-13</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="1a8c5720-e9cf-11ef-9e96-2cf05da270f3">
     <topic>Gitlab -- Vulnerabilities</topic>
     <affects>
