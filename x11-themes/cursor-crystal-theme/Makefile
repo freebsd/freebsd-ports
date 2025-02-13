@@ -1,16 +1,16 @@
 PORTNAME=	cursor-crystal-theme
 DISTVERSION=	1.1.1
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	x11-themes
-MASTER_SITES=	http://www.notmart.org/files/ \
-		http://pinguin.stttelkom.ac.id/gentoo/distfiles/
+MASTER_SITES=	https://www.notmart.org/files/
 DISTNAME=	Crystalcursors
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	KDE Crystal style X cursor theme
-WWW=		http://www.kde-look.org/content/show.php/crystal+xcursors?content=6240
+WWW=		https://store.kde.org/p/999879
 
 LICENSE=	LGPL21
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	xcursorgen:x11/xcursorgen
 
