@@ -97,6 +97,7 @@ nim/config/nimdoc.tex.cfg
 %%DOCS%%nim/doc/html/compiler/isolation_check.html
 %%DOCS%%nim/doc/html/compiler/jsgen.html
 %%DOCS%%nim/doc/html/compiler/lambdalifting.html
+%%DOCS%%nim/doc/html/compiler/layeredtable.html
 %%DOCS%%nim/doc/html/compiler/lexer.html
 %%DOCS%%nim/doc/html/compiler/liftdestructors.html
 %%DOCS%%nim/doc/html/compiler/liftlocals.html
@@ -113,7 +114,6 @@ nim/config/nimdoc.tex.cfg
 %%DOCS%%nim/doc/html/compiler/modulepaths.html
 %%DOCS%%nim/doc/html/compiler/modules.html
 %%DOCS%%nim/doc/html/compiler/msgs.html
-%%DOCS%%nim/doc/html/compiler/ndi.html
 %%DOCS%%nim/doc/html/compiler/nilcheck.html
 %%DOCS%%nim/doc/html/compiler/nim.html
 %%DOCS%%nim/doc/html/compiler/nimblecmd.html
@@ -327,6 +327,7 @@ nim/config/nimdoc.tex.cfg
 %%DOCS%%nim/doc/html/re.html
 %%DOCS%%nim/doc/html/refc.html
 %%DOCS%%nim/doc/html/registry.html
+%%DOCS%%nim/doc/html/repr_v2.html
 %%DOCS%%nim/doc/html/reservedmem.html
 %%DOCS%%nim/doc/html/rlocks.html
 %%DOCS%%nim/doc/html/ropes.html
@@ -509,6 +510,7 @@ nim/lib/compiler/isolation_check.nim
 nim/lib/compiler/jsgen.nim
 nim/lib/compiler/jstypes.nim
 nim/lib/compiler/lambdalifting.nim
+nim/lib/compiler/layeredtable.nim
 nim/lib/compiler/layouter.nim
 nim/lib/compiler/lexer.nim
 nim/lib/compiler/liftdestructors.nim
@@ -527,7 +529,6 @@ nim/lib/compiler/modulegraphs.nim
 nim/lib/compiler/modulepaths.nim
 nim/lib/compiler/modules.nim
 nim/lib/compiler/msgs.nim
-nim/lib/compiler/ndi.nim
 nim/lib/compiler/nilcheck.nim
 nim/lib/compiler/nim.cfg
 nim/lib/compiler/nim.nim

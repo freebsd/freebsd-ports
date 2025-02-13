@@ -1,6 +1,6 @@
---- tools/kochdocs.nim.orig	2024-10-02 01:48:48 UTC
+--- tools/kochdocs.nim.orig	2025-02-06 01:49:40 UTC
 +++ tools/kochdocs.nim
-@@ -94,7 +94,6 @@ const officialPackagesMarkdown = """
+@@ -93,7 +93,6 @@ const officialPackagesMarkdown = """
    execFold(desc, cmd)
  
  const officialPackagesMarkdown = """
@@ -37,7 +37,7 @@
  """.splitWhitespace()
  
  when (NimMajor, NimMinor) < (1, 1) or not declared(isRelativeTo):
-@@ -348,7 +328,7 @@ proc buildDocsDir*(args: string, dir: string) =
+@@ -349,7 +329,7 @@ proc buildDocsDir*(args: string, dir: string) =
  proc buildDocsDir*(args: string, dir: string) =
    let args = nimArgs & " " & args
    let docHackJsSource = buildJS()
