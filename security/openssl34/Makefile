@@ -1,7 +1,8 @@
 PORTNAME=	openssl
-DISTVERSION=	3.4.0
+DISTVERSION=	3.4.1
 CATEGORIES=	security devel
 PKGNAMESUFFIX=	34
+MASTER_SITES=	https://github.com/openssl/openssl/releases/download/${DISTNAME}/
 
 MAINTAINER=	brnrd@FreeBSD.org
 COMMENT=	TLSv1.3 capable SSL and crypto library
@@ -20,8 +21,6 @@ CONFIGURE_ARGS=	--openssldir=${OPENSSLDIR} \
 
 USES=		cpe perl5
 USE_PERL5=	build
-USE_GITHUB=	yes
-GH_TAGNAME=	${PORTNAME}-${DISTVERSION}
 TEST_TARGET=	test
 
 LDFLAGS_i386=	-Wl,-znotext
