@@ -1,5 +1,6 @@
 PORTNAME=	digikam
 DISTVERSION=	8.5.0
+PORTREVISION=	1
 CATEGORIES=	graphics kde
 MASTER_SITES=	KDE/stable/${PORTNAME}/${PORTVERSION} \
 		https://files.kde.org/digikam/%SUBDIR%/:aesthetic,autotags,face,shape,yunet \
@@ -15,6 +16,9 @@ DISTFILES=	digiKam-${DISTVERSIONPREFIX}${DISTVERSION}${DISTVERSIONSUFFIX}${EXTRA
 DIST_SUBDIR=	KDE/${PORTNAME}
 EXTRACT_ONLY=	digiKam-${DISTVERSIONPREFIX}${DISTVERSION}${DISTVERSIONSUFFIX}${EXTRACT_SUFX}
 
+PATCH_SITES=	https://invent.kde.org/graphics/digikam/-/commit/
+PATCHFILES+=	577913d0ab3db2a89c5717dce41b5f9d0c461950.patch:-p1 # Fix detection of libksane (fixed in 8.6.0)
+
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE digital photo management application
 WWW=		https://www.digikam.org/
@@ -23,8 +27,7 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	boost-libs>=0:devel/boost-libs
-LIB_DEPENDS=	libKF5Sane.so:graphics/libksane \
-		libexiv2.so:graphics/exiv2 \
+LIB_DEPENDS=	libexiv2.so:graphics/exiv2 \
 		libexpat.so:textproc/expat2 \
 		libgphoto2.so:graphics/libgphoto2 \
 		libjasper.so:graphics/jasper \
@@ -39,26 +42,26 @@ LIB_DEPENDS=	libKF5Sane.so:graphics/libksane \
 RUN_DEPENDS=	exiftool:graphics/p5-Image-ExifTool
 
 USES=		bison cmake compiler:c++17-lang desktop-file-utils eigen:3 gl \
-		gnome jpeg kde:5 magick pkgconfig qt:5 \
-		shebangfix tar:xz xorg
+		gnome jpeg kde:6 magick pkgconfig qt:6 shebangfix tar:xz xorg
 USE_GL=		opengl glu
 USE_GNOME=	glib20 libxml2 libxslt
-USE_KDE=	auth calendarcore codecs completion config configwidgets \
+USE_KDE=	calendarcore colorscheme completion config configwidgets \
 		coreaddons doctools filemetadata i18n iconthemes jobwidgets \
-		kio notifications notifyconfig service solid sonnet \
-		threadweaver widgetsaddons windowsystem xmlgui \
+		kio libksane notifications notifyconfig service solid sonnet \
+		texttemplate threadweaver widgetsaddons windowsystem xmlgui \
 		ecm:build
 USE_LDCONFIG=	yes
-USE_QT=		concurrent core dbus declarative gui location network \
-		networkauth opengl printsupport sql svg webchannel webengine \
-		widgets x11extras xml xmlpatterns \
-		buildtools:build qmake:build
+USE_QT=		base declarative networkauth positioning scxml svg \
+		webchannel webengine
 USE_XORG=	ice sm x11 xext
 
 SHEBANG_FILES=	core/data/scripts/digitaglinktree/digitaglinktree
 
-CMAKE_ON=	BUILD_WITH_CCACHE DIGIKAMSC_COMPILE_DIGIKAM ENABLE_KFILEMETADATASUPPORT \
-		CMAKE_DISABLE_FIND_PACKAGE_VAAPI
+CMAKE_ON=	BUILD_WITH_CCACHE \
+		BUILD_WITH_QT6 \
+		CMAKE_DISABLE_FIND_PACKAGE_VAAPI \
+		DIGIKAMSC_COMPILE_DIGIKAM \
+		ENABLE_KFILEMETADATASUPPORT
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
 
@@ -94,18 +97,16 @@ FACEDETECT_DISTFILES=	weights_inceptionv3_299.pb:aesthetic \
 			face_detection_yunet_2023mar_int8.onnx:yunet
 
 KDEPIM_DESC=		KDEPim Addressbook support
-KDEPIM_USES=		grantlee:5
 KDEPIM_USE=		KDE=akonadi,akonadicontacts,contacts,grantleetheme,itemmodels
 KDEPIM_CMAKE_BOOL=	ENABLE_AKONADICONTACTSUPPORT
 
 MEDIAPLAYER_DESC=		Enable media player
-MEDIAPLAYER_LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg \
-				libvdpau.so:multimedia/libvdpau
+MEDIAPLAYER_LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg
 MEDIAPLAYER_USE=		QT=multimedia XORG=xv
 MEDIAPLAYER_CMAKE_BOOL=		ENABLE_MEDIAPLAYER
 MEDIAPLAYER_CMAKE_BOOL_OFF=	CMAKE_DISABLE_FIND_PACKAGE_FFmpeg
 
-MYSQL_USE=		QT=sql-mysql:run
+MYSQL_USE=		QT=sqldriver-mysql:run
 MYSQL_CMAKE_BOOL=	ENABLE_MYSQLSUPPORT
 
 MYSQL_INTERNAL_DESC=		Use a dedicated MySQL instance (requires MariaDB)
@@ -121,7 +122,7 @@ NLS_USES=		gettext-tools
 NLS_USE=		KDE=i18n
 NLS_CMAKE_BOOL=		DIGIKAMSC_COMPILE_PO
 
-SQLITE3_USE=		QT=sql-sqlite3:run
+SQLITE3_USE=		QT=sqldriver-sqlite:run
 
 post-install-AUTOTAGS-on:
 	@${MKDIR} ${STAGEDIR}${DATADIR}/facesengine

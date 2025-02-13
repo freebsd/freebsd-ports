@@ -261,7 +261,6 @@ lib/libdigikamgui.so.%%SHLIB_VER%%
 %%QT_PLUGINDIR%%/digikam/generic/Generic_Piwigo_Plugin.so
 %%QT_PLUGINDIR%%/digikam/generic/Generic_Presentation_Plugin.so
 %%QT_PLUGINDIR%%/digikam/generic/Generic_PrintCreator_Plugin.so
-%%QT_PLUGINDIR%%/digikam/generic/Generic_Rajce_Plugin.so
 %%QT_PLUGINDIR%%/digikam/generic/Generic_SendByMail_Plugin.so
 %%QT_PLUGINDIR%%/digikam/generic/Generic_SlideShow_Plugin.so
 %%QT_PLUGINDIR%%/digikam/generic/Generic_SmugMug_Plugin.so
@@ -1899,7 +1898,6 @@ share/icons/hicolor/16x16/apps/dk-mediawiki.png
 share/icons/hicolor/16x16/apps/dk-onedrive.png
 share/icons/hicolor/16x16/apps/dk-pinterest.png
 share/icons/hicolor/16x16/apps/dk-piwigo.png
-share/icons/hicolor/16x16/apps/dk-rajce.png
 share/icons/hicolor/16x16/apps/dk-smugmug.png
 share/icons/hicolor/16x16/apps/expoblending.png
 share/icons/hicolor/16x16/apps/panorama.png
@@ -1917,7 +1915,6 @@ share/icons/hicolor/22x22/apps/dk-mediawiki.png
 share/icons/hicolor/22x22/apps/dk-onedrive.png
 share/icons/hicolor/22x22/apps/dk-pinterest.png
 share/icons/hicolor/22x22/apps/dk-piwigo.png
-share/icons/hicolor/22x22/apps/dk-rajce.png
 share/icons/hicolor/22x22/apps/dk-smugmug.png
 share/icons/hicolor/22x22/apps/expoblending.png
 share/icons/hicolor/22x22/apps/panorama.png
@@ -1955,7 +1952,6 @@ share/icons/hicolor/32x32/apps/dk-mediawiki.png
 share/icons/hicolor/32x32/apps/dk-onedrive.png
 share/icons/hicolor/32x32/apps/dk-pinterest.png
 share/icons/hicolor/32x32/apps/dk-piwigo.png
-share/icons/hicolor/32x32/apps/dk-rajce.png
 share/icons/hicolor/32x32/apps/dk-smugmug.png
 share/icons/hicolor/32x32/apps/expoblending.png
 share/icons/hicolor/32x32/apps/panorama.png
@@ -1973,7 +1969,6 @@ share/icons/hicolor/48x48/apps/dk-mediawiki.png
 share/icons/hicolor/48x48/apps/dk-onedrive.png
 share/icons/hicolor/48x48/apps/dk-pinterest.png
 share/icons/hicolor/48x48/apps/dk-piwigo.png
-share/icons/hicolor/48x48/apps/dk-rajce.png
 share/icons/hicolor/48x48/apps/dk-smugmug.png
 share/icons/hicolor/48x48/apps/expoblending.png
 share/icons/hicolor/48x48/apps/panorama.png
@@ -1991,7 +1986,7 @@ share/icons/hicolor/scalable/apps/dk-piwigo.svgz
 share/icons/hicolor/scalable/apps/dk-smugmug.svgz
 share/icons/hicolor/scalable/apps/panorama.svgz
 share/icons/hicolor/scalable/apps/showfoto.svgz
-share/knotifications5/digikam.notifyrc
+share/knotifications6/digikam.notifyrc
 share/kxmlgui5/digikam/digikamui5.rc
 share/kxmlgui5/digikam/imageeditorui5.rc
 share/kxmlgui5/digikam/importui5.rc
