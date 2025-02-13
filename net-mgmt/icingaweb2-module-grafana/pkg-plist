@@ -1,6 +1,7 @@
 %%WWWDIR%%/CHANGELOG.md
 %%WWWDIR%%/CONTRIBUTING.md
 %%WWWDIR%%/LICENSE
+%%WWWDIR%%/Makefile
 %%WWWDIR%%/README.md
 %%WWWDIR%%/RELEASE.md
 %%WWWDIR%%/application/controllers/ConfigController.php
@@ -68,7 +69,6 @@
 %%WWWDIR%%/doc/06-create-grafana-dashboards-influxdb.md
 %%WWWDIR%%/doc/07-create-grafana-dashboards-graphite.md
 %%WWWDIR%%/doc/images/02-installation-01.png
-%%WWWDIR%%/doc/images/03-module_grafana_configuration01.png
 %%WWWDIR%%/doc/images/04-graph.configuration-01.png
 %%WWWDIR%%/doc/images/04-graph.configuration-02.png
 %%WWWDIR%%/doc/images/04-graph.configuration-03.png
@@ -76,13 +76,11 @@
 %%WWWDIR%%/doc/images/04-graph.configuration-05.png
 %%WWWDIR%%/doc/images/04-graph.configuration-06.png
 %%WWWDIR%%/doc/images/04-graph.configuration-07.png
-%%WWWDIR%%/doc/images/06-cog.png
 %%WWWDIR%%/doc/images/06-create-new.png
 %%WWWDIR%%/doc/images/06-dashboard-add-panel.png
 %%WWWDIR%%/doc/images/06-dashboard-panel-axis.png
 %%WWWDIR%%/doc/images/06-dashboard-panel-colors.png
 %%WWWDIR%%/doc/images/06-dashboard-panel-display-overrides.png
-%%WWWDIR%%/doc/images/06-dashboard-panel-graphite-edit.png
 %%WWWDIR%%/doc/images/06-dashboard-panel-influx-edit.png
 %%WWWDIR%%/doc/images/06-dashboard-panel-legend.png
 %%WWWDIR%%/doc/images/06-dashboard-panel-metrics-crit-warn.png
@@ -105,12 +103,9 @@
 %%WWWDIR%%/doc/images/07-templating-graphite.png
 %%WWWDIR%%/doc/images/grafana-datasource-graphite.png
 %%WWWDIR%%/doc/images/grafana-datasource-influxdb.png
-%%WWWDIR%%/doc/images/grafana-import-base-metrics-dashboard.png
 %%WWWDIR%%/doc/images/grafana-import-icinga2-default-dashboard.png
 %%WWWDIR%%/doc/images/icingaweb2_grafana_screenshot_01.png
 %%WWWDIR%%/doc/images/icingaweb2_grafana_screenshot_02.png
-%%WWWDIR%%/doc/images/icingaweb2_grafana_screenshot_03.png
-%%WWWDIR%%/doc/images/icingaweb2_grafana_screenshot_04.png
 %%WWWDIR%%/doc/images/icingaweb2_grafana_screenshot_05.png
 %%WWWDIR%%/doc/images/icingaweb2_grafana_screenshot_06.png
 %%WWWDIR%%/doc/images/showallgraph.png
@@ -124,6 +119,7 @@
 %%WWWDIR%%/library/Grafana/Web/Controller/IcingadbGrafanaController.php
 %%WWWDIR%%/library/Grafana/Web/Widget/PrintAction.php
 %%WWWDIR%%/module.info
+%%WWWDIR%%/phpcs.xml
 %%WWWDIR%%/public/css/module.less
 %%WWWDIR%%/public/js/behavior/iframe.js
 %%WWWDIR%%/run.php
