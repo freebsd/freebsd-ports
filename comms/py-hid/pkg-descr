@@ -1,1 +1,4 @@
-Ctypes bindings for hidapi.
+pyhidapi is a Python library that provides an interface to the hidapi
+library, enabling communication with Human Interface Devices (HID)
+such as keyboards and mice. It allows users to easily access device
+information and send or receive data through a simple API.
