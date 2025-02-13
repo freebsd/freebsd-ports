@@ -3,6 +3,7 @@
     SUBDIR += R-cran-maptools
     SUBDIR += accrete
     SUBDIR += astrometry
+    SUBDIR += astroterm
     SUBDIR += calcmysky
     SUBDIR += celestia
     SUBDIR += celestia-gtk
