@@ -1,3 +1,46 @@
+  <vuln vid="1a8c5720-e9cf-11ef-9e96-2cf05da270f3">
+    <topic>Gitlab -- Vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>gitlab-ce</name>
+	<name>gitlab-ee</name>
+	<range><ge>17.8.0</ge><lt>17.8.2</lt></range>
+	<range><ge>17.7.0</ge><lt>17.7.4</lt></range>
+	<range><ge>8.3.0</ge><lt>17.6.5</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Gitlab reports:</p>
+	<blockquote cite="https://about.gitlab.com/releases/2025/02/12/patch-release-gitlab-17-8-2-released/">
+	  <p>A CSP-bypass XSS in merge-request page</p>
+	  <p>Denial of Service due to Unbounded Symbol Creation</p>
+	  <p>Exfiltrate content from private issues using Prompt Injection</p>
+	  <p>A custom permission may allow overriding Repository settings</p>
+	  <p>Internal HTTP header leak via route confusion in workhorse</p>
+	  <p>SSRF via workspaces</p>
+	  <p>Unauthorized Incident Closure and Deletion by Planner Role in GitLab</p>
+	  <p>ActionCable does not invalidate tokens after revocation</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-0376</cvename>
+      <cvename>CVE-2024-12379</cvename>
+      <cvename>CVE-2024-3303</cvename>
+      <cvename>CVE-2025-1042</cvename>
+      <cvename>CVE-2025-1212</cvename>
+      <cvename>CVE-2024-9870</cvename>
+      <cvename>CVE-2025-0516</cvename>
+      <cvename>CVE-2025-1198</cvename>
+      <url>https://about.gitlab.com/releases/2025/02/12/patch-release-gitlab-17-8-2-released/</url>
+    </references>
+    <dates>
+      <discovery>2025-02-12</discovery>
+      <entry>2025-02-13</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="d598266d-7772-4a31-9594-83b76b1fb837">
     <topic>Intel CPUs -- multiple vulnerabilities</topic>
     <affects>
