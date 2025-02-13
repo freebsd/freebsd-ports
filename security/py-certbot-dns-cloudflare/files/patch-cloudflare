@@ -1,6 +1,6 @@
---- certbot_dns_cloudflare/_internal/dns_cloudflare.py.orig	2025-01-07 20:53:36 UTC
+--- certbot_dns_cloudflare/_internal/dns_cloudflare.py.orig	2025-02-11 19:57:38 UTC
 +++ certbot_dns_cloudflare/_internal/dns_cloudflare.py
-@@ -99,12 +99,12 @@ class _CloudflareClient:
+@@ -100,12 +100,12 @@ class _CloudflareClient:
              # We can't use named arguments in this case, as it would break compatibility with
              # the Cloudflare library since version 2.10.1, as the `token` argument was used for
              # tokens and keys alike and the `key` argument did not exist in earlier versions.
@@ -15,14 +15,14 @@
  
      def add_txt_record(self, domain: str, record_name: str, record_content: str,
                         record_ttl: int) -> None:
---- setup.py.orig	2025-01-07 20:53:37 UTC
+--- setup.py.orig	2025-02-11 19:57:39 UTC
 +++ setup.py
 @@ -9,7 +9,7 @@ install_requires = [
  install_requires = [
      # for now, do not upgrade to cloudflare>=2.20 to avoid deprecation warnings and the breaking
      # changes in version 3.0. see https://github.com/certbot/certbot/issues/9938
--    'cloudflare>=1.5.1, <2.20',
-+    'cloudflare>=1.5.1, <=2.20',
+-    'cloudflare>=2.19, <2.20',
++    'cloudflare>=2.19, <=2.20',
  ]
  
  if os.environ.get('SNAP_BUILD'):
