@@ -17,3 +17,5 @@ SHA256 (dotnet/Private.SourceBuilt.Artifacts.9.0.100-rtm.24529.1.freebsd.14-arm6
 SIZE (dotnet/Private.SourceBuilt.Artifacts.9.0.100-rtm.24529.1.freebsd.14-arm64.tar.gz) = 824193349
 SHA256 (dotnet/dotnet-sdk-9.0.100-freebsd.14-arm64.tar.gz) = 58a1936c0577b7ec74ddee86d3517b5a3d8c0623542378db3a6af4cd4d5230a3
 SIZE (dotnet/dotnet-sdk-9.0.100-freebsd.14-arm64.tar.gz) = 501969915
+SHA256 (dotnet/Private.SourceBuilt.Artifacts.9.0.100-rtm.24529.1.freebsd.13-x64.tar.gz) = 7e93b7fde936aca446254d633f9284041670d0073e020ffea82c49b0d7164df4
+SIZE (dotnet/Private.SourceBuilt.Artifacts.9.0.100-rtm.24529.1.freebsd.13-x64.tar.gz) = 832528322
