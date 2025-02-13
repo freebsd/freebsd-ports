@@ -1,7 +1,6 @@
 PORTNAME=	mongodb
 DISTVERSIONPREFIX=	r
-DISTVERSION=	8.0.4
-PORTREVISION=	3
+DISTVERSION=	8.0.5
 CATEGORIES=	databases net
 MASTER_SITES=	https://hg.mozilla.org/mozilla-central/raw-rev/:patches
 PKGNAMESUFFIX=	${DISTVERSION:R:S/.//}
@@ -51,7 +50,7 @@ USES=		compiler:c++20-lang cpe python:build scons shebangfix ssl
 USES+=		gmake pkgconfig
 
 # mozjs tag comes from ${WRKSRC}/src/third_party/mozjs/get-sources.sh
-MOZJS_TAG=	bb6edb4fcd43607c87de81df8c58db11a663634a
+MOZJS_TAG=	4c197344dfc48dfbbd242333878f17f0379e6205
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	mongodb mongodb-forks:mozjs
@@ -146,7 +145,7 @@ post-patch:
 
 pre-configure:
 # Verify we downloaded the proper mozjs git tag.
-	${SH} -c "test \"X`grep -E '^LIB_GIT_REVISION=' ${WRKSRC}/src/third_party/mozjs/get-sources.sh`\" = \"XLIB_GIT_REVISION=${MOZJS_TAG}\""
+	${SH} -xc "test \"X`grep -E '^LIB_GIT_REVISION=' ${WRKSRC}/src/third_party/mozjs/get-sources.sh`\" = \"XLIB_GIT_REVISION=${MOZJS_TAG}\""
 
 do-configure:
 # Replacement of ${WRKSRC}/src/third_party/mozjs/get-sources.sh
