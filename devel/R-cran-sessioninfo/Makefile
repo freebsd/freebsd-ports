@@ -17,8 +17,9 @@ TEST_DEPENDS=	R-cran-callr>0:devel/R-cran-callr \
 		R-cran-rmarkdown>0:textproc/R-cran-rmarkdown \
 		R-cran-testthat>0:devel/R-cran-testthat \
 		R-cran-withr>0:devel/R-cran-withr
-TESTING_UNSAFE=	https://github.com/r-lib/sessioninfo/issues/111
 
 USES=		cran:auto-plist
+
+MAKE_ENV+=	LC_ALL="C.UTF-8"
 
 .include <bsd.port.mk>
