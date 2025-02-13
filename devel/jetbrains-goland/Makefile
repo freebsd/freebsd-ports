@@ -1,5 +1,5 @@
 PORTNAME=	goland
-PORTVERSION=	2024.3.1
+DISTVERSION=	2024.3.2.1
 CATEGORIES=	devel
 MASTER_SITES=	https://download-cdn.jetbrains.com/go/
 PKGNAMEPREFIX=	jetbrains-
@@ -66,8 +66,7 @@ do-install:
 		${WRKSRC}/lib/native \
 		${WRKSRC}/lib/pty4j \
 		${WRKSRC}/plugins/cwm-plugin \
-		${WRKSRC}/plugins/gateway-plugin \
-		${WRKSRC}/plugins/gateway-terminal \
+		${WRKSRC}/plugins/gateway-plugin/lib/remote-dev-workers \
 		${WRKSRC}/plugins/go-plugin/lib/dlv \
 		${WRKSRC}/plugins/remote-dev-server
 	${MKDIR} ${STAGEDIR}${DATADIR}
