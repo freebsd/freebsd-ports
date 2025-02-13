@@ -1,6 +1,6 @@
 PORTNAME=	gauche
 PORTVERSION=	0.9.15
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang scheme
 MASTER_SITES=	https://github.com/shirok/Gauche/releases/download/release${PORTVERSION:S/./_/g}/
 DISTNAME=	Gauche-${PORTVERSION}
