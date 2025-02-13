@@ -7,6 +7,9 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Find Unicode values for Chinese characters
 WWW=		http://www.whizkidtech.redprince.net/i18n/muni/
 
+DEPRECATED=	Upstream disapeared and distfile is no more available
+EXPIRATION_DATE=2025-03-31
+
 OPTIONS_DEFINE=	DOCS
 
 do-install:
