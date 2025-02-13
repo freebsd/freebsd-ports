@@ -74,6 +74,8 @@ share/locale/gl/LC_MESSAGES/kcm_pulseaudio.mo
 share/locale/gl/LC_MESSAGES/plasma_applet_org.kde.plasma.volume.mo
 share/locale/he/LC_MESSAGES/kcm_pulseaudio.mo
 share/locale/he/LC_MESSAGES/plasma_applet_org.kde.plasma.volume.mo
+share/locale/hi/LC_MESSAGES/kcm_pulseaudio.mo
+share/locale/hi/LC_MESSAGES/plasma_applet_org.kde.plasma.volume.mo
 share/locale/hsb/LC_MESSAGES/plasma_applet_org.kde.plasma.volume.mo
 share/locale/hu/LC_MESSAGES/kcm_pulseaudio.mo
 share/locale/hu/LC_MESSAGES/plasma_applet_org.kde.plasma.volume.mo
@@ -114,6 +116,8 @@ share/locale/ro/LC_MESSAGES/kcm_pulseaudio.mo
 share/locale/ro/LC_MESSAGES/plasma_applet_org.kde.plasma.volume.mo
 share/locale/ru/LC_MESSAGES/kcm_pulseaudio.mo
 share/locale/ru/LC_MESSAGES/plasma_applet_org.kde.plasma.volume.mo
+share/locale/sa/LC_MESSAGES/kcm_pulseaudio.mo
+share/locale/sa/LC_MESSAGES/plasma_applet_org.kde.plasma.volume.mo
 share/locale/sk/LC_MESSAGES/kcm_pulseaudio.mo
 share/locale/sk/LC_MESSAGES/plasma_applet_org.kde.plasma.volume.mo
 share/locale/sl/LC_MESSAGES/kcm_pulseaudio.mo
@@ -148,3 +152,4 @@ share/plasma/plasmoids/org.kde.plasma.volume/contents/ui/StreamListItem.qml
 share/plasma/plasmoids/org.kde.plasma.volume/contents/ui/VolumeSlider.qml
 share/plasma/plasmoids/org.kde.plasma.volume/contents/ui/main.qml
 share/plasma/plasmoids/org.kde.plasma.volume/metadata.json
+share/qlogging-categories6/plasmapa.categories

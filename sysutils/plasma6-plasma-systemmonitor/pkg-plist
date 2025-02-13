@@ -39,6 +39,8 @@ lib/libPlasmaSystemMonitorTable.so
 %%QT_QMLDIR%%/org/kde/ksysguard/table/qmldir
 share/applications/org.kde.plasma-systemmonitor.desktop
 share/config.kcfg/systemmonitor.kcfg
+share/kconf_update/plasma-systemmonitor-replace-vmpss.py
+share/kconf_update/plasma-systemmonitor.upd
 share/kglobalaccel/org.kde.plasma-systemmonitor.desktop
 share/knsrcfiles/plasma-systemmonitor.knsrc
 share/ksysguard/sensorfaces/org.kde.ksysguard.applicationstable/contents/config/main.xml
@@ -112,6 +114,9 @@ share/locale/gl/LC_MESSAGES/plasma-systemmonitor.mo
 share/locale/he/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.applicationstable.mo
 share/locale/he/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.processtable.mo
 share/locale/he/LC_MESSAGES/plasma-systemmonitor.mo
+share/locale/hi/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.applicationstable.mo
+share/locale/hi/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.processtable.mo
+share/locale/hi/LC_MESSAGES/plasma-systemmonitor.mo
 share/locale/hu/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.applicationstable.mo
 share/locale/hu/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.processtable.mo
 share/locale/hu/LC_MESSAGES/plasma-systemmonitor.mo

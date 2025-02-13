@@ -7,7 +7,6 @@ lib/libkactivitymanagerd_plugin.so
 %%QT_PLUGINDIR%%/kactivitymanagerd1/org.kde.ActivityManager.RecentlyUsedEventSpy.so
 %%QT_PLUGINDIR%%/kactivitymanagerd1/org.kde.ActivityManager.ResourceScoring.so
 %%QT_PLUGINDIR%%/kactivitymanagerd1/org.kde.ActivityManager.RunApplication.so
-%%QT_PLUGINDIR%%/kactivitymanagerd1/org.kde.ActivityManager.VirtualDesktopSwitch.so
 @comment lib/systemd/user/plasma-kactivitymanagerd.service
 share/dbus-1/services/org.kde.ActivityManager.service
 share/krunner/dbusplugins/plasma-runnners-activities.desktop

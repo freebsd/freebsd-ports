@@ -5,8 +5,8 @@ lib/liboxygenstyle6.so.%%KDE_PLASMA_VERSION%%
 lib/liboxygenstyleconfig6.so.6
 lib/liboxygenstyleconfig6.so.%%KDE_PLASMA_VERSION%%
 %%QT_PLUGINDIR%%/kstyle_config/kstyle_oxygen_config.so
-%%QT_PLUGINDIR%%/org.kde.kdecoration2.kcm/kcm_oxygendecoration.so
-%%QT_PLUGINDIR%%/org.kde.kdecoration2/org.kde.oxygen.so
+%%QT_PLUGINDIR%%/org.kde.kdecoration3.kcm/kcm_oxygendecoration.so
+%%QT_PLUGINDIR%%/org.kde.kdecoration3/org.kde.oxygen.so
 %%QT_PLUGINDIR%%/styles/oxygen6.so
 share/applications/kcm_oxygendecoration.desktop
 share/color-schemes/Oxygen.colors
@@ -598,6 +598,8 @@ share/locale/he/LC_MESSAGES/liboxygenstyleconfig.mo
 share/locale/he/LC_MESSAGES/oxygen_kdecoration.mo
 share/locale/he/LC_MESSAGES/oxygen_style_config.mo
 share/locale/he/LC_MESSAGES/oxygen_style_demo.mo
+share/locale/hi/LC_MESSAGES/liboxygenstyleconfig.mo
+share/locale/hi/LC_MESSAGES/oxygen_kdecoration.mo
 share/locale/hi/LC_MESSAGES/oxygen_style_config.mo
 share/locale/hi/LC_MESSAGES/oxygen_style_demo.mo
 share/locale/hne/LC_MESSAGES/oxygen_style_config.mo
@@ -712,6 +714,10 @@ share/locale/ru/LC_MESSAGES/liboxygenstyleconfig.mo
 share/locale/ru/LC_MESSAGES/oxygen_kdecoration.mo
 share/locale/ru/LC_MESSAGES/oxygen_style_config.mo
 share/locale/ru/LC_MESSAGES/oxygen_style_demo.mo
+share/locale/sa/LC_MESSAGES/liboxygenstyleconfig.mo
+share/locale/sa/LC_MESSAGES/oxygen_kdecoration.mo
+share/locale/sa/LC_MESSAGES/oxygen_style_config.mo
+share/locale/sa/LC_MESSAGES/oxygen_style_demo.mo
 share/locale/se/LC_MESSAGES/oxygen_kdecoration.mo
 share/locale/se/LC_MESSAGES/oxygen_style_config.mo
 share/locale/se/LC_MESSAGES/oxygen_style_demo.mo

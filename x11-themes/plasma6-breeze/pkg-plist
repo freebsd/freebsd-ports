@@ -1,9 +1,10 @@
 bin/breeze-settings6
+bin/kcursorgen
 lib/cmake/Breeze/BreezeConfig.cmake
 lib/cmake/Breeze/BreezeConfigVersion.cmake
 %%QT_PLUGINDIR%%/kstyle_config/breezestyleconfig.so
-%%QT_PLUGINDIR%%/org.kde.kdecoration2.kcm/kcm_breezedecoration.so
-%%QT_PLUGINDIR%%/org.kde.kdecoration2/org.kde.breeze.so
+%%QT_PLUGINDIR%%/org.kde.kdecoration3.kcm/kcm_breezedecoration.so
+%%QT_PLUGINDIR%%/org.kde.kdecoration3/org.kde.breeze.so
 %%QT_PLUGINDIR%%/styles/breeze6.so
 share/QtCurve/Breeze.qtcurve
 share/applications/breezestyleconfig.desktop
@@ -741,6 +742,8 @@ share/locale/ro/LC_MESSAGES/breeze_kwin_deco.mo
 share/locale/ro/LC_MESSAGES/breeze_style_config.mo
 share/locale/ru/LC_MESSAGES/breeze_kwin_deco.mo
 share/locale/ru/LC_MESSAGES/breeze_style_config.mo
+share/locale/sa/LC_MESSAGES/breeze_kwin_deco.mo
+share/locale/sa/LC_MESSAGES/breeze_style_config.mo
 share/locale/se/LC_MESSAGES/breeze_kwin_deco.mo
 share/locale/sk/LC_MESSAGES/breeze_kwin_deco.mo
 share/locale/sk/LC_MESSAGES/breeze_style_config.mo

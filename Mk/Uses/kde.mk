@@ -95,7 +95,7 @@ KDE_PLASMA5_VERSION?=		5.27.12
 KDE_PLASMA5_BRANCH?=		stable
 
 # Current KDE Plasma desktop.
-KDE_PLASMA6_VERSION?=		6.2.5
+KDE_PLASMA6_VERSION?=		6.3.0
 KDE_PLASMA6_BRANCH?=		stable
 
 # Legacy KDE frameworks (Qt5 based).
@@ -665,7 +665,7 @@ kde-breeze-gtk_PORT=		x11-themes/plasma${_KDE_VERSION}-breeze-gtk
 kde-breeze-gtk_PATH=		${KDE_PREFIX}/share/themes/Breeze/gtk-2.0/gtkrc
 
 kde-decoration_PORT=		x11-wm/plasma${_KDE_VERSION}-kdecoration
-kde-decoration_LIB=		libkdecorations2.so
+kde-decoration_LIB=		libkdecorations3.so
 
 kde-discover_PORT=		sysutils/plasma${_KDE_VERSION}-discover
 kde-discover_PATH=		${KDE_PREFIX}/bin/plasma-discover

@@ -1,11 +1,12 @@
 bin/kinfocenter
-etc/xdg/menus/kinfocenter.menu
 lib/libKInfoCenterInternal.so
 lib/libexec/kf6/kauth/kinfocenter-dmidecode-helper
+lib/libexec/kinfocenter-opengl-helper
 %%QT_PLUGINDIR%%/plasma/kcms/kcm_about-distro.so
 %%QT_PLUGINDIR%%/plasma/kcms/kinfocenter/kcm_audio_information.so
 %%QT_PLUGINDIR%%/plasma/kcms/kinfocenter/kcm_block_devices.so
 %%QT_PLUGINDIR%%/plasma/kcms/kinfocenter/kcm_cpu.so
+%%QT_PLUGINDIR%%/plasma/kcms/kinfocenter/kcm_edid.so
 %%QT_PLUGINDIR%%/plasma/kcms/kinfocenter/kcm_egl.so
 %%QT_PLUGINDIR%%/plasma/kcms/kinfocenter/kcm_firmware_security.so
 %%QT_PLUGINDIR%%/plasma/kcms/kinfocenter/kcm_glx.so
@@ -16,6 +17,7 @@ lib/libexec/kf6/kauth/kinfocenter-dmidecode-helper
 %%QT_PLUGINDIR%%/plasma/kcms/kinfocenter/kcm_opencl.so
 %%QT_PLUGINDIR%%/plasma/kcms/kinfocenter/kcm_pci.so
 %%QT_PLUGINDIR%%/plasma/kcms/kinfocenter/kcm_samba.so
+%%QT_PLUGINDIR%%/plasma/kcms/kinfocenter/kcm_usb.so
 %%QT_PLUGINDIR%%/plasma/kcms/kinfocenter/kcm_vulkan.so
 %%QT_PLUGINDIR%%/plasma/kcms/kinfocenter/kcm_wayland.so
 %%QT_PLUGINDIR%%/plasma/kcms/kinfocenter/kcm_xserver.so
@@ -25,7 +27,6 @@ share/applications/kcm_about-distro.desktop
 share/applications/org.kde.kinfocenter.desktop
 share/dbus-1/system-services/org.kde.kinfocenter.dmidecode.service
 share/dbus-1/system.d/org.kde.kinfocenter.dmidecode.conf
-share/desktop-directories/kinfocenter.directory
 share/doc/HTML/ca/kinfocenter/index.cache.bz2
 share/doc/HTML/ca/kinfocenter/index.docbook
 share/doc/HTML/ca/kinfocenter/kinfocenter.png
@@ -68,6 +69,7 @@ share/doc/HTML/uk/kinfocenter/kinfocenter.png
 %%DATADIR%%/categories/graphicalinfocategory.desktop
 %%DATADIR%%/categories/lostfoundcategory.desktop
 %%DATADIR%%/categories/networkinfocategory.desktop
+%%DATADIR%%/edid/edid.sh
 %%DATADIR%%/firmware_security/fwupdmgr.sh
 share/locale/af/LC_MESSAGES/kcm_samba.mo
 share/locale/af/LC_MESSAGES/kcmusb.mo
@@ -185,8 +187,11 @@ share/locale/he/LC_MESSAGES/kcm_energyinfo.mo
 share/locale/he/LC_MESSAGES/kcm_samba.mo
 share/locale/he/LC_MESSAGES/kcmusb.mo
 share/locale/he/LC_MESSAGES/kinfocenter.mo
+share/locale/hi/LC_MESSAGES/kcm_about-distro.mo
+share/locale/hi/LC_MESSAGES/kcm_energyinfo.mo
 share/locale/hi/LC_MESSAGES/kcm_samba.mo
 share/locale/hi/LC_MESSAGES/kcmusb.mo
+share/locale/hi/LC_MESSAGES/kinfocenter.mo
 share/locale/hne/LC_MESSAGES/kcm_samba.mo
 share/locale/hne/LC_MESSAGES/kcmusb.mo
 share/locale/hr/LC_MESSAGES/kcm_samba.mo
@@ -242,8 +247,11 @@ share/locale/lt/LC_MESSAGES/kcm_energyinfo.mo
 share/locale/lt/LC_MESSAGES/kcm_samba.mo
 share/locale/lt/LC_MESSAGES/kcmusb.mo
 share/locale/lt/LC_MESSAGES/kinfocenter.mo
+share/locale/lv/LC_MESSAGES/kcm_about-distro.mo
+share/locale/lv/LC_MESSAGES/kcm_energyinfo.mo
 share/locale/lv/LC_MESSAGES/kcm_samba.mo
 share/locale/lv/LC_MESSAGES/kcmusb.mo
+share/locale/lv/LC_MESSAGES/kinfocenter.mo
 share/locale/mai/LC_MESSAGES/kcm_samba.mo
 share/locale/mai/LC_MESSAGES/kcmusb.mo
 share/locale/mk/LC_MESSAGES/kcm_samba.mo
@@ -307,6 +315,11 @@ share/locale/ru/LC_MESSAGES/kcm_energyinfo.mo
 share/locale/ru/LC_MESSAGES/kcm_samba.mo
 share/locale/ru/LC_MESSAGES/kcmusb.mo
 share/locale/ru/LC_MESSAGES/kinfocenter.mo
+share/locale/sa/LC_MESSAGES/kcm_about-distro.mo
+share/locale/sa/LC_MESSAGES/kcm_energyinfo.mo
+share/locale/sa/LC_MESSAGES/kcm_samba.mo
+share/locale/sa/LC_MESSAGES/kcmusb.mo
+share/locale/sa/LC_MESSAGES/kinfocenter.mo
 share/locale/se/LC_MESSAGES/kcm_samba.mo
 share/locale/se/LC_MESSAGES/kcmusb.mo
 share/locale/si/LC_MESSAGES/kcm_samba.mo
