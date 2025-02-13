@@ -1,6 +1,6 @@
 --- configure.ac.orig	2024-01-15 13:41:34 UTC
 +++ configure.ac
-@@ -113,7 +113,8 @@ AC_MSG_RESULT([$ac_cv_no_overload_virt])
+@@ -113,7 +113,8 @@ if [[ "x$ac_cv_no_overload_virt" = "xyes" ]]; then
  fi
  AC_MSG_RESULT([$ac_cv_no_overload_virt])
  
@@ -10,3 +10,25 @@
  ld_unresolved_symbols=no
  AC_MSG_CHECKING([if ld supports reporting unresolved symbols])
  SAVE_CFLAGS="$CFLAGS"
+@@ -1204,7 +1205,7 @@ AC_SUBST(SPEEX_LIB)
+ 
+ HAVE_AMRNB=no
+ AMRNB_INC=""
+-AMRNB_LIB="-lamrnb"
++AMRNB_LIB="-lopencore-amrnb"
+ AC_ARG_WITH(amrnb,AC_HELP_STRING([--with-amrnb=DIR],[use AMR-NB if available (default)]),[ac_cv_use_amrnb=$withval],[ac_cv_use_amrnb=/usr])
+ if [[ "x$ac_cv_use_amrnb" = "xstatic" ]]; then
+     ac_cv_use_amrnb=/usr
+@@ -1213,9 +1214,9 @@ fi
+ if [[ "x$ac_cv_use_amrnb" != "xno" ]]; then
+ AC_MSG_CHECKING([for AMR-NB in $ac_cv_use_amrnb])
+ local_lib="$ARCHLIB"
+-amrinc="$ac_cv_use_amrnb/include/amrnb"
+-test -f "$ac_cv_use_amrnb/$local_lib/libamrnb.so" || local_lib="lib"
+-if [[ -f "$ac_cv_use_amrnb/$local_lib/libamrnb.so" -a -f "$amrinc/interf_rom.h" ]]; then
++amrinc="$ac_cv_use_amrnb/include/opencore-amrnb"
++test -f "$ac_cv_use_amrnb/$local_lib/libopencore-amrnb.so" || local_lib="lib"
++if [[ -f "$ac_cv_use_amrnb/$local_lib/libopencore-amrnb.so" -a -f "$amrinc/interf_enc.h" ]]; then
+     HAVE_AMRNB=yes
+     AMRNB_LIB="-L$ac_cv_use_amrnb/$local_lib $AMRNB_LIB"
+     AMRNB_INC="-I$amrinc"
