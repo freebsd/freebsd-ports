@@ -4147,3 +4147,4 @@ devel/py-yandex-money-sdk||2025-02-11|Has expired: Dead project. Yandex.Money is
 devel/astah-community||2025-02-11|Has expired: Upstream no longer provides community edition
 audio/pulseaudio-qt@qt5||2025-02-14|Qt5 support was removed upstream
 audio/pulseaudio-qt@qt6|audio/pulseaudio-qt|2025-02-14|Unflavorize; only Qt6 is supported
+lang/dotnet-runtime|lang/dotnet-host|2025-02-15|Rename to match Microsoft recommendations
