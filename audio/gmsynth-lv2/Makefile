@@ -1,12 +1,13 @@
 PORTNAME=	gmsynth
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.6.0
+DISTVERSION=	0.6.2
 CATEGORIES=	audio
 PKGNAMESUFFIX=	-lv2
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	General MIDI LV2 Synth
-WWW=		https://x42-plugins.com/x42/x42-gmsynth
+WWW=		https://x42-plugins.com/x42/x42-gmsynth \
+		https://github.com/x42/gmsynth.lv2
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
