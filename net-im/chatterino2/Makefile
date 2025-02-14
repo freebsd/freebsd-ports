@@ -10,6 +10,8 @@ WWW=		https://chatterino.com/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN=		fails to build with Boost>=1.87
+
 BUILD_DEPENDS=	${LOCALBASE}/include/magic_enum/magic_enum.hpp:devel/magic_enum \
 		miniaudio>0:audio/miniaudio \
 		rapidjson>0:devel/rapidjson \
