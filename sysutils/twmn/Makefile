@@ -10,6 +10,8 @@ WWW=		https://github.com/sboli/twmn
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN=		fails to build with Boost>=1.87
+
 LIB_DEPENDS=	libboost_system.so:devel/boost-libs
 
 USES=		compiler:c++11-lang qmake qt:5
