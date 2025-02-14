@@ -1,6 +1,7 @@
 PORTNAME=	pcl
 DISTVERSIONPREFIX=	pcl-
 DISTVERSION=	1.14.1-132
+PORTREVISION=	1
 DISTVERSIONSUFFIX=	-g1590ba5f6
 CATEGORIES=	graphics math
 #MASTER_SITES=	https://github.com/PointCloudLibrary/${PORTNAME}/releases/download/${PORTNAME}-${DISTVERSION}/

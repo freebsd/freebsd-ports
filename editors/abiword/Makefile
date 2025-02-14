@@ -1,6 +1,6 @@
 PORTNAME=	abiword
 PORTVERSION=	3.0.5
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	editors
 MASTER_SITES=	https://dev.alpinelinux.org/archive/${PORTNAME}/
 DIST_SUBDIR=	AbiWord

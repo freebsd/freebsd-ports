@@ -1,6 +1,6 @@
 PORTNAME=	ossia-score # uses -mcx16
 DISTVERSION=	3.3.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	multimedia
 MASTER_SITES=	https://github.com/ossia/score/releases/download/v${DISTVERSION}/
 DISTFILES=	ossia.score-${DISTVERSION}-src${EXTRACT_SUFX}
