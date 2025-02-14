@@ -24,6 +24,7 @@ LICENSE_NAME=	Multiple
 LICENSE_TEXT=	This is a collection of many independent packages and does not have a single license
 LICENSE_PERMS=	dist-mirror no-dist-sell pkg-mirror no-pkg-sell auto-accept
 
+BROKEN=		Fails to build with ICU 76.1
 NOT_FOR_ARCHS=	aarch64 armv7
 NOT_FOR_ARCHS_REASON=	Programs/TeXAndFriends/Knuth/web/tangle.p:1: parse error before `û'
 
