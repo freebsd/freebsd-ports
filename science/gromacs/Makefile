@@ -1,5 +1,6 @@
 PORTNAME=	gromacs
 DISTVERSION=	2025.0
+PORTREVISION=	1
 CATEGORIES=	science
 MASTER_SITES=	https://ftp.gromacs.org/pub/gromacs/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} # only for googletest
@@ -20,9 +21,8 @@ LIB_DEPENDS=	liblmfit.so:math/lmfit \
 		libmuparser.so:math/muparser
 		# TODO tng
 
-USES=		cmake compiler:c++17-lang gnome pathfix perl5 pkgconfig \
+USES=		cmake compiler:c++17-lang pathfix perl5 pkgconfig \
 		python:build shebangfix
-USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	nodefault
