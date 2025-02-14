@@ -1,5 +1,6 @@
 PORTNAME=	cardano-db-sync
 PORTVERSION=	13.6.0.1
+PORTREVISION=	1
 CATEGORIES=	net-p2p databases
 MASTER_SITES=	https://chap.intersectmbo.org/package/:chap
 

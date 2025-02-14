@@ -1,5 +1,6 @@
 PORTNAME=	tin
 DISTVERSION=	2.6.4
+PORTREVISION=	1
 CATEGORIES=	news
 MASTER_SITES=	https://ftp.icm.edu.pl/pub/unix/news/tin/v${DISTVERSION:R}/ \
 		ftp://ftp.tin.org/pub/news/clients/tin/v${DISTVERSION:R}/

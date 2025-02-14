@@ -1,5 +1,6 @@
 PORTNAME=	libkiwix
 DISTVERSION=	14.0.0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://download.kiwix.org/release/libkiwix/
 

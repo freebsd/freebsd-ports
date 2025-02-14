@@ -1,3 +1,4 @@
+PORTREVISION=	1
 PKGNAMESUFFIX=	-sqlite
 MASTERDIR=	${.CURDIR}/../exim
 

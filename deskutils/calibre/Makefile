@@ -1,5 +1,6 @@
 PORTNAME=	calibre
 PORTVERSION=	7.26.0
+PORTREVISION=	1
 CATEGORIES=	deskutils python
 MASTER_SITES=	https://download.calibre-ebook.com/${PORTVERSION}/:DEFAULT \
 		https://raw.githubusercontent.com/rhasspy/piper/${PIPER_VOICES_HASH}/:piper

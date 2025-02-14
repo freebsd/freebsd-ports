@@ -1,6 +1,7 @@
 PORTNAME=	darling-dmg
 DISTVERSIONPREFIX=v
 DISTVERSION=	1.0.4
+PORTREVISION=	1
 CATEGORIES=	filesystems sysutils
 
 MAINTAINER=	freebsd@sysctl.cz
