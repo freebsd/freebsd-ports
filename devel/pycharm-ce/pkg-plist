@@ -20,7 +20,7 @@ share/applications/pycharm-ce.desktop
 %%DATADIR%%/lib/app-client.jar
 %%DATADIR%%/lib/app.jar
 %%DATADIR%%/lib/bouncy-castle.jar
-%%DATADIR%%/lib/build-marker-PC-243.23654.177
+%%DATADIR%%/lib/build-marker-PC-243.24978.54
 %%DATADIR%%/lib/cds/classesLogAgent.jar
 %%DATADIR%%/lib/external-system-rt.jar
 %%DATADIR%%/lib/externalProcess-rt.jar
@@ -62,6 +62,7 @@ share/applications/pycharm-ce.desktop
 %%DATADIR%%/lib/modules/intellij.platform.navbar.monolith.jar
 %%DATADIR%%/lib/modules/intellij.platform.progress.backend.jar
 %%DATADIR%%/lib/modules/intellij.platform.project.backend.jar
+%%DATADIR%%/lib/modules/intellij.platform.registry.cloud.jar
 %%DATADIR%%/lib/modules/intellij.platform.rpc.backend.jar
 %%DATADIR%%/lib/modules/intellij.platform.settings.local.jar
 %%DATADIR%%/lib/modules/intellij.platform.smRunner.vcs.jar
@@ -69,6 +70,7 @@ share/applications/pycharm-ce.desktop
 %%DATADIR%%/lib/modules/intellij.platform.vcs.dvcs.impl.jar
 %%DATADIR%%/lib/modules/intellij.platform.vcs.impl.jar
 %%DATADIR%%/lib/modules/intellij.platform.vcs.log.impl.jar
+%%DATADIR%%/lib/modules/intellij.settingsSync.core.jar
 %%DATADIR%%/lib/modules/intellij.smart.update.jar
 %%DATADIR%%/lib/native/linux-x86_64/libsqliteij.so
 %%DATADIR%%/lib/nio-fs.jar
@@ -358,8 +360,8 @@ share/applications/pycharm-ce.desktop
 %%DATADIR%%/plugins/properties/lib/properties.jar
 %%DATADIR%%/plugins/pycharm-community-customization/lib/pycharm-community-customization.jar
 %%DATADIR%%/plugins/pycharm-community-sharedIndexes-bundled/lib/pycharm-community-sharedIndexes-bundled.jar
-%%DATADIR%%/plugins/pycharm-community-sharedIndexes-bundled/python-sdk/python-sdk-a5bc9544c897-aa17d162503b.ijx
-%%DATADIR%%/plugins/pycharm-community-sharedIndexes-bundled/python-sdk/python-sdk-a5bc9544c897-aa17d162503b.txt
+%%DATADIR%%/plugins/pycharm-community-sharedIndexes-bundled/python-sdk/python-sdk-fc1d50d2d915-aa17d162503b.ijx
+%%DATADIR%%/plugins/pycharm-community-sharedIndexes-bundled/python-sdk/python-sdk-fc1d50d2d915-aa17d162503b.txt
 %%DATADIR%%/plugins/python-ce/helpers/.gitignore
 %%DATADIR%%/plugins/python-ce/helpers/MathJax/MathJax.js
 %%DATADIR%%/plugins/python-ce/helpers/MathJax/config/TeX-AMS_HTML-full.js
