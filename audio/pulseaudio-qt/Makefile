@@ -1,28 +1,25 @@
 PORTNAME=	pulseaudio-qt
-DISTVERSION=	1.6.0
+DISTVERSION=	1.7.0
 MASTER_SITES=	KDE/stable/${PORTNAME}
 CATEGORIES=	audio kde
-PKGNAMESUFFIX=	${FLAVOR:S/qt//}
+PKGNAMESUFFIX=	6
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Pulseaudio bindings for Qt
-WWW=		https://github.com/KDE/pulseaudio-qt
+WWW=		https://invent.kde.org/libraries/pulseaudio-qt
 
-FLAVORS=	qt5 qt6
-FLAVOR?=	qt5
+LICENSE=	LGPL21 LGPL3
+LICENSE_COMB=	dual
 
-LIB_DEPENDS=	libcanberra.so:audio/libcanberra \
-		libpulse.so:audio/pulseaudio
+LIB_DEPENDS=	libpulse.so:audio/pulseaudio
 
-USES=		cmake compiler:c++11-lib gettext kde:${FLAVOR:S/qt//} \
-		pkgconfig qt:${FLAVOR:S/qt//} shebangfix tar:xz
+USES=		cmake compiler:c++20-lang gettext gl gnome kde:6 \
+		pkgconfig qt:6 shebangfix tar:xz
+USE_GL=		gl opengl # GLX
+USE_GNOME=	glib20
 USE_KDE=	ecm:build
-_USE_QT_qt5=	core dbus gui \
-		buildtools:build qmake:build
-_USE_QT_qt6=	base
-USE_QT=		${_USE_QT_${FLAVOR}}
-CMAKE_ARGS=	-DQT_MAJOR_VERSION=${FLAVOR:S/qt//}
+USE_QT=		base
 
-PLIST_SUB=	QT_VER=${FLAVOR:S/qt//}
+PLIST_SUB=	SOVERSION=${DISTVERSION}
 
 .include <bsd.port.mk>

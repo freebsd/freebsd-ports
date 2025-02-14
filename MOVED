@@ -4145,3 +4145,5 @@ devel/lattice-ice40-examples-hx8k||2025-02-08|Listed as BROKEN for months in tre
 devel/lattice-ice40-tools||2025-02-08|Listed as BROKEN for months in tree and unmaintained
 devel/py-yandex-money-sdk||2025-02-11|Has expired: Dead project. Yandex.Money is no more
 devel/astah-community||2025-02-11|Has expired: Upstream no longer provides community edition
+audio/pulseaudio-qt@qt5||2025-02-14|Qt5 support was removed upstream
+audio/pulseaudio-qt@qt6|audio/pulseaudio-qt|2025-02-14|Unflavorize; only Qt6 is supported
