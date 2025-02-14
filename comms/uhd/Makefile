@@ -16,6 +16,8 @@ WWW=		https://www.ettus.com/sdr-software/uhd-usrp-hardware-driver/
 # is understood and if appropriate, we can add that license here.
 LICENSE=	GPLv3
 
+BROKEN=		fails to build with Boost>=1.87
+
 LIB_DEPENDS=	${PY_BOOST} \
 		libboost_system.so:devel/boost-libs
 BUILD_DEPENDS=	orcc:devel/orc \
