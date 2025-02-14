@@ -16,6 +16,8 @@ WWW=		http://www.ti.com/tool/mspds
 
 LICENSE=	BSD3CLAUSE
 
+BROKEN=		fails to build with Boost>=1.87
+
 LIB_DEPENDS=	libboost_filesystem.so:devel/boost-libs \
 		libhidapi.so:comms/hidapi
 
