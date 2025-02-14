@@ -11,6 +11,8 @@ WWW=		https://www.freeorion.org/
 LICENSE=	GPLv2 CC-BY-SA-3.0
 LICENSE_COMB=	multi
 
+BROKEN=		fails to build with Boost>=1.87
+
 LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
 		${PY_BOOST}
 
