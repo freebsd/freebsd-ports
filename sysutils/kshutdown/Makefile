@@ -1,6 +1,5 @@
 PORTNAME=	kshutdown
-DISTVERSION=	5.2
-PORTREVISION=	2
+DISTVERSION=	5.92-beta
 CATEGORIES=	sysutils kde
 MASTER_SITES=	SF/${PORTNAME}/KShutdown/${DISTVERSION}/
 DISTNAME=	${PORTNAME}-source-${DISTVERSION}
@@ -12,20 +11,16 @@ WWW=		http://kshutdown.sourceforge.net/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		alias cmake compiler:c++0x gettext kde:5 qt:5 zip
-USE_KDE=	auth codecs config configwidgets coreaddons crash dbusaddons \
+USES=		cmake compiler:c++17-lang gettext-tools gl kde:6 qt:6 zip
+USE_GL=		gl opengl # GLX
+USE_KDE=	colorscheme config configwidgets coreaddons crash dbusaddons \
 		globalaccel i18n idletime notifications notifyconfig \
-		widgetsaddons xmlgui \
+		statusnotifieritem widgetsaddons xmlgui \
 		ecm:build
-USE_QT=		core dbus gui widgets xml \
-		buildtools:build qmake:build
+USE_QT=		base
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
-
-CMAKE_ON=	KS_KF5
 CMAKE_OFF=	KS_PURE_QT
 
-# Uses c++14 thousands literall
-USE_CXXSTD=	c++14
+WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
 
 .include <bsd.port.mk>
