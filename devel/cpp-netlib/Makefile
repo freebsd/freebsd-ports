@@ -12,6 +12,8 @@ WWW=		https://github.com/cpp-netlib/cpp-netlib/
 LICENSE=		BSL
 LICENSE_FILE=		${WRKSRC}/LICENSE_1_0.txt
 
+BROKEN=		fails to build with Boost>=1.87
+
 LIB_DEPENDS=		libboost_system.so:devel/boost-libs
 BUILD_DEPENDS=		boost-libs>0:devel/boost-libs \
 			asio>0:net/asio
