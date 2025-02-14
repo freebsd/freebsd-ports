@@ -16,6 +16,8 @@ WWW=		https://www.pokerth.net/
 LICENSE=	AGPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		fails to build with Boost>=1.87
+
 LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
 		libmikmod.so:audio/libmikmod \
 		libgnutls.so:security/gnutls \
