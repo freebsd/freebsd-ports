@@ -12,6 +12,7 @@ WWW=		https://www.paraview.org/
 # See https://www.paraview.org/license/
 LICENSE=	BSD3CLAUSE
 
+BROKEN=		fails to build with Boost>=1.87
 BROKEN_i386=	no matching member function for call to 'getArrayType'
 
 BUILD_DEPENDS=	${PYNUMPY}	\
