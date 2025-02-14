@@ -1,6 +1,5 @@
 PORTNAME=	luakit
-DISTVERSION=	2.3.6
-PORTREVISION=	3
+DISTVERSION=	2.4.0
 PORTEPOCH=	1
 CATEGORIES=	www
 
@@ -43,9 +42,6 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|luakit/doc|doc/luakit| ; \
 		s|/etc/xdg|${PREFIX}/etc/xdg| ; s|-ggdb||' \
 		${WRKSRC}/config.mk
-	@${REINPLACE_CMD} -e 's|expr substr|echo| ; \
-		s/ARCHIVE 1 /ARCHIVE | cut -b1-/' \
-		${WRKSRC}/build-utils/getversion.sh
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/luakit \
