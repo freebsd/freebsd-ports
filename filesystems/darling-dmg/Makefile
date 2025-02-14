@@ -11,6 +11,8 @@ WWW=		https://github.com/darlinghq/darling-dmg
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN=		Fails to build with ICU 76.1
+
 BUILD_DEPENDS=	libxml2>0:textproc/libxml2
 LIB_DEPENDS=	libicuuc.so:devel/icu
 
