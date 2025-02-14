@@ -11,6 +11,8 @@ WWW=		https://github.com/leptos-rs/cargo-leptos
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_armv7=	compilation fails: rustc-LLVM ERROR: out of memory
+
 USES=		cargo
 
 USE_GITHUB=	yes
