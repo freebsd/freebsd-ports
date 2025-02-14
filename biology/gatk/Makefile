@@ -6,7 +6,8 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Genome Analysis Toolkit
-WWW=		https://gatk.broadinstitute.org/hc/en-us
+WWW=		https://gatk.broadinstitute.org/hc/en-us \
+		https://github.com/broadinstitute/gatk
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.TXT
