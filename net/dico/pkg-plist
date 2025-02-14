@@ -1,7 +1,9 @@
 bin/dico
+%%TK%%bin/gcider
 etc/dicod.conf.sample
 include/dico/argcv.h
 include/dico/assoc.h
+include/dico/conv.h
 include/dico/diag.h
 include/dico/dico.h
 include/dico/filter.h
@@ -23,6 +25,8 @@ lib/dico/echo.a
 lib/dico/echo.so
 lib/dico/gcide.a
 lib/dico/gcide.so
+lib/dico/greek_kbd.a
+lib/dico/greek_kbd.so
 %%GUILE%%lib/dico/guile.a
 %%GUILE%%lib/dico/guile.so
 %%LDAP%%lib/dico/ldap.a
@@ -62,6 +66,7 @@ sbin/dicod
 %%NLS%%share/locale/fr/LC_MESSAGES/dico.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/dico.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/dico.mo
+%%NLS%%share/locale/ro/LC_MESSAGES/dico.mo
 %%NLS%%share/locale/sr/LC_MESSAGES/dico.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/dico.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/dico.mo
