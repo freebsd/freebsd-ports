@@ -12,6 +12,9 @@ WWW=		https://www.python.org/
 
 LICENSE=	PSFL
 
+DEPRECATED=	Upgrade to a newer Python version. 3.9 is in maintenance status and gets security fixes only. End-of-Life: 2025-10. See https://devguide.python.org/versions/
+EXPIRATION_DATE=2025-10-31
+
 LIB_DEPENDS=	libffi.so:devel/libffi
 
 USES=		compiler:c11 cpe ncurses pathfix pkgconfig \
