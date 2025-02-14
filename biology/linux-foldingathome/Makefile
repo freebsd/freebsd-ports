@@ -1,10 +1,10 @@
 PORTNAME=	foldingathome
-DISTVERSION=	7.6.21
+DISTVERSION=	8.4.9
 CATEGORIES=	biology linux
-MASTER_SITES=	https://download.foldingathome.org/releases/v7/public/fahclient/centos-6.7-64bit/release/
+MASTER_SITES=	https://download.foldingathome.org/releases/public/fah-client/debian-10-64bit/release/
 PKGNAMEPREFIX=	linux-
-DISTNAME=	fahclient-${DISTVERSION}-1
-EXTRACT_SUFX=	.x86_64.rpm
+DISTNAME=	fah-client_${DISTVERSION}-64bit-release
+EXTRACT_SUFX=	.tar.bz2
 
 MAINTAINER=	0mp@FreeBSD.org
 COMMENT=	Folding@home Client
@@ -13,15 +13,15 @@ WWW=		https://foldingathome.org/
 # Distribution without permission is prohibited
 LICENSE=	FAHSL
 LICENSE_NAME=	Folding@home Software License
-LICENSE_FILE=	${WRKSRC}/usr/share/doc/fahclient/copyright
+LICENSE_FILE=	${WRKSRC}/${DISTNAME}/LICENSE
 LICENSE_PERMS=	no-dist-mirror no-dist-sell no-pkg-mirror no-pkg-sell \
 		auto-accept
 
 ONLY_FOR_ARCHS=	amd64
 ONLY_FOR_ARCHS_REASON=	has not been ported to this architecture
 
-USES=		dos2unix linux
-DOS2UNIX_FILES=	usr/share/doc/fahclient/*
+USES=		linux:rl9
+USE_LINUX=	systemd-libs
 USE_RC_SUBR=	fahclient
 
 ETCDIR=		${PREFIX}/etc/fahclient
@@ -45,19 +45,18 @@ OPTIONS_DEFINE=	DOCS
 
 _FAHCLIENT_CONFIG_XML=	${ETCDIR}/config.xml
 _FAHCLIENT_WORK_DIR=	/var/db/fahclient
-_FAHCLIENT_PROGRAM=	${PREFIX}/bin/FAHClient
+_FAHCLIENT_PROGRAM=	${PREFIX}/bin/fah-client
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/usr/bin/FAHClient ${STAGEDIR}${PREFIX}/bin/
-	${INSTALL_PROGRAM} ${WRKSRC}/usr/bin/FAHCoreWrapper ${STAGEDIR}${PREFIX}/bin/
+	${INSTALL_PROGRAM} ${WRKSRC}/${DISTNAME}/fah-client ${STAGEDIR}${PREFIX}/bin/
 	@${MKDIR} ${STAGEDIR}${ETCDIR}
-	${INSTALL_DATA} ${WRKSRC}/usr/share/doc/fahclient/sample-config.xml \
+	${INSTALL_DATA} ${FILESDIR}/config.xml.sample \
 		${STAGEDIR}${_FAHCLIENT_CONFIG_XML}.sample
 	@${MKDIR} ${STAGEDIR}${_FAHCLIENT_WORK_DIR}
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_MAN} ${PORTDOCS:S|^|${WRKSRC}/usr/share/doc/fahclient/|} \
+	${INSTALL_MAN} ${PORTDOCS:S|^|${WRKSRC}/${DISTNAME}/|} \
 		${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
