@@ -13,6 +13,8 @@ WWW=		https://appleseedhq.net/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
+BROKEN=		fails to build with Boost>=1.87
+
 LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
 		liblz4.so:archivers/liblz4 \
 		libpng.so:graphics/png \
