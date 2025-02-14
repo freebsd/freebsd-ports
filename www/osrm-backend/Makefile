@@ -14,6 +14,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.TXT
 NOT_FOR_ARCHS=	armv7 i386 powerpc
 NOT_FOR_ARCHS_REASON=	Building on a 32 bit system is not supported
 
+BROKEN=		fails to build with Boost>=1.87
+
 BUILD_DEPENDS=	${LOCALBASE}/include/sol:devel/sol2
 LIB_DEPENDS=	libboost_date_time.so:devel/boost-libs \
 		libboost_iostreams.so:devel/boost-libs \
