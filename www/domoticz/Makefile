@@ -9,6 +9,8 @@ WWW=		https://www.domoticz.com
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/License.txt
 
+BROKEN=		fails to build with Boost>=1.87
+
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libboost_system.so:devel/boost-libs \
 		libjsoncpp.so:devel/jsoncpp \
