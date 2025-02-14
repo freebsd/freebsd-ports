@@ -132,6 +132,9 @@ share/man/man1/anki.1.gz
 %%DATADIR%%/_aqt/data/web/js/vendor/mathjax/tex-chtml-full.js
 %%DATADIR%%/_aqt/data/web/js/vendor/plot.js
 %%DATADIR%%/_aqt/data/web/js/webview.js
+%%DATADIR%%/_aqt/data/web/pages/congrats.css
+%%DATADIR%%/_aqt/data/web/pages/congrats.html
+%%DATADIR%%/_aqt/data/web/pages/congrats.js
 %%DATADIR%%/_aqt/data/web/pages/editable.css
 %%DATADIR%%/_aqt/data/web/pages/editable.js
 %%DATADIR%%/_aqt/data/web/sveltekit/_app/env.js

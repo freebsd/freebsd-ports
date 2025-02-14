@@ -9,12 +9,12 @@ If this is important to you, please consider supporting Rollup to make a native 
     at Object.<anonymous> (/wrkdirs/usr/ports/games/anki/work/anki-24.06.2/out/node_modules/rollup/dist/native.js:38:8)
     [...]
 
---- package.json.orig	2024-10-26 10:38:05 UTC
+--- package.json.orig	2025-01-26 14:20:58 UTC
 +++ package.json
-@@ -81,6 +81,7 @@
+@@ -80,6 +80,7 @@
      },
      "resolutions": {
-         "canvas": "npm:empty-npm-package",
+         "canvas": "npm:empty-npm-package@1.0.0",
 +        "rollup": "npm:@rollup/wasm-node",
          "cookie": "0.7.0"
      },
