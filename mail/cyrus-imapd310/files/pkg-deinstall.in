@@ -14,16 +14,16 @@ CYRUS_USER=${CYRUS_USER:=%%CYRUS_USER%%}
 modify_cyrus_user() {
 	USER=${CYRUS_USER}
 	PW=/usr/sbin/pw
-	if [ -x /usr/sbin/nologin ]; then
+	if [ -x "${PKG_ROOTDIR}/usr/sbin/nologin" ]; then
 		shell=/usr/sbin/nologin
-	elif [ -x /sbin/nologin ]; then
+	elif [ -x "${PKG_ROOTDIR}/sbin/nologin" ]; then
 		shell=/sbin/nologin
 	else
 		shell=/nonexistent
 	fi
 	uhome=/nonexistent
 
-	if ! ${PW} mod user ${USER} -d "${uhome}" -s "${shell}"; then
+	if ! ${PW} -R "${PKG_ROOTDIR}" mod user ${USER} -d "${uhome}" -s "${shell}"; then
 		echo "*** Failed to update user \`${USER}'."
 	else
 		echo "*** Updated user \`${USER}'."
