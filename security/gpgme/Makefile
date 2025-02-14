@@ -1,5 +1,5 @@
 PORTNAME=	gpgme
-PORTVERSION=	1.24.1
+PORTVERSION=	1.24.2
 PORTREVISION?=	0
 CATEGORIES?=	security
 MASTER_SITES=	GNUPG/gpgme
@@ -99,7 +99,7 @@ DOXYGEN_BUILD_DEPENDS=	doxygen:devel/doxygen \
 .  if ${_GPGME_BINDING} == "python"
 BUILD_DEPENDS+=	swig:devel/swig \
 		${PY_SETUPTOOLS}
-USES+=		python
+USES+=		python:3.9+
 USE_PYTHON=	flavors
 CONFIGURE_ARGS+=--enable-languages="python"
 CONFIGURE_ENV+=	BSD_PYTHON="${PYTHON_CMD}" \
