@@ -1,11 +1,12 @@
 PORTNAME=	v2ray
 DISTVERSIONPREFIX=	v
-DISTVERSION=	5.25.1
+DISTVERSION=	5.28.0
 CATEGORIES=	net
 
 MAINTAINER=	shen.elf@gmail.com
 COMMENT=	Platform for building proxies to bypass network restrictions
-WWW=		https://www.v2fly.org/
+WWW=		https://www.v2fly.org/ \
+		https://github.com/v2fly/v2ray-core/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
