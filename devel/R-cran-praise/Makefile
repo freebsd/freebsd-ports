@@ -4,12 +4,15 @@ PORTREVISION=	5
 CATEGORIES=	devel
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	uzsolt@FreeBSD.org
 COMMENT=	Praise Users
 WWW=		https://cran.r-project.org/web/packages/praise/
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=	cran:auto-plist
+TEST_DEPENDS=	R-cran-testthat>0:devel/R-cran-testthat
+
+USES=		cran:auto-plist
 
 .include <bsd.port.mk>
