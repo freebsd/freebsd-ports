@@ -11,6 +11,7 @@ WWW=		https://parthenon-hpc-lab.github.io/parthenon/develop/index.html
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_armv7=	compilation fails, see https://github.com/parthenon-hpc-lab/parthenon/issues/1226
 BROKEN_i386=	compilation fails, see https://github.com/parthenon-hpc-lab/parthenon/issues/1226
 
 RUN_DEPENDS=	bash:shells/bash
