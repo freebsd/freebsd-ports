@@ -10,6 +10,9 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Wnn7 elisp client
 WWW=		https://www.omronsoft.co.jp/SP/pcunix/wnn7/support/wnn7egg_src.html
 
+DEPRECATED=	Upstream disapeared and distfile is no more available
+EXPIRATION_DATE=2025-03-31
+
 EMACSDIR=	${STAGEDIR}${PREFIX}/share/emacs/site-lisp
 ELISPDIR=	${EMACSDIR}/wnn7egg
 MANIFEST=	MANIFEST.wnn7egg
