@@ -1,5 +1,5 @@
 PORTNAME=	focuswriter
-DISTVERSION=	1.8.9
+DISTVERSION=	1.8.10
 CATEGORIES=	editors
 MASTER_SITES=	https://gottcode.org/${PORTNAME}/
 
@@ -14,7 +14,8 @@ LICENSE_FILE_LGPL3+ =	${WRKSRC}/resources/images/icons/oxygen/COPYING
 
 LIB_DEPENDS=	libhunspell-1.7.so:textproc/hunspell
 
-USES=		cmake desktop-file-utils gl iconv pkgconfig qt:6 tar:bz2
+USES=		cmake desktop-file-utils gettext-tools gl iconv pkgconfig qt:6 \
+		tar:bz2
 USE_GL=		opengl
 USE_QT=		base multimedia tools:build
 
