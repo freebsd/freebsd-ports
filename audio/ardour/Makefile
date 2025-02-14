@@ -15,6 +15,8 @@ WWW=		https://ardour.org/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		fails to build with Boost>=1.87
+
 BUILD_DEPENDS=	boost-libs>0:devel/boost-libs \
 		lv2>=1.18.0:audio/lv2 \
 		itstool>2.0.0:textproc/itstool \
