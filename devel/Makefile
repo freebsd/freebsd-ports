@@ -328,6 +328,7 @@
     SUBDIR += boost-docs
     SUBDIR += boost-jam
     SUBDIR += boost-libs
+    SUBDIR += boost-mpi-libs
     SUBDIR += boost-python-libs
     SUBDIR += boost_build
     SUBDIR += bossa

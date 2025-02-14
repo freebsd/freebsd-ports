@@ -7,6 +7,8 @@ ALL_TARGET=	stage
 #USES+=		compiler:c++17-lang
 USE_CXXSTD=	gnu++17
 
+LDFLAGS+=	-Wl,--as-needed
+
 PLIST_SUB+=	BOOST_MAJOR_VER=${BOOST_MAJOR_VER} \
 		BOOST_MINOR_VER=${BOOST_MINOR_VER} \
 		BOOST_SHARED_LIB_VER=${BOOST_SHARED_LIB_VER}
@@ -21,7 +23,7 @@ MAKE_ARGS=	--layout=system \
 # Our compiler-flags will be added AFTER those set by bjam. We remove
 # the optimization level, because Boost sets it itself (to -O3 in case
 # of gcc/g++):
-MAKE_ARGS+=	cxxflags="${CXXFLAGS:N-O*}" cflags="${CFLAGS:N-O*}"
+MAKE_ARGS+=	cxxflags="${CXXFLAGS:N-O*}" cflags="${CFLAGS:N-O*}" linkflags="${LDFLAGS}"
 
 MAKE_ARGS+=	--toolset=${CHOSEN_COMPILER_TYPE} \
 		${_MAKE_JOBS}
