@@ -1,3 +1,7 @@
-TIMESTAMP = 1609777483
-SHA256 (luceneplusplus-LucenePlusPlus-rel_3.0.8_GH0.tar.gz) = af5cf59a93cf6dce86828e108e010359517c25ce487152af68520785d183813c
-SIZE (luceneplusplus-LucenePlusPlus-rel_3.0.8_GH0.tar.gz) = 2456644
+TIMESTAMP = 1739488930
+SHA256 (luceneplusplus-LucenePlusPlus-rel_3.0.9_GH0.tar.gz) = 4e69e29d5d79a976498ef71eab70c9c88c7014708be4450a9fda7780fe93584e
+SIZE (luceneplusplus-LucenePlusPlus-rel_3.0.9_GH0.tar.gz) = 2458287
+SHA256 (c18ead2b0c4aa62af01450cb12353a0baa51411f.patch) = 82c530572e64f4043ffdb7dd9a7851773626e503c0c9a1f7ef32eebd7a6abff3
+SIZE (c18ead2b0c4aa62af01450cb12353a0baa51411f.patch) = 2416
+SHA256 (e6a376836e5c891577eae6369263152106b9bc02.patch) = 8dd347a573847c1fa25147a4f23f889ebffb3c184de358f74f90e5f50a542a50
+SIZE (e6a376836e5c891577eae6369263152106b9bc02.patch) = 2902
