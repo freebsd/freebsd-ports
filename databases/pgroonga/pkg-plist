@@ -31,6 +31,7 @@ include/postgresql/server/contrib/pgroonga_check/pgrn-search.h
 include/postgresql/server/contrib/pgroonga_check/pgrn-sequential-search.h
 include/postgresql/server/contrib/pgroonga_check/pgrn-string.h
 include/postgresql/server/contrib/pgroonga_check/pgrn-tokenize.h
+include/postgresql/server/contrib/pgroonga_check/pgrn-trace-log.h
 include/postgresql/server/contrib/pgroonga_check/pgrn-value.h
 include/postgresql/server/contrib/pgroonga_check/pgrn-variables.h
 include/postgresql/server/contrib/pgroonga_check/pgrn-wal.h
@@ -69,6 +70,7 @@ include/postgresql/server/contrib/pgroonga_crash_safer/pgrn-search.h
 include/postgresql/server/contrib/pgroonga_crash_safer/pgrn-sequential-search.h
 include/postgresql/server/contrib/pgroonga_crash_safer/pgrn-string.h
 include/postgresql/server/contrib/pgroonga_crash_safer/pgrn-tokenize.h
+include/postgresql/server/contrib/pgroonga_crash_safer/pgrn-trace-log.h
 include/postgresql/server/contrib/pgroonga_crash_safer/pgrn-value.h
 include/postgresql/server/contrib/pgroonga_crash_safer/pgrn-variables.h
 include/postgresql/server/contrib/pgroonga_crash_safer/pgrn-wal.h
@@ -107,6 +109,7 @@ include/postgresql/server/contrib/pgroonga_standby_maintainer/pgrn-search.h
 include/postgresql/server/contrib/pgroonga_standby_maintainer/pgrn-sequential-search.h
 include/postgresql/server/contrib/pgroonga_standby_maintainer/pgrn-string.h
 include/postgresql/server/contrib/pgroonga_standby_maintainer/pgrn-tokenize.h
+include/postgresql/server/contrib/pgroonga_standby_maintainer/pgrn-trace-log.h
 include/postgresql/server/contrib/pgroonga_standby_maintainer/pgrn-value.h
 include/postgresql/server/contrib/pgroonga_standby_maintainer/pgrn-variables.h
 include/postgresql/server/contrib/pgroonga_standby_maintainer/pgrn-wal.h
@@ -145,6 +148,7 @@ include/postgresql/server/contrib/pgroonga_wal_applier/pgrn-search.h
 include/postgresql/server/contrib/pgroonga_wal_applier/pgrn-sequential-search.h
 include/postgresql/server/contrib/pgroonga_wal_applier/pgrn-string.h
 include/postgresql/server/contrib/pgroonga_wal_applier/pgrn-tokenize.h
+include/postgresql/server/contrib/pgroonga_wal_applier/pgrn-trace-log.h
 include/postgresql/server/contrib/pgroonga_wal_applier/pgrn-value.h
 include/postgresql/server/contrib/pgroonga_wal_applier/pgrn-variables.h
 include/postgresql/server/contrib/pgroonga_wal_applier/pgrn-wal.h
@@ -183,6 +187,7 @@ include/postgresql/server/extension/pgroonga/pgrn-search.h
 include/postgresql/server/extension/pgroonga/pgrn-sequential-search.h
 include/postgresql/server/extension/pgroonga/pgrn-string.h
 include/postgresql/server/extension/pgroonga/pgrn-tokenize.h
+include/postgresql/server/extension/pgroonga/pgrn-trace-log.h
 include/postgresql/server/extension/pgroonga/pgrn-value.h
 include/postgresql/server/extension/pgroonga/pgrn-variables.h
 include/postgresql/server/extension/pgroonga/pgrn-wal.h
@@ -222,6 +227,7 @@ include/postgresql/server/extension/pgroonga_database/pgrn-search.h
 include/postgresql/server/extension/pgroonga_database/pgrn-sequential-search.h
 include/postgresql/server/extension/pgroonga_database/pgrn-string.h
 include/postgresql/server/extension/pgroonga_database/pgrn-tokenize.h
+include/postgresql/server/extension/pgroonga_database/pgrn-trace-log.h
 include/postgresql/server/extension/pgroonga_database/pgrn-value.h
 include/postgresql/server/extension/pgroonga_database/pgrn-variables.h
 include/postgresql/server/extension/pgroonga_database/pgrn-wal.h
@@ -312,7 +318,8 @@ share/postgresql/extension/pgroonga--3.0.2--3.0.3.sql
 share/postgresql/extension/pgroonga--3.0.3--3.0.4.sql
 share/postgresql/extension/pgroonga--3.0.4--3.0.5.sql
 share/postgresql/extension/pgroonga--3.0.5--3.0.6.sql
-share/postgresql/extension/pgroonga--3.0.6--%%MVER%%.sql
+share/postgresql/extension/pgroonga--3.0.6--3.0.7.sql
+share/postgresql/extension/pgroonga--3.0.7--%%MVER%%.sql
 share/postgresql/extension/pgroonga.control
 share/postgresql/extension/pgroonga_database--%%MVER%%.sql
 share/postgresql/extension/pgroonga_database.control
