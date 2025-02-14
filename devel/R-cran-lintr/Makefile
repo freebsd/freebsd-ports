@@ -23,6 +23,7 @@ TEST_DEPENDS=	R-cran-crayon>0:devel/R-cran-crayon \
 		R-cran-httr>=1.2.1:www/R-cran-httr \
 		R-cran-jsonlite>0:converters/R-cran-jsonlite \
 		R-cran-mockery>0:devel/R-cran-mockery \
+		R-cran-patrick>0:devel/R-cran-patrick \
 		R-cran-rlang>0:devel/R-cran-rlang \
 		R-cran-rmarkdown>0:textproc/R-cran-rmarkdown \
 		R-cran-rstudioapi>=0.2:devel/R-cran-rstudioapi \
@@ -32,8 +33,7 @@ TEST_DEPENDS=	R-cran-crayon>0:devel/R-cran-crayon \
 
 USES=		cran:auto-plist
 
-# 8 tests fail (from about 5200) because of missed packages
-TESTING_UNSAFE=	yes
+MAKE_ENV=	LC_ALL=C.UTF-8
 
 post-install:
 	@${ECHO_CMD} "@dir ${R_MOD_DIR}/help/figures" >> ${TMPPLIST}
