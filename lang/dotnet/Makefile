@@ -22,6 +22,7 @@ BUILD_DEPENDS=	bash:shells/bash \
 		cmake:devel/cmake-core \
 		git:devel/git \
 		ggrep:textproc/gnugrep \
+		${LOCALBASE}/lib/libcrypto.so.12:security/openssl \
 		terminfo-db>0:misc/terminfo-db
 LIB_DEPENDS=	libbrotlienc.so:archivers/brotli \
 		libicuuc.so:devel/icu \
@@ -43,8 +44,9 @@ DOTNET_ENV=	PYTHON=${PYTHON_CMD}
 BOOTSTRAP_DOTNETVERSION=			9.0
 BOOTSTRAP_SDKVERSION=				${BOOTSTRAP_DOTNETVERSION}.100
 BOOTSTRAP_SDKVERSIONSUFFIX=			-rtm.24529.1
-BOOTSTRAP_SOURCEBUILT_ARTIFACTS_DISTNAME=	Private.SourceBuilt.Artifacts.${BOOTSTRAP_SDKVERSION}${BOOTSTRAP_SDKVERSIONSUFFIX}.${SDK_RID}
-BOOTSTRAP_SDK_DISTNAME=				dotnet-sdk-${BOOTSTRAP_SDKVERSION}-${SDK_RID}
+BOOTSTRAP_SOURCEBUILT_ARTIFACTS_DISTNAME=	Private.SourceBuilt.Artifacts.${BOOTSTRAP_SDKVERSION}${BOOTSTRAP_SDKVERSIONSUFFIX}.${BOOTSTRAP_SDK_RID}
+BOOTSTRAP_SDK_DISTNAME=				dotnet-sdk-${BOOTSTRAP_SDKVERSION}-${BOOTSTRAP_SDK_RID}
+BOOTSTRAP_SDK_RID=				freebsd.13-${DOTNET_ARCH}
 
 DOTNETVERSION=		9.0
 SDKVERSION=		${DOTNETVERSION}.103
@@ -110,6 +112,7 @@ do-install:
 	${STRIP_CMD} ${STAGEDIR}${DATADIR}/sdk/${SDKVERSION}/AppHostTemplate/apphost
 	${STRIP_CMD} ${STAGEDIR}${DATADIR}/packs/Microsoft.NETCore.App.Host.${SDK_RID}/${DISTVERSION}/runtimes/${SDK_RID}/native/apphost
 	${STRIP_CMD} ${STAGEDIR}${DATADIR}/packs/Microsoft.NETCore.App.Host.${SDK_RID}/${DISTVERSION}/runtimes/${SDK_RID}/native/singlefilehost
+	${STRIP_CMD} ${STAGEDIR}${DATADIR}/packs/runtime.${SDK_RID}.Microsoft.DotNet.ILCompiler/${DISTVERSION}/tools/ilc
 	${FIND} ${STAGEDIR}${DATADIR} -name "*.so" -exec ${STRIP_CMD} -s "{}" ";"
 
 	${RLN} ${STAGEDIR}${DATADIR}/dotnet ${STAGEDIR}${PREFIX}/bin/dotnet
