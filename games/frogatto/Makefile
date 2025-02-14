@@ -14,6 +14,8 @@ LICENSE_FILE_FROGATTO=	${WRKSRC}/LICENSE
 LICENSE_FILE_GPLv3=	${WRKSRC}/src/LICENSE
 LICENSE_PERMS_FROGATTO=	dist-mirror pkg-mirror auto-accept
 
+BROKEN=		fails to build with Boost>=1.87
+
 LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
 		libpng.so:graphics/png
 
