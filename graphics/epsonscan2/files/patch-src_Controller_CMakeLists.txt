@@ -1,6 +1,15 @@
 --- src/Controller/CMakeLists.txt.orig	2024-09-12 07:10:30 UTC
 +++ src/Controller/CMakeLists.txt
-@@ -171,21 +171,6 @@ ADD_LIBRARY(epsonscan2 SHARED
+@@ -24,8 +24,6 @@ PROJECT(epsonscan2)
+ 
+ PROJECT(epsonscan2)
+ 
+-add_definitions(-DBOOST_NO_CXX11_RVALUE_REFERENCES=1)
+-
+ INCLUDE_DIRECTORIES(
+ ../
+ ./Include
+@@ -171,21 +169,6 @@ ADD_LIBRARY(epsonscan2 SHARED
  ../../thirdparty/HaruPDF/hpdf_exdata.c
  ../../thirdparty/HaruPDF/hpdf_encoder_utf.c
  	
@@ -22,7 +31,7 @@
  ../../thirdparty/sha1/sha1.c
  )
  
-@@ -194,7 +179,7 @@ target_link_libraries( epsonscan2
+@@ -194,7 +177,7 @@ target_link_libraries( epsonscan2
  	dl
  	commonutility
  	${Boost_LIBRARIES}

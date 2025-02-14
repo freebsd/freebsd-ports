@@ -1,6 +1,15 @@
 --- src/ES2Command/Linux/CMakeLists.txt.orig	2024-09-12 07:10:30 UTC
 +++ src/ES2Command/Linux/CMakeLists.txt
-@@ -78,7 +78,7 @@ target_link_libraries( es2command
+@@ -19,8 +19,6 @@ PROJECT(es2command)
+ # プロジェクト名
+ PROJECT(es2command)
+ 
+-add_definitions(-DBOOST_NO_CXX11_RVALUE_REFERENCES=1)
+-
+ if(COMMAND cmake_policy)
+       cmake_policy(SET CMP0003 NEW)  
+ endif(COMMAND cmake_policy)
+@@ -78,7 +76,7 @@ target_link_libraries( es2command
  	dl
  	commonutility
  	${Boost_LIBRARIES}

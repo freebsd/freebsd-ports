@@ -1,0 +1,11 @@
+--- src/CommonUtility/Linux/CMakeLists.txt.orig	2024-09-12 07:10:30 UTC
++++ src/CommonUtility/Linux/CMakeLists.txt
+@@ -19,8 +19,6 @@ PROJECT(commonutility)
+ # プロジェクト名
+ PROJECT(commonutility)
+ 
+-add_definitions(-DBOOST_NO_CXX11_RVALUE_REFERENCES=1)
+-
+ # ビルドするためにインクルードするヘッダーファイルの場所
+ INCLUDE_DIRECTORIES(
+ ../
