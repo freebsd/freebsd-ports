@@ -11,6 +11,8 @@ WWW=		https://download.ebz.epson.net/man/linux/epsonscan2_e.html
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		fails to build with Boost>=1.87
+
 BUILD_DEPENDS=	sane-config:graphics/sane-backends
 LIB_DEPENDS=	libboost_serialization.so:devel/boost-libs \
 		libpng.so:graphics/png \
