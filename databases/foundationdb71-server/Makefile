@@ -11,6 +11,7 @@ WWW=		https://www.foundationdb.org/
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN=		fails to build with Boost>=1.87
 BROKEN_aarch64=	invalid asm rdtsc
 ONLY_FOR_ARCHS=	aarch64 amd64
 ONLY_FOR_ARCHS_REASON=	not yet ported to anything else
