@@ -222,6 +222,8 @@ include/kea/dhcpsrv/memfile_lease_mgr.h
 include/kea/dhcpsrv/memfile_lease_storage.h
 %%MYSQL%%include/kea/dhcpsrv/mysql_host_data_source.h
 %%MYSQL%%include/kea/dhcpsrv/mysql_lease_mgr.h
+%%PGSQL%%include/kea/dhcpsrv/pgsql_host_data_source.h
+%%PGSQL%%include/kea/dhcpsrv/pgsql_lease_mgr.h
 include/kea/dhcpsrv/ncr_generator.h
 include/kea/dhcpsrv/network.h
 include/kea/dhcpsrv/network_state.h
