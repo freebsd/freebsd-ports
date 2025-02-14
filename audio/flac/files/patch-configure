@@ -1,6 +1,15 @@
---- configure.orig	2023-06-22 08:50:43 UTC
+--- configure.orig	2025-02-10 14:21:36 UTC
 +++ configure
-@@ -21404,8 +21404,8 @@ if test x$ac_cv_c_compiler_gnu = xyes -o x$xiph_cv_c_c
+@@ -19899,7 +19899,7 @@ fi
+ fi
+ 
+ 
+-if test ! -n "$DOXYGEN" && test -f "$srcdir/doc/FLAC.tag" && test -f "$srcdir/doc/api/modules.html" ; then
++if test ! -n "$DOXYGEN" && test -f "$srcdir/doc/FLAC.tag" && test -f "$srcdir/doc/api/index.html" ; then
+ 	HAS_PREBUILT_DOXYGEN=yes
+ fi
+  if test "x$HAS_PREBUILT_DOXYGEN" = xyes; then
+@@ -22374,8 +22374,8 @@ then :
  		if test "x${ax_enable_debug}" = "xno"
  then :
  
