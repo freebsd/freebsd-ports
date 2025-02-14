@@ -10,6 +10,7 @@ WWW=		https://cadabra.science/
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/doc/license.txt
 
+BROKEN=		fails to build with Boost>=1.87
 BROKEN_FreeBSD_15=	compilation fails with clang-17, see https://github.com/kpeeters/cadabra2/issues/285
 
 BUILD_DEPENDS=	${LOCALBASE}/include/websocketpp/client.hpp:devel/websocketpp
