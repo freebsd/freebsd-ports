@@ -16,6 +16,10 @@ LIB_DEPENDS=	libkokkoscore.so:devel/kokkos \
 		libopenblas.so:math/openblas
 TEST_DEPENDS=	googletest>0:devel/googletest
 
+.if !exists(/usr/include/omp.h)
+BROKEN=		requires OpenMP support that is missing on this architecture
+.endif
+
 USES=		cmake:testing pkgconfig
 USE_LDCONFIG=	yes
 
