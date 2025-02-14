@@ -8202,6 +8202,7 @@
     SUBDIR += subversion-lts
     SUBDIR += subversive
     SUBDIR += sunpromake
+    SUBDIR += sv
     SUBDIR += svk
     SUBDIR += svn2git
     SUBDIR += svn_load_dirs

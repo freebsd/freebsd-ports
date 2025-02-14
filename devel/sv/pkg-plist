@@ -1,0 +1,7 @@
+include/semver.h
+lib/libsv.a
+lib/libsv.so
+lib/libsv.so.1
+lib/libsv.so.1.0.0
+libdata/pkgconfig/libsv.pc
+share/doc/libsv/README.md
