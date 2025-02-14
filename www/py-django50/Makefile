@@ -15,6 +15,9 @@ WWW=		https://www.djangoproject.com/
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Extended support of Django 5.0 ends April 2024, upgrade to a newer version of Django. See https://www.djangoproject.com/download/
+EXPIRATION_DATE=2025-05-31
+
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=40.8.0:devel/py-setuptools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}asgiref>=3.7.0:www/py-asgiref@${PY_FLAVOR} \
