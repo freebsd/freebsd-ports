@@ -10,6 +10,8 @@ WWW=		https://www.webtoolkit.eu/wt
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN=		fails to build with Boost>=1.87
+
 LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
 		libGraphicsMagick.so:graphics/GraphicsMagick \
 		libpng.so:graphics/png
