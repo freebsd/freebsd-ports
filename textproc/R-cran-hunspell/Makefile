@@ -19,7 +19,8 @@ TEST_DEPENDS=	R-cran-knitr>0:print/R-cran-knitr \
 
 USES=		cran:auto-plist,compiles
 
-# Some test fails (missing R packages) but the examples in the manual work well.
+MAKE_ENV=	LC_ALL=C.UTF-8
+
 TESTING_UNSAFE=	yes
 
 .include <bsd.port.mk>
