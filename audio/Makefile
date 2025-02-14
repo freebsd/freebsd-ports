@@ -738,6 +738,7 @@
     SUBDIR += sonata
     SUBDIR += songrec
     SUBDIR += sonic-visualiser
+    SUBDIR += sonicradio
     SUBDIR += sonivox
     SUBDIR += sonivox-eas
     SUBDIR += sorcer-lv2
