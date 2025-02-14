@@ -21,6 +21,10 @@ LIB_DEPENDS=	libevent.so:devel/libevent \
 		libssh2.so:security/libssh2 \
 		libzstd.so:archivers/zstd
 
+.if !exists(/usr/include/omp.h)
+BROKEN=		requires OpenMP support that is missing on this architecture
+.endif
+
 USES=		blaslapack:openblas cmake:noninja,testing compiler:c++17-lang eigen:3 fortran gnome localbase:ldflags python shebangfix
 USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
