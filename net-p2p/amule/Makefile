@@ -65,6 +65,7 @@ AMULEDAEMON_USE=	RC_SUBR=amuled
 
 AMULEGUI_CONFIGURE_ON=	--enable-amule-gui
 
+BOOST_BROKEN=		fails to build with Boost>=1.87
 BOOST_CONFIGURE_ON=	--with-boost
 BOOST_LIB_DEPENDS+=	libboost_system.so:devel/boost-libs
 
