@@ -10,6 +10,8 @@ WWW=		https://qtpfsgui.sourceforge.net/
 
 LICENSE=	GPLv2
 
+BROKEN=		fails to build with Boost>=1.87
+
 BUILD_DEPENDS=	${LOCALBASE}/include/fftw3.h:math/fftw3
 LIB_DEPENDS=	libImath.so:math/Imath \
 		libtiff.so:graphics/tiff \
