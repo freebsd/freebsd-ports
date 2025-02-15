@@ -1,5 +1,5 @@
 PORTNAME=	tanglet
-PORTVERSION=	1.6.6
+PORTVERSION=	1.6.7
 CATEGORIES=	games
 MASTER_SITES=	https://gottcode.org/tanglet/
 
