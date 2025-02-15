@@ -1,6 +1,6 @@
 PORTNAME=	amule
 PORTVERSION=	2.3.3
-PORTREVISION=	13
+PORTREVISION=	14
 CATEGORIES=	net-p2p
 MASTER_SITES=	SF/${PORTNAME}/aMule/${PORTVERSION}
 DISTNAME=	aMule-${PORTVERSION}
@@ -48,49 +48,49 @@ OPTIONS_DEFAULT=	ALC ALCC AMULECMD AMULEDAEMON AMULEGUI BOOST CAS ED2K \
 			FILEVIEW MONOLITHIC WEBSERVER WXCAS XAS
 OPTIONS_SUB=	yes
 
-DEBUG_CONFIGURE_OFF=	--disable-debug
+DEBUG_CONFIGURE_ENABLE=	debug
 
 NLS_USES=	gettext
-NLS_CONFIGURE_OFF=	--disable-nls
+NLS_CONFIGURE_ENABLE=	nls
 
-ALC_CONFIGURE_ON=	--enable-alc
+ALC_CONFIGURE_ENABLE=	alc
 
-ALCC_CONFIGURE_ON=	--enable-alcc
+ALCC_CONFIGURE_ENABLE=	alcc
 
-AMULECMD_CONFIGURE_ON=	--enable-amulecmd
+AMULECMD_CONFIGURE_ENABLE=	amulecmd
 AMULECMD_USES=		readline
 
-AMULEDAEMON_CONFIGURE_ON=	--enable-amule-daemon
+AMULEDAEMON_CONFIGURE_ENABLE=	amule-daemon
 AMULEDAEMON_USE=	RC_SUBR=amuled
 
-AMULEGUI_CONFIGURE_ON=	--enable-amule-gui
+AMULEGUI_CONFIGURE_ENABLE=	amule-gui
 
-BOOST_BROKEN=		fails to build with Boost>=1.87
-BOOST_CONFIGURE_ON=	--with-boost
-BOOST_LIB_DEPENDS+=	libboost_system.so:devel/boost-libs
+BOOST_CONFIGURE_WITH=	boost
+BOOST_LIB_DEPENDS=	libboost_system.so:devel/boost-libs
 
-CAS_CONFIGURE_ON=	--enable-cas
+CAS_CONFIGURE_ENABLE=	cas
 CAS_LIB_DEPENDS=	libgd.so:graphics/gd
 
-ED2K_CONFIGURE_OFF=	--disable-ed2k
+ED2K_CONFIGURE_ENABLE=	ed2k
 ED2K_CONFLICTS=		ed2k-hash*
 
-FILEVIEW_CONFIGURE_ON=	--enable-fileview
+FILEVIEW_CONFIGURE_ENABLE=	fileview
 
-MMAP_CONFIGURE_ON=	--enable-mmap
+MMAP_CONFIGURE_ENABLE=	mmap
 
-MONOLITHIC_CONFIGURE_OFF=	--disable-monolithic
+MONOLITHIC_CONFIGURE_ENABLE=	monolithic
 
 UPNP_LIB_DEPENDS=	libupnp.so:devel/upnp
-UPNP_CONFIGURE_OFF=	--disable-upnp
+UPNP_CONFIGURE_ENABLE=	upnp
 
-WEBSERVER_CONFIGURE_ON=	--enable-webserver
+WEBSERVER_CONFIGURE_ENABLE=	webserver
 WEBSERVER_LIB_DEPENDS=	libpng.so:graphics/png
 WEBSERVER_USES=		readline
 
-WXCAS_CONFIGURE_ON=	--enable-wxcas
+# Build fails if only option selected
+WXCAS_CONFIGURE_ENABLE=	wxcas
 
-XAS_CONFIGURE_ON=	--enable-xas
+XAS_CONFIGURE_ENABLE=	xas
 XAS_USE=	PERL5+=run
 
 .include <bsd.port.options.mk>
