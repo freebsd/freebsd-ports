@@ -46,7 +46,7 @@ USE_CABAL=	HTTP-4000.4.1_5 \
 		colour-2.3.6 \
 		comonad-5.0.9 \
 		concise-0.1.0.1 \
-		configurator-pg-0.2.10 \
+		configurator-pg-0.2.10_1 \
 		contravariant-1.5.5 \
 		contravariant-extras-0.3.5.4 \
 		cookie-0.4.6 \
