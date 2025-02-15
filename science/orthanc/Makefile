@@ -1,6 +1,5 @@
 PORTNAME=	orthanc
-DISTVERSION=	1.12.3
-PORTREVISION=	11
+DISTVERSION=	1.12.6
 CATEGORIES=	science
 MASTER_SITES=	https://orthanc.uclouvain.be/downloads/sources/orthanc/
 DISTNAME=	Orthanc-${PORTVERSION}
@@ -11,8 +10,6 @@ WWW=		https://www.orthanc-server.com/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
-
-BROKEN=		fails to build with boost-1.86+
 
 BUILD_DEPENDS=	protoc:devel/protobuf
 
@@ -27,7 +24,7 @@ LIB_DEPENDS=	libboost_atomic.so:devel/boost-libs \
 		libprotobuf.so:devel/protobuf \
 		libpugixml.so:textproc/pugixml \
 		libtiff.so:graphics/tiff \
-		libuuid.so:misc/e2fsprogs-libuuid \
+		libuuid.so:misc/e2fsprogs-libuuid
 
 USES=		cmake gnome iconv jpeg lua python:build sqlite ssl
 USE_GNOME=	libxml2
@@ -35,12 +32,14 @@ USE_LDCONFIG=	yes
 
 USE_RC_SUBR=	orthanc
 
+CMAKE_ARGS=	-DDCMTK_DICTIONARY_DIR:STRING=/usr/local/share/dcmtk-3.6.9
 CMAKE_ON=	USE_SYSTEM_BOOST USE_SYSTEM_CIVETWEB USE_SYSTEM_DCMTK \
 		USE_SYSTEM_GOOGLE_TEST USE_SYSTEM_JSONCPP USE_SYSTEM_LIBICONV \
 		USE_SYSTEM_LIBJPEG USE_SYSTEM_LIBPNG USE_SYSTEM_LUA \
 		USE_SYSTEM_OPENSSL USE_SYSTEM_PUGIXML USE_SYSTEM_SQLITE \
 		USE_SYSTEM_UUID USE_SYSTEM_ZLIB
 CMAKE_OFF=	BUILD_CONNECTIVITY_CHECKS UNIT_TESTS_WITH_HTTP_CONNEXIONS
+# Keep in sync with graphics/dcmtk version
 CMAKE_SOURCE_PATH=	${WRKSRC}/OrthancServer
 
 CFLAGS+=	-DNDEBUG
