@@ -1,6 +1,5 @@
 PORTNAME=	vscode
-DISTVERSION=	1.96.4
-PORTREVISION=	3
+DISTVERSION=	1.97.1
 CATEGORIES=	editors
 MASTER_SITES=	https://github.com/tagattie/FreeBSD-VSCode/releases/download/${DISTVERSION}/:node_modules
 DISTFILES=	vscode-node-modules-${DISTVERSION}${EXTRACT_SUFX}:node_modules \
@@ -34,7 +33,6 @@ LIB_DEPENDS=	libatk-bridge-2.0.so:accessibility/at-spi2-core \
 		libepoll-shim.so:devel/libepoll-shim \
 		libevent.so:devel/libevent \
 		libffi.so:devel/libffi \
-		libinotify.so:devel/libinotify \
 		libnotify.so:devel/libnotify \
 		libpci.so:devel/libpci \
 		libnspr4.so:devel/nspr \
@@ -71,7 +69,7 @@ USES=		desktop-file-utils gl gmake gnome iconv:wchar_t jpeg \
 USE_GITHUB=	yes
 GH_ACCOUNT=	microsoft
 
-SOURCE_COMMIT_HASH=	cd4ee3b1c348a13bafd8f9ad8060705f6d4b9cba
+SOURCE_COMMIT_HASH=	e249dada235c2083c83813bd65b7f4707fb97b76
 
 BINARY_ALIAS=	python=${PYTHON_CMD}
 
@@ -201,6 +199,8 @@ pre-build:
 # copy rg binary file to @vscode/ripgrep node module directory
 	@${MKDIR} ${WRKSRC}/node_modules/@vscode/ripgrep/bin
 	@${CP} ${LOCALBASE}/bin/rg ${WRKSRC}/node_modules/@vscode/ripgrep/bin
+	@${MKDIR} ${WRKSRC}/build/node_modules/@vscode/ripgrep/bin
+	@${CP} ${LOCALBASE}/bin/rg ${WRKSRC}/build/node_modules/@vscode/ripgrep/bin
 	@${MKDIR} ${WRKSRC}/remote/node_modules/@vscode/ripgrep/bin
 	@${CP} ${LOCALBASE}/bin/rg ${WRKSRC}/remote/node_modules/@vscode/ripgrep/bin
 
