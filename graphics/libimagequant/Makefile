@@ -2,7 +2,7 @@ PORTNAME=	libimagequant
 PORTVERSION=	4.3.4
 CATEGORIES=	graphics
 
-MAINTAINER=	jbeich@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Image Quantization Library
 WWW=		https://pngquant.org/lib/
 
