@@ -13,7 +13,6 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BUILD_DEPENDS=	xsltproc:textproc/libxslt \
 		docbook-xsl-ns>0:textproc/docbook-xsl-ns
 LIB_DEPENDS=	libcolord.so:graphics/colord \
-		libpolkit-gobject-1.so:sysutils/polkit \
 		libdbus-1.so:devel/dbus \
 		liblcms2.so:graphics/lcms2
 
