@@ -6,7 +6,7 @@ MASTER_SITES=	CRATESIO
 # XXX Teach USES=cargo to have proper default
 DISTFILES=	${CARGO_DIST_SUBDIR}/${DISTNAME}${CARGO_CRATE_EXT}
 
-MAINTAINER=	jbeich@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multithreaded PNG optimizer written in Rust
 WWW=		https://github.com/shssoichiro/oxipng
 
