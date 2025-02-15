@@ -1,6 +1,6 @@
 PORTNAME=	digikam
 DISTVERSION=	8.5.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics kde
 MASTER_SITES=	KDE/stable/${PORTNAME}/${PORTVERSION} \
 		https://files.kde.org/digikam/%SUBDIR%/:aesthetic,autotags,face,shape,yunet \
@@ -41,8 +41,9 @@ LIB_DEPENDS=	libexiv2.so:graphics/exiv2 \
 		libx265.so:multimedia/x265
 RUN_DEPENDS=	exiftool:graphics/p5-Image-ExifTool
 
-USES=		bison cmake compiler:c++17-lang desktop-file-utils eigen:3 gl \
-		gnome jpeg kde:6 magick pkgconfig qt:6 shebangfix tar:xz xorg
+USES=		bison cmake compiler:c++17-lang desktop-file-utils eigen:3 \
+		gettext-tools gl gnome jpeg kde:6 magick pkgconfig qt:6 \
+		shebangfix tar:xz xorg
 USE_GL=		opengl glu
 USE_GNOME=	glib20 libxml2 libxslt
 USE_KDE=	calendarcore colorscheme completion config configwidgets \
@@ -69,7 +70,7 @@ PLIST_SUB=	SHLIB_VER=${DISTVERSION}
 
 WITH_CCACHE_BUILD=	yes
 
-OPTIONS_DEFINE=		AUTOTAGS FACEDETECT KDEPIM MEDIAPLAYER NLS
+OPTIONS_DEFINE=		AUTOTAGS FACEDETECT KDEPIM MEDIAPLAYER
 OPTIONS_MULTI=		DB
 DB_DESC=		Database options
 OPTIONS_MULTI_DB=	MYSQL MYSQL_INTERNAL SQLITE3
@@ -116,11 +117,6 @@ MYSQL_INTERNAL_CMAKE_BOOL=	ENABLE_INTERNALMYSQL
 # versions and add any version not ending with 'm' to the IGNORE list.
 MYSQL_INTERNAL_VARS=		IGNORE_WITH_MYSQL="80 81"
 MYSQL_INTERNAL_IMPLIES=		MYSQL
-
-NLS_DESC=		Digikam i18n translations
-NLS_USES=		gettext-tools
-NLS_USE=		KDE=i18n
-NLS_CMAKE_BOOL=		DIGIKAMSC_COMPILE_PO
 
 SQLITE3_USE=		QT=sqldriver-sqlite:run
 
