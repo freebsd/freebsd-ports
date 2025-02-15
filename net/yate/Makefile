@@ -9,7 +9,7 @@ WWW=		http://yate.ro
 
 LICENSE=	GPLv2
 
-ONLY_FOR_ARCHS=	amd64 armv6 armv7 i386 powerpc powerpc64 powerpc64le
+ONLY_FOR_ARCHS=	aarch64 amd64 armv6 armv7 i386 powerpc powerpc64 powerpc64le
 
 LIB_DEPENDS=	libasound.so:audio/alsa-lib \
 		libgsm.so:audio/gsm \
