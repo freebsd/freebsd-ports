@@ -51,6 +51,7 @@
     SUBDIR += p5-Term-ShellUI
     SUBDIR += pdksh
     SUBDIR += pear-PHP_Shell
+    SUBDIR += powershell
     SUBDIR += psh
     SUBDIR += rc
     SUBDIR += rubygem-shellwords

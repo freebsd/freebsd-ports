@@ -1,0 +1,19 @@
+--- PowerShell.Common.props.orig	2024-04-11 18:38:22 UTC
++++ PowerShell.Common.props
+@@ -15,12 +15,10 @@
+     BeforeTargets="_GenerateRestoreProjectSpec;GenerateNuspec;BeforeBuild"
+   >
+ 
+-    <Exec Command='git describe --abbrev=60 --long'
+-          WorkingDirectory="$(MSBuildProjectDirectory)"
+-          ConsoleToMSBuild="true"
+-          StandardOutputImportance="Low">
+-      <Output TaskParameter="ConsoleOutput" PropertyName="PowerShellVersion" />
+-    </Exec>
++    <PropertyGroup>
++      <PowerShellVersion>7.5.0</PowerShellVersion>
++      <ReleaseTag>7.5.0</ReleaseTag>
++    </PropertyGroup>
+ 
+     <PropertyGroup Condition = "'$(ReleaseTag)' != ''">
+       <!--

@@ -1,0 +1,11 @@
+--- src/powershell-unix/powershell-unix.csproj.orig	2024-04-11 18:38:22 UTC
++++ src/powershell-unix/powershell-unix.csproj
+@@ -9,7 +9,7 @@
+     <TieredCompilation>true</TieredCompilation>
+     <TieredCompilationQuickJit>true</TieredCompilationQuickJit>
+     <TieredCompilationQuickJitForLoops>true</TieredCompilationQuickJitForLoops>
+-    <RuntimeIdentifiers>linux-x64;osx-x64;</RuntimeIdentifiers>
++    <RuntimeIdentifiers>$(NETCoreSdkRuntimeIdentifier)</RuntimeIdentifiers>
+   </PropertyGroup>
+ 
+   <ItemGroup>
