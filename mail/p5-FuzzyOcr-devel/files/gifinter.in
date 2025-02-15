@@ -1,0 +1,3 @@
+exec \
+%%IMAGEMAGICK%%%%PREFIX%%/bin/convert -interlace "$@"
+%%GRAPHICSMAGICK%%%%PREFIX%%/bin/gm convert -interlace "$@"
