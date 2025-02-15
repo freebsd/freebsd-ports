@@ -92,8 +92,10 @@ GSSAPI_MIT_USES=		gssapi:mit
 GSSAPI_NONE_CONFIGURE_ON=	--without-gssapi
 GSSAPI_NONE_CONFIGURE_OFF=	--with-gssapi ${GSSAPI_CONFIGURE_ARGS}
 
-ICU_LIB_DEPENDS=		libicui18n.so:devel/icu
+ICU_LIB_DEPENDS=		libicui18n.so:devel/icu \
+				libicuuc.so:devel/icu
 ICU_CONFIGURE_WITH=		icu
+ICU_LDFLAGS=			-licuuc
 
 LDAP_USES=			ldap
 LDAP_CONFIGURE_WITH=		ldap
