@@ -1,8 +1,11 @@
 PORTNAME=	zxfer
-PORTVERSION=	1.1.7
-PORTREVISION=	1
+DISTVERSION=	1.1.7
+PORTREVISION=	2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	filesystems sysutils
+
+PATCH_SITES=	https://github.com/allanjude/zxfer/commit/
+PATCHFILES=	88e93145d55024bb49850e97ae1a42a5acfcefc5.diff:-p1
 
 MAINTAINER=	ports@scaleengine.com
 COMMENT=	Easily and reliably transfer ZFS filesystems
