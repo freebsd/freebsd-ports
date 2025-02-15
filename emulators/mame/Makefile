@@ -1,11 +1,6 @@
 PORTNAME=	mame
-DISTVERSION=	0.264
+DISTVERSION=	0.274
 CATEGORIES=	emulators games
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	4da99a13f5cd8054ff8f747a0234a74b271b663d.patch:-p1 # fix build with clang 18
-PATCHFILES+=	b7e0fa72b92f8f6761a1a59e8ffdc46f6d17e6cc.patch:-p1 # idem
-PATCHFILES+=	c75845b1ef01d76379bcc0a6937f1ca678484c68.patch:-p1 # fix build with clang 19
 
 MAINTAINER=	agh@riseup.net
 COMMENT=	MAME: a multi-purpose emulation framework
