@@ -7,6 +7,9 @@ MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Implementation of the real-time transport protocol
 WWW=		https://www.gnu.org/software/ccrtp/
 
+DEPRECATED=	No active development in years and no users in tree
+EXPIRATION_DATE=2025-03-16
+
 LIB_DEPENDS=	libcommoncpp.so:devel/ucommon \
 		libgcrypt.so:security/libgcrypt
 
