@@ -1,6 +1,6 @@
 PORTNAME=	splitpatch
 DISTVERSIONPREFIX=	release/
-DISTVERSION=	1.2
+DISTVERSION=	2025.0210
 CATEGORIES=	textproc
 
 MAINTAINER=	ehaupt@FreeBSD.org
@@ -18,5 +18,8 @@ NO_ARCH=	yes
 
 PLIST_FILES=	bin/splitpatch \
 		share/man/man1/splitpatch.1.gz
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|--mode=|-m |g' ${WRKSRC}/Makefile
 
 .include <bsd.port.mk>
