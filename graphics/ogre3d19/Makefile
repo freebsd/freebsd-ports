@@ -13,9 +13,12 @@ WWW=		https://www.ogre3d.org/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN_aarch64=	does not compile: OgreMain/include/OgreStringConverter.h:126:23: class member cannot be redeclared
-BROKEN_powerpc=	does not install
-BROKEN_riscv64=	does not compile: OgreMain/include/OgreStringConverter.h:126:23: class member cannot be redeclared
+#BROKEN_aarch64=	does not compile: OgreMain/include/OgreStringConverter.h:126:23: class member cannot be redeclared
+#BROKEN_powerpc=	does not install
+#BROKEN_riscv64=	does not compile: OgreMain/include/OgreStringConverter.h:126:23: class member cannot be redeclared
+BROKEN=		Unfetchable
+DEPRECATED=	Unfetchable
+EXPIRATION_DATE=2025-03-31
 
 LIB_DEPENDS=	libfreeimage.so:graphics/freeimage \
 		libfreetype.so:print/freetype2 \
