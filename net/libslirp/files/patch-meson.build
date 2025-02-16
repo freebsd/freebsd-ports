@@ -1,0 +1,32 @@
+--- meson.build.orig	2025-01-30 01:46:23 UTC
++++ meson.build
+@@ -168,9 +168,9 @@ vflag = []
+ 
+ mapfile = 'src/libslirp.map'
+ vflag = []
+-vflag_test = '-Wl,--version-script,@0@/@1@'.format(meson.current_source_dir(), mapfile)
++libvflag = []
+ if cc.has_link_argument('-Wl,--version-script,@0@/@1@'.format(meson.current_source_dir(), 'src/libslirp.test.map'))
+-  vflag += vflag_test
++  libvflag += '-Wl,--version-script,@0@/@1@'.format(meson.current_source_dir(), mapfile)
+ endif
+ 
+ if fuzzer_build
+@@ -203,7 +203,7 @@ if glib_static or fuzzer_build or fuzz_reproduce
+ if glib_static or fuzzer_build or fuzz_reproduce
+   lib = static_library('slirp', sources,
+     c_args : cargs,
+-    link_args : vflag,
++    link_args : libvflag + vflag,
+     link_depends : mapfile,
+     dependencies : libslirp_deps,
+   )
+@@ -211,7 +211,7 @@ else
+   lib = library('slirp', sources,
+     version : lt_version,
+     c_args : cargs,
+-    link_args : vflag,
++    link_args : libvflag + vflag,
+     link_depends : mapfile,
+     dependencies : libslirp_deps,
+     install : install_devel or get_option('default_library') == 'shared',
