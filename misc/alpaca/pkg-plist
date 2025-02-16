@@ -8,12 +8,13 @@ share/Alpaca/alpaca/connection_handler.py
 share/Alpaca/alpaca/custom_widgets/chat_widget.py
 share/Alpaca/alpaca/custom_widgets/dialog_widget.py
 share/Alpaca/alpaca/custom_widgets/message_widget.py
-share/Alpaca/alpaca/custom_widgets/model_widget.py
+share/Alpaca/alpaca/custom_widgets/model_manager_widget.py
 share/Alpaca/alpaca/custom_widgets/table_widget.py
 share/Alpaca/alpaca/custom_widgets/terminal_widget.py
 share/Alpaca/alpaca/generic_actions.py
 share/Alpaca/alpaca/internal.py
 share/Alpaca/alpaca/main.py
+share/Alpaca/alpaca/sql_manager.py
 share/Alpaca/alpaca/window.py
 share/applications/com.jeffser.Alpaca.SearchProvider.desktop
 share/applications/com.jeffser.Alpaca.desktop
@@ -30,7 +31,9 @@ share/locale/fr/LC_MESSAGES/alpaca.mo
 share/locale/he/LC_MESSAGES/alpaca.mo
 share/locale/hi/LC_MESSAGES/alpaca.mo
 share/locale/it/LC_MESSAGES/alpaca.mo
+share/locale/ja/LC_MESSAGES/alpaca.mo
 share/locale/nb_NO/LC_MESSAGES/alpaca.mo
+share/locale/nl/LC_MESSAGES/alpaca.mo
 share/locale/pt_BR/LC_MESSAGES/alpaca.mo
 share/locale/ru/LC_MESSAGES/alpaca.mo
 share/locale/te/LC_MESSAGES/alpaca.mo
