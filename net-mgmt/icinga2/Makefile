@@ -1,7 +1,6 @@
 PORTNAME=	icinga2
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.14.3
-PORTREVISION=	1
+DISTVERSION=	2.14.5
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	flo@FreeBSD.org
@@ -10,8 +9,6 @@ WWW=		https://www.icinga.org/icinga2/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
-
-BROKEN=		fails to build with Boost>=1.87
 
 LIB_DEPENDS=	libboost_system.so:devel/boost-libs
 RUN_DEPENDS=	${LOCALBASE}/bin/bash:shells/bash
