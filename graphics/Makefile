@@ -9,6 +9,7 @@
     SUBDIR += O2-tools
     SUBDIR += R-cran-DiagrammeR
     SUBDIR += R-cran-GDD
+    SUBDIR += R-cran-R.devices
     SUBDIR += R-cran-RColorBrewer
     SUBDIR += R-cran-colorspace
     SUBDIR += R-cran-cowplot
