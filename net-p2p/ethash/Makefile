@@ -1,7 +1,6 @@
 PORTNAME=	ethash
-PORTVERSION=	1.0.1
 DISTVERSIONPREFIX=	v
-PORTREVISION=	4
+DISTVERSION=	1.1.0
 CATEGORIES=	net-p2p
 
 MAINTAINER=	bofh@FreeBSD.org
@@ -19,7 +18,5 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	chfast
 
 CMAKE_OFF=	HUNTER_ENABLED
-
-CFLAGS+=	-Wno-error=deprecated-declarations
 
 .include <bsd.port.mk>
