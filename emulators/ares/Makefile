@@ -1,6 +1,6 @@
 PORTNAME=	ares
 DISTVERSIONPREFIX=	v
-DISTVERSION=	142
+DISTVERSION=	143
 CATEGORIES=	emulators
 
 MAINTAINER=	bsdcode@disroot.org
@@ -30,7 +30,6 @@ CMAKE_OFF=	ARES_BUILD_LOCAL \
 		ARES_ENABLE_MINIMUM_CPU
 
 EXTRACT_AFTER_ARGS=	--exclude thirdparty/librashader \
-			--exclude thirdparty/slang-shaders \
 			--no-same-owner --no-same-permissions
 
 OPTIONS_DEFINE=			SDL TOOLS
