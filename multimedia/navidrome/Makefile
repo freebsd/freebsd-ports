@@ -13,6 +13,8 @@ WWW=		https://www.navidrome.org/
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_i386=	npm esbuild fails: "Unsupported platform: freebsd ia32 LE"
+
 BUILD_DEPENDS+=	npm>0:www/npm
 LIB_DEPENDS+=	libtag.so:audio/taglib
 RUN_DEPENDS+=	ffmpeg:multimedia/ffmpeg
