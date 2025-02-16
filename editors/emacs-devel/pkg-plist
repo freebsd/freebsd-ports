@@ -1746,8 +1746,6 @@ share/applications/emacsclient.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/oclosure.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/package-vc.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/package-vc.elc
-%%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/package-x.el.gz
-%%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/package-x.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/package.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/package.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/pcase.el.gz
@@ -3151,6 +3149,8 @@ share/applications/emacsclient.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/netrc.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/nnir.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/nnir.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/package-x.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/package-x.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/pgg-def.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/pgg-def.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/pgg-gpg.el.gz
