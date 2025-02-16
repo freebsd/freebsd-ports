@@ -18,7 +18,7 @@ share/applications/rustrover.desktop
 %%DATADIR%%/lib/app-client.jar
 %%DATADIR%%/lib/app.jar
 %%DATADIR%%/lib/bouncy-castle.jar
-%%DATADIR%%/lib/build-marker-RR-243.23654.116
+%%DATADIR%%/lib/build-marker-RR-243.23654.180
 %%DATADIR%%/lib/cds/classesLogAgent.jar
 %%DATADIR%%/lib/ext/platform-main.jar
 %%DATADIR%%/lib/external-system-rt.jar
@@ -360,7 +360,7 @@ share/applications/rustrover.desktop
 %%DATADIR%%/plugins/intellij-rust/lib/commons-text-1.12.0.jar
 %%DATADIR%%/plugins/intellij-rust/lib/completion-ranking-rust-0.4.1.jar
 %%DATADIR%%/plugins/intellij-rust/lib/full-line-inline-filter-rust-0.0.2.jar
-%%DATADIR%%/plugins/intellij-rust/lib/intellij-rust-243.23654.116.jar
+%%DATADIR%%/plugins/intellij-rust/lib/intellij-rust-243.23654.180.jar
 %%DATADIR%%/plugins/intellij-rust/lib/jackson-dataformat-toml-2.14.2.jar
 %%DATADIR%%/plugins/intellij-rust/lib/org.eclipse.jgit-6.9.0.202403050737-r.jar
 %%DATADIR%%/plugins/intellij-rust/lib/semver-jvm-1.4.2.jar
