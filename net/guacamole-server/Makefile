@@ -3,9 +3,6 @@ DISTVERSION=	1.5.5
 CATEGORIES=	net
 MASTER_SITES=	APACHE/guacamole/${DISTVERSION}/source/
 
-PATCH_SITES=	https://github.com/apache/${PORTNAME}/commit/
-PATCHFILES=	5cf408ebbba9544fb5dfb297d98d5a1e1751a56d.patch:-p1
-
 MAINTAINER=	ultima@FreeBSD.org
 COMMENT=	HTML5 Clientless Remote Desktop
 WWW=		https://guacamole.incubator.apache.org
