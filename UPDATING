@@ -1189,8 +1189,7 @@ you update your ports collection, before attempting any port upgrades.
   ATTENTION:
   1) The default user changed from "pgsql" to "postgres" in 11. The migration steps above now assume
      the "postgres" database user and FreeBSD user.
-  2) See the updating entry 20190829 if you are updating from a release prior to 11.
-  3) If you use non-default initdb options, you have to adjust the initdb-command accordingly
+  2) If you use non-default initdb options, you have to adjust the initdb-command accordingly
 
 20230906:
   AUTHOR: jrm@FreeBSD.org
@@ -1588,7 +1587,7 @@ you update your ports collection, before attempting any port upgrades.
   If you use pkg, simply upgrade:
   # pkg upgrade
 
-  If you do not use pkg, please check entry 20190420.
+  If you do not use pkg, please check entry 20220421.
   The description there should also work for this version.
 
 20230314:
@@ -2506,8 +2505,35 @@ you update your ports collection, before attempting any port upgrades.
   If you use pkg, simply upgrade:
   # pkg upgrade
 
-  If you do not use pkg, please check entry 20190420.
-  The description there should also work for this version.
+  If you do not use pkg, please use an adapted version of the below:
+
+  If you compile your own ports you may keep 2.4 as the default version by
+  adding the following lines to your /etc/make.conf file:
+
+  #
+  # Keep ruby 2.4 as default version
+  #
+  DEFAULT_VERSIONS+=ruby=2.4
+
+  If you wish to update to the new default version, you need to first stop any
+  software that uses ruby. Then, you will need to follow these steps, depending
+  upon how you manage your system.
+
+  If you use pkgng, simply upgrade:
+  # pkg upgrade
+
+  If you use portmaster, install new ruby, then rebuild all ports that depend
+  on ruby:
+  # portmaster -o lang/ruby25 lang/ruby24
+  # portmaster -R -r ruby-2.5
+
+  If you use portupgrade, install new ruby, then rebuild all ports that depend
+  on ruby:
+
+  # pkg delete -f ruby portupgrade
+  # make -C /usr/ports/ports-mgmt/portupgrade install clean
+  # pkg set -o lang/ruby24:lang/ruby25
+  # portupgrade -x ruby-2.5.\* -fr lang/ruby25
 
 20220413:
   AFFECTS: users of net-im/py-matrix-synapse
@@ -2924,9 +2950,7 @@ you update your ports collection, before attempting any port upgrades.
   | magit-emacs29             | magit-emacs_devel           |
   -----------------------------------------------------------
 
-  To handle these final package name changes, follow a similar procedure
-  as the one described in the 20200811 entry.  That is, simply running
-  `pkg upgrade` will not upgrade, e.g., foo-emacs27_nox to
+  Simply running `pkg upgrade` will not upgrade, e.g., foo-emacs27_nox to
   foo-emacs_nox.
 
   Binary package users:
@@ -3110,8 +3134,7 @@ you update your ports collection, before attempting any port upgrades.
   ATTENTION:
   1) The default user changed from "pgsql" to "postgres" in 11. The migration steps above now assume
      the "postgres" database user and FreeBSD user.
-  2) See the updating entry 20190829 if you are updating from a release prior to 11.
-  3) If you use non-default initdb options, you have to adjust the initdb-command accordingly
+  2) If you use non-default initdb options, you have to adjust the initdb-command accordingly
 
 20211023:
   AFFECTS: users of www/node
