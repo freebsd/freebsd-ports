@@ -1,6 +1,5 @@
 PORTNAME=	qtkeychain
-#DISTVERSIONPREFIX=	v
-DISTVERSION=	0.14.3
+DISTVERSION=	0.15.0
 CATEGORIES=	security
 PKGNAMESUFFIX=	-${FLAVOR}
 
@@ -20,7 +19,7 @@ _WITH_QT6_qt6=	ON
 CMAKE_ARGS=	-DBUILD_WITH_QT6=${_WITH_QT6_${FLAVOR}} \
 		-DQT_MKSPECDIR_REL=${QT_MKSPECDIR_REL}
 USE_GITHUB=	yes
-_USE_QT_qt5=	core dbus buildtools:build qmake:build
+_USE_QT_qt5=	core dbus buildtools:build qmake:build testlib:build
 _USE_QT_qt6=	base
 USE_QT=		${_USE_QT_${FLAVOR}}
 GH_ACCOUNT=	frankosterfeld
