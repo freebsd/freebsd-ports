@@ -4148,3 +4148,5 @@ devel/astah-community||2025-02-11|Has expired: Upstream no longer provides commu
 audio/pulseaudio-qt@qt5||2025-02-14|Qt5 support was removed upstream
 audio/pulseaudio-qt@qt6|audio/pulseaudio-qt|2025-02-14|Unflavorize; only Qt6 is supported
 lang/dotnet-runtime|lang/dotnet-host|2025-02-15|Rename to match Microsoft recommendations
+net-im/qxmpp@qt5||2025-02-16|Qt5 flavor is no longer needed
+net-im/qxmpp@qt6|net-im/qxmpp|2025-02-16|Unflavorize; only Qt6 is supported
