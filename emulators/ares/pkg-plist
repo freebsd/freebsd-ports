@@ -1,4 +1,11 @@
 bin/ares
+%%TOOLS%%bin/arm7tdmi
+%%TOOLS%%bin/genius
+%%TOOLS%%bin/i8080
+%%TOOLS%%bin/m68000
+%%TOOLS%%bin/mame2bml
+%%TOOLS%%bin/mia
+bin/sourcery
 share/applications/ares.desktop
 %%DATADIR%%/Database/Arcade.bml
 %%DATADIR%%/Database/BS Memory.bml
@@ -9,5 +16,5 @@ share/applications/ares.desktop
 %%DATADIR%%/Database/Sufami Turbo.bml
 %%DATADIR%%/Database/Super Famicom Boards.bml
 %%DATADIR%%/Database/Super Famicom.bml
-%%PORTDOCS%%%%DOCSDIR%%/README.md
+%%LIBRETRO%%%%DATADIR%%/Shaders
 share/icons/hicolor/256x256/apps/ares.png

@@ -1,7 +1,6 @@
 PORTNAME=	ares
 DISTVERSIONPREFIX=	v
-DISTVERSION=	141
-PORTREVISION=	2
+DISTVERSION=	142
 CATEGORIES=	emulators
 
 MAINTAINER=	bsdcode@disroot.org
@@ -11,202 +10,163 @@ WWW=		https://ares-emu.net
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		compiler:c++17-lang gmake gnome localbase:ldflags pkgconfig \
-		xorg
+BUILD_DEPENDS=	librashader>0:devel/librashader
+
+USES=		cmake compiler:c++17-lang gl gnome pkgconfig xorg
 USE_GITHUB=	yes
 GH_ACCOUNT=	ares-emulator
-USE_GNOME=	gtksourceview3
-USE_XORG=	x11 xext xrandr
+USE_GL=		opengl
+USE_GNOME=	gtk30
+USE_XORG=	x11 xext xrandr xrender
 
-MAKEFILE=	GNUmakefile
-MAKE_ARGS=	compiler=${CC} \
-		cores= \
-		hiro=gtk3-se \
-		local=false \
-		lto=false \
-		prefix=${PREFIX} \
-		ruby=video.none \
-		sdl2=false \
-		symbols=false \
-		threaded=true
+CMAKE_ARGS=	-DARES_CORES="${_CORES:S/ /;/gW}" \
+		-DARES_VERSION_OVERRIDE=${DISTVERSIONFULL} \
+		-DENABLE_CCACHE=${CCACHE_ENABLED}
+CMAKE_ON=	ARES_SKIP_DEPS \
+		ARES_UNITY_CORES \
+		WITH_SYSTEM_ZLIB
+CMAKE_OFF=	ARES_BUILD_LOCAL \
+		ARES_BUNDLE_SHADERS \
+		ARES_ENABLE_MINIMUM_CPU
 
-OPTIONS_DEFINE=		DEBUG DOCS HOTKEYS OPENMP SHADER
-OPTIONS_DEFAULT=	A26 ALSA AO CV FC GB GBA GLX MD MS MSX MYVISION N64 NG \
-			NGP OPENAL OPENMP OSS PCE PERFORMANCE PS1 SDLAUDIO \
-			SDLINPUT SFC SG SHADER SPEC UDEV UHID WS XLIB XVIDEO
-OPTIONS_GROUP=		AUDIO CORES INPUT VIDEO
-OPTIONS_GROUP_AUDIO=	ALSA AO OPENAL OSS PULSEAUDIO SDLAUDIO
-OPTIONS_GROUP_CORES=	A26 CV FC GB GBA MD MS MSX MYVISION N64 NG NGP PCE PS1 \
-			SFC SG SPEC WS
-OPTIONS_GROUP_INPUT=	SDLINPUT UDEV UHID XLIB
-OPTIONS_GROUP_VIDEO=	GLX XVIDEO
-OPTIONS_SINGLE=		PROFILE
-OPTIONS_SINGLE_PROFILE=	ACCURACY PERFORMANCE
+EXTRACT_AFTER_ARGS=	--exclude thirdparty/librashader \
+			--exclude thirdparty/slang-shaders \
+			--no-same-owner --no-same-permissions
+
+OPTIONS_DEFINE=			SDL TOOLS
+OPTIONS_DEFAULT=		A26 ALSA AO CV FC GB GBA LIBRASHADER LIBRETRO \
+				LTO MD MS MSX MYVISION N64 NG NGP OPENAL \
+				OPTIMIZED_CFLAGS OSS PCE PS1 SDL SFC SG SPEC \
+				UDEV USBHID WS
+OPTIONS_GROUP=			AUDIO CORES INPUT OPTIMIZATION SHADER
+OPTIONS_GROUP_AUDIO=		ALSA AO OPENAL OSS PULSEAUDIO
+OPTIONS_GROUP_CORES=		A26 CV FC GB GBA MD MS MSX MYVISION N64 NG NGP \
+				PCE PS1 SFC SG SPEC WS
+OPTIONS_GROUP_INPUT=		HOTKEYS UDEV USBHID
+OPTIONS_GROUP_OPTIMIZATION=	ACCURACY LTO OPTIMIZED_CFLAGS
+OPTIONS_GROUP_SHADER=		LIBRASHADER LIBRETRO
+
+# linking openal fails on i386, LLD_UNSAFE workaround fails with
+# /usr/local/bin/i386-unknown-freebsd14.1-ld.bfd: /usr/bin/../lib/LLVMgold.so:
+# error loading plugin: Cannot open "/usr/bin/../lib/LLVMgold.so"
+# on tools/sourcery target, so exclude OPENAL on i386
+OPTIONS_EXCLUDE_i386=	OPENAL
+
+OPTIONS_SUB=	yes
 
 A26_DESC=		Atari 2600
-ACCURACY_DESC=		Slower but more accurate
+ACCURACY_DESC=		Emulation accuracy over performance
 CV_DESC=		ColecoVision
 FC_DESC=		NES / Famicom
 GBA_DESC=		Game Boy Advance
-GB_DESC=		Game Boy
+GB_DESC=		Game Boy / Game Boy Color
 HOTKEYS_DESC=		Inofficial hotkeys locking patch
-MD_DESC=		Mega Drive / Genesis
-MSX_DESC=		MSX
-MS_DESC=		Master System / Mark III
+LIBRASHADER_DESC=	Slang-shader support via librashader
+LIBRETRO_DESC=		Install slang-shaders from libretro
+MD_DESC=		Sega Mega Drive / Genesis
+MSX_DESC=		Microsoft MSX
+MS_DESC=		Sega Master System / Mark III
 MYVISION_DESC=		My Vision
 N64_DESC=		Nintendo 64
-NGP_DESC=		Neo Geo Pocket
+NGP_DESC=		Neo Geo Pocket / Neo Geo Pocket Color
 NG_DESC=		Neo Geo (AES/MVS)
 PCE_DESC=		PC-Engine / TurboGrafx
-PERFORMANCE_DESC=	Faster but less accurate
-PROFILE_DESC=
 PS1_DESC=		PlayStation
-SDLAUDIO_DESC=		${SDL_DESC}
-SDLINPUT_DESC=		${SDL_DESC}
 SFC_DESC=		SNES / Super Famicom
-SG_DESC=		SG-1000
-SHADER_DESC=		Build with shader support
+SG_DESC=		Sega SG-1000
 SPEC_DESC=		ZX Spectrum
-UDEV_DESC=		UDEV input support
-UHID_DESC=		UHID input support
-VIDEO_DESC=
-WS_DESC=		WonderSwan
-XLIB_DESC=		XLIB input support
+TOOLS_DESC=		Include supplemental tools and tests
+UDEV_DESC=		Input support via UDEV
+USBHID_DESC=		Input support via USBHID
+WS_DESC=		WonderSwan / WonderSwan Color
 
-A26_MAKE_ARGS=		cores+=a26
+A26_VARS=			_CORES+=a26
 
-ACCURACY_MAKE_ARGS=	profile=accuracy
+ACCURACY_CMAKE_BOOL=		ARES_PROFILE_ACCURACY
 
-ALSA_LIB_DEPENDS=	libasound.so:audio/alsa-lib
-ALSA_MAKE_ARGS=		ruby+=audio.alsa
+ALSA_LIB_DEPENDS=		libasound.so:audio/alsa-lib
+ALSA_CMAKE_BOOL=		ARES_ENABLE_ALSA
 
-AO_LIB_DEPENDS=		libao.so:audio/libao
-AO_MAKE_ARGS=		ruby+=audio.ao
+AO_LIB_DEPENDS=			libao.so:audio/libao
+AO_CMAKE_BOOL=			ARES_ENABLE_AO
 
-CV_MAKE_ARGS=		cores+=cv
+CV_VARS=			_CORES+=cv
 
-DEBUG_MAKE_ARGS=	build=debug
-DEBUG_MAKE_ARGS_OFF=	build=release
+FC_VARS=			_CORES+=fc
 
-FC_MAKE_ARGS=		cores+=fc
+GBA_VARS=			_CORES+=gba
 
-GBA_MAKE_ARGS=		cores+=gba
+GB_VARS=			_CORES+=gb
 
-GB_MAKE_ARGS=		cores+=gb
+HOTKEYS_EXTRA_PATCHES=		${PATCHDIR}/extra-patch-desktop-ui_input_hotkeys.cpp
 
-GLX_USES=		gl
-GLX_USE=		GL=gl
-GLX_MAKE_ARGS=		ruby+=video.glx
+LIBRASHADER_LIB_DEPENDS=	librashader.so:devel/librashader
+LIBRASHADER_CMAKE_BOOL=		ARES_ENABLE_LIBRASHADER
 
-HOTKEYS_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-hotkeys
+LIBRETRO_IMPLIES=		LIBRASHADER
+LIBRETRO_BUILD_DEPENDS=		${_LIBRETRO_BR_DEPENDS}
+LIBRETRO_RUN_DEPENDS=		${_LIBRETRO_BR_DEPENDS}
 
-MD_MAKE_ARGS=		cores+=md
+LTO_CMAKE_BOOL=			ENABLE_IPO
 
-MSX_MAKE_ARGS=		cores+=msx
+MD_VARS=			_CORES+=md
 
-MS_MAKE_ARGS=		cores+=ms
+MSX_VARS=			_CORES+=msx
 
-MYVISION_MAKE_ARGS=	cores+=myvision
+MS_VARS=			_CORES+=ms
 
-N64_RUN_DEPENDS=	${LOCALBASE}/lib/libvulkan.so:graphics/vulkan-loader
-N64_MAKE_ARGS=		cores+=n64 \
-			vulkan=true
-N64_MAKE_ARGS_OFF=	vulkan=false
+MYVISION_VARS=			_CORES+=myvision
 
-NGP_MAKE_ARGS=		cores+=ngp
+N64_BUILD_DEPENDS=		${_N64_BR_DEPENDS}
+N64_RUN_DEPENDS=		${_N64_BR_DEPENDS}
+N64_VARS=			_CORES+=n64
 
-NG_MAKE_ARGS=		cores+=ng
+NGP_VARS=			_CORES+=ngp
 
-OPENAL_USES=		openal
-OPENAL_MAKE_ARGS=	ruby+=audio.openal
+NG_VARS=			_CORES+=ng
 
-OPENMP_MAKE_ARGS=	openmp=true
-OPENMP_MAKE_ARGS_OFF=	openmp=false
+OPENAL_USES=			openal
+OPENAL_CMAKE_BOOL=		ARES_ENABLE_OPENAL
 
-OSS_MAKE_ARGS=		ruby+=audio.oss
+OPTIMIZED_CFLAGS_CFLAGS=	-O3
 
-PCE_MAKE_ARGS=		cores+=pce
+OSS_CMAKE_BOOL=			ARES_ENABLE_OSS
 
-PERFORMANCE_MAKE_ARGS=	profile=performance
+PCE_VARS=			_CORES+=pce
 
-PS1_MAKE_ARGS=		cores+=ps1
+PS1_VARS=			_CORES+=ps1
 
-PULSEAUDIO_LIB_DEPENDS=	libpulse-simple.so:audio/pulseaudio \
-			libpulse.so:audio/pulseaudio
-PULSEAUDIO_MAKE_ARGS=	ruby+=audio.pulseaudio \
-			ruby+=audio.pulseaudiosimple
+PULSEAUDIO_LIB_DEPENDS=		libpulse-simple.so:audio/pulseaudio \
+				libpulse.so:audio/pulseaudio
+PULSEAUDIO_CMAKE_BOOL=		ARES_ENABLE_PULSEAUDIO
 
-SDLAUDIO_USES=		sdl
-SDLAUDIO_USE=		SDL=sdl2
-SDLAUDIO_MAKE_ARGS=	ruby+=audio.sdl \
-			sdl2=true
+SDL_USES=			sdl
+SDL_USE=			SDL=sdl2
+SDL_CMAKE_BOOL=			ARES_ENABLE_SDL
 
-SDLINPUT_USES=		sdl
-SDLINPUT_USE=		SDL=sdl2
-SDLINPUT_MAKE_ARGS=	ruby+=input.sdl \
-			sdl2=true
+SFC_VARS=			_CORES+=sfc
 
-SFC_MAKE_ARGS=		cores+=sfc
+SG_VARS=			_CORES+=sg
 
-SG_MAKE_ARGS=		cores+=sg
+SPEC_VARS=			_CORES+=spec
 
-SHADER_BUILD_DEPENDS=	${LOCALBASE}/include/librashader/librashader.h:devel/librashader
-SHADER_RUN_DEPENDS=	${LOCALBASE}/${_SHADERS}/bilinear.slangp:games/libretro-shaders-slang \
-			${LOCALBASE}/lib/librashader.so:devel/librashader
-SHADER_MAKE_ARGS=	librashader=true
-SHADER_MAKE_ARGS_OFF=	librashader=false
-SHADER_CFLAGS=		-DLIBRA_RUNTIME_OPENGL
-SHADER_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-desktop-ui_desktop-ui.cpp
+TOOLS_CMAKE_BOOL=		ARES_BUILD_OPTIONAL_TARGETS
 
-SPEC_MAKE_ARGS=		cores+=spec
+UDEV_LIB_DEPENDS=		libudev.so:devel/libudev-devd
+UDEV_CMAKE_BOOL=		ARES_ENABLE_UDEV
 
-UDEV_LIB_DEPENDS=	libudev.so:devel/libudev-devd
-UDEV_MAKE_ARGS=		ruby+=input.udev
+USBHID_CMAKE_BOOL=		ARES_ENABLE_USBHID
 
-UHID_MAKE_ARGS=		ruby+=input.uhid
+WS_VARS=			_CORES+=ws
 
-WS_MAKE_ARGS=		cores+=ws
-
-XLIB_MAKE_ARGS=		ruby+=input.xlib
-
-XVIDEO_USE=		XORG=xv
-XVIDEO_MAKE_ARGS=	ruby+=video.xvideo
-
-_SHADERS=		share/libretro/shaders/shaders_slang
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MOPENAL} && ${ARCH} == "i386"
-LLD_UNSAFE=	yes
-.endif
+_LIBRETRO_BR_DEPENDS=	libretro-shaders-slang<0:games/libretro-shaders-slang
+_N64_BR_DEPENDS=	vulkan-loader>0:graphics/vulkan-loader
 
 post-patch:
 	${REINPLACE_CMD} 's|/usr/local|${LOCALBASE}|g' \
-		${WRKSRC}/hiro/GNUmakefile
+		${WRKSRC}/cmake/finders/*
 
-post-patch-SHADER-on:
-	${REINPLACE_CMD} 's|-I../thirdparty/librashader/include||g' \
-		${WRKSRC}/desktop-ui/GNUmakefile
-	${REINPLACE_CMD} 's|"librashader_ld.h"|<librashader/librashader_ld.h>|g' \
-		${WRKSRC}/ruby/video/opengl/opengl.hpp
-	${REINPLACE_CMD} 's|@@SHADERS@@|${LOCALBASE}/${_SHADERS}/|g' \
-		${WRKSRC}/desktop-ui/desktop-ui.cpp
-
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/desktop-ui/out/ares \
-		${STAGEDIR}${PREFIX}/bin
-	${INSTALL_DATA} ${WRKSRC}/desktop-ui/resource/ares.desktop \
-		${STAGEDIR}${PREFIX}/share/applications
-	${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/256x256/apps
-	${INSTALL_DATA} ${WRKSRC}/desktop-ui/resource/ares.png \
-		${STAGEDIR}${PREFIX}/share/icons/hicolor/256x256/apps
-	${MKDIR} ${STAGEDIR}${DATADIR}/Database
-	(cd ${WRKSRC}/mia/Database && \
-		${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}/Database)
-
-post-install-DOCS-on:
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README.md \
-		${STAGEDIR}${DOCSDIR}
+post-install-LIBRETRO-on:
+	${LN} -s ${LOCALBASE}/share/libretro/shaders/shaders_slang ${STAGEDIR}${DATADIR}/Shaders
 
 .include <bsd.port.mk>
