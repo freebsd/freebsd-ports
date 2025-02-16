@@ -1,11 +1,12 @@
 PORTNAME=	R.utils
 DISTVERSION=	2.12.3
+PORTREVISION=	1
 CATEGORIES=	devel
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	uzsolt@FreeBSD.org
 COMMENT=	Utility functions useful developing R packages
-WWW=		https://cran.r-project.org/web/packages/R.oo/
+WWW=		https://cran.r-project.org/package=R.utils
 
 LICENSE=	LGPL21 LGPL3
 LICENSE_COMB=	dual
