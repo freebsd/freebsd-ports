@@ -26,7 +26,7 @@ share/icons/hicolor/scalable/apps/kaidan.svg
 %%DATADIR%%/providers-completion.json.license
 %%DATADIR%%/providers.json
 %%DATADIR%%/providers.json.license
-share/knotifications5/kaidan.notifyrc
+share/knotifications6/kaidan.notifyrc
 share/locale/ar/LC_MESSAGES/kaidan_qt.qm
 share/locale/ca/LC_MESSAGES/kaidan_qt.qm
 share/locale/ca@valencia/LC_MESSAGES/kaidan_qt.qm
@@ -66,3 +66,4 @@ share/locale/uk/LC_MESSAGES/kaidan_qt.qm
 share/locale/zh_CN/LC_MESSAGES/kaidan_qt.qm
 share/locale/zh_TW/LC_MESSAGES/kaidan_qt.qm
 share/metainfo/im.kaidan.kaidan.appdata.xml
+share/qlogging-categories6/kaidan.categories
