@@ -1,7 +1,7 @@
 PORTNAME=	cava
-DISTVERSION=	0.10.2
-PORTREVISION=	1
+DISTVERSION=	0.10.4
 CATEGORIES=	audio
+MASTER_SITES=	https://github.com/karlstav/${PORTNAME}/releases/download/${DISTVERSION}/
 
 MAINTAINER=	vendion@gmail.com
 COMMENT=	Cross-platform Audio Visualizer
@@ -13,9 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libfftw3.so:math/fftw3 \
 		libiniparser.so:devel/iniparser
 
-USES=		autoreconf compiler:c11 libtool localbase pkgconfig
-USE_GITHUB=	yes
-GH_ACCOUNT=	karlstav
+USES=		compiler:c11 localbase pkgconfig
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-input-alsa \
