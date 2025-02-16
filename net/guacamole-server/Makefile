@@ -95,7 +95,7 @@ PLIST_SUB+=		TERMINAL="@comment "
 .endif
 
 .if ${OPSYS} == FreeBSD
-CFLAGS+=       -Wno-error=strict-prototypes \
+CFLAGS+=	-Wno-error=strict-prototypes \
 			   -Wno-error=unused-but-set-variable
 .endif
 
