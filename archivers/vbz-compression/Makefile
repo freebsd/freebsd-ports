@@ -1,5 +1,5 @@
 PORTNAME=	vbz-compression
-DISTVERSION=	1.0.12
+DISTVERSION=	1.0.13
 CATEGORIES=	archivers
 
 MAINTAINER=	jwb@FreeBSD.org
