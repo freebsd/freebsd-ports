@@ -1,6 +1,8 @@
 %%WWWDIR%%/.github/ISSUE_TEMPLATE.md
+%%WWWDIR%%/.github/dependabot.yml
 %%WWWDIR%%/.github/workflows/L10n-update.yml
 %%WWWDIR%%/.github/workflows/php.yml
+%%WWWDIR%%/.github/workflows/phpstan.yml
 %%WWWDIR%%/.gitignore
 %%WWWDIR%%/.gitlab-ci.yml
 %%WWWDIR%%/LICENSE
@@ -619,9 +621,11 @@
 %%WWWDIR%%/library/Director/PropertyModifier/PropertyModifierXlsNumericIp.php
 %%WWWDIR%%/library/Director/ProvidedHook/CubeLinks.php
 %%WWWDIR%%/library/Director/ProvidedHook/IcingaDbCubeLinks.php
+%%WWWDIR%%/library/Director/ProvidedHook/Icingadb/CustomVarRenderer.php
 %%WWWDIR%%/library/Director/ProvidedHook/Icingadb/HostActions.php
 %%WWWDIR%%/library/Director/ProvidedHook/Icingadb/IcingadbSupport.php
 %%WWWDIR%%/library/Director/ProvidedHook/Icingadb/ServiceActions.php
+%%WWWDIR%%/library/Director/ProvidedHook/Monitoring/CustomVarRenderer.php
 %%WWWDIR%%/library/Director/ProvidedHook/Monitoring/HostActions.php
 %%WWWDIR%%/library/Director/ProvidedHook/Monitoring/ServiceActions.php
 %%WWWDIR%%/library/Director/Repository/IcingaTemplateRepository.php
@@ -694,6 +698,7 @@
 %%WWWDIR%%/library/Director/Web/Form/IcingaObjectFieldLoader.php
 %%WWWDIR%%/library/Director/Web/Form/IconHelper.php
 %%WWWDIR%%/library/Director/Web/Form/IplElement/ExtensibleSetElement.php
+%%WWWDIR%%/library/Director/Web/Form/PropertyTableSortForm.php
 %%WWWDIR%%/library/Director/Web/Form/QuickBaseForm.php
 %%WWWDIR%%/library/Director/Web/Form/QuickForm.php
 %%WWWDIR%%/library/Director/Web/Form/QuickSubForm.php
@@ -1081,6 +1086,7 @@
 %%WWWDIR%%/schema/pgsql-migrations/upgrade_184.sql
 %%WWWDIR%%/schema/pgsql-migrations/upgrade_186.sql
 %%WWWDIR%%/schema/pgsql-migrations/upgrade_187.sql
+%%WWWDIR%%/schema/pgsql-migrations/upgrade_188.sql
 %%WWWDIR%%/schema/pgsql-migrations/upgrade_77.sql
 %%WWWDIR%%/schema/pgsql-migrations/upgrade_78.sql
 %%WWWDIR%%/schema/pgsql-migrations/upgrade_79.sql
