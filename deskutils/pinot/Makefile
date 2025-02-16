@@ -1,6 +1,5 @@
 PORTNAME=	pinot
-PORTVERSION=	1.21
-PORTREVISION=	16
+PORTVERSION=	1.22
 CATEGORIES=	deskutils
 
 MAINTAINER=	thierry@FreeBSD.org
@@ -16,7 +15,7 @@ LIB_DEPENDS=	libxapian.so:databases/xapian-core		\
 		libfreetype.so:print/freetype2			\
 		libexttextcat-2.0.so:textproc/libexttextcat	\
 		libdbus-1.so:devel/dbus				\
-		libxml++-2.6.so:textproc/libxml++26		\
+		libxml++-3.0.so:textproc/libxml++30		\
 		libboost_thread.so:devel/boost-libs		\
 		libharfbuzz.so:print/harfbuzz			\
 		libnotify.so:devel/libnotify			\
@@ -47,7 +46,6 @@ USE_LDCONFIG=	${PREFIX}/lib/pinot/backends ${PREFIX}/lib/pinot/filters
 SHEBANG_FILES=	scripts/bash/*.sh
 
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--with-http=curl --with-ssl=${OPENSSLBASE} --enable-libarchive	\
 		--enable-mempool=no --enable-libnotify
 CONFIGURE_ENV=	MKDIR_P="${MKDIR}" TEXTCAT_LIBS="-lexttextcat-2.0"
