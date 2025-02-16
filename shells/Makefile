@@ -55,6 +55,7 @@
     SUBDIR += rubygem-shellwords
     SUBDIR += rush
     SUBDIR += sash
+    SUBDIR += schemesh
     SUBDIR += scponly
     SUBDIR += sheldon
     SUBDIR += shell-hist
