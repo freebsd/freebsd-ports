@@ -29,10 +29,6 @@ lib/girepository-1.0/DBus-1.0.typelib
 lib/girepository-1.0/DBusGLib-1.0.typelib
 lib/girepository-1.0/GIRepository-2.0.typelib
 lib/girepository-1.0/GL-1.0.typelib
-lib/girepository-1.0/GLib-2.0.typelib
-lib/girepository-1.0/GModule-2.0.typelib
-lib/girepository-1.0/GObject-2.0.typelib
-lib/girepository-1.0/Gio-2.0.typelib
 lib/girepository-1.0/Vulkan-1.0.typelib
 lib/girepository-1.0/cairo-1.0.typelib
 lib/girepository-1.0/fontconfig-2.0.typelib
@@ -204,10 +200,6 @@ share/gir-1.0/DBus-1.0.gir
 share/gir-1.0/DBusGLib-1.0.gir
 share/gir-1.0/GIRepository-2.0.gir
 share/gir-1.0/GL-1.0.gir
-share/gir-1.0/GLib-2.0.gir
-share/gir-1.0/GModule-2.0.gir
-share/gir-1.0/GObject-2.0.gir
-share/gir-1.0/Gio-2.0.gir
 share/gir-1.0/Vulkan-1.0.gir
 share/gir-1.0/cairo-1.0.gir
 share/gir-1.0/fontconfig-2.0.gir
@@ -232,6 +224,8 @@ share/gir-1.0/xrandr-1.3.gir
 %%DATADIR%%-1.0/tests/gimarshallingtests.c
 %%DATADIR%%-1.0/tests/gimarshallingtests.h
 %%DATADIR%%-1.0/tests/gitestmacros.h
+%%DATADIR%%-1.0/tests/regress-unix.c
+%%DATADIR%%-1.0/tests/regress-unix.h
 %%DATADIR%%-1.0/tests/regress.c
 %%DATADIR%%-1.0/tests/regress.h
 %%DATADIR%%-1.0/tests/utility.c

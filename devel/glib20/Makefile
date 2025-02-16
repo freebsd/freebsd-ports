@@ -1,10 +1,12 @@
 PORTNAME=	glib
-DISTVERSION=	2.80.5
-PORTREVISION=	1
+DISTVERSION=	2.82.4
 PORTEPOCH=	2
 CATEGORIES=	devel
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
+
+PATCH_SITES=	https://gitlab.gnome.org/GNOME/${PORTNAME}/-/commit/
+PATCHFILES=	3dcf1ea13d9b2a3371fa35b79e640063de33dc20.patch:-p1
 
 MAINTAINER=	desktop@FreeBSD.org
 COMMENT=	Some useful routines of C programming (current stable version)
@@ -20,21 +22,31 @@ TEST_DEPENDS=	dbus-uuidgen:devel/dbus \
 		update-desktop-database:devel/desktop-file-utils \
 		update-mime-database:misc/shared-mime-info
 
+FLAVORS=	default bootstrap
+FLAVOR?=	${FLAVORS:[1]}
+FLAVORS_SUB=	yes
+
+default_CONFLICTS_INSTALL=	glib-bootstrap
+default_BUILD_DEPENDS=	g-ir-scanner:devel/gobject-introspection@bootstrap
+
+bootstrap_PKGNAMESUFFIX=	-bootstrap
+bootstrap_CONFLICTS_INSTALL=	glib
+
 # iconv:wchar_t - our iconv in base doesn't support utf-8 -> wchar_t (boooo)
 # (wchar_t is used by glibmm, rawtherapee triggered this)
 USES=		compiler:c11 cpe gettext gnome iconv:wchar_t localbase:ldflags \
 		meson perl5 pkgconfig python tar:xz trigger
-TRIGGERS=	gio-modules glib-schemas
 USE_LDCONFIG=	yes
 USE_PERL5=	build
 USE_PYTHON=	py3kplist
 MESON_ARGS=	-Db_lundef=false \
 		-Ddefault_library=both \
 		-Dinstalled_tests=false \
-		-Dintrospection=disabled \
 		-Dlibmount=disabled \
 		-Druntime_dir=/var/run \
 		-Dselinux=disabled \
+		-Dsysprof=disabled \
+		-Dsystemtap=disabled \
 		-Dxattr=false
 BINARY_ALIAS=	python3=${PYTHON_CMD}
 PORTSCOUT=	limitw:1,even
@@ -42,7 +54,7 @@ CPE_VENDOR=	gnome
 
 CONFLICTS_INSTALL=	p5-Giovanni
 
-_LIBVERSION=	0.8000.5
+_LIBVERSION=	0.${DISTVERSION:R:E}00.${DISTVERSION:E}
 PLIST_SUB=	LIBVERSION=${_LIBVERSION}
 
 OPTIONS_DEFINE=		DOCS FAM_ALTBACKEND MANPAGES NLS TEST
@@ -60,10 +72,19 @@ MANPAGES_MESON_ENABLED=	man-pages
 
 TEST_MESON_TRUE=	tests
 
-.include <bsd.port.pre.mk>
-
 # doesn't build yet
-MESON_ARGS+=	-Ddtrace=false
+MESON_ARGS+=	-Ddtrace=disabled
+
+.if ${FLAVOR:U} == bootstrap
+TRIGGERS=
+MESON_ARGS+=	-Dintrospection=disabled -Ddocumentation=false -Dman-pages=disabled
+OPTIONS_DEFINE=
+PLIST_SUB+=	PORTDOCS='@comment ' NLS='@comment ' MANPAGES='@comment '
+PLIST_FILES+=	'@dir share/pkg/triggers'
+.else
+TRIGGERS=	gio-modules glib-schemas
+MESON_ARGS+=	-Dintrospection=enabled
+.endif
 
 pre-configure-FAM_ALTBACKEND-on:
 	@${REINPLACE_CMD} -e 's|kqueue-helper.c|kqueue_fnm.c|g ; \
@@ -113,4 +134,4 @@ post-install:
 pre-test:
 	${LOCALBASE}/bin/dbus-uuidgen > /var/lib/dbus/machine-id
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
