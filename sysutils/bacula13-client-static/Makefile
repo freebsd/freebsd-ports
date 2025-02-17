@@ -5,8 +5,6 @@ COMMENT=	Network backup solution (static client)
 
 BROKEN_SSL=	libressl
 
-USES=		sbrk
-
 WITH_CLIENT_ONLY=	yes
 PLIST=			${.CURDIR}/pkg-plist
 MASTERDIR=		${.CURDIR}/../../sysutils/bacula13-server
