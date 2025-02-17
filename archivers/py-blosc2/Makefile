@@ -1,11 +1,11 @@
 PORTNAME=	blosc2
-PORTVERSION=	3.0.0
+PORTVERSION=	3.1.1
 CATEGORIES=	archivers python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
-COMMENT=	Python wrapper for the C-Blosc2 library
+COMMENT=	Fast and compressed ndarray library with a flexible compute engine
 WWW=		https://www.blosc.org/python-blosc2/ \
 		https://github.com/Blosc/python-blosc2
 
