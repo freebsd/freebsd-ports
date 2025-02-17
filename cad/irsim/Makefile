@@ -1,48 +1,44 @@
 PORTNAME=	irsim
-DISTVERSION=	9.7.116
-PORTREVISION=	1
+DISTVERSION=	9.7.118
 CATEGORIES=	cad
 MASTER_SITES=	http://opencircuitdesign.com/irsim/archive/
+PKGNAMESUFFIX=	-${FLAVOR}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	alster@vinterdalen.se
 COMMENT=	Event-driven logic-level simulator for MOS circuis
 WWW=		http://opencircuitdesign.com/irsim/
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
-USES=	gmake tar:tgz xorg
+FLAVORS=	scheme lite tcl
+FLAVOR?=	${FLAVORS:[1]}
 
-OPTIONS_RADIO=	INTERPRETER
-OPTIONS_RADIO_INTERPRETER=	SCHEME TCL
-OPTIONS_DEFAULT=	SCHEME
-SCHEME_DESC=	Scheme interpreter
-TCL_DESC=	Tcl interpreter
-OPTIONS_SUB=	yes
+lite_CONFLICTS_INSTALL=		${PORTNAME}-scheme ${PORTNAME}-tcl
+scheme_CONFLICTS_INSTALL=	${PORTNAME}-lite   ${PORTNAME}-tcl
+tcl_CONFLICTS_INSTALL=		${PORTNAME}-lite   ${PORTNAME}-scheme
 
-SCHEME_CONFIGURE_ON=	--with-interpreter=scheme
-TCL_CONFIGURE_ON=	--with-interpreter=tcl
-TCL_USES=		tk:tea
+USES=		gmake localbase:ldflags tar:tgz xorg
+USE_XORG=	x11
+
+GNU_CONFIGURE=	yes
 
 CONFIGURE_WRKSRC=	${WRKSRC}/scripts
 
-USE_XORG=	x11
-GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
+PLIST=		pkg-plist.${FLAVOR}
 
-CFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MTCL}
-PLIST_SUB+=	NOTCL="@comment "
-.else
-WISH=		${FALSE}
-PLIST_SUB+=	NOTCL=""
-.endif
-
-.if empty(PORT_OPTIONS:MSCHEME) && empty(PORT_OPTIONS:MTCL)
-CONFIGURE_ARGS+=	--with-interpreter=no
+.if ${FLAVOR} == lite
+CONFIGURE_ARGS=		--with-interpreter=no
+WISH=			${FALSE}
+.elif ${FLAVOR} == scheme
+CONFIGURE_ARGS=		--with-interpreter=scheme
+WISH=			${FALSE}
+.elif ${FLAVOR} == tcl
+CONFIGURE_ARGS=		--with-interpreter=tcl
+# Workaround building Tcl with clang17+
+# See https://github.com/RTimothyEdwards/irsim/issues/7
+LDFLAGS+=		-Wl,--undefined-version
+USES+=			tk:tea
 .endif
 
 post-patch:
@@ -53,11 +49,11 @@ post-patch:
 		 /-l\/usr\/X11R6\/include/d' ${CONFIGURE_WRKSRC}/configure
 
 post-install:
-.if empty(PORT_OPTIONS:MTCL)
-	cd ${STAGEDIR}${PREFIX} && ${STRIP_CMD} bin/gentbl bin/genspktbl bin/irsim
-.else
+.if ${FLAVOR} == tcl
 	cd ${STAGEDIR}${PREFIX}/lib/irsim/tcl && \
-		${STRIP_CMD} irsimexec tclirsim.so diglib.so random.so
+		${STRIP_CMD} diglib.so irsimexec random.so tclirsim.so
+.else
+	cd ${STAGEDIR}${PREFIX}/bin && ${STRIP_CMD} irsim genspktbl gentbl
 .endif
 
 .include <bsd.port.mk>

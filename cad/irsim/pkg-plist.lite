@@ -1,5 +1,5 @@
-%%NOTCL%%bin/genspktbl
-%%NOTCL%%bin/gentbl
+bin/genspktbl
+bin/gentbl
 bin/irsim
 lib/irsim/doc/irsim-analyzer.doc
 lib/irsim/doc/irsim.doc
@@ -24,19 +24,6 @@ lib/irsim/prm/tsmc18.10.nxxx.1.8.prm
 lib/irsim/prm/tsmc25.15.n99y.2.5.prm
 lib/irsim/prm/tsmc35.20.n98t.3.3.prm
 lib/irsim/prm/tsmc35p.20.n98tp.3.3.prm
-%%TCL%%lib/irsim/tcl/bitmaps/center.xbm
-%%TCL%%lib/irsim/tcl/bitmaps/left.xbm
-%%TCL%%lib/irsim/tcl/bitmaps/lleft.xbm
-%%TCL%%lib/irsim/tcl/bitmaps/right.xbm
-%%TCL%%lib/irsim/tcl/bitmaps/rright.xbm
-%%TCL%%lib/irsim/tcl/console.tcl
-%%TCL%%lib/irsim/tcl/diglib.so
-%%TCL%%lib/irsim/tcl/irsim.tcl
-%%TCL%%lib/irsim/tcl/irsimexec
-%%TCL%%lib/irsim/tcl/random.so
-%%TCL%%lib/irsim/tcl/tclirsim.so
-%%TCL%%lib/irsim/tcl/tkcon.tcl
-%%TCL%%lib/irsim/tcl/vcd.tcl
 share/man/man1/irsim.1.gz
 share/man/man3/irsim-analyzer.3.gz
 share/man/man5/netchange.5.gz
