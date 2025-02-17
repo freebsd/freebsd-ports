@@ -5,6 +5,20 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20250217:
+  AFFECTS: users of databases/mongodb70
+  AUTHOR: ronald@FreeBSD.org
+
+  MongoDB on non-LSE ARM CPUs like Raspberry Pi 4 works but is
+  unsupported upstream and can give corruption on high concurrency.
+  Please read https://jira.mongodb.org/browse/SERVER-71772 for details.
+
+  Port mongodb70 is flavored to create two packages:
+    mongodb70 and mongodb70-armv80a
+
+  Please install mongodb70-armv80a on RPI4 or similar ARM systems as pkg
+  mongodb70 will fail on runtime with unsupported instruction error.
+
 20250208:
   AFFECTS: users of net-mgmt/netbox
   AUTHOR: kai@FreeBSD.org

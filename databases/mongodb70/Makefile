@@ -38,6 +38,9 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libyaml-cpp.so:devel/yaml-cpp \
 		libzstd.so:archivers/zstd
 
+FLAVORS=	default armv80a
+armv80a_PKGNAMESUFFIX=	${DISTVERSION:R:S/.//}-armv80a
+
 USES=		compiler:c++20-lang cpe python:build scons shebangfix ssl
 # gmake is used while running ${WRKSRC}/src/third_party/mozjs/gen-config.sh
 USES+=		gmake pkgconfig
@@ -90,6 +93,9 @@ GROUPS=		mongodb
 OPTIONS_DEFINE=		LTO NOAVX SASL
 OPTIONS_DEFINE_aarch64=	ARMV80A
 OPTIONS_DEFAULT=	NOAVX SASL
+.if ${FLAVOR:U} == armv80a
+OPTIONS_SET+=	ARMV80A
+.endif
 
 # MongoDB on non-LSE ARM cpu like Raspberry Pi can work but is unsupported upstream.
 # Can give corruption on high concurrency.
@@ -109,6 +115,10 @@ SASL_LIB_DEPENDS=	libsasl2.so:security/cyrus-sasl2
 SASL_MAKE_ARGS=		--use-sasl-client
 
 .include <bsd.port.pre.mk>
+
+.if ${FLAVOR:U} == armv80a && ${ARCH} != aarch64
+IGNORE=		flavor armv80a is only valid on aarch64
+.endif
 
 ALL_TARGET=	install-core
 
