@@ -75,11 +75,7 @@ _LLVM_MK_VERSION=	${_ver}
 .    endif
 .  endfor
 .  if empty(_LLVM_MK_VERSION)
-.    if ${LLVM_DEFAULT:N1[0-9]*}
-_LLVM_MK_VERSION=	${LLVM_DEFAULT:S/0$//}
-.    else
 _LLVM_MK_VERSION=	${LLVM_DEFAULT}
-.    endif
 .  endif
 
 # === parse environment arguments ===
@@ -118,10 +114,6 @@ _LLVM_MK_VERSION=	${_LLVM_MK_CONSTRAINT_max}
 .  endif
 
 # === define helpers for the dependencies ===
-.  for _ver in ${_LLVM_MK_VALID_VERSIONS:N1[0-9]}
-_LLVM_MK_SUFFIX_${_ver}=	${_ver}0
-.  endfor
-
 .  for _ver in ${_LLVM_MK_VALID_VERSIONS}
 _LLVM_MK_SUFFIX_${_ver}?=	${_ver}
 .  endfor
