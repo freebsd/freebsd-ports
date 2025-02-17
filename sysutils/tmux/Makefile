@@ -1,5 +1,6 @@
 PORTNAME=	tmux
 PORTVERSION=	3.5a
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	https://github.com/tmux/tmux/releases/download/${PORTVERSION}/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
@@ -15,7 +16,7 @@ LICENSE_FILE_GPLv2=	${WRKSRC_bash}/COPYING
 LICENSE_DISTFILES_ISCL=	${DISTNAME}${EXTRACT_SUFX}
 LICENSE_DISTFILES_GPLv2=	${DISTFILE_bash}
 
-USES=		cpe ncurses:port pkgconfig
+USES=		cpe pkgconfig
 
 CPE_VENDOR=	tmux_project
 
@@ -23,7 +24,6 @@ USE_GITHUB=	nodefault
 GH_TUPLE=	imomaliev:tmux-bash-completion:8da7f79:bash
 
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--enable-utempter \
 		--sysconfdir=${PREFIX}/etc
 
@@ -49,6 +49,15 @@ LIBEVENT_STATIC_VARS=			LESTATIC=${LOCALBASE}/lib/libevent.a
 UTF8PROC_LIB_DEPENDS=		libutf8proc.so:textproc/utf8proc
 UTF8PROC_CONFIGURE_ENABLE=	utf8proc
 
+.include <bsd.port.pre.mk>
+
+.if ${OPSYS} == FreeBSD && (${OSVERSION} < 1401502 || \
+	${OSVERSION} >= 1500000 && ${OSVERSION} < 1500020)
+USES+=	ncurses:port
+.else
+USES+=	ncurses
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|/etc/tmux.conf|${PREFIX}/etc/tmux.conf|g' ${WRKSRC}/CHANGES \
 		${WRKSRC}/tmux.h
@@ -69,4 +78,4 @@ post-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/example* ${STAGEDIR}${EXAMPLESDIR}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
