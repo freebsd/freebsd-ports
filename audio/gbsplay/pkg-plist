@@ -10,6 +10,9 @@ share/applications/gbsplay.desktop
 share/applications/mimeinfo.cache
 %%PORTDOCS%%%%DOCSDIR%%/README.md
 %%PORTDOCS%%%%DOCSDIR%%/contrib/gbs2ogg.sh
+%%PORTDOCS%%%%DOCSDIR%%/contrib/gbsplay.bashcompletion
+%%PORTDOCS%%%%DOCSDIR%%/contrib/gbsplay.zshcompletion
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gbsplayrc_sample
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/nightmode.gbs
 %%NLS%%share/locale/de/LC_MESSAGES/gbsplay.mo
 %%NLS%%share/locale/en/LC_MESSAGES/gbsplay.mo

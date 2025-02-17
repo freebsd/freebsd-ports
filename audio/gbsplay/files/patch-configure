@@ -1,6 +1,6 @@
---- configure.orig	2024-01-25 22:32:28 UTC
+--- configure.orig	2025-02-16 15:23:15 UTC
 +++ configure
-@@ -732,7 +732,6 @@ fi
+@@ -752,7 +752,6 @@ fi
  
  ## check for various headers
  
@@ -8,7 +8,7 @@
  
  if [ "$use_zlib" != no ]; then
      remember_use zlib
-@@ -816,11 +815,11 @@ if [ "$use_nas" != no ]; then
+@@ -924,11 +923,11 @@ if [ "$use_nas" != no ]; then
  
  if [ "$use_nas" != no ]; then
      remember_use nas
@@ -22,7 +22,7 @@
  int main(int argc, char **argv) { return 0; }
  EOF
          retval2=$?
-@@ -1138,7 +1137,7 @@ else
+@@ -1246,7 +1245,7 @@ else
  if [ "$use_debug" = "yes" ]; then
      append_nodupe CFLAGS -g3
  else
