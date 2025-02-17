@@ -25,6 +25,7 @@ LICENSE=	APACHE20
 BROKEN_aarch64=	fails to compile: nx/src/native/index.js:147 Error: Unsupported architecture on FreeBSD: arm64
 BROKEN_armv7=	fails to compile: nx/src/native/index.js:147 Error: Unsupported architecture on FreeBSD: arm
 BROKEN_i386=	fails to compile: nx/src/native/index.js:147 Error: Unsupported architecture on FreeBSD: ia32
+BROKEN_FreeBSD_15=	clang19?, string:820:42: error: implicit instantiation of undefined template 'std::char_traits<unsigned short>'
 
 FETCH_DEPENDS=	npm${NODEJS_SUFFIX}>0:www/npm${NODEJS_SUFFIX}
 BUILD_DEPENDS=	bash>0:shells/bash \
