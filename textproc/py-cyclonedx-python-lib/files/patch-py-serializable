@@ -1,0 +1,232 @@
+Obtained from:	https://github.com/CycloneDX/cyclonedx-python-lib/commit/7c20c8e44fbc3de2942dd2f2ad298be2bd17614b
+
+--- cyclonedx/model/__init__.py.orig	1970-01-01 00:00:00 UTC
++++ cyclonedx/model/__init__.py
+@@ -33,7 +33,7 @@ from xml.etree.ElementTree import Element as XmlElemen
+ from warnings import warn
+ from xml.etree.ElementTree import Element as XmlElement  # nosec B405
+ 
+-import serializable
++import py_serializable as serializable
+ from sortedcontainers import SortedSet
+ 
+ from .._internal.compare import ComparableTuple as _ComparableTuple
+--- cyclonedx/model/bom_ref.py.orig	1970-01-01 00:00:00 UTC
++++ cyclonedx/model/bom_ref.py
+@@ -18,7 +18,7 @@ from typing import TYPE_CHECKING, Any, Optional
+ 
+ from typing import TYPE_CHECKING, Any, Optional
+ 
+-import serializable
++import py_serializable as serializable
+ 
+ from ..exception.serialization import CycloneDxDeserializationException, SerializationOfUnexpectedValueException
+ 
+--- cyclonedx/model/bom.py.orig	1970-01-01 00:00:00 UTC
++++ cyclonedx/model/bom.py
+@@ -22,7 +22,7 @@ from warnings import warn
+ from uuid import UUID, uuid4
+ from warnings import warn
+ 
+-import serializable
++import py_serializable as serializable
+ from sortedcontainers import SortedSet
+ 
+ from .._internal.time import get_now_utc as _get_now_utc
+--- cyclonedx/model/component.py.orig	1970-01-01 00:00:00 UTC
++++ cyclonedx/model/component.py
+@@ -22,7 +22,7 @@ from warnings import warn
+ from warnings import warn
+ 
+ # See https://github.com/package-url/packageurl-python/issues/65
+-import serializable
++import py_serializable as serializable
+ from packageurl import PackageURL
+ from sortedcontainers import SortedSet
+ 
+--- cyclonedx/model/contact.py.orig	1970-01-01 00:00:00 UTC
++++ cyclonedx/model/contact.py
+@@ -18,7 +18,7 @@ from typing import Any, Iterable, Optional, Union
+ 
+ from typing import Any, Iterable, Optional, Union
+ 
+-import serializable
++import py_serializable as serializable
+ from sortedcontainers import SortedSet
+ 
+ from .._internal.bom_ref import bom_ref_from_str as _bom_ref_from_str
+--- cyclonedx/model/crypto.py.orig	1970-01-01 00:00:00 UTC
++++ cyclonedx/model/crypto.py
+@@ -29,7 +29,7 @@ from typing import Any, Iterable, Optional
+ from enum import Enum
+ from typing import Any, Iterable, Optional
+ 
+-import serializable
++import py_serializable as serializable
+ from sortedcontainers import SortedSet
+ 
+ from .._internal.compare import ComparableTuple as _ComparableTuple
+--- cyclonedx/model/definition.py.orig	1970-01-01 00:00:00 UTC
++++ cyclonedx/model/definition.py
+@@ -18,7 +18,7 @@ from typing import TYPE_CHECKING, Any, Iterable, Optio
+ import re
+ from typing import TYPE_CHECKING, Any, Iterable, Optional, Union
+ 
+-import serializable
++import py_serializable as serializable
+ from sortedcontainers import SortedSet
+ 
+ from .._internal.bom_ref import bom_ref_from_str as _bom_ref_from_str
+--- cyclonedx/model/dependency.py.orig	1970-01-01 00:00:00 UTC
++++ cyclonedx/model/dependency.py
+@@ -19,7 +19,7 @@ from typing import Any, Iterable, List, Optional, Set
+ from abc import ABC, abstractmethod
+ from typing import Any, Iterable, List, Optional, Set
+ 
+-import serializable
++import py_serializable as serializable
+ from sortedcontainers import SortedSet
+ 
+ from .._internal.compare import ComparableTuple as _ComparableTuple
+--- cyclonedx/model/impact_analysis.py.orig	1970-01-01 00:00:00 UTC
++++ cyclonedx/model/impact_analysis.py
+@@ -28,7 +28,7 @@ from enum import Enum
+ 
+ from enum import Enum
+ 
+-import serializable
++import py_serializable as serializable
+ 
+ 
+ @serializable.serializable_enum
+--- cyclonedx/model/issue.py.orig	1970-01-01 00:00:00 UTC
++++ cyclonedx/model/issue.py
+@@ -18,7 +18,7 @@ from typing import Any, Iterable, Optional
+ from enum import Enum
+ from typing import Any, Iterable, Optional
+ 
+-import serializable
++import py_serializable as serializable
+ from sortedcontainers import SortedSet
+ 
+ from .._internal.compare import ComparableTuple as _ComparableTuple
+--- cyclonedx/model/license.py.orig	1970-01-01 00:00:00 UTC
++++ cyclonedx/model/license.py
+@@ -26,7 +26,7 @@ from xml.etree.ElementTree import Element  # nosec B40
+ from warnings import warn
+ from xml.etree.ElementTree import Element  # nosec B405
+ 
+-import serializable
++import py_serializable as serializable
+ from sortedcontainers import SortedSet
+ 
+ from .._internal.compare import ComparableTuple as _ComparableTuple
+--- cyclonedx/model/lifecycle.py.orig	1970-01-01 00:00:00 UTC
++++ cyclonedx/model/lifecycle.py
+@@ -30,15 +30,15 @@ from xml.etree.ElementTree import Element  # nosec B40
+ from typing import TYPE_CHECKING, Any, Dict, List, Optional, Type, Union
+ from xml.etree.ElementTree import Element  # nosec B405
+ 
+-import serializable
+-from serializable.helpers import BaseHelper
++import py_serializable as serializable
++from py_serializable.helpers import BaseHelper
+ from sortedcontainers import SortedSet
+ 
+ from .._internal.compare import ComparableTuple as _ComparableTuple
+ from ..exception.serialization import CycloneDxDeserializationException
+ 
+ if TYPE_CHECKING:  # pragma: no cover
+-    from serializable import ViewType
++    from py_serializable import ViewType
+ 
+ 
+ @serializable.serializable_enum
+--- cyclonedx/model/release_note.py.orig	1970-01-01 00:00:00 UTC
++++ cyclonedx/model/release_note.py
+@@ -18,7 +18,7 @@ from typing import Iterable, Optional
+ from datetime import datetime
+ from typing import Iterable, Optional
+ 
+-import serializable
++import py_serializable as serializable
+ from sortedcontainers import SortedSet
+ 
+ from ..model import Note, Property, XsUri
+--- cyclonedx/model/service.py.orig	1970-01-01 00:00:00 UTC
++++ cyclonedx/model/service.py
+@@ -26,7 +26,7 @@ from typing import Any, Iterable, Optional, Union
+ 
+ from typing import Any, Iterable, Optional, Union
+ 
+-import serializable
++import py_serializable as serializable
+ from sortedcontainers import SortedSet
+ 
+ from .._internal.bom_ref import bom_ref_from_str as _bom_ref_from_str
+--- cyclonedx/model/tool.py.orig	1970-01-01 00:00:00 UTC
++++ cyclonedx/model/tool.py
+@@ -21,8 +21,8 @@ from xml.etree.ElementTree import Element  # nosec B40
+ from warnings import warn
+ from xml.etree.ElementTree import Element  # nosec B405
+ 
+-import serializable
+-from serializable.helpers import BaseHelper
++import py_serializable as serializable
++from py_serializable.helpers import BaseHelper
+ from sortedcontainers import SortedSet
+ 
+ from .._internal.compare import ComparableTuple as _ComparableTuple
+@@ -33,7 +33,7 @@ if TYPE_CHECKING:  # pragma: no cover
+ from .service import Service
+ 
+ if TYPE_CHECKING:  # pragma: no cover
+-    from serializable import ObjectMetadataLibrary, ViewType
++    from py_serializable import ObjectMetadataLibrary, ViewType
+ 
+ 
+ @serializable.serializable_class
+--- cyclonedx/model/vulnerability.py.orig	1970-01-01 00:00:00 UTC
++++ cyclonedx/model/vulnerability.py
+@@ -35,7 +35,7 @@ from typing import Any, Dict, FrozenSet, Iterable, Opt
+ from enum import Enum
+ from typing import Any, Dict, FrozenSet, Iterable, Optional, Tuple, Type, Union
+ 
+-import serializable
++import py_serializable as serializable
+ from sortedcontainers import SortedSet
+ 
+ from .._internal.bom_ref import bom_ref_from_str as _bom_ref_from_str
+--- cyclonedx/schema/schema.py.orig	1970-01-01 00:00:00 UTC
++++ cyclonedx/schema/schema.py
+@@ -18,7 +18,7 @@ from typing import Dict, Literal, Type
+ from abc import ABC, abstractmethod
+ from typing import Dict, Literal, Type
+ 
+-from serializable import ViewType
++from py_serializable import ViewType
+ 
+ from . import SchemaVersion
+ 
+--- cyclonedx/serialization/__init__.py.orig	1970-01-01 00:00:00 UTC
++++ cyclonedx/serialization/__init__.py
+@@ -25,7 +25,7 @@ from packageurl import PackageURL
+ 
+ # See https://github.com/package-url/packageurl-python/issues/65
+ from packageurl import PackageURL
+-from serializable.helpers import BaseHelper
++from py_serializable.helpers import BaseHelper
+ 
+ from ..exception.serialization import CycloneDxDeserializationException, SerializationOfUnexpectedValueException
+ from ..model.bom_ref import BomRef
+--- pyproject.toml.orig	1970-01-01 00:00:00 UTC
++++ pyproject.toml
+@@ -70,7 +70,7 @@ packageurl-python = ">=0.11, <2"
+ [tool.poetry.dependencies]
+ python = "^3.8"
+ packageurl-python = ">=0.11, <2"
+-py-serializable =  "^1.1.1"
++py-serializable =  "^2.0.0"
+ sortedcontainers = "^2.4.0"
+ license-expression = "^30"
+ jsonschema = { version = "^4.18", extras=['format'], optional=true }
