@@ -79,6 +79,7 @@ include/aeron/protocol/aeron_udp_protocol.h
 include/aeron/reports/aeron_loss_reporter.h
 include/aeron/status/aeron_local_sockaddr.h
 include/aeron/uri/aeron_uri.h
+include/aeron/uri/aeron_uri_string_builder.h
 include/aeron/util/aeron_arrayutil.h
 include/aeron/util/aeron_bitutil.h
 include/aeron/util/aeron_clock.h
@@ -263,6 +264,7 @@ include/wrapper/concurrent/status/Position.h
 include/wrapper/concurrent/status/ReadablePosition.h
 include/wrapper/concurrent/status/StatusIndicatorReader.h
 include/wrapper/concurrent/status/UnsafeBufferPosition.h
+include/wrapper/status/PublicationErrorFrame.h
 include/wrapper/util/BitUtil.h
 include/wrapper/util/CommandOption.h
 include/wrapper/util/CommandOptionParser.h
