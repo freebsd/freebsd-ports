@@ -1,0 +1,42 @@
+--- progs/mincdump/mincdump.c.orig	2012-09-24 17:35:36 UTC
++++ progs/mincdump/mincdump.c
+@@ -494,17 +494,17 @@ do_ncdump(char *path, struct fspec* specp)
+ 		/* get _FillValue attribute */
+                 old_nc_opts = ncopts;
+                 ncopts = 0;
+-                nc_status = ncattinq(ncid,varid,_FillValue,&att.type,&att.len);
++                nc_status = ncattinq(ncid,varid,NC_FillValue,&att.type,&att.len);
+                 ncopts = old_nc_opts;
+ 		if(nc_status == NC_NOERR &&
+ 		   att.type == var.type && att.len == 1) {
+ 		    if(var.type == NC_CHAR) {
+ 			char fillc;
+-			ncattget(ncid, varid, _FillValue, &fillc );
++			ncattget(ncid, varid, NC_FillValue, &fillc );
+ 			var.fillval = fillc;
+ 		    } 
+                     else {
+-			ncattget(ncid, varid, _FillValue, &var.fillval);
++			ncattget(ncid, varid, NC_FillValue, &var.fillval);
+ 		    }
+ 		} else {
+ 		    switch (var.type) {
+--- progs/mincgen/ncgentab.y.orig	2012-09-24 17:35:36 UTC
++++ progs/mincgen/ncgentab.y
+@@ -288,14 +288,14 @@ attdecl:        att
+ 		       /* shrink space down to what was really needed */
+ 		       att_space = erealloc(att_space, valnum*nctypesize(valtype));
+ 		       atts[natts].val = att_space;
+-		       if (STREQ(atts[natts].name, _FillValue) &&
++		       if (STREQ(atts[natts].name, NC_FillValue) &&
+ 			   atts[natts].var != NC_GLOBAL) {
+ 			   nc_putfill(atts[natts].type,
+ 				       atts[natts].val,
+ 				       &vars[atts[natts].var].fill_value);
+ 			   if(atts[natts].type != vars[atts[natts].var].type) {
+ 			       derror("variable %s: %s type mismatch",
+-				      vars[atts[natts].var].name, _FillValue);
++				      vars[atts[natts].var].name, NC_FillValue);
+ 			   }
+ 		       }
+ 		       natts++;
