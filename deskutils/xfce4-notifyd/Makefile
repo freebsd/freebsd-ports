@@ -4,8 +4,7 @@
 # Support of GTK is checked at compile time and themes directories too.
 
 PORTNAME=	xfce4-notifyd
-PORTVERSION=	0.9.6
-PORTREVISION=	1
+PORTVERSION=	0.9.7
 CATEGORIES=	deskutils xfce
 MASTER_SITES=	XFCE/apps
 DIST_SUBDIR=	xfce4
@@ -16,7 +15,8 @@ WWW=		https://gitlab.xfce.org/apps/xfce4-notifyd
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	libharfbuzz.so:print/harfbuzz \
+LIB_DEPENDS=	libgtk-layer-shell.so:x11-toolkits/gtk-layer-shell \
+		libharfbuzz.so:print/harfbuzz \
 		libnotify.so:devel/libnotify
 
 USES=		compiler:c11 gettext-tools gmake gnome libtool pkgconfig sqlite \
