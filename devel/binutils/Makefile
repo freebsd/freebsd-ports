@@ -6,7 +6,6 @@ MASTER_SITES=	GNU \
 		SOURCEWARE/binutils/releases
 DISTNAME=	${PORTNAME}-with-gold-${DISTVERSION}${DISTVERSIONSUFFIX}
 
-
 MAINTAINER?=	cy@FreeBSD.org
 COMMENT?=	GNU binary tools
 WWW=		https://www.gnu.org/software/binutils/
