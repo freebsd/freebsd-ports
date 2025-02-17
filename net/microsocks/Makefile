@@ -1,5 +1,5 @@
 PORTNAME=	microsocks
-PORTVERSION=	1.0.4
+PORTVERSION=	1.0.5
 CATEGORIES=	net
 MASTER_SITES=	https://ftp.barfooze.de/pub/sabotage/tarballs/
 
