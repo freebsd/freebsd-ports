@@ -1,5 +1,5 @@
 PORTNAME=	sshkit
-PORTVERSION=	1.23.2
+PORTVERSION=	1.24.0
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 
@@ -11,6 +11,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 RUN_DEPENDS=	rubygem-base64>=0:converters/rubygem-base64 \
+		rubygem-logger>=0:devel/rubygem-logger \
 		rubygem-net-scp>=1.1.2:security/rubygem-net-scp \
 		rubygem-net-sftp>=2.1.2:security/rubygem-net-sftp \
 		rubygem-net-ssh>=2.8.0,2:security/rubygem-net-ssh \
