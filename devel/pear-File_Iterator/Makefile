@@ -1,5 +1,5 @@
 PORTNAME=	File_Iterator
-PORTVERSION=	5.1.0
+PORTVERSION=	6.0.0
 CATEGORIES=	devel pear
 
 MAINTAINER=	sunpoet@FreeBSD.org
