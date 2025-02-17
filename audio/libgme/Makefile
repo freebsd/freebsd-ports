@@ -1,7 +1,8 @@
 PORTNAME=	libgme
-DISTVERSION=	0.6.3-183
-DISTVERSIONSUFFIX=	-g05a2aa2
+DISTVERSION=	0.6.4
 CATEGORIES=	audio
+MASTER_SITES=	https://github.com/${PORTNAME}/game-music-emu/releases/download/${DISTVERSION}/
+DISTNAME=	${PORTNAME}-${DISTVERSION}-src
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Collection of video game music emulators
@@ -12,11 +13,11 @@ LICENSE_FILE=	${WRKSRC}/license.txt
 
 USES=		cmake compiler:c++11-lang dos2unix pathfix
 DOS2UNIX_FILES=	${PORTDOCS}
-USE_GITHUB=	yes
-GH_PROJECT=	game-music-emu
-USE_LDCONFIG=	yes
 
-CMAKE_OFF=	ENABLE_UBSAN
+CMAKE_ON=	CMAKE_DISABLE_FIND_PACKAGE_SDL2
+CMAKE_OFF=	ENABLE_UBSAN GME_BUILD_STATIC
+
+WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
 
 PORTDOCS=	changes.txt design.txt gme.txt readme.txt
 
