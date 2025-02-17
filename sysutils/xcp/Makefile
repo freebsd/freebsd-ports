@@ -1,7 +1,6 @@
 PORTNAME=	xcp
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.23.0
-PORTREVISION=	1
+DISTVERSION=	0.23.1
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -22,16 +21,16 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		anstyle-parse-0.2.6 \
 		anstyle-query-1.1.2 \
 		anstyle-wincon-3.0.6 \
-		anyhow-1.0.94 \
+		anyhow-1.0.95 \
 		autocfg-1.3.0 \
-		bitflags-2.6.0 \
+		bitflags-2.7.0 \
 		blocking-threadpool-1.0.1 \
 		bstr-1.10.0 \
 		bumpalo-3.16.0 \
 		cfg-if-1.0.0 \
-		clap-4.5.23 \
-		clap_builder-4.5.23 \
-		clap_derive-4.5.18 \
+		clap-4.5.26 \
+		clap_builder-4.5.26 \
+		clap_derive-4.5.24 \
 		clap_lex-0.7.4 \
 		colorchoice-1.0.3 \
 		console-0.15.8 \
@@ -43,10 +42,10 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		encode_unicode-0.3.6 \
 		errno-0.3.10 \
 		exacl-0.12.0 \
-		fastrand-2.1.1 \
+		fastrand-2.3.0 \
 		fslock-0.2.1 \
 		getrandom-0.2.15 \
-		glob-0.3.1 \
+		glob-0.3.2 \
 		globset-0.4.15 \
 		heck-0.5.0 \
 		hermit-abi-0.3.9 \
@@ -57,11 +56,11 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		js-sys-0.3.72 \
 		lazy_static-0.2.11 \
 		lazy_static-1.5.0 \
-		libc-0.2.168 \
+		libc-0.2.169 \
 		libm-0.2.8 \
-		linux-raw-sys-0.4.14 \
-		linux-raw-sys-0.6.5 \
-		log-0.4.22 \
+		linux-raw-sys-0.4.15 \
+		linux-raw-sys-0.7.0 \
+		log-0.4.25 \
 		memchr-2.7.4 \
 		num-conv-0.1.0 \
 		num-traits-0.2.19 \
@@ -72,8 +71,8 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		portable-atomic-1.9.0 \
 		powerfmt-0.2.0 \
 		ppv-lite86-0.2.17 \
-		proc-macro2-1.0.92 \
-		quote-1.0.37 \
+		proc-macro2-1.0.93 \
+		quote-1.0.38 \
 		rand-0.8.5 \
 		rand_chacha-0.3.1 \
 		rand_core-0.6.4 \
@@ -82,21 +81,21 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		regex-1.11.1 \
 		regex-automata-0.4.8 \
 		regex-syntax-0.8.5 \
-		rustix-0.38.42 \
+		rustix-0.38.43 \
 		same-file-1.0.6 \
 		scopeguard-1.2.0 \
 		serde-1.0.210 \
 		serde_derive-1.0.210 \
 		simplelog-0.12.2 \
 		strsim-0.11.1 \
-		syn-2.0.89 \
-		tempfile-3.14.0 \
+		syn-2.0.96 \
+		tempfile-3.15.0 \
 		termcolor-1.4.1 \
 		test-case-3.3.1 \
 		test-case-core-3.3.1 \
 		test-case-macros-3.3.1 \
-		thiserror-2.0.8 \
-		thiserror-impl-2.0.8 \
+		thiserror-2.0.11 \
+		thiserror-impl-2.0.11 \
 		time-0.3.36 \
 		time-core-0.1.2 \
 		time-macros-0.2.18 \
@@ -105,7 +104,7 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		unicode-width-0.1.14 \
 		unicode-width-0.2.0 \
 		utf8parse-0.2.2 \
-		uuid-1.11.0 \
+		uuid-1.12.0 \
 		walkdir-2.5.0 \
 		wasi-0.11.0+wasi-snapshot-preview1 \
 		wasm-bindgen-0.2.95 \
@@ -129,7 +128,7 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		windows_x86_64_gnu-0.52.6 \
 		windows_x86_64_gnullvm-0.52.6 \
 		windows_x86_64_msvc-0.52.6 \
-		xattr-1.3.1
+		xattr-1.4.0
 
 PLIST_FILES=	bin/${PORTNAME}
 
