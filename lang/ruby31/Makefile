@@ -25,8 +25,7 @@ RUN_DEPENDS=	libffi>=0:devel/libffi
 
 USES=		autoreconf cpe localbase ruby:none ssl tar:xz
 CPE_VENDOR=	ruby-lang
-CPE_VERSION=	${RUBY_RELVERSION}
-CPE_UPDATE=	p${RUBY_PATCHLEVEL}
+CPE_UPDATE=	p0
 USE_LDCONFIG=	yes
 
 # We get these from other ports
