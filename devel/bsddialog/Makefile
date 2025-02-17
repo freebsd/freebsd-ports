@@ -1,5 +1,5 @@
 PORTNAME=	bsddialog
-DISTVERSION=	1.0.1
+DISTVERSION=	1.0.4
 CATEGORIES=	devel
 
 MAINTAINER=	alfix86@gmail.com
@@ -12,12 +12,14 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USE_GITLAB=	yes
 GL_ACCOUNT=	alfix
 
+MAKE_ARGS=	-DNORPATH
+
+PLIST_SUB+=	DISTVERSION=${DISTVERSION}
+
 LIBDIR=		${WRKSRC}/lib
 HEADERS=	${LIBDIR}/bsddialog.h ${LIBDIR}/bsddialog_progressview.h \
 		${LIBDIR}/bsddialog_theme.h
 UTILDIR=	${WRKSRC}/utility
-
-MAKE_ARGS=	-DNORPATH
 
 do-install:
 	${INSTALL_DATA} ${HEADERS} ${STAGEDIR}${PREFIX}/include
