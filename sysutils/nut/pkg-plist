@@ -14,7 +14,7 @@
 @sample %%ETCDIR%%/nut.conf.sample
 @sample %%ETCDIR%%/ups.conf.sample
 @sample %%ETCDIR%%/upsd.conf.sample
-@sample %%ETCDIR%%/upsd.users.sample
+@sample(%%NUT_USER%%,%%NUT_GROUP%%,0640) %%ETCDIR%%/upsd.users.sample
 @sample %%ETCDIR%%/upsmon.conf.sample
 @sample %%ETCDIR%%/upssched.conf.sample
 @sample %%EXAMPLESDIR%%/newsyslog.sample etc/newsyslog.conf.d/nut.conf
