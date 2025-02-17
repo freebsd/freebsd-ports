@@ -199,6 +199,7 @@ share/applications/org.darktable.darktable.desktop
 %%NO_OPENCL%%%%DATADIR%%/kernels/bspline.cl
 %%NO_OPENCL%%%%DATADIR%%/kernels/channelmixer.cl
 %%NO_OPENCL%%%%DATADIR%%/kernels/color_conversion.h
+%%NO_OPENCL%%%%DATADIR%%/kernels/colorequal.cl
 %%NO_OPENCL%%%%DATADIR%%/kernels/colorreconstruction.cl
 %%NO_OPENCL%%%%DATADIR%%/kernels/colorspace.h
 %%NO_OPENCL%%%%DATADIR%%/kernels/colorspaces.cl
@@ -235,6 +236,8 @@ share/applications/org.darktable.darktable.desktop
 %%DATADIR%%/lua/darktable/debug.lua
 %%DATADIR%%/luarc
 %%DATADIR%%/noiseprofiles.json
+%%DATADIR%%/pixmaps/clock.svg
+%%DATADIR%%/pixmaps/darktable.svg
 %%DATADIR%%/pixmaps/dt_logo_128x128.png
 %%DATADIR%%/pixmaps/dt_text.svg
 %%DATADIR%%/pixmaps/idbutton-1.png
@@ -245,6 +248,7 @@ share/applications/org.darktable.darktable.desktop
 %%DATADIR%%/pixmaps/idbutton-3.svg
 %%DATADIR%%/pixmaps/idbutton.png
 %%DATADIR%%/pixmaps/idbutton.svg
+%%DATADIR%%/pixmaps/macos_install_background.svg
 %%DATADIR%%/pixmaps/plugins/darkroom/ashift.png
 %%DATADIR%%/pixmaps/plugins/darkroom/ashift.svg
 %%DATADIR%%/pixmaps/plugins/darkroom/atrous.png
@@ -356,6 +360,11 @@ share/applications/org.darktable.darktable.desktop
 %%DATADIR%%/pixmaps/plugins/darkroom/watermark.svg
 %%DATADIR%%/pixmaps/plugins/darkroom/zonesystem.png
 %%DATADIR%%/pixmaps/plugins/darkroom/zonesystem.svg
+%%DATADIR%%/pixmaps/splashscreen-01.jpg
+%%DATADIR%%/pixmaps/splashscreen-02.jpg
+%%DATADIR%%/pixmaps/splashscreen-03.jpg
+%%DATADIR%%/pixmaps/splashscreen-04.jpg
+%%DATADIR%%/pixmaps/splashscreen.png
 %%DATADIR%%/pswp/LICENSE
 %%DATADIR%%/pswp/default-skin/default-skin.css
 %%DATADIR%%/pswp/default-skin/default-skin.png
@@ -381,12 +390,524 @@ share/applications/org.darktable.darktable.desktop
 %%DATADIR%%/style/prevlabel.gif
 %%DATADIR%%/style/style.css
 %%DATADIR%%/style/thumb-1.jpg
+%%DATADIR%%/styles/darktable__l10n_generic.dtstyle
+%%DATADIR%%/styles/darktable_Canon__l10n_generic.dtstyle
+%%DATADIR%%/styles/darktable_Canon_EOS _200D Mark II,250D_.dtstyle
+%%DATADIR%%/styles/darktable_Canon_EOS 10D.dtstyle
+%%DATADIR%%/styles/darktable_Canon_EOS 1100D.dtstyle
+%%DATADIR%%/styles/darktable_Canon_EOS 2000D.dtstyle
+%%DATADIR%%/styles/darktable_Canon_EOS 4000D.dtstyle
+%%DATADIR%%/styles/darktable_Canon_EOS 5D Mark II.dtstyle
+%%DATADIR%%/styles/darktable_Canon_EOS 5D Mark III.dtstyle
+%%DATADIR%%/styles/darktable_Canon_EOS 5D Mark IV.dtstyle
+%%DATADIR%%/styles/darktable_Canon_EOS 5D.dtstyle
+%%DATADIR%%/styles/darktable_Canon_EOS 60D.dtstyle
+%%DATADIR%%/styles/darktable_Canon_EOS 6D.dtstyle
+%%DATADIR%%/styles/darktable_Canon_EOS 70D.dtstyle
+%%DATADIR%%/styles/darktable_Canon_EOS 7D Mark II.dtstyle
+%%DATADIR%%/styles/darktable_Canon_EOS 7D.dtstyle
+%%DATADIR%%/styles/darktable_Canon_EOS 80D.dtstyle
+%%DATADIR%%/styles/darktable_Canon_EOS D30.dtstyle
+%%DATADIR%%/styles/darktable_Canon_EOS Digital Rebel XT.dtstyle
+%%DATADIR%%/styles/darktable_Canon_EOS Kiss Digital N.dtstyle
+%%DATADIR%%/styles/darktable_Canon_EOS Kiss M.dtstyle
+%%DATADIR%%/styles/darktable_Canon_EOS Kiss X3.dtstyle
+%%DATADIR%%/styles/darktable_Canon_EOS M.dtstyle
+%%DATADIR%%/styles/darktable_Canon_EOS M10.dtstyle
+%%DATADIR%%/styles/darktable_Canon_EOS M2.dtstyle
+%%DATADIR%%/styles/darktable_Canon_EOS M3.dtstyle
+%%DATADIR%%/styles/darktable_Canon_EOS M50 Mark II.dtstyle
+%%DATADIR%%/styles/darktable_Canon_EOS M50.dtstyle
+%%DATADIR%%/styles/darktable_Canon_EOS M6.dtstyle
+%%DATADIR%%/styles/darktable_Canon_EOS R-series.dtstyle
+%%DATADIR%%/styles/darktable_Canon_EOS R3.dtstyle
+%%DATADIR%%/styles/darktable_Canon_EOS R50.dtstyle
+%%DATADIR%%/styles/darktable_Canon_EOS R6 Mark II.dtstyle
+%%DATADIR%%/styles/darktable_Canon_EOS R6.dtstyle
+%%DATADIR%%/styles/darktable_Canon_EOS R7.dtstyle
+%%DATADIR%%/styles/darktable_Canon_EOS Rebel SL1.dtstyle
+%%DATADIR%%/styles/darktable_Canon_EOS Rebel T_ series.dtstyle
+%%DATADIR%%/styles/darktable_Canon_EOS Rebel T3.dtstyle
+%%DATADIR%%/styles/darktable_Canon_EOS Rebel T5.dtstyle
+%%DATADIR%%/styles/darktable_Canon_EOS RP.dtstyle
+%%DATADIR%%/styles/darktable_Canon_EOS-1D Mark II.dtstyle
+%%DATADIR%%/styles/darktable_Canon_EOS-1D Mark IV.dtstyle
+%%DATADIR%%/styles/darktable_Canon_EOS-1D X Mark _II,III_.dtstyle
+%%DATADIR%%/styles/darktable_Canon_EOS-1D X.dtstyle
+%%DATADIR%%/styles/darktable_Canon_PowerShot G1.dtstyle
+%%DATADIR%%/styles/darktable_Canon_PowerShot G10.dtstyle
+%%DATADIR%%/styles/darktable_Canon_PowerShot G11.dtstyle
+%%DATADIR%%/styles/darktable_Canon_PowerShot G15.dtstyle
+%%DATADIR%%/styles/darktable_Canon_PowerShot G16.dtstyle
+%%DATADIR%%/styles/darktable_Canon_PowerShot G2.dtstyle
+%%DATADIR%%/styles/darktable_Canon_PowerShot G3.dtstyle
+%%DATADIR%%/styles/darktable_Canon_PowerShot G5 X Mark II.dtstyle
+%%DATADIR%%/styles/darktable_Canon_PowerShot G5 X.dtstyle
+%%DATADIR%%/styles/darktable_Canon_PowerShot G5.dtstyle
+%%DATADIR%%/styles/darktable_Canon_PowerShot G6.dtstyle
+%%DATADIR%%/styles/darktable_Canon_PowerShot G7 X Mark III.dtstyle
+%%DATADIR%%/styles/darktable_Canon_PowerShot G9 X Mark II.dtstyle
+%%DATADIR%%/styles/darktable_Canon_PowerShot G9.dtstyle
+%%DATADIR%%/styles/darktable_Canon_PowerShot S110.dtstyle
+%%DATADIR%%/styles/darktable_Canon_PowerShot S95.dtstyle
+%%DATADIR%%/styles/darktable_Canon_PowerShot SX70 HS.dtstyle
+%%DATADIR%%/styles/darktable_DJI_DJI Osmo Action.dtstyle
+%%DATADIR%%/styles/darktable_DJI_FC350.dtstyle
+%%DATADIR%%/styles/darktable_DJI_FC7303.dtstyle
+%%DATADIR%%/styles/darktable_Epson_R-D1.dtstyle
+%%DATADIR%%/styles/darktable_Epson_R-D1x.dtstyle
+%%DATADIR%%/styles/darktable_Fujifilm__l10n_generic.dtstyle
+%%DATADIR%%/styles/darktable_Fujifilm_FinePix E550.dtstyle
+%%DATADIR%%/styles/darktable_Fujifilm_FinePix E900.dtstyle
+%%DATADIR%%/styles/darktable_Fujifilm_FinePix F600EXR.dtstyle
+%%DATADIR%%/styles/darktable_Fujifilm_FinePix F770EXR.dtstyle
+%%DATADIR%%/styles/darktable_Fujifilm_FinePix HS30EXR.dtstyle
+%%DATADIR%%/styles/darktable_Fujifilm_FinePix S5000.dtstyle
+%%DATADIR%%/styles/darktable_Fujifilm_FinePix S5Pro.dtstyle
+%%DATADIR%%/styles/darktable_Fujifilm_FinePix S6000fd.dtstyle
+%%DATADIR%%/styles/darktable_Fujifilm_FinePix X10.dtstyle
+%%DATADIR%%/styles/darktable_Fujifilm_FinePix X100.dtstyle
+%%DATADIR%%/styles/darktable_Fujifilm_GFX 100.dtstyle
+%%DATADIR%%/styles/darktable_Fujifilm_GFX 50R.dtstyle
+%%DATADIR%%/styles/darktable_Fujifilm_GFX 50S.dtstyle
+%%DATADIR%%/styles/darktable_Fujifilm_GFX100 II.dtstyle
+%%DATADIR%%/styles/darktable_Fujifilm_X-A_ series.dtstyle
+%%DATADIR%%/styles/darktable_Fujifilm_X-A1.dtstyle
+%%DATADIR%%/styles/darktable_Fujifilm_X-A2.dtstyle
+%%DATADIR%%/styles/darktable_Fujifilm_X-A5.dtstyle
+%%DATADIR%%/styles/darktable_Fujifilm_X-E_ series.dtstyle
+%%DATADIR%%/styles/darktable_Fujifilm_X-E1.dtstyle
+%%DATADIR%%/styles/darktable_Fujifilm_X-H_ series.dtstyle
+%%DATADIR%%/styles/darktable_Fujifilm_X-M1.dtstyle
+%%DATADIR%%/styles/darktable_Fujifilm_X-Pro_ series.dtstyle
+%%DATADIR%%/styles/darktable_Fujifilm_X-Pro1.dtstyle
+%%DATADIR%%/styles/darktable_Fujifilm_X-S1.dtstyle
+%%DATADIR%%/styles/darktable_Fujifilm_X-S10.dtstyle
+%%DATADIR%%/styles/darktable_Fujifilm_X-S20.dtstyle
+%%DATADIR%%/styles/darktable_Fujifilm_X-T10.dtstyle
+%%DATADIR%%/styles/darktable_Fujifilm_X-T100.dtstyle
+%%DATADIR%%/styles/darktable_Fujifilm_X-T2.dtstyle
+%%DATADIR%%/styles/darktable_Fujifilm_X-T3.dtstyle
+%%DATADIR%%/styles/darktable_Fujifilm_X-T5.dtstyle
+%%DATADIR%%/styles/darktable_Fujifilm_X100F.dtstyle
+%%DATADIR%%/styles/darktable_Fujifilm_X100S.dtstyle
+%%DATADIR%%/styles/darktable_Fujifilm_X100T.dtstyle
+%%DATADIR%%/styles/darktable_Fujifilm_X100V.dtstyle
+%%DATADIR%%/styles/darktable_Fujifilm_X20.dtstyle
+%%DATADIR%%/styles/darktable_Fujifilm_X30.dtstyle
+%%DATADIR%%/styles/darktable_Fujifilm_X70.dtstyle
+%%DATADIR%%/styles/darktable_Fujifilm_XF1.dtstyle
+%%DATADIR%%/styles/darktable_Fujifilm_XQ1.dtstyle
+%%DATADIR%%/styles/darktable_Fujifilm_XQ2.dtstyle
+%%DATADIR%%/styles/darktable_Hasselblad__l10n_generic.dtstyle
+%%DATADIR%%/styles/darktable_Hasselblad_CFV.dtstyle
+%%DATADIR%%/styles/darktable_Hasselblad_H3D.dtstyle
+%%DATADIR%%/styles/darktable_Hasselblad_X1D.dtstyle
+%%DATADIR%%/styles/darktable_Leaf_Credo 40.dtstyle
+%%DATADIR%%/styles/darktable_Leica_C (Typ 112).dtstyle
+%%DATADIR%%/styles/darktable_Leica_C-Lux.dtstyle
+%%DATADIR%%/styles/darktable_Leica_D-LUX (Typ 109).dtstyle
+%%DATADIR%%/styles/darktable_Leica_D-LUX 5.dtstyle
+%%DATADIR%%/styles/darktable_Leica_D-LUX 6.dtstyle
+%%DATADIR%%/styles/darktable_Leica_D-Lux 7.dtstyle
+%%DATADIR%%/styles/darktable_Leica_M Monochrom (Typ 246).dtstyle
+%%DATADIR%%/styles/darktable_Leica_M9.dtstyle
+%%DATADIR%%/styles/darktable_Leica_Q (Typ 116).dtstyle
+%%DATADIR%%/styles/darktable_Leica_Q2.dtstyle
+%%DATADIR%%/styles/darktable_Leica_SL (Typ 601).dtstyle
+%%DATADIR%%/styles/darktable_Leica_V-LUX (Typ 114).dtstyle
+%%DATADIR%%/styles/darktable_Leica_V-Lux 4.dtstyle
+%%DATADIR%%/styles/darktable_Leica_X2.dtstyle
+%%DATADIR%%/styles/darktable_Minolta_A2.dtstyle
+%%DATADIR%%/styles/darktable_Minolta_DiMAGE 7.dtstyle
+%%DATADIR%%/styles/darktable_Minolta_DiMAGE 7Hi.dtstyle
+%%DATADIR%%/styles/darktable_Minolta_DiMAGE 7i.dtstyle
+%%DATADIR%%/styles/darktable_Minolta_DiMAGE A1.dtstyle
+%%DATADIR%%/styles/darktable_Minolta_DiMAGE A200.dtstyle
+%%DATADIR%%/styles/darktable_Minolta_Dynax 5D.dtstyle
+%%DATADIR%%/styles/darktable_Minolta_Dynax 7D.dtstyle
+%%DATADIR%%/styles/darktable_Minolta_Maxxum 7D.dtstyle
+%%DATADIR%%/styles/darktable_Nikon__l10n_generic.dtstyle
+%%DATADIR%%/styles/darktable_Nikon_1 AW1.dtstyle
+%%DATADIR%%/styles/darktable_Nikon_1 J1.dtstyle
+%%DATADIR%%/styles/darktable_Nikon_1 J2.dtstyle
+%%DATADIR%%/styles/darktable_Nikon_1 J3.dtstyle
+%%DATADIR%%/styles/darktable_Nikon_1 J4.dtstyle
+%%DATADIR%%/styles/darktable_Nikon_1 JS.dtstyle
+%%DATADIR%%/styles/darktable_Nikon_1 S1.dtstyle
+%%DATADIR%%/styles/darktable_Nikon_1 V1.dtstyle
+%%DATADIR%%/styles/darktable_Nikon_1 V2.dtstyle
+%%DATADIR%%/styles/darktable_Nikon_1 V3.dtstyle
+%%DATADIR%%/styles/darktable_Nikon_Coolpix A.dtstyle
+%%DATADIR%%/styles/darktable_Nikon_Coolpix A1000.dtstyle
+%%DATADIR%%/styles/darktable_Nikon_COOLPIX B700.dtstyle
+%%DATADIR%%/styles/darktable_Nikon_COOLPIX P1000.dtstyle
+%%DATADIR%%/styles/darktable_Nikon_Coolpix P330.dtstyle
+%%DATADIR%%/styles/darktable_Nikon_Coolpix P6000.dtstyle
+%%DATADIR%%/styles/darktable_Nikon_Coolpix P7700.dtstyle
+%%DATADIR%%/styles/darktable_Nikon_Coolpix P7800.dtstyle
+%%DATADIR%%/styles/darktable_Nikon_COOLPIX P950.dtstyle
+%%DATADIR%%/styles/darktable_Nikon_D1.dtstyle
+%%DATADIR%%/styles/darktable_Nikon_D100.dtstyle
+%%DATADIR%%/styles/darktable_Nikon_D1H.dtstyle
+%%DATADIR%%/styles/darktable_Nikon_D1X.dtstyle
+%%DATADIR%%/styles/darktable_Nikon_D200.dtstyle
+%%DATADIR%%/styles/darktable_Nikon_D2H.dtstyle
+%%DATADIR%%/styles/darktable_Nikon_D2X.dtstyle
+%%DATADIR%%/styles/darktable_Nikon_D3.dtstyle
+%%DATADIR%%/styles/darktable_Nikon_D300.dtstyle
+%%DATADIR%%/styles/darktable_Nikon_D3000 series.dtstyle
+%%DATADIR%%/styles/darktable_Nikon_D300S.dtstyle
+%%DATADIR%%/styles/darktable_Nikon_D3100.dtstyle
+%%DATADIR%%/styles/darktable_Nikon_D3200.dtstyle
+%%DATADIR%%/styles/darktable_Nikon_D3300.dtstyle
+%%DATADIR%%/styles/darktable_Nikon_D3400.dtstyle
+%%DATADIR%%/styles/darktable_Nikon_D3500.dtstyle
+%%DATADIR%%/styles/darktable_Nikon_D3S.dtstyle
+%%DATADIR%%/styles/darktable_Nikon_D3X.dtstyle
+%%DATADIR%%/styles/darktable_Nikon_D4.dtstyle
+%%DATADIR%%/styles/darktable_Nikon_D40.dtstyle
+%%DATADIR%%/styles/darktable_Nikon_D40X.dtstyle
+%%DATADIR%%/styles/darktable_Nikon_D4S.dtstyle
+%%DATADIR%%/styles/darktable_Nikon_D5.dtstyle
+%%DATADIR%%/styles/darktable_Nikon_D50.dtstyle
+%%DATADIR%%/styles/darktable_Nikon_D500.dtstyle
+%%DATADIR%%/styles/darktable_Nikon_D5000 series.dtstyle
+%%DATADIR%%/styles/darktable_Nikon_D5100.dtstyle
+%%DATADIR%%/styles/darktable_Nikon_D5200.dtstyle
+%%DATADIR%%/styles/darktable_Nikon_D5500.dtstyle
+%%DATADIR%%/styles/darktable_Nikon_D6.dtstyle
+%%DATADIR%%/styles/darktable_Nikon_D60.dtstyle
+%%DATADIR%%/styles/darktable_Nikon_D600.dtstyle
+%%DATADIR%%/styles/darktable_Nikon_D610.dtstyle
+%%DATADIR%%/styles/darktable_Nikon_D70.dtstyle
+%%DATADIR%%/styles/darktable_Nikon_D700.dtstyle
+%%DATADIR%%/styles/darktable_Nikon_D7000 series.dtstyle
+%%DATADIR%%/styles/darktable_Nikon_D7000.dtstyle
+%%DATADIR%%/styles/darktable_Nikon_D70s.dtstyle
+%%DATADIR%%/styles/darktable_Nikon_D7200.dtstyle
+%%DATADIR%%/styles/darktable_Nikon_D750.dtstyle
+%%DATADIR%%/styles/darktable_Nikon_D7500.dtstyle
+%%DATADIR%%/styles/darktable_Nikon_D780.dtstyle
+%%DATADIR%%/styles/darktable_Nikon_D80.dtstyle
+%%DATADIR%%/styles/darktable_Nikon_D800.dtstyle
+%%DATADIR%%/styles/darktable_Nikon_D800E.dtstyle
+%%DATADIR%%/styles/darktable_Nikon_D810.dtstyle
+%%DATADIR%%/styles/darktable_Nikon_D850.dtstyle
+%%DATADIR%%/styles/darktable_Nikon_D90.dtstyle
+%%DATADIR%%/styles/darktable_Nikon_Df.dtstyle
+%%DATADIR%%/styles/darktable_Nikon_E5400.dtstyle
+%%DATADIR%%/styles/darktable_Nikon_E5700.dtstyle
+%%DATADIR%%/styles/darktable_Nikon_Z 30.dtstyle
+%%DATADIR%%/styles/darktable_Nikon_Z 5.dtstyle
+%%DATADIR%%/styles/darktable_Nikon_Z 50.dtstyle
+%%DATADIR%%/styles/darktable_Nikon_Z 6_2.dtstyle
+%%DATADIR%%/styles/darktable_Nikon_Z 6.dtstyle
+%%DATADIR%%/styles/darktable_Nikon_Z 7_2.dtstyle
+%%DATADIR%%/styles/darktable_Nikon_Z 7.dtstyle
+%%DATADIR%%/styles/darktable_Nikon_Z 8.dtstyle
+%%DATADIR%%/styles/darktable_Nikon_Z 9.dtstyle
+%%DATADIR%%/styles/darktable_Nikon_Z f.dtstyle
+%%DATADIR%%/styles/darktable_Nikon_Z series.dtstyle
+%%DATADIR%%/styles/darktable_Nikon_Z50_2.dtstyle
+%%DATADIR%%/styles/darktable_Nikon_Z6_3.dtstyle
+%%DATADIR%%/styles/darktable_Olympus_C7070WZ.dtstyle
+%%DATADIR%%/styles/darktable_Olympus_E-1.dtstyle
+%%DATADIR%%/styles/darktable_Olympus_E-3.dtstyle
+%%DATADIR%%/styles/darktable_Olympus_E-300.dtstyle
+%%DATADIR%%/styles/darktable_Olympus_E-330.dtstyle
+%%DATADIR%%/styles/darktable_Olympus_E-400.dtstyle
+%%DATADIR%%/styles/darktable_Olympus_E-5.dtstyle
+%%DATADIR%%/styles/darktable_Olympus_E-500.dtstyle
+%%DATADIR%%/styles/darktable_Olympus_E-620.dtstyle
+%%DATADIR%%/styles/darktable_Olympus_E-M1.dtstyle
+%%DATADIR%%/styles/darktable_Olympus_E-M10 Mark II.dtstyle
+%%DATADIR%%/styles/darktable_Olympus_E-M10 Mark III.dtstyle
+%%DATADIR%%/styles/darktable_Olympus_E-M10 Mark IIIs.dtstyle
+%%DATADIR%%/styles/darktable_Olympus_E-M10 Mark IV.dtstyle
+%%DATADIR%%/styles/darktable_Olympus_E-M10.dtstyle
+%%DATADIR%%/styles/darktable_Olympus_E-M1MarkII.dtstyle
+%%DATADIR%%/styles/darktable_Olympus_E-M1MarkIII.dtstyle
+%%DATADIR%%/styles/darktable_Olympus_E-M1X.dtstyle
+%%DATADIR%%/styles/darktable_Olympus_E-M5 Mark II.dtstyle
+%%DATADIR%%/styles/darktable_Olympus_E-M5 Mark III.dtstyle
+%%DATADIR%%/styles/darktable_Olympus_E-M5.dtstyle
+%%DATADIR%%/styles/darktable_Olympus_E-P1.dtstyle
+%%DATADIR%%/styles/darktable_Olympus_E-P5.dtstyle
+%%DATADIR%%/styles/darktable_Olympus_E-P7.dtstyle
+%%DATADIR%%/styles/darktable_Olympus_E-PL_ series.dtstyle
+%%DATADIR%%/styles/darktable_Olympus_E-PL1.dtstyle
+%%DATADIR%%/styles/darktable_Olympus_E-PL10.dtstyle
+%%DATADIR%%/styles/darktable_Olympus_E-PL2.dtstyle
+%%DATADIR%%/styles/darktable_Olympus_E-PL7.dtstyle
+%%DATADIR%%/styles/darktable_Olympus_E-PM1.dtstyle
+%%DATADIR%%/styles/darktable_Olympus_PEN-F.dtstyle
+%%DATADIR%%/styles/darktable_Olympus_SH-2.dtstyle
+%%DATADIR%%/styles/darktable_Olympus_Stylus1.dtstyle
+%%DATADIR%%/styles/darktable_Olympus_TG-4.dtstyle
+%%DATADIR%%/styles/darktable_Olympus_TG-5.dtstyle
+%%DATADIR%%/styles/darktable_Olympus_TG-6.dtstyle
+%%DATADIR%%/styles/darktable_Olympus_XZ-1.dtstyle
+%%DATADIR%%/styles/darktable_Olympus_XZ-2.dtstyle
+%%DATADIR%%/styles/darktable_OM System_OM-1 Mark II.dtstyle
+%%DATADIR%%/styles/darktable_OM System_OM-1.dtstyle
+%%DATADIR%%/styles/darktable_OM System_OM-5.dtstyle
+%%DATADIR%%/styles/darktable_OM System_TG-7.dtstyle
+%%DATADIR%%/styles/darktable_OnePlus_One.dtstyle
+%%DATADIR%%/styles/darktable_Panasonic_DC-FZ10002.dtstyle
+%%DATADIR%%/styles/darktable_Panasonic_DC-FZ80.dtstyle
+%%DATADIR%%/styles/darktable_Panasonic_DC-FZ82.dtstyle
+%%DATADIR%%/styles/darktable_Panasonic_DC-G100.dtstyle
+%%DATADIR%%/styles/darktable_Panasonic_DC-G110.dtstyle
+%%DATADIR%%/styles/darktable_Panasonic_DC-G9.dtstyle
+%%DATADIR%%/styles/darktable_Panasonic_DC-G90.dtstyle
+%%DATADIR%%/styles/darktable_Panasonic_DC-G91.dtstyle
+%%DATADIR%%/styles/darktable_Panasonic_DC-G95.dtstyle
+%%DATADIR%%/styles/darktable_Panasonic_DC-G95D.dtstyle
+%%DATADIR%%/styles/darktable_Panasonic_DC-GH5.dtstyle
+%%DATADIR%%/styles/darktable_Panasonic_DC-GH5M2.dtstyle
+%%DATADIR%%/styles/darktable_Panasonic_DC-GH5S.dtstyle
+%%DATADIR%%/styles/darktable_Panasonic_DC-GX7MK3.dtstyle
+%%DATADIR%%/styles/darktable_Panasonic_DC-GX800.dtstyle
+%%DATADIR%%/styles/darktable_Panasonic_DC-GX850.dtstyle
+%%DATADIR%%/styles/darktable_Panasonic_DC-GX880.dtstyle
+%%DATADIR%%/styles/darktable_Panasonic_DC-GX9.dtstyle
+%%DATADIR%%/styles/darktable_Panasonic_DC-LX100M2.dtstyle
+%%DATADIR%%/styles/darktable_Panasonic_DC-S1.dtstyle
+%%DATADIR%%/styles/darktable_Panasonic_DC-S1H.dtstyle
+%%DATADIR%%/styles/darktable_Panasonic_DC-S1R.dtstyle
+%%DATADIR%%/styles/darktable_Panasonic_DC-S5.dtstyle
+%%DATADIR%%/styles/darktable_Panasonic_DC-TZ200.dtstyle
+%%DATADIR%%/styles/darktable_Panasonic_DC-TZ200D.dtstyle
+%%DATADIR%%/styles/darktable_Panasonic_DC-TZ202.dtstyle
+%%DATADIR%%/styles/darktable_Panasonic_DC-TZ90.dtstyle
+%%DATADIR%%/styles/darktable_Panasonic_DC-TZ91.dtstyle
+%%DATADIR%%/styles/darktable_Panasonic_DC-TZ95.dtstyle
+%%DATADIR%%/styles/darktable_Panasonic_DC-TZ95D.dtstyle
+%%DATADIR%%/styles/darktable_Panasonic_DC-TZ96.dtstyle
+%%DATADIR%%/styles/darktable_Panasonic_DC-ZS200D.dtstyle
+%%DATADIR%%/styles/darktable_Panasonic_DMC-FZ100.dtstyle
+%%DATADIR%%/styles/darktable_Panasonic_DMC-FZ1000.dtstyle
+%%DATADIR%%/styles/darktable_Panasonic_DMC-FZ150.dtstyle
+%%DATADIR%%/styles/darktable_Panasonic_DMC-FZ18.dtstyle
+%%DATADIR%%/styles/darktable_Panasonic_DMC-FZ200.dtstyle
+%%DATADIR%%/styles/darktable_Panasonic_DMC-FZ2000.dtstyle
+%%DATADIR%%/styles/darktable_Panasonic_DMC-FZ2500.dtstyle
+%%DATADIR%%/styles/darktable_Panasonic_DMC-FZ28.dtstyle
+%%DATADIR%%/styles/darktable_Panasonic_DMC-FZ300.dtstyle
+%%DATADIR%%/styles/darktable_Panasonic_DMC-FZ330.dtstyle
+%%DATADIR%%/styles/darktable_Panasonic_DMC-FZ35.dtstyle
+%%DATADIR%%/styles/darktable_Panasonic_DMC-FZ38.dtstyle
+%%DATADIR%%/styles/darktable_Panasonic_DMC-FZ45.dtstyle
+%%DATADIR%%/styles/darktable_Panasonic_DMC-G1.dtstyle
+%%DATADIR%%/styles/darktable_Panasonic_DMC-G10.dtstyle
+%%DATADIR%%/styles/darktable_Panasonic_DMC-G2.dtstyle
+%%DATADIR%%/styles/darktable_Panasonic_DMC-G3.dtstyle
+%%DATADIR%%/styles/darktable_Panasonic_DMC-G5.dtstyle
+%%DATADIR%%/styles/darktable_Panasonic_DMC-G6.dtstyle
+%%DATADIR%%/styles/darktable_Panasonic_DMC-G7.dtstyle
+%%DATADIR%%/styles/darktable_Panasonic_DMC-G70.dtstyle
+%%DATADIR%%/styles/darktable_Panasonic_DMC-G80.dtstyle
+%%DATADIR%%/styles/darktable_Panasonic_DMC-G81.dtstyle
+%%DATADIR%%/styles/darktable_Panasonic_DMC-G85.dtstyle
+%%DATADIR%%/styles/darktable_Panasonic_DMC-GF1.dtstyle
+%%DATADIR%%/styles/darktable_Panasonic_DMC-GF2.dtstyle
+%%DATADIR%%/styles/darktable_Panasonic_DMC-GF3.dtstyle
+%%DATADIR%%/styles/darktable_Panasonic_DMC-GF6.dtstyle
+%%DATADIR%%/styles/darktable_Panasonic_DMC-GF7.dtstyle
+%%DATADIR%%/styles/darktable_Panasonic_DMC-GF8.dtstyle
+%%DATADIR%%/styles/darktable_Panasonic_DMC-GH1.dtstyle
+%%DATADIR%%/styles/darktable_Panasonic_DMC-GH2.dtstyle
+%%DATADIR%%/styles/darktable_Panasonic_DMC-GH3.dtstyle
+%%DATADIR%%/styles/darktable_Panasonic_DMC-GH4.dtstyle
+%%DATADIR%%/styles/darktable_Panasonic_DMC-GM1.dtstyle
+%%DATADIR%%/styles/darktable_Panasonic_DMC-GM1S.dtstyle
+%%DATADIR%%/styles/darktable_Panasonic_DMC-GX1.dtstyle
+%%DATADIR%%/styles/darktable_Panasonic_DMC-GX7.dtstyle
+%%DATADIR%%/styles/darktable_Panasonic_DMC-GX7MK2.dtstyle
+%%DATADIR%%/styles/darktable_Panasonic_DMC-GX8.dtstyle
+%%DATADIR%%/styles/darktable_Panasonic_DMC-GX80.dtstyle
+%%DATADIR%%/styles/darktable_Panasonic_DMC-GX85.dtstyle
+%%DATADIR%%/styles/darktable_Panasonic_DMC-LF1.dtstyle
+%%DATADIR%%/styles/darktable_Panasonic_DMC-LX10.dtstyle
+%%DATADIR%%/styles/darktable_Panasonic_DMC-LX100.dtstyle
+%%DATADIR%%/styles/darktable_Panasonic_DMC-LX15.dtstyle
+%%DATADIR%%/styles/darktable_Panasonic_DMC-LX3.dtstyle
+%%DATADIR%%/styles/darktable_Panasonic_DMC-LX5.dtstyle
+%%DATADIR%%/styles/darktable_Panasonic_DMC-LX7.dtstyle
+%%DATADIR%%/styles/darktable_Panasonic_DMC-TX1.dtstyle
+%%DATADIR%%/styles/darktable_Panasonic_DMC-TZ100.dtstyle
+%%DATADIR%%/styles/darktable_Panasonic_DMC-TZ101.dtstyle
+%%DATADIR%%/styles/darktable_Panasonic_DMC-TZ110.dtstyle
+%%DATADIR%%/styles/darktable_Panasonic_DMC-TZ61.dtstyle
+%%DATADIR%%/styles/darktable_Panasonic_DMC-TZ70.dtstyle
+%%DATADIR%%/styles/darktable_Panasonic_DMC-TZ71.dtstyle
+%%DATADIR%%/styles/darktable_Panasonic_DMC-TZ80.dtstyle
+%%DATADIR%%/styles/darktable_Panasonic_DMC-TZ81.dtstyle
+%%DATADIR%%/styles/darktable_Panasonic_DMC-ZS100.dtstyle
+%%DATADIR%%/styles/darktable_Panasonic_DMC-ZS40.dtstyle
+%%DATADIR%%/styles/darktable_Panasonic_DMC-ZS60.dtstyle
+%%DATADIR%%/styles/darktable_Pentax__ist D.dtstyle
+%%DATADIR%%/styles/darktable_Pentax__ist DL.dtstyle
+%%DATADIR%%/styles/darktable_Pentax__ist DS.dtstyle
+%%DATADIR%%/styles/darktable_Pentax_645D.dtstyle
+%%DATADIR%%/styles/darktable_Pentax_645Z.dtstyle
+%%DATADIR%%/styles/darktable_Pentax_K-01.dtstyle
+%%DATADIR%%/styles/darktable_Pentax_K-1 Mark II.dtstyle
+%%DATADIR%%/styles/darktable_Pentax_K-1.dtstyle
+%%DATADIR%%/styles/darktable_Pentax_K-3 II.dtstyle
+%%DATADIR%%/styles/darktable_Pentax_K-3 Mark III.dtstyle
+%%DATADIR%%/styles/darktable_Pentax_K-3.dtstyle
+%%DATADIR%%/styles/darktable_Pentax_K-30.dtstyle
+%%DATADIR%%/styles/darktable_Pentax_K-5 II s.dtstyle
+%%DATADIR%%/styles/darktable_Pentax_K-5 II.dtstyle
+%%DATADIR%%/styles/darktable_Pentax_K-5.dtstyle
+%%DATADIR%%/styles/darktable_Pentax_K-50.dtstyle
+%%DATADIR%%/styles/darktable_Pentax_K-500.dtstyle
+%%DATADIR%%/styles/darktable_Pentax_K-m.dtstyle
+%%DATADIR%%/styles/darktable_Pentax_K-r.dtstyle
+%%DATADIR%%/styles/darktable_Pentax_K-S1.dtstyle
+%%DATADIR%%/styles/darktable_Pentax_K-S2.dtstyle
+%%DATADIR%%/styles/darktable_Pentax_K1000.dtstyle
+%%DATADIR%%/styles/darktable_Pentax_K100D Super.dtstyle
+%%DATADIR%%/styles/darktable_Pentax_K10D.dtstyle
+%%DATADIR%%/styles/darktable_Pentax_K110D.dtstyle
+%%DATADIR%%/styles/darktable_Pentax_K2000.dtstyle
+%%DATADIR%%/styles/darktable_Pentax_K200D.dtstyle
+%%DATADIR%%/styles/darktable_Pentax_K20D.dtstyle
+%%DATADIR%%/styles/darktable_Pentax_KF.dtstyle
+%%DATADIR%%/styles/darktable_Pentax_KP.dtstyle
+%%DATADIR%%/styles/darktable_Pentax_Q.dtstyle
+%%DATADIR%%/styles/darktable_Pentax_Q7.dtstyle
+%%DATADIR%%/styles/darktable_Phase One_IQ180.dtstyle
+%%DATADIR%%/styles/darktable_Phase One_P65+.dtstyle
+%%DATADIR%%/styles/darktable_Samsung_EK-GN120.dtstyle
+%%DATADIR%%/styles/darktable_Samsung_EX2F.dtstyle
+%%DATADIR%%/styles/darktable_Samsung_G935F.dtstyle
+%%DATADIR%%/styles/darktable_Samsung_GX10.dtstyle
+%%DATADIR%%/styles/darktable_Samsung_NX mini.dtstyle
+%%DATADIR%%/styles/darktable_Samsung_NX1.dtstyle
+%%DATADIR%%/styles/darktable_Samsung_NX10.dtstyle
+%%DATADIR%%/styles/darktable_Samsung_NX11.dtstyle
+%%DATADIR%%/styles/darktable_Samsung_NX1100.dtstyle
+%%DATADIR%%/styles/darktable_Samsung_NX20.dtstyle
+%%DATADIR%%/styles/darktable_Samsung_NX200.dtstyle
+%%DATADIR%%/styles/darktable_Samsung_NX2000.dtstyle
+%%DATADIR%%/styles/darktable_Samsung_NX210.dtstyle
+%%DATADIR%%/styles/darktable_Samsung_NX30.dtstyle
+%%DATADIR%%/styles/darktable_Samsung_NX300.dtstyle
+%%DATADIR%%/styles/darktable_Samsung_NX3000.dtstyle
+%%DATADIR%%/styles/darktable_Samsung_NX300M.dtstyle
+%%DATADIR%%/styles/darktable_Samsung_NX3300.dtstyle
+%%DATADIR%%/styles/darktable_Samsung_NX5.dtstyle
+%%DATADIR%%/styles/darktable_Samsung_NX500.dtstyle
+%%DATADIR%%/styles/darktable_Samsung_WB2000.dtstyle
+%%DATADIR%%/styles/darktable_Sigma_fp L.dtstyle
+%%DATADIR%%/styles/darktable_Sigma_fp.dtstyle
+%%DATADIR%%/styles/darktable_Sony_DSC-F828.dtstyle
+%%DATADIR%%/styles/darktable_Sony_DSC-HX95.dtstyle
+%%DATADIR%%/styles/darktable_Sony_DSC-HX99.dtstyle
+%%DATADIR%%/styles/darktable_Sony_DSC-R1.dtstyle
+%%DATADIR%%/styles/darktable_Sony_DSC-RX0.dtstyle
+%%DATADIR%%/styles/darktable_Sony_DSC-RX0M2.dtstyle
+%%DATADIR%%/styles/darktable_Sony_DSC-RX1.dtstyle
+%%DATADIR%%/styles/darktable_Sony_DSC-RX10.dtstyle
+%%DATADIR%%/styles/darktable_Sony_DSC-RX100.dtstyle
+%%DATADIR%%/styles/darktable_Sony_DSC-RX100M2.dtstyle
+%%DATADIR%%/styles/darktable_Sony_DSC-RX100M3.dtstyle
+%%DATADIR%%/styles/darktable_Sony_DSC-RX100M4.dtstyle
+%%DATADIR%%/styles/darktable_Sony_DSC-RX100M5.dtstyle
+%%DATADIR%%/styles/darktable_Sony_DSC-RX100M5A.dtstyle
+%%DATADIR%%/styles/darktable_Sony_DSC-RX100M6.dtstyle
+%%DATADIR%%/styles/darktable_Sony_DSC-RX100M7.dtstyle
+%%DATADIR%%/styles/darktable_Sony_DSC-RX10M2.dtstyle
+%%DATADIR%%/styles/darktable_Sony_DSC-RX10M3.dtstyle
+%%DATADIR%%/styles/darktable_Sony_DSC-RX10M4.dtstyle
+%%DATADIR%%/styles/darktable_Sony_DSC-RX1R.dtstyle
+%%DATADIR%%/styles/darktable_Sony_DSC-RX1RM2.dtstyle
+%%DATADIR%%/styles/darktable_Sony_DSLR-A100.dtstyle
+%%DATADIR%%/styles/darktable_Sony_DSLR-A200.dtstyle
+%%DATADIR%%/styles/darktable_Sony_DSLR-A230.dtstyle
+%%DATADIR%%/styles/darktable_Sony_DSLR-A290.dtstyle
+%%DATADIR%%/styles/darktable_Sony_DSLR-A300.dtstyle
+%%DATADIR%%/styles/darktable_Sony_DSLR-A330.dtstyle
+%%DATADIR%%/styles/darktable_Sony_DSLR-A350.dtstyle
+%%DATADIR%%/styles/darktable_Sony_DSLR-A380.dtstyle
+%%DATADIR%%/styles/darktable_Sony_DSLR-A390.dtstyle
+%%DATADIR%%/styles/darktable_Sony_DSLR-A450.dtstyle
+%%DATADIR%%/styles/darktable_Sony_DSLR-A500.dtstyle
+%%DATADIR%%/styles/darktable_Sony_DSLR-A550.dtstyle
+%%DATADIR%%/styles/darktable_Sony_DSLR-A560.dtstyle
+%%DATADIR%%/styles/darktable_Sony_DSLR-A580.dtstyle
+%%DATADIR%%/styles/darktable_Sony_DSLR-A700.dtstyle
+%%DATADIR%%/styles/darktable_Sony_DSLR-A850.dtstyle
+%%DATADIR%%/styles/darktable_Sony_DSLR-A900.dtstyle
+%%DATADIR%%/styles/darktable_Sony_ILCA-68.dtstyle
+%%DATADIR%%/styles/darktable_Sony_ILCA-77M2.dtstyle
+%%DATADIR%%/styles/darktable_Sony_ILCA-99M2.dtstyle
+%%DATADIR%%/styles/darktable_Sony_ILCE-1.dtstyle
+%%DATADIR%%/styles/darktable_Sony_ILCE-3000.dtstyle
+%%DATADIR%%/styles/darktable_Sony_ILCE-3500.dtstyle
+%%DATADIR%%/styles/darktable_Sony_ILCE-5000.dtstyle
+%%DATADIR%%/styles/darktable_Sony_ILCE-5100.dtstyle
+%%DATADIR%%/styles/darktable_Sony_ILCE-6000.dtstyle
+%%DATADIR%%/styles/darktable_Sony_ILCE-6100.dtstyle
+%%DATADIR%%/styles/darktable_Sony_ILCE-6300.dtstyle
+%%DATADIR%%/styles/darktable_Sony_ILCE-6400.dtstyle
+%%DATADIR%%/styles/darktable_Sony_ILCE-6500.dtstyle
+%%DATADIR%%/styles/darktable_Sony_ILCE-6600.dtstyle
+%%DATADIR%%/styles/darktable_Sony_ILCE-6700.dtstyle
+%%DATADIR%%/styles/darktable_Sony_ILCE-7.dtstyle
+%%DATADIR%%/styles/darktable_Sony_ILCE-7C.dtstyle
+%%DATADIR%%/styles/darktable_Sony_ILCE-7CM2.dtstyle
+%%DATADIR%%/styles/darktable_Sony_ILCE-7CR.dtstyle
+%%DATADIR%%/styles/darktable_Sony_ILCE-7M2.dtstyle
+%%DATADIR%%/styles/darktable_Sony_ILCE-7M3.dtstyle
+%%DATADIR%%/styles/darktable_Sony_ILCE-7M4.dtstyle
+%%DATADIR%%/styles/darktable_Sony_ILCE-7R.dtstyle
+%%DATADIR%%/styles/darktable_Sony_ILCE-7RM2.dtstyle
+%%DATADIR%%/styles/darktable_Sony_ILCE-7RM3.dtstyle
+%%DATADIR%%/styles/darktable_Sony_ILCE-7RM4.dtstyle
+%%DATADIR%%/styles/darktable_Sony_ILCE-7RM4A.dtstyle
+%%DATADIR%%/styles/darktable_Sony_ILCE-7RM5.dtstyle
+%%DATADIR%%/styles/darktable_Sony_ILCE-7S.dtstyle
+%%DATADIR%%/styles/darktable_Sony_ILCE-7SM2.dtstyle
+%%DATADIR%%/styles/darktable_Sony_ILCE-7SM3.dtstyle
+%%DATADIR%%/styles/darktable_Sony_ILCE-9 series.dtstyle
+%%DATADIR%%/styles/darktable_Sony_ILCE-9.dtstyle
+%%DATADIR%%/styles/darktable_Sony_ILCE-9M3.dtstyle
+%%DATADIR%%/styles/darktable_Sony_ILCE-QX1.dtstyle
+%%DATADIR%%/styles/darktable_Sony_ILME-FX3.dtstyle
+%%DATADIR%%/styles/darktable_Sony_ILME-FX30.dtstyle
+%%DATADIR%%/styles/darktable_Sony_NEX-3N.dtstyle
+%%DATADIR%%/styles/darktable_Sony_NEX-5.dtstyle
+%%DATADIR%%/styles/darktable_Sony_NEX-5N.dtstyle
+%%DATADIR%%/styles/darktable_Sony_NEX-5R.dtstyle
+%%DATADIR%%/styles/darktable_Sony_NEX-5T.dtstyle
+%%DATADIR%%/styles/darktable_Sony_NEX-6.dtstyle
+%%DATADIR%%/styles/darktable_Sony_NEX-C3.dtstyle
+%%DATADIR%%/styles/darktable_Sony_NEX-F3.dtstyle
+%%DATADIR%%/styles/darktable_Sony_SLT-A33.dtstyle
+%%DATADIR%%/styles/darktable_Sony_SLT-A35.dtstyle
+%%DATADIR%%/styles/darktable_Sony_SLT-A37.dtstyle
+%%DATADIR%%/styles/darktable_Sony_SLT-A55.dtstyle
+%%DATADIR%%/styles/darktable_Sony_SLT-A57.dtstyle
+%%DATADIR%%/styles/darktable_Sony_SLT-A58.dtstyle
+%%DATADIR%%/styles/darktable_Sony_SLT-A65.dtstyle
+%%DATADIR%%/styles/darktable_Sony_SLT-A77.dtstyle
+%%DATADIR%%/styles/darktable_Sony_SLT-A99.dtstyle
+%%DATADIR%%/styles/darktable_Sony_UMC-R10C.dtstyle
+%%DATADIR%%/styles/darktable_Sony_ZV-1.dtstyle
+%%DATADIR%%/styles/darktable_Sony_ZV-E1.dtstyle
+%%DATADIR%%/styles/darktable_Sony_ZV-E10.dtstyle
 %%DATADIR%%/themes/darktable-elegant-dark.css
 %%DATADIR%%/themes/darktable-elegant-darker.css
 %%DATADIR%%/themes/darktable-elegant-grey.css
+%%DATADIR%%/themes/darktable-elegant-highcontrast.css
 %%DATADIR%%/themes/darktable-icons-dark.css
 %%DATADIR%%/themes/darktable-icons-darker.css
 %%DATADIR%%/themes/darktable-icons-grey.css
+%%DATADIR%%/themes/darktable-icons-highcontrast.css
 %%DATADIR%%/themes/darktable-icons.css
 %%DATADIR%%/themes/darktable.css
 %%DATADIR%%/tools/common.sh
@@ -413,6 +934,7 @@ share/icons/hicolor/256x256/apps/darktable.png
 share/icons/hicolor/32x32/apps/darktable.png
 share/icons/hicolor/48x48/apps/darktable.png
 share/icons/hicolor/64x64/apps/darktable.png
+share/icons/hicolor/scalable/apps/darktable_macos_icon.svg
 share/icons/hicolor/scalable/apps/darktable-1.svg
 share/icons/hicolor/scalable/apps/darktable-2.svg
 share/icons/hicolor/scalable/apps/darktable-3.svg
@@ -424,13 +946,12 @@ share/icons/hicolor/scalable/apps/darktable.svg
 %%NLS%%share/locale/fi/LC_MESSAGES/darktable.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/darktable.mo
 %%NLS%%share/locale/hu/LC_MESSAGES/darktable.mo
-%%NLS%%share/locale/it/LC_MESSAGES/darktable.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/darktable.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/darktable.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/darktable.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/darktable.mo
-%%NLS%%share/locale/ru/LC_MESSAGES/darktable.mo
 %%NLS%%share/locale/sl/LC_MESSAGES/darktable.mo
+%%NLS%%share/locale/sv/LC_MESSAGES/darktable.mo
 %%NLS%%share/locale/sq/LC_MESSAGES/darktable.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/darktable.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/darktable.mo
