@@ -6,7 +6,8 @@ MASTER_SITES=	RG
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Support utilities for RSpec gems
 WWW=		https://rspec.info/ \
-		https://github.com/rspec/rspec-support
+		https://github.com/rspec/rspec/tree/main/rspec-support \
+		https://github.com/rspec/rspec
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
