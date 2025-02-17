@@ -1,7 +1,7 @@
 PORTNAME=	rpcs3
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.0.34-17491 # git rev-list --count HEAD
-DISTVERSIONSUFFIX=	-g7e10aa57c4
+DISTVERSION=	0.0.34-17498 # git rev-list --count HEAD
+DISTVERSIONSUFFIX=	-gec3d9a2cae
 CATEGORIES=	emulators wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -14,8 +14,7 @@ LICENSE_FILE_ISCL=	${WRKSRC_cubeb}/LICENSE
 LICENSE_FILE_ZLIB=	${WRKSRC_asmjit}/LICENSE.md
 
 BUILD_DEPENDS=	flatc:devel/flatbuffers
-LIB_DEPENDS=	libxxhash.so:devel/xxhash \
-		libcurl.so:ftp/curl \
+LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libpng.so:graphics/png \
 		libavcodec.so:multimedia/ffmpeg \
 		libpugixml.so:textproc/pugixml
