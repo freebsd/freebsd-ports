@@ -1,7 +1,6 @@
 PORTNAME=	signal-desktop
 DISTVERSIONPREFIX=	v
-DISTVERSION=	7.40.0
-PORTREVISION=	1
+DISTVERSION=	7.42.0
 CATEGORIES=	net-im
 MASTER_SITES=	LOCAL/mikael/signal-desktop/:npm \
 		https://build-artifacts.signal.org/desktop/:sqlcipher
@@ -21,8 +20,7 @@ ONLY_FOR_ARCHS=	aarch64 amd64
 
 EXTRACT_DEPENDS=jq:textproc/jq \
 		npm:www/npm-node20
-BUILD_DEPENDS=	${LOCALBASE}/lib/libcrypto.a:security/openssl \
-		${LOCALBASE}/lib/libringrtc.so:multimedia/ringrtc \
+BUILD_DEPENDS=	${LOCALBASE}/lib/libringrtc.so:multimedia/ringrtc \
 		${LOCALBASE}/lib/libsignal_node.so:net-im/libsignal-node \
 		${LOCALBASE}/lib/libsignal_sqlcipher_extension.a:devel/signal-sqlcipher-extension \
 		app-builder>0:devel/app-builder \
@@ -58,7 +56,7 @@ LIB_DEPENDS=	libasound.so:audio/alsa-lib \
 		libxkbcommon.so:x11/libxkbcommon \
 		libxshmfence.so:x11/libxshmfence
 
-USES=		desktop-file-utils gettext-runtime gl gnome jpeg xorg
+USES=		desktop-file-utils gettext-runtime gl gnome jpeg ssl xorg
 USE_GITHUB=	yes
 GH_ACCOUNT=	signalapp
 GH_PROJECT=	Signal-Desktop
@@ -91,7 +89,7 @@ _BUILD_DATE=	$$(date +'%s')
 ELECTRON_VER_MAJOR=	32
 ESBUILD_VERSION=	0.24.0
 
-SQLCIPHER=	sqlcipher-v2-4.6.1-signal-patch2--0.2.1-9d2afebba9bfd8f18afd36a90a800df84fcf6975defacbfa1e1c5e1e8a6d05f1
+SQLCIPHER=	sqlcipher-v2-4.6.1-signal-patch2--0.2.1-asm2-6253f886c40e49bf892d5cdc92b2eb200b12cd8d80c48ce5b05967cfd01ee8c7
 
 NODE_ARCH=	${ARCH:S/aarch64/arm64/:S/amd64/x64/}
 APP_OUT_DIR=	linux-${ARCH:S/aarch64/arm64-/:S/amd64//}unpacked
