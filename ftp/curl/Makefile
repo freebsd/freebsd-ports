@@ -12,7 +12,7 @@ WWW=		https://curl.se/ \
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		cpe libtool localbase pathfix perl5 shebangfix tar:xz
+USES=		cpe libtool localbase:ldflags pathfix perl5 shebangfix tar:xz
 USE_PERL5=	build
 
 CONFIGURE_ARGS=	--disable-test-bundles \
