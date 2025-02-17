@@ -24,7 +24,7 @@ MAKE_ENV=	OPTIMIZATION= \
 
 LDFLAGS+=	-lpthread -lm -lexecinfo
 
-CONFLICTS_INSTALL=	redis-devel redis62 redis70 redis72 # etc/rc.d/redis
+CONFLICTS_INSTALL=	redis-devel redis62 redis72
 
 SUB_FILES=	pkg-message
 SUB_LIST=	PORTNAME=${PORTNAME} \

@@ -21,7 +21,7 @@ MAKE_ENV=	OPTIMIZATION= \
 
 LDFLAGS+=	-lpthread -lm -lexecinfo
 
-CONFLICTS_INSTALL=	redis redis-devel redis70 redis72 # etc/rc.d/redis
+CONFLICTS_INSTALL=	redis redis-devel redis72
 
 PORTSCOUT=	limit:^6\.2
 SUB_FILES=	pkg-message
