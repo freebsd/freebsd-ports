@@ -30451,7 +30451,7 @@
 /var/ossec/lib/libindexer_connector.so
 /var/ossec/lib/libjemalloc.so.2
 /var/ossec/lib/lib%%PYTHON_VERSION%%.so.1.0
-/var/ossec/lib/librocksdb.so.8.3.2
+/var/ossec/lib/librocksdb.so.8
 /var/ossec/lib/librouter.so
 /var/ossec/lib/librsync.so
 /var/ossec/lib/libsyscollector.so

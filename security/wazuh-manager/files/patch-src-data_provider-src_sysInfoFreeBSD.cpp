@@ -1,5 +1,5 @@
---- src/data_provider/src/sysInfoFreeBSD.cpp	2024-04-25 03:44:26.000000000 -0500
-+++ src/data_provider/src/sysInfoFreeBSD.cpp	2024-05-10 03:48:12.219475000 -0500
+--- src/data_provider/src/sysInfoFreeBSD.cpp	2025-01-15 06:26:54.000000000 -0800
++++ src/data_provider/src/sysInfoFreeBSD.cpp	2025-02-17 14:38:11.834720000 -0800
 @@ -11,6 +11,7 @@
  #include "sysInfo.hpp"
  #include "cmdHelper.h"
@@ -95,13 +95,16 @@
      if (uname(&uts) >= 0)
      {
          ret["sysname"] = uts.sysname;
-@@ -215,18 +234,137 @@
+@@ -215,18 +234,145 @@
  
  nlohmann::json SysInfo::getPorts() const
  {
 -    // Currently not supported for this OS.
 -    return nlohmann::json {};
 +    const auto query{Utils::exec(R"(sockstat -46qs)")};
++
++    /* USER COMMAND PID FD PROTO LOCAL_ADDRESS FOREIGN_ADDRESS PATH_STATE CONN_STATE */
++
 +    nlohmann::json ports {};
 +
 +    if (!query.empty())
@@ -115,6 +118,7 @@
 +            std::string remoteip = "";
 +            std::string remoteport = "";
 +            std::string statedata = "";
++
 +            const auto data{Utils::split(line, ' ')};
 +            auto localdata{Utils::split(data[5], ':')};
 +            auto remotedata{Utils::split(data[6], ':')};
@@ -124,7 +128,7 @@
 +            remoteip = remotedata[0];
 +            remoteport = remotedata[1];
 +
-+            if((data[4] != "udp4") && (data[4] != "udp6")) {
++            if((data[4] != "udp4") && (data[4] != "udp6") && (data[4] != "udp46")) {
 +              statedata = Utils::toLowerCase(data[7]);
 +            }
 +
@@ -135,10 +139,12 @@
 +            if(localdata.size() == 4) {
 +              localip = localdata[0] + ":"+ localdata[1] + ":" + localdata[2];
 +              localport = localdata[3];
-+            } else if(localip == "*") {
++            }
++
++            if(localip == "*") {
 +              if((data[4] == "tcp6") || (data[4] == "udp6")) {
 +                localip = "0:0:0:0:0:0:0:0";
-+              } else {
++              } else if((data[4] == "tcp4") || (data[4] == "udp4")) {
 +                localip = "0.0.0.0";
 +              }
 +            }
@@ -150,7 +156,9 @@
 +            if(remotedata.size() == 4) {
 +              remoteip = remotedata[0] + ":"+ remotedata[1] + ":" + remotedata[2];
 +              remoteport = remotedata[3];
-+            } else if(remoteport == "*") {
++            }
++
++            if(remoteport == "*") {
 +                remoteip = "";
 +                remoteport = "0";
 +            }
@@ -218,7 +226,7 @@
 +          jsProcessInfo["vm_size"]    = process["virtual-size"].get<std::string>();
 +          jsProcessInfo["resident"]   = process["rss"].get<std::string>();
 +          //jsProcessInfo["share"]      = process["percent-memory"].get<std::string>();
-+          jsProcessInfo["start_time"] = process["elapsed-times"].get<std::string>();
++          jsProcessInfo["start_time"] = process["elapsed-times"].get<std::string>() == "-" ? "0" : process["elapsed-times"].get<std::string>();
 +          jsProcessInfo["pgrp"]       = process["process-group"].get<std::string>();
 +          jsProcessInfo["session"]    = process["sid"].get<std::string>();
 +          jsProcessInfo["tgid"]       = process["terminal-process-gid"].get<std::string>();
@@ -238,7 +246,7 @@
  
      if (!query.empty())
      {
-@@ -235,18 +373,22 @@
+@@ -235,18 +381,22 @@
          for (const auto& line : lines)
          {
              const auto data{Utils::split(line, '|')};

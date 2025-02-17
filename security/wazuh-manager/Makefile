@@ -1,6 +1,7 @@
 PORTNAME=	wazuh
 DISTVERSIONPREFIX=	v
 DISTVERSION=	4.10.1
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	https://packages.wazuh.com/deps/35/libraries/sources/:wazuh_sources \
 		LOCAL/acm/${PORTNAME}/:wazuh_cache
@@ -364,7 +365,7 @@ do-install:
 	${INSTALL_LIB} ${WRKSRC}/src/build/wazuh_modules/vulnerability_scanner/libvulnerability_scanner.so ${STAGEDIR}${WAZUHPREFIX}/lib
 	${INSTALL_LIB} ${WRKSRC}/src/data_provider/build/lib/libsysinfo.so ${STAGEDIR}${WAZUHPREFIX}/lib
 	${INSTALL_LIB} ${WRKSRC}/src/external/jemalloc/lib/libjemalloc.so.2 ${STAGEDIR}${WAZUHPREFIX}/lib
-	${INSTALL_LIB} ${WRKSRC}/src/external/rocksdb/build/librocksdb.so.8.3.2 ${STAGEDIR}${WAZUHPREFIX}/lib
+	${INSTALL_LIB} ${WRKSRC}/src/external/rocksdb/build/librocksdb.so.8.3.2 ${STAGEDIR}${WAZUHPREFIX}/lib/librocksdb.so.8
 	${INSTALL_LIB} ${WRKSRC}/src/shared_modules/dbsync/build/lib/libdbsync.so ${STAGEDIR}${WAZUHPREFIX}/lib
 	${INSTALL_LIB} ${WRKSRC}/src/shared_modules/rsync/build/lib/librsync.so ${STAGEDIR}${WAZUHPREFIX}/lib
 	${INSTALL_LIB} ${WRKSRC}/src/syscheckd/build/lib/libfimdb.so ${STAGEDIR}${WAZUHPREFIX}/lib
