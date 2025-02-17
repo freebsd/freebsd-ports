@@ -1,6 +1,5 @@
 PORTNAME=	cargo-tarpaulin
-DISTVERSION=	0.31.5
-PORTREVISION=	1
+DISTVERSION=	0.32.0
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -82,7 +81,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		gzip-header-1.0.0 \
 		h2-0.3.26 \
 		hashbrown-0.11.2 \
-		hashbrown-0.14.5 \
+		hashbrown-0.15.2 \
 		heck-0.5.0 \
 		hermit-abi-0.3.9 \
 		hex-0.4.3 \
@@ -98,7 +97,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		iana-time-zone-haiku-0.1.2 \
 		idna-0.5.0 \
 		indexmap-1.8.2 \
-		indexmap-2.2.6 \
+		indexmap-2.7.1 \
 		ipnet-2.9.0 \
 		is_terminal_polyfill-1.70.0 \
 		itoa-1.0.11 \
@@ -112,7 +111,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		libssh2-sys-0.3.0 \
 		libz-sys-1.1.16 \
 		linux-raw-sys-0.4.13 \
-		llvm_profparser-0.7.0 \
+		llvm_profparser-0.7.1 \
 		log-0.4.21 \
 		matchers-0.1.0 \
 		md5-0.7.0 \
@@ -132,11 +131,11 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		object-0.32.2 \
 		object-0.36.7 \
 		once_cell-1.19.0 \
-		openssl-0.10.66 \
+		openssl-0.10.70 \
 		openssl-macros-0.1.1 \
 		openssl-probe-0.1.5 \
 		openssl-src-300.2.3+3.2.1 \
-		openssl-sys-0.9.103 \
+		openssl-sys-0.9.105 \
 		overload-0.1.1 \
 		percent-encoding-2.3.1 \
 		pin-project-lite-0.2.14 \
@@ -169,8 +168,8 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		semver-1.0.23 \
 		serde-1.0.217 \
 		serde_derive-1.0.217 \
-		serde_json-1.0.135 \
-		serde_spanned-0.6.7 \
+		serde_json-1.0.138 \
+		serde_spanned-0.6.8 \
 		serde_urlencoded-0.7.1 \
 		sharded-slab-0.1.7 \
 		slab-0.4.9 \
@@ -184,7 +183,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		system-configuration-0.5.1 \
 		system-configuration-sys-0.5.0 \
 		tempfile-3.10.1 \
-		test-log-0.2.16 \
+		test-log-0.2.17 \
 		test-log-macros-0.2.16 \
 		thiserror-1.0.60 \
 		thiserror-2.0.4 \
@@ -196,9 +195,9 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		tokio-1.37.0 \
 		tokio-native-tls-0.3.1 \
 		tokio-util-0.7.11 \
-		toml-0.8.19 \
+		toml-0.8.20 \
 		toml_datetime-0.6.8 \
-		toml_edit-0.22.20 \
+		toml_edit-0.22.23 \
 		tower-service-0.3.2 \
 		tracing-0.1.41 \
 		tracing-attributes-0.1.28 \
@@ -251,7 +250,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		windows_x86_64_gnullvm-0.52.5 \
 		windows_x86_64_msvc-0.48.5 \
 		windows_x86_64_msvc-0.52.5 \
-		winnow-0.6.18 \
+		winnow-0.7.1 \
 		winreg-0.50.0
 
 OPENSSLINC=	/usr/include
