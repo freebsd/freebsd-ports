@@ -1,3 +1,4 @@
+include/double-conversion/bignum-dtoa.h
 include/double-conversion/bignum.h
 include/double-conversion/cached-powers.h
 include/double-conversion/diy-fp.h
