@@ -1,5 +1,5 @@
 PORTNAME=	gapic-generator
-PORTVERSION=	1.22.0
+PORTVERSION=	1.22.1
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,7 +17,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLA
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}click>=6.7:devel/py-click@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}google-api-core>=2.11.0:www/py-google-api-core@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}googleapis-common-protos>=1.55.0:devel/py-googleapis-common-protos@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}grpc-google-iam-v1>=0.12.4<1.0.0:devel/py-grpc-google-iam-v1@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}grpc-google-iam-v1>=0.14.0<1.0.0:devel/py-grpc-google-iam-v1@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}grpcio>=1.24.3:devel/py-grpcio@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}inflection>=0.5.1<1.0.0:devel/py-inflection@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}libcst>=0.4.9<2.0.0:devel/py-libcst@${PY_FLAVOR} \
