@@ -1,0 +1,18 @@
+--- CMakeLists.txt.orig	2020-03-31 23:41:18.000000000 +0300
++++ CMakeLists.txt	2025-02-17 08:49:34.073618000 +0200
+@@ -146,7 +146,6 @@
+   include(CheckCXXSourceCompiles)
+   include(CMakePushCheckState)
+   cmake_push_check_state()
+-  set(CMAKE_REQUIRED_FLAGS "-std=c++11")
+   set(CMAKE_REQUIRED_LIBRARIES "${additional_lib}")
+   set(CMAKE_REQUIRED_QUIET 1)
+   CHECK_CXX_SOURCE_COMPILES("
+@@ -445,7 +444,6 @@
+ add_definitions(-DQT_NO_KEYWORDS)
+ add_definitions(-D__STDC_LIMIT_MACROS)
+ add_definitions(-Wall -Wextra)
+-add_definitions(-std=c++11)
+ add_definitions(-DBOOST_MATH_DISABLE_FLOAT128=1)
+ 
+ if(ENABLE_FLOW)
