@@ -1,14 +1,13 @@
 PORTNAME=	openroad
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.0-11595
-DISTVERSIONSUFFIX=	-g31d7e3dc5
-PORTREVISION=	9
+DISTVERSION=	2.0-20250216
 PORTEPOCH=	1
 CATEGORIES=	cad
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	ASIC physical design tool
-WWW=		https://theopenroadproject.org/
+WWW=		https://theopenroadproject.org \
+		https://github.com/The-OpenROAD-Project
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -40,6 +39,7 @@ LIB_DEPENDS=	libabsl_flags_parse.so:devel/abseil \
 		libprotobuf.so:devel/protobuf \
 		libre2.so:devel/re2 \
 		libspdlog.so:devel/spdlog
+LIB_DEPENDS+=	libgtest.so:devel/googletest # because third-party/abc looks for it
 
 USES=		bison compiler:c++17-lang cmake eigen:3 qt:5 \
 		localbase:ldflags pkgconfig python:build readline tcl:86 # the code asks for tcl-87, but build fails: https://github.com/The-OpenROAD-Project/OpenROAD/issues/508
@@ -48,8 +48,9 @@ USE_QT=		core gui widgets buildtools:build qmake:build
 USE_GITHUB=	yes
 GH_ACCOUNT=	The-OpenROAD-Project
 GH_PROJECT=	OpenROAD
-GH_TUPLE=	The-OpenROAD-Project:OpenSTA:42b994d:The_OpenROAD_Project_OpenSTA/src/sta \
-		The-OpenROAD-Project:abc:95b3543:abc/third-party/abc
+GH_TAGNAME=	888a3207a
+GH_TUPLE=	The-OpenROAD-Project:OpenSTA:6e95d93:The_OpenROAD_Project_OpenSTA/src/sta \
+		The-OpenROAD-Project:abc:5c9448c:abc/third-party/abc
 
 CMAKE_OFF=	BUILD_PYTHON \
 		ENABLE_TESTS
