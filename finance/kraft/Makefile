@@ -1,6 +1,6 @@
 PORTNAME=	kraft
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.2.1
+DISTVERSION=	1.2.2
 CATEGORIES=	finance kde
 
 MAINTAINER=	kde@FreeBSD.org
@@ -15,19 +15,16 @@ BUILD_DEPENDS=	bash:shells/bash \
 		rubygem-asciidoctor>=1.5.7<3:textproc/rubygem-asciidoctor
 LIB_DEPENDS=	libctemplate.so:textproc/google-ctemplate
 
-USES=		cmake compiler:c++11-lang gettext grantlee:5 kde:5 qt:5 \
-		shebangfix
+# iconv is just used for run
+USES=		cmake compiler:c++11-lang gettext-tools grantlee:5 iconv \
+		kde:5 qt:5 shebangfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	dragotin
-USE_KDE=	akonadi akonadicontacts \
-		auth codecs config configwidgets contacts coreaddons \
-		grantleetheme i18n itemmodels widgetsaddons \
+USE_KDE=	config contacts i18n \
 		ecm:build
-USE_QT=		core dbus gui sql widgets xml \
-		buildtools:build qmake:build
+USE_QT=		core gui sql svg widgets xml xmlpatterns \
+		buildtools:build qmake:build testlib:build
 
 SHEBANG_FILES=	manual/makeman.sh
-
-CFLAGS+=	-I${LOCALBASE}/include/KPim5
 
 .include <bsd.port.mk>
