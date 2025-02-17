@@ -55,7 +55,6 @@
 %%DATADIR%%/Definitions/0magnet.yml
 %%DATADIR%%/Definitions/1337x.yml
 %%DATADIR%%/Definitions/1ptbar.yml
-%%DATADIR%%/Definitions/2fast4you.yml
 %%DATADIR%%/Definitions/3changtrai.yml
 %%DATADIR%%/Definitions/3dtorrents.yml
 %%DATADIR%%/Definitions/4thd.yml
@@ -72,6 +71,8 @@
 %%DATADIR%%/Definitions/aither-api.yml
 %%DATADIR%%/Definitions/amigosshare.yml
 %%DATADIR%%/Definitions/anilibria.yml
+%%DATADIR%%/Definitions/anime-time.yml
+%%DATADIR%%/Definitions/anime-timel.yml
 %%DATADIR%%/Definitions/animelayer.yml
 %%DATADIR%%/Definitions/animelovers-api.yml
 %%DATADIR%%/Definitions/animetorrentsro.yml
@@ -201,7 +202,6 @@
 %%DATADIR%%/Definitions/finvip.yml
 %%DATADIR%%/Definitions/fluxzone.yml
 %%DATADIR%%/Definitions/freefarm.yml
-%%DATADIR%%/Definitions/frozenlayer.yml
 %%DATADIR%%/Definitions/fsm.yml
 %%DATADIR%%/Definitions/funkytorrents.yml
 %%DATADIR%%/Definitions/futuretorrent.yml
@@ -226,7 +226,6 @@
 %%DATADIR%%/Definitions/hawke-uno.yml
 %%DATADIR%%/Definitions/hd-club.yml
 %%DATADIR%%/Definitions/hd-unit3d-api.yml
-%%DATADIR%%/Definitions/hd4fans.yml
 %%DATADIR%%/Definitions/hdarea.yml
 %%DATADIR%%/Definitions/hdatmos.yml
 %%DATADIR%%/Definitions/hdc.yml
@@ -239,8 +238,7 @@
 %%DATADIR%%/Definitions/hdhome.yml
 %%DATADIR%%/Definitions/hdkylin.yml
 %%DATADIR%%/Definitions/hdolimpo-api.yml
-%%DATADIR%%/Definitions/hdonly.yml
-%%DATADIR%%/Definitions/hdpt.yml
+%%DATADIR%%/Definitions/hdonly-api.yml
 %%DATADIR%%/Definitions/hdroute.yml
 %%DATADIR%%/Definitions/hdsky.yml
 %%DATADIR%%/Definitions/hdspace.yml
@@ -302,7 +300,6 @@
 %%DATADIR%%/Definitions/le-cinephile.yml
 %%DATADIR%%/Definitions/learnbits.yml
 %%DATADIR%%/Definitions/learnflakes.yml
-%%DATADIR%%/Definitions/leech24-api.yml
 %%DATADIR%%/Definitions/lemonhd.yml
 %%DATADIR%%/Definitions/lepornoinfo.yml
 %%DATADIR%%/Definitions/lesaloon.yml
@@ -346,7 +343,6 @@
 %%DATADIR%%/Definitions/mvgroupforum.yml
 %%DATADIR%%/Definitions/mvgroupmain.yml
 %%DATADIR%%/Definitions/mypornclub.yml
-%%DATADIR%%/Definitions/myporno.yml
 %%DATADIR%%/Definitions/myspleen.yml
 %%DATADIR%%/Definitions/nethd.yml
 %%DATADIR%%/Definitions/newheaven.yml
@@ -358,6 +354,7 @@
 %%DATADIR%%/Definitions/nirvana.yml
 %%DATADIR%%/Definitions/noname-club.yml
 %%DATADIR%%/Definitions/noname-clubl.yml
+%%DATADIR%%/Definitions/nordicquality.yml
 %%DATADIR%%/Definitions/ntelogo.yml
 %%DATADIR%%/Definitions/nusantarare.yml
 %%DATADIR%%/Definitions/nyaapantsu.yml
@@ -416,6 +413,7 @@
 %%DATADIR%%/Definitions/r3vwtf.yml
 %%DATADIR%%/Definitions/racing4everyone-api.yml
 %%DATADIR%%/Definitions/racingforme.yml
+%%DATADIR%%/Definitions/rain.yml
 %%DATADIR%%/Definitions/rainbowtracker.yml
 %%DATADIR%%/Definitions/rapidzona.yml
 %%DATADIR%%/Definitions/rareshare2.yml
@@ -439,7 +437,6 @@
 %%DATADIR%%/Definitions/satclubbing.yml
 %%DATADIR%%/Definitions/scenerush.yml
 %%DATADIR%%/Definitions/seedfile.yml
-%%DATADIR%%/Definitions/seedoff.yml
 %%DATADIR%%/Definitions/seedpool-api.yml
 %%DATADIR%%/Definitions/selezen.yml
 %%DATADIR%%/Definitions/sexypics.yml
@@ -449,7 +446,6 @@
 %%DATADIR%%/Definitions/sharewood-api.yml
 %%DATADIR%%/Definitions/showrss.yml
 %%DATADIR%%/Definitions/siambit.yml
-%%DATADIR%%/Definitions/simpleanime.yml
 %%DATADIR%%/Definitions/sktorrent-org.yml
 %%DATADIR%%/Definitions/sktorrent.yml
 %%DATADIR%%/Definitions/snowpt.yml
@@ -475,6 +471,7 @@
 %%DATADIR%%/Definitions/theempire.yml
 %%DATADIR%%/Definitions/thefallingangels.yml
 %%DATADIR%%/Definitions/thegeeks.yml
+%%DATADIR%%/Definitions/thekitchen.yml
 %%DATADIR%%/Definitions/theleachzone-api.yml
 %%DATADIR%%/Definitions/themixingbowl.yml
 %%DATADIR%%/Definitions/thenewfun.yml
