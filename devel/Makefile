@@ -1046,6 +1046,7 @@
     SUBDIR += injeqt
     SUBDIR += intel-graphics-compiler
     SUBDIR += interactive_rebase_tool
+    SUBDIR += intervaltree
     SUBDIR += ioncube
     SUBDIR += ipython
     SUBDIR += ireport
