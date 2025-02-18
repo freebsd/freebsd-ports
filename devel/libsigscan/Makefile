@@ -1,6 +1,6 @@
 PORTNAME=	libsigscan
 # If/When moving from experimental to alpha, switch to DISTVERSIONPREFIX to prevent PORTEPOCH
-DISTVERSION=	experimental-20231201
+DISTVERSION=	experimental-20240505
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/libyal/libsigscan/releases/download/${PORTVERSION:E}/ \
 		LOCAL/antoine
