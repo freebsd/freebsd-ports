@@ -1,6 +1,5 @@
 PORTNAME=	evolution
-DISTVERSION=	3.44.4
-PORTREVISION=	7
+DISTVERSION=	3.52.3
 CATEGORIES=	mail gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
@@ -36,7 +35,7 @@ LIB_DEPENDS=	libcryptui.so:security/libcryptui \
 		libp11-kit.so:security/p11-kit \
 		libsecret-1.so:security/libsecret \
 		libsoup-2.4.so:devel/libsoup \
-		libwebkit2gtk-4.0.so:www/webkit2-gtk@40
+		libwebkit2gtk-4.1.so:www/webkit2-gtk@41
 RUN_DEPENDS=	highlight:textproc/highlight \
 		iso-codes>=0:misc/iso-codes
 
@@ -75,9 +74,7 @@ GLIB_SCHEMAS=	org.gnome.evolution.addressbook.gschema.xml \
 		org.gnome.evolution.spamassassin.gschema.xml \
 		org.gnome.evolution.text-highlight.gschema.xml
 
-EVO_VERSION=	3.24
-PLIST_SUB=	PORTVERSION=2.12 \
-		VERSION=${EVO_VERSION}
+PLIST_SUB=	EVO_VERSION="1.2" CAL_API_VERSION="2.0"
 
 OPTIONS_SUB=		yes
 OPTIONS_DEFINE=		CANBERRA LDAP MAPS MARKDOWN PST WEATHER YTNEF
