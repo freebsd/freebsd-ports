@@ -19,7 +19,6 @@ load_rc_config $name
 : ${ser2net_enable="NO"}
 : ${ser2net_pidfile="/var/run/ser2net.pid"}
 
-start_cmd="/usr/sbin/daemon -p ${ser2net_pidfile} $command $rc_flags $command_args"
-stop_postcmd="rm -f /var/lock/subsys/ser2net"
+start_cmd="$command -P ${ser2net_pidfile} $ser2net_flags"
 
 run_rc_command "$1"
