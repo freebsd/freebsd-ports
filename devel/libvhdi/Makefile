@@ -1,5 +1,5 @@
 PORTNAME=	libvhdi
-PORTVERSION=	20231127
+PORTVERSION=	20240509
 DISTVERSIONPREFIX=	alpha-
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/libyal/libvhdi/releases/download/${PORTVERSION}/ \
