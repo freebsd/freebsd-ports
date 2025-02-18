@@ -9,3 +9,19 @@
  
  static:
  	@ CFLAGS="$(CFLAGS)" $(MAKE) -C $(CORE_DIR)
+@@ -40,6 +40,7 @@ install:
+ 	@ mkdir -p $(DESTINCLUDE_DIR)
+ 	install -d $(DESTLIBDIR)
+ 	install -m 644 $(LIBDIR)/* $(DESTLIBDIR)
++	ln -fs libdiscord.so.$(ABIVERSION) $(DESTLIBDIR)/libdiscord.so
+ 	install -d $(DESTINCLUDE_DIR)
+ 	install -m 644 $(INCLUDE_DIR)/*.h $(CORE_DIR)/*.h $(GENCODECS_DIR)/*.h \
+ 	               $(DESTINCLUDE_DIR)
+@@ -48,6 +49,7 @@ uninstall:
+ 	rm -rf $(PREFIX)/include/concord
+ 	rm -rf $(PREFIX)/lib/libdiscord.a
+ 	rm -rf $(PREFIX)/lib/libdiscord.so
++	rm -rf $(PREFIX)/lib/libdiscord.so.$(ABIVERSION)
+ 	rm -rf $(PREFIX)/lib/libdiscord.dylib
+ 
+ docs:

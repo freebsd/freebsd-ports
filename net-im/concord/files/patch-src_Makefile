@@ -1,11 +1,20 @@
 --- src/Makefile.orig	2024-05-06 23:04:41 UTC
 +++ src/Makefile
+@@ -60,7 +60,7 @@ ARLIB = $(LIBDIR)/libdiscord.a
+           -I$(INCLUDE_DIR) -I$(CORE_DIR) -I$(GENCODECS_DIR) -I$(PREFIX)/include
+ 
+ ARLIB = $(LIBDIR)/libdiscord.a
+-SOLIB = $(LIBDIR)/libdiscord.so
++SOLIB = $(LIBDIR)/libdiscord.so.$(ABIVERSION)
+ DYLIB = $(LIBDIR)/libdiscord.dylib
+ 
+ ARFLAGS = -cqsv
 @@ -82,7 +82,7 @@ $(SOLIB): deps
  $(ARLIB): deps
  	$(AR) $(ARFLAGS) $@ $(OBJS) $(GENCODECS_OBJ) $(CORE_OBJS)
  $(SOLIB): deps
 -	$(CC) -shared -lcurl -o $@ $(OBJS) $(GENCODECS_OBJ) $(CORE_OBJS)
-+	$(CC) -shared -L$(PREFIX)/lib -lcurl -o $@ $(OBJS) $(GENCODECS_OBJ) $(CORE_OBJS)
++	$(CC) -shared -Wl,-soname,libdiscord.so.$(ABIVERSION) -L$(PREFIX)/lib -lcurl -o $@ $(OBJS) $(GENCODECS_OBJ) $(CORE_OBJS)
  $(DYLIB): deps
  	$(CC) -dynamiclib $(DYFLAGS) -o $@ $(OBJS) $(GENCODECS_OBJ) $(CORE_OBJS)
  

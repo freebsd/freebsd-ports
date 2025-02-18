@@ -54,6 +54,7 @@ include/concord/webhook.h
 include/concord/websockets.h
 lib/libdiscord.a
 lib/libdiscord.so
+lib/libdiscord.so.1
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/8ball
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/8ball.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/Makefile
@@ -102,7 +103,6 @@ lib/libdiscord.so
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/spam.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/timers
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/timers.c
-@comment %%PORTEXAMPLES%%%%EXAMPLESDIR%%/voice-join
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/voice-join.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/webhook
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/webhook.c
