@@ -1,6 +1,5 @@
 PORTNAME=	dfvfs
-PORTVERSION=	20231208
-PORTREVISION=	1
+PORTVERSION=	20240505
 CATEGORIES=	filesystems security devel python
 MASTER_SITES=	https://github.com/log2timeline/dfvfs/releases/download/${PORTVERSION}/ \
 		LOCAL/antoine
@@ -13,8 +12,12 @@ WWW=		https://github.com/log2timeline/dfvfs
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BUILD_DEPENDS=	${PY_SETUPTOOLS} \
+		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	libbde>=a:filesystems/libbde \
+		libcaes>=a:security/libcaes \
 		libewf>=0:devel/libewf \
+		libfcrypto>=a:security/libfcrypto \
 		libfsapfs>=e:filesystems/libfsapfs \
 		libfsext>=e:filesystems/libfsext \
 		libfsfat>=e:filesystems/libfsfat \
@@ -45,7 +48,7 @@ RUN_DEPENDS=	libbde>=a:filesystems/libbde \
 
 USES=		python
 USE_LOCALE=	en_US.UTF-8
-USE_PYTHON=	autoplist concurrent cryptography distutils
+USE_PYTHON=	autoplist cryptography pep517
 DO_MAKE_TEST=	${SETENV} ${TEST_ENV} ${PYTHON_CMD}
 TEST_TARGET=	run_tests.py
 
@@ -53,8 +56,5 @@ NO_ARCH=	yes
 
 # Upstream archive contains files with UTF-8 names
 EXTRACT_CMD=	${SETENV} LC_ALL=en_US.UTF-8 /usr/bin/bsdtar
-
-post-patch:
-	${REINPLACE_CMD} "/cffi/d" ${WRKSRC}/requirements.txt
 
 .include <bsd.port.mk>
