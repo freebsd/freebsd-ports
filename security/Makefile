@@ -286,6 +286,7 @@
     SUBDIR += libcryptui
     SUBDIR += libdecaf
     SUBDIR += libecc
+    SUBDIR += libfcrypto
     SUBDIR += libfido2
     SUBDIR += libfprint
     SUBDIR += libgcrypt
