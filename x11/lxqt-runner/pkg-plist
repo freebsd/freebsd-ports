@@ -10,6 +10,7 @@ etc/xdg/autostart/lxqt-runner.desktop
 %%LXQT_TRANSLATIONS%%/lxqt-runner/lxqt-runner_da.qm
 %%LXQT_TRANSLATIONS%%/lxqt-runner/lxqt-runner_de.qm
 %%LXQT_TRANSLATIONS%%/lxqt-runner/lxqt-runner_el.qm
+%%LXQT_TRANSLATIONS%%/lxqt-runner/lxqt-runner_en_GB.qm
 %%LXQT_TRANSLATIONS%%/lxqt-runner/lxqt-runner_eo.qm
 %%LXQT_TRANSLATIONS%%/lxqt-runner/lxqt-runner_es.qm
 %%LXQT_TRANSLATIONS%%/lxqt-runner/lxqt-runner_es_VE.qm
@@ -27,6 +28,8 @@ etc/xdg/autostart/lxqt-runner.desktop
 %%LXQT_TRANSLATIONS%%/lxqt-runner/lxqt-runner_is.qm
 %%LXQT_TRANSLATIONS%%/lxqt-runner/lxqt-runner_it.qm
 %%LXQT_TRANSLATIONS%%/lxqt-runner/lxqt-runner_ja.qm
+%%LXQT_TRANSLATIONS%%/lxqt-runner/lxqt-runner_ka.qm
+%%LXQT_TRANSLATIONS%%/lxqt-runner/lxqt-runner_kab.qm
 %%LXQT_TRANSLATIONS%%/lxqt-runner/lxqt-runner_ko.qm
 %%LXQT_TRANSLATIONS%%/lxqt-runner/lxqt-runner_lg.qm
 %%LXQT_TRANSLATIONS%%/lxqt-runner/lxqt-runner_lt.qm
