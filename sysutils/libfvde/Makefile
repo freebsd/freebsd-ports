@@ -1,5 +1,5 @@
 PORTNAME=	libfvde
-PORTVERSION=	20231128
+PORTVERSION=	20240502
 DISTVERSIONPREFIX=	experimental-
 CATEGORIES=	sysutils
 MASTER_SITES=	https://github.com/libyal/libfvde/releases/download/${PORTVERSION}/ \
