@@ -1,5 +1,6 @@
 PORTNAME=	drm-61-kmod
 PORTVERSION=	${DRM_KMOD_DISTVERSION}
+PORTREVISION=	1
 CATEGORIES=	graphics kld
 
 .include "Makefile.version"
@@ -15,7 +16,8 @@ ONLY_FOR_ARCHS=	amd64 powerpc64 powerpc64le
 ONLY_FOR_ARCHS_REASON=	the new KMS components are only supported on amd64 and powerpc64
 
 CONFLICTS_INSTALL=	drm-510-kmod \
-			drm-515-kmod
+			drm-515-kmod \
+			drm-66-kmod
 
 USES=		kmod uidfix compiler:c++11-lang
 
