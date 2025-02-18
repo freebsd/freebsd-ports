@@ -30,6 +30,7 @@
     SUBDIR += ksh
     SUBDIR += ksh-devel
     SUBDIR += ksh93
+    SUBDIR += libpowershell-native
     SUBDIR += mksh
     SUBDIR += modernish
     SUBDIR += murex
