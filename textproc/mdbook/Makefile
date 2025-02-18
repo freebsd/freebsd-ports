@@ -1,6 +1,6 @@
 PORTNAME=	mdbook
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.4.44
+DISTVERSION=	0.4.45
 CATEGORIES=	textproc
 
 MAINTAINER=	eduardo@FreeBSD.org
@@ -17,5 +17,14 @@ GH_ACCOUNT=	rust-lang
 GH_PROJECT=	mdBook
 
 PLIST_FILES=	bin/mdbook
+PORTEXAMPLES=	examples guide test_book
+
+OPTIONS_DEFINE=	EXAMPLES
+
+post-install-EXAMPLES-on:
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	(cd ${WRKSRC} && \
+		${COPYTREE_SHARE} "${PORTEXAMPLES}" \
+		${STAGEDIR}${EXAMPLESDIR})
 
 .include <bsd.port.mk>
