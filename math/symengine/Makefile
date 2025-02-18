@@ -1,12 +1,12 @@
 PORTNAME=	symengine
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.13.0
-PORTREVISION=	3
+DISTVERSION=	0.14.0
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Fast symbolic manipulation library, written in C++
-WWW=		https://symengine.org/
+WWW=		https://symengine.org \
+		https://github.com/symengine/symengine
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -83,5 +83,7 @@ do-test: # one test fails: https://github.com/symengine/symengine/issues/1697
 		${SETENV} ${CONFIGURE_ENV} ${CMAKE_BIN} ${CMAKE_ARGS} -DBUILD_TESTING:BOOL=ON ${CMAKE_SOURCE_PATH} && \
 		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} ${ALL_TARGET} && \
 		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} test
+
+# tests as of 0.14.0: 100% tests passed, 0 tests failed out of 66
 
 .include <bsd.port.mk>
