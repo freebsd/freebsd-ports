@@ -1,6 +1,6 @@
 PORTNAME=	libluksde
 # If/When moving from experimental to alpha, switch to DISTVERSIONPREFIX to prevent PORTEPOCH
-DISTVERSION=	experimental-20231204
+DISTVERSION=	experimental-20240503
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/libyal/libluksde/releases/download/${PORTVERSION:E}/ \
 		LOCAL/antoine
@@ -12,11 +12,12 @@ WWW=		https://github.com/libyal/libluksde
 LICENSE=	LGPL3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libcaes.so:security/libcaes
+LIB_DEPENDS=	libcaes.so:security/libcaes \
+		libfcrypto.so:security/libfcrypto
 
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
-CONFIGURE_ARGS=	--enable-python --with-libcaes=${LOCALBASE} --with-openssl=no
+CONFIGURE_ARGS=	--enable-python --with-libcaes=${LOCALBASE} --with-libfcrypto=${LOCALBASE} --with-openssl=no
 CONFIGURE_ENV=	PYTHON_CONFIG=${PYTHON_CMD}-config
 USES=		fuse libtool pathfix pkgconfig python
 USE_LDCONFIG=	yes
