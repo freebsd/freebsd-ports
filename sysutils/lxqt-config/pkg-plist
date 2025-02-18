@@ -43,6 +43,8 @@ share/icons/hicolor/48x48/apps/brightnesssettings.svg
 %%LXQT_TRANSLATIONS%%/lxqt-config-appearance/lxqt-config-appearance_id.qm
 %%LXQT_TRANSLATIONS%%/lxqt-config-appearance/lxqt-config-appearance_it.qm
 %%LXQT_TRANSLATIONS%%/lxqt-config-appearance/lxqt-config-appearance_ja.qm
+%%LXQT_TRANSLATIONS%%/lxqt-config-appearance/lxqt-config-appearance_ka.qm
+%%LXQT_TRANSLATIONS%%/lxqt-config-appearance/lxqt-config-appearance_kab.qm
 %%LXQT_TRANSLATIONS%%/lxqt-config-appearance/lxqt-config-appearance_kk.qm
 %%LXQT_TRANSLATIONS%%/lxqt-config-appearance/lxqt-config-appearance_ko.qm
 %%LXQT_TRANSLATIONS%%/lxqt-config-appearance/lxqt-config-appearance_lg.qm
@@ -91,6 +93,7 @@ share/icons/hicolor/48x48/apps/brightnesssettings.svg
 %%LXQT_TRANSLATIONS%%/lxqt-config-brightness/lxqt-config-brightness_id.qm
 %%LXQT_TRANSLATIONS%%/lxqt-config-brightness/lxqt-config-brightness_it.qm
 %%LXQT_TRANSLATIONS%%/lxqt-config-brightness/lxqt-config-brightness_ja.qm
+%%LXQT_TRANSLATIONS%%/lxqt-config-brightness/lxqt-config-brightness_ka.qm
 %%LXQT_TRANSLATIONS%%/lxqt-config-brightness/lxqt-config-brightness_ko.qm
 %%LXQT_TRANSLATIONS%%/lxqt-config-brightness/lxqt-config-brightness_lg.qm
 %%LXQT_TRANSLATIONS%%/lxqt-config-brightness/lxqt-config-brightness_lt.qm
@@ -135,6 +138,8 @@ share/icons/hicolor/48x48/apps/brightnesssettings.svg
 %%LXQT_TRANSLATIONS%%/lxqt-config-cursor/lxqt-config-cursor_id.qm
 %%LXQT_TRANSLATIONS%%/lxqt-config-cursor/lxqt-config-cursor_it.qm
 %%LXQT_TRANSLATIONS%%/lxqt-config-cursor/lxqt-config-cursor_ja.qm
+%%LXQT_TRANSLATIONS%%/lxqt-config-cursor/lxqt-config-cursor_ka.qm
+%%LXQT_TRANSLATIONS%%/lxqt-config-cursor/lxqt-config-cursor_kab.qm
 %%LXQT_TRANSLATIONS%%/lxqt-config-cursor/lxqt-config-cursor_kk.qm
 %%LXQT_TRANSLATIONS%%/lxqt-config-cursor/lxqt-config-cursor_ko.qm
 %%LXQT_TRANSLATIONS%%/lxqt-config-cursor/lxqt-config-cursor_lg.qm
@@ -180,6 +185,7 @@ share/icons/hicolor/48x48/apps/brightnesssettings.svg
 %%LXQT_TRANSLATIONS%%/lxqt-config-file-associations/lxqt-config-file-associations_id.qm
 %%LXQT_TRANSLATIONS%%/lxqt-config-file-associations/lxqt-config-file-associations_it.qm
 %%LXQT_TRANSLATIONS%%/lxqt-config-file-associations/lxqt-config-file-associations_ja.qm
+%%LXQT_TRANSLATIONS%%/lxqt-config-file-associations/lxqt-config-file-associations_ka.qm
 %%LXQT_TRANSLATIONS%%/lxqt-config-file-associations/lxqt-config-file-associations_kk.qm
 %%LXQT_TRANSLATIONS%%/lxqt-config-file-associations/lxqt-config-file-associations_ko.qm
 %%LXQT_TRANSLATIONS%%/lxqt-config-file-associations/lxqt-config-file-associations_lg.qm
@@ -224,6 +230,8 @@ share/icons/hicolor/48x48/apps/brightnesssettings.svg
 %%LXQT_TRANSLATIONS%%/lxqt-config-input/lxqt-config-input_is.qm
 %%LXQT_TRANSLATIONS%%/lxqt-config-input/lxqt-config-input_it.qm
 %%LXQT_TRANSLATIONS%%/lxqt-config-input/lxqt-config-input_ja.qm
+%%LXQT_TRANSLATIONS%%/lxqt-config-input/lxqt-config-input_ka.qm
+%%LXQT_TRANSLATIONS%%/lxqt-config-input/lxqt-config-input_kab.qm
 %%LXQT_TRANSLATIONS%%/lxqt-config-input/lxqt-config-input_kk.qm
 %%LXQT_TRANSLATIONS%%/lxqt-config-input/lxqt-config-input_ko.qm
 %%LXQT_TRANSLATIONS%%/lxqt-config-input/lxqt-config-input_lg.qm
@@ -266,6 +274,8 @@ share/icons/hicolor/48x48/apps/brightnesssettings.svg
 %%LXQT_TRANSLATIONS%%/lxqt-config-locale/lxqt-config-locale_id.qm
 %%LXQT_TRANSLATIONS%%/lxqt-config-locale/lxqt-config-locale_it.qm
 %%LXQT_TRANSLATIONS%%/lxqt-config-locale/lxqt-config-locale_ja.qm
+%%LXQT_TRANSLATIONS%%/lxqt-config-locale/lxqt-config-locale_ka.qm
+%%LXQT_TRANSLATIONS%%/lxqt-config-locale/lxqt-config-locale_kab.qm
 %%LXQT_TRANSLATIONS%%/lxqt-config-locale/lxqt-config-locale_kk.qm
 %%LXQT_TRANSLATIONS%%/lxqt-config-locale/lxqt-config-locale_ko.qm
 %%LXQT_TRANSLATIONS%%/lxqt-config-locale/lxqt-config-locale_lg.qm
@@ -308,6 +318,8 @@ share/icons/hicolor/48x48/apps/brightnesssettings.svg
 %%LXQT_TRANSLATIONS%%/lxqt-config-monitor/lxqt-config-monitor_id.qm
 %%LXQT_TRANSLATIONS%%/lxqt-config-monitor/lxqt-config-monitor_it.qm
 %%LXQT_TRANSLATIONS%%/lxqt-config-monitor/lxqt-config-monitor_ja.qm
+%%LXQT_TRANSLATIONS%%/lxqt-config-monitor/lxqt-config-monitor_ka.qm
+%%LXQT_TRANSLATIONS%%/lxqt-config-monitor/lxqt-config-monitor_kab.qm
 %%LXQT_TRANSLATIONS%%/lxqt-config-monitor/lxqt-config-monitor_kk.qm
 %%LXQT_TRANSLATIONS%%/lxqt-config-monitor/lxqt-config-monitor_ko.qm
 %%LXQT_TRANSLATIONS%%/lxqt-config-monitor/lxqt-config-monitor_lg.qm
@@ -354,6 +366,8 @@ share/icons/hicolor/48x48/apps/brightnesssettings.svg
 %%LXQT_TRANSLATIONS%%/lxqt-config/lxqt-config_id.qm
 %%LXQT_TRANSLATIONS%%/lxqt-config/lxqt-config_it.qm
 %%LXQT_TRANSLATIONS%%/lxqt-config/lxqt-config_ja.qm
+%%LXQT_TRANSLATIONS%%/lxqt-config/lxqt-config_ka.qm
+%%LXQT_TRANSLATIONS%%/lxqt-config/lxqt-config_kab.qm
 %%LXQT_TRANSLATIONS%%/lxqt-config/lxqt-config_kk.qm
 %%LXQT_TRANSLATIONS%%/lxqt-config/lxqt-config_ko.qm
 %%LXQT_TRANSLATIONS%%/lxqt-config/lxqt-config_lg.qm
@@ -378,5 +392,5 @@ share/icons/hicolor/48x48/apps/brightnesssettings.svg
 %%LXQT_TRANSLATIONS%%/lxqt-config/lxqt-config_zh_CN.qm
 %%LXQT_TRANSLATIONS%%/lxqt-config/lxqt-config_zh_TW.qm
 share/man/man1/lxqt-config-appearance.1.gz
-share/man/man1/lxqt-config-mouse.1.gz
+share/man/man1/lxqt-config-input.1.gz
 share/man/man1/lxqt-config.1.gz
