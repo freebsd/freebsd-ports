@@ -1,6 +1,5 @@
 PORTNAME=	iocage-devel
-PORTVERSION=	1.8.20241014
-PORTREVISION=	2
+PORTVERSION=	1.10.20250103
 PORTEPOCH=	1
 CATEGORIES=	sysutils python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,10 +11,6 @@ WWW=		https://github.com/freebsd/iocage
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-DEPRECATED=	Depends on expired devel/py-pytest-runner
-EXPIRATION_DATE=2025-03-31
-
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest-runner>=2.0.0:devel/py-pytest-runner@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}click>=6.7:devel/py-click@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}coloredlogs>0:devel/py-coloredlogs@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dnspython>0:dns/py-dnspython@${PY_FLAVOR} \
@@ -34,14 +29,14 @@ USES=		python
 USE_GITHUB=	yes
 GH_ACCOUNT=	freebsd
 GH_PROJECT=	iocage
-GH_TAGNAME=	32de9d515ba54f7635545f20c9f81d7cc0442d66
+GH_TAGNAME=	c55e05aebb305b4013554ec80298113c50d1c74c
 
 USE_PYTHON=	autoplist distutils
 
 CONFLICTS=	py*-iocage py*-iocage-devel
 NO_ARCH=	yes
 
-_IOCAGE_LIB_VERSION=	1.7
+_IOCAGE_LIB_VERSION=	1.10
 PLIST_FILES=		${PYTHON_SITELIBDIR}/${PORTNAME:S/-devel//g}_lib-${_IOCAGE_LIB_VERSION}-py${PYTHON_VER}.egg-info/dependency_links.txt \
 			${PYTHON_SITELIBDIR}/${PORTNAME:S/-devel//g}_lib-${_IOCAGE_LIB_VERSION}-py${PYTHON_VER}.egg-info/entry_points.txt \
 			${PYTHON_SITELIBDIR}/${PORTNAME:S/-devel//g}_lib-${_IOCAGE_LIB_VERSION}-py${PYTHON_VER}.egg-info/PKG-INFO \
