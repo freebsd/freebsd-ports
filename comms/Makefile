@@ -47,6 +47,7 @@
     SUBDIR += flwrap
     SUBDIR += freedv
     SUBDIR += gammu
+    SUBDIR += gensio
     SUBDIR += gkermit
     SUBDIR += gnocky
     SUBDIR += gnokii
