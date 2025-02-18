@@ -1,0 +1,91 @@
+From db2e99cab015e03711542f8d97b6cd9654aa1b0a Mon Sep 17 00:00:00 2001
+From: David Woodhouse <dwmw@amazon.co.uk>
+Date: Fri, 10 Jan 2025 10:35:30 +0100
+Subject: [PATCH 1/2] hw/xen: Add xs_node_read() helper function
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+This returns the full contents of the node, having created the node path
+from the printf-style format string provided in its arguments.
+
+This will save various callers from having to do so for themselves (and
+from using xs_node_scanf() with the non-portable %ms format string.
+
+Signed-off-by: David Woodhouse <dwmw@amazon.co.uk>
+[remove double newline and constify trace parameters]
+Signed-off-by: Roger Pau Monné <roger.pau@citrix.com>
+Reviewed-by: Anthony PERARD <anthony.perard@vates.tech>
+---
+ hw/xen/trace-events             |  1 +
+ hw/xen/xen-bus-helper.c         | 22 ++++++++++++++++++++++
+ include/hw/xen/xen-bus-helper.h |  9 +++++++++
+ 3 files changed, 32 insertions(+)
+
+diff --git a/hw/xen/trace-events b/hw/xen/trace-events
+index 55c9e1df680b..53df1b9ba968 100644
+--- a/hw/xen/trace-events
++++ b/hw/xen/trace-events
+@@ -39,5 +39,6 @@ xs_node_create(const char *node) "%s"
+ xs_node_destroy(const char *node) "%s"
+ xs_node_vprintf(char *path, char *value) "%s %s"
+ xs_node_vscanf(char *path, char *value) "%s %s"
++xs_node_read(const char *path, const char *value) "%s %s"
+ xs_node_watch(char *path) "%s"
+ xs_node_unwatch(char *path) "%s"
+diff --git a/hw/xen/xen-bus-helper.c b/hw/xen/xen-bus-helper.c
+index b2b2cc9c5d5e..22fd2f6c1ac5 100644
+--- a/hw/xen/xen-bus-helper.c
++++ b/hw/xen/xen-bus-helper.c
+@@ -142,6 +142,28 @@ int xs_node_scanf(struct qemu_xs_handle *h,  xs_transaction_t tid,
+     return rc;
+ }
+ 
++char *xs_node_read(struct qemu_xs_handle *h, xs_transaction_t tid,
++                   unsigned int *len, Error **errp,
++                   const char *path_fmt, ...)
++{
++    char *path, *value;
++    va_list ap;
++
++    va_start(ap, path_fmt);
++    path = g_strdup_vprintf(path_fmt, ap);
++    va_end(ap);
++
++    value = qemu_xen_xs_read(h, tid, path, len);
++    trace_xs_node_read(path, value);
++    if (!value) {
++        error_setg_errno(errp, errno, "failed to read from '%s'", path);
++    }
++
++    g_free(path);
++
++    return value;
++}
++
+ struct qemu_xs_watch *xs_node_watch(struct qemu_xs_handle *h, const char *node,
+                                     const char *key, xs_watch_fn fn,
+                                     void *opaque, Error **errp)
+diff --git a/include/hw/xen/xen-bus-helper.h b/include/hw/xen/xen-bus-helper.h
+index d8dcc2f0107d..e9911115b326 100644
+--- a/include/hw/xen/xen-bus-helper.h
++++ b/include/hw/xen/xen-bus-helper.h
+@@ -38,6 +38,15 @@ int xs_node_scanf(struct qemu_xs_handle *h,  xs_transaction_t tid,
+                   const char *fmt, ...)
+     G_GNUC_SCANF(6, 7);
+ 
++/*
++ * Unlike other functions here, the printf-formatted path_fmt is for
++ * the XenStore path, not the contents of the node.
++ */
++char *xs_node_read(struct qemu_xs_handle *h, xs_transaction_t tid,
++                   unsigned int *len, Error **errp,
++                   const char *path_fmt, ...)
++    G_GNUC_PRINTF(5, 6);
++
+ /* Watch node/key unless node is empty, in which case watch key */
+ struct qemu_xs_watch *xs_node_watch(struct qemu_xs_handle *h, const char *node,
+                                     const char *key, xs_watch_fn fn,
+-- 
+2.46.0
+
