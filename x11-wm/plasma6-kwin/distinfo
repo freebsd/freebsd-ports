@@ -1,5 +1,9 @@
-TIMESTAMP = 1739390294
+TIMESTAMP = 1739900593
 SHA256 (KDE/plasma/6.3.0/kwin-6.3.0.tar.xz) = 1ad978fc52b21bfdd218843554a015b24689e0c04904d1cb00e2e4afca4f4af4
 SIZE (KDE/plasma/6.3.0/kwin-6.3.0.tar.xz) = 8865496
 SHA256 (KDE/plasma/6.3.0/c97bc26ca9de8b1462f6ccb05fb2dafe01cd82cb.diff) = 16a257f97dfc1d2daff62f7d15279daad2667b99e762e736bc965b65bc4cb6df
 SIZE (KDE/plasma/6.3.0/c97bc26ca9de8b1462f6ccb05fb2dafe01cd82cb.diff) = 562
+SHA256 (KDE/plasma/6.3.0/1e7421d6b0e7ac03d1cac8323c5436a867dfc3db.diff) = 1e5045b02cc20b76d56fc23f8ab66c004bcdbd1b88e5bd2ca4d28aa0a8a41ff4
+SIZE (KDE/plasma/6.3.0/1e7421d6b0e7ac03d1cac8323c5436a867dfc3db.diff) = 911
+SHA256 (KDE/plasma/6.3.0/c2f60491aa96222b0e8599901eb0a8ce3fcc65a9.diff) = 56ae78f754afd0d9aea48a4e38682da55295fddb0f5689bee8f4d0fcee2812c2
+SIZE (KDE/plasma/6.3.0/c2f60491aa96222b0e8599901eb0a8ce3fcc65a9.diff) = 409
