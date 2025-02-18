@@ -1,8 +1,9 @@
 PORTNAME=	XlsxWriter
-PORTVERSION=	3.1.9
+PORTVERSION=	3.2.2
 CATEGORIES=	textproc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	xlsxwriter-${PORTVERSION}
 
 MAINTAINER=	antoine@FreeBSD.org
 COMMENT=	Python module for creating Excel XLSX files
