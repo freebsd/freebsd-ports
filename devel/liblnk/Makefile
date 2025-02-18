@@ -1,5 +1,5 @@
 PORTNAME=	liblnk
-PORTVERSION=	20231120
+PORTVERSION=	20240423
 DISTVERSIONPREFIX=	alpha-
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/libyal/liblnk/releases/download/${PORTVERSION}/ \
