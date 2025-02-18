@@ -1,6 +1,6 @@
 PORTNAME=	libfsext
 # If/When moving from experimental to alpha, switch to DISTVERSIONPREFIX to prevent PORTEPOCH
-DISTVERSION=	experimental-20231129
+DISTVERSION=	experimental-20240501
 CATEGORIES=	filesystems devel
 MASTER_SITES=	https://github.com/libyal/libfsext/releases/download/${PORTVERSION:E}/ \
 		LOCAL/antoine
