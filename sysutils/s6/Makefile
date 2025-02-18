@@ -1,5 +1,6 @@
 PORTNAME=	s6
 DISTVERSION=	2.13.1.0
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	https://www.skarnet.org/software/${PORTNAME}/
 
