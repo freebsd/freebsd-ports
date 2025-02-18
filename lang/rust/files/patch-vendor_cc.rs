@@ -34,8 +34,8 @@ https://reviews.llvm.org/D77776
                  (false, false, true, _, false) | (_, _, _, _, true) => Ok(ToolFamily::Gnu),
                  (false, false, false, false, false) => {
                      cargo_output.print_warning(&"Compiler family detection failed since it does not define `__clang__`, `__GNUC__`, `__EMSCRIPTEN__` or `__VXWORKS__`, also does not accept cl style flag `-?`, fallback to treating it as GNU");
---- vendor/cc-1.1.34/src/tool.rs.orig	2024-05-09 18:20:47 UTC
-+++ vendor/cc-1.1.34/src/tool.rs
+--- vendor/cc-1.2.0/src/tool.rs.orig	2024-05-09 18:20:47 UTC
++++ vendor/cc-1.2.0/src/tool.rs
 @@ -174,9 +174,7 @@ impl Tool {
  
              match (clang, accepts_cl_style_flags, gcc, emscripten, vxworks) {
@@ -47,8 +47,8 @@ https://reviews.llvm.org/D77776
                  (false, false, true, _, false) | (_, _, _, _, true) => Ok(ToolFamily::Gnu),
                  (false, false, false, false, false) => {
                      cargo_output.print_warning(&"Compiler family detection failed since it does not define `__clang__`, `__GNUC__`, `__EMSCRIPTEN__` or `__VXWORKS__`, also does not accept cl style flag `-?`, fallback to treating it as GNU");
---- vendor/cc-1.2.5/src/tool.rs.orig	2024-05-09 18:20:47 UTC
-+++ vendor/cc-1.2.5/src/tool.rs
+--- vendor/cc-1.2.6/src/tool.rs.orig	2024-05-09 18:20:47 UTC
++++ vendor/cc-1.2.6/src/tool.rs
 @@ -174,9 +174,7 @@ impl Tool {
  
              match (clang, accepts_cl_style_flags, gcc, emscripten, vxworks) {
