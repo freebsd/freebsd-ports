@@ -1,6 +1,5 @@
 PORTNAME=	evolution-data-server
-DISTVERSION=	3.44.4
-PORTREVISION=	10
+DISTVERSION=	3.52.3
 CATEGORIES=	databases gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
@@ -21,7 +20,8 @@ LIB_DEPENDS=	libsoup-2.4.so:devel/libsoup \
 		libical.so:devel/libical \
 		libnss3.so:security/nss \
 		libicudata.so:devel/icu \
-		libwebkit2gtk-4.0.so:www/webkit2-gtk@40 \
+		libwebkit2gtk-4.1.so:www/webkit2-gtk@41\
+		libwebkitgtk-6.0.so:www/webkit2-gtk@60 \
 		libjson-glib-1.0.so:devel/json-glib \
 		libp11-kit.so:security/p11-kit \
 		libnspr4.so:devel/nspr \
@@ -31,10 +31,10 @@ LIB_DEPENDS=	libsoup-2.4.so:devel/libsoup \
 
 PORTSCOUT=	limitw:1,even
 
-USES=		bdb:5 cmake compiler:c++17-lang cpe gettext gnome gperf \
+USES=		bdb:5 cmake cpe gettext gnome gperf \
 		iconv:wchar_t localbase pathfix pkgconfig python:build \
 		sqlite tar:xz xorg
-USE_CXXSTD=	gnu++11
+USE_CXXSTD=	gnu++17
 USE_GNOME=	cairo gdkpixbuf2 gtk30 intltool introspection:build libxml2
 USE_XORG=	x11
 USE_LDCONFIG=	yes
@@ -46,6 +46,7 @@ CMAKE_ARGS=	-DENABLE_INTROSPECTION=ON \
 		-DWITH_LIBDB_CFLAGS=-I${LOCALBASE}/include/db5 \
 		-DWITH_LIBDB_LIBS="-L${LOCALBASE}/lib -ldb-5"
 
+
 GLIB_SCHEMAS=	org.gnome.evolution-data-server.addressbook.gschema.xml \
 		org.gnome.evolution-data-server.calendar.gschema.xml \
 		org.gnome.evolution-data-server.gschema.xml \
@@ -53,7 +54,7 @@ GLIB_SCHEMAS=	org.gnome.evolution-data-server.addressbook.gschema.xml \
 		org.gnome.evolution.eds-shell.gschema.xml \
 		org.gnome.evolution.shell.network-config.gschema.xml
 
-PLIST_SUB=	EVO_VERSION="1.2"
+PLIST_SUB=	EVO_VERSION="1.2" CAL_API_VERSION="2.0"
 
 OPTIONS_SUB=	yes
 OPTIONS_DEFINE=	WEATHER KERBEROS LDAP VAPI
@@ -71,7 +72,7 @@ VAPI_USES=		vala:build
 VAPI_CMAKE_BOOL=	ENABLE_VALA_BINDINGS
 
 WEATHER_DESC=	Weather calendar backend
-WEATHER_LIB_DEPENDS=	libgweather-3.so:net/libgweather
+WEATHER_LIB_DEPENDS=	libgweather-4.so:net/libgweather4
 WEATHER_CMAKE_BOOL=	ENABLE_WEATHER
 
 .include <bsd.port.options.mk>
