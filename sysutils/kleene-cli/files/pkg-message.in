@@ -1,0 +1,17 @@
+[
+{ type: install
+  message: <<EOM
+Kleene is a new tool and should be used for
+testing and experimentation purposes only.
+
+To get started, run
+
+  klee
+
+in a terminal to get the main help page.
+
+Klee requires a running instance of Kleened, the Kleene
+backend daemon, install it via sysutils/kleene-daemon
+EOM
+}
+]
