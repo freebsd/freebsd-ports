@@ -69,6 +69,7 @@ share/gir-1.0/GtkSource-5.gir
 %%DATADIR%%-5/language-specs/awk.lang
 %%DATADIR%%-5/language-specs/bennugd.lang
 %%DATADIR%%-5/language-specs/bibtex.lang
+%%DATADIR%%-5/language-specs/blueprint.lang
 %%DATADIR%%-5/language-specs/bluespec.lang
 %%DATADIR%%-5/language-specs/boo.lang
 %%DATADIR%%-5/language-specs/c.lang
@@ -97,6 +98,7 @@ share/gir-1.0/GtkSource-5.gir
 %%DATADIR%%-5/language-specs/dtd.lang
 %%DATADIR%%-5/language-specs/dtl.lang
 %%DATADIR%%-5/language-specs/eiffel.lang
+%%DATADIR%%-5/language-specs/elixir.lang
 %%DATADIR%%-5/language-specs/erb-html.lang
 %%DATADIR%%-5/language-specs/erb-js.lang
 %%DATADIR%%-5/language-specs/erb.lang
@@ -114,6 +116,7 @@ share/gir-1.0/GtkSource-5.gir
 %%DATADIR%%-5/language-specs/glsl.lang
 %%DATADIR%%-5/language-specs/go.lang
 %%DATADIR%%-5/language-specs/gradle.lang
+%%DATADIR%%-5/language-specs/groff.lang
 %%DATADIR%%-5/language-specs/groovy.lang
 %%DATADIR%%-5/language-specs/gtk-doc.lang
 %%DATADIR%%-5/language-specs/gtkrc.lang
@@ -165,6 +168,7 @@ share/gir-1.0/GtkSource-5.gir
 %%DATADIR%%-5/language-specs/mxml.lang
 %%DATADIR%%-5/language-specs/nemerle.lang
 %%DATADIR%%-5/language-specs/netrexx.lang
+%%DATADIR%%-5/language-specs/nix.lang
 %%DATADIR%%-5/language-specs/nsis.lang
 %%DATADIR%%-5/language-specs/objc.lang
 %%DATADIR%%-5/language-specs/objj.lang
@@ -186,6 +190,7 @@ share/gir-1.0/GtkSource-5.gir
 %%DATADIR%%-5/language-specs/puppet.lang
 %%DATADIR%%-5/language-specs/python.lang
 %%DATADIR%%-5/language-specs/python3.lang
+%%DATADIR%%-5/language-specs/reasonml.lang
 %%DATADIR%%-5/language-specs/rpmspec.lang
 %%DATADIR%%-5/language-specs/rst.lang
 %%DATADIR%%-5/language-specs/ruby.lang
@@ -210,7 +215,9 @@ share/gir-1.0/GtkSource-5.gir
 %%DATADIR%%-5/language-specs/terraform.lang
 %%DATADIR%%-5/language-specs/texinfo.lang
 %%DATADIR%%-5/language-specs/thrift.lang
+%%DATADIR%%-5/language-specs/todotxt.lang
 %%DATADIR%%-5/language-specs/toml.lang
+%%DATADIR%%-5/language-specs/twig.lang
 %%DATADIR%%-5/language-specs/typescript-js-expressions.lang
 %%DATADIR%%-5/language-specs/typescript-js-functions-classes.lang
 %%DATADIR%%-5/language-specs/typescript-js-literals.lang
@@ -225,6 +232,7 @@ share/gir-1.0/GtkSource-5.gir
 %%DATADIR%%-5/language-specs/vbnet.lang
 %%DATADIR%%-5/language-specs/verilog.lang
 %%DATADIR%%-5/language-specs/vhdl.lang
+%%DATADIR%%-5/language-specs/wren.lang
 %%DATADIR%%-5/language-specs/xml.lang
 %%DATADIR%%-5/language-specs/xslt.lang
 %%DATADIR%%-5/language-specs/yacc.lang
@@ -260,6 +268,7 @@ share/icons/hicolor/scalable/actions/lang-struct-symbolic.svg
 share/icons/hicolor/scalable/actions/lang-typedef-symbolic.svg
 share/icons/hicolor/scalable/actions/lang-union-symbolic.svg
 share/icons/hicolor/scalable/actions/lang-variable-symbolic.svg
+share/locale/ab/LC_MESSAGES/gtksourceview-5.mo
 share/locale/ar/LC_MESSAGES/gtksourceview-5.mo
 share/locale/as/LC_MESSAGES/gtksourceview-5.mo
 share/locale/ast/LC_MESSAGES/gtksourceview-5.mo
@@ -296,9 +305,12 @@ share/locale/hi/LC_MESSAGES/gtksourceview-5.mo
 share/locale/hr/LC_MESSAGES/gtksourceview-5.mo
 share/locale/hu/LC_MESSAGES/gtksourceview-5.mo
 share/locale/id/LC_MESSAGES/gtksourceview-5.mo
+share/locale/ie/LC_MESSAGES/gtksourceview-5.mo
 share/locale/is/LC_MESSAGES/gtksourceview-5.mo
 share/locale/it/LC_MESSAGES/gtksourceview-5.mo
 share/locale/ja/LC_MESSAGES/gtksourceview-5.mo
+share/locale/ka/LC_MESSAGES/gtksourceview-5.mo
+share/locale/kab/LC_MESSAGES/gtksourceview-5.mo
 share/locale/kk/LC_MESSAGES/gtksourceview-5.mo
 share/locale/kn/LC_MESSAGES/gtksourceview-5.mo
 share/locale/ko/LC_MESSAGES/gtksourceview-5.mo
