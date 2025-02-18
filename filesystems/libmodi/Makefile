@@ -1,6 +1,6 @@
 PORTNAME=	libmodi
 # If/When moving from experimental to alpha, switch to DISTVERSIONPREFIX to prevent PORTEPOCH
-DISTVERSION=	experimental-20231123
+DISTVERSION=	experimental-20240507
 CATEGORIES=	filesystems devel
 MASTER_SITES=	https://github.com/libyal/libmodi/releases/download/${PORTVERSION:E}/ \
 		LOCAL/antoine
