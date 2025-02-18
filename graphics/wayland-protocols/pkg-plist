@@ -1,4 +1,5 @@
 include/wayland-protocols/alpha-modifier-v1-enum.h
+include/wayland-protocols/color-management-v1-enum.h
 include/wayland-protocols/commit-timing-v1-enum.h
 include/wayland-protocols/content-type-v1-enum.h
 include/wayland-protocols/cursor-shape-v1-enum.h
@@ -57,6 +58,7 @@ share/pkgconfig/wayland-protocols.pc
 %%DATADIR%%/stable/viewporter/viewporter.xml
 %%DATADIR%%/stable/xdg-shell/xdg-shell.xml
 %%DATADIR%%/staging/alpha-modifier/alpha-modifier-v1.xml
+%%DATADIR%%/staging/color-management/color-management-v1.xml
 %%DATADIR%%/staging/commit-timing/commit-timing-v1.xml
 %%DATADIR%%/staging/content-type/content-type-v1.xml
 %%DATADIR%%/staging/cursor-shape/cursor-shape-v1.xml
