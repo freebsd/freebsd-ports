@@ -1,6 +1,6 @@
 PORTNAME=	libfsapfs
 # If/When moving from experimental to alpha, switch to DISTVERSIONPREFIX to prevent PORTEPOCH
-DISTVERSION=	experimental-20231122
+DISTVERSION=	experimental-20240429
 CATEGORIES=	filesystems devel
 MASTER_SITES=	https://github.com/libyal/libfsapfs/releases/download/${PORTVERSION:E}/ \
 		LOCAL/antoine
