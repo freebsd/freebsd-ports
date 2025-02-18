@@ -1,8 +1,6 @@
 PORTNAME=	tabixpp
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.0.0-10
-DISTVERSIONSUFFIX=	-g6bbe690
-PORTREVISION=	2
+DISTVERSION=	1.1.2
 CATEGORIES=	biology
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -11,8 +9,6 @@ WWW=		https://github.com/ekg/tabixpp
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
-
-DEPRECATED=	Dependent ports use git submodules now
 
 LIB_DEPENDS=	libhts.so:biology/htslib
 
