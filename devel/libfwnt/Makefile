@@ -1,5 +1,5 @@
 PORTNAME=	libfwnt
-PORTVERSION=	20231124
+PORTVERSION=	20240415
 DISTVERSIONPREFIX=	alpha-
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/libyal/libfwnt/releases/download/${PORTVERSION}/ \
