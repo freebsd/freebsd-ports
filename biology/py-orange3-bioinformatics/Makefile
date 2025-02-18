@@ -1,14 +1,13 @@
 PORTNAME=	orange3-bioinformatics
-DISTVERSION=	4.3.1
-PORTREVISION=	3
+DISTVERSION=	4.8.4
 CATEGORIES=	biology python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	Orange3-Bioinformatics-${DISTVERSION}
+DISTNAME=	${PORTNAME:S/-/_/}-${DISTVERSION}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Orange add-on providing common functionality for bioinformatics
-WWW=		https://github.com/biolab/orange3-bioinformatics
+WWW=		https://github.com/biolab/orange3-bioinformatics/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -25,7 +24,7 @@ RUN_DEPENDS=	orange3>0:misc/orange3 \
 		${PYTHON_PKGNAMEPREFIX}serverfiles>0:misc/py-serverfiles@${PY_FLAVOR}
 
 USES=		python
-USE_PYTHON=	distutils autoplist
+USE_PYTHON=	autoplist distutils
 
 NO_ARCH=	yes
 
