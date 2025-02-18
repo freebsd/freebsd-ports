@@ -1,5 +1,5 @@
 bin/arv-viewer-0.8
-share/applications/arv-viewer-0.8.desktop
+share/applications/org.aravis.viewer-0.8.desktop
 share/icons/hicolor/128x128/apps/aravis-0.8.png
 share/icons/hicolor/22x22/apps/aravis-0.8.png
 share/icons/hicolor/256x256/apps/aravis-0.8.png
@@ -29,4 +29,4 @@ share/locale/sr@latin/LC_MESSAGES/aravis-0.8.mo
 share/locale/sv/LC_MESSAGES/aravis-0.8.mo
 share/locale/tr/LC_MESSAGES/aravis-0.8.mo
 share/locale/zh_CN/LC_MESSAGES/aravis-0.8.mo
-share/metainfo/arv-viewer-0.8.appdata.xml
+share/metainfo/org.aravis.viewer-0.8.metainfo.xml
