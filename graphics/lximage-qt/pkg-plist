@@ -27,6 +27,8 @@ share/icons/hicolor/48x48/apps/lximage-qt.svg
 %%DATADIR%%/translations/lximage-qt_is.qm
 %%DATADIR%%/translations/lximage-qt_it.qm
 %%DATADIR%%/translations/lximage-qt_ja.qm
+%%DATADIR%%/translations/lximage-qt_ka.qm
+%%DATADIR%%/translations/lximage-qt_kab.qm
 %%DATADIR%%/translations/lximage-qt_ko.qm
 %%DATADIR%%/translations/lximage-qt_lg.qm
 %%DATADIR%%/translations/lximage-qt_lt.qm
