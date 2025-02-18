@@ -18,6 +18,11 @@
 # defined the following:
 #
 # NO_LAZBUILD=	yes
+#
+# If the port needs lazarus devel version instead of release version as build
+# dependency,  you can defined the following:
+#
+# WANT_LAZARUS_DEVEL=	yes
 #                
 # Variables for ports:
 #
