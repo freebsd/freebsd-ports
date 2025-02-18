@@ -1,6 +1,6 @@
 PORTNAME=	youtui
 DISTVERSIONPREFIX=	youtui/v
-DISTVERSION=	0.0.19
+DISTVERSION=	0.0.20
 CATEGORIES=	multimedia
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -22,7 +22,6 @@ RUSTFLAGS=	${ARCH:S/i386/YES/:C/^[a-z].*//:S/YES/-C target-feature=+sse,+sse2/} 
 CARGO_CRATES=	addr2line-0.24.2 \
 		adler2-2.0.0 \
 		aes-0.8.4 \
-		ahash-0.7.8 \
 		ahash-0.8.11 \
 		aho-corasick-1.1.3 \
 		allocator-api2-0.2.21 \
@@ -47,7 +46,6 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		bindgen-0.70.1 \
 		bitflags-1.3.2 \
 		bitflags-2.8.0 \
-		bitvec-1.0.1 \
 		block-buffer-0.10.4 \
 		block-padding-0.3.3 \
 		boa_ast-0.20.0 \
@@ -58,11 +56,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		boa_parser-0.20.0 \
 		boa_profiler-0.20.0 \
 		boa_string-0.20.0 \
-		borsh-1.5.5 \
-		borsh-derive-1.5.5 \
 		bumpalo-3.17.0 \
-		bytecheck-0.6.12 \
-		bytecheck_derive-0.6.12 \
 		bytemuck-1.21.0 \
 		bytemuck_derive-1.8.1 \
 		byteorder-1.5.0 \
@@ -70,7 +64,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		cassowary-0.3.0 \
 		castaway-0.2.3 \
 		cbc-0.1.2 \
-		cc-1.2.11 \
+		cc-1.2.12 \
 		cesu8-1.1.0 \
 		cexpr-0.6.0 \
 		cfg-if-1.0.0 \
@@ -115,8 +109,8 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		derive_more-impl-1.0.0 \
 		diff-0.1.13 \
 		digest-0.10.7 \
-		directories-5.0.1 \
-		dirs-sys-0.4.1 \
+		directories-6.0.0 \
+		dirs-sys-0.5.0 \
 		displaydoc-0.2.5 \
 		document-features-0.2.10 \
 		dtoa-1.0.9 \
@@ -138,7 +132,6 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		foreign-types-shared-0.1.1 \
 		form_urlencoded-1.2.1 \
 		format_num_pattern-0.9.3 \
-		funty-2.0.0 \
 		futf-0.1.5 \
 		futures-0.3.31 \
 		futures-channel-0.3.31 \
@@ -158,7 +151,6 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		gimli-0.31.1 \
 		glob-0.3.2 \
 		h2-0.4.7 \
-		hashbrown-0.12.3 \
 		hashbrown-0.14.5 \
 		hashbrown-0.15.2 \
 		heck-0.5.0 \
@@ -198,6 +190,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		is_terminal_polyfill-1.70.1 \
 		iset-0.3.1 \
 		itertools-0.13.0 \
+		itertools-0.14.0 \
 		itoa-1.0.14 \
 		jni-0.21.1 \
 		jni-sys-0.3.0 \
@@ -277,44 +270,39 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		proc-macro-crate-3.2.0 \
 		proc-macro2-1.0.93 \
 		psl-types-2.0.11 \
-		ptr_meta-0.1.4 \
-		ptr_meta_derive-0.1.4 \
 		publicsuffix-2.3.0 \
 		pure-rust-locales-0.8.1 \
 		quinn-0.11.6 \
 		quinn-proto-0.11.9 \
 		quinn-udp-0.5.9 \
 		quote-1.0.38 \
-		radium-0.7.0 \
 		rand-0.8.5 \
+		rand-0.9.0 \
 		rand_chacha-0.3.1 \
+		rand_chacha-0.9.0 \
 		rand_core-0.6.4 \
+		rand_core-0.9.0 \
 		rat-cursor-1.2.0 \
 		rat-event-1.2.3 \
-		rat-focus-0.31.0 \
+		rat-focus-1.0.0 \
 		rat-reloc-1.1.2 \
 		rat-scrolled-1.1.1 \
-		rat-text-0.29.5 \
+		rat-text-1.0.3 \
 		ratatui-0.29.0 \
 		redox_syscall-0.2.16 \
 		redox_syscall-0.5.8 \
-		redox_users-0.4.6 \
+		redox_users-0.5.0 \
 		regex-1.11.1 \
 		regex-automata-0.4.9 \
 		regex-syntax-0.8.5 \
 		regress-0.10.3 \
-		rend-0.4.2 \
 		reqwest-0.12.12 \
 		reqwest-middleware-0.3.3 \
 		reqwest-retry-0.6.1 \
 		retry-policies-0.4.0 \
 		ring-0.17.8 \
-		rkyv-0.7.45 \
-		rkyv_derive-0.7.45 \
 		rodio-0.20.1 \
 		ropey-1.6.1 \
-		rust_decimal-1.36.0 \
-		rust_decimal_macros-1.36.0 \
 		rustc-demangle-0.1.24 \
 		rustc-hash-1.1.0 \
 		rustc-hash-2.1.0 \
@@ -330,7 +318,6 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		schannel-0.1.27 \
 		scopeguard-1.2.0 \
 		scraper-0.20.0 \
-		seahash-4.1.0 \
 		security-framework-2.11.1 \
 		security-framework-sys-2.14.0 \
 		selectors-0.25.0 \
@@ -347,7 +334,6 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		signal-hook-0.3.17 \
 		signal-hook-mio-0.2.4 \
 		signal-hook-registry-1.4.2 \
-		simdutf8-0.1.5 \
 		siphasher-0.3.11 \
 		siphasher-1.0.1 \
 		slab-0.4.9 \
@@ -431,7 +417,6 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		utf16_iter-1.0.5 \
 		utf8_iter-1.0.4 \
 		utf8parse-0.2.2 \
-		uuid-1.12.1 \
 		valuable-0.1.1 \
 		vcpkg-0.2.15 \
 		version_check-0.9.5 \
@@ -461,45 +446,37 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		windows-result-0.2.0 \
 		windows-strings-0.1.0 \
 		windows-sys-0.45.0 \
-		windows-sys-0.48.0 \
 		windows-sys-0.52.0 \
 		windows-sys-0.59.0 \
 		windows-targets-0.42.2 \
-		windows-targets-0.48.5 \
 		windows-targets-0.52.6 \
 		windows_aarch64_gnullvm-0.42.2 \
-		windows_aarch64_gnullvm-0.48.5 \
 		windows_aarch64_gnullvm-0.52.6 \
 		windows_aarch64_msvc-0.42.2 \
-		windows_aarch64_msvc-0.48.5 \
 		windows_aarch64_msvc-0.52.6 \
 		windows_i686_gnu-0.42.2 \
-		windows_i686_gnu-0.48.5 \
 		windows_i686_gnu-0.52.6 \
 		windows_i686_gnullvm-0.52.6 \
 		windows_i686_msvc-0.42.2 \
-		windows_i686_msvc-0.48.5 \
 		windows_i686_msvc-0.52.6 \
 		windows_x86_64_gnu-0.42.2 \
-		windows_x86_64_gnu-0.48.5 \
 		windows_x86_64_gnu-0.52.6 \
 		windows_x86_64_gnullvm-0.42.2 \
-		windows_x86_64_gnullvm-0.48.5 \
 		windows_x86_64_gnullvm-0.52.6 \
 		windows_x86_64_msvc-0.42.2 \
-		windows_x86_64_msvc-0.48.5 \
 		windows_x86_64_msvc-0.52.6 \
 		winnow-0.7.1 \
 		wit-bindgen-rt-0.33.0 \
 		write16-1.0.0 \
 		writeable-0.5.5 \
-		wyz-0.5.1 \
 		yansi-1.0.1 \
 		yoke-0.7.5 \
 		yoke-derive-0.7.5 \
 		youtui-vendored-rusty_ytdl-0.7.4-youtui-vendored.2 \
 		zerocopy-0.7.35 \
+		zerocopy-0.8.16 \
 		zerocopy-derive-0.7.35 \
+		zerocopy-derive-0.8.16 \
 		zerofrom-0.1.5 \
 		zerofrom-derive-0.1.5 \
 		zeroize-1.8.1 \
