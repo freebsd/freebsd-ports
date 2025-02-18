@@ -1,6 +1,6 @@
 PORTNAME=	mise
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2025.2.4
+DISTVERSION=	2025.2.6
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -143,7 +143,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		directories-5.0.1 \
 		dirs-sys-0.4.1 \
 		displaydoc-0.2.5 \
-		document-features-0.2.10 \
+		document-features-0.2.11 \
 		dotenvy-0.15.7 \
 		duct-0.13.7 \
 		dunce-1.0.5 \
@@ -382,10 +382,10 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		object-0.32.2 \
 		once_cell-1.20.3 \
 		opaque-debug-0.3.1 \
-		openssl-0.10.70 \
+		openssl-0.10.71 \
 		openssl-macros-0.1.1 \
 		openssl-probe-0.1.6 \
-		openssl-sys-0.9.105 \
+		openssl-sys-0.9.106 \
 		option-ext-0.2.0 \
 		ordered-float-2.10.1 \
 		os-release-0.1.0 \
@@ -440,7 +440,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		rand_chacha-0.3.1 \
 		rand_chacha-0.9.0 \
 		rand_core-0.6.4 \
-		rand_core-0.9.0 \
+		rand_core-0.9.1 \
 		rayon-1.10.0 \
 		rayon-core-1.12.1 \
 		redox_syscall-0.5.8 \
@@ -518,7 +518,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		siphasher-1.0.1 \
 		slab-0.4.9 \
 		slug-0.1.6 \
-		smallvec-1.13.2 \
+		smallvec-1.14.0 \
 		socket2-0.5.8 \
 		spki-0.7.3 \
 		stable_deref_trait-1.2.0 \
@@ -601,7 +601,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		untrusted-0.9.0 \
 		url-2.5.4 \
 		urlencoding-2.1.3 \
-		usage-lib-2.0.4 \
+		usage-lib-2.0.5 \
 		utf16_iter-1.0.5 \
 		utf8_iter-1.0.4 \
 		utf8parse-0.2.2 \
