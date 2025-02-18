@@ -1,6 +1,6 @@
 PORTNAME=	libunwind
 PORTVERSION=	20240221	# This is the release date on https://github.com/libunwind/libunwind/releases
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/libunwind/libunwind/releases/download/v${LIBUNWIND_VERSION}/
 DISTNAME=	libunwind-${LIBUNWIND_VERSION}
@@ -22,7 +22,10 @@ USES=		compiler:c11 cpe libtool pathfix pkgconfig
 
 CONFIGURE_ARGS=	--disable-cxx-exceptions \
 		--disable-unwind-header \
-		ac_cv_path_LATEX2MAN=${TRUE}
+		ac_cv_path_LATEX2MAN=${TRUE} \
+		${CONFIGURE_ARGS_${ARCH}}
+CONFIGURE_ARGS_armv7=	ac_cv_search__Unwind_Resume="-lgcc_s -lgcc"
+
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
