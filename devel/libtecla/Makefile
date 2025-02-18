@@ -1,6 +1,6 @@
 PORTNAME=	libtecla
-PORTVERSION=	1.6.3
-PORTREVISION=	1
+DISTVERSION=	1.6.3
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://www.astro.caltech.edu/~mcs/tecla/
 
@@ -10,6 +10,7 @@ WWW=		https://www.astro.caltech.edu/~mcs/tecla/
 
 LICENSE=	MIT
 
+USES=		autoreconf
 USE_LDCONFIG=	yes
 USE_SUBMAKE=	yes
 
@@ -19,7 +20,6 @@ GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 MAKE_JOBS_UNSAFE=	yes
 ALL_TARGET=	default
 
-LLD_UNSAFE=	yes
 SSP_UNSAFE=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
