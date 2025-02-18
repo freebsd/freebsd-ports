@@ -107,7 +107,7 @@ USE_CABAL=	Cabal-3.14.1.0 \
 		cardano-ledger-byron-1.0.2.0:chap \
 		cardano-ledger-byron-test-1.5.2.0:chap \
 		cardano-ledger-conway-1.18.1.0:chap \
-		cardano-ledger-conway-test-1.3.0.0:chap \
+		cardano-ledger-conway-test-1.3.0.0_1:chap \
 		cardano-ledger-core-1.16.0.0:chap \
 		cardano-ledger-mary-1.7.1.0:chap \
 		cardano-ledger-shelley-1.15.0.0:chap \
