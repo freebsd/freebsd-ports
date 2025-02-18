@@ -1013,7 +1013,9 @@ libdata/pkgconfig/aravis-0.8.pc
 %%DOCS%%%%PORTDOCS%%%%DOCSDIR%%/type_func.GcAccessMode.from_string.html
 %%DOCS%%%%PORTDOCS%%%%DOCSDIR%%/type_func.GcAccessMode.to_string.html
 %%DOCS%%%%PORTDOCS%%%%DOCSDIR%%/type_func.GcError.quark.html
+%%DOCS%%%%PORTDOCS%%%%DOCSDIR%%/type_func.GvInterface.dup_discovery_interface_name.html
 %%DOCS%%%%PORTDOCS%%%%DOCSDIR%%/type_func.GvInterface.get_instance.html
+%%DOCS%%%%PORTDOCS%%%%DOCSDIR%%/type_func.GvInterface.set_discovery_interface_name.html
 %%DOCS%%%%USB%%%%PORTDOCS%%%%DOCSDIR%%/type_func.UvInterface.get_instance.html
 %%DOCS%%%%PORTDOCS%%%%DOCSDIR%%/type_func.XmlSchemaError.quark.html
 %%DOCS%%%%PORTDOCS%%%%DOCSDIR%%/urlmap.js
