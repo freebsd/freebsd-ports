@@ -1,5 +1,5 @@
 PORTNAME=	ruby-mysql
-PORTVERSION=	4.1.0
+PORTVERSION=	4.2.0
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 
