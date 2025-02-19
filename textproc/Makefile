@@ -207,6 +207,7 @@
     SUBDIR += fcitx5-m17n
     SUBDIR += fcitx5-qt
     SUBDIR += fcitx5-qt-common
+    SUBDIR += feluda
     SUBDIR += fex
     SUBDIR += ffe
     SUBDIR += fi-aspell
