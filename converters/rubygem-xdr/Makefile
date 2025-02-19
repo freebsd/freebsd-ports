@@ -1,5 +1,6 @@
 PORTNAME=	xdr
 PORTVERSION=	3.0.3
+PORTREVISION=	1
 CATEGORIES=	converters rubygems
 MASTER_SITES=	RG
 
@@ -10,8 +11,8 @@ WWW=		https://github.com/stellar/ruby-xdr
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	rubygem-activemodel60>=6.0:databases/rubygem-activemodel60 \
-		rubygem-activesupport60>=6.0:devel/rubygem-activesupport60
+RUN_DEPENDS=	rubygem-activemodel70>=7.0:databases/rubygem-activemodel70 \
+		rubygem-activesupport70>=7.0:devel/rubygem-activesupport70
 
 USES=		gem
 
