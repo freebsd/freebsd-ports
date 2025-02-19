@@ -1,5 +1,5 @@
 PORTNAME=	recipes
-PORTVERSION=	1.1.0
+PORTVERSION=	1.1.1
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
@@ -15,7 +15,7 @@ RUN_DEPENDS=	R-cran-cli>0:devel/R-cran-cli \
 		R-cran-generics>=0.1.2:devel/R-cran-generics \
 		R-cran-glue>0:devel/R-cran-glue \
 		R-cran-gower>0:math/R-cran-gower \
-		R-cran-hardhat>=1.4.0:devel/R-cran-hardhat \
+		R-cran-hardhat>=1.4.1:devel/R-cran-hardhat \
 		R-cran-ipred>=0.9.12:math/R-cran-ipred \
 		R-cran-lifecycle>=1.0.3:devel/R-cran-lifecycle \
 		R-cran-lubridate>=1.8.0:devel/R-cran-lubridate \
