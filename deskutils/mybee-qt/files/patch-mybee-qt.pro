@@ -1,13 +1,15 @@
---- mybee-qt.pro.orig	2025-01-23 11:34:32 UTC
+--- mybee-qt.pro.orig	2025-02-16 18:06:21 UTC
 +++ mybee-qt.pro
-@@ -1,8 +1,8 @@ TEMPLATE = subdirs
+@@ -1,11 +1,10 @@ TEMPLATE = subdirs
  TEMPLATE = subdirs
--SUBDIRS = libssh freerdp2 vnc src
+-SUBDIRS = zlib-ng libjpeg-turbo libssh freerdp2 vnc src
 +SUBDIRS = src
  
  #CONFIG += ordered
+ libssh.depends = zlib-ng
+ freerdp2.depends = zlib-ng libjpeg-turbo
+ vnc.depends = zlib-ng libjpeg-turbo
 -src.depends = libssh freerdp2 vnc
-+#src.depends = libssh freerdp2 vnc
  
  DISTFILES += \
      APP_VERSION \

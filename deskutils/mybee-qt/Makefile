@@ -1,5 +1,5 @@
 PORTNAME=	mybee-qt
-DISTVERSION=	25.01.5
+DISTVERSION=	25.02.1
 CATEGORIES=	deskutils
 
 MAINTAINER=	fbsd-ports@convectix.com
@@ -13,15 +13,17 @@ BUILD_DEPENDS=	curl:ftp/curl \
 		xfreerdp:net/freerdp
 LIB_DEPENDS=	libvncserver.so:net/libvncserver \
 		libfreerdp2.so:net/freerdp \
+		libturbojpeg.so:graphics/libjpeg-turbo \
 		libwinpr2.so:net/freerdp \
-		libssh.so:security/libssh
+		libssh.so:security/libssh \
+		libz-ng.so:archivers/zlib-ng
 RUN_DEPENDS=	xfreerdp:net/freerdp
 
 USES=		gl gmake qmake qt:6
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	myb-project
-GH_TAGNAME=	6955032
+#GH_TAGNAME=	6955032
 USE_GL=		gl
 USE_QT=		5compat base multimedia tools:build
 
