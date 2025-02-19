@@ -228,6 +228,7 @@
     SUBDIR += qpress
     SUBDIR += quazip
     SUBDIR += rar
+    SUBDIR += rar-i386
     SUBDIR += rpm2cpio
     SUBDIR += rpm4
     SUBDIR += rubygem-archive-zip
