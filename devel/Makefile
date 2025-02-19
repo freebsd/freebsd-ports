@@ -7211,6 +7211,7 @@
     SUBDIR += rubygem-e2mmap
     SUBDIR += rubygem-ecma-re-validator
     SUBDIR += rubygem-edavis10-object_daddy
+    SUBDIR += rubygem-elftools
     SUBDIR += rubygem-elif
     SUBDIR += rubygem-emoji_regex
     SUBDIR += rubygem-english
