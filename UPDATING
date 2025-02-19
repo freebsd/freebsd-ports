@@ -5,6 +5,17 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20250219:
+  AFFECTS: users of comms/ser2net
+  AUTHOR: rodrigo@FreeBSD.org
+
+  ser2net 4.6.4 doesn't support 3.5.1 configuration who has to be
+  converted over to use new YAML syntax.
+
+  Please see the examples on ser2net.yaml sample configuration and
+  read the ser2net.yaml manpage on how to configure the new version.
+  Additional links and resources have been provided on the pkg-message.
+
 20250217:
   AFFECTS: users of databases/mongodb70
   AUTHOR: ronald@FreeBSD.org
