@@ -18,7 +18,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}colorama>=0.3.9:devel/py-colorama@${PY_FLAVO
 		${PYTHON_PKGNAMEPREFIX}pyyaml>=6.0:devel/py-pyyaml@${PY_FLAVOR} \
 		tmux:sysutils/tmux
 
-USES=		python
+USES=		python:3.9+
 USE_PYTHON=	autoplist concurrent pep517
 
 NO_ARCH=	yes
