@@ -1591,6 +1591,7 @@
     SUBDIR += py-rich-cli
     SUBDIR += py-rich-rst
     SUBDIR += py-rnc2rng
+    SUBDIR += py-roman-numerals-py
     SUBDIR += py-rst2ansi
     SUBDIR += py-rst2html5
     SUBDIR += py-scour
