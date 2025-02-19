@@ -1,4 +1,3 @@
-include/rfb/default8x16.h
 include/rfb/keysym.h
 include/rfb/rfb.h
 include/rfb/rfbclient.h
@@ -11,10 +10,10 @@ lib/cmake/LibVNCServer/LibVNCServerConfigVersion.cmake
 lib/cmake/LibVNCServer/LibVNCServerTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/LibVNCServer/LibVNCServerTargets.cmake
 lib/libvncclient.so
-lib/libvncclient.so.0.9.14
+lib/libvncclient.so.0.9.15
 lib/libvncclient.so.1
 lib/libvncserver.so
-lib/libvncserver.so.0.9.14
+lib/libvncserver.so.0.9.15
 lib/libvncserver.so.1
 libdata/pkgconfig/libvncclient.pc
 libdata/pkgconfig/libvncserver.pc
