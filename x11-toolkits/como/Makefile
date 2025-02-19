@@ -15,7 +15,7 @@ WWW=		https://github.com/winft/como
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-IGNORE=		does not support Plasma 6.3.0
+BROKEN=		https://github.com/winft/como/issues/30
 
 BUILD_DEPENDS=	evdev-proto>0:devel/evdev-proto
 LIB_DEPENDS=	libepoxy.so:graphics/libepoxy \
