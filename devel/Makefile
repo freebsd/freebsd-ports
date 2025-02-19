@@ -7490,6 +7490,7 @@
     SUBDIR += rubygem-license_finder-gitlab
     SUBDIR += rubygem-licensee
     SUBDIR += rubygem-licensee-gitlab
+    SUBDIR += rubygem-lint_roller
     SUBDIR += rubygem-listen
     SUBDIR += rubygem-little-plugger
     SUBDIR += rubygem-local_time
