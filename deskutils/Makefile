@@ -153,6 +153,7 @@
     SUBDIR += kruler
     SUBDIR += ktimetracker
     SUBDIR += kuserfeedback
+    SUBDIR += kweather
     SUBDIR += kweathercore
     SUBDIR += latte-dock
     SUBDIR += lazycli
