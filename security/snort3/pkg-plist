@@ -129,6 +129,7 @@ include/snort/network_inspectors/appid/application_ids.h
 include/snort/network_inspectors/appid/tp_appid_module_api.h
 include/snort/network_inspectors/appid/tp_appid_session_api.h
 include/snort/network_inspectors/appid/tp_appid_types.h
+include/snort/network_inspectors/extractor/extractor_enums.h
 include/snort/network_inspectors/reputation/reputation_common.h
 include/snort/network_inspectors/rna/rna_cpe_os.h
 include/snort/network_inspectors/rna/rna_fingerprint.h
