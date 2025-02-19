@@ -6400,6 +6400,7 @@
     SUBDIR += ruby-subversion
     SUBDIR += rubygem-CFPropertyList
     SUBDIR += rubygem-CFPropertyList-gitlab
+    SUBDIR += rubygem-aarch64
     SUBDIR += rubygem-abstract
     SUBDIR += rubygem-actionpack-action_caching
     SUBDIR += rubygem-actionpack-page_caching
