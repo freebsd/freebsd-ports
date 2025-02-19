@@ -1280,11 +1280,11 @@ diff -urN -x configure -x config.guess -x config.h.in -x config.sub work.clean/o
  # Example of overriding settings on a per-user basis
  #Match User anoncvs
  #	X11Forwarding no
---- work/openssh/version.h.orig	2023-12-18 06:59:50.000000000 -0800
-+++ work/openssh/version.h	2024-01-08 16:22:25.632475000 -0800
+--- work/openssh/version.h.orig	2025-02-18 00:15:08.000000000 -0800
++++ work/openssh/version.h	2025-02-19 07:59:36.425254000 -0800
 @@ -4,3 +4,4 @@
  
- #define SSH_PORTABLE	"p1"
+ #define SSH_PORTABLE	"p2"
  #define SSH_RELEASE	SSH_VERSION SSH_PORTABLE
 +#define SSH_HPN         "-hpn14v15"
 --- work/openssh/kex.h.orig	2019-07-10 17:35:36.523216000 -0700
