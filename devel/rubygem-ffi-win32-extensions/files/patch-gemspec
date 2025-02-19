@@ -1,0 +1,10 @@
+--- ffi-win32-extensions.gemspec.orig	2025-02-18 14:39:56 UTC
++++ ffi-win32-extensions.gemspec
+@@ -20,6 +20,6 @@ Gem::Specification.new do |s|
+ 
+   s.specification_version = 4
+ 
+-  s.add_runtime_dependency(%q<ffi>.freeze, [">= 1.15.5".freeze, "<= 1.17.0".freeze])
++  s.add_runtime_dependency(%q<ffi>.freeze, [">= 1.15.5".freeze, "<= 1.18.0".freeze])
+ end
+ 
