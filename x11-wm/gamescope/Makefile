@@ -10,7 +10,7 @@ PATCHFILES+=	243582c0c762.patch:-p1 # https://github.com/ValveSoftware/gamescope
 PATCHFILES+=	4a4fb1b53133.patch:-p1 # https://github.com/ValveSoftware/gamescope/pull/1296
 PATCHFILES+=	a9199c2097ff.patch:-p1 # https://github.com/ValveSoftware/gamescope/pull/1323
 
-MAINTAINER=	jbeich@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SteamOS session compositing window manager
 WWW=		https://github.com/ValveSoftware/gamescope
 
