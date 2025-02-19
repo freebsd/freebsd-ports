@@ -1,7 +1,7 @@
 Readme SASL:
 
 Dovecot uses its own daemon process for authentication.  Because there is no
-need to link extra libraries into Postfix, Dovecot SASL will be build into
+need to link extra libraries into Postfix, Dovecot SASL will be built into
 Postfix by default.
 
 Cyrus SASL is optional and will be the default if build with SASL=on
