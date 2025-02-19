@@ -4,7 +4,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	nc@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Filters to enhance web typography
 WWW=		https://github.com/mintchaos/typogrify/
 
