@@ -15,8 +15,7 @@ WWW=		https://gitlab.xfce.org/apps/xfce4-notifyd
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	libgtk-layer-shell.so:x11-toolkits/gtk-layer-shell \
-		libharfbuzz.so:print/harfbuzz \
+LIB_DEPENDS=	libharfbuzz.so:print/harfbuzz \
 		libnotify.so:devel/libnotify
 
 USES=		compiler:c11 gettext-tools gmake gnome libtool pkgconfig sqlite \
@@ -29,7 +28,8 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-systemd
 INSTALL_TARGET=	install-strip
 
-OPTIONS_DEFINE=	NLS SOUND
+OPTIONS_DEFINE=	NLS SOUND WAYLAND
+OPTIONS_DEFAULT=	WAYLAND
 OPTIONS_SUB=	yes
 
 SOUND_DESC=	Sound (audio) support via canberra
@@ -40,5 +40,8 @@ NLS_CONFIGURE_ENABLE=	nls
 SOUND_LIB_DEPENDS=	libcanberra-gtk3.so:audio/libcanberra-gtk3 \
 			libcanberra.so:audio/libcanberra
 SOUND_CONFIGURE_ENABLE=	sound
+
+WAYLAND_LIB_DEPENDS=	libgtk-layer-shell.so:x11-toolkits/gtk-layer-shell
+WAYLAND_CONFIGURE_ENABLE=	wayland
 
 .include <bsd.port.mk>
