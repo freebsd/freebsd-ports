@@ -1,7 +1,13 @@
 --- Make.orig	2002-02-26 12:29:20 UTC
 +++ Make
-@@ -18,7 +18,7 @@ CC=gcc                     # compiler an
- LD=ld                      # linker for shared objects
+@@ -14,11 +14,11 @@ MAKEFILE=Makefile.REXXimc
+ SRC=.                      # directory containing the source of REXX/imc
+ MAKE=make
+ MAKEFILE=Makefile.REXXimc
+-CC=gcc                     # compiler and linker for programs
+-LD=ld                      # linker for shared objects
++#CC=cc
++LD=$CC                      # linker for shared objects
  COMPILEFLAG=""             # general compilation flags for cc
  LINKFLAG=""                # general linker flags *for cc*
 -#STUFF="-DSTUFF_STACK"     # uncomment if you like queuing stack to keyboard
@@ -19,6 +25,69 @@
          *|unknown)
              PREFIX="/usr/local"
              ;;
+@@ -158,7 +161,7 @@ case ${1:-nothing} in
+         shift
+         ;;
+    o)   # o (optimise)
+-        OPTFLAG="-O2"
++        OPTFLAG=""
+         STRIPFLAG="-s"
+         shift
+         ;;
+@@ -172,7 +175,7 @@ case ${1:-nothing} in
+         shift
+         ;;
+    *)   # <default>
+-        OPTFLAG="-O2"
++        OPTFLAG=""
+         STRIPFLAG="-s"
+         ;;
+ esac
+@@ -184,7 +187,7 @@ fi
+ 
+ #######################################################################
+ # Now calculate system dependent variables for Makefile
+-# Note: if OPTFLAG is -O2 it can be changed to suit the compiler.
++# Note: if OPTFLAG is  it can be changed to suit the compiler.
+ 
+ echo "Processing REXX/imc for $UNAME_S $UNAME_R"
+ 
+@@ -215,7 +218,7 @@ case $UNAME_S:$UNAME_R in
+                 ;;
+             cc)
+                 CCFLAG="-DFSTAT_FOR_CHARS -DHAS_MALLOPT -DDECLARE_RANDOM -DDECLARE_TIMEZONE"
+-                [ "x$OPTFLAG" = x-O2 ] && OPTFLAG="-fast"
++                [ "x$OPTFLAG" = x ] && OPTFLAG="-fast"
+                 PIC="-KPIC"
+                 SOFLAG="-G"
+                 DLLFLAG="-G"
+@@ -246,7 +249,7 @@ case $UNAME_S:$UNAME_R in
+                 ;;
+             cc)
+                 PIC="-PIC"
+-                [ "x$OPTFLAG" = x-O2 ] && OPTFLAG="-O4"
++                [ "x$OPTFLAG" = x ] && OPTFLAG="-O4"
+                 ;;
+             *)  echo "Warning: I don't know the options for $CC"\
+                       "- trying the cc ones" >&2
+@@ -281,7 +284,7 @@ case $UNAME_S:$UNAME_R in
+         REXXLIB="librexx.a"
+         MATH=""
+         PIC=""
+-        [ "x$OPTFLAG" = x-O2 ] && OPTFLAG="+O2"
++        [ "x$OPTFLAG" = x ] && OPTFLAG="+O2"
+         case $CC in
+             cc)
+                 CCFLAG="-DHAS_MALLOPT -D_HPUX_SOURCE -DNO_LDL"
+@@ -338,7 +341,7 @@ case $UNAME_S:$UNAME_R in
+         case $CC in
+             cc) 
+                 CCFLAG="$CCFLAG -Olimit 1400"
+-                [ "x$OPTFLAG" = x-O2 ] && OPTFLAG="-O3"
++                [ "x$OPTFLAG" = x ] && OPTFLAG="-O3"
+                 ;;
+             gcc) # already OK
+                 ;;
 @@ -386,14 +389,14 @@ case $UNAME_S:$UNAME_R in
          esac
          egrep -q tm_gmtoff /usr/include/time.h && CCFLAG="$CCFLAG -DHAS_GMTOFF"
@@ -36,10 +105,14 @@
  #       Uncomment above line if you have problems with LD_LIBRARY_PATH
          case $CC in
              gcc)
-@@ -407,6 +410,48 @@ case $UNAME_S:$UNAME_R in
-                 ;;
-         esac
-         ;;
+@@ -403,6 +406,48 @@ case $UNAME_S:$UNAME_R in
+             *)  echo "Warning: I don't know the options for $CC"\
+                       "- trying the gcc ones" >&2
+                 CCFLAG="-DHAS_TTYCOM -D_REQUIRED -DRENAME_UNDELETE -DHAS_GMTOFF"
++                PIC="-fPIC"
++                ;;
++        esac
++        ;;
 +    FreeBSD:4.*)
 +        REXXLIB="librexx.so"
 +	SOLINK="librexx.so"
@@ -67,9 +140,9 @@
 +        RANLIB=ranlib
 +        MATH=rxmathfn.rxfn
 +        LIBRARIES=""
-+        SOFLAG="-shared --export-dynamic"
++        SOFLAG="-shared -rdynamic"
 +        : ${RUNLIBS='-L$(LIBDIR) -Wl,-rpath,$(PREFIX)/lib'}
-+        DLLFLAG="-shared --export-dynamic"
++        DLLFLAG="-shared -rdynamic -Wl,-soname=$(SONAME)"
 +        case $CC in
 +            gcc)
 +                CCFLAG="${CFLAGS} -DHAS_TTYCOM -DRENAME_UNDELETE -DHAS_GMTOFF"
@@ -78,10 +151,6 @@
 +            *)  echo "Warning: I don't know the options for $CC"\
 +                      "- trying the gcc ones" >&2
 +                CCFLAG="${CFLAGS} -DHAS_TTYCOM -DRENAME_UNDELETE -DHAS_GMTOFF"
-+                PIC="-fPIC"
-+                ;;
-+        esac
-+        ;;
-     unknown:*|*:*)
-         echo "I am not configured for this platform - guessing some options" >&2
-         echo "(You will not be able to use shared libraries)" >&2
+                 PIC="-fPIC"
+                 ;;
+         esac

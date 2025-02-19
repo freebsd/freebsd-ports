@@ -1,6 +1,6 @@
 PORTNAME=	rexx-imc
 PORTVERSION=	1.76
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	lang
 MASTER_SITES=	http://www.cs.ox.ac.uk/people/ian.collier/distribution/ \
 		ftp://ftp.sai.msu.su/pub/unix/rexx/
@@ -8,9 +8,6 @@ MASTER_SITES=	http://www.cs.ox.ac.uk/people/ian.collier/distribution/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Procedural programming language designed by IBM's UK Laboratories
 WWW=		https://www.cs.ox.ac.uk/people/ian.collier/Rexx/rexximc.html
-
-BROKEN_armv6=		fails to link: /nxb-bin/usr/bin/ld: hidden symbol __aeabi_uidivmod in libgcc.a is referenced by DSO
-BROKEN_armv7=		fails to link: /nxb-bin/usr/bin/ld: hidden symbol __aeabi_uidivmod in libgcc.a is referenced by DSO
 
 CONFLICTS=	rexx-regina-* oorexx
 
@@ -22,19 +19,12 @@ CONFIGURE_ARGS=		o all
 # configures and builds in one step
 NO_BUILD=		yes
 USE_LDCONFIG=		yes
-LLD_UNSAFE=		yes
 
 DOCFILES=	rexx.info rexx.ref rexx.summary rexx.tech
 RMEFILES=	README README.Y2K README.bugreport README.docs \
 		README.files README.make README.news README.platforms
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
-
-post-patch:
-# CFLAGS safeness for ARCHs other than i386
-	@${REINPLACE_CMD} -e 's|-O2||' ${WRKSRC}/Make
-# CC safeness
-	@${REINPLACE_CMD} -E -e 's|^CC=.+$$|CC=${CC}|' ${WRKSRC}/Make
 
 do-install:
 	(cd ${WRKSRC} && ${INSTALL_PROGRAM} rexx rxque rxstack \
