@@ -563,8 +563,8 @@
     SUBDIR += octave-forge-biosig
     SUBDIR += octave-forge-bsltl
     SUBDIR += octave-forge-cfitsio
-    SUBDIR += octave-forge-chartjs
     SUBDIR += octave-forge-cgi
+    SUBDIR += octave-forge-chartjs
     SUBDIR += octave-forge-civil-engineering
     SUBDIR += octave-forge-coder
     SUBDIR += octave-forge-communications
