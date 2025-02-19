@@ -97,6 +97,7 @@
 %%DATADIR%%/template/Edgeberry_Cartridge/meta/cartridge.png
 %%DATADIR%%/template/Edgeberry_Cartridge/meta/icon.png
 %%DATADIR%%/template/Edgeberry_Cartridge/meta/info.html
+%%DATADIR%%/template/Edgeberry_Cartridge/sym-lib-table
 %%DATADIR%%/template/EuroCard160mmX100mm/EuroCard160mmX100mm.kicad_pcb
 %%DATADIR%%/template/EuroCard160mmX100mm/EuroCard160mmX100mm.kicad_pro
 %%DATADIR%%/template/EuroCard160mmX100mm/EuroCard160mmX100mm.kicad_sch
