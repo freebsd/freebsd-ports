@@ -193,10 +193,18 @@ _linux_rl9_qtwebchannel=		linux-rl9-qt5-qtwebchannel>0:www/linux-rl9-qt5-qtwebch
 _linux_rl9_qtwebsockets=		linux-rl9-qt5-qtwebsockets>0:www/linux-rl9-qt5-qtwebsockets
 _linux_rl9_qtx11extras=			linux-rl9-qt5-qtx11extras>0:x11/linux-rl9-qt5-qtx11extras
 _linux_rl9_qtxmlpatterns=		linux-rl9-qt5-qtxmlpatterns>0:textproc/linux-rl9-qt5-qtxmlpatterns
-_linux_c7_sdl12=			linux-c7-sdl>0:devel/linux-c7-sdl12
-_linux_c7_sdlimage=			linux-c7-sdl_image>0:graphics/linux-c7-sdl_image
-_linux_c7_sdlmixer=			linux-c7-sdl_mixer>0:audio/linux-c7-sdl_mixer
-_linux_c7_sdlttf=			linux-c7-sdl_ttf>0:graphics/linux-c7-sdl_ttf
+_linux_${linux_ARGS}_sdl12=		linux-${linux_ARGS}-sdl>0:devel/linux-${linux_ARGS}-sdl12
+_linux_${linux_ARGS}_sdl20=		linux-${linux_ARGS}-sdl20>0:devel/linux-${linux_ARGS}-sdl20
+_linux_${linux_ARGS}_sdl2gfx=		linux-${linux_ARGS}-sdl2_gfx>0:graphics/linux-${linux_ARGS}-sdl2_gfx
+_linux_${linux_ARGS}_sdl2image=		linux-${linux_ARGS}-sdl2_image>0:graphics/linux-${linux_ARGS}-sdl2_image
+_linux_${linux_ARGS}_sdl2mixer=		linux-${linux_ARGS}-sdl2_mixer>0:audio/linux-${linux_ARGS}-sdl2_mixer
+_linux_${linux_ARGS}_sdl2ttf=		linux-${linux_ARGS}-sdl2_ttf>0:graphics/linux-${linux_ARGS}-sdl2_ttf
+_linux_${linux_ARGS}_sdl2sound=		linux-${linux_ARGS}-sdl2_sound>0:audio/linux-${linux_ARGS}-sdl2_sound
+_linux_${linux_ARGS}_sdlgfx=		linux-${linux_ARGS}-sdl_gfx>0:graphics/linux-${linux_ARGS}-sdl_gfx
+_linux_${linux_ARGS}_sdlimage=		linux-${linux_ARGS}-sdl_image>0:graphics/linux-${linux_ARGS}-sdl_image
+_linux_${linux_ARGS}_sdlmixer=		linux-${linux_ARGS}-sdl_mixer>0:audio/linux-${linux_ARGS}-sdl_mixer
+_linux_${linux_ARGS}_sdlttf=		linux-${linux_ARGS}-sdl_ttf>0:graphics/linux-${linux_ARGS}-sdl_ttf
+_linux_${linux_ARGS}_sdlsound=		linux-${linux_ARGS}-sdl_sound>0:audio/linux-${linux_ARGS}-sdl_sound
 _linux_rl9_shaderc=			linux-rl9-shaderc>0:graphics/linux-rl9-shaderc
 _linux_rl9_spirv-tools=			linux-rl9-spirv-tools>0:graphics/linux-rl9-spirv-tools
 _linux_${linux_ARGS}_sqlite3=		linux-${linux_ARGS}-sqlite>0:databases/linux-${linux_ARGS}-sqlite3
@@ -298,13 +306,13 @@ LIB_DISTNAMES?=		${DISTNAME}
 .    endif
 .    if ${linux_ARGS} == rl9
 .      if !empty(SHARE_DISTNAMES)
-SHARE_DISTNAMES:=	${SHARE_DISTNAMES:C/^[a-z0-9]/&\/&/}
+SHARE_DISTNAMES:=	${SHARE_DISTNAMES:@i@${i:C/^([A-Za-z0-9]).*/\1/:tl}/${i}@}
 .      endif
 .      if !empty(BIN_DISTNAMES)
-BIN_DISTNAMES:=		${BIN_DISTNAMES:C/^[a-z0-9]/&\/&/}
+BIN_DISTNAMES:=		${BIN_DISTNAMES:@i@${i:C/^([A-Za-z0-9]).*/\1/:tl}/${i}@}
 .      endif
 .      if !empty(LIB_DISTNAMES)
-LIB_DISTNAMES:=		${LIB_DISTNAMES:C/^[a-z0-9]/&\/&/}
+LIB_DISTNAMES:=		${LIB_DISTNAMES:@i@${i:C/^([A-Za-z0-9]).*/\1/:tl}/${i}@}
 .      endif
 .    endif
 .    if !(defined(ONLY_FOR_ARCHS) && empty(ONLY_FOR_ARCHS:Maarch64)) \
@@ -339,7 +347,7 @@ DISTFILES_i386?=	${LIB_DISTNAMES:S/$/${EXTRACT_SUFX_i386}:amd64,i386/} \
 .    endif
 SRC_DISTFILES?=		${DISTNAME}${SRC_SUFX}:SOURCE
 .    if ${linux_ARGS} == rl9
-SRC_DISTFILES:=		${SRC_DISTFILES:C/^[a-z0-9]/&\/&/}
+SRC_DISTFILES:=		${SRC_DISTFILES:@i@${i:C/^([A-Za-z0-9]).*/\1/:tl}/${i}@}
 .    endif
 
 .    ifdef USE_LINUX_RPM_BAD_PERMS
