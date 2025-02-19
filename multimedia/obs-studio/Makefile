@@ -9,6 +9,8 @@ WWW=		https://obsproject.com/
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN_armv7=	compilation fails
+
 BUILD_DEPENDS=	v4l_compat>=0:multimedia/v4l_compat \
 		swig:devel/swig
 LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg \
