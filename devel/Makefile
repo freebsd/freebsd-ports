@@ -7823,6 +7823,7 @@
     SUBDIR += rubygem-rubyinline
     SUBDIR += rubygem-rubyinlineaccel
     SUBDIR += rubygem-rubytree
+    SUBDIR += rubygem-rufo
     SUBDIR += rubygem-rufus-scheduler
     SUBDIR += rubygem-rugged
     SUBDIR += rubygem-runt
