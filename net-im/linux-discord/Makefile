@@ -1,5 +1,5 @@
 PORTNAME=	discord
-DISTVERSION=	0.0.85
+DISTVERSION=	0.0.86
 CATEGORIES=	net-im
 MASTER_SITES=	https://dl.discordapp.net/apps/linux/${DISTVERSION}/
 PKGNAMEPREFIX=	linux-
