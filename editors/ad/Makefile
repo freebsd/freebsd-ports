@@ -1,6 +1,5 @@
 PORTNAME=	ad
-DISTVERSION=	0.2.0
-PORTREVISION=	2
+DISTVERSION=	0.3.1
 CATEGORIES=	editors
 
 MAINTAINER=	fuz@FreeBSD.org
@@ -10,16 +9,18 @@ WWW=		https://crates.io/crates/ad-editor
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	xclip:x11/xclip
-
 USES=		cargo
 USE_GITHUB=	yes
 GH_ACCOUNT=	sminez
 
-PLIST_FILES=	bin/ad \
-		share/man/man1/ad.1.gz
+OPTIONS_DEFINE=	DOCS
 
 post-install:
-	${INSTALL_MAN} ${WRKSRC}/doc/man/ad.1 ${STAGEDIR}${PREFIX}/share/man/man1/
+	${INSTALL_MAN} ${WRKSRC}/docs/man/ad.1 ${STAGEDIR}${PREFIX}/share/man/man1/
+
+post-install-DOCS-on:
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC}/docs && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}/)
+	${RM} -r ${STAGEDIR}${DOCSDIR}/man
 
 .include <bsd.port.mk>
