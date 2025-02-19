@@ -1566,6 +1566,8 @@
     SUBDIR += linux-rl9-qt5-qtbase
     SUBDIR += linux-rl9-qt5-qtscript
     SUBDIR += linux-rl9-qt5-qttools
+    SUBDIR += linux-rl9-sdl12
+    SUBDIR += linux-rl9-sdl20
     SUBDIR += linux-rl9-strace
     SUBDIR += linux-rl9-systemd-libs
     SUBDIR += linux-sublime-merge
