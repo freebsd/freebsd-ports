@@ -6,12 +6,13 @@ MASTER_SITES=	https://github.com/arvidn/libtorrent/releases/download/v${DISTVERS
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	C++ library implementing a BitTorrent client
-WWW=		https://libtorrent.org/
+WWW=		https://libtorrent.org \
+		https://github.com/arvidn/libtorrent
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN=		fails to build with Boost>=1.87
+BROKEN=		fails to build with Boost>=1.87, see https://github.com/arvidn/libtorrent/issues/7875
 
 LIB_DEPENDS=	libboost_chrono.so:devel/boost-libs \
 		libboost_random.so:devel/boost-libs \
