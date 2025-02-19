@@ -95,10 +95,8 @@ CXX:=			g++${V}
 CPP:=			cpp${V}
 _GCC_RUNTIME:=		${LOCALBASE}/lib/gcc${V}
 .  if ${PORTNAME} == gcc
-# We don't want the rpath stuff while building GCC itself
-# so we do not set the FLAGS as done in the else part.
-# When building a GCC, we want the target libraries to be used and not the
-# host GCC libraries.
+# When building GCC itself, we want the target libraries to be used
+# and not the host GCC libraries.
 .  else
 CFLAGS+=		-Wl,-rpath=${_GCC_RUNTIME}
 CXXFLAGS+=		-Wl,-rpath=${_GCC_RUNTIME}
