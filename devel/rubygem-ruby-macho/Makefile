@@ -1,5 +1,5 @@
 PORTNAME=	ruby-macho
-PORTVERSION=	4.0.1
+PORTVERSION=	4.1.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
