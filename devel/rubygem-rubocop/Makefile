@@ -1,5 +1,5 @@
 PORTNAME=	rubocop
-PORTVERSION=	1.71.2
+PORTVERSION=	1.72.1
 CATEGORIES=	devel ruby
 MASTER_SITES=	RG
 
@@ -13,7 +13,8 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 RUN_DEPENDS=	rubygem-json>=2.3<3:devel/rubygem-json \
-		rubygem-language_server-protocol>=3.17.0:devel/rubygem-language_server-protocol \
+		rubygem-language_server-protocol>=3.17.0.2<3.17.1:devel/rubygem-language_server-protocol \
+		rubygem-lint_roller>=1.1.0<1.2:devel/rubygem-lint_roller \
 		rubygem-parallel>=1.10<2:sysutils/rubygem-parallel \
 		rubygem-parser>=3.3.0.2:devel/rubygem-parser \
 		rubygem-rainbow>=2.2.2<4.0:devel/rubygem-rainbow \
