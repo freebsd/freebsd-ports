@@ -1,7 +1,7 @@
 PORTNAME=	qTox
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.18.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-im net-p2p
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -15,8 +15,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	${LOCALBASE}/include/linux/videodev2.h:multimedia/v4l_compat
 LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg \
 		libexif.so:graphics/libexif \
-		libfontconfig.so:x11-fonts/fontconfig \
-		libfreetype.so:print/freetype2 \
 		libopus.so:audio/opus \
 		libqrencode.so:graphics/libqrencode \
 		libsodium.so:security/libsodium \
