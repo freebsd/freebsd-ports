@@ -1,5 +1,5 @@
 PORTNAME=	rex-socket
-PORTVERSION=	0.1.57
+PORTVERSION=	0.1.59
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 
