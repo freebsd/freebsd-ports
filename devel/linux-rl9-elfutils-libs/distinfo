@@ -1,4 +1,10 @@
-TIMESTAMP = 1732645275
+TIMESTAMP = 1740006158
+SHA256 (rocky/e/elfutils-debuginfod-client-0.191-4.el9.aarch64.rpm) = f93d95ad5eca4b1b6de0fbcc2cd645c911fd63422a26247c7a6250679a194dd4
+SIZE (rocky/e/elfutils-debuginfod-client-0.191-4.el9.aarch64.rpm) = 35641
+SHA256 (rocky/e/elfutils-debuginfod-client-0.191-4.el9.i686.rpm) = 0dd5b4bbaafbd35d4fa9294e4cefbf66fc1f5a9d2fc30c3b182ed50b42258ec6
+SIZE (rocky/e/elfutils-debuginfod-client-0.191-4.el9.i686.rpm) = 37864
+SHA256 (rocky/e/elfutils-debuginfod-client-0.191-4.el9.x86_64.rpm) = 9871ef9ff71a3029a8bd674d4b29f09ed079434fc9386359a016504cbd6e7072
+SIZE (rocky/e/elfutils-debuginfod-client-0.191-4.el9.x86_64.rpm) = 36401
 SHA256 (rocky/e/elfutils-libs-0.191-4.el9.aarch64.rpm) = f6bb64e09d8793da7f70a6f17f257ed3159b46c167a8d1cb705e004178ae3e01
 SIZE (rocky/e/elfutils-libs-0.191-4.el9.aarch64.rpm) = 262320
 SHA256 (rocky/e/elfutils-libs-0.191-4.el9.i686.rpm) = 8489b6125e3d05366b6c3b299c8312a6e901bc0640371c910ae84528046ecec7
