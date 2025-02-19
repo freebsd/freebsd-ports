@@ -35,6 +35,7 @@ include/dns/ds.h
 include/dns/dsdigest.h
 include/dns/dyndb.h
 include/dns/ecs.h
+include/dns/ede.h
 include/dns/edns.h
 include/dns/enumclass.h
 include/dns/enumtype.h
@@ -233,15 +234,15 @@ include/ns/update.h
 include/ns/xfrout.h
 lib/bind/filter-a.so
 lib/bind/filter-aaaa.so
-lib/libdns-9.21.4.so
+lib/libdns-9.21.5.so
 lib/libdns.so
-lib/libisc-9.21.4.so
+lib/libisc-9.21.5.so
 lib/libisc.so
-lib/libisccc-9.21.4.so
+lib/libisccc-9.21.5.so
 lib/libisccc.so
-lib/libisccfg-9.21.4.so
+lib/libisccfg-9.21.5.so
 lib/libisccfg.so
-lib/libns-9.21.4.so
+lib/libns-9.21.5.so
 lib/libns.so
 @comment share/man/man1/arpaname.1.gz
 @comment share/man/man1/delv.1.gz
