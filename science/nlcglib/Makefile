@@ -1,7 +1,7 @@
 PORTNAME=	nlcglib
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.1.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -16,10 +16,6 @@ LIB_DEPENDS=	libkokkoscore.so:devel/kokkos \
 		libopenblas.so:math/openblas
 TEST_DEPENDS=	googletest>0:devel/googletest
 
-.if !exists(/usr/include/omp.h)
-BROKEN=		requires OpenMP support that is missing on this architecture
-.endif
-
 USES=		cmake:testing pkgconfig
 USE_LDCONFIG=	yes
 
@@ -31,7 +27,13 @@ CMAKE_TESTING_ON=	BUILD_TESTS # tests fail to compile, see https://github.com/si
 OPTIONS_DEFINE=		OPENMP
 OPTIONS_SINGLE=		MPI
 OPTIONS_SINGLE_MPI=	MPICH OPENMPI
-OPTIONS_DEFAULT=	MPICH OPENMP
+OPTIONS_DEFAULT=	MPICH
+
+.if exists(/usr/include/omp.h)
+OPTIONS_DEFAULT+=	OPENMP
+.else
+OPENMP_BROKEN=		requires OpenMP support that is missing on this architecture
+.endif
 
 MPICH_USES=		mpi:mpich
 
