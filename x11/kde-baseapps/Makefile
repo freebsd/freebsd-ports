@@ -3,8 +3,8 @@ DISTVERSION=	${KDE_APPLICATIONS_VERSION}
 CATEGORIES=	x11 kde
 
 MAINTAINER=	kde@FreeBSD.org
-COMMENT=	KDE5 baseapps meta port
-WWW=		https://www.kde.org/applications//
+COMMENT=	KDE Base Applications (meta port)
+WWW=		https://www.kde.org/applications/
 
 USES=		kde:6 metaport
 RUN_DEPENDS=	dolphin>=${KDE_APPLICATIONS_VERSION}:x11-fm/dolphin  \

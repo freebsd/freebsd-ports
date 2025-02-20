@@ -3,7 +3,7 @@ DISTVERSION=	${KDE_PLASMA_VERSION}.${KDE_APPLICATIONS_VERSION}
 CATEGORIES=	x11 kde
 
 MAINTAINER=	kde@FreeBSD.org
-COMMENT=	KDE Plasma Desktop and Applications (current)
+COMMENT=	KDE Plasma Desktop and Applications (meta port)
 WWW=		https://www.kde.org
 
 RUN_DEPENDS=	kde-baseapps>=0:x11/kde-baseapps \

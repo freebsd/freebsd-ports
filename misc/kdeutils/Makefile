@@ -3,7 +3,7 @@ DISTVERSION=	${KDE_APPLICATIONS_VERSION}
 CATEGORIES=	misc kde
 
 MAINTAINER=	kde@FreeBSD.org
-COMMENT=	Collection of utilities for KDE
+COMMENT=	Collection of utilities for KDE (meta port)
 WWW=		https://www.kde.org/applications/utilities/
 
 USES=		kde:6 metaport
