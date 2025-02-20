@@ -102,6 +102,7 @@ share/gir-1.0/HarfBuzz-0.0.gir
 %%DOCS%%share/gtk-doc/html/harfbuzz/api-index-10-0-0.html
 %%DOCS%%share/gtk-doc/html/harfbuzz/api-index-10-1-0.html
 %%DOCS%%share/gtk-doc/html/harfbuzz/api-index-10-2-0.html
+%%DOCS%%share/gtk-doc/html/harfbuzz/api-index-10-3-0.html
 %%DOCS%%share/gtk-doc/html/harfbuzz/api-index-2-0-0.html
 %%DOCS%%share/gtk-doc/html/harfbuzz/api-index-2-1-0.html
 %%DOCS%%share/gtk-doc/html/harfbuzz/api-index-2-2-0.html
