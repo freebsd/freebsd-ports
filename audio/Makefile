@@ -749,6 +749,7 @@
     SUBDIR += soundtouch
     SUBDIR += soundtracker
     SUBDIR += sox
+    SUBDIR += sox-noise
     SUBDIR += spc2it
     SUBDIR += spectacle-lv2
     SUBDIR += spectmorph
