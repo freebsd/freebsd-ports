@@ -34,7 +34,6 @@ lib/libexec/kf6/purposeprocess
 %%QT_PLUGINDIR%%/kf6/purpose/reviewboardplugin.so
 %%QT_PLUGINDIR%%/kf6/purpose/saveasplugin.so
 %%QT_PLUGINDIR%%/kf6/purpose/telegramplugin.so
-%%QT_PLUGINDIR%%/kf6/purpose/twitterplugin.so
 %%QT_QMLDIR%%/org/kde/purpose/AlternativesView.qml
 %%QT_QMLDIR%%/org/kde/purpose/JobView.qml
 %%QT_QMLDIR%%/org/kde/purpose/kde-qmlmodule.version

@@ -264,6 +264,7 @@ lib/libkuriikwsfiltereng_private.so
 %%QT_PLUGINDIR%%/kf6/kio/kio_http.so
 %%QT_PLUGINDIR%%/kf6/kio/kio_remote.so
 %%QT_PLUGINDIR%%/kf6/kio/kio_trash.so
+%%QT_PLUGINDIR%%/kf6/kio_dnd/dropintonewfolder.so
 %%QT_PLUGINDIR%%/kf6/kiod/kioexecd.so
 %%QT_PLUGINDIR%%/kf6/kiod/kpasswdserver.so
 %%QT_PLUGINDIR%%/kf6/kiod/kssld.so
@@ -553,6 +554,7 @@ share/kf6/searchproviders/bing.desktop
 share/kf6/searchproviders/boo.desktop
 share/kf6/searchproviders/bug.desktop
 share/kf6/searchproviders/call.desktop
+share/kf6/searchproviders/caniuse.desktop
 share/kf6/searchproviders/cia.desktop
 share/kf6/searchproviders/citeseer.desktop
 share/kf6/searchproviders/codeberg.desktop
@@ -568,6 +570,7 @@ share/kf6/searchproviders/deb.desktop
 share/kf6/searchproviders/deepl.desktop
 share/kf6/searchproviders/dictfr.desktop
 share/kf6/searchproviders/docbook.desktop
+share/kf6/searchproviders/dockerhub.desktop
 share/kf6/searchproviders/doi.desktop
 share/kf6/searchproviders/duckduckgo.desktop
 share/kf6/searchproviders/duckduckgo_info.desktop
@@ -627,6 +630,7 @@ share/kf6/searchproviders/learncpp.desktop
 share/kf6/searchproviders/leo.desktop
 share/kf6/searchproviders/linguee.desktop
 share/kf6/searchproviders/magnatune.desktop
+share/kf6/searchproviders/mdn.desktop
 share/kf6/searchproviders/metacrawler.desktop
 share/kf6/searchproviders/microsoft_cpp.desktop
 share/kf6/searchproviders/msdn.desktop
@@ -637,8 +641,10 @@ share/kf6/searchproviders/multitran-frru.desktop
 share/kf6/searchproviders/multitran-itru.desktop
 share/kf6/searchproviders/multitran-nlru.desktop
 share/kf6/searchproviders/netcraft.desktop
+share/kf6/searchproviders/nixpkgs.desktop
 share/kf6/searchproviders/nl-telephone.desktop
 share/kf6/searchproviders/nl-teletekst.desktop
+share/kf6/searchproviders/npm.desktop
 share/kf6/searchproviders/opendesktop.desktop
 share/kf6/searchproviders/opensuse.desktop
 share/kf6/searchproviders/pgpkeys.desktop

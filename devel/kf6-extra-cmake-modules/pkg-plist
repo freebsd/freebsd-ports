@@ -84,6 +84,7 @@ share/ECM/modules/ECMGeneratePriFile.cmake
 share/ECM/modules/ECMGeneratePythonBindings.cmake
 share/ECM/modules/ECMGeneratePythonBindings.toml.in
 share/ECM/modules/ECMGeneratePythonBindings.toml.in.license
+share/ECM/modules/ECMGenerateQDoc.cmake
 share/ECM/modules/ECMGenerateQmlTypes.cmake
 share/ECM/modules/ECMInstallIcons.cmake
 share/ECM/modules/ECMMarkAsTest.cmake

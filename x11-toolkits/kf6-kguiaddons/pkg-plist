@@ -45,7 +45,6 @@ lib/libKF6GuiAddons.so.%%KDE_FRAMEWORKS_VERSION%%
 libdata/pkgconfig/KF6GuiAddons.pc
 share/applications/google-maps-geo-handler.desktop
 share/applications/openstreetmap-geo-handler.desktop
-share/applications/qwant-maps-geo-handler.desktop
 share/applications/wheelmap-geo-handler.desktop
 share/qlogging-categories6/kguiaddons.categories
 %%QT_QMLDIR%%/org/kde/guiaddons/kde-qmlmodule.version
