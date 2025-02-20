@@ -9,11 +9,8 @@ WWW=		https://cran.r-project.org/web/packages/matrixStats/
 
 LICENSE=	ART20
 
-USES=		cran:auto-plist,compiles
+TEST_DEPENDS=	R-cran-R.rsp>0:textproc/R-cran-R.rsp
 
-pre-test:
-# R-cran-R.rsp package does not exist yet
-	@${LOCALBASE}/bin/Rscript -e 'install.packages("R.rsp", \
-		repos = "https://cloud.r-project.org")'
+USES=		cran:auto-plist,compiles
 
 .include <bsd.port.mk>
