@@ -5,7 +5,7 @@
  find_package(PlasmaWaylandProtocols REQUIRED)
  find_package(LayerShellQt REQUIRED)
 -find_package(KPipeWire)
-+option(DISABLE_PIPEWIRE "Disable PipeWire support." OFF)
++option(DISABLE_PIPEWIRE "Disable PipeWire support." ON)
 +if(NOT DISABLE_PIPEWIRE)
 +    find_package(KPipeWire REQUIRED)
 +    set(PIPEWIRE_FOUND 1)
