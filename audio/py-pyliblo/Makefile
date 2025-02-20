@@ -13,6 +13,9 @@ WWW=		https://das.nasophon.de/pyliblo/ \
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Upstream is inactive for over 9 years
+EXPIRATION_DATE=2025-03-31
+
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 LIB_DEPENDS=	liblo.so:audio/liblo
