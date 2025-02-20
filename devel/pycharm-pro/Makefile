@@ -1,10 +1,10 @@
 PORTNAME=	pycharm-pro
-DISTVERSION=	2024.2.3
+DISTVERSION=	2024.3.3
 CATEGORIES=	devel java python
 MASTER_SITES=	https://download.jetbrains.com/python/
 DISTNAME=	pycharm-professional-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	rm@FreeBSD.org
 COMMENT=	JetBrains PyCharm Professional Edition IDE
 WWW=		https://www.jetbrains.com/pycharm/
 
