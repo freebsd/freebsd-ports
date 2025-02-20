@@ -1,6 +1,6 @@
---- chrome/browser/supervised_user/supervised_user_navigation_throttle.cc.orig	2025-01-15 09:18:26 UTC
+--- chrome/browser/supervised_user/supervised_user_navigation_throttle.cc.orig	2025-02-19 07:43:18 UTC
 +++ chrome/browser/supervised_user/supervised_user_navigation_throttle.cc
-@@ -215,7 +215,7 @@ void SupervisedUserNavigationThrottle::OnInterstitialR
+@@ -208,7 +208,7 @@ void SupervisedUserNavigationThrottle::OnInterstitialR
      case kCancelWithInterstitial: {
        CHECK(navigation_handle());
  // LINT.IfChange(cancel_with_interstitial)
@@ -9,7 +9,7 @@
        if (supervised_user::ShouldShowReAuthInterstitial(*navigation_handle(),
                                                          is_main_frame)) {
          // Show the re-authentication interstitial if the user signed out of
-@@ -246,7 +246,7 @@ void SupervisedUserNavigationThrottle::OnInterstitialR
+@@ -239,7 +239,7 @@ void SupervisedUserNavigationThrottle::OnInterstitialR
  }
  
  namespace supervised_user {

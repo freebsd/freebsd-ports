@@ -1,20 +1,11 @@
---- content/common/features.h.orig	2025-01-15 09:18:26 UTC
+--- content/common/features.h.orig	2025-02-19 07:43:18 UTC
 +++ content/common/features.h
-@@ -35,7 +35,7 @@ CONTENT_EXPORT BASE_DECLARE_FEATURE(kDeviceMonitorMac)
+@@ -29,7 +29,7 @@ CONTENT_EXPORT BASE_DECLARE_FEATURE(kCommittedOriginEn
+ CONTENT_EXPORT BASE_DECLARE_FEATURE(kCommittedOriginTracking);
+ CONTENT_EXPORT BASE_DECLARE_FEATURE(kCriticalClientHint);
  CONTENT_EXPORT BASE_DECLARE_FEATURE(kDocumentPolicyNegotiation);
- CONTENT_EXPORT BASE_DECLARE_FEATURE(
-     kEnableBackForwardCacheForOngoingSubframeNavigation);
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
  CONTENT_EXPORT BASE_DECLARE_FEATURE(kEnableDevToolsJsErrorReporting);
  #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
  CONTENT_EXPORT BASE_DECLARE_FEATURE(kEmbeddingRequiresOptIn);
-@@ -79,7 +79,7 @@ CONTENT_EXPORT extern const base::FeatureParam<int>
- CONTENT_EXPORT BASE_DECLARE_FEATURE(kGpuInfoCollectionSeparatePrefetch);
- #endif
- CONTENT_EXPORT BASE_DECLARE_FEATURE(kGroupNIKByJoiningOrigin);
--#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
-+#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
- CONTENT_EXPORT BASE_DECLARE_FEATURE(kHandleChildThreadTypeChangesInBrowser);
- #endif
- #if BUILDFLAG(IS_ANDROID)

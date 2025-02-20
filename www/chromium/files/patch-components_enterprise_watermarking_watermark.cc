@@ -1,6 +1,6 @@
---- components/enterprise/watermarking/watermark.cc.orig	2024-10-22 08:31:56 UTC
+--- components/enterprise/watermarking/watermark.cc.orig	2025-02-19 07:43:18 UTC
 +++ components/enterprise/watermarking/watermark.cc
-@@ -34,7 +34,7 @@ gfx::Font WatermarkFont() {
+@@ -31,7 +31,7 @@ gfx::Font WatermarkFont() {
        "Segoe UI",
  #elif BUILDFLAG(IS_MAC)
        "SF Pro Text",
@@ -9,7 +9,7 @@
        "Ubuntu",
  #elif BUILDFLAG(IS_CHROMEOS)
        "Google Sans",
-@@ -45,7 +45,7 @@ gfx::Font WatermarkFont() {
+@@ -47,7 +47,7 @@ const gfx::FontList& WatermarkFontList() {
  }
  
  gfx::Font::Weight WatermarkFontWeight() {

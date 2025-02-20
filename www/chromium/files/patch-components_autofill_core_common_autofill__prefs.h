@@ -1,6 +1,6 @@
---- components/autofill/core/common/autofill_prefs.h.orig	2024-10-22 08:31:56 UTC
+--- components/autofill/core/common/autofill_prefs.h.orig	2025-02-19 07:43:18 UTC
 +++ components/autofill/core/common/autofill_prefs.h
-@@ -73,7 +73,7 @@ inline constexpr char kAutofillPaymentCvcStorage[] =
+@@ -74,7 +74,7 @@ inline constexpr char kAutofillPaymentCvcStorage[] =
  inline constexpr char kAutofillPaymentCardBenefits[] =
      "autofill.payment_card_benefits";
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \

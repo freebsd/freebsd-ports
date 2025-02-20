@@ -1,6 +1,6 @@
---- chrome/browser/ui/views/tabs/tab_drag_controller.cc.orig	2025-01-15 09:18:26 UTC
+--- chrome/browser/ui/views/tabs/tab_drag_controller.cc.orig	2025-02-19 07:43:18 UTC
 +++ chrome/browser/ui/views/tabs/tab_drag_controller.cc
-@@ -211,7 +211,7 @@ bool IsWindowDragUsingSystemDragDropAllowed() {
+@@ -213,7 +213,7 @@ bool IsWindowDragUsingSystemDragDropAllowed() {
  
  void UpdateSystemDnDDragImage(TabDragContext* attached_context,
                                const gfx::ImageSkia& image) {
@@ -9,7 +9,7 @@
    aura::Window* root_window =
        attached_context->GetWidget()->GetNativeWindow()->GetRootWindow();
    if (aura::client::GetDragDropClient(root_window)) {
-@@ -411,7 +411,7 @@ TabDragController::Liveness TabDragController::Init(
+@@ -415,7 +415,7 @@ TabDragController::Liveness TabDragController::Init(
    //     synchronous on desktop Linux, so use that.
    // - ChromeOS Ash
    //     Releasing capture on Ash cancels gestures so avoid it.
@@ -18,26 +18,26 @@
    ref->can_release_capture_ = false;
  #endif
    ref->start_point_in_screen_ =
-@@ -1015,7 +1015,7 @@ TabDragController::DragBrowserToNewTabStrip(TabDragCon
-     else
+@@ -990,7 +990,7 @@ TabDragController::DragBrowserToNewTabStrip(TabDragCon
        SetCapture(target_context);
+     }
  
 -#if !BUILDFLAG(IS_LINUX)
-+#if !BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
++#if !BUILDFLAG(IS_LINUX) && !BUILDFLAG(IS_BSD)
      // EndMoveLoop is going to snap the window back to its original location.
      // Hide it so users don't see this. Hiding a window in Linux aura causes
      // it to lose capture so skip it.
-@@ -2078,7 +2078,7 @@ void TabDragController::CompleteDrag() {
-       }
+@@ -2058,7 +2058,7 @@ void TabDragController::CompleteDrag() {
+     }
  
-       // If source window was maximized - maximize the new window as well.
+     // If source window was maximized - maximize the new window as well.
 -#if !BUILDFLAG(IS_WIN) && !BUILDFLAG(IS_LINUX) && !BUILDFLAG(IS_MAC)
 +#if !BUILDFLAG(IS_WIN) && !BUILDFLAG(IS_LINUX) && !BUILDFLAG(IS_MAC) && !BUILDFLAG(IS_BSD)
-       // Keeping maximized state breaks snap to Grid on Windows when dragging
-       // tabs from maximized windows. TODO:(crbug.com/727051) Explore doing this
-       // for other desktop OS's. kMaximizedStateRetainedOnTabDrag in
-@@ -2526,7 +2526,7 @@ TabDragController::Liveness TabDragController::GetLoca
-       exclude.insert(dragged_window);
+     // Keeping maximized state breaks snap to Grid on Windows when dragging
+     // tabs from maximized windows. TODO:(crbug.com/727051) Explore doing this
+     // for other desktop OS's. kMaximizedStateRetainedOnTabDrag in
+@@ -2532,7 +2532,7 @@ TabDragController::Liveness TabDragController::GetLoca
+     }
    }
  
 -#if BUILDFLAG(IS_LINUX)

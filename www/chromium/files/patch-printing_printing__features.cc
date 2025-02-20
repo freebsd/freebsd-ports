@@ -1,4 +1,4 @@
---- printing/printing_features.cc.orig	2025-01-15 09:18:26 UTC
+--- printing/printing_features.cc.orig	2025-02-19 07:43:18 UTC
 +++ printing/printing_features.cc
 @@ -21,12 +21,12 @@ BASE_FEATURE(kAddPrinterViaPrintscanmgr,
               base::FEATURE_ENABLED_BY_DEFAULT);
@@ -15,3 +15,12 @@
               base::FEATURE_DISABLED_BY_DEFAULT
  #else
               base::FEATURE_ENABLED_BY_DEFAULT
+@@ -69,7 +69,7 @@ BASE_FEATURE(kUseXpsForPrintingFromPdf,
+ // out-of-process.
+ BASE_FEATURE(kEnableOopPrintDrivers,
+              "EnableOopPrintDrivers",
+-#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_BSD)
+              base::FEATURE_ENABLED_BY_DEFAULT
+ #else
+              base::FEATURE_DISABLED_BY_DEFAULT

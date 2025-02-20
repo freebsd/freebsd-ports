@@ -1,6 +1,6 @@
---- components/password_manager/core/browser/password_manager_client.h.orig	2024-11-14 07:57:23 UTC
+--- components/password_manager/core/browser/password_manager_client.h.orig	2025-02-19 07:43:18 UTC
 +++ components/password_manager/core/browser/password_manager_client.h
-@@ -30,7 +30,7 @@
+@@ -31,7 +31,7 @@
  #include "net/cert/cert_status_flags.h"
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || \
@@ -9,12 +9,12 @@
  #include "base/i18n/rtl.h"
  #include "components/password_manager/core/browser/password_cross_domain_confirmation_popup_controller.h"
  #include "ui/gfx/geometry/rect_f.h"
-@@ -551,7 +551,7 @@ class PasswordManagerClient {
+@@ -559,7 +559,7 @@ class PasswordManagerClient {
        CredentialsCallback callback);
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || \
 -    BUILDFLAG(IS_CHROMEOS)
 +    BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
- 
    // Shows the bubble with the details of the `form`.
    virtual void OpenPasswordDetailsBubble(
+       const password_manager::PasswordForm& form) = 0;

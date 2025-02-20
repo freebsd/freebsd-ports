@@ -1,4 +1,4 @@
---- media/capture/video/linux/v4l2_capture_delegate.cc.orig	2025-01-15 09:18:26 UTC
+--- media/capture/video/linux/v4l2_capture_delegate.cc.orig	2025-02-19 07:43:18 UTC
 +++ media/capture/video/linux/v4l2_capture_delegate.cc
 @@ -5,8 +5,10 @@
  #include "media/capture/video/linux/v4l2_capture_delegate.h"
@@ -145,7 +145,7 @@
        if (use_gpu_buffer_) {
          v4l2_gpu_helper_->OnIncomingCapturedData(
              client_.get(), buffer_tracker->start(),
-@@ -1220,7 +1240,7 @@ void V4L2CaptureDelegate::SetErrorState(VideoCaptureEr
+@@ -1221,7 +1241,7 @@ void V4L2CaptureDelegate::SetErrorState(VideoCaptureEr
    client_->OnError(error, from_here, reason);
  }
  

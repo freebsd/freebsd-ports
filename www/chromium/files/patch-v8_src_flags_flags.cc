@@ -1,4 +1,4 @@
---- v8/src/flags/flags.cc.orig	2025-01-15 09:18:26 UTC
+--- v8/src/flags/flags.cc.orig	2025-02-19 07:43:18 UTC
 +++ v8/src/flags/flags.cc
 @@ -16,6 +16,10 @@
  #include <set>
@@ -8,7 +8,7 @@
 +#include <sys/mman.h>
 +#endif
 +
- #include "src/base/functional.h"
+ #include "src/base/hashing.h"
  #include "src/base/lazy-instance.h"
  #include "src/base/platform/platform.h"
 @@ -816,6 +820,10 @@ void FlagList::FreezeFlags() {

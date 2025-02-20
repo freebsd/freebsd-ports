@@ -1,6 +1,6 @@
---- chrome/common/pref_names.h.orig	2025-01-15 09:18:26 UTC
+--- chrome/common/pref_names.h.orig	2025-02-19 07:43:18 UTC
 +++ chrome/common/pref_names.h
-@@ -1353,7 +1353,7 @@ inline constexpr char kUseAshProxy[] = "lacros.proxy.u
+@@ -1356,7 +1356,7 @@ inline constexpr char kUseAshProxy[] = "lacros.proxy.u
  
  // TODO(crbug.com/40118868): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
@@ -9,7 +9,7 @@
  // Linux specific preference on whether we should match the system theme.
  inline constexpr char kSystemTheme[] = "extensions.theme.system_theme";
  #endif
-@@ -1530,7 +1530,7 @@ inline constexpr char kShowUpdatePromotionInfoBar[] =
+@@ -1533,7 +1533,7 @@ inline constexpr char kShowUpdatePromotionInfoBar[] =
      "browser.show_update_promotion_info_bar";
  #endif
  
@@ -18,7 +18,7 @@
  // Boolean that is false if we should show window manager decorations.  If
  // true, we draw a custom chrome frame (thicker title bar and blue border).
  inline constexpr char kUseCustomChromeFrame[] = "browser.custom_chrome_frame";
-@@ -2146,7 +2146,7 @@ inline constexpr char kDownloadDefaultDirectory[] =
+@@ -2147,7 +2147,7 @@ inline constexpr char kDownloadDefaultDirectory[] =
  inline constexpr char kDownloadDirUpgraded[] = "download.directory_upgrade";
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || \
@@ -27,7 +27,7 @@
  inline constexpr char kOpenPdfDownloadInSystemReader[] =
      "download.open_pdf_in_system_reader";
  #endif
-@@ -2599,14 +2599,14 @@ inline constexpr char kMediaStorageIdSalt[] = "media.s
+@@ -2608,14 +2608,14 @@ inline constexpr char kMediaStorageIdSalt[] = "media.s
  inline constexpr char kMediaCdmOriginData[] = "media.cdm.origin_data";
  #endif  // BUILDFLAG(IS_WIN)
  
@@ -44,16 +44,16 @@
  // Records whether the user has seen an HTTP auth "negotiate" header.
  inline constexpr char kReceivedHttpAuthNegotiateHeader[] =
      "net.received_http_auth_negotiate_headers";
-@@ -2684,7 +2684,7 @@ inline constexpr char kAmbientAuthenticationInPrivateM
- inline constexpr char kBasicAuthOverHttpEnabled[] =
-     "auth.basic_over_http_enabled";
+@@ -2707,7 +2707,7 @@ inline constexpr char kIsolatedWebAppInstallForceList[
+ inline constexpr char kIsolatedWebAppPendingInitializationCount[] =
+     "profile.isolated_web_app.install.pending_initialization_count";
  
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_CHROMEOS)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
  // Boolean that specifies whether OK-AS-DELEGATE flag from KDC is respected
  // along with kAuthNegotiateDelegateAllowlist.
  inline constexpr char kAuthNegotiateDelegateByKdcPolicy[] =
-@@ -3225,7 +3225,7 @@ inline constexpr char kDeviceWeeklyScheduledSuspend[] 
+@@ -3236,7 +3236,7 @@ inline constexpr char kDeviceWeeklyScheduledSuspend[] 
  #endif  // BUILDFLAG(IS_CHROMEOS)
  
  #if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN) || \
@@ -62,7 +62,7 @@
  // Defines administrator-set availability of Chrome for Testing.
  inline constexpr char kChromeForTestingAllowed[] = "chrome_for_testing.allowed";
  #endif
-@@ -3818,7 +3818,7 @@ inline constexpr char kScreenCaptureWithoutGestureAllo
+@@ -3834,7 +3834,7 @@ inline constexpr char kScreenCaptureWithoutGestureAllo
  inline constexpr char kSandboxExternalProtocolBlocked[] =
      "profile.sandbox_external_protocol_blocked";
  
@@ -71,7 +71,7 @@
  // Boolean that indicates if system notifications are allowed to be used in
  // place of Chrome notifications.
  inline constexpr char kAllowSystemNotifications[] =
-@@ -4085,7 +4085,7 @@ inline constexpr char kLensDesktopNTPSearchEnabled[] =
+@@ -4030,7 +4030,7 @@ inline constexpr char kLensDesktopNTPSearchEnabled[] =
      "policy.lens_desktop_ntp_search_enabled";
  #endif
  
@@ -80,7 +80,7 @@
  // A dict mapping the edition name with the major version it was shown.
  inline constexpr char kWhatsNewEditionUsed[] = "browser.whats_new.edition_used";
  // A list containing the features of each module in order of when they
-@@ -4179,7 +4179,7 @@ inline constexpr char kPrintingOAuth2AuthorizationServ
+@@ -4124,7 +4124,7 @@ inline constexpr char kPrintingOAuth2AuthorizationServ
      "printing.oauth2_authorization_servers";
  #endif
  

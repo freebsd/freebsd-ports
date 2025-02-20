@@ -1,6 +1,6 @@
---- ui/ozone/platform/wayland/ozone_platform_wayland.cc.orig	2025-01-15 09:18:26 UTC
+--- ui/ozone/platform/wayland/ozone_platform_wayland.cc.orig	2025-02-19 07:43:18 UTC
 +++ ui/ozone/platform/wayland/ozone_platform_wayland.cc
-@@ -69,13 +69,13 @@
+@@ -66,13 +66,13 @@
  #include "ui/events/ozone/layout/stub/stub_keyboard_layout_engine.h"
  #endif
  
@@ -16,7 +16,7 @@
  #include "ui/ozone/platform/wayland/host/linux_ui_delegate_wayland.h"
  #endif
  
-@@ -295,7 +295,7 @@ class OzonePlatformWayland : public OzonePlatform,
+@@ -292,7 +292,7 @@ class OzonePlatformWayland : public OzonePlatform,
  
      buffer_manager_connector_ = std::make_unique<WaylandBufferManagerConnector>(
          connection_->buffer_manager_host());
@@ -25,7 +25,7 @@
      cursor_factory_ = std::make_unique<WaylandCursorFactory>(connection_.get());
  #else
      cursor_factory_ = std::make_unique<BitmapCursorFactory>();
-@@ -305,7 +305,7 @@ class OzonePlatformWayland : public OzonePlatform,
+@@ -302,7 +302,7 @@ class OzonePlatformWayland : public OzonePlatform,
  
      supported_buffer_formats_ =
          connection_->buffer_manager_host()->GetSupportedBufferFormats();
@@ -34,16 +34,7 @@
      linux_ui_delegate_ =
          std::make_unique<LinuxUiDelegateWayland>(connection_.get());
  #endif
-@@ -371,7 +371,7 @@ class OzonePlatformWayland : public OzonePlatform,
-       properties->supports_global_screen_coordinates =
-           kDefaultScreenCoordinateEnabled;
- 
--#if BUILDFLAG(IS_LINUX)
-+#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
-       // TODO(crbug.com/40800718): Revisit (and maybe remove) once proper
-       // support, probably backed by org.freedesktop.portal.Screenshot.PickColor
-       // API is implemented. Note: this is restricted to Linux Desktop as Lacros
-@@ -573,7 +573,7 @@ class OzonePlatformWayland : public OzonePlatform,
+@@ -543,7 +543,7 @@ class OzonePlatformWayland : public OzonePlatform,
    DrmRenderNodePathFinder path_finder_;
  #endif
  

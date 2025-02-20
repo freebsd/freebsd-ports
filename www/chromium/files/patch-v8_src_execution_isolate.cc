@@ -1,6 +1,6 @@
---- v8/src/execution/isolate.cc.orig	2025-01-15 09:18:26 UTC
+--- v8/src/execution/isolate.cc.orig	2025-02-19 07:43:18 UTC
 +++ v8/src/execution/isolate.cc
-@@ -170,6 +170,10 @@
+@@ -171,6 +171,10 @@
  #include "src/execution/simulator-base.h"
  #endif
  
@@ -11,7 +11,7 @@
  extern "C" const uint8_t v8_Default_embedded_blob_code_[];
  extern "C" uint32_t v8_Default_embedded_blob_code_size_;
  extern "C" const uint8_t v8_Default_embedded_blob_data_[];
-@@ -4989,6 +4993,13 @@ void Isolate::InitializeDefaultEmbeddedBlob() {
+@@ -5045,6 +5049,13 @@ void Isolate::InitializeDefaultEmbeddedBlob() {
    uint32_t code_size = DefaultEmbeddedBlobCodeSize();
    const uint8_t* data = DefaultEmbeddedBlobData();
    uint32_t data_size = DefaultEmbeddedBlobDataSize();
@@ -24,4 +24,4 @@
 +#endif
  
    if (StickyEmbeddedBlobCode() != nullptr) {
-     base::MutexGuard guard(current_embedded_blob_refcount_mutex_.Pointer());
+     base::SpinningMutexGuard guard(

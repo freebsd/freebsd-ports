@@ -1,15 +1,6 @@
---- gpu/config/gpu_control_list.cc.orig	2025-01-15 09:18:26 UTC
+--- gpu/config/gpu_control_list.cc.orig	2025-02-19 07:43:18 UTC
 +++ gpu/config/gpu_control_list.cc
-@@ -276,7 +276,7 @@ bool GpuControlList::More::GLVersionInfoMismatch(
- GpuControlList::GLType GpuControlList::More::GetDefaultGLType() {
- #if BUILDFLAG(IS_CHROMEOS)
-   return kGLTypeGL;
--#elif BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_OPENBSD)
-+#elif BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
-   return kGLTypeGL;
- #elif BUILDFLAG(IS_MAC)
-   return kGLTypeGL;
-@@ -847,7 +847,7 @@ GpuControlList::OsType GpuControlList::GetOsType() {
+@@ -831,7 +831,7 @@ GpuControlList::OsType GpuControlList::GetOsType() {
    return kOsAndroid;
  #elif BUILDFLAG(IS_FUCHSIA)
    return kOsFuchsia;

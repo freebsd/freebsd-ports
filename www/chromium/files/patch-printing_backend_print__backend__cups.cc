@@ -1,6 +1,6 @@
---- printing/backend/print_backend_cups.cc.orig	2024-11-14 07:57:23 UTC
+--- printing/backend/print_backend_cups.cc.orig	2025-02-19 07:43:18 UTC
 +++ printing/backend/print_backend_cups.cc
-@@ -33,7 +33,7 @@
+@@ -29,7 +29,7 @@
  #include "printing/mojom/print.mojom.h"
  #include "url/gurl.h"
  
@@ -9,7 +9,7 @@
  #include "base/feature_list.h"
  #include "printing/backend/cups_connection.h"
  #include "printing/backend/print_backend_cups_ipp.h"
-@@ -63,7 +63,7 @@ int CaptureCupsDestCallback(void* data, unsigned flags
+@@ -59,7 +59,7 @@ int CaptureCupsDestCallback(void* data, unsigned flags
    return 1;  // Keep going.
  }
  

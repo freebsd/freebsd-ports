@@ -1,6 +1,6 @@
---- content/browser/renderer_host/render_widget_host_view_aura.cc.orig	2025-01-15 09:18:26 UTC
+--- content/browser/renderer_host/render_widget_host_view_aura.cc.orig	2025-02-19 07:43:18 UTC
 +++ content/browser/renderer_host/render_widget_host_view_aura.cc
-@@ -122,7 +122,7 @@
+@@ -121,7 +121,7 @@
  #include "ui/gfx/gdi_util.h"
  #endif  // BUILDFLAG(IS_WIN)
  
@@ -9,7 +9,7 @@
  #include "ui/accessibility/platform/browser_accessibility_auralinux.h"
  #include "ui/base/ime/linux/text_edit_command_auralinux.h"
  #include "ui/base/ime/text_input_flags.h"
-@@ -485,7 +485,7 @@ gfx::NativeViewAccessible RenderWidgetHostViewAura::Ge
+@@ -478,7 +478,7 @@ gfx::NativeViewAccessible RenderWidgetHostViewAura::Ge
      return ToBrowserAccessibilityWin(manager->GetBrowserAccessibilityRoot())
          ->GetCOM();
  
@@ -18,7 +18,7 @@
    ui::BrowserAccessibilityManager* manager =
        host()->GetOrCreateRootBrowserAccessibilityManager();
    if (manager && manager->GetBrowserAccessibilityRoot())
-@@ -1773,7 +1773,7 @@ bool RenderWidgetHostViewAura::ShouldDoLearning() {
+@@ -1852,7 +1852,7 @@ bool RenderWidgetHostViewAura::ShouldDoLearning() {
    return host() && host()->delegate() && host()->delegate()->ShouldDoLearning();
  }
  
@@ -27,16 +27,16 @@
  bool RenderWidgetHostViewAura::SetCompositionFromExistingText(
      const gfx::Range& range,
      const std::vector<ui::ImeTextSpan>& ui_ime_text_spans) {
-@@ -2736,7 +2736,7 @@ bool RenderWidgetHostViewAura::NeedsInputGrab() {
+@@ -2822,7 +2822,7 @@ bool RenderWidgetHostViewAura::NeedsInputGrab() {
  }
  
  bool RenderWidgetHostViewAura::NeedsMouseCapture() {
--#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)
-+#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS) || BUILDFLAG(IS_BSD)
+-#if BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
    return NeedsInputGrab();
  #else
    return false;
-@@ -2920,7 +2920,7 @@ void RenderWidgetHostViewAura::ForwardKeyboardEventWit
+@@ -3006,7 +3006,7 @@ void RenderWidgetHostViewAura::ForwardKeyboardEventWit
    if (!target_host)
      return;
  

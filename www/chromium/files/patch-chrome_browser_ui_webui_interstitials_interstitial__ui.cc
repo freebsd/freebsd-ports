@@ -1,6 +1,6 @@
---- chrome/browser/ui/webui/interstitials/interstitial_ui.cc.orig	2025-01-15 09:18:26 UTC
+--- chrome/browser/ui/webui/interstitials/interstitial_ui.cc.orig	2025-02-19 07:43:18 UTC
 +++ chrome/browser/ui/webui/interstitials/interstitial_ui.cc
-@@ -74,7 +74,7 @@
+@@ -75,7 +75,7 @@
  #include "components/security_interstitials/content/captive_portal_blocking_page.h"
  #endif
  
@@ -9,7 +9,7 @@
  #include "chrome/browser/supervised_user/supervised_user_verification_controller_client.h"
  #include "chrome/browser/supervised_user/supervised_user_verification_page_blocked_sites.h"
  #include "chrome/browser/supervised_user/supervised_user_verification_page_youtube.h"
-@@ -395,7 +395,7 @@ std::unique_ptr<EnterpriseWarnPage> CreateEnterpriseWa
+@@ -400,7 +400,7 @@ std::unique_ptr<EnterpriseWarnPage> CreateEnterpriseWa
                                                         kRequestUrl));
  }
  
@@ -18,7 +18,7 @@
  std::unique_ptr<SupervisedUserVerificationPageForYouTube>
  CreateSupervisedUserVerificationPageForYouTube(
      content::WebContents* web_contents,
-@@ -612,7 +612,7 @@ void InterstitialHTMLSource::StartDataRequest(
+@@ -621,7 +621,7 @@ void InterstitialHTMLSource::StartDataRequest(
      interstitial_delegate = CreateInsecureFormPage(web_contents);
    } else if (path_without_query == "/https_only") {
      interstitial_delegate = CreateHttpsOnlyModePage(web_contents);

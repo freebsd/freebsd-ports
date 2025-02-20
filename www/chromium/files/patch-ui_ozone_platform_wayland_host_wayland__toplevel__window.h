@@ -1,6 +1,6 @@
---- ui/ozone/platform/wayland/host/wayland_toplevel_window.h.orig	2025-01-15 09:18:26 UTC
+--- ui/ozone/platform/wayland/host/wayland_toplevel_window.h.orig	2025-02-19 07:43:18 UTC
 +++ ui/ozone/platform/wayland/host/wayland_toplevel_window.h
-@@ -252,7 +252,7 @@ class WaylandToplevelWindow : public WaylandWindow,
+@@ -183,7 +183,7 @@ class WaylandToplevelWindow : public WaylandWindow,
    // The display ID to switch to in case the state is `kFullscreen`.
    int64_t fullscreen_display_id_ = display::kInvalidDisplayId;
  

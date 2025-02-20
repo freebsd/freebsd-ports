@@ -1,4 +1,4 @@
---- chrome/browser/net/system_network_context_manager.cc.orig	2025-01-15 09:18:26 UTC
+--- chrome/browser/net/system_network_context_manager.cc.orig	2025-02-19 07:43:18 UTC
 +++ chrome/browser/net/system_network_context_manager.cc
 @@ -102,7 +102,7 @@
  
@@ -77,7 +77,7 @@
    if (local_state &&
        local_state->HasPrefPath(prefs::kNetworkServiceSandboxEnabled)) {
      return local_state->GetBoolean(prefs::kNetworkServiceSandboxEnabled)
-@@ -518,7 +518,7 @@ void SystemNetworkContextManager::DeleteInstance() {
+@@ -531,7 +531,7 @@ void SystemNetworkContextManager::DeleteInstance() {
    g_system_network_context_manager = nullptr;
  }
  
@@ -86,7 +86,7 @@
  SystemNetworkContextManager::GssapiLibraryLoadObserver::
      GssapiLibraryLoadObserver(SystemNetworkContextManager* owner)
      : owner_(owner) {}
-@@ -576,7 +576,7 @@ SystemNetworkContextManager::SystemNetworkContextManag
+@@ -589,7 +589,7 @@ SystemNetworkContextManager::SystemNetworkContextManag
    pref_change_registrar_.Add(prefs::kAllHttpAuthSchemesAllowedForOrigins,
                               auth_pref_callback);
  
@@ -95,7 +95,7 @@
    pref_change_registrar_.Add(prefs::kAuthNegotiateDelegateByKdcPolicy,
                               auth_pref_callback);
  #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_CHROMEOS)
-@@ -590,7 +590,7 @@ SystemNetworkContextManager::SystemNetworkContextManag
+@@ -603,7 +603,7 @@ SystemNetworkContextManager::SystemNetworkContextManag
                               auth_pref_callback);
  #endif  // BUILDFLAG(IS_ANDROID)
  
@@ -104,7 +104,7 @@
    pref_change_registrar_.Add(kGssapiDesiredPref, auth_pref_callback);
  #endif  // BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_LINUX)
  
-@@ -661,7 +661,7 @@ void SystemNetworkContextManager::RegisterPrefs(PrefRe
+@@ -674,7 +674,7 @@ void SystemNetworkContextManager::RegisterPrefs(PrefRe
    registry->RegisterBooleanPref(prefs::kKerberosEnabled, false);
  #endif  // BUILDFLAG(IS_CHROMEOS_LACROS)
  
@@ -113,7 +113,7 @@
    registry->RegisterBooleanPref(prefs::kAuthNegotiateDelegateByKdcPolicy,
                                  false);
  #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_CHROMEOS)
-@@ -686,11 +686,11 @@ void SystemNetworkContextManager::RegisterPrefs(PrefRe
+@@ -699,11 +699,11 @@ void SystemNetworkContextManager::RegisterPrefs(PrefRe
  
    registry->RegisterListPref(prefs::kExplicitlyAllowedNetworkPorts);
  
@@ -127,7 +127,7 @@
    registry->RegisterBooleanPref(prefs::kReceivedHttpAuthNegotiateHeader, false);
  #endif  // BUILDFLAG(IS_LINUX)
  
-@@ -743,7 +743,7 @@ void SystemNetworkContextManager::OnNetworkServiceCrea
+@@ -756,7 +756,7 @@ void SystemNetworkContextManager::OnNetworkServiceCrea
    OnNewHttpAuthDynamicParams(http_auth_dynamic_params);
    network_service->ConfigureHttpAuthPrefs(std::move(http_auth_dynamic_params));
  
@@ -136,7 +136,7 @@
    gssapi_library_loader_observer_.Install(network_service);
  #endif  // BUILDFLAG(IS_LINUX)
  
-@@ -966,7 +966,7 @@ bool SystemNetworkContextManager::IsNetworkSandboxEnab
+@@ -975,7 +975,7 @@ bool SystemNetworkContextManager::IsNetworkSandboxEnab
        break;
    }
  
