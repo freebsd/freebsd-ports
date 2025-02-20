@@ -81,8 +81,8 @@ install_mailer_conf() {
 	mailerconf=$1
 	echo "Activate Postfix in ${mailerconf}"
 	if [ "${USE_LOCALBASE_MAILER_CONF}" = "yes" ]; then
-		[ -d "${PKGROOT}/%%LOCALBASE%%/etc/mail" ] || \
-			mkdir -p "${PKGROOT}/%%LOCALBASE%%/etc/mail"
+		[ -d "${PKG_ROOTDIR}/%%LOCALBASE%%/etc/mail" ] || \
+			mkdir -p "${PKG_ROOTDIR}/%%LOCALBASE%%/etc/mail"
 	fi
 	[ -f ${mailerconf} ] && mv -f ${mailerconf} ${mailerconf}.old
 	install -m 644 ${MC_TEMPLATE} ${mailerconf}
