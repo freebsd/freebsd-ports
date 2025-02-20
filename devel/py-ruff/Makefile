@@ -1,5 +1,5 @@
 PORTNAME=	ruff
-DISTVERSION=	0.9.5
+DISTVERSION=	0.9.6
 CATEGORIES=	devel python
 #MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -66,12 +66,12 @@ CARGO_CRATES=	adler2-2.0.0 \
 		ciborium-0.2.2 \
 		ciborium-io-0.2.2 \
 		ciborium-ll-0.2.2 \
-		clap-4.5.27 \
+		clap-4.5.28 \
 		clap_builder-4.5.27 \
 		clap_complete-4.5.44 \
 		clap_complete_command-0.6.1 \
 		clap_complete_nushell-4.5.5 \
-		clap_derive-4.5.24 \
+		clap_derive-4.5.28 \
 		clap_lex-0.7.4 \
 		clearscreen-4.0.1 \
 		codspeed-2.7.2 \
@@ -287,7 +287,7 @@ CARGO_CRATES=	adler2-2.0.0 \
 		ron-0.7.1 \
 		rust-stemmers-1.2.0 \
 		rustc-hash-1.1.0 \
-		rustc-hash-2.1.0 \
+		rustc-hash-2.1.1 \
 		rustix-0.38.44 \
 		rustversion-1.0.19 \
 		ryu-1.0.19 \
@@ -319,8 +319,8 @@ CARGO_CRATES=	adler2-2.0.0 \
 		static_assertions-1.1.0 \
 		strip-ansi-escapes-0.2.1 \
 		strsim-0.11.1 \
-		strum-0.26.3 \
-		strum_macros-0.26.4 \
+		strum-0.27.0 \
+		strum_macros-0.27.0 \
 		syn-1.0.109 \
 		syn-2.0.98 \
 		synstructure-0.13.1 \
@@ -344,7 +344,7 @@ CARGO_CRATES=	adler2-2.0.0 \
 		tinytemplate-1.2.1 \
 		tinyvec-1.8.1 \
 		tinyvec_macros-0.1.1 \
-		toml-0.8.19 \
+		toml-0.8.20 \
 		toml_datetime-0.6.8 \
 		toml_edit-0.22.23 \
 		tracing-0.1.41 \
@@ -377,8 +377,8 @@ CARGO_CRATES=	adler2-2.0.0 \
 		utf8-width-0.1.7 \
 		utf8_iter-1.0.4 \
 		utf8parse-0.2.2 \
-		uuid-1.12.1 \
-		uuid-macro-internal-1.12.1 \
+		uuid-1.13.1 \
+		uuid-macro-internal-1.13.1 \
 		valuable-0.1.1 \
 		version-ranges-0.1.1 \
 		version_check-0.9.5 \
