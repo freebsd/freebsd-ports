@@ -1,5 +1,5 @@
 PORTNAME=	rubocop-rspec
-PORTVERSION=	3.4.0
+PORTVERSION=	3.5.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -11,7 +11,8 @@ WWW=		https://docs.rubocop.org/rubocop-rspec/ \
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/MIT-LICENSE.md
 
-RUN_DEPENDS=	rubygem-rubocop>=1.61<2:devel/rubygem-rubocop
+RUN_DEPENDS=	rubygem-lint_roller>=1.1<2:devel/rubygem-lint_roller \
+		rubygem-rubocop>=1.72.1<2:devel/rubygem-rubocop
 
 USES=		gem
 
