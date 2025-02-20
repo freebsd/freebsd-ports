@@ -1,6 +1,6 @@
 PORTNAME=	avahi
 PORTVERSION=	0.8
-PORTREVISION?=	2	# don't delete, reset to 0, check slave ports
+PORTREVISION?=	3	# don't delete, reset to 0, check slave ports
 CATEGORIES?=	net dns
 MASTER_SITES=	http://www.avahi.org/download/
 PKGNAMESUFFIX?=	-app
@@ -25,12 +25,11 @@ LIB_DEPENDS?=	libexpat.so:textproc/expat2 \
 USERS?=		${PORTNAME}
 GROUPS?=	${USERS}
 
-USES+=		alias cpe gettext gmake gnome libtool pathfix pkgconfig
+USES+=		autoreconf alias cpe gettext gmake gnome libtool pathfix pkgconfig
 USE_GNOME+=	glib20 intltool introspection:build
 USE_GNOME_SUBR=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS?=--with-distro=freebsd \
 		--with-dbus-system-socket=unix:path=/var/run/dbus/system_bus_socket \
 		--enable-introspection=yes \
@@ -132,6 +131,9 @@ avahi-pre-su-install:
 post-install: avahi-post-install
 
 avahi-post-install:
+	@${RMDIR} ${STAGEDIR}/run
+	${MV} ${STAGEDIR}${PREFIX}/etc/rc.d/avahi-daemon.sh ${STAGEDIR}${PREFIX}/etc/rc.d/avahi-daemon
+	${MV} ${STAGEDIR}${PREFIX}/etc/rc.d/avahi-dnsconfd.sh ${STAGEDIR}${PREFIX}/etc/rc.d/avahi-dnsconfd
 .if defined(MANPAGES) && ${AVAHI_SLAVE} != gtk
 .for f in ${MANPAGES}
 	${INSTALL_DATA} ${WRKSRC}/man/${f} ${STAGEDIR}${PREFIX}/share/man/man${f:E}/${f}
