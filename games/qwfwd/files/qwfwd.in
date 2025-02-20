@@ -9,11 +9,11 @@
 # qwfwd_(instance_)?enable (bool):	Set to "NO" by default.
 #					Set it to "YES" to enable qwfwd.
 # qwfwd_(instance_)?args (str):		Custom additional arguments to be passed
-#					to ${__qwfwd} (default empty).
-# qwfwd_(instance_)?user (str):		User to run ${__qwserver} as. Default
-#					to "%%QWUSER%%" created by the port.
+#					to qwfwd (default empty).
+# qwfwd_(instance_)?user (str):		User to run qwfwd as. Default to
+#					"%%QWUSER%%" created by the port.
 # qwfwd_(instance_)?log (path):		Console log file (default
-#					/var/log/${name}_(instance)?.log).
+#					/var/log/${name}(_instance)?.log).
 # qwfwd_(instance_)?configdir (path):	Path to config file qwfwd.cfg
 #					(default "%%ETCDIR%%").
 # qwfwd_instances (str):		Set to "" by default.
