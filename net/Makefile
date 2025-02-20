@@ -265,6 +265,7 @@
     SUBDIR += httpry
     SUBDIR += icmpinfo
     SUBDIR += icpld
+    SUBDIR += identme
     SUBDIR += ifdepd
     SUBDIR += iffinder
     SUBDIR += ifstat

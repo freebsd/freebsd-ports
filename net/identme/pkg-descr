@@ -1,0 +1,4 @@
+identme provides a simple command-line interface (CLI) for retrieving
+your public IP address. This tool is designed for users who need to
+access their IP address programmatically without the overhead of a
+full backend or mobile application.
