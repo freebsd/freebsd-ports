@@ -1,6 +1,6 @@
 PORTNAME=	gitu
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.28.1
+DISTVERSION=	0.28.2
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -188,6 +188,7 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		slab-0.4.9 \
 		smallvec-1.13.2 \
 		static_assertions-1.1.0 \
+		strip-ansi-escapes-0.2.1 \
 		strsim-0.11.1 \
 		strum-0.26.3 \
 		strum_macros-0.26.4 \
@@ -236,6 +237,7 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		utf8parse-0.2.2 \
 		vcpkg-0.2.15 \
 		version_check-0.9.5 \
+		vte-0.14.1 \
 		walkdir-2.5.0 \
 		wasi-0.11.0+wasi-snapshot-preview1 \
 		wasm-bindgen-0.2.95 \
