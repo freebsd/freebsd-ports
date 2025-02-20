@@ -1,5 +1,5 @@
 PORTNAME=	rubocop-rake
-PORTVERSION=	0.7.0
+PORTVERSION=	0.7.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
