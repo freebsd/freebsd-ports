@@ -6155,6 +6155,7 @@
     SUBDIR += py-websockets
     SUBDIR += py-websockify
     SUBDIR += py-wheel
+    SUBDIR += py-wheel-filename
     SUBDIR += py-whichcraft
     SUBDIR += py-whistle
     SUBDIR += py-widgetsnbextension
