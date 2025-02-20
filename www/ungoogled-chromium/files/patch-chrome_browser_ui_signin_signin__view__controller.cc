@@ -1,6 +1,6 @@
---- chrome/browser/ui/signin/signin_view_controller.cc.orig	2025-01-25 09:34:31 UTC
+--- chrome/browser/ui/signin/signin_view_controller.cc.orig	2025-02-20 09:59:21 UTC
 +++ chrome/browser/ui/signin/signin_view_controller.cc
-@@ -477,7 +477,7 @@ void SigninViewController::ShowModalManagedUserNoticeD
+@@ -479,7 +479,7 @@ void SigninViewController::ShowModalManagedUserNoticeD
      std::unique_ptr<signin::EnterpriseProfileCreationDialogParams>
          create_param) {
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \

@@ -1,6 +1,6 @@
---- components/viz/service/display_embedder/software_output_surface.h.orig	2025-01-25 09:34:31 UTC
+--- components/viz/service/display_embedder/software_output_surface.h.orig	2025-02-20 09:59:21 UTC
 +++ components/viz/service/display_embedder/software_output_surface.h
-@@ -42,7 +42,7 @@ class VIZ_SERVICE_EXPORT SoftwareOutputSurface : publi
+@@ -41,7 +41,7 @@ class VIZ_SERVICE_EXPORT SoftwareOutputSurface : publi
        UpdateVSyncParametersCallback callback) override;
    void SetDisplayTransformHint(gfx::OverlayTransform transform) override {}
    gfx::OverlayTransform GetDisplayTransform() override;
@@ -9,7 +9,7 @@
    void SetNeedsSwapSizeNotifications(
        bool needs_swap_size_notifications) override;
  #endif
-@@ -60,7 +60,7 @@ class VIZ_SERVICE_EXPORT SoftwareOutputSurface : publi
+@@ -59,7 +59,7 @@ class VIZ_SERVICE_EXPORT SoftwareOutputSurface : publi
    base::TimeTicks refresh_timebase_;
    base::TimeDelta refresh_interval_ = BeginFrameArgs::DefaultInterval();
  

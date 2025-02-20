@@ -1,6 +1,6 @@
---- chrome/browser/new_tab_page/modules/file_suggestion/drive_service.cc.orig	2024-10-27 06:40:35 UTC
+--- chrome/browser/new_tab_page/modules/file_suggestion/drive_service.cc.orig	2025-02-20 09:59:21 UTC
 +++ chrome/browser/new_tab_page/modules/file_suggestion/drive_service.cc
-@@ -34,7 +34,7 @@
+@@ -35,7 +35,7 @@
  #include "services/network/public/cpp/resource_request.h"
  
  namespace {

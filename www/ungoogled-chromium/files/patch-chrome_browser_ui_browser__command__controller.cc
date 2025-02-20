@@ -1,6 +1,6 @@
---- chrome/browser/ui/browser_command_controller.cc.orig	2025-01-25 09:34:31 UTC
+--- chrome/browser/ui/browser_command_controller.cc.orig	2025-02-20 09:59:21 UTC
 +++ chrome/browser/ui/browser_command_controller.cc
-@@ -126,7 +126,7 @@
+@@ -125,7 +125,7 @@
  #include "components/user_manager/user_manager.h"
  #endif
  
@@ -9,7 +9,7 @@
  #include "ui/base/ime/text_input_flags.h"
  #include "ui/linux/linux_ui.h"
  #endif
-@@ -135,7 +135,7 @@
+@@ -134,7 +134,7 @@
  #include "ui/ozone/public/ozone_platform.h"
  #endif
  
@@ -18,7 +18,7 @@
  #include "chrome/browser/ui/shortcuts/desktop_shortcuts_utils.h"
  #endif  // BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_WIN)
  
-@@ -316,7 +316,7 @@ bool BrowserCommandController::IsReservedCommandOrKey(
+@@ -322,7 +322,7 @@ bool BrowserCommandController::IsReservedCommandOrKey(
  #endif
    }
  
@@ -27,7 +27,7 @@
    // If this key was registered by the user as a content editing hotkey, then
    // it is not reserved.
    auto* linux_ui = ui::LinuxUi::instance();
-@@ -571,7 +571,7 @@ bool BrowserCommandController::ExecuteCommandWithDispo
+@@ -579,7 +579,7 @@ bool BrowserCommandController::ExecuteCommandWithDispo
  
  // TODO(crbug.com/40118868): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
@@ -36,7 +36,7 @@
      case IDC_MINIMIZE_WINDOW:
        browser_->window()->Minimize();
        break;
-@@ -583,7 +583,7 @@ bool BrowserCommandController::ExecuteCommandWithDispo
+@@ -591,7 +591,7 @@ bool BrowserCommandController::ExecuteCommandWithDispo
        break;
  #endif
  
@@ -45,16 +45,25 @@
      case IDC_USE_SYSTEM_TITLE_BAR: {
        PrefService* prefs = profile()->GetPrefs();
        prefs->SetBoolean(prefs::kUseCustomChromeFrame,
-@@ -787,7 +787,7 @@ bool BrowserCommandController::ExecuteCommandWithDispo
+@@ -797,7 +797,7 @@ bool BrowserCommandController::ExecuteCommandWithDispo
        break;
      case IDC_CREATE_SHORTCUT:
        base::RecordAction(base::UserMetricsAction("CreateShortcut"));
 -#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
-       if (base::FeatureList::IsEnabled(features::kShortcutsNotApps)) {
-         chrome::CreateDesktopShortcutForActiveWebContents(browser_);
-       } else {
-@@ -1262,12 +1262,12 @@ void BrowserCommandController::InitCommandState() {
+       chrome::CreateDesktopShortcutForActiveWebContents(browser_);
+ #else
+       web_app::CreateWebAppFromCurrentWebContents(
+@@ -969,7 +969,7 @@ bool BrowserCommandController::ExecuteCommandWithDispo
+ #endif  // BUILDFLAG(GOOGLE_CHROME_BRANDING)
+     case IDC_CHROME_WHATS_NEW:
+ #if BUILDFLAG(GOOGLE_CHROME_BRANDING) && \
+-    (BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX))
++    (BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD))
+       ShowChromeWhatsNew(browser_);
+       break;
+ #else
+@@ -1284,12 +1284,12 @@ void BrowserCommandController::InitCommandState() {
  #endif
  // TODO(crbug.com/40118868): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
@@ -69,12 +78,12 @@
    bool use_system_title_bar = true;
  #if BUILDFLAG(IS_OZONE)
    use_system_title_bar = ui::OzonePlatform::GetInstance()
-@@ -1606,7 +1606,7 @@ void BrowserCommandController::UpdateCommandsForTabSta
+@@ -1634,7 +1634,7 @@ void BrowserCommandController::UpdateCommandsForTabSta
    bool can_create_web_app = web_app::CanCreateWebApp(browser_);
    command_updater_.UpdateCommandEnabled(IDC_INSTALL_PWA, can_create_web_app);
  
 -#if BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_WIN)
 +#if BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_BSD)
-   if (base::FeatureList::IsEnabled(features::kShortcutsNotApps)) {
-     command_updater_.UpdateCommandEnabled(
-         IDC_CREATE_SHORTCUT, shortcuts::CanCreateDesktopShortcut(browser_));
+   command_updater_.UpdateCommandEnabled(
+       IDC_CREATE_SHORTCUT, shortcuts::CanCreateDesktopShortcut(browser_));
+ #else

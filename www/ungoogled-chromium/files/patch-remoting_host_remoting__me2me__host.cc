@@ -1,4 +1,4 @@
---- remoting/host/remoting_me2me_host.cc.orig	2025-01-25 09:34:31 UTC
+--- remoting/host/remoting_me2me_host.cc.orig	2025-02-20 09:59:21 UTC
 +++ remoting/host/remoting_me2me_host.cc
 @@ -145,7 +145,7 @@
  #include "remoting/host/mac/permission_utils.h"
@@ -16,7 +16,7 @@
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
  #include "base/linux_util.h"
- #include "remoting/host/audio_capturer_linux.h"
+ #include "remoting/host/linux/audio_capturer_linux.h"
  #include "remoting/host/linux/certificate_watcher.h"
  #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
  
@@ -121,8 +121,8 @@
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_BSD)
    desktop_environment_options_.set_enable_remote_webauthn(is_corp_host_);
  #endif
- 
-@@ -1863,7 +1863,7 @@ void HostProcess::StartHost() {
+ #if BUILDFLAG(IS_WIN)
+@@ -1871,7 +1871,7 @@ void HostProcess::StartHost() {
  
    host_->AddExtension(std::make_unique<TestEchoExtension>());
  
@@ -131,7 +131,7 @@
    const base::CommandLine* cmd_line = base::CommandLine::ForCurrentProcess();
    if (cmd_line->HasSwitch(kEnableUtempter)) {
      host_utmp_logger_ =
-@@ -1899,7 +1899,7 @@ void HostProcess::StartHost() {
+@@ -1907,7 +1907,7 @@ void HostProcess::StartHost() {
    // addresses.
    host_->Start(*host_owner_emails_.begin());
  
@@ -140,7 +140,7 @@
    // For Windows, ChromotingHostServices connections are handled by the daemon
    // process, then the message pipe is forwarded to the network process.
    host_->StartChromotingHostServices();
-@@ -2043,7 +2043,7 @@ int HostProcessMain() {
+@@ -2051,7 +2051,7 @@ int HostProcessMain() {
    HOST_LOG << "Starting host process: version " << STRINGIZE(VERSION);
    const base::CommandLine* cmd_line = base::CommandLine::ForCurrentProcess();
  
@@ -149,7 +149,7 @@
  #if defined(REMOTING_USE_X11)
    // Initialize Xlib for multi-threaded use, allowing non-Chromium code to
    // use X11 safely (such as the WebRTC capturer, GTK ...)
-@@ -2092,7 +2092,7 @@ int HostProcessMain() {
+@@ -2100,7 +2100,7 @@ int HostProcessMain() {
    std::unique_ptr<net::NetworkChangeNotifier> network_change_notifier(
        net::NetworkChangeNotifier::CreateIfNeeded());
  

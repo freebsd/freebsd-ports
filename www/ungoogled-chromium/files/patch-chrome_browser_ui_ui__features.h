@@ -1,4 +1,4 @@
---- chrome/browser/ui/ui_features.h.orig	2025-01-25 09:34:31 UTC
+--- chrome/browser/ui/ui_features.h.orig	2025-02-20 09:59:21 UTC
 +++ chrome/browser/ui/ui_features.h
 @@ -68,7 +68,7 @@ extern const base::FeatureParam<bool> kAppMenuChipColo
  BASE_DECLARE_FEATURE(kExtensionsMenuInAppMenu);
@@ -9,9 +9,9 @@
  BASE_DECLARE_FEATURE(kFewerUpdateConfirmations);
  #endif
  
-@@ -277,7 +277,7 @@ BASE_DECLARE_FEATURE(kViewsJSAppModalDialog);
- 
- BASE_DECLARE_FEATURE(kStopLoadingAnimationForHiddenWindow);
+@@ -244,7 +244,7 @@ BASE_DECLARE_FEATURE(kViewsFirstRunDialog);
+ BASE_DECLARE_FEATURE(kViewsJSAppModalDialog);
+ #endif
  
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)

@@ -1,6 +1,6 @@
---- chrome/browser/policy/chrome_browser_cloud_management_controller_desktop.cc.orig	2025-01-25 09:34:31 UTC
+--- chrome/browser/policy/chrome_browser_cloud_management_controller_desktop.cc.orig	2025-02-20 09:59:21 UTC
 +++ chrome/browser/policy/chrome_browser_cloud_management_controller_desktop.cc
-@@ -57,7 +57,7 @@
+@@ -60,7 +60,7 @@
  #include "chrome/browser/policy/browser_dm_token_storage_mac.h"
  #endif  // BUILDFLAG(IS_MAC)
  
@@ -9,7 +9,7 @@
  #include "chrome/browser/policy/browser_dm_token_storage_linux.h"
  #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
  
-@@ -66,7 +66,7 @@
+@@ -69,7 +69,7 @@
  #include "chrome/install_static/install_util.h"
  #endif  // BUILDFLAG(IS_WIN)
  
@@ -18,7 +18,7 @@
  #include "chrome/browser/enterprise/connectors/device_trust/key_management/browser/device_trust_key_manager_impl.h"
  #include "chrome/browser/enterprise/connectors/device_trust/key_management/browser/key_rotation_launcher.h"
  #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC)
-@@ -106,7 +106,7 @@ void ChromeBrowserCloudManagementControllerDesktop::
+@@ -109,7 +109,7 @@ void ChromeBrowserCloudManagementControllerDesktop::
  
  #if BUILDFLAG(IS_MAC)
    storage_delegate = std::make_unique<BrowserDMTokenStorageMac>();
@@ -27,7 +27,7 @@
    storage_delegate = std::make_unique<BrowserDMTokenStorageLinux>();
  #elif BUILDFLAG(IS_WIN)
    storage_delegate = std::make_unique<BrowserDMTokenStorageWin>();
-@@ -277,7 +277,7 @@ ChromeBrowserCloudManagementControllerDesktop::CreateC
+@@ -280,7 +280,7 @@ ChromeBrowserCloudManagementControllerDesktop::CreateC
  
  std::unique_ptr<enterprise_connectors::DeviceTrustKeyManager>
  ChromeBrowserCloudManagementControllerDesktop::CreateDeviceTrustKeyManager() {

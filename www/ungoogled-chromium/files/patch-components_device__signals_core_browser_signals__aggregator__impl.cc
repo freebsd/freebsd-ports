@@ -1,6 +1,6 @@
---- components/device_signals/core/browser/signals_aggregator_impl.cc.orig	2023-07-21 09:49:17 UTC
+--- components/device_signals/core/browser/signals_aggregator_impl.cc.orig	2025-02-20 09:59:21 UTC
 +++ components/device_signals/core/browser/signals_aggregator_impl.cc
-@@ -65,7 +65,7 @@ SignalsAggregatorImpl::SignalsAggregatorImpl(
+@@ -64,7 +64,7 @@ SignalsAggregatorImpl::SignalsAggregatorImpl(
  
  SignalsAggregatorImpl::~SignalsAggregatorImpl() = default;
  

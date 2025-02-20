@@ -1,4 +1,4 @@
---- services/video_effects/video_effects_sandbox_hook_linux.cc.orig	2024-11-16 12:20:41 UTC
+--- services/video_effects/video_effects_sandbox_hook_linux.cc.orig	2025-02-20 09:59:21 UTC
 +++ services/video_effects/video_effects_sandbox_hook_linux.cc
 @@ -6,7 +6,13 @@
  
@@ -11,7 +11,7 @@
 +#else
  #include "sandbox/policy/linux/sandbox_linux.h"
 +#endif
- #include "services/on_device_model/ml/chrome_ml.h"
+ #include "services/on_device_model/ml/chrome_ml_holder.h"
  
  namespace video_effects {
 @@ -29,8 +35,10 @@ bool VideoEffectsPreSandboxHook(

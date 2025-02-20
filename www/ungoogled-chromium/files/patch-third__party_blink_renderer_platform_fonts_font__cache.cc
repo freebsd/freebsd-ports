@@ -1,6 +1,6 @@
---- third_party/blink/renderer/platform/fonts/font_cache.cc.orig	2024-10-01 07:26:23 UTC
+--- third_party/blink/renderer/platform/fonts/font_cache.cc.orig	2025-02-20 09:59:21 UTC
 +++ third_party/blink/renderer/platform/fonts/font_cache.cc
-@@ -81,7 +81,7 @@ extern const char kNotoColorEmojiCompat[] = "Noto Colo
+@@ -82,7 +82,7 @@ extern const char kNotoColorEmojiCompat[] = "Noto Colo
  
  SkFontMgr* FontCache::static_font_manager_ = nullptr;
  
@@ -9,7 +9,7 @@
  float FontCache::device_scale_factor_ = 1.0;
  #endif
  
-@@ -132,7 +132,7 @@ const FontPlatformData* FontCache::SystemFontPlatformD
+@@ -133,7 +133,7 @@ const FontPlatformData* FontCache::SystemFontPlatformD
      const FontDescription& font_description) {
    const AtomicString& family = FontCache::SystemFontFamily();
  #if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_FUCHSIA) || \

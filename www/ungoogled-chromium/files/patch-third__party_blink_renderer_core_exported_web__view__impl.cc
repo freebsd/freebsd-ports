@@ -1,20 +1,20 @@
---- third_party/blink/renderer/core/exported/web_view_impl.cc.orig	2025-01-25 09:34:31 UTC
+--- third_party/blink/renderer/core/exported/web_view_impl.cc.orig	2025-02-20 09:59:21 UTC
 +++ third_party/blink/renderer/core/exported/web_view_impl.cc
-@@ -431,7 +431,7 @@ SkFontHinting RendererPreferencesToSkiaHinting(
+@@ -429,7 +429,7 @@ void RecordPrerenderActivationSignalDelay(const String
+ #if !BUILDFLAG(IS_MAC) && !BUILDFLAG(IS_WIN)
+ SkFontHinting RendererPreferencesToSkiaHinting(
      const blink::RendererPreferences& prefs) {
- // TODO(crbug.com/1052397): Revisit once build flag switch of lacros-chrome is
- // complete.
--#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)
-+#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS) || BUILDFLAG(IS_BSD)
+-#if BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
    if (!prefs.should_antialias_text) {
      // When anti-aliasing is off, GTK maps all non-zero hinting settings to
      // 'Normal' hinting so we do the same. Otherwise, folks who have 'Slight'
-@@ -3420,7 +3420,7 @@ void WebViewImpl::UpdateFontRenderingFromRendererPrefs
+@@ -3430,7 +3430,7 @@ void WebViewImpl::UpdateFontRenderingFromRendererPrefs
+       gfx::FontRenderParams::SUBPIXEL_RENDERING_NONE);
+   WebFontRenderStyle::SetSubpixelPositioning(
        renderer_preferences_.use_subpixel_positioning);
- // TODO(crbug.com/1052397): Revisit once build flag switch of lacros-chrome is
- // complete.
--#if (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)) && \
-+#if (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS) || BUILDFLAG(IS_BSD)) && \
-     !BUILDFLAG(IS_ANDROID)
+-#if BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
    if (!renderer_preferences_.system_font_family_name.empty()) {
      WebFontRenderStyle::SetSystemFontFamily(blink::WebString::FromUTF8(
+         renderer_preferences_.system_font_family_name));

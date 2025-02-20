@@ -1,15 +1,6 @@
---- chrome/browser/browser_process_impl.cc.orig	2025-01-25 09:34:31 UTC
+--- chrome/browser/browser_process_impl.cc.orig	2025-02-20 09:59:21 UTC
 +++ chrome/browser/browser_process_impl.cc
-@@ -239,7 +239,7 @@
- #include "chrome/browser/ui/profiles/profile_picker.h"
- #endif
- 
--#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
-+#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
- #include "chrome/browser/error_reporting/chrome_js_error_report_processor.h"  // nogncheck
- #endif
- 
-@@ -258,7 +258,7 @@
+@@ -255,7 +255,7 @@
  #include "components/enterprise/browser/controller/chrome_browser_cloud_management_controller.h"
  #endif
  
@@ -18,7 +9,7 @@
  #include "chrome/browser/browser_features.h"
  #include "components/os_crypt/async/browser/secret_portal_key_provider.h"
  #endif
-@@ -1135,7 +1135,7 @@ void BrowserProcessImpl::RegisterPrefs(PrefRegistrySim
+@@ -1132,7 +1132,7 @@ void BrowserProcessImpl::RegisterPrefs(PrefRegistrySim
                                  GoogleUpdateSettings::GetCollectStatsConsent());
    registry->RegisterBooleanPref(prefs::kDevToolsRemoteDebuggingAllowed, true);
  
@@ -27,16 +18,7 @@
    os_crypt_async::SecretPortalKeyProvider::RegisterLocalPrefs(registry);
  #endif
  }
-@@ -1306,7 +1306,7 @@ void BrowserProcessImpl::PreMainMessageLoopRun() {
- 
-   ApplyMetricsReportingPolicy();
- 
--#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
-+#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
-   ChromeJsErrorReportProcessor::Create();
- #endif
- 
-@@ -1393,7 +1393,7 @@ void BrowserProcessImpl::PreMainMessageLoopRun() {
+@@ -1387,7 +1387,7 @@ void BrowserProcessImpl::PreMainMessageLoopRun() {
                features::kUseAppBoundEncryptionProviderForEncryption))));
  #endif  // BUILDFLAG(IS_WIN)
  
@@ -45,7 +27,7 @@
    if (base::FeatureList::IsEnabled(features::kDbusSecretPortal)) {
      providers.emplace_back(
          /*precedence=*/10u,
-@@ -1623,7 +1623,7 @@ void BrowserProcessImpl::Unpin() {
+@@ -1617,7 +1617,7 @@ void BrowserProcessImpl::Unpin() {
  // Mac is currently not supported.
  // TODO(crbug.com/40118868): Revisit once build flag switch of lacros-chrome is
  // complete.
