@@ -26,6 +26,7 @@ USE_LINUX=	alsalib alsa-lib-devel alsa-plugins-oss alsa-plugins-pulseaudio \
 		qt3d qtbase qtconnectivity qtdeclarative qtgraphicaleffects qtimageformats \
 		qtmultimedia qtquickcontrols qtscript qtsensors qtserialbus qtserialport \
 		qtsvg qttools qtwayland qtwebchannel qtwebsockets qtx11extras qtxmlpatterns \
+		sdl12 sdl20 sdlgfx sdlimage sdlttf sdlsound sdl2gfx sdl2image sdl2mixer sdl2ttf \
 		sqlite3 strace systemd-libs tcp_wrappers-libs tiff vulkan \
 		wayland webp wget xcb-util xorglibs
 
