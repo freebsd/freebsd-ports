@@ -1,5 +1,5 @@
 PORTNAME=	aws-sdk-timestreaminfluxdb
-PORTVERSION=	1.19.0
+PORTVERSION=	1.21.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
