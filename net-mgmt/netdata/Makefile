@@ -1,6 +1,6 @@
 PORTNAME=	netdata
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.2.3
+DISTVERSION=	2.2.5
 CATEGORIES=	net-mgmt
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/v${DISTVERSION}/:netdata \
 				https://raw.githubusercontent.com/netdata/netdata/refs/tags/v${DISTVERSION}/src/go/:goplugin \
@@ -74,7 +74,7 @@ NETDATA_CACHE=	/var/cache/${PORTNAME}
 NETDATA_LOG=	/var/log/${PORTNAME}
 NETDATA_PERST=	/var/db/${PORTNAME}
 NETDATA_RUN=	/var/run/${PORTNAME}
-NETDATA_CLOUDVERSION=	20250202
+NETDATA_CLOUDVERSION=	20250212
 
 PLIST_SUB=	NETDATA_CACHE=${NETDATA_CACHE} \
 		NETDATA_LOG=${NETDATA_LOG} \
@@ -144,6 +144,8 @@ post-patch:
 post-install:
 	${MKDIR} ${STAGEDIR}${ETCDIR}
 	${INSTALL_DATA} ${WRKDIR}/netdata.conf.sample ${STAGEDIR}${ETCDIR}/netdata.conf.sample
+	${MKDIR} ${STAGEDIR}${PREFIX}/etc/newsyslog.conf.d
+	${INSTALL_DATA} ${FILESDIR}/netdata.newsyslog.conf.sample ${STAGEDIR}${ETCDIR}/netdata.newsyslog.conf.sample
 	${TOUCH} ${STAGEDIR}${ETCDIR}/.opt-out-from-anonymous-statistics
 	${MKDIR} ${STAGEDIR}${NETDATA_CACHE}
 	${MKDIR} ${STAGEDIR}${NETDATA_LOG}
