@@ -8,8 +8,10 @@ WWW=		https://konversation.kde.org
 
 LICENSE=	GPLv2+
 
+LIB_DEPENDS=	libqca-qt6.so:devel/qca@qt6
+
 USES=		cmake compiler:c++11-lang cpe desktop-file-utils gettext kde:6 \
-		qca qt:6 shebangfix tar:xz xorg \
+		qt:6 shebangfix tar:xz xorg \
 		python:run
 USE_KDE=	archive attica auth bookmarks codecs completion config \
 		configwidgets coreaddons crash dbusaddons doctools globalaccel \

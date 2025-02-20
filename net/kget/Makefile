@@ -13,9 +13,10 @@ LIB_DEPENDS=	libKTorrent6.so:net-p2p/libktorrent  \
 		libgpg-error.so:security/libgpg-error \
 		libgpgme.so:security/gpgme \
 		libgpgmepp.so:security/gpgme-cpp \
+		libqca-qt6.so:devel/qca@qt6 \
 		libqgpgmeqt6.so:security/gpgme-qt@qt6
 
-USES=		cmake compiler:c++11-lang desktop-file-utils gettext kde:6 qca \
+USES=		cmake compiler:c++11-lang desktop-file-utils gettext kde:6 \
 		qt:6 shebangfix sqlite tar:xz xorg
 USE_KDE=	archive auth bookmarks codecs completion config configwidgets \
 		coreaddons crash dbusaddons guiaddons i18n iconthemes \

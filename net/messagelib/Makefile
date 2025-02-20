@@ -15,9 +15,10 @@ LIB_DEPENDS=	libassuan.so:security/libassuan \
 		libgpg-error.so:security/libgpg-error \
 		libgpgme.so:security/gpgme \
 		libgpgmepp.so:security/gpgme-cpp \
+		libqca-qt6.so:devel/qca@qt6 \
 		libqgpgmeqt6.so:security/gpgme-qt@qt6
 
-USES=		cmake compiler:c++11-lib cpe gettext kde:6 qca qt:6 tar:xz \
+USES=		cmake compiler:c++11-lib cpe gettext kde:6 qt:6 tar:xz \
 		xorg
 CPE_VENDOR=	kde
 USE_KDE=	archive auth bookmarks codecs completion config configwidgets \

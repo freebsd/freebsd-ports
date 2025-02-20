@@ -25,6 +25,7 @@ LIB_DEPENDS=	libImath.so:math/Imath \
 		libodfgen-0.1.so:textproc/libodfgen01 \
 		libpoppler-qt6.so:graphics/poppler-qt6 \
 		libpoppler.so:graphics/poppler \
+		libqca-qt6.so:devel/qca@qt6 \
 		libqt6keychain.so:security/qtkeychain@qt6 \
 		librevenge-0.0.so:textproc/librevenge \
 		libvisio-0.1.so:textproc/libvisio01 \
@@ -35,7 +36,7 @@ RUN_DEPENDS=	pstoedit:graphics/pstoedit
 
 USES=		cmake compiler:c++17-lang cpe desktop-file-utils eigen:3 \
 		gettext gl iconv:translit jpeg kde:6 localbase:ldflags perl5 \
-		pkgconfig qca qt:6 shared-mime-info ssl tar:xz xorg
+		pkgconfig qt:6 shared-mime-info ssl tar:xz xorg
 USE_GL=		gl opengl
 USE_LDCONFIG=	yes
 USE_KDE=	archive bookmarks colorscheme completion config configwidgets \

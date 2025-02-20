@@ -17,12 +17,13 @@ LIB_DEPENDS=	libchm.so:misc/chmlib \
 		libQMobipocket6.so:graphics/kdegraphics-mobipocket@qt6 \
 		libpoppler.so:graphics/poppler \
 		libpoppler-qt6.so:graphics/poppler-qt6 \
+		libqca-qt6.so:devel/qca@qt6 \
 		libspectre.so:print/libspectre \
 		libtiff.so:graphics/tiff \
 		libzip.so:archivers/libzip
 
 USES=		cmake compiler:c++11-lib cpe desktop-file-utils gettext jpeg \
-		kde:6 pkgconfig qca qt:6 tar:xz xorg
+		kde:6 pkgconfig qt:6 tar:xz xorg
 USE_KDE=	activities archive auth bookmarks codecs completion config \
 		iconthemes itemmodels itemviews jobwidgets kio libkexiv2 parts \
 		phonon pty service solid sonnet textwidgets threadweaver \

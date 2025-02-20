@@ -13,7 +13,9 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/optional.hpp:devel/boost-libs
 
-USES=		cmake compiler:c++11-lib cpe ldap pkgconfig qca qt:5 tar:xz
+LIB_DEPENDS=	libqca-qt5.so:devel/qca@qt5
+
+USES=		cmake compiler:c++11-lib cpe ldap pkgconfig qt:5 tar:xz
 USE_GITHUB=	nodefault
 #GH_ACCOUNT=	${PORTNAME}
 #GH_PROJECT=	${PORTNAME}

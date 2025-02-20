@@ -13,7 +13,9 @@ LICENSE_COMB=		dual
 LICENSE_FILE_GPLv2=	${WRKSRC}/LICENSES/GPL-2.0-only.txt
 LICENSE_FILE_GPLv3=	${WRKSRC}/LICENSES/GPL-3.0-only.txt
 
-USES=		cmake compiler:c++11-lang gettext kde:5 qca qt:5 \
+LIB_DEPENDS=	libqca-qt5.so:devel/qca@qt5
+
+USES=		cmake compiler:c++11-lang gettext kde:5 qt:5 \
 		shared-mime-info tar:xz xorg
 USE_KDE=	attica auth bookmarks codecs completion config configwidgets \
 		coreaddons crash dbusaddons doctools i18n iconthemes itemviews \

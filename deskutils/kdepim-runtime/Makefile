@@ -12,11 +12,12 @@ LICENSE=	LGPL21
 LIB_DEPENDS=	libboost_date_time.so:devel/boost-libs \
 		libcurl.so:ftp/curl \
 		libkolabxml.so:textproc/libkolabxml \
+		libqca-qt6.so:devel/qca@qt6 \
 		libsasl2.so:security/cyrus-sasl2 \
 		libxerces-c.so:textproc/xerces-c3 \
 		libqt6keychain.so:security/qtkeychain@qt6
 
-USES=		cmake:noninja compiler:c++11-lib gettext kde:6 qca qt:6 \
+USES=		cmake:noninja compiler:c++11-lib gettext kde:6 qt:6 \
 		shared-mime-info tar:xz xorg
 USE_KDE=	auth bookmarks codecs completion config configwidgets \
 		coreaddons crash dbusaddons guiaddons holidays i18n iconthemes \
