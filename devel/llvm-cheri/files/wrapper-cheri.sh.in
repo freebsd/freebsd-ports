@@ -184,6 +184,7 @@ if [ $CHERIBSD_VERSION -gt 0 ]; then
 		arch_cflags="-march=rv64gcxcheri -mabi=$mabi -mno-relax"
 		;;
 	esac
+	arch_cflags="${arch_cflags} -Wno-implicit-int -Wno-implicit-function-declaration"
 fi
 
 case $basetool in
