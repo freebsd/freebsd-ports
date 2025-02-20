@@ -1,5 +1,5 @@
 PORTNAME=	aws-sdk-forecastservice
-PORTVERSION=	1.68.0
+PORTVERSION=	1.69.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
