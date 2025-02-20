@@ -1,3 +1,116 @@
+  <vuln vid="2a3be628-ef6e-11ef-85f3-a8a1599412c6">
+    <topic>chromium -- multiple security fixes</topic>
+    <affects>
+      <package>
+       <name>chromium</name>
+       <range><lt>133.0.6943.126</lt></range>
+      </package>
+      <package>
+       <name>ungoogled-chromium</name>
+       <range><lt>133.0.6943.126</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+       <p>Chrome Releases reports:</p>
+       <blockquote cite="https://chromereleases.googleblog.com/2025/02/stable-channel-update-for-desktop_18.html">
+	 <p>This update includes 3 security fixes:</p>
+	 <ul>
+	    <li>[394350433] High CVE-2025-0999: Heap buffer overflow in V8. Reported by Seunghyun Lee (@0x10n) on 2025-02-04</li>
+	    <li>[383465163] High CVE-2025-1426: Heap buffer overflow in GPU. Reported by un3xploitable and GF on 2024-12-11</li>
+	    <li>[390590778] Medium CVE-2025-1006: Use after free in Network. Reported by Tal Keren, Sam Agranat, Eran Rom, Edouard Bochin, Adam Hatsir of Palo Alto Networks on 2025-01-18</li>
+	 </ul>
+       </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2025-0999</cvename>
+      <cvename>CVE-2025-1426</cvename>
+      <cvename>CVE-2025-1006</cvename>
+      <url>https://chromereleases.googleblog.com/2025/02/stable-channel-update-for-desktop_18.html</url>
+    </references>
+    <dates>
+      <discovery>2025-02-18</discovery>
+      <entry>2025-02-20</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="f572b9d1-ef6d-11ef-85f3-a8a1599412c6">
+    <topic>chromium -- multiple security fixes</topic>
+    <affects>
+      <package>
+       <name>chromium</name>
+       <range><lt>133.0.6943.98</lt></range>
+      </package>
+      <package>
+       <name>ungoogled-chromium</name>
+       <range><lt>133.0.6943.98</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+       <p>Chrome Releases reports:</p>
+       <blockquote cite="https://chromereleases.googleblog.com/2025/02/stable-channel-update-for-desktop_12.html">
+	 <p>This update includes 4 security fixes:</p>
+	 <ul>
+	    <li>[391907159] High CVE-2025-0995: Use after free in V8. Reported by Popax21 on 2025-01-24</li>
+	    <li>[391788835] High CVE-2025-0996: Inappropriate implementation in Browser UI. Reported by yuki yamaoto on 2025-01-23</li>
+	    <li>[391666328] High CVE-2025-0997: Use after free in Navigation. Reported by asnine on 2025-01-23</li>
+	    <li>[386857213] High CVE-2025-0998: Out of bounds memory access in V8. Reported by Alan Goodman on 2024-12-31</li>
+	 </ul>
+       </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2025-0995</cvename>
+      <cvename>CVE-2025-0996</cvename>
+      <cvename>CVE-2025-0997</cvename>
+      <cvename>CVE-2025-0998</cvename>
+      <url>https://chromereleases.googleblog.com/2025/02/stable-channel-update-for-desktop_12.html</url>
+    </references>
+    <dates>
+      <discovery>2025-02-12</discovery>
+      <entry>2025-02-20</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="b09d0b3b-ef6d-11ef-85f3-a8a1599412c6">
+    <topic>chromium -- multiple security fixes</topic>
+    <affects>
+      <package>
+       <name>chromium</name>
+       <range><lt>133.0.6943.53</lt></range>
+      </package>
+      <package>
+       <name>ungoogled-chromium</name>
+       <range><lt>133.0.6943.53</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+       <p>Chrome Releases reports:</p>
+       <blockquote cite="https://chromereleases.googleblog.com/2025/02/stable-channel-update-for-desktop.html">
+	 <p>This update includes 12 security fixes:</p>
+	 <ul>
+	    <li>[390889644] High CVE-2025-0444: Use after free in Skia. Reported by Francisco Alonso (@revskills) on 2025-01-19</li>
+	    <li>[392521083] High CVE-2025-0445: Use after free in V8. Reported by 303f06e3 on 2025-01-27</li>
+	    <li>[40061026] Medium CVE-2025-0451: Inappropriate implementation in Extensions API. Reported by Vitor Torres and Alesandro Ortiz on 2022-09-18</li>
+	 </ul>
+       </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2025-0444</cvename>
+      <cvename>CVE-2025-0445</cvename>
+      <cvename>CVE-2025-0451</cvename>
+      <url>https://chromereleases.googleblog.com/2025/02/stable-channel-update-for-desktop.html</url>
+    </references>
+    <dates>
+      <discovery>2025-02-04</discovery>
+      <entry>2025-02-20</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="cbf5d976-656b-4bb6-805f-3af038e2de3e">
     <topic>vscode -- multiple vulnerabilities</topic>
     <affects>
