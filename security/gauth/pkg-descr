@@ -1,0 +1,7 @@
+gauth is a command-line utility that replaces Google Authenticator, providing a
+convenient way to generate two-factor authentication codes from your terminal.
+It stores secrets locally, supports encryption, and offers features like
+displaying progress bars, adding/removing keys, and compatibility with
+various services like AWS, Github, and more. This tool is ideal for
+users who prefer managing their 2FA on their computers rather than
+relying solely on their smartphones.
