@@ -848,6 +848,7 @@
     SUBDIR += pixie
     SUBDIR += plantuml
     SUBDIR += plasma-kmod
+    SUBDIR += plasma6-spectacle
     SUBDIR += plotutils
     SUBDIR += plutosvg
     SUBDIR += plutovg
@@ -1183,7 +1184,6 @@
     SUBDIR += simpleviewer
     SUBDIR += skanlite
     SUBDIR += skanpage
-    SUBDIR += spectacle
     SUBDIR += spirv-cross
     SUBDIR += spirv-tools
     SUBDIR += springgraph
