@@ -18,7 +18,6 @@ BUILD_DEPENDS+=	bjam:devel/boost-jam
 # * OSVERSION is included in either of following ranges.
 #   1. 1500000 <= OSVERSION < 1500017
 #   2. 1400000 <= OSVERSION < 1400509 (no longer relevant)
-#   3. 1300000 <= OSVERSION < 1303502 (no longer relevant)
 # * Base system is built with WITH_LLVM_ASSERTIONS variable set.
 # So if your base system fulfills them you need to use LLVM ports to
 # build this port.
@@ -70,8 +69,10 @@ PLIST_SUB+=	SFE="@comment "
 .if ${ARCH:Marmv?}
 pre-configure:
 	${REINPLACE_CMD} -e 's,@progbits,%progbits,' \
+		${WRKSRC}/boost/interprocess/interprocess_printers.hpp \
 		${WRKSRC}/boost/outcome/experimental/status-code/status_code.hpp \
-		${WRKSRC}/boost/outcome/outcome_gdb.h
+		${WRKSRC}/boost/outcome/outcome_gdb.h \
+		${WRKSRC}/boost/unordered/unordered_printers.hpp
 .endif
 
 do-install:
