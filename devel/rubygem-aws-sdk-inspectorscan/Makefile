@@ -1,5 +1,5 @@
 PORTNAME=	aws-sdk-inspectorscan
-PORTVERSION=	1.18.0
+PORTVERSION=	1.19.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
