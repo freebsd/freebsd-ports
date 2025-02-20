@@ -1,6 +1,6 @@
 PORTNAME=	xiccd
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.3.0
+DISTVERSION=	0.4.1
 CATEGORIES=	graphics x11
 
 MAINTAINER=	ports@zoltankiraly.com
@@ -25,12 +25,12 @@ PLIST_FILES=	bin/xiccd \
 		share/man/man8/xiccd.8.gz \
 		etc/xdg/autostart/xiccd.desktop
 
-PORTDOCS=	README
+PORTDOCS=	README.md
 
 OPTIONS_DEFINE=	DOCS
 
 do-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README.md ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
