@@ -1,5 +1,5 @@
 PORTNAME=	aws-sdk-resourcegroupstaggingapi
-PORTVERSION=	1.76.0
+PORTVERSION=	1.77.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
