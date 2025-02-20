@@ -1,10 +1,11 @@
 --- core/UnicodeConverter/UnicodeConverter.pro.orig	2021-09-30 12:13:32 UTC
 +++ core/UnicodeConverter/UnicodeConverter.pro
-@@ -15,6 +15,11 @@ include(../Common/base.pri)
+@@ -13,6 +13,12 @@ DEFINES += UNICODECONVERTER_USE_DYNAMIC_LIBRARY
+ 
  DEFINES += UNICODECONVERTER_USE_DYNAMIC_LIBRARY
- ADD_DEPENDENCY(kernel)
  
 +core_freebsd {    
++    CONFIG += c++17
 +    QMAKE_LFLAGS += "-Wl,-rpath,\'\$$ORIGIN\'"
 +    QMAKE_LFLAGS += -Wl,--disable-new-dtags
 +}

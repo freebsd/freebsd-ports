@@ -1,4 +1,4 @@
-https://github.com/yao-pkg/pkg-fetch/blob/main/patches/node.v18.18.2.cpp.patch
+https://raw.githubusercontent.com/yao-pkg/pkg-fetch/refs/tags/v3.5.7/patches/node.v18.18.2.cpp.patch
 + local FreeBSD patches
 
 
@@ -20,7 +20,23 @@ https://github.com/yao-pkg/pkg-fetch/blob/main/patches/node.v18.18.2.cpp.patch
  diff --git node/configure.py node/configure.py
  index 7006ee6581..12fb2ac8d1 100755
  --- node/configure.py
-@@ -580,3 +589,349 @@ +            'cflags_cc': [ '-frtti', '-fno-lto' ],
+@@ -25,6 +34,15 @@ -    o['cflags']+=['-msign-return-address=all']
+      o['variables']['arm_fpu'] = options.arm_fpu or 'neon'
+  
+    if options.node_snapshot_main is not None:
++@@ -1829,7 +1829,7 @@ def configure_intl(o):
++   elif with_intl == 'system-icu':
++     # ICU from pkg-config.
++     o['variables']['v8_enable_i18n_support'] = 1
++-    pkgicu = pkg_config('icu-i18n')
+++    pkgicu = pkg_config(['icu-i18n', 'icu-uc'])
++     if not pkgicu[0]:
++       error('''Could not load pkg-config data for "icu-i18n".
++        See above errors or the README.md.''')
+ diff --git node/deps/v8/include/v8-initialization.h node/deps/v8/include/v8-initialization.h
+ index 3d59c73f7c..00b2de4524 100644
+ --- node/deps/v8/include/v8-initialization.h
+@@ -580,3 +599,349 @@ +            'cflags_cc': [ '-frtti', '-fno-lto' ],
               'cflags_cc!': [ '-fno-rtti' ],
             }],
             [ 'OS == "mac" or OS == "ios"', {
