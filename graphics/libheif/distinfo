@@ -1,3 +1,5 @@
 TIMESTAMP = 1733234194
 SHA256 (libheif-1.19.5.tar.gz) = d3cf0a76076115a070f9bc87cf5259b333a1f05806500045338798486d0afbaf
 SIZE (libheif-1.19.5.tar.gz) = 1716856
+SHA256 (4bc4cfb66055.patch) = e5f7eaee94aebeef387e10be6d515d2ba25b250fb15829d160a0c1a3cebe5e24
+SIZE (4bc4cfb66055.patch) = 2755
