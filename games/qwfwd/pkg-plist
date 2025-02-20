@@ -1,0 +1,2 @@
+bin/qwfwd
+@sample %%ETCDIR%%/qwfwd.cfg.sample

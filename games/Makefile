@@ -848,6 +848,7 @@
     SUBDIR += quetoo
     SUBDIR += quit
     SUBDIR += qwdtools
+    SUBDIR += qwfwd
     SUBDIR += r1q2
     SUBDIR += railroad-rampage
     SUBDIR += rawgl
