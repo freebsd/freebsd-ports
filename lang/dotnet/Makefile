@@ -66,6 +66,10 @@ PLIST_SUB=	DOTNET_ARCH=${DOTNET_ARCH} FULL_DOTNETVERSION=${PORTVERSION} \
 
 .include <bsd.port.pre.mk>
 
+.if ${SSL_DEFAULT} == base
+EXTRA_PATCHES=	${PATCHDIR}/extra-patch-base-openssl
+.endif
+
 .if ${ARCH} == amd64
 PLIST_SUB+=	VXSORT=
 .else
