@@ -15,6 +15,7 @@ CRAN_DEPENDS=	R-cran-nloptr>0:math/R-cran-nloptr \
 BUILD_DEPENDS=	${CRAN_DEPENDS}
 RUN_DEPENDS=	${CRAN_DEPENDS}
 TEST_DEPENDS=	R-cran-minqa>0:math/R-cran-minqa \
+		R-cran-R.rsp>0:textproc/R-cran-R.rsp \
 		R-cran-testthat>0:devel/R-cran-testthat
 
 USES=		cran:auto-plist
@@ -22,7 +23,7 @@ USES=		cran:auto-plist
 pre-test:
 
 # Test depends not ported yet
-.for pkg in BB R.rsp dfoptim lbfgsb3c subplex ucminf
+.for pkg in BB dfoptim lbfgsb3c subplex ucminf
 	@${LOCALBASE}/bin/Rscript -e 'install.packages("${pkg}", \
 		repos = "https://cloud.r-project.org")'
 .endfor
