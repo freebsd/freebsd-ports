@@ -12,6 +12,8 @@ LICENSE_FILE=	${WRKDIR}/${OCTAVE_SRC}/COPYING
 
 BUILD_DEPENDS+=	${PREFIX}/include/boost/asio.hpp:devel/boost-libs
 
+BROKEN=		does not build with boost version 1.87
+
 USES=		octave
 USE_GITHUB=	yes
 GH_ACCOUNT=	pr0m1th3as
