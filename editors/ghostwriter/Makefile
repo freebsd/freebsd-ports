@@ -1,35 +1,21 @@
 PORTNAME=	ghostwriter
-DISTVERSION=	24.12.1
-CATEGORIES=	editors kde
+DISTVERSION=	${KDE_APPLICATIONS_VERSION}
+CATEGORIES=	editors kde kde-applications
 
-MAINTAINER=	madpilot@FreeBSD.org
+MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Distraction-free Markdown editor
 WWW=		https://ghostwriter.kde.org/
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libhunspell-1.7.so:textproc/hunspell
-
-USES=		cmake compiler:c++11-lang desktop-file-utils pkgconfig kde:6 qt:6
-USE_KDE=	configwidgets coreaddons doctools ecm:build sonnet widgetsaddons xmlgui
-KDE_INVENT=	a88e594e783bc8366f5246efd546da654c4da5b8 office
-USE_QT=		base svg tools:build webchannel webengine
-
-CMAKE_ARGS=	-DBUILD_WITH_QT6=ON \
-		-DQT_MAJOR_VERSION=6
-
+USES=		cmake compiler:c++20-lang desktop-file-utils \
+		kde:6 qt:6 tar:xz
+USE_KDE=	configwidgets coreaddons sonnet widgetsaddons xmlgui \
+		doctools:build ecm:build
+USE_QT=		base svg webchannel webengine \
+		tools:build
 # cf. PR 224488
 LDFLAGS+=	-Wl,--as-needed
-
-OPTIONS_DEFINE=		CMARK PANDOC
-OPTIONS_DEFAULT=	CMARK PANDOC
-
-CMARK_DESC=		Add runtime dependency on cmark parser
-PANDOC_DESC=		Add runtime dependency on pandoc parser
-
-CMARK_BUILD_DEPENDS=	cmark>0:textproc/cmark
-
-PANDOC_BUILD_DEPENDS=	hs-pandoc>0:textproc/hs-pandoc
 
 .include <bsd.port.mk>
