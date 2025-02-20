@@ -2306,6 +2306,7 @@ share/locale/fi/LC_MESSAGES/kcm_users.mo
 share/locale/fi/LC_MESSAGES/kcminit.mo
 share/locale/fi/LC_MESSAGES/kded_devicenotifications.mo
 share/locale/fi/LC_MESSAGES/kded_donationmessage.mo
+share/locale/fi/LC_MESSAGES/kded_geotimezoned.mo
 share/locale/fi/LC_MESSAGES/kfontinst.mo
 share/locale/fi/LC_MESSAGES/kio_applications.mo
 share/locale/fi/LC_MESSAGES/kio_desktop.mo
@@ -3030,6 +3031,7 @@ share/locale/id/LC_MESSAGES/kcm_users.mo
 share/locale/id/LC_MESSAGES/kcminit.mo
 share/locale/id/LC_MESSAGES/kded_devicenotifications.mo
 share/locale/id/LC_MESSAGES/kded_donationmessage.mo
+share/locale/id/LC_MESSAGES/kded_geotimezoned.mo
 share/locale/id/LC_MESSAGES/kfontinst.mo
 share/locale/id/LC_MESSAGES/kio_applications.mo
 share/locale/id/LC_MESSAGES/kio_desktop.mo

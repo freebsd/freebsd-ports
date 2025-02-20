@@ -1,6 +1,5 @@
 PORTNAME=	plasma-workspace
 DISTVERSION=	${KDE_PLASMA_VERSION}
-PORTREVISION=	1
 CATEGORIES=	x11 kde kde-plasma
 
 #PATCH_SITES=	https://invent.kde.org/plasma/plasma-workspace/-/commit/
@@ -46,6 +45,7 @@ SHEBANG_FILES=	components/calendar/kconf_update/migrate-calendar-to-plugin-id.py
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
-		${PATCH_WRKSRC}/startkde/startplasma.cpp
+		${PATCH_WRKSRC}/startkde/startplasma.cpp \
+		${PATCH_WRKSRC}/login-sessions/plasmawayland.desktop.cmake
 
 .include <bsd.port.mk>
