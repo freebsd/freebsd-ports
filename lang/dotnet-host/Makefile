@@ -14,7 +14,7 @@ NOT_FOR_ARCHS_REASON=	eng/native/functions.cmake:7: 'i386' is an unsupported arc
 
 BUILD_DEPENDS=	bash:shells/bash
 
-USES=		cmake:indirect llvm:noexport ssl
+USES=		cmake:indirect llvm:noexport
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	dotnet
