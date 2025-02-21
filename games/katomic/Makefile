@@ -1,6 +1,7 @@
 PORTNAME=	katomic
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
 CATEGORIES=	games education kde kde-applications
+
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	${${PORTNAME:tu}_DESC}
 WWW=		https://www.kde.org/applications/games/katomic/
