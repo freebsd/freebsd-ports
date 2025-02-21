@@ -873,6 +873,7 @@
     SUBDIR += paritwine
     SUBDIR += parmetis
     SUBDIR += parmgridgen
+    SUBDIR += pcalc
     SUBDIR += pdal
     SUBDIR += pear-Math_BigInteger
     SUBDIR += pear-Math_Combinatorics
