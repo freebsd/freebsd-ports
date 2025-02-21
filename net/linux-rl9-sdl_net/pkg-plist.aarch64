@@ -1,6 +1,6 @@
-usr/lib/.build-id/d7/5c0b51537319e0676182b45d655cda437d6108
-usr/lib64/libSDL_sound-1.0.so.1
-usr/lib64/libSDL_sound-1.0.so.1.0.2
+usr/lib/.build-id/77/e076ae040468d9dea9a3033a120457996ba6a2
+usr/lib64/libSDL_net-1.2.so.0
+usr/lib64/libSDL_net-1.2.so.0.8.0
+%%PORTDOCS%%%%DOCSDIR%%/CHANGES
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/TODO
-usr/share/licenses/SDL_sound/COPYING
