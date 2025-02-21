@@ -17,15 +17,11 @@ TEST_DEPENDS=	R-cran-httpuv>=1.4.4:www/R-cran-httpuv \
 		R-cran-later>0:devel/R-cran-later \
 		R-cran-rmarkdown>0:textproc/R-cran-rmarkdown \
 		R-cran-spelling>0:textproc/R-cran-spelling \
-		R-cran-testthat>=1.0.0:devel/R-cran-testthat
+		R-cran-testthat>=1.0.0:devel/R-cran-testthat \
+		R-cran-webutils>0:www/R-cran-webutils
 
 USES=		cran:auto-plist,compiles
 
 TESTING_UNSAFE=	yes
-
-pre-test:
-# R-cran-webutils package does not exist yet
-	@${LOCALBASE}/bin/Rscript -e 'install.packages("webutils", \
-		repos = "https://cloud.r-project.org")'
 
 .include <bsd.port.mk>
