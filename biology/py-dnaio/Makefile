@@ -6,7 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Read and write FASTQ and FASTA
-WWW=		https://pypi.python.org/pypi/dnaio
+WWW=		https://github.com/marcelm/dnaio/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -6,7 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Python access to bigWig files using libBigWig
-WWW=		https://pypi.org/project/pyBigWig/
+WWW=		https://github.com/deeptools/pyBigWig/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
