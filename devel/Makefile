@@ -733,6 +733,7 @@
     SUBDIR += freebsd-gcc13
     SUBDIR += freebsd-gcc14
     SUBDIR += freebsd-git-devtools
+    SUBDIR += freebsd-nvme-shim
     SUBDIR += freebsd-sysroot
     SUBDIR += frink
     SUBDIR += fruit
@@ -1381,6 +1382,7 @@
     SUBDIR += libnjs
     SUBDIR += libnotify
     SUBDIR += libnsutils
+    SUBDIR += libnvme
     SUBDIR += liboil
     SUBDIR += libolecf
     SUBDIR += libopenbsd
