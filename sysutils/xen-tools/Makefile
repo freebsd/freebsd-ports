@@ -1,6 +1,7 @@
 PORTNAME=	xen
 PKGNAMESUFFIX=	-tools
 DISTVERSION=	4.19.1.20250217
+PORTREVISION=	1
 CATEGORIES=	sysutils emulators
 
 USE_GITLAB=	yes
@@ -23,7 +24,8 @@ LICENSE_COMB=	multi
 LIB_DEPENDS=	libyajl.so:devel/yajl \
 		liblzo2.so:archivers/lzo2 \
 		libpixman-1.so:x11/pixman \
-		libargp.so:devel/argp-standalone
+		libargp.so:devel/argp-standalone \
+		libgnutls.so:security/gnutls
 BUILD_DEPENDS=	seabios>0:misc/seabios \
 		${LOCALBASE}/share/edk2-xen/XEN_X64_EFI.fd:sysutils/edk2@xen_x64 \
 		bash>0:shells/bash
