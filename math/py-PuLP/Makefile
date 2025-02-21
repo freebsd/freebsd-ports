@@ -1,5 +1,5 @@
 PORTNAME=	PuLP
-DISTVERSION=	2.9.0
+DISTVERSION=	3.0.2
 CATEGORIES=	math python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -34,8 +34,10 @@ post-install: # workaround for https://github.com/coin-or/pulp/issues/740: repla
 		${LN} -s ${LOCALBASE}/bin/cbc $${cbc_exe}; \
 	done
 
-do-test: # one test is known to fail: https://github.com/coin-or/pulp/issues/494
+do-test:
 	#@cd ${TEST_WRKSRC} && py.test
 	@cd ${TEST_WRKSRC} && ${SETENV} ${TEST_ENV} ${PYTHON_CMD} -c "import pulp; pulp.pulpTestAll()"
+
+# tests as of 3.0.2: Some tests fail, see https://github.com/coin-or/pulp/issues/799
 
 .include <bsd.port.mk>
