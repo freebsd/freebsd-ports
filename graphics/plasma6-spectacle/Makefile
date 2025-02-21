@@ -1,5 +1,5 @@
 PORTNAME=	spectacle
-DISTVERSION=	${KDE_PLASMA_VERSION}
+DISTVERSION=	${KDE_PLASMA_VERSION}.2
 CATEGORIES=	graphics kde kde-plasma
 
 MAINTAINER=	kde@FreeBSD.org
@@ -14,8 +14,8 @@ LIB_DEPENDS=	libxcb-cursor.so:x11/xcb-util-cursor \
 USES=		cmake compiler:c++20-lang gettext kde:6 localbase pkgconfig \
 		qt:6 tar:xz xorg
 USE_KDE=	config coreaddons crash dbusaddons globalaccel guiaddons i18n \
-		kio kirigami2 kpipewire layer-shell-qt notifications prison \
-		purpose statusnotifieritem widgetsaddons windowsystem xmlgui \
+		kio kirigami2 layer-shell-qt notifications prison purpose \
+		statusnotifieritem widgetsaddons windowsystem xmlgui \
 		doctools:build ecm:build plasma-wayland-protocols:build
 USE_QT=		base declarative multimedia wayland
 USE_XORG=	x11 xcb xfixes
