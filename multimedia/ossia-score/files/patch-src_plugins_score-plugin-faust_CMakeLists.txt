@@ -1,0 +1,25 @@
+- workaround for https://github.com/ossia/score/issues/1732
+
+--- src/plugins/score-plugin-faust/CMakeLists.txt.orig	2025-02-21 05:43:32 UTC
++++ src/plugins/score-plugin-faust/CMakeLists.txt
+@@ -62,20 +62,6 @@ setup_score_plugin(${PROJECT_NAME})
+ 
+ setup_score_plugin(${PROJECT_NAME})
+ 
+-message("Downloading Faust libs...")
+-
+-ExternalProject_Add(
+-    faustlibs
+-    PREFIX ""
+-    GIT_REPOSITORY https://github.com/grame-cncm/faustlibraries
+-    GIT_TAG 730eff6dc336973553829235e0b31b24c47a2f69
+-    CONFIGURE_COMMAND ""
+-    BUILD_COMMAND ""
+-    INSTALL_COMMAND ""
+-)
+-
+-add_dependencies(${PROJECT_NAME} faustlibs)
+-
+ if(WIN32)
+   target_link_libraries(${PROJECT_NAME} PRIVATE ws2_32)
+ endif()
