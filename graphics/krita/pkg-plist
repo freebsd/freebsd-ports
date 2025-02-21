@@ -646,6 +646,10 @@ share/icons/hicolor/scalable/apps/krita.svgz
 %%DATADIR%%/pics/light_template_ratio_43.png
 %%DATADIR%%/pics/light_template_texture.png
 %%DATADIR%%/pics/light_template_web_design.png
+%%DATADIR%%/predefined_image_sizes/A1__300_ppi_.predefinedimage
+%%DATADIR%%/predefined_image_sizes/A1__600_ppi_.predefinedimage
+%%DATADIR%%/predefined_image_sizes/A2__300_ppi_.predefinedimage
+%%DATADIR%%/predefined_image_sizes/A2__600_ppi_.predefinedimage
 %%DATADIR%%/predefined_image_sizes/A3__300_ppi_.predefinedimage
 %%DATADIR%%/predefined_image_sizes/A3__600_ppi_.predefinedimage
 %%DATADIR%%/predefined_image_sizes/A4__300_ppi_.predefinedimage
