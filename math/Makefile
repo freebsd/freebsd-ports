@@ -908,6 +908,7 @@
     SUBDIR += primesum
     SUBDIR += primme
     SUBDIR += prng
+    SUBDIR += proxsuite
     SUBDIR += pspp
     SUBDIR += psurface
     SUBDIR += py-CyLP
