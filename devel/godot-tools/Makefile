@@ -1,5 +1,4 @@
 PKGNAMESUFFIX=	-tools
-PORTREVISION=	3
 
 COMMENT=	Game integrated development environment
 
