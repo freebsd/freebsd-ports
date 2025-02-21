@@ -11,6 +11,9 @@ WWW=		https://pypi.org/project/eggtestinfo/
 
 LICENSE=	ZPL21
 
+DEPRECATED=	Was a requirement for now removed zope port
+EXPIRATION_DATE=2025-03-21
+
 USES=		python
 USE_PYTHON=	distutils autoplist
 
