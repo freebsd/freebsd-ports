@@ -1,3 +1,13 @@
+--- modules/skcms/src/skcms_internals.h.orig
++++ modules/skcms/src/skcms_internals.h
+@@ -48,6 +48,7 @@ extern "C" {
+                                                  && !defined(__arm__) \
+                                                  && !defined(__riscv) \
+                                                  && !defined(__loongarch__) \
++                                                 && !defined(__powerpc__) \
+                                                  && !defined(_WIN32) && !defined(__SYMBIAN32__)
+             #define SKCMS_HAS_MUSTTAIL 1
+         #endif
 --- src/core/SkRasterPipeline.h.orig	2024-10-10 12:39:49 UTC
 +++ src/core/SkRasterPipeline.h
 @@ -26,7 +26,7 @@ struct skcms_TransferFunction;
