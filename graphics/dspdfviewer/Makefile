@@ -43,31 +43,18 @@ CFLAGS+=	-Wno-error=undefined-func-template
 .if ${OPSYS} == FreeBSD && ${CHOSEN_COMPILER_TYPE} == clang
 # (rene) also related to issue #191 which is still open as of 2020-10-21
 CFLAGS+=	-Wno-error=zero-as-null-pointer-constant
-.endif
-
 # Fixes build failure for Clang 8.0.0
-.if ${OPSYS} == FreeBSD && ${CHOSEN_COMPILER_TYPE} == clang
 CFLAGS+=	-Wno-error=extra-semi-stmt
-.endif
-
 # Fixes build failure for Clang 11.0.0
-.if ${OPSYS} == FreeBSD && ${CHOSEN_COMPILER_TYPE} == clang
 CFLAGS+=	-Wno-error=suggest-destructor-override
 CFLAGS+=	-Wno-error=suggest-override
-.endif
-
 # Fixes build failure for Clang 14.0.3
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400059 && ${CHOSEN_COMPILER_TYPE} == clang
+.if ${OSVERSION} >= 1400059
 CFLAGS+=       -Wno-error=bitwise-instead-of-logical
 .endif
-
 # Fixes build failure for Clang 16.0.6
-.if ${OPSYS} == FreeBSD && ${CHOSEN_COMPILER_TYPE} == clang
 CFLAGS+=       -Wno-error=unsafe-buffer-usage
-.endif
-
 # Fixes build failure for Clang 18.1.4
-.if ${OPSYS} == FreeBSD && (${OSVERSION} >= 1304000 || ${OSVERSION} >= 1401000 || ${OSVERSION} >= 1500018) && ${CHOSEN_COMPILER_TYPE} == clang
 CFLAGS+=       -Wno-error=switch-default
 .endif
 

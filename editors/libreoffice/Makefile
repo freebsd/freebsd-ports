@@ -367,11 +367,6 @@ PIE_UNSAFE=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${OPSYS} == FreeBSD && ( \
-    (${OSVERSION} >= 1400051 && ${OSVERSION} < 1400057))
-BROKEN=	please update FreeBSD base system first to fix an ABI incompatibility
-.endif
-
 .if ${ARCH} == powerpc || ${ARCH} == powerpcspe || ${ARCH} == powerpc64
 CONFIGURE_ARGS+=	--disable-skia
 .endif
