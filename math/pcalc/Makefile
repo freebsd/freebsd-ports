@@ -21,11 +21,11 @@ PLIST_FILES=	bin/pcalc
 
 TEST_TARGET=	check
 
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/pcalc
-
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	cd ${WRKSRC} && ${INSTALL_MAN} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
+
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/pcalc
 
 .include <bsd.port.mk>

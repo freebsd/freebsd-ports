@@ -14,11 +14,11 @@
  
  INSTALL = install
 -BINDIR  = /usr/bin
-+BINDIR  = /usr/local/bin
++BINDIR  = $(PREFIX)/bin
  DESTDIR = 
  install:
 -	$(INSTALL) -m 755 -D pcalc $(DESTDIR)$(BINDIR)/pcalc
-+	$(INSTALL) -m 755 -D $(DESTDIR)$(BINDIR) pcalc $(DESTDIR)$(BINDIR)/pcalc
++	$(BSD_INSTALL_PROGRAM) pcalc $(DESTDIR)$(BINDIR)/pcalc
  
  dist pack: distclean
  	rm -rf pcalc-$(VERSION)
