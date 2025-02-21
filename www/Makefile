@@ -21,6 +21,7 @@
     SUBDIR += R-cran-shiny
     SUBDIR += R-cran-shinyjs
     SUBDIR += R-cran-webshot
+    SUBDIR += R-cran-webutils
     SUBDIR += UniversalFeedCreator
     SUBDIR += adguardhome
     SUBDIR += adjuster
