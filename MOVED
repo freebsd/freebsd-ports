@@ -4154,3 +4154,4 @@ databases/redis70||2025-02-16|Has expired: Has already reached its EoL
 x11-toolkits/wlroots|x11-toolkits/wlroots018|2025-02-19|Renamed to match versioned API
 www/cplanet||2025-02-20|Abandonware
 graphics/spectacle|graphics/plasma6-spectacle|2025-02-20|Switch to KDE Plasma distribution
+lang/nhc98||2025-02-21|Has expired: only for i386, latest release in 2010, does not build with GCC 14

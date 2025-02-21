@@ -217,7 +217,6 @@
     SUBDIR += neocmakelsp
     SUBDIR += nesasm
     SUBDIR += newlisp
-    SUBDIR += nhc98
     SUBDIR += nickle
     SUBDIR += nim
     SUBDIR += njs
