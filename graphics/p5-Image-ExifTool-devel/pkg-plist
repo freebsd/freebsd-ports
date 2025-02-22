@@ -180,6 +180,7 @@ bin/exiftool
 %%SITE_PERL%%/Image/ExifTool/PhotoCD.pm
 %%SITE_PERL%%/Image/ExifTool/PhotoMechanic.pm
 %%SITE_PERL%%/Image/ExifTool/Photoshop.pm
+%%SITE_PERL%%/Image/ExifTool/Plot.pm
 %%SITE_PERL%%/Image/ExifTool/PostScript.pm
 %%SITE_PERL%%/Image/ExifTool/PrintIM.pm
 %%SITE_PERL%%/Image/ExifTool/Protobuf.pm
@@ -383,6 +384,7 @@ bin/exiftool
 %%PERL5_MAN3%%/Image::ExifTool::PhotoCD.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::PhotoMechanic.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::Photoshop.3.gz
+%%PERL5_MAN3%%/Image::ExifTool::Plot.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::PostScript.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::PrintIM.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::Protobuf.3.gz
