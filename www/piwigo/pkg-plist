@@ -399,6 +399,7 @@
 %%WWWDIR%%/admin/themes/roma/images/active_tab3.png
 %%WWWDIR%%/admin/themes/roma/images/cancel.svg
 %%WWWDIR%%/admin/themes/roma/images/cancelhover.svg
+%%WWWDIR%%/admin/themes/roma/images/certification/CertificationWarningDM.svg
 %%WWWDIR%%/admin/themes/roma/images/external_active.png
 %%WWWDIR%%/admin/themes/roma/images/external_inactive.png
 %%WWWDIR%%/admin/themes/roma/images/fillet.png
@@ -1325,6 +1326,7 @@
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/fa_IR/install.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/fa_IR/iso.txt
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/fa_IR/upgrade.lang.php
+@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/fa_IR/whats_new_15.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/fi_FI/about.html
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/fi_FI/admin.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/fi_FI/common.lang.php
@@ -1436,6 +1438,7 @@
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/he_IL/install.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/he_IL/iso.txt
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/he_IL/upgrade.lang.php
+@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/he_IL/whats_new_15.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/hr_HR/about.html
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/hr_HR/admin.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/hr_HR/common.lang.php
@@ -2020,6 +2023,9 @@
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/ta_IN/iso.txt
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/ta_IN/ta_IN.jpg
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/ta_IN/upgrade.lang.php
+@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/te_IN/common.lang.php
+@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/te_IN/iso.txt
+@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/te_IN/te_IN.jpg
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/th_TH/about.html
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/th_TH/admin.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/th_TH/common.lang.php
@@ -2662,6 +2668,8 @@
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/plugins/TakeATour/language/gl_ES/description.txt
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/plugins/TakeATour/language/gl_ES/plugin.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/plugins/TakeATour/language/he_IL/plugin.lang.php
+@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/plugins/TakeATour/language/he_IL/tour_first_contact.lang.php
+@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/plugins/TakeATour/language/he_IL/tour_privacy.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/plugins/TakeATour/language/hu_HU/description.txt
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/plugins/TakeATour/language/hu_HU/index.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/plugins/TakeATour/language/hu_HU/plugin.lang.php
@@ -3586,7 +3594,6 @@
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/modus/css/fontello/font/modus.ttf
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/modus/css/fontello/font/modus.woff
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/modus/css/fontello/font/modus.woff2
-@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/modus/css/fontello/fontello-cf8883f3.zip
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/modus/css/hf_base.css
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/modus/css/iconfontello.css.tpl
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/modus/css/iconset.css
