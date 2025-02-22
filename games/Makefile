@@ -823,6 +823,7 @@
     SUBDIR += quadrapassel
     SUBDIR += quake-data
     SUBDIR += quake-dpmod
+    SUBDIR += quake-maps
     SUBDIR += quake-source
     SUBDIR += quake2-3zb2
     SUBDIR += quake2-ctf
