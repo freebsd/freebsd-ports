@@ -4160,3 +4160,4 @@ graphics/showimage||2025-02-22|Depends on discontinued libkipi
 graphics/libkipi||2025-02-22|Discontinued upstream
 deskutils/knotes||2025-02-22|Discontinued upstream
 net-im/kopete||2025-02-22|Discontinued upstream
+sysutils/shim||2025-02-22|Has expired: upstream has been inactive for 10 years and does not build with GCC 14

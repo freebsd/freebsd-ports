@@ -1,7 +1,0 @@
-shim is a trivial EFI application that, when run, attempts to open and
-execute another application. It will initially attempt to do this via the
-standard EFI LoadImage() and StartImage() calls. If these fail (because secure
-boot is enabled and the binary is not signed with an appropriate key, for
-instance) it will then validate the binary against a built-in certificate. If
-this succeeds and if the binary or signing key are not blacklisted then shim
-will relocate and execute the binary.
