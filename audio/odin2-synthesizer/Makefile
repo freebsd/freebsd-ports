@@ -6,7 +6,8 @@ CATEGORIES=	audio multimedia
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Polyphonic synthesizer
-WWW=		https://thewavewarden.com/pages/odin-2
+WWW=		https://thewavewarden.com/pages/odin-2 \
+		https://github.com/TheWaveWarden/odin2
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -15,7 +16,6 @@ BUILD_DEPENDS=	lv2>0:audio/lv2 \
 		bash:shells/bash
 LIB_DEPENDS=	libasound.so:audio/alsa-lib \
 		libfreetype.so:print/freetype2
-xLIB_DEPENDS+=	liblo.so:audio/liblo # not used other than in makefiles, see https://github.com/wolf-plugins/wolf-shaper/issues/148
 
 USES=		gl cmake localbase:ldflags pkgconfig
 USE_GL=		gl
