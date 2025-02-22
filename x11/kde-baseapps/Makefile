@@ -14,6 +14,7 @@ RUN_DEPENDS=	dolphin>=${KDE_APPLICATIONS_VERSION}:x11-fm/dolphin  \
 		keditbookmarks>=${KDE_APPLICATIONS_VERSION}:deskutils/keditbookmarks \
 		khelpcenter>=${KDE_APPLICATIONS_VERSION}:sysutils/khelpcenter \
 		konsole>=${KDE_APPLICATIONS_VERSION}:x11/konsole \
+		kwalletmanager>=${KDE_APPLICATIONS_VERSION}:security/kwalletmanager \
 		okular>=${KDE_APPLICATIONS_VERSION}:graphics/okular
 
 .include <bsd.port.mk>
