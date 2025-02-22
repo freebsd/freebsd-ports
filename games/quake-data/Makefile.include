@@ -12,6 +12,6 @@ MAKE_ENV+=	Q1DIR="${Q1DIR}"
 PLIST_SUB+=	Q1DIR="${Q1DIR:S|${LOCALBASE}/||}"
 SUB_LIST+=	Q1DIR="${Q1DIR}"
 
-.if ${PORTNAME} != data
+.if ${PORTNAME} != data && ${PORTNAME} != maps
 RUN_DEPENDS+=	${Q1DIR}/id1/pak0.pak:games/quake-data
 .endif
