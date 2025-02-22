@@ -16,6 +16,8 @@ share/man/man1/xminicom.1.gz
 %%NLS%%share/locale/hu/LC_MESSAGES/minicom.mo
 %%NLS%%share/locale/id/LC_MESSAGES/minicom.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/minicom.mo
+%%NLS%%share/locale/ka/LC_MESSAGES/minicom.mo
+%%NLS%%share/locale/ko/LC_MESSAGES/minicom.mo
 %%NLS%%share/locale/nb/LC_MESSAGES/minicom.mo
 %%NLS%%share/locale/ro/LC_MESSAGES/minicom.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/minicom.mo
