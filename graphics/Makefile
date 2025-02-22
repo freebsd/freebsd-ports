@@ -1175,7 +1175,6 @@
     SUBDIR += shared-color-profiles
     SUBDIR += sharpconstruct
     SUBDIR += shotwell
-    SUBDIR += showimage
     SUBDIR += silgraphite
     SUBDIR += simage
     SUBDIR += simple-scan
