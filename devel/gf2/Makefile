@@ -9,8 +9,11 @@ WWW=		https://github.com/nakst/gf
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libX11.so:x11/libX11 libfreetype.so:print/freetype2
+LIB_DEPENDS=	libfreetype.so:print/freetype2
 RUN_DEPENDS=	${LOCALBASE}/bin/gdb:devel/gdb
+
+USES=		xorg
+USE_XORG=	x11
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	nakst
