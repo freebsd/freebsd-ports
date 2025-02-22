@@ -56,6 +56,7 @@ MAKE_ENV+=	USE_CUDNN=0
 MAKE_ENV+=	USE_LAPACK=1 # needed on FreeBSD to run w/out GPU
 MAKE_ENV+=	USE_QNNPACK=0
 LDFLAGS+=	-lexecinfo
+LDFLAGS_powerpc64le=	-pthread
 
 BINARY_ALIAS=	make=${GMAKE}
 
