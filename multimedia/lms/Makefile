@@ -11,6 +11,7 @@ WWW=		https://github.com/epoupon/lms
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		compilation fails: not compatible with boost-libs-1.87+, see https://github.com/epoupon/lms/issues/620
 BROKEN_FreeBSD_13=	compilation fails: error: object of type 'const LiteralString' cannot be compared because its 'operator<=>' is implicitly deleted
 
 BUILD_DEPENDS=	googletest>0:devel/googletest
