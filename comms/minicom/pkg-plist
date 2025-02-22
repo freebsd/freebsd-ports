@@ -35,6 +35,7 @@ share/man/man1/xminicom.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/doc/Announce-1.82
 %%PORTDOCS%%%%DOCSDIR%%/doc/Announce-1.82.1
 %%PORTDOCS%%%%DOCSDIR%%/doc/Announce-1.83
+%%PORTDOCS%%%%DOCSDIR%%/doc/Announce-2.00
 %%PORTDOCS%%%%DOCSDIR%%/doc/COMPATABILITY.lrzsz
 %%PORTDOCS%%%%DOCSDIR%%/doc/ChangeLog.old
 %%PORTDOCS%%%%DOCSDIR%%/doc/HistSearch
@@ -56,7 +57,9 @@ share/man/man1/xminicom.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/doc/modemu.README
 %%PORTDOCS%%%%DOCSDIR%%/doc/pl-translation.txt
 %%PORTDOCS%%%%DOCSDIR%%/doc/portugues-brasil
+%%PORTDOCS%%%%DOCSDIR%%/doc/russian
 %%PORTDOCS%%%%DOCSDIR%%/doc/suomeksi
+%%PORTDOCS%%%%DOCSDIR%%/extras/dialdir-32b-to-64b-up-to-v5.c
 %%PORTDOCS%%%%DOCSDIR%%/extras/htsalogin
 %%PORTDOCS%%%%DOCSDIR%%/extras/linux/INSTALL
 %%PORTDOCS%%%%DOCSDIR%%/extras/linux/README-FIRST
@@ -66,6 +69,7 @@ share/man/man1/xminicom.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/extras/tables/mc.iso
 %%PORTDOCS%%%%DOCSDIR%%/extras/tables/mc.noconv
 %%PORTDOCS%%%%DOCSDIR%%/extras/tables/mc.pc8
+%%PORTDOCS%%%%DOCSDIR%%/extras/tables/mc.rus
 %%PORTDOCS%%%%DOCSDIR%%/extras/tables/mc.sf7
 %%PORTDOCS%%%%DOCSDIR%%/extras/termcap/README
 %%PORTDOCS%%%%DOCSDIR%%/extras/termcap/termcap.long
