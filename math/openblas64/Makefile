@@ -1,6 +1,7 @@
 PORTNAME=	openblas
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.3.29
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	NL/lapack/timing/:lapack_tmg
 PKGNAMESUFFIX=	64
@@ -59,10 +60,12 @@ OPENMP_LDFLAGS=		-lomp
 .include <bsd.port.options.mk>
 
 .if ${ARCH} == powerpc64
+CMAKE_ARGS+=		-DTARGET=PPC970
 USE_GCC=		yes
 .endif
 
 .if ${ARCH} == powerpc64le
+CMAKE_ARGS+=		-DTARGET=POWER8
 USE_GCC=		yes
 .endif
 
