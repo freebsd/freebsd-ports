@@ -14,14 +14,14 @@ so try authenticating via setuid helper first.
 -auth        include     login
 +auth        include     unix-selfauth
  
---- src/auth/Pam.cpp.orig	2024-12-18 15:03:04 UTC
+--- src/auth/Pam.cpp.orig	2025-02-22 22:56:54 UTC
 +++ src/auth/Pam.cpp
 @@ -64,11 +64,6 @@ CPam::CPam() {
-     static auto* const PPAMMODULE = (Hyprlang::STRING*)(g_pConfigManager->getValuePtr("auth:pam:module"));
-     m_sPamModule                  = *PPAMMODULE;
+     static const auto PAMMODULE = g_pConfigManager->getValue<Hyprlang::STRING>("auth:pam:module");
+     m_sPamModule                = *PAMMODULE;
  
 -    if (!std::filesystem::exists(std::filesystem::path("/etc/pam.d/") / m_sPamModule)) {
--        Debug::log(ERR, "Pam module \"/etc/pam.d/{}\" does not exist! Falling back to \"/etc/pam.d/su\"", m_sPamModule);
+-        Debug::log(ERR, R"(Pam module "/etc/pam.d/{}" does not exist! Falling back to "/etc/pam.d/su")", m_sPamModule);
 -        m_sPamModule = "su";
 -    }
 -
