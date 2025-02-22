@@ -475,6 +475,7 @@
     SUBDIR += ksquares
     SUBDIR += ksudoku
     SUBDIR += ktuberling
+    SUBDIR += ktx
     SUBDIR += kubrick
     SUBDIR += kuklomenos
     SUBDIR += ladder

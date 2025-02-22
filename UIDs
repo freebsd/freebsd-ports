@@ -446,7 +446,7 @@ openbao:*:482:482:daemon:0:0:OpenBao Daemon:/nonexistent:/usr/sbin/nologin
 # free: 497
 rustypaste:*:498:498::0:0:Minimal file upload/pastebin service:/nonexistent:/usr/sbin/nologin
 # free: 499
-# free: 500
+qw:*:500:500::0:0:QuakeWorld Server:/nonexistent:/usr/sbin/nologin
 qwfwd:*:501:501::0:0:QuakeWorld Proxy:/nonexistent:/usr/sbin/nologin
 # free: 502
 # free: 503
