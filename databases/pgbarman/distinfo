@@ -1,3 +1,3 @@
-TIMESTAMP = 1733816656
-SHA256 (EnterpriseDB-barman-release-3.12.1_GH0.tar.gz) = aae83ea3ff91ac97b7255754b54ec73fa9b8c6aff666006dc4177d65db16ed06
-SIZE (EnterpriseDB-barman-release-3.12.1_GH0.tar.gz) = 3099650
+TIMESTAMP = 1740226537
+SHA256 (EnterpriseDB-barman-release-3.13.0_GH0.tar.gz) = 2a135e32807ddaa50b0081534dc15e39f0cdd9cbe639c923a56d321106dbf01c
+SIZE (EnterpriseDB-barman-release-3.13.0_GH0.tar.gz) = 1858287
