@@ -819,6 +819,7 @@
     SUBDIR += qonk
     SUBDIR += qqwing
     SUBDIR += qstat
+    SUBDIR += qtv
     SUBDIR += quackle
     SUBDIR += quadra
     SUBDIR += quadrapassel
