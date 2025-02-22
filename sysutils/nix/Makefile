@@ -10,6 +10,10 @@ WWW=		https://nixos.org/nix/
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		Fails to build, error: field designator 'cols' does not refer to any field in type 'struct lowdown_opts'
+DEPRECATED=	Outdated version and broken for months
+EXPIRATION_DATE=2025-03-31
+
 BUILD_DEPENDS=	${LOCALBASE}/share/aclocal/ax_cxx_compile_stdcxx.m4:devel/autoconf-archive \
 		gsed:textproc/gsed \
 		bash:shells/bash \
