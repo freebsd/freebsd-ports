@@ -40,7 +40,6 @@
     SUBDIR += kaccounts-integration
     SUBDIR += kaccounts-providers
     SUBDIR += kaidan
-    SUBDIR += kopete
     SUBDIR += libaccounts-glib
     SUBDIR += libaccounts-qt
     SUBDIR += libmesode
