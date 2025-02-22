@@ -1,0 +1,5 @@
+bin/notimail
+@sample(daemon,daemon,640) etc/notimail/config.ini.sample
+share/man/man1/notimail.1.gz
+@dir(daemon,daemon,755) /var/cache/notimail
+@dir(daemon,daemon,755) /var/log/notimail

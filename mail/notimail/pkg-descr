@@ -1,0 +1,3 @@
+NotiMail is a server-side email notification manager that utilizes
+various push providers for real-time alerts, conserving mobile battery
+life without compromising on notification immediacy.

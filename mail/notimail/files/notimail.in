@@ -1,0 +1,49 @@
+#!/bin/sh
+
+# PROVIDE: notimail
+# REQUIRE: DAEMON
+# KEYWORD: shutdown
+
+. /etc/rc.subr
+
+name="notimail"
+rcvar="${name}_enable"
+
+load_rc_config $name
+
+: ${notimail_enable:="NO"}
+: ${notimail_user:="daemon"}
+: ${notimail_group:="daemon"}
+: ${notimail_command:="%%PREFIX%%/bin/notimail"}
+: ${notimail_flags:="-c %%PREFIX%%/etc/notimail/config.ini"}
+
+pidfile="/var/run/${name}.pid"
+command="/usr/sbin/daemon"
+command_args="-p ${pidfile} -f ${notimail_command} ${notimail_flags}"
+
+start_cmd="${name}_start"
+stop_cmd="${name}_stop"
+restart_cmd="${name}_restart"
+
+notimail_start() {
+    echo "Starting ${name}."
+    /usr/sbin/daemon -p ${pidfile} -f ${notimail_command} ${notimail_flags}
+}
+
+notimail_stop() {
+    echo "Stopping ${name}."
+    if [ -e "${pidfile}" ]; then
+        kill -s TERM `cat ${pidfile}`
+        rm -f ${pidfile}
+    else
+        echo "${name} is not running."
+    fi
+}
+
+notimail_restart() {
+    ${name}_stop
+    sleep 2
+    ${name}_start
+}
+
+run_rc_command "$1"
