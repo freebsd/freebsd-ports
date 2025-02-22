@@ -343,9 +343,9 @@ _USE_KDEPIM_ALL=	akonadi akonadicalendar akonadiconsole \
 			pimcommon pimtextedit tnef
 
 # List of frequently used KDE releated software for any KDE/Qt version.
-_USE_KDE_EXTRA5_ALL=	kirigami-addons phonon phonon-backend \
+_USE_KDE_EXTRA5_ALL=	kirigami-addons phonon phonon-vlc \
 			plasma-wayland-protocols
-_USE_KDE_EXTRA6_ALL=	kirigami-addons phonon phonon-backend \
+_USE_KDE_EXTRA6_ALL=	kirigami-addons phonon phonon-mpv phonon-vlc \
 			plasma-wayland-protocols ktextaddons
 _USE_KDE_EXTRA_ALL=	${_USE_KDE_EXTRA${_KDE_VERSION}_ALL}
 
@@ -989,8 +989,14 @@ kde-okular_LIB=			libOkular${_KDE_VERSION}Core.so
 kde-phonon_PORT=		multimedia/phonon@${_QT_RELNAME}
 kde-phonon_LIB=			libphonon4${_QT_RELNAME}.so
 
-kde-phonon-backend_PORT=	multimedia/phonon-vlc@${_QT_RELNAME}
-kde-phonon-backend_PATH=	${QT_PLUGINDIR}/phonon4${_QT_RELNAME}_backend/phonon_vlc_${_QT_RELNAME}.so
+kde-phonon-mpv_PORT=	multimedia/phonon-mpv
+kde-phonon-mpv_PATH=	${QT_PLUGINDIR}/phonon4${_QT_RELNAME}_backend/phonon_mpv_${_QT_RELNAME}.so
+kde-phonon-mpv_TYPE=	run
+
+kde-phonon-vlc_PORT=	multimedia/phonon-vlc@${_QT_RELNAME}
+kde-phonon-vlc_PATH=	${QT_PLUGINDIR}/phonon4${_QT_RELNAME}_backend/phonon_vlc_${_QT_RELNAME}.so
+kde-phonon-vlc_TYPE=	run
+
 # ====================== end of multiversion components ========================
 
 # end of component list ########################################################
