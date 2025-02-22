@@ -1,0 +1,13 @@
+[
+{ type: install
+  message: <<EOM
+You installed Odin2: the polyphonic synthesizer
+
+Please note that this package has a significant bug:
+the UI window of the LV2 plugin opens blank.
+
+See https://github.com/TheWaveWarden/odin2/issues/468
+
+EOM
+}
+]

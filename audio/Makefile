@@ -525,6 +525,7 @@
     SUBDIR += nyquist
     SUBDIR += oaml
     SUBDIR += ocp
+    SUBDIR += odin2-synthesizer
     SUBDIR += ogg2mp3
     SUBDIR += openal-soft
     SUBDIR += opencore-amr

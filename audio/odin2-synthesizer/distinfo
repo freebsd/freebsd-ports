@@ -1,0 +1,15 @@
+TIMESTAMP = 1740208433
+SHA256 (TheWaveWarden-odin2-v2.3.4-13-gc8d3861f_GH0.tar.gz) = 677b3e2ff752da7cdd3d68013a3fdfae7ad5bb196d0e609325c517308fca819f
+SIZE (TheWaveWarden-odin2-v2.3.4-13-gc8d3861f_GH0.tar.gz) = 68696686
+SHA256 (surge-synthesizer-tuning-library-8eb7232ac24ac2f97a052063161c0c4f5fd763e3_GH0.tar.gz) = a4f03d0d0ee6d7712fe47cd27b6006a32dc20387b35a2e4ebe7e7339e748a249
+SIZE (surge-synthesizer-tuning-library-8eb7232ac24ac2f97a052063161c0c4f5fd763e3_GH0.tar.gz) = 137623
+SHA256 (juce-framework-JUCE-53b04877c6ebc7ef3cb42e84cb11a48e0cf809b5_GH0.tar.gz) = c86c86c55648c29dd36fd9f4e36fa798556892a6d6e92a0eee5852361f82be9b
+SIZE (juce-framework-JUCE-53b04877c6ebc7ef3cb42e84cb11a48e0cf809b5_GH0.tar.gz) = 18691224
+SHA256 (free-audio-clap-juce-extensions-f11e8c3284e7ff2629534148cbd98da9f602bfea_GH0.tar.gz) = cde52a4f16743aeca96481639bd1328159dcad830ddc62ac3b1f509843529f8b
+SIZE (free-audio-clap-juce-extensions-f11e8c3284e7ff2629534148cbd98da9f602bfea_GH0.tar.gz) = 17710
+SHA256 (free-audio-clap-84ad6fe9739d3070ed0eb05c24be303a899ab813_GH0.tar.gz) = 87699efad3af3a96d291c73785fae30bcde72ab4a994549940d1cc18901ac05f
+SIZE (free-audio-clap-84ad6fe9739d3070ed0eb05c24be303a899ab813_GH0.tar.gz) = 2318725
+SHA256 (free-audio-clap-helpers-2bb43c18788c689708ead6f127a2d75e772ab389_GH0.tar.gz) = 13cd0106ffb4ecd764d9355d46342a79d87e0ea037e5f129fe4bd29a542d6c95
+SIZE (free-audio-clap-helpers-2bb43c18788c689708ead6f127a2d75e772ab389_GH0.tar.gz) = 19010
+SHA256 (lv2-porting-project-JUCE-b8fb637be2f7d6bb3bd2f104c4c798ec79b2f2f1_GH0.tar.gz) = 7f414c62674155326bb189527fd9755aca4c58b6f74d7caafaa2b14cd36963a0
+SIZE (lv2-porting-project-JUCE-b8fb637be2f7d6bb3bd2f104c4c798ec79b2f2f1_GH0.tar.gz) = 18717111

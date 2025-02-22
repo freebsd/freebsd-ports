@@ -1,0 +1,6 @@
+lib/clap/Odin2.clap
+lib/lv2/Odin2.lv2/Odin2.so
+lib/lv2/Odin2.lv2/Odin2.ttl
+lib/lv2/Odin2.lv2/manifest.ttl
+lib/lv2/Odin2.lv2/presets.ttl
+lib/vst/Odin2.so
