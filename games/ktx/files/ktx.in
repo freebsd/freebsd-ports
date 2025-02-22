@@ -8,7 +8,8 @@
 # enable ktx:
 # ktx_(instance_)?enable (bool):	Set to "NO" by default.
 #					Set it to "YES" to enable ktx.
-# ktx_(instance_)?port (int):		UDP port (default 27500).
+# ktx_(instance_)?port (int):		UDP port for game and TCP for QTV stream
+#					(default 27500).
 # ktx_(instance_)?gamedir (str):	Gamedir for ktx (default ktx).
 # ktx_(instance_)?args (str):		Custom additional arguments to be passed
 #					to ${__qwserver} (default empty).
@@ -125,6 +126,6 @@ if [ -n "${__randommaps}" -a \( "x$1" = "xstart" -o "x$1" = "xrestart" \) ]; the
 fi
 
 command="/usr/sbin/daemon"
-command_args="-P ${pidfile} -u ${__user} -R 5 -f -H -o ${__log} -m 3 ${__qwserver} -port ${__port} -game ${__gamedir} ${__args}"
+command_args="-P ${pidfile} -u ${__user} -R 5 -f -H -o ${__log} -m 3 ${__qwserver} -port ${__port} +qtv_streamport ${__port} -game ${__gamedir} ${__args}"
 
 run_rc_command "$1"
