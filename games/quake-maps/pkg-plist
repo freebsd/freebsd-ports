@@ -1,6 +1,3 @@
-@comment dir quake
-@comment dir quake/id1
-@comment dir quake/id1/maps
 %%Q1MAPSDIR%%/100m.bsp
 %%Q1MAPSDIR%%/150dm3.bsp
 %%Q1MAPSDIR%%/2bfree.bsp
