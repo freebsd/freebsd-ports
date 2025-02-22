@@ -12,6 +12,9 @@ WWW=		https://janestreet.github.io/
 LICENSE=	APACHE20 BSD3CLAUSE
 LICENSE_COMB=	multi
 
+DEPRECATED=	Deprecated, upstream recommends migrating to devel/ocaml-ppxlib
+EXPIRATION_DATE=2025-03-31
+
 BUILD_DEPENDS=	ocamlbuild:devel/ocaml-ocamlbuild
 
 USES=		gmake ocaml:camlp4,findplist
