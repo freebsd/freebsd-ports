@@ -43,4 +43,4 @@ fetch -o - https://pypi.python.org/pypi/$PACKAGE_NAME/json 2>/dev/null |
 	grep -v -E ".*(a|b|rc)[0-9]*$" |
 	version_sort |
 	tail -1 ||
-	echo "failed to find the Python package '$PACKAGE_NAME'"
+	! echo "failed to find the Python package '$PACKAGE_NAME'"
