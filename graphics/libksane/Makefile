@@ -4,7 +4,7 @@ CATEGORIES=	graphics kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	SANE library interface for KDE
-WWW=		http://www.kipi-plugins.org
+WWW=		https://invent.kde.org/graphics/libksane
 
 LIB_DEPENDS=	libsane.so:graphics/sane-backends \
 		libKSaneCore6.so:graphics/ksanecore
