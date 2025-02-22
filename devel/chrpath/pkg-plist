@@ -1,0 +1,4 @@
+bin/chrpath
+share/man/man1/chrpath.1.gz
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
