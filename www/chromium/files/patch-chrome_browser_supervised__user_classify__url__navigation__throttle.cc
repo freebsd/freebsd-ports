@@ -1,6 +1,6 @@
---- chrome/browser/supervised_user/classify_url_navigation_throttle.cc.orig	2024-11-14 07:57:23 UTC
+--- chrome/browser/supervised_user/classify_url_navigation_throttle.cc.orig	2025-02-19 07:43:18 UTC
 +++ chrome/browser/supervised_user/classify_url_navigation_throttle.cc
-@@ -219,7 +219,7 @@ void ClassifyUrlNavigationThrottle::OnInterstitialResu
+@@ -218,7 +218,7 @@ void ClassifyUrlNavigationThrottle::OnInterstitialResu
      case SupervisedUserNavigationThrottle::kCancelWithInterstitial: {
        CHECK(navigation_handle());
  // LINT.IfChange(cancel_with_interstitial)

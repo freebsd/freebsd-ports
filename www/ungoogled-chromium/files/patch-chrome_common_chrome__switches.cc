@@ -1,4 +1,4 @@
---- chrome/common/chrome_switches.cc.orig	2024-11-16 12:20:41 UTC
+--- chrome/common/chrome_switches.cc.orig	2025-02-20 09:59:21 UTC
 +++ chrome/common/chrome_switches.cc
 @@ -892,7 +892,7 @@ const char kAllowNaClSocketAPI[] = "allow-nacl-socket-
  #endif
@@ -9,8 +9,8 @@
  const char kEnableNewAppMenuIcon[] = "enable-new-app-menu-icon";
  
  // Causes the browser to launch directly in guest mode.
-@@ -902,7 +902,7 @@ const char kGuest[] = "guest";
- const char kForceNtpMobilePromo[] = "force-ntp-mobile-promo";
+@@ -908,7 +908,7 @@ const char kGlicGuestURL[] = "glic-guest-url";
+ const char kCSPOverride[] = "glic-webui-csp-override";
  #endif
  
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN)

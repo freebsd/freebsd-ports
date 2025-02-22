@@ -1,6 +1,6 @@
---- components/password_manager/core/browser/password_manager_switches.h.orig	2024-07-31 14:19:23 UTC
+--- components/password_manager/core/browser/password_manager_switches.h.orig	2025-02-20 09:59:21 UTC
 +++ components/password_manager/core/browser/password_manager_switches.h
-@@ -10,7 +10,7 @@
+@@ -9,7 +9,7 @@
  
  namespace password_manager {
  

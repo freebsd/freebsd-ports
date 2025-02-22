@@ -1,6 +1,6 @@
---- services/network/public/cpp/features.cc.orig	2024-08-26 12:06:38 UTC
+--- services/network/public/cpp/features.cc.orig	2025-02-19 07:43:18 UTC
 +++ services/network/public/cpp/features.cc
-@@ -127,7 +127,7 @@ BASE_FEATURE(kSplitAuthCacheByNetworkIsolationKey,
+@@ -125,7 +125,7 @@ BASE_FEATURE(kSplitAuthCacheByNetworkIsolationKey,
  BASE_FEATURE(kDnsOverHttpsUpgrade,
               "DnsOverHttpsUpgrade",
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_MAC) || \

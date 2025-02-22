@@ -1,6 +1,6 @@
---- third_party/lzma_sdk/C/CpuArch.c.orig	2022-09-04 11:56:14 UTC
+--- third_party/lzma_sdk/C/CpuArch.c.orig	2025-02-19 07:43:18 UTC
 +++ third_party/lzma_sdk/C/CpuArch.c
-@@ -412,12 +412,40 @@ BoolInt CPU_IsSupported_SHA1(void) { return APPLE_CRYP
+@@ -854,7 +854,35 @@ BoolInt CPU_IsSupported_SHA1(void) { return APPLE_CRYP
  BoolInt CPU_IsSupported_SHA2(void) { return APPLE_CRYPTO_SUPPORT_VAL; }
  BoolInt CPU_IsSupported_AES (void) { return APPLE_CRYPTO_SUPPORT_VAL; }
  
@@ -35,10 +35,17 @@
 +
  #else // __APPLE__
  
+ #if defined(__GLIBC__) && (__GLIBC__ * 100 + __GLIBC_MINOR__ >= 216)
+@@ -869,10 +897,12 @@ BoolInt CPU_IsSupported_AES (void) { return APPLE_CRYP
+   #endif
+ #endif
+ 
++#if !defined(__FreeBSD__)
+ #ifdef Z7_GETAUXV_AVAILABLE
+ // #pragma message("=== Z7_GETAUXV_AVAILABLE === ")
  #include <sys/auxv.h>
- 
--#if !defined(ARMV8_OS_FUCHSIA)
-+#if !defined(ARMV8_OS_FUCHSIA) && !defined(__FreeBSD__)
  #define USE_HWCAP
- #endif // !defined(ARMV8_OS_FUCHSIA)
++#endif
+ #endif
  
+ #ifdef USE_HWCAP

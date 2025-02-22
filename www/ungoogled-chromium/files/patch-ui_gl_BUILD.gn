@@ -1,4 +1,4 @@
---- ui/gl/BUILD.gn.orig	2024-11-16 12:20:41 UTC
+--- ui/gl/BUILD.gn.orig	2025-02-20 09:59:21 UTC
 +++ ui/gl/BUILD.gn
 @@ -168,7 +168,6 @@ component("gl") {
    public_deps = [

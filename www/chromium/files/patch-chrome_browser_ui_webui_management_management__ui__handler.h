@@ -1,6 +1,6 @@
---- chrome/browser/ui/webui/management/management_ui_handler.h.orig	2024-11-14 07:57:23 UTC
+--- chrome/browser/ui/webui/management/management_ui_handler.h.orig	2025-02-19 07:43:18 UTC
 +++ chrome/browser/ui/webui/management/management_ui_handler.h
-@@ -31,7 +31,7 @@ namespace policy {
+@@ -30,7 +30,7 @@ namespace policy {
  class PolicyService;
  }  // namespace policy
  
@@ -9,7 +9,7 @@
  namespace device_signals {
  class UserPermissionService;
  }  // namespace device_signals
-@@ -72,7 +72,7 @@ class ManagementUIHandler : public content::WebUIMessa
+@@ -71,7 +71,7 @@ class ManagementUIHandler : public content::WebUIMessa
    base::Value::List GetManagedWebsitesInfo(Profile* profile) const;
    base::Value::List GetApplicationsInfo(Profile* profile) const;
    virtual policy::PolicyService* GetPolicyService();

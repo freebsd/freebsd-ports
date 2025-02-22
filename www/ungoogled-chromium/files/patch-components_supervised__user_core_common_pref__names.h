@@ -1,7 +1,7 @@
---- components/supervised_user/core/common/pref_names.h.orig	2024-07-31 14:19:23 UTC
+--- components/supervised_user/core/common/pref_names.h.orig	2025-01-25 09:34:31 UTC
 +++ components/supervised_user/core/common/pref_names.h
-@@ -137,7 +137,7 @@ inline constexpr char kFirstTimeInterstitialBannerStat
-     "profile.managed.banner_state";
+@@ -129,7 +129,7 @@ inline constexpr char kDefaultSupervisedUserFilteringB
+     "profile.managed.default_filtering_behavior";
  
  #if BUILDFLAG(ENABLE_EXTENSIONS)
 -#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)

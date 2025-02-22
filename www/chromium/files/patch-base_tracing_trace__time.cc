@@ -1,4 +1,4 @@
---- base/tracing/trace_time.cc.orig	2022-02-28 16:54:41 UTC
+--- base/tracing/trace_time.cc.orig	2025-02-19 07:43:18 UTC
 +++ base/tracing/trace_time.cc
 @@ -8,13 +8,17 @@
  #include "build/build_config.h"
@@ -18,11 +18,4 @@
 +    BUILDFLAG(IS_FUCHSIA) || BUILDFLAG(IS_BSD)
    struct timespec ts;
    int res = clock_gettime(CLOCK_BOOTTIME, &ts);
-   if (res != -1)
-@@ -24,4 +28,4 @@ int64_t TraceBootTicksNow() {
- }
- 
- }  // namespace tracing
--}  // namespace base
-\ No newline at end of file
-+}  // namespace base
+   if (res != -1) {

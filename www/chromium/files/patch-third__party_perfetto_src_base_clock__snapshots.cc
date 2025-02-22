@@ -1,12 +1,10 @@
---- third_party/perfetto/src/base/clock_snapshots.cc.orig	2024-11-14 07:57:23 UTC
+--- third_party/perfetto/src/base/clock_snapshots.cc.orig	2025-02-19 07:43:18 UTC
 +++ third_party/perfetto/src/base/clock_snapshots.cc
-@@ -26,7 +26,8 @@ ClockSnapshotVector CaptureClockSnapshots() {
-   ClockSnapshotVector snapshot_data;
+@@ -27,6 +27,7 @@ ClockSnapshotVector CaptureClockSnapshots() {
  #if !PERFETTO_BUILDFLAG(PERFETTO_OS_APPLE) && \
      !PERFETTO_BUILDFLAG(PERFETTO_OS_WIN) &&   \
--    !PERFETTO_BUILDFLAG(PERFETTO_OS_NACL)
-+    !PERFETTO_BUILDFLAG(PERFETTO_OS_NACL) &&  \
-+    !PERFETTO_BUILDFLAG(PERFETTO_OS_BSD)
+     !PERFETTO_BUILDFLAG(PERFETTO_OS_NACL) &&  \
++    !PERFETTO_BUILDFLAG(PERFETTO_OS_BSD) &&  \
+     !PERFETTO_BUILDFLAG(PERFETTO_OS_QNX)
    struct {
      clockid_t id;
-     protos::pbzero::BuiltinClock type;

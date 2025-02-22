@@ -1,6 +1,6 @@
---- cc/base/features.cc.orig	2024-11-16 12:20:41 UTC
+--- cc/base/features.cc.orig	2025-02-20 09:59:21 UTC
 +++ cc/base/features.cc
-@@ -85,7 +85,7 @@ const base::FeatureParam<int> kDeferImplInvalidationFr
+@@ -43,7 +43,7 @@ const base::FeatureParam<int> kDeferImplInvalidationFr
  // be using a separate flag to control the launch on GL.
  BASE_FEATURE(kUseDMSAAForTiles,
               "UseDMSAAForTiles",

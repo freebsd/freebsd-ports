@@ -1,6 +1,6 @@
---- chrome/browser/ui/views/user_education/browser_user_education_service.cc.orig	2024-11-16 12:20:41 UTC
+--- chrome/browser/ui/views/user_education/browser_user_education_service.cc.orig	2025-02-20 09:59:21 UTC
 +++ chrome/browser/ui/views/user_education/browser_user_education_service.cc
-@@ -845,7 +845,7 @@ void MaybeRegisterChromeFeaturePromos(
+@@ -893,7 +893,7 @@ void MaybeRegisterChromeFeaturePromos(
                           "defaulted to saved for the first time.")));
    }
  
@@ -9,7 +9,7 @@
    // kIPHSupervisedUserProfileSigninFeature
    registry.RegisterFeature(std::move(
        FeaturePromoSpecification::CreateForCustomAction(
-@@ -1085,7 +1085,7 @@ void MaybeRegisterChromeFeaturePromos(
+@@ -1134,7 +1134,7 @@ void MaybeRegisterChromeFeaturePromos(
                         "Triggered to inform users of the availability of the "
                         "new translate screen feature on the Lens Overlay.")));
  

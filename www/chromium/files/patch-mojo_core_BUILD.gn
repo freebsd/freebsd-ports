@@ -1,6 +1,6 @@
---- mojo/core/BUILD.gn.orig	2024-09-30 07:45:04 UTC
+--- mojo/core/BUILD.gn.orig	2025-01-15 09:18:26 UTC
 +++ mojo/core/BUILD.gn
-@@ -161,7 +161,7 @@ source_set("impl_for_embedder") {
+@@ -163,7 +163,7 @@ source_set("impl_for_embedder") {
        ]
      }
  

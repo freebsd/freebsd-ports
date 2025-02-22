@@ -1,6 +1,6 @@
---- ui/ozone/platform/wayland/host/wayland_input_method_context.cc.orig	2024-09-30 07:45:04 UTC
+--- ui/ozone/platform/wayland/host/wayland_input_method_context.cc.orig	2025-02-19 07:43:18 UTC
 +++ ui/ozone/platform/wayland/host/wayland_input_method_context.cc
-@@ -60,7 +60,7 @@ namespace {
+@@ -53,7 +53,7 @@ namespace {
  // Only enable the preedit string for sequence mode (i.e. when using dead keys
  // or the Compose key) on Linux ozone/wayland (see b/220370007).
  constexpr CharacterComposer::PreeditStringMode kPreeditStringMode =

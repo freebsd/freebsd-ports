@@ -1,6 +1,6 @@
---- content/browser/file_system_access/file_system_access_local_path_watcher.cc.orig	2024-10-01 07:26:23 UTC
+--- content/browser/file_system_access/file_system_access_local_path_watcher.cc.orig	2025-01-25 09:34:31 UTC
 +++ content/browser/file_system_access/file_system_access_local_path_watcher.cc
-@@ -63,7 +63,7 @@ void FileSystemAccessLocalPathWatcher::Initialize(
+@@ -67,7 +67,7 @@ void FileSystemAccessLocalPathWatcher::Initialize(
        .type = scope().IsRecursive() ? FilePathWatcher::Type::kRecursive
                                      : FilePathWatcher::Type::kNonRecursive,
  #if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_WIN) || \

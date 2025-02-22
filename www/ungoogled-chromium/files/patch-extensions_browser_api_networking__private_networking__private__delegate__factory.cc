@@ -1,4 +1,4 @@
---- extensions/browser/api/networking_private/networking_private_delegate_factory.cc.orig	2024-11-16 12:20:41 UTC
+--- extensions/browser/api/networking_private/networking_private_delegate_factory.cc.orig	2025-01-25 09:34:31 UTC
 +++ extensions/browser/api/networking_private/networking_private_delegate_factory.cc
 @@ -12,7 +12,7 @@
  
@@ -18,3 +18,12 @@
    delegate = std::make_unique<NetworkingPrivateLinux>();
  #elif BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC)
    std::unique_ptr<wifi::WiFiService> wifi_service(wifi::WiFiService::Create());
+@@ -74,7 +74,7 @@ NetworkingPrivateDelegateFactory::BuildServiceInstance
+ #endif
+ 
+ #if BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_WIN) || \
+-    BUILDFLAG(IS_MAC)
++    BUILDFLAG(IS_MAC) || BUILDFLAG(IS_BSD)
+   if (ui_factory_) {
+     delegate->set_ui_delegate(ui_factory_->CreateDelegate());
+   }

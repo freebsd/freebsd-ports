@@ -1,6 +1,6 @@
---- chrome/browser/chrome_browser_main_linux.h.orig	2024-03-22 08:19:40 UTC
+--- chrome/browser/chrome_browser_main_linux.h.orig	2025-02-19 07:43:18 UTC
 +++ chrome/browser/chrome_browser_main_linux.h
-@@ -30,7 +30,7 @@ class ChromeBrowserMainPartsLinux : public ChromeBrows
+@@ -31,7 +31,7 @@ class ChromeBrowserMainPartsLinux : public ChromeBrows
  
    // ChromeBrowserMainPartsPosix overrides.
    void PostCreateMainMessageLoop() override;

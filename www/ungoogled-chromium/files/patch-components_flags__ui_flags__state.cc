@@ -1,9 +1,9 @@
---- components/flags_ui/flags_state.cc.orig	2024-10-01 07:26:23 UTC
+--- components/flags_ui/flags_state.cc.orig	2025-02-20 09:59:21 UTC
 +++ components/flags_ui/flags_state.cc
-@@ -764,7 +764,7 @@ unsigned short FlagsState::GetCurrentPlatform() {
+@@ -760,7 +760,7 @@ unsigned short FlagsState::GetCurrentPlatform() {
+   return kOsWin;
+ #elif BUILDFLAG(IS_CHROMEOS)
    return kOsCrOS;
- #elif BUILDFLAG(IS_CHROMEOS_LACROS)
-   return kOsLacros;
 -#elif BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_OPENBSD)
 +#elif BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
    return kOsLinux;
