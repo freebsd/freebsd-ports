@@ -1,6 +1,6 @@
 PORTNAME=	mise
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2025.2.6
+DISTVERSION=	2025.2.7
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -65,7 +65,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		bitflags-2.8.0 \
 		block-buffer-0.10.4 \
 		bstr-1.11.3 \
-		built-0.7.6 \
+		built-0.7.7 \
 		bumpalo-3.17.0 \
 		bytecount-0.6.8 \
 		byteorder-1.5.0 \
@@ -86,8 +86,8 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		chrono-tz-build-0.3.0 \
 		ci_info-0.14.14 \
 		cipher-0.4.4 \
-		clap-4.5.29 \
-		clap_builder-4.5.29 \
+		clap-4.5.30 \
+		clap_builder-4.5.30 \
 		clap_derive-4.5.28 \
 		clap_lex-0.7.4 \
 		clap_mangen-0.2.26 \
@@ -132,7 +132,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		dashmap-5.5.3 \
 		dashmap-6.1.0 \
 		deflate64-0.1.9 \
-		demand-1.6.2 \
+		demand-1.6.3 \
 		der-0.7.9 \
 		deranged-0.3.11 \
 		derive_arbitrary-1.4.1 \
@@ -255,7 +255,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		glob-0.3.2 \
 		globset-0.4.15 \
 		globwalk-0.9.1 \
-		h2-0.4.7 \
+		h2-0.4.8 \
 		hashbrown-0.12.3 \
 		hashbrown-0.14.5 \
 		hashbrown-0.15.2 \
@@ -325,7 +325,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		jobserver-0.1.32 \
 		js-sys-0.3.77 \
 		junction-1.2.0 \
-		kdl-6.3.3 \
+		kdl-6.3.4 \
 		kstring-2.0.2 \
 		lazy-regex-3.4.1 \
 		lazy-regex-proc_macros-3.4.1 \
@@ -539,7 +539,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		tabled_derive-0.9.0 \
 		taplo-0.13.2 \
 		tar-0.4.43 \
-		tempfile-3.16.0 \
+		tempfile-3.17.1 \
 		tera-1.20.0 \
 		termcolor-1.4.1 \
 		terminal_size-0.4.1 \
@@ -578,7 +578,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		try-lock-0.2.5 \
 		type-map-0.5.0 \
 		typeid-1.0.2 \
-		typenum-1.17.0 \
+		typenum-1.18.0 \
 		ubi-0.4.2 \
 		ucd-trie-0.1.7 \
 		uluru-3.1.0 \
@@ -591,7 +591,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		unic-ucd-segment-0.9.0 \
 		unic-ucd-version-0.9.0 \
 		unicode-bom-2.0.3 \
-		unicode-ident-1.0.16 \
+		unicode-ident-1.0.17 \
 		unicode-normalization-0.1.24 \
 		unicode-segmentation-1.12.0 \
 		unicode-width-0.1.14 \
@@ -660,7 +660,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		windows_x86_64_gnullvm-0.52.6 \
 		windows_x86_64_msvc-0.48.5 \
 		windows_x86_64_msvc-0.52.6 \
-		winnow-0.6.26 \
+		winnow-0.6.24 \
 		winnow-0.7.2 \
 		winsafe-0.0.19 \
 		wit-bindgen-rt-0.33.0 \
@@ -668,7 +668,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		writeable-0.5.5 \
 		x25519-dalek-2.0.1 \
 		xattr-1.4.0 \
-		xx-2.0.4 \
+		xx-2.0.5 \
 		xz2-0.1.7 \
 		yansi-1.0.1 \
 		yoke-0.7.5 \
