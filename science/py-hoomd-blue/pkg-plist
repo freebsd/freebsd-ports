@@ -41,7 +41,6 @@ lib/cmake/hoomd/hoomd-targets.cmake
 %%PYTHON_SITELIBDIR%%/hoomd/hpmc/compute.py
 %%PYTHON_SITELIBDIR%%/hoomd/hpmc/external/__init__.py
 %%PYTHON_SITELIBDIR%%/hoomd/hpmc/external/external.py
-%%PYTHON_SITELIBDIR%%/hoomd/hpmc/external/field.py
 %%PYTHON_SITELIBDIR%%/hoomd/hpmc/external/harmonic.py
 %%PYTHON_SITELIBDIR%%/hoomd/hpmc/external/linear.py
 %%PYTHON_SITELIBDIR%%/hoomd/hpmc/external/wall.py
@@ -552,6 +551,7 @@ lib/cmake/hoomd/hoomd-targets.cmake
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/md/EvaluatorPairReactionField.h
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/md/EvaluatorPairTWF.h
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/md/EvaluatorPairTable.h
+%%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/md/EvaluatorPairWangFrenkel.h
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/md/EvaluatorPairYukawa.h
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/md/EvaluatorPairZBL.h
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/md/EvaluatorSpecialPairCoulomb.h
@@ -679,6 +679,8 @@ lib/cmake/hoomd/hoomd-targets.cmake
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/mpcd/PlanarPoreGeometry.h
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/mpcd/PlanarPoreGeometryFiller.h
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/mpcd/RejectionVirtualParticleFiller.h
+%%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/mpcd/ReverseNonequilibriumShearFlow.h
+%%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/mpcd/ReverseNonequilibriumShearFlowUtilities.h
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/mpcd/SRDCollisionMethod.h
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/mpcd/SineForce.h
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/mpcd/Sorter.h
@@ -796,8 +798,10 @@ lib/cmake/hoomd/hoomd-targets.cmake
 %%PYTHON_SITELIBDIR%%/hoomd/mpcd/pytest/test_snapshot.py
 %%PYTHON_SITELIBDIR%%/hoomd/mpcd/pytest/test_stream.py
 %%PYTHON_SITELIBDIR%%/hoomd/mpcd/pytest/test_tune.py
+%%PYTHON_SITELIBDIR%%/hoomd/mpcd/pytest/test_update.py
 %%PYTHON_SITELIBDIR%%/hoomd/mpcd/stream.py
 %%PYTHON_SITELIBDIR%%/hoomd/mpcd/tune.py
+%%PYTHON_SITELIBDIR%%/hoomd/mpcd/update.py
 %%PYTHON_SITELIBDIR%%/hoomd/operation.py
 %%PYTHON_SITELIBDIR%%/hoomd/operations.py
 %%PYTHON_SITELIBDIR%%/hoomd/pytest.ini
