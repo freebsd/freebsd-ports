@@ -11,7 +11,8 @@ LICENSE=	MIT
 
 BUILD_DEPENDS=	${LOCALBASE}/include/curl/curl.h:ftp/curl
 LIB_DEPENDS=	libcurl.so:ftp/curl
-TEST_DEPENDS=	R-cran-httpuv>=1.4.4:www/R-cran-httpuv \
+TEST_DEPENDS=	pdflatex:print/tex-formats \
+		R-cran-httpuv>=1.4.4:www/R-cran-httpuv \
 		R-cran-jsonlite>0:converters/R-cran-jsonlite \
 		R-cran-knitr>0:print/R-cran-knitr \
 		R-cran-later>0:devel/R-cran-later \
@@ -22,6 +23,6 @@ TEST_DEPENDS=	R-cran-httpuv>=1.4.4:www/R-cran-httpuv \
 
 USES=		cran:auto-plist,compiles
 
-TESTING_UNSAFE=	yes
+R_POSTCMD_CHECK_OPTIONS=	--no-timings --no-manual
 
 .include <bsd.port.mk>
