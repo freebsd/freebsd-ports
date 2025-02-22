@@ -13,8 +13,6 @@ LICENSE_NAME=	TINKER license agreement
 LICENSE_FILE=	${WRKSRC}/doc/license.pdf
 LICENSE_PERMS=	auto-accept # internal academic purposes only, no commercial use
 
-BROKEN=		fetch fails: the server with the tarball crashed in St Luis
-
 LIB_DEPENDS=	libfftw3.so:math/fftw3
 
 USES=		fortran gmake
