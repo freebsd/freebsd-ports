@@ -10,6 +10,7 @@ bin/rtl_433
 @sample etc/rtl_433/FAN-53T.conf etc/rtl_433/FAN-53T.conf.sample
 @sample etc/rtl_433/GhostControls.conf etc/rtl_433/GhostControls.conf.sample
 @sample etc/rtl_433/HeatmiserPRT-W.conf etc/rtl_433/HeatmiserPRT-W.conf.sample
+@sample etc/rtl_433/Hormann-blue.conf etc/rtl_433/Hormann-blue.conf.sample
 @sample etc/rtl_433/LeakDetector.conf etc/rtl_433/LeakDetector.conf.sample
 @sample etc/rtl_433/MightyMule-FM231.conf etc/rtl_433/MightyMule-FM231.conf.sample
 @sample etc/rtl_433/MondeoRemote.conf etc/rtl_433/MondeoRemote.conf.sample
@@ -33,8 +34,10 @@ bin/rtl_433
 @sample etc/rtl_433/led-light-remote.conf etc/rtl_433/led-light-remote.conf.sample
 @sample etc/rtl_433/oma-blind-remote.conf etc/rtl_433/oma-blind-remote.conf.sample
 @sample etc/rtl_433/pir-ef4.conf etc/rtl_433/pir-ef4.conf.sample
+@sample etc/rtl_433/quinetic_switch.conf etc/rtl_433/quinetic_switch.conf.sample
 @sample etc/rtl_433/rtl_433.example.conf etc/rtl_433/rtl_433.example.conf.sample
 @sample etc/rtl_433/qx-30x.conf etc/rtl_433/qx-30x.conf.sample
+@sample etc/rtl_433/rako_wireless_lighting.conf etc/rtl_433/rako_wireless_lighting.conf.sample
 @sample etc/rtl_433/rolleaseacmedia.conf etc/rtl_433/rolleaseacmedia.conf.sample
 @sample etc/rtl_433/silverline_doorbell.conf etc/rtl_433/silverline_doorbell.conf.sample
 @sample etc/rtl_433/sonoff_rm433.conf etc/rtl_433/sonoff_rm433.conf.sample
