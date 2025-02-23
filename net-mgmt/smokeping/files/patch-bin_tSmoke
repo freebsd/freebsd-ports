@@ -1,15 +1,15 @@
---- bin/tSmoke.orig	2021-11-14 17:05:16 UTC
+--- bin/tSmoke.orig	2025-02-23 21:59:54 UTC
 +++ bin/tSmoke
-@@ -53,7 +53,7 @@
- # Point the lib variables to your implementation
+@@ -54,7 +54,6 @@
  
  use lib (split /:/, q{}); # PERL5LIB
--use FindBin;use lib "$FindBin::RealBin/../lib";use lib "$FindBin::RealBin/../thirdparty/lib/perl5"; # LIBDIR
+-use FindBin;
+-use lib "$FindBin::RealBin/../lib";use lib "$FindBin::RealBin/../thirdparty/lib/perl5"; # LIBDIR
 +use lib "/usr/local/smokeping/lib";
  
  
  use Smokeping;
-@@ -63,7 +63,7 @@
+@@ -64,7 +64,7 @@
  use RRDs;
  
  # Point to your Smokeping config file
