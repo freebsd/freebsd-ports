@@ -129,6 +129,7 @@ share/icons/hicolor/scalable/apps/vcmiclient.svg
 %%DATADIR%%/Mods/vcmi/Content/Sprites/radialMenu/statusBar.png
 %%DATADIR%%/Mods/vcmi/Content/Sprites/radialMenu/swapArtifacts.png
 %%DATADIR%%/Mods/vcmi/Content/Sprites/radialMenu/tradeHeroes.png
+%%DATADIR%%/Mods/vcmi/Content/Sprites/radialMenu/upgradeCreatures.png
 %%DATADIR%%/Mods/vcmi/Content/Sprites/settingsWindow/frameAudio.png
 %%DATADIR%%/Mods/vcmi/Content/Sprites/settingsWindow/frameMovement.png
 %%DATADIR%%/Mods/vcmi/Content/Sprites/settingsWindow/frameStackQueue.png
@@ -216,6 +217,7 @@ share/icons/hicolor/scalable/apps/vcmiclient.svg
 %%DATADIR%%/Mods/vcmi/Content/config/french.json
 %%DATADIR%%/Mods/vcmi/Content/config/german.json
 %%DATADIR%%/Mods/vcmi/Content/config/hungarian.json
+%%DATADIR%%/Mods/vcmi/Content/config/italian.json
 %%DATADIR%%/Mods/vcmi/Content/config/polish.json
 %%DATADIR%%/Mods/vcmi/Content/config/portuguese.json
 %%DATADIR%%/Mods/vcmi/Content/config/rmg/hdmod/aroundamarsh.json
@@ -491,6 +493,7 @@ share/icons/hicolor/scalable/apps/vcmiclient.svg
 %%DATADIR%%/config/widgets/buttons/campaignBonusSelection.json
 %%DATADIR%%/config/widgets/buttons/castleInterfaceQuickAccess.json
 %%DATADIR%%/config/widgets/buttons/heroBackpack.json
+%%DATADIR%%/config/widgets/buttons/heroBackpackSort.json
 %%DATADIR%%/config/widgets/buttons/heroCommander.json
 %%DATADIR%%/config/widgets/buttons/lobbyAddChannel.json
 %%DATADIR%%/config/widgets/buttons/lobbyCloseChannel.json
