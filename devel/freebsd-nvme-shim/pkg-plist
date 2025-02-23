@@ -1,5 +1,3 @@
-include/freebsd-nvme-shim/COPYRIGHT
-include/freebsd-nvme-shim/NOTES
 include/freebsd-nvme-shim/asm/bitsperlong.h
 include/freebsd-nvme-shim/asm/byteorder.h
 include/freebsd-nvme-shim/asm/types.h
