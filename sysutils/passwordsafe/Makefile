@@ -8,9 +8,6 @@ WWW=		https://pwsafe.org
 
 LICENSE=	ART20
 
-NOT_FOR_ARCHS=		aarch64 armv6 armv7
-NOT_FOR_ARCHS_REASON=	Cannot determine whether the target CPU is big or little endian - please fix PwsPlatform.h
-
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libuuid.so:misc/e2fsprogs-libuuid \
 		libxerces-c.so:textproc/xerces-c3 \
@@ -45,6 +42,14 @@ LDFLAGS=	-L${PREFIX}/lib -lqrencode
 ALL_TARGET=	unicoderelease
 
 PORTSCOUT=	limit=^1\.
+
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == powerpc || ${ARCH} == powerpc64
+CXXFLAGS+=	-DPWS_BIG_ENDIAN
+.else
+CXXFLAGS+=	-DPWS_LITTLE_ENDIAN
+.endif
 
 post-patch:
 .	for f in Makefile.freebsd help/Makefile.freebsd src/os/unix/Makefile \
