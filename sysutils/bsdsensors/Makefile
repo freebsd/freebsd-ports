@@ -1,5 +1,6 @@
 PORTNAME=	bsdsensors
 DISTVERSION=	0.1.20250118
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	henry.hu.sh@gmail.com

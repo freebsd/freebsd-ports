@@ -1,5 +1,6 @@
 PORTNAME=	pybind11_abseil
 PORTVERSION=	202402.0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/pybind/pybind11_abseil/releases/download/v${PORTVERSION}/
 

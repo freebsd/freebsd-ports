@@ -1,6 +1,6 @@
 PORTNAME=	libgav1
 DISTVERSION=	0.19.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia
 MASTER_SITES=	DEBIAN:DEFAULT \
 		https://github.com/google/googletest/releases/download/v1.15.2/:googletest
