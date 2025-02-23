@@ -829,6 +829,7 @@
 %%DATADIR%%/netbox/tests/dummy_plugin/jobs.py
 %%DATADIR%%/netbox/tests/dummy_plugin/middleware.py
 %%DATADIR%%/netbox/tests/dummy_plugin/migrations/0001_initial.py
+%%DATADIR%%/netbox/tests/dummy_plugin/migrations/0002_dummynetboxmodel.py
 %%DATADIR%%/netbox/tests/dummy_plugin/migrations/__init__.py
 %%DATADIR%%/netbox/tests/dummy_plugin/models.py
 %%DATADIR%%/netbox/tests/dummy_plugin/navigation.py
@@ -844,6 +845,7 @@
 %%DATADIR%%/netbox/tests/test_graphql.py
 %%DATADIR%%/netbox/tests/test_import.py
 %%DATADIR%%/netbox/tests/test_jobs.py
+%%DATADIR%%/netbox/tests/test_models.py
 %%DATADIR%%/netbox/tests/test_plugins.py
 %%DATADIR%%/netbox/tests/test_registry.py
 %%DATADIR%%/netbox/tests/test_search.py
@@ -1107,7 +1109,6 @@
 %%DATADIR%%/templates/dcim/device/poweroutlets.html
 %%DATADIR%%/templates/dcim/device/powerports.html
 %%DATADIR%%/templates/dcim/device/rearports.html
-%%DATADIR%%/templates/dcim/device/render_config.html
 %%DATADIR%%/templates/dcim/device_edit.html
 %%DATADIR%%/templates/dcim/device_list.html
 %%DATADIR%%/templates/dcim/devicebay.html
@@ -1207,6 +1208,7 @@
 %%DATADIR%%/templates/extras/object_changelog.html
 %%DATADIR%%/templates/extras/object_configcontext.html
 %%DATADIR%%/templates/extras/object_journal.html
+%%DATADIR%%/templates/extras/object_render_config.html
 %%DATADIR%%/templates/extras/report/base.html
 %%DATADIR%%/templates/extras/report/jobs.html
 %%DATADIR%%/templates/extras/report/source.html
@@ -1329,7 +1331,6 @@
 %%DATADIR%%/templates/virtualization/virtualmachine.html
 %%DATADIR%%/templates/virtualization/virtualmachine/base.html
 %%DATADIR%%/templates/virtualization/virtualmachine/interfaces.html
-%%DATADIR%%/templates/virtualization/virtualmachine/render_config.html
 %%DATADIR%%/templates/virtualization/virtualmachine/virtual_disks.html
 %%DATADIR%%/templates/virtualization/virtualmachine_list.html
 %%DATADIR%%/templates/virtualization/vminterface.html
