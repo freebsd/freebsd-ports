@@ -11,6 +11,7 @@ WWW=		https://hyperswitch.io/ \
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_aarch64=	compilation fails: runaway builds, see https://github.com/rust-lang/rust/issues/137496
 BROKEN_armv7=	compilation fails: error[E0412]: cannot find type `AtomicU128` in module `core::sync::atomic`
 BROKEN_i386=	compilation fails: error[E0412]: cannot find type `AtomicU128` in module `core::sync::atomic`
 
