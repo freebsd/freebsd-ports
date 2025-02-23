@@ -23,7 +23,11 @@ CMAKE_ARGS=	-DEXTRA_FLAGS="" # disable -march=native
 PLIST_FILES=	bin/${PORTNAME}
 
 OPTIONS_DEFINE=		OPENMP
+.if exists(/usr/include/omp.h)
 OPTIONS_DEFAULT=	OPENMP
+.else
+OPENMP_BROKEN=	OpenMP isn't available on this architecture
+.endif
 
 OPENMP_CMAKE_BOOL=	USE_OPENMP
 OPENMP_CXXFLAGS=	-fopenmp
