@@ -3,8 +3,8 @@ DISTVERSION=	1.2.4
 CATEGORIES=	devel
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A Simple S3 Class for Representing Vectors of Binary Data ('BLOBS')
+MAINTAINER=	uzsolt@FreeBSD.org
+COMMENT=	Simple S3 Class for Representing Vectors of Binary Data ('BLOBS')
 WWW=		https://blob.tidyverse.org
 
 LICENSE=	MIT
