@@ -1,5 +1,6 @@
 PORTNAME=	arrow
 PORTVERSION=	18.0.0
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	APACHE/arrow/arrow-${PORTVERSION}/
 PKGNAMESUFFIX=	-glib
@@ -13,7 +14,7 @@ WWW=		https://arrow.apache.org/ \
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/../LICENSE.txt
 
-BUILD_DEPENDS=	arrow>=${PORTVERSION}<${PORTVERSION}_99:databases/arrow
+BUILD_DEPENDS=	arrow>=${PORTVERSION}:databases/arrow
 LIB_DEPENDS=	libarrow.so:databases/arrow
 
 USES=		compiler:c++17-lang gnome meson pkgconfig python:build

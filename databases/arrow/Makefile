@@ -1,6 +1,5 @@
 PORTNAME=	arrow
-DISTVERSION=	18.0.0
-PORTREVISION=	6
+DISTVERSION=	19.0.1
 CATEGORIES=	databases
 MASTER_SITES=	APACHE/${PORTNAME}/${PORTNAME}-${DISTVERSION} \
 		https://github.com/apache/orc/archive/rel/:orc
@@ -10,26 +9,31 @@ EXTRACT_ONLY=	apache-${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Columnar in-memory analytics layer for big data
-WWW=		https://arrow.apache.org/
+WWW=		https://arrow.apache.org \
+		https://github.com/apache/arrow
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/../LICENSE.txt
 
 LIB_DEPENDS=	libboost_system.so:devel/boost-libs
 
-USES=		cmake compiler:c++17-lang localbase pkgconfig python:build
+USES=		cmake compiler:c++17-lang localbase pkgconfig python:build,test
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	nodefault
 GH_ACCOUNT=	apache
+#GH_TUPLE=	apache:arrow-testing:d2a1371:arrow_testing/testing \
+		apache:parquet-testing:c7cf137:parquet_testing/cpp/submodules/parquet-testing
 
 WRKSRC_SUBDIR=	cpp
 
-PLIST_SUB+=	LIBVERSION=${DISTVERSION:S/.//g}
+PLIST_SUB+=	LIBVERSION=1900
 
 CMAKE_ARGS=	-DCMAKE_CXX_STANDARD=17 -DARROW_SIMD_LEVEL=NONE -DARROW_RUNTIME_SIMD_LEVEL=NONE \
 		-DPython3_EXECUTABLE=${PYTHON_CMD}
 CMAKE_OFF=	ARROW_BUILD_STATIC ARROW_WITH_BACKTRACE ARROW_BUILD_TESTS ARROW_BUILD_BENCHMARKS
+
+BINARY_ALIAS=	python=${PYTHON_CMD} # only for tests
 
 OPTIONS_GROUP=			COMPRESSION COMPONENTS # components are listed in cpp/cmake_modules/DefineOptions.cmake
 OPTIONS_GROUP_COMPRESSION=	BROTLI BZ2 LZ4 SNAPPY ZLIB ZSTD
@@ -220,10 +224,12 @@ post-install:
 		-e 's|"true"|"ON"|; s|"false"|"OFF"|' \
 		${STAGEDIR}${PREFIX}/lib/cmake/Arrow/ArrowOptions.cmake
 
-do-test: # tests fail to compile: https://issues.apache.org/jira/browse/ARROW-12625
+do-test:
 	@cd ${BUILD_WRKSRC} && \
 		${SETENV} ${CONFIGURE_ENV} ${CMAKE_BIN} ${CMAKE_ARGS} -DARROW_BUILD_TESTS:BOOL=ON ${CMAKE_SOURCE_PATH} && \
 		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} ${ALL_TARGET} && \
 		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} test
+
+# tests as of : 89% tests passed, 10 tests failed out of 90, see https://github.com/apache/arrow/issues/45604
 
 .include <bsd.port.mk>
