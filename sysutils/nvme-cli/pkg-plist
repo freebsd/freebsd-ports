@@ -1,14 +1,3 @@
-@comment etc/nvme/discovery.conf
-@comment lib/dracut/dracut.conf.d/70-nvmf-autoconnect.conf
-@comment lib/systemd/system/nvmefc-boot-connections.service
-@comment lib/systemd/system/nvmf-autoconnect.service
-@comment lib/systemd/system/nvmf-connect-nbft.service
-@comment lib/systemd/system/nvmf-connect.target
-@comment lib/systemd/system/nvmf-connect@.service
-@comment lib/udev/rules.d/65-persistent-net-nbft.rules
-@comment lib/udev/rules.d/70-nvmf-autoconnect.rules
-@comment lib/udev/rules.d/70-nvmf-keys.rules
-@comment lib/udev/rules.d/71-nvmf-netapp.rules
 sbin/nvme
 share/bash-completion/completions/nvme
 share/man/man1/nvme-admin-passthru.1.gz

@@ -1,2 +1,3 @@
-Library for NVM-Express user space tooling from Linux, ported to FreeBSD for
-sysutils/nvme-cli.
+NVMe management command line interface
+
+A user space utility to provide standards compliant tooling for NVM-Express drives.
