@@ -1,11 +1,10 @@
 --- CMakeLists.txt.orig	2024-12-22 10:38:06 UTC
 +++ CMakeLists.txt
-@@ -1066,7 +1066,7 @@ IF(NOT FROM_CHARS_WORKS)
+@@ -1066,7 +1066,6 @@ include("cmake/Check-from_chars.cmake")
  IF(NOT FROM_CHARS_WORKS)
      CPMFindPackage(NAME FastFloat
                     GIT_REPOSITORY https://github.com/fastfloat/fast_float
 -                   VERSION 6.1.0
-+                   VERSION 7
                     EXCLUDE_FROM_ALL yes)
      GET_TARGET_PROPERTY(FastFloat_INCLUDE_DIRECTORIES
                          FastFloat::fast_float INTERFACE_INCLUDE_DIRECTORIES)
