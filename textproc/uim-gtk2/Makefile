@@ -1,6 +1,6 @@
-PKGNAMESUFFIX=	-gtk
+PKGNAMESUFFIX=	-gtk2
 
-COMMENT=	GTK modules of uim input method
+COMMENT=	GTK 2.x modules of uim input method
 
 USE_GNOME=	cairo gdkpixbuf2 gtk20
 LIB_DEPENDS=	libuim.so:textproc/uim \
