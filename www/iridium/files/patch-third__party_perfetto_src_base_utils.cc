@@ -1,17 +1,15 @@
---- third_party/perfetto/src/base/utils.cc.orig	2024-12-22 12:24:29 UTC
+--- third_party/perfetto/src/base/utils.cc.orig	2025-02-22 18:06:53 UTC
 +++ third_party/perfetto/src/base/utils.cc
-@@ -38,8 +38,9 @@
+@@ -38,7 +38,8 @@
  #include <mach/vm_page_size.h>
  #endif
  
--#if PERFETTO_BUILDFLAG(PERFETTO_OS_LINUX) || \
--    PERFETTO_BUILDFLAG(PERFETTO_OS_ANDROID)
-+#if (PERFETTO_BUILDFLAG(PERFETTO_OS_LINUX) || \
-+     PERFETTO_BUILDFLAG(PERFETTO_OS_ANDROID)) && \
-+    !PERFETTO_BUILDFLAG(PERFETTO_OS_BSD)
+-#if PERFETTO_BUILDFLAG(PERFETTO_OS_LINUX_BUT_NOT_QNX) || \
++#if (PERFETTO_BUILDFLAG(PERFETTO_OS_LINUX_BUT_NOT_QNX) && \
++    !PERFETTO_BUILDFLAG(PERFETTO_OS_BSD)) || \
+     PERFETTO_BUILDFLAG(PERFETTO_OS_ANDROID)
  #include <sys/prctl.h>
  
- #ifndef PR_GET_TAGGED_ADDR_CTRL
 @@ -278,14 +279,22 @@ void Daemonize(std::function<int()> parent_cb) {
  
  std::string GetCurExecutablePath() {
@@ -37,15 +35,13 @@
  #elif PERFETTO_BUILDFLAG(PERFETTO_OS_APPLE)
    uint32_t size = 0;
    PERFETTO_CHECK(_NSGetExecutablePath(nullptr, &size));
-@@ -337,8 +346,9 @@ void AlignedFree(void* ptr) {
+@@ -337,7 +346,8 @@ void AlignedFree(void* ptr) {
  }
  
  bool IsSyncMemoryTaggingEnabled() {
--#if PERFETTO_BUILDFLAG(PERFETTO_OS_LINUX) || \
--    PERFETTO_BUILDFLAG(PERFETTO_OS_ANDROID)
-+#if (PERFETTO_BUILDFLAG(PERFETTO_OS_LINUX) || \
-+     PERFETTO_BUILDFLAG(PERFETTO_OS_ANDROID)) && \
-+    !PERFETTO_BUILDFLAG(PERFETTO_OS_BSD)
+-#if PERFETTO_BUILDFLAG(PERFETTO_OS_LINUX_BUT_NOT_QNX) || \
++#if (PERFETTO_BUILDFLAG(PERFETTO_OS_LINUX_BUT_NOT_QNX) && \
++    !PERFETTO_BUILDFLAG(PERFETTO_OS_BSD)) || \
+     PERFETTO_BUILDFLAG(PERFETTO_OS_ANDROID)
    // Compute only once per lifetime of the process.
    static bool cached_value = [] {
-     const int res = prctl(PR_GET_TAGGED_ADDR_CTRL, 0, 0, 0, 0);

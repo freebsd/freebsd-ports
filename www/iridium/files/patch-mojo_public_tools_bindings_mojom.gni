@@ -1,6 +1,6 @@
---- mojo/public/tools/bindings/mojom.gni.orig	2024-11-04 08:56:03 UTC
+--- mojo/public/tools/bindings/mojom.gni.orig	2025-02-22 18:06:53 UTC
 +++ mojo/public/tools/bindings/mojom.gni
-@@ -776,6 +776,16 @@ template("mojom") {
+@@ -796,6 +796,16 @@ template("mojom") {
        enabled_features += [ "is_apple" ]
      }
  
@@ -14,6 +14,6 @@
 +      enabled_features += [ "is_bsd" ]
 +    }
 +
-     action(parser_target_name) {
-       allow_remote = true
- 
+     action_outputs = []
+     foreach(base_path, output_file_base_paths) {
+       filename = get_path_info(base_path, "file")

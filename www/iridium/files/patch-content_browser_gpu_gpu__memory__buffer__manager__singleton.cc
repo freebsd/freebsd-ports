@@ -1,4 +1,4 @@
---- content/browser/gpu/gpu_memory_buffer_manager_singleton.cc.orig	2024-11-04 08:56:03 UTC
+--- content/browser/gpu/gpu_memory_buffer_manager_singleton.cc.orig	2025-02-22 18:06:53 UTC
 +++ content/browser/gpu/gpu_memory_buffer_manager_singleton.cc
 @@ -46,7 +46,7 @@ scoped_refptr<base::SingleThreadTaskRunner> GetTaskRun
  #endif
@@ -9,7 +9,7 @@
  bool IsGpuMemoryBufferNV12Supported() {
    static bool is_computed = false;
    static bool supported = false;
-@@ -98,7 +98,7 @@ GpuMemoryBufferManagerSingleton::GetInstance() {
+@@ -111,7 +111,7 @@ void GpuMemoryBufferManagerSingleton::RemoveObserver(
  }
  
  void GpuMemoryBufferManagerSingleton::OnGpuExtraInfoUpdate() {

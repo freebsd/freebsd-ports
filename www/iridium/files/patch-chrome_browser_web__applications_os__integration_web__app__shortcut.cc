@@ -1,4 +1,4 @@
---- chrome/browser/web_applications/os_integration/web_app_shortcut.cc.orig	2024-11-04 08:56:03 UTC
+--- chrome/browser/web_applications/os_integration/web_app_shortcut.cc.orig	2025-02-22 18:06:53 UTC
 +++ chrome/browser/web_applications/os_integration/web_app_shortcut.cc
 @@ -71,7 +71,7 @@ namespace {
  
@@ -9,7 +9,7 @@
  // Linux supports icons of any size. FreeDesktop Icon Theme Specification states
  // that "Minimally you should install a 48x48 icon in the hicolor theme."
  const int kDesiredIconSizesForShortcut[] = {16, 32, 48, 128, 256, 512};
-@@ -251,7 +251,7 @@ std::unique_ptr<ShortcutInfo> BuildShortcutInfoWithout
+@@ -253,7 +253,7 @@ std::unique_ptr<ShortcutInfo> BuildShortcutInfoWithout
  
  // TODO(crbug.com/40257107): Implement tests on Linux for using shortcuts_menu
  // actions.

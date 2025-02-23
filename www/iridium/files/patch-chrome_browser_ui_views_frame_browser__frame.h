@@ -1,4 +1,4 @@
---- chrome/browser/ui/views/frame/browser_frame.h.orig	2024-12-22 12:24:29 UTC
+--- chrome/browser/ui/views/frame/browser_frame.h.orig	2025-02-22 18:06:53 UTC
 +++ chrome/browser/ui/views/frame/browser_frame.h
 @@ -66,7 +66,7 @@ class BrowserFrame : public views::Widget, public view
  
@@ -9,7 +9,7 @@
    // Returns whether the frame is in a tiled state.
    bool tiled() const { return tiled_; }
    void set_tiled(bool tiled) { tiled_ = tiled; }
-@@ -226,7 +226,7 @@ class BrowserFrame : public views::Widget, public view
+@@ -227,7 +227,7 @@ class BrowserFrame : public views::Widget, public view
    // contents for smoother dragging.
    TabDragKind tab_drag_kind_ = TabDragKind::kNone;
  

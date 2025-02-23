@@ -1,6 +1,6 @@
---- chrome/browser/renderer_preferences_util.cc.orig	2024-06-25 12:08:48 UTC
+--- chrome/browser/renderer_preferences_util.cc.orig	2025-02-22 18:06:53 UTC
 +++ chrome/browser/renderer_preferences_util.cc
-@@ -39,7 +39,7 @@
+@@ -40,7 +40,7 @@
  #include "ui/views/controls/textfield/textfield.h"
  #endif
  
@@ -9,7 +9,7 @@
  #include "chrome/browser/themes/theme_service.h"
  #include "chrome/browser/themes/theme_service_factory.h"
  #include "ui/linux/linux_ui.h"
-@@ -154,7 +154,7 @@ void UpdateFromSystemSettings(blink::RendererPreferenc
+@@ -176,7 +176,7 @@ void UpdateFromSystemSettings(blink::RendererPreferenc
    prefs->caret_blink_interval = views::Textfield::GetCaretBlinkInterval();
  #endif
  
@@ -18,7 +18,7 @@
    auto* linux_ui_theme = ui::LinuxUiTheme::GetForProfile(profile);
    if (linux_ui_theme) {
      if (ThemeServiceFactory::GetForProfile(profile)->UsingSystemTheme()) {
-@@ -177,7 +177,7 @@ void UpdateFromSystemSettings(blink::RendererPreferenc
+@@ -199,7 +199,7 @@ void UpdateFromSystemSettings(blink::RendererPreferenc
  #endif
  
  #if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_ANDROID) || \

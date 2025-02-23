@@ -1,6 +1,6 @@
---- ui/ozone/platform/wayland/emulate/wayland_input_emulate.cc.orig	2024-06-25 12:08:48 UTC
+--- ui/ozone/platform/wayland/emulate/wayland_input_emulate.cc.orig	2025-02-22 18:06:53 UTC
 +++ ui/ozone/platform/wayland/emulate/wayland_input_emulate.cc
-@@ -284,7 +284,7 @@ void WaylandInputEmulate::EmulateUpdateDisplay(const s
+@@ -281,7 +281,7 @@ void WaylandInputEmulate::EmulateUpdateDisplay(const s
  }
  #endif
  

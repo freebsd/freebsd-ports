@@ -1,6 +1,6 @@
---- ui/ozone/platform/wayland/common/wayland_util.cc.orig	2024-11-04 08:56:03 UTC
+--- ui/ozone/platform/wayland/common/wayland_util.cc.orig	2025-02-22 18:06:53 UTC
 +++ ui/ozone/platform/wayland/common/wayland_util.cc
-@@ -347,7 +347,7 @@ void TransformToWlArray(
+@@ -325,7 +325,7 @@ void SkColorToWlArray(const SkColor4f& color, wl_array
  }
  
  base::TimeTicks EventMillisecondsToTimeTicks(uint32_t milliseconds) {
@@ -9,7 +9,7 @@
    // TODO(crbug.com/40287874): `milliseconds` comes from Weston that
    // uses timestamp from libinput, which is different from TimeTicks.
    // Use EventTimeForNow(), for now.
-@@ -389,7 +389,7 @@ bool MaybeHandlePlatformEventForDrag(const ui::Platfor
+@@ -367,7 +367,7 @@ bool MaybeHandlePlatformEventForDrag(const ui::Platfor
  }
  
  void RecordConnectionMetrics(wl_display* display) {

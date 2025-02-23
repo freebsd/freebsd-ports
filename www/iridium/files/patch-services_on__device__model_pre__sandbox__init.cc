@@ -1,4 +1,4 @@
---- services/on_device_model/pre_sandbox_init.cc.orig	2024-08-27 06:28:16 UTC
+--- services/on_device_model/pre_sandbox_init.cc.orig	2025-02-22 18:06:53 UTC
 +++ services/on_device_model/pre_sandbox_init.cc
 @@ -14,7 +14,7 @@
  #include "services/on_device_model/ml/chrome_ml.h"  // nogncheck
@@ -27,7 +27,7 @@
    // Warm any relevant drivers before attempting to bring up the sandbox. For
    // good measure we initialize a device instance for any adapter with an
    // appropriate backend on top of any integrated or discrete GPU.
-@@ -101,7 +101,7 @@ bool OnDeviceModelService::PreSandboxInit() {
+@@ -102,7 +102,7 @@ bool OnDeviceModelService::PreSandboxInit() {
    return true;
  }
  

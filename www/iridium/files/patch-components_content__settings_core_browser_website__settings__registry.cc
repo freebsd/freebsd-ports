@@ -1,6 +1,6 @@
---- components/content_settings/core/browser/website_settings_registry.cc.orig	2024-06-25 12:08:48 UTC
+--- components/content_settings/core/browser/website_settings_registry.cc.orig	2025-02-22 18:06:53 UTC
 +++ components/content_settings/core/browser/website_settings_registry.cc
-@@ -67,7 +67,7 @@ const WebsiteSettingsInfo* WebsiteSettingsRegistry::Re
+@@ -66,7 +66,7 @@ const WebsiteSettingsInfo* WebsiteSettingsRegistry::Re
  #if BUILDFLAG(IS_WIN)
    if (!(platform & PLATFORM_WINDOWS))
      return nullptr;

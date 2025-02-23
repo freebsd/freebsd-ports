@@ -1,4 +1,4 @@
---- content/zygote/zygote_linux.cc.orig	2024-08-01 05:47:53 UTC
+--- content/zygote/zygote_linux.cc.orig	2025-02-22 18:06:53 UTC
 +++ content/zygote/zygote_linux.cc
 @@ -1,6 +1,7 @@
  // Copyright 2012 The Chromium Authors
@@ -8,7 +8,7 @@
  
  #ifdef UNSAFE_BUFFERS_BUILD
  // TODO(crbug.com/342213636): Remove this and spanify to fix the errors.
-@@ -723,3 +724,4 @@ void Zygote::HandleReinitializeLoggingRequest(base::Pi
+@@ -709,3 +710,4 @@ void Zygote::HandleReinitializeLoggingRequest(base::Pi
  }
  
  }  // namespace content

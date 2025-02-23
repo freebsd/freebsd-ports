@@ -1,6 +1,6 @@
---- components/password_manager/core/common/password_manager_pref_names.h.orig	2024-11-04 08:56:03 UTC
+--- components/password_manager/core/common/password_manager_pref_names.h.orig	2025-02-22 18:06:53 UTC
 +++ components/password_manager/core/common/password_manager_pref_names.h
-@@ -41,7 +41,7 @@ inline constexpr char kCredentialProviderEnabledOnStar
+@@ -50,7 +50,7 @@ inline constexpr char kCredentialProviderEnabledOnStar
  #endif
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -9,7 +9,7 @@
  // Boolean pref controlled by the DeletingUndecryptablePasswordsEnabled policy.
  // If set to false it blocks deleting undecryptable passwords, otherwise the
  // deletion can happen.
-@@ -334,7 +334,7 @@ inline constexpr char kAutofillableCredentialsAccountS
+@@ -349,7 +349,7 @@ inline constexpr char kAutofillableCredentialsAccountS
  inline constexpr char kPasswordSharingEnabled[] =
      "password_manager.password_sharing_enabled";
  

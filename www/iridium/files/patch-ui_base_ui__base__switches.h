@@ -1,7 +1,7 @@
---- ui/base/ui_base_switches.h.orig	2024-08-27 06:28:16 UTC
+--- ui/base/ui_base_switches.h.orig	2025-02-22 18:06:53 UTC
 +++ ui/base/ui_base_switches.h
-@@ -27,11 +27,11 @@ COMPONENT_EXPORT(UI_BASE) extern const char kShowMacOv
- COMPONENT_EXPORT(UI_BASE) extern const char kEnableResourcesFileSharing[];
+@@ -22,11 +22,11 @@ COMPONENT_EXPORT(UI_BASE) extern const char kDisableMo
+ COMPONENT_EXPORT(UI_BASE) extern const char kShowMacOverlayBorders[];
  #endif
  
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)

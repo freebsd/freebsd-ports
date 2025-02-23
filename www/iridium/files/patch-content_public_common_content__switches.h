@@ -1,6 +1,6 @@
---- content/public/common/content_switches.h.orig	2024-12-22 12:24:29 UTC
+--- content/public/common/content_switches.h.orig	2025-02-22 18:06:53 UTC
 +++ content/public/common/content_switches.h
-@@ -110,6 +110,8 @@ CONTENT_EXPORT extern const char kEnableGpuMemoryBuffe
+@@ -108,6 +108,8 @@ CONTENT_EXPORT extern const char kEnableGpuMemoryBuffe
  CONTENT_EXPORT extern const char kEnableIsolatedWebAppsInRenderer[];
  CONTENT_EXPORT extern const char kEnableLCDText[];
  CONTENT_EXPORT extern const char kEnableLogging[];
@@ -9,12 +9,12 @@
  CONTENT_EXPORT extern const char kEnableNetworkInformationDownlinkMax[];
  CONTENT_EXPORT extern const char kEnableCanvas2DLayers[];
  CONTENT_EXPORT extern const char kEnablePluginPlaceholderTesting[];
-@@ -265,7 +267,7 @@ CONTENT_EXPORT extern const char kPreventResizingConte
- 
- // TODO(crbug.com/40118868): Revisit the macro expression once build flag switch
- // of lacros-chrome is complete.
--#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)
-+#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS) || BUILDFLAG(IS_BSD)
- CONTENT_EXPORT extern const char kEnableSpeechDispatcher[];
- CONTENT_EXPORT extern const char kLLVMProfileFile[];
+@@ -258,7 +260,7 @@ CONTENT_EXPORT extern const char kRendererWaitForJavaD
+ CONTENT_EXPORT extern const char kPreventResizingContentsForTesting[];
  #endif
+ 
+-#if BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+ CONTENT_EXPORT extern const char kEnableSpeechDispatcher[];
+ #endif
+ 

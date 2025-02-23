@@ -1,6 +1,6 @@
---- chrome/updater/app/app_uninstall.cc.orig	2024-11-04 08:56:03 UTC
+--- chrome/updater/app/app_uninstall.cc.orig	2025-02-22 18:06:53 UTC
 +++ chrome/updater/app/app_uninstall.cc
-@@ -161,7 +161,7 @@ void UninstallInThreadPool(UpdaterScope scope,
+@@ -157,7 +157,7 @@ void UninstallInThreadPool(UpdaterScope scope,
              }
              if (int result = UninstallOtherVersions(scope);
                  result != kErrorOk) {

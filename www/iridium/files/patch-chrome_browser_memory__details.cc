@@ -1,14 +1,5 @@
---- chrome/browser/memory_details.cc.orig	2024-11-04 08:56:03 UTC
+--- chrome/browser/memory_details.cc.orig	2025-02-22 18:06:53 UTC
 +++ chrome/browser/memory_details.cc
-@@ -38,7 +38,7 @@
- #include "services/resource_coordinator/public/cpp/memory_instrumentation/memory_instrumentation.h"
- #include "ui/base/l10n/l10n_util.h"
- 
--#if BUILDFLAG(IS_POSIX) && !BUILDFLAG(IS_MAC) && !BUILDFLAG(IS_ANDROID)
-+#if BUILDFLAG(IS_POSIX) && !BUILDFLAG(IS_MAC) && !BUILDFLAG(IS_ANDROID) && !BUILDFLAG(IS_BSD)
- #include "content/public/browser/zygote_host/zygote_host_linux.h"
- #endif
- 
 @@ -335,7 +335,7 @@ void MemoryDetails::CollectChildInfoOnUIThread() {
            });
      }

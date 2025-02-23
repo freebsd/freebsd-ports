@@ -1,7 +1,7 @@
---- ui/base/ui_base_switches.cc.orig	2024-08-27 06:28:16 UTC
+--- ui/base/ui_base_switches.cc.orig	2025-02-22 18:06:53 UTC
 +++ ui/base/ui_base_switches.cc
-@@ -31,13 +31,13 @@ const char kShowMacOverlayBorders[] = "show-mac-overla
- const char kEnableResourcesFileSharing[] = "enable-resources-file-sharing";
+@@ -24,13 +24,13 @@ const char kDisableModalAnimations[] = "disable-modal-
+ const char kShowMacOverlayBorders[] = "show-mac-overlay-borders";
  #endif
  
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)

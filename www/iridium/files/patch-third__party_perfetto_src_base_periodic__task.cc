@@ -1,11 +1,11 @@
---- third_party/perfetto/src/base/periodic_task.cc.orig	2023-04-22 17:45:15 UTC
+--- third_party/perfetto/src/base/periodic_task.cc.orig	2025-02-22 18:06:53 UTC
 +++ third_party/perfetto/src/base/periodic_task.cc
 @@ -24,7 +24,7 @@
  #include "perfetto/base/time.h"
  #include "perfetto/ext/base/file_utils.h"
  
--#if PERFETTO_BUILDFLAG(PERFETTO_OS_LINUX) || \
-+#if (PERFETTO_BUILDFLAG(PERFETTO_OS_LINUX) && !PERFETTO_BUILDFLAG(PERFETTO_OS_BSD)) || \
+-#if PERFETTO_BUILDFLAG(PERFETTO_OS_LINUX_BUT_NOT_QNX) || \
++#if (PERFETTO_BUILDFLAG(PERFETTO_OS_LINUX_BUT_NOT_QNX) && !PERFETTO_BUILDFLAG(PERFETTO_OS_BSD)) || \
      (PERFETTO_BUILDFLAG(PERFETTO_OS_ANDROID) && __ANDROID_API__ >= 19)
  #include <sys/timerfd.h>
  #endif
@@ -13,8 +13,8 @@
  }
  
  ScopedPlatformHandle CreateTimerFd(const PeriodicTask::Args& args) {
--#if PERFETTO_BUILDFLAG(PERFETTO_OS_LINUX) || \
-+#if (PERFETTO_BUILDFLAG(PERFETTO_OS_LINUX) && !PERFETTO_BUILDFLAG(PERFETTO_OS_BSD)) || \
+-#if PERFETTO_BUILDFLAG(PERFETTO_OS_LINUX_BUT_NOT_QNX) || \
++#if (PERFETTO_BUILDFLAG(PERFETTO_OS_LINUX_BUT_NOT_QNX) && !PERFETTO_BUILDFLAG(PERFETTO_OS_BSD)) || \
      (PERFETTO_BUILDFLAG(PERFETTO_OS_ANDROID) && __ANDROID_API__ >= 19)
    ScopedPlatformHandle tfd(
        timerfd_create(CLOCK_BOOTTIME, TFD_CLOEXEC | TFD_NONBLOCK));

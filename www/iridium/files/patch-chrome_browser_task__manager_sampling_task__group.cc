@@ -1,4 +1,4 @@
---- chrome/browser/task_manager/sampling/task_group.cc.orig	2024-11-04 08:56:03 UTC
+--- chrome/browser/task_manager/sampling/task_group.cc.orig	2025-02-22 18:06:53 UTC
 +++ chrome/browser/task_manager/sampling/task_group.cc
 @@ -41,7 +41,7 @@ const int kBackgroundRefreshTypesMask =
  #if BUILDFLAG(IS_WIN)
@@ -27,7 +27,7 @@
          base::BindRepeating(&TaskGroup::OnOpenFdCountRefreshDone,
                              weak_ptr_factory_.GetWeakPtr()),
  #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_MAC)
-@@ -325,7 +325,7 @@ void TaskGroup::OnRefreshNaClDebugStubPortDone(int nac
+@@ -324,7 +324,7 @@ void TaskGroup::OnRefreshNaClDebugStubPortDone(int nac
  }
  #endif  // BUILDFLAG(ENABLE_NACL)
  

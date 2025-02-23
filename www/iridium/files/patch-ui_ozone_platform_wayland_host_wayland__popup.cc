@@ -1,6 +1,6 @@
---- ui/ozone/platform/wayland/host/wayland_popup.cc.orig	2024-06-25 12:08:48 UTC
+--- ui/ozone/platform/wayland/host/wayland_popup.cc.orig	2025-02-22 18:06:53 UTC
 +++ ui/ozone/platform/wayland/host/wayland_popup.cc
-@@ -34,7 +34,7 @@ WaylandPopup::WaylandPopup(PlatformWindowDelegate* del
+@@ -31,7 +31,7 @@ WaylandPopup::WaylandPopup(PlatformWindowDelegate* del
                             WaylandWindow* parent)
      : WaylandWindow(delegate, connection) {
    set_parent_window(parent);

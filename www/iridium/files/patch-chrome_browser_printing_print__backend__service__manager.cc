@@ -1,4 +1,4 @@
---- chrome/browser/printing/print_backend_service_manager.cc.orig	2024-12-22 12:24:29 UTC
+--- chrome/browser/printing/print_backend_service_manager.cc.orig	2025-02-22 18:06:53 UTC
 +++ chrome/browser/printing/print_backend_service_manager.cc
 @@ -36,7 +36,7 @@
  #include "printing/printing_context.h"
@@ -9,7 +9,7 @@
  #include "content/public/common/content_switches.h"
  #endif
  
-@@ -884,7 +884,7 @@ PrintBackendServiceManager::GetServiceFromBundle(
+@@ -883,7 +883,7 @@ PrintBackendServiceManager::GetServiceFromBundle(
          host.BindNewPipeAndPassReceiver(),
          content::ServiceProcessHost::Options()
              .WithDisplayName(IDS_UTILITY_PROCESS_PRINT_BACKEND_SERVICE_NAME)
@@ -18,7 +18,7 @@
              .WithExtraCommandLineSwitches({switches::kMessageLoopTypeUi})
  #endif
              .Pass());
-@@ -1061,7 +1061,7 @@ PrintBackendServiceManager::DetermineIdleTimeoutUpdate
+@@ -1060,7 +1060,7 @@ PrintBackendServiceManager::DetermineIdleTimeoutUpdate
        return kNoClientsRegisteredResetOnIdleTimeout;
  
      case ClientType::kQueryWithUi:

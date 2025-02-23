@@ -1,8 +1,8 @@
---- ui/views/test/ui_controls_factory_desktop_aura_ozone.cc.orig	2024-06-25 12:08:48 UTC
+--- ui/views/test/ui_controls_factory_desktop_aura_ozone.cc.orig	2025-02-22 18:06:53 UTC
 +++ ui/views/test/ui_controls_factory_desktop_aura_ozone.cc
-@@ -296,7 +296,7 @@ void UpdateDisplaySync(const std::string& display_spec
+@@ -237,7 +237,7 @@ bool SendMouseClick(MouseButton type, gfx::NativeWindo
+                          window_hint);
  }
- #endif
  
 -#if BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
