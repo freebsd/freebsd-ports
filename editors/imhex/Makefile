@@ -1,5 +1,5 @@
 PORTNAME=	imhex
-PORTVERSION=	1.36.2
+PORTVERSION=	1.37.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	editors
 MASTER_SITES=	https://git.sr.ht/~danyspin97/xdgpp/blob/f01f810714443d0f10c333d4d1d9c0383be41375/:xdg \
@@ -19,24 +19,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 NOT_FOR_ARCHS=	i386 powerpc
 NOT_FOR_ARCHS_REASON=	__uint128_t and __int128_t are not supported
-EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX} \
-		btzy-nativefiledialog-extended-${GH_TAG_NATIVEFILEDIALOG}_GH0${EXTRACT_SUFX} \
-		capstone-engine-capstone-${GH_TAG_CAPSTONE}_GH0${EXTRACT_SUFX} \
-		CLIUtils-CLI11-${GH_TAG_CLI11}_GH0${EXTRACT_SUFX} \
-		Martinsos-edlib-${GH_TAG_EDLIB}_GH0${EXTRACT_SUFX} \
-		fmtlib-fmt-${GH_TAG_FMT}_GH0${EXTRACT_SUFX} \
-		josuttis-jthread-${GH_TAG_JTHREAD}_GH0${EXTRACT_SUFX} \
-		rockdreamer-throwing_ptr-${GH_TAG_THROWING_PTR}_GH0${EXTRACT_SUFX} \
-		sammycage-plutovg-${GH_TAG_PLUTOVG}_GH0${EXTRACT_SUFX} \
-		VirusTotal-yara-${GH_TAG_YARA}_GH0${EXTRACT_SUFX} \
-		WerWolv-HashLibPlus-${GH_TAG_HASHLIBPLUS}_GH0${EXTRACT_SUFX} \
-		WerWolv-ImHex-Patterns-${GH_TAG_IMHEX_PATTERNS}_GH0${EXTRACT_SUFX} \
-		WerWolv-PatternLanguage-${GH_TAG_PATTERN_LANGUAGE}_GH0${EXTRACT_SUFX} \
-		WerWolv-libromfs-${GH_TAG_LIBROMFS}_GH0${EXTRACT_SUFX} \
-		WerWolv-libwolv-${GH_TAG_LIBWOLV}_GH0${EXTRACT_SUFX} \
-		WerWolv-lunasvg-${GH_TAG_LUNASVG}_GH0${EXTRACT_SUFX} \
-		imhex-bastion-pats-${GL_TAG_IMHEX_BASTION_PATS}.tar.bz2 \
-		imhex-ffx-pats-${GL_TAG_IMHEX_FFX_PATS}.tar.bz2
 
 BUILD_DEPENDS=	glm>0:math/glm
 LIB_DEPENDS=	libcurl.so:ftp/curl \
@@ -54,6 +36,26 @@ USE_GNOME=	cairo gdkpixbuf2 gtk30
 USE_XORG=	x11 xcb xau xdmcp
 USE_GITHUB=	yes
 
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX} \
+		btzy-nativefiledialog-extended-${GH_TAG_NATIVEFILEDIALOG}_GH0${EXTRACT_SUFX} \
+		capstone-engine-capstone-${GH_TAG_CAPSTONE}_GH0${EXTRACT_SUFX} \
+		CLIUtils-CLI11-${GH_TAG_CLI11}_GH0${EXTRACT_SUFX} \
+		Martinsos-edlib-${GH_TAG_EDLIB}_GH0${EXTRACT_SUFX} \
+		fmtlib-fmt-${GH_TAG_FMT}_GH0${EXTRACT_SUFX} \
+		josuttis-jthread-${GH_TAG_JTHREAD}_GH0${EXTRACT_SUFX} \
+		rockdreamer-throwing_ptr-${GH_TAG_THROWING_PTR}_GH0${EXTRACT_SUFX} \
+		sammycage-plutovg-${GH_TAG_PLUTOVG}_GH0${EXTRACT_SUFX} \
+		VirusTotal-yara-${GH_TAG_YARA}_GH0${EXTRACT_SUFX} \
+		WerWolv-Disassembler-${GH_TAG_DISASSEMBLER}_GH0${EXTRACT_SUFX} \
+		WerWolv-HashLibPlus-${GH_TAG_HASHLIBPLUS}_GH0${EXTRACT_SUFX} \
+		WerWolv-ImHex-Patterns-${GH_TAG_IMHEX_PATTERNS}_GH0${EXTRACT_SUFX} \
+		WerWolv-PatternLanguage-${GH_TAG_PATTERN_LANGUAGE}_GH0${EXTRACT_SUFX} \
+		WerWolv-libromfs-${GH_TAG_LIBROMFS}_GH0${EXTRACT_SUFX} \
+		WerWolv-libwolv-${GH_TAG_LIBWOLV}_GH0${EXTRACT_SUFX} \
+		WerWolv-lunasvg-${GH_TAG_LUNASVG}_GH0${EXTRACT_SUFX} \
+		imhex-bastion-pats-${GL_TAG_IMHEX_BASTION_PATS}.tar.bz2 \
+		imhex-ffx-pats-${GL_TAG_IMHEX_FFX_PATS}.tar.bz2
+
 GH_ACCOUNT=	WerWolv
 GH_PROJECT=	ImHex
 GH_TUPLE=	btzy:nativefiledialog-extended:${GH_TAG_NATIVEFILEDIALOG}:nativefiledialog \
@@ -65,6 +67,7 @@ GH_TUPLE=	btzy:nativefiledialog-extended:${GH_TAG_NATIVEFILEDIALOG}:nativefiledi
 		rockdreamer:throwing_ptr:${GH_TAG_THROWING_PTR}:throwing_ptr \
 		sammycage:plutovg:${GH_TAG_PLUTOVG}:plutovg \
 		VirusTotal:yara:${GH_TAG_YARA}:yara \
+		WerWolv:Disassembler:${GH_TAG_DISASSEMBLER}:disassembler \
 		WerWolv:HashLibPlus:${GH_TAG_HASHLIBPLUS}:hashlibplus \
 		WerWolv:ImHex-Patterns:${GH_TAG_IMHEX_PATTERNS}:imhex_patterns \
 		WerWolv:PatternLanguage:${GH_TAG_PATTERN_LANGUAGE}:pattern_language \
@@ -74,14 +77,15 @@ GH_TUPLE=	btzy:nativefiledialog-extended:${GH_TAG_NATIVEFILEDIALOG}:nativefiledi
 
 GH_TAG_CAPSTONE=	5cca005
 GH_TAG_CLI11=	6c7b07a
-GH_TAG_EDLIB=	931be2b
-GH_TAG_FMT=	0c9fce2
+GH_TAG_DISASSEMBLER=	a2217dd
+GH_TAG_EDLIB=	42aa8fa
+GH_TAG_FMT=	9cf9f38
 GH_TAG_HASHLIBPLUS=	1823dd1
 GH_TAG_IMHEX_PATTERNS=	ImHex-v${PORTVERSION}
 GH_TAG_JTHREAD=	0fa8d39
-GH_TAG_LIBROMFS=	03adcfd
-GH_TAG_LIBWOLV=	b9d7f4a
-GH_TAG_LUNASVG=	14df481
+GH_TAG_LIBROMFS=	4f42f09
+GH_TAG_LIBWOLV=	0002167
+GH_TAG_LUNASVG=	5e968bd
 GH_TAG_NATIVEFILEDIALOG=	86d5f20
 GH_TAG_PATTERN_LANGUAGE=	ImHex-v${PORTVERSION}
 GH_TAG_PLUTOVG=	9ef8e78
@@ -94,10 +98,10 @@ GL_TAG_IMHEX_FFX_PATS=	199879e
 CFLAGS+=	-I${LOCALBASE}/include
 CXXFLAGS+=	-I${LOCALBASE}/include
 
-CMAKE_ARGS=	-DUSE_SYSTEM_CURL=ON -DUSE_SYSTEM_NLOHMANN_JSON=OFF \
-		-DIMHEX_STRIP_RELEASE=OFF -DIMHEX_PLUGINS_IN_SHARE=ON \
-		-DIMHEX_OFFLINE_BUILD=ON -DIMHEX_USE_GTK_FILE_PICKER=ON \
-		-DIMHEX_IGNORE_BAD_CLONE=ON -DIMHEX_IGNORE_BAD_COMPILER=ON
+CMAKE_ARGS=	-DUSE_SYSTEM_NLOHMANN_JSON=OFF -DIMHEX_STRIP_RELEASE=OFF \
+		-DIMHEX_PLUGINS_IN_SHARE=ON -DIMHEX_OFFLINE_BUILD=ON \
+		-DIMHEX_USE_GTK_FILE_PICKER=ON -DIMHEX_IGNORE_BAD_CLONE=ON \
+		-DIMHEX_IGNORE_BAD_COMPILER=ON
 
 PORTDOCS=	README.md
 
@@ -119,6 +123,7 @@ CXXFLAGS+=	-fexperimental-library -D_LIBCPP_ENABLE_EXPERIMENTAL
 .endif
 
 post-extract:
+	${CP} -R ${WRKSRC_disassembler}/* ${WRKSRC}/lib/external/disassembler
 	${CP} -R ${WRKSRC_libromfs}/* ${WRKSRC}/lib/external/libromfs
 	${CP} -R ${WRKSRC_libwolv}/* ${WRKSRC}/lib/external/libwolv
 	${CP} -R ${WRKSRC_pattern_language}/* ${WRKSRC}/lib/external/pattern_language
