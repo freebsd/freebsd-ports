@@ -8198,6 +8198,7 @@
     SUBDIR += stdman
     SUBDIR += stdx-allocator
     SUBDIR += stfl
+    SUBDIR += stgit
     SUBDIR += stlfilt
     SUBDIR += stlink
     SUBDIR += str

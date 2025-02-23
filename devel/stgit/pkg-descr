@@ -1,0 +1,7 @@
+Stacked Git, StGit for short, is an application for managing Git
+commits as a stack of patches.
+
+With a patch stack workflow, multiple patches can be developed
+concurrently and efficiently, with each patch focused on a single
+concern, resulting in both a clean Git commit history and improved
+productivity.
