@@ -1,7 +1,7 @@
 PORTNAME=	gilt
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.2.4
-CATEGORIES=	devel python
+CATEGORIES=	devel
 
 MAINTAINER=	matthew@FreeBSD.org
 COMMENT=	GIT layering tool
