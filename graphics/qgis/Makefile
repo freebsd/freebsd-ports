@@ -1,6 +1,6 @@
 PORTNAME=	qgis
 DISTVERSION=	3.42.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics geography
 MASTER_SITES=	https://qgis.org/downloads/
 
@@ -119,7 +119,7 @@ USE_QT=		3d buildtools:build core concurrent dbus declarative \
 		designer:build qdoc:build gamepad gui linguist:build location \
 		multimedia network printsupport qmake:build script serialport \
 		sql sql-pgsql sql-sqlite3 svg testlib uitools:build \
-		webengine widgets xml
+		webchannel webengine widgets xml
 
 SHEBANG_FILES=	src/plugins/grass/scripts/*.py
 
