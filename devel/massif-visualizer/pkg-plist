@@ -2,7 +2,6 @@ bin/massif-visualizer
 share/applications/org.kde.massif-visualizer.desktop
 share/config.kcfg/massif-visualizer-settings.kcfg
 share/icons/hicolor/scalable/apps/massif-visualizer.svg
-%%DATADIR%%/icons/hicolor/22x22/actions/shortentemplates.png
 share/locale/bg/LC_MESSAGES/massif-visualizer.mo
 share/locale/bs/LC_MESSAGES/massif-visualizer.mo
 share/locale/ca/LC_MESSAGES/massif-visualizer.mo
@@ -47,5 +46,6 @@ share/locale/ug/LC_MESSAGES/massif-visualizer.mo
 share/locale/uk/LC_MESSAGES/massif-visualizer.mo
 share/locale/zh_CN/LC_MESSAGES/massif-visualizer.mo
 share/locale/zh_TW/LC_MESSAGES/massif-visualizer.mo
+%%DATADIR%%/icons/hicolor/22x22/actions/shortentemplates.png
 share/metainfo/org.kde.massif-visualizer.appdata.xml
 share/mime/packages/massif.xml
