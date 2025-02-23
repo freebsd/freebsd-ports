@@ -12,6 +12,9 @@ WWW=		https://github.com/feincms/django-tree-queries
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Extended support of Django 5.0 ends April 2025. See https://www.djangoproject.com/download/
+EXPIRATION_DATE=2025-05-31
+
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatchling>0:devel/py-hatchling@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django50>=3.2:www/py-django50@${PY_FLAVOR}
 
