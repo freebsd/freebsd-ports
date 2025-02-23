@@ -1,6 +1,6 @@
---- media/capture/video/linux/fake_v4l2_impl.cc.orig	2024-06-25 12:08:48 UTC
+--- media/capture/video/linux/fake_v4l2_impl.cc.orig	2025-02-22 18:06:53 UTC
 +++ media/capture/video/linux/fake_v4l2_impl.cc
-@@ -562,7 +562,7 @@ int FakeV4L2Impl::close(int fd) {
+@@ -563,7 +563,7 @@ int FakeV4L2Impl::close(int fd) {
    return kSuccessReturnValue;
  }
  

@@ -1,6 +1,6 @@
---- components/password_manager/core/browser/password_manager.cc.orig	2024-12-22 12:24:29 UTC
+--- components/password_manager/core/browser/password_manager.cc.orig	2025-02-22 18:06:53 UTC
 +++ components/password_manager/core/browser/password_manager.cc
-@@ -419,7 +419,7 @@ void PasswordManager::RegisterProfilePrefs(
+@@ -433,7 +433,7 @@ void PasswordManager::RegisterProfilePrefs(
        prefs::kAutofillableCredentialsAccountStoreLoginDatabase, false);
  #endif  // BUILDFLAG(IS_ANDROID) && !BUILDFLAG(IS_IOS)
    registry->RegisterBooleanPref(prefs::kPasswordSharingEnabled, true);
@@ -9,7 +9,7 @@
    registry->RegisterIntegerPref(prefs::kRelaunchChromeBubbleDismissedCounter,
                                  0);
  #endif
-@@ -432,7 +432,7 @@ void PasswordManager::RegisterProfilePrefs(
+@@ -446,7 +446,7 @@ void PasswordManager::RegisterProfilePrefs(
  #endif
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \

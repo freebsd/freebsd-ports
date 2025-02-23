@@ -1,6 +1,6 @@
---- chrome/browser/extensions/api/enterprise_reporting_private/enterprise_reporting_private_api.cc.orig	2024-12-22 12:24:29 UTC
+--- chrome/browser/extensions/api/enterprise_reporting_private/enterprise_reporting_private_api.cc.orig	2025-02-22 18:06:53 UTC
 +++ chrome/browser/extensions/api/enterprise_reporting_private/enterprise_reporting_private_api.cc
-@@ -42,7 +42,7 @@
+@@ -43,7 +43,7 @@
  #include "components/reporting/util/statusor.h"
  #endif
  

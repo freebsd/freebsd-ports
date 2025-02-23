@@ -1,6 +1,6 @@
---- chrome/browser/ui/views/frame/picture_in_picture_browser_frame_view.h.orig	2024-11-04 08:56:03 UTC
+--- chrome/browser/ui/views/frame/picture_in_picture_browser_frame_view.h.orig	2025-02-22 18:06:53 UTC
 +++ chrome/browser/ui/views/frame/picture_in_picture_browser_frame_view.h
-@@ -27,7 +27,7 @@
+@@ -28,7 +28,7 @@
  #include "ui/views/layout/flex_layout_view.h"
  #include "ui/views/widget/widget_observer.h"
  
@@ -9,16 +9,7 @@
  #include "ui/linux/window_frame_provider.h"
  #endif
  
-@@ -35,7 +35,7 @@
- // parent window, so to prevent cutting off important dialogs we resize the
- // picture-in-picture window to fit them. While ChromeOS Ash also uses Aura, it
- // does not have this issue so we do not resize on ChromeOS Ash.
--#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_CHROMEOS_LACROS)
-+#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_CHROMEOS_LACROS) || BUILDFLAG(IS_BSD)
- #define RESIZE_DOCUMENT_PICTURE_IN_PICTURE_TO_DIALOG 1
- #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_WIN) ||
-         // BUILDFLAG(IS_CHROMEOS_LACROS)
-@@ -103,7 +103,7 @@ class PictureInPictureBrowserFrameView
+@@ -88,7 +88,7 @@ class PictureInPictureBrowserFrameView
    void Layout(PassKey) override;
    void AddedToWidget() override;
    void RemovedFromWidget() override;
@@ -27,7 +18,7 @@
    gfx::Insets RestoredMirroredFrameBorderInsets() const override;
    gfx::Insets GetInputInsets() const override;
    SkRRect GetRestoredClipRegion() const override;
-@@ -195,7 +195,7 @@ class PictureInPictureBrowserFrameView
+@@ -180,7 +180,7 @@ class PictureInPictureBrowserFrameView
    // Returns true if there's an overlay view that's currently shown.
    bool IsOverlayViewVisible() const;
  
@@ -36,7 +27,7 @@
    // Returns whether a client-side shadow should be drawn for the window.
    bool ShouldDrawFrameShadow() const;
  
-@@ -376,7 +376,7 @@ class PictureInPictureBrowserFrameView
+@@ -351,7 +351,7 @@ class PictureInPictureBrowserFrameView
    // `top_bar_color_animation_`.
    std::optional<SkColor> current_foreground_color_;
  

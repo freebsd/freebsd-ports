@@ -1,6 +1,6 @@
---- chrome/browser/ui/web_applications/web_app_ui_manager_impl.cc.orig	2024-12-22 12:24:29 UTC
+--- chrome/browser/ui/web_applications/web_app_ui_manager_impl.cc.orig	2025-02-22 18:06:53 UTC
 +++ chrome/browser/ui/web_applications/web_app_ui_manager_impl.cc
-@@ -583,7 +583,7 @@ void WebAppUiManagerImpl::MaybeShowIPHPromoForAppsLaun
+@@ -518,7 +518,7 @@ void WebAppUiManagerImpl::MaybeShowIPHPromoForAppsLaun
      Browser* browser,
      Profile* profile,
      const std::string& app_id) {
@@ -9,12 +9,12 @@
    WebAppProvider* provider = WebAppProvider::GetForWebApps(profile);
    CHECK(provider);
  
-@@ -809,7 +809,7 @@ void WebAppUiManagerImpl::ClearWebAppSiteDataIfNeeded(
+@@ -747,7 +747,7 @@ void WebAppUiManagerImpl::ClearWebAppSiteDataIfNeeded(
    }
  }
  
 -#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
- void WebAppUiManagerImpl::ShowIPHPromoForAppsLaunchedViaLinkCapturing(
-     const Browser* browser,
-     const webapps::AppId& app_id,
+ 
+ const base::Feature& GetPromoFeatureEngagementFromBrowser(
+     const Browser* browser) {

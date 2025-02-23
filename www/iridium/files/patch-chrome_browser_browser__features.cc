@@ -1,8 +1,8 @@
---- chrome/browser/browser_features.cc.orig	2024-12-22 12:24:29 UTC
+--- chrome/browser/browser_features.cc.orig	2025-02-22 18:06:53 UTC
 +++ chrome/browser/browser_features.cc
-@@ -71,7 +71,7 @@ BASE_FEATURE(kClosedTabCache,
-              "ClosedTabCache",
+@@ -71,7 +71,7 @@ BASE_FEATURE(kCertVerificationNetworkTime,
               base::FEATURE_DISABLED_BY_DEFAULT);
+ #endif  // !BUILDFLAG(IS_ANDROID) && !BUILDFLAG(IS_CHROMEOS)
  
 -#if BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
@@ -18,7 +18,7 @@
               base::FEATURE_ENABLED_BY_DEFAULT);
  #else
               base::FEATURE_DISABLED_BY_DEFAULT);
-@@ -268,7 +268,7 @@ BASE_FEATURE(kSandboxExternalProtocolBlockedWarning,
+@@ -228,7 +228,7 @@ BASE_FEATURE(kSandboxExternalProtocolBlockedWarning,
               "SandboxExternalProtocolBlockedWarning",
               base::FEATURE_ENABLED_BY_DEFAULT);
  

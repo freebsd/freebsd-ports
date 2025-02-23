@@ -1,6 +1,6 @@
---- ui/base/ui_base_features.cc.orig	2024-12-22 12:24:29 UTC
+--- ui/base/ui_base_features.cc.orig	2025-02-22 18:06:53 UTC
 +++ ui/base/ui_base_features.cc
-@@ -173,7 +173,7 @@ BASE_FEATURE(kWaylandUiScale,
+@@ -133,7 +133,7 @@ BASE_FEATURE(kWaylandUiScale,
               base::FEATURE_DISABLED_BY_DEFAULT);
  #endif  // BUILDFLAG(IS_OZONE)
  
@@ -9,16 +9,16 @@
  // If this feature is enabled, users not specify --ozone-platform-hint switch
  // will get --ozone-platform-hint=auto treatment. https://crbug.com/40250220.
  COMPONENT_EXPORT(UI_BASE_FEATURES)
-@@ -275,7 +275,7 @@ BASE_FEATURE(kExperimentalFlingAnimation,
+@@ -209,7 +209,7 @@ BASE_FEATURE(kUiCompositorScrollWithLayers,
+ // native apps on Windows.
+ BASE_FEATURE(kExperimentalFlingAnimation,
               "ExperimentalFlingAnimation",
- // TODO(crbug.com/40118868): Revisit the macro expression once build flag switch
- // of lacros-chrome is complete.
--#if BUILDFLAG(IS_WIN) ||                                   \
-+#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_BSD) ||              \
-     (BUILDFLAG(IS_LINUX) && !BUILDFLAG(IS_CHROMEOS_ASH) && \
-      !BUILDFLAG(IS_CHROMEOS_LACROS))
+-#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
               base::FEATURE_ENABLED_BY_DEFAULT
-@@ -379,7 +379,7 @@ bool IsForcedColorsEnabled() {
+ #else
+              base::FEATURE_DISABLED_BY_DEFAULT
+@@ -291,7 +291,7 @@ bool IsForcedColorsEnabled() {
  BASE_FEATURE(kEyeDropper,
               "EyeDropper",
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \

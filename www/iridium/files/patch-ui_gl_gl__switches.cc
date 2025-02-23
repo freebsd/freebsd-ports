@@ -1,29 +1,29 @@
---- ui/gl/gl_switches.cc.orig	2024-11-04 08:56:03 UTC
+--- ui/gl/gl_switches.cc.orig	2025-02-22 18:06:53 UTC
 +++ ui/gl/gl_switches.cc
-@@ -11,7 +11,7 @@
+@@ -12,7 +12,7 @@
  #include "base/android/build_info.h"
  #endif
  
--#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
-+#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
+-#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_ANDROID)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_BSD)
  #include <vulkan/vulkan_core.h>
  #include "third_party/angle/src/gpu_info_util/SystemInfo.h"  // nogncheck
  #endif
-@@ -288,7 +288,7 @@ bool IsDefaultANGLEVulkan() {
-       base::android::SDK_VERSION_Q)
+@@ -305,7 +305,7 @@ bool IsDefaultANGLEVulkan() {
      return false;
+   }
  #endif  // BUILDFLAG(IS_ANDROID)
--#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
-+#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
+-#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_ANDROID)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_BSD)
    angle::SystemInfo system_info;
-   if (!angle::GetSystemInfoVulkan(&system_info))
-     return false;
-@@ -300,7 +300,7 @@ bool IsDefaultANGLEVulkan() {
- 
-   const auto& active_gpu = system_info.gpus[system_info.activeGPUIndex];
+   {
+     GPU_STARTUP_TRACE_EVENT("angle::GetSystemInfoVulkan");
+@@ -353,7 +353,7 @@ bool IsDefaultANGLEVulkan() {
+   }
+ #endif  // BUILDFLAG(IS_ANDROID)
  
 -#if BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
-   // Vulkan 1.1 is required.
-   if (active_gpu.driverApiVersion < VK_VERSION_1_1)
-     return false;
+   // AMDVLK driver is buggy, so disable Vulkan with AMDVLK for now.
+   // crbug.com/1340081
+   if (active_gpu.driverId == VK_DRIVER_ID_AMD_OPEN_SOURCE)

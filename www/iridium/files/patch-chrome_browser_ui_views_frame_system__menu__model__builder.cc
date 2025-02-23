@@ -1,24 +1,24 @@
---- chrome/browser/ui/views/frame/system_menu_model_builder.cc.orig	2024-11-04 08:56:03 UTC
+--- chrome/browser/ui/views/frame/system_menu_model_builder.cc.orig	2025-02-22 18:06:53 UTC
 +++ chrome/browser/ui/views/frame/system_menu_model_builder.cc
-@@ -77,7 +77,7 @@ void SystemMenuModelBuilder::BuildSystemMenuForBrowser
+@@ -72,7 +72,7 @@ void SystemMenuModelBuilder::BuildMenu(ui::SimpleMenuM
+ 
+ void SystemMenuModelBuilder::BuildSystemMenuForBrowserWindow(
      ui::SimpleMenuModel* model) {
- // TODO(crbug.com/40118868): Revisit the macro expression once build flag switch
- // of lacros-chrome is complete.
--#if BUILDFLAG(IS_LINUX) && !BUILDFLAG(IS_CHROMEOS_LACROS)
-+#if (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)) && !BUILDFLAG(IS_CHROMEOS_LACROS)
+-#if BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
    model->AddItemWithStringId(IDC_MINIMIZE_WINDOW, IDS_MINIMIZE_WINDOW_MENU);
    model->AddItemWithStringId(IDC_MAXIMIZE_WINDOW, IDS_MAXIMIZE_WINDOW_MENU);
    model->AddItemWithStringId(IDC_RESTORE_WINDOW, IDS_RESTORE_WINDOW_MENU);
-@@ -97,7 +97,7 @@ void SystemMenuModelBuilder::BuildSystemMenuForBrowser
+@@ -90,7 +90,7 @@ void SystemMenuModelBuilder::BuildSystemMenuForBrowser
+     model->AddSeparator(ui::NORMAL_SEPARATOR);
+     model->AddItemWithStringId(IDC_TASK_MANAGER_CONTEXT_MENU, IDS_TASK_MANAGER);
    }
- // TODO(crbug.com/40118868): Revisit the macro expression once build flag switch
- // of lacros-chrome is complete.
--#if BUILDFLAG(IS_LINUX) && !BUILDFLAG(IS_CHROMEOS_LACROS)
-+#if (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)) && !BUILDFLAG(IS_CHROMEOS_LACROS)
+-#if BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
    model->AddSeparator(ui::NORMAL_SEPARATOR);
    bool supports_server_side_decorations = true;
  #if BUILDFLAG(IS_OZONE) && !BUILDFLAG(IS_CHROMEOS)
-@@ -171,7 +171,7 @@ void SystemMenuModelBuilder::BuildSystemMenuForAppOrPo
+@@ -164,7 +164,7 @@ void SystemMenuModelBuilder::BuildSystemMenuForAppOrPo
      model->AddSeparator(ui::NORMAL_SEPARATOR);
      model->AddItemWithStringId(IDC_TASK_MANAGER, IDS_TASK_MANAGER);
    }

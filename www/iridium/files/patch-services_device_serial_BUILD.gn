@@ -1,7 +1,7 @@
---- services/device/serial/BUILD.gn.orig	2022-12-01 10:35:46 UTC
+--- services/device/serial/BUILD.gn.orig	2025-02-22 18:06:53 UTC
 +++ services/device/serial/BUILD.gn
-@@ -5,7 +5,7 @@
- import("//build/config/chromeos/ui_mode.gni")
+@@ -4,7 +4,7 @@
+ 
  import("//build/config/features.gni")
  
 -if (is_win || ((is_linux || is_chromeos) && use_udev) || is_mac) {

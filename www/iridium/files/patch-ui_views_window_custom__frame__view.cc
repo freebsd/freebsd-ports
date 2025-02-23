@@ -1,11 +1,11 @@
---- ui/views/window/custom_frame_view.cc.orig	2024-08-27 06:28:16 UTC
+--- ui/views/window/custom_frame_view.cc.orig	2025-02-22 18:06:53 UTC
 +++ ui/views/window/custom_frame_view.cc
-@@ -268,7 +268,7 @@ int CustomFrameView::CaptionButtonY() const {
+@@ -279,7 +279,7 @@ int CustomFrameView::NonClientTopBorderHeight() const 
+ int CustomFrameView::CaptionButtonY() const {
+   // Maximized buttons start at window top so that even if their images aren't
    // drawn flush with the screen edge, they still obey Fitts' Law.
- // TODO(crbug.com/40118868): Revisit the macro expression once build flag switch
- // of lacros-chrome is complete.
--#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)
-+#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS) || BUILDFLAG(IS_BSD)
+-#if BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
    return FrameBorderThickness();
  #else
    return frame_->IsMaximized() ? FrameBorderThickness() : kFrameShadowThickness;

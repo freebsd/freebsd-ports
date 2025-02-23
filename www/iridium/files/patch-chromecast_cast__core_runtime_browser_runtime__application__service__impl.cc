@@ -1,6 +1,6 @@
---- chromecast/cast_core/runtime/browser/runtime_application_service_impl.cc.orig	2024-12-22 12:24:29 UTC
+--- chromecast/cast_core/runtime/browser/runtime_application_service_impl.cc.orig	2025-02-22 18:06:53 UTC
 +++ chromecast/cast_core/runtime/browser/runtime_application_service_impl.cc
-@@ -346,7 +346,7 @@ CastWebView::Scoped RuntimeApplicationServiceImpl::Cre
+@@ -347,7 +347,7 @@ CastWebView::Scoped RuntimeApplicationServiceImpl::Cre
    params->force_720p_resolution =
        GetFlagEntry(feature::kCastCoreForce720p, config_.extra_features(),
                     /*default_value=*/false);

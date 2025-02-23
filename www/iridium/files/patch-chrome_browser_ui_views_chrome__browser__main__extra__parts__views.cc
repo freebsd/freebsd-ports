@@ -1,4 +1,4 @@
---- chrome/browser/ui/views/chrome_browser_main_extra_parts_views.cc.orig	2024-11-04 08:56:03 UTC
+--- chrome/browser/ui/views/chrome_browser_main_extra_parts_views.cc.orig	2025-02-22 18:06:53 UTC
 +++ chrome/browser/ui/views/chrome_browser_main_extra_parts_views.cc
 @@ -39,7 +39,7 @@
  #include "ui/wm/core/wm_state.h"
@@ -9,7 +9,7 @@
  #include <sys/stat.h>
  #include <sys/types.h>
  #include <unistd.h>
-@@ -132,7 +132,7 @@ void ChromeBrowserMainExtraPartsViews::PreProfileInit(
+@@ -135,7 +135,7 @@ void ChromeBrowserMainExtraPartsViews::PreProfileInit(
          return controller;
        }));
  

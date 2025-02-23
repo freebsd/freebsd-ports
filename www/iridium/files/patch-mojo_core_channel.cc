@@ -1,6 +1,6 @@
---- mojo/core/channel.cc.orig	2024-11-04 08:56:03 UTC
+--- mojo/core/channel.cc.orig	2025-02-22 18:06:53 UTC
 +++ mojo/core/channel.cc
-@@ -82,7 +82,11 @@ const size_t kMaxAttachedHandles = 64;
+@@ -83,7 +83,11 @@ const size_t kMaxAttachedHandles = 64;
  const size_t kMaxAttachedHandles = 253;
  #endif  // BUILDFLAG(IS_FUCHSIA)
  
