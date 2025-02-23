@@ -1,2 +1,24 @@
 Praat (the Dutch word for "talk") is a free scientific computer software
 package for the analysis of speech in phonetics.
+
+Praat allows you to analyze different aspects of speech including pitch,
+formant, intensity, and voice quality. You have access to spectrograms (a visual
+representation of sound changing over time) and cochleagrams (a specific type of
+spectrogram more closely resembling how the inner ear receives sound).
+
+Praat allows you to generate speech from a pitch curve and filters that you
+create (acoustic synthesis), or from muscle activities (articulatory synthesis).
+
+Praat gives you the ability to modify existing speech utterances. You can alter
+pitch, intensity, and duration of speech.
+
+Praat allows you to custom-label your samples using the IPA (International
+Phonetics Alphabet), and annotate your sound segments based on the particular
+variables you are seeking to analyze. Multi-language text-to-speech facilities
+allow you to segment the sound into words and phonemes.
+
+With Praat, you can try out Optimality-Theoretic and Harmonic-Grammar learning,
+as well as several kinds of neural-network models.
+
+Praat allows you to perform several statistical techniques, among which multi-
+dimensional scaling, principal component analysis, and discriminant analysis.
