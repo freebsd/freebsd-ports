@@ -84,7 +84,7 @@ quake/ktx/configs/usermodes/dmm4_7.cfg
 quake/ktx/configs/usermodes/dmm4_8.cfg
 quake/ktx/configs/usermodes/dmm4_9.cfg
 quake/ktx/configs/usermodes/end.cfg
-@comment quake/ktx/configs/usermodes/end2.cfg
+quake/ktx/configs/usermodes/end2.cfg
 quake/ktx/configs/usermodes/endif.cfg
 quake/ktx/configs/usermodes/ffa/default.cfg
 quake/ktx/configs/usermodes/hammer.cfg
@@ -111,12 +111,12 @@ quake/ktx/configs/usermodes/povdmm4.cfg
 quake/ktx/configs/usermodes/povdmm4a.cfg
 quake/ktx/configs/usermodes/povdmm4b.cfg
 quake/ktx/configs/usermodes/pushdmm4.cfg
-@comment quake/ktx/configs/usermodes/schlossdmm4.cfg
+quake/ktx/configs/usermodes/schlossdmm4.cfg
 quake/ktx/configs/usermodes/sewer.cfg
 quake/ktx/configs/usermodes/tearena.cfg
-@comment quake/ktx/configs/usermodes/tot/dm4.cfg
-@comment quake/ktx/configs/usermodes/tot/e1m2.cfg
-@comment quake/ktx/configs/usermodes/tot/schloss.cfg
+quake/ktx/configs/usermodes/tot/dm4.cfg
+quake/ktx/configs/usermodes/tot/e1m2.cfg
+quake/ktx/configs/usermodes/tot/schloss.cfg
 @dir(,%%QWGROUP%%,0775) quake/ktx/demos
 @sample quake/ktx/ktx.cfg.sample
 @sample quake/ktx/listip.cfg.sample
