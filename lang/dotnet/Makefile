@@ -63,6 +63,14 @@ PLIST_SUB=	DOTNET_ARCH=${DOTNET_ARCH} FULL_DOTNETVERSION=${PORTVERSION} \
 		SDKSERVICESUFFIX=${SDKSERVICESUFFIX} MANIFESTSUFFIX=${MANIFESTSUFFIX} \
 		LIBPACKSUFFIX=${LIBPACKSUFFIX}
 
+.if defined(DOTNET_PORTABLE)
+SDK_RID=		freebsd-${DOTNET_ARCH}
+PORTABLE_BUILD_FLAG=	/p:PortableBuild=true
+PLIST_SUB+=	NONPORTABLE="@comment "
+.else
+PLIST_SUB+=	NONPORTABLE=
+.endif
+
 .include <bsd.port.pre.mk>
 
 .if ${SSL_DEFAULT} == base
@@ -110,7 +118,8 @@ do-build:
 		--with-packages ${WRKDIR}/packages \
 		--source-build \
 		-- \
-		-maxcpucount:${MAKE_JOBS_NUMBER}
+		-maxcpucount:${MAKE_JOBS_NUMBER} \
+		${PORTABLE_BUILD_FLAG}
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}
@@ -118,6 +127,7 @@ do-install:
 	${FIND} ${WRKSRC}/artifacts/packages/Release -name "*freebsd*.nupkg" -exec \
 		${INSTALL_DATA} {} ${STAGEDIR}${DATADIR}/library-packs/ \;
 
+	${STRIP_CMD} ${STAGEDIR}${DATADIR}/dotnet
 	${STRIP_CMD} ${STAGEDIR}${DATADIR}/sdk/${SDKVERSION}/AppHostTemplate/apphost
 	${STRIP_CMD} ${STAGEDIR}${DATADIR}/packs/Microsoft.NETCore.App.Host.${SDK_RID}/${DISTVERSION}/runtimes/${SDK_RID}/native/apphost
 	${STRIP_CMD} ${STAGEDIR}${DATADIR}/packs/Microsoft.NETCore.App.Host.${SDK_RID}/${DISTVERSION}/runtimes/${SDK_RID}/native/singlefilehost

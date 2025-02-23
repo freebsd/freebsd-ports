@@ -1514,7 +1514,7 @@
 %%DATADIR%%/packs/runtime.%%SDK_RID%%.Microsoft.DotNet.ILCompiler/%%FULL_DOTNETVERSION%%/sdk/libstandalonegc-enabled.a
 %%DATADIR%%/packs/runtime.%%SDK_RID%%.Microsoft.DotNet.ILCompiler/%%FULL_DOTNETVERSION%%/sdk/libstdc++compat.a
 %%DATADIR%%/packs/runtime.%%SDK_RID%%.Microsoft.DotNet.ILCompiler/%%FULL_DOTNETVERSION%%/sdk/libz.a
-%%DATADIR%%/packs/runtime.%%SDK_RID%%.Microsoft.DotNet.ILCompiler/%%FULL_DOTNETVERSION%%/sdk/nonportable.txt
+%%NONPORTABLE%%%%DATADIR%%/packs/runtime.%%SDK_RID%%.Microsoft.DotNet.ILCompiler/%%FULL_DOTNETVERSION%%/sdk/nonportable.txt
 %%DATADIR%%/packs/runtime.%%SDK_RID%%.Microsoft.DotNet.ILCompiler/%%FULL_DOTNETVERSION%%/tools/ilc
 %%DATADIR%%/packs/runtime.%%SDK_RID%%.Microsoft.DotNet.ILCompiler/%%FULL_DOTNETVERSION%%/tools/libclrjit_universal_arm64_%%DOTNET_ARCH%%.so
 %%DATADIR%%/packs/runtime.%%SDK_RID%%.Microsoft.DotNet.ILCompiler/%%FULL_DOTNETVERSION%%/tools/libclrjit_universal_arm_%%DOTNET_ARCH%%.so
