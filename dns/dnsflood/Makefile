@@ -1,8 +1,7 @@
 PORTNAME=	dnsflood
 PORTVERSION=	1.20
 CATEGORIES=	dns
-MASTER_SITES=	http://www.adotout.com/ \
-		ZI
+MASTER_SITES=	ZI
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	zi@FreeBSD.org
