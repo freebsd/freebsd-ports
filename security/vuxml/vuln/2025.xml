@@ -1,3 +1,45 @@
+  <vuln vid="a8f1ee74-f267-11ef-87ba-002590c1f29c">
+    <topic>FreeBSD -- Multiple vulnerabilities in OpenSSH</topic>
+    <affects>
+      <package>
+	<name>FreeBSD</name>
+	<range><ge>14.2</ge><lt>14.2_2</lt></range>
+	<range><ge>14.1</ge><lt>14.1_8</lt></range>
+	<range><ge>13.4</ge><lt>13.4_4</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Problem Description:</h1>
+	<p>OpenSSH client host verification error (CVE-2025-26465)</p>
+	<p>ssh(1) contains a logic error that allows an on-path attacker to
+	impersonate any server during certain conditions when the
+	VerifyHostKeyDNS option is enabled.</p>
+	<p>OpenSSH server denial of service (CVE-2025-26466)</p>
+	<p>The OpenSSH client and server are both vulnerable to a memory/CPU
+	denial of service while handling SSH2_MSG_PING packets.</p>
+	<h1>Impact:</h1>
+	<p>OpenSSH client host verification error (CVE-2025-26465)</p>
+	<p>Under specific circumstances, a machine-in-the-middle may impersonate
+	any server when the client has the VerifyHostKeyDNS option enabled.</p>
+	<p>OpenSSH server denial of service (CVE-2025-26466)</p>
+	<p>During the processing of SSH2_MSG_PING packets, a server may be
+	subject to a memory/CPU denial of service.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2025-26465</cvename>
+      <cvename>CVE-2025-26466</cvename>
+      <freebsdsa>SA-25:05.openssh</freebsdsa>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2025-26465</url>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2025-26466</url>
+    </references>
+    <dates>
+      <discovery>2025-02-21</discovery>
+      <entry>2025-02-24</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="2a3be628-ef6e-11ef-85f3-a8a1599412c6">
     <topic>chromium -- multiple security fixes</topic>
     <affects>
