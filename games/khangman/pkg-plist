@@ -28,6 +28,7 @@ share/icons/hicolor/scalable/apps/khangman.svgz
 %%DATADIR%%/pl.txt
 %%DATADIR%%/pt.txt
 %%DATADIR%%/pt_BR.txt
+%%DATADIR%%/ru.txt
 %%DATADIR%%/sk.txt
 %%DATADIR%%/sl.txt
 %%DATADIR%%/sr@ijekavianlatin.txt
@@ -41,6 +42,7 @@ share/icons/hicolor/scalable/apps/khangman.svgz
 %%DATADIR%%/themes/khangman_winter.svg
 %%DATADIR%%/themes/standardthemes.xml
 %%DATADIR%%/tr.txt
+%%DATADIR%%/uk.txt
 share/knsrcfiles/khangman.knsrc
 share/locale/af/LC_MESSAGES/khangman.mo
 share/locale/ar/LC_MESSAGES/khangman.mo
