@@ -5,7 +5,7 @@ MASTER_SITES=	https://dl.google.com/linux/chrome/rpm/stable/x86_64/
 DISTNAME=	google-${PORTNAME}-stable-${CHROME_VER}-${CHROME_BUILD}.x86_64
 PKGNAMEPREFIX=	linux-
 
-MAINTAINER=	chromium@FreeBSD.org
+MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Google web browser based on WebKit
 WWW=		https://www.chromium.org/Home
 
@@ -32,7 +32,7 @@ SRC_SUFX?=		.src${EXTRACT_SUFX}
 
 REINPLACE_ARGS=	-i ""
 
-CHROME_VER?=	132.0.6834.110
+CHROME_VER?=	133.0.6943.126
 CHROME_BUILD?=	1
 
 DATADIR=	${PREFIX}/share/${PORTNAME}
