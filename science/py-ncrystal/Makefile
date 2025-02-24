@@ -1,6 +1,6 @@
 PORTNAME=	ncrystal
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.9.7
+DISTVERSION=	4.0.2
 CATEGORIES=	science # physics
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PY_SETUPTOOLS} \
 		${PYNUMPY} \
-		${PYTHON_PKGNAMEPREFIX}scikit-build>=0.13:devel/py-scikit-build@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}scikit-build-core>0:devel/py-scikit-build-core@${PY_FLAVOR} \
 		cmake:devel/cmake-core
 RUN_DEPENDS=	${PYNUMPY}
 
@@ -29,7 +29,7 @@ post-install:
 	# delete scripts (they are installed by science/ncrystal)
 	@${RM} ${STAGEDIR}${PREFIX}/bin/*
 	# strip binary
-	@${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/NCrystal/ncrystal_pyinst_data/lib/libNCrystal.so
+	#@${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/NCrystal/ncrystal_pyinst_data/lib/libNCrystal.so
 
 fix-plist: # see post-install
 	@${REINPLACE_CMD} -e "s|^bin/.*$$||" ${TMPPLIST}
