@@ -1,3 +1,30 @@
+  <vuln vid="07c34df5-f299-11ef-a441-b42e991fc52e">
+    <topic>exim -- SQL injection</topic>
+    <affects>
+      <package>
+	<name>exim</name>
+	<range><lt>4.98.1</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>cve@mitre.org reports:</p>
+	<blockquote cite="https://bugzilla.suse.com/show_bug.cgi?id=1237424">
+	  <p>Exim 4.98 before 4.98.1, when SQLite hints and ETRN serialization
+	are used, allows remote SQL injection.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-26794</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2025-26794</url>
+    </references>
+    <dates>
+      <discovery>2025-02-21</discovery>
+      <entry>2025-02-24</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="a8f1ee74-f267-11ef-87ba-002590c1f29c">
     <topic>FreeBSD -- Multiple vulnerabilities in OpenSSH</topic>
     <affects>
