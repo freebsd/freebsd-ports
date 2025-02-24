@@ -1,6 +1,7 @@
 PORTNAME=	ztop
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.3.0
+PORTREVISION=	1
 CATEGORIES=	filesystems sysutils
 
 MAINTAINER=	asomers@FreeBSD.org

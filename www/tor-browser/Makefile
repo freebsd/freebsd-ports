@@ -1,6 +1,6 @@
 PORTNAME=	tor-browser
 DISTVERSION=	14.0.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www net security wayland
 MASTER_SITES=	TOR \
 		LOCAL/vvd \

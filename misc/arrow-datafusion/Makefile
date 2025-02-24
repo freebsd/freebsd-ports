@@ -1,5 +1,6 @@
 PORTNAME=	arrow-datafusion
 DISTVERSION=	45.0.0
+PORTREVISION=	1
 CATEGORIES=	misc
 
 MAINTAINER=	yuri@FreeBSD.org

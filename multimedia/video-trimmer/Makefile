@@ -1,7 +1,7 @@
 PORTNAME=	video-trimmer
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.9.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia
 
 MAINTAINER=	nxjoseph@protonmail.com
