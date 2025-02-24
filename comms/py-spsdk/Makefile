@@ -1,5 +1,6 @@
 PORTNAME=	spsdk
 DISTVERSION=	2.2.1
+PORTREVISION=	1
 CATEGORIES=	comms python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -30,7 +31,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}asn1crypto>=1.2,<1.6:devel/py-asn1crypto@${P
 		${PYTHON_PKGNAMEPREFIX}libusbsio>=2.1.11,<2.2:comms/py-libusbsio@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}oscrypto<1.4:security/py-oscrypto@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pycryptodome>=3.9.3:security/py-pycryptodome@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pylink-square>=1.0,<=1.2:comms/py-pylink-square@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pylink-square>=1.0:comms/py-pylink-square@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyocd>=0.35.1,<=0.36:comms/py-pyocd@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pypemicro>=0.1.11,<0.2:devel/py-pypemicro@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyocd-pemicro>=1.1.5,<1.2:comms/py-pyocd-pemicro@${PY_FLAVOR} \
