@@ -1,8 +1,7 @@
 PORTNAME=	photofilmstrip
-PORTVERSION=	3.7.0
-PORTREVISION=	9
+DISTVERSION=	3.7.1
 CATEGORIES=	multimedia python
-MASTER_SITES=	SF/photostoryx/${PORTNAME}/${PORTVERSION}
+MASTER_SITES=	https://github.com/PhotoFilmStrip/PFS/releases/download/v${DISTVERSION}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	bofh@FreeBSD.org
