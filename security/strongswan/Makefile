@@ -1,5 +1,5 @@
 PORTNAME=	strongswan
-DISTVERSION=	5.9.14
+DISTVERSION=	6.0.0
 CATEGORIES=	security net-vpn
 MASTER_SITES=	https://download.strongswan.org/ \
 		https://download2.strongswan.org/
@@ -16,7 +16,6 @@ USE_LDCONFIG=	${PREFIX}/lib/ipsec
 USE_RC_SUBR=	strongswan
 
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc \
 		--disable-gmp \
 		--disable-kernel-netlink \
@@ -43,7 +42,7 @@ TEST_TARGET=	check
 
 OPTIONS_DEFINE=			CTR CURL DHCP EAPAKA3GPP2 EAPDYNAMIC EAPRADIUS \
 				EAPSIMFILE FARP GCM IKEV1 IPSECKEY KDF \
-				KERNELLIBIPSEC LDAP LOADTESTER MEDIATION MYSQL \
+				KERNELLIBIPSEC LDAP LOADTESTER MEDIATION ML MYSQL \
 				PKCS11 PKI PYTHON SMP SQLITE SWANCTL \
 				TESTVECTOR TPM TSS2 UNBOUND UNITY VICI XAUTH
 OPTIONS_DEFINE_i386=	VIA
@@ -70,6 +69,7 @@ KERNELLIBIPSEC_DESC=	Enable IPSec userland backend
 LIBC_DESC=		Use libc printf hooks
 LOADTESTER_DESC=	Enable load testing plugin
 MEDIATION_DESC=		Enable IKEv2 Mediation Extension
+ML_DESC=		Enable Module-Lattice-based crypto plugin
 PKCS11_DESC=		Enable PKCS11 token support
 PKI_DESC=		Enable PKI tools
 PYTHON_DESC=		Python VICI protocol plugin
@@ -109,6 +109,8 @@ LDAP_CONFIGURE_ON=		--enable-ldap
 LIBC_CONFIGURE_ON=		--with-printf-hooks=glibc
 LOADTESTER_CONFIGURE_ON=	--enable-load-tester
 MEDIATION_CONFIGURE_ON=		--enable-mediation
+ML_CONFIGURE_ON=		--enable-ml
+MYSQL_LIB_DEPENDS=		libunwind.so:devel/libunwind
 MYSQL_USES=			mysql
 MYSQL_CONFIGURE_ON=		--enable-mysql
 PKCS11_CONFIGURE_ON=		--enable-pkcs11
@@ -133,7 +135,6 @@ UNITY_CONFIGURE_ON=		--enable-unity
 VIA_CONFIGURE_ON=		--enable-padlock
 VICI_CONFIGURE_ON=		--enable-vici
 VICI_SUB_LIST=			INTERFACE="vici"
-VICI_SUB_LIST_OFF=		INTERFACE="stroke"
 VSTR_LIB_DEPENDS=		libvstr.so:devel/vstr
 VSTR_CONFIGURE_ON=		--with-printf-hooks=vstr
 XAUTH_CONFIGURE_ON=		--enable-xauth-eap \
