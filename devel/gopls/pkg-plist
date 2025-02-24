@@ -30,6 +30,7 @@ bin/gopls
 %%PORTDOCS%%%%DOCSDIR%%/doc/release/README
 %%PORTDOCS%%%%DOCSDIR%%/doc/release/v0.16.0.md
 %%PORTDOCS%%%%DOCSDIR%%/doc/release/v0.17.0.md
+%%PORTDOCS%%%%DOCSDIR%%/doc/release/v0.18.0.md
 %%PORTDOCS%%%%DOCSDIR%%/doc/releases.md
 %%PORTDOCS%%%%DOCSDIR%%/doc/semantictokens.md
 %%PORTDOCS%%%%DOCSDIR%%/doc/settings.md
