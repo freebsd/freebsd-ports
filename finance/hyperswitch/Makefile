@@ -1,6 +1,5 @@
 PORTNAME=	hyperswitch
-DISTVERSION=	2024.12.23.0
-PORTREVISION=	1
+DISTVERSION=	2025.02.21.0
 CATEGORIES=	finance
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -121,6 +120,7 @@ CARGO_CRATES=	actix-codec-0.5.2 \
 		base64-0.13.1 \
 		base64-0.21.7 \
 		base64-0.22.1 \
+		base64-serde-0.8.0 \
 		base64-simd-0.8.0 \
 		base64ct-1.6.0 \
 		bb8-0.8.5 \
@@ -448,10 +448,10 @@ CARGO_CRATES=	actix-codec-0.5.2 \
 		oorandom-11.1.4 \
 		openidconnect-3.5.0 \
 		opensearch-2.3.0 \
-		openssl-0.10.66 \
+		openssl-0.10.70 \
 		openssl-macros-0.1.1 \
 		openssl-probe-0.1.5 \
-		openssl-sys-0.9.103 \
+		openssl-sys-0.9.105 \
 		opentelemetry-0.27.1 \
 		opentelemetry-aws-0.15.0 \
 		opentelemetry-otlp-0.27.0 \
@@ -771,12 +771,12 @@ CARGO_CRATES=	actix-codec-0.5.2 \
 		want-0.3.1 \
 		wasi-0.11.0+wasi-snapshot-preview1 \
 		wasite-0.1.0 \
-		wasm-bindgen-0.2.93 \
-		wasm-bindgen-backend-0.2.93 \
+		wasm-bindgen-0.2.99 \
+		wasm-bindgen-backend-0.2.99 \
 		wasm-bindgen-futures-0.4.43 \
-		wasm-bindgen-macro-0.2.93 \
-		wasm-bindgen-macro-support-0.2.93 \
-		wasm-bindgen-shared-0.2.93 \
+		wasm-bindgen-macro-0.2.99 \
+		wasm-bindgen-macro-support-0.2.99 \
+		wasm-bindgen-shared-0.2.99 \
 		web-sys-0.3.70 \
 		web-time-1.1.0 \
 		webdriver-0.46.0 \
