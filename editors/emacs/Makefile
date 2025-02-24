@@ -1,13 +1,12 @@
 PORTNAME=	emacs
-DISTVERSION=	29.4
-PORTREVISION=	1
+DISTVERSION=	30.1
 PORTEPOCH=	3
 CATEGORIES=	editors
 MASTER_SITES=	GNU
 
 .if ${FLAVOR:U} == canna
-PATCH_SITES+=	https://www.gentei.org/~yuuji/software/emacs29canna/:canna
-PATCHFILES+=	emacs29.1-canna-20230730.diff.xz:-p1:canna
+PATCH_SITES+=	https://www.gentei.org/~yuuji/software/emacs30canna/:canna
+PATCHFILES+=	emacs30.1-canna-20250224.diff.gz:-p1:canna
 .endif
 
 MAINTAINER=	emacs@FreeBSD.org
@@ -37,7 +36,6 @@ USES=		cpe gmake localbase:ldflags ncurses pkgconfig tar:xz
 CPE_VENDOR=	gnu
 
 GNU_CONFIGURE=		yes
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=		--disable-build-details \
 			--localstatedir=/var \
 			--without-gconf \
@@ -80,7 +78,9 @@ CONFLICTS_INSTALL=	emacs-devel emacs-devel-nox
 
 BINARY_ALIAS=	makeinfo=true
 SUB_FILES=	sources.el
-SUB_LIST=	EMACS_VER=${DISTVERSION}
+SUB_LIST=	EMACS_VER=${DISTVERSION} \
+		NATIVECOMP_COMMENT_END=${NATIVECOMP_COMMENT_END} \
+		NATIVECOMP_COMMENT_START=${NATIVECOMP_COMMENT_START}
 
 INFO=		auth autotype bovine calc ccmode cl dbus dired-x ebrowse ede \
 		ediff edt efaq eglot eieio eintr elisp emacs emacs-gnutls \
@@ -100,14 +100,14 @@ PLIST_FILES+=	${DATADIR}/${DISTVERSION}/lisp/canna.el.gz \
 PLIST_SUB=	EMACS_VER=${DISTVERSION} \
 		GNU_HOST=${CONFIGURE_TARGET}
 
-OPTIONS_DEFINE=			ACL DBUS GNUTLS GSETTINGS HARFBUZZ JSON LCMS2 \
-				M17N MAILUTILS MODULES NATIVECOMP OTF PGTK \
+OPTIONS_DEFINE=			ACL DBUS GNUTLS GSETTINGS HARFBUZZ LCMS2 M17N \
+				MAILUTILS MODULES NATIVECOMP OTF PGTK \
 				SCROLLBARS SOURCES SQLITE3 THREADS TREESITTER \
 				XFT XIM XML XWIDGETS
 OPTIONS_DEFAULT=		ACL CAIRO DBUS GIF GNUTLS GSETTINGS GTK3 \
-				HARFBUZZ JPEG JSON KQUEUE LCMS2 MAILUTILS \
-				MODULES OSS PNG SCROLLBARS SOURCES SQLITE3 SVG \
-				THREADS TIFF TREESITTER WEBP XIM XML XPM
+				HARFBUZZ JPEG KQUEUE LCMS2 MAILUTILS MODULES \
+				NATIVECOMP OSS PNG SCROLLBARS SOURCES SQLITE3 \
+				SVG THREADS TIFF TREESITTER WEBP XIM XML XPM
 OPTIONS_GROUP=			GRAPHICS
 OPTIONS_GROUP_GRAPHICS=		CAIRO GIF JPEG MAGICK PNG SVG TIFF WEBP XPM
 OPTIONS_RADIO=			FILENOTIFY SOUND X11TOOLKIT
@@ -183,8 +183,6 @@ HARFBUZZ_LIB_DEPENDS=		libharfbuzz.so:print/harfbuzz
 HARFBUZZ_CONFIGURE_WITH=	harfbuzz
 JPEG_USES=			jpeg
 JPEG_CONFIGURE_WITH=		jpeg
-JSON_LIB_DEPENDS=		libjansson.so:devel/jansson
-JSON_CONFIGURE_WITH=		json
 KQUEUE_CONFIGURE_ON=		--with-file-notification=kqueue
 LCMS2_LIB_DEPENDS=		liblcms2.so:graphics/lcms2
 LCMS2_CONFIGURE_WITH=		lcms2
@@ -194,7 +192,7 @@ M17N_LIB_DEPENDS=		libm17n.so:devel/m17n-lib
 M17N_CONFIGURE_WITH=		m17n-flt
 MAGICK_USES=			magick:7
 MAGICK_CONFIGURE_WITH=		imagemagick
-MAILUTILS_LIB_DEPENDS=		libmailutils.so:mail/mailutils
+MAILUTILS_RUN_DEPENDS=		mailutils:mail/mailutils
 MAILUTILS_CONFIGURE_WITH=	mailutils
 MAILUTILS_CONFIGURE_ENV_OFF=	ac_cv_lib_lockfile_maillock=no \
 				ac_cv_prog_liblockfile=no
@@ -210,7 +208,7 @@ PGTK_IMPLIES=			CAIRO GTK3 SCROLLBARS
 PGTK_PREVENTS=			M17N XFT XPM
 PGTK_CATEGORIES=		wayland
 PGTK_CONFIGURE_WITH=		pgtk
-PNG_LIB_DEPENDS=		libpng.so:graphics/png
+PNG_LIB_DEPENDS=		libpng16.so:graphics/png
 PNG_CONFIGURE_WITH=		png
 SCROLLBARS_CONFIGURE_WITH=	toolkit-scroll-bars
 .if ${FLAVOR:U} == canna
@@ -227,7 +225,7 @@ TIFF_CONFIGURE_WITH=		tiff
 TREESITTER_IMPLIES=		MODULES
 TREESITTER_LIB_DEPENDS=		libtree-sitter.so:devel/tree-sitter
 TREESITTER_CONFIGURE_WITH=	tree-sitter
-WEBP_LIB_DEPENDS=		libwebp.so:graphics/webp
+WEBP_LIB_DEPENDS=		libwebpdemux.so:graphics/webp
 WEBP_CONFIGURE_WITH=		webp
 XAW3D_LIB_DEPENDS=		libXaw3d.so:x11-toolkits/Xaw3d
 XAW3D_CONFIGURE_ON=		--with-x-toolkit=athena
@@ -253,8 +251,12 @@ XWIDGETS_CONFIGURE_WITH=	xwidgets
 
 .include <bsd.port.options.mk>
 
-.if ${ARCH:Mpowerpc64*}
-USE_GCC=	yes
+.if ${PORT_OPTIONS:MNATIVECOMP}
+NATIVECOMP_COMMENT_END=
+NATIVECOMP_COMMENT_START=
+.else
+NATIVECOMP_COMMENT_END=		'*/'
+NATIVECOMP_COMMENT_START=	'/*'
 .endif
 
 .if ${FLAVOR:U} != nox
