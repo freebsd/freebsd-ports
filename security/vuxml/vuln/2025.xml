@@ -1,3 +1,78 @@
+  <vuln vid="e60e538f-e795-4a00-b475-cc85a7546e00">
+    <topic>Emacs -- Arbitrary code execution vulnerability</topic>
+    <affects>
+      <package>
+	<name>emacs</name>
+	<name>emacs-canna</name>
+	<name>emacs-nox</name>
+	<name>emacs-wayland</name>
+	<range><lt>30.1,3</lt></range>
+      </package>
+      <package>
+	<name>emacs-devel</name>
+	<name>emacs-devel-nox</name>
+	<range><lt>31.0.50.20250215,3</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	  <h1>Problem Description</h1>
+	  <p>A shell injection vulnerability exists in GNU Emacs due to improper
+	  handling of custom man URI schemes.</p>
+	  <h1>Impact</h1>
+	  <p>Initially considered low severity, as it required user interaction with
+	  local files, it was later discovered that an attacker could exploit this
+	  vulnerability by tricking a user into visiting a specially crafted
+	  website or an HTTP URL with a redirect, leading to arbitrary shell
+	  command execution without further user action.</p>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-1244</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2025-1244</url>
+    </references>
+    <dates>
+      <discovery>2025-02-11</discovery>
+      <entry>2025-02-24</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="7ba6c085-1590-491a-98ce-5452646b196f">
+    <topic>Emacs -- Shell injection vulnerability</topic>
+    <affects>
+      <package>
+	<name>emacs</name>
+	<name>emacs-canna</name>
+	<name>emacs-nox</name>
+	<name>emacs-wayland</name>
+	<range><lt>30.1,3</lt></range>
+      </package>
+      <package>
+	<name>emacs-devel</name>
+	<name>emacs-devel-nox</name>
+	<range><lt>31.0.50.20250101,3</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	  <h1>Problem Description:</h1>
+	  <p>An Emacs user who chooses to invoke elisp-completion-at-point (for
+	  code completion) on untrusted Emacs Lisp source code can trigger unsafe
+	  Lisp macro expansion that allows attackers to execute arbitrary code.
+	  This unsafe expansion also occurs if a user chooses to enable on-the-fly
+	  diagnosis that byte compiles untrusted Emacs Lisp source code.</p>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2024-53920</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2024-53920</url>
+    </references>
+    <dates>
+      <discovery>2024-11-27</discovery>
+      <entry>2025-02-24</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="07c34df5-f299-11ef-a441-b42e991fc52e">
     <topic>exim -- SQL injection</topic>
     <affects>
