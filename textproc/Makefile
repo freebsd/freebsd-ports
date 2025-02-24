@@ -486,6 +486,7 @@
     SUBDIR += mdbook
     SUBDIR += mdbook-linkcheck
     SUBDIR += mdbook-mermaid
+    SUBDIR += mdq
     SUBDIR += meilisearch
     SUBDIR += meld
     SUBDIR += metauml
