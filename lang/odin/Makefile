@@ -12,6 +12,8 @@ WWW=		https://odin-lang.org \
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_i386=	compilation fails:  use of undeclared identifier 'LLVMInitializeAArch64TargetInfo', see https://github.com/odin-lang/Odin/issues/4875
+
 USES=		gmake llvm:19,lib python:test
 
 USE_GITHUB=	yes
