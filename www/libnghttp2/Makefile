@@ -5,7 +5,7 @@ MASTER_SITES=	https://github.com/nghttp2/nghttp2/releases/download/v${PORTVERSIO
 PKGNAMEPREFIX=	lib
 
 MAINTAINER=	sunpoet@FreeBSD.org
-COMMENT=	HTTP/2.0 C Library
+COMMENT=	HTTP/2 C Library
 WWW=		https://nghttp2.org/ \
 		https://github.com/nghttp2/nghttp2
 

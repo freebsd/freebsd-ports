@@ -4,7 +4,7 @@ CATEGORIES=	www net
 MASTER_SITES=	https://github.com/nghttp2/nghttp2/releases/download/v${PORTVERSION}/
 
 MAINTAINER=	sunpoet@FreeBSD.org
-COMMENT=	HTTP/2.0 C Library
+COMMENT=	HTTP/2 tools
 WWW=		https://nghttp2.org/
 
 LICENSE=	MIT

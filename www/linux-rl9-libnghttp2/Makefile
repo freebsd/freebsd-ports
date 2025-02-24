@@ -5,7 +5,7 @@ PORTREVISION=	3
 CATEGORIES=	www devel linux
 
 MAINTAINER=	emulation@FreeBSD.org
-COMMENT=	HTTP/2.0 C Library (Rocky Linux ${LINUX_DIST_VER})
+COMMENT=	HTTP/2 C Library (Rocky Linux ${LINUX_DIST_VER})
 WWW=		https://nghttp2.org/ \
 		https://github.com/nghttp2/nghttp2
 
