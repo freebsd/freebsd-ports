@@ -1,5 +1,5 @@
-TIMESTAMP = 1515960660
-SHA256 (supercollider-sc3-plugins-Version-3.9.0_GH0.tar.gz) = b9f5cc6444c087671879b973bd281289dbe1faa66a5965d21e855f7639e4fc19
-SIZE (supercollider-sc3-plugins-Version-3.9.0_GH0.tar.gz) = 3455817
+TIMESTAMP = 1740331387
+SHA256 (supercollider-sc3-plugins-Version-3.13.0_GH0.tar.gz) = 8baf96ea678c2a3b32490058b5fccffb1c58a079db252fea0a47e5c76f920abd
+SIZE (supercollider-sc3-plugins-Version-3.13.0_GH0.tar.gz) = 4798149
 SHA256 (timblechmann-nova-simd-3140689_GH0.tar.gz) = ba2d5e6d42208d85fae6eacad9f51f34e9b582c7f83cfdf2c71c8fb05f92eeda
 SIZE (timblechmann-nova-simd-3140689_GH0.tar.gz) = 52899
