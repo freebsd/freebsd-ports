@@ -5,6 +5,13 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20250310:
+  AFFECTS: users of www/wget2
+  AUTHOR: michaelo@FreeBSD.org
+
+  The default NGHTTP2 option has been renamed to HTTP2 to match the option
+  name in ftp/curl and the description from Mk/bsd.options.desc.mk.
+
 20250219:
   AFFECTS: users of comms/ser2net
   AUTHOR: rodrigo@FreeBSD.org
