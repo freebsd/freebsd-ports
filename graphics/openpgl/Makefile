@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 # supported processors -
 # arm with NEON/NEON2X and x86_64/x86 with SSE/AVX/AVX2/AVX512
-ONLY_FOR_ARCHS=		aarch64 amd64 armv6 armv7 i386
+ONLY_FOR_ARCHS=		aarch64 amd64 i386
 ONLY_FOR_ARCHS_REASON=	requires supported SIMD ISA
 
 LIB_DEPENDS=	libtbb.so:devel/onetbb
