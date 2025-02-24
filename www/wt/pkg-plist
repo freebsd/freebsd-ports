@@ -124,6 +124,7 @@ include/Wt/Date/tz.h
 %%DBO%%include/Wt/Dbo/Transaction.h
 %%DBO%%include/Wt/Dbo/Types.h
 %%DBO%%include/Wt/Dbo/WDboDllDefs.h
+%%DBO%%include/Wt/Dbo/WtJsonSqlTraits.h
 %%DBO%%include/Wt/Dbo/WtSqlTraits.h
 %%FIREBIRD%%include/Wt/Dbo/backend/Firebird.h
 %%MYSQL%%include/Wt/Dbo/backend/MySQL.h
