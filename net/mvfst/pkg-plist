@@ -139,6 +139,9 @@ include/quic/loss/QuicLossFunctions.h
 include/quic/observer/SocketObserverContainer.h
 include/quic/observer/SocketObserverInterface.h
 include/quic/observer/SocketObserverTypes.h
+include/quic/priority/HTTPPriorityQueue.h
+include/quic/priority/PriorityQueue.h
+include/quic/priority/RoundRobin.h
 include/quic/server/AcceptObserver.h
 include/quic/server/QuicHandshakeSocketHolder.h
 include/quic/server/QuicReusePortUDPSocketFactory.h
@@ -241,6 +244,8 @@ lib/libmvfst_handshake.so
 lib/libmvfst_handshake.so.0
 lib/libmvfst_happyeyeballs.so
 lib/libmvfst_happyeyeballs.so.0
+lib/libmvfst_http_priority_queue.so
+lib/libmvfst_round_robin.so
 lib/libmvfst_looper.so
 lib/libmvfst_looper.so.0
 lib/libmvfst_loss.so
