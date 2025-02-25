@@ -1,3 +1,39 @@
+  <vuln vid="6ae77556-f31d-11ef-a695-4ccc6adda413">
+    <topic>exiv2 -- Use after free in TiffSubIfd</topic>
+    <affects>
+      <package>
+	<name>exiv2</name>
+	<range><ge>0.28.0</ge><lt>0.28.5</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Kevin Backhouse reports:</p>
+	<blockquote cite="https://github.com/Exiv2/exiv2/security/advisories/GHSA-38h4-fx85-qcx7">
+	  <p>A heap buffer overflow was found in Exiv2 versions v0.28.0 to v0.28.4.
+	  Versions prior to v0.28.0, such as v0.27.7, are not affected. Exiv2 is a
+	  command-line utility and C++ library for reading, writing, deleting, and
+	  modifying the metadata of image files. The heap overflow is triggered when
+	  Exiv2 is used to write metadata into a crafted image file. An attacker
+	  could potentially exploit the vulnerability to gain code execution, if
+	  they can trick the victim into running Exiv2 on a crafted image file.</p>
+	  <p>Note that this bug is only triggered when writing the metadata, which
+	  is a less frequently used Exiv2 operation than reading the metadata. For
+	  example, to trigger the bug in the Exiv2 command-line application, you
+	  need to add an extra command-line argument such as fixiso.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-26623</cvename>
+      <url>https://github.com/Exiv2/exiv2/security/advisories/GHSA-38h4-fx85-qcx7</url>
+    </references>
+    <dates>
+      <discovery>2025-02-18</discovery>
+      <entry>2025-02-25</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="e60e538f-e795-4a00-b475-cc85a7546e00">
     <topic>Emacs -- Arbitrary code execution vulnerability</topic>
     <affects>
