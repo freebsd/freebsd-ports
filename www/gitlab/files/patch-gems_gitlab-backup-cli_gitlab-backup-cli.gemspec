@@ -1,4 +1,4 @@
---- gems/gitlab-backup-cli/gitlab-backup-cli.gemspec.orig	2025-01-15 09:55:34 UTC
+--- gems/gitlab-backup-cli/gitlab-backup-cli.gemspec.orig	2025-02-19 06:08:46 UTC
 +++ gems/gitlab-backup-cli/gitlab-backup-cli.gemspec
 @@ -26,7 +26,7 @@ Gem::Specification.new do |spec|
  
@@ -22,4 +22,4 @@
 +  spec.add_dependency "minitest", "~> 5.11"
    spec.add_dependency "parallel", "~> 1.19"
    spec.add_dependency "rack", "~> 2.2.9"
-   spec.add_dependency "rexml", "~> 3.3.2"
+   spec.add_dependency "rexml", "~> 3.4.0"

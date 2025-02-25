@@ -1,6 +1,79 @@
---- Makefile.orig	2024-12-18 06:52:41 UTC
+--- Makefile.orig	2025-02-19 06:01:22 UTC
 +++ Makefile
-@@ -606,12 +606,12 @@ ${DEPENDENCY_DIR}/git-%/Makefile: ${DEPENDENCY_DIR}/gi
+@@ -145,7 +145,7 @@ GIT_VERSION_2_47 ?= v2.47.2
+ # major version is added, be sure to update GIT_PACKED_EXECUTABLES, the *-bundled-git targets,
+ # and add new targets under the "# These targets build specific releases of Git." section.
+ GIT_VERSION_2_47 ?= v2.47.2
+-GIT_VERSION_2_48 ?= v2.48.1.gl1
++#GIT_VERSION_2_48 ?= v2.48.1.gl1
+ #
+ # OVERRIDE_GIT_VERSION allows you to specify a custom semver value to be reported by the
+ # `git --version` command. This affects bundled and non-bundled Git, and can be used whenever
+@@ -238,8 +238,7 @@ BUILD_GEM_NAME ?= gitaly
+ BUILD_GEM_NAME ?= gitaly
+ 
+ # Git binaries that are eventually embedded into the Gitaly binary.
+-GIT_PACKED_EXECUTABLES       = $(addprefix ${BUILD_DIR}/bin/gitaly-, $(addsuffix -v2.47, ${GIT_EXECUTABLES})) \
+-															 $(addprefix ${BUILD_DIR}/bin/gitaly-, $(addsuffix -v2.48, ${GIT_EXECUTABLES}))
++GIT_PACKED_EXECUTABLES       = $(addprefix ${BUILD_DIR}/bin/gitaly-, $(addsuffix -v2.47, ${GIT_EXECUTABLES})) 
+ 
+ # All executables provided by Gitaly.
+ GITALY_EXECUTABLES           = $(addprefix ${BUILD_DIR}/bin/,$(notdir $(shell find ${SOURCE_DIR}/cmd -mindepth 1 -maxdepth 1 -type d -print)))
+@@ -328,16 +327,14 @@ install: build
+ 
+ .PHONY: build-bundled-git
+ ## Build bundled Git binaries.
+-build-bundled-git: build-bundled-git-v2.47 build-bundled-git-v2.48
++build-bundled-git: build-bundled-git-v2.47
+ build-bundled-git-v2.47: $(patsubst %,${BUILD_DIR}/bin/gitaly-%-v2.47,${GIT_EXECUTABLES})
+-build-bundled-git-v2.48: $(patsubst %,${BUILD_DIR}/bin/gitaly-%-v2.48,${GIT_EXECUTABLES})
+ 
+ .PHONY: install-bundled-git
+ ## Install bundled Git binaries. The target directory can be modified by
+ ## setting PREFIX and DESTDIR.
+-install-bundled-git: install-bundled-git-v2.47 install-bundled-git-v2.48
++install-bundled-git: install-bundled-git-v2.47
+ install-bundled-git-v2.47: $(patsubst %,${INSTALL_DEST_DIR}/gitaly-%-v2.47,${GIT_EXECUTABLES})
+-install-bundled-git-v2.48: $(patsubst %,${INSTALL_DEST_DIR}/gitaly-%-v2.48,${GIT_EXECUTABLES})
+ 
+ ifdef WITH_BUNDLED_GIT
+ build: build-bundled-git
+@@ -619,22 +616,22 @@ ${BUILD_DIR}/bin/gitaly-%-v2.47: ${DEPENDENCY_DIR}/git
+ ${BUILD_DIR}/bin/gitaly-%-v2.47: ${DEPENDENCY_DIR}/git-v2.47/.built | ${BUILD_DIR}/bin
+ 	${Q}install "$(<D)"/$* $@
+ 
+-${BUILD_DIR}/bin/gitaly-%-v2.48: override GIT_VERSION = ${GIT_VERSION_2_48}
++#${BUILD_DIR}/bin/gitaly-%-v2.48: override GIT_VERSION = ${GIT_VERSION_2_48}
+ # Use non-collision-detecting SHA1 implementation in non-cryptographic scenarios
+ # to improve performance. For now, this is only enabled for Git version 2.48 on
+ # Linux platforms.
+-ifeq ($(OS),Linux)
+-${BUILD_DIR}/bin/gitaly-%-v2.48: override GIT_MESON_BUILD_OPTIONS += -Dsha1_unsafe_backend=openssl
+-${BUILD_DIR}/bin/gitaly-%-v2.48: override GIT_BUILD_OPTIONS += OPENSSL_SHA1_UNSAFE=YesPlease
+-endif
++#ifeq ($(OS),Linux)
++#${BUILD_DIR}/bin/gitaly-%-v2.48: override GIT_MESON_BUILD_OPTIONS += -Dsha1_unsafe_backend=openssl
++#${BUILD_DIR}/bin/gitaly-%-v2.48: override GIT_BUILD_OPTIONS += OPENSSL_SHA1_UNSAFE=YesPlease
++#endif
+ 
+-ifdef USE_MESON
+-${BUILD_DIR}/bin/gitaly-%-v2.48: ${DEPENDENCY_DIR}/git-v2.48/build/.built | ${BUILD_DIR}/bin
+-	${Q}install "$(<D)"/$* $@
+-else
+-${BUILD_DIR}/bin/gitaly-%-v2.48: ${DEPENDENCY_DIR}/git-v2.48/.built | ${BUILD_DIR}/bin
+-	${Q}install "$(<D)"/$* $@
+-endif
++#ifdef USE_MESON
++#${BUILD_DIR}/bin/gitaly-%-v2.48: ${DEPENDENCY_DIR}/git-v2.48/build/.built | ${BUILD_DIR}/bin
++#	${Q}install "$(<D)"/$* $@
++#else
++#${BUILD_DIR}/bin/gitaly-%-v2.48: ${DEPENDENCY_DIR}/git-v2.48/.built | ${BUILD_DIR}/bin
++#	${Q}install "$(<D)"/$* $@
++#endif
+ 
+ # clear-go-build-cache-if-needed cleans the Go build cache if it exceeds the maximum size as
+ # configured in GOCACHE_MAX_SIZE_KB.
+@@ -668,12 +665,12 @@ ${DEPENDENCY_DIR}/git-%/Makefile: ${DEPENDENCY_DIR}/gi
  # otherwise try to rebuild all targets depending on it whenever we build
  # something else. We thus depend on the Makefile instead.
  ${DEPENDENCY_DIR}/git-%/Makefile: ${DEPENDENCY_DIR}/git-%.version
