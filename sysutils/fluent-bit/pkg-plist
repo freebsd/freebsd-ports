@@ -157,6 +157,7 @@ include/fluent-bit/flb_utf8.h
 include/fluent-bit/flb_utils.h
 include/fluent-bit/flb_version.h
 include/fluent-bit/flb_worker.h
+include/fluent-bit/flb_zstd.h
 include/fluent-bit/tls/flb_tls.h
 include/fluent-bit/tls/flb_tls_info.h
 include/fluent-bit/wasm/flb_wasm.h
