@@ -1,5 +1,5 @@
---- ../passenger-6.0.24/src/cxx_supportlib/oxt/implementation.cpp.orig	2013-10-26 20:00:00.000000000 -0400
-+++ ../passenger-6.0.24/src/cxx_supportlib/oxt/implementation.cpp	2025-02-04 14:00:31.804615000 -0500
+--- ../passenger-6.0.26/src/cxx_supportlib/oxt/implementation.cpp.orig	2013-10-26 20:00:00.000000000 -0400
++++ ../passenger-6.0.26/src/cxx_supportlib/oxt/implementation.cpp	2025-02-04 14:00:31.804615000 -0500
 @@ -397,9 +397,9 @@
  
  static void

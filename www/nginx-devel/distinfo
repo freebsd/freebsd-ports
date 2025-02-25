@@ -1,12 +1,12 @@
-TIMESTAMP = 1738774691
+TIMESTAMP = 1740508315
 SHA256 (nginx-1.27.4.tar.gz) = 294816f879b300e621fa4edd5353dd1ec00badb056399eceb30de7db64b753b2
 SIZE (nginx-1.27.4.tar.gz) = 1277177
 SHA256 (nginx_mogilefs_module-1.0.4.tar.gz) = 7ac230d30907f013dff8d435a118619ea6168aa3714dba62c6962d350c6295ae
 SIZE (nginx_mogilefs_module-1.0.4.tar.gz) = 11208
 SHA256 (ngx_http_redis-0.3.9.tar.gz) = 21f87540f0a44b23ffa5df16fb3d788bc90803b255ef14f9c26e3847a6f26f46
 SIZE (ngx_http_redis-0.3.9.tar.gz) = 13051
-SHA256 (passenger-6.0.24.tar.gz) = 3bc636ecf3e337c9fad13842fa539dabab546d458dfe4e2ae7c83419e7b8839c
-SIZE (passenger-6.0.24.tar.gz) = 8322829
+SHA256 (passenger-6.0.26.tar.gz) = c69312230d4467a30d7a8abd25ee04250df3e332432871c6bd561ef5eea3d485
+SIZE (passenger-6.0.26.tar.gz) = 8323901
 SHA256 (msva-nginx_ajp_module-fcbb2cc_GH0.tar.gz) = 522e94c59f5783f281d868ede2adf325bf2f8ffb9e62cf8451d4b9ac0516916c
 SIZE (msva-nginx_ajp_module-fcbb2cc_GH0.tar.gz) = 110807
 SHA256 (openresty-array-var-nginx-module-v0.06_GH0.tar.gz) = 2c3577265d1d51a2d0646311b9c651520a74455253b6f7a5776af79e9bff5cb1
