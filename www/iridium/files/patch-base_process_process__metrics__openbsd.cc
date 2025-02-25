@@ -1,4 +1,4 @@
---- base/process/process_metrics_openbsd.cc.orig	2025-02-22 18:06:53 UTC
+--- base/process/process_metrics_openbsd.cc.orig	2025-02-25 07:07:23 UTC
 +++ base/process/process_metrics_openbsd.cc
 @@ -6,73 +6,85 @@
  
@@ -122,7 +122,7 @@
    struct vmtotal vmtotal;
    unsigned long mem_total, mem_free, mem_inactive;
    size_t len = sizeof(vmtotal);
-@@ -85,9 +97,136 @@ size_t GetSystemCommitCharge() {
+@@ -85,9 +97,115 @@ size_t GetSystemCommitCharge() {
    mem_free = vmtotal.t_free;
    mem_inactive = vmtotal.t_vm - vmtotal.t_avm;
  
@@ -133,32 +133,11 @@
 +}
 +
 +int ProcessMetrics::GetOpenFdCount() const {
-+#if 0
-+  struct kinfo_file *files;
-+  kvm_t *kd = NULL;
-+  int total_count = 0;
-+  char errbuf[_POSIX2_LINE_MAX];
-+
-+  if ((kd = kvm_openfiles(NULL, NULL, NULL, KVM_NO_FILES, errbuf)) == NULL)
-+    goto out;
-+
-+  if ((files = kvm_getfiles(kd, KERN_FILE_BYPID, process_,
-+        sizeof(struct kinfo_file), &total_count)) == NULL) {
-+         total_count = 0;
-+         goto out;
-+  }
-+
-+  kvm_close(kd);
-+
-+out:
-+  return total_count;
-+#endif
-+  return getdtablecount();
++  return (process_ == getpid()) ? getdtablecount() : -1;
 +}
 +
 +int ProcessMetrics::GetOpenFdSoftLimit() const {
 +  return getdtablesize();
-+//  return GetMaxFds();
 +}
 +
 +bool ProcessMetrics::GetPageFaultCounts(PageFaultCounts* counts) const {
