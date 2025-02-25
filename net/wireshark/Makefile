@@ -1,5 +1,5 @@
 PORTNAME=	wireshark
-DISTVERSION=	4.4.4
+DISTVERSION=	4.4.5
 CATEGORIES=	net
 MASTER_SITES=	https://1.na.dl.wireshark.org/src/ \
 		https://1.eu.dl.wireshark.org/src/ \
@@ -92,7 +92,7 @@ LIBSSH_CMAKE_BOOL=	BUILD_ciscodump BUILD_sshdump BUILD_wifidump
 
 LTO_CMAKE_BOOL=		ENABLE_LTO
 
-LUA_USES=		lua:51-52
+LUA_USES=		lua:53-54
 LUA_CPPFLAGS=		-I${LUA_INCDIR}
 LUA_CMAKE_BOOL=		ENABLE_LUA
 
