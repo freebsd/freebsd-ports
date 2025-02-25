@@ -85,6 +85,8 @@ include/fizz/experimental/ktls/FizzKTLSCallback.h
 include/fizz/experimental/ktls/KTLS.h
 include/fizz/experimental/ktls/LinuxKTLS.h
 include/fizz/experimental/util/CertExtraction.h
+include/fizz/extensions/clientpadding/PaddingClientExtension.h
+include/fizz/extensions/clientpadding/Types.h
 include/fizz/extensions/delegatedcred/DelegatedCredentialCertManager.h
 include/fizz/extensions/delegatedcred/DelegatedCredentialClientCertManager.h
 include/fizz/extensions/delegatedcred/DelegatedCredentialClientExtension.h
