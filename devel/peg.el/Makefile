@@ -12,6 +12,9 @@ WWW=		https://elpa.gnu.org/packages/peg.html
 
 LICENSE=	GPLv3+
 
+DEPRECATED=	Emacs 30 and later include peg.el as standard library
+EXPIRATION_DATE=	2025-03-31
+
 USES=		emacs tar
 
 NO_ARCH=	yes
