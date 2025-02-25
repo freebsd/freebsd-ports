@@ -6447,6 +6447,7 @@
     SUBDIR += rubygem-ast
     SUBDIR += rubygem-astrolabe
     SUBDIR += rubygem-async
+    SUBDIR += rubygem-async-gitlab
     SUBDIR += rubygem-async-io
     SUBDIR += rubygem-async212
     SUBDIR += rubygem-atomic
