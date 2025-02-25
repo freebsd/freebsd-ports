@@ -4163,3 +4163,4 @@ net-im/kopete||2025-02-22|Discontinued upstream
 sysutils/shim||2025-02-22|Has expired: upstream has been inactive for 10 years and does not build with GCC 14
 devel/py-python-gilt|devel/gilt|2025-02-23|Project switched language from python to go
 textproc/uim-gtk|textproc/uim-gtk2|2025-02-23|Rename with versioned suffix
+x11-toolkits/scenefx|x11-toolkits/scenefx02|2025-02-25|Renamed to match versioned API
