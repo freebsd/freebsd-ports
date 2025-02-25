@@ -1,6 +1,5 @@
 PORTNAME=	ttk
-DISTVERSION=	1.2.0
-PORTREVISION=	2
+DISTVERSION=	1.3.0
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -10,9 +9,6 @@ WWW=		https://topology-tool-kit.github.io \
 
 LICENSE=	BSD4CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
-
-BROKEN=		compilation fails: incompatible with boost-1.87+, see https://github.com/topology-tool-kit/ttk/issues/1094
-BROKEN_i386=	compilation fails: cannot initialize a parameter of type 'const ttk::LongSimplexId *' (aka 'const long long *') with an lvalue ..., see https://github.com/topology-tool-kit/ttk/issues/852
 
 PY_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}scikit-build>0:devel/py-scikit-build@${PY_FLAVOR} \
@@ -30,6 +26,7 @@ LIB_DEPENDS=	libcgraph.so:graphics/graphviz \
 		libembree3.so:graphics/embree \
 		libfreetype.so:print/freetype2 \
 		libjsoncpp.so:devel/jsoncpp \
+		libqhull_r.so:math/qhull \
 		libvtkRenderingCore-pv${PARAVIEW_VER}.so:science/paraview \
 		libzfp.so:devel/zfp
 RUN_DEPENDS=	${PY_DEPENDS}
@@ -42,6 +39,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	topology-tool-kit
 
 CMAKE_ARGS=	-DPython3_EXECUTABLE=${PYTHON_CMD}
+CMAKE_OFF=	TTK_ENABLE_WEBSOCKETPP # fix build with boost-1.87+ until this is fixed
 
 post-stage:
 	${RM} ${STAGEDIR}${PREFIX}/include/Python.h
