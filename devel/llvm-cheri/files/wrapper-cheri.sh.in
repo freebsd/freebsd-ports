@@ -147,7 +147,7 @@ arch_objdump_flags=
 if [ $CHERIBSD_VERSION -gt 0 ]; then
 	case "$_TARGET" in
 	aarch64-*-freebsd*)
-		if run_tool llvm-readelf -h ${_SYSROOT}/lib/libc.so.7 | grep -q "Flags:.*purecap"; then
+		if run_tool llvm-readelf -h ${_SYSROOT}/lib/libc.so.7 | grep "Flags:.*purecap" >/dev/null; then
 			tls_flags=
 			vararg_flags=
 			if [ "$CHERIBSD_VERSION" -le 20220314 ]; then
@@ -176,7 +176,7 @@ if [ $CHERIBSD_VERSION -gt 0 ]; then
 		fi
 		;;
 	riscv64-*-freebsd*)
-		if run_tool llvm-readelf -h ${_SYSROOT}/lib/libc.so.7 | grep -q "Flags:.*cheriabi"; then
+		if run_tool llvm-readelf -h ${_SYSROOT}/lib/libc.so.7 | grep "Flags:.*cheriabi" >/dev/null; then
 			mabi=l64pc128d
 		else
 			mabi=lp64d
