@@ -9810,6 +9810,7 @@
 %%WWWDIR%%/core/modules/navigation/modules/navigation_top_bar/navigation_top_bar.info.yml
 %%WWWDIR%%/core/modules/navigation/modules/navigation_top_bar/src/Hook/NavigationTopBarHooks.php
 %%WWWDIR%%/core/modules/navigation/modules/navigation_top_bar/tests/src/Functional/GenericTest.php
+%%WWWDIR%%/core/modules/navigation/navigation.api.php
 %%WWWDIR%%/core/modules/navigation/navigation.info.yml
 %%WWWDIR%%/core/modules/navigation/navigation.install
 %%WWWDIR%%/core/modules/navigation/navigation.layouts.yml
@@ -9846,10 +9847,10 @@
 %%WWWDIR%%/core/modules/navigation/src/TopBarItemPluginInterface.php
 %%WWWDIR%%/core/modules/navigation/src/TopBarRegion.php
 %%WWWDIR%%/core/modules/navigation/src/UserLazyBuilder.php
-%%WWWDIR%%/core/modules/navigation/templates/big-pipe-interface-preview--navigation-shortcut-lazy-builder-lazyLinks--Shortcuts.html.twig
 %%WWWDIR%%/core/modules/navigation/templates/block--navigation.html.twig
 %%WWWDIR%%/core/modules/navigation/templates/logo.svg.twig
 %%WWWDIR%%/core/modules/navigation/templates/menu-region--footer.html.twig
+%%WWWDIR%%/core/modules/navigation/templates/navigation-content-top.html.twig
 %%WWWDIR%%/core/modules/navigation/templates/navigation-menu.html.twig
 %%WWWDIR%%/core/modules/navigation/templates/top-bar-local-task.html.twig
 %%WWWDIR%%/core/modules/navigation/templates/top-bar-local-tasks.html.twig
@@ -9859,6 +9860,7 @@
 %%WWWDIR%%/core/modules/navigation/tests/navigation_test/src/Hook/NavigationTestHooks.php
 %%WWWDIR%%/core/modules/navigation/tests/navigation_test/src/Plugin/TopBarItem/TopBarItemInstantiation.php
 %%WWWDIR%%/core/modules/navigation/tests/src/Functional/GenericTest.php
+%%WWWDIR%%/core/modules/navigation/tests/src/Functional/NavigationContentTopTest.php
 %%WWWDIR%%/core/modules/navigation/tests/src/Functional/NavigationLinkBlockTest.php
 %%WWWDIR%%/core/modules/navigation/tests/src/Functional/NavigationLogoTest.php
 %%WWWDIR%%/core/modules/navigation/tests/src/Functional/NavigationSafeBlockDefinitionTest.php
@@ -9866,6 +9868,7 @@
 %%WWWDIR%%/core/modules/navigation/tests/src/Functional/NavigationTopBarTest.php
 %%WWWDIR%%/core/modules/navigation/tests/src/Functional/NavigationUserBlockTest.php
 %%WWWDIR%%/core/modules/navigation/tests/src/FunctionalJavascript/NavigationBlockUiTest.php
+%%WWWDIR%%/core/modules/navigation/tests/src/FunctionalJavascript/PerformanceTest.php
 %%WWWDIR%%/core/modules/navigation/tests/src/FunctionalJavascript/TopBarPerformanceTest.php
 %%WWWDIR%%/core/modules/navigation/tests/src/Kernel/ConfigAction/AddNavigationBlockConfigActionTest.php
 %%WWWDIR%%/core/modules/navigation/tests/src/Kernel/NavigationMenuBlockTest.php
@@ -16783,7 +16786,6 @@
 %%WWWDIR%%/core/tests/Drupal/KernelTests/Core/Render/Element/TableTest.php
 %%WWWDIR%%/core/tests/Drupal/KernelTests/Core/Render/Element/WeightTest.php
 %%WWWDIR%%/core/tests/Drupal/KernelTests/Core/Render/ElementInfoIntegrationTest.php
-%%WWWDIR%%/core/tests/Drupal/KernelTests/Core/Render/RenderCacheTest.php
 %%WWWDIR%%/core/tests/Drupal/KernelTests/Core/Render/RenderTest.php
 %%WWWDIR%%/core/tests/Drupal/KernelTests/Core/RouteProcessor/RouteNoneTest.php
 %%WWWDIR%%/core/tests/Drupal/KernelTests/Core/RouteProcessor/RouteProcessorCurrentIntegrationTest.php
@@ -17353,6 +17355,7 @@
 %%WWWDIR%%/core/tests/Drupal/Tests/Core/DrupalTest.php
 %%WWWDIR%%/core/tests/Drupal/Tests/Core/Enhancer/EntityRevisionRouteEnhancerTest.php
 %%WWWDIR%%/core/tests/Drupal/Tests/Core/Enhancer/ParamConversionEnhancerTest.php
+%%WWWDIR%%/core/tests/Drupal/Tests/Core/Entity/Access/EntityCreateAccessCustomCidTest.php
 %%WWWDIR%%/core/tests/Drupal/Tests/Core/Entity/Access/EntityFormDisplayAccessControlHandlerTest.php
 %%WWWDIR%%/core/tests/Drupal/Tests/Core/Entity/Access/EntityViewDisplayAccessControlHandlerTest.php
 %%WWWDIR%%/core/tests/Drupal/Tests/Core/Entity/BaseFieldDefinitionTest.php
@@ -21799,6 +21802,7 @@
 %%WWWDIR%%/vendor/twig/twig/src/Extension/EscaperExtension.php
 %%WWWDIR%%/vendor/twig/twig/src/Extension/ExtensionInterface.php
 %%WWWDIR%%/vendor/twig/twig/src/Extension/GlobalsInterface.php
+%%WWWDIR%%/vendor/twig/twig/src/Extension/LastModifiedExtensionInterface.php
 %%WWWDIR%%/vendor/twig/twig/src/Extension/OptimizerExtension.php
 %%WWWDIR%%/vendor/twig/twig/src/Extension/ProfilerExtension.php
 %%WWWDIR%%/vendor/twig/twig/src/Extension/RuntimeExtensionInterface.php
@@ -21838,6 +21842,7 @@
 %%WWWDIR%%/vendor/twig/twig/src/Node/Expression/Binary/BitwiseXorBinary.php
 %%WWWDIR%%/vendor/twig/twig/src/Node/Expression/Binary/ConcatBinary.php
 %%WWWDIR%%/vendor/twig/twig/src/Node/Expression/Binary/DivBinary.php
+%%WWWDIR%%/vendor/twig/twig/src/Node/Expression/Binary/ElvisBinary.php
 %%WWWDIR%%/vendor/twig/twig/src/Node/Expression/Binary/EndsWithBinary.php
 %%WWWDIR%%/vendor/twig/twig/src/Node/Expression/Binary/EqualBinary.php
 %%WWWDIR%%/vendor/twig/twig/src/Node/Expression/Binary/FloorDivBinary.php
@@ -21853,6 +21858,7 @@
 %%WWWDIR%%/vendor/twig/twig/src/Node/Expression/Binary/MulBinary.php
 %%WWWDIR%%/vendor/twig/twig/src/Node/Expression/Binary/NotEqualBinary.php
 %%WWWDIR%%/vendor/twig/twig/src/Node/Expression/Binary/NotInBinary.php
+%%WWWDIR%%/vendor/twig/twig/src/Node/Expression/Binary/NullCoalesceBinary.php
 %%WWWDIR%%/vendor/twig/twig/src/Node/Expression/Binary/OrBinary.php
 %%WWWDIR%%/vendor/twig/twig/src/Node/Expression/Binary/PowerBinary.php
 %%WWWDIR%%/vendor/twig/twig/src/Node/Expression/Binary/RangeBinary.php
@@ -21876,8 +21882,10 @@
 %%WWWDIR%%/vendor/twig/twig/src/Node/Expression/MethodCallExpression.php
 %%WWWDIR%%/vendor/twig/twig/src/Node/Expression/NameExpression.php
 %%WWWDIR%%/vendor/twig/twig/src/Node/Expression/NullCoalesceExpression.php
+%%WWWDIR%%/vendor/twig/twig/src/Node/Expression/OperatorEscapeInterface.php
 %%WWWDIR%%/vendor/twig/twig/src/Node/Expression/ParentExpression.php
 %%WWWDIR%%/vendor/twig/twig/src/Node/Expression/TempNameExpression.php
+%%WWWDIR%%/vendor/twig/twig/src/Node/Expression/Ternary/ConditionalTernary.php
 %%WWWDIR%%/vendor/twig/twig/src/Node/Expression/Test/ConstantTest.php
 %%WWWDIR%%/vendor/twig/twig/src/Node/Expression/Test/DefinedTest.php
 %%WWWDIR%%/vendor/twig/twig/src/Node/Expression/Test/DivisiblebyTest.php
@@ -21899,6 +21907,7 @@
 %%WWWDIR%%/vendor/twig/twig/src/Node/Expression/Variable/TemplateVariable.php
 %%WWWDIR%%/vendor/twig/twig/src/Node/Expression/VariadicExpression.php
 %%WWWDIR%%/vendor/twig/twig/src/Node/FlushNode.php
+%%WWWDIR%%/vendor/twig/twig/src/Node/ForElseNode.php
 %%WWWDIR%%/vendor/twig/twig/src/Node/ForLoopNode.php
 %%WWWDIR%%/vendor/twig/twig/src/Node/ForNode.php
 %%WWWDIR%%/vendor/twig/twig/src/Node/IfNode.php
