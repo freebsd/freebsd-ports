@@ -1,6 +1,5 @@
 PORTNAME=	google-apis-cloudbilling_v1
-PORTVERSION=	0.21.0
-PORTREVISION=	1
+PORTVERSION=	0.22.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
