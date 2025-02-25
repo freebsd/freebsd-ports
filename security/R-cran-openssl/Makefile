@@ -14,6 +14,7 @@ BUILD_DEPENDS=	bash:shells/bash \
 		${CRAN_DEPENDS}
 RUN_DEPENDS=	${CRAN_DEPENDS}
 TEST_DEPENDS=	R-cran-curl>0:ftp/R-cran-curl \
+		R-cran-jose>0:www/R-cran-jose \
 		R-cran-knitr>0:print/R-cran-knitr \
 		R-cran-rmarkdown>0:textproc/R-cran-rmarkdown \
 		R-cran-sodium>0:security/R-cran-sodium \
@@ -22,10 +23,5 @@ TEST_DEPENDS=	R-cran-curl>0:ftp/R-cran-curl \
 USES=		cran:auto-plist,compiles shebangfix ssl
 
 SHEBANG_FILES=	${WRKSRC}/tests/google.dk/generate.bash
-
-pre-test:
-# R-cran-jose package does not exist yet
-	@${LOCALBASE}/bin/Rscript -e 'install.packages("jose", \
-		repos = "https://cloud.r-project.org")'
 
 .include <bsd.port.mk>
