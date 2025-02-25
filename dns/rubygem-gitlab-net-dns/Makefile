@@ -1,5 +1,5 @@
 PORTNAME=	gitlab-net-dns
-PORTVERSION=	0.9.2
+PORTVERSION=	0.10.0
 CATEGORIES=	dns rubygems
 MASTER_SITES=	RG
 
