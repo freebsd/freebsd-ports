@@ -272,12 +272,14 @@ include/folly/coro/Result.h
 include/folly/coro/Retry.h
 include/folly/coro/RustAdaptors.h
 include/folly/coro/ScopeExit.h
+include/folly/coro/SerialQueueRunner.h
 include/folly/coro/SharedLock.h
 include/folly/coro/SharedMutex.h
 include/folly/coro/SharedPromise.h
 include/folly/coro/Sleep-inl.h
 include/folly/coro/Sleep.h
 include/folly/coro/SmallUnboundedQueue.h
+include/folly/coro/Synchronized.h
 include/folly/coro/Task.h
 include/folly/coro/TaskWrapper.h
 include/folly/coro/TimedWait.h
@@ -298,6 +300,7 @@ include/folly/coro/detail/InlineTask.h
 include/folly/coro/detail/Malloc.h
 include/folly/coro/detail/ManualLifetime.h
 include/folly/coro/detail/Traits.h
+include/folly/coro/safe/NowTask.h
 include/folly/crypto/Blake2xb.h
 include/folly/crypto/LtHash-inl.h
 include/folly/crypto/LtHash.h
@@ -738,6 +741,7 @@ include/folly/io/async/IoUringBase.h
 include/folly/io/async/IoUringEvent.h
 include/folly/io/async/IoUringEventBaseLocal.h
 include/folly/io/async/IoUringProvidedBufferRing.h
+include/folly/io/async/IoUringZeroCopyBufferPool.h
 include/folly/io/async/Liburing.h
 include/folly/io/async/MuxIOThreadPoolExecutor.h
 include/folly/io/async/NotificationQueue.h
@@ -878,6 +882,7 @@ include/folly/memory/UninitializedMemoryHacks.h
 include/folly/memory/detail/MallocImpl.h
 include/folly/memory/not_null-inl.h
 include/folly/memory/not_null.h
+include/folly/memory/shared_from_this_ptr.h
 include/folly/net/NetOps.h
 include/folly/net/NetOpsDispatcher.h
 include/folly/net/NetworkSocket.h
