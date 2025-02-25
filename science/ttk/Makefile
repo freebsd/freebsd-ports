@@ -5,11 +5,13 @@ CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Topology ToolKit: Topological data analysis and visualization
-WWW=		https://topology-tool-kit.github.io/
+WWW=		https://topology-tool-kit.github.io \
+		https://github.com/topology-tool-kit/ttk
 
 LICENSE=	BSD4CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN=		compilation fails: incompatible with boost-1.87+, see https://github.com/topology-tool-kit/ttk/issues/1094
 BROKEN_i386=	compilation fails: cannot initialize a parameter of type 'const ttk::LongSimplexId *' (aka 'const long long *') with an lvalue ..., see https://github.com/topology-tool-kit/ttk/issues/852
 
 PY_DEPENDS=	${PYNUMPY} \
