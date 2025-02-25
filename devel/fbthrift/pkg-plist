@@ -504,6 +504,7 @@ include/thrift/lib/cpp2/server/peeking/TLSHelper.h
 include/thrift/lib/cpp2/server/test/util/MockServerConfigs.h
 include/thrift/lib/cpp2/test/Matcher.h
 include/thrift/lib/cpp2/test/MockCpp2ConnContext.h
+include/thrift/lib/cpp2/test/ObjectBenchUtils.h
 include/thrift/lib/cpp2/test/ProtoBufStructs-inl.h
 include/thrift/lib/cpp2/test/Structs.h
 include/thrift/lib/cpp2/test/ThriftStructs-inl.h
@@ -696,6 +697,7 @@ include/thrift/lib/python/flags.h
 include/thrift/lib/python/server/PythonAsyncProcessor.h
 include/thrift/lib/python/server/PythonAsyncProcessorFactory.h
 include/thrift/lib/python/server/flagged/EnableResourcePoolsForPython.h
+include/thrift/lib/python/server/flagged/RcAwareTaskPatch.h
 include/thrift/lib/python/server/flagged/test/EnableResourcePoolsForPythonTest.h
 include/thrift/lib/python/server/util.h
 include/thrift/lib/python/test/event_handlers/handler.h
