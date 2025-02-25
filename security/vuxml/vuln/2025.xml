@@ -47,7 +47,7 @@
       <package>
 	<name>emacs-devel</name>
 	<name>emacs-devel-nox</name>
-	<range><lt>31.0.50.20250215,3</lt></range>
+	<range><lt>30.0.50.20240115,3</lt></range>
       </package>
     </affects>
     <description>
@@ -70,6 +70,7 @@
     <dates>
       <discovery>2025-02-11</discovery>
       <entry>2025-02-24</entry>
+      <modified>2025-02-25</modified>
     </dates>
   </vuln>
 
