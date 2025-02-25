@@ -1,6 +1,5 @@
 PORTNAME=	prometheus-client-mmap
-PORTVERSION=	1.1.2
-PORTREVISION=	2
+PORTVERSION=	1.2.8
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -11,7 +10,9 @@ WWW=		https://gitlab.com/gitlab-org/prometheus-client-mmap
 LICENSE=	APACHE20
 
 RUN_DEPENDS=	rubygem-base64>=0:converters/rubygem-base64 \
-		rubygem-rb_sys>=0.9.86<1:lang/rubygem-rb_sys
+		rubygem-bigdecimal>=0:math/rubygem-bigdecimal \
+		rubygem-logger>=0:devel/rubygem-logger \
+		rubygem-rb_sys>=0.9.109<1:lang/rubygem-rb_sys
 
 USES=		cargo gem gmake llvm:build
 
