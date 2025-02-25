@@ -1908,6 +1908,7 @@
     SUBDIR += rubygem-nokogiri-diff
     SUBDIR += rubygem-nokogumbo
     SUBDIR += rubygem-octopress-escape-code
+    SUBDIR += rubygem-opensearch-ruby-gitlab
     SUBDIR += rubygem-opml
     SUBDIR += rubygem-org-ruby
     SUBDIR += rubygem-ox
@@ -1943,7 +1944,6 @@
     SUBDIR += rubygem-representable
     SUBDIR += rubygem-reverse_markdown
     SUBDIR += rubygem-rexml
-    SUBDIR += rubygem-rexml-gitlab
     SUBDIR += rubygem-ri_cal
     SUBDIR += rubygem-rly
     SUBDIR += rubygem-rmmseg-cpp

@@ -1,5 +1,6 @@
 PORTNAME=	CFPropertyList
 PORTVERSION=	3.0.7
+PORTREVISION=	1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	-gitlab
@@ -13,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-base64>=0:converters/rubygem-base64 \
 		rubygem-nkf>=0:net/rubygem-nkf \
-		rubygem-rexml-gitlab>=0:textproc/rubygem-rexml-gitlab
+		rubygem-rexml>=0:textproc/rubygem-rexml
 
 USES=		gem
 

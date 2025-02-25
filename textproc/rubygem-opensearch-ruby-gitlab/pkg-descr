@@ -1,0 +1,4 @@
+OpenSearch Ruby is a Ruby client for OpenSearch.
+You can use the client to execute OpenSearch API
+commands, and build OpenSearch queries and aggregations
+using the included OpenSearch DSL.
