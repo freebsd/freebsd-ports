@@ -63,8 +63,8 @@ include/exiv2/xmp_exiv2.hpp
 include/exiv2/xmpsidecar.hpp
 lib/cmake/exiv2/exiv2Config.cmake
 lib/cmake/exiv2/exiv2ConfigVersion.cmake
-lib/cmake/exiv2/exiv2Export-%%CMAKE_BUILD_TYPE%%.cmake
-lib/cmake/exiv2/exiv2Export.cmake
+lib/cmake/exiv2/exiv2Targets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/exiv2/exiv2Targets.cmake
 lib/libexiv2.so
 lib/libexiv2.so.%%SOVERSION%%
 lib/libexiv2.so.%%SOVER%%
