@@ -28,6 +28,7 @@ include/QXmppQt6/QXmppCarbonManager.h
 include/QXmppQt6/QXmppCarbonManagerV2.h
 include/QXmppQt6/QXmppClient.h
 include/QXmppQt6/QXmppClientExtension.h
+include/QXmppQt6/QXmppColorGeneration.h
 include/QXmppQt6/QXmppConfiguration.h
 include/QXmppQt6/QXmppCredentials.h
 include/QXmppQt6/QXmppDataForm.h

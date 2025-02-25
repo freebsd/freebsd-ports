@@ -1,7 +1,6 @@
 PORTNAME=	qxmpp
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.9.4
-PORTREVISION=	1
+DISTVERSION=	1.10.0
 CATEGORIES=	net-im
 PKGNAMESUFFIX=	-qt6
 
@@ -12,10 +11,10 @@ WWW=		https://github.com/qxmpp-project/qxmpp/
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/LICENSES/LGPL-2.1-or-later.txt
 
-LIB_DEPENDS=	libomemo-c.so:security/libomemo-c
+LIB_DEPENDS=	libomemo-c.so:security/libomemo-c \
+		libqca-qt6.so:devel/qca@qt6
 
-USES=		cmake compiler:c++20-lang pathfix pkgconfig qca \
-		qt:6
+USES=		cmake compiler:c++20-lang pathfix pkgconfig qt:6
 USE_GITHUB=	yes
 GH_ACCOUNT=	qxmpp-project
 USE_LDCONFIG=	yes
