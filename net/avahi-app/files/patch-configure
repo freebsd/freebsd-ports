@@ -1,0 +1,22 @@
+--- configure.orig	2025-02-22 16:31:36 UTC
++++ configure
+@@ -17758,9 +17758,7 @@ ac_compiler_gnu=$ac_cv_c_compiler_gnu
+ #
+ # Check for netlink.h
+ #
+-ac_fn_c_check_header_compile "$LINENO" "linux/netlink.h" "ac_cv_header_linux_netlink_h" "
+-#include <sys/socket.h>
+-#include <asm/types.h>
++ac_fn_c_check_header_compile "$LINENO" "netlink/netlink.h" "ac_cv_header_linux_netlink_h" "
+ 
+ "
+ if test "x$ac_cv_header_linux_netlink_h" = xyes; then :
+@@ -19409,7 +19407,7 @@ _ACEOF
+   cat >>confdefs.h <<_ACEOF
+ #define HAVE_SYS_INOTIFY_H 1
+ _ACEOF
+- have_inotify=yes
++ have_inotify=no
+ fi
+ 
+ done
