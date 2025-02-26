@@ -1,5 +1,6 @@
 CARGO_CRATES=	addr2line-0.24.2 \
 		adler2-2.0.0 \
+		ahash-0.8.11 \
 		aho-corasick-1.1.3 \
 		allocator-api2-0.2.21 \
 		anes-0.1.6 \
@@ -8,7 +9,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		anstyle-parse-0.2.6 \
 		anstyle-query-1.1.2 \
 		anstyle-wincon-3.0.7 \
-		anyhow-1.0.95 \
+		anyhow-1.0.96 \
 		ariadne-0.4.1 \
 		async-trait-0.1.85 \
 		auto_impl-1.2.1 \
@@ -20,14 +21,17 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		bumpalo-3.16.0 \
 		byteorder-1.5.0 \
 		bytes-1.9.0 \
+		cached-0.54.0 \
+		cached_proc_macro-0.23.0 \
+		cached_proc_macro_types-0.1.1 \
 		cast-0.3.0 \
 		cc-1.0.106 \
 		cfg-if-1.0.0 \
 		ciborium-0.2.2 \
 		ciborium-io-0.2.2 \
 		ciborium-ll-0.2.2 \
-		clap-4.5.28 \
-		clap_builder-4.5.27 \
+		clap-4.5.29 \
+		clap_builder-4.5.29 \
 		clap_derive-4.5.28 \
 		clap_lex-0.7.4 \
 		colorchoice-1.0.3 \
@@ -38,6 +42,9 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		crossbeam-epoch-0.9.18 \
 		crossbeam-utils-0.8.21 \
 		crunchy-0.2.3 \
+		darling-0.20.10 \
+		darling_core-0.20.10 \
+		darling_macro-0.20.10 \
 		dashmap-5.5.3 \
 		dirs-4.0.0 \
 		dirs-6.0.0 \
@@ -48,6 +55,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		either-1.13.0 \
 		env_logger-0.8.4 \
 		equivalent-1.0.1 \
+		fnv-1.0.7 \
 		foldhash-0.1.4 \
 		form_urlencoded-1.2.1 \
 		fst-0.4.7 \
@@ -79,6 +87,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		icu_properties_data-1.5.0 \
 		icu_provider-1.5.0 \
 		icu_provider_macros-1.5.0 \
+		ident_case-1.0.1 \
 		idna-1.0.3 \
 		idna_adapter-1.2.0 \
 		indexmap-2.7.1 \
@@ -105,12 +114,13 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		nu-ansi-term-0.46.0 \
 		num-traits-0.2.19 \
 		object-0.36.7 \
-		once_cell-1.20.2 \
+		once_cell-1.20.3 \
 		oorandom-11.1.4 \
 		open-5.3.2 \
 		option-ext-0.2.0 \
-		ordered-float-4.6.0 \
+		ordered-float-5.0.0 \
 		overload-0.1.1 \
+		parking_lot-0.12.3 \
 		parking_lot_core-0.9.10 \
 		paste-1.0.15 \
 		pathdiff-0.2.3 \
@@ -144,16 +154,16 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		ryu-1.0.18 \
 		same-file-1.0.6 \
 		scopeguard-1.2.0 \
-		serde-1.0.217 \
+		serde-1.0.218 \
 		serde-wasm-bindgen-0.6.5 \
-		serde_derive-1.0.217 \
+		serde_derive-1.0.218 \
 		serde_json-1.0.138 \
 		serde_repr-0.1.19 \
 		serde_spanned-0.6.8 \
 		sharded-slab-0.1.7 \
 		siphasher-1.0.1 \
 		slab-0.4.9 \
-		smallvec-1.13.2 \
+		smallvec-1.14.0 \
 		socket2-0.5.8 \
 		stable_deref_trait-1.2.0 \
 		strsim-0.11.1 \
@@ -206,8 +216,9 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		tree-sitter-swift-0.4.0 \
 		tree-sitter-toml-0.20.0 \
 		tree-sitter-typescript-0.20.5 \
-		typst-syntax-0.12.0 \
-		typst-utils-0.12.0 \
+		typst-syntax-0.13.0 \
+		typst-timing-0.13.0 \
+		typst-utils-0.13.0 \
 		unicase-2.8.1 \
 		unicode-blocks-0.1.9 \
 		unicode-ident-1.0.15 \
@@ -222,6 +233,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		utf8_iter-1.0.4 \
 		utf8parse-0.2.2 \
 		valuable-0.1.1 \
+		version_check-0.9.5 \
 		walkdir-2.5.0 \
 		wasi-0.11.0+wasi-snapshot-preview1 \
 		wasm-bindgen-0.2.100 \
@@ -229,6 +241,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		wasm-bindgen-macro-0.2.100 \
 		wasm-bindgen-macro-support-0.2.100 \
 		wasm-bindgen-shared-0.2.100 \
+		web-time-1.1.0 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-util-0.1.9 \
