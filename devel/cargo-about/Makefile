@@ -5,7 +5,8 @@ CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Rust: Cargo plugin to generate list of all licenses for a crate
-WWW=		http://embark.rs
+WWW=		http://embark.rs \
+		https://github.com/EmbarkStudios/cargo-about
 
 LICENSE=	APACHE20 MIT
 LICENSE_COMB=	dual
