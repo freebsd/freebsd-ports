@@ -1,0 +1,11 @@
+--- pyproject.toml.orig	2025-02-26 04:20:33 UTC
++++ pyproject.toml
+@@ -21,7 +21,7 @@ dependencies = [
+   "Topic :: Utilities"
+ ]
+ dependencies = [
+-  "prawcore >=2.4, <3",
++  "prawcore >=2.4",
+   "update_checker >=0.18",
+   "websocket-client >=0.54.0"
+ ]
