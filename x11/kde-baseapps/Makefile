@@ -4,7 +4,7 @@ CATEGORIES=	x11 kde
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE Base Applications (meta port)
-WWW=		https://www.kde.org/applications/
+WWW=		https://apps.kde.org/
 
 USES=		kde:6 metaport
 RUN_DEPENDS=	dolphin>=${KDE_APPLICATIONS_VERSION}:x11-fm/dolphin  \

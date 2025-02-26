@@ -4,6 +4,7 @@ CATEGORIES=	devel kde
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE Software Development Kit
+WWW=		https://apps.kde.org/categories/development/
 
 USES=		kde:6 metaport qt:6
 USE_QT=		#

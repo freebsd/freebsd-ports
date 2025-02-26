@@ -4,7 +4,7 @@ CATEGORIES=	multimedia kde
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE Multimedia applications (meta port)
-WWW=		https://multimedia.kde.org
+WWW=		https://apps.kde.org/categories/multimedia/
 
 USES=		kde:6 metaport qt:6
 USE_QT=		#

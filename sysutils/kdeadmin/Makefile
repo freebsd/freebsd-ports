@@ -4,7 +4,7 @@ CATEGORIES=	sysutils kde
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE Administration applications (meta port)
-WWW=		https://www.kde.org
+WWW=		https://apps.kde.org/categories/system/
 
 USES=		kde:6 metaport
 
