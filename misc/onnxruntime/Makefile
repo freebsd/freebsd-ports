@@ -1,13 +1,13 @@
 PORTNAME=	onnxruntime
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.18.2
-PORTREVISION=	2
+DISTVERSION=	1.20.2
 CATEGORIES=	misc # machine-learning
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Cross-platform, high performance ML inferencing & training accelerator
-WWW=		https://onnxruntime.ai/
+WWW=		https://onnxruntime.ai/ \
+		https://github.com/microsoft/onnxruntime
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -18,18 +18,21 @@ BROKEN_i386=	compilation fails: error: requested alignment is less than minimum 
 BUILD_DEPENDS=	gpatch:devel/patch
 LIB_DEPENDS=	libabsl_base.so:devel/abseil
 
-USES=		cmake:testing compiler:c++11-lang python:build
+USES=		cmake:testing compiler:c++11-lang localbase python:build
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	microsoft
 GH_TUPLE=	emscripten-core:emsdk:d52c465:emsdk/cmake/external/emsdk \
-		google:libprotobuf-mutator:7a2ed51:libprotobuf_mutator/cmake/external/libprotobuf-mutator \
-		onnx:onnx:595228d:onnx/cmake/external/onnx
+		google:libprotobuf-mutator:7a2ed51a6b682a83e345ff49fc4cfd7ca47550db:libprotobuf_mutator/cmake/external/libprotobuf-mutator \
+		onnx:onnx:b8baa8446686496da4cc8fda09f2b6fe65c2a02c:onnx/cmake/external/onnx
 
 CMAKE_SOURCE_PATH=	${WRKSRC}/cmake
 CMAKE_OFF=	FETCHCONTENT_FULLY_DISCONNECTED \
 		onnxruntime_BUILD_UNIT_TESTS
 CMAKE_TESTING_ON=	onnxruntime_BUILD_UNIT_TESTS
+
+CXXFLAGS+=	-Wno-array-bounds # workaround for https://github.com/microsoft/onnxruntime/issues/23410
+CXXFLAGS+=	-I${WRKSRC}/include/onnxruntime/core/common/logging # otherwise logging.h isn't found
 
 BINARY_ALIAS=	patch=gpatch
 
@@ -39,13 +42,20 @@ CONFLICTS_BUILD=	abseil benchmark nsync googletest dlpack flatbuffers gsl mimall
 			nlohmann-json onnx protobuf psimd pthreadpool pybind11 re2
 
 dev-update-deps-in-makefiles: extract # this should be run when the port is updated
-	@${FILEDIR}/convert-deps.sh ${DEPS_FILE}
+	@${FILESDIR}/convert-deps.sh ${DEPS_FILE}
 
 pre-configure:
 	@${REINPLACE_CMD} -E 's|;(https://.*)/([^/]+\.zip);|;file://${DISTDIR}/${DIST_SUBDIR}/\2;|' ${DEPS_FILE}
 
 # NOTE there should be an EXTRACT_ONLY statement
 # NOTE shared libs can't be enabled because the build would fail, see discussion in this issue: https://github.com/microsoft/onnxruntime/issues/22331
+
+# tests as of 1.20.2 (cd work/.build && ./onnxruntime_test_all):
+# [==========] 4626 tests from 301 test suites ran. (82073 ms total)
+# [  PASSED  ] 4615 tests.
+# [  FAILED  ] 1 test, listed below:
+# [  FAILED  ] OptimizerInitializerTest.LoadExternalData
+# see https://github.com/microsoft/onnxruntime/issues/23816
 
 .include <Makefile.MASTER_SITES>
 .include <Makefile.DISTFILES>

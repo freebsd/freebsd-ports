@@ -6,7 +6,6 @@ include/onnxruntime/core/common/denormal.h
 include/onnxruntime/core/common/eigen_common_wrapper.h
 include/onnxruntime/core/common/exceptions.h
 include/onnxruntime/core/common/gpu_profiler_common.h
-include/onnxruntime/core/common/gsl.h
 include/onnxruntime/core/common/hash_combine.h
 include/onnxruntime/core/common/inlined_containers.h
 include/onnxruntime/core/common/inlined_containers_fwd.h
@@ -15,6 +14,7 @@ include/onnxruntime/core/common/logging/isink.h
 include/onnxruntime/core/common/logging/logging.h
 include/onnxruntime/core/common/logging/macros.h
 include/onnxruntime/core/common/logging/severity.h
+include/onnxruntime/core/common/logging/sink_types.h
 include/onnxruntime/core/common/make_string.h
 include/onnxruntime/core/common/narrow.h
 include/onnxruntime/core/common/optional.h
@@ -37,6 +37,7 @@ include/onnxruntime/core/framework/float8.h
 include/onnxruntime/core/framework/framework_common.h
 include/onnxruntime/core/framework/framework_provider_common.h
 include/onnxruntime/core/framework/func_api.h
+include/onnxruntime/core/framework/int4.h
 include/onnxruntime/core/framework/kernel_def_builder.h
 include/onnxruntime/core/framework/kernel_registry.h
 include/onnxruntime/core/framework/op_kernel.h
@@ -70,6 +71,8 @@ include/onnxruntime/core/optimizer/graph_transformer_level.h
 include/onnxruntime/core/optimizer/graph_transformer_utils.h
 include/onnxruntime/core/optimizer/rewrite_rule.h
 include/onnxruntime/core/optimizer/rule_based_graph_transformer.h
+include/onnxruntime/core/providers/custom_op_context.h
+include/onnxruntime/core/providers/resource.h
 include/onnxruntime/core/session/environment.h
 include/onnxruntime/core/session/experimental_onnxruntime_cxx_api.h
 include/onnxruntime/core/session/experimental_onnxruntime_cxx_inline.h
@@ -86,6 +89,7 @@ lib/libonnxruntime_common.a
 lib/libonnxruntime_flatbuffers.a
 lib/libonnxruntime_framework.a
 lib/libonnxruntime_graph.a
+lib/libonnxruntime_lora.a
 lib/libonnxruntime_mlas.a
 lib/libonnxruntime_optimizer.a
 lib/libonnxruntime_providers.a

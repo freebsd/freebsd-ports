@@ -1,5 +1,5 @@
 MASTER_SITES=	\
-		https://github.com/abseil/abseil-cpp/archive/:abseil_cpp \
+		https://github.com/abseil/abseil-cpp/archive/refs/tags/:abseil_cpp \
 		https://github.com/apple/coremltools/archive/refs/tags/:coremltools \
 		https://github.com/jarro2783/cxxopts/archive/:cxxopts \
 		https://github.com/HowardHinnant/date/archive/refs/tags/:date \
@@ -10,14 +10,13 @@ MASTER_SITES=	\
 		https://github.com/Maratyszcza/FXdiv/archive/:fxdiv \
 		https://github.com/google/benchmark/archive/refs/tags/:google_benchmark \
 		https://github.com/google/nsync/archive/refs/tags/:google_nsync \
-		https://github.com/google/googletest/archive/:googletest \
+		https://github.com/google/googletest/archive/refs/tags/:googletest \
 		https://github.com/google/XNNPACK/archive/:googlexnnpack \
 		https://github.com/nlohmann/json/archive/refs/tags/:json \
 		https://github.com/microsoft/GSL/archive/refs/tags/:microsoft_gsl \
 		https://github.com/microsoft/wil/archive/refs/tags/:microsoft_wil \
 		https://github.com/microsoft/mimalloc/archive/refs/tags/:mimalloc \
 		https://github.com/boostorg/mp11/archive/refs/tags/:mp11 \
-		https://github.com/intel/neural-speed/archive/refs/tags/:neural_speed \
 		https://github.com/onnx/onnx/archive/refs/tags/:onnx \
 		https://github.com/onnx/onnx-tensorrt/archive/:onnx_tensorrt \
 		https://github.com/protocolbuffers/protobuf/archive/refs/tags/:protobuf \
@@ -39,3 +38,6 @@ MASTER_SITES=	\
 		https://github.com/microsoft/onnxruntime-extensions/archive/:extensions \
 		https://github.com/ROCmSoftwarePlatform/composable_kernel/archive/:composable_kernel \
 		https://github.com/microsoft/DirectX-Headers/archive/refs/tags/:directx_headers \
+		https://github.com/NVIDIA/cudnn-frontend/archive/refs/tags/:cudnn_frontend \
+		https://github.com/google/dawn/archive/:dawn \
+		https://gitlab.arm.com/kleidi/kleidiai/-/archive/v0.2.0/:kleidiai \
