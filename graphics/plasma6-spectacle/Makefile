@@ -1,6 +1,7 @@
 PORTNAME=	spectacle
-DISTVERSION=	${KDE_PLASMA_VERSION}.2
+DISTVERSION=	${KDE_PLASMA_VERSION}
 CATEGORIES=	graphics kde kde-plasma
+DISTNAME=	spectacle-${DISTVERSION}.1
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE Plasma screen capture program
@@ -19,6 +20,8 @@ USE_KDE=	config coreaddons crash dbusaddons globalaccel guiaddons i18n \
 		doctools:build ecm:build plasma-wayland-protocols:build
 USE_QT=		base declarative multimedia wayland
 USE_XORG=	x11 xcb xfixes
+
+WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
 
 OPTIONS_DEFINE=		WAYLAND
 OPTIONS_DEFAULT=	WAYLAND

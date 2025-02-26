@@ -173,6 +173,7 @@ include/kwin/wayland/alphamodifier_v1.h
 include/kwin/wayland/appmenu.h
 include/kwin/wayland/blur.h
 include/kwin/wayland/clientconnection.h
+include/kwin/wayland/colormanagement_v1.h
 include/kwin/wayland/compositor.h
 include/kwin/wayland/contenttype_v1.h
 include/kwin/wayland/contrast.h
@@ -218,12 +219,12 @@ include/kwin/wayland/primaryselectionoffer_v1.h
 include/kwin/wayland/primaryselectionsource_v1.h
 include/kwin/wayland/quirks.h
 include/kwin/wayland/qwayland-server-alpha-modifier-v1.h
+include/kwin/wayland/qwayland-server-color-management-v1.h
 include/kwin/wayland/qwayland-server-content-type-v1.h
 include/kwin/wayland/qwayland-server-frog-color-management-v1.h
 include/kwin/wayland/qwayland-server-kde-external-brightness-v1.h
 include/kwin/wayland/qwayland-server-linux-drm-syncobj-v1.h
 include/kwin/wayland/qwayland-server-presentation-time.h
-include/kwin/wayland/qwayland-server-xx-color-management-v4.h
 include/kwin/wayland/relativepointer_v1.h
 include/kwin/wayland/screencast_v1.h
 include/kwin/wayland/screenedge_v1.h
@@ -243,12 +244,12 @@ include/kwin/wayland/textinput_v3.h
 include/kwin/wayland/touch.h
 include/kwin/wayland/viewporter.h
 include/kwin/wayland/wayland-alpha-modifier-v1-server-protocol.h
+include/kwin/wayland/wayland-color-management-v1-server-protocol.h
 include/kwin/wayland/wayland-content-type-v1-server-protocol.h
 include/kwin/wayland/wayland-frog-color-management-v1-server-protocol.h
 include/kwin/wayland/wayland-kde-external-brightness-v1-server-protocol.h
 include/kwin/wayland/wayland-linux-drm-syncobj-v1-server-protocol.h
 include/kwin/wayland/wayland-presentation-time-server-protocol.h
-include/kwin/wayland/wayland-xx-color-management-v4-server-protocol.h
 include/kwin/wayland/xdgactivation_v1.h
 include/kwin/wayland/xdgdecoration_v1.h
 include/kwin/wayland/xdgdialog_v1.h
@@ -259,7 +260,6 @@ include/kwin/wayland/xdgsystembell_v1.h
 include/kwin/wayland/xdgtoplevelicon_v1.h
 include/kwin/wayland/xwaylandkeyboardgrab_v1.h
 include/kwin/wayland/xwaylandshell_v1.h
-include/kwin/wayland/xx_colormanagement_v4.h
 include/kwin/wayland_server.h
 include/kwin/waylandshellintegration.h
 include/kwin/waylandwindow.h
