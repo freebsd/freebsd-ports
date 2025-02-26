@@ -1,8 +1,6 @@
 PORTNAME=	pcl
 DISTVERSIONPREFIX=	pcl-
-DISTVERSION=	1.14.1-132
-PORTREVISION=	1
-DISTVERSIONSUFFIX=	-g1590ba5f6
+DISTVERSION=	1.15.0
 CATEGORIES=	graphics math
 #MASTER_SITES=	https://github.com/PointCloudLibrary/${PORTNAME}/releases/download/${PORTNAME}-${DISTVERSION}/
 PKGNAMESUFFIX=	-pointclouds
@@ -46,7 +44,7 @@ CMAKE_TESTING_TARGET=	tests
 CMAKE_ARGS=		-DGTEST_SRC_DIR=${WRKSRC_gtest}/googletest -DGTEST_INCLUDE_DIR=${WRKSRC_gtest}/googletest/include
 
 #WRKSRC=		${WRKDIR}/${PORTNAME}
-WRKSRC=		${WRKDIR}/pcl-pcl-1.14.1-132-g1590ba5f6
+WRKSRC=		${WRKDIR}/pcl-${DISTVERSIONFULL}
 
 PLIST_SUB=	SHL3=${DISTVERSION:R}.1.99 SHL2=${DISTVERSION:R}
 
@@ -78,7 +76,7 @@ VTK_CMAKE_BOOL=		WITH_VTK
 VTK_CMAKE_ON=		-DVTK_DIR=${LOCALBASE}/lib/cmake/vtk-${VTK_VER}
 VTK_LIB_DEPENDS=	libvtkCommonCore-${VTK_VER}.so:math/vtk${VTK_VER:R}
 
-# tests as of 1.14.1-132: 100% tests passed, 0 tests failed out of 133
+# tests as of 1.15.0: 100% tests passed, 0 tests failed out of 133
 
 .include <../../math/vtk9/Makefile.version>
 .include <bsd.port.mk>
