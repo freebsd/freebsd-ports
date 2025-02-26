@@ -9,7 +9,7 @@ WWW=		https://github.com/freebsd/cpdup
 
 LICENSE=	BSD3CLAUSE
 
-USES=		ssl tar:xz
+USES=		ssl tar:xz uidfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	freebsd
 MAKEFILE=	Makefile.bsd
