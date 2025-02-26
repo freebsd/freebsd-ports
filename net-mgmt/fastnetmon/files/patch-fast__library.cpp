@@ -1,6 +1,6 @@
---- fast_library.cpp.orig	2024-07-01 20:01:34 UTC
+--- fast_library.cpp.orig	2024-12-14 12:46:40 UTC
 +++ fast_library.cpp
-@@ -1087,15 +1087,13 @@ std::string dns_lookup(std::string domain_name) {
+@@ -1094,15 +1094,13 @@ std::string dns_lookup(std::string domain_name) {
  
  std::string dns_lookup(std::string domain_name) {
      try {
@@ -21,7 +21,7 @@
          }
      } catch (std::exception& e) {
          return "";
-@@ -1421,7 +1419,7 @@ bool validate_ipv6_or_ipv4_host(const std::string host
+@@ -1428,7 +1426,7 @@ bool validate_ipv6_or_ipv4_host(const std::string host
      boost::system::error_code ec;
  
      // Try to build it from string representation
@@ -30,7 +30,7 @@
  
      // If we failed to parse it
      if (ec) {
-@@ -1528,7 +1526,7 @@ bool execute_web_request_secure(std::string address,
+@@ -1535,7 +1533,7 @@ bool execute_web_request_secure(std::string address,
              return false;
          }
  
@@ -39,7 +39,7 @@
  
          if (ec) {
              logger << log4cpp::Priority::ERROR << "Could not resolve peer address in execute_web_request " << ec;
-@@ -1692,11 +1690,11 @@ bool execute_web_request(std::string address,
+@@ -1699,11 +1697,11 @@ bool execute_web_request(std::string address,
  
          // Normal boost::asio setup
          // std::string const host = "178.62.227.110";
