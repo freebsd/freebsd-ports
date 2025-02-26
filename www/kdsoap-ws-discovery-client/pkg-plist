@@ -14,4 +14,4 @@ lib/cmake/KDSoapWSDiscoveryClient/KDSoapWSDiscoveryClientTargets-%%CMAKE_BUILD_T
 lib/cmake/KDSoapWSDiscoveryClient/KDSoapWSDiscoveryClientTargets.cmake
 lib/libKDSoapWSDiscoveryClient.so
 lib/libKDSoapWSDiscoveryClient.so.0
-lib/libKDSoapWSDiscoveryClient.so.0.3.0
+lib/libKDSoapWSDiscoveryClient.so.%%SOVERSION%%
