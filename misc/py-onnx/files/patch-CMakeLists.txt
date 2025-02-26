@@ -1,9 +1,9 @@
 - use downloaded protobuf-22.3
 
---- CMakeLists.txt.orig	2024-03-05 00:46:58 UTC
+--- CMakeLists.txt.orig	2024-09-30 20:12:15 UTC
 +++ CMakeLists.txt
-@@ -19,12 +19,12 @@ option(ONNX_USE_PROTOBUF_SHARED_LIBS "Build ONNX using
- option(ONNX_BUILD_BENCHMARKS "Build ONNX micro-benchmarks" OFF)
+@@ -18,12 +18,12 @@ option(ONNX_USE_PROTOBUF_SHARED_LIBS "Build ONNX using
+ project(onnx C CXX)
  option(ONNX_USE_PROTOBUF_SHARED_LIBS "Build ONNX using protobuf shared library. Sets PROTOBUF_USE_DLLS CMAKE Flag and Protobuf_USE_STATIC_LIBS. " OFF)
  
 -option(BUILD_ONNX_PYTHON "Build Python binaries" OFF)

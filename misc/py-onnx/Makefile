@@ -1,6 +1,5 @@
 PORTNAME=	onnx
-DISTVERSION=	1.16.2
-PORTREVISION=	6
+DISTVERSION=	1.17.0
 CATEGORIES=	misc # machine-learning
 MASTER_SITES=	PYPI \
 		https://github.com/abseil/abseil-cpp/archive/refs/tags/:abseil \
@@ -31,8 +30,10 @@ BUILD_DEPENDS=	bash:shells/bash \
 		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
 #LIB_DEPENDS=	libabsl_base.so:devel/abseil \
 		libprotobuf.so:devel/protobuf # disable packaged protobuf
-RUN_DEPENDS=	${PYNUMPY} \
-		${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}google-re2>0:devel/py-google-re2@${PY_FLAVOR} \
+		${PYNUMPY} \
+		${PYTHON_PKGNAMEPREFIX}pillow>0:graphics/py-pillow@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}protobuf>=3.20.2:devel/py-protobuf@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}typing-extensions>=3.6.2.1:devel/py-typing-extensions@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}parameterized>0:devel/py-parameterized@${PY_FLAVOR}
 
@@ -60,5 +61,7 @@ post-patch: # replace protobuf-24+ with protobuf-lite-22.3
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/onnx/onnx_cpp2py_export*.so
+
+# tests as of 1.17.0: 4 failed, 4564 passed, 3044 skipped, 26 warnings in 60.66s (0:01:00), see https://github.com/onnx/onnx/issues/6733
 
 .include <bsd.port.mk>
