@@ -1,7 +1,7 @@
 PORTNAME=	povray
 DISTVERSIONPREFIX=	v
 DISTVERSION=	3.8.0-beta.2
-PORTREVISION=	16
+PORTREVISION=	17
 CATEGORIES=	graphics
 MASTER_SITES=	https://github.com/POV-Ray/povray/releases/download/${DISTVERSIONPREFIX}${DISTVERSION}/
 PKGNAMESUFFIX=	38
@@ -33,6 +33,8 @@ EXAMPLESDIR=	${PREFIX}/share/examples/${PORTNAME}-${VERSION_BASE}
 CONFIGURE_ARGS=	--disable-optimiz \
 		--program-transform-name='s/povray/${PKGBASE}/' \
 		COMPILED_BY=${HOSTARCH}-portbld-${OPSYS:tl}-${OSREL:R}
+CPPFLAGS+=	-D UCS2="char16_t"
+CPPFLAGS+=	-D UCS4="char32_t"
 
 OPTIONS_DEFINE=		DOCS EXAMPLES IO JPEG OPENEXR PNG TIFF \
 			X11
