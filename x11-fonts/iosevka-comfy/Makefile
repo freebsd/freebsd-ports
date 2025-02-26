@@ -5,8 +5,10 @@ CATEGORIES=	x11-fonts
 MAINTAINER=	dsh@bamus.cz
 COMMENT=	Iosevka Comfy - customised build of the Iosevka typeface
 
-# The license file is not downloaded.
+# upstream believes the font to not be redistributable
+# as it violates § 3 of the SIL Open Font License.
 LICENSE=	OFL11
+RESTRICTED=	yes
 
 USES=		fonts
 
