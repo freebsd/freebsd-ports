@@ -1,5 +1,6 @@
 PORTNAME=	lighttpd
 PORTVERSION=	1.4.77
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	https://download.lighttpd.net/lighttpd/releases-1.4.x/
 
@@ -82,7 +83,7 @@ WOLFSSL_LIB_DEPENDS=	libwolfssl.so:security/wolfssl
 ZSTD_CMAKE_BOOL=	WITH_ZSTD
 ZSTD_LIB_DEPENDS=	libzstd.so:archivers/zstd
 
-LIGHTTPD_CONF_FILES=	lighttpd.conf modules.conf
+LIGHTTPD_CONF_FILES=	lighttpd.conf modules.conf lighttpd.annotated.conf
 
 LIGHTTPD_CONF_D_FILES=	access_log.conf \
 			auth.conf \
