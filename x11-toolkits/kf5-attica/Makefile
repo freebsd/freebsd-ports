@@ -3,7 +3,7 @@ DISTVERSION=	${KDE_FRAMEWORKS_VERSION}
 CATEGORIES=	x11-toolkits kde kde-frameworks
 
 MAINTAINER=	kde@FreeBSD.org
-COMMENT=	Open Collaboration Services API library KDE5 version
+COMMENT=	Open Collaboration Services API library
 
 # The sources are LGPL21 or LGPL3 or later-version-approved-by-KDE,
 # so use the OR of existing license versions. COPYING is LGPL21.

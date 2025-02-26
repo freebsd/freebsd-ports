@@ -3,8 +3,8 @@ DISTVERSION=	${KDE_APPLICATIONS_VERSION}
 CATEGORIES=	accessibility kde
 
 MAINTAINER=	kde@FreeBSD.org
-COMMENT=	Accessibility applications for KDE 5
-WWW=		https://www.kde.org/
+COMMENT=	Accessibility applications for KDE
+WWW=		https://apps.kde.org/categories/utilities/
 
 USES=		kde:6 metaport
 

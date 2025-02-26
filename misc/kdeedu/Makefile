@@ -4,7 +4,7 @@ CATEGORIES=	misc education kde
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Entertaining and educational programs for KDE (meta port)
-WWW=		https://www.kde.org
+WWW=		https://apps.kde.org/categories/education/
 
 USES=		kde:6 metaport
 

@@ -3,8 +3,8 @@ DISTVERSION=	${KDE_APPLICATIONS_VERSION}
 CATEGORIES=	graphics kde
 
 MAINTAINER=	kde@FreeBSD.org
-COMMENT=	Graphics utilities for KDE (meta port)
-WWW=		https://www.kde.org
+COMMENT=	Graphics applications for KDE (meta port)
+WWW=		https://apps.kde.org/categories/graphics/
 
 USES=		kde:6 metaport qt:6
 USE_QT=		#
