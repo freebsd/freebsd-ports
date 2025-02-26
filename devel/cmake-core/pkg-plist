@@ -3189,6 +3189,7 @@ share/bash-completion/completions/ctest
 %%DATADIR%%/Modules/Platform/Linker/Apple-AppleClang-Fortran.cmake
 %%DATADIR%%/Modules/Platform/Linker/Apple-AppleClang-OBJC.cmake
 %%DATADIR%%/Modules/Platform/Linker/Apple-AppleClang-OBJCXX.cmake
+%%DATADIR%%/Modules/Platform/Linker/Apple-AppleClang-Swift.cmake
 %%DATADIR%%/Modules/Platform/Linker/Apple-AppleClang.cmake
 %%DATADIR%%/Modules/Platform/Linker/Apple-C.cmake
 %%DATADIR%%/Modules/Platform/Linker/Apple-CUDA.cmake
@@ -3204,6 +3205,7 @@ share/bash-completion/completions/ctest
 %%DATADIR%%/Modules/Platform/Linker/Apple-MOLD-OBJCXX.cmake
 %%DATADIR%%/Modules/Platform/Linker/Apple-OBJC.cmake
 %%DATADIR%%/Modules/Platform/Linker/Apple-OBJCXX.cmake
+%%DATADIR%%/Modules/Platform/Linker/Apple-Swift.cmake
 %%DATADIR%%/Modules/Platform/Linker/BSD-Linker-Initialize.cmake
 %%DATADIR%%/Modules/Platform/Linker/CYGWIN-ASM.cmake
 %%DATADIR%%/Modules/Platform/Linker/CYGWIN-C.cmake
@@ -3255,6 +3257,15 @@ share/bash-completion/completions/ctest
 %%DATADIR%%/Modules/Platform/Linker/GNU-GNU-Fortran.cmake
 %%DATADIR%%/Modules/Platform/Linker/GNU-GNU.cmake
 %%DATADIR%%/Modules/Platform/Linker/GNU.cmake
+%%DATADIR%%/Modules/Platform/Linker/Haiku-ASM.cmake
+%%DATADIR%%/Modules/Platform/Linker/Haiku-C.cmake
+%%DATADIR%%/Modules/Platform/Linker/Haiku-CXX.cmake
+%%DATADIR%%/Modules/Platform/Linker/Haiku-GNU-ASM.cmake
+%%DATADIR%%/Modules/Platform/Linker/Haiku-GNU-C.cmake
+%%DATADIR%%/Modules/Platform/Linker/Haiku-GNU-CXX.cmake
+%%DATADIR%%/Modules/Platform/Linker/Haiku-LLD-ASM.cmake
+%%DATADIR%%/Modules/Platform/Linker/Haiku-LLD-C.cmake
+%%DATADIR%%/Modules/Platform/Linker/Haiku-LLD-CXX.cmake
 %%DATADIR%%/Modules/Platform/Linker/Linux-ASM.cmake
 %%DATADIR%%/Modules/Platform/Linker/Linux-C.cmake
 %%DATADIR%%/Modules/Platform/Linker/Linux-CUDA.cmake
@@ -3266,6 +3277,7 @@ share/bash-completion/completions/ctest
 %%DATADIR%%/Modules/Platform/Linker/Linux-GNU-CXX.cmake
 %%DATADIR%%/Modules/Platform/Linker/Linux-GNU-Fortran.cmake
 %%DATADIR%%/Modules/Platform/Linker/Linux-GNU-HIP.cmake
+%%DATADIR%%/Modules/Platform/Linker/Linux-GNU-Swift.cmake
 %%DATADIR%%/Modules/Platform/Linker/Linux-GNU.cmake
 %%DATADIR%%/Modules/Platform/Linker/Linux-GNUgold-ASM.cmake
 %%DATADIR%%/Modules/Platform/Linker/Linux-GNUgold-C.cmake
@@ -3273,6 +3285,7 @@ share/bash-completion/completions/ctest
 %%DATADIR%%/Modules/Platform/Linker/Linux-GNUgold-CXX.cmake
 %%DATADIR%%/Modules/Platform/Linker/Linux-GNUgold-Fortran.cmake
 %%DATADIR%%/Modules/Platform/Linker/Linux-GNUgold-HIP.cmake
+%%DATADIR%%/Modules/Platform/Linker/Linux-GNUgold-Swift.cmake
 %%DATADIR%%/Modules/Platform/Linker/Linux-HIP.cmake
 %%DATADIR%%/Modules/Platform/Linker/Linux-LLD-ASM.cmake
 %%DATADIR%%/Modules/Platform/Linker/Linux-LLD-C.cmake
@@ -3280,6 +3293,7 @@ share/bash-completion/completions/ctest
 %%DATADIR%%/Modules/Platform/Linker/Linux-LLD-CXX.cmake
 %%DATADIR%%/Modules/Platform/Linker/Linux-LLD-Fortran.cmake
 %%DATADIR%%/Modules/Platform/Linker/Linux-LLD-HIP.cmake
+%%DATADIR%%/Modules/Platform/Linker/Linux-LLD-Swift.cmake
 %%DATADIR%%/Modules/Platform/Linker/Linux-LLD.cmake
 %%DATADIR%%/Modules/Platform/Linker/Linux-MOLD-ASM.cmake
 %%DATADIR%%/Modules/Platform/Linker/Linux-MOLD-C.cmake
@@ -3288,6 +3302,7 @@ share/bash-completion/completions/ctest
 %%DATADIR%%/Modules/Platform/Linker/Linux-MOLD-Fortran.cmake
 %%DATADIR%%/Modules/Platform/Linker/Linux-MOLD-HIP.cmake
 %%DATADIR%%/Modules/Platform/Linker/Linux-MOLD.cmake
+%%DATADIR%%/Modules/Platform/Linker/Linux-Swift.cmake
 %%DATADIR%%/Modules/Platform/Linker/MSYS-ASM.cmake
 %%DATADIR%%/Modules/Platform/Linker/MSYS-C.cmake
 %%DATADIR%%/Modules/Platform/Linker/MSYS-CXX.cmake
@@ -3379,7 +3394,9 @@ share/bash-completion/completions/ctest
 %%DATADIR%%/Modules/Platform/Linker/Windows-MSVC-CXX.cmake
 %%DATADIR%%/Modules/Platform/Linker/Windows-MSVC-Fortran.cmake
 %%DATADIR%%/Modules/Platform/Linker/Windows-MSVC-HIP.cmake
+%%DATADIR%%/Modules/Platform/Linker/Windows-MSVC-Swift.cmake
 %%DATADIR%%/Modules/Platform/Linker/Windows-MSVC.cmake
+%%DATADIR%%/Modules/Platform/Linker/Windows-Swift.cmake
 %%DATADIR%%/Modules/Platform/Linker/WindowsCE-C.cmake
 %%DATADIR%%/Modules/Platform/Linker/WindowsCE-CXX.cmake
 %%DATADIR%%/Modules/Platform/Linker/WindowsCE-MSVC-C.cmake
@@ -3400,6 +3417,8 @@ share/bash-completion/completions/ctest
 %%DATADIR%%/Modules/Platform/Linker/WindowsPhone-MSVC-ASM.cmake
 %%DATADIR%%/Modules/Platform/Linker/WindowsPhone-MSVC-C.cmake
 %%DATADIR%%/Modules/Platform/Linker/WindowsPhone-MSVC-CXX.cmake
+%%DATADIR%%/Modules/Platform/Linker/WindowsPhone-MSVC-Swift.cmake
+%%DATADIR%%/Modules/Platform/Linker/WindowsPhone-Swift.cmake
 %%DATADIR%%/Modules/Platform/Linker/WindowsStore-ASM.cmake
 %%DATADIR%%/Modules/Platform/Linker/WindowsStore-C.cmake
 %%DATADIR%%/Modules/Platform/Linker/WindowsStore-CXX.cmake
@@ -3412,6 +3431,8 @@ share/bash-completion/completions/ctest
 %%DATADIR%%/Modules/Platform/Linker/WindowsStore-MSVC-ASM.cmake
 %%DATADIR%%/Modules/Platform/Linker/WindowsStore-MSVC-C.cmake
 %%DATADIR%%/Modules/Platform/Linker/WindowsStore-MSVC-CXX.cmake
+%%DATADIR%%/Modules/Platform/Linker/WindowsStore-MSVC-Swift.cmake
+%%DATADIR%%/Modules/Platform/Linker/WindowsStore-Swift.cmake
 %%DATADIR%%/Modules/Platform/Linux-Absoft-Fortran.cmake
 %%DATADIR%%/Modules/Platform/Linux-Apple-Swift.cmake
 %%DATADIR%%/Modules/Platform/Linux-CCur-Fortran.cmake
