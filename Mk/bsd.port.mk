@@ -1210,7 +1210,7 @@ _EXPORTED_VARS+=	_PKG_TRANSITIONING_TO_NEW_EXT
 WARNING+=	"It is strongly recommended to upgrade to a newer version of pkg first"
 .      endif
 # XXX End of hack
-_PKG_STATUS!=	${PKG_BIN} version -t ${_PKG_VERSION:C/-.*//g} ${MINIMAL_PKG_VERSION}
+_PKG_STATUS!=	${PKG_VERSION} -t ${_PKG_VERSION:C/-.*//g} ${MINIMAL_PKG_VERSION}
 .      if ${_PKG_STATUS} == "<"
 IGNORE=		pkg(8) must be version ${MINIMAL_PKG_VERSION} or greater, but you have ${_PKG_VERSION}. You must upgrade the ${PKG_ORIGIN} port first
 .      endif
