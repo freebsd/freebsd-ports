@@ -1,6 +1,7 @@
 PORTNAME=	onnxruntime
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.20.2
+PORTREVISION=	1
 CATEGORIES=	misc # machine-learning
 DIST_SUBDIR=	${PORTNAME}
 
@@ -16,9 +17,8 @@ BROKEN_aarch64=	compilation fails: error: no member named 'linux_id' in 'cpuinfo
 BROKEN_i386=	compilation fails: error: requested alignment is less than minimum alignment of 8 for type 'google::protobuf::internal::ThreadSafeArena::CacheAlignedLifecycleIdGenerator'
 
 BUILD_DEPENDS=	gpatch:devel/patch
-LIB_DEPENDS=	libabsl_base.so:devel/abseil
 
-USES=		cmake:testing compiler:c++11-lang localbase python:build
+USES=		cmake:testing compiler:c++11-lang python:build
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	microsoft
