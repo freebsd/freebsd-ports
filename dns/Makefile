@@ -242,6 +242,7 @@
     SUBDIR += yandex-ddns
     SUBDIR += zdns
     SUBDIR += zkt
+    SUBDIR += zns
     SUBDIR += zonenotify
 
 .include <bsd.port.subdir.mk>
