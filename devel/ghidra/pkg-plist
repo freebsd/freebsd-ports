@@ -173,7 +173,6 @@ share/applications/ghidra.desktop
 %%DATADIR%%/GPL/Icons/ModifiedNuvola/openFolderNamespaces.svg
 %%DATADIR%%/GPL/Icons/ModifiedNuvola/openProject.svg
 %%DATADIR%%/GPL/Icons/ModifiedNuvola/openSmallFolder.svg
-%%DATADIR%%/GPL/build/reports/problems/problems-report.html
 %%DATADIR%%/GPL/licenses/GPL_2.txt
 %%DATADIR%%/GPL/licenses/GPL_2_With_Classpath_Exception.txt
 %%DATADIR%%/GPL/licenses/GPL_3.html
@@ -188,19 +187,6 @@ share/applications/ghidra.desktop
 %%DATADIR%%/GPL/utils.gradle
 %%DATADIR%%/GPL/vsconfig.gradle
 %%DATADIR%%/Ghidra/.dbDirLock
-%%DATADIR%%/Ghidra/.gradle/8.12.1/checksums/checksums.lock
-%%DATADIR%%/Ghidra/.gradle/8.12.1/executionHistory/executionHistory.bin
-%%DATADIR%%/Ghidra/.gradle/8.12.1/executionHistory/executionHistory.lock
-%%DATADIR%%/Ghidra/.gradle/8.12.1/fileChanges/last-build.bin
-%%DATADIR%%/Ghidra/.gradle/8.12.1/fileHashes/fileHashes.bin
-%%DATADIR%%/Ghidra/.gradle/8.12.1/fileHashes/fileHashes.lock
-%%DATADIR%%/Ghidra/.gradle/8.12.1/gc.properties
-%%DATADIR%%/Ghidra/.gradle/8.12.1/nativeCompile/nativeCompile.bin
-%%DATADIR%%/Ghidra/.gradle/8.12.1/nativeCompile/nativeCompile.lock
-%%DATADIR%%/Ghidra/.gradle/buildOutputCleanup/buildOutputCleanup.lock
-%%DATADIR%%/Ghidra/.gradle/buildOutputCleanup/cache.properties
-%%DATADIR%%/Ghidra/.gradle/buildOutputCleanup/outputFiles.bin
-%%DATADIR%%/Ghidra/.gradle/vcs-1/gc.properties
 %%DATADIR%%/Ghidra/Configurations/Public_Release/LICENSE.txt
 %%DATADIR%%/Ghidra/Configurations/Public_Release/Module.manifest
 %%DATADIR%%/Ghidra/Configurations/Public_Release/data/PDB_SYMBOL_SERVER_URLS.pdburl
@@ -4262,7 +4248,6 @@ share/applications/ghidra.desktop
 %%DATADIR%%/Ghidra/Processors/x86/lib/x86-src.zip
 %%DATADIR%%/Ghidra/Processors/x86/lib/x86.jar
 %%DATADIR%%/Ghidra/application.properties
-%%DATADIR%%/Ghidra/build/reports/problems/problems-report.html
 %%DATADIR%%/Ghidra/patch/README.txt
 %%DATADIR%%/Ghidra/settings.gradle
 %%DATADIR%%/LICENSE
@@ -4658,8 +4643,6 @@ share/applications/ghidra.desktop
 %%DATADIR%%/support/pythonRun.bat
 %%DATADIR%%/support/sleigh
 %%DATADIR%%/support/sleigh.bat
-@dir %%DATADIR%%/Ghidra/.gradle/8.12.1/expanded
-@dir %%DATADIR%%/Ghidra/.gradle/8.12.1/vcsMetadata
 @dir %%DATADIR%%/Ghidra/Debug/Debugger-agent-dbgeng/pypkg/build/bdist.macosx-13-x86_64
 @dir %%DATADIR%%/Ghidra/Debug/Debugger-agent-gdb/pypkg/build/bdist.macosx-13-x86_64
 @dir %%DATADIR%%/Ghidra/Debug/Debugger-agent-lldb/pypkg/build/bdist.macosx-13-x86_64

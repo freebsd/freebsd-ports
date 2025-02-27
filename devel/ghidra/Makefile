@@ -1,6 +1,6 @@
 PORTNAME=	ghidra
 DISTVERSION=	11.1.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel security java
 MASTER_SITES=	https://github.com/NationalSecurityAgency/${PORTNAME}/releases/download/Ghidra_${DISTVERSION}_build/
 DISTNAME=	${PORTNAME}_${DISTVERSION}_PUBLIC_20240709
@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 ONLY_FOR_ARCHS=	amd64
 
 BUILD_DEPENDS=	bash:shells/bash \
-		gradle>=8.5:devel/gradle
+		gradle>=8.12:devel/gradle
 RUN_DEPENDS=	bash:shells/bash
 
 USES=		cpe java shebangfix zip
@@ -52,11 +52,17 @@ GRADLE_RUN=		${SETENV} ${MAKE_ENV} gradle --gradle-user-home \
 			${GRADLE_HOME_BASE}/gradle-${PORTNAME} --no-daemon
 
 BUILD_SUBDIR=	build/os/freebsd_x86_64
-TMP_DIRS=	Ghidra/Ghidra/.gradle Ghidra/Features/Decompiler/build/objs \
+TMP_DIRS=	Ghidra/.gradle \
+		Ghidra/Features/Decompiler/build/objs \
 		Ghidra/Features/Decompiler/build/tmp \
 		Ghidra/Features/FileFormats/build/objs \
-		Ghidra/Features/FileFormats/build/tmp GPL/.gradle \
-		GPL/DemanglerGnu/build/objs GPL/DemanglerGnu/build/tmp \
+		Ghidra/Features/FileFormats/build/tmp \
+		Ghidra/Ghidra/.gradle \
+		Ghidra/build \
+		GPL/.gradle \
+		GPL/DemanglerGnu/build/objs \
+		GPL/DemanglerGnu/build/tmp \
+		GPL/build \
 		GPL/nativeBuildProperties.gradle.orig
 
 PROGRAM_FILES=	Ghidra/Features/FileFormats/${BUILD_SUBDIR}/lzfse \
