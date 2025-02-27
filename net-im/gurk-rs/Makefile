@@ -1,7 +1,6 @@
 PORTNAME=	gurk-rs
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.6.0
-PORTREVISION=	2
+DISTVERSION=	0.6.1
 CATEGORIES=	net-im
 
 MAINTAINER=	bsd@orsolic.org
@@ -13,8 +12,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE-AGPL-3.0
 
 BUILD_DEPENDS=	gmake:devel/gmake \
 		protoc:devel/protobuf
+LIB_DEPENDS=	libsqlcipher.so:databases/sqlcipher
 
-USES=		cargo perl5
+USES=		cargo perl5 ssl
 USE_PERL5=	build
 
 USE_GITHUB=	yes

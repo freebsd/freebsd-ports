@@ -1,5 +1,14 @@
---- Cargo.toml.orig	2024-12-24 15:23:09 UTC
+--- Cargo.toml.orig	2025-01-16 17:39:02 UTC
 +++ Cargo.toml
+@@ -50,7 +50,7 @@ libsqlite3-sys = { version = "0.30.1", features = [
+ image = { version = "0.25.5", default-features = false, features = ["png"] }
+ itertools = "0.13.0"
+ libsqlite3-sys = { version = "0.30.1", features = [
+-    "bundled-sqlcipher-vendored-openssl",
++    "sqlcipher",
+ ] }
+ log-panics = "2.1.0"
+ mime_guess = "2.0.5"
 @@ -121,4 +121,4 @@ harness = false
  [patch.crates-io]
  # signal-protocol uses a fork of this library via the patch mechanism of cargo.
