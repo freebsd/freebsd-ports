@@ -1,10 +1,10 @@
 PORTNAME=	dotnet
 DISTVERSIONPREFIX=	v
 DISTVERSION=	${DOTNETVERSION}.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang devel
 MASTER_SITES=	https://github.com/dotnet/dotnet/releases/download/${DISTVERSIONPREFIX}${DISTVERSION}/release.json?dummy=/:dotnetmanifest \
-		https://github.com/sec/dotnet-core-freebsd-source-build/releases/download/9.0.100-vmr/:bootstrap
+		https://github.com/sec/dotnet-core-freebsd-source-build/releases/download/${SDKVERSION}-vmr/:bootstrap
 DISTFILES=	release.json-${PORTVERSION}:dotnetmanifest \
 		${BOOTSTRAP_SOURCEBUILT_ARTIFACTS_DISTNAME}${EXTRACT_SUFX}:bootstrap \
 		${BOOTSTRAP_SDK_DISTNAME}${EXTRACT_SUFX}:bootstrap
@@ -42,8 +42,9 @@ BINARY_ALIAS=	grep=${LOCALBASE}/bin/ggrep
 DOTNET_ENV=	PYTHON=${PYTHON_CMD}
 
 BOOTSTRAP_DOTNETVERSION=			9.0
-BOOTSTRAP_SDKVERSION=				${BOOTSTRAP_DOTNETVERSION}.100
-BOOTSTRAP_SDKVERSIONSUFFIX=			-rtm.24529.1
+BOOTSTRAP_SDKVERSION=				${BOOTSTRAP_DOTNETVERSION}.103
+BOOTSTRAP_SDKVERSIONSUFFIX=			-servicing.25071.1
+BOOTSTRAP_SDK_RID=				freebsd-${DOTNET_ARCH}
 BOOTSTRAP_SOURCEBUILT_ARTIFACTS_DISTNAME=	Private.SourceBuilt.Artifacts.${BOOTSTRAP_SDKVERSION}${BOOTSTRAP_SDKVERSIONSUFFIX}.${BOOTSTRAP_SDK_RID}
 BOOTSTRAP_SDK_DISTNAME=				dotnet-sdk-${BOOTSTRAP_SDKVERSION}-${BOOTSTRAP_SDK_RID}
 
@@ -77,10 +78,8 @@ PLIST_SUB+=	NONPORTABLE=
 EXTRA_PATCHES=	${PATCHDIR}/extra-patch-base-openssl
 .endif
 
-.if ${OSVERSION} < 1400000
-BOOTSTRAP_SDK_RID=	freebsd.13-${DOTNET_ARCH}
-.else
-BOOTSTRAP_SDK_RID=	freebsd.14-${DOTNET_ARCH}
+.if ${OSVERSION} >= 1400000
+BUILD_DEPENDS+=	${LOCALBASE}/lib/compat/libssl.so.111:misc/compat13x
 .endif
 
 .if ${ARCH} == amd64

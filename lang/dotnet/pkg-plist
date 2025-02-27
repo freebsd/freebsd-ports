@@ -1637,7 +1637,6 @@
 %%DATADIR%%/sdk/%%SDKVERSION%%/DotnetTools/dotnet-format/BuildHost-netcore/Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.dll.config
 %%DATADIR%%/sdk/%%SDKVERSION%%/DotnetTools/dotnet-format/BuildHost-netcore/Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.runtimeconfig.json
 %%DATADIR%%/sdk/%%SDKVERSION%%/DotnetTools/dotnet-format/BuildHost-netcore/Newtonsoft.Json.dll
-%%DATADIR%%/sdk/%%SDKVERSION%%/DotnetTools/dotnet-format/BuildHost-netcore/System.Collections.Immutable.dll
 %%DATADIR%%/sdk/%%SDKVERSION%%/DotnetTools/dotnet-format/BuildHost-netcore/System.CommandLine.dll
 %%DATADIR%%/sdk/%%SDKVERSION%%/DotnetTools/dotnet-format/BuildHost-netcore/cs/System.CommandLine.resources.dll
 %%DATADIR%%/sdk/%%SDKVERSION%%/DotnetTools/dotnet-format/BuildHost-netcore/de/System.CommandLine.resources.dll
@@ -1915,7 +1914,6 @@
 %%DATADIR%%/sdk/%%SDKVERSION%%/DotnetTools/dotnet-watch/%%SDKVERSION%%%%SDKSERVICESUFFIX%%/tools/net%%DOTNETVERSION%%/any/BuildHost-netcore/Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.dll.config
 %%DATADIR%%/sdk/%%SDKVERSION%%/DotnetTools/dotnet-watch/%%SDKVERSION%%%%SDKSERVICESUFFIX%%/tools/net%%DOTNETVERSION%%/any/BuildHost-netcore/Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.runtimeconfig.json
 %%DATADIR%%/sdk/%%SDKVERSION%%/DotnetTools/dotnet-watch/%%SDKVERSION%%%%SDKSERVICESUFFIX%%/tools/net%%DOTNETVERSION%%/any/BuildHost-netcore/Newtonsoft.Json.dll
-%%DATADIR%%/sdk/%%SDKVERSION%%/DotnetTools/dotnet-watch/%%SDKVERSION%%%%SDKSERVICESUFFIX%%/tools/net%%DOTNETVERSION%%/any/BuildHost-netcore/System.Collections.Immutable.dll
 %%DATADIR%%/sdk/%%SDKVERSION%%/DotnetTools/dotnet-watch/%%SDKVERSION%%%%SDKSERVICESUFFIX%%/tools/net%%DOTNETVERSION%%/any/BuildHost-netcore/System.CommandLine.dll
 %%DATADIR%%/sdk/%%SDKVERSION%%/DotnetTools/dotnet-watch/%%SDKVERSION%%%%SDKSERVICESUFFIX%%/tools/net%%DOTNETVERSION%%/any/BuildHost-netcore/cs/System.CommandLine.resources.dll
 %%DATADIR%%/sdk/%%SDKVERSION%%/DotnetTools/dotnet-watch/%%SDKVERSION%%%%SDKSERVICESUFFIX%%/tools/net%%DOTNETVERSION%%/any/BuildHost-netcore/de/System.CommandLine.resources.dll
@@ -2425,8 +2423,6 @@
 %%DATADIR%%/sdk/%%SDKVERSION%%/Roslyn/bincore/Microsoft.CodeAnalysis.CSharp.dll
 %%DATADIR%%/sdk/%%SDKVERSION%%/Roslyn/bincore/Microsoft.CodeAnalysis.VisualBasic.dll
 %%DATADIR%%/sdk/%%SDKVERSION%%/Roslyn/bincore/Microsoft.CodeAnalysis.dll
-%%DATADIR%%/sdk/%%SDKVERSION%%/Roslyn/bincore/System.Collections.Immutable.dll
-%%DATADIR%%/sdk/%%SDKVERSION%%/Roslyn/bincore/System.Reflection.Metadata.dll
 %%DATADIR%%/sdk/%%SDKVERSION%%/Roslyn/bincore/VBCSCompiler.deps.json
 %%DATADIR%%/sdk/%%SDKVERSION%%/Roslyn/bincore/VBCSCompiler.dll
 %%DATADIR%%/sdk/%%SDKVERSION%%/Roslyn/bincore/VBCSCompiler.runtimeconfig.json
