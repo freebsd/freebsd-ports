@@ -1,5 +1,5 @@
 PORTNAME=	miniupnpc
-PORTVERSION=	2.3.0
+PORTVERSION=	2.3.1
 PORTREVISION=	0
 CATEGORIES?=	net
 MASTER_SITES=	http://miniupnp.free.fr/files/ \
