@@ -1,5 +1,6 @@
 PORTNAME=	nvme-cli
 DISTVERSION=	2.11.0.1
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	imp@FreeBSD.org
@@ -10,8 +11,7 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	bash>0:shells/bash \
-		freebsd-nvme-shim>0:devel/freebsd-nvme-shim \
-		swig:devel/swig
+		freebsd-nvme-shim>0:devel/freebsd-nvme-shim
 LIB_DEPENDS=	libnvme.so:devel/libnvme
 
 USES=		meson pkgconfig
