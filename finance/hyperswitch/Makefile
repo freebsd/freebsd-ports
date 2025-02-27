@@ -1,6 +1,6 @@
 PORTNAME=	hyperswitch
 DISTVERSION=	2025.02.21.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	finance
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -11,7 +11,6 @@ WWW=		https://hyperswitch.io/ \
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN_aarch64=	compilation fails: runaway builds, see https://github.com/rust-lang/rust/issues/137496
 BROKEN_armv7=	compilation fails: error[E0412]: cannot find type `AtomicU128` in module `core::sync::atomic`
 BROKEN_i386=	compilation fails: error[E0412]: cannot find type `AtomicU128` in module `core::sync::atomic`
 
@@ -845,6 +844,12 @@ CARGO_CRATES=	actix-codec-0.5.2 \
 		scylla,scylla-cql,scylla-macros@git+https://github.com/juspay/scylla-rust-driver.git?rev=5700aa2847b25437cdd4fcf34d707aa90dca8b89\#5700aa2847b25437cdd4fcf34d707aa90dca8b89
 
 RUSTFLAGS+=	--cfg uuid_unstable
+
+# change LTO to "thin" because otherwise link consumes tens of GB of memory and runs out of memory on arm64 causing runaway builds
+WITHOUT_LTO=	yes
+CARGO_ENV=	CARGO_PROFILE_RELEASE_LTO="thin" \
+		CARGO_PROFILE_RELEASE_PANIC="abort" \
+		CARGO_PROFILE_RELEASE_CODEGEN_UNITS=1
 
 OPENSSLINC=	/usr/include
 OPENSSLLIB=	/usr/lib
