@@ -1,3 +1,4 @@
+include/plutosvg/plutosvg-ft.h
 include/plutosvg/plutosvg.h
 %%STATIC%%lib/libplutosvg.a
 lib/libplutosvg.so
