@@ -1,5 +1,5 @@
-TIMESTAMP = 1712734955
-SHA256 (go/net-mgmt_blackbox_exporter/blackbox_exporter-v0.25.0/v0.25.0.mod) = 84a0bbe36a1c5f3daccffc3afa2f7fdd8a5c1cf43289b0b7bad46ac784620e87
-SIZE (go/net-mgmt_blackbox_exporter/blackbox_exporter-v0.25.0/v0.25.0.mod) = 1503
-SHA256 (go/net-mgmt_blackbox_exporter/blackbox_exporter-v0.25.0/v0.25.0.zip) = 8fe8deeff34b79ebde4ac1dbf98b04dc56efb38d599513b42bff241e9fe1d2d3
-SIZE (go/net-mgmt_blackbox_exporter/blackbox_exporter-v0.25.0/v0.25.0.zip) = 102606
+TIMESTAMP = 1740654573
+SHA256 (go/net-mgmt_blackbox_exporter/blackbox_exporter-v0.26.0/v0.26.0.mod) = 418fd744cb5b1d2249a3c719b469292e4a0ef90161ec65c7ccceee70989fb6f2
+SIZE (go/net-mgmt_blackbox_exporter/blackbox_exporter-v0.26.0/v0.26.0.mod) = 1552
+SHA256 (go/net-mgmt_blackbox_exporter/blackbox_exporter-v0.26.0/v0.26.0.zip) = 6c8529ca5b9d2e2ecb3d16d3bdb6855ecd2475bbe5426293d6e49da143eb9dd7
+SIZE (go/net-mgmt_blackbox_exporter/blackbox_exporter-v0.26.0/v0.26.0.zip) = 105384
