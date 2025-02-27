@@ -1,6 +1,5 @@
 PORTNAME=	hyperswitch
-DISTVERSION=	2025.02.21.0
-PORTREVISION=	2
+DISTVERSION=	2025.02.27.0
 CATEGORIES=	finance
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -841,15 +840,17 @@ CARGO_CRATES=	actix-codec-0.5.2 \
 		rust-i18n,rust-i18n-macro,rust-i18n-support@git+https://github.com/kashif-m/rust-i18n?rev=f2d8096aaaff7a87a847c35a5394c269f75e077a\#f2d8096aaaff7a87a847c35a5394c269f75e077a \
 		async-bb8-diesel@git+https://github.com/jarnura/async-bb8-diesel?rev=53b4ab901aab7635c8215fd1c2d542c8db443094\#53b4ab901aab7635c8215fd1c2d542c8db443094 \
 		rusty-money@git+https://github.com/varunsrin/rusty_money?rev=bbc0150742a0fff905225ff11ee09388e9babdcc\#bbc0150742a0fff905225ff11ee09388e9babdcc \
+		josekit@git+https://github.com/sumanmaji4/josekit-rs.git?rev=5ab54876c29a84f86aef8c169413a46026883efe\#5ab54876c29a84f86aef8c169413a46026883efe \
 		scylla,scylla-cql,scylla-macros@git+https://github.com/juspay/scylla-rust-driver.git?rev=5700aa2847b25437cdd4fcf34d707aa90dca8b89\#5700aa2847b25437cdd4fcf34d707aa90dca8b89
 
 RUSTFLAGS+=	--cfg uuid_unstable
 
-# change LTO to "thin" because otherwise link consumes tens of GB of memory and runs out of memory on arm64 causing runaway builds
+# disable LTO due to runaway builds: https://github.com/rust-lang/rust/issues/137496
 WITHOUT_LTO=	yes
-CARGO_ENV=	CARGO_PROFILE_RELEASE_LTO="thin" \
+#CARGO_ENV=	CARGO_PROFILE_RELEASE_LTO="thin" \
 		CARGO_PROFILE_RELEASE_PANIC="abort" \
-		CARGO_PROFILE_RELEASE_CODEGEN_UNITS=1
+		CARGO_PROFILE_RELEASE_CODEGEN_UNITS=1 # change LTO to "thin" because otherwise link consumes tens of GB of memory and runs out of memory on arm64 causing runaway builds
+CARGO_ENV=	CARGO_PROFILE_RELEASE_LTO="false"
 
 OPENSSLINC=	/usr/include
 OPENSSLLIB=	/usr/lib
