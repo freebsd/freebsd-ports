@@ -1,4 +1,4 @@
---- sendmail/sendmail.h.orig	2023-12-05 09:53:22 UTC
+--- sendmail/sendmail.h.orig	2025-02-05 18:32:59 UTC
 +++ sendmail/sendmail.h
 @@ -73,6 +73,10 @@ SM_UNUSED(static char SmailId[]) = "@(#)$Id: sendmail.
  #endif
@@ -11,7 +11,7 @@
  #include "timers.h"
  #include <sm/exc.h>
  #include <sm/gen.h>
-@@ -2734,6 +2738,10 @@ EXTERN int Hacks;	/* bit field of run-time enabled "ha
+@@ -2781,6 +2785,10 @@ EXTERN int ConnectionRateWindowSize;
  #endif
  
  EXTERN int ConnectionRateWindowSize;

@@ -1,6 +1,6 @@
---- mail.local/mail.local.c.orig	2021-06-22 08:24:43 UTC
+--- mail.local/mail.local.c.orig	2023-04-27 10:39:42 UTC
 +++ mail.local/mail.local.c
-@@ -154,6 +154,8 @@ int	ExitVal = EX_OK;		/* sysexits.h error value. */
+@@ -154,6 +154,8 @@ bool	BounceQuota = false;		/* permanent error when ove
  bool	HoldErrs = false;		/* Hold errors in ErrBuf */
  bool	LMTPMode = false;
  bool	BounceQuota = false;		/* permanent error when over quota */
