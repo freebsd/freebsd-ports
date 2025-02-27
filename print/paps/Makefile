@@ -11,6 +11,8 @@ WWW=		https://paps.sourceforge.net/
 LICENSE=	LGPL20
 LICENSE_FILE=	${WRKSRC}/COPYING.LIB
 
+BROKEN_i386=	compilation fails, see https://github.com/dov/paps/issues/60
+
 LIB_DEPENDS=	libfmt.so:devel/libfmt
 
 USES=		cmake:indirect compiler:c++17-lang meson gnome pkgconfig python:env shebangfix
