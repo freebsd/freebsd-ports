@@ -1,6 +1,6 @@
 PORTNAME=	libnvme
 DISTVERSION=	1.11.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 
 MAINTAINER=	imp@FreeBSD.org
@@ -12,8 +12,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 ONLY_FOR_ARCHS=	aarch64 amd64
 BUILD_DEPENDS=	freebsd-nvme-shim>0:devel/freebsd-nvme-shim \
-		bash>0:shells/bash \
-		swig>0:devel/swig
+		bash>0:shells/bash
 
 USES=		meson
 USE_LDCONFIG=	yes
