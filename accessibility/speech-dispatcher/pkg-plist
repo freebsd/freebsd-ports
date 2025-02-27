@@ -15,18 +15,23 @@ bin/speech-dispatcher
 @sample %%ETCDIR%%/modules/llia_phon-generic.conf.sample
 @sample %%ETCDIR%%/modules/mary-generic.conf.sample
 @sample %%ETCDIR%%/modules/mimic3-generic.conf.sample
+@sample %%ETCDIR%%/modules/openjtalk.conf.sample
 @sample %%ETCDIR%%/modules/swift-generic.conf.sample
-%%VOXIN%%@sample %%ETCDIR%%/modules/voxin.conf.sample
 @sample %%ETCDIR%%/speechd.conf.sample
 include/speech-dispatcher/libspeechd.h
 include/speech-dispatcher/libspeechd_version.h
 include/speech-dispatcher/spd_audio_plugin.h
+include/speech-dispatcher/spd_module_main.h
 include/speech-dispatcher/speechd_defines.h
 include/speech-dispatcher/speechd_types.h
 lib/libspeechd.a
 lib/libspeechd.so
 lib/libspeechd.so.2
 lib/libspeechd.so.2.6.0
+lib/libspeechd_module.a
+lib/libspeechd_module.so
+lib/libspeechd_module.so.0
+lib/libspeechd_module.so.0.0.0
 %%ALSA%%lib/speech-dispatcher/spd_alsa.a
 %%ALSA%%lib/speech-dispatcher/spd_alsa.so
 %%AO%%lib/speech-dispatcher/spd_libao.a
@@ -35,6 +40,8 @@ lib/libspeechd.so.2.6.0
 %%NAS%%lib/speech-dispatcher/spd_nas.so
 lib/speech-dispatcher/spd_oss.a
 lib/speech-dispatcher/spd_oss.so
+%%PIPEWIRE%%lib/speech-dispatcher/spd_pipewire.a
+%%PIPEWIRE%%lib/speech-dispatcher/spd_pipewire.so
 %%PULSEAUDIO%%lib/speech-dispatcher/spd_pulse.a
 %%PULSEAUDIO%%lib/speech-dispatcher/spd_pulse.so
 libdata/pkgconfig/speech-dispatcher.pc
@@ -44,16 +51,19 @@ libexec/speech-dispatcher-modules/sd_dummy
 libexec/speech-dispatcher-modules/sd_festival
 %%FLITE%%libexec/speech-dispatcher-modules/sd_flite
 libexec/speech-dispatcher-modules/sd_generic
-%%VOXIN%%libexec/speech-dispatcher-modules/sd_voxin
+libexec/speech-dispatcher-modules/sd_openjtalk
 share/locale/cs/LC_MESSAGES/speech-dispatcher.mo
 share/locale/de/LC_MESSAGES/speech-dispatcher.mo
 share/locale/eo/LC_MESSAGES/speech-dispatcher.mo
 share/locale/fr/LC_MESSAGES/speech-dispatcher.mo
 share/locale/hu/LC_MESSAGES/speech-dispatcher.mo
+share/locale/ka/LC_MESSAGES/speech-dispatcher.mo
 share/locale/nb_NO/LC_MESSAGES/speech-dispatcher.mo
 share/locale/pt/LC_MESSAGES/speech-dispatcher.mo
 share/locale/pt_BR/LC_MESSAGES/speech-dispatcher.mo
 share/locale/ru/LC_MESSAGES/speech-dispatcher.mo
+share/locale/sv/LC_MESSAGES/speech-dispatcher.mo
+share/locale/tr/LC_MESSAGES/speech-dispatcher.mo
 share/man/man1/spd-say.1.gz
 share/man/man1/speech-dispatcher.1.gz
 share/sounds/speech-dispatcher/dummy-message.wav
@@ -75,10 +85,11 @@ share/sounds/speech-dispatcher/dummy-message.wav
 %%DATADIR%%/locale/base/font-variants.dic
 %%DATADIR%%/locale/base/orca-chars.dic
 %%DATADIR%%/locale/base/orca.dic
-%%DATADIR%%/locale/base/symbols.dic
+%%DATADIR%%/locale/base/symbols-fallback.dic
 %%DATADIR%%/locale/be/emojis.dic
 %%DATADIR%%/locale/be/orca-chars.dic
 %%DATADIR%%/locale/be/orca.dic
+%%DATADIR%%/locale/bew/emojis.dic
 %%DATADIR%%/locale/bg/emojis.dic
 %%DATADIR%%/locale/bg/orca-chars.dic
 %%DATADIR%%/locale/bg/orca.dic
@@ -109,6 +120,7 @@ share/sounds/speech-dispatcher/dummy-message.wav
 %%DATADIR%%/locale/cs/orca-chars.dic
 %%DATADIR%%/locale/cs/orca.dic
 %%DATADIR%%/locale/cs/symbols.dic
+%%DATADIR%%/locale/cv/emojis.dic
 %%DATADIR%%/locale/cy/emojis.dic
 %%DATADIR%%/locale/da/emojis.dic
 %%DATADIR%%/locale/da/orca-chars.dic
@@ -308,6 +320,7 @@ share/sounds/speech-dispatcher/dummy-message.wav
 %%DATADIR%%/locale/pt_PT/symbols.dic
 %%DATADIR%%/locale/qu/emojis.dic
 %%DATADIR%%/locale/quc/emojis.dic
+%%DATADIR%%/locale/rhg/emojis.dic
 %%DATADIR%%/locale/rm/emojis.dic
 %%DATADIR%%/locale/ro/emojis.dic
 %%DATADIR%%/locale/ro/orca-chars.dic
@@ -351,6 +364,7 @@ share/sounds/speech-dispatcher/dummy-message.wav
 %%DATADIR%%/locale/sw_KE/emojis.dic
 %%DATADIR%%/locale/ta/emojis.dic
 %%DATADIR%%/locale/ta/orca-chars.dic
+%%DATADIR%%/locale/ta/orca.dic
 %%DATADIR%%/locale/ta/symbols.dic
 %%DATADIR%%/locale/te/emojis.dic
 %%DATADIR%%/locale/te/orca-chars.dic

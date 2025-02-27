@@ -1,6 +1,5 @@
 PORTNAME=	speech-dispatcher
-DISTVERSION=	0.11.5
-PORTREVISION=	1
+DISTVERSION=	0.12.0
 CATEGORIES?=	accessibility audio
 MASTER_SITES=	https://github.com/brailcom/speechd/releases/download/${PORTVERSION}/
 
@@ -13,39 +12,35 @@ LICENSE_COMB=	multi
 
 BUILD_DEPENDS=	help2man:misc/help2man
 LIB_DEPENDS=	libdotconf.so:devel/dotconf \
-		libltdl.so:devel/libltdl \
 		libsndfile.so:audio/libsndfile
 
-USES=		alias gettext gmake gnome libtool makeinfo pathfix pkgconfig
+USES=		gettext gmake gnome libtool localbase makeinfo pathfix \
+		pkgconfig
 USE_GNOME=	glib20 intltool
+USE_LDCONFIG=	yes
+
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-espeak-ng=no \
+CONFIGURE_ARGS=	--disable-ltdl \
+		--with-espeak-ng=no \
 		--with-baratinoo=no \
 		--with-kali=no \
 		--with-ibmtts=no \
 		--with-oss \
+		--with-voxin=no \
 		--without-systemdsystemunitdir
-CFLAGS+=	-fcommon -I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
-USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
 
-.if !defined(SPEECH_SLAVE)
+.if !defined(_SD_PYTHON)
 
-CONFIGURE_ARGS+=	--disable-python
-
-ETCFILES=	clients/emacs.conf modules/cicero.conf modules/dtk-generic.conf \
-		modules/epos-generic.conf modules/espeak-mbrola-generic.conf \
-		modules/espeak-ng-mbrola-generic.conf modules/espeak-ng-mbrola.conf \
-		modules/espeak-ng.conf modules/espeak.conf modules/festival.conf \
-		modules/flite.conf modules/llia_phon-generic.conf modules/mary-generic.conf \
-		modules/mimic3-generic.conf modules/swift-generic.conf speechd.conf
-
-PORTDOCS=	ANNOUNCE AUTHORS FAQ NEWS README* TODO
+CONFIGURE_ARGS+=--disable-python
+TEST_TARGET=	check
+TEST_WRKSRC=	${WRKSRC}/src/tests
 
 INFO=		spd-say speech-dispatcher speech-dispatcher-cs ssip
+PORTDOCS=	ANNOUNCE AUTHORS FAQ NEWS README* TODO
 
-OPTIONS_DEFINE=		ALSA AO DOCS ESPEAK FESTIVAL FLITE NAS PULSEAUDIO VOXIN
+OPTIONS_DEFINE=		ALSA AO DOCS ESPEAK FESTIVAL FLITE NAS PIPEWIRE \
+			PULSEAUDIO
 OPTIONS_DEFAULT=	ESPEAK PULSEAUDIO
 OPTIONS_SUB=		yes
 
@@ -67,53 +62,84 @@ FLITE_LIB_DEPENDS=	libflite.so:audio/flite
 FLITE_CONFIGURE_WITH=	flite
 
 NAS_LIB_DEPENDS=	libaudio.so:audio/nas
+NAS_USES=		xorg
+NAS_USE=		XORG=xau
 NAS_CONFIGURE_WITH=	nas
+
+PIPEWIRE_LIB_DEPENDS=		libpipewire-0.3.so:multimedia/pipewire
+PIPEWIRE_CONFIGURE_WITH=	pipewire
 
 PULSEAUDIO_LIB_DEPENDS=		libpulse.so:audio/pulseaudio
 PULSEAUDIO_CONFIGURE_WITH=	pulse
 
-VOXIN_BROKEN=		libvoxin not yet ported
-VOXIN_DESC=		Voxin speech synthesis engine support (not yet ported)
-#VOXIN_LIB_DEPENDS=	libvoxin.so:accessibility/libvoxin
-VOXIN_CONFIGURE_WITH=	voxin
+_SD_ETCFILES=	clients/emacs.conf \
+		modules/cicero.conf \
+		modules/dtk-generic.conf \
+		modules/epos-generic.conf \
+		modules/espeak-mbrola-generic.conf \
+		modules/espeak-ng-mbrola-generic.conf \
+		modules/espeak-ng-mbrola.conf \
+		modules/espeak-ng.conf \
+		modules/espeak.conf \
+		modules/festival.conf \
+		modules/flite.conf \
+		modules/llia_phon-generic.conf \
+		modules/mary-generic.conf \
+		modules/mimic3-generic.conf \
+		modules/openjtalk.conf \
+		modules/swift-generic.conf \
+		speechd.conf
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MVOXIN}
-ETCFILES+=		modules/voxin.conf
-.endif
+.  include <bsd.port.options.mk>
 
 post-patch:
 # ibmtts.c is omitted, because it is disabled by default
-.for f in espeak.c ivona.c pico.c
-	${REINPLACE_CMD} -e 's,/usr/share,${LOCALBASE}/share,g' \
+.  for f in espeak.c generic.c ivona.c openjtalk.c pico.c
+	${REINPLACE_CMD} -e 's|/usr/share|${LOCALBASE}/share|g' \
 		${WRKSRC}/src/modules/${f}
-.endfor
-	${REINPLACE_CMD} -e 's,/etc,${LOCALBASE}/etc,g ;\
-		s,/usr/bin,${LOCALBASE}/bin,g ;\
-		s,/usr/share,${LOCALBASE}/share,g' \
+.  endfor
+	${REINPLACE_CMD} -e 's|/etc|${LOCALBASE}/etc|g ; \
+		s|/usr/bin|${LOCALBASE}/bin|g ; \
+		s|/usr/share|${LOCALBASE}/share|g' \
 		${WRKSRC}/config/modules/*.conf
 
 post-install:
-.for f in ${ETCFILES}
+.  for f in ${_SD_ETCFILES}
 	@${MV} ${STAGEDIR}${ETCDIR}/${f} ${STAGEDIR}${ETCDIR}/${f}.sample
-.endfor
+.  endfor
 	@${RM} -r ${STAGEDIR}${DATADIR}/conf
 	@${RMDIR} ${STAGEDIR}${DATADIR} || ${TRUE}
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
+
+# The 'test' target only builds the tests. The speech-dispatcher tests, in
+# whole, are not easily automated. This is only intended to provide a minimal
+# baseline. If you don't hear some robotic voices coming out of your speakers
+# after running the 'test' target, something is definitely wrong.
+post-test:
+	@if [ "`${LOCALBASE}/bin/speech-dispatcher -v | head -1`" != "${PORTNAME} ${DISTVERSION}" ]; then \
+		${ECHO_CMD} "===> Tests require a local installation of ${PKGNAME} to"; \
+		${ECHO_CMD} "     proceed. Try reinstalling ${PKGNAME} and running the"; \
+		${ECHO_CMD} "     'test' target again."; \
+		exit 1; \
+	else \
+		${ECHO_CMD} "===> Testing with locally installed `${LOCALBASE}/bin/speech-dispatcher -v | head -1`" ; \
+		${LOCALBASE}/bin/speech-dispatcher && ${TEST_WRKSRC}/run_test ${TEST_WRKSRC}/basic.test; \
+	fi
 
 .else
 
-PORTSCOUT=	ignore:1
-
-NO_ARCH=	yes
-USES+=		python shebangfix
-SHEBANG_FILES=	src/api/python/speechd_config/spd-conf
-USE_PYTHON=	flavors
 BUILD_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}xdg>0:devel/py-xdg@${PY_FLAVOR}
 LIB_DEPENDS+=	libspeechd.so:accessibility/speech-dispatcher
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}xdg>0:devel/py-xdg@${PY_FLAVOR}
+
+USES+=		python shebangfix
+USE_PYTHON=	flavors
+
+SHEBANG_FILES=	src/api/python/speechd_config/spd-conf
+
+NO_ARCH=	yes
+PORTSCOUT=	ignore:1
 
 .endif
 
