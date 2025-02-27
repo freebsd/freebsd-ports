@@ -15,6 +15,7 @@
 %%DHCP%%%%ETCDIR%%.d/charon/dhcp.conf.sample
 @sample %%ETCDIR%%.d/charon/dnskey.conf.sample
 @sample %%ETCDIR%%.d/charon/drbg.conf.sample
+%%STROKE%%@sample %%ETCDIR%%.d/starter.conf.sample
 %%EAPAKA3GPP2%%@sample %%ETCDIR%%.d/charon/eap-aka-3gpp2.conf.sample
 %%EAPAKA3GPP2%%@sample %%ETCDIR%%.d/charon/eap-aka.conf.sample
 %%EAPDYNAMIC%%@sample %%ETCDIR%%.d/charon/eap-dynamic.conf.sample
@@ -57,6 +58,7 @@
 %%SMP%%@sample %%ETCDIR%%.d/charon/smp.conf.sample
 @sample %%ETCDIR%%.d/charon/socket-default.conf.sample
 %%SQL%%@sample %%ETCDIR%%.d/charon/sql.conf.sample
+%%STROKE%%@sample %%ETCDIR%%.d/charon/stroke.conf.sample
 %%SQLITE%%@sample %%ETCDIR%%.d/charon/sqlite.conf.sample
 @sample %%ETCDIR%%.d/charon/sshkey.conf.sample
 %%TESTVECTOR%%@sample %%ETCDIR%%.d/charon/test-vectors.conf.sample
@@ -74,6 +76,8 @@
 %%PKI%%@sample %%ETCDIR%%.d/pki.conf.sample
 %%SQL%%@sample %%ETCDIR%%.d/pool.conf.sample
 %%SWANCTL%%@sample %%ETCDIR%%.d/swanctl.conf.sample
+%%STROKE%%@sample etc/ipsec.conf.sample
+%%STROKE%%@sample etc/ipsec.secrets.sample
 %%SWANCTL%%@sample etc/swanctl/swanctl.conf.sample
 %%VICI%%include/libvici.h
 lib/ipsec/libcharon.la
@@ -222,6 +226,8 @@ lib/ipsec/plugins/libstrongswan-socket-default.so
 %%SQLITE%%lib/ipsec/plugins/libstrongswan-sqlite.so
 lib/ipsec/plugins/libstrongswan-sshkey.la
 lib/ipsec/plugins/libstrongswan-sshkey.so
+%%STROKE%%lib/ipsec/plugins/libstrongswan-stroke.la
+%%STROKE%%lib/ipsec/plugins/libstrongswan-stroke.so
 %%TESTVECTOR%%lib/ipsec/plugins/libstrongswan-test-vectors.la
 %%TESTVECTOR%%lib/ipsec/plugins/libstrongswan-test-vectors.so
 %%TPM%%lib/ipsec/plugins/libstrongswan-tpm.la
@@ -248,6 +254,8 @@ lib/ipsec/plugins/libstrongswan-xcbc.la
 lib/ipsec/plugins/libstrongswan-xcbc.so
 libexec/ipsec/_updown
 libexec/ipsec/charon
+%%STROKE%%libexec/ipsec/starter
+%%STROKE%%libexec/ipsec/stroke
 %%LOADTESTER%%libexec/ipsec/load-tester
 %%SQL%%libexec/ipsec/pool
 libexec/ipsec/whitelist
@@ -269,11 +277,15 @@ libexec/ipsec/whitelist
 %%PKI%%share/man/man1/pki---signcrl.1.gz
 %%PKI%%share/man/man1/pki---verify.1.gz
 %%PKI%%share/man/man1/pki.1.gz
+%%STROKE%%share/man/man5/ipsec.conf.5.gz
+%%STROKE%%share/man/man5/ipsec.secrets.5.gz
+%%STROKE%%share/man/man8/ipsec.8.gz
 share/man/man5/strongswan.conf.5.gz
 %%SWANCTL%%share/man/man5/swanctl.conf.5.gz
 share/man/man8/charon-cmd.8.gz
 %%SWANCTL%%share/man/man8/swanctl.8.gz
 sbin/charon-cmd
+%%STROKE%%sbin/ipsec
 %%SWANCTL%%sbin/swanctl
 %%DATADIR%%/templates/config/plugins/addrblock.conf
 %%SQL%%%%DATADIR%%/templates/config/plugins/attr-sql.conf
@@ -331,6 +343,8 @@ sbin/charon-cmd
 %%SQL%%%%DATADIR%%/templates/config/plugins/sql.conf
 %%SQLITE%%%%DATADIR%%/templates/config/plugins/sqlite.conf
 %%DATADIR%%/templates/config/plugins/sshkey.conf
+%%STROKE%%%%DATADIR%%/templates/config/plugins/stroke.conf
+%%STROKE%%%%DATADIR%%/templates/config/strongswan.d/starter.conf
 %%TESTVECTOR%%%%DATADIR%%/templates/config/plugins/test-vectors.conf
 %%TPM%%%%DATADIR%%/templates/config/plugins/tpm.conf
 %%UNBOUND%%%%DATADIR%%/templates/config/plugins/unbound.conf
@@ -364,3 +378,11 @@ sbin/charon-cmd
 %%SWANCTL%%@dir etc/swanctl/x509ca
 %%SWANCTL%%@dir etc/swanctl/x509crl
 %%SWANCTL%%@dir etc/swanctl/x509ocsp
+%%STROKE%%@dir etc/ipsec.d/aacerts
+%%STROKE%%@dir etc/ipsec.d/acerts
+%%STROKE%%@dir etc/ipsec.d/cacerts
+%%STROKE%%@dir etc/ipsec.d/certs
+%%STROKE%%@dir etc/ipsec.d/crls
+%%STROKE%%@dir etc/ipsec.d/ocspcerts
+%%STROKE%%@dir etc/ipsec.d/private
+%%STROKE%%@dir etc/ipsec.d/reqs

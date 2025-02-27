@@ -1,5 +1,6 @@
 PORTNAME=	strongswan
 DISTVERSION=	6.0.0
+PORTREVISION=	1
 CATEGORIES=	security net-vpn
 MASTER_SITES=	https://download.strongswan.org/ \
 		https://download2.strongswan.org/
@@ -43,7 +44,7 @@ TEST_TARGET=	check
 OPTIONS_DEFINE=			CTR CURL DHCP EAPAKA3GPP2 EAPDYNAMIC EAPRADIUS \
 				EAPSIMFILE FARP GCM IKEV1 IPSECKEY KDF \
 				KERNELLIBIPSEC LDAP LOADTESTER MEDIATION ML MYSQL \
-				PKCS11 PKI PYTHON SMP SQLITE SWANCTL \
+				PKCS11 PKI PYTHON SMP SQLITE STROKE SWANCTL \
 				TESTVECTOR TPM TSS2 UNBOUND UNITY VICI XAUTH
 OPTIONS_DEFINE_i386=	VIA
 OPTIONS_DEFAULT=		BUILTIN CURL GCM IKEV1 KDF PKI SWANCTL VICI
@@ -74,6 +75,7 @@ PKCS11_DESC=		Enable PKCS11 token support
 PKI_DESC=		Enable PKI tools
 PYTHON_DESC=		Python VICI protocol plugin
 SMP_DESC=		Enable XML-based management protocol (DEPRECATED)
+STROKE_DESC=		Enable stroke management protcol (DEPRECATED)
 SWANCTL_DESC=		Install swanctl (requires VICI)
 TESTVECTOR_DESC=	Enable crypto test vectors
 TPM_DESC=		Enable TPM plugin
@@ -122,6 +124,7 @@ SMP_LIB_DEPENDS=		libxml2.so:textproc/libxml2
 SMP_CONFIGURE_ON=		--enable-smp
 SQLITE_LIB_DEPENDS=		libsqlite3.so:databases/sqlite3
 SQLITE_CONFIGURE_ON=		--enable-sqlite
+STROKE_CONFIGURE_ON=		--enable-stroke
 SWANCTL_IMPLIES=		VICI
 SWANCTL_CONFIGURE_ON=		--enable-swanctl
 TESTVECTOR_CONFIGURE_ON=	--enable-test-vectors
@@ -135,6 +138,7 @@ UNITY_CONFIGURE_ON=		--enable-unity
 VIA_CONFIGURE_ON=		--enable-padlock
 VICI_CONFIGURE_ON=		--enable-vici
 VICI_SUB_LIST=			INTERFACE="vici"
+VICI_SUB_LIST_OFF=		INTERFACE="stroke"
 VSTR_LIB_DEPENDS=		libvstr.so:devel/vstr
 VSTR_CONFIGURE_ON=		--with-printf-hooks=vstr
 XAUTH_CONFIGURE_ON=		--enable-xauth-eap \
