@@ -34,6 +34,7 @@ command_interpreter="%%PYTHON_CMD%%"
 required_files=${salt_master_configdir}
 pidfile=${salt_master_pidfile}
 command_args="-c ${required_files} --pid-file=${pidfile} -d"
+procname="MainProcess"
 
 export PATH="${salt_master_paths}"
 export PYTHON_EGG_CACHE="${salt_master_eggcache}"
