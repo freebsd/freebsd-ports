@@ -1,5 +1,6 @@
 PORTNAME=	faust
 DISTVERSION=	2.75.7
+PORTREVISION=	1
 CATEGORIES=	audio devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -15,7 +16,7 @@ LIB_DEPENDS=	libLLVM-${LLVM_VERSION}.so:devel/llvm${LLVM_VERSION} \
 		libzstd.so:archivers/zstd
 RUN_DEPENDS=	bash:shells/bash
 
-USES=		compiler:c++14-lang cmake localbase:ldflags llvm:min=15,lib ncurses python pkgconfig shebangfix # llvm: versions <11 lacked dump() function(s) that cause unresolved symbols in libfaust.so
+USES=		compiler:c++14-lang cmake localbase:ldflags llvm:15,lib ncurses python pkgconfig shebangfix # llvm: versions <11 lacked dump() function(s) that cause unresolved symbols in libfaust.so
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
