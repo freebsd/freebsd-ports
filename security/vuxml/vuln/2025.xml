@@ -1,3 +1,32 @@
+  <vuln vid="a4cb7f9b-f506-11ef-85f3-a8a1599412c6">
+    <topic>chromium -- multiple security fixes</topic>
+    <affects>
+      <package>
+       <name>chromium</name>
+       <range><lt>133.0.6943.141</lt></range>
+      </package>
+      <package>
+       <name>ungoogled-chromium</name>
+       <range><lt>133.0.6943.141</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+       <p>Chrome Releases reports:</p>
+       <blockquote cite="https://chromereleases.googleblog.com/2025/02/stable-channel-update-for-desktop_25.html">
+	 <p>This update includes 1 security fix.</p>
+       </blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://chromereleases.googleblog.com/2025/02/stable-channel-update-for-desktop_25.html</url>
+    </references>
+    <dates>
+      <discovery>2025-02-25</discovery>
+      <entry>2025-02-27</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="6ae77556-f31d-11ef-a695-4ccc6adda413">
     <topic>exiv2 -- Use after free in TiffSubIfd</topic>
     <affects>
