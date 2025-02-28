@@ -617,6 +617,7 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%PRIV_LIB%%/Test2/Util/HashBase.pm
 %%PRIV_LIB%%/Test2/Util/Importer.pm
 %%PRIV_LIB%%/Test2/Util/Ref.pm
+%%PRIV_LIB%%/Test2/Util/Sig.pm
 %%PRIV_LIB%%/Test2/Util/Stash.pm
 %%PRIV_LIB%%/Test2/Util/Sub.pm
 %%PRIV_LIB%%/Test2/Util/Table.pm
@@ -1131,6 +1132,7 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%MAN1%%/perl5416delta.1.gz
 %%MAN1%%/perl5417delta.1.gz
 %%MAN1%%/perl5418delta.1.gz
+%%MAN1%%/perl5419delta.1.gz
 %%MAN1%%/perl561delta.1.gz
 %%MAN1%%/perl56delta.1.gz
 %%MAN1%%/perl581delta.1.gz
@@ -1883,6 +1885,7 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%MAN3%%/Test2::Util::HashBase.3.gz
 %%MAN3%%/Test2::Util::Importer.3.gz
 %%MAN3%%/Test2::Util::Ref.3.gz
+%%MAN3%%/Test2::Util::Sig.3.gz
 %%MAN3%%/Test2::Util::Stash.3.gz
 %%MAN3%%/Test2::Util::Sub.3.gz
 %%MAN3%%/Test2::Util::Table.3.gz
@@ -2084,6 +2087,7 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%PRIV_LIB%%/pod/perl5416delta.pod
 %%PRIV_LIB%%/pod/perl5417delta.pod
 %%PRIV_LIB%%/pod/perl5418delta.pod
+%%PRIV_LIB%%/pod/perl5419delta.pod
 %%PRIV_LIB%%/pod/perl561delta.pod
 %%PRIV_LIB%%/pod/perl56delta.pod
 %%PRIV_LIB%%/pod/perl581delta.pod
