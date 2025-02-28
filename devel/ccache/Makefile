@@ -1,10 +1,11 @@
 PORTNAME=	ccache
 PORTVERSION=	3.7.12
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/ccache/ccache/releases/download/v${DISTVERSION}/ \
 		LOCAL/bdrewery
 
+# anyone may update Makefile.compilers - bdrewery
 MAINTAINER=	bdrewery@FreeBSD.org
 COMMENT=	Tool to minimize the compile time of C/C++ programs
 WWW=		https://ccache.samba.org/
