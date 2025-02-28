@@ -119,6 +119,8 @@ include/NCrystal/ncrystal.h
 include/NCrystal/plugins/NCPluginMgmt.hh
 include/NCrystal/text/NCTextData.hh
 include/NCrystal/threads/NCFactThreads.hh
+include/NCrystal/virtualapi/NCVirtAPIFactory.hh
+include/NCrystal/virtualapi/NCVirtAPI_Type1_v1.hh
 lib/cmake/NCrystal/NCrystalConfig.cmake
 lib/cmake/NCrystal/NCrystalConfigVersion.cmake
 lib/cmake/NCrystal/NCrystalTargets-%%CMAKE_BUILD_TYPE%%.cmake

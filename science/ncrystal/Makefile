@@ -1,6 +1,6 @@
 PORTNAME=	ncrystal
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.0.2
+DISTVERSION=	4.1.2
 CATEGORIES=	science # physics
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -10,7 +10,7 @@ WWW=		https://github.com/mctools/ncrystal
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cmake:testing python shebangfix
+USES=		cmake:testing python:build shebangfix
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
@@ -23,6 +23,6 @@ CMAKE_TESTING_ON=	NCRYSTAL_ENABLE_TESTING
 post-install: # workaround for https://github.com/mctools/ncrystal/issues/150
 	@${RM} ${STAGEDIR}${PREFIX}/*.sh
 
-# tests as of 4.0.2: 50% tests passed, 41 tests failed out of 82, see https://github.com/mctools/ncrystal/issues/231
+# tests as of 4.1.2: 53% tests passed, 37 tests failed out of 79, see https://github.com/mctools/ncrystal/issues/231
 
 .include <bsd.port.mk>
