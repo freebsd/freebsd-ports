@@ -1,6 +1,7 @@
 PORTNAME=	powershell
 DISTVERSIONPREFIX=v
 DISTVERSION=	7.5.0
+PORTREVISION=	1
 CATEGORIES=	shells
 
 MAINTAINER=	arrowd@FreeBSD.org
@@ -15,6 +16,7 @@ LIB_DEPENDS=	libbrotlienc.so:archivers/brotli \
 		libinotify.so:devel/libinotify \
 		libunwind.so:devel/libunwind
 RUN_DEPENDS=	dotnet:lang/dotnet-host \
+		terminfo-db>0:misc/terminfo-db \
 		${LOCALBASE}/lib/powershell/libpsl-native.so:shells/libpowershell-native \
 		${LOCALBASE}/lib/libicuuc.so:devel/icu
 
