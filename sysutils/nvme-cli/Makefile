@@ -1,6 +1,6 @@
 PORTNAME=	nvme-cli
 DISTVERSION=	2.11.0.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 
 MAINTAINER=	imp@FreeBSD.org
@@ -12,7 +12,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	bash>0:shells/bash \
 		freebsd-nvme-shim>0:devel/freebsd-nvme-shim
-LIB_DEPENDS=	libnvme.so:devel/libnvme
+LIB_DEPENDS=	libnvme.so:devel/libnvme \
+		libjson-c.so:devel/json-c
 
 USES=		meson pkgconfig
 
@@ -24,7 +25,6 @@ GH_TAGNAME=	freebsd-${DISTVERSION}
 
 CFLAGS+=	-I${LOCALBASE}/include/freebsd-nvme-shim
 
-MESON_ARGS=	-Ddocs=man \
-		-Djson-c=disabled
+MESON_ARGS=	-Ddocs=man
 
 .include <bsd.port.mk>
