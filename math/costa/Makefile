@@ -26,6 +26,10 @@ CMAKE_ARGS=	-DCOSTA_SCALAPACK=CUSTOM
 CMAKE_OFF=	COSTA_WITH_TESTS
 CMAKE_TESTING_ON=	COSTA_WITH_TESTS
 
+.if !exists(/usr/include/omp.h)
+BROKEN=		requires OpenMP support that is missing on this architecture
+.endif
+
 OPTIONS_SINGLE=		MPI
 OPTIONS_SINGLE_MPI=	MPICH OPENMPI
 OPTIONS_DEFAULT=	MPICH
