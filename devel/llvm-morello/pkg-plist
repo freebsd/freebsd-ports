@@ -1,3 +1,4 @@
+bin/amdgpu-arch%%COMMAND_SUFFIX%%
 bin/bugpoint%%COMMAND_SUFFIX%%
 bin/dsymutil%%COMMAND_SUFFIX%%
 bin/llc%%COMMAND_SUFFIX%%
@@ -15,6 +16,7 @@ bin/llvm-cvtres%%COMMAND_SUFFIX%%
 bin/llvm-cxxdump%%COMMAND_SUFFIX%%
 bin/llvm-cxxfilt%%COMMAND_SUFFIX%%
 bin/llvm-cxxmap%%COMMAND_SUFFIX%%
+bin/llvm-debuginfo-analyzer%%COMMAND_SUFFIX%%
 bin/llvm-debuginfod%%COMMAND_SUFFIX%%
 bin/llvm-debuginfod-find%%COMMAND_SUFFIX%%
 bin/llvm-diff%%COMMAND_SUFFIX%%
@@ -51,6 +53,7 @@ bin/llvm-readelf%%COMMAND_SUFFIX%%
 bin/llvm-readobj%%COMMAND_SUFFIX%%
 bin/llvm-reduce%%COMMAND_SUFFIX%%
 bin/llvm-remark-size-diff%%COMMAND_SUFFIX%%
+bin/llvm-remarkutil%%COMMAND_SUFFIX%%
 bin/llvm-rtdyld%%COMMAND_SUFFIX%%
 bin/llvm-sim%%COMMAND_SUFFIX%%
 bin/llvm-size%%COMMAND_SUFFIX%%
@@ -65,9 +68,12 @@ bin/llvm-tli-checker%%COMMAND_SUFFIX%%
 bin/llvm-undname%%COMMAND_SUFFIX%%
 bin/llvm-windres%%COMMAND_SUFFIX%%
 bin/llvm-xray%%COMMAND_SUFFIX%%
+bin/nvptx-arch%%COMMAND_SUFFIX%%
 bin/opt%%COMMAND_SUFFIX%%
 bin/sancov%%COMMAND_SUFFIX%%
 bin/split-file%%COMMAND_SUFFIX%%
+%%CLANG%%bin/clang-nvlink-wrapper%%COMMAND_SUFFIX%%
+%%CLANG%%bin/clang-offload-wrapper%%COMMAND_SUFFIX%%
 %%CLANG%%bin/analyze-build%%COMMAND_SUFFIX%%
 %%CLANG%%bin/c-index-test%%COMMAND_SUFFIX%%
 %%CLANG%%bin/clang%%COMMAND_SUFFIX%%
@@ -77,13 +83,12 @@ bin/split-file%%COMMAND_SUFFIX%%
 %%CLANG%%bin/clang-extdef-mapping%%COMMAND_SUFFIX%%
 %%CLANG%%bin/clang-format%%COMMAND_SUFFIX%%
 %%CLANG%%bin/clang-linker-wrapper%%COMMAND_SUFFIX%%
-%%CLANG%%bin/clang-nvlink-wrapper%%COMMAND_SUFFIX%%
 %%CLANG%%bin/clang-offload-bundler%%COMMAND_SUFFIX%%
 %%CLANG%%bin/clang-offload-packager%%COMMAND_SUFFIX%%
-%%CLANG%%bin/clang-offload-wrapper%%COMMAND_SUFFIX%%
 %%CLANG%%bin/clang-rename%%COMMAND_SUFFIX%%
 %%CLANG%%bin/clang-repl%%COMMAND_SUFFIX%%
 %%CLANG%%bin/clang-scan-deps%%COMMAND_SUFFIX%%
+%%CLANG%%bin/clang-tblgen%%COMMAND_SUFFIX%%
 %%CLANG%%bin/diagtool%%COMMAND_SUFFIX%%
 %%CLANG%%bin/hmaptool%%COMMAND_SUFFIX%%
 %%CLANG%%bin/intercept-build%%COMMAND_SUFFIX%%

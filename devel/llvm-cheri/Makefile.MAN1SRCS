@@ -11,6 +11,7 @@ LLVM_MAN1SRCS= \
 	llvm-cov.1 \
 	llvm-cxxfilt.1 \
 	llvm-cxxmap.1 \
+	llvm-debuginfo-analyzer.1 \
 	llvm-diff.1 \
 	llvm-dis.1 \
 	llvm-dwarfdump.1 \
@@ -24,10 +25,12 @@ LLVM_MAN1SRCS= \
 	llvm-link.1 \
 	llvm-lipo.1 \
 	llvm-locstats.1 \
+	llvm-mc.1 \
 	llvm-mca.1 \
 	llvm-nm.1 \
 	llvm-objcopy.1 \
 	llvm-objdump.1 \
+	llvm-opt-report.1 \
 	llvm-otool.1 \
 	llvm-pdbutil.1 \
 	llvm-profdata.1 \
@@ -35,7 +38,9 @@ LLVM_MAN1SRCS= \
 	llvm-ranlib.1 \
 	llvm-readelf.1 \
 	llvm-readobj.1 \
+	llvm-reduce.1 \
 	llvm-remark-size-diff.1 \
+	llvm-remarkutil.1 \
 	llvm-size.1 \
 	llvm-stress.1 \
 	llvm-strings.1 \

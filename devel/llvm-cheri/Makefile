@@ -1,6 +1,6 @@
 PORTNAME=	llvm
 PORTVERSION=	${LLVM_MAJOR}.0.d${SNAPDATE}
-PORTREVISION=	6
+PORTREVISION=	0
 CATEGORIES=	devel lang
 PKGNAMESUFFIX=	${LLVM_SUFFIX}
 
@@ -8,7 +8,7 @@ MAINTAINER=	brooks@FreeBSD.org
 COMMENT?=	LLVM and Clang with support for the CHERI architecture
 WWW?=		https://cheri-cpu.org
 
-.if !defined(LLVM_SUFFIX) || ${LLVM_SUFFIX} == "-morello"
+.if defined(LLVM_SUFFIX) && ${LLVM_SUFFIX:M-morello*}
 # XXX: really (LLVM_MAJOR < 16), but it's not defined here
 LICENSE_FILE_BSD3CLAUSE=${LICENSE_DIR}/utils/unittest/googletest/LICENSE.TXT
 .endif

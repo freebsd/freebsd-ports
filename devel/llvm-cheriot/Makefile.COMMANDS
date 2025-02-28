@@ -1,12 +1,7 @@
 .include "${.CURDIR}/../llvm-cheri/Makefile.COMMANDS"
 
 # Work around version skew with llvm-cheri/llvm-morello
-CLANG_COMMANDS+= \
-	clang-tblgen
-CLANG_COMMANDS:=${CLANG_COMMANDS:Nclang-nvlink-wrapper:Nclang-offload-wrapper}
 LLVM_COMMANDS+= \
-	amdgpu-arch \
-	llvm-debuginfo-analyzer \
-	llvm-remarkutil \
-	nvptx-arch
-LLVM_COMMANDS:=	${LLVM_COMMANDS:Nsplit-file}
+	llvm-readtapi
+
+LLVM_COMMANDS:=	${LLVM_COMMANDS:Nllvm-remark-size-diff:Nllvm-tapi-diff:Nsplit-file}

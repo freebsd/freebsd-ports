@@ -138,6 +138,7 @@ if [ -z "$CHERIBSD_VERSION" ]; then
 fi
 
 arch_cflags=
+arch_ldflags=
 arch_objdump_flags=
 
 # If we're targeting CheriBSD, assume we want to produce CHERI binaries
@@ -150,6 +151,7 @@ if [ $CHERIBSD_VERSION -gt 0 ]; then
 		if run_tool llvm-readelf -h ${_SYSROOT}/lib/libc.so.7 | grep "Flags:.*purecap" >/dev/null; then
 			tls_flags=
 			vararg_flags=
+			codeptr_flags=
 			if [ "$CHERIBSD_VERSION" -le 20220314 ]; then
 				tls_flags="-femulated-tls"
 			elif [ "$CHERIBSD_VERSION" -le 20220828 ]; then
@@ -159,12 +161,15 @@ if [ $CHERIBSD_VERSION -gt 0 ]; then
 			else
 				vararg_flags="-Xclang -morello-vararg=new -Xclang -morello-bounded-memargs"
 			fi
-
+			if [ "$CHERIBSD_VERSION" -gt 20250127 ]; then
+				codeptr_flags=-cheri-codeptr-relocs
+			fi
 			# Some compiler invocations (e.g., "clang -v") don't
 			# consume -Xclang arguments which can lead to unused
 			# argument warnings so we supress them with
 			# --start/end-no-unused-arguments.
-			arch_cflags="-march=morello -mabi=purecap --start-no-unused-arguments $tls_flags $vararg_flags --end-no-unused-arguments"
+			arch_cflags="-march=morello -mabi=purecap --start-no-unused-arguments $tls_flags $vararg_flags $codeptr_flags --end-no-unused-arguments"
+			arch_ldflags="$codeptr_flags"
 			arch_objdump_flags="--mattr=+morello"
 		else
 			vararg_flags=
@@ -192,9 +197,7 @@ clang|clang++|clang-cpp)
 	toolflags=$arch_cflags
 	;;
 ld.lld|ld64.lld)
-	# no flags should be required as ld can see what it's doing from
-	# the binaries
-	toolflags=
+	toolflags=$arch_ldflags
 	;;
 objdump)
 	toolflags=$arch_objdump_flags

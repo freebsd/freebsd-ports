@@ -1,4 +1,5 @@
 LLVM_COMMANDS=	\
+		amdgpu-arch \
 		bugpoint \
 		dsymutil \
 		llc \
@@ -16,6 +17,7 @@ LLVM_COMMANDS=	\
 		llvm-cxxdump \
 		llvm-cxxfilt \
 		llvm-cxxmap \
+		llvm-debuginfo-analyzer \
 		llvm-debuginfod \
 		llvm-debuginfod-find \
 		llvm-diff \
@@ -52,6 +54,7 @@ LLVM_COMMANDS=	\
 		llvm-readobj \
 		llvm-reduce \
 		llvm-remark-size-diff \
+		llvm-remarkutil \
 		llvm-rtdyld \
 		llvm-sim \
 		llvm-size \
@@ -66,6 +69,7 @@ LLVM_COMMANDS=	\
 		llvm-undname \
 		llvm-windres \
 		llvm-xray \
+		nvptx-arch \
 		opt \
 		sancov \
 		split-file
@@ -80,13 +84,12 @@ CLANG_COMMANDS=	\
 		clang-extdef-mapping \
 		clang-format \
 		clang-linker-wrapper \
-		clang-nvlink-wrapper \
 		clang-offload-bundler \
 		clang-offload-packager \
-		clang-offload-wrapper \
 		clang-rename \
 		clang-repl \
 		clang-scan-deps \
+		clang-tblgen \
 		diagtool \
 		hmaptool \
 		intercept-build \
