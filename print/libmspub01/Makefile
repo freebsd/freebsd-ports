@@ -1,5 +1,5 @@
 PORTNAME=	libmspub
-DISTVERSION=	0.1.4
+PORTVERSION=	0.1.4
 PORTREVISION=	25
 CATEGORIES=	print graphics devel
 MASTER_SITES=	LODEV/${PORTNAME}
@@ -16,13 +16,11 @@ BUILD_DEPENDS=	${LOCALBASE}/include/boost/cstdint.hpp:devel/boost-libs
 LIB_DEPENDS=	libicui18n.so:devel/icu \
 		librevenge-0.0.so:textproc/librevenge
 
-USES=		autoreconf compiler:c++11-lib libtool localbase pathfix \
-		pkgconfig tar:xz
-USE_LDCONFIG=	yes
-
-GNU_CONFIGURE=	yes
-INSTALL_TARGET=	install-strip
+USES=		compiler:c++11-lib libtool localbase pathfix pkgconfig tar:xz
 
 CONFIGURE_ARGS=	--disable-werror --without-docs
+GNU_CONFIGURE=	yes
+INSTALL_TARGET=	install-strip
+USE_LDCONFIG=	yes
 
 .include <bsd.port.mk>
