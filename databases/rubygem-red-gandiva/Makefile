@@ -1,6 +1,5 @@
 PORTNAME=	red-gandiva
-PORTVERSION=	18.0.0
-PORTREVISION=	1
+PORTVERSION=	19.0.0
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 
@@ -12,11 +11,7 @@ WWW=		https://arrow.apache.org/ \
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-BUILD_DEPENDS=	arrow>=${PORTVERSION}:databases/arrow \
-		arrow-glib>=${PORTVERSION}:databases/arrow-glib \
-		rubygem-rake>=0:devel/rubygem-rake
-LIB_DEPENDS=	libarrow.so:databases/arrow \
-		libarrow-glib.so:databases/arrow-glib
+BUILD_DEPENDS=	rubygem-rake>=0:devel/rubygem-rake
 RUN_DEPENDS=	rubygem-red-arrow>=${PORTVERSION}<${PORTVERSION}_99:databases/rubygem-red-arrow
 
 USES=		gem
