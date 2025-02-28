@@ -12,6 +12,9 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 BROKEN_i386=	undefined reference to `__atomic_load' # '
+.if !exists(/usr/include/omp.h)
+BROKEN=		requires OpenMP support that is missing on this architecture
+.endif
 
 BUILD_DEPENDS=	nlohmann-json>0:devel/nlohmann-json \
 		pybind11>0:devel/pybind11
