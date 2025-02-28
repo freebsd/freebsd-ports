@@ -30,12 +30,10 @@ USE_PYTHON=	autoplist concurrent pep517
 
 NO_ARCH=	yes
 
-OPTIONS_DEFINE=	CONSUL POSTGRESQL REDIS
-CONSUL_DESC=	Consul.io support
+OPTIONS_DEFINE=	POSTGRESQL REDIS
 POSTGRESQL_DESC=PostgreSQL database support
 REDIS_DESC=	Redis support
 
-CONSUL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}python-consul2>=0.0.16:sysutils/py-python-consul2@${PY_FLAVOR}
 POSTGRESQL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}psycopg2>=2.5:databases/py-psycopg2@${PY_FLAVOR}
 REDIS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}packaging>=20.4.0:devel/py-packaging@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}redis>=4.0.0:databases/py-redis@${PY_FLAVOR}
