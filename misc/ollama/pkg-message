@@ -22,9 +22,9 @@ When the model fails to load into your GPU, please use
 the provided ollama-limit-gpu-layers script to create
 model flavors with different num_gpu parameters.
 
-ollama uses many gigbytes of disk space in your home directory,
+ollama uses many gigabytes of disk space in your home directory,
 because advanced AI models are often very large.
-Pease symlink ~/.ollama to a large disk if needed.
+Please symlink ~/.ollama to a large disk if needed.
 
 EOM
 }
