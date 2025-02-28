@@ -1155,6 +1155,7 @@
     SUBDIR += rubygem-chef-telemetry
     SUBDIR += rubygem-chef-utils
     SUBDIR += rubygem-chef-vault
+    SUBDIR += rubygem-chef-winrm
     SUBDIR += rubygem-chef-zero
     SUBDIR += rubygem-choria-mcorpc-support
     SUBDIR += rubygem-facter

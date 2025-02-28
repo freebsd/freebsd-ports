@@ -1,0 +1,11 @@
+--- chef-winrm.gemspec.orig	2025-02-20 19:35:49 UTC
++++ chef-winrm.gemspec
+@@ -30,7 +30,7 @@ Gem::Specification.new do |s|
+   s.add_runtime_dependency(%q<gssapi>.freeze, ["~> 1.2".freeze])
+   s.add_runtime_dependency(%q<httpclient>.freeze, ["~> 2.2".freeze, ">= 2.2.0.2".freeze])
+   s.add_runtime_dependency(%q<logging>.freeze, [">= 1.6.1".freeze, "< 3.0".freeze])
+-  s.add_runtime_dependency(%q<nori>.freeze, ["= 2.7.0".freeze])
++  s.add_runtime_dependency(%q<nori>.freeze, [">= 2.7.0".freeze])
+   s.add_runtime_dependency(%q<rexml>.freeze, ["~> 3.3".freeze])
+   s.add_development_dependency(%q<pry>.freeze, [">= 0".freeze])
+   s.add_development_dependency(%q<rake>.freeze, [">= 10.3".freeze, "< 13".freeze])
