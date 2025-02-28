@@ -4170,3 +4170,4 @@ net/drive||2025-02-28|Remove expired port
 print/py-pypdf3||2025-02-28|Remove expired port
 sysutils/py-python-consul2||2025-02-28|Remove expired port
 textproc/py-pytoml||2025-02-28|Remove expired port
+textproc/py-trans||2025-02-28|Remove expired port

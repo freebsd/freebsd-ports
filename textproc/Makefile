@@ -1688,7 +1688,6 @@
     SUBDIR += py-toronado
     SUBDIR += py-towncrier
     SUBDIR += py-towncrier23
-    SUBDIR += py-trans
     SUBDIR += py-translationstring
     SUBDIR += py-transpopy
     SUBDIR += py-ttp
