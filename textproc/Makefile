@@ -1805,6 +1805,7 @@
     SUBDIR += rubygem-case_transform61
     SUBDIR += rubygem-character_set
     SUBDIR += rubygem-charlock_holmes
+    SUBDIR += rubygem-chef-gyoku
     SUBDIR += rubygem-chewy
     SUBDIR += rubygem-citrus
     SUBDIR += rubygem-cld3
