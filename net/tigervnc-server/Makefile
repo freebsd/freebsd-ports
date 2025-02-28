@@ -1,5 +1,4 @@
 PKGNAMESUFFIX=	-server
-PORTREVISION=	1
 
 COMMENT=	TigerVNC Server
 WWW=		https://tigervnc.org/
