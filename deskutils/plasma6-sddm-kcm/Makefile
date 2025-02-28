@@ -1,5 +1,6 @@
 PORTNAME=	sddm-kcm
 DISTVERSION=	${KDE_PLASMA_VERSION}
+PORTREVISION=	1
 CATEGORIES=	deskutils kde kde-plasma
 
 MAINTAINER=	kde@FreeBSD.org
@@ -11,5 +12,8 @@ USE_KDE=	archive auth colorscheme config configwidgets coreaddons i18n \
 		ecm:build
 USE_GL=		gl opengl
 USE_QT=		base declarative
+
+CMAKE_ARGS=	-DSDDM_CONFIG_FILE:FILEPATH=${LOCALBASE}/etc/sddm.conf \
+		-DSDDM_CONFIG_DIR:PATH=${LOCALBASE}/etc/sddm.conf.d
 
 .include <bsd.port.mk>
