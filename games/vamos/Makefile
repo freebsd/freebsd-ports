@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BROKEN=		fails to build with boost-1.85+
 DEPRECATED=	Unmaintained in tree for years, fails to build with newer versions of boost
-EXPIRATION_DATE=2025-02-28
+EXPIRATION_DATE=2025-03-31
 
 LIB_DEPENDS=	libboost_date_time.so:devel/boost-libs \
 		libpng.so:graphics/png

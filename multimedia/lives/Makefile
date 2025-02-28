@@ -16,7 +16,7 @@ LICENSE_FILE_LGPL3+ =	${WRKSRC}/COPYING.LGPL
 
 BROKEN=		fails to build with FFmpeg 6
 DEPRECATED=	Marked broken in 2023, sunset port
-EXPIRATION_DATE=2025-02-28
+EXPIRATION_DATE=2025-03-31
 
 BUILD_DEPENDS=	${LOCALBASE}/include/linux/input.h:devel/evdev-proto \
 		analyseplugin:audio/ladspa
