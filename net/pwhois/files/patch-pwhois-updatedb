@@ -1,6 +1,28 @@
---- pwhois-updatedb.orig	2013-10-08 18:59:42 UTC
+--- pwhois-updatedb.orig	2025-02-28 17:42:32 UTC
 +++ pwhois-updatedb
-@@ -975,7 +975,7 @@ sub connect
+@@ -9,7 +9,8 @@ use Getopt::Long;
+ use strict;
+ use DBI;
+ use Getopt::Long;
+-use POSIX qw(strftime tmpnam O_RDWR O_CREAT O_EXCL);
++use POSIX qw(strftime O_RDWR O_CREAT O_EXCL);
++use File::Temp qw/ :POSIX /;
+ use Fcntl qw(:DEFAULT :flock);
+ use Log::Dispatch;
+ use Log::Dispatch::Screen;
+@@ -112,9 +113,9 @@ my $current_registry = -1;
+ my $current_registry = -1;
+ 
+ # DO NOT MODIFY UNLESS YOU KNOW WHAT YOU ARE DOING: EDIT THE CONFIG FILE IF POSSIBLE
+-# See: /etc/pwhois/pwhoisd.conf or -c option to specify a different config file
++# See: /usr/local/etc/pwhois/pwhoisd.conf or -c option to specify a different config file
+ 
+-my $DEFAULT_CONFIG = '/etc/pwhois/pwhoisd.conf';
++my $DEFAULT_CONFIG = '/usr/local/etc/pwhois/pwhoisd.conf';
+ my $DEFAULT_PIDFILE='/var/run/pwhoisd.pid';
+ my $DEFAULT_DATABASE_TYPE = 'mysql';
+ my $DEFAULT_DATABASE_SERVER = '';
+@@ -989,7 +990,7 @@ sub connect
  	my $passwd = shift;
  
  
@@ -9,7 +31,7 @@
  				       telnetmode=>0,
  				       cmd_remove_mode => 1
  				       );
-@@ -3133,7 +3133,7 @@ sub readMRTdump
+@@ -3156,7 +3157,7 @@ sub readMRTdump
  
      @st = stat($fd);
  
@@ -18,7 +40,7 @@
      {
          $errcode = -2;
      }
-@@ -3763,7 +3763,7 @@ sub parseOrganisationObject
+@@ -3795,7 +3796,7 @@ sub parseOrganisationObject
  
          #printMap(%obj);
  
@@ -27,7 +49,7 @@
  
          $country = "" if(!defined($country));
          $country = substr(normalizeValue($country), 0, $fields_length{'organization.country'});
-@@ -4035,7 +4035,7 @@ sub parsePersonObject
+@@ -4072,7 +4073,7 @@ sub parsePersonObject
          #printMap(%obj);
  
          $source = 0 if(!defined($source));
@@ -35,4 +57,13 @@
 +        return -$numlines if(!(defined($person) && (@addrs) && defined($officePhone) &&
                                 defined($mailbox) && defined($pocHandle) && defined($source)));
  
+         for($j1 = 0; $j1 < 6; $j1++){
+@@ -4156,7 +4157,7 @@ sub parseRoleObject
+         $source = 0 if(!defined($source));
+         $mailbox = $obj{'notify'} if (!defined($mailbox) || "unread@" eq substr($mailbox, 0, 7));
+         $mailbox = $obj{'abuse-mailbox'} if (!defined($mailbox) || "unread@" eq substr($mailbox, 0, 7));
+-        return -$numlines if(!(defined($role) && defined(@addrs) &&
++        return -$numlines if(!(defined($role) && (@addrs) &&
+ 			defined($mailbox) && defined($pocHandle) && defined($source)));
+         ($mailbox) = $mailbox =~ m/^\s*([^\s]+)/;
          for($j1 = 0; $j1 < 6; $j1++){
