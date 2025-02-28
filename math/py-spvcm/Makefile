@@ -12,7 +12,7 @@ WWW=		https://github.com/pysal/spvcm
 LICENSE=	BSD3CLAUSE
 
 DEPRECATED=	Upstream repository has been archived on Jul 9, 2024
-EXPIRATION_DATE=2025-02-28
+EXPIRATION_DATE=2025-04-30
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
