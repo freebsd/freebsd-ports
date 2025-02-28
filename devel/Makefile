@@ -6672,7 +6672,6 @@
     SUBDIR += rubygem-aws-sdk-internetmonitor
     SUBDIR += rubygem-aws-sdk-invoicing
     SUBDIR += rubygem-aws-sdk-iot
-    SUBDIR += rubygem-aws-sdk-iot1clickprojects
     SUBDIR += rubygem-aws-sdk-iotanalytics
     SUBDIR += rubygem-aws-sdk-iotdataplane
     SUBDIR += rubygem-aws-sdk-iotdeviceadvisor

@@ -4174,3 +4174,4 @@ textproc/py-trans||2025-02-28|Remove expired port
 www/py-instabot||2025-02-28|Remove expired port
 www/py-jsonfield||2025-02-28|Remove expired port
 devel/rubygem-aws-sdk-iot1clickdevicesservice||2025-02-28|Remove expired port
+devel/rubygem-aws-sdk-iot1clickprojects||2025-02-28|Remove expired port
