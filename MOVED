@@ -4166,3 +4166,4 @@ textproc/uim-gtk|textproc/uim-gtk2|2025-02-23|Rename with versioned suffix
 x11-toolkits/scenefx|x11-toolkits/scenefx02|2025-02-25|Renamed to match versioned API
 www/kdsoap@qt5||2025-02-26|Qt5 flavor is no longer needed
 www/kdsoap@qt6|www/kdsoap|2025-02-26|Unflavorize; only Qt6 support is needed
+net/drive||2025-02-28|Remove expired port
