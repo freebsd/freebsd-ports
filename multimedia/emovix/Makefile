@@ -11,6 +11,7 @@ WWW=		https://movix.sourceforge.net/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		Fails to generate ISO image
 DEPRECATED=	Abandonware, uses over a decade year old software and no support for anything recent
 EXPIRATION_DATE=2025-03-31
 
