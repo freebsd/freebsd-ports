@@ -219,7 +219,6 @@
     SUBDIR += gitlab-workhorse
     SUBDIR += glassfish
     SUBDIR += glassfish4
-    SUBDIR += glewlwyd
     SUBDIR += glpi
     SUBDIR += gnome-user-share
     SUBDIR += go-www
