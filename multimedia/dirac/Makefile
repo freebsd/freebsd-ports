@@ -8,6 +8,9 @@ MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Open source video codec from the BBC
 WWW=		https://dirac.sourceforge.net/
 
+DEPRECATED=	Legacy video codec superseded by multiple formats. Files can be decoded using FFmpeg
+EXPIRATION_DATE=2025-03-31
+
 GNU_CONFIGURE=	yes
 USES=		gmake libtool pathfix shebangfix
 SHEBANG_FILES=	${WRKSRC}/tests/create_dirac_testfile.pl
