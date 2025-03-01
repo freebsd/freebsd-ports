@@ -4182,3 +4182,4 @@ graphics/peps||2025-03-01|Has expired: Ancient port, upstream gone
 www/glewlwyd||2025-03-01|Has expired: Upstream repo archived on Oct 20, 2024
 databases/tarantool2||2025-03-01|Has expired
 java/cos||2025-03-01|Has expired: Upstream seems gone since 2024-08-22
+sysutils/pass-secrets||2025-03-01|Has expired: Listed as BROKEN and unmaintained for months
