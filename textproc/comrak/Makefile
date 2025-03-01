@@ -1,7 +1,6 @@
 PORTNAME=	comrak
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.35.0
-PORTREVISION=	1
+DISTVERSION=	0.36.0
 CATEGORIES=	textproc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -51,6 +50,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		fnv-1.0.7 \
 		hashbrown-0.12.3 \
 		heck-0.4.1 \
+		heck-0.5.0 \
 		hermit-abi-0.3.9 \
 		ident_case-1.0.1 \
 		indexmap-1.9.2 \
@@ -99,6 +99,8 @@ CARGO_CRATES=	adler-1.0.2 \
 		slug-0.1.4 \
 		strsim-0.10.0 \
 		strsim-0.11.1 \
+		strum-0.26.3 \
+		strum_macros-0.26.4 \
 		syn-1.0.107 \
 		syn-2.0.87 \
 		syntect-5.0.0 \
