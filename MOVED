@@ -4181,3 +4181,4 @@ graphics/xpeps||2025-03-01|Has expired: Depends on expired graphics/peps
 graphics/peps||2025-03-01|Has expired: Ancient port, upstream gone
 www/glewlwyd||2025-03-01|Has expired: Upstream repo archived on Oct 20, 2024
 databases/tarantool2||2025-03-01|Has expired
+java/cos||2025-03-01|Has expired: Upstream seems gone since 2024-08-22
