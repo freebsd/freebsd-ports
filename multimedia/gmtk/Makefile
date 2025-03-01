@@ -10,6 +10,9 @@ WWW=		http://code.google.com/p/gmtk/
 
 LICENSE=	GPLv2
 
+DEPRECATED=	Support library for deprecated port multimedia/gnome-mplayer
+EXPIRATION_DATE=2025-03-31
+
 BUILD_DEPENDS=	p5-XML-Parser>0:textproc/p5-XML-Parser
 
 USES=		gettext gmake gnome libtool pathfix perl5 pkgconfig xorg
