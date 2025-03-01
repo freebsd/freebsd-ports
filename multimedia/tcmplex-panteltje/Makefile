@@ -11,6 +11,10 @@ WWW=		http://panteltje.com/panteltje/dvd/
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN=		Unfetchable
+DEPRECATED=	Abandonware, upstream is gone and no consumers in tree
+EXPIRATION_DATE=2025-03-31
+
 USES=		tar:tgz
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}"
 ALL_TARGET=	a.out
