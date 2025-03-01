@@ -11,7 +11,7 @@ WWW=		http://www.litech.org/spook/
 LICENSE=	GPLv2
 
 DEPRECATED=	Abandonware and obsolete, consider using multimedia/ffmpeg or multimedia/vlc
-EXPIRATION_DATE=2023-03-31
+EXPIRATION_DATE=2025-03-31
 
 # TODO: FireWire IIDC support (needs libraw1394, libdc1394).
 # TODO: Test with Luigi-ified V4L input drivers e.g. pwc, etc.
