@@ -2,8 +2,7 @@ PORTNAME=	vlock
 PORTVERSION=	2.2.3
 PORTREVISION=	5
 CATEGORIES=	security
-MASTER_SITES=	http://cthulhu.c3d2.de/~toidinamai/vlock/archive/ \
-		LOCAL/martymac
+MASTER_SITES=	LOCAL/martymac
 
 MAINTAINER=	martymac@FreeBSD.org
 COMMENT=	Locks a terminal
@@ -15,26 +14,21 @@ HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-plugins --enable-pam \
 		--prefix=${PREFIX} \
 		--mandir=${PREFIX}/share/man \
-		--with-modules="${VLOCKMODULES}" \
+		--with-modules="all.so new.so" \
 		--with-scripts="${VLOCKSCRIPTS}" \
-		VLOCK_GROUP="nobody" \
-		EXTRA_CFLAGS="-I${LOCALBASE}/include" \
-		EXTRA_LDFLAGS="-L${LOCALBASE}/lib"
+		VLOCK_GROUP="nobody"
 USES=	gmake
 USE_CSTD=	gnu99
 
-OPTIONS_DEFINE=	ROOTPWD VLOCKSCRIPTS CACASAVER DOCS
+OPTIONS_DEFINE=	ROOTPWD VLOCKSCRIPTS DOCS
 OPTIONS_DEFAULT=	ROOTPWD
 OPTIONS_SUB=	yes
 ROOTPWD_DESC=	Enable unlock using root password
 ROOTPWD_CONFIGURE_ENABLE=	root-password
 VLOCKSCRIPTS_DESC=	Install sample hook scripts
-CACASAVER_DESC=	Enable libcaca screensaver
-CACASAVER_LIB_DEPENDS=	libcaca.so:graphics/libcaca
 
 # Default scripts/modules
 VLOCKSCRIPTS=
-VLOCKMODULES=	all.so new.so
 
 # Vlock special group
 VLOCK_GRP=	vlock
@@ -47,10 +41,6 @@ PORTDOCS=	ChangeLog PLUGINS README README.X11 SECURITY TODO
 
 .if ${PORT_OPTIONS:MVLOCKSCRIPTS}
 VLOCKSCRIPTS+=	amarok.sh example_script.sh mplayer.sh
-.endif
-
-.if ${PORT_OPTIONS:MCACASAVER}
-VLOCKMODULES+=	caca.so
 .endif
 
 post-install:
