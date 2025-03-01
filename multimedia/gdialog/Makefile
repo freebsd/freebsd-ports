@@ -11,6 +11,9 @@ WWW=		https://sourceforge.net/projects/gdialog-x/
 
 LICENSE=	GPLv2
 
+DEPRECATED=	Support for a 20 year old obsolete STB that only supports DVB-T(1) and MPEG-2
+EXPIRATION_DATE=2025-03-31
+
 BUILD_DEPENDS=	projectx>=0.90.4.00:multimedia/projectx
 RUN_DEPENDS=	projectx>=0.90.4.00:multimedia/projectx
 
