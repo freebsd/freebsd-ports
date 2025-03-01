@@ -1,7 +1,6 @@
 PORTNAME=	neocmakelsp
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.8.19
-PORTREVISION=	1
+DISTVERSION=	0.8.21
 CATEGORIES=	lang
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -11,11 +10,14 @@ WWW=		https://github.com/Decodetalkers/neocmakelsp
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BUILD_DEPENDS=	rust-nightly>0:lang/rust-nightly # feature `edition2024` is required
+
 USES=		cargo
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	Decodetalkers
 
+CARGO_BUILDDEP=	no
 CARGO_CRATES=	addr2line-0.24.2 \
 		adler2-2.0.0 \
 		aho-corasick-1.1.3 \
@@ -24,7 +26,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		anstyle-parse-0.2.6 \
 		anstyle-query-1.1.2 \
 		anstyle-wincon-3.0.7 \
-		anyhow-1.0.95 \
+		anyhow-1.0.96 \
 		async-trait-0.1.86 \
 		auto_impl-1.2.1 \
 		autocfg-1.4.0 \
@@ -35,10 +37,10 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		bytes-1.9.0 \
 		cc-1.2.11 \
 		cfg-if-1.0.0 \
-		clap-4.5.27 \
-		clap_builder-4.5.27 \
-		clap_complete-4.5.44 \
-		clap_derive-4.5.24 \
+		clap-4.5.30 \
+		clap_builder-4.5.30 \
+		clap_complete-4.5.45 \
+		clap_derive-4.5.28 \
 		clap_lex-0.7.4 \
 		cli-table-0.4.9 \
 		cli-table-derive-0.4.6 \
@@ -144,7 +146,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		syn-2.0.96 \
 		sync_wrapper-1.0.2 \
 		synstructure-0.13.1 \
-		tempfile-3.16.0 \
+		tempfile-3.17.1 \
 		termcolor-1.4.1 \
 		thread_local-1.1.8 \
 		tiny-keccak-2.0.2 \
@@ -152,7 +154,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		tokio-1.43.0 \
 		tokio-macros-2.5.0 \
 		tokio-util-0.7.13 \
-		toml-0.8.19 \
+		toml-0.8.20 \
 		toml_datetime-0.6.8 \
 		toml_edit-0.22.23 \
 		tower-0.5.2 \
@@ -165,7 +167,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		tracing-core-0.1.33 \
 		tracing-log-0.2.0 \
 		tracing-subscriber-0.3.19 \
-		tree-sitter-0.25.0 \
+		tree-sitter-0.25.2 \
 		tree-sitter-cmake-0.5.0 \
 		tree-sitter-language-0.1.4 \
 		treesitter_kind_collector-0.2.0 \
