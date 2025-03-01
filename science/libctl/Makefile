@@ -1,6 +1,6 @@
 PORTNAME=	libctl
 DISTVERSION=	4.5.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	science math
 MASTER_SITES=	https://github.com/NanoComp/libctl/releases/download/v${DISTVERSION}/
 
