@@ -1,12 +1,17 @@
+%%GUILE_SITE%%/nlopt.scm
 include/nlopt.h
 include/nlopt.hpp
 lib/cmake/nlopt/NLoptConfig.cmake
 lib/cmake/nlopt/NLoptConfigVersion.cmake
 lib/cmake/nlopt/NLoptLibraryDepends-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/nlopt/NLoptLibraryDepends.cmake
+lib/guile/%%GUILE_VER%%/extensions/nlopt_guile.so
 lib/libnlopt.so
 lib/libnlopt.so.1
 lib/libnlopt.so.1.0.0
+%%PYTHON_SITELIBDIR%%/_nlopt.so
+%%PYTHON_SITELIBDIR%%/nlopt-2.10.0.dist-info/METADATA
+%%PYTHON_SITELIBDIR%%/nlopt.py
 libdata/pkgconfig/nlopt.pc
 share/man/man3/nlopt.3.gz
 share/man/man3/nlopt_minimize.3.gz
