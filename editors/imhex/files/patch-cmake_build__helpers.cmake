@@ -1,4 +1,4 @@
---- cmake/build_helpers.cmake.orig	2025-02-18 09:47:51 UTC
+--- cmake/build_helpers.cmake.orig	2025-02-26 18:39:54 UTC
 +++ cmake/build_helpers.cmake
 @@ -570,8 +570,12 @@ function(downloadImHexPatternsFiles dest)
  
@@ -28,19 +28,19 @@
          endforeach ()
      endif ()
  
-@@ -925,11 +933,11 @@ function(generateSDKDirectory)
+@@ -928,13 +936,13 @@ function(generateSDKDirectory)
      install(DIRECTORY ${CMAKE_SOURCE_DIR}/cmake/sdk/ DESTINATION "${SDK_PATH}")
      install(TARGETS libimhex ARCHIVE DESTINATION "${SDK_PATH}/lib")
  
--    install(DIRECTORY ${CMAKE_SOURCE_DIR}/plugins/ui DESTINATION "${SDK_PATH}/lib" PATTERN "**/source/*" EXCLUDE)
--    install(TARGETS ui ARCHIVE DESTINATION "${SDK_PATH}/lib")
+-    install(DIRECTORY ${CMAKE_SOURCE_DIR}/plugins/ui/include DESTINATION "${SDK_PATH}/lib/ui/include")
 +    install(DIRECTORY ${CMAKE_SOURCE_DIR}/plugins/ui/include DESTINATION "${SDK_PATH}/lib/ui/")
-+    install(FILES ${CMAKE_SOURCE_DIR}/plugins/ui/CMakeLists.txt DESTINATION "${SDK_PATH}/lib/ui/")
+     install(FILES ${CMAKE_SOURCE_DIR}/plugins/ui/CMakeLists.txt DESTINATION "${SDK_PATH}/lib/ui/")
+     if (WIN32)
+         install(TARGETS ui ARCHIVE DESTINATION "${SDK_PATH}/lib")
+     endif()
  
--    install(DIRECTORY ${CMAKE_SOURCE_DIR}/plugins/fonts DESTINATION "${SDK_PATH}/lib" PATTERN "**/source/*" EXCLUDE)
--    install(TARGETS fonts ARCHIVE DESTINATION "${SDK_PATH}/lib")
+-    install(DIRECTORY ${CMAKE_SOURCE_DIR}/plugins/fonts/include DESTINATION "${SDK_PATH}/lib/fonts/include")
 +    install(DIRECTORY ${CMAKE_SOURCE_DIR}/plugins/fonts/include DESTINATION "${SDK_PATH}/lib/fonts/")
-+    install(FILES ${CMAKE_SOURCE_DIR}/plugins/fonts/CMakeLists.txt DESTINATION "${SDK_PATH}/lib/fonts/")
- endfunction()
- 
- function(addIncludesFromLibrary target library)
+     install(FILES ${CMAKE_SOURCE_DIR}/plugins/fonts/CMakeLists.txt DESTINATION "${SDK_PATH}/lib/fonts/")
+     if (WIN32)
+         install(TARGETS fonts ARCHIVE DESTINATION "${SDK_PATH}/lib")
