@@ -1,5 +1,5 @@
 PORTNAME=	mkdocs-autorefs
-DISTVERSION=	1.3.0
+DISTVERSION=	1.4.0
 CATEGORIES=	textproc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -21,5 +21,9 @@ USES=		python:3.9+
 USE_PYTHON=	autoplist pep517
 
 NO_ARCH=	yes
+
+# Prevent packaging of the Mypy cache folder
+post-extract:
+	@${RM} -r ${WRKSRC}/src/mkdocs_autorefs/.mypy_cache
 
 .include <bsd.port.mk>
