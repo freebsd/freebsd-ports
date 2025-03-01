@@ -8,6 +8,9 @@ MAINTAINER=	pea@raveland.org
 COMMENT=	PostgreSQL log analyzer
 WWW=		http://pgfouine.projects.postgresql.org/
 
+DEPRECATED=	Upstream disapeared and distfile is no more available
+EXPIRATION_DATE=2025-03-31
+
 USES+=		php
 
 NO_BUILD=	yes
