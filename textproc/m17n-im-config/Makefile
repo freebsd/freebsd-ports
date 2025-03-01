@@ -9,6 +9,9 @@ MAINTAINER=	nikola.lecic@anthesphoria.net
 COMMENT=	GUI for per-user configuration of m17n-lib input methods
 WWW=		https://www.m17n.org
 
+DEPRECATED=	Upstream disapeared and distfile is no more available
+EXPIRATION_DATE=2025-03-31
+
 LIB_DEPENDS=	libm17n.so:devel/m17n-lib
 
 MAKE_JOBS_UNSAFE=	yes
