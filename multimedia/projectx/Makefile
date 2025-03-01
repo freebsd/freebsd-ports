@@ -12,6 +12,9 @@ WWW=		https://sourceforge.net/projects/project-x/
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/Copying
 
+DEPRECATED=	Abandonware, last release in 2011 and dependens on legacy version of Java. Consider using multimedia/ffmpeg or multimedia/vlc
+EXPIRATION_DATE=2025-03-31
+
 USES=		java zip:infozip
 
 SUB_FILES=	project-x.sh
