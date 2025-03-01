@@ -6115,6 +6115,7 @@
     SUBDIR += py-urwidgets
     SUBDIR += py-urwidtrees
     SUBDIR += py-us
+    SUBDIR += py-usbtmc
     SUBDIR += py-user_agents
     SUBDIR += py-userpath
     SUBDIR += py-usort
