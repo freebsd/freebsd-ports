@@ -4175,3 +4175,4 @@ www/py-instabot||2025-02-28|Remove expired port
 www/py-jsonfield||2025-02-28|Remove expired port
 devel/rubygem-aws-sdk-iot1clickdevicesservice||2025-02-28|Remove expired port
 devel/rubygem-aws-sdk-iot1clickprojects||2025-02-28|Remove expired port
+databases/postgis31||2025-03-01|Has expired: Please use newer versions
