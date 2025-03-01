@@ -1,5 +1,6 @@
 PORTNAME=	gf2 # name of the executable that is built, while the repo is called gf
 DISTVERSION=	g20250204
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	me@pacopascal.com
@@ -12,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libfreetype.so:print/freetype2
 RUN_DEPENDS=	${LOCALBASE}/bin/gdb:devel/gdb
 
-USES=		xorg
+USES=		localbase:ldflags xorg
 USE_XORG=	x11
 
 USE_GITHUB=	yes
@@ -20,10 +21,16 @@ GH_ACCOUNT=	nakst
 GH_PROJECT=	gf
 GH_TAGNAME=	9c16864
 
+CXXFLAGS+=	-DUI_FREETYPE -I${LOCALBASE}/include/freetype2 \
+		-Wall -Wextra -Wno-unused-parameter -Wno-unused-result \
+		-Wno-missing-field-initializers -Wno-format-truncation
+CXXFLAGS_amd64+=	-DUI_SSE2
+LDFLAGS+=	-lX11 -pthread -lfreetype
+
 PLIST_FILES=	bin/gf2
 
 do-build:
-	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${SH} build_freebsd.sh
+	(cd ${WRKSRC} && ${SETENVI} ${CXX} ${PORTNAME}.cpp -o ${PORTNAME} ${CXXFLAGS} ${LDFLAGS})
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/gf2 ${STAGEDIR}${PREFIX}/bin
