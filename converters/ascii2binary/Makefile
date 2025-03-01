@@ -4,7 +4,7 @@ PORTREVISION=	2
 CATEGORIES=	converters
 MASTER_SITES=	http://billposer.org/Software/Downloads/
 
-MAINTAINER=	thierry@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Convert between textual representations of numbers and binary
 WWW=		https://billposer.org/Software/a2b.html
 
