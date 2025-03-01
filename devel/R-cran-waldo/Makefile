@@ -20,10 +20,10 @@ RUN_DEPENDS=	R-cran-cli>0:devel/R-cran-cli \
 TEST_DEPENDS=	R-cran-bit64>0:devel/R-cran-bit64 \
 		R-cran-covr>0:devel/R-cran-covr \
 		R-cran-R6>0:devel/R-cran-R6 \
+		R-cran-S7>0:devel/R-cran-S7 \
 		R-cran-testthat>=3.0.0:devel/R-cran-testthat \
 		R-cran-withr>0:devel/R-cran-withr \
 		R-cran-xml2>0:textproc/R-cran-xml2
-TESTING_UNSAFE=	R-cran-S7 port required
 
 USES=		cran:auto-plist
 
