@@ -1181,8 +1181,6 @@ share/applications/emacsclient.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/calendar/todo-mode.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/case-table.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/case-table.elc
-%%DATADIR%%/%%EMACS_VER%%/lisp/cdl.el.gz
-%%DATADIR%%/%%EMACS_VER%%/lisp/cdl.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/cedet/cedet-cscope.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/cedet/cedet-cscope.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/cedet/cedet-files.el.gz
@@ -2464,8 +2462,6 @@ share/applications/emacsclient.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/json.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/jsonrpc.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/jsonrpc.elc
-%%DATADIR%%/%%EMACS_VER%%/lisp/kermit.el.gz
-%%DATADIR%%/%%EMACS_VER%%/lisp/kermit.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/keymap.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/keymap.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/kmacro.el.gz
@@ -2722,8 +2718,6 @@ share/applications/emacsclient.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/mail/flow-fill.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/mail/footnote.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/mail/footnote.elc
-%%DATADIR%%/%%EMACS_VER%%/lisp/mail/hashcash.el.gz
-%%DATADIR%%/%%EMACS_VER%%/lisp/mail/hashcash.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/mail/ietf-drums-date.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/mail/ietf-drums-date.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/mail/ietf-drums.el.gz
@@ -3100,6 +3094,8 @@ share/applications/emacsclient.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/autoload.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/bruce.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/bruce.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/cdl.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/cdl.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/cl-compat.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/cl-compat.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/cl.el.gz
@@ -3114,6 +3110,8 @@ share/applications/emacsclient.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/gs.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/gulp.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/gulp.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/hashcash.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/hashcash.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/html2text.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/html2text.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/idlw-complete-structtag.el.gz
@@ -3130,6 +3128,8 @@ share/applications/emacsclient.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/inversion.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/iswitchb.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/iswitchb.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/kermit.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/kermit.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/landmark.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/landmark.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/linum.el.gz
@@ -3928,8 +3928,12 @@ share/applications/emacsclient.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/textmodes/less-css-mode.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/textmodes/makeinfo.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/textmodes/makeinfo.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/textmodes/markdown-ts-mode.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/textmodes/markdown-ts-mode.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/textmodes/mhtml-mode.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/textmodes/mhtml-mode.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/textmodes/mhtml-ts-mode.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/textmodes/mhtml-ts-mode.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/textmodes/nroff-mode.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/textmodes/nroff-mode.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/textmodes/page-ext.el.gz
@@ -4215,6 +4219,8 @@ share/applications/emacsclient.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/w32-vars.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/wdired.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/wdired.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/which-key.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/which-key.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/whitespace.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/whitespace.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/wid-browse.el.gz
@@ -4245,8 +4251,6 @@ share/applications/emacsclient.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/xt-mouse.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/xwidget.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/xwidget.elc
-%%DATADIR%%/%%EMACS_VER%%/lisp/which-key.el.gz
-%%DATADIR%%/%%EMACS_VER%%/lisp/which-key.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/yank-media.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/yank-media.elc
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/site-lisp/site-start.el
