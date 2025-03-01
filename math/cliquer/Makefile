@@ -3,7 +3,7 @@ DISTVERSION=	1.22
 CATEGORIES=	math
 MASTER_SITES=	https://github.com/dimpase/autocliquer/releases/download/v${DISTVERSION}/
 
-MAINTAINER=	thierry@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Routines for clique searching
 WWW=		https://users.aalto.fi/~pat/cliquer.html
 
