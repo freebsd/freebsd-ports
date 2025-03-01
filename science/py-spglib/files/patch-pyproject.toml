@@ -1,4 +1,6 @@
---- pyproject.toml.orig	2024-07-12 07:15:17 UTC
+- removal of license-files is a workaround for https://github.com/spglib/spglib/issues/560
+
+--- pyproject.toml.orig	2024-07-11 08:36:56 UTC
 +++ pyproject.toml
 @@ -1,7 +1,7 @@
  [build-system]
@@ -9,3 +11,11 @@
  build-backend = "scikit_build_core.build"
  
  [project]
+@@ -9,7 +9,6 @@ license = { text = "BSD-3-Clause" }
+ requires-python = ">=3.9"
+ description = "This is the spglib module."
+ license = { text = "BSD-3-Clause" }
+-license-files = { paths = ["COPYING"] }
+ readme = "python/README.rst"
+ dynamic = ["version"]
+ dependencies = [
