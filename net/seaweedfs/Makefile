@@ -1,6 +1,5 @@
 PORTNAME=	seaweedfs
-DISTVERSION=	3.59
-PORTREVISION=	7
+DISTVERSION=	3.85
 CATEGORIES=	net sysutils
 
 MAINTAINER=	drtr0jan@yandex.ru
@@ -10,11 +9,11 @@ WWW=		https://github.com/seaweedfs/seaweedfs/wiki
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:modules
+USES=		go:1.23,modules
 
 USE_RC_SUBR=	seaweedfs
 
-GO_MODULE=	github.com/seaweedfs/seaweedfs@v0.0.0-20231113061208-27b34f37935f
+GO_MODULE=	github.com/seaweedfs/seaweedfs@v0.0.0-20250218000433-7d7e06681dd4
 GO_TARGET=	./weed
 CGO_CFLAGS=	-I.
 
