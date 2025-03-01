@@ -10,6 +10,9 @@ WWW=		https://ogmrip.sourceforge.net/
 
 LICENSE=	GPLv2+  # from source, though COPYING says LGPLv2
 
+DEPRECATED=	Abandonware, last activity in 2018 and lacks support for new formats. Consider using multimedia/handbrake
+EXPIRATION_DATE=2025-03-31
+
 BUILD_DEPENDS=	mencoder:multimedia/mencoder \
 		mplayer:multimedia/mplayer \
 		gsed:textproc/gsed
