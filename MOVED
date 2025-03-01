@@ -4184,3 +4184,4 @@ databases/tarantool2||2025-03-01|Has expired
 java/cos||2025-03-01|Has expired: Upstream seems gone since 2024-08-22
 sysutils/pass-secrets||2025-03-01|Has expired: Listed as BROKEN and unmaintained for months
 sysutils/fluxengine||2025-03-01|Has expired: Broken for several months
+textproc/py-pyjade||2025-03-01|Has expired: Upstream is inactive for almost 8.5 years
