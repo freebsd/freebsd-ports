@@ -3975,6 +3975,9 @@ lib/root/libRIO.so.%%SHLIB_VER%%
 %%QT5WEB%%lib/root/libROOTQt5WebDisplay.so
 %%QT5WEB%%lib/root/libROOTQt5WebDisplay.so.%%SHLIB_SHVER%%
 %%QT5WEB%%lib/root/libROOTQt5WebDisplay.so.%%SHLIB_VER%%
+%%QT6WEB%%lib/root/libROOTQt6WebDisplay.so
+%%QT6WEB%%lib/root/libROOTQt6WebDisplay.so.%%SHLIB_SHVER%%
+%%QT6WEB%%lib/root/libROOTQt6WebDisplay.so.%%SHLIB_VER%%
 %%TMVAML%%lib/root/libROOTTMVASofie.rootmap
 %%TMVAML%%lib/root/libROOTTMVASofie.so
 %%TMVAML%%lib/root/libROOTTMVASofie.so.%%SHLIB_SHVER%%

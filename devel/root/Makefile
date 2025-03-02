@@ -1,5 +1,5 @@
 PORTNAME=	root
-DISTVERSION=	6.34.02
+DISTVERSION=	6.34.04
 CATEGORIES=	devel science math parallel python
 MASTER_SITES=	https://root.cern/download/
 DISTFILES=	${PORTNAME}_v${DISTVERSION}.source${EXTRACT_SUFX}
@@ -56,14 +56,13 @@ CMAKE_OFF=	arrow builtin_cfitsio builtin_cppzmq builtin_davix builtin_fftw3 \
 		builtin_xxhash builtin_zeromq builtin_zlib builtin_zstd cefweb clad cocoa \
 		cuda cudnn daos dcache fcgi fftw3 geombuilder gviz libcxx llvm13_broken_tests \
 		macos_native memory_termination minuit2_mpi minuit2_omp mpi odbc proof pythia8 \
-		qt6web r roofit_multiprocess runtime_cxxmodules shadowpw test_distrdf_pyspark \
-		tmva-gpu tmva-rmva tmva-sofie unfold unuran uring vc vecgeom win_broken_tests \
-		winrtdebug
-# Port build options; DOCS also on by default
+		r roofit_multiprocess runtime_cxxmodules shadowpw test_distrdf_pyspark tmva-gpu \
+		tmva-rmva tmva-sofie unfold unuran uring vc vecgeom win_broken_tests winrtdebug
+
 # See https://root.cern/install/build_from_source/#all-build-options
 OPTIONS_DEFINE=	DOCS ASIMAGE DATAFRAME DAVIX FITS FORTRAN GDML HTTP IMT MATHMORE \
-		MYSQL OPENGL PGSQL PYROOT QT5WEB ROOFIT ROOT7 SPECTRUM SQLITE SSL TMLP TMVAML \
-		VDT WEBGUI X11 XML XROOTD
+		MYSQL OPENGL PGSQL PYROOT QT5WEB QT6WEB ROOFIT ROOT7 SPECTRUM SQLITE SSL TMLP \
+		TMVAML VDT WEBGUI X11 XML XROOTD
 OPTIONS_DEFAULT=	ASIMAGE DATAFRAME DAVIX FITS GDML HTTP IMT MATHMORE OPENGL \
 		PYROOT ROOFIT ROOT7 SPECTRUM SSL TMLP TMVAML VDT WEBGUI X11 XML XROOTD
 OPTIONS_SUB=	yes
@@ -144,6 +143,12 @@ QT5WEB_IMPLIES=	WEBGUI
 QT5WEB_USES=	qt:5
 QT5WEB_USE=	qt=buildtools:build,qmake:build \
 		qt=core,declarative,gui,location,network,printsupport,webchannel,webengine,widgets
+
+QT6WEB_CMAKE_BOOL=	qt6web
+QT6WEB_DESC=		Enable support for Qt6 web-based display
+QT6WEB_IMPLIES=	WEBGUI
+QT6WEB_USES=	qt:6
+QT6WEB_USE=	qt=base,declarative,positioning,webchannel,webengine
 
 ROOFIT_CMAKE_BOOL=	roofit
 ROOFIT_DESC=		Build the advanced fitting package RooFit, and RooStats for statistical tests
