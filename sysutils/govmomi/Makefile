@@ -1,6 +1,6 @@
 PORTNAME=	govmomi
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.45.1
+DISTVERSION=	0.46.3
 CATEGORIES=	sysutils
 
 MAINTAINER=	alex@i.org.ua
@@ -10,7 +10,7 @@ WWW=		https://github.com/vmware/govmomi/
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-USES=		go:modules
+USES=		go:1.22,modules
 GO_MODULE=	github.com/vmware/govmomi
 
 GO_TARGET=	./govc \
