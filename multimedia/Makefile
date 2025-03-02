@@ -168,7 +168,6 @@
     SUBDIR += libdvdcss
     SUBDIR += libdvdnav
     SUBDIR += libdvdread
-    SUBDIR += libfame
     SUBDIR += libgav1
     SUBDIR += libhdhomerun
     SUBDIR += libmatroska
