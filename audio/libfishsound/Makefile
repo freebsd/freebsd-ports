@@ -1,5 +1,6 @@
 PORTNAME=	libfishsound
 PORTVERSION=	1.0.1
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	https://ftp.osuosl.org/pub/xiph/releases/libfishsound/
 

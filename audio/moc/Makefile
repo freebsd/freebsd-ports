@@ -1,6 +1,6 @@
 PORTNAME=	moc
 DISTVERSION=	2.5.2
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	audio
 MASTER_SITES=	http://ftp.daper.net/pub/soft/moc/stable/
 

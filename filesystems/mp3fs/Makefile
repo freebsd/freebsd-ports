@@ -1,5 +1,6 @@
 PORTNAME=	mp3fs
 PORTVERSION=	1.1.1
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	filesystems audio
 MASTER_SITES=	https://github.com/khenriks/${PORTNAME}/releases/download/v${PORTVERSION}/

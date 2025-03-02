@@ -1,6 +1,6 @@
 PORTNAME=	xmcd
 PORTVERSION=	3.3.2
-PORTREVISION=	22
+PORTREVISION=	23
 CATEGORIES=	audio
 MASTER_SITES=	http://freebsd.nsu.ru/distfiles/
 
