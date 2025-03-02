@@ -1,7 +1,6 @@
 PORTNAME=	evcxr
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.18.0
-PORTREVISION=	2
+DISTVERSION=	0.19.0
 CATEGORIES=	devel
 PKGNAMESUFFIX=	-jupyter
 
@@ -12,10 +11,13 @@ WWW=		https://github.com/evcxr/evcxr
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BUILD_DEPENDS=	rust-nightly>0:lang/rust-nightly # because feature `edition2024` is required
+
 USES=		cargo
 
 USE_GITHUB=	yes
 
+CARGO_BUILDDEP=	no
 CARGO_CRATES=	addr2line-0.24.2 \
 		adler2-2.0.0 \
 		aho-corasick-1.1.3 \
@@ -36,8 +38,9 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		backtrace-0.3.74 \
 		base64-0.13.1 \
 		bitflags-1.3.2 \
-		bitflags-2.6.0 \
+		bitflags-2.8.0 \
 		block-buffer-0.10.4 \
+		borsh-1.5.1 \
 		bumpalo-3.16.0 \
 		bytemuck-1.18.0 \
 		byteorder-1.5.0 \
@@ -49,10 +52,10 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		cfg-if-1.0.0 \
 		cfg_aliases-0.1.1 \
 		cfg_aliases-0.2.1 \
-		chalk-derive-0.98.0 \
-		chalk-ir-0.98.0 \
-		chalk-recursive-0.98.0 \
-		chalk-solve-0.98.0 \
+		chalk-derive-0.99.0 \
+		chalk-ir-0.99.0 \
+		chalk-recursive-0.99.0 \
+		chalk-solve-0.99.0 \
 		chrono-0.4.38 \
 		clap-4.5.20 \
 		clap_builder-4.5.20 \
@@ -119,7 +122,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		idna-0.5.0 \
 		image-0.24.9 \
 		indexmap-2.6.0 \
-		inotify-0.9.6 \
+		inotify-0.11.0 \
 		inotify-sys-0.1.5 \
 		is_terminal_polyfill-1.70.1 \
 		itertools-0.12.1 \
@@ -135,7 +138,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		libloading-0.8.5 \
 		libmimalloc-sys-0.1.39 \
 		libredox-0.1.3 \
-		line-index-0.1.1 \
+		line-index-0.1.2 \
 		linux-raw-sys-0.4.14 \
 		lock_api-0.4.12 \
 		log-0.4.22 \
@@ -144,14 +147,14 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		memoffset-0.9.1 \
 		mimalloc-0.1.43 \
 		miniz_oxide-0.8.0 \
-		mio-0.8.11 \
 		mio-1.0.2 \
 		miow-0.6.0 \
 		nibble_vec-0.1.0 \
 		nix-0.28.0 \
 		nix-0.29.0 \
 		nohash-hasher-0.2.0 \
-		notify-6.1.1 \
+		notify-8.0.0 \
+		notify-types-2.0.0 \
 		num-traits-0.2.19 \
 		object-0.36.5 \
 		once_cell-1.20.2 \
@@ -171,42 +174,42 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		pulldown-cmark-0.9.6 \
 		pulldown-cmark-to-cmark-10.0.4 \
 		quote-1.0.37 \
-		ra-ap-rustc_abi-0.63.0 \
-		ra-ap-rustc_index-0.63.0 \
-		ra-ap-rustc_index_macros-0.63.0 \
-		ra-ap-rustc_lexer-0.63.0 \
-		ra-ap-rustc_parse_format-0.63.0 \
-		ra-ap-rustc_pattern_analysis-0.63.0 \
-		ra_ap_base_db-0.0.233 \
-		ra_ap_cfg-0.0.233 \
-		ra_ap_hir-0.0.233 \
-		ra_ap_hir_def-0.0.233 \
-		ra_ap_hir_expand-0.0.233 \
-		ra_ap_hir_ty-0.0.233 \
-		ra_ap_ide-0.0.233 \
-		ra_ap_ide_assists-0.0.233 \
-		ra_ap_ide_completion-0.0.233 \
-		ra_ap_ide_db-0.0.233 \
-		ra_ap_ide_diagnostics-0.0.233 \
-		ra_ap_ide_ssr-0.0.233 \
-		ra_ap_intern-0.0.233 \
-		ra_ap_limit-0.0.233 \
-		ra_ap_mbe-0.0.233 \
-		ra_ap_parser-0.0.233 \
-		ra_ap_paths-0.0.233 \
-		ra_ap_profile-0.0.233 \
-		ra_ap_project_model-0.0.233 \
-		ra_ap_salsa-0.0.233 \
-		ra_ap_salsa-macros-0.0.233 \
-		ra_ap_span-0.0.233 \
-		ra_ap_stdx-0.0.233 \
-		ra_ap_syntax-0.0.233 \
-		ra_ap_syntax-bridge-0.0.233 \
-		ra_ap_text_edit-0.0.233 \
-		ra_ap_toolchain-0.0.233 \
-		ra_ap_tt-0.0.233 \
-		ra_ap_vfs-0.0.233 \
-		ra_ap_vfs-notify-0.0.233 \
+		ra-ap-rustc_abi-0.97.0 \
+		ra-ap-rustc_hashes-0.97.0 \
+		ra-ap-rustc_index-0.97.0 \
+		ra-ap-rustc_index_macros-0.97.0 \
+		ra-ap-rustc_lexer-0.97.0 \
+		ra-ap-rustc_parse_format-0.97.0 \
+		ra-ap-rustc_pattern_analysis-0.97.0 \
+		ra_ap_base_db-0.0.266 \
+		ra_ap_cfg-0.0.266 \
+		ra_ap_edition-0.0.266 \
+		ra_ap_hir-0.0.266 \
+		ra_ap_hir_def-0.0.266 \
+		ra_ap_hir_expand-0.0.266 \
+		ra_ap_hir_ty-0.0.266 \
+		ra_ap_ide-0.0.266 \
+		ra_ap_ide_assists-0.0.266 \
+		ra_ap_ide_completion-0.0.266 \
+		ra_ap_ide_db-0.0.266 \
+		ra_ap_ide_diagnostics-0.0.266 \
+		ra_ap_ide_ssr-0.0.266 \
+		ra_ap_intern-0.0.266 \
+		ra_ap_mbe-0.0.266 \
+		ra_ap_parser-0.0.266 \
+		ra_ap_paths-0.0.266 \
+		ra_ap_profile-0.0.266 \
+		ra_ap_project_model-0.0.266 \
+		ra_ap_salsa-0.0.266 \
+		ra_ap_salsa-macros-0.0.266 \
+		ra_ap_span-0.0.266 \
+		ra_ap_stdx-0.0.266 \
+		ra_ap_syntax-0.0.266 \
+		ra_ap_syntax-bridge-0.0.266 \
+		ra_ap_toolchain-0.0.266 \
+		ra_ap_tt-0.0.266 \
+		ra_ap_vfs-0.0.266 \
+		ra_ap_vfs-notify-0.0.266 \
 		radix_trie-0.2.1 \
 		rand-0.8.5 \
 		rand_chacha-0.3.1 \
@@ -221,6 +224,8 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		rowan-0.15.15 \
 		rustc-demangle-0.1.24 \
 		rustc-hash-1.1.0 \
+		rustc-hash-2.1.1 \
+		rustc-stable-hash-0.1.1 \
 		rustc_apfloat-0.2.1+llvm-462a31f5a5ab \
 		rustix-0.38.37 \
 		rustyline-14.0.0 \
@@ -240,10 +245,8 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		simd-adler32-0.3.7 \
 		slab-0.4.9 \
 		smallvec-1.13.2 \
-		smol_str-0.2.2 \
+		smol_str-0.3.2 \
 		socket2-0.5.7 \
-		sptr-0.3.2 \
-		stable_deref_trait-1.2.0 \
 		strsim-0.11.1 \
 		subtle-2.6.1 \
 		syn-2.0.79 \
