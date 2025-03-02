@@ -3,7 +3,7 @@ DISTVERSION=	2.12
 CATEGORIES=	net textproc
 MASTER_SITES=	GNU
 
-MAINTAINER=	info@dikt.tv
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Flexible modular implementation of DICT server
 WWW=		https://www.gnu.org/software/dico/
 
