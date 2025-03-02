@@ -18,7 +18,7 @@ share/applications/rustrover.desktop
 %%DATADIR%%/lib/app-client.jar
 %%DATADIR%%/lib/app.jar
 %%DATADIR%%/lib/bouncy-castle.jar
-%%DATADIR%%/lib/build-marker-RR-243.23654.180
+%%DATADIR%%/lib/build-marker-RR-243.24978.86
 %%DATADIR%%/lib/cds/classesLogAgent.jar
 %%DATADIR%%/lib/ext/platform-main.jar
 %%DATADIR%%/lib/external-system-rt.jar
@@ -69,6 +69,7 @@ share/applications/rustrover.desktop
 %%DATADIR%%/lib/modules/intellij.platform.navbar.monolith.jar
 %%DATADIR%%/lib/modules/intellij.platform.progress.backend.jar
 %%DATADIR%%/lib/modules/intellij.platform.project.backend.jar
+%%DATADIR%%/lib/modules/intellij.platform.registry.cloud.jar
 %%DATADIR%%/lib/modules/intellij.platform.rpc.backend.jar
 %%DATADIR%%/lib/modules/intellij.platform.settings.local.jar
 %%DATADIR%%/lib/modules/intellij.platform.smRunner.vcs.jar
@@ -81,6 +82,7 @@ share/applications/rustrover.desktop
 %%DATADIR%%/lib/modules/intellij.profiler.common.jar
 %%DATADIR%%/lib/modules/intellij.profiler.ultimate.ideaAsyncProfiler.jar
 %%DATADIR%%/lib/modules/intellij.rustrover.customization.jar
+%%DATADIR%%/lib/modules/intellij.settingsSync.core.jar
 %%DATADIR%%/lib/modules/intellij.smart.update.jar
 %%DATADIR%%/lib/native/%%SQLITE_ARCH%%/libsqliteij.so
 %%DATADIR%%/lib/nio-fs.jar
@@ -350,23 +352,16 @@ share/applications/rustrover.desktop
 %%DATADIR%%/plugins/grid-impl/lib/grid-impl.jar
 %%DATADIR%%/plugins/grid-impl/lib/grid-scripting.jar
 %%DATADIR%%/plugins/html-tools/lib/html-tools.jar
-%%DATADIR%%/plugins/intellij-rust/caches/crates-local-index.zip
-%%DATADIR%%/plugins/intellij-rust/caches/macro-expansion-cache-1.84.0.zip
-%%DATADIR%%/plugins/intellij-rust/caches/rust-src-bundle-1.84.0.zip
-%%DATADIR%%/plugins/intellij-rust/caches/rust-stdlib-vendor-1.84.0.zip
-%%DATADIR%%/plugins/intellij-rust/lib/JavaEWAH-1.2.3.jar
-%%DATADIR%%/plugins/intellij-rust/lib/antlr4-runtime-4.13.0.jar
-%%DATADIR%%/plugins/intellij-rust/lib/commons-codec-1.16.0.jar
-%%DATADIR%%/plugins/intellij-rust/lib/commons-text-1.12.0.jar
-%%DATADIR%%/plugins/intellij-rust/lib/completion-ranking-rust-0.4.1.jar
-%%DATADIR%%/plugins/intellij-rust/lib/full-line-inline-filter-rust-0.0.2.jar
-%%DATADIR%%/plugins/intellij-rust/lib/intellij-rust-243.23654.180.jar
-%%DATADIR%%/plugins/intellij-rust/lib/jackson-dataformat-toml-2.14.2.jar
-%%DATADIR%%/plugins/intellij-rust/lib/org.eclipse.jgit-6.9.0.202403050737-r.jar
-%%DATADIR%%/plugins/intellij-rust/lib/semver-jvm-1.4.2.jar
+%%DATADIR%%/plugins/intellij-rust/lib/intellij-rust.jar
+%%DATADIR%%/plugins/intellij-rust/lib/modules/intellij.rustrover.full-line.jar
+%%DATADIR%%/plugins/intellij-rust/lib/modules/intellij.rustrover.ml-completion.jar
+%%DATADIR%%/plugins/intellij-rust/lib/modules/intellij.rustrover.monorepo-capable.jar
+%%DATADIR%%/plugins/intellij-rust/prettyPrinters/gdb_formatters/gdb/__init__.pyi
 %%DATADIR%%/plugins/intellij-rust/prettyPrinters/gdb_formatters/gdb_lookup.py
 %%DATADIR%%/plugins/intellij-rust/prettyPrinters/gdb_formatters/gdb_providers.py
 %%DATADIR%%/plugins/intellij-rust/prettyPrinters/lldb_formatters/__init__.py
+%%DATADIR%%/plugins/intellij-rust/prettyPrinters/lldb_formatters/lldb/__init__.pyi
+%%DATADIR%%/plugins/intellij-rust/prettyPrinters/lldb_formatters/lldb/formatters.pyi
 %%DATADIR%%/plugins/intellij-rust/prettyPrinters/lldb_formatters/lldb_providers.py
 %%DATADIR%%/plugins/intellij-rust/prettyPrinters/rust_types.py
 %%DATADIR%%/plugins/javascript-debugger/debugConnectionForwarder.js
@@ -416,8 +411,8 @@ share/applications/rustrover.desktop
 %%DATADIR%%/plugins/javascript-plugin/helpers/vitest-intellij/node_modules/vitest-intellij-reporter-safe.js
 %%DATADIR%%/plugins/javascript-plugin/helpers/vitest-intellij/vitest-intellij-reporter.js
 %%DATADIR%%/plugins/javascript-plugin/helpers/vitest-intellij/vitest-intellij-util.js
-%%DATADIR%%/plugins/javascript-plugin/js/js-predefined-d6986cc7102b-822845ee3bb5.ijx
-%%DATADIR%%/plugins/javascript-plugin/js/js-predefined-d6986cc7102b-822845ee3bb5.txt
+%%DATADIR%%/plugins/javascript-plugin/js/js-predefined-d6986cc7102b-76f8388c3a79.ijx
+%%DATADIR%%/plugins/javascript-plugin/js/js-predefined-d6986cc7102b-76f8388c3a79.txt
 %%DATADIR%%/plugins/javascript-plugin/jsLanguageServicesImpl/external/!HowToUpdateBundledTypeScript.md
 %%DATADIR%%/plugins/javascript-plugin/jsLanguageServicesImpl/external/browser.d.ts
 %%DATADIR%%/plugins/javascript-plugin/jsLanguageServicesImpl/external/cancellationToken.js
@@ -1230,5 +1225,3 @@ share/applications/rustrover.desktop
 %%DATADIR%%/plugins/yaml/lib/yaml.jar
 %%DATADIR%%/product-info.json
 share/man/man1/rustrover.1.gz
-@dir %%DATADIR%%/plugins/intellij-rust/prettyPrinters/gdb_formatters/gdb
-@dir %%DATADIR%%/plugins/intellij-rust/prettyPrinters/lldb_formatters/lldb
