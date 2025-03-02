@@ -20,7 +20,7 @@ share/applications/goland.desktop
 %%DATADIR%%/lib/app-client.jar
 %%DATADIR%%/lib/app.jar
 %%DATADIR%%/lib/bouncy-castle.jar
-%%DATADIR%%/lib/build-marker-GO-243.23654.166
+%%DATADIR%%/lib/build-marker-GO-243.25659.52
 %%DATADIR%%/lib/cds/classesLogAgent.jar
 %%DATADIR%%/lib/ext/platform-main.jar
 %%DATADIR%%/lib/external-system-rt.jar
@@ -74,6 +74,7 @@ share/applications/goland.desktop
 %%DATADIR%%/lib/modules/intellij.platform.navbar.monolith.jar
 %%DATADIR%%/lib/modules/intellij.platform.progress.backend.jar
 %%DATADIR%%/lib/modules/intellij.platform.project.backend.jar
+%%DATADIR%%/lib/modules/intellij.platform.registry.cloud.jar
 %%DATADIR%%/lib/modules/intellij.platform.rpc.backend.jar
 %%DATADIR%%/lib/modules/intellij.platform.settings.local.jar
 %%DATADIR%%/lib/modules/intellij.platform.smRunner.vcs.jar
@@ -85,6 +86,7 @@ share/applications/goland.desktop
 %%DATADIR%%/lib/modules/intellij.profiler.common.jar
 %%DATADIR%%/lib/modules/intellij.profiler.ultimate.ideaAsyncProfiler.jar
 %%DATADIR%%/lib/modules/intellij.rml.dfa.impl.jar
+%%DATADIR%%/lib/modules/intellij.settingsSync.core.jar
 %%DATADIR%%/lib/modules/intellij.smart.update.jar
 %%DATADIR%%/lib/native/%%SQLITE_ARCH%%/libsqliteij.so
 %%DATADIR%%/lib/nio-fs.jar
@@ -339,8 +341,8 @@ share/applications/goland.desktop
 %%DATADIR%%/plugins/go-plugin/license/golang-license.txt
 %%DATADIR%%/plugins/go-plugin/license/gopher-license.txt
 %%DATADIR%%/plugins/go-plugin/license/re2j-license.txt
-%%DATADIR%%/plugins/go-sharedIndexes-bundled/gosdk/gosdk-d297c17c1fbd-85c80fddc9a6.ijx
-%%DATADIR%%/plugins/go-sharedIndexes-bundled/gosdk/gosdk-d297c17c1fbd-85c80fddc9a6.txt
+%%DATADIR%%/plugins/go-sharedIndexes-bundled/gosdk/gosdk-d297c17c1fbd-57c114c3cede.ijx
+%%DATADIR%%/plugins/go-sharedIndexes-bundled/gosdk/gosdk-d297c17c1fbd-57c114c3cede.txt
 %%DATADIR%%/plugins/go-sharedIndexes-bundled/lib/go-sharedIndexes-bundled.jar
 %%DATADIR%%/plugins/go-template/lib/go-template.jar
 %%DATADIR%%/plugins/grazie/lib/grazie.jar
@@ -403,8 +405,8 @@ share/applications/goland.desktop
 %%DATADIR%%/plugins/javascript-plugin/helpers/vitest-intellij/node_modules/vitest-intellij-reporter-safe.js
 %%DATADIR%%/plugins/javascript-plugin/helpers/vitest-intellij/vitest-intellij-reporter.js
 %%DATADIR%%/plugins/javascript-plugin/helpers/vitest-intellij/vitest-intellij-util.js
-%%DATADIR%%/plugins/javascript-plugin/js/js-predefined-d6986cc7102b-822845ee3bb5.ijx
-%%DATADIR%%/plugins/javascript-plugin/js/js-predefined-d6986cc7102b-822845ee3bb5.txt
+%%DATADIR%%/plugins/javascript-plugin/js/js-predefined-d6986cc7102b-1632447f56bf.ijx
+%%DATADIR%%/plugins/javascript-plugin/js/js-predefined-d6986cc7102b-1632447f56bf.txt
 %%DATADIR%%/plugins/javascript-plugin/jsLanguageServicesImpl/external/!HowToUpdateBundledTypeScript.md
 %%DATADIR%%/plugins/javascript-plugin/jsLanguageServicesImpl/external/browser.d.ts
 %%DATADIR%%/plugins/javascript-plugin/jsLanguageServicesImpl/external/cancellationToken.js
