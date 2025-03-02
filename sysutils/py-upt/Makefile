@@ -12,6 +12,9 @@ WWW=		https://framagit.org/upt/upt
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Depends on expired misc/py-spdx-lookup
+EXPIRATION_DATE=2025-03-31
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}colorlog>0:devel/py-colorlog@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}packaging>0:devel/py-packaging@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}spdx-lookup>0:misc/py-spdx-lookup@${PY_FLAVOR}
