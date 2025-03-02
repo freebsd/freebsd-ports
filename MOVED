@@ -4187,3 +4187,4 @@ sysutils/fluxengine||2025-03-01|Has expired: Broken for several months
 textproc/py-pyjade||2025-03-01|Has expired: Upstream is inactive for almost 8.5 years
 math/parmetis||2025-03-01|Has expired: Fails to fetch, unmaintained for years in tree
 math/pspp||2025-03-01|Has expired: Listed as broken for more than 5 months
+games/shaaft||2025-03-02|Has expired: Unmaintained upstream for ages, breaks with modern toolchains

@@ -912,7 +912,6 @@
     SUBDIR += sets
     SUBDIR += sex
     SUBDIR += sgt-puzzles
-    SUBDIR += shaaft
     SUBDIR += shockolate
     SUBDIR += shootingstar
     SUBDIR += simplevaders
