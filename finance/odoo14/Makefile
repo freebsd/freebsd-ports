@@ -11,7 +11,7 @@ WWW=		https://www.odoo.com
 
 LICENSE=	LGPL3
 
-DEPRECATED=	Depends on expired converters/wkhtmltopdf
+DEPRECATED=	Depends on expired converters/wkhtmltopdf and print/py-pypdf2
 EXPIRATION_DATE=2025-03-31
 
 USE_GITHUB=	yes
