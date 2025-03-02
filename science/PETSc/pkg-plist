@@ -3876,6 +3876,7 @@ libdata/pkgconfig/petsc.pc
 %%DATADIR%%/examples/src/mat/tests/ex153.c
 %%DATADIR%%/examples/src/mat/tests/ex154.c
 %%DATADIR%%/examples/src/mat/tests/ex155.c
+%%DATADIR%%/examples/src/mat/tests/ex156.c
 %%DATADIR%%/examples/src/mat/tests/ex157.c
 %%DATADIR%%/examples/src/mat/tests/ex158.c
 %%DATADIR%%/examples/src/mat/tests/ex159.c
@@ -4192,6 +4193,7 @@ libdata/pkgconfig/petsc.pc
 %%DATADIR%%/examples/src/mat/tests/output/ex151_dense.out
 %%DATADIR%%/examples/src/mat/tests/output/ex152_1.out
 %%DATADIR%%/examples/src/mat/tests/output/ex152_2.out
+%%DATADIR%%/examples/src/mat/tests/output/ex156_1.out
 %%DATADIR%%/examples/src/mat/tests/output/ex158.out
 %%DATADIR%%/examples/src/mat/tests/output/ex158_2.out
 %%DATADIR%%/examples/src/mat/tests/output/ex159_1.out
@@ -7858,6 +7860,7 @@ libdata/pkgconfig/petsc.pc
 %%DATADIR%%/examples/src/vec/vec/tests/ex62.c
 %%DATADIR%%/examples/src/vec/vec/tests/ex63.c
 %%DATADIR%%/examples/src/vec/vec/tests/ex64.c
+%%DATADIR%%/examples/src/vec/vec/tests/ex65.c
 %%DATADIR%%/examples/src/vec/vec/tests/ex7.c
 %%DATADIR%%/examples/src/vec/vec/tests/ex8.c
 %%DATADIR%%/examples/src/vec/vec/tests/ex9.c
@@ -7939,6 +7942,7 @@ libdata/pkgconfig/petsc.pc
 %%DATADIR%%/examples/src/vec/vec/tests/output/ex59_2.out
 %%DATADIR%%/examples/src/vec/vec/tests/output/ex5_1.out
 %%DATADIR%%/examples/src/vec/vec/tests/output/ex60_1.out
+%%DATADIR%%/examples/src/vec/vec/tests/output/ex65_0.out
 %%DATADIR%%/examples/src/vec/vec/tests/output/ex6_1.out
 %%DATADIR%%/examples/src/vec/vec/tests/output/ex7_1.out
 %%DATADIR%%/examples/src/vec/vec/tests/output/ex8_1.out
