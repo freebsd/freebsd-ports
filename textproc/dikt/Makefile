@@ -4,7 +4,7 @@ PORTEPOCH=	1
 CATEGORIES=	textproc net kde
 MASTER_SITES=	https://gitlab.com/-/project/46530021/uploads/b7050a0b8397a27501e7c0be4f40066c/
 
-MAINTAINER=	info@dikt.tv
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Dictionary for KDE
 WWW=		https://dikt.tv/
 
