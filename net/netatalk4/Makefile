@@ -1,10 +1,8 @@
 PORTNAME=	netatalk
-PORTVERSION=	3.2.10
-PORTREVISION=	1
-PORTEPOCH=	1
+PORTVERSION=	4.1.2
 CATEGORIES=	net
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/netatalk-${PORTVERSION:S/./-/g}/
-PKGNAMESUFFIX=	3
+PKGNAMESUFFIX=	4
 
 MAINTAINER=	marcus@FreeBSD.org
 COMMENT=	File server for Mac OS X
@@ -12,10 +10,12 @@ WWW=		https://netatalk.io/
 
 LICENSE=	GPLv2
 
+BUILD_DEPENDS=	docbook-xsl>=0:textproc/docbook-xsl
 LIB_DEPENDS=	libgcrypt.so:security/libgcrypt \
 		libevent.so:devel/libevent
 
 USES=		bdb:18 cpe gettext iconv:wchar_t meson perl5 pkgconfig shebangfix ssl tar:xz
+USE_GNOME=	libxslt:build
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	netatalk
 #INSTALL_TARGET=install-strip
@@ -28,7 +28,10 @@ MESON_ARGS=		-Dwith-libgcrypt-path=${LOCALBASE} \
 			-Dwith-init-hooks=false \
 			-Dpkg_config_path=${LOCALBASE}/libdata/pkgconfig \
 			-Dwith-shadow=false \
-			-Dwith-pgp-uam=false \
+			-Dwith-webmin=false \
+			-Dwith-cups=false \
+			-Dwith-testsuite=false \
+			-Dwith-appletalk=false \
 			-Ddefault_library=both \
 			--infodir=${PREFIX}/share/info
 
@@ -78,7 +81,7 @@ SPOTLIGHT_MESON_OFF=	-Dwith-spotlight=false
 
 SHEBANG_GLOB=	afpstats
 
-CONFLICTS=	netatalk4
+CONFLICTS=	netatalk3
 
 .include <bsd.port.pre.mk>
 

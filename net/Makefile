@@ -524,6 +524,7 @@
     SUBDIR += nemesis
     SUBDIR += net6
     SUBDIR += netatalk3
+    SUBDIR += netatalk4
     SUBDIR += netcat
     SUBDIR += netdiscover
     SUBDIR += netembryo
