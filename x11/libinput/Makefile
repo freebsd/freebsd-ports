@@ -1,6 +1,5 @@
 PORTNAME=	libinput
-DISTVERSION=	1.26.2
-PORTREVISION=	1
+DISTVERSION=	1.27.1
 CATEGORIES=	x11
 
 MAINTAINER=	x11@FreeBSD.org
@@ -27,21 +26,7 @@ CPE_VENDOR=	freedesktop
 
 MESON_ARGS=	-Ddocumentation=false -Dtests=false
 
-SHEBANG_FILES=	tools/libinput-analyze-buttons.py \
-		tools/libinput-analyze-per-slot-delta.py \
-		tools/libinput-analyze-recording.py \
-		tools/libinput-analyze-touch-down-state.py \
-		tools/libinput-measure-fuzz.py \
-		tools/libinput-measure-touch-size.py \
-		tools/libinput-measure-touchpad-pressure.py \
-		tools/libinput-measure-touchpad-size.py \
-		tools/libinput-measure-touchpad-tap.py \
-		tools/libinput-list-kernel-devices.py \
-		tools/libinput-replay.py
-# The following files are not installed, but might be
-# run as part of the test suite.
-SHEBANG_FILES+=	tools/test_tool_option_parsing.py \
-		tools/libinput-record-verify-yaml.py
+SHEBANG_FILES=	tools/*.py
 
 OPTIONS_DEFINE=	DEBUG_GUI LIBWACOM
 OPTIONS_DEFAULT=LIBWACOM

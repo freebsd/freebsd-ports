@@ -61,8 +61,10 @@ libexec/libinput/libinput-test
 %%DATADIR%%/50-system-google.quirks
 %%DATADIR%%/50-system-gpd.quirks
 %%DATADIR%%/50-system-graviton.quirks
+%%DATADIR%%/50-system-honor.quirks
 %%DATADIR%%/50-system-hp.quirks
 %%DATADIR%%/50-system-huawei.quirks
+%%DATADIR%%/50-system-icl.quirks
 %%DATADIR%%/50-system-lenovo.quirks
 %%DATADIR%%/50-system-lg.quirks
 %%DATADIR%%/50-system-minisforum.quirks
