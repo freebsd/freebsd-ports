@@ -1,8 +1,12 @@
 PORTNAME=	rapidfuzz
 DISTVERSION=	3.10.1
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+
+PATCH_SITES=	https://github.com/${PORTNAME}/RapidFuzz/commit/
+PATCHFILES=	d23b79f5fceea0cc04fc38f830ad54ca782e776d.patch:-p1 # https://github.com/rapidfuzz/RapidFuzz/pull/433
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Rapid fuzzy string matching in Python
