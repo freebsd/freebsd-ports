@@ -7,9 +7,6 @@ include/ghdl/vpi_user.h
 %%SYNTH%%include/ghdl/synth.h
 %%SYNTH%%include/ghdl/synth_gates.h
 lib/ghdl/ansi_color.sh
-lib/libghdl-4_1_0.so
-lib/libghdl.a
-lib/libghdl.link
 %%LLVM%%lib/ghdl/grt-exec.lst
 %%LLVM%%lib/ghdl/grt-shared.lst
 %%LLVM%%lib/ghdl/grt.lst
@@ -190,12 +187,8 @@ lib/ghdl/vendors/compile-intel.ps1
 lib/ghdl/vendors/compile-intel.sh
 lib/ghdl/vendors/compile-lattice.ps1
 lib/ghdl/vendors/compile-lattice.sh
-lib/ghdl/vendors/compile-osvvm.ps1
-lib/ghdl/vendors/compile-osvvm.sh
 lib/ghdl/vendors/compile-uvvm.ps1
 lib/ghdl/vendors/compile-uvvm.sh
-lib/ghdl/vendors/compile-xilinx-ise.ps1
-lib/ghdl/vendors/compile-xilinx-ise.sh
 lib/ghdl/vendors/compile-xilinx-vivado.ps1
 lib/ghdl/vendors/compile-xilinx-vivado.sh
 lib/ghdl/vendors/config.psm1
@@ -203,5 +196,8 @@ lib/ghdl/vendors/config.sh
 lib/ghdl/vendors/filter.analyze.sh
 lib/ghdl/vendors/shared.psm1
 lib/ghdl/vendors/shared.sh
+lib/libghdl-5_0_1.so
+lib/libghdl.a
+lib/libghdl.link
 lib/libghdlvpi.so
 lib/libghw.so
