@@ -98,6 +98,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		regex-automata-0.4.9 \
 		regex-syntax-0.8.5 \
 		rustc-demangle-0.1.24 \
+		rustflags-0.1.6 \
 		rustix-0.38.44 \
 		semver-1.0.25 \
 		serde-1.0.218 \
