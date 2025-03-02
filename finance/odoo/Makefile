@@ -9,6 +9,9 @@ WWW=		https://www.odoo.com
 
 LICENSE=	LGPL3
 
+DERPECATED=	Depends on expired print/py-pypdf2
+EXPIRATION_DATE=2025-03-31
+
 USE_GITHUB=	yes
 GH_TAGNAME=	aaa05b66fc789e8b76ba5223c08b9a8ef5179808
 
