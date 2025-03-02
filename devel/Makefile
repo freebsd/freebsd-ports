@@ -243,7 +243,6 @@
     SUBDIR += asfml
     SUBDIR += asl
     SUBDIR += asmjit
-    SUBDIR += asmutils
     SUBDIR += asmx
     SUBDIR += astyle
     SUBDIR += asyncplusplus

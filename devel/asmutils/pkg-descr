@@ -1,5 +1,0 @@
-asmutils is a set of miscellaneous utilities written in assembly language,
-targeted for x86 embedded systems and small distributions (like rescue or
-installation disks); it also contains small libc and crypto libraries.  It
-features the smallest possible size and memory requirements, the fastest
-speed (with few exceptions), and good functionality.
