@@ -58,7 +58,7 @@ share/man/man1/dico.1.gz
 share/man/man5/dicod.conf.5.gz
 share/man/man8/dicod.8.gz
 sbin/dicod
-%%DATADIR%%/%%PORTVERSION%%/include/pp-setup
+%%DATADIR%%/%%VERSION%%/include/pp-setup
 %%NLS%%share/locale/da/LC_MESSAGES/dico.mo
 %%NLS%%share/locale/de/LC_MESSAGES/dico.mo
 %%NLS%%share/locale/es/LC_MESSAGES/dico.mo

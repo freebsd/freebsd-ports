@@ -1,5 +1,6 @@
 PORTNAME=	dico
 DISTVERSION=	2.12
+PORTREVISION=	1
 CATEGORIES=	net textproc
 MASTER_SITES=	GNU
 
@@ -14,17 +15,13 @@ LIB_DEPENDS=	libltdl.so:devel/libltdl
 
 USES=		gmake iconv libtool localbase ncurses pkgconfig readline tar:xz
 USE_LDCONFIG=	yes
-GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
-INSTALL_TARGET=	install-strip
-
-INFO=		dico
-
-LDFLAGS+=	-lthr
-
-PLIST_SUB=	PORTVERSION=${PORTVERSION}
-SUB_FILES=	pkg-message
 USE_RC_SUBR=	dicod
+GNU_CONFIGURE=	yes
+INSTALL_TARGET=	install-strip
+LDFLAGS+=	-lthr
+SUB_FILES=	pkg-message
+INFO=		dico
+PLIST_SUB=	VERSION=${DISTVERSION}
 
 OPTIONS_DEFINE=	PYTHON GUILE PCRE GSASL PAM LDAP NLS TK
 OPTIONS_DEFAULT=	PYTHON PCRE
@@ -49,8 +46,8 @@ PCRE_LIB_DEPENDS=	libpcre2-8.so:devel/pcre2
 PCRE_CONFIGURE_OFF=	--without-pcre
 
 PYTHON_USES=		python
-PYTHON_CONFIGURE_ENV=	PYTHON_CONFIG=${PYTHON_CMD}-config
 PYTHON_CONFIGURE_OFF=	--without-python
+PYTHON_CONFIGURE_ENV=	PYTHON_CONFIG=${PYTHON_CMD}-config
 
 TK_USES=		tk
 TK_BINARY_ALIAS=	wish=${WISH}
