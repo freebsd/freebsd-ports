@@ -1,5 +1,6 @@
 PORTNAME=	skanpage
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
+PORTREVISION=	1
 CATEGORIES=	graphics kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
@@ -10,11 +11,10 @@ WWW=		https://invent.kde.org/utilities/skanpage
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSES/GPL-3.0-only.txt
 
-BUILD_DEPENDS=	kquickimageeditor-qt6>=0:graphics/kquickimageeditor@qt6
-RUN_DEPENDS=	kquickimageeditor-qt6>=0:graphics/kquickimageeditor@qt6
-
+BUILD_DEPENDS=	kquickimageeditor-qt6>=0:graphics/kquickimageeditor
 LIB_DEPENDS=	libKSaneCore6.so:graphics/ksanecore \
 		libpng.so:graphics/png
+RUN_DEPENDS=	kquickimageeditor-qt6>=0:graphics/kquickimageeditor
 
 USES=		cmake compiler:c++11-lang gettext kde:6 qt:6 tar:xz
 USE_KDE=	auth codecs completion config configwidgets coreaddons crash \
