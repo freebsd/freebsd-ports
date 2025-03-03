@@ -18,6 +18,12 @@ SANITIZE_Include_MAINTAINER=	portmgr@FreeBSD.org
      SANITIZE_FLAGS?=	address
 .    if defined(_INCLUDE_USES_MESON_MK)
        MESON_ARGS+= -Db_sanitize=${SANITIZE_FLAGS}
+.    elif defined(_INCLUDE_USES_QMAKE_MK) || defined(_QT_DIST_MK_INCLUDED)
+       QMAKE_ARGS+=	QMAKE_LFLAGS_NOUNDEF=
+       QMAKE_ARGS+=	CONFIG+=sanitize
+.      for f in ${SANITIZE_FLAGS}
+       QMAKE_ARGS+=	CONFIG+=sanitize_${f}
+.      endfor
 .    else
        CFLAGS+=		-fsanitize=${SANITIZE_FLAGS}
        CXXFLAGS+=	-fsanitize=${SANITIZE_FLAGS}
