@@ -1,3 +1,48 @@
+  <vuln vid="398d1ec1-f7e6-11ef-bb15-002590af0794">
+    <topic>vim -- Potential code execution</topic>
+    <affects>
+      <package>
+	<name>vim</name>
+	<name>vim-gtk2</name>
+	<name>vim-gtk3</name>
+	<name>vim-motif</name>
+	<name>vim-x11</name>
+	<name>vim-tiny</name>
+	<range><lt>9.1.1164</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>vim reports:</p>
+	<blockquote cite="https://github.com/vim/vim/security/advisories/GHSA-wfmf-8626-q3r3">
+	  <h1>Summary</h1>
+	  <p>Potential code execution with tar.vim and special crafted tar files</p>
+	  <h1>Description</h1>
+	  <p>Vim is distributed with the tar.vim plugin, that allows easy
+	  editing and viewing of (compressed or uncompressed) tar files.</p>
+	  <p>Since commit 129a844 (Nov 11, 2024 runtime(tar): Update tar.vim to
+	  support permissions), the tar.vim plugin uses the ":read " ex command
+	  line to append below the cursor position, however the is not sanitized
+	  and is taken literaly from the tar archive. This allows to execute
+	  shell commands via special crafted tar archives. Whether this really
+	  happens, depends on the shell being used ('shell' option, which is set
+	  using $SHELL).</p>
+	  <h1>Impact</h1>
+	  <p>Impact is high but a user must be convinced to edit such a file
+	  using Vim which will reveal the filename, so a careful user may suspect
+	  some strange things going on.
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <url>https://github.com/vim/vim/security/advisories/GHSA-wfmf-8626-q3r3</url>
+    </references>
+    <dates>
+      <discovery>2025-03-02</discovery>
+      <entry>2025-03-02</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="8fb9101e-f58a-11ef-b4e4-2cf05da270f3">
     <topic>Gitlab -- Vulnerabilities</topic>
     <affects>
