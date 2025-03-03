@@ -1,6 +1,6 @@
 PORTNAME=	nuclei
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.3.8
+DISTVERSION=	3.3.9
 CATEGORIES=	security
 
 MAINTAINER=	dutra@FreeBSD.org
@@ -9,7 +9,7 @@ WWW=		https://github.com/projectdiscovery/nuclei
 
 LICENSE=	MIT
 
-USES=		go:1.21,modules
+USES=		go:1.22,modules
 GO_MODULE=	github.com/projectdiscovery/nuclei/v3
 
 GO_TARGET=	./cmd/${PORTNAME}
