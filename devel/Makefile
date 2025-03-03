@@ -6180,6 +6180,7 @@
     SUBDIR += py-xasm
     SUBDIR += py-xattr
     SUBDIR += py-xdg
+    SUBDIR += py-xdg-user-dirs
     SUBDIR += py-xdis
     SUBDIR += py-xdoctest
     SUBDIR += py-xerox
