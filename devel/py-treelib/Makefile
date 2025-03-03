@@ -1,5 +1,5 @@
 PORTNAME=	treelib
-DISTVERSION=	1.7.0
+DISTVERSION=	1.7.1
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -20,5 +20,10 @@ USES=		python
 USE_PYTHON=	distutils autoplist pytest
 
 NO_ARCH=	yes
+
+# tests as of 1.7.1:
+# Results (17.34s):
+#        57 passed
+#        17 warnings
 
 .include <bsd.port.mk>
