@@ -4190,3 +4190,5 @@ math/pspp||2025-03-01|Has expired: Listed as broken for more than 5 months
 games/shaaft||2025-03-02|Has expired: Unmaintained upstream for ages, breaks with modern toolchains
 devel/asmutils||2025-03-02|Has expired: latest upstream release is 19 years ago, replaced by a-Linux, does not build with GCC 14
 multimedia/libfame||2025-03-02|Has expired: Obsolete library, last release in 2004. Consider migrating to multimedia/ffmpeg
+graphics/kquickimageeditor@qt5|graphics/kquickimageeditor|2025-03-03|Unflavorize; only Qt6 support is needed
+graphics/kquickimageeditor@qt6|graphics/kquickimageeditor|2025-03-03|Unflavorize; only Qt6 support is needed
