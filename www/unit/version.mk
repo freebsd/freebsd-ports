@@ -2,6 +2,6 @@
 UNITVERSION_MK= defined
 
 # Define NGINX Unit's version.
-UNIT_VERSION=   1.34.1
+UNIT_VERSION=   1.34.2
 
 .endif	# UNITVERSION_MK
