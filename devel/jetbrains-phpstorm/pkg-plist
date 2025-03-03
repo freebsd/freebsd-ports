@@ -20,7 +20,7 @@ share/applications/phpstorm.desktop
 %%DATADIR%%/lib/app-client.jar
 %%DATADIR%%/lib/app.jar
 %%DATADIR%%/lib/bouncy-castle.jar
-%%DATADIR%%/lib/build-marker-PS-243.23654.168
+%%DATADIR%%/lib/build-marker-PS-243.25659.45
 %%DATADIR%%/lib/cds/classesLogAgent.jar
 %%DATADIR%%/lib/ext/platform-main.jar
 %%DATADIR%%/lib/external-system-rt.jar
@@ -68,6 +68,7 @@ share/applications/phpstorm.desktop
 %%DATADIR%%/lib/modules/intellij.platform.navbar.monolith.jar
 %%DATADIR%%/lib/modules/intellij.platform.progress.backend.jar
 %%DATADIR%%/lib/modules/intellij.platform.project.backend.jar
+%%DATADIR%%/lib/modules/intellij.platform.registry.cloud.jar
 %%DATADIR%%/lib/modules/intellij.platform.rpc.backend.jar
 %%DATADIR%%/lib/modules/intellij.platform.settings.local.jar
 %%DATADIR%%/lib/modules/intellij.platform.smRunner.vcs.jar
@@ -79,6 +80,7 @@ share/applications/phpstorm.desktop
 %%DATADIR%%/lib/modules/intellij.profiler.asyncOne.jar
 %%DATADIR%%/lib/modules/intellij.profiler.common.jar
 %%DATADIR%%/lib/modules/intellij.profiler.ultimate.ideaAsyncProfiler.jar
+%%DATADIR%%/lib/modules/intellij.settingsSync.core.jar
 %%DATADIR%%/lib/modules/intellij.smart.update.jar
 %%DATADIR%%/lib/native/%%SQLITE_ARCH%%/libsqliteij.so
 %%DATADIR%%/lib/nio-fs.jar
@@ -417,8 +419,8 @@ share/applications/phpstorm.desktop
 %%DATADIR%%/plugins/javascript-plugin/helpers/vitest-intellij/node_modules/vitest-intellij-reporter-safe.js
 %%DATADIR%%/plugins/javascript-plugin/helpers/vitest-intellij/vitest-intellij-reporter.js
 %%DATADIR%%/plugins/javascript-plugin/helpers/vitest-intellij/vitest-intellij-util.js
-%%DATADIR%%/plugins/javascript-plugin/js/js-predefined-d6986cc7102b-822845ee3bb5.ijx
-%%DATADIR%%/plugins/javascript-plugin/js/js-predefined-d6986cc7102b-822845ee3bb5.txt
+%%DATADIR%%/plugins/javascript-plugin/js/js-predefined-d6986cc7102b-1632447f56bf.ijx
+%%DATADIR%%/plugins/javascript-plugin/js/js-predefined-d6986cc7102b-1632447f56bf.txt
 %%DATADIR%%/plugins/javascript-plugin/jsLanguageServicesImpl/external/!HowToUpdateBundledTypeScript.md
 %%DATADIR%%/plugins/javascript-plugin/jsLanguageServicesImpl/external/browser.d.ts
 %%DATADIR%%/plugins/javascript-plugin/jsLanguageServicesImpl/external/cancellationToken.js
@@ -767,8 +769,8 @@ share/applications/phpstorm.desktop
 %%DATADIR%%/plugins/php-markdown/lib/php-markdown.jar
 %%DATADIR%%/plugins/php-remoteInterpreter/lib/php-remoteInterpreter.jar
 %%DATADIR%%/plugins/php-sharedIndexes/lib/php-sharedIndexes.jar
-%%DATADIR%%/plugins/php-sharedIndexes/php/php-predefined-a98d8de5180a-4c3855d0ab16.ijx
-%%DATADIR%%/plugins/php-sharedIndexes/php/php-predefined-a98d8de5180a-4c3855d0ab16.txt
+%%DATADIR%%/plugins/php-sharedIndexes/php/php-predefined-a98d8de5180a-1ec7b7818973.ijx
+%%DATADIR%%/plugins/php-sharedIndexes/php/php-predefined-a98d8de5180a-1ec7b7818973.txt
 %%DATADIR%%/plugins/php-sql/lib/php-sql.jar
 %%DATADIR%%/plugins/php-workshop/lib/php-workshop.jar
 %%DATADIR%%/plugins/php/lib/php-openapi-src.jar
