@@ -102,6 +102,7 @@ lib/libvirt-qemu.so.%%SHLIB_VER%%
 lib/libvirt.so
 lib/libvirt.so.0
 lib/libvirt.so.%%SHLIB_VER%%
+lib/sysusers.d/libvirt.conf
 %%NSS%%lib/nss_libvirt.so.1
 %%NSS%%lib/nss_libvirt_guest.so.1
 libdata/pkgconfig/libvirt-admin.pc
@@ -408,7 +409,6 @@ lib/libvirt/connection-driver/libvirt_driver_vbox.so
 %%XEN%%lib/libvirt/connection-driver/libvirt_driver_libxl.so
 lib/libvirt/storage-backend/libvirt_storage_backend_fs.so
 %%ZFS%%lib/libvirt/storage-backend/libvirt_storage_backend_zfs.so
-lib/libvirt/storage-file/libvirt_storage_file_fs.so
 %%QEMU%%@dir /var/cache/libvirt/qemu
 %%QEMU%%@dir /var/lib/libvirt/qemu/channel/target
 %%QEMU%%@dir /var/lib/libvirt/qemu/channel
@@ -459,3 +459,4 @@ lib/libvirt/storage-file/libvirt_storage_file_fs.so
 @dir /var/run/libvirt/secrets
 @dir /var/run/libvirt/storage
 @dir /var/run/libvirt
+@dir lib/libvirt/storage-file
