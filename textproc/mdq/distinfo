@@ -1,4 +1,4 @@
-TIMESTAMP = 1740392353
+TIMESTAMP = 1740988001
 SHA256 (rust/crates/aho-corasick-1.1.3.crate) = 8e60d3430d3a69478ad0993f19238d2df97c507009a52b3c10addcd7f6bcb916
 SIZE (rust/crates/aho-corasick-1.1.3.crate) = 183311
 SHA256 (rust/crates/anstream-0.6.18.crate) = 8acc5369981196006228e28809f761875c0327210a891e941f4c683b3a99529b
@@ -113,5 +113,5 @@ SHA256 (rust/crates/windows_x86_64_msvc-0.52.6.crate) = 589f6da84c646204747d1270
 SIZE (rust/crates/windows_x86_64_msvc-0.52.6.crate) = 832564
 SHA256 (rust/crates/winnow-0.6.24.crate) = c8d71a593cc5c42ad7876e2c1fda56f314f3754c084128833e64f1345ff8a03a
 SIZE (rust/crates/winnow-0.6.24.crate) = 165680
-SHA256 (yshavit-mdq-v0.3.0_GH0.tar.gz) = 0a62a73f762e6ffa38dc914c585916d50d093c282a4805d6abd3cf1896a14293
-SIZE (yshavit-mdq-v0.3.0_GH0.tar.gz) = 94024
+SHA256 (yshavit-mdq-v0.3.1_GH0.tar.gz) = b6bf39ac84363ed4e750a8342ca609105a8c0b84b50e5da6bf3be4130c367d75
+SIZE (yshavit-mdq-v0.3.1_GH0.tar.gz) = 95988
