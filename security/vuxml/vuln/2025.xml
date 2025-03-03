@@ -1,3 +1,39 @@
+  <vuln vid="6af5e3a3-f85a-11ef-95b9-589cfc10a551">
+    <topic>unit -- potential security issue</topic>
+    <affects>
+      <package>
+	<name>unit</name>
+	<name>unit-java</name>
+	<range><ge>1.11.0</ge><lt>1.34.2</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>SO-AND-SO reports:</p>
+	<blockquote cite="https://mailman.nginx.org/pipermail/unit/2025-March/QVYLJKLBIDWOJ7OLYGT27VUWH7RGBRQM.html">
+	  <p>Unit 1.34.2 fixes two issues in the Java language module websocket code.</p>
+	    <ol>
+	    <li>It addresses a potential security issue where we could get a negative
+	    payload length that could cause the Java language module process(es) to
+	    enter an infinite loop and consume excess CPU. This was a bug carried
+	    over from the initial Java websocket code import. It has been re-issued
+	    a CVE number (CVE-2025-1695).</li>
+	    <li>It addresses an issue whereby decoded payload lengths would be limited
+	    to 32 bits.</li>
+	    </ol>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-1695</cvename>
+      <url>https://mailman.nginx.org/pipermail/unit/2025-March/QVYLJKLBIDWOJ7OLYGT27VUWH7RGBRQM.html</url>
+    </references>
+    <dates>
+      <discovery>2025-03-03</discovery>
+      <entry>2025-03-03</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="398d1ec1-f7e6-11ef-bb15-002590af0794">
     <topic>vim -- Potential code execution</topic>
     <affects>
