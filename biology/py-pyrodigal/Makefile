@@ -7,7 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Python binding for Prodigal, an ORF finder for genomes and metagenomes
 WWW=		https://pyrodigal.readthedocs.io/en/stable/ \
-		https://github.com/althonos/pyrodigal/
+		https://github.com/althonos/pyrodigal
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
