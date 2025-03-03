@@ -1,3 +1,3 @@
-TIMESTAMP = 1737635295
-SHA256 (libvirt-python-11.0.0.tar.gz) = cee825a53c6438c5bc84b4250b35493a8e504d5d8075d3d2069ffaf7090846f8
-SIZE (libvirt-python-11.0.0.tar.gz) = 241103
+TIMESTAMP = 1741025481
+SHA256 (libvirt-python-11.1.0.tar.gz) = 00efb9a781087668512d6a002eb9cd136e44ff8701ac6793cc13b6fdc6d9ef8f
+SIZE (libvirt-python-11.1.0.tar.gz) = 241110
