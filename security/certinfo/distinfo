@@ -1,0 +1,5 @@
+TIMESTAMP = 1729847806
+SHA256 (go/security_certinfo/certinfo-v0.1.36/v0.1.36.mod) = e280ac8f6a453469502e6f50ea6e72c12cdc3a952a8e2f6c3b2f63fe734e5edf
+SIZE (go/security_certinfo/certinfo-v0.1.36/v0.1.36.mod) = 296
+SHA256 (go/security_certinfo/certinfo-v0.1.36/v0.1.36.zip) = 6fae0c308308814d228c58c9ff9f4cca06e57915f72eb7b139c7dfc433887ab5
+SIZE (go/security_certinfo/certinfo-v0.1.36/v0.1.36.zip) = 18526
