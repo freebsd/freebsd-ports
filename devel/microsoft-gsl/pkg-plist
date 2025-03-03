@@ -6,7 +6,6 @@ include/gsl/narrow
 include/gsl/pointers
 include/gsl/span
 include/gsl/span_ext
-include/gsl/string_span
 include/gsl/util
 include/gsl/zstring
 share/cmake/Microsoft.GSL/GSL.natvis
