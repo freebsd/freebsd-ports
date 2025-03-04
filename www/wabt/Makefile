@@ -1,5 +1,5 @@
 PORTNAME=	wabt
-DISTVERSION=	1.0.36
+DISTVERSION=	1.0.37
 CATEGORIES=	www
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -17,7 +17,7 @@ USES=		cmake:testing localbase:ldflags python ssl
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	WebAssembly
-GH_TUPLE=	WebAssembly:testsuite:f3f048661dc1686d556a27d522df901cb747ab4a:WebAssembly_testsuite/third_party/testsuite \
+GH_TUPLE=	WebAssembly:testsuite:cbc54d7:WebAssembly_testsuite/third_party/testsuite \
 		google:googletest:703bd9caab50b139428cea1aaff9974ebee5742e:google_googletest/third_party/gtest \
 		dabeaz:ply:d776a2ece6c12bf8f8b6a0e65b48546ac6078765:dabeaz_ply/third_party/ply \
 		WebAssembly:wasm-c-api:b6dd1fb658a282c64b029867845bc50ae59e1497:WebAssembly_wasm_c_api/third_party/wasm-c-api \
@@ -40,5 +40,7 @@ FUZZ_TOOLS_CMAKE_BOOL=	BUILD_FUZZ_TOOLS
 
 post-test:
 	@cd ${TEST_WRKSRC} && ./wabt-unittests
+
+# tests as of 1.0.37: 125 tests from 18 test suites ran. (1183 ms total)
 
 .include <bsd.port.mk>

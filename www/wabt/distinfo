@@ -1,8 +1,8 @@
-TIMESTAMP = 1724180018
-SHA256 (WebAssembly-wabt-1.0.36_GH0.tar.gz) = e07ceeecfc682c12157ff2738b8a4633d7d19da18c1ecf16daae700397ecce2c
-SIZE (WebAssembly-wabt-1.0.36_GH0.tar.gz) = 1291640
-SHA256 (WebAssembly-testsuite-f3f048661dc1686d556a27d522df901cb747ab4a_GH0.tar.gz) = 052dbb79eeaedbaa7af068b7b85e1125d187719b597e2242fb2cfabf51226e73
-SIZE (WebAssembly-testsuite-f3f048661dc1686d556a27d522df901cb747ab4a_GH0.tar.gz) = 694118
+TIMESTAMP = 1741061466
+SHA256 (WebAssembly-wabt-1.0.37_GH0.tar.gz) = 36aa73bacb91a33bdcebab0473ca1779ce608205a8ba20774ac67b5e753a575e
+SIZE (WebAssembly-wabt-1.0.37_GH0.tar.gz) = 1405595
+SHA256 (WebAssembly-testsuite-cbc54d7_GH0.tar.gz) = 42f116c98fe727e7b78b98ca129e681848b5c7dd3c3e6409ce79359e8c156b44
+SIZE (WebAssembly-testsuite-cbc54d7_GH0.tar.gz) = 799503
 SHA256 (google-googletest-703bd9caab50b139428cea1aaff9974ebee5742e_GH0.tar.gz) = d17b1b83a57b3933565a6d0616fe261107326d47de20288d0949ed038e1c342d
 SIZE (google-googletest-703bd9caab50b139428cea1aaff9974ebee5742e_GH0.tar.gz) = 905359
 SHA256 (dabeaz-ply-d776a2ece6c12bf8f8b6a0e65b48546ac6078765_GH0.tar.gz) = d9c0be0a3bd2ac09f81700bc808526f91e6e80d87ff619a8cab47c9417c4180d
