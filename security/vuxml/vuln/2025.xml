@@ -1,3 +1,42 @@
+  <vuln vid="f4f3e001-402b-4d6d-8efa-ab11fcf8de2b">
+    <topic>electron{32,33} -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>electron32</name>
+	<range><lt>32.3.2</lt></range>
+      </package>
+      <package>
+	<name>electron33</name>
+	<range><lt>33.4.2</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Electron developers report:</p>
+	<blockquote cite="https://github.com/electron/electron/releases/tag/v32.3.2">
+	  <p>This update fixes the following vulnerabilities:</p>
+	  <ul>
+	    <li>Security: backported fix for CVE-2025-0611.</li>
+	    <li>Security: backported fix for CVE-2025-0612.</li>
+	    <li>Security: backported fix for CVE-2025-0999.</li>
+	  </ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-0611</cvename>
+      <url>https://github.com/advisories/GHSA-83vc-v46q-mv3w</url>
+      <cvename>CVE-2025-0612</cvename>
+      <url>https://github.com/advisories/GHSA-c6xg-jh94-mf2w</url>
+      <cvename>CVE-2025-0999</cvename>
+      <url>https://github.com/advisories/GHSA-f2jv-hxph-r5wm</url>
+    </references>
+    <dates>
+      <discovery>2025-02-27</discovery>
+      <entry>2025-03-04</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="6af5e3a3-f85a-11ef-95b9-589cfc10a551">
     <topic>unit -- potential security issue</topic>
     <affects>
