@@ -1,6 +1,6 @@
 PORTNAME=	gcc
 PORTVERSION=	12.4.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang
 MASTER_SITES=	GCC
 PKGNAMESUFFIX=	${SUFFIX}
@@ -64,6 +64,9 @@ CONFIGURE_ARGS+=	--disable-multilib
 CFLAGS:=	${CFLAGS:S/mcpu=g/mcpu=G/}
 CXXFLAGS:=	${CFLAGS:S/mcpu=g/mcpu=G/}
 .endif
+
+GRAPHITE_LIB_DEPENDS=          libisl.so:devel/isl
+GRAPHITE_CONFIGURE_WITH+=      isl
 
 .include <bsd.port.pre.mk>
 
@@ -140,11 +143,6 @@ INFO+=		gcc${SUFFIX}/libquadmath \
 		gcc${SUFFIX}/libitm
 SUB_FILES=	pkg-message
 SUB_LIST+=	TARGLIB=${TARGLIB}
-
-.if ${PORT_OPTIONS:MGRAPHITE}
-LIB_DEPENDS+=	libisl.so:devel/isl
-CONFIGURE_ARGS+=--with-isl=${LOCALBASE}
-.endif
 
 CONFIGURE_ARGS+=--enable-languages=${LANGUAGES}
 
