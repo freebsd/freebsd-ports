@@ -1,7 +1,6 @@
 PORTNAME=	bacon
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.10.0
-PORTREVISION=	1
+DISTVERSION=	3.11.0
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -32,7 +31,7 @@ CARGO_CRATES=	adler2-2.0.0 \
 		anstyle-parse-0.2.6 \
 		anstyle-query-1.1.2 \
 		anstyle-wincon-3.0.7 \
-		anyhow-1.0.95 \
+		anyhow-1.0.97 \
 		arboard-3.4.1 \
 		arc-swap-1.7.1 \
 		arrayvec-0.5.2 \
@@ -40,25 +39,26 @@ CARGO_CRATES=	adler2-2.0.0 \
 		autocfg-1.4.0 \
 		bindgen-0.70.1 \
 		bitflags-1.3.2 \
-		bitflags-2.8.0 \
+		bitflags-2.9.0 \
 		block2-0.5.1 \
 		bstr-1.11.3 \
 		bumpalo-3.17.0 \
-		bytemuck-1.21.0 \
+		bytemuck-1.22.0 \
 		bytes-1.10.0 \
 		camino-1.1.9 \
 		cargo-platform-0.1.9 \
-		cargo_metadata-0.19.1 \
-		cc-1.2.13 \
+		cargo_metadata-0.19.2 \
+		cc-1.2.16 \
 		cesu8-1.1.0 \
 		cexpr-0.6.0 \
 		cfg-if-1.0.0 \
 		cfg_aliases-0.2.1 \
-		chrono-0.4.39 \
+		chrono-0.4.40 \
 		clang-sys-1.8.1 \
-		clap-4.5.28 \
-		clap-help-1.3.1 \
-		clap_builder-4.5.27 \
+		clap-4.5.31 \
+		clap-help-1.3.2 \
+		clap_builder-4.5.31 \
+		clap_complete-4.5.46 \
 		clap_derive-4.5.28 \
 		clap_lex-0.7.4 \
 		cli-log-2.1.0 \
@@ -88,16 +88,16 @@ CARGO_CRATES=	adler2-2.0.0 \
 		dirs-sys-next-0.1.2 \
 		displaydoc-0.2.5 \
 		dunce-1.0.5 \
-		either-1.13.0 \
+		either-1.14.0 \
 		encoding_rs-0.8.35 \
-		equivalent-1.0.1 \
+		equivalent-1.0.2 \
 		errno-0.3.10 \
 		error-code-3.3.1 \
 		faster-hex-0.9.0 \
 		fastrand-2.3.0 \
 		file-size-1.0.3 \
 		filetime-0.2.25 \
-		flate2-1.0.35 \
+		flate2-1.1.0 \
 		fnv-1.0.7 \
 		form_urlencoded-1.2.1 \
 		fsevent-sys-4.1.0 \
@@ -163,6 +163,7 @@ CARGO_CRATES=	adler2-2.0.0 \
 		inotify-sys-0.1.5 \
 		instant-0.1.13 \
 		iq-0.2.2 \
+		is_executable-1.0.4 \
 		is_terminal_polyfill-1.70.1 \
 		itertools-0.13.0 \
 		itoa-1.0.14 \
@@ -178,19 +179,19 @@ CARGO_CRATES=	adler2-2.0.0 \
 		lazy-regex-3.4.1 \
 		lazy-regex-proc_macros-3.4.1 \
 		lazy_static-1.5.0 \
-		libc-0.2.169 \
+		libc-0.2.170 \
 		libloading-0.8.6 \
 		libredox-0.1.3 \
 		linux-raw-sys-0.4.15 \
-		litemap-0.7.4 \
+		litemap-0.7.5 \
 		lock_api-0.4.12 \
-		log-0.4.25 \
+		log-0.4.26 \
 		mach2-0.4.2 \
 		memchr-2.7.4 \
 		memmap2-0.9.5 \
 		minimad-0.13.1 \
 		minimal-lexical-0.2.1 \
-		miniz_oxide-0.8.3 \
+		miniz_oxide-0.8.5 \
 		mio-1.0.3 \
 		ndk-0.8.0 \
 		ndk-context-0.1.1 \
@@ -219,14 +220,14 @@ CARGO_CRATES=	adler2-2.0.0 \
 		parking_lot_core-0.9.10 \
 		percent-encoding-2.3.1 \
 		pkg-config-0.3.31 \
-		portable-atomic-1.10.0 \
+		portable-atomic-1.11.0 \
 		portable-atomic-util-0.2.4 \
 		proc-macro-crate-3.2.0 \
-		proc-macro2-1.0.93 \
+		proc-macro2-1.0.94 \
 		proc-status-0.1.1 \
 		prodash-29.0.0 \
 		quote-1.0.38 \
-		redox_syscall-0.5.8 \
+		redox_syscall-0.5.9 \
 		redox_users-0.4.6 \
 		regex-1.11.1 \
 		regex-automata-0.4.9 \
@@ -240,16 +241,16 @@ CARGO_CRATES=	adler2-2.0.0 \
 		same-file-1.0.6 \
 		scopeguard-1.2.0 \
 		semver-1.0.25 \
-		serde-1.0.217 \
-		serde_derive-1.0.217 \
-		serde_json-1.0.138 \
+		serde-1.0.218 \
+		serde_derive-1.0.218 \
+		serde_json-1.0.139 \
 		serde_spanned-0.6.8 \
 		sha1_smol-1.0.1 \
 		shlex-1.3.0 \
 		signal-hook-0.3.17 \
 		signal-hook-mio-0.2.4 \
 		signal-hook-registry-1.4.2 \
-		smallvec-1.13.2 \
+		smallvec-1.14.0 \
 		stable_deref_trait-1.2.0 \
 		strict-0.2.0 \
 		strsim-0.11.1 \
@@ -260,21 +261,21 @@ CARGO_CRATES=	adler2-2.0.0 \
 		syn-1.0.109 \
 		syn-2.0.98 \
 		synstructure-0.13.1 \
-		tempfile-3.16.0 \
+		tempfile-3.17.1 \
 		termimad-0.31.2 \
 		terminal-light-1.7.0 \
 		thiserror-1.0.69 \
-		thiserror-2.0.11 \
+		thiserror-2.0.12 \
 		thiserror-impl-1.0.69 \
-		thiserror-impl-2.0.11 \
+		thiserror-impl-2.0.12 \
 		tinystr-0.7.6 \
-		tinyvec-1.8.1 \
+		tinyvec-1.9.0 \
 		tinyvec_macros-0.1.1 \
 		toml-0.8.20 \
 		toml_datetime-0.6.8 \
-		toml_edit-0.22.23 \
+		toml_edit-0.22.24 \
 		unicode-bom-2.0.3 \
-		unicode-ident-1.0.16 \
+		unicode-ident-1.0.17 \
 		unicode-normalization-0.1.24 \
 		unicode-width-0.1.14 \
 		unicode-width-0.2.0 \
@@ -302,6 +303,7 @@ CARGO_CRATES=	adler2-2.0.0 \
 		windows-0.54.0 \
 		windows-core-0.52.0 \
 		windows-core-0.54.0 \
+		windows-link-0.1.0 \
 		windows-result-0.1.2 \
 		windows-sys-0.45.0 \
 		windows-sys-0.52.0 \
@@ -332,7 +334,7 @@ CARGO_CRATES=	adler2-2.0.0 \
 		windows_x86_64_msvc-0.48.5 \
 		windows_x86_64_msvc-0.52.6 \
 		winnow-0.6.26 \
-		winnow-0.7.1 \
+		winnow-0.7.3 \
 		wit-bindgen-rt-0.33.0 \
 		write16-1.0.0 \
 		writeable-0.5.5 \
@@ -343,8 +345,8 @@ CARGO_CRATES=	adler2-2.0.0 \
 		yoke-derive-0.7.5 \
 		zerocopy-0.7.35 \
 		zerocopy-derive-0.7.35 \
-		zerofrom-0.1.5 \
-		zerofrom-derive-0.1.5 \
+		zerofrom-0.1.6 \
+		zerofrom-derive-0.1.6 \
 		zerovec-0.10.4 \
 		zerovec-derive-0.10.3
 
