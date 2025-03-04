@@ -1,6 +1,6 @@
 PORTNAME=	go
 DISTVERSION?=	g20240208
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	lang
 MASTER_SITES?=	https://github.com/dmgk/go-bootstrap/releases/download/${BOOTSTRAP_TAG}/:bootstrap \
 		LOCAL/dmgk:bootstrap
@@ -116,6 +116,7 @@ do-install:
 		pkg/obj pkg/bootstrap pkg/${OPSYS:tl}_${GOARCH_${ARCH}}/cmd
 	@${MKDIR} ${STAGEDIR}${PREFIX}/go${GO_SUFFIX}
 	@${CP} -a ${WRKSRC}/* ${STAGEDIR}${PREFIX}/go${GO_SUFFIX}
+	@${RM} -rf ${STAGEDIR}${PREFIX}/go${GO_SUFFIX}/src/debug/elf/testdata
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/go${GO_SUFFIX}/bin/*
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/go${GO_SUFFIX}/pkg/tool/${OPSYS:tl}_${GOARCH_${ARCH}}/*
 .for f in go gofmt
