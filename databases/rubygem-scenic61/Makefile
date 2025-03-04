@@ -11,6 +11,9 @@ WWW=		https://github.com/scenic-views/scenic
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
+DEPRECATED=	Uses EOL version 6.1.X of Rails
+EXPIRATION_DATE=2025-04-03
+
 RUN_DEPENDS=	rubygem-activerecord61>=4.0.0:databases/rubygem-activerecord61 \
 		rubygem-railties61>=4.0.0:www/rubygem-railties61
 
