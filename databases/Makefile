@@ -575,6 +575,7 @@
     SUBDIR += pgpool-II-43
     SUBDIR += pgpool-II-44
     SUBDIR += pgpool-II-45
+    SUBDIR += pgpool-II-46
     SUBDIR += pgreplay
     SUBDIR += pgroonga
     SUBDIR += pgrouting
