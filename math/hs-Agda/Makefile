@@ -1,5 +1,6 @@
 PORTNAME=	Agda
 DISTVERSION=	2.7.0.1
+PORTREVISION=	1
 CATEGORIES=	math haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -98,10 +99,10 @@ agda-mode_DATADIR_VARS=	Agda
 PLIST_SUB=	AGDA_VER=${PORTVERSION}
 
 post-install:
-	${SETENV} Agda_datadir=${WRKSRC}/src/data ${STAGEDIR}${PREFIX}/libexec/cabal/agda-mode compile
+	#${SETENV} Agda_datadir=${WRKSRC}/src/data ${STAGEDIR}${PREFIX}/libexec/cabal/agda-mode compile
 	${FIND} ${WRKSRC}/src/data/lib/prim/Agda -name '*.agda' -exec ${SETENV} Agda_datadir=${WRKSRC}/src/data ${STAGEDIR}${PREFIX}/libexec/cabal/agda {} \;
 	${MKDIR} ${STAGEDIR}${DATADIR}/lib/prim/Agda
 	cd ${WRKSRC}/src/data && ${COPYTREE_SHARE} lib ${STAGEDIR}${DATADIR}
-	cd ${WRKSRC}/src/data && ${COPYTREE_SHARE} emacs-mode ${STAGEDIR}${DATADIR}
+	#cd ${WRKSRC}/src/data && ${COPYTREE_SHARE} emacs-mode ${STAGEDIR}${DATADIR}
 
 .include <bsd.port.mk>
