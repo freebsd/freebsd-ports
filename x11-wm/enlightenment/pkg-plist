@@ -74,6 +74,7 @@ include/enlightenment/e_gadcon_popup.h
 include/enlightenment/e_gesture.h
 include/enlightenment/e_grab_dialog.h
 include/enlightenment/e_grabinput.h
+include/enlightenment/e_graph.h
 include/enlightenment/e_hints.h
 include/enlightenment/e_icon.h
 include/enlightenment/e_ilist.h
@@ -243,6 +244,9 @@ lib/enlightenment/modules/conf_window_remembers/module.desktop
 lib/enlightenment/modules/connman/e-module-connman.edj
 lib/enlightenment/modules/connman/%%ENLIGHTENMENT_ARCH%%/module.so
 lib/enlightenment/modules/connman/module.desktop
+lib/enlightenment/modules/convertible/e-module-convertible.edj
+lib/enlightenment/modules/convertible/%%ENLIGHTENMENT_ARCH%%/module.so
+lib/enlightenment/modules/convertible/module.desktop
 lib/enlightenment/modules/cpufreq/e-module-cpufreq.edj
 lib/enlightenment/modules/cpufreq/%%ENLIGHTENMENT_ARCH%%/module.so
 lib/enlightenment/modules/cpufreq/module.desktop
@@ -417,7 +421,6 @@ share/applications/enlightenment_paledit.desktop
 %%DATADIR%%/data/backgrounds/Sunset-Hills.edj
 %%DATADIR%%/data/backgrounds/White-Flower.edj
 %%DATADIR%%/data/backgrounds/Yellow-Flower.edj
-%%DATADIR%%/themes/enlightenment_fprint.edj
 %%DATADIR%%/data/config/default/e.cfg
 %%DATADIR%%/data/config/default/e_bindings.cfg
 %%DATADIR%%/data/config/profile.cfg
@@ -578,6 +581,7 @@ share/applications/enlightenment_paledit.desktop
 %%DATADIR%%/doc/enlightenment.png
 %%DATADIR%%/doc/illume2.html
 %%DATADIR%%/doc/illume2.png
+%%DATADIR%%/themes/enlightenment_fprint.edj
 share/icons/hicolor/128x128/apps/emixer.png
 share/icons/hicolor/128x128/apps/enlightenment_fprint.png
 share/icons/hicolor/128x128/apps/enlightenment_paledit.png
