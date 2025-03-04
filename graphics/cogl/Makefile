@@ -1,6 +1,6 @@
 PORTNAME=	cogl
 PORTVERSION=	1.22.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	GNOME
 
@@ -21,7 +21,9 @@ USE_GL=		egl gbm
 USE_XORG=	x11 xcomposite xext xdamage xfixes xrandr
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--with-x \
-		 --enable-xlib-egl-platform=yes
+		--enable-kms-egl-platform=yes \
+		--enable-wayland-egl-platform=yes \
+		--enable-xlib-egl-platform=yes
 INSTALL_TARGET=	install-strip
 
 PLIST_SUB=	LIBVER=20 LIBVERSION=20.4.3

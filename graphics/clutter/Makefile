@@ -1,6 +1,6 @@
 PORTNAME=	clutter
 DISTVERSION=	1.26.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	GNOME
 
@@ -27,10 +27,11 @@ USE_XORG=	x11 xcomposite xdamage xext xfixes xi xrandr
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--with-x --enable-conformance=no \
-		--disable-evdev-input \
+		--enable-evdev-input \
 		--enable-egl-backend=yes \
 		--enable-x11-backend=yes \
-		--enable-gdk-backend=no \
+		--enable-gdk-backend=yes \
+		--enable-wayland-backend=yes \
 		--enable-wayland-compositor=no
 INSTALL_TARGET=	install-strip
 CPE_VENDOR=	clutter_project
