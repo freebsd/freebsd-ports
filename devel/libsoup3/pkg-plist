@@ -43,7 +43,7 @@ include/libsoup-3.0/libsoup/soup.h
 lib/girepository-1.0/Soup-3.0.typelib
 lib/libsoup-3.0.so
 lib/libsoup-3.0.so.0
-lib/libsoup-3.0.so.0.6.0
+lib/libsoup-3.0.so.0.7.2
 libdata/pkgconfig/libsoup-3.0.pc
 share/gir-1.0/Soup-3.0.gir
 share/locale/ab/LC_MESSAGES/libsoup-3.0.mo
@@ -79,6 +79,7 @@ share/locale/id/LC_MESSAGES/libsoup-3.0.mo
 share/locale/it/LC_MESSAGES/libsoup-3.0.mo
 share/locale/ja/LC_MESSAGES/libsoup-3.0.mo
 share/locale/ka/LC_MESSAGES/libsoup-3.0.mo
+share/locale/kab/LC_MESSAGES/libsoup-3.0.mo
 share/locale/kn/LC_MESSAGES/libsoup-3.0.mo
 share/locale/ko/LC_MESSAGES/libsoup-3.0.mo
 share/locale/lt/LC_MESSAGES/libsoup-3.0.mo
@@ -114,3 +115,5 @@ share/locale/vi/LC_MESSAGES/libsoup-3.0.mo
 share/locale/zh_CN/LC_MESSAGES/libsoup-3.0.mo
 share/locale/zh_HK/LC_MESSAGES/libsoup-3.0.mo
 share/locale/zh_TW/LC_MESSAGES/libsoup-3.0.mo
+%%VAPI%%share/vala/vapi/libsoup-3.0.deps
+%%VAPI%%share/vala/vapi/libsoup-3.0.vapi
