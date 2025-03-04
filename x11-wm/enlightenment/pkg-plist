@@ -245,7 +245,7 @@ lib/enlightenment/modules/connman/e-module-connman.edj
 lib/enlightenment/modules/connman/freebsd-x86_64-0.27.0/module.so
 lib/enlightenment/modules/connman/module.desktop
 lib/enlightenment/modules/convertible/e-module-convertible.edj
-lib/enlightenment/modules/convertible/freebsd-x86_64-0.27.0/module.so
+lib/enlightenment/modules/convertible/%%ENLIGHTENMENT_ARCH%%/module.so
 lib/enlightenment/modules/convertible/module.desktop
 lib/enlightenment/modules/cpufreq/e-module-cpufreq.edj
 lib/enlightenment/modules/cpufreq/freebsd-x86_64-0.27.0/module.so
