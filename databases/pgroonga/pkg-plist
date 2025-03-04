@@ -7,6 +7,7 @@ include/postgresql/server/contrib/pgroonga_check/pgrn-convert.h
 include/postgresql/server/contrib/pgroonga_check/pgrn-crash-safer-statuses.h
 include/postgresql/server/contrib/pgroonga_check/pgrn-create.h
 include/postgresql/server/contrib/pgroonga_check/pgrn-ctid.h
+include/postgresql/server/contrib/pgroonga_check/pgrn-database-info.h
 include/postgresql/server/contrib/pgroonga_check/pgrn-database.h
 include/postgresql/server/contrib/pgroonga_check/pgrn-file.h
 include/postgresql/server/contrib/pgroonga_check/pgrn-full-text-search-condition.h
@@ -46,6 +47,7 @@ include/postgresql/server/contrib/pgroonga_crash_safer/pgrn-convert.h
 include/postgresql/server/contrib/pgroonga_crash_safer/pgrn-crash-safer-statuses.h
 include/postgresql/server/contrib/pgroonga_crash_safer/pgrn-create.h
 include/postgresql/server/contrib/pgroonga_crash_safer/pgrn-ctid.h
+include/postgresql/server/contrib/pgroonga_crash_safer/pgrn-database-info.h
 include/postgresql/server/contrib/pgroonga_crash_safer/pgrn-database.h
 include/postgresql/server/contrib/pgroonga_crash_safer/pgrn-file.h
 include/postgresql/server/contrib/pgroonga_crash_safer/pgrn-full-text-search-condition.h
@@ -85,6 +87,7 @@ include/postgresql/server/contrib/pgroonga_standby_maintainer/pgrn-convert.h
 include/postgresql/server/contrib/pgroonga_standby_maintainer/pgrn-crash-safer-statuses.h
 include/postgresql/server/contrib/pgroonga_standby_maintainer/pgrn-create.h
 include/postgresql/server/contrib/pgroonga_standby_maintainer/pgrn-ctid.h
+include/postgresql/server/contrib/pgroonga_standby_maintainer/pgrn-database-info.h
 include/postgresql/server/contrib/pgroonga_standby_maintainer/pgrn-database.h
 include/postgresql/server/contrib/pgroonga_standby_maintainer/pgrn-file.h
 include/postgresql/server/contrib/pgroonga_standby_maintainer/pgrn-full-text-search-condition.h
@@ -124,6 +127,7 @@ include/postgresql/server/contrib/pgroonga_wal_applier/pgrn-convert.h
 include/postgresql/server/contrib/pgroonga_wal_applier/pgrn-crash-safer-statuses.h
 include/postgresql/server/contrib/pgroonga_wal_applier/pgrn-create.h
 include/postgresql/server/contrib/pgroonga_wal_applier/pgrn-ctid.h
+include/postgresql/server/contrib/pgroonga_wal_applier/pgrn-database-info.h
 include/postgresql/server/contrib/pgroonga_wal_applier/pgrn-database.h
 include/postgresql/server/contrib/pgroonga_wal_applier/pgrn-file.h
 include/postgresql/server/contrib/pgroonga_wal_applier/pgrn-full-text-search-condition.h
@@ -163,6 +167,7 @@ include/postgresql/server/extension/pgroonga/pgrn-convert.h
 include/postgresql/server/extension/pgroonga/pgrn-crash-safer-statuses.h
 include/postgresql/server/extension/pgroonga/pgrn-create.h
 include/postgresql/server/extension/pgroonga/pgrn-ctid.h
+include/postgresql/server/extension/pgroonga/pgrn-database-info.h
 include/postgresql/server/extension/pgroonga/pgrn-database.h
 include/postgresql/server/extension/pgroonga/pgrn-file.h
 include/postgresql/server/extension/pgroonga/pgrn-full-text-search-condition.h
@@ -203,6 +208,7 @@ include/postgresql/server/extension/pgroonga_database/pgrn-convert.h
 include/postgresql/server/extension/pgroonga_database/pgrn-crash-safer-statuses.h
 include/postgresql/server/extension/pgroonga_database/pgrn-create.h
 include/postgresql/server/extension/pgroonga_database/pgrn-ctid.h
+include/postgresql/server/extension/pgroonga_database/pgrn-database-info.h
 include/postgresql/server/extension/pgroonga_database/pgrn-database.h
 include/postgresql/server/extension/pgroonga_database/pgrn-file.h
 include/postgresql/server/extension/pgroonga_database/pgrn-full-text-search-condition.h
@@ -239,7 +245,6 @@ lib/postgresql/pgroonga_crash_safer.so
 lib/postgresql/pgroonga_database.so
 lib/postgresql/pgroonga_standby_maintainer.so
 lib/postgresql/pgroonga_wal_applier.so
-share/postgresql/extension/pgroonga--%%MVER%%.sql
 share/postgresql/extension/pgroonga--1.0.0--1.0.1.sql
 share/postgresql/extension/pgroonga--1.0.1--1.0.2.sql
 share/postgresql/extension/pgroonga--1.0.2--1.0.3.sql
@@ -322,7 +327,9 @@ share/postgresql/extension/pgroonga--3.0.6--3.0.7.sql
 share/postgresql/extension/pgroonga--3.0.7--3.0.8.sql
 share/postgresql/extension/pgroonga--3.0.8--3.0.9.sql
 share/postgresql/extension/pgroonga--3.0.9--3.1.0.sql
-share/postgresql/extension/pgroonga--3.1.0--%%MVER%%.sql
+share/postgresql/extension/pgroonga--3.1.0--3.1.1.sql
+share/postgresql/extension/pgroonga--3.1.1--%%MVER%%.sql
+share/postgresql/extension/pgroonga--%%MVER%%.sql
 share/postgresql/extension/pgroonga.control
 share/postgresql/extension/pgroonga_database--%%MVER%%.sql
 share/postgresql/extension/pgroonga_database.control
