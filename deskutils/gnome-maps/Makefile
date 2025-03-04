@@ -12,14 +12,13 @@ LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	geoclue>=0:net/geoclue
-LIB_DEPENDS=	libchamplain-0.12.so:graphics/libchamplain \
-		libgeocode-glib-2.so:net/geocode-glib2 \
+LIB_DEPENDS=	libgeocode-glib-2.so:net/geocode-glib2 \
 		libgjs.so:lang/gjs \
 		libgweather-4.so:net/libgweather4 \
 		librest-1.0.so:net/librest1 \
 		libshumate-1.0.so:x11-toolkits/libshumate \
 		libsoup-3.0.so:devel/libsoup3 \
-		libportal.so.1:deskutils/libportal \
+		libportal.so:deskutils/libportal \
 		libjson-glib-1.0.so:devel/json-glib
 RUN_DEPENDS=	geoclue>=0:net/geoclue
 
