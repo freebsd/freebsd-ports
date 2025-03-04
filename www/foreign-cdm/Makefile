@@ -1,5 +1,6 @@
 PORTNAME=	foreign-cdm
-PORTVERSION=	20250224
+DISTVERSION=	20250224
+PORTREVISION=	1
 CATEGORIES=	www multimedia linux
 MASTER_SITES=	https://arrowd.name/:cdm
 DISTFILES=	cdm-${CDM_INT_HASH}.tar.gz:cdm
@@ -19,7 +20,6 @@ RUN_DEPENDS=	linux_base-c7>0:emulators/linux_base-c7
 USE_GITHUB=	yes
 GH_ACCOUNT=	shkhln
 GH_PROJECT=	foreign-cdm
-GH_TAGNAME=	3fe4d7130bb1e0581b5310635515a120f2794b88
 GH_TUPLE=	capnproto:capnproto:928c8390d4d562bd32dc79a42eb64e9bdba572d8:capnproto/third_party/capnproto
 
 MAKE_ENV=	LINUX_CC=/compat/linux/opt/rh/devtoolset-11/root/usr/bin/g++ \
@@ -34,7 +34,7 @@ PLIST_FILES=	libexec/fcdm-jail \
 		share/chromium/WidevineCdm/manifest.json \
 		share/foreign-cdm/fcdm-setup-env
 
-CDM_INT_HASH=	fef0b5aa1bd31efb88dfab804bdbe614f3d54f28
+CDM_INT_HASH=	06395a2863cb1ebdb47617a995b73f95c14fe120
 
 post-extract:
 	${MV} ${WRKDIR}/*.h ${WRKSRC}/third_party/cdm/
