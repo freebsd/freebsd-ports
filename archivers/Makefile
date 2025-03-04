@@ -179,6 +179,7 @@
     SUBDIR += php84-zlib
     SUBDIR += pigz
     SUBDIR += pixz
+    SUBDIR += plakar
     SUBDIR += plzip
     SUBDIR += ppmd
     SUBDIR += ppunpack

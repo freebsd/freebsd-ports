@@ -1,0 +1,8 @@
+plakar is a free and opensource utility to create distributed, versioned backups
+with compression, encryption and data deduplication.
+
+With a very clear goal to simplify backups, it is designed to be straightforward
+to use.
+It requires a few seconds to install and only a few minutes to get backups
+set up and running: creating a backup is as simple as typing plakar backup
+and restoring as simple as typing plakar restore.
