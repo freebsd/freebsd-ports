@@ -38,6 +38,7 @@
     SUBDIR += R-cran-viridis
     SUBDIR += R-cran-viridisLite
     SUBDIR += R-cran-visNetwork
+    SUBDIR += R-cran-webp
     SUBDIR += SciPlot
     SUBDIR += a2png
     SUBDIR += aalib
