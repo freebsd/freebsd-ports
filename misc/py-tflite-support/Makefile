@@ -1,6 +1,6 @@
 PORTNAME=	tflite-support
 DISTVERSION=	0.1.0a1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	misc # machine-learning
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,11 +11,9 @@ WWW=		https://www.tensorflow.org/
 
 LICENSE=	APACHE20
 
-BROKEN_FreeBSD_15=	compilation fails with clang-19, and it isn't clear how to upgrade, see https://github.com/tensorflow/tflite-support/issues/991
-
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pybind11>=2.4:devel/py-pybind11@${PY_FLAVOR}
 RUN_DEPENDS=	${PYNUMPY} \
-		${PYTHON_PKGNAMEPREFIX}absl>=0.7.0:devel/py-absl@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}absl-py>=0.7.0:devel/py-absl-py@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pybind11>=2.4:devel/py-pybind11@${PY_FLAVOR}
 
 USES=		compiler:c++14-lang python
