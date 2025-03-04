@@ -1,9 +1,9 @@
 PORTNAME=	thunderbird
 DISTVERSION=	128.8.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	mail news net-im wayland
 MASTER_SITES=	MOZILLA/${PORTNAME}/releases/${DISTVERSION}esr/source \
-		MOZILLA/${PORTNAME}/candidates/${DISTVERSION}esr-candidates/build3/source
+		MOZILLA/${PORTNAME}/candidates/${DISTVERSION}esr-candidates/build4/source
 DISTFILES=	${DISTNAME}esr.source${EXTRACT_SUFX}
 
 MAINTAINER=	gecko@FreeBSD.org
