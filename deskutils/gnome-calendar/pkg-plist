@@ -71,4 +71,8 @@ share/locale/vi/LC_MESSAGES/gnome-calendar.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-calendar.mo
 share/locale/zh_HK/LC_MESSAGES/gnome-calendar.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-calendar.mo
-share/metainfo/org.gnome.Calendar.appdata.xml
+share/locale/ab/LC_MESSAGES/gnome-calendar.mo
+share/locale/hi/LC_MESSAGES/gnome-calendar.mo
+share/locale/ka/LC_MESSAGES/gnome-calendar.mo
+share/locale/my/LC_MESSAGES/gnome-calendar.mo
+share/metainfo/org.gnome.Calendar.metainfo.xml
