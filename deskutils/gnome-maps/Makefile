@@ -1,5 +1,6 @@
 PORTNAME=	gnome-maps
 DISTVERSION=	43.5
+PORTREVISION=	1
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	GNOME/sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+)\..*/\1/}
 DIST_SUBDIR=	gnome
@@ -13,15 +14,9 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	geoclue>=0:net/geoclue
 LIB_DEPENDS=	libchamplain-0.12.so:graphics/libchamplain \
-		libclutter-1.0.so:graphics/clutter \
-		libcogl.so:graphics/cogl \
-		libgee-0.8.so:devel/libgee \
 		libgeocode-glib-2.so:net/geocode-glib2 \
-		libgfbgraph-0.2.so:net/gfbgraph \
 		libgjs.so:lang/gjs \
 		libgweather-4.so:net/libgweather4 \
-		libhandy-1.so:x11-toolkits/libhandy \
-		libjson-glib-1.0.so:devel/json-glib \
 		librest-1.0.so:net/librest1 \
 		libshumate-1.0.so:x11-toolkits/libshumate \
 		libsoup-3.0.so:devel/libsoup3
