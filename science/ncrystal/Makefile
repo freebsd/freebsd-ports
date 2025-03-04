@@ -1,6 +1,6 @@
 PORTNAME=	ncrystal
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.1.2
+DISTVERSION=	4.1.4
 CATEGORIES=	science # physics
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -23,6 +23,6 @@ CMAKE_TESTING_ON=	NCRYSTAL_ENABLE_TESTING
 post-install: # workaround for https://github.com/mctools/ncrystal/issues/150
 	@${RM} ${STAGEDIR}${PREFIX}/*.sh
 
-# tests as of 4.1.2: 53% tests passed, 37 tests failed out of 79, see https://github.com/mctools/ncrystal/issues/231
+# tests as of 4.1.4: 54% tests passed, 37 tests failed out of 80, see https://github.com/mctools/ncrystal/issues/231
 
 .include <bsd.port.mk>
