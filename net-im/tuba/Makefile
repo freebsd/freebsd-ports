@@ -1,12 +1,12 @@
 PORTNAME=	Tuba
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.9.1
+DISTVERSION=	0.9.2
 CATEGORIES=	net-im
 
 MAINTAINER=	nxjoseph@protonmail.com
 COMMENT=	Browse the Fediverse
-WWW=		https://tuba.geopjr.dev \
-		https://github.com/GeopJr/Tuba
+WWW=		https://github.com/GeopJr/Tuba \
+		https://tuba.geopjr.dev
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -36,6 +36,7 @@ USE_GSTREAMER1+=	yes
 
 post-install:
 	@(cd ${WRKSRC}/_build && \
+		${STRIP_CMD} dev.geopjr.Tuba && \
 		${LN} dev.geopjr.Tuba ${STAGEDIR}${PREFIX}/bin/tuba)
 
 .include <bsd.port.mk>
