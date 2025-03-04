@@ -747,7 +747,7 @@ clickhouse:*:800:
 # free: 803
 # free: 804
 # free: 805
-# free: 806
+act_runner:*:806:
 bosun:*:807:
 clixon:*:808:
 # free: 809
