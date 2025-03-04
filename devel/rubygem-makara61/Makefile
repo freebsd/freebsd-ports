@@ -10,6 +10,9 @@ WWW=		https://github.com/instacart/makara
 
 LICENSE=	MIT
 
+DEPRECATED=	Uses EOL version 6.1.X of Rails
+EXPIRATION_DATE=2025-04-03
+
 RUN_DEPENDS=	rubygem-activerecord61>0:databases/rubygem-activerecord61
 
 USES=		gem
