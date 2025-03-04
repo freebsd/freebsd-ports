@@ -6,7 +6,8 @@ CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Mutation testing for Rust
-WWW=		https://mutants.rs/
+WWW=		https://mutants.rs/ \
+		https://github.com/sourcefrog/cargo-mutants
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
