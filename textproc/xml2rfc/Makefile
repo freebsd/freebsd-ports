@@ -1,5 +1,5 @@
 PORTNAME=	xml2rfc
-PORTVERSION=	3.24.0
+PORTVERSION=	3.28.0
 CATEGORIES=	textproc
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -24,7 +24,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lxml5>=5.3.0:devel/py-lxml5@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}platformdirs>=3.6.0:devel/py-platformdirs@${PY_FLAVOR}
 
 USES=		python
-USE_PYTHON=	distutils autoplist concurrent optsuffix
+USE_PYTHON=	pep517 autoplist concurrent optsuffix
 
 NO_ARCH=	yes
 
