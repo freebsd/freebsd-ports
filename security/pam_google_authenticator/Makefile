@@ -1,5 +1,5 @@
 PORTNAME=	pam_google_authenticator
-PORTVERSION=	1.10
+PORTVERSION=	1.11
 PORTEPOCH=	1
 CATEGORIES=	security
 
