@@ -4343,14 +4343,6 @@
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/PyJWT-2.8.0.dist-info/WHEEL
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/PyJWT-2.8.0.dist-info/direct_url.json
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/PyJWT-2.8.0.dist-info/top_level.txt
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/PyYAML-6.0.1.dist-info/INSTALLER
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/PyYAML-6.0.1.dist-info/LICENSE
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/PyYAML-6.0.1.dist-info/METADATA
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/PyYAML-6.0.1.dist-info/RECORD
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/PyYAML-6.0.1.dist-info/REQUESTED
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/PyYAML-6.0.1.dist-info/WHEEL
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/PyYAML-6.0.1.dist-info/direct_url.json
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/PyYAML-6.0.1.dist-info/top_level.txt
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/README.txt
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/SQLAlchemy-2.0.23.dist-info/INSTALLER
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/SQLAlchemy-2.0.23.dist-info/LICENSE
@@ -4564,13 +4556,13 @@
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/anyio/streams/tls.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/anyio/to_process.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/anyio/to_thread.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/api-4.10.1.dist-info/INSTALLER
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/api-4.10.1.dist-info/METADATA
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/api-4.10.1.dist-info/RECORD
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/api-4.10.1.dist-info/REQUESTED
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/api-4.10.1.dist-info/WHEEL
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/api-4.10.1.dist-info/direct_url.json
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/api-4.10.1.dist-info/top_level.txt
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/api-4.11.0.dist-info/INSTALLER
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/api-4.11.0.dist-info/METADATA
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/api-4.11.0.dist-info/RECORD
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/api-4.11.0.dist-info/REQUESTED
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/api-4.11.0.dist-info/WHEEL
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/api-4.11.0.dist-info/direct_url.json
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/api-4.11.0.dist-info/top_level.txt
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/api/__init__.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/api/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/api/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
@@ -19281,13 +19273,13 @@
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/psutil/tests/test_testutils.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/psutil/tests/test_unicode.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/psutil/tests/test_windows.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyarrow-18.0.0.dist-info/INSTALLER
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyarrow-18.0.0.dist-info/METADATA
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyarrow-18.0.0.dist-info/RECORD
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyarrow-18.0.0.dist-info/REQUESTED
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyarrow-18.0.0.dist-info/WHEEL
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyarrow-18.0.0.dist-info/direct_url.json
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyarrow-18.0.0.dist-info/top_level.txt
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyarrow-19.0.1.dist-info/INSTALLER
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyarrow-19.0.1.dist-info/METADATA
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyarrow-19.0.1.dist-info/RECORD
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyarrow-19.0.1.dist-info/REQUESTED
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyarrow-19.0.1.dist-info/WHEEL
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyarrow-19.0.1.dist-info/direct_url.json
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyarrow-19.0.1.dist-info/top_level.txt
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyarrow/__init__.pxd
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyarrow/__init__.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyarrow/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
@@ -19681,6 +19673,7 @@
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyarrow/include/arrow/testing/gtest_compat.h
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyarrow/include/arrow/testing/gtest_util.h
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyarrow/include/arrow/testing/matchers.h
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyarrow/include/arrow/testing/math.h
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyarrow/include/arrow/testing/pch.h
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyarrow/include/arrow/testing/process.h
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyarrow/include/arrow/testing/random.h
@@ -19869,8 +19862,14 @@
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyarrow/lib.pyx
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyarrow/lib_api.h
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyarrow/libarrow_python.so
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyarrow/libarrow_python.so.1900
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyarrow/libarrow_python.so.1900.1.0
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyarrow/libarrow_python_flight.so
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyarrow/libarrow_python_flight.so.1900
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyarrow/libarrow_python_flight.so.1900.1.0
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyarrow/libarrow_python_parquet_encryption.so
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyarrow/libarrow_python_parquet_encryption.so.1900
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyarrow/libarrow_python_parquet_encryption.so.1900.1.0
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyarrow/memory.pxi
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyarrow/orc.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyarrow/pandas-shim.pxi
@@ -21630,6 +21629,14 @@
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyximport/__pycache__/pyximport%%PYTHON_EXT_SUFFIX%%.pyc
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyximport/pyxbuild.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyximport/pyximport.py
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyyaml-6.0.1.dist-info/INSTALLER
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyyaml-6.0.1.dist-info/LICENSE
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyyaml-6.0.1.dist-info/METADATA
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyyaml-6.0.1.dist-info/RECORD
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyyaml-6.0.1.dist-info/REQUESTED
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyyaml-6.0.1.dist-info/WHEEL
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyyaml-6.0.1.dist-info/direct_url.json
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyyaml-6.0.1.dist-info/top_level.txt
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/referencing-0.31.1.dist-info/INSTALLER
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/referencing-0.31.1.dist-info/METADATA
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/referencing-0.31.1.dist-info/RECORD
@@ -25126,13 +25133,13 @@
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/uvloop/server.pyx
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/uvloop/sslproto.pxd
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/uvloop/sslproto.pyx
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.10.1.dist-info/INSTALLER
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.10.1.dist-info/METADATA
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.10.1.dist-info/RECORD
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.10.1.dist-info/REQUESTED
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.10.1.dist-info/WHEEL
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.10.1.dist-info/direct_url.json
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.10.1.dist-info/top_level.txt
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.11.0.dist-info/INSTALLER
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.11.0.dist-info/METADATA
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.11.0.dist-info/RECORD
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.11.0.dist-info/REQUESTED
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.11.0.dist-info/WHEEL
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.11.0.dist-info/direct_url.json
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.11.0.dist-info/top_level.txt
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh/__init__.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh/__main__.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
@@ -31305,7 +31312,6 @@
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/Cython-0.29.36.dist-info
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/MarkupSafe-2.1.2.dist-info
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/PyJWT-2.8.0.dist-info
-@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/PyYAML-6.0.1.dist-info
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/SQLAlchemy-2.0.23.dist-info
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/__pycache__
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/_distutils_hack/__pycache__
@@ -31330,7 +31336,7 @@
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/api/models
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/api/spec
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/api
-@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/api-4.10.1.dist-info
+@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/api-4.11.0.dist-info
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/asgiref/__pycache__
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/asgiref
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/asgiref-3.7.2.dist-info
@@ -33121,7 +33127,7 @@
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyarrow/vendored/__pycache__
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyarrow/vendored
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyarrow
-@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyarrow-18.0.0.dist-info
+@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyarrow-19.0.1.dist-info
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyasn1/__pycache__
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyasn1/codec/__pycache__
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyasn1/codec/ber/__pycache__
@@ -33180,6 +33186,7 @@
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pytz-2020.1.dist-info
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyximport/__pycache__
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyximport
+@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyyaml-6.0.1.dist-info
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/referencing/__pycache__
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/referencing/tests/__pycache__
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/referencing/tests
@@ -33417,7 +33424,7 @@
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh/rbac/default
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh/rbac
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh
-@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.10.1.dist-info
+@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.11.0.dist-info
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/websocket/__pycache__
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/websocket/tests/__pycache__
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/websocket/tests/data
