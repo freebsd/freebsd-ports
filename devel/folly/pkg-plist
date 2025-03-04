@@ -371,6 +371,7 @@ include/folly/detail/base64_detail/Base64Simd.h
 include/folly/detail/base64_detail/Base64_SSE4_2.h
 include/folly/detail/base64_detail/Base64_SSE4_2_Platform.h
 include/folly/detail/thread_local_globals.h
+include/folly/detail/tuple.h
 include/folly/dynamic-inl.h
 include/folly/dynamic.h
 include/folly/executors/Async.h
@@ -581,6 +582,7 @@ include/folly/external/aor/asmdefs.h
 include/folly/external/farmhash/farmhash.h
 include/folly/external/fast-crc32/avx512_crc32c_v8s3x4.h
 include/folly/external/fast-crc32/neon_crc32c_v3s4x2e_v2.h
+include/folly/external/fast-crc32/neon_eor3_crc32_v9s3x2e_s3.h
 include/folly/external/fast-crc32/neon_eor3_crc32c_v8s2x4_s3.h
 include/folly/external/fast-crc32/sse_crc32c_v8s3x3.h
 include/folly/external/nvidia/detail/RangeSve2.h
