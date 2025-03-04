@@ -1,17 +1,21 @@
 PORTNAME=	kwallet
 DISTVERSION=	${KDE_FRAMEWORKS_VERSION}
+PORTREVISION=	1
 CATEGORIES=	sysutils kde kde-frameworks
 
-COMMENT=	Safe desktop-wide storage for passwords
 MAINTAINER=	kde@FreeBSD.org
+COMMENT=	Safe desktop-wide storage for passwords
 
-LIB_DEPENDS=	libgcrypt.so:security/libgcrypt \
+LIB_DEPENDS=	libassuan.so:security/libassuan \
+		libgcrypt.so:security/libgcrypt \
+		libgpgme.so:security/gpgme \
+		libgpgmepp.so:security/gpgme-cpp \
 		libqca-qt6.so:devel/qca@qt6
 
-USES=		cmake gettext gl kde:6 qt:6 tar:xz xorg
+USES=		cmake gettext-tools gl kde:6 qt:6 tar:xz xorg
 USE_GL=		gl opengl
-USE_KDE=	colorscheme config configwidgets coreaddons crash dbusaddons i18n \
-		notifications service widgetsaddons windowsystem \
+USE_KDE=	colorscheme config coreaddons crash dbusaddons i18n \
+		notifications widgetsaddons windowsystem \
 		ecm:build doctools:build
 USE_QT=		base
 USE_XORG=	x11
