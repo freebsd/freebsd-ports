@@ -15,12 +15,6 @@ LIB_DEPENDS=	libfolks.so:net-im/folks \
 		libgeocode-glib.so:net/geocode-glib \
 		libgoa-1.0.so:net/gnome-online-accounts \
 		libgstreamer-1.0.so:multimedia/gstreamer1 \
-		libjson-glib-1.0.so:devel/json-glib \
-		libnotify.so:devel/libnotify \
-		libnspr4.so:devel/nspr \
-		libsecret-1.so:security/libsecret \
-		libsoup-2.4.so:devel/libsoup \
-		libtelepathy-glib.so:net-im/telepathy-glib \
 		libportal-gtk4.so:deskutils/libportal-gtk4 \
 		libqrencode.so:graphics/libqrencode
 
