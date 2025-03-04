@@ -12,7 +12,7 @@
 
 PORTNAME?=	webengine
 DISTVERSION=	${QT6_VERSION}
-PORTREVISION?=	1 # Master port for print/qt6-pdf. Please keep this line.
+PORTREVISION?=	2 # Master port for print/qt6-pdf. Please keep this line.
 CATEGORIES?=	www
 PKGNAMEPREFIX=	qt6-
 
@@ -36,6 +36,8 @@ USE_XORG=	x11 xcb xcomposite xcursor xdamage xext xfixes xi xkbfile \
 
 CMAKE_ON=	QT_FEATURE_webengine_system_ffmpeg \
 		QT_FEATURE_webengine_proprietary_codecs
+
+USE_LDCONFIG=	${PREFIX}/${QT_LIBDIR_REL}
 
 .if defined(BUILD_QTPDF)
 CMAKE_ON+=	QT_FEATURE_qtpdf_build
