@@ -511,6 +511,7 @@ share/icons/hicolor/scalable/apps/vcmiclient.svg
 %%DATADIR%%/config/widgets/commonPrimitives.json
 %%DATADIR%%/config/widgets/extraOptionsTab.json
 %%DATADIR%%/config/widgets/lobbyWindow.json
+%%DATADIR%%/config/widgets/lobbyWindowWide.json
 %%DATADIR%%/config/widgets/mapOverview.json
 %%DATADIR%%/config/widgets/playerOptionsTab.json
 %%DATADIR%%/config/widgets/randomMapTab.json
