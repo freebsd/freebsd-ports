@@ -22,5 +22,5 @@ lib/cmake/QXlsxQt%%QTVER%%/QXlsxQt%%QTVER%%ConfigVersion.cmake
 lib/cmake/QXlsxQt%%QTVER%%/QXlsxQt%%QTVER%%Targets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/QXlsxQt%%QTVER%%/QXlsxQt%%QTVER%%Targets.cmake
 lib/libQXlsxQt%%QTVER%%.so
-lib/libQXlsxQt%%QTVER%%.so.0
-lib/libQXlsxQt%%QTVER%%.so.1.4.4
+lib/libQXlsxQt%%QTVER%%.so.1
+lib/libQXlsxQt%%QTVER%%.so.1.5.0
