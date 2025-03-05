@@ -67,21 +67,6 @@ Caldera 5 port was installed
 
    http://localhost:8888
 
-   If you want to MITRE Caldera works wth non-localhost settings, you can do the
-   following:
-
-   # sed -i "" -e 's|http://localhost|http://ip_or_hostname_here|g' %%WWWDIR%%/plugins/magma/dist/index*.js
-
-   If you are using ssl plugin:
-
-   # sed -i "" -e 's|http://localhost:8888|https://ip_or_hostname_here:8443|g' %%WWWDIR%%/plugins/magma/dist/assets/index*.js
-
-   Take on mind port number must be changed depending of your settings
-
-   I prefer change the ip/hostname:port of this way because it is more quick
-   instead of re-build plugins/magma each time we define/change VITE_CALDERA_URL
-   into .env file. Also it drop dependency of node_modules files and nodejs app.
-
 10) Log file is located at /var/log/caldera.log
 
 11) For more configure information you can look at the following link:
