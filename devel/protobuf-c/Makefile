@@ -1,5 +1,6 @@
 PORTNAME=	protobuf-c
 DISTVERSION=	1.5.1
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/protobuf-c/protobuf-c/releases/download/v${DISTVERSION}/
 
@@ -10,7 +11,8 @@ WWW=		https://github.com/protobuf-c/protobuf-c
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libprotobuf.so:devel/protobuf
+LIB_DEPENDS=	libabsl_log_internal_check_op.so:devel/abseil \
+		libprotobuf.so:devel/protobuf
 
 USES=		compiler:c++17-lang gmake libtool pkgconfig
 
