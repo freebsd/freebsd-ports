@@ -1,6 +1,6 @@
---- media/media_options.gni.orig	2025-01-15 09:18:26 UTC
+--- media/media_options.gni.orig	2025-03-05 08:14:56 UTC
 +++ media/media_options.gni
-@@ -197,12 +197,15 @@ declare_args() {
+@@ -202,12 +202,15 @@ declare_args() {
    # Enables runtime selection of ALSA library for audio.
    use_alsa = false
  

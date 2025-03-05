@@ -1,4 +1,4 @@
---- base/memory/discardable_memory.cc.orig	2025-02-19 07:43:18 UTC
+--- base/memory/discardable_memory.cc.orig	2025-03-05 08:14:56 UTC
 +++ base/memory/discardable_memory.cc
 @@ -26,7 +26,7 @@ BASE_FEATURE(kMadvFreeDiscardableMemory,
               base::FEATURE_DISABLED_BY_DEFAULT);
@@ -9,7 +9,7 @@
  BASE_FEATURE(kDiscardableMemoryBackingTrial,
               "DiscardableMemoryBackingTrial",
               base::FEATURE_DISABLED_BY_DEFAULT);
-@@ -38,7 +38,7 @@ BASE_FEATURE(kDiscardableMemoryBackingTrial,
+@@ -44,7 +44,7 @@ BASE_FEATURE_ENUM_PARAM(DiscardableMemoryTrialGroup,
  
  namespace {
  
@@ -18,7 +18,7 @@
  
  DiscardableMemoryBacking GetBackingForFieldTrial() {
    DiscardableMemoryTrialGroup trial_group =
-@@ -57,7 +57,7 @@ DiscardableMemoryBacking GetBackingForFieldTrial() {
+@@ -63,7 +63,7 @@ DiscardableMemoryBacking GetBackingForFieldTrial() {
  
  }  // namespace
  
@@ -27,7 +27,7 @@
  
  // Probe capabilities of this device to determine whether we should participate
  // in the discardable memory backing trial.
-@@ -89,7 +89,7 @@ DiscardableMemory::DiscardableMemory() = default;
+@@ -95,7 +95,7 @@ DiscardableMemory::DiscardableMemory() = default;
  DiscardableMemory::~DiscardableMemory() = default;
  
  DiscardableMemoryBacking GetDiscardableMemoryBacking() {

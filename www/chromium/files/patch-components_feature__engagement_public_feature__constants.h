@@ -1,4 +1,4 @@
---- components/feature_engagement/public/feature_constants.h.orig	2025-02-19 07:43:18 UTC
+--- components/feature_engagement/public/feature_constants.h.orig	2025-03-05 08:14:56 UTC
 +++ components/feature_engagement/public/feature_constants.h
 @@ -27,7 +27,7 @@ FEATURE_CONSTANTS_DECLARE_FEATURE(kIPHDemoMode);
  FEATURE_CONSTANTS_DECLARE_FEATURE(kIPHDummyFeature);
@@ -9,7 +9,7 @@
  #if BUILDFLAG(GOOGLE_CHROME_BRANDING)
  FEATURE_CONSTANTS_DECLARE_FEATURE(kEsbDownloadRowPromoFeature);
  #endif
-@@ -285,7 +285,7 @@ FEATURE_CONSTANTS_DECLARE_FEATURE(kDefaultBrowserTrigg
+@@ -295,7 +295,7 @@ FEATURE_CONSTANTS_DECLARE_FEATURE(kDefaultBrowserTrigg
  
  #endif  // BUILDFLAG(IS_IOS)
  
@@ -18,7 +18,7 @@
      BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_FUCHSIA)
  FEATURE_CONSTANTS_DECLARE_FEATURE(
      kIPHAutofillCardInfoRetrievalSuggestionFeature);
-@@ -343,7 +343,7 @@ FEATURE_CONSTANTS_DECLARE_FEATURE(kIPHScalableIphHelpA
+@@ -353,7 +353,7 @@ FEATURE_CONSTANTS_DECLARE_FEATURE(kIPHScalableIphHelpA
  FEATURE_CONSTANTS_DECLARE_FEATURE(kIPHScalableIphGamingFeature);
  #endif
  

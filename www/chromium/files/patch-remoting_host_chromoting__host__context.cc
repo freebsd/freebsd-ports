@@ -1,6 +1,6 @@
---- remoting/host/chromoting_host_context.cc.orig	2024-11-14 07:57:23 UTC
+--- remoting/host/chromoting_host_context.cc.orig	2025-03-05 08:14:56 UTC
 +++ remoting/host/chromoting_host_context.cc
-@@ -293,7 +293,7 @@ std::unique_ptr<ChromotingHostContext> ChromotingHostC
+@@ -292,7 +292,7 @@ std::unique_ptr<ChromotingHostContext> ChromotingHostC
    // on a UI thread.
    scoped_refptr<AutoThreadTaskRunner> input_task_runner =
        AutoThread::CreateWithType("ChromotingInputThread", ui_task_runner,

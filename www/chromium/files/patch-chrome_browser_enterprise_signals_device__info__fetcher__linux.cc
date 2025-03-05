@@ -1,4 +1,4 @@
---- chrome/browser/enterprise/signals/device_info_fetcher_linux.cc.orig	2024-07-30 11:12:21 UTC
+--- chrome/browser/enterprise/signals/device_info_fetcher_linux.cc.orig	2025-03-05 08:14:56 UTC
 +++ chrome/browser/enterprise/signals/device_info_fetcher_linux.cc
 @@ -4,12 +4,23 @@
  
@@ -21,9 +21,9 @@
 +#include <net/if_dl.h>
 +#endif
 +
+ #include <algorithm>
  #include <string>
  
- #include "base/environment.h"
 @@ -117,6 +128,7 @@ SettingValue GetScreenlockSecured() {
  // Implements the logic from the native host installation script. First find the
  // root device identifier, then locate its parent and get its type.

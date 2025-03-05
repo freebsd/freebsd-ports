@@ -1,6 +1,6 @@
---- third_party/vulkan-validation-layers/src/layers/external/vma/vk_mem_alloc.h.orig	2024-07-30 11:12:21 UTC
+--- third_party/vulkan-validation-layers/src/layers/external/vma/vk_mem_alloc.h.orig	2025-03-05 08:14:56 UTC
 +++ third_party/vulkan-validation-layers/src/layers/external/vma/vk_mem_alloc.h
-@@ -2740,7 +2740,7 @@ static void* vma_aligned_alloc(size_t alignment, size_
+@@ -2971,7 +2971,7 @@ static void* vma_aligned_alloc(size_t alignment, size_
  
      return memalign(alignment, size);
  }

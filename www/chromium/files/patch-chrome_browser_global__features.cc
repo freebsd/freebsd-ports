@@ -1,4 +1,4 @@
---- chrome/browser/global_features.cc.orig	2025-02-19 07:43:18 UTC
+--- chrome/browser/global_features.cc.orig	2025-03-05 08:14:56 UTC
 +++ chrome/browser/global_features.cc
 @@ -21,7 +21,7 @@
  #include "chrome/browser/glic/launcher/glic_background_mode_manager.h"  // nogncheck
@@ -18,7 +18,7 @@
    whats_new_registry_ = CreateWhatsNewRegistry();
  #endif
  
-@@ -79,7 +79,7 @@ GlobalFeatures::CreateSystemPermissionsPlatformHandle(
+@@ -88,7 +88,7 @@ GlobalFeatures::CreateSystemPermissionsPlatformHandle(
    return system_permission_settings::PlatformHandle::Create();
  }
  
