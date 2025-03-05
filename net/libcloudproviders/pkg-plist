@@ -1,0 +1,15 @@
+include/cloudproviders/cloudproviders.h
+include/cloudproviders/cloudprovidersaccount.h
+include/cloudproviders/cloudprovidersaccountexporter.h
+include/cloudproviders/cloudproviderscollector.h
+include/cloudproviders/cloudprovidersprovider.h
+include/cloudproviders/cloudprovidersproviderexporter.h
+include/cloudproviders/enums.h
+lib/girepository-1.0/CloudProviders-0.3.typelib
+lib/libcloudproviders.so
+lib/libcloudproviders.so.0
+lib/libcloudproviders.so.0.3.6
+libdata/pkgconfig/cloudproviders.pc
+share/gir-1.0/CloudProviders-0.3.gir
+share/vala/vapi/cloudproviders.deps
+share/vala/vapi/cloudproviders.vapi

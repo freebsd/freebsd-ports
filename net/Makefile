@@ -375,6 +375,7 @@
     SUBDIR += libbgpdump
     SUBDIR += libcapn
     SUBDIR += libcharon
+    SUBDIR += libcloudproviders
     SUBDIR += libcmis
     SUBDIR += libcoap
     SUBDIR += libdaq
