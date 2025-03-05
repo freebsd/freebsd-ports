@@ -8,7 +8,7 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT= 	collection of data extractors for Tracker/Nepomuk
 WWW= 		https://gnome.pages.gitlab.gnome.org/localsearch/
 
-LICENSE= 	LGPLv1 GPLv2+
+LICENSE= 	LGPL21 GPLv2+
 LICENSE_COMB=	multi
 
 BUILD_DEPENDS=	a2x:textproc/asciidoc
