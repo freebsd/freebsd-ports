@@ -1,16 +1,12 @@
 PORTNAME=	totem
-PORTVERSION=	3.38.2
-PORTREVISION=	7
+PORTVERSION=	43.1
 CATEGORIES=	multimedia gnome
-MASTER_SITES=	GNOME
+MASTER_SITES=	GNOME/sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+)\..*/\1/}
 DIST_SUBDIR=	gnome
-
-PATCH_SITES=	https://gitlab.gnome.org/GNOME/${PORTNAME}/-/commit/
-PATCHFILES+=	61e3a957cb73.patch:-p1 # https://gitlab.gnome.org/GNOME/totem/-/merge_requests/218
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Gstreamer-based video player for the GNOME 3 Desktop
-WWW=		https://www.gnome.org/projects/totem/
+WWW=		https://apps.gnome.org/Totem/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
@@ -21,14 +17,11 @@ BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:misc/iso-codes \
 		itstool:textproc/itstool \
 		grilo-plugins>=0:net/grilo-plugins
 LIB_DEPENDS=	libgdata.so:devel/libgdata \
-		libcogl.so:graphics/cogl \
-		libclutter-1.0.so:graphics/clutter \
-		libclutter-gst-3.0.so:multimedia/clutter-gst3 \
-		libclutter-gtk-1.0.so:graphics/clutter-gtk3 \
 		libpeas-1.0.so:devel/libpeas \
 		libjson-glib-1.0.so:devel/json-glib \
 		libgrilo-0.3.so:net/grilo \
-		libtotem-plparser.so:multimedia/totem-pl-parser
+		libtotem-plparser.so:multimedia/totem-pl-parser \
+		libhandy-1.so:x11-toolkits/libhandy
 RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:misc/iso-codes \
 		${PYTHON_PKGNAMEPREFIX}libpeas>=0:devel/py-libpeas@${PY_FLAVOR} \
 		gnome-settings-daemon>=2.91.0:sysutils/gnome-settings-daemon \
@@ -41,7 +34,7 @@ USES=		compiler desktop-file-utils gettext gl gnome gstreamer localbase meson \
 		pkgconfig python tar:xz xorg
 USE_GNOME=	cairo gtk30 intlhack introspection libxml2 pygobject3 gnomedesktop3
 USE_XORG=	x11 xorgproto xtst ice sm
-USE_GSTREAMER=	core good bad soup ugly
+USE_GSTREAMER=	core good bad soup ugly gtk
 USE_GL=		egl
 USE_LDCONFIG=	yes
 
