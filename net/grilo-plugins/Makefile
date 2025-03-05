@@ -1,6 +1,5 @@
 PORTNAME=	grilo-plugins
-PORTVERSION=	0.3.15
-PORTREVISION=	1
+PORTVERSION=	0.3.16
 CATEGORIES=	net
 MASTER_SITES=	GNOME
 
@@ -19,7 +18,7 @@ LIB_DEPENDS=	libgrilo-0.3.so:net/grilo \
 		libgoa-1.0.so:net/gnome-online-accounts \
 		libgom-1.0.so:databases/gom \
 		libtotem-plparser.so:multimedia/totem-pl-parser \
-		libsoup-2.4.so:devel/libsoup \
+		libsoup-3.0.so:devel/libsoup3 \
 		libmediaart-2.0.so:multimedia/libmediaart \
 		libgmime-2.6.so:mail/gmime26 \
 		libjson-glib-1.0.so:devel/json-glib
