@@ -1,5 +1,5 @@
 PORTNAME=	simsu
-PORTVERSION=	1.4.4
+PORTVERSION=	1.4.5
 CATEGORIES=	games
 MASTER_SITES=	https://gottcode.org/${PORTNAME}/
 
@@ -10,7 +10,7 @@ WWW=		https://gottcode.org/simsu/
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		cmake compiler:c++17-lang gl qt:6 tar:bzip2
+USES=		cmake compiler:c++17-lang gettext-tools gl qt:6 tar:bzip2
 USE_QT=		base tools:build
 USE_GL=		gl
 
