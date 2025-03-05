@@ -1,37 +1,39 @@
-PORTNAME?=	mvdsv
-PORTVERSION=	0.34
+PORTNAME=	mvdsv
+DISTVERSION=	1.11
 PORTEPOCH=	2
-CATEGORIES?=	games
+CATEGORIES=	games
+MASTER_SITES=	${WWW}/releases/download/${DISTVERSION}/
+DISTNAME=	${PORTNAME}-source-with-submodules-${DISTVERSION}
 
-MAINTAINER=	danfe@FreeBSD.org
-COMMENT?=	Enhanced QuakeWorld server with multi-view demos capability
-WWW=		https://github.com/deurk/mvdsv
+MAINTAINER=	vvd@FreeBSD.org
+COMMENT=	Enhanced QuakeWorld server with multi-view demos capability
+WWW=		https://github.com/QW-Group/mvdsv
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-.if ${PORTNAME} == mvdsv
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libpcre.so:devel/pcre
-USES=		localbase:ldflags
-.endif
 
-USE_GITHUB=	yes
-GH_ACCOUNT=	deurk
+USES=		cmake zip
+NO_WRKSUBDIR=	yes
 
-MAKEFILE=	Makefile.BSD
-MAKE_ARGS=	UNAME=${OPSYS}
+PLIST_FILES=	bin/${PORTNAME} share/man/man6/${PORTNAME}.6.gz \
+		${DATADIR_REL}/${PORTNAME}.png
+PORTDOCS=	CODE_OF_CONDUCT.md README.md
 
-PLIST_FILES=	bin/${PORTNAME}
-
-OPTIONS_DEFINE=		OPTIMIZED_CFLAGS
-OPTIONS_DEFINE_i386=	ASM
-OPTIONS_DEFAULT_i386=	ASM
-ASM_IMPLIES=	OPTIMIZED_CFLAGS
-
-ASM_MAKE_ARGS_OFF=	-DWITHOUT_X86_ASM
-OPTIMIZED_CFLAGS_MAKE_ARGS=	-DWITH_OPTIMIZED_CFLAGS
+OPTIONS_DEFINE=	DOCS
 
 do-install:
 	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/docs/man/man6/${PORTNAME}.6 \
+		${STAGEDIR}${PREFIX}/share/man/man6
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/resources/logo/${PORTNAME}.png \
+		${STAGEDIR}${DATADIR}
+
+do-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
