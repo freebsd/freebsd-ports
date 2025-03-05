@@ -1,5 +1,5 @@
---- cargo-crates/cubeb-sys-0.20.0/build.rs.orig	2025-02-01 09:46:43 UTC
-+++ cargo-crates/cubeb-sys-0.20.0/build.rs
+--- cargo-crates/cubeb-sys-0.22.0/build.rs.orig	2025-02-01 09:46:43 UTC
++++ cargo-crates/cubeb-sys-0.22.0/build.rs
 @@ -161,23 +161,6 @@ fn main() {
          // Ignore the result of find_library. We don't care if the
          // libraries are missing.
