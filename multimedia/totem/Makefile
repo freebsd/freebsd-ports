@@ -22,7 +22,8 @@ LIB_DEPENDS=	libgdata.so:devel/libgdata \
 		libjson-glib-1.0.so:devel/json-glib \
 		libgrilo-0.3.so:net/grilo \
 		libtotem-plparser.so:multimedia/totem-pl-parser \
-		libhandy-1.so:x11-toolkits/libhandy
+		libhandy-1.so:x11-toolkits/libhandy \
+		libportal-gtk3.so:deskutils/libportal-gtk3
 RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:misc/iso-codes \
 		${PYTHON_PKGNAMEPREFIX}libpeas>=0:devel/py-libpeas@${PY_FLAVOR} \
 		gnome-settings-daemon>=2.91.0:sysutils/gnome-settings-daemon \
