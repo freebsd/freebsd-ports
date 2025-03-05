@@ -2,11 +2,11 @@ bin/gnome-photos
 lib/gnome-photos/libgnome-photos.so
 libexec/gnome-photos-thumbnailer
 share/applications/org.gnome.Photos.desktop
+share/dbus-1/services/org.gnome.Photos.service
 %%PORTDOCS%%%%DOCSDIR%%/ARTISTS
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README
-share/dbus-1/services/org.gnome.Photos.service
 share/gnome-shell/search-providers/org.gnome.Photos.search-provider.ini
 share/help/C/gnome-photos/favorites-set.page
 share/help/C/gnome-photos/favorites.page
@@ -230,6 +230,7 @@ share/locale/ab/LC_MESSAGES/gnome-photos.mo
 share/locale/an/LC_MESSAGES/gnome-photos.mo
 share/locale/ar/LC_MESSAGES/gnome-photos.mo
 share/locale/as/LC_MESSAGES/gnome-photos.mo
+share/locale/be/LC_MESSAGES/gnome-photos.mo
 share/locale/bg/LC_MESSAGES/gnome-photos.mo
 share/locale/bs/LC_MESSAGES/gnome-photos.mo
 share/locale/ca/LC_MESSAGES/gnome-photos.mo
@@ -256,6 +257,7 @@ share/locale/he/LC_MESSAGES/gnome-photos.mo
 share/locale/hr/LC_MESSAGES/gnome-photos.mo
 share/locale/hu/LC_MESSAGES/gnome-photos.mo
 share/locale/id/LC_MESSAGES/gnome-photos.mo
+share/locale/ie/LC_MESSAGES/gnome-photos.mo
 share/locale/is/LC_MESSAGES/gnome-photos.mo
 share/locale/it/LC_MESSAGES/gnome-photos.mo
 share/locale/ja/LC_MESSAGES/gnome-photos.mo
