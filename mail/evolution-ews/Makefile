@@ -1,5 +1,5 @@
 PORTNAME=	evolution-ews
-DISTVERSION=	3.52.3
+DISTVERSION=	3.54.3.0
 CATEGORIES=	mail gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
@@ -12,7 +12,7 @@ LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	evolution>=3.0.0:mail/evolution
-LIB_DEPENDS=	libsoup-2.4.so:devel/libsoup \
+LIB_DEPENDS=	libsoup-3.0.so:devel/libsoup \
 		libfribidi.so:converters/fribidi \
 		libicuuc.so:devel/icu \
 		libmspack.so:archivers/libmspack \

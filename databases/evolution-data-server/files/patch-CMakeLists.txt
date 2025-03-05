@@ -1,19 +1,19 @@
---- CMakeLists.txt.orig	2024-06-28 10:29:41.000000000 +0300
-+++ CMakeLists.txt	2025-02-17 19:34:42.145248000 +0300
-@@ -374,7 +374,7 @@
- # ICU started shipping pkg-config files but it's not present
- # on many systems, if we don't find the pkg-config
- # file then let's fallback on a manual check
--pkg_check_modules(ICU icu-i18n)
-+pkg_check_modules(ICU icu-i18n icu-uc)
+--- CMakeLists.txt.orig	2025-03-05 12:53:07 UTC
++++ CMakeLists.txt
+@@ -120,7 +120,6 @@ set(sqlite_minimum_version 3.7.17)
+ set(libsecret_minimum_version 0.5)
+ set(libxml_minimum_version 2.0.0)
+ set(sqlite_minimum_version 3.7.17)
+-set(uuid_minimum_version 2.0)
  
- if(NOT ICU_FOUND)
- 	CHECK_INCLUDE_FILE(unicode/ucol.h HAVE_UNICODE_UCOL_H)
-@@ -549,6 +549,7 @@
- # ******************************
+ # Optional Packages
+ set(goa_minimum_version 3.8)
+@@ -421,7 +420,7 @@ pkg_check_modules(JSON_GLIB REQUIRED json-glib-1.0>=${
+ # **************************************************************
  
- set(CMAKE_REQUIRED_LIBRARIES "-liconv")
-+set(CMAKE_REQUIRED_FLAGS "-L/usr/local/lib")
- CHECK_C_SOURCE_COMPILES("#include <iconv.h>
- 			#include <stdlib.h>
- 			int main(void) { iconv_t cd; cd = iconv_open (\"UTF-8\", \"ISO-8859-1\"); return 0; }" HAVE_LIBICONV)
+ pkg_check_modules(JSON_GLIB REQUIRED json-glib-1.0>=${json_glib_minimum_version})
+-pkg_check_modules(UUID REQUIRED uuid>=${uuid_minimum_version})
++pkg_check_modules(UUID uuid REQUIRED)
+ 
+ if(ENABLE_GTK)
+ 	add_printable_option(ENABLE_OAUTH2_WEBKITGTK "Enable WebKitGTK gtk3 for built-in OAuth2 authentications" ON)

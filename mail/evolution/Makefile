@@ -1,5 +1,5 @@
 PORTNAME=	evolution
-DISTVERSION=	3.52.3
+DISTVERSION=	3.54.3
 CATEGORIES=	mail gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
@@ -34,7 +34,7 @@ LIB_DEPENDS=	libcryptui.so:security/libcryptui \
 		libnss3.so:security/nss \
 		libp11-kit.so:security/p11-kit \
 		libsecret-1.so:security/libsecret \
-		libsoup-2.4.so:devel/libsoup \
+		libsoup-3.0.so:devel/libsoup3 \
 		libwebkit2gtk-4.1.so:www/webkit2-gtk@41
 RUN_DEPENDS=	highlight:textproc/highlight \
 		iso-codes>=0:misc/iso-codes

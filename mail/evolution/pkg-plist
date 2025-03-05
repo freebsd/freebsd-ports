@@ -486,6 +486,7 @@ include/evolution/mail/e-mail-templates-store.h
 include/evolution/mail/e-mail-templates.h
 include/evolution/mail/e-mail-ui-session.h
 include/evolution/mail/e-mail-view.h
+include/evolution/mail/e-mail-viewer.h
 include/evolution/mail/e-mail.h
 include/evolution/mail/em-composer-utils.h
 include/evolution/mail/em-config.h
@@ -1506,6 +1507,7 @@ share/applications/org.gnome.Evolution.desktop
 %%DATADIR%%/ui/evolution-composer.ui
 %%DATADIR%%/ui/evolution-contacts.ui
 %%DATADIR%%/ui/evolution-mail-reader.ui
+%%DATADIR%%/ui/evolution-mail-viewer.ui
 %%DATADIR%%/ui/evolution-mail.ui
 %%DATADIR%%/ui/evolution-memos.ui
 %%DATADIR%%/ui/evolution-shell.ui
@@ -6674,6 +6676,7 @@ share/locale/is/LC_MESSAGES/evolution.mo
 share/locale/it/LC_MESSAGES/evolution.mo
 share/locale/ja/LC_MESSAGES/evolution.mo
 share/locale/ka/LC_MESSAGES/evolution.mo
+share/locale/kab/LC_MESSAGES/evolution.mo
 share/locale/kk/LC_MESSAGES/evolution.mo
 share/locale/kn/LC_MESSAGES/evolution.mo
 share/locale/ko/LC_MESSAGES/evolution.mo

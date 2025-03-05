@@ -263,6 +263,7 @@ include/evolution-data-server/libedataserver/e-list-iterator.h
 include/evolution-data-server/libedataserver/e-list.h
 include/evolution-data-server/libedataserver/e-memory.h
 include/evolution-data-server/libedataserver/e-module.h
+include/evolution-data-server/libedataserver/e-ms-oapxbc.h
 include/evolution-data-server/libedataserver/e-named-parameters.h
 include/evolution-data-server/libedataserver/e-network-monitor.h
 include/evolution-data-server/libedataserver/e-oauth2-service-base.h
@@ -534,6 +535,7 @@ share/locale/hi/LC_MESSAGES/evolution-data-server.mo
 share/locale/hr/LC_MESSAGES/evolution-data-server.mo
 share/locale/hu/LC_MESSAGES/evolution-data-server.mo
 share/locale/id/LC_MESSAGES/evolution-data-server.mo
+share/locale/ie/LC_MESSAGES/evolution-data-server.mo
 share/locale/is/LC_MESSAGES/evolution-data-server.mo
 share/locale/it/LC_MESSAGES/evolution-data-server.mo
 share/locale/ja/LC_MESSAGES/evolution-data-server.mo

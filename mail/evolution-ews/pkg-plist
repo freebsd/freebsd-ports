@@ -10,6 +10,7 @@ lib/evolution-data-server/registry-modules/module-ews-backend.so
 lib/evolution-data-server/registry-modules/module-microsoft365-backend.so
 lib/evolution-ews/libcamelews-priv.so
 lib/evolution-ews/libevolution-ews.so
+lib/evolution-ews/libevolution-ews-common.so
 lib/evolution-ews/libevolution-microsoft365.so
 lib/evolution/modules/module-ews-configuration.so
 lib/evolution/modules/module-microsoft365-configuration.so
@@ -17,6 +18,7 @@ share/evolution-data-server/ews/windowsZones.xml
 share/evolution/errors/module-ews-configuration.error
 share/locale/as/LC_MESSAGES/evolution-ews.mo
 share/locale/bn_IN/LC_MESSAGES/evolution-ews.mo
+share/locale/ka/LC_MESSAGES/evolution-ews.mo
 share/locale/bs/LC_MESSAGES/evolution-ews.mo
 share/locale/ca/LC_MESSAGES/evolution-ews.mo
 share/locale/cs/LC_MESSAGES/evolution-ews.mo
@@ -36,6 +38,7 @@ share/locale/hu/LC_MESSAGES/evolution-ews.mo
 share/locale/id/LC_MESSAGES/evolution-ews.mo
 share/locale/it/LC_MESSAGES/evolution-ews.mo
 share/locale/ja/LC_MESSAGES/evolution-ews.mo
+share/locale/ka/LC_MESSAGES/evolution-ews.mo
 share/locale/kn/LC_MESSAGES/evolution-ews.mo
 share/locale/lt/LC_MESSAGES/evolution-ews.mo
 share/locale/lv/LC_MESSAGES/evolution-ews.mo

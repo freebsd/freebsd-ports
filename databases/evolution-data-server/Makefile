@@ -1,5 +1,5 @@
 PORTNAME=	evolution-data-server
-DISTVERSION=	3.52.3
+DISTVERSION=	3.54.3
 CATEGORIES=	databases gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
@@ -39,6 +39,8 @@ USE_GNOME=	cairo gdkpixbuf2 gtk30 intltool introspection:build libxml2
 USE_XORG=	x11
 USE_LDCONFIG=	yes
 CPE_VENDOR=	gnome
+
+LDFLAGS=	-L${LOCALBASE}/lib
 
 CMAKE_OFF=	CMAKE_CXX_EXTENSIONS
 CMAKE_ARGS=	-DENABLE_INTROSPECTION=ON \
