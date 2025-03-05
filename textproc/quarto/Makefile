@@ -1,13 +1,13 @@
 PORTNAME=	quarto
-DISTVERSION=	1.6.15
-PORTREVISION=	2
+DISTVERSION=	1.6.42
 CATEGORIES=	textproc
 MASTER_SITES=	https://github.com/quarto-dev/quarto-cli/releases/download/v${DISTVERSION}/
 DISTFILES=	quarto-${DISTVERSION}-linux-amd64.tar.gz # same for all architectures
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Scientific and technical publishing system
-WWW=		https://quarto.org/
+WWW=		https://quarto.org \
+		https://github.com/quarto-dev/quarto-cli
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC_repo}/COPYRIGHT

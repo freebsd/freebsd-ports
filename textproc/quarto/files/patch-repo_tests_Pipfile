@@ -1,8 +1,0 @@
---- repo/tests/Pipfile.orig	2024-09-30 03:47:28 UTC
-+++ repo/tests/Pipfile
-@@ -20,4 +20,4 @@ jupyter-cache = "*"
- [dev-packages]
- 
- [requires]
--python_version = "3.12"
-+python_version = "3.11"
