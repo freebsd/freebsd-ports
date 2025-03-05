@@ -18,7 +18,7 @@ LIB_DEPENDS=	libgexiv2.so:graphics/gexiv2 \
 		libportal.so:deskutils/libportal \
 		libportal-gtk3.so:deskutils/libportal-gtk3 \
 		libtotem.so:multimedia/totem \
-		libtinysparql-3.0.so:devel/tinysparkql
+		libtinysparql-3.0.so:devel/tinysparql
 
 PORTSCOUT=	limitw:1,even
 
