@@ -1,6 +1,6 @@
 PORTNAME=	zim-tools
 DISTVERSION=	3.5.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	archivers
 MASTER_SITES=	https://download.openzim.org/release/zim-tools/
 
