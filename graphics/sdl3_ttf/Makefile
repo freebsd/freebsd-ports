@@ -1,6 +1,6 @@
 PORTNAME=	sdl3_ttf
-DISTVERSIONPREFIX=	preview-
-DISTVERSION=	3.1.0
+DISTVERSIONPREFIX=	release-
+DISTVERSION=	3.2.0
 CATEGORIES=	graphics
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -12,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 LIB_DEPENDS=	libfreetype.so:print/freetype2
 
-USES=		cmake sdl
+USES=		cmake pkgconfig sdl
 USE_GITHUB=	yes
 GH_ACCOUNT=	libsdl-org
 GH_PROJECT=	SDL_ttf
@@ -20,15 +20,25 @@ USE_SDL=	sdl3
 CMAKE_OFF=	SDLTTF_SAMPLES
 USE_LDCONFIG=	yes
 
+PLIST_SUB=	LIBVERSION=${DISTVERSION:C/[0-9]+/0/1}
+
 PORTDOCS=	*
 
-OPTIONS_DEFINE=	HARFBUZZ DOCS
-OPTIONS_DEFAULT=HARFBUZZ
+OPTIONS_DEFINE=	HARFBUZZ PLUTOSVG DOCS
+OPTIONS_DEFAULT=HARFBUZZ PLUTOSVG
 OPTIONS_SUB=	yes
 
-HARFBUZZ_DESC=	Enable HarfBuzz support
+HARFBUZZ_DESC=	Use harfbuzz to improve text shaping
 HARFBUZZ_LIB_DEPENDS=	libharfbuzz.so:print/harfbuzz
 HARFBUZZ_CMAKE_BOOL=	SDLTTF_HARFBUZZ
+
+PLUTOSVG_DESC=	Use plutosvg for color emoji support
+PLUTOSVG_LIB_DEPENDS=	libplutosvg.so:graphics/plutosvg
+PLUTOSVG_CFLAGS=	-isystem ${LOCALBASE}/include/plutovg
+PLUTOSVG_CMAKE_BOOL=	SDLTTF_PLUTOSVG
+
+post-extract:
+	@${RM} -r ${WRKSRC}/external
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

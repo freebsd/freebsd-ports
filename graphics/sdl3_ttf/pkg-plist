@@ -9,5 +9,5 @@ lib/cmake/SDL3_ttf/SDL3_ttfConfig.cmake
 lib/cmake/SDL3_ttf/SDL3_ttfConfigVersion.cmake
 lib/libSDL3_ttf.so
 lib/libSDL3_ttf.so.0
-lib/libSDL3_ttf.so.0.1.0
+lib/libSDL3_ttf.so.%%LIBVERSION%%
 libdata/pkgconfig/sdl3-ttf.pc
