@@ -1,7 +1,6 @@
 PORTNAME=	pytorch
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.5.1
-PORTREVISION=	7
+DISTVERSION=	2.6.0
 CATEGORIES=	misc # machine-learning
 MASTER_SITES=	https://github.com/pytorch/pytorch/releases/download/v${DISTVERSION}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
