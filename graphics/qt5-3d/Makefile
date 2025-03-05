@@ -1,5 +1,6 @@
 PORTNAME=	3d
 PORTVERSION=	${QT5_VERSION}${QT5_KDE_PATCH}
+PORTREVISION=	1
 CATEGORIES=	graphics
 PKGNAMEPREFIX=	qt5-
 
@@ -11,6 +12,7 @@ LIB_DEPENDS=	libassimp.so:multimedia/assimp
 USES=		compiler:c++11-lang perl5 pkgconfig qmake:norecursive qt-dist:5,3d
 USE_PERL5=	extract
 USE_QT=		concurrent core declarative gui network buildtools:build
+USE_LDCONFIG=	${PREFIX}/${QT_LIBDIR_REL}
 
 OPTIONS_DEFINE_amd64=	AVX
 OPTIONS_DEFINE_i386=	AVX

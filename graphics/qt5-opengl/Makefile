@@ -1,5 +1,6 @@
 PORTNAME=	opengl
 PORTVERSION=	${QT5_VERSION}${QT5_KDE_PATCH}
+PORTREVISION=	1
 CATEGORIES=	graphics
 PKGNAMEPREFIX=	qt5-
 
@@ -10,6 +11,7 @@ USES=		compiler:c++11-lang gl perl5 qmake:no_env qt-dist:5,base
 USE_GL=		gl
 USE_PERL5=	extract
 USE_QT=		core gui widgets qmake:build buildtools:build
+USE_LDCONFIG=	${PREFIX}/${QT_LIBDIR_REL}
 HAS_CONFIGURE=	yes
 
 BUILD_WRKSRC=	${WRKSRC}/src/${PORTNAME}

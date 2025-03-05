@@ -1,5 +1,6 @@
 PORTNAME=	widgets
 PORTVERSION=	${QT5_VERSION}${QT5_KDE_PATCH}
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits
 PKGNAMEPREFIX=	qt5-
 
@@ -10,6 +11,7 @@ USES=		compiler:c++11-lang perl5 qmake:no_env qt-dist:5,base xorg
 USE_PERL5=	extract
 USE_QT=		core gui qmake:build buildtools:build
 USE_XORG=	x11
+USE_LDCONFIG=	${PREFIX}/${QT_LIBDIR_REL}
 HAS_CONFIGURE=	yes
 
 BUILD_WRKSRC=	${WRKSRC}/src/${PORTNAME}

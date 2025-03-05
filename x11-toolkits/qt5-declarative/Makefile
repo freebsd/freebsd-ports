@@ -1,5 +1,6 @@
 PORTNAME=	declarative
 PORTVERSION=	${QT5_VERSION}${QT5_KDE_PATCH}
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits
 PKGNAMEPREFIX=	qt5-
 
@@ -13,6 +14,7 @@ USE_GL=		gl
 USE_PERL5=	build
 USE_QT=		core gui network sql widgets \
 		buildtools:build
+USE_LDCONFIG=	${PREFIX}/${QT_LIBDIR_REL}
 
 CONFLICTS=	qt5-declarative-render2d-* qt5-qml qt5-quick
 

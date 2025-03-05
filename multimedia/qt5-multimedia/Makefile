@@ -1,6 +1,6 @@
 PORTNAME=	multimedia
 PORTVERSION=	${QT5_VERSION}${QT5_KDE_PATCH}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia
 PKGNAMEPREFIX=	qt5-
 
@@ -16,6 +16,7 @@ USE_GNOME=	glib20
 USE_PERL5=	build
 USE_QT=		core declarative gui network opengl widgets \
 		buildtools:build
+USE_LDCONFIG=	${PREFIX}/${QT_LIBDIR_REL}
 USE_XORG=	x11 xext xv
 
 QT_CONFIG=	xlib
