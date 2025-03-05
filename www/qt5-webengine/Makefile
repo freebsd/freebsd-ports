@@ -19,7 +19,7 @@
 
 PORTNAME=	webengine
 PORTVERSION=	${QT5_VERSION}${QT5_KDE_PATCH}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 PKGNAMEPREFIX=	qt5-
 
@@ -86,6 +86,7 @@ USE_QT=		core declarative gui location network printsupport \
 		buildtools:build designer:build qmake:build
 USE_XORG=	x11 xcb xcomposite xcursor xdamage xext xfixes xi xkbfile \
 		xorgproto xrandr xrender xscrnsaver xtst
+USE_LDCONFIG=	${PREFIX}/${QT_LIBDIR_REL}
 
 QMAKE_CONFIGURE_ARGS=	-proprietary-codecs -system-ffmpeg
 

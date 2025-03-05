@@ -1,5 +1,6 @@
 PORTNAME=	network
 PORTVERSION=	${QT5_VERSION}${QT5_KDE_PATCH}
+PORTREVISION=	1
 CATEGORIES=	net
 PKGNAMEPREFIX=	qt5-
 
@@ -9,6 +10,7 @@ COMMENT=	Qt network module
 USES=		compiler:c++11-lang perl5 qmake:no_env qt-dist:5,base ssl
 USE_PERL5=	extract
 USE_QT=		core buildtools:build
+USE_LDCONFIG=	${PREFIX}/${QT_LIBDIR_REL}
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	-no-gui -no-xcb
 

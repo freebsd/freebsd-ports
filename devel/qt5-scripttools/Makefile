@@ -1,6 +1,6 @@
 PORTNAME=	scripttools
 PORTVERSION=	${QT5_VERSION}${QT5_KDE_PATCH}
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 PKGNAMEPREFIX=	qt5-
 
@@ -10,6 +10,7 @@ COMMENT=	Qt Script additional components
 USES=		compiler:c++11-lang perl5 qmake qt-dist:5,script
 USE_PERL5=	build
 USE_QT=		core gui script widgets buildtools:build
+USE_LDCONFIG=	${PREFIX}/${QT_LIBDIR_REL}
 
 BUILD_WRKSRC=	${WRKSRC}/src/${PORTNAME}
 INSTALL_WRKSRC=	${WRKSRC}/src/${PORTNAME}

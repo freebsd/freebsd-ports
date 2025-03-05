@@ -1,5 +1,6 @@
 PORTNAME=	quickcontrols2
 PORTVERSION=	${QT5_VERSION}${QT5_KDE_PATCH}
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits
 PKGNAMEPREFIX=	qt5-
 
@@ -13,6 +14,7 @@ USES=		compiler:c++11-lang perl5 qmake:norecursive qt-dist:5
 USE_PERL5=	build
 USE_QT=		core declarative gui widgets \
 		buildtools:build
+USE_LDCONFIG=	${PREFIX}/${QT_LIBDIR_REL}
 QT_DIST=	${PORTNAME}
 
 .include <bsd.port.mk>
