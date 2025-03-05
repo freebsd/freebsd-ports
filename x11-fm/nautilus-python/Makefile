@@ -8,6 +8,8 @@ MAINTAINER=	daniel@shafer.cc
 COMMENT=	Python nautilus bindings
 WWW=		https://wiki.gnome.org/Projects/NautilusPython
 
+BROKEN=		does not work with latest nautilus
+
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
