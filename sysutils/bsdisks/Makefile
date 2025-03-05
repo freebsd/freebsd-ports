@@ -1,5 +1,5 @@
 PORTNAME=	bsdisks
-DISTVERSION=	0.36
+DISTVERSION=	0.37
 CATEGORIES=	sysutils
 
 MAINTAINER=	arrowd@FreeBSD.org
@@ -15,9 +15,8 @@ USES=		cmake compiler:c++11-lang qt:6
 USE_QT=		base
 CMAKE_ARGS=	-DQT_MAJOR_VERSION=6
 
-USE_GITLAB=		yes
-GL_SITE=		https://foss.heptapod.net
-GL_ACCOUNT=		bsdutils
-GL_TAGNAME=		3a607513c3b8bb22ad1fe4521ea3f48ead148e4c
+USE_GITLAB=	yes
+GL_SITE=	https://foss.heptapod.net
+GL_ACCOUNT=	bsdutils
 
 .include <bsd.port.mk>
