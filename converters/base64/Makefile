@@ -2,7 +2,7 @@ PORTNAME=	base64
 PORTVERSION=	1.5
 PORTREVISION=	2
 CATEGORIES=	converters
-MASTER_SITES=	http://www.fourmilab.ch/webtools/base64/
+MASTER_SITES=	https://www.fourmilab.ch/webtools/base64/
 
 MAINTAINER=	nikola.lecic@anthesphoria.net
 COMMENT=	Utility to encode and decode base64 files
