@@ -2,13 +2,16 @@ include/fcft/fcft.h
 include/fcft/stride.h
 lib/libfcft.so
 lib/libfcft.so.4
-lib/libfcft.so.4.1.10
+lib/libfcft.so.4.2.0
 libdata/pkgconfig/fcft.pc
 %%PORTDOCS%%share/man/man3/fcft_capabilities.3.gz
 %%PORTDOCS%%share/man/man3/fcft_clone.3.gz
 %%PORTDOCS%%share/man/man3/fcft_destroy.3.gz
 %%PORTDOCS%%share/man/man3/fcft_fini.3.gz
+%%PORTDOCS%%share/man/man3/fcft_font_options_create.3.gz
+%%PORTDOCS%%share/man/man3/fcft_font_options_destroy.3.gz
 %%PORTDOCS%%share/man/man3/fcft_from_name.3.gz
+%%PORTDOCS%%share/man/man3/fcft_from_name2.3.gz
 %%PORTDOCS%%share/man/man3/fcft_init.3.gz
 %%PORTDOCS%%share/man/man3/fcft_kerning.3.gz
 %%PORTDOCS%%share/man/man3/fcft_log_init.3.gz
