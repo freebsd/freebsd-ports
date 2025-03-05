@@ -1,4 +1,4 @@
---- ui/base/accelerators/global_accelerator_listener/global_accelerator_listener_ozone.cc.orig	2025-02-19 07:43:18 UTC
+--- ui/base/accelerators/global_accelerator_listener/global_accelerator_listener_ozone.cc.orig	2025-03-05 08:14:56 UTC
 +++ ui/base/accelerators/global_accelerator_listener/global_accelerator_listener_ozone.cc
 @@ -12,7 +12,7 @@
  #include "ui/base/accelerators/accelerator.h"
@@ -17,7 +17,7 @@
 +#if (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)) && BUILDFLAG(USE_DBUS)
  BASE_FEATURE(kGlobalShortcutsPortal,
               "GlobalShortcutsPortal",
-              base::FEATURE_DISABLED_BY_DEFAULT);
+              base::FEATURE_ENABLED_BY_DEFAULT);
 @@ -38,7 +38,7 @@ GlobalAcceleratorListener* GlobalAcceleratorListener::
      return instance->get();
    }

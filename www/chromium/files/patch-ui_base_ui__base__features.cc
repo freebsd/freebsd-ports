@@ -1,4 +1,4 @@
---- ui/base/ui_base_features.cc.orig	2025-02-19 07:43:18 UTC
+--- ui/base/ui_base_features.cc.orig	2025-03-05 08:14:56 UTC
 +++ ui/base/ui_base_features.cc
 @@ -133,7 +133,7 @@ BASE_FEATURE(kWaylandUiScale,
               base::FEATURE_DISABLED_BY_DEFAULT);
@@ -9,7 +9,7 @@
  // If this feature is enabled, users not specify --ozone-platform-hint switch
  // will get --ozone-platform-hint=auto treatment. https://crbug.com/40250220.
  COMPONENT_EXPORT(UI_BASE_FEATURES)
-@@ -209,7 +209,7 @@ BASE_FEATURE(kUiCompositorScrollWithLayers,
+@@ -215,7 +215,7 @@ BASE_FEATURE(kUiCompositorUsesLayerLists,
  // native apps on Windows.
  BASE_FEATURE(kExperimentalFlingAnimation,
               "ExperimentalFlingAnimation",

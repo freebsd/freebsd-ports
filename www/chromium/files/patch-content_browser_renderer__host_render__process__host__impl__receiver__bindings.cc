@@ -1,4 +1,4 @@
---- content/browser/renderer_host/render_process_host_impl_receiver_bindings.cc.orig	2024-08-26 12:06:38 UTC
+--- content/browser/renderer_host/render_process_host_impl_receiver_bindings.cc.orig	2025-03-05 08:14:56 UTC
 +++ content/browser/renderer_host/render_process_host_impl_receiver_bindings.cc
 @@ -52,7 +52,7 @@
  #include "third_party/blink/public/mojom/webdatabase/web_database.mojom.h"
@@ -9,7 +9,7 @@
  #include "components/services/font/public/mojom/font_service.mojom.h"  // nogncheck
  #include "content/browser/font_service.h"  // nogncheck
  #include "content/browser/media/video_encode_accelerator_provider_launcher.h"
-@@ -341,7 +341,7 @@ void RenderProcessHostImpl::IOThreadHostImpl::BindHost
+@@ -343,7 +343,7 @@ void RenderProcessHostImpl::IOThreadHostImpl::BindHost
    }
  #endif
  

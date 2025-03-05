@@ -1,4 +1,4 @@
---- v8/src/flags/flags.cc.orig	2025-02-19 07:43:18 UTC
+--- v8/src/flags/flags.cc.orig	2025-03-05 08:14:56 UTC
 +++ v8/src/flags/flags.cc
 @@ -16,6 +16,10 @@
  #include <set>
@@ -11,7 +11,7 @@
  #include "src/base/hashing.h"
  #include "src/base/lazy-instance.h"
  #include "src/base/platform/platform.h"
-@@ -816,6 +820,10 @@ void FlagList::FreezeFlags() {
+@@ -823,6 +827,10 @@ void FlagList::FreezeFlags() {
    // Note that for string flags we only protect the pointer itself, but not the
    // string storage. TODO(12887): Fix this.
    base::OS::SetDataReadOnly(&v8_flags, sizeof(v8_flags));

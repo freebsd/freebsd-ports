@@ -1,6 +1,6 @@
---- chrome/browser/chrome_browser_main_posix.cc.orig	2024-06-17 12:56:06 UTC
+--- chrome/browser/chrome_browser_main_posix.cc.orig	2025-03-05 08:14:56 UTC
 +++ chrome/browser/chrome_browser_main_posix.cc
-@@ -79,7 +79,7 @@ void ExitHandler::ExitWhenPossibleOnUIThread(int signa
+@@ -84,7 +84,7 @@ void ExitHandler::ExitWhenPossibleOnUIThread(int signa
    } else {
  // TODO(crbug.com/40118868): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.

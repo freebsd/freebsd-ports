@@ -1,6 +1,6 @@
---- chrome/browser/ui/views/frame/tab_strip_region_view.cc.orig	2025-02-19 07:43:18 UTC
+--- chrome/browser/ui/views/frame/tab_strip_region_view.cc.orig	2025-03-05 08:14:56 UTC
 +++ chrome/browser/ui/views/frame/tab_strip_region_view.cc
-@@ -231,7 +231,7 @@ TabStripRegionView::TabStripRegionView(std::unique_ptr
+@@ -227,7 +227,7 @@ TabStripRegionView::TabStripRegionView(std::unique_ptr
        new_tab_button_->GetViewAccessibility().SetName(
            l10n_util::GetStringUTF16(IDS_ACCNAME_NEWTAB));
  

@@ -1,4 +1,4 @@
---- chrome/browser/ui/webui/certificate_manager/client_cert_sources.h.orig	2025-01-15 09:18:26 UTC
+--- chrome/browser/ui/webui/certificate_manager/client_cert_sources.h.orig	2025-03-05 08:14:56 UTC
 +++ chrome/browser/ui/webui/certificate_manager/client_cert_sources.h
 @@ -19,7 +19,7 @@ CreatePlatformClientCertSource(
          remote_client,
@@ -13,8 +13,8 @@
  CreateExtensionsClientCertSource(Profile* profile);
  #endif
  
--#if BUILDFLAG(IS_CHROMEOS_ASH) || BUILDFLAG(IS_LINUX)
-+#if BUILDFLAG(IS_CHROMEOS_ASH) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+-#if BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
  class ClientCertManagementAccessControls {
   public:
    enum KeyStorage {

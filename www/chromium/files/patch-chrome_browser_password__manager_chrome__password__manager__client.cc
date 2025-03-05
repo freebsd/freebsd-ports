@@ -1,6 +1,6 @@
---- chrome/browser/password_manager/chrome_password_manager_client.cc.orig	2025-02-19 07:43:18 UTC
+--- chrome/browser/password_manager/chrome_password_manager_client.cc.orig	2025-03-05 08:14:56 UTC
 +++ chrome/browser/password_manager/chrome_password_manager_client.cc
-@@ -629,7 +629,7 @@ void ChromePasswordManagerClient::
+@@ -637,7 +637,7 @@ void ChromePasswordManagerClient::
  bool ChromePasswordManagerClient::IsReauthBeforeFillingRequired(
      device_reauth::DeviceAuthenticator* authenticator) {
  #if BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || \
@@ -9,7 +9,7 @@
    if (!GetLocalStatePrefs() || !GetPrefs() || !authenticator) {
      return false;
    }
-@@ -894,7 +894,7 @@ void ChromePasswordManagerClient::NotifyUserCredential
+@@ -915,7 +915,7 @@ void ChromePasswordManagerClient::NotifyUserCredential
  }
  
  void ChromePasswordManagerClient::NotifyKeychainError() {

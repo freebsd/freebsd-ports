@@ -1,6 +1,6 @@
---- base/system/sys_info_posix.cc.orig	2025-02-19 07:43:18 UTC
+--- base/system/sys_info_posix.cc.orig	2025-03-05 08:14:56 UTC
 +++ base/system/sys_info_posix.cc
-@@ -119,7 +119,7 @@ bool GetDiskSpaceInfo(const base::FilePath& path,
+@@ -124,7 +124,7 @@ bool GetDiskSpaceInfo(const base::FilePath& path,
  
  namespace base {
  
@@ -9,7 +9,7 @@
  // static
  int SysInfo::NumberOfProcessors() {
  #if BUILDFLAG(IS_MAC)
-@@ -175,7 +175,7 @@ int SysInfo::NumberOfProcessors() {
+@@ -180,7 +180,7 @@ int SysInfo::NumberOfProcessors() {
  
    return cached_num_cpus;
  }
@@ -18,7 +18,7 @@
  
  // static
  uint64_t SysInfo::AmountOfVirtualMemory() {
-@@ -263,6 +263,8 @@ std::string SysInfo::OperatingSystemArchitecture() {
+@@ -268,6 +268,8 @@ std::string SysInfo::OperatingSystemArchitecture() {
      arch = "x86";
    } else if (arch == "amd64") {
      arch = "x86_64";

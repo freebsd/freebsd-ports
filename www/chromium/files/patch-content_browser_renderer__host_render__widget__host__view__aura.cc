@@ -1,4 +1,4 @@
---- content/browser/renderer_host/render_widget_host_view_aura.cc.orig	2025-02-19 07:43:18 UTC
+--- content/browser/renderer_host/render_widget_host_view_aura.cc.orig	2025-03-05 08:14:56 UTC
 +++ content/browser/renderer_host/render_widget_host_view_aura.cc
 @@ -121,7 +121,7 @@
  #include "ui/gfx/gdi_util.h"
@@ -18,7 +18,7 @@
    ui::BrowserAccessibilityManager* manager =
        host()->GetOrCreateRootBrowserAccessibilityManager();
    if (manager && manager->GetBrowserAccessibilityRoot())
-@@ -1852,7 +1852,7 @@ bool RenderWidgetHostViewAura::ShouldDoLearning() {
+@@ -1867,7 +1867,7 @@ bool RenderWidgetHostViewAura::ShouldDoLearning() {
    return host() && host()->delegate() && host()->delegate()->ShouldDoLearning();
  }
  
@@ -27,7 +27,7 @@
  bool RenderWidgetHostViewAura::SetCompositionFromExistingText(
      const gfx::Range& range,
      const std::vector<ui::ImeTextSpan>& ui_ime_text_spans) {
-@@ -2822,7 +2822,7 @@ bool RenderWidgetHostViewAura::NeedsInputGrab() {
+@@ -2843,7 +2843,7 @@ bool RenderWidgetHostViewAura::NeedsInputGrab() {
  }
  
  bool RenderWidgetHostViewAura::NeedsMouseCapture() {
@@ -36,7 +36,7 @@
    return NeedsInputGrab();
  #else
    return false;
-@@ -3006,7 +3006,7 @@ void RenderWidgetHostViewAura::ForwardKeyboardEventWit
+@@ -3027,7 +3027,7 @@ void RenderWidgetHostViewAura::ForwardKeyboardEventWit
    if (!target_host)
      return;
  

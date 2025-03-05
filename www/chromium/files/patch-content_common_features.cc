@@ -1,6 +1,6 @@
---- content/common/features.cc.orig	2025-02-19 07:43:18 UTC
+--- content/common/features.cc.orig	2025-03-05 08:14:56 UTC
 +++ content/common/features.cc
-@@ -130,7 +130,7 @@ BASE_FEATURE(kEmbeddingRequiresOptIn,
+@@ -125,7 +125,7 @@ BASE_FEATURE(kEmbeddingRequiresOptIn,
               base::FEATURE_DISABLED_BY_DEFAULT);
  
  // Enables error reporting for JS errors inside DevTools frontend host

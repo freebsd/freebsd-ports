@@ -1,6 +1,6 @@
---- chrome/browser/extensions/api/settings_private/prefs_util.cc.orig	2025-02-19 07:43:18 UTC
+--- chrome/browser/extensions/api/settings_private/prefs_util.cc.orig	2025-03-05 08:14:56 UTC
 +++ chrome/browser/extensions/api/settings_private/prefs_util.cc
-@@ -192,7 +192,7 @@ const PrefsUtil::TypedPrefMap& PrefsUtil::GetAllowlist
+@@ -190,7 +190,7 @@ const PrefsUtil::TypedPrefMap& PrefsUtil::GetAllowlist
    (*s_allowlist)[autofill::prefs::kAutofillPaymentCardBenefits] =
        settings_api::PrefType::kBoolean;
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -8,7 +8,7 @@
 +    BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
    (*s_allowlist)[autofill::prefs::kAutofillPredictionImprovementsEnabled] =
        settings_api::PrefType::kBoolean;
- #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) ||
+   (*s_allowlist)[autofill::prefs::kAutofillBnplEnabled] =
 @@ -210,7 +210,7 @@ const PrefsUtil::TypedPrefMap& PrefsUtil::GetAllowlist
    (*s_allowlist)[tab_groups::prefs::kAutoPinNewTabGroups] =
        settings_api::PrefType::kBoolean;
