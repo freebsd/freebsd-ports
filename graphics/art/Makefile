@@ -1,5 +1,5 @@
 PORTNAME=	art
-DISTVERSION=	1.25.2
+DISTVERSION=	1.25.3
 CATEGORIES=	graphics
 MASTER_SITES=	https://github.com/artpixls/ART/releases/download/${DISTVERSION}/
 PKGNAMESUFFIX=	-raw-image-editor
@@ -54,7 +54,7 @@ LTO_CMAKE_BOOL=		WITH_LTO
 MIMALLOC_DESC=		Enable mimalloc allocator
 MIMALLOC_CMAKE_BOOL=	ENABLE_MIMALLOC
 MIMALLOC_LIB_DEPENDS=	libmimalloc.so:devel/mimalloc
-MIMALLOC_BROKEN=	mimalloc crashes, see https://github.com/microsoft/mimalloc/issues/1007 and https://github.com/artpixls/ART/issues/357
+MIMALLOC_BROKEN=	mimalloc crashes, see https://github.com/microsoft/mimalloc/issues/1007
 
 .if exists(/usr/include/omp.h)
 OPTIONS_DEFINE+=	OPENMP
