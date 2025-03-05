@@ -1,5 +1,6 @@
 PORTNAME=	totem-pl-parser
 PORTVERSION=	3.26.6
+PORTREVISION=	1
 CATEGORIES=	multimedia gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -10,9 +11,7 @@ COMMENT=	GObject-based library to parse a host of playlist formats
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING.LIB
 
-LIB_DEPENDS=	libgmime-3.0.so:mail/gmime30 \
-		libsoup-2.4.so:devel/libsoup \
-		libgpg-error.so:security/libgpg-error \
+LIB_DEPENDS=	libgpg-error.so:security/libgpg-error \
 		libgcrypt.so:security/libgcrypt
 
 USES=		gettext gnome libarchive localbase:ldflags meson pkgconfig tar:xz
