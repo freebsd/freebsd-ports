@@ -1,3 +1,41 @@
+  <vuln vid="475d1968-f99d-11ef-b382-b0416f0c4c67">
+    <topic>Spotipy -- Spotipy&apos;s cache file, containing spotify auth token, is created with overly broad permissions</topic>
+    <affects>
+      <package>
+	<name>py38-spotipy</name>
+	<name>py39-spotipy</name>
+	<name>py310-spotipy</name>
+	<name>py311-spotipy</name>
+	<range><lt>2.25.1</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>security-advisories@github.com reports:</p>
+	<blockquote cite="https://github.com/spotipy-dev/spotipy/blob/master/spotipy/cache_handler.py#L93-L98">
+	  <p>Spotipy is a lightweight Python library for the Spotify Web API.
+	The `CacheHandler` class creates a cache file to store the auth
+	token.  Prior to version 2.25.1, the file created has `rw-r--r--`
+	(644) permissions by default, when it could be locked down to
+	`rw-------` (600) permissions.  This leads to overly broad exposure
+	of the spotify auth token.  If this token can be read by an attacker
+	(another user on the machine, or a process running as another user),
+	it can be used to perform administrative actions on the Spotify
+	account, depending on the scope granted to the token.  Version
+	2.25.1 tightens the cache file permissions.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-27154</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2025-27154</url>
+    </references>
+    <dates>
+      <discovery>2025-02-27</discovery>
+      <entry>2025-03-05</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="9c62d3f0-f997-11ef-85f3-a8a1599412c6">
     <topic>chromium -- multiple security fixes</topic>
     <affects>
