@@ -23,19 +23,19 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		bon-3.3.2 \
 		bon-macros-3.3.2 \
 		bstr-1.11.3 \
-		bumpalo-3.16.0 \
+		bumpalo-3.17.0 \
 		byteorder-1.5.0 \
-		bytes-1.9.0 \
+		bytes-1.10.0 \
 		caseless-0.2.2 \
-		cc-1.2.10 \
+		cc-1.2.12 \
 		cfg-if-1.0.0 \
 		chrono-0.4.39 \
 		chrono-tz-0.9.0 \
 		chrono-tz-build-0.3.0 \
 		chunked_transfer-1.5.0 \
-		clap-4.5.27 \
+		clap-4.5.28 \
 		clap_builder-4.5.27 \
-		clap_derive-4.5.24 \
+		clap_derive-4.5.28 \
 		clap_lex-0.7.4 \
 		colorchoice-1.0.3 \
 		colored-2.2.0 \
@@ -81,6 +81,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		fsevent-sys-4.1.0 \
 		generic-array-0.14.7 \
 		getrandom-0.2.15 \
+		getrandom-0.3.1 \
 		gimli-0.31.1 \
 		globset-0.4.15 \
 		globwalk-0.9.1 \
@@ -178,12 +179,12 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		rustc-demangle-0.1.24 \
 		rustix-0.38.44 \
 		rustversion-1.0.19 \
-		ryu-1.0.18 \
+		ryu-1.0.19 \
 		same-file-1.0.6 \
 		scopeguard-1.2.0 \
 		serde-1.0.217 \
 		serde_derive-1.0.217 \
-		serde_json-1.0.137 \
+		serde_json-1.0.138 \
 		serde_spanned-0.6.8 \
 		serde_yaml-0.9.34+deprecated \
 		serde_yml-0.0.12 \
@@ -199,10 +200,10 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		socket2-0.5.8 \
 		stable_deref_trait-1.2.0 \
 		strsim-0.11.1 \
-		syn-2.0.96 \
+		syn-2.0.98 \
 		synstructure-0.13.1 \
 		syntect-5.2.0 \
-		tempfile-3.15.0 \
+		tempfile-3.16.0 \
 		tera-1.20.0 \
 		terminal_size-0.4.1 \
 		thiserror-1.0.69 \
@@ -220,7 +221,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		tokio-macros-2.5.0 \
 		toml-0.8.19 \
 		toml_datetime-0.6.8 \
-		toml_edit-0.22.22 \
+		toml_edit-0.22.23 \
 		typed-arena-2.0.2 \
 		typenum-1.17.0 \
 		ucd-trie-0.1.7 \
@@ -230,7 +231,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		unic-segment-0.9.0 \
 		unic-ucd-segment-0.9.0 \
 		unic-ucd-version-0.9.0 \
-		unicode-ident-1.0.15 \
+		unicode-ident-1.0.16 \
 		unicode-normalization-0.1.24 \
 		unicode_categories-0.1.1 \
 		unsafe-libyaml-0.2.11 \
@@ -242,6 +243,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		version_check-0.9.5 \
 		walkdir-2.5.0 \
 		wasi-0.11.0+wasi-snapshot-preview1 \
+		wasi-0.13.3+wasi-0.2.2 \
 		wasm-bindgen-0.2.100 \
 		wasm-bindgen-backend-0.2.100 \
 		wasm-bindgen-macro-0.2.100 \
@@ -269,7 +271,8 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		windows_x86_64_gnullvm-0.52.6 \
 		windows_x86_64_msvc-0.48.5 \
 		windows_x86_64_msvc-0.52.6 \
-		winnow-0.6.24 \
+		winnow-0.7.1 \
+		wit-bindgen-rt-0.33.0 \
 		write16-1.0.0 \
 		writeable-0.5.5 \
 		xdg-2.5.2 \
