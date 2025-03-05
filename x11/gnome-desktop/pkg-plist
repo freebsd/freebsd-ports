@@ -2,6 +2,7 @@ include/gnome-desktop-3.0/libgnome-desktop/gnome-bg-crossfade.h
 include/gnome-desktop-3.0/libgnome-desktop/gnome-bg-slide-show.h
 include/gnome-desktop-3.0/libgnome-desktop/gnome-bg.h
 include/gnome-desktop-3.0/libgnome-desktop/gnome-desktop-thumbnail.h
+include/gnome-desktop-3.0/libgnome-desktop/gnome-desktop-version.h
 include/gnome-desktop-3.0/libgnome-desktop/gnome-idle-monitor.h
 include/gnome-desktop-3.0/libgnome-desktop/gnome-languages.h
 include/gnome-desktop-3.0/libgnome-desktop/gnome-pnp-ids.h
@@ -18,6 +19,7 @@ include/gnome-desktop-4.0/gnome-rr/gnome-rr-screen.h
 include/gnome-desktop-4.0/gnome-rr/gnome-rr-types.h
 include/gnome-desktop-4.0/gnome-rr/gnome-rr.h
 include/gnome-desktop-4.0/libgnome-desktop/gnome-desktop-thumbnail.h
+include/gnome-desktop-4.0/libgnome-desktop/gnome-desktop-version.h
 include/gnome-desktop-4.0/libgnome-desktop/gnome-idle-monitor.h
 include/gnome-desktop-4.0/libgnome-desktop/gnome-languages.h
 include/gnome-desktop-4.0/libgnome-desktop/gnome-pnp-ids.h
@@ -29,17 +31,17 @@ lib/girepository-1.0/GnomeDesktop-3.0.typelib
 lib/girepository-1.0/GnomeDesktop-4.0.typelib
 lib/girepository-1.0/GnomeRR-4.0.typelib
 lib/libgnome-bg-4.so
-lib/libgnome-bg-4.so.1
-lib/libgnome-bg-4.so.1.2.4
+lib/libgnome-bg-4.so.2
+lib/libgnome-bg-4.so.2.1.1
 lib/libgnome-desktop-3.so
-lib/libgnome-desktop-3.so.19
-lib/libgnome-desktop-3.so.19.3.0
+lib/libgnome-desktop-3.so.20
+lib/libgnome-desktop-3.so.20.0.0
 lib/libgnome-desktop-4.so
-lib/libgnome-desktop-4.so.1
-lib/libgnome-desktop-4.so.1.2.4
+lib/libgnome-desktop-4.so.2
+lib/libgnome-desktop-4.so.2.1.1
 lib/libgnome-rr-4.so
-lib/libgnome-rr-4.so.1
-lib/libgnome-rr-4.so.1.2.4
+lib/libgnome-rr-4.so.2
+lib/libgnome-rr-4.so.2.1.1
 libdata/pkgconfig/gnome-bg-4.pc
 libdata/pkgconfig/gnome-desktop-3.0.pc
 libdata/pkgconfig/gnome-desktop-4.pc
@@ -55,7 +57,6 @@ share/gir-1.0/GnomeBG-4.0.gir
 share/gir-1.0/GnomeDesktop-3.0.gir
 share/gir-1.0/GnomeDesktop-4.0.gir
 share/gir-1.0/GnomeRR-4.0.gir
-share/gnome/gnome-version.xml
 share/help/C/fdl/index.docbook
 share/help/C/gpl/index.docbook
 share/help/C/lgpl/index.docbook
@@ -88,6 +89,9 @@ share/help/fr/lgpl/index.docbook
 share/help/gl/fdl/index.docbook
 share/help/gl/gpl/index.docbook
 share/help/gl/lgpl/index.docbook
+share/help/hr/fdl/index.docbook
+share/help/hr/gpl/index.docbook
+share/help/hr/lgpl/index.docbook
 share/help/hu/fdl/index.docbook
 share/help/hu/gpl/index.docbook
 share/help/hu/lgpl/index.docbook
@@ -200,6 +204,7 @@ share/locale/ml/LC_MESSAGES/gnome-desktop-3.0.mo
 share/locale/mn/LC_MESSAGES/gnome-desktop-3.0.mo
 share/locale/mr/LC_MESSAGES/gnome-desktop-3.0.mo
 share/locale/ms/LC_MESSAGES/gnome-desktop-3.0.mo
+share/locale/my/LC_MESSAGES/gnome-desktop-3.0.mo
 share/locale/nb/LC_MESSAGES/gnome-desktop-3.0.mo
 share/locale/nds/LC_MESSAGES/gnome-desktop-3.0.mo
 share/locale/ne/LC_MESSAGES/gnome-desktop-3.0.mo
