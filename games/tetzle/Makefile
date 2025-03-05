@@ -1,5 +1,5 @@
 PORTNAME=	tetzle
-PORTVERSION=	3.0.1
+PORTVERSION=	3.0.2
 CATEGORIES=	games
 MASTER_SITES=	https://gottcode.org/${PORTNAME}/
 
@@ -10,7 +10,7 @@ WWW=		https://gottcode.org/tetzle/
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		cmake compiler:c++17-lang desktop-file-utils qt:6 tar:bzip2
+USES=		cmake compiler:c++17-lang desktop-file-utils gettext-tools qt:6 tar:bzip2
 USE_QT=		base tools:build
 
 OPTIONS_DEFINE=	NLS
