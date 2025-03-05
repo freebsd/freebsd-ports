@@ -181,7 +181,6 @@
     SUBDIR += gitjacker
     SUBDIR += globalprotect-openconnect
     SUBDIR += gnome-keyring
-    SUBDIR += gnome-keyring-sharp
     SUBDIR += gnupg
     SUBDIR += gnupg-pkcs11-scd
     SUBDIR += gnupg1

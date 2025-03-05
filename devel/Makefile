@@ -1717,9 +1717,6 @@
     SUBDIR += ncc
     SUBDIR += ncnf
     SUBDIR += ncurses
-    SUBDIR += ndesk-dbus
-    SUBDIR += ndesk-dbus-glib
-    SUBDIR += ndesk-options
     SUBDIR += netscape-java40
     SUBDIR += netsurf-buildsystem
     SUBDIR += newfile
