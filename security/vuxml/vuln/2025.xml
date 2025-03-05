@@ -1,3 +1,47 @@
+  <vuln vid="cb98d018-f9f5-11ef-a398-00e081b7aa2d">
+    <topic>jenkins -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>jenkins</name>
+	<range><lt>2.500</lt></range>
+      </package>
+      <package>
+	<name>jenkins-lts</name>
+	<range><lt>2.492.2</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Jenkins Security Advisory:</p>
+	<blockquote cite="https://www.jenkins.io/security/advisory/2025-03-05/">
+	  <h1>Description</h1>
+	  <h5>(Medium) SECURITY-3495 / CVE-2025-27622</h5>
+	  <p>Encrypted values of secrets stored in agent configuration revealed to users with Agent/Extended Read permission</p>
+	  <h1>Description</h1>
+	  <h5>(Medium) SECURITY-3496 / CVE-2025-27623</h5>
+	  <p>Encrypted values of secrets stored in view configuration revealed to users with View/Read permission</p>
+	  <h1>Description</h1>
+	  <h5>(Medium) SECURITY-3498 / CVE-2025-27624</h5>
+	  <p>CSRF vulnerability</p>
+	  <h1>Description</h1>
+	  <h5>(Medium) SECURITY-3501 / CVE-2025-27625</h5>
+	  <p>Open redirect vulnerability</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-27622</cvename>
+      <cvename>CVE-2025-27623</cvename>
+      <cvename>CVE-2025-27624</cvename>
+      <cvename>CVE-2025-27625</cvename>
+      <url>https://www.jenkins.io/security/advisory/2025-03-05/</url>
+    </references>
+    <dates>
+      <discovery>2025-03-05</discovery>
+      <entry>2025-03-05</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="475d1968-f99d-11ef-b382-b0416f0c4c67">
     <topic>Spotipy -- Spotipy&apos;s cache file, containing spotify auth token, is created with overly broad permissions</topic>
     <affects>
