@@ -30,13 +30,14 @@ USE_GITHUB=	yes
 USE_LDCONFIG=	${PREFIX}/${FLAVOR}/lib
 GH_ACCOUNT=	KhronosGroup
 GH_PROJECT=	SPIRV-LLVM-Translator
-.if !defined(FLAVOR) || ${FLAVOR} == llvm19
-# https://github.com/KhronosGroup/SPIRV-LLVM-Translator/issues/2415#issuecomment-2358890668
+.if ${FLAVOR:U:Mllvm1[12]}
+# empty
+.elif ${FLAVOR:U:Mllvm1[378]}
+GH_TUPLE=	KhronosGroup:SPIRV-Headers:1.5.4.raytracing.fixed-332-g1c6bb27:headers/projects/SPIRV-Headers
+.elif ${FLAVOR:U} == llvm19
 GH_TUPLE=	KhronosGroup:SPIRV-Headers:1.5.4.raytracing.fixed-350-gb73e168:headers/projects/SPIRV-Headers
-.elif ${FLAVOR:Mllvm1[4-6]}
-GH_TUPLE=	KhronosGroup:SPIRV-Headers:1.5.4.raytracing.fixed-390-g2b2e05e:headers/projects/SPIRV-Headers
 .else
-GH_TUPLE=	${${FLAVOR:S/llvm//}<13:?:KhronosGroup:SPIRV-Headers:1.5.4.raytracing.fixed-332-g1c6bb27:headers/projects/SPIRV-Headers}
+GH_TUPLE=	KhronosGroup:SPIRV-Headers:1.5.4.raytracing.fixed-390-g2b2e05e:headers/projects/SPIRV-Headers
 .endif
 DISTINFO_FILE=	${.CURDIR}/distinfo.${FLAVOR}
 CXXFLAGS+=	${${FLAVOR:S/llvm//} < 16 && ${COMPILER_TYPE} == clang:?-Wno-enum-constexpr-conversion:}
