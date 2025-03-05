@@ -1,7 +1,6 @@
 PORTNAME=	hidden-lake
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.8.3
-PORTREVISION=	2
+DISTVERSION=	1.8.4
 CATEGORIES=	security net-p2p
 
 MAINTAINER=	alster@vinterdalen.se
