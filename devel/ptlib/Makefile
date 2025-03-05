@@ -4,7 +4,7 @@ PORTREVISION=	7
 CATEGORIES=	devel
 MASTER_SITES=	GNOME
 
-MAINTAINER=	gnome@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Cross platform C++ library, used by OPAL
 WWW=		http://www.opalvoip.org
 
