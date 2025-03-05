@@ -882,7 +882,6 @@
     SUBDIR += gitui
     SUBDIR += glab
     SUBDIR += glade
-    SUBDIR += glademm
     SUBDIR += glaze
     SUBDIR += glib20
     SUBDIR += glibd
