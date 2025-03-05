@@ -4201,3 +4201,6 @@ devel/ndesk-dbus-glib||2025-03-05|Dead upstream, now consumers in the ports tree
 devel/ndesk-dbus||2025-03-05|Dead upstream, now consumers in the ports tree
 devel/ndesk-options||2025-03-05|Dead upstream, now consumers in the ports tree
 sysutils/tracker3|devel/tinysparql|2025-03-05|tracker3 has been replaced everywhere by libtinysparql
+net/gnome-online-miners||2025-03-05|Retired upstream
+sysutils/tracker-miners||2025-03-05|Retired upstream
+sysutils/tracker||2025-03-05|Replaced long ago by tracker3 and now tinysparql

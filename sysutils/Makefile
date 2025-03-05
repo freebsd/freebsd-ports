@@ -1383,8 +1383,6 @@
     SUBDIR += toshctl
     SUBDIR += touchegg
     SUBDIR += toybox
-    SUBDIR += tracker
-    SUBDIR += tracker-miners
     SUBDIR += tree
     SUBDIR += triton
     SUBDIR += trueos-libqt5

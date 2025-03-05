@@ -1,6 +1,6 @@
 PORTNAME=	nemo
 PORTVERSION=	5.4.2
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	x11-fm gnome
 DIST_SUBDIR=	gnome
 
@@ -35,17 +35,18 @@ USE_GNOME=	cairo gdkpixbuf2 gtk30 intlhack introspection libgsf \
 
 USE_XORG=	x11
 
+MESON_ARGS=	-Dtracker=false
+
 GLIB_SCHEMAS=	org.nemo.gschema.xml
 
 USE_LDCONFIG=	yes
 
-OPTIONS_DEFINE=		DOCS EXEMPI EXIF TRACKER
+OPTIONS_DEFINE=		DOCS EXEMPI EXIF
 OPTIONS_DEFAULT=	DOCS EXEMPI EXIF
 OPTIONS_SUB=		yes
 
 EXEMPI_DESC=		XMP support
 EXIF_DESC=		Digital camera file meta-data support
-TRACKER_DESC=		Integration with tracker
 
 DOCS_BUILD_DEPENDS=	gtkdocize:textproc/gtk-doc
 DOCS_MESON_TRUE=	gtk_doc
@@ -55,8 +56,5 @@ EXEMPI_MESON_TRUE=	xmp
 
 EXIF_LIB_DEPENDS=	libexif.so:graphics/libexif
 EXIF_MESON_TRUE=	exif
-
-TRACKER_LIB_DEPENDS=	libtracker-sparql-2.0.so:sysutils/tracker
-TRACKER_MESON_TRUE=	tracker
 
 .include <bsd.port.mk>
