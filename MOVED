@@ -4194,3 +4194,4 @@ graphics/kquickimageeditor@qt5||2025-03-03|Unflavorize; only Qt6 support is need
 graphics/kquickimageeditor@qt6|graphics/kquickimageeditor|2025-03-03|Unflavorize; only Qt6 support is needed
 devel/d-feet|devel/d-spy|2025-03-04|No longer maintained use d-spy instead
 devel/glademm||2025-03-05|Dead upstream, now consumers in the ports tree
+devel/libvolume_id||2025-03-05|Dead upstream, now consumers in the ports tree
