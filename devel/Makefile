@@ -1686,7 +1686,6 @@
     SUBDIR += mir-core
     SUBDIR += mk-configure
     SUBDIR += mm
-    SUBDIR += mm-common
     SUBDIR += modd
     SUBDIR += mold
     SUBDIR += mongo-c-driver
