@@ -1,6 +1,6 @@
 PORTNAME=	cinny
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.4.0
+DISTVERSION=	4.5.1
 CATEGORIES=	www
 MASTER_SITES=	https://github.com/ajbura/${PORTNAME}/releases/download/v${PORTVERSION}/
 
