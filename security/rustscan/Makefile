@@ -1,11 +1,10 @@
 PORTNAME=	rustscan
-PORTVERSION=	2.3.0
-PORTREVISION=	6
+PORTVERSION=	2.4.1
 CATEGORIES=	security
 
 MAINTAINER=	mikael@FreeBSD.org
 COMMENT=	Faster Nmap Scanning with Rust
-WWW=		https://rustscan.github.io/RustScan/
+WWW=		https://github.com/RustScan/RustScan
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
