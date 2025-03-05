@@ -9,25 +9,25 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		anstyle-1.0.10 \
 		anstyle-parse-0.2.6 \
 		anstyle-query-1.1.2 \
-		anstyle-wincon-3.0.6 \
-		anyhow-1.0.94 \
+		anstyle-wincon-3.0.7 \
+		anyhow-1.0.95 \
 		autocfg-1.4.0 \
 		backtrace-0.3.74 \
 		base64-0.22.1 \
-		bitflags-2.6.0 \
+		bitflags-2.8.0 \
 		bufstream-0.1.4 \
 		bumpalo-3.16.0 \
 		cassowary-0.3.0 \
 		castaway-0.2.3 \
-		cc-1.2.3 \
+		cc-1.2.9 \
 		cfg-if-1.0.0 \
-		chrono-0.4.38 \
-		clap-4.5.23 \
-		clap_builder-4.5.23 \
-		clap_derive-4.5.18 \
+		chrono-0.4.39 \
+		clap-4.5.26 \
+		clap_builder-4.5.26 \
+		clap_derive-4.5.24 \
 		clap_lex-0.7.4 \
 		colorchoice-1.0.3 \
-		compact_str-0.8.0 \
+		compact_str-0.8.1 \
 		core-foundation-0.9.4 \
 		core-foundation-sys-0.8.7 \
 		crossterm-0.28.1 \
@@ -35,16 +35,15 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		darling-0.20.10 \
 		darling_core-0.20.10 \
 		darling_macro-0.20.10 \
-		diff-0.1.13 \
 		dtoa-0.4.8 \
 		either-1.13.0 \
 		equivalent-1.0.1 \
 		errno-0.3.10 \
 		failure-0.1.8 \
 		failure_derive-0.1.8 \
-		fastrand-2.2.0 \
+		fastrand-2.3.0 \
 		fnv-1.0.7 \
-		foldhash-0.1.3 \
+		foldhash-0.1.4 \
 		foreign-types-0.3.2 \
 		foreign-types-shared-0.1.1 \
 		getrandom-0.2.15 \
@@ -58,68 +57,66 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		imap-3.0.0-alpha.14 \
 		imap-proto-0.16.5 \
 		indoc-2.0.5 \
-		instability-0.3.3 \
+		instability-0.3.7 \
 		is_terminal_polyfill-1.70.1 \
-		itertools-0.12.1 \
 		itertools-0.13.0 \
 		itoa-1.0.14 \
-		js-sys-0.3.76 \
+		js-sys-0.3.77 \
 		lazy_static-1.5.0 \
-		libc-0.2.167 \
+		libc-0.2.169 \
 		linked-hash-map-0.5.6 \
-		linux-raw-sys-0.4.14 \
+		linux-raw-sys-0.4.15 \
 		lock_api-0.4.12 \
-		log-0.4.22 \
+		log-0.4.25 \
 		lru-0.12.5 \
 		memchr-2.7.4 \
 		minimal-lexical-0.2.1 \
-		miniz_oxide-0.8.0 \
+		miniz_oxide-0.8.3 \
 		mio-1.0.3 \
 		native-tls-0.2.12 \
 		nom-7.1.3 \
 		num-traits-0.2.19 \
-		object-0.36.5 \
+		object-0.36.7 \
 		once_cell-1.20.2 \
 		openssl-0.10.68 \
 		openssl-macros-0.1.1 \
 		openssl-probe-0.1.5 \
 		openssl-sys-0.9.104 \
 		ordered-float-2.10.1 \
-		ouroboros-0.18.4 \
-		ouroboros_macro-0.18.4 \
+		ouroboros-0.18.5 \
+		ouroboros_macro-0.18.5 \
 		parking_lot-0.12.3 \
 		parking_lot_core-0.9.10 \
 		paste-1.0.15 \
 		pkg-config-0.3.31 \
-		pretty_assertions-1.4.1 \
-		proc-macro2-1.0.92 \
+		proc-macro2-1.0.93 \
 		proc-macro2-diagnostics-0.10.1 \
-		quote-1.0.37 \
+		quote-1.0.38 \
 		ratatui-0.29.0 \
-		redox_syscall-0.5.7 \
+		redox_syscall-0.5.8 \
 		regex-1.11.1 \
 		regex-automata-0.4.9 \
 		regex-syntax-0.8.5 \
 		ring-0.17.8 \
 		rustc-demangle-0.1.24 \
-		rustix-0.38.41 \
+		rustix-0.38.43 \
 		rustls-0.22.4 \
 		rustls-connector-0.19.2 \
 		rustls-native-certs-0.7.3 \
 		rustls-pemfile-2.2.0 \
-		rustls-pki-types-1.10.0 \
+		rustls-pki-types-1.10.1 \
 		rustls-webpki-0.102.8 \
-		rustversion-1.0.18 \
+		rustversion-1.0.19 \
 		ryu-1.0.18 \
 		schannel-0.1.27 \
 		scopeguard-1.2.0 \
 		security-framework-2.11.1 \
-		security-framework-sys-2.12.1 \
-		serde-1.0.215 \
+		security-framework-sys-2.14.0 \
+		serde-1.0.217 \
 		serde-value-0.7.0 \
 		serde_any-0.5.0 \
-		serde_derive-1.0.215 \
-		serde_json-1.0.133 \
+		serde_derive-1.0.217 \
+		serde_json-1.0.135 \
 		serde_yaml-0.7.5 \
 		shell-words-1.1.0 \
 		shlex-1.3.0 \
@@ -136,9 +133,9 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		strum_macros-0.26.4 \
 		subtle-2.6.1 \
 		syn-1.0.109 \
-		syn-2.0.90 \
+		syn-2.0.96 \
 		synstructure-0.12.6 \
-		tempfile-3.14.0 \
+		tempfile-3.15.0 \
 		toml-0.4.10 \
 		unicode-ident-1.0.14 \
 		unicode-segmentation-1.12.0 \
@@ -151,11 +148,11 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		vcpkg-0.2.15 \
 		version_check-0.9.5 \
 		wasi-0.11.0+wasi-snapshot-preview1 \
-		wasm-bindgen-0.2.99 \
-		wasm-bindgen-backend-0.2.99 \
-		wasm-bindgen-macro-0.2.99 \
-		wasm-bindgen-macro-support-0.2.99 \
-		wasm-bindgen-shared-0.2.99 \
+		wasm-bindgen-0.2.100 \
+		wasm-bindgen-backend-0.2.100 \
+		wasm-bindgen-macro-0.2.100 \
+		wasm-bindgen-macro-support-0.2.100 \
+		wasm-bindgen-shared-0.2.100 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
