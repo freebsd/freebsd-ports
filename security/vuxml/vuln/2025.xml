@@ -1,3 +1,52 @@
+  <vuln vid="9c62d3f0-f997-11ef-85f3-a8a1599412c6">
+    <topic>chromium -- multiple security fixes</topic>
+    <affects>
+      <package>
+       <name>chromium</name>
+       <range><lt>134.0.6998.35</lt></range>
+      </package>
+      <package>
+       <name>ungoogled-chromium</name>
+       <range><lt>134.0.6998.35</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+       <p>Chrome Releases reports:</p>
+       <blockquote cite="https://chromereleases.googleblog.com/2025/03/stable-channel-update-for-desktop.html">
+	 <p>This update includes 14 security fixes:</p>
+	 <ul>
+	    <li>[397731718] High CVE-2025-1914: Out of bounds read in V8. Reported by Zhenghang Xiao (@Kipreyyy) and Nan Wang (@eternalsakura13) on 2025-02-20</li>
+	    <li>[391114799] Medium CVE-2025-1915: Improper Limitation of a Pathname to a Restricted Directory in DevTools. Reported by Topi Lassila on 2025-01-20</li>
+	    <li>[376493203] Medium CVE-2025-1916: Use after free in Profiles. Reported by parkminchan, SSD Labs Korea on 2024-10-31</li>
+	    <li>[329476341] Medium CVE-2025-1917: Inappropriate Implementation in Browser UI. Reported by Khalil Zhani on 2024-03-14</li>
+	    <li>[388557904] Medium CVE-2025-1918: Out of bounds read in PDFium. Reported by asnine on 2025-01-09</li>
+	    <li>[392375312] Medium CVE-2025-1919: Out of bounds read in Media. Reported by @Bl1nnnk and @Pisanbao on 2025-01-26</li>
+	    <li>[387583503] Medium CVE-2025-1921: Inappropriate Implementation in Media Stream. Reported by Kaiido on 2025-01-04</li>
+	    <li>[384033062] Low CVE-2025-1922: Inappropriate Implementation in Selection. Reported by Alesandro Ortiz on 2024-12-14</li>
+	    <li>[382540635] Low CVE-2025-1923: Inappropriate Implementation in Permission Prompts. Reported by Khalil Zhani on 2024-12-06</li>
+	 </ul>
+       </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2025-1914</cvename>
+      <cvename>CVE-2025-1915</cvename>
+      <cvename>CVE-2025-1916</cvename>
+      <cvename>CVE-2025-1917</cvename>
+      <cvename>CVE-2025-1918</cvename>
+      <cvename>CVE-2025-1919</cvename>
+      <cvename>CVE-2025-1921</cvename>
+      <cvename>CVE-2025-1922</cvename>
+      <cvename>CVE-2025-1923</cvename>
+      <url>https://chromereleases.googleblog.com/2025/03/stable-channel-update-for-desktop.html</url>
+    </references>
+    <dates>
+      <discovery>2025-03-04</discovery>
+      <entry>2025-03-05</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="f4f3e001-402b-4d6d-8efa-ab11fcf8de2b">
     <topic>electron{32,33} -- multiple vulnerabilities</topic>
     <affects>
