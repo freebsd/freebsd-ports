@@ -1,6 +1,6 @@
---- aider/commands.py.orig	2024-09-09 10:14:11 UTC
+--- aider/commands.py.orig	2025-02-24 10:27:07 UTC
 +++ aider/commands.py
-@@ -15,7 +15,7 @@ from aider.run_cmd import run_cmd
+@@ -20,7 +20,7 @@ from aider.run_cmd import run_cmd
  from aider.llm import litellm
  from aider.repo import ANY_GIT_ERROR
  from aider.run_cmd import run_cmd
@@ -9,7 +9,7 @@
  from aider.utils import is_image_file
  
  from .dump import dump  # noqa: F401
-@@ -145,12 +145,8 @@ class Commands:
+@@ -172,12 +172,8 @@ class Commands:
  
          self.io.tool_output(f"Scraping {url}...")
          if not self.scraper:
