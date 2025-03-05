@@ -4200,3 +4200,4 @@ security/gnome-keyring-sharp||2025-03-05|Dead upstream, now consumers in the por
 devel/ndesk-dbus-glib||2025-03-05|Dead upstream, now consumers in the ports tree
 devel/ndesk-dbus||2025-03-05|Dead upstream, now consumers in the ports tree
 devel/ndesk-options||2025-03-05|Dead upstream, now consumers in the ports tree
+sysutils/tracker3|devel/tinysparql|2025-03-05|tracker3 has been replaced everywhere by libtinysparql

@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BUILD_DEPENDS=	blueprint-compiler:devel/blueprint-compiler
 LIB_DEPENDS=	libgraphene-1.0.so:graphics/graphene \
 		libsecret-1.so:security/libsecret \
-		libtracker-sparql-3.0.so:sysutils/tracker3
+		libtinysparql-3.0.so:devel/tinysparql
 
 USES=		cargo gettext gnome meson pkgconfig
 USE_GITLAB=	yes

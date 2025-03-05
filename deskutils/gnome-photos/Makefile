@@ -1,5 +1,6 @@
 PORTNAME=	gnome-photos
 DISTVERSION=	44.0
+PORTREVISION=	1
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	GNOME/sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+)\..*/\1/}
 DIST_SUBDIR=	gnome
@@ -27,7 +28,7 @@ LIB_DEPENDS=	libbabl-0.1.so:x11/babl \
 		libportal.so:deskutils/libportal \
 		libportal-gtk3.so:deskutils/libportal-gtk3 \
 		librest-0.7.so:devel/librest \
-		libtracker-sparql-3.0.so:sysutils/tracker3
+		libtinysparql-3.0.so:devel/tinysparql
 RUN_DEPENDS=	geoclue>=0:net/geoclue
 
 PORTSCOUT=	limitw:1,even

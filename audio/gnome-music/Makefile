@@ -1,6 +1,6 @@
 PORTNAME=	gnome-music
 PORTVERSION=	42.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	audio gnome
 MASTER_SITES=	GNOME/sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+)\..*/\1/}
 DIST_SUBDIR=	gnome
@@ -21,7 +21,7 @@ LIB_DEPENDS=	libadwaita-1.so:x11-toolkits/libadwaita \
 		libgrilo-0.3.so:net/grilo \
 		libhandy-1.so:x11-toolkits/libhandy \
 		libmediaart-2.0.so:multimedia/libmediaart \
-		libtracker-sparql-3.0.so:sysutils/tracker3
+		libtinysparql-3.0.so:devel/tinysparql
 RUN_DEPENDS=	grilo-plugins>0:net/grilo-plugins
 
 PORTSCOUT=	limitw:1,even

@@ -76,7 +76,7 @@ MYSQL_MESON_OFF=-Dwith-cnid-mysql-backend=false
 ACL_LIB_DEPENDS=	libsunacl.so:sysutils/libsunacl
 ACL_MESON_OFF=-Dwith-acls=false
 LIBWRAP_MESON_OFF=-Dwith-tcp-wrappers=false
-SPOTLIGHT_LIB_DEPENDS=	libtracker-sparql-3.0.so:sysutils/tracker3
+SPOTLIGHT_LIB_DEPENDS=	libtinysparql-3.0.so:devel/tinysparql
 SPOTLIGHT_MESON_OFF=	-Dwith-spotlight=false
 
 SHEBANG_GLOB=	afpstats

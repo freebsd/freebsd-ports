@@ -1,6 +1,6 @@
 PORTNAME=	nautilus
 PORTVERSION=	42.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11-fm gnome
 MASTER_SITES=	GNOME/sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+)\..*/\1/}
 DIST_SUBDIR=	gnome
@@ -18,7 +18,7 @@ LIB_DEPENDS=	libgexiv2.so:graphics/gexiv2 \
 		libportal.so:deskutils/libportal \
 		libportal-gtk3.so:deskutils/libportal-gtk3 \
 		libtotem.so:multimedia/totem \
-		libtracker-sparql-3.0.so:sysutils/tracker3
+		libtinysparql-3.0.so:devel/tinysparkql
 
 PORTSCOUT=	limitw:1,even
 
@@ -28,7 +28,8 @@ USE_GNOME=	cairo gdkpixbuf2 gnomedesktop3
 USE_LDCONFIG=	yes
 USE_XORG=	x11
 MESON_ARGS=	-Dpackagekit=false \
-		-Dselinux=false
+		-Dselinux=false \
+		-Dtests=none
 BINARY_ALIAS=	python3=${PYTHON_VERSION}
 CPE_VENDOR=	gnome
 

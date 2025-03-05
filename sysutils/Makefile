@@ -1385,7 +1385,6 @@
     SUBDIR += toybox
     SUBDIR += tracker
     SUBDIR += tracker-miners
-    SUBDIR += tracker3
     SUBDIR += tree
     SUBDIR += triton
     SUBDIR += trueos-libqt5

@@ -1,6 +1,6 @@
 PORTNAME=	bijiben
 PORTVERSION=	40.1
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	GNOME/sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+)\..*/\1/}
 DIST_SUBDIR=	gnome
@@ -16,7 +16,7 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	itstool:textproc/itstool
-LIB_DEPENDS=	libtracker-sparql-3.0.so:sysutils/tracker3 \
+LIB_DEPENDS=	libtinysparql-3.0.so:devel/tinysparql \
 		libwebkit2gtk-4.0.so:www/webkit2-gtk@40 \
 		libgoa-1.0.so:net/gnome-online-accounts \
 		libical.so:devel/libical \
