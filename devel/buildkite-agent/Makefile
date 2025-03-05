@@ -1,7 +1,6 @@
 PORTNAME=	buildkite-agent
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.47.0
-PORTREVISION=	10
+DISTVERSION=	3.92.1
 CATEGORIES=	devel sysutils
 
 MAINTAINER=	dch@FreeBSD.org
@@ -14,12 +13,10 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 RUN_DEPENDS=	bash:shells/bash
 
-USES=		go:modules
+USES=		go:1.23,modules
 
-USE_GITHUB=	yes
-GH_ACCOUNT=	buildkite
-GH_PROJECT=	agent
 GO_MODULE=	github.com/buildkite/agent/v3
+GO_ENV+=	GOTOOLCHAIN=local+path
 
 USE_RC_SUBR=	buildkite
 
@@ -28,10 +25,9 @@ ETCDIR=		${PREFIX}/etc/buildkite
 SUB_FILES=	pkg-message
 
 post-patch:
-	@${REINPLACE_CMD} -I '' -e 's|/bin/bash|${LOCALBASE}/bin/bash|g' \
-			`${FIND} ${WRKSRC}/packaging/linux -type f`
-	@${REINPLACE_CMD} -I '' -e 's|/bin/bash|${LOCALBASE}/bin/bash|g' \
-			`${FIND} ${WRKSRC}/bootstrap -type f -name *.go`
+	${REINPLACE_CMD} -I '' -e 's|/bin/bash|${LOCALBASE}/bin/bash|g' \
+			${WRKSRC}/packaging/linux/scripts/*.sh \
+			${WRKSRC}/packaging/linux/root/usr/share/buildkite-agent/*.sh
 
 do-install:
 	${INSTALL_PROGRAM} \
