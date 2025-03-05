@@ -1,0 +1,2 @@
+bin/jextract
+%%JAVAJARDIR%%/org.openjdk.jextract.jar
