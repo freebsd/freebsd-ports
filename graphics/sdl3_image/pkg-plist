@@ -7,5 +7,5 @@ lib/cmake/SDL3_image/SDL3_imageConfig.cmake
 lib/cmake/SDL3_image/SDL3_imageConfigVersion.cmake
 lib/libSDL3_image.so
 lib/libSDL3_image.so.0
-lib/libSDL3_image.so.0.2.0
+lib/libSDL3_image.so.%%LIBVERSION%%
 libdata/pkgconfig/sdl3-image.pc
