@@ -1,6 +1,7 @@
 PORTNAME=	docker-registry
 PORTVERSION=	2.8.3
 DISTVERSIONPREFIX=v
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	freebsd@yapsoft.it

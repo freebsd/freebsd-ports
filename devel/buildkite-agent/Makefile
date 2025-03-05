@@ -1,6 +1,7 @@
 PORTNAME=	buildkite-agent
 DISTVERSIONPREFIX=	v
 DISTVERSION=	3.92.1
+PORTREVISION=	1
 CATEGORIES=	devel sysutils
 
 MAINTAINER=	dch@FreeBSD.org

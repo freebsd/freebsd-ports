@@ -1,6 +1,7 @@
 PORTNAME=	prometheus-postgres-exporter
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.16.0
+PORTREVISION=	1
 CATEGORIES=	databases
 
 MAINTAINER=	lexi@hemlock.eden.le-fay.org

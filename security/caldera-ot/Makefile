@@ -1,5 +1,6 @@
 PORTNAME=	caldera-ot
 DISTVERSION=	5.0.0
+PORTREVISION=	1
 CATEGORIES=	security python
 
 MAINTAINER=	acm@FreeBSD.org

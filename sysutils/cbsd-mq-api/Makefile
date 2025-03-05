@@ -1,5 +1,6 @@
 PORTNAME=	cbsd-mq-api
 DISTVERSION=	0.5
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	fbsd-ports@convectix.com
