@@ -1,6 +1,6 @@
 PORTNAME=	postfix
-DISTVERSION=	3.10-20241027
-PORTREVISION?=	1
+DISTVERSION=	3.11-20250304
+PORTREVISION?=	0
 PORTEPOCH=	6
 CATEGORIES=	mail
 MASTER_SITES=	https://postfix-mirror.horus-it.com/postfix-release/ \
@@ -135,6 +135,8 @@ SASLKMIT_LIB_DEPENDS=		libkrb5.so:security/krb5
 SASL_LIB_DEPENDS=		libsasl2.so:security/cyrus-sasl2
 SQLITE_USES=			sqlite
 
+ALL_TARGET=	default
+
 .include <bsd.port.options.mk>
 
 HTML1=		body_checks.5.html bounce.5.html postfix-power.png \
@@ -192,10 +194,7 @@ SHLIB_DIRECTORY=	${PREFIX}/lib/postfix
 # keep compatiblity with Postfix 2.6 .. 2.11 and use DAEMOMDIR
 META_DIRECTORY=		${DAEMONDIR}
 
-SUB_LIST+=	DAEMONDIR="${DAEMONDIR}" \
-		META_DIRECTORY="${META_DIRECTORY}" \
-		READMEDIR="${READMEDIR}" \
-		REQUIRE="${_REQUIRE}"
+SUB_LIST+=	REQUIRE="${_REQUIRE}"
 SUB_FILES+=	mailer.conf.postfix pkg-install pkg-message
 
 POSTFIX_CCARGS+=	-DDEF_CONFIG_DIR=\\\"${ETCDIR}\\\" \
@@ -381,19 +380,18 @@ post-patch:
 		>> ${WRKSRC}/conf/postfix-files
 
 do-configure:
-	(cd ${WRKSRC} && ${MAKE} -f Makefile.init makefiles \
+	${MAKE} -C ${WRKSRC} -f Makefile.init makefiles \
 	${MAKEFILEFLAGS} CCARGS="${POSTFIX_CCARGS}" \
 	shared=yes shlib_directory=${SHLIB_DIRECTORY} \
 	dynamicmaps=yes \
 	${POSTFIX_DYN_AUXLIBS} \
-	AUXLIBS="${POSTFIX_AUXLIBS}" && \
-	${ECHO_CMD} "all: default" >> Makefile)
+	AUXLIBS="${POSTFIX_AUXLIBS}"
 
 pre-install-INST_BASE-on:
 	${MKDIR} ${STAGEDIR}/etc/rc.d
 
 do-install:
-	@(cd ${WRKSRC} && ${MAKE} non-interactive-package \
+	${MAKE} -C ${WRKSRC} non-interactive-package \
 		install_root=${STAGEDIR} tempdir=${WRKDIR} \
 		shlib_directory=${SHLIB_DIRECTORY} \
 		config_directory=${ETCDIR} \
@@ -405,7 +403,7 @@ do-install:
 		manpage_directory=${PREFIX}/share/man \
 		newaliases_path=${PREFIX}/bin/newaliases \
 		readme_directory=${READMEDIR} \
-		sendmail_path=${PREFIX}/sbin/sendmail )
+		sendmail_path=${PREFIX}/sbin/sendmail
 
 	${INSTALL_SCRIPT} ${WRKSRC}/auxiliary/rmail/rmail ${STAGEDIR}${PREFIX}/bin/rmail
 	${INSTALL_SCRIPT} ${WRKSRC}/auxiliary/qshape/qshape.pl ${STAGEDIR}${PREFIX}/bin/qshape
