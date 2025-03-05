@@ -1,5 +1,5 @@
 PORTNAME=	osc
-PORTVERSION=	1.12.1
+PORTVERSION=	1.13.0
 CATEGORIES=	devel
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -11,7 +11,8 @@ LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}urllib3>=0:net/py-urllib3@${PY_FLAVOR}
-TEST_DEPENDS=	git:devel/git
+TEST_DEPENDS=	git:devel/git \
+		${PYTHON_PKGNAMEPREFIX}ruamel.yaml>=0:devel/py-ruamel.yaml@${PY_FLAVOR}
 
 USES=		cpe python
 USE_GITHUB=	yes
