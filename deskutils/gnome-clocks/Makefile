@@ -1,6 +1,5 @@
 PORTNAME=	gnome-clocks
-PORTVERSION=	40.0
-PORTREVISION=	1
+PORTVERSION=	47.0
 PORTEPOCH=	1
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	GNOME/sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+)\..*/\1/}
@@ -15,17 +14,15 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 BUILD_DEPENDS=	itstool:textproc/itstool
 LIB_DEPENDS=	libgeoclue-2.so:net/geoclue \
-		libgeocode-glib.so:net/geocode-glib \
-		libgweather-3.so:net/libgweather \
-		libhandy-1.so:x11-toolkits/libhandy
+		libgeocode-glib-2.so:net/geocode-glib2 \
+		libgweather-4.so:net/libgweather4
 
 PORTSCOUT=	limitw:1,even
 
 USES=		compiler:c11 gettext gnome localbase meson pkgconfig \
-		python:build shebangfix tar:xz vala:build
+		shebangfix tar:xz vala:build
 USE_LDCONFIG=	yes
-USE_GNOME=	cairo gnomedesktop3 gsound
-SHEBANG_FILES=	build-aux/post-install.py
+USE_GNOME=	gtk40 gsound libadwaita
 
 GLIB_SCHEMAS=	org.gnome.clocks.gschema.xml
 
