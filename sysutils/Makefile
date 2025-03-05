@@ -642,6 +642,7 @@
     SUBDIR += lmon
     SUBDIR += lnav
     SUBDIR += loaders-update
+    SUBDIR += localsearch
     SUBDIR += lockfile-progs
     SUBDIR += loganalyzer
     SUBDIR += logrotate
