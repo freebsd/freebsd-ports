@@ -41,6 +41,7 @@
 %%SITE_PERL%%/auto/share/dist/Zonemaster-Engine/locale/fi/LC_MESSAGES/Zonemaster-Engine.mo
 %%SITE_PERL%%/auto/share/dist/Zonemaster-Engine/locale/fr/LC_MESSAGES/Zonemaster-Engine.mo
 %%SITE_PERL%%/auto/share/dist/Zonemaster-Engine/locale/nb/LC_MESSAGES/Zonemaster-Engine.mo
+%%SITE_PERL%%/auto/share/dist/Zonemaster-Engine/locale/sl/LC_MESSAGES/Zonemaster-Engine.mo
 %%SITE_PERL%%/auto/share/dist/Zonemaster-Engine/locale/sv/LC_MESSAGES/Zonemaster-Engine.mo
 %%SITE_PERL%%/auto/share/dist/Zonemaster-Engine/modules.txt
 %%SITE_PERL%%/auto/share/dist/Zonemaster-Engine/named.root
