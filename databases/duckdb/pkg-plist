@@ -753,6 +753,7 @@ include/duckdb/parallel/pipeline_prepare_finish_event.hpp
 include/duckdb/parallel/task.hpp
 include/duckdb/parallel/task_counter.hpp
 include/duckdb/parallel/task_executor.hpp
+include/duckdb/parallel/task_notifier.hpp
 include/duckdb/parallel/task_scheduler.hpp
 include/duckdb/parallel/thread_context.hpp
 include/duckdb/parser/base_expression.hpp

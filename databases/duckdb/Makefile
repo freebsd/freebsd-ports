@@ -1,6 +1,6 @@
 PORTNAME=	duckdb
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.2.0
+DISTVERSION=	1.2.1
 CATEGORIES=	databases
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -14,13 +14,13 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USES=		cmake:testing compiler:c++11-lang ssl
 USE_GITHUB=	yes
 GH_TUPLE=	\
-		duckdb:duckdb-excel:e243577956f36a898d5485189e5288839c2c4b73:excel/extension/excel \
-		duckdb:duckdb-fts:0477abaf2484aa7b9aabf8ace9dc0bde80a15554:fts/extension/fts \
+		duckdb:duckdb-excel:f14e7c3beaf379c54b47b996aa896a1d814e1be8:excel/extension/excel \
+		duckdb:duckdb-fts:3aa6a180b9c101d78070f5f7214c27552bb091c8:fts/extension/fts \
 		duckdb:duckdb-httpfs:85ac4667bcb0d868199e156f8dd918b0278db7b9:httpfs/extension/httpfs \
 		duckdb:duckdb-inet:a8b361ab5d43f6390d7cb48c9a9f0638e9581cf9:inet/extension/inet \
-		duckdb:duckdb-spatial:79bf2b6f55db3bf7201f375662616663b4b0954a:spatial/extension/spatial \
+		duckdb:duckdb-spatial:2905968a85703e5ca3698976daafd759554e1744:spatial/extension/spatial \
 		duckdb:duckdb-sqlite:96e451c043afa40ee39b7581009ba0c72a523a12:sqlite/extension/sqlite_scanner \
-		duckdb:duckdb-sqlsmith:b13723fe701f1e38d2cd65b3b6eb587c6553a251:sqlsmith/extension/sqlsmith \
+		duckdb:duckdb-sqlsmith:e1eb0ae02a258f176d6e06b84c0d6c7a09c6b4da:sqlsmith/extension/sqlsmith \
 		duckdb:duckdb-vss:580e8918eb89f478cf2d233ca908ffbd3ec752c5:vss/extension/vss
 # the list of out-of-tree extensions is here: .github/config/out_of_tree_extensions.cmake
 
@@ -72,8 +72,6 @@ post-extract: # remove the jemalloc extension directory just in case
 post-test: # run tests
 	@cd ${TEST_WRKSRC} && test/unittest
 
-# tests as of 1.2.0:
-# test cases:   3631 |   3630 passed | 1 failed | 48 skipped
-# assertions: 403428 | 403427 passed | 1 failed | 48 skipped
+# tests as of 1.2.1: All tests passed (48 skipped tests, 398067 assertions in 3602 test cases)
 
 .include <bsd.port.mk>
