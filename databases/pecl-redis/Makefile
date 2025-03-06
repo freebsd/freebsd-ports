@@ -1,14 +1,13 @@
 PORTNAME=	redis
-PORTVERSION=	5.3.7
-PORTREVISION=	1
+DISTVERSION=	6.1.0
 CATEGORIES=	databases
 
-MAINTAINER=	daniel@blodan.se
+MAINTAINER=	wiacek.m@witia.com.pl
 COMMENT=	Extension to access Redis
 WWW=		https://pecl.php.net/package/redis
 
 LICENSE=	PHP301
-LICENSE_FILE=	${WRKSRC}/COPYING
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		php:build,pecl
 USE_PHP=	session:build
