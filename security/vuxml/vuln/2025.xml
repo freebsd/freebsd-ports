@@ -1,3 +1,40 @@
+  <vuln vid="d8bd20ae-fa48-11ef-ab7a-ace2d30de67a">
+    <topic>caldera -- Remote Code Execution</topic>
+    <affects>
+      <package>
+	<name>caldera</name>
+	<range><lt>5.2.0</lt></range>
+      </package>
+      <package>
+	<name>caldera4</name>
+	<range><le>4.2.0</le></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>MITRE Caldera contributor report:</p>
+	<blockquote cite="https://github.com/mitre/caldera/pull/3129">
+	  <p>In MITRE Caldera through 4.2.0 and 5.0.0 before 35bc06e,
+ a Remote Code Execution (RCE) vulnerability was found in the dynamic
+ agent (implant) compilation functionality of the server. This allows
+ remote attackers to execute arbitrary code on the server that Caldera
+ is running on via a crafted web request to the Caldera server API used
+ for compiling and downloading of Caldera's Sandcat or Manx agent
+ (implants). This web request can use the gcc -extldflags linker flag
+ with sub-commands.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-27364</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2025-27364</url>
+    </references>
+    <dates>
+      <discovery>2025-02-16</discovery>
+      <entry>2025-03-06</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="cb98d018-f9f5-11ef-a398-00e081b7aa2d">
     <topic>jenkins -- multiple vulnerabilities</topic>
     <affects>
