@@ -1,5 +1,5 @@
 PORTNAME=	Zonemaster-GUI
-DISTVERSION=	4.3.1
+DISTVERSION=	4.4.0
 CATEGORIES=	www dns perl5
 MASTER_SITES=	https://github.com/zonemaster/zonemaster-gui/releases/download/v${DISTVERSION}/
 PKGNAMEPREFIX=	p5-
