@@ -42,7 +42,7 @@ BRASERO_MESON_ENABLED=	brasero
 BRASERO_LIB_DEPENDS=	libbrasero-media3.so:sysutils/brasero
 DAAP_DESC=	DAAP support
 DAAP_MESON_ENABLED=	daap
-DAAP_LIB_DEPENDS=	libdmapsharing-3.0.so:net/libdmapsharing
+DAAP_LIB_DEPENDS=	libdmapsharing-4.0.so:net/libdmapsharing
 GRILO_DESC=		Media discovery with Grilo
 GRILO_MESON_ENABLED=	grilo
 GRILO_BUILD_DEPENDS=	grilo>=0.3.1:net/grilo
