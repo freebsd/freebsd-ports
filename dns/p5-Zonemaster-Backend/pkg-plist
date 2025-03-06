@@ -33,6 +33,7 @@ etc/rc.d/zm_testagent
 %%SITE_PERL%%/auto/share/dist/Zonemaster-Backend/locale/fi/LC_MESSAGES/Zonemaster-Backend.mo
 %%SITE_PERL%%/auto/share/dist/Zonemaster-Backend/locale/fr/LC_MESSAGES/Zonemaster-Backend.mo
 %%SITE_PERL%%/auto/share/dist/Zonemaster-Backend/locale/nb/LC_MESSAGES/Zonemaster-Backend.mo
+%%SITE_PERL%%/auto/share/dist/Zonemaster-Backend/locale/sl/LC_MESSAGES/Zonemaster-Backend.mo
 %%SITE_PERL%%/auto/share/dist/Zonemaster-Backend/locale/sv/LC_MESSAGES/Zonemaster-Backend.mo
 %%SITE_PERL%%/auto/share/dist/Zonemaster-Backend/patch/README.txt
 %%SITE_PERL%%/auto/share/dist/Zonemaster-Backend/patch/patch_db_zonemaster_backend_ver_11.1.0.pl
