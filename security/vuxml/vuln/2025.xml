@@ -1,3 +1,44 @@
+  <vuln vid="3299cbfd-fa6e-11ef-929d-b0416f0c4c67">
+    <topic>Jinja2 -- Sandbox breakout through attr filter selecting format method</topic>
+    <affects>
+      <package>
+	<name>py38-Jinja2</name>
+	<name>py39-Jinja2</name>
+	<name>py310-Jinja2</name>
+	<name>py311-Jinja2</name>
+	<range><lt>3.1.6</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>security-advisories@github.com reports:</p>
+	<blockquote cite="https://github.com/pallets/jinja/commit/90457bbf33b8662926ae65cdde4c4c32e756e403">
+	  <p>Jinja is an extensible templating engine.  Prior to 3.1.6, an
+	oversight in how the Jinja sandboxed environment interacts with the
+	|attr filter allows an attacker that controls the content of a
+	template to execute arbitrary Python code.  To exploit the
+	vulnerability, an attacker needs to control the content of a template.
+	Whether that is the case depends on the type of application using
+	Jinja.  This vulnerability impacts users of applications which
+	execute untrusted templates.  Jinja&apos;s sandbox does catch calls
+	to str.format and ensures they don&apos;t escape the sandbox.
+	However, it&apos;s possible to use the |attr filter to get a reference
+	to a string&apos;s plain format method, bypassing the sandbox.
+	After the fix, the |attr filter no longer bypasses the environment&apos;s
+	attribute lookup.  This vulnerability is fixed in 3.1.6.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-27516</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2025-27516</url>
+    </references>
+    <dates>
+      <discovery>2025-03-05</discovery>
+      <entry>2025-03-06</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="f4297478-fa62-11ef-b597-001fc69cd6dc">
     <topic>xorg server -- Multiple vulnerabilities</topic>
     <affects>
