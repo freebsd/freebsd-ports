@@ -15,13 +15,15 @@ LIB_DEPENDS=	libjson-glib-1.0.so:devel/json-glib \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
 		libcogl.so:graphics/cogl \
-		libharfbuzz.so:print/harfbuzz
+		libharfbuzz.so:print/harfbuzz \
+		libxkbcommon.so:x11/libxkbcommon \
+		libwayland-client.so:graphics/wayland
 
 PORTSCOUT=	limit:1,even
 
 USES=		cpe gettext gl gmake gnome libtool localbase pathfix pkgconfig \
 		tar:xz xorg
-USE_GNOME=	atk cairo gdkpixbuf2 pango introspection:build
+USE_GNOME=	atk cairo gdkpixbuf2 pango introspection:build gtk30
 USE_GL=		egl
 USE_XORG=	x11 xcomposite xdamage xext xfixes xi xrandr
 GNU_CONFIGURE=	yes
