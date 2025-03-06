@@ -64,7 +64,7 @@ LDAP_CFLAGS=		-I${LOCALBASE}/include -L${LOCALBASE}/lib
 LDAP_USES=	ldap
 SENDFILE_MESON_OFF=-Dwith-sendfile=false
 DBUS_USES=	gnome python
-DBUS_USE=	GNOME=glib20
+DBUS_USE=	GNOME+=glib20
 DBUS_LIB_DEPENDS=	libdbus-glib-1.so:devel/dbus-glib \
 			libdbus-1.so:devel/dbus
 DBUS_RUN_DEPENDS=	${PYTHON_SITELIBDIR}/dbus/_dbus.py:devel/py-dbus@${PY_FLAVOR}
