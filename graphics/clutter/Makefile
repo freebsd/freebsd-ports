@@ -11,13 +11,16 @@ WWW=		https://clutter-project.org/
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BUILD_DEPENDS=	evdev-proto>0:devel/evdev-proto
 LIB_DEPENDS=	libjson-glib-1.0.so:devel/json-glib \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
 		libcogl.so:graphics/cogl \
 		libharfbuzz.so:print/harfbuzz \
 		libxkbcommon.so:x11/libxkbcommon \
-		libwayland-client.so:graphics/wayland
+		libwayland-client.so:graphics/wayland \
+		libgudev-1.0.so:devel/libgudev \
+		libinput.so:x11/libinput
 
 PORTSCOUT=	limit:1,even
 
