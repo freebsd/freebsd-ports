@@ -10,6 +10,20 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
+20250306:
+AUTHOR: jhale@FreeBSD.org
+
+  TEST_DEPENDS support has been added to Mk/Uses/qt.mk.
+
+  If a component defined by USE_QT is only needed for regession tests,
+  it can be added to TEST_DEPENDS buy suffixing it with ':test'.
+
+  For example:
+      USES=	qt:5
+      USE_QT=	testlib:test
+
+      Will add devel/qt5-testlib to TEST_DEPENDS
+
 20250205:
 AUTHOR: yasu@FreeBSD.org
 
