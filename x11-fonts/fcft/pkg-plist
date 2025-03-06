@@ -4,6 +4,9 @@ lib/libfcft.so
 lib/libfcft.so.4
 lib/libfcft.so.4.2.0
 libdata/pkgconfig/fcft.pc
+%%PORTDOCS%%%%DOCSDIR%%/CHANGELOG.md
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE
+%%PORTDOCS%%%%DOCSDIR%%/README.md
 %%PORTDOCS%%share/man/man3/fcft_capabilities.3.gz
 %%PORTDOCS%%share/man/man3/fcft_clone.3.gz
 %%PORTDOCS%%share/man/man3/fcft_destroy.3.gz
@@ -22,6 +25,3 @@ libdata/pkgconfig/fcft.pc
 %%PORTDOCS%%share/man/man3/fcft_set_emoji_presentation.3.gz
 %%PORTDOCS%%share/man/man3/fcft_set_scaling_filter.3.gz
 %%PORTDOCS%%share/man/man3/fcft_text_run_destroy.3.gz
-%%PORTDOCS%%%%DOCSDIR%%/CHANGELOG.md
-%%PORTDOCS%%%%DOCSDIR%%/LICENSE
-%%PORTDOCS%%%%DOCSDIR%%/README.md
