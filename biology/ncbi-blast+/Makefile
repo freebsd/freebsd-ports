@@ -1,6 +1,6 @@
 PORTNAME=	ncbi-blast+
 DISTVERSION=	2.16.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	biology perl5 python
 MASTER_SITES=	https://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/LATEST/ \
 		https://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/${PORTVERSION}/
@@ -69,13 +69,29 @@ CONFIGURE_ARGS+=	--without-openmp
 LDFLAGS+=	-latomic # Only exists in gcc libs
 .endif
 
+# Build system attempts to access NCBI file server paths such as
+# /net/snowman in many places.  :-/
+# This causes NFS timeouts if autofs is enabled.
+pre-configure:
+	${REINPLACE_CMD} -e 's|/net/|/nonexistent/net/|g' \
+	      ${WRKSRC}/include/sra/readers/ncbi_traces_path.hpp \
+	      ${WRKSRC}/scripts/common/impl/create_flat_makefile.sh \
+	      ${WRKSRC}/src/objects/genomecoll/gc_cli/Makefile.in \
+	      ${WRKSRC}/src/objtools/blast/seqdb_reader/configuration.txt \
+	      ${WRKSRC}/src/objtools/align_format/unit_test/data/large_gi.asn \
+	      ${WRKSRC}/src/build-system/project_tree_builder.ini \
+	      ${WRKSRC}/src/build-system/cmake/CMake.NCBIptb.datatool.cmake \
+	      ${WRKSRC}/src/build-system/new_module.sh.in \
+	      ${WRKSRC}/src/build-system/Makefile.meta_l \
+	      ${WRKSRC}/src/build-system/config.site.ncbi
+
 post-install:
-	@${RM} ${STAGEDIR}${PREFIX}/include/ncbi-tools++/*/*/.cvsignore.extra
-	@${RM} -rf ${STAGEDIR}${PREFIX}/lib/X11
-	@${RM} ${STAGEDIR}${PREFIX}/include/ncbi-tools++/common/config/ncbiconf_msvc_site.h.in
-	@${RM} ${STAGEDIR}${PREFIX}/include/ncbi-tools++/common/ncbi_build_ver.h.in
-	@${RM} ${STAGEDIR}${PREFIX}/include/ncbi-tools++/common/ncbi_revision.h.in
-	@${RMDIR} ${STAGEDIR}${PREFIX}/lib/debug
+	${RM} ${STAGEDIR}${PREFIX}/include/ncbi-tools++/*/*/.cvsignore.extra
+	${RM} -rf ${STAGEDIR}${PREFIX}/lib/X11
+	${RM} ${STAGEDIR}${PREFIX}/include/ncbi-tools++/common/config/ncbiconf_msvc_site.h.in
+	${RM} ${STAGEDIR}${PREFIX}/include/ncbi-tools++/common/ncbi_build_ver.h.in
+	${RM} ${STAGEDIR}${PREFIX}/include/ncbi-tools++/common/ncbi_revision.h.in
+	${RMDIR} ${STAGEDIR}${PREFIX}/lib/debug
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/ncbi-tools++/*.so
 
 .include <bsd.port.post.mk>

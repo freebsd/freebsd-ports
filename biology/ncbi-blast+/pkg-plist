@@ -30,6 +30,7 @@ bin/run_with_lock
 bin/seedtop
 bin/segmasker
 bin/seqdb_demo
+bin/seqdb_perf
 bin/tax4blast
 bin/tblastn
 bin/tblastx
