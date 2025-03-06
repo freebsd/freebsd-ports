@@ -1,6 +1,5 @@
 PORTNAME=	libdmapsharing
-PORTVERSION=	2.9.41
-PORTREVISION=	2
+PORTVERSION=	3.9.13
 CATEGORIES=	net gnome
 MASTER_SITES=	https://www.flyn.org/projects/libdmapsharing/
 DIST_SUBDIR=	gnome3
@@ -12,7 +11,7 @@ WWW=		https://www.flyn.org/projects/libdmapsharing
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libsoup-2.4.so:devel/libsoup \
+LIB_DEPENDS=	libsoup-3.0.so:devel/libsoup \
 		libgee-0.8.so:devel/libgee
 
 USES=		gettext gnome gmake gstreamer libtool pathfix pkgconfig vala:build
@@ -28,6 +27,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib `pkg-config --libs gtk+-3.0` -lm
 INSTALL_TARGET=	install-strip
 
 OPTIONS_SUB=	yes
+OPTIONS_DEFINE=	DOCS
 OPTIONS_DEFAULT=	AVAHI
 OPTIONS_SINGLE=	MDNS
 OPTIONS_SINGLE_MDNS=	AVAHI MDNSRESPONDER
