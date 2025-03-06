@@ -1,5 +1,5 @@
---- runtime/signal.rs.orig	2024-12-13 09:29:06 UTC
-+++ runtime/signal.rs
+--- ext/os/signal.rs.orig	2024-12-13 09:29:06 UTC
++++ ext/os/signal.rs
 @@ -8,8 +8,8 @@ pub struct InvalidSignalStrError(pub String);
  #[cfg(any(
    target_os = "android",

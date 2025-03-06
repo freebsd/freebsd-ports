@@ -1,6 +1,6 @@
---- runtime/ops/os/mod.rs.orig	2023-01-13 13:12:37 UTC
-+++ runtime/ops/os/mod.rs
-@@ -427,6 +427,46 @@ fn rss() -> usize {
+--- ext/os/lib.rs.orig	2023-01-13 13:12:37 UTC
++++ ext/os/lib.rs
+@@ -669,6 +669,51 @@ fn rss() -> usize {
    }
  }
  
@@ -20,6 +20,11 @@
 +    libc::KERN_PROC,
 +    libc::KERN_PROC_PID,
 +    pid,
++    // mib is an array of integers, size is of type size_t
++    // conversion is safe, because the size of a libc::kinfo_proc
++    // structure will not exceed i32::MAX
++    size.try_into().unwrap(),
++    1,
 +  ];
 +  // SAFETY: libc call, mib has been statically initialized,
 +  // kinfoproc is a valid pointer to a libc::kinfo_proc struct

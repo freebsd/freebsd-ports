@@ -1,5 +1,5 @@
---- runtime/sys_info.rs.orig	2022-11-13 21:31:36 UTC
-+++ runtime/sys_info.rs
+--- ext/os/sys_info.rs.orig	2022-11-13 21:31:36 UTC
++++ ext/os/sys_info.rs
 @@ -296,6 +296,20 @@ pub fn mem_info() -> Option<MemInfo> {
          mem_info.swap_free = mem_info.swap_total;
        }

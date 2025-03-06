@@ -1,5 +1,5 @@
---- cargo-crates/v8-130.0.1/build.rs.orig	2006-07-24 03:21:28 UTC
-+++ cargo-crates/v8-130.0.1/build.rs
+--- cargo-crates/v8-134.4.0/build.rs.orig	2006-07-24 03:21:28 UTC
++++ cargo-crates/v8-134.4.0/build.rs
 @@ -238,12 +238,6 @@ fn build_v8(is_asan: bool) {
      }
    }
