@@ -6,7 +6,7 @@ MASTER_SITES=	https://armkeil.blob.core.windows.net/developer/Files/downloads/gn
 DISTNAME=	${ORIGINAL_PACKAGE_NAME}-src
 
 MAINTAINER=	lev@FreeBSD.org
-COMMENT=	Complete gcc-based toolcahin for embedded ARM development
+COMMENT=	Complete GCC-based toolcahin for embedded ARM development
 WWW=		https://developer.arm.com/Tools%20and%20Software/GNU%20Toolchain
 
 LICENSE=	GPLv2 LGPL20 LGPL21 GPLv3 LGPL3
@@ -114,9 +114,9 @@ post-extract:
 .endif
 	@${ECHO_MSG} "====>  Extracting bundled binutils"
 	@${TAR} -xf ${SRC_DIR}/binutils.tar.bz2 -C ${SRC_DIR}
-	@${ECHO_MSG} "====>  Extracting bundled gcc"
+	@${ECHO_MSG} "====>  Extracting bundled GCC"
 	@${TAR} -xf ${SRC_DIR}/gcc.tar.bz2 -C ${SRC_DIR}
-	@${ECHO_MSG} "====>  Extracting bundled gdb"
+	@${ECHO_MSG} "====>  Extracting bundled GDB"
 	@${TAR} -xf ${SRC_DIR}/gdb.tar.bz2 -C ${SRC_DIR}
 	@${ECHO_MSG} "====>  Extracting bundled newlib"
 	@${TAR} -xf ${SRC_DIR}/newlib.tar.bz2 -C ${SRC_DIR}
