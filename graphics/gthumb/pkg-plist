@@ -193,6 +193,7 @@ lib/gthumb/extensions/selections.extension
 lib/gthumb/extensions/slideshow.extension
 lib/gthumb/extensions/terminal.extension
 lib/gthumb/extensions/webalbums.extension
+libexec/gthumb/video-thumbnailer
 libdata/pkgconfig/gthumb.pc
 share/man/man1/gthumb.1.gz
 share/aclocal/gthumb.m4
@@ -365,6 +366,7 @@ share/applications/org.gnome.gThumb.desktop
 %%DATADIR%%/ui/shortcuts-preferences.ui
 %%DATADIR%%/ui/slideshow-preferences.ui
 %%DATADIR%%/ui/sort-order.ui
+%%DATADIR%%/ui/sort-order-folder-tree.ui
 %%DATADIR%%/ui/tag-chooser.ui
 %%DATADIR%%/ui/template-editor-dialog.ui
 %%DATADIR%%/ui/terminal-preferences.ui
@@ -373,6 +375,7 @@ share/applications/org.gnome.gThumb.desktop
 %%DATADIR%%/ui/web-album-exporter.ui
 %%DATADIR%%/ui/webp-options.ui
 share/applications/org.gnome.gThumb.Import.desktop
+share/help/C/gthumb/figures/gThumb.svg
 share/help/C/gthumb/attributes.page
 share/help/C/gthumb/batch-change-date.page
 share/help/C/gthumb/batch-convert-format.page
@@ -428,6 +431,7 @@ share/help/ca/gthumb/edit-resize-crop.page
 share/help/ca/gthumb/edit-rotate.page
 share/help/ca/gthumb/edit-save-undo-redo.page
 share/help/ca/gthumb/extensions.page
+share/help/ca/gthumb/figures/gThumb.svg
 share/help/ca/gthumb/figures/general-filter.png
 share/help/ca/gthumb/figures/import-pref-auto-folder.png
 share/help/ca/gthumb/figures/import-pref-custom-format.png
@@ -469,6 +473,7 @@ share/help/cs/gthumb/edit-resize-crop.page
 share/help/cs/gthumb/edit-rotate.page
 share/help/cs/gthumb/edit-save-undo-redo.page
 share/help/cs/gthumb/extensions.page
+share/help/cs/gthumb/figures/gThumb.svg
 share/help/cs/gthumb/figures/general-filter.png
 share/help/cs/gthumb/figures/import-pref-auto-folder.png
 share/help/cs/gthumb/figures/import-pref-custom-format.png
@@ -510,6 +515,7 @@ share/help/de/gthumb/edit-resize-crop.page
 share/help/de/gthumb/edit-rotate.page
 share/help/de/gthumb/edit-save-undo-redo.page
 share/help/de/gthumb/extensions.page
+share/help/de/gthumb/figures/gThumb.svg
 share/help/de/gthumb/figures/general-filter.png
 share/help/de/gthumb/figures/import-pref-auto-folder.png
 share/help/de/gthumb/figures/import-pref-custom-format.png
@@ -551,6 +557,7 @@ share/help/el/gthumb/edit-resize-crop.page
 share/help/el/gthumb/edit-rotate.page
 share/help/el/gthumb/edit-save-undo-redo.page
 share/help/el/gthumb/extensions.page
+share/help/el/gthumb/figures/gThumb.svg
 share/help/el/gthumb/figures/general-filter.png
 share/help/el/gthumb/figures/import-pref-auto-folder.png
 share/help/el/gthumb/figures/import-pref-custom-format.png
@@ -592,6 +599,7 @@ share/help/es/gthumb/edit-resize-crop.page
 share/help/es/gthumb/edit-rotate.page
 share/help/es/gthumb/edit-save-undo-redo.page
 share/help/es/gthumb/extensions.page
+share/help/es/gthumb/figures/gThumb.svg
 share/help/es/gthumb/figures/general-filter.png
 share/help/es/gthumb/figures/import-pref-auto-folder.png
 share/help/es/gthumb/figures/import-pref-custom-format.png
@@ -633,6 +641,7 @@ share/help/eu/gthumb/edit-resize-crop.page
 share/help/eu/gthumb/edit-rotate.page
 share/help/eu/gthumb/edit-save-undo-redo.page
 share/help/eu/gthumb/extensions.page
+share/help/eu/gthumb/figures/gThumb.svg
 share/help/eu/gthumb/figures/general-filter.png
 share/help/eu/gthumb/figures/import-pref-auto-folder.png
 share/help/eu/gthumb/figures/import-pref-custom-format.png
@@ -674,6 +683,7 @@ share/help/fr/gthumb/edit-resize-crop.page
 share/help/fr/gthumb/edit-rotate.page
 share/help/fr/gthumb/edit-save-undo-redo.page
 share/help/fr/gthumb/extensions.page
+share/help/fr/gthumb/figures/gThumb.svg
 share/help/fr/gthumb/figures/general-filter.png
 share/help/fr/gthumb/figures/import-pref-auto-folder.png
 share/help/fr/gthumb/figures/import-pref-custom-format.png
@@ -715,6 +725,7 @@ share/help/hu/gthumb/edit-resize-crop.page
 share/help/hu/gthumb/edit-rotate.page
 share/help/hu/gthumb/edit-save-undo-redo.page
 share/help/hu/gthumb/extensions.page
+share/help/hu/gthumb/figures/gThumb.svg
 share/help/hu/gthumb/figures/general-filter.png
 share/help/hu/gthumb/figures/import-pref-auto-folder.png
 share/help/hu/gthumb/figures/import-pref-custom-format.png
@@ -756,6 +767,7 @@ share/help/id/gthumb/edit-resize-crop.page
 share/help/id/gthumb/edit-rotate.page
 share/help/id/gthumb/edit-save-undo-redo.page
 share/help/id/gthumb/extensions.page
+share/help/id/gthumb/figures/gThumb.svg
 share/help/id/gthumb/figures/general-filter.png
 share/help/id/gthumb/figures/import-pref-auto-folder.png
 share/help/id/gthumb/figures/import-pref-custom-format.png
@@ -797,6 +809,7 @@ share/help/nl/gthumb/edit-resize-crop.page
 share/help/nl/gthumb/edit-rotate.page
 share/help/nl/gthumb/edit-save-undo-redo.page
 share/help/nl/gthumb/extensions.page
+share/help/nl/gthumb/figures/gThumb.svg
 share/help/nl/gthumb/figures/general-filter.png
 share/help/nl/gthumb/figures/import-pref-auto-folder.png
 share/help/nl/gthumb/figures/import-pref-custom-format.png
@@ -838,6 +851,7 @@ share/help/oc/gthumb/edit-resize-crop.page
 share/help/oc/gthumb/edit-rotate.page
 share/help/oc/gthumb/edit-save-undo-redo.page
 share/help/oc/gthumb/extensions.page
+share/help/oc/gthumb/figures/gThumb.svg
 share/help/oc/gthumb/figures/general-filter.png
 share/help/oc/gthumb/figures/import-pref-auto-folder.png
 share/help/oc/gthumb/figures/import-pref-custom-format.png
@@ -865,6 +879,48 @@ share/help/oc/gthumb/thumbnail-pane.page
 share/help/oc/gthumb/thumbnails.page
 share/help/oc/gthumb/viewer.page
 share/help/oc/gthumb/wallpaper.page
+share/help/ru/gthumb/attributes.page
+share/help/ru/gthumb/batch-change-date.page
+share/help/ru/gthumb/batch-convert-format.page
+share/help/ru/gthumb/batch-resize.page
+share/help/ru/gthumb/batch-rotate.page
+share/help/ru/gthumb/batch-scripts.page
+share/help/ru/gthumb/bookmarks.page
+share/help/ru/gthumb/browser.page
+share/help/ru/gthumb/edit-colors.page
+share/help/ru/gthumb/edit-redeye.page
+share/help/ru/gthumb/edit-resize-crop.page
+share/help/ru/gthumb/edit-rotate.page
+share/help/ru/gthumb/edit-save-undo-redo.page
+share/help/ru/gthumb/extensions.page
+share/help/ru/gthumb/figures/gThumb.svg
+share/help/ru/gthumb/figures/general-filter.png
+share/help/ru/gthumb/figures/import-pref-auto-folder.png
+share/help/ru/gthumb/figures/import-pref-custom-format.png
+share/help/ru/gthumb/figures/import.png
+share/help/ru/gthumb/figures/main-win.png
+share/help/ru/gthumb/figures/palette.png
+share/help/ru/gthumb/figures/specific-filter.png
+share/help/ru/gthumb/figures/thumbnail-pane.png
+share/help/ru/gthumb/file-copy-move.page
+share/help/ru/gthumb/filtering.page
+share/help/ru/gthumb/fullscreen.page
+share/help/ru/gthumb/gimp.page
+share/help/ru/gthumb/import.page
+share/help/ru/gthumb/index.page
+share/help/ru/gthumb/introduction.page
+share/help/ru/gthumb/legal.xml
+share/help/ru/gthumb/printing.page
+share/help/ru/gthumb/rename-series.page
+share/help/ru/gthumb/sharing-disc.page
+share/help/ru/gthumb/sharing-social.page
+share/help/ru/gthumb/slideshow.page
+share/help/ru/gthumb/sorting.page
+share/help/ru/gthumb/strftime.page
+share/help/ru/gthumb/thumbnail-pane.page
+share/help/ru/gthumb/thumbnails.page
+share/help/ru/gthumb/viewer.page
+share/help/ru/gthumb/wallpaper.page
 share/help/sl/gthumb/attributes.page
 share/help/sl/gthumb/batch-change-date.page
 share/help/sl/gthumb/batch-convert-format.page
@@ -879,6 +935,7 @@ share/help/sl/gthumb/edit-resize-crop.page
 share/help/sl/gthumb/edit-rotate.page
 share/help/sl/gthumb/edit-save-undo-redo.page
 share/help/sl/gthumb/extensions.page
+share/help/sl/gthumb/figures/gThumb.svg
 share/help/sl/gthumb/figures/general-filter.png
 share/help/sl/gthumb/figures/import-pref-auto-folder.png
 share/help/sl/gthumb/figures/import-pref-custom-format.png
@@ -920,6 +977,7 @@ share/help/sv/gthumb/edit-resize-crop.page
 share/help/sv/gthumb/edit-rotate.page
 share/help/sv/gthumb/edit-save-undo-redo.page
 share/help/sv/gthumb/extensions.page
+share/help/sv/gthumb/figures/gThumb.svg
 share/help/sv/gthumb/figures/general-filter.png
 share/help/sv/gthumb/figures/import-pref-auto-folder.png
 share/help/sv/gthumb/figures/import-pref-custom-format.png
@@ -961,6 +1019,7 @@ share/help/uk/gthumb/edit-resize-crop.page
 share/help/uk/gthumb/edit-rotate.page
 share/help/uk/gthumb/edit-save-undo-redo.page
 share/help/uk/gthumb/extensions.page
+share/help/uk/gthumb/figures/gThumb.svg
 share/help/uk/gthumb/figures/general-filter.png
 share/help/uk/gthumb/figures/import-pref-auto-folder.png
 share/help/uk/gthumb/figures/import-pref-custom-format.png
@@ -1002,6 +1061,7 @@ share/help/zh_CN/gthumb/edit-resize-crop.page
 share/help/zh_CN/gthumb/edit-rotate.page
 share/help/zh_CN/gthumb/edit-save-undo-redo.page
 share/help/zh_CN/gthumb/extensions.page
+share/help/zh_CN/gthumb/figures/gThumb.svg
 share/help/zh_CN/gthumb/figures/general-filter.png
 share/help/zh_CN/gthumb/figures/import-pref-auto-folder.png
 share/help/zh_CN/gthumb/figures/import-pref-custom-format.png
@@ -1036,6 +1096,7 @@ share/icons/hicolor/scalable/apps/org.gnome.gThumb.svg
 share/locale/am/LC_MESSAGES/gthumb.mo
 share/locale/ar/LC_MESSAGES/gthumb.mo
 share/locale/az/LC_MESSAGES/gthumb.mo
+share/locale/be/LC_MESSAGES/gthumb.mo
 share/locale/bg/LC_MESSAGES/gthumb.mo
 share/locale/bs/LC_MESSAGES/gthumb.mo
 share/locale/ca/LC_MESSAGES/gthumb.mo
@@ -1062,9 +1123,11 @@ share/locale/hi/LC_MESSAGES/gthumb.mo
 share/locale/hr/LC_MESSAGES/gthumb.mo
 share/locale/hu/LC_MESSAGES/gthumb.mo
 share/locale/id/LC_MESSAGES/gthumb.mo
+share/locale/ie/LC_MESSAGES/gthumb.mo
 share/locale/is/LC_MESSAGES/gthumb.mo
 share/locale/it/LC_MESSAGES/gthumb.mo
 share/locale/ja/LC_MESSAGES/gthumb.mo
+share/locale/ka/LC_MESSAGES/gthumb.mo
 share/locale/kn/LC_MESSAGES/gthumb.mo
 share/locale/ko/LC_MESSAGES/gthumb.mo
 share/locale/lt/LC_MESSAGES/gthumb.mo
@@ -1100,3 +1163,4 @@ share/locale/xh/LC_MESSAGES/gthumb.mo
 share/locale/zh_CN/LC_MESSAGES/gthumb.mo
 share/locale/zh_HK/LC_MESSAGES/gthumb.mo
 share/locale/zh_TW/LC_MESSAGES/gthumb.mo
+share/metainfo/org.gnome.gThumb.appdata.xml
