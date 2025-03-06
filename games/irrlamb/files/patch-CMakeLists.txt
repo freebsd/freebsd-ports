@@ -1,9 +1,9 @@
---- CMakeLists.txt.orig	2024-07-29 16:06:12 UTC
+--- CMakeLists.txt.orig	2024-09-21 15:55:49 UTC
 +++ CMakeLists.txt
-@@ -8,13 +8,13 @@ add_definitions(-DGAME_VERSION="1.0.5")
+@@ -8,13 +8,13 @@ add_definitions(-DGAME_VERSION="1.0.6")
  
  # define constants
- add_definitions(-DGAME_VERSION="1.0.5")
+ add_definitions(-DGAME_VERSION="1.0.6")
 -add_definitions(-D_IRR_STATIC_LIB_)
 -add_definitions(-DdIDEDOUBLE)
 -add_definitions(-DCCD_IDEDOUBLE)
