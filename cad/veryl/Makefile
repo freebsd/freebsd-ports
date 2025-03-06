@@ -1,6 +1,6 @@
 PORTNAME=	veryl
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.14.0
+DISTVERSION=	0.14.1
 CATEGORIES=	cad
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -66,7 +66,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		bumpalo-3.17.0 \
 		bytemuck-1.22.0 \
 		byteorder-1.5.0 \
-		bytes-1.10.0 \
+		bytes-1.10.1 \
 		bytesize-1.3.2 \
 		camino-1.1.9 \
 		cast-0.3.0 \
@@ -132,7 +132,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		doc-comment-0.3.3 \
 		dot-writer-0.1.4 \
 		dunce-1.0.5 \
-		either-1.14.0 \
+		either-1.15.0 \
 		elasticlunr-rs-3.0.2 \
 		encode_unicode-1.0.0 \
 		encoding_rs-0.8.35 \
@@ -343,7 +343,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		parking-2.2.1 \
 		parking_lot-0.12.3 \
 		parking_lot_core-0.9.10 \
-		parol-2.2.0 \
+		parol-3.0.0 \
 		parol-macros-1.0.0 \
 		parol_runtime-2.2.1 \
 		paste-1.0.15 \
@@ -404,7 +404,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		reqwest-0.11.27 \
 		resolv-conf-0.7.0 \
 		rgb-0.8.50 \
-		ring-0.17.11 \
+		ring-0.17.12 \
 		rle-decode-fast-1.0.3 \
 		ropey-1.6.1 \
 		rust-embed-8.6.0 \
@@ -460,8 +460,8 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		supports-color-3.0.2 \
 		supports-hyperlinks-3.1.0 \
 		supports-unicode-3.0.0 \
-		symbolic-common-12.13.4 \
-		symbolic-demangle-12.13.4 \
+		symbolic-common-12.14.0 \
+		symbolic-demangle-12.14.0 \
 		syn-2.0.99 \
 		sync_wrapper-0.1.2 \
 		synstructure-0.13.1 \
@@ -480,9 +480,9 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		thiserror-2.0.12 \
 		thiserror-impl-1.0.69 \
 		thiserror-impl-2.0.12 \
-		time-0.3.37 \
-		time-core-0.1.2 \
-		time-macros-0.2.19 \
+		time-0.3.38 \
+		time-core-0.1.3 \
+		time-macros-0.2.20 \
 		tinystr-0.7.6 \
 		tinytemplate-1.2.1 \
 		tinyvec-1.9.0 \
@@ -588,9 +588,9 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		yoke-0.7.5 \
 		yoke-derive-0.7.5 \
 		zerocopy-0.7.35 \
-		zerocopy-0.8.21 \
+		zerocopy-0.8.22 \
 		zerocopy-derive-0.7.35 \
-		zerocopy-derive-0.8.21 \
+		zerocopy-derive-0.8.22 \
 		zerofrom-0.1.6 \
 		zerofrom-derive-0.1.6 \
 		zerovec-0.10.4 \
