@@ -1,6 +1,5 @@
 PORTNAME=	arti
-DISTVERSION=	1.4.0
-PORTREVISION=	2
+DISTVERSION=	1.4.1
 CATEGORIES=	security
 
 MAINTAINER=	cs@FreeBSD.org
@@ -24,7 +23,7 @@ PLIST_SUB=	USERS="${USERS}" GROUPS="${GROUPS}"
 USE_GITLAB=	yes
 GL_SITE=	https://gitlab.torproject.org
 GL_ACCOUNT=	tpo/core
-GL_TAGNAME=	6598a0a01c578451917f167d352278052107f0fb
+GL_TAGNAME=	590c6d748881807873d3e31d03b70938949e2d5c
 CARGO_INSTALL=	no
 default_DESCR=	${.CURDIR}/pkg-descr
 full_DESCR=	${.CURDIR}/pkg-descr-full
@@ -34,6 +33,11 @@ CARGO_FEATURES=	default
 .if ${FLAVOR:U} == full
 CARGO_FEATURES=	full
 .endif
+
+OPTIONS_DEFINE=	RUSTLS
+
+RUSTLS_VARS=	CARGO_FEATURES+=rustls
+RUSTLS_DESC=	Use rustls instead of openssl
 
 do-install:
 	${INSTALL_SCRIPT} ${CARGO_TARGET_DIR}/*/arti ${STAGEDIR}${PREFIX}/bin/arti
