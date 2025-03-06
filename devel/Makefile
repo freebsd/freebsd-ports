@@ -1468,7 +1468,6 @@
     SUBDIR += libthreadar
     SUBDIR += libtickit
     SUBDIR += libtifiles2
-    SUBDIR += tinysparql
     SUBDIR += libtool
     SUBDIR += libtpl
     SUBDIR += libtsm
