@@ -6,10 +6,11 @@ CARGO_CRATES=	ahash-0.3.8 \
 		anstyle-parse-0.2.6 \
 		anstyle-query-1.1.2 \
 		anstyle-wincon-3.0.6 \
+		arrayvec-0.7.6 \
 		atty-0.2.14 \
 		autocfg-1.1.0 \
 		bitflags-1.3.2 \
-		bitflags-2.6.0 \
+		bitflags-2.8.0 \
 		blake2-0.9.2 \
 		bumpalo-3.16.0 \
 		cfg-if-1.0.0 \
@@ -64,9 +65,9 @@ CARGO_CRATES=	ahash-0.3.8 \
 		libc-0.2.169 \
 		linux-raw-sys-0.4.13 \
 		lms-0.4.0 \
-		log-0.4.22 \
+		log-0.4.25 \
 		lscolors-0.20.0 \
-		memchr-2.6.4 \
+		memchr-2.7.4 \
 		memoffset-0.8.0 \
 		nix-0.24.3 \
 		nix-0.29.0 \
@@ -116,7 +117,7 @@ CARGO_CRATES=	ahash-0.3.8 \
 		time-core-0.1.2 \
 		time-macros-0.2.19 \
 		tuikit-0.5.0 \
-		two_percent-0.12.3 \
+		two_percent-0.12.5 \
 		typenum-1.17.0 \
 		unicode-ident-1.0.8 \
 		unicode-width-0.1.13 \
@@ -125,8 +126,7 @@ CARGO_CRATES=	ahash-0.3.8 \
 		uuid-1.7.0 \
 		vec_map-0.8.2 \
 		version_check-0.9.4 \
-		vte-0.13.0 \
-		vte_generate_state_changes-0.1.1 \
+		vte-0.15.0 \
 		wasi-0.11.0+wasi-snapshot-preview1 \
 		wasm-bindgen-0.2.99 \
 		wasm-bindgen-backend-0.2.99 \
