@@ -1,17 +1,17 @@
 PORTNAME=	pari
-DISTVERSION=	2.17.1
+DISTVERSION=	2.17.2
 PORTEPOCH=	2
 CATEGORIES=	math
 MASTER_SITES=	https://pari.math.u-bordeaux.fr/pub/pari/unix/
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Mathematics library and advanced calculator package
-WWW=		https://pari.math.u-bordeaux.fr/
+WWW=		https://pari.math.u-bordeaux.fr
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN_mips64=		fails to link: mpker.c:(.text+0x33bc): relocation truncated to fit: R_MIPS_TLS_GD against 'PARI_SIGINT_block'
+BROKEN_mips64=	fails to link: mpker.c:(.text+0x33bc): relocation truncated to fit: R_MIPS_TLS_GD against 'PARI_SIGINT_block'
 
 LIB_DEPENDS=	libgmp.so:math/gmp
 
@@ -72,5 +72,9 @@ do-test-PTHREADS-on:
 
 do-test-MPI-on:
 	@cd ${WRKSRC} && ${MAKE_CMD} test-parallel RUNTEST="mpirun -np 3"
+
+# tests as of 2.17.2:
+# +++ Total bench for gp-sta is 39565
+# +++ Total bench for gp-dyn is 47771
 
 .include <bsd.port.mk>
