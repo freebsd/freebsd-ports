@@ -29,18 +29,14 @@ lib/cmake/libxslt/libxslt-config.cmake
 %%STATIC%%lib/libexslt.a
 lib/libexslt.so
 lib/libexslt.so.0
-lib/libexslt.so.0.8.20
+lib/libexslt.so.0.8.23
 %%STATIC%%lib/libxslt.a
 lib/libxslt.so
 lib/libxslt.so.1
-lib/libxslt.so.1.1.37
+lib/libxslt.so.%%LIBVERSION%%
 lib/xsltConf.sh
 libdata/pkgconfig/libexslt.pc
 libdata/pkgconfig/libxslt.pc
-share/man/man1/xsltproc.1.gz
-share/man/man3/libexslt.3.gz
-share/man/man3/libxslt.3.gz
-share/aclocal/libxslt.m4
 share/gtk-doc/html/libexslt/general.html
 share/gtk-doc/html/libexslt/home.png
 share/gtk-doc/html/libexslt/index.html
@@ -79,4 +75,7 @@ share/gtk-doc/html/libxslt/libxslt.devhelp2
 share/gtk-doc/html/libxslt/right.png
 share/gtk-doc/html/libxslt/style.css
 share/gtk-doc/html/libxslt/up.png
+share/man/man1/xsltproc.1.gz
+share/man/man3/libexslt.3.gz
+share/man/man3/libxslt.3.gz
 @dir lib/libxslt-plugins
