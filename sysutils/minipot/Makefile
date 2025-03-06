@@ -1,32 +1,31 @@
 PORTNAME=	minipot
-PORTVERSION=	0.2.4
+PORTVERSION=	0.2.5
 CATEGORIES=	sysutils
+MASTER_SITES=	https://github.com/bsdpot/minipot/releases/download/${DISTVERSION}/
 
 MAINTAINER=	pizzamig@FreeBSD.org
 COMMENT=	Mono-server installation of pot, nomad and consul
-WWW=		https://github.com/pizzamig/minipot
+WWW=		https://github.com/bsdpot/minipot
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	pot:sysutils/pot \
-	nomad:sysutils/nomad \
-	${LOCALBASE}/libexec/nomad/plugins/nomad-pot-driver:sysutils/nomad-pot-driver \
-	consul:sysutils/consul \
-	traefik:net/traefik
+		nomad:sysutils/nomad \
+		${LOCALBASE}/libexec/nomad/plugins/nomad-pot-driver:sysutils/nomad-pot-driver \
+		consul:sysutils/consul \
+		traefik:net/traefik
 
-USE_GITHUB=	yes
-GH_ACCOUNT=	pizzamig
-NO_BUILD=	yes
 NO_ARCH=	yes
+NO_BUILD=	yes
+
+PORTEXAMPLES=	*
 
 OPTIONS_DEFINE=	CACERTS EXAMPLES
 OPTIONS_DEFAULT=	CACERTS EXAMPLES
 
 CACERTS_DESC	=	Install Certification authorities certificates
 CACERTS_RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
-
-PORTEXAMPLES=	*
 
 do-install:
 	${MKDIR} ${STAGEDIR}${LOCALBASE}/etc/consul.d
