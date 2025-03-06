@@ -24,8 +24,7 @@ USE_KDE=	auth colorscheme completion config configwidgets coreaddons \
 		kio libplasma notifications service solid statusnotifieritem \
 		wallet widgetsaddons windowsystem xmlgui \
 		doctools:build ecm:build
-USE_QT=		base declarative \
-		tools:build
+USE_QT=		base declarative
 USE_XORG=	x11
 
 CMAKE_ON=	SMB4K_WITH_WS_DISCOVERY
