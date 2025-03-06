@@ -1,3 +1,115 @@
+  <vuln vid="f4297478-fa62-11ef-b597-001fc69cd6dc">
+    <topic>xorg server -- Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>xorg-server</name>
+	<name>xephyr</name>
+	<name>xorg-vfbserver</name>
+	<range><lt>21.1.16,1</lt></range>
+      </package>
+      <package>
+	<name>xorg-nextserver</name>
+	<range><lt>21.1.16,2</lt></range>
+      </package>
+      <package>
+	<name>xwayland</name>
+	<range><lt>24.1.6</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The X.Org project reports:</p>
+	<blockquote cite="https://lists.x.org/archives/xorg-announce/2025-February/003584.html">
+	  <ul>
+	    <li>
+	      CVE-2025-26594: Use-after-free of the root cursor
+
+	      <p>The root cursor is referenced in the xserver as a global variable. If
+	      a client manages to free the root cursor, the internal reference points
+	      to freed memory and causes a use-after-free.</p>
+	    </li>
+	    <li>
+	      CVE-2025-26595: Buffer overflow in XkbVModMaskText()
+
+	      <p>The code in XkbVModMaskText() allocates a fixed sized buffer on the
+	      stack and copies the names of the virtual modifiers to that buffer.
+	      The code however fails to check the bounds of the buffer correctly and
+	      would copy the data regardless of the size, which may lead to a buffer
+	      overflow.</p>
+	    </li>
+	    <li>
+	      CVE-2025-26596: Heap overflow in XkbWriteKeySyms()
+
+	      <p>The computation of the length in XkbSizeKeySyms() differs from what is
+	      actually written in XkbWriteKeySyms(), which may lead to a heap based
+	      buffer overflow.</p>
+	    </li>
+	    <li>
+	      CVE-2025-26597: Buffer overflow in XkbChangeTypesOfKey()
+
+	      <p>If XkbChangeTypesOfKey() is called with 0 group, it will resize the key
+	      symbols table to 0 but leave the key actions unchanged.
+	      If later, the same function is called with a non-zero value of groups,
+	      this will cause a buffer overflow because the key actions are of the wrong
+	      size.</p>
+	    </li>
+	    <li>
+	      CVE-2025-26598: Out-of-bounds write in CreatePointerBarrierClient()
+
+	      <p>The function GetBarrierDevice() searches for the pointer device based on
+	      its device id and returns the matching value, or supposedly NULL if no
+	      match was found.
+	      However the code will return the last element of the list if no matching
+	      device id was found which can lead to out of bounds memory access.</p>
+	    </li>
+	    <li>
+	      CVE-2025-26599: Use of uninitialized pointer in compRedirectWindow()
+
+	      <p>The function compCheckRedirect() may fail if it cannot allocate the backing
+	      pixmap. In that case, compRedirectWindow() will return a BadAlloc error
+	      without the validation of the window tree marked just before, which leaves
+	      the validate data partly initialized, and the use of an uninitialized pointer
+	      later.</p>
+	    </li>
+	    <li>
+	      CVE-2025-26600: Use-after-free in PlayReleasedEvents()
+
+	      <p>When a device is removed while still frozen, the events queued for that
+	      device remain while the device itself is freed and replaying the events
+	      will cause a use after free.</p>
+	    </li>
+	    <li>
+	      CVE-2025-26601: Use-after-free in SyncInitTrigger()
+
+	      <p>When changing an alarm, the values of the change mask are evaluated one
+	      after the other, changing the trigger values as requested and eventually,
+	      SyncInitTrigger() is called.
+	      If one of the changes triggers an error, the function will return early,
+	      not adding the new sync object.
+	      This can be used to cause a use after free when the alarm eventually
+	      triggers.</p>
+	    </li>
+	  </ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-26594</cvename>
+      <cvename>CVE-2025-26595</cvename>
+      <cvename>CVE-2025-26596</cvename>
+      <cvename>CVE-2025-26597</cvename>
+      <cvename>CVE-2025-26598</cvename>
+      <cvename>CVE-2025-26599</cvename>
+      <cvename>CVE-2025-26600</cvename>
+      <cvename>CVE-2025-26601</cvename>
+      <url>https://lists.x.org/archives/xorg-announce/2025-February/003584.html</url>
+    </references>
+    <dates>
+      <discovery>2025-02-25</discovery>
+      <entry>2025-03-06</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="d8bd20ae-fa48-11ef-ab7a-ace2d30de67a">
     <topic>caldera -- Remote Code Execution</topic>
     <affects>
