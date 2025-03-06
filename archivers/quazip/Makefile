@@ -8,7 +8,8 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt/C++ wrapper for ZIP/UNZIP package
 WWW=		https://github.com/stachenov/quazip
 
-LICENSE=	LGPL21
+LICENSE=	LGPL21+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 FLAVORS=	qt5 qt6
 FLAVOR?=	qt5
