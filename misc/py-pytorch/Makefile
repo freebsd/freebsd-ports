@@ -1,6 +1,7 @@
 PORTNAME=	pytorch
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.6.0
+PORTREVISION=	1
 CATEGORIES=	misc # machine-learning
 MASTER_SITES=	https://github.com/pytorch/pytorch/releases/download/v${DISTVERSION}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -38,9 +39,12 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}filelock>0:sysutils/py-filelock@${PY_FLAVOR}
 		${PYTHON_PKGNAMEPREFIX}Jinja2>0:devel/py-Jinja2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}networkx>0:math/py-networkx@${PY_FLAVOR} \
 		${PYNUMPY} \
-		${PYTHON_PKGNAMEPREFIX}sympy>0:math/py-sympy@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}typing-extensions>=4.8.0:devel/py-typing-extensions@${PY_FLAVOR}
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}dill>0:devel/py-dill@${PY_FLAVOR} # optional dependency
+		${PYTHON_PKGNAMEPREFIX}sympy==1.13.1:math/py-sympy@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}typing-extensions>=4.10.0:devel/py-typing-extensions@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pyyaml>0:devel/py-pyyaml@${PY_FLAVOR}
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}astunparse>0:devel/py-astunparse@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}dill>0:devel/py-dill@${PY_FLAVOR} # optional dependency
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}expecttest>=0.2.1:devel/py-expecttest@${PY_FLAVOR}
 
 USES=		compiler:c++17-lang localbase:ldflags python
 USE_PYTHON=	distutils autoplist
