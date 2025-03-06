@@ -1902,6 +1902,13 @@ PLIST_FILES+=	"@ldconfig"
 .      endif
 .    endif
 
+.    if defined(NO_SHLIB_REQUIRES_GLOB)
+PKG_ENV+=	SHLIB_REQUIRE_IGNORE_GLOB="${NO_SHLIB_REQUIRES_GLOB:ts,}"
+.    endif
+.    if defined(NO_SHLIBS_REQUIRES_REGEX)
+PKG_ENV+=	SHLIB_REQUIRE_IGNORE_REGEX="${NO_SHLIBS_REQUIRES_REGEX:ts,}"
+.    endif
+
 PKG_IGNORE_DEPENDS?=		'this_port_does_not_exist'
 
 .    if defined(_DESTDIR_VIA_ENV)
