@@ -75,6 +75,7 @@
     SUBDIR += az-aspell
     SUBDIR += bar
     SUBDIR += bat
+    SUBDIR += bat-extras
     SUBDIR += bbe
     SUBDIR += be-aspell
     SUBDIR += belr
