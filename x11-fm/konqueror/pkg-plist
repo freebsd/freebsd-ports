@@ -211,6 +211,7 @@ share/locale/ar/LC_MESSAGES/kgetplugin.mo
 share/locale/ar/LC_MESSAGES/khtmlsettingsplugin.mo
 share/locale/ar/LC_MESSAGES/khtmltts.mo
 share/locale/ar/LC_MESSAGES/kio6_bookmarks.mo
+share/locale/ar/LC_MESSAGES/konqsidebar.mo
 share/locale/ar/LC_MESSAGES/konqueror.mo
 share/locale/ar/LC_MESSAGES/kshellcmdplugin.mo
 share/locale/ar/LC_MESSAGES/libkonq.mo
@@ -282,6 +283,7 @@ share/locale/bg/LC_MESSAGES/kgetplugin.mo
 share/locale/bg/LC_MESSAGES/khtmlsettingsplugin.mo
 share/locale/bg/LC_MESSAGES/khtmltts.mo
 share/locale/bg/LC_MESSAGES/kio6_bookmarks.mo
+share/locale/bg/LC_MESSAGES/konqsidebar.mo
 share/locale/bg/LC_MESSAGES/konqueror.mo
 share/locale/bg/LC_MESSAGES/kshellcmdplugin.mo
 share/locale/bg/LC_MESSAGES/libkonq.mo
@@ -360,6 +362,7 @@ share/locale/ca/LC_MESSAGES/kgetplugin.mo
 share/locale/ca/LC_MESSAGES/khtmlsettingsplugin.mo
 share/locale/ca/LC_MESSAGES/khtmltts.mo
 share/locale/ca/LC_MESSAGES/kio6_bookmarks.mo
+share/locale/ca/LC_MESSAGES/konqsidebar.mo
 share/locale/ca/LC_MESSAGES/konqueror.mo
 share/locale/ca/LC_MESSAGES/kshellcmdplugin.mo
 share/locale/ca/LC_MESSAGES/libkonq.mo
@@ -382,6 +385,7 @@ share/locale/ca@valencia/LC_MESSAGES/kgetplugin.mo
 share/locale/ca@valencia/LC_MESSAGES/khtmlsettingsplugin.mo
 share/locale/ca@valencia/LC_MESSAGES/khtmltts.mo
 share/locale/ca@valencia/LC_MESSAGES/kio6_bookmarks.mo
+share/locale/ca@valencia/LC_MESSAGES/konqsidebar.mo
 share/locale/ca@valencia/LC_MESSAGES/konqueror.mo
 share/locale/ca@valencia/LC_MESSAGES/kshellcmdplugin.mo
 share/locale/ca@valencia/LC_MESSAGES/libkonq.mo
@@ -561,6 +565,7 @@ share/locale/es/LC_MESSAGES/kgetplugin.mo
 share/locale/es/LC_MESSAGES/khtmlsettingsplugin.mo
 share/locale/es/LC_MESSAGES/khtmltts.mo
 share/locale/es/LC_MESSAGES/kio6_bookmarks.mo
+share/locale/es/LC_MESSAGES/konqsidebar.mo
 share/locale/es/LC_MESSAGES/konqueror.mo
 share/locale/es/LC_MESSAGES/kshellcmdplugin.mo
 share/locale/es/LC_MESSAGES/libkonq.mo
@@ -669,6 +674,7 @@ share/locale/fr/LC_MESSAGES/kgetplugin.mo
 share/locale/fr/LC_MESSAGES/khtmlsettingsplugin.mo
 share/locale/fr/LC_MESSAGES/khtmltts.mo
 share/locale/fr/LC_MESSAGES/kio6_bookmarks.mo
+share/locale/fr/LC_MESSAGES/konqsidebar.mo
 share/locale/fr/LC_MESSAGES/konqueror.mo
 share/locale/fr/LC_MESSAGES/kshellcmdplugin.mo
 share/locale/fr/LC_MESSAGES/libkonq.mo
@@ -731,6 +737,7 @@ share/locale/gl/LC_MESSAGES/kgetplugin.mo
 share/locale/gl/LC_MESSAGES/khtmlsettingsplugin.mo
 share/locale/gl/LC_MESSAGES/khtmltts.mo
 share/locale/gl/LC_MESSAGES/kio6_bookmarks.mo
+share/locale/gl/LC_MESSAGES/konqsidebar.mo
 share/locale/gl/LC_MESSAGES/konqueror.mo
 share/locale/gl/LC_MESSAGES/kshellcmdplugin.mo
 share/locale/gl/LC_MESSAGES/libkonq.mo
@@ -763,6 +770,7 @@ share/locale/he/LC_MESSAGES/kgetplugin.mo
 share/locale/he/LC_MESSAGES/khtmlsettingsplugin.mo
 share/locale/he/LC_MESSAGES/khtmltts.mo
 share/locale/he/LC_MESSAGES/kio6_bookmarks.mo
+share/locale/he/LC_MESSAGES/konqsidebar.mo
 share/locale/he/LC_MESSAGES/konqueror.mo
 share/locale/he/LC_MESSAGES/kshellcmdplugin.mo
 share/locale/he/LC_MESSAGES/libkonq.mo
@@ -941,6 +949,7 @@ share/locale/it/LC_MESSAGES/kgetplugin.mo
 share/locale/it/LC_MESSAGES/khtmlsettingsplugin.mo
 share/locale/it/LC_MESSAGES/khtmltts.mo
 share/locale/it/LC_MESSAGES/kio6_bookmarks.mo
+share/locale/it/LC_MESSAGES/konqsidebar.mo
 share/locale/it/LC_MESSAGES/konqueror.mo
 share/locale/it/LC_MESSAGES/kshellcmdplugin.mo
 share/locale/it/LC_MESSAGES/libkonq.mo
@@ -985,6 +994,7 @@ share/locale/ka/LC_MESSAGES/kgetplugin.mo
 share/locale/ka/LC_MESSAGES/khtmlsettingsplugin.mo
 share/locale/ka/LC_MESSAGES/khtmltts.mo
 share/locale/ka/LC_MESSAGES/kio6_bookmarks.mo
+share/locale/ka/LC_MESSAGES/konqsidebar.mo
 share/locale/ka/LC_MESSAGES/konqueror.mo
 share/locale/ka/LC_MESSAGES/kshellcmdplugin.mo
 share/locale/ka/LC_MESSAGES/libkonq.mo
@@ -1327,6 +1337,7 @@ share/locale/nl/LC_MESSAGES/kgetplugin.mo
 share/locale/nl/LC_MESSAGES/khtmlsettingsplugin.mo
 share/locale/nl/LC_MESSAGES/khtmltts.mo
 share/locale/nl/LC_MESSAGES/kio6_bookmarks.mo
+share/locale/nl/LC_MESSAGES/konqsidebar.mo
 share/locale/nl/LC_MESSAGES/konqueror.mo
 share/locale/nl/LC_MESSAGES/kshellcmdplugin.mo
 share/locale/nl/LC_MESSAGES/libkonq.mo
@@ -1583,6 +1594,7 @@ share/locale/sl/LC_MESSAGES/kgetplugin.mo
 share/locale/sl/LC_MESSAGES/khtmlsettingsplugin.mo
 share/locale/sl/LC_MESSAGES/khtmltts.mo
 share/locale/sl/LC_MESSAGES/kio6_bookmarks.mo
+share/locale/sl/LC_MESSAGES/konqsidebar.mo
 share/locale/sl/LC_MESSAGES/konqueror.mo
 share/locale/sl/LC_MESSAGES/kshellcmdplugin.mo
 share/locale/sl/LC_MESSAGES/libkonq.mo
@@ -1707,6 +1719,7 @@ share/locale/sv/LC_MESSAGES/kgetplugin.mo
 share/locale/sv/LC_MESSAGES/khtmlsettingsplugin.mo
 share/locale/sv/LC_MESSAGES/khtmltts.mo
 share/locale/sv/LC_MESSAGES/kio6_bookmarks.mo
+share/locale/sv/LC_MESSAGES/konqsidebar.mo
 share/locale/sv/LC_MESSAGES/konqueror.mo
 share/locale/sv/LC_MESSAGES/kshellcmdplugin.mo
 share/locale/sv/LC_MESSAGES/libkonq.mo
@@ -1801,6 +1814,7 @@ share/locale/tr/LC_MESSAGES/kgetplugin.mo
 share/locale/tr/LC_MESSAGES/khtmlsettingsplugin.mo
 share/locale/tr/LC_MESSAGES/khtmltts.mo
 share/locale/tr/LC_MESSAGES/kio6_bookmarks.mo
+share/locale/tr/LC_MESSAGES/konqsidebar.mo
 share/locale/tr/LC_MESSAGES/konqueror.mo
 share/locale/tr/LC_MESSAGES/kshellcmdplugin.mo
 share/locale/tr/LC_MESSAGES/libkonq.mo
@@ -1844,6 +1858,7 @@ share/locale/uk/LC_MESSAGES/kgetplugin.mo
 share/locale/uk/LC_MESSAGES/khtmlsettingsplugin.mo
 share/locale/uk/LC_MESSAGES/khtmltts.mo
 share/locale/uk/LC_MESSAGES/kio6_bookmarks.mo
+share/locale/uk/LC_MESSAGES/konqsidebar.mo
 share/locale/uk/LC_MESSAGES/konqueror.mo
 share/locale/uk/LC_MESSAGES/kshellcmdplugin.mo
 share/locale/uk/LC_MESSAGES/libkonq.mo
@@ -1953,6 +1968,7 @@ share/locale/zh_CN/LC_MESSAGES/kgetplugin.mo
 share/locale/zh_CN/LC_MESSAGES/khtmlsettingsplugin.mo
 share/locale/zh_CN/LC_MESSAGES/khtmltts.mo
 share/locale/zh_CN/LC_MESSAGES/kio6_bookmarks.mo
+share/locale/zh_CN/LC_MESSAGES/konqsidebar.mo
 share/locale/zh_CN/LC_MESSAGES/konqueror.mo
 share/locale/zh_CN/LC_MESSAGES/kshellcmdplugin.mo
 share/locale/zh_CN/LC_MESSAGES/libkonq.mo

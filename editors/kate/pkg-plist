@@ -75,6 +75,7 @@ share/katexmltools/xslt-1.0.dtd.xml
 share/locale/af/LC_MESSAGES/kate.mo
 share/locale/af/LC_MESSAGES/katetextfilter.mo
 share/locale/af/LC_MESSAGES/katexmltools.mo
+share/locale/ar/LC_MESSAGES/formatplugin.mo
 share/locale/ar/LC_MESSAGES/kate-ctags-plugin.mo
 share/locale/ar/LC_MESSAGES/kate-replicode-plugin.mo
 share/locale/ar/LC_MESSAGES/kate.mo
@@ -82,9 +83,13 @@ share/locale/ar/LC_MESSAGES/katebacktracebrowserplugin.mo
 share/locale/ar/LC_MESSAGES/katebuild-plugin.mo
 share/locale/ar/LC_MESSAGES/katecloseexceptplugin.mo
 share/locale/ar/LC_MESSAGES/katecolorpickerplugin.mo
+share/locale/ar/LC_MESSAGES/katecompilerexplorer.mo
+share/locale/ar/LC_MESSAGES/kateexternaltoolsplugin.mo
 share/locale/ar/LC_MESSAGES/katefilebrowserplugin.mo
 share/locale/ar/LC_MESSAGES/katefiletree.mo
 share/locale/ar/LC_MESSAGES/kategdbplugin.mo
+share/locale/ar/LC_MESSAGES/kategitblameplugin.mo
+share/locale/ar/LC_MESSAGES/katekeyboardmacros.mo
 share/locale/ar/LC_MESSAGES/katekonsoleplugin.mo
 share/locale/ar/LC_MESSAGES/kateproject.mo
 share/locale/ar/LC_MESSAGES/katesearch.mo
@@ -95,6 +100,9 @@ share/locale/ar/LC_MESSAGES/katetextfilter.mo
 share/locale/ar/LC_MESSAGES/katexmlcheck.mo
 share/locale/ar/LC_MESSAGES/katexmltools.mo
 share/locale/ar/LC_MESSAGES/ktexteditorpreviewplugin.mo
+share/locale/ar/LC_MESSAGES/lspclient.mo
+share/locale/ar/LC_MESSAGES/rainbowparens.mo
+share/locale/ar/LC_MESSAGES/rbqlplugin.mo
 share/locale/ar/LC_MESSAGES/tabswitcherplugin.mo
 share/locale/ast/LC_MESSAGES/formatplugin.mo
 share/locale/ast/LC_MESSAGES/kate-ctags-plugin.mo
@@ -1234,6 +1242,8 @@ share/locale/pt_BR/LC_MESSAGES/katexmlcheck.mo
 share/locale/pt_BR/LC_MESSAGES/katexmltools.mo
 share/locale/pt_BR/LC_MESSAGES/ktexteditorpreviewplugin.mo
 share/locale/pt_BR/LC_MESSAGES/lspclient.mo
+share/locale/pt_BR/LC_MESSAGES/rainbowparens.mo
+share/locale/pt_BR/LC_MESSAGES/rbqlplugin.mo
 share/locale/pt_BR/LC_MESSAGES/tabswitcherplugin.mo
 share/locale/ro/LC_MESSAGES/kate-ctags-plugin.mo
 share/locale/ro/LC_MESSAGES/kate.mo

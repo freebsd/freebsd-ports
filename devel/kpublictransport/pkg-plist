@@ -127,5 +127,6 @@ share/locale/sv/LC_MESSAGES/kpublictransport.mo
 share/locale/tr/LC_MESSAGES/kpublictransport.mo
 share/locale/uk/LC_MESSAGES/kpublictransport.mo
 share/locale/zh_CN/LC_MESSAGES/kpublictransport.mo
+share/locale/zh_TW/LC_MESSAGES/kpublictransport.mo
 share/qlogging-categories6/org_kde_kpublictransport.categories
 share/qlogging-categories6/org_kde_kpublictransport_onboard.categories

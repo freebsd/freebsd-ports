@@ -776,6 +776,7 @@ share/locale/pt_BR/LC_MESSAGES/kio6_fish.mo
 share/locale/pt_BR/LC_MESSAGES/kio6_info.mo
 share/locale/pt_BR/LC_MESSAGES/kio6_man.mo
 share/locale/pt_BR/LC_MESSAGES/kio6_mtp.mo
+share/locale/pt_BR/LC_MESSAGES/kio6_recentlyused.mo
 share/locale/pt_BR/LC_MESSAGES/kio6_sftp.mo
 share/locale/pt_BR/LC_MESSAGES/kio6_smb.mo
 share/locale/pt_BR/LC_MESSAGES/kio6_thumbnail.mo
