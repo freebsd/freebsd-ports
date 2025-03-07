@@ -1,6 +1,6 @@
 PORTNAME=	cairo
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.11.0
+DISTVERSION=	2.11.1
 CATEGORIES=	lang
 PKGNAMESUFFIX=	-language
 
@@ -69,7 +69,6 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		bitflags-2.8.0 \
 		bitvec-1.0.1 \
 		block-buffer-0.10.4 \
-		borsh-1.5.5 \
 		bstr-1.11.3 \
 		bumpalo-3.17.0 \
 		byte-slice-cast-1.2.2 \
@@ -81,7 +80,6 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		cairo-vm-1.0.2 \
 		cc-1.2.10 \
 		cfg-if-1.0.0 \
-		cfg_aliases-0.2.1 \
 		cipher-0.4.4 \
 		clap-4.5.29 \
 		clap_builder-4.5.29 \
@@ -327,7 +325,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		siphasher-0.3.11 \
 		slab-0.4.9 \
 		smallvec-1.13.2 \
-		smol_str-0.3.2 \
+		smol_str-0.2.2 \
 		socket2-0.5.8 \
 		spin-0.9.8 \
 		sprs-0.11.3 \
