@@ -11,6 +11,9 @@ WWW=		https://telepathy.freedesktop.org/doc/telepathy-qt
 
 LICENSE=	LGPL21
 
+DEPRECATED=	Leaf library depending on Qt5
+EXPIRATION_DATE=2025-03-31
+
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/_dbus_bindings.so:devel/py-dbus@${PY_FLAVOR}
 LIB_DEPENDS=	libtelepathy-farstream.so:net-im/telepathy-farstream \
 		libtelepathy-glib.so:net-im/telepathy-glib
