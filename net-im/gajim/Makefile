@@ -1,5 +1,6 @@
 PORTNAME=	gajim
 DISTVERSION=	2.0.1
+PORTREVISION=	1
 CATEGORIES=	net-im
 MASTER_SITES=	https://gajim.org/downloads/${DISTVERSION:R}/
 
@@ -26,7 +27,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}css-parser>0:www/py-css-parser@${PY_FLAVOR} 
 		${PYTHON_PKGNAMEPREFIX}emoji>0:misc/py-emoji@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sqlalchemy20>0:databases/py-sqlalchemy20@${PY_FLAVOR}
 LIB_DEPENDS=	libsoup-3.0.so:devel/libsoup3 \
-		libspelling-1.so:x11-toolkits/libspelling
+		libspelling-1.so:x11-toolkits/libspelling \
+		libgsound.so:audio/gsound
 
 USES=		cpe gettext gnome python:3.11+ xorg
 USE_PYTHON=	autoplist cryptography pep517 noflavors
