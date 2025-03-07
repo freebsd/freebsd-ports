@@ -1,7 +1,6 @@
 PORTNAME=	wlmaker
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.4.1
-PORTREVISION=	1
+DISTVERSION=	0.5
 CATEGORIES=	x11-wm wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -23,11 +22,10 @@ USE_GITHUB=	yes
 USE_GNOME=	cairo
 USE_XORG=	xcb
 GH_ACCOUNT=	phkaeser
-GH_TUPLE=	phkaeser:libbase:69a87c3:libbase/submodules/libbase
+GH_TUPLE=	phkaeser:libbase:114022f:libbase/submodules/libbase
 CMAKE_OFF=	${WITH_DEBUG:D:Uconfig_DEBUG}
 PLIST_FILES=	bin/${PORTNAME} \
 		bin/wlmclock \
-		@comment\ bin/example_toplevel \
 		share/icons/${PORTNAME}/chrome-48x48.png \
 		share/icons/${PORTNAME}/clip-48x48.png \
 		share/icons/${PORTNAME}/firefox-48x48.png \
@@ -35,6 +33,10 @@ PLIST_FILES=	bin/${PORTNAME} \
 		share/icons/${PORTNAME}/wlmclock-64x64.png \
 		share/applications/wlmclock.desktop \
 		share/wayland-sessions/${PORTNAME}.desktop \
+		${DATADIR}/root-menu.plist \
+		${DATADIR}/style.plist \
+		${DATADIR}/wlmaker-state.plist \
+		${DATADIR}/wlmaker.plist \
 		${NULL}
 
 post-patch:
@@ -42,10 +44,12 @@ post-patch:
 	@${REINPLACE_CMD} '/-O[0-9]/d' \
 		${WRKSRC}/submodules/libbase/CMakeLists.txt \
 		${WRKSRC}/CMakeLists.txt
-# Respect PREFIX for icons
+# Respect PREFIX for icons and system-wide config
 	@${REINPLACE_CMD} 's,/usr/share,${DATADIR:H},' \
 		${WRKSRC}/src/clip.c \
-		${WRKSRC}/src/launcher.c
+		${WRKSRC}/src/config.c \
+		${WRKSRC}/src/launcher.c \
+		${WRKSRC}/src/${PORTNAME}.c
 # Respect LOCALBASE for apps and use open source Chrome
 	@${REINPLACE_CMD} -e 's,/usr/bin,${LOCALBASE}/bin,' \
 		 -e 's/google-chrome/chrome/' \
