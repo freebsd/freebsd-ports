@@ -242,6 +242,7 @@ share/icons/hicolor/scalable/apps/org.gnome.Lollypop-symbolic.svg
 share/icons/hicolor/scalable/apps/org.gnome.Lollypop.svg
 share/locale/ar/LC_MESSAGES/lollypop.mo
 share/locale/bg/LC_MESSAGES/lollypop.mo
+share/locale/bn/LC_MESSAGES/lollypop.mo
 share/locale/ca/LC_MESSAGES/lollypop.mo
 share/locale/cs/LC_MESSAGES/lollypop.mo
 share/locale/da/LC_MESSAGES/lollypop.mo
@@ -252,10 +253,12 @@ share/locale/en_IE/LC_MESSAGES/lollypop.mo
 share/locale/eo/LC_MESSAGES/lollypop.mo
 share/locale/es/LC_MESSAGES/lollypop.mo
 share/locale/es_EC/LC_MESSAGES/lollypop.mo
+share/locale/eu/LC_MESSAGES/lollypop.mo
 share/locale/fa/LC_MESSAGES/lollypop.mo
 share/locale/fi/LC_MESSAGES/lollypop.mo
 share/locale/fr/LC_MESSAGES/lollypop.mo
 share/locale/ga/LC_MESSAGES/lollypop.mo
+share/locale/gl/LC_MESSAGES/lollypop.mo
 share/locale/he/LC_MESSAGES/lollypop.mo
 share/locale/hr/LC_MESSAGES/lollypop.mo
 share/locale/hu/LC_MESSAGES/lollypop.mo
