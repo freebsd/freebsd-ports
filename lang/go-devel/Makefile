@@ -32,7 +32,7 @@ TEST_DEPENDS_aarch64=	binutils>0:devel/binutils
 USES=		cpe shebangfix
 
 CPE_VENDOR=	golang
-NO_SHLIBS_REQUIRES_GLOB=	*/gcc-386-freebsd-exec
+NO_SHLIB_REQUIRES_GLOB=	*
 
 .ifndef MASTERDIR
 USE_GITHUB=	yes
