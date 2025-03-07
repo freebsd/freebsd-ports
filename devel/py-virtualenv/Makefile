@@ -1,6 +1,6 @@
 PORTNAME=	virtualenv
 # Check XXX below before updating to see if that condition is still valid
-PORTVERSION=	20.29.2
+PORTVERSION=	20.29.3
 CATEGORIES=	devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
