@@ -53,6 +53,7 @@
     SUBDIR += lxmf
     SUBDIR += microdc2
     SUBDIR += minder
+    SUBDIR += mkbrr
     SUBDIR += mktorrent
     SUBDIR += mldonkey
     SUBDIR += mldonkey-core
