@@ -1,3 +1,35 @@
+  <vuln vid="6e27040b-61b7-4989-9471-dfb10c3cd76e">
+    <topic>electron32 -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>electron32</name>
+	<range><lt>32.3.3</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Electron developers report:</p>
+	<blockquote cite="https://github.com/electron/electron/releases/tag/v32.3.3">
+	  <p>This update fixes the following vulnerabilities:</p>
+	  <ul>
+	    <li>Security: backported fix for CVE-2025-0445.</li>
+	    <li>Security: backported fix for CVE-2025-0998.</li>
+	  </ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-0445</cvename>
+      <url>https://github.com/advisories/GHSA-q4fq-38gr-ccp3</url>
+      <cvename>CVE-2025-0998</cvename>
+      <url>https://github.com/advisories/GHSA-4v9x-qxmv-4h58</url>
+    </references>
+    <dates>
+      <discovery>2025-03-03</discovery>
+      <entry>2025-03-07</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="3299cbfd-fa6e-11ef-929d-b0416f0c4c67">
     <topic>Jinja2 -- Sandbox breakout through attr filter selecting format method</topic>
     <affects>
