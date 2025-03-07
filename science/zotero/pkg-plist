@@ -56,6 +56,7 @@ lib/zotero/icons/icon32.png
 lib/zotero/icons/icon64.png
 lib/zotero/icons/symbolic.svg
 lib/zotero/integration/libreoffice/Zotero_LibreOffice_Integration.oxt
+lib/zotero/libfreebl3.so
 lib/zotero/libipcclientcerts.so
 lib/zotero/liblgpllibs.so
 lib/zotero/libmozavcodec.so
@@ -63,6 +64,15 @@ lib/zotero/libmozavutil.so
 lib/zotero/libmozgtk.so
 lib/zotero/libmozsqlite3.so
 lib/zotero/libmozwayland.so
+lib/zotero/libnspr4.so
+lib/zotero/libnss3.so
+lib/zotero/libnssckbi.so
+lib/zotero/libnssutil3.so
+lib/zotero/libplc4.so
+lib/zotero/libplds4.so
+lib/zotero/libsmime3.so
+lib/zotero/libsoftokn3.so
+lib/zotero/libssl3.so
 lib/zotero/libxul.so
 lib/zotero/omni.ja
 lib/zotero/platform.ini
