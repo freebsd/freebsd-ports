@@ -13,6 +13,9 @@ WWW=		https://community.kde.org/KTp
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Abandoned project
+EXPIRATION_DATE=2025-03-31
+
 LIB_DEPENDS=	libdbus-1.so:devel/dbus \
 		libdbus-glib-1.so:devel/dbus-glib \
 		libtelepathy-glib.so:net-im/telepathy-glib \
