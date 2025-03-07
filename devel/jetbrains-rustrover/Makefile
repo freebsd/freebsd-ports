@@ -1,5 +1,5 @@
 PORTNAME=	rustrover
-DISTVERSION=	2024.3.5
+DISTVERSION=	2024.3.6
 CATEGORIES=	devel
 MASTER_SITES=	https://download-cdn.jetbrains.com/rustrover/
 PKGNAMEPREFIX=	jetbrains-
