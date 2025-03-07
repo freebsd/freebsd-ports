@@ -1,7 +1,7 @@
 PORTNAME=	sdl3
 DISTVERSIONPREFIX=	release-
 DISTVERSION=	3.2.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -12,7 +12,7 @@ WWW=		https://www.libsdl.org/ \
 LICENSE=	ZLIB
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-USES=		cmake iconv pkgconfig
+USES=		cmake iconv localbase pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	libsdl-org
 GH_PROJECT=	SDL
@@ -36,6 +36,7 @@ OPTIONS_DEFINE_powerpc=	ALTIVEC
 OPTIONS_DEFINE_powerpc64=	ALTIVEC
 OPTIONS_DEFAULT_powerpc=	ALTIVEC
 OPTIONS_DEFAULT_powerpc64=	ALTIVEC
+OPTIONS_SUB=		yes
 
 AUDIO_DESC=		Audio drivers
 VIDEO_DESC=		Video drivers
