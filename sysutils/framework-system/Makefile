@@ -1,5 +1,5 @@
 PORTNAME=	framework-system
-DISTVERSION=	0.1.0
+DISTVERSION=	0.2.1
 PORTREVISION=	6
 CATEGORIES=	sysutils
 
@@ -17,7 +17,7 @@ USES=		cargo
 USE_GITHUB=	yes
 GH_ACCOUNT=	FrameworkComputer
 GH_PROJECT=	framework-system
-GH_TAGNAME=	freebsd-pre0.1.1
+GH_TAGNAME=	freebsd-v0.2.1
 
 CARGO_BUILD_ARGS=	-p framework_tool
 CARGO_INSTALL_PATH=	framework_tool
