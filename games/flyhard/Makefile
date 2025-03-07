@@ -20,8 +20,9 @@ BUILD_DEPENDS=	${LOCALBASE}/include/boost/shared_ptr.hpp:devel/boost-libs
 
 USES=		gmake localbase sdl
 GNU_CONFIGURE=	yes
-USE_CXXSTD=	c++98
 USE_SDL=	sdl mixer
+
+CXXFLAGS+=	-Wno-c++11-narrowing
 
 PLIST_FILES=	bin/${PORTNAME}
 PORTDOCS=	AUTHORS ChangeLog README
