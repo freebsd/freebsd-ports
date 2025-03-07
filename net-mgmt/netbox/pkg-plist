@@ -165,6 +165,7 @@
 %%DATADIR%%/dcim/base_filtersets.py
 %%DATADIR%%/dcim/choices.py
 %%DATADIR%%/dcim/constants.py
+%%DATADIR%%/dcim/exceptions.py
 %%DATADIR%%/dcim/fields.py
 %%DATADIR%%/dcim/filtersets.py
 %%DATADIR%%/dcim/forms/__init__.py
@@ -738,6 +739,7 @@
 %%DATADIR%%/ipam/tests/__init__.py
 %%DATADIR%%/ipam/tests/test_api.py
 %%DATADIR%%/ipam/tests/test_filtersets.py
+%%DATADIR%%/ipam/tests/test_forms.py
 %%DATADIR%%/ipam/tests/test_models.py
 %%DATADIR%%/ipam/tests/test_ordering.py
 %%DATADIR%%/ipam/tests/test_views.py
