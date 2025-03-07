@@ -1,13 +1,11 @@
 CARGO_CRATES=	ammonia-4.0.0 \
 		autocfg-1.4.0 \
-		bitflags-2.6.0 \
-		byteorder-1.5.0 \
-		cc-1.2.4 \
+		bitflags-2.8.0 \
+		cc-1.2.15 \
 		cfg-if-1.0.0 \
 		displaydoc-0.2.5 \
 		form_urlencoded-1.2.1 \
 		futf-0.1.5 \
-		getrandom-0.2.15 \
 		heck-0.5.0 \
 		html5ever-0.27.0 \
 		icu_collections-1.5.0 \
@@ -23,61 +21,56 @@ CARGO_CRATES=	ammonia-4.0.0 \
 		idna-1.0.3 \
 		idna_adapter-1.2.0 \
 		indoc-2.0.5 \
-		libc-0.2.168 \
+		libc-0.2.170 \
 		litemap-0.7.4 \
 		lock_api-0.4.12 \
-		log-0.4.22 \
+		log-0.4.26 \
 		mac-0.1.1 \
 		maplit-1.0.2 \
 		markup5ever-0.12.1 \
 		memoffset-0.9.1 \
 		new_debug_unreachable-1.0.6 \
-		once_cell-1.20.2 \
+		once_cell-1.20.3 \
 		parking_lot-0.12.3 \
 		parking_lot_core-0.9.10 \
 		percent-encoding-2.3.1 \
-		phf-0.11.2 \
-		phf_codegen-0.11.2 \
-		phf_generator-0.10.0 \
-		phf_generator-0.11.2 \
-		phf_shared-0.10.0 \
-		phf_shared-0.11.2 \
-		portable-atomic-1.10.0 \
-		ppv-lite86-0.2.20 \
+		phf-0.11.3 \
+		phf_codegen-0.11.3 \
+		phf_generator-0.11.3 \
+		phf_shared-0.11.3 \
+		portable-atomic-1.11.0 \
 		precomputed-hash-0.1.1 \
-		proc-macro2-1.0.92 \
-		pyo3-0.23.3 \
-		pyo3-build-config-0.23.3 \
-		pyo3-ffi-0.23.3 \
-		pyo3-macros-0.23.3 \
-		pyo3-macros-backend-0.23.3 \
-		python3-dll-a-0.2.11 \
-		quote-1.0.37 \
+		proc-macro2-1.0.93 \
+		pyo3-0.23.5 \
+		pyo3-build-config-0.23.5 \
+		pyo3-ffi-0.23.5 \
+		pyo3-macros-0.23.5 \
+		pyo3-macros-backend-0.23.5 \
+		python3-dll-a-0.2.13 \
+		quote-1.0.38 \
 		rand-0.8.5 \
-		rand_chacha-0.3.1 \
 		rand_core-0.6.4 \
-		redox_syscall-0.5.8 \
+		redox_syscall-0.5.9 \
 		scopeguard-1.2.0 \
-		serde-1.0.216 \
-		serde_derive-1.0.216 \
+		serde-1.0.218 \
+		serde_derive-1.0.218 \
 		shlex-1.3.0 \
-		siphasher-0.3.11 \
-		smallvec-1.13.2 \
+		siphasher-1.0.1 \
+		smallvec-1.14.0 \
 		stable_deref_trait-1.2.0 \
-		string_cache-0.8.7 \
-		string_cache_codegen-0.5.2 \
-		syn-2.0.90 \
+		string_cache-0.8.8 \
+		string_cache_codegen-0.5.4 \
+		syn-2.0.98 \
 		synstructure-0.13.1 \
 		target-lexicon-0.12.16 \
 		tendril-0.4.3 \
 		tinystr-0.7.6 \
-		unicode-ident-1.0.14 \
+		unicode-ident-1.0.17 \
 		unindent-0.2.3 \
 		url-2.5.4 \
 		utf-8-0.7.6 \
 		utf16_iter-1.0.5 \
 		utf8_iter-1.0.4 \
-		wasi-0.11.0+wasi-snapshot-preview1 \
 		windows-targets-0.52.6 \
 		windows_aarch64_gnullvm-0.52.6 \
 		windows_aarch64_msvc-0.52.6 \
@@ -91,8 +84,6 @@ CARGO_CRATES=	ammonia-4.0.0 \
 		writeable-0.5.5 \
 		yoke-0.7.5 \
 		yoke-derive-0.7.5 \
-		zerocopy-0.7.35 \
-		zerocopy-derive-0.7.35 \
 		zerofrom-0.1.5 \
 		zerofrom-derive-0.1.5 \
 		zerovec-0.10.4 \
