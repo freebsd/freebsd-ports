@@ -11,6 +11,7 @@ WWW=		https://xml2rfc.tools.ietf.org/
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BUILD_DEPENDS=	${PY_SETUPTOOLS}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lxml5>=5.3.0:devel/py-lxml5@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>=2.5.0:www/py-requests@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}country>=22.3.5:devel/py-country@${PY_FLAVOR} \
