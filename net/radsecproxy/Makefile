@@ -1,5 +1,5 @@
 PORTNAME=	radsecproxy
-DISTVERSION=	1.11.0
+DISTVERSION=	1.11.1
 CATEGORIES=	net
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/${DISTVERSION}/
 
@@ -21,15 +21,9 @@ GNU_CONFIGURE=	yes
 
 CONFIGURE_ARGS=	--with-ssl=${OPENSSLBASE}
 
-.include <bsd.port.pre.mk>
-
-.if ${OPSYS} == FreeBSD
-CFLAGS+=	-Wno-error=strict-prototypes
-.endif
-
 post-install:
 	${MAKE} install-man -C ${WRKSRC} ${MAKE_ARGS}
 	${INSTALL_DATA} ${WRKSRC}/radsecproxy.conf-example \
-		${STAGEDIR}${PREFIX}/etc
+		${STAGEDIR}${PREFIX}/etc/radsecproxy.conf.sample
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
