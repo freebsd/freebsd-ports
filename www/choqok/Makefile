@@ -12,6 +12,9 @@ WWW=		https://www.kde.org/applications/internet/choqok/
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Project discontinued upstream
+EXPIRATION_DATE=2025-03-31
+
 LIB_DEPENDS=	libqca-qt5.so:devel/qca@qt5 \
 		libqjson-qt5.so:devel/qjson \
 		libqoauth-qt5.so:net/qoauth-qt5 \
