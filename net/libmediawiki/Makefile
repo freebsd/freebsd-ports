@@ -12,6 +12,9 @@ WWW=		https://www.digikam.org
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING.LIB
 
+DEPRECATED=	Project abandoned upstream
+EXPIRATION_DATE=2025-03-31
+
 USES=		cmake compiler:c++11-lang kde:5 qt:5 tar:xz
 USE_KDE=	coreaddons \
 		ecm:build
