@@ -74,6 +74,7 @@
     SUBDIR += muffin
     SUBDIR += mutter
     SUBDIR += niri
+    SUBDIR += notion
     SUBDIR += nscde
     SUBDIR += obconf
     SUBDIR += obconf-qt
