@@ -1,4 +1,4 @@
-%%DATADIR%%/bin/BouncyCastle.Crypto.dll
+%%DATADIR%%/bin/BouncyCastle.Cryptography.dll
 %%DATADIR%%/bin/Dapper.dll
 %%DATADIR%%/bin/Diacritical.dll
 %%DATADIR%%/bin/DryIoc.Microsoft.DependencyInjection.dll
@@ -449,13 +449,13 @@
 %%DATADIR%%/bin/System.Xml.dll
 %%DATADIR%%/bin/System.dll
 %%DATADIR%%/bin/TagLibSharp.dll
-%%DATADIR%%/bin/UI/383-5cb3dea168b01622fa39.js
-%%DATADIR%%/bin/UI/383-5cb3dea168b01622fa39.js.LICENSE.txt
-%%DATADIR%%/bin/UI/383-5cb3dea168b01622fa39.js.map
-%%DATADIR%%/bin/UI/451-856e76febd9f9bcbee1e.js
-%%DATADIR%%/bin/UI/451-856e76febd9f9bcbee1e.js.map
-%%DATADIR%%/bin/UI/Content/451-ba7416acb8df2be869f1.css
-%%DATADIR%%/bin/UI/Content/451-ba7416acb8df2be869f1.css.map
+%%DATADIR%%/bin/UI/638-05e66c57185b323959bc.js
+%%DATADIR%%/bin/UI/638-05e66c57185b323959bc.js.LICENSE.txt
+%%DATADIR%%/bin/UI/638-05e66c57185b323959bc.js.map
+%%DATADIR%%/bin/UI/907-4c5206716d13ae5dfa7d.js
+%%DATADIR%%/bin/UI/907-4c5206716d13ae5dfa7d.js.map
+%%DATADIR%%/bin/UI/Content/907-04041b498183043faa59.css
+%%DATADIR%%/bin/UI/Content/907-04041b498183043faa59.css.map
 %%DATADIR%%/bin/UI/Content/Fonts/Roboto-Light.ttf
 %%DATADIR%%/bin/UI/Content/Fonts/Roboto-Light.woff
 %%DATADIR%%/bin/UI/Content/Fonts/Roboto-Light.woff2
@@ -496,8 +496,8 @@
 %%DATADIR%%/bin/UI/Content/robots.txt
 %%DATADIR%%/bin/UI/Content/styles.css
 %%DATADIR%%/bin/UI/Content/styles.css.map
-%%DATADIR%%/bin/UI/index-612d88901dab3b4f1424.js
-%%DATADIR%%/bin/UI/index-612d88901dab3b4f1424.js.map
+%%DATADIR%%/bin/UI/index-422a4b8ecdf8ba88f209.js
+%%DATADIR%%/bin/UI/index-422a4b8ecdf8ba88f209.js.map
 %%DATADIR%%/bin/UI/index.html
 %%DATADIR%%/bin/UI/login.html
 %%DATADIR%%/bin/UI/oauth.html
