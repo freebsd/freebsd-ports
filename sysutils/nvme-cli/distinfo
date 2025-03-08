@@ -1,3 +1,3 @@
-TIMESTAMP = 1740515598
-SHA256 (bsdimp-nvme-cli-2.11.0.1-freebsd-2.11.0.1_GH0.tar.gz) = ec2cc9810c88ebfdef4903c8bd56f65de7914a39207acd75353d78c9d9ca7bef
-SIZE (bsdimp-nvme-cli-2.11.0.1-freebsd-2.11.0.1_GH0.tar.gz) = 1024136
+TIMESTAMP = 1741414374
+SHA256 (bsdimp-nvme-cli-2.11.0.2-freebsd-2.11.0.2_GH0.tar.gz) = 9eb33b9f830fa877376cf22189ef7ed3d5da9379d508dbce2512d144be2656dd
+SIZE (bsdimp-nvme-cli-2.11.0.2-freebsd-2.11.0.2_GH0.tar.gz) = 1024213
