@@ -1518,6 +1518,7 @@
     SUBDIR += vobcopy
     SUBDIR += volman
     SUBDIR += vpnc-scripts
+    SUBDIR += vtm
     SUBDIR += vttest
     SUBDIR += wait_on
     SUBDIR += walk
