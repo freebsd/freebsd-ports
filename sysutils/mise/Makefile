@@ -1,6 +1,6 @@
 PORTNAME=	mise
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2025.3.1
+DISTVERSION=	2025.3.2
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -321,7 +321,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		itertools-0.14.0 \
 		itoa-1.0.15 \
 		jiff-0.1.29 \
-		jiff-tzdb-0.1.2 \
+		jiff-tzdb-0.1.3 \
 		jiff-tzdb-platform-0.1.2 \
 		jobserver-0.1.32 \
 		js-sys-0.3.77 \
@@ -336,6 +336,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		libredox-0.1.3 \
 		linked-hash-map-0.5.6 \
 		linux-raw-sys-0.4.15 \
+		linux-raw-sys-0.9.2 \
 		litemap-0.7.5 \
 		litrs-0.4.1 \
 		lock_api-0.4.12 \
@@ -452,7 +453,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		regex-syntax-0.6.29 \
 		regex-syntax-0.8.5 \
 		reqwest-0.12.12 \
-		ring-0.17.11 \
+		ring-0.17.12 \
 		rmp-0.8.14 \
 		rmp-serde-1.3.0 \
 		roff-0.2.2 \
@@ -466,6 +467,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		rustc-hash-2.1.1 \
 		rustc_version-0.4.1 \
 		rustix-0.38.44 \
+		rustix-1.0.0 \
 		rustls-0.23.23 \
 		rustls-native-certs-0.8.1 \
 		rustls-pemfile-2.2.0 \
@@ -540,7 +542,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		tabled_derive-0.9.0 \
 		taplo-0.13.2 \
 		tar-0.4.44 \
-		tempfile-3.17.1 \
+		tempfile-3.18.0 \
 		tera-1.20.0 \
 		termcolor-1.4.1 \
 		terminal_size-0.4.1 \
@@ -552,7 +554,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		thiserror-impl-1.0.69 \
 		thiserror-impl-2.0.12 \
 		thread_local-1.1.8 \
-		time-0.3.38 \
+		time-0.3.39 \
 		time-core-0.1.3 \
 		time-macros-0.2.20 \
 		tinystr-0.7.6 \
@@ -669,16 +671,16 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		write16-1.0.0 \
 		writeable-0.5.5 \
 		x25519-dalek-2.0.1 \
-		xattr-1.4.0 \
+		xattr-1.5.0 \
 		xx-2.0.5 \
 		xz2-0.1.7 \
 		yansi-1.0.1 \
 		yoke-0.7.5 \
 		yoke-derive-0.7.5 \
 		zerocopy-0.7.35 \
-		zerocopy-0.8.22 \
+		zerocopy-0.8.23 \
 		zerocopy-derive-0.7.35 \
-		zerocopy-derive-0.8.22 \
+		zerocopy-derive-0.8.23 \
 		zerofrom-0.1.6 \
 		zerofrom-derive-0.1.6 \
 		zeroize-1.8.1 \
