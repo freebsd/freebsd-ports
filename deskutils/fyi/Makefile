@@ -1,5 +1,6 @@
 PORTNAME=	fyi
 DISTVERSION=	1.0.4
+PORTREVISION=	1
 CATEGORIES=	deskutils
 MASTER_SITES=	https://codeberg.org/dnkl/${PORTNAME}/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/
 

@@ -1,5 +1,6 @@
 PORTNAME=	dbus
 PORTVERSION=	4.1
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://chiselapp.com/user/schelte/repository/dbus/uv/
 PKGNAMESUFFIX=	-tcl

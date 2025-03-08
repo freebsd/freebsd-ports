@@ -1,6 +1,6 @@
 PORTNAME=	avahi
 PORTVERSION=	0.8
-PORTREVISION?=	5	# don't delete, reset to 0, check slave ports
+PORTREVISION?=	6	# don't delete, reset to 0, check slave ports
 CATEGORIES?=	net dns
 MASTER_SITES=	http://www.avahi.org/download/
 PKGNAMESUFFIX?=	-app

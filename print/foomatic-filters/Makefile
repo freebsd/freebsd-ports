@@ -1,6 +1,6 @@
 PORTNAME=	foomatic-filters
 PORTVERSION=	4.0.17
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	print
 MASTER_SITES=	http://www.openprinting.org/download/foomatic/
 

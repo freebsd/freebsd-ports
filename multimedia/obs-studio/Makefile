@@ -1,5 +1,6 @@
 PORTNAME=	obs-studio
 DISTVERSION=	31.0.1
+PORTREVISION=	1
 CATEGORIES=	multimedia
 
 MAINTAINER=	yuri@FreeBSD.org
