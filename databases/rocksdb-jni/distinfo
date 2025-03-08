@@ -1,4 +1,4 @@
-TIMESTAMP = 1735897244
+TIMESTAMP = 1741378670
 SHA256 (assertj-core-2.9.0.jar) = 5e88ea3ecbe3c48aa1346fec76c84979fa9c8d22499f11479011691230e8babf
 SIZE (assertj-core-2.9.0.jar) = 1096630
 SHA256 (cglib-3.3.0.jar) = 9fe0c26d7464140ccdfe019ac687be1fb906122b508ab54beb810db0f09a9212
@@ -9,5 +9,5 @@ SHA256 (junit-4.13.1.jar) = c30719db974d6452793fe191b3638a5777005485bae145924044
 SIZE (junit-4.13.1.jar) = 382708
 SHA256 (mockito-all-1.10.19.jar) = d1a7a7ef14b3db5c0fc3e0a63a81b374b510afe85add9f7984b97911f4c70605
 SIZE (mockito-all-1.10.19.jar) = 1234599
-SHA256 (facebook-rocksdb-v9.9.3_GH0.tar.gz) = 126c8409e98a3acea57446fb17faf22767f8ac763a4516288dd7c05422e33df2
-SIZE (facebook-rocksdb-v9.9.3_GH0.tar.gz) = 13668148
+SHA256 (facebook-rocksdb-v9.11.1_GH0.tar.gz) = 4de14e6344fc77a7058bc4f2e02fdace9c86bd7145dd007b2d9ed119b7adbdc6
+SIZE (facebook-rocksdb-v9.11.1_GH0.tar.gz) = 13749551
