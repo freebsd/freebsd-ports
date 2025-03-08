@@ -720,6 +720,18 @@
 	<range><ge>14.1</ge><lt>14.1_8</lt></range>
 	<range><ge>13.4</ge><lt>13.4_4</lt></range>
       </package>
+      <package>
+	<name>openssh-portable</name>
+	<range><lt>9.9.p2_1,1</lt></range>
+      </package>
+      <package>
+	<name>openssh-portable-hpn</name>
+	<range><lt>9.9.p2_1,1</lt></range>
+      </package>
+      <package>
+	<name>openssh-portable-gssapi</name>
+	<range><lt>9.9.p2_1,1</lt></range>
+      </package>
     </affects>
     <description>
 	<body xmlns="http://www.w3.org/1999/xhtml">
@@ -750,6 +762,7 @@
     <dates>
       <discovery>2025-02-21</discovery>
       <entry>2025-02-24</entry>
+      <modified>2025-03-08</modified>
     </dates>
   </vuln>
 
