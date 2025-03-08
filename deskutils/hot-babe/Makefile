@@ -1,13 +1,12 @@
 PORTNAME=	hot-babe
 PORTVERSION=	0.2.2
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	deskutils
 MASTER_SITES=	http://dindinx.net/hotbabe/downloads/ \
 		LOCAL/novel
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Small utility which displays the system activity in a special way
-WWW=		http://dindinx.net/hotbabe/
 
 USES=		gnome pkgconfig tar:bzip2
 MAKE_ARGS+=	PREFIX="${PREFIX}" CC="${CC}"
