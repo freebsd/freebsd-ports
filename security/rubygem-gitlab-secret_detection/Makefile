@@ -1,5 +1,5 @@
 PORTNAME=	gitlab-secret_detection
-PORTVERSION=	0.19.1
+PORTVERSION=	0.20.4
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 
@@ -15,6 +15,8 @@ RUN_DEPENDS=	rubygem-grpc>=1.63<2:net/rubygem-grpc \
 		rubygem-grpc-tools>=1.63<2:net/rubygem-grpc-tools \
 		rubygem-parallel>=1<2:sysutils/rubygem-parallel \
 		rubygem-re2>=2.7<3:devel/rubygem-re2 \
+		rubygem-sentry-ruby>=5.22<6:devel/rubygem-sentry-ruby \
+		rubygem-stackprof>=0.2.27<0.3:devel/rubygem-stackprof \
 		rubygem-toml-rb>=2.2<3:www/rubygem-toml-rb
 
 USES=		gem
