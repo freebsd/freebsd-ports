@@ -349,6 +349,7 @@
     SUBDIR += py-gpaw
     SUBDIR += py-gsd
     SUBDIR += py-h5json
+    SUBDIR += py-h5netcdf
     SUBDIR += py-h5py
     SUBDIR += py-h5pyd
     SUBDIR += py-hiphive
