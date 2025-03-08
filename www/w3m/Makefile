@@ -1,6 +1,5 @@
 PORTNAME=	w3m
 PORTVERSION=	0.5.3.${SNAPDATE}
-PORTREVISION=	1
 CATEGORIES+=	www
 MASTER_SITES=	https://git.sr.ht/~rkta/${PORTNAME}/archive/${COMMIT_HASH}${EXTRACT_SUFX}?dummy=/
 
@@ -22,8 +21,8 @@ USES=		cpe iconv pkgconfig perl5 ssl
 CPE_VENDOR=	w3m_project
 
 MAKE_JOBS_UNSAFE=	yes
-SNAPDATE=	20240916
-COMMIT_HASH=	3601d308b98006da4240f1fd39282a9245e70264
+SNAPDATE=	20250305
+COMMIT_HASH=	32193d61e3938518c0d454022d165b236f26f153
 WRKSRC=		${WRKDIR}/${PORTNAME}-${COMMIT_HASH}
 
 CONFLICTS?=	ja-w3m-0.5.* ja-w3m-img-0.5.* w3m-img-0.5.*
@@ -33,15 +32,14 @@ CONFIGURE_ARGS=	--with-gc=${LOCALBASE} \
 		ac_cv_path_PERL=${PERL}
 CONFIGURE_ENV=	DEFS="-I${LOCALBASE}/include"
 
-DOCS_COMMON=	FAQ.html HISTORY MANUAL.html README README.cookie \
-		README.cygwin README.dict README.func README.img \
-		README.m17n README.mouse README.passwd README.pre_form \
+DOCS_COMMON=	FAQ.html HISTORY MANUAL.html README README.SSL \
+		README.cookie README.cygwin README.dict README.func \
+		README.img README.keymap README.menu README.m17n \
+		README.mouse README.passwd README.pre_form \
 		README.siteconf README.tab STORY.html \
 		keymap.default keymap.lynx menu.default menu.submenu
 DOCS_DE=	FAQ.html MANUAL.html README.func
-DOCS_EN=	README.sixel
-DOCS_JP=	${DOCS_COMMON} README.SSL README.keymap \
-		README.mailcap README.menu README.migemo
+DOCS_JP=	${DOCS_COMMON} README.mailcap README.menu README.migemo
 
 OPTIONS_DEFINE=	INLINE_IMAGE JAPANESE KEY_LYNX DOCS NLS
 INLINE_IMAGE_DESC=	Inline image support
@@ -94,7 +92,7 @@ post-install:
 	done
 	@cd ${WRKSRC}/doc; \
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/doc/w3m/; \
-	for i in ${DOCS_COMMON} ${DOCS_EN} ; do \
+	for i in ${DOCS_COMMON} ; do \
 		${INSTALL_DATA} $$i ${STAGEDIR}${PREFIX}/share/doc/w3m/ ; \
 	done
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/man/ja/man1
