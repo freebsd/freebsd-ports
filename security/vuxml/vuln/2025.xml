@@ -1,3 +1,38 @@
+  <vuln vid="6ba9e26e-c9c6-49f7-ae43-47e5864f0b66">
+    <topic>electron33 -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>electron33</name>
+	<range><lt>33.4.3</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Electron develpers report:</p>
+	<blockquote cite="https://github.com/electron/electron/releases/tag/v33.4.3">
+	  <p>This update fixes the following vulnerabilities:</p>
+	  <ul>
+	    <li>Security: backported fix for CVE-2025-0445.</li>
+	    <li>Security: backported fix for CVE-2025-0995.</li>
+	    <li>Security: backported fix for CVE-2025-0998.</li>
+	  </ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-0445</cvename>
+      <url>https://github.com/advisories/GHSA-q4fq-38gr-ccp3</url>
+      <cvename>CVE-2025-0995</cvename>
+      <url>https://github.com/advisories/GHSA-377p-4737-hx6m</url>
+      <cvename>CVE-2025-0998</cvename>
+      <url>https://github.com/advisories/GHSA-4v9x-qxmv-4h58</url>
+    </references>
+    <dates>
+      <discovery>2025-03-06</discovery>
+      <entry>2025-03-08</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="6e27040b-61b7-4989-9471-dfb10c3cd76e">
     <topic>electron32 -- multiple vulnerabilities</topic>
     <affects>
