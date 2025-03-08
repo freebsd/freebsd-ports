@@ -1,5 +1,6 @@
 PORTNAME=	pywapi
 PORTVERSION=	0.3.8
+PORTREVISION=	1
 CATEGORIES=	astro python
 MASTER_SITES=	http://launchpad.net/python-weather-api/trunk/${PORTVERSION}/+download/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}

@@ -1,5 +1,6 @@
 PORTNAME=	ironscanner
 DISTVERSION=	1.1.0.20180828
+PORTREVISION=	1
 CATEGORIES=	misc python
 
 MAINTAINER=	yuri@FreeBSD.org

@@ -1,5 +1,6 @@
 PORTNAME=	moinmoin
 PORTVERSION=	1.9.11
+PORTREVISION=	1
 CATEGORIES=	www python
 MASTER_SITES=	https://static.moinmo.in/files/
 DISTNAME=	moin-${PORTVERSION}

@@ -1,6 +1,6 @@
 PORTNAME=	quodlibet
 DISTVERSION=	4.3.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	multimedia audio python
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/release-${DISTVERSION}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}

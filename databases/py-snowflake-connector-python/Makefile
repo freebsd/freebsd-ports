@@ -1,5 +1,6 @@
 PORTNAME=	snowflake-connector-python
 DISTVERSION=	3.12.3
+PORTREVISION=	1
 DISTNAME=	snowflake_connector_python-${DISTVERSION}
 CATEGORIES=	databases python
 MASTER_SITES=	PYPI

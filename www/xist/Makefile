@@ -1,5 +1,6 @@
 PORTNAME=	xist
 PORTVERSION=	5.34
+PORTREVISION=	1
 CATEGORIES=	www python
 MASTER_SITES=	PYPI \
 		http://ftp.livinglogic.de/xist/

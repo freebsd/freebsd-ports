@@ -1,5 +1,6 @@
 PORTNAME=	rfc3986
 DISTVERSION=	1.5.0 # before updating to 2.0.0 make sure that dependencies listed in bug#261243 build
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	www python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}

@@ -1,5 +1,6 @@
 PORTNAME=	al
 PORTVERSION=	0.1.0
+PORTREVISION=	1
 CATEGORIES=	audio python
 MASTER_SITES=	http://bitbucket.org/marcusva/py-al/downloads/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}

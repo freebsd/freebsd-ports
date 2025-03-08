@@ -1,5 +1,6 @@
 PORTNAME=	kapidox
 DISTVERSION=	${KDE_FRAMEWORKS_VERSION}
+PORTREVISION=	1
 CATEGORIES=	devel kde kde-frameworks
 
 COMMENT=	Scripts and data for building API documentation (dox)

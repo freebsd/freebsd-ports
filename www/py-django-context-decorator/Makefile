@@ -1,5 +1,6 @@
 PORTNAME=	django-context-decorator
 PORTVERSION=	1.5.0
+PORTREVISION=	1
 CATEGORIES=	www python
 MASTER_SITES=	PYPI
 DISTNAME=	django_context_decorator-${PORTVERSION}

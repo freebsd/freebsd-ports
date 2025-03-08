@@ -1,5 +1,6 @@
 PORTNAME=	power
 PORTVERSION=	1.3
+PORTREVISION=	1
 CATEGORIES=	sysutils python
 MASTER_SITES=	https://github.com/Kentzo/Power/releases/download/v${PORTVERSION}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}

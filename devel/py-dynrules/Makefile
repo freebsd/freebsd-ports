@@ -1,6 +1,6 @@
 PORTNAME=	dynrules
 PORTVERSION=	0.1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel python
 MASTER_SITES=	http://bitbucket.org/marcusva/py-dynrules/downloads/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}

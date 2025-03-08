@@ -1,5 +1,6 @@
 PORTNAME=	autorandr
 DISTVERSION=	1.12.1
+PORTREVISION=	1
 CATEGORIES=	x11
 PATCH_SITES=	https://github.com/phillipberndt/autorandr/commit/
 PATCHFILES=	2bc71d562765e2023b26a31c485769612e3eb91e.patch:-p1 # PR 282

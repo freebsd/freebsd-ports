@@ -1,6 +1,6 @@
 PORTNAME=	electrum
 DISTVERSION=	4.5.8
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	finance python
 MASTER_SITES=	https://download.electrum.org/${PORTVERSION}/ \
 		http://download.electrum.org/${PORTVERSION}/

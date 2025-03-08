@@ -1,5 +1,6 @@
 PORTNAME=	sphinx-markdown-tables
 PORTVERSION=	0.0.17
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	textproc python
 MASTER_SITES=	PYPI

@@ -1,5 +1,6 @@
 PORTNAME=	sysv_ipc
 PORTVERSION=	1.1.0
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	http://semanchuk.com/philip/sysv_ipc/ \
 		PYPI

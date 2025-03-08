@@ -1,6 +1,6 @@
 PORTNAME=	dtflickr
 PORTVERSION=	1.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www python
 MASTER_SITES=	PYPI \
 		http://dl1.douglasthrift.net/${PORTNAME}/ \

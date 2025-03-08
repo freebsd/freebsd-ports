@@ -1,5 +1,6 @@
 PORTNAME=	statgrab
 PORTVERSION=	0.7.3
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	https://github.com/libstatgrab/pystatgrab/releases/download/PYSTATGRAB_${PORTVERSION:S/./_/g}/ \
 		http://ftp.mirrorservice.org/pub/i-scream/py${PORTNAME}/ \

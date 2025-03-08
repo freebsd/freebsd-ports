@@ -1,5 +1,6 @@
 PORTNAME=	jonpy
 DISTVERSION=	0.14
+PORTREVISION=	1
 CATEGORIES=	www python
 MASTER_SITES=	https://github.com/jribbens/${PORTNAME}/releases/download/rel-0-14/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}

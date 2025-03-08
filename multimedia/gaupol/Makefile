@@ -1,5 +1,6 @@
 PORTNAME=	gaupol
 DISTVERSION=	1.15
+PORTREVISION=	1
 CATEGORIES=	multimedia python
 
 MAINTAINER=	nxjoseph@protonmail.com

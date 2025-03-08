@@ -1,5 +1,6 @@
 PORTNAME=	PyGreSQL
 PORTVERSION=	6.0
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	databases python
 MASTER_SITES=	http://www.pygresql.org/files/ \

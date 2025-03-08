@@ -1,5 +1,6 @@
 PORTNAME=	plex
 PORTVERSION=	1.1.5
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	http://www.cosc.canterbury.ac.nz/greg.ewing/python/Plex/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}

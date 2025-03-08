@@ -1,5 +1,6 @@
 PORTNAME=	ttystatus
 PORTVERSION=	0.36
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://git.liw.fi/cgi-bin/cgit/cgit.cgi/ttystatus/snapshot/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}

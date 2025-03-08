@@ -1,5 +1,6 @@
 PORTNAME=	cpplint
 PORTVERSION=	2.0.0
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	thierry@FreeBSD.org

@@ -1,6 +1,6 @@
 PORTNAME=	pysnmp-mibs
 PORTVERSION=	0.1.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-mgmt python
 MASTER_SITES=	PYPI \
 		SF/pysnmp/pysnmp-mibs/${PORTVERSION}

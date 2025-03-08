@@ -1,6 +1,6 @@
 PORTNAME=	durus
 PORTVERSION=	3.9
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI \
 		http://www.mems-exchange.org/software/durus/

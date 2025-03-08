@@ -1,6 +1,7 @@
 PORTNAME=	rmsd
 DISTVERSIONPREFIX=	${PORTNAME}-
 DISTVERSION=	1.6.3
+PORTREVISION=	1
 CATEGORIES=	science
 #MASTER_SITES=	PYPI # missing test files, see https://github.com/charnley/rmsd/issues/123
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}

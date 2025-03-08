@@ -1,6 +1,6 @@
 PORTNAME=	wordnet
 PORTVERSION=	2.0.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc python
 MASTER_SITES=	SF/pywordnet/pywordnet/${PORTVERSION}:pywn \
 		http://wordnetcode.princeton.edu/${WN_VERSION}/:wn \

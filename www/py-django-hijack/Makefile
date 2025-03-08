@@ -1,6 +1,6 @@
 PORTNAME=	django-hijack
 PORTVERSION=	3.4.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www python
 MASTER_SITES=	PYPI \
 		https://ports.caomhin.org/:npmcache

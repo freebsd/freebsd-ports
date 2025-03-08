@@ -1,5 +1,6 @@
 PORTNAME=	demjson
 PORTVERSION=	3.0.6
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI \
 		http://deron.meranda.us/python/demjson/dist/
