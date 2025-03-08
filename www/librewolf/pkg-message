@@ -11,7 +11,7 @@ Some features found on Windows, macOS and Linux are not implemented:
 - Crash Reporter (requires Google Breakpad and reproducible builds)
 - WebVR (requires open source runtime)
 - TCP fast open
-- `about:networking` (requires link state notification)
+- `about:networking#networkid` (requires link state notification)
 
 ## Audio backend
 
@@ -25,13 +25,13 @@ Supported backends and default probing order is as follows:
 To force a specific backend open `about:config` page and create
 `media.cubeb.backend` preference.
 
-Microphone selection only works in `oss`, `pulse`, `pulse-rust` backends.
+Microphone selection only works in `oss`, `pulse-rust` backends.
 Other backends are limited to `default` which is usually `/dev/dsp`,
 so use virtual_oss to reroute microphones from non-default devices.
 
 ## Gamepad API
 
-Requires evdev(4) joystick support. On FreeBSD 13.0 enable hgame(4)
+Requires evdev(4) joystick support. On FreeBSD 13 and later enable hgame(4)
 while older versions can use sysutils/iichid or multimedia/webcamd.
 
 ## smb:// issues
