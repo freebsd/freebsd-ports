@@ -1,9 +1,6 @@
 PORTNAME=	font-manager
-DISTVERSION=	0.9.2
+DISTVERSION=	0.9.4
 CATEGORIES=	x11-fonts gnome
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES=	31bf41a306a079a29f3da861bfa53247e1b61ba3.patch:-p1
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Font management application for the GNOME desktop
@@ -22,7 +19,7 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libjson-glib-1.0.so:devel/json-glib
 
 USES=		compiler:c++11-lang desktop-file-utils gettext-tools gnome \
-		meson pkgconfig python shebangfix sqlite vala:build
+		libarchive meson pkgconfig python shebangfix sqlite vala:build
 USE_GITHUB=	yes
 GH_ACCOUNT=	FontManager
 USE_GNOME=	cairo glib20 gtk40 libxml2 pango
