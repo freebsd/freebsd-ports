@@ -1,7 +1,6 @@
 PORTNAME=	s3fs
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.92
-PORTREVISION=	1
+DISTVERSION=	1.95
 CATEGORIES=	filesystems
 PKGNAMEPREFIX=	fusefs-
 
@@ -15,14 +14,12 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libcurl.so:ftp/curl
 
 USES=		autoreconf fuse gnome pkgconfig ssl
-USE_GNOME=	libxml2
-
 USE_GITHUB=	yes
 GH_ACCOUNT=	s3fs-fuse
 GH_PROJECT=	s3fs-fuse
+USE_GNOME=	libxml2
 
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
 CONFIGURE_ENV+=	ac_cv_prog_GITCMD=no
 
