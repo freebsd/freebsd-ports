@@ -10,7 +10,7 @@ COMMENT=	Property editing framwork
 WWW=		https://www.kexi-project.org/
 
 LICENSE=	LGPL21+
-LICENSE_FILE=	COPYING.LIB
+LICENSE_FILE=	${WRKSRC}/COPYING.LIB
 
 USES=		cmake compiler:c++11-lang gettext kde:5 qt:5 tar:xz
 USE_KDE=	config coreaddons guiaddons i18n widgetsaddons \
