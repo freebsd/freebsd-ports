@@ -5,6 +5,13 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20250312:
+  AFFECTS: users of net/samba4{19,20}
+  AUTHOR: michaelo@FreeBSD.org
+
+  The MANDOC option has been renamed to MANPAGES to match the option
+  name with other ports and the description from Mk/bsd.options.desc.mk.
+
 20250311:
   AFFECTS: users of databases/mongodb80
   AUTHOR: ronald@FreeBSD.org
