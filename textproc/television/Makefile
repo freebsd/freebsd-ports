@@ -1,6 +1,5 @@
 PORTNAME=	television
-DISTVERSION=	0.10.6
-PORTREVISION=	1
+DISTVERSION=	0.10.7
 CATEGORIES=	textproc
 
 MAINTAINER=	nxjoseph@protonmail.com
