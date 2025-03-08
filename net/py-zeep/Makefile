@@ -13,7 +13,8 @@ LICENSE_COMB=	multi
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sphinx>=1.4.0,1:textproc/py-sphinx@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR} \
+		${PY_SETUPTOOLS}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}attrs>=17.2.0:devel/py-attrs@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}isodate>=0.5.4:devel/py-isodate@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}lxml>=4.6.0:devel/py-lxml@${PY_FLAVOR} \
