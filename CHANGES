@@ -10,6 +10,26 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
+20250307:
+AUTHOR: python@FreeBSD.org
+
+  setuptools has been removed as a RUN_DEPENDS for USE_PYTHON=distutils
+  ports, except for those operating under Python 2. If your port
+  needs setuptools to run, you can add it back to RUN_DEPENDS, but
+  keep in mind that this practice is deprecated and discouraged in
+  the greater Python ecosystem.
+
+  setuptools includes a module, pkg_resources, that historically
+  has been used as a runtime API for "finding, introspecting,
+  activating and using installed Python distributions." These
+  functions have been superseded by the importlib family and the
+  packaging package.
+
+  setuptools also includes their own copy of distutils, which is
+  not present in the base Python distribution starting in 3.12. The
+  use of distutils primitives directly in consumers is also discouraged
+  and deprecated.
+
 20250306:
 AUTHOR: jhale@FreeBSD.org
 
