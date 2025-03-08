@@ -1,6 +1,8 @@
 bin/sss_ssh_authorizedkeys
+bin/sss_ssh_knownhosts
 bin/sss_ssh_knownhostsproxy
 etc/pam.d/sssd-shadowutils
+@comment etc/rc.d/init.d/sssd
 %%ETCDIR%%/sssd.conf.sample
 include/ipa_hbac.h
 include/sss_certmap.h
@@ -17,18 +19,18 @@ lib/libsss_certmap.so.0
 lib/libsss_certmap.so.0.2.0
 lib/libsss_idmap.so
 lib/libsss_idmap.so.0
-lib/libsss_idmap.so.0.5.1
+lib/libsss_idmap.so.0.6.0
 lib/libsss_nss_idmap.so
 lib/libsss_nss_idmap.so.0
-lib/libsss_nss_idmap.so.0.6.0
+lib/libsss_nss_idmap.so.0.6.1
 lib/libsss_sudo.so
 lib/nss_sss.so.1
 lib/pam_sss.so
 lib/pam_sss_gss.so
-%%PYTHON_SITELIBDIR%%/SSSDConfig-2.9.6-py%%PYTHON_VER%%.egg-info/PKG-INFO
-%%PYTHON_SITELIBDIR%%/SSSDConfig-2.9.6-py%%PYTHON_VER%%.egg-info/SOURCES.txt
-%%PYTHON_SITELIBDIR%%/SSSDConfig-2.9.6-py%%PYTHON_VER%%.egg-info/dependency_links.txt
-%%PYTHON_SITELIBDIR%%/SSSDConfig-2.9.6-py%%PYTHON_VER%%.egg-info/top_level.txt
+%%PYTHON_SITELIBDIR%%/SSSDConfig-2.12.0-py%%PYTHON_VER%%.egg-info/PKG-INFO
+%%PYTHON_SITELIBDIR%%/SSSDConfig-2.12.0-py%%PYTHON_VER%%.egg-info/SOURCES.txt
+%%PYTHON_SITELIBDIR%%/SSSDConfig-2.12.0-py%%PYTHON_VER%%.egg-info/dependency_links.txt
+%%PYTHON_SITELIBDIR%%/SSSDConfig-2.12.0-py%%PYTHON_VER%%.egg-info/top_level.txt
 %%PYTHON_SITELIBDIR%%/SSSDConfig/__init__.py
 %%PYTHON_SITELIBDIR%%/SSSDConfig/__pycache__/__init__%%PYTHON_TAG%%.pyc
 %%PYTHON_SITELIBDIR%%/SSSDConfig/__pycache__/ipachangeconf%%PYTHON_TAG%%.pyc
@@ -41,12 +43,14 @@ lib/pam_sss_gss.so
 %%PYTHON_SITELIBDIR%%/pysss_nss_idmap.so
 %%PYTHON_SITELIBDIR%%/sssd/__init__.py
 %%PYTHON_SITELIBDIR%%/sssd/modules/__init__.py
+%%PYTHON_SITELIBDIR%%/sssd/modules/error.py
 %%PYTHON_SITELIBDIR%%/sssd/modules/request.py
 %%PYTHON_SITELIBDIR%%/sssd/parser.py
 %%PYTHON_SITELIBDIR%%/sssd/source_files.py
 %%PYTHON_SITELIBDIR%%/sssd/source_journald.py
 %%PYTHON_SITELIBDIR%%/sssd/source_reader.py
 %%PYTHON_SITELIBDIR%%/sssd/sss_analyze.py
+%%PYTHON_SITELIBDIR%%/sssd/util.py
 %%SAMBA_IDMAP_MODULESDIR%%/sss.so
 %%SAMBA_LDB_MODULESDIR%%/memberof.so
 lib/sssd/conf/sssd.conf
@@ -57,7 +61,7 @@ lib/sssd/libsss_cert.so
 lib/sssd/libsss_child.so
 lib/sssd/libsss_crypt.so
 lib/sssd/libsss_debug.so
-lib/sssd/libsss_files.so
+lib/sssd/libsss_idp.so
 lib/sssd/libsss_iface.so
 lib/sssd/libsss_iface_sync.so
 lib/sssd/libsss_ipa.so
@@ -68,7 +72,6 @@ lib/sssd/libsss_ldap_common.so
 lib/sssd/libsss_proxy.so
 lib/sssd/libsss_sbus.so
 lib/sssd/libsss_sbus_sync.so
-lib/sssd/libsss_semanage.so
 lib/sssd/libsss_simple.so
 lib/sssd/libsss_util.so
 lib/sssd/modules/sssd_krb5_idp_plugin.so
@@ -104,11 +107,37 @@ sbin/sssctl
 sbin/sssd
 share/dbus-1/system-services/org.freedesktop.sssd.infopipe.service
 share/dbus-1/system.d/org.freedesktop.sssd.infopipe.conf
+%%NLS%%share/locale/bg/LC_MESSAGES/sssd.mo
+%%NLS%%share/locale/ca/LC_MESSAGES/sssd.mo
+%%NLS%%share/locale/cs/LC_MESSAGES/sssd.mo
+%%NLS%%share/locale/de/LC_MESSAGES/sssd.mo
+%%NLS%%share/locale/es/LC_MESSAGES/sssd.mo
+%%NLS%%share/locale/eu/LC_MESSAGES/sssd.mo
+%%NLS%%share/locale/fi/LC_MESSAGES/sssd.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/sssd.mo
+%%NLS%%share/locale/hu/LC_MESSAGES/sssd.mo
+%%NLS%%share/locale/id/LC_MESSAGES/sssd.mo
+%%NLS%%share/locale/it/LC_MESSAGES/sssd.mo
+%%NLS%%share/locale/ja/LC_MESSAGES/sssd.mo
+%%NLS%%share/locale/ka/LC_MESSAGES/sssd.mo
+%%NLS%%share/locale/ko/LC_MESSAGES/sssd.mo
+%%NLS%%share/locale/nb/LC_MESSAGES/sssd.mo
+%%NLS%%share/locale/nl/LC_MESSAGES/sssd.mo
+%%NLS%%share/locale/pl/LC_MESSAGES/sssd.mo
+%%NLS%%share/locale/pt/LC_MESSAGES/sssd.mo
+%%NLS%%share/locale/pt_BR/LC_MESSAGES/sssd.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/sssd.mo
+%%NLS%%share/locale/sv/LC_MESSAGES/sssd.mo
+%%NLS%%share/locale/tg/LC_MESSAGES/sssd.mo
+%%NLS%%share/locale/tr/LC_MESSAGES/sssd.mo
+%%NLS%%share/locale/uk/LC_MESSAGES/sssd.mo
+%%NLS%%share/locale/zh_CN/LC_MESSAGES/sssd.mo
+%%NLS%%share/locale/zh_TW/LC_MESSAGES/sssd.mo
 share/man/man1/sss_ssh_authorizedkeys.1.gz
-share/man/man1/sss_ssh_knownhostsproxy.1.gz
+share/man/man1/sss_ssh_knownhosts.1.gz
 share/man/man5/sss-certmap.5.gz
 share/man/man5/sssd-ad.5.gz
-share/man/man5/sssd-files.5.gz
+share/man/man5/sssd-idp.5.gz
 share/man/man5/sssd-ifp.5.gz
 share/man/man5/sssd-ipa.5.gz
 share/man/man5/sssd-krb5.5.gz
@@ -131,24 +160,25 @@ share/man/man8/sssd-kcm.8.gz
 share/man/man8/sssd.8.gz
 share/man/man8/sssd_krb5_localauth_plugin.8.gz
 share/man/man8/sssd_krb5_locator_plugin.8.gz
-%%DATADIR%%/dbus-1/system-services/org.freedesktop.sssd.infopipe.service
-%%DATADIR%%/dbus-1/system.d/org.freedesktop.sssd.infopipe.conf
-%%DATADIR%%/sssd-kcm/kcm_default_ccache
-%%DATADIR%%/sssd/cfg_rules.ini
-%%DATADIR%%/sssd/krb5-snippets/enable_sssd_conf_dir
-%%DATADIR%%/sssd/krb5-snippets/sssd_enable_idp
-%%DATADIR%%/sssd/krb5-snippets/sssd_enable_passkey
-%%DATADIR%%/sssd/sssd.api.conf
-%%DATADIR%%/sssd/sssd.api.d/sssd-ad.conf
-%%DATADIR%%/sssd/sssd.api.d/sssd-files.conf
-%%DATADIR%%/sssd/sssd.api.d/sssd-ipa.conf
-%%DATADIR%%/sssd/sssd.api.d/sssd-krb5.conf
-%%DATADIR%%/sssd/sssd.api.d/sssd-ldap.conf
-%%DATADIR%%/sssd/sssd.api.d/sssd-proxy.conf
-%%DATADIR%%/sssd/sssd.api.d/sssd-simple.conf
+share/sssd-kcm/kcm_default_ccache
+%%DATADIR%%/cfg_rules.ini
+%%DATADIR%%/krb5-snippets/enable_sssd_conf_dir
+%%DATADIR%%/krb5-snippets/sssd_enable_idp
+%%DATADIR%%/krb5-snippets/sssd_enable_passkey
+%%DATADIR%%/sssd.api.conf
+%%DATADIR%%/sssd.api.d/sssd-ad.conf
+%%DATADIR%%/sssd.api.d/sssd-ipa.conf
+%%DATADIR%%/sssd.api.d/sssd-krb5.conf
+%%DATADIR%%/sssd.api.d/sssd-ldap.conf
+%%DATADIR%%/sssd.api.d/sssd-proxy.conf
+%%DATADIR%%/sssd.api.d/sssd-simple.conf
 @dir %%ETCDIR%%/conf.d
 @dir %%ETCDIR%%/pki
 @dir lib/ldb
+@dir %%DOCSDIR%%/doc
+@dir %%DOCSDIR%%/hbac_doc
+@dir %%DOCSDIR%%/idmap_doc
+@dir %%DOCSDIR%%/nss_idmap_doc
 @dir /var/db/sss/db
 @dir /var/db/sss/deskprofile
 @dir /var/db/sss/gpo_cache
@@ -164,3 +194,4 @@ share/man/man8/sssd_krb5_locator_plugin.8.gz
 @dir /var/run/sss/pipes/private
 @dir /var/run/sss/pipes
 @dir /var/run/sss
+@dir /var/run/sssd
