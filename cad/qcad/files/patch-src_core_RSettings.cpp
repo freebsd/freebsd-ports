@@ -1,11 +1,11 @@
---- src/core/RSettings.cpp.orig	2019-12-23 11:24:24 UTC
+--- src/core/RSettings.cpp.orig	2025-02-10 09:29:49 UTC
 +++ src/core/RSettings.cpp
-@@ -363,9 +363,13 @@ QString RSettings::getApplicationPath() {
+@@ -393,9 +393,13 @@ QString RSettings::getApplicationPath() {
      }
  #endif
  
 +#ifdef Q_OS_FREEBSD
-+	ret.cd("%%DATADIR%%");
++	ret.cd("/usr/local/share/qcad");
 +#else
      if (ret.dirName() == "debug" || ret.dirName() == "release") {
          ret.cdUp();

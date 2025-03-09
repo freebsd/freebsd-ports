@@ -1,6 +1,6 @@
---- shared_app.pri.orig	2019-05-04 22:28:42 UTC
+--- shared_app.pri.orig	2025-02-10 09:29:49 UTC
 +++ shared_app.pri
-@@ -15,8 +15,8 @@ LIBS += \
+@@ -18,8 +18,8 @@ LIBS += \
  
  !r_no_opennurbs {
      LIBS += \

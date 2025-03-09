@@ -1,13 +1,13 @@
---- src/core/RS.cpp.orig	2019-12-23 11:24:24 UTC
+--- src/core/RS.cpp.orig	2025-02-10 09:29:49 UTC
 +++ src/core/RS.cpp
-@@ -145,6 +145,10 @@ QStringList RS::getDirectoryList(const QString& subDir
+@@ -174,6 +174,10 @@ QStringList RS::getDirectoryList(const QString& subDir
          appDir = fi.absolutePath();
      }
  
 +#ifdef Q_OS_FREEBSD
-+    dirList.append("%%DATADIR%%/" + subDirectory);
++    dirList.append("/usr/local/share/qcad/" + subDirectory);
 +#endif
 +
  #ifdef Q_OS_MAC
-     // Mac OS X app bundle:
+     // macOS app bundle:
      dirList.append(appDir + "/../Resources/" + subDirectory);
