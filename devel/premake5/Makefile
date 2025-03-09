@@ -1,6 +1,6 @@
 PORTNAME=	premake
 DISTVERSIONPREFIX=	v
-DISTVERSION=	5.0.0-beta3
+DISTVERSION=	5.0.0-beta5
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/premake/premake-core/releases/download/${DISTVERSIONFULL}/
 PKGNAMESUFFIX=	5
