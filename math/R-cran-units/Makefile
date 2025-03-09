@@ -5,7 +5,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Measurement Units for R Vectors
-WWW=		https://cran.r-project.org/web/packages/units/
+WWW=		https://cran.r-project.org/package=units
 
 LICENSE=	GPLv2
 
