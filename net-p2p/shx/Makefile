@@ -13,6 +13,9 @@ WWW=		https://synhxd.sourceforge.net/
 
 LICENSE=	GPLv1
 
+DEPRECATED=	Obsolete protocol that has been superseded by many others
+EXPIRATION_DATE=2025-04-30
+
 USES=		readline ssl tar:tgz
 
 GNU_CONFIGURE=	yes
