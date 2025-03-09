@@ -4,12 +4,11 @@ MASTER_SITES=	\
 		https://github.com/jarro2783/cxxopts/archive/:cxxopts \
 		https://github.com/HowardHinnant/date/archive/refs/tags/:date \
 		https://github.com/dmlc/dlpack/archive/refs/tags/:dlpack \
-		https://gitlab.com/libeigen/eigen/-/archive/e7248b26a1ed53fa030c5c459f7ea095dfd276ac/:eigen \
+		https://gitlab.com/libeigen/eigen/-/archive/1d8b82b0740839c0de7f1242a3585e3390ff5f33/:eigen \
 		https://github.com/google/flatbuffers/archive/refs/tags/:flatbuffers \
 		https://github.com/Maratyszcza/FP16/archive/:fp16 \
 		https://github.com/Maratyszcza/FXdiv/archive/:fxdiv \
 		https://github.com/google/benchmark/archive/refs/tags/:google_benchmark \
-		https://github.com/google/nsync/archive/refs/tags/:google_nsync \
 		https://github.com/google/googletest/archive/refs/tags/:googletest \
 		https://github.com/google/XNNPACK/archive/:googlexnnpack \
 		https://github.com/nlohmann/json/archive/refs/tags/:json \
@@ -27,7 +26,7 @@ MASTER_SITES=	\
 		https://github.com/protocolbuffers/protobuf/releases/download/v21.12/:protoc_linux_aarch64 \
 		https://github.com/protocolbuffers/protobuf/releases/download/v21.12/:protoc_mac_universal \
 		https://github.com/Maratyszcza/psimd/archive/:psimd \
-		https://github.com/Maratyszcza/pthreadpool/archive/:pthreadpool \
+		https://github.com/google/pthreadpool/archive/:pthreadpool \
 		https://github.com/pybind/pybind11/archive/refs/tags/:pybind11 \
 		https://github.com/pytorch/cpuinfo/archive/:pytorch_cpuinfo \
 		https://github.com/google/re2/archive/refs/tags/:re2 \
@@ -40,4 +39,4 @@ MASTER_SITES=	\
 		https://github.com/microsoft/DirectX-Headers/archive/refs/tags/:directx_headers \
 		https://github.com/NVIDIA/cudnn-frontend/archive/refs/tags/:cudnn_frontend \
 		https://github.com/google/dawn/archive/:dawn \
-		https://gitlab.arm.com/kleidi/kleidiai/-/archive/v0.2.0/:kleidiai \
+		https://gitlab.arm.com/kleidi/kleidiai/-/archive/d15722976120710080ca098fe8ddabf4556cb40f/:kleidiai \

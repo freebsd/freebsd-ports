@@ -1,4 +1,4 @@
---- onnxruntime/core/platform/posix/env.cc.orig	2024-10-06 21:45:44 UTC
+--- onnxruntime/core/platform/posix/env.cc.orig	2025-03-06 00:37:52 UTC
 +++ onnxruntime/core/platform/posix/env.cc
 @@ -20,6 +20,7 @@ limitations under the License.
  #include <dlfcn.h>
@@ -8,7 +8,7 @@
  #include <sys/types.h>
  #include <sys/stat.h>
  #include <stdio.h>
-@@ -218,14 +219,14 @@ class PosixThread : public EnvThread {
+@@ -224,14 +225,14 @@ class PosixThread : public EnvThread {
          }
          auto ret = pthread_setaffinity_np(pthread_self(), sizeof(cpu_set_t), &cpuset);
          if (0 == ret) {

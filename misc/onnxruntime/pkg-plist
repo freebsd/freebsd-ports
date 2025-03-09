@@ -50,6 +50,7 @@ include/onnxruntime/core/framework/ortmemoryinfo.h
 include/onnxruntime/core/framework/provider_options.h
 include/onnxruntime/core/framework/provider_options_utils.h
 include/onnxruntime/core/framework/provider_shutdown.h
+include/onnxruntime/core/framework/resource_accountant.h
 include/onnxruntime/core/framework/run_options.h
 include/onnxruntime/core/framework/sparse_tensor.h
 include/onnxruntime/core/framework/stream_handles.h
@@ -63,7 +64,9 @@ include/onnxruntime/core/graph/graph.h
 include/onnxruntime/core/graph/graph_nodes.h
 include/onnxruntime/core/graph/graph_viewer.h
 include/onnxruntime/core/graph/indexed_sub_graph.h
+include/onnxruntime/core/graph/model_saving_options.h
 include/onnxruntime/core/graph/node_arg.h
+include/onnxruntime/core/graph/onnx_protobuf.h
 include/onnxruntime/core/graph/schema_registry.h
 include/onnxruntime/core/optimizer/graph_transformer.h
 include/onnxruntime/core/optimizer/graph_transformer_config.h
