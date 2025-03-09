@@ -1,4 +1,4 @@
---- src/slic3r/GUI/EditGCodeDialog.cpp.orig	2024-10-15 09:06:23 UTC
+--- src/slic3r/GUI/EditGCodeDialog.cpp.orig	2024-12-20 11:54:34 UTC
 +++ src/slic3r/GUI/EditGCodeDialog.cpp
 @@ -566,7 +566,7 @@ void ParamsModel::GetValue(wxVariant& variant, const w
  

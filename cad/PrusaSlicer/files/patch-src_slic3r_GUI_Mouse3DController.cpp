@@ -1,4 +1,4 @@
---- src/slic3r/GUI/Mouse3DController.cpp.orig	2023-12-12 14:21:21 UTC
+--- src/slic3r/GUI/Mouse3DController.cpp.orig	2024-12-20 11:54:34 UTC
 +++ src/slic3r/GUI/Mouse3DController.cpp
 @@ -890,7 +890,7 @@ bool Mouse3DController::connect_device()
  

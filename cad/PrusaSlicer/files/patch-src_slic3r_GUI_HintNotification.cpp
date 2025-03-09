@@ -1,4 +1,4 @@
---- src/slic3r/GUI/HintNotification.cpp.orig	2024-10-15 09:07:17 UTC
+--- src/slic3r/GUI/HintNotification.cpp.orig	2024-12-20 11:54:34 UTC
 +++ src/slic3r/GUI/HintNotification.cpp
 @@ -161,6 +161,13 @@ TagCheckResult tag_check_system(const std::string& tag
  			return TagCheckNegative;

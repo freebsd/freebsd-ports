@@ -1,4 +1,4 @@
---- src/slic3r/GUI/PrintHostDialogs.cpp.orig	2023-12-12 14:21:21 UTC
+--- src/slic3r/GUI/PrintHostDialogs.cpp.orig	2024-12-20 11:54:34 UTC
 +++ src/slic3r/GUI/PrintHostDialogs.cpp
 @@ -105,8 +105,8 @@ PrintHostSendDialog::PrintHostSendDialog(const fs::pat
      if (size_t extension_start = recent_path.find_last_of('.'); extension_start != std::string::npos)

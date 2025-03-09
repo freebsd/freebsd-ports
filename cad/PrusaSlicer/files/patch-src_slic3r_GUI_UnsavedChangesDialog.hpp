@@ -1,4 +1,4 @@
---- src/slic3r/GUI/UnsavedChangesDialog.hpp.orig	2024-06-27 09:25:47 UTC
+--- src/slic3r/GUI/UnsavedChangesDialog.hpp.orig	2024-12-20 11:54:34 UTC
 +++ src/slic3r/GUI/UnsavedChangesDialog.hpp
 @@ -49,7 +49,7 @@ class ModelNode
      wxString            m_mod_color;

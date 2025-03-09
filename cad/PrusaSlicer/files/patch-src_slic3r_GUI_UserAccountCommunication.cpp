@@ -1,4 +1,4 @@
---- src/slic3r/GUI/UserAccountCommunication.cpp.orig	2024-09-18 13:39:04 UTC
+--- src/slic3r/GUI/UserAccountCommunication.cpp.orig	2024-12-20 11:54:34 UTC
 +++ src/slic3r/GUI/UserAccountCommunication.cpp
 @@ -13,6 +13,7 @@
  #include <boost/filesystem.hpp>
@@ -35,7 +35,7 @@
          load_refresh_token_linux(refresh_token);
  #endif
      }
-@@ -254,7 +255,7 @@ void UserAccountCommunication::set_username(const std:
+@@ -252,7 +253,7 @@ void UserAccountCommunication::set_username(const std:
              save_secret("tokens", m_session->get_shared_session_key(), tokens);
          }
          else {

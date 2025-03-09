@@ -1,4 +1,4 @@
---- src/slic3r/GUI/UnsavedChangesDialog.cpp.orig	2024-09-18 13:39:04 UTC
+--- src/slic3r/GUI/UnsavedChangesDialog.cpp.orig	2024-12-20 11:54:34 UTC
 +++ src/slic3r/GUI/UnsavedChangesDialog.cpp
 @@ -32,7 +32,7 @@ using boost::optional;
  

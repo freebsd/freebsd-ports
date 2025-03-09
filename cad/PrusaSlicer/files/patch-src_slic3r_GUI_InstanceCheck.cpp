@@ -1,4 +1,4 @@
---- src/slic3r/GUI/InstanceCheck.cpp.orig	2024-09-18 13:39:04 UTC
+--- src/slic3r/GUI/InstanceCheck.cpp.orig	2024-12-20 11:54:34 UTC
 +++ src/slic3r/GUI/InstanceCheck.cpp
 @@ -27,7 +27,7 @@
  #include <strsafe.h>

@@ -1,4 +1,4 @@
---- src/libslic3r/Triangulation.cpp.orig	2024-09-18 13:39:04 UTC
+--- src/libslic3r/Triangulation.cpp.orig	2024-12-20 11:54:34 UTC
 +++ src/libslic3r/Triangulation.cpp
 @@ -2,6 +2,9 @@
  ///|/

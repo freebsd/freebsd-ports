@@ -1,4 +1,4 @@
---- src/slic3r/Config/Snapshot.cpp.orig	2024-04-05 09:25:31 UTC
+--- src/slic3r/Config/Snapshot.cpp.orig	2024-12-20 11:54:34 UTC
 +++ src/slic3r/Config/Snapshot.cpp
 @@ -12,6 +12,7 @@
  #include <boost/property_tree/ini_parser.hpp>

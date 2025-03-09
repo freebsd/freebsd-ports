@@ -1,4 +1,4 @@
---- src/libslic3r/Platform.cpp.orig	2024-09-18 13:39:04 UTC
+--- src/libslic3r/Platform.cpp.orig	2024-12-20 11:54:34 UTC
 +++ src/libslic3r/Platform.cpp
 @@ -90,6 +90,10 @@ void detect_platform()
      BOOST_LOG_TRIVIAL(info) << "Platform: OpenBSD";

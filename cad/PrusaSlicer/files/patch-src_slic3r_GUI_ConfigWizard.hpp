@@ -1,6 +1,6 @@
---- src/slic3r/GUI/ConfigWizard.hpp.orig	2024-09-18 13:39:04 UTC
+--- src/slic3r/GUI/ConfigWizard.hpp.orig	2024-12-20 11:54:34 UTC
 +++ src/slic3r/GUI/ConfigWizard.hpp
-@@ -54,7 +54,7 @@ namespace DownloaderUtils {
+@@ -50,7 +50,7 @@ namespace DownloaderUtils {
          bool on_finish();
          static bool perform_download_register(const std::string& path);
          static bool perform_url_register();

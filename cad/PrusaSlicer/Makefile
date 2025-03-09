@@ -1,7 +1,6 @@
 PORTNAME=	PrusaSlicer
 DISTVERSIONPREFIX=version_
-DISTVERSION=	2.8.1
-PORTREVISION=	7
+DISTVERSION=	2.9.0
 CATEGORIES=	cad
 DIST_SUBDIR=	PrusaSlicer
 
@@ -12,12 +11,13 @@ WWW=		https://www.prusa3d.com/prusaslicer/
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN=		fails to build with Boost>=1.87
+#BROKEN=		fails to build with Boost>=1.87
 
 BUILD_DEPENDS=	cereal>=1.3.0.10:devel/cereal \
 		cgal>=5.0.2:math/cgal \
 		opencascade>=7.7.0:cad/opencascade \
-		libbgcode>=0.2.0_1:cad/libbgcode
+		libbgcode>=0.2.0_1:cad/libbgcode \
+		hidapi>=0.14.0:comms/hidapi
 
 LIB_DEPENDS+=	libbgcode_convert.so:cad/libbgcode \
 		libbgcode_binarize.so:cad/libbgcode \
@@ -64,5 +64,7 @@ CMAKE_ARGS+=	-DwxWidgets_CONFIG_EXECUTABLE="${WX_CONFIG}" \
 		-DSLIC3R_BUILD_TESTS=OFF
 
 PORTDATA=	*
-
+post-patch:
+	${MKDIR} ${WRKSRC}/bundled_deps/hidapi/libusb
+	${CP} ${FILESDIR}/hid.c ${WRKSRC}/bundled_deps/hidapi/libusb/hid.c
 .include <bsd.port.mk>

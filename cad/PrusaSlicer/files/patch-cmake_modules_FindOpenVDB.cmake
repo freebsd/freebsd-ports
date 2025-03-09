@@ -1,6 +1,6 @@
---- cmake/modules/FindOpenVDB.cmake.orig	2022-09-06 07:09:19 UTC
+--- cmake/modules/FindOpenVDB.cmake.orig	2025-02-14 18:26:40 UTC
 +++ cmake/modules/FindOpenVDB.cmake
-@@ -347,24 +347,24 @@ macro(just_fail msg)
+@@ -347,24 +347,24 @@ endmacro()
    return()
  endmacro()
  
@@ -40,7 +40,7 @@
  endif()
  find_package(TBB ${_quiet} ${_required} COMPONENTS tbb)
  find_package(ZLIB ${_quiet} ${_required})
-@@ -451,7 +451,7 @@ if(OpenVDB_USES_LOG4CPLUS)
+@@ -451,7 +451,7 @@ if(OpenVDB_USES_ILM)
  endif()
  
  if(OpenVDB_USES_ILM)
@@ -49,7 +49,7 @@
  endif()
  
  if(OpenVDB_USES_EXR)
-@@ -463,7 +463,7 @@ if(UNIX)
+@@ -463,7 +463,7 @@ endif()
  endif()
  
  # Set deps. Note that the order here is important. If we're building against
@@ -58,7 +58,7 @@
  # users chosen namespaced headers are correctly prioritized. Otherwise other
  # include paths from shared installs (including houdini) may pull in the wrong
  # headers
-@@ -471,7 +471,7 @@ endif()
+@@ -471,7 +471,7 @@ set(_OPENVDB_VISIBLE_DEPENDENCIES
  set(_OPENVDB_VISIBLE_DEPENDENCIES
    Boost::iostreams
    Boost::system
@@ -67,7 +67,7 @@
  )
  
  set(_OPENVDB_DEFINITIONS)
-@@ -481,10 +481,10 @@ endif()
+@@ -481,10 +481,10 @@ if(OpenVDB_USES_EXR)
  
  if(OpenVDB_USES_EXR)
    list(APPEND _OPENVDB_VISIBLE_DEPENDENCIES

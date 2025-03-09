@@ -1,4 +1,4 @@
---- src/slic3r/GUI/WipeTowerDialog.cpp.orig	2024-10-15 09:12:21 UTC
+--- src/slic3r/GUI/WipeTowerDialog.cpp.orig	2024-12-20 11:54:34 UTC
 +++ src/slic3r/GUI/WipeTowerDialog.cpp
 @@ -379,7 +379,7 @@ WipingPanel::WipingPanel(wxWindow* parent, const std::
                                                int xpos = m_gridsizer_advanced->GetPosition().x;

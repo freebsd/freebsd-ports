@@ -1,4 +1,4 @@
---- src/slic3r/GUI/OpenGLManager.cpp.orig	2024-06-27 09:25:47 UTC
+--- src/slic3r/GUI/OpenGLManager.cpp.orig	2024-12-20 11:54:34 UTC
 +++ src/slic3r/GUI/OpenGLManager.cpp
 @@ -346,7 +346,7 @@ bool OpenGLManager::init_gl()
      if (!m_gl_initialized) {

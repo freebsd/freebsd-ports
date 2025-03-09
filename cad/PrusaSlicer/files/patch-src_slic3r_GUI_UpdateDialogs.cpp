@@ -1,4 +1,4 @@
---- src/slic3r/GUI/UpdateDialogs.cpp.orig	2024-09-18 13:39:04 UTC
+--- src/slic3r/GUI/UpdateDialogs.cpp.orig	2024-12-20 11:54:34 UTC
 +++ src/slic3r/GUI/UpdateDialogs.cpp
 @@ -153,7 +153,7 @@ AppUpdateDownloadDialog::AppUpdateDownloadDialog( cons
  	versions->Add(new wxStaticText(this, wxID_ANY, ver_online.to_string()));

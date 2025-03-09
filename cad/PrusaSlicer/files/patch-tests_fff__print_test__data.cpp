@@ -1,7 +1,7 @@
---- tests/fff_print/test_data.cpp.orig	2023-07-25 13:20:52 UTC
+--- tests/fff_print/test_data.cpp.orig	2024-12-20 11:54:34 UTC
 +++ tests/fff_print/test_data.cpp
-@@ -8,6 +8,7 @@
- #include "libslic3r/Format/STL.hpp"
+@@ -10,6 +10,7 @@
+ #include <arrange-wrapper/ModelArrange.hpp>
  
  #include <cstdlib>
 +#include <fstream>

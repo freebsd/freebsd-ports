@@ -1,4 +1,4 @@
---- src/occt_wrapper/CMakeLists.txt.orig	2024-09-18 13:39:04 UTC
+--- src/occt_wrapper/CMakeLists.txt.orig	2024-12-20 11:54:34 UTC
 +++ src/occt_wrapper/CMakeLists.txt
 @@ -19,14 +19,13 @@ generate_export_header(OCCTWrapper)
  

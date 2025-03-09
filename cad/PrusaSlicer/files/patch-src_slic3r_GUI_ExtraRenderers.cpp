@@ -1,4 +1,4 @@
---- src/slic3r/GUI/ExtraRenderers.cpp.orig	2023-12-12 14:21:21 UTC
+--- src/slic3r/GUI/ExtraRenderers.cpp.orig	2024-12-20 11:54:34 UTC
 +++ src/slic3r/GUI/ExtraRenderers.cpp
 @@ -343,7 +343,7 @@ wxWindow* BitmapChoiceRenderer::CreateEditorCtrl(wxWin
      c_editor->SetSelection(atoi(data.GetText().c_str()));

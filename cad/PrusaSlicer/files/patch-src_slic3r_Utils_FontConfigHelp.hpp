@@ -1,4 +1,4 @@
---- src/slic3r/Utils/FontConfigHelp.hpp.orig	2024-09-18 13:39:04 UTC
+--- src/slic3r/Utils/FontConfigHelp.hpp.orig	2024-12-20 11:54:34 UTC
 +++ src/slic3r/Utils/FontConfigHelp.hpp
 @@ -6,7 +6,7 @@
  #define slic3r_FontConfigHelp_hpp_

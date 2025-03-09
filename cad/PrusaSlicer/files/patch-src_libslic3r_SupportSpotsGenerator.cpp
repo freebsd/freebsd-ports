@@ -1,4 +1,4 @@
---- src/libslic3r/SupportSpotsGenerator.cpp.orig	2024-09-18 13:39:04 UTC
+--- src/libslic3r/SupportSpotsGenerator.cpp.orig	2024-12-20 11:54:34 UTC
 +++ src/libslic3r/SupportSpotsGenerator.cpp
 @@ -1062,7 +1062,7 @@ SliceMappings update_active_object_parts(const Layer  
                  }

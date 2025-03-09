@@ -1,4 +1,4 @@
---- bundled_deps/avrdude/avrdude/main.c.orig	2024-09-18 13:39:04 UTC
+--- bundled_deps/avrdude/avrdude/main.c.orig	2024-12-20 11:54:34 UTC
 +++ bundled_deps/avrdude/avrdude/main.c
 @@ -806,7 +806,7 @@ int avrdude_main(int argc, char * argv [])
    avrdude_message(MSG_NOTICE, "\n%s: Version %s, compiled on %s at %s\n"

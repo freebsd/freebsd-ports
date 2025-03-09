@@ -1,4 +1,4 @@
---- src/slic3r/GUI/Field.cpp.orig	2024-09-18 13:39:04 UTC
+--- src/slic3r/GUI/Field.cpp.orig	2024-12-20 11:54:34 UTC
 +++ src/slic3r/GUI/Field.cpp
 @@ -222,7 +222,7 @@ static wxString na_value(bool for_spin_ctrl = false)
  

@@ -1,4 +1,4 @@
---- src/libslic3r/Format/STEP.cpp.orig	2024-04-05 18:42:53 UTC
+--- src/libslic3r/Format/STEP.cpp.orig	2024-12-20 11:54:34 UTC
 +++ src/libslic3r/Format/STEP.cpp
 @@ -39,7 +39,7 @@ LoadStepFn get_load_step_fn()
  #endif

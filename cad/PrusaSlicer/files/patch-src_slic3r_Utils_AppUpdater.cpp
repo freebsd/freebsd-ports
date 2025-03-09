@@ -1,6 +1,6 @@
---- src/slic3r/Utils/AppUpdater.cpp.orig	2024-10-15 09:13:05 UTC
+--- src/slic3r/Utils/AppUpdater.cpp.orig	2024-12-20 11:54:34 UTC
 +++ src/slic3r/Utils/AppUpdater.cpp
-@@ -156,7 +156,7 @@ AppUpdater::priv::priv() :
+@@ -157,7 +157,7 @@ AppUpdater::priv::priv() :
  
  AppUpdater::priv::priv() :
  	m_cancel (false)
