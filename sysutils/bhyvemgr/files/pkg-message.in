@@ -5,14 +5,16 @@ bhyvemgr was installed
 
 1) bhyvemgr config file is located at ~/.config/bhyvemgr
 
-2) It can be compiled with supports for gtk2, qt5 or qt6 graphic interfaces
+2) Log messages are saved to ~/.config/bhyvemgr/bhyvemgr.log file
 
-3) Some configurations are necessary for a better use of bhyvemgr. Take a look
-   at the following url:
+3) It can be compiled with supports for gtk2, qt5 or qt6 graphic interfaces
+
+4) For a better use of bhyvemgr, some settings must be applied to your system.
+   Take a look at the following url:
 
    https://github.com/alonsobsd/bhyvemgr/blob/main/README.md
 
-4) Enjoy it ;)
+5) Enjoy it ;)
 EOM
 }
 ]
