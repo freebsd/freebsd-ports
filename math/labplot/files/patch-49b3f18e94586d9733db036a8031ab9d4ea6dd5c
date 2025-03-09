@@ -1,0 +1,34 @@
+From 49b3f18e94586d9733db036a8031ab9d4ea6dd5c Mon Sep 17 00:00:00 2001
+From: Stefan Gerlach <stefan.gerlach@uni-konstanz.de>
+Date: Mon, 6 Jan 2025 15:59:30 +0100
+Subject: [PATCH] qxlsx: fix compilation
+
+---
+ src/backend/datasources/filters/XLSXFilter.cpp | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/src/backend/datasources/filters/XLSXFilter.cpp b/src/backend/datasources/filters/XLSXFilter.cpp
+index 931b373a57..86a5cccdb7 100644
+--- src/backend/datasources/filters/XLSXFilter.cpp
++++ src/backend/datasources/filters/XLSXFilter.cpp
+@@ -751,7 +751,7 @@ void XLSXFilterPrivate::parse(const QString& fileName, QTreeWidgetItem* parentIt
+ bool XLSXFilterPrivate::dataRangeCanBeExportedToMatrix(const QXlsx::CellRange& range) const {
+ 	for (int i = range.firstRow(); i <= range.lastRow(); ++i) {
+ 		for (int j = range.firstColumn(); j <= range.lastColumn(); ++j) {
+-			const auto* cell = m_document->cellAt(i, j);
++			const auto cell = m_document->cellAt(i, j);
+ 			if (cell && cell->cellType() != QXlsx::Cell::CellType::NumberType) {
+ 				if (cell->cellType() == QXlsx::Cell::CellType::CustomType) {
+ 					bool ok = false;
+@@ -786,7 +786,7 @@ QXlsx::Cell::CellType XLSXFilterPrivate::columnTypeInRange(const int column, con
+ 	bool numeric = false, datetime = false;
+ 	if (column >= range.firstColumn() && column <= range.lastColumn()) {
+ 		for (int row = range.firstRow(); row <= range.lastRow(); ++row) {
+-			const auto* cell = m_document->cellAt(row, column);
++			const auto cell = m_document->cellAt(row, column);
+ 			if (!cell)
+ 				continue;
+ 
+-- 
+GitLab
+
