@@ -1,4 +1,5 @@
 PORTNAME=	v4l_compat
+PORTREVISION=	6
 
 COMMENT=	Video4Linux IOCTL header files
 WWW=		https://linuxtv.org
@@ -26,6 +27,7 @@ BASE_HEADERS= \
 	linux/lirc.h \
 	linux/media.h \
 	linux/media-bus-format.h \
+	linux/uvcvideo.h \
 	linux/v4l2-common.h \
 	linux/v4l2-controls.h \
 	linux/v4l2-mediabus.h \
