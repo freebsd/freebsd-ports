@@ -12,6 +12,8 @@ LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/License.txt
 
 BROKEN=		fails to build with boost-1.85+
+DEPRECATED=	Broken for months and outdated
+EXPIRATION_DATE=2025-04-30
 
 LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
 		libOgreMain.so:graphics/ogre3d \
