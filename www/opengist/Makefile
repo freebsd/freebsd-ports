@@ -1,8 +1,8 @@
 PORTNAME=	opengist
-PORTVERSION=	1.8.4
+PORTVERSION=	1.9.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www textproc
-MASTER_SITES=	LOCAL/dch/:js
+MASTER_SITES=	LOCAL/fox/:js
 DISTFILES=	opengist-${DISTVERSION}-node_modules.tgz:js
 
 MAINTAINER=	fox@FreeBSD.org
