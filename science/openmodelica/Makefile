@@ -1,9 +1,11 @@
 PORTNAME=	openmodelica
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.24.4
-PORTREVISION=	1
+DISTVERSION=	1.24.5
 CATEGORIES=	science cad java
 DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
+
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES=	6f8126fcd491d8c4d8b8c643bf0b6abd3a1f23f5.patch:-p1 # https://github.com/OpenModelica/OpenModelica/pull/13683
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Modelica-based modeling and simulation environment
@@ -15,7 +17,6 @@ LICENSE_NAME=	Public license for OpenModelica
 LICENSE_TEXT=	See https://github.com/OpenModelica/OpenModelica/blob/master/OSMC-License.txt
 LICENSE_PERMS=	auto-accept dist-mirror dist-sell pkg-mirror pkg-sell
 
-BROKEN=		fails to build with Boost>=1.87, see https://github.com/OpenModelica/OpenModelica/issues/13682
 BROKEN_armv7=	link fails: ld: cannot find -lquadmath: No such file or directory
 BROKEN_i386=	compilation fails: /wrkdirs/usr/ports/science/openmodelica/work/OpenModelica-1.20.0/OMCompiler/3rdParty/libffi/src/x86/sysv.S:841:1: error: changed section flags for .eh_frame, expected: 0x2
 
@@ -59,7 +60,7 @@ GH_TUPLE=	\
 		OpenModelica:OMSens_Qt:bab329a:OpenModelica_OMSens_Qt/OMSens_Qt \
 		OpenModelica:OpenModelica-common:08a01802db5ba5edb540383c46718b89ff229ef2:OpenModelica_OpenModelica_common/OMOptim/common \
 		OpenModelica:OpenModelica-common:08a01802db5ba5edb540383c46718b89ff229ef2:OpenModelica_OpenModelica_common/OMSens_Qt/common
-GH_TUPLE+=	OpenModelica:OMBootstrapping:c289e97c41d00939a4a69fe504961b47283a6d8e:bootstrapping/OMCompiler/Compiler/boot/bomc # downloaded by cmake
+GH_TUPLE+=	OpenModelica:OMBootstrapping:91938f0acbdc6e9ba91114376e3640ca6147b579:bootstrapping/OMCompiler/Compiler/boot/bomc # downloaded by cmake
 
 # this should change make program everywhere, but it doesn't,
 # hence the patches in OMCompiler/Compiler/runtime/CMakeLists.txt, OMEdit/OMEditLIB/Simulation/SimulationOutputWidget.cpp
