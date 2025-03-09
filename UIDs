@@ -312,7 +312,7 @@ readarr:*:362:362::0:0:Readarr Daemon:/nonexistent:/usr/sbin/nologin
 victoria-logs:*:363:363::0:0:VictoriaLogs Daemon:/nonexistent:/usr/sbin/nologin
 elog:*:364:364::0:0:Elog server:/nonexistent:/usr/sbin/nologin
 gotify:*:365:365::0:0:Gotify User:/var/db/gotify:/usr/sbin/nologin
-# free: 366
+opengist:*:366:366::0:0:OpenGist User:/var/db/opengist:/usr/sbin/nologin
 # free: 367
 # free: 368
 # free: 369

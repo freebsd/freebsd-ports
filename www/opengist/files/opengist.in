@@ -4,15 +4,33 @@
 # REQUIRE: LOGIN NETWORKING
 # KEYWORD: shutdown
 #
+# Add the following lines to /etc/rc.conf to run opengist:
+#
+# opengist_enable (bool):			Set it to "YES" to enable opengist server.
+# 						Default is "NO".
+# opengist_home (str):				Set the home directory for opengist server.
+#						Default is "%%WWWDIR%%".
+# opengist_user (str):				Set the user for running opengist server.
+#						Default is "opengist".
+# opengist_config_file (str):			Set config file location for opengist server.
+#						Default is "%%PREFIX%%/etc/${name}/config.yml".
+# opengist_syslog_output_enable (bool):		Set it to "YES" for enabling output to syslogd(8)
+#						Default is "NO"
+# opengist_syslog_output_priority (str):	Set logging priority.
+#						Default is "info"
+# opengist_syslog_output_facility (str):	Set logging facility
+#						Default is "daemon"
 
 . /etc/rc.subr
 
 name=opengist
 rcvar=opengist_enable
 
-load_rc_config $name
+load_rc_config ${name}
 
 : ${opengist_enable:="NO"}
+: ${opengist_user:="opengist"}
+: ${opengist_files:="/var/db/opengist/"}
 : ${opengist_home:="%%WWWDIR%%"}
 : ${opengist_config_file:="%%PREFIX%%/etc/${name}/config.yml"}
 : ${opengist_syslog_output_enable:="NO"}
@@ -39,18 +57,18 @@ start_precmd="${name}_precmd"
 
 opengist_precmd()
 {
-	if [ ! -f ${opengist_config_file} ]
-	then
+	if [ ! -f ${opengist_config_file} ]; then
 		echo ${opengist_config_file} missing.
 		return 1
 	fi
 }
 
 opengist_start() {
-        /usr/sbin/daemon -f ${opengist_syslog_output_flags} -p ${pidfile} \
-                /usr/bin/env -i \
-                "PATH=%%PREFIX%%/bin:${PATH}" \
-                ${procname} -c ${opengist_config_file}
+	echo "Starting opengist."
+	/usr/sbin/daemon -f ${opengist_syslog_output_flags} -p ${pidfile} \
+		/usr/bin/env -i \
+		"PATH=%%PREFIX%%/bin:${PATH}" \
+		${procname} -c ${opengist_config_file}
 }
 
 cd ${opengist_home}

@@ -1,6 +1,5 @@
 bin/opengist
-%%ETCDIR%%/config.yml.sample
-etc/rc.d/opengist
+@sample(opengist,opengist,640) %%ETCDIR%%/config.yml.sample
 %%WWWDIR%%/assets/admin-f49fd6c0.js
 %%WWWDIR%%/assets/default-f34219fc.png
 %%WWWDIR%%/assets/editor-dd91ca8c.js
@@ -13,5 +12,5 @@ etc/rc.d/opengist
 %%WWWDIR%%/assets/opengist-85b89b9c.svg
 %%WWWDIR%%/assets/webauthn-da047c6d.js
 %%WWWDIR%%/manifest.json
-@dir /var/db/opengist
-@dir /var/run/opengist
+@dir(opengist,opengist,640) /var/db/opengist
+@dir(opengist,opengist,600) /var/run/opengist
