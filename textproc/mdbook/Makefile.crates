@@ -77,6 +77,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		hashbrown-0.15.2 \
 		headers-0.3.9 \
 		headers-core-0.2.0 \
+		hex-0.4.3 \
 		html5ever-0.26.0 \
 		html5ever-0.27.0 \
 		http-0.2.12 \
