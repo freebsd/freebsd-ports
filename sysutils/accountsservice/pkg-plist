@@ -90,6 +90,8 @@ share/locale/zh_CN/LC_MESSAGES/accounts-service.mo
 share/locale/zh_HK/LC_MESSAGES/accounts-service.mo
 share/locale/zh_TW/LC_MESSAGES/accounts-service.mo
 share/polkit-1/actions/org.freedesktop.accounts.policy
+%%VAPI%%share/vala/vapi/accountsservice.deps
+%%VAPI%%share/vala/vapi/accountsservice.vapi
 @dir(,,0775) /var/db/AccountsService/icons
 @dir(,,0700) /var/db/AccountsService/users
 @dir /var/db/AccountsService

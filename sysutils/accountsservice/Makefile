@@ -1,6 +1,6 @@
 PORTNAME=	accountsservice
 PORTVERSION=	23.13.9
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils devel
 MASTER_SITES=	https://www.freedesktop.org/software/${PORTNAME}/
 
@@ -23,12 +23,18 @@ MESON_ARGS=	-Dconsolekit=true \
 		-Dgdmconffile=${LOCALBASE}/etc/gdm/custom.conf \
 		-Dlightdmconffile=${LOCALBASE}/etc/lightdm/lightdm.conf \
 		-Dsystemdsystemunitdir=no \
-		-Dvapi=false \
 		-Dtests=false
 
 USE_GITLAB=	yes
 GL_SITE=	https://gitlab.freedesktop.org
 GL_ACCOUNT=	arrowd
 GL_TAGNAME=	665c4390164f47283f234970087105e52245ae67
+
+OPTIONS_DEFINE=		VAPI
+OPTIONS_DEFAULT=	VAPI
+OPTIONS_SUB=		yes
+
+VAPI_USES=		vala:build
+VAPI_MESON_TRUE=	vapi
 
 .include <bsd.port.mk>
