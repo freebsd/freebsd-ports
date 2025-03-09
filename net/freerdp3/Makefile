@@ -47,7 +47,7 @@ OPTIONS_DEFINE_aarch64=		SIMD
 OPTIONS_DEFINE_amd64=		SIMD
 OPTIONS_DEFINE_armv7=		SIMD
 OPTIONS_DEFINE_i386=		SIMD
-OPTIONS_DEFAULT=		AAD CUPS GSSAPI_HEIMDAL ICU JSON_C \
+OPTIONS_DEFAULT=		AAD CUPS FFMPEG GSSAPI_HEIMDAL ICU JSON_C \
 				KEYBOARD_LAYOUT MANPAGES RDPECAM SDL2 SDL3 \
 				SWSCALE TIMEZONE_FILE WAYLAND WEBKIT X11
 OPTIONS_DEFAULT_aarch64=	SIMD
@@ -74,7 +74,7 @@ KEYBOARD_LAYOUT_DESC=	Use keyboard definitions from JSON file
 OPENH264_DESC=		H.264 video codec support via OpenH264
 PCSC_DESC=		Smart card support (smart card device redirection)
 PKCS11_DESC=		Use security/pkcs11-helper
-RDPECAM_DESC=		RDP webcam redirection
+RDPECAM_DESC=		RDP webcam redirection (require FFMPEG and SWSCALE)
 REQUIRE_JSON_DESC=	Options that require JSON
 SDL2_DESC=		Build FreeRDP SDL 2 client
 SDL3_DESC=		Build FreeRDP SDL 3 client
@@ -162,6 +162,7 @@ PNG_CMAKE_BOOL=		WINPR_UTILS_IMAGE_PNG
 PULSEAUDIO_LIB_DEPENDS=	libpulse.so:audio/pulseaudio
 PULSEAUDIO_CMAKE_BOOL=	WITH_PULSE
 
+RDPECAM_IMPLIES=	FFMPEG SWSCALE
 RDPECAM_BUILD_DEPENDS=	${LOCALBASE}/include/linux/uvcvideo.h:multimedia/v4l_compat \
 			${LOCALBASE}/include/linux/videodev2.h:multimedia/v4l_compat
 RDPECAM_LIB_DEPENDS=	libv4l2.so:multimedia/libv4l \
