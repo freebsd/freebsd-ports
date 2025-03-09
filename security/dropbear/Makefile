@@ -1,5 +1,5 @@
 PORTNAME=	dropbear
-PORTVERSION=	2024.86
+PORTVERSION=	2025.87
 CATEGORIES=	security
 MASTER_SITES=	https://matt.ucc.asn.au/dropbear/releases/
 
@@ -20,12 +20,13 @@ ALL_TARGET=	all scp
 
 OPTIONS_DEFINE=		SMALL_CODE PORTS_LIBTOM STATIC X11FWD
 OPTIONS_DEFAULT=	AES128 AES256 CURVE25519 ECDSA ED25519 GCM \
-			GROUP14_SHA256 GROUP16 PORTS_LIBTOM RSA SHA2_256
+			GROUP14_SHA256 GROUP16 PORTS_LIBTOM RSA SHA2_256 \
+			MLKEM768 SNTRUP761
 OPTIONS_MULTI=		ENC KEY KEX MAC MODE
 OPTIONS_MULTI_ENC=	3DES AES128 AES256 CHACHA20POLY1305
 OPTIONS_MULTI_KEY=	DSS ECDSA ED25519 RSA
 OPTIONS_MULTI_KEX=	CURVE25519 ECDH GROUP1 GROUP14_SHA1 GROUP14_SHA256 \
-			GROUP16
+			GROUP16 MLKEM768 SNTRUP761
 OPTIONS_MULTI_MAC=	MD5 RSA_SHA1 SHA1 SHA1_96 SHA2_256 SHA2_512
 OPTIONS_MULTI_MODE=	CBC CTR GCM
 
@@ -46,6 +47,8 @@ GROUP14_SHA256_DESC=	Enable Group14 Diffie-Helman with SHA256
 GROUP16_DESC=		Enable Group16 Diffie-Hellman
 GROUP1_DESC=		Enable Group1 Diffie-Hellman (insecure)
 MD5_DESC=		Enable MD5 MAC (broken)
+MLKEM768_DESC=		Enable mlkem768 key exchange algorithm (recommended)
+SNTRUP761_DESC=		Enable sntrup761 key exchange algorithm (recommended)
 PORTS_LIBTOM_DESC=	Use libtomcrypt/libtommath in ports tree
 RSA_DESC=		Enable RSA public key support
 RSA_SHA1_DESC=		Enable RSA SHA1 MAC (insecure)
@@ -72,7 +75,7 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libtomcrypt.a:security/libtomcrypt \
 		${LOCALBASE}/lib/libtommath.a:math/libtommath
 .endif
 
-.if ${PORT_OPTIONS:MPORTS_LIBTOM} && ! ${PORT_OPTIONS:MSTATIC}
+.if ${PORT_OPTIONS:MPORTS_LIBTOM} && !${PORT_OPTIONS:MSTATIC}
 LIB_DEPENDS=	libtomcrypt.so:security/libtomcrypt \
 		libtommath.so:math/libtommath
 .endif
@@ -141,6 +144,9 @@ post-patch-ED25519-off:
 post-patch-MD5-on:
 	@${ECHO} "#define DROPBEAR_MD5_HMAC 1" >> ${WRKSRC}/localoptions.h
 
+post-patch-MLKEM768-off:
+	@${ECHO} "#define DROPBEAR_MLKEM768 0" >> ${WRKSRC}/localoptions.h
+
 post-patch-SHA1-off:
 	@${ECHO} "#define DROPBEAR_SHA1_HMAC 0" >> ${WRKSRC}/localoptions.h
 
@@ -152,6 +158,9 @@ post-patch-SHA2_256-off:
 
 post-patch-SHA2_512-on:
 	@${ECHO} "#define DROPBEAR_SHA2_512_HMAC 1" >> ${WRKSRC}/localoptions.h
+
+post-patch-SNTRUP761-off:
+	@${ECHO} "#define DROPBEAR_SNTRUP761 0" >> ${WRKSRC}/localoptions.h
 
 post-patch-X11FWD-on:
 	@${ECHO} "#define DROPBEAR_X11FWD 1" >> ${WRKSRC}/localoptions.h
