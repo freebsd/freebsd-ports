@@ -11,6 +11,8 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN=		fails to build with Boost>=1.87
+DEPRECATED=	Project got archived, broken
+EXPIRATION_DATE=2025-05-08
 
 LIB_DEPENDS=	libboost_filesystem.so:devel/boost-libs \
 		libleatherman_json_container.so:devel/leatherman

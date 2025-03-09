@@ -10,6 +10,9 @@ WWW=		https://github.com/puppetlabs/pxp-agent
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Project got archived, dependencies are broken
+EXPIRATION_DATE=2025-05-08
+
 LIB_DEPENDS=	liblibcpp-pcp-client.so:net/cpp-pcp-client \
 		libboost_thread.so:devel/boost-libs \
 		liblibcpp-hocon.so:devel/cpp-hocon \
