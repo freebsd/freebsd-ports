@@ -65,6 +65,7 @@
     SUBDIR += hidapi
     SUBDIR += ibp
     SUBDIR += iceoryx
+    SUBDIR += iio-sensor-proxy
     SUBDIR += inspectrum
     SUBDIR += iwmbt-firmware
     SUBDIR += java-simple-serial-connector
