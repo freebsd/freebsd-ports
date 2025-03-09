@@ -1,10 +1,10 @@
 PORTNAME=	direnv
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.35.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils
 
-MAINTAINER=	bofh@FreeBSD.org
+MAINTAINER=	bdrewery@FreeBSD.org
 COMMENT=	Environment variable manager for your shell
 WWW=		https://direnv.net/
 
@@ -17,15 +17,15 @@ RUN_DEPENDS=	bash:shells/bash
 USES=		go:modules
 GO_MODULE=	github.com/direnv/direnv/v2
 
+MAN1PAGES=	direnv direnv-fetchurl direnv-stdlib direnv.toml
 PLIST_FILES=	bin/direnv \
-		share/man/man1/direnv-stdlib.1.gz \
-		share/man/man1/direnv.1.gz
+		${MAN1PAGES:C,^,share/man/man1/,:C,$,.1.gz,}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKDIR}/bin/direnv \
 		${STAGEDIR}${PREFIX}/bin/
-	${INSTALL_MAN} ${WRKSRC}/man/direnv.1 ${STAGEDIR}${PREFIX}/share/man/man1
-	${INSTALL_MAN} ${WRKSRC}/man/direnv-stdlib.1 \
-		${STAGEDIR}${PREFIX}/share/man/man1
+.for man in ${MAN1PAGES}
+	${INSTALL_MAN} ${WRKSRC}/man/${man}.1 ${STAGEDIR}${PREFIX}/share/man/man1
+.endfor
 
 .include <bsd.port.mk>
