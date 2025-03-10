@@ -20,7 +20,7 @@ BUILD_DEPENDS=	cmake:devel/cmake-core \
 		rapidfuzz-cpp>0:devel/rapidfuzz-cpp \
 		taskflow>0:devel/taskflow \
 		${PYNUMPY} \
-		${PYTHON_PKGNAMEPREFIX}rapidfuzz-capi==1.0.5:devel/py-rapidfuzz-capi@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}rapidfuzz-capi>=1.0.5:devel/py-rapidfuzz-capi@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}scikit-build-core>=0.10.7:devel/py-scikit-build-core@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}scikit-build>=0.13.0:devel/py-scikit-build@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
