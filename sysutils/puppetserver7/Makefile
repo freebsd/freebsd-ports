@@ -12,6 +12,8 @@ LICENSE=	APACHE20
 
 ONLY_FOR_ARCHS=	aarch64 amd64
 ONLY_FOR_ARCHS_REASON=Bundled JNI only support some architectures
+DEPRECATED=	Reached EOL
+EXPIRATION_DATE=2025-05-09
 
 RUN_DEPENDS=	bash>=0:shells/bash \
 		puppet7>=0:sysutils/puppet7 \
