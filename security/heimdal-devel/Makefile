@@ -10,6 +10,9 @@ MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Popular BSD-licensed implementation of Kerberos 5
 WWW=		https://www.h5l.org/
 
+DEPRECATED=	Upstream commits are incompatible
+EXPIRATION_DATE=2025-03-31
+
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
