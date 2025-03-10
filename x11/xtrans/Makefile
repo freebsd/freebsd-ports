@@ -1,5 +1,5 @@
 PORTNAME=	xtrans
-PORTVERSION=	1.4.0
+PORTVERSION=	1.6.0
 PORTREVISION=	1
 CATEGORIES=	x11
 
@@ -11,7 +11,7 @@ COMMENT=	Abstract network code for X
 
 LICENSE=	MIT
 
-USES=		xorg-cat:lib
+USES=		tar:xz xorg-cat:lib
 
 CONFIGURE_ARGS+=--disable-docs --without-xmlto
 NO_ARCH=	yes
