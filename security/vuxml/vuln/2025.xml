@@ -1,3 +1,37 @@
+  <vuln vid="a86f9189-fdd9-11ef-91ff-b42e991fc52e">
+    <topic>libreoffice -- Macro URL arbitrary script execution</topic>
+    <affects>
+      <package>
+	<name>libreoffice</name>
+	<range><ge>24.8</ge><lt>24.8.5</lt></range>
+	<range><ge>25.2</ge><lt>25.2.1</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>security@documentfoundation.org reports:</p>
+	<blockquote cite="https://www.libreoffice.org/about-us/security/advisories/cve-2025-1080">
+	  <p>LibreOffice supports Office URI Schemes to enable browser integration
+	of LibreOffice with MS SharePoint server.  An additional scheme
+	&apos;vnd.libreoffice.command&apos; specific to LibreOffice was
+	added.  In the affected versions of LibreOffice a link in a browser
+	using that scheme could be constructed with an embedded inner URL
+	that when passed to LibreOffice could call internal macros with
+	arbitrary arguments.  This issue affects LibreOffice: from 24.8
+	before &lt; 24.8.5, from 25.2 before &lt; 25.2.1.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-1080</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2025-1080</url>
+    </references>
+    <dates>
+      <discovery>2025-03-04</discovery>
+      <entry>2025-03-10</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="2ec7816d-fdb7-11ef-91ff-b42e991fc52e">
     <topic>vim -- Improper Input Validation in Vim</topic>
     <affects>
