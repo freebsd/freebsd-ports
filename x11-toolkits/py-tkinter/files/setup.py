@@ -11,10 +11,9 @@ try:
     from distutils.command.install import install
     from distutils.core import setup, Extension
 except:
-    raise SystemExit, "Distutils problem"
+    raise SystemExit("Distutils problem")
 
-install.sub_commands = filter(lambda (cmd, avl): 'egg' not in cmd,
-                              install.sub_commands)
+install.sub_commands = [x for x in install.sub_commands if 'egg' not in x[0]]
 
 tkversion = "%%TK_VER%%"
 prefix = sysconfig.PREFIX
@@ -26,8 +25,8 @@ inc_dirs = [prefix + "/include",
             x11base + "/include"]
 lib_dirs = [prefix + "/lib", x11base + "/lib"]
 # use string.replace() for the benefit of Python 1.5 users
-libs = ["tcl" + string.replace(tkversion, ".", ""),
-        "tk" + string.replace(tkversion, ".", ""),
+libs = ["tcl" + tkversion.replace(".", ""),
+        "tk" + tkversion.replace(".", ""),
         "X11"]
 
 setup(name = "Tkinter",

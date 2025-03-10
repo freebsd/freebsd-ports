@@ -1,6 +1,6 @@
 PORTNAME=	tkinter
 DISTVERSION=	${PYTHON_DISTVERSION}
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	x11-toolkits python
 MASTER_SITES=	PYTHON/ftp/python/${DISTVERSION}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,7 +13,7 @@ LICENSE=	PSFL
 
 PORTSCOUT=	ignore:1
 
-USES=		compiler:c11 python:2.7+ tar:xz tk
+USES=		compiler:c11 python tar:xz tk
 USE_PYTHON=	distutils autoplist allflavors
 
 DIST_SUBDIR=	python
@@ -25,10 +25,7 @@ PYDISTUTILS_INSTALLARGS+=	--install-lib ${PYTHON_LIBDIR}/lib-dynload
 .include <bsd.port.pre.mk>
 
 post-extract:
-.if ${PYTHON_REL} < 30000
 	@${SED} -e "s|%%TK_VER%%|${TK_VER}|" ${FILESDIR}/setup.py > ${WRKSRC}/setup.py
-.else
-	@${SED} -e "s|%%TK_VER%%|${TK_VER}|" ${FILESDIR}/setup3.py > ${WRKSRC}/setup.py
 .endif
 
 post-install:
