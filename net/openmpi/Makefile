@@ -1,5 +1,5 @@
 PORTNAME=	openmpi
-DISTVERSION=	5.0.6
+DISTVERSION=	5.0.7
 CATEGORIES=	net parallel
 MASTER_SITES=	https://download.open-mpi.org/release/open-mpi/v${PORTVERSION:R}/
 
@@ -36,6 +36,7 @@ CONFIGURE_ARGS+=	--program-prefix= \
 			--without-ofi \
 			--enable-mpi-fortran=usempif08 \
 			--with-libevent=external \
+			--with-pmix=internal \
 			--enable-mca-no-build=verbs,btl_openib,oob_ud \
 			--with-wrapper-ldflags=-Wl,-rpath=-Wl,-rpath=${LOCALBASE}/lib/gcc${_GCC_VER}
 TEST_TARGET=		check

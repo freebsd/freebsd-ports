@@ -109,8 +109,6 @@ libdata/pkgconfig/pmix.pc
 %%MPIDIR%%/include/pmix/src/mca/pcompress/pcompress.h
 %%MPIDIR%%/include/pmix/src/mca/pdl/base/base.h
 %%MPIDIR%%/include/pmix/src/mca/pdl/pdl.h
-%%MPIDIR%%/include/pmix/src/mca/pgpu/base/base.h
-%%MPIDIR%%/include/pmix/src/mca/pgpu/pgpu.h
 %%MPIDIR%%/include/pmix/src/mca/pif/base/base.h
 %%MPIDIR%%/include/pmix/src/mca/pif/pif.h
 %%MPIDIR%%/include/pmix/src/mca/pinstalldirs/base/base.h
@@ -125,8 +123,6 @@ libdata/pkgconfig/pmix.pc
 %%MPIDIR%%/include/pmix/src/mca/preg/base/base.h
 %%MPIDIR%%/include/pmix/src/mca/preg/preg.h
 %%MPIDIR%%/include/pmix/src/mca/preg/preg_types.h
-%%MPIDIR%%/include/pmix/src/mca/prm/base/base.h
-%%MPIDIR%%/include/pmix/src/mca/prm/prm.h
 %%MPIDIR%%/include/pmix/src/mca/psec/base/base.h
 %%MPIDIR%%/include/pmix/src/mca/psec/psec.h
 %%MPIDIR%%/include/pmix/src/mca/psensor/base/base.h
@@ -135,8 +131,6 @@ libdata/pkgconfig/pmix.pc
 %%MPIDIR%%/include/pmix/src/mca/psquash/psquash.h
 %%MPIDIR%%/include/pmix/src/mca/pstat/base/base.h
 %%MPIDIR%%/include/pmix/src/mca/pstat/pstat.h
-%%MPIDIR%%/include/pmix/src/mca/pstrg/base/base.h
-%%MPIDIR%%/include/pmix/src/mca/pstrg/pstrg.h
 %%MPIDIR%%/include/pmix/src/mca/ptl/base/base.h
 %%MPIDIR%%/include/pmix/src/mca/ptl/base/ptl_base_handshake.h
 %%MPIDIR%%/include/pmix/src/mca/ptl/ptl.h
@@ -233,7 +227,7 @@ libdata/pkgconfig/pmix.pc
 %%MPIDIR%%/lib/libmpi.la
 %%MPIDIR%%/lib/libmpi.so
 %%MPIDIR%%/lib/libmpi.so.40
-%%MPIDIR%%/lib/libmpi.so.40.40.6
+%%MPIDIR%%/lib/libmpi.so.40.40.7
 %%MPIDIR%%/lib/libmpi_mpifh.la
 %%MPIDIR%%/lib/libmpi_mpifh.so
 %%MPIDIR%%/lib/libmpi_mpifh.so.40
@@ -253,11 +247,11 @@ libdata/pkgconfig/pmix.pc
 %%MPIDIR%%/lib/libpmix.la
 %%MPIDIR%%/lib/libpmix.so
 %%MPIDIR%%/lib/libpmix.so.2
-%%MPIDIR%%/lib/libpmix.so.2.13.4
+%%MPIDIR%%/lib/libpmix.so.2.13.5
 %%MPIDIR%%/lib/libprrte.la
 %%MPIDIR%%/lib/libprrte.so
 %%MPIDIR%%/lib/libprrte.so.3
-%%MPIDIR%%/lib/libprrte.so.3.0.7
+%%MPIDIR%%/lib/libprrte.so.3.0.8
 %%MPIDIR%%/lib/mpi.mod
 %%MPIDIR%%/lib/mpi_ext.mod
 %%MPIDIR%%/lib/mpi_f08.mod
@@ -271,8 +265,6 @@ libdata/pkgconfig/pmix.pc
 %%MPIDIR%%/lib/openmpi/libompi_dbg_msgq.so
 %%MPIDIR%%/lib/pmix/pmix_mca_pcompress_zlib.la
 %%MPIDIR%%/lib/pmix/pmix_mca_pcompress_zlib.so
-%%MPIDIR%%/lib/pmix/pmix_mca_prm_default.la
-%%MPIDIR%%/lib/pmix/pmix_mca_prm_default.so
 %%SLURM%%%%MPIDIR%%/lib/pmix/pmix_mca_prm_slurm.la
 %%SLURM%%%%MPIDIR%%/lib/pmix/pmix_mca_prm_slurm.so
 %%MPIDIR%%/lib/pmpi_f08_interfaces.mod
@@ -836,7 +828,6 @@ libdata/pkgconfig/pmix.pc
 %%MPIDIR%%/share/pmix/help-pmixcc.txt
 %%MPIDIR%%/share/pmix/help-pps.txt
 %%MPIDIR%%/share/pmix/help-pquery.txt
-%%MPIDIR%%/share/pmix/help-prm.txt
 %%MPIDIR%%/share/pmix/help-ptl-base.txt
 %%MPIDIR%%/share/pmix/pmix-valgrind.supp
 %%MPIDIR%%/share/pmix/pmixcc-wrapper-data.txt
