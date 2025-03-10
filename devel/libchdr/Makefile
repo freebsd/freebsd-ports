@@ -1,5 +1,5 @@
 PORTNAME=	libchdr
-DISTVERSION=	g20241111
+DISTVERSION=	g20241211
 CATEGORIES=	devel
 
 MAINTAINER=	bsdcode@disroot.org
@@ -11,14 +11,17 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 LIB_DEPENDS=	libzstd.so:archivers/zstd
 
-USES=		cmake pathfix pkgconfig
+USES=		cmake pathfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	rtissera
-GH_TAGNAME=	b3974651d869c2f804e9879b063c23280d2ae617
+GH_TAGNAME=	cb077337d53392454e7100a0fd07139ca678e527
 USE_LDCONFIG=	yes
 
 CMAKE_ARGS=	-DBUILD_LTO=${defined(WITH_LTO):?ON:OFF}
 CMAKE_ON=	INSTALL_STATIC_LIBS WITH_SYSTEM_ZLIB WITH_SYSTEM_ZSTD
+
+EXTRACT_AFTER_ARGS=	--exclude deps/zlib* --exclude deps/zstd* \
+			--no-same-owner --no-same-permissions
 
 post-install:
 	${RLN} ${STAGEDIR}${PREFIX}/lib/libchdr-static.a ${STAGEDIR}${PREFIX}/lib/libchdr.a
