@@ -13,6 +13,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN=		fails to build with Boost>=1.87
 BROKEN_DragonFly=	DragonFly is not supported upstream
+DEPRECATED=	Reached EOL
+EXPIRATION_DATE=2025-05-09
 
 LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 		libcurl.so:ftp/curl \
