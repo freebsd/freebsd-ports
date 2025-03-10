@@ -1,3 +1,3 @@
-TIMESTAMP = 1740764682
-SHA256 (xorg/lib/libX11-1.8.11.tar.xz) = 3b74e82943924b45a0b778cc6842976909c3010d9445a8fd185e1dca4d380e88
-SIZE (xorg/lib/libX11-1.8.11.tar.xz) = 1817652
+TIMESTAMP = 1741592169
+SHA256 (xorg/lib/libX11-1.8.12.tar.xz) = fa026f9bb0124f4d6c808f9aef4057aad65e7b35d8ff43951cef0abe06bb9a9a
+SIZE (xorg/lib/libX11-1.8.12.tar.xz) = 1895256
