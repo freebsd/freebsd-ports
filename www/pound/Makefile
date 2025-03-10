@@ -1,11 +1,12 @@
 PORTNAME=	pound
-PORTVERSION=	4.14
+PORTVERSION=	4.16
 CATEGORIES=	www net
 MASTER_SITES=	https://github.com/graygnuorg/pound/releases/download/v${PORTVERSION}/
 
 MAINTAINER=	zeus@gnu.org.ua
 COMMENT=	HTTP/HTTPS reverse-proxy and load-balancer
-WWW=		https://github.com/graygnuorg/pound
+WWW=		https://github.com/graygnuorg/pound \
+		https://gray.gnu.org.ua/project/pound
 
 LICENSE=	GPLv3+
 
