@@ -1,5 +1,5 @@
 PORTNAME=	albucore
-DISTVERSION=	0.0.23
+DISTVERSION=	0.0.24
 CATEGORIES=	graphics python
 #MASTER_SITES=	PYPI # no tests
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -29,6 +29,6 @@ GH_ACCOUNT=	albumentations-team
 
 NO_ARCH=	yes
 
-# tests as of 0.0.23: 723 passed in 14.51s
+# tests as of 0.0.24: 734 passed in 7.56s
 
 .include <bsd.port.mk>
