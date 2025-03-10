@@ -1,6 +1,5 @@
 PORTNAME=	emwm
-DISTVERSION=	1.2
-PORTREVISION=	2
+DISTVERSION=	1.3
 CATEGORIES=	x11-wm
 MASTER_SITES=	https://fastestcode.org/dl/
 DISTNAME=	emwm-src-${DISTVERSION}
@@ -12,7 +11,7 @@ WWW=		https://fastestcode.org/emwm.html
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		tar:xz groff:build motif xorg
+USES=		groff:build motif tar:xz xorg
 USE_XORG=	x11 xext xinerama xrandr xt
 
 do-install:
