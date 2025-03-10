@@ -1,0 +1,3 @@
+Noise generator GUI program powered by Sound eXchange, written with
+Python and GTK.  Can emit Brown, Pink, White, TPDF noise and offers
+flexible sound settings and effects.

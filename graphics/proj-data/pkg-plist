@@ -91,6 +91,8 @@
 %%DATADIR%%/de_lgl_bw_README.txt
 %%DATADIR%%/de_lgvl_saarland_README.txt
 %%DATADIR%%/de_lgvl_saarland_SeTa2016.tif
+%%DATADIR%%/de_tlbg_thueringen_NTv2gridTH.tif
+%%DATADIR%%/de_tlbg_thueringen_README.txt
 %%DATADIR%%/dk_sdfe_DK_bornholm.pol
 %%DATADIR%%/dk_sdfe_DK_bridges.pol
 %%DATADIR%%/dk_sdfe_DK_general.pol
@@ -110,7 +112,9 @@
 %%DATADIR%%/dk_sdfi_dvr90_2002.tif
 %%DATADIR%%/dk_sdfi_dvr90_2013.tif
 %%DATADIR%%/dk_sdfi_dvr90_2023.tif
+%%DATADIR%%/dk_sdfi_gllat_2023.tif
 %%DATADIR%%/dk_sdfi_gllmsl_2022.tif
+%%DATADIR%%/dk_sdfi_glmsl_2023.tif
 %%DATADIR%%/dk_sdfi_gs_2022.tif
 %%DATADIR%%/dk_sdfi_gsb_2022.tif
 %%DATADIR%%/dk_sdfi_kk_2022.tif
@@ -181,6 +185,9 @@
 %%DATADIR%%/fr_ign_ggspm06v1.tif
 %%DATADIR%%/fr_ign_gr3df97a.tif
 %%DATADIR%%/fr_ign_ntf_r93.tif
+%%DATADIR%%/hu_bme_README.txt
+%%DATADIR%%/hu_bme_geoid2014.tif
+%%DATADIR%%/hu_bme_hd72corr.tif
 %%DATADIR%%/is_lmi_ISN2004_ISN2016.tif
 %%DATADIR%%/is_lmi_ISN93_ISN2016.tif
 %%DATADIR%%/is_lmi_ISN_vel_beta.tif

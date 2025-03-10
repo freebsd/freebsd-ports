@@ -1,6 +1,6 @@
 PORTNAME=	minecraft-client
 PORTVERSION=	1.7.9
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	games java
 MASTER_SITES=	https://homura.magzu.net/games/ \
 		LOCAL/tagattie/${PORTNAME}/${PORTVERSION}
@@ -9,6 +9,9 @@ DISTFILES=	Minecraft.jar \
 DIST_SUBDIR=	${PORTNAME}/${PORTVERSION}
 EXTRACT_ONLY=
 
+DEPRECATED=	dead upstream, no longer functional
+EXPIRATION_DATE=	2025-03-31
+
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Client for the block building game
 WWW=		https://minecraft.net/
@@ -16,9 +19,7 @@ WWW=		https://minecraft.net/
 RUN_DEPENDS=	${JAVALIBDIR}/lwjgl/lwjgl.jar:games/lwjgl \
 		xrandr:x11/xrandr
 
-USES=		openal
-USE_JAVA=	yes
-JAVA_VERSION=	8+
+USES=		java openal
 JAVA_OS=	native
 JAVA_VENDOR=	openjdk
 

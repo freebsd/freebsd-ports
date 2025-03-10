@@ -1,5 +1,5 @@
 PORTNAME=	dsc
-PORTVERSION=	2.15.1
+DISTVERSION=	2.15.2
 CATEGORIES=	dns
 MASTER_SITES=	https://www.dns-oarc.net/files/dsc/ \
 		https://dns.company/files/dsc/
@@ -16,12 +16,11 @@ RUN_DEPENDS=	libpcap>=1.8.1:net/libpcap \
 		p5-Proc-PID-File>=1.28:devel/p5-Proc-PID-File \
 		p5-XML-Simple>=2.24:textproc/p5-XML-Simple
 
-USES=		gmake localbase perl5 python shebangfix
+USES=		gmake localbase perl5 pkgconfig python shebangfix
 USE_RC_SUBR=	dsc
 SHEBANG_FILES=	src/dsc-psl-convert
 
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ARGS=	--with-pid-file=/var/run/${PORTNAME}.pid
 
 SUB_FILES=	pkg-message

@@ -9,9 +9,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Convert latex equations to HTML, MathML, PNG
 WWW=		https://www.mediawiki.org/wiki/Texvc
 
-USES=		gmake
-USE_OCAML=	yes
-NO_OCAML_RUNDEPENDS=	yes
+USES=		gmake ocaml:build
+
 BUILD_WRKSRC=	${WRKSRC}/src
 
 PLIST_FILES=	bin/texvc
@@ -24,6 +23,12 @@ RASTER_USES=	ghostscript:run magick:6,run tex
 RASTER_USE=	TEX=latex,dvipsk
 
 MAKE_JOBS_UNSAFE=	yes
+
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == powerpc
+USE_BINUTILS=	yes
+.endif
 
 do-install:
 	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/texvc ${STAGEDIR}${PREFIX}/bin

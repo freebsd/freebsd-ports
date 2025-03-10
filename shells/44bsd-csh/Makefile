@@ -1,14 +1,11 @@
 PORTNAME=	44bsd-csh
 PORTVERSION=	20001106
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	shells
 MASTER_SITES=	LOCAL/cy
 
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	The traditional 4.4BSD /bin/csh C-shell
-
-BROKEN_aarch64=	Fails to link: missing sbrk
-BROKEN_riscv64=	Fails to link: missing sbrk
 
 EXTRACT_DEPENDS=	rcs:devel/rcs57
 

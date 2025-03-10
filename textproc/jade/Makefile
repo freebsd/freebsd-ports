@@ -10,6 +10,9 @@ PATCH_SITES=	http://dist.bsdlab.org/
 PATCHFILES=	jade_1.2.1-35.diff.gz
 PATCH_DIST_STRIP=	-p1
 
+DEPRECATED=		Upstream has disappeared
+EXPIRATION_DATE=	2024-10-30
+
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Object-oriented SGML/XML parser toolkit and DSSSL engine
 WWW=		http://www.jclark.com/jade/

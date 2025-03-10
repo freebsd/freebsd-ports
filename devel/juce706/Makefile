@@ -1,6 +1,6 @@
 PORTNAME=	juce
 DISTVERSION=	7.0.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 PKGNAMESUFFIX=	706
 
@@ -20,7 +20,7 @@ LIB_DEPENDS=	libasound.so:audio/alsa-lib \
 		libcurl.so:ftp/curl \
 		libfreetype.so:print/freetype2 \
 		libharfbuzz.so:print/harfbuzz \
-		libjavascriptcoregtk-4.0.so:www/webkit2-gtk3 \
+		libjavascriptcoregtk-4.0.so:www/webkit2-gtk@40 \
 		libpng16.so:graphics/png \
 		libsoup-2.4.so:devel/libsoup \
 		libsysinfo.so:devel/libsysinfo
@@ -56,7 +56,7 @@ DEMOS_CMAKE_BOOL=	JUCE_BUILD_EXAMPLES
 DEMOS_LDFLAGS=		-lexecinfo
 DEMOS_USE=		GNOME=atk,cairo,gdkpixbuf2,gtk30,pango
 DEMOS_LIB_DEPENDS=	libcurl.so:ftp/curl \
-			libwebkit2gtk-4.0.so:www/webkit2-gtk3 \
+			libwebkit2gtk-4.0.so:www/webkit2-gtk@40 \
 			libsoup-2.4.so:devel/libsoup
 DEMO_FILES=	\
 	AnalyticsCollectionDemo AnimationAppDemo AnimationDemo AudioAppDemo AudioLatencyDemo AudioPlaybackDemo AudioPluginDemo AudioRecordingDemo AudioSettingsDemo AudioSynthesiserDemo \

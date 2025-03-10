@@ -1,5 +1,6 @@
 PORTNAME=	openbabel
 DISTVERSION=	3.1.1.1
+PORTREVISION=	1
 CATEGORIES=	science # chemistry
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -21,7 +22,7 @@ BINARY_ALIAS=	python=${PYTHON_CMD}
 .include <bsd.port.options.mk>
 
 post-patch:
-.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400091 || ( ${OSVERSION} >= 1302507 && ${OSVERSION} < 1400000 ))
+.if ${OPSYS} == FreeBSD
 	@${REINPLACE_CMD} -e 's|binary_function|__binary_function|g' \
 		${WRKSRC}/openbabel/openbabel-python.i
 .endif

@@ -1,0 +1,11 @@
+--- pyproject.toml.orig	2022-10-28 06:27:18 UTC
++++ pyproject.toml
+@@ -12,7 +12,7 @@ python = "^3.6"
+ [tool.poetry.dependencies]
+ python = "^3.6"
+ 
+-poetry-core = "^1.0.0"
++poetry-core = ">=1.0.0"
+ 
+ [tool.poetry.dev-dependencies]
+ 

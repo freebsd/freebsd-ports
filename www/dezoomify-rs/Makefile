@@ -1,6 +1,7 @@
 PORTNAME=	dezoomify-rs
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.12.4
+DISTVERSION=	2.13.0
+PORTREVISION=	4
 CATEGORIES=	www
 
 MAINTAINER=	nivit@FreeBSD.org
@@ -15,8 +16,5 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	lovasoa
 
 PLIST_FILES=	bin/dezoomify-rs
-
-post-install:
-		${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>

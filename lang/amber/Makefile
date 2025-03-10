@@ -1,5 +1,6 @@
 PORTNAME=	amber
-DISTVERSION=	0.3.4-alpha
+DISTVERSION=	0.4.0-alpha
+PORTREVISION=	2
 CATEGORIES=	lang
 PKGNAMESUFFIX=	-language
 
@@ -14,14 +15,13 @@ RUN_DEPENDS=	bash:shells/bash
 USES=		cargo
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	Ph0enixKM
-GH_PROJECT=	Amber
+GH_ACCOUNT=	amber-lang
 
 CARGO_CRATES=	aho-corasick-1.1.3 \
 		android-tzdata-0.1.1 \
 		android_system_properties-0.1.5 \
 		anstream-0.6.14 \
-		anstyle-1.0.7 \
+		anstyle-1.0.10 \
 		anstyle-parse-0.2.4 \
 		anstyle-query-1.1.0 \
 		anstyle-wincon-3.0.3 \
@@ -30,19 +30,22 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		autocfg-1.3.0 \
 		bitflags-2.6.0 \
 		bstr-1.9.1 \
+		build-helper-0.1.1 \
 		bumpalo-3.16.0 \
-		capitalize-0.1.0 \
+		capitalize-0.3.4 \
 		cc-1.0.104 \
 		cfg-if-1.0.0 \
 		chrono-0.4.38 \
 		chunked_transfer-1.5.0 \
-		clap-4.5.8 \
-		clap_builder-4.5.8 \
-		clap_derive-4.5.8 \
+		clap-4.5.20 \
+		clap_builder-4.5.20 \
+		clap_complete-4.5.36 \
+		clap_derive-4.5.18 \
 		clap_lex-0.7.1 \
 		colorchoice-1.0.1 \
 		colored-2.1.0 \
 		core-foundation-sys-0.8.6 \
+		diff-0.1.13 \
 		difflib-0.4.0 \
 		doc-comment-0.3.3 \
 		either-1.13.0 \
@@ -51,12 +54,14 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		float-cmp-0.9.0 \
 		glob-0.3.1 \
 		heck-0.5.0 \
-		heraclitus-compiler-1.5.8 \
+		heraclitus-compiler-1.8.1 \
 		httpdate-1.0.3 \
 		iana-time-zone-0.1.60 \
 		iana-time-zone-haiku-0.1.2 \
+		include_dir-0.7.4 \
+		include_dir_macros-0.7.4 \
 		is_terminal_polyfill-1.70.0 \
-		itertools-0.11.0 \
+		itertools-0.13.0 \
 		js-sys-0.3.69 \
 		lazy_static-1.5.0 \
 		libc-0.2.155 \
@@ -70,6 +75,7 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		predicates-3.1.0 \
 		predicates-core-1.0.6 \
 		predicates-tree-1.0.9 \
+		pretty_assertions-1.4.1 \
 		proc-macro2-0.4.30 \
 		proc-macro2-1.0.86 \
 		quote-0.6.13 \
@@ -78,6 +84,8 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		regex-automata-0.4.7 \
 		regex-syntax-0.8.4 \
 		rustix-0.38.34 \
+		semver-0.6.0 \
+		semver-parser-0.7.0 \
 		serde-1.0.203 \
 		serde_derive-1.0.203 \
 		similar-string-1.4.3 \
@@ -98,6 +106,7 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		wasm-bindgen-macro-0.2.92 \
 		wasm-bindgen-macro-support-0.2.92 \
 		wasm-bindgen-shared-0.2.92 \
+		wildmatch-2.4.0 \
 		windows-core-0.52.0 \
 		windows-sys-0.48.0 \
 		windows-sys-0.52.0 \
@@ -117,14 +126,9 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		windows_x86_64_gnullvm-0.48.5 \
 		windows_x86_64_gnullvm-0.52.5 \
 		windows_x86_64_msvc-0.48.5 \
-		windows_x86_64_msvc-0.52.5
+		windows_x86_64_msvc-0.52.5 \
+		yansi-1.0.1
 
 PLIST_FILES=	bin/${PORTNAME}
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|"/bin/bash"|"${LOCALBASE}/bin/bash"|' ${WRKSRC}/src/compiler.rs
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>

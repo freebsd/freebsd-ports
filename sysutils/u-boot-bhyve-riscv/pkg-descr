@@ -1,0 +1,9 @@
+U-Boot loader for riscv bhyve
+
+The loader is configured to boot automatically from the first VirtIO block
+device.  Specify
+
+  -o bootrom=$LOCALBASE/share/u-boot/u-boot-bhyve-riscv/u-boot.bin
+
+in bhyve(8) parameters.  Note that this loader is experimental as the riscv
+bhyve port is still under development.

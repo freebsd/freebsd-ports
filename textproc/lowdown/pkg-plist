@@ -3,7 +3,7 @@ bin/lowdown-diff
 include/lowdown.h
 lib/liblowdown.a
 lib/liblowdown.so
-lib/liblowdown.so.1
+lib/liblowdown.so.2
 libdata/pkgconfig/lowdown.pc
 share/man/man1/lowdown.1.gz
 share/man/man1/lowdown-diff.1.gz
@@ -41,3 +41,8 @@ share/man/man3/lowdown_term_rndr.3.gz
 share/man/man3/lowdown_tree_rndr.3.gz
 share/man/man5/lowdown.5.gz
 %%DATADIR%%/odt/styles.xml
+%%DATADIR%%/html/default.html
+%%DATADIR%%/html/sblg.xml
+%%DATADIR%%/latex/default.latex
+%%DATADIR%%/man/default.man
+%%DATADIR%%/ms/default.ms

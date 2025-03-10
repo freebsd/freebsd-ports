@@ -14,8 +14,8 @@ the MariaDB tarball but the most recent version can be found in the
 databases/mytop port
 
 %%WSREP%%Using wsrep clustering requires adding a configuration file.
-%%WSREP%%Copy %%PREFIX%%/etc/mysql/conf.d/wsrep.conf.sample to
-%%WSREP%%%%PREFIX%%/etc/mysql/conf.d/wsrep.conf and change what you need there.
+%%WSREP%%Copy %%PREFIX%%/etc/mysql/conf.d/wsrep.cnf.sample to
+%%WSREP%%%%PREFIX%%/etc/mysql/conf.d/wsrep.cnf and change what you need there.
 EOM
 }
 { type: upgrade

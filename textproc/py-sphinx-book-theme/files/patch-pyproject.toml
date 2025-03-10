@@ -1,0 +1,11 @@
+--- pyproject.toml.orig	2024-06-12 14:08:03 UTC
++++ pyproject.toml
+@@ -1,6 +1,6 @@
+ [build-system]
+-requires = ["sphinx-theme-builder >= 0.2.0a7"]
+-build-backend = "sphinx_theme_builder"
++requires = ["flit-core >= 3.9.0"]
++build-backend = "flit_core.buildapi"
+ 
+ [tool.sphinx-theme-builder]
+ node-version = "16.13.2"

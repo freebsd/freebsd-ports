@@ -1,0 +1,5 @@
+TIMESTAMP = 1737234229
+SHA256 (go/sysutils_kustomize/kustomize-v5.6.0/v5.6.0.mod) = ba5f5a88b23e9cdaca12bbb00ee79009a714d7f0b1e2fc2707e17779124954c9
+SIZE (go/sysutils_kustomize/kustomize-v5.6.0/v5.6.0.mod) = 1504
+SHA256 (go/sysutils_kustomize/kustomize-v5.6.0/v5.6.0.zip) = b634f333351421f6e16adee782aa3175091f73e8543474efaf8a1c9d616c7574
+SIZE (go/sysutils_kustomize/kustomize-v5.6.0/v5.6.0.zip) = 134517

@@ -1,11 +1,11 @@
 PORTNAME=	sqlitestudio
-DISTVERSION=	3.4.4
-PORTREVISION=	2
+DISTVERSION=	3.4.16
 CATEGORIES=	databases
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	SQLite database GUI manager
-WWW=		https://sqlitestudio.pl/
+WWW=		https://sqlitestudio.pl/ \
+		https://github.com/pawelsalawa/sqlitestudio
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/../LICENSE

@@ -1,6 +1,5 @@
 PORTNAME=	file
-PORTVERSION=	5.39
-PORTREVISION=	1
+DISTVERSION=	5.46
 CATEGORIES=	sysutils
 MASTER_SITES=	https://astron.com/pub/file/ \
 		https://www.nic.funet.fi/pub/mirrors/ftp.astron.com/pub/file/ \
@@ -19,7 +18,6 @@ CPE_VENDOR=	${PORTNAME}_project
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--enable-fsect-man5
 MAKE_ENV=	INSTALL_STRIP_FLAG="${STRIP}"
 TEST_TARGET=	check

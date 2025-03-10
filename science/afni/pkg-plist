@@ -94,6 +94,7 @@ bin/3dFFT
 bin/3dFWHMx
 bin/3dFriedman
 bin/3dGC.R
+bin/3dGLMM.R
 bin/3dGenFeatureDist
 bin/3dGenPriors
 bin/3dGetrow
@@ -546,6 +547,7 @@ bin/byteorder
 bin/cat_matvec
 bin/ccalc
 bin/cifti_tool
+bin/colorbar_tool.py
 bin/column_cat
 bin/compute_ROI_stats.tcsh
 bin/convert_cdiflist_to_grads.py
@@ -598,7 +600,7 @@ bin/get_afni_model_PRF
 bin/get_afni_model_PRF_6
 bin/get_afni_model_PRF_6_BAD
 bin/gifti_tool
-bin/gtkyd_check
+bin/gtkyd_check.py
 bin/help_format
 bin/im2niml
 bin/images_equal
@@ -853,6 +855,7 @@ lib/afni/plug_zeropad.so
 %%PYTHON_SITELIBDIR%%/afnipy/lib_apqc_tcsh.py
 %%PYTHON_SITELIBDIR%%/afnipy/lib_b0_corr.py
 %%PYTHON_SITELIBDIR%%/afnipy/lib_cbar_pbar.py
+%%PYTHON_SITELIBDIR%%/afnipy/lib_cbar_tool.py
 %%PYTHON_SITELIBDIR%%/afnipy/lib_cdiflist.py
 %%PYTHON_SITELIBDIR%%/afnipy/lib_csv.py
 %%PYTHON_SITELIBDIR%%/afnipy/lib_decay_timing.py
@@ -862,6 +865,7 @@ lib/afni/plug_zeropad.so
 %%PYTHON_SITELIBDIR%%/afnipy/lib_format_cmd_str.py
 %%PYTHON_SITELIBDIR%%/afnipy/lib_gershgorin.py
 %%PYTHON_SITELIBDIR%%/afnipy/lib_gssrt.py
+%%PYTHON_SITELIBDIR%%/afnipy/lib_gtkyd.py
 %%PYTHON_SITELIBDIR%%/afnipy/lib_info_dict.py
 %%PYTHON_SITELIBDIR%%/afnipy/lib_mat2d_base.py
 %%PYTHON_SITELIBDIR%%/afnipy/lib_mat2d_plot.py
@@ -997,6 +1001,7 @@ lib/afni/plug_zeropad.so
 %%DATADIR%%/funstuff/face_brian_pittman.jpg
 %%DATADIR%%/funstuff/face_brianna.jpg
 %%DATADIR%%/funstuff/face_bridget.jpg
+%%DATADIR%%/funstuff/face_broberts.jpg
 %%DATADIR%%/funstuff/face_brodmann.jpg
 %%DATADIR%%/funstuff/face_browndyke.jpg
 %%DATADIR%%/funstuff/face_bruce_jones.jpg
@@ -1466,6 +1471,7 @@ lib/afni/plug_zeropad.so
 %%DATADIR%%/funstuff/splash_Lincoln.Mem.Sunset2.BG.jpg
 %%DATADIR%%/funstuff/splash_Lucca.Cafe2.BG.jpg
 %%DATADIR%%/funstuff/splash_Lucca.Dinner.VBG.jpg
+%%DATADIR%%/funstuff/splash_MIT2018.jpg
 %%DATADIR%%/funstuff/splash_Monastery_BG.jpg
 %%DATADIR%%/funstuff/splash_NIH.B1.frontB.jpg
 %%DATADIR%%/funstuff/splash_NIH.B10.southdoors.BG.jpg
@@ -1705,6 +1711,7 @@ lib/afni/plug_zeropad.so
 %%DATADIR%%/funstuff/splash_tulips_VG.jpg
 %%DATADIR%%/funstuff/splash_tulsa2011.jpg
 %%DATADIR%%/funstuff/splash_tulsa2016.jpg
+%%DATADIR%%/funstuff/splash_tulsa2024.jpg
 %%DATADIR%%/funstuff/splash_twinkies.jpg
 %%DATADIR%%/funstuff/splash_umiami.jpg
 %%DATADIR%%/funstuff/splash_usajapan.jpg

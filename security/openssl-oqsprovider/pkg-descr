@@ -1,0 +1,6 @@
+Open Quantum Safe provider for OpenSSL
+
+
+This port enables quantum-safe cryptography (QSC) in a standard OpenSSL
+(3.x) distribution by way of implementing a single shared library, the
+OpenSSL OQS provider.

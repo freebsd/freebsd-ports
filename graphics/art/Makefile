@@ -1,13 +1,14 @@
 PORTNAME=	art
-DISTVERSION=	1.22.1
+DISTVERSION=	1.25.3
 CATEGORIES=	graphics
-MASTER_SITES=	https://bitbucket.org/agriggio/art/downloads/
+MASTER_SITES=	https://github.com/artpixls/ART/releases/download/${DISTVERSION}/
 PKGNAMESUFFIX=	-raw-image-editor
 DISTNAME=	${PORTNAME:tu}-${DISTVERSION}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Raw image processing program
-WWW=		https://bitbucket.org/agriggio/art/wiki/Home
+WWW=		https://art.pixls.us/ \
+		https://github.com/artpixls/ART
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
@@ -26,7 +27,6 @@ LIB_DEPENDS=	libcanberra.so:audio/libcanberra \
 		libharfbuzz.so:print/harfbuzz \
 		liblensfun.so:graphics/lensfun \
 		liblcms2.so:graphics/lcms2 \
-		libmimalloc.so:devel/mimalloc \
 		libOpenColorIO.so:graphics/opencolorio \
 		libtiff.so:graphics/tiff
 
@@ -36,9 +36,10 @@ USE_XORG=	x11
 
 EXTRACT_CMD=	gtar
 
+CXXFLAGS+=	-I${LOCALBASE}/include/Imath # workaround for https://bitbucket.org/agriggio/art/issues/339/1241-build-fails-usr-local-include-ctl
 LDFLAGS+=	-lpthread # otherwise build breaks on some systems: error: undefined symbol: pthread_create
 
-OPTIONS_DEFINE=		CTL LTO
+OPTIONS_DEFINE=		CTL LTO MIMALLOC
 OPTIONS_DEFAULT=	CTL LTO
 
 CTL_DESC=		Enable support for the ACES Color Transformation Language
@@ -49,6 +50,11 @@ CTL_LIB_DEPENDS=	libIlmCtl.so:graphics/ctl \
 			libpng16.so:graphics/png
 
 LTO_CMAKE_BOOL=		WITH_LTO
+
+MIMALLOC_DESC=		Enable mimalloc allocator
+MIMALLOC_CMAKE_BOOL=	ENABLE_MIMALLOC
+MIMALLOC_LIB_DEPENDS=	libmimalloc.so:devel/mimalloc
+MIMALLOC_BROKEN=	mimalloc crashes, see https://github.com/microsoft/mimalloc/issues/1007
 
 .if exists(/usr/include/omp.h)
 OPTIONS_DEFINE+=	OPENMP

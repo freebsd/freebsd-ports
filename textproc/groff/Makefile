@@ -1,10 +1,10 @@
 PORTNAME=	groff
 PORTVERSION=	1.23.0
-PORTREVISION=   3
+PORTREVISION=   4
 CATEGORIES=	textproc
 MASTER_SITES=	GNU
 
-MAINTAINER=	bapt@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Software typesetting package
 WWW=		https://www.gnu.org/software/groff/
 

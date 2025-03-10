@@ -1,6 +1,8 @@
 bin/ya
 bin/yazi
 share/applications/yazi.desktop
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/keymap.toml
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/theme.toml
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/yazi.toml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/README.md
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/keymap-default.toml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/theme-dark.toml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/theme-light.toml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/yazi-default.toml

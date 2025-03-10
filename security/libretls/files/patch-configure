@@ -1,0 +1,12 @@
+--- configure.orig	2023-10-11 23:33:50 UTC
++++ configure
+@@ -12163,9 +12163,6 @@ fi
+ 	*freebsd*)
+ 		HOST_OS=freebsd
+ 		HOST_ABI=elf
+-		# fork detection missing, weak seed on failure
+-		# https://svnweb.freebsd.org/base/head/lib/libc/gen/arc4random.c?revision=268642&view=markup
+-		USE_BUILTIN_ARC4RANDOM=yes
+ 		PROG_LDADD='-lthr'
+ 
+ 		;;

@@ -1,6 +1,5 @@
 PORTNAME=	babl
-PORTVERSION=	0.1.108
-PORTREVISION=	1
+PORTVERSION=	0.1.110
 CATEGORIES=	x11
 MASTER_SITES=	GIMP
 
@@ -13,14 +12,14 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	liblcms2.so:graphics/lcms2
 
-USES=		gnome meson pathfix pkgconfig tar:xz vala:build
+USES=		compiler:c11 gnome meson pathfix pkgconfig tar:xz vala:build
 
 USE_GNOME=	introspection:build
 USE_LDCONFIG=	yes
 
 MESON_ARGS=	-Dgi-docgen=disabled -Dwith-docs=false
 
-BABL_SHLIB=	0.207.1
+BABL_SHLIB=	0.209.1
 BABL_VER=	0.1
 PLIST_SUB+=	BABL_SHLIB=${BABL_SHLIB} BABL_VER=${BABL_VER}
 
@@ -55,14 +54,6 @@ SSE41_MESON_OFF=	-Denable-sse4_1=false
 SSE_IMPLIES=		MMX
 SSE_MESON_ON=		-Denable-sse=true
 SSE_MESON_OFF=		-Denable-sse=false
-
-.include <bsd.port.options.mk>
-
-.if ${ARCH} == powerpc
-USES+=		compiler:gcc-c++11-lib
-.else
-USES+=		compiler:c11
-.endif
 
 .include <bsd.port.pre.mk>
 

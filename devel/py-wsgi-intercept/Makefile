@@ -1,8 +1,8 @@
 PORTNAME=	wsgi-intercept
-PORTVERSION=	1.13.0
-PORTREVISION=	1
+PORTVERSION=	1.13.1
 CATEGORIES=	devel python
-MASTER_SITES=	PYPI
+MASTER_SITES=	PYPI \
+		https://github.com/cdent/wsgi-intercept/releases/download/v${PORTVERSION}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	wsgi_intercept-${PORTVERSION}
 

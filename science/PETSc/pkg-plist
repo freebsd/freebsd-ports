@@ -101,7 +101,6 @@ include/petsc/private/matimpl.h
 include/petsc/private/matisimpl.h
 include/petsc/private/matorderimpl.h
 include/petsc/private/mempoison.h
-include/petsc/private/mpiutils.h
 include/petsc/private/partitionerimpl.h
 include/petsc/private/pcasmimpl.h
 include/petsc/private/pcbddcimpl.h
@@ -167,6 +166,7 @@ include/petscdevicetypes.h
 include/petscdm.h
 include/petscdm.mod
 include/petscdmadaptor.h
+include/petscdmadaptortypes.h
 include/petscdmceed.h
 include/petscdmcomposite.h
 include/petscdmda.h
@@ -266,6 +266,7 @@ include/petscsnes.h
 include/petscsnes.mod
 include/petscsnesdef.mod
 include/petscsnesdefdummy.mod
+include/petscsnestypes.h
 include/petscspace.h
 include/petscstring.h
 include/petscsys.h
@@ -277,6 +278,7 @@ include/petsctao.h
 include/petsctao.mod
 include/petsctao_deprecations.h
 include/petsctaodef.mod
+include/petsctaodefdummy.mod
 include/petsctaolinesearch.h
 include/petsctime.h
 include/petscts.h
@@ -309,10 +311,12 @@ lib/petsc/bin/petsc_gen_xdmf.py
 lib/petsc/bin/petsc_tas_analysis.py
 lib/petsc/bin/petsc_tas_style.mplstyle
 lib/petsc/bin/petscdiff
+lib/petsc/bin/petscfreesharedmemory
 lib/petsc/bin/petsclogformat.py
 lib/petsc/bin/petscmpiexec
 lib/petsc/bin/petscnagfor
 lib/petsc/bin/petscnagupgrade.py
+lib/petsc/bin/petscversion
 lib/petsc/bin/saws/SAWs.py
 lib/petsc/bin/saws/getSAWs.bash
 lib/petsc/bin/saws/getStack.bash
@@ -365,6 +369,7 @@ libdata/pkgconfig/petsc.pc
 %%DATADIR%%/datafiles/matrices/tiny_system_x0
 %%DATADIR%%/datafiles/meshes/1d-2elems.e
 %%DATADIR%%/datafiles/meshes/2Dgrd.exo
+%%DATADIR%%/datafiles/meshes/2x2x2_Q3_wave.cgns
 %%DATADIR%%/datafiles/meshes/FourBrickHex-large.exo
 %%DATADIR%%/datafiles/meshes/FourBrickTet-large.exo
 %%DATADIR%%/datafiles/meshes/FourSquareH-large.exo
@@ -408,7 +413,6 @@ libdata/pkgconfig/petsc.pc
 %%DATADIR%%/datafiles/meshes/gmsh-vtx.geo
 %%DATADIR%%/datafiles/meshes/gmsh-wed.geo
 %%DATADIR%%/datafiles/meshes/grid_c.cgns
-%%DATADIR%%/datafiles/meshes/horse.ply.bz2
 %%DATADIR%%/datafiles/meshes/hybrid_3d_cube.msh
 %%DATADIR%%/datafiles/meshes/hybrid_hexwedge.exo
 %%DATADIR%%/datafiles/meshes/hybrid_hexwedge.msh
@@ -500,6 +504,7 @@ libdata/pkgconfig/petsc.pc
 %%DATADIR%%/examples/src/dm/dt/fe/tests/ex1.c
 %%DATADIR%%/examples/src/dm/dt/fe/tests/ex2.c
 %%DATADIR%%/examples/src/dm/dt/fe/tests/ex3.c
+%%DATADIR%%/examples/src/dm/dt/fe/tests/ex4.c
 %%DATADIR%%/examples/src/dm/dt/fe/tests/makefile
 %%DATADIR%%/examples/src/dm/dt/fe/tests/output/ex1_0.out
 %%DATADIR%%/examples/src/dm/dt/fe/tests/output/ex1_1.out
@@ -514,6 +519,7 @@ libdata/pkgconfig/petsc.pc
 %%DATADIR%%/examples/src/dm/dt/fe/tests/output/ex3_wxy_1.out
 %%DATADIR%%/examples/src/dm/dt/fe/tests/output/ex3_wxy_2.out
 %%DATADIR%%/examples/src/dm/dt/fe/tests/output/ex3_wxy_3.out
+%%DATADIR%%/examples/src/dm/dt/fe/tests/output/ex4_ok.out
 %%DATADIR%%/examples/src/dm/dt/space/impls/ptrimmed/tests/ex1.c
 %%DATADIR%%/examples/src/dm/dt/space/impls/ptrimmed/tests/makefile
 %%DATADIR%%/examples/src/dm/dt/space/impls/ptrimmed/tests/output/ex1_1.out
@@ -667,6 +673,7 @@ libdata/pkgconfig/petsc.pc
 %%DATADIR%%/examples/src/dm/impls/plex/tests/ex40.c
 %%DATADIR%%/examples/src/dm/impls/plex/tests/ex41.c
 %%DATADIR%%/examples/src/dm/impls/plex/tests/ex42.c
+%%DATADIR%%/examples/src/dm/impls/plex/tests/ex43.c
 %%DATADIR%%/examples/src/dm/impls/plex/tests/ex44.c
 %%DATADIR%%/examples/src/dm/impls/plex/tests/ex45.c
 %%DATADIR%%/examples/src/dm/impls/plex/tests/ex46.c
@@ -689,11 +696,17 @@ libdata/pkgconfig/petsc.pc
 %%DATADIR%%/examples/src/dm/impls/plex/tests/ex64.c
 %%DATADIR%%/examples/src/dm/impls/plex/tests/ex65.c
 %%DATADIR%%/examples/src/dm/impls/plex/tests/ex66.c
+%%DATADIR%%/examples/src/dm/impls/plex/tests/ex69.c
 %%DATADIR%%/examples/src/dm/impls/plex/tests/ex7.c
 %%DATADIR%%/examples/src/dm/impls/plex/tests/ex70.c
 %%DATADIR%%/examples/src/dm/impls/plex/tests/ex71.c
+%%DATADIR%%/examples/src/dm/impls/plex/tests/ex72.c
+%%DATADIR%%/examples/src/dm/impls/plex/tests/ex73.c
 %%DATADIR%%/examples/src/dm/impls/plex/tests/ex8.c
 %%DATADIR%%/examples/src/dm/impls/plex/tests/ex9.c
+%%DATADIR%%/examples/src/dm/impls/plex/tests/ex95.c
+%%DATADIR%%/examples/src/dm/impls/plex/tests/ex95f90.F90
+%%DATADIR%%/examples/src/dm/impls/plex/tests/ex96.c
 %%DATADIR%%/examples/src/dm/impls/plex/tests/ex97.c
 %%DATADIR%%/examples/src/dm/impls/plex/tests/ex97f90.F90
 %%DATADIR%%/examples/src/dm/impls/plex/tests/ex98.c
@@ -934,6 +947,7 @@ libdata/pkgconfig/petsc.pc
 %%DATADIR%%/examples/src/dm/impls/plex/tests/output/ex1_gmsh_16_spheresurface_s2t.out
 %%DATADIR%%/examples/src/dm/impls/plex/tests/output/ex1_gmsh_17_hyb3d_ascii.out
 %%DATADIR%%/examples/src/dm/impls/plex/tests/output/ex1_gmsh_17_hyb3d_interp_ascii.out
+%%DATADIR%%/examples/src/dm/impls/plex/tests/output/ex1_gmsh_1_box_label.out
 %%DATADIR%%/examples/src/dm/impls/plex/tests/output/ex1_gmsh_2.out
 %%DATADIR%%/examples/src/dm/impls/plex/tests/output/ex1_gmsh_3.out
 %%DATADIR%%/examples/src/dm/impls/plex/tests/output/ex1_gmsh_3d_32.out
@@ -1325,6 +1339,8 @@ libdata/pkgconfig/petsc.pc
 %%DATADIR%%/examples/src/dm/impls/plex/tests/output/ex3_q3_2d_1.out
 %%DATADIR%%/examples/src/dm/impls/plex/tests/output/ex3_q3_2d_2.out
 %%DATADIR%%/examples/src/dm/impls/plex/tests/output/ex3_q3_2d_3.out
+%%DATADIR%%/examples/src/dm/impls/plex/tests/output/ex3_rt0_2d_quad.out
+%%DATADIR%%/examples/src/dm/impls/plex/tests/output/ex3_rt0_2d_tri.out
 %%DATADIR%%/examples/src/dm/impls/plex/tests/output/ex3_wxy_0.out
 %%DATADIR%%/examples/src/dm/impls/plex/tests/output/ex40_box_hex.out
 %%DATADIR%%/examples/src/dm/impls/plex/tests/output/ex40_box_quad.out
@@ -1359,8 +1375,11 @@ libdata/pkgconfig/petsc.pc
 %%DATADIR%%/examples/src/dm/impls/plex/tests/output/ex42_sphere_3.out
 %%DATADIR%%/examples/src/dm/impls/plex/tests/output/ex42_sphere_3_p4.out
 %%DATADIR%%/examples/src/dm/impls/plex/tests/output/ex42_sphere_3_p4_alt.out
+%%DATADIR%%/examples/src/dm/impls/plex/tests/output/ex43_0.out
+%%DATADIR%%/examples/src/dm/impls/plex/tests/output/ex43_1.out
 %%DATADIR%%/examples/src/dm/impls/plex/tests/output/ex44_hex_adapt_0.out
 %%DATADIR%%/examples/src/dm/impls/plex/tests/output/ex44_quad_adapt_0.out
+%%DATADIR%%/examples/src/dm/impls/plex/tests/output/ex44_quad_adapt_1.out
 %%DATADIR%%/examples/src/dm/impls/plex/tests/output/ex44_quad_label_dm_plex_transform_label_replica_inc-0.out
 %%DATADIR%%/examples/src/dm/impls/plex/tests/output/ex44_quad_label_dm_plex_transform_label_replica_inc-100.out
 %%DATADIR%%/examples/src/dm/impls/plex/tests/output/ex44_quad_normal_0.out
@@ -1372,6 +1391,9 @@ libdata/pkgconfig/petsc.pc
 %%DATADIR%%/examples/src/dm/impls/plex/tests/output/ex44_seg_periodic_0.out
 %%DATADIR%%/examples/src/dm/impls/plex/tests/output/ex44_tet_adapt_0.out
 %%DATADIR%%/examples/src/dm/impls/plex/tests/output/ex44_tet_adapt_0_alt.out
+%%DATADIR%%/examples/src/dm/impls/plex/tests/output/ex44_tet_adapt_1.out
+%%DATADIR%%/examples/src/dm/impls/plex/tests/output/ex44_tri_adapt_0.out
+%%DATADIR%%/examples/src/dm/impls/plex/tests/output/ex44_tri_adapt_1.out
 %%DATADIR%%/examples/src/dm/impls/plex/tests/output/ex44_tri_tensor_0_dm_plex_transform_extrude_use_tensor-0.out
 %%DATADIR%%/examples/src/dm/impls/plex/tests/output/ex44_tri_tensor_0_dm_plex_transform_extrude_use_tensor-1.out
 %%DATADIR%%/examples/src/dm/impls/plex/tests/output/ex45_0.out
@@ -1381,6 +1403,8 @@ libdata/pkgconfig/petsc.pc
 %%DATADIR%%/examples/src/dm/impls/plex/tests/output/ex46_0.out
 %%DATADIR%%/examples/src/dm/impls/plex/tests/output/ex47_0.out
 %%DATADIR%%/examples/src/dm/impls/plex/tests/output/ex47_1.out
+%%DATADIR%%/examples/src/dm/impls/plex/tests/output/ex47_2.out
+%%DATADIR%%/examples/src/dm/impls/plex/tests/output/ex47_3.out
 %%DATADIR%%/examples/src/dm/impls/plex/tests/output/ex48_0.out
 %%DATADIR%%/examples/src/dm/impls/plex/tests/output/ex48f90_0.out
 %%DATADIR%%/examples/src/dm/impls/plex/tests/output/ex49_0.out
@@ -1500,6 +1524,7 @@ libdata/pkgconfig/petsc.pc
 %%DATADIR%%/examples/src/dm/impls/plex/tests/output/ex57_quad.out
 %%DATADIR%%/examples/src/dm/impls/plex/tests/output/ex57_quad_bl.out
 %%DATADIR%%/examples/src/dm/impls/plex/tests/output/ex57_quad_patch.out
+%%DATADIR%%/examples/src/dm/impls/plex/tests/output/ex57_sphere_extruded.out
 %%DATADIR%%/examples/src/dm/impls/plex/tests/output/ex57_tet.out
 %%DATADIR%%/examples/src/dm/impls/plex/tests/output/ex57_tri.out
 %%DATADIR%%/examples/src/dm/impls/plex/tests/output/ex57_tri_patch.out
@@ -1593,6 +1618,26 @@ libdata/pkgconfig/petsc.pc
 %%DATADIR%%/examples/src/dm/impls/plex/tests/output/ex64_9.out
 %%DATADIR%%/examples/src/dm/impls/plex/tests/output/ex65_ext_coord_space.out
 %%DATADIR%%/examples/src/dm/impls/plex/tests/output/ex66_0.out
+%%DATADIR%%/examples/src/dm/impls/plex/tests/output/ex66_1.out
+%%DATADIR%%/examples/src/dm/impls/plex/tests/output/ex69_hex_0.out
+%%DATADIR%%/examples/src/dm/impls/plex/tests/output/ex69_hex_1.out
+%%DATADIR%%/examples/src/dm/impls/plex/tests/output/ex69_hex_2.out
+%%DATADIR%%/examples/src/dm/impls/plex/tests/output/ex69_hex_3.out
+%%DATADIR%%/examples/src/dm/impls/plex/tests/output/ex69_hex_4.out
+%%DATADIR%%/examples/src/dm/impls/plex/tests/output/ex69_quad_0.out
+%%DATADIR%%/examples/src/dm/impls/plex/tests/output/ex69_quad_1.out
+%%DATADIR%%/examples/src/dm/impls/plex/tests/output/ex69_quad_2.out
+%%DATADIR%%/examples/src/dm/impls/plex/tests/output/ex69_quad_3.out
+%%DATADIR%%/examples/src/dm/impls/plex/tests/output/ex69_quad_4.out
+%%DATADIR%%/examples/src/dm/impls/plex/tests/output/ex69_quad_5.out
+%%DATADIR%%/examples/src/dm/impls/plex/tests/output/ex69_quad_6.out
+%%DATADIR%%/examples/src/dm/impls/plex/tests/output/ex69_quad_6w.out
+%%DATADIR%%/examples/src/dm/impls/plex/tests/output/ex69_tet_0.out
+%%DATADIR%%/examples/src/dm/impls/plex/tests/output/ex69_tet_1.out
+%%DATADIR%%/examples/src/dm/impls/plex/tests/output/ex69_tri_0.out
+%%DATADIR%%/examples/src/dm/impls/plex/tests/output/ex69_tri_1.out
+%%DATADIR%%/examples/src/dm/impls/plex/tests/output/ex69_tri_2.out
+%%DATADIR%%/examples/src/dm/impls/plex/tests/output/ex69_tri_3.out
 %%DATADIR%%/examples/src/dm/impls/plex/tests/output/ex6_0.out
 %%DATADIR%%/examples/src/dm/impls/plex/tests/output/ex6_1.out
 %%DATADIR%%/examples/src/dm/impls/plex/tests/output/ex6_2.out
@@ -1602,6 +1647,19 @@ libdata/pkgconfig/petsc.pc
 %%DATADIR%%/examples/src/dm/impls/plex/tests/output/ex71_0.out
 %%DATADIR%%/examples/src/dm/impls/plex/tests/output/ex71_1.out
 %%DATADIR%%/examples/src/dm/impls/plex/tests/output/ex71_2.out
+%%DATADIR%%/examples/src/dm/impls/plex/tests/output/ex72_ball_0.out
+%%DATADIR%%/examples/src/dm/impls/plex/tests/output/ex72_cylinder_0.out
+%%DATADIR%%/examples/src/dm/impls/plex/tests/output/ex73_bdm_1.out
+%%DATADIR%%/examples/src/dm/impls/plex/tests/output/ex73_p_1.out
+%%DATADIR%%/examples/src/dm/impls/plex/tests/output/ex73_p_2.out
+%%DATADIR%%/examples/src/dm/impls/plex/tests/output/ex73_p_3.out
+%%DATADIR%%/examples/src/dm/impls/plex/tests/output/ex73_p_4.out
+%%DATADIR%%/examples/src/dm/impls/plex/tests/output/ex73_q_1.out
+%%DATADIR%%/examples/src/dm/impls/plex/tests/output/ex73_q_2.out
+%%DATADIR%%/examples/src/dm/impls/plex/tests/output/ex73_q_3.out
+%%DATADIR%%/examples/src/dm/impls/plex/tests/output/ex73_q_4.out
+%%DATADIR%%/examples/src/dm/impls/plex/tests/output/ex73_rt_1.out
+%%DATADIR%%/examples/src/dm/impls/plex/tests/output/ex73_rtq_1.out
 %%DATADIR%%/examples/src/dm/impls/plex/tests/output/ex7_0.out
 %%DATADIR%%/examples/src/dm/impls/plex/tests/output/ex7_1.out
 %%DATADIR%%/examples/src/dm/impls/plex/tests/output/ex7_10.out
@@ -1621,6 +1679,9 @@ libdata/pkgconfig/petsc.pc
 %%DATADIR%%/examples/src/dm/impls/plex/tests/output/ex8_4.out
 %%DATADIR%%/examples/src/dm/impls/plex/tests/output/ex8_5.out
 %%DATADIR%%/examples/src/dm/impls/plex/tests/output/ex8_6.out
+%%DATADIR%%/examples/src/dm/impls/plex/tests/output/ex95_0.out
+%%DATADIR%%/examples/src/dm/impls/plex/tests/output/ex95f90_0.out
+%%DATADIR%%/examples/src/dm/impls/plex/tests/output/ex96_0.out
 %%DATADIR%%/examples/src/dm/impls/plex/tests/output/ex97_0.out
 %%DATADIR%%/examples/src/dm/impls/plex/tests/output/ex97f90_0.out
 %%DATADIR%%/examples/src/dm/impls/plex/tests/output/ex98_0.out
@@ -1668,6 +1729,7 @@ libdata/pkgconfig/petsc.pc
 %%DATADIR%%/examples/src/dm/impls/plex/tutorials/ex11.c
 %%DATADIR%%/examples/src/dm/impls/plex/tutorials/ex13.c
 %%DATADIR%%/examples/src/dm/impls/plex/tutorials/ex14.c
+%%DATADIR%%/examples/src/dm/impls/plex/tutorials/ex15.c
 %%DATADIR%%/examples/src/dm/impls/plex/tutorials/ex1f90.F90
 %%DATADIR%%/examples/src/dm/impls/plex/tutorials/ex3f90.F90
 %%DATADIR%%/examples/src/dm/impls/plex/tutorials/ex4f90.F90
@@ -1728,6 +1790,9 @@ libdata/pkgconfig/petsc.pc
 %%DATADIR%%/examples/src/dm/impls/plex/tutorials/output/ex13_schwarz_0.out
 %%DATADIR%%/examples/src/dm/impls/plex/tutorials/output/ex13_schwarz_1.out
 %%DATADIR%%/examples/src/dm/impls/plex/tutorials/output/ex14_1.out
+%%DATADIR%%/examples/src/dm/impls/plex/tutorials/output/ex15_cgns_parmetis.out
+%%DATADIR%%/examples/src/dm/impls/plex/tutorials/output/ex15_cgns_ptscotch.out
+%%DATADIR%%/examples/src/dm/impls/plex/tutorials/output/ex15_cgns_simple.out
 %%DATADIR%%/examples/src/dm/impls/plex/tutorials/output/ex1_0.out
 %%DATADIR%%/examples/src/dm/impls/plex/tutorials/output/ex1_1.out
 %%DATADIR%%/examples/src/dm/impls/plex/tutorials/output/ex1_filter_0.out
@@ -1770,6 +1835,7 @@ libdata/pkgconfig/petsc.pc
 %%DATADIR%%/examples/src/dm/impls/plex/tutorials/output/ex8_1d_q2.out
 %%DATADIR%%/examples/src/dm/impls/plex/tutorials/output/ex8_2d_q1.out
 %%DATADIR%%/examples/src/dm/impls/plex/tutorials/output/ex8_2d_q1_periodic.out
+%%DATADIR%%/examples/src/dm/impls/plex/tutorials/output/ex8_2d_q1_periodic_sparse.out
 %%DATADIR%%/examples/src/dm/impls/plex/tutorials/output/ex8_2d_q1_q1d.out
 %%DATADIR%%/examples/src/dm/impls/plex/tutorials/output/ex8_2d_q1d.out
 %%DATADIR%%/examples/src/dm/impls/plex/tutorials/output/ex8_2d_q2.out
@@ -2141,7 +2207,6 @@ libdata/pkgconfig/petsc.pc
 %%DATADIR%%/examples/src/dm/impls/swarm/tests/ex6.c
 %%DATADIR%%/examples/src/dm/impls/swarm/tests/ex7.c
 %%DATADIR%%/examples/src/dm/impls/swarm/tests/ex8.c
-%%DATADIR%%/examples/src/dm/impls/swarm/tests/ex9.c
 %%DATADIR%%/examples/src/dm/impls/swarm/tests/makefile
 %%DATADIR%%/examples/src/dm/impls/swarm/tests/output/ex11_quad_fe_f0.out
 %%DATADIR%%/examples/src/dm/impls/swarm/tests/output/ex11_quad_fe_f1.out
@@ -2257,12 +2322,6 @@ libdata/pkgconfig/petsc.pc
 %%DATADIR%%/examples/src/dm/impls/swarm/tests/output/ex7_2_alt.out
 %%DATADIR%%/examples/src/dm/impls/swarm/tests/output/ex8_0.out
 %%DATADIR%%/examples/src/dm/impls/swarm/tests/output/ex8_1.out
-%%DATADIR%%/examples/src/dm/impls/swarm/tests/output/ex9_coulomb_1d.out
-%%DATADIR%%/examples/src/dm/impls/swarm/tests/output/ex9_none_1d.out
-%%DATADIR%%/examples/src/dm/impls/swarm/tests/output/ex9_uniform_equilibrium_1d.out
-%%DATADIR%%/examples/src/dm/impls/swarm/tests/output/ex9_uniform_mixed_1d.out
-%%DATADIR%%/examples/src/dm/impls/swarm/tests/output/ex9_uniform_none_1d.out
-%%DATADIR%%/examples/src/dm/impls/swarm/tests/output/ex9_uniform_primal_1d.out
 %%DATADIR%%/examples/src/dm/impls/swarm/tutorials/ex1.c
 %%DATADIR%%/examples/src/dm/impls/swarm/tutorials/ex1f90.F90
 %%DATADIR%%/examples/src/dm/impls/swarm/tutorials/makefile
@@ -2659,6 +2718,8 @@ libdata/pkgconfig/petsc.pc
 %%DATADIR%%/examples/src/ksp/ksp/tests/ex83.c
 %%DATADIR%%/examples/src/ksp/ksp/tests/ex84.c
 %%DATADIR%%/examples/src/ksp/ksp/tests/ex85.c
+%%DATADIR%%/examples/src/ksp/ksp/tests/ex86f.F90
+%%DATADIR%%/examples/src/ksp/ksp/tests/ex87.c
 %%DATADIR%%/examples/src/ksp/ksp/tests/ex9.c
 %%DATADIR%%/examples/src/ksp/ksp/tests/lostnullspace.c
 %%DATADIR%%/examples/src/ksp/ksp/tests/makefile
@@ -2918,6 +2979,11 @@ libdata/pkgconfig/petsc.pc
 %%DATADIR%%/examples/src/ksp/ksp/tests/output/ex85_gmres_none.out
 %%DATADIR%%/examples/src/ksp/ksp/tests/output/ex85_minres_jacobi.out
 %%DATADIR%%/examples/src/ksp/ksp/tests/output/ex85_minres_none.out
+%%DATADIR%%/examples/src/ksp/ksp/tests/output/ex86f_1.out
+%%DATADIR%%/examples/src/ksp/ksp/tests/output/ex86f_2.out
+%%DATADIR%%/examples/src/ksp/ksp/tests/output/ex86f_3.out
+%%DATADIR%%/examples/src/ksp/ksp/tests/output/ex86f_4.out
+%%DATADIR%%/examples/src/ksp/ksp/tests/output/ex87.out
 %%DATADIR%%/examples/src/ksp/ksp/tests/output/ex8_1.out
 %%DATADIR%%/examples/src/ksp/ksp/tests/output/ex8_2.out
 %%DATADIR%%/examples/src/ksp/ksp/tests/output/ex8_3_setfromoptions_first-0.out
@@ -3025,6 +3091,7 @@ libdata/pkgconfig/petsc.pc
 %%DATADIR%%/examples/src/ksp/ksp/tutorials/ex75.c
 %%DATADIR%%/examples/src/ksp/ksp/tutorials/ex75f.F90
 %%DATADIR%%/examples/src/ksp/ksp/tutorials/ex76.c
+%%DATADIR%%/examples/src/ksp/ksp/tutorials/ex76.py
 %%DATADIR%%/examples/src/ksp/ksp/tutorials/ex76f.F90
 %%DATADIR%%/examples/src/ksp/ksp/tutorials/ex77.c
 %%DATADIR%%/examples/src/ksp/ksp/tutorials/ex77f.F90
@@ -3033,12 +3100,15 @@ libdata/pkgconfig/petsc.pc
 %%DATADIR%%/examples/src/ksp/ksp/tutorials/ex7f.F90
 %%DATADIR%%/examples/src/ksp/ksp/tutorials/ex8.c
 %%DATADIR%%/examples/src/ksp/ksp/tutorials/ex81.c
+%%DATADIR%%/examples/src/ksp/ksp/tutorials/ex81a.c
 %%DATADIR%%/examples/src/ksp/ksp/tutorials/ex82.c
 %%DATADIR%%/examples/src/ksp/ksp/tutorials/ex83f.F90
 %%DATADIR%%/examples/src/ksp/ksp/tutorials/ex84.c
 %%DATADIR%%/examples/src/ksp/ksp/tutorials/ex85.c
 %%DATADIR%%/examples/src/ksp/ksp/tutorials/ex86.c
 %%DATADIR%%/examples/src/ksp/ksp/tutorials/ex87.c
+%%DATADIR%%/examples/src/ksp/ksp/tutorials/ex88f.F90
+%%DATADIR%%/examples/src/ksp/ksp/tutorials/ex89f.F90
 %%DATADIR%%/examples/src/ksp/ksp/tutorials/ex9.c
 %%DATADIR%%/examples/src/ksp/ksp/tutorials/example100.py
 %%DATADIR%%/examples/src/ksp/ksp/tutorials/makefile
@@ -3065,6 +3135,7 @@ libdata/pkgconfig/petsc.pc
 %%DATADIR%%/examples/src/ksp/ksp/tutorials/network/output/ex4_3.out
 %%DATADIR%%/examples/src/ksp/ksp/tutorials/output/bench_kspsolve_ksp.out
 %%DATADIR%%/examples/src/ksp/ksp/tutorials/output/bench_kspsolve_matmult.out
+%%DATADIR%%/examples/src/ksp/ksp/tutorials/output/empty.out
 %%DATADIR%%/examples/src/ksp/ksp/tutorials/output/ex100_1.out
 %%DATADIR%%/examples/src/ksp/ksp/tutorials/output/ex100_1.testout
 %%DATADIR%%/examples/src/ksp/ksp/tutorials/output/ex100f_1.out
@@ -3092,7 +3163,9 @@ libdata/pkgconfig/petsc.pc
 %%DATADIR%%/examples/src/ksp/ksp/tutorials/output/ex18_2.out
 %%DATADIR%%/examples/src/ksp/ksp/tutorials/output/ex18_3.out
 %%DATADIR%%/examples/src/ksp/ksp/tutorials/output/ex18_bas.out
-%%DATADIR%%/examples/src/ksp/ksp/tutorials/output/ex19_0.out
+%%DATADIR%%/examples/src/ksp/ksp/tutorials/output/ex19_asm.out
+%%DATADIR%%/examples/src/ksp/ksp/tutorials/output/ex19_batch.out
+%%DATADIR%%/examples/src/ksp/ksp/tutorials/output/ex19_batch_bicg.out
 %%DATADIR%%/examples/src/ksp/ksp/tutorials/output/ex19_no_metis_batch.out
 %%DATADIR%%/examples/src/ksp/ksp/tutorials/output/ex19_serial_batch.out
 %%DATADIR%%/examples/src/ksp/ksp/tutorials/output/ex1_1.out
@@ -3104,6 +3177,7 @@ libdata/pkgconfig/petsc.pc
 %%DATADIR%%/examples/src/ksp/ksp/tutorials/output/ex1_changepcside.out
 %%DATADIR%%/examples/src/ksp/ksp/tutorials/output/ex1_minit.out
 %%DATADIR%%/examples/src/ksp/ksp/tutorials/output/ex1_mpi_linear_solver_server_1.out
+%%DATADIR%%/examples/src/ksp/ksp/tutorials/output/ex1_mpi_linear_solver_server_1_shared_memory_false.out
 %%DATADIR%%/examples/src/ksp/ksp/tutorials/output/ex1f_1.out
 %%DATADIR%%/examples/src/ksp/ksp/tutorials/output/ex1f_1_alt.out
 %%DATADIR%%/examples/src/ksp/ksp/tutorials/output/ex1f_1_alt_2.out
@@ -3212,7 +3286,9 @@ libdata/pkgconfig/petsc.pc
 %%DATADIR%%/examples/src/ksp/ksp/tutorials/output/ex2f_1.out
 %%DATADIR%%/examples/src/ksp/ksp/tutorials/output/ex2f_2.out
 %%DATADIR%%/examples/src/ksp/ksp/tutorials/output/ex31_1.out
-%%DATADIR%%/examples/src/ksp/ksp/tutorials/output/ex32_1.out
+%%DATADIR%%/examples/src/ksp/ksp/tutorials/output/ex32_2.out
+%%DATADIR%%/examples/src/ksp/ksp/tutorials/output/ex32_3.out
+%%DATADIR%%/examples/src/ksp/ksp/tutorials/output/ex32_4.out
 %%DATADIR%%/examples/src/ksp/ksp/tutorials/output/ex34_1.out
 %%DATADIR%%/examples/src/ksp/ksp/tutorials/output/ex34_2.out
 %%DATADIR%%/examples/src/ksp/ksp/tutorials/output/ex34_hyprestruct.out
@@ -3318,6 +3394,7 @@ libdata/pkgconfig/petsc.pc
 %%DATADIR%%/examples/src/ksp/ksp/tutorials/output/ex55_hypre.out
 %%DATADIR%%/examples/src/ksp/ksp/tutorials/output/ex55_hypre_device.out
 %%DATADIR%%/examples/src/ksp/ksp/tutorials/output/ex55_hypre_device_alt.out
+%%DATADIR%%/examples/src/ksp/ksp/tutorials/output/ex55_hypre_ilu.out
 %%DATADIR%%/examples/src/ksp/ksp/tutorials/output/ex55_sa.out
 %%DATADIR%%/examples/src/ksp/ksp/tutorials/output/ex55_sa_alt.out
 %%DATADIR%%/examples/src/ksp/ksp/tutorials/output/ex56_1.out
@@ -3479,6 +3556,7 @@ libdata/pkgconfig/petsc.pc
 %%DATADIR%%/examples/src/ksp/ksp/tutorials/output/ex72_19_pc_factor_levels-4.out
 %%DATADIR%%/examples/src/ksp/ksp/tutorials/output/ex72_1a.out
 %%DATADIR%%/examples/src/ksp/ksp/tutorials/output/ex72_2.out
+%%DATADIR%%/examples/src/ksp/ksp/tutorials/output/ex72_20.out
 %%DATADIR%%/examples/src/ksp/ksp/tutorials/output/ex72_22.out
 %%DATADIR%%/examples/src/ksp/ksp/tutorials/output/ex72_23.out
 %%DATADIR%%/examples/src/ksp/ksp/tutorials/output/ex72_25.out
@@ -3662,6 +3740,8 @@ libdata/pkgconfig/petsc.pc
 %%DATADIR%%/examples/src/ksp/ksp/tutorials/output/ex81_wo_explicit_schur_outer_fieldsplit_sizes-1__2__2.out
 %%DATADIR%%/examples/src/ksp/ksp/tutorials/output/ex81_wo_explicit_schur_outer_fieldsplit_sizes-2__1__2.out
 %%DATADIR%%/examples/src/ksp/ksp/tutorials/output/ex81_wo_explicit_schur_outer_fieldsplit_sizes-2__2__1.out
+%%DATADIR%%/examples/src/ksp/ksp/tutorials/output/ex81a_1.out
+%%DATADIR%%/examples/src/ksp/ksp/tutorials/output/ex81a_2.out
 %%DATADIR%%/examples/src/ksp/ksp/tutorials/output/ex82_1.out
 %%DATADIR%%/examples/src/ksp/ksp/tutorials/output/ex83f_1.out
 %%DATADIR%%/examples/src/ksp/ksp/tutorials/output/ex84_1.out
@@ -3675,6 +3755,10 @@ libdata/pkgconfig/petsc.pc
 %%DATADIR%%/examples/src/ksp/ksp/tutorials/output/ex87_1_petsc_system-stokes.out
 %%DATADIR%%/examples/src/ksp/ksp/tutorials/output/ex87_1_system-elasticity.out
 %%DATADIR%%/examples/src/ksp/ksp/tutorials/output/ex87_1_system-stokes.out
+%%DATADIR%%/examples/src/ksp/ksp/tutorials/output/ex88f_1.out
+%%DATADIR%%/examples/src/ksp/ksp/tutorials/output/ex88f_2.out
+%%DATADIR%%/examples/src/ksp/ksp/tutorials/output/ex89f_1.out
+%%DATADIR%%/examples/src/ksp/ksp/tutorials/output/ex89f_2.out
 %%DATADIR%%/examples/src/ksp/ksp/tutorials/output/ex8_1.out
 %%DATADIR%%/examples/src/ksp/ksp/tutorials/output/ex9_1.out
 %%DATADIR%%/examples/src/ksp/ksp/tutorials/output/ex9_hpddm.out
@@ -3713,11 +3797,14 @@ libdata/pkgconfig/petsc.pc
 %%DATADIR%%/examples/src/ksp/pc/tutorials/ex1.c
 %%DATADIR%%/examples/src/ksp/pc/tutorials/ex2.c
 %%DATADIR%%/examples/src/ksp/pc/tutorials/ex3.c
+%%DATADIR%%/examples/src/ksp/pc/tutorials/ex4.c
 %%DATADIR%%/examples/src/ksp/pc/tutorials/makefile
 %%DATADIR%%/examples/src/ksp/pc/tutorials/output/ex1_1.out
 %%DATADIR%%/examples/src/ksp/pc/tutorials/output/ex2_1.out
 %%DATADIR%%/examples/src/ksp/pc/tutorials/output/ex3_1.out
 %%DATADIR%%/examples/src/ksp/pc/tutorials/output/ex3_2.out
+%%DATADIR%%/examples/src/ksp/pc/tutorials/output/ex4_1.out
+%%DATADIR%%/examples/src/ksp/pc/tutorials/output/ex4_2.out
 %%DATADIR%%/examples/src/mat/impls/diagonal/tests/ex1.c
 %%DATADIR%%/examples/src/mat/impls/diagonal/tests/makefile
 %%DATADIR%%/examples/src/mat/impls/diagonal/tests/output/ex1_0.out
@@ -3787,7 +3874,9 @@ libdata/pkgconfig/petsc.pc
 %%DATADIR%%/examples/src/mat/tests/ex151.c
 %%DATADIR%%/examples/src/mat/tests/ex152.c
 %%DATADIR%%/examples/src/mat/tests/ex153.c
+%%DATADIR%%/examples/src/mat/tests/ex154.c
 %%DATADIR%%/examples/src/mat/tests/ex155.c
+%%DATADIR%%/examples/src/mat/tests/ex156.c
 %%DATADIR%%/examples/src/mat/tests/ex157.c
 %%DATADIR%%/examples/src/mat/tests/ex158.c
 %%DATADIR%%/examples/src/mat/tests/ex159.c
@@ -3908,6 +3997,9 @@ libdata/pkgconfig/petsc.pc
 %%DATADIR%%/examples/src/mat/tests/ex263.c
 %%DATADIR%%/examples/src/mat/tests/ex264.c
 %%DATADIR%%/examples/src/mat/tests/ex265.c
+%%DATADIR%%/examples/src/mat/tests/ex266.c
+%%DATADIR%%/examples/src/mat/tests/ex267.c
+%%DATADIR%%/examples/src/mat/tests/ex268.c
 %%DATADIR%%/examples/src/mat/tests/ex27.c
 %%DATADIR%%/examples/src/mat/tests/ex28.c
 %%DATADIR%%/examples/src/mat/tests/ex29.c
@@ -4101,6 +4193,7 @@ libdata/pkgconfig/petsc.pc
 %%DATADIR%%/examples/src/mat/tests/output/ex151_dense.out
 %%DATADIR%%/examples/src/mat/tests/output/ex152_1.out
 %%DATADIR%%/examples/src/mat/tests/output/ex152_2.out
+%%DATADIR%%/examples/src/mat/tests/output/ex156_1.out
 %%DATADIR%%/examples/src/mat/tests/output/ex158.out
 %%DATADIR%%/examples/src/mat/tests/output/ex158_2.out
 %%DATADIR%%/examples/src/mat/tests/output/ex159_1.out
@@ -4864,6 +4957,7 @@ libdata/pkgconfig/petsc.pc
 %%DATADIR%%/examples/src/snes/tests/output/ex7_3_alt.out
 %%DATADIR%%/examples/src/snes/tests/output/ex7_4.out
 %%DATADIR%%/examples/src/snes/tests/output/ex7_4_alt.out
+%%DATADIR%%/examples/src/snes/tests/output/ex7_4_alt_2.out
 %%DATADIR%%/examples/src/snes/tests/output/ex8_p1_adapt_dm_plex_dim-2_porder-1.out
 %%DATADIR%%/examples/src/snes/tests/output/ex8_p1_adapt_dm_plex_dim-2_porder-2.out
 %%DATADIR%%/examples/src/snes/tests/output/ex8_p1_dm_plex_dim-2_porder-1.out
@@ -4932,6 +5026,7 @@ libdata/pkgconfig/petsc.pc
 %%DATADIR%%/examples/src/snes/tutorials/ex24.c
 %%DATADIR%%/examples/src/snes/tutorials/ex25.c
 %%DATADIR%%/examples/src/snes/tutorials/ex26.c
+%%DATADIR%%/examples/src/snes/tutorials/ex27.c
 %%DATADIR%%/examples/src/snes/tutorials/ex28.c
 %%DATADIR%%/examples/src/snes/tutorials/ex29.options
 %%DATADIR%%/examples/src/snes/tutorials/ex29view.m
@@ -5096,6 +5191,7 @@ libdata/pkgconfig/petsc.pc
 %%DATADIR%%/examples/src/snes/tutorials/output/ex12_amr_1.out
 %%DATADIR%%/examples/src/snes/tutorials/output/ex12_bd_int_0.out
 %%DATADIR%%/examples/src/snes/tutorials/output/ex12_bd_int_1.out
+%%DATADIR%%/examples/src/snes/tutorials/output/ex12_cgns.out
 %%DATADIR%%/examples/src/snes/tutorials/output/ex12_fas_newton_0.out
 %%DATADIR%%/examples/src/snes/tutorials/output/ex12_fas_newton_0_p4est.out
 %%DATADIR%%/examples/src/snes/tutorials/output/ex12_fas_newton_1.out
@@ -5202,6 +5298,7 @@ libdata/pkgconfig/petsc.pc
 %%DATADIR%%/examples/src/snes/tutorials/output/ex12_tri_q2q1_asm_sor.out
 %%DATADIR%%/examples/src/snes/tutorials/output/ex12_tri_q2q1_msm_lu.out
 %%DATADIR%%/examples/src/snes/tutorials/output/ex12_tri_q2q1_msm_sor.out
+%%DATADIR%%/examples/src/snes/tutorials/output/ex12_vtu_empty.out
 %%DATADIR%%/examples/src/snes/tutorials/output/ex13_2d_p1_adj_0.out
 %%DATADIR%%/examples/src/snes/tutorials/output/ex13_2d_p1_conv.out
 %%DATADIR%%/examples/src/snes/tutorials/output/ex13_2d_p1_fas_full.out
@@ -5253,6 +5350,10 @@ libdata/pkgconfig/petsc.pc
 %%DATADIR%%/examples/src/snes/tutorials/output/ex16_1.out
 %%DATADIR%%/examples/src/snes/tutorials/output/ex16_2.out
 %%DATADIR%%/examples/src/snes/tutorials/output/ex16_3.out
+%%DATADIR%%/examples/src/snes/tutorials/output/ex16_3_alt.out
+%%DATADIR%%/examples/src/snes/tutorials/output/ex16_4.out
+%%DATADIR%%/examples/src/snes/tutorials/output/ex16_5.out
+%%DATADIR%%/examples/src/snes/tutorials/output/ex16_6.out
 %%DATADIR%%/examples/src/snes/tutorials/output/ex17_2d_p1_axial_elas.out
 %%DATADIR%%/examples/src/snes/tutorials/output/ex17_2d_p1_quad_elas.out
 %%DATADIR%%/examples/src/snes/tutorials/output/ex17_2d_p1_quad_vlap.out
@@ -5452,6 +5553,8 @@ libdata/pkgconfig/petsc.pc
 %%DATADIR%%/examples/src/snes/tutorials/output/ex24_2d_q2_p0.out
 %%DATADIR%%/examples/src/snes/tutorials/output/ex24_2d_q2_p0_conv.out
 %%DATADIR%%/examples/src/snes/tutorials/output/ex24_2d_q2_p0_neumann_conv.out
+%%DATADIR%%/examples/src/snes/tutorials/output/ex24_2d_rt0_quad.out
+%%DATADIR%%/examples/src/snes/tutorials/output/ex24_2d_rt0_tri.out
 %%DATADIR%%/examples/src/snes/tutorials/output/ex24_2d_rt1_p0_bddc.out
 %%DATADIR%%/examples/src/snes/tutorials/output/ex25_1.out
 %%DATADIR%%/examples/src/snes/tutorials/output/ex25_2.out
@@ -5469,6 +5572,13 @@ libdata/pkgconfig/petsc.pc
 %%DATADIR%%/examples/src/snes/tutorials/output/ex26_3d_p1_trig_conv.out
 %%DATADIR%%/examples/src/snes/tutorials/output/ex26_3d_q1_conv.out
 %%DATADIR%%/examples/src/snes/tutorials/output/ex26_3d_q1_trig_conv.out
+%%DATADIR%%/examples/src/snes/tutorials/output/ex27_2d_p2_rt0p0_a2_sensor.out
+%%DATADIR%%/examples/src/snes/tutorials/output/ex27_2d_p2_rt0p0_byhand_quadratic.out
+%%DATADIR%%/examples/src/snes/tutorials/output/ex27_2d_p2_rt0p0_byhand_sensor.out
+%%DATADIR%%/examples/src/snes/tutorials/output/ex27_2d_p2_rt0p0_byhand_trig.out
+%%DATADIR%%/examples/src/snes/tutorials/output/ex27_2d_p2_rt0p0_quadratic.out
+%%DATADIR%%/examples/src/snes/tutorials/output/ex27_2d_p2_rt0p0_sensor.out
+%%DATADIR%%/examples/src/snes/tutorials/output/ex27_2d_p2_rt0p0_trig.out
 %%DATADIR%%/examples/src/snes/tutorials/output/ex28_0.out
 %%DATADIR%%/examples/src/snes/tutorials/output/ex28_1.out
 %%DATADIR%%/examples/src/snes/tutorials/output/ex28_2.out
@@ -5517,6 +5627,7 @@ libdata/pkgconfig/petsc.pc
 %%DATADIR%%/examples/src/snes/tutorials/output/ex40f90_1.out
 %%DATADIR%%/examples/src/snes/tutorials/output/ex42_1.out
 %%DATADIR%%/examples/src/snes/tutorials/output/ex42_2.out
+%%DATADIR%%/examples/src/snes/tutorials/output/ex42_ghosts.out
 %%DATADIR%%/examples/src/snes/tutorials/output/ex46_1.out
 %%DATADIR%%/examples/src/snes/tutorials/output/ex46_1_alt.out
 %%DATADIR%%/examples/src/snes/tutorials/output/ex46_1_alt_2.out
@@ -5603,6 +5714,7 @@ libdata/pkgconfig/petsc.pc
 %%DATADIR%%/examples/src/snes/tutorials/output/ex5_6.out
 %%DATADIR%%/examples/src/snes/tutorials/output/ex5_6_alt.out
 %%DATADIR%%/examples/src/snes/tutorials/output/ex5_7.out
+%%DATADIR%%/examples/src/snes/tutorials/output/ex5_7_ksp_view_pre.out
 %%DATADIR%%/examples/src/snes/tutorials/output/ex5_9.out
 %%DATADIR%%/examples/src/snes/tutorials/output/ex5_asm_0.out
 %%DATADIR%%/examples/src/snes/tutorials/output/ex5_asm_1.out
@@ -5612,6 +5724,8 @@ libdata/pkgconfig/petsc.pc
 %%DATADIR%%/examples/src/snes/tutorials/output/ex5_asm_5.out
 %%DATADIR%%/examples/src/snes/tutorials/output/ex5_asm_5_alt.out
 %%DATADIR%%/examples/src/snes/tutorials/output/ex5_complex.out
+%%DATADIR%%/examples/src/snes/tutorials/output/ex5_hem_view_detailed.out
+%%DATADIR%%/examples/src/snes/tutorials/output/ex5_mis_view_detailed.out
 %%DATADIR%%/examples/src/snes/tutorials/output/ex5_msm_0.out
 %%DATADIR%%/examples/src/snes/tutorials/output/ex5_msm_1.out
 %%DATADIR%%/examples/src/snes/tutorials/output/ex5_msm_2.out
@@ -5793,12 +5907,16 @@ libdata/pkgconfig/petsc.pc
 %%DATADIR%%/examples/src/sys/classes/viewer/tutorials/ex1.c
 %%DATADIR%%/examples/src/sys/classes/viewer/tutorials/ex1f90.F90
 %%DATADIR%%/examples/src/sys/classes/viewer/tutorials/ex2.c
+%%DATADIR%%/examples/src/sys/classes/viewer/tutorials/ex2f.F90
+%%DATADIR%%/examples/src/sys/classes/viewer/tutorials/ex3f.F90
 %%DATADIR%%/examples/src/sys/classes/viewer/tutorials/makefile
 %%DATADIR%%/examples/src/sys/classes/viewer/tutorials/output/ex1_1.out
 %%DATADIR%%/examples/src/sys/classes/viewer/tutorials/output/ex2_1.out
 %%DATADIR%%/examples/src/sys/classes/viewer/tutorials/output/ex2_2a.out
 %%DATADIR%%/examples/src/sys/classes/viewer/tutorials/output/ex2_2b.out
 %%DATADIR%%/examples/src/sys/classes/viewer/tutorials/output/ex2_2b_alt.out
+%%DATADIR%%/examples/src/sys/classes/viewer/tutorials/output/ex2f_1.out
+%%DATADIR%%/examples/src/sys/classes/viewer/tutorials/output/ex3f_1.out
 %%DATADIR%%/examples/src/sys/error/tests/ex1.c
 %%DATADIR%%/examples/src/sys/error/tests/ex2.c
 %%DATADIR%%/examples/src/sys/error/tests/makefile
@@ -5971,7 +6089,6 @@ libdata/pkgconfig/petsc.pc
 %%DATADIR%%/examples/src/sys/tests/ex5.c
 %%DATADIR%%/examples/src/sys/tests/ex50.c
 %%DATADIR%%/examples/src/sys/tests/ex51.c
-%%DATADIR%%/examples/src/sys/tests/ex52.c
 %%DATADIR%%/examples/src/sys/tests/ex53.c
 %%DATADIR%%/examples/src/sys/tests/ex53f.F90
 %%DATADIR%%/examples/src/sys/tests/ex54.c
@@ -6001,12 +6118,19 @@ libdata/pkgconfig/petsc.pc
 %%DATADIR%%/examples/src/sys/tests/ex66.c
 %%DATADIR%%/examples/src/sys/tests/ex67.c
 %%DATADIR%%/examples/src/sys/tests/ex68.c
+%%DATADIR%%/examples/src/sys/tests/ex69.c
+%%DATADIR%%/examples/src/sys/tests/ex69f.F90
 %%DATADIR%%/examples/src/sys/tests/ex6f.F90
 %%DATADIR%%/examples/src/sys/tests/ex7.c
 %%DATADIR%%/examples/src/sys/tests/ex70.c
 %%DATADIR%%/examples/src/sys/tests/ex71.c
 %%DATADIR%%/examples/src/sys/tests/ex72.c
 %%DATADIR%%/examples/src/sys/tests/ex73.c
+%%DATADIR%%/examples/src/sys/tests/ex74.c
+%%DATADIR%%/examples/src/sys/tests/ex75.c
+%%DATADIR%%/examples/src/sys/tests/ex76.c
+%%DATADIR%%/examples/src/sys/tests/ex77.c
+%%DATADIR%%/examples/src/sys/tests/ex78.c
 %%DATADIR%%/examples/src/sys/tests/ex8.c
 %%DATADIR%%/examples/src/sys/tests/ex9.c
 %%DATADIR%%/examples/src/sys/tests/linter/output/testDisabled.out
@@ -6147,8 +6271,6 @@ libdata/pkgconfig/petsc.pc
 %%DATADIR%%/examples/src/sys/tests/output/ex50_1.out
 %%DATADIR%%/examples/src/sys/tests/output/ex50_2.out
 %%DATADIR%%/examples/src/sys/tests/output/ex51_1.out
-%%DATADIR%%/examples/src/sys/tests/output/ex52_large.out
-%%DATADIR%%/examples/src/sys/tests/output/ex52_small.out
 %%DATADIR%%/examples/src/sys/tests/output/ex53_1.out
 %%DATADIR%%/examples/src/sys/tests/output/ex53f_1.out
 %%DATADIR%%/examples/src/sys/tests/output/ex54_0.out
@@ -6196,6 +6318,8 @@ libdata/pkgconfig/petsc.pc
 %%DATADIR%%/examples/src/sys/tests/output/ex67_0.out
 %%DATADIR%%/examples/src/sys/tests/output/ex68_0.out
 %%DATADIR%%/examples/src/sys/tests/output/ex68_1.out
+%%DATADIR%%/examples/src/sys/tests/output/ex69_1.out
+%%DATADIR%%/examples/src/sys/tests/output/ex69f_1.out
 %%DATADIR%%/examples/src/sys/tests/output/ex6_1.out
 %%DATADIR%%/examples/src/sys/tests/output/ex6f_1.out
 %%DATADIR%%/examples/src/sys/tests/output/ex70_1.out
@@ -6205,6 +6329,10 @@ libdata/pkgconfig/petsc.pc
 %%DATADIR%%/examples/src/sys/tests/output/ex73_0_alt.out
 %%DATADIR%%/examples/src/sys/tests/output/ex73_0_alt_2.out
 %%DATADIR%%/examples/src/sys/tests/output/ex73_0_alt_3.out
+%%DATADIR%%/examples/src/sys/tests/output/ex74_1.out
+%%DATADIR%%/examples/src/sys/tests/output/ex75_1.out
+%%DATADIR%%/examples/src/sys/tests/output/ex76_1.out
+%%DATADIR%%/examples/src/sys/tests/output/ex77_1.out
 %%DATADIR%%/examples/src/sys/tests/output/ex7_1.out
 %%DATADIR%%/examples/src/sys/tests/output/ex8_1.out
 %%DATADIR%%/examples/src/sys/tests/output/ex9_1.out
@@ -6591,6 +6719,7 @@ libdata/pkgconfig/petsc.pc
 %%DATADIR%%/examples/src/ts/event/tests/ex3span.c
 %%DATADIR%%/examples/src/ts/event/tests/ex4.c
 %%DATADIR%%/examples/src/ts/event/tests/ex5.c
+%%DATADIR%%/examples/src/ts/event/tests/makefile
 %%DATADIR%%/examples/src/ts/event/tests/output/ex1.out
 %%DATADIR%%/examples/src/ts/event/tests/output/ex16_1.out
 %%DATADIR%%/examples/src/ts/event/tests/output/ex16_2.out
@@ -6662,6 +6791,8 @@ libdata/pkgconfig/petsc.pc
 %%DATADIR%%/examples/src/ts/tests/ex6.c
 %%DATADIR%%/examples/src/ts/tests/ex7.c
 %%DATADIR%%/examples/src/ts/tests/ex8.c
+%%DATADIR%%/examples/src/ts/tests/ex80.c
+%%DATADIR%%/examples/src/ts/tests/ex81.c
 %%DATADIR%%/examples/src/ts/tests/ex9.c
 %%DATADIR%%/examples/src/ts/tests/makefile
 %%DATADIR%%/examples/src/ts/tests/output/ex11_1.out
@@ -6697,8 +6828,7 @@ libdata/pkgconfig/petsc.pc
 %%DATADIR%%/examples/src/ts/tests/output/ex30_0.out
 %%DATADIR%%/examples/src/ts/tests/output/ex30_3d.out
 %%DATADIR%%/examples/src/ts/tests/output/ex30_cgns.out
-%%DATADIR%%/examples/src/ts/tests/output/ex30_normal.out
-%%DATADIR%%/examples/src/ts/tests/output/ex30_simple.out
+%%DATADIR%%/examples/src/ts/tests/output/ex30_conserve.out
 %%DATADIR%%/examples/src/ts/tests/output/ex35_1D.out
 %%DATADIR%%/examples/src/ts/tests/output/ex35_2D.out
 %%DATADIR%%/examples/src/ts/tests/output/ex4.out
@@ -6711,6 +6841,12 @@ libdata/pkgconfig/petsc.pc
 %%DATADIR%%/examples/src/ts/tests/output/ex6_1_alt.out
 %%DATADIR%%/examples/src/ts/tests/output/ex7_1.out
 %%DATADIR%%/examples/src/ts/tests/output/ex7_1_alt.out
+%%DATADIR%%/examples/src/ts/tests/output/ex80_a.out
+%%DATADIR%%/examples/src/ts/tests/output/ex80_b.out
+%%DATADIR%%/examples/src/ts/tests/output/ex80_c.out
+%%DATADIR%%/examples/src/ts/tests/output/ex81_a.out
+%%DATADIR%%/examples/src/ts/tests/output/ex81_b.out
+%%DATADIR%%/examples/src/ts/tests/output/ex81_c.out
 %%DATADIR%%/examples/src/ts/tests/output/ex8_1.out
 %%DATADIR%%/examples/src/ts/tests/output/ex8_2.out
 %%DATADIR%%/examples/src/ts/tutorials/advection-diffusion-reaction/ex1.c
@@ -6885,8 +7021,6 @@ libdata/pkgconfig/petsc.pc
 %%DATADIR%%/examples/src/ts/tutorials/ex34.c
 %%DATADIR%%/examples/src/ts/tutorials/ex35.cxx
 %%DATADIR%%/examples/src/ts/tutorials/ex36.c
-%%DATADIR%%/examples/src/ts/tutorials/ex36A.c
-%%DATADIR%%/examples/src/ts/tutorials/ex36SE.c
 %%DATADIR%%/examples/src/ts/tutorials/ex4.c
 %%DATADIR%%/examples/src/ts/tutorials/ex40.c
 %%DATADIR%%/examples/src/ts/tutorials/ex41.c
@@ -6923,7 +7057,13 @@ libdata/pkgconfig/petsc.pc
 %%DATADIR%%/examples/src/ts/tutorials/hamiltonian/makefile
 %%DATADIR%%/examples/src/ts/tutorials/hamiltonian/output/ex1_1.out
 %%DATADIR%%/examples/src/ts/tutorials/hamiltonian/output/ex1_2.out
-%%DATADIR%%/examples/src/ts/tutorials/hamiltonian/output/ex2_bsiq3.out
+%%DATADIR%%/examples/src/ts/tutorials/hamiltonian/output/ex2_coulomb_1d.out
+%%DATADIR%%/examples/src/ts/tutorials/hamiltonian/output/ex2_none_1d.out
+%%DATADIR%%/examples/src/ts/tutorials/hamiltonian/output/ex2_two_stream_c0.out
+%%DATADIR%%/examples/src/ts/tutorials/hamiltonian/output/ex2_two_stream_rt.out
+%%DATADIR%%/examples/src/ts/tutorials/hamiltonian/output/ex2_uniform_equilibrium_1d.out
+%%DATADIR%%/examples/src/ts/tutorials/hamiltonian/output/ex2_uniform_mixed_1d.out
+%%DATADIR%%/examples/src/ts/tutorials/hamiltonian/output/ex2_uniform_primal_1d.out
 %%DATADIR%%/examples/src/ts/tutorials/hybrid/ex1.c
 %%DATADIR%%/examples/src/ts/tutorials/hybrid/ex1adj.c
 %%DATADIR%%/examples/src/ts/tutorials/hybrid/ex1fd.c
@@ -6945,6 +7085,7 @@ libdata/pkgconfig/petsc.pc
 %%DATADIR%%/examples/src/ts/tutorials/multirate/ex1.c
 %%DATADIR%%/examples/src/ts/tutorials/multirate/ex2.c
 %%DATADIR%%/examples/src/ts/tutorials/multirate/ex3.c
+%%DATADIR%%/examples/src/ts/tutorials/multirate/ex3fastslowsplit.c
 %%DATADIR%%/examples/src/ts/tutorials/multirate/ex4.c
 %%DATADIR%%/examples/src/ts/tutorials/multirate/ex5.c
 %%DATADIR%%/examples/src/ts/tutorials/multirate/ex6.c
@@ -6956,6 +7097,7 @@ libdata/pkgconfig/petsc.pc
 %%DATADIR%%/examples/src/ts/tutorials/multirate/output/ex1_1.out
 %%DATADIR%%/examples/src/ts/tutorials/multirate/output/ex2_1.out
 %%DATADIR%%/examples/src/ts/tutorials/multirate/output/ex3_1.out
+%%DATADIR%%/examples/src/ts/tutorials/multirate/output/ex3fastslowsplit_1.out
 %%DATADIR%%/examples/src/ts/tutorials/multirate/output/ex4_1.out
 %%DATADIR%%/examples/src/ts/tutorials/multirate/output/ex4_3.out
 %%DATADIR%%/examples/src/ts/tutorials/multirate/output/ex5_1.out
@@ -7014,10 +7156,12 @@ libdata/pkgconfig/petsc.pc
 %%DATADIR%%/examples/src/ts/tutorials/output/ex11_adv_2d_quad_p4est_adapt_0.out
 %%DATADIR%%/examples/src/ts/tutorials/output/ex11_adv_2d_tri_0.out
 %%DATADIR%%/examples/src/ts/tutorials/output/ex11_adv_2d_tri_1.out
+%%DATADIR%%/examples/src/ts/tutorials/output/ex11_cgns_adv_2d_quad.out
+%%DATADIR%%/examples/src/ts/tutorials/output/ex11_cgns_adv_2d_tri.out
 %%DATADIR%%/examples/src/ts/tutorials/output/ex11_euler_0.out
 %%DATADIR%%/examples/src/ts/tutorials/output/ex11_euler_ceed.out
 %%DATADIR%%/examples/src/ts/tutorials/output/ex11_glvis_adv_2d_quad.out
-%%DATADIR%%/examples/src/ts/tutorials/output/ex11_glvis_adv_2d_tet.out
+%%DATADIR%%/examples/src/ts/tutorials/output/ex11_glvis_adv_2d_tri.out
 %%DATADIR%%/examples/src/ts/tutorials/output/ex11_p4est_advec_2d.out
 %%DATADIR%%/examples/src/ts/tutorials/output/ex11_shock_0.out
 %%DATADIR%%/examples/src/ts/tutorials/output/ex11_sw_0.out
@@ -7029,6 +7173,7 @@ libdata/pkgconfig/petsc.pc
 %%DATADIR%%/examples/src/ts/tutorials/output/ex11_tut_2.out
 %%DATADIR%%/examples/src/ts/tutorials/output/ex11_tut_3.out
 %%DATADIR%%/examples/src/ts/tutorials/output/ex11_tut_4.out
+%%DATADIR%%/examples/src/ts/tutorials/output/ex11_vtk_adv_2d_tri.out
 %%DATADIR%%/examples/src/ts/tutorials/output/ex12_1.out
 %%DATADIR%%/examples/src/ts/tutorials/output/ex12_2.out
 %%DATADIR%%/examples/src/ts/tutorials/output/ex12_2_alt.out
@@ -7130,6 +7275,7 @@ libdata/pkgconfig/petsc.pc
 %%DATADIR%%/examples/src/ts/tutorials/output/ex2_tut_3.out
 %%DATADIR%%/examples/src/ts/tutorials/output/ex30_0.out
 %%DATADIR%%/examples/src/ts/tutorials/output/ex30_0_dirk.out
+%%DATADIR%%/examples/src/ts/tutorials/output/ex30_0_dirk_fieldsplit.out
 %%DATADIR%%/examples/src/ts/tutorials/output/ex30_0_dirk_mg.out
 %%DATADIR%%/examples/src/ts/tutorials/output/ex30_0_p4est.out
 %%DATADIR%%/examples/src/ts/tutorials/output/ex30_0_p4est_mg.out
@@ -7396,6 +7542,7 @@ libdata/pkgconfig/petsc.pc
 %%DATADIR%%/examples/src/ts/utils/dmplexlandau/tutorials/output/ex2_0.out
 %%DATADIR%%/examples/src/ts/utils/dmplexlandau/tutorials/output/ex2_simplex.out
 %%DATADIR%%/examples/src/ts/utils/dmplexlandau/tutorials/output/ex2_single.out
+%%DATADIR%%/examples/src/ts/utils/dmplexlandau/tutorials/output/ex2_sphere_3d.out
 %%DATADIR%%/examples/src/vec/is/ao/tests/ex1.c
 %%DATADIR%%/examples/src/vec/is/ao/tests/ex2.c
 %%DATADIR%%/examples/src/vec/is/ao/tests/ex3d/ex3.cxx
@@ -7484,6 +7631,8 @@ libdata/pkgconfig/petsc.pc
 %%DATADIR%%/examples/src/vec/is/sf/tests/ex21.c
 %%DATADIR%%/examples/src/vec/is/sf/tests/ex22.c
 %%DATADIR%%/examples/src/vec/is/sf/tests/ex23.c
+%%DATADIR%%/examples/src/vec/is/sf/tests/ex24.c
+%%DATADIR%%/examples/src/vec/is/sf/tests/ex25.c
 %%DATADIR%%/examples/src/vec/is/sf/tests/ex3.c
 %%DATADIR%%/examples/src/vec/is/sf/tests/ex4.c
 %%DATADIR%%/examples/src/vec/is/sf/tests/ex5.c
@@ -7532,6 +7681,7 @@ libdata/pkgconfig/petsc.pc
 %%DATADIR%%/examples/src/vec/is/sf/tests/output/ex20_1.out
 %%DATADIR%%/examples/src/vec/is/sf/tests/output/ex22.out
 %%DATADIR%%/examples/src/vec/is/sf/tests/output/ex23.out
+%%DATADIR%%/examples/src/vec/is/sf/tests/output/ex24_0.out
 %%DATADIR%%/examples/src/vec/is/sf/tests/output/ex2_1.out
 %%DATADIR%%/examples/src/vec/is/sf/tests/output/ex2_1_window.out
 %%DATADIR%%/examples/src/vec/is/sf/tests/output/ex3_1.out
@@ -7673,6 +7823,7 @@ libdata/pkgconfig/petsc.pc
 %%DATADIR%%/examples/src/vec/vec/tests/ex3.c
 %%DATADIR%%/examples/src/vec/vec/tests/ex30f.F90
 %%DATADIR%%/examples/src/vec/vec/tests/ex31.c
+%%DATADIR%%/examples/src/vec/vec/tests/ex32.c
 %%DATADIR%%/examples/src/vec/vec/tests/ex33.c
 %%DATADIR%%/examples/src/vec/vec/tests/ex34.c
 %%DATADIR%%/examples/src/vec/vec/tests/ex35.c
@@ -7709,6 +7860,7 @@ libdata/pkgconfig/petsc.pc
 %%DATADIR%%/examples/src/vec/vec/tests/ex62.c
 %%DATADIR%%/examples/src/vec/vec/tests/ex63.c
 %%DATADIR%%/examples/src/vec/vec/tests/ex64.c
+%%DATADIR%%/examples/src/vec/vec/tests/ex65.c
 %%DATADIR%%/examples/src/vec/vec/tests/ex7.c
 %%DATADIR%%/examples/src/vec/vec/tests/ex8.c
 %%DATADIR%%/examples/src/vec/vec/tests/ex9.c
@@ -7749,7 +7901,7 @@ libdata/pkgconfig/petsc.pc
 %%DATADIR%%/examples/src/vec/vec/tests/output/ex29_test_inv_error.out
 %%DATADIR%%/examples/src/vec/vec/tests/output/ex2_1.out
 %%DATADIR%%/examples/src/vec/vec/tests/output/ex30f_1.out
-%%DATADIR%%/examples/src/vec/vec/tests/output/ex32f_1.out
+%%DATADIR%%/examples/src/vec/vec/tests/output/ex32.out
 %%DATADIR%%/examples/src/vec/vec/tests/output/ex33_1.out
 %%DATADIR%%/examples/src/vec/vec/tests/output/ex34_1.out
 %%DATADIR%%/examples/src/vec/vec/tests/output/ex35_1.out
@@ -7790,6 +7942,7 @@ libdata/pkgconfig/petsc.pc
 %%DATADIR%%/examples/src/vec/vec/tests/output/ex59_2.out
 %%DATADIR%%/examples/src/vec/vec/tests/output/ex5_1.out
 %%DATADIR%%/examples/src/vec/vec/tests/output/ex60_1.out
+%%DATADIR%%/examples/src/vec/vec/tests/output/ex65_0.out
 %%DATADIR%%/examples/src/vec/vec/tests/output/ex6_1.out
 %%DATADIR%%/examples/src/vec/vec/tests/output/ex7_1.out
 %%DATADIR%%/examples/src/vec/vec/tests/output/ex8_1.out

@@ -1,14 +1,14 @@
---- cmake/Modules/FindQwt.cmake.orig	2020-04-01 19:08:22 UTC
+--- cmake/Modules/FindQwt.cmake.orig	2021-09-30 14:10:55 UTC
 +++ cmake/Modules/FindQwt.cmake
 @@ -15,6 +15,7 @@ find_path(QWT_INCLUDE_DIRS
    ${CMAKE_INSTALL_PREFIX}/include/qwt
-   ${CMAKE_PREFIX_PATH}/include/qwt
+   list(APPEND ${CMAKE_PREFIX_PATH} /include/qwt)
    PATHS
 +  /usr/local/include/qt5/qwt6
    /usr/local/include/qwt-${QWT_QT_VERSION}
    /usr/local/include/qwt
    /usr/include/qwt6
-@@ -29,9 +30,10 @@ find_path(QWT_INCLUDE_DIRS
+@@ -29,9 +30,10 @@ find_library (QWT_LIBRARIES
  )
  
  find_library (QWT_LIBRARIES

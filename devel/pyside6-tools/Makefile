@@ -1,10 +1,11 @@
 PORTNAME=	pyside6
 DISTVERSION=	${PYSIDE6_VERSION}
 CATEGORIES=	devel
-MASTER_SITES=	QT/official_releases/QtForPython/shiboken6/PySide6-${DISTVERSION}-src
+MASTER_SITES=	QT/official_releases/QtForPython/${PORTNAME}/PySide6-${DISTVERSION}-src
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 PKGNAMESUFFIX=	-tools
 DISTNAME=	pyside-setup-everywhere-src-${DISTVERSION}
+DIST_SUBDIR=	KDE/Qt/${PYSIDE6_VERSION}
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	PySide6 development tools
@@ -18,15 +19,17 @@ LIB_DEPENDS=	libshiboken6.abi${PYTHON_MAJOR_VER}.so:devel/shiboken6@${PY_FLAVOR}
 		libxkbcommon.so:x11/libxkbcommon \
 		libzstd.so:archivers/zstd
 
-USES=		cmake gl llvm:lib,noexport python qt:6 shebangfix tar:xz
+USES=		cmake gl llvm:lib,min=17,noexport python qt:6 shebangfix tar:xz
 USE_GL=		opengl
 USE_PYTHON=	flavors
 USE_QT=		base declarative languageserver quick3d shadertools tools
 
-SHEBANG_FILES=	pyside_tool.py qtpy2cpp_lib/tests/baseline/basic_test.py
+SHEBANG_FILES=	pyside_tool.py \
+		qtpy2cpp_lib/tests/baseline/basic_test.py
+
+WRKSRC_SUBDIR=	sources/pyside-tools
 
 PLIST_SUB=	PYSIDE_BINDIR_REL=${PYSIDE_BINDIR_REL}
-WRKSRC_SUBDIR=	sources/pyside-tools
 
 PYSIDE_RELNAME=		${PORTNAME}
 PYSIDE_BINDIR_REL?=	bin/${PYSIDE_RELNAME}
@@ -44,7 +47,7 @@ post-install:
 # Temporarily relocate them to avoid errors.
 	@${MV} ${STAGEDIR}${PREFIX}/${PYSIDE_BINDIR_REL}/deploy_lib/android/recipes ${WRKDIR}
 
-.for d in deploy_lib project qtpy2cpp_lib
+.for d in deploy_lib project_lib qtpy2cpp_lib
 	${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py \
 		-f -d ${PREFIX}/${PYSIDE_BINDIR_REL}/${d} \
 		${STAGEDIR}${PREFIX}/${PYSIDE_BINDIR_REL}/${d}

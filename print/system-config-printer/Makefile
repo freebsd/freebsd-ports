@@ -1,6 +1,6 @@
 PORTNAME=	system-config-printer
 PORTVERSION=	1.5.12
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	print gnome
 
 MAINTAINER=	gnome@FreeBSD.org

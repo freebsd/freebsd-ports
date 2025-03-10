@@ -1,4 +1,4 @@
---- configure.orig	2023-06-22 13:48:20 UTC
+--- configure.orig	2024-06-05 01:23:24 UTC
 +++ configure
 @@ -15,7 +15,7 @@ else
  LIBRARY_PATH=/opt/homebrew/lib
@@ -7,5 +7,5 @@
 -CPATH=/usr/local/lib
 +CPATH=/usr/local/include
  LIBRARY_PATH=/usr/local/lib
- export PKG_CONFIG_PATH=/usr/local/opt/sqlite/lib/pkgconfig
+ export PKG_CONFIG_PATH=${PKG_CONFIG_PATH}:/usr/local/opt/sqlite/lib/pkgconfig
  fi

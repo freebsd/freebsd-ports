@@ -1,14 +1,14 @@
---- src/saga_core/saga_cmd/saga_cmd.cpp.orig	2023-12-11 15:05:42 UTC
+--- src/saga_core/saga_cmd/saga_cmd.cpp.orig	2024-07-29 13:42:28 UTC
 +++ src/saga_core/saga_cmd/saga_cmd.cpp
-@@ -50,6 +50,7 @@
- 
+@@ -51,6 +51,7 @@
  #include <wx/app.h>
  #include <wx/utils.h>
+ #include <wx/filename.h>
 +#include <clocale>
  
  #include "config.h"
  #include "callback.h"
-@@ -163,7 +164,7 @@ bool		Run(int argc, char *argv[])
+@@ -165,7 +166,7 @@ bool		Run(int argc, char *argv[])
  //---------------------------------------------------------
  bool		Run(int argc, char *argv[])
  {

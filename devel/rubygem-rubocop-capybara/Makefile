@@ -5,7 +5,8 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Code style checking for Capybara test files
-WWW=		https://github.com/rubocop/rubocop-capybara
+WWW=		https://docs.rubocop.org/rubocop-capybara/ \
+		https://github.com/rubocop/rubocop-capybara
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/MIT-LICENSE.md

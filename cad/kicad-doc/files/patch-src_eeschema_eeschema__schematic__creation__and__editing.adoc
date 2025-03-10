@@ -1,0 +1,11 @@
+--- src/eeschema/eeschema_schematic_creation_and_editing.adoc.orig	2025-02-08 20:03:37.394835000 +0100
++++ src/eeschema/eeschema_schematic_creation_and_editing.adoc	2025-02-08 20:04:23.338552000 +0100
+@@ -1634,7 +1634,7 @@
+ Text supports markup for superscripts, subscripts, overbars, evaluating project
+ variables, and accessing symbol field values.
+ 
+-[options="header",cols="30%,40%,40%"]
++[options="header",cols="30%,30%,40%"]
+ |====
+ | Feature | Markup Syntax | Result
+ | Superscript

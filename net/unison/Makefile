@@ -1,5 +1,5 @@
 PORTNAME=	unison
-PORTVERSION=	2.53.5
+PORTVERSION=	2.53.7
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net
 
@@ -23,12 +23,10 @@ x11_LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 			libharfbuzz.so:print/harfbuzz
 x11_CONFLICTS_INSTALL=	unison-nox11
 
-USES=		gmake localbase
+USES=		gmake localbase ocaml:build
 USE_GITHUB=	yes
 GH_ACCOUNT=	bcpierce00
-USE_OCAML=	yes
 
-NO_OCAML_RUNDEPENDS=	yes
 MAKE_ENV=	CLIBS="${LIBS:S/^-/-ccopt -/}" \
 		COFLAGS="${CFLAGS:C/ *(-[^ ]*) */ -ccopt \"\1 \"/gW}"
 WRKSRC_SUBDIR=	src
@@ -60,6 +58,10 @@ PLIST_SUB+=	X11=""
 DOCS=		NEWS.md README.md
 
 .include <bsd.port.options.mk>
+
+.if ${ARCH} == powerpc
+USE_BINUTILS=	yes
+.endif
 
 .if ${PORT_OPTIONS:MFSMONITOR}
 ALL_TARGET+=	fsmonitor

@@ -1,11 +1,11 @@
---- components/live_caption/caption_util.cc.orig	2024-05-21 18:07:39 UTC
+--- components/live_caption/caption_util.cc.orig	2025-02-19 07:43:18 UTC
 +++ components/live_caption/caption_util.cc
-@@ -144,7 +144,7 @@ std::string GetCaptionSettingsUrl() {
+@@ -136,7 +136,7 @@ bool IsLiveCaptionFeatureSupported() {
+ std::string GetCaptionSettingsUrl() {
+ #if BUILDFLAG(IS_CHROMEOS)
    return "chrome://os-settings/audioAndCaptions";
- #endif  // BUILDFLAG(IS_CHROMEOS)
- 
--#if BUILDFLAG(IS_LINUX)
-+#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+-#elif BUILDFLAG(IS_LINUX)
++#elif BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
    return "chrome://settings/captions";
- #endif  // BUILDFLAG(IS_LINUX)
- 
+ #elif BUILDFLAG(IS_WIN)
+   return base::win::GetVersion() >= base::win::Version::WIN10

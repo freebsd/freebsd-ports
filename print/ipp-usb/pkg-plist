@@ -1,6 +1,7 @@
 %%ETCDIR%%/ipp-usb.conf.sample
 share/man/man8/ipp-usb.8.gz
 sbin/ipp-usb
+%%DATADIR%%/quirks/Canon.conf
 %%DATADIR%%/quirks/HP.conf
 %%DATADIR%%/quirks/README
 %%DATADIR%%/quirks/blacklist.conf

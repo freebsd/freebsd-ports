@@ -1,8 +1,8 @@
 PORTNAME=	xorgxrdp
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.10.1
+DISTVERSION=	0.10.80.b20241215
 # Be sure to bump PORTREVISION after xorg-server update to force rebuild
-PORTREVISION=	1
+PORTREVISION=	0
 CATEGORIES=	x11-drivers
 PKGNAMESUFFIX=	-devel
 DIST_SUBDIR=	xrdp
@@ -25,7 +25,8 @@ USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 
 GH_ACCOUNT=	neutrinolabs
-GH_TUPLE=	neutrinolabs:xrdp:v0.10.0:xrdp
+GH_TAGNAME=	9698ba0
+GH_TUPLE=	neutrinolabs:xrdp:4c8c773:xrdp
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 

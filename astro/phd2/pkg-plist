@@ -1,8 +1,15 @@
 bin/phd2
 bin/phd2.bin
 share/applications/phd2.desktop
+share/icons/hicolor/128x128/apps/phd2.png
+share/icons/hicolor/16x16/apps/phd2.png
+share/icons/hicolor/256x256/apps/phd2.png
+share/icons/hicolor/32x32/apps/phd2.png
+share/icons/hicolor/48x48/apps/phd2.png
+share/icons/hicolor/64x64/apps/phd2.png
 share/locale/ar_LY/LC_MESSAGES/phd2.mo
 share/locale/ca_ES/LC_MESSAGES/phd2.mo
+share/locale/cs_CZ/LC_MESSAGES/phd2.mo
 share/locale/de_DE/LC_MESSAGES/phd2.mo
 share/locale/es_ES/LC_MESSAGES/phd2.mo
 share/locale/fr_FR/LC_MESSAGES/phd2.mo

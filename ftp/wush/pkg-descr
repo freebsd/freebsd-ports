@@ -1,0 +1,11 @@
+wush is a command line tool that lets you easily transfer files and
+open shells over a peer-to-peer wireguard connection. It's similar to
+magic-wormhole but:
+
+ - No requirement to set up or trust a relay server for authentication.
+
+ - Powered by Wireguard for secure, fast, and reliable connections.
+
+ - Automatic peer-to-peer connections over UDP.
+
+ - Endless possibilities; rsync, ssh, etc.

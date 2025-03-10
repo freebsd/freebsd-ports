@@ -1,11 +1,11 @@
 PORTNAME=	readxl
-DISTVERSION=	1.4.3
+DISTVERSION=	1.4.5
 CATEGORIES=	textproc
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Read Excel Files
-WWW=		https://readxl.tidyverse.org
+WWW=		https://cran.r-project.org/package=readxl
 
 LICENSE=	MIT
 

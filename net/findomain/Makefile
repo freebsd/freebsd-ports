@@ -1,6 +1,6 @@
 PORTNAME=	findomain
 DISTVERSION=	9.0.4
-PORTREVISION=	4
+PORTREVISION=	10
 CATEGORIES=	net security
 
 MAINTAINER=	lcook@FreeBSD.org
@@ -375,8 +375,14 @@ PGSQL_VARS=	WANT_PGSQL=server
 
 SCREENSHOT_RUN_DEPENDS=	chrome:www/chromium
 
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == powerpc
+LIB_DEPENDS+=	libatomic.so:lang/gcc${GCC_DEFAULT}
+LDFLAGS+=	-L/usr/local/lib/gcc${GCC_DEFAULT} -latomic
+.endif
+
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 \
 		${STAGEDIR}${PREFIX}/share/man/man1
 

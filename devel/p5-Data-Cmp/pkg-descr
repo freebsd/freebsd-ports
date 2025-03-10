@@ -1,0 +1,9 @@
+This relatively lightweight (no non-core dependencies, under 100 lines of code)
+module offers the cmp_data function that, like Perl's cmp, returns -1/0/1 value.
+cmp_data differs from cmp in that it can compare two data of different types and
+compare data items recursively, with pretty sensible semantics. In addition to
+returning -1/0/1, cmp_data can also return 2 if two data differ but not
+comparable: there is no sensible notion of which one is "greater than" the
+other. An example is empty hash {} vs empty array []).
+
+This module can handle circular structure.

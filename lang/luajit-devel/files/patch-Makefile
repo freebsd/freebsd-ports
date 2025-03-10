@@ -1,6 +1,6 @@
---- Makefile.orig	2022-08-15 08:16:58.000000000 -0400
-+++ Makefile	2022-08-23 10:24:42.806504000 -0400
-@@ -25,7 +25,7 @@
+--- Makefile.orig	2024-11-14 11:21:00.000000000 -0500
++++ Makefile	2024-11-25 11:34:57.220071000 -0500
+@@ -30,7 +30,7 @@
  # Change the installation path as needed. This automatically adjusts
  # the paths in src/luaconf.h, too. Note: PREFIX must be an absolute path!
  #
@@ -9,15 +9,15 @@
  export MULTILIB= lib
  ##############################################################################
  
-@@ -35,6 +35,7 @@
- INSTALL_SHARE= $(DPREFIX)/share
- INSTALL_DEFINC= $(DPREFIX)/include/luajit-$(MAJVER).$(MINVER)
+@@ -41,6 +41,7 @@
+ INSTALL_SHARE= $(DESTDIR)$(INSTALL_SHARE_)
+ INSTALL_DEFINC= $(DPREFIX)/include/luajit-$(MMVERSION)
  INSTALL_INC=   $(INSTALL_DEFINC)
 +INSTALL_LIBD=  $(DPREFIX)/libdata
  
- INSTALL_LJLIBD= $(INSTALL_SHARE)/luajit-$(VERSION)
- INSTALL_JITLIB= $(INSTALL_LJLIBD)/jit
-@@ -42,8 +43,7 @@
+ export INSTALL_LJLIBD= $(INSTALL_SHARE_)/luajit-$(MMVERSION)
+ INSTALL_JITLIB= $(DESTDIR)$(INSTALL_LJLIBD)/jit
+@@ -48,8 +49,7 @@
  INSTALL_LMOD= $(INSTALL_LMODD)/$(ABIVER)
  INSTALL_CMODD= $(INSTALL_LIB)/lua
  INSTALL_CMOD= $(INSTALL_CMODD)/$(ABIVER)
@@ -27,7 +27,7 @@
  
  INSTALL_TNAME= luajit-$(VERSION)
  INSTALL_TSYMNAME= luajit
-@@ -64,8 +64,8 @@
+@@ -70,8 +70,8 @@
  INSTALL_TSYM= $(INSTALL_BIN)/$(INSTALL_TSYMNAME)
  INSTALL_PC= $(INSTALL_PKGCONFIG)/$(INSTALL_PCNAME)
  
@@ -35,10 +35,10 @@
 -  $(INSTALL_PKGCONFIG) $(INSTALL_JITLIB) $(INSTALL_LMOD) $(INSTALL_CMOD)
 +INSTALL_DIRS= $(INSTALL_INC) \
 +  $(INSTALL_PKGCONFIG) $(INSTALL_JITLIB)
- UNINSTALL_DIRS= $(INSTALL_JITLIB) $(INSTALL_LJLIBD) $(INSTALL_INC) \
+ UNINSTALL_DIRS= $(INSTALL_JITLIB) $(DESTDIR)$(INSTALL_LJLIBD) $(INSTALL_INC) \
    $(INSTALL_LMOD) $(INSTALL_LMODD) $(INSTALL_CMOD) $(INSTALL_CMODD)
  
-@@ -125,10 +125,8 @@
+@@ -135,10 +135,8 @@
  	$(RM) $(INSTALL_DYN) $(INSTALL_SHORT1) $(INSTALL_SHORT2)
  	cd src && test -f $(FILE_SO) && \
  	  $(INSTALL_X) $(FILE_SO) $(INSTALL_DYN) && \
@@ -49,7 +49,7 @@
  	cd etc && $(SED_PC) $(FILE_PC) > $(FILE_PC).tmp && \
  	  $(INSTALL_F) $(FILE_PC).tmp $(INSTALL_PC) && \
  	  $(RM) $(FILE_PC).tmp
-@@ -152,7 +150,6 @@
+@@ -156,7 +154,6 @@
  	for file in $(FILES_INC); do \
  	  $(UNINSTALL) $(INSTALL_INC)/$$file; \
  	  done

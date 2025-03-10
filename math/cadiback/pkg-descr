@@ -1,0 +1,3 @@
+CaDiBack is a tool using the CaDiCaL solver to determine the backbone of a
+satisfiable instance, which are those literals set to true in all models of
+the formula.

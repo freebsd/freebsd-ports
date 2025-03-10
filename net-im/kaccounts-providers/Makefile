@@ -1,6 +1,5 @@
 PORTNAME=	kaccounts-providers
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
-PORTREVISION=	2
 CATEGORIES=	net-im kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
@@ -8,18 +7,16 @@ COMMENT=	System to administer web accounts for the KDE desktop
 WWW=		https://projects.kde.org/projects/kdereview/kaccounts-providers
 
 LIB_DEPENDS=	libaccounts-glib.so:net-im/libaccounts-glib \
-		libkaccounts.so:net-im/kaccounts-integration \
-		libaccounts-qt5.so:net-im/libaccounts-qt@qt5 \
-		libsignon-qt5.so:sysutils/signond@qt5
+		libkaccounts6.so:net-im/kaccounts-integration \
+		libaccounts-qt6.so:net-im/libaccounts-qt@qt6 \
+		libsignon-qt6.so:sysutils/signond@qt6
 
-USES=		cmake compiler:c++11-lang gettext gnome kde:5 pkgconfig qt:5 \
+USES=		cmake compiler:c++11-lang gettext gnome kde:6 pkgconfig qt:6 \
 		tar:xz
 USE_GNOME=	intltool
 USE_KDE=	config coreaddons i18n kdeclarative kio package service \
 		ecm:build
-USE_QT=		concurrent core dbus declarative gui location network \
-		webchannel webengine xml \
-		buildtools:build qmake:build
+USE_QT=		base declarative webchannel webengine
 
 OPTIONS_DEFINE=	DOCS
 

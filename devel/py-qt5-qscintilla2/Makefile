@@ -1,6 +1,6 @@
 PORTNAME=	qscintilla2
-PORTVERSION=	${QSCI2_VERSION}
-PORTREVISION=	1
+DISTVERSION=	${QSCI2_VERSION}
+PORTREVISION=	3
 CATEGORIES=	devel python
 MASTER_SITES=	${MASTER_SITES_QSCI2}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}qt5-
@@ -10,16 +10,15 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Python bindings for QScintilla2 (PyQt5), QSci module
 WWW=		https://riverbankcomputing.com/software/pyqt
 
-BUILD_DEPENDS=	${PY_SETUPTOOLS}
-LIB_DEPENDS=	libqscintilla2_qt5.so:devel/qscintilla2-qt5
+LIB_DEPENDS=	libqscintilla2_qt5.so:devel/qscintilla2@qt5
 
-DISTINFO_FILE=	${.CURDIR:H}/qscintilla2-qt5/distinfo
+DISTINFO_FILE=	${.CURDIR:H}/qscintilla2/distinfo
 DESTDIRNAME=	INSTALL_ROOT
 
 USES=		python pyqt:5 gl qt:5
 USE_GL=		gl
-USE_PYQT=	pyqt5 sip:build qtbuilder
-USE_PYTHON=	concurrent flavors py3kplist
+USE_PYQT=	pyqt5 qtbuilder:build sip:build
+USE_PYTHON=	concurrent flavors
 USE_QT=		core gui printsupport widgets buildtools:build qmake:build
 
 OPTIONS_DEFINE=		DEBUG

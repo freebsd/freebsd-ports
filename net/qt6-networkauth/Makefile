@@ -8,8 +8,9 @@ COMMENT=	Qt6 Network authentication module
 
 BUILD_DEPENDS=	${LOCALBASE}/include/vulkan/vulkan.h:graphics/vulkan-headers
 
-USES=		cmake compiler:c++17-lang \
+USES=		cmake gl compiler:c++17-lang \
 		qt-dist:6
+USE_GL=		opengl
 USE_QT=		base
 USE_LDCONFIG=	${PREFIX}/${QT_LIBDIR_REL}
 

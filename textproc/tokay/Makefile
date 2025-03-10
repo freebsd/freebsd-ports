@@ -1,11 +1,13 @@
 PORTNAME=	tokay
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.6.6
+PORTREVISION=	6
 CATEGORIES=	textproc
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Programming language designed for ad-hoc parsing, inspired by awk
-WWW=		https://tokay.dev
+WWW=		https://tokay.dev \
+		https://github.com/tokay-lang/tokay
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -124,6 +126,6 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 PLIST_FILES=	bin/${PORTNAME}
 
 do-install: # workaround this error in do-install: There are multiple `tokay` packages in your project, and the specification `tokay` is ambiguous.
-	${INSTALL_PROGRAM} ${WRKDIR}/target/*-unknown-freebsd/release/tokay ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+	${INSTALL_PROGRAM} ${WRKDIR}/target/release/tokay ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>

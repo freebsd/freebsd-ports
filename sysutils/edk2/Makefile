@@ -7,7 +7,7 @@ PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
 
 MAINTAINER=	uboot@FreeBSD.org
 COMMENT=	EDK2 Firmware for ${FLAVOR}
-WWW=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/ReadMe.rst
+WWW=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/
 
 LICENSE=	BSD3CLAUSE
 
@@ -42,7 +42,7 @@ GH_TUPLE=	tianocore:edk2-platforms:${PLATFORM_TAG}:platforms \
 .include <bsd.port.pre.mk>
 
 # Heavily dependent on bsd.port.pre.mk definitions for lang/gcc* details:
-BINARY_ALIAS=	make=${LOCALBASE}/bin/gmake \
+BINARY_ALIAS=	make=${GMAKE} \
 		dtc=${LOCALBASE}/bin/dtc \
 		ar=${AR} \
 		gcc=${LOCALBASE}/bin/${CC} \

@@ -1,5 +1,5 @@
 PORTNAME=	delayed_job
-PORTVERSION=	4.1.11
+PORTVERSION=	4.1.13
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -10,7 +10,7 @@ WWW=		https://github.com/collectiveidea/delayed_job
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-RUN_DEPENDS=	rubygem-activesupport4>=3.0<8.0:devel/rubygem-activesupport4
+RUN_DEPENDS=	rubygem-activesupport72>=3.0<9.0:devel/rubygem-activesupport72
 
 USES=		gem
 

@@ -1,6 +1,7 @@
 PORTNAME=	po4a
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.68
+PORTREVISION=	1
 CATEGORIES=	textproc perl5
 
 MAINTAINER=	dbaio@FreeBSD.org
@@ -19,7 +20,6 @@ RUN_DEPENDS=	p5-Term-ReadKey>=2.30:devel/p5-Term-ReadKey \
 		p5-Unicode-LineBreak>=0:textproc/p5-Unicode-LineBreak \
 		p5-YAML-Tiny>=0:textproc/p5-YAML-Tiny \
 		p5-Syntax-Keyword-Try>=0:devel/p5-Syntax-Keyword-Try \
-		jade>=0:textproc/jade \
 		xsltproc:textproc/libxslt \
 		docbook-xsl>0:textproc/docbook-xsl \
 		OpenSP>0:textproc/opensp \

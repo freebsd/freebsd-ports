@@ -1,0 +1,8 @@
+[
+{ type: install
+  message: <<EOM
+If you want to use SearxNG in a production environment, use www/nginx, www/apache24,
+or www/uwsgi. The rc script for this port does not use any of them.
+EOM
+}
+]

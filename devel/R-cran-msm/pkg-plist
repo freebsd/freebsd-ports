@@ -11,6 +11,7 @@
 %%R_MOD_DIR%%/Meta/vignette.rds
 %%R_MOD_DIR%%/NAMESPACE
 %%R_MOD_DIR%%/NEWS
+%%R_MOD_DIR%%/NEWS.md
 %%R_MOD_DIR%%/R/msm
 %%R_MOD_DIR%%/R/msm.rdb
 %%R_MOD_DIR%%/R/msm.rdx
@@ -19,6 +20,7 @@
 %%R_MOD_DIR%%/data/Rdata.rdx
 %%R_MOD_DIR%%/doc/index.html
 %%R_MOD_DIR%%/doc/msm-manual.R
+%%R_MOD_DIR%%/doc/msm-manual.Rnw
 %%R_MOD_DIR%%/doc/msm-manual.pdf
 %%R_MOD_DIR%%/help/AnIndex
 %%R_MOD_DIR%%/help/aliases.rds
@@ -31,11 +33,21 @@
 %%R_MOD_DIR%%/tests/test_base.R
 %%R_MOD_DIR%%/tests/testthat/helper.r
 %%R_MOD_DIR%%/tests/testthat/test_analyticp.r
+%%R_MOD_DIR%%/tests/testthat/test_boot.R
 %%R_MOD_DIR%%/tests/testthat/test_datasumm.r
 %%R_MOD_DIR%%/tests/testthat/test_deriv.r
+%%R_MOD_DIR%%/tests/testthat/test_draic.r
+%%R_MOD_DIR%%/tests/testthat/test_hmodel2list.R
 %%R_MOD_DIR%%/tests/testthat/test_models.r
 %%R_MOD_DIR%%/tests/testthat/test_models_hmm.r
 %%R_MOD_DIR%%/tests/testthat/test_models_hmmmulti.r
 %%R_MOD_DIR%%/tests/testthat/test_models_misc.r
+%%R_MOD_DIR%%/tests/testthat/test_msm2Surv.R
+%%R_MOD_DIR%%/tests/testthat/test_pearson.R
+%%R_MOD_DIR%%/tests/testthat/test_phase.R
+%%R_MOD_DIR%%/tests/testthat/test_ppass.R
+%%R_MOD_DIR%%/tests/testthat/test_simul.R
+%%R_MOD_DIR%%/tests/testthat/test_tidy.R
 %%R_MOD_DIR%%/tests/testthat/test_utils.r
 %%R_MOD_DIR%%/tests/testthat/test_viterbi.R
+%%R_MOD_DIR%%/tests/testthat/test_weights.R

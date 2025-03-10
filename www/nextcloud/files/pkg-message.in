@@ -44,7 +44,7 @@ and update the dynamic part of the file using the commandline:
 
   occ maintenance:update:htaccess
 
-As of Nextcloud 27.1.0 the recommended PHP version is 8.2.
+As of Nextcloud 31.0.0 the recommended PHP version is 8.3.
 
 EOM
 }

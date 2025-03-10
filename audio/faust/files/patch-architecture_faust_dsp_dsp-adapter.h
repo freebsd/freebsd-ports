@@ -1,4 +1,4 @@
---- architecture/faust/dsp/dsp-adapter.h.orig	2021-02-16 21:19:00 UTC
+--- architecture/faust/dsp/dsp-adapter.h.orig	2024-12-26 11:33:55 UTC
 +++ architecture/faust/dsp/dsp-adapter.h
 @@ -26,7 +26,11 @@
  #define __dsp_adapter__
@@ -12,4 +12,4 @@
 +#  endif
  #endif
  #include <string.h>
- #include <iostream>
+ #include <cmath>

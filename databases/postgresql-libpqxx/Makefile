@@ -1,5 +1,6 @@
 PORTNAME=	libpqxx
-PORTVERSION=	7.9.2
+DISTVERSION=	7.9.2
+PORTREVISION=	1
 CATEGORIES=	databases
 PKGNAMEPREFIX=	postgresql-
 DIST_SUBDIR=	postgresql
@@ -9,22 +10,18 @@ COMMENT=	New C++ interface for PostgreSQL
 WWW=		http://pqxx.org/
 
 LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-CONFLICTS=	postgresql-libpqxx-[1-5].* postgresql-libpqxx3-3.* \
-		postgresql-libpqxx4-4.*
+USES=		cmake compiler:c++17-lang pathfix pkgconfig pgsql
+USE_LDCONFIG=	yes
 
-USES=		compiler:c++17-lang gmake libtool pathfix pgsql python:build shebangfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	jtv
-GNU_CONFIGURE=	yes
-USE_LDCONFIG=	yes
-SHEBANG_FILES=	${WRKSRC}/tools/splitconfig.py
-INSTALL_TARGET=	install-strip
-PLIST_SUB=	PORTVERSION=${PORTVERSION:R}
 
-CONFIGURE_ARGS=	--enable-shared \
-		--disable-documentation \
-		--disable-dependency-tracking
-CXXFLAGS+=	-std=c++17
+PLIST_SUB=	DISTVERSION=${DISTVERSION:R}
+
+CMAKE_OFF=	BUILD_TEST
+CMAKE_ON=	BUILD_SHARED_LIBS \
+		CMAKE_SKIP_RPATH
 
 .include <bsd.port.mk>

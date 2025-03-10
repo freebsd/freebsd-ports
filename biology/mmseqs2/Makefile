@@ -1,27 +1,28 @@
 PORTNAME=	MMseqs2
-DISTVERSION=	13-45111
-PORTREVISION=	2
+DISTVERSION=	17-b804f
 CATEGORIES=	biology
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Ultra fast and sensitive sequence search and clustering suite
-WWW=		https://github.com/soedinglab/MMseqs2
+WWW=		https://github.com/soedinglab/MMseqs2/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 NOT_FOR_ARCHS=	armv6 armv7 i386 mips powerpc powerpcspe
 
-LIB_DEPENDS=	libzstd.so:archivers/zstd
+BUILD_DEPENDS=	zstd>0:archivers/zstd
 
 USES=		cmake perl5 shebangfix
 USE_GITHUB=	yes
+GH_ACCOUNT=	soedinglab
 USE_PERL5=	build
 
 SHEBANG_GLOB=	*.sh
-GH_ACCOUNT=	soedinglab
 
-CMAKE_ARGS+=	-DUSE_SYSTEM_ZSTD:BOOL=ON -DDISABLE_IPS4O:BOOL=ON
+CMAKE_ARGS+=	-DVERSION_OVERRIDE=${DISTVERSION}
+CMAKE_ON=	DISABLE_IPS4O USE_SYSTEM_ZSTD
+
 LDFLAGS+=	-lpthread
 
 PLIST_FILES=	bin/mmseqs ${DATADIR}/bash-completion.sh

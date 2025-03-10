@@ -1,136 +1,137 @@
-CARGO_CRATES=	addr2line-0.22.0 \
-		adler-1.0.2 \
-		anstream-0.6.14 \
-		anstyle-1.0.7 \
-		anstyle-parse-0.2.4 \
-		anstyle-query-1.1.0 \
-		anstyle-wincon-3.0.3 \
-		anyhow-1.0.86 \
-		arrayref-0.3.8 \
-		arrayvec-0.7.4 \
-		async-stream-0.3.5 \
-		async-stream-impl-0.3.5 \
-		autocfg-1.3.0 \
-		backtrace-0.3.73 \
+CARGO_CRATES=	addr2line-0.24.2 \
+		adler2-2.0.0 \
+		anstream-0.6.18 \
+		anstyle-1.0.10 \
+		anstyle-parse-0.2.6 \
+		anstyle-query-1.1.2 \
+		anstyle-wincon-3.0.7 \
+		anyhow-1.0.97 \
+		arrayref-0.3.9 \
+		arrayvec-0.7.6 \
+		async-stream-0.3.6 \
+		async-stream-impl-0.3.6 \
+		autocfg-1.4.0 \
+		backtrace-0.3.74 \
 		bitflags-1.3.2 \
-		bitflags-2.6.0 \
-		blake3-1.5.3 \
+		bitflags-2.9.0 \
+		blake3-1.6.1 \
+		bumpalo-3.17.0 \
 		byteorder-1.5.0 \
-		bytes-1.6.1 \
-		cc-1.1.6 \
+		bytes-1.10.1 \
+		cc-1.2.16 \
 		cfg-if-1.0.0 \
-		clap-4.5.10 \
-		clap_builder-4.5.10 \
-		clap_complete-4.5.9 \
-		clap_derive-4.5.8 \
-		clap_lex-0.7.1 \
-		colorchoice-1.0.1 \
-		console-0.15.8 \
-		constant_time_eq-0.3.0 \
+		clap-4.5.31 \
+		clap-verbosity-flag-3.0.2 \
+		clap_builder-4.5.31 \
+		clap_complete-4.5.46 \
+		clap_derive-4.5.28 \
+		clap_lex-0.7.4 \
+		colorchoice-1.0.3 \
+		console-0.15.11 \
+		constant_time_eq-0.3.1 \
 		crc32fast-1.4.2 \
 		crossbeam-epoch-0.9.18 \
-		crossbeam-utils-0.8.20 \
+		crossbeam-utils-0.8.21 \
 		deranged-0.3.11 \
-		dirs-5.0.1 \
-		dirs-sys-0.4.1 \
-		encode_unicode-0.3.6 \
-		env_filter-0.1.1 \
-		env_logger-0.11.4 \
-		errno-0.3.9 \
-		fastrand-2.1.0 \
+		dirs-6.0.0 \
+		dirs-sys-0.5.0 \
+		encode_unicode-1.0.0 \
+		env_filter-0.1.3 \
+		env_logger-0.11.6 \
+		errno-0.3.10 \
+		fastrand-2.3.0 \
 		ffprobe-0.4.0 \
 		fs2-0.4.3 \
-		futures-0.3.30 \
-		futures-channel-0.3.30 \
-		futures-core-0.3.30 \
-		futures-executor-0.3.30 \
-		futures-io-0.3.30 \
-		futures-macro-0.3.30 \
-		futures-sink-0.3.30 \
-		futures-task-0.3.30 \
-		futures-util-0.3.30 \
+		futures-0.3.31 \
+		futures-channel-0.3.31 \
+		futures-core-0.3.31 \
+		futures-executor-0.3.31 \
+		futures-io-0.3.31 \
+		futures-macro-0.3.31 \
+		futures-sink-0.3.31 \
+		futures-task-0.3.31 \
+		futures-util-0.3.31 \
 		fxhash-0.2.1 \
 		getrandom-0.2.15 \
-		gimli-0.29.0 \
+		gimli-0.31.1 \
 		heck-0.5.0 \
-		hermit-abi-0.3.9 \
 		humantime-2.1.0 \
-		indicatif-0.17.8 \
-		infer-0.16.0 \
+		indicatif-0.17.11 \
+		infer-0.19.0 \
 		instant-0.1.13 \
-		is_terminal_polyfill-1.70.0 \
-		itoa-1.0.11 \
-		lazy_static-1.5.0 \
-		libc-0.2.155 \
+		is_terminal_polyfill-1.70.1 \
+		itoa-1.0.15 \
+		js-sys-0.3.77 \
+		libc-0.2.170 \
 		libredox-0.1.3 \
-		linux-raw-sys-0.4.14 \
+		linux-raw-sys-0.4.15 \
 		lock_api-0.4.12 \
-		log-0.4.22 \
+		log-0.4.26 \
 		memchr-2.7.4 \
-		miniz_oxide-0.7.4 \
-		mio-1.0.1 \
+		miniz_oxide-0.8.5 \
+		mio-1.0.3 \
 		num-conv-0.1.0 \
 		number_prefix-0.4.0 \
-		object-0.36.1 \
+		object-0.36.7 \
+		once_cell-1.20.3 \
 		option-ext-0.2.0 \
 		parking_lot-0.11.2 \
 		parking_lot_core-0.8.6 \
-		pin-project-lite-0.2.14 \
+		pin-project-lite-0.2.16 \
 		pin-utils-0.1.0 \
-		portable-atomic-1.7.0 \
+		portable-atomic-1.11.0 \
 		powerfmt-0.2.0 \
-		proc-macro2-1.0.86 \
-		quote-1.0.36 \
+		proc-macro2-1.0.94 \
+		quote-1.0.39 \
 		redox_syscall-0.2.16 \
-		redox_users-0.4.5 \
+		redox_users-0.5.0 \
 		rustc-demangle-0.1.24 \
-		rustix-0.38.34 \
-		ryu-1.0.18 \
+		rustix-0.38.44 \
+		ryu-1.0.20 \
 		scopeguard-1.2.0 \
-		serde-1.0.204 \
-		serde_derive-1.0.204 \
-		serde_json-1.0.120 \
+		serde-1.0.218 \
+		serde_derive-1.0.218 \
+		serde_json-1.0.140 \
 		shell-escape-0.1.5 \
+		shlex-1.3.0 \
 		signal-hook-registry-1.4.2 \
 		slab-0.4.9 \
 		sled-0.34.7 \
-		smallvec-1.13.2 \
+		smallvec-1.14.0 \
 		strsim-0.11.1 \
-		syn-2.0.72 \
-		terminal_size-0.3.0 \
-		thiserror-1.0.63 \
-		thiserror-impl-1.0.63 \
-		time-0.3.36 \
-		time-core-0.1.2 \
-		time-macros-0.2.18 \
-		tokio-1.39.2 \
-		tokio-macros-2.4.0 \
+		syn-2.0.99 \
+		terminal_size-0.4.1 \
+		thiserror-2.0.12 \
+		thiserror-impl-2.0.12 \
+		time-0.3.39 \
+		time-core-0.1.3 \
+		time-macros-0.2.20 \
+		tokio-1.43.0 \
+		tokio-macros-2.5.0 \
 		tokio-process-stream-0.4.0 \
-		tokio-stream-0.1.15 \
-		tokio-util-0.7.11 \
-		unicode-ident-1.0.12 \
-		unicode-width-0.1.13 \
+		tokio-stream-0.1.17 \
+		tokio-util-0.7.13 \
+		unicode-ident-1.0.18 \
+		unicode-width-0.2.0 \
 		utf8parse-0.2.2 \
 		wasi-0.11.0+wasi-snapshot-preview1 \
+		wasm-bindgen-0.2.100 \
+		wasm-bindgen-backend-0.2.100 \
+		wasm-bindgen-macro-0.2.100 \
+		wasm-bindgen-macro-support-0.2.100 \
+		wasm-bindgen-shared-0.2.100 \
+		web-time-1.1.0 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
-		windows-sys-0.48.0 \
 		windows-sys-0.52.0 \
-		windows-targets-0.48.5 \
+		windows-sys-0.59.0 \
 		windows-targets-0.52.6 \
-		windows_aarch64_gnullvm-0.48.5 \
 		windows_aarch64_gnullvm-0.52.6 \
-		windows_aarch64_msvc-0.48.5 \
 		windows_aarch64_msvc-0.52.6 \
-		windows_i686_gnu-0.48.5 \
 		windows_i686_gnu-0.52.6 \
 		windows_i686_gnullvm-0.52.6 \
-		windows_i686_msvc-0.48.5 \
 		windows_i686_msvc-0.52.6 \
-		windows_x86_64_gnu-0.48.5 \
 		windows_x86_64_gnu-0.52.6 \
-		windows_x86_64_gnullvm-0.48.5 \
 		windows_x86_64_gnullvm-0.52.6 \
-		windows_x86_64_msvc-0.48.5 \
 		windows_x86_64_msvc-0.52.6

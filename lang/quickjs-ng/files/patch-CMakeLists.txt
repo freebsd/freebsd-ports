@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2025-01-28 23:42:03 UTC
++++ CMakeLists.txt
+@@ -28,8 +28,6 @@ if(NOT MSVC AND NOT IOS)
+ 
+ xcheck_add_c_compiler_flag(-Wall)
+ if(NOT MSVC AND NOT IOS)
+-    xcheck_add_c_compiler_flag(-Werror)
+-    xcheck_add_c_compiler_flag(-Wextra)
+ endif()
+ xcheck_add_c_compiler_flag(-Wno-implicit-fallthrough)
+ xcheck_add_c_compiler_flag(-Wno-sign-compare)

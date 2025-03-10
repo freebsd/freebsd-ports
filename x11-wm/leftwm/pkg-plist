@@ -1,6 +1,5 @@
 bin/leftwm-log
 bin/lefthk-worker
-bin/leftwm
 bin/leftwm-check
 bin/leftwm-command
 bin/leftwm-state

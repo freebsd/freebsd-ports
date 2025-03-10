@@ -1,12 +1,13 @@
 PORTNAME=	pptpclient
-DISTVERSION=	1.10.0
+PORTVERSION=	1.10.0
 CATEGORIES=	net net-vpn
 MASTER_SITES=	SF/pptpclient/pptp/pptp-${PORTVERSION}
 DISTNAME=	pptp-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	PPTP client for establishing a VPN link with an NT server
-WWW=		https://pptpclient.sourceforge.net/
+WWW=		https://pptpclient.sourceforge.net/ \
+		https://github.com/quozl/pptp
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

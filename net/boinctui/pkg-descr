@@ -1,0 +1,15 @@
+BOINC can be configured in many ways. And the monitoring of scientific
+progress contributed to one's own machines is rewarding. For remote machines
+or to avoid moving the hands of your keyboard, this package provides, all
+for your UNIX command line:
+
+- Fullscreen curses-based text user interface
+- Switch between several hosts running the BOINC client via a hot key
+- View a host's task list (including each task's state)
+- View the BOINC log file in a separate window
+- Suspend/Resume/Abort control of all tasks
+- Update/Suspend/Resume/Reset/No New Task/Allow New Task for projects
+- Toggle activity state
+  (Always suspend/Always resume/Run based on preferences)
+- Run benchmarks
+- Manage BOINC client on remote hosts via boinc_gui RPC protocol

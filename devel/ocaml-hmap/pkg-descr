@@ -1,0 +1,2 @@
+Hmap provides an hashing table datastructure whose values are typed by
+the type parameter of the associated (polymorphic) key.

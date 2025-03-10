@@ -1,11 +1,11 @@
---- ui/compositor/compositor.cc.orig	2024-05-23 20:04:36 UTC
+--- ui/compositor/compositor.cc.orig	2025-02-20 09:59:21 UTC
 +++ ui/compositor/compositor.cc
-@@ -922,7 +922,7 @@ void Compositor::OnResume() {
+@@ -910,7 +910,7 @@ void Compositor::OnResume() {
      obs.ResetIfActive();
  }
  
 -#if BUILDFLAG(IS_LINUX) && BUILDFLAG(IS_OZONE_X11)
 +#if (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)) && BUILDFLAG(IS_OZONE_X11)
  void Compositor::OnCompleteSwapWithNewSize(const gfx::Size& size) {
-   for (auto& observer : observer_list_)
-     observer.OnCompositingCompleteSwapWithNewSize(this, size);
+   observer_list_.Notify(
+       &CompositorObserver::OnCompositingCompleteSwapWithNewSize, this, size);

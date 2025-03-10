@@ -1,5 +1,3 @@
-TIMESTAMP = 1711921962
-SHA256 (Freeciv21-v3.0-patch.4.tar.gz) = 674b7b706c328e230cbebfa13907000bb124a75195982a3174e4c7209568fcac
-SIZE (Freeciv21-v3.0-patch.4.tar.gz) = 53549280
-SHA256 (1c314496c1cabf6e582e10d8660bb1b31ae461d3.patch) = ed66a28ab119f23a0fc9027c7cd98ce4ac7047c2debecbd858a2b391f82324d1
-SIZE (1c314496c1cabf6e582e10d8660bb1b31ae461d3.patch) = 521
+TIMESTAMP = 1740054437
+SHA256 (Freeciv21-v3.1-rc.2.tar.gz) = afd6e176fad64e80dd6243186b793b5a78dfb0edf2f1bbe4a1e4acd6ae79f8be
+SIZE (Freeciv21-v3.1-rc.2.tar.gz) = 52133700

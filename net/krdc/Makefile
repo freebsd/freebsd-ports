@@ -6,18 +6,21 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	RDP and VNC client for KDE
 WWW=		https://kde.org/applications/internet/krdc/
 
-LIB_DEPENDS=	libvncserver.so:net/libvncserver \
+LIB_DEPENDS=	libvncclient.so:net/libvncserver \
+		libxkbcommon.so:x11/libxkbcommon \
+		libwayland-client.so:graphics/wayland \
+		libwayland-cursor.so:graphics/wayland \
 		libssh.so:security/libssh
 
-USES=		cmake compiler:c++11-lang desktop-file-utils gettext \
-		kde:5 qt:5 tar:xz xorg
-USE_KDE=	auth bookmarks codecs completion config configwidgets \
-		coreaddons dnssd doctools i18n iconthemes kcmutils \
-		notifications notifyconfig service wallet widgetsaddons \
-		windowsystem xmlgui \
-		ecm:build
-USE_QT=		core dbus gui network widgets xml \
-		buildtools:build qmake:build
+USES=		cmake compiler:c++11-lang desktop-file-utils gettext gl kde:6 \
+		pkgconfig qt:6 shared-mime-info tar:xz xorg
+USE_GL=		opengl
+USE_KDE=	activities bookmarks colorscheme completion config \
+		configwidgets coreaddons crash dnssd doctools i18n iconthemes \
+		jobwidgets kcmutils kio notifications notifyconfig service \
+		solid statusnotifieritem wallet widgetsaddons windowsystem \
+		xmlgui ecm:build
+USE_QT=		base declarative wayland
 USE_XORG=	x11
 USE_LDCONFIG=	yes
 
@@ -26,9 +29,10 @@ CMAKE_ON=	WITH_VNC
 OPTIONS_DEFINE=	FREERDP DOCS
 OPTIONS_DEFAULT=	FREERDP
 OPTIONS_SUB=	yes
-FREERDP_CMAKE_BOOL=	WITH_FREERDP
 FREERDP_DESC=	Remote Desktop support via FreeRDP
-FREERDP_BUILD_DEPENDS=	xfreerdp:net/freerdp
-FREERDP_RUN_DEPENDS=	xfreerdp:net/freerdp
+FREERDP_LIB_DEPENDS=	libfreerdp2.so:net/freerdp \
+			libfreerdp-client2.so:net/freerdp \
+			libwinpr2.so:net/freerdp
+FREERDP_CMAKE_BOOL=	WITH_RDP
 
 .include <bsd.port.mk>

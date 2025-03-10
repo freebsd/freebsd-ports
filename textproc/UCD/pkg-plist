@@ -10,6 +10,7 @@
 %%DATADIR%%/DerivedAge.txt
 %%DATADIR%%/DerivedCoreProperties.txt
 %%DATADIR%%/DerivedNormalizationProps.txt
+%%DATADIR%%/DoNotEmit.txt
 %%DATADIR%%/EastAsianWidth.txt
 %%DATADIR%%/EmojiSources.txt
 %%DATADIR%%/EquivalentUnifiedIdeograph.txt
@@ -49,6 +50,7 @@
 %%HAN%%%%DATADIR%%/Unihan_RadicalStrokeCounts.txt
 %%HAN%%%%DATADIR%%/Unihan_Readings.txt
 %%HAN%%%%DATADIR%%/Unihan_Variants.txt
+%%DATADIR%%/Unikemet.txt
 %%DATADIR%%/VerticalOrientation.txt
 %%DATADIR%%/auxiliary/GraphemeBreakProperty.txt
 %%DATADIR%%/auxiliary/GraphemeBreakTest.html

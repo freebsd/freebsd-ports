@@ -1,5 +1,5 @@
 PORTNAME=	maven
-DISTVERSION=	3.9.8
+DISTVERSION=	3.9.9
 CATEGORIES=	devel java
 MASTER_SITES=	APACHE/maven/maven-3/${DISTVERSION}/binaries
 PKGNAMESUFFIX=	${DISTVERSION:R:S/.//}
@@ -13,10 +13,9 @@ LICENSE=	APACHE20
 
 RUN_DEPENDS=	mvn:devel/maven-wrapper
 
-USES=		cpe
+USES=		cpe java
 CPE_VENDOR=	apache
 CPE_PRODUCT=	maven
-USE_JAVA=	yes
 
 DATADIR=	${JAVASHAREDIR}/${INSTANCE_ID}
 NO_ARCH=	yes

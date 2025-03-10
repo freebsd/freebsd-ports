@@ -49,6 +49,7 @@ lib/cmake/Qt6BundledPhysX/Qt6BundledPhysXConfigVersion.cmake
 lib/cmake/Qt6BundledPhysX/Qt6BundledPhysXConfigVersionImpl.cmake
 lib/cmake/Qt6BundledPhysX/Qt6BundledPhysXTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/Qt6BundledPhysX/Qt6BundledPhysXTargets.cmake
+lib/cmake/Qt6BundledPhysX/Qt6BundledPhysXVersionlessAliasTargets.cmake
 lib/cmake/Qt6BundledPhysX/Qt6BundledPhysXVersionlessTargets.cmake
 lib/cmake/Qt6Qml/QmlPlugins/Qt6qquick3dphysicspluginAdditionalTargetInfo.cmake
 lib/cmake/Qt6Qml/QmlPlugins/Qt6qquick3dphysicspluginConfig.cmake
@@ -69,6 +70,7 @@ lib/cmake/Qt6Quick3DPhysics/Qt6Quick3DPhysicsConfigVersionImpl.cmake
 lib/cmake/Qt6Quick3DPhysics/Qt6Quick3DPhysicsDependencies.cmake
 lib/cmake/Qt6Quick3DPhysics/Qt6Quick3DPhysicsTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/Qt6Quick3DPhysics/Qt6Quick3DPhysicsTargets.cmake
+lib/cmake/Qt6Quick3DPhysics/Qt6Quick3DPhysicsVersionlessAliasTargets.cmake
 lib/cmake/Qt6Quick3DPhysics/Qt6Quick3DPhysicsVersionlessTargets.cmake
 lib/cmake/Qt6Quick3DPhysicsHelpers/Qt6Quick3DPhysicsHelpersAdditionalTargetInfo.cmake
 lib/cmake/Qt6Quick3DPhysicsHelpers/Qt6Quick3DPhysicsHelpersConfig.cmake
@@ -77,6 +79,7 @@ lib/cmake/Qt6Quick3DPhysicsHelpers/Qt6Quick3DPhysicsHelpersConfigVersionImpl.cma
 lib/cmake/Qt6Quick3DPhysicsHelpers/Qt6Quick3DPhysicsHelpersDependencies.cmake
 lib/cmake/Qt6Quick3DPhysicsHelpers/Qt6Quick3DPhysicsHelpersTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/Qt6Quick3DPhysicsHelpers/Qt6Quick3DPhysicsHelpersTargets.cmake
+lib/cmake/Qt6Quick3DPhysicsHelpers/Qt6Quick3DPhysicsHelpersVersionlessAliasTargets.cmake
 lib/cmake/Qt6Quick3DPhysicsHelpers/Qt6Quick3DPhysicsHelpersVersionlessTargets.cmake
 %%QT_BINDIR%%/cooker
 %%QT_LIBDIR%%/libQt6BundledPhysX.a
@@ -167,6 +170,7 @@ lib/cmake/Qt6Quick3DPhysicsHelpers/Qt6Quick3DPhysicsHelpersVersionlessTargets.cm
 %%QT_QMLDIR%%/QtQuick3D/Physics/libqquick3dphysicsplugin.so
 %%QT_QMLDIR%%/QtQuick3D/Physics/plugins.qmltypes
 %%QT_QMLDIR%%/QtQuick3D/Physics/qmldir
+%%QT_SBOMDIR%%/qtquick3dphysics-%%FULLVER%%.spdx
 libdata/pkgconfig/Qt6Quick3DPhysics.pc
 libdata/pkgconfig/Qt6Quick3DPhysicsHelpers.pc
 %%QT_DATADIR%%/modules/Quick3DPhysics.json

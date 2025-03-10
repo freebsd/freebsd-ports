@@ -26,6 +26,8 @@ start_cmd="wazuh_manager_start"
 stop_cmd="wazuh_manager_stop"
 status_cmd="wazuh_manager_status"
 
+export CRYPTOGRAPHY_OPENSSL_NO_LEGACY=1
+
 wazuh_manager_start() {
 	echo -n "Starting Wazuh Manager: "
 	${command} start > /dev/null

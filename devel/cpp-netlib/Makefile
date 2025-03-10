@@ -1,7 +1,7 @@
 PORTNAME=		cpp-netlib
 DISTVERSIONPREFIX=	${PORTNAME}-
 DISTVERSION=		0.13.0
-PORTREVISION=		7
+PORTREVISION=		9
 DISTVERSIONSUFFIX=	-final
 CATEGORIES=		devel
 
@@ -11,6 +11,8 @@ WWW=		https://github.com/cpp-netlib/cpp-netlib/
 
 LICENSE=		BSL
 LICENSE_FILE=		${WRKSRC}/LICENSE_1_0.txt
+
+BROKEN=		fails to build with Boost>=1.87
 
 LIB_DEPENDS=		libboost_system.so:devel/boost-libs
 BUILD_DEPENDS=		boost-libs>0:devel/boost-libs \

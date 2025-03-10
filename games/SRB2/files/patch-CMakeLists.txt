@@ -1,0 +1,45 @@
+--- CMakeLists.txt.orig	2023-09-08 23:16:28 UTC
++++ CMakeLists.txt
+@@ -8,7 +8,9 @@ include(CMakeDependentOption)
+ set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/cmake/Modules/")
+ 
+ include(CMakeDependentOption)
+-include(cmake/CPM.cmake)
++if (SRB2_CONFIG_SYSTEM_LIBRARIES)
++	include(cmake/CPM.cmake)
++endif()
+ 
+ file(STRINGS src/version.h SRB2_VERSION)
+ string(REGEX MATCH "[0-9]+\\.[0-9.]+" SRB2_VERSION ${SRB2_VERSION})
+@@ -79,7 +81,8 @@ set(SRB2_CONFIG_ASSET_DIRECTORY "" CACHE PATH "Path to
+ # SRB2_CONFIG_PROFILEMODE is probably superceded by some CMake setting.
+ option(SRB2_CONFIG_PROFILEMODE "Compile for profiling (GCC only)." OFF)
+ set(SRB2_CONFIG_ASSET_DIRECTORY "" CACHE PATH "Path to directory that contains all asset files for the installer. If set, assets will be part of installation and cpack.")
+-
++ 
++if (NOT SRB2_CONFIG_SYSTEM_LIBRARIES)
+ if(SRB2_CONFIG_ENABLE_TESTS)
+ 	# https://github.com/catchorg/Catch2
+ 	CPMAddPackage(
+@@ -98,6 +101,7 @@ endif()
+ 	target_compile_features(srb2tests PRIVATE c_std_11 cxx_std_17)
+ 	catch_discover_tests(srb2tests)
+ endif()
++endif()
+ 
+ # Enable CCache
+ # (Set USE_CCACHE=ON to use, CCACHE_OPTIONS for options)
+@@ -114,11 +118,13 @@ else()
+ 		endif()
+ 	endif()
+ else()
++	if (NOT SRB2_CONFIG_SYSTEM_LIBRARIES)
+ 	CPMAddPackage(
+ 		NAME Ccache.cmake
+ 		GITHUB_REPOSITORY TheLartians/Ccache.cmake
+ 		VERSION 1.2
+ 	)
++endif()
+ endif()
+ 
+ # Dependencies

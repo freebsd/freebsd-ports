@@ -1,6 +1,6 @@
 PORTNAME=	polymake
-DISTVERSION=	4.10
-PORTREVISION=	2
+DISTVERSION=	4.13
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/V${DISTVERSION}/ \
 		https://polymake.org/lib/exe/fetch.php/download/

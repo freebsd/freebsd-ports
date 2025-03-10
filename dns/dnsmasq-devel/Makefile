@@ -1,13 +1,13 @@
 PORTNAME=	dnsmasq
-DISTVERSION=	2.90test4 # remember to bump PORTEPOCH when going from test to rc!
+DISTVERSION=	2.91rc5 # remember to bump PORTEPOCH when going from test to rc!
 # Leave the PORTREVISION in even if 0 to avoid accidental PORTEPOCH bumps:
 PORTREVISION=	1
-PORTEPOCH=	5
+PORTEPOCH=	6
 CATEGORIES=	dns
-#MASTER_SITES=	https://www.thekelleys.org.uk/dnsmasq/release-candidates/ \
-#		LOCAL/mandree/
-MASTER_SITES=	https://www.thekelleys.org.uk/dnsmasq/test-releases/ \
-		LOCAL/mandree/
+MASTER_SITES=	LOCAL/mandree/ \
+		https://www.thekelleys.org.uk/dnsmasq/release-candidates/
+#MASTER_SITES=	LOCAL/mandree/ \
+#		https://www.thekelleys.org.uk/dnsmasq/test-releases/
 PKGNAMESUFFIX=	-devel
 
 MAINTAINER=	mandree@FreeBSD.org
@@ -16,8 +16,7 @@ WWW=		https://www.thekelleys.org.uk/dnsmasq/doc.html
 
 LICENSE=	GPLv2
 
-DEPRECATED=	Short-lived test branch, to be removed after v2.90 release
-IGNORE=		please use dns/dnsmasq, which is newer
+DEPRECATED=	Short-lived test branch, to be removed after v2.91 release
 
 USES=		cpe shebangfix tar:xz
 CPE_VENDOR=	thekelleys
@@ -36,7 +35,6 @@ CFLAGS+=	-Wall -Wno-unused-function -Wno-unused-parameter \
 CPPFLAGS+=	-I${LOCALBASE}/include
 
 CONFLICTS_INSTALL=	dnsmasq-2*
-PATCH_STRIP=		-p1
 SUB_FILES=		pkg-message
 
 PORTDOCS=	CHANGELOG CHANGELOG.archive FAQ doc.html setup.html
@@ -106,7 +104,7 @@ USE_RC_SUBR=	dnsmasq
 LDFLAGS+=	-L${LOCALBASE}/lib ${_intllibs} ${ICONV_LIB}
 
 post-patch:
-	${REINPLACE_CMD} -e '/^lua_/s/lua/lua-${LUA_VER}/' ${WRKSRC}/Makefile
+	${REINPLACE_CMD} -e '/^LUA /s/lua/lua-${LUA_VER}/' ${WRKSRC}/Makefile
 
 pre-configure: pretty-print-config
 .if ${PORT_OPTIONS:MIDN}

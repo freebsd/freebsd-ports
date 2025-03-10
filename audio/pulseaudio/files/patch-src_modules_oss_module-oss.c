@@ -1,4 +1,4 @@
---- src/modules/oss/module-oss.c.orig	2022-06-21 10:54:48 UTC
+--- src/modules/oss/module-oss.c.orig	2024-01-12 17:22:09 UTC
 +++ src/modules/oss/module-oss.c
 @@ -121,9 +121,6 @@ struct userdata {
      int fd;

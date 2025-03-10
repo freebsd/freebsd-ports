@@ -1,6 +1,6 @@
 PORTNAME=	xtrojka
 PORTVERSION=	1.2.3
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	games
 MASTER_SITES=	SUNSITE/games/arcade/tetris
 DISTNAME=	${PORTNAME}${PORTVERSION:C/\.//g}
@@ -19,7 +19,7 @@ WRKSRC=		${WRKDIR}/${DISTNAME}
 .include <bsd.port.options.mk>
 
 post-patch:
-.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400091 || ( ${OSVERSION} >= 1302507 && ${OSVERSION} < 1400000 ))
+.if ${OPSYS} == FreeBSD
 	@${REINPLACE_CMD} -e 's|CFLAGS=|CFLAGS=-Wno-error=incompatible-function-pointer-types |g' \
 		${WRKSRC}/Makefile
 .endif

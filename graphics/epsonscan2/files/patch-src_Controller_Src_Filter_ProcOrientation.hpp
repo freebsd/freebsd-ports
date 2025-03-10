@@ -1,6 +1,6 @@
---- src/Controller/Src/Filter/ProcOrientation.hpp.orig	2021-11-25 00:56:58 UTC
+--- src/Controller/Src/Filter/ProcOrientation.hpp.orig	2024-09-12 07:10:36 UTC
 +++ src/Controller/Src/Filter/ProcOrientation.hpp
-@@ -89,6 +89,7 @@ class ProcOrientation : public Filter (private)
+@@ -86,6 +86,7 @@ class ProcOrientation : public Filter (private)
     }
     break;
     case kSDIOrientationNone:

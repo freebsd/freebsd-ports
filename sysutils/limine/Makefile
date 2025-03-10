@@ -1,5 +1,5 @@
 PORTNAME=	limine
-DISTVERSION=	8.0.1
+DISTVERSION=	9.0.0
 CATEGORIES=	sysutils
 MASTER_SITES=	https://github.com/${PORTNAME}-bootloader/${PORTNAME}/releases/download/v${DISTVERSION}/
 
@@ -10,7 +10,7 @@ WWW=		https://limine-bootloader.org/
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	mtools:emulators/mtools \
+BUILD_DEPENDS=	mtools:filesystems/mtools \
 		nasm:devel/nasm
 
 USES=		gmake

@@ -1,0 +1,4 @@
+Urlscan parses an email message or file and scans it for URLs and email
+addresses. It then displays the URLs and their context within the message,
+and allows you to choose one or more URLs to send to your Web browser.
+Alternatively, it send a list of all URLs to stdout.

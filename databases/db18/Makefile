@@ -60,14 +60,13 @@ L10N_DESC=	Localization support (EXPERIMENTAL)
 CRYPTO_CONFIGURE_WITH=	cryptography=yes
 DEBUG_CONFIGURE_ENABLE=	debug umrw
 DOCS_INSTALL_TARGET=	install_docs
-JAVA_USE=		java
+JAVA_USES=		java
 JAVA_CONFIGURE_ENABLE=	java
 JAVA_CONFIGURE_ENV=	JAR="${JAR}" \
 			JAVA="${JAVA}" \
 			JAVAC="${JAVAC}"
 JAVA_CPPFLAGS=		-I"${JAVA_HOME}/include"
-JAVA_VARS=		DBLIBS+=libdb_java \
-			JAVA_VERSION="8+"
+JAVA_VARS=		DBLIBS+=libdb_java
 L10N_CONFIGURE_ENABLE=	localization
 TCL_USES=		tcl
 TCL_CONFIGURE_ENABLE=	tcl

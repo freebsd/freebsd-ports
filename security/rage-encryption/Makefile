@@ -1,7 +1,7 @@
 PORTNAME=	rage
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.10.0
-PORTREVISION=	4
+DISTVERSION=	0.11.1
+PORTREVISION=	2
 CATEGORIES=	security
 PKGNAMESUFFIX=	-encryption
 
@@ -14,7 +14,7 @@ LICENSE_COMB=	dual
 LICENSE_FILE_APACHE20=	${WRKSRC}/LICENSE-APACHE
 LICENSE_FILE_MIT=	${WRKSRC}/LICENSE-MIT
 
-LIB_DEPENDS=	libfuse.so:sysutils/fusefs-libs \
+LIB_DEPENDS=	libfuse.so:filesystems/fusefs-libs \
 		libzstd.so:archivers/zstd
 
 USES=		cargo
@@ -31,7 +31,7 @@ PLIST_FILES=	bin/rage \
 
 do-install:
 .for f in rage rage-keygen rage-mount
-	${INSTALL_PROGRAM} ${CARGO_TARGET_DIR}/${CARGO_BUILD_TARGET}/*/${f} \
+	${INSTALL_PROGRAM} ${CARGO_TARGET_DIR}/*/${f} \
 		${STAGEDIR}${PREFIX}/bin
 .endfor
 

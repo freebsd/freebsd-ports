@@ -19,7 +19,7 @@ WORLD_LIB=${LOCALBASE}
 
 LDFLAGS+=	-L${WORLD_LIB}/lib
 
-.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400091 || ( ${OSVERSION} >= 1302507 && ${OSVERSION} < 1400000 ))
+.if ${OPSYS} == FreeBSD
 MAKE_ARGS+=     CFLAGS="-Wno-error -Wno-deprecated-register" CXXFLAGS="-Wno-error -Wno-deprecated-register"
 .else
 .if ${CHOSEN_COMPILER_TYPE} == clang

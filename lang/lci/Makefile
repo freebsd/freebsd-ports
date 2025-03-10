@@ -4,7 +4,7 @@ DISTVERSIONPREFIX=	v
 PORTREVISION=	4
 CATEGORIES=	lang
 
-MAINTAINER=	ygy@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Original LOLCODE interpreter
 WWW=		https://lolcode.org
 

@@ -1,4 +1,5 @@
 libexec/xdg-desktop-portal-lxqt
 share/applications/org.freedesktop.impl.portal.desktop.lxqt.desktop
 share/dbus-1/services/org.freedesktop.impl.portal.desktop.lxqt.service
+share/xdg-desktop-portal/lxqt-portals.conf
 share/xdg-desktop-portal/portals/lxqt.portal

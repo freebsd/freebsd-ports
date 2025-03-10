@@ -29,9 +29,7 @@ LICENSE_PERMS_JAIDL=	auto-accept
 LICENSE_PERMS_JDOM=	auto-accept
 LICENSE_PERMS_JYTHON=	auto-accept
 
-USES=		zip
-USE_JAVA=	yes
-JAVA_VERSION=	8+
+USES=		java zip
 
 NO_ARCH=	yes
 NO_BUILD=	yes

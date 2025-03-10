@@ -1,4 +1,4 @@
---- src/slic3r/GUI/GUI_ObjectLayers.cpp.orig	2023-12-12 14:21:21 UTC
+--- src/slic3r/GUI/GUI_ObjectLayers.cpp.orig	2024-12-20 11:54:34 UTC
 +++ src/slic3r/GUI/GUI_ObjectLayers.cpp
 @@ -348,7 +348,7 @@ LayerRangeEditor::LayerRangeEditor( ObjectLayers* pare
          m_enter_pressed     = true;

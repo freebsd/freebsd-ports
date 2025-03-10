@@ -1,10 +1,10 @@
 PORTNAME=	prosody
-DISTVERSION=	0.12.4
-PORTREVISION=	3
+DISTVERSION=	0.12.5
+PORTREVISION=	1
 CATEGORIES=	net-im
 MASTER_SITES=	https://prosody.im/downloads/source/
 
-MAINTAINER=	thomas@beingboiled.info
+MAINTAINER=	twm@pdp11.pw
 COMMENT=	Simple extensible XMPP server written in Lua
 WWW=		https://www.prosody.im/
 
@@ -14,12 +14,11 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libicudata.so:devel/icu \
 		libicui18n.so:devel/icu \
 		libicuuc.so:devel/icu
-RUN_DEPENDS=	${LUA_REFMODLIBDIR}/bit.so:devel/lua-bitop@${LUA_FLAVOR} \
-		${LUA_REFMODLIBDIR}/lfs.so:devel/luafilesystem@${LUA_FLAVOR} \
+RUN_DEPENDS=	${LUA_REFMODLIBDIR}/lfs.so:devel/luafilesystem@${LUA_FLAVOR} \
 		${LUA_REFMODLIBDIR}/luaevent/core.so:devel/lua-libevent@${LUA_FLAVOR} \
 		${LUA_REFMODLIBDIR}/lunbound.so:dns/luaunbound@${LUA_FLAVOR} \
-		${LUA_REFMODLIBDIR}/lxp.so:textproc/luaexpat@${LUA_FLAVOR} \
-		${LUA_REFMODLIBDIR}/socket/core.so:net/luasocket@${LUA_FLAVOR} \
+		${LUA_REFMODLIBDIR}/lxp.so:textproc/lua-luaexpat@${LUA_FLAVOR} \
+		${LUA_REFMODLIBDIR}/socket/core.so:net/lua-luasocket@${LUA_FLAVOR} \
 		${LUA_REFMODLIBDIR}/ssl.so:security/luasec@${LUA_FLAVOR}
 
 USES=		cpe gmake lua:54 shebangfix ssl

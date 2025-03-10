@@ -7,6 +7,7 @@ share/man/man1/%%PORTNAME%%-check.1.gz
 share/man/man1/%%PORTNAME%%-copy.1.gz
 share/man/man1/%%PORTNAME%%-diff.1.gz
 share/man/man1/%%PORTNAME%%-dump.1.gz
+share/man/man1/%%PORTNAME%%-features.1.gz
 share/man/man1/%%PORTNAME%%-find.1.gz
 share/man/man1/%%PORTNAME%%-forget.1.gz
 share/man/man1/%%PORTNAME%%-generate.1.gz
@@ -20,6 +21,7 @@ share/man/man1/%%PORTNAME%%-list.1.gz
 share/man/man1/%%PORTNAME%%-ls.1.gz
 share/man/man1/%%PORTNAME%%-migrate.1.gz
 share/man/man1/%%PORTNAME%%-mount.1.gz
+share/man/man1/%%PORTNAME%%-options.1.gz
 share/man/man1/%%PORTNAME%%-prune.1.gz
 share/man/man1/%%PORTNAME%%-recover.1.gz
 share/man/man1/%%PORTNAME%%-repair-index.1.gz

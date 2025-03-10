@@ -17,22 +17,21 @@
            "create": [
              "./build/server"
            ]
-@@ -54,9 +55,11 @@
+@@ -54,9 +55,10 @@
      "./build/server/Metrics"
    ],
    "dependencies": {
 -    "grunt": "1.5.3",
-+    
 +    "grunt": "^1.6.1",
      "grunt-banner": "0.6.0",
      "grunt-check-dependencies": "1.0.0",
-+    "grunt-cli": "^1.4.3",
++    "grunt-cli": "^1.5.0",
      "grunt-contrib-clean": "2.0.0",
      "grunt-contrib-copy": "1.0.0",
      "grunt-mkdir": "1.1.0",
-@@ -74,10 +77,10 @@
-     "unit tests": "cd ./DocService && jest unit --config=../tests/jest.config.js",
-     "integration tests": "cd ./DocService && jest integration --config=../tests/jest.config.js",
+@@ -78,10 +80,10 @@
+     "integration tests with server instance": "cd ./DocService && jest integration/withServerInstance --inject-globals=false --config=../tests/jest.config.js",
+     "integration database tests": "cd ./DocService && jest integration/databaseTests --inject-globals=false --config=../tests/jest.config.js",
      "tests": "cd ./DocService && jest --inject-globals=false --config=../tests/jest.config.js",
 -    "install:Common": "npm ci --prefix ./Common",
 -    "install:DocService": "npm ci --prefix ./DocService",
@@ -42,6 +41,6 @@
 +    "install:DocService": "npm install --prefix ./DocService",
 +    "install:FileConverter": "npm install --prefix ./FileConverter",
 +    "install:Metrics": "npm install --prefix ./Metrics",
-     "build": "run-p install:*"
-   }
- }
+     "3d-party-lic-json:Common": "license-report --output=json --package=./Common/package.json --config ./3d-party-lic-report/license-report-config.json > ./3d-party-lic-report/license-report.json",
+     "3d-party-lic-json:DocService": "license-report --output=json --package=./DocService/package.json --config ./3d-party-lic-report/license-report-config.json > ./3d-party-lic-report/license-report.json",
+     "3d-party-lic-json:FileConverter": "license-report --output=json --package=./FileConverter/package.json --config ./3d-party-lic-report/license-report-config.json > ./3d-party-lic-report/license-report.json",

@@ -1,0 +1,45 @@
+--- docs/_build/man/barman.5.orig	2024-11-23 11:45:54 UTC
++++ docs/_build/man/barman.5
+@@ -44,13 +44,13 @@ barman system, such as the main directory, system user
+ .sp
+ 1. \fBGlobal Configuration\fP: It comprises one file with a set of configurations for the
+ barman system, such as the main directory, system user, log file, and other general
+-options. Default location is \fB/etc/barman.conf\fP and it can be overridden on a per\-user
++options. Default location is \fB%%PREFIX%%/etc/barman.conf\fP and it can be overridden on a per\-user
+ level by \fB~/.barman.conf\fP or by specifying a \fB\&.conf\fP file using the \fB\-c\fP /
+ \fB\-\-config\fP with the \fI\%barman command\fP directly in the CLI.
+ .sp
+ 2. \fBServer Configuration\fP: It comprises one or more files with a set of
+ configurations for a Postgres server that you want to keep track and interact for
+-backup, recovery and/or replication. Default location is \fB/etc/barman.d\fP and must use
++backup, recovery and/or replication. Default location is \fB%%PREFIX%%/etc/barman.d\fP and must use
+ the \fB\&.conf\fP suffix. You may have one or multiple files for servers. You can override the
+ default location by setting the \fBconfiguration_files_directory\fP option in the global
+ configuration file and placing the files in that particular location.
+@@ -58,7 +58,7 @@ the model. These overrides can be implemented using th
+ 3. \fBModel Configuration\fP: It comprises one or more files with a set of
+ configurations overrides that can be applied to Barman servers within the same cluster as
+ the model. These overrides can be implemented using the barman \fBconfig\-switch\fP command.
+-Default location is \fB/etc/barman.d\fP and must use the \fB\&.conf\fP suffix. The same
++Default location is \fB%%PREFIX%%/etc/barman.d\fP and must use the \fB\&.conf\fP suffix. The same
+ \fBconfiguration_files_directory\fP override option from the server configuration applies for
+ models. You may have one or multiple files for models.
+ .sp
+@@ -175,7 +175,7 @@ Scope: Global / Server / Model.
+ .sp
+ \fBbarman_home\fP
+ .sp
+-Designates the main data directory for Barman. Defaults to \fB/var/lib/barman\fP\&.
++Designates the main data directory for Barman. Defaults to \fB/var/barman\fP\&.
+ .sp
+ Scope: Global.
+ .sp
+@@ -255,7 +255,7 @@ Designates the directory where server/model configurat
+ \fBconfiguration_files_directory\fP
+ .sp
+ Designates the directory where server/model configuration files will be read by Barman.
+-Defaults to \fB/etc/barman.d/\fP\&.
++Defaults to \fB%%PREFIX%%/etc/barman.d/\fP\&.
+ .sp
+ Scope: Global.
+ .sp

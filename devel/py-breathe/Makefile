@@ -1,6 +1,6 @@
 PORTNAME=	breathe
 PORTVERSION=	4.35.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -11,7 +11,8 @@ WWW=		https://github.com/michaeljones/breathe
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS} \
+		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}furo>=0:textproc/py-furo@${PY_FLAVOR} \
 		graphviz>=0:graphics/graphviz \
 		${PYTHON_PKGNAMEPREFIX}sphinx>=0,1:textproc/py-sphinx@${PY_FLAVOR} \
@@ -21,7 +22,9 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}furo>=0:textproc/py-furo@${PY_FLAVOR} \
 USES=		gmake python
 USE_GITHUB=	yes
 GH_TUPLE=	michaeljones:breathe:v${PORTVERSION}
-USE_PYTHON=	autoplist distutils
+USE_PYTHON=	autoplist pep517 pytest
+MAKE_ENV+=	GIT_DIR=.
+
 NO_ARCH=	yes
 
 BINARY_ALIAS=	sphinx-build=sphinx-build-${PYTHON_VER}

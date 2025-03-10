@@ -1,137 +1,175 @@
 PORTNAME=	inko
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.14.0
-PORTREVISION=	3
+DISTVERSION=	0.18.1
+PORTREVISION=	1
 CATEGORIES=	lang devel
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Language for building concurrent software
-WWW=		https://inko-lang.org/
+WWW=		https://inko-lang.org/ \
+		https://github.com/inko-lang/inko
 
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 NOT_FOR_ARCHS=	armv6 armv7 i386 mips powerpc # build fails on non-64-bit architectures: Inko requires a 64-bits architecture
 
-LIB_DEPENDS=	libffi.so:devel/libffi
+LIB_DEPENDS=	libffi.so:devel/libffi \
+		libzstd.so:archivers/zstd
 
-USES=		cargo llvm:15 localbase:ldflags
+USES=		cargo llvm:17,lib localbase:ldflags
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	inko-lang
 
-MAKE_ENV=	LLVM_SYS_150_PREFIX=${LLVM_PREFIX} \
+MAKE_ENV=	LLVM_SYS_170_PREFIX=${LLVM_PREFIX} \
 		INKO_RT=${PREFIX}/lib/inko/runtime \
 		INKO_STD=${PREFIX}/lib/inko
 
-CARGO_CRATES=	addr2line-0.21.0 \
-		adler-1.0.2 \
-		aho-corasick-1.1.2 \
-		arrayref-0.3.7 \
-		arrayvec-0.7.4 \
-		autocfg-1.1.0 \
-		backtrace-0.3.69 \
-		base64-0.21.7 \
-		bitflags-1.3.2 \
-		bitflags-2.4.1 \
-		blake3-1.5.0 \
-		bstr-0.2.17 \
-		cc-1.0.83 \
+CARGO_CRATES=	addr2line-0.24.2 \
+		adler2-2.0.0 \
+		anyhow-1.0.93 \
+		arrayref-0.3.9 \
+		arrayvec-0.7.6 \
+		autocfg-1.4.0 \
+		backtrace-0.3.74 \
+		base64-0.22.1 \
+		bitflags-2.6.0 \
+		blake3-1.5.4 \
+		bstr-1.11.0 \
+		byteorder-1.5.0 \
+		cc-1.2.1 \
 		cfg-if-1.0.0 \
-		concurrent-queue-2.4.0 \
 		console-0.15.8 \
-		constant_time_eq-0.3.0 \
-		crc32fast-1.3.2 \
+		constant_time_eq-0.3.1 \
+		core-foundation-0.9.4 \
+		core-foundation-sys-0.8.7 \
+		crc32fast-1.4.2 \
 		crossbeam-queue-0.3.11 \
-		crossbeam-utils-0.8.19 \
-		either-1.9.0 \
+		crossbeam-utils-0.8.20 \
+		displaydoc-0.2.5 \
+		either-1.13.0 \
 		encode_unicode-0.3.6 \
-		errno-0.3.8 \
-		filetime-0.2.23 \
-		flate2-1.0.28 \
+		equivalent-1.0.1 \
+		errno-0.3.9 \
+		filetime-0.2.25 \
+		flate2-1.0.35 \
 		fnv-1.0.7 \
 		form_urlencoded-1.2.1 \
 		getopts-0.2.21 \
-		getrandom-0.2.12 \
-		gimli-0.28.1 \
-		idna-0.5.0 \
-		lazy_static-1.4.0 \
-		libc-0.2.152 \
-		linux-raw-sys-0.4.12 \
-		llvm-sys-150.1.3 \
-		log-0.4.20 \
-		memchr-2.7.1 \
-		miniz_oxide-0.7.1 \
-		object-0.32.2 \
-		once_cell-1.19.0 \
+		getrandom-0.2.15 \
+		gimli-0.31.1 \
+		hashbrown-0.15.2 \
+		icu_collections-1.5.0 \
+		icu_locid-1.5.0 \
+		icu_locid_transform-1.5.0 \
+		icu_locid_transform_data-1.5.0 \
+		icu_normalizer-1.5.0 \
+		icu_normalizer_data-1.5.0 \
+		icu_properties-1.5.1 \
+		icu_properties_data-1.5.0 \
+		icu_provider-1.5.0 \
+		icu_provider_macros-1.5.0 \
+		idna-1.0.3 \
+		idna_adapter-1.2.0 \
+		indexmap-2.6.0 \
+		inkwell-0.5.0 \
+		inkwell_internals-0.10.0 \
+		lazy_static-1.5.0 \
+		libc-0.2.166 \
+		libredox-0.1.3 \
+		linux-raw-sys-0.4.14 \
+		litemap-0.7.4 \
+		llvm-sys-170.2.0 \
+		log-0.4.22 \
+		memchr-2.7.4 \
+		miniz_oxide-0.8.0 \
+		num-bigint-0.4.6 \
+		num-integer-0.1.46 \
+		num-traits-0.2.19 \
+		object-0.36.5 \
+		once_cell-1.20.2 \
+		openssl-probe-0.1.5 \
 		percent-encoding-2.3.1 \
-		pin-project-lite-0.2.13 \
-		polling-2.8.0 \
-		ppv-lite86-0.2.17 \
-		proc-macro2-1.0.76 \
-		quote-1.0.35 \
+		ppv-lite86-0.2.20 \
+		proc-macro2-1.0.92 \
+		quote-1.0.37 \
 		rand-0.8.5 \
 		rand_chacha-0.3.1 \
 		rand_core-0.6.4 \
-		redox_syscall-0.4.1 \
-		regex-1.10.2 \
-		regex-automata-0.1.10 \
-		regex-automata-0.4.3 \
-		regex-syntax-0.8.2 \
-		ring-0.17.7 \
-		rustc-demangle-0.1.23 \
-		rustix-0.38.28 \
-		rustls-0.21.10 \
-		rustls-webpki-0.101.7 \
-		sct-0.7.1 \
-		semver-1.0.21 \
-		similar-2.4.0 \
-		similar-asserts-1.5.0 \
-		socket2-0.5.5 \
+		redox_syscall-0.5.7 \
+		regex-automata-0.4.9 \
+		regex-lite-0.1.6 \
+		ring-0.17.8 \
+		rustc-demangle-0.1.24 \
+		rustix-0.38.41 \
+		rustls-0.23.18 \
+		rustls-native-certs-0.7.3 \
+		rustls-pemfile-2.2.0 \
+		rustls-pki-types-1.10.0 \
+		rustls-webpki-0.102.8 \
+		schannel-0.1.27 \
+		security-framework-2.11.1 \
+		security-framework-sys-2.12.1 \
+		semver-1.0.23 \
+		serde-1.0.215 \
+		serde_derive-1.0.215 \
+		shlex-1.3.0 \
+		similar-2.6.0 \
+		similar-asserts-1.6.0 \
+		smallvec-1.13.2 \
 		spin-0.9.8 \
-		syn-2.0.48 \
-		tar-0.4.40 \
-		thiserror-1.0.56 \
-		thiserror-impl-1.0.56 \
-		tinyvec-1.6.0 \
-		tinyvec_macros-0.1.1 \
-		unicode-bidi-0.3.14 \
-		unicode-ident-1.0.12 \
-		unicode-normalization-0.1.22 \
-		unicode-segmentation-1.10.1 \
-		unicode-width-0.1.11 \
+		stable_deref_trait-1.2.0 \
+		subtle-2.6.1 \
+		syn-2.0.89 \
+		synstructure-0.13.1 \
+		tar-0.4.43 \
+		thiserror-1.0.69 \
+		thiserror-impl-1.0.69 \
+		tinystr-0.7.6 \
+		unicode-ident-1.0.14 \
+		unicode-segmentation-1.12.0 \
+		unicode-width-0.1.14 \
+		unicode-width-0.2.0 \
 		untrusted-0.9.0 \
-		ureq-2.9.1 \
-		url-2.5.0 \
+		ureq-2.10.1 \
+		url-2.5.4 \
+		utf16_iter-1.0.5 \
+		utf8_iter-1.0.4 \
 		wasi-0.11.0+wasi-snapshot-preview1 \
-		webpki-roots-0.25.3 \
-		windows-sys-0.48.0 \
+		webpki-roots-0.26.7 \
 		windows-sys-0.52.0 \
-		windows-targets-0.48.5 \
-		windows-targets-0.52.0 \
-		windows_aarch64_gnullvm-0.48.5 \
-		windows_aarch64_gnullvm-0.52.0 \
-		windows_aarch64_msvc-0.48.5 \
-		windows_aarch64_msvc-0.52.0 \
-		windows_i686_gnu-0.48.5 \
-		windows_i686_gnu-0.52.0 \
-		windows_i686_msvc-0.48.5 \
-		windows_i686_msvc-0.52.0 \
-		windows_x86_64_gnu-0.48.5 \
-		windows_x86_64_gnu-0.52.0 \
-		windows_x86_64_gnullvm-0.48.5 \
-		windows_x86_64_gnullvm-0.52.0 \
-		windows_x86_64_msvc-0.48.5 \
-		windows_x86_64_msvc-0.52.0 \
-		inkwell,inkwell_internals@git+https://github.com/TheDan64/inkwell.git?rev=c18e3e8\#c18e3e8f2bb408c3ec323dd80d08b3a24e7c5152
+		windows-sys-0.59.0 \
+		windows-targets-0.52.6 \
+		windows_aarch64_gnullvm-0.52.6 \
+		windows_aarch64_msvc-0.52.6 \
+		windows_i686_gnu-0.52.6 \
+		windows_i686_gnullvm-0.52.6 \
+		windows_i686_msvc-0.52.6 \
+		windows_x86_64_gnu-0.52.6 \
+		windows_x86_64_gnullvm-0.52.6 \
+		windows_x86_64_msvc-0.52.6 \
+		write16-1.0.0 \
+		writeable-0.5.5 \
+		yoke-0.7.5 \
+		yoke-derive-0.7.5 \
+		zerocopy-0.7.35 \
+		zerocopy-derive-0.7.35 \
+		zerofrom-0.1.5 \
+		zerofrom-derive-0.1.5 \
+		zeroize-1.8.1 \
+		zerovec-0.10.4 \
+		zerovec-derive-0.10.3
 
 do-install:
 	# executable
-	${INSTALL_PROGRAM} ${WRKDIR}/target/*-freebsd/release/inko ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+	${INSTALL_PROGRAM} ${WRKDIR}/target/release/inko ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 	# runtime library
 	${MKDIR} ${STAGEDIR}${PREFIX}/lib/inko/runtime
-	${INSTALL_DATA} ${WRKDIR}/target/*-freebsd/release/libinko.a ${STAGEDIR}${PREFIX}/lib/inko/runtime
+	${INSTALL_DATA} ${WRKDIR}/target/release/libinko.a ${STAGEDIR}${PREFIX}/lib/inko/runtime
 	# standard library
 	cd ${WRKSRC}/std/src && ${COPYTREE_SHARE} std ${STAGEDIR}${PREFIX}/lib/inko
+
+# tests as of 0.18.1: test result: ok. 206 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.03s
 
 .include <bsd.port.mk>

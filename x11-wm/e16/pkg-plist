@@ -37,7 +37,6 @@ share/xsessions/e16-gnome3-session.desktop
 %%DATADIR%%/icons/mon.png
 %%DATADIR%%/icons/pager.png
 %%DATADIR%%/menus/desktop.menu
-%%DATADIR%%/menus/enlightenment.menu
 %%DATADIR%%/menus/maintenance.menu
 %%DATADIR%%/menus/settings.menu
 %%DATADIR%%/menus/winops.menu

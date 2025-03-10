@@ -1,6 +1,5 @@
 PORTNAME=	derailed_benchmarks
-PORTVERSION=	1.7.0
-PORTREVISION=	1
+PORTVERSION=	2.2.1
 CATEGORIES=	benchmarks rubygems
 MASTER_SITES=	RG
 
@@ -10,16 +9,22 @@ WWW=		https://github.com/schneems/derailed_benchmarks
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-benchmark-ips>=2.0.0:benchmarks/rubygem-benchmark-ips \
-		rubygem-get_process_mem0>=0<1:devel/rubygem-get_process_mem0 \
-		rubygem-heapy>=0:devel/rubygem-heapy \
-		rubygem-memory_profiler>=0:devel/rubygem-memory_profiler \
-		rubygem-mini_histogram>=0:devel/rubygem-mini_histogram\
+RUN_DEPENDS=	rubygem-base64>=0:converters/rubygem-base64 \
+		rubygem-benchmark-ips>=2.0.0<3:benchmarks/rubygem-benchmark-ips \
+		rubygem-bigdecimal>=0:math/rubygem-bigdecimal \
+		rubygem-drb>=0:devel/rubygem-drb \
+		rubygem-get_process_mem>=0:devel/rubygem-get_process_mem \
+		rubygem-heapy>=0<1:devel/rubygem-heapy \
+		rubygem-memory_profiler>=0<2:devel/rubygem-memory_profiler \
+		rubygem-mini_histogram>=0.3.0:devel/rubygem-mini_histogram\
+		rubygem-mutex_m>=0:devel/rubygem-mutex_m \
+		rubygem-ostruct>=0:devel/rubygem-ostruct \
 		rubygem-rack>=1:www/rubygem-rack \
+		rubygem-rack-test>=0:www/rubygem-rack-test \
 		rubygem-rake>=10<14:devel/rubygem-rake \
-		rubygem-ruby-statistics>=2.1:devel/rubygem-ruby-statistics \
-		rubygem-thor>=0.19:devel/rubygem-thor \
-		rubygem-unicode_plot>=0.0.4<1.0.0:textproc/rubygem-unicode_plot
+		rubygem-ruby2_keywords>=0:devel/rubygem-ruby2_keywords \
+		rubygem-ruby-statistics>=4.0.1:devel/rubygem-ruby-statistics \
+		rubygem-thor>=0.19<2:devel/rubygem-thor
 
 USES=		gem
 

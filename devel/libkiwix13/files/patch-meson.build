@@ -1,0 +1,62 @@
+Has been upstreamed via https://github.com/kiwix/libkiwix/pull/1173 and will be
+included in next release (14.1.0), so remove this patch at next update.
+
+--- meson.build.orig	2024-02-25 14:11:31 UTC
++++ meson.build
+@@ -4,14 +4,40 @@ compiler = meson.get_compiler('cpp')
+   default_options : ['c_std=c11', 'cpp_std=c++17', 'werror=true'])
+ 
+ compiler = meson.get_compiler('cpp')
+-
+ static_deps = get_option('static-linkage') or get_option('default_library') == 'static'
++extra_libs = []
+ 
+-# See https://github.com/kiwix/libkiwix/issues/371
+-if ['arm', 'mips', 'm68k', 'ppc', 'sh4'].contains(host_machine.cpu_family())
+-  extra_libs = ['-latomic']
+-else
+-  extra_libs = []
++# Atomics as compiled by GCC or clang can lead to external references to
++# functions depending on the type size and the platform. LLVM provides them in
++# 'libcompiler_rt', which clang normally automatically links in, while GNU
++# provides them in 'libatomic', which GCC *does not* link in automatically (but
++# this is probably going to change, see
++# https://gcc.gnu.org/bugzilla/show_bug.cgi?id=81358). Regardless of the setup
++# of the compiler driver itself (GCC or clang), we can thus assume that if some
++# atomic references can't be resolved, then 'libatomic' is missing.
++atomics_program = '''
++#include <atomic>
++#include <cstdint>
++
++using namespace std;
++
++int main() {
++  volatile atomic_bool a_b = true;
++  volatile atomic_ullong a_ull = -1;
++  // Next two lines are to cover atomic<socket_t> from 'httplib.h'.
++  volatile atomic<uint32_t> a_u32 = -1;
++  volatile atomic<uint64_t> a_u64 = -1;
++
++  return atomic_load(&a_b) == false && atomic_load(&a_ull) == 0 &&
++    atomic_load(&a_u32) == 0 && atomic_load(&a_u64) == 0;
++}
++'''
++if not compiler.links(atomics_program,
++                      name: 'compiler driver readily supports atomics')
++  libatomic = compiler.find_library('atomic')
++  compiler.links(atomics_program, name: 'atomics work with libatomic',
++                 dependencies: libatomic, required: true)
++  extra_libs += ['-latomic']
+ endif
+ 
+ if (compiler.get_id() == 'gcc' and build_machine.system() == 'linux') or host_machine.system() == 'freebsd'
+@@ -20,7 +46,8 @@ endif
+ else
+   thread_dep = dependency('', required:false)
+ endif
+-libicu_dep = dependency('icu-i18n', static:static_deps)
++libicu_dep = [dependency('icu-i18n', static:static_deps), \
++              dependency('icu-uc', static:static_deps)]
+ pugixml_dep = dependency('pugixml', static:static_deps)
+ libcurl_dep = dependency('libcurl', static:static_deps)
+ microhttpd_dep = dependency('libmicrohttpd', static:static_deps)

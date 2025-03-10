@@ -1,3 +1,5 @@
-TIMESTAMP = 1645698688
-SHA256 (Ultimaker/Ultimaker-libSavitar-4.13.1_GH0.tar.gz) = 0bd50f54d557bed70f2c8420405c690b819b287156e81e10b6f51651cebce2e9
-SIZE (Ultimaker/Ultimaker-libSavitar-4.13.1_GH0.tar.gz) = 100721
+TIMESTAMP = 1713950760
+SHA256 (Ultimaker/Ultimaker-libSavitar-5.3.0_GH0.tar.gz) = ed44dd42426ba4f592c2d83f652af5c2c60a1f619d16d31afa0babc2a0c997ce
+SIZE (Ultimaker/Ultimaker-libSavitar-5.3.0_GH0.tar.gz) = 25406
+SHA256 (Ultimaker/Ultimaker-pySavitar-5.3.0_GH0.tar.gz) = 968a5c8306448ebe8129449b097d76eedd9e7ddfd1e68888a71975897374d281
+SIZE (Ultimaker/Ultimaker-pySavitar-5.3.0_GH0.tar.gz) = 13402

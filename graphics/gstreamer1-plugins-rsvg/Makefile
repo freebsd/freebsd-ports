@@ -3,13 +3,13 @@ CATEGORIES=	graphics
 
 COMMENT=	GStreamer SVG plugin
 
-GST_PLUGIN=	rsvg
+USE_GNOME=	cairo librsvg2
+
+MASTERDIR=	${.CURDIR:H:H}/multimedia/gstreamer1-plugins
+
+PLIST=		${.CURDIR}/pkg-plist
+
 DIST=		bad
-
-MASTERDIR=	${.CURDIR}/../../multimedia/gstreamer1-plugins
-
-PLIST=  ${.CURDIR}/pkg-plist
-
-USE_GNOME= cairo librsvg2
+GST_PLUGIN=	rsvg
 
 .include "${MASTERDIR}/Makefile"

@@ -1,5 +1,3 @@
-TIMESTAMP = 1635009173
-SHA256 (gnome/totem-3.38.2.tar.xz) = fce562e2b26cbcfc0c678538dcc81f9dc15ce60d5a89ee4358907bf634304c40
-SIZE (gnome/totem-3.38.2.tar.xz) = 2190700
-SHA256 (gnome/61e3a957cb73.patch) = e0f48d11bf404cdec7ad50f45c4595575a8c7bdad740b1f599ae31a766096d09
-SIZE (gnome/61e3a957cb73.patch) = 1122
+TIMESTAMP = 1741164631
+SHA256 (gnome/totem-43.1.tar.xz) = 5668291e9c6444985cb3ffe4ea4f0212f54c2bbe60dd01114c1a950f94759e6d
+SIZE (gnome/totem-43.1.tar.xz) = 2545240

@@ -1,0 +1,11 @@
+PORTNAME=	zabbix72
+PORTREVISION=	0
+CATEGORIES=	net-mgmt
+PKGNAMESUFFIX=	-java
+
+MASTERDIR=	${.CURDIR}/../${PORTNAME}-server
+PLIST=		${PKGDIR}/pkg-plist.java
+
+OPTIONS_DEFINE=		IPV6
+
+.include "${MASTERDIR}/Makefile"

@@ -1,6 +1,6 @@
---- chrome/common/channel_info_posix.cc.orig	2024-06-17 12:56:06 UTC
+--- chrome/common/channel_info_posix.cc.orig	2024-10-22 08:31:56 UTC
 +++ chrome/common/channel_info_posix.cc
-@@ -93,7 +93,7 @@ std::string GetChannelSuffixForDataDir() {
+@@ -95,7 +95,7 @@ std::string GetChannelSuffixForDataDir() {
    }
  }
  
@@ -9,7 +9,7 @@
  std::string GetChannelSuffixForExtraFlagsEnvVarName() {
  #if BUILDFLAG(GOOGLE_CHROME_BRANDING)
    const auto channel_state = GetChannelImpl();
-@@ -121,7 +121,7 @@ std::string GetChannelSuffixForExtraFlagsEnvVarName() 
+@@ -123,7 +123,7 @@ std::string GetChannelSuffixForExtraFlagsEnvVarName() 
  
  // TODO(crbug.com/40118868): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.

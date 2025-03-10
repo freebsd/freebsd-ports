@@ -11,8 +11,8 @@ WWW=		https://www.atunes.org/
 
 LICENSE=	GPLv2
 
+USES=		java
 NO_BUILD=	yes
-USE_JAVA=	yes
 SUB_FILES=	atunes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}

@@ -276,7 +276,7 @@ keycloak:*:332:
 honeytrap:*:333:
 percona:*:334:
 benthos:*:335:
-# free: 336
+snac:*:336:
 daapd:*:337:
 murmur:*:338:
 mumble-server:*:339:
@@ -286,10 +286,10 @@ openfire:*:342:
 gunicorn:*:343:
 snmpd:*:344:
 _metronome:*:345:
-# free: 346
+ngircd:*:346:
 eturnal:*:347:
-# free: 348
-# free: 349
+davfs2:*:348:
+tempo:*:349:
 _sabnzbd:*:350:
 sonarr:*:351:
 radarr:*:352:
@@ -303,10 +303,10 @@ prowlarr:*:359:
 v2ray:*:360:
 httptunnel:*:361:
 readarr:*:362:
-hostd:*:363:
-walletd:*:364:
-renterd:*:365:
-# free: 366
+victoria-logs:*:363:
+elog:*:364:
+gotify:*:365:
+opengist:*:366:
 # free: 367
 # free: 368
 # free: 369
@@ -317,11 +317,11 @@ _wsdd:*:370:
 # free: 374
 # free: 375
 # free: 376
-# free: 377
-# free: 378
-# free: 379
+hostd:*:377:
+walletd:*:378:
+renterd:*:379:
 spoofdpi:*:380:
-# free: 381
+hydroxide:*:381:
 # free: 382
 # free: 383
 # free: 384
@@ -422,7 +422,7 @@ prometheus:*:478:
 alertmanager:*:479:
 datadog:*:480:
 promxy:*:481:
-# free: 482
+openbao:*:482:
 # free: 483
 # free: 484
 # free: 485
@@ -440,8 +440,8 @@ promxy:*:481:
 # free: 497
 rustypaste:*:498:
 # free: 499
-# free: 500
-# free: 501
+qw:*:500:
+qwfwd:*:501:
 birdvty:*:502:
 # free: 503
 # free: 504
@@ -481,7 +481,7 @@ valkey:*:537:
 # free: 538
 # free: 539
 # free: 540
-# free: 541
+ipfixcol2:*:541:
 _flowd:*:542:
 ejabberd:*:543:
 # free: 544
@@ -596,7 +596,7 @@ _xrdp:*:648:
 # free: 652
 # free: 653
 # free: 654
-# free: 655
+tinc:*:655:
 # free: 656
 # free: 657
 # free: 658
@@ -677,7 +677,7 @@ bopm:*:717:
 # free: 733
 # free: 734
 c-lightning:*:735:
-# free: 736
+zonemaster:*:736:
 # free: 737
 # free: 738
 # free: 739
@@ -692,7 +692,7 @@ c-lightning:*:735:
 # free: 748
 # free: 749
 # free: 750
-# free: 751
+supysonic:*:751:
 # free: 752
 # free: 753
 # free: 754
@@ -747,12 +747,12 @@ clickhouse:*:800:
 # free: 803
 # free: 804
 # free: 805
-# free: 806
+act_runner:*:806:
 bosun:*:807:
 clixon:*:808:
 # free: 809
 # free: 810
-# free: 811
+calibreweb:*:811:
 foreman_proxy:*:812:
 hitch:*:813:
 puppet:*:814:
@@ -805,9 +805,9 @@ plocate:*:860:
 # free: 861
 # free: 862
 # free: 863
-# free: 864
-# free: 865
-# free: 866
+mediamtx:*:864:
+z2m:*:865:
+vglusers:*:866:
 sqlpage:*:867:
 jellyfin:*:868:
 keyd:*:869:

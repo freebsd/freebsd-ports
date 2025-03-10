@@ -1,25 +1,64 @@
---- src/slic3r/CMakeLists.txt.orig	2024-06-27 09:25:47 UTC
+--- src/slic3r/CMakeLists.txt.orig	2024-12-20 11:54:34 UTC
 +++ src/slic3r/CMakeLists.txt
-@@ -375,7 +375,7 @@ set(SLIC3R_GUI_SOURCES
-     Utils/PrusaConnect.cpp
+@@ -392,11 +392,12 @@ set(SLIC3R_GUI_SOURCES
+     Utils/ServiceConfig.cpp
  )
  
 -find_package(NanoSVG REQUIRED)
-+# find_package(NanoSVG REQUIRED)
- 
+ if (CMAKE_SYSTEM_NAME STREQUAL "Linux")
++    find_package(NanoSVG REQUIRED)
++endif()
++if(CMAKE_SYSTEM_NAME STREQUAL "Linux" OR CMAKE_SYSTEM_NAME STREQUAL "FreeBSD")
+     find_package(OpenSSL REQUIRED)
+ endif()
+-
  if (APPLE)
      list(APPEND SLIC3R_GUI_SOURCES
-@@ -404,11 +404,11 @@ encoding_check(libslic3r_gui)
+             Utils/RetinaHelperImpl.mm
+@@ -433,14 +434,13 @@ encoding_check(libslic3r_gui)
+ endforeach()
  
  encoding_check(libslic3r_gui)
- 
--target_link_libraries(libslic3r_gui libslic3r avrdude libcereal imgui libvgcode GLEW::GLEW OpenGL::GL hidapi libcurl ${wxWidgets_LIBRARIES} NanoSVG::nanosvg NanoSVG::nanosvgrast)
-+target_link_libraries(libslic3r_gui libslic3r avrdude imgui libvgcode GLEW::GLEW OpenGL::GL hidapi libcurl crypto ${wxWidgets_LIBRARIES})
+-
++if(CMAKE_SYSTEM_NAME STREQUAL "Linux")
+ target_link_libraries(
+     libslic3r_gui
+     PUBLIC
+     libslic3r
+     slic3r-arrange-wrapper
+     avrdude
+-    libcereal
+     imgui
+     libvgcode
+     GLEW::GLEW
+@@ -454,10 +454,29 @@ target_link_libraries(
+     fastfloat
+     boost_headeronly
+ )
++elseif(CMAKE_SYSTEM_NAME STREQUAL "FreeBSD")
++target_link_libraries(
++    libslic3r_gui
++    PUBLIC
++    libslic3r
++    slic3r-arrange-wrapper
++    avrdude
++    imgui
++    libvgcode
++    GLEW::GLEW
++    OpenGL::GL
++    hidapi
++    libcurl
++    ${wxWidgets_LIBRARIES}
++    stb_dxt
++    fastfloat
++    boost_headeronly
++)
++endif()
  
  if (MSVC)
-     target_link_libraries(libslic3r_gui Setupapi.lib)
+     target_link_libraries(libslic3r_gui PUBLIC Setupapi.lib)
 -elseif (CMAKE_SYSTEM_NAME STREQUAL "Linux")
 +elseif (CMAKE_SYSTEM_NAME STREQUAL "Linux" OR CMAKE_SYSTEM_NAME STREQUAL "FreeBSD")
-     target_link_libraries(libslic3r_gui ${DBUS_LIBRARIES}) 
- elseif (APPLE)
-     target_link_libraries(libslic3r_gui ${DISKARBITRATION_LIBRARY} ${COREWLAN_LIBRARY})
+     target_link_libraries(libslic3r_gui PUBLIC
+         ${DBus1_LIBRARIES}
+         OpenSSL::SSL

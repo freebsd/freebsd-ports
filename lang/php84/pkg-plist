@@ -75,6 +75,7 @@ include/php/Zend/zend_iterators.h
 include/php/Zend/zend_language_parser.h
 include/php/Zend/zend_language_scanner.h
 include/php/Zend/zend_language_scanner_defs.h
+include/php/Zend/zend_lazy_objects.h
 include/php/Zend/zend_list.h
 include/php/Zend/zend_llist.h
 include/php/Zend/zend_long.h

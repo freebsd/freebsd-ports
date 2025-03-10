@@ -80,6 +80,7 @@ lib/perforce/libclient.a
 lib/perforce/libp4api.a
 lib/perforce/libp4script.a
 lib/perforce/libp4script_c.a
+lib/perforce/libp4script_cstub.a
 lib/perforce/libp4script_curl.a
 lib/perforce/libp4script_sqlite.a
 lib/perforce/librpc.a

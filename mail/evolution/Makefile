@@ -1,6 +1,6 @@
 PORTNAME=	evolution
-DISTVERSION=	3.44.4
-PORTREVISION=	4
+DISTVERSION=	3.54.3
+PORTREVISION=	2
 CATEGORIES=	mail gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
@@ -24,7 +24,7 @@ LIB_DEPENDS=	libcryptui.so:security/libcryptui \
 		libenchant-2.so:textproc/enchant2 \
 		libenchant.so:textproc/enchant \
 		libfribidi.so:converters/fribidi \
-		libgcr-base-3.so:security/gcr \
+		libgcr-base-3.so:security/gcr3 \
 		libgnome-autoar-gtk-0.so:archivers/gnome-autoar \
 		libgspell-1.so:textproc/gspell \
 		libgtkspell3-3.so:textproc/gtkspell3 \
@@ -35,8 +35,8 @@ LIB_DEPENDS=	libcryptui.so:security/libcryptui \
 		libnss3.so:security/nss \
 		libp11-kit.so:security/p11-kit \
 		libsecret-1.so:security/libsecret \
-		libsoup-2.4.so:devel/libsoup \
-		libwebkit2gtk-4.0.so:www/webkit2-gtk3
+		libsoup-3.0.so:devel/libsoup3 \
+		libwebkit2gtk-4.1.so:www/webkit2-gtk@41
 RUN_DEPENDS=	highlight:textproc/highlight \
 		iso-codes>=0:misc/iso-codes
 
@@ -75,9 +75,7 @@ GLIB_SCHEMAS=	org.gnome.evolution.addressbook.gschema.xml \
 		org.gnome.evolution.spamassassin.gschema.xml \
 		org.gnome.evolution.text-highlight.gschema.xml
 
-EVO_VERSION=	3.24
-PLIST_SUB=	PORTVERSION=2.12 \
-		VERSION=${EVO_VERSION}
+PLIST_SUB=	EVO_VERSION="1.2" CAL_API_VERSION="2.0"
 
 OPTIONS_SUB=		yes
 OPTIONS_DEFINE=		CANBERRA LDAP MAPS MARKDOWN PST WEATHER YTNEF

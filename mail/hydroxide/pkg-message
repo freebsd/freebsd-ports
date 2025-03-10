@@ -1,0 +1,13 @@
+[
+{ type: install
+  message: <<EOM
+You should authenticate your mail account first before using hydroxide.
+To authenticate:
+# service hydroxide init
+and follow the prompts.
+To enable/start hydroxide service:
+# service hydroxide enable
+# service hydroxide start
+EOM
+}
+]

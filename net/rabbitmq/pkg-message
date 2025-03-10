@@ -2,8 +2,8 @@
 { type: upgrade
   message: <<EOM
 In preparation for upgrading to future RabbitMQ releases, users *must*
-enable all feature flags before upgrading stepwise to v3.12.13, to be
-able to migrate later to v3.13.0 when it is released in 2024Q2.
+enable all feature flags before upgrading to v4.0.4, and subsequently,
+enable all feature flags *again* directly after upgrading.
 
 See https://www.rabbitmq.com/docs/upgrade for details.
 EOM
@@ -12,7 +12,8 @@ EOM
   message: <<EOM
 First-time users will want to run:
 
-rabbitmq-plugins enable rabbitmq_management
+sudo -u rabbitmq rabbitmq-plugins enable rabbitmq_management
+sudo -u rabbitmq rabbitmqctl enable_feature_flag --experimental khepri_db
 
 and restart, to enable the web admin console at http://localhost:15672/
 with a default username and password of guest:guest. You should change it..

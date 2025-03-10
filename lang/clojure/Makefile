@@ -1,9 +1,8 @@
 PORTNAME=	clojure
-PORTVERSION=	1.11.1.1200
-PORTREVISION=	1
+DISTVERSION=	1.12.0.1488
 CATEGORIES=	lang lisp java
 MASTER_SITES=	https://download.clojure.org/install/
-DISTNAME=	clojure-tools-${PORTVERSION}
+DISTNAME=	clojure-tools-${DISTVERSION}
 
 MAINTAINER=	freebsd-ports@jan0sch.de
 COMMENT=	Dynamic programming language for the JVM
@@ -14,13 +13,14 @@ LICENSE=	EPL
 RUN_DEPENDS=	bash:shells/bash \
 		rlwrap:devel/rlwrap
 
-USE_JAVA=	yes
-JAVA_VERSION=	8+
+USES=		java
+
 NO_ARCH=	yes
 NO_BUILD=	yes
 
-PLIST_SUB=	PORTVERSION=${PORTVERSION}
 WRKSRC=		${WRKDIR}/clojure-tools
+
+PLIST_SUB=	DISTVERSION=${DISTVERSION}
 
 post-patch:
 	@${REINPLACE_CMD} 's,BINDIR,${PREFIX}\/bin,g' \
@@ -29,13 +29,13 @@ post-patch:
 		${WRKSRC}/clojure
 
 do-install:
-	@${MKDIR} ${STAGEDIR}${DATADIR}/libexec ${STAGEDIR}${PREFIX}/share/man/man1
-	${INSTALL_DATA} ${WRKSRC}/clojure-tools-${PORTVERSION}.jar \
+	${MKDIR} ${STAGEDIR}${DATADIR}/libexec ${STAGEDIR}${MANDIRS}/man1
+	${INSTALL_DATA} ${WRKSRC}/clojure-tools-${DISTVERSION}.jar \
 		${STAGEDIR}${DATADIR}/libexec
 	${INSTALL_DATA} ${WRKSRC}/exec.jar ${STAGEDIR}${DATADIR}/libexec
 	cd ${WRKSRC} && ${INSTALL_DATA} deps.edn example-deps.edn \
 		${STAGEDIR}${DATADIR}
 	cd ${WRKSRC} && ${INSTALL_SCRIPT} clojure clj ${STAGEDIR}${PREFIX}/bin
-	cd ${WRKSRC} && ${INSTALL_MAN} clojure.1 clj.1 ${STAGEDIR}${PREFIX}/share/man/man1
+	cd ${WRKSRC} && ${INSTALL_MAN} clojure.1 clj.1 ${STAGEDIR}${MANDIRS}/man1
 
 .include <bsd.port.mk>

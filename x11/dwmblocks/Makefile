@@ -1,7 +1,7 @@
 # x11/dwmblocks
 
 PORTNAME=	dwmblocks
-DISTVERSION=	g20201227
+DISTVERSION=	g20240823
 CATEGORIES=	x11
 
 MAINTAINER=	echo@lethedata.com
@@ -17,7 +17,7 @@ USES=		xorg
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	torrinfail
-GH_TAGNAME=	96cbb45
+GH_TAGNAME=	8cedd22
 
 USE_XORG=	x11
 
@@ -35,9 +35,11 @@ post-extract:
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -E \
-		-e "s|(LDFLAGS[[:space:]]*)= |\1= -L/usr/local/lib -I/usr/local/include |" \
-		-e "s|output|all|" \
+	# Uncomment FreeBSD-specific LDFLAGS
+	@${REINPLACE_CMD} \
+		-e "7 s/^#//" \
+		-e '3s/:=/+=/' \
+		-e '4s/:=/+=/' \
 		${WRKSRC}/Makefile
 
 post-install:

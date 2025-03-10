@@ -1,5 +1,5 @@
 PORTNAME=	rgbds
-DISTVERSION=	0.8.0
+DISTVERSION=	0.9.1
 CATEGORIES=	devel games
 MASTER_SITES=	https://github.com/gbdev/rgbds/releases/download/v${DISTVERSION}/
 
@@ -10,19 +10,16 @@ WWW=		https://rgbds.gbdev.io/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	bash>0:shells/bash
 LIB_DEPENDS=	libpng16.so:graphics/png
+TEST_DEPENDS=	bash>0:shells/bash \
+		git>0:devel/git \
+		xxd>0:sysutils/xxd
 
-USES=		bison compiler:c11 dos2unix pkgconfig shebangfix
+USES=		bison cmake:testing pkgconfig shebangfix
+SHEBANG_FILES=	contrib/view_palettes.sh src/bison.sh test/*.sh test/*/*.sh
 
-SHEBANG_FILES=	src/bison.sh
-MAKE_ARGS=	Q= # verbose builds
+CMAKE_OFF=	USE_NONFREE_TESTS
+
 WRKSRC=		${WRKDIR}/rgbds
-
-do-configure:
-# yank _POSIX_C_SOURCE because it breaks the build, see also:
-# https://github.com/gbdev/rgbds/issues/1091
-# https://github.com/gbdev/rgbds/issues/1111
-	${REINPLACE_CMD} 's,-D_POSIX_C_SOURCE=200809L,,' ${WRKSRC}/Makefile
 
 .include <bsd.port.mk>

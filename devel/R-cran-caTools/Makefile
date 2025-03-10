@@ -1,6 +1,5 @@
 PORTNAME=	caTools
-PORTVERSION=	1.18.2
-PORTREVISION=	1
+PORTVERSION=	1.18.3
 CATEGORIES=	devel
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
@@ -10,9 +9,7 @@ WWW=		https://cran.r-project.org/web/packages/caTools/
 
 LICENSE=	GPLv3
 
-CRAN_DEPENDS=	R-cran-bitops>0:devel/R-cran-bitops
-BUILD_DEPENDS=	${CRAN_DEPENDS}
-RUN_DEPENDS=	${CRAN_DEPENDS}
+RUN_DEPENDS=	R-cran-bitops>0:devel/R-cran-bitops
 
 USES=		cran:auto-plist,compiles
 

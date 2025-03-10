@@ -4,7 +4,7 @@ CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	einar@isnic.is
 COMMENT=	Sliding window rate limiting with Redis
 WWW=		https://metacpan.org/pod/Redis::RateLimit
 

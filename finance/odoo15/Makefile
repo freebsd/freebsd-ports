@@ -1,6 +1,6 @@
 PORTNAME=	odoo
 PORTVERSION=	15.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	finance www
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 PKGNAMESUFFIX=	15
@@ -11,11 +11,13 @@ WWW=		https://www.odoo.com
 
 LICENSE=	LGPL3
 
+DEPRECATED=	Depends on expired converters/wkhtmltopdf and print/py-pypdf2
+EXPIRATION_DATE=2025-03-31
+
 USE_GITHUB=	yes
 GH_TAGNAME=	02b4e98ebb2c45d9a4af10fe1bc732f048708f85
 
-LIB_DEPENDS=	libxml2.so:textproc/libxml2 \
-		libxslt.so:textproc/libxslt \
+LIB_DEPENDS=	libxslt.so:textproc/libxslt \
 		libevent.so:devel/libevent \
 		libsasl2.so:security/cyrus-sasl2
 RUN_DEPENDS=	wkhtmltopdf>0:converters/wkhtmltopdf \
@@ -66,7 +68,8 @@ RUN_DEPENDS=	wkhtmltopdf>0:converters/wkhtmltopdf \
 		${PYTHON_PKGNAMEPREFIX}idna>0:dns/py-idna@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}stdnum>0:devel/py-stdnum@${PY_FLAVOR}
 
-USES=		cpe ldap python pgsql shebangfix
+USES=		cpe gnome ldap python pgsql shebangfix
+USE_GNOME=	libxml2
 USE_PYTHON=	distutils
 
 SHEBANG_LANG=	python

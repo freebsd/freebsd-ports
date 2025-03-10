@@ -4,8 +4,7 @@ bin/kmixremote
 etc/xdg/autostart/kmix_autostart.desktop
 etc/xdg/autostart/restore_kmix_volumes.desktop
 lib/libkmixcore.so.%%KDE_APPLICATIONS_VERSION%%
-lib/libkmixcore.so.5
-%%QT_PLUGINDIR%%/kf5/kded/kmixd.so
+lib/libkmixcore.so.6
 share/applications/org.kde.kmix.desktop
 share/config.kcfg/kmixsettings.kcfg
 share/dbus-1/interfaces/org.kde.kmix.control.xml
@@ -31,6 +30,8 @@ share/icons/hicolor/64x64/actions/kmix.png
 %%DATADIR%%/pics/mixer-pcm.png
 %%DATADIR%%/pics/mixer-surround.png
 %%DATADIR%%/pics/mixer-video.png
+%%DATADIR%%/pics/settings-channels.png
+%%DATADIR%%/pics/settings-master.png
 %%DATADIR%%/pics/show-mixer.png
 %%DATADIR%%/profiles/ALSA.TerraTec_DMX6Fire.1.default.xml
 %%DATADIR%%/profiles/ALSA.capture.xml
@@ -40,8 +41,7 @@ share/icons/hicolor/64x64/actions/kmix.png
 %%DATADIR%%/profiles/OSS.default.xml
 %%DATADIR%%/profiles/PulseAudio.default.xml
 %%DATADIR%%/profiles/SUNAudio.default.xml
-share/knotifications5/kmix.notifyrc
-share/kservices5/kmixctrl_restore.desktop
+share/knotifications6/kmix.notifyrc
 share/kxmlgui5/kmix/kmixui.rc
 share/locale/af/LC_MESSAGES/kmix.mo
 share/locale/ar/LC_MESSAGES/kmix.mo
@@ -119,4 +119,4 @@ share/locale/zh_CN/LC_MESSAGES/kmix.mo
 share/locale/zh_HK/LC_MESSAGES/kmix.mo
 share/locale/zh_TW/LC_MESSAGES/kmix.mo
 share/metainfo/org.kde.kmix.appdata.xml
-share/qlogging-categories5/kmix.categories
+share/qlogging-categories6/kmix.categories

@@ -1,13 +1,13 @@
 PORTNAME=	pyquery
-PORTVERSION=	2.0.0
-PORTREVISION=	1
+PORTVERSION=	2.0.1
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	jQuery-like library for Python
-WWW=		https://github.com/gawel/pyquery
+WWW=		https://pyquery.readthedocs.io/en/latest/ \
+		https://github.com/gawel/pyquery
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

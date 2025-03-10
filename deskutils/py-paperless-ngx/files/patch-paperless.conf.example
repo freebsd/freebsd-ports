@@ -55,6 +55,6 @@
  #PAPERLESS_CONVERT_BINARY=/usr/bin/convert
  #PAPERLESS_GS_BINARY=/usr/bin/gs
 +
-+# NLTK settings - see `man 7 paperless`
++# NLTK settings - see `man 7 paperless-ngx`
 +PAPERLESS_NLTK_DIR=/var/db/paperless/nltkdata
 +PAPERLESS_ENABLE_NLTK=yes

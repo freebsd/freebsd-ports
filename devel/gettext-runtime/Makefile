@@ -22,7 +22,6 @@ CPE_PRODUCT=	gettext
 CPE_VENDOR=	gnu
 
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--disable-csharp --disable-java --with-included-gettext \
 		ac_cv_lib_rt_sched_yield=no
 INSTALL_TARGET=	install-strip
@@ -40,5 +39,8 @@ OPTIONS_DEFINE=	DOCS
 .if ${OPSYS} == DragonFly
 CONFIGURE_ARGS+=--disable-threads
 .endif
+
+post-install:
+	${RMDIR} ${STAGEDIR}${PREFIX}/lib/gettext
 
 .include <bsd.port.mk>

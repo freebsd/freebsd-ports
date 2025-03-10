@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/net/tools/cert_verify_tool/cert_verify_comparision_tool.cc.orig	2023-05-31 08:12:17 UTC
+--- src/3rdparty/chromium/net/tools/cert_verify_tool/cert_verify_comparision_tool.cc.orig	2024-02-23 21:04:38 UTC
 +++ src/3rdparty/chromium/net/tools/cert_verify_tool/cert_verify_comparision_tool.cc
 @@ -35,7 +35,7 @@
  #include "net/url_request/url_request_context_builder.h"
@@ -18,7 +18,7 @@
    // On Linux, use a fixed ProxyConfigService, since the default one
    // depends on glib.
    //
-@@ -126,7 +126,7 @@ class CertVerifyImpl {
+@@ -123,7 +123,7 @@ class CertVerifyImpl {
  std::unique_ptr<CertVerifyImpl> CreateCertVerifyImplFromName(
      base::StringPiece impl_name,
      scoped_refptr<net::CertNetFetcher> cert_net_fetcher) {

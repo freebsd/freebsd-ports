@@ -1,5 +1,5 @@
 PORTNAME=	atpublic
-PORTVERSION=	3.0
+PORTVERSION=	5.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -10,8 +10,10 @@ WWW=		https://public.readthedocs.io/
 
 LICENSE=	APACHE20
 
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatchling>0:devel/py-hatchling@${PY_FLAVOR}
+
 USES=		python
-USE_PYTHON=	autoplist distutils
+USE_PYTHON=	autoplist pep517
 
 MAKE_ENV=	ATPUBLIC_BUILD_EXTENSION=1
 NO_ARCH=	yes

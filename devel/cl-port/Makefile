@@ -1,6 +1,6 @@
 PORTNAME=	port
 PORTVERSION=	2002.10.02.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel lisp
 MASTER_SITES=	ftp://ftp.linux.org.uk/pub/lisp/experimental/cclan/ \
 		ftp://ftp.ntnu.no/pub/lisp/cclan/ \
@@ -15,7 +15,7 @@ WWW=		https://clocc.sourceforge.net
 WRKSRC=		${WRKDIR}/clocc-${PORTNAME}
 NO_BUILD=	yes
 
-USE_ASDF=	yes
+USES=		cl
 
 OPTIONS_DEFINE=	DOCS
 
@@ -24,9 +24,8 @@ do-install:
 	@${INSTALL_DATA} ${WRKSRC}/clocc-port.asd ${STAGEDIR}${ASDF_PATHNAME}/port.asd
 	@${INSTALL_DATA} ${WRKSRC}/port.system ${STAGEDIR}${ASDF_PATHNAME}
 	@${INSTALL_DATA} ${WRKSRC}/*.lisp ${STAGEDIR}${ASDF_PATHNAME}
-	@${LN} -sf ${ASDF_PATHNAME}/port.asd ${STAGEDIR}${ASDF_REGISTRY}
+	@${RLN} ${STAGEDIR}${ASDF_PATHNAME}/port.asd ${STAGEDIR}${ASDF_REGISTRY}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/port.html ${STAGEDIR}${DOCSDIR}
 
-.include "${.CURDIR}/../../devel/cl-asdf/bsd.cl-asdf.mk"
 .include <bsd.port.mk>

@@ -1,24 +1,33 @@
---- chrome/browser/browser_process_impl.cc.orig	2024-08-01 05:47:53 UTC
+--- chrome/browser/browser_process_impl.cc.orig	2025-02-22 18:06:53 UTC
 +++ chrome/browser/browser_process_impl.cc
-@@ -228,7 +228,7 @@
- #include "chrome/browser/ui/profiles/profile_picker.h"
+@@ -254,7 +254,7 @@
+ #include "components/enterprise/browser/controller/chrome_browser_cloud_management_controller.h"
  #endif
  
--#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
-+#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
- #include "chrome/browser/error_reporting/chrome_js_error_report_processor.h"  // nogncheck
+-#if BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+ #include "chrome/browser/browser_features.h"
+ #include "components/os_crypt/async/browser/secret_portal_key_provider.h"
  #endif
+@@ -1121,7 +1121,7 @@ void BrowserProcessImpl::RegisterPrefs(PrefRegistrySim
+                                 GoogleUpdateSettings::GetCollectStatsConsent());
+   registry->RegisterBooleanPref(prefs::kDevToolsRemoteDebuggingAllowed, true);
  
-@@ -1282,7 +1282,7 @@ void BrowserProcessImpl::PreMainMessageLoopRun() {
- 
-   ApplyMetricsReportingPolicy();
- 
--#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
-+#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
-   ChromeJsErrorReportProcessor::Create();
+-#if BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+   os_crypt_async::SecretPortalKeyProvider::RegisterLocalPrefs(registry);
  #endif
+ }
+@@ -1387,7 +1387,7 @@ void BrowserProcessImpl::PreMainMessageLoopRun() {
+               features::kUseAppBoundEncryptionProviderForEncryption))));
+ #endif  // BUILDFLAG(IS_WIN)
  
-@@ -1615,7 +1615,7 @@ void BrowserProcessImpl::Unpin() {
+-#if BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+   if (base::FeatureList::IsEnabled(features::kDbusSecretPortal)) {
+     providers.emplace_back(
+         /*precedence=*/10u,
+@@ -1637,7 +1637,7 @@ void BrowserProcessImpl::Unpin() {
  // Mac is currently not supported.
  // TODO(crbug.com/40118868): Revisit once build flag switch of lacros-chrome is
  // complete.

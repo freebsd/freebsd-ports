@@ -1,12 +1,12 @@
 PORTNAME=	wmsun
-PORTVERSION=	1.05
+DISTVERSION=	1.06
 PORTEPOCH=	1
 CATEGORIES=	astro windowmaker
 MASTER_SITES=	https://www.dockapps.net/download/
 
-MAINTAINER=	mbeis@xs4all.nl
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Dockapp that displays the rise and set times of the Sun
-WWW=		https://www.dockapps.net/wmsun/
+WWW=		https://www.dockapps.net/wmsun
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
@@ -14,14 +14,18 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libdockapp.so:x11-wm/libdockapp
 
 USES=		xorg
-USE_XORG=	xext xpm x11
+USE_XORG=	x11 xext xpm
 
-MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" \
-		INCDIR="-I${LOCALBASE}/include" LIBDIR="-L${LOCALBASE}/lib"
+MAKE_ARGS=	CC="${CC}" \
+		CFLAGS="${CFLAGS}" \
+		INCDIR="-I${LOCALBASE}/include" \
+		LIBDIR="-L${LOCALBASE}/lib"
 MAKE_JOBS_UNSAFE=	yes
 
-PLIST_FILES=	bin/wmsun share/man/man1/wmsun.1.gz
-WRKSRC=		${WRKDIR}/dockapps-a1e67bd
+#WRKSRC=		${WRKDIR}/dockapps-a1e67bd
+
+PLIST_FILES=	bin/wmsun \
+		share/man/man1/wmsun.1.gz
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/wmsun ${STAGEDIR}${PREFIX}/bin

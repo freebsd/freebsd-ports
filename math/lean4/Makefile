@@ -1,6 +1,6 @@
 PORTNAME=	lean4
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.10.0
+DISTVERSION=	4.12.0
 CATEGORIES=	math lang devel # lean4 is primarily a math theorem prover, but it is also a language and a development environment
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -13,8 +13,11 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BROKEN_armv7=	compilation fails: ../../.build/stage1/lib/temp/Init/Coe.depend: No such file or directory
 BROKEN_i386=	linking fails: INTERNAL PANIC: out of memory (during: Linking runLinter)
 
-BUILD_DEPENDS=	bash:shells/bash
-LIB_DEPENDS=	libgmp.so:math/gmp
+BUILD_DEPENDS=	bash:shells/bash \
+		cadical:math/cadical
+LIB_DEPENDS=	libgmp.so:math/gmp \
+		libuv.so:devel/libuv
+RUN_DEPENDS=	cadical:math/cadical
 
 USES=		cmake:noninja,testing compiler:c++14-lang gmake python:build # ninja fails + gmake scripts are included in the project
 
@@ -26,11 +29,24 @@ CXXFLAGS+=	-fPIC
 
 BINARY_ALIAS=	make=${GMAKE} python=${PYTHON_CMD}
 
+pre-everything::
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "Please note that build Lean requires /proc to be mounted."
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "  The usual way to do this is to add this line to /etc/fstab:"
+	@${ECHO_MSG} "  proc /proc procfs rw 0 0"
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "  and then run this command as root:"
+	@${ECHO_MSG} "  # mount /proc"
+	@${ECHO_MSG} ""
+
 post-install:
 	# remove empty dirs
 	@${FIND} ${STAGEDIR}${DATADIR} -type d -empty -delete
 	# remove stray files
 	@${RM} ${STAGEDIR}${PREFIX}/LICENSE*
+	# remove bin/cadical, workaround for https://github.com/leanprover/lean4/issues/5603
+	@${RM} ${STAGEDIR}${PREFIX}/bin/cadical
 	# strip binaries
 	@cd ${STAGEDIR}${PREFIX} && ${STRIP_CMD} \
 		bin/lake \

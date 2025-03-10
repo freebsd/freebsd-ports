@@ -1,7 +1,7 @@
 PORTNAME=	sarep
 PORTVERSION=	1.1
 CATEGORIES=	textproc
-MASTER_SITES=	http://ftp.vim.org/ibiblio/utils/text/
+MASTER_SITES=	https://ftp.nluug.nl/pub/ibiblio/utils/text/
 EXTRACT_SUFX=
 
 MAINTAINER=	ports@FreeBSD.org

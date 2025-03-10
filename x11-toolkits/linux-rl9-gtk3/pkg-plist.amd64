@@ -1,14 +1,34 @@
 usr/bin/gtk-launch
+usr/bin/gtk-query-immodules-3.0-32
 usr/bin/gtk-query-immodules-3.0-64
-usr/lib/.build-id/0e/30d676081163e769e558b1372e7f9e09e3f164
-usr/lib/.build-id/1b/d795696f0eede1f522f4d91ce76d3491eba08d
-usr/lib/.build-id/37/33eb23f09759287a035a21a8c799c8eaeaafb3
-usr/lib/.build-id/37/9fb6a3c708055d4307931a8558a8c1f4ccba62
-usr/lib/.build-id/81/15576d7be82ea11c854acef286a8d44eddc785
-usr/lib/.build-id/d2/054a7f1a31e7119c6639174aed49b0dccf031e
-usr/lib/.build-id/ee/b9023a187b51999004c35c687c75f8fedb60e4
-usr/lib/.build-id/f4/6fde8fa19b43b8ee6fcb3668f091b316022689
-usr/lib/.build-id/fa/8b811bd227a52219b899869a5cc0c31d5552a4
+usr/lib/.build-id/0a/d174dd43cdcd4ffcb4660eba37594cf1025e53
+usr/lib/.build-id/2e/b4ebcab1517703dbcfab994db006f41fc62eaf
+usr/lib/.build-id/3a/f10138d45cdb2e761e110986b6a15d50ab6a0c
+usr/lib/.build-id/4d/a28412865f5af2bdce823763b7bd72616500ad
+usr/lib/.build-id/58/6660431a1516c72de085064a723e29138caef9
+usr/lib/.build-id/68/f9d64b6d61f6692b7c74670b6a15397ed412d2
+usr/lib/.build-id/8b/6fff4c29c73745cfb5a52265236c132fc5035f
+usr/lib/.build-id/92/15be3953438021a1661474d14d29485014ac72
+usr/lib/.build-id/a9/b920de2d186d5a7a86ee497ba3c23cf3e96cf6
+usr/lib/.build-id/bf/b18a081d81b8935a1ce0e761a6000534252760
+usr/lib/.build-id/c7/fc5e36f211e060e0908ed6f4c17c8e40dab869
+usr/lib/.build-id/d8/e2216fec13c06c5d93456de0f5fb1d1a5ce6ac
+usr/lib/.build-id/e4/371751f9e3a9ab149b8b3dfd225ed997ba2c5f
+usr/lib/.build-id/e6/98a803bafd9365c641364a6a6d7228d9cf2597
+usr/lib/.build-id/fb/a32829bfb463367494f17bfbea516cce386105
+usr/lib/.build-id/fb/b50c872ee0b951b66632327e14233b9238ba2b
+usr/lib/girepository-1.0/Gdk-3.0.typelib
+usr/lib/girepository-1.0/GdkX11-3.0.typelib
+usr/lib/girepository-1.0/Gtk-3.0.typelib
+usr/lib/gtk-3.0/3.0.0/printbackends/libprintbackend-cups.so
+usr/lib/gtk-3.0/3.0.0/printbackends/libprintbackend-file.so
+usr/lib/gtk-3.0/3.0.0/printbackends/libprintbackend-lpr.so
+usr/lib/libgailutil-3.so.0
+usr/lib/libgailutil-3.so.0.0.0
+usr/lib/libgdk-3.so.0
+usr/lib/libgdk-3.so.0.2404.27
+usr/lib/libgtk-3.so.0
+usr/lib/libgtk-3.so.0.2404.27
 usr/lib64/girepository-1.0/Gdk-3.0.typelib
 usr/lib64/girepository-1.0/GdkX11-3.0.typelib
 usr/lib64/girepository-1.0/Gtk-3.0.typelib
@@ -22,14 +42,9 @@ usr/lib64/libgdk-3.so.0
 usr/lib64/libgdk-3.so.0.2404.27
 usr/lib64/libgtk-3.so.0
 usr/lib64/libgtk-3.so.0.2404.27
-usr/lib64/libstemmer.so.0
-usr/lib64/libstemmer.so.0.0.0
-%%PORTDOCS%%usr/share/doc/gtk3/AUTHORS
-%%PORTDOCS%%usr/share/doc/gtk3/NEWS
-%%PORTDOCS%%usr/share/doc/gtk3/README
-%%PORTDOCS%%usr/share/doc/libstemmer/BSD.txt
-%%PORTDOCS%%usr/share/doc/libstemmer/Notice.txt
-%%PORTDOCS%%usr/share/doc/libstemmer/README
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
 usr/share/glib-2.0/schemas/org.gtk.Settings.ColorChooser.gschema.xml
 usr/share/glib-2.0/schemas/org.gtk.Settings.Debug.gschema.xml
 usr/share/glib-2.0/schemas/org.gtk.Settings.EmojiChooser.gschema.xml
@@ -157,10 +172,15 @@ usr/share/licenses/gtk3/COPYING
 %%NLS%%usr/share/locale/zh_HK/LC_MESSAGES/gtk30.mo
 %%NLS%%usr/share/locale/zh_TW/LC_MESSAGES/gtk30.mo
 usr/share/man/man1/gtk-launch.1.gz
+usr/share/man/man1/gtk-query-immodules-3.0-32.1.gz
 usr/share/man/man1/gtk-query-immodules-3.0-64.1.gz
 usr/share/man/man1/gtk-query-immodules-3.0.1.gz
 usr/share/themes/Default/gtk-3.0/gtk-keys.css
 usr/share/themes/Emacs/gtk-3.0/gtk-keys.css
+@dir usr/lib/gtk-3.0/3.0.0/immodules
+@dir usr/lib/gtk-3.0/3.0.0/theming-engines
+@dir usr/lib/gtk-3.0/immodules
+@dir usr/lib/gtk-3.0/modules
 @dir usr/lib64/gtk-3.0/3.0.0/immodules
 @dir usr/lib64/gtk-3.0/3.0.0/theming-engines
 @dir usr/lib64/gtk-3.0/3.0.0

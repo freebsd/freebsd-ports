@@ -1,6 +1,6 @@
 PORTNAME=	cxxtest
 PORTVERSION=	4.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	SF:DEFAULT \
 		https://github.com/CxxTest/cxxtest.github.com/raw/8505a9c37bdf17d9167f0b946c82ccb032d3cd4c/:docs

@@ -1,5 +1,5 @@
 PORTNAME=	dhewm3
-PORTVERSION=	1.5.3
+DISTVERSION=	1.5.4
 CATEGORIES=	games
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -15,7 +15,6 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	dhewm
 
 USES=		cmake compiler:c++11-lang openal:al sdl
-USE_CXXSTD=	c++14
 USE_SDL=	sdl2
 CMAKE_ON=	REPRODUCIBLE_BUILD
 

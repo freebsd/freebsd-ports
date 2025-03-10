@@ -1,0 +1,6 @@
+Sphinx-notfound-page is a Sphinx extension to create custom 404 pages and help
+you to generate proper resource links (js, css, images, etc) to render the page
+properly.
+
+This extension was originally developed to be used on Read the Docs but it can
+be used in other hosting services as well.

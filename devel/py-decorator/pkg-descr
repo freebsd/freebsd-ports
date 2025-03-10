@@ -1,12 +1,5 @@
-As of now, writing custom decorators correctly requires some
-experience and it is not as easy as it could be. For instance, typical
-implementations of decorators involve nested functions, and we all
-know that flat is better than nested. Moreover, typical
-implementations of decorators do not preserve the signature of
-decorated functions, thus confusing both documentation tools and
-developers.
-
-The aim of the decorator module it to simplify the usage of decorators
-for the average programmer, and to popularize decorators usage giving
-examples of useful decorators, such as memoize, tracing,
-redirecting_stdout, locked, etc.
+The goal of the decorator module is to make it easy to define
+signature-preserving function decorators and decorator factories. It also
+includes an implementation of multiple dispatch and other niceties (please check
+the docs). It is released under a two-clauses BSD license, i.e. basically you
+can do whatever you want with it but I am not responsible.

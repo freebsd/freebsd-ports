@@ -1,6 +1,6 @@
---- third_party/blink/renderer/modules/webgpu/gpu_queue.cc.orig	2024-07-30 11:12:21 UTC
+--- third_party/blink/renderer/modules/webgpu/gpu_queue.cc.orig	2025-03-05 08:14:56 UTC
 +++ third_party/blink/renderer/modules/webgpu/gpu_queue.cc
-@@ -783,7 +783,7 @@ bool GPUQueue::CopyFromCanvasSourceImage(
+@@ -815,7 +815,7 @@ bool GPUQueue::CopyFromCanvasSourceImage(
  // on linux platform.
  // TODO(crbug.com/1424119): using a webgpu mailbox texture on the OpenGLES
  // backend is failing for unknown reasons.

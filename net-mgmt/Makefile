@@ -42,7 +42,9 @@
     SUBDIR += check_mysql_health
     SUBDIR += check_nwc_health
     SUBDIR += check_ssl_cert
+    SUBDIR += check_syncthing
     SUBDIR += check_ups_health
+    SUBDIR += check_wg
     SUBDIR += chillispot
     SUBDIR += choparp
     SUBDIR += cidr
@@ -116,6 +118,8 @@
     SUBDIR += ipaudit
     SUBDIR += ipcad
     SUBDIR += ipcalc
+    SUBDIR += ipfixcol2
+    SUBDIR += ipgen
     SUBDIR += iprange
     SUBDIR += ipv6calc
     SUBDIR += ipv6gen
@@ -127,6 +131,7 @@
     SUBDIR += kismet
     SUBDIR += klg
     SUBDIR += lg
+    SUBDIR += libfds
     SUBDIR += librenms
     SUBDIR += libsmi
     SUBDIR += lldpd
@@ -147,10 +152,8 @@
     SUBDIR += nagcon
     SUBDIR += nagios
     SUBDIR += nagios-certexp-plugin
-    SUBDIR += nagios-check_bacula11
     SUBDIR += nagios-check_bacula13
     SUBDIR += nagios-check_bacula15
-    SUBDIR += nagios-check_bacula9
     SUBDIR += nagios-check_clamav
     SUBDIR += nagios-check_cpu_usage
     SUBDIR += nagios-check_dhcp.pl
@@ -184,6 +187,7 @@
     SUBDIR += ndpmon
     SUBDIR += net-snmp
     SUBDIR += netbox
+    SUBDIR += netbox-agent
     SUBDIR += netdata
     SUBDIR += netdata-go
     SUBDIR += netdisco
@@ -267,6 +271,7 @@
     SUBDIR += p5-NetAddr-IP
     SUBDIR += p5-NetAddr-IP-Lite
     SUBDIR += p5-NetApp
+    SUBDIR += p5-OSLV-Monitor
     SUBDIR += p5-POE-Component-SNMP
     SUBDIR += p5-Prometheus-Tiny
     SUBDIR += p5-Prometheus-Tiny-Shared
@@ -399,6 +404,7 @@
     SUBDIR += triton-guesttools
     SUBDIR += unbound_exporter
     SUBDIR += unifi8
+    SUBDIR += unifi9
     SUBDIR += victoria-logs
     SUBDIR += victoria-metrics
     SUBDIR += virt-viewer
@@ -419,15 +425,15 @@
     SUBDIR += zabbix6-java
     SUBDIR += zabbix6-proxy
     SUBDIR += zabbix6-server
-    SUBDIR += zabbix64-agent
-    SUBDIR += zabbix64-frontend
-    SUBDIR += zabbix64-java
-    SUBDIR += zabbix64-proxy
-    SUBDIR += zabbix64-server
     SUBDIR += zabbix7-agent
     SUBDIR += zabbix7-frontend
     SUBDIR += zabbix7-java
     SUBDIR += zabbix7-proxy
     SUBDIR += zabbix7-server
+    SUBDIR += zabbix72-agent
+    SUBDIR += zabbix72-frontend
+    SUBDIR += zabbix72-java
+    SUBDIR += zabbix72-proxy
+    SUBDIR += zabbix72-server
 
 .include <bsd.port.subdir.mk>

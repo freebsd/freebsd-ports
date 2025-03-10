@@ -9,7 +9,7 @@
 %%JDK_ROOT%%/bin/jdb
 %%JDK_ROOT%%/bin/jdeprscan
 %%JDK_ROOT%%/bin/jdeps
-%%JDK_ROOT%%/bin/jhsdb
+%%PPC%%%%JDK_ROOT%%/bin/jhsdb
 %%JDK_ROOT%%/bin/jimage
 %%JDK_ROOT%%/bin/jinfo
 %%JDK_ROOT%%/bin/jjs
@@ -81,7 +81,7 @@
 %%JDK_ROOT%%/jmods/jdk.crypto.ec.jmod
 %%JDK_ROOT%%/jmods/jdk.dynalink.jmod
 %%JDK_ROOT%%/jmods/jdk.editpad.jmod
-%%JDK_ROOT%%/jmods/jdk.hotspot.agent.jmod
+%%PPC%%%%JDK_ROOT%%/jmods/jdk.hotspot.agent.jmod
 %%JDK_ROOT%%/jmods/jdk.httpserver.jmod
 %%JDK_ROOT%%/jmods/jdk.internal.ed.jmod
 %%JDK_ROOT%%/jmods/jdk.internal.jvmstat.jmod
@@ -139,8 +139,8 @@
 %%JDK_ROOT%%/legal/java.desktop/colorimaging.md
 %%JDK_ROOT%%/legal/java.desktop/harfbuzz.md
 %%JDK_ROOT%%/legal/java.desktop/mesa3d.md
-%%PPC64LE%%%%JDK_ROOT%%/legal/java.desktop/opengl.md
-%%PPC64LE%%%%JDK_ROOT%%/legal/java.desktop/xwindows.md
+%%PPC%%%%PPC64LE%%%%JDK_ROOT%%/legal/java.desktop/opengl.md
+%%PPC%%%%PPC64LE%%%%JDK_ROOT%%/legal/java.desktop/xwindows.md
 %%JDK_ROOT%%/legal/java.instrument/ADDITIONAL_LICENSE_INFO
 %%JDK_ROOT%%/legal/java.instrument/ASSEMBLY_EXCEPTION
 %%JDK_ROOT%%/legal/java.instrument/LICENSE
@@ -230,9 +230,9 @@
 %%JDK_ROOT%%/legal/jdk.editpad/ADDITIONAL_LICENSE_INFO
 %%JDK_ROOT%%/legal/jdk.editpad/ASSEMBLY_EXCEPTION
 %%JDK_ROOT%%/legal/jdk.editpad/LICENSE
-%%JDK_ROOT%%/legal/jdk.hotspot.agent/ADDITIONAL_LICENSE_INFO
-%%JDK_ROOT%%/legal/jdk.hotspot.agent/ASSEMBLY_EXCEPTION
-%%JDK_ROOT%%/legal/jdk.hotspot.agent/LICENSE
+%%PPC%%%%JDK_ROOT%%/legal/jdk.hotspot.agent/ADDITIONAL_LICENSE_INFO
+%%PPC%%%%JDK_ROOT%%/legal/jdk.hotspot.agent/ASSEMBLY_EXCEPTION
+%%PPC%%%%JDK_ROOT%%/legal/jdk.hotspot.agent/LICENSE
 %%JDK_ROOT%%/legal/jdk.httpserver/ADDITIONAL_LICENSE_INFO
 %%JDK_ROOT%%/legal/jdk.httpserver/ASSEMBLY_EXCEPTION
 %%JDK_ROOT%%/legal/jdk.httpserver/LICENSE
@@ -256,7 +256,7 @@
 %%JDK_ROOT%%/legal/jdk.javadoc/ADDITIONAL_LICENSE_INFO
 %%JDK_ROOT%%/legal/jdk.javadoc/ASSEMBLY_EXCEPTION
 %%JDK_ROOT%%/legal/jdk.javadoc/LICENSE
-%%JDK_ROOT%%/legal/jdk.javadoc/jquery-migrate.md
+%%PPC%%%%JDK_ROOT%%/legal/jdk.javadoc/jquery-migrate.md
 %%JDK_ROOT%%/legal/jdk.javadoc/jquery.md
 %%JDK_ROOT%%/legal/jdk.javadoc/jqueryUI.md
 %%JDK_ROOT%%/legal/jdk.javadoc/jszip.md
@@ -349,7 +349,7 @@
 %%JDK_ROOT%%/legal/jdk.zipfs/ADDITIONAL_LICENSE_INFO
 %%JDK_ROOT%%/legal/jdk.zipfs/ASSEMBLY_EXCEPTION
 %%JDK_ROOT%%/legal/jdk.zipfs/LICENSE
-%%JDK_ROOT%%/lib/classlist
+%%PPC%%%%JDK_ROOT%%/lib/classlist
 %%JDK_ROOT%%/lib/ct.sym
 %%JDK_ROOT%%/lib/fontconfig.bfc
 %%JDK_ROOT%%/lib/fontconfig.properties.src
@@ -387,8 +387,8 @@
 %%JDK_ROOT%%/lib/libnio.so
 %%JDK_ROOT%%/lib/libprefs.so
 %%JDK_ROOT%%/lib/librmi.so
-%%JDK_ROOT%%/lib/libsaproc.so
-%%JDK_ROOT%%/lib/libsctp.so
+%%PPC%%%%JDK_ROOT%%/lib/libsaproc.so
+%%PPC%%%%JDK_ROOT%%/lib/libsctp.so
 %%JDK_ROOT%%/lib/libsplashscreen.so
 %%JDK_ROOT%%/lib/libsunec.so
 %%JDK_ROOT%%/lib/libunpack.so
@@ -397,7 +397,7 @@
 %%JDK_ROOT%%/lib/modules
 %%JDK_ROOT%%/lib/psfont.properties.ja
 %%JDK_ROOT%%/lib/psfontj2d.properties
-%%JDK_ROOT%%/lib/security/blacklisted.certs
+%%PPC%%%%JDK_ROOT%%/lib/security/blacklisted.certs
 %%JDK_ROOT%%/lib/security/cacerts
 %%JDK_ROOT%%/lib/security/default.policy
 %%JDK_ROOT%%/lib/security/public_suffix_list.dat

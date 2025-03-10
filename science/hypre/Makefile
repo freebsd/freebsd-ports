@@ -1,17 +1,22 @@
 PORTNAME=	hypre
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.31.0
+DISTVERSION=	2.32.0
 PORTREVISION=	1
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Scalable Linear Solvers and Multigrid Methods
-WWW=		https://computing.llnl.gov/projects/hypre-scalable-linear-solvers-multigrid-methods
+WWW=		https://computing.llnl.gov/projects/hypre-scalable-linear-solvers-multigrid-methods \
+		https://github.com/hypre-space/hypre
 
 LICENSE=	APACHE20 MIT
 LICENSE_COMB=	dual
 LICENSE_FILE_APACHE20=	${WRKSRC}/../LICENSE-APACHE
 LICENSE_FILE_MIT=	${WRKSRC}/../LICENSE-MIT
+
+.if !exists(/usr/include/omp.h)
+BROKEN=		requires OpenMP support that is missing on this architecture
+.endif
 
 LIB_DEPENDS=	libsuperlu.so:math/superlu
 
@@ -56,5 +61,14 @@ post-install:
 post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC}/docs && ${COPYTREE_SHARE} usr-manual ${STAGEDIR}${DOCSDIR}
+
+post-test: # run tests; unclear how to to run tests, see https://github.com/hypre-space/hypre/issues/502
+.for t in ij ij_assembly ij_mv maxwell_unscaled
+	@cd ${WRKSRC}/test && \
+		${ECHO} "==> running test ${t}" && \
+		${BUILD_WRKSRC}/test/${t}
+.endfor
+
+# the test ij_mv fails, see https://github.com/hypre-space/hypre/issues/1161
 
 .include <bsd.port.mk>

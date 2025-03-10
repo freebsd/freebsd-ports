@@ -17,4 +17,3 @@ share/applications/gpa.desktop
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/gpa.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/gpa.mo
 share/man/man1/gpa.1.gz
-share/pixmaps/gpa.png

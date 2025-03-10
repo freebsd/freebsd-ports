@@ -1,6 +1,6 @@
 PORTNAME=	${GH_PROJECT:tl}
 PORTVERSION=	1.8.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel java
 PKGNAMESUFFIX=	18
 DIST_SUBDIR=	${PORTNAME}
@@ -48,14 +48,11 @@ GH_PROJECT=	Arduino
 GH_TUPLE+=	${BUNDLE_GH_ACCOUNT}:${blib}/linux/work/libraries/${blib:C/\:.*//}
 .endfor
 
-USES=		desktop-file-utils
+USES=		desktop-file-utils java:ant,run
 LIB_DIRS+=	${LOCALBASE}/lib ${LOCALBASE}/lib/jni
 WRKSRC_SUBDIR=	build
 PATCH_WRKSRC=	${WRKSRC}/../
 MAKE_ARGS+=	-Dlight_bundle=true -Dlocal_sources=true -Dno_arduino_builder=true
-USE_JAVA=	yes
-JAVA_VERSION=	8+
-USE_ANT=	yes
 OS_DIR=		${WRKSRC}/linux
 BUILD_DIR=	${OS_DIR}/work
 INSLIST=	lib libraries revisions.txt tools

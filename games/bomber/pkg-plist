@@ -14,6 +14,7 @@ share/icons/hicolor/32x32/apps/bomber.png
 share/icons/hicolor/48x48/apps/bomber.png
 share/icons/hicolor/64x64/apps/bomber.png
 share/locale/ar/LC_MESSAGES/bomber.mo
+share/locale/ast/LC_MESSAGES/bomber.mo
 share/locale/bg/LC_MESSAGES/bomber.mo
 share/locale/bs/LC_MESSAGES/bomber.mo
 share/locale/ca/LC_MESSAGES/bomber.mo
@@ -35,6 +36,7 @@ share/locale/gu/LC_MESSAGES/bomber.mo
 share/locale/he/LC_MESSAGES/bomber.mo
 share/locale/hr/LC_MESSAGES/bomber.mo
 share/locale/hu/LC_MESSAGES/bomber.mo
+share/locale/ia/LC_MESSAGES/bomber.mo
 share/locale/id/LC_MESSAGES/bomber.mo
 share/locale/is/LC_MESSAGES/bomber.mo
 share/locale/it/LC_MESSAGES/bomber.mo

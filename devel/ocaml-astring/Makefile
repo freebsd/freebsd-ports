@@ -16,8 +16,7 @@ BUILD_DEPENDS=	${SA_DIR}/topkg/META:devel/ocaml-topkg \
 		ocamlbuild:devel/ocaml-ocamlbuild \
 		opam-installer:devel/ocaml-opam
 
-USES=		tar:tbz
-USE_OCAML=	yes
+USES=		ocaml tar:tbz
 
 DOCSDIR=	${OCAML_DOCSDIR}/${PORTNAME}
 EXAMPLESDIR=	${OCAML_EXAMPLESDIR}/${PORTNAME}

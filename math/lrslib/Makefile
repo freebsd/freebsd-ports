@@ -1,5 +1,5 @@
 PORTNAME=	lrslib
-PORTVERSION=	7.2
+PORTVERSION=	7.3
 PORTEPOCH=	1
 CATEGORIES=	math
 MASTER_SITES=	http://cgm.cs.mcgill.ca/~avis/C/lrslib/archive/
@@ -27,6 +27,8 @@ MAKEFILE=	makefile
 ALL_TARGET=	all-shared
 
 MAKE_ARGS=	CFLAGS="${CFLAGS}" INCLUDEDIR=${LOCALBASE}/include LIBDIR=${LOCALBASE}/lib
+
+CFLAGS+=	-I${WRKSRC}/lrsarith-011
 
 LDFLAGS+=	-lthr
 

@@ -1,0 +1,4 @@
+libinfinity is library to build collaborative text editors. Changes to the text
+buffers are synced to all other clients over a central server. Even though a
+central server is involved, the local user sees his changes applied instantly
+and the merging is done on the individual clients.

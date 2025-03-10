@@ -1,0 +1,3 @@
+Module::Build::Parse::Yapp is a subclass of Module::Build made
+to build Parse::Yapp parsers from the source. Thus, prebuilt
+parsers do not have to be included in the source distribution.

@@ -5,6 +5,7 @@ bin/exrinfo
 bin/exrmakepreview
 bin/exrmaketiled
 bin/exrmanifest
+bin/exrmetrics
 bin/exrmultipart
 bin/exrmultiview
 bin/exrstdattr
@@ -27,6 +28,7 @@ include/OpenEXR/IlmThreadForward.h
 include/OpenEXR/IlmThreadMutex.h
 include/OpenEXR/IlmThreadNamespace.h
 include/OpenEXR/IlmThreadPool.h
+include/OpenEXR/IlmThreadProcessGroup.h
 include/OpenEXR/IlmThreadSemaphore.h
 include/OpenEXR/ImfAcesFile.h
 include/OpenEXR/ImfArray.h
@@ -42,6 +44,8 @@ include/OpenEXR/ImfCompositeDeepScanLine.h
 include/OpenEXR/ImfCompression.h
 include/OpenEXR/ImfCompressionAttribute.h
 include/OpenEXR/ImfCompressor.h
+include/OpenEXR/ImfContext.h
+include/OpenEXR/ImfContextInit.h
 include/OpenEXR/ImfConvert.h
 include/OpenEXR/ImfDeepCompositing.h
 include/OpenEXR/ImfDeepFrameBuffer.h
@@ -183,6 +187,8 @@ libdata/pkgconfig/OpenEXR.pc
 %%DOCS%%share/man/man1/exrinfo.1.gz
 %%DOCS%%share/man/man1/exrmakepreview.1.gz
 %%DOCS%%share/man/man1/exrmaketiled.1.gz
+%%DOCS%%share/man/man1/exrmanifest.1.gz
+%%DOCS%%share/man/man1/exrmetrics.1.gz
 %%DOCS%%share/man/man1/exrmultipart.1.gz
 %%DOCS%%share/man/man1/exrmultiview.1.gz
 %%DOCS%%share/man/man1/exrstdattr.1.gz

@@ -1,6 +1,8 @@
-TIMESTAMP = 1717507538
+TIMESTAMP = 1731434157
 SHA256 (rocky/l/libjpeg-turbo-2.0.90-7.el9.aarch64.rpm) = 5de5750e32251b3321d0121780597be8d8f7f20b51e251cebc4fbb6e5d93620c
 SIZE (rocky/l/libjpeg-turbo-2.0.90-7.el9.aarch64.rpm) = 172166
+SHA256 (rocky/l/libjpeg-turbo-2.0.90-7.el9.i686.rpm) = 831d5ca6678ebb931978ccf295c9ffb5a687251f3254f84ecc15d1023692ebb3
+SIZE (rocky/l/libjpeg-turbo-2.0.90-7.el9.i686.rpm) = 186635
 SHA256 (rocky/l/libjpeg-turbo-2.0.90-7.el9.x86_64.rpm) = fa94c3ec7cc34480d79e592b373eeb54ece8a68e7b925fe2de187db274ca0cbc
 SIZE (rocky/l/libjpeg-turbo-2.0.90-7.el9.x86_64.rpm) = 178123
 SHA256 (rocky/l/libjpeg-turbo-2.0.90-7.el9.src.rpm) = e80e2e153e24736f33771ed4a913a308ae2f83131f38befdce6fda93dcd2cfa3

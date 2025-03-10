@@ -1,7 +1,0 @@
-bin/cplanet
-share/man/man1/cplanet.1.gz
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cplanet-atom.cs
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cplanet-opml.cs
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cplanet-rss.cs
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cplanet.cs
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cplanet.hdf

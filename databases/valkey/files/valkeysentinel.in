@@ -13,7 +13,7 @@
 . /etc/rc.subr
 
 name="valkeysentinel"
-rcvar="$valkeysentinel_enable"
+rcvar="${name}_enable"
 
 command="/usr/local/bin/valkey-sentinel"
 pidfile="/var/run/valkey/valkey-sentinel.pid"

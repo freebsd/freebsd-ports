@@ -5,7 +5,7 @@ CATEGORIES=	security perl5
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	svysh.fbsd@gmail.com
-COMMENT=	Parse PKCS #10 certificate requests
+COMMENT=	Parse PKCS \#10 certificate requests
 WWW=		https://github.com/openxpki/Crypt-PKCS10/
 
 LICENSE=	ART10 GPLv1+

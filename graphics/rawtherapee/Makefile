@@ -1,8 +1,9 @@
 PORTNAME=	rawtherapee
-PORTVERSION=	5.10
-PORTREVISION=	3
+PORTVERSION=	5.11
+PORTREVISION=	1
 CATEGORIES=	graphics
-MASTER_SITES=	https://rawtherapee.com/shared/source/ \
+MASTER_SITES=	https://github.com/Beep6581/RawTherapee/releases/download/${PORTVERSION}/ \
+		https://rawtherapee.com/shared/source/ \
 		LOCAL/mandree/
 
 MAINTAINER=	mandree@FreeBSD.org
@@ -20,6 +21,7 @@ LIB_DEPENDS=	\
 		libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
 		libiptcdata.so:graphics/libiptcdata \
+		libjxl_threads.so:graphics/libjxl \
 		liblcms2.so:graphics/lcms2 \
 		liblensfun.so:graphics/lensfun \
 		libpng.so:graphics/png \
@@ -29,18 +31,8 @@ LIB_DEPENDS=	\
 # We cannot use gcc-c++11-lib as of 2024-02-23 because
 # Uses/compiler.mk would use the default compiler instead
 # as though USE_GCC=yes had been set.
-USES=		cmake desktop-file-utils compiler:c++11-lib gnome \
-		jpeg localbase:ldflags pkgconfig tar:xz
-
-# Older clang versions (for instance clang 9.0, as of 2019-09-29),
-# were known to miscompile RawTherapee, causing SIGSEGV or SIBGUS.
-# As of 2024-02, GCC-12.3 compiled RawTherapee appears to be
-# up to twice as fast as clang-16.0 compiled code.
-# So we shall stick to a modern GCC for now.
-#
-# Unfortunately, we can't even upgrade to GCC 13 because that fails
-# with our header files, see https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=273682
-USE_GCC=	12
+USES=		autoreconf:build cmake desktop-file-utils compiler:c++11-lib gnome \
+		jpeg libtool:build localbase:ldflags pkgconfig tar:xz
 
 USE_GNOME=	gtkmm30 librsvg2
 
@@ -70,12 +62,15 @@ CMAKE_ARGS+=	-DDOCDIR="${DOCSDIR}" \
 		-DCMAKE_AR:FILEPATH=${_AR} \
 		-DCMAKE_RANLIB:FILEPATH=${_RANLIB} \
 		-DCMAKE_POLICY_DEFAULT_CMP0056:STRING=NEW
+CONFIGURE_ENV+=	AR=${_AR} RANLIB=${_RANLIB} # for embedded RawTherapee
 # 3.4.x: CMAKE_EXE_LINKER_FLAGS is not passed to TRY_COMPILE by default
 # any more. The CMP0056 policy must be explicitly set to NEW to ensure
 # linker flags are passed. Else -lomp is not found with clang.
 # See: https://cmake.org/cmake/help/v3.4/policy/CMP0056.html
 CFLAGS+=	-I${LOCALBASE}/include -fPIC ${_OPT_FLAGS}
 LDFLAGS+=	-Wl,--as-needed -lpthread ${_OPT_FLAGS}
+
+PIE_UNSAFE=	yes
 
 .if defined(PACKAGE_BUILDING) && empty(CFLAGS:M-march*) && (${ARCH} == i386 || ${ARCH} == amd64 || ${ARCH} == aarch64)
 # this gets translated to -mtune=generic, see ${WRKSRC}/ProcessorTargets.cmake
@@ -112,6 +107,14 @@ OPENMP_LDFLAGS=		-lm -lomp
 
 # -------------------------------------------------------------------
 
+# Older clang versions (for instance clang 9.0, as of 2019-09-29),
+# were known to miscompile RawTherapee, causing SIGSEGV or SIBGUS.
+# As of 2024-02, GCC-12.3 compiled RawTherapee appears to be
+# up to twice as fast as clang-16.0 compiled code.
+# So we shall stick to a modern GCC for now.
+#
+USE_GCC=	yes # default
+
 .if (${OPSYS} == FreeBSD) && (${OSVERSION} >= 1500000)
 # don't waste everybody's time with Tier-2 and moving targets.
 ONLY_FOR_ARCHS=	amd64
@@ -143,7 +146,8 @@ CXXFLAGS+=	-stdlib=libc++
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's#DESTINATION "$${CMAKE_INSTALL_PREFIX}/share/man/man1"#DESTINATION "${PREFIX}/share/man/man1/"#' \
+	${REINPLACE_CMD} -e '/COMMAND.*SHELL/s/-l -c/-c/' ${WRKSRC}/rtengine/LibRaw.cmake
+	${REINPLACE_CMD} -e 's#DESTINATION "$${CMAKE_INSTALL_PREFIX}/share/man/man1"#DESTINATION "${PREFIX}/share/man/man1/"#' \
 		${WRKSRC}/CMakeLists.txt
 
 TESTIMAGES=	${MASTERDIR}/testimages

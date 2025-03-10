@@ -1,7 +1,6 @@
 PORTNAME=	sc3-plugins
 DISTVERSIONPREFIX=	Version-
-DISTVERSION=	3.9.0
-PORTREVISION=	13
+DISTVERSION=	3.13.0
 CATEGORIES=	audio
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -17,17 +16,22 @@ BUILD_DEPENDS=	${LOCALBASE}/include/SuperCollider/SCVersion.txt:audio/supercolli
 LIB_DEPENDS=	libfftw3f.so:math/fftw3-float \
 		libstk.so:audio/stk
 
-OPTIONS_DEFINE=	SUPERNOVA
-OPTIONS_DEFAULT=	SUPERNOVA
-SUPERNOVA_DESC=	Build plugins for supernova
-OPTIONS_SUB=	yes
+USES=		compiler:c++14-lang cmake localbase pkgconfig
+USE_CXXSTD=	c++14 # change to C++14 to fix build, because C++14 features are used
 
-USES=		compiler:c++11-lang cmake localbase pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	supercollider
 GH_TUPLE=	timblechmann:nova-simd:3140689:n/external_libraries/nova-simd
+
 CMAKE_ARGS+=	-DSYSTEM_STK:BOOL=ON
 CMAKE_ARGS+=	-DSC_PATH:STRING=${LOCALBASE}/include/SuperCollider/ # see https://github.com/supercollider/sc3-plugins/issues/170
+CMAKE_OFF=	CPP11 # change to C++14 to fix build, because C++14 features are used
+
+OPTIONS_DEFINE=		SUPERNOVA
+OPTIONS_DEFAULT=	SUPERNOVA
+OPTIONS_SUB=		yes
+
+SUPERNOVA_DESC=		Build plugins for supernova
 SUPERNOVA_CMAKE_BOOL=	SUPERNOVA
 
 post-patch:

@@ -1,0 +1,11 @@
+--- pyproject.toml.orig	2024-09-11 19:36:00 UTC
++++ pyproject.toml
+@@ -18,7 +18,7 @@ repository = "https://github.com/simoncozens/youseedee
+ repository = "https://github.com/simoncozens/youseedee"
+ 
+ [build-system]
+-requires = ["setuptools>=74.1.0", "setuptools_scm[toml]>=8.1.0"]
++requires = ["setuptools>=61", "setuptools_scm[toml]>=8.0.4"]
+ build-backend = "setuptools.build_meta"
+ 
+ [tool.setuptools.packages.find]

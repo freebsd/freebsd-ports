@@ -1,6 +1,5 @@
 PORTNAME=	devilutionX
-DISTVERSION=	1.5.2
-PORTREVISION=	1
+DISTVERSION=	1.5.3
 CATEGORIES=	games
 MASTER_SITES=	https://github.com/diasurgical/devilutionx-assets/releases/download/${DATA_VERSION}/:data
 DISTFILES=	devilutionx.mpq?tag=${DATA_VERSION}:data
@@ -49,7 +48,7 @@ NETWORK_CMAKE_BOOL_OFF=	NONET
 TCP_DESC=		TCP multiplayer option
 TCP_CMAKE_BOOL_OFF=	DISABLE_TCP
 TCP_IMPLIES=		NETWORK
-TCP_GH_TUPLE=		diasurgical:asio:cfbe961e2d6e2978d5e081231e4f798df46437c:asio/_deps/asio-src
+TCP_GH_TUPLE=		diasurgical:asio:4bcf552fcea3e1ae555dde2ab33bc9fa6770da4d:asio/_deps/asio-src
 
 ZEROTIER_DESC=		ZeroTier multiplayer option (broken)
 ZEROTIER_BROKEN=	does not build: fatal error: 'sys/appleapiopts.h' file not found

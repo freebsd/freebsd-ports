@@ -2,9 +2,12 @@ bin/pv
 %%PORTDOCS%%%%DOCSDIR%%/ACKNOWLEDGEMENTS.md
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/DEVELOPERS.md
-%%PORTDOCS%%%%DOCSDIR%%/benchmark.sh
+%%NLS%%share/locale/cs/LC_MESSAGES/pv.mo
 %%NLS%%share/locale/de/LC_MESSAGES/pv.mo
+%%NLS%%share/locale/es/LC_MESSAGES/pv.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/pv.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/pv.mo
 %%NLS%%share/locale/pt/LC_MESSAGES/pv.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/pv.mo
+%%NLS%%share/locale/tr/LC_MESSAGES/pv.mo
 share/man/man1/pv.1.gz

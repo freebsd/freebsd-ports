@@ -9,7 +9,7 @@ WWW=		http://omniorb.sourceforge.net/
 
 LICENSE=	GPLv2
 
-NOT_FOR_ARCHS=	armv7 i386
+NOT_FOR_ARCHS=	armv7 i386 powerpc
 NOT_FOR_ARCHS_REASON=	use of overloaded operator '[]' is ambiguous (with operand types
 
 LIB_DEPENDS=	libzstd.so:archivers/zstd

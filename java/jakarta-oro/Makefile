@@ -1,6 +1,6 @@
 PORTNAME=	jakarta-oro
 PORTVERSION=	2.0.8
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	java
 MASTER_SITES=	http://archive.apache.org/dist/jakarta/oro/
 
@@ -10,8 +10,8 @@ WWW=		https://jakarta.apache.org/oro/
 
 LICENSE=	APACHE20
 
-USE_JAVA=	yes
-USE_ANT=	yes
+USES=		java:ant,run
+
 ALL_TARGET=	jar javadocs
 
 JAVALIBNAME=	${PORTNAME}-${PORTVERSION}

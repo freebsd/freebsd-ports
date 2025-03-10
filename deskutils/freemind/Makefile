@@ -15,8 +15,7 @@ LICENSE_FILE=	${WRKSRC}/license
 
 BUILD_DEPENDS=	zip:archivers/zip
 
-USES=		cpe zip:infozip
-USE_JAVA=	yes
+USES=		cpe java zip:infozip
 
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}-${PORTVERSION}
 DATAFILES=	accessories browser doc lib plugins patterns.xml

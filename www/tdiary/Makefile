@@ -1,5 +1,6 @@
 PORTNAME=	tdiary
 DISTVERSION=	5.3.0
+PORTREVISION=	1
 CATEGORIES?=	www ruby
 MASTER_SITES=	https://github.com/tdiary/tdiary-core/releases/download/v${PORTVERSION}/
 DISTNAME=	${PORTNAME}-full-v${PORTVERSION}
@@ -18,7 +19,7 @@ RUN_DEPENDS=	rubygem-bundler>=2.0.2:sysutils/rubygem-bundler \
 		rubygem-mail>=2.7.1:mail/rubygem-mail \
 		rubygem-net-smtp>=0.3.1:mail/rubygem-net-smtp \
 		rubygem-rack>=3.0.1,3:www/rubygem-rack \
-		rubygem-rackup>=0.2.3:www/rubygem-rackup \
+		rubygem-rackup21>=0.2.3:www/rubygem-rackup21 \
 		rubygem-rake>=13.0.6:devel/rubygem-rake
 
 USES=		cpe shebangfix

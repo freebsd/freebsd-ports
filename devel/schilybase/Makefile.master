@@ -68,21 +68,21 @@ post-extract:
 do-configure:
 .if "${BOOTSTRAP_SMAKE}" == "yes"
 	@${ECHO_MSG} "=> building a bootstrap smake"
-	cd ${WRKSRC}/psmake && ${SETENV} ${MAKE_ENV} ${SH} ./MAKE-all
+	cd ${WRKSRC}/psmake && ${SETENVI} ${WRK_ENV} ${MAKE_ENV} ${SH} ./MAKE-all
 .endif
 	@${ECHO_MSG} "=> configuring components"
 .for component in ${COMPONENTS}
-	cd ${WRKSRC}/${component} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} config
+	cd ${WRKSRC}/${component} && ${SETENVI} ${WRK_ENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} config
 .endfor
 
 do-build:
 .for component in ${COMPONENTS}
-	cd ${WRKSRC}/${component} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} all
+	cd ${WRKSRC}/${component} && ${SETENVI} ${WRK_ENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} all
 .endfor
 
 do-install:
 .for component in ${COMPONENTS}
-	cd ${WRKSRC}/${component} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} install
+	cd ${WRKSRC}/${component} && ${SETENVI} ${WRK_ENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} install
 .endfor
 .if "${COMPONENTS:Mlib}" != ""
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/*.so.*.* 
@@ -91,7 +91,7 @@ do-install:
 # the test suite gets moody if we set INS_BASE/INS_RBASE/DESTDIR
 do-test:
 .for component in ${TESTCOMPONENTS}
-	cd ${WRKSRC}/${component} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS:NINS_*BASE=*:NDESTDIR=*} tests
+	cd ${WRKSRC}/${component} && ${SETENVI} ${WRK_ENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS:NINS_*BASE=*:NDESTDIR=*} tests
 .endfor
 
 .include <bsd.port.mk>

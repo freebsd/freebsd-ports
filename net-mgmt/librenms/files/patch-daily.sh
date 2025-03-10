@@ -1,4 +1,4 @@
---- daily.sh.orig	2024-07-09 01:33:51 UTC
+--- daily.sh.orig	2024-11-20 22:56:30 UTC
 +++ daily.sh
 @@ -23,11 +23,11 @@ LIBRENMS_DIR=$(dirname "$DAILY_SCRIPT")
  # define DAILY_SCRIPT as the full path to this script and LIBRENMS_DIR as the directory this script is in
@@ -50,7 +50,7 @@
  }
  
  #######################################
-@@ -135,10 +135,10 @@ check_dependencies() {
+@@ -135,11 +135,11 @@ check_dependencies() {
      branch=$(git rev-parse --abbrev-ref HEAD)
      scripts/check_requirements.py > /dev/null 2>&1 || pip3 install -r requirements.txt > /dev/null 2>&1
  
@@ -58,14 +58,16 @@
 -    ver_72=$(php -r "echo (int)version_compare(PHP_VERSION, '7.2.5', '<');")
 -    ver_73=$(php -r "echo (int)version_compare(PHP_VERSION, '7.3', '<');")
 -    ver_81=$(php -r "echo (int)version_compare(PHP_VERSION, '8.1', '<');")
+-    ver_82=$(php -r "echo (int)version_compare(PHP_VERSION, '8.2', '<');")
 +    ver_71=$(%%LOCALBASE%%/bin/php -r "echo (int)version_compare(PHP_VERSION, '7.1.3', '<');")
 +    ver_72=$(%%LOCALBASE%%/bin/php -r "echo (int)version_compare(PHP_VERSION, '7.2.5', '<');")
 +    ver_73=$(%%LOCALBASE%%/bin/php -r "echo (int)version_compare(PHP_VERSION, '7.3', '<');")
 +    ver_81=$(%%LOCALBASE%%/bin/php -r "echo (int)version_compare(PHP_VERSION, '8.1', '<');")
++    ver_82=$(%%LOCALBASE%%/bin/php -r "echo (int)version_compare(PHP_VERSION, '8.2', '<');")
      python3=$(python3 -c "import sys;print(int(sys.version_info < (3, 4)))" 2> /dev/null)
      python_deps=$("${LIBRENMS_DIR}/scripts/check_requirements.py" > /dev/null 2>&1; echo $?)
      phpver="master"
-@@ -276,7 +276,7 @@ main () {
+@@ -282,7 +282,7 @@ main () {
      fi
  
      if [[ -z "$arg" ]]; then

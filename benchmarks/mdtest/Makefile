@@ -19,7 +19,7 @@ PLIST_FILES=	bin/${PORTNAME} share/man/man1/${PORTNAME}.1.gz
 PORTEXAMPLES=	*
 
 OPTIONS_DEFINE=	OPENMPI EXAMPLES
-OPENMPI_DESC=	Use Open MPI instead of MPICH2
+OPENMPI_DESC=	Use Open MPI instead of MPICH
 
 OPENMPI_BUILD_DEPENDS=		${LOCALBASE}/mpi/openmpi/bin/mpicc:net/openmpi
 OPENMPI_RUN_DEPENDS=		${LOCALBASE}/mpi/openmpi/bin/mpirun:net/openmpi

@@ -10,15 +10,13 @@ lib/grilo-0.3/libgrlgravatar.so
 lib/grilo-0.3/libgrllocalmetadata.so
 lib/grilo-0.3/libgrlmagnatune.so
 lib/grilo-0.3/libgrlmetadatastore.so
-lib/grilo-0.3/libgrlopensubtitles.so
 lib/grilo-0.3/libgrlopticalmedia.so
 lib/grilo-0.3/libgrlpodcasts.so
 lib/grilo-0.3/libgrlraitv.so
 lib/grilo-0.3/libgrlshoutcast.so
 lib/grilo-0.3/libgrlthetvdb.so
 lib/grilo-0.3/libgrltmdb.so
-%%TRACKER%%lib/grilo-0.3/libgrltracker.so
-lib/grilo-0.3/libgrlyoutube.so
+lib/grilo-0.3/libgrltracker3.so
 libdata/pkgconfig/grilo-plugins-0.3.pc
 share/help/C/examples/example-tmdb.c
 share/help/C/grilo-plugins/grilo-plugins.xml

@@ -1,62 +1,90 @@
 PORTNAME=	bouncycastle
-PORTVERSION=	1.45
-PORTREVISION=	2
+DISTVERSION=	1.71
+PORTREVISION=	1
 CATEGORIES=	java security
-MASTER_SITES=	http://downloads.bouncycastle.org/java/ \
-		http://polydistortion.net/bc/download/ \
-		http://bouncycastle.gva.es/download/
-DISTNAME=	crypto-${JARVERSION}
+MASTER_SITES=	http://www.bouncycastle.org/download/ \
+		http://polydistortion.net/bc/download/
+DISTNAME=	crypto-${DVERSION}
 
-MAINTAINER=	ale@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Cleanroom build of Java Cryptography Extensions
 WWW=		https://www.bouncycastle.org/
 
-BUILD_DEPENDS=	${JAVALIBDIR}/mail.jar:java/javamail \
-		${JAVALIBDIR}/junit.jar:java/junit
+# APACHE20 is used by pg/src/main/java/org/bouncycastle/apache/bzip2/*.
+LICENSE=	APACHE20 MIT
+LICENSE_COMB=	multi
+LICENSE_FILE_MIT=	${WRKSRC}/LICENSE.html
+
+BUILD_DEPENDS=	${JAVALIBDIR}/junit.jar:java/junit \
+		${JAVALIBDIR}/mail.jar:java/javamail
 RUN_DEPENDS=	${JAVALIBDIR}/mail.jar:java/javamail
 
-OPTIONS_DEFINE=	DOCS
-
-CPE_PRODUCT=	legion-of-the-bouncy-castle-java-crytography-api
+USES=		cpe java:ant,run
 CPE_VENDOR=	${PORTNAME}
-USE_JAVA=	yes
-USES=		cpe
-JDKMVERSION=	1.6 # ${JAVA_PORT_VERSION:C/^([0-9]\.[0-9])(.*)$/\1/}
-JDKNVERSION=	16 # ${JAVA_PORT_VERSION:C/^([0-9])\.([0-9])(.*)$/\1\2/}
-USE_ANT=	yes
+CPE_PRODUCT=	legion-of-the-bouncy-castle-java-crytography-api
+
+MAKE_ARGS=	-f \
+		ant/jdk${JDKNVERSION}+.xml
 MAKE_ENV=	ANT_INCLUDE_SHARED_JARS=YES
-MAKE_ARGS=	-f jdk${JDKNVERSION}.xml
-ALL_TARGET=	build-provider build zip-src
-JARVERSION=	${PORTVERSION:S/.//}
+ALL_TARGET=	build-provider build
 
-JARS=		bcprov bcmail bctsp bcpg
+CONFLICTS_INSTALL=	bouncycastle-1.4*
 
-PORTDOCS=	*
+NO_ARCH=	yes
 
-PORTSCOUT=	skipv:146
+OPTIONS_DEFINE=		DOCS ZIPSRC
+OPTIONS_DEFAULT=	ZIPSRC
+OPTIONS_SUB=		yes
 
-post-patch:
-	@${REINPLACE_CMD} s/BERConstructedOctetString/DEROctetString/ \
-		${WRKSRC}/src/org/bouncycastle/cms/CMS*DataGenerator.java
-	@${REINPLACE_CMD} 's/<javac/<javac encoding="UTF-8"/;s/<javadoc/<javadoc encoding="UTF-8"/' \
-		${WRKSRC}/bc-build.xml ${WRKSRC}/common.xml
+ZIPSRC_DESC=		Install bundled ZIP source files
+ZIPSRC_ALL_TARGET=	zip-src
+
+ARTIFACTSDIR=	${WRKSRC}/build/artifacts/jdk${JDKMVERSION}
+DVERSION=	${PORTVERSION:S/.//}
+JDKMVERSION=	1.5
+JDKNVERSION=	15
+JARSUFFIX=	-jdk${JDKNVERSION}to18-${DVERSION}.jar
+
+.include <bsd.port.options.mk>
+
+# PR 220612: remove fork="true" in javac and fork="yes" in junit tasks
+.if ${ARCH} == armv6 || ${ARCH} == armv7
+EXTRA_PATCHES+=	${FILESDIR}/armv6-patch-bc+-build.xml
+.endif
 
 do-install:
-	@${MKDIR} ${STAGEDIR}${DATADIR}
-.for jar in ${JARS}
-	${INSTALL_DATA} ${WRKSRC}/build/artifacts/jdk${JDKMVERSION}/jars/${jar}-jdk${JDKNVERSION}-${JARVERSION}.jar \
-	      ${STAGEDIR}${JAVAJARDIR}/${jar}.jar
-	${INSTALL_DATA} ${WRKSRC}/build/artifacts/jdk${JDKMVERSION}/${jar}-jdk${JDKNVERSION}-${JARVERSION}/src.zip \
-	      ${STAGEDIR}${DATADIR}/${jar}-src.zip
-.endfor
-	${INSTALL_DATA} ${WRKSRC}/jars/bcprov-jdk${JDKNVERSION}-${JARVERSION}.jar \
+	for src in $$(${FIND} ${ARTIFACTSDIR}/jars -name "*${JARSUFFIX}"); do \
+		dst="$${src##*/}"; \
+		dst="$${dst%%-jdk*}.jar"; \
+		${INSTALL_DATA} "$$src" "${STAGEDIR}/${JAVAJARDIR}/$${dst}"; \
+	done
+# Install the bundlded version of bcprov.jar because we need a signed JAR.
+# See bfca5d2c6e01d757f1f37c141c22645c2835104b for details.
+	${INSTALL_DATA} ${WRKSRC}/jars/bcprov${JARSUFFIX} \
 		${STAGEDIR}${JAVAJARDIR}/bcprov.jar
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/*.html ${STAGEDIR}${DOCSDIR}
-.for jar in ${JARS}
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}/${jar}
-	@cd ${WRKSRC}/build/artifacts/jdk${JDKMVERSION}/${jar}-jdk${JDKNVERSION}-${JARVERSION}/docs/ && \
-		${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}/${jar}
-.endfor
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}/docs
+	(cd ${WRKSRC} && ${COPYTREE_SHARE} docs "${STAGEDIR}${DOCSDIR}")
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}/tls/docs
+	(cd ${WRKSRC} && ${COPYTREE_SHARE} tls/docs "${STAGEDIR}${DOCSDIR}")
+# Skip the lcrypto documentation since that JAR is not installed.
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	for src in $$(${FIND} ${ARTIFACTSDIR} -type d -name "docs"); do \
+		dst="$${src%%-jdk*}"; \
+		dst="$${dst##*/}"; \
+		case $${dst} in lcrypto) continue;; esac; \
+		(cd $${src} && ${COPYTREE_SHARE} . "${STAGEDIR}${DOCSDIR}/$${dst}"); \
+	done
+
+do-install-ZIPSRC-on:
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	for src in $$(${FIND} ${ARTIFACTSDIR} -name "src.zip"); do \
+		dst="$${src%%-jdk*}"; \
+		dst="$${dst##*/}-src.zip"; \
+		${INSTALL_DATA} "$$src" "${STAGEDIR}/${DATADIR}/$${dst}"; \
+	done
 
 .include <bsd.port.mk>

@@ -3,6 +3,7 @@
     SUBDIR += 2bsd-vi
     SUBDIR += abiword
     SUBDIR += abiword-docs
+    SUBDIR += ad
     SUBDIR += aee
     SUBDIR += aewan
     SUBDIR += amp
@@ -64,7 +65,6 @@
     SUBDIR += hnb
     SUBDIR += hte
     SUBDIR += imhex
-    SUBDIR += imhex-current
     SUBDIR += jed
     SUBDIR += jedit
     SUBDIR += joe
@@ -74,7 +74,6 @@
     SUBDIR += kakoune
     SUBDIR += kakoune-lsp
     SUBDIR += kate
-    SUBDIR += kate-devel
     SUBDIR += kibi
     SUBDIR += kile
     SUBDIR += komodo-edit
@@ -129,6 +128,7 @@
     SUBDIR += libreoffice-hi
     SUBDIR += libreoffice-hr
     SUBDIR += libreoffice-hsb
+    SUBDIR += libreoffice-hy
     SUBDIR += libreoffice-i18n
     SUBDIR += libreoffice-id
     SUBDIR += libreoffice-is
@@ -247,6 +247,7 @@
     SUBDIR += rubygem-neovim
     SUBDIR += sam
     SUBDIR += scite
+    SUBDIR += sciteco
     SUBDIR += se
     SUBDIR += semi
     SUBDIR += setzer

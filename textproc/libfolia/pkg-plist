@@ -12,6 +12,7 @@ include/libfolia/folia_textpolicy.h
 include/libfolia/folia_types.h
 include/libfolia/folia_utils.h
 lib/libfolia.so
-lib/libfolia.so.19
-lib/libfolia.so.19.0.0
+lib/libfolia.so.22
+lib/libfolia.so.22.0.0
 libdata/pkgconfig/folia.pc
+share/man/man1/folialint.1.gz

@@ -15,8 +15,6 @@ share/icons/hicolor/48x48/apps/sublime-text.png
 %%DATADIR%%/Lib/python3/certifi/LICENSE
 %%DATADIR%%/Lib/python3/certifi/__init__.py
 %%DATADIR%%/Lib/python3/certifi/__main__.py
-%%DATADIR%%/Lib/python3/certifi/__pycache__/__init__.cpython-38.opt-1.pyc
-%%DATADIR%%/Lib/python3/certifi/__pycache__/core.cpython-38.opt-1.pyc
 %%DATADIR%%/Lib/python3/certifi/cacert.pem
 %%DATADIR%%/Lib/python3/certifi/core.py
 %%DATADIR%%/Lib/python3/certifi/py.typed
@@ -78,7 +76,9 @@ share/icons/hicolor/48x48/apps/sublime-text.png
 %%DATADIR%%/Packages/Vintage.sublime-package
 %%DATADIR%%/Packages/XML.sublime-package
 %%DATADIR%%/Packages/YAML.sublime-package
+%%DATADIR%%/attribution.txt
 %%DATADIR%%/changelog.txt
+%%DATADIR%%/sublime_text.desktop
 @(,,555) %%DATADIR%%/crash_handler
 %%DATADIR%%/libcrypto.so.1.1
 %%DATADIR%%/libsqlite3.so

@@ -1,0 +1,11 @@
+--- ngs/ngs-python/examples/CMakeLists.txt.orig	2024-11-18 12:14:58 UTC
++++ ngs/ngs-python/examples/CMakeLists.txt
+@@ -54,7 +54,7 @@ if( Python3_EXECUTABLE )
+             RunAndDiff( RefTest "SRR1121656" )
+         endif()
+ 
+-        set( INSTALL_DEST ${CMAKE_INSTALL_PREFIX}/share/examples-python )
++        set( INSTALL_DEST ${CMAKE_INSTALL_PREFIX}/share/examples/sra-tools/python )
+ 
+         install(FILES ${SOURCES} expected.txt
+             DESTINATION ${INSTALL_DEST} )

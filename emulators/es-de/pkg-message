@@ -1,0 +1,13 @@
+[
+{ type: install
+  message: <<EOM
+The port provides the enabled by default DEINIT option. It deinits the renderer,
+application window and audio system when an emulator is launched. This can save
+some resources while playing the actual games, but also benefits audiophile
+users, who provide only exclusive access to the audio device with the sysctl
+dev.pcm.%d.play.vchans=0. Without the DEINIT option enabled, ES-DE will keep the
+audio device open and prevent the launched emulator from also opening it in this
+case, effectively disabling sound on the emulator.
+EOM
+}
+]

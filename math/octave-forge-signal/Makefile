@@ -1,6 +1,5 @@
 PORTNAME=	octave-forge-signal
-PORTVERSION=	1.4.5
-PORTREVISION=	2
+PORTVERSION=	1.4.6
 CATEGORIES=	math
 MASTER_SITES=	SF/octave/Octave%20Forge%20Packages/Individual%20Package%20Releases
 DISTNAME=	${OCTAVE_PKGNAME}-${DISTVERSIONFULL}

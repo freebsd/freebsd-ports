@@ -25,14 +25,16 @@ load_rc_config $name
 : ${gunicorn_group=%%GROUPS%%}
 
 pidfile="/var/run/${name}.pid"
+cpidfile="/var/run/${name}-worker.pid"
 command=/usr/sbin/daemon
-command_args="-P ${pidfile} -f -ST ${name} %%PREFIX%%/bin/gunicorn -c ${gunicorn_config}"
+command_args="-P ${pidfile} -p ${cpidfile} -f -ST ${name} %%PREFIX%%/bin/gunicorn -c ${gunicorn_config}"
 required_files="${gunicorn_config}"
 start_precmd="gunicorn_precmd"
 
 gunicorn_precmd()
 {
 	install -o ${gunicorn_user} /dev/null ${pidfile}
+	install -o ${gunicorn_user} /dev/null ${cpidfile}
 }
 
 run_rc_command "$1"

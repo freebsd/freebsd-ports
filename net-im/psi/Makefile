@@ -10,10 +10,11 @@ WWW=		https://psi-im.org/
 
 LICENSE=	GPLv2+
 
-LIB_DEPENDS=	libidn.so:dns/libidn
+LIB_DEPENDS=	libidn.so:dns/libidn \
+		libqca-qt5.so:devel/qca@qt5
 
 USES=		cmake compiler:c++11-lang desktop-file-utils minizip pkgconfig \
-		qca qt:5 tar:xz xorg
+		qt:5 tar:xz xorg
 USE_QT=		concurrent core dbus gui multimedia network svg widgets \
 		x11extras xml buildtools:build qmake:build imageformats:run
 USE_XORG=	ice sm x11 xcb xext xscrnsaver

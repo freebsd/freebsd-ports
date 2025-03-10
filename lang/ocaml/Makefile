@@ -4,7 +4,6 @@ PORTNAME=	ocaml
 PORTVERSION=	4.14.2
 CATEGORIES=	lang
 MASTER_SITES=	http://caml.inria.fr/pub/distrib/${DISTNAME:R}/ \
-		GENTOO \
 		http://caml.inria.fr/pub/distrib/${DISTNAME:R}/:docs
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 EXTRACT_ONLY=	${_DISTFILES:M*.tar.*}

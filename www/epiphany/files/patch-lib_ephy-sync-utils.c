@@ -1,14 +1,11 @@
---- lib/ephy-sync-utils.c.orig	2021-09-28 21:57:11 UTC
+--- lib/ephy-sync-utils.c.orig	2024-10-22 19:17:50 UTC
 +++ lib/ephy-sync-utils.c
-@@ -30,9 +30,9 @@
+@@ -30,7 +30,7 @@
  #include <stdio.h>
  #include <string.h>
- #include <webkit2/webkit2.h>
+ #include <webkit/webkit.h>
 -#if defined(__linux__)
 +#if defined(__linux__) || defined(__FreeBSD__)
  #include <sys/random.h>
--#elif defined(__FreeBSD__) || defined(__OpenBSD__)
-+#elif defined(__OpenBSD__)
+ #elif defined(__FreeBSD__) || defined(__OpenBSD__)
  #include <unistd.h>
- #endif
- 

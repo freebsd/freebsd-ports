@@ -1,6 +1,6 @@
 PORTNAME=	stuntrally
 PORTVERSION=	2.7
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -10,6 +10,8 @@ WWW=		https://stuntrally.tuxfamily.org/ \
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/License.txt
+
+BROKEN=		fails to build with boost-1.85+
 
 LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
 		libOgreMain.so:graphics/ogre3d \

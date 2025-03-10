@@ -1,0 +1,11 @@
+--- data/meson.build.orig	2024-08-04 14:04:57 UTC
++++ data/meson.build
+@@ -81,7 +81,7 @@ else
+ if fish_comp.found()
+   fish_compdir = fish_comp.get_variable(pkgconfig: 'completionsdir')
+ else
+-  fish_compdir = join_paths(datadir, 'fish', 'vendor_completions.d')
++  fish_compdir = join_paths(datadir, 'fish', 'completions')
+ endif
+ 
+ install_data(bash_completion, install_dir: bash_compdir)

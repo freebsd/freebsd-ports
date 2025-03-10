@@ -1,18 +1,18 @@
 PORTNAME=	commons-io
-PORTVERSION=	2.16.1
+PORTVERSION=	2.18.0
 CATEGORIES=	devel java
 MASTER_SITES=	APACHE_COMMONS_BINARIES
 PKGNAMEPREFIX=	apache-
 DISTNAME=	${PORTNAME}-${PORTVERSION}-bin
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	mclay@astate.edu
 COMMENT=	Collection of I/O utilities for Java
 WWW=		https://commons.apache.org/proper/commons-io/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-USE_JAVA=	yes
+USES=		java
 
 NO_ARCH=	yes
 NO_BUILD=	yes

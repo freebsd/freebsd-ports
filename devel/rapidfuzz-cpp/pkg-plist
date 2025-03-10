@@ -6,6 +6,7 @@ include/rapidfuzz/details/Range.hpp
 include/rapidfuzz/details/SplittedSentenceView.hpp
 include/rapidfuzz/details/common.hpp
 include/rapidfuzz/details/common_impl.hpp
+include/rapidfuzz/details/config.hpp
 include/rapidfuzz/details/distance.hpp
 include/rapidfuzz/details/intrinsics.hpp
 include/rapidfuzz/details/simd.hpp

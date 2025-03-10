@@ -1,6 +1,6 @@
 PORTNAME=	jogl
 PORTVERSION=	1.1.1
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	graphics devel java
 MASTER_SITES=	http://download.java.net/media/jogl/builds/archive/jsr-231-1.1.1/
 EXTRACT_SUFX=	-src.zip
@@ -26,13 +26,11 @@ ALL_TARGET=	all
 # jogl/make/build.xml
 ONLY_FOR_ARCHS=	i386 amd64
 
-USES=		gl xorg zip
+USES=		gl java:ant,run xorg zip
 USE_XORG=	x11 xau xdamage xdmcp xext xfixes xorgproto xt xxf86vm
 USE_GL=		gl
-USE_ANT=	yes
 USE_LDCONFIG=	yes
 USE_LOCALE=	en_US.UTF-8
-USE_JAVA=	yes
 
 BUILD_WRKSRC=	${WRKSRC}/jogl/make
 BUILD_BINPATH=	${WRKSRC}/bin

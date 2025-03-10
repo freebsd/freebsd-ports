@@ -1,13 +1,13 @@
 PORTNAME=	pywgsim
 DISTVERSION=	0.5.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	biology python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Modified wgsim genomic data simulator
-WWW=		https://pypi.python.org/pypi/pywgsim
+WWW=		https://github.com/ialbert/pywgsim/
 
 LICENSE=	MIT
 

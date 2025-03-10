@@ -1,6 +1,6 @@
 PORTNAME=	simpletal
 PORTVERSION=	4.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel textproc www python
 MASTER_SITES=	http://www.owlfish.com/software/simpleTAL/downloads/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}

@@ -1,5 +1,5 @@
 PORTNAME=	igbinary
-PORTVERSION=	3.2.15
+PORTVERSION=	3.2.16
 CATEGORIES=	converters
 
 MAINTAINER=	sunpoet@FreeBSD.org

@@ -1,8 +1,8 @@
 include/cskk/libcskk.h
 lib/cskk/libcskk.a
 lib/cskk/libcskk.so
-lib/cskk/libcskk.so.3
-lib/cskk/libcskk.so.3.1.1
+lib/cskk/libcskk.so.%%VERSION_MAJOR%%
+lib/cskk/libcskk.so.%%VERSION%%
 libdata/pkgconfig/cskk.pc
 share/libcskk/README.rules
 share/libcskk/rule/ascii_form.toml

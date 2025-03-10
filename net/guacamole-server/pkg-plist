@@ -71,8 +71,8 @@ include/guacamole/wol.h
 %%VNC%%lib/libguac-client-vnc.so.0.0.0
 lib/libguac.a
 lib/libguac.so
-lib/libguac.so.23
-lib/libguac.so.23.0.0
+lib/libguac.so.24
+lib/libguac.so.24.0.0
 %%TERMINAL%%lib/libguac-terminal.a
 %%TERMINAL%%lib/libguac-terminal.so
 %%TERMINAL%%lib/libguac-terminal.so.0

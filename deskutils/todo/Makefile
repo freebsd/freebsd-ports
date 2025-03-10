@@ -1,5 +1,5 @@
 PORTNAME=	todo
-PORTVERSION=	2.12.0
+PORTVERSION=	2.13.0
 CATEGORIES=	deskutils
 MASTER_SITES=	https://github.com/todotxt/todo.txt-cli/releases/download/v${PORTVERSION}/
 DISTNAME=	todo.txt_cli-${PORTVERSION}

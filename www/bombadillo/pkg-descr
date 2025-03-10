@@ -1,0 +1,5 @@
+Bombabillo is a non-web client for the terminal, supporting Gopher,
+Gemini and much more.
+
+Bombadillo features a full terminal user interface, vim-like keybindings,
+document pager, configurable settings, and a robust command selection.

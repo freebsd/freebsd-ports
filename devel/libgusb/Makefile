@@ -1,5 +1,6 @@
 PORTNAME=	libgusb
 DISTVERSION=	0.4.9
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/hughsie/${PORTNAME}/releases/download/${DISTVERSION}/
 
@@ -22,7 +23,7 @@ OPTIONS_DEFAULT=	DOCS VAPI
 OPTIONS_SUB=		yes
 
 MESON_ARGS=		-Dumockdev=disabled \
-			-Dusb_ids=${LOCALBASE}/share/hwdata/hwdata/usb.ids
+			-Dusb_ids=${LOCALBASE}/share/hwdata/usb.ids
 
 DOCS_BUILD_DEPENDS=	gtk-doc>0:textproc/gtk-doc \
 			${PYTHON_PKGNAMEPREFIX}gi-docgen>=0:textproc/py-gi-docgen@${PY_FLAVOR}

@@ -1,15 +1,16 @@
 PORTNAME=	lwjgl
-DISTVERSION=	3.3.4.20240717
+DISTVERSION=	3.3.6
+PORTREVISION=	1
 CATEGORIES=	games java
 MASTER_SITES=	https://repo1.maven.org/:source1
 PKGNAMESUFFIX=	3
 DISTFILES=	maven2/com/beust/jcommander/1.78/jcommander-1.78.jar:source1 \
-		maven2/com/google/code/findbugs/jsr305/3.0.2/jsr305-3.0.2-sources.jar:source1 \
-		maven2/com/google/code/findbugs/jsr305/3.0.2/jsr305-3.0.2.jar:source1 \
 		maven2/net/sf/jopt-simple/jopt-simple/5.0.4/jopt-simple-5.0.4.jar:source1 \
 		maven2/org/apache/commons/commons-math3/3.6.1/commons-math3-3.6.1.jar:source1 \
-		maven2/org/joml/joml/1.10.7/joml-1.10.7-sources.jar:source1 \
-		maven2/org/joml/joml/1.10.7/joml-1.10.7.jar:source1 \
+		maven2/org/joml/joml/1.10.8/joml-1.10.8-sources.jar:source1 \
+		maven2/org/joml/joml/1.10.8/joml-1.10.8.jar:source1 \
+		maven2/org/jspecify/jspecify/1.0.0/jspecify-1.0.0-sources.jar:source1 \
+		maven2/org/jspecify/jspecify/1.0.0/jspecify-1.0.0.jar:source1 \
 		maven2/org/openjdk/jmh/jmh-core/1.37/jmh-core-1.37-sources.jar:source1 \
 		maven2/org/openjdk/jmh/jmh-core/1.37/jmh-core-1.37.jar:source1 \
 		maven2/org/openjdk/jmh/jmh-generator-annprocess/1.37/jmh-generator-annprocess-1.37.jar:source1 \
@@ -47,15 +48,13 @@ LIB_DEPENDS=		libdraco.so:archivers/draco \
 			libfreetype.so:print/freetype2 \
 			libharfbuzz.so:print/harfbuzz
 
-USES=		gl gnome
-USE_ANT=	yes
+USES=		gl gnome java:ant,run
+JAVA_VERSION=	17+
 USE_GITHUB=	yes
 GH_ACCOUNT=	${PORTNAME:tu}
 GH_PROJECT=	${PORTNAME}${PKGNAMESUFFIX}
-GH_TAGNAME=	${DISTVERSION:R}
 USE_GL=		gl
 USE_GNOME=	glib20 gtk30
-USE_JAVA=	17+
 
 MAKE_ARGS=	-Dbuild.offline=true \
 		-Djavadoc.skip=true \
@@ -78,18 +77,18 @@ post-extract:
 	${MKDIR} ${WRKSRC}/bin/libs/java
 	${LN} -s ${DISTDIR}/maven2/com/beust/jcommander/1.78/jcommander-1.78.jar \
 		${WRKSRC}/bin/libs/java/jcommander.jar
-	${LN} -s ${DISTDIR}/maven2/com/google/code/findbugs/jsr305/3.0.2/jsr305-3.0.2-sources.jar \
-		${WRKSRC}/bin/libs/java/jsr305-sources.jar
-	${LN} -s ${DISTDIR}/maven2/com/google/code/findbugs/jsr305/3.0.2/jsr305-3.0.2.jar \
-		${WRKSRC}/bin/libs/java/jsr305.jar
 	${LN} -s ${DISTDIR}/maven2/net/sf/jopt-simple/jopt-simple/5.0.4/jopt-simple-5.0.4.jar \
 		${WRKSRC}/bin/libs/java/jopt-simple.jar
 	${LN} -s ${DISTDIR}/maven2/org/apache/commons/commons-math3/3.6.1/commons-math3-3.6.1.jar \
 		${WRKSRC}/bin/libs/java/commons-math3.jar
-	${LN} -s ${DISTDIR}/maven2/org/joml/joml/1.10.7/joml-1.10.7-sources.jar \
+	${LN} -s ${DISTDIR}/maven2/org/joml/joml/1.10.8/joml-1.10.8-sources.jar \
 		${WRKSRC}/bin/libs/java/joml-sources.jar
-	${LN} -s ${DISTDIR}/maven2/org/joml/joml/1.10.7/joml-1.10.7.jar \
+	${LN} -s ${DISTDIR}/maven2/org/joml/joml/1.10.8/joml-1.10.8.jar \
 		${WRKSRC}/bin/libs/java/joml.jar
+	${LN} -s ${DISTDIR}/maven2/org/jspecify/jspecify/1.0.0/jspecify-1.0.0-sources.jar \
+		${WRKSRC}/bin/libs/java/jspecify-sources.jar
+	${CP}    ${DISTDIR}/maven2/org/jspecify/jspecify/1.0.0/jspecify-1.0.0.jar \
+		${WRKSRC}/bin/libs/java/jspecify.jar
 	${LN} -s ${DISTDIR}/maven2/org/openjdk/jmh/jmh-core/1.37/jmh-core-1.37-sources.jar \
 		${WRKSRC}/bin/libs/java/jmh-core-sources.jar
 	${LN} -s ${DISTDIR}/maven2/org/openjdk/jmh/jmh-core/1.37/jmh-core-1.37.jar \

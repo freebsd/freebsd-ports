@@ -1,0 +1,5 @@
+Python wrapper for the Iconify API.
+
+Iconify is a versatile icon framework that includes 100+ icon sets with more
+than 100,000 icons from FontAwesome, Material Design Icons, DashIcons,
+Feather Icons, EmojiOne, Noto Emoji and many other open source icon sets.

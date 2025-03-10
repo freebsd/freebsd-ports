@@ -23,6 +23,13 @@ to set the following tunables:
 
 hw.re.s5wol="1"
 hw.re.s0_magic_packet="1"
+
+If you experience network hangs with IPv6 enabled,
+you might need to disable the checksum offloading
+by adding the following parameters to the related
+ifconfig line in your /etc/rc.conf file:
+
+-rxcsum -txcsum -rxcsum6 -txcsum6
 EOM
 }
 ]

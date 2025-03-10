@@ -1,25 +1,27 @@
 PORTNAME=	UUID
-PORTVERSION=	0.28
+PORTVERSION=	0.36
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	CPAN:JNH
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	perl@FreeBSD.org
-COMMENT=	Perl extension for using UUID interfaces as defined in e2fsprogs
+MAINTAINER=	sunpoet@FreeBSD.org
+COMMENT=	Universally Unique Identifier library for Perl
 WWW=		https://metacpan.org/release/UUID
 
 LICENSE=	ART20
-LICENSE_FILE=	${WRKSRC}/License
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	p5-Devel-CheckLib>=0:devel/p5-Devel-CheckLib
-LIB_DEPENDS=	libuuid.so:misc/e2fsprogs-libuuid
+BUILD_DEPENDS=	p5-Devel-CheckLib>=1.14:devel/p5-Devel-CheckLib
+TEST_DEPENDS=	p5-Data-UUID>=0:devel/p5-Data-UUID \
+		p5-Digest-SHA1>=0:security/p5-Digest-SHA1 \
+		p5-Try-Tiny>=0:lang/p5-Try-Tiny
 
 USES=		perl5
 USE_PERL5=	configure
-CFLAGS+=	-I${LOCALBASE}/include
 
-post-build:
-	@${RM} /var/run/libuuid/clock.txt /var/run/libuuid/request /var/run/libuuid/uuidd.pid
+TEST_ENV=	TEST_VERBOSE=1
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/UUID/UUID.so
 
 .include <bsd.port.mk>

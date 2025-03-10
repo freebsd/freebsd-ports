@@ -1,6 +1,6 @@
---- base/process/launch_posix.cc.orig	2024-06-22 08:49:42 UTC
+--- base/process/launch_posix.cc.orig	2024-10-27 06:40:35 UTC
 +++ base/process/launch_posix.cc
-@@ -66,6 +66,9 @@
+@@ -67,6 +67,9 @@
  #error "macOS should use launch_mac.cc"
  #endif
  

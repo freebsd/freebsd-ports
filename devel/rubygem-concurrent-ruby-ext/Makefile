@@ -1,5 +1,5 @@
 PORTNAME=	concurrent-ruby-ext
-PORTVERSION=	1.3.3
+PORTVERSION=	1.3.5
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 

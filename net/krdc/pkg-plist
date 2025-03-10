@@ -8,12 +8,11 @@ lib/libkrdccore.so.%%KDE_APPLICATIONS_VERSION%%
 lib/libkrdccore.so.5
 %%FREERDP%%%%QT_PLUGINDIR%%/krdc/kcms/libkcm_krdc_rdpplugin.so
 %%QT_PLUGINDIR%%/krdc/kcms/libkcm_krdc_vncplugin.so
-%%FREERDP%%%%QT_PLUGINDIR%%/krdc/libkrdc_rdpplugin.so
-%%QT_PLUGINDIR%%/krdc/libkrdc_testplugin.so
-%%QT_PLUGINDIR%%/krdc/libkrdc_vncplugin.so
+%%QT_PLUGINDIR%%/krdc/krdc_testplugin.so
+%%QT_PLUGINDIR%%/krdc/krdc_vncplugin.so
+%%FREERDP%%%%QT_PLUGINDIR%%/krdc/krdc_rdpplugin.so
 share/applications/org.kde.krdc.desktop
 share/config.kcfg/krdc.kcfg
-share/kio/servicemenus/smb2rdc.desktop
 share/locale/af/LC_MESSAGES/krdc.mo
 share/locale/ar/LC_MESSAGES/krdc.mo
 share/locale/be/LC_MESSAGES/krdc.mo
@@ -90,4 +89,5 @@ share/locale/zh_CN/LC_MESSAGES/krdc.mo
 share/locale/zh_HK/LC_MESSAGES/krdc.mo
 share/locale/zh_TW/LC_MESSAGES/krdc.mo
 share/metainfo/org.kde.krdc.appdata.xml
-share/qlogging-categories5/krdc.categories
+share/mime/packages/org.kde.krdc-mime.xml
+share/qlogging-categories6/krdc.categories

@@ -1,12 +1,12 @@
 PORTNAME=	nntp
 PORTVERSION=	1.5.12.2
-PORTREVISION=	13
+PORTREVISION=	14
 CATEGORIES=	news
 MASTER_SITES=	ftp://ftp.dinoex.org/pub/c-news/
 DISTNAME=	${PORTNAME}.${PORTVERSION}
 
 PATCH_SITES=	ftp://ftp.dinoex.org/pub/c-news/
-PATCHFILES=	nntp-patch-ansi3
+PATCHFILES=	nntp-patch-ansi4
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	NNTP with NOV support
@@ -56,6 +56,9 @@ post-patch:
 pre-configure:
 	${REINPLACE_CMD} \
 		-e 's|\#define.ALONE.*||' \
+		-e 's|"usenet"|"news"|' \
+		-e "s=/usr/local/news/lib/inews=${NEWSBIN}/inject/inews=" \
+		-e "s=/usr/local/bin/rnews=${NEWSBIN}/input/rnews=" \
 		-e "s=/usr/local/news/lib/bin/config=${NEWSBIN}/config=" \
 		-e "s=/usr/local/news/cnewsbin=${NEWSBIN}=" \
 		-e "s=/usr/local/news/lib=${NEWSCTL}=" \

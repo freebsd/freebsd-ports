@@ -1,7 +1,7 @@
 bin/contactprintthemeeditor
 bin/contactthemeeditor
 bin/headerthemeeditor
-lib/libgrantleethemeeditor.so.5
+lib/libgrantleethemeeditor.so.6
 lib/libgrantleethemeeditor.so.%%KDE_APPLICATIONS_SHLIB_VER%%
 share/applications/org.kde.contactprintthemeeditor.desktop
 share/applications/org.kde.contactthemeeditor.desktop
@@ -11,6 +11,10 @@ share/locale/ar/LC_MESSAGES/contactprintthemeeditor.mo
 share/locale/ar/LC_MESSAGES/contactthemeeditor.mo
 share/locale/ar/LC_MESSAGES/headerthemeeditor.mo
 share/locale/ar/LC_MESSAGES/libgrantleethemeeditor.mo
+share/locale/ast/LC_MESSAGES/contactprintthemeeditor.mo
+share/locale/ast/LC_MESSAGES/contactthemeeditor.mo
+share/locale/ast/LC_MESSAGES/headerthemeeditor.mo
+share/locale/ast/LC_MESSAGES/libgrantleethemeeditor.mo
 share/locale/bg/LC_MESSAGES/contactprintthemeeditor.mo
 share/locale/bg/LC_MESSAGES/contactthemeeditor.mo
 share/locale/bg/LC_MESSAGES/headerthemeeditor.mo
@@ -44,6 +48,10 @@ share/locale/en_GB/LC_MESSAGES/contactprintthemeeditor.mo
 share/locale/en_GB/LC_MESSAGES/contactthemeeditor.mo
 share/locale/en_GB/LC_MESSAGES/headerthemeeditor.mo
 share/locale/en_GB/LC_MESSAGES/libgrantleethemeeditor.mo
+share/locale/eo/LC_MESSAGES/contactprintthemeeditor.mo
+share/locale/eo/LC_MESSAGES/contactthemeeditor.mo
+share/locale/eo/LC_MESSAGES/headerthemeeditor.mo
+share/locale/eo/LC_MESSAGES/libgrantleethemeeditor.mo
 share/locale/es/LC_MESSAGES/contactprintthemeeditor.mo
 share/locale/es/LC_MESSAGES/contactthemeeditor.mo
 share/locale/es/LC_MESSAGES/headerthemeeditor.mo
@@ -68,6 +76,11 @@ share/locale/gl/LC_MESSAGES/contactprintthemeeditor.mo
 share/locale/gl/LC_MESSAGES/contactthemeeditor.mo
 share/locale/gl/LC_MESSAGES/headerthemeeditor.mo
 share/locale/gl/LC_MESSAGES/libgrantleethemeeditor.mo
+share/locale/he/LC_MESSAGES/contactprintthemeeditor.mo
+share/locale/he/LC_MESSAGES/contactthemeeditor.mo
+share/locale/he/LC_MESSAGES/headerthemeeditor.mo
+share/locale/he/LC_MESSAGES/libgrantleethemeeditor.mo
+share/locale/hu/LC_MESSAGES/contactprintthemeeditor.mo
 share/locale/hu/LC_MESSAGES/contactthemeeditor.mo
 share/locale/hu/LC_MESSAGES/headerthemeeditor.mo
 share/locale/hu/LC_MESSAGES/libgrantleethemeeditor.mo
@@ -147,6 +160,7 @@ share/locale/sv/LC_MESSAGES/contactprintthemeeditor.mo
 share/locale/sv/LC_MESSAGES/contactthemeeditor.mo
 share/locale/sv/LC_MESSAGES/headerthemeeditor.mo
 share/locale/sv/LC_MESSAGES/libgrantleethemeeditor.mo
+share/locale/ta/LC_MESSAGES/libgrantleethemeeditor.mo
 share/locale/tr/LC_MESSAGES/contactprintthemeeditor.mo
 share/locale/tr/LC_MESSAGES/contactthemeeditor.mo
 share/locale/tr/LC_MESSAGES/headerthemeeditor.mo
@@ -166,5 +180,5 @@ share/locale/zh_TW/LC_MESSAGES/contactprintthemeeditor.mo
 share/locale/zh_TW/LC_MESSAGES/contactthemeeditor.mo
 share/locale/zh_TW/LC_MESSAGES/headerthemeeditor.mo
 share/locale/zh_TW/LC_MESSAGES/libgrantleethemeeditor.mo
-share/qlogging-categories5/grantleeditor.categories
-share/qlogging-categories5/grantleeditor.renamecategories
+share/qlogging-categories6/grantleeditor.categories
+share/qlogging-categories6/grantleeditor.renamecategories

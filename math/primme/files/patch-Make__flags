@@ -1,0 +1,10 @@
+--- Make_flags.orig	2024-11-09 08:05:56 UTC
++++ Make_flags
+@@ -32,6 +32,7 @@ FFLAGS   ?= -fno-second-underscore -O
+ DEFINES  ?= -DF77UNDERSCORE 
+ CFLAGS   ?= -O -fPIC -DNDEBUG
+ FFLAGS   ?= -fno-second-underscore -O
++FFLAGS   += -fallow-argument-mismatch
+ PRIMME_WITH_HALF ?= no
+ ifeq ($(PRIMME_WITH_HALF), yes)
+     CFLAGS += -DPRIMME_WITH_HALF

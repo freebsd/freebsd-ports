@@ -1,0 +1,4 @@
+Library for creating command-line interfaces (CLIs) and making Python
+apps easily configurable. It is a well-maintained project with frequent
+releases, adhering to high standards of development: semantic versioning,
+deprecation periods, changelog, automated testing, and full test coverage.

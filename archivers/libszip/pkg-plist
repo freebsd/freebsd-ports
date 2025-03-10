@@ -1,0 +1,11 @@
+include/SZconfig.h
+include/ricehdf.h
+include/szip_adpt.h
+include/szlib.h
+lib/cmake/szip/szip-config-version.cmake
+lib/cmake/szip/szip-config.cmake
+lib/cmake/szip/szip-targets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/szip/szip-targets.cmake
+lib/libszip.a
+lib/libszip.so
+lib/libszip.so.2.1

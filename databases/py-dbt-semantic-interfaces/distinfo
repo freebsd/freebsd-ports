@@ -1,3 +1,3 @@
-TIMESTAMP = 1712270074
-SHA256 (dbt_semantic_interfaces-0.5.1.tar.gz) = 3a497abef1ba8112affdf804b26bfdcd5468ed95cc924b509068e18d371c7c4d
-SIZE (dbt_semantic_interfaces-0.5.1.tar.gz) = 76089
+TIMESTAMP = 1733298501
+SHA256 (dbt_semantic_interfaces-0.8.3.tar.gz) = dc649eb79f522f592f0ed0b7ae8d6dc4dead0ed14b2286c526e92ecfc1790e56
+SIZE (dbt_semantic_interfaces-0.8.3.tar.gz) = 93550

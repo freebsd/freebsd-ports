@@ -1,5 +1,5 @@
 PORTNAME=	google-apis-discovery_v1
-PORTVERSION=	0.18.0
+PORTVERSION=	0.19.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 

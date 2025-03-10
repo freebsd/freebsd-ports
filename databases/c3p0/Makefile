@@ -11,9 +11,8 @@ WWW=		https://www.mchange.com/projects/c3p0/
 LICENSE=	LGPL21 EPL
 LICENSE_COMB=	dual
 
-USES=		cpe tar:tgz
+USES=		cpe java tar:tgz
 CPE_VENDOR=	mchange
-USE_JAVA=	yes
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 NO_ARCH=	yes

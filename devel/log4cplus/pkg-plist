@@ -16,6 +16,7 @@ include/log4cplus/fileappender.h
 include/log4cplus/fstreams.h
 include/log4cplus/helpers/appenderattachableimpl.h
 include/log4cplus/helpers/connectorthread.h
+include/log4cplus/helpers/eventcounter.h
 include/log4cplus/helpers/fileinfo.h
 include/log4cplus/helpers/lockfile.h
 include/log4cplus/helpers/loglog.h

@@ -1,5 +1,5 @@
 PORTNAME=	arti
-DISTVERSION=	1.2.6
+DISTVERSION=	1.4.1
 CATEGORIES=	security
 
 MAINTAINER=	cs@FreeBSD.org
@@ -12,6 +12,8 @@ NOT_FOR_ARCHS=	i386
 NOT_FOR_ARCHS_REASON=Zeroize crate does not support i386
 LIB_DEPENDS=	libzstd.so:archivers/zstd
 
+FLAVORS=	default full
+full_PKGNAMESUFFIX=	-full
 USES=		cargo sqlite ssl
 USE_RC_SUBR=	arti
 GROUPS=		_arti
@@ -21,15 +23,26 @@ PLIST_SUB=	USERS="${USERS}" GROUPS="${GROUPS}"
 USE_GITLAB=	yes
 GL_SITE=	https://gitlab.torproject.org
 GL_ACCOUNT=	tpo/core
-GL_TAGNAME=	15e0b8d6702125274aa1844958e2293adb9f9d1d
-CARGO_FEATURES=	tokio rustls
+GL_TAGNAME=	590c6d748881807873d3e31d03b70938949e2d5c
 CARGO_INSTALL=	no
+default_DESCR=	${.CURDIR}/pkg-descr
+full_DESCR=	${.CURDIR}/pkg-descr-full
+.if ${FLAVOR:U} != full
+CARGO_FEATURES=	default
+.endif
+.if ${FLAVOR:U} == full
+CARGO_FEATURES=	full
+.endif
+
+OPTIONS_DEFINE=	RUSTLS
+
+RUSTLS_VARS=	CARGO_FEATURES+=rustls
+RUSTLS_DESC=	Use rustls instead of openssl
 
 do-install:
-	${INSTALL_SCRIPT} ${CARGO_TARGET_DIR}/${CARGO_BUILD_TARGET}/*/arti ${STAGEDIR}${PREFIX}/bin/arti
+	${INSTALL_SCRIPT} ${CARGO_TARGET_DIR}/*/arti ${STAGEDIR}${PREFIX}/bin/arti
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/arti
 	@${MKDIR} ${STAGEDIR}${ETCDIR} ${STAGEDIR}/var/log/arti ${STAGEDIR}/var/run/arti ${STAGEDIR}/var/db/arti
 	${INSTALL_DATA} ${WRKSRC}/crates/arti/src/arti-example-config.toml ${STAGEDIR}${ETCDIR}/arti.toml.sample
 

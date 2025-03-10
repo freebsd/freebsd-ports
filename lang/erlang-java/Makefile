@@ -1,6 +1,6 @@
 PORTNAME=	erlang
 DISTVERSIONPREFIX=	OTP-
-DISTVERSION=	25.3.2.13
+DISTVERSION=	26.2.5.6
 PORTEPOCH=	1
 CATEGORIES=	lang parallel java
 PKGNAMESUFFIX=	-java
@@ -14,10 +14,9 @@ LICENSE=	APACHE20
 
 RUN_DEPENDS=	erl:lang/erlang
 
-USES=		autoreconf:build gmake perl5
+USES=		autoreconf:build gmake java perl5
 USE_GITHUB=	yes
 GH_PROJECT=	otp
-USE_JAVA=	yes
 USE_PERL5=	build
 
 GNU_CONFIGURE=	yes
@@ -25,7 +24,7 @@ MAKE_JOBS_UNSAFE=	yes
 
 PLIST_SUB=	APP_VERSION=${APP_VERSION}
 
-APP_VERSION=	1.13.2
+APP_VERSION=	1.14
 APP_DIR=	${PREFIX}/lib/erlang/lib/jinterface-${APP_VERSION}
 
 CONFIGURE_ARGS+=	--enable-threads \

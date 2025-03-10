@@ -1,0 +1,21 @@
+Pagy is a pagination gem.
+
+It works in any environment: with Rack frameworks (Rails, Sinatra, Padrino,
+etc.) or in pure ruby without Rack
+
+It works with any collection: with any ORM, any DB, any search gem,
+elasticsearch_rails, meilisearch, searchkick, ransack, and just about any list,
+even if you cannot count it
+
+It supports all kinds of pagination: calendar, countless, geared, incremental,
+auto-incremental, infinite, headers, JSON, cursor
+
+It supports all kinds of CSS Frameworks and APIs: bootstrap, bulma, foundation,
+materialize, semantic, uikit, tailwind, JSON:API
+
+It supports faster client-side rendering: with classic or innovative UI
+components (see Javascript Components) or by serving JSON to your favorite
+Javascript framework
+
+It has 100% of test coverage for Ruby, HTML and Javascript E2E (see Pagy
+Workflows CI)

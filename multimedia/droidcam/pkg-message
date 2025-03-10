@@ -1,0 +1,14 @@
+[
+{ type: install
+  message: <<EOM
+Connect your phone with USB then follow these steps but
+"-d", "-N" and "-S" parameters may be different for you.
+To learn them, just run webcamd as root and without parameters.
+Don't forget to Change $USER and $GROUP according to your normal user.
+	# kldload cuse
+	# webcamd -d ugen0.2 -N Xiaomi-Redmi-Note-12 -S 1234567 \
+	  -M 0 -v 0 -B -U $USER -G $GROUP -c v4l2loopback
+Now, you can run the program and use it.
+EOM
+}
+]

@@ -1,0 +1,6 @@
+dovi_tool provides an important set of tools for
+analyzing, editing and generating Dolby Vision metadata.
+
+Extract, inject and edit RPU of movie files.
+Mux and demux the enhancement layer of HEVC files.
+Convert the RPU, optionally dropping the enhancement layer.

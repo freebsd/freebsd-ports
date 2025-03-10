@@ -26,12 +26,16 @@
 %%SITE_PERL%%/URI/file/Unix.pm
 %%SITE_PERL%%/URI/file/Win32.pm
 %%SITE_PERL%%/URI/ftp.pm
+%%SITE_PERL%%/URI/ftpes.pm
+%%SITE_PERL%%/URI/ftps.pm
 %%SITE_PERL%%/URI/geo.pm
 %%SITE_PERL%%/URI/gopher.pm
 %%SITE_PERL%%/URI/http.pm
 %%SITE_PERL%%/URI/https.pm
 %%SITE_PERL%%/URI/icap.pm
 %%SITE_PERL%%/URI/icaps.pm
+%%SITE_PERL%%/URI/irc.pm
+%%SITE_PERL%%/URI/ircs.pm
 %%SITE_PERL%%/URI/ldap.pm
 %%SITE_PERL%%/URI/ldapi.pm
 %%SITE_PERL%%/URI/ldaps.pm
@@ -40,11 +44,13 @@
 %%SITE_PERL%%/URI/news.pm
 %%SITE_PERL%%/URI/nntp.pm
 %%SITE_PERL%%/URI/nntps.pm
+%%SITE_PERL%%/URI/otpauth.pm
 %%SITE_PERL%%/URI/pop.pm
 %%SITE_PERL%%/URI/rlogin.pm
 %%SITE_PERL%%/URI/rsync.pm
 %%SITE_PERL%%/URI/rtsp.pm
 %%SITE_PERL%%/URI/rtspu.pm
+%%SITE_PERL%%/URI/scp.pm
 %%SITE_PERL%%/URI/sftp.pm
 %%SITE_PERL%%/URI/sip.pm
 %%SITE_PERL%%/URI/sips.pm
@@ -69,3 +75,4 @@
 %%PERL5_MAN3%%/URI::icap.3.gz
 %%PERL5_MAN3%%/URI::icaps.3.gz
 %%PERL5_MAN3%%/URI::ldap.3.gz
+%%PERL5_MAN3%%/URI::otpauth.3.gz

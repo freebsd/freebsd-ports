@@ -1,4 +1,3 @@
-bin/findcontact
 bin/kraft
 share/applications/de.volle_kraft_voraus.kraft.desktop
 share/config.kcfg/databasesettings.kcfg

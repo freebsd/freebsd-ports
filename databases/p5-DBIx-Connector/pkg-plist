@@ -2,6 +2,7 @@
 %%SITE_PERL%%/DBIx/Connector/Driver.pm
 %%SITE_PERL%%/DBIx/Connector/Driver/Firebird.pm
 %%SITE_PERL%%/DBIx/Connector/Driver/MSSQL.pm
+%%SITE_PERL%%/DBIx/Connector/Driver/MariaDB.pm
 %%SITE_PERL%%/DBIx/Connector/Driver/Oracle.pm
 %%SITE_PERL%%/DBIx/Connector/Driver/Pg.pm
 %%SITE_PERL%%/DBIx/Connector/Driver/SQLite.pm
@@ -10,6 +11,7 @@
 %%PERL5_MAN3%%/DBIx::Connector::Driver.3.gz
 %%PERL5_MAN3%%/DBIx::Connector::Driver::Firebird.3.gz
 %%PERL5_MAN3%%/DBIx::Connector::Driver::MSSQL.3.gz
+%%PERL5_MAN3%%/DBIx::Connector::Driver::MariaDB.3.gz
 %%PERL5_MAN3%%/DBIx::Connector::Driver::Oracle.3.gz
 %%PERL5_MAN3%%/DBIx::Connector::Driver::Pg.3.gz
 %%PERL5_MAN3%%/DBIx::Connector::Driver::SQLite.3.gz

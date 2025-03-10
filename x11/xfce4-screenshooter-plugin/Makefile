@@ -1,5 +1,6 @@
 PORTNAME=	xfce4-screenshooter-plugin
 PORTVERSION=	1.11.1
+PORTREVISION=	1
 CATEGORIES=	x11 xfce
 MASTER_SITES=	XFCE/apps
 DISTNAME=	xfce4-screenshooter-${DISTVERSIONFULL}
@@ -17,20 +18,18 @@ LIB_DEPENDS=	libharfbuzz.so:print/harfbuzz
 USES=		compiler:c11 gettext-tools gmake gnome libtool pkgconfig \
 		tar:bzip2 xfce xorg
 USE_CSTD=	c99
-USE_GNOME=	cairo gdkpixbuf2 glib20 gtk30 intltool
+USE_GNOME=	cairo gdkpixbuf2 glib20 gtk30
 USE_XFCE=	libexo libmenu panel xfconf
-USE_XORG=	ice sm x11 xfixes xext
+USE_XORG=	ice sm x11 xext xfixes
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-wayland
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 INSTALL_TARGET=	install-strip
 
-OPTIONS_DEFINE=		NLS IMGUR
-OPTIONS_DEFAULT=	IMGUR
+OPTIONS_DEFINE=		IMGUR NLS WAYLAND
+OPTIONS_DEFAULT=	IMGUR WAYLAND
 OPTIONS_SUB=		yes
 
-IMGUR_DESC=		Install imgur image upload custom action
+IMGUR_DESC=	Install imgur image upload custom action
 
 IMGUR_RUN_DEPENDS=	curl:ftp/curl \
 			jq:textproc/jq \
@@ -39,6 +38,9 @@ IMGUR_RUN_DEPENDS=	curl:ftp/curl \
 
 NLS_USES=		gettext-runtime
 NLS_CONFIGURE_ENABLE=	nls
+
+WAYLAND_LIB_DEPENDS=		libwayland-client.so:graphics/wayland
+WAYLAND_CONFIGURE_ENABLE=	wayland
 
 post-patch-IMGUR-off:
 	@${REINPLACE_CMD} '/imgur_custom_action_added = xfconf_channel_get_bool/s/FALSE/TRUE/' \

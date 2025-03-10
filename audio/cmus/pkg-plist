@@ -28,7 +28,6 @@
 %%MIKMOD%%lib/cmus/ip/mikmod.so
 %%MODPLUG%%lib/cmus/ip/modplug.so
 %%MP4%%lib/cmus/ip/mp4.so
-%%MUSEPACK%%lib/cmus/ip/mpc.so
 %%OPUS%%lib/cmus/ip/opus.so
 %%OSS%%lib/cmus/op/oss.so
 %%PULSEAUDIO%%lib/cmus/op/pulse.so

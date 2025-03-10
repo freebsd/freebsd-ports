@@ -1,6 +1,6 @@
 PORTNAME=	java-simple-serial-connector
 PORTVERSION=	2.8.0
-PORTREVISION=	1
+PORTREVISION=	2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	comms java
 
@@ -10,12 +10,11 @@ WWW=		https://github.com/scream3r/java-simple-serial-connector
 
 LICENSE=	LGPL3
 
+USES=		java:ant,run
 USE_GITHUB=	yes
 GH_ACCOUNT=	scream3r
 
 MAJOR_MINOR=	${PORTVERSION:C/(.*)\.[0-9]*/\\1/}
-USE_JAVA=	yes
-USE_ANT=	yes
 ALL_TARGET=	dist
 CXXFLAGS+=	-I${JAVA_HOME}/include -I${JAVA_HOME}/include/freebsd
 WRKSRC_LIBS=	${WRKSRC}/src/java/libs

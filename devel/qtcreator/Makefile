@@ -1,5 +1,5 @@
 PORTNAME=	qtcreator
-DISTVERSION=	14.0.0
+DISTVERSION=	15.0.1
 CATEGORIES=	devel
 MASTER_SITES=	QT/official_releases/qtcreator/${DISTVERSION:R}/${DISTVERSION}
 DISTNAME=	qt-creator-opensource-src-${DISTVERSION}
@@ -25,8 +25,9 @@ USES=		cmake compiler:c++17-lang desktop-file-utils gl \
 		qt:6 shebangfix tar:xz
 USE_GL=		gl
 USE_LDCONFIG=	${LOCALBASE}/lib/${PORTNAME}
-USE_QT=		5compat base declarative positioning quick3d quicktimeline \
-		serialport shadertools sqldriver-sqlite svg tools translations webchannel
+USE_QT=		5compat base declarative positioning quick3d \
+		quicktimeline serialport shadertools sqldriver-sqlite \
+		svg tools translations webchannel
 
 SHEBANG_GLOB=	*.pl *.py *.sh
 SHEBANG_FILES=	src/plugins/terminal/tests/* \

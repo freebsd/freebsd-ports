@@ -1,5 +1,5 @@
 PORTNAME=	lftp
-PORTVERSION=	4.9.2
+PORTVERSION=	4.9.3
 PORTREVISION=	1
 CATEGORIES=	ftp
 MASTER_SITES=	ftp://ftp.cs.tu-berlin.de/pub/net/ftp/lftp/ \
@@ -8,14 +8,14 @@ MASTER_SITES=	ftp://ftp.cs.tu-berlin.de/pub/net/ftp/lftp/ \
 		http://ftp.tuwien.ac.at/infosys/browsers/ftp/lftp/ \
 		http://lftp.cybermirror.org/ \
 		http://lftp.cybermirror.org/old/ \
-		http://lftp.tech/ftp/ \
-		http://lftp.tech/ftp/old/
+		http://lftp.yar.ru/ftp/ \
+		http://lftp.yar.ru/ftp/old/
 
 MAINTAINER=	martymac@FreeBSD.org
 COMMENT=	Shell-like command-line FTP client
-WWW=		https://lftp.tech/
+WWW=		https://lftp.yar.ru/
 
-LICENSE=	GPLv3
+LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libexpat.so:textproc/expat2 \
@@ -46,6 +46,8 @@ NLS_USES=		gettext
 NLS_CONFIGURE_ENABLE=	nls
 OPENSSL_USES=		ssl
 OPENSSL_CONFIGURE_WITH=	openssl
+OPENSSL_CPPFLAGS=	-I${OPENSSLINC}
+OPENSSL_LDFLAGS=	-L${OPENSSLLIB}
 
 post-install:
 	${MV} ${STAGEDIR}${PREFIX}/etc/lftp.conf \

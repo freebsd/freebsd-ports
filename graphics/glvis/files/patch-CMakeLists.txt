@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2022-05-24 00:33:38 UTC
+--- CMakeLists.txt.orig	2024-09-27 21:31:27 UTC
 +++ CMakeLists.txt
-@@ -22,7 +22,7 @@ if ("${CMAKE_SOURCE_DIR}" STREQUAL "${CMAKE_BINARY_DIR
+@@ -22,7 +22,7 @@ endif ("${CMAKE_SOURCE_DIR}" STREQUAL "${CMAKE_BINARY_
    message(FATAL_ERROR "In-source builds are prohibited.")
  endif ("${CMAKE_SOURCE_DIR}" STREQUAL "${CMAKE_BINARY_DIR}")
  
@@ -9,16 +9,19 @@
  
  # Import MFEM. The following variables can be used to help CMake find MFEM:
  #  * MFEM_DIR - absolute path to the MFEM build or install prefix.
-@@ -333,10 +333,12 @@ if(NOT EMSCRIPTEN)
-   install(TARGETS app
-     RUNTIME DESTINATION .
-     BUNDLE DESTINATION .)
+@@ -342,6 +342,7 @@ if(NOT EMSCRIPTEN)
+     install(TARGETS app
+       RUNTIME DESTINATION .
+       BUNDLE DESTINATION .)
 +  if (FALSE)
-   install(CODE [[
-     include (BundleUtilities)
-     fixup_bundle("${CMAKE_INSTALL_PREFIX}/GLVis.app" "" "")
-   ]] COMPONENT RUNTIME)
+     install(CODE [[
+       include (BundleUtilities)
+       fixup_bundle("${CMAKE_INSTALL_PREFIX}/GLVis.app" "" "")
+@@ -354,6 +355,7 @@ if(NOT EMSCRIPTEN)
+       endforeach()
+       execute_process(COMMAND codesign --force --sign - ${CMAKE_INSTALL_PREFIX}/GLVis.app)
+     ]] COMPONENT RUNTIME)
 +  endif()
+   endif(APPLE)
  
  endif(NOT EMSCRIPTEN)
- 

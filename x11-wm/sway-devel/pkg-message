@@ -1,8 +1,0 @@
-[
-{ type: install
-  message: <<EOM
-Notes:
-- sway(1) can use mac_priority(4) to avoid stutter during high load
-EOM
-}
-]

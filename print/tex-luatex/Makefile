@@ -43,6 +43,7 @@ CONFIGURE_ARGS+=	--with-$L-include=${LOCALBASE}/include \
 			--with-system-$L
 .endfor
 
+PIE_UNSAFE=		yes
 MAKE_JOBS_UNSAFE=	yes
 
 EXTRACT_AFTER_ARGS=	${EXTRACT_FILES:S,^,${DISTNAME}/,}

@@ -1,10 +1,9 @@
 PORTNAME=			talloc
-DISTVERSION=			2.3.4
-PORTREVISION=			1
+DISTVERSION=			2.4.1
 CATEGORIES=			devel
 MASTER_SITES=			SAMBA
 
-MAINTAINER=			timur@FreeBSD.org
+MAINTAINER=			samba@FreeBSD.org
 COMMENT=			Hierarchical pool based memory allocator
 WWW=		https://talloc.samba.org/
 
@@ -26,6 +25,8 @@ CONFIGURE_ARGS+=		--disable-rpath \
 				--without-gettext
 CONFIGURE_ENV=			PYTHONHASHSEED=1
 MAKE_ENV=			PYTHONHASHSEED=1
+
+CONFLICTS_INSTALL=		talloc[0-9]*
 
 MANPAGES_DESC=			Build and install manpages (requires textproc/docbook-xsl)
 

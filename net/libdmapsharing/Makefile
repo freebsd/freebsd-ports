@@ -1,9 +1,8 @@
 PORTNAME=	libdmapsharing
-PORTVERSION=	2.9.41
-PORTREVISION=	2
+PORTVERSION=	3.9.13
 CATEGORIES=	net gnome
 MASTER_SITES=	https://www.flyn.org/projects/libdmapsharing/
-DIST_SUBDIR=	gnome3
+DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNOME music playing application
@@ -12,30 +11,34 @@ WWW=		https://www.flyn.org/projects/libdmapsharing
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libsoup-2.4.so:devel/libsoup \
+LIB_DEPENDS=	libsoup-3.0.so:devel/libsoup3 \
 		libgee-0.8.so:devel/libgee
 
 USES=		gettext gnome gmake gstreamer libtool pathfix pkgconfig vala:build
-USE_GNOME=	cairo gdkpixbuf2 gnomeprefix gtk30 introspection:build
+USE_GNOME=	gdkpixbuf2 gnomeprefix gtk30 introspection
 USE_LDCONFIG=	yes
-CONFIGURE_ARGS=	--disable-tests \
-		--disable-gtk-doc \
-		--disable-introspection \
-		--with-mdns=avahi
 GNU_CONFIGURE=	yes
-CPPFLAGS+=	-I${LOCALBASE}/include `pkg-config --cflags gtk+-3.0`
-LDFLAGS+=	-L${LOCALBASE}/lib `pkg-config --libs gtk+-3.0` -lm
-INSTALL_TARGET=	install-strip
+CONFIGURE_ARGS=	--disable-tests
 
-OPTIONS_SUB=	yes
-OPTIONS_DEFAULT=	AVAHI
+OPTIONS_DEFINE=	DOCS
 OPTIONS_SINGLE=	MDNS
 OPTIONS_SINGLE_MDNS=	AVAHI MDNSRESPONDER
+OPTIONS_DEFAULT=	AVAHI
+OPTIONS_SUB=	yes
+
 AVAHI_LIB_DEPENDS=	libavahi-core.so:net/avahi-app
 AVAHI_CONFIGURE_ON=	--with-mdns=avahi
-MDNSRESPONDER_LIB_DEPENDS=	libdns_sd.so:net/mDNSResponder \
-				libavahi-glib.so:net/avahi-app
-MDNSRESPONDER_CONFIGURE_ON=	--with-mdns=mdns
-MDNSRESPONDER_DESC+=	Zeroconf support via mDNSResponder (broken)
+
+DOCS_BUILD_DEPENDS=	gtkdocize:textproc/gtk-doc
+
+MDNSRESPONDER_BROKEN=		undefined references to mDNSResponder symbols
+MDNSRESPONDER_LIB_DEPENDS=	libdns_sd.so:net/mDNSResponder
+MDNSRESPONDER_CONFIGURE_ON=	--with-mdns=mdns_sd
+
+.include <bsd.port.options.mk>
+
+.ifdef WITH_DEBUG
+CONFIGURE_ARGS+=	--enable-debug
+.endif
 
 .include <bsd.port.mk>

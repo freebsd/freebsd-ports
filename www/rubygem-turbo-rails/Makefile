@@ -1,5 +1,6 @@
 PORTNAME=	turbo-rails
-PORTVERSION=	2.0.6
+PORTVERSION=	2.0.11
+PORTREVISION=	1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -10,9 +11,8 @@ WWW=		https://github.com/hotwired/turbo-rails
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
 
-RUN_DEPENDS=	rubygem-actionpack71>=6.0.0:www/rubygem-actionpack71 \
-		rubygem-activejob71>=6.0.0:devel/rubygem-activejob71 \
-		rubygem-railties71>=6.0.0:www/rubygem-railties71
+RUN_DEPENDS=	rubygem-actionpack80>=6.0.0:www/rubygem-actionpack80 \
+		rubygem-railties80>=6.0.0:www/rubygem-railties80
 
 USES=		gem
 

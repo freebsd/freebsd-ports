@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2024-09-02 01:46:42 UTC
++++ CMakeLists.txt
+@@ -75,7 +75,7 @@ set(module-dir
+ include(GNUInstallDirs)
+ 
+ set(module-dir
+-  "${PROJECT_NAME}/${CMAKE_Fortran_COMPILER_ID}-${CMAKE_Fortran_COMPILER_VERSION}"
++  "${PROJECT_NAME}"
+ )
+ 
+ target_include_directories(

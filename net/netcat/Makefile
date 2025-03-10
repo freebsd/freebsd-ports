@@ -2,11 +2,12 @@ PORTNAME=	netcat
 PORTVERSION=	1.10
 PORTREVISION=	4
 CATEGORIES=	net
-MASTER_SITES=	SF/${DISTNAME}/unix%20netcat%20${PORTVERSION}%20by%20_Hobbit_/%5BUnnamed%20release%5D
+MASTER_SITES=	LOCAL/cy \
+		https://cschubert.com/distfiles/
+		
 DISTNAME=	nc${PORTVERSION:S/.//}
 
-#PATCH_SITES=	ftp://sith.mimuw.edu.pl/pub/users/baggins/IPv6/
-PATCH_SITES=	GENTOO
+PATCH_SITES=	${MASTER_SITES}
 PATCHFILES=	nc-v6-20000918.patch.gz
 PATCH_DIST_STRIP=	-p1
 

@@ -1,7 +1,7 @@
 PORTNAME=	criterion
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.4.2
-PORTREVISION=	2
+PORTREVISION=	4
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -40,7 +40,7 @@ MESON_ARGS=	-Dtests=false -Dsamples=false
 
 .include <bsd.port.options.mk>
 
-.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400091 || ( ${OSVERSION} >= 1302507 && ${OSVERSION} < 1400000 ))
+.if ${OPSYS} == FreeBSD
 CFLAGS+=	-Wno-error=incompatible-function-pointer-types
 .endif
 

@@ -1,7 +1,14 @@
 usr/bin/dbus-binding-tool
+usr/lib/.build-id/7e/a2f9bff7702cdb0e3c98a3448ffc61e1047e56
+usr/lib/.build-id/a9/0cce255da51dc1cf07f647d81fa9a4424ae53a
 usr/lib/.build-id/ab/e4f3e031e68c502e53a1f739bfb8a4d1a706a8
+usr/lib/.build-id/d5/54feaa04efb1824a5e89bcc6a6650bff704e78
 usr/lib/.build-id/da/d1f98a135c11a1bb890df74d05637ddbf03bbb
 usr/lib/.build-id/fa/8c3406cd7881a5d4afe43594283a93752e5565
+usr/lib/libdbus-1.so.3
+usr/lib/libdbus-1.so.3.19.13
+usr/lib/libdbus-glib-1.so.2
+usr/lib/libdbus-glib-1.so.2.3.4
 usr/lib64/libdbus-1.so.3
 usr/lib64/libdbus-1.so.3.19.13
 usr/lib64/libdbus-glib-1.so.2

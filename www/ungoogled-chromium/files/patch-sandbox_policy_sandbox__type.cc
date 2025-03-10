@@ -1,34 +1,48 @@
---- sandbox/policy/sandbox_type.cc.orig	2024-07-31 14:19:23 UTC
+--- sandbox/policy/sandbox_type.cc.orig	2025-02-20 09:59:21 UTC
 +++ sandbox/policy/sandbox_type.cc
-@@ -38,7 +38,7 @@ bool IsUnsandboxedSandboxType(Sandbox sandbox_type) {
+@@ -39,7 +39,7 @@ constexpr char kPpapiSandbox[] = "ppapi";
  #endif
-     case Sandbox::kAudio:
-       return false;
+ 
+ #if BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || \
+-    BUILDFLAG(IS_WIN)
++    BUILDFLAG(IS_WIN) || BUILDFLAG(IS_BSD)
+ constexpr char kPrintBackendSandbox[] = "print_backend";
+ constexpr char kScreenAISandbox[] = "screen_ai";
+ #endif
+@@ -57,18 +57,18 @@ constexpr char kWindowsSystemProxyResolverSandbox[] = 
+ constexpr char kMirroringSandbox[] = "mirroring";
+ #endif  // BUILDFLAG(IS_MAC)
+ 
+-#if BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+ constexpr char kVideoEffectsSandbox[] = "video_effects";
+ #endif
+ 
 -#if BUILDFLAG(IS_FUCHSIA)
 +#if BUILDFLAG(IS_FUCHSIA) || BUILDFLAG(IS_BSD)
-     case Sandbox::kVideoCapture:
-       return false;
+ constexpr char kVideoCaptureSandbox[] = "video_capture";
  #endif
-@@ -63,7 +63,7 @@ bool IsUnsandboxedSandboxType(Sandbox sandbox_type) {
-     case Sandbox::kMirroring:
-     case Sandbox::kNaClLoader:
- #endif
+ 
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_ASH)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_ASH) || BUILDFLAG(IS_BSD)
-     case Sandbox::kHardwareVideoDecoding:
+ constexpr char kHardwareVideoDecodingSandbox[] = "hardware_video_decoding";
  #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_ASH)
- #if BUILDFLAG(IS_CHROMEOS_ASH)
-@@ -74,7 +74,7 @@ bool IsUnsandboxedSandboxType(Sandbox sandbox_type) {
-     case Sandbox::kLibassistant:
- #endif  // BUILDFLAG(ENABLE_CROS_LIBASSISTANT)
- #endif  // // BUILDFLAG(IS_CHROMEOS_ASH)
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
-+#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) | BUILDFLAG(IS_BSD)
-     case Sandbox::kZygoteIntermediateSandbox:
-     case Sandbox::kHardwareVideoEncoding:
- #endif
-@@ -131,7 +131,7 @@ void SetCommandLineFlagsForSandboxType(base::CommandLi
- #endif
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
+ constexpr char kHardwareVideoEncodingSandbox[] = "hardware_video_encoding";
+ #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
+ 
+@@ -81,7 +81,7 @@ constexpr char kLibassistantSandbox[] = "libassistant"
+ #endif  // BUILDFLAG(ENABLE_CROS_LIBASSISTANT)
+ #endif  // BUILDFLAG(IS_CHROMEOS_ASH)
+ 
+-#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_BSD)
+ constexpr char kOnDeviceTranslationSandbox[] = "on_device_translation";
+ #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC)
+ 
+@@ -143,7 +143,7 @@ void SetCommandLineFlagsForSandboxType(base::CommandLi
+     case Sandbox::kCdm:
      case Sandbox::kPrintCompositor:
      case Sandbox::kAudio:
 -#if BUILDFLAG(IS_FUCHSIA)
@@ -36,7 +50,7 @@
      case Sandbox::kVideoCapture:
  #endif
  #if BUILDFLAG(IS_WIN)
-@@ -142,10 +142,10 @@ void SetCommandLineFlagsForSandboxType(base::CommandLi
+@@ -154,10 +154,10 @@ void SetCommandLineFlagsForSandboxType(base::CommandLi
      case Sandbox::kMediaFoundationCdm:
      case Sandbox::kWindowsSystemProxyResolver:
  #endif  // BUILDFLAG(IS_WIN)
@@ -49,17 +63,36 @@
      case Sandbox::kHardwareVideoEncoding:
  #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
  #if BUILDFLAG(IS_CHROMEOS_ASH)
-@@ -174,7 +174,7 @@ void SetCommandLineFlagsForSandboxType(base::CommandLi
-     case Sandbox::kNaClLoader:
-       break;
+@@ -172,15 +172,15 @@ void SetCommandLineFlagsForSandboxType(base::CommandLi
+     case Sandbox::kMirroring:
  #endif  // BUILDFLAG(IS_MAC)
+ #if BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || \
+-    BUILDFLAG(IS_WIN)
++    BUILDFLAG(IS_WIN) || BUILDFLAG(IS_BSD)
+     case Sandbox::kPrintBackend:
+     case Sandbox::kScreenAI:
+ #endif
+     case Sandbox::kSpeechRecognition:
+-#if BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+     case Sandbox::kVideoEffects:
+ #endif
+-#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_BSD)
+     case Sandbox::kOnDeviceTranslation:
+ #endif
+       DCHECK(command_line->GetSwitchValueASCII(switches::kProcessType) ==
+@@ -190,7 +190,7 @@ void SetCommandLineFlagsForSandboxType(base::CommandLi
+           switches::kServiceSandboxType,
+           StringFromUtilitySandboxType(sandbox_type));
+       break;
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
      case Sandbox::kZygoteIntermediateSandbox:
        break;
  #endif
-@@ -218,7 +218,7 @@ sandbox::mojom::Sandbox SandboxTypeFromCommandLine(
- #endif
+@@ -230,7 +230,7 @@ sandbox::mojom::Sandbox SandboxTypeFromCommandLine(
+     return Sandbox::kUtility;
    }
  
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
@@ -67,49 +100,98 @@
    // Intermediate process gains a sandbox later.
    if (process_type == switches::kZygoteProcessType)
      return Sandbox::kZygoteIntermediateSandbox;
-@@ -266,7 +266,7 @@ std::string StringFromUtilitySandboxType(Sandbox sandb
-       return switches::kUtilitySandbox;
+@@ -272,7 +272,7 @@ std::string StringFromUtilitySandboxType(Sandbox sandb
+       return kUtilitySandbox;
      case Sandbox::kAudio:
-       return switches::kAudioSandbox;
+       return kAudioSandbox;
 -#if BUILDFLAG(IS_FUCHSIA)
 +#if BUILDFLAG(IS_FUCHSIA) || BUILDFLAG(IS_BSD)
      case Sandbox::kVideoCapture:
-       return switches::kVideoCaptureSandbox;
+       return kVideoCaptureSandbox;
  #endif
-@@ -296,11 +296,11 @@ std::string StringFromUtilitySandboxType(Sandbox sandb
+@@ -283,17 +283,17 @@ std::string StringFromUtilitySandboxType(Sandbox sandb
+     case Sandbox::kSpeechRecognition:
+       return kSpeechRecognitionSandbox;
+ #if BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || \
+-    BUILDFLAG(IS_WIN)
++    BUILDFLAG(IS_WIN) || BUILDFLAG(IS_BSD)
+     case Sandbox::kPrintBackend:
+       return kPrintBackendSandbox;
+     case Sandbox::kScreenAI:
+       return kScreenAISandbox;
+ #endif
+-#if BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+     case Sandbox::kVideoEffects:
+       return kVideoEffectsSandbox;
+ #endif
+-#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_BSD)
+     case Sandbox::kOnDeviceTranslation:
+       return kOnDeviceTranslationSandbox;
+ #endif
+@@ -313,11 +313,11 @@ std::string StringFromUtilitySandboxType(Sandbox sandb
      case Sandbox::kMirroring:
-       return switches::kMirroringSandbox;
+       return kMirroringSandbox;
  #endif
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_ASH)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_ASH) || BUILDFLAG(IS_BSD)
      case Sandbox::kHardwareVideoDecoding:
-       return switches::kHardwareVideoDecodingSandbox;
+       return kHardwareVideoDecodingSandbox;
  #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_ASH)
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
      case Sandbox::kHardwareVideoEncoding:
-       return switches::kHardwareVideoEncodingSandbox;
+       return kHardwareVideoEncodingSandbox;
  #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
-@@ -322,7 +322,7 @@ std::string StringFromUtilitySandboxType(Sandbox sandb
- #if BUILDFLAG(IS_MAC)
-     case Sandbox::kNaClLoader:
- #endif  // BUILDFLAG(IS_MAC)
+@@ -336,7 +336,7 @@ std::string StringFromUtilitySandboxType(Sandbox sandb
+       // The following are not utility processes so should not occur.
+     case Sandbox::kRenderer:
+     case Sandbox::kGpu:
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
      case Sandbox::kZygoteIntermediateSandbox:
  #endif
-       NOTREACHED_IN_MIGRATION();
-@@ -394,11 +394,11 @@ sandbox::mojom::Sandbox UtilitySandboxTypeFromString(
-   if (sandbox_string == switches::kScreenAISandbox)
+       NOTREACHED();
+@@ -414,7 +414,7 @@ sandbox::mojom::Sandbox UtilitySandboxTypeFromString(
+     return Sandbox::kSpeechRecognition;
+   }
+ #if BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || \
+-    BUILDFLAG(IS_WIN)
++    BUILDFLAG(IS_WIN) || BUILDFLAG(IS_BSD)
+   if (sandbox_string == kPrintBackendSandbox) {
+     return Sandbox::kPrintBackend;
+   }
+@@ -422,27 +422,27 @@ sandbox::mojom::Sandbox UtilitySandboxTypeFromString(
      return Sandbox::kScreenAI;
+   }
+ #endif
+-#if BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+   if (sandbox_string == kVideoEffectsSandbox) {
+     return Sandbox::kVideoEffects;
+   }
+ #endif
+-#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_BSD)
+   if (sandbox_string == kOnDeviceTranslationSandbox) {
+     return Sandbox::kOnDeviceTranslation;
+   }
  #endif
 -#if BUILDFLAG(IS_FUCHSIA)
 +#if BUILDFLAG(IS_FUCHSIA) || BUILDFLAG(IS_BSD)
-   if (sandbox_string == switches::kVideoCaptureSandbox)
+   if (sandbox_string == kVideoCaptureSandbox) {
      return Sandbox::kVideoCapture;
+   }
  #endif
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_ASH)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_ASH) || BUILDFLAG(IS_BSD)
-   if (sandbox_string == switches::kHardwareVideoDecodingSandbox)
+   if (sandbox_string == kHardwareVideoDecodingSandbox) {
      return Sandbox::kHardwareVideoDecoding;
+   }
  #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_ASH)
+-#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
+   if (sandbox_string == kHardwareVideoEncodingSandbox) {
+     return Sandbox::kHardwareVideoEncoding;
+   }

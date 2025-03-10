@@ -1,0 +1,20 @@
+--- projects/unix/Makefile.orig	2024-10-06 21:34:50 UTC
++++ projects/unix/Makefile
+@@ -61,7 +61,7 @@ ifneq ("$(filter x86_64 amd64,$(HOST_CPU))","")
+   CPU := X86
+   ifeq ("$(BITS)", "32")
+     ARCH_DETECTED := 64BITS_32
+-    PIC ?= 0
++    PIC ?= 1
+   else
+     ARCH_DETECTED := 64BITS
+     PIC ?= 1
+@@ -70,7 +70,7 @@ ifneq ("$(filter pentium i%86,$(HOST_CPU))","")
+ ifneq ("$(filter pentium i%86,$(HOST_CPU))","")
+   CPU := X86
+   ARCH_DETECTED := 32BITS
+-  PIC ?= 0
++  PIC ?= 1
+ endif
+ ifneq ("$(filter ppc macppc socppc powerpc,$(HOST_CPU))","")
+   CPU := PPC

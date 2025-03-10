@@ -1,6 +1,6 @@
 PORTNAME=	Math-Pari
 PORTVERSION=	2.01080900
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math perl5
 MASTER_SITES=	CPAN  \
 		http://pari.math.u-bordeaux.fr/pub/pari/unix/OLD/2.3/:pari \
@@ -66,7 +66,8 @@ pre-build:
 	cd ${PARI_WRKSRC} && ln -s $$(dirname $$(readlink gp)) build
 
 post-install:
-	${INSTALL_LIB} ${PARI_WRKSRC}/build/libpari-gmp.so.2.3.5 ${STAGEDIR}${SITE_ARCH}/auto/Math/Pari
-	${LN} -s libpari-gmp.so.2.3.5 ${STAGEDIR}${SITE_ARCH}/auto/Math/Pari/libpari-gmp.so.2
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Math/Pari/Pari.so
+	${INSTALL_LIB} ${PARI_WRKSRC}/build/libpari-gmp.so.2.3.5 ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Math/Pari
+	${LN} -s libpari-gmp.so.2.3.5 ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Math/Pari/libpari-gmp.so.2
 
 .include <bsd.port.mk>

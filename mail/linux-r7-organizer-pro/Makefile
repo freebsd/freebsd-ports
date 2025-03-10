@@ -1,7 +1,6 @@
 PORTNAME=	r7-organizer-pro
-PORTVERSION=	2.6.7
+PORTVERSION=	3.1.6
 DISTVERSIONSUFFIX=	-1
-PORTREVISION=	1
 CATEGORIES=	mail linux russian
 MASTER_SITES=	https://download.r7-office.ru/organizer/centos/
 PKGNAMEPREFIX=	linux-
@@ -9,7 +8,7 @@ DISTNAME=	r7organizer_pro-${PORTVERSION}${DISTVERSIONSUFFIX}
 EXTRACT_SUFX=	.x86_64.rpm
 
 MAINTAINER=	fluffy@FreeBSD.org
-COMMENT=	Russian office mail, tasks and contacts organizer
+COMMENT=	Russian office mail, tasks and contacts organizer (PRO version)
 WWW=		https://r7-office.ru/organizer
 
 LICENSE=	commercial

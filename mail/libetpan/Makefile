@@ -1,11 +1,12 @@
 PORTNAME=	libetpan
 PORTVERSION=	1.9.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Mail framework for C language
-WWW=		https://www.etpan.org/libetpan.html
+WWW=		https://www.etpan.org/libetpan.html \
+		https://github.com/dinhvh/libetpan
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
@@ -20,17 +21,15 @@ GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 
-PORTDOCS=	AUTHORS ChangeLog NEWS
-
 CPE_VENDOR=	libetpan_project
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	dinhviethoa
 
-OPTIONS_DEFINE=		DOCS IPV6
-OPTIONS_SINGLE=		CRYPTO
+OPTIONS_DEFINE=	IPV6
+OPTIONS_SINGLE=	CRYPTO
 OPTIONS_SINGLE_CRYPTO=	GNUTLS OPENSSL
-OPTIONS_DEFAULT=	OPENSSL
+OPTIONS_DEFAULT=OPENSSL
 
 GNUTLS_CONFIGURE_ON=	--without-openssl --with-gnutls
 GNUTLS_LIB_DEPENDS=	libgnutls.so:security/gnutls \
@@ -39,9 +38,5 @@ GNUTLS_LIB_DEPENDS=	libgnutls.so:security/gnutls \
 IPV6_CONFIGURE_ENABLE=	ipv6
 OPENSSL_CONFIGURE_WITH=	openssl="${OPENSSLBASE}"
 OPENSSL_USES=		ssl
-
-do-install-DOCS-on:
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

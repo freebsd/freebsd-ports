@@ -266,6 +266,8 @@ share/applications/ecal_sys_gui.desktop
 %%DATADIR%%/samples/cpp/benchmarks/many_connections_rec/src/many_connections_rec.cpp
 %%DATADIR%%/samples/cpp/benchmarks/many_connections_snd/CMakeLists.txt
 %%DATADIR%%/samples/cpp/benchmarks/many_connections_snd/src/many_connections_snd.cpp
+%%DATADIR%%/samples/cpp/benchmarks/massive_pub_sub/CMakeLists.txt
+%%DATADIR%%/samples/cpp/benchmarks/massive_pub_sub/src/massive_pub_sub.cpp
 %%DATADIR%%/samples/cpp/benchmarks/measurement/CMakeLists.txt
 %%DATADIR%%/samples/cpp/benchmarks/measurement/src/main.cpp
 %%DATADIR%%/samples/cpp/benchmarks/multiple_rec_cb/CMakeLists.txt

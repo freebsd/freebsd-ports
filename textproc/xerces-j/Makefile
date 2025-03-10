@@ -10,7 +10,8 @@ WWW=		https://xerces.apache.org/xerces2-j/
 
 LICENSE=	APACHE20
 
-USE_JAVA=	yes
+USES=		java
+
 NO_BUILD=	yes
 NO_ARCH=	yes
 

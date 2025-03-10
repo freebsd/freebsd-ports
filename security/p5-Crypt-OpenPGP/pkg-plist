@@ -35,6 +35,7 @@ bin/pgplet
 %%SITE_PERL%%/Crypt/OpenPGP/Signature.pm
 %%SITE_PERL%%/Crypt/OpenPGP/Signature/SubPacket.pm
 %%SITE_PERL%%/Crypt/OpenPGP/Trust.pm
+%%SITE_PERL%%/Crypt/OpenPGP/UserAttribute.pm
 %%SITE_PERL%%/Crypt/OpenPGP/UserID.pm
 %%SITE_PERL%%/Crypt/OpenPGP/Util.pm
 %%SITE_PERL%%/Crypt/OpenPGP/Words.pm

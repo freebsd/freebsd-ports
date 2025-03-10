@@ -1,9 +1,8 @@
 PORTNAME=	itcl4
-PORTVERSION=	4.2.4
-PORTREVISION=	0
+DISTVERSION=	4.3.2
 CATEGORIES=	lang
-MASTER_SITES=	SF/tcl/Tcl/8.6.14
-DISTNAME=	itcl${PORTVERSION}
+MASTER_SITES=	SF/tcl/Tcl/8.6.16
+DISTNAME=	itcl${DISTVERSION}
 
 MAINTAINER=	tcltk@FreeBSD.org
 COMMENT=	Object-oriented extension to Tcl [incr Tcl]
@@ -12,15 +11,14 @@ WWW=		https://core.tcl.tk/itcl
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/license.terms
 
-USES+=		tcl:86,tea
+USES=		tcl:86+,tea
 
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
-CONFIGURE_ARGS+=--includedir=${PREFIX}/include/itcl${PORTVERSION:R}
-PLIST_SUB+=	PKGVER=${PORTVERSION} \
-		SHORT_PKGVER=${PORTVERSION:R}
+CONFIGURE_ARGS+=--includedir=${PREFIX}/include/itcl${DISTVERSION:R}
+PLIST_SUB+=	PKGVER=${DISTVERSION} \
+		SHORT_PKGVER=${DISTVERSION:R}
 TEST_TARGET=	test
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/itcl${PORTVERSION}/libitcl${PORTVERSION}.so
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/itcl${DISTVERSION}/lib${TCL_PKG_LIB_PREFIX}itcl${DISTVERSION}.so
 
 .include <bsd.port.mk>

@@ -11,9 +11,13 @@ other packages.
 
 Please read the INSTALL file for more information.
 
-You should now copy %%PREFIX%%/etc/ircd-hybrid/reference.conf to
-%%PREFIX%%/etc/ircd-hybrid/ircd.conf, and then edit to suit your needs.
-ircd-hybrid will not start without %%PREFIX%%/etc/ircd-hybrid/ircd.conf
+You should now copy
+- %%PREFIX%%/etc/ircd-hybrid/reference.ircd.conf to
+  %%PREFIX%%/etc/ircd-hybrid/ircd.conf
+- %%PREFIX%%/etc/ircd-hybrid/reference.modules.conf to
+  %%PREFIX%%/etc/ircd-hybrid/modules.conf
+and then edit to suit your needs. ircd-hybrid will not start without
+%%PREFIX%%/etc/ircd-hybrid/ircd.conf
 
 Don't forget to add
 

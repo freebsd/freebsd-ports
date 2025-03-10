@@ -1,10 +1,10 @@
 bin/kompare
 include/kompare/kompareinterface.h
-lib/libkomparedialogpages.so.5
+lib/libkomparedialogpages.so.6
 lib/libkompareinterface.so
-lib/libkompareinterface.so.5
-%%QT_PLUGINDIR%%/kf5/parts/komparenavtreepart.so
-%%QT_PLUGINDIR%%/kf5/parts/komparepart.so
+lib/libkompareinterface.so.6
+%%QT_PLUGINDIR%%/kf6/parts/komparenavtreepart.so
+%%QT_PLUGINDIR%%/kf6/parts/komparepart.so
 share/applications/org.kde.kompare.desktop
 share/icons/hicolor/128x128/apps/kompare.png
 share/icons/hicolor/16x16/apps/kompare.png
@@ -36,10 +36,12 @@ share/locale/fi/LC_MESSAGES/kompare.mo
 share/locale/fr/LC_MESSAGES/kompare.mo
 share/locale/ga/LC_MESSAGES/kompare.mo
 share/locale/gl/LC_MESSAGES/kompare.mo
+share/locale/he/LC_MESSAGES/kompare.mo
 share/locale/hi/LC_MESSAGES/kompare.mo
 share/locale/hne/LC_MESSAGES/kompare.mo
 share/locale/hr/LC_MESSAGES/kompare.mo
 share/locale/hu/LC_MESSAGES/kompare.mo
+share/locale/ia/LC_MESSAGES/kompare.mo
 share/locale/is/LC_MESSAGES/kompare.mo
 share/locale/it/LC_MESSAGES/kompare.mo
 share/locale/ja/LC_MESSAGES/kompare.mo
@@ -83,4 +85,4 @@ share/locale/xh/LC_MESSAGES/kompare.mo
 share/locale/zh_CN/LC_MESSAGES/kompare.mo
 share/locale/zh_TW/LC_MESSAGES/kompare.mo
 share/metainfo/org.kde.kompare.appdata.xml
-share/qlogging-categories5/kompare.categories
+share/qlogging-categories6/kompare.categories

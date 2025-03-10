@@ -1,6 +1,6 @@
---- src/VBox/Additions/freebsd/vboxvfs/vboxvfs_prov.c.orig	2020-06-26 09:59:35 UTC
-+++ src/VBox/Additions/freebsd/vboxvfs/vboxvfs_prov.c
-@@ -0,0 +1,1021 @@
+--- src/VBox/Additions/freebsd/vboxvfs/vboxvfs_prov.c.orig	2024-08-15 13:18:37.777504000 +0900
++++ src/VBox/Additions/freebsd/vboxvfs/vboxvfs_prov.c	2024-08-15 13:18:37.777446000 +0900
+@@ -0,0 +1,1012 @@
 +/*
 + * Copyright (C) 2008-2016 Oracle Corporation
 + *
@@ -309,7 +309,6 @@
 +	sfp_mount_t *mnt,
 +	char *path,
 +	mode_t mode,
-+	sfp_file_t **fp,
 +	sffs_stat_t *stat)
 +{
 +	int rc;
@@ -334,10 +333,7 @@
 +			return (EEXIST);
 +		return (ENOENT);
 +	}
-+	newfp = malloc(sizeof(sfp_file_t), M_VBOXVFS, M_WAITOK | M_ZERO);
-+	newfp->handle = parms.Handle;
-+	newfp->map = mnt->map;
-+	*fp = newfp;
++	(void)VbglR0SfClose(&vbox_client, &mnt->map, parms.Handle);
 +	sfprov_stat_from_info(stat, &parms.Info);
 +	return (0);
 +}
@@ -714,14 +710,12 @@
 +	sfp_mount_t *mnt,
 +	char *path,
 +	mode_t mode,
-+	sfp_file_t **fp,
 +	sffs_stat_t *stat)
 +{
 +	int rc;
 +	SHFLCREATEPARMS parms;
 +	SHFLSTRING *str;
 +	int size;
-+	sfp_file_t *newfp;
 +
 +	str = sfprov_string(path, &size);
 +	parms.Handle = SHFL_HANDLE_NIL;
@@ -739,10 +733,7 @@
 +			return (EEXIST);
 +		return (ENOENT);
 +	}
-+	newfp = malloc(sizeof(sfp_file_t), M_VBOXVFS, M_WAITOK | M_ZERO);
-+	newfp->handle = parms.Handle;
-+	newfp->map = mnt->map;
-+	*fp = newfp;
++	(void)VbglR0SfClose(&vbox_client, &mnt->map, parms.Handle);
 +	sfprov_stat_from_info(stat, &parms.Info);
 +	return (0);
 +}

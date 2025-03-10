@@ -18,8 +18,7 @@ BUILD_DEPENDS=	ocamlbuild:devel/ocaml-ocamlbuild \
 		${SA_DIR}/uutf/META:devel/ocaml-uutf
 RUN_DEPENDS=	${SA_DIR}/uutf/META:devel/ocaml-uutf
 
-USES=		tar:tbz
-USE_OCAML=	yes
+USES=		ocaml tar:tbz
 SA_DIR=		${LOCALBASE}/${OCAML_SITELIBDIR}
 
 OPTIONS_DEFINE=	DOCS

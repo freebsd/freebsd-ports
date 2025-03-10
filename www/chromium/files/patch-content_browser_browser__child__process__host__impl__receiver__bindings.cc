@@ -1,6 +1,6 @@
---- content/browser/browser_child_process_host_impl_receiver_bindings.cc.orig	2023-12-10 06:10:27 UTC
+--- content/browser/browser_child_process_host_impl_receiver_bindings.cc.orig	2025-03-05 08:14:56 UTC
 +++ content/browser/browser_child_process_host_impl_receiver_bindings.cc
-@@ -62,7 +62,7 @@ void BrowserChildProcessHostImpl::BindHostReceiver(
+@@ -64,7 +64,7 @@ void BrowserChildProcessHostImpl::BindHostReceiver(
      }
    }
  

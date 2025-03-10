@@ -1,0 +1,8 @@
+Ceres is a library that aims at dealing with data in general, and
+software development data in particular.
+
+The initial goal of Ceres is to parse information in several ways from
+the Perceval tool in the GrimoireLab project.
+
+However, the more code is added to this project, the more generic
+methods are found to be useful in other areas of analysis.

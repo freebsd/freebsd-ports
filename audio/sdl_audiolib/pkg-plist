@@ -10,7 +10,6 @@ include/SDL_audiolib/Aulib/DecoderDrwav.h
 %%FLUIDSYNTH%%include/SDL_audiolib/Aulib/DecoderFluidsynth.h
 %%MODPLUG%%include/SDL_audiolib/Aulib/DecoderModplug.h
 %%MPG123%%include/SDL_audiolib/Aulib/DecoderMpg123.h
-%%MUSEPACK%%include/SDL_audiolib/Aulib/DecoderMusepack.h
 %%OPENMPT%%include/SDL_audiolib/Aulib/DecoderOpenmpt.h
 %%OPUS%%include/SDL_audiolib/Aulib/DecoderOpus.h
 %%SNDFILE%%include/SDL_audiolib/Aulib/DecoderSndfile.h

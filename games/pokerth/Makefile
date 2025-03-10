@@ -1,12 +1,13 @@
 PORTNAME=	pokerth
 PORTVERSION=	1.1.2
-PORTREVISION=	19
+PORTREVISION=	25
 CATEGORIES=	games
 MASTER_SITES=	SF
 
 PATCH_SITES=	https://gitweb.gentoo.org/repo/gentoo.git/plain/games-board/pokerth/files/ \
 		https://raw.githubusercontent.com/gentoo/gentoo/master/games-board/pokerth/files/
-PATCHFILES=	pokerth-1.1.2-boost-1.73.patch:-p1
+PATCHFILES=	pokerth-1.1.2-boost-1.73.patch:-p1 \
+		pokerth-1.1.2-boost-1.85.patch:-p1
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Poker game written in C++/Qt
@@ -14,6 +15,8 @@ WWW=		https://www.pokerth.net/
 
 LICENSE=	AGPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
+
+BROKEN=		fails to build with Boost>=1.87
 
 LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
 		libmikmod.so:audio/libmikmod \
@@ -35,6 +38,7 @@ USE_SDL=	mixer
 CXXFLAGS+=	-D_LIBCPP_ENABLE_CXX17_REMOVED_UNARY_BINARY_FUNCTION
 LDFLAGS+=	-labsl_log_internal_check_op \
 		-labsl_log_internal_message \
+		-labsl_log_internal_nullguard \
 		-lprotobuf
 QMAKE_SOURCE_PATH=	pokerth.pro
 QMAKE_ARGS+=	CONFIG+="client"

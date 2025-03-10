@@ -1,15 +1,16 @@
 PORTNAME=	gmic
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.2.4.1
-PORTREVISION=	1
+DISTVERSION=	3.5.2.1
 CATEGORIES=	graphics kde
+MASTER_SITES=	https://github.com/vanyossi/${PORTNAME}/releases/download/v${PORTVERSION}/
 PKGNAMEPREFIX=	krita-
 PKGNAMESUFFIX=	-plugin
+DISTNAME=	${PORTNAME}-${PORTVERSION}
 DIST_SUBDIR=	KDE/${PKGBASE}/${PORTVERSION}
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Krita native plugin for G'MIC
-WWW=		https://github.com/amyspark/gmic
+WWW=		https://github.com/vanyossi/gmic
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
@@ -21,19 +22,11 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libkritaqmicinterface.so:graphics/krita \
 		libpng.so:graphics/png
 
-USES=		cmake kde:5 pkgconfig qt:5 shebangfix xorg
-.if !exists(/usr/include/omp.h)
-USES+=		compiler:gcc-c++11-lib
-.else
-USES+=		compiler:c++14-lang
-.endif
+USES=		cmake compiler:c++14-lang kde:5 pkgconfig qt:5 shebangfix xorg
 USE_KDE=	coreaddons ecm:build
 USE_QT=		core gui network widgets \
 		buildtools:build linguisttools:build qmake:build
 USE_XORG=	ice sm x11 xext
-
-USE_GITHUB=	yes
-GH_ACCOUNT=	amyspark
 
 SHEBANG_FILES=	translations/lrelease.sh \
 		translations/filters/csv2ts.sh \
@@ -42,6 +35,7 @@ SHEBANG_FILES=	translations/lrelease.sh \
 CMAKE_ARGS=	-DGMIC_QT_HOST:STRING="krita-plugin"
 CMAKE_OFF=	ENABLE_SYSTEM_GMIC
 
+WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSIONFULL}
 WRKSRC_SUBDIR=	gmic-qt
 
 PLIST_FILES=	lib/kritaplugins/krita_gmic_qt.so \

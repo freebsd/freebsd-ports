@@ -39,7 +39,7 @@ boinc_client_start()
 		return 1
 	fi
 	echo "Starting ${name}."
-	idprio 31 daemon -u ${boinc_client_user} -p ${pidfile} -f ${command} ${boinc_client_flags} ${command_args} || return 1
+	idprio 30 daemon -u ${boinc_client_user} -p ${pidfile} -f ${command} ${boinc_client_flags} ${command_args} || return 1
 }
 
 boinc_client_poststop()

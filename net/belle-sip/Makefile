@@ -13,13 +13,11 @@ LIB_DEPENDS=	libantlr3c.so:devel/libantlr3c \
 		libbctoolbox.so:net/bctoolbox \
 		libbelr.so:textproc/belr
 
-USES=		cmake cpe tar:bz2
+USES=		cmake cpe java:build tar:bz2
 CPE_VENDOR=	linphone
 USE_GITLAB=	yes
 GL_SITE=	https://gitlab.linphone.org/BC
 GL_ACCOUNT=	public
-USE_JAVA=	yes
-JAVA_BUILD=	jre
 USE_LDCONFIG=	yes
 
 CMAKE_ARGS=	-DCMAKE_PREFIX_PATH=${LOCALBASE} \

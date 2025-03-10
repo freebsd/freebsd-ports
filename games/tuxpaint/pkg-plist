@@ -4,6 +4,7 @@ bin/tuxpaint-import
 @sample %%ETCDIR%%/tuxpaint.conf.sample
 include/tuxpaint/tp_magic_api.h
 lib/tuxpaint/plugins/alien.so
+lib/tuxpaint/plugins/ascii.so
 lib/tuxpaint/plugins/blind.so
 lib/tuxpaint/plugins/blocks_etc.so
 lib/tuxpaint/plugins/bloom.so
@@ -14,7 +15,9 @@ lib/tuxpaint/plugins/cartoon.so
 lib/tuxpaint/plugins/checkerboard.so
 lib/tuxpaint/plugins/clone.so
 lib/tuxpaint/plugins/colorsep.so
+lib/tuxpaint/plugins/comicdot.so
 lib/tuxpaint/plugins/confetti.so
+lib/tuxpaint/plugins/crescent.so
 lib/tuxpaint/plugins/distortion.so
 lib/tuxpaint/plugins/dither.so
 lib/tuxpaint/plugins/emboss.so
@@ -23,6 +26,7 @@ lib/tuxpaint/plugins/fisheye.so
 lib/tuxpaint/plugins/flower.so
 lib/tuxpaint/plugins/foam.so
 lib/tuxpaint/plugins/fold.so
+lib/tuxpaint/plugins/fractal.so
 lib/tuxpaint/plugins/fretwork.so
 lib/tuxpaint/plugins/glasstile.so
 lib/tuxpaint/plugins/googlyeyes.so
@@ -52,14 +56,18 @@ lib/tuxpaint/plugins/reflection.so
 lib/tuxpaint/plugins/ribbon.so
 lib/tuxpaint/plugins/ripples.so
 lib/tuxpaint/plugins/rosette.so
+lib/tuxpaint/plugins/rotate.so
 lib/tuxpaint/plugins/sharpen.so
 lib/tuxpaint/plugins/shift.so
 lib/tuxpaint/plugins/smooth.so
 lib/tuxpaint/plugins/smudge.so
 lib/tuxpaint/plugins/snow.so
+lib/tuxpaint/plugins/spiral.so
+lib/tuxpaint/plugins/spraypaint.so
 lib/tuxpaint/plugins/stretch.so
 lib/tuxpaint/plugins/string.so
 lib/tuxpaint/plugins/swirls.so
+lib/tuxpaint/plugins/tessell.so
 lib/tuxpaint/plugins/tint.so
 lib/tuxpaint/plugins/toothpaste.so
 lib/tuxpaint/plugins/tornado.so

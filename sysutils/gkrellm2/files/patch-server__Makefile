@@ -1,27 +1,25 @@
-Index: server/Makefile
-diff -u server/Makefile.orig server/Makefile
---- server/Makefile.orig	2016-02-03 08:37:50.000000000 +0900
-+++ server/Makefile	2016-06-06 01:46:16.352492000 +0900
-@@ -31,7 +31,7 @@
- PKG_INCLUDE := $(shell $(PKG_CONFIG) --cflags glib-2.0 gmodule-2.0 gthread-2.0)
- PKG_LIB := $(shell $(PKG_CONFIG) --libs glib-2.0 gmodule-2.0 gthread-2.0)
+--- server/Makefile.orig	2025-01-19 16:02:37 UTC
++++ server/Makefile
+@@ -42,7 +42,7 @@ PKG_LIB := $(shell $(PKG_CONFIG) --libs $(PKG_MODULES)
+ endif
+ PKG_LIB := $(shell $(PKG_CONFIG) --libs $(PKG_MODULES))
  
 -FLAGS = -O2 $(PKG_INCLUDE)
 +FLAGS = $(PKG_INCLUDE)
  
- FLAGS += $(GTOP_INCLUDE) $(PTHREAD_INC) -I.. -I$(SHARED_PATH) -DGKRELLM_SERVER
+ FLAGS += $(GTOP_INCLUDE) $(PTHREAD_INC) -I.. -I$(SHARED_PATH) -DGSEAL_ENABLED -DGTK_DISABLE_DEPRECATED -DGKRELLM_SERVER
  
-@@ -73,20 +73,31 @@
+@@ -80,20 +80,31 @@ all:	gkrellmd$(BINEXT) $(SERVICE_FILE)
  
- all:	gkrellmd$(BINEXT)
+ all:	gkrellmd$(BINEXT) $(SERVICE_FILE)
  
--gkrellmd$(BINEXT): check_env $(OBJS) $(EXTRAOBJS)
-+gkrellmd$(BINEXT): check_env gkrellmd.pc $(OBJS) $(EXTRAOBJS)
+-gkrellmd$(BINEXT): $(OBJS) $(EXTRAOBJS)
++gkrellmd$(BINEXT): gkrellmd.pc $(OBJS) $(EXTRAOBJS)
  	$(CC) $(OBJS) $(EXTRAOBJS) -o $@ \
  		$(LDFLAGS) $(LIBS) $(LINK_FLAGS)
  
--static: check_env $(OBJS) $(EXTRAOBJS)
-+static: check_env gkrellmd.pc $(OBJS) $(EXTRAOBJS)
+-static: $(OBJS) $(EXTRAOBJS)
++static: gkrellmd.pc $(OBJS) $(EXTRAOBJS)
  	$(CC) $(OBJS) $(EXTRAOBJS) -o gkrellmd.static -static \
  		$(LDFLAGS) $(LIBS) $(LINK_FLAGS)
  
@@ -45,13 +43,16 @@ diff -u server/Makefile.orig server/Makefile
 +
  # Darwin target for systems that still have libkvm
  darwin: 
- 	$(MAKE) STRIP= HAVE_GETADDRINFO=1 \
-@@ -135,27 +146,32 @@
- 		SYS_LIBS="-lws2_32 -lwtsapi32 -lpdh -lnetapi32 -liphlpapi -lintl" \
- 		all
+ 	$(MAKE) \
+@@ -152,42 +163,49 @@ uninstall-service:
+ uninstall-service:
+ 	$(RM) -f $(SERVICE_DIR)/$(SERVICE_FILE)
  
--install: install_bin install_inc install_man
-+install: install_bin install_inc install_man install_gkrellmd.pc
+-install: install_bin install_inc install_man install_cfg install-service
++install: install_bin install_inc install_man install_cfg install_gkrellmd.pc
+ 
+ install-strip:
+ 	$(MAKE) STRIP="-s" install
  
  install_bin:
 -	$(INSTALL) -d -m $(INSTALLDIRMODE) $(SINSTALLDIR)
@@ -59,11 +60,20 @@ diff -u server/Makefile.orig server/Makefile
 +	$(INSTALL) -d -m $(INSTALLDIRMODE) $(DESTDIR)$(SINSTALLDIR)
 +	$(INSTALL) -c $(STRIP) -m $(BINMODE) $(PACKAGE_D)$(BINEXT) $(DESTDIR)$(SINSTALLDIR)/$(PACKAGE_D)$(BINEXT)
  
+ uninstall_bin:
+-	$(RM) $(SINSTALLDIR)/$(PACKAGE_D)$(BINEXT)
++	$(RM) $(DESTDIR)$(SINSTALLDIR)/$(PACKAGE_D)$(BINEXT)
+ 
  install_inc:
 -	$(INSTALL) -d -m $(INCLUDEDIRMODE) $(INCLUDEDIR)/gkrellm2
 -	$(INSTALL) -c -m $(INCLUDEMODE) $(GKRELLMD_INCLUDES) $(INCLUDEDIR)/gkrellm2
 +	$(INSTALL) -d -m $(INCLUDEDIRMODE) $(DESTDIR)$(INCLUDEDIR)/gkrellm2
 +	$(INSTALL) -c -m $(INCLUDEMODE) $(GKRELLMD_INCLUDES) $(DESTDIR)$(INCLUDEDIR)/gkrellm2
+ 
+ # FIXME: may remove too many files, overlaps with uninstall_inc from client
+ uninstall_inc:
+-	$(RM) -r $(INCLUDEDIR)/gkrellm2
++	$(RM) -r $(DESTDIR)$(INCLUDEDIR)/gkrellm2
  
  install_man:
 -	$(INSTALL) -d -m $(MANDIRMODE) $(SMANDIR)
@@ -71,28 +81,40 @@ diff -u server/Makefile.orig server/Makefile
 +	$(INSTALL) -d -m $(MANDIRMODE) $(DESTDIR)$(SMANDIR)
 +	$(INSTALL) -c -m $(MANMODE) ../gkrellmd.1 $(DESTDIR)$(SMANDIR)/$(PACKAGE_D).8
  
+ uninstall_man:
+-	$(RM) $(SMANDIR)/$(PACKAGE_D).1
++	$(RM) $(DESTDIR)$(SMANDIR)/$(PACKAGE_D).1
+ 
  install_cfg:
 -	$(INSTALL) -d -m $(CFGDIRMODE) $(CFGDIR)
 -	$(INSTALL) -c -m $(CFGMODE) gkrellmd.conf $(CFGDIR)/gkrellmd.conf
 +	$(INSTALL) -d -m $(CFGDIRMODE) $(DESTDIR)$(CFGDIR)
 +	$(INSTALL) -c -m $(CFGMODE) gkrellmd.conf $(DESTDIR)$(CFGDIR)/gkrellmd.conf
-+
+ 
+ uninstall_cfg:
+-	$(RM) $(CFGDIR)/gkrellmd.conf
++	$(RM) $(DESTDIR)$(CFGDIR)/gkrellmd.conf
+ 
+-uninstall: uninstall_bin uninstall_inc uninstall_man uninstall_cfg uninstall-service
 +install_gkrellmd.pc:
 +	$(INSTALL) -d $(DESTDIR)$(PKGCONFIGDIR)
 +	$(INSTALL) -c -m $(INCLUDEMODE) gkrellmd.pc $(DESTDIR)$(PKGCONFIGDIR)
  
- uninstall:
- 	rm -f $(SINSTALLDIR)/$(PACKAGE_D)
- 	rm -f $(SMANDIR)/$(PACKAGE_D).1
-+	rm -f $(PKGCONFIGDIR)/gkrellmd.pc
- 
++uninstall_gkrellmd.pc:
++	$(RM) $(DESTDIR)$(PKGCONFIGDIR)/gkrellmd.pc
++
++uninstall: uninstall_bin uninstall_inc uninstall_man uninstall_cfg uninstall_gkrellmd.pc
++
  install_darwin install_darwin9 install_macosx:
- 	$(MAKE) install STRIP=
-@@ -186,6 +202,7 @@
- clean:
- 	$(RM) *.o *~ *.bak configure.h configure.log gkrellmd gkrellmd.exe \
- 		libgkrellmd.a core
-+	$(RM) gkrellmd.pc
+ 	$(MAKE) install
+ 
+@@ -227,7 +245,8 @@ clean:
+ 		gkrellmd-version.h \
+ 		gkrellmd.exe \
+ 		libgkrellmd.a \
+-		win32-resource.rc
++		win32-resource.rc \
++		gkrellmd.pc
  
  SYSDEPS = ../src/sysdeps/bsd-common.c ../src/sysdeps/bsd-net-open.c \
  	../src/sysdeps/darwin.c \

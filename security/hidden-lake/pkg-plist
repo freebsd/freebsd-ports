@@ -1,0 +1,12 @@
+bin/hla_tcp
+bin/hlc
+bin/hlf
+bin/hlm
+bin/hlp
+bin/hlr
+bin/hls
+%%PORTDOCS%%%%DOCSDIR%%/CODESTYLE.md
+%%PORTDOCS%%%%DOCSDIR%%/DEF_PORTS.md
+%%PORTDOCS%%%%DOCSDIR%%/README.md
+%%PORTDOCS%%%%DOCSDIR%%/hidden_lake_anonymous_network.pdf
+%%PORTDOCS%%%%DOCSDIR%%/hidden_lake_anonymous_network_view.pdf

@@ -1,9 +1,3 @@
-TIMESTAMP = 1719017143
-SHA256 (KDE/gmic-qt/3.4.0/gmic_stdlib_community340.h) = 2e8a8af000f0ccfa71872d86bdac558c6c9810701b86ca72a085ee05708b46d4
-SIZE (KDE/gmic-qt/3.4.0/gmic_stdlib_community340.h) = 8081609
-SHA256 (KDE/gmic-qt/3.4.0/c-koi-gmic-qt-v.3.4.0_GH0.tar.gz) = bd9989a152b77c27812b412829da0f41f50c9e45e00b592b11732e57a77c3992
-SIZE (KDE/gmic-qt/3.4.0/c-koi-gmic-qt-v.3.4.0_GH0.tar.gz) = 1449165
-SHA256 (KDE/gmic-qt/3.4.0/GreycLab-gmic-v.3.4.0_GH0.tar.gz) = 3dedd2a56566aedac3dec621011f5ced827301dbf2e342bb0697ae16bc33313f
-SIZE (KDE/gmic-qt/3.4.0/GreycLab-gmic-v.3.4.0_GH0.tar.gz) = 123059652
-SHA256 (KDE/gmic-qt/3.4.0/GreycLab-CImg-v.3.4.0_GH0.tar.gz) = 987bddc3a98ec684c2ffc7968881adb2626f5b09c90e6102947b3c4acd0de931
-SIZE (KDE/gmic-qt/3.4.0/GreycLab-CImg-v.3.4.0_GH0.tar.gz) = 12666868
+TIMESTAMP = 1738388277
+SHA256 (KDE/gmic-qt/gmic_3.5.2.tar.gz) = 5893b6e87a52792e12af2b51121465d6202a2310c2a751c5c9785910ff55dc14
+SIZE (KDE/gmic-qt/gmic_3.5.2.tar.gz) = 19404342

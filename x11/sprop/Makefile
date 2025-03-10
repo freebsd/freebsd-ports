@@ -3,7 +3,7 @@ PORTVERSION=	0.1
 CATEGORIES=	x11
 MASTER_SITES=	https://dl.suckless.org/tools/
 
-MAINTAINER=	antranigv@freebsd.am
+MAINTAINER=	kfv@kfv.io
 COMMENT=	Simple X property utility
 WWW=		https://tools.suckless.org/x/sprop
 

@@ -2,7 +2,7 @@
 - /usr/local/lib/python3.9/site-packages/torch/include/c10/core/DynamicCast.h:112:22: error: use of undeclared identifier '__assert_fail'
 - see https://github.com/pytorch/pytorch/issues/113941
 
---- c10/core/DynamicCast.h.orig	2023-10-06 19:49:01 UTC
+--- c10/core/DynamicCast.h.orig	2024-07-24 18:41:35 UTC
 +++ c10/core/DynamicCast.h
 @@ -54,7 +54,7 @@ namespace c10 {
  //
@@ -13,7 +13,7 @@
  #else
  #define ERROR_UNSUPPORTED_CAST TORCH_CHECK(false, "Unexpected scalar type");
  #endif
-@@ -99,13 +99,13 @@ C10_HOST_DEVICE inline void cast_and_store(
+@@ -105,13 +105,13 @@ C10_HOST_DEVICE inline void cast_and_store(
    template <>                                                 \
    C10_HOST_DEVICE inline T fetch_and_cast<T>(                 \
        const ScalarType src_type, const void* ptr) {           \

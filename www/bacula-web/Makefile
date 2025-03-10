@@ -1,11 +1,10 @@
 PORTNAME=	bacula-web
 DISTVERSIONPREFIX=	v
-DISTVERSION=	8.7.0
-PORTREVISION=	1
+DISTVERSION=	9.7.0
 CATEGORIES=	www sysutils
 PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ler@FreeBSD.org
 COMMENT=	Bacula-web provides a summarized output of Bacula jobs
 WWW=		https://www.bacula-web.org/
 

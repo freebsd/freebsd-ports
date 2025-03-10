@@ -1,7 +1,7 @@
 PORTNAME=	naev
-PORTVERSION=	0.10.6
+PORTVERSION=	0.11.5
+PORTREVISION=	1
 DISTVERSIONSUFFIX=	-source
-PORTREVISION=	15
 CATEGORIES=	games
 MASTER_SITES=	https://github.com/naev/naev/releases/download/v${PORTVERSION}/
 
@@ -35,7 +35,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mutagen>0:audio/py-mutagen@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyyaml>=0:devel/py-pyyaml@${PY_FLAVOR}
 
 USES=		desktop-file-utils gettext gl gnome localbase:ldflags \
-		luajit:luajit-openresty meson openal pkgconfig python sdl \
+		luajit meson openal pkgconfig python sdl \
 		shebangfix tar:xz
 USE_GL=		gl glu
 USE_GNOME=	intltool libxml2

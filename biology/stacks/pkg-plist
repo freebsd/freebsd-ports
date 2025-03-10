@@ -1,9 +1,7 @@
 bin/clone_filter
-bin/count_fixed_catalog_snps.py
 bin/cstacks
 bin/denovo_map.pl
 bin/gstacks
-bin/integrate_alignments.py
 bin/kmer_filter
 bin/phasedstacks
 bin/populations
@@ -11,8 +9,12 @@ bin/process_radtags
 bin/process_shortreads
 bin/ref_map.pl
 bin/sstacks
+bin/stacks-count-reads-per-sample-per-locus
 bin/stacks-dist-extract
 bin/stacks-gdb
+bin/stacks-hist2d-loci-samples-coverage
 bin/stacks-integrate-alignments
+bin/stacks-private-alleles
+bin/stacks-samtools-tview
 bin/tsv2bam
 bin/ustacks

@@ -183,6 +183,7 @@ share/man/man3/cdialog.3.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sourcemage.rc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/suse.rc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tailbox
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tailbox3
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tailboxbg
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tailboxbg1
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tailboxbg2

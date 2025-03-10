@@ -79,6 +79,8 @@ share/locale/he/LC_MESSAGES/kcm_screenlocker.mo
 share/locale/he/LC_MESSAGES/kscreenlocker.mo
 share/locale/he/LC_MESSAGES/kscreenlocker_greet.mo
 share/locale/hi/LC_MESSAGES/kcm_screenlocker.mo
+share/locale/hi/LC_MESSAGES/kscreenlocker.mo
+share/locale/hi/LC_MESSAGES/kscreenlocker_greet.mo
 share/locale/hu/LC_MESSAGES/kcm_screenlocker.mo
 share/locale/hu/LC_MESSAGES/kscreenlocker.mo
 share/locale/hu/LC_MESSAGES/kscreenlocker_greet.mo
@@ -146,6 +148,9 @@ share/locale/ro/LC_MESSAGES/kscreenlocker_greet.mo
 share/locale/ru/LC_MESSAGES/kcm_screenlocker.mo
 share/locale/ru/LC_MESSAGES/kscreenlocker.mo
 share/locale/ru/LC_MESSAGES/kscreenlocker_greet.mo
+share/locale/sa/LC_MESSAGES/kcm_screenlocker.mo
+share/locale/sa/LC_MESSAGES/kscreenlocker.mo
+share/locale/sa/LC_MESSAGES/kscreenlocker_greet.mo
 share/locale/sk/LC_MESSAGES/kcm_screenlocker.mo
 share/locale/sk/LC_MESSAGES/kscreenlocker.mo
 share/locale/sk/LC_MESSAGES/kscreenlocker_greet.mo

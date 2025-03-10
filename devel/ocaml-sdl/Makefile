@@ -15,13 +15,9 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	ocaml-lablgl>0:graphics/ocaml-lablgl
 
-USE_OCAML=	yes
-USE_OCAML_FINDLIB=yes
-USE_OCAMLFIND_PLIST=yes
-USE_OCAML_LDCONFIG=yes
-
-USES=		gmake sdl
+USES=		gmake ocaml:findplist,ldconfig sdl
 USE_SDL=	sdl
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-lablgldir=${LOCALBASE}/${OCAML_SITELIBDIR}/lablGL \
 		--with-sdl-prefix=${LOCALBASE} \
@@ -51,6 +47,12 @@ SDL_MIXER_CONFIGURE_OFF=--disable-sdl-mixer
 
 SDL_TTF_USE=		SDL=ttf
 SDL_TTF_CONFIGURE_OFF=	--disable-sdl-ttf
+
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == powerpc
+USE_BINUTILS=	yes
+.endif
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/ocaml/site-lib/sdl/*.so

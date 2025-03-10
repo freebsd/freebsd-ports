@@ -1,6 +1,6 @@
 PORTNAME=		stendhal
 PORTVERSION=		1.35
-PORTREVISION=	1
+PORTREVISION=	2
 DISTVERSIONSUFFIX=	-src
 CATEGORIES=		games java
 MASTER_SITES=		SF/arianne/${PORTNAME}/${PORTVERSION}/
@@ -12,9 +12,7 @@ WWW=		https://stendhalgame.org/
 LICENSE=		BSD2CLAUSE GPLv2
 LICENSE_COMB=		multi
 
-USES=			shebangfix
-USE_JAVA=		yes
-USE_ANT=		yes
+USES=			java:ant,run shebangfix
 
 WRKSRC=			${WRKDIR}/${PORTNAME}-${PORTVERSION}
 

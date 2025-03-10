@@ -1,5 +1,6 @@
 PORTNAME=	ttyd
 DISTVERSION=	1.7.7
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	nc@FreeBSD.org
@@ -9,7 +10,7 @@ WWW=		https://github.com/tsl0922/ttyd
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	xxd:editors/vim
+BUILD_DEPENDS=	xxd:sysutils/xxd
 LIB_DEPENDS=	libjson-c.so:devel/json-c \
 		libuv.so:devel/libuv \
 		libwebsockets.so:net/libwebsockets
@@ -17,6 +18,7 @@ LIB_DEPENDS=	libjson-c.so:devel/json-c \
 USES=		cmake pkgconfig ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	tsl0922
+USE_RC_SUBR=	${PORTNAME}
 
 CMAKE_ARGS=	-DCMAKE_DISABLE_FIND_PACKAGE_Git:BOOL=True
 

@@ -1,5 +1,5 @@
 PORTNAME=	uhi
-DISTVERSION=	0.4.0
+DISTVERSION=	0.5.0
 CATEGORIES=	misc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,13 +12,14 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYNUMPY} \
+		${PYTHON_PKGNAMEPREFIX}fastjsonschema>0:devel/py-fastjsonschema@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}hatch-vcs>0:devel/py-hatch-vcs@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}hatchling>0:devel/py-hatchling@${PY_FLAVOR}
 RUN_DEPENDS=	${PYNUMPY}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}boost-histogram>=1.0:misc/py-boost-histogram@${PY_FLAVOR}
 
 USES=		compiler:c++14-lang python
-USE_PYTHON=	pep517 autoplist pytest # tests fail fail to run: KeyError: <WorkerController gw0>, see https://github.com/scikit-hep/uhi/issues/125
+USE_PYTHON=	pep517 autoplist pytest
 
 NO_ARCH=	yes
 

@@ -1,10 +1,13 @@
 PORTNAME=	libssh2
-PORTVERSION=	1.11.0
-PORTREVISION=	1
+DISTVERSION=	1.11.1
 PORTEPOCH=	3
 CATEGORIES=	security devel
-MASTER_SITES=	https://www.libssh2.org/download/ \
-		LOCAL/sbz
+MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/${PORTNAME}-${DISTVERSION}/ \
+		https://www.libssh2.org/download/
+
+PATCH_SITES=	https://github.com/libssh2/libssh2/commit/
+PATCHFILES=	5d03b4f94ac6740e0085a6acda6fc417ca6ecc83.patch:-p1 \
+		d4e43c7b69d10b6cfaaa53787addfd4beac7a3ce.patch:-p1
 
 MAINTAINER=	sbz@FreeBSD.org
 COMMENT=	Library implementing the SSH2 protocol
@@ -13,37 +16,32 @@ WWW=		https://www.libssh2.org/
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		compiler:c11 cpe libtool pathfix
+USES=		cmake:testing cpe pathfix pkgconfig tar:xz
 USE_LDCONFIG=	yes
-GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
-INSTALL_TARGET=	install-strip
-TEST_TARGET=	check
 
-OPTIONS_DEFINE=	GCRYPT TRACE ZLIB
-OPTIONS_DEFAULT=	ZLIB
+CMAKE_OFF=	BUILD_EXAMPLES \
+		BUILD_TESTING \
+		RUN_DOCKER_TESTS \
+		RUN_SSHD_TESTS
 
-TRACE_DESC=	Enable debug packet traces
+CMAKE_ON=	ENABLE_ZLIB_COMPRESSION
+
+OPTIONS_DEFINE=		STATIC TRACE
+OPTIONS_SINGLE=		SSL
+OPTIONS_SINGLE_SSL=	GCRYPT OPENSSL
+OPTIONS_DEFAULT=	OPENSSL ZLIB
+OPTIONS_SUB=		yes
+
+TRACE_DESC=		Enable debug packet traces
 
 GCRYPT_LIB_DEPENDS=	libgcrypt.so:security/libgcrypt
-GCRYPT_USES_OFF=	ssl
-GCRYPT_CONFIGURE_ON=	--with-crypto=libgcrypt
-GCRYPT_CONFIGURE_OFF=	--with-crypto=openssl
-GCRYPT_CPPFLAGS=	-I${LOCALBASE}/include
-GCRYPT_LIBS=		-L${LOCALBASE}/lib
-TRACE_CONFIGURE_ENABLE=	debug
-ZLIB_CONFIGURE_WITH=	libz
+GCRYPT_CMAKE_ON=	-DCRYPTO_BACKEND=Libgcrypt
 
-.include <bsd.port.pre.mk>
+OPENSSL_USES=		ssl
+OPENSSL_CMAKE_ON=	-DCRYPTO_BACKEND=OpenSSL
 
-post-patch:
-	@${REINPLACE_CMD} -e '/Libs:/s/@LIBS@//' \
-		${WRKSRC}/libssh2.pc.in
-.if ! ${PORT_OPTIONS:MGCRYPT}
-.  if ${SSL_DEFAULT} == base
-	@${REINPLACE_CMD} -e 's/LIBSREQUIRED="$$LIBSREQUIRED$${LIBSREQUIRED:+ }libssl libcrypto"/LIBS="$$LIBS -lssl -lcrypto"/' \
-		${WRKSRC}/configure
-.  endif
-.endif
+STATIC_CMAKE_BOOL=	BUILD_STATIC_LIBS
 
-.include <bsd.port.post.mk>
+TRACE_CMAKE_BOOL=	ENABLE_DEBUG_LOGGING
+
+.include <bsd.port.mk>

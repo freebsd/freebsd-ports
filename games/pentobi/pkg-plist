@@ -1,5 +1,4 @@
 bin/pentobi
-bin/pentobi-thumbnailer
 share/applications/io.sourceforge.pentobi.desktop
 share/icons/hicolor/128x128/apps/pentobi.png
 share/icons/hicolor/128x128/mimetypes/io.sourceforge.pentobi.application-x-blokus-sgf.png
@@ -19,14 +18,5 @@ share/icons/hicolor/64x64/apps/pentobi.png
 share/icons/hicolor/64x64/mimetypes/io.sourceforge.pentobi.application-x-blokus-sgf.png
 share/icons/hicolor/scalable/apps/pentobi.svg
 share/icons/hicolor/scalable/mimetypes/io.sourceforge.pentobi.application-x-blokus-sgf.svg
-share/man/de/man6/pentobi-thumbnailer.6.gz
-share/man/de/man6/pentobi.6.gz
-share/man/es/man6/pentobi-thumbnailer.6.gz
-share/man/es/man6/pentobi.6.gz
-share/man/man6/pentobi-thumbnailer.6.gz
-share/man/man6/pentobi.6.gz
-share/man/ru/man6/pentobi-thumbnailer.6.gz
-share/man/ru/man6/pentobi.6.gz
 share/metainfo/io.sourceforge.pentobi.appdata.xml
 share/mime/packages/io.sourceforge.pentobi.xml
-share/thumbnailers/pentobi.thumbnailer

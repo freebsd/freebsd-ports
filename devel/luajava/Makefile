@@ -8,8 +8,7 @@ MAINTAINER=	sunghyuk@gmail.com
 COMMENT=	Lua scripting tool for Java
 WWW=		http://www.keplerproject.org/luajava/
 
-USES=		gmake dos2unix lua:51
-USE_JAVA=	yes
+USES=		gmake dos2unix java lua:51
 USE_LDCONFIG=	yes
 MAKE_JOBS_UNSAFE=	yes
 

@@ -1,6 +1,5 @@
 PORTNAME=	busybox
-PORTVERSION=	1.36.1
-PORTREVISION=	2
+PORTVERSION=	1.37.0
 CATEGORIES=	sysutils misc shells
 MASTER_SITES=	https://busybox.net/downloads/
 
@@ -17,6 +16,8 @@ USE_PERL5=	build
 
 OPTIONS_DEFINE=	DOCS STATIC
 STATIC_LDFLAGS=	-static
+
+PIE_UNSAFE=	yes
 
 .include <bsd.port.options.mk>
 # fix ash crash on arm, see shell/ash.c

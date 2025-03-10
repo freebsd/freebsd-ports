@@ -1,6 +1,6 @@
 PORTNAME=	lbreakout
 PORTVERSION=	010315
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	games
 MASTER_SITES=	SF/lgames/${PORTNAME}
 
@@ -16,7 +16,7 @@ DEPRECATED=	Abandoned by upsteam, does not support large screen resolutions. Use
 USES=		gmake sdl
 USE_SDL=	sdl
 GNU_CONFIGURE=	yes
-LIBS+=		-lcompat
+LIBS+=		-lcompat -lutil
 
 pre-install:
 	${MKDIR} ${STAGEDIR}/var/games/${PORTNAME}

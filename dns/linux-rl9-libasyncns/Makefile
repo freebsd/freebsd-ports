@@ -1,6 +1,7 @@
 PORTNAME=	libasyncns
 PORTVERSION=	0.8
 DISTVERSIONSUFFIX=	-22.el9
+PORTREVISION=	1
 CATEGORIES=	dns devel linux
 
 MAINTAINER=	emulation@FreeBSD.org
@@ -12,6 +13,7 @@ LICENSE=	LGPL21+
 USES=		linux:rl9
 USE_LDCONFIG=	yes
 USE_LINUX_RPM=	yes
+WANT_LINUX32=	yes
 
 CONFLICTS=	linux-c7-${PORTNAME}
 

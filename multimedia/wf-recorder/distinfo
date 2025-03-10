@@ -1,5 +1,3 @@
-TIMESTAMP = 1693891097
-SHA256 (wf-recorder-0.4.1.tar.xz) = 502ba54db8aaf5ebd280738f065c73409694a1440b9a660ef5c4e398714c51f7
-SIZE (wf-recorder-0.4.1.tar.xz) = 26184
-SHA256 (239829231e6b.patch) = a3542558964c088cd88da521aaa4708b9cb8246803dd8a6367dff25b9c4b3f40
-SIZE (239829231e6b.patch) = 4075
+TIMESTAMP = 1724488193
+SHA256 (wf-recorder-0.5.0.tar.xz) = 50b30569f9ecf4f6ba5ba76c422b7af652b4fbc7cae86c25e19ecbe669fca327
+SIZE (wf-recorder-0.5.0.tar.xz) = 28348

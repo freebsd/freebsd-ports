@@ -67,3 +67,69 @@
      /* RFC 4954 Section 6. */
      smtpd_chat_reply(state, "235 2.7.0 Authentication successful");
      if ((sasl_username = xsasl_server_get_username(state->sasl_server)) == 0)
+--- src/postscreen/Makefile.in.orig	2025-01-29 08:50:15.761070000 +0100
++++ src/postscreen/Makefile.in	2025-01-29 08:52:29.611925000 +0100
+@@ -3,13 +3,13 @@
+ 	postscreen_early.c postscreen_smtpd.c postscreen_misc.c \
+ 	postscreen_state.c postscreen_tests.c postscreen_send.c \
+ 	postscreen_starttls.c postscreen_expand.c postscreen_endpt.c \
+-	postscreen_haproxy.c
++	postscreen_haproxy.c pfilter.c
+ OBJS	= postscreen.o postscreen_dict.o postscreen_dnsbl.o \
+ 	postscreen_early.o postscreen_smtpd.o postscreen_misc.o \
+ 	postscreen_state.o postscreen_tests.o postscreen_send.o \
+ 	postscreen_starttls.o postscreen_expand.o postscreen_endpt.o \
+-	postscreen_haproxy.o
+-HDRS	= 
++	postscreen_haproxy.o pfilter.o
++HDRS	= pfilter.h
+ TESTSRC	=
+ DEFS	= -I. -I$(INC_DIR) -D$(SYSTYPE)
+ CFLAGS	= $(DEBUG) $(OPT) $(DEFS)
+--- src/postscreen/pfilter.c.orig	2025-01-29 08:56:39.949695000 +0100
++++ src/postscreen/pfilter.c	2025-01-29 08:59:16.979565000 +0100
+@@ -0,0 +1,19 @@
++#include "pfilter.h"
++#include <stdio.h>	/* for NULL */
++#include <blacklist.h>
++
++static struct blacklist *blstate;
++
++void
++pfilter_notify(int a, int fd)
++{
++	if (blstate == NULL)
++		blstate = blacklist_open();
++	if (blstate == NULL)
++		return;
++	(void)blacklist_r(blstate, a, fd, "postscreen");
++	if (a == 0) {
++		blacklist_close(blstate);
++		blstate = NULL;
++	}
++}
+--- src/postscreen/pfilter.h.orig	2025-01-29 08:56:49.984170000 +0100
++++ src/postscreen/pfilter.h	2025-01-29 08:59:47.270172000 +0100
+@@ -0,0 +1 @@
++void pfilter_notify(int, int);
+--- src/postscreen/postscreen_early.c.orig	2025-01-29 08:45:04.847798000 +0100
++++ src/postscreen/postscreen_early.c	2025-01-29 10:18:34.349408000 +0100
+@@ -52,6 +52,7 @@
+ /* Application-specific. */
+ 
+ #include <postscreen.h>
++#include "pfilter.h" /* for blacklistd(8) */
+ 
+ static char *psc_teaser_greeting;
+ static VSTRING *psc_escape_buf;
+@@ -183,6 +184,10 @@
+ 		msg_info("DNSBL rank %d for [%s]:%s",
+ 			 state->dnsbl_score, PSC_CLIENT_ADDR_PORT(state));
+ 		PSC_FAIL_SESSION_STATE(state, PSC_STATE_FLAG_DNSBL_FAIL);
++
++		/* notify blacklistd of DNSBL rank violation */
++		pfilter_notify(1, vstream_fileno(state->smtp_client_stream));
++
+ 		switch (psc_dnsbl_action) {
+ 		case PSC_ACT_DROP:
+ 		    state->dnsbl_reply = vstring_sprintf(vstring_alloc(100),

@@ -1,6 +1,5 @@
 PORTNAME=	prometheus-client-mmap
-PORTVERSION=	1.1.1
-PORTREVISION=	4
+PORTVERSION=	1.2.8
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -10,7 +9,10 @@ WWW=		https://gitlab.com/gitlab-org/prometheus-client-mmap
 
 LICENSE=	APACHE20
 
-RUN_DEPENDS=	rubygem-rb_sys>=0.9.86<1:lang/rubygem-rb_sys
+RUN_DEPENDS=	rubygem-base64>=0:converters/rubygem-base64 \
+		rubygem-bigdecimal>=0:math/rubygem-bigdecimal \
+		rubygem-logger>=0:devel/rubygem-logger \
+		rubygem-rb_sys>=0.9.109<1:lang/rubygem-rb_sys
 
 USES=		cargo gem gmake llvm:build
 
@@ -34,7 +36,7 @@ post-extract:
 
 .include <bsd.port.options.mk>
 
-.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400091 || ( ${OSVERSION} >= 1302507 && ${OSVERSION} < 1400000 ))
+.if ${OPSYS} == FreeBSD
 RUBYGEM_ARGS+=		--with-cflags="-Wno-error=incompatible-function-pointer-types"
 .endif
 

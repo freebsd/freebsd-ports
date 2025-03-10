@@ -7,12 +7,11 @@ share/icons/hicolor/32x32/apps/katomic.png
 share/icons/hicolor/48x48/apps/katomic.png
 share/icons/hicolor/64x64/apps/katomic.png
 %%DATADIR%%/levels/default_levels.dat
-%%DATADIR%%/pics/default_theme.svgz
-share/kconf_update/katomic-levelset-upd.pl
-share/kconf_update/katomic-levelset.upd
+%%DATADIR%%/themes/default.svgz
 share/knsrcfiles/katomic.knsrc
 share/locale/af/LC_MESSAGES/katomic.mo
 share/locale/ar/LC_MESSAGES/katomic.mo
+share/locale/ast/LC_MESSAGES/katomic.mo
 share/locale/be/LC_MESSAGES/katomic.mo
 share/locale/bg/LC_MESSAGES/katomic.mo
 share/locale/bn/LC_MESSAGES/katomic.mo
@@ -40,6 +39,7 @@ share/locale/hi/LC_MESSAGES/katomic.mo
 share/locale/hne/LC_MESSAGES/katomic.mo
 share/locale/hr/LC_MESSAGES/katomic.mo
 share/locale/hu/LC_MESSAGES/katomic.mo
+share/locale/ia/LC_MESSAGES/katomic.mo
 share/locale/id/LC_MESSAGES/katomic.mo
 share/locale/is/LC_MESSAGES/katomic.mo
 share/locale/it/LC_MESSAGES/katomic.mo
@@ -88,4 +88,5 @@ share/locale/xh/LC_MESSAGES/katomic.mo
 share/locale/zh_CN/LC_MESSAGES/katomic.mo
 share/locale/zh_TW/LC_MESSAGES/katomic.mo
 share/metainfo/org.kde.katomic.appdata.xml
-share/qlogging-categories5/katomic.categories
+share/qlogging-categories6/katomic.categories
+share/qlogging-categories6/katomic.renamecategories

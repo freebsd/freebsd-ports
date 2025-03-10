@@ -1,8 +1,8 @@
 PORTNAME=	cdogs-sdl
-DISTVERSION=	2.1.0
+DISTVERSION=	2.2.0
 CATEGORIES=	games
 
-MAINTAINER=	bofh@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Classic overhead run-and-gun game
 WWW=		https://github.com/cxong/cdogs-sdl
 

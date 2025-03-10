@@ -32,14 +32,25 @@
 #         * LLVM_LIBLLVM  libLLVM.so of the chosen port
 #         * LLVM_PREFIX   installation prefix of the chosen port
 #
+# MAINTAINER: ports@FreeBSD.org
 
 .if !defined(_INCLUDE_USES_LLVM_MK)
 _INCLUDE_USES_LLVM_MK=	YES
 
-_LLVM_MK_VALID_VERSIONS=	11 12 13 14 15 16 17 18
+_LLVM_MK_VALID_VERSIONS=	11 12 13 14 15 16 17 18 19 20
 _LLVM_MK_VALID_CONSTRAINTS=	min max
 _LLVM_MK_VALID_MODES=		build run lib
 _LLVM_MK_VALID_EXPORTS=		export noexport
+
+# === verify that there are no invalid arguments ===
+.  for _arg in ${llvm_ARGS}
+.    if !${_LLVM_MK_VALID_VERSIONS:M${_arg}} && \
+        !${_LLVM_MK_VALID_MODES:M${_arg}} && \
+        ${_arg:C/^(${_LLVM_MK_VALID_CONSTRAINTS:tW:S/ /|/g})=(${_LLVM_MK_VALID_VERSIONS:tW:S/ /|/g})$//} != "" && \
+        !${_LLVM_MK_VALID_EXPORTS:M${_arg}}
+BROKEN=		USES=llvm:${llvm_ARGS:tW:S/ /,/g} contains an invalid argument: "${_arg}"
+.    endif
+.  endfor
 
 # === parse mode arguments ===
 _LLVM_MK_MODES=	# empty
@@ -57,18 +68,14 @@ _LLVM_MK_VERSION=	# empty
 .  for _ver in ${_LLVM_MK_VALID_VERSIONS}
 .    if ${llvm_ARGS:M${_ver}}
 .      if !empty(_LLVM_MK_VERSION)
-BROKEN=		USES=llvm:${llvm_ARGS} contains multiple version definitions
+BROKEN=		USES=llvm:${llvm_ARGS:tW:S/ /,/g} contains multiple version definitions
 .      else
 _LLVM_MK_VERSION=	${_ver}
 .      endif
 .    endif
 .  endfor
 .  if empty(_LLVM_MK_VERSION)
-.    if ${LLVM_DEFAULT:N1[0-9]*}
-_LLVM_MK_VERSION=	${LLVM_DEFAULT:S/0$//}
-.    else
 _LLVM_MK_VERSION=	${LLVM_DEFAULT}
-.    endif
 .  endif
 
 # === parse environment arguments ===
@@ -76,7 +83,7 @@ _LLVM_MK_EXPORT=	# empty
 .  for _export in ${_LLVM_MK_VALID_EXPORTS}
 .    if ${llvm_ARGS:M${_export}}
 .      if !empty(_LLVM_MK_EXPORT)
-BROKEN=		USES=llvm:${llvm_ARGS} contains multiple export definitions
+BROKEN=		USES=llvm:${llvm_ARGS:tW:S/ /,/g} contains multiple export definitions
 .      else
 _LLVM_MK_EXPORT=	${_export}
 .      endif
@@ -107,10 +114,6 @@ _LLVM_MK_VERSION=	${_LLVM_MK_CONSTRAINT_max}
 .  endif
 
 # === define helpers for the dependencies ===
-.  for _ver in ${_LLVM_MK_VALID_VERSIONS:N1[0-9]}
-_LLVM_MK_SUFFIX_${_ver}=	${_ver}0
-.  endfor
-
 .  for _ver in ${_LLVM_MK_VALID_VERSIONS}
 _LLVM_MK_SUFFIX_${_ver}?=	${_ver}
 .  endfor

@@ -1,6 +1,5 @@
 PORTNAME=	kphotoalbum
-DISTVERSION=	5.12.0
-PORTREVISION=	1
+DISTVERSION=	6.0.1
 CATEGORIES=	graphics kde
 MASTER_SITES=	KDE/stable/${PORTNAME}/${PORTVERSION}/
 DIST_SUBDIR=	KDE
@@ -14,23 +13,32 @@ LICENSE=	GPLv2+
 LIB_DEPENDS=	libexiv2.so:graphics/exiv2 \
 		libvlc.so:multimedia/vlc
 
-USES=		cmake compiler:c++11-lang desktop-file-utils jpeg kde:5 \
-		pkgconfig qt:5 shebangfix tar:xz xorg
-USE_KDE=	archive auth codecs completion config configwidgets coreaddons \
-		i18n iconthemes jobwidgets kio libkdcraw marble phonon purpose service solid \
-		sonnet textwidgets widgetsaddons windowsystem xmlgui \
+USES=		cmake compiler:c++17-lang desktop-file-utils gettext-tools \
+		gl jpeg kde:6 pkgconfig qt:6 shebangfix tar:xz xorg
+USE_GL=		gl opengl # GLX
+USE_KDE=	archive colorscheme completion config configwidgets coreaddons \
+		i18n iconthemes jobwidgets kio libkdcraw phonon purpose \
+		service solid sonnet textwidgets widgetsaddons xmlgui \
 		ecm:build
-USE_QT=		concurrent core dbus declarative gui location network \
-		printsupport sql webchannel widgets xml \
-		buildtools:build qmake:build
+USE_QT=		5compat base
 USE_XORG=	x11
-SHEBANG_FILES=	scripts/open-raw.pl scripts/kpa-backup.sh
 
-OPTIONS_DEFINE=	WEBENGINE
-OPTIONS_DEFAULT_amd64=	WEBENGINE
-OPTIONS_DEFAULT_i386=	WEBENGINE
+SHEBANG_FILES=	scripts/kpa-backup.sh \
+		scripts/open-raw.pl
 
-WEBENGINE_DESC=	Add dependency on qt5-webengine
-WEBENGINE_USE=	QT=webengine
+OPTIONS_DEFINE=		MARBLE
+OPTIONS_DEFAULT=	MARBLE
+
+MARBLE_DESC=		Virtual globe and world atlas
+MARBLE_USE=		KDE=marble
+MARBLE_CMAKE_BOOL_OFF=	CMAKE_DISABLE_FIND_PACKAGE_Marble
+
+.include <bsd.port.options.mk>
+
+# These dependencies are only needed if the WEBENGINE option is enabled
+# in astro/marble.
+.if ${PORT_OPTIONS:MMARBLE} && exists(${LOCALBASE}/lib/marble/plugins/Photo.so)
+USE_QT+=	declarative positioning webchannel webengine
+.endif
 
 .include <bsd.port.mk>

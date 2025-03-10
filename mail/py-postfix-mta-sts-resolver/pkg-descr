@@ -1,10 +1,12 @@
 Daemon which provides TLS client policy for Postfix via socketmap, according to
-domain MTA-STS policy. Current support of RFC8461 is limited - daemon lacks
-some minor features:
+domain MTA-STS policy. Current support of RFC8461 is limited:
 
-  - Proactive policy fetch
-  - Fetch error reporting
-  - Fetch ratelimit (but actual fetch rate partially restricted with cache_grace config option).
+  - MTA-STS policy overrides DANE TLS authentication against RFC 8461, 2.
+  - Daemon lacks some minor features:
+    - Fetch error reporting.
+    - Fetch ratelimit (but actual fetch rate partially restricted with
+      cache_grace config option).
 
 Server has configurable cache backend which allows to store cached STS policies
-in memory (internal), file (sqlite) or in Redis database (redis).
+in memory (internal), file (sqlite), Redis database (redis) or in PostgreSQL
+database (postgres).

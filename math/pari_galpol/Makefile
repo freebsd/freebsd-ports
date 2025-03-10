@@ -1,6 +1,6 @@
 PORTNAME=	galpol
 DISTVERSION=	2018-06-25
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	math
 MASTER_SITES=	https://pari.math.u-bordeaux.fr/pub/pari/packages/
 PKGNAMEPREFIX=	pari-

@@ -25,6 +25,7 @@ share/man/man1/infernal.1.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/Cobalamin.c.cm
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/Cobalamin.fa
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/Cobalamin.sto
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Rfam.14.9.clanin
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/metag-example.fa
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/minifam-metag.out
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/minifam.cm
@@ -36,6 +37,8 @@ share/man/man1/infernal.1.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/mrum-tRNAs10.fa
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/mrum-tRNAs10.out
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tRNA5-hand.c.cm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tRNA5-hand.frag.sto
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tRNA5-hand.fraggiven.sto
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tRNA5-hand.sto
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tRNA5-mrum.out
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tRNA5-noss.sto

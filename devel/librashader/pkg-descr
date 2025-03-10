@@ -1,0 +1,7 @@
+librashader is a preprocessor, compiler and runtime for RetroArch 'slang'
+shaders, rewritten in pure Rust. It supports all modern graphics runtimes,
+including wgpu, Vulkan, OpenGL 3.3+ and 4.6 (with DSA), Direct3D 11,
+Direct3D 12, and Metal.
+
+librashader implements the entire RetroArch shader pipeline and is highly
+compatible with existing shaders, e.g. the slang-shaders from libretro.

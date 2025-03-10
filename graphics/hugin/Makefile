@@ -1,6 +1,6 @@
 PORTNAME=	hugin
-DISTVERSION=	2023.0.0
-PORTREVISION=	4
+DISTVERSION=	2024.0.1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION:R}
 
@@ -30,10 +30,8 @@ RUN_DEPENDS=	enblend>=4.1.4:graphics/enblend \
 USES=		cmake compiler:c++11-lib desktop-file-utils gettext gl gnome \
 		jpeg pkgconfig shared-mime-info shebangfix sqlite tar:bzip2 xorg
 USE_GL=		gl glew glu glut
-USE_WX=		3.0+
+USE_WX=		3.2+
 USE_XORG=	x11
-
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}.0
 
 SHEBANG_FILES=	src/hugin_script_interface/hpi.py \
 		src/hugin_script_interface/plugins/*.py \

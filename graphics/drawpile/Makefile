@@ -1,6 +1,6 @@
 PORTNAME=	Drawpile
 DISTVERSION=	2.2.1
-PORTREVISION=	4
+PORTREVISION=	10
 CATEGORIES=	graphics python
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -10,13 +10,12 @@ WWW=		https://drawpile.net
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-BUILD_DEPENDS=	${LOCALBASE}/share/ECM/cmake/ECMConfig.cmake:devel/kf6-extra-cmake-modules
 LIB_DEPENDS=	libsodium.so:security/libsodium
 
 USES=		cargo cmake compiler:c++17-lang desktop-file-utils kde:5 pkgconfig qt:5 shared-mime-info
 USE_QT=		core gui multimedia network sql svg widgets xml \
 		buildtools:build linguisttools:build qmake:build
-USE_KDE=	archive dnssd
+USE_KDE=	archive dnssd ecm:build
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	${PORTNAME:tl}

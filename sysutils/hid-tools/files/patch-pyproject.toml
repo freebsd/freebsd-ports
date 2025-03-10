@@ -1,0 +1,11 @@
+--- pyproject.toml.orig	2024-11-23 09:55:52 UTC
++++ pyproject.toml
+@@ -52,7 +52,7 @@ dependencies = [
+ 
+ [tool.hatch.build.targets.wheel.hooks.custom]
+ dependencies = [
+-    "pypandoc_binary",
++    "pypandoc",
+ ]
+ 
+ [tool.hatch.build.targets.wheel.shared-data]

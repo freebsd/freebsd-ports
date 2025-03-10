@@ -1,5 +1,5 @@
 PORTNAME=	zig
-DISTVERSION=	0.12.1
+DISTVERSION=	0.13.0
 CATEGORIES=	lang
 MASTER_SITES=	https://ziglang.org/download/${DISTVERSION}/ \
 		https://ziglang.org/builds/
@@ -35,8 +35,9 @@ STATIC_DESC=	sets ZIG_STATIC to avoid 800MiB LLVM runtime dependency
 STATIC_RUN_DEPENDS_OFF=	llvm${_LLVM_VER}>=0:devel/llvm${_LLVM_VER}
 STATIC_CMAKE_BOOL=	ZIG_STATIC
 STATIC_LDFLAGS=		-licudata -licuuc -llzma -lm -lmd -lxml2 -lz -lzstd
+STATIC_LIB_DEPENDS+=	libxml2.so:textproc/libxml2
 
-_LLVM_VER=	17
+_LLVM_VER=	18
 _ZIG_BIN=	${STAGEDIR}${PREFIX}/bin/zig
 
 post-configure-STATIC-on:
@@ -46,6 +47,18 @@ post-configure-STATIC-on:
 post-install:
 	@${RM} -rf ${WRKDIR}/.build
 	@${RM} -rf ${STAGEDIR}/wrkdirs
+	# Automatically create the PLIST file
+	@${FIND} -s ${_ZIG_BIN} -not -type d | ${SORT} | \
+		${SED} -e 's#^${STAGEDIR}${PREFIX}/##' >> ${TMPPLIST}
+	@${FIND} -s ${STAGEDIR}${PREFIX}/lib/${PORTNAME} -not -type d | ${SORT} | \
+		${SED} -e 's#^${STAGEDIR}${PREFIX}/##' >> ${TMPPLIST}
+	@${ECHO_CMD} "@dir lib/zig/std/compress/flate/testdata/block_writer" >> ${TMPPLIST}
+	@${ECHO_CMD} "@dir lib/zig/std/compress/flate/testdata/fuzz" >> ${TMPPLIST}
+	@${ECHO_CMD} "@dir lib/zig/std/compress/lzma/testdata" >> ${TMPPLIST}
+	@${ECHO_CMD} "@dir lib/zig/std/compress/testdata" >> ${TMPPLIST}
+	@${ECHO_CMD} "@dir lib/zig/std/compress/xz/testdata" >> ${TMPPLIST}
+	@${ECHO_CMD} "@dir lib/zig/std/tar/testdata" >> ${TMPPLIST}
+	@${ECHO_CMD} "@dir lib/zig/std/tz" >> ${TMPPLIST}
 
 post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}/std
@@ -53,6 +66,9 @@ post-install-DOCS-on:
 	${INSTALL_MAN} ${WRKSRC}/lib/docs/${f} \
 		${STAGEDIR}${DOCSDIR}/${f}
 .endfor
+	@cd ${STAGEDIR}; ${FIND} ${DOCSDIR:C@^/@@} -type f | ${SED} -e 's@^@/@' | ${SORT} | \
+		${SED} -e 's#^${PREFIX}/##' >> ${TMPPLIST}
+	@${ECHO_CMD} "@dir share/doc/zig/std" >> ${TMPPLIST}
 
 do-test:
 	mkdir ${WRKDIR}/cache

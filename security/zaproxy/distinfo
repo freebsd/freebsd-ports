@@ -1,7 +1,7 @@
-TIMESTAMP = 1711238273
-SHA256 (zaproxy-2.14.0-deps.tar.gz) = 961ed29f92d165bd06ed8b54821760fbf339069f80a6e26d3c9d77ea3fa0f2d2
-SIZE (zaproxy-2.14.0-deps.tar.gz) = 369588532
-SHA256 (zaproxy-2.14.0-plugins.tar.gz) = 93d2f25beecd882ea8af173665372faab82c0b8c1e0389e3dbededc2909e3517
-SIZE (zaproxy-2.14.0-plugins.tar.gz) = 232482946
-SHA256 (zaproxy-zaproxy-v2.14.0_GH0.tar.gz) = e775b827f2c1aa8ed93dae5c2677399fedbe8c64cbdd21e0122c3799706ca0ea
-SIZE (zaproxy-zaproxy-v2.14.0_GH0.tar.gz) = 5541732
+TIMESTAMP = 1738481973
+SHA256 (zaproxy-2.16.0-deps.tar.gz) = ead772faba54374d46676e43144cf744402287cca7e9744cfcce24fc1b053668
+SIZE (zaproxy-2.16.0-deps.tar.gz) = 310305400
+SHA256 (zaproxy-2.16.0-plugins.tar.gz) = b86790c74019c6c9744aa6f45fbde1c6f828a36304f75a9a52d21fdff3a6e758
+SIZE (zaproxy-2.16.0-plugins.tar.gz) = 256048760
+SHA256 (zaproxy-zaproxy-v2.16.0_GH0.tar.gz) = 1266d3fb657743293cca7b353d6acbae313d07d03e2d22daedc48849baa9a5b5
+SIZE (zaproxy-zaproxy-v2.16.0_GH0.tar.gz) = 5581869

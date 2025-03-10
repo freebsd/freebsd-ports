@@ -1,0 +1,4 @@
+The Ocplib-simplex OCaml library imlements a simplex algorithm for
+solving systems of linear inequalities and optimizing linear objective
+functions. Linear optimization and unsat-cores extraction are also
+supported. The implementation is iterative and backtrackable.

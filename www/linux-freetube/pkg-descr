@@ -1,0 +1,18 @@
+FreeTube is an open source desktop YouTube player built with privacy in mind.
+Use YouTube without advertisements and prevent Google from tracking you with
+their cookies and JavaScript.
+
+Features:
+
+    - Watch videos without ads
+    - Use YouTube without Google tracking you using cookies and JavaScript
+    - Subscribe to channels without an account
+    - Connect to an externally setup proxy such as Tor
+    - View and search your local subscriptions, history, and saved videos
+    - Organize your subscriptions into "Profiles" to create a more focused feed
+    - Export & import subscriptions
+    - Youtube Trending
+    - Youtube Chapters
+    - Most popular videos page based on the set Invidious instance
+    - Watch videos using an external player
+    - ... and much more

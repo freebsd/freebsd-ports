@@ -21,8 +21,8 @@ OPTIONS_DEFINE=		\
 	HEADLESS	\
 	INPUT_NDOF	\
 	JACK		\
-	LZO		\
 	LZMA		\
+	LZO		\
 	MENU		\
 	MOD_FLUID	\
 	MOD_OCEANSIM	\
@@ -43,6 +43,7 @@ OPTIONS_DEFINE=		\
 	PULSEAUDIO	\
 	QUADRIFLOW	\
 	SDL		\
+	SIMD		\
 	SNDFILE		\
 	TBB		\
 	THUMBNAILER	\
@@ -72,8 +73,8 @@ OPTIONS_DEFAULT=	\
 	HARFBUZZ	\
 	HARU		\
 	INPUT_NDOF	\
-	LZO		\
 	LZMA		\
+	LZO		\
 	MENU		\
 	MOD_FLUID	\
 	MOD_OCEANSIM	\
@@ -101,7 +102,7 @@ OPTIONS_DEFAULT=	\
 # CYCLES_EMBR: embree only supports amd64 and i386
 # OPENIMAGEDN: oidn only supports amd64
 # OPENPGL:     requires supported SIMD ISA - i386/amd64/aarch64/armv6/armv7
-OPTIONS_DEFAULT_aarch64=	CAMERATRACK OPENPGL
+OPTIONS_DEFAULT_aarch64=	CAMERATRACK OPENPGL SIMD
 OPTIONS_DEFAULT_amd64=		CAMERATRACK CYCLES_EMBR OPENIMAGEDN OPENPGL
 OPTIONS_DEFAULT_powerpc64=	CAMERATRACK
 OPTIONS_DEFAULT_powerpc64le=	CAMERATRACK
@@ -127,8 +128,8 @@ HARFBUZZ_DESC=		Enable features using harfbuzz OpenType text shaping engine
 HARU_DESC=		Enable libharu support
 HEADLESS_DESC=		Disable user interface (for render-farms)
 INPUT_NDOF_DESC=	Enable NDOF input device support
-LZO_DESC=		Fast compression support
 LZMA_DESC=		Best compression support
+LZO_DESC=		Fast compression support
 MENU_DESC=		Install desktop menu
 MOD_FLUID_DESC=		Fluid simulation support
 MOD_OCEANSIM_DESC=	Ocean simulation support
@@ -144,6 +145,7 @@ POTRACE_DESC=		Enable features using libpotrace
 PUGIXML_DESC=		Enable pugixml support
 QUADRIFLOW_DESC=	Enable quadriflow remesher
 SDL_DESC=		Audio and Joystick support using SDL
+SIMD_DESC=		Use SIMD optimized routines (on amd64 require x86-64-v2 support)
 TBB_DESC=		Enable use of Intel's tbb
 THUMBNAILER_DESC=	Build blender thumbnailer
 TRACE_DESC=		Enable tracing image to GP stroke

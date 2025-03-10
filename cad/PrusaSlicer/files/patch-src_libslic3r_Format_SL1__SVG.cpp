@@ -1,12 +1,11 @@
---- src/libslic3r/Format/SL1_SVG.cpp.orig	2023-12-12 14:21:21 UTC
+--- src/libslic3r/Format/SL1_SVG.cpp.orig	2024-09-18 13:39:04 UTC
 +++ src/libslic3r/Format/SL1_SVG.cpp
-@@ -10,7 +10,8 @@
- #include "libslic3r/Format/ZipperArchiveImport.hpp"
+@@ -28,7 +28,7 @@
+ #include <utility>
+ #include <cstddef>
  
- #define NANOSVG_IMPLEMENTATION
 -#include "nanosvg/nanosvg.h"
-+#define NANOSVGRAST_IMPLEMENTATION
-+#include "libnanosvg/nanosvgrast.h"
++#include <libnanosvg/nanosvgrast.h>
  
- #include <limits>
- #include <cstdint>
+ namespace Slic3r {
+ class SLAPrint;

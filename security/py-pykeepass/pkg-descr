@@ -1,0 +1,4 @@
+pykeepass is a python library to interact with keepass databases
+(supports KDBX3 and KDBX4). You can perform many tasks such as
+finding entries, groups, manipulate entries, group entries,
+attachments, and much more. All in a single Python library.

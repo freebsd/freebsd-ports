@@ -1,6 +1,6 @@
---- content/browser/gpu/gpu_data_manager_impl_private.cc.orig	2024-08-01 05:47:53 UTC
+--- content/browser/gpu/gpu_data_manager_impl_private.cc.orig	2025-02-22 18:06:53 UTC
 +++ content/browser/gpu/gpu_data_manager_impl_private.cc
-@@ -1697,7 +1697,7 @@ void GpuDataManagerImplPrivate::RecordCompositingMode(
+@@ -1675,7 +1675,7 @@ void GpuDataManagerImplPrivate::RecordCompositingMode(
    UMA_HISTOGRAM_ENUMERATION("GPU.CompositingMode", compositing_mode);
  }
  

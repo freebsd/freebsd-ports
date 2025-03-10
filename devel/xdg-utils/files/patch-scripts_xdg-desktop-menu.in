@@ -1,4 +1,4 @@
---- scripts/xdg-desktop-menu.in.orig	2019-01-08 19:02:17 UTC
+--- scripts/xdg-desktop-menu.in.orig	2024-02-06 01:55:07 UTC
 +++ scripts/xdg-desktop-menu.in
 @@ -67,7 +67,7 @@ make_lazy_default()
  
@@ -9,7 +9,7 @@
          if [ x"$mode" = x"user" ] ; then
              xdg_user_dir="$XDG_DATA_HOME"
              [ -n "$xdg_user_dir" ] || xdg_user_dir="$HOME/.local/share"
-@@ -110,7 +110,7 @@ update_submenu()
+@@ -112,7 +112,7 @@ update_submenu()
      xdg_user_dir="$xdg_user_dir/$xdg_dir_name"
  
      xdg_system_dirs="$XDG_CONFIG_DIRS"
@@ -18,7 +18,7 @@
      xdg_global_dir=
      for x in `echo $xdg_system_dirs | sed 's/:/ /g'` ; do
          if [ -w $x/$xdg_dir_name ] ; then
-@@ -475,7 +475,7 @@ xdg_user_dir="$XDG_DATA_HOME"
+@@ -464,7 +464,7 @@ xdg_system_dirs="$XDG_DATA_DIRS"
  xdg_user_dir="$xdg_user_dir/$xdg_dir_name"
  
  xdg_system_dirs="$XDG_DATA_DIRS"
@@ -27,7 +27,7 @@
  xdg_global_dir=
  for x in `echo $xdg_system_dirs | sed 's/:/ /g'` ; do
      if [ -w $x/$xdg_dir_name ] ; then
-@@ -542,7 +542,7 @@ xdg_user_dir="$XDG_DATA_HOME"
+@@ -527,7 +527,7 @@ xdg_system_dirs="$XDG_DATA_DIRS"
  xdg_user_dir="$xdg_user_dir/$xdg_dir_name"
  
  xdg_system_dirs="$XDG_DATA_DIRS"
@@ -36,12 +36,3 @@
  xdg_global_dir=
  for x in `echo $xdg_system_dirs | sed 's/:/ /g'` ; do
      if [ -w $x/$xdg_dir_name ] ; then
-@@ -556,7 +556,7 @@ kde_global_dir=`kde${KDE_SESSION_VERSION}-config --pat
- [ -w $kde_global_dir ] || kde_global_dir=
- 
- gnome_user_dir="$HOME/.gnome/apps"
--gnome_global_dir="/usr/share/gnome/apps"
-+gnome_global_dir="%%LOCALBASE%%/share/gnome/apps"
- [ -w $gnome_global_dir ] || gnome_global_dir=
- 
- DEBUG 3 "Install locations for *.desktop files:"

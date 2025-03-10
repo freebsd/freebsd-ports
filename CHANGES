@@ -10,6 +10,117 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
+20250307:
+AUTHOR: python@FreeBSD.org
+
+  setuptools has been removed as a RUN_DEPENDS for USE_PYTHON=distutils
+  ports, except for those operating under Python 2. If your port
+  needs setuptools to run, you can add it back to RUN_DEPENDS, but
+  keep in mind that this practice is deprecated and discouraged in
+  the greater Python ecosystem.
+
+  setuptools includes a module, pkg_resources, that historically
+  has been used as a runtime API for "finding, introspecting,
+  activating and using installed Python distributions." These
+  functions have been superseded by the importlib family and the
+  packaging package.
+
+  setuptools also includes their own copy of distutils, which is
+  not present in the base Python distribution starting in 3.12. The
+  use of distutils primitives directly in consumers is also discouraged
+  and deprecated.
+
+20250306:
+AUTHOR: jhale@FreeBSD.org
+
+  TEST_DEPENDS support has been added to Mk/Uses/qt.mk.
+
+  If a component defined by USE_QT is only needed for regession tests,
+  it can be added to TEST_DEPENDS buy suffixing it with ':test'.
+
+  For example:
+      USES=	qt:5
+      USE_QT=	testlib:test
+
+      Will add devel/qt5-testlib to TEST_DEPENDS
+
+20250205:
+AUTHOR: yasu@FreeBSD.org
+
+  3 new variables are defined if you add 'USES=samba' in Makefile.
+
+  * SAMBA_TALLOC_PORT
+  * SAMBA_TDB_PORT
+  * SAMBA_TEVENT_PORT
+
+  They are intended to be used by ports that works with Samba to
+  specify proper version of talloc, tdb and/or tevent as dependency
+  such as bellow.
+
+      LIB_DEPENDS=	ibtalloc.so:${SAMBA_TALLOC_PORT} \
+			libtdb.so:${SAMBA_TDB_PORT} \
+			libtevent.so:${SAMBA_TEVENT_PORT}
+      USES=		samba:env
+
+  You need not use them if port just depends on talloc, tdb and/or
+  tevent and it has nothing to do with Samba.
+
+20250203:
+AUTHOR: yasu@FreeBSD.org
+
+  Following legacy variables are removed from Mk/Uses/samba.mk
+
+  * SAMBAPORT
+  * SAMBAINCLUDES
+  * SAMBALIBS
+
+  And ones below should be used instead.
+
+  * SAMBA_PORT
+  * SAMBA_INCLUDEDIR
+  * SAMBA_LIBDIR
+
+20241231:
+AUTHOR: bofh@FreeBSD.org
+
+  Convert bsd.java.mk to USES
+
+  The following features have been added or changed:
+  - Instead of USE_JAVA use USES=java. This defaults to
+    USES=java:build,run if NO_BUILD is undefined. Else it defaults to
+    USES=java:run
+  - Instead of USE_ANT=yes use USES=java:ant which also implies
+    USES=java:build
+  - Instead of JAVA_BUILD=yes use USES=java:build. Does not imply run or
+    extract
+  - Instead of JAVA_EXTRACT=yes use USES=java:extract does not imply
+    build or run
+  - Instead of JAVA_RUN=yes use USES=java:run does not imply extract or
+    build
+  - Instead of USE_JAVA=<version> use USES=java and JAVA_VERSION=<version>
+
+20241231:
+AUTHOR: bofh@FreeBSD.org
+
+  Converted remaining bsd.ocaml.mk to Uses/ocaml.mk
+
+  - Instead of USE_OCAML=yes use USES=ocaml. If empty USES=ocaml implies
+    build and run
+  - Instead of USE_OCAMLFIND_PLIST use USES=ocaml:findplist which also
+    implies USES=ocaml:findlib
+  - Instead of USE_OCAML_CAMLP4 use USES=ocaml:camlp4
+  - Instead of USE_OCAML_FINDLIB use USES=ocaml:findlib
+  - Instead of USE_OCAML_LDCONFIG use USES=ocaml:ldconfig
+  - Instead of USE_OCAML_WASH use USES=ocaml:wash
+  - Instead of NO_OCAML_BUILDDEPENDS use USES=ocaml:run
+  - Instead of NO_OCAML_RUNDDEPENDS use USES=ocaml:build
+  - Instead of USE_OCAML_TK use USES=ocaml:tk which actually implies
+    USES=ocaml:tkbuild and USES=ocaml:tkrun
+  - Instead of NO_OCAMLTK_BUILDDEPENDS use USES=ocaml:tkrun
+  - Instead of NO_OCAMLTK_RUNDEPENDS use USES=ocaml:tkbuild
+  - USES=ocaml:dune remains unchanged
+  - Prepare to add/remove keywords easily
+
 20240408:
 AUTHOR: flo@FreeBSD.org
 
@@ -442,7 +553,7 @@ AUTHOR: tcberner@FreeBSD.org
   Ports that depend on mlt should now use USES=mlt:<version> to specify
   their dependency.
 
-  At the moment the supported version is 6, but will be extended to also 
+  At the moment the supported version is 6, but will be extended to also
   allow for selection of mlt 7 shortly.
 
 20210604:
@@ -501,8 +612,8 @@ AUTHOR: pauamma@gundo.com
   purpose, such as:
   * course-writing or course-delivery applications,
   * classroom or school management applications (eg, scheduling classes),
-  * applications, utilities, or games primarily or substantially designed 
-    to help the user learn a specific topic or study in general, like typing 
+  * applications, utilities, or games primarily or substantially designed
+    to help the user learn a specific topic or study in general, like typing
     tutors, flashcard applications, or educational games.
 
 20201110:
@@ -593,7 +704,7 @@ AUTHOR: mat@FreeBSD.org
 
   USES=lua sets LUA_FLAVOR that needs to be used on all dependencies of
   flavored lua ports, in a similar way as PHP or Python flavors.
-  
+
 20200115:
 AUTHOR: bapt@FreeBSD.org
 
@@ -605,7 +716,7 @@ AUTHOR: bapt@FreeBSD.org
 
   The ipv6 virtual category is gone, it does not make sense anymore in 2019
   where the norm in applications is to have support both ipv4 and ipv6.
-  
+
 20191001:
 AUTHOR: bapt@FreeBSD.org
 

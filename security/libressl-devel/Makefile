@@ -1,5 +1,5 @@
 PORTNAME=	libressl
-PORTVERSION=	3.9.2
+PORTVERSION=	4.0.0
 CATEGORIES=	security devel
 MASTER_SITES=	OPENBSD/LibreSSL
 PKGNAMESUFFIX=	-devel
@@ -27,7 +27,7 @@ NC_DESC=	Install TLS-enabled netcat
 
 CONFLICTS_INSTALL=		libressl \
 				libretls
-default_CONFLICTS_INSTALL=	openssl openssl111 openssl3[12] openssl-quictls
+default_CONFLICTS_INSTALL=	openssl openssl111 openssl3* openssl-quictls
 
 .if ${FLAVOR:U} == default
 OPTIONS_EXCLUDE=	LIBTLS
@@ -50,12 +50,12 @@ LDFLAGS+=	-pthread
 INSTALL_TARGET=	install-strip
 TEST_TARGET=	check
 
-PLIST_SUB+=	LIBCRYPTO_SHLIBMAJ=53 \
-		LIBCRYPTO_SHLIBFULL=53.0.0 \
-		LIBSSL_SHLIBMAJ=56 \
-		LIBSSL_SHLIBFULL=56.0.0 \
-		LIBTLS_SHLIBMAJ=29 \
-		LIBTLS_SHLIBFULL=29.0.0
+PLIST_SUB+=	LIBCRYPTO_SHLIBMAJ=55 \
+		LIBCRYPTO_SHLIBFULL=55.0.0 \
+		LIBSSL_SHLIBMAJ=58 \
+		LIBSSL_SHLIBFULL=58.0.0 \
+		LIBTLS_SHLIBMAJ=31 \
+		LIBTLS_SHLIBFULL=31.0.0
 
 post-patch-MAN3-off:
 	${REINPLACE_CMD} -e '/^install-man:/s/install-man3//' \

@@ -1,0 +1,11 @@
+--- compiler/Makefile.orig	2024-10-13 20:49:37 UTC
++++ compiler/Makefile
+@@ -82,7 +82,7 @@ install:
+ 
+ # Install
+ install:
+-	cp $(PROG) $(BINDIR)
++	$(BSD_INSTALL_SCRIPT) $(PROG) $(DESTDIR)$(BINDIR)
+ 
+ # Clean up
+ clean::

@@ -1,6 +1,6 @@
 PORTNAME=	nvc
 DISTVERSIONPREFIX=	r
-DISTVERSION=	1.13.1
+DISTVERSION=	1.15.2
 CATEGORIES=	cad
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -10,12 +10,12 @@ WWW=		https://github.com/nickg/nvc
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN_armv6=	compilation fails: no member named '_gregs' in 'mcontext_t'; did you mean '__gregs', see https://github.com/nickg/nvc/issues/534
 BROKEN_armv7=	compilation fails: no member named '_gregs' in 'mcontext_t'; did you mean '__gregs', see https://github.com/nickg/nvc/issues/534
+BROKEN_i386=	compilation fails: static assertion failed due to requirement 'sizeof(jit_ir_t) == 40': Static assertion failed, see https://github.com/nickg/nvc/issues/1133
 BROKEN_FreeBSD_14_i386=	clang creashes, see https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=265826
 
 BUILD_DEPENDS=	llvm-config${LLVM_VERSION}:devel/llvm${LLVM_VERSION}
-LIB_DEPENDS=	libelf.so:devel/elfutils \
+LIB_DEPENDS=	libelf.so:devel/libelf \
 		libffi.so:devel/libffi \
 		libzstd.so:archivers/zstd
 RUN_DEPENDS=	llvm${LLVM_VERSION}>0:devel/llvm${LLVM_VERSION} \
@@ -60,5 +60,7 @@ CONFIGURE_ARGS+=	--disable-lto # workaround for https://github.com/nickg/nvc/iss
 
 post-install:
 	@${FIND} ${STAGEDIR}${PREFIX} -name "*.so" | ${XARGS} ${STRIP_CMD}
+
+# bin/unit_test fails, see https://github.com/nickg/nvc/issues/1167
 
 .include <bsd.port.mk>

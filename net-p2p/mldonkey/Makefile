@@ -14,15 +14,13 @@ CONFLICTS=	mldonkey{-{core,gui},}-devel
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/ocaml/nums.cma:math/ocaml-num
 
-USES=		compiler:c++11-lang cpe gmake iconv pkgconfig tar:bzip2
+USES=		compiler:c++11-lang cpe gmake iconv ocaml:camlp4 pkgconfig tar:bzip2
 ARCH!=		uname -p
-.if ${ARCH} == i386
+.if ${ARCH} == i386 || ${ARCH} == powerpc
 # `as' is used to compile src/utils/lib/md4_i386.s
 USE_BINUTILS=	yes
 .endif
 USE_CXXSTD=	c++14
-USE_OCAML=	yes
-USE_OCAML_CAMLP4=yes
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	ac_cv_lib_charset_locale_charset=no
@@ -98,12 +96,6 @@ PORTDOCS=	Authors.txt Bugs.txt ChangeLog Developers.txt \
 ALL_TARGET+=	\
 		mld_hash
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH:Mpowerpc64*}
-LLD_UNSAFE=	yes
-.endif
-
 post-patch:
 	@${SED} \
 		-e "s|%%PREFIX%%|${PREFIX}|" \
@@ -162,4 +154,4 @@ install-user: extract
 		${HOME}/.mldonkey_gui_messages.ini
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

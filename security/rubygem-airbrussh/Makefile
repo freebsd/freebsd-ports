@@ -1,5 +1,5 @@
 PORTNAME=	airbrussh
-PORTVERSION=	1.5.2
+PORTVERSION=	1.5.3
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 
@@ -12,10 +12,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 RUN_DEPENDS=	rubygem-sshkit>=1.7.1:security/rubygem-sshkit
 
-USES=		gem shebangfix
+USES=		gem
 
 NO_ARCH=	yes
-
-SHEBANG_FILES=	bin/setup
 
 .include <bsd.port.mk>

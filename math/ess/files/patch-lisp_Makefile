@@ -1,0 +1,18 @@
+--- lisp/Makefile.orig	2025-01-10 12:11:57 UTC
++++ lisp/Makefile
+@@ -49,11 +49,11 @@ -include .dependencies
+ ##obsolete/%.elc: obsolete/%.el
+ ##	$(COMPILE-SIMPLE) $<
+ 
+-JULIA-REPO=https://raw.githubusercontent.com/JuliaEditorSupport/julia-emacs/master
++#JULIA-REPO=https://raw.githubusercontent.com/JuliaEditorSupport/julia-emacs/master
+ ## Should happen before building ESS; definitely *NOT* after unpacking tarball :
+-$(JULIAS):
+-	test -f ../etc/.IS.RELEASE || $(DOWNLOAD) $(JULIA-REPO)/julia-mode.el > julia-mode.el
+-	test -f ../etc/.IS.RELEASE || $(DOWNLOAD) $(JULIA-REPO)/julia-mode-latexsubs.el > julia-mode-latexsubs.el
++#$(JULIAS):
++#	test -f ../etc/.IS.RELEASE || $(DOWNLOAD) $(JULIA-REPO)/julia-mode.el > julia-mode.el
++#	test -f ../etc/.IS.RELEASE || $(DOWNLOAD) $(JULIA-REPO)/julia-mode-latexsubs.el > julia-mode-latexsubs.el
+ julia-%.elc: julia-%.el
+ 	$(COMPILE-SIMPLE) $<
+ 

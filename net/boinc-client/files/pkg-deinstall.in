@@ -11,11 +11,15 @@ option_user=%%OPTION_USER%%
 case $2 in
 POST-DEINSTALL)
 	if [ -n "${option_user}" ] ; then
-		if [ -n "${option_manager}" -a -e "${home}/skins" -a `readlink "${home}/skins"` = "%%PREFIX%%/share/boinc/skins" ]; then
-			rm -f "${home}/skins"
+		if [ -n "${option_manager}" -a -L "${home}/skins" ]; then
+			if [ `readlink "${home}/skins"` = "%%PREFIX%%/share/boinc/skins" ]; then
+				rm -f "${home}/skins"
+			fi
 		fi
-		if [ -e "${home}/ca-bundle.crt" -a `readlink "${home}/ca-bundle.crt"` = "%%LOCALBASE%%/share/certs/ca-root-nss.crt" ]; then
-			rm -f "${home}/ca-bundle.crt"
+		if [ -L "${home}/ca-bundle.crt" ]; then
+			if [ `readlink "${home}/ca-bundle.crt"` = "%%LOCALBASE%%/share/certs/ca-root-nss.crt" ]; then
+				rm -f "${home}/ca-bundle.crt"
+			fi
 		fi
 		rmdir "${home}" >/dev/null 2>&1
 	fi

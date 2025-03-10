@@ -10,7 +10,6 @@
 %%QT_INCDIR%%/QtScxml/%%FULLVER%%/QtScxml/private/qscxmlstatemachineinfo_p.h
 %%QT_INCDIR%%/QtScxml/%%FULLVER%%/QtScxml/private/qscxmltabledata_p.h
 %%QT_INCDIR%%/QtScxml/%%FULLVER%%/QtScxml/private/qtscxml-config_p.h
-%%QT_INCDIR%%/QtScxml/%%FULLVER%%/QtScxml/private/qtscxmlexports_p.h
 %%QT_INCDIR%%/QtScxml/QScxmlCompiler
 %%QT_INCDIR%%/QtScxml/QScxmlCppDataModel
 %%QT_INCDIR%%/QtScxml/QScxmlDataModel
@@ -43,7 +42,6 @@
 %%QT_INCDIR%%/QtScxmlQml/%%FULLVER%%/QtScxmlQml/private/eventconnection_p.h
 %%QT_INCDIR%%/QtScxmlQml/%%FULLVER%%/QtScxmlQml/private/invokedservices_p.h
 %%QT_INCDIR%%/QtScxmlQml/%%FULLVER%%/QtScxmlQml/private/qscxmlqmlglobals_p.h
-%%QT_INCDIR%%/QtScxmlQml/%%FULLVER%%/QtScxmlQml/private/qtscxmlqmlexports_p.h
 %%QT_INCDIR%%/QtScxmlQml/%%FULLVER%%/QtScxmlQml/private/statemachineextended_p.h
 %%QT_INCDIR%%/QtScxmlQml/%%FULLVER%%/QtScxmlQml/private/statemachineloader_p.h
 %%QT_INCDIR%%/QtScxmlQml/QtScxmlQml
@@ -93,7 +91,6 @@
 %%QT_INCDIR%%/QtStateMachineQml/%%FULLVER%%/QtStateMachineQml/private/childrenprivate_p.h
 %%QT_INCDIR%%/QtStateMachineQml/%%FULLVER%%/QtStateMachineQml/private/finalstate_p.h
 %%QT_INCDIR%%/QtStateMachineQml/%%FULLVER%%/QtStateMachineQml/private/qstatemachineqmlglobals_p.h
-%%QT_INCDIR%%/QtStateMachineQml/%%FULLVER%%/QtStateMachineQml/private/qtstatemachineqmlexports_p.h
 %%QT_INCDIR%%/QtStateMachineQml/%%FULLVER%%/QtStateMachineQml/private/signaltransition_p.h
 %%QT_INCDIR%%/QtStateMachineQml/%%FULLVER%%/QtStateMachineQml/private/state_p.h
 %%QT_INCDIR%%/QtStateMachineQml/%%FULLVER%%/QtStateMachineQml/private/statemachine_p.h
@@ -132,6 +129,7 @@ lib/cmake/Qt6Scxml/Qt6ScxmlMacros.cmake
 lib/cmake/Qt6Scxml/Qt6ScxmlPlugins.cmake
 lib/cmake/Qt6Scxml/Qt6ScxmlTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/Qt6Scxml/Qt6ScxmlTargets.cmake
+lib/cmake/Qt6Scxml/Qt6ScxmlVersionlessAliasTargets.cmake
 lib/cmake/Qt6Scxml/Qt6ScxmlVersionlessTargets.cmake
 lib/cmake/Qt6ScxmlQml/Qt6ScxmlQmlAdditionalTargetInfo.cmake
 lib/cmake/Qt6ScxmlQml/Qt6ScxmlQmlConfig.cmake
@@ -140,6 +138,7 @@ lib/cmake/Qt6ScxmlQml/Qt6ScxmlQmlConfigVersionImpl.cmake
 lib/cmake/Qt6ScxmlQml/Qt6ScxmlQmlDependencies.cmake
 lib/cmake/Qt6ScxmlQml/Qt6ScxmlQmlTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/Qt6ScxmlQml/Qt6ScxmlQmlTargets.cmake
+lib/cmake/Qt6ScxmlQml/Qt6ScxmlQmlVersionlessAliasTargets.cmake
 lib/cmake/Qt6ScxmlQml/Qt6ScxmlQmlVersionlessTargets.cmake
 lib/cmake/Qt6ScxmlTools/Qt6ScxmlToolsAdditionalTargetInfo.cmake
 lib/cmake/Qt6ScxmlTools/Qt6ScxmlToolsConfig.cmake
@@ -156,6 +155,7 @@ lib/cmake/Qt6StateMachine/Qt6StateMachineConfigVersionImpl.cmake
 lib/cmake/Qt6StateMachine/Qt6StateMachineDependencies.cmake
 lib/cmake/Qt6StateMachine/Qt6StateMachineTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/Qt6StateMachine/Qt6StateMachineTargets.cmake
+lib/cmake/Qt6StateMachine/Qt6StateMachineVersionlessAliasTargets.cmake
 lib/cmake/Qt6StateMachine/Qt6StateMachineVersionlessTargets.cmake
 lib/cmake/Qt6StateMachineQml/Qt6StateMachineQmlAdditionalTargetInfo.cmake
 lib/cmake/Qt6StateMachineQml/Qt6StateMachineQmlConfig.cmake
@@ -164,6 +164,7 @@ lib/cmake/Qt6StateMachineQml/Qt6StateMachineQmlConfigVersionImpl.cmake
 lib/cmake/Qt6StateMachineQml/Qt6StateMachineQmlDependencies.cmake
 lib/cmake/Qt6StateMachineQml/Qt6StateMachineQmlTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/Qt6StateMachineQml/Qt6StateMachineQmlTargets.cmake
+lib/cmake/Qt6StateMachineQml/Qt6StateMachineQmlVersionlessAliasTargets.cmake
 lib/cmake/Qt6StateMachineQml/Qt6StateMachineQmlVersionlessTargets.cmake
 %%QT_LIBDIR%%/libQt6Scxml.prl
 %%QT_LIBDIR%%/libQt6Scxml.so
@@ -201,6 +202,7 @@ lib/cmake/Qt6StateMachineQml/Qt6StateMachineQmlVersionlessTargets.cmake
 %%QT_QMLDIR%%/QtScxml/libdeclarative_scxmlplugin.so
 %%QT_QMLDIR%%/QtScxml/plugins.qmltypes
 %%QT_QMLDIR%%/QtScxml/qmldir
+%%QT_SBOMDIR%%/qtscxml-%%FULLVER%%.spdx
 libdata/pkgconfig/Qt6Scxml.pc
 libdata/pkgconfig/Qt6ScxmlQml.pc
 libdata/pkgconfig/Qt6StateMachine.pc

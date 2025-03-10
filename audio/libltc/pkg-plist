@@ -1,5 +1,4 @@
 include/ltc.h
-lib/libltc.a
 lib/libltc.so
 lib/libltc.so.11
 lib/libltc.so.11.2.0

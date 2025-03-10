@@ -6,10 +6,13 @@ DISTNAME=	xlifepp-sources-v${DISTVERSION}-2022-04-22
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	XLiFE++: eXtended Library of Finite Elements in C++
-WWW=		https://uma.ensta-paristech.fr/soft/XLiFE++/
+WWW=		https://xlifepp.pages.math.cnrs.fr/ \
+		https://uma.ensta-paristech.fr/soft/XLiFE++/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
+
+BROKEN_FreeBSD_15=	compilation fails with clang-19, e-mailed to authors on 2024-11-03
 
 USES=		cmake compiler:c++11-lang eigen:3 fortran tar:tbz
 USE_CXXSTD=	c++11

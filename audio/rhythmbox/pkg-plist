@@ -2,6 +2,7 @@ bin/rhythmbox
 bin/rhythmbox-client
 include/rhythmbox/backends/rb-encoder.h
 include/rhythmbox/backends/rb-player-gst-filter.h
+include/rhythmbox/backends/rb-player-gst-helper.h
 include/rhythmbox/backends/rb-player-gst-tee.h
 include/rhythmbox/backends/rb-player.h
 include/rhythmbox/lib/libmediaplayerid/mediaplayerid.h
@@ -271,6 +272,16 @@ share/help/gl/rhythmbox/figures/rb-volume-changer.png
 share/help/gl/rhythmbox/figures/rb-window.png
 share/help/gl/rhythmbox/index.docbook
 share/help/gl/rhythmbox/legal.xml
+share/help/id/rhythmbox/figures/rb-iradio-main.png
+share/help/id/rhythmbox/figures/rb-notification-zone.png
+share/help/id/rhythmbox/figures/rb-podcast-main.png
+share/help/id/rhythmbox/figures/rb-toolbar-prevplaynext.png
+share/help/id/rhythmbox/figures/rb-toolbar-repeat.png
+share/help/id/rhythmbox/figures/rb-toolbar-shuffle.png
+share/help/id/rhythmbox/figures/rb-volume-changer.png
+share/help/id/rhythmbox/figures/rb-window.png
+share/help/id/rhythmbox/index.docbook
+share/help/id/rhythmbox/legal.xml
 share/help/it/rhythmbox/figures/rb-iradio-main.png
 share/help/it/rhythmbox/figures/rb-notification-zone.png
 share/help/it/rhythmbox/figures/rb-podcast-main.png
@@ -421,9 +432,11 @@ share/icons/hicolor/scalable/apps/org.gnome.Rhythmbox3.svg
 %%NLS%%share/locale/hr/LC_MESSAGES/rhythmbox.mo
 %%NLS%%share/locale/hu/LC_MESSAGES/rhythmbox.mo
 %%NLS%%share/locale/id/LC_MESSAGES/rhythmbox.mo
+%%NLS%%share/locale/ie/LC_MESSAGES/rhythmbox.mo
 %%NLS%%share/locale/is/LC_MESSAGES/rhythmbox.mo
 %%NLS%%share/locale/it/LC_MESSAGES/rhythmbox.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/rhythmbox.mo
+%%NLS%%share/locale/ka/LC_MESSAGES/rhythmbox.mo
 %%NLS%%share/locale/kk/LC_MESSAGES/rhythmbox.mo
 %%NLS%%share/locale/kn/LC_MESSAGES/rhythmbox.mo
 %%NLS%%share/locale/ko/LC_MESSAGES/rhythmbox.mo

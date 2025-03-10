@@ -9,9 +9,9 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multiboot EFI boot loader
 WWW=		https://www.gnu.org/software/grub/
 
-LICENSE=	GPLv3
+LICENSE=	GPLv3+
 
-RUN_DEPENDS=	${LOCALBASE}/bin/mformat:emulators/mtools \
+RUN_DEPENDS=	${LOCALBASE}/bin/mformat:filesystems/mtools \
 		${LOCALBASE}/bin/grub-mkrescue:sysutils/grub2-pcbsd
 BUILD_DEPENDS=	${LOCALBASE}/bin/flex:textproc/flex \
 		${LOCALBASE}/bin/bash:shells/bash \
@@ -21,19 +21,19 @@ ONLY_FOR_ARCHS=	amd64
 USES=		autoreconf:build bison cpe gettext gmake python tar:xz
 
 WRKSRC=		${WRKDIR}/grub-${PORTVERSION}
+INSTALL_WRKSRC=	${WRKSRC}/grub-core
 SSP_UNSAFE=	yes
-USE_GCC=	yes
+USE_GCC=	yes:build
 GNU_CONFIGURE=	yes
 MAKE_JOBS_UNSAFE=	yes
 
 CPE_PRODUCT=	grub
 CPE_VENDOR=	gnu
 
-CONFIGURE_ARGS=	--with-platform=efi --disable-werror --localedir=${PREFIX}/share/locale
+CONFIGURE_ARGS=	--with-platform=efi --disable-werror \
+		--localedir=${PREFIX}/share/locale
 CONFIGURE_ENV=	CPP="${CC} -E" \
 		LEX=${LOCALBASE}/bin/flex
-
-.include <bsd.port.pre.mk>
 
 post-patch:
 	@${LN} -s ${LOCALBASE}/share/fonts/dejavu/DejaVuSans.ttf ${WRKSRC}
@@ -44,11 +44,7 @@ pre-configure:
 	cd ${WRKSRC} && ./autogen.sh
 
 post-configure:
-	@${LN} -sfh /usr/include/machine /usr/include/sys /usr/include/x86 ${WRKSRC}/grub-core
+	@${LN} -sfh /usr/include/machine /usr/include/sys /usr/include/x86 \
+		${WRKSRC}/grub-core
 
-do-install:
-	@cd ${WRKSRC}/grub-core && ${GMAKE} install DESTDIR=${STAGEDIR}
-
-RUN_DEPENDS:=	${RUN_DEPENDS:Ngcc*}
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -4,7 +4,7 @@ PORTREVISION=	1
 CATEGORIES=	security
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
-MAINTAINER=	ygy@FreeBSD.org
+MAINTAINER=	uzsolt@FreeBSD.org
 COMMENT=	Query 'git' Credentials from 'R'
 WWW=		https://gitcreds.r-lib.org/
 

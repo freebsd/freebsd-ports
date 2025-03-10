@@ -372,6 +372,10 @@ post-install: .SILENT
 .if ${NVVERSION} < 545.000
 	${REINPLACE_CMD} -e '/libnvidia-gpucomp\.so/d' ${TMPPLIST}
 .endif
+.if ${NVVERSION} < 560.02803
+	${REINPLACE_CMD} -e '/nvidia_gsp_ga10x_fw\.ko/d' ${TMPPLIST}
+	${REINPLACE_CMD} -e '/nvidia_gsp_tu10x_fw\.ko/d' ${TMPPLIST}
+.endif
 
 .if ${NVVERSION} < 410.057
 # Rename some libraries and install a libmap file to resolve conflict with

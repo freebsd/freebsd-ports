@@ -1,0 +1,21 @@
+PORTNAME=			plakar
+DISTVERSIONPREFIX=	v
+DISTVERSION=		1.0.0
+DISTVERSIONSUFFIX=	-beta.3
+PORTREVISION=	1
+CATEGORIES=			archivers
+
+MAINTAINER=		lbartoletti@FreeBSD.org
+COMMENT=		Utility to create distributed, versioned backups
+WWW=			https://docs.plakar.io/
+
+LICENSE=		ISCL
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+USES=			go:modules,1.23
+GO_MODULE=		github.com/PlakarKorp/plakar
+GO_TARGET=		./cmd/${PORTNAME}
+
+PLIST_FILES=	bin/plakar
+
+.include <bsd.port.mk>

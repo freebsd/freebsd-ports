@@ -1,11 +1,11 @@
---- src/chrono/utils/ChSocket.h.orig	2023-01-27 07:56:29 UTC
+--- src/chrono/utils/ChSocket.h.orig	2024-11-10 05:46:37 UTC
 +++ src/chrono/utils/ChSocket.h
-@@ -21,7 +21,7 @@
- #if (defined _WIN32)
-     #define WINDOWS_XP
- #endif
+@@ -19,7 +19,7 @@
+ #ifndef CHSOCKET_H
+ #define CHSOCKET_H
+ 
 -#if (defined(__linux__) || defined(__APPLE__))
-+#if (defined(__linux__) || defined(__APPLE__) || defined(__FreeBSD__))
++#if (defined(__linux__) || defined(__FreeBSD__) || defined(__APPLE__))
      #define UNIX
  #endif
  

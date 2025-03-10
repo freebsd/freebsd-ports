@@ -1,4 +1,4 @@
---- examples/Makefile.orig	2024-01-10 06:42:56 UTC
+--- examples/Makefile.orig	2024-12-29 17:54:58 UTC
 +++ examples/Makefile
 @@ -89,7 +89,7 @@ SVERSION = $(VERSION1).$(VERSION2).$(VERSION3)
  VERSION3 = $(shell grep 'cimg_version\ ' ../CImg.h | tail -c2 | head -c1)
@@ -84,7 +84,7 @@
 +#LAPACK_LIBS = -lblas -llapack
  
  # Flags to enable the use of the Board library
- # ( https://github.com/c-koi/libboard )
+ # ( https://github.com/GreycLab/libboard )
  BOARD_DEFINE = -Dcimg_use_board
 -BOARD_INCDIR = -I/usr/include/board
 -BOARD_CFLAGS = $(BOARD_DEFINE) $(BOARD_INCDIR)
@@ -93,9 +93,9 @@
 +#BOARD_CFLAGS = $(BOARD_DEFINE) $(BOARD_INCDIR)
 +#BOARD_LIBS = -lboard
  
- # Flags to compile GIMP plug-ins.
- ifeq ($(MSYSTEM),MINGW32)
-@@ -372,6 +372,7 @@ $(XSHM_LIBS)" \
+ # Enable native support of WebP image files, using the WebP library.
+ # (https://chromium.googlesource.com/webm/libwebp/)
+@@ -379,6 +379,7 @@ $(XSHM_LIBS)" \
  $(HEIF_LIBS) \
  $(LAPACK_LIBS) \
  $(XSHM_LIBS)" \
@@ -103,7 +103,7 @@
  all $(EXTRA_FILES)
  
  # Linux/BSD/Mac OSX targets, with X11 display.
-@@ -452,6 +453,7 @@ $(OPT_CFLAGS) \
+@@ -459,6 +460,7 @@ $(OPT_CFLAGS) \
  	@$(MAKE) \
  "CONF_CFLAGS = \
  $(OPT_CFLAGS) \
@@ -111,24 +111,26 @@
  $(VT100_CFLAGS) \
  $(X11_CFLAGS) \
  $(XSHM_CFLAGS) \
-@@ -465,8 +467,11 @@ $(MAGICK_CFLAGS) \
+@@ -472,8 +474,12 @@ $(MAGICK_CFLAGS) \
  $(CURL_CFLAGS) \
  $(OPENCV_CFLAGS) \
  $(MAGICK_CFLAGS) \
 +$(LAPACK_CFLAGS) \
 +$(BOARD_CFLAGS) \
++$(WEBP_CFLAGS) \
  $(FFTW3_CFLAGS)" \
  "CONF_LIBS = \
 +$(FREEBSD_LDFLAGS) \
  $(X11_LIBS) \
  $(XSHM_LIBS) \
  $(XRANDR_LIBS) \
-@@ -479,6 +484,8 @@ $(MAGICK_LIBS) \
+@@ -486,6 +492,9 @@ $(MAGICK_LIBS) \
  $(CURL_LIBS) \
  $(OPENCV_LIBS) \
  $(MAGICK_LIBS) \
 +$(LAPACK_LIBS) \
 +$(BOARD_LIBS) \
++$(WEBP_LIBS) \
  $(FFTW3_LIBS)" \
  "STRIP_EXE=true" \
  all $(EXTRA_FILES)

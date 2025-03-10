@@ -1,5 +1,5 @@
 PORTNAME=	io-event
-PORTVERSION=	1.6.5
+PORTVERSION=	1.9.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -9,6 +9,7 @@ WWW=		https://socketry.github.io/io-event/ \
 		https://github.com/socketry/io-event
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/license.md
 
 USES=		gem
 

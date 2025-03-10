@@ -1,0 +1,5 @@
+TIMESTAMP = 1724673755
+SHA256 (rocky/l/libatomic-11.4.1-3.el9.aarch64.rpm) = 106c434658881d6bab022d4395cedbc2ba44c1730bdfead3b5590fc6789a8cef
+SIZE (rocky/l/libatomic-11.4.1-3.el9.aarch64.rpm) = 35915
+SHA256 (rocky/l/libatomic-11.4.1-3.el9.x86_64.rpm) = 31916e42763c30174ed94369f72a2d4afe5cdad9fbc94cf4f764ec2940b3f46a
+SIZE (rocky/l/libatomic-11.4.1-3.el9.x86_64.rpm) = 33442

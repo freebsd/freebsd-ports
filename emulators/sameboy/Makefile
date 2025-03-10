@@ -1,6 +1,7 @@
 PORTNAME=	sameboy
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.16.6
+DISTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	emulators games
 
 MAINTAINER=	eduardo@FreeBSD.org
@@ -12,11 +13,12 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	rgbds>0:devel/rgbds
 
-USES=		desktop-file-utils gl gmake pkgconfig sdl shared-mime-info
+USES=		desktop-file-utils gl gmake gnome pkgconfig sdl
 USE_GITHUB=	yes
 GH_ACCOUNT=	LIJI32
 GH_PROJECT=	SameBoy
 USE_GL=		gl
+USE_GNOME=	gdkpixbuf2
 USE_SDL=	sdl2
 
 MAKE_ARGS=	FREEDESKTOP=true \
@@ -33,9 +35,6 @@ LIBRETRO_DESC=	Build libretro core
 
 post-build-LIBRETRO-on:
 	@${DO_MAKE_BUILD} -C ${WRKSRC} libretro
-
-post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 post-install-LIBRETRO-on:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/libretro

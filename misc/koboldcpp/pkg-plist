@@ -1,0 +1,9 @@
+bin/koboldcpp
+%%DATADIR%%/kcpp_docs.embd
+%%DATADIR%%/kcpp_sdui.embd
+%%DATADIR%%/klite.embd
+%%DATADIR%%/koboldcpp.py
+%%DATADIR%%/rwkv_vocab.embd
+%%DATADIR%%/rwkv_world_vocab.embd
+%%DATADIR%%/taesd.embd
+%%DATADIR%%/taesd_xl.embd

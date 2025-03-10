@@ -1,5 +1,6 @@
 PORTNAME=	audacious-plugins
-DISTVERSION=	4.4
+DISTVERSION=	4.4.2
+PORTREVISION=	3
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://distfiles.audacious-media-player.org/
 
@@ -50,7 +51,8 @@ USE_XORG=	x11
 
 CONFIGURE_ENV=	LIBRARY_PATH="${LOCALBASE}/lib"
 MESON_ARGS=	-Dcoreaudio=false \
-		-Dmms=false
+		-Dmms=false \
+		-Dcdaudio-cddb=false
 MAKE_ENV=	LIBRARY_PATH="${LOCALBASE}/lib"
 
 .if ${FLAVOR} == qt5
@@ -101,8 +103,8 @@ OPTIONS_DEFINE=		AAC ADPLUG AMIDI BS2B CDDA CONSOLE CUE FFMPEG FLAC LAME \
 			LIRC MODPLUG MPG123 MPRIS NEON NLS NOTIFY OPENGL \
 			OPENMPT OPUS SAMPLERATE SCROBBLER SID SNDFILE SOXR \
 			SPEEDPITCH VORBIS WAVPACK
-OPTIONS_DEFAULT=	AAC ADPLUG CDDA CUE FFMPEG FILEWRITER FLAC MPG123 MPRIS \
-			NEON NLS NOTIFY OPENMPT OPUS OSS PIPEWIRE PULSEAUDIO \
+OPTIONS_DEFAULT=	AAC ADPLUG AMIDI CDDA CUE FFMPEG FILEWRITER FLAC JACK MPG123 \
+			MPRIS NEON NLS NOTIFY OPENMPT OPUS OSS PIPEWIRE PULSEAUDIO \
 			SCROBBLER SID VORBIS WAVPACK
 OPTIONS_MULTI=		OUTPUT
 OPTIONS_MULTI_OUTPUT=	ALSA FILEWRITER JACK OSS PIPEWIRE PULSEAUDIO SDL SNDIO
@@ -148,8 +150,7 @@ AOSD_MESON_TRUE=	aosd
 BS2B_LIB_DEPENDS=	libbs2b.so:audio/libbs2b
 BS2B_MESON_TRUE=	bs2b
 
-CDDA_LIB_DEPENDS=	libcddb.so:audio/libcddb \
-			libcdio.so:sysutils/libcdio \
+CDDA_LIB_DEPENDS=	libcdio.so:sysutils/libcdio \
 			libcdio_cdda.so:sysutils/libcdio-paranoia
 CDDA_MESON_TRUE=	cdaudio
 
@@ -267,10 +268,6 @@ MESON_ARGS+=	-Dfilewriter-ogg=false
 MESON_ARGS+=	-Dfilewriter-flac=false \
 		-Dfilewriter-mp3=false \
 		-Dfilewriter-ogg=false
-.endif
-
-.if ${PORT_OPTIONS:MCDDA}
-DEPRECATED=	CDDA depends on expired audio/libcddb
 .endif
 
 post-patch-NLS-off:

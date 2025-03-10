@@ -1,9 +1,11 @@
 @sample etc/exabgp/exabgp.env.sample
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/api-add-remove.conf
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/api-announce.conf
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api-announce-star.conf
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/api-announcement.conf
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/api-api.conf
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/api-attributes.conf
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api-attributes-path.conf
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/api-attributes-vpn.conf
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/api-broken-flow.conf
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/api-check.conf
@@ -16,6 +18,8 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/api-nexthop-self.conf
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/api-nexthop.conf
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/api-no-respawn.conf
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/run/api-announce-star.run
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/run/api-attributes-path.run
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/run/api-no-respawn-1.run
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/run/api-no-respawn-2.run
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/api-notification.conf

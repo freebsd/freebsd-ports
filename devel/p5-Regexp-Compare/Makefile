@@ -1,5 +1,5 @@
 PORTNAME=	Regexp-Compare
-PORTVERSION=	0.33
+PORTVERSION=	0.35
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -19,10 +19,8 @@ post-install:
 
 .include <bsd.port.pre.mk>
 
-# When support for 5.36 is added, keep the check and update to 5.37, as it
-# never supports the development branch
-.if ${PERL_LEVEL} >= 503600
-BROKEN=		does not support 5.36+
+.if ${PERL_LEVEL} >= 503900
+BROKEN=		only supports Perl 5.34 to 5.38
 .endif
 
 .include <bsd.port.post.mk>

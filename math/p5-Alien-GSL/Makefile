@@ -17,7 +17,7 @@ LIB_DEPENDS=	libgsl.so:math/gsl
 BUILD_DEPENDS=	p5-Alien-Build>=2.21:devel/p5-Alien-Build \
 		p5-PkgConfig>0:devel/p5-PkgConfig
 RUN_DEPENDS=	p5-Alien-Build>=2.21:devel/p5-Alien-Build
-TEST_DEPENDS=	p5-Test2-Suite>=0:devel/p5-Test2-Suite \
+TEST_DEPENDS=	p5-Test-Simple>=1.302200:devel/p5-Test-Simple \
 		p5-Alien-Build>=0:devel/p5-Alien-Build
 
 USES=		perl5

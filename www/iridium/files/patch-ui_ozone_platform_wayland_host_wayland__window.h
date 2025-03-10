@@ -1,6 +1,6 @@
---- ui/ozone/platform/wayland/host/wayland_window.h.orig	2024-08-01 05:47:53 UTC
+--- ui/ozone/platform/wayland/host/wayland_window.h.orig	2025-02-22 18:06:53 UTC
 +++ ui/ozone/platform/wayland/host/wayland_window.h
-@@ -41,7 +41,7 @@
+@@ -40,7 +40,7 @@
  #include "ui/platform_window/platform_window_init_properties.h"
  #include "ui/platform_window/wm/wm_drag_handler.h"
  
@@ -9,16 +9,16 @@
  #include "ui/ozone/platform/wayland/host/wayland_async_cursor.h"
  #endif
  
-@@ -269,7 +269,7 @@ class WaylandWindow : public PlatformWindow,
-     bool is_snapped_secondary = false;
-     bool is_floated = false;
-     bool is_pip = false;
+@@ -259,7 +259,7 @@ class WaylandWindow : public PlatformWindow,
+     bool is_activated = false;
+     bool is_minimized = false;
+     bool is_suspended = false;
 -#if BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
      WindowTiledEdges tiled_edges;
  #endif
  
-@@ -551,7 +551,7 @@ class WaylandWindow : public PlatformWindow,
+@@ -533,7 +533,7 @@ class WaylandWindow : public PlatformWindow,
  
    void UpdateCursorShape(scoped_refptr<BitmapCursor> cursor);
  
@@ -27,9 +27,9 @@
    void OnCursorLoaded(scoped_refptr<WaylandAsyncCursor> cursor,
                        scoped_refptr<BitmapCursor> bitmap_cursor);
  #endif
-@@ -620,7 +620,7 @@ class WaylandWindow : public PlatformWindow,
- 
-   wl::Object<zaura_surface> aura_surface_;
+@@ -603,7 +603,7 @@ class WaylandWindow : public PlatformWindow,
+   // the subsurface arrangement are played back by WaylandFrameManager.
+   base::LinkedList<WaylandSubsurface> subsurface_stack_committed_;
  
 -#if BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)

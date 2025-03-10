@@ -1,12 +1,13 @@
-PORTNAME=	putty
-DISTVERSION=	0.81
-PORTREVISION=	0
-#DISTVERSIONSUFFIX=	.0c59d49
-CATEGORIES=	security
-MASTER_SITES=	http://the.earth.li/~sgtatham/putty/${PORTVERSION}/ \
-		ftp://ftp.chiark.greenend.org.uk/users/sgtatham/putty-latest/ \
-		LOCAL/mandree/
-#MASTER_SITES=	https://tartarus.org/~simon/putty-prerel-snapshots/
+PORTNAME=		putty
+# https://tartarus.org/~simon/putty-prerel-snapshots/putty-0.83~pre20250105.1e45199.tar.gz
+DISTVERSION=		0.83
+PORTREVISION=		0
+#DISTVERSIONSUFFIX=	.ec158a2
+CATEGORIES=		security
+MASTER_SITES=		http://the.earth.li/~sgtatham/putty/${PORTVERSION}/ \
+			LOCAL/mandree/
+#MASTER_SITES=		https://tartarus.org/~simon/putty-prerel-snapshots/ \
+#			LOCAL/mandree/
 
 MAINTAINER=	mandree@FreeBSD.org
 COMMENT=	Secure shell and telnet client including xterm emulator
@@ -20,6 +21,8 @@ USES=		cmake cpe perl5 pkgconfig
 USE_PERL5=	build
 
 CONFLICTS_INSTALL?=	pssh* putty-nogtk*
+
+PATCH_STRIP=	-p1
 
 PLIST_FILES=	bin/pageant \
 		bin/plink \

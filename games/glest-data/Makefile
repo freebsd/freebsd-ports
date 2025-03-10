@@ -12,6 +12,7 @@ WWW=		https://www.glest.org/
 
 USES=		dos2unix zip
 DOS2UNIX_GLOB=	*.log *.ini *.html *.txt *.lng
+NO_ARCH=	yes
 NO_BUILD=	yes
 
 PLIST=		${WRKDIR}/pkg-plist

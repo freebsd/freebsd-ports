@@ -1,6 +1,6 @@
---- siplib.c.orig	2022-02-01 13:29:23 UTC
+--- siplib.c.orig	2024-12-12 10:01:35 UTC
 +++ siplib.c
-@@ -20,6 +20,12 @@
+@@ -12,6 +12,12 @@
  #include <Python.h>
  #include <datetime.h>
  #include <frameobject.h>

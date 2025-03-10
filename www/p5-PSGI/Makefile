@@ -10,7 +10,9 @@ MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Pod documentation for Perl Web Server Gateway Interface Specification
 WWW=		https://metacpan.org/release/PSGI
 
-USES=	perl5
+USES=		perl5
 USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>

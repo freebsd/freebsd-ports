@@ -2,7 +2,7 @@ PORTNAME=	kzip
 DISTVERSION=	20200115
 PORTREVISION=	1
 CATEGORIES=	archivers
-MASTER_SITES=	http://static.jonof.id.au/dl/kenutils/
+MASTER_SITES=	http://www.jonof.id.au/files/kenutils/
 DISTNAME=	kzipmix-${DISTVERSION}-bsd-static
 
 MAINTAINER=	rodrigo@FreeBSD.org

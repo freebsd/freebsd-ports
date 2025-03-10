@@ -1,8 +1,10 @@
 PORTNAME=	zipstream-ng
-DISTVERSION=	1.7.1
+DISTVERSION=	1.8.0
+PORTREVISION=	1
 CATEGORIES=	archivers python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	zipstream_ng-${PORTVERSION}
 
 MAINTAINER=	DtxdF@disroot.org
 COMMENT=	Modern and easy to use streamable zip file generator

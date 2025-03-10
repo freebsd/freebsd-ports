@@ -16,6 +16,8 @@ LIB_DEPENDS=	libboost_thread.so:devel/boost-libs
 USES=		python:3.9-3.11  # upper bound inherited from math/py-numpy
 USE_PYTHON=	flavors
 
+#LDFLAGS+=	-Wl,--as-needed
+
 OPTIONS_DEFINE=	DEBUG OPTIMIZED_CFLAGS
 
 .include "${.CURDIR}/../boost-all/common.mk"
@@ -28,6 +30,8 @@ MAKE_ENV+=	PYTHON_ROOT="${LOCALBASE}"\
 		PYTHON_LIB_PATH="${PYTHON_LIBDIR}"
 
 MAKE_ARGS+=	--with-python
+#MAKE_ARGS+=	--without-container
+#MAKE_ARGS+=	--without-graph
 ALL_TARGET=	stage
 
 .include <bsd.port.pre.mk>
@@ -42,9 +46,9 @@ pre-build:
 	@${ECHO_CMD} "using python : " ${PYTHON_VER} " : " ${PYTHON_CMD} " : " ${PYTHON_INCLUDEDIR} ";" >> ${WRKSRC}/tools/build/src/site-config.jam
 
 do-install:
-	@cd ${WRKSRC}/stage/lib && ${PAX} -rw -p p libboost* ${STAGEDIR}${PREFIX}/lib
-# For some reasons BJAM forget about the links
-	@cd ${WRKSRC}/stage/ && ${FIND} lib -type l | ${PAX} -rw -p p ${STAGEDIR}${PREFIX}
+	@cd ${WRKSRC}/stage/lib && ${PAX} -rw -p p libboost_numpy* ${STAGEDIR}${PREFIX}/lib
+	@cd ${WRKSRC}/stage/lib && ${PAX} -rw -p p libboost_python* ${STAGEDIR}${PREFIX}/lib
+
 # CMake part
 	@cd ${WRKSRC}/stage/lib && ${PAX} -rw -p p cmake/boost_numpy*/*-py${PYTHON_VER}.cmake ${STAGEDIR}${PREFIX}/lib
 	@cd ${WRKSRC}/stage/lib && ${PAX} -rw -p p cmake/boost_python*/*-py${PYTHON_VER}.cmake ${STAGEDIR}${PREFIX}/lib
@@ -67,7 +71,6 @@ post-install:
 		-e "s|%%PYTHON_INCLUDEDIR%%|${PYTHON_INCLUDEDIR}|g" \
 		-e "s|%%PYTHON_LIBDIR%%|${PYTHON_LIBDIR}|g" \
 		-e "s|%%PYTHON_VERSION%%|${PYTHON_VERSION}|g" ${PKGMESSAGE}
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libboost_numpy*.so.${BOOST_SHARED_LIB_VER}
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libboost_python*.so.${BOOST_SHARED_LIB_VER}
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libboost_*.so.${BOOST_SHARED_LIB_VER}
 
 .include <bsd.port.post.mk>

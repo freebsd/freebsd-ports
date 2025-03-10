@@ -1,12 +1,13 @@
 PORTNAME=	zlib-ng
-DISTVERSION=	2.2.1
+DISTVERSION=	2.2.4
 CATEGORIES=	archivers
 
 MAINTAINER=	vvd@FreeBSD.org
 COMMENT=	Fork of the zlib data compression library
-WWW=		https://github.com/zlib-ng/zlib-ng
+WWW=		https://github.com/zlib-ng/zlib-ng/
 
 LICENSE=	ZLIB
+LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 USES=		cmake:${TESTING} compiler:c11
 USE_GITHUB=	yes
@@ -14,7 +15,8 @@ USE_LDCONFIG=	yes
 
 PLIST_SUB=	SHLIB_VER=${DISTVERSION}
 
-OPTIONS_DEFINE=	SIMD TEST
+OPTIONS_DEFINE=		SIMD TEST
+OPTIONS_DEFAULT=	SIMD
 
 SIMD_CMAKE_BOOL=	WITH_OPTIM
 TEST_BUILD_DEPENDS=	googletest>=0:devel/googletest

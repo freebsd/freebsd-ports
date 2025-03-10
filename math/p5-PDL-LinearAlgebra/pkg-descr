@@ -1,0 +1,6 @@
+PDL::LinearAlgebra provides a convenient interface to PDL::LinearAlgebra::Real
+and PDL::LinearAlgebra::Complex. Since Blas and Lapack use a column major
+ordering scheme some routines here need to transpose matrices before calling
+fortran routines and transpose back (see the documentation of each routine). If
+you need optimized code use directly PDL::LinearAlgebra::Real and
+PDL::LinearAlgebra::Complex.

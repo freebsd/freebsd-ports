@@ -1,6 +1,6 @@
---- misc/os_spec.h.orig	2021-09-11 19:27:14 UTC
+--- misc/os_spec.h.orig	2023-02-10 20:29:06 UTC
 +++ misc/os_spec.h
-@@ -610,9 +610,8 @@ typedef int					BOOLEAN_INT;
+@@ -607,9 +607,8 @@ typedef int					BOOLEAN_INT;
     variants, this presumably extends to SH5 as well so we treat va_lists on 
     Super-H as scalars */
  

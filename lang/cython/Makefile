@@ -1,6 +1,6 @@
 PORTNAME=	cython
 PORTVERSION=	0.29.37
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang python
 MASTER_SITES=	PYPI \
 		https://github.com/cython/cython/releases/download/${PORTVERSION}/

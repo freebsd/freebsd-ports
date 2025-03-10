@@ -1,7 +1,7 @@
 PORTNAME=	sccache
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.2.15
-PORTREVISION=	29
+PORTREVISION=	35
 CATEGORIES=	ports-mgmt
 PKGNAMESUFFIX=	-overlay
 
@@ -398,8 +398,8 @@ CARGO_CRATES=	addr2line-0.14.1 \
 		zstd-sys-1.4.19+zstd.1.4.8
 CARGO_FEATURES=	--no-default-features
 QA_ENV=		IGNORE_QA_proxydeps=1
-LDFLAGS+=	-Wl,-rpath=\$$ORIGIN/../lib \
-		-Wl,-dynamic-linker,/tmp/sccache-overlay/ld-elf.so.1
+#LDFLAGS+=	-Wl,-rpath=\$$ORIGIN/lib \
+#		-Wl,-dynamic-linker,/tmp/sccache-overlay/ld-elf.so.1
 SUB_FILES=	pkg-message
 
 post-install:
@@ -408,7 +408,6 @@ post-install:
 		${STAGEDIR}${DATADIR}/overlay/lib
 	@${MV} ${STAGEDIR}${PREFIX}/bin/sccache \
 		${STAGEDIR}${DATADIR}/overlay/bin
-	@${STRIP_CMD} ${STAGEDIR}${DATADIR}/overlay/bin/sccache
 	${INSTALL_DATA} ${FILESDIR}/Mk/bsd.overlay.mk \
 		${STAGEDIR}${DATADIR}/overlay/Mk
 # rustc seems to have no support for fully static binaries on

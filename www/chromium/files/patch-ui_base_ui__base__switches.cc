@@ -1,7 +1,7 @@
---- ui/base/ui_base_switches.cc.orig	2023-10-11 18:22:24 UTC
+--- ui/base/ui_base_switches.cc.orig	2025-01-15 09:18:26 UTC
 +++ ui/base/ui_base_switches.cc
-@@ -31,13 +31,13 @@ const char kShowMacOverlayBorders[] = "show-mac-overla
- const char kEnableResourcesFileSharing[] = "enable-resources-file-sharing";
+@@ -24,13 +24,13 @@ const char kDisableModalAnimations[] = "disable-modal-
+ const char kShowMacOverlayBorders[] = "show-mac-overlay-borders";
  #endif
  
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
@@ -15,4 +15,4 @@
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
  // Specify the toolkit used to construct the Linux GUI.
  const char kUiToolkitFlag[] = "ui-toolkit";
- #endif
+ // Disables GTK IME integration.

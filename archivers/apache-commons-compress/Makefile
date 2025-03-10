@@ -1,5 +1,5 @@
 PORTNAME=	commons-compress
-PORTVERSION=	1.26.2
+PORTVERSION=	1.27.1
 CATEGORIES=	archivers java
 MASTER_SITES=	APACHE_COMMONS_BINARIES
 PKGNAMEPREFIX=	apache-
@@ -11,8 +11,7 @@ WWW=		https://commons.apache.org/proper/commons-compress/
 
 LICENSE=	APACHE20
 
-USE_JAVA=	yes
-JAVA_VERSION=	8+
+USES=		java
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 NO_BUILD=	yes

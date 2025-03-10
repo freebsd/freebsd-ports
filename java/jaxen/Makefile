@@ -9,7 +9,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Java XPath Engine
 WWW=		https://jaxen.org
 
-USE_JAVA=	YES
+USES=		java
+
 NO_BUILD=	YES
 
 JARFILES=	jaxen-core.jar jaxen-dom.jar jaxen-dom4j.jar jaxen-exml.jar jaxen-full.jar jaxen-jdom.jar lib/saxpath.jar

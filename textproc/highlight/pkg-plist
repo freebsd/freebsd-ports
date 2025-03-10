@@ -73,6 +73,7 @@ share/fish/vendor_completions.d/highlight.fish
 %%DATADIR%%/langDefs/cs_block_regex.lang
 %%DATADIR%%/langDefs/csharp.lang
 %%DATADIR%%/langDefs/css.lang
+%%DATADIR%%/langDefs/cue.lang
 %%DATADIR%%/langDefs/d.lang
 %%DATADIR%%/langDefs/dart.lang
 %%DATADIR%%/langDefs/delphi.lang
@@ -106,6 +107,7 @@ share/fish/vendor_completions.d/highlight.fish
 %%DATADIR%%/langDefs/gambas.lang
 %%DATADIR%%/langDefs/gdb.lang
 %%DATADIR%%/langDefs/gdscript.lang
+%%DATADIR%%/langDefs/gleam.lang
 %%DATADIR%%/langDefs/go.lang
 %%DATADIR%%/langDefs/graphviz.lang
 %%DATADIR%%/langDefs/haml.lang
@@ -255,6 +257,7 @@ share/fish/vendor_completions.d/highlight.fish
 %%DATADIR%%/langDefs/txt.lang
 %%DATADIR%%/langDefs/typescript.lang
 %%DATADIR%%/langDefs/upc.lang
+%%DATADIR%%/langDefs/v.lang
 %%DATADIR%%/langDefs/vala.lang
 %%DATADIR%%/langDefs/vb.lang
 %%DATADIR%%/langDefs/verilog.lang
@@ -444,6 +447,7 @@ share/fish/vendor_completions.d/highlight.fish
 %%DATADIR%%/themes/darkslategray.theme
 %%DATADIR%%/themes/darkspectrum.theme
 %%DATADIR%%/themes/denim.theme
+%%DATADIR%%/themes/diff.theme
 %%DATADIR%%/themes/duotone-dark-earth.theme
 %%DATADIR%%/themes/duotone-dark-forest.theme
 %%DATADIR%%/themes/duotone-dark-sea.theme

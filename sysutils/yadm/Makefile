@@ -1,11 +1,10 @@
 PORTNAME=	yadm
-PORTVERSION=	3.1.1
-PORTREVISION=	1
+PORTVERSION=	3.3.0
 CATEGORIES=	sysutils
 
 MAINTAINER=	vendion@gmail.com
 COMMENT=	Yet Another Dotfiles Manager
-WWW=		https://thelocehiliosan.github.io/yadm/
+WWW=		https://yadm.io/
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -16,7 +15,7 @@ RUN_DEPENDS=	bash:shells/bash \
 USES=		cpe
 CPE_VENDOR=	${PORTNAME}_project
 USE_GITHUB=	yes
-GH_ACCOUNT=	TheLocehiliosan
+GH_ACCOUNT=	yadm-dev
 
 PLIST_FILES=	bin/yadm \
 		share/man/man1/yadm.1.gz

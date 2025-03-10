@@ -12,11 +12,11 @@ WWW=		https://jode.sourceforge.net/
 BUILD_DEPENDS=	${GETOPT_JAR}:java/java-getopt
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
+USES=		gmake java perl5 shebangfix
+
 VENDOR_VERSION=	1.1.2-pre1
-USE_JAVA=	yes
 NEED_JAVAC=	yes
 GNU_CONFIGURE=	yes
-USES=		gmake perl5 shebangfix
 SHEBANG_FILES=	${WRKSRC}/jcpp
 USE_PERL5=	test
 MAKE_JOBS_UNSAFE=	yes

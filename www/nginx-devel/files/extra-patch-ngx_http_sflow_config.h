@@ -1,5 +1,5 @@
---- ../nginx-sflow-module-543c72a/ngx_http_sflow_config.h.orig	2012-07-31 21:36:49.000000000 +0400
-+++ ../nginx-sflow-module-543c72a/ngx_http_sflow_config.h	2012-07-31 21:37:20.000000000 +0400
+--- ../nginx-sflow-module-f15c87f/ngx_http_sflow_config.h.orig	2012-07-31 21:36:49.000000000 +0400
++++ ../nginx-sflow-module-f15c87f/ngx_http_sflow_config.h	2012-07-31 21:37:20.000000000 +0400
 @@ -17,7 +17,7 @@
    -----------------___________________________------------------
  */

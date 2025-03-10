@@ -1,6 +1,6 @@
 PORTNAME=	fbthrift
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2024.08.05.00
+DISTVERSION=	2025.03.03.00
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -9,6 +9,9 @@ WWW=		https://github.com/facebook/fbthrift
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+BROKEN_aarch64=	compilation fails, see https://github.com/facebook/fbthrift/issues/623
+BROKEN_armv7=	compilation fails, see https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=283484
 
 BUILD_DEPENDS=	range-v3>0:devel/range-v3
 LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
@@ -27,6 +30,7 @@ LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 		libsodium.so:security/libsodium \
 		libunwind.so:devel/libunwind \
 		libwangle.so:net/wangle \
+		libxxhash.so:devel/xxhash \
 		libzstd.so:archivers/zstd
 
 USES=		bison cmake:testing compiler:c++17-lang ssl

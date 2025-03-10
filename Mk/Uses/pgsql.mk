@@ -5,13 +5,13 @@
 #
 # version 	Maintainer can set versions required. You can set this to
 #		[min]-[max] or min+ or -max or as an explicit version
-#		(eg. 12-14 for [min]-[max], 12+ or 12-
+#		(eg. 14-16 for [min]-[max], 14+ or 16-
 #		for min+ and max-, 13 for an explicit version). Example:
 #
 #		    USES=pgsql:13		# Only use PostgreSQL 13
-#		    USES=pgsql:12+		# Use PostgreSQL 12 or newer
-#		    USES=pgsql:12-14	# Use PostgreSQL between 12 & 14 inclusive
-#		    USES=pgsql:12-		# Use any PostgreSQL up to 12
+#		    USES=pgsql:13+		# Use PostgreSQL 13 or newer
+#		    USES=pgsql:14-16	# Use PostgreSQL between 14 & 16 inclusive
+#		    USES=pgsql:14-		# Use any PostgreSQL up to 14
 #		    USES=pgsql		# Use the default PostgreSQL
 #
 #		WANT_PGSQL=	server[:fetch] plperl plpython pltcl
@@ -39,7 +39,7 @@ _INCLUDE_USES_PGSQL_MK=	yes
 
 # When adding a version, please keep the comment in
 # Mk/bsd.default-versions.mk in sync.
-VALID_PGSQL_VER=	12 13 14 15 16
+VALID_PGSQL_VER=	13 14 15 16 17
 
 # Override non-default LIBVERS like this:
 #PGSQL99_LIBVER=6

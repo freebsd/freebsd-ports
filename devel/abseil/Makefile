@@ -1,5 +1,5 @@
 PORTNAME=	abseil
-PORTVERSION=	20240722.0
+PORTVERSION=	20250127.0
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/abseil/abseil-cpp/releases/download/${PORTVERSION}/
 DISTNAME=	${PORTNAME}-cpp-${PORTVERSION}
@@ -9,6 +9,7 @@ COMMENT=	Abseil Common Libraries (C++)
 WWW=		https://abseil.io/
 
 LICENSE=	APACHE20
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		cmake compiler:c++17-lang pathfix
 CMAKE_ARGS=	-DBUILD_SHARED_LIBS:BOOL=ON \

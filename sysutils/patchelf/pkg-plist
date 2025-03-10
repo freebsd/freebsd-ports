@@ -1,3 +1,4 @@
 bin/patchelf
-share/man/man1/patchelf.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/README.md
+share/man/man1/patchelf.1.gz
+share/zsh/site-functions/_patchelf

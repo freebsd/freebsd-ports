@@ -1,6 +1,0 @@
-The sqlfs filesystem implements a POSIX style file system on top of an SQLite
-database. It allows applications to have access to a full read/write
-file system in a single file, complete with its own file hierarchy and name
-space.  This is useful for applications which needs structured storage, such
-as embedding documents within documents, or management of configuration
-data or preferences.

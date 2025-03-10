@@ -1,9 +1,8 @@
 PORTNAME=	clblast
-PORTVERSION=	1.1.0
-PORTREVISION=	4
+PORTVERSION=	1.6.3
 CATEGORIES=	math
 
-MAINTAINER=	jmd@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Modern, lightweight, performant and tunable OpenCL BLAS library
 WWW=		https://github.com/CNugteren/CLBlast
 
@@ -19,7 +18,13 @@ GH_ACCOUNT=	CNugteren
 GH_PROJECT=	CLBlast
 
 USES=		cmake
-USE_GCC=	yes
 USE_LDCONFIG=	yes
+PLIST_SUB=	VER=${PORTVERSION}
+
+OPTIONS_DEFINE=		TEST
+OPTIONS_SUB=		yes
+TEST_CMAKE_BOOL=	TESTS
+TEST_LIB_DEPENDS=	libcblas.so:math/cblas	\
+			libclBLAS.so:math/clblas
 
 .include <bsd.port.mk>

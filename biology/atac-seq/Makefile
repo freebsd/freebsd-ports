@@ -27,7 +27,7 @@ USES=		metaport python
 
 .include <bsd.port.options.mk>
 
-.if ${OPSYS} != FreeBSD || ${OSVERSION} >= 1302509
+.if ${OPSYS} != FreeBSD
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}MACS3>0:biology/py-macs3@${PY_FLAVOR}
 .endif
 

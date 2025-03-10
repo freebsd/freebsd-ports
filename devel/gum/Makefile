@@ -1,7 +1,7 @@
 PORTNAME=	gum
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.14.1
-PORTREVISION=	1
+DISTVERSION=	0.15.2
+PORTREVISION=	2
 CATEGORIES=	devel
 
 MAINTAINER=	dave@bitboss.ca
@@ -11,7 +11,7 @@ WWW=		https://github.com/charmbracelet/gum
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:modules
+USES=		go:1.23,modules
 GO_MODULE=	github.com/charmbracelet/gum
 
 PLIST_FILES=	bin/gum \

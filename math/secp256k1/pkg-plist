@@ -2,11 +2,12 @@ include/secp256k1.h
 include/secp256k1_ecdh.h
 include/secp256k1_ellswift.h
 include/secp256k1_extrakeys.h
+include/secp256k1_musig.h
 include/secp256k1_preallocated.h
 include/secp256k1_recovery.h
 include/secp256k1_schnorrsig.h
 lib/libsecp256k1.a
 lib/libsecp256k1.so
-lib/libsecp256k1.so.2
-lib/libsecp256k1.so.2.2.0
+lib/libsecp256k1.so.5
+lib/libsecp256k1.so.5.0.0
 libdata/pkgconfig/libsecp256k1.pc

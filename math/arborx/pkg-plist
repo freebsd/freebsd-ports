@@ -39,6 +39,7 @@ include/ArborX/details/ArborX_DetailsTreeTraversal.hpp
 include/ArborX/details/ArborX_DetailsTreeVisualization.hpp
 include/ArborX/details/ArborX_DetailsUnionFind.hpp
 include/ArborX/details/ArborX_DetailsUtils.hpp
+include/ArborX/details/ArborX_DetailsVector.hpp
 include/ArborX/details/ArborX_DetailsWeightedEdge.hpp
 include/ArborX/details/ArborX_Exception.hpp
 include/ArborX/details/ArborX_IndexableGetter.hpp
@@ -61,6 +62,7 @@ include/ArborX/geometry/ArborX_KDOP.hpp
 include/ArborX/geometry/ArborX_Point.hpp
 include/ArborX/geometry/ArborX_Ray.hpp
 include/ArborX/geometry/ArborX_Sphere.hpp
+include/ArborX/geometry/ArborX_Tetrahedron.hpp
 include/ArborX/interpolation/ArborX_InterpMovingLeastSquares.hpp
 include/ArborX/interpolation/details/ArborX_InterpDetailsCompactRadialBasisFunction.hpp
 include/ArborX/interpolation/details/ArborX_InterpDetailsMovingLeastSquaresCoefficients.hpp
@@ -68,11 +70,13 @@ include/ArborX/interpolation/details/ArborX_InterpDetailsPolynomialBasis.hpp
 include/ArborX/interpolation/details/ArborX_InterpDetailsSymmetricPseudoInverseSVD.hpp
 include/ArborX/kokkos_ext/ArborX_DetailsKokkosExtAccessibilityTraits.hpp
 include/ArborX/kokkos_ext/ArborX_DetailsKokkosExtArithmeticTraits.hpp
+include/ArborX/kokkos_ext/ArborX_DetailsKokkosExtKernelStdAlgorithms.hpp
 include/ArborX/kokkos_ext/ArborX_DetailsKokkosExtMinMaxOperations.hpp
 include/ArborX/kokkos_ext/ArborX_DetailsKokkosExtMinMaxReduce.hpp
 include/ArborX/kokkos_ext/ArborX_DetailsKokkosExtSort.hpp
 include/ArborX/kokkos_ext/ArborX_DetailsKokkosExtStdAlgorithms.hpp
 include/ArborX/kokkos_ext/ArborX_DetailsKokkosExtSwap.hpp
+include/ArborX/kokkos_ext/ArborX_DetailsKokkosExtUninitializedMemoryAlgorithms.hpp
 include/ArborX/kokkos_ext/ArborX_DetailsKokkosExtVersion.hpp
 include/ArborX/kokkos_ext/ArborX_DetailsKokkosExtViewHelpers.hpp
 lib/cmake/ArborX/ArborXConfig.cmake

@@ -1,6 +1,6 @@
 PORTNAME=	bugwarrior
 PORTVERSION=	1.8.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	deskutils python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -55,7 +55,7 @@ RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}typing-extensions>0:devel/py-typing-extensi
 .endif
 
 .if ${PYTHON_REL} > 30900
-BROKEN=		python-3.9 is not supported
+BROKEN=		python-3.9 or later is not supported
 .endif
 
 do-test:

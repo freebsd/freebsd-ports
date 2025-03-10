@@ -6,7 +6,8 @@ CATEGORIES=	graphics
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	C library for reading virtual slide images
-WWW=		https://openslide.org/
+WWW=		https://openslide.org \
+		https://github.com/openslide/openslide
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING.LESSER

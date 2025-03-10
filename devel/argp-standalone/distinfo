@@ -1,5 +1,3 @@
-TIMESTAMP = 1652259717
-SHA256 (argp-standalone-argp-standalone-1.5.0_GH0.tar.gz) = c29eae929dfebd575c38174f2c8c315766092cec99a8f987569d0cad3c6d64f6
-SIZE (argp-standalone-argp-standalone-1.5.0_GH0.tar.gz) = 65889
-SHA256 (e4b42480f6fd63a117e1d8a3d90fb69434133c28.patch) = 3538a55072f87ff1efe6215569f32b59bdc65b2c149ad4da30ab2dfd625c33c8
-SIZE (e4b42480f6fd63a117e1d8a3d90fb69434133c28.patch) = 1568
+TIMESTAMP = 1724084500
+SHA256 (argp-standalone-argp-standalone-1.5.0-8ded2bc_GH0.tar.gz) = 727e8b913b185c3fb6e8b3cc02831b5c796a435c4380a766d18ca62dd1132810
+SIZE (argp-standalone-argp-standalone-1.5.0-8ded2bc_GH0.tar.gz) = 54517

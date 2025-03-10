@@ -30,6 +30,8 @@ share/icons/hicolor/64x64/apps/kubrick.png
 %%DATADIR%%/p333X2.kbk
 %%DATADIR%%/p333X6.kbk
 %%DATADIR%%/themes/default.svgz
+share/locale/ar/LC_MESSAGES/kubrick.mo
+share/locale/ast/LC_MESSAGES/kubrick.mo
 share/locale/bg/LC_MESSAGES/kubrick.mo
 share/locale/bs/LC_MESSAGES/kubrick.mo
 share/locale/ca/LC_MESSAGES/kubrick.mo
@@ -47,8 +49,10 @@ share/locale/fi/LC_MESSAGES/kubrick.mo
 share/locale/fr/LC_MESSAGES/kubrick.mo
 share/locale/ga/LC_MESSAGES/kubrick.mo
 share/locale/gl/LC_MESSAGES/kubrick.mo
+share/locale/he/LC_MESSAGES/kubrick.mo
 share/locale/hr/LC_MESSAGES/kubrick.mo
 share/locale/hu/LC_MESSAGES/kubrick.mo
+share/locale/ia/LC_MESSAGES/kubrick.mo
 share/locale/id/LC_MESSAGES/kubrick.mo
 share/locale/is/LC_MESSAGES/kubrick.mo
 share/locale/it/LC_MESSAGES/kubrick.mo
@@ -84,4 +88,5 @@ share/locale/uk/LC_MESSAGES/kubrick.mo
 share/locale/zh_CN/LC_MESSAGES/kubrick.mo
 share/locale/zh_TW/LC_MESSAGES/kubrick.mo
 share/metainfo/org.kde.kubrick.appdata.xml
-share/qlogging-categories5/kubrick.categories
+share/qlogging-categories6/kubrick.categories
+share/qlogging-categories6/kubrick.renamecategories

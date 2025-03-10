@@ -1,5 +1,5 @@
 PORTNAME=	groonga
-DISTVERSION=	13.0.5
+DISTVERSION=	13.1.1
 CATEGORIES=	textproc
 MASTER_SITES=	https://packages.groonga.org/source/groonga/
 
@@ -38,7 +38,6 @@ MECAB_CONFIGURE_OFF=	--without-mecab
 RUBY_RUN_DEPENDS=	rubygem-bundler>=0:sysutils/rubygem-bundler
 RUBY_USES=		ruby
 RUBY_CONFIGURE_ON=	--enable-mruby
-SUGGEST_BROKEN=		"Does not build with libzmq4"
 SUGGEST_LIB_DEPENDS=	libevent.so:devel/libevent \
 			libmsgpackc.so:devel/msgpack-c \
 			libzmq.so:net/libzmq4

@@ -1,6 +1,6 @@
 PORTNAME=	munin
 PORTVERSION=	${MUNIN_VERSION}
-PORTREVISION=	2
+PORTREVISION=	0
 CATEGORIES=	sysutils perl5
 PKGNAMESUFFIX=	-node
 
@@ -55,10 +55,8 @@ PERL_DESC=	Include all Perl modules (adds dependencies)
 PYTHON_DESC=	Include Python plugins
 SNMP_DESC=	Include SNMP plugins
 
-JAVA_USE=		JAVA=yes
+JAVA_USES=		java
 JAVA_INSTALL_TARGET=	install-plugins-java
-JAVA_VARS=		JAVA_BUILD=yes \
-			JAVA_RUN=yes
 
 PERL_RUN_DEPENDS=	p5-DBD-Pg>=0:databases/p5-DBD-Pg \
 			p5-Net-DNS>=0:dns/p5-Net-DNS \

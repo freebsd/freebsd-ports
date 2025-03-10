@@ -26,8 +26,6 @@
 %%DATADIR%%/%%ZABBIX_BUILD%%/database/postgresql/timescaledb/option-patches/without-compression/history_upgrade_uint.sql
 %%DATADIR%%/%%ZABBIX_BUILD%%/database/postgresql/timescaledb/option-patches/without-compression/trends_upgrade.sql
 %%DATADIR%%/%%ZABBIX_BUILD%%/database/postgresql/timescaledb/schema.sql
-%%DATADIR%%/%%ZABBIX_BUILD%%/database/sqlite3/data.sql
-%%DATADIR%%/%%ZABBIX_BUILD%%/database/sqlite3/images.sql
 %%DATADIR%%/%%ZABBIX_BUILD%%/database/sqlite3/schema.sql
 @sample %%ETCDIR%%/zabbix_%%ZABBIX_BUILD%%.conf.sample
 %%PROXY%%bin/zabbix_proxy_js

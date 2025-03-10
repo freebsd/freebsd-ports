@@ -1,5 +1,5 @@
 PORTNAME=	Debug-Client
-PORTVERSION=	0.31
+PORTVERSION=	0.34
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -13,7 +13,7 @@ LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-PadWalker>=1.98:devel/p5-PadWalker \
-		p5-Term-ReadLine-Gnu>=1.20:devel/p5-Term-ReadLine-Gnu
+		p5-Term-ReadLine-Gnu>=1.24:devel/p5-Term-ReadLine-Gnu
 TEST_DEPENDS=	p5-File-HomeDir>=1:devel/p5-File-HomeDir \
 		p5-Test-CheckDeps>=0.010:devel/p5-Test-CheckDeps \
 		p5-Test-Class>=0.42:devel/p5-Test-Class \

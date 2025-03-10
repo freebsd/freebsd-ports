@@ -1,10 +1,10 @@
 PORTNAME=	dbvis
-DISTVERSION=	13.0.4
+DISTVERSION=	24.3.3
 CATEGORIES=	java databases
 MASTER_SITES=	https://www.dbvis.com/product_download/${PORTNAME}-${PORTVERSION}/media/
 DISTNAME=	dbvis_linux_${PORTVERSION:S/./_/g}
 
-MAINTAINER=	jim@ohlste.in
+MAINTAINER=	vvd@FreeBSD.org
 COMMENT=	DbVisualizer database tool
 WWW=		https://www.dbvis.com/
 
@@ -14,8 +14,10 @@ LICENSE_TEXT=	Full license can be found at https://www.dbvis.com/eula/
 # Redistribution is not permitted
 LICENSE_PERMS=	auto-accept
 
-USE_JAVA=	yes
+USES=		java
+JAVA_VERSION=	21+
 JAVA_VENDOR=	openjdk
+
 NO_BUILD=	yes
 
 WRKSRC=		${WRKDIR}/DbVisualizer

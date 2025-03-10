@@ -1,6 +1,5 @@
 PORTNAME=	ocsinventory-server
-PORTVERSION=	2.12.1
-PORTREVISION=	1
+PORTVERSION=	2.13.0
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	dgeo@centrale-med.fr

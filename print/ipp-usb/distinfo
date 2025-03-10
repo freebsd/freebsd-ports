@@ -1,5 +1,5 @@
-TIMESTAMP = 1683046675
-SHA256 (OpenPrinting-ipp-usb-0.9.23_GH0.tar.gz) = 81f325abc45b4d2b8812022d93dfcebc807c2b0688e2a9f7052f0bddfadf5b01
-SIZE (OpenPrinting-ipp-usb-0.9.23_GH0.tar.gz) = 73151
-SHA256 (OpenPrinting-goipp-v1.0.0_GH0.tar.gz) = b0ffbd093af6407fe4695075d9a022d23948b9762d2a9e39a2fbb7e9bf474b32
-SIZE (OpenPrinting-goipp-v1.0.0_GH0.tar.gz) = 31764
+TIMESTAMP = 1705993200
+SHA256 (OpenPrinting-ipp-usb-0.9.24_GH0.tar.gz) = e20785f9720f7d19fae9cfccb5cc3c18617d99b03da4eb94ec9df6af37abe354
+SIZE (OpenPrinting-ipp-usb-0.9.24_GH0.tar.gz) = 80064
+SHA256 (OpenPrinting-goipp-v1.1.0_GH0.tar.gz) = 5ab70b8e334efb98988fb77ce33ff44530bcca89480e01622413d94fc1daf4bf
+SIZE (OpenPrinting-goipp-v1.1.0_GH0.tar.gz) = 39615

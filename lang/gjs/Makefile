@@ -1,5 +1,5 @@
 PORTNAME=	gjs
-PORTVERSION=	1.76.2
+PORTVERSION=	1.76.3
 CATEGORIES=	lang gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
@@ -27,5 +27,8 @@ USE_LDCONFIG=	yes
 
 CONFIGURE_ENV=	PYTHONDONTWRITEBYTECODE=1
 MAKE_ENV=	PYTHONDONTWRITEBYTECODE=1
+
+post-patch:
+	${REINPLACE_CMD} -e "s|'--warn-error'|''|" ${WRKSRC}/meson.build
 
 .include <bsd.port.mk>

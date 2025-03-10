@@ -1,19 +1,14 @@
 bin/drkonqi-sentry-data
 lib/libexec/drkonqi
 lib/libexec/drkonqi-sentry-postman
-lib/systemd/user/default.target.wants/drkonqi-sentry-postman.path
-lib/systemd/user/drkonqi-sentry-postman.path
-lib/systemd/user/drkonqi-sentry-postman.service
-lib/systemd/user/drkonqi-sentry-postman.timer
-lib/systemd/user/plasma-core.target.wants/drkonqi-sentry-postman.path
-lib/systemd/user/plasma-core.target.wants/drkonqi-sentry-postman.timer
-lib/systemd/user/timers.target.wants/drkonqi-sentry-postman.timer
+@comment lib/systemd/user/default.target.wants/drkonqi-sentry-postman.path
+@comment lib/systemd/user/drkonqi-sentry-postman.path
+@comment lib/systemd/user/drkonqi-sentry-postman.service
+@comment lib/systemd/user/drkonqi-sentry-postman.timer
+@comment lib/systemd/user/plasma-core.target.wants/drkonqi-sentry-postman.path
+@comment lib/systemd/user/plasma-core.target.wants/drkonqi-sentry-postman.timer
+@comment lib/systemd/user/timers.target.wants/drkonqi-sentry-postman.timer
 share/applications/org.kde.drkonqi.desktop
-%%DATADIR%%/debuggers/external.mac/lldbrc
-%%DATADIR%%/debuggers/external/gdbrc
-%%DATADIR%%/debuggers/external/lldbrc
-%%DATADIR%%/debuggers/internal/gdbrc
-%%DATADIR%%/debuggers/internal/lldbrc
 %%DATADIR%%/gdb/python/gdb_preamble/__init__.py
 %%DATADIR%%/gdb/python/gdb_preamble/preamble.py
 %%DATADIR%%/mappings
@@ -84,6 +79,7 @@ share/locale/pt/LC_MESSAGES/drkonqi.mo
 share/locale/pt_BR/LC_MESSAGES/drkonqi.mo
 share/locale/ro/LC_MESSAGES/drkonqi.mo
 share/locale/ru/LC_MESSAGES/drkonqi.mo
+share/locale/sa/LC_MESSAGES/drkonqi.mo
 share/locale/se/LC_MESSAGES/drkonqi.mo
 share/locale/si/LC_MESSAGES/drkonqi.mo
 share/locale/sk/LC_MESSAGES/drkonqi.mo

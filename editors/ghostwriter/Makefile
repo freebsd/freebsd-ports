@@ -1,50 +1,21 @@
 PORTNAME=	ghostwriter
-DISTVERSION=	24.02.2
-CATEGORIES=	editors kde
+DISTVERSION=	${KDE_APPLICATIONS_VERSION}
+CATEGORIES=	editors kde kde-applications
 
-MAINTAINER=	madpilot@FreeBSD.org
+MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Distraction-free Markdown editor
 WWW=		https://ghostwriter.kde.org/
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libhunspell-1.7.so:textproc/hunspell
-
-FLAVORS=	qt5 qt6
-FLAVOR?=	qt5
-qt5_PKGNAMESUFFIX=
-qt6_PKGNAMESUFFIX=	-qt6
-qt5_CONFLICTS_INSTALL=	${PORTNAME}-qt6
-qt6_CONFLICTS_INSTALL=	${PORTNAME}
-
-USES=		cmake compiler:c++11-lang desktop-file-utils pkgconfig
-USE_KDE=	configwidgets coreaddons doctools ecm:build sonnet widgetsaddons xmlgui
-
-.if ${FLAVOR} == qt5
-USES+=		kde:5 qt:5
-USE_QT=		buildtools:build core gui linguisttools:build qmake:build \
-		webchannel webengine widgets
-.else
-CMAKE_ARGS=	-DBUILD_WITH_QT6=ON \
-		-DQT_MAJOR_VERSION=6
-USES+=		kde:6 qt:6
-USE_QT=		5compat base svg tools:build webchannel webengine
-.endif
-
+USES=		cmake compiler:c++20-lang desktop-file-utils \
+		kde:6 qt:6 tar:xz
+USE_KDE=	configwidgets coreaddons sonnet widgetsaddons xmlgui \
+		doctools:build ecm:build
+USE_QT=		base svg webchannel webengine \
+		tools:build
 # cf. PR 224488
 LDFLAGS+=	-Wl,--as-needed
-
-KDE_INVENT=	bb8b9454e5344a0aa20803881816211834dec31b office
-
-OPTIONS_DEFINE=		CMARK PANDOC
-OPTIONS_DEFAULT=	CMARK PANDOC
-
-CMARK_DESC=		Add runtime dependency on cmark parser
-PANDOC_DESC=		Add runtime dependency on pandoc parser
-
-CMARK_BUILD_DEPENDS=	cmark>0:textproc/cmark
-
-PANDOC_BUILD_DEPENDS=	hs-pandoc>0:textproc/hs-pandoc
 
 .include <bsd.port.mk>

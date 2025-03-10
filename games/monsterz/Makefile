@@ -1,33 +1,28 @@
 PORTNAME=	monsterz
-PORTVERSION=	0.7.1
-PORTREVISION=	17
+PORTVERSION=	0.8
+DISTVERSIONPREFIX=	v
 CATEGORIES=	games
-MASTER_SITES=	http://sam.zoy.org/monsterz/ \
-		SF/nemysisfreebsdp/:icons
-DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX} \
-		${PORTNAME}.png:icons
-EXTRACT_ONLY=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Arcade puzzle game
-WWW=		http://sam.zoy.org/monsterz/
+WWW=		https://github.com/0-wiz-0/monsterz
 
 LICENSE=	WTFPL
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	${PYGAME}
 
+USE_GITHUB=	yes
+GH_ACCOUNT=	0-wiz-0
+
 USES=		python shebangfix
 SHEBANG_FILES=	monsterz.py
 MAKE_ENV=	prefix=${PREFIX}
 
-PORTDOCS=	AUTHORS README TODO
+PORTDOCS=	AUTHORS README.md TODO
 
 SCOREDIR=	/var/games
 PLIST_SUB=	SCOREDIR=${SCOREDIR}
-
-DESKTOP_ENTRIES="Monsterz" "${COMMENT}" "${PORTNAME}" \
-		"${PORTNAME}" "Game;ArcadeGame;" false
 
 OPTIONS_DEFINE=	DOCS
 
@@ -45,7 +40,6 @@ post-install:
 		-f ${DATADIR:S;${PREFIX}/;;}	\
 	&& ${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py -d ${DATADIR}\
 		-f ${DATADIR:S;${PREFIX}/;;})
-	${INSTALL_DATA} ${_DISTDIR}/${PORTNAME}.png ${STAGEDIR}${PREFIX}/share/pixmaps/
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/monsterz
 
 post-install-DOCS-on:

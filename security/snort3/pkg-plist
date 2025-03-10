@@ -104,6 +104,7 @@ include/snort/main/analyzer_command.h
 include/snort/main/policy.h
 include/snort/main/reload_tracker.h
 include/snort/main/reload_tuner.h
+include/snort/main/snort.h
 include/snort/main/snort_config.h
 include/snort/main/snort_types.h
 include/snort/main/thread.h
@@ -128,6 +129,7 @@ include/snort/network_inspectors/appid/application_ids.h
 include/snort/network_inspectors/appid/tp_appid_module_api.h
 include/snort/network_inspectors/appid/tp_appid_session_api.h
 include/snort/network_inspectors/appid/tp_appid_types.h
+include/snort/network_inspectors/extractor/extractor_enums.h
 include/snort/network_inspectors/reputation/reputation_common.h
 include/snort/network_inspectors/rna/rna_cpe_os.h
 include/snort/network_inspectors/rna/rna_fingerprint.h
@@ -194,6 +196,7 @@ include/snort/pub_sub/eve_process_event.h
 include/snort/pub_sub/expect_events.h
 include/snort/pub_sub/external_event_ids.h
 include/snort/pub_sub/finalize_packet_event.h
+include/snort/pub_sub/ftp_events.h
 include/snort/pub_sub/http_event_ids.h
 include/snort/pub_sub/http_events.h
 include/snort/pub_sub/http_request_body_event.h
@@ -204,6 +207,7 @@ include/snort/pub_sub/opportunistic_tls_event.h
 include/snort/pub_sub/packet_events.h
 include/snort/pub_sub/reputation_events.h
 include/snort/pub_sub/rna_events.h
+include/snort/pub_sub/shadowtraffic_aggregator.h
 include/snort/pub_sub/sip_events.h
 include/snort/pub_sub/smb_events.h
 include/snort/pub_sub/ssh_events.h
@@ -211,6 +215,11 @@ include/snort/pub_sub/ssl_events.h
 include/snort/pub_sub/stream_event_ids.h
 include/snort/search_engines/search_common.h
 include/snort/search_engines/search_tool.h
+include/snort/service_inspectors/ftp_telnet/ftp_data.h
+include/snort/service_inspectors/ftp_telnet/ftp_module.h
+include/snort/service_inspectors/ftp_telnet/ftpdata_splitter.h
+include/snort/service_inspectors/ftp_telnet/ftpp_ui_config.h
+include/snort/service_inspectors/ftp_telnet/kmap.h
 include/snort/service_inspectors/http2_inspect/http2_huffman_state_machine.h
 include/snort/service_inspectors/http2_inspect/http2_varlen_int_decode.h
 include/snort/service_inspectors/http2_inspect/http2_varlen_int_decode_impl.h
@@ -226,6 +235,7 @@ include/snort/service_inspectors/ssl/ssl_flow_data.h
 include/snort/sfip/sf_cidr.h
 include/snort/sfip/sf_ip.h
 include/snort/sfip/sf_returns.h
+include/snort/stream/flush_bucket.h
 include/snort/stream/paf.h
 include/snort/stream/pafng.h
 include/snort/stream/stream.h
@@ -271,6 +281,7 @@ libdata/pkgconfig/snort.pc
 %%PORTDOCS%%%%DOCSDIR%%/enviro.txt
 %%PORTDOCS%%%%DOCSDIR%%/errors.txt
 %%PORTDOCS%%%%DOCSDIR%%/extending.txt
+%%PORTDOCS%%%%DOCSDIR%%/extractor.txt
 %%PORTDOCS%%%%DOCSDIR%%/features.txt
 %%PORTDOCS%%%%DOCSDIR%%/file_processing.txt
 %%PORTDOCS%%%%DOCSDIR%%/ftp.txt

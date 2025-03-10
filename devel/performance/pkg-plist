@@ -30,4 +30,4 @@ GNUstep/System/Library/Headers/Performance/GSTicker.h
 GNUstep/System/Library/Headers/Performance/GSUniqued.h
 GNUstep/System/Library/Libraries/libPerformance.so
 GNUstep/System/Library/Libraries/libPerformance.so.%%VERSION%%
-GNUstep/System/Library/Libraries/libPerformance.so.0.5
+GNUstep/System/Library/Libraries/libPerformance.so.0.6

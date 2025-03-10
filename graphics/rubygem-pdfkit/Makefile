@@ -1,5 +1,5 @@
 PORTNAME=	pdfkit
-PORTVERSION=	0.8.7
+PORTVERSION=	0.8.7.3
 CATEGORIES=	graphics rubygems
 MASTER_SITES=	RG
 
@@ -9,6 +9,9 @@ WWW=		https://github.com/pdfkit/pdfkit
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+DEPRECATED=	Depends on expired converters/wkhtmltopdf
+EXPIRATION_DATE=2025-03-31
 
 RUN_DEPENDS=	wkhtmltopdf:converters/wkhtmltopdf
 

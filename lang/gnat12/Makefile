@@ -58,6 +58,8 @@ PLIST_SUB=	ASSET_FILE=${_ASSET_FILE} \
 		CONFTRGT=${CONFIGURE_TARGET} \
 		VER=${DISTVERSION}
 
+PIE_UNSAFE=	yes
+
 OPTIONS_DEFINE=			ASSETS NLS
 .if exists(/usr/lib32/libc.so)
 OPTIONS_DEFINE_amd64+=	MULTILIB
@@ -115,25 +117,31 @@ _TOOLCHAIN_PATHS=	/sbin:/bin:/usr/sbin:/usr/bin:${_GCC6AUX_PATH}:${PREFIX}/bin:$
 
 .include <bsd.port.options.mk>
 
-.if ${ARCH} == i386 || ${ARCH} == aarch64
+.if ${ARCH} == i386
 LIB_DIR_32=	""
-PLIST_SUB+=	64BITS="@comment "
+PLIST_SUB+=	LIB32="@comment "
 .else
-PLIST_SUB+=	64BITS=""
 .  if empty(PORT_OPTIONS:MMULTILIB)
 LIB_DIR_32=	""
-PLIST_SUB+=	32BITS="@comment "
+PLIST_SUB+=	LIB32="@comment "
 .  else
 LIB_DIR_32=	"" 32
-PLIST_SUB+=	32BITS=""
+PLIST_SUB+=	LIB32=" "
 .  endif
 .endif
-.if ${ARCH} == aarch64
-PLIST_SUB+=	ARM="" \
-		NOARM="@comment "
-.else
-PLIST_SUB+=	ARM="@comment " \
-		NOARM=""
+
+.if ${ARCH} == amd64
+PLIST_SUB+=	AMD64=" " \
+		AARCH64="@comment " \
+		X86=" "
+.elif ${ARCH} == i386
+PLIST_SUB+=	AMD64="@comment " \
+		AARCH64="@comment " \
+		X86=" "
+.elif ${ARCH} == aarch64
+PLIST_SUB+=	X86="@comment " \
+		AMD64="@comment " \
+		AARCH64=" "
 .endif
 
 pre-configure:

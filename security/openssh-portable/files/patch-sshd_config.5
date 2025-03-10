@@ -11,7 +11,7 @@
  with successful public key client host authentication is allowed
  (host-based authentication).
  The default is
-@@ -1416,6 +1434,13 @@
+@@ -1416,6 +1434,15 @@
  .Cm ethernet .
  The default is
  .Cm no .
@@ -21,11 +21,13 @@
 +.Cm yes ,
 +the root user may be allowed in with its password even if
 +.Cm PermitRootLogin is set to
++.Cm prohibit-password
++or
 +.Cm without-password .
  .Pp
  Independent of this setting, the permissions of the selected
  .Xr tun 4
-@@ -1774,12 +1799,19 @@
+@@ -1774,12 +1801,19 @@
  .Xr sshd 8
  as a non-root user.
  The default is
@@ -46,7 +48,7 @@
  .It Cm X11DisplayOffset
  Specifies the first display number available for
  .Xr sshd 8 Ns 's
-@@ -1793,7 +1825,7 @@
+@@ -1793,7 +1827,7 @@
  or
  .Cm no .
  The default is

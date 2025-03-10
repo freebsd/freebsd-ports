@@ -1,4 +1,4 @@
---- components/feature_engagement/public/event_constants.cc.orig	2022-10-01 07:40:07 UTC
+--- components/feature_engagement/public/event_constants.cc.orig	2024-11-16 12:20:41 UTC
 +++ components/feature_engagement/public/event_constants.cc
 @@ -11,7 +11,7 @@ namespace feature_engagement {
  namespace events {
@@ -8,4 +8,4 @@
 +    BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_FUCHSIA) || BUILDFLAG(IS_BSD)
  const char kNewTabOpened[] = "new_tab_opened";
  const char kSixthTabOpened[] = "sixth_tab_opened";
- const char kTabGroupCreated[] = "tab_group_created";
+ const char kReadingListItemAdded[] = "reading_list_item_added";

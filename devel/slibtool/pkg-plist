@@ -19,6 +19,7 @@ bin/slibtool-ar
 bin/slibtool-shared
 bin/slibtool-static
 bin/slibtoolize
+%%DATADIR%%/ar-lib
 %%DATADIR%%/ltmain.sh
 %%DATADIR%%/slibtool.m4
 %%DATADIR%%/slibtool.sh

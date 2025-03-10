@@ -10,9 +10,8 @@ WWW=		https://www.groovy-lang.org/
 
 LICENSE=	APACHE20
 
-USES=		cpe zip
+USES=		cpe java zip
 CPE_VENDOR=	apache
-USE_JAVA=	yes
 
 NO_ARCH=	yes
 NO_BUILD=	yes

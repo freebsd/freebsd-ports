@@ -1,5 +1,5 @@
 PORTNAME=	${MPORTNAME:tl}
-PORTVERSION=	9.1.0
+PORTVERSION=	9.3.1
 CATEGORIES=	math
 
 COMMENT=	Graph algorithms in the language of linear algebra

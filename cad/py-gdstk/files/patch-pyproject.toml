@@ -1,4 +1,4 @@
---- pyproject.toml.orig	2024-07-04 23:14:49 UTC
+--- pyproject.toml.orig	2024-08-31 19:01:18 UTC
 +++ pyproject.toml
 @@ -1,7 +1,7 @@ requires = [
  [build-system]
@@ -9,12 +9,3 @@
  ]
  build-backend = "scikit_build_core.build"
  
-@@ -29,7 +29,7 @@ dependencies = [
- license = {file = "LICENSE"}
- dependencies = [
-     "numpy; platform_system=='Darwin'",
--    "oldest-supported-numpy; platform_system!='Darwin'",
-+    "numpy; platform_system!='Darwin'",
-     "typing_extensions; python_version < '3.11'"
- ]
- requires-python = ">=3.9"

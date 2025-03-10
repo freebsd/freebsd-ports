@@ -1,6 +1,6 @@
 PORTNAME=	mangohud
 PORTVERSION=	0.6.5
-PORTREVISION=	1
+PORTREVISION=	2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	benchmarks graphics
 MASTER_SITES=	https://wrapdb.mesonbuild.com/v1/projects/imgui/1.81/1/get_zip?dummy=/:igw

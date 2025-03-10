@@ -895,8 +895,6 @@ share/kwin/effects/logout/contents/code/main.js
 share/kwin/effects/logout/metadata.json
 share/kwin/effects/maximize/contents/code/main.js
 share/kwin/effects/maximize/metadata.json
-share/kwin/effects/morphingpopups/contents/code/main.js
-share/kwin/effects/morphingpopups/metadata.json
 share/kwin/effects/scale/contents/code/main.js
 share/kwin/effects/scale/contents/config/main.xml
 share/kwin/effects/scale/contents/ui/config.ui

@@ -1,5 +1,5 @@
 bin/kmplot
-%%QT_PLUGINDIR%%/kf5/parts/kmplotpart.so
+%%QT_PLUGINDIR%%/kf6/parts/kmplotpart.so
 share/applications/org.kde.kmplot.desktop
 share/config.kcfg/kmplot.kcfg
 share/dbus-1/interfaces/org.kde.kmplot.KmPlot.xml
@@ -13,10 +13,6 @@ share/icons/hicolor/32x32/apps/kmplot.png
 share/icons/hicolor/48x48/apps/kmplot.png
 share/icons/hicolor/64x64/apps/kmplot.png
 share/icons/hicolor/scalable/apps/kmplot.svgz
-share/kservices5/kmplot_part.desktop
-share/kxmlgui5/kmplot/kmplot_part.rc
-share/kxmlgui5/kmplot/kmplot_part_readonly.rc
-share/kxmlgui5/kmplot/kmplot_shell.rc
 share/locale/af/LC_MESSAGES/kmplot.mo
 share/locale/ar/LC_MESSAGES/kmplot.mo
 share/locale/be/LC_MESSAGES/kmplot.mo
@@ -46,6 +42,7 @@ share/locale/hi/LC_MESSAGES/kmplot.mo
 share/locale/hne/LC_MESSAGES/kmplot.mo
 share/locale/hr/LC_MESSAGES/kmplot.mo
 share/locale/hu/LC_MESSAGES/kmplot.mo
+share/locale/ia/LC_MESSAGES/kmplot.mo
 share/locale/is/LC_MESSAGES/kmplot.mo
 share/locale/it/LC_MESSAGES/kmplot.mo
 share/locale/ja/LC_MESSAGES/kmplot.mo
@@ -100,6 +97,7 @@ share/man/pl/man1/kmplot.1.gz
 share/man/pt/man1/kmplot.1.gz
 share/man/pt_BR/man1/kmplot.1.gz
 share/man/ru/man1/kmplot.1.gz
+share/man/sl/man1/kmplot.1.gz
 share/man/sv/man1/kmplot.1.gz
 share/man/uk/man1/kmplot.1.gz
 share/metainfo/org.kde.kmplot.appdata.xml

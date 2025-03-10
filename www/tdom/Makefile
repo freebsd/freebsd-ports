@@ -1,9 +1,9 @@
 PORTNAME=	tDOM
-PORTVERSION=	0.9.3
+DISTVERSION=	0.9.5
 PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://tdom.org/downloads/
-DISTNAME=	${PORTNAME:tl}-${PORTVERSION}-src
+DISTNAME=	${PORTNAME:tl}-${DISTVERSION}-src
 
 MAINTAINER=	ports@virtual-estates.net
 COMMENT=	High performance processing of XML and HTML data with Tcl
@@ -15,51 +15,47 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USES=		tcl:tea
 
 CONFIGURE_ARGS=	--enable-threads --disable-tdomalloc
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
-EXTRACT_AFTER_ARGS=--exclude 'expat*/*.c' --exclude 'expat*/[a-mo-z]*.h' \
-		--exclude 'domalloc*' --exclude win
+EXTRACT_AFTER_ARGS=	--exclude 'expat*/*.c' --exclude 'expat*/[a-mo-z]*.h' \
+			--exclude 'domalloc*' --exclude win
 
+MAKE_ARGS+=	TESTFLAGS=
 TEST_TARGET=	test
 
-PLIST_SUB=	PORTVERSION=${PORTVERSION}
+PLIST_SUB=	DISTVERSION=${DISTVERSION}
 
 DOCS=		CHANGES README.md
 
-OPTIONS_DEFINE=	DOCS HTML5
-OPTIONS_DEFAULT=${OPTIONS_DEFINE} EBASE
-OPTIONS_SINGLE=	EXPAT
+OPTIONS_DEFINE=		DOCS HTML5
+OPTIONS_DEFAULT=	${OPTIONS_DEFINE} EBASE
+OPTIONS_SINGLE=		EXPAT
 OPTIONS_SINGLE_EXPAT=	EBASE EPORTS
+
 EBASE_DESC=	Use Expat from base
 EPORTS_DESC=	Use Expat from ports
-
 HTML5_DESC=	Enable parsing of HTML5 (requires gumbo)
-HTML5_LIB_DEPENDS=libgumbo.so:devel/gumbo
-HTML5_CONFIGURE_ENABLE=html5
-HTML5_CFLAGS=	-I${LOCALBASE}/include
-HTML5_USES=	pkgconfig
 
+EBASE_CONFIGURE_ON=	--with-expat=/usr
 EPORTS_LIB_DEPENDS=	libexpat.so:textproc/expat2
 EPORTS_CONFIGURE_ON=	--with-expat=${LOCALBASE}
-EBASE_CONFIGURE_ON=	--with-expat=/usr
+HTML5_LIB_DEPENDS=	libgumbo.so:devel/gumbo
+HTML5_USES=		pkgconfig
+HTML5_CONFIGURE_ENABLE=	html5
+HTML5_CFLAGS=		-I${LOCALBASE}/include
 
-MAKE_ARGS+=	RANLIB_STUB=:
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MEBASE}
-post-patch:
-	${REINPLACE_CMD} 's|expat\.h|bsdxml.h|g' \
+post-patch-EBASE-on:
+	${REINPLACE_CMD} 's|\([</]\)expat\.h|\1bsdxml.h|g' \
 	    ${WRKSRC}/configure \
 	    ${WRKSRC}/generic/dom.h \
 	    ${WRKSRC}/generic/tdom.h \
 	    ${WRKSRC}/generic/tclexpat.h
 	${REINPLACE_CMD} 's|-lexpat|-lbsdxml|' ${WRKSRC}/configure
-	${REINPLACE_CMD} '553s|$$|knownBug} {|' ${WRKSRC}/tests/dom.test
-.endif
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}/html
 	${INSTALL_DATA} ${DOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}/
 	${INSTALL_DATA} ${WRKSRC}/doc/*.html ${STAGEDIR}${DOCSDIR}/html/
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/${TCL_PKG:tl}/lib${TCL_PKG_LIB_PREFIX}${TCL_PKG:tl}.so
 
 .include <bsd.port.mk>

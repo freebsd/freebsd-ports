@@ -1,10 +1,10 @@
 PORTNAME=	whisker
 DISTVERSION=	0.4.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
-MAINTAINER=	ygy@FreeBSD.org
+MAINTAINER=	uzsolt@FreeBSD.org
 COMMENT=	{{mustache}} for R, Logicless Templating
 WWW=		https://github.com/edwindj/whisker
 

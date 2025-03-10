@@ -5,3 +5,5 @@ SHA256 (Dav1dde-glad-v2.0.4_GH0.tar.gz) = 02629644c242dcc27c58222bd2c001d5e2f376
 SIZE (Dav1dde-glad-v2.0.4_GH0.tar.gz) = 599932
 SHA256 (libplacebo-v7.349.0.tar.bz2) = 38c9c75d9c1bb412baf34845d1ca58c41a9804d1d0798091d7a8602a0d7c9aa6
 SIZE (libplacebo-v7.349.0.tar.bz2) = 701309
+SHA256 (056b852018db.patch) = 345d0e9cc1946a78d35c322bdb6ff45e5968a8f75a299e53949f1c0b5ce1918e
+SIZE (056b852018db.patch) = 1272

@@ -1,5 +1,5 @@
 PORTNAME=	lzbench
-PORTVERSION=	1.8.1
+PORTVERSION=	2.0.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	benchmarks
 
@@ -10,9 +10,10 @@ WWW=		https://github.com/inikep/lzbench
 USES=		compiler:c11 gmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	inikep
+ALL_TARGET=	${PORTNAME}
 
 PLIST_FILES=	bin/lzbench
-PORTDOCS=	NEWS README.md
+PORTDOCS=	CHANGELOG README.md
 
 OPTIONS_DEFINE=	DOCS
 

@@ -1,5 +1,6 @@
 PORTNAME=	charts
 PORTVERSION=	${QT5_VERSION}${QT5_KDE_PATCH}
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits
 PKGNAMEPREFIX=	qt5-
 
@@ -10,5 +11,6 @@ USES=		compiler:c++11-lang perl5 qmake qt-dist:5,charts tar:xz
 USE_PERL5=	build
 USE_QT=		core declarative network gui widgets designer \
 		buildtools:build qmake:build
+USE_LDCONFIG=	${PREFIX}/${QT_LIBDIR_REL}
 
 .include <bsd.port.mk>

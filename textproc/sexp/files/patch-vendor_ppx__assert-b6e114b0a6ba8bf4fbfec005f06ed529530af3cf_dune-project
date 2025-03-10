@@ -1,0 +1,5 @@
+--- vendor/ppx_assert-b6e114b0a6ba8bf4fbfec005f06ed529530af3cf/dune-project.orig	2024-09-26 18:08:47 UTC
++++ vendor/ppx_assert-b6e114b0a6ba8bf4fbfec005f06ed529530af3cf/dune-project
+@@ -1 +1 @@
+-(lang dune 3.11)
++(lang dune 3.7)

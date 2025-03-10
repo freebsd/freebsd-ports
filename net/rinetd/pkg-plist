@@ -1,3 +1,0 @@
-@sample etc/rinetd.conf.sample
-sbin/rinetd
-share/man/man8/rinetd.8.gz

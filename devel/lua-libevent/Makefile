@@ -1,7 +1,7 @@
 PORTNAME=	libevent
 PORTVERSION=	0.4.6
 DISTVERSIONPREFIX=v
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 PKGNAMEPREFIX=	${LUA_PKGNAMEPREFIX}
 
@@ -12,7 +12,7 @@ WWW=		https://github.com/harningt/luaevent
 LICENSE=	MIT
 
 LIB_DEPENDS=	libevent.so:devel/libevent
-RUN_DEPENDS=	${LUA_REFMODLIBDIR}/socket/core.so:net/luasocket@${LUA_FLAVOR}
+RUN_DEPENDS=	${LUA_REFMODLIBDIR}/socket/core.so:net/lua-luasocket@${LUA_FLAVOR}
 
 USES=		gmake pkgconfig lua:module
 

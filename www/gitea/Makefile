@@ -1,7 +1,6 @@
 PORTNAME=	gitea
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.21.11
-PORTREVISION=	3
+DISTVERSION=	1.23.5
 CATEGORIES=	www
 MASTER_SITES=	https://github.com/go-gitea/gitea/releases/download/${DISTVERSIONPREFIX}${DISTVERSION}/ \
 		https://dl.gitea.io/gitea/${DISTVERSION}/
@@ -16,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	git:devel/git
 
-USES=		cpe gmake go:1.21,no_targets
+USES=		cpe gmake go:1.23,no_targets
 USE_RC_SUBR=	gitea
 
 EXTRACT_AFTER_ARGS=	--strip-components 1 # since 1.17.0, archive includes gitea-src-VERSION directory
@@ -54,8 +53,8 @@ DAEMONARGS=	-f
 SUB_LIST+=	DAEMONARGS="${DAEMONARGS}"
 
 SSP_UNSAFE=	true
-LDFLAGS+=       "'-X "code.gitea.io/gitea/modules/setting.CustomPath=${PREFIX}/etc/gitea"'"
-LDFLAGS+=       "'-X "code.gitea.io/gitea/modules/setting.AppWorkPath=${PREFIX}/share/gitea"'"
+LDFLAGS+=	"'-X "code.gitea.io/gitea/modules/setting.CustomPath=${PREFIX}/etc/gitea"'"
+LDFLAGS+=	"'-X "code.gitea.io/gitea/modules/setting.AppWorkPath=${PREFIX}/share/gitea"'"
 MAKE_ARGS=	GOPATH=${WRKDIR} TAGS="${GO_TAGS}" GOFLAGS="-buildvcs=false"
 ALL_TARGET=	backend
 MAKE_JOBS_UNSAFE=	yes
@@ -71,6 +70,10 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${ETCDIR}/conf
 	${INSTALL_DATA} ${WRKDIR}/app.ini.sample ${STAGEDIR}${ETCDIR}/conf/app.ini.sample
 	${INSTALL_DATA} ${WRKSRC}/custom/conf/app.example.ini ${STAGEDIR}${ETCDIR}/conf/app.ini.defaults
+	${MKDIR} ${STAGEDIR}${DATADIR}
+	${MKDIR} ${STAGEDIR}/var/db/gitea
+	${MKDIR} ${STAGEDIR}/var/db/gitea/gitea-repositories
+	${MKDIR} ${STAGEDIR}/var/log/gitea
 
 do-install-BINDATA-off:
 	cd ${WRKSRC} && ${COPYTREE_SHARE} "options public templates" ${STAGEDIR}${DATADIR}

@@ -1,34 +1,39 @@
 PORTNAME=	gstreamer1-plugins-rust
-DISTVERSION=	0.11.1
-DISTVERSIONSUFFIX=	+fixup
-PORTREVISION=	8
+DISTVERSION=	${gst-rust_VERSION}
+PORTREVISION=	2
 CATEGORIES=	multimedia
 
-MAINTAINER=	jbeich@FreeBSD.org
+MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Various GStreamer plugins written in Rust
 WWW=		https://gitlab.freedesktop.org/gstreamer/gst-plugins-rs
 
-LICENSE=	LGPL21+ MIT
-LICENSE_COMB=	multi
-LICENSE_FILE_MIT=	${WRKSRC}/LICENSE-MIT
+LICENSE=		APACHE20 LGPL21+ MIT MPL20
+LICENSE_COMB=		multi
+LICENSE_FILE_APACHE20=	${WRKSRC}/LICENSE-APACHE
 LICENSE_FILE_LGPL21+ =	${WRKSRC}/LICENSE-LGPLv2
+LICENSE_FILE_MIT=	${WRKSRC}/LICENSE-MIT
+LICENSE_FILE_MPL20=	${WRKSRC}/LICENSE-MPL-2.0
 
 BUILD_DEPENDS=	cargo-cbuild:devel/cargo-c \
 		${PY_TOMLI}
 
 USES=		cargo gnome gstreamer meson pkgconfig python:build shebangfix ssl
 USE_GITLAB=	yes
-USE_GNOME=	glib20
-USE_GSTREAMER=	bad # webrtc
 GL_SITE=	https://gitlab.freedesktop.org
 GL_ACCOUNT=	gstreamer
 GL_PROJECT=	gst-plugins-rs
+USE_GNOME=	glib20
+USE_GSTREAMER=	webrtc
+
 SHEBANG_FILES=	dependencies.py
+
 MESON_ARGS=	-Ddoc=disabled
-MAKE_ENV=	${CARGO_ENV}
+
 CARGO_BUILD=	no
 CARGO_INSTALL=	no
 CARGO_TEST=	no
+
+MAKE_ENV=	${CARGO_ENV}
 
 .if ${MACHINE_ARCH} == i386 || "${MACHINE_ARCH:Marmv?}" != ""
 # https://github.com/rust-lang/rust/issues/85598
@@ -36,14 +41,14 @@ LTO_UNSAFE=	yes
 CARGO_ENV+=	CARGO_PROFILE_RELEASE_LTO=false
 .endif
 
-OPTIONS_DEFINE=	ASM CAIRO CSOUND DAV1D GTK4 PANGO SODIUM WEBP
-OPTIONS_DEFAULT=ASM CAIRO CSOUND DAV1D GTK4 PANGO SODIUM WEBP
+OPTIONS_DEFINE=		ASM CAIRO CSOUND DAV1D GTK4 PANGO SODIUM WEBP
+OPTIONS_DEFAULT=	ASM CAIRO CSOUND DAV1D GTK4 PANGO SODIUM WEBP
 OPTIONS_EXCLUDE_aarch64=	CSOUND # https://github.com/neithanmo/csound-rs/commit/8962b89d7bda
-OPTIONS_EXCLUDE_armv7=	CSOUND # https://github.com/neithanmo/csound-rs/commit/8962b89d7bda
-OPTIONS_EXCLUDE_powerpc64le=	CSOUND
-OPTIONS_EXCLUDE_powerpc64=	CSOUND
+OPTIONS_EXCLUDE_armv7=		CSOUND # https://github.com/neithanmo/csound-rs/commit/8962b89d7bda
 OPTIONS_EXCLUDE_powerpc=	CSOUND DAV1D
-OPTIONS_SUB=	yes
+OPTIONS_EXCLUDE_powerpc64=	CSOUND
+OPTIONS_EXCLUDE_powerpc64le=	CSOUND
+OPTIONS_SUB=		yes
 
 ASM_BUILD_DEPENDS=	nasm:devel/nasm
 
@@ -78,8 +83,5 @@ post-patch:
 # Make each cargo subcommand very verbose
 	@${REINPLACE_CMD} -Ee "/cargo.*'c?(build|test)'/s/]/, '--verbose', '--verbose'&/" \
 		${WRKSRC}/cargo_wrapper.py
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/gstreamer-1.0/*.so
 
 .include <bsd.port.mk>

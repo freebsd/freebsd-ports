@@ -1,10 +1,14 @@
 PORTNAME=	spidermonkey
 DISTVERSION=	91.13.0
-PORTREVISION=	21
+PORTREVISION=	28
 CATEGORIES=	lang
 MASTER_SITES=	MOZILLA/firefox/releases/${DISTVERSION}esr/source
 PKGNAMESUFFIX=	${SP_VER}
 DISTNAME=	firefox-${DISTVERSION}esr.source
+
+PATCH_SITES=	https://hg.mozilla.org/mozilla-central/raw-rev/
+PATCHFILES+=	223087fdc29f18678f6174e9807b8780e439acf6:-p1 # https://bugzilla.mozilla.org/1894423
+PATCHFILES+=	68ff4d3f7338248b4d67cf03aade5a73f8d396b2:-p1 # https://bugzilla.mozilla.org/1849070
 
 MAINTAINER=	nc@FreeBSD.org
 COMMENT=	Standalone JavaScript based from Mozilla 91-esr
@@ -54,7 +58,7 @@ PLIST_SUB=	SP_VER=${SP_VER}
 
 .include <bsd.port.options.mk>
 
-.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400091 || ( ${OSVERSION} >= 1302505 && ${OSVERSION} < 1400000 ))
+.if ${OPSYS} == FreeBSD
 USES+=	llvm:max=15
 CONFIGURE_ENV+=	LLVM_CONFIG=llvm-config${LLVM_VERSION} \
 		LLVM_OBJDUMP=llvm-objdump${LLVM_VERSION}
@@ -75,6 +79,7 @@ USE_GCC=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' ${WRKSRC}/js/moz.configure
+	@${REINPLACE_CMD} -e 's|icu-i18n|icu-uc icu-i18n|g' ${WRKSRC}/js/moz.configure
 	@${FIND} ${WRKSRC}/python/mozbuild -name *.py -exec \
 		${REINPLACE_CMD} 's|"rU"|"r"|g' {} \;
 

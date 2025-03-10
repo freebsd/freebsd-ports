@@ -1,9 +1,10 @@
 PORTNAME=	dotnet
 DISTVERSIONPREFIX=	v
-DISTVERSION=	${DOTNETVERSION}.6
+DISTVERSION=	${DOTNETVERSION}.2
+PORTREVISION=	2
 CATEGORIES=	lang devel
 MASTER_SITES=	https://github.com/dotnet/dotnet/releases/download/${DISTVERSIONPREFIX}${DISTVERSION}/release.json?dummy=/:dotnetmanifest \
-		LOCAL/arrowd/dotnet/:bootstrap
+		https://github.com/sec/dotnet-core-freebsd-source-build/releases/download/${SDKVERSION}-vmr/:bootstrap
 DISTFILES=	release.json-${PORTVERSION}:dotnetmanifest \
 		${BOOTSTRAP_SOURCEBUILT_ARTIFACTS_DISTNAME}${EXTRACT_SUFX}:bootstrap \
 		${BOOTSTRAP_SDK_DISTNAME}${EXTRACT_SUFX}:bootstrap
@@ -23,48 +24,68 @@ BUILD_DEPENDS=	bash:shells/bash \
 		git:devel/git \
 		ggrep:textproc/gnugrep \
 		terminfo-db>0:misc/terminfo-db
-LIB_DEPENDS=	libicuuc.so:devel/icu \
+LIB_DEPENDS=	libbrotlienc.so:archivers/brotli \
+		libicuuc.so:devel/icu \
 		libinotify.so:devel/libinotify \
 		libunwind.so:devel/libunwind
-RUN_DEPENDS=	terminfo-db>0:misc/terminfo-db
+RUN_DEPENDS=	terminfo-db>0:misc/terminfo-db \
+		dotnet:lang/dotnet-host
 
-USES=		autoreconf:build gssapi:mit llvm:noexport nodejs pkgconfig \
+USES=		autoreconf:build gssapi:mit llvm:noexport pkgconfig \
 		python:build,3.9+ shebangfix ssl
 
 USE_GITHUB=	yes
 
-SHEBANG_FILES=	src/diagnostics/src/Tools/dotnet-trace/*.sh \
-		src/source-build-externals/src/azure-activedirectory-identitymodel-extensions-for-dotnet/updateAssemblyInfo.sh
+SHEBANG_FILES=	src/diagnostics/src/Tools/dotnet-trace/*.sh
 
 BINARY_ALIAS=	grep=${LOCALBASE}/bin/ggrep
 DOTNET_ENV=	PYTHON=${PYTHON_CMD}
 
-BOOTSTRAP_DOTNETVERSION=			8.0
-BOOTSTRAP_SDKVERSION=				${BOOTSTRAP_DOTNETVERSION}.100
-BOOTSTRAP_SDKVERSIONSUFFIX=			-rtm.23551.1
-BOOTSTRAP_SOURCEBUILT_ARTIFACTS_DISTNAME=	Private.SourceBuilt.Artifacts.${BOOTSTRAP_SDKVERSION}${BOOTSTRAP_SDKVERSIONSUFFIX}.freebsd.13-${DOTNET_ARCH}
-BOOTSTRAP_SDK_DISTNAME=				dotnet-sdk-${BOOTSTRAP_SDKVERSION}-freebsd-${DOTNET_ARCH}
+BOOTSTRAP_DOTNETVERSION=			9.0
+BOOTSTRAP_SDKVERSION=				${BOOTSTRAP_DOTNETVERSION}.103
+BOOTSTRAP_SDKVERSIONSUFFIX=			-servicing.25071.1
+BOOTSTRAP_SDK_RID=				freebsd-${DOTNET_ARCH}
+BOOTSTRAP_SOURCEBUILT_ARTIFACTS_DISTNAME=	Private.SourceBuilt.Artifacts.${BOOTSTRAP_SDKVERSION}${BOOTSTRAP_SDKVERSIONSUFFIX}.${BOOTSTRAP_SDK_RID}
+BOOTSTRAP_SDK_DISTNAME=				dotnet-sdk-${BOOTSTRAP_SDKVERSION}-${BOOTSTRAP_SDK_RID}
 
-DOTNETVERSION=			8.0
-SDKVERSION=			${DOTNETVERSION}.106
-SDKVERSIONSUFFIX=		-servicing.24272.10
-SOURCEBUILT_ARTIFACTS_DISTNAME=	Private.SourceBuilt.Artifacts.${SDKVERSION}${SDKVERSIONSUFFIX}.freebsd.13-${DOTNET_ARCH}
-SDK_DISTNAME=			dotnet-sdk-${SDKVERSION}-freebsd-${DOTNET_ARCH}
-DOTNET_ARCH=				${ARCH:S|amd64|x64|:C|aarch64|arm64|}
+DOTNETVERSION=		9.0
+SDKVERSION=		${DOTNETVERSION}.103
+SDKVERSIONSUFFIX=	-rtm.25067.4
+SDKSERVICESUFFIX=	-servicing.25071.1
+LIBPACKSUFFIX=		-servicing.25066.10
+MANIFESTSUFFIX=		${DOTNETVERSION}.100
+SDK_DISTNAME=		dotnet-sdk-${SDKVERSION}-${SDK_RID}
+SDK_RID=		freebsd.${_OSVERSION_MAJOR}-${DOTNET_ARCH}
+DOTNET_ARCH=		${ARCH:S|amd64|x64|:C|aarch64|arm64|}
 
-PLIST_SUB=			DOTNET_ARCH=${DOTNET_ARCH} FULL_DOTNETVERSION=${PORTVERSION} \
-				DOTNETVERSION=${DOTNETVERSION} \
-				SDKVERSION=${SDKVERSION} SDKVERSIONSUFFIX=${SDKVERSIONSUFFIX} \
-				BOOTSTRAP_SDKVERSION=${BOOTSTRAP_SDKVERSION}
+PLIST_SUB=	DOTNET_ARCH=${DOTNET_ARCH} FULL_DOTNETVERSION=${PORTVERSION} \
+		DOTNETVERSION=${DOTNETVERSION} SDKVERSION=${SDKVERSION} \
+		SDK_RID=${SDK_RID} SDKVERSIONSUFFIX=${SDKVERSIONSUFFIX} \
+		SDKSERVICESUFFIX=${SDKSERVICESUFFIX} MANIFESTSUFFIX=${MANIFESTSUFFIX} \
+		LIBPACKSUFFIX=${LIBPACKSUFFIX}
+
+.if defined(DOTNET_PORTABLE)
+SDK_RID=		freebsd-${DOTNET_ARCH}
+PORTABLE_BUILD_FLAG=	/p:PortableBuild=true
+PLIST_SUB+=	NONPORTABLE="@comment "
+.else
+PLIST_SUB+=	NONPORTABLE=
+.endif
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 1400000
-LIB_DEPENDS+=	libcrypto.so.111:misc/compat13x
+.if ${SSL_DEFAULT} == base
+EXTRA_PATCHES=	${PATCHDIR}/extra-patch-base-openssl
 .endif
 
-.if ${ARCH} == aarch64
-BROKEN=		"crossgen2" exited with code 139
+.if ${OSVERSION} >= 1400000
+BUILD_DEPENDS+=	${LOCALBASE}/lib/compat/libssl.so.111:misc/compat13x
+.endif
+
+.if ${ARCH} == amd64
+PLIST_SUB+=	VXSORT=
+.else
+PLIST_SUB+=	VXSORT="@comment "
 .endif
 
 post-extract:
@@ -84,37 +105,34 @@ post-extract:
 
 	${ELFCTL} -e +noaslr ${WRKDIR}/bootstrap_sdk/dotnet
 
+post-patch:
+	${REINPLACE_CMD} -e 's|linux-${DOTNET_ARCH}|freebsd-${DOTNET_ARCH}|g' \
+		${WRKDIR}/bootstrap_sdk/sdk/${BOOTSTRAP_SDKVERSION}/Microsoft.NETCoreSdk.BundledVersions.props
+
 do-build:
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${DOTNET_ENV} ./build.sh \
 		--release-manifest release.json \
 		--clean-while-building \
 		--with-sdk ${WRKDIR}/bootstrap_sdk \
 		--with-packages ${WRKDIR}/packages \
+		--source-build \
 		-- \
-		-maxcpucount:${MAKE_JOBS_NUMBER}
+		-maxcpucount:${MAKE_JOBS_NUMBER} \
+		${PORTABLE_BUILD_FLAG}
 
 do-install:
-	${MKDIR} ${STAGEDIR}${PREFIX}/dotnet
-	${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${WRKSRC}/artifacts/${DOTNET_ARCH}/Release/${SDK_DISTNAME}${EXTRACT_SUFX} -C ${STAGEDIR}${PREFIX}/dotnet ${EXTRACT_AFTER_ARGS}
-	${ELFCTL} -e +noaslr ${STAGEDIR}${PREFIX}/dotnet/dotnet
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${WRKSRC}/artifacts/assets/Release/${SDK_DISTNAME}${EXTRACT_SUFX} -C ${STAGEDIR}${DATADIR} ${EXTRACT_AFTER_ARGS}
+	${FIND} ${WRKSRC}/artifacts/packages/Release -name "*freebsd*.nupkg" -exec \
+		${INSTALL_DATA} {} ${STAGEDIR}${DATADIR}/library-packs/ \;
 
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/dotnet/dotnet
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/dotnet/sdk/${SDKVERSION}/AppHostTemplate/apphost
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/dotnet/packs/Microsoft.NETCore.App.Host.freebsd-${DOTNET_ARCH}/${DISTVERSION}/runtimes/freebsd-${DOTNET_ARCH}/native/apphost
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/dotnet/packs/Microsoft.NETCore.App.Host.freebsd-${DOTNET_ARCH}/${DISTVERSION}/runtimes/freebsd-${DOTNET_ARCH}/native/singlefilehost
-	${FIND} ${STAGEDIR}${PREFIX}/dotnet -name "*.so" -exec ${STRIP_CMD} -s "{}" ";"
+	${STRIP_CMD} ${STAGEDIR}${DATADIR}/dotnet
+	${STRIP_CMD} ${STAGEDIR}${DATADIR}/sdk/${SDKVERSION}/AppHostTemplate/apphost
+	${STRIP_CMD} ${STAGEDIR}${DATADIR}/packs/Microsoft.NETCore.App.Host.${SDK_RID}/${DISTVERSION}/runtimes/${SDK_RID}/native/apphost
+	${STRIP_CMD} ${STAGEDIR}${DATADIR}/packs/Microsoft.NETCore.App.Host.${SDK_RID}/${DISTVERSION}/runtimes/${SDK_RID}/native/singlefilehost
+	${STRIP_CMD} ${STAGEDIR}${DATADIR}/packs/runtime.${SDK_RID}.Microsoft.DotNet.ILCompiler/${DISTVERSION}/tools/ilc
+	${FIND} ${STAGEDIR}${DATADIR} -name "*.so" -exec ${STRIP_CMD} -s "{}" ";"
 
-	${RLN} ${STAGEDIR}${PREFIX}/dotnet/dotnet ${STAGEDIR}${PREFIX}/bin/dotnet
-
-bootstrap-makesum:
-	cd ${WRKSRC}/artifacts/${DOTNET_ARCH}/Release && sha256 ${SOURCEBUILT_ARTIFACTS_DISTNAME}${EXTRACT_SUFX}
-	@${ECHO_CMD} -n "SIZE (${SOURCEBUILT_ARTIFACTS_DISTNAME}${EXTRACT_SUFX}) = "
-	@${STAT} -f %z ${WRKSRC}/artifacts/${DOTNET_ARCH}/Release/${SOURCEBUILT_ARTIFACTS_DISTNAME}${EXTRACT_SUFX}
-
-	@cd ${WRKSRC}/artifacts/${DOTNET_ARCH}/Release && sha256 ${SDK_DISTNAME}${EXTRACT_SUFX}
-	@${ECHO_CMD} -n "SIZE (${SDK_DISTNAME}${EXTRACT_SUFX}) = "
-	@${STAT} -f %z ${WRKSRC}/artifacts/${DOTNET_ARCH}/Release/${SDK_DISTNAME}${EXTRACT_SUFX}
-
-	@${ECHO_CMD}
+	${RLN} ${STAGEDIR}${DATADIR}/dotnet ${STAGEDIR}${PREFIX}/bin/dotnet
 
 .include <bsd.port.post.mk>

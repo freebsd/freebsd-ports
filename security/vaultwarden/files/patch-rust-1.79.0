@@ -1,9 +1,0 @@
---- src/auth.rs.orig	2024-06-14 15:03:49 UTC
-+++ src/auth.rs
-@@ -1,5 +1,6 @@
- // JWT Handling
- //
-+#![allow(dead_code)]
- use chrono::{Duration, Utc};
- use num_traits::FromPrimitive;
- use once_cell::sync::Lazy;

@@ -7,10 +7,11 @@ share/icons/hicolor/22x22/apps/kjumpingcube.png
 share/icons/hicolor/32x32/apps/kjumpingcube.png
 share/icons/hicolor/48x48/apps/kjumpingcube.png
 share/icons/hicolor/64x64/apps/kjumpingcube.png
-%%DATADIR%%/pics/default.desktop
-%%DATADIR%%/pics/default.svg
+%%DATADIR%%/themes/default.desktop
+%%DATADIR%%/themes/default.svgz
 share/locale/af/LC_MESSAGES/kjumpingcube.mo
 share/locale/ar/LC_MESSAGES/kjumpingcube.mo
+share/locale/ast/LC_MESSAGES/kjumpingcube.mo
 share/locale/be/LC_MESSAGES/kjumpingcube.mo
 share/locale/bg/LC_MESSAGES/kjumpingcube.mo
 share/locale/br/LC_MESSAGES/kjumpingcube.mo
@@ -37,6 +38,7 @@ share/locale/hi/LC_MESSAGES/kjumpingcube.mo
 share/locale/hne/LC_MESSAGES/kjumpingcube.mo
 share/locale/hr/LC_MESSAGES/kjumpingcube.mo
 share/locale/hu/LC_MESSAGES/kjumpingcube.mo
+share/locale/ia/LC_MESSAGES/kjumpingcube.mo
 share/locale/id/LC_MESSAGES/kjumpingcube.mo
 share/locale/is/LC_MESSAGES/kjumpingcube.mo
 share/locale/it/LC_MESSAGES/kjumpingcube.mo
@@ -83,4 +85,5 @@ share/locale/xh/LC_MESSAGES/kjumpingcube.mo
 share/locale/zh_CN/LC_MESSAGES/kjumpingcube.mo
 share/locale/zh_TW/LC_MESSAGES/kjumpingcube.mo
 share/metainfo/org.kde.kjumpingcube.appdata.xml
-share/qlogging-categories5/kjumpingcube.categories
+share/qlogging-categories6/kjumpingcube.categories
+share/qlogging-categories6/kjumpingcube.renamecategories

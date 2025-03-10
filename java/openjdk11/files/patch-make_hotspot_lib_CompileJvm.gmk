@@ -1,0 +1,11 @@
+--- make/hotspot/lib/CompileJvm.gmk.orig	2024-10-04 16:07:55.502680000 +0200
++++ make/hotspot/lib/CompileJvm.gmk	2024-10-04 16:07:03.672629000 +0200
+@@ -109,7 +109,7 @@ ifeq ($(call And, $(call isTargetOs, linux) $(call isT
+ ifeq ($(call And, $(call isTargetOs, linux) $(call isTargetCpu, arm)), true)
+   JVM_EXCLUDE_PATTERNS += arm_64
+ 
+-else ifeq ($(call And, $(call isTargetOs, bsd) $(call isTargetCpu, bsd-arm)), true)
++else ifeq ($(call And, $(call isTargetOs, bsd) $(call isTargetCpu, arm)), true)
+   JVM_EXCLUDE_PATTERNS += arm_64
+ 
+ else ifeq ($(call And, $(call isTargetOs, linux) $(call isTargetCpu, aarch64)), true)

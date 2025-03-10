@@ -1,4 +1,0 @@
-bin/mpeg_encode
-share/man/man1/mpeg_encode.1.gz
-%%PORTDOCS%%share/doc/mpeg_encode/users-guide.ps
-%%PORTDOCS%%share/doc/mpeg_encode/template.param

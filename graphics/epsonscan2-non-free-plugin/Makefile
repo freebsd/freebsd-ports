@@ -1,11 +1,11 @@
 PORTNAME=	epsonscan2-non-free-plugin
-DISTVERSION=	6.6.40.0
-PORTREVISION=	2
+DISTVERSION=	6.7.70.0
 CATEGORIES=	graphics
-MASTER_SITES=	https://download2.ebz.epson.net/${EPSONSCAN2}/common/rpm/x64/:amd64 \
-		https://download2.ebz.epson.net/${EPSONSCAN2}/common/deb/arm/:armv7 \
-		https://download2.ebz.epson.net/${EPSONSCAN2}/common/deb/arm/:armv7rasb \
-		https://download2.ebz.epson.net/${EPSONSCAN2}/common/rpm/x86/:i386
+MASTER_SITES=	https://download3.ebz.epson.net/dsc/f/03/00/16/14/40/9cb99579f9fa7facf54f77f0ce6fe5600677f30a/:amd64 \
+		https://download3.ebz.epson.net/dsc/f/03/00/16/14/42/e4b8e7e3b11bf2941610275ef2b5781a474de563/:armv7 \
+		https://download3.ebz.epson.net/dsc/f/03/00/16/14/43/372115c2c0d31756ecd13a187db6df9414b5348d/:armv7rasb \
+		https://download3.ebz.epson.net/dsc/f/03/00/16/14/41/c8a1ec77f6ba966c1780800210867d55570ee8e7/:i386
+
 DISTNAME=	${EPSONSCAN2}-bundle-${DISTVERSION}
 DISTFILES_amd64=	${DISTNAME}.${DIST_SUFX}${EXTRACT_SUFX}:amd64
 DISTFILES_armv7=	${DISTNAME}.${DIST_SUFX}${EXTRACT_SUFX}:armv7
@@ -26,13 +26,13 @@ LEGAL_TEXT=	License does not permit public sharing or revenue earning, and restr
 ONLY_FOR_ARCHS=	amd64 armv7 armv7rasb i386
 
 RUN_DEPENDS=	epsonscan2:graphics/epsonscan2 \
-		linux_libusb-${LINUX_DEFAULT}>=13.1.0:devel/linux_libusb
+		linux_libusb-${LINUX_DEFAULT}>=13.1.0:devel/linux_libusb@${LINUX_DEFAULT}
 
 USES=		linux
 USE_LDCONFIG=	${LINUXBASE}/usr/${LINUX_LIB}/epsonscan2/libexec \
 		${LINUXBASE}/usr/${LINUX_LIB}/epsonscan2/non-free-exec
 
-EPSON_VERSION=	1.0.0.5
+EPSON_VERSION=	1.0.0.6
 EPSONSCAN2=	${PORTNAME:S,-non-free-plugin,,}
 
 LINUX_WRAPPERS=	ddeplugin \

@@ -1,0 +1,12 @@
+RyzenAdj is a tool to view and adjust power management settings for some of
+Ryzen mobile and embedded CPUs.
+
+One of the use cases is to "trade" CPU performance for lower temperature:
+You can set lower-than-default CPU power limit and make your computer
+(slightly) less performant, but make it (significantly) cooler and more quiet
+under load. It is not uncommon to get less than 10% performance drop after
+lowering CPU TDP by 30%.
+
+Another use case is for CPU overclocking hobby.
+
+Use at your own risk.

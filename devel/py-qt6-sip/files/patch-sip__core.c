@@ -1,6 +1,6 @@
---- sip_core.c.orig	2022-06-17 14:27:21 UTC
+--- sip_core.c.orig	2024-12-12 10:04:05 UTC
 +++ sip_core.c
-@@ -20,6 +20,12 @@
+@@ -11,6 +11,12 @@
  #define PY_SSIZE_T_CLEAN
  #include <Python.h>
  #include <datetime.h>

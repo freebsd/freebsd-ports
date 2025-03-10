@@ -1,10 +1,10 @@
 PORTNAME=	codespell
-PORTVERSION=	2.3.0
+PORTVERSION=	2.4.1
 CATEGORIES=	textproc
 MASTER_SITES=	PYPI
 
 MAINTAINER=	sunpoet@FreeBSD.org
-COMMENT=	Source code spelling checker
+COMMENT=	Fix common misspellings in text files
 WWW=		https://github.com/codespell-project/codespell
 
 LICENSE=	GPLv2

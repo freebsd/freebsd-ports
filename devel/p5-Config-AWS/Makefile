@@ -16,7 +16,7 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Exporter-Tiny>=1:devel/p5-Exporter-Tiny \
 		p5-Path-Tiny>=0.076:devel/p5-Path-Tiny \
 		p5-Ref-Util>=0:devel/p5-Ref-Util
-TEST_DEPENDS=	p5-Test2-Suite>=0:devel/p5-Test2-Suite
+TEST_DEPENDS=	p5-Test-Simple>=1.302200:devel/p5-Test-Simple
 
 USES=		perl5
 USE_PERL5=	modbuildtiny

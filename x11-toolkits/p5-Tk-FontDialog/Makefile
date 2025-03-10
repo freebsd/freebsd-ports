@@ -15,4 +15,6 @@ RUN_DEPENDS=	p5-Tk>=804:x11-toolkits/p5-Tk
 USES=		perl5
 USE_PERL5=	configure
 
+NO_ARCH=	yes
+
 .include <bsd.port.mk>

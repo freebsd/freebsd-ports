@@ -1,6 +1,6 @@
 PORTNAME=	digital
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.29
+DISTVERSION=	0.31
 CATEGORIES=	cad java
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -12,14 +12,13 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	maven>0:devel/maven
 
-USES=		desktop-file-utils
+USES=		desktop-file-utils java
+JAVA_VERSION=	17 # Java 8 fails on aarch64: Internal Error (assembler_aarch64.hpp:237), pid=76025, tid=0x000000000006e359 guarantee(val < (1U << nbits)) failed: Field too big for insn
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	hneemann
 GH_PROJECT=	Digital
 
-USE_JAVA=	yes
-JAVA_VERSION=	17 # Java 8 fails on aarch64: Internal Error (assembler_aarch64.hpp:237), pid=76025, tid=0x000000000006e359 guarantee(val < (1U << nbits)) failed: Field too big for insn
 
 NO_ARCH=	yes
 
@@ -31,6 +30,8 @@ NO_ARCH=	yes
 #   5. make clean makesum
 
 DEV_UPDATE_MODE=	no
+
+MAKE_ENV=	MAVEN_HOME=/usr/local/share/java/apache-maven-3.8 # workaround for https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=283883
 
 .if (${DEV_UPDATE_MODE} == "yes")
 post-build:

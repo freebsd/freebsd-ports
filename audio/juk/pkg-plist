@@ -11,10 +11,9 @@ share/icons/hicolor/64x64/apps/juk.png
 %%DATADIR%%/pics/playing.png
 %%DATADIR%%/pics/theme.svg
 share/kio/servicemenus/jukservicemenu.desktop
-share/knotifications5/juk.notifyrc
-share/kxmlgui5/juk/jukui-rtl.rc
-share/kxmlgui5/juk/jukui.rc
+share/knotifications6/juk.notifyrc
 share/locale/ar/LC_MESSAGES/juk.mo
+share/locale/ast/LC_MESSAGES/juk.mo
 share/locale/be/LC_MESSAGES/juk.mo
 share/locale/bg/LC_MESSAGES/juk.mo
 share/locale/bn/LC_MESSAGES/juk.mo

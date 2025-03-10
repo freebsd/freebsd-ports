@@ -5,7 +5,7 @@ COMMENT=	Low-level RDP plugin for the Mupen64Plus
 
 LIB_DEPENDS=	libmupen64plus.so.2:emulators/mupen64plus-core
 
-GH_TAGNAME=	e8023148574d44fbabd1bb9d0ded7192869ec2ce
+GH_TAGNAME=	11f354a65a5b123fa8d18e761d52c2d3280a9333
 
 USES=		gl sdl
 USE_GL=		gl glu glew
@@ -20,6 +20,6 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 DISTINFO_FILE=		${.CURDIR}/distinfo
 
-RELEASE_DATE=	20230611
+RELEASE_DATE=	20240714
 
 .include "${MASTERDIR}/Makefile"

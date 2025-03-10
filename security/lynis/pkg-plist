@@ -2,6 +2,7 @@ bin/lynis
 etc/bash_completion.d/lynis
 @sample %%ETCDIR%%/default.prf.sample
 share/man/man8/lynis.8.gz
+%%DATADIR%%/db/control-links.db
 %%DATADIR%%/db/fileperms.db
 %%DATADIR%%/db/hints.db
 %%DATADIR%%/db/integrity.db
@@ -69,6 +70,7 @@ share/man/man8/lynis.8.gz
 %%DATADIR%%/include/tests_hardening
 %%DATADIR%%/include/tests_homedirs
 %%DATADIR%%/include/tests_insecure_services
+%%DATADIR%%/include/tests_kerberos
 %%DATADIR%%/include/tests_kernel
 %%DATADIR%%/include/tests_kernel_hardening
 %%DATADIR%%/include/tests_ldap

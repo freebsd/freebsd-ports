@@ -1,7 +1,7 @@
 PORTNAME=	astroid
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.16
-PORTREVISION=	9
+PORTREVISION=	14
 CATEGORIES=	mail
 
 MAINTAINER=	mylan.connolly@gmail.com
@@ -13,10 +13,12 @@ LICENSE_COMB=	dual
 LICENSE_FILE_GPLv3+ =	${WRKSRC}/COPYING.GPL-3.0+
 LICENSE_FILE_LGPL21+ =	${WRKSRC}/COPYING.LGPL-2.1+
 
+BROKEN=		fails to build with boost-1.85+
+
 BUILD_DEPENDS=	scdoc:textproc/scdoc \
 		notmuch>0:mail/notmuch
 LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
-		libjavascriptcoregtk-4.0.so:www/webkit2-gtk3 \
+		libjavascriptcoregtk-4.0.so:www/webkit2-gtk@40 \
 		libgmime-3.0.so:mail/gmime30 \
 		libgnutls.so:security/gnutls \
 		libpcre2-8.so:devel/pcre2 \

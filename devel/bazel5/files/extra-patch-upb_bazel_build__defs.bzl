@@ -8,11 +8,12 @@
          # copybara:strip_end
      ],
  })
-@@ -49,6 +50,7 @@
+@@ -49,6 +50,8 @@
          "-Werror=pedantic",
          "-Wall",
          "-Wstrict-prototypes",
 +        "-Wno-gnu-offsetof-extensions",
++        "-Wno-c23-extensions",
          # GCC (at least) emits spurious warnings for this that cannot be fixed
          # without introducing redundant initialization (with runtime cost):
          #   https://gcc.gnu.org/bugzilla/show_bug.cgi?id=80635

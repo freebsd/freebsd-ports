@@ -23,9 +23,15 @@ share/dbus-1/services/app.drey.Dialect.SearchProvider.service
 %%DATADIR%%/dialect/shortcuts.py
 %%DATADIR%%/dialect/utils.py
 %%DATADIR%%/dialect/widgets/__init__.py
+%%DATADIR%%/dialect/widgets/lang_row.blp
+%%DATADIR%%/dialect/widgets/lang_selector.blp
 %%DATADIR%%/dialect/widgets/lang_selector.py
+%%DATADIR%%/dialect/widgets/provider_preferences.blp
 %%DATADIR%%/dialect/widgets/provider_preferences.py
+%%DATADIR%%/dialect/widgets/speech_button.blp
+%%DATADIR%%/dialect/widgets/speech_button.py
 %%DATADIR%%/dialect/widgets/textview.py
+%%DATADIR%%/dialect/widgets/theme_switcher.blp
 %%DATADIR%%/dialect/widgets/theme_switcher.py
 %%DATADIR%%/dialect/window.py
 %%DATADIR%%/search_provider

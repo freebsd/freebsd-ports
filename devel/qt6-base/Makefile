@@ -1,7 +1,13 @@
 PORTNAME=	base
 DISTVERSION=	${QT6_VERSION}
+PORTREVISION=	3
 CATEGORIES=	devel
 PKGNAMEPREFIX=	qt6-
+
+PATCH_SITES=	https://invent.kde.org/qt/qt/qtbase/-/commit/
+PATCHFILES+=	12d4bf1ab52748cb84894f50d437064b439e0b7d.patch:-p1
+PATCHFILES+=	2ef615228bba9a8eb282437bfb7472f925610e89.patch:-p1
+PATCHFILES+=	a43c7e58046604796aa69974ea1c5d3e2648c755.patch:-p1
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt base (core, gui, widgets, network,...)
@@ -9,10 +15,10 @@ COMMENT=	Qt base (core, gui, widgets, network,...)
 BUILD_DEPENDS=	xml:textproc/xmlstarlet \
 		${LOCALBASE}/include/vulkan/vulkan.h:graphics/vulkan-headers \
 		${LOCALBASE}/include/linux/input.h:devel/evdev-proto
-LIB_DEPENDS=	\
-		libatk-1.0.so:accessibility/at-spi2-core \
+LIB_DEPENDS=	libatk-1.0.so:accessibility/at-spi2-core \
 		libatk-bridge-2.0.so:accessibility/at-spi2-core \
 		libatspi.so:accessibility/at-spi2-core \
+		libb2.so:devel/libb2 \
 		libbrotlidec.so:archivers/brotli \
 		libdbus-1.so:devel/dbus \
 		libdouble-conversion.so:devel/double-conversion \
@@ -39,7 +45,16 @@ USES=		cmake compiler:c++17-lang gl gnome jpeg perl5 pkgconfig python \
 		qt-dist:6 shebangfix ssl
 USE_GL=		egl opengl
 USE_GNOME=	cairo gdkpixbuf2 glib20 gtk30 pango
+USE_LDCONFIG=	${PREFIX}/${QT_LIBDIR_REL}
 USE_LOCALE=	C.UTF-8
+
+SHEBANG_FILES=	${WRKSRC}/libexec/qt-android-runner.py \
+		${WRKSRC}/mkspecs/features/uikit/device_destinations.sh \
+		${WRKSRC}/mkspecs/features/uikit/devices.py \
+		${WRKSRC}/mkspecs/features/data/mac/objc_namespace.sh \
+		${WRKSRC}/util/testrunner/qt-testrunner.py \
+		${WRKSRC}/util/testrunner/sanitizer-testrunner.py
+
 CMAKE_ARGS=	-DOPENSSL_ROOT_DIR="${OPENSSLBASE}"
 CMAKE_ON=	CMAKE_DISABLE_FIND_PACKAGE_LTTngUST \
 		QT_AVOID_CMAKE_ARCHIVING_API \
@@ -47,18 +62,11 @@ CMAKE_ON=	CMAKE_DISABLE_FIND_PACKAGE_LTTngUST \
 		QT_FEATURE_openssl_linked
 CMAKE_OFF=	QT_FEATURE_eglfs \
 		QT_FEATURE_gssapi
-# sql drivers are handled in the qt6-base-sqldriver port
+# sql drivers are handled in the databases/qt6-base_sqldriver port
 CMAKE_OFF+=	FEATURE_sql_mysql \
 		FEATURE_sql_odbc \
 		FEATURE_sql_psql \
 		FEATURE_sql_sqlite
-
-SHEBANG_FILES=	${WRKSRC}/mkspecs/features/uikit/device_destinations.sh \
-		${WRKSRC}/mkspecs/features/uikit/devices.py \
-		${WRKSRC}/mkspecs/features/data/mac/objc_namespace.sh \
-		${WRKSRC}/util/testrunner/qt-testrunner.py \
-		${WRKSRC}/util/testrunner/sanitizer-testrunner.py
-USE_LDCONFIG=	${PREFIX}/${QT_LIBDIR_REL}
 
 # zstd from base fails to compress files during the build (error 11: unsupported argument)
 BINARY_ALIAS=	zstd=${LOCALBASE}/bin/zstd
@@ -68,16 +76,17 @@ OPTIONS_DEFAULT=	CUPS X11
 OPTIONS_SUB=		yes
 
 CUPS_LIB_DEPENDS=	libcups.so:print/cups
-CUPS_CMAKE_OFF=		-DFEATURE_cups=OFF
+CUPS_CMAKE_BOOL=	FEATURE_cups
 
-X11_USES=		xorg
-X11_USE=		XORG=ice,pixman,sm,x11,xau,xcb,xcomposite,xcursor,xdamage,xdmcp,xext,xfixes,xi,xinerama,xrandr,xrender
-X11_CMAKE_BOOL=		FEATURE_xcb FEATURE_xlib
 X11_LIB_DEPENDS=	libxcb-cursor.so:x11/xcb-util-cursor \
 			libxcb-icccm.so:x11/xcb-util-wm \
 			libxcb-image.so:x11/xcb-util-image \
 			libxcb-keysyms.so:x11/xcb-util-keysyms \
 			libxcb-render-util.so:x11/xcb-util-renderutil
+X11_USES=		xorg
+X11_USE=		XORG=ice,pixman,sm,x11,xau,xcb,xcomposite,xcursor,xdamage,xdmcp,xext,xfixes,xi,xinerama,xrandr,xrender
+X11_CMAKE_BOOL=		FEATURE_xcb \
+			FEATURE_xlib
 
 .include <bsd.port.pre.mk>
 

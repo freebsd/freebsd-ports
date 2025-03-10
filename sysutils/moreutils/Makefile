@@ -1,5 +1,5 @@
 PORTNAME=	moreutils
-PORTVERSION=	0.69
+PORTVERSION=	0.70
 CATEGORIES=	sysutils
 MASTER_SITES=	https://git.joeyh.name/index.cgi/moreutils.git/snapshot/ \
 		LOCAL/sunpoet
@@ -46,9 +46,6 @@ post-extract:
 .endfor
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|parallel|moreutils-&|g' ${WRKSRC}/Makefile
-	@${REINPLACE_CMD} -e 's|__APPLE__|__${OPSYS}__|' ${WRKSRC}/ifdata.c
-	@${REINPLACE_CMD} -e '/^CC = gcc/d' ${WRKSRC}/is_utf8/Makefile
 	@cd ${FILESDIR}/ && ${CP} ${CANNED_MANPAGES} ${WRKSRC}/
 
 post-build:

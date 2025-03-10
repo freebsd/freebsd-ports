@@ -1,13 +1,13 @@
 PORTNAME=	six
-PORTVERSION=	1.16.0
-PORTREVISION=	1
+PORTVERSION=	1.17.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	Python 2 and 3 compatibility utilities
-WWW=		https://github.com/benjaminp/six
+WWW=		https://six.readthedocs.io/ \
+		https://github.com/benjaminp/six
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

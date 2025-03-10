@@ -1,8 +1,16 @@
 citra-qt currently needs SDL for audio and input
 
---- CMakeLists.txt.orig	2017-08-09 15:54:29 UTC
+--- CMakeLists.txt.orig	2022-09-01 18:37:46 UTC
 +++ CMakeLists.txt
-@@ -207,15 +207,15 @@ if (ENABLE_SDL2)
+@@ -71,7 +71,6 @@ endfunction()
+         endif()
+     endforeach()
+ endfunction()
+-check_submodules_present()
+ 
+ configure_file(${PROJECT_SOURCE_DIR}/dist/compatibility_list/compatibility_list.qrc
+                ${PROJECT_BINARY_DIR}/dist/compatibility_list/compatibility_list.qrc
+@@ -168,15 +167,15 @@ if (ENABLE_SDL2)
      else()
          find_package(SDL2 REQUIRED)
      endif()

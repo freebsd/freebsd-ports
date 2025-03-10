@@ -1,4 +1,4 @@
---- asn1/asn1c/der_encoder.c.orig	2021-11-25 17:34:42 UTC
+--- asn1/asn1c/der_encoder.c.orig	2024-08-21 15:06:37 UTC
 +++ asn1/asn1c/der_encoder.c
 @@ -4,6 +4,7 @@
   */

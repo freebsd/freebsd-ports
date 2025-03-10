@@ -98,8 +98,12 @@ bin/openshot-qt
 %%PYTHON_SITELIBDIR%%/openshot_qt/classes/__pycache__/app%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/openshot_qt/classes/__pycache__/assets%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/openshot_qt/classes/__pycache__/assets%%PYTHON_EXT_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/openshot_qt/classes/__pycache__/clipboard%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/openshot_qt/classes/__pycache__/clipboard%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/openshot_qt/classes/__pycache__/conversion%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/openshot_qt/classes/__pycache__/conversion%%PYTHON_EXT_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/openshot_qt/classes/__pycache__/convert_framerate%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/openshot_qt/classes/__pycache__/convert_framerate%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/openshot_qt/classes/__pycache__/effect_init%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/openshot_qt/classes/__pycache__/effect_init%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/openshot_qt/classes/__pycache__/exceptions%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
@@ -140,6 +144,8 @@ bin/openshot-qt
 %%PYTHON_SITELIBDIR%%/openshot_qt/classes/__pycache__/time_parts%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/openshot_qt/classes/__pycache__/timeline%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/openshot_qt/classes/__pycache__/timeline%%PYTHON_EXT_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/openshot_qt/classes/__pycache__/title_bar%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/openshot_qt/classes/__pycache__/title_bar%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/openshot_qt/classes/__pycache__/ui_util%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/openshot_qt/classes/__pycache__/ui_util%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/openshot_qt/classes/__pycache__/updates%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
@@ -150,7 +156,9 @@ bin/openshot-qt
 %%PYTHON_SITELIBDIR%%/openshot_qt/classes/__pycache__/waveform%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/openshot_qt/classes/app.py
 %%PYTHON_SITELIBDIR%%/openshot_qt/classes/assets.py
+%%PYTHON_SITELIBDIR%%/openshot_qt/classes/clipboard.py
 %%PYTHON_SITELIBDIR%%/openshot_qt/classes/conversion.py
+%%PYTHON_SITELIBDIR%%/openshot_qt/classes/convert_framerate.py
 %%PYTHON_SITELIBDIR%%/openshot_qt/classes/effect_init.py
 %%PYTHON_SITELIBDIR%%/openshot_qt/classes/exceptions.py
 %%PYTHON_SITELIBDIR%%/openshot_qt/classes/exporters/__init__.py
@@ -228,6 +236,7 @@ bin/openshot-qt
 %%PYTHON_SITELIBDIR%%/openshot_qt/classes/thumbnail.py
 %%PYTHON_SITELIBDIR%%/openshot_qt/classes/time_parts.py
 %%PYTHON_SITELIBDIR%%/openshot_qt/classes/timeline.py
+%%PYTHON_SITELIBDIR%%/openshot_qt/classes/title_bar.py
 %%PYTHON_SITELIBDIR%%/openshot_qt/classes/ui_util.py
 %%PYTHON_SITELIBDIR%%/openshot_qt/classes/updates.py
 %%PYTHON_SITELIBDIR%%/openshot_qt/classes/version.py
@@ -5776,6 +5785,7 @@ bin/openshot-qt
 %%PYTHON_SITELIBDIR%%/openshot_qt/themes/cosmic/__pycache__/theme%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/openshot_qt/themes/cosmic/images/dock-close.svg
 %%PYTHON_SITELIBDIR%%/openshot_qt/themes/cosmic/images/dock-float.svg
+%%PYTHON_SITELIBDIR%%/openshot_qt/themes/cosmic/images/dock-move.svg
 %%PYTHON_SITELIBDIR%%/openshot_qt/themes/cosmic/images/dropdown-arrow.svg
 %%PYTHON_SITELIBDIR%%/openshot_qt/themes/cosmic/images/dropdown-tick.svg
 %%PYTHON_SITELIBDIR%%/openshot_qt/themes/cosmic/images/keyframe-bezier.svg
@@ -5813,6 +5823,9 @@ bin/openshot-qt
 %%PYTHON_SITELIBDIR%%/openshot_qt/themes/humanity/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/openshot_qt/themes/humanity/__pycache__/theme%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/openshot_qt/themes/humanity/__pycache__/theme%%PYTHON_EXT_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/openshot_qt/themes/humanity/images/dock-close.svg
+%%PYTHON_SITELIBDIR%%/openshot_qt/themes/humanity/images/dock-float.svg
+%%PYTHON_SITELIBDIR%%/openshot_qt/themes/humanity/images/dock-move.svg
 %%PYTHON_SITELIBDIR%%/openshot_qt/themes/humanity/images/keyframe-bezier.svg
 %%PYTHON_SITELIBDIR%%/openshot_qt/themes/humanity/images/keyframe-constant.svg
 %%PYTHON_SITELIBDIR%%/openshot_qt/themes/humanity/images/keyframe-linear.svg
@@ -6353,6 +6366,8 @@ bin/openshot-qt
 %%PYTHON_SITELIBDIR%%/openshot_qt/windows/__pycache__/process_effect%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/openshot_qt/windows/__pycache__/profile%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/openshot_qt/windows/__pycache__/profile%%PYTHON_EXT_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/openshot_qt/windows/__pycache__/profile_edit%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/openshot_qt/windows/__pycache__/profile_edit%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/openshot_qt/windows/__pycache__/region%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/openshot_qt/windows/__pycache__/region%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/openshot_qt/windows/__pycache__/title_editor%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
@@ -6409,6 +6424,7 @@ bin/openshot-qt
 %%PYTHON_SITELIBDIR%%/openshot_qt/windows/preview_thread.py
 %%PYTHON_SITELIBDIR%%/openshot_qt/windows/process_effect.py
 %%PYTHON_SITELIBDIR%%/openshot_qt/windows/profile.py
+%%PYTHON_SITELIBDIR%%/openshot_qt/windows/profile_edit.py
 %%PYTHON_SITELIBDIR%%/openshot_qt/windows/region.py
 %%PYTHON_SITELIBDIR%%/openshot_qt/windows/title_editor.py
 %%PYTHON_SITELIBDIR%%/openshot_qt/windows/ui/about.ui
@@ -6425,6 +6441,7 @@ bin/openshot-qt
 %%PYTHON_SITELIBDIR%%/openshot_qt/windows/ui/main-window.ui
 %%PYTHON_SITELIBDIR%%/openshot_qt/windows/ui/preferences.ui
 %%PYTHON_SITELIBDIR%%/openshot_qt/windows/ui/process-effect.ui
+%%PYTHON_SITELIBDIR%%/openshot_qt/windows/ui/profile-edit.ui
 %%PYTHON_SITELIBDIR%%/openshot_qt/windows/ui/profile.ui
 %%PYTHON_SITELIBDIR%%/openshot_qt/windows/ui/region.ui
 %%PYTHON_SITELIBDIR%%/openshot_qt/windows/ui/title-editor.ui

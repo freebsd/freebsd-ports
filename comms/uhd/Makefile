@@ -1,7 +1,7 @@
 PORTNAME=	uhd
 DISTVERSIONPREFIX=	v
 DISTVERSION=	4.6.0.0
-PORTREVISION=	1
+PORTREVISION=	3
 CATEGORIES=	comms hamradio
 DIST_SUBDIR=	${PORTNAME}
 
@@ -15,6 +15,8 @@ WWW=		https://www.ettus.com/sdr-software/uhd-usrp-hardware-driver/
 # until terms of the "Alternate License" are made clear.  When that
 # is understood and if appropriate, we can add that license here.
 LICENSE=	GPLv3
+
+BROKEN=		fails to build with Boost>=1.87
 
 LIB_DEPENDS=	${PY_BOOST} \
 		libboost_system.so:devel/boost-libs
@@ -53,10 +55,12 @@ OPTIONS_DEFINE=		DOCS DOXYGEN
 OPTIONS_DEFAULT=	DOCS
 
 OPTIONS_SUB=		yes
+
 DOXYGEN_BUILD_DEPENDS=	doxygen:devel/doxygen
 DOXYGEN_CMAKE_ON=	-DENABLE_DOXYGEN:STRING="ON"
 DOXYGEN_CMAKE_OFF=	-DENABLE_DOXYGEN:STRING="OFF" \
 			-DENABLE_MANUAL:STRING="OFF"
+DOXYGEN_PORTDOCS=	doxygen
 
 do-install:
 # install host component

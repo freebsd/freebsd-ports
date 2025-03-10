@@ -1,0 +1,47 @@
+#!/bin/sh
+
+# PROVIDE: vboxwebsrv
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following line to /etc/rc.conf[.local] to enable vboxwebsrv
+#
+# vboxwebsrv_enable (bool):	Set to "NO" by default.
+#				Set it to "YES" to enable vboxwebsrv.
+# vboxwebsrv_user (str):	User account to run with.
+# vboxwebsrv_flags (str):	Custom flags for vboxwebsrv.
+
+. /etc/rc.subr
+
+name=vboxwebsrv
+rcvar=vboxwebsrv_enable
+
+command="%%VBOXDIR%%/vboxwebsrv"
+pidfile="/var/run/${name}.pid"
+
+start_cmd="${name}_start"
+
+vboxwebsrv_start()
+{
+	local pid
+
+	HOME=$(/usr/sbin/pw usershow -7 -n "${vboxwebsrv_user}" | /usr/bin/cut -d: -f6)
+	pid=$(check_pidfile $pidfile $command)
+
+	if [ -n "${pid}" ]; then
+		echo "${name} already running? (pid=${pid})."
+		return 1
+	fi
+
+	echo -n "Starting ${name}"
+	/usr/bin/install -o ${vboxwebsrv_user} -g %%VBOXGROUP%% -m 644 /dev/null ${pidfile}
+	/usr/sbin/daemon -f -p ${pidfile} -u ${vboxwebsrv_user} ${command} ${vboxwebsrv_flags}
+	echo '.'
+}
+
+load_rc_config $name
+
+: ${vboxwebsrv_enable="NO"}
+: ${vboxwebsrv_user="%%VBOXWSUSER%%"}
+
+run_rc_command "$1"

@@ -1,0 +1,10 @@
+[
+{ type: install
+  message: <<EOM
+If you experience a blank screen or freeze after execution, try setting the
+WEBKIT_DISABLE_COMPOSITING_MODE environment variable to 1. For example:
+
+    $ env WEBKIT_DISABLE_COMPOSITING_MODE=1 nyxt <URL>
+EOM
+}
+]

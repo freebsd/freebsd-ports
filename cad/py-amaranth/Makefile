@@ -1,12 +1,13 @@
 PORTNAME=	amaranth
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.5.1
+DISTVERSION=	0.5.4
 CATEGORIES=	cad python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Amaranth hardware definition language
-WWW=		https://amaranth-lang.org/docs/amaranth/latest/
+WWW=		https://amaranth-lang.org/docs/amaranth/latest/ \
+		https://github.com/amaranth-lang/amaranth
 
 LICENSE=	BSD3CLAUSE
 
@@ -48,5 +49,7 @@ do-install: # workaround for https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=2
 		-e 's|^${PYTHONPREFIX_SITELIBDIR}/../../../share/|share/|' \
 			${_PYTHONPKGLIST}
 	@cd ${STAGEDIR}${PREFIX} && ${FIND} lib -name '*.pyc' >> ${_PYTHONPKGLIST}
+
+# tests as of 0.5.4: 1186 passed, 3 warnings in 50.72s
 
 .include <bsd.port.mk>

@@ -1,5 +1,5 @@
 PORTNAME=	zix
-DISTVERSION=	0.4.2
+DISTVERSION=	0.6.2
 CATEGORIES=	devel
 MASTER_SITES=	http://download.drobilla.net/
 
@@ -14,7 +14,10 @@ BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/glib-2.0.pc:devel/glib20
 
 USES=		meson pkgconfig python:build tar:xz
 USE_LDCONFIG=	yes
-MESON_ARGS=	-Ddocs=disabled
+MESON_ARGS=	-Db_lundef=false \
+		-Ddocs=disabled
+#-Db_lundef=false: https://github.com/drobilla/zix/issues/9
+
 PLIST_SUB=	VERSION=${DISTVERSION}
 
 .include <bsd.port.mk>

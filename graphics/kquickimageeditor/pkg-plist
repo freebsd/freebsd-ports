@@ -7,7 +7,7 @@ lib/cmake/KQuickImageEditor/KQuickImageEditorConfigVersion.cmake
 %%QT_QMLDIR%%/org/kde/kquickimageeditor/SelectionBackground.qml
 %%QT_QMLDIR%%/org/kde/kquickimageeditor/SelectionHandle.qml
 %%QT_QMLDIR%%/org/kde/kquickimageeditor/SelectionTool.qml
+%%QT_QMLDIR%%/org/kde/kquickimageeditor/kde-qmlmodule.version
+%%QT_QMLDIR%%/org/kde/kquickimageeditor/kquickimageeditorplugin.qmltypes
 %%QT_QMLDIR%%/org/kde/kquickimageeditor/libkquickimageeditorplugin.so
-%%QT_QMLDIR%%/org/kde/kquickimageeditor/plugins.qmltypes
 %%QT_QMLDIR%%/org/kde/kquickimageeditor/qmldir
-%%QT_QMLDIR%%/org/kde/kquickimageeditor/qmldir.license

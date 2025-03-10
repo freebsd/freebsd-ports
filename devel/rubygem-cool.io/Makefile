@@ -1,11 +1,11 @@
 PORTNAME=	cool.io
-PORTVERSION=	1.8.1
+PORTVERSION=	1.9.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Gems for cool.io
-WWW=		https://github.com/tarcieri/cool.io
+WWW=		https://github.com/socketry/cool.io
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

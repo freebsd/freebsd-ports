@@ -108,6 +108,7 @@ include/rocksdb/utilities/option_change_migration.h
 include/rocksdb/utilities/options_type.h
 include/rocksdb/utilities/options_util.h
 include/rocksdb/utilities/replayer.h
+include/rocksdb/utilities/secondary_index.h
 include/rocksdb/utilities/sim_cache.h
 include/rocksdb/utilities/stackable_db.h
 include/rocksdb/utilities/table_properties_collectors.h

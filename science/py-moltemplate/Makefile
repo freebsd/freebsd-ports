@@ -1,15 +1,20 @@
 PORTNAME=	moltemplate
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.20.21
+DISTVERSION=	2.22.0
+PORTREVISION=	1
 CATEGORIES=	science python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Tool to prepare simulations of molecules, complex molecular assemblies
-WWW=		https://www.moltemplate.org/
+WWW=		https://www.moltemplate.org/ \
+		https://github.com/jewettaij/moltemplate
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
+
+DEPRECATED=	Depends on expired devel/py-pytest-runner
+EXPIRATION_DATE=2025-03-31
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest-runner>0:devel/py-pytest-runner@${PY_FLAVOR}
 RUN_DEPENDS=	${PYNUMPY} \

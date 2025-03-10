@@ -1,4 +1,4 @@
---- chrome/browser/web_applications/web_app_install_info.h.orig	2024-07-30 11:12:21 UTC
+--- chrome/browser/web_applications/web_app_install_info.h.orig	2025-02-19 07:43:18 UTC
 +++ chrome/browser/web_applications/web_app_install_info.h
 @@ -38,7 +38,7 @@
  #include "url/gurl.h"

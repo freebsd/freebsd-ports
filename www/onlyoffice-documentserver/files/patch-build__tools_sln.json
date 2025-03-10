@@ -1,0 +1,30 @@
+--- build_tools/sln.json.orig	2024-09-11 13:02:49 UTC
++++ build_tools/sln.json
+@@ -45,14 +45,14 @@
+ 
+     "[!no_x2t]core/X2tConverter/build/Qt/X2tConverter.pro",
+ 
+-    "[win,linux,mac]core/DesktopEditor/AllFontsGen/AllFontsGen.pro",
+-    "[win,linux,mac]core/DesktopEditor/allthemesgen/allthemesgen.pro",
++    "[win,linux,freebsd,mac]core/DesktopEditor/AllFontsGen/AllFontsGen.pro",
++    "[win,linux,freebsd,mac]core/DesktopEditor/allthemesgen/allthemesgen.pro",
+ 
+-    "[win,linux,mac]core/DesktopEditor/doctrenderer/app_builder/docbuilder.pro",
++    "[win,linux,freebsd,mac]core/DesktopEditor/doctrenderer/app_builder/docbuilder.pro",
+ 
+-    "[win,linux,mac]core/DesktopEditor/pluginsmanager/pluginsmanager.pro",
++    "[win,linux,freebsd,mac]core/DesktopEditor/pluginsmanager/pluginsmanager.pro",
+ 
+-    "[win,linux,mac,!linux_arm64]core/OfficeCryptReader/ooxml_crypt/ooxml_crypt.pro",
++    "[win,linux,freebsd,mac,!linux_arm64]core/OfficeCryptReader/ooxml_crypt/ooxml_crypt.pro",
+ 
+     "spell",
+ 
+@@ -98,6 +98,6 @@
+   ],
+ 
+   "osign" : [
+-    "[win,linux,mac]core/DesktopEditor/xmlsec/src/osign/lib/osign.pro"
++    "[win,linux,freebsd,mac]core/DesktopEditor/xmlsec/src/osign/lib/osign.pro"
+   ]
+ }

@@ -1,9 +1,9 @@
 PORTNAME=	dns-crawler
-PORTVERSION=	1.6.3
-PORTREVISION=	1
+PORTVERSION=	1.6.5
 CATEGORIES=	dns python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	dns_crawler-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Crawler for getting info about DNS domains and services
@@ -25,13 +25,13 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}asn1crypto>=1.5.1:devel/py-asn1crypto@${PY_F
 		${PYTHON_PKGNAMEPREFIX}hstspreload>=0:www/py-hstspreload@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}idna>=2.10:dns/py-idna@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyaml>=21.10.1:textproc/py-pyaml@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pyicu>=2.10.2:devel/py-pyicu@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pyicu>=2.13.1:devel/py-pyicu@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}openssl>=23.1.1,1:security/py-openssl@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}python-magic>=0.4.27:devel/py-python-magic@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}redis>=4.5.4:databases/py-redis@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>=2.23.0:www/py-requests@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests-toolbelt>=0.10.1:www/py-requests-toolbelt@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}rq>=1.13.0:devel/py-rq@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}rq1>=1.13.0:devel/py-rq1@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	autoplist concurrent cryptography pep517

@@ -1,6 +1,6 @@
---- extensions/common/features/feature.cc.orig	2023-09-17 07:59:53 UTC
+--- extensions/common/features/feature.cc.orig	2025-01-25 09:34:31 UTC
 +++ extensions/common/features/feature.cc
-@@ -34,6 +34,8 @@ Feature::Platform Feature::GetCurrentPlatform() {
+@@ -29,6 +29,8 @@ Feature::Platform Feature::GetCurrentPlatform() {
    return WIN_PLATFORM;
  #elif BUILDFLAG(IS_FUCHSIA)
    return FUCHSIA_PLATFORM;

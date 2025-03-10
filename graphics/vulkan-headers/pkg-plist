@@ -1,5 +1,6 @@
 include/vk_video/vulkan_video_codec_av1std.h
 include/vk_video/vulkan_video_codec_av1std_decode.h
+include/vk_video/vulkan_video_codec_av1std_encode.h
 include/vk_video/vulkan_video_codec_h264std.h
 include/vk_video/vulkan_video_codec_h264std_decode.h
 include/vk_video/vulkan_video_codec_h264std_encode.h
@@ -45,6 +46,7 @@ include/vulkan/vulkan_xlib_xrandr.h
 share/cmake/VulkanHeaders/VulkanHeadersConfig.cmake
 share/cmake/VulkanHeaders/VulkanHeadersConfigVersion.cmake
 share/vulkan/registry/apiconventions.py
+share/vulkan/registry/base_generator.py
 share/vulkan/registry/cgenerator.py
 share/vulkan/registry/generator.py
 share/vulkan/registry/parse_dependency.py
@@ -57,3 +59,4 @@ share/vulkan/registry/validusage.json
 share/vulkan/registry/video.xml
 share/vulkan/registry/vk.xml
 share/vulkan/registry/vkconventions.py
+share/vulkan/registry/vulkan_object.py

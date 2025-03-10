@@ -6,7 +6,7 @@ If you upgrade:
  * run # sympa.pl --upgrade
 
 First install:
- * run # sympa_wizard.pl
+ * edit /usr/local/etc/sympa/sympa.conf to suit your needs
  * populate database with # sympa.pl --health_check
    For more databases options,
    see https://sympa-community.github.io/manual/install/setup-database.html

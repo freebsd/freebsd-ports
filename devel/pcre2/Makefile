@@ -1,5 +1,5 @@
 PORTNAME=	pcre2
-DISTVERSION=	10.43
+DISTVERSION=	10.45
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/PCRE2Project/${PORTNAME}/releases/download/${PORTNAME}-${DISTVERSION}/
 
@@ -8,7 +8,7 @@ COMMENT=	Perl Compatible Regular Expressions library, version 2
 WWW=		https://www.pcre.org/
 
 LICENSE=	BSD3CLAUSE
-LICENSE_FILE=	${WRKSRC}/LICENCE
+LICENSE_FILE=	${WRKSRC}/LICENCE.md
 
 USES=		autoreconf cpe libtool pkgconfig tar:bz2
 CPE_VENDOR=	pcre

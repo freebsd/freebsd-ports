@@ -1,5 +1,3 @@
 This package includes jisyo(conversion dictionary) management tools for
 the SKK(Simple Kana Kanji Convertor), a very fast and efficient Japanese
 input method system.
-
-Read ${PREFIX}/share/doc/skk/README.skktools for more detail.

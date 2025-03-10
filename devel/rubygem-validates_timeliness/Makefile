@@ -1,5 +1,5 @@
 PORTNAME=	validates_timeliness
-PORTVERSION=	6.0.1
+PORTVERSION=	8.0.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -10,7 +10,7 @@ WWW=		https://github.com/adzap/validates_timeliness
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rubygem-activemodel61>=6.0.0<7:databases/rubygem-activemodel61 \
+RUN_DEPENDS=	rubygem-activemodel80>=8.0.0<9:databases/rubygem-activemodel80 \
 		rubygem-timeliness>=0.3.10<1:devel/rubygem-timeliness
 
 USES=		gem

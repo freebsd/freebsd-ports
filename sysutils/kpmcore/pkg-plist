@@ -90,7 +90,10 @@ lib/libkpmcore.so.%%KDE_APPLICATIONS_VERSION%%
 %%QT_PLUGINDIR%%/kpmcore/pmdummybackendplugin.so
 share/dbus-1/system-services/org.kde.kpmcore.helperinterface.service
 share/dbus-1/system.d/org.kde.kpmcore.helperinterface.conf
+share/locale/ar/LC_MESSAGES/kpmcore._policy_.mo
 share/locale/ar/LC_MESSAGES/kpmcore.mo
+share/locale/ast/LC_MESSAGES/kpmcore._policy_.mo
+share/locale/ast/LC_MESSAGES/kpmcore.mo
 share/locale/bg/LC_MESSAGES/kpmcore._policy_.mo
 share/locale/bg/LC_MESSAGES/kpmcore.mo
 share/locale/bs/LC_MESSAGES/kpmcore.mo
@@ -123,9 +126,13 @@ share/locale/fr/LC_MESSAGES/kpmcore.mo
 share/locale/ga/LC_MESSAGES/kpmcore.mo
 share/locale/gl/LC_MESSAGES/kpmcore._policy_.mo
 share/locale/gl/LC_MESSAGES/kpmcore.mo
+share/locale/he/LC_MESSAGES/kpmcore._policy_.mo
+share/locale/he/LC_MESSAGES/kpmcore.mo
 share/locale/hr/LC_MESSAGES/kpmcore.mo
 share/locale/hu/LC_MESSAGES/kpmcore._policy_.mo
 share/locale/hu/LC_MESSAGES/kpmcore.mo
+share/locale/ia/LC_MESSAGES/kpmcore._policy_.mo
+share/locale/ia/LC_MESSAGES/kpmcore.mo
 share/locale/id/LC_MESSAGES/kpmcore.mo
 share/locale/is/LC_MESSAGES/kpmcore.mo
 share/locale/it/LC_MESSAGES/kpmcore._policy_.mo

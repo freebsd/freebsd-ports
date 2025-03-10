@@ -13,7 +13,6 @@ share/icons/hicolor/48x48/apps/kwordquiz.png
 share/icons/hicolor/48x48/mimetypes/application-x-kwordquiz.png
 share/icons/hicolor/64x64/apps/kwordquiz.png
 share/icons/hicolor/scalable/apps/org.kde.kwordquiz.svg
-share/knotifications5/kwordquiz.notifyrc
 share/knsrcfiles/kwordquiz.knsrc
 %%DATADIR%%/examples/example.kvtml
 %%DATADIR%%/examples/fill_in_the_blank.kvtml
@@ -168,6 +167,7 @@ share/knsrcfiles/kwordquiz.knsrc
 %%DATADIR%%/icons/hicolor/scalable/actions/question.svgz
 %%DATADIR%%/icons/hicolor/scalable/actions/unmarkasblank.svgz
 share/locale/ar/LC_MESSAGES/kwordquiz.mo
+share/locale/ast/LC_MESSAGES/kwordquiz.mo
 share/locale/be/LC_MESSAGES/kwordquiz.mo
 share/locale/bg/LC_MESSAGES/kwordquiz.mo
 share/locale/bn/LC_MESSAGES/kwordquiz.mo
@@ -190,6 +190,7 @@ share/locale/fi/LC_MESSAGES/kwordquiz.mo
 share/locale/fr/LC_MESSAGES/kwordquiz.mo
 share/locale/ga/LC_MESSAGES/kwordquiz.mo
 share/locale/gl/LC_MESSAGES/kwordquiz.mo
+share/locale/he/LC_MESSAGES/kwordquiz.mo
 share/locale/hi/LC_MESSAGES/kwordquiz.mo
 share/locale/hne/LC_MESSAGES/kwordquiz.mo
 share/locale/hr/LC_MESSAGES/kwordquiz.mo

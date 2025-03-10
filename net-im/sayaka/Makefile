@@ -1,6 +1,6 @@
 PORTNAME=	sayaka
 PORTVERSION=	3.5.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net-im
 
 MAINTAINER=	sue@iwmt.org
@@ -9,8 +9,11 @@ WWW=		https://github.com/isaki68k/sayaka
 
 LICENSE=	BSD2CLAUSE
 
+DEPRECATED=	Depends on expired security/mbedtls2
+EXPIRATION_DATE=2025-03-31
+
 LIB_DEPENDS=	libpng.so:graphics/png \
-		libmbedtls.so:security/mbedtls
+		libmbedtls.so:security/mbedtls2
 
 USES=		compiler:c++17-lang iconv jpeg pkgconfig
 GNU_CONFIGURE=	yes

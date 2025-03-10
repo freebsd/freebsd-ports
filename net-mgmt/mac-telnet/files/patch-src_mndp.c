@@ -1,6 +1,6 @@
---- src/mndp.c.orig	2024-06-19 14:43:14 UTC
+--- src/mndp.c.orig	2024-08-12 21:08:19 UTC
 +++ src/mndp.c
-@@ -170,9 +170,12 @@ int mndp(int timeout, int batch_mode) {
+@@ -177,9 +177,12 @@ int mndp(int timeout, int batch_mode) {
  	return 0;
  }
  

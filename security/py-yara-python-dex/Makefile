@@ -1,5 +1,6 @@
 PORTNAME=	yara-python-dex
-PORTVERSION=	1.0.6
+PORTVERSION=	1.0.7.1
+PORTREVISION=	1
 CATEGORIES=	security python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -18,13 +19,13 @@ GH_SUBDIR=	yara-python:yp yara-python/yara:yp2
 
 CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}yara
 
-USES=		python ssl
+USES=		pytest python ssl
 USE_PYTHON=	distutils
 
 .if !defined(WITH_DEBUG)
 LDFLAGS+=	-s
 .endif
 
-PLIST_FILES=	%%PYTHON_SITELIBDIR%%/yara%%PYTHON_EXT_SUFFIX%%.so
+PLIST_SUB=	VER=${PORTVERSION:R}
 
 .include <bsd.port.mk>

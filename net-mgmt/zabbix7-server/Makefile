@@ -1,5 +1,5 @@
 PORTNAME=	zabbix7
-DISTVERSION=	7.0.2
+DISTVERSION=	7.0.10
 PORTREVISION?=	0
 CATEGORIES=	net-mgmt
 MASTER_SITES=	https://cdn.zabbix.com/zabbix/sources/stable/${DISTVERSION:R}/
@@ -166,6 +166,11 @@ GNUTLS_LIB_DEPENDS=	libgnutls.so:security/gnutls
 
 .endif # if ${ZABBIX_BUILD} != "java"
 
+.if ${ZABBIX_BUILD} == "java"
+USES+=         java
+JAVA_VERSION=	11+
+.endif
+
 .include <bsd.port.pre.mk>
 
 post-patch:
@@ -207,7 +212,7 @@ post-patch:
 .endif
 
 .if ${ZABBIX_BUILD} != "agent"
-.  for d in mysql oracle postgresql sqlite3
+.  for d in mysql oracle postgresql
 	@${REINPLACE_CMD} \
 		-e 's|/usr/bin/traceroute|/usr/sbin/traceroute|g' \
 		-e 's|sudo /usr/bin/nmap|sudo ${LOCALBASE}/bin/nmap|g' \

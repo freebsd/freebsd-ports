@@ -59,12 +59,17 @@ share/fusioninventory/lib/FusionInventory/Agent/SNMP/MibSupport/Digi.pm
 share/fusioninventory/lib/FusionInventory/Agent/SNMP/MibSupport/EatonEpdu.pm
 share/fusioninventory/lib/FusionInventory/Agent/SNMP/MibSupport/Epson.pm
 share/fusioninventory/lib/FusionInventory/Agent/SNMP/MibSupport/FreeBSD.pm
+share/fusioninventory/lib/FusionInventory/Agent/SNMP/MibSupport/HPHttpManagement.pm
 share/fusioninventory/lib/FusionInventory/Agent/SNMP/MibSupport/HPNetPeripheral.pm
+share/fusioninventory/lib/FusionInventory/Agent/SNMP/MibSupport/Hwg.pm
+share/fusioninventory/lib/FusionInventory/Agent/SNMP/MibSupport/Kyocera.pm
 share/fusioninventory/lib/FusionInventory/Agent/SNMP/MibSupport/LinuxAppliance.pm
 share/fusioninventory/lib/FusionInventory/Agent/SNMP/MibSupport/Mikrotik.pm
+share/fusioninventory/lib/FusionInventory/Agent/SNMP/MibSupport/Multitech.pm
 share/fusioninventory/lib/FusionInventory/Agent/SNMP/MibSupport/Oki.pm
 share/fusioninventory/lib/FusionInventory/Agent/SNMP/MibSupport/Panasas.pm
 share/fusioninventory/lib/FusionInventory/Agent/SNMP/MibSupport/Ricoh.pm
+share/fusioninventory/lib/FusionInventory/Agent/SNMP/MibSupport/Siemens.pm
 share/fusioninventory/lib/FusionInventory/Agent/SNMP/MibSupport/UPS.pm
 share/fusioninventory/lib/FusionInventory/Agent/SNMP/MibSupport/Ubnt.pm
 share/fusioninventory/lib/FusionInventory/Agent/SNMP/MibSupport/Zebra.pm
@@ -151,6 +156,7 @@ share/fusioninventory/lib/FusionInventory/Agent/Task/Inventory/Generic.pm
 share/fusioninventory/lib/FusionInventory/Agent/Task/Inventory/Generic/Arch.pm
 share/fusioninventory/lib/FusionInventory/Agent/Task/Inventory/Generic/Batteries.pm
 share/fusioninventory/lib/FusionInventory/Agent/Task/Inventory/Generic/Batteries/Acpiconf.pm
+share/fusioninventory/lib/FusionInventory/Agent/Task/Inventory/Generic/Batteries/SysClass.pm
 share/fusioninventory/lib/FusionInventory/Agent/Task/Inventory/Generic/Batteries/Upower.pm
 share/fusioninventory/lib/FusionInventory/Agent/Task/Inventory/Generic/Dmidecode.pm
 share/fusioninventory/lib/FusionInventory/Agent/Task/Inventory/Generic/Dmidecode/Battery.pm
@@ -169,6 +175,9 @@ share/fusioninventory/lib/FusionInventory/Agent/Task/Inventory/Generic/Firewall/
 share/fusioninventory/lib/FusionInventory/Agent/Task/Inventory/Generic/Hostname.pm
 share/fusioninventory/lib/FusionInventory/Agent/Task/Inventory/Generic/Ipmi.pm
 share/fusioninventory/lib/FusionInventory/Agent/Task/Inventory/Generic/Ipmi/Fru.pm
+share/fusioninventory/lib/FusionInventory/Agent/Task/Inventory/Generic/Ipmi/Fru/Controllers.pm
+share/fusioninventory/lib/FusionInventory/Agent/Task/Inventory/Generic/Ipmi/Fru/Memory.pm
+share/fusioninventory/lib/FusionInventory/Agent/Task/Inventory/Generic/Ipmi/Fru/Psu.pm
 share/fusioninventory/lib/FusionInventory/Agent/Task/Inventory/Generic/Ipmi/Lan.pm
 share/fusioninventory/lib/FusionInventory/Agent/Task/Inventory/Generic/Networks.pm
 share/fusioninventory/lib/FusionInventory/Agent/Task/Inventory/Generic/Networks/iLO.pm
@@ -196,6 +205,7 @@ share/fusioninventory/lib/FusionInventory/Agent/Task/Inventory/Generic/Softwares
 share/fusioninventory/lib/FusionInventory/Agent/Task/Inventory/Generic/Storages.pm
 share/fusioninventory/lib/FusionInventory/Agent/Task/Inventory/Generic/Storages/3ware.pm
 share/fusioninventory/lib/FusionInventory/Agent/Task/Inventory/Generic/Storages/HP.pm
+share/fusioninventory/lib/FusionInventory/Agent/Task/Inventory/Generic/Storages/HpWithSmartctl.pm
 share/fusioninventory/lib/FusionInventory/Agent/Task/Inventory/Generic/Timezone.pm
 share/fusioninventory/lib/FusionInventory/Agent/Task/Inventory/Generic/USB.pm
 share/fusioninventory/lib/FusionInventory/Agent/Task/Inventory/Generic/Users.pm
@@ -239,6 +249,7 @@ share/fusioninventory/lib/FusionInventory/Agent/Task/Inventory/Linux/Storages.pm
 share/fusioninventory/lib/FusionInventory/Agent/Task/Inventory/Linux/Storages/Adaptec.pm
 share/fusioninventory/lib/FusionInventory/Agent/Task/Inventory/Linux/Storages/Lsilogic.pm
 share/fusioninventory/lib/FusionInventory/Agent/Task/Inventory/Linux/Storages/Megacli.pm
+share/fusioninventory/lib/FusionInventory/Agent/Task/Inventory/Linux/Storages/MegacliWithSmartctl.pm
 share/fusioninventory/lib/FusionInventory/Agent/Task/Inventory/Linux/Storages/Megaraid.pm
 share/fusioninventory/lib/FusionInventory/Agent/Task/Inventory/Linux/Storages/ServeRaid.pm
 share/fusioninventory/lib/FusionInventory/Agent/Task/Inventory/Linux/Uptime.pm
@@ -258,6 +269,7 @@ share/fusioninventory/lib/FusionInventory/Agent/Task/Inventory/MacOS/License.pm
 share/fusioninventory/lib/FusionInventory/Agent/Task/Inventory/MacOS/Memory.pm
 share/fusioninventory/lib/FusionInventory/Agent/Task/Inventory/MacOS/Networks.pm
 share/fusioninventory/lib/FusionInventory/Agent/Task/Inventory/MacOS/Printers.pm
+share/fusioninventory/lib/FusionInventory/Agent/Task/Inventory/MacOS/Psu.pm
 share/fusioninventory/lib/FusionInventory/Agent/Task/Inventory/MacOS/Softwares.pm
 share/fusioninventory/lib/FusionInventory/Agent/Task/Inventory/MacOS/Sound.pm
 share/fusioninventory/lib/FusionInventory/Agent/Task/Inventory/MacOS/Storages.pm
@@ -318,6 +330,7 @@ share/fusioninventory/lib/FusionInventory/Agent/Task/Inventory/Win32/Slots.pm
 share/fusioninventory/lib/FusionInventory/Agent/Task/Inventory/Win32/Softwares.pm
 share/fusioninventory/lib/FusionInventory/Agent/Task/Inventory/Win32/Sounds.pm
 share/fusioninventory/lib/FusionInventory/Agent/Task/Inventory/Win32/Storages.pm
+share/fusioninventory/lib/FusionInventory/Agent/Task/Inventory/Win32/Storages/HP.pm
 share/fusioninventory/lib/FusionInventory/Agent/Task/Inventory/Win32/USB.pm
 share/fusioninventory/lib/FusionInventory/Agent/Task/Inventory/Win32/Users.pm
 share/fusioninventory/lib/FusionInventory/Agent/Task/Inventory/Win32/Videos.pm
@@ -345,10 +358,17 @@ share/fusioninventory/lib/FusionInventory/Agent/Tools/Hardware.pm
 share/fusioninventory/lib/FusionInventory/Agent/Tools/Hardware/Brocade.pm
 share/fusioninventory/lib/FusionInventory/Agent/Tools/Hardware/Qlogic.pm
 share/fusioninventory/lib/FusionInventory/Agent/Tools/Hostname.pm
+share/fusioninventory/lib/FusionInventory/Agent/Tools/IpmiFru.pm
 share/fusioninventory/lib/FusionInventory/Agent/Tools/License.pm
 share/fusioninventory/lib/FusionInventory/Agent/Tools/Linux.pm
 share/fusioninventory/lib/FusionInventory/Agent/Tools/MacOS.pm
 share/fusioninventory/lib/FusionInventory/Agent/Tools/Network.pm
+share/fusioninventory/lib/FusionInventory/Agent/Tools/PartNumber.pm
+share/fusioninventory/lib/FusionInventory/Agent/Tools/PartNumber/Dell.pm
+share/fusioninventory/lib/FusionInventory/Agent/Tools/PartNumber/Elpida.pm
+share/fusioninventory/lib/FusionInventory/Agent/Tools/PartNumber/Hynix.pm
+share/fusioninventory/lib/FusionInventory/Agent/Tools/PartNumber/Micron.pm
+share/fusioninventory/lib/FusionInventory/Agent/Tools/PartNumber/Samsung.pm
 share/fusioninventory/lib/FusionInventory/Agent/Tools/PowerSupplies.pm
 share/fusioninventory/lib/FusionInventory/Agent/Tools/SNMP.pm
 share/fusioninventory/lib/FusionInventory/Agent/Tools/Screen.pm
@@ -358,6 +378,7 @@ share/fusioninventory/lib/FusionInventory/Agent/Tools/Screen/Philips.pm
 share/fusioninventory/lib/FusionInventory/Agent/Tools/Screen/Samsung.pm
 share/fusioninventory/lib/FusionInventory/Agent/Tools/Solaris.pm
 share/fusioninventory/lib/FusionInventory/Agent/Tools/Standards/MobileCountryCode.pm
+share/fusioninventory/lib/FusionInventory/Agent/Tools/Storages/HP.pm
 share/fusioninventory/lib/FusionInventory/Agent/Tools/Unix.pm
 share/fusioninventory/lib/FusionInventory/Agent/Tools/Virtualization.pm
 share/fusioninventory/lib/FusionInventory/Agent/Tools/Win32.pm

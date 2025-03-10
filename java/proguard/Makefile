@@ -9,9 +9,10 @@ WWW=		https://www.guardsquare.com/en/products/proguard
 
 LICENSE=	GPLv2
 
+USES=		java
+
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
-USE_JAVA=	yes
 NO_BUILD=	yes
 NO_ARCH=	yes
 

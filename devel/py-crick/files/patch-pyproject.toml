@@ -1,13 +1,17 @@
---- pyproject.toml.orig	2024-05-03 20:15:33 UTC
+--- pyproject.toml.orig	2024-08-20 17:33:57 UTC
 +++ pyproject.toml
-@@ -1,6 +1,6 @@ requires = [
+@@ -1,9 +1,9 @@ requires = [
  [build-system]
  requires = [
 -    "setuptools>=68.2.2",
 +    "setuptools>=61",
      "setuptools-scm[toml]>=6.2",
      "Cython",
-     "numpy>=1.26.2",
+-    "numpy>=2.0.0",
++    "numpy",
+     "versioneer[toml]",
+ ]
+ build-backend = "setuptools.build_meta:__legacy__"
 @@ -33,4 +33,4 @@ tag_prefix = ""
  versionfile_source = "crick/_version.py"
  versionfile_build = "crick/_version.py"

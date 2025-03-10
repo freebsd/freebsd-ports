@@ -1,1 +1,3 @@
-NVM-Express user space tooling for Linux.
+NVMe management command line interface
+
+A user space utility to provide standards compliant tooling for NVM-Express drives.

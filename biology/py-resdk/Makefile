@@ -1,5 +1,5 @@
 PORTNAME=	resdk
-DISTVERSION=	21.2.0
+DISTVERSION=	21.2.1
 CATEGORIES=	biology python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -34,8 +34,8 @@ RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}mypy-boto3-s3>0:devel/py-mypy-boto3-s3@${PY
 USES=		python
 USE_PYTHON=	pep517 autoplist pytest
 
-NO_ARCH=	yes
-
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>

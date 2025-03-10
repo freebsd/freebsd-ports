@@ -13,7 +13,7 @@ WWW=		https://www.oasis-open.org/docbook/xml/simple/
 LICENSE=	OASIS
 LICENSE_NAME=	OASIS License
 LICENSE_TEXT=	License text is available in all files installed by this port
-LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
+LICENSE_PERMS=	auto-accept dist-mirror dist-sell pkg-mirror pkg-sell
 
 RUN_DEPENDS+=	xmlcatmgr:textproc/xmlcatmgr
 

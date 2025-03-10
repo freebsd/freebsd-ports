@@ -9,7 +9,7 @@
  /*
   * Copyright (C) 2010-2017 Oracle Corporation
   *
-@@ -21,72 +16,413 @@
+@@ -21,72 +16,420 @@
  #define VBOXVFS_VFSNAME "vboxvfs"
  #define VBOXVFS_VERSION 1
  
@@ -176,6 +176,12 @@
 -    int             didrele;
 +#include <VBox/VBoxGuestLibSharedFolders.h>
 +
++#if __FreeBSD_version >= 1400093
++typedef __enum_uint8(vtype) enum_vtype_t;
++#else
++typedef enum vtype enum_vtype_t;
++#endif
++
 +#define	VBOXVFS_DEBUG(lvl, ...)	do {					\
 +	if (vboxvfs_debug >= (lvl)) {					\
 +		printf("VBOXVFS[%u]: ", lvl);				\
@@ -276,6 +282,7 @@
 +	struct vnode		*sf_vnode;	/* vnode if active */
 +	sfp_file_t		*sf_file;	/* non NULL if open */
 +	struct vboxfs_node	*sf_parent;	/* parent sfnode of this one */
++	uint32_t		sf_opencnt;	/* sf_file reference counter */
 +	uint16_t		sf_children;	/* number of children sfnodes */
 +	uint8_t			sf_type;	/* VDIR or VREG */
 +	uint8_t			sf_vpstate;	/* XXX: ADD COMMENT */
@@ -284,7 +291,7 @@
 +	uint64_t		sf_stat_time;	/* last-modified time of sf_stat */
 +	sffs_dirents_t		*sf_dir_list;	/* list of entries for this directory */
 +
-+	/* interlock to protect sf_vpstate */
++	/* interlock to protect sf_vpstate, sf_file and sf_opencnt */
 +	struct mtx		sf_interlock;
 +};
 +
@@ -365,7 +372,7 @@
 +void vboxfs_free_vp(struct vnode *);
 +
 +int vboxfs_alloc_node(struct mount *, struct vboxfs_mnt *, const char*,
-+    enum vtype, uid_t, gid_t, mode_t, struct vboxfs_node *,
++    enum_vtype_t, uid_t, gid_t, mode_t, struct vboxfs_node *,
 +    struct vboxfs_node **);
 +void vboxfs_free_node(struct vboxfs_mnt *, struct vboxfs_node *);
 +
@@ -407,7 +414,7 @@
 +extern int sfprov_get_fsinfo(sfp_mount_t *, sffs_fsinfo_t *);
 +
 +extern int sfprov_create(sfp_mount_t *, char *path, mode_t mode,
-+    sfp_file_t **fp, sffs_stat_t *stat);
++    sffs_stat_t *stat);
 +extern int sfprov_open(sfp_mount_t *, char *path, sfp_file_t **fp);
 +extern int sfprov_close(sfp_file_t *fp);
 +extern int sfprov_read(sfp_file_t *, char * buffer, uint64_t offset,
@@ -437,7 +444,7 @@
 +extern int sfprov_trunc(sfp_mount_t *, char *);
 +extern int sfprov_remove(sfp_mount_t *, char *path, u_int is_link);
 +extern int sfprov_mkdir(sfp_mount_t *, char *path, mode_t mode,
-+    sfp_file_t **fp, sffs_stat_t *stat);
++    sffs_stat_t *stat);
 +extern int sfprov_rmdir(sfp_mount_t *, char *path);
 +extern int sfprov_rename(sfp_mount_t *, char *from, char *to, u_int is_dir);
 +

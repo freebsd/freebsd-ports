@@ -1,0 +1,25 @@
+Reduce setuptools requirement until [1] is resolved. Seems to work fine
+with 63.x.
+
+[1] https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=270358
+
+--- pyproject.toml.orig	2024-12-12 09:56:29 UTC
++++ pyproject.toml
+@@ -1,7 +1,7 @@
+ # The project configuration for sip.
+ 
+ [build-system]
+-requires = ["setuptools>=64", "setuptools_scm>=8"]
++requires = ["setuptools>=63", "setuptools_scm>=8"]
+ build-backend = "setuptools.build_meta"
+ 
+ [tool.setuptools_scm]
+@@ -12,7 +12,7 @@ urls.homepage = "https://github.com/Python-SIP/sip"
+ description = "A Python bindings generator for C/C++ libraries"
+ readme = "README.md"
+ urls.homepage = "https://github.com/Python-SIP/sip"
+-dependencies = ["packaging", "setuptools>=69.5", "tomli; python_version<'3.11'"]
++dependencies = ["packaging", "setuptools>=63", "tomli; python_version<'3.11'"]
+ requires-python = ">=3.9"
+ license = {file = "LICENSE"}
+ classifiers = ["License :: OSI Approved :: BSD License"]

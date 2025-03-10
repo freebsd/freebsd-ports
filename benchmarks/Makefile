@@ -39,6 +39,7 @@
     SUBDIR += iperf3
     SUBDIR += kdiskmark
     SUBDIR += libcelero
+    SUBDIR += libcpucycles
     SUBDIR += libmicro
     SUBDIR += linux-gputest
     SUBDIR += linux-unigine-heaven

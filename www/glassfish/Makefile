@@ -5,14 +5,13 @@ CATEGORIES=	www java
 MASTER_SITES=	ECLIPSE/glassfish
 PKGNAMEPREFIX=	eclipse-
 
-MAINTAINER=	jmd@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Eclipse Jakarta EE Platform
 WWW=		https://projects.eclipse.org/projects/ee4j.glassfish
 
 LICENSE=	EPL
 
-USES=		zip
-USE_JAVA=	yes
+USES=		java zip
 
 NO_BUILD=	yes
 
@@ -21,7 +20,7 @@ CONFLICTS_INSTALL=	glassfish4
 WRKSRC=		${WRKDIR}/glassfish5
 DATADIR=	${PREFIX}/${PORTNAME}-${PORTVERSION}
 
-# Since we USE_JAVA, we propagate the received JAVA_HOME variable to the
+# Since we USES=java, we propagate the received JAVA_HOME variable to the
 # template files, since it is used by the rc script.
 SUB_LIST=	GLASSFISHVERSION=${PORTVERSION} \
 		JAVA_HOME=${JAVA_HOME}

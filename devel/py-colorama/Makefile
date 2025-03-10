@@ -4,8 +4,8 @@ CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	ygy@FreeBSD.org
-COMMENT=	Cross-platform API to print colored terminal text from Python applications
+MAINTAINER=	sunpoet@FreeBSD.org
+COMMENT=	Cross-platform colored terminal text
 WWW=		https://github.com/tartley/colorama
 
 LICENSE=	BSD3CLAUSE
@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatchling>=0.25.1:devel/py-hatchling@${PY_FLAVOR}
 
 USES=		python
-USE_PYTHON=	autoplist pep517
+USE_PYTHON=	autoplist concurrent pep517
 
 NO_ARCH=	yes
 

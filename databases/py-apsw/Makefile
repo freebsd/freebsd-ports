@@ -1,5 +1,5 @@
 PORTNAME=	apsw
-PORTVERSION=	3.46.0.1
+PORTVERSION=	3.46.1.0
 CATEGORIES=	databases python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,12 +13,13 @@ LICENSE=	ZLIB
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR} \
+		sqlite3>=${PORTVERSION:R},1:databases/sqlite3
 
 USES=		localbase python sqlite
 USE_PYTHON=	autoplist concurrent pep517 unittest
 
-TEST_ARGS=	discover -s ${WRKSRC}/apsw
+TEST_ARGS=	discover -s apsw
 TEST_ENV=	PYTHONPATH=${STAGEDIR}${PYTHON_SITELIBDIR}
 
 post-patch:

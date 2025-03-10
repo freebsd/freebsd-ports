@@ -1,11 +1,11 @@
 PORTNAME=	icingaweb2-module-reporting
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.0.1
+DISTVERSION=	1.0.2
 PORTREVISION=	0
 CATEGORIES=	net-mgmt www
 PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 
-MAINTAINER=	joneum@FreeBSD.org
+MAINTAINER=	flo@FreeBSD.org
 COMMENT=	Reporting module for Icinga Web 2
 WWW=		https://github.com/Icinga/icingaweb2-module-reporting
 

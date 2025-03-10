@@ -1,0 +1,21 @@
+https://codeberg.org/dwl/dwl/issues/697
+
+--- dwl.1.orig	2024-08-06 18:03:27 UTC
++++ dwl.1
+@@ -100,6 +100,16 @@ These might differ depending on your keyboard layout.
+ .Nm .
+ .El
+ These might differ depending on your keyboard layout.
++.Ss Mouse commands
++.Bl -tag -width 20n -offset indent -compact
++.It Mod-Button1
++Move focused window while dragging. Tiled windows will be toggled to the floating state.
++.It Mod-Button2
++Toggles focused window between floating and tiled state.
++.It Mod-Button3
++Resize focused window while dragging. Tiled windows will be toggled to
++the
++floating state.
+ .Sh ENVIRONMENT
+ These environment variables are used by
+ .Nm :

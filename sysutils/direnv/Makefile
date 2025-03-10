@@ -1,7 +1,7 @@
 PORTNAME=	direnv
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.34.0
-PORTREVISION=	5
+DISTVERSION=	2.35.0
+PORTREVISION=	2
 CATEGORIES=	sysutils
 
 MAINTAINER=	bofh@FreeBSD.org
@@ -12,6 +12,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	bash:shells/bash
+RUN_DEPENDS=	bash:shells/bash
 
 USES=		go:modules
 GO_MODULE=	github.com/direnv/direnv/v2

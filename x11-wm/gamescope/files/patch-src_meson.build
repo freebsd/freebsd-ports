@@ -1,3 +1,8 @@
+Run-time dependency wlroots found: NO (tried pkgconfig and cmake)
+Looking for a fallback subproject for the dependency wlroots
+
+src/meson.build:22:14: ERROR: Neither a subproject directory nor a wlroots.wrap file was found.
+
 Dependency libdisplay-info found: NO found 0.2.0 but need: '< 0.2.0' ; matched: '>= 0.0.0'
 Run-time dependency libdisplay-info found: NO (tried pkgconfig and cmake)
 Looking for a fallback subproject for the dependency libdisplay-info
@@ -6,6 +11,15 @@ src/meson.build:29:18: ERROR: Subproject exists but has no meson.build file.
 
 --- src/meson.build.orig	2023-11-21 21:40:30 UTC
 +++ src/meson.build
+@@ -20,7 +20,7 @@ wlroots_dep = dependency(
+ stb_dep = dependency('stb')
+ 
+ wlroots_dep = dependency(
+-  'wlroots',
++  'wlroots-0.17',
+   version: ['>= 0.17.0', '< 0.18.0'],
+   fallback: ['wlroots', 'wlroots'],
+   default_options: ['default_library=static', 'examples=false', 'xwayland=enabled', 'backends=libinput', 'renderers=[]', 'allocators=[]', 'session=enabled'],
 @@ -28,7 +28,6 @@ displayinfo_dep = dependency(
  
  displayinfo_dep = dependency(

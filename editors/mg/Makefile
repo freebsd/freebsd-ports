@@ -1,8 +1,8 @@
 PORTNAME=	mg
-DISTVERSION=	20240405
+DISTVERSION=	20241008
 PORTEPOCH=	1
 CATEGORIES=	editors
-MASTER_SITES=   https://hydrus.org.uk/downloads/
+MASTER_SITES=	https://hydrus.org.uk/downloads/
 
 MAINTAINER=	cdr.nil@gmail.com
 COMMENT=	Small, fast Emacs-like editor
@@ -10,15 +10,15 @@ WWW=		https://man.openbsd.org/mg
 
 LICENSE=	PD
 
-USES=		ncurses uidfix
-MAKE_ARGS+=	BINDIR=${PREFIX}/bin MANDIR=${PREFIX}/share/man/man \
-		NCURSESLIB=${NCURSESLIB} NCURSESINC=${NCURSESINC}
-FLAVORS=	dynamic static
-FLAVOR?=	${FLAVORS:[1]}
+FLAVORS=		dynamic static
+FLAVOR?=		${FLAVORS:[1]}
 static_PKGNAMESUFFIX=	-static
+
+USES=		ncurses uidfix
+
 .if ${FLAVOR} == static
 COMMENT+=	(rescue(8) version)
-MAKE_ARGS+= 	NO_SHARED=yes
+MAKE_ARGS+=	NO_SHARED=yes
 PLIST_FILES=	/rescue/mg
 .else
 PLIST_FILES=	bin/mg \
@@ -26,6 +26,11 @@ PLIST_FILES=	bin/mg \
 PORTDOCS=	README tutorial
 OPTIONS_DEFINE=	DOCS
 .endif
+
+MAKE_ARGS+=	BINDIR=${PREFIX}/bin \
+		MANDIR=${PREFIX}/share/man/man \
+		NCURSESINC=${NCURSESINC} \
+		NCURSESLIB=${NCURSESLIB}
 
 .if ${FLAVOR} == static
 do-install:

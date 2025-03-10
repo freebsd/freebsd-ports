@@ -16,6 +16,9 @@ OPTIONS_EXCLUDE=	XTOOLCHAIN STATIC_LIBS
 LLVM_TARGETS=          RISCV
 CMAKE_FLAGS+=	-DLLVM_DEFAULT_TARGET_TRIPLE=riscv32-unknown-unknown
 
+DOCS_BUILD_DEPENDS= \
+	${PYTHON_PKGNAMEPREFIX}myst-parser>0:textproc/py-myst-parser@${PY_FLAVOR}
+
 MASTERDIR=	${.CURDIR}/../llvm-cheri
 
 .include "${MASTERDIR}/Makefile"

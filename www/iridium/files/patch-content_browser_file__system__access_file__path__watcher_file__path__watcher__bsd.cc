@@ -1,6 +1,6 @@
---- content/browser/file_system_access/file_path_watcher/file_path_watcher_bsd.cc.orig	2024-08-01 05:47:53 UTC
+--- content/browser/file_system_access/file_path_watcher/file_path_watcher_bsd.cc.orig	2025-02-22 18:06:53 UTC
 +++ content/browser/file_system_access/file_path_watcher/file_path_watcher_bsd.cc
-@@ -0,0 +1,55 @@
+@@ -0,0 +1,60 @@
 +// Copyright 2024 The Chromium Authors
 +// Use of this source code is governed by a BSD-style license that can be
 +// found in the LICENSE file.
@@ -54,5 +54,10 @@
 +
 +FilePathWatcher::FilePathWatcher()
 +    : FilePathWatcher(std::make_unique<FilePathWatcherImpl>()) {}
++
++// static
++size_t FilePathWatcher::GetQuotaLimitImpl() {
++  return std::numeric_limits<size_t>::max();
++}
 +
 +}  // namespace content

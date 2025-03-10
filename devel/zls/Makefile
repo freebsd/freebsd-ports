@@ -1,6 +1,5 @@
 PORTNAME=	zls
-DISTVERSION=	0.12.0
-PORTREVISION=	1
+DISTVERSION=	0.13.0
 CATEGORIES=	devel
 MASTER_SITES=	https://raw.githubusercontent.com/ziglang/:langref
 DISTFILES=	zig/${DISTVERSION}/doc/langref.html.in:langref
@@ -13,14 +12,14 @@ WWW=		https://github.com/zigtools/zls
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	zig>=0.12.0:lang/zig
+BUILD_DEPENDS=	zig>=0.13.0:lang/zig
 RUN_DEPENDS=	zig:lang/zig
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	zigtools
 GH_TUPLE=	wolfpld:tracy:v0.10:tracy/src/tracy \
-		ziglibs:diffz:e10bf15:diffz/../.cache/zig/p/12200d71e4b7029ea56a429e24260c6c0e85a3069b0d4ba85eace21a0fd75910aa64 \
-		ziglibs:known-folders:0.7.0-34-gbf79988:known_folders/../.cache/zig/p/12201314cffeb40c5e4e3da166217d2c74628c74486414aaf97422bcd2279915b9fd
+		ziglibs:diffz:ef45c00:diffz/../.cache/zig/p/1220102cb2c669d82184fb1dc5380193d37d68b54e8d75b76b2d155b9af7d7e2e76d \
+		ziglibs:known-folders:0.7.0-35-g0ad514d:known_folders/../.cache/zig/p/12209cde192558f8b3dc098ac2330fc2a14fdd211c5433afd33085af75caa9183147
 MAKE_ENV=	DESTDIR="${STAGEDIR}"
 CONFIGURE_ARGS=	--prefix "${PREFIX}" \
 		${WITH_DEBUG:D:U-Doptimize=ReleaseFast} \

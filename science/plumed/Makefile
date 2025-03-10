@@ -1,6 +1,6 @@
 PORTNAME=	plumed
-DISTVERSION=	2.8.0
-PORTREVISION=	2
+DISTVERSION=	2.9.3
+PORTREVISION=	1
 CATEGORIES=	science graphics
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}2/releases/download/v${DISTVERSION}/
 
@@ -45,5 +45,7 @@ post-patch:
 post-install:
 	@${RMDIR} ${STAGEDIR}${PREFIX}/lib/plumed/obj
 	@cd ${STAGEDIR}${PREFIX} && ${STRIP_CMD} bin/plumed lib/plumed/plumed-runtime lib/libplumed.so lib/libplumedKernel.so
+
+# tests as of 2.9.3: 277 tests performed, 352 tests not applicable
 
 .include <bsd.port.mk>

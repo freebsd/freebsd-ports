@@ -12,7 +12,7 @@ libdata/pkgconfig/zathura.pc
 share/applications/org.pwmt.zathura.desktop
 share/bash-completion/completions/zathura
 share/dbus-1/interfaces/org.pwmt.zathura.xml
-share/fish/vendor_completions.d/zathura.fish
+share/fish/completions/zathura.fish
 share/icons/hicolor/128x128/apps/org.pwmt.zathura.png
 share/icons/hicolor/16x16/apps/org.pwmt.zathura.png
 share/icons/hicolor/256x256/apps/org.pwmt.zathura.png

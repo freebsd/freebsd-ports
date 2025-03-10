@@ -81,6 +81,7 @@ lib/pinot/backends/libxapianbackend.so
 lib/pinot/backends/libxapianbackend.so.1
 lib/pinot/backends/libxapianbackend.so.1.0.0
 lib/pinot/filters/libarchivefilter.so
+%%CHMLIB%%lib/pinot/filters/libchmfilter.so
 lib/pinot/filters/libexiv2imagefilter.so
 lib/pinot/filters/libexternalfilter.so
 lib/pinot/filters/libmboxfilter.so

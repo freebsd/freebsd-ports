@@ -12,9 +12,10 @@ WWW=		http://web.archive.org/web/20120721075310/http://www.zentus.com/sqlitejdbc
 
 LIB_DEPENDS=	libsqlite3.so:databases/sqlite3
 
+USES=		gmake java tar:tgz
+JAVA_VERSION=	8
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSIONPREFIX}${DISTVERSION}
-USE_JAVA=	8
-USES=		gmake tar:tgz
 MAKE_ENV=	JAVA_HOME="${JAVA_HOME}"
 ALL_TARGET=	native
 

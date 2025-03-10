@@ -1,5 +1,5 @@
 PORTNAME=	phorge
-PORTVERSION=	2024.19
+PORTVERSION=	2024.35
 PORTEPOCH=	1
 CATEGORIES=	devel
 PKGNAMEPREFIX=	phorgeit
@@ -13,12 +13,11 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	git:devel/git \
-		phorgeit-arcanist-lib${PHP_PKGNAMESUFFIX}>=20240304:devel/phorgeit-arcanist-lib@${PHP_FLAVOR}
+		phorgeit-arcanist-lib${PHP_PKGNAMESUFFIX}>=2024.35,1:devel/phorgeit-arcanist-lib@${PHP_FLAVOR}
 
 USES=		php:cli,flavors shebangfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	phorgeit
-GH_TAGNAME=	d42b3eb0
 USE_PHP=	ctype curl fileinfo filter iconv mbstring mysqli pcntl posix \
 		zip
 IGNORE_WITH_PHP=	84
@@ -37,7 +36,6 @@ CONFLICTS=	phabricator-php??
 
 NO_ARCH=	yes
 NO_BUILD=	yes
-PORTSCOUT=	ignore:1
 SUB_FILES=	pkg-message
 
 OPTIONS_DEFINE=		GD OPCACHE

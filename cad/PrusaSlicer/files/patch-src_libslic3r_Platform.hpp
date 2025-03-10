@@ -1,4 +1,4 @@
---- src/libslic3r/Platform.hpp.orig	2023-12-12 14:21:21 UTC
+--- src/libslic3r/Platform.hpp.orig	2024-12-20 11:54:34 UTC
 +++ src/libslic3r/Platform.hpp
 @@ -29,6 +29,7 @@ enum class PlatformFlavor
      WSL,             // Microsoft's Windows on Linux (Linux kernel simulated on NTFS kernel)

@@ -1,3 +1,3 @@
-TIMESTAMP = 1720780716
-SHA256 (rubygem/opentelemetry-instrumentation-redis-0.25.6.gem) = 5fe4acec1c907d173760ea5f134ef5a568f748fc5317db85c427fd90b7367a4c
-SIZE (rubygem/opentelemetry-instrumentation-redis-0.25.6.gem) = 13312
+TIMESTAMP = 1738903426
+SHA256 (rubygem/opentelemetry-instrumentation-redis-0.26.1.gem) = 315efba5560c943dfe8ea41b16ab162418fc7423c45bb36c4bcc91a310467ba0
+SIZE (rubygem/opentelemetry-instrumentation-redis-0.26.1.gem) = 13824

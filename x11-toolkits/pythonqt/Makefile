@@ -1,6 +1,6 @@
 PORTNAME=	pythonqt
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.5.3
+DISTVERSION=	3.5.6
 CATEGORIES=	x11-toolkits devel python
 
 MAINTAINER=	yuri@FreeBSD.org

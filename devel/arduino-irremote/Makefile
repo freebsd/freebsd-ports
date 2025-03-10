@@ -1,5 +1,5 @@
 PORTNAME=	arduino-irremote
-PORTVERSION=	4.4.0
+PORTVERSION=	4.4.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
@@ -11,7 +11,7 @@ LICENSE=	MIT
 
 USES=		dos2unix
 USE_GITHUB=	yes
-GH_ACCOUNT=	z3t0
+GH_ACCOUNT=	Arduino-IRremote
 GH_PROJECT=	Arduino-IRremote
 PORTSCOUT=	limit:^[0-9]
 

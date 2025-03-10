@@ -11,6 +11,9 @@
 #			Default: NO
 # ipmi_exporter_config (str):	Set to the path of configuration file.
 #			Default: ""
+# ipmi_exporter_listen_address (str):	Set to the IP or hostname and port to bind to.
+#			Default: ":9290"
+
 
 . /etc/rc.subr
 name=ipmi_exporter
@@ -19,11 +22,14 @@ load_rc_config $name
 
 : ${ipmi_exporter_enable:="NO"}
 : ${ipmi_exporter_config:=""}
+: ${ipmi_exporter_listen_address:=":9290"}
 
 pidfile="/var/run/${name}.pid"
 command="/usr/sbin/daemon"
 procname="%%PREFIX%%/bin/${name}"
-command_args="-S -p ${pidfile} ${procname} --config.file=\"${ipmi_exporter_config}\""
+command_args="-S -p ${pidfile} ${procname} \
+    --web.listen-address=${ipmi_exporter_listen_address} \
+    --config.file=\"${ipmi_exporter_config}\""
 start_precmd="${name}_precmd"
 
 ipmi_exporter_precmd()

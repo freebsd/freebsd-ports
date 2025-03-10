@@ -1,4 +1,4 @@
---- scripts/xdg-open.in.orig	2019-01-08 19:02:17 UTC
+--- scripts/xdg-open.in.orig	2024-02-06 01:55:07 UTC
 +++ scripts/xdg-open.in
 @@ -15,6 +15,12 @@
  #
@@ -12,8 +12,8 @@
 +
  manualpage()
  {
- cat << _MANUALPAGE
-@@ -92,7 +98,7 @@ file_url_to_path()
+ cat << '_MANUALPAGE'
+@@ -116,7 +122,7 @@ file_url_to_path()
          if [ -x /usr/bin/printf ]; then
              printf=/usr/bin/printf
          fi
@@ -22,7 +22,7 @@
      fi
      echo "$file"
  }
-@@ -193,6 +199,17 @@ open_gnome()
+@@ -220,6 +226,17 @@ open_gnome()
      fi
  }
  
@@ -40,17 +40,16 @@
  open_mate()
  {
      if gio help open 2>/dev/null 1>&2; then
-@@ -342,8 +359,7 @@ open_generic_xdg_mime()
+@@ -398,7 +415,7 @@ open_generic_xdg_mime()
          [ -n "$xdg_user_dir" ] || xdg_user_dir="$HOME/.local/share"
  
          xdg_system_dirs="$XDG_DATA_DIRS"
 -        [ -n "$xdg_system_dirs" ] || xdg_system_dirs=/usr/local/share/:/usr/share/
--
 +        [ -n "$xdg_system_dirs" ] || xdg_system_dirs=%%LOCALBASE%%/share/:/usr/share/
- DEBUG 3 "$xdg_user_dir:$xdg_system_dirs"
-         for x in `echo "$xdg_user_dir:$xdg_system_dirs" | sed 's/:/ /g'`; do
-             search_desktop_file "$default" "$x/applications/" "$1"
-@@ -438,7 +454,7 @@ open_generic()
+ 
+         search_dirs="$xdg_user_dir:$xdg_system_dirs"
+         DEBUG 3 "$search_dirs"
+@@ -516,7 +533,7 @@ open_generic()
      if [ x"$BROWSER" = x"" ]; then
          BROWSER=www-browser:links2:elinks:links:lynx:w3m
          if has_display; then
@@ -59,7 +58,7 @@
          fi
      fi
  
-@@ -534,6 +550,10 @@ case "$DE" in
+@@ -623,6 +640,10 @@ case "$DE" in
  
      gnome)
      open_gnome "$url"

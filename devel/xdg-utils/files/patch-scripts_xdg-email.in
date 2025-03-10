@@ -1,24 +1,24 @@
---- scripts/xdg-email.in.orig	2019-01-08 19:02:17 UTC
+--- scripts/xdg-email.in.orig	2024-02-06 01:55:07 UTC
 +++ scripts/xdg-email.in
 @@ -34,7 +34,7 @@ run_thunderbird()
  {
      local THUNDERBIRD MAILTO NEWMAILTO TO CC BCC SUBJECT BODY ATTACH
      THUNDERBIRD="$1"
--    MAILTO=$(echo "$2" | sed 's/^mailto://')
-+    MAILTO=$(echo "$2" | tr '&' '\n')
+-    MAILTO="$(echo "$2" | sed 's/^mailto://')"
++    MAILTO="$(echo "$2" | tr '&' '\n')"
      echo "$MAILTO" | grep -qs "^?"
      if [ "$?" = "0" ] ; then
-         MAILTO=$(echo "$MAILTO" | sed 's/^?//')
+         MAILTO="$(echo "$MAILTO" | sed 's/^?//')"
 @@ -48,7 +48,7 @@ run_thunderbird()
-     BCC=$(/bin/echo -e $(echo "$MAILTO" | grep '^bcc=' | sed 's/^bcc=//;s/%\(..\)/\\x\1/g' | awk '{ printf "%s,",$0 }'))
-     SUBJECT=$(echo "$MAILTO" | grep '^subject=' | tail -n 1)
-     BODY=$(echo "$MAILTO" | grep '^body=' | tail -n 1)
--    ATTACH=$(/bin/echo -e $(echo "$MAILTO" | grep '^attach=' | sed 's/^attach=//;s/%\(..\)/\\x\1/g' | awk '{ printf "%s,",$0 }' | sed 's/,$//'))
-+    ATTACH=$(for attachment in $(echo "$MAILTO" | sed -ne 's,^attach=,file://,gp') ; do printf "%s," "$attachment" ; done); ATTACH=${ATTACH%,}
+     BCC="$(/bin/echo -e "$(echo "$MAILTO" | grep '^bcc=' | sed 's/^bcc=//;s/%\(..\)/\\x\1/g' | awk '{ printf "%s,",$0 }')")"
+     SUBJECT="$(echo "$MAILTO" | grep '^subject=' | tail -n 1)"
+     BODY="$(echo "$MAILTO" | grep '^body=' | tail -n 1)"
+-    ATTACH="$(/bin/echo -e "$(echo "$MAILTO" | grep '^attach=' | sed 's/^attach=//;s/%\(..\)/\\x\1/g' | awk '{ printf "%s,",$0 }' | sed 's/,$//')")"
++    ATTACH="$(for attachment in $(echo "$MAILTO" | sed -ne 's,^attach=,file://,gp') ; do printf "%s," "$attachment" ; done); ATTACH=${ATTACH%,}"
  
      if [ -z "$TO" ] ; then
          NEWMAILTO=
-@@ -314,7 +314,7 @@ LC_ALL="$ORIG_LC_ALL"
+@@ -317,7 +317,7 @@ mailto=
  
  options=
  mailto=
@@ -27,12 +27,3 @@
  while [ $# -gt 0 ] ; do
      parm="$1"
      shift
-@@ -455,7 +455,7 @@ fi
- if [ x"$BROWSER" = x"" ]; then
-     BROWSER=www-browser:links2:elinks:links:lynx:w3m
-     if has_display; then
--        BROWSER=x-www-browser:firefox:iceweasel:seamonkey:mozilla:epiphany:konqueror:chromium-browser:google-chrome:$BROWSER
-+        BROWSER=x-www-browser:firefox:iceweasel:seamonkey:mozilla:epiphany:konqueror:chrome:chromium-browser:google-chrome:$BROWSER
-     fi
- fi
- 

@@ -3,6 +3,7 @@ share/applications/org.kde.kcolorchooser.desktop
 share/icons/hicolor/16x16/apps/kcolorchooser.png
 share/icons/hicolor/22x22/apps/kcolorchooser.png
 share/locale/ar/LC_MESSAGES/kcolorchooser.mo
+share/locale/ast/LC_MESSAGES/kcolorchooser.mo
 share/locale/az/LC_MESSAGES/kcolorchooser.mo
 share/locale/be/LC_MESSAGES/kcolorchooser.mo
 share/locale/bg/LC_MESSAGES/kcolorchooser.mo
@@ -52,6 +53,7 @@ share/locale/pt/LC_MESSAGES/kcolorchooser.mo
 share/locale/pt_BR/LC_MESSAGES/kcolorchooser.mo
 share/locale/ro/LC_MESSAGES/kcolorchooser.mo
 share/locale/ru/LC_MESSAGES/kcolorchooser.mo
+share/locale/sa/LC_MESSAGES/kcolorchooser.mo
 share/locale/si/LC_MESSAGES/kcolorchooser.mo
 share/locale/sk/LC_MESSAGES/kcolorchooser.mo
 share/locale/sl/LC_MESSAGES/kcolorchooser.mo
@@ -61,6 +63,7 @@ share/locale/sr@ijekavian/LC_MESSAGES/kcolorchooser.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/kcolorchooser.mo
 share/locale/sr@latin/LC_MESSAGES/kcolorchooser.mo
 share/locale/sv/LC_MESSAGES/kcolorchooser.mo
+share/locale/ta/LC_MESSAGES/kcolorchooser.mo
 share/locale/th/LC_MESSAGES/kcolorchooser.mo
 share/locale/tr/LC_MESSAGES/kcolorchooser.mo
 share/locale/ug/LC_MESSAGES/kcolorchooser.mo

@@ -10,10 +10,12 @@ share/man/man1/qalculate-qt.1.gz
 share/metainfo/io.github.Qalculate.qalculate-qt.metainfo.xml
 %%NLS%%%%DATADIR%%/translations/qalculate-qt_ca.qm
 %%NLS%%%%DATADIR%%/translations/qalculate-qt_de.qm
+%%NLS%%%%DATADIR%%/translations/qalculate-qt_en.qm
 %%NLS%%%%DATADIR%%/translations/qalculate-qt_es.qm
 %%NLS%%%%DATADIR%%/translations/qalculate-qt_fr.qm
 %%NLS%%%%DATADIR%%/translations/qalculate-qt_nl.qm
 %%NLS%%%%DATADIR%%/translations/qalculate-qt_pt_BR.qm
+%%NLS%%%%DATADIR%%/translations/qalculate-qt_pt_PT.qm
 %%NLS%%%%DATADIR%%/translations/qalculate-qt_ru.qm
 %%NLS%%%%DATADIR%%/translations/qalculate-qt_sl.qm
 %%NLS%%%%DATADIR%%/translations/qalculate-qt_sv.qm

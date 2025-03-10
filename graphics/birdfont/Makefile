@@ -1,5 +1,6 @@
 PORTNAME=	birdfont
 DISTVERSION=	2.33.4
+PORTREVISION=	3
 CATEGORIES=	graphics x11-fonts
 MASTER_SITES=	https://birdfont.org/releases/
 
@@ -16,8 +17,8 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libgee-0.8.so:devel/libgee \
 		libharfbuzz.so:print/harfbuzz \
 		libnotify.so:devel/libnotify \
-		libsoup-2.4.so:devel/libsoup \
-		libwebkit2gtk-4.0.so:www/webkit2-gtk3 \
+		libsoup-3.0.so:devel/libsoup3 \
+		libwebkit2gtk-4.1.so:www/webkit2-gtk@41 \
 		libxmlbird.so:textproc/libxmlbird
 
 USES=		gettext-tools gnome pkgconfig python:build shared-mime-info \
@@ -39,7 +40,7 @@ _STRIPPABLE=	bin/birdfont bin/birdfont-autotrace bin/birdfont-export \
 		lib/libbirdgems.so.0.0
 
 do-build:
-	(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} build.py)
+	(cd ${WRKSRC} && ${SETENVI} ${WRK_ENV} ${MAKE_ENV} ${PYTHON_CMD} build.py)
 
 do-install:
 	(cd ${WRKSRC} && ./install.py \

@@ -1,6 +1,6 @@
 PORTNAME=	doctorj
 PORTVERSION=	5.1.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel java
 MASTER_SITES=	SF
 
@@ -8,8 +8,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool for analyzing Java code and documentation
 WWW=		https://doctorj.sourceforge.net/
 
-USE_JAVA=	yes
-USE_ANT=	yes
+USES=		java:ant,run
 
 ALL_TARGET=	jarfile
 

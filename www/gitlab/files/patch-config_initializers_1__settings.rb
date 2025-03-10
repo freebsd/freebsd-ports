@@ -1,6 +1,6 @@
---- config/initializers/1_settings.rb.orig	2024-06-19 08:46:16 UTC
+--- config/initializers/1_settings.rb.orig	2025-02-19 06:08:46 UTC
 +++ config/initializers/1_settings.rb
-@@ -209,11 +209,7 @@ Settings.gitlab['ssh_user'] ||= Settings.gitlab.user
+@@ -214,11 +214,7 @@ Settings.gitlab['ssh_user'] ||= Settings.gitlab.user
  Settings.gitlab['user'] ||= 'git'
  # External configuration may cause the ssh user to differ from the GitLab user
  Settings.gitlab['ssh_user'] ||= Settings.gitlab.user

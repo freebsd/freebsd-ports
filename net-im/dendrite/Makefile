@@ -1,17 +1,17 @@
 PORTNAME=	dendrite
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.13.7
-PORTREVISION=	4
+DISTVERSION=	0.14.1
+PORTREVISION=	2
 CATEGORIES=	net-im
 
 MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	Matrix protocol homeserver
-WWW=		https://github.com/matrix-org/dendrite
+WWW=		https://github.com/element-hq/dendrite
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cpe go:modules
+USES=		cpe go:1.23,modules
 CPE_VENDOR=	matrix
 PLIST_SUB=	PORTNAME=${PORTNAME}
 USE_RC_SUBR=	${PORTNAME}
@@ -27,7 +27,7 @@ DENDRITE_BINS=	create-account dendrite-demo-pinecone			\
 GO_TARGET+=	./cmd/$f:${PREFIX}/dendrite/bin/$f
 .endfor
 
-GO_MODULE=	github.com/matrix-org/dendrite
+GO_MODULE=	github.com/element-hq/dendrite
 
 post-install:
 	${MKDIR} ${STAGEDIR}${ETCDIR} ${STAGEDIR}${DOCSDIR}

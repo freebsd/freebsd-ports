@@ -1,0 +1,4 @@
+%%SITE_PERL%%/Sendmail/PMilter.pm
+%%SITE_PERL%%/Sendmail/PMilter/Context.pm
+%%PERL5_MAN3%%/Sendmail::PMilter.3.gz
+%%PERL5_MAN3%%/Sendmail::PMilter::Context.3.gz

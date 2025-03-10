@@ -1,5 +1,6 @@
 PORTNAME=	pysmb
 PORTVERSION=	1.1.27
+PORTREVISION=	1
 CATEGORIES=	net python
 MASTER_SITES=	PYPI \
 		http://miketeo.net/files/Projects/${PORTNAME}/

@@ -1,10 +1,11 @@
 PORTNAME=	netifaces-plus
 DISTVERSIONPREFIX=	release_
 DISTVERSION=	0_12_2
+PORTREVISION=	1
 CATEGORIES=	net python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	kiwi@oav.net
+MAINTAINER=	kiwi@FreeBSD.org
 COMMENT=	Portable network interface information
 WWW=		https://pypi.org/project/netifaces-plus/
 

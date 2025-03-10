@@ -1,5 +1,0 @@
-The libwbxml is a library for converting an XML Document to a WBXML Document
-and vice-versa.
-
-The WBXML format is a binary representation of XML, defined by the Wap Forum,
-and used to reduce bandwidth in mobile communications.

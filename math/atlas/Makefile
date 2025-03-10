@@ -73,8 +73,7 @@ PICFLAG?=	-fPIC
 CFLAGS+=	${PICFLAG}
 CONFIGURE_ENV+=	PATH="${WRKDIR}/.bin:${PATH}"
 MAKE_ENV+=	MAKE=${GMAKE} PATH="${WRKDIR}/.bin:${PATH}"
-BINARY_ALIAS=	make=${LOCALBASE}/bin/gmake	\
-		gcc=${CC} gfortran=${FC} f77=${FC}
+BINARY_ALIAS=	make=${GMAKE} gcc=${CC} gfortran=${FC} f77=${FC}
 
 pre-everything::
 	@${CAT} ${FILESDIR}/tuning-message

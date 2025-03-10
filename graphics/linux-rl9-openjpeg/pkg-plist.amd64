@@ -1,4 +1,7 @@
+usr/lib/.build-id/11/22a7d452871eafaf55a3967f138ee504ec28ed
 usr/lib/.build-id/43/e7c2016c2f11f164a4407e536e3e494eb49511
+usr/lib/libopenjp2.so.2.4.0
+usr/lib/libopenjp2.so.7
 usr/lib64/libopenjp2.so.2.4.0
 usr/lib64/libopenjp2.so.7
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS.md

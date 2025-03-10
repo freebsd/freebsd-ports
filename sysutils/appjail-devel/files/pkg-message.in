@@ -11,7 +11,10 @@ AppJail was installed
 2) A configuration file sample was installed to %%ETCDIR%%. Change it accord to
    your own needs
 
-3) Enjoy it
+3) If you want to use OCI feature, you need to install sysutils/buildah and
+   textproc/jq before using the appjail-oci(1) command
+
+4) Enjoy it
 EOM
 }
 ]

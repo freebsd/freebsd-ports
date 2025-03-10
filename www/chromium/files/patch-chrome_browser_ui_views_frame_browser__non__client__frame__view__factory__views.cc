@@ -1,6 +1,6 @@
---- chrome/browser/ui/views/frame/browser_non_client_frame_view_factory_views.cc.orig	2024-04-19 13:02:56 UTC
+--- chrome/browser/ui/views/frame/browser_non_client_frame_view_factory_views.cc.orig	2025-01-15 09:18:26 UTC
 +++ chrome/browser/ui/views/frame/browser_non_client_frame_view_factory_views.cc
-@@ -16,7 +16,7 @@
+@@ -15,7 +15,7 @@
  #include "chrome/browser/ui/views/frame/browser_frame_view_win.h"
  #endif
  
@@ -9,7 +9,7 @@
  #include "chrome/browser/ui/views/frame/browser_frame_view_layout_linux.h"
  #include "chrome/browser/ui/views/frame/browser_frame_view_layout_linux_native.h"
  #include "chrome/browser/ui/views/frame/browser_frame_view_linux_native.h"
-@@ -33,7 +33,7 @@ namespace {
+@@ -32,7 +32,7 @@ namespace {
  std::unique_ptr<OpaqueBrowserFrameView> CreateOpaqueBrowserFrameView(
      BrowserFrame* frame,
      BrowserView* browser_view) {

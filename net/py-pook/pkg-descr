@@ -1,0 +1,5 @@
+pook is a versatile, expressive and hackable utility library for HTTP traffic
+mocking and expectations made easy in Python. Heavily inspired by gock.
+
+pook can work with multiple mock engines, however it provides a built-in one by
+default, which currently supports traffic mocking in the several HTTP clients.

@@ -1,6 +1,6 @@
 PORTNAME=	jirust
 DISTVERSION=	1.2.1
-PORTREVISION=	1
+PORTREVISION=	7
 CATEGORIES=	misc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -12,6 +12,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN=		compilation fails, see https://github.com/Code-Militia/jirust/issues/153
 BROKEN_i386=	compilation fails: undefined symbol: __atomic_is_lock_free
+DEPRECATED=	Listed as broken for over 6+ months
+EXPIRATION_DATE=2025-03-31
 
 BUILD_DEPENDS=	gmake:devel/gmake
 LIB_DEPENDS=	libzstd.so:archivers/zstd
@@ -624,8 +626,5 @@ OPENSSLLIB=	/usr/lib
 MAKE_ENV=	LIBCLANG_PATH=${LLVM_PREFIX}/lib/libclang.so
 
 PLIST_FILES=	bin/${PORTNAME}
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>

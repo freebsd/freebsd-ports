@@ -1,0 +1,8 @@
+Moonlight allows you to stream your Desktop or games from your Windows
+PC(sunshine or NV shield) to your FreeBSD system.
+
+In contrast to moonlight-qt, this port can grab keyboard and mouse
+and has full worked vaapi decoder, which helps in case of crashes.
+
+Note: This is a fork of moonlight-embedded aimed for more features
+and fixes for FreeBSD on amd64, not only on embedded systems.

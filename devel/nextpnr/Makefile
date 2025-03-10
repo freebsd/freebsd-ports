@@ -1,10 +1,14 @@
 PORTNAME=	nextpnr
 DISTVERSIONPREFIX=	${PORTNAME}-
 DISTVERSION=	0.7
+PORTREVISION=	5
 PORTEPOCH=	1
 CATEGORIES=	devel
 
-MAINTAINER=	manu@FreeBSD.org
+PATCH_SITES=	https://github.com/YosysHQ/nextpnr/commit/
+PATCHFILES=	f085950383155a745cf2e3c0f28c468d01ff5fd7.patch:-p1
+
+MAINTAINER=	jbo@FreeBSD.org
 COMMENT=	Portable FPGA place and route tool
 WWW=		https://github.com/YosysHQ/nextpnr
 

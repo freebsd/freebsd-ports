@@ -1,0 +1,21 @@
+--- CMakeLists.txt.orig	2016-07-01 17:09:02 UTC
++++ CMakeLists.txt
+@@ -36,6 +36,9 @@ SET(CAS_LIB_DIR            "lib"     CACHE STRING "Lib
+ # CAS share dir
+ SET(CAS_SHAREDIR "${CMAKE_INSTALL_PREFIX}/share/cas")
+ 
++# CAS config dir
++SET(CAS_CONFDIR "${CMAKE_INSTALL_PREFIX}/etc/cas")
++
+ # Force linking with libstdc++, need for Solaris
+ SET(FORCE_LBSTDCPP_LINKING "OFF")
+ 
+@@ -949,7 +952,7 @@ IF (INSTALL_CAS_CONFIGS MATCHES "ON")
+     INSTALL(FILES conf/global-config.xml.sample
+                   conf/vhost-config.xml.sample
+                   conf/module-config.xml.sample
+-            DESTINATION ${CAS_SHAREDIR}/conf
++            DESTINATION ${CAS_CONFDIR}
+             PERMISSIONS OWNER_READ OWNER_WRITE
+                         GROUP_READ
+                         WORLD_READ)

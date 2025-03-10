@@ -1,5 +1,5 @@
 PORTNAME=	tuf
-DISTVERSION=	5.0.0
+DISTVERSION=	5.1.0
 CATEGORIES=	security devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -23,9 +23,5 @@ USE_PYTHON=	autoplist concurrent pep517 pytest
 NO_ARCH=	yes
 
 PYTEST_BROKEN_TESTS=	test_cleanup TestRepoExamples # uses files missing from pypi distribution
-
-post-patch:
-	@${REINPLACE_CMD} 's|hatchling==1|hatchling>=1|g' \
-		${WRKSRC}/pyproject.toml
 
 .include <bsd.port.mk>

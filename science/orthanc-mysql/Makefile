@@ -1,6 +1,6 @@
 PORTNAME=	orthanc-mysql
 DISTVERSION=	4.3
-PORTREVISION=	7
+PORTREVISION=	10
 CATEGORIES=	science
 MASTER_SITES=	https://www.orthanc-server.com/downloads/get.php?path=/plugin-mysql/:main \
 		https://www.orthanc-server.com/downloads/get.php?path=/orthanc/:framework \
@@ -17,6 +17,8 @@ WWW=		https://www.orthanc-server.com/static.php?page=mysql
 
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
+
+BROKEN=		fails to build with boost-1.86+
 
 BUILD_DEPENDS=	${LOCALBASE}/include/orthanc/OrthancCDatabasePlugin.h:science/orthanc
 LIB_DEPENDS=	libboost_filesystem.so:devel/boost-libs \

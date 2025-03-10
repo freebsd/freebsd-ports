@@ -1,0 +1,13 @@
+Relax version requirements.
+
+--- pyproject.toml.orig	2020-02-02 00:00:00 UTC
++++ pyproject.toml
+@@ -63,7 +63,7 @@ imaging = [
+   "mkdocs-git-revision-date-localized-plugin~=1.2,>=1.2.4"
+ ]
+ imaging = [
+-  "pillow~=10.2",
++  "pillow>=10.2",
+   "cairosvg~=2.6"
+ ]
+ 

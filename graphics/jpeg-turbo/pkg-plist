@@ -26,5 +26,5 @@
 %%LIBTURBOJPEG%%lib/libturbojpeg.a
 %%LIBTURBOJPEG%%lib/libturbojpeg.so
 %%LIBTURBOJPEG%%lib/libturbojpeg.so.0
-%%LIBTURBOJPEG%%lib/libturbojpeg.so.0.3.0
+%%LIBTURBOJPEG%%lib/libturbojpeg.so.0.4.0
 %%LIBTURBOJPEG%%libdata/pkgconfig/libturbojpeg.pc

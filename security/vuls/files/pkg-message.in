@@ -16,7 +16,7 @@ Configure vuls by editing %%ETCDIR%%/config.toml.
 Vuls uses the port security/go-cve-dictionary to look up information about
 packages' CVEs. Install that port separately somewhere in your infrastructure,
 start the service and point vuls to it for CVE queries by editing vuls'
-configuration in %%PREFIX%%/etc/vuls.conf and setting the cveDict url properly.
+configuration in %%ETCDIR%%/config.toml and setting the cveDict url properly.
 
 If you want to use vuls to collect reports from several nodes, set up the vuls
 service somewhere in your infrastructure. Set it up by enabling it and start it

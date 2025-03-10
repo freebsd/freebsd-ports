@@ -1,8 +1,7 @@
 PORTNAME=	imapsync
-PORTVERSION=	2.229
-PORTREVISION=	1
-DISTVERSIONPREFIX=	imapsync-
+PORTVERSION=	2.290
 CATEGORIES=	mail perl5
+MASTER_SITES=	https://imapsync.lamiral.info/dist/
 
 MAINTAINER=	pi@FreeBSD.org
 COMMENT=	IMAP synchronization, copy or migration tool
@@ -15,6 +14,7 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 RUN_DEPENDS=	p5-Crypt-OpenSSL-RSA>0:security/p5-Crypt-OpenSSL-RSA \
 		p5-Data-Uniqid>0:devel/p5-Data-Uniqid \
+		p5-Digest-SHA>0:security/p5-Digest-SHA \
 		p5-Encode-IMAPUTF7>0:converters/p5-Encode-IMAPUTF7 \
 		p5-File-Copy-Recursive>0:devel/p5-File-Copy-Recursive \
 		p5-File-Tail>0:devel/p5-File-Tail \
@@ -34,7 +34,6 @@ RUN_DEPENDS=	p5-Crypt-OpenSSL-RSA>0:security/p5-Crypt-OpenSSL-RSA \
 
 USES=		cpe perl5 tar:tgz shebangfix
 SHEBANG_FILES=	${PORTNAME}
-USE_GITHUB=	yes
 
 CPE_VENDOR=	gilles_lamiral
 NO_BUILD=	yes

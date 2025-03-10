@@ -7,7 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Sphinx Adadomain Extension
-WWW=		https://bitbucket.org/tkoskine/sphinxcontrib-adadomain
+WWW=		https://github.com/adacore/sphinxcontrib-adadomain
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

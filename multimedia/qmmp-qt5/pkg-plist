@@ -28,6 +28,7 @@ include/qmmp%%BIN_SUFFX%%/qmmp/visual.h
 include/qmmp%%BIN_SUFFX%%/qmmp/visualfactory.h
 include/qmmp%%BIN_SUFFX%%/qmmp/volume.h
 include/qmmp%%BIN_SUFFX%%/qmmp/volumehandler.h
+include/qmmp%%BIN_SUFFX%%/qmmpui/colorwidget.h
 include/qmmp%%BIN_SUFFX%%/qmmpui/commandlinehandler.h
 include/qmmp%%BIN_SUFFX%%/qmmpui/commandlinemanager.h
 include/qmmp%%BIN_SUFFX%%/qmmpui/configdialog.h
@@ -50,10 +51,12 @@ include/qmmp%%BIN_SUFFX%%/qmmpui/playlistparser.h
 include/qmmp%%BIN_SUFFX%%/qmmpui/playlisttrack.h
 include/qmmp%%BIN_SUFFX%%/qmmpui/qmmpui_export.h
 include/qmmp%%BIN_SUFFX%%/qmmpui/qmmpuisettings.h
+include/qmmp%%BIN_SUFFX%%/qmmpui/shortcutdialog.h
 include/qmmp%%BIN_SUFFX%%/qmmpui/templateeditor.h
 include/qmmp%%BIN_SUFFX%%/qmmpui/uifactory.h
 include/qmmp%%BIN_SUFFX%%/qmmpui/uihelper.h
 include/qmmp%%BIN_SUFFX%%/qmmpui/uiloader.h
+include/qmmp%%BIN_SUFFX%%/qmmpui/visualmenu.h
 lib/libqmmp%%BIN_SUFFX%%.so
 lib/libqmmp%%BIN_SUFFX%%.so.1
 lib/libqmmp%%BIN_SUFFX%%.so.%%SHLIB_VER%%
@@ -99,7 +102,6 @@ lib/qmmp%%LIB_SUFFX%%/Input/libcue.so
 %%FFMPEG%%lib/qmmp%%LIB_SUFFX%%/Input/libffmpeg.so
 %%FLAC%%lib/qmmp%%LIB_SUFFX%%/Input/libflac.so
 %%GME%%lib/qmmp%%LIB_SUFFX%%/Input/libgme.so
-%%MUSEPACK%%lib/qmmp%%LIB_SUFFX%%/Input/libmpc.so
 %%MPG123%%lib/qmmp%%LIB_SUFFX%%/Input/libmpeg.so
 %%OPUS%%lib/qmmp%%LIB_SUFFX%%/Input/libopus.so
 %%SID%%lib/qmmp%%LIB_SUFFX%%/Input/libsid.so
@@ -139,7 +141,7 @@ share/icons/hicolor/128x128/apps/qmmp%%BIN_SUFFX%%.png
 share/icons/hicolor/256x256/apps/qmmp%%BIN_SUFFX%%.png
 share/icons/hicolor/scalable/apps/qmmp%%BIN_SUFFX%%.svgz
 share/icons/hicolor/scalable/apps/qmmp-simple%%BIN_SUFFX%%.svgz
-share/metainfo/qmmp%%BIN_SUFFX%%.appdata.xml
+share/metainfo/com.ylsoftware.qmmp%%BIN_SUFFX%%.metainfo.xml
 %%DATADIR%%%%BIN_SUFFX%%/images/app_icon.png
 %%DATADIR%%%%BIN_SUFFX%%/images/empty_cover.png
 %%DATADIR%%%%BIN_SUFFX%%/scripts/kwin.sh

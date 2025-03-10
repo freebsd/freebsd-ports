@@ -1,0 +1,8 @@
+@sample %%APACHEETCDIR%%/modules.d/001-mod_tls.conf.sample
+lib/mod_tls.a
+lib/%%AP_MODULE%%
+lib/%%AP_MODULE%%.0
+lib/%%AP_MODULE%%.0.0.0
+%%APACHEMODDIR%%/%%AP_MODULE%%
+%%APACHEMODDIR%%/%%AP_MODULE%%.0.0.0
+

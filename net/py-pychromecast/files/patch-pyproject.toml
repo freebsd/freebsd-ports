@@ -1,4 +1,4 @@
---- pyproject.toml.orig	2024-03-19 20:05:25 UTC
+--- pyproject.toml.orig	2024-10-27 07:53:48 UTC
 +++ pyproject.toml
 @@ -1,9 +1,9 @@
  [build-system]
@@ -9,6 +9,6 @@
  [project]
 -name         = "PyChromecast"
 +name         = "pychromecast"
- version      = "14.0.1"
+ version      = "14.0.5"
  description  = "Python module to talk to Google Chromecast."
  readme       = "README.rst"

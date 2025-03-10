@@ -1,6 +1,6 @@
 PORTNAME=	dirspec
 PORTVERSION=	13.10
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://launchpadlibrarian.net/152764618/ \
 		http://nivit.altervista.org/FreeBSD/ports/distfiles/

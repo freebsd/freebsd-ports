@@ -3,13 +3,13 @@ CATEGORIES=	www
 
 COMMENT=	GStreamer Secure Reliable Transport (SRT) plugin
 
-GST_PLUGIN=	srt
+LIB_DEPENDS=	libsrt.so:www/srt
+
+MASTERDIR=	${.CURDIR:H:H}/multimedia/gstreamer1-plugins
+
+PLIST=		${.CURDIR}/pkg-plist
+
 DIST=		bad
-
-MASTERDIR=	${.CURDIR}/../../multimedia/gstreamer1-plugins
-
-PLIST=  ${.CURDIR}/pkg-plist
-
-LIB_DEPENDS+=  libsrt.so:www/srt
+GST_PLUGIN=	srt
 
 .include "${MASTERDIR}/Makefile"

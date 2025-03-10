@@ -1,9 +1,10 @@
 PORTNAME=	shiboken6
 DISTVERSION=	${PYSIDE6_VERSION}
 CATEGORIES=	devel
-MASTER_SITES=	QT/official_releases/QtForPython/${PORTNAME}/PySide6-${DISTVERSION}-src
+MASTER_SITES=	QT/official_releases/QtForPython/pyside6/PySide6-${DISTVERSION}-src
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	pyside-setup-everywhere-src-${DISTVERSION}
+DIST_SUBDIR=	KDE/Qt/${PYSIDE6_VERSION}
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Python binding generator for C++ libraries
@@ -14,22 +15,24 @@ LICENSE_COMB=	multi
 
 LIB_DEPENDS=	libxslt.so:textproc/libxslt
 
-USES=		cmake compiler:c++17-lang gnome llvm:lib,noexport pathfix \
+USES=		cmake compiler:c++17-lang gnome llvm:lib,min=17,noexport pathfix \
 		python qt:6 tar:xz
 USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
 USE_PYTHON=	flavors
 USE_QT=		base
 
-CONFIGURE_ENV=	LLVM_INSTALL_DIR="${LLVM_PREFIX}/lib/cmake/llvm"
 CMAKE_ARGS=	-DClang_DIR:PATH="${LLVM_PREFIX}/lib/cmake/clang" \
 		-DLLVM_DIR:PATH="${LLVM_PREFIX}/lib/cmake/llvm" \
 		-DCMAKE_CXX_STANDARD_LIBRARIES=-lexecinfo \
 		-DUSE_PYTHON_VERSION=${PYTHON_VER} \
 		-DBUILD_TESTS:BOOL=false
+CONFIGURE_ENV=	LLVM_INSTALL_DIR="${LLVM_PREFIX}/lib/cmake/llvm"
 
 WRKSRC_SUBDIR=	sources/shiboken6
-PLIST_SUB=	DISTVERSION=${DISTVERSION}
+PLIST_SUB=	PYTHON_MAJOR_VER=${PYTHON_MAJOR_VER} \
+		SHLIB_VER=${DISTVERSION:R} \
+		SHLIB_VERSION=${DISTVERSION}
 
 OPTIONS_DEFINE=		DOCS NUMPY
 OPTIONS_DEFAULT=	NUMPY

@@ -1,18 +1,19 @@
 PORTNAME=	glucose
-DISTVERSION=	4.1
-PORTREVISION=	3
+DISTVERSION=	4.2.1
 CATEGORIES=	math
-MASTER_SITES=	http://www.labri.fr/perso/lsimon/downloads/softwares/
-DISTNAME=	glucose-syrup-${DISTVERSION}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Parallel SAT solver based on Minisat, with glue clauses
-WWW=		https://www.labri.fr/perso/lsimon/glucose/
+WWW=		https://www.labri.fr/perso/lsimon/glucose/ \
+		https://github.com/audemard/glucose
 
 LICENSE=	MIT
-LICENSE_FILE=	${WRKSRC}/LICENCE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		compiler:c++11-lang gmake tar:tgz
+USES=		compiler:c++11-lang gmake
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	audemard
 
 PLIST_FILES=	bin/glucose bin/glucose-syrup
 

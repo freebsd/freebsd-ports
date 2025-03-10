@@ -11,14 +11,13 @@ LICENSE_FILE=	${WRKSRC}/COPYING.md
 
 RUN_DEPENDS=	lwjgl>=2.9.3:games/lwjgl
 
-USES=		cmake compiler:c++14-lang qt:5
+USES=		cmake compiler:c++14-lang java qt:5
 USE_GITHUB=	yes
 GH_ACCOUNT=	MultiMC
 GH_PROJECT=	MultiMC5
 GH_TUPLE=	MultiMC:libnbtplusplus:508eda8:libnbtplusplus/libraries/libnbtplusplus \
 		MultiMC:quazip:3691d57:quazip/libraries/quazip
 USE_LDCONFIG=	yes
-USE_JAVA=	8+
 USE_QT=		core concurrent gui network testlib:build widgets xml \
 		buildtools:build qmake:build
 

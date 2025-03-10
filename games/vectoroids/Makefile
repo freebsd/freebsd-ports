@@ -1,18 +1,17 @@
 PORTNAME=	vectoroids
-PORTVERSION=	1.1.0
-PORTREVISION=	18
+DISTVERSION=	1.1.2
 CATEGORIES=	games
-MASTER_SITES=	ftp://ftp.tuxpaint.org/unix/x/vectoroids/src/
+MASTER_SITES=	https://tuxpaint.org/ftp/unix/x/${PORTNAME}/src/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Vector-based rock-shooting game similar to Asteroids
 WWW=		http://www.newbreedsoftware.com/vectoroids/
 
 LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/COPYING.txt
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		gmake sdl
-USE_SDL=	image mixer sdl
+USE_SDL=	image2 mixer2 sdl2
 
 PORTDOCS=	CHANGES.txt README.txt
 OPTIONS_DEFINE=	DOCS
@@ -28,7 +27,7 @@ do-install:
 .for d in images music sounds
 	@(cd ${WRKSRC}/data && ${COPYTREE_SHARE} ${d} ${STAGEDIR}${DATADIR})
 .endfor
-	${LN} -sf ${DATADIR}/images/icon.png \
+	${LN} -s ../${PORTNAME}/images/icon.png \
 		${STAGEDIR}${PREFIX}/share/pixmaps/${PORTNAME}.png
 	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.6 ${STAGEDIR}${PREFIX}/share/man/man6/
 

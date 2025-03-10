@@ -1,7 +1,5 @@
 bin/cpan-audit
 %%SITE_PERL%%/CPAN/Audit.pm
-%%SITE_PERL%%/CPAN/Audit/DB.pm
-%%SITE_PERL%%/CPAN/Audit/DB.pm.gpg
 %%SITE_PERL%%/CPAN/Audit/Discover.pm
 %%SITE_PERL%%/CPAN/Audit/Discover/Cpanfile.pm
 %%SITE_PERL%%/CPAN/Audit/Discover/CpanfileSnapshot.pm
@@ -15,3 +13,4 @@ bin/cpan-audit
 %%PERL5_MAN3%%/CPAN::Audit::Filter.3.gz
 %%PERL5_MAN3%%/CPAN::Audit::FreshnessCheck.3.gz
 %%PERL5_MAN3%%/CPAN::Audit::Query.3.gz
+%%PERL5_MAN3%%/CPAN::Audit::Version.3.gz

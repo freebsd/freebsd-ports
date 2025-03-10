@@ -1,11 +1,12 @@
 PORTNAME=	yosys
-DISTVERSIONPREFIX=	yosys-
-DISTVERSION=	0.44
+DISTVERSIONPREFIX=	v
+DISTVERSION=	0.50
 CATEGORIES=	cad
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Yosys Open SYnthesis Suite
-WWW=		https://yosyshq.net/yosys/
+WWW=		https://yosyshq.net/yosys/ \
+		https://github.com/YosysHQ/yosys
 
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/COPYING
@@ -28,6 +29,7 @@ SHEBANG_GLOB=	*.sh *.py
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	YosysHQ
+GH_TUPLE=	jarro2783:cxxopts:4bf61f0:cxxopts/libs/cxxopts
 
 BINARY_ALIAS=	python3=${PYTHON_CMD} tclsh=${TCLSH}
 MAKE_ARGS=	ABCEXTERNAL=abc

@@ -2,13 +2,19 @@ include/fcft/fcft.h
 include/fcft/stride.h
 lib/libfcft.so
 lib/libfcft.so.4
-lib/libfcft.so.4.1.8
+lib/libfcft.so.4.2.0
 libdata/pkgconfig/fcft.pc
+%%PORTDOCS%%%%DOCSDIR%%/CHANGELOG.md
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE
+%%PORTDOCS%%%%DOCSDIR%%/README.md
 %%PORTDOCS%%share/man/man3/fcft_capabilities.3.gz
 %%PORTDOCS%%share/man/man3/fcft_clone.3.gz
 %%PORTDOCS%%share/man/man3/fcft_destroy.3.gz
 %%PORTDOCS%%share/man/man3/fcft_fini.3.gz
+%%PORTDOCS%%share/man/man3/fcft_font_options_create.3.gz
+%%PORTDOCS%%share/man/man3/fcft_font_options_destroy.3.gz
 %%PORTDOCS%%share/man/man3/fcft_from_name.3.gz
+%%PORTDOCS%%share/man/man3/fcft_from_name2.3.gz
 %%PORTDOCS%%share/man/man3/fcft_init.3.gz
 %%PORTDOCS%%share/man/man3/fcft_kerning.3.gz
 %%PORTDOCS%%share/man/man3/fcft_log_init.3.gz
@@ -19,6 +25,3 @@ libdata/pkgconfig/fcft.pc
 %%PORTDOCS%%share/man/man3/fcft_set_emoji_presentation.3.gz
 %%PORTDOCS%%share/man/man3/fcft_set_scaling_filter.3.gz
 %%PORTDOCS%%share/man/man3/fcft_text_run_destroy.3.gz
-%%PORTDOCS%%%%DOCSDIR%%/CHANGELOG.md
-%%PORTDOCS%%%%DOCSDIR%%/LICENSE
-%%PORTDOCS%%%%DOCSDIR%%/README.md

@@ -1,0 +1,7 @@
+lib32/cmake/epoll-shim/epoll-shim-config.cmake
+lib32/cmake/epoll-shim/epoll-shim-targets-%%CMAKE_BUILD_TYPE%%.cmake
+lib32/cmake/epoll-shim/epoll-shim-targets.cmake
+lib32/libepoll-shim-interpose.so
+lib32/libepoll-shim-interpose.so.0
+lib32/libepoll-shim.so
+lib32/libepoll-shim.so.0

@@ -51,6 +51,7 @@ bin/git-reauthor
 bin/git-rebase-patch
 bin/git-release
 bin/git-rename-branch
+bin/git-rename-file
 bin/git-rename-remote
 bin/git-rename-tag
 bin/git-repl
@@ -126,6 +127,7 @@ share/man/man1/git-reauthor.1.gz
 share/man/man1/git-rebase-patch.1.gz
 share/man/man1/git-release.1.gz
 share/man/man1/git-rename-branch.1.gz
+share/man/man1/git-rename-file.1.gz
 share/man/man1/git-rename-remote.1.gz
 share/man/man1/git-rename-tag.1.gz
 share/man/man1/git-repl.1.gz

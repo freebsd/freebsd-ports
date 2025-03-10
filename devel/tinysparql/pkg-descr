@@ -1,0 +1,3 @@
+The TinySPARQL library offers a complete RDF triplestore with SPARQL 1.1
+interface and a minimal footprint. It allows creating local databases in memory
+or the filesystem, and accessing/creating endpoints for federated queries.

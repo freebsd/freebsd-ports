@@ -1,0 +1,9 @@
+TIMESTAMP = 1731450769
+SHA256 (rocky/q/qt5-qtsensors-5.15.9-1.el9.aarch64.rpm) = 373f90990b8d9ceda01389a4d4189f8cb0763ee8dcff88bf7053a3c8c8d15004
+SIZE (rocky/q/qt5-qtsensors-5.15.9-1.el9.aarch64.rpm) = 227011
+SHA256 (rocky/q/qt5-qtsensors-5.15.9-1.el9.i686.rpm) = 5b8ebb3a05d0fef0ad77e5cd76e5c3c783d67c15d48336b3b36b64470da3ae34
+SIZE (rocky/q/qt5-qtsensors-5.15.9-1.el9.i686.rpm) = 240642
+SHA256 (rocky/q/qt5-qtsensors-5.15.9-1.el9.x86_64.rpm) = 549908654c2474477af48818aa06b1afdef47ce3554f457b606968532601f5b2
+SIZE (rocky/q/qt5-qtsensors-5.15.9-1.el9.x86_64.rpm) = 226531
+SHA256 (rocky/q/qt5-qtsensors-5.15.9-1.el9.src.rpm) = 7f2127223d83a99771055b01496f7a24e0d04447bc6d0f827d79fb4abd3af441
+SIZE (rocky/q/qt5-qtsensors-5.15.9-1.el9.src.rpm) = 2070353

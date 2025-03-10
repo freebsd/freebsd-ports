@@ -1,0 +1,5 @@
+PowerShell is a modern command shell that includes the best features of other
+popular shells. Unlike most shells that only accept and return text,
+PowerShell accepts and returns .NET objects.
+
+This package provides platform-dependent bits of PowerShell implementation.

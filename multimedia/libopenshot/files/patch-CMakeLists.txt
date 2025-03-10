@@ -1,15 +1,6 @@
---- CMakeLists.txt.orig	2024-03-26 18:49:53 UTC
+--- CMakeLists.txt.orig	2024-12-21 22:27:30 UTC
 +++ CMakeLists.txt
-@@ -97,7 +97,7 @@ if ((${CMAKE_CXX_COMPILER_ID} STREQUAL "GNU") AND
- endif()
- 
- #### Set C++ standard level
--set(CMAKE_CXX_STANDARD 14)
-+set(CMAKE_CXX_STANDARD 17)
- set(CMAKE_CXX_STANDARD_REQUIRED ON)
- set(CMAKE_CXX_EXTENSIONS OFF)
- 
-@@ -130,7 +130,7 @@ endif()
+@@ -130,7 +130,7 @@ add_subdirectory(src)
  ### Process subdirectories
  ###
  add_subdirectory(src)

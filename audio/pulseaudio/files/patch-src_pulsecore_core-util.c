@@ -1,6 +1,6 @@
---- src/pulsecore/core-util.c.orig	2024-04-04 06:44:07 UTC
+--- src/pulsecore/core-util.c.orig	2024-01-12 17:22:09 UTC
 +++ src/pulsecore/core-util.c
-@@ -2849,12 +2849,19 @@ int pa_close_allv(const int except_fds[]) {
+@@ -2850,12 +2850,19 @@ int pa_close_allv(const int except_fds[]) {
      }
  
  #endif
@@ -11,7 +11,7 @@
 +        if (except_fds[i] > maxfd)
 +            maxfd = except_fds[i];
 +    maxfd++;
-+    closefrom(maxfd);
++    closefrom(MAX(maxfd, STDERR_FILENO + 1));
 +#else
      if (getrlimit(RLIMIT_NOFILE, &rl) >= 0)
          maxfd = (int) rl.rlim_max;

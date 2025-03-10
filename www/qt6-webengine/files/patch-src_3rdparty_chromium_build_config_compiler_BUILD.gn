@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/build/config/compiler/BUILD.gn.orig	2023-12-12 22:08:45 UTC
+--- src/3rdparty/chromium/build/config/compiler/BUILD.gn.orig	2024-07-03 01:14:49 UTC
 +++ src/3rdparty/chromium/build/config/compiler/BUILD.gn
-@@ -198,7 +198,7 @@ declare_args() {
+@@ -210,7 +210,7 @@ declare_args() {
    # This greatly reduces the size of debug builds, at the cost of
    # debugging information which is required by some specialized
    # debugging tools.
@@ -9,7 +9,7 @@
  }
  
  declare_args() {
-@@ -262,13 +262,16 @@ config("no_unresolved_symbols") {
+@@ -274,13 +274,16 @@ config("no_unresolved_symbols") {
  # Compiler instrumentation can introduce dependencies in DSOs to symbols in
  # the executable they are loaded into, so they are unresolved at link-time.
  config("no_unresolved_symbols") {
@@ -27,7 +27,7 @@
  }
  
  # compiler ---------------------------------------------------------------------
-@@ -555,6 +558,10 @@ config("compiler") {
+@@ -568,6 +571,10 @@ config("compiler") {
      }
    }
  
@@ -38,16 +38,7 @@
    # Linux-specific compiler flags setup.
    # ------------------------------------
    if (use_gold) {
-@@ -823,7 +830,7 @@ config("compiler") {
- 
-       ldflags += [ "-Wl,-mllvm,-import-instr-limit=$import_instr_limit" ]
- 
--      if (!is_chromeos) {
-+      if (!is_chromeos && !is_bsd) {
-         # TODO(https://crbug.com/972449): turn on for ChromeOS when that
-         # toolchain has this flag.
-         # We only use one version of LLVM within a build so there's no need to
-@@ -1170,7 +1177,7 @@ config("compiler_cpu_abi") {
+@@ -1232,7 +1239,7 @@ config("compiler_cpu_abi") {
          ]
        }
      } else if (current_cpu == "arm") {
@@ -56,7 +47,7 @@
            !(is_chromeos_lacros && is_chromeos_device)) {
          cflags += [ "--target=arm-linux-gnueabihf" ]
          ldflags += [ "--target=arm-linux-gnueabihf" ]
-@@ -1188,7 +1195,7 @@ config("compiler_cpu_abi") {
+@@ -1250,7 +1257,7 @@ config("compiler_cpu_abi") {
          cflags += [ "-mtune=$arm_tune" ]
        }
      } else if (current_cpu == "arm64") {
@@ -65,7 +56,7 @@
            !(is_chromeos_lacros && is_chromeos_device)) {
          cflags += [ "--target=aarch64-linux-gnu" ]
          ldflags += [ "--target=aarch64-linux-gnu" ]
-@@ -1523,7 +1530,7 @@ config("compiler_deterministic") {
+@@ -1585,7 +1592,7 @@ config("compiler_deterministic") {
      # different build directory like "out/feature_a" and "out/feature_b" if
      # we build same files with same compile flag.
      # Other paths are already given in relative, no need to normalize them.
@@ -74,7 +65,7 @@
        # TODO(https://crbug.com/1231236): Use -ffile-compilation-dir= here.
        cflags += [
          "-Xclang",
-@@ -1575,7 +1582,7 @@ config("clang_revision") {
+@@ -1637,7 +1644,7 @@ config("clang_revision") {
  }
  
  config("clang_revision") {
@@ -83,16 +74,21 @@
      update_args = [
        "--print-revision",
        "--verify-version=$clang_version",
-@@ -2005,7 +2012,7 @@ config("default_warnings") {
-         "-Wno-ignored-pragma-optimize",
+@@ -2102,12 +2109,9 @@ config("default_warnings") {
+ 
+         # TODO(crbug.com/1494809): Evaluate and possibly enable.
+         "-Wno-vla-extension",
+-
+-        # TODO(https://crbug.com/1490607): Fix and re-enable.
+-        "-Wno-thread-safety-reference-return",
        ]
  
 -      if (!is_nacl) {
 +      if (!is_nacl && !is_bsd) {
-         cflags += [
-           # TODO(crbug.com/1343975) Evaluate and possibly enable.
-           "-Wno-deprecated-builtins",
-@@ -2218,7 +2225,7 @@ config("no_chromium_code") {
+         cflags_cc += [
+           # TODO(https://crbug.com/1513724): Fix and re-enable.
+           "-Wno-c++11-narrowing-const-reference",
+@@ -2295,7 +2299,7 @@ config("no_chromium_code") {
        # third-party libraries.
        "-Wno-c++11-narrowing",
      ]
@@ -101,7 +97,7 @@
        cflags += [
          # Disabled for similar reasons as -Wunused-variable.
          "-Wno-unused-but-set-variable",
-@@ -2736,7 +2743,7 @@ config("afdo") {
+@@ -2832,7 +2836,7 @@ config("afdo") {
  # There are some targeted places that AFDO regresses, so we provide a separate
  # config to allow AFDO to be disabled per-target.
  config("afdo") {
@@ -110,7 +106,7 @@
      cflags = []
      if (clang_emit_debug_info_for_profiling) {
        # Add the following flags to generate debug info for profiling.
-@@ -2763,7 +2770,7 @@ config("afdo") {
+@@ -2859,7 +2863,7 @@ config("afdo") {
        cflags += [ "-Wno-backend-plugin" ]
        inputs = [ _clang_sample_profile ]
      }

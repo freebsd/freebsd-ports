@@ -90,7 +90,6 @@ etc/radiator/dictionary.sip
 %%SITE_PERL%%/Radius/AuthRATELIMIT.pm
 %%SITE_PERL%%/Radius/AuthRATELIMITSOURCE.pm
 %%SITE_PERL%%/Radius/AuthREST.pm
-%%SITE_PERL%%/Radius/AuthRODOPI.pm
 %%SITE_PERL%%/Radius/AuthROUNDROBIN.pm
 %%SITE_PERL%%/Radius/AuthRSAAM.pm
 %%SITE_PERL%%/Radius/AuthRSAMOBILE.pm

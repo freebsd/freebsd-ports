@@ -19,6 +19,8 @@ share/man/man1/gdb%%VER%%.1.gz
 %%PYTHON%%%%DATADIR%%/python/gdb/disassembler.pyc
 %%PYTHON%%%%DATADIR%%/python/gdb/frames.py
 %%PYTHON%%%%DATADIR%%/python/gdb/frames.pyc
+%%PYTHON%%%%DATADIR%%/python/gdb/missing_debug.py
+%%PYTHON%%%%DATADIR%%/python/gdb/missing_debug.pyc
 %%PYTHON%%%%DATADIR%%/python/gdb/printing.py
 %%PYTHON%%%%DATADIR%%/python/gdb/prompt.py
 %%PYTHON%%%%DATADIR%%/python/gdb/prompt.pyc
@@ -37,6 +39,8 @@ share/man/man1/gdb%%VER%%.1.gz
 %%PYTHON%%%%DATADIR%%/python/gdb/command/explore.pyc
 %%PYTHON%%%%DATADIR%%/python/gdb/command/frame_filters.py
 %%PYTHON%%%%DATADIR%%/python/gdb/command/frame_filters.pyc
+%%PYTHON%%%%DATADIR%%/python/gdb/command/missing_debug.py
+%%PYTHON%%%%DATADIR%%/python/gdb/command/missing_debug.pyc
 %%PYTHON%%%%DATADIR%%/python/gdb/command/pretty_printers.py
 %%PYTHON%%%%DATADIR%%/python/gdb/command/pretty_printers.pyc
 %%PYTHON%%%%DATADIR%%/python/gdb/command/prompt.py
@@ -123,6 +127,7 @@ share/man/man1/gdb%%VER%%.1.gz
 %%DATADIR%%/syscalls/freebsd.xml
 %%DATADIR%%/syscalls/gdb-syscalls.dtd
 %%DATADIR%%/syscalls/i386-linux.xml
+%%DATADIR%%/syscalls/loongarch-linux.xml
 %%DATADIR%%/syscalls/mips-n32-linux.xml
 %%DATADIR%%/syscalls/mips-n64-linux.xml
 %%DATADIR%%/syscalls/mips-o32-linux.xml

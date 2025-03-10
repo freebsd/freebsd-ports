@@ -1,5 +1,5 @@
 bin/hotspot
-lib/libexec/hotspot-perfparser
+libexec/hotspot-perfparser
 share/applications/com.kdab.hotspot.desktop
 share/icons/hicolor/128x128/apps/hotspot.png
 share/icons/hicolor/16x16/apps/hotspot.png

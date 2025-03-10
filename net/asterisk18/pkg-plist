@@ -410,6 +410,7 @@ sbin/safe_asterisk
 @dir %%DATADIR%%/documentation/thirdparty
 @dir %%DATADIR%%/firmware/iax
 @dir %%DATADIR%%/images
+@dir %%DATADIR%%/keys/stir_shaken/cache
 @dir %%DATADIR%%/keys/stir_shaken
 @dir %%DATADIR%%/keys
 @dir %%DATADIR%%/moh

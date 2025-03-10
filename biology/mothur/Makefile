@@ -1,6 +1,6 @@
 PORTNAME=	mothur
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.48.1
+DISTVERSION=	1.48.2
 CATEGORIES=	biology
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -26,7 +26,7 @@ PLIST_FILES=	bin/${PORTNAME}
 
 .include <bsd.port.options.mk>
 
-.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400091 || ( ${OSVERSION} >= 1302505 && ${OSVERSION} < 1400000 ))
+.if ${OPSYS} == FreeBSD
 USES+=	llvm:max=15
 .endif
 

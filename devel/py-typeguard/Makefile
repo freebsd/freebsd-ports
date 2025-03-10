@@ -1,5 +1,5 @@
 PORTNAME=	typeguard
-PORTVERSION=	4.3.0
+PORTVERSION=	4.4.2
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,7 +18,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}typing-extensions>=4.10.0:devel/py-typing-ex
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mypy>=0.991:devel/py-mypy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest>=7,1:devel/py-pytest@${PY_FLAVOR}
 
-USES=		python
+USES=		python:3.9+
 USE_PYTHON=	autoplist concurrent pep517
 
 NO_ARCH=	yes

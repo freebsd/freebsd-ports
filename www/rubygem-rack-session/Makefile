@@ -1,5 +1,5 @@
 PORTNAME=	rack-session
-PORTVERSION=	2.0.0
+PORTVERSION=	2.1.0
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -10,7 +10,8 @@ WWW=		https://github.com/rack/rack-session
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/license.md
 
-RUN_DEPENDS=	rubygem-rack>=3.0.0,3:www/rubygem-rack
+RUN_DEPENDS=	rubygem-base64>=0.1.0:converters/rubygem-base64 \
+		rubygem-rack>=3.0.0,3:www/rubygem-rack
 
 USES=		gem
 

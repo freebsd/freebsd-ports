@@ -11,4 +11,19 @@
  as recursor.conf-dist.
 EOM
 }
+{ type: upgrade
+  minimum_version: "5.1.0"
+  message: <<EOM
+Since version 5.1.0 the tarball no longer contains a recursor.conf-dist
+and users need to start using the YAML format.
+
+A new command is available to the rc.d script, showyaml, which converts
+the old config to YAML format. This can be run via:
+  service pdns_recursor showyaml
+
+It ony shows the new config and won't overwrite your old config.
+
+Please double check if everything has been converted correctly.
+EOM
+}
 ]

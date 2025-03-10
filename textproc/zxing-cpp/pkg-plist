@@ -1,5 +1,5 @@
+include/ZXing/Barcode.h
 include/ZXing/BarcodeFormat.h
-include/ZXing/BitArray.h
 include/ZXing/BitHacks.h
 include/ZXing/BitMatrix.h
 include/ZXing/BitMatrixIO.h
@@ -21,14 +21,15 @@ include/ZXing/ReaderOptions.h
 include/ZXing/Result.h
 include/ZXing/StructuredAppend.h
 include/ZXing/TextUtfEncoding.h
+include/ZXing/Version.h
 include/ZXing/ZXAlgorithms.h
-include/ZXing/ZXConfig.h
+include/ZXing/ZXingCpp.h
 include/ZXing/ZXVersion.h
 lib/cmake/ZXing/ZXingConfig.cmake
 lib/cmake/ZXing/ZXingConfigVersion.cmake
 lib/cmake/ZXing/ZXingTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/ZXing/ZXingTargets.cmake
 lib/libZXing.so
-lib/libZXing.so.2.2.1
+lib/libZXing.so.%%SOVERSION%%
 lib/libZXing.so.3
 libdata/pkgconfig/zxing.pc

@@ -1,18 +1,11 @@
---- src/m64py/platform.py.orig	2023-12-26 23:01:25 UTC
+--- src/m64py/platform.py.orig	2024-12-06 06:23:09 UTC
 +++ src/m64py/platform.py
-@@ -31,6 +31,15 @@ if sys.platform.startswith("linux"):
-         "/usr/lib/i386-linux-gnu/mupen64plus",
+@@ -39,7 +39,7 @@ elif "bsd" in sys.platform:
+     CONFIG_DIR = os.environ.get("XDG_CONFIG_HOME") or os.path.join(os.path.expanduser("~"), ".config")
+     DEFAULT_DYNLIB = "libmupen64plus.so"
+     SEARCH_DIRS = [
+-        "/usr/local/lib/mupen64plus",
++        "%%LOCALBASE%%/lib/mupen64plus",
          "."
      ]
-+elif sys.platform.startswith("freebsd"):
-+    DLL_EXT = ".so"
-+    DLL_FILTER = ""
-+    DEFAULT_DYNLIB = "libmupen64plus.so.2"
-+    SEARCH_DIRS = [
-+        "%%LOCALBASE%%/lib/",
-+        "%%LOCALBASE%%/lib/mupen64plus/",
-+        "."
-+    ]
- elif sys.platform.startswith("openbsd"):
-     DLL_EXT = ".so"
-     DLL_FILTER = ""
+ elif sys.platform == "darwin":

@@ -4,7 +4,7 @@ PORTREVISION=	5
 CATEGORIES=	ftp
 MASTER_SITES=	https://BSDforge.com/projects/source/ftp/fmirror/
 
-MAINTAINER=	kiwi@oav.net
+MAINTAINER=	kiwi@FreeBSD.org
 COMMENT=	Program for mirroring files and directories from FTP server
 
 LICENSE=	GPLv2

@@ -18,7 +18,7 @@ LICENSE=	GPLv3
 
 EXTRACT_DEPENDS=	${UNZIP_CMD}:archivers/unzip
 
-USE_JAVA=	yes
+USES=		java
 NO_BUILD=	yes
 SUB_LIST+=	LIBFILES="${LIBFILES}" \
 		JARFILE="${JARFILE}"

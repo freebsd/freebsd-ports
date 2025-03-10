@@ -96,4 +96,4 @@ sbin/kres-cache-gc
 sbin/kresc
 sbin/kresd
 @dir(%%USERS%%,%%GROUPS%%,0755) %%ETCDIR%%
-@dir(%%USERS%%,%%GROUPS%%,0660) %%RUNDIR%%
+@dir(%%USERS%%,%%GROUPS%%,0700) %%RUNDIR%%

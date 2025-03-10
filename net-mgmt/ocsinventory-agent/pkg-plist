@@ -210,8 +210,10 @@ bin/ocsinventory-agent
 %%SITE_PERL%%/Ocsinventory/Agent/Modules/Databases/Oracle.pm
 %%SITE_PERL%%/Ocsinventory/Agent/Modules/Databases/Oracle/Instances.pm
 %%SITE_PERL%%/Ocsinventory/Agent/Modules/Download.pm
+%%SITE_PERL%%/Ocsinventory/Agent/Modules/DownloadAIX.pm
 %%SITE_PERL%%/Ocsinventory/Agent/Modules/Example.pm
 %%SITE_PERL%%/Ocsinventory/Agent/Modules/LocalSnmpScan.pm
+%%SITE_PERL%%/Ocsinventory/Agent/Modules/SnmpFork.pm
 %%SITE_PERL%%/Ocsinventory/Agent/Modules/SnmpScan.pm
 %%SITE_PERL%%/Ocsinventory/Agent/Network.pm
 %%SITE_PERL%%/Ocsinventory/Agent/XML/Inventory.pm

@@ -1,0 +1,3 @@
+bin/%%PORTNAME%%
+@sample %%EXAMPLESDIR%%/newsyslog.conf etc/newsyslog.conf.d/adguardhome.conf
+@dir etc/newsyslog.conf.d

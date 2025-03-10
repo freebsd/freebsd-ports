@@ -1,0 +1,7 @@
+include/kassert/internal/assertion_macros.hpp
+include/kassert/internal/expression_decomposition.hpp
+include/kassert/internal/logger.hpp
+include/kassert/kassert.hpp
+lib/cmake/kassert/kassertConfig.cmake
+lib/cmake/kassert/kassertConfigVersion.cmake
+lib/cmake/kassert/kassertTargets.cmake

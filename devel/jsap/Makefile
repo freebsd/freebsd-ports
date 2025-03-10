@@ -9,7 +9,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Java package to parse command-line arguments
 WWW=		http://www.martiansoftware.com/jsap/index.html
 
-USE_JAVA=	yes
+USES=		java
+
 NO_BUILD=	yes
 NO_ARCH=	yes
 

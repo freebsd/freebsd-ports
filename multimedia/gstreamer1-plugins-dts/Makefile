@@ -3,15 +3,15 @@ CATEGORIES=	multimedia
 
 COMMENT=	GStreamer dts audio decode plugin
 
-GST_PLUGIN=	dts
-DIST=		bad
+LIB_DEPENDS=	libdca.so:multimedia/libdca
 
-MASTERDIR=	${.CURDIR}/../../multimedia/gstreamer1-plugins
+MESON_ARGS+=	-Dgpl=enabled
+
+MASTERDIR=	${.CURDIR:H:H}/multimedia/gstreamer1-plugins
 
 PLIST=		${.CURDIR}/pkg-plist
 
-LIB_DEPENDS=	libdca.so:multimedia/libdca
+DIST=		bad
+GST_PLUGIN=	dts
 
 .include "${MASTERDIR}/Makefile"
-
-MESON_ARGS+=	-Dgpl=enabled

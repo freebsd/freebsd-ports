@@ -129,6 +129,9 @@ bin/hyphy
 %%DATADIR%%/TemplateBatchFiles/LZ_Complexity.bf
 %%DATADIR%%/TemplateBatchFiles/LocalMolClock.bf
 %%DATADIR%%/TemplateBatchFiles/MGvsGY.bf
+%%DATADIR%%/TemplateBatchFiles/MSS-joint-fitter.bf
+%%DATADIR%%/TemplateBatchFiles/MSS-selector-2.bf
+%%DATADIR%%/TemplateBatchFiles/MSS-selector.bf
 %%DATADIR%%/TemplateBatchFiles/MergeSequences.bf
 %%DATADIR%%/TemplateBatchFiles/MergeSites.bf
 %%DATADIR%%/TemplateBatchFiles/Miscellaneous/phylohandbook/BranchAPriori.bf
@@ -147,9 +150,6 @@ bin/hyphy
 %%DATADIR%%/TemplateBatchFiles/ModelTest.bf
 %%DATADIR%%/TemplateBatchFiles/MolClockAllRoots.bf
 %%DATADIR%%/TemplateBatchFiles/MolecularClock.bf
-%%DATADIR%%/TemplateBatchFiles/MSS-joint-fitter.bf
-%%DATADIR%%/TemplateBatchFiles/MSS-selector-2.bf
-%%DATADIR%%/TemplateBatchFiles/MSS-selector.bf
 %%DATADIR%%/TemplateBatchFiles/NeighborJoining.bf
 %%DATADIR%%/TemplateBatchFiles/NielsenYang.bf
 %%DATADIR%%/TemplateBatchFiles/NucModelCompare.bf
@@ -181,8 +181,8 @@ bin/hyphy
 %%DATADIR%%/TemplateBatchFiles/SelectionAnalyses/BranchSiteREL.bf
 %%DATADIR%%/TemplateBatchFiles/SelectionAnalyses/FADE.bf
 %%DATADIR%%/TemplateBatchFiles/SelectionAnalyses/FEL.bf
-%%DATADIR%%/TemplateBatchFiles/SelectionAnalyses/FitMultiModel.bf
 %%DATADIR%%/TemplateBatchFiles/SelectionAnalyses/FUBAR.bf
+%%DATADIR%%/TemplateBatchFiles/SelectionAnalyses/FitMultiModel.bf
 %%DATADIR%%/TemplateBatchFiles/SelectionAnalyses/MEME.bf
 %%DATADIR%%/TemplateBatchFiles/SelectionAnalyses/PRIME.bf
 %%DATADIR%%/TemplateBatchFiles/SelectionAnalyses/RELAX-Groups.bf
@@ -389,6 +389,7 @@ bin/hyphy
 %%DATADIR%%/TemplateBatchFiles/libv3/models/binary/empirical.bf
 %%DATADIR%%/TemplateBatchFiles/libv3/models/codon.bf
 %%DATADIR%%/TemplateBatchFiles/libv3/models/codon/BS_REL.bf
+%%DATADIR%%/TemplateBatchFiles/libv3/models/codon/MG_GTR.bf
 %%DATADIR%%/TemplateBatchFiles/libv3/models/codon/MG_REV.bf
 %%DATADIR%%/TemplateBatchFiles/libv3/models/codon/MG_REV_MH.bf
 %%DATADIR%%/TemplateBatchFiles/libv3/models/codon/MG_REV_PROPERTIES.bf
@@ -416,6 +417,7 @@ bin/hyphy
 %%DATADIR%%/TemplateBatchFiles/libv3/tasks/distances.bf
 %%DATADIR%%/TemplateBatchFiles/libv3/tasks/estimators.bf
 %%DATADIR%%/TemplateBatchFiles/libv3/tasks/genetic_code.bf
+%%DATADIR%%/TemplateBatchFiles/libv3/tasks/mapping.bf
 %%DATADIR%%/TemplateBatchFiles/libv3/tasks/mpi.bf
 %%DATADIR%%/TemplateBatchFiles/libv3/tasks/trees.bf
 %%DATADIR%%/TemplateBatchFiles/molclockBootstrap.bf

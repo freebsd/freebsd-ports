@@ -1,5 +1,11 @@
-TIMESTAMP = 1645697559
-SHA256 (Ultimaker/Ultimaker-CuraEngine-4.13.1_GH0.tar.gz) = 283f62326c6072cdcef9d9b84cb8141a6072747f08e1cae6534d08ad85b1c657
-SIZE (Ultimaker/Ultimaker-CuraEngine-4.13.1_GH0.tar.gz) = 1727935
-SHA256 (Ultimaker/nothings-stb-d5d052c_GH0.tar.gz) = ce1a6424b43287166a962827d83d98cedcd9d515e69052b17d8a7896f9fb7517
-SIZE (Ultimaker/nothings-stb-d5d052c_GH0.tar.gz) = 1358441
+TIMESTAMP = 1713896563
+SHA256 (Ultimaker/Ultimaker-CuraEngine-5.7.0_GH0.tar.gz) = b0f3ccd1e1813354fdc1ced7bed322033cc846cd07454547328bdb4cb313b00b
+SIZE (Ultimaker/Ultimaker-CuraEngine-5.7.0_GH0.tar.gz) = 1780860
+SHA256 (Ultimaker/mapbox-geometry.hpp-3b1a10e_GH0.tar.gz) = 5af2b21a10c18a364f5a7e7a077655514f2708ea5537f592e1edfb3f25f508ee
+SIZE (Ultimaker/mapbox-geometry.hpp-3b1a10e_GH0.tar.gz) = 19518
+SHA256 (Ultimaker/mapbox-wagyu-0.5.0_GH0.tar.gz) = 88c41eaba03107ebe79052fdbd66e419e903d331a2616a51849018e13648ab83
+SIZE (Ultimaker/mapbox-wagyu-0.5.0_GH0.tar.gz) = 822342
+SHA256 (Ultimaker/nothings-stb-beebb24_GH0.tar.gz) = f617df64be72137bfc680675a3e0bb9532bc89dbb1facca551885efa6d5f449e
+SIZE (Ultimaker/nothings-stb-beebb24_GH0.tar.gz) = 1506973
+SHA256 (Ultimaker/Ultimaker-Scripta_public-c378c83_GH0.tar.gz) = 1c21e1fefd661dd93445d0cfcfb9eaac89c10bd855b7914830c6c8b1a9b17287
+SIZE (Ultimaker/Ultimaker-Scripta_public-c378c83_GH0.tar.gz) = 16918

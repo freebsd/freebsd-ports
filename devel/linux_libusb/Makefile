@@ -53,6 +53,7 @@ PLIST_FILES+=	usr/lib/libusb.so.3 \
 		usr/lib/libusb-0.1.so.4 \
 		usr/lib/libusb-1.0.so.0
 .  endif
+MAKE_ARGS+=	CSTD=gnu11
 .endif
 
 do-build:

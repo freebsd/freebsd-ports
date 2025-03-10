@@ -1,6 +1,6 @@
 PORTNAME=	ghc
 PORTVERSION=	${GHC_VERSION}
-PORTREVISION?=	0
+PORTREVISION?=	2
 CATEGORIES=	lang haskell
 MASTER_SITES=	https://www.haskell.org/ghc/dist/${PORTVERSION}/:source \
 		LOCAL/arrowd/:boot
@@ -31,7 +31,7 @@ NO_CCACHE=		yes
 OPTIONS_SUB=		yes
 SHEBANG_FILES=		${BOOT_SCRIPT}
 
-OPTIONS_DEFINE?=	DYNAMIC GMP PROFILE DOCS
+OPTIONS_DEFINE?=	DYNAMIC GMP PROFILE DOCS PDFDOCS
 OPTIONS_DEFAULT=	DYNAMIC PROFILE GMP
 
 OPTIONS_GROUP=		BOOTSTRAP
@@ -39,7 +39,8 @@ BOOTSTRAP_DESC=		Bootsrap using installed ghc
 OPTIONS_GROUP_BOOTSTRAP=BOOT
 
 BOOT_DESC=		Use installed GHC for bootstrapping
-DOCS_DESC=		Install HTML documentation
+DOCS_DESC=		Build and install HTML documentation
+PDFDOCS_DESC=		Build and install PDF documentation
 DYNAMIC_DESC=		Add support for dynamic linking
 GMP_DESC=		Use GNU Multi-precision Library from Ports
 PROFILE_DESC=		Add support for performance profiling
@@ -47,11 +48,14 @@ PROFILE_DESC=		Add support for performance profiling
 BOOT_CONFIGURE_ENV=	GHC=${LOCALBASE}/bin/ghc
 BOOT_CONFIGURE_ENV_OFF=	GHC=${BOOT_GHC} LLC=llc${BOOT_LLVM_VERSION} OPT=opt${BOOT_LLVM_VERSION}
 
-DOCS_BUILD_DEPENDS=	sphinx-build:textproc/py-sphinx \
-			xelatex:print/tex-xetex \
-			${LOCALBASE}/share/fonts/dejavu/DejaVuSans.ttf:x11-fonts/dejavu
-DOCS_VARS=		enable_docs=YES
+DOCS_BUILD_DEPENDS=	sphinx-build:textproc/py-sphinx
+DOCS_VARS=		enable_docs=YES hadrian_docs_arg=--docs=no-sphinx-pdfs
 DOCS_VARS_OFF=		enable_docs=NO hadrian_docs_arg=--docs=none
+
+PDFDOCS_IMPLIES=	DOCS
+PDFDOCS_BUILD_DEPENDS=	xelatex:print/tex-xetex \
+			${LOCALBASE}/share/fonts/dejavu/DejaVuSans.ttf:x11-fonts/dejavu
+PDFDOCS_VARS=		hadrian_docs_arg=
 
 DYNAMIC_CONFIGURE_WITH=	system-libffi \
 			ffi-includes=${LOCALBASE}/include \

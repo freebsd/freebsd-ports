@@ -1,6 +1,6 @@
---- cmake/external/qt/package.cmake.orig	2024-05-16 08:52:10 UTC
+--- cmake/external/qt/package.cmake.orig	2024-10-11 07:45:28 UTC
 +++ cmake/external/qt/package.cmake
-@@ -41,6 +41,8 @@ find_package(Qt${QT_VERSION_MAJOR} OPTIONAL_COMPONENTS
+@@ -66,6 +66,8 @@ if (QT_VERSION_MAJOR GREATER_EQUAL 6)
  
  if (QT_VERSION_MAJOR GREATER_EQUAL 6)
      find_package(Qt${QT_VERSION_MAJOR} COMPONENTS OpenGL OpenGLWidgets REQUIRED)

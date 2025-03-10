@@ -12,6 +12,7 @@ This library provide fast Unicode functions such as
    equivalent string,
  - UTF-8 and UTF-16LE/BE character counting.
  - UTF-16 endianness change (UTF16-LE/BE to UTF-16-BE/LE)
+ - Base64 encoding and decoding
 
 The functions are accelerated using SIMD instructions (e.g., ARM NEON,
 SSE, AVX, AVX-512, etc.). When your strings contain hundreds of

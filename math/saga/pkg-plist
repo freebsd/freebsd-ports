@@ -195,7 +195,7 @@ lib/saga/libtable_calculus.so
 lib/saga/libtable_tools.so
 lib/saga/libtin_tools.so
 lib/saga/libvis_3d_viewer.so
-share/applications/saga.desktop
+share/applications/org.saga_gis.saga_gui.desktop
 share/icons/hicolor/128x128/apps/saga.png
 share/icons/hicolor/16x16/apps/saga.png
 share/icons/hicolor/192x192/apps/saga.png
@@ -211,7 +211,7 @@ share/icons/hicolor/8x8/apps/saga.png
 share/icons/hicolor/96x96/apps/saga.png
 share/man/man1/saga_cmd.1.gz
 share/man/man1/saga_gui.1.gz
-share/metainfo/org.saga-gis.saga-gui.appdata.xml
+share/metainfo/org.saga_gis.saga_gui.appdata.xml
 share/pixmaps/saga.png
 %%DATADIR%%/debug/README.md
 %%DATADIR%%/debug/gdb_saga_api_pp.py
@@ -226,6 +226,7 @@ share/pixmaps/saga.png
 %%DATADIR%%/helper/convert2utf-8.bat
 %%DATADIR%%/helper/convert2utf-8.py
 %%DATADIR%%/helper/create_archive.py
+%%DATADIR%%/helper/create_python_toolboxes.py
 %%DATADIR%%/helper/doxygen_saga_api_chm
 %%DATADIR%%/helper/doxygen_saga_api_html
 %%DATADIR%%/helper/make_arcsaga_toolboxes.bat
@@ -247,10 +248,11 @@ share/pixmaps/saga.png
 %%DATADIR%%/saga.lng.txt
 %%DATADIR%%/saga.png
 %%DATADIR%%/saga.rus.txt
-%%DATADIR%%/saga_prj.srs
+%%DATADIR%%/saga.srs
+%%DATADIR%%/saga_preferences.srs
+%%DATADIR%%/saga_srs_preferences.txt
 %%DATADIR%%/saga_tip.txt
 %%DATADIR%%/templates/template4saga-tools/my_tool_library/CMakeLists.txt
-%%DATADIR%%/templates/template4saga-tools/my_tool_library/Makefile
 %%DATADIR%%/templates/template4saga-tools/my_tool_library/TLB_Interface.cpp
 %%DATADIR%%/templates/template4saga-tools/my_tool_library/my_tool.cpp
 %%DATADIR%%/templates/template4saga-tools/my_tool_library/my_tool.h

@@ -1,7 +1,6 @@
 PORTNAME=	ocl-icd
-PORTVERSION=	2.3.1
-PORTREVISION=	2
 DISTVERSIONPREFIX=	v
+DISTVERSION=	2.3.2
 CATEGORIES=	devel
 
 MAINTAINER=	ohartmann@walstatt.org
@@ -35,8 +34,15 @@ OPTIONS_SUB=		yes
 MANPAGES_BUILD_DEPENDS=	asciidoc:textproc/asciidoc \
 			xmlto:textproc/xmlto
 
+.include <bsd.port.options.mk>
+
 post-patch:
+.if	${PORT_OPTIONS:MDOCS} || ${PORT_OPTIONS:MMANPAGES}
 	@${REINPLACE_CMD} -e 's|/etc/|${LOCALBASE}/etc/|g' \
 		${WRKSRC}/doc/libOpenCL.7.txt.in
+.else
+	@${REINPLACE_CMD} -e 's|doc tests|tests|g' \
+		${WRKSRC}/Makefile.am
+.endif
 
 .include <bsd.port.mk>

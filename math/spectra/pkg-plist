@@ -3,6 +3,8 @@ include/Spectra/GenEigsBase.h
 include/Spectra/GenEigsComplexShiftSolver.h
 include/Spectra/GenEigsRealShiftSolver.h
 include/Spectra/GenEigsSolver.h
+include/Spectra/HermEigsBase.h
+include/Spectra/HermEigsSolver.h
 include/Spectra/JDSymEigsBase.h
 include/Spectra/LinAlg/Arnoldi.h
 include/Spectra/LinAlg/BKLDLT.h
@@ -19,12 +21,14 @@ include/Spectra/MatOp/DenseCholesky.h
 include/Spectra/MatOp/DenseGenComplexShiftSolve.h
 include/Spectra/MatOp/DenseGenMatProd.h
 include/Spectra/MatOp/DenseGenRealShiftSolve.h
+include/Spectra/MatOp/DenseHermMatProd.h
 include/Spectra/MatOp/DenseSymMatProd.h
 include/Spectra/MatOp/DenseSymShiftSolve.h
 include/Spectra/MatOp/SparseCholesky.h
 include/Spectra/MatOp/SparseGenComplexShiftSolve.h
 include/Spectra/MatOp/SparseGenMatProd.h
 include/Spectra/MatOp/SparseGenRealShiftSolve.h
+include/Spectra/MatOp/SparseHermMatProd.h
 include/Spectra/MatOp/SparseRegularInverse.h
 include/Spectra/MatOp/SparseSymMatProd.h
 include/Spectra/MatOp/SparseSymShiftSolve.h
@@ -35,7 +39,6 @@ include/Spectra/MatOp/internal/SymGEigsCayleyOp.h
 include/Spectra/MatOp/internal/SymGEigsCholeskyOp.h
 include/Spectra/MatOp/internal/SymGEigsRegInvOp.h
 include/Spectra/MatOp/internal/SymGEigsShiftInvertOp.h
-include/Spectra/SymEigsBase.h
 include/Spectra/SymEigsShiftSolver.h
 include/Spectra/SymEigsSolver.h
 include/Spectra/SymGEigsShiftSolver.h
@@ -48,6 +51,6 @@ include/Spectra/Util/TypeTraits.h
 include/Spectra/Util/Version.h
 include/Spectra/contrib/LOBPCGSolver.h
 include/Spectra/contrib/PartialSVDSolver.h
-%%DATADIR%%/cmake/Spectra-targets.cmake
-%%DATADIR%%/cmake/spectra-config-version.cmake
-%%DATADIR%%/cmake/spectra-config.cmake
+share/cmake/Spectra/Spectra-targets.cmake
+share/cmake/Spectra/spectra-config-version.cmake
+share/cmake/Spectra/spectra-config.cmake

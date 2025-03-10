@@ -1,5 +1,5 @@
 PORTNAME=	sqlite3
-PORTVERSION=	2.0.3
+PORTVERSION=	2.5.0
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 
@@ -14,6 +14,7 @@ USES=		gem sqlite
 
 CONFIGURE_ARGS=	--enable-system-libraries --with-sqlite3-dir=${LOCALBASE}
 
+# Clean up bundled libraries
 post-patch:
 	@${RM} -r ${WRKSRC}/ports/
 

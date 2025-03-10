@@ -1,5 +1,6 @@
 PORTNAME=	cssbundling-rails
 PORTVERSION=	1.4.1
+PORTREVISION=	2
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -10,7 +11,7 @@ WWW=		https://github.com/rails/cssbundling-rails
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
 
-RUN_DEPENDS=	rubygem-railties71>=6.0.0:www/rubygem-railties71
+RUN_DEPENDS=	rubygem-railties80>=6.0.0:www/rubygem-railties80
 
 USES=		gem
 

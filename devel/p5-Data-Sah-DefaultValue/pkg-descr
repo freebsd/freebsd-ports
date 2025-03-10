@@ -1,0 +1,8 @@
+Data::Sah::DefaultValue generates code to set default value using value rules.
+
+A value rule is put in Data::Sah::Value::$COMPILER::$TOPIC::$DESCRIPTION module,
+for example: Data::Sah::Value::perl::Perl::this_mod contains the value "this
+module" (see App::ThisDist for more details on the meaning of "this module").
+
+Basically, a value rule will provide an expression (expr_value) that return some
+value.

@@ -41,6 +41,7 @@ include/absl/base/internal/strerror.h
 include/absl/base/internal/sysinfo.h
 include/absl/base/internal/thread_identity.h
 include/absl/base/internal/throw_delegate.h
+include/absl/base/internal/tracing.h
 include/absl/base/internal/tsan_mutex_interface.h
 include/absl/base/internal/unaligned_access.h
 include/absl/base/internal/unscaledcycleclock.h
@@ -195,6 +196,7 @@ include/absl/log/internal/nullstream.h
 include/absl/log/internal/proto.h
 include/absl/log/internal/strip.h
 include/absl/log/internal/structured.h
+include/absl/log/internal/structured_proto.h
 include/absl/log/internal/test_actions.h
 include/absl/log/internal/test_helpers.h
 include/absl/log/internal/test_matchers.h
@@ -492,6 +494,8 @@ lib/libabsl_log_internal_nullguard.so
 lib/libabsl_log_internal_nullguard.so.%%LIBSUFX%%
 lib/libabsl_log_internal_proto.so
 lib/libabsl_log_internal_proto.so.%%LIBSUFX%%
+lib/libabsl_log_internal_structured_proto.so
+lib/libabsl_log_internal_structured_proto.so.%%LIBSUFX%%
 lib/libabsl_log_severity.so
 lib/libabsl_log_severity.so.%%LIBSUFX%%
 lib/libabsl_log_sink.so
@@ -560,6 +564,8 @@ lib/libabsl_time.so
 lib/libabsl_time.so.%%LIBSUFX%%
 lib/libabsl_time_zone.so
 lib/libabsl_time_zone.so.%%LIBSUFX%%
+lib/libabsl_tracing_internal.so
+lib/libabsl_tracing_internal.so.%%LIBSUFX%%
 lib/libabsl_utf8_for_code_point.so
 lib/libabsl_utf8_for_code_point.so.%%LIBSUFX%%
 lib/libabsl_vlog_config_internal.so
@@ -676,6 +682,7 @@ libdata/pkgconfig/absl_log_internal_nullstream.pc
 libdata/pkgconfig/absl_log_internal_proto.pc
 libdata/pkgconfig/absl_log_internal_strip.pc
 libdata/pkgconfig/absl_log_internal_structured.pc
+libdata/pkgconfig/absl_log_internal_structured_proto.pc
 libdata/pkgconfig/absl_log_internal_voidify.pc
 libdata/pkgconfig/absl_log_severity.pc
 libdata/pkgconfig/absl_log_sink.pc
@@ -748,6 +755,7 @@ libdata/pkgconfig/absl_synchronization.pc
 libdata/pkgconfig/absl_throw_delegate.pc
 libdata/pkgconfig/absl_time.pc
 libdata/pkgconfig/absl_time_zone.pc
+libdata/pkgconfig/absl_tracing_internal.pc
 libdata/pkgconfig/absl_type_traits.pc
 libdata/pkgconfig/absl_utf8_for_code_point.pc
 libdata/pkgconfig/absl_utility.pc

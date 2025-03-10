@@ -3,10 +3,11 @@
 # https://support.google.com/earth/answer/168344
 
 PORTNAME=	google-earth-pro
-PORTVERSION=	7.3.6
+DISTVERSION=	7.3.6.10201
+DISTVERSIONSUFFIX=	-0
 CATEGORIES=	astro deskutils geography
-MASTER_SITES=	https://dl.google.com/dl/linux/direct/
-DISTFILES_amd64=google-earth-pro-stable-7.3.6.x86_64.rpm
+MASTER_SITES=	http://dl.google.com/linux/earth/rpm/stable/x86_64/
+DISTFILES_amd64=	${PORTNAME}-stable-${DISTVERSION}${DISTVERSIONSUFFIX}.x86_64.rpm
 
 MAINTAINER=	jhay@FreeBSD.org
 COMMENT=	Virtual globe, map and geographical information program
@@ -45,7 +46,6 @@ do-install:
 		${STAGEDIR}${DESKTOPDIR}
 	${MKDIR} ${STAGEDIR}${LINUXBASE}
 	(cd ${WRKSRC} && ${COPYTREE_SHARE} opt ${STAGEDIR}${LINUXBASE})
-	${CHMOD} +x ${STAGEDIR}${LINUXBASE}/opt/google/earth/pro/googleearth-bin
 	${INSTALL_SCRIPT} ${WRKDIR}/google-earth-pro ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>

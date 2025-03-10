@@ -1,0 +1,5 @@
+Gotify-CLI is a command line client for pushing messages to net/gotify-server.
+
+It is not required, but convenient, see also herefor alternatives:
+https://github.com/gotify/cli?tab=readme-ov-file#alternatives
+

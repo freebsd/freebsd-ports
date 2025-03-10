@@ -1,5 +1,5 @@
 PORTNAME=	iteration-utilities
-PORTVERSION=	0.12.1
+PORTVERSION=	0.13.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI \
 		https://github.com/MSeifert04/iteration_utilities/releases/download/v${PORTVERSION}/

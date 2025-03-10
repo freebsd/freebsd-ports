@@ -31,7 +31,7 @@ OPTIONS_DEFAULT=	JIT
 OPTIONS_SUB=	yes
 
 JIT_DESC=	Use Lua JIT compiler
-JIT_LIB_DEPENDS=	libluajit-5.1.so:lang/luajit-devel
+JIT_USES=	luajit
 JIT_USES_OFF=	lua:54
 JIT_MESON_OFF=	-Djit=false
 

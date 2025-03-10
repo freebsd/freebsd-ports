@@ -1,0 +1,17 @@
+# https://sourceforge.net/p/apcupsd/mailman/apcupsd-users/thread/CAGGHmKEjHQfRkB1EvHdv5b54buNKwQpMVmQzznpB%2BWNx_nEvWw%40mail.gmail.com/#msg59114143
+# https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=283900
+--- src/drivers/pcnet/pcnet.c	(revision 2381)
++++ src/drivers/pcnet/pcnet.c	(working copy)
+@@ -32,10 +32,10 @@
+ 
+ /*
+  * Number of seconds with no data before we declare COMMLOST.
+- * UPS should report in every 25 seconds. We allow 2 missing
++ * UPS should report in every 25 seconds. We allow 3 missing
+  * reports plus a fudge factor.
+  */
+-#define COMMLOST_TIMEOUT   55
++#define COMMLOST_TIMEOUT   80
+ 
+ /* Win32 needs a special close for sockets */
+ #ifdef HAVE_MINGW

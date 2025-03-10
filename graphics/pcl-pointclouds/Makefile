@@ -1,18 +1,16 @@
 PORTNAME=	pcl
-DISTVERSION=	1.13.1
-PORTREVISION=	2
+DISTVERSIONPREFIX=	pcl-
+DISTVERSION=	1.15.0
 CATEGORIES=	graphics math
-MASTER_SITES=	https://github.com/PointCloudLibrary/${PORTNAME}/releases/download/${PORTNAME}-${DISTVERSION}/
+#MASTER_SITES=	https://github.com/PointCloudLibrary/${PORTNAME}/releases/download/${PORTNAME}-${DISTVERSION}/
 PKGNAMESUFFIX=	-pointclouds
-DISTNAME=	source
+#DISTNAME=	source
 DIST_SUBDIR=	${PORTNAME}${PKGNAMESUFFIX}/${DISTVERSION}
-
-PATCH_SITES=	https://github.com/PointCloudLibrary/pcl/commit/
-PATCHFILES+=	69a2392e4c5976bd4dc1e33cc4659fa210f68485.patch:-p1 # https://github.com/PointCloudLibrary/pcl/pull/5903 fixing https://github.com/PointCloudLibrary/pcl/issues/5902
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Point Cloud Library
-WWW=		https://pointclouds.org/
+WWW=		https://pointclouds.org/ \
+		https://github.com/PointCloudLibrary/pcl
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
@@ -22,6 +20,7 @@ NOT_FOR_ARCHS=		armv6 armv7
 NOT_FOR_ARCHS_REASON=	common/include/pcl/pcl_macros.h:420:4: error: aligned_malloc not supported on your platform
 
 LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
+		libcjson.so:devel/libcjson \
 		libflann_cpp.so:math/flann \
 		libfreetype.so:print/freetype2 \
 		liblz4.so:archivers/liblz4 \
@@ -31,20 +30,23 @@ USES=		cmake:testing compiler:c++14-lang eigen:3 localbase:ldflags python xorg
 USE_XORG=	x11 xext xt ice sm
 USE_LDCONFIG=	yes
 
-USE_GITHUB=	nodefault
-GH_ACCOUNT=	google:gtest
-GH_PROJECT=	googletest:gtest
+#USE_GITHUB=	nodefault
+USE_GITHUB=	yes
+#GH_ACCOUNT=	google:gtest
+GH_ACCOUNT=	PointCloudLibrary google:gtest
+GH_PROJECT=	${PORTNAME} googletest:gtest
 GH_TAGNAME=	release-1.11.0:gtest
 
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} # workaround, otherwise USE_GITHUB=nodefault doesn't work #'
+#DISTFILES=	${DISTNAME}${EXTRACT_SUFX} # workaround, otherwise USE_GITHUB=nodefault doesn't work #'
 
 CMAKE_TESTING_ON=	BUILD_global_tests # 6 tests are known to fail: https://github.com/PointCloudLibrary/pcl/issues/5127
 CMAKE_TESTING_TARGET=	tests
 CMAKE_ARGS=		-DGTEST_SRC_DIR=${WRKSRC_gtest}/googletest -DGTEST_INCLUDE_DIR=${WRKSRC_gtest}/googletest/include
 
-WRKSRC=		${WRKDIR}/${PORTNAME}
+#WRKSRC=		${WRKDIR}/${PORTNAME}
+WRKSRC=		${WRKDIR}/pcl-${DISTVERSIONFULL}
 
-PLIST_SUB=	SHL3=${DISTVERSION} SHL2=${DISTVERSION:R}
+PLIST_SUB=	SHL3=${DISTVERSION:R}.1.99 SHL2=${DISTVERSION:R}
 
 DATADIR=	${PREFIX}/share/${PORTNAME}-${DISTVERSION:R}  # match the directory where the project installs .cmake files
 
@@ -73,6 +75,8 @@ VTK_USE=		GL=gl,glu QT=core,gui,opengl,widgets,buildtools:build,qmake:build
 VTK_CMAKE_BOOL=		WITH_VTK
 VTK_CMAKE_ON=		-DVTK_DIR=${LOCALBASE}/lib/cmake/vtk-${VTK_VER}
 VTK_LIB_DEPENDS=	libvtkCommonCore-${VTK_VER}.so:math/vtk${VTK_VER:R}
+
+# tests as of 1.15.0: 100% tests passed, 0 tests failed out of 133
 
 .include <../../math/vtk9/Makefile.version>
 .include <bsd.port.mk>

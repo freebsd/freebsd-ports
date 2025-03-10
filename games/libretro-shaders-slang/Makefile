@@ -1,5 +1,5 @@
 PORTNAME=	libretro-shaders-slang
-DISTVERSION=	g20240719
+DISTVERSION=	g20250219
 CATEGORIES=	games
 
 MAINTAINER=	bsdcode@disroot.org
@@ -13,21 +13,12 @@ LICENSE_COMB=	multi
 USE_GITHUB=	yes
 GH_ACCOUNT=	libretro
 GH_PROJECT=	slang-shaders
-GH_TAGNAME=	7d6751a
+GH_TAGNAME=	bcce176b65c90947a7de1d85420d864e665fd184
 
-PORTDOCS=	README.md
+MAKE_ARGS=	PREFIX=${PREFIX}
 
-OPTIONS_DEFINE=	DOCS
-
-# DOCS files are "in-tree", therefore we must handle them in pre-install
-# targets instead of the more commonly used post-install targets, and
-# they must be deleted from the WRKSRC directory in any case.
-pre-install-DOCS-on:
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README.md ${STAGEDIR}${DOCSDIR}
-	${RM} ${WRKSRC}/README.md
-
-pre-install-DOCS-off:
-	${RM} ${WRKSRC}/README.md
+DATADIR=	${PREFIX}/share/libretro/shaders/shaders_slang
+NO_ARCH=	yes
+NO_BUILD=	yes
 
 .include <bsd.port.mk>

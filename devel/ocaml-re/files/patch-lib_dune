@@ -1,0 +1,8 @@
+--- lib/dune.orig	2023-08-19 10:51:09 UTC
++++ lib/dune
+@@ -1,5 +1,4 @@
+ (library
+  (name re)
+  (synopsis "Pure OCaml regular expression library")
+- (libraries seq)
+  (public_name re))

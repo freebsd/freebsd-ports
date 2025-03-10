@@ -1,5 +1,5 @@
 PORTNAME=	yash
-DISTVERSION=	2.56.1
+DISTVERSION=	2.58.1
 CATEGORIES=	shells
 MASTER_SITES=	https://github.com/magicant/${PORTNAME}/releases/download/${DISTVERSION}/
 
@@ -10,7 +10,7 @@ WWW=		https://magicant.github.io/yash/
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		tar:xz
+USES=		ncurses tar:xz
 USE_CSTD=	c99
 
 HAS_CONFIGURE=	yes

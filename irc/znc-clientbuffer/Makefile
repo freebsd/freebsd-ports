@@ -1,6 +1,7 @@
 PORTNAME=	znc-clientbuffer
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.0.48
+PORTREVISION=	1
 CATEGORIES=	irc
 
 MAINTAINER=	mdw@FreeBSD.org
@@ -17,9 +18,11 @@ GH_ACCOUNT=	CyberShadow
 
 ALL_TARGET=	clientbuffer.so
 
+PORTSCOUT=	skipv:znc-1.6.0
+
 PLIST_FILES=	lib/znc/clientbuffer.so
 
-PORTDOCS=		README.md
+PORTDOCS=	README.md
 
 OPTIONS_DEFINE=	DOCS
 

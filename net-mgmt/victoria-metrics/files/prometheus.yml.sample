@@ -1,7 +1,6 @@
 # Global configuration.
 global:
   scrape_interval: 15s
-  evaluation_interval: 15s
 
 # A scrape configuration containing exactly one endpoint to scrape:
 # the vmagent itself.

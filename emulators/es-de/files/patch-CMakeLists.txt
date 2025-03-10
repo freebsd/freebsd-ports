@@ -1,0 +1,76 @@
+--- CMakeLists.txt.orig	2024-09-13 16:19:36 UTC
++++ CMakeLists.txt
+@@ -143,6 +143,8 @@ elseif(NOT EMSCRIPTEN AND NOT ANDROID)
+     find_package(Libgit2 REQUIRED)
+     find_package(Pugixml REQUIRED)
+     find_package(SDL2 REQUIRED)
++    find_package(RapidJSON REQUIRED)
++    find_package(rlottie REQUIRED)
+ endif()
+ 
+ # Add libCEC support.
+@@ -184,8 +186,7 @@ if(CMAKE_BUILD_TYPE MATCHES Debug)
+     if(CMAKE_CXX_COMPILER_ID MATCHES MSVC)
+         set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /std:c++17 /Od /DEBUG:FULL")
+     else()
+-        set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++17 -O0 -g3 -Wall -Wpedantic -Wsign-compare -Wnarrowing -Wmissing-field-initializers -Wunused-macros")
+-        set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -O0")
++        set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++17 -Wall -Wpedantic -Wsign-compare -Wnarrowing -Wmissing-field-initializers -Wunused-macros")
+     endif()
+     # If using Clang, then add additional debug data needed by GDB.
+     # Comment this out if you're using LLDB for debugging as this flag makes the binary
+@@ -208,11 +209,11 @@ else()
+     if(CMAKE_CXX_COMPILER_ID MATCHES MSVC)
+         set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -DNDEBUG /std:c++17 /O2 /DEBUG:NONE")
+     else()
+-        set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++17 -O2 -DNDEBUG -Wall -Wpedantic -Wsign-compare -Wnarrowing -Wmissing-field-initializers -Wunused-macros")
++        set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++17 -DNDEBUG -Wall -Wpedantic -Wsign-compare -Wnarrowing -Wmissing-field-initializers -Wunused-macros")
+         if(APPLE)
+             set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -O2")
+         else()
+-            set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -O2 -s")
++            set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -s")
+         endif()
+     endif()
+ endif()
+@@ -454,12 +455,8 @@ set(COMMON_INCLUDE_DIRS ${CURL_INCLUDE_DIR}
+ # Include files.
+ 
+ set(COMMON_INCLUDE_DIRS ${CURL_INCLUDE_DIR}
+-                        ${CMAKE_CURRENT_SOURCE_DIR}/external/CImg
+-                        ${CMAKE_CURRENT_SOURCE_DIR}/external/glm
+                         ${CMAKE_CURRENT_SOURCE_DIR}/external/lunasvg/include
+-                        ${CMAKE_CURRENT_SOURCE_DIR}/external/rapidjson/include
+-                        ${CMAKE_CURRENT_SOURCE_DIR}/external/rlottie/inc
+-                        ${CMAKE_CURRENT_SOURCE_DIR}/external/utfcpp/source
++                        ${UTF8CPP_INCLUDE_DIR}
+                         ${CMAKE_CURRENT_SOURCE_DIR}/es-core/src
+                         ${CMAKE_CURRENT_SOURCE_DIR}/es-pdf-converter/src)
+ 
+@@ -647,7 +644,8 @@ else()
+                          ${HarfBuzz_LIBRARIES}
+                          ${ICU_LIBRARIES}
+                          ${PUGIXML_LIBRARIES}
+-                         ${SDL2_LIBRARY})
++                         ${SDL2_LIBRARY}
++                         ${rlottie_LIBRARIES})
+     if(Intl_LIBRARY)
+         # On Unix systems where the gettext functions are not part of the C standard library
+         # we need to explicitly link with the libintl library.
+@@ -662,7 +660,6 @@ if(NOT WIN32)
+         set(COMMON_LIBRARIES ${COMMON_LIBRARIES} ${PROJECT_SOURCE_DIR}/android_${ANDROID_ABI}/librlottie.a)
+     else()
+         set(COMMON_LIBRARIES ${COMMON_LIBRARIES} ${PROJECT_SOURCE_DIR}/liblunasvg.a)
+-        set(COMMON_LIBRARIES ${COMMON_LIBRARIES} ${PROJECT_SOURCE_DIR}/librlottie.a)
+     endif()
+ endif()
+ 
+@@ -726,8 +723,3 @@ endif()
+ if(COMPILE_LOCALIZATIONS)
+     add_dependencies(es-pdf-convert localization)
+ endif()
+-
+-add_dependencies(es-core rlottie)
+-
+-# Set lottie2gif to not be built.
+-set_target_properties(lottie2gif PROPERTIES EXCLUDE_FROM_ALL 1 EXCLUDE_FROM_DEFAULT_BUILD 1)

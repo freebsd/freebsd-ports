@@ -14,6 +14,7 @@ share/locale/el/LC_MESSAGES/authenticator.mo
 share/locale/en_GB/LC_MESSAGES/authenticator.mo
 share/locale/es/LC_MESSAGES/authenticator.mo
 share/locale/eu/LC_MESSAGES/authenticator.mo
+share/locale/fa/LC_MESSAGES/authenticator.mo
 share/locale/fi/LC_MESSAGES/authenticator.mo
 share/locale/fr/LC_MESSAGES/authenticator.mo
 share/locale/fur/LC_MESSAGES/authenticator.mo
@@ -22,6 +23,7 @@ share/locale/he/LC_MESSAGES/authenticator.mo
 share/locale/hr/LC_MESSAGES/authenticator.mo
 share/locale/hu/LC_MESSAGES/authenticator.mo
 share/locale/id/LC_MESSAGES/authenticator.mo
+share/locale/is/LC_MESSAGES/authenticator.mo
 share/locale/it/LC_MESSAGES/authenticator.mo
 share/locale/ja/LC_MESSAGES/authenticator.mo
 share/locale/ka/LC_MESSAGES/authenticator.mo

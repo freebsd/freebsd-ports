@@ -4,7 +4,7 @@ DISTVERSION=	1.5.1
 PORTREVISION=	3
 CATEGORIES=	graphics wayland
 
-MAINTAINER=	jbeich@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Snapshot editing for Wayland (a la Snappy on macOS)
 WWW=		https://github.com/jtheoof/swappy
 

@@ -1,9 +1,9 @@
 bin/siril
 bin/siril-cli
-share/applications/org.free_astro.siril.desktop
-share/icons/hicolor/scalable/apps/org.free_astro.siril.svg
+share/applications/org.siril.Siril.desktop
+share/icons/hicolor/scalable/apps/org.siril.Siril.svg
 share/icons/hicolor/scalable/mimetypes/text-x-seq.svg
-share/icons/hicolor/symbolic/apps/org.free_astro.siril-symbolic.svg
+share/icons/hicolor/symbolic/apps/org.siril.Siril-symbolic.svg
 share/locale/ar_DZ/LC_MESSAGES/siril.mo
 share/locale/ca/LC_MESSAGES/siril.mo
 share/locale/da/LC_MESSAGES/siril.mo
@@ -23,7 +23,7 @@ share/locale/uk/LC_MESSAGES/siril.mo
 share/locale/zh_CN/LC_MESSAGES/siril.mo
 share/man/man1/siril-cli.1.gz
 share/man/man1/siril.1.gz
-share/metainfo/org.free_astro.siril.appdata.xml
+share/metainfo/org.siril.Siril.appdata.xml
 share/mime/packages/siril.xml
 %%DATADIR%%/catalogue/ic.txt
 %%DATADIR%%/catalogue/ldn.txt

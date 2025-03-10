@@ -1,7 +1,7 @@
 PORTNAME=	tsctp
-DISTVERSION=	0.7.12
+DISTVERSION=	0.8.1
 CATEGORIES=	net
-MASTER_SITES=	https://www.nntb.no/~dreibh/${PORTNAME}/download/
+MASTER_SITES=	https://www.nntb.no/~dreibh/tsctp/download/
 
 MAINTAINER=	thomas.dreibholz@gmail.com
 COMMENT=	SCTP Test Tool
@@ -13,6 +13,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING-BSD
 USES=		cmake tar:xz
 
 PLIST_FILES=	bin/tsctp \
+		share/bash-completion/completions/tsctp \
 		share/man/man1/tsctp.1.gz
 
 .include <bsd.port.mk>

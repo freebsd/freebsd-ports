@@ -5,7 +5,8 @@ CATEGORIES=	deskutils
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Directory file editor
-WWW=		https://dfshow.op-ezy.co.uk/
+WWW=		https://dfshow.org \
+		https://github.com/roberthawdon/dfshow
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

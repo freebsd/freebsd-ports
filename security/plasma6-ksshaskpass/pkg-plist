@@ -1,4 +1,5 @@
 bin/ksshaskpass
+share/applications/org.kde.ksshaskpass.desktop
 share/locale/ar/LC_MESSAGES/ksshaskpass.mo
 share/locale/ast/LC_MESSAGES/ksshaskpass.mo
 share/locale/bg/LC_MESSAGES/ksshaskpass.mo

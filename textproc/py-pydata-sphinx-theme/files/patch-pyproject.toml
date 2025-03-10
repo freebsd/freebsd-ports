@@ -1,0 +1,22 @@
+--- pyproject.toml.orig	2024-10-22 14:23:11 UTC
++++ pyproject.toml
+@@ -1,8 +1,6 @@
+ [build-system]
+-requires = [
+-  "sphinx-theme-builder @ https://github.com/pradyunsg/sphinx-theme-builder/archive/87214d0671c943992c05e3db01dca997e156e8d6.zip",
+-]
+-build-backend = "sphinx_theme_builder"
++requires = ["flit-core >= 3.9.0"]
++build-backend = "flit_core.buildapi"
+ 
+ [tool.sphinx-theme-builder]
+ node-version = "16.13.2"
+@@ -22,7 +20,7 @@ dependencies = [
+ readme = "README.md"
+ requires-python = ">=3.9"
+ dependencies = [
+-  "sphinx>=6.1",
++  "sphinx>=5",
+   "beautifulsoup4",
+   "docutils!=0.17.0",
+   "Babel",

@@ -1,5 +1,5 @@
 PORTNAME=	c-blosc2
-PORTVERSION=	2.15.1
+PORTVERSION=	2.16.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	archivers
 
@@ -62,13 +62,6 @@ PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
 GH_ACCOUNT=	Blosc
 USE_GITHUB=	yes
-
-.include <bsd.port.options.mk>
-
-.if ${ARCH:Mpowerpc64*}
-USES+=		compiler:gcc-c++11-lib
-USE_CSTD=	c11
-.endif
 
 post-patch:
 # Clean up bundled libraries

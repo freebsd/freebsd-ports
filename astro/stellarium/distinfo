@@ -1,8 +1,10 @@
-TIMESTAMP = 1719135534
-SHA256 (stellarium-24.2.tar.xz) = f9e8e114e34265194ffff0c2a2806a6fdc998449192749c4ef60b0a5302101af
-SIZE (stellarium-24.2.tar.xz) = 327084704
-SHA256 (stellarium_user_guide-24.2-1.pdf) = 6131c63624ab1bab3d02118c0c3d842d6dddafcb0d9f86ebc62ef5cd49a12cfe
-SIZE (stellarium_user_guide-24.2-1.pdf) = 32957159
+TIMESTAMP = 1734865712
+SHA256 (stellarium-24.4.tar.xz) = 84386ad6261bbad7851a56febe673ec73adc7a3b49156b33af6c534e85ac8f8d
+SIZE (stellarium-24.4.tar.xz) = 328675340
+SHA256 (stellarium_user_guide-24.4-1.pdf) = 21607a84155880668604222c621c02e1873f9a2e70bc4e641443ce9b4a5978e3
+SIZE (stellarium_user_guide-24.4-1.pdf) = 13416178
+SHA256 (af0421c437ee4ddbf319d6e18fadf5c8a688d5cb.patch) = 4a4ba9ffc8aa2c9f2f03b9338c203b310ab3529a802c12001d7d3de8c5d9470d
+SIZE (af0421c437ee4ddbf319d6e18fadf5c8a688d5cb.patch) = 4837
 SHA256 (stars_4_1v0_2.cat) = 15589d9193b850cac68a031bd02dcb59da36c03946ca1be373fbabdb6b1edd63
 SIZE (stars_4_1v0_2.cat) = 16948302
 SHA256 (stars_5_2v0_1.cat) = c4ebd18d05a805308cfac85fe224e3f0a75db6579cae65c935a0954da13f4164

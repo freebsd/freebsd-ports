@@ -1,5 +1,6 @@
 PORTNAME=	graphene
 DISTVERSION=	1.10.8
+PORTREVISION=	1
 CATEGORIES=	graphics devel
 
 MAINTAINER=	gnome@FreeBSD.org

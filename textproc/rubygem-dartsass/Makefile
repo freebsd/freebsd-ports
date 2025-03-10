@@ -1,4 +1,4 @@
-PORTNAME=	dartsass
+PORTNAME=	dartsass # please update textproc/quarto when the path to the sass executable changes
 PORTVERSION=	1.49.8
 PORTREVISION=	1
 CATEGORIES=	textproc ruby

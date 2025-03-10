@@ -1,6 +1,6 @@
 PORTNAME=		sogo2
 PORTVERSION=		2.4.3
-PORTREVISION=		1
+PORTREVISION=		2
 CATEGORIES=		www gnustep
 MASTER_SITES=		http://www.sogo.nu/files/downloads/SOGo/Sources/
 DISTNAME=		SOGo-${PORTVERSION}
@@ -23,7 +23,7 @@ OPTIONS_SUB=		yes
 
 ACTIVESYNC_DESC=	Enable support for ActiveSync protocol
 
-ACTIVESYNC_LIB_DEPENDS=	libwbxml2.so:textproc/wbxml2
+ACTIVESYNC_LIB_DEPENDS=	libwbxml2.so:textproc/libwbxml
 
 USERS=			sogod
 GROUPS=			sogod

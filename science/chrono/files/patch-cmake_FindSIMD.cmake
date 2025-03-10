@@ -1,0 +1,25 @@
+--- cmake/FindSIMD.cmake.orig	2024-11-10 17:31:46 UTC
++++ cmake/FindSIMD.cmake
+@@ -474,7 +474,6 @@ if(CMAKE_COMPILER_IS_GNUCC OR CMAKE_COMPILER_IS_GNUCXX
+ if(CMAKE_COMPILER_IS_GNUCC OR CMAKE_COMPILER_IS_GNUCXX)
+ 	execute_process(COMMAND ${CMAKE_CXX_COMPILER} "-dumpversion" OUTPUT_VARIABLE GCC_VERSION_STRING)
+ 	if(GCC_VERSION_STRING VERSION_GREATER 4.2 AND NOT APPLE AND NOT CMAKE_CROSSCOMPILING)
+-		SET(SIMD_FLAGS "-march=native")
+ 		if (NOT SIMD_FIND_QUIETLY)
+ 			message(STATUS "Using automatic native flag for SIMD optimization")
+ 		endif()
+@@ -482,14 +481,12 @@ elseif(CMAKE_CXX_COMPILER_ID MATCHES "Clang" AND NOT C
+ elseif(CMAKE_CXX_COMPILER_ID MATCHES "Clang" AND NOT CMAKE_CROSSCOMPILING)
+ 	execute_process(COMMAND ${CMAKE_CXX_COMPILER} "-dumpversion" OUTPUT_VARIABLE CLANG_VERSION_STRING)
+ 	if(CLANG_VERSION_STRING VERSION_GREATER_EQUAL 15.0 AND NOT CMAKE_CROSSCOMPILING)
+-		SET(SIMD_FLAGS "-march=native")
+ 		if (NOT SIMD_FIND_QUIETLY)
+ 			message(STATUS "Using automatic native flag for SIMD optimization")
+ 		endif()
+ 	elseif(CMAKE_HOST_UNIX)
+ 		execute_process(COMMAND uname -m OUTPUT_VARIABLE UNIX_MACHINE_ARCH)
+ 		if(UNIX_MACHINE_ARCH MATCHES "x86_64|x86|amd64")
+-			SET(SIMD_FLAGS "-march=native")
+ 			if (NOT SIMD_FIND_QUIETLY)
+ 				message(STATUS "Using automatic native flag for SIMD optimization")
+ 			endif()

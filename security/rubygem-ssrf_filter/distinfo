@@ -1,3 +1,3 @@
-TIMESTAMP = 1619640719
-SHA256 (rubygem/ssrf_filter-1.0.7.gem) = 80dc5728e5743201239e465c7e14290c7acf1de3b9f1f664579112429c79953a
-SIZE (rubygem/ssrf_filter-1.0.7.gem) = 9216
+TIMESTAMP = 1731149163
+SHA256 (rubygem/ssrf_filter-1.2.0.gem) = 1e22130ada4b4d2c9675ac56a13802cad9c6395338bbd8d2d4c60429a071389f
+SIZE (rubygem/ssrf_filter-1.2.0.gem) = 7168

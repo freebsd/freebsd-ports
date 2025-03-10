@@ -1,6 +1,6 @@
 PORTNAME=	cli11
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.4.2
+DISTVERSION=	2.5.0
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -23,5 +23,7 @@ CMAKE_OFF=	BUILD_TESTING CLI11_BUILD_EXAMPLES
 CMAKE_TESTING_ON=	BUILD_TESTING # CLI11_BOOST # tests fail with Boost, see https://github.com/CLIUtils/CLI11/issues/645
 
 NO_ARCH=	yes
+
+# tests as of 2.5.0: 100% tests passed, 0 tests failed out of 21
 
 .include <bsd.port.mk>

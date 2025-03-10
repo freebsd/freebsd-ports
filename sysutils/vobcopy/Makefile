@@ -11,7 +11,7 @@ LICENSE=	GPLv2+
 
 LIB_DEPENDS=	libdvdread.so:multimedia/libdvdread
 
-USES=		autoreconf localbase iconv
+USES=		autoreconf gettext-tools localbase iconv
 USE_GITHUB=	yes
 GH_ACCOUNT=	barak
 GNU_CONFIGURE=	yes
@@ -29,8 +29,8 @@ PORTDOCS=	COPYING ChangeLog Changelog README Release-Notes TODO \
 OPTIONS_DEFINE=	NLS DOCS
 OPTIONS_DEFAULT=	NLS
 
-NLS_USES=	gettext
-NLS_CONFIGURE_ENABLE=   nls
+NLS_USES=	gettext-runtime
+NLS_CONFIGURE_ENABLE=	nls
 NLS_LIBS=	-lintl
 
 post-configure:

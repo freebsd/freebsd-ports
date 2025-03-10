@@ -1,10 +1,10 @@
 PORTNAME=	podcasts
 DISTVERSION=	0.7.1
-PORTREVISION=	2
+PORTREVISION=	8
 CATEGORIES=	audio
 PKGNAMEPREFIX=	gnome-
 
-MAINTAINER=	jbeich@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Podcast app for GNOME
 WWW=		https://gitlab.gnome.org/World/podcasts
 
@@ -27,7 +27,7 @@ GLIB_SCHEMAS=	org.gnome.Podcasts.gschema.xml
 
 .include <bsd.port.options.mk>
 
-.if ${ARCH} == i386 || ${ARCH} == powerpc
+.if ${ARCH} == i386 || ${ARCH} == powerpc || ${ARCH:Marmv?}
 # https://github.com/rust-lang/rust/issues/85598
 LTO_UNSAFE=	yes
 .endif
@@ -37,9 +37,7 @@ post-patch:
 		-e '/update_desktop_database/d' \
 		${WRKSRC}/meson.build
 # Make each cargo subcommand very verbose
-# Add explicit <triple> subdir for --target from USES=cargo
 	@${REINPLACE_CMD} -e "/cargo_options =/s/ '--/&verbose', &verbose', &/" \
-		-e "/cp/s,'${PORTNAME}-gtk' / 'src',& / '${CARGO_BUILD_TARGET}'," \
 		${WRKSRC}/${PORTNAME}-gtk/src/meson.build
 
 .include <bsd.port.mk>

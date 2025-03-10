@@ -1,6 +1,6 @@
 PORTNAME=	gnome-mplayer
 PORTVERSION=	1.0.9
-PORTREVISION=	9
+PORTREVISION=	11
 CATEGORIES=	multimedia gnome
 MASTER_SITES=	https://launchpad.net/ubuntu/+archive/primary/+files/
 DISTNAME=	gnome-mplayer_1.0.9.orig
@@ -10,6 +10,9 @@ COMMENT=	GNOME frontend for MPlayer
 WWW=		http://kdekorte.googlepages.com/gnomemplayer
 
 LICENSE=	GPLv2
+
+DEPRECATED=	Abandonware, last activity from upstream 11 years ago and multiple unresolved issue reports
+EXPIRATION_DATE=2025-03-31
 
 LIB_DEPENDS=	libdbus-1.so:devel/dbus \
 		libdbus-glib-1.so:devel/dbus-glib \

@@ -44,7 +44,7 @@ export STNORESTART=true
 pidfile=/var/run/syncthingdiscosrv.pid
 procname="%%PREFIX%%/bin/stdiscosrv"
 command="/usr/sbin/daemon"
-command_args="-p ${pidfile} ${procname} -key ${syncthingdiscosrv_key} -cert ${syncthingdiscosrv_cert} ${syncthingdiscosrv_args} >> ${syncthingdiscosrv_log_file}"
+command_args="-p ${pidfile} ${procname} --key ${syncthingdiscosrv_key} --cert ${syncthingdiscosrv_cert} ${syncthingdiscosrv_args} >> ${syncthingdiscosrv_log_file}"
 syncthingdiscosrv_chdir=${syncthingdiscosrv_dir}
 
 start_precmd=syncthingdiscosrv_startprecmd

@@ -1,10 +1,7 @@
 PORTNAME=	open62541
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.4.0
+DISTVERSION=	1.4.4
 CATEGORIES=	devel
-
-PATCH_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/commit/
-PATCHFILES=	4d0b97ecbdc8b46930c368f8a5b45272982724cd.patch:-p1
 
 MAINTAINER=	nsonack@outlook.com
 COMMENT=	Open source implementation of OPC UA

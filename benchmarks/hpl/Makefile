@@ -1,6 +1,6 @@
 PORTNAME=	hpl
 DISTVERSION=	2.3
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	benchmarks
 MASTER_SITES=	NETLIB/benchmark/hpl
 
@@ -18,22 +18,25 @@ ALL_TARGET=	build
 
 OPTIONS_DEFINE=		DOCS
 OPTIONS_RADIO=		BLAS MPI
-OPTIONS_RADIO_BLAS=	ATLAS BLIS FLEXIBLAS NETLIB OPENBLAS
+OPTIONS_RADIO_BLAS=	ATLAS BLIS FLEXIBLAS NETLIB OPENBLAS OPENBLAS64
 OPTIONS_RADIO_MPI=	MPICH OPENMPI
 OPTIONS_DEFAULT=	NETLIB MPICH
 BLIS_DESC=		BLAS implementation from FLAME
 FLEXIBLAS_DESC=		BLAS and LAPACK wrapper library
+OPENBLAS64_DESC=	OpenBLAS with 8 byte integers support
 
 ATLAS_USES=		blaslapack:atlas
 BLIS_USES=		blaslapack:blis
 FLEXIBLAS_USES=		blaslapack:flexiblas
 NETLIB_USES=		blaslapack:netlib
 OPENBLAS_USES=		blaslapack:openblas
+OPENBLAS64_USES=	blaslapack:openblas64
 
 MPICH_USES=		mpi:mpich
 OPENMPI_USES=		mpi:openmpi
 
-CFLAGS+=	-fomit-frame-pointer -funroll-loops
+CFLAGS+=		-fomit-frame-pointer -funroll-loops
+OPENBLAS64_CFLAGS=	-DF77_INTEGER=long
 
 pre-configure:
 	${REINPLACE_CMD} -e 's|^TOPdir[ ]*=.*$$|TOPdir = ${WRKSRC}| ; \

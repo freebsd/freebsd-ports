@@ -1,6 +1,6 @@
 PORTNAME=	vamos
 PORTVERSION=	0.7.1
-PORTREVISION=	29
+PORTREVISION=	30
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/ \
 		SF/nemysisfreebsdp/${CATEGORIES}/:icons
@@ -13,6 +13,10 @@ WWW=		https://vamos.sourceforge.net/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
+
+BROKEN=		fails to build with boost-1.85+
+DEPRECATED=	Unmaintained in tree for years, fails to build with newer versions of boost
+EXPIRATION_DATE=2025-03-31
 
 LIB_DEPENDS=	libboost_date_time.so:devel/boost-libs \
 		libpng.so:graphics/png

@@ -23,9 +23,7 @@ RUN_DEPENDS=	intellij-fsnotifier>0:java/intellij-fsnotifier \
 		jetbrains-sqlite>=232.8660.185:devel/jetbrains-sqlite \
 		lsof:sysutils/lsof
 
-USES=		python:run shebangfix
-
-USE_JAVA=	yes
+USES=		java python:run shebangfix
 JAVA_VERSION=	17+
 
 USE_LDCONFIG=	yes

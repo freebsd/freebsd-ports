@@ -1,6 +1,6 @@
 --- src/makjunix.mak.orig	2014-08-30 01:12:22.000000000 +0900
 +++ src/makjunix.mak	2014-08-30 01:19:58.000000000 +0900
-@@ -72,19 +72,20 @@
+@@ -72,19 +72,19 @@
  
  
  ### Prefix for location of files

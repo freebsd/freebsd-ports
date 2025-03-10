@@ -1,5 +1,6 @@
 PORTNAME=	pyfixbuf
 PORTVERSION=	0.9.0
+PORTREVISION=	1
 CATEGORIES=	net python
 MASTER_SITES=	https://tools.netsa.cert.org/releases/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}

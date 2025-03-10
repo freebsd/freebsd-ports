@@ -1,10 +1,9 @@
 PORTNAME=	brio
-DISTVERSION=	1.1.3
-PORTREVISION=	1
+DISTVERSION=	1.1.5
 CATEGORIES=	devel
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
-MAINTAINER=	ygy@FreeBSD.org
+MAINTAINER=	uzsolt@FreeBSD.org
 COMMENT=	Basic R Input Output
 WWW=		https://brio.r-lib.org
 

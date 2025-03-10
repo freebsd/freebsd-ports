@@ -1,6 +1,7 @@
 PORTNAME=	cirrus-cli
-DISTVERSION=	0.121.0
 DISTVERSIONPREFIX=	v
+DISTVERSION=	0.129.1
+PORTREVISION=	3
 CATEGORIES=	devel
 
 MAINTAINER=	bofh@FreeBSD.org
@@ -16,7 +17,7 @@ USE_RC_SUBR=	${PORTNAME}
 
 GO_MODULE=	github.com/cirruslabs/cirrus-cli
 GO_TARGET=	./cmd/cirrus
-GO_BUILDFLAGS=	-ldflags="-X github.com/cirruslabs/cirrus-cli/internal/version.Version=${PORTVERSION}"
+GO_BUILDFLAGS=	-ldflags="-X github.com/cirruslabs/cirrus-cli/internal/version.Version=${DISTVERSION}"
 
 SUB_FILES=	pkg-message
 
@@ -25,5 +26,9 @@ GROUPS=		cirrus
 
 post-install:
 	${INSTALL_DATA} ${FILESDIR}/cirrus-worker.yml ${STAGEDIR}${PREFIX}/etc/cirrus-worker.yml.sample
+
+.if defined(MAINTAINER_MODE)
+GO_ENV+=	GOTOOLCHAIN=go1.22.6
+.endif
 
 .include <bsd.port.mk>

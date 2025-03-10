@@ -1,5 +1,6 @@
 PORTNAME=	rl9
 PORTVERSION=	${LINUX_DIST_VER}
+PORTREVISION=	3
 CATEGORIES=	emulators linux
 PKGNAMEPREFIX=	linux_base-
 EXTRACT_ONLY=	${DISTFILES:N*${SRC_SUFX}*:Nf/filesystem-*:C/:[^:]+$//}
@@ -12,6 +13,7 @@ LICENSE=	BSD2CLAUSE
 USES=		linux:rl9
 USE_LINUX=	# empty
 USE_LINUX_RPM=	yes
+WANT_LINUX32=	yes
 
 .include	"${.CURDIR}/Makefile.version"
 
@@ -22,6 +24,7 @@ BIN_DISTNAMES=	bash-${bash_ver} \
 		e2fsprogs-${e2fsprogs_ver} \
 		filesystem-${filesystem_ver} \
 		findutils-${findutils_ver} \
+		fuse-${fuse_ver} \
 		gawk-${gawk_ver} \
 		glibc-all-langpacks-${glibc_ver} \
 		glibc-common-${glibc_ver} \
@@ -32,14 +35,18 @@ BIN_DISTNAMES=	bash-${bash_ver} \
 		ncurses-${ncurses_ver} \
 		sed-${sed_ver} \
 		setserial-${setserial_ver} \
+		util-linux-${util_ver} \
+		util-linux-core-${util_ver} \
 		which-${which_ver}
 LIB_DISTNAMES=	bzip2-libs-${bzip2_ver} \
 		e2fsprogs-libs-${e2fsprogs_ver} \
+		fuse-libs-${fuse_ver} \
 		gdbm-libs-${gdbm_ver} \
 		geocode-glib-${geocode-glib_ver} \
 		glib-networking-${glib-networking_ver} \
 		glib2-${glib2_ver} \
 		glibc-${glibc_ver} \
+		glibc-gconv-extra-${glibc_ver} \
 		gmp-${gmp_ver} \
 		json-glib-${json-glib_ver} \
 		keyutils-libs-${keyutils_ver} \
@@ -52,25 +59,31 @@ LIB_DISTNAMES=	bzip2-libs-${bzip2_ver} \
 		libdatrie-${libdatrie_ver} \
 		libdb-${libdb_ver} \
 		libedit-${libedit_ver} \
+		libevdev-${libevdev_ver} \
+		libfdisk-${util_ver} \
 		libffi-${libffi_ver} \
 		libgcc-${gcc_ver} \
 		libgudev-${libgudev_ver} \
 		libmount-${util_ver} \
 		libselinux-${selinux_ver} \
 		libsepol-${sepol_ver} \
-		libssh-${ssh_ver} \
+		libsmartcols-${util_ver} \
 		libstdc++-${gcc_ver} \
 		libuuid-${util_ver} \
 		libverto-${libverto_ver} \
 		libzstd-${zstd_ver} \
+		mtdev-${mtdev_ver} \
 		ncurses-libs-${ncurses_ver} \
 		openssl-libs-${openssl_ver} \
 		pcre-${pcre_ver} \
+		pcre-utf16-${pcre_ver} \
+		pcre-utf32-${pcre_ver} \
 		pcre2-${pcre2_ver} \
+		pcre2-utf16-${pcre2_ver} \
+		pcre2-utf32-${pcre2_ver} \
 		popt-${popt_ver} \
 		readline-${readline_ver} \
 		slang-${slang_ver} \
-		util-linux-${util_ver} \
 		xz-libs-${xz_ver} \
 		zlib-${zlib_ver}
 
@@ -88,6 +101,7 @@ SRC_DISTFILES=	acl-${libacl_ver}${SRC_SUFX}:SOURCE \
 		e2fsprogs-${e2fsprogs_ver}${SRC_SUFX}:SOURCE \
 		filesystem-${filesystem_ver}${SRC_SUFX}:SOURCE \
 		findutils-${findutils_ver}${SRC_SUFX}:SOURCE \
+		fuse-${fuse_ver}${SRC_SUFX}:SOURCE \
 		gawk-${gawk_ver}${SRC_SUFX}:SOURCE \
 		gcc-${gcc_ver}${SRC_SUFX}:SOURCE \
 		gdbm-${gdbm_ver}${SRC_SUFX}:SOURCE \
@@ -105,12 +119,13 @@ SRC_DISTFILES=	acl-${libacl_ver}${SRC_SUFX}:SOURCE \
 		libdatrie-${libdatrie_ver}${SRC_SUFX}:SOURCE \
 		libdb-${libdb_ver}${SRC_SUFX}:SOURCE \
 		libedit-${libedit_ver}${SRC_SUFX}:SOURCE \
+		libevdev-${libevdev_ver}${SRC_SUFX}:SOURCE \
 		libffi-${libffi_ver}${SRC_SUFX}:SOURCE \
 		libgudev-${libgudev_ver}${SRC_SUFX}:SOURCE \
 		libselinux-${selinux_ver}${SRC_SUFX}:SOURCE \
 		libsepol-${sepol_ver}${SRC_SUFX}:SOURCE \
-		libssh-${ssh_ver}${SRC_SUFX}:SOURCE \
 		libverto-${libverto_ver}${SRC_SUFX}:SOURCE \
+		mtdev-${mtdev_ver}${SRC_SUFX}:SOURCE \
 		ncurses-${ncurses_ver}${SRC_SUFX}:SOURCE \
 		openssl-${openssl_ver}${SRC_SUFX}:SOURCE \
 		pcre-${pcre_ver}${SRC_SUFX}:SOURCE \
@@ -141,7 +156,27 @@ REMOVE_FILES=	bin/chfn bin/chsh bin/findmnt bin/login bin/lsblk bin/lscpu \
 		bin/setpriv bin/su \
 		etc/exports etc/group etc/gshadow etc/motd \
 		etc/passwd etc/printcap etc/protocols etc/services etc/shadow \
-		sbin/clock sbin/debugfs sbin/hwclock sbin/runuser sbin/zramctl
+		sbin/clock sbin/debugfs sbin/hwclock sbin/runuser sbin/zramctl \
+		usr/bin/chrt usr/bin/dmesg usr/bin/flock usr/bin/hardlink \
+		usr/bin/ionice usr/bin/ipcmk usr/bin/ipcrm usr/bin/ipcs usr/bin/kill \
+		usr/bin/logger usr/bin/nsenter usr/bin/renice usr/bin/setsid \
+		usr/bin/taskset usr/bin/unshare usr/sbin/agetty usr/sbin/blkid \
+		usr/sbin/blockdev usr/sbin/fsck usr/sbin/losetup usr/sbin/mkswap \
+		usr/sbin/partx usr/sbin/swapoff usr/sbin/swapon usr/sbin/switch_root \
+		usr/share/man/man1/chrt.1.gz usr/share/man/man1/dmesg.1.gz \
+		usr/share/man/man1/flock.1.gz usr/share/man/man1/hardlink.1.gz \
+		usr/share/man/man1/ionice.1.gz usr/share/man/man1/ipcmk.1.gz \
+		usr/share/man/man1/ipcrm.1.gz usr/share/man/man1/ipcs.1.gz \
+		usr/share/man/man1/kill.1.gz usr/share/man/man1/logger.1.gz \
+		usr/share/man/man1/nsenter.1.gz usr/share/man/man1/renice.1.gz \
+		usr/share/man/man1/setsid.1.gz usr/share/man/man1/taskset.1.gz \
+		usr/share/man/man1/unshare.1.gz usr/share/man/man8/agetty.8.gz \
+		usr/share/man/man8/blkid.8.gz usr/share/man/man8/blockdev.8.gz \
+		usr/share/man/man8/findmnt.8.gz usr/share/man/man8/fsck.8.gz \
+		usr/share/man/man8/losetup.8.gz usr/share/man/man8/mkswap.8.gz \
+		usr/share/man/man8/partx.8.gz usr/share/man/man8/swapoff.8.gz \
+		usr/share/man/man8/swapon.8.gz usr/share/man/man8/switch_root.8.gz
+
 
 .include <bsd.port.options.mk>
 

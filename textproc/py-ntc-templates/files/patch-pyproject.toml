@@ -1,7 +1,7 @@
 Avoid installing "LICENSE" and "README.md" on top of Python's "site-packages/"
 directory which would lead to conflicting packages.
 
---- pyproject.toml.orig	2024-02-09 20:50:23 UTC
+--- pyproject.toml.orig	2025-01-15 19:24:55 UTC
 +++ pyproject.toml
 @@ -20,8 +20,6 @@ include = [
      "Programming Language :: Python :: 3.12",

@@ -6,10 +6,6 @@ bin/nnslog
 bin/page
 bin/pt
 bin/tcldocstrip
-lib/tcllib/0compatibility/d_config.tcl
-lib/tcllib/0compatibility/d_paths.tcl
-lib/tcllib/0compatibility/p_config.tcl
-lib/tcllib/0compatibility/p_paths.tcl
 lib/tcllib/0compatibility/pkgIndex.tcl
 lib/tcllib/aes/aes.tcl
 lib/tcllib/aes/pkgIndex.tcl
@@ -70,9 +66,10 @@ lib/tcllib/counter/pkgIndex.tcl
 lib/tcllib/crc/cksum.tcl
 lib/tcllib/crc/crc16.tcl
 lib/tcllib/crc/crc32.tcl
-lib/tcllib/crc/crcc.tcl
+lib/tcllib/crc/crc32c.tcl
 lib/tcllib/crc/pkgIndex.tcl
 lib/tcllib/crc/sum.tcl
+lib/tcllib/crc/sumc.tcl
 lib/tcllib/cron/cron.tcl
 lib/tcllib/cron/pkgIndex.tcl
 lib/tcllib/csv/csv.tcl
@@ -291,8 +288,10 @@ lib/tcllib/log/loggerUtils.tcl
 lib/tcllib/log/msgs/en.msg
 lib/tcllib/log/pkgIndex.tcl
 lib/tcllib/map/map_geocode_nominatim.tcl
+lib/tcllib/map/map_slippy_c.tcl
 lib/tcllib/map/map_slippy_cache.tcl
 lib/tcllib/map/map_slippy_fetcher.tcl
+lib/tcllib/map/map_slippy_tcl.tcl
 lib/tcllib/map/map_slippy.tcl
 lib/tcllib/map/pkgIndex.tcl
 lib/tcllib/mapproj/mapproj.tcl
@@ -300,7 +299,6 @@ lib/tcllib/mapproj/pkgIndex.tcl
 lib/tcllib/markdown/markdown.tcl
 lib/tcllib/markdown/pkgIndex.tcl
 lib/tcllib/math/bessel.tcl
-lib/tcllib/math/bigfloat.tcl
 lib/tcllib/math/bigfloat2.tcl
 lib/tcllib/math/bignum.tcl
 lib/tcllib/math/calculus.tcl
@@ -345,6 +343,7 @@ lib/tcllib/math/qcomplex.tcl
 lib/tcllib/math/quasirandom.tcl
 lib/tcllib/math/rational_funcs.tcl
 lib/tcllib/math/romannumerals.tcl
+lib/tcllib/math/rootfind.tcl
 lib/tcllib/math/special.tcl
 lib/tcllib/math/stat_kernel.tcl
 lib/tcllib/math/stat_logit.tcl
@@ -510,12 +509,9 @@ lib/tcllib/pt/rde_critcl/ms.h
 lib/tcllib/pt/rde_critcl/ot.c
 lib/tcllib/pt/rde_critcl/ot.h
 lib/tcllib/pt/rde_critcl/p.c
-lib/tcllib/pt/rde_critcl/p.c.orig
 lib/tcllib/pt/rde_critcl/p.h
 lib/tcllib/pt/rde_critcl/param.c
-lib/tcllib/pt/rde_critcl/param.c.orig
 lib/tcllib/pt/rde_critcl/param.h
-lib/tcllib/pt/rde_critcl/param.h.orig
 lib/tcllib/pt/rde_critcl/pInt.h
 lib/tcllib/pt/rde_critcl/stack.c
 lib/tcllib/pt/rde_critcl/stack.h
@@ -557,11 +553,9 @@ lib/tcllib/simulation/pkgIndex.tcl
 lib/tcllib/simulation/random.tcl
 lib/tcllib/smtpd/pkgIndex.tcl
 lib/tcllib/smtpd/smtpd.tcl
-lib/tcllib/snit/main1_83.tcl
 lib/tcllib/snit/main1.tcl
 lib/tcllib/snit/main2.tcl
 lib/tcllib/snit/pkgIndex.tcl
-lib/tcllib/snit/snit_tcl83_utils.tcl
 lib/tcllib/snit/snit.tcl
 lib/tcllib/snit/snit2.tcl
 lib/tcllib/snit/validate.tcl
@@ -590,7 +584,6 @@ lib/tcllib/struct/list.tcl
 lib/tcllib/struct/list.test.tcl
 lib/tcllib/struct/map.tcl
 lib/tcllib/struct/matrix.tcl
-lib/tcllib/struct/matrix1.tcl
 lib/tcllib/struct/pkgIndex.tcl
 lib/tcllib/struct/pool.tcl
 lib/tcllib/struct/prioqueue.tcl
@@ -669,6 +662,7 @@ lib/tcllib/treeql/pkgIndex.tcl
 lib/tcllib/treeql/treeql.tcl
 lib/tcllib/treeql/treeql84.tcl
 lib/tcllib/treeql/treeql85.tcl
+lib/tcllib/try/fhome.tcl
 lib/tcllib/try/pkgIndex.tcl
 lib/tcllib/try/throw.tcl
 lib/tcllib/try/try.tcl
@@ -857,6 +851,7 @@ lib/tcllib/zip/pkgIndex.tcl
 %%MANPAGES%%share/man/mann/fa.tcllib.n.gz
 %%MANPAGES%%share/man/mann/facade.tcllib.n.gz
 %%MANPAGES%%share/man/mann/faop.tcllib.n.gz
+%%MANPAGES%%share/man/mann/fhome.tcllib.n.gz
 %%MANPAGES%%share/man/mann/fifo.tcllib.n.gz
 %%MANPAGES%%share/man/mann/fifo2.tcllib.n.gz
 %%MANPAGES%%share/man/mann/figurate.tcllib.n.gz
@@ -941,7 +936,6 @@ lib/tcllib/zip/pkgIndex.tcl
 %%MANPAGES%%share/man/mann/math.tcllib.n.gz
 %%MANPAGES%%share/man/mann/math_geometry.tcllib.n.gz
 %%MANPAGES%%share/man/mann/matrix.tcllib.n.gz
-%%MANPAGES%%share/man/mann/matrix1.tcllib.n.gz
 %%MANPAGES%%share/man/mann/md4.tcllib.n.gz
 %%MANPAGES%%share/man/mann/md5.tcllib.n.gz
 %%MANPAGES%%share/man/mann/md5crypt.tcllib.n.gz
@@ -1177,6 +1171,7 @@ lib/tcllib/zip/pkgIndex.tcl
 %%MANPAGES%%share/man/mann/vt_counter.tcllib.n.gz
 %%MANPAGES%%share/man/mann/vt_crc32.tcllib.n.gz
 %%MANPAGES%%share/man/mann/vt_otp.tcllib.n.gz
+%%MANPAGES%%share/man/mann/wcswidth.tcllib.n.gz
 %%MANPAGES%%share/man/mann/websocket.tcllib.n.gz
 %%MANPAGES%%share/man/mann/wip.tcllib.n.gz
 %%MANPAGES%%share/man/mann/xsxp.tcllib.n.gz

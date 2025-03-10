@@ -1,0 +1,8 @@
+Snowball stemming algorithms for use in Information Retrieval Snowball
+provides access to efficient algorithms for calculating a "stemmed"
+form of a word.  This is a form with most of the common morphological
+endings removed; hopefully representing a common linguistic base form.
+This is most useful in building search engines and information
+retrieval software; for example, a search with stemming enabled should
+be able to find a document containing "cycling" given the query
+"cycles".

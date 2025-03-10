@@ -14,7 +14,6 @@
 %%QT_INCDIR%%/QtBluetooth/%%FULLVER%%/QtBluetooth/private/qlowenergyserviceprivate_p.h
 %%QT_INCDIR%%/QtBluetooth/%%FULLVER%%/QtBluetooth/private/qprivatelinearbuffer_p.h
 %%QT_INCDIR%%/QtBluetooth/%%FULLVER%%/QtBluetooth/private/qtbluetooth-config_p.h
-%%QT_INCDIR%%/QtBluetooth/%%FULLVER%%/QtBluetooth/private/qtbluetoothexports_p.h
 %%QT_INCDIR%%/QtBluetooth/%%FULLVER%%/QtBluetooth/private/qtbluetoothglobal_p.h
 %%QT_INCDIR%%/QtBluetooth/QBluetoothAddress
 %%QT_INCDIR%%/QtBluetooth/QBluetoothDeviceDiscoveryAgent
@@ -113,6 +112,7 @@ lib/cmake/Qt6Bluetooth/Qt6BluetoothConfigVersionImpl.cmake
 lib/cmake/Qt6Bluetooth/Qt6BluetoothDependencies.cmake
 lib/cmake/Qt6Bluetooth/Qt6BluetoothTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/Qt6Bluetooth/Qt6BluetoothTargets.cmake
+lib/cmake/Qt6Bluetooth/Qt6BluetoothVersionlessAliasTargets.cmake
 lib/cmake/Qt6Bluetooth/Qt6BluetoothVersionlessTargets.cmake
 lib/cmake/Qt6BuildInternals/StandaloneTests/QtConnectivityTestsConfig.cmake
 lib/cmake/Qt6Nfc/Qt6NfcAdditionalTargetInfo.cmake
@@ -122,6 +122,7 @@ lib/cmake/Qt6Nfc/Qt6NfcConfigVersionImpl.cmake
 lib/cmake/Qt6Nfc/Qt6NfcDependencies.cmake
 lib/cmake/Qt6Nfc/Qt6NfcTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/Qt6Nfc/Qt6NfcTargets.cmake
+lib/cmake/Qt6Nfc/Qt6NfcVersionlessAliasTargets.cmake
 lib/cmake/Qt6Nfc/Qt6NfcVersionlessTargets.cmake
 %%QT_LIBDIR%%/libQt6Bluetooth.prl
 %%QT_LIBDIR%%/libQt6Bluetooth.so
@@ -137,6 +138,7 @@ lib/cmake/Qt6Nfc/Qt6NfcVersionlessTargets.cmake
 %%QT_MKSPECDIR%%/modules/qt_lib_bluetooth_private.pri
 %%QT_MKSPECDIR%%/modules/qt_lib_nfc.pri
 %%QT_MKSPECDIR%%/modules/qt_lib_nfc_private.pri
+%%QT_SBOMDIR%%/qtconnectivity-%%FULLVER%%.spdx
 libdata/pkgconfig/Qt6Bluetooth.pc
 libdata/pkgconfig/Qt6Nfc.pc
 %%QT_DATADIR%%/modules/Bluetooth.json

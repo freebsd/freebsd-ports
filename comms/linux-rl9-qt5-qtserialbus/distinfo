@@ -1,0 +1,9 @@
+TIMESTAMP = 1731450899
+SHA256 (rocky/q/qt5-qtserialbus-5.15.9-1.el9.aarch64.rpm) = 729180ecdceb4ff4e5c06e16ed73d6ff9a04835236b12c67802f6c52ef8ae12e
+SIZE (rocky/q/qt5-qtserialbus-5.15.9-1.el9.aarch64.rpm) = 208683
+SHA256 (rocky/q/qt5-qtserialbus-5.15.9-1.el9.i686.rpm) = 8b21e9e28c649791e6fa313dacc84d0141d2f8b2635f45d70e56d755545780a8
+SIZE (rocky/q/qt5-qtserialbus-5.15.9-1.el9.i686.rpm) = 222622
+SHA256 (rocky/q/qt5-qtserialbus-5.15.9-1.el9.x86_64.rpm) = 7875bd921d79fccd1235e6600e9ef10a976e4646a18a613fdf41c788acfe4aba
+SIZE (rocky/q/qt5-qtserialbus-5.15.9-1.el9.x86_64.rpm) = 206330
+SHA256 (rocky/q/qt5-qtserialbus-5.15.9-1.el9.src.rpm) = 66eda107311ed872f227fe48c2b2d78ac22a3c52263f3736e8111bad0b14a814
+SIZE (rocky/q/qt5-qtserialbus-5.15.9-1.el9.src.rpm) = 369434

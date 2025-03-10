@@ -1,12 +1,13 @@
 PORTNAME=	pomsky
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.10
-PORTREVISION=	8
+PORTREVISION=	14
 CATEGORIES=	lang textproc
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Portable, modern regular expression language
-WWW=		https://pomsky-lang.org
+WWW=		https://pomsky-lang.org \
+		https://github.com/pomsky-lang/pomsky
 
 LICENSE=	MIT APACHE20
 LICENSE_COMB=	dual
@@ -192,8 +193,5 @@ CARGO_CRATES=	ahash-0.7.6 \
 		criterion,criterion-plot@git+https://github.com/bheisler/criterion.rs?branch=version-0.4\#935c6327e152e44f2b9178797682b9b99b5123a5
 
 PLIST_FILES=	bin/${PORTNAME}
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>

@@ -57,6 +57,7 @@ python_CMD?=	${PYTHON_CMD}
 # been set already above with ?=.
 .  for lang in ${SHEBANG_LANG}
 ${lang}_CMD?= ${LOCALBASE}/bin/${lang}
+${lang}_OLD_CMD+= "/bin/env ${lang}"
 ${lang}_OLD_CMD+= "/usr/bin/env ${lang}"
 ${lang}_OLD_CMD+= /bin/${lang}
 ${lang}_OLD_CMD+= /usr/bin/${lang}
@@ -64,6 +65,7 @@ ${lang}_OLD_CMD+= /usr/local/bin/${lang}
 .  endfor
 
 .  for pyver in 2 3
+python_OLD_CMD+= "/bin/env python${pyver}"
 python_OLD_CMD+= "/usr/bin/env python${pyver}"
 python_OLD_CMD+= /bin/python${pyver}
 python_OLD_CMD+= /usr/bin/python${pyver}

@@ -1,13 +1,13 @@
 PORTNAME=	goatools
 DISTVERSION=	1.1.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	biology python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Tools for processing and visualizing Gene Ontology terms
-WWW=		https://pypi.python.org/pypi/goatools
+WWW=		https://github.com/tanghaibao/goatools/
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -22,4 +22,10 @@ GNU_CONFIGURE=	yes
 PLIST_FILES=	bin/pdfsandwich \
 		man/man1/pdfsandwich.1.gz
 
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == powerpc
+USE_BINUTILS=	yes
+.endif
+
 .include <bsd.port.mk>

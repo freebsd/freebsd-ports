@@ -1,5 +1,6 @@
 PORTNAME=	dialect
-DISTVERSION=	2.4.2
+DISTVERSION=	2.5.0
+PORTREVISION=	1
 CATEGORIES=	textproc gnome python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -22,7 +23,7 @@ USES=		desktop-file-utils gettext-tools gnome gstreamer meson \
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	dialect-app
-GH_TUPLE=	dialect-app:po:dbb487db7eb05b11d8e0fba7a26d1ab5c05ef411:po/po
+GH_TUPLE=	dialect-app:po:1fdb2525674005ecde58f1498f00edfa0bd58b55:po/po
 
 USE_GNOME=	glib20 gtk40 introspection:build libadwaita pygobject3
 GLIB_SCHEMAS=	app.drey.Dialect.gschema.xml
@@ -32,7 +33,7 @@ MAKE_ENV+=	PYTHONDONTWRITEBYTECODE=1
 
 NO_ARCH=	yes
 
-PORTDOCS=	README.md
+PORTDOCS=	CONTRIBUTING.md NEWS.md README.md
 
 OPTIONS_DEFINE=	DOCS
 

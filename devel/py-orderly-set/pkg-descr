@@ -1,0 +1,5 @@
+Orderly Set is a package containing multiple implementations of Ordered Set.
+
+This implementation keeps the order in all set operations except set difference
+operations. As a result, it can do set difference operations much faster than
+other implementations.

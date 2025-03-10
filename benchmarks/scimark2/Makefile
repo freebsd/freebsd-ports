@@ -12,8 +12,7 @@ WWW=		https://math.nist.gov/scimark2/index.html
 
 LICENSE=	PD
 
-USES=		zip
-USE_JAVA=	yes
+USES=		java zip
 NEED_JAVAC=	yes
 JAVAC_OPTS?=	-O
 NO_ARCH=	yes

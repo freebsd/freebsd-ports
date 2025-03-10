@@ -1,5 +1,5 @@
 PORTNAME=	virtualgl
-DISTVERSION=	3.1.1
+DISTVERSION=	3.1.2
 CATEGORIES=	x11 graphics
 MASTER_SITES=	https://github.com/VirtualGL/${PORTNAME}/releases/download/${DISTVERSION}/
 DISTNAME=	VirtualGL-${DISTVERSION}
@@ -38,6 +38,7 @@ CMAKE_INSTALL_PREFIX=	${LOCALBASE}/VirtualGL
 LDFLAGS+=	-Wl,--undefined-version
 
 DOCSDIR=	${LOCALBASE}/VirtualGL/doc
+GROUPS=		vglusers
 PORTDOCS=	*
 
 OPTIONS_DEFINE=		DOCS OPENCL OPENSSL XVIDEO

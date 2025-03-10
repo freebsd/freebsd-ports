@@ -1,6 +1,6 @@
---- chrome/services/printing/print_backend_service_impl.cc.orig	2024-06-22 08:49:42 UTC
+--- chrome/services/printing/print_backend_service_impl.cc.orig	2025-01-25 09:34:31 UTC
 +++ chrome/services/printing/print_backend_service_impl.cc
-@@ -49,7 +49,7 @@
+@@ -50,7 +50,7 @@
  #include "printing/backend/cups_connection_pool.h"
  #endif
  
@@ -9,7 +9,7 @@
  #include "base/no_destructor.h"
  #include "ui/linux/linux_ui.h"
  #include "ui/linux/linux_ui_delegate_stub.h"
-@@ -76,7 +76,7 @@ namespace printing {
+@@ -77,7 +77,7 @@ namespace printing {
  
  namespace {
  
@@ -18,7 +18,7 @@
  void InstantiateLinuxUiDelegate() {
    // TODO(crbug.com/40561724)  Until a real UI can be used in a utility process,
    // need to use the stub version.
-@@ -85,7 +85,7 @@ void InstantiateLinuxUiDelegate() {
+@@ -86,7 +86,7 @@ void InstantiateLinuxUiDelegate() {
  #endif
  
  scoped_refptr<base::SequencedTaskRunner> GetPrintingTaskRunner() {

@@ -1,6 +1,6 @@
 PORTNAME=	neovim
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.10.1
+DISTVERSION=	0.10.4
 CATEGORIES=	editors
 
 MAINTAINER=	adamw@FreeBSD.org
@@ -11,25 +11,26 @@ LICENSE=	APACHE20
 
 BUILD_DEPENDS=	${LUA_REFMODLIBDIR}/bit.so:devel/lua-bitop@${LUA_FLAVOR} \
 		${LUA_REFMODLIBDIR}/lpeg.so:devel/lua-lpeg@${LUA_FLAVOR}
-RUN_DEPENDS=	${LUA_REFMODLIBDIR}/bit.so:devel/lua-bitop@${LUA_FLAVOR} \
-		${LUA_REFMODLIBDIR}/lpeg.so:devel/lua-lpeg@${LUA_FLAVOR}
 LIB_DEPENDS=	libluv.so:devel/luv \
 		libmsgpack-c.so:devel/msgpack-c \
 		libtree-sitter.so:devel/tree-sitter \
 		libunibilium.so:devel/unibilium \
 		libuv.so:devel/libuv \
 		libvterm.so:devel/libvterm
+RUN_DEPENDS=	${LUA_REFMODLIBDIR}/bit.so:devel/lua-bitop@${LUA_FLAVOR} \
+		${LUA_REFMODLIBDIR}/lpeg.so:devel/lua-lpeg@${LUA_FLAVOR}
+TEST_DEPENDS=	gmake:devel/gmake
 
 USES=		cmake cpe gettext iconv lua:51,build luajit \
 		pathfix pkgconfig
 
 USE_GITHUB=	yes
-GH_TUPLE=	tree-sitter:tree-sitter-c:v0.21.0:treesitter_c \
-		tree-sitter-grammars:tree-sitter-lua:v0.1.0:treesitter_lua \
-		MDeiml:tree-sitter-markdown:v0.2.3:treesitter_markdown \
-		tree-sitter-grammars:tree-sitter-query:v0.3.0:treesitter_query \
-		neovim:tree-sitter-vim:v0.4.0:treesitter_vim \
-		neovim:tree-sitter-vimdoc:v2.5.1:treesitter_vimdoc
+GH_TUPLE=	tree-sitter:tree-sitter-c:v0.23.4:treesitter_c \
+		tree-sitter-grammars:tree-sitter-lua:v0.2.0:treesitter_lua \
+		tree-sitter-grammars:tree-sitter-markdown:v0.3.2:treesitter_markdown \
+		tree-sitter-grammars:tree-sitter-query:v0.4.0:treesitter_query \
+		tree-sitter-grammars:tree-sitter-vim:v0.4.0:treesitter_vim \
+		neovim:tree-sitter-vimdoc:v3.0.0:treesitter_vimdoc
 
 CMAKE_ARGS=	-DLUA_PRG:FILEPATH="${LUA_CMD}" \
 		-DCMAKE_INSTALL_MANDIR:PATH="${PREFIX}/share/man" \
@@ -70,5 +71,8 @@ post-build:
 post-stage:
 	cd ${BUILD_WRKSRC}/.deps/usr/lib/nvim && ${COPYTREE_SHARE} parser ${STAGEDIR}${PREFIX}/lib/nvim
 	${FIND} ${STAGEDIR}${PREFIX}/lib/nvim -name "*.so" -exec ${STRIP_CMD} {} +
+
+do-test:
+	${GMAKE} -C ${WRKSRC} test
 
 .include <bsd.port.mk>

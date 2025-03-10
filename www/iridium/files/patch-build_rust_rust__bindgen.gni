@@ -1,6 +1,6 @@
---- build/rust/rust_bindgen.gni.orig	2024-08-01 05:47:53 UTC
+--- build/rust/rust_bindgen.gni.orig	2025-02-22 18:06:53 UTC
 +++ build/rust/rust_bindgen.gni
-@@ -11,14 +11,14 @@ if (is_win) {
+@@ -12,14 +12,14 @@ if (is_win) {
    import("//build/toolchain/win/win_toolchain_data.gni")
  }
  

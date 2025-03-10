@@ -1,4 +1,5 @@
 include/aquamarine/allocator/Allocator.hpp
+include/aquamarine/allocator/DRMDumb.hpp
 include/aquamarine/allocator/GBM.hpp
 include/aquamarine/allocator/Swapchain.hpp
 include/aquamarine/backend/Backend.hpp
@@ -14,6 +15,6 @@ include/aquamarine/input/Input.hpp
 include/aquamarine/misc/Attachment.hpp
 include/aquamarine/output/Output.hpp
 lib/libaquamarine.so
-lib/libaquamarine.so.2
+lib/libaquamarine.so.6
 lib/libaquamarine.so.%%VERSION%%
 libdata/pkgconfig/aquamarine.pc

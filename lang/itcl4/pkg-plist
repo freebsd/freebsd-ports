@@ -9,8 +9,8 @@ lib/itcl%%PKGVER%%/itcl.tcl
 lib/itcl%%PKGVER%%/itclConfig.sh
 lib/itcl%%PKGVER%%/itclHullCmds.tcl
 lib/itcl%%PKGVER%%/itclWidget.tcl
-lib/itcl%%PKGVER%%/libitcl%%PKGVER%%.so
-lib/itcl%%PKGVER%%/libitclstub%%PKGVER%%.a
+lib/itcl%%PKGVER%%/lib%%TCL_PKG_LIB_PREFIX%%itcl%%PKGVER%%.so
+lib/itcl%%PKGVER%%/libitclstub%%TCL_PKG_STUB_POSTFIX%%.a
 lib/itcl%%PKGVER%%/pkgIndex.tcl
 share/man/mann/body.i4.gz
 share/man/mann/class.i4.gz

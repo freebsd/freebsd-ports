@@ -77,8 +77,6 @@ lib/sbcl/contrib/sb-rotate-byte.asd
 lib/sbcl/contrib/sb-rotate-byte.fasl
 lib/sbcl/contrib/sb-rt.asd
 lib/sbcl/contrib/sb-rt.fasl
-%%SIMD%%lib/sbcl/contrib/sb-simd.asd
-%%SIMD%%lib/sbcl/contrib/sb-simd.fasl
 lib/sbcl/contrib/sb-simple-streams.asd
 lib/sbcl/contrib/sb-simple-streams.fasl
 lib/sbcl/contrib/sb-sprof.asd
@@ -208,7 +206,6 @@ lib/sbcl/sb-rt/sb-rt.asd
 %%SIMD%%lib/sbcl/sb-simd/packages.lisp
 %%SIMD%%lib/sbcl/sb-simd/printable.lisp
 %%SIMD%%lib/sbcl/sb-simd/record.lisp
-%%SIMD%%lib/sbcl/sb-simd/sb-simd.asd
 %%SIMD%%lib/sbcl/sb-simd/utilities.lisp
 lib/sbcl/sb-simple-streams/classes.lisp
 lib/sbcl/sb-simple-streams/direct.lisp

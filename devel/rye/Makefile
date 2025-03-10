@@ -1,16 +1,18 @@
 PORTNAME=	rye
-DISTVERSION=	0.34.0
-PORTREVISION=	1
+DISTVERSION=	0.43.0
+PORTREVISION=	2
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Hassle-free Python experience
-WWW=		https://rye-up.com
+WWW=		https://rye-up.com \
+		https://github.com/astral-sh/rye
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN_i386=	link fails: ld: error: undefined symbol: __atomic_is_lock_free
+ONLY_FOR_ARCHS=	aarch64 amd64
+ONLY_FOR_ARCHS_REASON=	error: This crate works only on `aarch64`, `loongarch64`, `x86`, and `x86-64` targets. (crate cpufeatures-0.2.12)
 
 BUILD_DEPENDS=	gmake:devel/gmake
 LIB_DEPENDS=	libzstd.so:archivers/zstd
@@ -21,7 +23,7 @@ USE_PERL5=	build
 USE_GITHUB=	yes
 GH_ACCOUNT=	mitsuhiko
 
-CARGO_CRATES=	addr2line-0.21.0 \
+CARGO_CRATES=	addr2line-0.22.0 \
 		adler-1.0.2 \
 		aead-0.5.2 \
 		age-0.10.0 \
@@ -29,39 +31,38 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		ahash-0.8.11 \
 		aho-corasick-1.1.3 \
 		allocator-api2-0.2.18 \
-		anstyle-1.0.7 \
+		anstyle-1.0.8 \
 		anyhow-1.0.86 \
 		arbitrary-1.3.2 \
 		arc-swap-1.7.1 \
 		autocfg-1.3.0 \
-		backtrace-0.3.71 \
-		base64-0.13.1 \
+		backtrace-0.3.73 \
 		base64-0.21.7 \
 		base64-0.22.1 \
 		bech32-0.9.1 \
 		bitflags-1.3.2 \
-		bitflags-2.5.0 \
+		bitflags-2.6.0 \
 		block-buffer-0.10.4 \
-		bstr-1.9.1 \
+		bstr-1.10.0 \
 		bumpalo-3.16.0 \
 		byteorder-1.5.0 \
 		bzip2-0.4.4 \
 		bzip2-sys-0.1.11+1.0.8 \
-		cc-1.0.98 \
+		cc-1.1.7 \
 		cfg-if-1.0.0 \
 		cfg_aliases-0.1.1 \
 		chacha20-0.9.1 \
 		chacha20poly1305-0.10.1 \
-		charset-0.1.3 \
+		charset-0.1.5 \
 		chumsky-0.9.3 \
 		cipher-0.4.4 \
-		clap-4.5.4 \
-		clap_builder-4.5.2 \
-		clap_complete-4.5.2 \
-		clap_complete_nushell-4.5.1 \
-		clap_derive-4.5.4 \
-		clap_lex-0.7.0 \
-		configparser-3.0.4 \
+		clap-4.5.13 \
+		clap_builder-4.5.13 \
+		clap_complete-4.5.12 \
+		clap_complete_nushell-4.5.3 \
+		clap_derive-4.5.13 \
+		clap_lex-0.7.2 \
+		configparser-3.1.0 \
 		console-0.15.8 \
 		cookie-factory-0.3.3 \
 		cpufeatures-0.2.12 \
@@ -70,8 +71,8 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		crypto-common-0.1.6 \
 		ctrlc-3.4.4 \
 		curl-0.4.46 \
-		curl-sys-0.4.72+curl-8.6.0 \
-		curve25519-dalek-4.1.2 \
+		curl-sys-0.4.74+curl-8.9.0 \
+		curve25519-dalek-4.1.3 \
 		curve25519-dalek-derive-0.1.1 \
 		dashmap-5.5.3 \
 		data-encoding-2.6.0 \
@@ -79,9 +80,9 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		derive_arbitrary-1.3.2 \
 		deunicode-1.6.0 \
 		digest-0.10.7 \
-		displaydoc-0.2.4 \
+		displaydoc-0.2.5 \
 		dotenvy-0.15.7 \
-		either-1.12.0 \
+		either-1.13.0 \
 		encode_unicode-0.3.6 \
 		encoding_rs-0.8.34 \
 		equivalent-1.0.1 \
@@ -91,7 +92,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		fiat-crypto-0.2.9 \
 		filetime-0.2.23 \
 		find-crate-0.6.3 \
-		flate2-1.0.30 \
+		flate2-1.0.31 \
 		fluent-0.16.1 \
 		fluent-bundle-0.15.3 \
 		fluent-langneg-0.13.0 \
@@ -111,7 +112,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		futures-util-0.3.30 \
 		generic-array-0.14.7 \
 		getrandom-0.2.15 \
-		gimli-0.28.1 \
+		gimli-0.29.0 \
 		git-testament-0.2.5 \
 		git-testament-derive-0.2.0 \
 		globset-0.4.14 \
@@ -126,7 +127,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		i18n-embed-fl-0.7.0 \
 		i18n-embed-impl-0.8.3 \
 		idna-0.5.0 \
-		indexmap-2.2.6 \
+		indexmap-2.3.0 \
 		indicatif-0.17.8 \
 		inout-0.1.3 \
 		insta-1.39.0 \
@@ -136,32 +137,34 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		intl_pluralrules-7.0.2 \
 		io_tee-0.1.1 \
 		itoa-1.0.11 \
-		jobserver-0.1.31 \
+		jobserver-0.1.32 \
 		junction-1.1.0 \
-		lazy_static-1.4.0 \
+		lazy_static-1.5.0 \
 		libc-0.2.155 \
-		libz-sys-1.1.16 \
-		license-3.3.1 \
+		libz-sys-1.1.18 \
+		license-3.4.0+3.24.0 \
 		linked-hash-map-0.5.6 \
 		linux-raw-sys-0.4.14 \
 		lock_api-0.4.12 \
-		log-0.4.21 \
+		log-0.4.22 \
 		mailparse-0.15.0 \
-		memchr-2.7.2 \
-		minijinja-2.0.1 \
+		memchr-2.7.4 \
+		minijinja-2.1.1 \
 		minimal-lexical-0.2.1 \
-		miniz_oxide-0.7.3 \
+		miniz_oxide-0.7.4 \
 		nix-0.28.0 \
 		nom-7.1.3 \
 		num-conv-0.1.0 \
+		num_enum-0.7.3 \
+		num_enum_derive-0.7.3 \
 		number_prefix-0.4.0 \
-		object-0.32.2 \
+		object-0.36.2 \
 		once_cell-1.19.0 \
 		opaque-debug-0.3.1 \
 		openssl-probe-0.1.5 \
-		openssl-src-300.2.3+3.2.1 \
-		openssl-sys-0.9.102 \
-		parking_lot-0.12.2 \
+		openssl-src-300.3.1+3.3.1 \
+		openssl-sys-0.9.103 \
+		parking_lot-0.12.3 \
 		parking_lot_core-0.9.10 \
 		pathdiff-0.2.1 \
 		pbkdf2-0.12.2 \
@@ -173,39 +176,39 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		pin-project-lite-0.2.14 \
 		pin-utils-0.1.0 \
 		pkg-config-0.3.30 \
-		platforms-3.4.0 \
 		poly1305-0.8.0 \
-		portable-atomic-1.6.0 \
+		portable-atomic-1.7.0 \
 		powerfmt-0.2.0 \
-		ppv-lite86-0.2.17 \
+		ppv-lite86-0.2.20 \
+		proc-macro-crate-3.1.0 \
 		proc-macro-error-1.0.4 \
 		proc-macro-error-attr-1.0.4 \
-		proc-macro2-1.0.83 \
+		proc-macro2-1.0.86 \
 		psm-0.1.21 \
-		python-pkginfo-0.6.1 \
+		python-pkginfo-0.6.2 \
 		quote-1.0.36 \
-		quoted_printable-0.5.0 \
+		quoted_printable-0.5.1 \
 		rand-0.8.5 \
 		rand_chacha-0.3.1 \
 		rand_core-0.6.4 \
 		redox_syscall-0.4.1 \
-		redox_syscall-0.5.1 \
-		regex-1.10.4 \
-		regex-automata-0.4.6 \
-		regex-syntax-0.8.3 \
+		redox_syscall-0.5.3 \
+		regex-1.10.6 \
+		regex-automata-0.4.7 \
+		regex-syntax-0.8.4 \
 		reword-7.0.0 \
 		rfc2047-decoder-1.0.5 \
 		ring-0.17.8 \
-		rust-embed-8.4.0 \
-		rust-embed-impl-8.4.0 \
-		rust-embed-utils-8.4.0 \
+		rust-embed-8.5.0 \
+		rust-embed-impl-8.5.0 \
+		rust-embed-utils-8.5.0 \
 		rustc-demangle-0.1.24 \
 		rustc-hash-1.1.0 \
 		rustc_version-0.4.0 \
 		rustix-0.38.34 \
-		rustls-0.22.4 \
+		rustls-0.23.12 \
 		rustls-pki-types-1.7.0 \
-		rustls-webpki-0.102.4 \
+		rustls-webpki-0.102.6 \
 		ryu-1.0.18 \
 		salsa20-0.10.2 \
 		same-file-1.0.6 \
@@ -213,18 +216,18 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		scopeguard-1.2.0 \
 		scrypt-0.11.0 \
 		secrecy-0.8.0 \
-		self-replace-1.3.7 \
+		self-replace-1.4.0 \
 		self_cell-0.10.3 \
 		self_cell-1.0.4 \
 		semver-1.0.23 \
-		serde-1.0.202 \
-		serde_derive-1.0.202 \
-		serde_json-1.0.117 \
-		serde_spanned-0.6.6 \
+		serde-1.0.204 \
+		serde_derive-1.0.204 \
+		serde_json-1.0.122 \
+		serde_spanned-0.6.7 \
 		sha2-0.10.8 \
 		shell-words-1.1.0 \
 		shlex-1.3.0 \
-		similar-2.5.0 \
+		similar-2.6.0 \
 		slab-0.4.9 \
 		slug-0.1.5 \
 		smallvec-1.13.2 \
@@ -233,25 +236,26 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		stacker-0.1.15 \
 		static_vcruntime-2.0.0 \
 		strsim-0.10.0 \
-		subtle-2.5.0 \
+		subtle-2.6.1 \
 		syn-1.0.109 \
-		syn-2.0.65 \
-		tar-0.4.40 \
-		target-lexicon-0.12.14 \
-		tempfile-3.10.1 \
+		syn-2.0.72 \
+		tar-0.4.41 \
+		target-lexicon-0.12.16 \
+		tempfile-3.11.0 \
 		terminal_size-0.3.0 \
-		thiserror-1.0.61 \
-		thiserror-impl-1.0.61 \
+		thiserror-1.0.63 \
+		thiserror-impl-1.0.63 \
 		time-0.3.36 \
 		time-core-0.1.2 \
 		time-macros-0.2.18 \
-		tinystr-0.7.5 \
-		tinyvec-1.6.0 \
+		tinystr-0.7.6 \
+		tinyvec-1.8.0 \
 		tinyvec_macros-0.1.1 \
 		toml-0.5.11 \
-		toml-0.8.13 \
-		toml_datetime-0.6.6 \
-		toml_edit-0.22.13 \
+		toml-0.8.19 \
+		toml_datetime-0.6.8 \
+		toml_edit-0.21.1 \
+		toml_edit-0.22.20 \
 		tracing-0.1.40 \
 		tracing-attributes-0.1.27 \
 		tracing-core-0.1.32 \
@@ -263,14 +267,14 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		unicode-ident-1.0.12 \
 		unicode-normalization-0.1.23 \
 		unicode-segmentation-1.11.0 \
-		unicode-width-0.1.12 \
+		unicode-width-0.1.13 \
 		universal-hash-0.5.1 \
 		unscanny-0.1.0 \
 		untrusted-0.9.0 \
-		ureq-2.9.7 \
-		url-2.5.0 \
+		ureq-2.10.0 \
+		url-2.5.2 \
 		vcpkg-0.2.15 \
-		version_check-0.9.4 \
+		version_check-0.9.5 \
 		walkdir-2.5.0 \
 		wasi-0.11.0+wasi-snapshot-preview1 \
 		wasm-bindgen-0.2.92 \
@@ -278,45 +282,47 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		wasm-bindgen-macro-0.2.92 \
 		wasm-bindgen-macro-support-0.2.92 \
 		wasm-bindgen-shared-0.2.92 \
-		webpki-roots-0.26.1 \
-		which-6.0.1 \
+		webpki-roots-0.26.3 \
+		which-6.0.2 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
-		winapi-util-0.1.8 \
+		winapi-util-0.1.9 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
 		windows-sys-0.48.0 \
 		windows-sys-0.52.0 \
+		windows-sys-0.59.0 \
 		windows-targets-0.48.5 \
-		windows-targets-0.52.5 \
+		windows-targets-0.52.6 \
 		windows_aarch64_gnullvm-0.48.5 \
-		windows_aarch64_gnullvm-0.52.5 \
+		windows_aarch64_gnullvm-0.52.6 \
 		windows_aarch64_msvc-0.48.5 \
-		windows_aarch64_msvc-0.52.5 \
+		windows_aarch64_msvc-0.52.6 \
 		windows_i686_gnu-0.48.5 \
-		windows_i686_gnu-0.52.5 \
-		windows_i686_gnullvm-0.52.5 \
+		windows_i686_gnu-0.52.6 \
+		windows_i686_gnullvm-0.52.6 \
 		windows_i686_msvc-0.48.5 \
-		windows_i686_msvc-0.52.5 \
+		windows_i686_msvc-0.52.6 \
 		windows_x86_64_gnu-0.48.5 \
-		windows_x86_64_gnu-0.52.5 \
+		windows_x86_64_gnu-0.52.6 \
 		windows_x86_64_gnullvm-0.48.5 \
-		windows_x86_64_gnullvm-0.52.5 \
+		windows_x86_64_gnullvm-0.52.6 \
 		windows_x86_64_msvc-0.48.5 \
-		windows_x86_64_msvc-0.52.5 \
-		winnow-0.6.8 \
+		windows_x86_64_msvc-0.52.6 \
+		winnow-0.5.40 \
+		winnow-0.6.18 \
 		winreg-0.52.0 \
 		winsafe-0.0.19 \
 		x25519-dalek-2.0.1 \
 		xattr-1.3.1 \
-		zerocopy-0.7.34 \
-		zerocopy-derive-0.7.34 \
-		zeroize-1.7.0 \
+		zerocopy-0.7.35 \
+		zerocopy-derive-0.7.35 \
+		zeroize-1.8.1 \
 		zeroize_derive-1.4.2 \
 		zip-0.6.6 \
-		zip-1.3.0 \
-		zstd-0.13.1 \
-		zstd-safe-7.1.0 \
-		zstd-sys-2.0.10+zstd.1.5.6 \
+		zip-1.1.4 \
+		zstd-0.13.2 \
+		zstd-safe-7.2.1 \
+		zstd-sys-2.0.13+zstd.1.5.6 \
 		monotrail-utils@git+https://github.com/konstin/poc-monotrail?rev=e0251f68c254f834180198b8677fcf85d4b6a844\#e0251f68c254f834180198b8677fcf85d4b6a844 \
 		dialoguer@git+https://github.com/console-rs/dialoguer?rev=47a9d4df729db7ffc1492bd0845be786e6f20153\#47a9d4df729db7ffc1492bd0845be786e6f20153
 
@@ -328,7 +334,7 @@ PLIST_FILES=	bin/${PORTNAME}
 do-install:
 	# binaries (workaround for error: found a virtual manifest at `xx` instead of a package manifest)
 	${INSTALL_PROGRAM} \
-		${WRKDIR}/target/*/release/${PORTNAME} \
+		${WRKDIR}/target/release/${PORTNAME} \
 		${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>

@@ -1,14 +1,16 @@
---- src/osgEarthDrivers/fastdxt/CMakeLists.txt.orig	2023-05-16 14:53:59 UTC
+--- src/osgEarthDrivers/fastdxt/CMakeLists.txt.orig	2024-08-31 11:55:43 UTC
 +++ src/osgEarthDrivers/fastdxt/CMakeLists.txt
-@@ -30,7 +30,6 @@ SET(TARGET_SRC
-     dxt.cpp
-     util.cpp
-     libdxt.cpp
--    intrinsic.cpp
- )
+@@ -11,8 +11,7 @@ if(OSGEARTH_ENABLE_FASTDXT)
+             FastDXTImageProcessor.cpp
+             dxt.cpp
+             util.cpp
+-            libdxt.cpp
+-            intrinsic.cpp )
++            libdxt.cpp )
  
- SETUP_PLUGIN(fastdxt)
---- src/osgEarthDrivers/fastdxt/dxt.cpp.orig	2023-05-16 14:53:59 UTC
+ ENDIF()
+ 
+--- src/osgEarthDrivers/fastdxt/dxt.cpp.orig	2024-08-31 11:55:04 UTC
 +++ src/osgEarthDrivers/fastdxt/dxt.cpp
 @@ -6,7 +6,7 @@
  #include "dxt.h"

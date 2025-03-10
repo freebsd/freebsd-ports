@@ -10,6 +10,7 @@ share/icons/hicolor/64x64/apps/konquest.png
 %%DATADIR%%/pics/konquest-splash.png
 share/locale/af/LC_MESSAGES/konquest.mo
 share/locale/ar/LC_MESSAGES/konquest.mo
+share/locale/ast/LC_MESSAGES/konquest.mo
 share/locale/be/LC_MESSAGES/konquest.mo
 share/locale/bg/LC_MESSAGES/konquest.mo
 share/locale/br/LC_MESSAGES/konquest.mo
@@ -36,6 +37,7 @@ share/locale/hi/LC_MESSAGES/konquest.mo
 share/locale/hne/LC_MESSAGES/konquest.mo
 share/locale/hr/LC_MESSAGES/konquest.mo
 share/locale/hu/LC_MESSAGES/konquest.mo
+share/locale/ia/LC_MESSAGES/konquest.mo
 share/locale/is/LC_MESSAGES/konquest.mo
 share/locale/it/LC_MESSAGES/konquest.mo
 share/locale/ja/LC_MESSAGES/konquest.mo

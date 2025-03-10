@@ -1,7 +1,7 @@
 PORTNAME=	cdo
-PORTVERSION=	2.4.2
+PORTVERSION=	2.5.0
 CATEGORIES=	science
-MASTER_SITES=	https://code.mpimet.mpg.de/attachments/download/29481/ \
+MASTER_SITES=	https://code.mpimet.mpg.de/attachments/download/29786/ \
 		LOCAL/sunpoet
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -10,17 +10,6 @@ WWW=		https://code.mpimet.mpg.de/projects/cdo
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
-
-OPTIONS_DEFINE=	CGRIBEX ECCODES HDF5 JASPER NETCDF PROJ SZIP UDUNITS UUID
-OPTIONS_DEFAULT=CGRIBEX ECCODES HDF5 JASPER NETCDF PROJ SZIP UDUNITS UUID
-OPTIONS_SUB=	yes
-CGRIBEX_DESC=	Use CGRIBEX library for GRIB1 files
-ECCODES_DESC=	Use ecCodes for GRIB files
-HDF5_IMPLIES=	SZIP
-NETCDF_IMPLIES=	HDF5
-UUID_DESC=	UUID support
-
-PORTSCOUT=	site:https://code.mpimet.mpg.de/projects/cdo/files
 
 USES=		compiler:c++20-lang gmake libtool localbase pathfix python:build
 
@@ -40,6 +29,17 @@ MAKE_JOBS_UNSAFE=	yes
 TEST_TARGET=	check
 USE_CXXSTD=	c++20
 USE_LDCONFIG=	yes
+
+PORTSCOUT=	site:https://code.mpimet.mpg.de/projects/cdo/files
+
+OPTIONS_DEFINE=	CGRIBEX ECCODES HDF5 JASPER NETCDF PROJ SZIP UDUNITS UUID
+OPTIONS_DEFAULT=CGRIBEX ECCODES HDF5 JASPER NETCDF PROJ SZIP UDUNITS UUID
+OPTIONS_SUB=	yes
+CGRIBEX_DESC=	Use CGRIBEX library for GRIB1 files
+ECCODES_DESC=	Use ecCodes for GRIB files
+HDF5_IMPLIES=	SZIP
+NETCDF_IMPLIES=	HDF5
+UUID_DESC=	UUID support
 
 CGRIBEX_CONFIGURE_WITH=	cgribex
 CGRIBEX_LIB_DEPENDS=	libcgribex.so:science/cgribex

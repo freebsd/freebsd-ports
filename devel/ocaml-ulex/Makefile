@@ -10,12 +10,7 @@ COMMENT=	Lexer generator for Unicode and OCaml
 
 BUILD_DEPENDS=	ocamlbuild:devel/ocaml-ocamlbuild
 
-USES=		gmake
-USE_OCAML=	true
-USE_OCAML_FINDLIB=	true
-USE_OCAML_CAMLP4=	true
-USE_OCAML_LDCONFIG=	true
-USE_OCAMLFIND_PLIST=	yes
+USES=		gmake ocaml:camlp4,findplist,ldconfig
 
 ALL_TARGET=	all all.opt
 MAKE_JOBS_UNSAFE=	yes
@@ -26,6 +21,12 @@ PORTDOCS=	*
 OPTIONS_DEFINE=	DOCS
 
 DOCS_ALL_TARGET=	doc
+
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == powerpc
+USE_BINUTILS=	yes
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e '/^let latin1_sub_lexeme/,+3 \

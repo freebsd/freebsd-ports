@@ -1,0 +1,7 @@
+wheel-filename lets you verify wheel filenames and parse them into their
+component fields.
+
+This package adheres strictly to the standard, with the following exceptions:
+- Version components may be any sequence of the relevant set of characters; they
+  are not verified for PEP 440 compliance.
+- The .whl file extension is matched case-insensitively.

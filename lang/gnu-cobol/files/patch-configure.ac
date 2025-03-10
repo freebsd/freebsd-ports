@@ -1,0 +1,34 @@
+--- configure.ac.orig	2023-07-28 17:16:37 UTC
++++ configure.ac
+@@ -54,6 +54,8 @@ AC_CONFIG_FILES([tests/run_prog_manual.sh],
+ AC_CONFIG_FILES([tests/run_prog_manual.sh],
+   [chmod +x tests/run_prog_manual.sh])
+ 
++AC_PATH_PROGS([MAKE], [gmake gnumake make])
++
+ # In general: don't export/setenv but pass as option to configure
+ #             this has the benefit that re-runs will take the same and "sudo"
+ #             or later "make" (possibly as different user) will use the same
+@@ -291,22 +293,6 @@ AC_DEFINE_UNQUOTED([MAX_CALL_FIELD_PARAMS], [$with_max
+ 
+ 
+ # Basic capability tests
+-
+-configured_make=""
+-if test -z "$MAKE"; then
+-  AC_CHECK_PROGS([configured_make], [make gmake gnumake])
+-  if test -z "$configured_make"; then
+-	AC_MSG_ERROR([make not found])
+-  else
+-	MAKE=$configured_make
+-	AC_SUBST(MAKE)
+-  fi
+-else
+-  AC_CHECK_PROG([configured_make], [$MAKE], [$MAKE])
+-  if test -z "$configured_make"; then
+-	AC_MSG_ERROR([make, configured as "$MAKE", was not found])
+-  fi
+-fi
+ 
+ AC_MSG_CHECKING([whether ${MAKE} can handle common constructs])
+ rm -f confmake.out

@@ -1,0 +1,4 @@
+py-pulsar-client is a Pulsar Python client library.
+
+Pulsar Python clients support a variety of Pulsar features to enable building
+applications connecting to your Pulsar cluster.

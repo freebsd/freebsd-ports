@@ -151,8 +151,8 @@ lib/yate/sig/ss7_lnp_ansi.yate
 lib/yate/jabber/jabberserver.yate
 lib/yate/jabber/jbfeatures.yate
 lib/yate/sip/sip_cnam_lnp.yate
-%%AMRNB%%lib/yate/amrnbcodec.yate
-%%AMRNB%%lib/yate/efrcodec.yate
+%%AMR%%lib/yate/amrnbcodec.yate
+%%AMR%%lib/yate/efrcodec.yate
 %%SPANDSP%%lib/yate/faxchan.yate
 %%H323%%lib/yate/h323chan.yate
 %%ILBC%%lib/yate/ilbccodec.yate

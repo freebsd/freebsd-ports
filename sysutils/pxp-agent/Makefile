@@ -1,5 +1,6 @@
 PORTNAME=	pxp-agent
-PORTVERSION=	1.15.21
+PORTVERSION=	1.15.23
+PORTREVISION=	2
 CATEGORIES=	sysutils
 
 MAINTAINER=	puppet@FreeBSD.org
@@ -8,6 +9,9 @@ WWW=		https://github.com/puppetlabs/pxp-agent
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+DEPRECATED=	Project got archived, dependencies are broken
+EXPIRATION_DATE=2025-05-08
 
 LIB_DEPENDS=	liblibcpp-pcp-client.so:net/cpp-pcp-client \
 		libboost_thread.so:devel/boost-libs \

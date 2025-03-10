@@ -1,6 +1,6 @@
 PORTNAME=	glaze
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.2.1
+DISTVERSION=	5.0.0
 CATEGORIES=	devel textproc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -15,12 +15,13 @@ BROKEN_FreeBSD_15=	clang crashes, see https://bugs.freebsd.org/bugzilla/show_bug
 BUILD_DEPENDS=	${LOCALBASE}/include/asio.hpp:net/asio
 #TEST_DEPENDS=	ut>0:devel/ut # the old version 0.3.0 is used
 
-USES=		cmake:testing compiler:c++11-lang eigen:3 localbase
+USES=		cmake:testing compiler:c++23-lang eigen:3 localbase
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	stephenberry
 
 CMAKE_OFF=	BUILD_TESTING \
+		glaze_ENABLE_AVX2 \
 		glaze_DEVELOPER_MODE
 CMAKE_ARGS=	-DFETCHCONTENT_TRY_FIND_PACKAGE_MODE=ALWAYS
 CMAKE_TESTING_ON=	BUILD_TESTING glaze_DEVELOPER_MODE
@@ -31,6 +32,6 @@ LDFLAGS+=	-pthread
 
 NO_ARCH=	yes
 
-# tests expect the package to be installed, because the test find_package_test tests cmake finding this package
+# tests as of 5.0.0: 100% tests passed, 0 tests failed out of 25
 
 .include <bsd.port.mk>

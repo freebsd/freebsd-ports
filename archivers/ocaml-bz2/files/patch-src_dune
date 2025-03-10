@@ -1,0 +1,10 @@
+--- src/dune.orig	2024-02-21 17:20:18 UTC
++++ src/dune
+@@ -2,7 +2,6 @@
+  (public_name bz2)
+  (synopsis
+   "This is CamlBZ2, OCaml bindings for the libbz2 (AKA, bzip2) (de)compression library.")
+- (libraries stdlib-shims)
+  (c_library_flags -lbz2)
+  (foreign_stubs
+   (language c)

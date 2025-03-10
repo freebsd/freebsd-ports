@@ -1,0 +1,14 @@
+include/kdsingleapplication-qt6/KDSingleApplication
+include/kdsingleapplication-qt6/kdsingleapplication.h
+include/kdsingleapplication-qt6/kdsingleapplication_lib.h
+include/kdsingleapplication-qt6/kdsingleapplication_version.h
+lib/cmake/KDSingleApplication-qt6/KDSingleApplication-qt6Config.cmake
+lib/cmake/KDSingleApplication-qt6/KDSingleApplication-qt6ConfigVersion.cmake
+lib/cmake/KDSingleApplication-qt6/KDSingleApplication-qt6Targets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/KDSingleApplication-qt6/KDSingleApplication-qt6Targets.cmake
+lib/cmake/KDSingleApplication-qt6/KDSingleApplicationTargets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/KDSingleApplication-qt6/KDSingleApplicationTargets.cmake
+lib/libkdsingleapplication-qt6.so
+lib/libkdsingleapplication-qt6.so.1.1
+lib/libkdsingleapplication-qt6.so.1.1.0
+%%QT_MKSPECDIR%%/modules/qt_KDSingleApplication.pri

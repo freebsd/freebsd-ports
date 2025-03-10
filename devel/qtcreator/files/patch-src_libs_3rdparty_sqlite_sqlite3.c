@@ -1,6 +1,6 @@
---- src/libs/3rdparty/sqlite/sqlite3.c.orig	2024-05-31 12:46:31 UTC
+--- src/libs/3rdparty/sqlite/sqlite3.c.orig	2024-09-27 01:17:49 UTC
 +++ src/libs/3rdparty/sqlite/sqlite3.c
-@@ -13857,7 +13857,7 @@ struct fts5_api {
+@@ -14185,7 +14185,7 @@ struct fts5_api {
  ** But _XOPEN_SOURCE define causes problems for Mac OS X, so omit
  ** it.
  */

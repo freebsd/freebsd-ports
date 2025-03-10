@@ -1,6 +1,6 @@
---- base/functional/unretained_traits.h.orig	2024-03-22 14:16:19 UTC
+--- base/functional/unretained_traits.h.orig	2025-02-20 09:59:21 UTC
 +++ base/functional/unretained_traits.h
-@@ -93,7 +93,7 @@ struct SupportsUnretainedImpl {
+@@ -90,7 +90,7 @@ struct SupportsUnretainedImpl {
  // official builds, and then in non-test code as well.
  #if defined(FORCE_UNRETAINED_COMPLETENESS_CHECKS_FOR_TESTS) || \
      (!defined(UNIT_TEST) && !defined(OFFICIAL_BUILD) &&        \

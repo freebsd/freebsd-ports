@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/gpu/command_buffer/service/shared_image/shared_image_factory.cc.orig	2023-09-13 12:11:42 UTC
+--- src/3rdparty/chromium/gpu/command_buffer/service/shared_image/shared_image_factory.cc.orig	2024-02-23 21:04:38 UTC
 +++ src/3rdparty/chromium/gpu/command_buffer/service/shared_image/shared_image_factory.cc
-@@ -142,7 +142,7 @@ gfx::GpuMemoryBufferType GetNativeBufferType() {
+@@ -143,7 +143,7 @@ gfx::GpuMemoryBufferType GetNativeBufferType() {
    return gfx::GpuMemoryBufferType::IO_SURFACE_BUFFER;
  #elif BUILDFLAG(IS_ANDROID)
    return gfx::GpuMemoryBufferType::ANDROID_HARDWARE_BUFFER;

@@ -1,25 +1,21 @@
 PORTNAME=	tabixpp
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.0.0-10
-DISTVERSIONSUFFIX=	-g6bbe690
-PORTREVISION=	2
+DISTVERSION=	1.1.2
 CATEGORIES=	biology
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	C++ wrapper to tabix indexer
-WWW=		https://github.com/ekg/tabixpp
+WWW=		https://github.com/vcflib/tabixpp
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
-
-DEPRECATED=	Dependent ports use git submodules now
 
 LIB_DEPENDS=	libhts.so:biology/htslib
 
 USES=		compiler:c11 localbase:ldflags
 USE_LDCONFIG=	yes
 USE_GITHUB=	yes
-GH_ACCOUNT=	ekg
+GH_ACCOUNT=	vcflib
 
 # Disable bundled htslib
 MAKE_ENV=	HTS_HEADERS='' HTS_LIB=''

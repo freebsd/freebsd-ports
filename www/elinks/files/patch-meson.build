@@ -1,17 +1,33 @@
---- meson.build.orig	2023-12-25 11:25:27 UTC
+--- meson.build.orig	2024-12-26 11:02:09 UTC
 +++ meson.build
-@@ -211,6 +211,10 @@ endif
-     conf_data.set('HAVE_FCNTL_H', 1)
+@@ -519,7 +519,7 @@ conf_data.set('CONFIG_LIBCURL', false)
  endif
  
-+if compiler.has_header('execinfo.h')
-+    conf_data.set('HAVE_EXECINFO_H', 1)
-+endif
-+
- if compiler.has_header('libgen.h')
-     conf_data.set('HAVE_LIBGEN_H', 1)
+ conf_data.set('CONFIG_LIBCURL', false)
+-curldeps = false
++curldeps = []
+ if conf_data.get('CONFIG_ECMASCRIPT_SMJS') or conf_data.get('CONFIG_QUICKJS') or conf_data.get('CONFIG_MUJS')
+     curldeps = dependency('libcurl', static: st, version: '>=7.66.0', required: false)
+     if not curldeps.found()
+@@ -543,7 +543,7 @@ conf_data.set('CONFIG_LIBCSS', false)
  endif
-@@ -959,7 +964,7 @@ endif
+ 
+ conf_data.set('CONFIG_LIBCSS', false)
+-cssdeps = false
++cssdeps = []
+ 
+ if conf_data.get('CONFIG_ECMASCRIPT_SMJS') or conf_data.get('CONFIG_QUICKJS') or conf_data.get('CONFIG_MUJS')
+     cssdeps = dependency('libcss', static: st, version: '>=0.9.2', required: false)
+@@ -555,7 +555,7 @@ conf_data.set('CONFIG_LIBDOM', false)
+ endif
+ 
+ conf_data.set('CONFIG_LIBDOM', false)
+-libdomdeps = false
++libdomdeps = []
+ 
+ if conf_data.get('CONFIG_ECMASCRIPT_SMJS') or conf_data.get('CONFIG_QUICKJS') or conf_data.get('CONFIG_MUJS')
+     libdomdeps = dependency('libdom', static: st, version: '>=0.4.2', required: false)
+@@ -1088,7 +1088,7 @@ endif
      conf_data.set('HAVE_ICONV', 1)
  endif
  
@@ -20,7 +36,7 @@
      conf_data.set('HAVE_ALLOCA', 1)
  endif
  
-@@ -975,7 +980,7 @@ endif
+@@ -1104,7 +1104,7 @@ endif
      conf_data.set('HAVE_GNUTLS_CERTIFICATE_SET_X509_SYSTEM_TRUST', 1)
  endif
  

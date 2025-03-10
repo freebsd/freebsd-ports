@@ -1,13 +1,19 @@
 [
 { type: install
   message: <<EOM
-1) Run mednafen [OPTION] [FILE]
+The complete documentation is available at:
 
-2) See complete documentation at:
+    %%DOCSDIR%%/Documentation/mednafen.html
 
-   %%DOCSDIR%%/mednafen.html
+If you experience crackling or choppy audio when using the OSS audio backend,
+then Mednafen is probably using an unreasonable small period size with the
+default value 0 of sound.period_time. In this case retry with an explicit value,
+the documentation itself suggests 2.666ms or 5.333ms, i.e. set
 
-3) Enjoy it ;)
+    sound.period_time 2666  or
+    sound.period_time 5333
+
+Enjoy it ;)
 EOM
 }
 ]

@@ -184,6 +184,7 @@ include/fcppt/container/bitfield/array_fwd.hpp
 include/fcppt/container/bitfield/comparison.hpp
 include/fcppt/container/bitfield/default_internal_type.hpp
 include/fcppt/container/bitfield/detail/element_bits.hpp
+include/fcppt/container/bitfield/detail/make_internal_type.hpp
 include/fcppt/container/bitfield/detail/null_array.hpp
 include/fcppt/container/bitfield/hash.hpp
 include/fcppt/container/bitfield/hash_decl.hpp
@@ -403,7 +404,6 @@ include/fcppt/detail/char_types.hpp
 include/fcppt/detail/check_cpp.hpp
 include/fcppt/detail/const.hpp
 include/fcppt/detail/cyclic_iterator_base.hpp
-include/fcppt/detail/equal.hpp
 include/fcppt/detail/indent/extra.hpp
 include/fcppt/detail/indent/level.hpp
 include/fcppt/detail/indent/print.hpp
@@ -486,12 +486,11 @@ include/fcppt/enum/array_impl.hpp
 include/fcppt/enum/array_init.hpp
 include/fcppt/enum/array_map.hpp
 include/fcppt/enum/array_output.hpp
-include/fcppt/enum/detail/has_maximum.hpp
+include/fcppt/enum/define_max_value.hpp
 include/fcppt/enum/from_int.hpp
 include/fcppt/enum/from_string.hpp
 include/fcppt/enum/from_string_impl.hpp
 include/fcppt/enum/from_string_impl_fwd.hpp
-include/fcppt/enum/has_maximum.hpp
 include/fcppt/enum/index_of_array.hpp
 include/fcppt/enum/input.hpp
 include/fcppt/enum/invalid.hpp
@@ -507,6 +506,7 @@ include/fcppt/enum/make_range.hpp
 include/fcppt/enum/make_range_start.hpp
 include/fcppt/enum/make_range_start_end.hpp
 include/fcppt/enum/max_value.hpp
+include/fcppt/enum/max_value_impl_fwd.hpp
 include/fcppt/enum/min_value.hpp
 include/fcppt/enum/names.hpp
 include/fcppt/enum/names_array.hpp
@@ -1132,6 +1132,7 @@ include/fcppt/optional/reference.hpp
 include/fcppt/optional/reference_fwd.hpp
 include/fcppt/optional/reference_type.hpp
 include/fcppt/optional/sequence.hpp
+include/fcppt/optional/std_hash.hpp
 include/fcppt/optional/to_container.hpp
 include/fcppt/optional/to_exception.hpp
 include/fcppt/optional/to_pointer.hpp
@@ -2093,6 +2094,7 @@ include/fcppt/variant/partition.hpp
 include/fcppt/variant/partition_result.hpp
 include/fcppt/variant/partition_result_fwd.hpp
 include/fcppt/variant/size_type.hpp
+include/fcppt/variant/std_hash.hpp
 include/fcppt/variant/to_optional.hpp
 include/fcppt/variant/to_optional_ref.hpp
 include/fcppt/variant/type_info.hpp
@@ -2111,13 +2113,13 @@ lib/cmake/fcppt/fcppt-config.cmake
 lib/cmake/fcppt/fcpptTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/fcppt/fcpptTargets.cmake
 lib/libfcppt_core.so
-lib/libfcppt_core.so.4.5
+lib/libfcppt_core.so.4.6
 lib/libfcppt_filesystem.so
-lib/libfcppt_filesystem.so.4.5
+lib/libfcppt_filesystem.so.4.6
 lib/libfcppt_log.so
-lib/libfcppt_log.so.4.5
+lib/libfcppt_log.so.4.6
 lib/libfcppt_options.so
-lib/libfcppt_options.so.4.5
+lib/libfcppt_options.so.4.6
 %%DATADIR%%/cmake/FcpptCMakeUtils.cmake
 %%DATADIR%%/cmake/FcpptCMakeUtilsClangTidy.cmake
 %%DATADIR%%/cmake/FcpptCMakeUtilsFunctions.cmake

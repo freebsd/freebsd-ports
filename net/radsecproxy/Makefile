@@ -1,9 +1,9 @@
 PORTNAME=	radsecproxy
-DISTVERSION=	1.9.2
-PORTREVISION=	1
+DISTVERSION=	1.11.1
 CATEGORIES=	net
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/${DISTVERSION}/
 
+# implicit-approval+: pi
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Generic RADIUS proxy
 WWW=		https://radsecproxy.github.io
@@ -18,19 +18,12 @@ CPE_VENDOR=	uninett
 USE_RC_SUBR=	${PORTNAME}
 
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
 CONFIGURE_ARGS=	--with-ssl=${OPENSSLBASE}
-
-.include <bsd.port.pre.mk>
-
-.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400079 || ( ${OSVERSION} >= 1302505 && ${OSVERSION} < 1400000 ))
-CFLAGS+=       -Wno-error=strict-prototypes
-.endif
 
 post-install:
 	${MAKE} install-man -C ${WRKSRC} ${MAKE_ARGS}
 	${INSTALL_DATA} ${WRKSRC}/radsecproxy.conf-example \
-		${STAGEDIR}${PREFIX}/etc
+		${STAGEDIR}${PREFIX}/etc/radsecproxy.conf.sample
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

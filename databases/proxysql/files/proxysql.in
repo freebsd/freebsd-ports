@@ -33,15 +33,12 @@ load_rc_config $name
 : ${proxysql_args:=""}
 : ${proxysql_restart_delay:="10"}
 
-
+##### REMOVE daemon, allow proxysql to fork
 pidfile="/var/run/proxysql/proxysql.pid"
-command="/usr/sbin/daemon"
-proxysql_command="%%PREFIX%%/sbin/proxysql"
-command_args="-rP ${pidfile} -S -R ${proxysql_restart_delay} \
-    -T ${name} ${proxysql_command} \
-    -f -c ${proxysql_config} \
-    -D ${proxysql_datadir} \
-    --no-version-check ${proxysql_args}"
+command="%%PREFIX%%/sbin/proxysql"
+command_args="-c ${proxysql_config} \
+              -D ${proxysql_datadir} \
+              --no-version-check ${proxysql_args}"
 required_files="${proxysql_config}"
 extra_commands="reload initial"
 reload_cmd=proxysql_reload

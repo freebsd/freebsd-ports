@@ -26,8 +26,8 @@ UNALZ_OBJS=	main.o UnAlz.o UnAlzUtils.o UnAlzBz2decompress.o \
 
 .include <bsd.port.options.mk>
 
-.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400091 || ( ${OSVERSION} >= 1302507 && ${OSVERSION} < 1400000 ))
-CFLAGS+=  -Dregister=
+.if ${OPSYS} == FreeBSD
+CFLAGS+=	-Dregister=
 .endif
 
 post-patch:

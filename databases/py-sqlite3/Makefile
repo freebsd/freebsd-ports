@@ -1,6 +1,6 @@
 PORTNAME=	sqlite3
 DISTVERSION=	${PYTHON_DISTVERSION}
-PORTREVISION=	7
+PORTREVISION=	9
 CATEGORIES=	databases python
 MASTER_SITES=	PYTHON/ftp/python/${DISTVERSION}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,7 +17,7 @@ LIB_DEPENDS=	libsqlite3.so:databases/sqlite3
 
 PORTSCOUT=	ignore:1
 
-USES=		compiler:c11 python:2.7+ tar:xz
+USES=		compiler:c11 python tar:xz
 USE_PYTHON=	autoplist distutils allflavors
 
 DISTINFO_FILE=	${PORTSDIR}/lang/python${PYTHON_SUFFIX}/distinfo
@@ -30,11 +30,7 @@ TESTING_UNSAFE=	ModuleNotFoundError: No module named '_sqlite3'
 .include <bsd.port.pre.mk>
 
 post-extract:
-.if ${PYTHON_REL} < 30000
 	@${CP} ${FILESDIR}/setup.py ${WRKSRC}
-.else
-	@${CP} ${FILESDIR}/setup3.py ${WRKSRC}/setup.py
-.endif
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PYTHON_LIBDIR}/lib-dynload/_sqlite3*.so

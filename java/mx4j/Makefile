@@ -8,7 +8,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open Source implementation of the Java Management Extensions (JMX)
 WWW=		https://mx4j.sourceforge.net
 
-USE_JAVA=	yes
+USES=		java
+
 NO_BUILD=	yes
 
 JARFILES=	mx4j-examples.jar mx4j-impl.jar mx4j-jmx.jar \

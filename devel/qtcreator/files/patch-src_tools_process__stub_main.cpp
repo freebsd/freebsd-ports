@@ -1,4 +1,4 @@
---- src/tools/process_stub/main.cpp.orig	2023-09-27 07:28:08 UTC
+--- src/tools/process_stub/main.cpp.orig	2024-11-27 10:00:23 UTC
 +++ src/tools/process_stub/main.cpp
 @@ -22,10 +22,9 @@
  #include <unistd.h>
@@ -19,16 +19,18 @@
 +#elif defined(Q_OS_FREEBSD)
 +    ptrace(PT_DETACH, inferiorId, 0, SIGSTOP);
 +    sendPid(inferiorId);
- #else
- 
+ #elif defined(Q_OS_LINUX)
      if (debugMode) {
-@@ -287,6 +289,9 @@ void setupUnixInferior()
+         qCInfo(log) << "Waiting for SIGTRAP from inferiors execve ...";
+@@ -287,6 +289,11 @@ void setupUnixInferior()
+             *shared_child_pid = getpid();
              // Suspend ourselves ...
              raise(SIGSTOP);
-         });
++        });
 +#elif defined(Q_OS_FREEBSD)
 +        // PT_TRACE_ME will stop execution of the child process as soon as execve is called.
-+        inferiorProcess.setChildProcessModifier([] { ptrace(PT_TRACE_ME, 0, 0, 0); });
- #else
++        inferiorProcess.setChildProcessModifier([] {
++            ptrace(PT_TRACE_ME, 0, 0, 0);
+         });
+ #elif defined(Q_OS_LINUX)
          // PTRACE_TRACEME will stop execution of the child process as soon as execve is called.
-         inferiorProcess.setChildProcessModifier([] {

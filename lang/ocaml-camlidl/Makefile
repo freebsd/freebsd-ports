@@ -1,12 +1,7 @@
 PORTNAME=	camlidl
-PORTVERSION=	1.05
-PORTREVISION=	3
+DISTVERSION=	1.12
 CATEGORIES=	lang
-MASTER_SITES=	http://caml.inria.fr/distrib/bazar-ocaml/
 PKGNAMEPREFIX=	ocaml-
-DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} \
-		${PORTNAME}-${PORTVERSION}.doc.html.tar.gz
-EXTRACT_ONLY=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	kennedy.greg@gmail.com
 COMMENT=	Stub code generator for using C/C++ libraries from OCaml
@@ -16,50 +11,42 @@ LICENSE=	LGPL20 LGPL21
 LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USE_OCAML=	yes
+USES=		gmake ocaml
+USE_GITHUB=	yes
+GH_ACCOUNT=	xavierleroy
+GH_TAGNAME=	${PORTNAME}${DISTVERSION:S/.//}
 
 MAKE_JOBS_UNSAFE=	yes
 
-DOCSDIR=	${PREFIX}/share/doc/ocaml/${PORTNAME}
+DOCSDIR=	${OCAML_DOCSDIR}/${PORTNAME}
 
-OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFINE=		DOCS
+DOCS_BUILD_DEPENDS=	hevea>=0:textproc/hevea
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400079 || ( ${OSVERSION} >= 1302505 && ${OSVERSION} < 1400000 ))
-CFLAGS+=	-Wno-error=int-conversion
+.if ${ARCH} == powerpc
+USE_BINUTILS=	yes
 .endif
 
-post-extract:
-	@${REINPLACE_CMD} -e "s,^\(OCAMLLIB=\).*,\1${STAGEDIR}${PREFIX}/lib/ocaml,g" \
-		-e "s,^\(BINDIR=\).*,\1${STAGEDIR}${PREFIX}/bin,g" \
-		-e "s,^CFLAGS=.*,#\&,g" \
-		-e "s,^\(CPP=\).*,\1/usr/bin/cpp,g" \
-		${WRKSRC}/config/Makefile.unix
-
-	@${REINPLACE_CMD} -e \
-		"/^install/,/^$$/s,\([ \t]*\)cp,\1${INSTALL_SCRIPT},g" \
-		-e 's,$$(OCAMLC),& -warn-error -a,' \
-		${WRKSRC}/compiler/Makefile
-
-	@${REINPLACE_CMD} -e \
-		"/^install/,/^$$/s,\([ \t]*\)cp,\1${INSTALL_DATA},g" \
-		${WRKSRC}/lib/Makefile ${WRKSRC}/runtime/Makefile.unix
-
+post-patch:
 	@${LN} -sf ${WRKSRC}/config/Makefile.unix ${WRKSRC}/config/Makefile
 
+do-build-DOCS-on:
+	cd ${WRKSRC}/doc && ${SETENVI} ${MAKE_ENV} ${MAKE_CMD} \
+		tools/transf tools/texquote2 ../docs/index.html
+	${RM} ${WRKSRC}/docs/main.haux ${WRKSRC}/docs/main.htoc
+
 pre-install:
-	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/ocaml/caml
+	@${MKDIR} ${STAGEDIR}${PREFIX}/${OCAML_LIBDIR}/caml \
+		${STAGEDIR}${PREFIX}/${OCAML_LIBDIR}/stublibs
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${GZCAT} ${_DISTDIR}/${PORTNAME}-${PORTVERSION}.doc.html.tar.gz \
-		| ${TAR} -C ${STAGEDIR}${DOCSDIR} -xf -
+	cd ${WRKSRC}/docs && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}/htmlman
 
-test:
+do-test:
 	@${ECHO_CMD} "Testing IDL library"
-	@${REINPLACE_CMD} -e "s,^\(CCPP=\).*,\1${CXX},g" \
-		${WRKSRC}/tests/Makefile
-	cd ${WRKSRC}/tests && ${SETENV} ${MAKE_ENV} ${MAKE} all
+	cd ${WRKSRC}/tests && ${SETENVI} ${MAKE_ENV} ${MAKE_CMD} all
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

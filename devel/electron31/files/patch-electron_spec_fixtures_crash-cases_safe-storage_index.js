@@ -1,6 +1,6 @@
---- electron/spec/fixtures/crash-cases/safe-storage/index.js.orig	2022-05-18 15:31:32 UTC
+--- electron/spec/fixtures/crash-cases/safe-storage/index.js.orig	2024-10-09 13:53:12 UTC
 +++ electron/spec/fixtures/crash-cases/safe-storage/index.js
-@@ -21,7 +21,7 @@ const { expect } = require('chai');
+@@ -22,7 +22,7 @@ const { expect } = require('chai');
    await app.whenReady();
    // isEncryptionAvailable() will always return false on CI due to a mocked
    // dbus as mentioned above.

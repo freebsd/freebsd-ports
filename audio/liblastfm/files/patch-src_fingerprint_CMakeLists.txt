@@ -1,0 +1,10 @@
+Include fftw3.h from math/fftw3. LIBFFTW3_INCLUDE_DIR is set in the port
+Makefile.
+
+--- src/fingerprint/CMakeLists.txt.orig	2024-11-24 17:34:23 UTC
++++ src/fingerprint/CMakeLists.txt
+@@ -1,3 +1,4 @@
++include_directories(${LIBFFTW3_INCLUDE_DIR})
+ include_directories(${CMAKE_CURRENT_LIST_DIR}/..)
+ include_directories(${CMAKE_CURRENT_BINARY_DIR}/..)
+ 

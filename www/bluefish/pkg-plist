@@ -89,15 +89,6 @@ share/applications/bluefish.desktop
 %%DATADIR%%/cssmin.py
 %%DATADIR%%/default_accelmap
 %%DATADIR%%/encodings
-%%DATADIR%%/jsbeautifier/__init__.py
-%%DATADIR%%/jsbeautifier/__version__.py
-%%DATADIR%%/jsbeautifier/unpackers/__init__.py
-%%DATADIR%%/jsbeautifier/unpackers/evalbased.py
-%%DATADIR%%/jsbeautifier/unpackers/javascriptobfuscator.py
-%%DATADIR%%/jsbeautifier/unpackers/myobfuscate.py
-%%DATADIR%%/jsbeautifier/unpackers/packer.py
-%%DATADIR%%/jsbeautifier/unpackers/urlencode.py
-%%DATADIR%%/jsbeautify
 %%DATADIR%%/jsmin.py
 %%DATADIR%%/json_prettyprint.py
 %%DATADIR%%/lorem-ipsum-generator

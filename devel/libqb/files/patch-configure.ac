@@ -1,0 +1,13 @@
+--- configure.ac.orig	2024-11-05 18:51:54 UTC
++++ configure.ac
+@@ -94,8 +94,8 @@ AC_CHECK_TOOLS([READELF], [eu-readelf readelf], [:])
+ AM_CONDITIONAL(HAVE_DOXYGEN, test -n "${DOXYGEN}")
+ AC_CHECK_TOOLS([NM], [eu-nm nm], [:])
+ AC_CHECK_TOOLS([READELF], [eu-readelf readelf], [:])
+-AM_PATH_PYTHON([2.6],, [:])
+-AM_CONDITIONAL([HAVE_PYTHON], [test "$PYTHON" != :])
++#AM_PATH_PYTHON([2.6],, [:])
++#AM_CONDITIONAL([HAVE_PYTHON], [test "$PYTHON" != :])
+ 
+ ## local helper functions
+ 

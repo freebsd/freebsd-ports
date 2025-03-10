@@ -1,6 +1,6 @@
---- chrome/browser/screen_ai/screen_ai_install_state.cc.orig	2024-07-31 14:19:23 UTC
+--- chrome/browser/screen_ai/screen_ai_install_state.cc.orig	2024-11-16 12:20:41 UTC
 +++ chrome/browser/screen_ai/screen_ai_install_state.cc
-@@ -17,7 +17,7 @@
+@@ -16,7 +16,7 @@
  #include "services/screen_ai/public/cpp/utilities.h"
  #include "ui/accessibility/accessibility_features.h"
  
@@ -9,7 +9,7 @@
  #include "base/cpu.h"
  #include "base/files/file_util.h"
  #endif
-@@ -27,7 +27,7 @@ const int kScreenAICleanUpDelayInDays = 30;
+@@ -26,7 +26,7 @@ const int kScreenAICleanUpDelayInDays = 30;
  const char kMinExpectedVersion[] = "124.2";
  
  bool IsDeviceCompatible() {

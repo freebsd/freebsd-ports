@@ -1,8 +1,8 @@
 #!/bin/sh
 
 # PROVIDE: cbsd_mq_api
-# REQUIRE: NETWORK
-# BEFORE:  DAEMON
+# REQUIRE: LOGIN FILESYSTEMS cbsdd
+# KEYWORD: shutdown
 
 . /etc/rc.subr
 

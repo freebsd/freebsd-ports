@@ -1,8 +1,12 @@
-TIMESTAMP = 1710492057
-SHA256 (WayfireWM-wayfire-plugins-extra-v0.8.1_GH0.tar.gz) = 22931376eebb93092828e2fb192facf097de4dc99c8766732f7cabc4e5175feb
-SIZE (WayfireWM-wayfire-plugins-extra-v0.8.1_GH0.tar.gz) = 51843
+TIMESTAMP = 1724488925
+SHA256 (WayfireWM-wayfire-plugins-extra-v0.9.0_GH0.tar.gz) = 5fd08387fb02ce541b7f9dfbeefbbef9cd19b2c88347517f40afab4da54b83bf
+SIZE (WayfireWM-wayfire-plugins-extra-v0.9.0_GH0.tar.gz) = 48580
 SHA256 (timgott-wayfire-shadows-de32395_GH0.tar.gz) = 2d6f0c4fc8524d2b4a926955d3f6856c090d08d37b8908979039e6e1291779c8
 SIZE (timgott-wayfire-shadows-de32395_GH0.tar.gz) = 11260
+SHA256 (soreau-pixdecor-d172e84_GH0.tar.gz) = ba938deac035e5f21e92d9f838b80b0539d6b8dc004f09f25cd400125376759c
+SIZE (soreau-pixdecor-d172e84_GH0.tar.gz) = 41145
+SHA256 (soreau-filters-5850fee_GH0.tar.gz) = 4a97738f07de6e3def04656226960090ebc2046ceb62c860a5cee94406da4188
+SIZE (soreau-filters-5850fee_GH0.tar.gz) = 6515
 SHA256 (focus-request-bc41d54.tar.bz2) = da114547ed0b3ccca593d44e4a01f6d86a45ff284e15610e8e465696e9446da9
 SIZE (focus-request-bc41d54.tar.bz2) = 1740
 SHA256 (windecor-f609ac0.tar.bz2) = 2b10209bb6e787af69b6115291330c37dfc8f1c39fb9f91a650cf3ad1c586c10

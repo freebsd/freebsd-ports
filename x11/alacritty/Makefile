@@ -1,6 +1,6 @@
 PORTNAME=	alacritty
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.13.2
+DISTVERSION=	0.15.0
 PORTREVISION=	2
 CATEGORIES=	x11 wayland
 
@@ -59,7 +59,6 @@ post-build-MANPAGES-on:
 	scdoc < ${WRKSRC}/extra/man/alacritty-bindings.5.scd > ${WRKSRC}/alacritty-bindings.5
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/alacritty
 	${INSTALL_DATA} ${WRKSRC}/extra/linux/Alacritty.desktop \
 		${STAGEDIR}${DESKTOPDIR}
 	${INSTALL_DATA} ${WRKSRC}/extra/logo/alacritty-term.svg \

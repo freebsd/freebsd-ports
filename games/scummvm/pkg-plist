@@ -3,7 +3,9 @@ share/applications/org.scummvm.scummvm.desktop
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/CONTRIBUTING.md
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/COPYING.Apache
 %%PORTDOCS%%%%DOCSDIR%%/COPYING.BSD
+%%PORTDOCS%%%%DOCSDIR%%/COPYING.BSL
 %%PORTDOCS%%%%DOCSDIR%%/COPYING.FREEFONT
 %%PORTDOCS%%%%DOCSDIR%%/COPYING.GLAD
 %%PORTDOCS%%%%DOCSDIR%%/COPYING.ISC
@@ -11,6 +13,7 @@ share/applications/org.scummvm.scummvm.desktop
 %%PORTDOCS%%%%DOCSDIR%%/COPYING.LUA
 %%PORTDOCS%%%%DOCSDIR%%/COPYING.MIT
 %%PORTDOCS%%%%DOCSDIR%%/COPYING.MKV
+%%PORTDOCS%%%%DOCSDIR%%/COPYING.MPL
 %%PORTDOCS%%%%DOCSDIR%%/COPYING.OFL
 %%PORTDOCS%%%%DOCSDIR%%/COPYING.TINYGL
 %%PORTDOCS%%%%DOCSDIR%%/COPYRIGHT
@@ -25,6 +28,7 @@ share/pixmaps/org.scummvm.scummvm.xpm
 %%XENGINES%%%%DATADIR%%/Roland_SC-55.sf2
 %%DATADIR%%/access.dat
 %%DATADIR%%/achievements.dat
+%%DATADIR%%/bagel.dat
 %%DATADIR%%/classicmacfonts.dat
 %%XENGINES%%%%DATADIR%%/cryo.dat
 %%DATADIR%%/cryomni3d.dat

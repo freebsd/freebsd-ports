@@ -1,0 +1,14 @@
+--- configure.ac.orig	2024-12-26 07:15:43 UTC
++++ configure.ac
+@@ -23,9 +23,9 @@ m4_define([last_git_commit], patsubst(m4_esyscmd([git 
+ 
+ dnl PACKAGE_VERSION will be either "" if not using git, or date of the last git commit in the form YYYYMMDD
+ m4_define([last_git_commit], patsubst(m4_esyscmd([git log -n 1 --date=short --format=format:%cd]), [[^0-9]]))
+-AC_INIT([schismtracker],[last_git_commit])
++AC_INIT([schismtracker],[%%LAST_GIT_COMMIT%%])
+ 
+-last_commit_date="last_git_commit"
++last_commit_date="%%LAST_GIT_COMMIT%%"
+ 
+ AC_CONFIG_SRCDIR([schism/main.c])
+ 

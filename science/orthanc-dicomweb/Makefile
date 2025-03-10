@@ -1,6 +1,6 @@
 PORTNAME=	orthanc-dicomweb
 DISTVERSION=	1.8
-PORTREVISION=	9
+PORTREVISION=	13
 CATEGORIES=	science
 MASTER_SITES=	https://www.orthanc-server.com/downloads/get.php?path=/plugin-dicom-web/:main \
 		https://www.orthanc-server.com/downloads/get.php?path=/orthanc/:framework \
@@ -25,6 +25,8 @@ WWW=		https://www.orthanc-server.com/static.php?page=dicomweb
 
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
+
+BROKEN=		fails to build with boost-1.86+
 
 BUILD_DEPENDS=	${LOCALBASE}/include/orthanc/OrthancCPlugin.h:science/orthanc
 LIB_DEPENDS=	libboost_atomic.so:devel/boost-libs \

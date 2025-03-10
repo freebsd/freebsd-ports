@@ -1,0 +1,24 @@
+Lexbor's core requirements rose from the ashes of these challenges:
+* Portability
+Lexbor aims to adapt to different platforms and integrate into various
+programming languages. It's not yet another library full of quirks and
+idiosyncrasies; Lexbor aims to offer developers flexibility to incorporate it
+into their work directly, regardless of the programming language they chose.
+* Modularity
+Lexbor wants to keep things simple: Developers should be able to use only the
+parts they need. Whether it's an HTML or URL parser, the engine's code should be
+straightforward and easy to navigate, promoting rapid development.
+* Speed
+In a nutshell, Lexbor wants things to happen real fast. It's not just about
+making a browser engine; it's about making sure that everything, even the most
+resource-intensive tasks such as HTML parsing, occur swiftly to meet the
+real-time demands of modern web applications.
+* Independence
+Lexbor empowers developers by giving them full control over algorithms,
+resources, and dimensions. By eliminating on external dependencies, we let
+developers customize the engine without sacrificing performance or features.
+* Compliance
+Lexbor commits to industry standards. Developers need to be sure that
+the code aligns with widely established specifications. The output of Lexbor's
+modules, be it HTML, CSS, URLs, or others, should match that of modern browsers,
+meeting industry specifications.

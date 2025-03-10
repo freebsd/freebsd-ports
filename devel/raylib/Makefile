@@ -1,5 +1,5 @@
 PORTNAME=	raylib
-DISTVERSION=	5.0
+DISTVERSION=	5.5
 CATEGORIES=	devel education
 
 MAINTAINER=	freebsd@sysctl.cz

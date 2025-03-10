@@ -1,0 +1,3 @@
+Ppx_deriving is an OCaml library to simplify the generation of code
+for user defined types. It includes several plugins such as show, eq,
+ord, enum, iter, map, fold, make, yojson and protobuf.

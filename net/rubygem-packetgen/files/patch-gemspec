@@ -1,0 +1,14 @@
+Obtained from:	https://github.com/lemontree55/packetgen/commit/184e0f53d7616f10bda65248f23e75894d408eb2
+		https://github.com/lemontree55/packetgen/commit/2ac14a3af47953efa51f23e69f9e9710798963ae
+
+--- packetgen.gemspec.orig	2025-02-19 17:26:48 UTC
++++ packetgen.gemspec
+@@ -23,7 +23,7 @@ Gem::Specification.new do |s|
+ 
+   s.specification_version = 4
+ 
+-  s.add_runtime_dependency(%q<bin_struct>.freeze, ["~> 0.3.0".freeze])
++  s.add_runtime_dependency(%q<bin_struct>.freeze, ["~> 0.5.0".freeze])
+   s.add_runtime_dependency(%q<digest-crc>.freeze, ["~> 0".freeze])
+   s.add_runtime_dependency(%q<interfacez>.freeze, ["~> 1.0".freeze])
+   s.add_runtime_dependency(%q<pcaprub>.freeze, ["~> 0.13.0".freeze])

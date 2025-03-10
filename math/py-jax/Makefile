@@ -1,12 +1,13 @@
 PORTNAME=	jax
-PORTVERSION=	0.4.31
+PORTVERSION=	0.4.38
 CATEGORIES=	math python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Differentiate, compile, and transform Numpy code
-WWW=		https://github.com/google/jax
+WWW=		https://jax.readthedocs.io/en/latest/ \
+		https://github.com/jax-ml/jax
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

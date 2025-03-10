@@ -1,6 +1,6 @@
 PORTNAME=	vouch-proxy
 DISTVERSIONPREFIX=v
-DISTVERSION=	0.40.0
+DISTVERSION=	0.41.0
 PORTREVISION=	4
 CATEGORIES=	security
 
@@ -11,7 +11,7 @@ WWW=		https://github.com/vouch/vouch-proxy
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:modules,1.22
+USES=		go:modules,1.23
 
 USE_RC_SUBR=	${PORTNAME}
 

@@ -12,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-erubi>=1.8<2:www/rubygem-erubi \
 		rubygem-winrm>=2.0<3:sysutils/rubygem-winrm \
-		rubygem-winrm-fs>=1.0<2:sysutils/rubygem-winrm-fs
+		rubygem-winrm-fs>=1.0<2:filesystems/rubygem-winrm-fs
 
 USES=		gem
 

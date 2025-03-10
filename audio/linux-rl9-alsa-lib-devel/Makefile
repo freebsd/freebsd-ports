@@ -1,6 +1,6 @@
 PORTNAME=	alsa-lib
-PORTVERSION=	1.2.10
-DISTVERSIONSUFFIX=	-2.el9
+PORTVERSION=	1.2.12
+DISTVERSIONSUFFIX=	-1.el9
 CATEGORIES=	audio linux
 PKGNAMESUFFIX=	-devel
 
@@ -13,14 +13,13 @@ LICENSE=	LGPL21+
 USES=		linux:rl9
 USE_LINUX=	alsalib
 USE_LINUX_RPM=	yes
+WANT_LINUX32=	yes
 
 LIB_DISTNAMES=	${PORTNAME}${PKGNAMESUFFIX}-${DISTVERSIONFULL}
 
 DOCSDIR=	${PREFIX}/usr/share/doc/${PORTNAME}${PKGNAMESUFFIX}
-DESCR=		${.CURDIR}/../${PORTNAME}/pkg-descr
+DESCR=		${PORTSDIR}/${PKGCATEGORY}/${PORTNAME}/pkg-descr
 
-post-install:
-	${RM} -r ${STAGEDIR}${PREFIX}/usr/include \
-		${STAGEDIR}${PREFIX}/usr/share/doc
+#OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.mk>

@@ -1,7 +1,7 @@
---- chrome/browser/ui/views/frame/browser_frame.cc.orig	2024-02-25 20:22:18 UTC
+--- chrome/browser/ui/views/frame/browser_frame.cc.orig	2025-02-20 09:59:21 UTC
 +++ chrome/browser/ui/views/frame/browser_frame.cc
-@@ -54,7 +54,7 @@
- #include "components/user_manager/user_manager.h"
+@@ -52,7 +52,7 @@
+ #include "ui/aura/window.h"
  #endif
  
 -#if BUILDFLAG(IS_LINUX)
@@ -9,7 +9,7 @@
  #include "ui/display/screen.h"
  #include "ui/linux/linux_ui.h"
  #endif
-@@ -89,7 +89,7 @@ class ThemeChangedObserver : public views::WidgetObser
+@@ -87,7 +87,7 @@ class ThemeChangedObserver : public views::WidgetObser
  };
  
  bool IsUsingLinuxSystemTheme(Profile* profile) {
@@ -18,7 +18,7 @@
    return ThemeServiceFactory::GetForProfile(profile)->UsingSystemTheme();
  #else
    return false;
-@@ -184,7 +184,7 @@ void BrowserFrame::InitBrowserFrame() {
+@@ -182,7 +182,7 @@ void BrowserFrame::InitBrowserFrame() {
  
    Init(std::move(params));
  
@@ -27,7 +27,7 @@
    SelectNativeTheme();
  #else
    SetNativeTheme(ui::NativeTheme::GetInstanceForNativeUi());
-@@ -370,7 +370,7 @@ void BrowserFrame::OnNativeWidgetWorkspaceChanged() {
+@@ -369,7 +369,7 @@ void BrowserFrame::OnNativeWidgetWorkspaceChanged() {
    chrome::SaveWindowWorkspace(browser_view_->browser(), GetWorkspace());
    chrome::SaveWindowVisibleOnAllWorkspaces(browser_view_->browser(),
                                             IsVisibleOnAllWorkspaces());
@@ -36,7 +36,7 @@
    // If the window was sent to a different workspace, prioritize it if
    // it was sent to the current workspace and deprioritize it
    // otherwise.  This is done by MoveBrowsersInWorkspaceToFront()
-@@ -563,7 +563,7 @@ void BrowserFrame::OnMenuClosed() {
+@@ -567,7 +567,7 @@ void BrowserFrame::OnMenuClosed() {
  }
  
  void BrowserFrame::SelectNativeTheme() {
@@ -45,7 +45,7 @@
    // Use the regular NativeTheme instance if running incognito mode, regardless
    // of system theme (gtk, qt etc).
    ui::NativeTheme* native_theme = ui::NativeTheme::GetInstanceForNativeUi();
-@@ -604,7 +604,7 @@ void BrowserFrame::OnTouchUiChanged() {
+@@ -608,7 +608,7 @@ void BrowserFrame::OnTouchUiChanged() {
  bool BrowserFrame::RegenerateFrameOnThemeChange(
      BrowserThemeChangeType theme_change_type) {
    bool need_regenerate = false;

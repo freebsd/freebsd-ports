@@ -1,7 +1,7 @@
 PORTNAME=	xh
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.22.0
-PORTREVISION=	1
+PORTREVISION=	7
 CATEGORIES=	www
 
 MAINTAINER=	lcook@FreeBSD.org
@@ -17,6 +17,8 @@ USES=		cargo ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	ducaale
 
+RUSTFLAGS=	${ARCH:S/i386/YES/:C/^[a-z].*//:S/YES/-C target-feature=+sse,+sse2/} # add sse sse2 target-features only on i386
+
 PLIST_FILES=	bin/${PORTNAME}
 PORTDOCS=	CHANGELOG.md README.md
 
@@ -29,9 +31,6 @@ COMPLETIONS_PLIST_FILES=	share/bash-completion/completions/${PORTNAME} \
 				share/fish/vendor_completions.d/${PORTNAME}.fish \
 				share/zsh/site-functions/_${PORTNAME}
 MANPAGES_PLIST_FILES=		share/man/man1/${PORTNAME}.1.gz
-
-post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 post-install-COMPLETIONS-on:
 	@${MV} ${WRKSRC}/completions/_${PORTNAME} ${WRKSRC}/completions/${PORTNAME}.zsh

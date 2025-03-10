@@ -1,6 +1,6 @@
 PORTNAME=	lightdm-gtk-greeter-settings
 PORTVERSION=	1.2.2
-PORTREVISION=	1
+PORTREVISION=	4
 CATEGORIES=	x11
 MASTER_SITES=	https://launchpad.net/${PORTNAME}/${PORTVERSION:R}/${PORTVERSION}/+download/
 
@@ -28,6 +28,7 @@ post-patch:
 		-e "s,%%LOCALBASE%%,${LOCALBASE},g" \
 		${WRKSRC}/bin/lightdm-gtk-greeter-settings-pkexec \
 		${WRKSRC}/lightdm_gtk_greeter_settings/helpers.py \
+		${WRKSRC}/com.ubuntu.pkexec.lightdm-gtk-greeter-settings.policy.in \
 		${WRKSRC}/setup.py
 	@${RM} -v ${WRKSRC}/bin/lightdm-gtk-greeter-settings-pkexec.bak
 	@${RM} -v ${WRKSRC}/bin/lightdm-gtk-greeter-settings-pkexec.orig

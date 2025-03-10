@@ -1,13 +1,15 @@
 PORTNAME=	ppxlib
-PORTVERSION=	0.32.0
+DISTVERSION=	0.33.0
+PORTREVISION=	1
 CATEGORIES=	devel
 PKGNAMEPREFIX=	ocaml-
 
 MAINTAINER=	freebsd@dev.thsi.be
 COMMENT=	Library to write PPX syntax extension for OCaml
-WWW=		https://github.com/ocaml-ppx/ppxlib
+WWW=		https://github.com/ocaml-ppx/ppxlib/
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 BUILD_DEPENDS=	${SA_DIR}/ocaml-compiler-libs/META:devel/ocaml-compiler-libs \
 		${SA_DIR}/ppx_derivers/META:devel/ocaml-ppx_derivers \
@@ -16,18 +18,23 @@ RUN_DEPENDS=	${SA_DIR}/ocaml-compiler-libs/META:devel/ocaml-compiler-libs \
 		${SA_DIR}/ppx_derivers/META:devel/ocaml-ppx_derivers \
 		${SA_DIR}/sexplib0/META:devel/ocaml-sexplib0
 
-USES=			ocaml:dune
-USE_GITHUB=		yes
-GH_ACCOUNT=		ocaml-ppx
-USE_OCAML=		yes
-DUNE_INSTALL_TARGETS=	${PORTNAME}
+USES=		ocaml:dune
+USE_GITHUB=	yes
+GH_ACCOUNT=	ocaml-ppx
 
 DOCSDIR=	${OCAML_DOCSDIR}/${PORTNAME}
-PORTDOCS=	CHANGES.md LICENSE.md HISTORY.md README.md odoc-pages
+PORTDOCS=	CHANGES.md HISTORY.md LICENSE.md README.md odoc-pages
 
 OPTIONS_DEFINE=	DOCS
 
-SA_DIR=		${LOCALBASE}/${OCAML_SITELIBDIR}
+DUNE_INSTALL_TARGETS=	${PORTNAME}
+SA_DIR=			${LOCALBASE}/${OCAML_SITELIBDIR}
+
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == powerpc
+USE_BINUTILS=	yes
+.endif
 
 post-patch:
 	@(cd ${WRKSRC}; \

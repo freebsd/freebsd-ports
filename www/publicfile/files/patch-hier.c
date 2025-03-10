@@ -1,6 +1,6 @@
---- hier.c.orig	Tue Apr 20 11:26:00 2004
-+++ hier.c	Tue Apr 20 11:26:06 2004
-@@ -2,9 +2,9 @@
+--- hier.c.orig	1999-11-09 07:23:46 UTC
++++ hier.c
+@@ -2,9 +2,9 @@ void hier()
  
  void hier()
  {

@@ -1,7 +1,6 @@
 PORTNAME=	cemu
-PORTVERSION=	1.3
+PORTVERSION=	2.0
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
 CATEGORIES=	emulators
 
 MAINTAINER=	danfe@FreeBSD.org
@@ -20,7 +19,8 @@ USE_QT=		buildtools:build core gui network widgets
 USE_GITHUB=	yes
 GH_ACCOUNT=	CE-Programming
 GH_PROJECT=	CEmu
-GH_TUPLE=	CE-Programming:zdis:7eb89e5:zdis/core/debug/zdis
+GH_TUPLE=	CE-Programming:zdis:7eb89e5:zdis/core/debug/zdis \
+		adriweb:tivars_lib_cpp:f627164:tvlc/gui/qt/tivars_lib_cpp
 
 QMAKE_SOURCE_PATH=	gui/qt/CEmu.pro
 _ICON_PREFIX=	${PREFIX}/share/icons/hicolor

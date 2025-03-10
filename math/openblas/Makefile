@@ -1,12 +1,16 @@
 PORTNAME=	openblas
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.3.27
+DISTVERSION=	0.3.29
+PORTREVISION=	1
 PORTEPOCH=	2
 CATEGORIES=	math
 MASTER_SITES=	NL/lapack/timing/:lapack_tmg
 DISTFILES=	large.tgz:lapack_tmg \
 		timing.tgz:lapack_tmg
 DIST_SUBDIR=	openblas
+
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES=	e8b11a126bbbcabdfa0ca06bbf4dcca44b8e650f.patch:-p1
 
 MAINTAINER=	phd_kimberlite@yahoo.co.jp
 COMMENT=	Optimized BLAS library based on GotoBLAS2
@@ -20,7 +24,6 @@ USES=		compiler:c11 cpe fortran gmake perl5 pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	OpenMathLib
 GH_PROJECT=	OpenBLAS
-GH_TAGNAME=	ce3f668
 LARGE_FILE=	large.tgz
 TIMING_FILE=	timing.tgz
 CPE_VENDOR=	openblas_project
@@ -81,6 +84,7 @@ TARGET_CPU_ARCH=	PPCG4
 .endif
 
 .if ${ARCH} == powerpc64le
+CFLAGS+=		-lm
 USE_GCC=		yes
 .endif
 
@@ -140,7 +144,11 @@ benchmark: build
 	cd ${WRKSRC} ; ${SETENV} ${MAKE_CMD} ${MAKE_ARGS} hpl
 	cd ${WRKSRC}/benchmark ; ${SETENV} ${BENCHMARK_THREADS_FLAG} ${MAKE_CMD} ${MAKE_ARGS}
 
+post-install-DYNAMIC_ARCH-on:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libopenblasp-r${PORTVERSION}.so
+
 post-install-DYNAMIC_ARCH-off:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libopenblas_*p-r${PORTVERSION}.so
 	cd ${STAGEDIR}${PREFIX} && ls lib/libopenblas_*p-r${PORTVERSION}.* >> ${TMPPLIST}
 
 .include <bsd.port.post.mk>

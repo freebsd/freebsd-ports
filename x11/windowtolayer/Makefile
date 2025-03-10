@@ -1,6 +1,7 @@
 PORTNAME=	windowtolayer
-PORTVERSION=	s20240320
-PORTREVISION=	2
+DISTVERSIONPREFIX=	v
+PORTVERSION=	0.2.0
+PORTREVISION=	1
 CATEGORIES=	x11 wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -10,14 +11,11 @@ WWW=		https://gitlab.freedesktop.org/mstoeckl/windowtolayer
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		cargo
+USES=		cargo python:build
 USE_GITLAB=	yes
 GL_SITE=	https://gitlab.freedesktop.org
 GL_ACCOUNT=	mstoeckl
-GL_TAGNAME=	a5b89c3
+BINARY_ALIAS=	python3=${PYTHON_CMD}
 PLIST_FILES=	bin/${PORTNAME}
-
-post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>

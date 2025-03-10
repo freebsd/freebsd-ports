@@ -1,6 +1,6 @@
 PORTNAME=	quilter
-DISTVERSION=	2.2.3
-PORTREVISION=	6
+DISTVERSION=	3.3.4
+PORTREVISION=	1
 CATEGORIES=	editors
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -14,14 +14,13 @@ BUILD_DEPENDS=	discount>0:textproc/discount
 LIB_DEPENDS=	libgee-0.8.so:devel/libgee \
 		libgranite.so:x11-toolkits/granite \
 		libgtkspell3-3.so:textproc/gtkspell3 \
-		libwebkit2gtk-4.0.so:www/webkit2-gtk3
+		libwebkit2gtk-4.0.so:www/webkit2-gtk@40 \
+		libhandy-1.so:x11-toolkits/libhandy
 
 USES=		compiler:c11 desktop-file-utils gettext gnome meson pkgconfig python:build vala:build
 USE_GITHUB=	yes
 GH_ACCOUNT=	lainsce
-USE_GNOME=	glib20 gtk30 gtksourceview3
-
-GLIB_SCHEMAS=	com.github.lainsce.quilter.gschema.xml
+USE_GNOME=	glib20 gtk30 gtksourceview4
 
 LDFLAGS+=	${LOCALBASE}/lib/libmarkdown.a
 

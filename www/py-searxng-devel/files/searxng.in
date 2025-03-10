@@ -1,0 +1,46 @@
+#!/bin/sh
+
+# PROVIDE: searxng
+# REQUIRE: DAEMON NETWORKING
+# BEFORE: LOGIN
+# KEYWORD: shutdown
+#
+# Configuration settings for searxng in /etc/rc.conf
+#
+# searxng_enable (bool):        Enable searxng. (Default=NO)
+# searxng_user (str):           User to run searxng as. (Default=www)
+# searxng_group (str):          Group to run searxng as. (Default=www)
+# searxng_env (str):            Environment variables.
+#                               (Default=SEARXNG_SETTINGS_PATH="%%PREFIX%%/etc/searxng.yml")
+# searxng_log (str):            Log file used to store the searxng's output.
+#                               (Default=/var/log/searxng.log)
+
+. /etc/rc.subr
+
+name="searxng"
+rcvar=searxng_enable
+
+: ${searxng_enable:="NO"}
+: ${searxng_user:="www"}
+: ${searxng_group:="www"}
+: ${searxng_env:="SEARXNG_SETTINGS_PATH=\"%%PREFIX%%/etc/searxng.yml\""}
+: ${searxng_log:="/var/log/searxng.log"}
+
+# daemon
+pidfile="/var/run/${name}.pid"
+command=/usr/sbin/daemon
+procname="daemon"
+command_args=" -c -o ${searxng_log} -P ${pidfile} %%PYTHON_CMD%% %%PREFIX%%/bin/searxng-run"
+start_precmd="searxng_precmd"
+
+searxng_precmd()
+{
+	install -o ${searxng_user} /dev/null ${pidfile}
+
+	if [ ! -f "${searxng_log}" ]; then
+		install -o ${searxng_user} -m 640 /dev/null "${searxng_log}"
+	fi
+}
+
+load_rc_config $name
+run_rc_command "$1"

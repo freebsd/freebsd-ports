@@ -13,8 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE_GPLv3
 BUILD_DEPENDS=	bash:shells/bash
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}edalize>0:cad/py-edalize@${PY_FLAVOR} # examples also require xtclsh from Xilinx
 
-USES=		cmake:noninja python shebangfix
-USE_JAVA=	yes
+USES=		cmake:noninja java python shebangfix
 
 JAVA_VERSION=	17
 

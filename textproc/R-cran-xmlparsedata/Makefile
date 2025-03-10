@@ -4,7 +4,7 @@ PORTREVISION=	1
 CATEGORIES=	textproc
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
-MAINTAINER=	ygy@FreeBSD.org
+MAINTAINER=	uzsolt@FreeBSD.org
 COMMENT=	Parse Data of 'R' Code as an 'XML' Tree
 WWW=		https://github.com/r-lib/xmlparsedata #readme
 

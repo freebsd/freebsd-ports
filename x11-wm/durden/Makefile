@@ -3,7 +3,7 @@ DISTVERSION=	0.6.1
 PORTREVISION=	1
 CATEGORIES=	x11-wm
 
-MAINTAINER=	jbeich@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Desktop Environment for Arcan
 WWW=		https://durden.arcan-fe.com/
 

@@ -1,10 +1,10 @@
 PORTNAME=	clblas
-PORTVERSION=	2.10
+PORTVERSION=	2.12
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
-PORTREVISION=	15
 CATEGORIES=	math
 
-MAINTAINER=	jmd@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Software library containing BLAS functions written in OpenCL
 WWW=		https://github.com/clMathLibraries/clBLAS
 

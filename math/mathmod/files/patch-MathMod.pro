@@ -1,6 +1,6 @@
---- MathMod.pro.orig	2021-03-08 16:59:36 UTC
+--- MathMod.pro.orig	2025-01-08 20:23:35 UTC
 +++ MathMod.pro
-@@ -64,10 +64,10 @@ OTHER_FILES     += \
+@@ -63,7 +63,7 @@ OTHER_FILES     += \
                  mathmodcollection.js \
                  mathmodconfig.js
  # install
@@ -10,6 +10,3 @@
  sources.path   = $TARGET
 -INSTALLS      += target sources
 +INSTALLS      += target
- 
- DISTFILES += \
-     advancedmodels.js

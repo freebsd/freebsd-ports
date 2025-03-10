@@ -1,0 +1,23 @@
+# Create sink and source for the default device
+# See also %%LOCALBASE%%/etc/asound.conf
+
+context.objects = [
+    { factory = adapter
+       args = {
+           factory.name           = api.alsa.pcm.sink
+           node.name              = "alsa-sink"
+           node.description       = "ALSA plugins (OSS by default)"
+           media.class            = "Audio/Sink"
+           api.alsa.path          = "pcm.default"
+       }
+    }
+    { factory = adapter
+       args = {
+           factory.name           = api.alsa.pcm.source
+           node.name              = "alsa-source"
+           node.description       = "ALSA plugins (OSS by default)"
+           media.class            = "Audio/Source"
+           api.alsa.path          = "pcm.default"
+       }
+    }
+]

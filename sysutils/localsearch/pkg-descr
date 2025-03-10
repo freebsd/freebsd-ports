@@ -1,0 +1,8 @@
+Tracker is a semantic data storage for desktop and mobile devices.
+Tracker uses W3C standards for RDF ontologies using Nepomuk with SPARQL to query
+and update the data.
+
+Tracker is a central repository of user information, that provides two big
+benefits for the user; shared data between applications and information which is
+relational to other information (for example: mixing contacts with files,
+locations, activities and etc.).

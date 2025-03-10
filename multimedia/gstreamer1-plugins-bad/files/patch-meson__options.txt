@@ -1,16 +1,20 @@
---- meson_options.txt.orig	2023-01-23 19:29:34 UTC
+--- meson_options.txt.orig	2024-08-21 11:25:15 UTC
 +++ meson_options.txt
-@@ -1,5 +1,41 @@ option('gst_play_tests', type: 'boolean', value: false
+@@ -1,5 +1,47 @@ option('gst_play_tests', type: 'boolean', value: false
  option('gst_play_tests', type: 'boolean', value: false,
         description: 'Enable GstPlay tests that need network access')
 +option('adaptivedemux', type: 'feature', value: 'auto',
 +       description: 'adaptivedemux lib')
++option('analytics', type: 'feature', value: 'auto',
++       description: 'analytics lib')
 +option('audio', type: 'feature', value: 'auto',
 +       description: 'audio lib')
 +option('codecparsers', type: 'feature', value: 'auto',
 +       description: 'codecparsers lib')
 +option('codecs', type: 'feature', value: 'auto',
 +       description: 'codecs lib')
++option('dxva', type: 'feature', value: 'auto',
++       description: 'dxva lib')
 +option('basecamerabinsrc', type: 'feature', value: 'auto',
 +       description: 'basecamerabinsrc lib')
 +option('insertbin', type: 'feature', value: 'auto',
@@ -21,6 +25,8 @@
 +       description: 'isoff lib')
 +option('mpegts', type: 'feature', value: 'auto',
 +       description: 'mpegts lib')
++option('mse', type: 'feature', value: 'auto',
++       description: 'mse lib')
 +option('play', type: 'feature', value: 'auto',
 +       description: 'play lib')
 +option('player', type: 'feature', value: 'auto',

@@ -1,4 +1,4 @@
-share/man/man1/asdlgen.1.gz
+%%EVERYTHING%%share/man/man1/asdlgen.1.gz
 share/man/man1/heap2exec.1.gz
 share/man/man1/ml-antlr.1.gz
 share/man/man1/ml-build.1.gz
@@ -11,7 +11,7 @@ share/man/man1/ml-yacc.1.gz
 share/man/man1/sml.1.gz
 share/man/man7/smlnj.7.gz
 smlnj/bin/.arch-n-opsys
-smlnj/bin/.heap/asdlgen.%%MLARCH%%-bsd
+%%EVERYTHING%%smlnj/bin/.heap/asdlgen.%%MLARCH%%-bsd
 smlnj/bin/.heap/heap2asm.%%MLARCH%%-bsd
 smlnj/bin/.heap/ml-antlr.%%MLARCH%%-bsd
 smlnj/bin/.heap/ml-burg.%%MLARCH%%-bsd
@@ -26,7 +26,7 @@ smlnj/bin/.run/run.%%MLARCH%%-freebsd
 smlnj/bin/.run/run.%%MLARCH%%-freebsd.a
 %%RUNTIME_SO%%smlnj/bin/.run/run.%%MLARCH%%-freebsd.so
 smlnj/bin/.run-sml
-smlnj/bin/asdlgen
+%%EVERYTHING%%smlnj/bin/asdlgen
 smlnj/bin/heap2asm
 smlnj/bin/heap2exec
 smlnj/bin/ml-antlr
@@ -66,9 +66,9 @@ smlnj/lib/SMLNJ-MLRISC/.cm/%%MLARCH%%-unix/SPARC.cm
 smlnj/lib/SMLNJ-MLRISC/.cm/%%MLARCH%%-unix/StagedAlloc.cm
 smlnj/lib/SMLNJ-MLRISC/.cm/%%MLARCH%%-unix/Visual.cm
 %%EVERYTHING%%smlnj/lib/basis-2004.cm/.cm/%%MLARCH%%-unix/basis-2004.cm
-smlnj/lib/asdl-ext.cm/.cm/%%MLARCH%%-unix/asdl-ext.cm
-smlnj/lib/asdl-lib.cm/.cm/%%MLARCH%%-unix/asdl-lib.cm
-smlnj/lib/asdlgen-tool.cm/.cm/%%MLARCH%%-unix/asdlgen-tool.cm
+%%EVERYTHING%%smlnj/lib/asdl-ext.cm/.cm/%%MLARCH%%-unix/asdl-ext.cm
+%%EVERYTHING%%smlnj/lib/asdl-lib.cm/.cm/%%MLARCH%%-unix/asdl-lib.cm
+%%EVERYTHING%%smlnj/lib/asdlgen-tool.cm/.cm/%%MLARCH%%-unix/asdlgen-tool.cm
 smlnj/lib/burg-ext.cm/.cm/%%MLARCH%%-unix/burg-ext.cm
 %%MLSIZE32%%smlnj/lib/c/.cm/%%MLARCH%%-unix/c.cm
 %%MLSIZE32%%smlnj/lib/c/internals/.cm/%%MLARCH%%-unix/c-int.cm

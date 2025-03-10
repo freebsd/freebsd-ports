@@ -1,0 +1,7 @@
+[
+{ type: install
+  message: <<EOM
+You need at least one font installed on your system or you will see a blank window.
+EOM
+}
+]

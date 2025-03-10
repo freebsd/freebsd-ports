@@ -1,5 +1,6 @@
 PORTNAME=	lzma
 PORTVERSION=	0.5.0
+PORTREVISION=	1
 CATEGORIES=	archivers python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -33,8 +34,8 @@ post-install:
 
 .include <bsd.port.pre.mk>
 
-.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400079 || ( ${OSVERSION} >= 1302505 && ${OSVERSION} < 1400000 ))
-CFLAGS+=       -Wno-error=int-conversion
+.if ${OPSYS} == FreeBSD
+CFLAGS+=	-Wno-error=int-conversion
 .endif
 
 .include <bsd.port.post.mk>

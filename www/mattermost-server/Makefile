@@ -1,5 +1,6 @@
 PORTNAME=	mattermost
-PORTVERSION=	9.5.7
+PORTVERSION=	9.11.8
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	LOCAL/decke
 PKGNAMESUFFIX=	-server
@@ -20,7 +21,7 @@ RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss \
 USES=		go:1.22,modules tar:xz
 USE_RC_SUBR=	mattermostd
 
-GO_TARGET=	./cmd/mattermost ./scripts/config_generator
+GO_TARGET=	./cmd/mattermost ./cmd/mmctl ./scripts/config_generator
 GO_BUILDFLAGS=	-ldflags=" \
 		-X github.com/mattermost/mattermost/server/public/model.BuildNumber=${PORTVERSION} \
 		-X github.com/mattermost/mattermost/server/public/model.BuildHashEnterprise=none \

@@ -1,8 +1,8 @@
 PORTNAME=	dillo
-PORTVERSION=	3.1.0
+DISTVERSION=	3.2.0
 PORTREVISION=	1
 CATEGORIES=	www
-MASTER_SITES=	https://github.com/dillo-browser/dillo/releases/download/v3.1.0/ \
+MASTER_SITES=	https://github.com/dillo-browser/dillo/releases/download/v${DISTVERSION}/ \
 		LOCAL/bf/dillo/ \
 		TEX/language/hyph-utf8/tex/generic/hyph-utf8/patterns/txt/:hyphen
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
@@ -20,7 +20,8 @@ LIB_DEPENDS=	libfltk.so:x11-toolkits/fltk \
 		libfontconfig.so:x11-fonts/fontconfig
 RUN_DEPENDS=	wget:ftp/wget
 
-USES=		cpe gmake iconv pkgconfig tar:bzip2 xorg
+USES=		cpe desktop-file-utils gmake iconv:wchar_t pkgconfig \
+		tar:bzip2 xorg
 USE_XORG=	x11 xcursor xext xfixes xft xinerama xrender
 
 GNU_CONFIGURE=	yes
@@ -35,16 +36,13 @@ CFLAGS+=	-fcommon
 
 PORTDOCS=	*
 
-OPTIONS_DEFINE=		COOKIES DEBUG DOCS HYPHENATION IPV6 JPEG PNG SSL \
-			THREADS
-OPTIONS_DEFAULT=	COOKIES IPV6 JPEG PNG THREADS
+OPTIONS_DEFINE=		DEBUG DOCS HYPHENATION IPV6 JPEG PNG \
+			WEBP
+OPTIONS_DEFAULT=	DOCS IPV6 JPEG PNG WEBP
 
-COOKIES_DESC=		Cookie support
 HYPHENATION_DESC=	Hyphenation file(s) for HYPHENATION_LANGS
 
 DEBUG_CONFIGURE_ENABLE=	gprof rtfl
-
-COOKIES_CONFIGURE_ENABLE=	cookies
 
 IPV6_CONFIGURE_ENABLE=	ipv6
 
@@ -54,7 +52,8 @@ JPEG_USES=		jpeg localbase
 PNG_CONFIGURE_ENABLE=	png
 PNG_LIB_DEPENDS=	libpng.so:graphics/png
 
-THREADS_CONFIGURE_ENABLE=	threaded-dns
+WEBP_CONFIGURE_ENABLE=	webp
+WEBP_LIB_DEPENDS=	libwebp.so:graphics/webp
 
 .include <bsd.port.pre.mk>
 
@@ -96,10 +95,6 @@ post-patch:
 		${WRKSRC}/dillo-install-hyphenation \
 		${WRKSRC}/doc/dillo.1.in \
 		${WRKSRC}/dpid/dpid.c
-
-post-patch-DOCS-on:
-	@${REINPLACE_CMD} -e "\|install-data-am:|s|install-dist_docDATA||" \
-		${WRKSRC}/doc/Makefile.in
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/libexec/dillo/hyphenation

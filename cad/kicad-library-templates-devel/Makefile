@@ -7,7 +7,7 @@ PKGNAMESUFFIX=	-library-tmpl-devel
 DISTNAME=	${PORTNAME}-templates-${GL_TAGNAME}
 
 MAINTAINER=	mr@FreeBSD.org
-COMMENT=	Official KiCad project templates
+COMMENT=	Official KiCad project templates (Git snapshot)
 WWW=		https://github.com/KiCad/kicad-templates
 
 LICENSE=	GPLv2

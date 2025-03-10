@@ -1,5 +1,5 @@
 PORTNAME=	mpop
-DISTVERSION=	1.4.20
+DISTVERSION=	1.4.21
 CATEGORIES=	mail
 MASTER_SITES=	https://marlam.de/mpop/releases/
 
@@ -48,7 +48,7 @@ OPENSSL_CONFIGURE_ENV=		${OPENSSLINC:M/usr/include:C,.+,libssl_CFLAGS=" ",} \
 post-patch:
 	@${REINPLACE_CMD} -E -e 's,/etc/ssl/certs,${LOCALBASE}/share/certs,' \
 		-e '/crt/s/ca(\\?)-certificates/ca\1-root\1-nss/' \
-		${WRKSRC}/doc/mpop*
+		${WRKSRC}/doc/mpop.*
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}

@@ -11,22 +11,16 @@ LICENSE=	LGPL21
 LIB_DEPENDS=	libical.so:devel/libical \
 		libsasl2.so:security/cyrus-sasl2
 
-CONFLICTS_BUILD=	kdepim-runtime-18.0[04]* \
-			kdepim-runtime-17.*
-
-USES=		cmake compiler:c++11-lib gettext kde:5 qt:5 tar:xz
+USES=		cmake compiler:c++11-lib gettext kde:6 qt:6 tar:xz
 USE_KDE=	auth bookmarks codecs completion config configwidgets \
-		coreaddons crash emoticons guiaddons i18n iconthemes init \
-		itemmodels itemviews jobwidgets kdelibs4support kio \
-		notifications parts service textwidgets unitconversion \
-		widgetsaddons windowsystem xmlgui solid sonnet wallet \
+		coreaddons crash guiaddons i18n iconthemes itemmodels \
+		itemviews jobwidgets kio notifications parts service solid \
+		sonnet textwidgets unitconversion wallet widgetsaddons \
+		windowsystem xmlgui \
 		ecm:build
 # pim components
 USE_KDE+=	calendarcore contacts
-USE_QT=		concurrent core dbus declarative gui location network \
-		printsupport webchannel webengine widgets xml \
-		buildtools:build qmake:build
-
+USE_QT=		base webengine
 USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=	DOCS

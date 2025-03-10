@@ -69,7 +69,7 @@ NB. If you're not using a checksumming filesystem like ZFS, you might
 
 SECURITY ADVICE
 
-If upgradring from a version 15.x < 15.7:
+If upgrading from a version 15.x < 15.7:
 A security vulnerability was found in the system views pg_stats_ext
 and pg_stats_ext_exprs, potentially allowing authenticated database
 users to see data they shouldn't.  If this is of concern in your

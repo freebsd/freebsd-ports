@@ -24,6 +24,7 @@ share/icons/hicolor/64x64/apps/klines.png
 %%DATADIR%%/themes/pool.svgz
 share/locale/af/LC_MESSAGES/klines.mo
 share/locale/ar/LC_MESSAGES/klines.mo
+share/locale/ast/LC_MESSAGES/klines.mo
 share/locale/be/LC_MESSAGES/klines.mo
 share/locale/bg/LC_MESSAGES/klines.mo
 share/locale/br/LC_MESSAGES/klines.mo
@@ -51,6 +52,7 @@ share/locale/hi/LC_MESSAGES/klines.mo
 share/locale/hne/LC_MESSAGES/klines.mo
 share/locale/hr/LC_MESSAGES/klines.mo
 share/locale/hu/LC_MESSAGES/klines.mo
+share/locale/ia/LC_MESSAGES/klines.mo
 share/locale/id/LC_MESSAGES/klines.mo
 share/locale/is/LC_MESSAGES/klines.mo
 share/locale/it/LC_MESSAGES/klines.mo
@@ -97,4 +99,5 @@ share/locale/xh/LC_MESSAGES/klines.mo
 share/locale/zh_CN/LC_MESSAGES/klines.mo
 share/locale/zh_TW/LC_MESSAGES/klines.mo
 share/metainfo/org.kde.klines.appdata.xml
-share/qlogging-categories5/klines.categories
+share/qlogging-categories6/klines.categories
+share/qlogging-categories6/klines.renamecategories

@@ -1,5 +1,6 @@
 PORTNAME=	cassandra
 DISTVERSION=	3.11.14
+PORTREVISION=	1
 CATEGORIES=	databases java
 MASTER_SITES=	LOCAL/fernape:repo
 PKGNAMESUFFIX=	3
@@ -17,9 +18,7 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}virtualenv>=0:devel/py-virtualenv@${PY_FLAV
 		bash>0:shells/bash \
 		git>0:devel/git
 
-USES=		cpe python
-USE_ANT=	yes
-USE_JAVA=	yes
+USES=		cpe java:ant,run python
 JAVA_VERSION=	8
 JAVA_VENDOR=	openjdk
 CPE_VENDOR=	apache

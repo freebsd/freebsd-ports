@@ -1,29 +1,40 @@
 PORTNAME=	faust
-DISTVERSION=	2.74.6
+DISTVERSION=	2.77.3
 CATEGORIES=	audio devel
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Functional programming language for realtime audio signal processing
-WWW=		https://faust.grame.fr/
+WWW=		https://faust.grame.fr/ \
+		https://github.com/grame-cncm/faust
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING.txt
 
 BROKEN_armv7=	compilation broken: the faust executable SEGVs while compiling examples during build: faust -a lv2.cpp -cn amp -I examples examples/amp.dsp -o examples/amp.cpp
 
-LIB_DEPENDS=	libLLVM-${LLVM_VERSION}.so:devel/llvm${LLVM_VERSION}
+LIB_DEPENDS=	libLLVM-${LLVM_VERSION}.so:devel/llvm${LLVM_VERSION} \
+		libzstd.so:archivers/zstd
 RUN_DEPENDS=	bash:shells/bash
 
-USES=		compiler:c++14-lang cmake llvm:min=15,lib ncurses python pkgconfig shebangfix # llvm: versions <11 lacked dump() function(s) that cause unresolved symbols in libfaust.so
+USES=		compiler:c++17-lang cmake localbase:ldflags llvm:min=${LLVM_VER},lib ncurses python pkgconfig shebangfix # llvm: versions <11 lacked dump() function(s) that cause unresolved symbols in libfaust.so
 USE_LDCONFIG=	yes
+USE_CXXSTD=	c++17
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	grame-cncm
 GH_TUPLE=	\
-		grame-cncm:faustlibraries:58f6796:grame_cncm_faustlibraries/libraries \
-		ccrma:faust2ck:db879cb:faust2ck/tools/faust2ck
+		grame-cncm:faustlibraries:ef8dbf7:grame_cncm_faustlibraries/libraries \
+		ccrma:faust2ck:db879cb:faust2ck/tools/faust2ck \
+		shakfu:py2max:3aaa8ca:py2max/architecture/max-msp/py2max \
+		yixuan:spectra:8c7242e:spectra/tools/physicalModeling/mesh2faust/spectra
 
-SHEBANG_FILES=	tools/faust2appls/* tools/benchmark/faustbench tools/sound2faust/sound2reader
+#LLVM_VER=	15 # not c++17 by default
+LLVM_VER=	19
+
+SHEBANG_FILES=	tools/faust-config \
+		tools/faust2appls/* \
+		tools/benchmark/faustbench \
+		tools/sound2faust/sound2reader
 
 CMAKE_SOURCE_PATH=	${WRKSRC}/build
 CMAKE_ON=	INCLUDE_DYNAMIC # only installs headers and not libs without INCLUDE_DYNAMIC or INCLUDE_STATIC: https://github.com/grame-cncm/faust/issues/553
@@ -80,7 +91,10 @@ post-install-HIGHLIGHT-on:
 do-test:
 	@${CP} ${FILESDIR}/example-freeverb_demo.dsp ${TEST_WRKSRC}
 	@cd ${TEST_WRKSRC} && \
-		${SETENV} ${TEST_ENV} faust2jaqt example-freeverb_demo.dsp && \
+		${SETENV} ${MAKE_ENV} ${TEST_ENV} faust2jaqt example-freeverb_demo.dsp && \
 		${SETENV} ${TEST_ENV} ./example-freeverb_demo
+
+# test fails to build with Qt6 because of wrong C++11 option written into Makefile: https://github.com/grame-cncm/faust/issues/1109
+# once this is corrected, test builds and works fine
 
 .include <bsd.port.mk>

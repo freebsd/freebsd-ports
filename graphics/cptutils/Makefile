@@ -1,11 +1,11 @@
 PORTNAME=	cptutils
-PORTVERSION=	1.82
+PORTVERSION=	1.83
 CATEGORIES=	graphics
-MASTER_SITES=	http://soliton.vm.bytemark.co.uk/pub/jjg/src/
+MASTER_SITES=	https://jjg.gitlab.io/src/
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Convert and manipulate colour gradients
-WWW=		http://soliton.vm.bytemark.co.uk/pub/jjg/en/code/cptutils/
+WWW=		https://jjg.gitlab.io/en/code/cptutils/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

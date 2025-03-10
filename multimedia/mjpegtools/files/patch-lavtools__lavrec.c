@@ -1,4 +1,4 @@
---- lavtools/lavrec.c.orig
+--- lavtools/lavrec.c.orig	2021-09-05 06:14:13 UTC
 +++ lavtools/lavrec.c
 @@ -196,7 +196,9 @@
  #include <stdlib.h>
@@ -10,7 +10,7 @@
  #include <signal.h>
  #include <fcntl.h>
  #include <errno.h>
-@@ -1149,6 +1151,7 @@
+@@ -1149,6 +1151,7 @@ int main(int argc, char **argv)
    sigset_t sigmask;
    pthread_t input_thread;
  
@@ -18,7 +18,7 @@
    /* no root please (only during audio setup) */
    if (getuid() != geteuid())
    {
-@@ -1159,6 +1162,7 @@
+@@ -1159,6 +1162,7 @@ int main(int argc, char **argv)
        return 0;
      }
    }

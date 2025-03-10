@@ -1,5 +1,5 @@
 PORTNAME=	UCD
-PORTVERSION=	15.1.0 # must sync with deskutils/gucharmap
+PORTVERSION=	16.0.0 # must sync with deskutils/gucharmap
 PORTEPOCH=	1
 CATEGORIES=	textproc
 MASTER_SITES=	https://www.unicode.org/Public/zipped/${DISTVERSION}/:src	\

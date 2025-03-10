@@ -1,10 +1,8 @@
 [
 { type: install
   message: <<EOM
-You can permanently enable ASDF package management by using the
-following commands in your .ccl-init.lisp file:
-
-  (require 'asdf)
+To work with Common Lisp ports, create ~/.ccl-init.lisp with this line:
+(load "/usr/local/etc/cl-freebsd-asdf-init.lisp")
 EOM
 }
 ]

@@ -29,6 +29,8 @@ USE_XORG=	x11
 # Needed to be able to correctly check for updates in-app.
 CMAKE_ARGS=	-D${PORTNAME:tu}_VERSION="${DISTVERSION}"
 
+CONFLICTS=	shotcut-qt6
+
 WRKSRC=	${WRKDIR}/src
 WRKSRC_SUBDIR=	${PORTNAME}
 

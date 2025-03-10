@@ -1,6 +1,6 @@
 PORTNAME=	vtk
-DISTVERSION=	8.2.0
-PORTREVISION=	5
+DISTVERSION=	8.2.0 # it has only one consumer that is possibly dead upstream but is still compiling fine
+PORTREVISION=	6
 CATEGORIES=	math graphics
 MASTER_SITES=	http://www.vtk.org/files/release/${VTK_SHORT_VER}/
 PKGNAMESUFFIX=	8
@@ -12,14 +12,14 @@ WWW=		https://www.vtk.org
 
 LICENSE=	BSD3CLAUSE
 
-BROKEN_FreeBSD_13_aarch64=	clang crashes, see https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=275784
+BROKEN_FreeBSD_15=	complation fails: error: no member named 'derived' in 'Transpose<TranspositionsBase<type-parameter-0-0>>'
 
 LIB_DEPENDS=	libtiff.so:graphics/tiff \
 		libpng.so:graphics/png \
 		libfreetype.so:print/freetype2 \
 		libexpat.so:textproc/expat2
 
-CONFLICTS=	vtk6 vtk9
+CONFLICTS=	vtk9
 
 USES=		alias cmake compiler:c++11-lang gl jpeg localbase perl5 xorg
 USE_LDCONFIG=	${PREFIX}/lib/vtk-${VTK_SHORT_VER}
@@ -29,7 +29,8 @@ CMAKE_ON=	BUILD_SHARED_LIBS \
 		VTK_INSTALL_NO_DOCUMENTATION VTK_USE_SYSTEM_EXPAT VTK_USE_SYSTEM_TIFF \
 		VTK_USE_SYSTEM_PNG VTK_USE_SYSTEM_JPEG VTK_USE_SYSTEM_FREETYPE VTK_USE_SYSTEM_ZLIB \
 		Module_vtkTestingCore Module_vtkTestingRendering
-CMAKE_ARGS+=	-DVTK_INSTALL_LIBRARY_DIR=lib/vtk-${VTK_SHORT_VER} \
+CMAKE_ARGS+=	-DBUILD_EXAMPLES:BOOL=false \
+		-DVTK_INSTALL_LIBRARY_DIR=lib/vtk-${VTK_SHORT_VER} \
 		-DVTK_INSTALL_ARCHIVE_DIR=lib/vtk-${VTK_SHORT_VER} \
 		-DVTK_INSTALL_QT_DIR=/${QT_LIBDIR_REL}/plugins/designer \
 		-DSTAGEDIR=${STAGEDIR}
@@ -40,7 +41,7 @@ DOCSDIR=	${PREFIX}/share/doc/vtk-${VTK_SHORT_VER}
 DATADIR=	${PREFIX}/share/vtk-${VTK_SHORT_VER}
 
 # Options
-OPTIONS_DEFINE=	DESIGNER DOCS OSMESA QT5 EXAMPLES
+OPTIONS_DEFINE=	DESIGNER DOCS OSMESA QT5
 OPTIONS_DEFAULT=	MPI QT5
 OSMESA_DESC=	Use Mesa for off-screen rendering
 DESIGNER_DESC=	Build the Qt Designer plugin
@@ -84,7 +85,7 @@ OSMESA_LIB_DEPENDS=	libOSMesa.so:graphics/libosmesa
 
 # Wrapping
 JAVA_CATEGORIES=	java
-JAVA_VARS=		USE_JAVA=yes
+JAVA_USES=		java
 JAVA_CMAKE_BOOL=	VTK_WRAP_JAVA Module_vtkWrappingJava
 JAVA_CMAKE_ON=		-DJAVA_INCLUDE_PATH:PATH=${JAVA_HOME}/include \
 			-DJAVA_AWT_LIBRARY:PATH=${JAVA_HOME}/jre/lib/${ARCH}/libjawt.so \
@@ -98,8 +99,6 @@ TCLTK_CMAKE_ON=		-DTCL_INCLUDE_PATH:PATH=${TCL_INCLUDEDIR} \
 
 DOCS_CMAKE_BOOL=	BUILD_DOCUMENTATION
 DOCS_BUILD_DEPENDS=	doxygen:devel/doxygen
-
-EXAMPLES_CMAKE_BOOL=	BUILD_EXAMPLES
 
 # Mangling so that it will build when science/netcdf is installed.
 post-patch:

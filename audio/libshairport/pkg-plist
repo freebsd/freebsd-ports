@@ -1,6 +1,0 @@
-lib/libshairport.so
-lib/libshairport.so.0
-lib/libshairport.so.0.0.0
-include/shairport/shairport.h
-include/shairport/ao.h
-include/shairport/socketlib.h

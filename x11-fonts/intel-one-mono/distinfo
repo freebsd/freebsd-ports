@@ -1,3 +1,5 @@
-TIMESTAMP = 1684813649
-SHA256 (intel-intel-one-mono-V1.3.0_GH0.tar.gz) = 2d4f25aed51092d6396f97d6e828e83d8c814e6ac17e229710bd1adda29aceee 
-SIZE (intel-intel-one-mono-V1.3.0_GH0.tar.gz) = 4534769
+TIMESTAMP = 1737840083
+SHA256 (intel-one-mono/1.4.0/otf.zip) = 74ef8ee667403c760745bc12fc5e2cb1684544194fad3d5340919c173a8227fc
+SIZE (intel-one-mono/1.4.0/otf.zip) = 563509
+SHA256 (intel-one-mono/1.4.0/ttf.zip) = 54863552d25dcb9c3f5360b296fc980d6e1fbfd02e0d214224e8b78f0a2bccf0
+SIZE (intel-one-mono/1.4.0/ttf.zip) = 505443

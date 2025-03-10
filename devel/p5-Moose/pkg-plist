@@ -462,6 +462,7 @@ bin/moose-outdated
 %%PERL5_MAN3%%/Class::MOP::Overload.3.gz
 %%PERL5_MAN3%%/Class::MOP::Package.3.gz
 %%PERL5_MAN3%%/Moose.3.gz
+%%PERL5_MAN3%%/Moose::Conflicts.3.gz
 %%PERL5_MAN3%%/Moose::Cookbook.3.gz
 %%PERL5_MAN3%%/Moose::Cookbook::Basics::BankAccount_MethodModifiersAndSubclassing.3.gz
 %%PERL5_MAN3%%/Moose::Cookbook::Basics::BinaryTree_AttributeFeatures.3.gz
@@ -491,7 +492,6 @@ bin/moose-outdated
 %%PERL5_MAN3%%/Moose::Cookbook::Snack::Keywords.3.gz
 %%PERL5_MAN3%%/Moose::Cookbook::Snack::Types.3.gz
 %%PERL5_MAN3%%/Moose::Cookbook::Style.3.gz
-%%PERL5_MAN3%%/Moose::Conflicts.3.gz
 %%PERL5_MAN3%%/Moose::Deprecated.3.gz
 %%PERL5_MAN3%%/Moose::Exception.3.gz
 %%PERL5_MAN3%%/Moose::Exporter.3.gz

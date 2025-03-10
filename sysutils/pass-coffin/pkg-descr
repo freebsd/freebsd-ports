@@ -1,0 +1,10 @@
+pass-coffin is a pass extension that hides password store data inside a GPG
+encrypted file, which we'll call a coffin.
+
+Because of how pass works, directory and file names aren't encrypted by default
+and anyone who has access to your computer can see which websites you use and
+your usernames on those websites. This is different from how password managers
+like keepassxc work by keeping your entire password store database inside an
+encrypted file and can also automatically lock access to the application itself
+after a certain amount of time. pass-coffin has been created to provide these
+missing features to pass.

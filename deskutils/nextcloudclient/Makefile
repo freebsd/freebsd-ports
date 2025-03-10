@@ -1,5 +1,5 @@
 PORTNAME=	nextcloudclient
-PORTVERSION=	3.13.2
+PORTVERSION=	3.15.3
 DISTVERSIONPREFIX=	v
 CATEGORIES=	deskutils
 
@@ -11,17 +11,17 @@ LICENSE=	GPLv2
 
 BUILD_DEPENDS=	inkscape:graphics/inkscape
 LIB_DEPENDS=	libinotify.so:devel/libinotify \
-		libqt5keychain.so:security/qtkeychain@qt5
+		libqt6keychain.so:security/qtkeychain@qt6 \
+		libxkbcommon.so:x11/libxkbcommon
 
-USES=		cmake:noninja compiler:c++14-lang desktop-file-utils gmake \
-		gnome iconv kde:5 localbase:ldflags pkgconfig qt:5 shared-mime-info \
+USES=		cmake:noninja compiler:c++20-lang desktop-file-utils gl gmake \
+		gnome iconv kde:6 localbase:ldflags pkgconfig qt:6 shared-mime-info \
 		sqlite ssl
+USE_CXXSTD=	c++20
+USE_GL=		opengl
 USE_KDE=	archive
 USE_LDCONFIG=	yes
-USE_QT=		buildtools:build concurrent core dbus declarative graphicaleffects \
-		gui linguist:build network qmake:build quickcontrols \
-		quickcontrols2 sql svg websockets widgets xml
-
+USE_QT=		5compat base declarative positioning svg websockets
 CMAKE_ARGS=	-DBUILD_UPDATER:BOOL=OFF \
 		-DWITH_STACK_PROTECTOR:BOOL=OFF
 
@@ -31,14 +31,15 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	nextcloud
 GH_PROJECT=	desktop
 
-OPTIONS_DEFINE=			DOCS DEBUG GNOME KDE WEBENGINE
-OPTIONS_DEFAULT=		GNOME
+OPTIONS_DEFINE=			DOCS DEBUG GNOME GUIADDONS KDE WEBENGINE
+OPTIONS_DEFAULT=		GNOME GUIADDONS
 OPTIONS_DEFAULT_aarch64=	WEBENGINE
 OPTIONS_DEFAULT_amd64=		WEBENGINE
 OPTIONS_DEFAULT_i386=		WEBENGINE
 
 OPTIONS_SUB=	yes
 
+GUIADDONS_DESC=		Use KDE guiaddons (implies KDE)
 KDE_DESC=		KDE desktop environment support
 WEBENGINE_DESC=		Use Webengine to provide web login flow
 
@@ -52,11 +53,14 @@ DOCS_VARS=		PORTDOCS=*
 GNOME_CMAKE_BOOL=	BUILD_SHELL_INTEGRATION_NAUTILUS
 
 KDE_USES=		xorg
-KDE_USE=		KDE=completion,config,coreaddons,ecm,jobwidgets,kio,service,solid,widgetsaddons,windowsystem \
+KDE_USE=		KDE=completion,config,coreaddons,ecm:build,jobwidgets,kio,service,solid,widgetsaddons,windowsystem \
 			XORG=x11
 KDE_CMAKE_BOOL=		BUILD_SHELL_INTEGRATION_DOLPHIN
 
-WEBENGINE_USE=		QT=webchannel,webengine,printsupport,location
+GUIADDONS_IMPLIES=	KDE
+GUIADDONS_USE=		KDE=guiaddons
+
+WEBENGINE_USE=		QT=location,webchannel,webengine
 WEBENGINE_CMAKE_BOOL=	BUILD_WITH_WEBENGINE
 
 .include <bsd.port.pre.mk>
@@ -68,6 +72,10 @@ CMAKE_ARGS+=	-DCMAKE_BUILD_TYPE:STRING=Debug
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|.lst |.lst.sample |' ${WRKSRC}/CMakeLists.txt
+
+post-patch-GUIADDONS-off:
+	@${REINPLACE_CMD} -e '/^find_package.*KF6GuiAddons/d' \
+		${WRKSRC}/src/gui/CMakeLists.txt
 
 pre-configure:
 	@(cd ${WRKSRC} && ${CP} -f sync-exclude.lst sync-exclude.lst.sample)

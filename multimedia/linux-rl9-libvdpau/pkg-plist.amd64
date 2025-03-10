@@ -1,6 +1,13 @@
 etc/vdpau_wrapper.cfg
 usr/lib/.build-id/42/a0c04675baecd83cb6bd802627a70f278631d3
+usr/lib/.build-id/93/f7343d1f4cc8eb260b2f612fb9e5d56ce99514
+usr/lib/.build-id/d8/d0df7871ecea6b072395ccffadce1c617bea35
 usr/lib/.build-id/e2/01259dfd662b4c5c922bd245dbb5dd0f351f7c
+usr/lib/libvdpau.so.1
+usr/lib/libvdpau.so.1.0.0
+usr/lib/vdpau/libvdpau_trace.so
+usr/lib/vdpau/libvdpau_trace.so.1
+usr/lib/vdpau/libvdpau_trace.so.1.0.0
 usr/lib64/libvdpau.so.1
 usr/lib64/libvdpau.so.1.0.0
 usr/lib64/vdpau/libvdpau_trace.so

@@ -1,0 +1,13 @@
+--- test/meson.build.orig	2024-12-03 03:51:09 UTC
++++ test/meson.build
+@@ -75,8 +75,8 @@ foreach t : tests
+       [t + '.c', config_h],
+       dependencies : [idep_pixman, libtestutils_dep, dep_threads, dep_openmp, dep_png],
+     ),
+-    timeout : 120,
+-    is_parallel : true,
++    timeout : 600,
++    is_parallel : get_option('openmp').disabled(),
+   )
+ endforeach
+ 

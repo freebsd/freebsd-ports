@@ -29,6 +29,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 NO_BUILD=	yes
 
+USES=		cl
 USE_ASDF=	yes
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
@@ -46,8 +47,10 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/cffi.asd ${STAGEDIR}${ASDF_PATHNAME}
 	${INSTALL_DATA} ${WRKSRC}/cffi-uffi-compat.asd ${STAGEDIR}${ASDF_PATHNAME}
 	${INSTALL_DATA} ${WRKSRC}/cffi-grovel.asd ${STAGEDIR}${ASDF_PATHNAME}
-	${LN} -sf ${ASDF_PATHNAME}/cffi.asd ${ASDF_PATHNAME}/cffi-uffi-compat.asd \
-		${ASDF_PATHNAME}/cffi-grovel.asd ${STAGEDIR}${ASDF_REGISTRY}
+	${RLN} ${STAGEDIR}${ASDF_PATHNAME}/cffi.asd \
+		${STAGEDIR}${ASDF_PATHNAME}/cffi-uffi-compat.asd \
+		${STAGEDIR}${ASDF_PATHNAME}/cffi-grovel.asd \
+		${STAGEDIR}${ASDF_REGISTRY}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README.md ${STAGEDIR}${DOCSDIR}
 .for FILE in shareable-vectors.txt allegro-internals.txt mem-vector.txt
@@ -64,5 +67,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/examples/* ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/tests/* ${STAGEDIR}${EXAMPLESDIR}/tests
 
-.include "${.CURDIR}/../../devel/cl-asdf/bsd.cl-asdf.mk"
 .include <bsd.port.mk>

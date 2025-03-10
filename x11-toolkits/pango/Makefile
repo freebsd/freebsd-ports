@@ -1,9 +1,8 @@
 PORTNAME=	pango
-PORTVERSION=	1.52.2
-PORTREVISION=	1
+PORTVERSION=	1.56.1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	GNOME
-DIST_SUBDIR=	gnome2
+DIST_SUBDIR=	gnome
 
 MAINTAINER=	desktop@FreeBSD.org
 COMMENT=	Open-source framework for the layout and rendering of i18n text
@@ -18,43 +17,35 @@ LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 		libfribidi.so:converters/fribidi
 TEST_DEPENDS=	cantarell-fonts>=0:x11-fonts/cantarell-fonts
 
-USES=		cpe gnome meson pkgconfig tar:xz
+USES=		compiler:c11 cpe gnome meson pkgconfig tar:xz
 CPE_VENDOR=	gnome
 USE_GNOME=	cairo glib20 introspection:build
 USE_LDCONFIG=	yes
 
 PORTSCOUT=	limit:^1\.[^9]
 
-VERSION=	1.8.0
-LIBVERSION=	0.5200.2
-PLIST_SUB=	LIBVERSION=${LIBVERSION} \
-		VERSION=${VERSION}
+PLIST_SUB=	LIBVERSION=0.${PORTVERSION:R:E}00.${PORTVERSION:E}
 
-OPTIONS_DEFINE=	X11 DOCS MANPAGES THAI
-OPTIONS_DEFAULT=X11 MANPAGES THAI
-OPTIONS_SUB=	yes
+OPTIONS_DEFINE=		DOCS LANG_TH MANPAGES X11
+OPTIONS_DEFAULT=	LANG_TH MANPAGES X11
+OPTIONS_SUB=		yes
 
-THAI_DESC=	Thai language support via libThai
+DOCS_BUILD_DEPENDS=	gi-docgen:textproc/py-gi-docgen \
+			rst2man:textproc/py-docutils
+DOCS_MESON_TRUE=	documentation
 
-DOCS_BUILD_DEPENDS=	gi-docgen:textproc/py-gi-docgen
-DOCS_MESON_TRUE=	gtk_doc
+LANG_TH_LIB_DEPENDS=	libthai.so:devel/libthai
+LANG_TH_MESON_ENABLED=	libthai
 
-MANPAGES_BUILD_DEPENDS=	help2man:misc/help2man
+MANPAGES_MESON_TRUE=	man-pages
+MANPAGES_IMPLIES=	DOCS
 
-THAI_LIB_DEPENDS=	libthai.so:devel/libthai
-THAI_MESON_ENABLED=	libthai
-
-X11_USES=	xorg
-X11_USE=	XORG=x11,xft,xrender
+X11_USES=		xorg
+X11_USE=		XORG=x11,xft,xrender
 X11_MESON_ENABLED=	xft
 
-TESTING_UNSAFE=	2 out of 24 tests fail
-
-pre-configure:
-# .if !exists() evaluates too early before cairo has a chance to be installed
-	@if ! pkg-config --exists cairo-gobject; then \
-		${ECHO_MSG} "${PKGNAME}: Needs cairo with GLIB (GObject) support enabled."; \
-		${FALSE}; \
-	fi
+pre-test:
+# Don't test backup files. Silly Meson.
+	@${FIND} ${WRKSRC}/tests/fontsets/ -name "*.orig" -delete
 
 .include <bsd.port.mk>

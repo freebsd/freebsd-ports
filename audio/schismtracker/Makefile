@@ -1,5 +1,5 @@
 PORTNAME=	schismtracker
-DISTVERSION=	20240630
+DISTVERSION=	20250305
 CATEGORIES=	audio
 
 MAINTAINER=	ehaupt@FreeBSD.org
@@ -11,7 +11,8 @@ LICENSE=	GPLv2
 
 ONLY_FOR_ARCHS=	amd64 armv7 i386 powerpc powerpc64 powerpc64le
 
-LIB_DEPENDS=	libFLAC.so:audio/flac
+LIB_DEPENDS=	libFLAC.so:audio/flac \
+		libutf8proc.so:textproc/utf8proc
 
 USES=		autoreconf compiler:c++11-lib desktop-file-utils localbase \
 		pkgconfig python sdl xorg
@@ -25,6 +26,10 @@ PLIST_FILES=	bin/schismtracker \
 		share/man/man1/schismtracker.1.gz \
 		share/pixmaps/schism-icon-128.png \
 		share/pixmaps/schism-itf-icon-128.png
+
+post-patch:
+	@${REINPLACE_CMD} -e "s|%%LAST_GIT_COMMIT%%|${DISTVERSION}|" \
+		${WRKSRC}/configure.ac
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/sys/fd.org/*.desktop ${STAGEDIR}${DESKTOPDIR}

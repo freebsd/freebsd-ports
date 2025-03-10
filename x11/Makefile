@@ -42,6 +42,8 @@
     SUBDIR += cinnamon-screensaver
     SUBDIR += cinnamon-session
     SUBDIR += cl-clx
+    SUBDIR += cl-clx-ccl
+    SUBDIR += cl-clx-clisp
     SUBDIR += cl-clx-sbcl
     SUBDIR += clip
     SUBDIR += clipcat
@@ -78,7 +80,6 @@
     SUBDIR += evilvte
     SUBDIR += evtest
     SUBDIR += eww
-    SUBDIR += fbdesk
     SUBDIR += fbpanel
     SUBDIR += find-cursor
     SUBDIR += fireflies
@@ -143,9 +144,8 @@
     SUBDIR += jgmenu
     SUBDIR += kanshi
     SUBDIR += kb2mb2
+    SUBDIR += kde
     SUBDIR += kde-baseapps
-    SUBDIR += kde5
-    SUBDIR += kde6
     SUBDIR += kdisplay
     SUBDIR += keybinder
     SUBDIR += keybinder-gtk3
@@ -172,7 +172,6 @@
     SUBDIR += kickoff
     SUBDIR += kitty
     SUBDIR += konsole
-    SUBDIR += konsole-devel
     SUBDIR += lavalauncher
     SUBDIR += lemonbar
     SUBDIR += lemonbar-xft
@@ -219,6 +218,7 @@
     SUBDIR += libxdg-basedir
     SUBDIR += libxfce4menu
     SUBDIR += libxfce4util
+    SUBDIR += libxfce4windowing
     SUBDIR += libxkbcommon
     SUBDIR += libxkbfile
     SUBDIR += libxklavier
@@ -240,6 +240,8 @@
     SUBDIR += linux-nvidia-libs-470
     SUBDIR += linux-rl9-libxkbcommon
     SUBDIR += linux-rl9-pixman
+    SUBDIR += linux-rl9-qt5-qtx11extras
+    SUBDIR += linux-rl9-xcb-util
     SUBDIR += linux-rl9-xorg-libs
     SUBDIR += listres
     SUBDIR += lsw
@@ -316,17 +318,6 @@
     SUBDIR += pixman
     SUBDIR += plank
     SUBDIR += plasma-wayland-protocols
-    SUBDIR += plasma5-kactivitymanagerd
-    SUBDIR += plasma5-kgamma5
-    SUBDIR += plasma5-kscreen
-    SUBDIR += plasma5-kwayland-integration
-    SUBDIR += plasma5-layer-shell-qt
-    SUBDIR += plasma5-libkscreen
-    SUBDIR += plasma5-plasma
-    SUBDIR += plasma5-plasma-bigscreen
-    SUBDIR += plasma5-plasma-desktop
-    SUBDIR += plasma5-plasma-integration
-    SUBDIR += plasma5-plasma-workspace
     SUBDIR += plasma6-kactivitymanagerd
     SUBDIR += plasma6-kgamma
     SUBDIR += plasma6-kglobalacceld
@@ -356,6 +347,7 @@
     SUBDIR += py-python-xapp
     SUBDIR += py-pyvirtualdisplay
     SUBDIR += py-screeninfo
+    SUBDIR += py-waypaper
     SUBDIR += py-xcffib
     SUBDIR += py-xdot
     SUBDIR += qimageblitz
@@ -427,6 +419,7 @@
     SUBDIR += swayr
     SUBDIR += swayrbar
     SUBDIR += swaysettings
+    SUBDIR += swww
     SUBDIR += sxhkd
     SUBDIR += sxmo-wayout
     SUBDIR += sxpc
@@ -603,6 +596,7 @@
     SUBDIR += xmessage
     SUBDIR += xmh
     SUBDIR += xmodmap
+    SUBDIR += xmoji
     SUBDIR += xmore
     SUBDIR += xmotd
     SUBDIR += xmsg
@@ -635,6 +629,7 @@
     SUBDIR += xscreensaver.app
     SUBDIR += xsel-conrad
     SUBDIR += xset
+    SUBDIR += xseticon
     SUBDIR += xsetroot
     SUBDIR += xsettingsd
     SUBDIR += xskyroot

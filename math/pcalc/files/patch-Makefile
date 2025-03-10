@@ -1,0 +1,24 @@
+--- Makefile.orig	2022-02-23 04:42:33 UTC
++++ Makefile
+@@ -23,6 +23,8 @@ pcalc: LDFLAGS += $(CFLAGS)
+ pcalc: $(OBJS)
+ pcalc: LDFLAGS += $(CFLAGS)
+ 
++$(OBJS): pcalc.c
++
+ pcalc.c: pcalc.y
+ 	$(YACC) -o $@ $<
+ 
+@@ -39,10 +41,10 @@ INSTALL = install
+ 	$(MAKE) -C ptest check
+ 
+ INSTALL = install
+-BINDIR  = /usr/bin
++BINDIR  = $(PREFIX)/bin
+ DESTDIR = 
+ install:
+-	$(INSTALL) -m 755 -D pcalc $(DESTDIR)$(BINDIR)/pcalc
++	$(BSD_INSTALL_PROGRAM) pcalc $(DESTDIR)$(BINDIR)/pcalc
+ 
+ dist pack: distclean
+ 	rm -rf pcalc-$(VERSION)

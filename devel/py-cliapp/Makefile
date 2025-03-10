@@ -1,6 +1,6 @@
 PORTNAME=	cliapp
 PORTVERSION=	1.20180812.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://git.liw.fi/cgi-bin/cgit/cgit.cgi/cliapp/snapshot/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}

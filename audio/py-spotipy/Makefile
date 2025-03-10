@@ -1,5 +1,6 @@
 PORTNAME=	spotipy
-DISTVERSION=	2.24.0
+DISTVERSION=	2.25.1
+PORTREVISION=	1
 CATEGORIES=	audio python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -22,19 +23,19 @@ USE_PYTHON=	autoplist distutils
 
 NO_ARCH=	yes
 
-OPTIONS_DEFINE=	CACHE DOCS EXAMPLES
+OPTIONS_DEFINE=	CACHE DOCS #EXAMPLES
 
 CACHE_DESC=		Enable a cache handler via pymemcache
 CACHE_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pymemcache>=4.0.0:databases/py-pymemcache@${PY_FLAVOR}
 DOCS_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sphinx>=1.8.0,1:textproc/py-sphinx@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}sphinx_rtd_theme>=1.0.0:textproc/py-sphinx_rtd_theme@${PY_FLAVOR}
 DOCS_PORTDOCS=		* .buildinfo
-EXAMPLES_PORTEXAMPLES=	*
+#EXAMPLES_PORTEXAMPLES=	*
 
 post-install-DOCS-on:
 	${LOCALBASE}/bin/sphinx-build-${PYTHON_VER} -d ${WRKDIR} -b html ${WRKSRC}/docs ${STAGEDIR}${DOCSDIR}
 
-post-install-EXAMPLES-on:
-	cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . ${STAGEDIR}/${EXAMPLESDIR}
+#post-install-EXAMPLES-on:
+#	cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . ${STAGEDIR}/${EXAMPLESDIR}
 
 .include <bsd.port.mk>

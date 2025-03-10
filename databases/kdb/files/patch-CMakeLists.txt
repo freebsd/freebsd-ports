@@ -1,0 +1,12 @@
+Bump CXX standard to c++17. Required for ICU 75+.
+
+--- CMakeLists.txt.orig	2019-03-26 18:44:44 UTC
++++ CMakeLists.txt
+@@ -29,6 +29,7 @@ simple_option(BUILD_QCH "Build API documentation in QC
+ simple_option(BUILD_QCH "Build API documentation in QCH format" OFF)
+ 
+ # Dependencies
++set(CMAKE_CXX_STANDARD 17)
+ set(REQUIRED_QT_VERSION 5.4.0)
+ set(REQUIRED_KF5_VERSION 5.16.0)
+ 

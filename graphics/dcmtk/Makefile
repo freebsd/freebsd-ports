@@ -1,11 +1,13 @@
 PORTNAME=	dcmtk
 DISTVERSIONPREFIX=	${PORTNAME:tu}-
-DISTVERSION=	3.6.8
+DISTVERSION=	3.6.9
+PORTREVISION=	1
 CATEGORIES=	graphics devel
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	DICOM ToolKit, libraries and applications for DICOM/MEDICOM standard
-WWW=		https://dcmtk.org
+WWW=		https://dcmtk.org/en/ \
+		https://github.com/DCMTK/dcmtk
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
@@ -14,7 +16,7 @@ LIB_DEPENDS=	libicuuc.so:devel/icu \
 		libpng.so:graphics/png \
 		libtiff.so:graphics/tiff
 
-USES=		compiler:c++11-lang cmake cpe gnome jpeg ssl
+USES=		compiler:c++11-lang cmake cpe gnome jpeg pathfix ssl
 CPE_VENDOR=	offis
 USE_GITHUB=	yes
 GH_ACCOUNT=	${PORTNAME:tu}
@@ -44,5 +46,7 @@ BUILD_DEPENDS+=	clang${LLVM_VER}:devel/llvm${LLVM_VER}
 CC=		${LOCALBASE}/bin/clang${LLVM_VER}
 CXX=		${LOCALBASE}/bin/clang++${LLVM_VER}
 .endif
+
+# tests as of 3.6.9: 100% tests passed, 0 tests failed out of 366
 
 .include <bsd.port.post.mk>

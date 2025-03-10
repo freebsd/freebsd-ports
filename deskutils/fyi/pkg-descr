@@ -1,0 +1,16 @@
+FYI (for your information) is a command line utility to send desktop
+notifications to the user via a notification daemon implementing XDG desktop
+notifications.
+
+It is a almost a notify-send clone, with the following differences:
+
+ * notify-send does not implement --close.
+ * notify-send does not expose activation tokens (needed for window
+   focus/activation) in any meaningful way. It prints it as a debug message when
+   G_MESSAGES_DEBUG=all; fyi prints it when you use --print-token.
+ * fyi has consistent syntax in its --action and --hintoptions.
+ * fyi can print the reason a notification was closed, with --print-reason.
+ * fyi can query the notification daemon for its name and version information.
+ * fyi can query the notification daemon for its capabilities.
+ * fyi has shell completions (bash and fish).
+ * fyi has a single run-time dependency: dbus.

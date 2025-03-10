@@ -1,11 +1,12 @@
 PORTNAME=	jamulus
 DISTVERSIONPREFIX=	r
-DISTVERSION=	3_10_0
+DISTVERSION=	3_11_0
 CATEGORIES=	audio
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Internet jam session software
-WWW=		https://jamulus.io
+WWW=		https://jamulus.io \
+		https://github.com/jamulussoftware/jamulus
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

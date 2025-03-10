@@ -1,9 +1,9 @@
 PORTNAME?=	lapack
-PORTVERSION=	3.12.0
+PORTVERSION=	3.12.1
 .if !(defined(BLAS_SLAVEPORT) || defined(CBLAS_SLAVEPORT) || defined(XLAPACK_SLAVEPORT) || defined(LAPACKE_SLAVEPORT))
-PORTREVISION=	2
+PORTREVISION=	0
 .else
-PORTREVISION?=	1	# Never remove this line, keep PORTREVISION?=0 in case.
+PORTREVISION?=	0	# Never remove this line, keep PORTREVISION?=0 in case.
 .endif
 CATEGORIES=	math
 MASTER_SITES=	https://github.com/Reference-LAPACK/lapack/archive/refs/tags/:src	\
@@ -30,7 +30,8 @@ CPE_VENDOR=	lapack_project
 CPE_PRODUCT=	lapack
 
 SVERSION=	${PORTVERSION:R:R}
-PLIST_SUB=	SVERSION="${SVERSION}" VER=${PORTVERSION}
+LIBVERSION=	${PORTVERSION:C/1$/0/}
+PLIST_SUB=	SVERSION="${SVERSION}" VER=${LIBVERSION}
 
 .include <bsd.port.options.mk>
 

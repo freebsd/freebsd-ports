@@ -5,7 +5,8 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Plugin for the RuboCop code style enforcing & linting tool
-WWW=		https://github.com/rubocop/rubocop-factory_bot
+WWW=		https://docs.rubocop.org/rubocop-factory_bot/ \
+		https://github.com/rubocop/rubocop-factory_bot
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/MIT-LICENSE.md

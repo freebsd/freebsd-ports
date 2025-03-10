@@ -20,7 +20,6 @@ bin/phmmer
 share/man/man1/alimask.1.gz
 share/man/man1/hmmalign.1.gz
 share/man/man1/hmmbuild.1.gz
-share/man/man1/hmmc2.1.gz
 share/man/man1/hmmconvert.1.gz
 share/man/man1/hmmemit.1.gz
 share/man/man1/hmmer.1.gz

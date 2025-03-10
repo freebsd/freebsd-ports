@@ -1,8 +1,9 @@
 PORTNAME=	files-to-prompt
-DISTVERSION=	0.2.1
+DISTVERSION=	0.6
 CATEGORIES=	misc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	files_to_prompt-${DISTVERSION}
 
 MAINTAINER=	dch@FreeBSD.org
 COMMENT=	Python CLI utility to concatenate files into a single LLM prompt

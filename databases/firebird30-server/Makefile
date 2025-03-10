@@ -88,6 +88,8 @@ PKGINSTALL?=	${PKGDIR}/pkg-install-server
 # Client part stuff
 USES+=		libedit
 
+BROKEN=		Fails to build with ICU 76.1
+
 CONFIGURE_ARGS+=	--with-system-editline
 CONFIGURE_ENV+=	ac_cv_lib_edit_readline="yes"
 

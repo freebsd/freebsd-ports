@@ -1,31 +1,28 @@
 PORTNAME=	zathura-djvu
-DISTVERSION=	0.2.9
-PORTREVISION=	5
+DISTVERSION=	0.2.10
 CATEGORIES=	graphics
-MASTER_SITES=	https://git.pwmt.org/pwmt/${PORTNAME}/-/archive/${DISTVERSION}/
+MASTER_SITES=	https://pwmt.org/projects/zathura-djvu/download/
 
 MAINTAINER=	alexander.4mail@gmail.com
 COMMENT=	DjVu support for zathura
-WWW=		https://pwmt.org/projects/zathura/plugins/
+WWW=		https://pwmt.org/projects/zathura-djvu/
 
 LICENSE=	ZLIB
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BUILD_DEPENDS=	appstream-util:devel/appstream-glib \
+		zathura:graphics/zathura
 LIB_DEPENDS=	libdjvulibre.so:graphics/djvulibre \
 		libgirara-gtk3.so:x11-toolkits/girara
-BUILD_DEPENDS=	zathura:graphics/zathura
 RUN_DEPENDS=	zathura:graphics/zathura
 
-USES=		compiler:c11 desktop-file-utils gnome meson ninja pkgconfig
+USES=		compiler:c11 desktop-file-utils gnome meson ninja pkgconfig \
+		tar:xz
 
-USE_GNOME=	glib20 gtk30
+USE_GNOME=	cairo glib20
 
 PLIST_FILES=	lib/zathura/libdjvu.so \
-		share/appdata/org.pwmt.zathura-djvu.metainfo.xml \
-		share/applications/org.pwmt.zathura-djvu.desktop
-
-pre-configure:
-	@${REINPLACE_CMD} "s:join_paths(datadir, 'metainfo'):join_paths(datadir, 'appdata'):" \
-		${WRKSRC}/meson.build
+		share/applications/org.pwmt.zathura-djvu.desktop \
+		share/metainfo/org.pwmt.zathura-djvu.metainfo.xml
 
 .include <bsd.port.mk>

@@ -12,8 +12,8 @@
 -cd ${DIR}
 +cd ${DIR} || exit 1
  # Make gziped scripts
--find ./sdkjs ./web-apps ./sdkjs-plugins -type f \( -name *.js -o -name *.json -o -name *.htm -o -name *.html -o -name *.css \) -exec gzip -kf9 {} \;
-+find ./sdkjs ./web-apps ./sdkjs-plugins -type f \( -name "*.js" -o -name "*.json" -o -name "*.htm" -o -name "*.html" -o -name "*.css" \) -exec gzip -kf9 {} \;
+-find ./sdkjs ./web-apps ./sdkjs-plugins ./dictionaries -type f \( -name *.js -o -name *.json -o -name *.htm -o -name *.html -o -name *.css -o -name *.bin -o -name *.wasm -o -name *.dic -o -name *.aff -o -name *.svg \) -exec gzip -kf9 {} \;
++find ./sdkjs ./web-apps ./sdkjs-plugins ./dictionaries -type f \( -name "*.js" -o -name "*.json" -o -name "*.htm" -o -name "*.html" -o -name "*.css" -o -name "*.bin" -o -name "*.wasm" -o -name "*.dic" -o -name "*.aff" -o -name "*.svg" \) -exec gzip -kf9 {} \;
  
  # Make gziped fonts
  find ./fonts -type f ! -name "*.*" -exec gzip -kf9 {} \;

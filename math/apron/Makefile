@@ -5,7 +5,8 @@ CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	APRON numerical abstract domain library
-WWW=		http://apron.cri.ensmp.fr/library/
+WWW=		https://antoinemine.github.io/Apron/doc/ \
+		https://github.com/antoinemine/apron
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING

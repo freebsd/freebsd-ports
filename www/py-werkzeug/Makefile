@@ -1,5 +1,5 @@
 PORTNAME=	werkzeug
-PORTVERSION=	3.0.3
+PORTVERSION=	3.1.3
 CATEGORIES=	www python
 MASTER_SITES=	PYPI \
 		https://github.com/pallets/werkzeug/releases/download/${PORTVERSION}/
@@ -7,7 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Python utilities collection for building WSGI applications
-WWW=		https://palletsprojects.com/p/werkzeug/ \
+WWW=		https://palletsprojects.com/projects/werkzeug/ \
 		https://github.com/pallets/werkzeug
 
 LICENSE=	BSD3CLAUSE
@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}flit-core>=0<4:devel/py-flit-core@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}markupsafe>=2.1.1:textproc/py-markupsafe@${PY_FLAVOR}
 
-USES=		cpe python
+USES=		cpe python:3.9+
 USE_PYTHON=	autoplist concurrent pep517
 
 NO_ARCH=	yes

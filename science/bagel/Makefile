@@ -1,17 +1,19 @@
 PORTNAME=	bagel
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.2.2-132
-PORTREVISION=	10
+PORTREVISION=	15
 DISTVERSIONSUFFIX=	-g2955e4d1a
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Brilliantly Advanced General Electronic-structure Library
-WWW=		https://nubakery.org/
+WWW=		https://nubakery.org/ \
+		https://github.com/qsimulate-open/bagel
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN_armv7=	error: static_assert failed "size_t is assumed to be the same size as unsigned long long"
 BROKEN_i386=	error: static_assert failed "size_t is assumed to be the same size as unsigned long long"
 
 LIB_DEPENDS=	libboost_serialization.so:devel/boost-libs

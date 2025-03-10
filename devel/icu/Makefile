@@ -1,6 +1,6 @@
 PORTNAME=	icu
-DISTVERSION=	74_2
-PORTREVISION?=	1 # keep for icu-lx
+DISTVERSION=	76_1
+PORTREVISION?=	0 # keep for icu-lx
 PORTEPOCH?=	1
 CATEGORIES?=	devel
 MASTER_SITES=	https://github.com/unicode-org/${PORTNAME}/releases/download/release-${DISTVERSION:S/rc/-&/:S/_/-/g}/
@@ -8,7 +8,8 @@ DISTNAME=	icu4c-${DISTVERSION}-src
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT?=	International Components for Unicode (from IBM)
-WWW=		https://icu.unicode.org/
+WWW=		https://icu.unicode.org/ \
+		https://github.com/unicode-org/icu
 
 LICENSE=	ICU
 LICENSE_NAME=	ICU license
@@ -34,7 +35,7 @@ WRKSRC=		${WRKDIR}/icu/source
 ICUMAJOR=	${PORTVERSION:C/\..*//}
 PLIST_SUB+=	ICUMAJOR=${ICUMAJOR} ICUVER=${PORTVERSION:C/r.?/1/}
 
-.ifndef PKGNAMESUFFIX
+.if !defined(PKGNAMESUFFIX)
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/g* \
 		${STAGEDIR}${PREFIX}/bin/*conv \
@@ -46,6 +47,6 @@ post-install:
 # Filename varies by endianness: icudt<major>b.dat vs. icudt<major>l.dat
 	@(cd ${STAGEDIR}${PREFIX} && ${ECHO_CMD} \
 		${DATADIR_REL}/${PORTVERSION:C/r.?/1/}/icudt*.dat >>${TMPPLIST})
-.endif # PKGNAMESUFFIX
+.endif # !defined(PKGNAMESUFFIX)
 
 .include <bsd.port.mk>

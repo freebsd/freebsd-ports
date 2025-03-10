@@ -1,6 +1,6 @@
 PORTNAME=	gleam
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.4.1
+DISTVERSION=	1.8.1
 CATEGORIES=	lang
 
 MAINTAINER=	dch@FreeBSD.org
@@ -38,9 +38,6 @@ do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/bin/
 	${MV} ${WRKSRC}/target/release/gleam \
 		${STAGEDIR}${PREFIX}/bin/
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/gleam
 
 post-install-DOCS-on:
 	(cd ${WRKSRC} && \

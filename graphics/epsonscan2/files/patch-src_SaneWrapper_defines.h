@@ -1,11 +1,12 @@
---- src/SaneWrapper/defines.h.orig	2021-11-25 00:56:59 UTC
+--- src/SaneWrapper/defines.h.orig	2024-09-12 07:10:44 UTC
 +++ src/SaneWrapper/defines.h
-@@ -36,14 +36,30 @@ typedef enum {
+@@ -33,14 +33,30 @@ typedef enum {
  } bool;
  #endif
  #include <stdlib.h>
+-#define _assert(type,condition) \
 +#undef _assert
- #define _assert(type,condition) \
++#define _assert(type,condition)			\
    if (!(condition)) \
    { \
      exit (EXIT_FAILURE); \

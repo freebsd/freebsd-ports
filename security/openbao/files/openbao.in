@@ -1,0 +1,89 @@
+#!/bin/sh
+
+# PROVIDE: openbao
+# REQUIRE: DAEMON
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# openbao_enable (bool):		Set it to YES to enable openbao.
+#					Default is "NO".
+# openbao_user (user):			Set user to run openbao.
+#					Default is "%%USER%%".
+# openbao_group (group):		Set group to run openbao.
+#					Default is "%%GROUP%%".
+# openbao_config (file):		Set openbao config file.
+#					Default is "%%PREFIX%%/etc/openbao.hcl".
+# openbao_syslog_output_enable (bool):	Set to enable syslog output.
+#					Default is "NO". See daemon(8).
+# openbao_syslog_output_priority (str):	Set syslog priority if syslog enabled.
+#					Default is "info". See daemon(8).
+# openbao_syslog_output_facility (str):	Set syslog facility if syslog enabled.
+#					Default is "daemon". See daemon(8).
+# openbao_limits_mlock (size):		Allowed memorylocked value in size.
+#					Default is 1024M.
+
+. /etc/rc.subr
+
+name=openbao
+rcvar=openbao_enable
+
+load_rc_config $name
+
+: ${openbao_enable:="NO"}
+: ${openbao_user:="%%USER%%"}
+: ${openbao_group:="%%GROUP%%"}
+: ${openbao_config:="%%PREFIX%%/etc/openbao.hcl"}
+: ${openbao_limits_mlock:="1024M"}
+: ${openbao_limits:="-l ${openbao_limits_mlock}"}
+
+DAEMON=$(/usr/sbin/daemon 2>&1 | grep -q syslog ; echo $?)
+if [ ${DAEMON} -eq 0 ]; then
+	: ${openbao_syslog_output_enable:="NO"}
+	: ${openbao_syslog_output_priority:="info"}
+	: ${openbao_syslog_output_facility:="daemon"}
+	if checkyesno openbao_syslog_output_enable; then
+		openbao_syslog_output_flags="-T ${name}"
+
+		if [ -n "${openbao_syslog_output_priority}" ]; then
+			openbao_syslog_output_flags="${openbao_syslog_output_flags} -s ${openbao_syslog_output_priority}"
+		fi
+
+		if [ -n "${openbao_syslog_output_facility}" ]; then
+			openbao_syslog_output_flags="${openbao_syslog_output_flags} -l ${openbao_syslog_output_facility}"
+		fi
+	fi
+else
+	openbao_syslog_output_enable="NO"
+	openbao_syslog_output_flags=""
+fi
+
+pidfile=/var/run/openbao.pid
+procname="%%PREFIX%%/bin/bao"
+command="/usr/sbin/daemon"
+command_args="-f -t ${name} ${openbao_syslog_output_flags} -p ${pidfile} /usr/bin/env ${openbao_env} ${procname} server -config=${openbao_config}"
+
+extra_commands="reload monitor"
+monitor_cmd=openbao_monitor
+start_precmd=openbao_startprecmd
+required_files="$openbao_config"
+
+openbao_monitor()
+{
+	sig_reload=USR1
+	run_rc_command "reload"
+}
+
+openbao_startprecmd()
+{
+	if [ ! -e ${pidfile} ]; then
+		install -o ${openbao_user} -g ${openbao_group} /dev/null ${pidfile};
+	fi
+
+	if [ ! -d ${openbao_dir} ]; then
+		install -d -o ${openbao_user} -g ${openbao_group} ${openbao_dir}
+	fi
+}
+
+run_rc_command "$1"

@@ -1,0 +1,5 @@
+--- vendor/re2-0.17.0/dune-project.orig	2024-05-07 18:46:09 UTC
++++ vendor/re2-0.17.0/dune-project
+@@ -1 +1 @@
+-(lang dune 3.11)
++(lang dune 3.7)

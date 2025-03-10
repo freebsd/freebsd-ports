@@ -1,0 +1,2 @@
+pybind11_protobuf provides pybind11 bindings for Google's Protocol Buffers.
+These adapters make Protocol Buffer message types work with Pybind11 bindings.

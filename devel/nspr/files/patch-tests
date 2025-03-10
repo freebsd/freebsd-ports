@@ -1,314 +1,318 @@
---- lib/tests/Makefile.in.orig	2019-10-15 14:21:38 UTC
+--- lib/tests/Makefile.in.orig
 +++ lib/tests/Makefile.in
-@@ -159,7 +159,7 @@ else
- ifeq ($(OS_ARCH),OS2)
- 	$(LINK) $(EXEFLAGS) $(LDOPTS) $< $(LIBPLC)  $(LIBPLDS) $(LIBPR) $(OS_LIBS) $(EXTRA_LIBS)
+@@ -152,7 +152,7 @@
+ ifeq ($(OS_ARCH), WINCE)
+ 	$(LD) $(LDOPTS) $< $(LIBPLC) $(LIBPLDS) $(LIBPR) ws2.lib -out:$@
  else
 -	$(CC) $(XCFLAGS) $< $(LDOPTS) $(LIBPLC) $(LIBPLDS) $(LIBPR) $(EXTRA_LIBS) -o $@
 +	$(CC) $(XCFLAGS) $< $(LDOPTS) $(LIBPLC) $(LIBPLDS) $(LIBPR) $(OS_LIBS) $(EXTRA_LIBS) -o $@
  endif
  endif
  endif
---- pr/tests/cleanup.c.orig	2019-10-15 14:21:38 UTC
+--- pr/tests/cleanup.c.orig
 +++ pr/tests/cleanup.c
-@@ -15,7 +15,7 @@
+@@ -14,7 +14,7 @@
+ #include <stdlib.h>
  
- static void PR_CALLBACK Thread(void *sleep)
- {
--    PR_Sleep(PR_SecondsToInterval((PRUint32)sleep));
-+    PR_Sleep(PR_SecondsToInterval((intptr_t)sleep));
-     printf("Thread exiting\n");
+ static void PR_CALLBACK Thread(void* sleep) {
+-  PR_Sleep(PR_SecondsToInterval((PRUint32)sleep));
++  PR_Sleep(PR_SecondsToInterval((intptr_t)sleep));
+   printf("Thread exiting\n");
  }
  
-@@ -39,7 +39,8 @@ int main(int argc, char **argv)
-     PRThreadScope type = PR_LOCAL_THREAD;
-     PRFileDesc *err = PR_GetSpecialFD(PR_StandardError);
-     PLOptState *opt = PL_CreateOptState(argc, argv, "Ghs:S:t:cC:");
--    PRIntn concurrency = 1, child_sleep = 10, main_sleep = 5, threads = 1;
-+    PRIntn concurrency = 1, main_sleep = 5, threads = 1;
-+    intptr_t child_sleep = 10;
+@@ -36,7 +36,8 @@
+   PRThreadScope type = PR_LOCAL_THREAD;
+   PRFileDesc* err = PR_GetSpecialFD(PR_StandardError);
+   PLOptState* opt = PL_CreateOptState(argc, argv, "Ghs:S:t:cC:");
+-  PRIntn concurrency = 1, child_sleep = 10, main_sleep = 5, threads = 1;
++  PRIntn concurrency = 1, main_sleep = 5, threads = 1;
++  intptr_t child_sleep = 10;
  
-     PR_STDIO_INIT();
-     while (PL_OPT_EOL != (os = PL_GetNextOpt(opt)))
-@@ -82,7 +83,7 @@ int main(int argc, char **argv)
-                (PR_LOCAL_THREAD == type) ? "LOCAL" : "GLOBAL");
-     PR_fprintf(err, "\tConcurrency: %d\n", concurrency);
-     PR_fprintf(err, "\tNumber of threads: %d\n", threads);
--    PR_fprintf(err, "\tThread sleep: %d\n", child_sleep);
-+    PR_fprintf(err, "\tThread sleep: %d\n", (int)child_sleep);
-     PR_fprintf(err, "\tMain sleep: %d\n", main_sleep);
-     PR_fprintf(err, "\tCleanup will %sbe called\n\n", (cleanup) ? "" : "NOT ");
+   PR_STDIO_INIT();
+   while (PL_OPT_EOL != (os = PL_GetNextOpt(opt))) {
+@@ -77,7 +78,7 @@
+              (PR_LOCAL_THREAD == type) ? "LOCAL" : "GLOBAL");
+   PR_fprintf(err, "\tConcurrency: %d\n", concurrency);
+   PR_fprintf(err, "\tNumber of threads: %d\n", threads);
+-  PR_fprintf(err, "\tThread sleep: %d\n", child_sleep);
++  PR_fprintf(err, "\tThread sleep: %d\n", (int)child_sleep);
+   PR_fprintf(err, "\tMain sleep: %d\n", main_sleep);
+   PR_fprintf(err, "\tCleanup will %sbe called\n\n", (cleanup) ? "" : "NOT ");
  
---- pr/tests/cltsrv.c.orig	2019-10-15 14:21:38 UTC
+--- pr/tests/cltsrv.c.orig
 +++ pr/tests/cltsrv.c
-@@ -931,7 +931,7 @@ int main(int argc, char** argv)
- {
-     PRUintn index;
-     PRBool boolean;
--    CSClient_t *client;
-+    CSClient_t *client = NULL;
-     PRStatus rv, joinStatus;
-     CSServer_t *server = NULL;
+@@ -861,7 +861,7 @@
+ int main(int argc, char** argv) {
+   PRUintn index;
+   PRBool boolean;
+-  CSClient_t* client;
++  CSClient_t* client = NULL;
+   PRStatus rv, joinStatus;
+   CSServer_t* server = NULL;
  
---- pr/tests/cvar.c.orig	2019-10-15 14:21:38 UTC
+--- pr/tests/cvar.c.orig
 +++ pr/tests/cvar.c
-@@ -138,15 +138,15 @@ static int alive;
- static void PR_CALLBACK CXReader(void *arg)
- {
-     CircBuf *cbp = (CircBuf *)arg;
--    PRInt32 i, n;
-+    intptr_t i, n;
-     void *data;
+@@ -133,15 +133,15 @@
  
-     n = count / 2;
-     for (i = 0; i < n; i++) {
-         data = GetCBData(cbp);
--        if ((int)data != i)
-+        if ((intptr_t)data != i)
-             if (debug_mode) {
--                printf("data mismatch at for i = %d usec\n", i);
-+                printf("data mismatch at for i = %ld usec\n", (long)i);
-             }
-     }
+ static void PR_CALLBACK CXReader(void* arg) {
+   CircBuf* cbp = (CircBuf*)arg;
+-  PRInt32 i, n;
++  intptr_t i, n;
+   void* data;
  
-@@ -159,7 +159,7 @@ static void PR_CALLBACK CXReader(void *arg)
- static void PR_CALLBACK CXWriter(void *arg)
- {
-     CircBuf *cbp = (CircBuf *)arg;
--    PRInt32 i, n;
-+    intptr_t i, n;
+   n = count / 2;
+   for (i = 0; i < n; i++) {
+     data = GetCBData(cbp);
+-    if ((int)data != i)
++    if ((intptr_t)data != i)
+       if (debug_mode) {
+-        printf("data mismatch at for i = %d usec\n", i);
++        printf("data mismatch at for i = %ld usec\n", (long)i);
+       }
+   }
  
-     n = count / 2;
-     for (i = 0; i < n; i++) {
---- pr/tests/cvar2.c.orig	2019-10-15 14:21:38 UTC
+@@ -153,7 +153,7 @@
+ 
+ static void PR_CALLBACK CXWriter(void* arg) {
+   CircBuf* cbp = (CircBuf*)arg;
+-  PRInt32 i, n;
++  intptr_t i, n;
+ 
+   n = count / 2;
+   for (i = 0; i < n; i++) {
+--- pr/tests/cvar2.c.orig
 +++ pr/tests/cvar2.c
-@@ -96,7 +96,7 @@ PrivateCondVarThread(void *_info)
-     for (index=0; index<info->loops; index++) {
-         PR_Lock(info->lock);
-         if (*info->tcount == 0) {
--            DPRINTF(("PrivateCondVarThread: thread 0x%lx waiting on cvar = 0x%lx\n",
-+            DPRINTF(("PrivateCondVarThread: thread %p waiting on cvar = %p\n",
-                      PR_GetCurrentThread(), info->cvar));
-             PR_WaitCondVar(info->cvar, info->timeout);
-         }
-@@ -109,8 +109,8 @@ PrivateCondVarThread(void *_info)
-         PR_Lock(info->exitlock);
-         (*info->exitcount)++;
-         PR_NotifyCondVar(info->exitcvar);
--        DPRINTF(("PrivateCondVarThread: thread 0x%lx notified exitcvar = 0x%lx cnt = %ld\n",
--                 PR_GetCurrentThread(), info->exitcvar,(*info->exitcount)));
-+        DPRINTF(("PrivateCondVarThread: thread %p notified exitcvar = %p cnt = %d\n",
-+                 PR_GetCurrentThread(), info->exitcvar,(int)(*info->exitcount)));
-         PR_Unlock(info->exitlock);
+@@ -95,7 +95,7 @@
+   for (index = 0; index < info->loops; index++) {
+     PR_Lock(info->lock);
+     if (*info->tcount == 0) {
+-      DPRINTF(("PrivateCondVarThread: thread 0x%lx waiting on cvar = 0x%lx\n",
++      DPRINTF(("PrivateCondVarThread: thread %p waiting on cvar = %p\n",
+                PR_GetCurrentThread(), info->cvar));
+       PR_WaitCondVar(info->cvar, info->timeout);
      }
+@@ -109,9 +109,9 @@
+     (*info->exitcount)++;
+     PR_NotifyCondVar(info->exitcvar);
+     DPRINTF(
+-        ("PrivateCondVarThread: thread 0x%lx notified exitcvar = 0x%lx cnt = "
+-         "%ld\n",
+-         PR_GetCurrentThread(), info->exitcvar, (*info->exitcount)));
++        ("PrivateCondVarThread: thread %p notified exitcvar = %p cnt = "
++         "%d\n",
++         PR_GetCurrentThread(), info->exitcvar, (int)(*info->exitcount)));
+     PR_Unlock(info->exitlock);
+   }
  #if 0
-@@ -159,7 +159,7 @@ CreateTestThread(threadinfo *info,
- void
- CondVarTestSUU(void *_arg)
- {
--    PRInt32 arg = (PRInt32)_arg;
-+    PRInt32 arg = (PRInt32)(intptr_t)_arg;
-     PRInt32 index, loops;
-     threadinfo *list;
-     PRLock *sharedlock;
-@@ -191,7 +191,7 @@ CondVarTestSUU(void *_arg)
-                          PR_TRUE,
-                          PR_LOCAL_THREAD);
-         index++;
--        DPRINTF(("CondVarTestSUU: created thread 0x%lx\n",list[index].thread));
-+        DPRINTF(("CondVarTestSUU: created thread %p\n",list[index].thread));
+@@ -142,7 +142,7 @@
+ }
+ 
+ void CondVarTestSUU(void* _arg) {
+-  PRInt32 arg = (PRInt32)_arg;
++  PRInt32 arg = (PRInt32)(intptr_t)_arg;
+   PRInt32 index, loops;
+   threadinfo* list;
+   PRLock* sharedlock;
+@@ -165,7 +165,7 @@
+                      PR_INTERVAL_NO_TIMEOUT, &tcount, exitlock, exitcvar,
+                      &exitcount, PR_TRUE, PR_LOCAL_THREAD);
+     index++;
+-    DPRINTF(("CondVarTestSUU: created thread 0x%lx\n", list[index].thread));
++    DPRINTF(("CondVarTestSUU: created thread %p\n", list[index].thread));
+   }
+ 
+   for (loops = 0; loops < count; loops++) {
+@@ -175,7 +175,7 @@
+       (*list[index].tcount)++;
+       PR_NotifyCondVar(list[index].cvar);
+       PR_Unlock(list[index].lock);
+-      DPRINTF(("PrivateCondVarThread: thread 0x%lx notified cvar = 0x%lx\n",
++      DPRINTF(("PrivateCondVarThread: thread %p notified cvar = %p\n",
+                PR_GetCurrentThread(), list[index].cvar));
      }
  
-     for (loops = 0; loops < count; loops++) {
-@@ -201,7 +201,7 @@ CondVarTestSUU(void *_arg)
-             (*list[index].tcount)++;
-             PR_NotifyCondVar(list[index].cvar);
-             PR_Unlock(list[index].lock);
--            DPRINTF(("PrivateCondVarThread: thread 0x%lx notified cvar = 0x%lx\n",
-+            DPRINTF(("PrivateCondVarThread: thread %p notified cvar = %p\n",
-                      PR_GetCurrentThread(), list[index].cvar));
-         }
+@@ -203,7 +203,7 @@
+ }
  
-@@ -231,7 +231,7 @@ CondVarTestSUU(void *_arg)
- void
- CondVarTestSUK(void *_arg)
- {
--    PRInt32 arg = (PRInt32)_arg;
-+    PRInt32 arg = (PRInt32)(intptr_t)_arg;
-     PRInt32 index, loops;
-     threadinfo *list;
-     PRLock *sharedlock;
-@@ -307,7 +307,7 @@ CondVarTestSUK(void *_arg)
- void
- CondVarTestPUU(void *_arg)
- {
--    PRInt32 arg = (PRInt32)_arg;
-+    PRInt32 arg = (PRInt32)(intptr_t)_arg;
-     PRInt32 index, loops;
-     threadinfo *list;
-     PRLock *sharedlock;
-@@ -342,7 +342,7 @@ CondVarTestPUU(void *_arg)
-                          PR_FALSE,
-                          PR_LOCAL_THREAD);
+ void CondVarTestSUK(void* _arg) {
+-  PRInt32 arg = (PRInt32)_arg;
++  PRInt32 arg = (PRInt32)(intptr_t)_arg;
+   PRInt32 index, loops;
+   threadinfo* list;
+   PRLock* sharedlock;
+@@ -267,7 +267,7 @@
+ }
  
--        DPRINTF(("CondVarTestPUU: created thread 0x%lx\n",list[index].thread));
-+        DPRINTF(("CondVarTestPUU: created thread %p\n",list[index].thread));
-         index++;
-         tcount++;
+ void CondVarTestPUU(void* _arg) {
+-  PRInt32 arg = (PRInt32)_arg;
++  PRInt32 arg = (PRInt32)(intptr_t)_arg;
+   PRInt32 index, loops;
+   threadinfo* list;
+   PRLock* sharedlock;
+@@ -293,7 +293,7 @@
+                      count, PR_INTERVAL_NO_TIMEOUT, tcount, exitlock, exitcvar,
+                      &exitcount, PR_FALSE, PR_LOCAL_THREAD);
+ 
+-    DPRINTF(("CondVarTestPUU: created thread 0x%lx\n", list[index].thread));
++    DPRINTF(("CondVarTestPUU: created thread %p\n", list[index].thread));
+     index++;
+     tcount++;
+   }
+@@ -311,9 +311,9 @@
+     /* Wait for threads to finish */
+     while (exitcount < arg) {
+       DPRINTF(
+-          ("CondVarTestPUU: thread 0x%lx waiting on exitcvar = 0x%lx cnt = "
+-           "%ld\n",
+-           PR_GetCurrentThread(), exitcvar, exitcount));
++          ("CondVarTestPUU: thread %p waiting on exitcvar = %p cnt = "
++           "%d\n",
++           PR_GetCurrentThread(), exitcvar, (int)exitcount));
+       PR_WaitCondVar(exitcvar, PR_SecondsToInterval(60));
      }
-@@ -360,8 +360,8 @@ CondVarTestPUU(void *_arg)
-         PR_Lock(exitlock);
-         /* Wait for threads to finish */
-         while(exitcount < arg) {
--            DPRINTF(("CondVarTestPUU: thread 0x%lx waiting on exitcvar = 0x%lx cnt = %ld\n",
--                     PR_GetCurrentThread(), exitcvar, exitcount));
-+            DPRINTF(("CondVarTestPUU: thread %p waiting on exitcvar = %p cnt = %d\n",
-+                     PR_GetCurrentThread(), exitcvar, (int)exitcount));
-             PR_WaitCondVar(exitcvar, PR_SecondsToInterval(60));
-         }
-         PR_ASSERT(exitcount >= arg);
-@@ -371,7 +371,7 @@ CondVarTestPUU(void *_arg)
+     PR_ASSERT(exitcount >= arg);
+@@ -323,7 +323,7 @@
  
-     /* Join all the threads */
-     for(index=0; index<(arg); index++)  {
--        DPRINTF(("CondVarTestPUU: joining thread 0x%lx\n",list[index].thread));
-+        DPRINTF(("CondVarTestPUU: joining thread %p\n",list[index].thread));
-         PR_JoinThread(list[index].thread);
-         if (list[index].internal) {
-             PR_Lock(list[index].lock);
-@@ -393,7 +393,7 @@ CondVarTestPUU(void *_arg)
- void
- CondVarTestPUK(void *_arg)
- {
--    PRInt32 arg = (PRInt32)_arg;
-+    PRInt32 arg = (PRInt32)(intptr_t)_arg;
-     PRInt32 index, loops;
-     threadinfo *list;
-     PRLock *sharedlock;
-@@ -475,7 +475,7 @@ CondVarTestPUK(void *_arg)
- void
- CondVarTest(void *_arg)
- {
--    PRInt32 arg = (PRInt32)_arg;
-+    PRInt32 arg = (PRInt32)(intptr_t)_arg;
-     PRInt32 index, loops;
-     threadinfo *list;
-     PRLock *sharedlock;
-@@ -609,7 +609,7 @@ CondVarTest(void *_arg)
- void
- CondVarTimeoutTest(void *_arg)
- {
--    PRInt32 arg = (PRInt32)_arg;
-+    PRInt32 arg = (PRInt32)(intptr_t)_arg;
-     PRInt32 index, loops;
-     threadinfo *list;
-     PRLock *sharedlock;
-@@ -721,7 +721,7 @@ CondVarTimeoutTest(void *_arg)
- void
- CondVarMixedTest(void *_arg)
- {
--    PRInt32 arg = (PRInt32)_arg;
-+    PRInt32 arg = (PRInt32)(intptr_t)_arg;
-     PRInt32 index, loops;
-     threadinfo *list;
-     PRLock *sharedlock;
-@@ -811,7 +811,7 @@ CondVarMixedTest(void *_arg)
-         for(index=0; index<(arg*4); index+=3) {
+   /* Join all the threads */
+   for (index = 0; index < (arg); index++) {
+-    DPRINTF(("CondVarTestPUU: joining thread 0x%lx\n", list[index].thread));
++    DPRINTF(("CondVarTestPUU: joining thread %p\n", list[index].thread));
+     PR_JoinThread(list[index].thread);
+     if (list[index].internal) {
+       PR_Lock(list[index].lock);
+@@ -343,7 +343,7 @@
+ }
  
-             PR_Lock(list[index].lock);
--            *list[index].tcount++;
-+            list[index].tcount++;
-             PR_NotifyCondVar(list[index].cvar);
-             PR_Unlock(list[index].lock);
+ void CondVarTestPUK(void* _arg) {
+-  PRInt32 arg = (PRInt32)_arg;
++  PRInt32 arg = (PRInt32)(intptr_t)_arg;
+   PRInt32 index, loops;
+   threadinfo* list;
+   PRLock* sharedlock;
+@@ -413,7 +413,7 @@
+ }
  
-@@ -883,7 +883,7 @@ static void Measure(void (*func)(void *), PRInt32 arg,
-     double d;
+ void CondVarTest(void* _arg) {
+-  PRInt32 arg = (PRInt32)_arg;
++  PRInt32 arg = (PRInt32)(intptr_t)_arg;
+   PRInt32 index, loops;
+   threadinfo* list;
+   PRLock* sharedlock;
+@@ -508,7 +508,7 @@
+ }
  
-     start = PR_IntervalNow();
--    (*func)((void *)arg);
-+    (*func)((void *)(intptr_t)arg);
-     stop = PR_IntervalNow();
+ void CondVarTimeoutTest(void* _arg) {
+-  PRInt32 arg = (PRInt32)_arg;
++  PRInt32 arg = (PRInt32)(intptr_t)_arg;
+   PRInt32 index, loops;
+   threadinfo* list;
+   PRLock* sharedlock;
+@@ -580,7 +580,7 @@
+ }
  
-     d = (double)PR_IntervalToMicroseconds(stop - start);
-@@ -948,7 +948,7 @@ This test is run with %d, %d, %d, and %d threads of ea
-     PR_SetConcurrency(2);
+ void CondVarMixedTest(void* _arg) {
+-  PRInt32 arg = (PRInt32)_arg;
++  PRInt32 arg = (PRInt32)(intptr_t)_arg;
+   PRInt32 index, loops;
+   threadinfo* list;
+   PRLock* sharedlock;
+@@ -631,7 +631,7 @@
+     /* Notify the threads */
+     for (index = 0; index < (arg * 4); index += 3) {
+       PR_Lock(list[index].lock);
+-      *list[index].tcount++;
++      list[index].tcount++;
+       PR_NotifyCondVar(list[index].cvar);
+       PR_Unlock(list[index].lock);
+     }
+@@ -687,7 +687,7 @@
+   double d;
  
-     for (threads = default_threads; threads < default_threads*5; threads+=default_threads) {
--        printf("\n%ld Thread tests\n", threads);
-+        printf("\n%d Thread tests\n", (int)threads);
-         Measure(CondVarTestSUU, threads, "Condvar simple test shared UU");
-         Measure(CondVarTestSUK, threads, "Condvar simple test shared UK");
-         Measure(CondVarTestPUU, threads, "Condvar simple test priv UU");
---- pr/tests/foreign.c.orig	2019-10-15 14:21:38 UTC
+   start = PR_IntervalNow();
+-  (*func)((void*)arg);
++  (*func)((void*)(intptr_t)arg);
+   stop = PR_IntervalNow();
+ 
+   d = (double)PR_IntervalToMicroseconds(stop - start);
+@@ -752,7 +752,7 @@
+ 
+   for (threads = default_threads; threads < default_threads * 5;
+        threads += default_threads) {
+-    printf("\n%ld Thread tests\n", threads);
++    printf("\n%d Thread tests\n", (int)threads);
+     Measure(CondVarTestSUU, threads, "Condvar simple test shared UU");
+     Measure(CondVarTestSUK, threads, "Condvar simple test shared UK");
+     Measure(CondVarTestPUU, threads, "Condvar simple test priv UU");
+--- pr/tests/foreign.c.orig
 +++ pr/tests/foreign.c
-@@ -175,7 +175,7 @@ static void OneShot(void *arg)
-     PRFileDesc *fd;
-     PRDir *dir;
-     PRFileDesc *pair[2];
--    PRIntn test = (PRIntn)arg;
-+    intptr_t test = (intptr_t)arg;
+@@ -171,7 +171,7 @@
+   PRFileDesc* fd;
+   PRDir* dir;
+   PRFileDesc* pair[2];
+-  PRIntn test = (PRIntn)arg;
++  intptr_t test = (intptr_t)arg;
  
-     for (test = 0; test < 12; ++test) {
+   for (test = 0; test < 12; ++test) {
+     switch (test) {
+@@ -266,7 +266,7 @@
  
-@@ -271,7 +271,7 @@ static void OneShot(void *arg)
- int main(int argc, char **argv)
- {
-     PRStatus rv;
--    PRInt32 thread_cnt = DEFAULT_THREAD_COUNT;
-+    intptr_t    thread_cnt = DEFAULT_THREAD_COUNT;
-     PLOptStatus os;
-     PLOptState *opt = PL_CreateOptState(argc, argv, "dt:");
+ int main(int argc, char** argv) {
+   PRStatus rv;
+-  PRInt32 thread_cnt = DEFAULT_THREAD_COUNT;
++  intptr_t thread_cnt = DEFAULT_THREAD_COUNT;
+   PLOptStatus os;
+   PLOptState* opt = PL_CreateOptState(argc, argv, "dt:");
  
---- pr/tests/forktest.c.orig	2019-10-15 14:21:38 UTC
+--- pr/tests/forktest.c.orig
 +++ pr/tests/forktest.c
-@@ -47,7 +47,7 @@ ClientThreadFunc(void *arg)
- {
-     PRNetAddr addr;
-     PRFileDesc *sock = NULL;
--    PRInt32 tmp = (PRInt32)arg;
-+    intptr_t tmp = (intptr_t)arg;
+@@ -50,7 +50,7 @@
+ static void ClientThreadFunc(void* arg) {
+   PRNetAddr addr;
+   PRFileDesc* sock = NULL;
+-  PRInt32 tmp = (PRInt32)arg;
++  intptr_t tmp = (intptr_t)arg;
  
-     /*
-      * Make sure the PR_Accept call will block
-@@ -143,7 +143,7 @@ DoIO(void)
-         goto finish;
-     }
-     clientThread = PR_CreateThread( PR_USER_THREAD, ClientThreadFunc,
--                                    (void *) PR_ntohs(addr.inet.port), PR_PRIORITY_NORMAL, PR_LOCAL_THREAD,
-+                                    (void *)(intptr_t)PR_ntohs(addr.inet.port), PR_PRIORITY_NORMAL, PR_LOCAL_THREAD,
-                                     PR_JOINABLE_THREAD, 0);
-     if (clientThread == NULL) {
-         fprintf(stderr, "Cannot create client thread: (%d, %d)\n",
-@@ -151,6 +151,9 @@ DoIO(void)
-         failed_already = 1;
-         goto finish;
-     }
-+    printf("Wait one second before accept\n");
-+    fflush(stdout);
-+    PR_Sleep(PR_SecondsToInterval(1));
-     printf("Accepting connection at port %hu\n", PR_ntohs(addr.inet.port));
-     fflush(stdout);
-     sock = PR_Accept(listenSock, &addr, PR_SecondsToInterval(5));
---- pr/tests/getai.c.orig	2019-10-15 14:21:38 UTC
+   /*
+    * Make sure the PR_Accept call will block
+@@ -138,7 +138,7 @@
+     goto finish;
+   }
+   clientThread = PR_CreateThread(
+-      PR_USER_THREAD, ClientThreadFunc, (void*)PR_ntohs(addr.inet.port),
++      PR_USER_THREAD, ClientThreadFunc, (void*)(intptr_t)PR_ntohs(addr.inet.port),
+       PR_PRIORITY_NORMAL, PR_LOCAL_THREAD, PR_JOINABLE_THREAD, 0);
+   if (clientThread == NULL) {
+     fprintf(stderr, "Cannot create client thread: (%d, %d)\n", PR_GetError(),
+@@ -146,6 +146,9 @@
+     failed_already = 1;
+     goto finish;
+   }
++  printf("Wait one second before accept\n");
++  fflush(stdout);
++  PR_Sleep(PR_SecondsToInterval(1));
+   printf("Accepting connection at port %hu\n", PR_ntohs(addr.inet.port));
+   fflush(stdout);
+   sock = PR_Accept(listenSock, &addr, PR_SecondsToInterval(5));
+--- pr/tests/getai.c.orig
 +++ pr/tests/getai.c
-@@ -13,8 +13,15 @@ int main(int argc, char **argv)
-     PRAddrInfo *ai;
-     void *iter;
-     PRNetAddr addr;
-+    const char *host;
+@@ -12,8 +12,15 @@
+   PRAddrInfo* ai;
+   void* iter;
+   PRNetAddr addr;
++  const char *host;
  
--    ai = PR_GetAddrInfoByName(argv[1], PR_AF_UNSPEC, PR_AI_ADDRCONFIG);
-+    if (argc > 1) {
-+        host = argv[1];
-+    }
-+    else {
-+        host = "www.FreeBSD.org";
-+    }
-+    ai = PR_GetAddrInfoByName(host, PR_AF_UNSPEC, PR_AI_ADDRCONFIG);
-     if (ai == NULL) {
-         fprintf(stderr, "PR_GetAddrInfoByName failed: (%d, %d)\n",
-                 PR_GetError(), PR_GetOSError());
---- pr/tests/instrumt.c.orig	2019-10-15 14:21:38 UTC
+-  ai = PR_GetAddrInfoByName(argv[1], PR_AF_UNSPEC, PR_AI_ADDRCONFIG);
++  if (argc > 1) {
++    host = argv[1];
++  }
++  else {
++    host = "www.FreeBSD.org";
++  }
++  ai = PR_GetAddrInfoByName(host, PR_AF_UNSPEC, PR_AI_ADDRCONFIG);
+   if (ai == NULL) {
+     fprintf(stderr, "PR_GetAddrInfoByName failed: (%d, %d)\n", PR_GetError(),
+             PR_GetOSError());
+--- pr/tests/instrumt.c.orig
 +++ pr/tests/instrumt.c
 @@ -36,6 +36,7 @@
  */
@@ -318,83 +322,71 @@
  #include <plstr.h>
  #include <prclist.h>
  #include <prmem.h>
-@@ -50,7 +51,6 @@
- #define COUNT_LIMIT  (10 * ( 1024))
+@@ -67,10 +68,10 @@
+ static void Help(void) { printf("Help? ... Ha!\n"); }
  
- #define SMALL_TRACE_BUFSIZE  ( 60 * 1024 )
--
- typedef enum
- {
-     CountLoop = 1,
-@@ -78,10 +78,10 @@ static void Help(void)
- 
- static void ListCounters(void)
- {
+ static void ListCounters(void) {
 +#if defined(DEBUG) || defined(FORCE_NSPR_COUNTERS)
-     PR_DEFINE_COUNTER( qh );
-     PR_DEFINE_COUNTER( rh );
-     const char *qn, *rn, *dn;
--    const char **qname = &qn, **rname = &rn, **desc = &dn;
-     PRUint32    tCtr;
+   PR_DEFINE_COUNTER(qh);
+   PR_DEFINE_COUNTER(rh);
+   const char *qn, *rn, *dn;
+-  const char **qname = &qn, **rname = &rn, **desc = &dn;
+   PRUint32 tCtr;
  
-     PR_INIT_COUNTER_HANDLE( qh, NULL );
-@@ -92,7 +92,7 @@ static void ListCounters(void)
-         PR_FIND_NEXT_COUNTER_RNAME(rh, rh, qh );
-         while ( rh != NULL )
-         {
--            PR_GET_COUNTER_NAME_FROM_HANDLE( rh, qname, rname, desc );
-+            PR_GET_COUNTER_NAME_FROM_HANDLE( rh, &qn, &rn, &dn );
-             PR_GET_COUNTER(tCtr, rh);
-             PR_LOG( lm, msgLevel,
-                     ( "QName: %s  RName: %s  Desc: %s  Value: %ld\n",
-@@ -101,15 +101,15 @@ static void ListCounters(void)
-         }
-         PR_FIND_NEXT_COUNTER_QNAME(qh, qh);
+   PR_INIT_COUNTER_HANDLE(qh, NULL);
+@@ -79,7 +80,7 @@
+     PR_INIT_COUNTER_HANDLE(rh, NULL);
+     PR_FIND_NEXT_COUNTER_RNAME(rh, rh, qh);
+     while (rh != NULL) {
+-      PR_GET_COUNTER_NAME_FROM_HANDLE(rh, qname, rname, desc);
++      PR_GET_COUNTER_NAME_FROM_HANDLE(rh, &qn, &rn, &dn);
+       PR_GET_COUNTER(tCtr, rh);
+       PR_LOG(
+           lm, msgLevel,
+@@ -88,14 +89,15 @@
      }
--    return;
+     PR_FIND_NEXT_COUNTER_QNAME(qh, qh);
+   }
 +#endif
+   return;
  } /* end ListCounters() */
  
- static void ListTraces(void)
- {
+ static void ListTraces(void) {
 +#if defined(DEBUG) || defined(FORCE_NSPR_TRACE)
-     PR_DEFINE_TRACE( qh );
-     PR_DEFINE_TRACE( rh );
-     const char *qn, *rn, *dn;
--    const char **qname = &qn, **rname = &rn, **desc = &dn;
+   PR_DEFINE_TRACE(qh);
+   PR_DEFINE_TRACE(rh);
+   const char *qn, *rn, *dn;
+-  const char **qname = &qn, **rname = &rn, **desc = &dn;
  
-     PR_INIT_TRACE_HANDLE( qh, NULL );
-     PR_FIND_NEXT_TRACE_QNAME(qh, qh );
-@@ -119,7 +119,7 @@ static void ListTraces(void)
-         PR_FIND_NEXT_TRACE_RNAME(rh, rh, qh );
-         while ( rh != NULL )
-         {
--            PR_GET_TRACE_NAME_FROM_HANDLE( rh, qname, rname, desc );
-+            PR_GET_TRACE_NAME_FROM_HANDLE( rh, &qn, &rn, &dn );
-             PR_LOG( lm, msgLevel,
-                     ( "QName: %s  RName: %s  Desc: %s",
-                       qn, rn, dn ));
-@@ -127,7 +127,7 @@ static void ListTraces(void)
-         }
-         PR_FIND_NEXT_TRACE_QNAME(qh, qh);
+   PR_INIT_TRACE_HANDLE(qh, NULL);
+   PR_FIND_NEXT_TRACE_QNAME(qh, qh);
+@@ -103,12 +105,13 @@
+     PR_INIT_TRACE_HANDLE(rh, NULL);
+     PR_FIND_NEXT_TRACE_RNAME(rh, rh, qh);
+     while (rh != NULL) {
+-      PR_GET_TRACE_NAME_FROM_HANDLE(rh, qname, rname, desc);
++      PR_GET_TRACE_NAME_FROM_HANDLE(rh, &qn, &rn, &dn);
+       PR_LOG(lm, msgLevel, ("QName: %s  RName: %s  Desc: %s", qn, rn, dn));
+       PR_FIND_NEXT_TRACE_RNAME(rh, rh, qh);
      }
--    return;
+     PR_FIND_NEXT_TRACE_QNAME(qh, qh);
+   }
 +#endif
+   return;
  } /* end ListCounters() */
  
- 
-@@ -326,7 +326,7 @@ static void PR_CALLBACK SampleTrace( void *arg )
+@@ -275,7 +278,7 @@
+ ** Basic trace test.
  */
- static void TraceTest( void )
- {
--    PRInt32 i;
-+    PRIntn i = 0;
-     PRInt32 size;
-     PR_DEFINE_TRACE( th );
-     PRThread *t1, *t2;
---- pr/tests/io_timeout.c.orig	2019-10-15 14:21:38 UTC
+ static void TraceTest(void) {
+-  PRInt32 i;
++  PRIntn i = 0;
+   PRInt32 size;
+   PR_DEFINE_TRACE(th);
+   PRThread *t1, *t2;
+--- pr/tests/io_timeout.c.orig
 +++ pr/tests/io_timeout.c
-@@ -22,11 +22,13 @@
+@@ -25,11 +25,13 @@
  /* Used to get the command line option */
  #include "plgetopt.h"
  
@@ -404,503 +396,520 @@
  #include "nspr.h"
  
  #define NUM_THREADS 1
--#define BASE_PORT   8000
-+#define BASE_PORT   38011
+-#define BASE_PORT 8000
++#define BASE_PORT 38011
  #define DEFAULT_ACCEPT_TIMEOUT 2
  
  typedef struct threadInfo {
-@@ -38,7 +40,7 @@ typedef struct threadInfo {
+@@ -41,7 +43,7 @@
  } threadInfo;
  
  PRIntn failed_already = 0;
 -PRIntn debug_mode = 0;
 +PRIntn debug_mode = 1;
  
- #define LOCAL_SCOPE_STRING          "LOCAL scope"
- #define GLOBAL_SCOPE_STRING         "GLOBAL scope"
-@@ -54,7 +56,7 @@ thread_main(void *_info)
-     PRFileDesc *clientSock;
-     PRStatus rv;
-     PRThreadScope tscope;
--    char *scope_str;
-+    const char *scope_str;
+ #define LOCAL_SCOPE_STRING "LOCAL scope"
+ #define GLOBAL_SCOPE_STRING "GLOBAL scope"
+@@ -55,7 +57,7 @@
+   PRFileDesc* clientSock;
+   PRStatus rv;
+   PRThreadScope tscope;
+-  char* scope_str;
++  const char* scope_str;
  
- 
-     if (debug_mode) {
-@@ -74,6 +76,7 @@ thread_main(void *_info)
-             break;
-         default:
-             PR_NOT_REACHED("Invalid thread scope");
-+            scope_str = NULL;
-             break;
+   if (debug_mode) {
+     printf("thread %d is alive\n", info->id);
+@@ -74,6 +76,7 @@
+       break;
+     default:
+       PR_NOT_REACHED("Invalid thread scope");
++      scope_str = NULL;
+       break;
+   }
+   printf("thread id %d, scope %s\n", info->id, scope_str);
+@@ -92,8 +95,11 @@
+   listenAddr.inet.ip = PR_htonl(PR_INADDR_ANY);
+   rv = PR_Bind(listenSock, &listenAddr);
+   if (rv == PR_FAILURE) {
+-    if (debug_mode) {
+-      printf("unable to bind\n");
++    if (debug_mode)
++      printf("unable to bind to %d: %s\n", BASE_PORT + info->id, strerror(PR_GetOSError()));
++    if (PR_GetOSError() == EADDRINUSE) {
++      printf("can not proceed with this test\n");
++      exit(0);
      }
-     printf("thread id %d, scope %s\n", info->id, scope_str);
-@@ -92,8 +95,12 @@ thread_main(void *_info)
-     listenAddr.inet.ip = PR_htonl(PR_INADDR_ANY);
-     rv = PR_Bind(listenSock, &listenAddr);
-     if (rv == PR_FAILURE) {
--        if (debug_mode) {
--            printf("unable to bind\n");
-+        if (debug_mode)
-+            printf("unable to bind to %d: %s\n",
-+                   BASE_PORT + info->id, strerror(PR_GetOSError()));
-+        if (PR_GetOSError() == EADDRINUSE) {
-+            printf("can not proceed with this test\n");
-+            exit(0);
-         }
-         failed_already=1;
-         goto dead;
-@@ -117,8 +124,9 @@ thread_main(void *_info)
-     if (clientSock == NULL) {
-         if (PR_GetError() == PR_IO_TIMEOUT_ERROR) {
-             if (debug_mode) {
--                printf("PR_Accept() timeout worked!\n");
--                printf("TEST PASSED! PR_Accept() returned error %d\n",
-+                printf("PR_Accept() timeout worked!\n"
-+                       "TEST PASSED! PR_Accept() returned error "
-+                       "PR_IO_TIMEOUT_ERROR (%ld)\n",
-                        PR_IO_TIMEOUT_ERROR);
-             }
-         } else {
---- pr/tests/layer.c.orig	2019-10-15 14:21:38 UTC
+     failed_already = 1;
+     goto dead;
+@@ -118,8 +124,9 @@
+   if (clientSock == NULL) {
+     if (PR_GetError() == PR_IO_TIMEOUT_ERROR) {
+       if (debug_mode) {
+-        printf("PR_Accept() timeout worked!\n");
+-        printf("TEST PASSED! PR_Accept() returned error %d\n",
++        printf("PR_Accept() timeout worked!\n"
++               "TEST PASSED! PR_Accept() returned error "
++               "PR_IO_TIMEOUT_ERROR (%ld)\n",
+                PR_IO_TIMEOUT_ERROR);
+       }
+     } else {
+--- pr/tests/layer.c.orig
 +++ pr/tests/layer.c
-@@ -45,7 +45,10 @@ static PRUint16 default_port = 12273;
- static PRFileDesc *PushLayer(PRFileDesc *stack)
- {
-     PRFileDesc *layer = PR_CreateIOLayerStub(identity, &myMethods);
--    PRStatus rv = PR_PushIOLayer(stack, PR_GetLayersIdentity(stack), layer);
+@@ -56,7 +56,10 @@
+ 
+ static PRFileDesc* PushLayer(PRFileDesc* stack) {
+   PRFileDesc* layer = PR_CreateIOLayerStub(identity, &myMethods);
+-  PRStatus rv = PR_PushIOLayer(stack, PR_GetLayersIdentity(stack), layer);
 +#if defined(DEBUG) || defined(FORCE_PR_ASSERT)
-+    PRStatus rv = /* we only need rv for PR_ASSERT() */
++  PRStatus rv = /* we only need rv for PR_ASSERT() */
 +#endif
-+        PR_PushIOLayer(stack, PR_GetLayersIdentity(stack), layer);
-     if (verbosity > quiet) {
-         PR_fprintf(logFile, "Pushed layer(0x%x) onto stack(0x%x)\n", layer, stack);
-     }
---- pr/tests/lazyinit.c.orig	2019-10-15 14:21:38 UTC
++    PR_PushIOLayer(stack, PR_GetLayersIdentity(stack), layer);
+   if (verbosity > quiet) {
+     PR_fprintf(logFile, "Pushed layer(0x%x) onto stack(0x%x)\n", layer, stack);
+   }
+--- pr/tests/lazyinit.c.orig
 +++ pr/tests/lazyinit.c
-@@ -43,7 +43,6 @@ int main(int argc, char **argv)
-     char *path = NULL;
-     PRDir *dir = NULL;
-     PRLock *ml = NULL;
--    PRCondVar *cv = NULL;
-     PRThread *thread = NULL;
-     PRIntervalTime interval = 0;
-     PRFileDesc *file, *udp, *tcp, *pair[2];
---- pr/tests/lltest.c.orig	2019-10-15 14:21:38 UTC
+@@ -40,7 +40,6 @@
+   char* path = NULL;
+   PRDir* dir = NULL;
+   PRLock* ml = NULL;
+-  PRCondVar* cv = NULL;
+   PRThread* thread = NULL;
+   PRIntervalTime interval = 0;
+   PRFileDesc *file, *udp, *tcp, *pair[2];
+--- pr/tests/lltest.c.orig
 +++ pr/tests/lltest.c
-@@ -651,6 +651,7 @@ TestConversion( void )
-     return;
+@@ -636,6 +636,7 @@
+   return;
  }
  
 +#if 0
- static void ShiftCompileOnly()
- {
-     /*
-@@ -667,6 +668,7 @@ static void ShiftCompileOnly()
-     LL_ISHL(ia, 49, 32);
+ static void ShiftCompileOnly() {
+   /*
+   ** This function is only compiled, never called.
+@@ -651,6 +652,7 @@
+   LL_ISHL(ia, 49, 32);
  
- }  /* ShiftCompileOnly */
+ } /* ShiftCompileOnly */
 +#endif
  
- 
  /*
-@@ -751,7 +753,6 @@ TestArithmetic( void )
-     PRInt64 largeValPlusOne   = LL_INIT( 0x00000002, 0x00000000 );
-     PRInt64 largeValTimesTwo  = LL_INIT( 0x00000003, 0xfffffffe );
-     PRInt64 largeMultCand     = LL_INIT( 0x00000000, 0x7fffffff );
--    PRInt64 largeMinusMultCand = LL_INIT( 0xffffffff, 0x10000001 );
-     PRInt64 largeMultCandx64K = LL_INIT( 0x00007fff, 0xffff0000 );
-     PRInt64 largeNumSHL5      = LL_INIT( 0x0000001f, 0xffffffe0 );
-     PRInt64 result, result2;
---- pr/tests/mbcs.c.orig	2019-10-15 14:21:38 UTC
+ **  TestShift() -- Test Shifting Operations
+@@ -729,7 +731,6 @@
+   PRInt64 largeValPlusOne = LL_INIT(0x00000002, 0x00000000);
+   PRInt64 largeValTimesTwo = LL_INIT(0x00000003, 0xfffffffe);
+   PRInt64 largeMultCand = LL_INIT(0x00000000, 0x7fffffff);
+-  PRInt64 largeMinusMultCand = LL_INIT(0xffffffff, 0x10000001);
+   PRInt64 largeMultCandx64K = LL_INIT(0x00007fff, 0xffff0000);
+   PRInt64 largeNumSHL5 = LL_INIT(0x0000001f, 0xffffffe0);
+   PRInt64 result, result2;
+--- pr/tests/mbcs.c.orig
 +++ pr/tests/mbcs.c
-@@ -54,13 +54,12 @@ char *dirName =  NULL;  /* directory name to traverse 
+@@ -54,12 +54,11 @@
  /*
  ** Traverse directory
  */
--static void TraverseDirectory( unsigned char *dir )
-+static void TraverseDirectory(const char *dir)
- {
-     PRDir *cwd;
-     PRDirEntry *dirEntry;
-     PRFileInfo info;
-     PRStatus rc;
--    PRInt32 err;
-     PRFileDesc *fd;
-     char    nextDir[256];
-     char    file[256];
-@@ -81,16 +80,16 @@ static void TraverseDirectory( unsigned char *dir )
-             exit(1);
-         }
-         if ( PR_FILE_FILE == info.type )  {
--            printf("File: %s \tsize: %ld\n", dirEntry->name, info.size );
-+            printf("File: %s \tsize: %ld\n", dirEntry->name, (long)info.size );
-             fd = PR_Open( file, PR_RDONLY, 0 );
-             if ( NULL == fd )  {
-                 printf("PR_Open() failed. Error: %ld, OSError: %ld\n",
--                       PR_GetError(), PR_GetOSError());
-+                       (long)PR_GetError(), (long)PR_GetOSError());
-             }
-             rc = PR_Close( fd );
-             if ( PR_FAILURE == rc )  {
-                 printf("PR_Close() failed. Error: %ld, OSError: %ld\n",
--                       PR_GetError(), PR_GetOSError());
-+                       (long)PR_GetError(), (long)PR_GetOSError());
-             }
-         } else if ( PR_FILE_DIRECTORY == info.type ) {
-             sprintf( nextDir, "%s/%s", dir, dirEntry->name );
---- pr/tests/nbconn.c.orig	2019-10-15 14:21:38 UTC
+-static void TraverseDirectory(unsigned char* dir) {
++static void TraverseDirectory(const char* dir) {
+   PRDir* cwd;
+   PRDirEntry* dirEntry;
+   PRFileInfo info;
+   PRStatus rc;
+-  PRInt32 err;
+   PRFileDesc* fd;
+   char nextDir[256];
+   char file[256];
+@@ -80,16 +79,16 @@
+       exit(1);
+     }
+     if (PR_FILE_FILE == info.type) {
+-      printf("File: %s \tsize: %ld\n", dirEntry->name, info.size);
++      printf("File: %s \tsize: %ld\n", dirEntry->name, (long)info.size);
+       fd = PR_Open(file, PR_RDONLY, 0);
+       if (NULL == fd) {
+-        printf("PR_Open() failed. Error: %ld, OSError: %ld\n", PR_GetError(),
+-               PR_GetOSError());
++        printf("PR_Open() failed. Error: %ld, OSError: %ld\n", (long)PR_GetError(),
++               (long)PR_GetOSError());
+       }
+       rc = PR_Close(fd);
+       if (PR_FAILURE == rc) {
+-        printf("PR_Close() failed. Error: %ld, OSError: %ld\n", PR_GetError(),
+-               PR_GetOSError());
++        printf("PR_Close() failed. Error: %ld, OSError: %ld\n", (long)PR_GetError(),
++               (long)PR_GetOSError());
+       }
+     } else if (PR_FILE_DIRECTORY == info.type) {
+       sprintf(nextDir, "%s/%s", dir, dirEntry->name);
+--- pr/tests/nbconn.c.orig
 +++ pr/tests/nbconn.c
-@@ -54,8 +54,7 @@ int main(int argc, char **argv)
-     PRStatus rv;
-     PRSocketOptionData optData;
-     const char *hostname = NULL;
--    PRIntn default_case, n, bytes_read, bytes_sent;
--    PRInt32 failed_already = 0;
-+    PRIntn default_case, n;
+@@ -54,8 +54,7 @@
+   PRStatus rv;
+   PRSocketOptionData optData;
+   const char* hostname = NULL;
+-  PRIntn default_case, n, bytes_read, bytes_sent;
+-  PRInt32 failed_already = 0;
++  PRIntn default_case, n;
  
-     /*
-      * -d           debug mode
-@@ -169,7 +168,7 @@ int main(int argc, char **argv)
-                 exit(1);
-             }
-             printf( "PR_GetConnectStatus: connect failed: (%ld, %ld)\n",
--                    PR_GetError(), PR_GetOSError());
-+                    (long)PR_GetError(), (long)PR_GetOSError());
-         }
-         PR_Close(sock);
-         printf( "PASS\n");
-@@ -240,7 +239,7 @@ connection_success_test()
-     PRThread *thr = NULL;
-     Server_Param sp;
-     char send_buf[DATA_BUF_SIZE], recv_buf[DATA_BUF_SIZE];
--    PRIntn default_case, n, bytes_read, bytes_sent;
-+    PRIntn n, bytes_read, bytes_sent;
-     PRIntn failed_already = 0;
+   /*
+    * -d           debug mode
+@@ -164,8 +163,8 @@
+         printf("PR_GetConnectStatus: connect still in progress\n");
+         exit(1);
+       }
+-      printf("PR_GetConnectStatus: connect failed: (%ld, %ld)\n", PR_GetError(),
+-             PR_GetOSError());
++      printf("PR_GetConnectStatus: connect failed: (%ld, %ld)\n", (long)PR_GetError(),
++             (long)PR_GetOSError());
+     }
+     PR_Close(sock);
+     printf("PASS\n");
+@@ -227,7 +226,7 @@
+   PRThread* thr = NULL;
+   Server_Param sp;
+   char send_buf[DATA_BUF_SIZE], recv_buf[DATA_BUF_SIZE];
+-  PRIntn default_case, n, bytes_read, bytes_sent;
++  PRIntn n, bytes_read, bytes_sent;
+   PRIntn failed_already = 0;
  
-     /*
-@@ -317,7 +316,7 @@ connection_success_test()
-         failed_already=1;
-         goto def_exit;
-     }
--    DPRINTF(("Created TCP_Server thread [0x%x]\n",thr));
-+    DPRINTF(("Created TCP_Server thread [%p]\n", thr));
-     pd.fd = conn_fd;
-     pd.in_flags = PR_POLL_WRITE | PR_POLL_EXCEPT;
-     n = PR_Poll(&pd, 1, PR_INTERVAL_NO_TIMEOUT);
-@@ -396,7 +395,7 @@ connection_success_test()
-         DPRINTF(("Data integrity verified\n"));
-     } else {
-         fprintf(stderr,"PR_GetConnectStatus: connect failed: (%ld, %ld)\n",
--                PR_GetError(), PR_GetOSError());
-+                (long)PR_GetError(), (long)PR_GetOSError());
-         failed_already = 1;
-         goto def_exit;
-     }
-@@ -505,7 +504,6 @@ connection_failure_test()
-         goto def_exit;
-     }
-     if (PR_GetConnectStatus(&pd) == PR_SUCCESS) {
--        PRInt32 rv;
-         fprintf(stderr,"PR_GetConnectStatus succeeded, expected to fail\n");
-         failed_already = 1;
-         goto def_exit;
---- pr/tests/nblayer.c.orig	2019-10-15 14:21:38 UTC
+   /*
+@@ -305,7 +304,7 @@
+     failed_already = 1;
+     goto def_exit;
+   }
+-  DPRINTF(("Created TCP_Server thread [0x%x]\n", thr));
++  DPRINTF(("Created TCP_Server thread [%p]\n", thr));
+   pd.fd = conn_fd;
+   pd.in_flags = PR_POLL_WRITE | PR_POLL_EXCEPT;
+   n = PR_Poll(&pd, 1, PR_INTERVAL_NO_TIMEOUT);
+@@ -382,7 +381,7 @@
+     DPRINTF(("Data integrity verified\n"));
+   } else {
+     fprintf(stderr, "PR_GetConnectStatus: connect failed: (%ld, %ld)\n",
+-            PR_GetError(), PR_GetOSError());
++            (long)PR_GetError(), (long)PR_GetOSError());
+     failed_already = 1;
+     goto def_exit;
+   }
+@@ -487,7 +486,6 @@
+     goto def_exit;
+   }
+   if (PR_GetConnectStatus(&pd) == PR_SUCCESS) {
+-    PRInt32 rv;
+     fprintf(stderr, "PR_GetConnectStatus succeeded, expected to fail\n");
+     failed_already = 1;
+     goto def_exit;
+--- pr/tests/nblayer.c.orig
 +++ pr/tests/nblayer.c
-@@ -348,7 +348,7 @@ static PRStatus PR_CALLBACK MyClose(PRFileDesc *fd)
- static PRInt16 PR_CALLBACK MyPoll(
-     PRFileDesc *fd, PRInt16 in_flags, PRInt16 *out_flags)
- {
--    PRInt16 my_flags, new_flags;
-+    PRInt16 my_flags = -1, new_flags;
-     PRFilePrivate *mine = (PRFilePrivate*)fd->secret;
-     if (0 != (PR_POLL_READ & in_flags))
-     {
-@@ -393,7 +393,7 @@ static PRFileDesc * PR_CALLBACK MyAccept(
-     PRFileDesc *fd, PRNetAddr *addr, PRIntervalTime timeout)
- {
-     PRStatus rv;
--    PRFileDesc *newfd, *layer = fd;
-+    PRFileDesc *newfd;
-     PRFileDesc *newstack;
-     PRFilePrivate *newsecret;
+@@ -70,7 +70,10 @@
+   PRStatus rv;
+   PRFileDesc* layer = PR_CreateIOLayerStub(identity, &myMethods);
+   layer->secret = PR_NEWZAP(PRFilePrivate);
+-  rv = PR_PushIOLayer(stack, PR_GetLayersIdentity(stack), layer);
++#if defined(DEBUG) || defined(FORCE_PR_ASSERT)
++  PRStatus rv = /* we only need rv for PR_ASSERT() */
++#endif
++    PR_PushIOLayer(stack, PR_GetLayersIdentity(stack), layer);
+   PR_ASSERT(PR_SUCCESS == rv);
+   if (verbosity > quiet) {
+     PR_fprintf(logFile, "Pushed layer(0x%x) onto stack(0x%x)\n", layer, stack);
+@@ -316,7 +319,7 @@
  
-@@ -495,6 +495,8 @@ static PRInt32 PR_CALLBACK MyRecv(
-                 mine->rcvinprogress = 0;
-                 return mine->rcvreq;  /* << -- that's it! */
-             default:
-+                PR_ASSERT(!"How did I get this mine->rcvstate?");
-+                rv = -1;
-                 break;
-         }
-     } while (-1 != rv);
-@@ -563,6 +565,8 @@ static PRInt32 PR_CALLBACK MySend(
-                 mine->xmtinprogress = 0;
-                 return mine->xmtreq;  /* <<-- That's the one! */
-             default:
-+                PR_ASSERT(!"How did I get this mine->xmtstate?");
-+                rv = -1;
-                 break;
-         }
-     } while (-1 != rv);
---- pr/tests/nonblock.c.orig	2019-10-15 14:21:38 UTC
+ static PRInt16 PR_CALLBACK MyPoll(PRFileDesc* fd, PRInt16 in_flags,
+                                   PRInt16* out_flags) {
+-  PRInt16 my_flags, new_flags;
++  PRInt16 my_flags = -1, new_flags;
+   PRFilePrivate* mine = (PRFilePrivate*)fd->secret;
+   if (0 != (PR_POLL_READ & in_flags)) {
+     /* client thinks he's reading */
+@@ -355,7 +358,7 @@
+ static PRFileDesc* PR_CALLBACK MyAccept(PRFileDesc* fd, PRNetAddr* addr,
+                                         PRIntervalTime timeout) {
+   PRStatus rv;
+-  PRFileDesc *newfd, *layer = fd;
++  PRFileDesc *newfd;
+   PRFileDesc* newstack;
+   PRFilePrivate* newsecret;
+ 
+@@ -450,6 +453,8 @@
+         mine->rcvinprogress = 0;
+         return mine->rcvreq; /* << -- that's it! */
+       default:
++        PR_ASSERT(!"How did I get this mine->rcvstate?");
++        rv = -1;
+         break;
+     }
+   } while (-1 != rv);
+@@ -515,6 +520,8 @@
+         mine->xmtinprogress = 0;
+         return mine->xmtreq; /* <<-- That's the one! */
+       default:
++        PR_ASSERT(!"How did I get this mine->xmtstate?");
++        rv = -1;
+         break;
+     }
+   } while (-1 != rv);
+--- pr/tests/nonblock.c.orig
 +++ pr/tests/nonblock.c
-@@ -37,7 +37,7 @@
- static void PR_CALLBACK
- clientThreadFunc(void *arg)
- {
--    PRUintn port = (PRUintn)arg;
-+    intptr_t port = (intptr_t)arg;
-     PRFileDesc *sock;
-     PRNetAddr addr;
-     char buf[CHUNK_SIZE];
-@@ -145,7 +145,7 @@ static PRIntn PR_CALLBACK RealMain( PRIntn argc, char 
-     printf("%s", buf);
+@@ -28,7 +28,7 @@
+ #endif
  
-     clientThread = PR_CreateThread(PR_USER_THREAD,
--                                   clientThreadFunc, (void *) listenPort,
-+                                   clientThreadFunc, (void *) (intptr_t)listenPort,
-                                    PR_PRIORITY_NORMAL, PR_LOCAL_THREAD,
-                                    PR_UNJOINABLE_THREAD, 0);
-     if (clientThread == NULL) {
-@@ -189,7 +189,7 @@ static PRIntn PR_CALLBACK RealMain( PRIntn argc, char 
-         if (retVal != -1 || PR_GetError() != PR_WOULD_BLOCK_ERROR) {
-             PL_PrintError("First Receive:\n");
-             fprintf(stderr, "First PR_Recv: retVal: %ld, Error: %ld\n",
--                    retVal, PR_GetError());
-+                    (long)retVal, (long)PR_GetError());
-             exit(1);
-         }
-         printf("read: EWOULDBLOCK, good\n");
-@@ -199,7 +199,7 @@ static PRIntn PR_CALLBACK RealMain( PRIntn argc, char 
-         if (retVal != CHUNK_SIZE) {
-             PL_PrintError("Second Receive:\n");
-             fprintf(stderr, "Second PR_Recv: retVal: %ld, Error: %ld\n",
--                    retVal, PR_GetError());
-+                    (long)retVal, (long)PR_GetError());
-             exit(1);
-         }
-         printf("read: %d bytes, good\n", retVal);
---- pr/tests/obsints.c.orig	2019-10-15 14:21:38 UTC
+ static void PR_CALLBACK clientThreadFunc(void* arg) {
+-  PRUintn port = (PRUintn)arg;
++  intptr_t port = (intptr_t)arg;
+   PRFileDesc* sock;
+   PRNetAddr addr;
+   char buf[CHUNK_SIZE];
+@@ -134,7 +134,7 @@
+   printf("%s", buf);
+ 
+   clientThread = PR_CreateThread(PR_USER_THREAD, clientThreadFunc,
+-                                 (void*)listenPort, PR_PRIORITY_NORMAL,
++                                 (void*)(intptr_t)listenPort, PR_PRIORITY_NORMAL,
+                                  PR_LOCAL_THREAD, PR_UNJOINABLE_THREAD, 0);
+   if (clientThread == NULL) {
+     fprintf(stderr, "can't create thread\n");
+@@ -176,8 +176,8 @@
+     retVal = PR_Recv(sock, buf, sizeof(buf), 0, PR_INTERVAL_NO_TIMEOUT);
+     if (retVal != -1 || PR_GetError() != PR_WOULD_BLOCK_ERROR) {
+       PL_PrintError("First Receive:\n");
+-      fprintf(stderr, "First PR_Recv: retVal: %ld, Error: %ld\n", retVal,
+-              PR_GetError());
++      fprintf(stderr, "First PR_Recv: retVal: %ld, Error: %ld\n", (long)retVal,
++              (long)PR_GetError());
+       exit(1);
+     }
+     printf("read: EWOULDBLOCK, good\n");
+@@ -186,8 +186,8 @@
+     retVal = PR_Recv(sock, buf, sizeof(buf), 0, PR_INTERVAL_NO_TIMEOUT);
+     if (retVal != CHUNK_SIZE) {
+       PL_PrintError("Second Receive:\n");
+-      fprintf(stderr, "Second PR_Recv: retVal: %ld, Error: %ld\n", retVal,
+-              PR_GetError());
++      fprintf(stderr, "Second PR_Recv: retVal: %ld, Error: %ld\n", (long)retVal,
++              (long)PR_GetError());
+       exit(1);
+     }
+     printf("read: %d bytes, good\n", retVal);
+--- pr/tests/obsints.c.orig
 +++ pr/tests/obsints.c
-@@ -25,6 +25,9 @@ int main(int argc, char **argv)
+@@ -24,23 +24,26 @@
  #else /* NO_NSPR_10_SUPPORT */
  
- #include "prtypes.h"  /* which includes protypes.h */
+ #  include "prtypes.h" /* which includes protypes.h */
 +#if !defined(__GNUC__)
 +#   define __unused
 +#endif
  
- int main(int argc, char **argv)
- {
-@@ -32,17 +35,17 @@ int main(int argc, char **argv)
-      * Compilation fails if any of these integer types are not
-      * defined by protypes.h.
-      */
--    intn in;
--    uintn uin;
--    uint ui;
--    int8 i8;
--    uint8 ui8;
--    int16 i16;
--    uint16 ui16;
--    int32 i32;
--    uint32 ui32;
--    int64 i64;
--    uint64 ui64;
-+    intn in __unused;
-+    uintn uin __unused;
-+    uint ui __unused;
-+    int8 i8 __unused;
-+    uint8 ui8 __unused;
-+    int16 i16 __unused;
-+    uint16 ui16 __unused;
-+    int32 i32 __unused;
-+    uint32 ui32 __unused;
-+    int64 i64 __unused;
-+    uint64 ui64 __unused;
+ int main(int argc, char** argv) {
+   /*
+    * Compilation fails if any of these integer types are not
+    * defined by protypes.h.
+    */
+-  intn in;
+-  uintn uin;
+-  uint ui;
+-  int8 i8;
+-  uint8 ui8;
+-  int16 i16;
+-  uint16 ui16;
+-  int32 i32;
+-  uint32 ui32;
+-  int64 i64;
+-  uint64 ui64;
++  intn in __unused;
++  uintn uin __unused;
++  uint ui __unused;
++  int8 i8 __unused;
++  uint8 ui8 __unused;
++  int16 i16 __unused;
++  uint16 ui16 __unused;
++  int32 i32 __unused;
++  uint32 ui32 __unused;
++  int64 i64 __unused;
++  uint64 ui64 __unused;
  
-     printf("PASS\n");
-     return 0;
---- pr/tests/parsetm.c.orig	2019-10-15 14:21:38 UTC
+   printf("PASS\n");
+   return 0;
+--- pr/tests/parsetm.c.orig
 +++ pr/tests/parsetm.c
-@@ -32,8 +32,8 @@ static void PrintExplodedTime(const PRExplodedTime *et
+@@ -31,8 +31,8 @@
+   /* Print day of the week, month, day, hour, minute, and second */
+   if (debug_mode)
+     printf("%s %s %ld %02ld:%02ld:%02ld ", dayOfWeek[et->tm_wday],
+-           month[et->tm_month], et->tm_mday, et->tm_hour, et->tm_min,
+-           et->tm_sec);
++           month[et->tm_month], (long)et->tm_mday, (long)et->tm_hour, (long)et->tm_min,
++           (long)et->tm_sec);
  
-     /* Print day of the week, month, day, hour, minute, and second */
-     if (debug_mode) printf("%s %s %ld %02ld:%02ld:%02ld ",
--                               dayOfWeek[et->tm_wday], month[et->tm_month], et->tm_mday,
--                               et->tm_hour, et->tm_min, et->tm_sec);
-+                               dayOfWeek[et->tm_wday], month[et->tm_month], (long)et->tm_mday,
-+                               (long)et->tm_hour, (long)et->tm_min, (long)et->tm_sec);
- 
-     /* Print time zone */
-     totalOffset = et->tm_params.tp_gmt_offset + et->tm_params.tp_dst_offset;
-@@ -50,7 +50,7 @@ static void PrintExplodedTime(const PRExplodedTime *et
-         hourOffset = totalOffset / 3600;
-         minOffset = (totalOffset % 3600) / 60;
-         if (debug_mode) {
--            printf("%s%02ld%02ld ", sign, hourOffset, minOffset);
-+            printf("%s%02ld%02ld ", sign, (long)hourOffset, (long)minOffset);
-         }
+   /* Print time zone */
+   totalOffset = et->tm_params.tp_gmt_offset + et->tm_params.tp_dst_offset;
+@@ -49,7 +49,7 @@
+     hourOffset = totalOffset / 3600;
+     minOffset = (totalOffset % 3600) / 60;
+     if (debug_mode) {
+-      printf("%s%02ld%02ld ", sign, hourOffset, minOffset);
++      printf("%s%02ld%02ld ", sign, (long)hourOffset, (long)minOffset);
      }
+   }
  
---- pr/tests/peek.c.orig	2019-10-15 14:21:38 UTC
+--- pr/tests/peek.c.orig
 +++ pr/tests/peek.c
-@@ -137,7 +137,7 @@ static void ClientNB(void *arg)
- {
-     PRFileDesc *sock;
-     PRSocketOptionData opt;
--    PRUint16 port = (PRUint16) arg;
-+    PRUint16 port = (intptr_t) arg;
-     PRNetAddr addr;
-     char buf[BUFFER_SIZE];
-     PRPollDesc pd;
-@@ -301,7 +301,7 @@ RunTest(PRThreadScope scope, PRFileDesc *listenSock, P
-         exit(1);
-     }
-     client = PR_CreateThread(
--                 PR_USER_THREAD, ClientNB, (void *) port,
-+                 PR_USER_THREAD, ClientNB, (void *)(intptr_t) port,
-                  PR_PRIORITY_NORMAL, scope, PR_JOINABLE_THREAD, 0);
-     if (NULL == client) {
-         fprintf(stderr, "PR_CreateThread failed\n");
---- pr/tests/perf.c.orig	2019-10-15 14:21:38 UTC
+@@ -127,7 +127,7 @@
+ static void ClientNB(void* arg) {
+   PRFileDesc* sock;
+   PRSocketOptionData opt;
+-  PRUint16 port = (PRUint16)arg;
++  PRUint16 port = (intptr_t)arg;
+   PRNetAddr addr;
+   char buf[BUFFER_SIZE];
+   PRPollDesc pd;
+@@ -288,7 +288,7 @@
+     fprintf(stderr, "PR_CreateThread failed\n");
+     exit(1);
+   }
+-  client = PR_CreateThread(PR_USER_THREAD, ClientNB, (void*)port,
++  client = PR_CreateThread(PR_USER_THREAD, ClientNB, (void*)(intptr_t)port,
+                            PR_PRIORITY_NORMAL, scope, PR_JOINABLE_THREAD, 0);
+   if (NULL == client) {
+     fprintf(stderr, "PR_CreateThread failed\n");
+--- pr/tests/perf.c.orig
 +++ pr/tests/perf.c
-@@ -142,7 +142,7 @@ static void PR_CALLBACK CXReader(void *arg)
-     n = count / 2;
-     for (i = 0; i < n; i++) {
-         while (cxq == 0) {
--            DPRINTF(("CXReader: thread = 0x%lx waiting\n",
-+            DPRINTF(("CXReader: thread = %p waiting\n",
-                      PR_GetCurrentThread()));
-             PR_Wait(mon, PR_INTERVAL_NO_TIMEOUT);
-         }
-@@ -155,7 +155,7 @@ static void PR_CALLBACK CXReader(void *arg)
-     --alive;
-     PR_Notify(mon2);
-     PR_ExitMonitor(mon2);
--    DPRINTF(("CXReader: thread = 0x%lx exiting\n", PR_GetCurrentThread()));
-+    DPRINTF(("CXReader: thread = %p exiting\n", PR_GetCurrentThread()));
- }
- 
- static void PR_CALLBACK CXWriter(void *arg)
-@@ -166,7 +166,7 @@ static void PR_CALLBACK CXWriter(void *arg)
-     n = count / 2;
-     for (i = 0; i < n; i++) {
-         while (cxq == 1) {
--            DPRINTF(("CXWriter: thread = 0x%lx waiting\n",
-+            DPRINTF(("CXWriter: thread = %p waiting\n",
-                      PR_GetCurrentThread()));
-             PR_Wait(mon, PR_INTERVAL_NO_TIMEOUT);
-         }
-@@ -179,7 +179,7 @@ static void PR_CALLBACK CXWriter(void *arg)
-     --alive;
-     PR_Notify(mon2);
-     PR_ExitMonitor(mon2);
--    DPRINTF(("CXWriter: thread = 0x%lx exiting\n", PR_GetCurrentThread()));
-+    DPRINTF(("CXWriter: thread = %p exiting\n", PR_GetCurrentThread()));
- }
- 
- static void ContextSwitch(PRThreadScope scope1, PRThreadScope scope2)
-@@ -199,7 +199,7 @@ static void ContextSwitch(PRThreadScope scope1, PRThre
-     if (NULL == t1) {
-         fprintf(stderr, "ContextSwitch: cannot create thread\n");
-     } else {
--        DPRINTF(("ContextSwitch: created %s thread = 0x%lx\n",
-+        DPRINTF(("ContextSwitch: created %s thread = %p\n",
-                  (scope1 == PR_GLOBAL_THREAD ?
-                   "PR_GLOBAL_THREAD" : "PR_LOCAL_THREAD"),
-                  t1));
-@@ -213,7 +213,7 @@ static void ContextSwitch(PRThreadScope scope1, PRThre
-     if (NULL == t2) {
-         fprintf(stderr, "ContextSwitch: cannot create thread\n");
-     } else {
--        DPRINTF(("ContextSwitch: created %s thread = 0x%lx\n",
-+        DPRINTF(("ContextSwitch: created %s thread = %p\n",
-                  (scope2 == PR_GLOBAL_THREAD ?
-                   "PR_GLOBAL_THREAD" : "PR_LOCAL_THREAD"),
-                  t2));
-@@ -255,10 +255,10 @@ static void PR_CALLBACK SemaThread(void *argSema)
- 
-     n = count / 2;
-     for (i = 0; i < n; i++) {
--        DPRINTF(("SemaThread: thread = 0x%lx waiting on sem = 0x%lx\n",
-+        DPRINTF(("SemaThread: thread = %p waiting on sem = %p\n",
-                  PR_GetCurrentThread(), sem[0]));
-         PR_WaitSem(sem[0]);
--        DPRINTF(("SemaThread: thread = 0x%lx posting on sem = 0x%lx\n",
-+        DPRINTF(("SemaThread: thread = %p posting on sem = %p\n",
-                  PR_GetCurrentThread(), sem[1]));
-         PR_PostSem(sem[1]);
+@@ -126,7 +126,7 @@
+   n = count / 2;
+   for (i = 0; i < n; i++) {
+     while (cxq == 0) {
+-      DPRINTF(("CXReader: thread = 0x%lx waiting\n", PR_GetCurrentThread()));
++      DPRINTF(("CXReader: thread = %p waiting\n", PR_GetCurrentThread()));
+       PR_Wait(mon, PR_INTERVAL_NO_TIMEOUT);
      }
-@@ -267,7 +267,7 @@ static void PR_CALLBACK SemaThread(void *argSema)
-     --alive;
-     PR_Notify(mon2);
-     PR_ExitMonitor(mon2);
--    DPRINTF(("SemaThread: thread = 0x%lx exiting\n", PR_GetCurrentThread()));
-+    DPRINTF(("SemaThread: thread = %p exiting\n", PR_GetCurrentThread()));
+     --cxq;
+@@ -138,7 +138,7 @@
+   --alive;
+   PR_Notify(mon2);
+   PR_ExitMonitor(mon2);
+-  DPRINTF(("CXReader: thread = 0x%lx exiting\n", PR_GetCurrentThread()));
++  DPRINTF(("CXReader: thread = %p exiting\n", PR_GetCurrentThread()));
  }
  
- static  PRSemaphore *sem_set1[2];
-@@ -295,7 +295,7 @@ static void SemaContextSwitch(PRThreadScope scope1, PR
-     if (NULL == t1) {
-         fprintf(stderr, "SemaContextSwitch: cannot create thread\n");
-     } else {
--        DPRINTF(("SemaContextSwitch: created %s thread = 0x%lx\n",
-+        DPRINTF(("SemaContextSwitch: created %s thread = %p\n",
-                  (scope1 == PR_GLOBAL_THREAD ?
-                   "PR_GLOBAL_THREAD" : "PR_LOCAL_THREAD"),
-                  t1));
-@@ -310,7 +310,7 @@ static void SemaContextSwitch(PRThreadScope scope1, PR
-     if (NULL == t2) {
-         fprintf(stderr, "SemaContextSwitch: cannot create thread\n");
-     } else {
--        DPRINTF(("SemaContextSwitch: created %s thread = 0x%lx\n",
-+        DPRINTF(("SemaContextSwitch: created %s thread = %p\n",
-                  (scope2 == PR_GLOBAL_THREAD ?
-                   "PR_GLOBAL_THREAD" : "PR_LOCAL_THREAD"),
-                  t2));
---- pr/tests/pipepong.c.orig	2019-10-15 14:21:38 UTC
+ static void PR_CALLBACK CXWriter(void* arg) {
+@@ -148,7 +148,7 @@
+   n = count / 2;
+   for (i = 0; i < n; i++) {
+     while (cxq == 1) {
+-      DPRINTF(("CXWriter: thread = 0x%lx waiting\n", PR_GetCurrentThread()));
++      DPRINTF(("CXWriter: thread = %p waiting\n", PR_GetCurrentThread()));
+       PR_Wait(mon, PR_INTERVAL_NO_TIMEOUT);
+     }
+     ++cxq;
+@@ -160,7 +160,7 @@
+   --alive;
+   PR_Notify(mon2);
+   PR_ExitMonitor(mon2);
+-  DPRINTF(("CXWriter: thread = 0x%lx exiting\n", PR_GetCurrentThread()));
++  DPRINTF(("CXWriter: thread = %p exiting\n", PR_GetCurrentThread()));
+ }
+ 
+ static void ContextSwitch(PRThreadScope scope1, PRThreadScope scope2) {
+@@ -176,7 +176,7 @@
+     fprintf(stderr, "ContextSwitch: cannot create thread\n");
+   } else {
+     DPRINTF(
+-        ("ContextSwitch: created %s thread = 0x%lx\n",
++        ("ContextSwitch: created %s thread = %p\n",
+          (scope1 == PR_GLOBAL_THREAD ? "PR_GLOBAL_THREAD" : "PR_LOCAL_THREAD"),
+          t1));
+   }
+@@ -186,7 +186,7 @@
+     fprintf(stderr, "ContextSwitch: cannot create thread\n");
+   } else {
+     DPRINTF(
+-        ("ContextSwitch: created %s thread = 0x%lx\n",
++        ("ContextSwitch: created %s thread = %p\n",
+          (scope2 == PR_GLOBAL_THREAD ? "PR_GLOBAL_THREAD" : "PR_LOCAL_THREAD"),
+          t2));
+   }
+@@ -222,10 +222,10 @@
+ 
+   n = count / 2;
+   for (i = 0; i < n; i++) {
+-    DPRINTF(("SemaThread: thread = 0x%lx waiting on sem = 0x%lx\n",
++    DPRINTF(("SemaThread: thread = %p waiting on sem = %p\n",
+              PR_GetCurrentThread(), sem[0]));
+     PR_WaitSem(sem[0]);
+-    DPRINTF(("SemaThread: thread = 0x%lx posting on sem = 0x%lx\n",
++    DPRINTF(("SemaThread: thread = %p posting on sem = %p\n",
+              PR_GetCurrentThread(), sem[1]));
+     PR_PostSem(sem[1]);
+   }
+@@ -234,7 +234,7 @@
+   --alive;
+   PR_Notify(mon2);
+   PR_ExitMonitor(mon2);
+-  DPRINTF(("SemaThread: thread = 0x%lx exiting\n", PR_GetCurrentThread()));
++  DPRINTF(("SemaThread: thread = %p exiting\n", PR_GetCurrentThread()));
+ }
+ 
+ static PRSemaphore* sem_set1[2];
+@@ -257,7 +257,7 @@
+     fprintf(stderr, "SemaContextSwitch: cannot create thread\n");
+   } else {
+     DPRINTF(
+-        ("SemaContextSwitch: created %s thread = 0x%lx\n",
++        ("SemaContextSwitch: created %s thread = %p\n",
+          (scope1 == PR_GLOBAL_THREAD ? "PR_GLOBAL_THREAD" : "PR_LOCAL_THREAD"),
+          t1));
+   }
+@@ -267,7 +267,7 @@
+     fprintf(stderr, "SemaContextSwitch: cannot create thread\n");
+   } else {
+     DPRINTF(
+-        ("SemaContextSwitch: created %s thread = 0x%lx\n",
++        ("SemaContextSwitch: created %s thread = %p\n",
+          (scope2 == PR_GLOBAL_THREAD ? "PR_GLOBAL_THREAD" : "PR_LOCAL_THREAD"),
+          t2));
+   }
+--- pr/tests/pipepong.c.orig
 +++ pr/tests/pipepong.c
-@@ -36,7 +36,7 @@ int main(int argc, char **argv)
-         nBytes = fread(buf, 1, 5, stdin);
-         fprintf(stderr, "pong process: received \"%s\"\n", buf);
-         if (nBytes != 5) {
--            fprintf(stderr, "pong process: expected 5 bytes but got %d bytes\n",
-+            fprintf(stderr, "pong process: expected 5 bytes but got %zd bytes\n",
-                     nBytes);
-             exit(1);
-         }
---- pr/tests/poll_nm.c.orig	2019-10-15 14:21:38 UTC
-+++ pr/tests/poll_nm.c
-@@ -47,7 +47,7 @@ PRIntn debug_mode;
- static void PR_CALLBACK
- clientThreadFunc(void *arg)
- {
--    PRUintn port = (PRUintn) arg;
-+    PRUintn port = (intptr_t) arg;
-     PRFileDesc *sock;
-     PRNetAddr addr;
-     char buf[128];
-@@ -200,7 +200,7 @@ int main(int argc, char **argv)
-     npds = 5;
- 
-     clientThread = PR_CreateThread(PR_USER_THREAD,
--                                   clientThreadFunc, (void *) listenPort1,
-+                                   clientThreadFunc, (void *)(intptr_t)listenPort1,
-                                    PR_PRIORITY_NORMAL, PR_LOCAL_THREAD,
-                                    PR_UNJOINABLE_THREAD, 0);
-     if (clientThread == NULL) {
-@@ -210,7 +210,7 @@ int main(int argc, char **argv)
+@@ -35,7 +35,7 @@
+     nBytes = fread(buf, 1, 5, stdin);
+     fprintf(stderr, "pong process: received \"%s\"\n", buf);
+     if (nBytes != 5) {
+-      fprintf(stderr, "pong process: expected 5 bytes but got %d bytes\n",
++      fprintf(stderr, "pong process: expected 5 bytes but got %zd bytes\n",
+               nBytes);
+       exit(1);
      }
+--- pr/tests/poll_nm.c.orig
++++ pr/tests/poll_nm.c
+@@ -49,7 +49,7 @@
+ #define NUM_ITERATIONS 5
  
-     clientThread = PR_CreateThread(PR_USER_THREAD,
--                                   clientThreadFunc, (void *) listenPort2,
-+                                   clientThreadFunc, (void *)(intptr_t)listenPort2,
-                                    PR_PRIORITY_NORMAL, PR_LOCAL_THREAD,
-                                    PR_UNJOINABLE_THREAD, 0);
-     if (clientThread == NULL) {
---- pr/tests/prfz.c.orig	2019-10-15 14:21:38 UTC
+ static void PR_CALLBACK clientThreadFunc(void* arg) {
+-  PRUintn port = (PRUintn)arg;
++  PRUintn port = (intptr_t)arg;
+   PRFileDesc* sock;
+   PRNetAddr addr;
+   char buf[128];
+@@ -198,7 +198,7 @@
+   npds = 5;
+ 
+   clientThread = PR_CreateThread(PR_USER_THREAD, clientThreadFunc,
+-                                 (void*)listenPort1, PR_PRIORITY_NORMAL,
++                                 (void*)(intptr_t)listenPort1, PR_PRIORITY_NORMAL,
+                                  PR_LOCAL_THREAD, PR_UNJOINABLE_THREAD, 0);
+   if (clientThread == NULL) {
+     fprintf(stderr, "can't create thread\n");
+@@ -207,7 +207,7 @@
+   }
+ 
+   clientThread = PR_CreateThread(PR_USER_THREAD, clientThreadFunc,
+-                                 (void*)listenPort2, PR_PRIORITY_NORMAL,
++                                 (void*)(intptr_t)listenPort2, PR_PRIORITY_NORMAL,
+                                  PR_LOCAL_THREAD, PR_UNJOINABLE_THREAD, 0);
+   if (clientThread == NULL) {
+     fprintf(stderr, "can't create thread\n");
+--- pr/tests/prfz.c.orig
 +++ pr/tests/prfz.c
 @@ -7,7 +7,7 @@
   */
@@ -911,108 +920,108 @@
  #include <limits.h>
  #include <string.h>
  #include <stdint.h>
---- pr/tests/provider.c.orig	2019-10-15 14:21:38 UTC
+--- pr/tests/provider.c.orig
 +++ pr/tests/provider.c
-@@ -1067,7 +1067,7 @@ int main(int argc, char **argv)
- {
-     PRUintn index;
-     PRBool boolean;
--    CSClient_t *client;
-+    CSClient_t *client = NULL;
-     PRStatus rv, joinStatus;
-     CSServer_t *server = NULL;
-     char *thread_type;
---- pr/tests/prpoll.c.orig	2019-10-15 14:21:38 UTC
+@@ -990,7 +990,7 @@
+ int main(int argc, char** argv) {
+   PRUintn index;
+   PRBool boolean;
+-  CSClient_t* client;
++  CSClient_t* client = NULL;
+   PRStatus rv, joinStatus;
+   CSServer_t* server = NULL;
+   char* thread_type;
+--- pr/tests/prpoll.c.orig
 +++ pr/tests/prpoll.c
-@@ -39,7 +39,7 @@ int main(int argc, char **argv)
- static void
- clientThreadFunc(void *arg)
- {
--    PRUint16 port = (PRUint16) arg;
-+    PRUint16 port = (PRUint16)(uintptr_t)arg;
-     PRFileDesc *sock;
-     PRNetAddr addr;
-     char buf[BUF_SIZE];
-@@ -73,7 +73,7 @@ int main(int argc, char **argv)
-     PRInt32 rv;
-     PROsfd sd;
-     struct sockaddr_in saddr;
--    PRIntn saddr_len;
-+    socklen_t saddr_len;
-     PRUint16 listenPort3;
-     PRFileDesc *socket_poll_fd;
-     PRIntn i, j;
-@@ -199,7 +199,7 @@ int main(int argc, char **argv)
-     npds--;
+@@ -36,7 +36,7 @@
+ #else
  
-     clientThread = PR_CreateThread(PR_USER_THREAD,
--                                   clientThreadFunc, (void *) listenPort1,
-+                                   clientThreadFunc, (void *)(uintptr_t)listenPort1,
-                                    PR_PRIORITY_NORMAL, PR_LOCAL_THREAD,
-                                    PR_UNJOINABLE_THREAD, 0);
-     if (clientThread == NULL) {
-@@ -208,7 +208,7 @@ int main(int argc, char **argv)
-     }
+ static void clientThreadFunc(void* arg) {
+-  PRUint16 port = (PRUint16)arg;
++  PRUint16 port = (PRUint16)(uintptr_t)arg;
+   PRFileDesc* sock;
+   PRNetAddr addr;
+   char buf[BUF_SIZE];
+@@ -69,7 +69,7 @@
+   PRInt32 rv;
+   PROsfd sd;
+   struct sockaddr_in saddr;
+-  PRIntn saddr_len;
++  socklen_t saddr_len;
+   PRUint16 listenPort3;
+   PRFileDesc* socket_poll_fd;
+   PRIntn i, j;
+@@ -195,7 +195,7 @@
+   npds--;
  
-     clientThread = PR_CreateThread(PR_USER_THREAD,
--                                   clientThreadFunc, (void *) listenPort2,
-+                                   clientThreadFunc, (void *)(uintptr_t)listenPort2,
-                                    PR_PRIORITY_NORMAL, PR_GLOBAL_THREAD,
-                                    PR_UNJOINABLE_THREAD, 0);
-     if (clientThread == NULL) {
-@@ -217,7 +217,7 @@ int main(int argc, char **argv)
-     }
+   clientThread = PR_CreateThread(PR_USER_THREAD, clientThreadFunc,
+-                                 (void*)listenPort1, PR_PRIORITY_NORMAL,
++                                 (void*)(uintptr_t)listenPort1, PR_PRIORITY_NORMAL,
+                                  PR_LOCAL_THREAD, PR_UNJOINABLE_THREAD, 0);
+   if (clientThread == NULL) {
+     fprintf(stderr, "can't create thread\n");
+@@ -203,7 +203,7 @@
+   }
  
-     clientThread = PR_CreateThread(PR_USER_THREAD,
--                                   clientThreadFunc, (void *) listenPort3,
-+                                   clientThreadFunc, (void *)(uintptr_t)listenPort3,
-                                    PR_PRIORITY_NORMAL, PR_GLOBAL_BOUND_THREAD,
-                                    PR_UNJOINABLE_THREAD, 0);
-     if (clientThread == NULL) {
---- pr/tests/randseed.c.orig	2019-10-15 14:21:38 UTC
+   clientThread = PR_CreateThread(PR_USER_THREAD, clientThreadFunc,
+-                                 (void*)listenPort2, PR_PRIORITY_NORMAL,
++                                 (void*)(uintptr_t)listenPort2, PR_PRIORITY_NORMAL,
+                                  PR_GLOBAL_THREAD, PR_UNJOINABLE_THREAD, 0);
+   if (clientThread == NULL) {
+     fprintf(stderr, "can't create thread\n");
+@@ -211,7 +211,7 @@
+   }
+ 
+   clientThread = PR_CreateThread(
+-      PR_USER_THREAD, clientThreadFunc, (void*)listenPort3, PR_PRIORITY_NORMAL,
++      PR_USER_THREAD, clientThreadFunc, (void*)(uintptr_t)listenPort3, PR_PRIORITY_NORMAL,
+       PR_GLOBAL_BOUND_THREAD, PR_UNJOINABLE_THREAD, 0);
+   if (clientThread == NULL) {
+     fprintf(stderr, "can't create thread\n");
+--- pr/tests/randseed.c.orig
 +++ pr/tests/randseed.c
-@@ -48,7 +48,6 @@ static void Help( void )
- static void PrintRand( void *buf, PRIntn size )
- {
-     PRUint32 *rp = buf;
--    PRIntn   i;
+@@ -46,7 +46,6 @@
  
-     printf("%4.4d--\n", size );
-     while (size > 0 ) {
---- pr/tests/ranfile.c.orig	2019-10-15 14:21:38 UTC
+ static void PrintRand(void* buf, PRIntn size) {
+   PRUint32* rp = buf;
+-  PRIntn i;
+ 
+   printf("%4.4d--\n", size);
+   while (size > 0) {
+--- pr/tests/ranfile.c.orig
 +++ pr/tests/ranfile.c
-@@ -130,7 +130,7 @@ static void PR_CALLBACK Thread(void *arg)
-     PRStatus rv = PR_SUCCESS;
-     Hammer_t *cd = (Hammer_t*)arg;
+@@ -138,7 +138,7 @@
+   PRStatus rv = PR_SUCCESS;
+   Hammer_t* cd = (Hammer_t*)arg;
  
--    (void)sprintf(filename, "%ssg%04ld.dat", baseName, cd->id);
-+    (void)sprintf(filename, "%ssg%04d.dat", baseName, (int)cd->id);
+-  (void)sprintf(filename, "%ssg%04ld.dat", baseName, cd->id);
++  (void)sprintf(filename, "%ssg%04d.dat", baseName, (int)cd->id);
  
-     if (debug_mode) {
-         printf("Starting work on %s\n", filename);
-@@ -405,8 +405,8 @@ int main(int argc, char **argv)
-                     durationTot += duration;
-                 }
-                 else if (debug_mode) printf(
--                        "%s: test failed %s after %ld seconds\n",
--                        programName, where[hammer[poll].problem], duration);
-+                        "%s: test failed %s after %d seconds\n",
-+                        programName, where[hammer[poll].problem], (int)duration);
-                 else {
-                     failed_already=1;
-                 }
-@@ -414,7 +414,7 @@ int main(int argc, char **argv)
+   if (debug_mode) {
+     printf("Starting work on %s\n", filename);
+@@ -399,8 +399,8 @@
+           writesTot += hammer[poll].writes;
+           durationTot += duration;
+         } else if (debug_mode)
+-          printf("%s: test failed %s after %ld seconds\n", programName,
+-                 where[hammer[poll].problem], duration);
++          printf("%s: test failed %s after %d seconds\n", programName,
++                 where[hammer[poll].problem], (int)duration);
+         else {
+           failed_already = 1;
          }
+@@ -408,7 +408,7 @@
      }
-     if (debug_mode) printf(
--            "%s: [%ld [%ld] %ld] writes/sec average\n",
-+            "%s: [%d [%d] %d] writes/sec average\n",
-             programName, writesMin, writesTot * 1000 / durationTot, writesMax);
+   }
+   if (debug_mode)
+-    printf("%s: [%ld [%ld] %ld] writes/sec average\n", programName, writesMin,
++    printf("%s: [%d [%d] %d] writes/sec average\n", programName, writesMin,
+            writesTot * 1000 / durationTot, writesMax);
  
-     PR_DestroyCondVar(cv);
---- pr/tests/runtests.sh.orig	2020-01-31 20:37:50.000000000 +0000
-+++ pr/tests/runtests.sh	2020-02-01 22:39:16.320853988 +0000
-@@ -226,7 +226,7 @@ OBJDIR=`basename $PWD`
+   PR_DestroyCondVar(cv);
+--- pr/tests/runtests.sh.orig
++++ pr/tests/runtests.sh
+@@ -224,7 +224,7 @@
  printf "\nNSPR Test Results - $OBJDIR\n\n"
  printf "BEGIN\t\t\t`date`\n"
  printf "NSPR_TEST_LOGFILE\t${LOGFILE}\n\n"
@@ -1021,7 +1030,7 @@
  if [ $OS_PLATFORM = "Windows_95" ] || [ $OS_PLATFORM = "Windows_98" ] || [ $OS_PLATFORM = "Windows_NT" ] || [ $OS_PLATFORM = "OS/2" ] ; then
  	for prog in $TESTS
  	do
-@@ -244,10 +244,8 @@ if [ $OS_PLATFORM = "Windows_95" ] || [ $OS_PLATFORM =
+@@ -242,10 +242,8 @@
  else
  	for prog in $TESTS
  	do
@@ -1034,7 +1043,7 @@
  		test_pid=$!
  		sleep_pid=0
  		if test -n "$TEST_TIMEOUT" && test "$TEST_TIMEOUT" -gt 0
-@@ -262,9 +260,9 @@ else
+@@ -260,9 +258,9 @@
  			printf "\t\t\tPassed\n";
  		else
  			printf "\t\t\tFAILED\n";
@@ -1045,34 +1054,24 @@
  	done
  fi;
  
---- pr/tests/sel_spd.c.orig	2020-01-31 20:37:50 UTC
+--- pr/tests/sel_spd.c.orig
 +++ pr/tests/sel_spd.c
-@@ -15,6 +15,9 @@
- #include <stdio.h>
- #include <errno.h>
- #include <string.h>
-+#if defined(XP_UNIX) || defined(XP_OS2_EMX)
-+#   include <unistd.h>  /* getopt(3) */
-+#endif
- 
- #ifdef DEBUG
- #define PORT_INC_DO +100
-@@ -30,19 +33,19 @@
+@@ -34,19 +34,19 @@
  #define PORT_BASE 19000 PORT_INC_DO PORT_INC_3264
  
  typedef struct timer_slot_t {
--    unsigned long d_connect;
--    unsigned long d_cl_data;
--    unsigned long d_sv_data;
--    unsigned long d_close;
--    unsigned long d_total;
--    unsigned long requests;
-+    unsigned int d_connect;
-+    unsigned int d_cl_data;
-+    unsigned int d_sv_data;
-+    unsigned int d_close;
-+    unsigned int d_total;
-+    unsigned int requests;
+-  unsigned long d_connect;
+-  unsigned long d_cl_data;
+-  unsigned long d_sv_data;
+-  unsigned long d_close;
+-  unsigned long d_total;
+-  unsigned long requests;
++  unsigned int d_connect;
++  unsigned int d_cl_data;
++  unsigned int d_sv_data;
++  unsigned int d_close;
++  unsigned int d_total;
++  unsigned int requests;
  } timer_slot_t;
  
 -static long _iterations = 5;
@@ -1080,1201 +1079,1153 @@
 +static int _iterations = 5;
 +static int _client_data = 8192;
  
--static long _server_data = (128*1024);
+-static long _server_data = (128 * 1024);
 -static long _threads_max = 10, _threads = 10;
-+static int _server_data = (128*1024);
++static int _server_data = (128 * 1024);
 +static int _threads_max = 10, _threads = 10;
  
- static int verbose=0;
- static PRMonitor *exit_cv;
-@@ -98,7 +101,7 @@ _server_thread(void *arg_id)
- {
-     void _client_thread(void *);
-     int *id =  (int *)arg_id;
--    PRFileDesc *sock;
-+    PRFileDesc *sock = NULL;
-     PRSocketOptionData sockopt;
-     PRNetAddr sa;
-     PRFileDesc * newsock;
-@@ -476,12 +479,12 @@ void
- tally_results(int verbose)
- {
-     int index;
--    unsigned long tot_connect = 0;
--    unsigned long tot_cl_data = 0;
--    unsigned long tot_sv_data = 0;
--    unsigned long tot_close = 0;
--    unsigned long tot_all = 0;
--    unsigned long tot_requests = 0;
-+    unsigned int tot_connect = 0;
-+    unsigned int tot_cl_data = 0;
-+    unsigned int tot_sv_data = 0;
-+    unsigned int tot_close = 0;
-+    unsigned int tot_all = 0;
-+    unsigned int tot_requests = 0;
+ static int verbose = 0;
+ static PRMonitor* exit_cv;
+@@ -96,7 +96,7 @@
+ void _server_thread(void* arg_id) {
+   void _client_thread(void*);
+   int* id = (int*)arg_id;
+-  PRFileDesc* sock;
++  PRFileDesc* sock = NULL;
+   PRSocketOptionData sockopt;
+   PRNetAddr sa;
+   PRFileDesc* newsock;
+@@ -450,12 +450,12 @@
  
-     fprintf(stdout, "Server results:\n\n");
-     for (index=0; index<_threads_max*2; index+=2) {
---- pr/tests/selct_nm.c.orig	2019-10-15 14:21:38 UTC
+ void tally_results(int verbose) {
+   int index;
+-  unsigned long tot_connect = 0;
+-  unsigned long tot_cl_data = 0;
+-  unsigned long tot_sv_data = 0;
+-  unsigned long tot_close = 0;
+-  unsigned long tot_all = 0;
+-  unsigned long tot_requests = 0;
++  unsigned int tot_connect = 0;
++  unsigned int tot_cl_data = 0;
++  unsigned int tot_sv_data = 0;
++  unsigned int tot_close = 0;
++  unsigned int tot_all = 0;
++  unsigned int tot_requests = 0;
+ 
+   fprintf(stdout, "Server results:\n\n");
+   for (index = 0; index < _threads_max * 2; index += 2) {
+--- pr/tests/selct_nm.c.orig
 +++ pr/tests/selct_nm.c
-@@ -45,7 +45,7 @@ PRIntn debug_mode;
- static void
- clientThreadFunc(void *arg)
- {
--    PRUintn port = (PRUintn) arg;
-+    PRUintn port = (PRUintn)(uintptr_t)arg;
-     PRFileDesc *sock;
-     PRNetAddr addr;
-     char buf[128];
-@@ -169,7 +169,7 @@ int main(int argc, char **argv)
-     }
+@@ -47,7 +47,7 @@
+ PRIntn debug_mode;
  
-     clientThread = PR_CreateThread(PR_USER_THREAD,
--                                   clientThreadFunc, (void *) listenPort1,
-+                                   clientThreadFunc, (void *)(uintptr_t)listenPort1,
-                                    PR_PRIORITY_NORMAL, PR_LOCAL_THREAD,
-                                    PR_UNJOINABLE_THREAD, 0);
-     if (clientThread == NULL) {
-@@ -179,7 +179,7 @@ int main(int argc, char **argv)
-     }
+ static void clientThreadFunc(void* arg) {
+-  PRUintn port = (PRUintn)arg;
++  PRUintn port = (PRUintn)(uintptr_t)arg;
+   PRFileDesc* sock;
+   PRNetAddr addr;
+   char buf[128];
+@@ -167,7 +167,7 @@
+   }
  
-     clientThread = PR_CreateThread(PR_USER_THREAD,
--                                   clientThreadFunc, (void *) listenPort2,
-+                                   clientThreadFunc, (void *)(uintptr_t)listenPort2,
-                                    PR_PRIORITY_NORMAL, PR_LOCAL_THREAD,
-                                    PR_UNJOINABLE_THREAD, 0);
-     if (clientThread == NULL) {
---- pr/tests/select2.c.orig	2019-10-15 14:21:38 UTC
+   clientThread = PR_CreateThread(PR_USER_THREAD, clientThreadFunc,
+-                                 (void*)listenPort1, PR_PRIORITY_NORMAL,
++                                 (void*)(uintptr_t)listenPort1, PR_PRIORITY_NORMAL,
+                                  PR_LOCAL_THREAD, PR_UNJOINABLE_THREAD, 0);
+   if (clientThread == NULL) {
+     fprintf(stderr, "can't create thread\n");
+@@ -176,7 +176,7 @@
+   }
+ 
+   clientThread = PR_CreateThread(PR_USER_THREAD, clientThreadFunc,
+-                                 (void*)listenPort2, PR_PRIORITY_NORMAL,
++                                 (void*)(uintptr_t)listenPort2, PR_PRIORITY_NORMAL,
+                                  PR_LOCAL_THREAD, PR_UNJOINABLE_THREAD, 0);
+   if (clientThread == NULL) {
+     fprintf(stderr, "can't create thread\n");
+--- pr/tests/select2.c.orig
 +++ pr/tests/select2.c
-@@ -53,6 +53,7 @@ PRInt32 count;
+@@ -52,13 +52,17 @@
  **
  ***********************************************************************/
  
 +static int exitcode = 2;
- 
- static void Test_Result (int result)
- {
-@@ -60,9 +61,13 @@ static void Test_Result (int result)
-     {
-         case PASS:
-             printf ("PASS\n");
-+            if (exitcode == 2) {
-+                exitcode = 0;
-+            }
-             break;
-         case FAIL:
-             printf ("FAIL\n");
-+            exitcode = 1;
-             break;
-         default:
-             printf ("NOSTATUS\n");
-@@ -382,4 +387,5 @@ int main(int argc, char **argv)
-     PR_Cleanup();
- 
- 
-+    return exitcode;
++
+ static void Test_Result(int result) {
+   switch (result) {
+     case PASS:
+       printf("PASS\n");
++      if (exitcode == 2) exitcode = 0;
+       break;
+     case FAIL:
+       printf("FAIL\n");
++      exitcode = 1;
+       break;
+     default:
+       printf("NOSTATUS\n");
+@@ -359,4 +363,6 @@
+     Test_Result(NOSTATUS);
+   }
+   PR_Cleanup();
++
++  return exitcode;
  }
---- pr/tests/semaerr.c.orig	2019-10-15 14:21:38 UTC
+--- pr/tests/semaerr.c.orig
 +++ pr/tests/semaerr.c
-@@ -61,7 +61,7 @@ int main(int argc, char **argv)
-         exit(1);
-     }
-     if (PR_GetError() != PR_FILE_NOT_FOUND_ERROR) {
--        fprintf(stderr, "Expected error is %d but got (%d, %d)\n",
-+        fprintf(stderr, "Expected error is %ld (PR_FILE_NOT_FOUND_ERROR) but got (%d, %d)\n",
-                 PR_FILE_NOT_FOUND_ERROR, PR_GetError(), PR_GetOSError());
-         exit(1);
-     }
---- pr/tests/semaerr1.c.orig	2019-10-15 14:21:38 UTC
+@@ -72,7 +72,7 @@
+     exit(1);
+   }
+   if (PR_GetError() != PR_FILE_NOT_FOUND_ERROR) {
+-    fprintf(stderr, "Expected error is %d but got (%d, %d)\n",
++    fprintf(stderr, "Expected error is %ld (PR_FILE_NOT_FOUND_ERROR) but got (%d, %d)\n",
+             PR_FILE_NOT_FOUND_ERROR, PR_GetError(), PR_GetOSError());
+     exit(1);
+   }
+--- pr/tests/semaerr1.c.orig
 +++ pr/tests/semaerr1.c
-@@ -72,7 +72,7 @@ int main(int argc, char **argv)
-         exit(1);
-     }
-     if (PR_GetError() != PR_FILE_EXISTS_ERROR) {
--        fprintf(stderr, "Expect %d but got %d\n", PR_FILE_EXISTS_ERROR,
-+        fprintf(stderr, "Expected %ld (PR_FILE_EXISTS_ERROR) but got %d\n", PR_FILE_EXISTS_ERROR,
-                 PR_GetError());
-         exit(1);
-     }
---- pr/tests/sendzlf.c.orig	2019-10-15 14:21:38 UTC
+@@ -81,7 +81,7 @@
+     exit(1);
+   }
+   if (PR_GetError() != PR_FILE_EXISTS_ERROR) {
+-    fprintf(stderr, "Expect %d but got %d\n", PR_FILE_EXISTS_ERROR,
++    fprintf(stderr, "Expected %ld (PR_FILE_EXISTS_ERROR) but got %d\n", PR_FILE_EXISTS_ERROR,
+             PR_GetError());
+     exit(1);
+   }
+--- pr/tests/sendzlf.c.orig
 +++ pr/tests/sendzlf.c
-@@ -26,7 +26,7 @@ static void ClientThread(void *arg)
- {
-     PRFileDesc *sock;
-     PRNetAddr addr;
--    PRUint16 port = (PRUint16) arg;
-+    PRUint16 port = (PRUint16)(uintptr_t)arg;
-     char buf[1024];
-     char *bufPtr;
-     PRInt32 nbytes;
-@@ -184,7 +184,7 @@ int main(int argc, char **argv)
-     }
+@@ -25,7 +25,7 @@
+ static void ClientThread(void* arg) {
+   PRFileDesc* sock;
+   PRNetAddr addr;
+-  PRUint16 port = (PRUint16)arg;
++  PRUint16 port = (PRUint16)(uintptr_t)arg;
+   char buf[1024];
+   char* bufPtr;
+   PRInt32 nbytes;
+@@ -181,7 +181,7 @@
+   }
  
-     clientThread = PR_CreateThread(PR_USER_THREAD,
--                                   ClientThread, (void *) PR_ntohs(PR_NetAddrInetPort(&addr)),
-+                                   ClientThread, (void *)(uintptr_t)PR_ntohs(PR_NetAddrInetPort(&addr)),
-                                    PR_PRIORITY_NORMAL, scope, PR_JOINABLE_THREAD, 0);
-     if (NULL == clientThread) {
-         fprintf(stderr, "PR_CreateThread failed\n");
---- pr/tests/server_test.c.orig	2019-10-15 14:21:38 UTC
+   clientThread = PR_CreateThread(
+-      PR_USER_THREAD, ClientThread, (void*)PR_ntohs(PR_NetAddrInetPort(&addr)),
++      PR_USER_THREAD, ClientThread, (void*)(uintptr_t)PR_ntohs(PR_NetAddrInetPort(&addr)),
+       PR_PRIORITY_NORMAL, scope, PR_JOINABLE_THREAD, 0);
+   if (NULL == clientThread) {
+     fprintf(stderr, "PR_CreateThread failed\n");
+--- pr/tests/server_test.c.orig
 +++ pr/tests/server_test.c
-@@ -61,7 +61,7 @@ PRCondVar *ServerStateCV;
+@@ -64,7 +64,7 @@
  #ifdef DEBUGPRINTS
- #define DPRINTF printf
+ #  define DPRINTF printf
  #else
--#define DPRINTF
-+#define DPRINTF(...)
+-#  define DPRINTF
++#  define DPRINTF(...)
  #endif
  
- 
-@@ -582,6 +582,7 @@ static void do_workUU(void)
-     do_work();
+ /***********************************************************************
+@@ -528,6 +528,7 @@
+   do_work();
  }
  
 +#if 0
- static void do_workUK(void)
- {
-     ServerScope = PR_LOCAL_THREAD;
-@@ -602,6 +603,7 @@ static void do_workKK(void)
-     ClientScope = PR_GLOBAL_THREAD;
-     do_work();
+ static void do_workUK(void) {
+   ServerScope = PR_LOCAL_THREAD;
+   ClientScope = PR_GLOBAL_THREAD;
+@@ -545,6 +546,7 @@
+   ClientScope = PR_GLOBAL_THREAD;
+   do_work();
  }
 +#endif
  
- 
- static void Measure(void (*func)(void), const char *msg)
---- pr/tests/servr_kk.c.orig	2019-10-15 14:21:38 UTC
+ static void Measure(void (*func)(void), const char* msg) {
+   PRIntervalTime start, stop;
+--- pr/tests/servr_kk.c.orig
 +++ pr/tests/servr_kk.c
-@@ -57,7 +57,7 @@ PRCondVar *ServerStateCV;
+@@ -61,7 +61,7 @@
  #ifdef DEBUGPRINTS
- #define DPRINTF printf
+ #  define DPRINTF printf
  #else
--#define DPRINTF
-+#define DPRINTF(...)
+-#  define DPRINTF
++#  define DPRINTF(...)
  #endif
  
- PRIntn failed_already=0;
-@@ -539,6 +539,7 @@ void do_work()
-     PR_JoinThread(ServerThread);
+ PRIntn failed_already = 0;
+@@ -491,6 +491,7 @@
+   PR_JoinThread(ServerThread);
  }
  
 +#if 0
- static void do_workUU(void)
- {
-     ServerScope = PR_LOCAL_THREAD;
-@@ -559,6 +560,7 @@ static void do_workKU(void)
-     ClientScope = PR_LOCAL_THREAD;
-     do_work();
+ static void do_workUU(void) {
+   ServerScope = PR_LOCAL_THREAD;
+   ClientScope = PR_LOCAL_THREAD;
+@@ -508,6 +509,7 @@
+   ClientScope = PR_LOCAL_THREAD;
+   do_work();
  }
 +#endif
  
- static void do_workKK(void)
- {
---- pr/tests/servr_ku.c.orig	2019-10-15 14:21:38 UTC
+ static void do_workKK(void) {
+   ServerScope = PR_GLOBAL_THREAD;
+--- pr/tests/servr_ku.c.orig
 +++ pr/tests/servr_ku.c
-@@ -57,7 +57,7 @@ PRCondVar *ServerStateCV;
+@@ -61,7 +61,7 @@
  #ifdef DEBUGPRINTS
- #define DPRINTF printf
+ #  define DPRINTF printf
  #else
--#define DPRINTF
-+#define DPRINTF(...)
+-#  define DPRINTF
++#  define DPRINTF(...)
  #endif
  
- PRIntn failed_already=0;
---- pr/tests/servr_uk.c.orig	2019-10-15 14:21:38 UTC
+ PRIntn failed_already = 0;
+--- pr/tests/servr_uk.c.orig
 +++ pr/tests/servr_uk.c
-@@ -57,7 +57,7 @@ PRCondVar *ServerStateCV;
+@@ -61,7 +61,7 @@
  #ifdef DEBUGPRINTS
- #define DPRINTF printf
+ #  define DPRINTF printf
  #else
--#define DPRINTF
-+#define DPRINTF(...)
+-#  define DPRINTF
++#  define DPRINTF(...)
  #endif
  
- PRIntn failed_already=0;
---- pr/tests/servr_uu.c.orig	2019-10-15 14:21:38 UTC
+ PRIntn failed_already = 0;
+--- pr/tests/servr_uu.c.orig
 +++ pr/tests/servr_uu.c
-@@ -57,7 +57,7 @@ PRCondVar *ServerStateCV;
+@@ -61,7 +61,7 @@
  #ifdef DEBUGPRINTS
- #define DPRINTF printf
+ #  define DPRINTF printf
  #else
--#define DPRINTF
-+#define DPRINTF(...)
+-#  define DPRINTF
++#  define DPRINTF(...)
  #endif
  
- PRIntn failed_already=0;
---- pr/tests/short_thread.c.orig	2019-10-15 14:21:38 UTC
+ PRIntn failed_already = 0;
+--- pr/tests/short_thread.c.orig
 +++ pr/tests/short_thread.c
-@@ -45,7 +45,7 @@ int main (int argc, char **argv)
-                                PR_PRIORITY_NORMAL, PR_GLOBAL_THREAD, PR_UNJOINABLE_THREAD, 0))
-         == NULL ) {
-         fprintf(stderr,
--                "simple_test: Error - PR_CreateThread failed: (%ld, %ld)\n",
-+                "simple_test: Error - PR_CreateThread failed: (%d, %d)\n",
-                 PR_GetError(), PR_GetOSError());
-         exit( 1 );
-     }
---- pr/tests/socket.c.orig	2019-10-15 14:21:38 UTC
+@@ -42,7 +42,7 @@
+            PR_USER_THREAD, housecleaning, (void*)&thread_start_time,
+            PR_PRIORITY_NORMAL, PR_GLOBAL_THREAD, PR_UNJOINABLE_THREAD, 0)) ==
+       NULL) {
+-    fprintf(stderr, "simple_test: Error - PR_CreateThread failed: (%ld, %ld)\n",
++    fprintf(stderr, "simple_test: Error - PR_CreateThread failed: (%d, %d)\n",
+             PR_GetError(), PR_GetOSError());
+     exit(1);
+   }
+--- pr/tests/socket.c.orig
 +++ pr/tests/socket.c
-@@ -173,7 +173,9 @@ readn(PRFileDesc *sockfd, char *buf, int len)
-     int rem;
-     int bytes;
-     int offset = 0;
+@@ -170,7 +170,9 @@
+   int rem;
+   int bytes;
+   int offset = 0;
 +#ifdef WINNT
-     int err;
+   int err;
 +#endif
-     PRIntervalTime timeout = PR_INTERVAL_NO_TIMEOUT;
+   PRIntervalTime timeout = PR_INTERVAL_NO_TIMEOUT;
  
-     if (test_cancelio) {
-@@ -181,12 +183,14 @@ readn(PRFileDesc *sockfd, char *buf, int len)
-     }
+   if (test_cancelio) {
+@@ -178,11 +180,13 @@
+   }
  
-     for (rem=len; rem; offset += bytes, rem -= bytes) {
--        DPRINTF(("thread = 0x%lx: calling PR_Recv, bytes = %d\n",
-+        DPRINTF(("thread = %p: calling PR_Recv, bytes = %d\n",
-                  PR_GetCurrentThread(), rem));
+   for (rem = len; rem; offset += bytes, rem -= bytes) {
+-    DPRINTF(("thread = 0x%lx: calling PR_Recv, bytes = %d\n",
++    DPRINTF(("thread = %p: calling PR_Recv, bytes = %d\n",
+              PR_GetCurrentThread(), rem));
 +#ifdef WINNT
- retry:
+   retry:
 +#endif
-         bytes = PR_Recv(sockfd, buf + offset, rem, 0,
-                         timeout);
--        DPRINTF(("thread = 0x%lx: returning from PR_Recv, bytes = %d\n",
-+        DPRINTF(("thread = %p: returning from PR_Recv, bytes = %d\n",
-                  PR_GetCurrentThread(), bytes));
-         if (bytes < 0) {
+     bytes = PR_Recv(sockfd, buf + offset, rem, 0, timeout);
+-    DPRINTF(("thread = 0x%lx: returning from PR_Recv, bytes = %d\n",
++    DPRINTF(("thread = %p: returning from PR_Recv, bytes = %d\n",
+              PR_GetCurrentThread(), bytes));
+     if (bytes < 0) {
  #ifdef WINNT
-@@ -218,11 +222,11 @@ writen(PRFileDesc *sockfd, char *buf, int len)
-     int offset = 0;
+@@ -212,10 +216,10 @@
+   int offset = 0;
  
-     for (rem=len; rem; offset += bytes, rem -= bytes) {
--        DPRINTF(("thread = 0x%lx: calling PR_Send, bytes = %d\n",
-+        DPRINTF(("thread = %p: calling PR_Send, bytes = %d\n",
-                  PR_GetCurrentThread(), rem));
-         bytes = PR_Send(sockfd, buf + offset, rem, 0,
-                         PR_INTERVAL_NO_TIMEOUT);
--        DPRINTF(("thread = 0x%lx: returning from PR_Send, bytes = %d\n",
-+        DPRINTF(("thread = %p: returning from PR_Send, bytes = %d\n",
-                  PR_GetCurrentThread(), bytes));
-         if (bytes <= 0) {
-             return -1;
-@@ -272,7 +276,7 @@ Serve_Client(void *arg)
-             if (PR_Shutdown(sockfd, PR_SHUTDOWN_RCV) < 0) {
-                 fprintf(stderr,"prsocket_test: ERROR - PR_Shutdown\n");
-             }
--        DPRINTF(("Serve_Client [0x%lx]: inbuf[0] = 0x%lx\n",PR_GetCurrentThread(),
-+        DPRINTF(("Serve_Client [%p]: inbuf[0] = %d\n",PR_GetCurrentThread(),
-                  (*((int *) in_buf->data))));
-         if (writen(sockfd, in_buf->data, bytes) < bytes) {
-             fprintf(stderr,"prsocket_test: ERROR - Serve_Client:writen\n");
-@@ -414,7 +418,7 @@ TCP_Server(void *arg)
-         goto exit;
-     }
+   for (rem = len; rem; offset += bytes, rem -= bytes) {
+-    DPRINTF(("thread = 0x%lx: calling PR_Send, bytes = %d\n",
++    DPRINTF(("thread = %p: calling PR_Send, bytes = %d\n",
+              PR_GetCurrentThread(), rem));
+     bytes = PR_Send(sockfd, buf + offset, rem, 0, PR_INTERVAL_NO_TIMEOUT);
+-    DPRINTF(("thread = 0x%lx: returning from PR_Send, bytes = %d\n",
++    DPRINTF(("thread = %p: returning from PR_Send, bytes = %d\n",
+              PR_GetCurrentThread(), bytes));
+     if (bytes <= 0) {
+       return -1;
+@@ -262,7 +266,7 @@
+       if (PR_Shutdown(sockfd, PR_SHUTDOWN_RCV) < 0) {
+         fprintf(stderr, "prsocket_test: ERROR - PR_Shutdown\n");
+       }
+-    DPRINTF(("Serve_Client [0x%lx]: inbuf[0] = 0x%lx\n", PR_GetCurrentThread(),
++    DPRINTF(("Serve_Client [%p]: inbuf[0] = %d\n", PR_GetCurrentThread(),
+              (*((int*)in_buf->data))));
+     if (writen(sockfd, in_buf->data, bytes) < bytes) {
+       fprintf(stderr, "prsocket_test: ERROR - Serve_Client:writen\n");
+@@ -395,7 +399,7 @@
+   }
  
--    DPRINTF(("TCP_Server: PR_BIND netaddr.inet.ip = 0x%lx, netaddr.inet.port = %d\n",
-+    DPRINTF(("TCP_Server: PR_BIND netaddr.inet.ip = 0x%x, netaddr.inet.port = %d\n",
-              netaddr.inet.ip, netaddr.inet.port));
-     if (PR_SetNetAddr(PR_IpAddrLoopback, client_domain,
-                       PR_ntohs(PR_NetAddrInetPort(&netaddr)),
-@@ -466,7 +470,7 @@ TCP_Server(void *arg)
-             failed_already=1;
-             goto exit;
-         }
--        DPRINTF(("TCP_Server: Created Serve_Client = 0x%lx\n", t));
-+        DPRINTF(("TCP_Server: Created Serve_Client = %p\n", t));
+   DPRINTF(
+-      ("TCP_Server: PR_BIND netaddr.inet.ip = 0x%lx, netaddr.inet.port = %d\n",
++      ("TCP_Server: PR_BIND netaddr.inet.ip = 0x%x, netaddr.inet.port = %d\n",
+        netaddr.inet.ip, netaddr.inet.port));
+   if (PR_SetNetAddr(PR_IpAddrLoopback, client_domain,
+                     PR_ntohs(PR_NetAddrInetPort(&netaddr)),
+@@ -444,7 +448,7 @@
+       failed_already = 1;
+       goto exit;
      }
+-    DPRINTF(("TCP_Server: Created Serve_Client = 0x%lx\n", t));
++    DPRINTF(("TCP_Server: Created Serve_Client = %p\n", t));
+   }
  
  exit:
-@@ -482,7 +486,7 @@ exit:
-     --(*sp->exit_counter);
-     PR_Notify(sp->exit_mon);
-     PR_ExitMonitor(sp->exit_mon);
--    DPRINTF(("TCP_Server [0x%lx] exiting\n", PR_GetCurrentThread()));
-+    DPRINTF(("TCP_Server [%p] exiting\n", PR_GetCurrentThread()));
+@@ -460,7 +464,7 @@
+   --(*sp->exit_counter);
+   PR_Notify(sp->exit_mon);
+   PR_ExitMonitor(sp->exit_mon);
+-  DPRINTF(("TCP_Server [0x%lx] exiting\n", PR_GetCurrentThread()));
++  DPRINTF(("TCP_Server [%p] exiting\n", PR_GetCurrentThread()));
  }
  
  /*
-@@ -541,7 +545,7 @@ UDP_Server(void *arg)
-         return;
-     }
+@@ -517,7 +521,7 @@
+   }
  
--    DPRINTF(("PR_Bind: UDP Server netaddr.inet.ip = 0x%lx, netaddr.inet.port = %d\n",
-+    DPRINTF(("PR_Bind: UDP Server netaddr.inet.ip = 0x%x, netaddr.inet.port = %d\n",
-              netaddr.inet.ip, netaddr.inet.port));
+   DPRINTF(
+-      ("PR_Bind: UDP Server netaddr.inet.ip = 0x%lx, netaddr.inet.port = %d\n",
++      ("PR_Bind: UDP Server netaddr.inet.ip = 0x%x, netaddr.inet.port = %d\n",
+        netaddr.inet.ip, netaddr.inet.port));
+   /*
+    * We can't use the IP address returned by PR_GetSockName in
+@@ -556,16 +560,16 @@
+   memset(&netaddr, 0, sizeof(netaddr));
+   for (i = 0; i < (num_udp_clients * num_udp_datagrams_per_client); i++) {
+     DPRINTF(
+-        ("UDP_Server: calling PR_RecvFrom client  - ip = 0x%lx, port = %d "
+-         "bytes = %d inbuf = 0x%lx, inbuf[0] = 0x%lx\n",
++        ("UDP_Server: calling PR_RecvFrom client  - ip = 0x%x, port = %d "
++         "bytes = %d inbuf = %p, inbuf[0] = 0x%x\n",
+          netaddr.inet.ip, netaddr.inet.port, bytes, in_buf->data,
+          in_buf->data[0]));
+ 
+     rv = PR_RecvFrom(sockfd, in_buf->data, bytes, 0, &netaddr,
+                      PR_INTERVAL_NO_TIMEOUT);
+     DPRINTF((
+-        "UDP_Server: PR_RecvFrom client  - ip = 0x%lx, port = %d bytes = %d "
+-        "inbuf = 0x%lx, inbuf[0] = 0x%lx\n",
++        "UDP_Server: PR_RecvFrom client  - ip = 0x%x, port = %d bytes = %d "
++        "inbuf = %p, inbuf[0] = 0x%x\n",
+         netaddr.inet.ip, netaddr.inet.port, rv, in_buf->data, in_buf->data[0]));
+     if (rv != bytes) {
+       return;
+@@ -587,7 +591,7 @@
+   --(*sp->exit_counter);
+   PR_Notify(sp->exit_mon);
+   PR_ExitMonitor(sp->exit_mon);
+-  DPRINTF(("UDP_Server [0x%x] exiting\n", PR_GetCurrentThread()));
++  DPRINTF(("UDP_Server [%p] exiting\n", PR_GetCurrentThread()));
+ }
+ 
+ /*
+@@ -627,8 +631,8 @@
+       return;
+     }
+     if (PR_Connect(sockfd, &netaddr, PR_INTERVAL_NO_TIMEOUT) < 0) {
+-      fprintf(stderr, "PR_Connect failed: (%ld, %ld)\n", PR_GetError(),
+-              PR_GetOSError());
++      fprintf(stderr, "PR_Connect failed: (%ld, %ld)\n", (long)PR_GetError(),
++              (long)PR_GetOSError());
+       failed_already = 1;
+       return;
+     }
+@@ -636,7 +640,7 @@
+       /*
+        * fill in random data
+        */
+-      memset(out_buf->data, ((PRInt32)(&netaddr)) + i + j, bytes);
++      memset(out_buf->data, ((intptr_t)(&netaddr)) + i + j, bytes);
+       /*
+        * write to server
+        */
+@@ -650,7 +654,7 @@
+         failed_already = 1;
+         return;
+       }
+-      DPRINTF(("TCP Client [0x%lx]: out_buf = 0x%lx out_buf[0] = 0x%lx\n",
++      DPRINTF(("TCP Client [%p]: out_buf = %p out_buf[0] = 0x%x\n",
+                PR_GetCurrentThread(), out_buf, (*((int*)out_buf->data))));
+       if (readn(sockfd, in_buf->data, bytes) < bytes) {
+         fprintf(stderr, "prsocket_test: ERROR - TCP_Client:readn\n");
+@@ -687,7 +691,7 @@
+   --(*cp->exit_counter);
+   PR_Notify(cp->exit_mon);
+   PR_ExitMonitor(cp->exit_mon);
+-  DPRINTF(("TCP_Client [0x%x] exiting\n", PR_GetCurrentThread()));
++  DPRINTF(("TCP_Client [%p] exiting\n", PR_GetCurrentThread()));
+ }
+ 
+ /*
+@@ -748,7 +752,7 @@
+   }
+ 
+   DPRINTF(
+-      ("PR_Bind: UDP Client netaddr.inet.ip = 0x%lx, netaddr.inet.port = %d\n",
++      ("PR_Bind: UDP Client netaddr.inet.ip = 0x%x, netaddr.inet.port = %d\n",
+        netaddr.inet.ip, netaddr.inet.port));
+ 
+   netaddr = cp->server_addr;
+@@ -765,9 +769,9 @@
      /*
-      * We can't use the IP address returned by PR_GetSockName in
-@@ -579,13 +583,13 @@ UDP_Server(void *arg)
+      * fill in random data
       */
-     memset(&netaddr, 0, sizeof(netaddr));
-     for (i = 0; i < (num_udp_clients * num_udp_datagrams_per_client); i++) {
--        DPRINTF(("UDP_Server: calling PR_RecvFrom client  - ip = 0x%lx, port = %d bytes = %d inbuf = 0x%lx, inbuf[0] = 0x%lx\n",
-+        DPRINTF(("UDP_Server: calling PR_RecvFrom client  - ip = 0x%x, port = %d bytes = %d inbuf = %p, inbuf[0] = 0x%x\n",
-                  netaddr.inet.ip, netaddr.inet.port, bytes, in_buf->data,
-                  in_buf->data[0]));
- 
-         rv = PR_RecvFrom(sockfd, in_buf->data, bytes, 0, &netaddr,
-                          PR_INTERVAL_NO_TIMEOUT);
--        DPRINTF(("UDP_Server: PR_RecvFrom client  - ip = 0x%lx, port = %d bytes = %d inbuf = 0x%lx, inbuf[0] = 0x%lx\n",
-+        DPRINTF(("UDP_Server: PR_RecvFrom client  - ip = 0x%x, port = %d bytes = %d inbuf = %p, inbuf[0] = 0x%x\n",
-                  netaddr.inet.ip, netaddr.inet.port, rv, in_buf->data,
-                  in_buf->data[0]));
-         if (rv != bytes) {
-@@ -608,7 +612,7 @@ UDP_Server(void *arg)
-     --(*sp->exit_counter);
-     PR_Notify(sp->exit_mon);
-     PR_ExitMonitor(sp->exit_mon);
--    DPRINTF(("UDP_Server [0x%x] exiting\n", PR_GetCurrentThread()));
-+    DPRINTF(("UDP_Server [%p] exiting\n", PR_GetCurrentThread()));
- }
- 
- /*
-@@ -652,7 +656,7 @@ TCP_Client(void *arg)
-         }
-         if (PR_Connect(sockfd, &netaddr,PR_INTERVAL_NO_TIMEOUT) < 0) {
-             fprintf(stderr, "PR_Connect failed: (%ld, %ld)\n",
--                    PR_GetError(), PR_GetOSError());
-+                    (long)PR_GetError(), (long)PR_GetOSError());
-             failed_already=1;
-             return;
-         }
-@@ -660,7 +664,7 @@ TCP_Client(void *arg)
-             /*
-              * fill in random data
-              */
--            memset(out_buf->data, ((PRInt32) (&netaddr)) + i + j, bytes);
-+            memset(out_buf->data, ((intptr_t)(&netaddr)) + i + j, bytes);
-             /*
-              * write to server
-              */
-@@ -674,7 +678,7 @@ TCP_Client(void *arg)
-                 failed_already=1;
-                 return;
-             }
--            DPRINTF(("TCP Client [0x%lx]: out_buf = 0x%lx out_buf[0] = 0x%lx\n",
-+            DPRINTF(("TCP Client [%p]: out_buf = %p out_buf[0] = 0x%x\n",
-                      PR_GetCurrentThread(), out_buf, (*((int *) out_buf->data))));
-             if (readn(sockfd, in_buf->data, bytes) < bytes) {
-                 fprintf(stderr,"prsocket_test: ERROR - TCP_Client:readn\n");
-@@ -711,7 +715,7 @@ TCP_Client(void *arg)
-     --(*cp->exit_counter);
-     PR_Notify(cp->exit_mon);
-     PR_ExitMonitor(cp->exit_mon);
--    DPRINTF(("TCP_Client [0x%x] exiting\n", PR_GetCurrentThread()));
-+    DPRINTF(("TCP_Client [%p] exiting\n", PR_GetCurrentThread()));
- }
- 
- /*
-@@ -775,7 +779,7 @@ UDP_Client(void *arg)
-         return;
+-    DPRINTF(("UDP_Client [0x%lx]: out_buf = 0x%lx bytes = 0x%lx\n",
++    DPRINTF(("UDP_Client [%p]: out_buf = %p bytes = %d\n",
+              PR_GetCurrentThread(), out_buf->data, bytes));
+-    memset(out_buf->data, ((PRInt32)(&netaddr)) + i, bytes);
++    memset(out_buf->data, ((intptr_t)(&netaddr)) + i, bytes);
+     /*
+      * write to server
+      */
+@@ -779,7 +783,7 @@
+     if (rv != bytes) {
+       return;
      }
- 
--    DPRINTF(("PR_Bind: UDP Client netaddr.inet.ip = 0x%lx, netaddr.inet.port = %d\n",
-+    DPRINTF(("PR_Bind: UDP Client netaddr.inet.ip = 0x%x, netaddr.inet.port = %d\n",
-              netaddr.inet.ip, netaddr.inet.port));
- 
-     netaddr = cp->server_addr;
-@@ -792,9 +796,9 @@ UDP_Client(void *arg)
-         /*
-          * fill in random data
-          */
--        DPRINTF(("UDP_Client [0x%lx]: out_buf = 0x%lx bytes = 0x%lx\n",
-+        DPRINTF(("UDP_Client [%p]: out_buf = %p bytes = %d\n",
-                  PR_GetCurrentThread(), out_buf->data, bytes));
--        memset(out_buf->data, ((PRInt32) (&netaddr)) + i, bytes);
-+        memset(out_buf->data, ((intptr_t)(&netaddr)) + i, bytes);
-         /*
-          * write to server
-          */
-@@ -807,7 +811,7 @@ UDP_Client(void *arg)
-         if (rv != bytes) {
-             return;
-         }
--        DPRINTF(("UDP_Client [0x%lx]: out_buf = 0x%lx out_buf[0] = 0x%lx\n",
-+        DPRINTF(("UDP_Client [%p]: out_buf = %p out_buf[0] = 0x%x\n",
-                  PR_GetCurrentThread(), out_buf, (*((int *) out_buf->data))));
-         if (cp->udp_connect)
-             rv = PR_Recv(sockfd, in_buf->data, bytes, 0,
-@@ -818,7 +822,7 @@ UDP_Client(void *arg)
-         if (rv != bytes) {
-             return;
-         }
--        DPRINTF(("UDP_Client [0x%lx]: in_buf = 0x%lx in_buf[0] = 0x%lx\n",
-+        DPRINTF(("UDP_Client [%p]: in_buf = %p in_buf[0] = 0x%x\n",
-                  PR_GetCurrentThread(), in_buf, (*((int *) in_buf->data))));
-         /*
-          * verify the data read
-@@ -843,7 +847,7 @@ UDP_Client(void *arg)
-     PR_Notify(cp->exit_mon);
-     PR_ExitMonitor(cp->exit_mon);
-     PR_DELETE(cp);
--    DPRINTF(("UDP_Client [0x%x] exiting\n", PR_GetCurrentThread()));
-+    DPRINTF(("UDP_Client [%p] exiting\n", PR_GetCurrentThread()));
+-    DPRINTF(("UDP_Client [0x%lx]: out_buf = 0x%lx out_buf[0] = 0x%lx\n",
++    DPRINTF(("UDP_Client [%p]: out_buf = %p out_buf[0] = 0x%x\n",
+              PR_GetCurrentThread(), out_buf, (*((int*)out_buf->data))));
+     if (cp->udp_connect)
+       rv = PR_Recv(sockfd, in_buf->data, bytes, 0, PR_INTERVAL_NO_TIMEOUT);
+@@ -789,7 +793,7 @@
+     if (rv != bytes) {
+       return;
+     }
+-    DPRINTF(("UDP_Client [0x%lx]: in_buf = 0x%lx in_buf[0] = 0x%lx\n",
++    DPRINTF(("UDP_Client [%p]: in_buf = %p in_buf[0] = 0x%x\n",
+              PR_GetCurrentThread(), in_buf, (*((int*)in_buf->data))));
+     /*
+      * verify the data read
+@@ -814,7 +818,7 @@
+   PR_Notify(cp->exit_mon);
+   PR_ExitMonitor(cp->exit_mon);
+   PR_DELETE(cp);
+-  DPRINTF(("UDP_Client [0x%x] exiting\n", PR_GetCurrentThread()));
++  DPRINTF(("UDP_Client [%p] exiting\n", PR_GetCurrentThread()));
  }
  
  /*
-@@ -910,7 +914,7 @@ TCP_Socket_Client_Server_Test(void)
-         failed_already=1;
-         return -1;
+@@ -875,7 +879,7 @@
+     failed_already = 1;
+     return -1;
+   }
+-  DPRINTF(("Created TCP server = 0x%lx\n", t));
++  DPRINTF(("Created TCP server = %p\n", t));
+   thread_count++;
+ 
+   /*
+@@ -906,7 +910,7 @@
+       failed_already = 1;
+       return -1;
      }
--    DPRINTF(("Created TCP server = 0x%lx\n", t));
-+    DPRINTF(("Created TCP server = %p\n", t));
+-    DPRINTF(("Created TCP client = 0x%lx\n", t));
++    DPRINTF(("Created TCP client = %p\n", t));
      thread_count++;
+   }
+   /* Wait for server and client threads to exit */
+@@ -916,9 +920,9 @@
+   }
+   PR_ExitMonitor(mon2);
+   printf("%30s", "TCP_Socket_Client_Server_Test:");
+-  printf("%2ld Server %2ld Clients %2ld connections_per_client\n", 1l,
++  printf(" 1 Server %2d Clients %2d connections_per_client\n",
+          num_tcp_clients, num_tcp_connections_per_client);
+-  printf("%30s %2ld messages_per_connection %4ld bytes_per_message\n", ":",
++  printf("%30s %2d messages_per_connection %4d bytes_per_message\n", ":",
+          num_tcp_mesgs_per_connection, tcp_mesg_size);
  
-     /*
-@@ -944,7 +948,7 @@ TCP_Socket_Client_Server_Test(void)
-             failed_already=1;
-             return -1;
-         }
--        DPRINTF(("Created TCP client = 0x%lx\n", t));
-+        DPRINTF(("Created TCP client = %p\n", t));
-         thread_count++;
-     }
-     /* Wait for server and client threads to exit */
-@@ -954,9 +958,9 @@ TCP_Socket_Client_Server_Test(void)
-     }
-     PR_ExitMonitor(mon2);
-     printf("%30s","TCP_Socket_Client_Server_Test:");
--    printf("%2ld Server %2ld Clients %2ld connections_per_client\n",1l,
-+    printf(" 1 Server %2d Clients %2d connections_per_client\n",
-            num_tcp_clients, num_tcp_connections_per_client);
--    printf("%30s %2ld messages_per_connection %4ld bytes_per_message\n",":",
-+    printf("%30s %2d messages_per_connection %4d bytes_per_message\n",":",
-            num_tcp_mesgs_per_connection, tcp_mesg_size);
+   return 0;
+@@ -1033,8 +1037,8 @@
+   }
+   PR_ExitMonitor(mon2);
+   printf("%30s", "UDP_Socket_Client_Server_Test: ");
+-  printf("%2ld Server %2ld Clients\n", 1l, num_udp_clients);
+-  printf("%30s %2ld datagrams_per_client %4ld bytes_per_datagram\n", ":",
++  printf(" 1 Server %2d Clients\n", num_udp_clients);
++  printf("%30s %2d datagrams_per_client %4d bytes_per_datagram\n", ":",
+          num_udp_datagrams_per_client, udp_datagram_size);
  
-     return 0;
-@@ -1081,8 +1085,8 @@ UDP_Socket_Client_Server_Test(void)
-     }
-     PR_ExitMonitor(mon2);
-     printf("%30s","UDP_Socket_Client_Server_Test: ");
--    printf("%2ld Server %2ld Clients\n",1l, num_udp_clients);
--    printf("%30s %2ld datagrams_per_client %4ld bytes_per_datagram\n",":",
-+    printf(" 1 Server %2d Clients\n", num_udp_clients);
-+    printf("%30s %2d datagrams_per_client %4d bytes_per_datagram\n",":",
-            num_udp_datagrams_per_client, udp_datagram_size);
- 
-     return 0;
-@@ -1438,7 +1442,7 @@ TransmitFile_Client(void *arg)
-     --(*cp->exit_counter);
-     PR_Notify(cp->exit_mon);
-     PR_ExitMonitor(cp->exit_mon);
--    DPRINTF(("TransmitFile_Client [0x%lx] exiting\n", PR_GetCurrentThread()));
-+    DPRINTF(("TransmitFile_Client [%p] exiting\n", PR_GetCurrentThread()));
+   return 0;
+@@ -1356,7 +1360,7 @@
+   --(*cp->exit_counter);
+   PR_Notify(cp->exit_mon);
+   PR_ExitMonitor(cp->exit_mon);
+-  DPRINTF(("TransmitFile_Client [0x%lx] exiting\n", PR_GetCurrentThread()));
++  DPRINTF(("TransmitFile_Client [%p] exiting\n", PR_GetCurrentThread()));
  }
  
  /*
-@@ -1481,7 +1485,7 @@ Serve_TransmitFile_Client(void *arg)
-     if (bytes != (SMALL_FILE_SIZE+ SMALL_FILE_HEADER_SIZE)) {
-         fprintf(stderr,
-                 "prsocet_test: PR_TransmitFile failed: (%ld, %ld)\n",
--                PR_GetError(), PR_GetOSError());
-+                (long)PR_GetError(), (long)PR_GetOSError());
-         failed_already=1;
-     }
-     bytes = PR_TransmitFile(sockfd, local_large_file_fd, NULL, 0,
-@@ -1489,7 +1493,7 @@ Serve_TransmitFile_Client(void *arg)
-     if (bytes != LARGE_FILE_SIZE) {
-         fprintf(stderr,
-                 "prsocket_test: PR_TransmitFile failed: (%ld, %ld)\n",
--                PR_GetError(), PR_GetOSError());
-+                (long)PR_GetError(), (long)PR_GetOSError());
-         failed_already=1;
-     }
+@@ -1395,15 +1399,15 @@
+                           SMALL_FILE_HEADER_SIZE, PR_TRANSMITFILE_KEEP_OPEN,
+                           PR_INTERVAL_NO_TIMEOUT);
+   if (bytes != (SMALL_FILE_SIZE + SMALL_FILE_HEADER_SIZE)) {
+-    fprintf(stderr, "prsocet_test: PR_TransmitFile failed: (%ld, %ld)\n",
+-            PR_GetError(), PR_GetOSError());
++    fprintf(stderr, "prsocket_test: PR_TransmitFile failed: (%ld, %ld)\n",
++            (long)PR_GetError(), (long)PR_GetOSError());
+     failed_already = 1;
+   }
+   bytes = PR_TransmitFile(sockfd, local_large_file_fd, NULL, 0,
+                           PR_TRANSMITFILE_KEEP_OPEN, PR_INTERVAL_NO_TIMEOUT);
+   if (bytes != LARGE_FILE_SIZE) {
+     fprintf(stderr, "prsocket_test: PR_TransmitFile failed: (%ld, %ld)\n",
+-            PR_GetError(), PR_GetOSError());
++            (long)PR_GetError(), (long)PR_GetOSError());
+     failed_already = 1;
+   }
  
-@@ -1517,7 +1521,7 @@ Serve_TransmitFile_Client(void *arg)
-                 slen, bytes);
-         fprintf(stderr,
-                 "prsocket_test: PR_SendFile failed: (%ld, %ld)\n",
--                PR_GetError(), PR_GetOSError());
-+                (long)PR_GetError(), (long)PR_GetOSError());
-         failed_already=1;
-     }
+@@ -1429,7 +1433,7 @@
+             "socket: Error - 1. PR_SendFile  send_size = %d, bytes sent = %d\n",
+             slen, bytes);
+     fprintf(stderr, "prsocket_test: PR_SendFile failed: (%ld, %ld)\n",
+-            PR_GetError(), PR_GetOSError());
++            (long)PR_GetError(), (long)PR_GetOSError());
+     failed_already = 1;
+   }
  
-@@ -1541,7 +1545,7 @@ Serve_TransmitFile_Client(void *arg)
-                 slen, bytes);
-         fprintf(stderr,
-                 "prsocket_test: PR_SendFile failed: (%ld, %ld)\n",
--                PR_GetError(), PR_GetOSError());
-+                (long)PR_GetError(), (long)PR_GetOSError());
-         failed_already=1;
-     }
-     /*
-@@ -1563,7 +1567,7 @@ Serve_TransmitFile_Client(void *arg)
-                 slen, bytes);
-         fprintf(stderr,
-                 "prsocket_test: PR_SendFile failed: (%ld, %ld)\n",
--                PR_GetError(), PR_GetOSError());
-+                (long)PR_GetError(), (long)PR_GetOSError());
-         failed_already=1;
-     }
-     /*
-@@ -1585,7 +1589,7 @@ Serve_TransmitFile_Client(void *arg)
-                 slen, bytes);
-         fprintf(stderr,
-                 "prsocket_test: PR_SendFile failed: (%ld, %ld)\n",
--                PR_GetError(), PR_GetOSError());
-+                (long)PR_GetError(), (long)PR_GetOSError());
-         failed_already=1;
-     }
-     /*
-@@ -1607,7 +1611,7 @@ Serve_TransmitFile_Client(void *arg)
-                 slen, bytes);
-         fprintf(stderr,
-                 "prsocket_test: PR_SendFile failed: (%ld, %ld)\n",
--                PR_GetError(), PR_GetOSError());
-+                (long)PR_GetError(), (long)PR_GetOSError());
-         failed_already=1;
-     }
-     /*
-@@ -1629,7 +1633,7 @@ Serve_TransmitFile_Client(void *arg)
-                 slen, bytes);
-         fprintf(stderr,
-                 "prsocket_test: PR_SendFile failed: (%ld, %ld)\n",
--                PR_GetError(), PR_GetOSError());
-+                (long)PR_GetError(), (long)PR_GetOSError());
-         failed_already=1;
-     }
-     /*
-@@ -1651,7 +1655,7 @@ Serve_TransmitFile_Client(void *arg)
-                 slen, bytes);
-         fprintf(stderr,
-                 "prsocket_test: PR_SendFile failed: (%ld, %ld)\n",
--                PR_GetError(), PR_GetOSError());
-+                (long)PR_GetError(), (long)PR_GetOSError());
-         failed_already=1;
-     }
-     /*
-@@ -1675,7 +1679,7 @@ Serve_TransmitFile_Client(void *arg)
-                 slen, bytes);
-         fprintf(stderr,
-                 "prsocket_test: PR_SendFile failed: (%ld, %ld)\n",
--                PR_GetError(), PR_GetOSError());
-+                (long)PR_GetError(), (long)PR_GetOSError());
-         failed_already=1;
-     }
+@@ -1451,7 +1455,7 @@
+             "socket: Error - 2. PR_SendFile send_size = %d, bytes sent = %d\n",
+             slen, bytes);
+     fprintf(stderr, "prsocket_test: PR_SendFile failed: (%ld, %ld)\n",
+-            PR_GetError(), PR_GetOSError());
++            (long)PR_GetError(), (long)PR_GetOSError());
+     failed_already = 1;
+   }
+   /*
+@@ -1472,7 +1476,7 @@
+             "socket: Error - 3. PR_SendFile send_size = %d, bytes sent = %d\n",
+             slen, bytes);
+     fprintf(stderr, "prsocket_test: PR_SendFile failed: (%ld, %ld)\n",
+-            PR_GetError(), PR_GetOSError());
++            (long)PR_GetError(), (long)PR_GetOSError());
+     failed_already = 1;
+   }
+   /*
+@@ -1493,7 +1497,7 @@
+             "socket: Error - 4. PR_SendFile send_size = %d, bytes sent = %d\n",
+             slen, bytes);
+     fprintf(stderr, "prsocket_test: PR_SendFile failed: (%ld, %ld)\n",
+-            PR_GetError(), PR_GetOSError());
++            (long)PR_GetError(), (long)PR_GetOSError());
+     failed_already = 1;
+   }
+   /*
+@@ -1514,7 +1518,7 @@
+             "socket: Error - 5. PR_SendFile send_size = %d, bytes sent = %d\n",
+             slen, bytes);
+     fprintf(stderr, "prsocket_test: PR_SendFile failed: (%ld, %ld)\n",
+-            PR_GetError(), PR_GetOSError());
++            (long)PR_GetError(), (long)PR_GetOSError());
+     failed_already = 1;
+   }
+   /*
+@@ -1536,7 +1540,7 @@
+             "socket: Error - 6. PR_SendFile send_size = %d, bytes sent = %d\n",
+             slen, bytes);
+     fprintf(stderr, "prsocket_test: PR_SendFile failed: (%ld, %ld)\n",
+-            PR_GetError(), PR_GetOSError());
++            (long)PR_GetError(), (long)PR_GetOSError());
+     failed_already = 1;
+   }
+   /*
+@@ -1557,7 +1561,7 @@
+             "socket: Error - 7. PR_SendFile send_size = %d, bytes sent = %d\n",
+             slen, bytes);
+     fprintf(stderr, "prsocket_test: PR_SendFile failed: (%ld, %ld)\n",
+-            PR_GetError(), PR_GetOSError());
++            (long)PR_GetError(), (long)PR_GetOSError());
+     failed_already = 1;
+   }
+   /*
+@@ -1579,7 +1583,7 @@
+             "socket: Error - 2. PR_SendFile send_size = %d, bytes sent = %d\n",
+             slen, bytes);
+     fprintf(stderr, "prsocket_test: PR_SendFile failed: (%ld, %ld)\n",
+-            PR_GetError(), PR_GetOSError());
++            (long)PR_GetError(), (long)PR_GetOSError());
+     failed_already = 1;
+   }
  done:
-@@ -1752,7 +1756,7 @@ TransmitFile_Server(void *arg)
-         goto exit;
-     }
+@@ -1654,7 +1658,7 @@
+   }
  
--    DPRINTF(("TCP_Server: PR_BIND netaddr.inet.ip = 0x%lx, netaddr.inet.port = %d\n",
-+    DPRINTF(("TCP_Server: PR_BIND netaddr.inet.ip = 0x%x, netaddr.inet.port = %d\n",
-              netaddr.inet.ip, netaddr.inet.port));
-     tcp_server_addr.inet.family = netaddr.inet.family;
-     tcp_server_addr.inet.port = netaddr.inet.port;
-@@ -1818,7 +1822,7 @@ TransmitFile_Server(void *arg)
-             failed_already=1;
-             goto exit;
-         }
--        DPRINTF(("TransmitFile_Server: Created Serve_TransmitFile_Client = 0x%lx\n", t));
-+        DPRINTF(("TransmitFile_Server: Created Serve_TransmitFile_Client = %p\n", t));
+   DPRINTF(
+-      ("TCP_Server: PR_BIND netaddr.inet.ip = 0x%lx, netaddr.inet.port = %d\n",
++      ("TCP_Server: PR_BIND netaddr.inet.ip = 0x%x, netaddr.inet.port = %d\n",
+        netaddr.inet.ip, netaddr.inet.port));
+   tcp_server_addr.inet.family = netaddr.inet.family;
+   tcp_server_addr.inet.port = netaddr.inet.port;
+@@ -1712,7 +1716,7 @@
+       failed_already = 1;
+       goto exit;
      }
+-    DPRINTF(("TransmitFile_Server: Created Serve_TransmitFile_Client = 0x%lx\n",
++    DPRINTF(("TransmitFile_Server: Created Serve_TransmitFile_Client = %p\n",
+              t));
+   }
  
-     /*
-@@ -1846,7 +1850,7 @@ exit:
-     --(*sp->exit_counter);
-     PR_Notify(sp->exit_mon);
-     PR_ExitMonitor(sp->exit_mon);
--    DPRINTF(("TransmitFile_Server [0x%lx] exiting\n", PR_GetCurrentThread()));
-+    DPRINTF(("TransmitFile_Server [%p] exiting\n", PR_GetCurrentThread()));
+@@ -1741,7 +1745,7 @@
+   --(*sp->exit_counter);
+   PR_Notify(sp->exit_mon);
+   PR_ExitMonitor(sp->exit_mon);
+-  DPRINTF(("TransmitFile_Server [0x%lx] exiting\n", PR_GetCurrentThread()));
++  DPRINTF(("TransmitFile_Server [%p] exiting\n", PR_GetCurrentThread()));
  }
  
  /*
-@@ -1986,7 +1990,7 @@ Socket_Misc_Test(void)
-             fprintf(stderr,
-                     "prsocket_test failed to write to file %s: (%ld, %ld)\n",
-                     LARGE_FILE_NAME,
--                    PR_GetError(), PR_GetOSError());
-+                    (long)PR_GetError(), (long)PR_GetOSError());
-             failed_already=1;
-             rv = -1;
-             goto done;
-@@ -2076,7 +2080,7 @@ Socket_Misc_Test(void)
-         rv = -1;
-         goto done;
+@@ -1875,7 +1879,7 @@
+     bytes = PR_Write(large_file_fd, buf->data, len);
+     if (bytes <= 0) {
+       fprintf(stderr, "prsocket_test failed to write to file %s: (%ld, %ld)\n",
+-              LARGE_FILE_NAME, PR_GetError(), PR_GetOSError());
++              LARGE_FILE_NAME, (long)PR_GetError(), (long)PR_GetOSError());
+       failed_already = 1;
+       rv = -1;
+       goto done;
+@@ -1959,7 +1963,7 @@
+     rv = -1;
+     goto done;
+   }
+-  DPRINTF(("Created TCP server = 0x%x\n", t));
++  DPRINTF(("Created TCP server = %p\n", t));
+   thread_count++;
+ 
+   /*
+@@ -1993,7 +1997,7 @@
+       failed_already = 1;
+       goto done;
      }
--    DPRINTF(("Created TCP server = 0x%x\n", t));
-+    DPRINTF(("Created TCP server = %p\n", t));
+-    DPRINTF(("Created TransmitFile client = 0x%lx\n", t));
++    DPRINTF(("Created TransmitFile client = %p\n", t));
      thread_count++;
+   }
+   /* Wait for server and client threads to exit */
+@@ -2024,7 +2028,7 @@
+   }
+   if ((PR_RmDir(TEST_DIR)) == PR_FAILURE) {
+     fprintf(stderr, "prsocket_test failed to rmdir %s: (%ld, %ld)\n", TEST_DIR,
+-            PR_GetError(), PR_GetOSError());
++            (long)PR_GetError(), (long)PR_GetOSError());
+     failed_already = 1;
+   }
  
-     /*
-@@ -2113,7 +2117,7 @@ Socket_Misc_Test(void)
-             failed_already=1;
-             goto done;
-         }
--        DPRINTF(("Created TransmitFile client = 0x%lx\n", t));
-+        DPRINTF(("Created TransmitFile client = %p\n", t));
-         thread_count++;
-     }
-     /* Wait for server and client threads to exit */
-@@ -2144,7 +2148,7 @@ done:
-     }
-     if ((PR_RmDir(TEST_DIR)) == PR_FAILURE) {
-         fprintf(stderr,"prsocket_test failed to rmdir %s: (%ld, %ld)\n",
--                TEST_DIR, PR_GetError(), PR_GetOSError());
-+                TEST_DIR, (long)PR_GetError(), (long)PR_GetOSError());
-         failed_already=1;
-     }
- 
---- pr/tests/sprintf.c.orig	2019-10-15 14:21:38 UTC
+--- pr/tests/sprintf.c.orig
 +++ pr/tests/sprintf.c
-@@ -133,7 +133,7 @@ static void test_l(char *pattern, char *spattern, PRIn
-         (strncmp(s, sbuf, sizeof(sbuf)) != 0)) {
-         fprintf(stderr,
-                 "pattern='%s' l=%ld\nPR_smprintf='%s'\nPR_snprintf='%s'\n    sprintf='%s'\n",
--                pattern, l, s, buf, sbuf);
-+                pattern, (long)l, s, buf, sbuf);
-         PR_smprintf_free(s);
-         exit(-1);
-     }
---- pr/tests/stack.c.orig	2019-10-15 14:21:38 UTC
+@@ -122,7 +122,7 @@
+     fprintf(stderr,
+             "pattern='%s' l=%ld\nPR_smprintf='%s'\nPR_snprintf='%s'\n    "
+             "sprintf='%s'\n",
+-            pattern, l, s, buf, sbuf);
++            pattern, (long)l, s, buf, sbuf);
+     PR_smprintf_free(s);
+     exit(-1);
+   }
+--- pr/tests/stack.c.orig
 +++ pr/tests/stack.c
-@@ -53,7 +53,7 @@ PRFileDesc  *errhandle;
+@@ -52,7 +52,7 @@
+ PRFileDesc* errhandle;
  
- int main(int argc, char **argv)
- {
--    PRInt32 rv, cnt, sum;
-+    PRInt32 cnt, sum;
-     DataRecord  *Item;
-     PRStack     *list1, *list2;
-     PRStackElem *node;
-@@ -211,7 +211,7 @@ int main(int argc, char **argv)
- static void stackop(void *thread_arg)
- {
-     PRInt32 val, cnt, index, loops;
--    DataRecord  *Items, *Item;
-+    DataRecord  *Items;
-     PRStack     *list1, *list2;
-     PRStackElem *node;
-     stack_data *arg = (stack_data *) thread_arg;
---- pr/tests/suspend.c.orig	2019-10-15 14:21:38 UTC
+ int main(int argc, char** argv) {
+-  PRInt32 rv, cnt, sum;
++  PRInt32 cnt, sum;
+   DataRecord* Item;
+   PRStack *list1, *list2;
+   PRStackElem* node;
+@@ -197,7 +197,7 @@
+ 
+ static void stackop(void* thread_arg) {
+   PRInt32 val, cnt, index, loops;
+-  DataRecord *Items, *Item;
++  DataRecord *Items;
+   PRStack *list1, *list2;
+   PRStackElem* node;
+   stack_data* arg = (stack_data*)thread_arg;
+--- pr/tests/suspend.c.orig
 +++ pr/tests/suspend.c
-@@ -21,14 +21,14 @@ void PR_CALLBACK
- Level_2_Thread(void *arg)
- {
-     PR_Sleep(PR_MillisecondsToInterval(4 * 1000));
--    printf("Level_2_Thread[0x%lx] exiting\n",PR_GetCurrentThread());
-+    printf("Level_2_Thread[%p] exiting\n",PR_GetCurrentThread());
-     return;
+@@ -19,12 +19,12 @@
+ 
+ void PR_CALLBACK Level_2_Thread(void* arg) {
+   PR_Sleep(PR_MillisecondsToInterval(4 * 1000));
+-  printf("Level_2_Thread[0x%lx] exiting\n", PR_GetCurrentThread());
++  printf("Level_2_Thread[%p] exiting\n", PR_GetCurrentThread());
+   return;
  }
  
- void PR_CALLBACK
- Level_1_Thread(void *arg)
- {
--    PRUint32 tmp = (PRUint32)arg;
-+    PRUint32 tmp = (PRUint32)(uintptr_t)arg;
-     PRThreadScope scope = (PRThreadScope) tmp;
-     PRThread *thr;
+ void PR_CALLBACK Level_1_Thread(void* arg) {
+-  PRUint32 tmp = (PRUint32)arg;
++  PRUint32 tmp = (PRUint32)(uintptr_t)arg;
+   PRThreadScope scope = (PRThreadScope)tmp;
+   PRThread* thr;
  
-@@ -43,7 +43,7 @@ Level_1_Thread(void *arg)
-     if (!thr) {
-         printf("Could not create thread!\n");
-     } else {
--        printf("Level_1_Thread[0x%lx] created %15s thread 0x%lx\n",
-+        printf("Level_1_Thread[%p] created %15s thread %p\n",
-                PR_GetCurrentThread(),
-                (scope == PR_GLOBAL_THREAD) ?
-                "PR_GLOBAL_THREAD" : "PR_LOCAL_THREAD",
-@@ -54,7 +54,7 @@ Level_1_Thread(void *arg)
-     alive--;
-     PR_Notify(mon);
-     PR_ExitMonitor(mon);
--    printf("Thread[0x%lx] exiting\n",PR_GetCurrentThread());
-+    printf("Thread[%p] exiting\n",PR_GetCurrentThread());
+@@ -34,7 +34,7 @@
+   if (!thr) {
+     printf("Could not create thread!\n");
+   } else {
+-    printf("Level_1_Thread[0x%lx] created %15s thread 0x%lx\n",
++    printf("Level_1_Thread[%p] created %15s thread 0x%lx\n",
+            PR_GetCurrentThread(),
+            (scope == PR_GLOBAL_THREAD) ? "PR_GLOBAL_THREAD" : "PR_LOCAL_THREAD",
+            thr);
+@@ -44,22 +44,23 @@
+   alive--;
+   PR_Notify(mon);
+   PR_ExitMonitor(mon);
+-  printf("Thread[0x%lx] exiting\n", PR_GetCurrentThread());
++  printf("Thread[%p] exiting\n", PR_GetCurrentThread());
  }
  
- static PRStatus PR_CALLBACK print_thread(PRThread *thread, int i, void *arg)
-@@ -63,14 +63,15 @@ static PRStatus PR_CALLBACK print_thread(PRThread *thr
-     PRWord *registers;
+ static PRStatus PR_CALLBACK print_thread(PRThread* thread, int i, void* arg) {
+   PRInt32 words;
+   PRWord* registers;
  
+-  printf("\nprint_thread[0x%lx]: %-20s - i = %ld\n", thread,
++  printf("\nprint_thread[%p]: %-20s - i = %ld\n", thread,
+          (PR_GLOBAL_THREAD == PR_GetThreadScope(thread)) ? "PR_GLOBAL_THREAD"
+                                                          : "PR_LOCAL_THREAD",
+          i);
+   registers = PR_GetGCRegisters(thread, 0, (int*)&words);
+   if (registers)
+-    printf("Registers R0 = 0x%x R1 = 0x%x R2 = 0x%x R3 = 0x%x\n", registers[0],
+-           registers[1], registers[2], registers[3]);
+-  printf("Stack Pointer = 0x%lx\n", PR_GetSP(thread));
++    printf("Registers R0 = 0x%lx R1 = 0x%lx R2 = 0x%lx R3 = 0x%lx\n",
++           (unsigned long)registers[0], (unsigned long)registers[1],
++           (unsigned long)registers[2], (unsigned long)registers[3]);
++  printf("Stack Pointer = %p\n", PR_GetSP(thread));
+   return PR_SUCCESS;
+ }
+ 
+@@ -83,7 +84,7 @@
+       alive--;
+     }
      printf(
--        "\nprint_thread[0x%lx]: %-20s - i = %ld\n",thread,
-+        "\nprint_thread[%p]: %-20s - i = %ld\n",thread,
-         (PR_GLOBAL_THREAD == PR_GetThreadScope(thread)) ?
-         "PR_GLOBAL_THREAD" : "PR_LOCAL_THREAD", i);
-     registers = PR_GetGCRegisters(thread, 0, (int *)&words);
-     if (registers)
--        printf("Registers R0 = 0x%x R1 = 0x%x R2 = 0x%x R3 = 0x%x\n",
--               registers[0],registers[1],registers[2],registers[3]);
--    printf("Stack Pointer = 0x%lx\n", PR_GetSP(thread));
-+        printf("Regsters R0 = 0x%lx R1 = 0x%lx R2 = 0x%lx R3 = 0x%lx\n",
-+               (unsigned long)registers[0], (unsigned long)registers[1],
-+               (unsigned long)registers[2], (unsigned long)registers[3]);
-+    printf("Stack Pointer = %p\n", PR_GetSP(thread));
-     return PR_SUCCESS;
+-        "Level_0_Thread[0x%lx] created %15s thread 0x%lx\n",
++        "Level_0_Thread[%p] created %15s thread %p\n",
+         PR_GetCurrentThread(),
+         (scope1 == PR_GLOBAL_THREAD) ? "PR_GLOBAL_THREAD" : "PR_LOCAL_THREAD",
+         thr);
+@@ -94,9 +95,10 @@
+   PR_EnumerateThreads(print_thread, NULL);
+   registers = PR_GetGCRegisters(me, 1, (int*)&words);
+   if (registers)
+-    printf("My Registers: R0 = 0x%x R1 = 0x%x R2 = 0x%x R3 = 0x%x\n",
+-           registers[0], registers[1], registers[2], registers[3]);
+-  printf("My Stack Pointer = 0x%lx\n", PR_GetSP(me));
++    printf("My Registers: R0 = 0x%lx R1 = 0x%lx R2 = 0x%lx R3 = 0x%lx\n",
++           (unsigned long)registers[0], (unsigned long)registers[1],
++           (unsigned long)registers[2], (unsigned long)registers[3]);
++  printf("My Stack Pointer = %p\n", PR_GetSP(me));
+   PR_ResumeAll();
+ 
+   /* Wait for all threads to exit */
+--- pr/tests/switch.c.orig
++++ pr/tests/switch.c
+@@ -78,7 +78,7 @@
+   PRStatus status;
+   PRBool help = PR_FALSE;
+   PRUintn concurrency = 1;
+-  Shared *shared, *link;
++  Shared *shared = NULL, *link;
+   PRIntervalTime timein, timeout;
+   PRThreadScope thread_scope = PR_LOCAL_THREAD;
+   PRUintn thread_count, inner_count, loop_count, average;
+--- pr/tests/testfile.c.orig
++++ pr/tests/testfile.c
+@@ -104,7 +104,7 @@
  }
  
-@@ -98,7 +99,7 @@ static void Level_0_Thread(PRThreadScope scope1, PRThr
-             printf("Could not create thread!\n");
-             alive--;
-         }
--        printf("Level_0_Thread[0x%lx] created %15s thread 0x%lx\n",
-+        printf("Level_0_Thread[%p] created %15s thread %p\n",
-                PR_GetCurrentThread(),
-                (scope1 == PR_GLOBAL_THREAD) ?
-                "PR_GLOBAL_THREAD" : "PR_LOCAL_THREAD",
-@@ -110,9 +111,10 @@ static void Level_0_Thread(PRThreadScope scope1, PRThr
-     PR_EnumerateThreads(print_thread, NULL);
-     registers = PR_GetGCRegisters(me, 1, (int *)&words);
-     if (registers)
--        printf("My Registers: R0 = 0x%x R1 = 0x%x R2 = 0x%x R3 = 0x%x\n",
--               registers[0],registers[1],registers[2],registers[3]);
--    printf("My Stack Pointer = 0x%lx\n", PR_GetSP(me));
-+        printf("My Registers: R0 = 0x%lx R1 = 0x%lx R2 = 0x%lx R3 = 0x%lx\n",
-+               (unsigned long)registers[0], (unsigned long)registers[1],
-+               (unsigned long)registers[2], (unsigned long)registers[3]);
-+    printf("My Stack Pointer = %p\n", PR_GetSP(me));
-     PR_ResumeAll();
- 
-     /* Wait for all threads to exit */
---- pr/tests/switch.c.orig	2019-10-15 14:21:38 UTC
-+++ pr/tests/switch.c
-@@ -83,7 +83,7 @@ PRIntn PR_CALLBACK Switch(PRIntn argc, char **argv)
-     PRStatus status;
-     PRBool help = PR_FALSE;
-     PRUintn concurrency = 1;
--    Shared *shared, *link;
-+    Shared *shared = NULL, *link;
-     PRIntervalTime timein, timeout;
-     PRThreadScope thread_scope = PR_LOCAL_THREAD;
-     PRUintn thread_count, inner_count, loop_count, average;
---- pr/tests/testfile.c.orig	2019-10-15 14:21:38 UTC
-+++ pr/tests/testfile.c
-@@ -33,6 +33,9 @@ static int _debug_on = 0;
- #ifdef XP_WIN
- #define mode_t int
- #endif
-+#if defined(XP_UNIX) || defined(XP_OS2_EMX)
-+#   include <unistd.h>  /* getopt(3) */
-+#endif
- 
- #define DPRINTF(arg) if (_debug_on) printf arg
- 
-@@ -86,7 +89,7 @@ static PRInt32 PR_CALLBACK DirTest(void *argunused);
- PRInt32 dirtest_failed = 0;
- 
- PRThread* create_new_thread(PRThreadType type,
--                            void (*start)(void *arg),
-+                            void *(*start)(void *arg),
-                             void *arg,
-                             PRThreadPriority priority,
-                             PRThreadScope scope,
-@@ -151,7 +154,7 @@ PRThread* create_new_thread(PRThreadType type,
-         return((PRThread *) thandle);
- #endif
-     } else {
--        return(PR_CreateThread(type,start,arg,priority,scope,state,stackSize));
-+        return(PR_CreateThread(type,(void (*)(void*))start,arg,priority,scope,state,stackSize));
-     }
+ PRThread* create_new_thread(PRThreadType type, nativeStartType nativeStart,
+-                            void (*prStart)(void*), void* arg,
++                            void *(*prStart)(void*), void* arg,
+                             PRThreadPriority priority, PRThreadScope scope,
+                             PRThreadState state, PRUint32 stackSize,
+                             PRInt32 index) {
+@@ -149,7 +149,7 @@
+ #  endif
+   } else {
+     return (
+-        PR_CreateThread(type, prStart, arg, priority, scope, state, stackSize));
++        PR_CreateThread(type, (void (*)(void*))prStart, arg, priority, scope, state, stackSize));
+   }
  #else
-     return(PR_CreateThread(type,start,arg,priority,scope,state,stackSize));
-@@ -312,8 +315,8 @@ static PRInt32 Misc_File_Tests(char *pathname)
-         printf(
-             "testfile PR_GetFileInfo returned incorrect status-change time: %s\n",
-             pathname);
--        printf("ft = %lld, ft1 = %lld\n",file_info.creationTime,
--               file_info1.creationTime);
-+        printf("ft = %lld, ft1 = %lld\n", (long long)file_info.creationTime,
-+               (long long)file_info1.creationTime);
-         rv = -1;
-         goto cleanup;
-     }
-@@ -338,8 +341,8 @@ static PRInt32 Misc_File_Tests(char *pathname)
-         printf(
-             "testfile PR_GetFileInfo returned incorrect modify time: %s\n",
-             pathname);
--        printf("ft = %lld, ft1 = %lld\n",file_info.modifyTime,
--               file_info1.modifyTime);
-+        printf("ft = %lld, ft1 = %lld\n", (long long)file_info.modifyTime,
-+               (long long)file_info1.modifyTime);
-         rv = -1;
-         goto cleanup;
-     }
-@@ -465,7 +468,7 @@ static PRInt32 PR_CALLBACK FileTest(void)
-         memset(fparamp->buf, i, len);
+   return (
+@@ -483,7 +483,7 @@
+     fparamp->len = len;
+     memset(fparamp->buf, i, len);
  
-         t = create_new_thread(PR_USER_THREAD,
--                              File_Write, (void *)fparamp,
-+                              (void *(*)(void *))File_Write, (void *)fparamp,
-                               PR_PRIORITY_NORMAL,
-                               scope,
-                               PR_UNJOINABLE_THREAD,
-@@ -500,7 +503,7 @@ static PRInt32 PR_CALLBACK FileTest(void)
-         fparamp->len = len;
+-    (void)create_new_thread(PR_USER_THREAD, File_Write_Wrapper, File_Write,
++    (void)create_new_thread(PR_USER_THREAD, File_Write_Wrapper, (void *(*)(void *))File_Write,
+                             (void*)fparamp, PR_PRIORITY_NORMAL, scope,
+                             PR_UNJOINABLE_THREAD, 0, i);
+     offset += len;
+@@ -513,7 +513,7 @@
+     fparamp->offset = offset;
+     fparamp->len = len;
  
-         t = create_new_thread(PR_USER_THREAD,
--                              File_Read, (void *)fparamp,
-+                              (void *(*)(void *))File_Read, (void *)fparamp,
-                               PR_PRIORITY_NORMAL,
-                               scope,
-                               PR_UNJOINABLE_THREAD,
-@@ -569,7 +572,7 @@ static PRInt32 RunDirTest(void)
+-    (void)create_new_thread(PR_USER_THREAD, File_Read_Wrapper, File_Read,
++    (void)create_new_thread(PR_USER_THREAD, File_Read_Wrapper, (void *(*)(void *))File_Read,
+                             (void*)fparamp, PR_PRIORITY_NORMAL, scope,
+                             PR_UNJOINABLE_THREAD, 0, i);
+     offset += len;
+@@ -577,7 +577,7 @@
  
-         thrarg.done= 0;
-         t = create_new_thread(PR_USER_THREAD,
--                              DirTest, &thrarg,
-+                              (void *(*)(void *))DirTest, &thrarg,
-                               PR_PRIORITY_NORMAL,
-                               PR_LOCAL_THREAD,
-                               PR_UNJOINABLE_THREAD,
-@@ -893,8 +896,6 @@ int main(int argc, char **argv)
+   for (i = 0; i < NUM_DIRTEST_THREADS; i++) {
+     thrarg.done = 0;
+-    t = create_new_thread(PR_USER_THREAD, DirTestWrapper, DirTestVoid, &thrarg,
++    t = create_new_thread(PR_USER_THREAD, DirTestWrapper, (void *(*)(void *))DirTestVoid, &thrarg,
+                           PR_PRIORITY_NORMAL, PR_LOCAL_THREAD,
+                           PR_UNJOINABLE_THREAD, 0, i);
+     if (!t) {
+@@ -853,8 +853,6 @@
  #endif
- #if defined(XP_UNIX) || defined(XP_OS2)
-     int opt;
--    extern char *optarg;
--    extern int optind;
+ #if defined(XP_UNIX)
+   int opt;
+-  extern char* optarg;
+-  extern int optind;
  #endif
- #if defined(XP_UNIX) || defined(XP_OS2)
-     while ((opt = getopt(argc, argv, "d")) != EOF) {
---- pr/tests/threads.c.orig	2019-10-15 14:21:38 UTC
+ #if defined(XP_UNIX)
+   while ((opt = getopt(argc, argv, "d")) != EOF) {
+--- pr/tests/threads.c.orig
 +++ pr/tests/threads.c
-@@ -27,7 +27,7 @@ void
- PR_CALLBACK
- DumbThread(void *arg)
- {
--    PRInt32 tmp = (PRInt32)arg;
-+    PRInt32 tmp = (PRInt32)(intptr_t)arg;
-     PRThreadScope scope = (PRThreadScope)tmp;
-     PRThread *thr;
+@@ -19,7 +19,7 @@
+ void PR_CALLBACK ReallyDumbThread(void* arg) { return; }
  
-@@ -173,10 +173,10 @@ int main(int argc, char **argv)
+ void PR_CALLBACK DumbThread(void* arg) {
+-  PRInt32 tmp = (PRInt32)arg;
++  PRInt32 tmp = (PRInt32)(intptr_t)arg;
+   PRThreadScope scope = (PRThreadScope)tmp;
+   PRThread* thr;
  
-     if (debug_mode)
-     {
--        printf("\
+@@ -144,12 +144,10 @@
+   }
+ 
+   if (debug_mode) {
+-    printf(
+-        "\
 -** Tests lots of thread creations.  \n\
 -** Create %ld native threads %ld times. \n\
--** Create %ld user threads %ld times \n", iterations,count,iterations,count);
-+        printf("** Tests lots of thread creations.\n"
-+               "** Create %d native threads %d times.\n"
-+               "** Create %d user threads %d times.\n", iterations, count,
-+               iterations, count);
-     }
+-** Create %ld user threads %ld times \n",
+-        iterations, count, iterations, count);
++    printf("** Tests lots of thread creations.\n"
++           "** Create %d native threads %ld times.\n"
++           "** Create %d user threads %ld times \n",
++           iterations, count, iterations, count);
+   }
  
-     for (index=0; index<iterations; index++) {
---- pr/tests/thrpool_client.c.orig	2019-10-15 14:21:38 UTC
+   for (index = 0; index < iterations; index++) {
+--- pr/tests/thrpool_client.c.orig
 +++ pr/tests/thrpool_client.c
-@@ -82,11 +82,11 @@ readn(PRFileDesc *sockfd, char *buf, int len)
-     PRIntervalTime timeout = PR_INTERVAL_NO_TIMEOUT;
+@@ -81,10 +81,10 @@
+   PRIntervalTime timeout = PR_INTERVAL_NO_TIMEOUT;
  
-     for (rem=len; rem; offset += bytes, rem -= bytes) {
--        DPRINTF(("thread = 0x%lx: calling PR_Recv, bytes = %d\n",
-+        DPRINTF(("thread = %p: calling PR_Recv, bytes = %d\n",
-                  PR_GetCurrentThread(), rem));
-         bytes = PR_Recv(sockfd, buf + offset, rem, 0,
-                         timeout);
--        DPRINTF(("thread = 0x%lx: returning from PR_Recv, bytes = %d\n",
-+        DPRINTF(("thread = %p: returning from PR_Recv, bytes = %d\n",
-                  PR_GetCurrentThread(), bytes));
-         if (bytes < 0) {
-             return -1;
-@@ -107,11 +107,11 @@ writen(PRFileDesc *sockfd, char *buf, int len)
-     int offset = 0;
+   for (rem = len; rem; offset += bytes, rem -= bytes) {
+-    DPRINTF(("thread = 0x%lx: calling PR_Recv, bytes = %d\n",
++    DPRINTF(("thread = %p: calling PR_Recv, bytes = %d\n",
+              PR_GetCurrentThread(), rem));
+     bytes = PR_Recv(sockfd, buf + offset, rem, 0, timeout);
+-    DPRINTF(("thread = 0x%lx: returning from PR_Recv, bytes = %d\n",
++    DPRINTF(("thread = %p: returning from PR_Recv, bytes = %d\n",
+              PR_GetCurrentThread(), bytes));
+     if (bytes < 0) {
+       return -1;
+@@ -103,10 +103,10 @@
+   int offset = 0;
  
-     for (rem=len; rem; offset += bytes, rem -= bytes) {
--        DPRINTF(("thread = 0x%lx: calling PR_Send, bytes = %d\n",
-+        DPRINTF(("thread = %p: calling PR_Send, bytes = %d\n",
-                  PR_GetCurrentThread(), rem));
-         bytes = PR_Send(sockfd, buf + offset, rem, 0,
-                         PR_INTERVAL_NO_TIMEOUT);
--        DPRINTF(("thread = 0x%lx: returning from PR_Send, bytes = %d\n",
-+        DPRINTF(("thread = %p: returning from PR_Send, bytes = %d\n",
-                  PR_GetCurrentThread(), bytes));
-         if (bytes <= 0) {
-             return -1;
-@@ -165,7 +165,7 @@ TCP_Client(void *arg)
+   for (rem = len; rem; offset += bytes, rem -= bytes) {
+-    DPRINTF(("thread = 0x%lx: calling PR_Send, bytes = %d\n",
++    DPRINTF(("thread = %p: calling PR_Send, bytes = %d\n",
+              PR_GetCurrentThread(), rem));
+     bytes = PR_Send(sockfd, buf + offset, rem, 0, PR_INTERVAL_NO_TIMEOUT);
+-    DPRINTF(("thread = 0x%lx: returning from PR_Send, bytes = %d\n",
++    DPRINTF(("thread = %p: returning from PR_Send, bytes = %d\n",
+              PR_GetCurrentThread(), bytes));
+     if (bytes <= 0) {
+       return -1;
+@@ -157,7 +157,7 @@
  
-         DPRINTF(("TCP client connecting to server:%d\n", server_port));
-         if (PR_Connect(sockfd, &netaddr,PR_INTERVAL_NO_TIMEOUT) < 0) {
--            fprintf(stderr, "PR_Connect failed: (%ld, %ld)\n",
-+            fprintf(stderr, "PR_Connect failed: (%d, %d)\n",
-                     PR_GetError(), PR_GetOSError());
-             failed_already=1;
-             return;
-@@ -174,7 +174,7 @@ TCP_Client(void *arg)
-             /*
-              * fill in random data
-              */
--            memset(out_buf->data, ((PRInt32) (&netaddr)) + i + j, bytes);
-+            memset(out_buf->data, ((intptr_t)(&netaddr)) + i + j, bytes);
-             /*
-              * write to server
-              */
-@@ -282,7 +282,7 @@ TCP_Socket_Client_Server_Test(void)
-         PR_EnterMonitor(mon2);
-         connections++;
-         PR_ExitMonitor(mon2);
--        DPRINTF(("Created TCP client = 0x%lx\n", thr));
-+        DPRINTF(("Created TCP client = %p\n", thr));
-     }
-     /* Wait for client jobs to exit */
+     DPRINTF(("TCP client connecting to server:%d\n", server_port));
+     if (PR_Connect(sockfd, &netaddr, PR_INTERVAL_NO_TIMEOUT) < 0) {
+-      fprintf(stderr, "PR_Connect failed: (%ld, %ld)\n", PR_GetError(),
++      fprintf(stderr, "PR_Connect failed: (%d, %d)\n", PR_GetError(),
+               PR_GetOSError());
+       failed_already = 1;
+       return;
+@@ -166,7 +166,7 @@
+       /*
+        * fill in random data
+        */
+-      memset(out_buf->data, ((PRInt32)(&netaddr)) + i + j, bytes);
++      memset(out_buf->data, ((intptr_t)(&netaddr)) + i + j, bytes);
+       /*
+        * write to server
+        */
+@@ -273,7 +273,7 @@
      PR_EnterMonitor(mon2);
-@@ -292,9 +292,9 @@ TCP_Socket_Client_Server_Test(void)
-     }
+     connections++;
      PR_ExitMonitor(mon2);
-     printf("%30s","TCP_Socket_Client_Server_Test:");
--    printf("%2ld Server %2ld Clients %2ld connections_per_client\n",1l,
-+    printf(" 1 Server %2d Clients %2d connections_per_client\n",
-            num_tcp_clients, num_tcp_connections_per_client);
--    printf("%30s %2ld messages_per_connection %4ld bytes_per_message\n",":",
-+    printf("%30s %2d messages_per_connection %4d bytes_per_message\n",":",
-            num_tcp_mesgs_per_connection, tcp_mesg_size);
+-    DPRINTF(("Created TCP client = 0x%lx\n", thr));
++    DPRINTF(("Created TCP client = %p\n", thr));
+   }
+   /* Wait for client jobs to exit */
+   PR_EnterMonitor(mon2);
+@@ -283,9 +283,9 @@
+   }
+   PR_ExitMonitor(mon2);
+   printf("%30s", "TCP_Socket_Client_Server_Test:");
+-  printf("%2ld Server %2ld Clients %2ld connections_per_client\n", 1l,
++  printf(" 1 Server %2d Clients %2d connections_per_client\n",
+          num_tcp_clients, num_tcp_connections_per_client);
+-  printf("%30s %2ld messages_per_connection %4ld bytes_per_message\n", ":",
++  printf("%30s %2d messages_per_connection %4d bytes_per_message\n", ":",
+          num_tcp_mesgs_per_connection, tcp_mesg_size);
  
-     PR_DELETE(cparamp);
---- pr/tests/thrpool_server.c.orig	2019-10-15 14:21:38 UTC
+   PR_DELETE(cparamp);
+--- pr/tests/thrpool_server.c.orig
 +++ pr/tests/thrpool_server.c
-@@ -330,7 +330,7 @@ TCP_Server(void *arg)
-     }
+@@ -311,7 +311,7 @@
+   }
  
-     DPRINTF((
--                "TCP_Server: PR_BIND netaddr.inet.ip = 0x%lx, netaddr.inet.port = %d\n",
-+                "TCP_Server: PR_BIND netaddr.inet.ip = 0x%x, netaddr.inet.port = %d\n",
-                 netaddr.inet.ip, netaddr.inet.port));
+   DPRINTF(
+-      ("TCP_Server: PR_BIND netaddr.inet.ip = 0x%lx, netaddr.inet.port = %d\n",
++      ("TCP_Server: PR_BIND netaddr.inet.ip = %x, netaddr.inet.port = %d\n",
+        netaddr.inet.ip, netaddr.inet.port));
  
-     sp = PR_NEW(Server_Param);
-@@ -342,7 +342,7 @@ TCP_Server(void *arg)
-     sp->iod.socket = sockfd;
-     sp->iod.timeout = PR_SecondsToInterval(60);
-     sp->datalen = tcp_mesg_size;
--    sp->exit_mon = sc_mon;
-+    sp->exit_mon = NULL;
-     sp->job_counterp = &job_counter;
-     sp->conn_counter = 0;
-     sp->tp = tp;
-@@ -465,7 +465,7 @@ TCP_Server_Accept(void *arg)
-                        PR_FALSE);
+   sp = PR_NEW(Server_Param);
+@@ -323,7 +323,7 @@
+   sp->iod.socket = sockfd;
+   sp->iod.timeout = PR_SecondsToInterval(60);
+   sp->datalen = tcp_mesg_size;
+-  sp->exit_mon = sc_mon;
++  sp->exit_mon = NULL;
+   sp->job_counterp = &job_counter;
+   sp->conn_counter = 0;
+   sp->tp = tp;
+@@ -440,7 +440,7 @@
+   jobp = PR_QueueJob(tp, Serve_Client, scp, PR_FALSE);
  
-     PR_ASSERT(NULL != jobp);
--    DPRINTF(("TCP_Server: Created Serve_Client = 0x%lx\n", jobp));
-+    DPRINTF(("TCP_Server: Created Serve_Client = %p\n", jobp));
+   PR_ASSERT(NULL != jobp);
+-  DPRINTF(("TCP_Server: Created Serve_Client = 0x%lx\n", jobp));
++  DPRINTF(("TCP_Server: Created Serve_Client = %p\n", jobp));
  
-     /*
-      * single-threaded update; no lock needed
-@@ -482,7 +482,7 @@ TCP_Server_Accept(void *arg)
-                              print_stats, sp, PR_FALSE);
+   /*
+    * single-threaded update; no lock needed
+@@ -455,7 +455,7 @@
+                            PR_FALSE);
  
-     PR_ASSERT(NULL != jobp);
--    DPRINTF(("TCP_Server: Created print_stats timer job = 0x%lx\n", jobp));
-+    DPRINTF(("TCP_Server: Created print_stats timer job = %p\n", jobp));
+   PR_ASSERT(NULL != jobp);
+-  DPRINTF(("TCP_Server: Created print_stats timer job = 0x%lx\n", jobp));
++  DPRINTF(("TCP_Server: Created print_stats timer job = %p\n", jobp));
  
  exit:
-     PR_EnterMonitor(sp->exit_mon);
-@@ -499,9 +499,9 @@ exit:
-     }
-     PR_DestroyMonitor(sp->exit_mon);
-     printf("%30s","TCP_Socket_Client_Server_Test:");
--    printf("%2ld Server %2ld Clients %2ld connections_per_client\n",1l,
-+    printf(" 1 Server %2d Clients %2d connections_per_client\n",
-            num_tcp_clients, num_tcp_connections_per_client);
--    printf("%30s %2ld messages_per_connection %4ld bytes_per_message\n",":",
-+    printf("%30s %2d messages_per_connection %4d bytes_per_message\n",":",
-            num_tcp_mesgs_per_connection, tcp_mesg_size);
+   PR_EnterMonitor(sp->exit_mon);
+@@ -471,9 +471,9 @@
+   }
+   PR_DestroyMonitor(sp->exit_mon);
+   printf("%30s", "TCP_Socket_Client_Server_Test:");
+-  printf("%2ld Server %2ld Clients %2ld connections_per_client\n", 1l,
++  printf(" 1 Server %2d Clients %2d connections_per_client\n",
+          num_tcp_clients, num_tcp_connections_per_client);
+-  printf("%30s %2ld messages_per_connection %4ld bytes_per_message\n", ":",
++  printf("%30s %2d messages_per_connection %4d bytes_per_message\n", ":",
+          num_tcp_mesgs_per_connection, tcp_mesg_size);
  
-     DPRINTF(("%s: calling PR_ShutdownThreadPool\n", program_name));
---- pr/tests/thruput.c.orig	2019-10-15 14:21:38 UTC
+   DPRINTF(("%s: calling PR_ShutdownThreadPool\n", program_name));
+--- pr/tests/thruput.c.orig
 +++ pr/tests/thruput.c
-@@ -69,7 +69,7 @@ static void PR_CALLBACK Clientel(void *arg)
- {
-     PRStatus rv;
-     PRFileDesc *xport;
--    PRInt32 bytes, sampled;
-+    PRInt32 bytes, sampled = -1;
-     PRIntervalTime now, interval;
-     PRBool do_display = PR_FALSE;
-     Shared *shared = (Shared*)arg;
-@@ -183,7 +183,7 @@ static void Client(const char *server_name)
+@@ -77,7 +77,7 @@
+ static void PR_CALLBACK Clientel(void* arg) {
+   PRStatus rv;
+   PRFileDesc* xport;
+-  PRInt32 bytes, sampled;
++  PRInt32 bytes, sampled = -1;
+   PRIntervalTime now, interval;
+   PRBool do_display = PR_FALSE;
+   Shared* shared = (Shared*)arg;
+@@ -174,7 +174,7 @@
+ }
  
- static void PR_CALLBACK Servette(void *arg)
- {
--    PRInt32 bytes, sampled;
-+    PRInt32 bytes, sampled = -1;
-     PRIntervalTime now, interval;
-     PRBool do_display = PR_FALSE;
-     PRFileDesc *client = (PRFileDesc*)arg;
-@@ -394,6 +394,7 @@ int main(int argc, char **argv)
-         Client(server_name);
-     }
- 
-+    return 0;
-     return 0;
- }  /* main */
- 
---- pr/tests/timemac.c.orig	2019-10-15 14:21:38 UTC
+ static void PR_CALLBACK Servette(void* arg) {
+-  PRInt32 bytes, sampled;
++  PRInt32 bytes, sampled = -1;
+   PRIntervalTime now, interval;
+   PRBool do_display = PR_FALSE;
+   PRFileDesc* client = (PRFileDesc*)arg;
+--- pr/tests/timemac.c.orig
 +++ pr/tests/timemac.c
-@@ -25,7 +25,7 @@ static void printExplodedTime(const PRExplodedTime *et
-     const char *sign;
+@@ -22,7 +22,7 @@
+   const char* sign;
  
-     /* Print day of the week, month, day, hour, minute, and second */
--    printf( "%s %s %ld %02ld:%02ld:%02ld ",
-+    printf( "%s %s %d %02d:%02d:%02d ",
-             dayOfWeek[et->tm_wday], month[et->tm_month], et->tm_mday,
-             et->tm_hour, et->tm_min, et->tm_sec);
+   /* Print day of the week, month, day, hour, minute, and second */
+-  printf("%s %s %ld %02ld:%02ld:%02ld ", dayOfWeek[et->tm_wday],
++  printf("%s %s %d %02d:%02d:%02d ", dayOfWeek[et->tm_wday],
+          month[et->tm_month], et->tm_mday, et->tm_hour, et->tm_min, et->tm_sec);
  
-@@ -41,7 +41,7 @@ static void printExplodedTime(const PRExplodedTime *et
-         }
-         hourOffset = totalOffset / 3600;
-         minOffset = (totalOffset % 3600) / 60;
--        printf("%s%02ld%02ld ", sign, hourOffset, minOffset);
-+        printf("%s%02d%02d ", sign, hourOffset, minOffset);
+   /* Print time zone */
+@@ -37,7 +37,7 @@
      }
+     hourOffset = totalOffset / 3600;
+     minOffset = (totalOffset % 3600) / 60;
+-    printf("%s%02ld%02ld ", sign, hourOffset, minOffset);
++    printf("%s%02d%02d ", sign, hourOffset, minOffset);
+   }
  
-     /* Print year */
-@@ -98,7 +98,7 @@ int main(int argc, char** argv)
-         printf("Current local time is ");
-         printExplodedTime(&et);
-         printf("\n");
--        printf("GMT offset is %ld, DST offset is %ld\n",
-+        printf("GMT offset is %d, DST offset is %d\n",
-                et.tm_params.tp_gmt_offset, et.tm_params.tp_dst_offset);
-         t2 = PR_ImplodeTime(&et);
-         if (LL_NE(t1, t2)) {
---- pr/tests/timetest.c.orig	2019-10-15 14:21:38 UTC
+   /* Print year */
+@@ -92,7 +92,7 @@
+     printf("Current local time is ");
+     printExplodedTime(&et);
+     printf("\n");
+-    printf("GMT offset is %ld, DST offset is %ld\n", et.tm_params.tp_gmt_offset,
++    printf("GMT offset is %d, DST offset is %d\n", et.tm_params.tp_gmt_offset,
+            et.tm_params.tp_dst_offset);
+     t2 = PR_ImplodeTime(&et);
+     if (LL_NE(t1, t2)) {
+--- pr/tests/timetest.c.orig
 +++ pr/tests/timetest.c
-@@ -37,7 +37,7 @@ static void PrintExplodedTime(const PRExplodedTime *et
-     const char *sign;
+@@ -36,7 +36,7 @@
  
-     /* Print day of the week, month, day, hour, minute, and second */
--    if (debug_mode) printf("%s %s %ld %02ld:%02ld:%02ld ",
-+    if (debug_mode) printf("%s %s %d %02d:%02d:%02d ",
-                                dayOfWeek[et->tm_wday], month[et->tm_month], et->tm_mday,
-                                et->tm_hour, et->tm_min, et->tm_sec);
+   /* Print day of the week, month, day, hour, minute, and second */
+   if (debug_mode)
+-    printf("%s %s %ld %02ld:%02ld:%02ld ", dayOfWeek[et->tm_wday],
++    printf("%s %s %d %02d:%02d:%02d ", dayOfWeek[et->tm_wday],
+            month[et->tm_month], et->tm_mday, et->tm_hour, et->tm_min,
+            et->tm_sec);
  
-@@ -56,7 +56,7 @@ static void PrintExplodedTime(const PRExplodedTime *et
-         hourOffset = totalOffset / 3600;
-         minOffset = (totalOffset % 3600) / 60;
-         if (debug_mode) {
--            printf("%s%02ld%02ld ", sign, hourOffset, minOffset);
-+            printf("%s%02d%02d ", sign, hourOffset, minOffset);
-         }
+@@ -55,7 +55,7 @@
+     hourOffset = totalOffset / 3600;
+     minOffset = (totalOffset % 3600) / 60;
+     if (debug_mode) {
+-      printf("%s%02ld%02ld ", sign, hourOffset, minOffset);
++      printf("%s%02d%02d ", sign, hourOffset, minOffset);
      }
+   }
  
-@@ -262,7 +262,7 @@ int main(int argc, char** argv)
-         if (debug_mode) {
-             printf("\n");
-         }
--        if (debug_mode) printf("GMT offset is %ld, DST offset is %ld\n",
-+        if (debug_mode) printf("GMT offset is %d, DST offset is %d\n",
-                                    et.tm_params.tp_gmt_offset, et.tm_params.tp_dst_offset);
-         t2 = PR_ImplodeTime(&et);
-         if (LL_NE(t1, t2)) {
---- pr/tests/y2k.c.orig	2019-10-15 14:21:38 UTC
+@@ -249,7 +249,7 @@
+       printf("\n");
+     }
+     if (debug_mode)
+-      printf("GMT offset is %ld, DST offset is %ld\n",
++      printf("GMT offset is %d, DST offset is %d\n",
+              et.tm_params.tp_gmt_offset, et.tm_params.tp_dst_offset);
+     t2 = PR_ImplodeTime(&et);
+     if (LL_NE(t1, t2)) {
+--- pr/tests/y2k.c.orig
 +++ pr/tests/y2k.c
-@@ -44,7 +44,7 @@ static void PrintExplodedTime(const PRExplodedTime *et
-     const char *sign;
+@@ -42,7 +42,7 @@
+   const char* sign;
  
-     /* Print day of the week, month, day, hour, minute, and second */
--    printf("%s %s %2ld %02ld:%02ld:%02ld ",
-+    printf("%s %s %2d %02d:%02d:%02d ",
-            dayOfWeek[et->tm_wday], month[et->tm_month], et->tm_mday,
-            et->tm_hour, et->tm_min, et->tm_sec);
+   /* Print day of the week, month, day, hour, minute, and second */
+-  printf("%s %s %2ld %02ld:%02ld:%02ld ", dayOfWeek[et->tm_wday],
++  printf("%s %s %2d %02d:%02d:%02d ", dayOfWeek[et->tm_wday],
+          month[et->tm_month], et->tm_mday, et->tm_hour, et->tm_min, et->tm_sec);
  
-@@ -63,7 +63,7 @@ static void PrintExplodedTime(const PRExplodedTime *et
-         }
-         hourOffset = totalOffset / 3600;
-         minOffset = (totalOffset % 3600) / 60;
--        printf("%s%02ld%02ld ", sign, hourOffset, minOffset);
-+        printf("%s%02d%02d ", sign, hourOffset, minOffset);
+   /* Print year */
+@@ -60,7 +60,7 @@
      }
+     hourOffset = totalOffset / 3600;
+     minOffset = (totalOffset % 3600) / 60;
+-    printf("%s%02ld%02ld ", sign, hourOffset, minOffset);
++    printf("%s%02d%02d ", sign, hourOffset, minOffset);
+   }
  #ifdef PRINT_DETAILS
-     printf("{%d, %d, %d, %d, %d, %d, %d, %d, %d, { %d, %d}}\n",et->tm_usec,
---- pr/tests/y2ktmo.c.orig	2019-10-15 14:21:38 UTC
+   printf("{%d, %d, %d, %d, %d, %d, %d, %d, %d, { %d, %d}}\n", et->tm_usec,
+--- pr/tests/y2ktmo.c.orig
 +++ pr/tests/y2ktmo.c
-@@ -70,7 +70,7 @@ static struct _timeb start_time_tb;
+@@ -69,7 +69,7 @@
+ #endif
  
- static void SleepThread(void *arg)
- {
--    PRIntervalTime timeout = (PRIntervalTime) arg;
-+    PRIntervalTime timeout = (PRIntervalTime)(intptr_t)arg;
-     PRIntervalTime elapsed;
+ static void SleepThread(void* arg) {
+-  PRIntervalTime timeout = (PRIntervalTime)arg;
++  PRIntervalTime timeout = (PRIntervalTime)(intptr_t)arg;
+   PRIntervalTime elapsed;
  #if defined(XP_UNIX) || defined(WIN32)
-     PRInt32 timeout_msecs = PR_IntervalToMilliseconds(timeout);
-@@ -121,7 +121,7 @@ static void SleepThread(void *arg)
+   PRInt32 timeout_msecs = PR_IntervalToMilliseconds(timeout);
+@@ -119,7 +119,7 @@
+ }
  
- static void AcceptThread(void *arg)
- {
--    PRIntervalTime timeout = (PRIntervalTime) arg;
-+    PRIntervalTime timeout = (PRIntervalTime)(intptr_t)arg;
-     PRIntervalTime elapsed;
+ static void AcceptThread(void* arg) {
+-  PRIntervalTime timeout = (PRIntervalTime)arg;
++  PRIntervalTime timeout = (PRIntervalTime)(intptr_t)arg;
+   PRIntervalTime elapsed;
  #if defined(XP_UNIX) || defined(WIN32)
-     PRInt32 timeout_msecs = PR_IntervalToMilliseconds(timeout);
-@@ -197,7 +197,7 @@ static void AcceptThread(void *arg)
+   PRInt32 timeout_msecs = PR_IntervalToMilliseconds(timeout);
+@@ -272,7 +272,7 @@
+ }
  
- static void PollThread(void *arg)
- {
--    PRIntervalTime timeout = (PRIntervalTime) arg;
-+    PRIntervalTime timeout = (PRIntervalTime)(intptr_t)arg;
-     PRIntervalTime elapsed;
+ static void WaitCondVarThread(void* arg) {
+-  PRIntervalTime timeout = (PRIntervalTime)arg;
++  PRIntervalTime timeout = (PRIntervalTime)(intptr_t)arg;
+   PRIntervalTime elapsed;
  #if defined(XP_UNIX) || defined(WIN32)
-     PRInt32 timeout_msecs = PR_IntervalToMilliseconds(timeout);
-@@ -276,7 +276,7 @@ static void PollThread(void *arg)
+   PRInt32 timeout_msecs = PR_IntervalToMilliseconds(timeout);
+@@ -335,7 +335,7 @@
+ }
  
- static void WaitCondVarThread(void *arg)
- {
--    PRIntervalTime timeout = (PRIntervalTime) arg;
-+    PRIntervalTime timeout = (PRIntervalTime)(intptr_t)arg;
-     PRIntervalTime elapsed;
+ static void WaitMonitorThread(void* arg) {
+-  PRIntervalTime timeout = (PRIntervalTime)arg;
++  PRIntervalTime timeout = (PRIntervalTime)(intptr_t)arg;
+   PRIntervalTime elapsed;
  #if defined(XP_UNIX) || defined(WIN32)
-     PRInt32 timeout_msecs = PR_IntervalToMilliseconds(timeout);
-@@ -340,7 +340,7 @@ static void WaitCondVarThread(void *arg)
+   PRInt32 timeout_msecs = PR_IntervalToMilliseconds(timeout);
+@@ -391,7 +391,7 @@
+ }
  
- static void WaitMonitorThread(void *arg)
- {
--    PRIntervalTime timeout = (PRIntervalTime) arg;
-+    PRIntervalTime timeout = (PRIntervalTime)(intptr_t)arg;
-     PRIntervalTime elapsed;
+ static void WaitCMonitorThread(void* arg) {
+-  PRIntervalTime timeout = (PRIntervalTime)arg;
++  PRIntervalTime timeout = (PRIntervalTime)(intptr_t)arg;
+   PRIntervalTime elapsed;
  #if defined(XP_UNIX) || defined(WIN32)
-     PRInt32 timeout_msecs = PR_IntervalToMilliseconds(timeout);
-@@ -397,7 +397,7 @@ static void WaitMonitorThread(void *arg)
- 
- static void WaitCMonitorThread(void *arg)
- {
--    PRIntervalTime timeout = (PRIntervalTime) arg;
-+    PRIntervalTime timeout = (PRIntervalTime)(intptr_t)arg;
-     PRIntervalTime elapsed;
- #if defined(XP_UNIX) || defined(WIN32)
-     PRInt32 timeout_msecs = PR_IntervalToMilliseconds(timeout);
-@@ -532,7 +532,7 @@ int main(int argc, char **argv)
-     for (i = 0; i < num_thread_scopes; i++) {
-         for (j = 0; j < num_thread_funcs; j++) {
-             threads[idx] = PR_CreateThread(PR_USER_THREAD, threadFuncs[j],
--                                           (void*)PR_SecondsToInterval(secs), PR_PRIORITY_NORMAL,
-+                                           (void*)(intptr_t)PR_SecondsToInterval(secs), PR_PRIORITY_NORMAL,
-                                            threadScopes[i], PR_JOINABLE_THREAD, 0);
-             if (threads[idx] == NULL) {
-                 fprintf(stderr, "PR_CreateThread failed\n");
---- pr/tests/zerolen.c.orig	2019-10-15 14:21:38 UTC
+   PRInt32 timeout_msecs = PR_IntervalToMilliseconds(timeout);
+@@ -521,7 +521,7 @@
+   for (i = 0; i < num_thread_scopes; i++) {
+     for (j = 0; j < num_thread_funcs; j++) {
+       threads[idx] = PR_CreateThread(
+-          PR_USER_THREAD, threadFuncs[j], (void*)PR_SecondsToInterval(secs),
++          PR_USER_THREAD, threadFuncs[j], (void*)(intptr_t)PR_SecondsToInterval(secs),
+           PR_PRIORITY_NORMAL, threadScopes[i], PR_JOINABLE_THREAD, 0);
+       if (threads[idx] == NULL) {
+         fprintf(stderr, "PR_CreateThread failed\n");
+--- pr/tests/zerolen.c.orig
 +++ pr/tests/zerolen.c
-@@ -45,7 +45,7 @@ static void ClientThread(void *arg)
- {
-     PRFileDesc *sock;
-     PRNetAddr addr;
--    PRUint16 port = (PRUint16) arg;
-+    PRUint16 port = (PRUint16)(uintptr_t)arg;
-     char buf[1024];
-     PRInt32 nbytes;
+@@ -43,7 +43,7 @@
+ static void ClientThread(void* arg) {
+   PRFileDesc* sock;
+   PRNetAddr addr;
+-  PRUint16 port = (PRUint16)arg;
++  PRUint16 port = (PRUint16)(uintptr_t)arg;
+   char buf[1024];
+   PRInt32 nbytes;
  
-@@ -124,7 +124,7 @@ int main()
-      * First test PR_Writev.
-      */
-     clientThread = PR_CreateThread(PR_USER_THREAD,
--                                   ClientThread, (void *) PR_ntohs(PR_NetAddrInetPort(&addr)),
-+                                   ClientThread, (void *)(uintptr_t)PR_ntohs(PR_NetAddrInetPort(&addr)),
-                                    PR_PRIORITY_NORMAL, PR_GLOBAL_THREAD, PR_JOINABLE_THREAD, 0);
-     if (NULL == clientThread) {
-         fprintf(stderr, "PR_CreateThread failed\n");
-@@ -165,7 +165,7 @@ int main()
-      * Then test PR_Write.
-      */
-     clientThread = PR_CreateThread(PR_USER_THREAD,
--                                   ClientThread, (void *) PR_ntohs(PR_NetAddrInetPort(&addr)),
-+                                   ClientThread, (void *)(uintptr_t)PR_ntohs(PR_NetAddrInetPort(&addr)),
-                                    PR_PRIORITY_NORMAL, PR_GLOBAL_THREAD, PR_JOINABLE_THREAD, 0);
-     if (NULL == clientThread) {
-         fprintf(stderr, "PR_CreateThread failed\n");
-@@ -204,7 +204,7 @@ int main()
-      * Finally test PR_Send.
-      */
-     clientThread = PR_CreateThread(PR_USER_THREAD,
--                                   ClientThread, (void *) PR_ntohs(PR_NetAddrInetPort(&addr)),
-+                                   ClientThread, (void *)(uintptr_t)PR_ntohs(PR_NetAddrInetPort(&addr)),
-                                    PR_PRIORITY_NORMAL, PR_GLOBAL_THREAD, PR_JOINABLE_THREAD, 0);
-     if (NULL == clientThread) {
-         fprintf(stderr, "PR_CreateThread failed\n");
+@@ -121,7 +121,7 @@
+    * First test PR_Writev.
+    */
+   clientThread = PR_CreateThread(
+-      PR_USER_THREAD, ClientThread, (void*)PR_ntohs(PR_NetAddrInetPort(&addr)),
++      PR_USER_THREAD, ClientThread, (void*)(uintptr_t)PR_ntohs(PR_NetAddrInetPort(&addr)),
+       PR_PRIORITY_NORMAL, PR_GLOBAL_THREAD, PR_JOINABLE_THREAD, 0);
+   if (NULL == clientThread) {
+     fprintf(stderr, "PR_CreateThread failed\n");
+@@ -162,7 +162,7 @@
+    * Then test PR_Write.
+    */
+   clientThread = PR_CreateThread(
+-      PR_USER_THREAD, ClientThread, (void*)PR_ntohs(PR_NetAddrInetPort(&addr)),
++      PR_USER_THREAD, ClientThread, (void*)(uintptr_t)PR_ntohs(PR_NetAddrInetPort(&addr)),
+       PR_PRIORITY_NORMAL, PR_GLOBAL_THREAD, PR_JOINABLE_THREAD, 0);
+   if (NULL == clientThread) {
+     fprintf(stderr, "PR_CreateThread failed\n");
+@@ -201,7 +201,7 @@
+    * Finally test PR_Send.
+    */
+   clientThread = PR_CreateThread(
+-      PR_USER_THREAD, ClientThread, (void*)PR_ntohs(PR_NetAddrInetPort(&addr)),
++      PR_USER_THREAD, ClientThread, (void*)(uintptr_t)PR_ntohs(PR_NetAddrInetPort(&addr)),
+       PR_PRIORITY_NORMAL, PR_GLOBAL_THREAD, PR_JOINABLE_THREAD, 0);
+   if (NULL == clientThread) {
+     fprintf(stderr, "PR_CreateThread failed\n");

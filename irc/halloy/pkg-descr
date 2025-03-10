@@ -1,0 +1,13 @@
+Halloy is an open-source IRC client written in Rust, with the iced GUI library.
+
+Features:
+- IRCv3.2 capabilities
+- SASL support
+- DCC Send
+- Keyboard shortcuts
+- Auto-completion for nicknames, commands, and channels
+- Notifications support
+- Multiple channels at the same time across servers
+- Commandbar for for quick actions
+- Custom themes
+- Portable mode

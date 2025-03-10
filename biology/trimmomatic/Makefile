@@ -11,10 +11,8 @@ WWW=		http://www.usadellab.org/cms/?page=trimmomatic
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		zip
-USE_JAVA=	yes
+USES=		java zip
 
-JAVA_RUN=	yes
 NO_BUILD=	yes
 NO_ARCH=	yes
 

@@ -1,0 +1,13 @@
+--- configure.in.orig	2025-02-18 17:16:32 UTC
++++ configure.in
+@@ -520,8 +520,8 @@ dnl is specified.
+ *freebsd*)
+   SHARED_EXT=".so.${MAJOR_VER}"
+   SHARED_ALT=".so"
+-  VERSION_OPT='--version-script=$$(srcdir)/libtecla.map'
+-  LINK_SHARED='ld -o $$@ -soname libtecla$$(SUFFIX).so.'${MAJOR_VER}' -shared '$VERSION_OPT' $$(LIB_OBJECTS) $$(LIBS) -lc'
++  VERSION_OPT='-Wl,--version-script=$$(srcdir)/libtecla.map'
++  LINK_SHARED='${CC} -o $$@ -Wl,-soname=libtecla$$(SUFFIX).so.'${MAJOR_VER}' -shared '$VERSION_OPT' $$(LIB_OBJECTS) $$(LIBS) -lc'
+   SHARED_CFLAGS="-fpic"
+   ;;
+ mips-sgi-irix*)

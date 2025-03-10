@@ -1,0 +1,30 @@
+#!/bin/sh
+
+# PROVIDE: ttyd
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# ttyd_enable (bool):        Set to NO by default. Set it to YES to enable ttyd.
+# ttyd_acct (string):        Default user to run ttyd under, "nobody"
+# ttyd_exec (string):        Default command to run in ttyd, "/bin/sh"
+# ttyd_args (string):        Extra arguments passed to ttyd.
+#                            Default is "--interface lo0 --port 7681"
+
+. /etc/rc.subr
+
+name=ttyd
+rcvar=ttyd_enable
+
+load_rc_config $name
+
+: ${ttyd_enable:="NO"}
+: ${ttyd_acct:="nobody"}
+: ${ttyd_exec:="/bin/sh"}
+: ${ttyd_args:="--interface lo0 --port 7681"}
+
+procname="/usr/local/bin/${name}"
+
+command="/usr/sbin/daemon"
+command_args="-r -R 15 -f -t ${name} -T ttyd -u ${ttyd_acct} /usr/local/bin/ttyd ${ttyd_args} ${ttyd_exec}"
+
+run_rc_command "$1"

@@ -1,5 +1,5 @@
 PORTNAME=	pywinrm
-PORTVERSION=	0.4.1
+DISTVERSION=	0.5.0
 CATEGORIES=	security python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -10,19 +10,19 @@ WWW=		https://github.com/diyan/pywinrm
 
 LICENSE=	MIT
 
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>40.9.0:devel/py-setuptools@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}xmltodict>0:devel/py-xmltodict@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}kerberos>=1.2.1:security/py-kerberos@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>=2.9.1:www/py-requests@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}requests_ntlm>=0.3.0:www/py-requests_ntlm@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}requests-kerberos>=0.10.0:security/py-requests-kerberos@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}requests-credssp>=0.0.1:security/py-requests-credssp@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}requests_ntlm>=1.1.0:www/py-requests_ntlm@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}requests-credssp>=1.0.0:security/py-requests-credssp@${PY_FLAVOR}
 
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}mock>0:devel/py-mock@${PY_FLAVOR}
 
-# Actually 2.6-2.7,3.3-3.6
-USES=		python
-USE_PYTHON=	autoplist distutils
+USES=		python:3.8+
+USE_PYTHON=	autoplist pep517
 
 NO_ARCH=	yes
 

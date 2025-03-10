@@ -7,7 +7,7 @@ CATEGORIES=	lang
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Gambit programming system where the compiler generates portable C code
-WWW=		https://www.iro.umontreal.ca/~gambit/
+WWW=		https://gambitscheme.org
 
 LICENSE=	APACHE20 LGPL21
 LICENSE_COMB=	dual

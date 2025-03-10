@@ -1,5 +1,5 @@
 PORTNAME=	frozendict
-PORTVERSION=	2.4.4
+PORTVERSION=	2.4.6
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI \
 		https://github.com/Marco-Sulla/python-frozendict/releases/download/v${PORTVERSSION}/
@@ -20,6 +20,7 @@ USE_PYTHON=	autoplist concurrent pep517
 
 .include <bsd.port.pre.mk>
 
+# Check src/frozendict/c_src/
 .if ${PYTHON_REL} >= 31100
 NO_ARCH=	yes
 .else

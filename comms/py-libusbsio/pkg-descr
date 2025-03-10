@@ -1,0 +1,8 @@
+Python wrapper for NXP libusbsio binary library
+
+The NXP libusbsio is a binary library for Win/Linux/MacOS systems
+used to exercise SPI, I2C bus and GPIO pins over USBSIO interface of
+NXP LPCLink2 and MCUlink Pro devices.
+
+This Python component provides a wrapper object which encapsulates the
+binary library and exposes its API to Python applications.

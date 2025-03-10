@@ -23,8 +23,8 @@ include/aws/io/uri.h
 include/aws/testing/async_stream_tester.h
 include/aws/testing/io_testing_channel.h
 include/aws/testing/stream_tester.h
-lib/aws-c-io/cmake/aws-c-io-config.cmake
-lib/aws-c-io/cmake/shared/aws-c-io-targets-%%CMAKE_BUILD_TYPE%%.cmake
-lib/aws-c-io/cmake/shared/aws-c-io-targets.cmake
+lib/cmake/aws-c-io/aws-c-io-config.cmake
+lib/cmake/aws-c-io/shared/aws-c-io-targets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/aws-c-io/shared/aws-c-io-targets.cmake
 lib/libaws-c-io.so
 lib/libaws-c-io.so.1.0.0

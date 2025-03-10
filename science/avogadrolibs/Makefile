@@ -1,10 +1,11 @@
 PORTNAME=	avogadrolibs
-DISTVERSION=	1.99.0
+DISTVERSION=	1.100.0
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Avogadro2 libraries for chemical editor and visualization applications
-WWW=		https://www.openchemistry.org/projects/avogadro2/
+WWW=		https://www.openchemistry.org/projects/avogadro2/ \
+		https://github.com/OpenChemistry/avogadrolibs
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -17,9 +18,9 @@ USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	OpenChemistry
-GH_TUPLE=	OpenChemistry:molecules:b1e16c5:molecules/../molecules \
-		OpenChemistry:crystals:73a5bbc:crystals/../crystals \
-		OpenChemistry:fragments:8dc711a:fragments/../fragments
+GH_TUPLE=	OpenChemistry:molecules:8a37883:molecules/../molecules \
+		OpenChemistry:crystals:28404bd:crystals/../crystals \
+		OpenChemistry:fragments:c4943b5:fragments/../fragments
 
 CMAKE_ON=		BUILD_SHARED_LIBS
 CMAKE_TESTING_ON=	ENABLE_TESTING
@@ -29,8 +30,7 @@ OPTIONS_DEFAULT=	HDF5 LIBARCHIVE LIBMSYM MMTF OPENGL QT5 SPGLIB
 OPTIONS_SUB=		yes
 
 HDF5_CMAKE_BOOL=	USE_HDF5
-HDF5_LIB_DEPENDS=	libhdf5.so:science/hdf5 \
-			libsz.so:science/libaec
+HDF5_LIB_DEPENDS=	libhdf5.so:science/hdf5
 
 LIBARCHIVE_DESC=	Enable optional Libarchive features
 LIBARCHIVE_CMAKE_BOOL=	USE_LIBARCHIVE
@@ -49,7 +49,7 @@ MMTF_BUILD_DEPENDS=	mmtf-cpp>0:science/mmtf-cpp \
 
 OPENGL_CMAKE_BOOL=	USE_OPENGL
 OPENGL_USES=		gl
-OPENGL_USE=		GL=gl,glew,glu
+OPENGL_USE=		GL=gl,glew
 
 QT5_CMAKE_BOOL=		USE_QT
 QT5_USES=		qt:5
@@ -73,6 +73,8 @@ VTK_BROKEN=		Needs https://github.com/psavery/genXrdPattern, see https://github.
 
 post-install:
 	@${RM} -r ${STAGEDIR}${PREFIX}/share/doc
+
+# tests as of 1.100.0: 100% tests passed, 0 tests failed out of 27
 
 .include <../../math/vtk9/Makefile.version>
 .include <bsd.port.mk>

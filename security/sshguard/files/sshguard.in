@@ -76,7 +76,7 @@ command=/usr/sbin/daemon
 actual_command="%%PREFIX%%/sbin/sshguard"
 procname="/bin/sh"
 start_precmd=sshguard_prestart
-command_args="-c -f ${actual_command} \${sshguard_flags} \${sshguard_blacklist_params} \${sshguard_watch_params} \${sshguard_danger_params} \${sshguard_release_params} \${sshguard_reset_params} \${sshguard_whitelist_params} -i ${pidfile}"
+command_args="-c -f -l auth ${actual_command} \${sshguard_flags} \${sshguard_blacklist_params} \${sshguard_watch_params} \${sshguard_danger_params} \${sshguard_release_params} \${sshguard_reset_params} \${sshguard_whitelist_params} -i ${pidfile}"
 
 sshguard_prestart()
 {

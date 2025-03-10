@@ -11,9 +11,7 @@ WWW=		https://github.com/jindrapetrik/jpexs-decompiler
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/license.txt
 
-USES=		zip
-USE_JAVA=	yes
-JAVA_VERSION=	8+
+USES=		java zip
 
 NO_ARCH=	yes
 NO_BUILD=	yes

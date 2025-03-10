@@ -1,0 +1,12 @@
+--- script/GNUmakefile.orig	2024-05-27 06:59:46 UTC
++++ script/GNUmakefile
+@@ -26,6 +26,6 @@ install:
+ depend:
+ 
+ install:
+-	install -o root -g wheel -m 555 log2graph ${DESTDIR}${PREFIX}/bin/ipgen_log2graph
+-	install -o root -g wheel -m 755 -d ${DESTDIR}${PREFIX}/share/ipgen/script
+-	install -o root -g wheel -m 444 ${FILES} ${DESTDIR}${PREFIX}/share/ipgen/script
++	${BSD_INSTALL_SCRIPT} log2graph ${DESTDIR}${PREFIX}/bin/ipgen_log2graph
++	${BSD_INSTALL_DIR} ${DESTDIR}${PREFIX}/share/ipgen/script
++	${BSD_INSTALL_SCRIPT} ${FILES} ${DESTDIR}${PREFIX}/share/ipgen/script

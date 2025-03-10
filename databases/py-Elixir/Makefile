@@ -1,6 +1,6 @@
 PORTNAME=	Elixir
 PORTVERSION=	0.7.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	databases python
 MASTER_SITES=	PYPI \
 		http://nivi.interfree.it/distfiles/${PORTNAME}/

@@ -1,6 +1,6 @@
 PORTNAME=	openage
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.5.3
+DISTVERSION=	0.6.0
 CATEGORIES=	games
 
 MAINTAINER=	freebsd@sysctl.cz
@@ -9,6 +9,11 @@ WWW=		https://openage.sft.mx/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/legal/GPLv3
+
+BROKEN_armv7=	error: non-constant-expression cannot be narrowed from type \
+			'long long' to 'unsigned int' in initializer list
+BROKEN_i386=	error: non-constant-expression cannot be narrowed from type \
+			'long long' to 'unsigned int' in initializer list
 
 BUILD_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}Jinja2>0:devel/py-Jinja2@${PY_FLAVOR} \
@@ -33,7 +38,7 @@ RUN_DEPENDS=	${PYNUMPY} \
 		${PY_PILLOW} \
 		${PYTHON_PKGNAMEPREFIX}pygments>0:textproc/py-pygments@${PY_FLAVOR}
 
-USES=		cmake compiler:c++17-lang eigen:3 gl ncurses:base python qt:6 sdl shebangfix
+USES=		cmake compiler:c++17-lang eigen:3 gl ncurses:port python qt:6 sdl shebangfix
 SHEBANG_FILES=	configure run.py.in buildsystem/cythonize.py
 USE_GITHUB=	yes
 GH_ACCOUNT=	SFTtech

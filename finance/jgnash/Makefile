@@ -16,8 +16,7 @@ SUB_FILES=	jgnash.desktop
 SUB_LIST=	JAVA="${JAVA}"
 PLIST_SUB+=	DESKTOPDIR=${DESKTOPDIR:S|^${PREFIX}/||}
 
-USES=		zip
-USE_JAVA=	yes
+USES=		java zip
 JAVA_VENDOR=	openjdk
 
 NO_BUILD=	yes

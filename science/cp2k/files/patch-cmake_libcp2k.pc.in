@@ -1,0 +1,9 @@
+--- cmake/libcp2k.pc.in.orig	2024-09-04 05:33:26 UTC
++++ cmake/libcp2k.pc.in
+@@ -7,5 +7,5 @@ Version: @PROJECT_VERSION@
+ Description: @CMAKE_PROJECT_DESCRIPTION@
+ URL: @CMAKE_PROJECT_HOMEPAGE_URL@
+ Version: @PROJECT_VERSION@
+-Cflags: -I"${includedir}/cp2k" -I"${includedir}/cp2k/@CMAKE_Fortran_COMPILER_ID@-@CMAKE_Fortran_COMPILER_VERSION@"
++Cflags: -I"${includedir}/cp2k" -I"${includedir}/cp2k"
+ Libs: -L"${libdir}" -lcp2k

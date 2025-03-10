@@ -1,6 +1,6 @@
 PORTNAME=	ncnn
-DISTVERSION=	20240410
-PORTREVISION=	1
+DISTVERSION=	20241226
+PORTREVISION=	2
 CATEGORIES=	misc # machine-learning
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 LIB_DEPENDS=	libabsl_flags_program_name.so:devel/abseil \
 		libprotobuf.so:devel/protobuf
 
-USES=		cmake:testing # 1 test fails, see https://github.com/Tencent/ncnn/issues/4742#issuecomment-1879563662
+USES=		cmake:testing # 2 tests fail (test_squeezenet, test_c_api), but the debug build fails due to missing absl* symbol, also see https://github.com/Tencent/ncnn/issues/4742#issuecomment-1879563662
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
@@ -31,5 +31,7 @@ VULKAN_BUILD_DEPENDS=	${LOCALBASE}/include/vulkan/vulkan.h:graphics/vulkan-heade
 VULKAN_LIB_DEPENDS=	libvulkan.so:graphics/vulkan-loader
 VULKAN_CMAKE_BOOL=	NCNN_VULKAN
 VULKAN_BROKEN=		most tests are broken with Vulkan, see https://github.com/Tencent/ncnn/issues/4742#issuecomment-1879563662
+
+# tests as of 20241226: 99% tests passed, 1 tests failed out of 127
 
 .include <bsd.port.mk>

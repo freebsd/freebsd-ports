@@ -1,6 +1,6 @@
---- src/pdf/CMakeLists.txt.orig	2023-12-12 22:08:45 UTC
+--- src/pdf/CMakeLists.txt.orig	2024-10-02 15:40:01 UTC
 +++ src/pdf/CMakeLists.txt
-@@ -71,7 +71,7 @@ add_dependencies(docs generate_pdf_attributions)
+@@ -70,7 +70,7 @@ add_dependencies(prepare_docs_Pdf generate_pdf_attribu
  #   TOOLCHAIN SETUP
  ##
  

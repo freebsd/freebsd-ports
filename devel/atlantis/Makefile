@@ -1,7 +1,7 @@
 PORTNAME=	atlantis
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.28.1
-PORTREVISION=	2
+DISTVERSION=	0.31.0
+PORTREVISION=	3
 CATEGORIES=	devel
 
 MAINTAINER=	dutra@FreeBSD.org
@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	terraform:sysutils/terraform
 
-USES=		go:modules
+USES=		go:1.23,modules
 
 GO_MODULE=	github.com/runatlantis/atlantis
 CGO_ENABLED=	0

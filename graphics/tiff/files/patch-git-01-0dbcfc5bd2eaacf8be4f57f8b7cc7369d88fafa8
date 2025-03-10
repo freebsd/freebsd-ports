@@ -1,0 +1,52 @@
+From 0dbcfc5bd2eaacf8be4f57f8b7cc7369d88fafa8 Mon Sep 17 00:00:00 2001
+From: "Daniel E @diizzyy" <unknown@example.com>
+Date: Sun, 20 Oct 2024 22:45:15 +0200
+Subject: [PATCH] CMake: fix build with LLVM/Clang 17+
+
+Fixes #651
+---
+ cmake/LinkerChecks.cmake | 7 ++++++-
+ libtiff/CMakeLists.txt   | 9 +++++++--
+ 2 files changed, 13 insertions(+), 3 deletions(-)
+
+diff --git a/cmake/LinkerChecks.cmake b/cmake/LinkerChecks.cmake
+index ad1f0f9ff..90496bd2e 100644
+--- cmake/LinkerChecks.cmake
++++ cmake/LinkerChecks.cmake
+@@ -39,7 +39,12 @@ VERS_2 {
+ } VERS_1;
+ ")
+ set(CMAKE_REQUIRED_FLAGS_SAVE ${CMAKE_REQUIRED_FLAGS})
+-set(CMAKE_REQUIRED_FLAGS ${CMAKE_REQUIRED_FLAGS} "-Wl,--version-script=${CMAKE_CURRENT_BINARY_DIR}/conftest.map")
++if (CMAKE_VERSION GREATER_EQUAL 3.29 AND CMAKE_C_COMPILER_LINKER_ID STREQUAL "LLD" AND CMAKE_C_COMPILER_LINKER_VERSION GREATER_EQUAL 17)
++    set(CMAKE_REQUIRED_FLAGS ${CMAKE_REQUIRED_FLAGS} -Wl,--undefined-version "-Wl,--version-script=${CMAKE_CURRENT_BINARY_DIR}/conftest.map")
++else()
++    set(CMAKE_REQUIRED_FLAGS ${CMAKE_REQUIRED_FLAGS} "-Wl,--version-script=${CMAKE_CURRENT_BINARY_DIR}/conftest.map")
++endif()
++
+ check_c_source_compiles("int main(void){return 0;}" HAVE_LD_VERSION_SCRIPT)
+ set(CMAKE_REQUIRED_FLAGS ${CMAKE_REQUIRED_FLAGS_SAVE})
+ file(REMOVE "${CMAKE_CURRENT_BINARY_DIR}/conftest.map")
+diff --git a/libtiff/CMakeLists.txt b/libtiff/CMakeLists.txt
+index a8aa0c320..2762fab7c 100755
+--- libtiff/CMakeLists.txt
++++ libtiff/CMakeLists.txt
+@@ -201,8 +201,13 @@ if(NOT CYGWIN)
+     set_target_properties(tiff PROPERTIES VERSION ${SO_VERSION})
+ endif()
+ if(HAVE_LD_VERSION_SCRIPT)
+-  set_target_properties(tiff PROPERTIES LINK_FLAGS
+-                        "-Wl,--version-script=${CMAKE_CURRENT_SOURCE_DIR}/libtiff.map")
++  if (CMAKE_VERSION GREATER_EQUAL 3.29 AND CMAKE_C_COMPILER_LINKER_ID STREQUAL "LLD" AND CMAKE_C_COMPILER_LINKER_VERSION GREATER_EQUAL 17)
++    set_target_properties(tiff PROPERTIES LINK_FLAGS
++                              "-Wl,--undefined-version -Wl,--version-script=${CMAKE_CURRENT_SOURCE_DIR}/libtiff.map")
++  else()
++    set_target_properties(tiff PROPERTIES LINK_FLAGS
++                              "-Wl,--version-script=${CMAKE_CURRENT_SOURCE_DIR}/libtiff.map")
++  endif()
+ endif()
+ 
+ if(tiff-install)
+-- 
+GitLab
+

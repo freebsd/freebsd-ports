@@ -70,10 +70,12 @@ libdata/pkgconfig/weechat.pc
 %%DOCS%%%%DOCSDIR%%/weechat_quickstart.pl.html
 %%DOCS%%%%DOCSDIR%%/weechat_quickstart.ru.html
 %%DOCS%%%%DOCSDIR%%/weechat_quickstart.sr.html
-%%DOCS%%%%DOCSDIR%%/weechat_relay_protocol.en.html
-%%DOCS%%%%DOCSDIR%%/weechat_relay_protocol.fr.html
-%%DOCS%%%%DOCSDIR%%/weechat_relay_protocol.ja.html
-%%DOCS%%%%DOCSDIR%%/weechat_relay_protocol.sr.html
+%%DOCS%%%%DOCSDIR%%/weechat_relay_api.en.html
+%%DOCS%%%%DOCSDIR%%/weechat_relay_api.fr.html
+%%DOCS%%%%DOCSDIR%%/weechat_relay_weechat.en.html
+%%DOCS%%%%DOCSDIR%%/weechat_relay_weechat.fr.html
+%%DOCS%%%%DOCSDIR%%/weechat_relay_weechat.ja.html
+%%DOCS%%%%DOCSDIR%%/weechat_relay_weechat.sr.html
 %%DOCS%%%%DOCSDIR%%/weechat_scripting.de.html
 %%DOCS%%%%DOCSDIR%%/weechat_scripting.en.html
 %%DOCS%%%%DOCSDIR%%/weechat_scripting.fr.html

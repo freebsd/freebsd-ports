@@ -13,8 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 CPE_VENDOR=	apache
 
-USES=		cpe
-USE_JAVA=	yes
+USES=		cpe java
 
 NO_ARCH=	yes
 NO_BUILD=	yes

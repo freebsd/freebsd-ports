@@ -1,3 +1,3 @@
-TIMESTAMP = 1696001302
-SHA256 (avro-1.11.3.tar.gz) = 3393bb5139f9cf0791d205756ce1e39a5b58586af5b153d6a3b5a199610e9d17
-SIZE (avro-1.11.3.tar.gz) = 90621
+TIMESTAMP = 1723201043
+SHA256 (avro-1.12.0.tar.gz) = cad9c53b23ceed699c7af6bddced42e2c572fd6b408c257a7d4fc4e8cf2e2d6b
+SIZE (avro-1.12.0.tar.gz) = 91025

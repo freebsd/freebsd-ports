@@ -1,7 +1,6 @@
 PORTNAME=	indi
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.9.6
-PORTREVISION=	2
+DISTVERSION=	2.1.1
 CATEGORIES=	devel
 
 MAINTAINER=	acm@FreeBSD.org
@@ -17,7 +16,9 @@ LIB_DEPENDS=	libcfitsio.so:astro/cfitsio \
 		libgsl.so:math/gsl \
 		libfftw3.so:math/fftw3 \
 		libtheora.so:multimedia/libtheora \
-		libogg.so:audio/libogg
+		libogg.so:audio/libogg \
+		libev.so:devel/libev \
+		libXISF.so:graphics/libxisf
 
 USES=		cmake jpeg iconv ninja pkgconfig
 USE_GITHUB=	yes

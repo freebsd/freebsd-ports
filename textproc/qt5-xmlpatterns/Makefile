@@ -1,5 +1,6 @@
 PORTNAME=	xmlpatterns
 PORTVERSION=	${QT5_VERSION}${QT5_KDE_PATCH}
+PORTREVISION=	1
 CATEGORIES=	textproc
 PKGNAMEPREFIX=	qt5-
 
@@ -9,6 +10,7 @@ COMMENT=	Qt support for XPath, XQuery, XSLT and XML Schema
 USES=		compiler:c++11-lang perl5 qmake:norecursive qt-dist:5,xmlpatterns
 USE_PERL5=	build
 USE_QT=		core declarative network buildtools:build
+USE_LDCONFIG=	${PREFIX}/${QT_LIBDIR_REL}
 
 QT_BINARIES=	yes
 

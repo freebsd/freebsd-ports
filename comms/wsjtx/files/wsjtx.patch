@@ -1,5 +1,5 @@
 --- wsjtx/wsjtx_config.h.in.orig	2021-12-28 04:31:58.000000000 -0500
-+++ wsjtx/wsjtx_config.h.in	2023-09-10 09:55:54.397156000 -0400
++++ wsjtx/wsjtx_config.h.in	2024-12-27 18:49:18.680477000 -0500
 @@ -57,17 +57,22 @@
  #	endif
  #endif
@@ -35,7 +35,7 @@
  #ifdef __cplusplus
  }
 --- wsjtx/CMakeLists.txt.orig	2021-12-28 04:31:58.000000000 -0500
-+++ wsjtx/CMakeLists.txt	2023-09-10 09:39:14.606813000 -0400
++++ wsjtx/CMakeLists.txt	2024-12-27 18:52:10.335420000 -0500
 @@ -41,7 +41,7 @@
  endif ()
  
@@ -81,8 +81,20 @@
  
  add_executable (jt4code lib/jt4code.f90)
  target_link_libraries (jt4code wsjt_fort wsjt_cxx)
+@@ -1402,6 +1402,11 @@
+ else (${OPENMP_FOUND} OR APPLE)
+   target_link_libraries (jt9 wsjt_fort wsjt_cxx fort_qt)
+ endif (${OPENMP_FOUND} OR APPLE)
++if (CMAKE_SYSTEM_NAME STREQUAL "FreeBSD")
++  set_target_properties (jt9 PROPERTIES
++    LINK_FLAGS -Wl,-zexecstack
++    )
++endif ()
+ 
+ if (WIN32)
+   # build map65
 --- wsjtx/Radio.cpp.orig	2021-12-28 04:31:58.000000000 -0500
-+++ wsjtx/Radio.cpp	2023-09-10 09:39:14.607286000 -0400
++++ wsjtx/Radio.cpp	2024-12-27 18:49:18.681599000 -0500
 @@ -54,7 +54,8 @@
      value *= std::pow (10., scale);
      if (ok)
@@ -103,7 +115,7 @@
              value = 0.;
              *ok = false;
 --- wsjtx/widgets/FrequencyLineEdit.cpp.orig	2021-12-28 04:31:58.000000000 -0500
-+++ wsjtx/widgets/FrequencyLineEdit.cpp	2023-09-10 09:39:14.607697000 -0400
++++ wsjtx/widgets/FrequencyLineEdit.cpp	2024-12-27 18:49:18.681849000 -0500
 @@ -39,7 +39,8 @@
  FrequencyLineEdit::FrequencyLineEdit (QWidget * parent)
    : QLineEdit (parent)
@@ -115,7 +127,7 @@
  
  auto FrequencyLineEdit::frequency () const -> Frequency
 --- wsjtx/widgets/FrequencyDeltaLineEdit.cpp.orig	2021-12-28 04:31:58.000000000 -0500
-+++ wsjtx/widgets/FrequencyDeltaLineEdit.cpp	2023-09-10 09:39:14.608093000 -0400
++++ wsjtx/widgets/FrequencyDeltaLineEdit.cpp	2024-12-27 18:49:18.682097000 -0500
 @@ -39,8 +39,8 @@
  FrequencyDeltaLineEdit::FrequencyDeltaLineEdit (QWidget * parent)
    : QLineEdit (parent)
@@ -128,7 +140,7 @@
  
  auto FrequencyDeltaLineEdit::frequency_delta () const -> FrequencyDelta
 --- wsjtx/CMake/Modules/FindUsb.cmake.orig	2021-12-28 04:31:58.000000000 -0500
-+++ wsjtx/CMake/Modules/FindUsb.cmake	2023-09-10 09:39:14.608507000 -0400
++++ wsjtx/CMake/Modules/FindUsb.cmake	2024-12-27 18:49:18.682329000 -0500
 @@ -13,25 +13,35 @@
  #  Usb::Usb	- The libusb library
  #
@@ -195,7 +207,7 @@
    )
 +endif()
 --- wsjtx/CMake/Modules/FindHamlib.cmake.orig	2021-12-28 04:31:58.000000000 -0500
-+++ wsjtx/CMake/Modules/FindHamlib.cmake	2023-09-10 09:39:14.608876000 -0400
++++ wsjtx/CMake/Modules/FindHamlib.cmake	2024-12-27 18:49:18.682526000 -0500
 @@ -18,7 +18,9 @@
    FIND_LIBRARY hamlib
    )

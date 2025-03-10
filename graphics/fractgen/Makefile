@@ -1,5 +1,6 @@
 PORTNAME=	fractgen
-DISTVERSION=	2.1.14
+DISTVERSION=	3.0.2
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	https://www.nntb.no/~dreibh/fractalgenerator/download/
 
@@ -10,9 +11,9 @@ WWW=		https://www.nntb.no/~dreibh/fractalgenerator/
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		cmake compiler:c++14-lang desktop-file-utils shared-mime-info \
-		tar:xz qt:5
-USE_QT=		core xml widgets printsupport gui \
-		buildtools:build qmake:build linguisttools:build
+USES=		cmake compiler:c++17-lang desktop-file-utils gl qt:6 \
+		shared-mime-info tar:xz
+USE_GL=		gl opengl
+USE_QT=		base tools:build
 
 .include <bsd.port.mk>

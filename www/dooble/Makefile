@@ -1,5 +1,5 @@
 PORTNAME=	dooble
-DISTVERSION=	2024.01.25
+DISTVERSION=	2025.02.28
 CATEGORIES=	www
 
 MAINTAINER=	eric@camachat.org
@@ -13,15 +13,18 @@ USES=		compiler:c++17-lang desktop-file-utils gl gmake qmake qt:6 ssl \
 		tar xorg
 USE_GITHUB=	yes
 GH_ACCOUNT=	textbrowser
-USE_GL=		gl
-USE_QT=		base charts declarative positioning webchannel webengine \
-		sqldriver-sqlite:run
+GH_TUPLE=	textbrowser:dooble-dictionaries:0f1e715:dictionaries
+#textbrowser:dooble:${PORTVERSION}:DEFAULT
+USE_GL=		opengl
+USE_QT=		base charts declarative positioning sqldriver-sqlite:run \
+		webchannel webengine
 USE_XORG=	xcb
 
+QMAKE_ENV+=		DOOBLE_DICTIONARIES_DIRECTORY=${WRKSRC_dictionaries}/Dictionaries
 QMAKE_SOURCE_PATH=	dooble.pro
 
 QTWEBENGINE_DICTIONARIES=	${QT_DATADIR}/qtwebengine_dictionaries
-PLIST_SUB=	QTWEBENGINE_DICTIONARIES=${QTWEBENGINE_DICTIONARIES}
+PLIST_SUB=			QTWEBENGINE_DICTIONARIES=${QTWEBENGINE_DICTIONARIES}
 
 do-install:
 		${INSTALL_PROGRAM} ${WRKSRC}/Dooble ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
@@ -29,9 +32,13 @@ do-install:
 		${INSTALL_DATA} ${WRKSRC}/Icons/Logo/dooble.png ${STAGEDIR}${PREFIX}/share/pixmaps/dooble.png
 		${MKDIR} ${STAGEDIR}${QTWEBENGINE_DICTIONARIES}
 		${INSTALL_DATA} ${WRKSRC}/qtwebengine_dictionaries/*.bdic ${STAGEDIR}${QTWEBENGINE_DICTIONARIES}
-		desktop-file-edit --remove-category=Web --add-category=Network --add-category=WebBrowser ${WRKSRC}/Distributions/dooble.desktop
-		desktop-file-edit --set-key=Exec --set-value="/usr/bin/env QTWEBENGINE_DICTIONARIES_PATH=${QTWEBENGINE_DICTIONARIES} ${PREFIX}/bin/${PORTNAME}" ${WRKSRC}/Distributions/dooble.desktop
-		desktop-file-edit --set-icon=${PREFIX}/share/pixmaps/dooble.png ${WRKSRC}/Distributions/dooble.desktop
+		desktop-file-edit \
+			--remove-category=Web \
+			--add-category=Network \
+			--add-category=WebBrowser \
+			--set-key=Exec --set-value="/usr/bin/env QTWEBENGINE_DICTIONARIES_PATH=${QTWEBENGINE_DICTIONARIES} ${PREFIX}/bin/${PORTNAME}" \
+			--set-icon=${PREFIX}/share/pixmaps/dooble.png \
+			${WRKSRC}/Distributions/dooble.desktop
 		${INSTALL_DATA} ${WRKSRC}/Distributions/dooble.desktop ${STAGEDIR}${PREFIX}/share/applications/dooble.desktop
 
 .include <bsd.port.mk>

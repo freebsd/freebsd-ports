@@ -77,7 +77,6 @@ share/man/man1/uade123.1.gz
 %%DATADIR%%/players/Janne_Salmijarvi_Optimizer
 %%DATADIR%%/players/JasonBrooke
 %%DATADIR%%/players/JasonPage
-%%DATADIR%%/players/JasonPage_JP
 %%DATADIR%%/players/JeroenTel
 %%DATADIR%%/players/JesperOlsen
 %%DATADIR%%/players/JesperOlsen_EP
@@ -90,7 +89,7 @@ share/man/man1/uade123.1.gz
 %%DATADIR%%/players/KrisHatlelid
 %%DATADIR%%/players/Laxity
 %%DATADIR%%/players/LegglessMusicEditor
-%%DATADIR%%/players/Lionheart_Game
+%%DATADIR%%/players/Protracker4
 %%DATADIR%%/players/MCMD
 %%DATADIR%%/players/MED
 %%DATADIR%%/players/MIDI-Loriciel

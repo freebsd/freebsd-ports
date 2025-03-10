@@ -60,14 +60,14 @@ lib/libboinc_api.a
 lib/libboinc_api.so
 lib/libboinc_api.so.8
 lib/libboinc_api.so.8.0.2
-lib/libboinc_crypt.a
+%%CLIENT%%lib/libboinc_crypt.a
 lib/libboinc_opencl.a
 lib/libboinc_opencl.so
 lib/libboinc_opencl.so.8
 lib/libboinc_opencl.so.8.0.2
 libdata/pkgconfig/libboinc.pc
 libdata/pkgconfig/libboinc_api.pc
-libdata/pkgconfig/libboinc_crypt.pc
+%%CLIENT%%libdata/pkgconfig/libboinc_crypt.pc
 libdata/pkgconfig/libboinc_opencl.pc
 %%X11%%lib/libboinc_graphics2.a
 %%X11%%lib/libboinc_graphics2.so
@@ -236,7 +236,7 @@ libdata/pkgconfig/libboinc_opencl.pc
 %%MANAGER%%share/pixmaps/boincmgr.32x32.png
 %%MANAGER%%share/pixmaps/boincmgr.48x48.png
 %%X11%%libdata/pkgconfig/libboinc_graphics2.pc
-%%X11%%share/applications/boinc.desktop
+%%MANAGER%%%%X11%%share/applications/boinc.desktop
 %%SKINS%%share/boinc/skins/Makefile
 %%SKINS%%share/boinc/skins/Makefile.am
 %%SKINS%%share/boinc/skins/Makefile.in

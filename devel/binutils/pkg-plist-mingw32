@@ -52,6 +52,7 @@ share/man/man1/%%BUTARGET%%-windres.1.gz
 %%BUTARGET%%/lib/ldscripts/i386pe.xa
 %%BUTARGET%%/lib/ldscripts/i386pe.xbn
 %%BUTARGET%%/lib/ldscripts/i386pe.xe
+%%BUTARGET%%/lib/ldscripts/i386pe.xer
 %%BUTARGET%%/lib/ldscripts/i386pe.xn
 %%BUTARGET%%/lib/ldscripts/i386pe.xr
 %%BUTARGET%%/lib/ldscripts/i386pe.xu

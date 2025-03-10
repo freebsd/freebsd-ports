@@ -12,9 +12,9 @@ WWW=		http://ozark.hendrix.edu/~burch/logisim/
 
 LICENSE=	GPLv2
 
+USES=		java
+
 NO_BUILD=	yes
-USE_JAVA=	yes
-JAVA_RUN=	yes
 
 PLIST_FILES=	${DATADIR_REL}/${PORTNAME}-generic-${PORTVERSION}${EXTRACT_SUFX} \
 		bin/${PORTNAME}

@@ -1,5 +1,5 @@
 PORTNAME=	chessx
-DISTVERSION=	1.6.0
+DISTVERSION=	1.6.2
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${DISTVERSION}
 
@@ -32,6 +32,9 @@ CRAFTY_RUN_DEPENDS=	crafty:games/crafty
 STOCKFISH_RUN_DEPENDS=	stockfish:games/stockfish
 
 .include <bsd.port.pre.mk>
+
+post-extract:
+	@${MV} ${WRKDIR}/chessx-master ${WRKSRC}
 
 post-patch:
 .if ${COMPILER_TYPE} == clang

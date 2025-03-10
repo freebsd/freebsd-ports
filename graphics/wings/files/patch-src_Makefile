@@ -1,13 +1,11 @@
-diff --git src/Makefile src/Makefile
-index 234f075e..bf82dafc 100644
---- src/Makefile
-+++ src/Makefile
-@@ -147,7 +147,7 @@ APP_TARGET = $(EBIN)/$(APP_FILE)
+--- src/Makefile.orig	2024-11-09 21:47:38.540263000 +0100
++++ src/Makefile	2024-11-09 21:48:11.155612000 +0100
+@@ -147,7 +147,7 @@
  # ----------------------------------------------------
  # FLAGS
  # ----------------------------------------------------
--ERL_COMPILE_FLAGS += +nowarn_match_float_zero -Werror -I ../.. -I../_deps $(TYPE_FLAGS) -pa $(WINGS_INTL)
-+ERL_COMPILE_FLAGS += +nowarn_match_float_zero -I ../.. -I../_deps -I .. $(TYPE_FLAGS) -pa $(WINGS_INTL)
+-ERL_COMPILE_FLAGS += -Werror -I ../.. -I../_deps $(TYPE_FLAGS) -pa $(WINGS_INTL)
++ERL_COMPILE_FLAGS += -Werror -I ../.. -I../_deps -I .. $(TYPE_FLAGS) -pa $(WINGS_INTL)
  
  # ----------------------------------------------------
  # Targets

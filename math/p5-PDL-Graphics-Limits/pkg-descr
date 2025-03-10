@@ -1,0 +1,2 @@
+PDL::Graphics::Limits provides functions to derive limits for data for display
+purposes.

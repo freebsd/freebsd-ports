@@ -1,7 +1,7 @@
 PORTNAME=	gitui
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.26.3	# After update, `make patch` and `make cargo-crates > Makefile.crates` to avoid fetching vendored openssl-src
-PORTREVISION=	1
+DISTVERSION=	0.27.0	# After update, `make patch` and `make cargo-crates > Makefile.crates` to avoid fetching vendored openssl-src
+PORTREVISION=	2
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -34,13 +34,10 @@ BINARY_ALIAS=	python3=${PYTHON_CMD} # xcb requires python3
 
 # Fix build on armv7, i386 and powerpc
 # sys-info-0.9.1 crate issue: https://github.com/FillZpp/sys-info-rs/issues/80
-post-patch:
+xpost-patch:
 	@${REINPLACE_CMD} \
 	-e '/get_cpu/s|unsigned long|uint64_t|' \
 	-e '/get_proc_total/s|unsigned long|uint64_t|' \
 	${WRKSRC}/cargo-crates/sys-info-0.9.1/c/*.[ch]
-
-post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>

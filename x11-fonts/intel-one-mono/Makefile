@@ -1,26 +1,26 @@
 PORTNAME=	intel-one-mono
-DISTVERSIONPREFIX=	V
-DISTVERSION=	1.3.0
+DISTVERSION=	1.4.0
 CATEGORIES=	x11-fonts
+MASTER_SITES=	https://github.com/intel/${PORTNAME}/releases/download/V${DISTVERSION}/
+DISTFILES=	otf${EXTRACT_SUFX} ttf${EXTRACT_SUFX}
+DIST_SUBDIR=	${PORTNAME}/${DISTVERSION}
 
 MAINTAINER=	dz@dolik.dev
 COMMENT=	Intel One Mono font
 
 LICENSE=	OFL11
-LICENSE_FILE=	${WRKSRC}/OFL.txt
+LICENSE_FILE=	${WRKSRC}/ttf/OFL.txt
 
-USES=		fonts
+USES=		fonts zip
 FONTNAME=	${PORTNAME:C/-//}
-USE_GITHUB=	yes
-GH_ACCOUNT=	intel
 
 NO_ARCH=	yes
 NO_BUILD=	yes
+NO_WRKSUBDIR=	yes
 
 do-install:
 	${MKDIR} ${STAGEDIR}${FONTSDIR}
-.for _format in otf ttf
-	${INSTALL_DATA} ${WRKSRC}/fonts/${_format}/*.${_format} ${STAGEDIR}${FONTSDIR}
-.endfor
+	${INSTALL_DATA} ${WRKSRC}/otf/*.otf  ${STAGEDIR}${FONTSDIR}
+	${INSTALL_DATA} ${WRKSRC}/ttf/*.ttf  ${STAGEDIR}${FONTSDIR}
 
 .include <bsd.port.mk>

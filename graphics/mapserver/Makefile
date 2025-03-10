@@ -1,7 +1,8 @@
 PORTNAME=	mapserver
-DISTVERSION=	8.2.1
+DISTVERSION=	8.4.0
 CATEGORIES=	graphics www geography
-MASTER_SITES=	https://download.osgeo.org/${PORTNAME}/
+MASTER_SITES=	https://download.osgeo.org/${PORTNAME}/ \
+		https://github.com/MapServer/MapServer/releases/download/rel-${DISTVERSION:S|.|-|g}/
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	System for developing web-based GIS applications

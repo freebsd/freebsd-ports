@@ -1,0 +1,7 @@
+A high performance csv viewer with cjk/emoji support
+
+Small and fast.
+Memory efficient.
+Correctly align CJK and emoji characters.
+Support tsv and custom delimiters.
+Support different styles, including markdown table.

@@ -9,17 +9,13 @@ WWW=		https://edu.kde.org/applications/all/parley
 BUILD_DEPENDS=	${LOCALBASE}/share/xsl/docbook/html/docbook.xsl:textproc/docbook-xsl \
 		docbook-xml>0:textproc/docbook-xml
 
-USES=		cmake desktop-file-utils gettext gnome kde:5 qt:5 tar:xz xorg
+USES=		cmake desktop-file-utils gettext gnome kde:6 qt:6 tar:xz xorg
 USE_GNOME=	libxml2 libxslt
-USE_KDE=	attica auth codecs completion configwidgets coreaddons config \
-		crash doctools i18n jobwidgets kcmutils kio newstuff \
-		notifications kross khtml service solid sonnet textwidgets \
-		widgetsaddons windowsystem xmlgui \
-		libkeduvocdocument \
+USE_KDE=	attica auth codecs completion config configwidgets coreaddons \
+		crash doctools i18n jobwidgets kcmutils kio libkeduvocdocument \
+		newstuff sonnet textwidgets widgetsaddons windowsystem xmlgui \
 		ecm:build
-USE_QT=		concurrent core dbus declarative gui location network multimedia \
-		printsupport script svg webchannel webengine widgets xml \
-		buildtools:build qmake:build
+USE_QT=		base multimedia webengine
 USE_XORG=	ice sm x11 xext xrender
 
 OPTIONS_DEFINE=	DOCS

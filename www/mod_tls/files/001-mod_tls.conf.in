@@ -1,0 +1,21 @@
+# To enable, uncomment the LoadModule line
+
+# LoadModule tls_module %%APACHE_MODDIR%%/mod_tls.so
+
+<IfModule tls_module>
+    TLSEngine 443
+    TLSStrictSNI on
+</IfModule>
+
+# Switching from mod_ssl to mod_tls
+#
+# Replace the mod_ssl config
+#
+#     SSLEngine on
+#     SSLCertificateFile file_with_certificate.pem
+#     SSLCertificateKeyFile file_with_key.pem
+#
+# with
+#
+#     TLSEngine 443
+#     TLSCertificate file_with_certificate.pem file_with_key.pem

@@ -18,9 +18,7 @@ BUILD_DEPENDS+=	opam-installer:devel/ocaml-opam \
 		${LOCALBASE}/${OCAML_SITELIBDIR}/topkg/META:devel/ocaml-topkg \
 		${LOCALBASE}/${OCAML_SITELIBDIR}/uchar/META:devel/ocaml-uchar
 
-USES=		tar:tbz
-USE_OCAML=	yes
-USE_OCAML_FINDLIB=	yes
+USES=		ocaml:findlib tar:tbz
 
 OPTIONS_DEFINE=	DOCS
 

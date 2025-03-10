@@ -1,7 +1,7 @@
 PORTNAME=	librnd
-DISTVERSION=	4.0.1
+DISTVERSION=	4.3.1
 CATEGORIES=	cad
-MASTER_SITES=	http://repo.hu/projects/${PORTNAME}/releases/
+MASTER_SITES=	http://www.repo.hu/projects/${PORTNAME}/releases/
 
 MAINTAINER=	hasdalcodes@gmail.com
 COMMENT=	Flexible, modular two-dimensional CAD engine
@@ -25,7 +25,7 @@ CONFIGURE_ARGS=	--all=plugin --plugin-hid_remote \
 
 TEST_TARGET=	test
 BINARY_ALIAS=	make=${MAKE_CMD}
-PLIST_SUB=	DISTVERSION=${DISTVERSION}
+PLIST_SUB=	SOVERSION=${DISTVERSION}
 
 OPTIONS_DEFINE=	DOCS GD MOTIF GTK2 GTK2GL GTK4 STROKE WGET
 OPTIONS_DEFAULT=	GD GTK2 GTK2GL STROKE WGET
@@ -58,6 +58,7 @@ GTK4_USES=	gl gnome
 GTK4_USE=	gl=gl,glu gnome=cairo,gdkpixbuf2,gtk40
 GTK4_CONFIGURE_OFF=	--disable-hid_gtk4_gl
 
+MOTIF_BROKEN=	Fails to build
 MOTIF_USES=	motif
 MOTIF_USE=	xorg=xt,x11,xinerama,xrender
 MOTIF_CONFIGURE_OFF=	--disable-hid_lesstif
@@ -67,6 +68,13 @@ STROKE_CONFIGURE_OFF=	--disable-stroke
 
 WGET_RUN_DEPENDS=	wget:ftp/wget
 WGET_CONFIGURE_OFF=	--disable-lib_wget
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/*.so
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/librnd4/plugins/*.so
+.for l in puplug sphash scconfig/cquote scconfig/sccbox
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/librnd4/${l}
+.endfor
 
 .include <bsd.port.pre.mk>
 

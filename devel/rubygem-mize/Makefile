@@ -1,5 +1,5 @@
 PORTNAME=	mize
-PORTVERSION=	0.6.0
+PORTVERSION=	0.6.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -8,6 +8,7 @@ COMMENT=	Memoziation for methods and functions for Ruby
 WWW=		https://github.com/flori/mize
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		gem
 

@@ -1,0 +1,9 @@
+PDL::Graphics::IIS provides an interface to any image display 'device' which
+support the 'IIS protocol' - viz the SAOimage and Ximtool X-windows programs,
+the old SunView imtool program and presumably even the original IIS CRT itself
+if they aren't all in museums!
+
+These programs should be familiar to astronomers - they are used by the common
+IRAF system.
+
+Non-astronomers may find they quite nifty for displaying 2D data.

@@ -1,0 +1,7 @@
+FLEXI-STREAMS provides "virtual" bivalent streams that can be layered on top
+of real binary or bivalent streams.  These streams enable reading and writing
+of character data in various single- or multi-octet encodings, which can be
+dynamically changed.  The package also includes in-memory binary streams,
+similar to string streams, for efficient handling of binary data.
+
+This package is compiled with SBCL.

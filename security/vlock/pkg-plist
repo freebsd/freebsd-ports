@@ -6,7 +6,6 @@ share/man/man8/vlock-main.8.gz
 %%VLOCKSCRIPTS%%lib/vlock/scripts/example_script
 %%VLOCKSCRIPTS%%lib/vlock/scripts/mplayer
 lib/vlock/modules/all.so
-%%CACASAVER%%lib/vlock/modules/caca.so
 @mode 4711
 sbin/vlock-main
 @mode

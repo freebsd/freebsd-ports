@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/content/public/common/content_switches.h.orig	2023-12-12 22:08:45 UTC
+--- src/3rdparty/chromium/content/public/common/content_switches.h.orig	2024-07-03 01:14:49 UTC
 +++ src/3rdparty/chromium/content/public/common/content_switches.h
-@@ -116,6 +116,7 @@ CONTENT_EXPORT extern const char kEnableLogging[];
+@@ -115,6 +115,7 @@ CONTENT_EXPORT extern const char kEnableLogging[];
  CONTENT_EXPORT extern const char kEnableIsolatedWebAppsInRenderer[];
  CONTENT_EXPORT extern const char kEnableLCDText[];
  CONTENT_EXPORT extern const char kEnableLogging[];
@@ -8,7 +8,7 @@
  CONTENT_EXPORT extern const char kEnableNetworkInformationDownlinkMax[];
  CONTENT_EXPORT extern const char kEnableCanvas2DLayers[];
  CONTENT_EXPORT extern const char kEnablePluginPlaceholderTesting[];
-@@ -267,7 +268,7 @@ CONTENT_EXPORT extern const char kRendererWaitForJavaD
+@@ -271,7 +272,7 @@ CONTENT_EXPORT extern const char kPreventResizingConte
  
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.

@@ -14,12 +14,17 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.md
 USES=		ocaml:dune
 USE_GITHUB=	yes
 GH_ACCOUNT=	hannesm
-USE_OCAML=	yes
 
 OPTIONS_DEFINE=	DOCS
 
 DOCSDIR=	${OCAML_DOCSDIR}/${PORTNAME}
 PORTDOCS=	CHANGES.md LICENSE.md README.md
+
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == powerpc
+USE_BINUTILS=	yes
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} \

@@ -1,0 +1,9 @@
+Sphinx extension for embedding network-related diagrams using nwdiag.
+
+For now, nwdiag supports the following diagrams:
+
+  - Logical network diagram
+  - Rack structure diagram
+  - Packet structure diagram
+
+For more details, see online documentation at http://blockdiag.com/.

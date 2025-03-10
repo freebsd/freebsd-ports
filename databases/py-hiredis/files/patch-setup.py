@@ -1,16 +1,24 @@
---- setup.py.orig	2021-03-28 15:11:23 UTC
+--- setup.py.orig	2024-07-19 12:05:48 UTC
 +++ setup.py
-@@ -11,9 +11,10 @@ def version():
-   return module.__version__
+@@ -18,8 +18,7 @@ def get_sources():
  
- ext = Extension("hiredis.hiredis",
--  sources=sorted(glob.glob("src/*.c") +
--                 ["vendor/hiredis/%s.c" % src for src in ("alloc", "read", "sds")]),
--  include_dirs=["vendor"])
-+  sources=sorted(glob.glob("src/*.c")),
-+  include_dirs=["%%LOCALBASE%%/include"],
-+  library_dirs=["%%LOCALBASE%%/lib"],
-+  libraries=["hiredis"])
+ 
+ def get_sources():
+-    hiredis_sources = ("alloc", "async", "hiredis", "net", "read", "sds", "sockcompat")
+-    return sorted(glob.glob("src/*.c") + ["vendor/hiredis/%s.c" % src for src in hiredis_sources])
++    return sorted(glob.glob("src/*.c"))
+ 
+ 
+ def get_linker_args():
+@@ -47,8 +46,9 @@ ext = Extension("hiredis.hiredis",
+                 sources=get_sources(),
+                 extra_compile_args=get_compiler_args(),
+                 extra_link_args=get_linker_args(),
+-                libraries=get_libraries(),
+-                include_dirs=["vendor"])
++                include_dirs=["/usr/local/include"],
++                library_dirs=["/usr/local/lib"],
++                libraries=["hiredis"])
  
  setup(
-   name="hiredis",
+     name="hiredis",

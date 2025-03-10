@@ -1,5 +1,5 @@
 PORTNAME=	pycharm-pro
-DISTVERSION=	2024.1.4
+DISTVERSION=	2024.3.4
 CATEGORIES=	devel java python
 MASTER_SITES=	https://download.jetbrains.com/python/
 DISTNAME=	pycharm-professional-${PORTVERSION}
@@ -13,38 +13,46 @@ LICENSE_NAME=	Subscription license agreement for business and organizations
 LICENSE_TEXT=	See: https://www.jetbrains.com/store/license.html
 LICENSE_PERMS=	no-dist-mirror no-dist-sell pkg-mirror no-pkg-sell auto-accept
 
+ONLY_FOR_ARCH=	amd64
+
 BUILD_DEPENDS=	jna>0:devel/jna
 RUN_DEPENDS=	intellij-fsnotifier>0:java/intellij-fsnotifier \
 		jetbrains-pty4j>=0.12.13:devel/jetbrains-pty4j \
 		jetbrains-restarter>=233.11799.241:devel/jetbrains-restarter \
 		jetbrains-sqlite>=232.8660.185:devel/jetbrains-sqlite
 
-USES=		cpe desktop-file-utils python:run shebangfix
+USES=		cpe desktop-file-utils java python:run shebangfix
+SHEBANG_FILES=	plugins/python-ce/helpers/pycodestyle.py \
+		plugins/python-ce/helpers/pycodestyle-2.10.0.py \
+		plugins/python-ce/helpers/py3only/docutils/utils/math/math2html.py \
+		plugins/python-ce/helpers/py3only/docutils/utils/smartquotes.py \
+		plugins/python-ce/helpers/py3only/docutils/writers/odf_odt/prepstyles.py \
+		plugins/python-ce/helpers/typeshed/scripts/generate_proto_stubs.sh \
+		plugins/python-ce/helpers/typeshed/scripts/sync_s2clientprotocol_protobuf_stubs.sh \
+		plugins/python-ce/helpers/typeshed/scripts/sync_tensorflow_protobuf_stubs.sh
 
 CPE_VENDOR=	jetbrains
-USE_JAVA=	yes
 JAVA_VERSION=	17+
-SHEBANG_FILES=	plugins/python/helpers/pycodestyle-2.10.0.py \
-		plugins/python/helpers/pycodestyle.py \
-		plugins/python/helpers/typeshed/scripts/sync_tensorflow_protobuf_stubs.sh
 
-# Remove the bundled native Pty4J support libraries, they are replaced
-# by devel/jetbrains-pty4j
-# Remove bundled linux-only JRE
+# Ignore:
+# - non-native binaries
+# - the bundled native Pty4J support libraries, they are replaced by java/jetbrains-pty4j
+# - bundled linux-only JRE
 EXTRACT_AFTER_ARGS=	--exclude pycharm-${PORTVERSION}/bin/*fsnotifier* \
 			--exclude pycharm-${PORTVERSION}/bin/*.so \
 			--exclude pycharm-${PORTVERSION}/bin/repair \
+			--exclude pycharm-${PORTVERSION}/bin/restarter \
+			--exclude pycharm-${PORTVERSION}/bin/pycharm \
 			--exclude pycharm-${PORTVERSION}/lib/*.so \
 			--exclude pycharm-${PORTVERSION}/plugins/*.so \
 			--exclude pycharm-${PORTVERSION}/plugins/cwm-plugin/quiche-native \
-			--exclude pycharm-${PORTVERSION}/plugins/python/helpers/pydev/pydevd_attach_to_process \
+			--exclude pycharm-${PORTVERSION}/plugins/python-ce/helpers/pydev/pydevd_attach_to_process \
 			--exclude pycharm-${PORTVERSION}/lib/pty4j \
 			--exclude pycharm-${PORTVERSION}/jbr \
 			--no-same-owner --no-same-permissions
 
 WRKSRC=		${WRKDIR}/pycharm-${PORTVERSION}
 
-NO_ARCH=	yes
 NO_BUILD=	yes
 
 .include "${.CURDIR}/../../java/intellij/common.mk"

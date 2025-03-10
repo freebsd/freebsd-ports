@@ -1,5 +1,6 @@
 PORTNAME=		python-axolotl-curve25519
 PORTVERSION=		0.4.1
+PORTREVISION=	1
 DISTVERSIONSUFFIX=	.post2
 CATEGORIES=		security python
 MASTER_SITES=		PYPI
@@ -16,7 +17,7 @@ USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.pre.mk>
 
-.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400079 || ( ${OSVERSION} >= 1302505 && ${OSVERSION} < 1400000 ))
+.if ${OPSYS} == FreeBSD
 CFLAGS+=       -Wno-error=int-conversion
 .endif
 

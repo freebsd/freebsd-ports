@@ -17,13 +17,9 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libpcre.so:devel/pcre \
-		libtiff.so:graphics/tiff \
-		libHermes.so:graphics/Hermes \
-		libpng.so:graphics/png \
-		libgif.so:graphics/giflib \
 		libwraster.so:x11-wm/libwraster
 
-USES=		iconv jpeg xorg
+USES=		iconv xorg
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-libwraster=${LOCALBASE} \
 		--with-libpcre=${LOCALBASE} \
@@ -32,8 +28,6 @@ CONFIGURE_ARGS=	--with-libwraster=${LOCALBASE} \
 		--with-xpm-libraries=${LOCALBASE}
 USE_XORG=	x11 xext xpm sm ice
 LDFLAGS+=	-lm
-
-WRKSRC=		${WRKDIR}/wmweather+-${PORTVERSION}
 
 SUB_FILES=	pkg-message
 

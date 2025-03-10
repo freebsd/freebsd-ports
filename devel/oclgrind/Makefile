@@ -5,7 +5,7 @@ PORTREVISION=	0
 PORTEPOCH=	1
 CATEGORIES=	devel
 
-MAINTAINER=	jmd@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SPIR interpreter and virtual OpenCL device simulator
 WWW=		https://github.com/jrprice/Oclgrind
 

@@ -29,6 +29,8 @@ OPTIONS_DEFINE=	PERL JAVA DOCS
 OPTIONS_SUB=	yes
 PERL_DESC=	Build perl bindings
 JAVA_DESC=	Build Java bindings
+
+JAVA_USES=		java
 PERL_CONFIGURE_WITH=	perl=${PERL}
 
 PORTDOCS=	*
@@ -38,9 +40,6 @@ PERL_USES=	perl5
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MJAVA}
-USE_JAVA=	yes
-JAVA_BUILD=	yes
-JAVA_RUN=	yes
 CONFIGURE_ARGS+=--with-java=${JAVA_HOME}
 .else
 CONFIGURE_ARGS+=--with-java=no

@@ -13,10 +13,9 @@ WWW=		https://sourceforge.net/projects/shelled/
 
 RUN_DEPENDS=	eclipse:java/eclipse
 
-USES=		zip
+USES=		java zip
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
-USE_JAVA=	yes
 JAVA_OS=	native
 
 do-install:

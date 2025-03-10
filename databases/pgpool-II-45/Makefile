@@ -1,5 +1,5 @@
 PORTNAME=	pgpool-II
-PORTVERSION=	4.5.0
+DISTVERSION=	4.5.6
 CATEGORIES=	databases
 MASTER_SITES=	http://www.pgpool.net/mediawiki/images/
 PKGNAMESUFFIX=	-45
@@ -11,7 +11,7 @@ WWW=		https://pgpool.net/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		gmake libtool pgsql:12+
+USES=		gmake libtool pgsql
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	pgpool
 
@@ -19,7 +19,7 @@ GNU_CONFIGURE=	yes
 
 CONFLICTS_INSTALL=	pgpool-II-[0-9][0-9] pgpool-II[0-9][0-9] # etc/escalation.sh.sample etc/failover.sh.sample etc/pcp.conf.sample
 
-PORTSCOUT=	limit:^4.4.[0-9]*
+PORTSCOUT=	limit:^4.5.[0-9]*
 
 PORTDOCS=	*
 

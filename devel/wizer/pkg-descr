@@ -1,0 +1,5 @@
+Wizer instantiates your WebAssembly module, executes its initialization
+function, and then snapshots the initialized state out into a new WebAssembly
+module. Now you can use this new, pre-initialized WebAssembly module to hit the
+ground running, without making your users wait for that first-time set up code
+to complete.

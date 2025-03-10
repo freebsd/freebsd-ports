@@ -1,6 +1,5 @@
 PORTNAME=	siege
-PORTVERSION=	4.1.6
-PORTREVISION=	1
+DISTVERSION=	4.1.7
 CATEGORIES=	benchmarks www
 MASTER_SITES=	http://download.joedog.org/siege/ \
 		http://fossies.org/linux/www/
@@ -14,7 +13,6 @@ LICENSE=	GPLv2
 USES=		autoreconf libtool perl5 ssl
 
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--disable-shared \
 		--sysconfdir=${ETCDIR} \
 		--with-ssl=${OPENSSLBASE}
@@ -22,7 +20,7 @@ CONFIGURE_ENV=	PERL="${PERL}"
 
 .include <bsd.port.options.mk>
 
-.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400079 || ( ${OSVERSION} >= 1302505 && ${OSVERSION} < 1400000 ))
+.if ${OPSYS} == FreeBSD
 CFLAGS+=	-Wno-error=int-conversion
 .endif
 

@@ -1,6 +1,6 @@
---- Makefile.PL.orig	2020-02-21 21:14:44.416901000 +0100
-+++ Makefile.PL	2020-02-21 21:15:41.844326000 +0100
-@@ -163,25 +163,15 @@
+--- Makefile.PL.orig	2024-08-04 21:46:10 UTC
++++ Makefile.PL
+@@ -164,25 +164,15 @@ sub constants {
  
      # for some reason, initialising variables from the global scope doesn't work
      %variables = (
@@ -27,7 +27,7 @@
      );
  
      # allow variables defined on command line to override defaults
-@@ -243,14 +233,9 @@
+@@ -244,14 +234,9 @@ config_install : pure_install
  	$(NOECHO) $(CHMOD) $(PERM_DIR) $(DESTDIR)$(SYSCONFDIR)
  	for config in agent.cfg $(shell cd etc; echo *-plugin.cfg ); \
  	do \

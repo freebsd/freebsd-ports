@@ -20,6 +20,7 @@ bin/auto-os-release
 bin/auto-os-variant
 bin/auto-ostype
 bin/auto-package-installed
+bin/auto-physmem
 bin/auto-pkg-branch
 bin/auto-pkg-latest
 bin/auto-pkgsrc-branch
@@ -57,6 +58,7 @@ sbin/auto-automount-setup
 sbin/auto-binary-pkgsrc-setup
 sbin/auto-change-group-gid
 sbin/auto-change-group-ownership
+sbin/auto-change-login-class
 sbin/auto-change-nfsd-count
 sbin/auto-change-ownership
 sbin/auto-change-primary-group
@@ -64,7 +66,6 @@ sbin/auto-change-uid
 sbin/auto-clean-disk
 sbin/auto-clean-ports
 sbin/auto-clean-tmp
-sbin/auto-cuda-install
 sbin/auto-cups-setup
 sbin/auto-denyhosts-remove-ip
 sbin/auto-denyhosts-setup
@@ -172,6 +173,9 @@ sbin/auto-xdm-toggle
 %%DATADIR%%/rc.local_early
 share/man/man8/auto-add-swap.8.gz
 share/man/man8/auto-admin.8.gz
+share/man/man8/auto-change-login-class.8.gz
 share/man/man8/auto-image2dev.8.gz
+share/man/man8/auto-physmem.8.gz
 share/man/man8/auto-pkgsrc-non-removable.8.gz
 share/man/man8/auto-update-system.8.gz
+share/man/man8/auto-user-admin.8.gz

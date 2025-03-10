@@ -1,4 +1,4 @@
---- scripts/xdg-screensaver.in.orig	2018-05-10 15:02:31 UTC
+--- scripts/xdg-screensaver.in.orig	2024-02-06 01:55:07 UTC
 +++ scripts/xdg-screensaver.in
 @@ -27,7 +27,9 @@ _USAGE
  #@xdg-utils-common@
@@ -11,7 +11,7 @@
     # We can securely move files in /tmp with mv -T
     DEBUG 1 "mv -T available"
     MV="mv -T"
-@@ -378,7 +380,8 @@ screensaver_kde3()
+@@ -363,7 +365,8 @@ xset_screensaver_timeout()
  
  xset_screensaver_timeout()
  {

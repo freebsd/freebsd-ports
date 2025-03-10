@@ -627,6 +627,7 @@ bin/zsh-%%ZSH_VER%%
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_make
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_man
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_md5sum
+%%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_mdo
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_mencal
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_mh
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_mime_types

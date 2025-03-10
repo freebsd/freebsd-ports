@@ -1,0 +1,20 @@
+--- Makefile.in.orig	2024-04-04 09:13:52 UTC
++++ Makefile.in
+@@ -5335,7 +5335,7 @@ ADOCFILES_COMMON = man-common/bugreports.adoc man-comm
+ 	man-common/footer-lib.adoc man-common/help-version.adoc \
+ 	man-common/in-bytes.adoc man-common/manpage-stub.adoc \
+ 	man-common/translation.adoc
+-MANPAGES = lib/terminal-colors.d.5 $(am__append_20) $(am__append_44) \
++MANPAGES = $(am__append_20) $(am__append_44) \
+ 	$(am__append_91) $(am__append_94) $(am__append_97) \
+ 	$(am__append_100) $(am__append_103) $(am__append_106) \
+ 	$(am__append_109) $(am__append_112) $(am__append_115) \
+@@ -5436,7 +5436,7 @@ CLEANFILES = $(am__append_336) $(PATHFILES) $(EXTRA_LT
+ 	disk-utils/meson.build login-utils/meson.build \
+ 	$(PATHFILES:=.in) $(am__append_667) $(am__append_670)
+ CLEANFILES = $(am__append_336) $(PATHFILES) $(EXTRA_LTLIBRARIES)
+-SUBDIRS = po $(am__append_3) $(am__append_41) $(am__append_63) \
++SUBDIRS = $(am__append_3) $(am__append_41) $(am__append_63) \
+ 	$(am__append_73) $(am__append_87)
+ RCS_FIND_IGNORE = \( -name SCCS -o -name BitKeeper -o -name .svn -o \
+ 		-name CVS -o -name .pc -o -name .hg -o -name .git \) -prune -o

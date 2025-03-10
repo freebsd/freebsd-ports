@@ -1,7 +1,14 @@
 include/libssh2.h
 include/libssh2_publickey.h
 include/libssh2_sftp.h
-lib/libssh2.a
+lib/cmake/libssh2/FindLibgcrypt.cmake
+lib/cmake/libssh2/FindMbedTLS.cmake
+lib/cmake/libssh2/FindWolfSSL.cmake
+lib/cmake/libssh2/libssh2-config-version.cmake
+lib/cmake/libssh2/libssh2-config.cmake
+lib/cmake/libssh2/libssh2-targets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/libssh2/libssh2-targets.cmake
+%%STATIC%%lib/libssh2.a
 lib/libssh2.so
 lib/libssh2.so.1
 lib/libssh2.so.1.0.1
@@ -106,6 +113,7 @@ share/man/man3/libssh2_session_banner_get.3.gz
 share/man/man3/libssh2_session_banner_set.3.gz
 share/man/man3/libssh2_session_block_directions.3.gz
 share/man/man3/libssh2_session_callback_set.3.gz
+share/man/man3/libssh2_session_callback_set2.3.gz
 share/man/man3/libssh2_session_disconnect.3.gz
 share/man/man3/libssh2_session_disconnect_ex.3.gz
 share/man/man3/libssh2_session_flag.3.gz
@@ -146,6 +154,8 @@ share/man/man3/libssh2_sftp_open_ex.3.gz
 share/man/man3/libssh2_sftp_open_ex_r.3.gz
 share/man/man3/libssh2_sftp_open_r.3.gz
 share/man/man3/libssh2_sftp_opendir.3.gz
+share/man/man3/libssh2_sftp_posix_rename.3.gz
+share/man/man3/libssh2_sftp_posix_rename_ex.3.gz
 share/man/man3/libssh2_sftp_read.3.gz
 share/man/man3/libssh2_sftp_readdir.3.gz
 share/man/man3/libssh2_sftp_readdir_ex.3.gz

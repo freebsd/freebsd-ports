@@ -1,5 +1,5 @@
 PORTNAME=	git-cinnabar
-DISTVERSION=	0.7.0beta1
+DISTVERSION=	0.7.1
 CATEGORIES=	devel
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -16,7 +16,7 @@ RUN_DEPENDS=	git:devel/git
 USES=		cargo gmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	glandium
-GH_TUPLE=	git-for-windows:git:v2.46.0.windows.1:git/git-core
+GH_TUPLE=	git-for-windows:git:v2.48.1.windows.1:git/git-core
 DATADIR=	${PREFIX}/libexec/git-core
 PORTDATA=	*
 PORTDOCS=	README.md
@@ -24,7 +24,6 @@ PORTDOCS=	README.md
 OPTIONS_DEFINE=	DOCS
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 	${MKDIR} ${STAGEDIR}${DATADIR}
 	${MV} ${STAGEDIR}${PREFIX}/bin/${PORTNAME} ${STAGEDIR}${DATADIR}
 	${RLN} ${STAGEDIR}${DATADIR}/${PORTNAME} \

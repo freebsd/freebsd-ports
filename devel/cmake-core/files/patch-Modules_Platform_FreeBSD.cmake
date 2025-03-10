@@ -1,6 +1,6 @@
---- Modules/Platform/FreeBSD.cmake.orig	2022-04-10 15:22:59 UTC
+--- Modules/Platform/FreeBSD.cmake.orig	2024-11-06 13:41:37 UTC
 +++ Modules/Platform/FreeBSD.cmake
-@@ -26,4 +26,9 @@ foreach(type SHARED_LIBRARY SHARED_MODULE EXE)
+@@ -26,6 +26,11 @@ endforeach()
    set(CMAKE_${type}_LINK_DYNAMIC_C_FLAGS "-Wl,-Bdynamic")
  endforeach()
  
@@ -9,4 +9,6 @@
 +# Python3 version.
 +set(Python3_FIND_UNVERSIONED_NAMES FIRST)
 +
- include(Platform/UnixPaths)
+ 
+ # Features for LINK_GROUP generator expression
+ ## RESCAN: request the linker to rescan static libraries until there is

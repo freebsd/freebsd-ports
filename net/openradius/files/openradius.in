@@ -17,9 +17,9 @@
 name=openradius
 rcvar=openradius_enable
 
-load_rc_config ${name}
+load_rc_config $name
 
-: ${openradius_enable:=no}
+: ${openradius_enable:=NO}
 : ${openradius_flags=-o %%LOGFILE%%}
 
 command=%%PREFIX%%/sbin/radiusd

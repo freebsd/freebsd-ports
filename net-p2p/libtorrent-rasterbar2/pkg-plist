@@ -5,7 +5,6 @@ include/libtorrent/alert_types.hpp
 include/libtorrent/announce_entry.hpp
 include/libtorrent/assert.hpp
 include/libtorrent/aux_/alert_manager.hpp
-include/libtorrent/aux_/aligned_storage.hpp
 include/libtorrent/aux_/aligned_union.hpp
 include/libtorrent/aux_/alloca.hpp
 include/libtorrent/aux_/allocating_handler.hpp
@@ -278,6 +277,6 @@ lib/cmake/LibtorrentRasterbar/LibtorrentRasterbarTargets-%%CMAKE_BUILD_TYPE%%.cm
 lib/cmake/LibtorrentRasterbar/LibtorrentRasterbarTargets.cmake
 lib/libtorrent-rasterbar.so
 lib/libtorrent-rasterbar.so.2.0
-lib/libtorrent-rasterbar.so.2.0.10
+lib/libtorrent-rasterbar.so.2.0.11
 libdata/pkgconfig/libtorrent-rasterbar.pc
 share/cmake/Modules/FindLibtorrentRasterbar.cmake

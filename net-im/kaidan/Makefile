@@ -1,31 +1,31 @@
 PORTNAME=	kaidan
-DISTVERSION=	0.9.1
-PORTREVISION=	4
+DISTVERSION=	0.11.0
+PORTREVISION=	1
 CATEGORIES=	net-im kde
-MASTER_SITES=	KDE/unstable/${PORTNAME}
+MASTER_SITES=	KDE/unstable/${PORTNAME}/${DISTVERSION}
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	User-friendly XMPP client for every device
 WWW=		https://apps.kde.org/kaidan/
 
 LICENSE=	GPLv3+
-LICENSE_FILE=	${WRKSRC}/doc/licenses/gpl-3.0.txt
+LICENSE_FILE=	${WRKSRC}/LICENSES/GPL-3.0-or-later.txt
 
-BUILD_DEPENDS=	kquickimageeditor>0:graphics/kquickimageeditor
-LIB_DEPENDS=	libQXmppQt5.so:net-im/qxmpp@qt5 \
-		libZXing.so:textproc/zxing-cpp
-RUN_DEPENDS=	kquickimageeditor>0:graphics/kquickimageeditor
+BUILD_DEPENDS=	kquickimageeditor-qt6>0:graphics/kquickimageeditor
+LIB_DEPENDS=	libQXmppQt6.so:net-im/qxmpp \
+		libicuuc.so:devel/icu \
+		libxkbcommon.so:x11/libxkbcommon
+RUN_DEPENDS=	kquickimageeditor-qt6>0:graphics/kquickimageeditor
 
-USES=		cmake compiler:c++11-lang desktop-file-utils kde:5 pkgconfig \
-		qt:5 tar:xz xorg
-USE_KDE=	auth bookmarks codecs completion config configwidgets \
-		coreaddons itemviews jobwidgets kio kirigami-addons kirigami2 \
-		notifications qqc2-desktop-style service solid widgetsaddons \
-		windowsystem xmlgui \
+USES=		cmake compiler:c++23-lang desktop-file-utils gl kde:6 \
+		pkgconfig qt:6 tar:xz xorg
+USE_GL=		gl opengl # GLX
+USE_KDE=	completion config coreaddons crash jobwidgets kio \
+		kirigami-addons kirigami2 notifications prison \
+		qqc2-desktop-style service solid widgetsaddons \
 		ecm:build
-USE_QT=		concurrent core dbus declarative gui location multimedia network \
-		quickcontrols2 sql svg widgets xml \
-		buildtools:build qmake:build
+USE_QT=		base declarative location multimedia positioning svg \
+		tools:build
 USE_XORG=	x11
 
 .include <bsd.port.mk>

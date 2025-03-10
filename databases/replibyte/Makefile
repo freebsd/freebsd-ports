@@ -1,12 +1,13 @@
 PORTNAME=	replibyte
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.10.0
-PORTREVISION=	14
+PORTREVISION=	20
 CATEGORIES=	databases
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Seed your databases with your production data
-WWW=		https://www.replibyte.com/docs/introduction
+WWW=		https://www.replibyte.com/docs/introduction \
+		https://github.com/Qovery/replibyte
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/../LICENSE
@@ -390,8 +391,5 @@ OPENSSLINC=	/usr/include
 OPENSSLLIB=	/usr/lib
 
 PLIST_FILES=	bin/${PORTNAME}
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>

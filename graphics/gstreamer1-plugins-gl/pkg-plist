@@ -29,6 +29,7 @@ include/gstreamer-%%VERSION%%/gst/gl/gstgl_fwd.h
 include/gstreamer-%%VERSION%%/gst/gl/gstglapi.h
 include/gstreamer-%%VERSION%%/gst/gl/gstglbasefilter.h
 include/gstreamer-%%VERSION%%/gst/gl/gstglbasememory.h
+include/gstreamer-%%VERSION%%/gst/gl/gstglbasemixer.h
 include/gstreamer-%%VERSION%%/gst/gl/gstglbasesrc.h
 include/gstreamer-%%VERSION%%/gst/gl/gstglbuffer.h
 include/gstreamer-%%VERSION%%/gst/gl/gstglbufferpool.h
@@ -44,6 +45,7 @@ include/gstreamer-%%VERSION%%/gst/gl/gstglframebuffer.h
 include/gstreamer-%%VERSION%%/gst/gl/gstglfuncs.h
 include/gstreamer-%%VERSION%%/gst/gl/gstglmemory.h
 include/gstreamer-%%VERSION%%/gst/gl/gstglmemorypbo.h
+include/gstreamer-%%VERSION%%/gst/gl/gstglmixer.h
 include/gstreamer-%%VERSION%%/gst/gl/gstgloverlaycompositor.h
 include/gstreamer-%%VERSION%%/gst/gl/gstglquery.h
 include/gstreamer-%%VERSION%%/gst/gl/gstglrenderbuffer.h

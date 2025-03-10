@@ -1,0 +1,19 @@
+--- config.sample.yml.orig	2024-12-15 09:53:48 UTC
++++ config.sample.yml
+@@ -61,13 +61,13 @@ resources:
+ 
+ resources:
+     # all resources are subdirectories under this
+-    directory: data
++    directory: %%DATADIR%%/data
+ 
+     # campaigns are stored here
+-    campaigns_directory: campaigns
++    campaigns_directory: %%DATADIR%%/campaigns
+ 
+     # mods are stored here
+-    mods_directory: mods
++    mods_directory: %%DATADIR%%/mods
+ 
+ input:
+     # whether the screen will shake on a critical hit

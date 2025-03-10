@@ -373,6 +373,7 @@ share/man/man1/tofits.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/html/nav_g.png
 %%PORTDOCS%%%%DOCSDIR%%/html/nav_h.png
 %%PORTDOCS%%%%DOCSDIR%%/html/nav_hd.png
+%%PORTDOCS%%%%DOCSDIR%%/html/navtree.css
 %%PORTDOCS%%%%DOCSDIR%%/html/open.png
 %%PORTDOCS%%%%DOCSDIR%%/html/overview.html
 %%PORTDOCS%%%%DOCSDIR%%/html/pages.html
@@ -381,6 +382,7 @@ share/man/man1/tofits.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/html/plusd.svg
 %%PORTDOCS%%%%DOCSDIR%%/html/prj_8h.html
 %%PORTDOCS%%%%DOCSDIR%%/html/prj_8h_source.html
+%%PORTDOCS%%%%DOCSDIR%%/html/resize.js
 %%PORTDOCS%%%%DOCSDIR%%/html/search/all_0.js
 %%PORTDOCS%%%%DOCSDIR%%/html/search/all_1.js
 %%PORTDOCS%%%%DOCSDIR%%/html/search/all_10.js

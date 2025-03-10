@@ -1,5 +1,6 @@
 PORTNAME=	jsch
 PORTVERSION=	0.1.55
+PORTREVISION=	1
 CATEGORIES=	net java security
 MASTER_SITES=	SF
 
@@ -9,10 +10,8 @@ WWW=		http://www.jcraft.com/jsch
 
 LICENSE=	BSD3CLAUSE
 
-USES=		cpe zip
+USES=		cpe java:ant,run zip
 CPE_VENDOR=	jcraft
-USE_JAVA=	yes
-USE_ANT=	yes
 
 PLIST_FILES+=	%%JAVAJARDIR%%/${PORTNAME}.jar
 

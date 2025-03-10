@@ -1,9 +1,0 @@
---- pyproject.toml.orig	2024-05-23 14:30:00 UTC
-+++ pyproject.toml
-@@ -1,5 +1,5 @@
- [build-system]
--requires = ["setuptools>=42", "wheel", "scikit-build", "cmake>=3.17", "ninja", "typing_extensions"]
-+requires = ["setuptools>=42", "wheel", "scikit-build", "typing_extensions"]
- build-backend = "setuptools.build_meta"
- 
- 

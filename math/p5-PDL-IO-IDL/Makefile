@@ -1,0 +1,22 @@
+PORTNAME=	PDL-IO-IDL
+PORTVERSION=	2.098
+CATEGORIES=	math perl5
+MASTER_SITES=	CPAN
+PKGNAMEPREFIX=	p5-
+
+MAINTAINER=	sunpoet@FreeBSD.org
+COMMENT=	I/O of IDL Save Files
+WWW=		https://metacpan.org/dist/PDL-IO-IDL
+
+LICENSE=	ART10 GPLv1+
+LICENSE_COMB=	dual
+
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-PDL>=2.094:math/p5-PDL
+
+USES=		perl5
+USE_PERL5=	configure
+
+NO_ARCH=	yes
+
+.include <bsd.port.mk>

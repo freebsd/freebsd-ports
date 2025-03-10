@@ -1,7 +1,7 @@
 PORTNAME=	libnegf
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.1.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	science # chemistry
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -9,6 +9,10 @@ COMMENT=	Non Equilibrium Green's Functions library
 WWW=		https://github.com/libnegf/libnegf
 
 LICENSE=	GPLv3
+
+.if !exists(/usr/include/omp.h)
+BROKEN=		requires OpenMP support that is missing on this architecture
+.endif
 
 LIB_DEPENDS=	libmpi.so:net/mpich \
 		libopenblas.so:math/openblas

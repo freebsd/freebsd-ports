@@ -1,6 +1,6 @@
---- tools/deps.nim.orig	2023-08-02 16:00:39 UTC
+--- tools/deps.nim.orig	2025-02-06 01:49:40 UTC
 +++ tools/deps.nim
-@@ -20,25 +20,26 @@ proc execRetry(cmd: string) =
+@@ -20,28 +20,29 @@ proc cloneDependency*(destDirBase: string, url: string
  
  proc cloneDependency*(destDirBase: string, url: string, commit = commitHead,
                        appendRepoName = true, allowBundled = false) =
@@ -47,3 +47,6 @@
 +  #else:
 +  #  quit "FAILURE: " & destdir & " already exists but is not a git repo"
 +  quit "FAILURE: git operations now allowed!: " & destDirBase
+ 
+ proc updateSubmodules*(dir: string, allowBundled = false) =
+   if isGitRepo(dir):

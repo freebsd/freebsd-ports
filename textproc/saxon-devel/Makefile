@@ -13,13 +13,13 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	XSLT 2.0 / XPath 2.0 / XQuery 1.0 processor for Java
 WWW=		https://saxon.sourceforge.net/
 
+USES=		java zip
+
 OPTIONS_DEFINE=	JDOM DOM4J XOM DOCS
 JDOM_DESC=	Jdom support
 DOM4J_DESC=	dom4j support
 XOM_DESC=	XOM support
 
-USES=		zip
-USE_JAVA=	yes
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 

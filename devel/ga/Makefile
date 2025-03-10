@@ -1,6 +1,6 @@
 PORTNAME=	ga
 DISTVERSION=	5.8.2
-PORTREVISION=	3
+PORTREVISION=	5
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/GlobalArrays/ga/releases/download/v${DISTVERSION}/
 

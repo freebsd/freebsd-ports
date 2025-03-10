@@ -1,5 +1,6 @@
 PORTNAME=	jdom
 PORTVERSION=	1.1.1
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	java textproc
 MASTER_SITES=	http://www.jdom.org/dist/source/
@@ -10,9 +11,9 @@ WWW=		http://www.jdom.org/
 
 RUN_DEPENDS=	${JAVALIBDIR}/jaxen-jdom.jar:java/jaxen
 
-USE_JAVA=	yes
+USES=		java:ant,run
 JAVA_VERSION=	8
-USE_ANT=	yes
+
 ALL_TARGET=	package
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
@@ -25,23 +26,21 @@ PORTEXAMPLES=	*
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MDOCS}
-ALL_TARGET+=	javadoc
-.endif
+DOCS_ALL_TARGET=	javadoc
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${JAVAJARDIR}
 	${INSTALL_DATA} ${WRKSRC}/build/jdom.jar ${STAGEDIR}${JAVAJARDIR}
-	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	(cd ${WRKSRC}/build/samples/ && ${COPYTREE_SHARE} . \
-		${STAGEDIR}${EXAMPLESDIR})
-.if ${PORT_OPTIONS:MDOCS}
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC}/build && ${COPYTREE_SHARE} apidocs ${STAGEDIR}${DOCSDIR})
 	(cd ${WRKSRC} && ${INSTALL_DATA} README.txt TODO.txt CHANGES.txt \
 		COMMITTERS.txt LICENSE.txt ${STAGEDIR}${DOCSDIR})
-.endif
+
+do-install-EXAMPLES-on:
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	(cd ${WRKSRC}/build/samples/ && ${COPYTREE_SHARE} . \
+		${STAGEDIR}${EXAMPLESDIR})
 
 .include <bsd.port.mk>

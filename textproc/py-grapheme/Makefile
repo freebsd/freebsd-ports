@@ -11,6 +11,9 @@ WWW=		https://github.com/alvinlindstam/grapheme
 
 LICENSE=	MIT
 
+DEPRECATED=	Upstream is inactive for 4 years
+EXPIRATION_DATE=2025-03-31
+
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 

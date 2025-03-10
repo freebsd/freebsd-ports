@@ -3,7 +3,7 @@ PORTVERSION=	2.7.0
 PORTREVISION=	2
 CATEGORIES=	devel
 
-MAINTAINER=	jmd@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library to tune OpenCL kernels
 WWW=		https://github.com/CNugteren/CLTune
 

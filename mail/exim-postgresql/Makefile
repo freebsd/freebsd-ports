@@ -1,3 +1,4 @@
+PORTREVISION=	1
 PKGNAMESUFFIX=	-postgresql
 MASTERDIR=	${.CURDIR}/../exim
 

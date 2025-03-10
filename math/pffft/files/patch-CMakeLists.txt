@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2021-08-06 18:28:48 UTC
+--- CMakeLists.txt.orig	2022-12-19 10:24:43 UTC
 +++ CMakeLists.txt
-@@ -144,7 +144,7 @@ endif()
+@@ -170,7 +170,7 @@ endif()
  
  ######################################################
  
@@ -8,35 +8,26 @@
 +add_library(PFFFT ${FLOAT_SOURCES} ${DOUBLE_SOURCES} pffft_common.c pffft_priv_impl.h pffft.hpp )
  set_target_properties(PFFFT PROPERTIES OUTPUT_NAME "pffft")
  target_compile_definitions(PFFFT PRIVATE _USE_MATH_DEFINES)
- if (USE_SCALAR_VECT)
-@@ -173,8 +173,6 @@ if (USE_SIMD AND USE_TYPE_DOUBLE)
-     else()
-       set_property(SOURCE pffft_double.c PROPERTY COMPILE_FLAGS "-mavx")
-     endif()
--  else()
--    set_property(SOURCE pffft_double.c PROPERTY COMPILE_FLAGS "-march=native")
-   endif()
-   if(DISABLE_SIMD_AVX)
-     target_compile_definitions(PFFFT PRIVATE PFFFT_AVX_DISABLE=1)
-@@ -193,7 +191,7 @@ endif()
+ target_activate_c_compiler_warnings(PFFFT)
+@@ -196,7 +196,7 @@ if (PFFFT_USE_TYPE_FLOAT)
+ ######################################################
  
- if (USE_TYPE_FLOAT)
- 
--  add_library(PFDSP STATIC pf_mixer.cpp pf_mixer.h pf_carrier.cpp pf_carrier.h pf_cic.cpp pf_cic.h fmv.h )
-+  add_library(PFDSP pf_mixer.cpp pf_mixer.h pf_carrier.cpp pf_carrier.h pf_cic.cpp pf_cic.h fmv.h )
+ if (PFFFT_USE_TYPE_FLOAT)
+-  add_library(PFDSP STATIC pf_mixer.cpp pf_mixer.h pf_cplx.h pf_carrier.cpp pf_carrier.h pf_cic.cpp pf_cic.h fmv.h )
++  add_library(PFDSP pf_mixer.cpp pf_mixer.h pf_cplx.h pf_carrier.cpp pf_carrier.h pf_cic.cpp pf_cic.h fmv.h )
+   set_property(TARGET PFDSP PROPERTY CXX_STANDARD 11)
+   set_property(TARGET PFDSP PROPERTY CXX_STANDARD_REQUIRED ON)
    set_target_properties(PFDSP PROPERTIES OUTPUT_NAME "pfdsp")
-   target_compile_definitions(PFDSP PRIVATE _USE_MATH_DEFINES)
-   if (USE_DEBUG_ASAN)
-@@ -218,7 +216,7 @@ endif()
- if (USE_FFTPACK)
+@@ -225,7 +225,7 @@ if (PFFFT_USE_FFTPACK)
+ if (PFFFT_USE_FFTPACK)
  
    # float / single precision
 -  add_library(FFTPACK_FLOAT STATIC fftpack.c fftpack.h)
 +  add_library(FFTPACK_FLOAT fftpack.c fftpack.h)
    target_compile_definitions(FFTPACK_FLOAT PRIVATE _USE_MATH_DEFINES)
-   target_compile_options(FFTPACK_FLOAT PRIVATE $<$<C_COMPILER_ID:GNU>:-Wall -Wextra -pedantic>)
+   target_activate_c_compiler_warnings(FFTPACK_FLOAT)
    target_link_libraries( FFTPACK_FLOAT ${MATHLIB} )
-@@ -227,7 +225,7 @@ if (USE_FFTPACK)
+@@ -234,7 +234,7 @@ if (PFFFT_USE_FFTPACK)
    )
  
    # double precision
@@ -44,17 +35,17 @@
 +  add_library(FFTPACK_DOUBLE fftpack.c fftpack.h)
    target_compile_definitions(FFTPACK_DOUBLE PRIVATE _USE_MATH_DEFINES)
    target_compile_definitions(FFTPACK_DOUBLE PUBLIC FFTPACK_DOUBLE_PRECISION)
-   target_compile_options(FFTPACK_DOUBLE PRIVATE $<$<C_COMPILER_ID:GNU>:-Wall -Wextra -pedantic>)
-@@ -251,7 +249,7 @@ endif()
+   target_activate_c_compiler_warnings(FFTPACK_DOUBLE)
+@@ -258,7 +258,7 @@ if (PFFFT_USE_TYPE_FLOAT)
  
- if (USE_TYPE_FLOAT)
+ if (PFFFT_USE_TYPE_FLOAT)
    # only 'float' supported in PFFASTCONV
 -  add_library(PFFASTCONV STATIC pffastconv.c pffastconv.h pffft.h )
 +  add_library(PFFASTCONV pffastconv.c pffastconv.h pffft.h )
    set_target_properties(PFFASTCONV PROPERTIES OUTPUT_NAME "pffastconv")
    target_compile_definitions(PFFASTCONV PRIVATE _USE_MATH_DEFINES)
-   if (USE_DEBUG_ASAN)
-@@ -447,7 +445,9 @@ endif()
+   target_activate_c_compiler_warnings(PFFASTCONV)
+@@ -597,7 +597,9 @@ endif()
  
  ######################################################
  

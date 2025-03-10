@@ -12,8 +12,8 @@ WWW=		http://www.jave.de/
 
 EXTRACT_AFTER_ARGS=	-d ${WRKDIR}/${DISTNAME}
 
-USES=		zip
-USE_JAVA=	yes
+USES=		java zip
+
 NO_BUILD=	yes
 
 SUB_FILES=	jave6 pkg-message

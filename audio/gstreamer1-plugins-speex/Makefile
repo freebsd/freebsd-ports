@@ -3,13 +3,13 @@ CATEGORIES=	audio
 
 COMMENT=	GStreamer speex voice encode/decode plugin
 
-GST_PLUGIN=	speex
+LIB_DEPENDS=	libspeex.so:audio/speex
+
+MASTERDIR=	${.CURDIR:H:H}/multimedia/gstreamer1-plugins
+
+PLIST=		${.CURDIR}/pkg-plist
+
 DIST=		good
-
-MASTERDIR=	${.CURDIR}/../../multimedia/gstreamer1-plugins
-
-PLIST=  ${.CURDIR}/pkg-plist
-
-LIB_DEPENDS=  libspeex.so:audio/speex
+GST_PLUGIN=	speex
 
 .include "${MASTERDIR}/Makefile"

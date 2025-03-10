@@ -5,7 +5,7 @@ PORTREVISION=	1
 CATEGORIES=	net-mgmt www
 PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 
-MAINTAINER=	joneum@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Import CSV, JSON, XML and YAML files for the Icinga Director
 WWW=		https://github.com/Icinga/icingaweb2-module-fileshipper
 

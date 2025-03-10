@@ -1,6 +1,7 @@
 PORTNAME=	fontconfig
 PORTVERSION=	2.14.0
 DISTVERSIONSUFFIX=	-2.el9_1
+PORTREVISION=	1
 CATEGORIES=	x11-fonts linux
 
 MAINTAINER=	emulation@FreeBSD.org
@@ -11,11 +12,12 @@ USES=		cpe linux:rl9
 USE_LDCONFIG=	yes
 USE_LINUX=	brotli expat freetype harfbuzz libxml2
 USE_LINUX_RPM=	yes
+WANT_LINUX32=	yes
 
 CPE_VENDOR=	fontconfig_project
 
 CONFLICTS=	linux-c7-${PORTNAME}
-DESCR=		${.CURDIR}/../${PORTNAME}/pkg-descr
+DESCR=		${PORTSDIR}/${PKGCATEGORY}/${PORTNAME}/pkg-descr
 
 OPTIONS_DEFINE=	DOCS NLS
 OPTIONS_SUB=	yes

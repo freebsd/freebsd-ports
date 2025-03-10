@@ -1,10 +1,10 @@
 PORTNAME=	texlab
 DISTVERSIONPREFIX=	v
 DISTVERSION=	4.2.0
-PORTREVISION=	18
+PORTREVISION=	24
 CATEGORIES=	devel
 
-MAINTAINER=	antranigv@freebsd.am
+MAINTAINER=	kfv@kfv.io
 COMMENT=	Language Server Protocol for LaTeX
 WWW=		https://texlab.netlify.app/
 
@@ -27,7 +27,6 @@ OPTIONS_DEFINE=		DOCS
 OPTIONS_DEFAULT=	DOCS
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 \
 		${STAGEDIR}${PREFIX}/share/man/man1
 

@@ -1,0 +1,7 @@
+A FUSE file system driver for FreeBSD's UFSv2.
+
+Features:
+
+ - Read support for FreeBSD UFSv2
+ - Extended Attributes (no ACLs)
+ - Bi-Endian support (eg. mounting big endian FS on little endian system)

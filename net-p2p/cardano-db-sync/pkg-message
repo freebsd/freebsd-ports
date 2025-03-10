@@ -27,12 +27,11 @@ Create the "cexplorer" database:
 cardano-db-sync-pgsql-setup --createdb
 
 Restore the database from a snapshot ( or skip this step to sync from genesis ):
-IOG Repo - Mainnet: https://update-cardano-mainnet.iohk.io/cardano-db-sync/index.html#13.1/
-IOG Repo - Testnet: https://updates-cardano-testnet.s3.amazonaws.com/cardano-db-sync/index.html
-Koios Repo: https://snapshots.koios.rest/cardano-db-sync/
+IOG Repo: https://update-cardano-mainnet.iohk.io/cardano-db-sync/index.html#13.4/
+Koios Repo: https://snapshots.koios.rest/dbsync-13.4-mainnet/
 ( Koios repo usually has extra indexes and fresh syncs from genesis )
 
-fetch https://XXXX/cardano-db-sync/13.1/db-sync-snapshot-schema-XX.X-block-XXXXXXX-XXXX.tgz
+fetch https://XXXX/XXXXXXXXXXX/db-sync-snapshot-schema-XX.X-block-XXXXXXX-XXXX.tgz
 
 cardano-db-sync-pgsql-setup --restore-snapshot db-sync-snapshot-schema-XX.X-block-XXXXXXX-XXXX.tgz /var/db/cardano_db_sync/mainnet-state/
 
@@ -40,7 +39,7 @@ EOM
 }
 { type: upgrade
   message: <<EOM
-If doing a major version upgrade ( ex. 13.0.0 to 14.0.0 ) you should drop
+If doing a major version upgrade ( ex. 15.0.0 to 16.0.0 ) you should drop
 the current database and re-create it, as there will be breaking changes:
 
 setenv PGPASSFILE /var/db/cardano_db_sync/mainnet-configs/.pgpass

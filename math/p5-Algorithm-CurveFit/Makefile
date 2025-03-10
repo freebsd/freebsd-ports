@@ -1,6 +1,5 @@
 PORTNAME=	Algorithm-CurveFit
-PORTVERSION=	1.05
-PORTREVISION=	2
+PORTVERSION=	1.06
 CATEGORIES=	math perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -18,5 +17,7 @@ RUN_DEPENDS=	p5-Math-MatrixReal>=0:math/p5-Math-MatrixReal \
 
 USES=		perl5
 USE_PERL5=	modbuild
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>

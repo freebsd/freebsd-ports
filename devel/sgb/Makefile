@@ -2,8 +2,7 @@ PORTNAME=	sgb
 PORTVERSION=	20090810
 PORTREVISION=	1
 CATEGORIES=	devel
-MASTER_SITES=	ftp://ftp.cs.stanford.edu/pub/sgb/ \
-		GENTOO
+MASTER_SITES=	ftp://ftp.cs.stanford.edu/pub/sgb/
 DISTNAME=	sgb-2009-08-10
 
 MAINTAINER=	gerald@FreeBSD.org
@@ -12,9 +11,10 @@ WWW=		https://www-cs-faculty.stanford.edu/~knuth/sgb.html
 
 BUILD_DEPENDS=	ctangle:devel/cweb
 
-NO_WRKSUBDIR=	yes
-ALL_TARGET=	lib tests
 MAKE_JOBS_UNSAFE=	yes
+ALL_TARGET=	lib tests
+
+NO_WRKSUBDIR=	yes
 
 post-extract:
 	${CP} ${WRKSRC}/PROTOTYPES/* ${WRKSRC}

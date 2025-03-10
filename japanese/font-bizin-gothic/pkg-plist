@@ -1,0 +1,6 @@
+etc/fonts/conf.avail/20-unhint-bizin-gothic.conf
+etc/fonts/conf.avail/62-fonts-bizin-gothic.conf
+etc/fonts/conf.d/20-unhint-bizin-gothic.conf
+etc/fonts/conf.d/62-fonts-bizin-gothic.conf
+%%FONTSDIR%%/BizinGothic-Bold.ttf
+%%FONTSDIR%%/BizinGothic-Regular.ttf

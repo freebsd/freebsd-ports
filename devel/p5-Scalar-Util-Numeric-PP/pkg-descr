@@ -1,0 +1,6 @@
+Scalar::Util::Numeric::PP is written mainly for the convenience of Data::Sah, as
+a drop-in pure-perl replacement for the XS module Scalar::Util::Numeric, in the
+case when Data::Sah needs to generate code that uses PP modules instead of XS
+ones.
+
+Not all functions from Scalar::Util::Numeric have been provided.

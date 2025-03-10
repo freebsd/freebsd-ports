@@ -78,18 +78,16 @@ LIB_DEPENDS=	libsignal_jni.so:net-im/libsignal-client \
 		libsqlitejdbc.so:java/sqlitejdbc \
 		libzkgroup.so:net-im/zkgroup
 
-USES=		gmake shebangfix
+USES=		gmake java shebangfix
 USE_GITLAB=	yes
 GL_ACCOUNT=	signald
 GL_TAGNAME=	65cf5e8a1cf2b81fd1f5c3936e0164d53c5a9b29
-
-USE_JAVA=	yes
 JAVA_VERSION=	11+
-JAVA_RUN=	jre
+USE_RC_SUBR=	signald
+
 SUB_FILES=	signald.7
 SUB_LIST=	JAVA_HOME="${JAVA_HOME}" \
 		PKGBASE="${PKGBASE}"
-USE_RC_SUBR=	signald
 
 NO_ARCH=	yes
 

@@ -2,8 +2,7 @@ PORTNAME=	o3read
 PORTVERSION=	0.0.4
 PORTREVISION=	2
 CATEGORIES=	converters
-MASTER_SITES=	http://siag.nu/pub/o3read/ \
-		GENTOO
+MASTER_SITES=	https://siag.nu/pub/o3read/
 
 MAINTAINER=	samm@FreeBSD.org
 COMMENT=	Standalone converter for the OpenOffice.org writer and scalc formats
@@ -11,6 +10,8 @@ WWW=		https://siag.nu/o3read/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
+
+FETCH_BEFORE_ARGS=	--user-agent=Wget/1.20.3
 
 PORTDOCS=	README ChangeLog
 

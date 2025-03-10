@@ -28,7 +28,7 @@ load_rc_config $name
 : ${smartctl_exporter_enable:="NO"}
 : ${smartctl_exporter_user:="root"}
 : ${smartctl_exporter_listen_address:="localhost:9633"}
-: ${smartctl_exporter_devices:="$(geom disk status -s | cut -f1 -d\ | sed -e s,^,/dev/,g)"}
+: ${smartctl_exporter_devices:="$(geom disk status -s | grep -vE 'cd[0-9]' | awk '{print $1;}' | sed -e s,^,/dev/,g)"}
 : ${smartctl_exporter_log_level:=""}
 : ${smartctl_exporter_log_format:=""}
 

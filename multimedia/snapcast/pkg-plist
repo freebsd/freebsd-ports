@@ -9,3 +9,4 @@ share/snapserver/plug-ins/meta_librespot-java.py
 share/snapserver/plug-ins/meta_mopidy.py
 share/snapserver/plug-ins/meta_mpd.py
 share/snapserver/snapweb/index.html
+@dir etc/snapserver/certs

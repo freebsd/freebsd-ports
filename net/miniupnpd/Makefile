@@ -1,7 +1,9 @@
 PORTNAME=	miniupnpd
-DISTVERSION=	2.3.6
+DISTVERSION=	2.3.7
 PORTEPOCH=	1
 CATEGORIES=	net
+MASTER_SITES=	http://miniupnp.free.fr/files/ \
+		https://github.com/miniupnp/miniupnp/releases/download/${PORTNAME}_${DISTVERSION:S|.|_|g}/
 
 MAINTAINER=	squat@squat.no
 COMMENT=	Lightweight UPnP IGD & PCP/NAT-PMP daemon which uses pf
@@ -9,32 +11,25 @@ WWW=		http://miniupnp.free.fr/
 
 LICENSE=	BSD3CLAUSE
 
-LIB_DEPENDS=   libpfctl.so:net/libpfctl
+LIB_DEPENDS=	libpfctl.so:net/libpfctl
 
-USES=		cpe ssl localbase:ldflags
+USES=		cpe localbase:ldflags ssl
 CPE_VENDOR=	miniupnp_project
 
-USE_GITHUB=	yes
-GH_ACCOUNT=	miniupnp
-GH_PROJECT=	miniupnp
-GH_TAGNAME=	miniupnpd_2_3_6
-
-USE_RC_SUBR=	miniupnpd
+USE_RC_SUBR=	${PORTNAME}
 
 HAS_CONFIGURE=	yes
+# unconditionally use pf, ipfw does not work on FreeBSD
+CONFIGURE_ARGS=	--firewall=pf --libpfctl
+
 MAKE_JOBS_UNSAFE=	yes
 
 CFLAGS+=	-I${OPENSSLINC}
 LDFLAGS+=	-L${OPENSSLLIB} -lpfctl
 
-WRKSRC_SUBDIR=	miniupnpd
-
 PLIST_FILES=	etc/miniupnpd.conf.sample \
 		share/man/man8/miniupnpd.8.gz \
 		sbin/miniupnpd
-
-# unconditionally use pf, ipfw does not work on FreeBSD
-CONFIGURE_ARGS=	--firewall=pf
 
 OPTIONS_DEFINE=			CHECK_PORTINUSE IPV6 LEASEFILE UPNP_IGDV2 \
 				UPNP_STRICT

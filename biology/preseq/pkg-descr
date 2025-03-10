@@ -1,0 +1,5 @@
+The preseq package is aimed at predicting the yield of distinct reads
+from a genomic library from an initial sequencing experiment. The
+estimates can then be used to examine the utility of further
+sequencing, optimize the sequencing depth, or to screen multiple
+libraries to avoid low complexity samples.

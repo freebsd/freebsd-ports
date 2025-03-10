@@ -6,7 +6,7 @@ CATEGORIES=	biology
 MASTER_SITES=	https://ftp.science.ru.nl/Molden/
 DISTNAME=	${PORTNAME}${DISTVERSION}
 
-MAINTAINER=	jmd@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Display molecular orbitals and electron densities in 2D and 3D
 WWW=		https://www.theochem.ru.nl/molden/
 

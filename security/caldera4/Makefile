@@ -1,6 +1,6 @@
 PORTNAME=	caldera
 DISTVERSION=	4.2.0
-PORTREVISION=	11
+PORTREVISION=	13
 PKGNAMESUFFIX=	4
 CATEGORIES=	security python
 
@@ -12,6 +12,9 @@ CONFLICTS=	caldera
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+DEPRECATED=	Upgrade to a newer caldera version. 4.2.0 is vulnerable to remote code execution
+EXPIRATION_DATE=2025-03-31
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aiohttp>0:www/py-aiohttp@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}aiohttp-jinja2>0:www/py-aiohttp-jinja2@${PY_FLAVOR} \

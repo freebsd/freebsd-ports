@@ -18,8 +18,8 @@ DBDIR=$( mktemp -d -t tmp.mongodb )
 trap 'rm -rf "$DBDIR"' EXIT
 
 # Trivial check if the binaries execute at all.
-mongod -version
-mongos -version
+mongod --version
+mongos --version
 
 # Check if an empty database can be created.
 mkdir "$DBDIR/db"

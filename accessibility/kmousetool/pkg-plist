@@ -8,6 +8,7 @@ share/icons/hicolor/32x32/actions/kmousetool_on.png
 share/icons/hicolor/32x32/apps/kmousetool.png
 %%DATADIR%%/sounds/mousetool_tap.wav
 share/locale/ar/LC_MESSAGES/kmousetool.mo
+share/locale/ast/LC_MESSAGES/kmousetool.mo
 share/locale/be/LC_MESSAGES/kmousetool.mo
 share/locale/bg/LC_MESSAGES/kmousetool.mo
 share/locale/br/LC_MESSAGES/kmousetool.mo
@@ -89,6 +90,7 @@ share/man/man1/kmousetool.1.gz
 share/man/nl/man1/kmousetool.1.gz
 share/man/pt/man1/kmousetool.1.gz
 share/man/pt_BR/man1/kmousetool.1.gz
+share/man/sl/man1/kmousetool.1.gz
 share/man/sv/man1/kmousetool.1.gz
 share/man/uk/man1/kmousetool.1.gz
 share/metainfo/org.kde.kmousetool.appdata.xml

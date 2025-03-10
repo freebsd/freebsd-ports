@@ -1,7 +1,8 @@
 PORTNAME=	passenger
-PORTVERSION=	6.0.23
+PORTVERSION=	6.0.26
 CATEGORIES=	www rubygems
-MASTER_SITES=	RG
+MASTER_SITES=	RG \
+		https://github.com/phusion/passenger/releases/download/release-${PORTVERSION}/
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Modules for running Ruby on Rails and Rack applications
@@ -19,7 +20,7 @@ LIB_DEPENDS=	libapr-1.so:devel/apr1 \
 		libuv.so:devel/libuv
 RUN_DEPENDS=	rubygem-etc>=0:devel/rubygem-etc \
 		rubygem-rack>=1.6.13,3:www/rubygem-rack \
-		rubygem-rackup>=0:www/rubygem-rackup \
+		rubygem-rackup>=2.0.0:www/rubygem-rackup \
 		rubygem-rake>=12.3.3:devel/rubygem-rake
 
 USES=		compiler:c++11-lang cpe gem libtool python:env ssl

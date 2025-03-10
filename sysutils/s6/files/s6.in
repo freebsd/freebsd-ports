@@ -3,6 +3,7 @@
 # PROVIDE: /service
 # BEFORE:  SERVERS
 # KEYWORD: shutdown
+# REQUIRE: ldconfig
 
 # Add the following lines to /etc/rc.conf to enable `s6':
 #

@@ -7,7 +7,7 @@ PKGNAMESUFFIX=	-library-symbols-devel
 DISTNAME=	${PORTNAME}-symbols-${GL_TAGNAME}
 
 MAINTAINER=	mr@FreeBSD.org
-COMMENT=	Official KiCad schematic symbol libraries for the future Kicad 5 release
+COMMENT=	Official KiCad schematic symbol libraries (Git snapshot)
 WWW=		https://github.com/KiCad/kicad-symbols
 
 LICENSE=	GPLv2

@@ -1,5 +1,5 @@
 PORTNAME=	nzbhydra2
-DISTVERSION=	5.3.3
+DISTVERSION=	7.9.0
 DISTVERSIONSUFFIX=	-generic
 CATEGORIES=	news java
 MASTER_SITES=	https://github.com/theotherp/${PORTNAME}/releases/download/v${DISTVERSION}/
@@ -13,8 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 ONLY_FOR_ARCHS=	aarch64 amd64 powerpc64 powerpc64le
 
-USES=		python
-USE_JAVA=	yes
+USES=		java python
 USE_RC_SUBR=	nzbhydra2
 
 EXTRACT_SUFX=	.zip
@@ -35,7 +34,6 @@ SUB_LIST=	PYTHON_CMD=${PYTHON_CMD} \
 
 JAVA_VERSION=	17+
 JAVA_VENDOR=	openjdk
-JAVA_RUN=	yes
 
 USERS=		nzbhydra2
 GROUPS=		nzbhydra2

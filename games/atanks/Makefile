@@ -19,6 +19,10 @@ PORTDOCS=	Changelog README README_ru.txt credits.txt
 
 OPTIONS_DEFINE=	DOCS
 
+post-patch:
+	@${REINPLACE_CMD} -e '/"optionitembase\.h"/ { x; s,^,#include\
+		"button.h",; G; }' ${WRKSRC}/src/optionitem.h
+
 post-install:
 	${LN} -sf ../../share/icons/hicolor/48x48/apps/${PORTNAME}.png \
 		${STAGEDIR}${PREFIX}/share/pixmaps/

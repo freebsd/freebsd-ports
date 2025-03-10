@@ -21,8 +21,10 @@ RUN_DEPENDS=	rubygem-activesupport70>=5:devel/rubygem-activesupport70 \
 
 USES=		cpe gem
 
+CPE_VENDOR=	ruby-grape
+
 NO_ARCH=	yes
 
-CPE_VENDOR=	ruby-grape
+PORTSCOUT=	limit:^2\.0\.
 
 .include <bsd.port.mk>

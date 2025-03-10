@@ -1,3 +1,9 @@
+include/cogl/cogl-pango/cogl-pango.h
+include/cogl/cogl-path/cogl-path-enum-types.h
+include/cogl/cogl-path/cogl-path-types.h
+include/cogl/cogl-path/cogl-path.h
+include/cogl/cogl-path/cogl1-path-functions.h
+include/cogl/cogl-path/cogl2-path-functions.h
 include/cogl/cogl/cogl-atlas-texture.h
 include/cogl/cogl/cogl-attribute-buffer.h
 include/cogl/cogl/cogl-attribute.h
@@ -29,6 +35,8 @@ include/cogl/cogl/cogl-glib-source.h
 include/cogl/cogl/cogl-glx.h
 include/cogl/cogl/cogl-index-buffer.h
 include/cogl/cogl/cogl-indices.h
+include/cogl/cogl/cogl-kms-display.h
+include/cogl/cogl/cogl-kms-renderer.h
 include/cogl/cogl/cogl-macros.h
 include/cogl/cogl/cogl-material-compat.h
 include/cogl/cogl/cogl-matrix-stack.h
@@ -67,6 +75,8 @@ include/cogl/cogl/cogl-types.h
 include/cogl/cogl/cogl-vector.h
 include/cogl/cogl/cogl-version.h
 include/cogl/cogl/cogl-vertex-buffer.h
+include/cogl/cogl/cogl-wayland-client.h
+include/cogl/cogl/cogl-wayland-renderer.h
 include/cogl/cogl/cogl-xlib-renderer.h
 include/cogl/cogl/cogl-xlib.h
 include/cogl/cogl/cogl.h
@@ -88,12 +98,6 @@ include/cogl/cogl/gl-prototypes/cogl-gles2-functions.h
 include/cogl/cogl/gl-prototypes/cogl-glsl-functions.h
 include/cogl/cogl/gl-prototypes/cogl-in-gles-core-functions.h
 include/cogl/cogl/gl-prototypes/cogl-in-gles2-core-functions.h
-include/cogl/cogl-pango/cogl-pango.h
-include/cogl/cogl-path/cogl-path-enum-types.h
-include/cogl/cogl-path/cogl-path-types.h
-include/cogl/cogl-path/cogl-path.h
-include/cogl/cogl-path/cogl1-path-functions.h
-include/cogl/cogl-path/cogl2-path-functions.h
 lib/girepository-1.0/Cogl-1.0.typelib
 lib/girepository-1.0/Cogl-2.0.typelib
 lib/girepository-1.0/CoglPango-1.0.typelib
@@ -108,12 +112,12 @@ lib/libcogl.so
 lib/libcogl.so.%%LIBVER%%
 lib/libcogl.so.%%LIBVERSION%%
 libdata/pkgconfig/cogl-1.0.pc
-libdata/pkgconfig/cogl-path-1.0.pc
 libdata/pkgconfig/cogl-2.0-experimental.pc
-libdata/pkgconfig/cogl-path-2.0-experimental.pc
 libdata/pkgconfig/cogl-gl-1.0.pc
 libdata/pkgconfig/cogl-pango-1.0.pc
 libdata/pkgconfig/cogl-pango-2.0-experimental.pc
+libdata/pkgconfig/cogl-path-1.0.pc
+libdata/pkgconfig/cogl-path-2.0-experimental.pc
 share/cogl/examples-data/crate.jpg
 share/gir-1.0/Cogl-1.0.gir
 share/gir-1.0/Cogl-2.0.gir

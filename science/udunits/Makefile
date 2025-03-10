@@ -12,7 +12,7 @@ WWW=		https://www.unidata.ucar.edu/software/udunits/ \
 LICENSE=	UCAR_UNIDATA
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 LICENSE_NAME=	University Corporation for Atmospheric Research/Unidata
-LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
+LICENSE_PERMS=	auto-accept dist-mirror dist-sell pkg-mirror pkg-sell
 
 LIB_DEPENDS=	libexpat.so:textproc/expat2
 

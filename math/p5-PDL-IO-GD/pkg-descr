@@ -1,0 +1,5 @@
+PDL::IO::GD is the "General Interface" for the PDL::IO::GD library, and is
+actually several years old at this point (read: stable).
+
+The general version just provides several image IO utility functions you can use
+with ndarray variables. It's deceptively useful, however.

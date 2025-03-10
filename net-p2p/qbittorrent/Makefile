@@ -1,5 +1,5 @@
 PORTNAME=	qbittorrent
-DISTVERSION=	4.6.5
+DISTVERSION=	5.0.4
 CATEGORIES=	net-p2p
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -48,7 +48,7 @@ OPTIONS_EXCLUDE=	DBUS
 OPTIONS_DEFINE=			DBUS PYTHON DEBUG
 OPTIONS_RADIO=			LIBTORRENT
 OPTIONS_RADIO_LIBTORRENT=	LIBTORRENT1 LIBTORRENT2
-OPTIONS_DEFAULT=		DBUS PYTHON LIBTORRENT1
+OPTIONS_DEFAULT=		DBUS PYTHON LIBTORRENT2
 
 LIBTORRENT_DESC=	libtorrent version number to use
 LIBTORRENT1_DESC=	Version 1.x (default)
@@ -65,6 +65,15 @@ LIBTORRENT2_EXTRA_PATCHES=	${FILESDIR}/extrapatch-libtorrent-rasterbar2-settings
 
 PYTHON_DESC=		Install Python to support some plugin functionality
 PYTHON_USES=		python:run
+
+.include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1400000
+#LIB_DEPENDS+=	libcrypto.so:security/openssl # LIB_DEPENDS doesn't work here (after bsd.port.options.mk)
+BUILD_DEPENDS+=	openssl>0:security/openssl
+RUN_DEPENDS+=	openssl>0:security/openssl
+CMAKE_ARGS=	-DOPENSSL_ROOT_DIR=${LOCALBASE}
+.endif
 
 post-patch-PYTHON-on:
 	@${REINPLACE_CMD} \

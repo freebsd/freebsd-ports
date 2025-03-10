@@ -24,6 +24,8 @@ share/doc/HTML/pt_BR/systemsettings/index.cache.bz2
 share/doc/HTML/pt_BR/systemsettings/index.docbook
 share/doc/HTML/ru/systemsettings/index.cache.bz2
 share/doc/HTML/ru/systemsettings/index.docbook
+share/doc/HTML/sl/systemsettings/index.cache.bz2
+share/doc/HTML/sl/systemsettings/index.docbook
 share/doc/HTML/sv/systemsettings/index.cache.bz2
 share/doc/HTML/sv/systemsettings/index.docbook
 share/doc/HTML/tr/systemsettings/index.cache.bz2
@@ -66,6 +68,7 @@ share/locale/hsb/LC_MESSAGES/systemsettings.mo
 share/locale/hu/LC_MESSAGES/systemsettings.mo
 share/locale/ia/LC_MESSAGES/systemsettings.mo
 share/locale/id/LC_MESSAGES/systemsettings.mo
+share/locale/ie/LC_MESSAGES/systemsettings.mo
 share/locale/is/LC_MESSAGES/systemsettings.mo
 share/locale/it/LC_MESSAGES/systemsettings.mo
 share/locale/ja/LC_MESSAGES/systemsettings.mo

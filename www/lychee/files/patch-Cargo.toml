@@ -1,9 +1,9 @@
---- Cargo.toml.orig	2023-07-09 21:00:15 UTC
+--- Cargo.toml.orig	2025-02-01 14:18:54 UTC
 +++ Cargo.toml
-@@ -6,6 +6,3 @@ resolver = "2"
-     "benches",
- ]
- resolver = "2"
+@@ -4,6 +4,3 @@ version = "0.18.0"
+ 
+ [workspace.package]
+ version = "0.18.0"
 -
 -[profile.release]
 -debug = true

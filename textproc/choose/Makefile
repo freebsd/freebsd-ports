@@ -1,7 +1,7 @@
 PORTNAME=	choose
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.3.4
-PORTREVISION=	12
+DISTVERSION=	1.3.6
+PORTREVISION=	4
 CATEGORIES=	textproc
 
 MAINTAINER=	tagattie@FreeBSD.org
@@ -22,11 +22,8 @@ PORTDOCS=	contributing.md readme.md
 
 OPTIONS_DEFINE=	DOCS
 
-post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
-
 post-install-DOCS-on:
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_MAN} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

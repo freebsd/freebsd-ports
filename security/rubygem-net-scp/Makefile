@@ -1,5 +1,5 @@
 PORTNAME=	net-scp
-PORTVERSION=	4.0.0
+PORTVERSION=	4.1.0
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 

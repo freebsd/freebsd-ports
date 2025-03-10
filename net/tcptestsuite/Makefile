@@ -1,5 +1,6 @@
 PORTNAME=	tcptestsuite
-DISTVERSION=	g20230719
+DISTVERSION=	g20250128
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	net
 
@@ -10,10 +11,11 @@ LICENSE=	BSD2CLAUSE
 
 RUN_DEPENDS=	packetdrill:net/packetdrill
 
+# Remember to update files/tcptestsuite_atf_test too
 USE_GITHUB=	yes
 GH_ACCOUNT=	freebsd-net
 GH_PROJECT=	tcp-testsuite
-GH_TAGNAME=	38d231c
+GH_TAGNAME=	d8ec638
 
 NO_ARCH=	yes
 NO_BUILD=	yes

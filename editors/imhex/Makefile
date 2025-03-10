@@ -1,10 +1,13 @@
 PORTNAME=	imhex
-PORTVERSION=	1.30.1
+PORTVERSION=	1.37.4
 DISTVERSIONPREFIX=	v
-PORTREVISION=	2
 CATEGORIES=	editors
-MASTER_SITES=	https://git.sr.ht/~danyspin97/xdgpp/blob/f01f810714443d0f10c333d4d1d9c0383be41375/:xdg
-DISTFILES=	xdg.hpp:xdg
+MASTER_SITES=	https://git.sr.ht/~danyspin97/xdgpp/blob/f01f810714443d0f10c333d4d1d9c0383be41375/:xdg \
+		https://gitlab.com/EvelynTSMG/imhex-bastion-pats/-/archive/${GL_TAG_IMHEX_BASTION_PATS}/:bastion \
+		https://gitlab.com/EvelynTSMG/imhex-ffx-pats/-/archive/${GL_TAG_IMHEX_FFX_PATS}/:ffx
+DISTFILES=	xdg.hpp:xdg \
+		imhex-bastion-pats-${GL_TAG_IMHEX_BASTION_PATS}.tar.bz2:bastion \
+		imhex-ffx-pats-${GL_TAG_IMHEX_FFX_PATS}.tar.bz2:ffx
 DIST_SUBDIR=	imhex
 
 MAINTAINER=	nobutaka@FreeBSD.org
@@ -16,70 +19,89 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 NOT_FOR_ARCHS=	i386 powerpc
 NOT_FOR_ARCHS_REASON=	__uint128_t and __int128_t are not supported
-EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX} \
-		btzy-nativefiledialog-extended-${GH_TAG_NATIVEFILEDIALOG}_GH0${EXTRACT_SUFX} \
-		capstone-engine-capstone-${GH_TAG_CAPSTONE}_GH0${EXTRACT_SUFX} \
-		CLIUtils-CLI11-${GH_TAG_CLI11}_GH0${EXTRACT_SUFX} \
-		fmtlib-fmt-${GH_TAG_FMT}_GH0${EXTRACT_SUFX} \
-		josuttis-jthread-${GH_TAG_JTHREAD}_GH0${EXTRACT_SUFX} \
-		VirusTotal-yara-${GH_TAG_YARA}_GH0${EXTRACT_SUFX} \
-		WerWolv-libromfs-${GH_TAG_LIBROMFS}_GH0${EXTRACT_SUFX} \
-		WerWolv-libwolv-${GH_TAG_LIBWOLV}_GH0${EXTRACT_SUFX} \
-		WerWolv-ImHex-Patterns-${GH_TAG_IMHEX_PATTERNS}_GH0${EXTRACT_SUFX} \
-		WerWolv-PatternLanguage-${GH_TAG_PATTERN_LANGUAGE}_GH0${EXTRACT_SUFX}
 
-BUILD_DEPENDS=	glm>0:math/glm \
-		nlohmann-json>0:devel/nlohmann-json \
-		${LOCALBASE}/include/hpx/functional.hpp:devel/hpx \
-		${LOCALBASE}/include/range/v3/range.hpp:devel/range-v3 \
-		${LOCALBASE}/include/tl/expected.hpp:devel/tl-expected
+BUILD_DEPENDS=	glm>0:math/glm
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libglfw.so:graphics/glfw \
 		libfreetype.so:print/freetype2 \
 		libharfbuzz.so:print/harfbuzz \
 		libinotify.so:devel/libinotify \
-		libmbedtls.so:security/mbedtls \
-		libtre.so:textproc/libtre
+		liblz4.so:archivers/liblz4 \
+		libmbedtls.so:security/mbedtls3 \
+		libzstd.so:archivers/zstd
 
-USES=		cmake desktop-file-utils gl gnome llvm:min=16,build localbase pkgconfig python xorg
-USE_GL=		gl glu
+USES=		cmake desktop-file-utils gl gnome pkgconfig python xorg
+USE_GL=		gl glu opengl
 USE_GNOME=	cairo gdkpixbuf2 gtk30
 USE_XORG=	x11 xcb xau xdmcp
 USE_GITHUB=	yes
 
-CONFLICTS_INSTALL=	imhex-current-*
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX} \
+		btzy-nativefiledialog-extended-${GH_TAG_NATIVEFILEDIALOG}_GH0${EXTRACT_SUFX} \
+		capstone-engine-capstone-${GH_TAG_CAPSTONE}_GH0${EXTRACT_SUFX} \
+		CLIUtils-CLI11-${GH_TAG_CLI11}_GH0${EXTRACT_SUFX} \
+		Martinsos-edlib-${GH_TAG_EDLIB}_GH0${EXTRACT_SUFX} \
+		fmtlib-fmt-${GH_TAG_FMT}_GH0${EXTRACT_SUFX} \
+		josuttis-jthread-${GH_TAG_JTHREAD}_GH0${EXTRACT_SUFX} \
+		rockdreamer-throwing_ptr-${GH_TAG_THROWING_PTR}_GH0${EXTRACT_SUFX} \
+		sammycage-plutovg-${GH_TAG_PLUTOVG}_GH0${EXTRACT_SUFX} \
+		VirusTotal-yara-${GH_TAG_YARA}_GH0${EXTRACT_SUFX} \
+		WerWolv-Disassembler-${GH_TAG_DISASSEMBLER}_GH0${EXTRACT_SUFX} \
+		WerWolv-HashLibPlus-${GH_TAG_HASHLIBPLUS}_GH0${EXTRACT_SUFX} \
+		WerWolv-ImHex-Patterns-${GH_TAG_IMHEX_PATTERNS}_GH0${EXTRACT_SUFX} \
+		WerWolv-PatternLanguage-${GH_TAG_PATTERN_LANGUAGE}_GH0${EXTRACT_SUFX} \
+		WerWolv-libromfs-${GH_TAG_LIBROMFS}_GH0${EXTRACT_SUFX} \
+		WerWolv-libwolv-${GH_TAG_LIBWOLV}_GH0${EXTRACT_SUFX} \
+		WerWolv-lunasvg-${GH_TAG_LUNASVG}_GH0${EXTRACT_SUFX} \
+		imhex-bastion-pats-${GL_TAG_IMHEX_BASTION_PATS}.tar.bz2 \
+		imhex-ffx-pats-${GL_TAG_IMHEX_FFX_PATS}.tar.bz2
 
 GH_ACCOUNT=	WerWolv
 GH_PROJECT=	ImHex
 GH_TUPLE=	btzy:nativefiledialog-extended:${GH_TAG_NATIVEFILEDIALOG}:nativefiledialog \
 		capstone-engine:capstone:${GH_TAG_CAPSTONE}:capstone \
 		CLIUtils:CLI11:${GH_TAG_CLI11}:cli11 \
+		Martinsos:edlib:${GH_TAG_EDLIB}:edlib \
 		fmtlib:fmt:${GH_TAG_FMT}:fmt \
 		josuttis:jthread:${GH_TAG_JTHREAD}:jthread \
+		rockdreamer:throwing_ptr:${GH_TAG_THROWING_PTR}:throwing_ptr \
+		sammycage:plutovg:${GH_TAG_PLUTOVG}:plutovg \
 		VirusTotal:yara:${GH_TAG_YARA}:yara \
+		WerWolv:Disassembler:${GH_TAG_DISASSEMBLER}:disassembler \
+		WerWolv:HashLibPlus:${GH_TAG_HASHLIBPLUS}:hashlibplus \
 		WerWolv:ImHex-Patterns:${GH_TAG_IMHEX_PATTERNS}:imhex_patterns \
 		WerWolv:PatternLanguage:${GH_TAG_PATTERN_LANGUAGE}:pattern_language \
 		WerWolv:libromfs:${GH_TAG_LIBROMFS}:libromfs \
 		WerWolv:libwolv:${GH_TAG_LIBWOLV}:libwolv \
+		WerWolv:lunasvg:${GH_TAG_LUNASVG}:lunasvg
 
-GH_TAG_CAPSTONE=	d5141c0
-GH_TAG_CLI11=	faea921
-GH_TAG_FMT=	a0b8a92
-GH_TAG_IMHEX_PATTERNS=	759708d
+GH_TAG_CAPSTONE=	5cca005
+GH_TAG_CLI11=	6c7b07a
+GH_TAG_DISASSEMBLER=	a2217dd
+GH_TAG_EDLIB=	42aa8fa
+GH_TAG_FMT=	9cf9f38
+GH_TAG_HASHLIBPLUS=	1823dd1
+GH_TAG_IMHEX_PATTERNS=	ImHex-v${PORTVERSION}
 GH_TAG_JTHREAD=	0fa8d39
-GH_TAG_LIBROMFS=	80b9ade
-GH_TAG_LIBWOLV=	128bed6
-GH_TAG_NATIVEFILEDIALOG=	7909f55
-GH_TAG_PATTERN_LANGUAGE=	57dc02b
-GH_TAG_YARA=	96790e5
+GH_TAG_LIBROMFS=	4f42f09
+GH_TAG_LIBWOLV=	0002167
+GH_TAG_LUNASVG=	5e968bd
+GH_TAG_NATIVEFILEDIALOG=	86d5f20
+GH_TAG_PATTERN_LANGUAGE=	ImHex-v${PORTVERSION}
+GH_TAG_PLUTOVG=	9ef8e78
+GH_TAG_THROWING_PTR=	cd28490
+GH_TAG_YARA=	688268d
 
-CXXFLAGS+=	-I${WRKSRC}/lib/external/pattern_language/generators/include \
-		-Wno-error=deprecated-declarations \
-		-Wno-error=literal-conversion
+GL_TAG_IMHEX_BASTION_PATS=	e6deed4
+GL_TAG_IMHEX_FFX_PATS=	199879e
 
-CMAKE_ARGS=	-DUSE_SYSTEM_CURL=ON -DUSE_SYSTEM_NLOHMANN_JSON=ON \
-		-DIMHEX_STRIP_RELEASE=OFF -DIMHEX_PLUGINS_IN_SHARE=ON \
-		-DIMHEX_OFFLINE_BUILD=ON -DIMHEX_USE_GTK_FILE_PICKER=ON
+CFLAGS+=	-I${LOCALBASE}/include
+CXXFLAGS+=	-I${LOCALBASE}/include
+
+CMAKE_ARGS=	-DUSE_SYSTEM_NLOHMANN_JSON=OFF -DIMHEX_STRIP_RELEASE=OFF \
+		-DIMHEX_PLUGINS_IN_SHARE=ON -DIMHEX_OFFLINE_BUILD=ON \
+		-DIMHEX_USE_GTK_FILE_PICKER=ON -DIMHEX_IGNORE_BAD_CLONE=ON \
+		-DIMHEX_IGNORE_BAD_COMPILER=ON
 
 PORTDOCS=	README.md
 
@@ -88,35 +110,42 @@ NLS_USES=	gettext
 
 .include <bsd.port.pre.mk>
 
-# Before LLVM 18 import into the base system
-.if ((${OSREL:R} == 15 && ${OSVERSION} < 1500018) \
-    || (${OSREL:R} == 14 && ${OSVERSION} < 1400511) \
-    || (${OSREL:R} == 13 && ${OSVERSION} < 1303503))
-EXTRA_PATCHES=	${PATCHDIR}/extra-patch-lib_external_libwolv_libs_io_include_wolv_io_file.hpp \
-		${PATCHDIR}/extra-patch-plugins_windows_include_views_view__tty__console.hpp \
-		${PATCHDIR}/extra-patch-lib_libimhex_include_hex_api_task.hpp \
-		${PATCHDIR}/extra-patch-lib_libimhex_include_hex_api_content__registry.hpp
-.else
+# Before LLVM 17 import into the base system
+.if (${OSREL:R} == 15 && ${OSVERSION} < 1500006)
+IGNORE=	requires libc++ of LLVM 17 on the base system
+.endif
+
+# After LLVM 18 import into the base system
+.if ((${OSREL:R} == 15 && ${OSVERSION} >= 1500018) \
+    || (${OSREL:R} == 14 && ${OSVERSION} >= 1400511) \
+    || (${OSREL:R} == 13 && ${OSVERSION} >= 1303503))
 CXXFLAGS+=	-fexperimental-library -D_LIBCPP_ENABLE_EXPERIMENTAL
 .endif
 
 post-extract:
-	${CP} ${DISTDIR}/${DIST_SUBDIR}/xdg.hpp ${WRKSRC}/lib/external/xdgpp
-	${CP} -R ${WRKSRC_capstone}/* ${WRKSRC}/lib/external/capstone
-	${CP} -R ${WRKSRC_fmt}/* ${WRKSRC}/lib/external/fmt
+	${CP} -R ${WRKSRC_disassembler}/* ${WRKSRC}/lib/external/disassembler
 	${CP} -R ${WRKSRC_libromfs}/* ${WRKSRC}/lib/external/libromfs
 	${CP} -R ${WRKSRC_libwolv}/* ${WRKSRC}/lib/external/libwolv
-	${CP} -R ${WRKSRC_nativefiledialog}/* ${WRKSRC}/lib/external/nativefiledialog
 	${CP} -R ${WRKSRC_pattern_language}/* ${WRKSRC}/lib/external/pattern_language
 	${CP} -R ${WRKSRC_cli11}/* ${WRKSRC}/lib/external/pattern_language/external/cli11
-	${CP} -R ${WRKSRC_yara}/* ${WRKSRC}/lib/external/yara/yara
+	${CP} -R ${WRKSRC_fmt}/* ${WRKSRC}/lib/external/pattern_language/external/fmt
+	${CP} -R ${WRKSRC_throwing_ptr}/* ${WRKSRC}/lib/external/pattern_language/external/throwing_ptr
+	${CP} ${DISTDIR}/${DIST_SUBDIR}/xdg.hpp ${WRKSRC}/lib/third_party/xdgpp
+	${CP} -R ${WRKSRC_capstone}/* ${WRKSRC}/lib/third_party/capstone
+	${CP} -R ${WRKSRC_edlib}/* ${WRKSRC}/lib/third_party/edlib
+	${CP} -R ${WRKSRC_fmt}/* ${WRKSRC}/lib/third_party/fmt
+	${CP} -R ${WRKSRC_hashlibplus}/* ${WRKSRC}/lib/third_party/HashLibPlus
+	${CP} -R ${WRKSRC_lunasvg}/* ${WRKSRC}/lib/third_party/lunasvg
+	${CP} -R ${WRKSRC_plutovg}/* ${WRKSRC}/lib/third_party/lunasvg/plutovg
+	${CP} -R ${WRKSRC_nativefiledialog}/* ${WRKSRC}/lib/third_party/nativefiledialog
+	${CP} -R ${WRKSRC_yara}/* ${WRKSRC}/lib/third_party/yara/yara
 	${MKDIR} ${WRKDIR}/.build/_deps/imhex_patterns_src
 	${CP} -R ${WRKSRC_imhex_patterns}/* ${WRKDIR}/.build/_deps/imhex_patterns_src
-.if ((${OSREL:R} == 15 && ${OSVERSION} < 1500018) \
-    || (${OSREL:R} == 14 && ${OSVERSION} < 1400511) \
-    || (${OSREL:R} == 13 && ${OSVERSION} < 1303503))
-	${CP} -R ${WRKSRC_jthread}/source/*.hpp ${WRKSRC}/lib/libimhex/include
-	${CP} -R ${WRKSRC_jthread}/source/*.hpp ${WRKSRC}/lib/external/libwolv/libs/io/include/wolv/io
+	${CP} -R ${WRKDIR}/imhex-bastion-pats-${GL_TAG_IMHEX_BASTION_PATS}/* ${WRKDIR}/.build/_deps/imhex_patterns_src/patterns/bastion
+	${CP} -R ${WRKDIR}/imhex-ffx-pats-${GL_TAG_IMHEX_FFX_PATS}/* ${WRKDIR}/.build/_deps/imhex_patterns_src/patterns/ffx
+# Before LLVM 18 import into the base system
+.if ${OSREL:R} == 15 && ${OSVERSION} < 1500018
+	${CP} -R ${WRKSRC_jthread}/* ${WRKSRC}/lib/third_party/jthread
 .endif
 
 post-patch:

@@ -17,6 +17,7 @@ SUBDIR += editors
 SUBDIR += emulators
 SUBDIR += finance
 SUBDIR += french
+SUBDIR += filesystems
 SUBDIR += ftp
 SUBDIR += games
 SUBDIR += german
@@ -136,7 +137,7 @@ ${INDEXDIR}/${INDEXFILE}: .PHONY
 			echo; \
 			echo "********************************************************************"; \
 			echo "Before reporting this error, verify that you are running a supported"; \
-			echo "version of FreeBSD (see https://www.FreeBSD.org/ports/) and that you"; \
+			echo "version of FreeBSD (see https://ports.FreeBSD.org) and that you"; \
 			echo "have a complete and up-to-date ports collection.  (INDEX builds are"; \
 			echo "not supported with partial or out-of-date ports collections."; \
 			echo "If that is the case, then"; \
@@ -165,7 +166,7 @@ ${INDEXDIR}/${INDEXFILE}: .PHONY
 		mv ${INDEXDIR}/${INDEXFILE}.tmp ${INDEXDIR}/${INDEXFILE}; \
 	fi; \
 	rm -rf $${tmpdir}; \
-	echo " Done."
+	${INDEX_ECHO_1ST} " Done."
 
 print-index:	${INDEXDIR}/${INDEXFILE}
 	@awk -F\| '{ printf("Port:\t%s\nPath:\t%s\nInfo:\t%s\nMaint:\t%s\nIndex:\t%s\nB-deps:\t%s\nR-deps:\t%s\nE-deps:\t%s\nP-deps:\t%s\nF-deps:\t%s\nWWW:\t%s\n\n", $$1, $$2, $$4, $$6, $$7, $$8, $$9, $$11, $$12, $$13, $$10); }' < ${INDEXDIR}/${INDEXFILE}

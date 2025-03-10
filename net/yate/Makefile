@@ -1,6 +1,7 @@
 PORTNAME=		yate
 DISTVERSION=		6.4.1
 DISTVERSIONSUFFIX=	-g${GH_TAGNAME}
+PORTREVISION=		1
 CATEGORIES=		net
 
 MAINTAINER=	ports@FreeBSD.org
@@ -9,7 +10,7 @@ WWW=		http://yate.ro
 
 LICENSE=	GPLv2
 
-ONLY_FOR_ARCHS=	amd64 armv6 armv7 i386 powerpc powerpc64 powerpc64le
+ONLY_FOR_ARCHS=	aarch64 amd64 armv6 armv7 i386 powerpc powerpc64 powerpc64le
 
 LIB_DEPENDS=	libasound.so:audio/alsa-lib \
 		libgsm.so:audio/gsm \
@@ -49,19 +50,18 @@ GROUPS=		yate
 
 PLIST_SUB=	VERSION="${PORTVERSION}"
 
-OPTIONS_DEFINE=		AMRNB DAHDI DOCS H323 ILBC MYSQL PGSQL SCTP SPANDSP \
+OPTIONS_DEFINE=		AMR DAHDI DOCS H323 ILBC MYSQL PGSQL SCTP SPANDSP \
 			SQLITE
 OPTIONS_DEFAULT=	SCTP
 OPTIONS_SUB=	yes
 
-AMRNB_DESC=	Adaptive Multi-Rate Narrowband support
 DAHDI_DESC=	Dahdi support
 H323_DESC=	H323 software channel/protocol support
 ILBC_DESC=	iLBC narrowband speech codec support
 SCTP_DESC=	Stream Control Transmission Protocol support
 
-AMRNB_LIB_DEPENDS=	libamrnb.so:audio/libamrnb
-AMRNB_CONFIGURE_WITH=	amrnb=${LOCALBASE}
+AMR_CONFIGURE_WITH=	amrnb=${LOCALBASE}
+AMR_LIB_DEPENDS=	libopencore-amrnb.so:audio/opencore-amr
 
 DAHDI_BUILD_DEPENDS=	${LOCALBASE}/include/dahdi/user.h:misc/dahdi \
 			libpri>=1.4.10:misc/libpri

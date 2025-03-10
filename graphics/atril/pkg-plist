@@ -119,6 +119,7 @@ share/applications/atril.desktop
 %%DATADIR%%/icons/hicolor/scalable/mimetypes/x-office-presentation.svg
 %%CAJA%%share/caja/extensions/libatril-properties-page.caja-extension
 %%DBUS%%share/dbus-1/services/org.mate.atril.Daemon.service
+share/glib-2.0/schemas/org.mate.Atril.gschema.xml
 share/gtk-doc/html/atril/EggFindBar.html
 share/gtk-doc/html/atril/EvFileMonitor.html
 share/gtk-doc/html/atril/EvHistory.html
@@ -5899,10 +5900,12 @@ share/help/zu/atril/synctex-support.page
 share/help/zu/atril/synctex.page
 share/help/zu/atril/textselection.page
 share/help/zu/atril/translate.page
+share/icons/hicolor/128x128/apps/atril.png
 share/icons/hicolor/16x16/apps/atril.png
 share/icons/hicolor/22x22/apps/atril.png
 share/icons/hicolor/24x24/apps/atril.png
 share/icons/hicolor/48x48/apps/atril.png
+share/icons/hicolor/64x64/apps/atril.png
 share/icons/hicolor/scalable/apps/atril.svg
 share/locale/af/LC_MESSAGES/atril.mo
 share/locale/am/LC_MESSAGES/atril.mo

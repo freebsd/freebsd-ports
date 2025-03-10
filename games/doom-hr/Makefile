@@ -2,11 +2,7 @@ PORTNAME=	hr
 PORTVERSION=	1.0
 PORTREVISION=	1
 CATEGORIES=	games
-MASTER_SITES=	ftp://ftp.planetmirror.com/pub/idgames/themes/hr/ \
-		ftp://ftp.fu-berlin.de/pc/msdos/games/idgames/themes/hr/ \
-		ftp://ftp.ntua.gr/pub/vendors/idgames/themes/hr/ \
-		http://ftp.sunet.se/pub/pc/games/idgames/themes/hr/ \
-		ftp://3darchives.in-span.net/pub/idgames/themes/hr/
+MASTER_SITES=	https://ftp.fu-berlin.de/pc/msdos/games/idgames/themes/hr/
 PKGNAMEPREFIX=	${DMPKGNAMEPREFIX}
 DISTFILES=	${PORTNAME}${EXTRACT_SUFX}
 DIST_SUBDIR=	${PKGNAMEPREFIX}${PORTNAME}

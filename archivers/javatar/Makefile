@@ -11,7 +11,7 @@ WWW=		http://www.trustice.com/java/tar/
 LICENSE=	PD
 LICENSE_FILE=	${WRKSRC}/doc/LICENSE
 
-USE_JAVA=	yes
+USES=		java
 
 NO_BUILD=	yes
 

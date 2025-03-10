@@ -1,6 +1,6 @@
---- electron/spec/api-utility-process-spec.ts.orig	2024-06-24 09:53:23 UTC
+--- electron/spec/api-utility-process-spec.ts.orig	2024-10-16 13:04:26 UTC
 +++ electron/spec/api-utility-process-spec.ts
-@@ -405,7 +405,7 @@ describe('utilityProcess module', () => {
+@@ -418,7 +418,7 @@ describe('utilityProcess module', () => {
        expect(output).to.include(result);
      });
  
@@ -9,7 +9,7 @@
        const message = 'Message from utility process';
        const child = utilityProcess.fork(path.join(fixturesPath, 'expose-main-process-module.js'));
        await once(child, 'spawn');
-@@ -442,7 +442,7 @@ describe('utilityProcess module', () => {
+@@ -455,7 +455,7 @@ describe('utilityProcess module', () => {
        await closeWindow(w);
      });
  

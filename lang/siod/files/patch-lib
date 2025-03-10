@@ -1,5 +1,5 @@
 --- siod.h	2014-03-25 04:10:42.000000000 -0400
-+++ siod.h	2021-02-22 11:41:33.795507000 -0500
++++ siod.h	2024-11-26 09:55:05.742339000 -0500
 @@ -9,9 +9,11 @@
  */
  
@@ -13,28 +13,72 @@
 -
  struct obj
  {short gc_mark;
-@@ -20,5 +22,5 @@
+@@ -20,26 +22,26 @@
  		struct obj * cdr;} cons;
  	struct {double data;} flonum;
 -	struct {char *pname;
 +	struct {const char *pname;
  		struct obj * vcell;} symbol;
- 	struct {char *name;
-@@ -41,5 +43,5 @@
-  	struct {char *name;
+-	struct {char *name;
++	struct {const char *name;
+ 		struct obj * (*f)(void);} subr0;
+-  	struct {char *name;
++  	struct {const char *name;
+  		struct obj * (*f)(struct obj *);} subr1;
+- 	struct {char *name;
++ 	struct {const char *name;
+  		struct obj * (*f)(struct obj *, struct obj *);} subr2;
+- 	struct {char *name;
++ 	struct {const char *name;
+  		struct obj * (*f)(struct obj *, struct obj *, struct obj *);
+  	      } subr3;
+- 	struct {char *name;
++ 	struct {const char *name;
+  		struct obj * (*f)(struct obj *, struct obj *, struct obj *,
+ 				  struct obj *);
+  	      } subr4;
+- 	struct {char *name;
++ 	struct {const char *name;
+  		struct obj * (*f)(struct obj *, struct obj *, struct obj *,
+ 				  struct obj *,struct obj *);
+  	      } subr5;
+- 	struct {char *name;
++ 	struct {const char *name;
   		struct obj * (*f)(struct obj **, struct obj **);} subrm;
 -	struct {char *name;
 +	struct {const char *name;
  		struct obj * (*f)(void *,...);} subr;
  	struct {struct obj *env;
-@@ -151,5 +153,5 @@
+@@ -125,5 +127,20 @@
+ 
+ typedef struct obj* LISP;
+-typedef LISP (*SUBR_FUNC)(void); 
++typedef LISP (*SUBR_FUNC0)(void);
++typedef LISP (*SUBR_FUNC1)(LISP);
++typedef LISP (*SUBR_FUNC2)(LISP, LISP);
++typedef LISP (*SUBR_FUNC3)(LISP, LISP, LISP);
++typedef LISP (*SUBR_FUNC4)(LISP, LISP, LISP, LISP);
++typedef LISP (*SUBR_FUNC5)(LISP, LISP, LISP, LISP, LISP);
++typedef LISP (*SUBR_FUNCm)(LISP *, LISP *);
++typedef union {
++	SUBR_FUNC0	subr0;
++	SUBR_FUNC1	subr1;
++	SUBR_FUNC2	subr2;
++	SUBR_FUNC3	subr3;
++	SUBR_FUNC4	subr4;
++	SUBR_FUNC5	subr5;
++	SUBR_FUNCm	subrm;
++} SUBR_FUNC;
+ 
+ #define CONSP(x)   TYPEP(x,tc_cons)
+@@ -151,5 +168,5 @@
  struct gen_printio
  {int (*putc_fcn)(int,void *);
 - int (*puts_fcn)(char *,void *);
 + int (*puts_fcn)(const char *, void *);
   void *cb_argument;};
  
-@@ -160,10 +162,10 @@
+@@ -160,10 +177,10 @@
  
  struct repl_hooks
 -{void (*repl_puts)(char *);
@@ -47,7 +91,7 @@
 +void __stdcall process_cla(int argc, const char **argv, int warnflag);
  void __stdcall print_welcome(void);
  void __stdcall print_hs_1(void);
-@@ -172,6 +174,6 @@
+@@ -172,6 +189,6 @@
  LISP get_eof_val(void);
  long repl_driver(long want_sigint,long want_init,struct repl_hooks *);
 -void set_stdout_hooks(void (*puts_f)(char *));
@@ -56,7 +100,7 @@
 +void set_repl_hooks(void (*puts_f)(const char *),
  		    LISP (*read_f)(void),
  		    LISP (*eval_f)(LISP),
-@@ -180,7 +182,8 @@
+@@ -180,7 +197,8 @@
  LISP err(const char *message, LISP x);
  LISP errswitch(void);
 -char *get_c_string(LISP x);
@@ -68,7 +112,7 @@
 +const char *try_get_c_string(LISP x);
  long get_c_long(LISP x);
  double get_c_double(LISP x);
-@@ -204,30 +207,30 @@
+@@ -204,30 +222,30 @@
  LISP eq(LISP x,LISP y);
  LISP eql(LISP x,LISP y);
 -LISP symcons(char *pname,LISP vcell);
@@ -115,14 +159,14 @@
 +void init_msubr(const char *name, LISP (*fcn)(LISP *, LISP *));
  
  LISP assq(LISP x,LISP alist);
-@@ -256,5 +259,5 @@
+@@ -256,5 +274,5 @@
  		    LISP (*fcn2)(char *,long, int *));
  LISP apropos(LISP);
 -LISP vload(char *fname,long cflag,long rflag);
 +LISP vload(const char *fname, long cflag, long rflag);
  LISP load(LISP fname,LISP cflag,LISP rflag);
  LISP require(LISP fname);
-@@ -293,5 +296,6 @@
+@@ -293,5 +311,6 @@
  void __stdcall init_trace(void);
  long __stdcall repl_c_string(char *,long want_sigint,long want_init,long want_print);
 -char * __stdcall siod_version(void);
@@ -130,7 +174,7 @@
 +const char * __stdcall siod_version(void);
  LISP nreverse(LISP);
  LISP number2string(LISP,LISP,LISP,LISP);
-@@ -316,8 +320,8 @@
+@@ -316,8 +335,8 @@
  LISP lapply(LISP fcn,LISP args);
  LISP mallocl(void *lplace,long size);
 -void gput_st(struct gen_printio *,char *);
@@ -142,34 +186,34 @@
 +void *must_malloc(unsigned long size);
  LISP lstrbreakup(LISP str,LISP lmarker);
  LISP lstrunbreakup(LISP elems,LISP lmarker);
-@@ -337,6 +341,4 @@
+@@ -337,6 +356,4 @@
  size_t safe_strlen(const char *s,size_t size);
  LISP memq(LISP x,LISP il);
 -LISP lstrbreakup(LISP,LISP);
 -LISP lstrbreakup(LISP,LISP);
  LISP nth(LISP,LISP);
  LISP butlast(LISP);
-@@ -356,5 +358,5 @@
+@@ -356,5 +373,5 @@
  
  
 -LISP symalist(char *item,...);
 +LISP symalist(const char *item, ...);
  
  LISP encode_st_mode(LISP l);
-@@ -363,5 +365,5 @@
+@@ -363,5 +380,5 @@
  int __stdcall siod_main(int argc,char **argv, char **env);
  void __stdcall siod_shuffle_args(int *pargc,char ***pargv);
 -void __stdcall siod_init(int argc,char **argv);
 +void __stdcall siod_init(int argc, const char **argv);
  
  #if defined(WIN32) && defined(_WINDOWS_)
-@@ -374,3 +376,3 @@
+@@ -374,3 +391,3 @@
  #endif
  
 -
 +#endif
 --- siodp.h	2014-03-25 04:10:42.000000000 -0400
-+++ siodp.h	2021-02-22 11:50:39.297014000 -0500
++++ siodp.h	2024-11-26 10:06:20.562343000 -0500
 @@ -12,4 +12,6 @@
  */
  
@@ -227,7 +271,14 @@
 +int flush_ws(struct gen_readio *f, const char *eoferr);
  int f_getc(FILE *f);
  void f_ungetc(int c, FILE *f);
-@@ -164,6 +164,6 @@
+@@ -155,6 +155,4 @@
+ long array_sxhash(LISP,long);
+ 
+-int rfs_getc(unsigned char **p);
+-void rfs_ungetc(unsigned char c,unsigned char **p);
+ void err1_aset1(LISP i);
+ void err2_aset1(LISP v);
+@@ -164,6 +162,6 @@
  void file_gc_free(LISP ptr);
  void file_prin1(LISP ptr,struct gen_printio *f);
 -LISP fopen_c(char *name,char *how);
@@ -236,13 +287,13 @@
 +LISP fopen_cg(FILE *(*)(const char *, const char *), const char *, const char *);
  LISP fopen_l(LISP name,LISP how);
  LISP fclose_l(LISP p);
-@@ -206,3 +206,3 @@
+@@ -206,3 +204,3 @@
  
  #define VLOAD_OFFSET_HACK_CHAR '|'
 -
 +#endif
 --- slib.c	2014-03-25 04:40:18.000000000 -0400
-+++ slib.c	2021-02-22 11:46:46.903090000 -0500
++++ slib.c	2024-11-26 09:53:15.451978000 -0500
 @@ -77,8 +77,12 @@
  #include <errno.h>
  
@@ -362,7 +413,7 @@
  
  char *stack_limit_ptr = NULL;
 -long stack_size = 
-+static long stack_size = 
++static long stack_size =
  #ifdef THINK_C
    10000;
 @@ -159,5 +163,5 @@
@@ -692,13 +743,18 @@
 +LISP rintern(const char *name)
  {return(gen_intern(name,1));}
  
-@@ -969,5 +997,5 @@
+@@ -969,9 +997,9 @@
  {return(rintern(get_c_string(name)));}
  
 -LISP subrcons(long type, char *name, SUBR_FUNC f)
 +LISP subrcons(long type, const char *name, SUBR_FUNC f)
  {LISP z;
   NEWCELL(z,type);
+  (*z).storage_as.subr.name = name;
+- (*z).storage_as.subr0.f = f;
++ (*z).storage_as.subr0.f = f.subr0;
+  return(z);}
+ 
 @@ -988,5 +1016,5 @@
  void gc_protect_n(LISP *location,long n)
  {struct gc_protected *reg;
@@ -1075,7 +1131,7 @@
  {return(leval(cintern("read"),NIL));}
  
 --- sliba.c	2014-03-25 04:10:42.000000000 -0400
-+++ sliba.c	2021-02-22 12:01:55.507489000 -0500
++++ sliba.c	2024-11-26 10:14:19.038656000 -0500
 @@ -16,4 +16,8 @@
  #include <math.h>
  
@@ -1091,11 +1147,18 @@
 +      /* FALLTHROUGH */
      case tc_byte_array:
        sprintf(tkbuffer,"#%ld\"",ptr->storage_as.string.dim);
+@@ -177,5 +182,5 @@
+  return(s);}
+ 
+-int rfs_getc(unsigned char **p)
++static int rfs_getc(unsigned char **p)
+ {int i;
+  i = **p;
 @@ -184,9 +189,9 @@
   return(i);}
  
 -void rfs_ungetc(unsigned char c,unsigned char **p)
-+void rfs_ungetc(unsigned char c __unused, unsigned char **p)
++static void rfs_ungetc(int c __unused, unsigned char **p)
  {*p = *p - 1;}
  
  LISP read_from_string(LISP x)

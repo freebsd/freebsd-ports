@@ -1,13 +1,14 @@
 PORTNAME=	avro
-PORTVERSION=	1.11.3
+PORTVERSION=	1.12.0
 CATEGORIES=	devel
-MASTER_SITES=	APACHE/avro/stable/c
+MASTER_SITES=	APACHE/avro/avro-${PORTVERSION}/c
 PKGNAMESUFFIX=	-c
 DISTNAME=	avro-c-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	C library for Apache Avro
-WWW=		https://avro.apache.org/
+WWW=		https://avro.apache.org/ \
+		https://github.com/apache/avro
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -15,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libjansson.so:devel/jansson \
 		libsnappy.so:archivers/snappy
 
-USES=		cmake compiler:c++11-lang cpe pathfix pkgconfig shebangfix
+USES=		cmake cpe pathfix pkgconfig shebangfix
 
 USE_LDCONFIG=	yes
 

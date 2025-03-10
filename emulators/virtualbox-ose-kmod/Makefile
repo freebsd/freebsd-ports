@@ -1,9 +1,10 @@
 PORTNAME=	virtualbox-ose
-PORTVERSION=	6.1.50
+DISTVERSION=	6.1.50
+PORTREVISION=	1
 CATEGORIES=	emulators
-MASTER_SITES=	https://download.virtualbox.org/virtualbox/${PORTVERSION}/
+MASTER_SITES=	https://download.virtualbox.org/virtualbox/${DISTVERSION}/
 PKGNAMESUFFIX=	-kmod
-DISTNAME=	VirtualBox-${PORTVERSION}
+DISTNAME=	VirtualBox-${DISTVERSION}
 
 MAINTAINER=	vbox@FreeBSD.org
 COMMENT=	VirtualBox kernel module for FreeBSD
@@ -12,21 +13,16 @@ WWW=		https://www.virtualbox.org/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	kmk:devel/kBuild
-
-CPE_VENDOR=	oracle
-CPE_PRODUCT=	vm_virtualbox
-
-SUB_FILES=	pkg-message
-SUB_LIST=	OPSYS=${OPSYS} OSREL=${OSREL}
-
-USES=		cpe compiler:c++14-lang kmod tar:bzip2
-PATCHDIR=	${.CURDIR}/../${PORTNAME}/files
-WRKSRC=		${WRKDIR}/VirtualBox-${PORTVERSION}
-USE_RC_SUBR=	vboxnet
 ONLY_FOR_ARCHS=	amd64
 
-HAS_CONFIGURE=	yes
+BUILD_DEPENDS=	kmk:devel/kBuild
+
+USES=		cpe compiler:c++14-lang kmod tar:bzip2
+CPE_VENDOR=	oracle
+CPE_PRODUCT=	vm_virtualbox
+USE_RC_SUBR=	vboxnet
+
+HAS_CONFIGURE=		yes
 CONFIGURE_ARGS+=	--build-headless
 CONFIGURE_ARGS+=	--disable-alsa \
 			--disable-dbus \
@@ -38,13 +34,21 @@ CONFIGURE_ARGS+=	--disable-alsa \
 			--disable-xpcom
 CONFIGURE_ARGS+=	--nofatal --with-gcc="${CC}" --with-g++="${CXX}"
 
-CONFLICTS_INSTALL=	virtualbox-ose-kmod-legacy
+CONFLICTS_INSTALL=	virtualbox-ose-kmod-legacy \
+			virtualbox-ose-kmod-70
 
-OPTIONS_DEFINE=	DEBUG VIMAGE
-OPTIONS_DEFAULT=VIMAGE
-OPTIONS_SUB=	yes
-DEBUG_DESC=	Debug symbols, additional logs and assertions
-VIMAGE_DESC=	VIMAGE virtual networking support
+PATCHDIR=		${.CURDIR}/../${PORTNAME}/files
+PORTSCOUT=		limit:^6\.
+SUB_FILES=		pkg-message
+SUB_LIST=		OPSYS=${OPSYS} OSREL=${OSREL}
+
+WRKSRC=		${WRKDIR}/VirtualBox-${DISTVERSION}
+
+OPTIONS_DEFINE=		DEBUG VIMAGE
+OPTIONS_DEFAULT=	VIMAGE
+OPTIONS_SUB=		yes
+DEBUG_DESC=		Debug symbols, additional logs and assertions
+VIMAGE_DESC=		VIMAGE virtual networking support
 
 .include <bsd.port.options.mk>
 

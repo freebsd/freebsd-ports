@@ -8,6 +8,7 @@ include/openssl/asn1_mac.h
 include/openssl/asn1t.h
 include/openssl/base.h
 include/openssl/base64.h
+include/openssl/bcm_public.h
 include/openssl/bio.h
 include/openssl/blake2.h
 include/openssl/blowfish.h
@@ -39,9 +40,7 @@ include/openssl/err.h
 include/openssl/evp.h
 include/openssl/evp_errors.h
 include/openssl/ex_data.h
-include/openssl/experimental/dilithium.h
 include/openssl/experimental/kyber.h
-include/openssl/experimental/spx.h
 include/openssl/hkdf.h
 include/openssl/hmac.h
 include/openssl/hpke.h
@@ -52,6 +51,8 @@ include/openssl/lhash.h
 include/openssl/md4.h
 include/openssl/md5.h
 include/openssl/mem.h
+include/openssl/mldsa.h
+include/openssl/mlkem.h
 include/openssl/nid.h
 include/openssl/obj.h
 include/openssl/obj_mac.h
@@ -64,6 +65,7 @@ include/openssl/pkcs12.h
 include/openssl/pkcs7.h
 include/openssl/pkcs8.h
 include/openssl/pki/certificate.h
+include/openssl/pki/ocsp.h
 include/openssl/pki/signature_verify_cache.h
 include/openssl/pki/verify.h
 include/openssl/pki/verify_error.h
@@ -78,6 +80,7 @@ include/openssl/safestack.h
 include/openssl/service_indicator.h
 include/openssl/sha.h
 include/openssl/siphash.h
+include/openssl/slhdsa.h
 include/openssl/span.h
 include/openssl/srtp.h
 include/openssl/ssl.h

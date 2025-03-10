@@ -1,6 +1,6 @@
 PORTNAME=	infix
 PORTVERSION=	19960628
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel lisp
 MASTER_SITES=	http://ftp.linux.org.uk/pub/lisp/cclan/ \
 		ftp://ftp.ntnu.no/pub/lisp/cclan/ \
@@ -19,10 +19,11 @@ LICENSE_NAME=	infix
 LICENSE_TEXT=	No fees or compensation can be charged
 LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
+USES=		cl
+
 NO_BUILD=	yes
 
-USE_ASDF=	yes
+WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
 
 OPTIONS_DEFINE=	DOCS
 
@@ -34,11 +35,10 @@ do-install:
 	@${INSTALL_DATA} ${WRKSRC}/*.lisp ${STAGEDIR}${ASDF_PATHNAME}
 	@${INSTALL_DATA} ${WRKSRC}/infix.asd ${STAGEDIR}${ASDF_PATHNAME}
 	@${INSTALL_DATA} ${WRKSRC}/infix.system ${STAGEDIR}${ASDF_PATHNAME}
-	@${LN} -sf ${ASDF_PATHNAME}/infix.asd ${STAGEDIR}${ASDF_REGISTRY}
+	@${RLN} ${STAGEDIR}${ASDF_PATHNAME}/infix.asd ${STAGEDIR}${ASDF_REGISTRY}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for FILE in COPYING infix.3lisp
 	@${INSTALL_DATA} ${WRKSRC}/${FILE} ${STAGEDIR}${DOCSDIR}
 .endfor
 
-.include "${.CURDIR}/../../devel/cl-asdf/bsd.cl-asdf.mk"
 .include <bsd.port.mk>

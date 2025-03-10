@@ -1,5 +1,5 @@
 PORTNAME=	wavpack
-DISTVERSION=	5.7.0
+DISTVERSION=	5.8.1
 CATEGORIES=	audio
 MASTER_SITES=	https://github.com/dbry/WavPack/releases/download/${DISTVERSION}/ \
 		http://www.wavpack.com/

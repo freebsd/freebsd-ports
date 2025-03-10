@@ -1,1 +1,1 @@
-/var/log/ttrssd.log root:wheel 644 3 * $W0 JC /var/run/ttrssd_parent.pid
+/var/log/ttrssd.log root:wheel 644 3 * $W0 JC /var/run/ttrssd.pid

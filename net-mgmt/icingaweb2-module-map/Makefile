@@ -5,7 +5,7 @@ PORTREVISION=	4
 CATEGORIES=	net-mgmt www
 PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 
-MAINTAINER=	joneum@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Display hosts on OpenStreetMap
 WWW=		https://github.com/nbuchwitz/icingaweb2-module-map
 

@@ -1,25 +1,30 @@
 PORTNAME=	deal.II
-DISTVERSION=	9.5.2
-PORTREVISION=	2
+DISTVERSION=	9.6.2
+PORTREVISION=	4
 CATEGORIES=	math
 MASTER_SITES=	https://github.com/dealii/dealii/releases/download/v${DISTVERSION}/
 DISTNAME=	dealii-${DISTVERSION}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Finite element Differential Equations Analysis Library (DEAL)
-WWW=		https://www.dealii.org/
+WWW=		https://www.dealii.org/ \
+		https://github.com/dealii/dealii
 
-LICENSE=	LGPL21
-LICENSE_FILE=	${WRKSRC}/LICENSE.md
+LICENSE=	APACHE20 LGPL21
+LICENSE_COMB=	dual
+LICENSE_FILE_APACHE20=	${WRKSRC}/LICENSE.md
+LICENSE_FILE_LGPL21=	${WRKSRC}/LICENSE.md
 
 BROKEN_aarch64=		error: use of undeclared identifier '__TBB_machine_fetchadd4'
 BROKEN_armv7=		clang runs out of memory
+BROKEN_i386=		compilation fails: Kokkos assumes 64-bit build; i.e., 8-byte pointers
 
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/config.hpp:devel/boost-libs
 LIB_DEPENDS=	libblis.so:math/blis \
 		libboost_serialization.so:devel/boost-libs \
 		libhdf5.so:science/hdf5 \
-		libmetis.so:math/metis
+		libmetis.so:math/metis \
+		libvtkCommonCore-${VTK_VER}.so:math/vtk${VTK_VER:R}
 #		libkokkoscore.so:devel/kokkos TMP commented out for bundled kokkos, tests fail for non-bundled kokkos, see https://github.com/dealii/dealii/issues/15692
 
 USES=		blaslapack cmake:testing compiler:c++17-lang localbase:ldflags xorg
@@ -35,6 +40,8 @@ CMAKE_TESTING_ON=	FREEBSD_ENABLE_TESTS
 
 LDFLAGS+=	-lomp
 LDFLAGS+=	-lexecinfo # TMP for bundled kokkos
+
+XARCH!=		uname -p
 
 OPTIONS_DEFINE=		ADOLC ARPACK GSL LAPACK MPI OPENCASCADE PETSC SCALAPACK SLEPC SUNDIALS # for all options see contrib/docker/Dockerfile, TODO some of them need to be enabled here
 OPTIONS_DEFAULT=	GSL LAPACK MPI OPENCASCADE PETSC SCALAPACK SLEPC SUNDIALS
@@ -76,9 +83,12 @@ OPENCASCADE_LIB_DEPENDS=	libTKernel.so:cad/opencascade
 PETSC_DESC=		Compile with Petsc (only with MPI)
 PETSC_USES=		xorg
 PETSC_USE=		XORG=x11 # PETSc adds x11 through interface libraries
-PETSC_CMAKE_BOOL=	DEAL_II_WITH_PETSC DEAL_II_WITH_64BIT_INDICES
+PETSC_CMAKE_BOOL=	DEAL_II_WITH_PETSC
 PETSC_LIB_DEPENDS=	libpetsc.so:science/PETSc
 PETSC_IMPLIES=		MPI # has to use the same MPI as PETSc uses
+.if ${XARCH:M*64*} # match index size width being set to 64 in science/PETSc and math/metis
+PETSC_CMAKE_BOOL+=	DEAL_II_WITH_64BIT_INDICES # as opposed to 32-bit indices that are default in deal.II
+.endif
 
 SCALAPACK_DESC=		Compile with ScaLAPACK (only with MPI)
 SCALAPACK_CMAKE_BOOL=	DEAL_II_WITH_SCALAPACK
@@ -102,4 +112,7 @@ post-patch: # unbundle boost
 post-stage:
 	@${RM} ${STAGEDIR}${PREFIX}/*.log
 
+# the testsuite is excluded from the tarball: https://github.com/dealii/dealii/issues/17951
+
+.include <../../math/vtk9/Makefile.version>
 .include <bsd.port.mk>

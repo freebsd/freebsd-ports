@@ -120,7 +120,6 @@
 %%QT_INCDIR%%/QtSensorsQuick/%%FULLVER%%/QtSensorsQuick/private/qmltapsensor_p.h
 %%QT_INCDIR%%/QtSensorsQuick/%%FULLVER%%/QtSensorsQuick/private/qmltiltsensor_p.h
 %%QT_INCDIR%%/QtSensorsQuick/%%FULLVER%%/QtSensorsQuick/private/qsensorsquickglobal_p.h
-%%QT_INCDIR%%/QtSensorsQuick/%%FULLVER%%/QtSensorsQuick/private/qtsensorsquickexports_p.h
 %%QT_INCDIR%%/QtSensorsQuick/QtSensorsQuick
 %%QT_INCDIR%%/QtSensorsQuick/QtSensorsQuickDepends
 %%QT_INCDIR%%/QtSensorsQuick/QtSensorsQuickVersion
@@ -142,6 +141,7 @@ lib/cmake/Qt6Sensors/Qt6SensorsDependencies.cmake
 lib/cmake/Qt6Sensors/Qt6SensorsPlugins.cmake
 lib/cmake/Qt6Sensors/Qt6SensorsTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/Qt6Sensors/Qt6SensorsTargets.cmake
+lib/cmake/Qt6Sensors/Qt6SensorsVersionlessAliasTargets.cmake
 lib/cmake/Qt6Sensors/Qt6SensorsVersionlessTargets.cmake
 lib/cmake/Qt6Sensors/Qt6genericSensorPluginAdditionalTargetInfo.cmake
 lib/cmake/Qt6Sensors/Qt6genericSensorPluginConfig.cmake
@@ -156,6 +156,7 @@ lib/cmake/Qt6SensorsQuick/Qt6SensorsQuickConfigVersionImpl.cmake
 lib/cmake/Qt6SensorsQuick/Qt6SensorsQuickDependencies.cmake
 lib/cmake/Qt6SensorsQuick/Qt6SensorsQuickTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/Qt6SensorsQuick/Qt6SensorsQuickTargets.cmake
+lib/cmake/Qt6SensorsQuick/Qt6SensorsQuickVersionlessAliasTargets.cmake
 lib/cmake/Qt6SensorsQuick/Qt6SensorsQuickVersionlessTargets.cmake
 %%QT_LIBDIR%%/libQt6Sensors.prl
 %%QT_LIBDIR%%/libQt6Sensors.so
@@ -175,6 +176,7 @@ lib/cmake/Qt6SensorsQuick/Qt6SensorsQuickVersionlessTargets.cmake
 %%QT_QMLDIR%%/QtSensors/libsensorsquickplugin.so
 %%QT_QMLDIR%%/QtSensors/plugins.qmltypes
 %%QT_QMLDIR%%/QtSensors/qmldir
+%%QT_SBOMDIR%%/qtsensors-%%FULLVER%%.spdx
 libdata/pkgconfig/Qt6Sensors.pc
 libdata/pkgconfig/Qt6SensorsQuick.pc
 %%QT_DATADIR%%/modules/Sensors.json

@@ -1,13 +1,14 @@
 PORTNAME=	xorgxrdp
-DISTVERSIONPREFIX=	v
-DISTVERSION=	0.10.2
+DISTVERSION=	0.10.3
 # Be sure to bump PORTREVISION after xorg-server update to force rebuild
 PORTREVISION=	1
 CATEGORIES=	x11-drivers
+MASTER_SITES=	https://github.com/neutrinolabs/${PORTNAME}/releases/download/v${DISTVERSION}/ \
+		https://github.com/neutrinolabs/xrdp/releases/download/v${XRDPVER}/:xrdp
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} xrdp-${XRDPVER}${EXTRACT_SUFX}:xrdp
 DIST_SUBDIR=	xrdp
 
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES=	95ddf9c.patch:-p1
+PATCH_SITES=	https://github.com/neutrinolabs/${GH_PROJECT}/commit/
 
 MAINTAINER=	meta@FreeBSD.org
 COMMENT=	X.Org driver enabling use through an RDP session with xrdp
@@ -22,14 +23,13 @@ BUILD_DEPENDS=	nasm:devel/nasm
 USES=		autoreconf libtool:build localbase pkgconfig xorg
 USE_XORG=	xorgproto xorg-server
 USE_LDCONFIG=	yes
-USE_GITHUB=	yes
 
-GH_ACCOUNT=	neutrinolabs
-GH_TUPLE=	neutrinolabs:xrdp:v0.10.1:xrdp
+XRDPVER=	0.10.2
+
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 
-CONFIGURE_ENV=	XRDP_CFLAGS=-I${WRKSRC_xrdp}/common
+CONFIGURE_ENV=	XRDP_CFLAGS=-I${WRKDIR}/xrdp-${XRDPVER}/common
 CONFLICTS=	xorgxrdp-devel
 
 OPTIONS_DEFINE=	DEBUG DRI3

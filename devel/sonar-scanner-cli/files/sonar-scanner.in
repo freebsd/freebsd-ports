@@ -1,4 +1,4 @@
 #!/bin/sh
 
-exec /bin/sh %%PREFIX%%/%%APP_DIR%%/bin/sonar-scanner "$@"
+exec /bin/sh %%PREFIX%%/%%APP_DIR%%/bin/sonar-scanner -Dsonar.scanner.os=linux -Dsonar.scanner.javaExePath=%%LOCALBASE%%/bin/java -Dsonar.kubernetes.activate=false "$@"
 

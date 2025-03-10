@@ -1,5 +1,6 @@
 PORTNAME=	git-lab
 DISTVERSION=	0.1
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	adridg@FreeBSD.org
@@ -11,7 +12,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}appdirs>0:devel/py-appdirs@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}python-gitlab>=2.7.1:devel/py-python-gitlab@${PY_FLAVOR}
 
 USES=		python
-USE_PYTHON=	autoplist concurrent distutils
+USE_PYTHON=	autoplist concurrent distutils optsuffix
 
 USE_GITLAB=	yes
 GL_SITE=	https://invent.kde.org

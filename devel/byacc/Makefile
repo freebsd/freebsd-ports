@@ -1,5 +1,5 @@
 PORTNAME=	byacc
-PORTVERSION=	20240109
+PORTVERSION=	20241231
 CATEGORIES=	devel
 MASTER_SITES=	https://invisible-island.net/archives/byacc/ \
 		https://invisible-mirror.net/archives/byacc/ \

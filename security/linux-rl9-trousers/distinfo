@@ -1,0 +1,11 @@
+TIMESTAMP = 1731620118
+SHA256 (rocky/t/trousers-0.3.15-5.el9.aarch64.rpm) = 036725a7570801a4ec46da0ce9871660ebc2a9a7c43cabad3af54208a688d546
+SIZE (rocky/t/trousers-0.3.15-5.el9.aarch64.rpm) = 146498
+SHA256 (rocky/t/trousers-0.3.15-5.el9.x86_64.rpm) = 5ce349fcb89b8007e9e8a54bdf267869adc3911f6149c6f2e55219405a736e9a
+SIZE (rocky/t/trousers-0.3.15-5.el9.x86_64.rpm) = 147899
+SHA256 (rocky/t/trousers-lib-0.3.15-5.el9.aarch64.rpm) = 50692b546e523ee416e91595d95a043987479687110146584706e16bace54e1c
+SIZE (rocky/t/trousers-lib-0.3.15-5.el9.aarch64.rpm) = 167008
+SHA256 (rocky/t/trousers-lib-0.3.15-5.el9.x86_64.rpm) = f8f7b90acbe7e0016c7486d8684e8fede7ab11d63a5a49fb00e97aaaeff290f0
+SIZE (rocky/t/trousers-lib-0.3.15-5.el9.x86_64.rpm) = 169317
+SHA256 (rocky/t/trousers-0.3.15-5.el9.src.rpm) = 41cfe5b854997f995a5f4abad2c4fe2b7a9365c5c959d2c6cc40a724ccc46229
+SIZE (rocky/t/trousers-0.3.15-5.el9.src.rpm) = 4716060

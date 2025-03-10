@@ -1,5 +1,6 @@
 PORTNAME=	s6
-DISTVERSION=	2.12.0.4
+DISTVERSION=	2.13.1.0
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	https://www.skarnet.org/software/${PORTNAME}/
 
@@ -10,8 +11,8 @@ WWW=		https://www.skarnet.org/software/s6/
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	execline>=2.9.5.1:lang/execline \
-		skalibs>=2.14.1.1:devel/skalibs
+BUILD_DEPENDS=	execline>=2.9.6.1:lang/execline \
+		skalibs>=2.14.3.0:devel/skalibs
 LIB_DEPENDS=	libskarnet.so:devel/skalibs
 RUN_DEPENDS=	execlineb:lang/execline
 
@@ -28,7 +29,7 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--with-default-path=${LOCALBASE}/bin:/usr/bin:/bin \
 		--with-include=${LOCALBASE}/include \
 		--with-dynlib=${LOCALBASE}/lib \
-		--with-lib=${LOCALBASE}/lib/skalibs \
+		--with-lib=${LOCALBASE}/lib \
 		--with-lib=${LOCALBASE}/lib/execline \
 		--enable-shared
 

@@ -1,7 +1,7 @@
 PORTNAME=	ja2
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.21.0
-PORTREVISION=	5
+PORTREVISION=	11
 CATEGORIES=	games
 
 MAINTAINER=	timp87@gmail.com
@@ -201,17 +201,12 @@ CMAKE_OFF=	LOCAL_LUA_LIB \
 		WITH_UNITTESTS
 
 CMAKE_ARGS=	-DEXTRA_DATA_DIR:PATH="${DATADIR}" \
-		-DMAGICENUM_INCLUDE_DIR="${PREFIX}/include" \
+		-DMAGICENUM_INCLUDE_DIR="${PREFIX}/include/magic_enum" \
 		-DMINIAUDIO_INCLUDE_DIR="${PREFIX}/include/miniaudio"
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/some/place/where/the/data/is|${DATADIR}|' \
 		${WRKSRC}/rust/stracciatella/src/config/ja2_json.rs \
 		${WRKSRC}/rust/stracciatella/src/config/engine_options.rs
-
-post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/ja2 \
-		${STAGEDIR}${PREFIX}/bin/ja2-launcher \
-		${STAGEDIR}${PREFIX}/bin/ja2-resource-pack
 
 .include <bsd.port.mk>

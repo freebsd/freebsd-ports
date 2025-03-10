@@ -3,13 +3,13 @@ CATEGORIES=	audio
 
 COMMENT=	GStreamer Ogg bitstream plugin
 
-GST_PLUGIN=	ogg
+LIB_DEPENDS=	libogg.so:audio/libogg
+
+MASTERDIR=	${.CURDIR:H:H}/multimedia/gstreamer1-plugins
+
+PLIST=		${.CURDIR}/pkg-plist
+
 DIST=		base
-
-MASTERDIR=	${.CURDIR}/../../multimedia/gstreamer1-plugins
-
-PLIST=  ${.CURDIR}/pkg-plist
-
-LIB_DEPENDS=  libogg.so:audio/libogg
+GST_PLUGIN=	ogg
 
 .include "${MASTERDIR}/Makefile"

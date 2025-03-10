@@ -1,5 +1,5 @@
 PORTNAME=	girara
-PORTVERSION=	0.4.4
+PORTVERSION=	0.4.5
 CATEGORIES=	x11-toolkits graphics
 MASTER_SITES=	https://pwmt.org/projects/girara/download/
 

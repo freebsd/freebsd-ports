@@ -1,6 +1,6 @@
 PORTNAME=	r7-office
-PORTVERSION=	2024.1.1
-DISTVERSIONSUFFIX=	-373.el8
+PORTVERSION=	2024.4.2
+DISTVERSIONSUFFIX=	-721.el8
 CATEGORIES=	editors linux russian
 MASTER_SITES=	https://download.r7-office.ru/centos/
 PKGNAMEPREFIX=	linux-

@@ -1,11 +1,10 @@
 PORTNAME=	imwheel
 DISTVERSION=	1.0.0pre12
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11
-MASTER_SITES=	ftp://jcatki.no-ip.org/pub/imwheel/ \
-		SF/${PORTNAME}/${PORTNAME}-source/${DISTVERSION}
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-source/${DISTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Utility to translate mouse wheel actions into X keyboard events
 WWW=		https://imwheel.sourceforge.net/
 
@@ -25,6 +24,9 @@ post-patch:
 .for i in imwheel.1 util.c
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/${i}
 .endfor
+
+post-install:
+	@${MV} ${STAGEDIR}${PREFIX}/etc/imwheelrc ${STAGEDIR}${PREFIX}/etc/imwheelrc.sample
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

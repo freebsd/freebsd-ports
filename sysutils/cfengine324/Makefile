@@ -1,5 +1,5 @@
 PORTNAME=	cfengine
-DISTVERSION=	3.24.0
+DISTVERSION=	3.24.1
 CATEGORIES=	sysutils
 MASTER_SITES=	https://s3.amazonaws.com/cfengine-package-repos/tarballs/
 DISTNAME=	${PORTNAME}-community-${DISTVERSION}

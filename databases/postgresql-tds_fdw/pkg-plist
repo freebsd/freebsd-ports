@@ -1,0 +1,7 @@
+lib/postgresql/tds_fdw.so
+share/doc/postgresql/extension/README.tds_fdw.md
+share/postgresql/extension/tds_fdw--2.0.1--2.0.2.sql
+share/postgresql/extension/tds_fdw--2.0.2--2.0.3.sql
+share/postgresql/extension/tds_fdw--2.0.3--2.0.4.sql
+share/postgresql/extension/tds_fdw--2.0.4.sql
+share/postgresql/extension/tds_fdw.control

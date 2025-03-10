@@ -10,7 +10,8 @@ COMMENT=	Find Bugs in Java Programs
 WWW=		https://findbugs.sourceforge.net/
 
 LICENSE=	LGPL21
-USE_JAVA=	yes
+
+USES=		java
 NO_BUILD=	yes
 
 JAR_FILES=	annotations.jar \

@@ -21,6 +21,15 @@
  char	*NET_AdrToString (netadr_t a)
 --- unix/qsh_unix.c.orig	2006-01-11 13:05:49 UTC
 +++ unix/qsh_unix.c
+@@ -31,7 +31,7 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston,
+ #include "../qcommon/qcommon.h"
+ 
+ #if defined(__FreeBSD__)
+-#include <machine/param.h>
++#include <sys/param.h>
+ #endif
+ 
+ //===============================================================================
 @@ -150,7 +150,7 @@ void Sys_Mkdir (char *path)
      mkdir (path, 0777);
  }

@@ -1,11 +1,7 @@
 PORTNAME=	intel-ipsec-mb
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.5
-PORTREVISION=	1
+DISTVERSION=	2.0
 CATEGORIES=	security
-
-PATCH_SITES=	https://github.com/intel/${PORTNAME}/commit/
-PATCHFILES=	c266eb633019bf0eef2c9df1ce814f22b9ee2d51.patch:-p1
 
 MAINTAINER=	freebsd@sysctl.cz
 COMMENT=	Intel(R) Multi-Buffer Crypto for IPsec Library
@@ -18,21 +14,22 @@ ONLY_FOR_ARCHS=	amd64
 
 BUILD_DEPENDS=	nasm:devel/nasm
 
-USES=		cmake
+USES=		cmake:testing
 USE_GITHUB=	yes
 GH_ACCOUNT=	intel
 USE_LDCONFIG=	yes
 
 CMAKE_ARGS=	-DMAN_INSTALL_DIR:PATH=${PREFIX}/share/man/man7
 
-TEST_TARGET=	test
-
 PLIST_FILES=	include/intel-ipsec-mb.h \
 		lib/libIPSec_MB.so \
-		lib/libIPSec_MB.so.1 \
+		lib/libIPSec_MB.so.2 \
 		lib/libIPSec_MB.so.${DISTVERSION}.0 \
 		share/man/man7/libipsec-mb-dev.7.gz \
 		share/man/man7/libipsec-mb.7.gz
+
+CMAKE_TESTING_OFF=	BUILD_LIBRARY_ONLY
+CMAKE_ON=	BUILD_LIBRARY_ONLY
 
 OPTIONS_DEFINE=	AESNIEMU
 

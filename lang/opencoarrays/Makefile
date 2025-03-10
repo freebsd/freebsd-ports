@@ -23,6 +23,8 @@ GH_ACCOUNT=	sourceryinstitute
 GH_PROJECT=	OpenCoarrays
 USE_LDCONFIG=	yes
 
+CFLAGS+=	-fpermissive
+
 PLIST_SUB=	GCC_VER=${_GCC_VER} \
 		PORTVERSION=${PORTVERSION} \
 		SOVERSION=3

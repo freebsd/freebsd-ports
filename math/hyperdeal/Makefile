@@ -1,5 +1,6 @@
 PORTNAME=	hyperdeal
 DISTVERSION=	g20230706
+PORTREVISION=	2
 CATEGORIES=	math
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/

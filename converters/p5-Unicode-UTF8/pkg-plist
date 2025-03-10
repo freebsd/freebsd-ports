@@ -1,0 +1,4 @@
+%%SITE_ARCH%%/Unicode/UTF8.pm
+%%SITE_ARCH%%/Unicode/UTF8.pod
+%%SITE_ARCH%%/auto/Unicode/UTF8/UTF8.so
+%%PERL5_MAN3%%/Unicode::UTF8.3.gz

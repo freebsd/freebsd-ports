@@ -1,0 +1,24 @@
+#! /bin/sh
+
+# PROVIDE: pueued
+# REQUIRE: DAEMON
+# KEYWORD: shutdown
+#
+# Configuration settings for pueued in /etc/rc.conf
+#
+# pueued_enable (bool):    Enable pueued. (default=NO)
+
+. /etc/rc.subr
+
+name="pueued"
+rcvar="pueued_enable"
+
+load_rc_config $name
+
+: ${pueued_enable:="NO"}
+: ${pueued_env:="HOME=/root"}
+
+command="%%PREFIX%%/bin/${name}"
+command_args="-d"
+
+run_rc_command "$1"

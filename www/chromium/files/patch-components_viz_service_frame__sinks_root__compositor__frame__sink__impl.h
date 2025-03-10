@@ -1,6 +1,6 @@
---- components/viz/service/frame_sinks/root_compositor_frame_sink_impl.h.orig	2024-04-19 13:02:56 UTC
+--- components/viz/service/frame_sinks/root_compositor_frame_sink_impl.h.orig	2025-03-05 08:14:56 UTC
 +++ components/viz/service/frame_sinks/root_compositor_frame_sink_impl.h
-@@ -209,7 +209,7 @@ class VIZ_SERVICE_EXPORT RootCompositorFrameSinkImpl
+@@ -228,7 +228,7 @@ class VIZ_SERVICE_EXPORT RootCompositorFrameSinkImpl
    // See comments on `EvictionHandler`.
    EvictionHandler eviction_handler_;
  

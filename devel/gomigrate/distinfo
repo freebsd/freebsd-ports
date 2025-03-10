@@ -1,5 +1,5 @@
-TIMESTAMP = 1716620053
-SHA256 (go/devel_gomigrate/migrate-v4.17.1/v4.17.1.mod) = 820f40d16ab9c9acc572b5a95282e9e1e3523182c57f466acf19c6eec9a629bc
-SIZE (go/devel_gomigrate/migrate-v4.17.1/v4.17.1.mod) = 9578
-SHA256 (go/devel_gomigrate/migrate-v4.17.1/v4.17.1.zip) = d7247fc0b2fe25e8d5d3f900ccc11bb68bb90c1a171336687bffee5d9f9a92af
-SIZE (go/devel_gomigrate/migrate-v4.17.1/v4.17.1.zip) = 374798
+TIMESTAMP = 1738061815
+SHA256 (go/devel_gomigrate/migrate-v4.18.2/v4.18.2.mod) = ede4a01e2af6047ef93030e659e3c392e11f1ad5e5c8193f3282207311a0d3d0
+SIZE (go/devel_gomigrate/migrate-v4.18.2/v4.18.2.mod) = 10545
+SHA256 (go/devel_gomigrate/migrate-v4.18.2/v4.18.2.zip) = c46f450ecd53974bfca3e62cfec876401079fe0b48ed4b6760101dc6b4f330a4
+SIZE (go/devel_gomigrate/migrate-v4.18.2/v4.18.2.zip) = 376316

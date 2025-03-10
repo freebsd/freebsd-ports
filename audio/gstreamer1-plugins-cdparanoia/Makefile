@@ -3,13 +3,13 @@ CATEGORIES=	audio
 
 COMMENT=	GStreamer CDDA extraction (aka audio ripping) plugin
 
-GST_PLUGIN=	cdparanoia
+LIB_DEPENDS=	libcdda_interface.so:audio/cdparanoia
+
+MASTERDIR=	${.CURDIR:H:H}/multimedia/gstreamer1-plugins
+
+PLIST=		${.CURDIR}/pkg-plist
+
 DIST=		base
-
-MASTERDIR=	${.CURDIR}/../../multimedia/gstreamer1-plugins
-
-PLIST=  ${.CURDIR}/pkg-plist
-
-LIB_DEPENDS= libcdda_interface.so:audio/cdparanoia
+GST_PLUGIN=	cdparanoia
 
 .include "${MASTERDIR}/Makefile"

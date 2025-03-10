@@ -1,0 +1,21 @@
+Restore the option to build with CHAR_SIZE being 8, which upstream
+seems to have abandoned. We want it to be used with Festival, among
+other things.
+
+	-mi	(November 2024)
+
+--- include/ctype16.h	2021-06-14 13:27:08.000000000 -0400
++++ include/ctype16.h	2024-11-19 13:24:35.494673000 -0500
+@@ -28,7 +28,10 @@
+ #define is_xml_namechar(c,map) (map[(int)(c) & 0xff] & xml_namechar)
+ #define is_xml_whitespace(c) (xml_char_map[(int)(c) & 0xff] & xml_whitespace)
++#define is_xml_whitespace_16 is_xml_whitespace
++#define is_xml_namestart_16 is_xml_namestart
++#define is_xml_namechar_16 is_xml_namechar
+ 
+-#define xml_char_map_11 0
+-#define xml_char_map_105 0
++#define xml_char_map_11 xml_char_map
++#define xml_char_map_105 xml_char_map
+ 
+ #else

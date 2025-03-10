@@ -1,7 +1,7 @@
 ghc92_USE_CABAL=	Boolean-0.2.4_1 \
 			Cabal-3.10.3.0 \
 			Cabal-syntax-3.10.3.0 \
-			Chart-1.9.5 \
+			Chart-1.9.5_2 \
 			Chart-diagrams-1.9.5_1 \
 			Diff-0.5_1 \
 			Glob-0.10.2_3 \
@@ -12,14 +12,14 @@ ghc92_USE_CABAL=	Boolean-0.2.4_1 \
 			MemoTrie-0.6.11 \
 			MonadRandom-0.6_4 \
 			NumInstances-1.4 \
-			OneTuple-0.4.2 \
+			OneTuple-0.4.2_1 \
 			Only-0.1_2 \
 			QuickCheck-2.14.3 \
-			SVGFonts-1.8.0.1 \
+			SVGFonts-1.8.0.1_2 \
 			StateVar-1.2.2 \
 			active-0.2.1_3 \
 			adjunctions-4.4.2_2 \
-			aeson-2.2.3.0 \
+			aeson-2.2.3.0_2 \
 			aeson-pretty-0.8.10 \
 			alex-3.5.1.0 \
 			algebraic-graphs-0.7_3 \
@@ -27,23 +27,23 @@ ghc92_USE_CABAL=	Boolean-0.2.4_1 \
 			ansi-terminal-types-0.11.5_1 \
 			ansi-wl-pprint-1.0.2 \
 			apply-refact-0.14.0.0 \
-			assoc-1.1.1 \
-			async-2.2.5_1 \
-			attoparsec-0.14.4_5 \
+			assoc-1.1.1_1 \
+			async-2.2.5_3 \
+			attoparsec-0.14.4_6 \
 			attoparsec-aeson-2.2.2.0 \
 			base-compat-0.14.0 \
 			base-orphans-0.9.2 \
 			base16-bytestring-1.0.2.0_1 \
 			base64-bytestring-1.2.1.0_1 \
-			bifunctors-5.6.2 \
-			binary-orphans-1.0.5 \
-			bitvec-1.1.5.0_1 \
+			bifunctors-5.6.2_1 \
+			binary-orphans-1.0.5_1 \
+			bitvec-1.1.5.0_3 \
 			blaze-builder-0.4.2.3 \
-			blaze-markup-0.8.3.0_1 \
-			blaze-svg-0.3.7_1 \
+			blaze-markup-0.8.3.0_2 \
+			blaze-svg-0.3.7_3 \
 			blaze-textual-0.2.3.1 \
-			boring-0.2.2 \
-			bytes-0.17.3_1 \
+			boring-0.2.2_1 \
+			bytes-0.17.3_2 \
 			call-stack-0.4.0 \
 			case-insensitive-1.2.1.0 \
 			cereal-0.5.8.3 \
@@ -60,13 +60,13 @@ ghc92_USE_CABAL=	Boolean-0.2.4_1 \
 			conduit-1.3.5 \
 			conduit-extra-1.3.6 \
 			conduit-parse-0.2.1.1_1 \
-			constraints-0.14.2 \
+			constraints-0.14.2_1 \
 			constraints-extras-0.4.0.1 \
 			contravariant-1.5.5 \
 			cpphs-1.20.9.1_1 \
-			cryptohash-sha1-0.11.101.0_5 \
+			cryptohash-sha1-0.11.101.0_6 \
 			cubicbezier-0.6.0.7 \
-			data-array-byte-0.1.0.1_3 \
+			data-array-byte-0.1.0.1_4 \
 			data-default-0.7.1.1 \
 			data-default-class-0.1.2.0 \
 			data-default-instances-containers-0.0.1 \
@@ -77,18 +77,18 @@ ghc92_USE_CABAL=	Boolean-0.2.4_1 \
 			dependent-map-0.4.0.0_2 \
 			dependent-sum-0.7.2.0_2 \
 			deriving-aeson-0.2.9_1 \
-			diagrams-contrib-1.4.5.1_1 \
+			diagrams-contrib-1.4.5.1_2 \
 			diagrams-core-1.5.1.1_2 \
-			diagrams-lib-1.4.6.2_1 \
-			diagrams-postscript-1.5.1.1_2 \
-			diagrams-solve-0.1.3_2 \
-			diagrams-svg-1.4.3.1_6 \
+			diagrams-lib-1.4.6.2_3 \
+			diagrams-postscript-1.5.1.1_4 \
+			diagrams-solve-0.1.3_3 \
+			diagrams-svg-1.4.3.1_7 \
 			direct-sqlite-2.3.29 \
 			distributive-0.6.2.1_1 \
-			dlist-1.0_1 \
+			dlist-1.0_2 \
 			dual-tree-0.2.3.1_3 \
 			enummapset-0.7.2.0_1 \
-			extra-1.7.16 \
+			extra-1.7.16_1 \
 			fail-4.9.0.0 \
 			fast-math-1.0.2 \
 			file-embed-0.0.16.0 \
@@ -100,21 +100,21 @@ ghc92_USE_CABAL=	Boolean-0.2.4_1 \
 			fmlist-0.9.4 \
 			focus-1.0.3.2 \
 			foldable1-classes-compat-0.1_6 \
-			foldl-1.4.16 \
+			foldl-1.4.16_1 \
 			force-layout-0.4.0.6_13 \
 			fourmolu-0.14.0.0 \
-			free-5.2_5 \
-			fsnotify-0.4.1.0 \
+			free-5.2_6 \
+			fsnotify-0.4.1.0_1 \
 			fuzzy-0.1.1.0 \
 			generic-arbitrary-1.0.1 \
 			generic-deriving-1.14.5_3 \
 			generic-lens-2.2.2.0_1 \
 			generic-lens-core-2.2.1.0_2 \
-			generically-0.1.1_3 \
+			generically-0.1.1_4 \
 			ghc-exactprint-1.5.0_1 \
 			ghc-lib-parser-9.6.5.20240423 \
 			ghc-lib-parser-ex-9.6.0.2 \
-			ghc-paths-0.1.0.12_6 \
+			ghc-paths-0.1.0.12_7 \
 			ghc-trace-events-0.1.2.9 \
 			githash-0.1.7.0 \
 			gitrev-1.3.1 \
@@ -124,17 +124,17 @@ ghc92_USE_CABAL=	Boolean-0.2.4_1 \
 			hashable-1.4.6.0 \
 			haskell-src-exts-1.23.1 \
 			heaps-0.4 \
-			hie-bios-0.14.0_1 \
+			hie-bios-0.14.0_2 \
 			hiedb-0.6.0.1 \
 			hlint-3.6.1 \
-			hsc2hs-0.68.10_2 \
+			hsc2hs-0.68.10_3 \
 			hscolour-1.25 \
 			hw-fingertree-0.1.2.1_2 \
 			hw-prim-0.6.3.2_2 \
 			implicit-hie-0.1.4.0 \
 			indexed-profunctors-0.1.1.1 \
-			indexed-traversable-0.1.4 \
-			indexed-traversable-instances-0.1.2 \
+			indexed-traversable-0.1.4_1 \
+			indexed-traversable-instances-0.1.2_1 \
 			integer-conversion-0.1.0.1_1 \
 			integer-logarithms-1.0.3.1_6 \
 			integration-0.2.1 \
@@ -151,10 +151,10 @@ ghc92_USE_CABAL=	Boolean-0.2.4_1 \
 			linear-1.22_3 \
 			list-t-1.0.5.7 \
 			logict-0.8.1.0_1 \
-			lsp-2.7.0.0 \
+			lsp-2.7.0.0_1 \
 			lsp-test-0.17.1.0 \
 			lsp-types-2.3.0.0 \
-			lucid-2.11.20230408_1 \
+			lucid-2.11.20230408_2 \
 			matrices-0.5.0 \
 			megaparsec-9.6.1 \
 			mfsolve-0.3.2.2 \
@@ -183,10 +183,10 @@ ghc92_USE_CABAL=	Boolean-0.2.4_1 \
 			ordered-containers-0.2.4 \
 			ormolu-0.7.2.0 \
 			os-string-2.0.3 \
-			parallel-3.2.2.0_8 \
+			parallel-3.2.2.0_9 \
 			parsec-3.1.17.0_1 \
 			parser-combinators-1.3.0_1 \
-			parsers-0.12.11_2 \
+			parsers-0.12.11_3 \
 			polyparse-1.13_9 \
 			prettyprinter-1.7.1 \
 			prettyprinter-ansi-terminal-1.1.3 \
@@ -195,9 +195,9 @@ ghc92_USE_CABAL=	Boolean-0.2.4_1 \
 			primitive-0.8.0.0_1 \
 			primitive-extras-0.10.2 \
 			primitive-unlifted-0.1.3.1_1 \
-			process-extras-0.7.4 \
+			process-extras-0.7.4_1 \
 			profunctors-5.6.2_3 \
-			psqueues-0.2.8.0 \
+			psqueues-0.2.8.0_1 \
 			quickcheck-instances-0.3.30_1 \
 			random-1.2.1.2 \
 			random-shuffle-0.0.4 \
@@ -214,12 +214,12 @@ ghc92_USE_CABAL=	Boolean-0.2.4_1 \
 			safe-0.3.21_1 \
 			safe-exceptions-0.1.7.4_1 \
 			scientific-0.3.7.0_7 \
-			semialign-1.3.1 \
-			semigroupoids-6.0.1 \
+			semialign-1.3.1_2 \
+			semigroupoids-6.0.1_1 \
 			semigroups-0.20 \
 			semirings-0.7 \
 			shake-0.19.8 \
-			some-1.0.6_1 \
+			some-1.0.6_2 \
 			sorted-list-0.2.2.0 \
 			split-0.2.5 \
 			splitmix-0.1.0.5_1 \
@@ -230,25 +230,25 @@ ghc92_USE_CABAL=	Boolean-0.2.4_1 \
 			streaming-commons-0.2.2.6_1 \
 			strict-0.5_1 \
 			stylish-haskell-0.14.5.0_1 \
-			svg-builder-0.1.1_9 \
+			svg-builder-0.1.1_10 \
 			syb-0.7.2.4 \
 			tagged-0.8.8_1 \
 			tasty-1.5_2 \
 			tasty-expected-failure-0.12.3 \
 			tasty-golden-2.3.5 \
 			tasty-hunit-0.10.1 \
-			tasty-rerun-1.1.19_3 \
+			tasty-rerun-1.1.19_4 \
 			temporary-1.3 \
-			terminal-size-0.3.4 \
+			terminal-size-0.3.4_1 \
 			text-2.0.2_1 \
-			text-iso8601-0.1.1 \
+			text-iso8601-0.1.1_1 \
 			text-rope-0.2 \
-			text-short-0.1.6_1 \
+			text-short-0.1.6_3 \
 			th-abstraction-0.7.0.0 \
 			th-compat-0.1.5_2 \
 			th-env-0.1.1 \
-			these-1.2.1 \
-			time-compat-1.9.7 \
+			these-1.2.1_2 \
+			time-compat-1.9.7_2 \
 			time-locale-compat-0.1.1.5 \
 			transformers-base-0.4.6 \
 			transformers-compat-0.7.2 \
@@ -258,15 +258,15 @@ ghc92_USE_CABAL=	Boolean-0.2.4_1 \
 			unix-compat-0.7.1 \
 			unliftio-0.2.25.0 \
 			unliftio-core-0.2.1.0_4 \
-			unordered-containers-0.2.20_2 \
+			unordered-containers-0.2.20_4 \
 			utf8-string-1.0.2 \
-			uuid-types-1.0.6 \
-			vector-0.13.1.0_1 \
+			uuid-types-1.0.6_2 \
+			vector-0.13.1.0_2 \
 			vector-algorithms-0.9.0.2_1 \
 			vector-space-0.16 \
-			vector-stream-0.1.0.1_1 \
+			vector-stream-0.1.0.1_3 \
 			void-0.7.3 \
-			witherable-0.5 \
+			witherable-0.5_1 \
 			xml-1.3.14_2 \
 			yaml-0.11.11.2_2 \
-			zlib-0.7.1.0_1
+			zlib-0.7.1.0_2

@@ -1,11 +1,11 @@
 PORTNAME=	zip
 PORTVERSION=	3.0
-PORTREVISION=	2
+PORTREVISION=	4
 CATEGORIES=	archivers
 MASTER_SITES=	SF/info${PORTNAME}/Zip%203.x%20%28latest%29/${PORTVERSION}
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.//g}
 
-MAINTAINER=	ler@FreeBSD.org
+MAINTAINER=	fuz@FreeBSD.org
 COMMENT=	Create/update ZIP files compatible with PKZIP
 WWW=		https://infozip.sourceforge.net/Zip.html
 
@@ -19,6 +19,9 @@ CPE_VENDOR=	info-zip_project
 
 OPTIONS_DEFINE=	DOCS
 
+CFLAGS+=	-Wno-deprecated-non-prototype
+
+MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}"
 MAKEFILE=	unix/Makefile
 ALL_TARGET=	generic
 

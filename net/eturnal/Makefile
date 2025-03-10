@@ -1,5 +1,6 @@
 PORTNAME=	eturnal
 DISTVERSION=	1.12.0
+PORTREVISION=	1
 CATEGORIES=	net
 
 MAINTAINER=	yzrh@noema.org
@@ -66,12 +67,12 @@ post-patch:
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/eturnal
-	cd ${WRKSRC}/_build/${REBAR_PROFILE}/rel/eturnal && ${COPYTREE_BIN} bin \
-		${STAGEDIR}${PREFIX}/lib/eturnal/
-	cd ${WRKSRC}/_build/${REBAR_PROFILE}/rel/eturnal && ${COPYTREE_SHARE} lib \
-		${STAGEDIR}${PREFIX}/lib/eturnal/
-	cd ${WRKSRC}/_build/${REBAR_PROFILE}/rel/eturnal && ${COPYTREE_SHARE} releases \
-		${STAGEDIR}${PREFIX}/lib/eturnal/
+	cd ${WRKSRC}/_build/${REBAR_PROFILE}/rel/eturnal && \
+		${COPYTREE_BIN} bin ${STAGEDIR}${PREFIX}/lib/eturnal/
+	cd ${WRKSRC}/_build/${REBAR_PROFILE}/rel/eturnal && \
+		${COPYTREE_SHARE} lib ${STAGEDIR}${PREFIX}/lib/eturnal/
+	cd ${WRKSRC}/_build/${REBAR_PROFILE}/rel/eturnal && \
+		${COPYTREE_SHARE} releases ${STAGEDIR}${PREFIX}/lib/eturnal/
 	${REINPLACE_CMD} 's|__erts_dir="$$RELEASE_ROOT_DIR/erts-$$ERTS_VSN"|__erts_dir="${LOCALBASE}/lib/erlang/erts-$$ERTS_VSN"|' \
 		${STAGEDIR}${PREFIX}/lib/eturnal/bin/eturnal
 
@@ -82,9 +83,9 @@ post-install:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/_build/${REBAR_PROFILE}/rel/eturnal/doc/README.md \
 		${STAGEDIR}${DOCSDIR}/
-	${RLN} ${STAGEDIR}${PREFIX}/lib/eturnal/bin/eturnalctl \
-		${STAGEDIR}${PREFIX}/sbin/eturnalctl
+	${RLN} ${STAGEDIR}${PREFIX}/lib/eturnal/bin/eturnalctl ${STAGEDIR}${PREFIX}/sbin/eturnalctl
 	${MKDIR} ${STAGEDIR}/var/log/eturnal
-	${FIND} ${STAGEDIR}${PREFIX}/lib/eturnal/lib -type f -name '*.so' -exec ${STRIP_CMD} {} +
+	${FIND} ${STAGEDIR}${PREFIX}/lib/eturnal/lib -type f -name '*.so' \
+		-exec ${STRIP_CMD} {} +
 
 .include <bsd.port.mk>

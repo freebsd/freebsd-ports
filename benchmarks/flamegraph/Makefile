@@ -2,7 +2,7 @@ PORTNAME=	flamegraph
 PORTVERSION=	1.1
 CATEGORIES=	benchmarks
 
-MAINTAINER=	jmd@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Stack trace visualizer
 WWW=		https://github.com/brendangregg/FlameGraph
 

@@ -2,9 +2,7 @@ PORTNAME=	zorro
 PORTVERSION=	1.1.8
 PORTREVISION=	3
 CATEGORIES=	deskutils tk
-MASTER_SITES=	ftp://ftp.nuug.no/pub/anders/distfiles/ \
-		http://atreides.freenix.no/~anders/ \
-		ftp://totem.fix.no/pub/mirrors/misc/
+MASTER_SITES=	https://www.nuug.no/pub/anders/distfiles/
 DISTNAME=	${PORTNAME}-1.1p8
 
 MAINTAINER=	ports@FreeBSD.org

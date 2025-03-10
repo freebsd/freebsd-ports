@@ -1,6 +1,6 @@
---- Makefile.orig	1999-11-09 08:23:46.000000000 +0100
-+++ Makefile	2014-08-21 12:29:41.000000000 +0200
-@@ -32,6 +32,14 @@
+--- Makefile.orig	1999-11-09 07:23:46 UTC
++++ Makefile
+@@ -32,6 +32,14 @@ compile auto_home.c
  compile auto_home.c
  	./compile auto_home.c
  
@@ -15,7 +15,7 @@
  byte_chr.o: \
  compile byte_chr.c byte.h
  	./compile byte_chr.c
-@@ -231,7 +239,7 @@
+@@ -231,7 +239,7 @@ hier.o: \
  	./choose clr tryshsgr hasshsgr.h1 hasshsgr.h2 > hasshsgr.h
  
  hier.o: \
@@ -24,7 +24,7 @@
  	./compile hier.c
  
  httpd: \
-@@ -257,9 +265,9 @@
+@@ -257,9 +265,9 @@ install: \
  	./compile httpdate.c
  
  install: \
@@ -36,7 +36,7 @@
  	open.a error.a str.a 
  
  install.o: \
-@@ -268,8 +276,8 @@
+@@ -268,8 +276,8 @@ instcheck: \
  	./compile install.c
  
  instcheck: \

@@ -1,7 +1,6 @@
 PORTNAME=	synergy
-DISTVERSION=	1.14.6.19
-DISTVERSIONSUFFIX=	-stable
-PORTREVISION=	2
+DISTVERSION=	1.15.1
+DISTVERSIONSUFFIX=	+r1
 PORTEPOCH=	3
 CATEGORIES=	sysutils
 
@@ -16,15 +15,14 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libnotify.so:devel/libnotify \
 		libxkbfile.so:x11/libxkbfile
 
-USES=		cmake compiler:c++14-lang cpe gnome localbase:ldflags pkgconfig qt:5 ssl xorg
+USES=		cmake compiler:c++14-lang cpe gnome localbase:ldflags pkgconfig qt:6 ssl xorg
 CPE_VENDOR=	synergy-foss
-USE_QT=		core dbus network widgets buildtools:build linguisttools:build qmake:build
+USE_QT=		base tools:build
 USE_GNOME=	gdkpixbuf2 glib20
 USE_XORG=	ice xtst x11 sm xext xinerama xrandr xi
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	symless
-GH_PROJECT=	synergy-core
 GH_TUPLE=	google:googletest:18f8200e3079b0e54fa00cb7ac55d4c39dcf6da6:google_googletest/ext/googletest \
 		mohabouje:WinToast:8abb85b:WinToast/ext/WinToast \
 		zeux:pugixml:9e382f9:pugixml/ext/pugixml
@@ -57,14 +55,10 @@ post-patch:
 		${WRKSRC}/src/lib/synergy/unix/AppUtilUnix.cpp
 	@${REINPLACE_CMD} -e 's|return "/etc"|return "${PREFIX}/etc"|' \
 		${WRKSRC}/src/lib/arch/unix/ArchFileUnix.cpp
-	@${REINPLACE_CMD} -e 's|/etc/synergy.conf|${PREFIX}/etc/synergy.conf|' \
-		${WRKSRC}/doc/synergys.man
 
 do-install: # https://github.com/symless/synergy-core/issues/6895
 .for f in synergyc synergys
 	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/bin/${f} ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/doc/${f}.man \
-		${STAGEDIR}${PREFIX}/share/man/man1/${f}.1
 .endfor
 	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/bin/syntool ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/doc/synergy.conf.example-basic ${STAGEDIR}${PREFIX}/etc/synergy.conf.sample # server config

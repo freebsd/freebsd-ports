@@ -1,8 +1,8 @@
 PORTNAME=	aclip
-DISTVERSION=	0.6.3.3
+DISTVERSION=	0.6.3.4
 CATEGORIES=	x11
 
-MAINTAINER=	jbeich@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Command line interface to Arcan clipboards
 WWW=		https://arcan-fe.com/
 

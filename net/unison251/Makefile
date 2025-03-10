@@ -28,10 +28,8 @@ x11_LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 			libharfbuzz.so:print/harfbuzz
 
 PLIST_SUB=	PORTVERSION=${PORTVERSION} VERSIONSUFFIX=${VERSIONSUFFIX}
-USES=		gmake localbase
-USE_OCAML=	yes
+USES=		gmake localbase ocaml:build
 WRKSRC_SUBDIR=	src
-NO_OCAML_RUNDEPENDS=yes
 CONFLICTS=	unison-devel
 MAKE_ENV=	CLIBS="${LIBS:S/^-/-ccopt -/}" COFLAGS="${CFLAGS:C/ *(-[^ ]*) */ -ccopt \"\1 \"/gW}"
 ALL_TARGET=	unison all
@@ -60,6 +58,12 @@ SUB_FILES=		${PORTNAME}.desktop
 USE_GNOME+=		atk cairo gdkpixbuf2 glib20 gtk20 pango
 USES+=			gettext-runtime gnome
 PLIST_SUB+=		X11=""
+.endif
+
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == powerpc
+USE_BINUTILS=	yes
 .endif
 
 post-patch-FSMONITOR-off:

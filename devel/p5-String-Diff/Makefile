@@ -1,5 +1,5 @@
 PORTNAME=	String-Diff
-PORTVERSION=	0.07
+PORTVERSION=	0.11
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -17,7 +17,7 @@ TEST_DEPENDS=	p5-Test-Base>=0:devel/p5-Test-Base \
 		p5-YAML>=0:textproc/p5-YAML
 
 USES=		perl5
-USE_PERL5=	modbuildtiny
+USE_PERL5=	configure
 
 NO_ARCH=	yes
 

@@ -1,11 +1,12 @@
 PORTNAME=	Flask-Cors
-PORTVERSION=	3.0.8
+PORTVERSION=	5.0.0
 PORTREVISION=	1
 CATEGORIES=	www python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	flask_cors-${PORTVERSION}
 
-MAINTAINER=	stiginge@pvv.org
+MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Flask extension adding a decorator for CORS support
 WWW=		https://github.com/corydolphin/flask-cors
 

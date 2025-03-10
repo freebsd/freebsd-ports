@@ -2,7 +2,7 @@ PORTNAME=	validator
 DISTVERSIONPREFIX=	${PORTNAME}-
 DISTVERSION=	1_3
 DISTVERSIONSUFFIX=	-release
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	www
 
 MAINTAINER=	cyberbotx@cyberbotx.com
@@ -41,12 +41,6 @@ SHEBANG_FILES=	httpd/cgi-bin/check \
 		httpd/cgi-bin/sendfeedback.pl
 
 SUB_FILES=	pkg-message
-
-OPTIONS_DEFINE=	HTML_TIDY
-OPTIONS_DEFAULT=HTML_TIDY
-HTML_TIDY_DESC=	Enable HTML Markup Cleaning
-
-HTML_TIDY_RUN_DEPENDS=	p5-HTML-Tidy>=0:textproc/p5-HTML-Tidy
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%WWWDIR%%|${WWWDIR}|' \

@@ -3,13 +3,13 @@ CATEGORIES=	security
 
 COMMENT=	GStreamer Datagram TLS (dtls) plugin
 
-GST_PLUGIN=	dtls
+USES=		compiler:c11 ssl
+
+MASTERDIR=	${.CURDIR:H:H}/multimedia/gstreamer1-plugins
+
+PLIST=		${.CURDIR}/pkg-plist
+
 DIST=		bad
-
-MASTERDIR=	${.CURDIR}/../../multimedia/gstreamer1-plugins
-
-PLIST=  ${.CURDIR}/pkg-plist
-
-USES=    compiler:c11 ssl
+GST_PLUGIN=	dtls
 
 .include "${MASTERDIR}/Makefile"

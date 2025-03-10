@@ -1,5 +1,6 @@
 PORTNAME=	gretl
-PORTVERSION=	2024b
+PORTVERSION=	2024d
+PORTREVISION=	1
 CATEGORIES=	math finance
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${DISTVERSIONFULL}/
 
@@ -9,6 +10,8 @@ WWW=		https://gretl.sourceforge.net/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
+
+BROKEN_FreeBSD_13=	configure fails: checking for gnuplot >= 5.2 with cairo support... no
 
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libfftw3.so:math/fftw3 \

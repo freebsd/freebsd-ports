@@ -1,5 +1,6 @@
 PORTNAME=	jcalendar
 PORTVERSION=	1.3.3
+PORTREVISION=	1
 CATEGORIES=	java misc
 MASTER_SITES=	http://www.toedter.com/download/
 
@@ -7,10 +8,9 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Java Date Chooser
 WWW=		https://www.toedter.com/en/jcalendar/
 
-USES=		zip
-USE_JAVA=	yes
+USES=		java:ant,run zip
 JAVA_VERSION=	8
-USE_ANT=	yes
+
 WRKSRC=		${WRKDIR}/src
 PLIST_FILES=	%%JAVAJARDIR%%/${PORTNAME}.jar \
 		%%JAVAJARDIR%%/looks-2.0.1.jar

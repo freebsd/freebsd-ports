@@ -1,5 +1,6 @@
 PORTNAME=	conkyforecast
 PORTVERSION=	2.24
+PORTREVISION=	1
 CATEGORIES=	deskutils
 MASTER_SITES=	https://launchpad.net/~conky-companions/+archive/ppa/+files/
 DISTNAME=	${PORTNAME}_${PORTVERSION}

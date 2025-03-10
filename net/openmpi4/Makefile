@@ -1,6 +1,5 @@
 PORTNAME=	openmpi
-PORTVERSION=	4.1.6
-PORTREVISION=	1
+PORTVERSION=	4.1.8
 CATEGORIES=	net parallel
 MASTER_SITES=	https://download.open-mpi.org/release/open-mpi/v${PORTVERSION:R}/
 PKGNAMESUFFIX=	4
@@ -30,9 +29,6 @@ MPIDIR?=	${MPIBASE}/${PORTNAME}
 
 PLIST_SUB+=	MPIDIR=${MPIDIR}
 
-# Workaround for https://github.com/open-mpi/ompi/issues/7516
-CONFIGURE_ENV+=		DISABLE_gds_ds12=1 DISABLE_gds_ds21=1
-
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_PREFIX=	${PREFIX}/${MPIDIR}
 GNU_CONFIGURE_MANPREFIX=${PREFIX}/${MPIDIR}/share
@@ -57,6 +53,8 @@ TEST_TARGET=	check
 
 SHEBANG_FILES=	ompi/mca/common/monitoring/profile2mat.pl \
 		ompi/mca/common/monitoring/aggregate_profile.pl
+
+PIE_UNSAFE=	yes
 
 OPTIONS_DEFINE=			AVX DEBUG IPV6 SLURM
 OPTIONS_DEFAULT=		SLURM

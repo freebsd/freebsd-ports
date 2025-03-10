@@ -1,11 +1,12 @@
 PORTNAME=	django-cms
-PORTVERSION=	4.1.0
+PORTVERSION=	4.1.4
 PORTREVISION=	1
 CATEGORIES=	www python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	django_cms-${PORTVERSION}
 
-MAINTAINER=	xenophon+fbsdports@irtnog.org
+MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Content management system built with the Django framework
 WWW=		https://django-cms.org/
 

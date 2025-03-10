@@ -1,7 +1,6 @@
 PORTNAME=	feedbackd
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.1.0
-PORTREVISION=	2
+DISTVERSION=	0.5.0
 CATEGORIES=	accessibility
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -19,8 +18,9 @@ USE_GNOME=	glib20
 USE_LDCONFIG=	yes
 GL_SITE=	https://source.puri.sm
 GL_ACCOUNT=	Librem5
-GL_TUPLE=	https://gitlab.gnome.org:World/Phosh:gmobile:v0.0.6:gmobile/subprojects/gmobile
+GL_TUPLE=	https://gitlab.gnome.org:World/Phosh:gmobile:v0.1.0:gmobile/subprojects/gmobile
 SHEBANG_FILES=	build-aux/post_install.py
+MESON_ARGS=	-Dtests=false
 GLIB_SCHEMAS=	org.sigxcpu.feedbackd.gschema.xml
 
 OPTIONS_DEFINE=	DAEMON DOCS GIR MANPAGES VAPI
@@ -55,5 +55,12 @@ post-configure:
 	@${REINPLACE_CMD} 's/meson install/& \
 		--skip-subprojects/' ${BUILD_WRKSRC}/build.ninja
 .endif
+
+pre-test:
+	@if [ ! -e ${WRKDIR}/.meson_build_tests ]; then \
+		${RM} ${CONFIGURE_COOKIE} ${BUILD_COOKIE}; \
+		${MAKE} -C${.CURDIR} build MESON_ARGS="${MESON_ARGS} --reconfigure -Dtests=true"; \
+		${TOUCH} ${WRKDIR}/.meson_build_tests; \
+	fi
 
 .include <bsd.port.mk>

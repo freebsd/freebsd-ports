@@ -63,6 +63,6 @@ include/isl/vertices.h
 lib/libisl.a
 lib/libisl.so
 lib/libisl.so.23
-lib/libisl.so.23.3.0
-lib/libisl.so.23.3.0-gdb.py
+lib/libisl.so.23.4.0
+lib/libisl.so.23.4.0-gdb.py
 libdata/pkgconfig/isl.pc

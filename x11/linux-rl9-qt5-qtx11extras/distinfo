@@ -1,0 +1,9 @@
+TIMESTAMP = 1731445192
+SHA256 (rocky/q/qt5-qtx11extras-5.15.9-1.el9.aarch64.rpm) = 86e7b914ff68de36680dbfcd8b396a9bc61ade410745c10b98d865d82c23b3a5
+SIZE (rocky/q/qt5-qtx11extras-5.15.9-1.el9.aarch64.rpm) = 34614
+SHA256 (rocky/q/qt5-qtx11extras-5.15.9-1.el9.i686.rpm) = 637bde9607810d8fe0c5150ea8cfa72ba09378d8216e8f2d9ec5fcefd2a26352
+SIZE (rocky/q/qt5-qtx11extras-5.15.9-1.el9.i686.rpm) = 34726
+SHA256 (rocky/q/qt5-qtx11extras-5.15.9-1.el9.x86_64.rpm) = 06a64d546b0c74c7ceceb727a63f5cfa0f8b5d327219bc5c59bd794e5159eefb
+SIZE (rocky/q/qt5-qtx11extras-5.15.9-1.el9.x86_64.rpm) = 34709
+SHA256 (rocky/q/qt5-qtx11extras-5.15.9-1.el9.src.rpm) = cb288dfcbaff35b1bd2f29435e0b2a70751f4adb8ef7bbf960bf11ce727210d7
+SIZE (rocky/q/qt5-qtx11extras-5.15.9-1.el9.src.rpm) = 157117

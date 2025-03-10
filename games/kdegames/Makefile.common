@@ -5,6 +5,7 @@
 KDE_GAMES_ALL=	BOMBER \
 		BOVO \
 		GRANATIER \
+		KAJONGG \
 		KAPMAN \
 		KATOMIC \
 		KBLACKBOX \
@@ -38,7 +39,8 @@ KDE_GAMES_ALL=	BOMBER \
 		KUBRICK \
 		LSKAT \
 		PALAPELI \
-		PICMI
+		PICMI \
+		SKLADNIK
 
 BOMBER_DESC=		Arcade Bombing game
 BOVO_DESC=		Five-in-a-row Board game
@@ -80,3 +82,4 @@ KUBRICK_DESC=		3-D game based on Rubik's Cube
 LSKAT_DESC=		Card game
 PALAPELI_DESC=		Jigsaw puzzle game
 PICMI_DESC=		Single player logic-based puzzle game
+SKLADNIK_DESC=		Japanese warehouse keeper sokoban game

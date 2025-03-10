@@ -15,7 +15,7 @@ lib/libcheese-gtk.so.25
 lib/libcheese-gtk.so.25.1.7
 lib/libcheese.so
 lib/libcheese.so.8
-lib/libcheese.so.8.0.17
+lib/libcheese.so.8.0.19
 libdata/pkgconfig/cheese-gtk.pc
 libdata/pkgconfig/cheese.pc
 share/applications/org.gnome.Cheese.desktop
@@ -437,6 +437,7 @@ share/help/zh_CN/cheese/pref-resolution.page
 share/help/zh_CN/cheese/video-record.page
 share/icons/hicolor/scalable/apps/org.gnome.Cheese.svg
 share/icons/hicolor/symbolic/apps/org.gnome.Cheese-symbolic.svg
+share/locale/ab/LC_MESSAGES/cheese.mo
 share/locale/af/LC_MESSAGES/cheese.mo
 share/locale/an/LC_MESSAGES/cheese.mo
 share/locale/ar/LC_MESSAGES/cheese.mo
@@ -474,6 +475,7 @@ share/locale/hi/LC_MESSAGES/cheese.mo
 share/locale/hr/LC_MESSAGES/cheese.mo
 share/locale/hu/LC_MESSAGES/cheese.mo
 share/locale/id/LC_MESSAGES/cheese.mo
+share/locale/ie/LC_MESSAGES/cheese.mo
 share/locale/is/LC_MESSAGES/cheese.mo
 share/locale/it/LC_MESSAGES/cheese.mo
 share/locale/ja/LC_MESSAGES/cheese.mo

@@ -1,5 +1,7 @@
-TIMESTAMP = 1561195244
-SHA256 (CE-Programming-CEmu-v1.3_GH0.tar.gz) = 581da0eff0c7e5b24dfbe19a125b9f0dd3f17c431a0ba50e1984e1ec4f65d2b5
-SIZE (CE-Programming-CEmu-v1.3_GH0.tar.gz) = 993425
+TIMESTAMP = 1725568524
+SHA256 (CE-Programming-CEmu-v2.0_GH0.tar.gz) = 84a2fd783d095a6f3fc89d89060dc5b6666e1b9fd6a11dfde81abec0f0046fd5
+SIZE (CE-Programming-CEmu-v2.0_GH0.tar.gz) = 1080496
 SHA256 (CE-Programming-zdis-7eb89e5_GH0.tar.gz) = 63cc483cc848f31a0cfbcb0d0733e91a574a1ba76881ba7623e8a8265fb5bd70
 SIZE (CE-Programming-zdis-7eb89e5_GH0.tar.gz) = 5504
+SHA256 (adriweb-tivars_lib_cpp-f627164_GH0.tar.gz) = a233474603f22cab2a94659b8cafccb19383005838441c98fdd11950d2e63579
+SIZE (adriweb-tivars_lib_cpp-f627164_GH0.tar.gz) = 442271

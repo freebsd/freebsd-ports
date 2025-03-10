@@ -1,6 +1,6 @@
 PORTNAME=	ddrescueview
 PORTVERSION=	0.4.5
-PORTREVISION=	1
+PORTREVISION=	3
 CATEGORIES=	sysutils
 MASTER_SITES=	https://sourceforge.net/projects/${PORTNAME}/files/Test%20builds/v${PORTVERSION}/
 PKGNAMESUFFIX=	${LAZARUS_PKGNAMESUFFIX}
@@ -11,6 +11,8 @@ COMMENT=	Graphical viewer for GNU ddrescue mapfiles
 WWW=		https://sourceforge.net/projects/ddrescueview/
 
 LICENSE=	GPLv3
+
+ONLY_FOR_ARCHS=	amd64 i386
 
 gtk2_CONFLICTS_INSTALL=	${PORTNAME}-qt5 ${PORTNAME}-qt6
 qt5_CONFLICTS_INSTALL=	${PORTNAME}-gtk2 ${PORTNAME}-qt6

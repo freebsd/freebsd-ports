@@ -1,6 +1,6 @@
 PORTNAME=	eolie
 PORTVERSION=	0.9.101
-PORTREVISION=	3
+PORTREVISION=	5
 CATEGORIES=	www gnome
 MASTER_SITES=	https://adishatz.org/eolie/
 
@@ -13,7 +13,7 @@ LICENSE=	GPLv3+
 BUILD_DEPENDS=	appstream-util:devel/appstream-glib
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>=0:databases/py-sqlite3@${PY_FLAVOR} \
 		${LOCALBASE}/share/gir-1.0/GtkSpell-3.0.gir:textproc/gtkspell3 \
-		${LOCALBASE}/share/gir-1.0/WebKit2-4.0.gir:www/webkit2-gtk3 \
+		${LOCALBASE}/share/gir-1.0/WebKit2-4.0.gir:www/webkit2-gtk@40 \
 		${LOCALBASE}/share/glib-2.0/schemas/org.gnome.settings-daemon.plugins.color.gschema.xml:sysutils/gnome-settings-daemon
 
 USES=		desktop-file-utils gettext gnome meson pkgconfig python \

@@ -1,6 +1,6 @@
 PORTNAME=	sd-mux-ctrl
 DISTVERSION=	g20200217
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	https://git.tizen.org/cgit/tools/testlab/sd-mux/snapshot/sd-mux-9dd189d973da64e033a0c5c2adb3d94b23153d94.tar.bz2?/
 
@@ -18,6 +18,8 @@ LIB_DEPENDS=	libftdi1.so:devel/libftdi1 \
 		libpopt.so:devel/popt
 
 USES=		cmake pkgconfig tar:bz2
+
+PORTSCOUT=	ignore:1
 
 WRKSRC=		${WRKDIR}/sd-mux-9dd189d973da64e033a0c5c2adb3d94b23153d94
 

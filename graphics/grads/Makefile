@@ -2,10 +2,8 @@ PORTNAME=	grads
 PORTVERSION=	1.9b4
 PORTREVISION=	18
 CATEGORIES=	graphics science math
-MASTER_SITES=	ftp://grads.iges.org/grads/1.9/:src \
-		ftp://cola.gmu.edu/grads/1.9/:src \
-		ftp://grads.iges.org/grads/:other \
-		ftp://cola.gmu.edu/grads/:other
+MASTER_SITES=	http://cola.gmu.edu/grads/1.9/:src \
+		http://cola.gmu.edu/grads/:other
 DISTFILES=	${PORTNAME}-src-${PORTVERSION}${EXTRACT_SUFX}:src \
 		example.tar.gz:other
 EXTRACT_ONLY=	${PORTNAME}-src-${PORTVERSION}${EXTRACT_SUFX}

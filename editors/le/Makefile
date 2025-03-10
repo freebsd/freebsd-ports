@@ -20,6 +20,11 @@ GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
 MAKE_JOBS_UNSAFE=	yes
 
+post-patch:
+	@${FIND} ${WRKSRC} -type f \( -name '*.[ch]' -o -name '*.cc' \) | \
+		${XARGS} ${GREP} -l '[[:<:]]hex[[:>:]]' | \
+		${XARGS} ${REINPLACE_CMD} -e 's/[[:<:]]hex[[:>:]]/is_hex/g'
+
 derp-do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC}/src && ${INSTALL_PROGRAM} le ${STAGEDIR}${PREFIX}/bin)

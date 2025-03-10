@@ -1,6 +1,7 @@
 PORTNAME=	ta-lib # provides Python namespace 'talib'
 DISTVERSIONPREFIX=	TA_Lib-
 DISTVERSION=	0.4.32
+PORTREVISION=	1
 CATEGORIES=	finance python
 #MASTER_SITES=	PYPI # tests fail whe PYPI is used, see https://github.com/TA-Lib/ta-lib-python/issues/663
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}

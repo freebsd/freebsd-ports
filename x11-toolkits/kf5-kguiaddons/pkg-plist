@@ -1,4 +1,4 @@
-bin/kde-geo-uri-handler
+@comment bin/kde-geo-uri-handler
 include/KF5/KGuiAddons/KColorCollection
 include/KF5/KGuiAddons/KColorMimeData
 include/KF5/KGuiAddons/KColorSchemeWatcher
@@ -37,8 +37,8 @@ lib/libKF5GuiAddons.so
 lib/libKF5GuiAddons.so.5
 lib/libKF5GuiAddons.so.%%KDE_FRAMEWORKS_VERSION%%
 %%QT_MKSPECDIR%%/modules/qt_KGuiAddons.pri
-share/applications/google-maps-geo-handler.desktop
-share/applications/openstreetmap-geo-handler.desktop
-share/applications/qwant-maps-geo-handler.desktop
-share/applications/wheelmap-geo-handler.desktop
+@comment share/applications/google-maps-geo-handler.desktop
+@comment share/applications/openstreetmap-geo-handler.desktop
+@comment share/applications/qwant-maps-geo-handler.desktop
+@comment share/applications/wheelmap-geo-handler.desktop
 share/qlogging-categories5/kguiaddons.categories

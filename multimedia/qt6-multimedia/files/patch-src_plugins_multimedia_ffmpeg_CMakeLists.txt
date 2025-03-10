@@ -1,6 +1,6 @@
---- src/plugins/multimedia/ffmpeg/CMakeLists.txt.orig	2024-06-08 01:28:28 UTC
+--- src/plugins/multimedia/ffmpeg/CMakeLists.txt.orig	2024-11-22 07:31:25 UTC
 +++ src/plugins/multimedia/ffmpeg/CMakeLists.txt
-@@ -82,7 +82,7 @@ qt_internal_add_plugin(QFFmpegMediaPlugin
+@@ -85,7 +85,7 @@ qt_internal_add_plugin(QFFmpegMediaPlugin
          Qt::CorePrivate
  )
  

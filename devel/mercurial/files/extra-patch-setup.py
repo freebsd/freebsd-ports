@@ -1,20 +1,26 @@
---- setup.py.orig	2020-08-03 17:43:51 UTC
+--- setup.py.orig	2024-11-20 14:38:51 UTC
 +++ setup.py
-@@ -477,32 +477,7 @@ class hgbuildmo(build):
-     description = "build translations (.mo files)"
+@@ -527,39 +527,7 @@ class hgbuildmo(build):
+             raise DistutilsExecError("failed to build translations")
  
-     def run(self):
+     def _run(self):
+-        try:
+-            from shutil import which as find_executable
+-        except ImportError:
+-            # Deprecated in py3.12
+-            from distutils.spawn import find_executable
+-
 -        if not find_executable('msgfmt'):
 -            self.warn(
 -                "could not find msgfmt executable, no translations "
 -                "will be built"
 -            )
--            return
+-            return False
 -
 -        podir = 'i18n'
 -        if not os.path.isdir(podir):
 -            self.warn("could not find %s/ directory" % podir)
--            return
+-            return False
 -
 -        join = os.path.join
 -        for po in os.listdir(podir):
@@ -30,6 +36,7 @@
 -                cmd.append('-c')
 -            self.mkpath(join('mercurial', modir))
 -            self.make_file([pofile], mobuildfile, spawn, (cmd,))
+-        return True
 +        pass
  
  

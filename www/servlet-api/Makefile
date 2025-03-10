@@ -10,7 +10,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Servlet API
 WWW=		http://java.sun.com/products/servlet/
 
-USE_JAVA=	yes
+USES=		java
+
 NO_BUILD=	yes
 
 PLIST_FILES=	%%JAVAJARDIR%%/${PORTNAME}.jar

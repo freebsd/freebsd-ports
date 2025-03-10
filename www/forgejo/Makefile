@@ -1,6 +1,7 @@
 PORTNAME=	forgejo
 DISTVERSIONPREFIX=	v
-DISTVERSION=	8.0.0
+DISTVERSION=	10.0.1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	https://codeberg.org/forgejo/forgejo/releases/download/${DISTVERSIONPREFIX}${DISTVERSION}/
 DISTNAME=	forgejo-src-${DISTVERSION}
@@ -14,8 +15,10 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	git:devel/git
 
-USES=		cpe gmake go:1.22,no_targets
+USES=		cpe gmake go:1.23,no_targets
 USE_RC_SUBR=	forgejo
+
+CONFLICTS_INSTALL=	forgejo[0-79]*
 
 EXTRACT_AFTER_ARGS=	--strip-components 1
 SUB_FILES=	app.ini.sample pkg-message

@@ -1,22 +1,24 @@
---- Makefile.orig	2022-07-05 12:02:51 UTC
+--- Makefile.orig	2024-10-12 08:44:24 UTC
 +++ Makefile
-@@ -42,7 +42,6 @@ endif
+@@ -50,8 +50,7 @@ endif
  ## Begin customization points for each OS and TOOLCHAIN we support.
  
  
 -ifeq (${OS},linux)
-   CXXFLAGS_EARLY += -DLINUX
+-  CXXFLAGS_EARLY += -DLINUX -I /usr/include/SDL
++  CXXFLAGS_EARLY += -DLINUX
    EXE_EXTENSION :=
    LDFLAGS_GL := -lGL
-@@ -51,7 +50,6 @@ ifeq (${OS},linux)
+   LDFLAGS_GLEW := -lGLEW
+@@ -59,7 +58,6 @@ ifeq (${OS},linux)
    LDFLAGS_SDL := -lSDL -lSDL_gfx -lSDL_mixer -lSDL_ttf -lpthread -lz
    OBJ_EXTENSION := .o
    hyper_RES :=
 -endif
  
  ifeq (${OS},mingw)
-   CXXFLAGS_EARLY += -DWINDOWS -mwindows -D_A_VOLID=8
-@@ -140,19 +138,19 @@ override CXXFLAGS := $(CXXFLAGS_STD) $(CXXFLAGS_EARLY)
+   CXXFLAGS_EARLY += -DWINDOWS -mwindows -D_A_VOLID=8 -I/ucrt64/include/SDL
+@@ -153,19 +151,19 @@ hyperrogue$(EXE_EXTENSION): $(hyper_OBJS) $(hyper_RES)
  override LDFLAGS := $(LDFLAGS_EARLY) $(LDFLAGS) ${EXTRA_LDFLAGS}
  
  hyperrogue$(EXE_EXTENSION): $(hyper_OBJS) $(hyper_RES)
@@ -39,8 +41,8 @@
 +	$(CXX) $(CXXFLAGS) makeh.cpp $(LDFLAGS) -o $@
  
  autohdr.h: makeh$(EXE_EXTENSION) language-data.cpp *.cpp
- 	./makeh classes.cpp locations.cpp colors.cpp hyperpoint.cpp geometry.cpp goldberg.cpp init.cpp floorshapes.cpp cell.cpp multi.cpp shmup.cpp pattern2.cpp mapeditor.cpp graph.cpp textures.cpp hprint.cpp language.cpp util.cpp complex.cpp multigame.cpp *.cpp > autohdr.h
-@@ -161,10 +159,10 @@ language-data.cpp: langen$(EXE_EXTENSION)
+ 	./makeh classes.cpp locations.cpp colors.cpp hyperpoint.cpp geometry.cpp embeddings.cpp goldberg.cpp init.cpp floorshapes.cpp cell.cpp multi.cpp shmup.cpp pattern2.cpp mapeditor.cpp graph.cpp textures.cpp hprint.cpp language.cpp util.cpp complex.cpp multigame.cpp arbitrile.cpp rulegen.cpp *.cpp > autohdr.h
+@@ -174,10 +172,10 @@ savepng$(OBJ_EXTENSION): savepng.cpp
  	./langen > language-data.cpp
  
  savepng$(OBJ_EXTENSION): savepng.cpp

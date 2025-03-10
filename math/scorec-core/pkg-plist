@@ -43,6 +43,7 @@ bin/zsplit
 include/GenIterator.h
 include/GenTag.h
 include/PCU.h
+include/PCU_C.h
 include/agm.h
 include/apf.h
 include/apf2mth.h
@@ -53,6 +54,7 @@ include/apfConvert.h
 include/apfDynamicArray.h
 include/apfDynamicMatrix.h
 include/apfDynamicVector.h
+include/apfElement.h
 include/apfField.h
 include/apfFieldData.h
 include/apfGeometry.h
@@ -104,6 +106,7 @@ include/mthTensor.h
 include/mthVector.h
 include/mth_def.h
 include/parma.h
+include/pcu_defines.h
 include/pcu_io.h
 include/pcu_util.h
 include/ph.h

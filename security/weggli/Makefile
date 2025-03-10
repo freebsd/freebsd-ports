@@ -1,7 +1,7 @@
 PORTNAME=	weggli
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.2.4
-PORTREVISION=	6
+PORTREVISION=	12
 CATEGORIES=	security
 
 MAINTAINER=	bofh@FreeBSD.org
@@ -10,6 +10,8 @@ WWW=		https://github.com/googleprojectzero/weggli
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+BROKEN_amd64=	link fails: error: version script assignment of 'global' to symbol '__muloti4' failed: symbol not defined
 
 USES=		cargo
 USE_GITHUB=	yes
@@ -132,11 +134,8 @@ PLIST_FILES=	bin/${PORTNAME}
 
 .include <bsd.port.options.mk>
 
-.if ${OPSYS} == FreeBSD && ( ${OSVERSION} <= 1400091 || ${OSVERSION} >= 1500006 || ( ${OSVERSION} >= 1302507 && ${OSVERSION} < 1400000 ))
+.if ${OPSYS} == FreeBSD && ! (${OSVERSION} > 1400091 && ${OSVERSION} < 1500006)
 USES+=		llvm:16
 .endif
-
-post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>

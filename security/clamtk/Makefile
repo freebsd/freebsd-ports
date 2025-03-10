@@ -10,6 +10,9 @@ WWW=		https://dave-theunsub.github.io/clamtk/
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
+DEPRECATED=	Maintainer has retired
+EXPIRATION_DATE=2025-12-30
+
 RUN_DEPENDS=	p5-Locale-gettext>=1.05:devel/p5-Locale-gettext \
 		p5-Text-CSV>=0:textproc/p5-Text-CSV \
 		p5-LWP-Protocol-https>=0:www/p5-LWP-Protocol-https \

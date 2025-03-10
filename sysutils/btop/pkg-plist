@@ -15,6 +15,7 @@ share/applications/btop.desktop
 %%DATADIR%%/themes/greyscale.theme
 %%DATADIR%%/themes/gruvbox_dark.theme
 %%DATADIR%%/themes/gruvbox_dark_v2.theme
+%%DATADIR%%/themes/gruvbox_light.theme
 %%DATADIR%%/themes/gruvbox_material_dark.theme
 %%DATADIR%%/themes/horizon.theme
 %%DATADIR%%/themes/kyli0x.theme
@@ -24,6 +25,7 @@ share/applications/btop.desktop
 %%DATADIR%%/themes/nord.theme
 %%DATADIR%%/themes/onedark.theme
 %%DATADIR%%/themes/paper.theme
+%%DATADIR%%/themes/phoenix-night.theme
 %%DATADIR%%/themes/solarized_dark.theme
 %%DATADIR%%/themes/solarized_light.theme
 %%DATADIR%%/themes/tomorrow-night.theme

@@ -1,5 +1,5 @@
 PORTNAME=	bitwuzla
-DISTVERSION=	0.5.0
+DISTVERSION=	0.7.0
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -23,6 +23,8 @@ LDFLAGS+=	-lcadical
 
 MESON_ARGS=	-Ddefault_library=shared \
 		-Dtesting=disabled
+
+BINARY_ALIAS=	git=false
 
 do-test: # 1 test hangs, see https://github.com/bitwuzla/bitwuzla/issues/117
 	@cd ${WRKSRC} && \

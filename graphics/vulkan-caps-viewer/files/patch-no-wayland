@@ -1,0 +1,20 @@
+https://github.com/SaschaWillems/VulkanCapsViewer/issues/229
+
+--- vulkancapsviewer.cpp.orig	2024-12-06 09:08:01 UTC
++++ vulkancapsviewer.cpp
+@@ -813,6 +813,7 @@ bool VulkanCapsViewer::initVulkan()
+             };
+ 
+             const auto wayland_display = wl_display_connect(nullptr);
++            if (wayland_display) {
+             const auto wayland_registry = wl_display_get_registry(wayland_display);
+             uint32_t wayland_compositor_name = 0;
+             wl_registry_add_listener(wayland_registry, &WAYLAND_LISTENER, &wayland_compositor_name);
+@@ -830,6 +831,7 @@ bool VulkanCapsViewer::initVulkan()
+                 surfaceCreateInfo.surface = wayland_surface;
+                 surfaceResult = vkCreateWaylandSurfaceKHR(vulkanContext.instance, &surfaceCreateInfo, nullptr, &vulkanContext.surface);
+             }
++            } // if (wayland_display)
+         }
+ #endif
+ #if defined(VK_USE_PLATFORM_XCB_KHR)

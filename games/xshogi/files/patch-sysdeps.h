@@ -1,5 +1,5 @@
---- sysdeps.h.orig	2014-02-19 13:11:16.000000000 +0100
-+++ sysdeps.h	2014-02-19 13:11:20.000000000 +0100
+--- sysdeps.h.orig	2014-02-04 23:01:34 UTC
++++ sysdeps.h
 @@ -74,16 +74,6 @@
  #include <sys/time.h>
  #include <fcntl.h>

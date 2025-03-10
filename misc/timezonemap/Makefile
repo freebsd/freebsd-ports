@@ -1,6 +1,5 @@
 PORTNAME=	timezonemap
-DISTVERSION=	0.4.5.2
-PORTREVISION=	2
+DISTVERSION=	0.4.5.3
 CATEGORIES=	misc gnome
 
 MAINTAINER=	gnome@freebsd.org
@@ -10,20 +9,21 @@ WWW=		https://github.com/dashea/timezonemap
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	gnome-autogen.sh:devel/gnome-common
 LIB_DEPENDS=	libjson-glib-1.0.so:devel/json-glib \
 		libsoup-2.4.so:devel/libsoup
 
-USES=		autoreconf:build gmake gnome libtool pkgconfig
+USES=		autoreconf gmake gnome libtool pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	dashea
-USE_GNOME=	cairo gdkpixbuf2 gtk30 introspection:build librsvg2
+USE_GNOME=	gtk30 introspection:build librsvg2
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 
-pre-configure:
-	@cd ${WRKSRC} && ${SETENV} NOCONFIGURE=yes ${SH} autogen.sh
+post-patch:
+.for d in TZ_DATA_FILE ADMIN1_FILE COUNTRY_FILE
+	@${REINPLACE_CMD} '/$d/s|/usr|${PREFIX}|' ${WRKSRC}/src/tz.h
+.endfor
 
 .include <bsd.port.mk>

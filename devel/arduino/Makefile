@@ -21,13 +21,11 @@ RUN_DEPENDS=	${JAVA_HOME}/jre/lib/ext/RXTXcomm.jar:comms/rxtx \
 		${LOCALBASE}/avr/include/avr/io.h:devel/avr-libc
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-USES=		dos2unix tar:tgz kmod
+USES=		dos2unix java tar:tgz kmod
 DOS2UNIX_REGEX=	.*(\.(c|cpp|h|hex|txt)|Makefile|makefile)
 
-USE_JAVA=	yes
 JAVA_OS=	native
 JAVA_VENDOR=	openjdk
-JAVA_RUN=	yes
 
 CONFLICTS_INSTALL=	arduino18
 

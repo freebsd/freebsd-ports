@@ -1,24 +1,15 @@
---- CMakeLists.txt.orig	2024-04-03 12:01:51 UTC
+--- CMakeLists.txt.orig	2024-09-13 05:26:00 UTC
 +++ CMakeLists.txt
-@@ -331,7 +331,7 @@ set(project_headers
- 	include/cif++/validate.hpp
- )
- 
--add_library(cifpp STATIC)
-+add_library(cifpp)
- add_library(cifpp::cifpp ALIAS cifpp)
- 
- target_sources(cifpp
 @@ -395,7 +395,7 @@ if(CIFPP_DOWNLOAD_CCD)
- 		# to download the gzipped version and decompress it ourselves.
- 		find_program(GUNZIP gunzip)
  
--		if(WIN32 OR GUNZIP STREQUAL "GUNZIP-NOTFOUND")
-+		if(FALSE OR WIN32 OR GUNZIP STREQUAL "GUNZIP-NOTFOUND")
+ 		if(WIN32 OR GUNZIP STREQUAL "GUNZIP-NOTFOUND")
  			file(
- 				DOWNLOAD https://files.wwpdb.org/pub/pdb/data/monomers/components.cif
+-				DOWNLOAD https://files.wwpdb.org/pub/pdb/data/monomers/components.cif
++				DOWNLOAD file://${DISTDIR_FULL}/components.cif.gz
  				${COMPONENTS_CIF}
-@@ -405,7 +405,7 @@ if(CIFPP_DOWNLOAD_CCD)
+ 				SHOW_PROGRESS
+ 				STATUS CCD_FETCH_STATUS)
+@@ -403,7 +403,7 @@ if(CIFPP_DOWNLOAD_CCD)
  			if(NOT EXISTS "${COMPONENTS_CIF}.gz")
  				file(
  					DOWNLOAD
@@ -27,7 +18,7 @@
  					${COMPONENTS_CIF}.gz
  					SHOW_PROGRESS
  					STATUS CCD_FETCH_STATUS)
-@@ -557,7 +557,7 @@ if(CIFPP_INSTALL_UPDATE_SCRIPT)
+@@ -556,7 +556,7 @@ if(CIFPP_INSTALL_UPDATE_SCRIPT)
  
  	# a config file, to make it complete
  	# install(DIRECTORY DESTINATION "${CMAKE_INSTALL_LOCALSTATEDIR}/libcifpp")

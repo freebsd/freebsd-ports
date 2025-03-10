@@ -15,7 +15,8 @@ LICENSE=	GPLv2
 BUILD_DEPENDS=	maven>0:devel/maven
 
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
-USE_JAVA=	yes
+
+USES=		java
 
 NO_ARCH=	yes
 

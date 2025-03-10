@@ -22,7 +22,7 @@ USE_LDCONFIG=	yes
 CFLAGS+=	-Wno-empty-body -Wno-constant-conversion
 .endif
 
-.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400079 || ( ${OSVERSION} >= 1302505 && ${OSVERSION} < 1400000 ))
+.if ${OPSYS} == FreeBSD
 CFLAGS+=	-Wno-error=deprecated-non-prototype -Wno-error=strict-prototypes
 .endif
 

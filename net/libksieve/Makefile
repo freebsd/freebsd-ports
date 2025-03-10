@@ -11,17 +11,16 @@ LICENSE=	LGPL21
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/range/algorithm.hpp:devel/boost-libs
 LIB_DEPENDS=	libsasl2.so:security/cyrus-sasl2
 
-USES=		cmake compiler:c++11-lib gettext kde:5 qt:5 tar:xz xorg
+USES=		cmake compiler:c++11-lib gettext kde:6 qt:6 tar:xz xorg
 USE_KDE=	archive attica auth codecs completion config configwidgets \
 		coreaddons i18n iconthemes jobwidgets kio newstuff service \
-		solid sonnet syntaxhighlighting wallet widgetsaddons windowsystem xmlgui \
+		solid sonnet syntaxhighlighting wallet widgetsaddons \
+		windowsystem xmlgui \
 		ecm:build
 # pim components
-USE_KDE+=	akonadi identitymanagement libkdepim mailtransport mime \
-		pimcommon pimtextedit
-USE_QT=		concurrent core dbus declarative gui location network printsupport \
-		uitools webchannel webengine widgets xml \
-                buildtools:build qmake:build testlib:build
+USE_KDE+=	akonadi identitymanagement ktextaddons libkdepim \
+		mailtransport mime pimcommon pimtextedit
+USE_QT=		base
 USE_XORG=	x11
 USE_LDCONFIG=	yes
 

@@ -1,3 +1,3 @@
-TIMESTAMP = 1685361008
-SHA256 (apache2/mod_qos-11.74.tar.gz) = dc2ed7f8916aca05a7ae79f77d9ed433d832b352ff67bf519015edb993e07354
-SIZE (apache2/mod_qos-11.74.tar.gz) = 1288870
+TIMESTAMP = 1723558432
+SHA256 (apache2/mod_qos-11.75.tar.gz) = acc7b457399a8a33e0e06638a98b40e5abf3139e09bd9eda85faf6cfb52030b2
+SIZE (apache2/mod_qos-11.75.tar.gz) = 1289194

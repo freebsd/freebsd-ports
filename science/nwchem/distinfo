@@ -1,7 +1,7 @@
-TIMESTAMP = 1712337297
-SHA256 (nwchem-7.2.2/dftd3.tgz) = d97cf9758f61aa81fd85425448fbf4a6e8ce07c12e9236739831a3af32880f59
-SIZE (nwchem-7.2.2/dftd3.tgz) = 555804
-SHA256 (nwchem-7.2.2/libxc-6.1.0.tar.gz) = f593745fa47ebfb9ddc467aaafdc2fa1275f0d7250c692ce9761389a90dd8eaf
-SIZE (nwchem-7.2.2/libxc-6.1.0.tar.gz) = 64587311
-SHA256 (nwchem-7.2.2/nwchemgit-nwchem-v7.2.2-release-a83175e_GH0.tar.gz) = 7166f42d9120e25ce063642303f2e55e6a79b865b364068bfbc20d76a9a356fb
-SIZE (nwchem-7.2.2/nwchemgit-nwchem-v7.2.2-release-a83175e_GH0.tar.gz) = 210857894
+TIMESTAMP = 1725406261
+SHA256 (nwchem-7.2.3/nwchem-7.2.3-release.revision-d690e065-src.2024-08-27.tar.gz) = a0f76f12ae2f634d33e76409cd389787e6c458cc2cf05ed453538de2d47a23a5
+SIZE (nwchem-7.2.3/nwchem-7.2.3-release.revision-d690e065-src.2024-08-27.tar.gz) = 234392394
+SHA256 (nwchem-7.2.3/dftd3.tgz) = d97cf9758f61aa81fd85425448fbf4a6e8ce07c12e9236739831a3af32880f59
+SIZE (nwchem-7.2.3/dftd3.tgz) = 555804
+SHA256 (nwchem-7.2.3/libxc-6.1.0.tar.gz) = 9baf23501dca21b05fa22d8e2ffeb56f294abe19ba12584cb3f9b421ae719c5f
+SIZE (nwchem-7.2.3/libxc-6.1.0.tar.gz) = 64588321

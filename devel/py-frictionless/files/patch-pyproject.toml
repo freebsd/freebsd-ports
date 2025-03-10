@@ -1,15 +1,6 @@
 --- pyproject.toml.orig	2020-02-02 00:00:00 UTC
 +++ pyproject.toml
-@@ -45,7 +45,7 @@ dependencies = [
-     "pydantic>=2.0",
-     "requests>=2.10",
-     "humanize>=4.2",
--    "tabulate>=0.8.10",
-+    "tabulate>=0.8.9",
-     "jsonschema>=4.20",
-     "simpleeval>=0.9.11",
-     "stringcase>=1.2",
-@@ -93,7 +93,7 @@ parquet = ["fastparquet>=0.8"]
+@@ -92,7 +92,7 @@ parquet = ["fastparquet>=0.8"]
  ods = ["ezodf>=0.3", "lxml>=4.0"]
  pandas = ["pyarrow>=14.0", "pandas>=1.0"]
  parquet = ["fastparquet>=0.8"]

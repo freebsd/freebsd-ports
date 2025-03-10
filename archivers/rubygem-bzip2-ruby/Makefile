@@ -11,18 +11,8 @@ WWW=		https://github.com/brianmario/bzip2-ruby
 LICENSE=	BSD2CLAUSE RUBY
 LICENSE_COMB=	dual
 
-DEPRECATED=	Does not work with ruby32
-# Sync with the removal of ruby31
-EXPIRATION_DATE=	2025-03-31
-
 USES=		gem
 
-BROKEN_RUBY32=	yes
-
-.include <bsd.port.options.mk>
-
-.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400091 || ( ${OSVERSION} >= 1302507 && ${OSVERSION} < 1400000 ))
-CONFIGURE_ARGS+=	--with-cflags="-Wno-error=incompatible-function-pointer-types"
-.endif
+CONFIGURE_ARGS=	--with-cflags=-Wno-incompatible-function-pointer-types
 
 .include <bsd.port.mk>

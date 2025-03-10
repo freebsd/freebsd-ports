@@ -1,5 +1,5 @@
 PORTNAME=	posix
-PORTVERSION=	36.2.1
+PORTVERSION=	36.3
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 PKGNAMEPREFIX=	${LUA_PKGNAMEPREFIX}
@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${LUA_PKGNAMEPREFIX}stdlib-normalize>=0:devel/lua-stdlib-normalize@${LUA_FLAVOR}
 
-USES=		lua:module shebangfix
+USES=		lua:52+,module shebangfix
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	luaposix

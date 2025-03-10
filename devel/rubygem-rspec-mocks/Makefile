@@ -1,12 +1,13 @@
 PORTNAME=	rspec-mocks
-PORTVERSION=	3.13.1
+PORTVERSION=	3.13.2
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Rspec-mocks provides a test-double framework for rspec
 WWW=		https://rspec.info/ \
-		https://github.com/rspec/rspec-mocks
+		https://github.com/rspec/rspec/tree/main/rspec-mocks \
+		https://github.com/rspec/rspec
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

@@ -24,3 +24,12 @@
  /**/
  /* MAXUSERNAME: defines the maximum length of a system's user name */
  /**/
+@@ -32,7 +42,7 @@
+ /**/
+ /* MAXSCOREENTRIES: defines the maximum numner of entries in the scoretable */
+ /**/
+-#define MAXSCOREENTRIES	50
++#define MAXSCOREENTRIES	90
+
+ /**/
+ /* SUPERUSER: defines the name of the game superuser */

@@ -1,6 +1,6 @@
 PORTNAME=	popeye
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.21.3
+DISTVERSION=	0.22.1
 PORTREVISION=	2
 CATEGORIES=	sysutils
 
@@ -11,7 +11,7 @@ WWW=		https://popeye.io/
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:1.22,modules
+USES=		go:1.23,modules
 
 _BUILD_DATE=	$$(date -u +"%FT%T%z")
 _BUILD_HASH=	f736e64

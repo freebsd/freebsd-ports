@@ -1,6 +1,6 @@
 PORTNAME=	kdeconnect-kde
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
-PORTREVISION=	3
+PORTREVISION=	1
 CATEGORIES=	deskutils kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
@@ -9,29 +9,26 @@ WWW=		https://community.kde.org/KDEConnect
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libfakekey.so:x11/libfakekey \
+LIB_DEPENDS=	libdbus-1.so:devel/dbus \
+		libfakekey.so:x11/libfakekey \
 		libwayland-client.so:graphics/wayland \
-		libKF5PulseAudioQt.so:audio/pulseaudio-qt@qt5
-BUILD_DEPENDS=	kpeoplevcard>0:net/kpeoplevcard \
-		${LOCALBASE}/include/linux/input.h:devel/evdev-proto \
-		wayland-protocols>=0:graphics/wayland-protocols \
-		kirigami-addons>=0.6.1:x11-toolkits/kirigami-addons
+		libxkbcommon.so:x11/libxkbcommon \
+		libKF6PulseAudioQt.so:audio/pulseaudio-qt
+BUILD_DEPENDS=	${LOCALBASE}/include/linux/input.h:devel/evdev-proto \
+		wayland-protocols>=0:graphics/wayland-protocols
 RUN_DEPENDS=	sshpass:security/sshpass \
-		sshfs:sysutils/fusefs-sshfs \
-		kpeoplevcard>0:net/kpeoplevcard \
-		kirigami-addons>=0.6.1:x11-toolkits/kirigami-addons
+		sshfs:filesystems/sshfs
 
-USES=		cmake compiler:c++11-lang desktop-file-utils gettext kde:5 \
-		pkgconfig qca qt:5 tar:xz xorg
-USE_KDE=	auth bookmarks codecs completion config configwidgets \
-		coreaddons dbusaddons doctools guiaddons i18n iconthemes \
-		itemviews jobwidgets kcmutils kio kirigami2 notifications \
-		people qqc2-desktop-style service solid wayland widgetsaddons \
-		windowsystem xmlgui \
+USES=		cmake compiler:c++17-lang desktop-file-utils gettext-tools \
+		gl kde:6 localbase:ldflags pkgconfig qt:6 ssl tar:xz xorg
+USE_GL=		gl opengl # GLX
+USE_KDE=	bookmarks colorscheme completion config configwidgets \
+		coreaddons crash dbusaddons doctools guiaddons i18n iconthemes \
+		itemviews jobwidgets kcmutils kio kirigami-addons kirigami2 \
+		notifications package people qqc2-desktop-style service solid \
+		statusnotifieritem widgetsaddons windowsystem \
 		ecm:build
-USE_QT=		concurrent core dbus declarative gui multimedia network \
-		quickcontrols2 testlib wayland widgets x11extras xml \
-		buildtools:build qmake:build
+USE_QT=		base connectivity declarative multimedia wayland
 USE_XORG=	ice sm x11 xext xtst
 USE_LDCONFIG=	${QT_QMLDIR}/org/kde/kdeconnect
 

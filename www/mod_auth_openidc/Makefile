@@ -1,5 +1,5 @@
 PORTNAME=	mod_auth_openidc
-PORTVERSION=	2.4.14.2
+PORTVERSION=	2.4.16.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}
@@ -14,7 +14,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 LIB_DEPENDS=	libcjose.so:devel/cjose \
 		libcurl.so:ftp/curl \
 		libjansson.so:devel/jansson \
-		libpcre.so:devel/pcre
+		libaprutil-1.so:devel/apr1 \
+		libexpat.so:textproc/expat2 \
+		libpcre2-8.so:devel/pcre2
 
 USES=		apache autoreconf cpe gmake libtool pkgconfig ssl
 USE_GITHUB=	yes
@@ -33,11 +35,6 @@ HIREDIS_LIB_DEPENDS=	libhiredis.so:databases/hiredis
 HIREDIS_CONFIGURE_WITH=	hiredis
 
 .include <bsd.port.options.mk>
-
-post-patch:
-	@${REINPLACE_CMD} -e \
-		's|@APXS2@ @APXS2_OPTS@ -i|@APXS2@ @APXS2_OPTS@ -S LIBEXECDIR=${STAGEDIR}${PREFIX}/${APACHEMODDIR} -i|' \
-		${WRKSRC}/Makefile.*
 
 pre-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/${APACHEMODDIR} \

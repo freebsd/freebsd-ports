@@ -1,15 +1,22 @@
 PORTNAME=	qwdtools
+PORTVERSION=	0.34.20220905
+PORTEPOCH=	2
 CATEGORIES=	games converters
+
+MAINTAINER=	vvd@FreeBSD.org
 COMMENT=	Convert QuakeWorld demos from QWD format to MVD format
-DESCR=		${.CURDIR}/pkg-descr
-PKGMESSAGE=	/nonexistent
+WWW=		https://github.com/QW-Group/qwdtools
 
-BUILD_WRKSRC=	${WRKSRC}/tools/qwdtools/source
-GH_PROJECT=	mvdsv
+LICENSE=	GPLv2+
 
-CFLAGS+=	-DVERSION_NUMBER=\\\"${PORTVERSION}\\\" \
-		-DHOMEPAGE_URL=SERVER_HOME_URL
+USES=		cmake
+USE_GITHUB=	yes
+GH_ACCOUNT=	QW-Group
+GH_TAGNAME=	8af104b
 
-MASTERDIR=	${.CURDIR}/../mvdsv
+PLIST_FILES=	bin/${PORTNAME}
 
-.include "${MASTERDIR}/Makefile"
+do-install:
+	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
+
+.include <bsd.port.mk>

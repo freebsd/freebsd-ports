@@ -1,6 +1,5 @@
 PORTNAME=	rkward
-PORTVERSION=	0.7.5
-PORTREVISION=	4
+PORTVERSION=	0.8.0
 CATEGORIES=	math
 MASTER_SITES=	KDE/stable/${PORTNAME}/${PORTVERSION}/
 
@@ -10,25 +9,26 @@ WWW=		https://rkward.kde.org/
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libR.so:math/R
+LIB_DEPENDS=	libR.so:math/R	\
+		libcups.so:print/cups	\
+		libxkbcommon.so:x11/libxkbcommon
 RUN_DEPENDS=	kbibtex:databases/kbibtex	\
-		pandoc:textproc/hs-pandoc	\
+		hs-pandoc>0:textproc/hs-pandoc	\
 		${LR_MOD_DIR}/R2HTML/INDEX:textproc/R-cran-R2HTML	\
 		${LR_MOD_DIR}/rmarkdown/INDEX:textproc/R-cran-rmarkdown
-TEST_DEPENDS=	${LR_MOD_DIR}/FAdist/INDEX:science/R-cran-FAdist
+TEST_DEPENDS=	${LR_MOD_DIR}/FAdist/INDEX:science/R-cran-FAdist	\
+		xcb-util-cursor>0:x11/xcb-util-cursor
 
-USES=		cmake compiler:c++11-lang desktop-file-utils gettext fortran	\
-		kde:5 php:cli qt:5 shared-mime-info xorg
-USE_QT=		buildtools concurrent core dbus declarative gui location	\
-		network printsupport qmake script testlib webchannel webengine	\
-		widgets xml
+USES=		cmake compiler:c++11-lang desktop-file-utils gettext gl fortran	\
+		kde:6 localbase php:cli qt:6 shared-mime-info xorg
+USE_GL=		opengl
+USE_QT=		5compat base declarative positioning webchannel webengine
 USE_XORG=	ice x11 xext
-USE_KDE=	archive auth bookmarks codecs completion config configwidgets coreaddons\
-		crash doctools ecm i18n itemviews jobwidgets kate:run kio	\
-		notifications parts service solid sonnet syntaxhighlighting texteditor	\
-		textwidgets widgetsaddons windowsystem xmlgui
+USE_KDE=	archive bookmarks breeze-icons colorscheme completion config	\
+		configwidgets coreaddons crash ecm doctools i18n itemviews	\
+		jobwidgets kio notifications parts service solid		\
+		syntaxhighlighting texteditor widgetsaddons windowsystem xmlgui
 
-CFLAGS+=	-I${LOCALBASE}/include
 TEST_TARGET=	plugintests
 
 LR_MOD_DIR=	${LOCALBASE}/lib/R/library
@@ -80,7 +80,7 @@ pre-configure:
 	exit 1; fi)
 
 post-install:
-	${RM} ${STAGEDIR}${PREFIX}/share/apps/katepart/syntax/r.xml # Conflicts with kate
+	#${RM} ${STAGEDIR}${PREFIX}/share/apps/katepart/syntax/r.xml # Conflicts with kate
 .if ${PORT_OPTIONS:MINSTTEST}
 	${MKDIR} ${STAGEDIR}${PREFIX}/${R_LIB_DIR}
 	(cd ${WRKSRC}/rkward/rbackend/rpackages/rkwardtests &&	\

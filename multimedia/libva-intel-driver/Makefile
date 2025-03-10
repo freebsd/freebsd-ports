@@ -15,6 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 ONLY_FOR_ARCHS=	amd64 i386
 ONLY_FOR_ARCHS_REASON=	only Intel GPUs on x86 are supported
+DEPRECATED=	Project discontinued
 
 BUILD_DEPENDS=	libva>=2.4.0:multimedia/libva
 LIB_DEPENDS=	libdrm_intel.so:graphics/libdrm \

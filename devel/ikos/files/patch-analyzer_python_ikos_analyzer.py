@@ -1,8 +1,8 @@
---- analyzer/python/ikos/analyzer.py.orig	2018-12-14 07:13:50 UTC
+--- analyzer/python/ikos/analyzer.py.orig	2024-12-31 23:34:34 UTC
 +++ analyzer/python/ikos/analyzer.py
-@@ -554,10 +554,10 @@ def clang(bc_path, cpp_path, colors=True
-     # For #include <ikos/analyzer/intrinsic.hpp>
-     cmd += ['-isystem', settings.INCLUDE_DIR]
+@@ -703,10 +703,10 @@ def clang(
+     if machine_flags:
+         cmd += ['-m%s' % m for m in machine_flags]
  
 -    if colors:
 -        cmd.append('-fcolor-diagnostics')
@@ -13,5 +13,5 @@
 +    #else:
 +    #    cmd.append('-fno-color-diagnostics')
  
-     if cpp_path.endswith('.cpp'):
-         cmd.append('-std=c++14')  # available because clang >= 4.0
+     if path_ext(cpp_path) in cpp_extensions:
+         cmd.append('-std=c++17')  # available because clang >= 7.0

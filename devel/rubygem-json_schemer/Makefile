@@ -1,5 +1,5 @@
 PORTNAME=	json_schemer
-PORTVERSION=	0.2.20
+PORTVERSION=	2.3.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -10,13 +10,15 @@ WWW=		https://github.com/ruby-json-schema/json-schema
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	rubygem-ecma-re-validator>=0.3<1:devel/rubygem-ecma-re-validator \
+RUN_DEPENDS=	rubygem-bigdecimal>=0:math/rubygem-bigdecimal \
 		rubygem-hana>=1.3<2:devel/rubygem-hana \
 		rubygem-regexp_parser>=2.0<3:textproc/rubygem-regexp_parser \
-		rubygem-uri_template>=0.7<1:net/rubygem-uri_template
+		rubygem-simpleidn02>=0.2<1:dns/rubygem-simpleidn02
 
 USES=		gem
 
 NO_ARCH=	yes
+
+PLIST_FILES=	bin/json_schemer
 
 .include <bsd.port.mk>

@@ -1,7 +1,7 @@
 PORTNAME=	cadence
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.9.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	audio
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
@@ -21,7 +21,7 @@ USES=		compiler:c++11-lang desktop-file-utils gmake localbase pkgconfig \
 		python pyqt:5 qt:5 shebangfix tar:bz2
 SHEBANG_FILES=	src/*.py
 USE_QT=		core gui widgets buildtools:build
-USE_PYQT=	pyqt5 sip
+USE_PYQT=	pyqt5
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	falkTX

@@ -1,11 +1,7 @@
 PORTNAME=	wf-recorder
-DISTVERSION=	0.4.1
-PORTREVISION=	1
+DISTVERSION=	0.5.0
 CATEGORIES=	multimedia wayland
 MASTER_SITES=	https://github.com/ammen99/wf-recorder/releases/download/v${DISTVERSION}/
-
-PATCH_SITES=	https://github.com/ammen99/${PORTNAME}/commit/
-PATCHFILES+=	239829231e6b.patch:-p1 # https://github.com/ammen99/wf-recorder/pull/262
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Screen recorder for wlroots-based compositors
@@ -18,6 +14,7 @@ BUILD_DEPENDS=	scdoc:textproc/scdoc \
 		wayland-protocols>=1.14:graphics/wayland-protocols \
 		wayland-scanner:graphics/wayland
 LIB_DEPENDS=	libavutil.so:multimedia/ffmpeg \
+		libdrm.so:graphics/libdrm \
 		libwayland-client.so:graphics/wayland
 
 USES=		compiler:c++11-lang gl meson pkgconfig tar:xz
@@ -27,8 +24,12 @@ PLIST_FILES=	bin/wf-recorder \
 		share/man/man1/wf-recorder.1.gz
 PORTDOCS=	README.md
 
-OPTIONS_DEFINE=		DOCS PULSEAUDIO
-OPTIONS_DEFAULT=	PULSEAUDIO
+OPTIONS_DEFINE=		DOCS PIPEWIRE PULSEAUDIO
+OPTIONS_DEFAULT=	PIPEWIRE PULSEAUDIO
+
+PIPEWIRE_DESC=Audio recording via PipeWire
+PIPEWIRE_LIB_DEPENDS=	libpipewire-0.3.so:multimedia/pipewire
+PIPEWIRE_MESON_ENABLED=	pipewire
 
 PULSEAUDIO_DESC=Audio recording via PulseAudio
 

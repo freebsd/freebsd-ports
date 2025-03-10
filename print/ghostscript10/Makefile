@@ -1,13 +1,10 @@
 PORTNAME=	ghostscript
-DISTVERSION=	10.03.1
+DISTVERSION=	10.04.0
 CATEGORIES=	print
 MASTER_SITES=	https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs${DISTVERSION:S/.//g}/
 PKGNAMESUFFIX=	${GS_MAJOR_VERSION}
 
-PATCH_SITES=   https://github.com/ArtifexSoftware/ghostpdl/commit/
-PATCHFILES=    90cabe08422afdd16bac5dd9217602679d943045.patch:-p1
-
-MAINTAINER=	michael.osipov@siemens.com
+MAINTAINER=	michael.osipov@innomotics.com
 COMMENT=	PostScript and PDF interpreter
 WWW=	https://ghostscript.com/
 

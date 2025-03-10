@@ -1,5 +1,5 @@
 PORTNAME=	lxqt-config
-PORTVERSION=	2.0.0
+PORTVERSION=	2.1.1
 CATEGORIES=	sysutils
 DIST_SUBDIR=	lxqt
 

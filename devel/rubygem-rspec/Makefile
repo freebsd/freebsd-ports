@@ -6,7 +6,8 @@ MASTER_SITES=	RG
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Behaviour Driven Development in Ruby
 WWW=		https://rspec.info/ \
-		https://github.com/rspec/rspec-metagem
+		https://github.com/rspec/rspec/tree/main/rspec \
+		https://github.com/rspec/rspec
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

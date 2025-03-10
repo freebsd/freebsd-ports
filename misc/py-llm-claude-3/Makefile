@@ -1,8 +1,9 @@
 PORTNAME=	llm-claude-3
-DISTVERSION=	0.3
+DISTVERSION=	0.4.1
 CATEGORIES=	misc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	llm_claude_3-${DISTVERSION}
 
 MAINTAINER=	dch@FreeBSD.org
 COMMENT=	Interact with Large Language Models by API, or locally

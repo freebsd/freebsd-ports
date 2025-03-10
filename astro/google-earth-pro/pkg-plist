@@ -5,7 +5,7 @@
 %%LINUXBASE%%/opt/google/earth/pro/google-earth-pro
 %%LINUXBASE%%/opt/google/earth/pro/google-earth-pro.desktop
 %%LINUXBASE%%/opt/google/earth/pro/googleearth
-%%LINUXBASE%%/opt/google/earth/pro/googleearth-bin
+@(,,555) %%LINUXBASE%%/opt/google/earth/pro/googleearth-bin
 %%LINUXBASE%%/opt/google/earth/pro/gpsbabel
 %%LINUXBASE%%/opt/google/earth/pro/kh56
 %%LINUXBASE%%/opt/google/earth/pro/lang/ar.qm

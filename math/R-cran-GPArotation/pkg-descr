@@ -1,0 +1,8 @@
+GPA Rotation for Factor Analysis
+
+The GPArotation package contains functions for the rotation of factor loadings
+matrices. The functions implement Gradient Projection (GP) algorithms for
+orthogonal and oblique rotation. Additionally, a number of rotation criteria
+are provided. The GP algorithms minimize the rotation criterion function, and
+provide the corresponding rotation matrix. For oblique rotation, the
+covariance/correlation matrix of the factors is also provided.

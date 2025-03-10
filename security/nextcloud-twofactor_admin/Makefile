@@ -1,7 +1,6 @@
 PORTNAME=	twofactor_admin
-PORTVERSION=	4.5.0
+PORTVERSION=	4.7.1
 DISTVERSIONPREFIX=	v
-PORTREVISION=	3
 CATEGORIES=	security
 DISTNAME=	${PORTNAME}
 
@@ -11,7 +10,7 @@ WWW=		https://apps.nextcloud.com/apps/twofactor_admin
 
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-NEXTCLOUD_RUN_DEPENDS=	26
+NEXTCLOUD_RUN_DEPENDS=	28
 
 USES=		nextcloud php:flavors
 

@@ -1,6 +1,6 @@
 PORTNAME=	double-conversion
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.3.0
+DISTVERSION=	3.3.1
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -17,5 +17,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	google
 
 CMAKE_ON=	BUILD_SHARED_LIBS
+
+# tests as of 3.3.1: 100% tests passed, 0 tests failed out of 9
 
 .include <bsd.port.mk>

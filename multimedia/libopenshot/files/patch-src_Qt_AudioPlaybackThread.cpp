@@ -1,6 +1,6 @@
---- src/Qt/AudioPlaybackThread.cpp.orig	2023-04-19 22:01:02 UTC
+--- src/Qt/AudioPlaybackThread.cpp.orig	2024-12-21 22:27:30 UTC
 +++ src/Qt/AudioPlaybackThread.cpp
-@@ -102,8 +102,17 @@ namespace openshot
+@@ -111,8 +111,17 @@ namespace openshot
  
  				// Settings for audio device playback
  				AudioDeviceManager::AudioDeviceSetup deviceSetup = AudioDeviceManager::AudioDeviceSetup();
@@ -17,6 +17,6 @@
 +					deviceSetup.outputChannels.setBit(i);
 +				}
 +				deviceSetup.useDefaultOutputChannels = false;
+ 				deviceSetup.bufferSize = Settings::Instance()->PLAYBACK_AUDIO_BUFFER_SIZE;
  
  				// Loop through common sample rates, starting with the user's requested rate
- 				// Not all sample rates are supported by audio devices, for example, many VMs

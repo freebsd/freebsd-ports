@@ -1,6 +1,10 @@
 usr/bin/gr2fonttest
 usr/lib/.build-id/1b/152f7e4f42095f81f1997df6fc09d63b5bdf42
+usr/lib/.build-id/1b/79e35d3dc9428ebf100cf4e6b3f1443b770385
+usr/lib/.build-id/30/f52d295b264e49a3b7fb8db9cc6d7499b2a1c4
 usr/lib/.build-id/49/a806a58cf9438ff52420750264b22bdabbd699
+usr/lib/libgraphite2.so.3
+usr/lib/libgraphite2.so.3.2.1
 usr/lib64/libgraphite2.so.3
 usr/lib64/libgraphite2.so.3.2.1
 %%PORTDOCS%%usr/share/doc/graphite2/ChangeLog

@@ -1,6 +1,6 @@
 PORTNAME=	leftwm
-DISTVERSION=	0.5.1
-PORTREVISION=	5
+DISTVERSION=	0.5.4
+PORTREVISION=	1
 CATEGORIES=	x11-wm
 
 MAINTAINER=	bofh@FreeBSD.org
@@ -9,9 +9,6 @@ WWW=		https://leftwm.org/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
-
-NOT_FOR_ARCHS=	armv7 i386 powerpc
-NOT_FOR_ARCHS_REASON=	a value of type `Vec<i32>` cannot be built from an iterator over elements of type `i64`
 
 USES=		cargo desktop-file-utils xorg
 USE_GITHUB=	yes
@@ -26,11 +23,6 @@ OPTIONS_SUB=	yes
 THEMES_DESC=	LeftWM Basic Themes
 
 post-install:
-.for l in leftwm-state leftwm-worker leftwm-check \
-	leftwm-command leftwm
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${l}
-.endfor
-
 	${MKDIR} ${STAGEDIR}${LOCALBASE}/share/xsessions
 	(cd ${WRKSRC} && ${INSTALL_DATA} leftwm.desktop \
 		${STAGEDIR}${LOCALBASE}/share/xsessions/)

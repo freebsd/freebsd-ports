@@ -1,2 +1,0 @@
-Support for applying monkey patches late in the startup cycle by using ZCML
-configuration actions.

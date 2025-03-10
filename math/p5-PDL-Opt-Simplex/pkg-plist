@@ -1,0 +1,3 @@
+%%SITE_PERL%%/PDL/Demos/Simplex.pm
+%%SITE_PERL%%/PDL/Opt/Simplex.pm
+%%PERL5_MAN3%%/PDL::Opt::Simplex.3.gz

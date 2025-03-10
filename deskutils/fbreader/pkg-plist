@@ -98,7 +98,7 @@ share/pixmaps/FBReader/unknown.png
 share/pixmaps/FBReader/upfolder.png
 share/pixmaps/FBReader/weasel.png
 share/pixmaps/FBReader/zipfolder.png
-lib/zlibrary/ui/zlui-gtk.so
+lib/zlibrary/ui/zlui-%%UITYPE%%.so
 share/zlibrary/default/config.xml
 share/zlibrary/encodings/Big5
 share/zlibrary/encodings/Encodings.xml
@@ -123,7 +123,7 @@ share/zlibrary/encodings/KOI8-R
 share/zlibrary/encodings/windows-1251
 share/zlibrary/encodings/windows-1252
 share/zlibrary/hyphenationPatterns.zip
-share/zlibrary/keynames-gtk.xml
+share/zlibrary/keynames-%%UITYPE%%.xml
 share/zlibrary/languagePatterns.zip
 share/zlibrary/resources/ar.xml
 share/zlibrary/resources/bg.xml

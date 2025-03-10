@@ -1,0 +1,7 @@
+Getting the right files into your wheel is tricky, and sometimes we mess up and
+publish a wheel containing __pycache__ directories or tests/. Do we have to
+manually check the contents of every wheel we build before uploading it to PyPI?
+How about letting this program check for you? Just run check-wheel-contents on
+your wheel, and it'll fail and notify you if any of several common errors &
+mistakes are detected. The errors are described below, along with common causes
+and corresponding fixes.

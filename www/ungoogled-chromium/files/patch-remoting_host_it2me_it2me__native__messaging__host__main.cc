@@ -1,4 +1,4 @@
---- remoting/host/it2me/it2me_native_messaging_host_main.cc.orig	2023-09-17 07:59:53 UTC
+--- remoting/host/it2me/it2me_native_messaging_host_main.cc.orig	2025-02-20 09:59:21 UTC
 +++ remoting/host/it2me/it2me_native_messaging_host_main.cc
 @@ -30,7 +30,7 @@
  #include "remoting/host/resources.h"
@@ -27,7 +27,7 @@
    // Required for any calls into GTK functions, such as the Disconnect and
    // Continue windows. Calling with nullptr arguments because we don't have
    // any command line arguments for gtk to consume.
-@@ -257,7 +257,7 @@ int It2MeNativeMessagingHostMain(int argc, char** argv
+@@ -251,7 +251,7 @@ int It2MeNativeMessagingHostMain(int argc, char** argv
        PolicyWatcher::CreateWithTaskRunner(context->file_task_runner(),
                                            context->management_service());
  
@@ -36,7 +36,7 @@
    scoped_refptr<AutoThreadTaskRunner> input_task_runner;
    if (!IsRunningWayland()) {
      // Create an X11EventSource on all UI threads, so the global X11 connection
-@@ -284,7 +284,7 @@ int It2MeNativeMessagingHostMain(int argc, char** argv
+@@ -278,7 +278,7 @@ int It2MeNativeMessagingHostMain(int argc, char** argv
    // Run the loop until channel is alive.
    run_loop.Run();
  

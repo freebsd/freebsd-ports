@@ -13,8 +13,7 @@ LICENSE=	GPLv2
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 LIB_DEPENDS=	libpng.so:graphics/png \
-		libtiff.so:graphics/tiff \
-		libsmpeg.so:multimedia/smpeg
+		libtiff.so:graphics/tiff
 RUN_DEPENDS=	p5-Alien-SDL>=1.446:devel/p5-Alien-SDL \
 		p5-File-ShareDir>=1.0:devel/p5-File-ShareDir \
 		p5-Tie-Simple>=0:devel/p5-Tie-Simple

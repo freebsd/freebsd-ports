@@ -1,5 +1,5 @@
 PORTNAME=		sope
-PORTVERSION=		5.10.0
+PORTVERSION=		5.11.2
 CATEGORIES=		devel gnustep
 MASTER_SITES=		https://packages.sogo.nu/sources/
 DISTNAME=		SOPE-${PORTVERSION}
@@ -10,10 +10,10 @@ WWW=			https://sogo.nu/
 
 LICENSE=		LGPL20
 
-LIB_DEPENDS=		libxml2.so:textproc/libxml2 \
-			libmemcached.so:databases/libmemcached
+LIB_DEPENDS=		libmemcached.so:databases/libmemcached
 
-USES=			gmake iconv gnustep
+USES=			gmake gnome iconv gnustep
+USE_GNOME=		libxml2
 USE_GNUSTEP=		base build
 USE_LDCONFIG=		${GNUSTEP_LOCAL_LIBRARIES}
 
@@ -45,7 +45,7 @@ PGSQL_USES=		pgsql
 
 .include <bsd.port.options.mk>
 
-.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400091 || ( ${OSVERSION} >= 1302507 && ${OSVERSION} < 1400000 ))
+.if ${OPSYS} == FreeBSD
 CPPFLAGS+=	-Wno-error=incompatible-function-pointer-types
 .endif
 

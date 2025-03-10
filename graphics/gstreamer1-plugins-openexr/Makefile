@@ -1,19 +1,20 @@
-PORTREVISION=	1
+PORTREVISION=	0
 CATEGORIES=	graphics
 
 COMMENT=	GStreamer OpenExr codec plugin
 
+LIB_DEPENDS=	libOpenEXR.so:graphics/openexr \
+		libImath-3_1.so:math/Imath
+
 USES+=		compiler:c++11-lang
-GST_PLUGIN=	openexr
-DIST=		bad
 
 CPPFLAGS+=	-DInt64=uint64_t
 
-MASTERDIR=	${.CURDIR}/../../multimedia/gstreamer1-plugins
+MASTERDIR=	${.CURDIR:H:H}/multimedia/gstreamer1-plugins
 
-PLIST=  ${.CURDIR}/pkg-plist
+PLIST=		${.CURDIR}/pkg-plist
 
-LIB_DEPENDS=  libOpenEXR.so:graphics/openexr \
-	libImath-3_1.so:math/Imath
+DIST=		bad
+GST_PLUGIN=	openexr
 
 .include "${MASTERDIR}/Makefile"

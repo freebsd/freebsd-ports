@@ -1,4 +1,4 @@
-PORTREVISION=	4
+PORTREVISION=	10
 PKGNAMEPREFIX=	lib
 
 MASTERDIR=	${.CURDIR}/../rav1e
@@ -22,8 +22,5 @@ do-install:
 		--destdir "${STAGEDIR}" \
 		--prefix "${PREFIX}" \
 		${CARGO_INSTALL_ARGS}
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/*.so
 
 .include "${MASTERDIR}/Makefile"

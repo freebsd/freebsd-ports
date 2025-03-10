@@ -26,4 +26,19 @@ exporter into Prometheus, refer to the documentation at:
 https://github.com/prometheus-community/postgres_exporter
 EOM
 }
+{ type: upgrade
+  maximum_version: "0.16.0"
+  message: <<EOM
+BREAKING CHANGE: In postgres_exporter 0.16.0 and later, the log message format
+has changed.  From the upstream release notes:
+
+The logging system has been replaced with log/slog from the stdlib. This change
+is being made across the prometheus ecosystem. The logging output has changed,
+but the messages and levels remain the same. The ts label for the timestamp has
+been replaced with time, the accuracy is less, and the timezone is not forced
+to UTC. The caller field has been replaced by the source field, which now
+includes the full path to the source file. The level field now exposes the log
+level in capital letters.
+EOM
+}
 ]

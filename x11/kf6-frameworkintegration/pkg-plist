@@ -9,6 +9,7 @@ lib/cmake/KF6FrameworkIntegration/KF6FrameworkIntegrationTargets.cmake
 lib/libKF6Style.so
 lib/libKF6Style.so.%%KDE_FRAMEWORKS_VERSION%%
 lib/libKF6Style.so.6
+lib/libexec/kf6/kpackagehandlers/appstreamhandler
 lib/libexec/kf6/kpackagehandlers/knshandler
 %%QT_PLUGINDIR%%/kf6/FrameworkIntegrationPlugin.so
 share/knotifications6/plasma_workspace.notifyrc

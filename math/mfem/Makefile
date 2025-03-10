@@ -1,12 +1,12 @@
 PORTNAME=	mfem
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.4
-PORTREVISION=	11
+DISTVERSION=	4.7
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Lightweight, general, scalable C++ library for finite element methods
-WWW=		https://mfem.org/
+WWW=		https://mfem.org \
+		https://github.com/mfem/mfem
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -17,6 +17,7 @@ USE_LDCONFIG=	yes
 
 CMAKE_ON=	BUILD_SHARED_LIBS
 CMAKE_TESTING_ON=	MFEM_ENABLE_TESTING # tests are broken, see https://github.com/mfem/mfem/issues/3163
+CMAKE_TESTING_TARGET=	exec test
 
 OPTIONS_DEFINE=		METIS SUPERLU
 OPTIONS_SINGLE=		MPI

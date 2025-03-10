@@ -1,11 +1,11 @@
 PORTNAME=	nwg-look
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.2.7
-PORTREVISION=	5
+DISTVERSION=	1.0.2
+PORTREVISION=	1
 CATEGORIES=	x11 wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
-COMMENT=	GTK3 settings editor for sway and other wlroots compositors
+COMMENT=	GTK settings editor adapted to work in the wlroots environment
 WWW=		https://github.com/nwg-piotr/nwg-look
 
 LICENSE=	MIT
@@ -18,12 +18,13 @@ USES=		gnome go:modules pkgconfig
 USE_GITHUB=	yes
 USE_GNOME=	cairo gdkpixbuf2 gtk30
 GH_ACCOUNT=	nwg-piotr
-GH_TUPLE=	golang:sys:v0.17.0:golang_sys/vendor/golang.org/x/sys \
-		gotk3:gotk3:v0.6.3:gotk3_gotk3/vendor/github.com/gotk3/gotk3 \
+GH_TUPLE=	golang:sys:v0.29.0:golang_sys/vendor/golang.org/x/sys \
+		gotk3:gotk3:ff349ae13f56:gotk3_gotk3/vendor/github.com/gotk3/gotk3 \
 		sirupsen:logrus:v1.9.3:sirupsen_logrus/vendor/github.com/sirupsen/logrus
 CGO_LDFLAGS+=	-Wl,--as-needed # harfbuzz, freetype2
 PLIST_FILES=	bin/${PORTNAME} \
 		${DATADIR}/langs/en_US.json \
+		${DATADIR}/langs/ja_JP.json \
 		${DATADIR}/langs/pl_PL.json \
 		${DATADIR}/langs/ru_RU.json \
 		${DATADIR}/langs/zh_CN.json \

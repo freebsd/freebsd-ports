@@ -1,5 +1,6 @@
 PORTNAME=	commons-beanutils
 PORTVERSION=	1.9.4
+PORTREVISION=	1
 CATEGORIES=	java devel
 MASTER_SITES=	APACHE_COMMONS_SOURCE
 PKGNAMEPREFIX=	apache-
@@ -16,10 +17,9 @@ BUILD_DEPENDS=	${JAVALIBDIR}/commons-logging.jar:java/apache-commons-logging \
 RUN_DEPENDS=	${JAVALIBDIR}/commons-logging.jar:java/apache-commons-logging \
 		${JAVALIBDIR}/commons-collections.jar:java/apache-commons-collections
 
-USES=		dos2unix
-USE_JAVA=	yes
-USE_ANT=	yes
+USES=		dos2unix java:ant,run
 DOS2UNIX_FILES=	build.xml
+
 ALL_TARGET=	dist
 MAKE_ARGS+=	-Dcommons-collections.jar=${JAVALIBDIR}/commons-collections.jar \
 		-Dcommons-logging.jar=${JAVALIBDIR}/commons-logging.jar

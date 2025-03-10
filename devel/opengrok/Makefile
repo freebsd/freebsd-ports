@@ -23,9 +23,8 @@ LICENSE_PERMS_ECMA=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 RUN_DEPENDS=	uctags:devel/universal-ctags
 
-USES=		cpe
+USES=		cpe java
 CPE_VENDOR=	oracle
-USE_JAVA=	yes
 JAVA_VERSION=	11+
 SHAREOWN=	www
 SHAREGRP=	www

@@ -6,8 +6,7 @@
 # -- Olivier Certner <olce.freebsd.ports@certner.fr>
 PORTNAME=	tauthon
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.8.5
-PORTREVISION=	1
+DISTVERSION=	2.8.5-20240706
 CATEGORIES=	lang python
 
 MAINTAINER=	olce.freebsd.ports@certner.fr
@@ -24,7 +23,7 @@ PATHFIX_MAKEFILEIN=	Makefile.pre.in
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	naftaliharris
-GH_PROJECT=	tauthon
+GH_TAGNAME=	b787044f7c9a3728604471119e6d6220d09d6d94
 
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes

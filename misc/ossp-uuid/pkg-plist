@@ -1,3 +1,4 @@
+%%DOCSDIR%%/README
 bin/uuid
 bin/uuid-config
 include/ossp/uuid.h

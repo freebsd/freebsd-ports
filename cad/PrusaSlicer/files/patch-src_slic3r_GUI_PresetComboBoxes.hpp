@@ -1,4 +1,4 @@
---- src/slic3r/GUI/PresetComboBoxes.hpp.orig	2024-06-27 09:25:47 UTC
+--- src/slic3r/GUI/PresetComboBoxes.hpp.orig	2024-12-20 11:54:34 UTC
 +++ src/slic3r/GUI/PresetComboBoxes.hpp
 @@ -129,7 +129,7 @@ class PresetComboBox : public BitmapComboBox (protecte
      void validate_selection(bool predicate = false);

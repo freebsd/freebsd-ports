@@ -1,6 +1,6 @@
 PORTNAME=	numpy
 PORTVERSION=	1.26.4
-PORTREVISION=	1
+PORTREVISION=	6
 PORTEPOCH=	1
 CATEGORIES=	math python
 MASTER_SITES=	PYPI \
@@ -29,6 +29,8 @@ GCCLIBDIR_CMDS=	${FC} -print-file-name=libgfortran.so | ${SED} -e s/libgfortran.
 LDFLAGS+=	-s
 PYDISTUTILS_BUILDARGS=		--fcompiler=gnu95
 PYDISTUTILS_CONFIGUREARGS=	--fcompiler=gnu95
+
+PIE_UNSAFE=	yes
 
 PORTDOCS=	*
 

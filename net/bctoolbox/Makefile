@@ -1,5 +1,6 @@
 PORTNAME=	bctoolbox
 DISTVERSION=	5.2.94
+PORTREVISION=	1
 CATEGORIES=	net
 
 MAINTAINER=	bofh@FreeBSD.org
@@ -9,9 +10,12 @@ WWW=		https://gitlab.linphone.org/BC/public/bctoolbox
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-BUILD_DEPENDS=	mbedtls>=2.3.0_2:security/mbedtls
+DEPRECATED=	Depends on expired security/mbedtls2
+EXPIRATION_DATE=2025-03-31
+
+BUILD_DEPENDS=	mbedtls2>=2.3.0_2:security/mbedtls2
 LIB_DEPENDS=	libbcunit.so:devel/bcunit \
-	libmbedtls.so:security/mbedtls
+	libmbedtls.so:security/mbedtls2
 
 USES=		cmake compiler:c++17-lang
 USE_GITLAB=	yes

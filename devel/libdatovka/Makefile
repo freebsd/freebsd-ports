@@ -1,6 +1,5 @@
 PORTNAME=	libdatovka
-DISTVERSION=	0.6.2
-PORTREVISION=	1
+DISTVERSION=	0.7.0
 CATEGORIES=	devel
 MASTER_SITES=	https://secure.nic.cz/files/datove_schranky/libdatovka/
 
@@ -18,13 +17,12 @@ BUILD_DEPENDS=	docbook-xsl>0:textproc/docbook-xsl \
 		libiconv>0:converters/libiconv \
 		pkgconf:devel/pkgconf \
 		xsltproc:textproc/libxslt
-LIB_DEPENDS+=	libassuan.so:security/libassuan \
+LIB_DEPENDS=	libassuan.so:security/libassuan \
 		libcurl.so:ftp/curl \
 		libexpat.so:textproc/expat2 \
 		libgcrypt.so:security/libgcrypt \
 		libgpg-error.so:security/libgpg-error \
-		libgpgme.so:security/gpgme \
-		libxml2.so:textproc/libxml2
+		libgpgme.so:security/gpgme
 
 USES=		autoreconf gettext gmake gnome libtool localbase ssl tar:xz
 USE_GNOME=	libxml2 libxslt

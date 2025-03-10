@@ -1,0 +1,9 @@
+TIMESTAMP = 1731443633
+SHA256 (flyinghead-flycast-v2.4_GH0.tar.gz) = 44b2ff5d172f7be2be9db613ebd22635760cfc846ddb4c25e1da0d8fa79b1a1b
+SIZE (flyinghead-flycast-v2.4_GH0.tar.gz) = 30398953
+SHA256 (vinniefalco-LuaBridge-fab7b33b896a42dcc865ba5ecdbacd9f409137f8_GH0.tar.gz) = d393adc6bf1659faf2683f6ef2766ee7223650c8087ce53f8ab529e44c1c1575
+SIZE (vinniefalco-LuaBridge-fab7b33b896a42dcc865ba5ecdbacd9f409137f8_GH0.tar.gz) = 543800
+SHA256 (GPUOpen-LibrariesAndSDKs-VulkanMemoryAllocator-6eb62e1515072827db992c2befd80b71b2d04329_GH0.tar.gz) = 9afe46ce02681799ca907fb79990ff276877dfb6324d48da21b215b92649368d
+SIZE (GPUOpen-LibrariesAndSDKs-VulkanMemoryAllocator-6eb62e1515072827db992c2befd80b71b2d04329_GH0.tar.gz) = 877925
+SHA256 (RetroAchievements-rcheevos-563230b1c249774b4852c944dc7cdcb952c9e8e8_GH0.tar.gz) = fab0809e60d8ed64a4a2bef2964315e9f4b6e770db4c963630441352d1dd21d1
+SIZE (RetroAchievements-rcheevos-563230b1c249774b4852c944dc7cdcb952c9e8e8_GH0.tar.gz) = 669618

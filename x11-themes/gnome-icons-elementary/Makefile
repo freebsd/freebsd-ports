@@ -1,5 +1,5 @@
 PORTNAME=	elementary
-DISTVERSION=	7.3.1
+DISTVERSION=	8.1.0
 CATEGORIES=	x11-themes gnome
 PKGNAMEPREFIX=	gnome-icons-
 

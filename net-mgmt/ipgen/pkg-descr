@@ -1,0 +1,3 @@
+ipgen is a high-performance packet traffic generator based on netmap
+that can interactively output packets of various sizes/rates to measure
+the throughput and frame loss rate.

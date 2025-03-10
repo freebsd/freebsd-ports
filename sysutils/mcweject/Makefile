@@ -9,6 +9,9 @@ COMMENT=	Removable media eject
 
 LICENSE=	BSD3CLAUSE
 
+DEPRECATED=     Unmaintained, redundant to "cdcontrol eject"
+EXPIRATION_DATE=2025-04-03
+
 SUB_FILES=	pkg-message
 
 CONFLICTS=	eject

@@ -22,7 +22,7 @@ BUILD_DEPENDS=	p5-Archive-Zip>=0:archivers/p5-Archive-Zip \
 		gperf>=3.1:devel/gperf \
 		${LOCALBASE}/include/libcuckoo/cuckoohash_map.hh:devel/libcuckoo \
 		mdds>=2.1:devel/mdds \
-		ucpp:devel/ucpp \
+		gpatch:devel/patch \
 		${LOCALBASE}/include/sane/sane.h:graphics/sane-backends \
 		vigra-config:graphics/vigra \
 		${LOCALBASE}/include/glm/glm.hpp:math/glm \
@@ -109,8 +109,8 @@ RUN_DEPENDS=	xdg-open:devel/xdg-utils \
 DISTFILES+=	f543e6e2d7275557a839a164941c0a86e5f2c3f2a0042bfc434c88c6dde9e140-opens___.ttf:ext
 DISTFILES+=	dtoa-20180411.tgz:src
 DISTFILES+=	dragonbox-1.1.3.tar.gz:src
-DISTFILES+=	frozen-1.1.1.tar.gz:src
-DISTFILES+=	skia-m116-2ddcf183eb260f63698aa74d1bb380f247ad7ccd.tar.xz:src
+DISTFILES+=	frozen-1.2.0.tar.gz:src
+DISTFILES+=	skia-m130-3c64459d5df2fa9794b277f0959ed8a92552bf4c.tar.xz:src
 DISTFILES+=	zxcvbn-c-2.5.tar.gz:src
 
 NOT_FOR_ARCHS=		armv6 armv7
@@ -128,7 +128,7 @@ SHEBANG_GLOB=	*.py
 
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
-USES=		autoreconf:build bison compiler:c++17-lang cpe desktop-file-utils \
+USES=		autoreconf:build bison compiler:c++20-lang cpe desktop-file-utils \
 		gettext gl gmake gnome jpeg ldap localbase:ldflags perl5 pkgconfig \
 		python shebangfix shared-mime-info ssl tar:xz xorg
 USE_GL=		gl glew glu
@@ -182,6 +182,10 @@ GTK3_CONFIGURE_ENABLE=	gtk3
 GTK3_USE=	GNOME=gtk30
 
 GTK4_CONFIGURE_ENABLE=	gtk4
+GTK4_LIB_DEPENDS=	libepoxy.so:graphics/libepoxy \
+			libgraphene-1.0.so:graphics/graphene \
+			libharfbuzz.so:print/harfbuzz \
+			libvulkan.so:graphics/vulkan-loader
 GTK4_USE=	GNOME=gtk40
 
 JAVA_BUILD_DEPENDS=	ant:devel/apache-ant \
@@ -201,7 +205,9 @@ JAVA_CONFIGURE_ON=	--with-ant-home=${LOCALBASE}/share/java/apache-ant \
 			--with-hamcrest=${JAVAJARDIR}/hamcrest.jar \
 			--with-system-jars \
 			--without-system-beanshell \
-			--without-system-jfreereport
+			--without-system-java-websocket \
+			--without-system-jfreereport \
+			--without-system-rhino
 JAVA_CONFIGURE_WITH=	java
 # XXX jni.h from GNU classpath causes ABI conflicts.
 JAVA_CONFLICTS_BUILD=	classpath-[0-9]*
@@ -210,21 +216,21 @@ JAVA_DISTFILES=	17410483b5b5f267aa18b7e00b65e6e0-hsqldb_1_8_0.zip:src \
 		35c94d2df8893241173de1d16b6034c0-swingExSrc.zip:src \
 		39bb3fcea1514f1369fcfc87542390fd-sacjava-1.3.zip:src \
 		3bdf40c0d199af31923e900d082ca2dd-libfonts-1.1.6.zip:src \
-		798b2ffdc8bcfe7bca2cf92b62caf685-rhino1_5R5.zip:src \
 		8249374c274932a21846fa7629c2aa9b-officeotron-0.7.4-master.jar:ext \
 		8ce2fcd72becf06c41f7201d15373ed9-librepository-1.1.6.zip:src \
 		97b2d4dba862397f446b217e2b623e71-libloader-1.1.6.zip:src \
 		a084cd548b586552cb7d3ee51f1af969-odfvalidator-1.1.8-incubating-SNAPSHOT-jar-with-dependencies.jar:ext \
 		ace6ab49184e329db254e454a010f56d-libxml-1.1.7.zip:src \
 		ba2930200c9f019c2d93a8c88c651a0f-flow-engine-0.9.4.zip:src \
-		beeca87be45ec87d241ddd0e1bad80c1-bsh-2.0b6-src.zip:src \
 		d8bd5eed178db6e2b18eeed243f85aa8-flute-1.1.6.zip:src \
 		db60e4fde8dd6d6807523deb71ee34dc-liblayout-0.2.10.zip:src \
 		eeb2c7ddf0d302fba4bfc6e97eac9624-libbase-1.1.6.zip:src \
 		f94d9870737518e3b597f9265f4e9803-libserializer-1.1.6.zip:src \
-		Java-WebSocket-1.5.4.tar.gz:src
-JAVA_USE=	JAVA=yes
-JAVA_VARS=	JAVA_BUILD=yes JAVA_RUN=yes JAVA_VERSION=17+
+		Java-WebSocket-1.6.0.tar.gz:src \
+		bsh-2.1.1-src.zip:src \
+		rhino-1.7.15.zip:src
+JAVA_USES=	java
+JAVA_VARS=	JAVA_VERSION=17+
 
 KF5_CONFIGURE_ENABLE=	kf5
 KF5_USE=	kde=config,coreaddons,i18n,kio,windowsystem
@@ -246,7 +252,7 @@ MMEDIA_USES=		gstreamer
 MMEDIA_CONFIGURE_ENABLE=	gstreamer-1-0
 
 PDFIUM_CONFIGURE_ENABLE=	pdfium
-PDFIUM_DISTFILES=	pdfium-6179.tar.bz2:src
+PDFIUM_DISTFILES=	pdfium-6764.tar.bz2:src
 PDFIUM_LIB_DEPENDS=	libabsl_strings.so:devel/abseil \
 			libopenjp2.so:graphics/openjpeg
 
@@ -267,7 +273,7 @@ QT6_CONFIGURE_ENABLE=	qt6
 QT6_CONFIGURE_ENV=	QMAKE6=${QMAKE} MOC6=${MOC} PATH="${QT_TOOLDIR}:${PATH}"
 QT6_PREVENTS=	KF5
 QT6_PREVENTS_MSG=	KF5 support require Qt5 engine
-QT6_USE=	qt=base,declarative:build,tools:build
+QT6_USE=	qt=base,declarative,multimedia,tools:build
 QT6_USES=	qt:6
 
 SDK_BUILD_DEPENDS=	doxygen:devel/doxygen
@@ -295,7 +301,6 @@ CONFIGURE_ARGS=	--disable-dependency-tracking \
 		--enable-release-build \
 		--enable-extension-integration \
 		--disable-mpl-subset \
-		--disable-report-builder \
 		--exec-prefix=${PREFIX} \
 		--with-boost=${LOCALBASE} \
 		--with-build-version="FreeBSD ports ${PKGVERSION}" \
@@ -303,6 +308,7 @@ CONFIGURE_ARGS=	--disable-dependency-tracking \
 		--with-external-hyph-dir=${LOCALBASE}/share/hyphen \
 		--with-external-tar=${DISTDIR}/${DIST_SUBDIR} \
 		--with-external-thes-dir=${LOCALBASE}/share/mythes \
+		--with-gnu-patch=${LOCALBASE}/bin/gpatch \
 		--with-os-version=${OSVERSION} \
 		--with-parallelism=${MAKE_JOBS_NUMBER} \
 		--with-system-abseil \
@@ -322,7 +328,6 @@ CONFIGURE_ARGS=	--disable-dependency-tracking \
 		--with-system-nss \
 		--with-system-openjpeg \
 		--with-system-orcus \
-		--with-system-ucpp \
 		--with-system-zlib \
 		--with-system-zxcvbn=no \
 		--with-system-zxing \
@@ -355,6 +360,7 @@ MAKE_ENV+=	verbose=1
 
 BINARY_ALIAS=	sed=gsed
 
+PIE_UNSAFE=	yes
 #MAKE_JOBS_UNSAFE=	yes
 
 .include <bsd.port.options.mk>
@@ -372,6 +378,15 @@ CONFIGURE_ARGS+=	--disable-skia
 
 .if ${PORT_OPTIONS:MGTK3} && ${PORT_OPTIONS:MKF5}
 CONFIGURE_ARGS+=	--enable-gtk3-kde5
+.endif
+
+.if ${PORT_OPTIONS:MLTO} && ${CHOSEN_COMPILER_TYPE} == clang && ${COMPILER_VERSION} < 130
+LLVM_DEFAULT=	13
+CPP=	${LOCALBASE}/bin/clang-cpp${LLVM_DEFAULT}
+CC=	${LOCALBASE}/bin/clang${LLVM_DEFAULT}
+CXX=	${LOCALBASE}/bin/clang++${LLVM_DEFAULT}
+BUILD_DEPENDS+=	${LOCALBASE}/bin/clang${LLVM_DEFAULT}:devel/llvm${LLVM_DEFAULT}
+LLD_UNSAFE=	yes
 .endif
 
 .if ${CHOSEN_COMPILER_TYPE} == clang

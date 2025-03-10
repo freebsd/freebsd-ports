@@ -29,15 +29,25 @@ bin/BespokeSynth
 %%DATADIR%%/resource/userdata_original/controllers/APC Key 25 MIDI 1.json
 %%DATADIR%%/resource/userdata_original/controllers/APC Mini.json
 %%DATADIR%%/resource/userdata_original/controllers/Ableton Push 2 Live Port.json
+%%DATADIR%%/resource/userdata_original/controllers/Akai LPD8.json
 %%DATADIR%%/resource/userdata_original/controllers/Akai MIDImix.json
 %%DATADIR%%/resource/userdata_original/controllers/Akai MPD232 - Generic Preset.json
+%%DATADIR%%/resource/userdata_original/controllers/Akai MPK Mini PADS.json
+%%DATADIR%%/resource/userdata_original/controllers/Akai MPK Mini Play internal sounds.json
+%%DATADIR%%/resource/userdata_original/controllers/Akai MPK Mini.json
 %%DATADIR%%/resource/userdata_original/controllers/Alesis VMini.json
 %%DATADIR%%/resource/userdata_original/controllers/Arturia BeatStep.json
+%%DATADIR%%/resource/userdata_original/controllers/Arturia KeyLab mkII PADS.json
+%%DATADIR%%/resource/userdata_original/controllers/Arturia KeyLab mkII.json
+%%DATADIR%%/resource/userdata_original/controllers/Arturia MiniLab 3 MIDI PADS.json
+%%DATADIR%%/resource/userdata_original/controllers/Arturia MiniLab 3 MIDI.json
 %%DATADIR%%/resource/userdata_original/controllers/Arturia MiniLab mkII MIDI 1.json
 %%DATADIR%%/resource/userdata_original/controllers/Arturia MiniLab mkII MIDI 1_PADS.json
 %%DATADIR%%/resource/userdata_original/controllers/Axiom AIR Mini 32 MIDI In.json
 %%DATADIR%%/resource/userdata_original/controllers/BCF2000.json
+%%DATADIR%%/resource/userdata_original/controllers/Bespoke Turn.json
 %%DATADIR%%/resource/userdata_original/controllers/CMD LC-1.json
+%%DATADIR%%/resource/userdata_original/controllers/Code 25 USB MIDI.json
 %%DATADIR%%/resource/userdata_original/controllers/FCB1010_1.json
 %%DATADIR%%/resource/userdata_original/controllers/FCB1010_4.json
 %%DATADIR%%/resource/userdata_original/controllers/FCB1010_9.json
@@ -49,11 +59,17 @@ bin/BespokeSynth
 %%DATADIR%%/resource/userdata_original/controllers/Launchpad.json
 %%DATADIR%%/resource/userdata_original/controllers/Lightpad BLOCK.json
 %%DATADIR%%/resource/userdata_original/controllers/LinnStrument MIDI.json
+%%DATADIR%%/resource/userdata_original/controllers/MIDIPLUS minicontrol PADS.json
+%%DATADIR%%/resource/userdata_original/controllers/MIDIPLUS minicontrol.json
 %%DATADIR%%/resource/userdata_original/controllers/MPD218 Port A.json
+%%DATADIR%%/resource/userdata_original/controllers/MPK mini 3.json
 %%DATADIR%%/resource/userdata_original/controllers/Maschine Jam.json
 %%DATADIR%%/resource/userdata_original/controllers/Maschine Mikro MK2 In.json
 %%DATADIR%%/resource/userdata_original/controllers/Midi Fighter Twister.json
 %%DATADIR%%/resource/userdata_original/controllers/MiniFreak MiniFreak MIDI.json
+%%DATADIR%%/resource/userdata_original/controllers/Music Thing m0 Plus.json
+%%DATADIR%%/resource/userdata_original/controllers/Oxygen Pro 49 MackieHUI.json
+%%DATADIR%%/resource/userdata_original/controllers/Oxygen Pro 49 USB MIDI.json
 %%DATADIR%%/resource/userdata_original/controllers/PANORAMA P4.json
 %%DATADIR%%/resource/userdata_original/controllers/QUNEO.json
 %%DATADIR%%/resource/userdata_original/controllers/SL MkII MIDI 1.json
@@ -62,6 +78,7 @@ bin/BespokeSynth
 %%DATADIR%%/resource/userdata_original/controllers/TB-3 MIDI 2.json
 %%DATADIR%%/resource/userdata_original/controllers/Traktor Kontrol F1 - 1.json
 %%DATADIR%%/resource/userdata_original/controllers/VMeter 1.30 A.json
+%%DATADIR%%/resource/userdata_original/controllers/keyboard.json
 %%DATADIR%%/resource/userdata_original/controllers/monome.json
 %%DATADIR%%/resource/userdata_original/controllers/monome128split.json
 %%DATADIR%%/resource/userdata_original/controllers/monome64.json
@@ -201,3 +218,4 @@ bin/BespokeSynth
 %%DATADIR%%/resource/userdata_original/userdata_version.txt
 share/applications/BespokeSynth.desktop
 share/icons/hicolor/512x512/apps/bespoke_icon.png
+share/metainfo/com.bespokesynth.BespokeSynth.metainfo.xml

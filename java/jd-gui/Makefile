@@ -13,10 +13,9 @@ WWW=		http://jd.benow.ca/
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		desktop-file-utils
+USES=		desktop-file-utils java
 USE_GITHUB=	yes
 GH_ACCOUNT=	java-decompiler
-USE_JAVA=	yes
 
 NO_ARCH=	yes
 NO_BUILD=	yes

@@ -1,4 +1,4 @@
---- src/libslic3r/Utils/DirectoriesUtils.cpp.orig	2024-07-03 10:13:37 UTC
+--- src/libslic3r/Utils/DirectoriesUtils.cpp.orig	2024-12-20 11:54:34 UTC
 +++ src/libslic3r/Utils/DirectoriesUtils.cpp
 @@ -3,6 +3,7 @@
  

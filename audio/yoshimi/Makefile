@@ -1,7 +1,7 @@
 PORTNAME=	yoshimi
-DISTVERSION=	2.3.2
+DISTVERSION=	2.3.3.2
 CATEGORIES=	audio
-MASTER_SITES=	SF/${PORTNAME}/${DISTVERSION:R}
+MASTER_SITES=	SF/${PORTNAME}/${DISTVERSION:R:R}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Sophisticated software synthesizer
@@ -19,7 +19,7 @@ LIB_DEPENDS=	libargp.so:devel/argp-standalone \
 		libjack.so:audio/jack \
 		libmxml.so:textproc/mxml
 
-USES=		cmake compiler:c++14-lang gnome ncurses pkgconfig readline tar:bz2
+USES=		cmake compiler:c++17-lang desktop-file-utils gnome ncurses pkgconfig readline tar:bz2
 USE_GNOME=	cairo
 
 CMAKE_SOURCE_PATH=	${WRKSRC}/src

@@ -301,7 +301,6 @@ libexec/samba/samba-dcerpcd
 %%PKGCONFIGDIR%%/smbclient.pc
 %%PKGCONFIGDIR%%/wbclient.pc
 @comment Setup files
-%%SPOTLIGHT%%%%DATADIR%%/samba/mdssvc/elasticsearch_mappings.json
 @comment Man pages
 share/man/man1/dbwrap_tool.1.gz
 share/man/man1/gentest.1.gz

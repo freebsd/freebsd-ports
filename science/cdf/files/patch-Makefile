@@ -1,6 +1,6 @@
---- Makefile.orig	2020-12-09 21:33:32 UTC
+--- Makefile.orig	2024-09-25 15:55:00 UTC
 +++ Makefile
-@@ -47,7 +47,7 @@
+@@ -52,7 +52,7 @@
  
  .SILENT:
  
@@ -9,8 +9,8 @@
  NULL=true
  PART=all
  TARGET=
-@@ -102,6 +102,9 @@ else
-     MAKE=make
+@@ -121,6 +121,9 @@ endif
+     endif
    endif
  endif
 +ifeq ("$(OS)","freebsd")
@@ -19,13 +19,13 @@
  RANLIB=ranlib
  
  WHICHOS=$(shell uname)
-@@ -747,15 +750,15 @@ RANLIB_freebsd=yes
- FC_freebsd=f77
+@@ -874,15 +877,15 @@ CURSES_freebsd_gnu=yes
+ JNIEXT_freebsd=so
  
  CURSES_freebsd_gnu=yes
 -CC_freebsd_gnu=gcc
 -LD_freebsd_gnu=gcc
--LDOPTIONS_freebsd_gnu=-shared
+-LDOPTIONS_freebsd_gnu=-shared 
 +CC_freebsd_gnu=${CC}
 +LD_freebsd_gnu=${CC}
 +LDOPTIONS_freebsd_gnu=-shared -Wl,-soname,libcdf.so.0

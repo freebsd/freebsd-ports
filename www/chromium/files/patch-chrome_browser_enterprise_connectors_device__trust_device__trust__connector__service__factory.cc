@@ -1,4 +1,4 @@
---- chrome/browser/enterprise/connectors/device_trust/device_trust_connector_service_factory.cc.orig	2023-12-10 06:10:27 UTC
+--- chrome/browser/enterprise/connectors/device_trust/device_trust_connector_service_factory.cc.orig	2024-08-26 12:06:38 UTC
 +++ chrome/browser/enterprise/connectors/device_trust/device_trust_connector_service_factory.cc
 @@ -10,7 +10,7 @@
  #include "chrome/browser/profiles/profile.h"
@@ -18,7 +18,7 @@
    return true;
  #else
    return false;
-@@ -79,7 +79,7 @@ DeviceTrustConnectorServiceFactory::BuildServiceInstan
+@@ -84,7 +84,7 @@ DeviceTrustConnectorServiceFactory::BuildServiceInstan
    std::unique_ptr<DeviceTrustConnectorService> service =
        std::make_unique<DeviceTrustConnectorService>(profile->GetPrefs());
  

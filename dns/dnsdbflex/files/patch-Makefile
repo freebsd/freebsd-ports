@@ -1,15 +1,15 @@
---- Makefile.orig	2020-10-14 17:44:31 UTC
+--- Makefile.orig	2024-08-05 23:23:17 UTC
 +++ Makefile
-@@ -15,10 +15,10 @@
+@@ -15,9 +15,11 @@
  #
  
- CURLINCL = `curl-config --cflags` 
--JANSINCL = -I/usr/local/include
-+JANSINCL = -I$(LOCALBASE)/include
+ # Base directory for jansson header and libraries
+-JANSBASE=/usr/local
++#JANSBASE=/usr/local
+ # For macOS on M1, use this instead of the above line:
+ #JANSBASE=/opt/homebrew
++# For FreeBSD. use this instead of the above line:
++JANSBASE=$(LOCALBASE)
  
- CURLLIBS = `[ ! -z "$$(curl-config --libs)" ] && curl-config --libs || curl-config --static-libs`
--JANSLIBS = -L/usr/local/lib -ljansson
-+JANSLIBS = -L$(LOCALBASE)/lib -ljansson
+ JANSINCL = -I$(JANSBASE)/include
  
- CWARN =-W -Wall -Wextra -Wcast-qual -Wpointer-arith -Wwrite-strings \
- 	-Wmissing-prototypes  -Wbad-function-cast -Wnested-externs \

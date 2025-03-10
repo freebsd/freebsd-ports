@@ -4,3 +4,5 @@ bin/qjscalc
 include/quickjs/quickjs-libc.h
 include/quickjs/quickjs.h
 lib/libquickjs.so
+lib/libquickjs.so.0
+lib/libquickjs.so.0.0.0

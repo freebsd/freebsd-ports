@@ -1,0 +1,14 @@
+%%OCAML_SITELIBDIR%%/ppx_js_style/META
+%%OCAML_SITELIBDIR%%/ppx_js_style/dune-package
+%%OCAML_SITELIBDIR%%/ppx_js_style/opam
+%%OCAML_SITELIBDIR%%/ppx_js_style/ppx.exe
+%%OCAML_SITELIBDIR%%/ppx_js_style/ppx_js_style.a
+%%OCAML_SITELIBDIR%%/ppx_js_style/ppx_js_style.cma
+%%OCAML_SITELIBDIR%%/ppx_js_style/ppx_js_style.cmi
+%%OCAML_SITELIBDIR%%/ppx_js_style/ppx_js_style.cmt
+%%OCAML_SITELIBDIR%%/ppx_js_style/ppx_js_style.cmti
+%%OCAML_SITELIBDIR%%/ppx_js_style/ppx_js_style.cmx
+%%OCAML_SITELIBDIR%%/ppx_js_style/ppx_js_style.cmxa
+%%OCAML_SITELIBDIR%%/ppx_js_style/ppx_js_style.cmxs
+%%OCAML_SITELIBDIR%%/ppx_js_style/ppx_js_style.ml
+%%OCAML_SITELIBDIR%%/ppx_js_style/ppx_js_style.mli

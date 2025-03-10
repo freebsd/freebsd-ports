@@ -1,11 +1,14 @@
---- build/premake/extern_libs5.lua.orig	2021-02-06 00:32:37 UTC
+--- build/premake/extern_libs5.lua.orig	2025-01-28 19:57:28 UTC
 +++ build/premake/extern_libs5.lua
-@@ -193,7 +193,7 @@ extern_lib_defs = {
- 			end
+@@ -232,9 +232,9 @@ extern_lib_defs = {
  			-- TODO: This actually applies to most libraries we use on BSDs, make this a global setting.
  			if os.istarget("bsd") then
--				sysincludedirs { "/usr/local/include" }
-+				sysincludedirs { "%%LOCALBASE%%/include" }
+ 				if externalincludedirs then
+-					externalincludedirs { "/usr/local/include" }
++					externalincludedirs { "%%LOCALBASE%%/include" }
+ 				else
+-					sysincludedirs { "/usr/local/include" }
++					sysincludedirs { "%%LOCALBASE%%/include" }
+ 				end
  			end
  		end,
- 		link_settings = function()

@@ -1,9 +1,11 @@
 libdata/pkgconfig/ngspice.pc
 lib/libngspice.so
 lib/libngspice.so.0
-lib/libngspice.so.0.0.8
+lib/libngspice.so.0.0.12
 lib/ngspice/analog.cm
 lib/ngspice/digital.cm
+lib/ngspice/ivlng.so
+lib/ngspice/ivlng.vpi
 lib/ngspice/spice2poly.cm
 lib/ngspice/table.cm
 lib/ngspice/xtradev.cm
@@ -15,3 +17,9 @@ share/ngspice/scripts/devload
 share/ngspice/scripts/setplot
 share/ngspice/scripts/spectrum
 share/ngspice/scripts/spinit
+share/ngspice/scripts/src/ngspice/cmtypes.h
+share/ngspice/scripts/src/ngspice/cosim.h
+share/ngspice/scripts/src/ngspice/miftypes.h
+share/ngspice/scripts/src/verilator_main.cpp
+share/ngspice/scripts/src/verilator_shim.cpp
+share/ngspice/scripts/vlnggen

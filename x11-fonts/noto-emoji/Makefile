@@ -1,6 +1,5 @@
 PORTNAME=	noto
-PORTVERSION=	2.042
-PORTREVISION=	1
+PORTVERSION=	2.047
 CATEGORIES=	x11-fonts
 MASTER_SITES=	https://github.com/googlefonts/noto-emoji/raw/v${PORTVERSION}/fonts/
 PKGNAMESUFFIX=	-emoji
@@ -27,6 +26,13 @@ COLR_DESC=	Install COLRv1 font
 
 COLR_DISTFILES=		Noto-COLRv1.ttf
 COLR_PLIST_FILES=	${FONTSDIR}/Noto-COLRv1.ttf
+
+# maintainer section:
+
+.if defined(MAINTAINER_MODE)
+DISTFILES=	Noto-COLRv1.ttf \
+		NotoColorEmoji.ttf
+.endif
 
 do-install:
 	${MKDIR} ${STAGEDIR}${FONTSDIR}

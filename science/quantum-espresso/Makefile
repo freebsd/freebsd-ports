@@ -1,12 +1,14 @@
 PORTNAME=	quantum-espresso
 DISTVERSIONPREFIX=	qe-
-DISTVERSION=	7.3.1
-PORTREVISION=	2
+DISTVERSION=	7.4
+PORTREVISION=	1
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Package for research in electronic structure, simulation, optimization
-WWW=		https://www.quantum-espresso.org/
+WWW=		https://www.quantum-espresso.org \
+		https://gitlab.com/QEF/q-e \
+		https://github.com/QEF/q-e
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/License
@@ -28,16 +30,15 @@ GNU_CONFIGURE=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	QEF
 GH_PROJECT=	q-e
-GH_TUPLE=	anharmonic:d3q:87685245bc5bc14f226fc18e5126305501b368e8:anharmonic_d3q/external/d3q \
-                pietrodelugas:fox:3453648e6837658b747b895bb7bef4b1ed2eac40:pietrodelugas_fox/external/fox \
-                Reference-LAPACK:lapack:12d825396fcef1e0a1b27be9f119f9e554621e55:Reference_LAPACK_lapack/external/lapack \
-                libmbd:libmbd:82005cbb65bdf5d32ca021848eec8f19da956a77:libmbd_libmbd/external/mbd \
-                QMCPACK:pw2qmcpack:f72ab25fa4ea755c1b4b230ae8074b47d5509c70:QMCPACK_pw2qmcpack/external/pw2qmcpack \
-                dceresoli:qe-gipaw:75b01b694c9ba4df55d294cacc27cf28591b2161:dceresoli_qe_gipaw/external/qe-gipaw \
-                wannier-developers:wannier90:1d6b187374a2d50b509e5e79e2cab01a79ff7ce1:wannier_developers_wannier90/external/wannier90
+GH_TUPLE=	anharmonic:d3q:de47183:anharmonic_d3q/external/d3q \
+		pietrodelugas:fox:3453648e6837658b747b895bb7bef4b1ed2eac40:pietrodelugas_fox/external/fox \
+		Reference-LAPACK:lapack:12d825396fcef1e0a1b27be9f119f9e554621e55:Reference_LAPACK_lapack/external/lapack \
+		libmbd:libmbd:89a3cc1:libmbd_libmbd/external/mbd \
+		QMCPACK:pw2qmcpack:f72ab25fa4ea755c1b4b230ae8074b47d5509c70:QMCPACK_pw2qmcpack/external/pw2qmcpack \
+		dceresoli:qe-gipaw:490046d:dceresoli_qe_gipaw/external/qe-gipaw \
+		wannier-developers:wannier90:1d6b187374a2d50b509e5e79e2cab01a79ff7ce1:wannier_developers_wannier90/external/wannier90
 USE_GITLAB=	nodefault
 GL_TUPLE=	max-centre/components:devicexlib:a6b89ef:devxlib/external/devxlib
-		
 
 SHEBANG_FILES=	configure
 SHEBANG_GLOB=	*.sh *.py
@@ -79,11 +80,13 @@ post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/*.x
 
 do-test:
-	cd ${WRKSRC}/test-suite && ${GMAKE} run-tests
+	@cd ${WRKSRC}/test-suite && ${GMAKE} run-tests
 
 run-examples: build
 .for c in PP PW PWCOND PHonon
 	@cd ${WRKSRC}/$c/examples && PREFIX=${STAGEDIR}${PREFIX} ./run_all_examples
 .endfor
+
+# all tests fail, possibly due to wrong pseudo-potentials, see https://gitlab.com/QEF/q-e/-/issues/745
 
 .include <bsd.port.post.mk>

@@ -1,10 +1,11 @@
 PORTNAME=	ttystatus
 PORTVERSION=	0.36
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://git.liw.fi/cgi-bin/cgit/cgit.cgi/ttystatus/snapshot/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	bapt@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python progress reporting to /dev/tty
 WWW=		https://liw.fi/ttystatus/
 

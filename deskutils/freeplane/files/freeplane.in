@@ -1,3 +1,9 @@
 #!/bin/sh
 
+# Fix an issue with dropdown menu in Wayland that prevents
+# to open or select any items with the mouse cursor.
+if [ -n "$WAYLAND_DISPLAY" ]; then
+    export _JAVA_AWT_WM_NONREPARENTING=1
+fi
+
 exec %%DATADIR%%/freeplane.sh "$@"

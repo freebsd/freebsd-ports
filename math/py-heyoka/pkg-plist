@@ -1,5 +1,6 @@
 %%PYTHON_SITELIBDIR%%/heyoka/__init__.py
 %%PYTHON_SITELIBDIR%%/heyoka/_ensemble_impl.py
+%%PYTHON_SITELIBDIR%%/heyoka/_sgp4_test_data.py
 %%PYTHON_SITELIBDIR%%/heyoka/_sympy_utils.py
 %%PYTHON_SITELIBDIR%%/heyoka/_test_batch_integrator.py
 %%PYTHON_SITELIBDIR%%/heyoka/_test_celmec.py
@@ -15,6 +16,7 @@
 %%PYTHON_SITELIBDIR%%/heyoka/_test_real.py
 %%PYTHON_SITELIBDIR%%/heyoka/_test_real128.py
 %%PYTHON_SITELIBDIR%%/heyoka/_test_scalar_integrator.py
+%%PYTHON_SITELIBDIR%%/heyoka/_test_sgp4_propagator.py
 %%PYTHON_SITELIBDIR%%/heyoka/_test_sympy.py
 %%PYTHON_SITELIBDIR%%/heyoka/_test_var_integrator.py
 %%PYTHON_SITELIBDIR%%/heyoka/_test_var_ode_sys.py

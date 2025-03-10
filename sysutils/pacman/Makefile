@@ -28,7 +28,7 @@ SHEBANG_FILES=	${WRKSRC}/scripts/makepkg-template.pl.in \
 		${WRKSRC}/scripts/libmakepkg/lint_config.sh.in
 BINARY_ALIAS=	python3=${PYTHON_CMD}
 MESON_ARGS=	-Droot-dir=${PACMAN_ROOT} \
-		-Dlocalstatedir=${PACMAN_ROOT}/var \
+		--localstatedir=${PACMAN_ROOT}/var \
 		-Dsysconfdir=${PREFIX}/etc \
 		-Dcrypto=openssl
 USE_LDCONFIG=	yes

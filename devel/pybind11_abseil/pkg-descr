@@ -1,0 +1,2 @@
+pybind11_abseil provides the pybind11 bindings for the Abseil C++ common
+libraries. These adapters make Abseil types work with Pybind11 bindings.

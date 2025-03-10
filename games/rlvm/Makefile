@@ -12,6 +12,8 @@ WWW=		http://www.rlvm.net/
 LICENSE=	GPLv2 GPLv3 MIT
 LICENSE_COMB=	multi
 
+BROKEN=		fails to build with boost 1.85
+
 BUILD_DEPENDS=	boost-libs>0:devel/boost-libs \
 		utf8cpp>=4.0.3:devel/utf8cpp
 LIB_DEPENDS=	libsndfile.so:audio/libsndfile \

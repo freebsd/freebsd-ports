@@ -1,19 +1,17 @@
---- CMakeLists.txt.orig	2023-03-01 00:53:47 UTC
+--- CMakeLists.txt.orig	2024-11-23 03:08:02 UTC
 +++ CMakeLists.txt
-@@ -437,7 +437,7 @@ endif()
+@@ -401,14 +401,11 @@ endif()
      add_subdirectory(tools/clang-tidy-plugin)
  endif()
  
--install(DIRECTORY doc gfx
-+install(DIRECTORY gfx
-     DESTINATION ${DATA_PREFIX}
- )
- 
-@@ -446,7 +446,6 @@ if (RELEASE)
+-install(DIRECTORY doc TYPE DOC)
+-
+ if (RELEASE)
+     install(FILES
          ${CMAKE_SOURCE_DIR}/README.md
          ${CMAKE_SOURCE_DIR}/LICENSE.txt
          ${CMAKE_SOURCE_DIR}/LICENSE-OFL-Terminus-Font.txt
 -        ${CMAKE_SOURCE_DIR}/VERSION.txt
-         DESTINATION ${README_DIR})
+         TYPE DOC)
      if (TILES)
-         install(DIRECTORY ${CMAKE_SOURCE_DIR}/gfx DESTINATION ${DATA_PREFIX})
+         if (USE_PREFIX_DATA_DIR)

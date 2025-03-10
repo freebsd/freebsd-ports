@@ -1,7 +1,7 @@
 PORTNAME=	dasel
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.7.0
-PORTREVISION=	4
+DISTVERSION=	2.8.1
+PORTREVISION=	2
 CATEGORIES=	textproc
 
 MAINTAINER=	lcook@FreeBSD.org
@@ -11,7 +11,7 @@ WWW=		https://github.com/TomWright/dasel
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:modules
+USES=		go:1.22,modules
 
 GO_MODULE=	github.com/tomwright/${PORTNAME}/v2
 GO_TARGET=	./cmd/${PORTNAME}

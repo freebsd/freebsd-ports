@@ -1,0 +1,4 @@
+Assertion Engine provides the generic way to create meaningful and easy to use
+assertions for the Robot Framework libraries. This tools is spin off from
+Browser library project, where the Assertion Engine was developed as part of the
+of library.

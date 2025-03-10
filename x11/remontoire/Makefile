@@ -3,7 +3,7 @@ DISTVERSION=	1.4.0
 PORTREVISION=	2
 CATEGORIES=	x11
 
-MAINTAINER=	jbeich@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Keybinding viewer for i3 and other programs
 WWW=		https://github.com/regolith-linux/remontoire
 

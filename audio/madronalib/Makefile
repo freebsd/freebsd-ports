@@ -26,12 +26,6 @@ GH_ACCOUNT=	madronalabs
 
 CMAKE_ON=	LINUX_JACK
 CXXFLAGS_powerpc64le=	-DNO_WARN_X86_INTRINSICS
-CXXFLAGS_powerpc64=	-DNO_WARN_X86_INTRINSICS
-
-.include <bsd.port.options.mk>
-
-.if ${ARCH} == powerpc64 && !defined(CPUTYPE)
-CXXFLAGS+=	-mcpu=power7
-.endif
+CXXFLAGS_powerpc64=	-DNO_WARN_X86_INTRINSICS -mvsx
 
 .include <bsd.port.mk>

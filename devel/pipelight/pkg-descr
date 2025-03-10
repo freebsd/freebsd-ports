@@ -1,0 +1,3 @@
+Pipelight is a Rust based small cli tool to be used from inside a terminal.
+ * Define pipelines using typescript, toml, hcl and yaml.
+ * Trigger on events: git hooks, file changes...

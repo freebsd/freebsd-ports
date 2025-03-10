@@ -1,0 +1,14 @@
+--- assets/CMakeLists.txt.orig	2024-06-23 17:50:54 UTC
++++ assets/CMakeLists.txt
+@@ -43,9 +43,9 @@ if(${CMAKE_SYSTEM} MATCHES Darwin)
+ if(${CMAKE_SYSTEM} MATCHES Darwin)
+ 	get_target_property(outname SRB2SDL2 OUTPUT_NAME)
+ 	install(FILES ${SRB2_ASSETS} DESTINATION "${outname}.app/Contents/Resources")
+-	install(DIRECTORY "${SRB2_ASSET_DIRECTORY_ABSOLUTE}/models" DESTINATION "${outname}.app/Contents/Resources")
++	install(DIRECTORY "${SRB2_ASSET_DIRECTORY_ABSOLUTE}/" DESTINATION "${outname}.app/Contents/Resources")
+ 	install(FILES ${SRB2_ASSETS_DOCS} DESTINATION .)
+ else()
+ 	install(FILES ${SRB2_ASSETS} DESTINATION .)
+-	install(DIRECTORY "${SRB2_ASSET_DIRECTORY_ABSOLUTE}/models" DESTINATION .)
++	install(DIRECTORY "${SRB2_ASSET_DIRECTORY_ABSOLUTE}/" DESTINATION .)
+ endif()

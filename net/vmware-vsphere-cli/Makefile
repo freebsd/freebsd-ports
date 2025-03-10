@@ -54,8 +54,8 @@ DISTREL=		8156551
 .if (!exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}))
 DISTFILE_INSTRUCTIONS=\n\
 Due to licensing restrictions, certain files must be fetched manually.\n\n\
-Please visit http://communities.vmware.com/community/vmtn/developer/forums/vsphere_sdk_perl\n\
-and choose Download.  Then, login using a VMware account and accept the license agreement.\n\
+Please visit https://developer.broadcom.com/sdks/vsphere-perl-sdk/${PORTVERSION:C/^([0-9]+\.[0-9]).*/\1/}\n\
+and choose Download.  Then, login and accept the license agreement.\n\
 Choose the download for VMware-vSphere-Perl-SDK-${PORTVERSION}-${DISTREL}.i386.tar.gz (even if you are not on i386)\n\n\
 After the download has completed, please place ${DISTNAME}${EXTRACT_SUFX} in\n\
 ${DISTDIR}, then restart the build.\n\n

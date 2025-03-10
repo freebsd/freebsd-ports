@@ -1,6 +1,6 @@
 PORTNAME=	numdifftools
 DISTVERSION=	0.9.41
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,6 +11,9 @@ WWW=		https://github.com/pbrod/numdifftools
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
+
+DEPRECATED=	Depends on expired devel/py-pytest-runner
+EXPIRATION_DATE=2025-03-31
 
 PY_DEPENDS=	${PYTHON_PKGNAMEPREFIX}algopy>=0.4:math/py-algopy@${PY_FLAVOR} \
 		${PYNUMPY} \

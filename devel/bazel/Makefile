@@ -16,15 +16,10 @@ NOT_FOR_ARCHS=	i386
 BUILD_DEPENDS=	bash:shells/bash \
 		zip:archivers/zip
 
-USES=		cpe python shebangfix zip
-
+USES=		cpe java python shebangfix zip
 CPE_VENDOR=	google
-
-USE_JAVA=	yes
 JAVA_VERSION=	11
 JAVA_VENDOR=	openjdk
-JAVA_BUILD=	yes
-JAVA_RUN=	yes
 
 SHEBANG_REGEX=	.*(sh|txt|_stub|stub_.*|bazel|get_workspace_status|protobuf_support|_so)
 

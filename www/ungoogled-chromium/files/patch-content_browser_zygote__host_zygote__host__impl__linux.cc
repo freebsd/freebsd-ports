@@ -1,7 +1,7 @@
---- content/browser/zygote_host/zygote_host_impl_linux.cc.orig	2024-04-23 07:42:17 UTC
+--- content/browser/zygote_host/zygote_host_impl_linux.cc.orig	2025-02-20 09:59:21 UTC
 +++ content/browser/zygote_host/zygote_host_impl_linux.cc
 @@ -18,8 +18,10 @@
- #include "build/chromeos_buildflags.h"
+ #include "build/build_config.h"
  #include "content/common/zygote/zygote_commands_linux.h"
  #include "content/common/zygote/zygote_communication_linux.h"
 +#if !BUILDFLAG(IS_BSD)
@@ -19,7 +19,7 @@
  // Receive a fixed message on fd and return the sender's PID.
  // Returns true if the message received matches the expected message.
  bool ReceiveFixedMessage(int fd,
-@@ -58,6 +61,7 @@ bool ReceiveFixedMessage(int fd,
+@@ -59,6 +62,7 @@ bool ReceiveFixedMessage(int fd,
      return false;
    return true;
  }
@@ -27,7 +27,7 @@
  
  }  // namespace
  
-@@ -67,9 +71,13 @@ ZygoteHost* ZygoteHost::GetInstance() {
+@@ -68,9 +72,13 @@ ZygoteHost* ZygoteHost::GetInstance() {
  }
  
  ZygoteHostImpl::ZygoteHostImpl()
@@ -41,7 +41,7 @@
        sandbox_binary_(),
        zygote_pids_lock_(),
        zygote_pids_() {}
-@@ -82,6 +90,7 @@ ZygoteHostImpl* ZygoteHostImpl::GetInstance() {
+@@ -83,6 +91,7 @@ ZygoteHostImpl* ZygoteHostImpl::GetInstance() {
  }
  
  void ZygoteHostImpl::Init(const base::CommandLine& command_line) {
@@ -49,7 +49,7 @@
    if (command_line.HasSwitch(sandbox::policy::switches::kNoSandbox)) {
      return;
    }
-@@ -132,6 +141,7 @@ void ZygoteHostImpl::Init(const base::CommandLine& com
+@@ -137,6 +146,7 @@ void ZygoteHostImpl::Init(const base::CommandLine& com
             "you can try using --"
          << sandbox::policy::switches::kNoSandbox << ".";
    }
@@ -57,7 +57,7 @@
  }
  
  void ZygoteHostImpl::AddZygotePid(pid_t pid) {
-@@ -156,6 +166,7 @@ pid_t ZygoteHostImpl::LaunchZygote(
+@@ -161,6 +171,7 @@ pid_t ZygoteHostImpl::LaunchZygote(
      base::CommandLine* cmd_line,
      base::ScopedFD* control_fd,
      base::FileHandleMappingVector additional_remapped_fds) {
@@ -65,7 +65,7 @@
    int fds[2];
    CHECK_EQ(0, socketpair(AF_UNIX, SOCK_SEQPACKET | SOCK_CLOEXEC, 0, fds));
    CHECK(base::UnixDomainSocket::EnableReceiveProcessId(fds[0]));
-@@ -224,9 +235,12 @@ pid_t ZygoteHostImpl::LaunchZygote(
+@@ -229,9 +240,12 @@ pid_t ZygoteHostImpl::LaunchZygote(
  
    AddZygotePid(pid);
    return pid;

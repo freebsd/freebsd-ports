@@ -1,9 +1,9 @@
 PORTNAME=	lilv
-DISTVERSION=	0.24.24
+DISTVERSION=	0.24.26
 CATEGORIES=	audio
 MASTER_SITES=	https://download.drobilla.net/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Make use of LV2 plugins as simple as possible
 WWW=		https://drobilla.net/software/lilv
 
@@ -20,10 +20,8 @@ RUN_DEPENDS=	lv2>=1.14.0:audio/lv2
 
 USES=		meson pkgconfig python:build tar:xz
 USE_LDCONFIG=	yes
-MESON_ARGS=	-Ddocs=disabled \
-		--mandir=${PREFIX}/share/man
+MESON_ARGS=	-Ddocs=disabled
 BINARY_ALIAS=	python3=${PYTHON_CMD}
 PLIST_SUB=	VERSION=${PORTVERSION}
-TESTING_UNSAFE=	https://gitlab.com/lv2/lilv/-/issues/12
 
 .include <bsd.port.mk>

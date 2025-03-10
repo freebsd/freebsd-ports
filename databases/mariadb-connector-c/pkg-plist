@@ -13,13 +13,12 @@ include/mariadb/mariadb_version.h
 include/mariadb/mysql.h
 include/mariadb/mysql/client_plugin.h
 include/mariadb/mysql/plugin_auth.h
-include/mariadb/mysql/plugin_auth_common.h
 include/mariadb/mysqld_error.h
 lib/mariadb/libmariadb.a
 lib/mariadb/libmariadb.so
 lib/mariadb/libmariadb.so.3
 lib/mariadb/libmariadbclient.a
-lib/mariadb/plugin/auth_gssapi_client.so
+%%NO_GSSAPI_NONE%%lib/mariadb/plugin/auth_gssapi_client.so
 lib/mariadb/plugin/caching_sha2_password.so
 lib/mariadb/plugin/client_ed25519.so
 lib/mariadb/plugin/dialog.so

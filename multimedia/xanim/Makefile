@@ -1,16 +1,14 @@
 PORTNAME=	xanim
 PORTVERSION=	2.92.0
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	multimedia graphics
-MASTER_SITES=	ftp://ftp.nstu.ru/pub/mirrors/xanim.va.pubnix.com/:main \
-		LOCAL/dinoex:main,DEFAULT \
-		ftp://ftp.nstu.ru/pub/mirrors/xanim.va.pubnix.com/dlls/
+MASTER_SITES=	LOCAL/dinoex
 DISTNAME=	xanim2920
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:main ${EXTRA_FILES}
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${EXTRA_FILES}
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Play most popular animation formats and show pictures
-WWW=		http://xanim.polter.net/
+WWW=		https://web.archive.org/web/20230627070655/http://xanim.polter.net/
 
 # Converted from NO_CDROM
 LICENSE=	xanim
@@ -22,6 +20,7 @@ LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
 # which is fatal for imake.
 USES=		alias imake xorg
 USE_GCC=	yes
+USE_CSTD=	gnu99
 USE_XORG=	xext xt sm ice xext x11
 MAKE_ARGS+=	-j 2 # safe and helps even the single-CPU machines
 DLLDIR=		${PREFIX}/lib/X11/xanim

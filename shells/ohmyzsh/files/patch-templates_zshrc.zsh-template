@@ -1,14 +1,14 @@
---- templates/zshrc.zsh-template.orig	2021-12-23 00:38:08 UTC
+--- templates/zshrc.zsh-template.orig	2024-12-04 21:58:54 UTC
 +++ templates/zshrc.zsh-template
 @@ -2,7 +2,7 @@
- # export PATH=$HOME/bin:/usr/local/bin:$PATH
+ # export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
  
- # Path to your oh-my-zsh installation.
--export ZSH=$HOME/.oh-my-zsh
-+export ZSH=%%DATADIR%%
+ # Path to your Oh My Zsh installation.
+-export ZSH="$HOME/.oh-my-zsh"
++export ZSH="%%DATADIR%%"
  
  # Set name of the theme to load --- if set to "random", it will
- # load a random theme each time oh-my-zsh is loaded, in which case,
+ # load a random theme each time Oh My Zsh is loaded, in which case,
 @@ -22,14 +22,6 @@ ZSH_THEME="robbyrussell"
  # Uncomment the following line to use hyphen-insensitive completion.
  # Case-sensitive completion must be off. _ and - will be interchangeable.

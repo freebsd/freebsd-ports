@@ -1,5 +1,5 @@
 PORTNAME=	excimer
-DISTVERSION=	1.2.2
+DISTVERSION=	1.2.3
 CATEGORIES=	devel
 
 MAINTAINER=	000.fbsd@quip.cz

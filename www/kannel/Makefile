@@ -27,7 +27,8 @@ GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--enable-pcre=yes --enable-docs=no --with-malloc=native \
 		--enable-start-stop-daemon=no
 
-CFLAGS+=	-fcommon
+CFLAGS+=	-fcommon \
+		-fpermissive
 
 PORTSCOUT=	skipv:1.5.0
 

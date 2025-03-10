@@ -4,6 +4,7 @@ bin/satpass2
 %%SITE_PERL%%/Astro/App/Satpass2/Format.pm
 %%SITE_PERL%%/Astro/App/Satpass2/Format/Dump.pm
 %%SITE_PERL%%/Astro/App/Satpass2/Format/Template.pm
+%%SITE_PERL%%/Astro/App/Satpass2/Format/Template/Provider.pm
 %%SITE_PERL%%/Astro/App/Satpass2/FormatTime.pm
 %%SITE_PERL%%/Astro/App/Satpass2/FormatTime/Cldr.pm
 %%SITE_PERL%%/Astro/App/Satpass2/FormatTime/DateTime.pm
@@ -36,6 +37,7 @@ bin/satpass2
 %%PERL5_MAN3%%/Astro::App::Satpass2::Format.3.gz
 %%PERL5_MAN3%%/Astro::App::Satpass2::Format::Dump.3.gz
 %%PERL5_MAN3%%/Astro::App::Satpass2::Format::Template.3.gz
+%%PERL5_MAN3%%/Astro::App::Satpass2::Format::Template::Provider.3.gz
 %%PERL5_MAN3%%/Astro::App::Satpass2::FormatTime.3.gz
 %%PERL5_MAN3%%/Astro::App::Satpass2::FormatTime::Cldr.3.gz
 %%PERL5_MAN3%%/Astro::App::Satpass2::FormatTime::DateTime.3.gz

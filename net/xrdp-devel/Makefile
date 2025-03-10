@@ -1,7 +1,6 @@
 PORTNAME=	xrdp
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.10.0
-PORTREVISION=	1
+DISTVERSION=	0.10.80.b20241229
 PORTEPOCH=	1
 CATEGORIES=	net
 PKGNAMESUFFIX=	-devel
@@ -17,24 +16,24 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/nasm:devel/nasm
+LIB_DEPENDS=	libImlib2.so:graphics/imlib2
 RUN_DEPENDS=	${LOCALBASE}/lib/xorg/modules/libxorgxrdp.so:x11-drivers/xorgxrdp-devel \
 		xterm:x11/xterm
-LIB_DEPENDS=	libImlib2.so:graphics/imlib2
 
 USES=		autoreconf:build compiler:c11 cpe jpeg libtool localbase \
 		pkgconfig ssl xorg
 CPE_VENDOR=	neutrinolabs
-USE_XORG=	ice pixman sm x11 xfixes xrandr
-USE_LDCONFIG=	${PREFIX}/lib/xrdp
 USE_GITHUB=	yes
-
-GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 GH_ACCOUNT=	neutrinolabs
+GH_TAGNAME=	4e378c9
 GH_TUPLE=	neutrinolabs:librfxcodec:e8208bf:librfxcodec/librfxcodec \
 		neutrinolabs:libpainter:2255b38:libpainter/libpainter \
 		neutrinolabs:ulalaca-xrdp:f683d17:ulalaca/ulalaca
+USE_LDCONFIG=	${PREFIX}/lib/xrdp
+USE_XORG=	ice pixman sm x11 xfixes xkbfile xrandr
 
+GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ARGS=	--enable-imlib2 \
 		--enable-jpeg \
 		--enable-painter \
@@ -44,32 +43,46 @@ CONFIGURE_ARGS=	--enable-imlib2 \
 		--enable-strict-locations \
 		--enable-vsock \
 		--localstatedir=/var \
+		--with-sysconfsubdir=${PORTNAME}${PKGNAMESUFFIX} \
 		--with-pkgconfigdir=${LOCALBASE}/libdata/pkgconfig
+
+INSTALL_TARGET=	install-strip
 LDFLAGS+=	-lssl
 CONFLICTS=	xrdp
-INSTALL_TARGET=	install-strip
+ETCDIR=		${PREFIX}/etc/${PORTNAME}${PKGNAMESUFFIX}
 SUB_FILES=	pkg-deinstall pkg-install pkg-message
 SUB_LIST=	OPENSSLBASE=${OPENSSLBASE}
 
 OPTIONS_DEFINE=			DEBUG FUSE IPV6
-OPTIONS_DEFAULT=		FDKAAC OPUS
-OPTIONS_GROUP=			AUDIO_CODEC
+OPTIONS_DEFAULT=		FDKAAC OPENH264 OPUS X264
+OPTIONS_GROUP=			AUDIO_CODEC VIDEO_CODEC
 OPTIONS_GROUP_AUDIO_CODEC=	FDKAAC MP3LAME OPUS
+OPTIONS_GROUP_VIDEO_CODEC=	OPENH264 X264
 FDKAAC_DESC=			Enable Fraunhofer FDK AAC for audio redirection
 FUSE_DESC=			Enable drive redirection via FUSE (experimental)
 MP3LAME_DESC=			Enable MP3 Lame for audio redirection
+OPENH264_DESC=			H.264 video codec support via OpenH264
 OPUS_DESC=			Enable Opus for audio redirection
 
 DEBUG_CONFIGURE_ENABLE=		devel-debug devel-logging
-FDKAAC_CONFIGURE_ENABLE=	fdkaac
 FDKAAC_LIB_DEPENDS=		libfdk-aac.so:audio/fdk-aac
+FDKAAC_CONFIGURE_ENABLE=	fdkaac
+FUSE_USES=			fuse:3
 FUSE_CONFIGURE_ENABLE=		fuse
-FUSE_USES=			fuse
 IPV6_CONFIGURE_ENABLE=		ipv6
-MP3LAME_CONFIGURE_ENABLE=	mp3lame
 MP3LAME_LIB_DEPENDS=		libmp3lame.so:audio/lame
-OPUS_CONFIGURE_ENABLE=		opus
+MP3LAME_CONFIGURE_ENABLE=	mp3lame
+OPENH264_LIB_DEPENDS=		libopenh264.so:multimedia/openh264
+OPENH264_CONFIGURE_ENABLE=	openh264
 OPUS_LIB_DEPENDS=		libopus.so:audio/opus
+OPUS_CONFIGURE_ENABLE=		opus
+X264_LIB_DEPENDS=		libx264.so:multimedia/libx264
+X264_CONFIGURE_ENABLE=		x264
+
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
+
+GROUP=		_xrdp
+USER=		_xrdp
 
 .include <bsd.port.pre.mk>
 
@@ -83,18 +96,27 @@ CONFIGURE_ENV+=	OPENSSL_CFLAGS="-I${OPENSSLINC}" \
 
 pre-configure:
 	# This version doesn't require GH_TAGNAME override now
-	#@${REINPLACE_CMD} -e "s|0.9.90|${DISTVERSION}-${GH_TAGNAME}|" ${WRKSRC}/configure.ac
+	@${REINPLACE_CMD} -e "s|0.10.80|${DISTVERSION}-${GH_TAGNAME}|" ${WRKSRC}/configure.ac
 	@cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} ./bootstrap
+
+post-patch:
+	${REINPLACE_CMD} -e "s|^param=Xorg|param=${LOCALBASE}/libexec/Xorg|" \
+		-e "s|^LogFile=xrdp-sesman\.log|LogFile=xrdp-sesman${PKGNAMESUFFIX}.log|" \
+		${WRKSRC}/sesman/sesman.ini.in
+	${REINPLACE_CMD} -e "s|^LogFile=xrdp\.log|LogFile=xrdp${PKGNAMESUFFIX}.log|" \
+		${WRKSRC}/xrdp/xrdp.ini.in
 
 post-install:
 	${INSTALL_SCRIPT} ${FILESDIR}/startwm.sh ${STAGEDIR}${ETCDIR}
 
 post-stage:
-	@${RM} ${STAGEDIR}${PREFIX}/etc/xrdp/rsakeys.ini
-	@${RM} ${STAGEDIR}${PREFIX}/etc/xrdp/cert.pem
-	@${RM} ${STAGEDIR}${PREFIX}/etc/xrdp/key.pem
-.for f in sesman.ini startwm.sh reconnectwm.sh xrdp.ini xrdp_keyboard.ini
-	@${MV} ${STAGEDIR}${PREFIX}/etc/xrdp/$f ${STAGEDIR}${PREFIX}/etc/xrdp/$f.sample
+	@${RM} ${STAGEDIR}${ETCDIR}/rsakeys.ini
+	@${RM} ${STAGEDIR}${ETCDIR}/cert.pem
+	@${RM} ${STAGEDIR}${ETCDIR}/key.pem
+.for f in sesman.ini startwm.sh reconnectwm.sh xrdp.ini xrdp_keyboard.ini \
+	gfx.toml
+	@${MV} ${STAGEDIR}${ETCDIR}/$f \
+		${STAGEDIR}${ETCDIR}/$f.sample
 .endfor
 
 .include <bsd.port.post.mk>

@@ -1,9 +1,9 @@
 PORTNAME=	intervals
-DISTVERSION=	0.15.4
+DISTVERSION=	0.15.5
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
-MAINTAINER=	ygy@FreeBSD.org
+MAINTAINER=	uzsolt@FreeBSD.org
 COMMENT=	Tools for Working with Points and Intervals
 WWW=		https://github.com/edzer/intervals
 

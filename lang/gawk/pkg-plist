@@ -64,6 +64,7 @@ share/info/gawk_statist.jpg
 %%NLS%%share/locale/id/LC_MESSAGES/gawk.mo
 %%NLS%%share/locale/it/LC_MESSAGES/gawk.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/gawk.mo
+%%NLS%%share/locale/ka/LC_MESSAGES/gawk.mo
 %%NLS%%share/locale/ko/LC_MESSAGES/gawk.mo
 %%NLS%%share/locale/ms/LC_MESSAGES/gawk.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/gawk.mo

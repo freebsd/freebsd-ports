@@ -1,5 +1,0 @@
---- requirements.txt.orig	2023-12-08 14:14:01 UTC
-+++ requirements.txt
-@@ -1 +1 @@
--flake8~=6.1.0 # MIT
-+flake8>=6.1.0 # MIT

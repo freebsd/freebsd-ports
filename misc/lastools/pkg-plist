@@ -1,5 +1,6 @@
 bin/las2las
 bin/las2txt
+bin/lascopcindex64
 bin/lasdiff
 bin/lasindex
 bin/lasinfo
@@ -21,15 +22,19 @@ include/LASlib/bytestreamout_array.hpp
 include/LASlib/bytestreamout_file.hpp
 include/LASlib/bytestreamout_nil.hpp
 include/LASlib/bytestreamout_ostream.hpp
+include/LASlib/endian.hpp
 include/LASlib/integercompressor.hpp
 include/LASlib/lasattributer.hpp
+include/LASlib/lascopc.hpp
 include/LASlib/lasdefinitions.hpp
 include/LASlib/lasfilter.hpp
 include/LASlib/lasignore.hpp
 include/LASlib/lasindex.hpp
 include/LASlib/lasinterval.hpp
 include/LASlib/laskdtree.hpp
+include/LASlib/lasmessage.hpp
 include/LASlib/laspoint.hpp
+include/LASlib/lasprogress.hpp
 include/LASlib/lasquadtree.hpp
 include/LASlib/lasquantizer.hpp
 include/LASlib/lasreader.hpp
@@ -54,6 +59,7 @@ include/LASlib/lasreaditemcompressed_v4.hpp
 include/LASlib/lasreaditemraw.hpp
 include/LASlib/lasreadpoint.hpp
 include/LASlib/lastransform.hpp
+include/LASlib/lasunzipper.hpp
 include/LASlib/lasutility.hpp
 include/LASlib/lasvlr.hpp
 include/LASlib/lasvlrpayload.hpp
@@ -78,6 +84,7 @@ include/LASlib/laszip_common_v1.hpp
 include/LASlib/laszip_common_v2.hpp
 include/LASlib/laszip_common_v3.hpp
 include/LASlib/laszip_decompress_selective_v3.hpp
+include/LASlib/laszipper.hpp
 include/LASlib/mydefs.hpp
 lib/LASlib/libLASlib.so
 lib/cmake/LASlib/laslib-config.cmake

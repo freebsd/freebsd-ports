@@ -1,0 +1,13 @@
+--- Makefile.inc.orig	2024-05-27 06:59:46 UTC
++++ Makefile.inc
+@@ -1,3 +1,10 @@ MANDIR?=	${PREFIX}/share/man
+ PREFIX?=	/usr/local
+ LOCALBASE?=	${PREFIX}
+ MANDIR?=	${PREFIX}/share/man
++
++BSD_INSTALL_CMD?=	install -o root -g wheel
++BSD_INSTALL_PROGRAM?=	${BSD_INSTALL_CMD} -m 555
++BSD_INSTALL_MAN?=	${BSD_INSTALL_CMD} -m 444
++BSD_INSTALL_SCRIPT?=	${BSD_INSTALL_CMD} -m 444
++BSD_INSTALL_DATA?=	${BSD_INSTALL_CMD} -m 444
++BSD_INSTALL_DIR?=	${BSD_INSTALL_CMD} -d -m 755

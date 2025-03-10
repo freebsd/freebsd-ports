@@ -1,12 +1,13 @@
 PORTNAME=	solana
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.17.9
-PORTREVISION=	5
+PORTREVISION=	12
 CATEGORIES=	security
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Web-scale blockchain for decentralized apps and marketplaces
-WWW=		https://solana.com/
+WWW=		https://solana.com/ \
+		https://github.com/solana-labs/solana
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -15,12 +16,11 @@ BROKEN_armv7=		compilation failure: error[E0512]: cannot transmute between types
 BROKEN_i386=		fails on 32-bit systems: https://github.com/solana-labs/solana/issues/16811
 BROKEN_powerpc64le=	compilation failure: called `Option::unwrap()` on a `None` value in ring-0.16.20/build.rs:358:10 # see https://github.com/rust-lang/rust/issues/119901
 
-BUILD_DEPENDS=	llvm-config${LLVM_VERSION}:devel/llvm${LLVM_VERSION} \
-		protoc:devel/protobuf \
+BUILD_DEPENDS=	protoc:devel/protobuf \
 		gmake:devel/gmake
 LIB_DEPENDS=	libhidapi.so:comms/hidapi
 
-USES=		cargo pkgconfig ssl
+USES=		cargo llvm:lib pkgconfig ssl
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	solana-labs
@@ -693,12 +693,10 @@ XARCH=		${ARCH:S/amd64/x86_64/:tu}
 MAKE_ENV=	${XARCH}_UNKNOWN_FREEBSD_OPENSSL_INCLUDE_DIR=${OPENSSLINC} \
 		${XARCH}_UNKNOWN_FREEBSD_OPENSSL_LIB_DIR=${OPENSSLLIB}
 
-LLVM_VERSION=	12
-
-BINARY_ALIAS=	llvm-config=${PREFIX}/bin/llvm-config${LLVM_VERSION}
+BINARY_ALIAS=	llvm-config=${LOCALBASE}/bin/${LLVM_CONFIG}
 
 do-install:
-	for f in ${CARGO_TARGET_DIR}/${CARGO_BUILD_TARGET}/*/${PORTNAME}*; do \
+	for f in ${CARGO_TARGET_DIR}/*/${PORTNAME}*; do \
 		if [ -f $$f -a -x $$f ]; then \
 			${INSTALL_PROGRAM} $$f ${STAGEDIR}${PREFIX}/bin; \
 		fi \

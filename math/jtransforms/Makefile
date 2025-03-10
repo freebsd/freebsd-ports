@@ -1,5 +1,6 @@
 PORTNAME=	jtransforms
 PORTVERSION=	2.4
+PORTREVISION=	1
 CATEGORIES=	math java
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
@@ -11,9 +12,7 @@ WWW=		http://sites.google.com/site/piotrwendykier/software/jtransforms
 LICENSE=	GPLv2 LGPL20 MPL11
 LICENSE_COMB=	multi
 
-USES=		tar:bzip2
-USE_JAVA=	yes
-USE_ANT=	yes
+USES=		java:ant,run tar:bzip2
 
 WRKSRC=		${WRKDIR}/JTransforms
 

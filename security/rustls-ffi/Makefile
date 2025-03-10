@@ -1,6 +1,6 @@
 PORTNAME=	rustls-ffi
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.13.0
+DISTVERSION=	0.14.1
 PORTREVISION=	1
 CATEGORIES=	security
 
@@ -14,7 +14,8 @@ LICENSE_FILE_APACHE20=	${WRKSRC}/LICENSE-APACHE
 LICENSE_FILE_ISCL=	${WRKSRC}/LICENSE-ISC
 LICENSE_FILE_MIT=	${WRKSRC}/LICENSE-MIT
 
-BUILD_DEPENDS=	cargo-cbuild:devel/cargo-c
+BUILD_DEPENDS=	cargo-cbuild:devel/cargo-c \
+		bindgen:devel/rust-bindgen-cli
 
 USES=		cargo
 USE_LDCONFIG=	yes
@@ -30,6 +31,5 @@ do-install:
 	    --destdir "${STAGEDIR}" \
 	    --prefix "${PREFIX}" \
 	    ${CARGO_INSTALL_ARGS}
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/*.so
 
 .include <bsd.port.mk>

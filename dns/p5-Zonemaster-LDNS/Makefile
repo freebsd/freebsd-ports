@@ -1,5 +1,5 @@
 PORTNAME=	Zonemaster-LDNS
-DISTVERSION=	4.0.2
+DISTVERSION=	4.1.0
 CATEGORIES=	dns perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:ZNMSTR
@@ -13,6 +13,7 @@ LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	p5-Devel-CheckLib>0:devel/p5-Devel-CheckLib \
+	p5-ExtUtils-PkgConfig>0:devel/p5-ExtUtils-PkgConfig \
 	p5-Module-Install>0:devel/p5-Module-Install
 LIB_DEPENDS=	libidn2.so:dns/libidn2 \
 	libldns.so:dns/ldns

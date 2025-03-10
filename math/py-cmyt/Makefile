@@ -1,17 +1,18 @@
 PORTNAME=	cmyt
-DISTVERSION=	2.0.0
+DISTVERSIONPREFIX=	v
+DISTVERSION=	2.0.2
 CATEGORIES=	math python
-MASTER_SITES=	PYPI
+#MASTER_SITES=	PYPI # no tests
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Collection of Matplotlib colormaps from the yt project
-WWW=		https://yt-project.org/
+WWW=		https://yt-project.org \
+		https://github.com/yt-project/cmyt
 
 LICENSE=	BSD3CLAUSE
 
-BUILD_DEPENDS=	${PY_SETUPTOOLS} \
-		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatchling>0:devel/py-hatchling@${PY_FLAVOR}
 RUN_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}matplotlib>=3.2.0:math/py-matplotlib@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}more-itertools>=8.4:devel/py-more-itertools@${PY_FLAVOR} \
@@ -20,14 +21,13 @@ RUN_DEPENDS=	${PYNUMPY} \
 USES=		python
 USE_PYTHON=	pep517 concurrent autoplist pytest
 
+USE_GITHUB=	yes
+GH_ACCOUNT=	yt-project
+
 NO_ARCH=	yes
 
-POST_PLIST=	rm-tests-from-plist
+TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 
-post-install:
-	@${RM} -r ${STAGEDIR}${PYTHON_SITELIBDIR}/tests
-
-rm-tests-from-plist:
-	@${REINPLACE_CMD} '/\/tests\//d' ${TMPPLIST}
+# tests have errors: pytest.PytestUnknownMarkWarning: Unknown pytest.mark.mpl_image_compare - is this a typo?
 
 .include <bsd.port.mk>

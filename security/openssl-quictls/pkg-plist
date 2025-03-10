@@ -137,7 +137,7 @@ include/openssl/x509err.h
 include/openssl/x509v3.h
 include/openssl/x509v3err.h
 %%SHARED%%lib/engines-%%SHLIBVER%%/capi.so
-%%CRYPTODEV%%%%SHARED%%lib/engines-%%SHLIBVER%%/devcrypto.so
+%%SHARED%%lib/engines-%%SHLIBVER%%/devcrypto.so
 %%SHARED%%lib/engines-%%SHLIBVER%%/loader_attic.so
 %%SHARED%%lib/engines-%%SHLIBVER%%/padlock.so
 lib/libcrypto.a

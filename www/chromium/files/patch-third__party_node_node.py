@@ -1,6 +1,6 @@
---- third_party/node/node.py.orig	2024-07-30 11:12:21 UTC
+--- third_party/node/node.py.orig	2024-11-14 07:57:23 UTC
 +++ third_party/node/node.py
-@@ -20,6 +20,8 @@ def GetBinaryPath():
+@@ -21,6 +21,8 @@ def GetBinaryPath():
    return os_path.join(os_path.dirname(__file__), *{
      'Darwin': (darwin_path, darwin_name, 'bin', 'node'),
      'Linux': ('linux', 'node-linux-x64', 'bin', 'node'),

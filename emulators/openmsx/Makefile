@@ -1,39 +1,35 @@
 PORTNAME=	openmsx
-DISTVERSION=	18.0
-PORTREVISION=	1
+DISTVERSION=	19.1
 CATEGORIES=	emulators
+MASTER_SITES=	https://github.com/openMSX/openMSX/releases/download/RELEASE_19_1/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	dmenelkir@gmail.com
 COMMENT=	Open source MSX emulator
 WWW=		https://openmsx.org
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/doc/GPL.txt
 
-LIB_DEPENDS=	libpng.so:graphics/png \
-		libogg.so:audio/libogg \
-		libvorbis.so:audio/libvorbis \
-		libtheora.so:multimedia/libtheora \
-		libao.so:audio/libao \
+LIB_DEPENDS=	libao.so:audio/libao \
+		libasound.so:audio/alsa-lib \
 		libfreetype.so:print/freetype2 \
-		libasound.so:audio/alsa-lib
+		libogg.so:audio/libogg \
+		libpng.so:graphics/png \
+		libtheora.so:multimedia/libtheora \
+		libvorbis.so:audio/libvorbis
 
 USES=		gl gmake pkgconfig python sdl tcl
 USE_GCC=	yes
+
 USE_GL=		gl glew
 USE_SDL=	sdl2 ttf2
 
-USE_GITHUB=	yes
-GH_ACCOUNT=	openMSX
-GH_PROJECT=	openMSX
-GH_TAGNAME=	RELEASE_18_0
-
 MAKEFILE=	GNUmakefile
-MAKE_ARGS=	INSTALL_BINARY_DIR=${PREFIX}/bin \
-		INSTALL_SHARE_DIR=${DATADIR} \
+MAKE_ARGS=	CXXFLAGS="${CXXFLAGS}" \
+		INSTALL_BINARY_DIR=${PREFIX}/bin \
 		INSTALL_DOC_DIR=${DOCSDIR} \
-		OPENMSX_CXX=${CXX} \
-		CXXFLAGS="${CXXFLAGS}"
+		INSTALL_SHARE_DIR=${DATADIR} \
+		OPENMSX_CXX=${CXX}
 
 BINARY_ALIAS=	python3=${PYTHON_CMD}
 

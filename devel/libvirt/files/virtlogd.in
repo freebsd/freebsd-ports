@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# PROVIDE: virlogd
+# PROVIDE: virtlogd
 # REQUIRE: LOGIN
 # KEYWORD: shutdown
 #

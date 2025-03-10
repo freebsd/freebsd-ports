@@ -1,8 +1,10 @@
-PORTNAME=	postgresql-repmgr
-PORTVERSION=	5.4.1
+PORTNAME=	repmgr
+DISTVERSIONPREFIX=	v
+DISTVERSION=	5.5.0
 CATEGORIES=	databases
-MASTER_SITES=	http://www.repmgr.org/download/
-DISTNAME=	repmgr-${PORTVERSION}
+MASTER_SITES=	https://github.com/EnterpriseDB/repmgr/releases/download/${DISTVERSIONFULL}/
+PKGNAMEPREFIX=	postgresql${PGSQL_VER:S/.//}-
+DISTNAME=	${PORTNAME}-${DISTVERSION}
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	PostgreSQL replication manager

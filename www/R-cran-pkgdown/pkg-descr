@@ -1,0 +1,3 @@
+Generate an attractive and useful website from a source package. 'pkgdown'
+converts your documentation, vignettes, 'README', and more to 'HTML' making it
+easy to share information about your package online.

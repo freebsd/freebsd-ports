@@ -4,7 +4,7 @@ PORTREVISION=	1
 CATEGORIES=	biology
 MASTER_SITES=	http://ftp.ebi.ac.uk/pub/software/vertebrategenomics/exonerate/
 
-MAINTAINER=	mzaki@niid.go.jp
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Generic tool for sequence alignment
 WWW=		https://www.ebi.ac.uk/about/vertebrate-genomics/software/exonerate
 

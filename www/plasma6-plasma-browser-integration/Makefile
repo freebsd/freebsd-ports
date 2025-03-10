@@ -13,4 +13,8 @@ USE_KDE=	activities config coreaddons crash dbusaddons filemetadata \
 USE_GL=		gl opengl
 USE_QT=		base declarative
 
+post-patch:
+	${REINPLACE_CMD} "/^add_subdirectory(flatpak-integrator)/d" \
+		${WRKSRC}/CMakeLists.txt
+
 .include <bsd.port.mk>

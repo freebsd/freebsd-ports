@@ -1,5 +1,5 @@
 PORTNAME=	bluefish
-DISTVERSION=	2.2.15
+DISTVERSION=	2.2.16
 CATEGORIES=	www editors
 MASTER_SITES=	https://www.bennewitz.com/bluefish/stable/source/ \
 		SF
@@ -16,9 +16,9 @@ LIB_DEPENDS=	libenchant-2.so:textproc/enchant2 \
 		libpcre2-8.so:devel/pcre2
 
 USES=		desktop-file-utils gettext gmake gnome libtool localbase \
-		pkgconfig python:3.8-3.9 shared-mime-info shebangfix tar:bzip2
+		pkgconfig python shared-mime-info shebangfix tar:bzip2
 USE_GNOME=	cairo gdkpixbuf2 intltool libxml2
-SHEBANG_FILES=	data/css_decompressor data/cssmin.py data/jsbeautify data/json_prettyprint.py \
+SHEBANG_FILES=	data/css_decompressor data/cssmin.py data/json_prettyprint.py \
 		data/jsmin.py data/lorem-ipsum-generator \
 		src/plugin_zencoding/zencoding/actions/*.py \
 		src/plugin_zencoding/zencoding/filters/*.py \

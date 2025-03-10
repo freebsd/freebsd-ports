@@ -1,6 +1,7 @@
 bin/libdatadog-crashtracking-receiver
 include/datadog/blazesym.h
 include/datadog/common.h
+include/datadog/crashtracker.h
 include/datadog/data-pipeline.h
 include/datadog/profiling.h
 include/datadog/telemetry.h
@@ -8,12 +9,15 @@ lib/cmake/libdatadog/DataPipelineConfig.cmake
 lib/cmake/libdatadog/DatadogConfig.cmake
 lib/libdata_pipeline_ffi.a
 lib/libdata_pipeline_ffi.so
+lib/libdatadog_ipc_macros.so
 lib/libdatadog_profiling_ffi.a
 lib/libdatadog_profiling_ffi.so
 lib/libdatadog_sidecar_ffi.a
 lib/libdatadog_sidecar_ffi.so
+lib/libdatadog_sidecar_macros.so
 lib/libddtelemetry_ffi.a
 lib/libddtelemetry_ffi.so
+lib/libtarpc_plugins.so
 libdata/pkgconfig/datadog_profiling-static.pc
 libdata/pkgconfig/datadog_profiling.pc
 libdata/pkgconfig/datadog_profiling_with_rpath.pc

@@ -2,6 +2,7 @@ bin/kcharselect
 share/applications/org.kde.kcharselect.desktop
 share/locale/af/LC_MESSAGES/kcharselect.mo
 share/locale/ar/LC_MESSAGES/kcharselect.mo
+share/locale/ast/LC_MESSAGES/kcharselect.mo
 share/locale/be/LC_MESSAGES/kcharselect.mo
 share/locale/bg/LC_MESSAGES/kcharselect.mo
 share/locale/br/LC_MESSAGES/kcharselect.mo

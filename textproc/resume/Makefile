@@ -10,8 +10,8 @@ WWW=		https://xmlresume.sourceforge.net/
 
 LICENSE=	MIT
 
-USES=		tar:tgz
-USE_JAVA=	yes
+USES=		java tar:tgz
+
 NO_BUILD=	yes
 NO_ARCH=	yes
 SUB_FILES=	pkg-message

@@ -15,9 +15,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	ocamlbuild:devel/ocaml-ocamlbuild \
 		opam-installer:devel/ocaml-opam
 
+USES=		ocaml
 USE_GITHUB=	yes
 GH_ACCOUNT=	ocaml
-USE_OCAML=	yes
 
 PLIST_FILES=	${OCAML_SITELIBDIR}/${PORTNAME}/META
 

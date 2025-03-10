@@ -32,8 +32,7 @@ RUN_DEPENDS=	mawk>=0:lang/mawk \
 		freebayes:biology/freebayes \
 		fastp:biology/fastp
 
-USES=		perl5 python shebangfix
-USE_JAVA=	yes
+USES=		java perl5 python shebangfix
 USE_GITHUB=	yes
 
 SHEBANG_FILES=	dDocent scripts/*.sh scripts/*.pl scripts/dDocent_filters

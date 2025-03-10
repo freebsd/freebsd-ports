@@ -1,8 +1,9 @@
 PORTNAME=	diff-match-patch
-PORTVERSION=	20230430
+PORTVERSION=	20241021
 CATEGORIES=	textproc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	diff_match_patch-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Algorithms for converting plain text

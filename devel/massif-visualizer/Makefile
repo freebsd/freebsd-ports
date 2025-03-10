@@ -1,29 +1,25 @@
 PORTNAME=	massif-visualizer
-DISTVERSION=	0.8.0
-CATEGORIES=	devel kde
+DISTVERSION=	${KDE_APPLICATIONS_VERSION}
+CATEGORIES=	devel kde kde-applications
 
-MAINTAINER=	rodrigo@FreeBSD.org
+MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Graphical viewer for Massif data
-WWW=		https://apps.kde.org/massif-visualizer/
+WWW=		https://apps.kde.org/massif_visualizer/
 
-LICENSE=		GPLv2
+LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libKChart.so:graphics/kdiagram
+BUILD_DEPENDS=	${kgraphviewer_DEPENDS}
+LIB_DEPENDS=	libKChart6.so:graphics/kdiagram-qt6
+RUN_DEPENDS=	${kgraphviewer_DEPENDS}
 
-USES=		cmake compiler:c++11-lang desktop-file-utils gettext \
-			pkgconfig kde:5 qt:5 tar:xz cpe xorg shared-mime-info
-USE_GITHUB=	yes
-GH_ACCOUNT=	kde
-GH_PROJECT=	massif-visualizer
-GH_TAGNAME=	v0.7.0
-USE_KDE= 	archive  auth  auth  codecs  completion  config  config  \
-			configwidgets  coreaddons  i18n  jobwidgets  kio parts  service  \
-			solid sonnet texteditor textwidgets  widgetsaddons  windowsystem  \
-			xmlgui \
-			ecm:build
-USE_QT=		concurrent core dbus gui network printsupport svg widgets xml xmlpatterns \
-			buildtools:build qmake:build testlib:build
-USE_XORG=	x11
+USES=		cmake compiler:c++11-lang cpe desktop-file-utils gettext \
+		kde:6 qt:6 shared-mime-info tar:xz
+
+USE_KDE=	archive config coreaddons i18n kio parts \
+		ecm:build
+USE_QT=		5compat base svg
+
+kgraphviewer_DEPENDS=	${QT_PLUGINDIR}/kf6/parts/kgraphviewerpart.so:graphics/kgraphviewer
 
 .include <bsd.port.mk>

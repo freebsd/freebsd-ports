@@ -1,7 +1,6 @@
 PORTNAME=	nheko
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.11.3
-PORTREVISION=	5
+DISTVERSION=	0.12.0
 CATEGORIES=	net-im
 
 MAINTAINER=	adridg@FreeBSD.org
@@ -18,19 +17,19 @@ BUILD_DEPENDS=	nlohmann-json>=3:devel/nlohmann-json \
 LIB_DEPENDS=	\
 		libcmark.so:textproc/cmark \
 		libcoeurl.so:ftp/coeurl \
+		libkdsingleapplication-qt6.so:devel/kdsingleapplication \
 		libfmt.so:devel/libfmt \
+		libspdlog.so:devel/spdlog \
 		liblmdb.so:databases/lmdb \
 		libmatrix_client.so:net-im/mtxclient \
 		libolm.so:security/olm \
-		libqt5keychain.so:security/qtkeychain@qt5 \
-		libspdlog.so:devel/spdlog
+		libqt6keychain.so:security/qtkeychain@qt6
 
-USES=		cmake compiler:c++17-lang desktop-file-utils \
-		localbase:ldflags pkgconfig qt:5 ssl tar:xz
-USE_QT=		concurrent core dbus declarative gui multimedia network \
-		quickcontrols2 svg widgets \
-		graphicaleffects:run \
-		buildtools:build linguist:build qmake:build
+USES=		cmake compiler:c++20-lang desktop-file-utils \
+		localbase:ldflags pkgconfig qt:6 ssl tar:xz
+USE_QT=		base declarative multimedia \
+		svg \
+		tools:build translations:build
 
 OPTIONS_DEFINE=	VOIP
 OPTIONS_DEFAULT=
@@ -38,7 +37,7 @@ OPTIONS_DEFAULT=
 VOIP_DESC=	Enable VOIP calls (experimental)
 VOIP_CMAKE_BOOL=	VOIP
 VOIP_USES=	gstreamer gettext-runtime xorg gnome
-VOIP_USE=	gstreamer=bad,dtls,srtp xorg=xcb gnome=glib20
+VOIP_USE=	gstreamer=bad,dtls,srtp,webrtc xorg=xcb gnome=glib20
 VOIP_LIB_DEPENDS=	libnice.so:net-im/libnice
 
 # There is one external dependency: lmdb++

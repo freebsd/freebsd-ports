@@ -1,0 +1,75 @@
+--- Makefile.orig	2024-03-18 16:11:18 UTC
++++ Makefile
+@@ -33,7 +33,7 @@ BOLD    := $(shell tput md   $(NULL_STDERR) || tput bo
+ SPACE   :=
+ ifneq (,$(TERM))
+ BOLD    := $(shell tput md   $(NULL_STDERR) || tput bold $(NULL_STDERR) || printf "\033[1m" $(NULL_STDERR))
+-RESET   := $(shell tput me   $(NULL_STDERR) || tput sgr0 $(NULL_STDERR) || printf "\033[0m" $(NULL_STDERR))$(BOLD)
++RESET   := $(shell tput me   $(NULL_STDERR) || tput sgr0 $(NULL_STDERR) || printf "\033[0m" $(NULL_STDERR))
+ RED     := $(shell tput AF 1 $(NULL_STDERR) || tput setaf 1 $(NULL_STDERR) || printf "\033[31m" $(NULL_STDERR))$(BOLD)
+ GREEN   := $(shell tput AF 2 $(NULL_STDERR) || tput setaf 2 $(NULL_STDERR) || printf "\033[32m" $(NULL_STDERR))$(BOLD)
+ YELLOW  := $(shell tput AF 3 $(NULL_STDERR) || tput setaf 3 $(NULL_STDERR) || printf "\033[33m" $(NULL_STDERR))$(BOLD)
+@@ -231,8 +231,8 @@ endif
+ 
+ # Warning options (Strict safety/portability, stack/object size limits)
+ # -Wbad-function-cast, -Wcast-align, -Wdouble-promotion need fixes in codebase
+-WARN_OPTS := -Wall -Wextra -Wshadow -Wvla -Wpointer-arith -Walloca -Wduplicated-cond \
+--Wtrampolines -Wlarger-than=1048576 -Wframe-larger-than=32768 -Werror=return-type
++WARN_OPTS := -Wall -Wextra -Wshadow -Wvla -Wpointer-arith -Walloca \
++-Wlarger-than=1048576 -Wframe-larger-than=32768 -Werror=return-type
+ 
+ # Compiler-specific options
+ ifeq ($(CC_TYPE),gcc)
+@@ -467,13 +467,11 @@ endif
+ endif
+ 
+ # Do not pass lib-related flags for dev/cli/test builds (Faster)
+-ifneq (,$(findstring lib, $(MAKECMDGOALS))$(findstring install, $(MAKECMDGOALS)))
+ override CFLAGS += -DUSE_LIB -fPIC -ffat-lto-objects
+ # Build JNI bindings inside librvvm dynlib
+ ifeq ($(USE_JNI),1)
+ SRC += $(SRCDIR)/bindings/jni/rvvm_jni.c
+ endif
+-endif
+ 
+ # CPU interpreter sources
+ SRC += $(wildcard $(SRCDIR)/cpu/riscv_*.c)
+@@ -583,10 +581,10 @@ test: $(BINARY)
+ 	@echo
+ 	@echo "[$(YELLOW)INFO$(RESET)] Running RISC-V Tests (RV32)"
+ 	@echo
+-	@for file in $(BUILDDIR)/riscv-tests/rv32*.bin; do \
++	@for file in $(BUILDDIR)/riscv-tests/rv32*; do \
+ 		result=$$($(BINARY) $$file -nogui -rv32 | tr -d '\0'); \
+ 		result="$${result##* }"; \
+-		if [[ "$$result" == "0" ]]; then \
++		if [ "$$result" -eq "0" ]; then \
+ 		echo "[$(GREEN)PASS$(RESET)] $$file"; \
+ 		else \
+ 		echo "[$(RED)FAIL: $$result$(RESET)] $$file"; \
+@@ -596,10 +594,10 @@ ifeq ($(USE_RV64),1)
+ 	@echo
+ 	@echo "[$(YELLOW)INFO$(RESET)] Running RISC-V Tests (RV64)"
+ 	@echo
+-	@for file in $(BUILDDIR)/riscv-tests/rv64*.bin; do \
++	@for file in $(BUILDDIR)/riscv-tests/rv64*; do \
+ 		result=$$($(BINARY) $$file -nogui -rv64 | tr -d '\0'); \
+ 		result="$${result##* }"; \
+-		if [[ "$$result" == "0" ]]; then \
++		if [ "$$result" -eq "0" ]; then \
+ 		echo "[$(GREEN)PASS$(RESET)] $$file"; \
+ 		else \
+ 		echo "[$(RED)FAIL: $$result$(RESET)] $$file"; \
+@@ -647,11 +645,10 @@ ifeq ($(HOST_POSIX),1)
+ 	@install -Dm755 $(BINARY)             $(DESTDIR)$(bindir)/rvvm
+ 	@install -Dm755 $(SHARED)             $(DESTDIR)$(libdir)/librvvm$(LIB_EXT)
+ 	@install -Dm644 $(STATIC)             $(DESTDIR)$(libdir)/librvvm_static.a
++	@install -d                           $(DESTDIR)$(includedir)/rvvm
+ 	@install -Dm644 $(SRCDIR)/rvvmlib.h   $(DESTDIR)$(includedir)/rvvm/rvvmlib.h
+ 	@install -Dm644 $(SRCDIR)/fdtlib.h    $(DESTDIR)$(includedir)/rvvm/fdtlib.h
+ 	@install -Dm644 $(SRCDIR)/devices/*.h $(DESTDIR)$(includedir)/rvvm/
+-	@install -d                           $(DESTDIR)$(datadir)/licenses/rvvm/
+-	@install -Dm644 LICENSE*              $(DESTDIR)$(datadir)/licenses/rvvm/
+ else
+ 	@echo "[$(RED)WARN$(RESET)] Unsupported on non-POSIX!"
+ endif

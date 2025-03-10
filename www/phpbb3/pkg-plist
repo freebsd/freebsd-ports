@@ -157,7 +157,7 @@
 %%PHPBBDIR%%/assets/javascript/core.js
 %%PHPBBDIR%%/assets/javascript/editor.js
 %%PHPBBDIR%%/assets/javascript/installer.js
-%%PHPBBDIR%%/assets/javascript/jquery-3.6.0.min.js
+%%PHPBBDIR%%/assets/javascript/jquery-3.7.1.min.js
 %%PHPBBDIR%%/assets/javascript/plupload.js
 %%PHPBBDIR%%/assets/plupload/plupload.full.min.js
 %%PHPBBDIR%%/bin/phpbbcli.php
@@ -642,6 +642,7 @@
 %%PHPBBDIR%%/language/index.htm
 %%PHPBBDIR%%/mcp.php
 %%PHPBBDIR%%/memberlist.php
+%%PHPBBDIR%%/phpbb/.htaccess
 %%PHPBBDIR%%/phpbb/attachment/delete.php
 %%PHPBBDIR%%/phpbb/attachment/manager.php
 %%PHPBBDIR%%/phpbb/attachment/resync.php
@@ -732,6 +733,7 @@
 %%PHPBBDIR%%/phpbb/console/command/update/check.php
 %%PHPBBDIR%%/phpbb/console/command/user/activate.php
 %%PHPBBDIR%%/phpbb/console/command/user/add.php
+%%PHPBBDIR%%/phpbb/console/command/user/delete_id.php
 %%PHPBBDIR%%/phpbb/console/command/user/delete.php
 %%PHPBBDIR%%/phpbb/console/command/user/reclean.php
 %%PHPBBDIR%%/phpbb/console/exception_subscriber.php
@@ -1050,6 +1052,8 @@
 %%PHPBBDIR%%/phpbb/db/migration/data/v330/v330b2.php
 %%PHPBBDIR%%/phpbb/db/migration/data/v330/v330rc1.php
 %%PHPBBDIR%%/phpbb/db/migration/data/v33x/add_notification_emails_table.php
+%%PHPBBDIR%%/phpbb/db/migration/data/v33x/add_resend_activation_expiration.php
+%%PHPBBDIR%%/phpbb/db/migration/data/v33x/add_user_last_active.php
 %%PHPBBDIR%%/phpbb/db/migration/data/v33x/bot_update_v2.php
 %%PHPBBDIR%%/phpbb/db/migration/data/v33x/bot_update.php
 %%PHPBBDIR%%/phpbb/db/migration/data/v33x/default_search_return_chars.php
@@ -1059,6 +1063,7 @@
 %%PHPBBDIR%%/phpbb/db/migration/data/v33x/font_awesome_5_update.php
 %%PHPBBDIR%%/phpbb/db/migration/data/v33x/google_recaptcha_v3.php
 %%PHPBBDIR%%/phpbb/db/migration/data/v33x/jquery_update_v2.php
+%%PHPBBDIR%%/phpbb/db/migration/data/v33x/jquery_update_v3.php
 %%PHPBBDIR%%/phpbb/db/migration/data/v33x/jquery_update.php
 %%PHPBBDIR%%/phpbb/db/migration/data/v33x/profilefield_cleanup.php
 %%PHPBBDIR%%/phpbb/db/migration/data/v33x/profilefield_youtube_update.php
@@ -1069,6 +1074,12 @@
 %%PHPBBDIR%%/phpbb/db/migration/data/v33x/v3310.php
 %%PHPBBDIR%%/phpbb/db/migration/data/v33x/v3310rc1.php
 %%PHPBBDIR%%/phpbb/db/migration/data/v33x/v3311.php
+%%PHPBBDIR%%/phpbb/db/migration/data/v33x/v3312.php
+%%PHPBBDIR%%/phpbb/db/migration/data/v33x/v3312rc1.php
+%%PHPBBDIR%%/phpbb/db/migration/data/v33x/v3313.php
+%%PHPBBDIR%%/phpbb/db/migration/data/v33x/v3313rc1.php
+%%PHPBBDIR%%/phpbb/db/migration/data/v33x/v3314.php
+%%PHPBBDIR%%/phpbb/db/migration/data/v33x/v3314rc1.php
 %%PHPBBDIR%%/phpbb/db/migration/data/v33x/v331rc1.php
 %%PHPBBDIR%%/phpbb/db/migration/data/v33x/v332.php
 %%PHPBBDIR%%/phpbb/db/migration/data/v33x/v332rc1.php
@@ -1106,6 +1117,7 @@
 %%PHPBBDIR%%/phpbb/db/tools/factory.php
 %%PHPBBDIR%%/phpbb/db/tools/mssql.php
 %%PHPBBDIR%%/phpbb/db/tools/postgres.php
+%%PHPBBDIR%%/phpbb/db/tools/sqlite3.php
 %%PHPBBDIR%%/phpbb/db/tools/tools_interface.php
 %%PHPBBDIR%%/phpbb/db/tools/tools.php
 %%PHPBBDIR%%/phpbb/debug/debug.php
@@ -1291,6 +1303,7 @@
 %%PHPBBDIR%%/phpbb/language/language.php
 %%PHPBBDIR%%/phpbb/lock/db.php
 %%PHPBBDIR%%/phpbb/lock/flock.php
+%%PHPBBDIR%%/phpbb/lock/posting.php
 %%PHPBBDIR%%/phpbb/log/dummy.php
 %%PHPBBDIR%%/phpbb/log/log_interface.php
 %%PHPBBDIR%%/phpbb/log/log.php
@@ -1478,6 +1491,7 @@
 %%PHPBBDIR%%/phpbb/tree/nestedset_forum.php
 %%PHPBBDIR%%/phpbb/tree/nestedset.php
 %%PHPBBDIR%%/phpbb/tree/tree_interface.php
+%%PHPBBDIR%%/phpbb/ucp/controller/delete_cookies.php
 %%PHPBBDIR%%/phpbb/ucp/controller/reset_password.php
 %%PHPBBDIR%%/phpbb/user_loader.php
 %%PHPBBDIR%%/phpbb/user.php
@@ -1683,6 +1697,7 @@
 %%PHPBBDIR%%/styles/prosilver/theme/tweaks.css
 %%PHPBBDIR%%/styles/prosilver/theme/utilities.css
 %%PHPBBDIR%%/ucp.php
+%%PHPBBDIR%%/vendor/.htaccess
 %%PHPBBDIR%%/vendor/autoload.php
 %%PHPBBDIR%%/vendor/bantu/ini-get-wrapper/composer.json
 %%PHPBBDIR%%/vendor/bantu/ini-get-wrapper/LICENSE
@@ -3184,6 +3199,7 @@
 %%PHPBBDIR%%/vendor/symfony/polyfill-mbstring/LICENSE
 %%PHPBBDIR%%/vendor/symfony/polyfill-mbstring/Mbstring.php
 %%PHPBBDIR%%/vendor/symfony/polyfill-mbstring/README.md
+%%PHPBBDIR%%/vendor/symfony/polyfill-mbstring/Resources/unidata/caseFolding.php
 %%PHPBBDIR%%/vendor/symfony/polyfill-mbstring/Resources/unidata/lowerCase.php
 %%PHPBBDIR%%/vendor/symfony/polyfill-mbstring/Resources/unidata/titleCaseRegexp.php
 %%PHPBBDIR%%/vendor/symfony/polyfill-mbstring/Resources/unidata/upperCase.php
@@ -3688,6 +3704,7 @@
 %%PHPBBDIR%%/vendor/twig/twig/src/Sandbox/SecurityNotAllowedTagError.php
 %%PHPBBDIR%%/vendor/twig/twig/src/Sandbox/SecurityPolicy.php
 %%PHPBBDIR%%/vendor/twig/twig/src/Sandbox/SecurityPolicyInterface.php
+%%PHPBBDIR%%/vendor/twig/twig/src/Sandbox/SourcePolicyInterface.php
 %%PHPBBDIR%%/vendor/twig/twig/src/Source.php
 %%PHPBBDIR%%/vendor/twig/twig/src/Template.php
 %%PHPBBDIR%%/vendor/twig/twig/src/TemplateWrapper.php

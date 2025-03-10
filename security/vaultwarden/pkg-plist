@@ -1,5 +1,4 @@
 bin/vaultwarden
 etc/rc.conf.d/vaultwarden.sample
-etc/rc.d/vaultwarden
 @dir %%ETCDIR%%/rc.conf.d
 @dir(www,www,755) %%WWWDIR%%/data

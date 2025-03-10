@@ -1,3 +1,4 @@
+@sample %%WWWDIR%%/config.js.sample
 %%WWWDIR%%/.htaccess
 %%WWWDIR%%/auth/.htaccess
 %%WWWDIR%%/auth/common.inc
@@ -15,7 +16,6 @@
 %%WWWDIR%%/cache_update.sh
 %%WWWDIR%%/changelog.txt
 %%WWWDIR%%/common.js
-%%WWWDIR%%/config.js
 %%WWWDIR%%/css/default.css
 %%WWWDIR%%/css/default_integration.css
 %%WWWDIR%%/css/fullcalendar.css

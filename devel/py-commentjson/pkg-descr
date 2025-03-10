@@ -1,0 +1,3 @@
+commentjson (Comment JSON) is a Python package that helps you create
+JSON files with Python and JavaScript style inline comments. Its API
+is very similar to the Python standard library's json module.

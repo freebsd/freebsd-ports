@@ -39,14 +39,14 @@ DEBUG_VARS_OFF=	staf_build_type=retail
 IPV6_VARS=	staf_use_ipv6=1
 IPV6_VARS_OFF=	staf_use_ipv6=""
 
+JAVA_USES=		java
 JAVA_VARS=	staf_projects+=java \
 		staf_projects+=event \
 		staf_projects+=ftp \
 		staf_projects+=fsext \
 		staf_projects+=namedcounter \
 		staf_projects+=sxe \
-		staf_projects+=timer \
-		use_java=yes
+		staf_projects+=timer
 JAVA_MAKE_ARGS=	JAVA_V12_ROOT=${JAVA_HOME} \
 		JAVAC_V12=${JAVAC} \
 		JAVAH_V12=${JAVAH} \

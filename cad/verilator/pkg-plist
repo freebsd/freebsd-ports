@@ -95,6 +95,7 @@ share/man/man1/verilator_profcfunc.1.gz
 %%DATADIR%%/include/verilated_sc.h
 %%DATADIR%%/include/verilated_sc_trace.h
 %%DATADIR%%/include/verilated_std.sv
+%%DATADIR%%/include/verilated_std_waiver.vlt
 %%DATADIR%%/include/verilated_sym_props.h
 %%DATADIR%%/include/verilated_syms.h
 %%DATADIR%%/include/verilated_threads.cpp

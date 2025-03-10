@@ -17,7 +17,8 @@ LIB_DEPENDS=	liblzo2.so:archivers/lzo2 \
 		libqb.so:devel/libqb \
 		libzstd.so:archivers/zstd
 
-USES=		autoreconf gmake localbase libtool pkgconfig ssl
+USES=		autoreconf gmake gnome localbase libtool pkgconfig ssl
+USE_GNOME=	libxml2
 USE_BINUTILS=	yes
 USE_GCC=	yes
 USE_LDCONFIG=	yes

@@ -1,5 +1,5 @@
 PORTNAME=	ffsubsync
-DISTVERSION=	0.4.25
+DISTVERSION=	0.4.27
 CATEGORIES=	multimedia python
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -33,4 +33,8 @@ USE_PYTHON=	pep517 noflavors autoplist pytest
 
 NO_ARCH=	yes
 
+# tests as of 0.4.27:
+# Results (2.66s):
+#       37 passed
+#        1 skipped
 .include <bsd.port.mk>

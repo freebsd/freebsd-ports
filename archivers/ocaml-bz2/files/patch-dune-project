@@ -1,0 +1,17 @@
+--- dune-project.orig	2024-02-21 17:20:18 UTC
++++ dune-project
+@@ -1,6 +1,6 @@
+ (lang dune 2.8)
+ (name bz2)
+-(version 0.7.1)
++(version 0.8.0)
+ (generate_opam_files true)
+ (formatting (enabled_for ocaml dune))
+ (license "LGPL-3.0-or-later with OCaml-LGPL-linking-exception")
+@@ -15,5 +15,5 @@
+  (name bz2)
+  (synopsis "CamlBZ2 OCaml bindings for the libbz2")
+  (description "This is CamlBZ2, OCaml bindings for the libbz2 (AKA, bzip2)(de)compression library.")
+- (depends "conf-libbz2" "stdlib-shims")
++ (depends "conf-libbz2")
+ )

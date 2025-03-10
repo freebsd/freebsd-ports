@@ -1,0 +1,2 @@
+Nushell plugin providing support for several additional data formats:
+EML, ICS, INI, plist, and VCF.

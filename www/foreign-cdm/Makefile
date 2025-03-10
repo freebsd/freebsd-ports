@@ -1,6 +1,6 @@
 PORTNAME=	foreign-cdm
-PORTVERSION=	20231217
-PORTREVISION=	3
+DISTVERSION=	20250224
+PORTREVISION=	1
 CATEGORIES=	www multimedia linux
 MASTER_SITES=	https://arrowd.name/:cdm
 DISTFILES=	cdm-${CDM_INT_HASH}.tar.gz:cdm
@@ -13,18 +13,19 @@ LICENSE=	MIT
 
 ONLY_FOR_ARCHS=	amd64
 
-BUILD_DEPENDS=	cmake:devel/cmake-core \
-		linux-c7-devtoolset>0:devel/linux-c7-devtoolset
-RUN_DEPENDS=	linux_base-c7>0:emulators/linux_base-c7
+BUILD_DEPENDS=	cmake:devel/cmake-core
+
+USES=		linux
 
 USE_GITHUB=	yes
+USE_LDCONFIG=	yes
+USE_LINUX=	base:build,run devtools:build
+
 GH_ACCOUNT=	shkhln
 GH_PROJECT=	foreign-cdm
-GH_TAGNAME=	3fe4d7130bb1e0581b5310635515a120f2794b88
 GH_TUPLE=	capnproto:capnproto:928c8390d4d562bd32dc79a42eb64e9bdba572d8:capnproto/third_party/capnproto
 
-MAKE_ENV=	LINUX_CC=/compat/linux/opt/rh/devtoolset-11/root/usr/bin/g++ \
-		MAKE_JOBS_NUMBER=${MAKE_JOBS_NUMBER}
+MAKE_ENV=	MAKE_JOBS_NUMBER=${MAKE_JOBS_NUMBER}
 
 SUB_FILES=	fcdm-setup-env
 
@@ -35,7 +36,16 @@ PLIST_FILES=	libexec/fcdm-jail \
 		share/chromium/WidevineCdm/manifest.json \
 		share/foreign-cdm/fcdm-setup-env
 
-CDM_INT_HASH=	fef0b5aa1bd31efb88dfab804bdbe614f3d54f28
+CDM_INT_HASH=	06395a2863cb1ebdb47617a995b73f95c14fe120
+
+.include <bsd.port.pre.mk>
+
+.if ${LINUX_DEFAULT} == c7
+BUILD_DEPENDS+=	linux-c7-devtoolset>0:devel/linux-c7-devtoolset
+MAKE_ENV+=	LINUX_CC=/compat/linux/opt/rh/devtoolset-11/root/usr/bin/g++
+.else
+MAKE_ENV+=	LINUX_CC=/compat/linux/usr/bin/x86_64-redhat-linux-g++
+.endif
 
 post-extract:
 	${MV} ${WRKDIR}/*.h ${WRKSRC}/third_party/cdm/
@@ -59,4 +69,4 @@ do-install:
 	${LN} -s ${PREFIX}/lib/foreign-cdm/fcdm-fbsd.so ${STAGEDIR}${PREFIX}/share/chromium/WidevineCdm/_platform_specific/linux_x64/libwidevinecdm.so
 	${LN} -s ${PREFIX}/lib/WidevineCdm/manifest.json ${STAGEDIR}${PREFIX}/share/chromium/WidevineCdm/manifest.json
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

@@ -1,6 +1,6 @@
-TIMESTAMP = 1688266429
-SHA256 (symless-synergy-core-1.14.6.19-stable_GH0.tar.gz) = 01854ec932845975cd81363bed8276b95c07a607050683fc1b74b7126199de79
-SIZE (symless-synergy-core-1.14.6.19-stable_GH0.tar.gz) = 4658286
+TIMESTAMP = 1725086844
+SHA256 (symless-synergy-1.15.1+r1_GH0.tar.gz) = 42fbf26c634d2947c7efc45da8c9a153387bcdcb19c1102a4f7c4e95aad5c708
+SIZE (symless-synergy-1.15.1+r1_GH0.tar.gz) = 4127199
 SHA256 (google-googletest-18f8200e3079b0e54fa00cb7ac55d4c39dcf6da6_GH0.tar.gz) = d518c1c146c5a87cdedbee8535a396f95d91e8b39baa539fd4c50bd62148d199
 SIZE (google-googletest-18f8200e3079b0e54fa00cb7ac55d4c39dcf6da6_GH0.tar.gz) = 876756
 SHA256 (mohabouje-WinToast-8abb85b_GH0.tar.gz) = 2c991d7ea93cc7d15b7a0f421e0d1906c081968adb252285dba7e9ae8e667f40

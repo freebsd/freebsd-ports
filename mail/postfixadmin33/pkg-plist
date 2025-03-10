@@ -146,7 +146,7 @@
 %%WWWDIR%%/languages/tr.lang
 %%WWWDIR%%/languages/tw.lang
 %%WWWDIR%%/languages/ua.lang
-%%WWWDIR%%/lib/smarty/COPYING.lib
+%%WWWDIR%%/lib/smarty/LICENSE
 %%WWWDIR%%/lib/smarty/libs/Autoloader.php
 %%WWWDIR%%/lib/smarty/libs/Smarty.class.php
 %%WWWDIR%%/lib/smarty/libs/bootstrap.php
@@ -171,6 +171,7 @@
 %%WWWDIR%%/lib/smarty/libs/plugins/modifier.debug_print_var.php
 %%WWWDIR%%/lib/smarty/libs/plugins/modifier.escape.php
 %%WWWDIR%%/lib/smarty/libs/plugins/modifier.explode.php
+%%WWWDIR%%/lib/smarty/libs/plugins/modifier.implode.php
 %%WWWDIR%%/lib/smarty/libs/plugins/modifier.mb_wordwrap.php
 %%WWWDIR%%/lib/smarty/libs/plugins/modifier.number_format.php
 %%WWWDIR%%/lib/smarty/libs/plugins/modifier.regex_replace.php
@@ -186,6 +187,7 @@
 %%WWWDIR%%/lib/smarty/libs/plugins/modifiercompiler.escape.php
 %%WWWDIR%%/lib/smarty/libs/plugins/modifiercompiler.from_charset.php
 %%WWWDIR%%/lib/smarty/libs/plugins/modifiercompiler.indent.php
+%%WWWDIR%%/lib/smarty/libs/plugins/modifiercompiler.json_encode.php
 %%WWWDIR%%/lib/smarty/libs/plugins/modifiercompiler.lower.php
 %%WWWDIR%%/lib/smarty/libs/plugins/modifiercompiler.nl2br.php
 %%WWWDIR%%/lib/smarty/libs/plugins/modifiercompiler.noprint.php
@@ -195,6 +197,7 @@
 %%WWWDIR%%/lib/smarty/libs/plugins/modifiercompiler.strip.php
 %%WWWDIR%%/lib/smarty/libs/plugins/modifiercompiler.strip_tags.php
 %%WWWDIR%%/lib/smarty/libs/plugins/modifiercompiler.strlen.php
+%%WWWDIR%%/lib/smarty/libs/plugins/modifiercompiler.substr.php
 %%WWWDIR%%/lib/smarty/libs/plugins/modifiercompiler.to_charset.php
 %%WWWDIR%%/lib/smarty/libs/plugins/modifiercompiler.unescape.php
 %%WWWDIR%%/lib/smarty/libs/plugins/modifiercompiler.upper.php
@@ -415,7 +418,7 @@
 %%WWWDIR%%/public/images/postfixadmin2.xcf
 %%WWWDIR%%/public/images/quota-colors.png
 %%WWWDIR%%/public/index.php
-%%WWWDIR%%/public/jquery-1.12.4.min.js
+%%WWWDIR%%/public/jquery-3.7.0.min.js
 %%WWWDIR%%/public/list-virtual.php
 %%WWWDIR%%/public/list.php
 %%WWWDIR%%/public/login.php

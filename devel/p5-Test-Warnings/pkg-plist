@@ -1,2 +1,4 @@
 %%SITE_PERL%%/Test/Warnings.pm
+%%SITE_PERL%%/Test2/Warnings.pm
+%%PERL5_MAN3%%/Test2::Warnings.3.gz
 %%PERL5_MAN3%%/Test::Warnings.3.gz

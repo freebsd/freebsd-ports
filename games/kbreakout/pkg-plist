@@ -37,6 +37,7 @@ share/icons/hicolor/scalable/apps/kbreakout.svg
 %%DATADIR%%/themes/web20.svgz
 %%DATADIR%%/themes/web20_preview.png
 share/locale/ar/LC_MESSAGES/kbreakout.mo
+share/locale/ast/LC_MESSAGES/kbreakout.mo
 share/locale/bg/LC_MESSAGES/kbreakout.mo
 share/locale/bs/LC_MESSAGES/kbreakout.mo
 share/locale/ca/LC_MESSAGES/kbreakout.mo
@@ -55,8 +56,10 @@ share/locale/fr/LC_MESSAGES/kbreakout.mo
 share/locale/ga/LC_MESSAGES/kbreakout.mo
 share/locale/gl/LC_MESSAGES/kbreakout.mo
 share/locale/gu/LC_MESSAGES/kbreakout.mo
+share/locale/he/LC_MESSAGES/kbreakout.mo
 share/locale/hr/LC_MESSAGES/kbreakout.mo
 share/locale/hu/LC_MESSAGES/kbreakout.mo
+share/locale/ia/LC_MESSAGES/kbreakout.mo
 share/locale/id/LC_MESSAGES/kbreakout.mo
 share/locale/is/LC_MESSAGES/kbreakout.mo
 share/locale/it/LC_MESSAGES/kbreakout.mo
@@ -95,4 +98,4 @@ share/locale/wa/LC_MESSAGES/kbreakout.mo
 share/locale/zh_CN/LC_MESSAGES/kbreakout.mo
 share/locale/zh_TW/LC_MESSAGES/kbreakout.mo
 share/metainfo/org.kde.kbreakout.appdata.xml
-share/qlogging-categories5/kbreakout.categories
+share/qlogging-categories6/kbreakout.categories

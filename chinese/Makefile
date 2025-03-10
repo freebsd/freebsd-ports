@@ -20,8 +20,8 @@
     SUBDIR += cless
     SUBDIR += cnprint
     SUBDIR += dictd-database
+    SUBDIR += elffont
     SUBDIR += enscript
-    SUBDIR += eterm
     SUBDIR += fandol
     SUBDIR += fcitx
     SUBDIR += fcitx-chewing
@@ -55,7 +55,6 @@
     SUBDIR += ibus-rime
     SUBDIR += ibus-table-chinese
     SUBDIR += jis2gb
-    SUBDIR += kcfonts
     SUBDIR += libcangjie
     SUBDIR += libchewing
     SUBDIR += libime

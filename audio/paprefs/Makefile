@@ -1,6 +1,6 @@
 PORTNAME=	paprefs
 PORTVERSION=	1.2
-PORTREVISION=	6
+PORTREVISION=	8
 CATEGORIES=	audio
 MASTER_SITES=	http://freedesktop.org/software/pulseaudio/${PORTNAME}/
 

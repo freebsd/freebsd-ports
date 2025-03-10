@@ -1,0 +1,5 @@
+GrimoireLab is a CHAOSS toolset for software development analytics. It
+includes a coordinated set of tools to retrieve data from systems used
+to support software development (repositories), store it in databases,
+enrich it by computing relevant metrics, and make it easy to run
+analytics and visualizations on it.

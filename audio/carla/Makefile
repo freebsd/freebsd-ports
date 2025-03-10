@@ -1,11 +1,13 @@
 PORTNAME=	Carla
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.5.8
+DISTVERSION=	2.5.9
+PORTREVISION=	1
 CATEGORIES=	audio
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Audio plugin host for Jack and PulseAudio
-WWW=		https://kx.studio/Applications:Carla
+WWW=		https://kx.studio/Applications:Carla \
+		https://github.com/falkTX/Carla
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/doc/GPL.txt
@@ -17,7 +19,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyliblo>0:audio/py-pyliblo@${PY_FLAVOR}
 USES=		compiler:c++11-lib desktop-file-utils gl gmake localbase \
 		pkgconfig pyqt:5 python qt:5 sdl shared-mime-info shebangfix \
 		tar:bz2 xorg
-USE_PYQT=	pyqt5 sip
+USE_PYQT=	pyqt5
 USE_QT=		core gui widgets buildtools:build
 USE_GL=		gl
 USE_XORG=	x11

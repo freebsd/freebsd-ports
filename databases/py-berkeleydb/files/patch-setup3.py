@@ -1,6 +1,6 @@
---- setup3.py.orig	2021-05-19 15:44:48 UTC
+--- setup3.py.orig	2024-10-31 03:59:08 UTC
 +++ setup3.py
-@@ -44,7 +44,7 @@ import glob
+@@ -41,7 +41,7 @@ os.environ['SETUPTOOLS_USE_DISTUTILS'] = 'local'
  # See https://setuptools.readthedocs.io/en/latest/deprecated/\
  #                                      distutils-legacy.html
  os.environ['SETUPTOOLS_USE_DISTUTILS'] = 'local'
@@ -9,18 +9,18 @@
  import distutils.ccompiler
  
  # read the module version number out of the .c file
-@@ -256,8 +256,8 @@ if os.name == 'posix':
+@@ -260,8 +260,8 @@ if os.name == 'posix':
          incdir = os.path.join(BERKELEYDB_DIR, 'include')
      if not libdir:
          libdir = os.path.join(BERKELEYDB_DIR, 'lib')
--    if not '-ldb' in LIBS:
+-    if '-ldb' not in LIBS:
 -        libname = [dblib]
 +    if not '-l%%BDB_LIB_NAME%%' in LIBS:
 +        libname = ['%%BDB_LIB_NAME%%']
      else:
-         if debug: print("LIBS already contains '-ldb' not adding our own", "'-l"+dblib+"'")
-         libname = []
-@@ -296,7 +296,7 @@ if os.name == 'posix':
+         if debug:
+             print("LIBS already contains '-ldb' not adding our own", "'-l"+dblib+"'")
+@@ -270,7 +270,7 @@ if os.name == 'posix':
  
      # read db.h to figure out what version of Oracle Berkeley DB this is
      ver = None

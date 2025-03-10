@@ -4,7 +4,7 @@ PORTREVISION=	1
 CATEGORIES=	net
 
 MAINTAINER=	rs@netflix.com
-COMMENT=	Measures the TCP handshake RTT using the stats(9) statistics framework
+COMMENT=	Measures the TCP handshake RTT using the stats(3) statistics framework
 
 LICENSE=	BSD2CLAUSE
 

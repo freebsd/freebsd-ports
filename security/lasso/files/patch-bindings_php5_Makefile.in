@@ -1,6 +1,6 @@
---- bindings/php5/Makefile.in.orig	2014-12-05 04:41:25 UTC
+--- bindings/php5/Makefile.in.orig	2024-11-08 07:04:20 UTC
 +++ bindings/php5/Makefile.in
-@@ -416,8 +416,7 @@ php_configdir = @PHP5_CONFIG_DIR@
+@@ -500,8 +500,7 @@ lasso_la_CFLAGS = -fno-strict-aliasing $(LASSO_CORE_CF
  php_config_DATA = lasso.ini
  lasso_la_CFLAGS = -fno-strict-aliasing $(LASSO_CORE_CFLAGS) \
  	-I$(top_srcdir) -I$(top_builddir) $(PHP5_INCLUDES) \

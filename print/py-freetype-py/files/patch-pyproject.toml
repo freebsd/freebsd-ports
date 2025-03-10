@@ -1,6 +1,0 @@
---- pyproject.toml.orig	2023-05-04 03:28:06 UTC
-+++ pyproject.toml
-@@ -1,2 +1,2 @@
- [build-system]
--requires = ["setuptools>=42", "wheel", "setuptools_scm[toml]>=3.4", "certifi", "cmake"]
-+requires = ["setuptools>=42", "wheel", "setuptools_scm[toml]>=3.4", "certifi"]

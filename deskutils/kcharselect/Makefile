@@ -9,12 +9,11 @@ WWW=		https://utils.kde.org/projects/kcharselect/
 BUILD_DEPENDS=	${LOCALBASE}/share/xsl/docbook/html/docbook.xsl:textproc/docbook-xsl \
 		docbook-xml>0:textproc/docbook-xml
 
-USES=		cmake compiler:c++11-lang gettext kde:5 qt:5 tar:xz
-USE_KDE=	auth codecs config configwidgets coreaddons crash bookmarks \
+USES=		cmake compiler:c++11-lang gettext kde:6 qt:6 tar:xz
+USE_KDE=	auth bookmarks codecs config configwidgets coreaddons crash \
 		doctools i18n widgetsaddons xmlgui \
 		ecm:build
-USE_QT=		core dbus gui widgets xml \
-		buildtools:build qmake:build
+USE_QT=		base
 
 OPTIONS_DEFINE=	DOCS
 

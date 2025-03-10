@@ -25,7 +25,7 @@ RUN_DEPENDS=	p5-Commandable>=0.04:devel/p5-Commandable \
 		p5-Struct-Dumb>=0.07:devel/p5-Struct-Dumb \
 		p5-Syntax-Keyword-Match>=0:devel/p5-Syntax-Keyword-Match
 TEST_DEPENDS=	p5-Test-Pod>=1:devel/p5-Test-Pod \
-		p5-Test2-Suite>=0:devel/p5-Test2-Suite
+		p5-Test-Simple>=1.302200:devel/p5-Test-Simple
 
 USES=		perl5
 USE_PERL5=	modbuild

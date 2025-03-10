@@ -1,5 +1,5 @@
 PORTNAME=	net-http-persistent
-PORTVERSION=	4.0.2
+PORTVERSION=	4.0.5
 CATEGORIES=	www net rubygems
 MASTER_SITES=	RG
 

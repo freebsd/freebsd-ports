@@ -1,0 +1,14 @@
+include/libfcrypto.h
+include/libfcrypto/definitions.h
+include/libfcrypto/error.h
+include/libfcrypto/extern.h
+include/libfcrypto/features.h
+include/libfcrypto/types.h
+lib/libfcrypto.a
+lib/libfcrypto.so
+lib/libfcrypto.so.1
+lib/libfcrypto.so.1.0.0
+%%PYTHON_SITELIBDIR%%/pyfcrypto.a
+%%PYTHON_SITELIBDIR%%/pyfcrypto.so
+libdata/pkgconfig/libfcrypto.pc
+share/man/man3/libfcrypto.3.gz

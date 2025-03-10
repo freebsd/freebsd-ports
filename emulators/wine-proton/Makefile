@@ -1,5 +1,5 @@
 PORTNAME=	wine-proton
-DISTVERSION=	9.0-1
+DISTVERSION=	9.0-3
 PORTREVISION=	0
 CATEGORIES=	emulators
 
@@ -36,7 +36,7 @@ USE_GCC=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	ValveSoftware
 GH_PROJECT=	wine
-GH_TAGNAME=	a8514f9606ee3fdc3d912c988f651edc5d7d0d55
+GH_TAGNAME=	488fb296dda334a1e8555a9dd8f5cbe09be2afe5
 
 USE_GL=		gl
 USE_GNOME=	glib20
@@ -96,7 +96,7 @@ CONFIGURE_ARGS=	--verbose \
 
 CONFIGURE_ENV=	CPPBIN="false" CPPFLAGS="" FLEX="${LOCALBASE}/bin/flex" JXRLIB_CFLAGS="-I${LOCALBASE}/include/jxrlib"
 
-CFLAGS+=	-D__NR_futex="-1" -Werror=implicit-function-declaration
+CFLAGS+=	-D__NR_futex="-1" -Werror=implicit-function-declaration -Wno-int-conversion
 CFLAGS_i386+=	-mpreferred-stack-boundary=4 -mstackrealign
 PIE_UNSAFE=	yes
 

@@ -13,8 +13,7 @@ LICENSE_COMB=	multi
 
 RUN_DEPENDS=	${JAVALIBDIR}/postgresql.jar:databases/postgresql-jdbc
 
-USES=		zip:infozip
-USE_JAVA=	yes
+USES=		java zip:infozip
 NO_BUILD=	yes
 NO_ARCH=	yes
 

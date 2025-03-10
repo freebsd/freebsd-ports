@@ -1,6 +1,6 @@
 PORTNAME=	vips
-PORTVERSION=	8.15.2
-PORTREVISION=	2
+PORTVERSION=	8.16.0
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	https://github.com/libvips/libvips/releases/download/v${PORTVERSION}/
 
@@ -17,7 +17,7 @@ LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 		libharfbuzz.so:print/harfbuzz
 RUN_DEPENDS=	bash:shells/bash
 
-USES=		compiler:c++11-lang cpe gettext gnome localbase meson pkgconfig python shebangfix tar:xz
+USES=		compiler:c++11-lang cpe gettext-tools gnome localbase meson pkgconfig python shebangfix tar:xz
 USE_GNOME=	glib20
 
 MESON_ARGS=	--default-library=both \
@@ -41,19 +41,27 @@ USE_LDCONFIG=	yes
 
 PLIST_SUB=	VERSION=${PORTVERSION:R}
 
+FLAVORS=	x11 nox11
+FLAVOR?=	${FLAVORS:[1]}
+nox11_PKGNAMESUFFIX=	-nox11
+
+CONFLICTS_INSTALL=	vips vips-nox11
+
 SHEBANG_FILES=	tools/vipsprofile
 
 OPTIONS_DEFINE=	CFITSIO DOCS FFTW FONTCONFIG GIF HEIF IMAGEQUANT JPEG JXL LCMS2 LIBARCHIVE LIBEXIF LIBRSVG2 MATIO OPENEXR PANGO PNG POPPLER SPNG TIFF WEBP
 OPTIONS_RADIO=	MAGICK SIMD
-OPTIONS_RADIO_MAGICK=	IMAGEMAGICK GRAPHMAGICK
+OPTIONS_RADIO_MAGICK=	IMAGEMAGICK GRAPHICSMAGICK
 OPTIONS_RADIO_SIMD=	HIGHWAY ORC
 OPTIONS_DEFAULT=CFITSIO FFTW FONTCONFIG GIF HEIF HIGHWAY IMAGEMAGICK JPEG JXL LCMS2 LIBARCHIVE LIBEXIF LIBRSVG2 MATIO OPENEXR PANGO PNG POPPLER SPNG TIFF WEBP
 FONTCONFIG_IMPLIES=	PANGO
 LIBARCHIVE_DESC=Save image pyramid via libarchive
 HIGHWAY_DESC=	SIMD support via Highway (preferred)
 IMAGEQUANT_DESC=Image Quantization support
+GRAPHICSMAGICK_DESC=	Image processing via GraphicsMagick
 MATIO_DESC=	Matlab MAT format support
 ORC_DESC=	Accelerate loops with ORC
+SPNG_DESC=	Simple PNG support
 
 CFITSIO_LIB_DEPENDS=	libcfitsio.so:astro/cfitsio
 CFITSIO_MESON_ENABLED=	cfitsio
@@ -66,8 +74,8 @@ FONTCONFIG_MESON_ENABLED=	fontconfig
 GIF_BUILD_DEPENDS=	cgif>=0.2.0:graphics/cgif
 GIF_LIB_DEPENDS=	libcgif.so:graphics/cgif
 GIF_MESON_ENABLED=	cgif
-GRAPHMAGICK_LIB_DEPENDS=libGraphicsMagick.so:graphics/GraphicsMagick
-GRAPHMAGICK_MESON_ON=	-Dmagick=enabled -Dmagick-package=GraphicsMagick
+GRAPHICSMAGICK_LIB_DEPENDS=	libGraphicsMagick.so:graphics/GraphicsMagick@${FLAVOR}
+GRAPHICSMAGICK_MESON_ON=-Dmagick=enabled -Dmagick-package=GraphicsMagick
 HEIF_BUILD_DEPENDS=	libheif>=1.4.0:graphics/libheif
 HEIF_LIB_DEPENDS=	libheif.so:graphics/libheif
 HEIF_MESON_ENABLED=	heif
@@ -75,7 +83,7 @@ HIGHWAY_BUILD_DEPENDS=	highway>=1.0.5:devel/highway
 HIGHWAY_LIB_DEPENDS=	libhwy.so:devel/highway
 HIGHWAY_MESON_ENABLED=	highway
 IMAGEMAGICK_MESON_ON=	-Dmagick=enabled -Dmagick-package=MagickCore
-IMAGEMAGICK_USES=	magick
+IMAGEMAGICK_USES=	magick:${FLAVOR}
 IMAGEQUANT_LIB_DEPENDS=	libimagequant.so:graphics/libimagequant
 IMAGEQUANT_MESON_ENABLED=	imagequant
 JPEG_BUILD_DEPENDS=	openjpeg>=2.4:graphics/openjpeg
@@ -122,7 +130,7 @@ WEBP_MESON_ENABLED=	webp
 
 .include <bsd.port.options.mk>
 
-.if !${PORT_OPTIONS:MGRAPHMAGICK} && !${PORT_OPTIONS:MIMAGEMAGICK}
+.if !${PORT_OPTIONS:MGRAPHICSMAGICK} && !${PORT_OPTIONS:MIMAGEMAGICK}
 MESON_ARGS+=	-Dmagick=disabled
 .endif
 

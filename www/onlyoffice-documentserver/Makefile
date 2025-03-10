@@ -1,6 +1,7 @@
 PORTNAME=	onlyoffice-documentserver
 DISTVERSIONPREFIX=	v
-DISTVERSION=	8.0.1.31
+DISTVERSION=	8.2.0.143
+PORTREVISION=	6
 CATEGORIES=	www
 MASTER_SITES+=	LOCAL/mikael/v8/:source1 \
 		LOCAL/mikael/onlyoffice/:source2 \
@@ -71,7 +72,8 @@ MYSQL_USES+=	mysql:client
 PGSQL_USES+=	pgsql
 PGSQL_VARS=	WANT_PGSQL=client
 
-BINARY_ALIAS=	python=${PYTHON_CMD}
+BINARY_ALIAS=	python=${PYTHON_CMD} \
+		strip=true
 USE_LDCONFIG=	yes
 
 WWWDIR=		${PREFIX}/www/onlyoffice
@@ -173,6 +175,7 @@ post-patch:
 	@${REINPLACE_CMD} 's|%%DISTDIR%%|${DISTDIR}|' \
 		${WRKSRC}/web-apps/build/patches/optipng-bin+5.1.0.patch
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' -e 's|%%ETCDIR%%|${ETCDIR}|' \
+		${WRKSRC}/document-server-package/common/documentserver/bin/documentserver-flush-cache.sh.m4 \
 		${WRKSRC}/document-server-package/Makefile
 	@${RM} ${WRKSRC}/web-apps/build/patches/optipng-bin+5.1.0.patch.orig
 
@@ -243,6 +246,10 @@ do-install:
 		 ${STAGEDIR}/var/db/onlyoffice/documentserver/App_Data/docbuilder \
 		 ${STAGEDIR}${WWWDIR}/Data \
 		 ${STAGEDIR}${WWWDIR}/documentserver/fonts
+
+# Remove bak file
+	${RM} ${STAGEDIR}${WWWDIR}/documentserver/server/Common/config/*.bak
+	${RM} ${STAGEDIR}${WWWDIR}/documentserver/dictionaries/sl_SI/hyph_sl_SI.dic.bak
 
 create-caches-tarball:
 	# do some cleanup first

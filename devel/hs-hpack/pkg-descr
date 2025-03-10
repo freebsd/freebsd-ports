@@ -1,2 +1,13 @@
-Hpack is a format for Haskell packages. It is a modern alternative to the Cabal
-package format and follows different design principles.
+Hpack is a format for Haskell packages. It is a modern alternative
+to the Cabal package format and follows different design principles.
+
+The guiding design principles for Hpack are:
+
+* Don't require the user to state the obvious,
+  make sensible assumptions by default
+* Give the user 100% control when needed
+* Don't require the user to repeat things, facilitate DRYness
+
+Hpack packages are described in a file named package.yaml. Both cabal2nix
+and stack support package.yaml natively. For other build tools the hpack
+executable can be used to generate a .cabal file from package.yaml.

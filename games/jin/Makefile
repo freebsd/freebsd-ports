@@ -1,6 +1,6 @@
 PORTNAME=	jin
 PORTVERSION=	2.14.1
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	games java
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 DISTNAME=	${PORTNAME}-${PORTVERSION}-source
@@ -15,10 +15,8 @@ LICENSE_FILE=	${WRKSRC}/src/free/jin/legal/copyright.txt
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	${JAVAJARDIR}/bsh.jar:lang/bsh
 
-USES=		dos2unix
+USES=		dos2unix java:ant,run
 DOS2UNIX_GLOB=	*.java *.txt
-USE_JAVA=	yes
-USE_ANT=	yes
 
 MAKE_ARGS+=	-lib ${JAVAJARDIR}/bsh.jar
 

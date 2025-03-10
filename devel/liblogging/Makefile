@@ -1,8 +1,7 @@
 PORTNAME=	liblogging
-PORTVERSION=	1.0.6
-PORTREVISION=	1
+DISTVERSIONPREFIX=	v
+DISTVERSION=	1.0.7
 CATEGORIES=	devel
-MASTER_SITES=	http://download.rsyslog.com/liblogging/
 
 MAINTAINER=	matthew@FreeBSD.org
 COMMENT=	Easy to use system logging library
@@ -10,7 +9,15 @@ WWW=		https://www.liblogging.org/
 
 LICENSE=	BSD2CLAUSE
 
-USES=		cpe libtool pathfix pkgconfig
+BUILD_DEPENDS=	rst2man:textproc/py-docutils@${PY_FLAVOR}
+
+USES=		autoreconf cpe libtool pathfix pkgconfig python:env
+
+PORTSCOUT=	limit:^1\.
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	rsyslog
+
 CPE_VENDOR=	adiscon
 
 GNU_CONFIGURE=			yes

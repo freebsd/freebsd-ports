@@ -1,15 +1,15 @@
---- pyproject.toml.orig	2023-11-01 20:21:56 UTC
+--- pyproject.toml.orig	2024-08-20 08:36:08 UTC
 +++ pyproject.toml
-@@ -2,10 +2,10 @@
+@@ -1,10 +1,10 @@ requires = [
+ [build-system]
  requires = [
    'setuptools',
-   'wheel',
--  'Cython == 3.0.4',
-+  'Cython >= 3.0.4',
+-  'Cython == 3.0.10',
++  'Cython >= 3.0.10',
    # https://numpy.org/devdocs/user/depending_on_numpy.html#build-time-dependency
    # from https://github.com/scipy/oldest-supported-numpy/pull/78#issuecomment-1747936818:
 -  "oldest-supported-numpy; platform_python_implementation != 'PyPy'",
 +  "numpy; platform_python_implementation != 'PyPy'",
-   "numpy; platform_python_implementation=='PyPy'"
+   "numpy < 2.0.0; platform_python_implementation=='PyPy'",
+   'hypothesis'
  ]
- build-backend = "setuptools.build_meta"

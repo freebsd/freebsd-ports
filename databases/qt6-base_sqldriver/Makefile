@@ -21,7 +21,8 @@ USE_QT=		base
 CMAKE_ARGS=	-DCMAKE_PROJECT_NAME=Qt6${FLAVOR}
 CMAKE_ON=	FEATURE_sql_${FLAVOR} ${${FLAVOR}_CMAKE_ON}
 CMAKE_OFF=	${FLAVORS:N${FLAVOR}:S/^/FEATURE_sql_/} \
-		FEATURE_sql_ibase
+		FEATURE_sql_ibase \
+		QT_GENERATE_SBOM
 
 mysql_USES=		mysql
 odbc_LIB_DEPENDS=	libodbc.so:databases/unixODBC

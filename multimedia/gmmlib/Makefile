@@ -1,10 +1,9 @@
 PORTNAME=	gmmlib
 DISTVERSIONPREFIX=	intel-${PORTNAME}-
-DISTVERSION=	22.3.18
+DISTVERSION=	22.5.4
 CATEGORIES=	multimedia
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	f17dd87c7f57.patch:-p1 # https://github.com/intel/gmmlib/pull/67
 PATCHFILES+=	4356a33c787c.patch:-p1 # https://github.com/intel/gmmlib/pull/68
 PATCHFILES+=	a75809957583.patch:-p1 # https://github.com/intel/gmmlib/pull/68
 PATCHFILES+=	978f7d56f88a.patch:-p1 # https://github.com/intel/gmmlib/pull/68

@@ -3,6 +3,7 @@ include/tblite.h
 include/tblite/calculator.h
 include/tblite/container.h
 include/tblite/context.h
+include/tblite/double_dictionary.h
 include/tblite/error.h
 include/tblite/macros.h
 include/tblite/param.h
@@ -13,6 +14,7 @@ include/tblite/tblite_adjlist.mod
 include/tblite/tblite_api_calculator.mod
 include/tblite/tblite_api_container.mod
 include/tblite/tblite_api_context.mod
+include/tblite/tblite_api_double_dictionary.mod
 include/tblite/tblite_api_error.mod
 include/tblite/tblite_api_param.mod
 include/tblite/tblite_api_result.mod
@@ -28,6 +30,9 @@ include/tblite/tblite_blas.mod
 include/tblite/tblite_blas_level1.mod
 include/tblite/tblite_blas_level2.mod
 include/tblite/tblite_blas_level3.mod
+include/tblite/tblite_ceh_ceh.mod
+include/tblite/tblite_ceh_h0.mod
+include/tblite/tblite_ceh_singlepoint.mod
 include/tblite/tblite_classical_halogen.mod
 include/tblite/tblite_container.mod
 include/tblite/tblite_container_cache.mod
@@ -59,9 +64,11 @@ include/tblite/tblite_disp_cache.mod
 include/tblite/tblite_disp_d3.mod
 include/tblite/tblite_disp_d4.mod
 include/tblite/tblite_disp_type.mod
+include/tblite/tblite_double_dictionary.mod
 include/tblite/tblite_external_field.mod
 include/tblite/tblite_fit_newuoa.mod
 include/tblite/tblite_fit_settings.mod
+include/tblite/tblite_integral_diat_trafo.mod
 include/tblite/tblite_integral_dipole.mod
 include/tblite/tblite_integral_multipole.mod
 include/tblite/tblite_integral_overlap.mod
@@ -79,6 +86,8 @@ include/tblite/tblite_lapack_sygvd.mod
 include/tblite/tblite_lapack_sygvr.mod
 include/tblite/tblite_mesh_lebedev.mod
 include/tblite/tblite_ncoord.mod
+include/tblite/tblite_ncoord_erf.mod
+include/tblite/tblite_ncoord_erf_en.mod
 include/tblite/tblite_ncoord_exp.mod
 include/tblite/tblite_ncoord_gfn.mod
 include/tblite/tblite_ncoord_type.mod
@@ -93,10 +102,16 @@ include/tblite/tblite_param_element.mod
 include/tblite/tblite_param_halogen.mod
 include/tblite/tblite_param_hamiltonian.mod
 include/tblite/tblite_param_mask.mod
+include/tblite/tblite_param_molecular_moments.mod
 include/tblite/tblite_param_multipole.mod
+include/tblite/tblite_param_post_processing.mod
 include/tblite/tblite_param_repulsion.mod
 include/tblite/tblite_param_serde.mod
 include/tblite/tblite_param_thirdorder.mod
+include/tblite/tblite_post_processing_bond_orders.mod
+include/tblite/tblite_post_processing_list.mod
+include/tblite/tblite_post_processing_molecular_moments.mod
+include/tblite/tblite_post_processing_type.mod
 include/tblite/tblite_repulsion.mod
 include/tblite/tblite_repulsion_effective.mod
 include/tblite/tblite_repulsion_type.mod
@@ -153,5 +168,5 @@ lib/cmake/tblite/tblite-targets.cmake
 lib/cmake/tblite/tblite-utils.cmake
 lib/libtblite.so
 lib/libtblite.so.0
-lib/libtblite.so.0.3.0
+lib/libtblite.so.0.4.0
 libdata/pkgconfig/tblite.pc

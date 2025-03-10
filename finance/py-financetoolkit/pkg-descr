@@ -1,0 +1,19 @@
+FinanceToolkit is an open-source toolkit in which all relevant financial
+ratios (180+), indicators and performance measurements are written down in the
+most simplistic way allowing for complete transparency of the calculation method
+(proof). This allows you to not have to rely on metrics from other providers
+and, given a financial statement, allow for efficient manual calculations. This
+leads to one uniform method of calculation being applied that is available and
+understood by everyone.
+
+The Finance Toolkit not only supports Equities. Even for Options, Currencies,
+Cryptocurrencies, ETFs, Mutual Funds, Indices, Money Markets, Commodities, Key
+Economic Indicators and more, the Finance Toolkit can be used to obtain
+historical data as well as important performance and risk measurements such as
+the Sharpe Ratio and Value at Risk.
+
+The Finance Toolkit is complimented very well with the Finance Database, a
+database that features 300.000+ symbols containing Equities, ETFs, Funds,
+Indices, Currencies, Cryptocurrencies and Money Markets. By utilising both,
+it is possible to do a fully-fledged competitive analysis with the tickers found
+from the FinanceDatabase inputted into the FinanceToolkit.

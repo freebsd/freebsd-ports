@@ -1,5 +1,6 @@
 PORTNAME=	quiche
 DISTVERSION=	0.22.0
+PORTREVISION=	7
 CATEGORIES=	net
 
 MAINTAINER=	junho.choi@gmail.com
@@ -14,6 +15,8 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	cloudflare
 GH_TUPLE=	google:boringssl:f1c75347d:boringssl/quiche/deps/boringssl
 USE_LDCONFIG=	yes
+
+RUSTFLAGS=	${ARCH:S/i386/YES/:C/^[a-z].*//:S/YES/-C target-feature=+sse,+sse2/} # add sse sse2 target-features only on i386
 
 CARGO_FEATURES=		ffi pkg-config-meta
 CARGO_BUILD=		yes
@@ -46,13 +49,13 @@ post-patch:
 # install quiche apps and libquiche
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/quiche/include/quiche.h ${STAGEDIR}${PREFIX}/include
-	${INSTALL_DATA} ${CARGO_TARGET_DIR}/${CARGO_BUILD_TARGET}/*/quiche.pc ${STAGEDIR}${PREFIX}/libdata/pkgconfig
-	${INSTALL_LIB} ${CARGO_TARGET_DIR}/${CARGO_BUILD_TARGET}/*/libquiche.so ${STAGEDIR}${PREFIX}/lib/libquiche.so.${DISTVERSION}
+	${INSTALL_DATA} ${CARGO_TARGET_DIR}/*/quiche.pc ${STAGEDIR}${PREFIX}/libdata/pkgconfig
+	${INSTALL_LIB} ${CARGO_TARGET_DIR}/*/libquiche.so ${STAGEDIR}${PREFIX}/lib/libquiche.so.${DISTVERSION}
 	${RLN} ${STAGEDIR}${PREFIX}/lib/libquiche.so.${DISTVERSION} ${STAGEDIR}${PREFIX}/lib/libquiche.so.${MAJOR_VER}
 	${RLN} ${STAGEDIR}${PREFIX}/lib/libquiche.so.${DISTVERSION} ${STAGEDIR}${PREFIX}/lib/libquiche.so
-	${INSTALL_LIB} ${CARGO_TARGET_DIR}/${CARGO_BUILD_TARGET}/*/libquiche.a ${STAGEDIR}${PREFIX}/lib
-	${INSTALL_PROGRAM} ${CARGO_TARGET_DIR}/${CARGO_BUILD_TARGET}/*/quiche-server ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_PROGRAM} ${CARGO_TARGET_DIR}/${CARGO_BUILD_TARGET}/*/quiche-client ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_DATA} ${CARGO_TARGET_DIR}/*/libquiche.a ${STAGEDIR}${PREFIX}/lib
+	${INSTALL_PROGRAM} ${CARGO_TARGET_DIR}/*/quiche-server ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${CARGO_TARGET_DIR}/*/quiche-client ${STAGEDIR}${PREFIX}/bin
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

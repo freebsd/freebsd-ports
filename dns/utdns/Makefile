@@ -1,18 +1,16 @@
 PORTNAME=	utdns
-DISTVERSIONPREFIX=	v
-DISTVERSION=	1.1
-PORTREVISION=	1
+DISTVERSION=	1.2
 CATEGORIES=	dns
+MASTER_SITES=	https://github.com/rahra/${PORTNAME}/releases/download/v${DISTVERSION}/
+DISTNAME=	${PORTNAME}-${DISTVERSION}.r1265
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Proxy UDP/DNS to TCP/DNS
-WWW=		https://www.cypherpunk.at/2013/04/dnsudp-to-tcp-translator/
+WWW=		https://github.com/rahra/utdns
 
 LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		autoreconf
-USE_GITHUB=	yes
-GH_ACCOUNT=	rahra
 USE_RC_SUBR=	${PORTNAME}
 
 GNU_CONFIGURE=	yes

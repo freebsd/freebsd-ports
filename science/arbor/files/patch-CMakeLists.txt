@@ -1,0 +1,19 @@
+--- CMakeLists.txt.orig	2024-08-09 10:22:00 UTC
++++ CMakeLists.txt
+@@ -40,7 +40,7 @@ check_cxx_compiler_flag("-march=native" CXX_HAS_NATIVE
+ 
+ # Specify target architecture.
+ check_cxx_compiler_flag("-march=native" CXX_HAS_NATIVE)
+-if(CXX_HAS_NATIVE)
++if(FALSE AND CXX_HAS_NATIVE)
+     set(ARB_DEFAULT_ARCH "native")
+ else()
+     set(ARB_DEFAULT_ARCH "none")
+@@ -307,7 +307,6 @@ install(TARGETS ext-units EXPORT arbor-targets)
+ install(TARGETS ext-random123 EXPORT arbor-targets)
+ target_link_libraries(arbor-public-deps INTERFACE ext-units)
+ install(TARGETS ext-units EXPORT arbor-targets)
+-install(TARGETS units compile_flags_target EXPORT arbor-targets)
+ 
+ # Keep track of packages we need to add to the generated CMake config
+ # file for arbor.

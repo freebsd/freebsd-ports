@@ -1,5 +1,5 @@
 PORTNAME=	angie-module-auth-spnego
-GH_TUPLE=	stnoonan:spnego-http-auth-nginx-module:v1.1.1:module
+GH_TUPLE=	stnoonan:spnego-http-auth-nginx-module:v1.1.2:module
 
 COMMENT=	Angie auth-spnego dynamic module
 

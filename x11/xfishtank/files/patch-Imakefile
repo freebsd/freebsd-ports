@@ -1,17 +1,9 @@
---- Imakefile.orig	1992-12-16 00:04:35 UTC
+--- Imakefile.orig	2024-09-12 10:01:24 UTC
 +++ Imakefile
-@@ -2,12 +2,12 @@
- LOCAL_LIBRARIES = $(XLIB)
+@@ -1,5 +1,5 @@
+  EXTRA_INCLUDES = -I./fishmaps
+-LOCAL_LIBRARIES = $(XLIB)
++LOCAL_LIBRARIES = $(XLIB) -L /usr/local/lib
          DEPLIBS = $(DEPXLIB)
-   SYS_LIBRARIES = -lm
--    CDEBUGFLAGS = -g
-+XCOMM    CDEBUGFLAGS = -g
- 
-            SRCS = xfish.c medcut.c read.c gifread.c
-            OBJS = xfish.o medcut.o read.o gifread.o
- 
--ComplexProgramTarget(xfishtank)
-+ComplexProgramTargetNoMan(xfishtank)
- 
- xfishy.h: makeh FishList
- 	./makeh > xfishy.h
+   SYS_LIBRARIES = -lImlib2 -lm
+    MANSRCSUFFIX = 1x

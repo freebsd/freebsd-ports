@@ -1,9 +1,8 @@
 PORTNAME=	minidlna
 PORTVERSION=	1.3.3
-PORTREVISION=	1
+PORTREVISION=	5
 PORTEPOCH=	1
 CATEGORIES=	net multimedia www
-MASTER_SITES=	SF
 
 MAINTAINER=	glebius@FreeBSD.org
 COMMENT=	Media-server compatible with "Digital Life Network Alliance"
@@ -25,6 +24,10 @@ CONFIGURE_ARGS=	--with-db-path=/var/db/minidlna \
 USES=		autoreconf cpe gettext-tools iconv jpeg localbase
 
 CPE_VENDOR=	minidlna_project
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	glebius
+GH_TAGNAME=	ae2141d
 
 PKGMESSAGE=	${WRKSRC}/pkg-message
 SUB_FILES+=	pkg-message

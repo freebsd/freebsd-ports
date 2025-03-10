@@ -1,6 +1,6 @@
 PORTNAME=	remmina
-DISTVERSION=	1.4.35
-PORTREVISION=	3
+DISTVERSION=	1.4.39
+PORTREVISION=	1
 CATEGORIES=	net gnome
 
 MAINTAINER=	fernape@FreeBSD.org
@@ -118,7 +118,7 @@ VNC_LIB_DEPENDS=	libvncserver.so:net/libvncserver
 VNC_CMAKE_BOOL=		WITH_LIBVNCSERVER
 
 WWW_LIB_DEPENDS=	libsoup-2.4.so:devel/libsoup \
-			libwebkit2gtk-4.0.so:www/webkit2-gtk3
+			libwebkit2gtk-4.0.so:www/webkit2-gtk@40
 WWW_CMAKE_BOOL=		WITH_WEBKIT2GTK
 WWW_CMAKE_ON=		-DLIBSOUP_LIBRARY=${LOCALBASE}/lib/libsoup-2.4.so
 

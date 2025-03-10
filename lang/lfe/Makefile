@@ -1,18 +1,24 @@
 PORTNAME=	lfe
-PORTVERSION=	2.1.1
 DISTVERSIONPREFIX=	v
-CATEGORIES=	lang
+DISTVERSION=	2.2.0
+CATEGORIES=	lang lisp
 
 MAINTAINER=	hrs@FreeBSD.org
-COMMENT=	Lisp Flavored Erlang
-WWW=		https://lfe.io
+COMMENT=	Lisp Flavoured Erlang
+WWW=		https://lfe.io/ \
+		https://github.com/lfe/lfe/
 
 LICENSE=	APACHE20
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BUILD_DEPENDS=	${TEST_DEPENDS}
+TEST_DEPENDS=	rebar3:devel/rebar3
 USES=		erlang gmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	rvirding
 ALL_TARGET=	compile
+TEST_TARGET=	tests
+NO_ARCH=	yes
 PORTDOCS=	README.md
 
 OPTIONS_DEFINE=	DOCS

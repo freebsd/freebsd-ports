@@ -1,2 +1,2 @@
 The tcprtt utility reliably measures the TCP handshake round trip time
-using the stats(9) statistics framework.
+using the stats(3) statistics framework.

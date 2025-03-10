@@ -1,6 +1,7 @@
 PORTNAME=	libvorbis
 PORTVERSION=	1.3.7
 DISTVERSIONSUFFIX=	-5.el9
+PORTREVISION=	1
 CATEGORIES=	audio linux
 
 MAINTAINER=	emulation@FreeBSD.org
@@ -11,6 +12,7 @@ USES=		cpe linux:rl9
 USE_LDCONFIG=	yes
 USE_LINUX=	libogg
 USE_LINUX_RPM=	yes
+WANT_LINUX32=	yes
 
 CPE_VENDOR=	xiph.org
 

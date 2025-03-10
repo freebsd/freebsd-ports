@@ -50,3 +50,4 @@ lib/cmake/Qt6Gui/Qt6QWebpPluginTargets.cmake
 %%QT_PLUGINDIR%%/imageformats/libqtiff.so
 %%QT_PLUGINDIR%%/imageformats/libqwbmp.so
 %%QT_PLUGINDIR%%/imageformats/libqwebp.so
+%%QT_SBOMDIR%%/qtimageformats-%%FULLVER%%.spdx

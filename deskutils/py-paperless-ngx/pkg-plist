@@ -137,6 +137,7 @@ bin/paperless
 %%PYTHON_SITELIBDIR%%/paperless/documents/migrations/0002_auto_20151226_1316.py
 %%PYTHON_SITELIBDIR%%/paperless/documents/migrations/0003_sender.py
 %%PYTHON_SITELIBDIR%%/paperless/documents/migrations/0004_auto_20160114_1844.py
+%%PYTHON_SITELIBDIR%%/paperless/documents/migrations/0004_auto_20160114_1844_squashed_0011_auto_20160303_1929.py
 %%PYTHON_SITELIBDIR%%/paperless/documents/migrations/0005_auto_20160123_0313.py
 %%PYTHON_SITELIBDIR%%/paperless/documents/migrations/0006_auto_20160123_0430.py
 %%PYTHON_SITELIBDIR%%/paperless/documents/migrations/0007_auto_20160126_2114.py
@@ -148,6 +149,7 @@ bin/paperless
 %%PYTHON_SITELIBDIR%%/paperless/documents/migrations/0013_auto_20160325_2111.py
 %%PYTHON_SITELIBDIR%%/paperless/documents/migrations/0014_document_checksum.py
 %%PYTHON_SITELIBDIR%%/paperless/documents/migrations/0015_add_insensitive_to_match.py
+%%PYTHON_SITELIBDIR%%/paperless/documents/migrations/0015_add_insensitive_to_match_squashed_0018_auto_20170715_1712.py
 %%PYTHON_SITELIBDIR%%/paperless/documents/migrations/0016_auto_20170325_1558.py
 %%PYTHON_SITELIBDIR%%/paperless/documents/migrations/0017_auto_20170512_0507.py
 %%PYTHON_SITELIBDIR%%/paperless/documents/migrations/0018_auto_20170715_1712.py
@@ -163,6 +165,7 @@ bin/paperless
 %%PYTHON_SITELIBDIR%%/paperless/documents/migrations/1004_sanity_check_schedule.py
 %%PYTHON_SITELIBDIR%%/paperless/documents/migrations/1005_checksums.py
 %%PYTHON_SITELIBDIR%%/paperless/documents/migrations/1006_auto_20201208_2209.py
+%%PYTHON_SITELIBDIR%%/paperless/documents/migrations/1006_auto_20201208_2209_squashed_1011_auto_20210101_2340.py
 %%PYTHON_SITELIBDIR%%/paperless/documents/migrations/1007_savedview_savedviewfilterrule.py
 %%PYTHON_SITELIBDIR%%/paperless/documents/migrations/1008_auto_20201216_1736.py
 %%PYTHON_SITELIBDIR%%/paperless/documents/migrations/1009_auto_20201216_2005.py
@@ -173,6 +176,7 @@ bin/paperless
 %%PYTHON_SITELIBDIR%%/paperless/documents/migrations/1014_auto_20210228_1614.py
 %%PYTHON_SITELIBDIR%%/paperless/documents/migrations/1015_remove_null_characters.py
 %%PYTHON_SITELIBDIR%%/paperless/documents/migrations/1016_auto_20210317_1351.py
+%%PYTHON_SITELIBDIR%%/paperless/documents/migrations/1016_auto_20210317_1351_squashed_1020_merge_20220518_1839.py
 %%PYTHON_SITELIBDIR%%/paperless/documents/migrations/1017_alter_savedviewfilterrule_rule_type.py
 %%PYTHON_SITELIBDIR%%/paperless/documents/migrations/1018_alter_savedviewfilterrule_value.py
 %%PYTHON_SITELIBDIR%%/paperless/documents/migrations/1019_storagepath_document_storage_path.py
@@ -180,6 +184,7 @@ bin/paperless
 %%PYTHON_SITELIBDIR%%/paperless/documents/migrations/1020_merge_20220518_1839.py
 %%PYTHON_SITELIBDIR%%/paperless/documents/migrations/1021_webp_thumbnail_conversion.py
 %%PYTHON_SITELIBDIR%%/paperless/documents/migrations/1022_paperlesstask.py
+%%PYTHON_SITELIBDIR%%/paperless/documents/migrations/1022_paperlesstask_squashed_1036_alter_savedviewfilterrule_rule_type.py
 %%PYTHON_SITELIBDIR%%/paperless/documents/migrations/1023_add_comments.py
 %%PYTHON_SITELIBDIR%%/paperless/documents/migrations/1024_document_original_filename.py
 %%PYTHON_SITELIBDIR%%/paperless/documents/migrations/1025_alter_savedviewfilterrule_rule_type.py
@@ -203,12 +208,14 @@ bin/paperless
 %%PYTHON_SITELIBDIR%%/paperless/documents/migrations/1043_alter_savedviewfilterrule_rule_type.py
 %%PYTHON_SITELIBDIR%%/paperless/documents/migrations/1044_workflow_workflowaction_workflowtrigger_and_more.py
 %%PYTHON_SITELIBDIR%%/paperless/documents/migrations/1045_alter_customfieldinstance_value_monetary.py
+%%PYTHON_SITELIBDIR%%/paperless/documents/migrations/1045_alter_customfieldinstance_value_monetary_squashed_1049_document_deleted_at_document_restored_at.py
 %%PYTHON_SITELIBDIR%%/paperless/documents/migrations/1046_workflowaction_remove_all_correspondents_and_more.py
 %%PYTHON_SITELIBDIR%%/paperless/documents/migrations/1047_savedview_display_mode_and_more.py
 %%PYTHON_SITELIBDIR%%/paperless/documents/migrations/1048_alter_savedviewfilterrule_rule_type.py
 %%PYTHON_SITELIBDIR%%/paperless/documents/migrations/1049_document_deleted_at_document_restored_at.py
 %%PYTHON_SITELIBDIR%%/paperless/documents/migrations/1050_customfield_extra_data_and_more.py
 %%PYTHON_SITELIBDIR%%/paperless/documents/migrations/1051_alter_correspondent_owner_alter_document_owner_and_more.py
+%%PYTHON_SITELIBDIR%%/paperless/documents/migrations/1052_document_transaction_id.py
 %%PYTHON_SITELIBDIR%%/paperless/documents/migrations/__init__.py
 %%PYTHON_SITELIBDIR%%/paperless/documents/migrations/__pycache__/0001_initial%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/paperless/documents/migrations/__pycache__/0001_initial%%PYTHON_EXT_SUFFIX%%.pyc
@@ -218,6 +225,8 @@ bin/paperless
 %%PYTHON_SITELIBDIR%%/paperless/documents/migrations/__pycache__/0003_sender%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/paperless/documents/migrations/__pycache__/0004_auto_20160114_1844%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/paperless/documents/migrations/__pycache__/0004_auto_20160114_1844%%PYTHON_EXT_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/paperless/documents/migrations/__pycache__/0004_auto_20160114_1844_squashed_0011_auto_20160303_1929%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/paperless/documents/migrations/__pycache__/0004_auto_20160114_1844_squashed_0011_auto_20160303_1929%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/paperless/documents/migrations/__pycache__/0005_auto_20160123_0313%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/paperless/documents/migrations/__pycache__/0005_auto_20160123_0313%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/paperless/documents/migrations/__pycache__/0006_auto_20160123_0430%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
@@ -240,6 +249,8 @@ bin/paperless
 %%PYTHON_SITELIBDIR%%/paperless/documents/migrations/__pycache__/0014_document_checksum%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/paperless/documents/migrations/__pycache__/0015_add_insensitive_to_match%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/paperless/documents/migrations/__pycache__/0015_add_insensitive_to_match%%PYTHON_EXT_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/paperless/documents/migrations/__pycache__/0015_add_insensitive_to_match_squashed_0018_auto_20170715_1712%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/paperless/documents/migrations/__pycache__/0015_add_insensitive_to_match_squashed_0018_auto_20170715_1712%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/paperless/documents/migrations/__pycache__/0016_auto_20170325_1558%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/paperless/documents/migrations/__pycache__/0016_auto_20170325_1558%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/paperless/documents/migrations/__pycache__/0017_auto_20170512_0507%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
@@ -270,6 +281,8 @@ bin/paperless
 %%PYTHON_SITELIBDIR%%/paperless/documents/migrations/__pycache__/1005_checksums%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/paperless/documents/migrations/__pycache__/1006_auto_20201208_2209%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/paperless/documents/migrations/__pycache__/1006_auto_20201208_2209%%PYTHON_EXT_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/paperless/documents/migrations/__pycache__/1006_auto_20201208_2209_squashed_1011_auto_20210101_2340%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/paperless/documents/migrations/__pycache__/1006_auto_20201208_2209_squashed_1011_auto_20210101_2340%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/paperless/documents/migrations/__pycache__/1007_savedview_savedviewfilterrule%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/paperless/documents/migrations/__pycache__/1007_savedview_savedviewfilterrule%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/paperless/documents/migrations/__pycache__/1008_auto_20201216_1736%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
@@ -290,6 +303,8 @@ bin/paperless
 %%PYTHON_SITELIBDIR%%/paperless/documents/migrations/__pycache__/1015_remove_null_characters%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/paperless/documents/migrations/__pycache__/1016_auto_20210317_1351%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/paperless/documents/migrations/__pycache__/1016_auto_20210317_1351%%PYTHON_EXT_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/paperless/documents/migrations/__pycache__/1016_auto_20210317_1351_squashed_1020_merge_20220518_1839%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/paperless/documents/migrations/__pycache__/1016_auto_20210317_1351_squashed_1020_merge_20220518_1839%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/paperless/documents/migrations/__pycache__/1017_alter_savedviewfilterrule_rule_type%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/paperless/documents/migrations/__pycache__/1017_alter_savedviewfilterrule_rule_type%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/paperless/documents/migrations/__pycache__/1018_alter_savedviewfilterrule_value%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
@@ -304,6 +319,8 @@ bin/paperless
 %%PYTHON_SITELIBDIR%%/paperless/documents/migrations/__pycache__/1021_webp_thumbnail_conversion%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/paperless/documents/migrations/__pycache__/1022_paperlesstask%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/paperless/documents/migrations/__pycache__/1022_paperlesstask%%PYTHON_EXT_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/paperless/documents/migrations/__pycache__/1022_paperlesstask_squashed_1036_alter_savedviewfilterrule_rule_type%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/paperless/documents/migrations/__pycache__/1022_paperlesstask_squashed_1036_alter_savedviewfilterrule_rule_type%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/paperless/documents/migrations/__pycache__/1023_add_comments%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/paperless/documents/migrations/__pycache__/1023_add_comments%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/paperless/documents/migrations/__pycache__/1024_document_original_filename%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
@@ -350,6 +367,8 @@ bin/paperless
 %%PYTHON_SITELIBDIR%%/paperless/documents/migrations/__pycache__/1044_workflow_workflowaction_workflowtrigger_and_more%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/paperless/documents/migrations/__pycache__/1045_alter_customfieldinstance_value_monetary%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/paperless/documents/migrations/__pycache__/1045_alter_customfieldinstance_value_monetary%%PYTHON_EXT_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/paperless/documents/migrations/__pycache__/1045_alter_customfieldinstance_value_monetary_squashed_1049_document_deleted_at_document_restored_at%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/paperless/documents/migrations/__pycache__/1045_alter_customfieldinstance_value_monetary_squashed_1049_document_deleted_at_document_restored_at%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/paperless/documents/migrations/__pycache__/1046_workflowaction_remove_all_correspondents_and_more%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/paperless/documents/migrations/__pycache__/1046_workflowaction_remove_all_correspondents_and_more%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/paperless/documents/migrations/__pycache__/1047_savedview_display_mode_and_more%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
@@ -362,6 +381,8 @@ bin/paperless
 %%PYTHON_SITELIBDIR%%/paperless/documents/migrations/__pycache__/1050_customfield_extra_data_and_more%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/paperless/documents/migrations/__pycache__/1051_alter_correspondent_owner_alter_document_owner_and_more%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/paperless/documents/migrations/__pycache__/1051_alter_correspondent_owner_alter_document_owner_and_more%%PYTHON_EXT_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/paperless/documents/migrations/__pycache__/1052_document_transaction_id%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/paperless/documents/migrations/__pycache__/1052_document_transaction_id%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/paperless/documents/migrations/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/paperless/documents/migrations/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/paperless/documents/models.py
@@ -535,6 +556,7 @@ bin/paperless
 %%PYTHON_SITELIBDIR%%/paperless/locale/la_LA/LC_MESSAGES/django.po
 %%PYTHON_SITELIBDIR%%/paperless/locale/lb_LU/LC_MESSAGES/django.po
 %%PYTHON_SITELIBDIR%%/paperless/locale/lv_LV/LC_MESSAGES/django.po
+%%PYTHON_SITELIBDIR%%/paperless/locale/ms_MY/LC_MESSAGES/django.po
 %%PYTHON_SITELIBDIR%%/paperless/locale/nb_NO/LC_MESSAGES/django.po
 %%PYTHON_SITELIBDIR%%/paperless/locale/nl_NL/LC_MESSAGES/django.po
 %%PYTHON_SITELIBDIR%%/paperless/locale/no_NO/LC_MESSAGES/django.po
@@ -675,6 +697,7 @@ bin/paperless
 %%PYTHON_SITELIBDIR%%/paperless/paperless_mail/management/commands/__pycache__/mail_fetcher%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/paperless/paperless_mail/management/commands/mail_fetcher.py
 %%PYTHON_SITELIBDIR%%/paperless/paperless_mail/migrations/0001_initial.py
+%%PYTHON_SITELIBDIR%%/paperless/paperless_mail/migrations/0001_initial_squashed_0009_mailrule_assign_tags.py
 %%PYTHON_SITELIBDIR%%/paperless/paperless_mail/migrations/0002_auto_20201117_1334.py
 %%PYTHON_SITELIBDIR%%/paperless/paperless_mail/migrations/0003_auto_20201118_1940.py
 %%PYTHON_SITELIBDIR%%/paperless/paperless_mail/migrations/0004_mailrule_order.py
@@ -686,6 +709,7 @@ bin/paperless
 %%PYTHON_SITELIBDIR%%/paperless/paperless_mail/migrations/0009_mailrule_assign_tags.py
 %%PYTHON_SITELIBDIR%%/paperless/paperless_mail/migrations/0010_auto_20220%%PYTHON_SUFFIX%%_1602.py
 %%PYTHON_SITELIBDIR%%/paperless/paperless_mail/migrations/0011_remove_mailrule_assign_tag.py
+%%PYTHON_SITELIBDIR%%/paperless/paperless_mail/migrations/0011_remove_mailrule_assign_tag_squashed_0024_alter_mailrule_name_and_more.py
 %%PYTHON_SITELIBDIR%%/paperless/paperless_mail/migrations/0012_alter_mailrule_assign_tags.py
 %%PYTHON_SITELIBDIR%%/paperless/paperless_mail/migrations/0013_merge_20220412_1051.py
 %%PYTHON_SITELIBDIR%%/paperless/paperless_mail/migrations/0014_alter_mailrule_action.py
@@ -703,6 +727,8 @@ bin/paperless
 %%PYTHON_SITELIBDIR%%/paperless/paperless_mail/migrations/__init__.py
 %%PYTHON_SITELIBDIR%%/paperless/paperless_mail/migrations/__pycache__/0001_initial%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/paperless/paperless_mail/migrations/__pycache__/0001_initial%%PYTHON_EXT_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/paperless/paperless_mail/migrations/__pycache__/0001_initial_squashed_0009_mailrule_assign_tags%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/paperless/paperless_mail/migrations/__pycache__/0001_initial_squashed_0009_mailrule_assign_tags%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/paperless/paperless_mail/migrations/__pycache__/0002_auto_20201117_1334%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/paperless/paperless_mail/migrations/__pycache__/0002_auto_20201117_1334%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/paperless/paperless_mail/migrations/__pycache__/0003_auto_20201118_1940%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
@@ -725,6 +751,8 @@ bin/paperless
 %%PYTHON_SITELIBDIR%%/paperless/paperless_mail/migrations/__pycache__/0010_auto_20220%%PYTHON_SUFFIX%%_1602%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/paperless/paperless_mail/migrations/__pycache__/0011_remove_mailrule_assign_tag%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/paperless/paperless_mail/migrations/__pycache__/0011_remove_mailrule_assign_tag%%PYTHON_EXT_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/paperless/paperless_mail/migrations/__pycache__/0011_remove_mailrule_assign_tag_squashed_0024_alter_mailrule_name_and_more%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/paperless/paperless_mail/migrations/__pycache__/0011_remove_mailrule_assign_tag_squashed_0024_alter_mailrule_name_and_more%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/paperless/paperless_mail/migrations/__pycache__/0012_alter_mailrule_assign_tags%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/paperless/paperless_mail/migrations/__pycache__/0012_alter_mailrule_assign_tags%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/paperless/paperless_mail/migrations/__pycache__/0013_merge_20220412_1051%%PYTHON_EXT_SUFFIX%%.opt-1.pyc

@@ -4,7 +4,7 @@
 # The script will search for this port over the complete directory you are located now
 # and will bump all ports using `Tools/scripts/bump-revision.sh`
 #
-# Version 0.1
+# Version 0.2
 # License: MIT
 # Matthias Fechner <mfechner@FreeBSD.org>
 
@@ -33,7 +33,7 @@ PORT_TO_SEARCH=${1}
 BASEDIR=$(pwd)
 # Get a list of all ports
 echo "Prepare a list of all ports"
-ports=`find . -name Makefile -maxdepth 3 -not \( -path "./distfiles/*" -prune \) -not \( -path "./Tools/*" -prune \) -print | sort`
+ports=`find . -name Makefile -maxdepth 3 -not \( -path "./distfiles/*" -prune \) -not \( -path "./Tools/*" -prune \) -not \( -path "./Templates/*" -prune \) -print | sort`
 echo "done."
 echo
 

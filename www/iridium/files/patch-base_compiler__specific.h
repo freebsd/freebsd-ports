@@ -1,11 +1,10 @@
---- base/compiler_specific.h.orig	2024-06-25 12:08:48 UTC
+--- base/compiler_specific.h.orig	2025-02-22 18:06:53 UTC
 +++ base/compiler_specific.h
-@@ -316,7 +316,7 @@
- //
- // In some cases it's desirable to remove this, e.g. on hot functions, or if
- // we have purposely changed the reference canary.
--#if defined(COMPILER_GCC) || defined(__clang__)
-+#if (defined(COMPILER_GCC) || defined(__clang__)) && !defined(__OpenBSD__) && !defined(__FreeBSD__)
- #if HAS_ATTRIBUTE(__no_stack_protector__)
- #define NO_STACK_PROTECTOR __attribute__((__no_stack_protector__))
+@@ -683,6 +683,7 @@ inline constexpr bool AnalyzerAssumeTrue(bool arg) {
+ #if __has_cpp_attribute(clang::preserve_most) &&             \
+     (defined(ARCH_CPU_ARM64) || defined(ARCH_CPU_X86_64)) && \
+     !defined(COMPONENT_BUILD) &&                             \
++    !BUILDFLAG(IS_OPENBSD) &&                                \
+     !(BUILDFLAG(IS_WIN) && defined(ARCH_CPU_ARM64))
+ #define PRESERVE_MOST [[clang::preserve_most]]
  #else

@@ -1,6 +1,6 @@
 PORTNAME=	twmn
 PORTVERSION=	g20190917
-PORTREVISION=	6
+PORTREVISION=	8
 CATEGORIES=	sysutils
 
 MAINTAINER=	dmgk@FreeBSD.org
@@ -9,6 +9,8 @@ WWW=		https://github.com/sboli/twmn
 
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+BROKEN=		fails to build with Boost>=1.87
 
 LIB_DEPENDS=	libboost_system.so:devel/boost-libs
 

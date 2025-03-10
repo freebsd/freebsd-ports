@@ -1,5 +1,3 @@
-TIMESTAMP = 1719289376
-SHA256 (cern-fts-davix-R_0_8_7_GH0.tar.gz) = 4863c92ecc1bd671f384e72aad2baac3bac737c3a9d7a6cf8706147ecbff5b0e
-SIZE (cern-fts-davix-R_0_8_7_GH0.tar.gz) = 3084358
-SHA256 (google-googletest-f570b27_GH0.tar.gz) = b8e523ec837300ed501b4a7ad35fc5238384667dc7d31879a2f102f9d38742e0
-SIZE (google-googletest-f570b27_GH0.tar.gz) = 1279326
+TIMESTAMP = 1739524626
+SHA256 (cern-fts-davix-R_0_8_10_GH0.tar.gz) = 6f1963cf2b868f1822235dba7998043b8261acc5a4c1deed350a417432f0ec6a
+SIZE (cern-fts-davix-R_0_8_10_GH0.tar.gz) = 3086995

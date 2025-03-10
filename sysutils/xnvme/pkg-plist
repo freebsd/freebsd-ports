@@ -14,6 +14,7 @@ bin/xnvme-driver
 %%TESTS%%bin/xnvme_tests_async_intf
 %%TESTS%%bin/xnvme_tests_buf
 %%TESTS%%bin/xnvme_tests_cli
+%%TESTS%%bin/xnvme_tests_compare
 %%TESTS%%bin/xnvme_tests_copy
 %%TESTS%%bin/xnvme_tests_delay_identification
 %%TESTS%%bin/xnvme_tests_enum
@@ -60,7 +61,7 @@ include/libxnvme_znd.h
 lib/libxnvme.a
 lib/libxnvme.so
 lib/libxnvme.so.0
-lib/libxnvme.so.0.7.4
+lib/libxnvme.so.0.7.5
 libdata/pkgconfig/xnvme.pc
 %%TOOLS%%share/man/man1/kvs-delete.1.gz
 %%TOOLS%%share/man/man1/kvs-enum.1.gz
@@ -70,6 +71,7 @@ libdata/pkgconfig/xnvme.pc
 %%TOOLS%%share/man/man1/kvs-retrieve.1.gz
 %%TOOLS%%share/man/man1/kvs-store.1.gz
 %%TOOLS%%share/man/man1/kvs.1.gz
+%%TOOLS%%share/man/man1/lblk-compare.1.gz
 %%TOOLS%%share/man/man1/lblk-dir-receive.1.gz
 %%TOOLS%%share/man/man1/lblk-dir-send.1.gz
 %%TOOLS%%share/man/man1/lblk-enum.1.gz
@@ -125,8 +127,6 @@ libdata/pkgconfig/xnvme.pc
 %%TOOLS%%share/man/man1/xnvme_file-load-sync.1.gz
 %%TOOLS%%share/man/man1/xnvme_file-write-read.1.gz
 %%TOOLS%%share/man/man1/xnvme_file.1.gz
-%%EXAMPLES%%share/man/man1/xnvme_hello-hw.1.gz
-%%EXAMPLES%%share/man/man1/xnvme_hello.1.gz
 %%EXAMPLES%%share/man/man1/xnvme_io_async-read.1.gz
 %%EXAMPLES%%share/man/man1/xnvme_io_async-write.1.gz
 %%EXAMPLES%%share/man/man1/xnvme_io_async.1.gz
@@ -137,6 +137,8 @@ libdata/pkgconfig/xnvme.pc
 %%TESTS%%share/man/man1/xnvme_tests_buf.1.gz
 %%TESTS%%share/man/man1/xnvme_tests_cli-optional.1.gz
 %%TESTS%%share/man/man1/xnvme_tests_cli.1.gz
+%%TESTS%%share/man/man1/xnvme_tests_compare.1.gz
+%%TESTS%%share/man/man1/xnvme_tests_compare-compare.1.gz
 %%TESTS%%share/man/man1/xnvme_tests_copy-copy.1.gz
 %%TESTS%%share/man/man1/xnvme_tests_copy.1.gz
 %%TESTS%%share/man/man1/xnvme_tests_delay_identification-open.1.gz
@@ -211,11 +213,11 @@ libdata/pkgconfig/xnvme.pc
 %%TOOLS%%share/bash-completion/completions/xdd-completions
 %%TOOLS%%share/bash-completion/completions/xnvme-completions
 %%TOOLS%%share/bash-completion/completions/xnvme_file-completions
-%%EXAMPLES%%share/bash-completion/completions/xnvme_hello-completions
 %%EXAMPLES%%share/bash-completion/completions/xnvme_io_async-completions
 %%TESTS%%share/bash-completion/completions/xnvme_tests_async_intf-completions
 %%TESTS%%share/bash-completion/completions/xnvme_tests_buf-completions
 %%TESTS%%share/bash-completion/completions/xnvme_tests_cli-completions
+%%TESTS%%share/bash-completion/completions/xnvme_tests_compare-completions
 %%TESTS%%share/bash-completion/completions/xnvme_tests_copy-completions
 %%TESTS%%share/bash-completion/completions/xnvme_tests_delay_identification-completions
 %%TESTS%%share/bash-completion/completions/xnvme_tests_enum-completions

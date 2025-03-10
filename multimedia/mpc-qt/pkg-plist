@@ -1,4 +1,3 @@
 bin/mpc-qt
-share/applications/mpc-qt.desktop
-%%PORTDOCS%%%%DOCSDIR%%/ipc.md
+share/applications/io.github.mpc-qt.mpc-qt.desktop
 share/icons/hicolor/scalable/apps/mpc-qt.svg

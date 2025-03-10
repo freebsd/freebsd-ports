@@ -14,9 +14,10 @@ WWW=		https://yui.github.io/yuicompressor/
 LICENSE=	BSD3CLAUSE MPL20
 LICENSE_COMB=	multi
 
+USES=		java
+
 NO_WRKSUBDIR=	yes
 
-USE_JAVA=	yes
 NO_BUILD=	yes
 NO_ARCH=	yes
 

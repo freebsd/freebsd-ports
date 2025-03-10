@@ -1,7 +1,7 @@
 PORTNAME=	powa-web
-PORTVERSION=	4.2.1
+PORTVERSION=	5.0.1
+PORTREVISION=	1
 CATEGORIES=	databases python
-MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	girgen@FreeBSD.org
@@ -16,6 +16,9 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}psycopg2>0:databases/py-psycopg2@${PY_FLAVOR
 
 USES=		python
 USE_PYTHON=	distutils autoplist
+USE_GITHUB=	yes
+GH_ACCOUNT=	powa-team
+
 NO_ARCH=	yes
 
 post-patch:

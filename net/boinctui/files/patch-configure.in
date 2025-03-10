@@ -1,0 +1,14 @@
+FreeBSD needs netinet/in.h with struct sockaddr_in for src/net.cpp
+to be included explicitly. See man ip(4).
+
+--- configure.in.orig	2024-08-31 18:10:20 UTC
++++ configure.in
+@@ -71,7 +71,7 @@ string.h stdlib.h stdio.h sys/stat.h unistd.h stdarg.h
+ [ \
+ pthread.h \
+ string.h stdlib.h stdio.h sys/stat.h unistd.h stdarg.h sys/ioctl.h arpa/inet.h \
+-locale.h malloc.h sys/socket.h netdb.h signal.h ctype.h \
++locale.h malloc.h sys/socket.h netinet/in.h netdb.h signal.h ctype.h \
+ algorithm string list vector queue stack sstream \
+ expat.h \
+ ] ,  , [AC_MSG_ERROR([Couldn't find some headers])] )

@@ -1,6 +1,6 @@
 PORTNAME=	zebra-server
 PORTVERSION=	2.0.55
-PORTREVISION=	22
+PORTREVISION=	23
 CATEGORIES=	net
 MASTER_SITES=	http://ftp.indexdata.dk/pub/zebra/
 DISTNAME=	idzebra-${PORTVERSION}

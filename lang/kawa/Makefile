@@ -10,10 +10,9 @@ WWW=		https://www.gnu.org/software/kawa/
 
 LICENSE=	MIT
 
-USES=		gmake groff readline
-USE_JAVA=	yes
+USES=		gmake groff java readline
+
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ARGS=	--enable-kawa-frontend \
 		--with-java-source=${JAVA_PORT_VERSION}
 CONFIGURE_ENV=	JAVA="${JAVA}" JAVAC="${JAVAC}"

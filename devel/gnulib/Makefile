@@ -15,7 +15,7 @@ LICENSE_COMB=	multi
 BUILD_DEPENDS=	${LOCALBASE}/bin/makeinfo:print/texinfo
 
 USES=		cpe gmake perl5 shebangfix
-SHEBANG_FILES=	check-module
+SHEBANG_FILES=	check-module lib/uniname/gen-uninames.lisp
 CPE_VENDOR=	gnu
 
 NO_ARCH=	yes

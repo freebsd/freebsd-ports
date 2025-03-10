@@ -1,6 +1,6 @@
---- src/ES2FileFormat/Header/Reader/FKReader.h.orig	2021-11-25 00:56:57 UTC
+--- src/ES2FileFormat/Header/Reader/FKReader.h.orig	2024-09-12 07:10:33 UTC
 +++ src/ES2FileFormat/Header/Reader/FKReader.h
-@@ -42,21 +42,21 @@ class CFKReader : public IFKReader (public)
+@@ -39,21 +39,21 @@ class CFKReader : public IFKReader (public)
    m_nValidImageHeight = nHeight;
    m_bReadOnlyValidData = bReadOnlyValidData;
   }
@@ -28,7 +28,7 @@
 + virtual BOOL OpenReaderWithOptionAsJson( ES_CHAR_CPTR pszOptionAsJson, ENUM_FK_ERROR_CODE& eError ) override = 0;
 + virtual BOOL AppendSourceToReader( IFKSource* pcSource, ENUM_FK_ERROR_CODE& eError ) override = 0;
 + virtual BOOL CloseReaderWithOptionAsJson( ES_CHAR_CPTR pszOptionAsJson, ENUM_FK_ERROR_CODE& eError ) override = 0;
-+ void Destroy() override {
++ void Destroy() override{
    delete this;
   }
  };

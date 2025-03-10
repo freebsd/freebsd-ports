@@ -10,8 +10,8 @@ WWW=		http://www.squirrelsql.org/
 
 LICENSE=	GPLv2
 
-USES=		zip
-USE_JAVA=	11+
+USES=		java zip
+JAVA_VERSION=	11+
 
 DATADIR=	${PREFIX}/share/java/${PKGBASE}
 

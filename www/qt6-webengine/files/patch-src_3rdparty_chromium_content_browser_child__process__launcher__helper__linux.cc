@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/content/browser/child_process_launcher_helper_linux.cc.orig	2023-12-12 22:08:45 UTC
+--- src/3rdparty/chromium/content/browser/child_process_launcher_helper_linux.cc.orig	2024-07-03 01:14:49 UTC
 +++ src/3rdparty/chromium/content/browser/child_process_launcher_helper_linux.cc
 @@ -21,8 +21,12 @@
  #include "content/public/common/result_codes.h"
@@ -112,7 +112,7 @@
  }
  
  void ChildProcessLauncherHelper::SetProcessPriorityOnLauncherThread(
-@@ -178,11 +200,13 @@ void ChildProcessLauncherHelper::SetProcessPriorityOnL
+@@ -179,11 +201,13 @@ void ChildProcessLauncherHelper::SetProcessPriorityOnL
    }
  }
  

@@ -1,7 +1,6 @@
 PORTNAME=	fwup
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.10.1
-PORTREVISION=	2
+DISTVERSION=	1.12.0
 CATEGORIES=	sysutils
 
 MAINTAINER=	dch@FreeBSD.org
@@ -14,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	${LOCALBASE}/bin/autogen:devel/autogen \
 		${LOCALBASE}/bin/base64:converters/base64 \
 		${LOCALBASE}/bin/help2man:misc/help2man \
-		${LOCALBASE}/bin/mdir:emulators/mtools \
+		${LOCALBASE}/bin/mdir:filesystems/mtools \
 		${LOCALBASE}/bin/zip:archivers/zip
 LIB_DEPENDS=	libconfuse.so:devel/libconfuse \
 		libsodium.so:security/libsodium

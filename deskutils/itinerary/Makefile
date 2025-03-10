@@ -6,19 +6,18 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Digital travel assistant for KDE
 WWW=		https://apps.kde.org/en/itinerary
 
-BUILD_DEPENDS=	kirigami-addons>=0:x11-toolkits/kirigami-addons
-RUN_DEPENDS=	kirigami-addons>=0:x11-toolkits/kirigami-addons
+LIB_DEPENDS=	libKOSM.so:astro/kosmindoormap \
+		libqt6keychain.so:security/qtkeychain@qt6
 
-USES=		cmake compiler:c++11-lang desktop-file-utils gettext kde:5 \
-		qt:5 tar:xz xorg
+USES=		cmake compiler:c++11-lang desktop-file-utils gettext kde:6 \
+		qt:6 tar:xz xorg
 USE_KDE=	calendarcore completion config contacts coreaddons crash \
-		dbusaddons holidays i18n jobwidgets kio kitinerary kosm kpkpass \
-		kpublictransport mime notifications qqc2-desktop-style service \
-		solid widgetsaddons windowsystem \
+		dbusaddons filemetadata holidays i18n jobwidgets kio \
+		kirigami-addons kitinerary kpublictransport mime notifications \
+		qqc2-desktop-style service solid unitconversion widgetsaddons \
+		windowsystem \
 		ecm:build
-USE_QT=		concurrent core dbus declarative gui location network quick3d \
-		quickcontrols2 testlib widgets \
-		buildtools:build qmake:build
+USE_QT=		base positioning
 USE_XORG=	x11
 
 OPTIONS_DEFINE=	DOCS

@@ -1,5 +1,6 @@
 PORTNAME=	s2
 DISTVERSION=	1.1.7
+PORTREVISION=	1
 CATEGORIES=	graphics
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
@@ -18,11 +19,5 @@ BUILD_DEPENDS=	${CRAN_DEPENDS}
 RUN_DEPENDS=	${CRAN_DEPENDS}
 
 USES=		cran:auto-plist,compiles
-
-.include <bsd.port.options.mk>
-
-.if ${ARCH} == powerpc64
-EXTRA_PATCHES=	${FILESDIR}/extra-patch-src_Makevars.in
-.endif
 
 .include <bsd.port.mk>

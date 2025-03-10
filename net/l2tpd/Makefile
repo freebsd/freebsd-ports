@@ -11,7 +11,8 @@ BROKEN_armv6=	fails to link: undefined reference to check_control
 BROKEN_armv7=	fails to link: undefined reference to check_control
 
 USES=		compiler:nestedfct cpe
-CFLAGS+=	-fcommon
+CFLAGS+=	-fcommon \
+		-fpermissive
 
 PORTDOCS=	README
 ETCDIR=		${PREFIX}/etc/l2tp

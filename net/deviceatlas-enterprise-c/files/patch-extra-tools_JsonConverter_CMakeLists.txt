@@ -1,0 +1,11 @@
+--- extra-tools/JsonConverter/CMakeLists.txt.orig	2024-11-03 14:28:34 UTC
++++ extra-tools/JsonConverter/CMakeLists.txt
+@@ -9,5 +9,7 @@ if (UNIX)
+ 
+ if (UNIX)
+     include(GNUInstallDirs)
+-    install(FILES ${CMAKE_BINARY_DIR}/bin/dajsonconv PERMISSIONS WORLD_READ WORLD_EXECUTE DESTINATION ${CMAKE_INSTALL_FULL_BINDIR})
++    install(FILES ${CMAKE_BINARY_DIR}/bin/dajsonconv
++      PERMISSIONS OWNER_WRITE OWNER_READ OWNER_EXECUTE GROUP_READ GROUP_EXECUTE
++      WORLD_READ WORLD_EXECUTE DESTINATION ${CMAKE_INSTALL_FULL_BINDIR})
+ endif()

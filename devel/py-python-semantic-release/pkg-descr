@@ -1,0 +1,8 @@
+Python Semantic Release provides automatic semantic versioning for Python
+projects. This is a Python implementation of semantic-release for JS by Stephan
+Bönnemann.
+
+The general idea is to be able to detect what the next version of the project
+should be based on the commits. This tool will use that to automate the whole
+release, upload to an artifact repository and post changelogs to GitHub. You can
+run the tool on a CI service, or just run it locally.

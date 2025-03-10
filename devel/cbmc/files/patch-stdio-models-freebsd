@@ -1,0 +1,315 @@
+From 85ca3e5392902f15d3ce1a4a8004fc7f9a7657d8 Mon Sep 17 00:00:00 2001
+From: Michael Tautschnig <tautschn@amazon.com>
+Date: Fri, 29 Sep 2023 11:45:30 +0000
+Subject: [PATCH] C library: Refine and improve stdio models
+
+Fixes portability to FreeBSD, which redefines several functions as
+macros that would only conditionally call that function. Also, ensure
+that stdin/stdout/stderr point to valid objects when those are
+fdopen'ed.
+--- .github/workflows/bsd.yaml.orig	2024-11-28 20:55:26 UTC
++++ .github/workflows/bsd.yaml
+@@ -63,6 +63,7 @@ jobs:
+             # gmake TAGS='[!shouldfail]' -C jbmc/unit test
+             echo "Run regression tests"
+             gmake -C regression/cbmc test
++            gmake -C regression/cbmc-library test
+             # gmake -C regression test-parallel JOBS=2
+             # gmake -C regression/cbmc test-paths-lifo
+             # env PATH=$PATH:`pwd`/src/solvers gmake -C regression/cbmc test-cprover-smt2
+@@ -125,6 +126,10 @@ jobs:
+             # gmake TAGS='[!shouldfail]' -C jbmc/unit test
+             echo "Run regression tests"
+             gmake -C regression/cbmc test
++            # TODO: fileno and *fprintf tests are failing, requires debugging
++            # https://github.com/openbsd/src/blob/master/include/stdio.h may be
++            # useful (likely need to allocate __sF)
++            gmake -C regression/cbmc-library test || true
+             # gmake -C regression test-parallel JOBS=2
+             # gmake -C regression/cbmc test-paths-lifo
+             # env PATH=$PATH:`pwd`/src/solvers gmake -C regression/cbmc test-cprover-smt2
+@@ -190,6 +195,7 @@ jobs:
+             echo "Run regression tests"
+             # TODO: we need to model some more library functions
+             gmake -C regression/cbmc test || true
++            gmake -C regression/cbmc-library test || true
+             # gmake -C regression test-parallel JOBS=2
+             # gmake -C regression/cbmc test-paths-lifo
+             # env PATH=$PATH:`pwd`/src/solvers gmake -C regression/cbmc test-cprover-smt2
+ .github/workflows/bsd.yaml                    |   6 +
+ regression/cbmc-library/fileno-01/main.c      |   8 +-
+ .../variant_multidimensional_ackermann/main.c |   3 +-
+ src/ansi-c/library/stdio.c                    | 139 +++++++++++++++---
+ 4 files changed, 132 insertions(+), 24 deletions(-)
+
+--- regression/cbmc-library/fileno-01/main.c.orig	2024-11-28 20:55:26 UTC
++++ regression/cbmc-library/fileno-01/main.c
+@@ -3,14 +3,10 @@ int main()
+ 
+ int main()
+ {
+-  // requires initialization of stdin/stdout/stderr
+-  // assert(fileno(stdin) == 0);
+-  // assert(fileno(stdout) == 1);
+-  // assert(fileno(stderr) == 2);
+-
+   int fd;
+   FILE *some_file = fdopen(fd, "");
+-  assert(fileno(some_file) >= -1);
++  if(some_file)
++    assert(fileno(some_file) >= -1);
+ 
+   return 0;
+ }
+--- regression/contracts-dfcc/variant_multidimensional_ackermann/main.c.orig	2024-11-28 20:55:26 UTC
++++ regression/contracts-dfcc/variant_multidimensional_ackermann/main.c
+@@ -8,7 +8,8 @@ int main()
+   int n = 5;
+   int result = ackermann(m, n);
+ 
+-  printf("Result of the Ackermann function: %d\n", result);
++  // we don't currently have contracts on what printf is assigning to
++  // printf("Result of the Ackermann function: %d\n", result);
+   return 0;
+ }
+ 
+--- src/ansi-c/library/stdio.c.orig	2024-11-28 20:55:26 UTC
++++ src/ansi-c/library/stdio.c
+@@ -6,15 +6,7 @@
+ #define __CPROVER_STDIO_H_INCLUDED
+ #endif
+ 
+-/* undefine macros in OpenBSD's stdio.h that are problematic to the checker. */
+-#if defined(__OpenBSD__)
+-#undef getchar
+ #undef putchar
+-#undef getc
+-#undef feof
+-#undef ferror
+-#undef fileno
+-#endif
+ 
+ __CPROVER_bool __VERIFIER_nondet___CPROVER_bool(void);
+ 
+@@ -237,7 +229,8 @@ __CPROVER_HIDE:;
+   __CPROVER_set_must(stream, "closed");
+ #endif
+   int return_value=__VERIFIER_nondet_int();
+-  free(stream);
++  if(stream != stdin && stream != stdout && stream != stderr)
++    free(stream);
+   return return_value;
+ }
+ 
+@@ -253,25 +246,83 @@ __CPROVER_HIDE:;
+ #define __CPROVER_STDLIB_H_INCLUDED
+ #endif
+ 
++#ifndef __CPROVER_ERRNO_H_INCLUDED
++#  include <errno.h>
++#  define __CPROVER_ERRNO_H_INCLUDED
++#endif
++
+ FILE *fdopen(int handle, const char *mode)
+ {
+   __CPROVER_HIDE:;
+-  (void)handle;
++    if(handle < 0)
++    {
++      errno = EBADF;
++      return NULL;
++    }
+   (void)*mode;
+ #ifdef __CPROVER_STRING_ABSTRACTION
+   __CPROVER_assert(__CPROVER_is_zero_string(mode),
+     "fdopen zero-termination of 2nd argument");
+ #endif
+ 
+-#if !defined(__linux__) || defined(__GLIBC__)
+-  FILE *f=malloc(sizeof(FILE));
++#if defined(_WIN32) || defined(__OpenBSD__) || defined(__NetBSD__)
++  switch(handle)
++  {
++  case 0:
++    return stdin;
++  case 1:
++    return stdout;
++  case 2:
++    return stderr;
++  default:
++  {
++    FILE *f = malloc(sizeof(FILE));
++    __CPROVER_assume(fileno(f) == handle);
++    return f;
++  }
++  }
+ #else
+-  // libraries need to expose the definition of FILE; this is the
++#  if !defined(__linux__) || defined(__GLIBC__)
++  static FILE stdin_file;
++  static FILE stdout_file;
++  static FILE stderr_file;
++#  else
++  // libraries need not expose the definition of FILE; this is the
+   // case for musl
+-  FILE *f=malloc(sizeof(int));
+-#endif
++  static int stdin_file;
++  static int stdout_file;
++  static int stderr_file;
++#  endif
+ 
++  FILE *f = NULL;
++  switch(handle)
++  {
++  case 0:
++    stdin = &stdin_file;
++    __CPROVER_havoc_object(&stdin_file);
++    f = &stdin_file;
++    break;
++  case 1:
++    stdout = &stdout_file;
++    __CPROVER_havoc_object(&stdout_file);
++    f = &stdout_file;
++    break;
++  case 2:
++    stderr = &stderr_file;
++    __CPROVER_havoc_object(&stderr_file);
++    f = &stderr_file;
++    break;
++  default:
++#  if !defined(__linux__) || defined(__GLIBC__)
++    f = malloc(sizeof(FILE));
++#  else
++    f = malloc(sizeof(int));
++#  endif
++  }
++
++  __CPROVER_assume(fileno(f) == handle);
+   return f;
++#endif
+ }
+ 
+ /* FUNCTION: _fdopen */
+@@ -291,19 +342,60 @@ FILE *fdopen(int handle, const char *mode)
+ #define __CPROVER_STDLIB_H_INCLUDED
+ #endif
+ 
++#ifndef __CPROVER_ERRNO_H_INCLUDED
++#  include <errno.h>
++#  define __CPROVER_ERRNO_H_INCLUDED
++#endif
++
+ #ifdef __APPLE__
++
++#  ifndef LIBRARY_CHECK
++FILE *stdin;
++FILE *stdout;
++FILE *stderr;
++#  endif
++
+ FILE *_fdopen(int handle, const char *mode)
+ {
+   __CPROVER_HIDE:;
+-  (void)handle;
++    if(handle < 0)
++    {
++      errno = EBADF;
++      return NULL;
++    }
+   (void)*mode;
+ #ifdef __CPROVER_STRING_ABSTRACTION
+   __CPROVER_assert(__CPROVER_is_zero_string(mode),
+     "fdopen zero-termination of 2nd argument");
+ #endif
+ 
+-  FILE *f=malloc(sizeof(FILE));
++  static FILE stdin_file;
++  static FILE stdout_file;
++  static FILE stderr_file;
+ 
++  FILE *f = NULL;
++  switch(handle)
++  {
++  case 0:
++    stdin = &stdin_file;
++    __CPROVER_havoc_object(&stdin_file);
++    f = &stdin_file;
++    break;
++  case 1:
++    stdout = &stdout_file;
++    __CPROVER_havoc_object(&stdout_file);
++    f = &stdout_file;
++    break;
++  case 2:
++    stderr = &stderr_file;
++    __CPROVER_havoc_object(&stderr_file);
++    f = &stderr_file;
++    break;
++  default:
++    f = malloc(sizeof(FILE));
++  }
++
++  __CPROVER_assume(fileno(f) == handle);
+   return f;
+ }
+ #endif
+@@ -506,6 +598,8 @@ __CPROVER_HIDE:;
+ #define __CPROVER_STDIO_H_INCLUDED
+ #endif
+ 
++#undef feof
++
+ int __VERIFIER_nondet_int(void);
+ 
+ int feof(FILE *stream)
+@@ -538,6 +632,8 @@ int feof(FILE *stream)
+ #define __CPROVER_STDIO_H_INCLUDED
+ #endif
+ 
++#undef ferror
++
+ int __VERIFIER_nondet_int(void);
+ 
+ int ferror(FILE *stream)
+@@ -570,6 +666,8 @@ int ferror(FILE *stream)
+ #define __CPROVER_STDIO_H_INCLUDED
+ #endif
+ 
++#undef fileno
++
+ int __VERIFIER_nondet_int(void);
+ 
+ int fileno(FILE *stream)
+@@ -735,6 +833,8 @@ int fgetc(FILE *stream)
+ #define __CPROVER_STDIO_H_INCLUDED
+ #endif
+ 
++#undef getc
++
+ int __VERIFIER_nondet_int(void);
+ 
+ int getc(FILE *stream)
+@@ -771,6 +871,8 @@ int getc(FILE *stream)
+ #define __CPROVER_STDIO_H_INCLUDED
+ #endif
+ 
++#undef getchar
++
+ int __VERIFIER_nondet_int(void);
+ 
+ int getchar(void)
+@@ -1939,10 +2041,13 @@ FILE *__acrt_iob_func(unsigned fd)
+   switch(fd)
+   {
+   case 0:
++    __CPROVER_havoc_object(&stdin_file);
+     return &stdin_file;
+   case 1:
++    __CPROVER_havoc_object(&stdout_file);
+     return &stdout_file;
+   case 2:
++    __CPROVER_havoc_object(&stderr_file);
+     return &stderr_file;
+   default:
+     return (FILE *)0;

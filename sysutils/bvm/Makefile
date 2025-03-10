@@ -1,9 +1,8 @@
 PORTNAME=	bvm
-PORTVERSION=	1.3.3
-PORTREVISION=	1
+DISTVERSION=	1.3.5
 CATEGORIES=	sysutils
 
-MAINTAINER=	guoqiang_cn@126.com
+MAINTAINER=	bigdragonsoft@gmail.com
 COMMENT=	Bhyve VM Manager
 WWW=		https://github.com/bigdragonsoft/bvm
 

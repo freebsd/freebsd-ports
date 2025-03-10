@@ -1,5 +1,6 @@
 PORTNAME=	qemu
-DISTVERSION=	8.3.0.20240229
+DISTVERSION=	9.1.0.20241130
+PORTREVISION=	1
 CATEGORIES=	emulators
 PKGNAMESUFFIX=	-devel
 DIST_SUBDIR=	qemu/${PORTVERSION}
@@ -10,7 +11,7 @@ WWW=		https://www.qemu.org/
 
 LICENSE=	GPLv2
 
-ONLY_FOR_ARCHS=	amd64 i386 powerpc powerpc64 powerpc64 powerpc64le
+ONLY_FOR_ARCHS=	amd64 powerpc powerpc64 powerpc64 powerpc64le
 
 BUILD_DEPENDS=	sphinx-build:textproc/py-sphinx \
 		${PYTHON_PKGNAMEPREFIX}sphinx_rtd_theme>0:textproc/py-sphinx_rtd_theme@${PY_FLAVOR} \
@@ -23,11 +24,11 @@ USES=		bison compiler:c11 cpe gmake gnome iconv:wchar_t localbase:ldflags \
 		ninja perl5 pkgconfig python:build shebangfix tar:xz xorg
 USE_GITLAB=	yes
 GL_ACCOUNT=	qemu-project
-GL_TAGNAME=	ff202817dc2b0b3b42992fa7f1ce503f081068fe
+GL_TAGNAME=	72b88908d12ee9347d13539c7dd9a252625158d1
 GL_TUPLE=	qemu-project:keycodemapdb:f5772a62ec52591ff6870b7e8ef32482371f22c6:keycodemapdb/subprojects/keycodemapdb \
 		qemu-project:dtc:b6910bec11614980a21e46fbccc35934b671bd81:dtc/subprojects/dtc \
 		qemu-project:libvfio-user:0b28d205572c80b568a1003db2c8f37ca333e4d7:libvfio/subprojects/libvfio-user \
-		qemu-project:meson:aee941559c4b88a062e88186819a820c69c200ae:meson/meson \
+		qemu-project:meson:fd309fff248bb697498befa89c3b81049b8b2c0c:meson/meson \
 		qemu-project:berkeley-softfloat-3:b64af41c3276f97f0e181920400ee056b9c88037:berkeleysoftfloat3/subprojects/berkeley-softfloat-3 \
 		qemu-project:berkeley-testfloat-3:e7af9751d9f9fd3b47911f51a5cfd08af256a9ab:berkeleytestfloat3/subprojects/berkeley-testfloat-3
 USE_GNOME=	cairo glib20
@@ -47,6 +48,8 @@ CONFIGURE_ARGS=	--localstatedir=/var --mandir=share/man --extra-ldflags=-L\"/usr
 
 CFLAGS:=	${CFLAGS:C/-fno-tree-vrp//}
 WITHOUT_CPU_CFLAGS=yes	#to avoid problems with register allocation
+
+BINARY_ALIAS=	python3=${PYTHON_VERSION}
 
 PORTDOCS=	.buildinfo _static/* about/* dbus-dbusindex.html devel/* \
 			docs genindex.html index.html interop/* objects.inv \

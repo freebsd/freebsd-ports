@@ -1,11 +1,12 @@
 PORTNAME=	gap
-DISTVERSION=	4.13.1
+DISTVERSION=	4.14.0
 CATEGORIES=	math
 MASTER_SITES=	https://github.com/gap-system/gap/releases/download/v${DISTVERSION}/
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	System for computational discrete algebra
-WWW=		https://www.gap-system.org/
+WWW=		https://www.gap-system.org/ \
+		https://github.com/gap-system/gap
 
 LICENSE=	GPLv2+
 

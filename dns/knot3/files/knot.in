@@ -45,11 +45,17 @@
 
 . /etc/rc.subr
 
+# Workaround due to bug in service(8)
+name="$file" ;
+
 case "$0" in
 /etc/rc*)
 	# during boot (shutdown) $0 is /etc/rc (/etc/rc.shutdown),
 	# so get the name of the script from $_file
 	name="$_file"
+	;;
+*/service)
+	# do not use this as $0
 	;;
 *)
 	name="$0"

@@ -1,7 +1,7 @@
 PORTNAME=	harfbuzz
 PORTVERSION=	2.7.4
 DISTVERSIONSUFFIX=	-10.el9
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	print linux
 
 MAINTAINER=	emulation@FreeBSD.org
@@ -12,10 +12,11 @@ USES=		cpe linux:rl9
 USE_LDCONFIG=	yes
 USE_LINUX=	graphite2
 USE_LINUX_RPM=	yes
+WANT_LINUX32=	yes
 
 CPE_VENDOR=	harfbuzz_project
 
-DESCR=		${.CURDIR}/../${PORTNAME}/pkg-descr
+DESCR=		${PORTSDIR}/${PKGCATEGORY}/${PORTNAME}/pkg-descr
 
 OPTIONS_DEFINE=	DOCS
 

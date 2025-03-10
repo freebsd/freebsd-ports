@@ -20,4 +20,6 @@ WRKSRC=		${WRKDIR}/Xev111
 ALL_TARGET=	xbat
 USE_GCC=	yes # segfaults when compiled with clang
 
+CFLAGS+=	-fpermissive
+
 .include <bsd.port.mk>

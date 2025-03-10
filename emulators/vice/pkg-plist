@@ -64,6 +64,7 @@ bin/xvic
 %%DATADIR%%/C128/kernalfr
 %%DATADIR%%/C128/kernalit
 %%DATADIR%%/C128/kernalno
+%%DATADIR%%/C128/lemon64.vpl
 %%DATADIR%%/C128/pc64.vpl
 %%DATADIR%%/C128/palette.vpl
 %%DATADIR%%/C128/palette_6569R1_v1r.vpl
@@ -132,6 +133,7 @@ bin/xvic
 %%DATADIR%%/C64/kernal-901227-03.bin
 %%DATADIR%%/C64/kernal-901246-01.bin
 %%DATADIR%%/C64/kernal-906145-02.bin
+%%DATADIR%%/C64/lemon64.vpl
 %%DATADIR%%/C64/palette.vpl
 %%DATADIR%%/C64/palette_6569R1_v1r.vpl
 %%DATADIR%%/C64/palette_6569R5_v1r.vpl
@@ -425,6 +427,7 @@ bin/xvic
 %%GTK3UI%%%%DATADIR%%/SCPU64/gtk3_sym_tr.vkm
 %%GTK3UI%%%%DATADIR%%/SCPU64/gtk3_sym_uk.vkm
 %%GTK3UI%%%%DATADIR%%/SCPU64/gtk3_the64_de.vkm
+%%DATADIR%%/SCPU64/lemon64.vpl
 %%DATADIR%%/SCPU64/palette.vpl
 %%DATADIR%%/SCPU64/palette_6569R1_v1r.vpl
 %%DATADIR%%/SCPU64/palette_6569R5_v1r.vpl
@@ -526,6 +529,13 @@ bin/xvic
 %%DATADIR%%/common/PET_32.png
 %%DATADIR%%/common/PET_48.png
 %%DATADIR%%/common/PET_64.png
+%%DATADIR%%/common/PetMe.ttf
+%%DATADIR%%/common/PetMe128.ttf
+%%DATADIR%%/common/PetMe1282Y.ttf
+%%DATADIR%%/common/PetMe2X.ttf
+%%DATADIR%%/common/PetMe2Y.ttf
+%%DATADIR%%/common/PetMe64.ttf
+%%DATADIR%%/common/PetMe642Y.ttf
 %%DATADIR%%/common/Plus4_1024.svg
 %%DATADIR%%/common/Plus4_16.png
 %%DATADIR%%/common/Plus4_24.png
@@ -658,6 +668,7 @@ bin/xvic
 %%PORTDOCS%%%%DOCSDIR%%/html/vice_21.html
 %%PORTDOCS%%%%DOCSDIR%%/html/vice_22.html
 %%PORTDOCS%%%%DOCSDIR%%/html/vice_23.html
+%%PORTDOCS%%%%DOCSDIR%%/html/vice_24.html
 %%PORTDOCS%%%%DOCSDIR%%/html/vice_3.html
 %%PORTDOCS%%%%DOCSDIR%%/html/vice_4.html
 %%PORTDOCS%%%%DOCSDIR%%/html/vice_5.html

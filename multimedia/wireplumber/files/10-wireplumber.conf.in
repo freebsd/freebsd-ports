@@ -1,0 +1,4 @@
+context.exec = [
+    { path = "%%PREFIX%%/bin/wireplumber" args = ""
+      condition = [ { exec.session-manager = null } { exec.session-manager = true } ] }
+]

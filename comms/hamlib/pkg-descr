@@ -1,7 +1,4 @@
-The Ham Radio Control Libraries, Hamlib for short, is a development effort
-to provide a consistent interface for programmers wanting to incorporate
-radio control in their programs.
-Hamlib will allow authors of software logging programs, digital communications
-programs, or those wanting to develop the ultimate radio control software to
-concentrate on the user interface and the basic function of the program rather
-than radio control.
+The Ham Radio Control Library hamlib, for short is a project to provide programs
+with a consistent Application Programming Interface (API) for controlling the
+myriad of radios and rotators available to amateur radio and communications
+users.

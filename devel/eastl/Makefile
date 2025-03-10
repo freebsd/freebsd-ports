@@ -1,6 +1,5 @@
 PORTNAME=	eastl
-DISTVERSION=	3.21.12-9
-DISTVERSIONSUFFIX=	-g089eb20
+DISTVERSION=	3.21.23
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -20,13 +19,15 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	electronicarts
 GH_PROJECT=	${PORTNAME:tu}
 GH_TUPLE=	electronicarts:EAAssert:e5e1812:EAAssert/test/packages/EAAssert \
-		electronicarts:EABase:521cb05:EABase/test/packages/EABase \
+		electronicarts:EABase:123363eb82e132c0181ac53e43226d8ee76dea12:EABase/EABase \
 		electronicarts:EAMain:24ca8bf:EAMain/test/packages/EAMain \
 		electronicarts:EAStdC:8dc9e31:EAStdC/test/packages/EAStdC \
 		electronicarts:EATest:a59b372:EATest/test/packages/EATest \
 		electronicarts:EAThread:e4367a3:EAThread/test/packages/EAThread
 
 CMAKE_ON=	BUILD_SHARED_LIBS
+
+CXXFLAGS+=	-isystem ${WRKSRC}/EABase/include/Common
 
 do-test:
 	@cd ${BUILD_WRKSRC} && \

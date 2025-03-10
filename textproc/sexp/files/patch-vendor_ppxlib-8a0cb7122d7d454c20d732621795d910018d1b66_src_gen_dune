@@ -1,0 +1,8 @@
+--- vendor/ppxlib-8a0cb7122d7d454c20d732621795d910018d1b66/src/gen/dune.orig	2024-09-27 08:20:04 UTC
++++ vendor/ppxlib-8a0cb7122d7d454c20d732621795d910018d1b66/src/gen/dune
+@@ -2,4 +2,4 @@
+  (names gen_ast_pattern gen_ast_builder)
+  (flags
+   (:standard -safe-string))
+- (libraries ppxlib_ast astlib ppxlib_traverse_builtins stdppx stdlib-shims))
++ (libraries ppxlib_ast astlib ppxlib_traverse_builtins stdppx))

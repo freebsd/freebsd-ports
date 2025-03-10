@@ -63,7 +63,6 @@
 %%PMWIKIDIR%%/wikilib.d/PmWiki.RefCount
 %%PMWIKIDIR%%/wikilib.d/PmWiki.PmWikiPhilosophy
 %%PMWIKIDIR%%/wikilib.d/PmWiki.PmWiki
-%%PMWIKIDIR%%/wikilib.d/PmWiki.PerGroupCustomizations
 %%PMWIKIDIR%%/wikilib.d/PmWiki.PatrickMichaud
 %%PMWIKIDIR%%/wikilib.d/PmWiki.PathVariables
 %%PMWIKIDIR%%/wikilib.d/PmWiki.PasswordsAdmin
@@ -192,8 +191,6 @@
 %%PMWIKIDIR%%/pub/skins/pmwiki-responsive/skin.js
 %%PMWIKIDIR%%/pub/skins/pmwiki-responsive/skin.css
 %%PMWIKIDIR%%/pub/skins/pmwiki-responsive/README
-%%PMWIKIDIR%%/pub/pmwiki-darktoggle.js
-%%PMWIKIDIR%%/pub/pmwiki-utils.js
 %%PMWIKIDIR%%/pub/guiedit/underline.gif
 %%PMWIKIDIR%%/pub/guiedit/ul.gif
 %%PMWIKIDIR%%/pub/guiedit/table.gif
@@ -205,8 +202,6 @@
 %%PMWIKIDIR%%/pub/guiedit/save.gif
 %%PMWIKIDIR%%/pub/guiedit/right.gif
 %%PMWIKIDIR%%/pub/guiedit/preview.gif
-%%PMWIKIDIR%%/pub/guiedit/pmwiki.syntax.js
-%%PMWIKIDIR%%/pub/guiedit/pmwiki.syntax.css
 %%PMWIKIDIR%%/pub/guiedit/pagelink.gif
 %%PMWIKIDIR%%/pub/guiedit/outdent.gif
 %%PMWIKIDIR%%/pub/guiedit/ol.gif
@@ -227,6 +222,12 @@
 %%PMWIKIDIR%%/pub/guiedit/big.gif
 %%PMWIKIDIR%%/pub/guiedit/attach.gif
 %%PMWIKIDIR%%/pub/guiedit/README
+%%PMWIKIDIR%%/pub/lib/pmwiki-core.css
+%%PMWIKIDIR%%/pub/lib/pmwiki-darktoggle.js
+%%PMWIKIDIR%%/pub/lib/pmwiki-lib.js
+%%PMWIKIDIR%%/pub/lib/pmwiki-utils.js
+%%PMWIKIDIR%%/pub/lib/pmwiki.syntax.css
+%%PMWIKIDIR%%/pub/lib/pmwiki.syntax.js
 %%PMWIKIDIR%%/pmwiki.php
 %%PMWIKIDIR%%/local/.htaccess
 %%PMWIKIDIR%%/cookbook/.htaccess

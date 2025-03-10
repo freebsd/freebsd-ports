@@ -3,7 +3,7 @@ DISTVERSION=	g20220816
 PORTREVISION= 	1
 CATEGORIES=	editors
 
-MAINTAINER=	michael.osipov@siemens.com
+MAINTAINER=	michael.osipov@innomotics.com
 COMMENT=	Legacy colorschemes for Vim
 WWW=		https://github.com/vim/colorschemes
 

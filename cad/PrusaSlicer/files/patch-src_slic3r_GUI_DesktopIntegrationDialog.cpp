@@ -1,4 +1,4 @@
---- src/slic3r/GUI/DesktopIntegrationDialog.cpp.orig	2023-12-12 14:21:21 UTC
+--- src/slic3r/GUI/DesktopIntegrationDialog.cpp.orig	2024-12-20 11:54:34 UTC
 +++ src/slic3r/GUI/DesktopIntegrationDialog.cpp
 @@ -3,7 +3,7 @@
  ///|/

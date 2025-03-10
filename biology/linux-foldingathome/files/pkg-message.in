@@ -26,7 +26,12 @@ Here is a list of steps to quickly get started with Folding@home on FreeBSD:
 
 		service fahclient start
 
-At this point, the daemon should be up and folding.
+At this point, the daemon should be up. By default it listens on http://localhost:7396
+for incoming HTTP connections. There you can login and configure and/or
+register/connect with your F@H account. If you have already an existing account you
+can join by getting the account-token from there and adding it either to a config
+file or by running
+	sysrc fahclient_extra_flags+=" --account-token=<your-token>"
 
 Additional notes
 ================

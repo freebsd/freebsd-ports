@@ -1,0 +1,13 @@
+--- Makefile.orig	2024-10-15 14:24:20 UTC
++++ Makefile
+@@ -40,8 +40,8 @@ ifdef ARCH_CFLAGS_IS_SET
+ ifdef ARCH_CFLAGS_IS_SET
+     ifeq ($(processor),$(filter $(processor),aarch64 arm64))
+         override ARCH_CFLAGS := -march=armv8-a+fp+simd
+-    else ifeq ($(processor),$(filter $(processor),i386 x86_64))
+-        override ARCH_CFLAGS := -maes -mpclmul -mssse3 -msse4.2
++    else ifeq ($(processor),$(filter $(processor),amd64 i386 x86_64))
++        override ARCH_CFLAGS := -maes -mpclmul -msse -msse2 -msse3 -mssse3 -msse4.2
+     else ifeq ($(processor),$(filter $(processor),arm armv7 armv7l))
+         override ARCH_CFLAGS := -mfpu=neon
+     else

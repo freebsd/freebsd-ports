@@ -1,6 +1,6 @@
---- chrome/browser/metrics/power/process_monitor.cc.orig	2024-06-17 12:56:06 UTC
+--- chrome/browser/metrics/power/process_monitor.cc.orig	2025-01-15 09:18:26 UTC
 +++ chrome/browser/metrics/power/process_monitor.cc
-@@ -64,7 +64,7 @@ ProcessMonitor::Metrics SampleMetrics(base::ProcessMet
+@@ -65,7 +65,7 @@ ProcessMonitor::Metrics SampleMetrics(base::ProcessMet
        process_metrics.GetPlatformIndependentCPUUsage());
  
  #if BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || \
@@ -9,7 +9,7 @@
    metrics.idle_wakeups = process_metrics.GetIdleWakeupsPerSecond();
  #endif
  #if BUILDFLAG(IS_MAC)
-@@ -82,7 +82,7 @@ void ScaleMetrics(ProcessMonitor::Metrics* metrics, do
+@@ -83,7 +83,7 @@ void ScaleMetrics(ProcessMonitor::Metrics* metrics, do
    }
  
  #if BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || \

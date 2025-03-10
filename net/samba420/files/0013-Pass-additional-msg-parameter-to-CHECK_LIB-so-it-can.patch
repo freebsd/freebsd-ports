@@ -1,0 +1,70 @@
+From 6be12b41eb0f71cfc25b5df6659dd176bd681621 Mon Sep 17 00:00:00 2001
+From: "Timur I. Bakeyev" <timur@FreeBSD.org>
+Date: Thu, 8 Sep 2022 00:25:05 +0200
+Subject: [PATCH 13/28] Pass additional msg parameter to CHECK_LIB(), so it can
+ be transited to the conf.check(), which allows us to specify `match`
+ parameter to opt.add_option().
+
+Signed-off-by: Timur I. Bakeyev <timur@FreeBSD.org>
+---
+ buildtools/wafsamba/samba_autoconf.py | 9 ++++++---
+ buildtools/wafsamba/wscript           | 9 +++++++--
+ 2 files changed, 13 insertions(+), 5 deletions(-)
+
+diff --git a/buildtools/wafsamba/samba_autoconf.py b/buildtools/wafsamba/samba_autoconf.py
+index cf87c8bb9ff..f6c72d99125 100644
+--- a/buildtools/wafsamba/samba_autoconf.py
++++ b/buildtools/wafsamba/samba_autoconf.py
+@@ -593,7 +593,7 @@ def library_flags(self, libs):
+ 
+ 
+ @conf
+-def CHECK_LIB(conf, libs, mandatory=False, empty_decl=True, set_target=True, shlib=False):
++def CHECK_LIB(conf, libs, mandatory=False, empty_decl=True, set_target=True, shlib=False, msg=None):
+     '''check if a set of libraries exist as system libraries
+ 
+     returns the sublist of libs that do exist as a syslib or []
+@@ -613,11 +613,14 @@ int foo()
+             ret.append(lib)
+             continue
+ 
++        if msg is None:
++            msg = 'Checking for library %s' % lib
++
+         (ccflags, ldflags, cpppath) = library_flags(conf, lib)
+         if shlib:
+-            res = conf.check(features='c cshlib', fragment=fragment, lib=lib, uselib_store=lib, cflags=ccflags, ldflags=ldflags, uselib=lib.upper(), mandatory=False)
++            res = conf.check(features='c cshlib', fragment=fragment, lib=lib, uselib_store=lib, cflags=ccflags, ldflags=ldflags, uselib=lib.upper(), mandatory=False, msg=msg)
+         else:
+-            res = conf.check(lib=lib, uselib_store=lib, cflags=ccflags, ldflags=ldflags, uselib=lib.upper(), mandatory=False)
++            res = conf.check(lib=lib, uselib_store=lib, cflags=ccflags, ldflags=ldflags, uselib=lib.upper(), mandatory=False, msg=msg)
+ 
+         if not res:
+             if mandatory:
+diff --git a/buildtools/wafsamba/wscript b/buildtools/wafsamba/wscript
+index a4d6f3e5c49..c047e1e8b5a 100644
+--- a/buildtools/wafsamba/wscript
++++ b/buildtools/wafsamba/wscript
+@@ -133,12 +133,17 @@ Currently the only tested value is 'smbtorture,smbd/smbd' for Samba'''),
+                    help=("private library directory [PREFIX/lib/%s]" % Context.g_module.APPNAME),
+                    action="store", dest='PRIVATELIBDIR', default=None)
+ 
++    opt.add_option('--with-openldap',
++                   help='additional directory to search for OpenLDAP libs',
++                   action='store', dest='ldap_open', default=None,
++                   match = ['Checking for library lber', 'Checking for library ldap'])
++
+     opt.add_option('--with-libiconv',
+                    help='additional directory to search for libiconv',
+-                   action='store', dest='iconv_open', default='/usr/local',
++                   action='store', dest='iconv_open', default=None,
+                    match = ['Checking for library iconv', 'Checking for iconv_open', 'Checking for header iconv.h'])
+     opt.add_option('--without-gettext',
+-                   help=("Disable use of gettext"),
++                   help=("disable use of gettext"),
+                    action="store_true", dest='disable_gettext', default=False)
+ 
+     gr = opt.option_group('developer options')
+-- 
+2.37.1
+

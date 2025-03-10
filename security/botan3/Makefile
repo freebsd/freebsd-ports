@@ -1,5 +1,5 @@
 PORTNAME=	botan
-DISTVERSION=	3.5.0
+DISTVERSION=	3.7.1
 CATEGORIES=	security
 MASTER_SITES=	http://botan.randombit.net/releases/
 PKGNAMESUFFIX=	${_BOTANMAJOR}
@@ -37,7 +37,7 @@ LDFLAGS+=		-pthread
 
 DOCSDIR=	${LOCALBASE}/share/doc/${PORTNAME}-${PORTVERSION}
 
-_SOABIVER=	5
+_SOABIVER=	7
 _BOTANMAJOR=	${DISTVERSION:S/./ /g:[1]}
 _SHLIBVER=	${DISTVERSION:S/./ /g:[2]}
 _SHLIBVERPATCH=	${DISTVERSION:S/./ /g:[3]}
@@ -51,7 +51,8 @@ OPTIONS_DEFINE=			DOCS MANPAGES PYTHON SQLITE3
 OPTIONS_DEFAULT=		MANPAGES
 OPTIONS_SUB=			yes
 
-MANPAGES_BUILD_DEPENDS=		${PYTHON_PKGNAMEPREFIX}sphinx>=0:textproc/py-sphinx@${PY_FLAVOR}
+MANPAGES_BUILD_DEPENDS=		${PYTHON_PKGNAMEPREFIX}sphinx>=0:textproc/py-sphinx@${PY_FLAVOR} \
+				${PYTHON_PKGNAMEPREFIX}furo>=2022.6.21:textproc/py-furo@${PY_FLAVOR}
 MANPAGES_CONFIGURE_WITH=	sphinx
 
 PYTHON_USES=		python
@@ -83,11 +84,6 @@ PLIST_SUB+=	HAS_RDRAND_RNG="@comment "
 PLIST_SUB+=	HAS_PROCESSOR_RNG=""
 .else
 PLIST_SUB+=	HAS_PROCESSOR_RNG="@comment "
-.endif
-
-.if ${OPSYS} == FreeBSD && ( ( ${OSVERSION} >= 1400000 && ${OSVERSION} < 1400091 ) || ( ${OSVERSION} < 1302507 ) )
-# libc++ does not carry std::ranges::find, redirect to boost::range::find:
-EXTRA_PATCHES+= ${FILESDIR}/extrapatch-src_tests_unit__x509.cpp
 .endif
 
 post-patch:

@@ -1,6 +1,5 @@
 PORTNAME=	nautilus
-PORTVERSION=	42.2
-PORTREVISION=	3
+PORTVERSION=	47.2
 CATEGORIES=	x11-fm gnome
 MASTER_SITES=	GNOME/sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+)\..*/\1/}
 DIST_SUBDIR=	gnome
@@ -14,21 +13,23 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libgexiv2.so:graphics/gexiv2 \
 		libgnome-autoar-0.so:archivers/gnome-autoar \
-		libhandy-1.so:x11-toolkits/libhandy \
 		libportal.so:deskutils/libportal \
-		libportal-gtk3.so:deskutils/libportal-gtk3 \
+		libportal-gtk4.so:deskutils/libportal-gtk4 \
 		libtotem.so:multimedia/totem \
-		libtracker-sparql-3.0.so:sysutils/tracker3
+		libtinysparql-3.0.so:devel/tinysparql \
+		libcloudproviders.so:net/libcloudproviders
+RUN_DEPENDS=	localsearch:sysutils/localsearch
 
 PORTSCOUT=	limitw:1,even
 
 USES=		compiler:c11 cpe desktop-file-utils gettext gnome gstreamer localbase meson \
 		pkgconfig python:build tar:xz xorg
-USE_GNOME=	cairo gdkpixbuf2 gnomedesktop3
+USE_GNOME=	cairo gdkpixbuf2 gnomedesktop3 libadwaita
 USE_LDCONFIG=	yes
 USE_XORG=	x11
 MESON_ARGS=	-Dpackagekit=false \
-		-Dselinux=false
+		-Dselinux=false \
+		-Dtests=none
 BINARY_ALIAS=	python3=${PYTHON_VERSION}
 CPE_VENDOR=	gnome
 

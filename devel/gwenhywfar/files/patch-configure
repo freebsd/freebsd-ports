@@ -1,9 +1,11 @@
-Fix dectection of fox libs
-Prevent linking to unneeded Qt5 libraries
+Hunk 1: Fix dectection of fox libs.
+Hunk 2,3: Remove leftover file so temp directory is cleaned.
+Hunk 3: Use pkgconf for QT_LIBS. The other method produces the full path to the
+library which libtool seems to discard.
 
---- configure.orig	2022-02-15 16:09:36 UTC
+--- configure.orig	2024-12-17 18:57:54 UTC
 +++ configure
-@@ -23446,7 +23446,7 @@ $as_echo_n "checking for fox libraries... " >&6; }
+@@ -23442,7 +23442,7 @@ if test "${with_fox_libs+set}" = set; then :
  
  # Check whether --with-fox-libs was given.
  if test "${with_fox_libs+set}" = set; then :
@@ -12,27 +14,22 @@ Prevent linking to unneeded Qt5 libraries
  else
  
        ac_ext=cpp
-@@ -25042,8 +25042,8 @@ percent.commands = @echo -n "\$(\$(@))\ "
- QMAKE_EXTRA_TARGETS += percent
+@@ -25024,6 +25024,7 @@ $as_echo_n "checking for Qt... " >&6; }
+     am_have_qt_dir=`mktemp -d`
+     am_have_qt_pro="$am_have_qt_dir/test.pro"
+     am_have_qt_makefile="$am_have_qt_dir/Makefile"
++    am_have_qt_stash="$am_have_qt_dir/.qmake.stash"
+     # http://qt-project.org/doc/qt-5/qmake-variable-reference.html#qt
+     cat > $am_have_qt_pro << EOF
+ win32 {
+@@ -25039,8 +25040,8 @@ EOF
  EOF
      $QT_QMAKE $am_have_qt_pro -o $am_have_qt_makefile
--    QT_CXXFLAGS=`cd $am_have_qt_dir; make -s -f $am_have_qt_makefile CXXFLAGS INCPATH`
+     QT_CXXFLAGS=`cd $am_have_qt_dir; make -s -f $am_have_qt_makefile CXXFLAGS INCPATH`
 -    QT_LIBS=`cd $am_have_qt_dir; make -s -f $am_have_qt_makefile LIBS`
-+    QT_CXXFLAGS=`cd $am_have_qt_dir; make -s -f $am_have_qt_makefile -VCXXFLAGS -VINCPATH | tr '\n' ' '`
-+    QT_LIBS=`cd $am_have_qt_dir; make -s -f $am_have_qt_makefile -VLIBS | tr '\n' ' '`
-     rm $am_have_qt_pro $am_have_qt_makefile
+-    rm $am_have_qt_pro $am_have_qt_makefile
++    QT_LIBS=`pkgconf --libs Qt5Widgets gl`
++    rm $am_have_qt_pro $am_have_qt_makefile $am_have_qt_stash
      rmdir $am_have_qt_dir
  
-@@ -25067,9 +25067,9 @@ else
- fi
- 
- 
--    QT_RCC=`which rcc`
--    QT_LRELEASE=`which lrelease`
--    QT_LUPDATE=`which lupdate`
-+    QT_RCC=#none
-+    QT_LRELEASE=#none
-+    QT_LUPDATE=#none
- 
-     # Get Qt version from qmake
-     QT_DIR=`$QT_QMAKE --version | grep -o -E /.+`
+     # Look for specific tools in $PATH

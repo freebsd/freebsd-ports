@@ -11,6 +11,7 @@ lib/cmake/scalapack-%%PORTVERSION%%/scalapack-targets.cmake
 lib/libscalapack.a
 lib/libscalapack.so
 lib/libscalapack.so.%%SVERSION%%
+lib/libscalapack.so.%%VER%%
 libdata/pkgconfig/scalapack.pc
 %%DATADIR%%/TESTING/BLLT.dat
 %%DATADIR%%/TESTING/BLU.dat

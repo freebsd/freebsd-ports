@@ -8,21 +8,18 @@ WWW=		https://www.kde.org/applications/games/
 
 LIB_DEPENDS=	libsndfile.so:audio/libsndfile
 
-USES=		cmake compiler:c++11-lang gettext kde:5 openal qt:5 \
-		tar:xz
+USES=		cmake compiler:c++11-lang gettext kde:6 openal qt:6 tar:xz
 USE_KDE=	archive attica auth bookmarks codecs completion config \
-		configwidgets coreaddons crash dbusaddons dnssd emoticons \
-		globalaccel guiaddons i18n iconthemes init itemmodels \
-		itemviews jobwidgets kdeclarative kdelibs4support kio newstuff \
-		package service textwidgets widgetsaddons xmlgui \
+		configwidgets coreaddons crash dbusaddons dnssd globalaccel \
+		guiaddons i18n iconthemes itemmodels itemviews jobwidgets \
+		kdeclarative kio newstuff package service textwidgets \
+		widgetsaddons xmlgui \
 		ecm:build
-USE_QT=		core dbus declarative gui network svg widgets xml \
-		buildtools:build qmake:build testlib:build
+USE_QT=		base declarative
 USE_LDCONFIG=	yes
 
-SHLIB_VER=	7.3.1
-PLIST_SUB+=	SHLIB_VER="${SHLIB_VER}" \
-		SHLIB_SHVER="${SHLIB_VER:R:R}"
+_${PORTNAME}_PROJECT_VERSION=	6.0
+PLIST_SUB+=	SHLIB_SHVER="${_${PORTNAME}_PROJECT_VERSION:R}"
 
 OPTIONS_DEFINE=	DOCS
 

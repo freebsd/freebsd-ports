@@ -1,0 +1,5 @@
+Secret Detection service is primarily responsible for detecting secrets in the
+given input payloads with RPC methods as the communication interface served via
+gRPC.
+This service will initially be invoked by Rails monolith when performing access
+checks for Git Push event, and eventually extended for the other usecases too.

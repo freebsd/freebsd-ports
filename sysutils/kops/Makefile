@@ -1,6 +1,7 @@
 PORTNAME=	kops
-PORTVERSION=	1.29.2
+PORTVERSION=	1.31.0
 DISTVERSIONPREFIX=	v
+PORTREVISION=	2
 CATEGORIES=	sysutils
 
 MAINTAINER=	danilo@FreeBSD.org
@@ -11,7 +12,7 @@ LICENSE=	APACHE20
 
 BUILD_DEPENDS=	go-bindata:devel/go-bindata
 
-USES=		go:1.22,modules
+USES=		go:1.23,modules
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	kubernetes

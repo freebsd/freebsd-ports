@@ -1,0 +1,33 @@
+#!/bin/sh
+
+# PROVIDE: amavisd_snmp
+# REQUIRE: snmpd
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf to enable amavisd-snmp-subagent:
+#
+# amavisd_snmp_enable="YES"
+#
+
+. /etc/rc.subr
+
+name=amavisd_snmp
+rcvar=amavisd_snmp_enable
+
+load_rc_config $name
+
+# defaults
+: ${amavisd_snmp_enable:=NO}
+: ${amavisd_snmp_dbdir=%%AMAVISDIR%%/db}
+# log_level 0..5, default 0
+: ${amavisd_snmp_loglevel=0}
+: ${amavisd_snmp_svcj_options:="net_basic"}
+
+command=%%PREFIX%%/sbin/amavisd-snmp-subagent
+command_interpreter=%%PERL%%
+pidfile=${amavisd_pidfile:-%%AMAVISDIR%%/amavisd-snmp.pid}
+
+required_dirs=${amavisd_snmp_dbdir}
+amavisd_snmp_flags="-D ${amavisd_snmp_dbdir} -d ${amavisd_snmp_loglevel} -P ${pidfile}"
+
+run_rc_command $1

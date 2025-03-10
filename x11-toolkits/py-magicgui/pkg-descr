@@ -1,0 +1,8 @@
+magicgui is a python library for building graphical user interfaces (GUIs).
+
+It aims to speed up data workflows by providing a simple, consistent API
+for creating GUIs to control various data types, that work across various
+environments.
+
+GUIs may be built manually using a variety of widgets, or generated
+automatically from python type hints.

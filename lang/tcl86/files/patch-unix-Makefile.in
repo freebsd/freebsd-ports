@@ -1,6 +1,6 @@
---- unix/Makefile.in.orig	2024-02-14 19:11:11 UTC
-+++ unix/Makefile.in
-@@ -58,6 +58,8 @@ INCLUDE_INSTALL_DIR	= $(INSTALL_ROOT)$(includedir)
+--- unix/Makefile.in.orig	2024-08-26 17:56:52.000000000 +0000
++++ unix/Makefile.in	2024-09-09 06:46:52.429118000 +0000
+@@ -58,6 +58,8 @@
  
  # Directory in which to install the include file tcl.h:
  INCLUDE_INSTALL_DIR	= $(INSTALL_ROOT)$(includedir)
@@ -9,7 +9,7 @@
  
  # Path to the private tcl header dir:
  PRIVATE_INCLUDE_DIR	= @PRIVATE_INCLUDE_DIR@
-@@ -84,10 +86,10 @@ HTML_INSTALL_DIR	= $(INSTALL_ROOT)$(HTML_DIR)
+@@ -84,10 +86,10 @@
  HTML_INSTALL_DIR	= $(INSTALL_ROOT)$(HTML_DIR)
  
  # Directory in which to install the configuration file tclConfig.sh
@@ -22,7 +22,7 @@
  
  # Package search path.
  TCL_PACKAGE_PATH	= @TCL_PACKAGE_PATH@
-@@ -151,7 +153,7 @@ INSTALL_STRIP_PROGRAM	= strip
+@@ -151,7 +153,7 @@
  # distribution, which is slower but guaranteed to work.
  
  INSTALL_STRIP_PROGRAM	= strip
@@ -31,7 +31,7 @@
  
  INSTALL			= $(SHELL) $(UNIX_DIR)/install-sh -c
  INSTALL_PROGRAM		= ${INSTALL}
-@@ -714,9 +716,9 @@ SRCS = $(GENERIC_SRCS) $(UNIX_SRCS) $(NOTIFY_SRCS) \
+@@ -622,9 +624,9 @@
  # Start of rules
  #--------------------------------------------------------------------------
  
@@ -43,7 +43,7 @@
  
  libraries:
  
-@@ -727,7 +729,13 @@ ${LIB_FILE}: ${STUB_LIB_FILE} ${OBJS}
+@@ -635,7 +637,13 @@
  ${LIB_FILE}: ${STUB_LIB_FILE} ${OBJS}
  	rm -f $@
  	@MAKE_LIB@
@@ -57,7 +57,7 @@
  ${STUB_LIB_FILE}: ${STUB_LIB_OBJS}
  	@if test "x${LIB_FILE}" = "xlibtcl${MAJOR_VERSION}.${MINOR_VERSION}.dll"; then \
  	    (cd ${TOP_DIR}/win; ${MAKE} winextensions); \
-@@ -879,13 +887,13 @@ trace-test: ${TCLTEST_EXE}
+@@ -787,13 +795,13 @@
  # Installation rules
  #--------------------------------------------------------------------------
  
@@ -74,7 +74,7 @@
  
  install: $(INSTALL_TARGETS)
  
-@@ -905,6 +913,11 @@ install-binaries: binaries
+@@ -813,6 +821,11 @@
  	@echo "Installing $(LIB_FILE) to $(DLL_INSTALL_DIR)/"
  	@@INSTALL_LIB@
  	@chmod 555 "$(DLL_INSTALL_DIR)/$(LIB_FILE)"
@@ -86,7 +86,7 @@
  	@echo "Installing ${TCL_EXE} as $(BIN_INSTALL_DIR)/tclsh$(VERSION)${EXE_SUFFIX}"
  	@$(INSTALL_PROGRAM) ${TCL_EXE} "$(BIN_INSTALL_DIR)/tclsh$(VERSION)${EXE_SUFFIX}"
  	@echo "Installing tclConfig.sh to $(CONFIG_INSTALL_DIR)/"
-@@ -917,33 +930,19 @@ install-binaries: binaries
+@@ -825,33 +838,19 @@
  	    @INSTALL_STUB_LIB@ ; \
  	fi
  	@EXTRA_INSTALL_BINARIES@
@@ -124,7 +124,7 @@
  	@echo "Installing library files to $(SCRIPT_INSTALL_DIR)/"
  	@for i in $(TOP_DIR)/library/*.tcl $(TOP_DIR)/library/tclIndex \
  		$(UNIX_DIR)/tclAppInit.c @LDAIX_SRC@ @DTRACE_SRC@ ; do \
-@@ -956,32 +955,32 @@ install-libraries: libraries
+@@ -864,32 +863,32 @@
  	    done
  	@echo "Installing package http 2.9.8 as a Tcl Module";
  	@$(INSTALL_DATA) $(TOP_DIR)/library/http/http.tcl \
@@ -138,10 +138,10 @@
  	@$(INSTALL_DATA) $(TOP_DIR)/library/msgcat/msgcat.tcl \
 -		"$(MODULE_INSTALL_DIR)/8.5/msgcat-1.6.1.tm"
 +		"$(SCRIPT_INSTALL_DIR)/msgcat-1.6.1.tm"
- 	@echo "Installing package tcltest 2.5.7 as a Tcl Module"
+ 	@echo "Installing package tcltest 2.5.9 as a Tcl Module"
  	@$(INSTALL_DATA) $(TOP_DIR)/library/tcltest/tcltest.tcl \
--		"$(MODULE_INSTALL_DIR)/8.5/tcltest-2.5.7.tm"
-+		"$(SCRIPT_INSTALL_DIR)/tcltest-2.5.7.tm"
+-		"$(MODULE_INSTALL_DIR)/8.5/tcltest-2.5.9.tm"
++		"$(SCRIPT_INSTALL_DIR)/tcltest-2.5.9.tm"
  	@echo "Installing package platform 1.0.19 as a Tcl Module"
  	@$(INSTALL_DATA) $(TOP_DIR)/library/platform/platform.tcl \
 -		"$(MODULE_INSTALL_DIR)/8.4/platform-1.0.19.tm"
@@ -156,8 +156,8 @@
  	done
 -	@if [ -n "$(TCL_MODULE_PATH)" -a -f $(TOP_DIR)/library/tm.tcl ] ; then \
 -	    echo "Customizing tcl module path"; \
--	    echo "if {![interp issafe]} { ::tcl::tm::roots {$(TCL_MODULE_PATH)} }" >> \
--	        "$(SCRIPT_INSTALL_DIR)/tm.tcl"; \
+-	    echo "if {![interp issafe]} { ::tcl::tm::roots [list $(TCL_MODULE_PATH)] }" >> \
+-		    "$(SCRIPT_INSTALL_DIR)/tm.tcl"; \
 -	fi
 +	@echo "Customizing tcl module path";
 +	echo "if {![interp issafe]} { ::tcl::tm::roots {$(TCL_MODULE_PATH)} }" >> \
@@ -167,7 +167,7 @@
  
  install-tzdata:
  	@for i in tzdata; do \
-@@ -1048,7 +1047,7 @@ install-headers:
+@@ -956,7 +955,7 @@
  	done
  
  install-headers:
@@ -176,7 +176,7 @@
  	    if [ ! -d "$$i" ] ; then \
  		echo "Making directory $$i"; \
  		$(INSTALL_DATA_DIR) "$$i"; \
-@@ -1063,23 +1062,22 @@ install-headers:
+@@ -971,23 +970,22 @@
  	    do \
  	    $(INSTALL_DATA) $$i "$(INCLUDE_INSTALL_DIR)"; \
  	done

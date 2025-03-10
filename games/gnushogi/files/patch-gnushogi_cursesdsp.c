@@ -1,6 +1,14 @@
---- gnushogi/cursesdsp.c.orig	2021-02-05 15:24:17 UTC
+--- gnushogi/cursesdsp.c.orig	2014-02-17 20:26:59 UTC
 +++ gnushogi/cursesdsp.c
-@@ -61,17 +61,11 @@
+@@ -40,7 +40,6 @@
+
+ #include <sys/param.h>
+ #include <sys/types.h>
+-#include <sys/file.h>
+ #include <curses.h>
+
+ #include "gnushogi.h"
+@@ -62,17 +61,11 @@
  
  #define FLUSH_SCANW fflush(stdout), scanw
  

@@ -1,30 +1,27 @@
 PORTNAME=	zathura-cb
-DISTVERSION=	0.1.10
-PORTREVISION=	5
+DISTVERSION=	0.1.11
 CATEGORIES=	graphics
-MASTER_SITES=	https://git.pwmt.org/pwmt/${PORTNAME}/-/archive/${DISTVERSION}/
+MASTER_SITES=	https://pwmt.org/projects/zathura-cb/download/
 
-MAINTAINER=	eduardo@FreeBSD.org
+MAINTAINER=	mew14930xvi@inbox.lv
 COMMENT=	Comic book plugin for Zathura PDF viewer
 WWW=		https://pwmt.org/projects/zathura-cb/
 
 LICENSE=	ZLIB
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	zathura:graphics/zathura
+BUILD_DEPENDS=	appstream-util:devel/appstream-glib \
+		zathura:graphics/zathura
 LIB_DEPENDS=	libgirara-gtk3.so:x11-toolkits/girara
 RUN_DEPENDS=	zathura:graphics/zathura
 
 # testing without USES=ssl
 USES=		compiler:c11 desktop-file-utils gnome libarchive meson ninja \
-		pkgconfig
-USE_GNOME=	cairo gdkpixbuf2 glib20 gtk30
+		pkgconfig tar:xz
+USE_GNOME=	glib20 gtk30
 
 PLIST_FILES=	lib/zathura/libcb.so \
-		share/appdata/org.pwmt.zathura-cb.metainfo.xml \
-		share/applications/org.pwmt.zathura-cb.desktop
-
-pre-configure:
-	${REINPLACE_CMD} "s:join_paths(datadir, 'metainfo'):join_paths(datadir, 'appdata'):" ${WRKSRC}/meson.build
+		share/applications/org.pwmt.zathura-cb.desktop \
+		share/metainfo/org.pwmt.zathura-cb.metainfo.xml
 
 .include <bsd.port.mk>

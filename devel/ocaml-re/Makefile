@@ -1,6 +1,6 @@
 PORTNAME=	re
 PORTVERSION=	1.11.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 PKGNAMEPREFIX=	ocaml-
 
@@ -10,21 +10,21 @@ WWW=		https://github.com/ocaml/ocaml-re
 
 LICENSE=	LGPL21
 
-BUILD_DEPENDS=	${SA_DIR}/seq/META:devel/ocaml-seq
-RUN_DEPENDS=	${SA_DIR}/seq/META:devel/ocaml-seq
-
 USES=		ocaml:dune
 USE_GITHUB=	yes
 GH_ACCOUNT=	ocaml
 GH_PROJECT=	${PKGNAMEPREFIX}${PORTNAME}
-USE_OCAML=	yes
 
 DOCSDIR=	${OCAML_DOCSDIR}/${PORTNAME}
 PORTDOCS=	CHANGES.md LICENSE.md README.md
 
 OPTIONS_DEFINE=	DOCS
 
-SA_DIR=		${LOCALBASE}/${OCAML_SITELIBDIR}
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == powerpc
+USE_BINUTILS=	yes
+.endif
 
 post-patch:
 	${REINPLACE_CMD} \

@@ -1,7 +1,7 @@
 PORTNAME=	quickfix
 PORTVERSION=	1.15.1
 DISTVERSIONPREFIX=	v
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	finance devel
 
 MAINTAINER=	m.tsatsenko@gmail.com
@@ -38,7 +38,7 @@ PYTHON_CONFIGURE_WITH=	python3
 RUBY_USES=	ruby
 RUBY_CONFIGURE_WITH=	ruby
 RUBY_LIB_DEPENDS+=libunwind.so:devel/libunwind
-JAVA_USE=	java=yes
+JAVA_USES=	java
 JAVA_CONFIGURE_WITH=	java
 
 INSTALL_TARGET=install-strip
@@ -47,6 +47,7 @@ INSTALL_TARGET=install-strip
 
 .if ${PORT_OPTIONS:MPYTHON}
 BROKEN=	fails to build
+DEPRECATED=	Uses expired Python 3.8
 .endif
 
 .if ${ARCH} != amd64 && ${ARCH} != i386

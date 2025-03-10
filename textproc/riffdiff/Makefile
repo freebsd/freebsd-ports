@@ -1,6 +1,6 @@
 PORTNAME=	riffdiff
-DISTVERSION=	3.2.0
-PORTREVISION=	1
+DISTVERSION=	3.3.8
+PORTREVISION=	2
 CATEGORIES=	textproc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -39,7 +39,6 @@ CARGO_CRATES=	addr2line-0.14.0 \
 		colorchoice-1.0.0 \
 		ctor-0.1.16 \
 		difference-2.0.0 \
-		diffus-0.10.0 \
 		either-1.6.1 \
 		errno-0.3.5 \
 		fastrand-1.9.0 \
@@ -69,6 +68,8 @@ CARGO_CRATES=	addr2line-0.14.0 \
 		regex-syntax-0.6.26 \
 		rustc-demangle-0.1.18 \
 		rustix-0.36.16 \
+		rustversion-1.0.18 \
+		similar-2.6.0 \
 		strsim-0.10.0 \
 		syn-1.0.48 \
 		syn-2.0.30 \
@@ -101,8 +102,5 @@ CARGO_CRATES=	addr2line-0.14.0 \
 		windows_x86_64_msvc-0.48.5
 
 PLIST_FILES=	bin/riff
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/riff
 
 .include <bsd.port.mk>

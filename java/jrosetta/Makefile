@@ -12,9 +12,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	API for building a graphical console in Swing
 WWW=		http://dev.artenum.com/projects/JRosetta
 
-USES=		zip
-USE_JAVA=	yes
-JAVA_RUN=	yes
+USES=		java zip
+
 NO_ARCH=	yes
 NO_BUILD=	yes
 

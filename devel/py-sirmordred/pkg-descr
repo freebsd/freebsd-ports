@@ -1,0 +1,3 @@
+SirMordred is the tool used to coordinate the execution of the
+GrimoireLab platform, via two main configuration files, the setup.cfg
+and projects.json, which are summarized in their corresponding sections.

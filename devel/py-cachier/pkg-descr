@@ -1,0 +1,2 @@
+Cachier is a Python package that provides persistent, stale-free, local
+and cross-machine caching for Python functions.

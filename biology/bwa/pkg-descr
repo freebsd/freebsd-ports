@@ -1,3 +1,15 @@
-BWA is a program for aligning sequencing reads against a large reference
-genome (e.g. human genome). It has two major components, one for read shorter
-than 150bp and the other for longer reads.
+BWA is a software package for mapping DNA sequences against a large
+reference genome, such as the human genome. It consists of three
+algorithms: BWA-backtrack, BWA-SW and BWA-MEM. The first algorithm is
+designed for Illumina sequence reads up to 100bp, while the other two
+are for longer sequences ranging from 70bp to a few megabases. BWA-MEM
+and BWA-SW share similar features such as the support of long reads
+and chimeric alignment, but BWA-MEM, which is the latest, is generally
+recommended, as it is faster and more accurate. BWA-MEM also has
+better performance than BWA-backtrack for 70-100bp Illumina reads.
+
+For all algorithms, BWA first needs to construct the FM-index for the
+reference genome (the "bwa index" command). Alignment algorithms are
+invoked with different sub-commands: "bwa aln/samse/sampe" for
+BWA-backtrack, "bwa bwasw" for BWA-SW, and "bwa mem" for the BWA-MEM
+algorithm.

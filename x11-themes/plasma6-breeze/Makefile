@@ -8,8 +8,8 @@ COMMENT=	Artwork, styles and assets for the Breeze visual style for the Plasma D
 USES=		cmake gettext gl kde:6 qt:6 tar:xz xorg
 USE_GL=		gl opengl
 USE_KDE=	colorscheme config configwidgets coreaddons decoration \
-		guiaddons i18n iconthemes kcmutils kirigami2 widgetsaddons \
-		windowsystem \
+		frameworkintegration guiaddons i18n iconthemes kcmutils \
+		kirigami2 widgetsaddons windowsystem \
 		ecm:build
 USE_QT=		base declarative
 USE_XORG=	x11

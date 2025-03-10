@@ -1,5 +1,6 @@
 PORTNAME=	kotlin
-PORTVERSION=	2.0.0
+DISTVERSION=	2.1.0
+PORTREVISION=	1
 CATEGORIES=	lang java
 MASTER_SITES=	https://github.com/JetBrains/kotlin/releases/download/v${PORTVERSION}/
 DISTNAME=	kotlin-compiler-${PORTVERSION}
@@ -13,9 +14,8 @@ LICENSE_FILE=	${WRKSRC}/license/LICENSE.txt
 
 RUN_DEPENDS=	bash:shells/bash
 
-USES=	zip
+USES=	java zip
 
-USE_JAVA=	yes
 NO_ARCH=	yes
 NO_BUILD=	yes
 
@@ -23,7 +23,6 @@ WRKSRC=	${WRKDIR}/kotlinc
 
 KOTLIN_BIN=	kapt \
 		kotlin \
-		kotlin-dce-js \
 		kotlinc \
 		kotlinc-js \
 		kotlinc-jvm

@@ -13,7 +13,7 @@ WWW=		https://pkl-lang.org
 
 LICENSE=	APACHE20
 
-USE_JAVA=	yes
+USES=		java
 JAVA_VERSION=	17+
 
 NO_ARCH=	yes

@@ -1,8 +1,17 @@
---- chrome/browser/ui/views/user_education/browser_user_education_service.cc.orig	2024-07-30 11:12:21 UTC
+--- chrome/browser/ui/views/user_education/browser_user_education_service.cc.orig	2025-03-05 08:14:56 UTC
 +++ chrome/browser/ui/views/user_education/browser_user_education_service.cc
-@@ -1007,7 +1007,7 @@ void MaybeRegisterChromeFeaturePromos(
-                     FeaturePromoSpecification::AcceleratorInfo())
-                     .SetBubbleArrow(HelpBubbleArrow::kTopLeft)));
+@@ -889,7 +889,7 @@ void MaybeRegisterChromeFeaturePromos(
+                          "defaulted to saved for the first time.")));
+   }
+ 
+-#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_BSD)
+   // kIPHSupervisedUserProfileSigninFeature
+   registry.RegisterFeature(std::move(
+       FeaturePromoSpecification::CreateForCustomAction(
+@@ -1143,7 +1143,7 @@ void MaybeRegisterChromeFeaturePromos(
+                        "Triggered to inform users of the availability of the "
+                        "new translate screen feature on the Lens Overlay.")));
  
 -#if BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_WIN)
 +#if BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_BSD)

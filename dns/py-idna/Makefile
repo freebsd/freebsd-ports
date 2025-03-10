@@ -1,7 +1,8 @@
 PORTNAME=	idna
-PORTVERSION=	3.7
+PORTVERSION=	3.10
 CATEGORIES=	dns python
-MASTER_SITES=	PYPI
+MASTER_SITES=	PYPI \
+		https://github.com/kjd/idna/releases/download/v${PORTVERSION}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org

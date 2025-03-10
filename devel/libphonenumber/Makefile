@@ -1,6 +1,6 @@
 PORTNAME=	libphonenumber
 DISTVERSIONPREFIX=	v
-DISTVERSION=	8.13.43
+DISTVERSION=	9.0.0
 PORTREVISION=	1
 CATEGORIES=	devel
 
@@ -15,23 +15,20 @@ LIB_DEPENDS=	libabsl_strings.so:devel/abseil \
 		libboost_atomic.so:devel/boost-libs \
 		libicui18n.so:devel/icu \
 		libprotobuf.so:devel/protobuf
+TEST_DEPENDS=	googletest>=0:devel/googletest
 
-USES=		cmake:noninja compiler:c++17-lang pkgconfig
-# Workaround CMAKE_ARGS+=-DABSL_PROPAGATE_CXX_STD:BOOL=ON not being set in the
-# devel/abseil Makefile. As of version 8.13.21, libphonenumber no longer sets
-# the C++ dialect and expects to inherit it from abseil.
-USE_CXXSTD=	c++17
+USES=		cmake:testing compiler:c++17-lang pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	google
 
 CMAKE_ON=	USE_STD_MAP
 CMAKE_OFF=	REGENERATE_METADATA \
 		BUILD_TESTING
+CMAKE_TESTING_TARGET=	tests
 
 WRKSRC_SUBDIR=	cpp
 
-MAKE_JOBS_UNSAFE=	yes
-
-PLIST_SUB=	SHLIB_FULL=${PORTVERSION:R} SHLIB_SHORT=${PORTVERSION:R:R}
+PLIST_SUB=	SHLIB_FULL="8.13" \
+		SHLIB_SHORT="8"
 
 .include <bsd.port.mk>

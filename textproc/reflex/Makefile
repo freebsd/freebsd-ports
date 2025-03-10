@@ -1,6 +1,5 @@
 PORTNAME=	reflex
-PORTVERSION=	20230523
-PORTREVISION=	1
+PORTVERSION=	20241231
 CATEGORIES=	textproc
 MASTER_SITES=	https://invisible-island.net/archives/reflex/ \
 		https://invisible-mirror.net/archives/reflex/ \

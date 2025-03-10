@@ -1,5 +1,5 @@
 PORTNAME=	protocol-hpack
-PORTVERSION=	1.5.0
+PORTVERSION=	1.5.1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 

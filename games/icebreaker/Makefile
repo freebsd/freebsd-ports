@@ -2,7 +2,7 @@ PORTNAME=	icebreaker
 PORTVERSION=	1.9.8
 PORTREVISION=	3
 CATEGORIES=	games
-MASTER_SITES=	http://mattdm.org/icebreaker/1.9.x/ \
+MASTER_SITES=	https://mattdm.org/icebreaker/1.9.x/ \
 		SF/nemysisfreebsdp/games/${PORTNAME}/:icons
 DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX} \
 		${PORTNAME}.png:icons
@@ -10,7 +10,7 @@ EXTRACT_ONLY=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Game similar to Jezzball or Barrack
-WWW=		http://www.mattdm.org/icebreaker/
+WWW=		https://mattdm.org/icebreaker/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE

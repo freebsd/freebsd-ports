@@ -1,0 +1,5 @@
+A customisable music player inspired by foobar2000. It offers a growing list
+of widgets to manage and play your local music collection. It's extensible
+using a plugin system and many widgets make use of FooScript to offer an even
+deeper level of control. A layout editing mode enables the entire user
+interface to be customised, starting from a blank slate or a preset layout.

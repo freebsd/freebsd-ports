@@ -1,6 +1,6 @@
 PORTNAME=	freeimage
 PORTVERSION=	3.18.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/Source%20Distribution/${PORTVERSION}
 DISTNAME=	FreeImage${PORTVERSION:S/.//g}
@@ -61,11 +61,11 @@ post-patch:
 		/^-fPIC/d' ${WRKSRC}/Makefile.gnu ${WRKSRC}/Makefile.fip
 
 post-build:
-	${SETENV} ${MAKE_ENV} ${MAKE_CMD} -f Makefile.fip ${_MAKE_JOBS} \
+	${SETENVI} ${WRK_ENV} ${MAKE_ENV} ${MAKE_CMD} -f Makefile.fip ${_MAKE_JOBS} \
 		${MAKE_ARGS} -C ${BUILD_WRKSRC}
 
 post-install:
-	${SETENV} ${MAKE_ENV} ${MAKE_CMD} -f Makefile.fip ${MAKE_ARGS} \
+	${SETENVI} ${WRK_ENV} ${MAKE_ENV} ${MAKE_CMD} -f Makefile.fip ${MAKE_ARGS} \
 		-C ${INSTALL_WRKSRC} ${INSTALL_TARGET}
 	${LN} -sf libfreeimageplus.so.3 \
 		${STAGEDIR}${PREFIX}/lib/libfreeimageplus.so

@@ -4,7 +4,7 @@ PORTREVISION=	3
 CATEGORIES=	lang gnome
 MASTER_SITES=	GNU/${PORTNAME}/v${PORTVERSION}
 
-MAINTAINER=	antranigv@freebsd.am
+MAINTAINER=	kfv@kfv.io
 COMMENT=	Utilities for developing programs using MIX and MIXAL
 WWW=		https://www.gnu.org/software/mdk/mdk.html
 

@@ -1,5 +1,5 @@
-TIMESTAMP = 1681560293
-SHA256 (powerline-powerline-2.8.3_GH0.tar.gz) = 45d838dbac94a1363942899708b6ce7c71c1cad9e1b9d048affab4f630c4cb98
-SIZE (powerline-powerline-2.8.3_GH0.tar.gz) = 368623
+TIMESTAMP = 1725002694
+SHA256 (powerline-powerline-2.8.4_GH0.tar.gz) = 9e846af9379b57e410efe264cff3a6b98eb78dd9526e83016776ae5ffc5798f4
+SIZE (powerline-powerline-2.8.4_GH0.tar.gz) = 369057
 SHA256 (50d73bfbc8903d526e9de2bf98521e00206c018a.patch) = da2e7a30e56d847a2178b544ea70587cc7993bd49e26d3ec75506c246b0802d0
 SIZE (50d73bfbc8903d526e9de2bf98521e00206c018a.patch) = 3506

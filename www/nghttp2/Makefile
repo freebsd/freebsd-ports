@@ -1,5 +1,5 @@
 PORTNAME=	nghttp2
-PORTVERSION=	1.62.1
+PORTVERSION=	1.64.0
 CATEGORIES=	www net
 MASTER_SITES=	https://github.com/nghttp2/nghttp2/releases/download/v${PORTVERSION}/
 
@@ -16,8 +16,20 @@ LIB_DEPENDS=	libnghttp2.so:www/libnghttp2
 USES=		cmake compiler:c++20-lang cpe localbase:ldflags pathfix pkgconfig python:env shebangfix ssl tar:xz
 
 CMAKE_ARGS=	-DCMAKE_INSTALL_MANDIR=share/man
-CMAKE_OFF=	BUILD_SHARED_LIBS BUILD_STATIC_LIBS BUILD_TESTING ENABLE_DEBUG ENABLE_HTTP3 ENABLE_LIB_ONLY ENABLE_STATIC_CRT ENABLE_WERROR WITH_LIBBPF WITH_MRUBY WITH_NEVERBLEED
-CMAKE_ON=	ENABLE_FAILMALLOC ENABLE_THREADS WITH_JEMALLOC
+CMAKE_OFF=	BUILD_SHARED_LIBS \
+		BUILD_STATIC_LIBS \
+		BUILD_TESTING \
+		ENABLE_DEBUG \
+		ENABLE_HTTP3 \
+		ENABLE_LIB_ONLY \
+		ENABLE_STATIC_CRT \
+		ENABLE_WERROR \
+		WITH_LIBBPF \
+		WITH_MRUBY \
+		WITH_NEVERBLEED
+CMAKE_ON=	ENABLE_FAILMALLOC \
+		ENABLE_THREADS \
+		WITH_JEMALLOC
 USE_CXXSTD=	c++20
 USE_RC_SUBR=	nghttpx
 
@@ -42,12 +54,6 @@ EXAMPLES_LIB_DEPENDS=	libevent_openssl.so:devel/libevent
 HPACK_BUILD_DEPENDS=	jansson>=2.5:devel/jansson
 HPACK_CMAKE_BOOL=	ENABLE_HPACK_TOOLS
 HPACK_LIB_DEPENDS=	libjansson.so:devel/jansson
-
-.include <bsd.port.options.mk>
-
-.if ${OSREL} == 14.0
-EXTRA_PATCHES=	${PATCHDIR}/extra-patch-compatibility-fix
-.endif
 
 post-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/etc/nghttpx/

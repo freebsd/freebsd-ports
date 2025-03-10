@@ -21,16 +21,16 @@ qmake_ARGS?=	# empty
 .include "${USESDIR}/qmake.mk"
 
 # Supported distribution arguments
-_COMMON_DISTS=		3d base charts connectivity datavis3d declarative imageformats location multimedia \
-			networkauth quick3d quicktimeline remoteobjects scxml sensors \
-			serialbus serialport speech svg tools translations virtualkeyboard \
+_COMMON_DISTS=		3d base charts connectivity datavis3d declarative \
+			imageformats location multimedia networkauth quick3d \
+			quicktimeline remoteobjects scxml sensors serialbus \
+			serialport speech svg tools translations virtualkeyboard \
 			wayland webchannel webengine websockets webview
-_QT5_DISTS=		gamepad graphicaleffects quickcontrols \
-			quickcontrols2 script webglplugin \
-			x11extras xmlpatterns
-_QT6_DISTS=		5compat coap doc graphs httpserver languageserver lottie positioning \
-			quick3dphysics quickeffectmaker shadertools
-
+_QT5_DISTS=		gamepad graphicaleffects quickcontrols quickcontrols2 \
+			script webglplugin x11extras xmlpatterns
+_QT6_DISTS=		5compat coap doc graphs grpc httpserver languageserver \
+			lottie mqtt positioning quick3dphysics quickeffectmaker \
+			shadertools
 _QT_DISTS=		${_COMMON_DISTS} \
 			${_QT${_QT_VER}_DISTS}
 
@@ -96,8 +96,8 @@ _QT5_DISTNAME_kde=		${_QT_DIST:S,^,kde-qt,:S,$,-${DISTVERSION},}
 _QT6_DISTNAME=			${_QT_DIST:S,^,qt,:S,$,-everywhere-src-${DISTVERSION},}
 
 # Effective master sites and distfile values
-# net/qt6-coap has no submodule distfile and uses USE_GITHUB
-.  if ${_QT_DIST} != coap
+# net/qt6-coap and net/qt6-mqtt have no submodule distfiles and use USE_GITHUB
+.  if ${_QT_DIST} != coap && ${_QT_DIST} != mqtt
 MASTER_SITES=			${_QT${_QT_VER}_MASTER_SITES${_KDE_${_QT_DIST}:D_kde}}
 MASTER_SITE_SUBDIR=		${_QT${_QT_VER}_MASTER_SITE_SUBDIR${_KDE_${_QT_DIST}:D_kde}}
 DISTNAME=			${_QT${_QT_VER}_DISTNAME${_KDE_${_QT_DIST}:D_kde}}
@@ -108,14 +108,14 @@ DIST_SUBDIR=			KDE/Qt/${_QT_VERSION}
 .  if ${_QT_VER:M5}
 # KDE maintains a repository with a patched Qt5 distribution.
 _KDE_3d=		0
-_KDE_base=		140
+_KDE_base=		130
 _KDE_charts=		0
-_KDE_connectivity=	3
+_KDE_connectivity=	1
 _KDE_datavis3d=		0
-_KDE_declarative=	28
+_KDE_declarative=	22
 _KDE_gamepad=		0
 _KDE_graphicaleffects=	0
-_KDE_imageformats=	7
+_KDE_imageformats=	2
 _KDE_location=		7
 _KDE_multimedia=	2
 _KDE_networkauth=	1
@@ -125,23 +125,25 @@ _KDE_quickcontrols2=	5
 _KDE_quicktimeline=	0
 _KDE_remoteobjects=	0
 _KDE_script=		0
-_KDE_script_ORIGIN_TAG=	v5.15.17-lts
-_KDE_script_VERSION=	5.15.17
+_KDE_script_ORIGIN_TAG=	v5.15.18-lts
+_KDE_script_VERSION=	5.15.18
 _KDE_scxml=		0
 _KDE_sensors=		0
 _KDE_serialbus=		0
 _KDE_serialport=	0
 _KDE_speech=		1
 _KDE_svg=		5
-_KDE_tools=		4
+_KDE_tools=		3
 _KDE_translations=	0
 _KDE_virtualkeyboard=	0
-_KDE_wayland=		57
+_KDE_wayland=		59
 _KDE_webchannel=	3
-_KDE_webengine=			2
+# We track the 5.15 branch for www/qt5-webengine to make it easier to
+# stay on top of Chromium security patches.
+_KDE_webengine=			5
 _KDE_webengine_BRANCH=		5.15
-_KDE_webengine_ORIGIN_TAG=	v5.15.17-lts
-_KDE_webengine_VERSION=		5.15.17
+_KDE_webengine_ORIGIN_TAG=	v5.15.18-lts
+_KDE_webengine_VERSION=		5.15.18
 _KDE_webglplugin=	0
 _KDE_websockets=	2
 _KDE_webview=		0
@@ -200,6 +202,8 @@ CMAKE_ARGS+=		-DCMAKE_INSTALL_PREFIX=${PREFIX} \
 			-DINSTALL_EXAMPLESDIR=${PREFIX}/${QT_EXAMPLEDIR_REL} \
 			-DINSTALL_DESCRIPTIONSDIR=${PREFIX}/${QT_DESCRIPTIONSDIR_REL} \
 			-DQT_QMAKE_TARGET_MKSPEC:String=freebsd-clang \
+			-DQT_SBOM_GENERATE_JSON:BOOL=OFF \
+			-DQT_SBOM_VERIFY:BOOL=OFF \
 			--log-level=TRACE
 .  endif
 

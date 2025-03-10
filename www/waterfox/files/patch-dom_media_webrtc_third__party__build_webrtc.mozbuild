@@ -1,0 +1,27 @@
+commit 0a4dfe06e072222335bff7724b64a1f479e56569
+Author: Christoph Moench-Tegeder <cmt@FreeBSD.org>
+
+    flag WEBRTC_USE_PIPEWIRE just as on Linux
+
+diff --git dom/media/webrtc/third_party_build/webrtc.mozbuild dom/media/webrtc/third_party_build/webrtc.mozbuild
+index 940420e3f8c4..08e07f77056f 100644
+--- dom/media/webrtc/third_party_build/webrtc.mozbuild
++++ dom/media/webrtc/third_party_build/webrtc.mozbuild
+@@ -40,6 +40,17 @@ if CONFIG["MOZ_WEBRTC"]:
+         DEFINES["HAVE_WINSOCK2_H"] = True
+     elif CONFIG["OS_TARGET"] in ("DragonFly", "FreeBSD", "NetBSD", "OpenBSD"):
+         DEFINES["WEBRTC_BSD"] = True
++        if (
++            CONFIG["TARGET_CPU"] == "x86"
++            or CONFIG["TARGET_CPU"] == "x86_64"
++            or CONFIG["TARGET_CPU"] == "arm"
++            or CONFIG["TARGET_CPU"] == "aarch64"
++            or (
++                CONFIG["TARGET_ENDIANNESS"] == "little"
++                and CONFIG["TARGET_CPU"].startswith("mips")
++            )
++        ):
++            DEFINES["WEBRTC_USE_PIPEWIRE"] = True
+     elif CONFIG["OS_TARGET"] == "Android":
+         DEFINES["WEBRTC_LINUX"] = True
+         DEFINES["WEBRTC_ANDROID"] = True

@@ -37,7 +37,7 @@ linux_ARGS=		${LINUX_DEFAULT}
 .  if ${linux_ARGS} == c7
 LINUX_DIST_VER?=	7.9.2009
 .  elif ${linux_ARGS} == rl9
-LINUX_DIST_VER?=	9.4
+LINUX_DIST_VER?=	9.5
 .  else
 ERROR+=			"Invalid Linux distribution: ${linux_ARGS}"
 .  endif
@@ -56,6 +56,7 @@ _linux_${linux_ARGS}_alsa-lib-devel=	linux-${linux_ARGS}-alsa-lib-devel>0:audio/
 _linux_${linux_ARGS}_alsa-plugins-oss=	linux-${linux_ARGS}-alsa-plugins-oss>0:audio/linux-${linux_ARGS}-alsa-plugins-oss
 _linux_${linux_ARGS}_alsa-plugins-pulseaudio=linux-${linux_ARGS}-alsa-plugins-pulseaudio>0:audio/linux-${linux_ARGS}-alsa-plugins-pulseaudio
 _linux_${linux_ARGS}_alsalib=		linux-${linux_ARGS}-alsa-lib>0:audio/linux-${linux_ARGS}-alsa-lib
+_linux_rl9_aom=				linux-rl9-aom-libs>0:multimedia/linux-rl9-aom
 _linux_${linux_ARGS}_at-spi2-atk=	linux-${linux_ARGS}-at-spi2-atk>0:accessibility/linux-${linux_ARGS}-at-spi2-atk
 _linux_${linux_ARGS}_at-spi2-core=	linux-${linux_ARGS}-at-spi2-core>0:accessibility/linux-${linux_ARGS}-at-spi2-core
 _linux_${linux_ARGS}_atk=		linux-${linux_ARGS}-atk>0:accessibility/linux-${linux_ARGS}-atk
@@ -71,7 +72,7 @@ _linux_${linux_ARGS}_curl=		linux-${linux_ARGS}-curl>0:ftp/linux-${linux_ARGS}-c
 _linux_${linux_ARGS}_cyrus-sasl2=	linux-${linux_ARGS}-cyrus-sasl-lib>0:security/linux-${linux_ARGS}-cyrus-sasl2
 _linux_${linux_ARGS}_dbuslibs=		linux-${linux_ARGS}-dbus-libs>0:devel/linux-${linux_ARGS}-dbus-libs
 _linux_${linux_ARGS}_devtools=		linux-${linux_ARGS}-devtools>0:devel/linux-${linux_ARGS}-devtools
-_linux_c7_dosfstools=			linux-c7-dosfstools>0:sysutils/linux-c7-dosfstools
+_linux_c7_dosfstools=			linux-c7-dosfstools>0:filesystems/linux-c7-dosfstools
 _linux_${linux_ARGS}_dri=		linux-${linux_ARGS}-dri>0:graphics/linux-${linux_ARGS}-dri
 _linux_${linux_ARGS}_elfutils-libelf=	linux-${linux_ARGS}-elfutils-libelf>0:devel/linux-${linux_ARGS}-elfutils-libelf
 _linux_${linux_ARGS}_elfutils-libs=	linux-${linux_ARGS}-elfutils-libs>0:devel/linux-${linux_ARGS}-elfutils-libs
@@ -85,13 +86,15 @@ _linux_${linux_ARGS}_fribidi=		linux-${linux_ARGS}-fribidi>0:converters/linux-${
 _linux_${linux_ARGS}_gdkpixbuf2=	linux-${linux_ARGS}-gdk-pixbuf2>0:graphics/linux-${linux_ARGS}-gdk-pixbuf2
 _linux_rl9_gnupg=			linux-rl9-gnupg2>0:security/linux-rl9-gnupg
 _linux_${linux_ARGS}_gnutls=		linux-${linux_ARGS}-gnutls>0:security/linux-${linux_ARGS}-gnutls
+_linux_rl9_graphene=			linux-rl9-graphene>0:graphics/linux-rl9-graphene
 _linux_${linux_ARGS}_graphite2=		linux-${linux_ARGS}-graphite2>0:graphics/linux-${linux_ARGS}-graphite2
 _linux_${linux_ARGS}_gsm=		linux-${linux_ARGS}-gsm>0:audio/linux-${linux_ARGS}-gsm
 _linux_rl9_gstreamer1=			linux-rl9-gstreamer1>0:multimedia/linux-rl9-gstreamer1
-_linux_rl9_gstreamer1-libav=		linux-rl9-gstreamer1-libav>0:multimedia/linux-rl9-gstreamer1-libav
+_linux_rl9_gstreamer1-libav=		linux-rl9-gstreamer1-plugin-libav>0:multimedia/linux-rl9-gstreamer1-libav
 _linux_${linux_ARGS}_gtk2=		linux-${linux_ARGS}-gtk2>0:x11-toolkits/linux-${linux_ARGS}-gtk2
 _linux_${linux_ARGS}_gtk3=		linux-${linux_ARGS}-gtk3>0:x11-toolkits/linux-${linux_ARGS}-gtk3
 _linux_${linux_ARGS}_harfbuzz=		linux-${linux_ARGS}-harfbuzz>0:print/linux-${linux_ARGS}-harfbuzz
+_linux_rl9_highway=			linux-rl9-highway>0:devel/linux-rl9-highway
 _linux_${linux_ARGS}_icu=		linux-${linux_ARGS}-icu>0:devel/linux-${linux_ARGS}-icu
 _linux_${linux_ARGS}_jasper=		linux-${linux_ARGS}-jasper-libs>0:graphics/linux-${linux_ARGS}-jasper
 _linux_${linux_ARGS}_jbigkit=		linux-${linux_ARGS}-jbigkit-libs>0:graphics/linux-${linux_ARGS}-jbigkit
@@ -109,7 +112,9 @@ _linux_${linux_ARGS}_libgfortran=	linux-${linux_ARGS}-libgfortran>0:devel/linux-
 _linux_${linux_ARGS}_libglvnd=		linux-${linux_ARGS}-libglvnd>0:graphics/linux-${linux_ARGS}-libglvnd
 _linux_${linux_ARGS}_libgpg-error=	linux-${linux_ARGS}-libgpg-error>0:security/linux-${linux_ARGS}-libgpg-error
 _linux_rl9_libidn2=			linux-${linux_ARGS}-libidn2>0:dns/linux-rl9-libidn2
-_linux_rl9_libnghttp2=			linux-${linux_ARGS}-libnghttp2>0:www/linux-rl9-libnghttp2
+_linux_rl9_libjxl=			linux-rl9-libjxl>0:graphics/linux-rl9-libjxl
+_linux_rl9_libksba=			linux-rl9-libksba>0:security/linux-rl9-libksba
+_linux_rl9_libnghttp2=			linux-rl9-libnghttp2>0:www/linux-rl9-libnghttp2
 _linux_${linux_ARGS}_libogg=		linux-${linux_ARGS}-libogg>0:audio/linux-${linux_ARGS}-libogg
 _linux_${linux_ARGS}_libpciaccess=	linux-${linux_ARGS}-libpciaccess>0:devel/linux-${linux_ARGS}-libpciaccess
 _linux_rl9_libproxy=			linux-rl9-libproxy>0:net/linux-rl9-libproxy
@@ -117,13 +122,16 @@ _linux_rl9_libpsl=			linux-rl9-libpsl>0:dns/linux-rl9-libpsl
 _linux_${linux_ARGS}_librsvg2=		linux-${linux_ARGS}-librsvg2>0:graphics/linux-${linux_ARGS}-librsvg2
 _linux_rl9_libsecret=			linux-rl9-libsecret>0:security/linux-rl9-libsecret
 _linux_${linux_ARGS}_libsigc++20=	linux-${linux_ARGS}-libsigc++20>0:devel/linux-${linux_ARGS}-libsigc++20
-_linux_rl9_libsigsegv=			linux-${linux_ARGS}-libsigsegv>0:devel/linux-${linux_ARGS}-libsigsegv
-_linux_rl9_libsoup=			linux-${linux_ARGS}-libsoup>0:devel/linux-${linux_ARGS}-libsoup
+_linux_rl9_libsigsegv=			linux-rl9-libsigsegv>0:devel/linux-rl9-libsigsegv
+_linux_rl9_libsoup=			linux-rl9-libsoup>0:devel/linux-rl9-libsoup
 _linux_${linux_ARGS}_libsndfile=	linux-${linux_ARGS}-libsndfile>0:audio/linux-${linux_ARGS}-libsndfile
+_linux_rl9_libssh=			linux-rl9-libssh>0:security/linux-rl9-libssh
 _linux_c7_libssh2=			linux-c7-libssh2>0:security/linux-c7-libssh2
+_linux_rl9_libstemmer=			linux-rl9-libstemmer>=0:textproc/linux-rl9-libstemmer
 _linux_${linux_ARGS}_libtasn1=		linux-${linux_ARGS}-libtasn1>0:security/linux-${linux_ARGS}-libtasn1
 _linux_${linux_ARGS}_libthai=		linux-${linux_ARGS}-libthai>0:devel/linux-${linux_ARGS}-libthai
 _linux_${linux_ARGS}_libtheora=		linux-${linux_ARGS}-libtheora>0:multimedia/linux-${linux_ARGS}-libtheora
+_linux_${linux_ARGS}_libtool-ltdl=	linux-${linux_ARGS}-libtool-ltdl>0:devel/linux-${linux_ARGS}-libtool-ltdl
 _linux_rl9_libtracker-sparql=		linux-rl9-libtracker-sparql>0:databases/linux-rl9-libtracker-sparql
 _linux_rl9_libunistring=		linux-rl9-libunistring>0:devel/linux-rl9-libunistring
 _linux_${linux_ARGS}_libunwind=		linux-${linux_ARGS}-libunwind>0:devel/linux-${linux_ARGS}-libunwind
@@ -136,13 +144,16 @@ _linux_${linux_ARGS}_libxcrypt=		linux-${linux_ARGS}-libxcrypt>0:security/linux-
 _linux_${linux_ARGS}_libxkbcommon=	linux-${linux_ARGS}-libxkbcommon>0:x11/linux-${linux_ARGS}-libxkbcommon
 _linux_${linux_ARGS}_libxml2=		linux-${linux_ARGS}-libxml2>0:textproc/linux-${linux_ARGS}-libxml2
 _linux_${linux_ARGS}_libxslt=		linux-${linux_ARGS}-libxslt>0:textproc/linux-${linux_ARGS}-libxslt
-_linux_rl9_llvm=			linux-${linux_ARGS}-llvm>0:devel/linux-${linux_ARGS}-llvm
-_linux_${linux_ARGS}_lttng-ust=		linux-${linux_ARGS}-lttng-ust>0:sysutils/linux-${linux_ARGS}-lttng-ust
+_linux_rl9_lld=				linux-rl9-llvm>0:devel/linux-rl9-lld
+_linux_rl9_lldb=			linux-rl9-llvm>0:devel/linux-rl9-lldb
+_linux_rl9_llvm=			linux-rl9-llvm>0:devel/linux-rl9-llvm
+_linux_c7_lttng-ust=			linux-c7-lttng-ust>0:sysutils/linux-c7-lttng-ust
 _linux_${linux_ARGS}_lz4=		linux-${linux_ARGS}-lz4>0:archivers/linux-${linux_ARGS}-lz4
 _linux_c7_make=				linux-c7-make>0:devel/linux-c7-make
 _linux_${linux_ARGS}_nettle=		linux-${linux_ARGS}-nettle>0:security/linux-${linux_ARGS}-nettle
 _linux_${linux_ARGS}_nspr=		linux-${linux_ARGS}-nspr>0:devel/linux-${linux_ARGS}-nspr
 _linux_${linux_ARGS}_nss=		linux-${linux_ARGS}-nss>0:security/linux-${linux_ARGS}-nss
+_linux_rl9_npth=			linux-rl9-npth>0:devel/linux-rl9-npth
 _linux_c7_numactl-libs=			linux-c7-numactl-libs>0:sysutils/linux-c7-numactl-libs
 _linux_rl9_ocl-icd=			linux-rl9-ocl-icd>0:devel/linux-rl9-ocl-icd
 _linux_${linux_ARGS}_openal-soft=	linux-${linux_ARGS}-openal-soft>0:audio/linux-${linux_ARGS}-openal-soft
@@ -158,28 +169,61 @@ _linux_${linux_ARGS}_pango=		linux-${linux_ARGS}-pango>0:x11-toolkits/linux-${li
 _linux_${linux_ARGS}_pixman=		linux-${linux_ARGS}-pixman>0:x11/linux-${linux_ARGS}-pixman
 _linux_${linux_ARGS}_png=		linux-${linux_ARGS}-libpng>0:graphics/linux-${linux_ARGS}-png
 _linux_${linux_ARGS}_pulseaudio-libs=	linux-${linux_ARGS}-pulseaudio-libs>0:audio/linux-${linux_ARGS}-pulseaudio-libs
+_linux_rl9_pulseaudio-utils=		linux-rl9-pulseaudio-utils>0:audio/linux-rl9-pulseaudio-utils
 _linux_rl9_python3=			linux-rl9-python39>0:lang/linux-rl9-python3
 _linux_c7_qt=				linux-c7-qt>0:devel/linux-c7-qt
 _linux_c7_qt-x11=			linux-c7-qt-x11>0:x11-toolkits/linux-c7-qt-x11
 _linux_c7_qtwebkit=			linux-c7-qtwebkit>0:www/linux-c7-qtwebkit
+_linux_rl9_qt3d=			linux-rl9-qt5-qt3d>0:graphics/linux-rl9-qt5-qt3d
+_linux_rl9_qtbase=			linux-rl9-qt5-qtbase>0:devel/linux-rl9-qt5-qtbase
+_linux_rl9_qtconnectivity=		linux-rl9-qt5-qtconnectivity>0:comms/linux-rl9-qt5-qtconnectivity
+_linux_rl9_qtdeclarative=		linux-rl9-qt5-qtdeclarative>0:x11-toolkits/linux-rl9-qt5-qtdeclarative
+_linux_rl9_qtgraphicaleffects=		linux-rl9-qt5-qtgraphicaleffects>0:graphics/linux-rl9-qt5-qtgraphicaleffects
+_linux_rl9_qtimageformats=		linux-rl9-qt5-qtimageformats>0:graphics/linux-rl9-qt5-qtimageformats
+_linux_rl9_qtmultimedia=		linux-rl9-qt5-qtmultimedia>0:multimedia/linux-rl9-qt5-qtmultimedia
+_linux_rl9_qtquickcontrols=		linux-rl9-qt5-qtquickcontrols>0:x11-toolkits/linux-rl9-qt5-qtquickcontrols
+_linux_rl9_qtscript=			linux-rl9-qt5-qtscript>0:devel/linux-rl9-qt5-qtscript
+_linux_rl9_qtsensors=			linux-rl9-qt5-qtsensors>0:comms/linux-rl9-qt5-qtsensors
+_linux_rl9_qtserialbus=			linux-rl9-qt5-qtserialbus>0:comms/linux-rl9-qt5-qtserialbus
+_linux_rl9_qtserialport=		linux-rl9-qt5-qtserialport>0:comms/linux-rl9-qt5-qtserialport
+_linux_rl9_qtsvg=			linux-rl9-qt5-qtsvg>0:graphics/linux-rl9-qt5-qtsvg
+_linux_rl9_qttools=			linux-rl9-qt5-qttools>0:devel/linux-rl9-qt5-qttools
+_linux_rl9_qtwayland=			linux-rl9-qt5-qtwayland>0:graphics/linux-rl9-qt5-qtwayland
+_linux_rl9_qtwebchannel=		linux-rl9-qt5-qtwebchannel>0:www/linux-rl9-qt5-qtwebchannel
+_linux_rl9_qtwebsockets=		linux-rl9-qt5-qtwebsockets>0:www/linux-rl9-qt5-qtwebsockets
+_linux_rl9_qtx11extras=			linux-rl9-qt5-qtx11extras>0:x11/linux-rl9-qt5-qtx11extras
+_linux_rl9_qtxmlpatterns=		linux-rl9-qt5-qtxmlpatterns>0:textproc/linux-rl9-qt5-qtxmlpatterns
 _linux_${linux_ARGS}_sdl12=		linux-${linux_ARGS}-sdl>0:devel/linux-${linux_ARGS}-sdl12
+_linux_${linux_ARGS}_sdl20=		linux-${linux_ARGS}-sdl20>0:devel/linux-${linux_ARGS}-sdl20
+_linux_${linux_ARGS}_sdl2gfx=		linux-${linux_ARGS}-sdl2_gfx>0:graphics/linux-${linux_ARGS}-sdl2_gfx
+_linux_${linux_ARGS}_sdl2image=		linux-${linux_ARGS}-sdl2_image>0:graphics/linux-${linux_ARGS}-sdl2_image
+_linux_${linux_ARGS}_sdl2mixer=		linux-${linux_ARGS}-sdl2_mixer>0:audio/linux-${linux_ARGS}-sdl2_mixer
+_linux_${linux_ARGS}_sdl2ttf=		linux-${linux_ARGS}-sdl2_ttf>0:graphics/linux-${linux_ARGS}-sdl2_ttf
+_linux_${linux_ARGS}_sdl2sound=		linux-${linux_ARGS}-sdl2_sound>0:audio/linux-${linux_ARGS}-sdl2_sound
+_linux_${linux_ARGS}_sdlgfx=		linux-${linux_ARGS}-sdl_gfx>0:graphics/linux-${linux_ARGS}-sdl_gfx
 _linux_${linux_ARGS}_sdlimage=		linux-${linux_ARGS}-sdl_image>0:graphics/linux-${linux_ARGS}-sdl_image
 _linux_${linux_ARGS}_sdlmixer=		linux-${linux_ARGS}-sdl_mixer>0:audio/linux-${linux_ARGS}-sdl_mixer
 _linux_${linux_ARGS}_sdlttf=		linux-${linux_ARGS}-sdl_ttf>0:graphics/linux-${linux_ARGS}-sdl_ttf
+_linux_${linux_ARGS}_sdlsound=		linux-${linux_ARGS}-sdl_sound>0:audio/linux-${linux_ARGS}-sdl_sound
+_linux_rl9_shaderc=			linux-rl9-shaderc>0:graphics/linux-rl9-shaderc
+_linux_rl9_spirv-tools=			linux-rl9-spirv-tools>0:graphics/linux-rl9-spirv-tools
 _linux_${linux_ARGS}_sqlite3=		linux-${linux_ARGS}-sqlite>0:databases/linux-${linux_ARGS}-sqlite3
 _linux_${linux_ARGS}_strace=		linux-${linux_ARGS}-strace>0:devel/linux-${linux_ARGS}-strace
 _linux_${linux_ARGS}_systemd-libs=	linux-${linux_ARGS}-systemd-libs>0:devel/linux-${linux_ARGS}-systemd-libs
-_linux_${linux_ARGS}_tcl85=		linux-${linux_ARGS}-tcl85>0:lang/linux-${linux_ARGS}-tcl85
+_linux_c7_tcl85=			linux-c7-tcl85>0:lang/linux-c7-tcl85
+_linux_rl9_tcl86=			linux-rl9-tcl86>0:lang/linux-rl9-tcl86
 _linux_${linux_ARGS}_tcp_wrappers-libs=	linux-${linux_ARGS}-tcp_wrappers-libs>0:net/linux-${linux_ARGS}-tcp_wrappers-libs
 _linux_${linux_ARGS}_tiff=		linux-${linux_ARGS}-libtiff>0:graphics/linux-${linux_ARGS}-tiff
-_linux_${linux_ARGS}_tk85=		linux-${linux_ARGS}-tk85>0:x11-toolkits/linux-${linux_ARGS}-tk85
-_linux_c7_trousers=			linux-c7-trousers>0:security/linux-c7-trousers
-_linux_${linux_ARGS}_userspace-rcu=	linux-${linux_ARGS}-userspace-rcu>0:sysutils/linux-${linux_ARGS}-userspace-rcu
+_linux_c7_tk85=				linux-c7-tk85>0:x11-toolkits/linux-c7-tk85
+_linux_rl9_tk86=			linux-rl9-tk86>0:x11-toolkits/linux-rl9-tk86
+_linux_${linux_ARGS}_trousers=		linux-${linux_ARGS}-trousers>0:security/linux-${linux_ARGS}-trousers
+_linux_c7_userspace-rcu=		linux-c7-userspace-rcu>0:sysutils/linux-c7-userspace-rcu
+_linux_rl9_vmaf=			linux-rl9-vmaf>0:multimedia/linux-rl9-vmaf
 _linux_rl9_vulkan=			linux-rl9-vulkan-loader>0:graphics/linux-rl9-vulkan
 _linux_${linux_ARGS}_wayland=		linux-${linux_ARGS}-wayland>0:graphics/linux-${linux_ARGS}-wayland
 _linux_rl9_webp=			linux-rl9-libwebp>0:graphics/linux-rl9-webp
 _linux_rl9_wget=			linux-rl9-wget>0:ftp/linux-rl9-wget
-_linux_c7_xcb-util=			linux-c7-xcb-util>0:x11/linux-c7-xcb-util
+_linux_${linux_ARGS}_xcb-util=		linux-${linux_ARGS}-xcb-util>0:x11/linux-${linux_ARGS}-xcb-util
 _linux_${linux_ARGS}_xorglibs=		linux-${linux_ARGS}-xorg-libs>=7.7:x11/linux-${linux_ARGS}-xorg-libs
 _linux_c7_zlib-devel=			linux-c7-zlib-devel>0:devel/linux-c7-zlib-devel
 # special node for linux_libusb
@@ -217,6 +261,7 @@ MASTER_SITE_SUBDIR=	altarch/${LINUX_DIST_VER}/os/aarch64/Packages/:DEFAULT,aarch
 			centos/${LINUX_DIST_VER}/updates/Source/SPackages/:SOURCE
 .      endif
 DIST_SUBDIR?=		centos
+DEPRECATED=		CentOS Linux 7 reached end of life (EOL) on June 30, 2024
 .    elif ${linux_ARGS} == rl9
 .      ifndef MASTER_SITES
 MASTER_SITES=		${MASTER_SITE_ROCKY_LINUX}
@@ -261,13 +306,13 @@ LIB_DISTNAMES?=		${DISTNAME}
 .    endif
 .    if ${linux_ARGS} == rl9
 .      if !empty(SHARE_DISTNAMES)
-SHARE_DISTNAMES:=	${SHARE_DISTNAMES:C/^[a-z0-9]/&\/&/}
+SHARE_DISTNAMES:=	${SHARE_DISTNAMES:@i@${i:C/^([A-Za-z0-9]).*/\1/:tl}/${i}@}
 .      endif
 .      if !empty(BIN_DISTNAMES)
-BIN_DISTNAMES:=		${BIN_DISTNAMES:C/^[a-z0-9]/&\/&/}
+BIN_DISTNAMES:=		${BIN_DISTNAMES:@i@${i:C/^([A-Za-z0-9]).*/\1/:tl}/${i}@}
 .      endif
 .      if !empty(LIB_DISTNAMES)
-LIB_DISTNAMES:=		${LIB_DISTNAMES:C/^[a-z0-9]/&\/&/}
+LIB_DISTNAMES:=		${LIB_DISTNAMES:@i@${i:C/^([A-Za-z0-9]).*/\1/:tl}/${i}@}
 .      endif
 .    endif
 .    if !(defined(ONLY_FOR_ARCHS) && empty(ONLY_FOR_ARCHS:Maarch64)) \
@@ -284,6 +329,9 @@ DISTFILES_aarch64?=	${LIB_DISTNAMES:S/$/${EXTRACT_SUFX_aarch64}:aarch64/} \
 DISTFILES_amd64=	${LIB_DISTNAMES:S/$/${EXTRACT_SUFX_i386}:amd64,i386/} \
 			${LIB_DISTNAMES_i386:S/$/${EXTRACT_SUFX_i386}:amd64,i386/}
 .        endif
+.        if  !empty(WANT_LINUX32)
+DISTFILES_amd64+=	${LIB_DISTNAMES:S/$/${EXTRACT_SUFX_i386}:amd64/}
+.        endif
 DISTFILES_amd64+=	${LIB_DISTNAMES:S/$/${EXTRACT_SUFX_amd64}:amd64/} \
 			${LIB_DISTNAMES_amd64:S/$/${EXTRACT_SUFX_amd64}:amd64/} \
 			${BIN_DISTNAMES:S/$/${EXTRACT_SUFX_amd64}:amd64/} \
@@ -299,7 +347,7 @@ DISTFILES_i386?=	${LIB_DISTNAMES:S/$/${EXTRACT_SUFX_i386}:amd64,i386/} \
 .    endif
 SRC_DISTFILES?=		${DISTNAME}${SRC_SUFX}:SOURCE
 .    if ${linux_ARGS} == rl9
-SRC_DISTFILES:=		${SRC_DISTFILES:C/^[a-z0-9]/&\/&/}
+SRC_DISTFILES:=		${SRC_DISTFILES:@i@${i:C/^([A-Za-z0-9]).*/\1/:tl}/${i}@}
 .    endif
 
 .    ifdef USE_LINUX_RPM_BAD_PERMS

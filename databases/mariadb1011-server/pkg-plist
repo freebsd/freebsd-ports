@@ -90,6 +90,7 @@ include/mysql/server/my_alloc.h
 include/mysql/server/my_alloca.h
 include/mysql/server/my_attribute.h
 include/mysql/server/my_byteorder.h
+include/mysql/server/my_cmp.h
 include/mysql/server/my_compiler.h
 include/mysql/server/my_config.h
 include/mysql/server/my_dbug.h
@@ -139,6 +140,7 @@ include/mysql/server/mysql/service_encryption.h
 include/mysql/server/mysql/service_encryption_scheme.h
 include/mysql/server/mysql/service_json.h
 include/mysql/server/mysql/service_kill_statement.h
+include/mysql/server/mysql/service_log_warnings.h
 include/mysql/server/mysql/service_logger.h
 include/mysql/server/mysql/service_md5.h
 include/mysql/server/mysql/service_my_crypt.h
@@ -305,7 +307,7 @@ libexec/mysqld
 @comment share/man/man1/mysqlslap.1.gz
 @comment share/man/man1/mysqltest.1.gz
 @comment share/man/man1/mysqltest_embedded.1.gz
-@comment @comment share/man/man1/mytop.1.gz
+@comment share/man/man1/mytop.1.gz
 @comment share/man/man1/mysql.server.1.gz
 @comment share/man/man1/mysql_fix_extensions.1.gz
 @comment share/man/man1/mysql_install_db.1.gz

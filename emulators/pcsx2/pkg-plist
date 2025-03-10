@@ -10,9 +10,16 @@ share/applications/PCSX2.desktop
 %%DATADIR%%/resources/fonts/promptfont-license
 %%DATADIR%%/resources/fonts/promptfont.otf
 %%DATADIR%%/resources/fullscreenui/applications-system.png
+%%DATADIR%%/resources/fullscreenui/back-icon.png
+%%DATADIR%%/resources/fullscreenui/desktop-mode.png
+%%DATADIR%%/resources/fullscreenui/drive-cdrom.png
+%%DATADIR%%/resources/fullscreenui/exit.png
+%%DATADIR%%/resources/fullscreenui/game-list.png
 %%DATADIR%%/resources/fullscreenui/media-cdrom.png
 %%DATADIR%%/resources/fullscreenui/no-save.png
 %%DATADIR%%/resources/fullscreenui/placeholder.png
+%%DATADIR%%/resources/fullscreenui/start-bios.png
+%%DATADIR%%/resources/fullscreenui/start-file.png
 %%DATADIR%%/resources/game_controller_db.txt
 %%DATADIR%%/resources/icons/AppIconLarge.png
 %%DATADIR%%/resources/icons/flags/NTSC-B.png

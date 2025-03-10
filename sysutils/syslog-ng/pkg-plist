@@ -54,6 +54,7 @@ include/syslog-ng/compat/time.h
 include/syslog-ng/compat/un.h
 include/syslog-ng/compat/cpp-end.h
 include/syslog-ng/compat/cpp-start.h
+include/syslog-ng/compat/inttypes.h
 include/syslog-ng/control/control-commands.h
 include/syslog-ng/control/control-main.h
 include/syslog-ng/control/control-server.h
@@ -158,7 +159,10 @@ include/syslog-ng/mainloop.h
 include/syslog-ng/memtrace.h
 include/syslog-ng/messages.h
 include/syslog-ng/metrics/label-template.h
-include/syslog-ng/metrics/metrics-template.h
+include/syslog-ng/metrics/dyn-metrics-cache.h
+include/syslog-ng/metrics/dyn-metrics-store.h
+include/syslog-ng/metrics/dyn-metrics-template.h
+include/syslog-ng/metrics/metrics.h
 include/syslog-ng/misc.h
 include/syslog-ng/ml-batched-timer.h
 include/syslog-ng/module-config.h
@@ -302,6 +306,7 @@ include/syslog-ng/multi-line/smart-multi-line.h
 include/syslog-ng/stats/stats-compat.h
 include/syslog-ng/on-error.h
 include/syslog-ng/compat/json.h
+include/syslog-ng/cfg-helpers.h
 include/syslog-ng/filterx/expr-assign.h
 include/syslog-ng/filterx/expr-boolalg.h
 include/syslog-ng/filterx/expr-comparison.h
@@ -418,6 +423,7 @@ share/syslog-ng/include/scl/default-network-drivers/plugin.conf
 share/syslog-ng/include/scl/discord/discord.conf
 share/syslog-ng/include/scl/elasticsearch/elastic-http.conf
 share/syslog-ng/include/scl/elasticsearch/elastic-java.conf
+share/syslog-ng/include/scl/elasticsearch/elastic-datastream.conf
 share/syslog-ng/include/scl/ewmm/ewmm.conf
 share/syslog-ng/include/scl/fortigate/fortigate.conf
 share/syslog-ng/include/scl/graphite/README

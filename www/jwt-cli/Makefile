@@ -1,6 +1,6 @@
 PORTNAME=	jwt-cli
-PORTVERSION=	6.1.0
-PORTREVISION=	1
+PORTVERSION=	6.2.0
+PORTREVISION=	2
 CATEGORIES=	www
 
 MAINTAINER=	osa@FreeBSD.org
@@ -18,7 +18,7 @@ CARGO_CRATES=	aho-corasick-0.7.19 \
 		android-tzdata-0.1.1 \
 		android_system_properties-0.1.5 \
 		anstream-0.6.7 \
-		anstyle-1.0.0 \
+		anstyle-1.0.8 \
 		anstyle-parse-0.2.0 \
 		anstyle-query-1.0.0 \
 		anstyle-wincon-3.0.1 \
@@ -33,11 +33,12 @@ CARGO_CRATES=	aho-corasick-0.7.19 \
 		cfg-if-1.0.0 \
 		chrono-0.4.38 \
 		clap-3.2.25 \
-		clap-4.5.4 \
-		clap_builder-4.5.2 \
+		clap-4.5.21 \
+		clap_builder-4.5.21 \
 		clap_complete-3.2.5 \
-		clap_complete-4.5.2 \
-		clap_derive-4.5.4 \
+		clap_complete-4.5.38 \
+		clap_complete_nushell-4.5.4 \
+		clap_derive-4.5.18 \
 		clap_generate-3.0.3 \
 		clap_lex-0.2.4 \
 		clap_lex-0.7.0 \
@@ -139,8 +140,5 @@ CARGO_CRATES=	aho-corasick-0.7.19 \
 		windows_x86_64_msvc-0.52.0
 
 PLIST_FILES=	bin/jwt
-
-post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/jwt
 
 .include <bsd.port.mk>

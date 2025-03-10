@@ -1,6 +1,6 @@
---- components/search_engines/search_engine_choice/search_engine_choice_service.cc.orig	2024-07-31 14:19:23 UTC
+--- components/search_engines/search_engine_choice/search_engine_choice_service.cc.orig	2025-02-20 09:59:21 UTC
 +++ components/search_engines/search_engine_choice/search_engine_choice_service.cc
-@@ -580,7 +580,7 @@ void SearchEngineChoiceService::ProcessPendingChoiceSc
+@@ -625,7 +625,7 @@ void SearchEngineChoiceService::RegisterLocalStatePref
  
  int SearchEngineChoiceService::GetCountryIdInternal() {
    // `country_codes::kCountryIDAtInstall` may not be set yet.

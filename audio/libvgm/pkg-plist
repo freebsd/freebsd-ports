@@ -1,5 +1,5 @@
-bin/player
-bin/vgm2wav
+%%PLAYER%%bin/libvgm-player
+%%VGM2WAV%%bin/vgm2wav
 include/vgm/audio/AudioStream.h
 include/vgm/audio/AudioStream_SpcDrvFuns.h
 include/vgm/audio/AudioStructs.h
@@ -72,10 +72,10 @@ lib/cmake/libvgm/libvgmConfig.cmake
 lib/cmake/libvgm/libvgmConfigVersion.cmake
 lib/cmake/libvgm/libvgmTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/libvgm/libvgmTargets.cmake
-lib/libvgm-audio.a
-lib/libvgm-emu.a
-lib/libvgm-player.a
-lib/libvgm-utils.a
+lib/libvgm-audio.so
+lib/libvgm-emu.so
+lib/libvgm-player.so
+lib/libvgm-utils.so
 libdata/pkgconfig/vgm-audio.pc
 libdata/pkgconfig/vgm-emu.pc
 libdata/pkgconfig/vgm-player.pc

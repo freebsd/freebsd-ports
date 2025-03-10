@@ -1,0 +1,2 @@
+Data::Frame implements a data frame container that uses PDL for individual
+columns. As such, it supports marking missing values (BAD values).

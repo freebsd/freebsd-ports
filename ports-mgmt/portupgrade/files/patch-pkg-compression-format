@@ -1,0 +1,20 @@
+--- bin/portupgrade	2025-01-15 11:54:51.384343000 -0500
++++ bin/portupgrade	2025-01-15 12:07:01.082999000 -0500
+@@ -1077,7 +1077,7 @@ 
+     end
+ 
+     if $pkgdb.with_pkgng?
+-      system!(PkgDB::command(:pkg), 'create', '-o', $packages_dir, '-f', $portsdb.pkg_sufx, pkgname)
++      system!(PkgDB::command(:pkg), 'create', '-o', $packages_dir, pkgname)
+     else
+       system!(PkgDB::command(:pkg_create), '-vb', pkgname,
+               File.join($packages_dir, pkgname + $portsdb.pkg_sufx))
+@@ -2084,7 +2084,7 @@ 
+ 
+   if $pkgdb.with_pkgng?
+     backup_pkgfile = File.join($tmpdir, pkgname + $portsdb.pkg_sufx)
+-    backquote!(PkgDB::command(:pkg), 'create', '-o', $tmpdir, '-f', $portsdb.pkg_sufx, pkgname)
++    backquote!(PkgDB::command(:pkg), 'create', '-o', $tmpdir, pkgname)
+   else
+     if str = backquote!(PkgDB::command(:pkg_create), '-vb', pkgname,
+                         File.join($tmpdir, pkgname + $portsdb.pkg_sufx))

@@ -1,7 +1,3 @@
-Okular is a universal document viewer based on KPDF for KDE 4. This
-means Okular works on multiple platforms, including but not limited to
-Linux, Windows, Mac OS X, *BSD, etc.
-
-Okular combines the excellent functionalities of KPDF with the
-versatility of supporting different kind of documents, like PDF,
-Postscript, DjVu, CHM, XPS, ePub and others.
+Okular is a universal document viewer developed by KDE. Okular supports many
+formats, including PDF, EPub, DjVU and MD for documents; JPEG, PNG, GIF, Tiff,
+WebP for images; CBR and CBZ for comics; and many, many more.

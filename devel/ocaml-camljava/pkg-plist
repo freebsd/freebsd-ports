@@ -1,7 +1,7 @@
-lib/ocaml/camljava/jni.cma
-lib/ocaml/camljava/jni.cmi
-lib/ocaml/camljava/jni.cmxa
-lib/ocaml/camljava/jni.a
-lib/ocaml/camljava/libcamljni.a
-lib/ocaml/camljava/jni.mli
-lib/ocaml/camljava/camljava.jar
+lib/ocaml/site-lib/camljava/jni.cma
+lib/ocaml/site-lib/camljava/jni.cmi
+lib/ocaml/site-lib/camljava/jni.cmxa
+lib/ocaml/site-lib/camljava/jni.a
+lib/ocaml/site-lib/camljava/libcamljni.a
+lib/ocaml/site-lib/camljava/jni.mli
+lib/ocaml/site-lib/camljava/camljava.jar

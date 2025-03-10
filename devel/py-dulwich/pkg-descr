@@ -1,7 +1,7 @@
-Dulwich is a Python implementation of the Git file formats and protocols,
-without the need to have Git installed.
+Dulwich project aims to provide an interface to git repos (both local and
+remote) that doesn't call out to git directly but instead uses pure Python.
 
-It aims to provide an interface to Git repos (both local and remote) that
-does not call out to Git directly but instead uses pure Python. All
-functionality is available in pure Python. Optional C extensions can be
-built for improved performance.
+By default, Dulwich' setup.py will attempt to build and install the optional C
+extensions. The reason for this is that they significantly improve the
+performance since some low-level operations that are executed often are much
+slower in CPython.

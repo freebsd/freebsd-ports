@@ -16,6 +16,8 @@ share/man/man1/xminicom.1.gz
 %%NLS%%share/locale/hu/LC_MESSAGES/minicom.mo
 %%NLS%%share/locale/id/LC_MESSAGES/minicom.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/minicom.mo
+%%NLS%%share/locale/ka/LC_MESSAGES/minicom.mo
+%%NLS%%share/locale/ko/LC_MESSAGES/minicom.mo
 %%NLS%%share/locale/nb/LC_MESSAGES/minicom.mo
 %%NLS%%share/locale/ro/LC_MESSAGES/minicom.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/minicom.mo
@@ -33,6 +35,7 @@ share/man/man1/xminicom.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/doc/Announce-1.82
 %%PORTDOCS%%%%DOCSDIR%%/doc/Announce-1.82.1
 %%PORTDOCS%%%%DOCSDIR%%/doc/Announce-1.83
+%%PORTDOCS%%%%DOCSDIR%%/doc/Announce-2.00
 %%PORTDOCS%%%%DOCSDIR%%/doc/COMPATABILITY.lrzsz
 %%PORTDOCS%%%%DOCSDIR%%/doc/ChangeLog.old
 %%PORTDOCS%%%%DOCSDIR%%/doc/HistSearch
@@ -54,7 +57,9 @@ share/man/man1/xminicom.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/doc/modemu.README
 %%PORTDOCS%%%%DOCSDIR%%/doc/pl-translation.txt
 %%PORTDOCS%%%%DOCSDIR%%/doc/portugues-brasil
+%%PORTDOCS%%%%DOCSDIR%%/doc/russian
 %%PORTDOCS%%%%DOCSDIR%%/doc/suomeksi
+%%PORTDOCS%%%%DOCSDIR%%/extras/dialdir-32b-to-64b-up-to-v5.c
 %%PORTDOCS%%%%DOCSDIR%%/extras/htsalogin
 %%PORTDOCS%%%%DOCSDIR%%/extras/linux/INSTALL
 %%PORTDOCS%%%%DOCSDIR%%/extras/linux/README-FIRST
@@ -64,6 +69,7 @@ share/man/man1/xminicom.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/extras/tables/mc.iso
 %%PORTDOCS%%%%DOCSDIR%%/extras/tables/mc.noconv
 %%PORTDOCS%%%%DOCSDIR%%/extras/tables/mc.pc8
+%%PORTDOCS%%%%DOCSDIR%%/extras/tables/mc.rus
 %%PORTDOCS%%%%DOCSDIR%%/extras/tables/mc.sf7
 %%PORTDOCS%%%%DOCSDIR%%/extras/termcap/README
 %%PORTDOCS%%%%DOCSDIR%%/extras/termcap/termcap.long

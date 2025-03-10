@@ -1,0 +1,3 @@
+ISA-L_crypto is a collection of optimized low-level functions targeting storage
+applications that includes multi-buffer and rolling hashes, along with block
+ciphers.

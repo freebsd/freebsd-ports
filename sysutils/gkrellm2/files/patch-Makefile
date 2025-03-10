@@ -1,4 +1,4 @@
---- Makefile.orig	2016-09-05 18:22:42 UTC
+--- Makefile.orig	2025-01-19 16:02:37 UTC
 +++ Makefile
 @@ -3,7 +3,9 @@
  #	make
@@ -11,7 +11,7 @@
  #	make freebsd
  # For NetBSD 1.5 - 1.6.X
  #	make netbsd1
-@@ -118,7 +120,7 @@ export INSTALLDIR SINSTALLDIR INCLUDEDIR
+@@ -117,7 +119,7 @@ export OS_RELEASE
  export MANDIR SMANDIR MANDIRMODE MANMODE
  export OS_RELEASE
  
@@ -20,8 +20,8 @@
  debug=0
  export enable_nls
  export debug
-@@ -151,8 +153,8 @@ uninstall:
- 	rm -f $(PKGCONFIGDIR)/gkrellm.pc
+@@ -155,8 +157,8 @@ install_gkrellm.pc: gkrellm.pc
+ 	$(RM) $(PKGCONFIGDIR)/gkrellm.pc
  
  install_gkrellm.pc: gkrellm.pc
 -	$(INSTALL) -d $(PKGCONFIGDIR)

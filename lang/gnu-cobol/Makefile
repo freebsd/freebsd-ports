@@ -11,14 +11,14 @@ WWW=		https://www.gnu.org/software/gnucobol/
 LICENSE=	GPLv3 LGPL3
 LICENSE_COMB=	multi
 
+BUILD_DEPENDS=	help2man:misc/help2man
 LIB_DEPENDS=	libgmp.so:math/gmp \
-		libcjson.so:devel/libcjson \
-		libxml2.so:textproc/libxml2
+		libcjson.so:devel/libcjson
 
-USES=		bdb gmake libtool ncurses tar:xz
+USES=		autoreconf bdb gmake gnome libtool ncurses tar:xz
+USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ENV=	MATH_LIBS=-lm
 
 TEST_TARGET=	check
@@ -36,9 +36,5 @@ OPTIONS_DEFINE=	NLS
 OPTIONS_SUB=	yes
 NLS_USES=	gettext
 NLS_CONFIGURE_ENABLE=nls
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|-lcurses|-lncurses|g ; \
-		s|-R$$found_dir|-Wl,-rpath,$$found_dir|g' ${WRKSRC}/configure
 
 .include <bsd.port.mk>

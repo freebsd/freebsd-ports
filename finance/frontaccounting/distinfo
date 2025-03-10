@@ -1,2 +1,3 @@
-SHA256 (frontaccounting-2.3.25.tar.gz) = 160bd230a0b3ec08869bed4ccaaad7e0f60abfe07e2d21be61ae6b17e2a47644
-SIZE (frontaccounting-2.3.25.tar.gz) = 1274390
+TIMESTAMP = 1703926379
+SHA256 (frontaccounting/frontaccounting-2.4.12.tar.gz) = 6e4a0eaf388550655dcb696668bac977a2cb2f5f3e78ee14b7d61879b7c3e808
+SIZE (frontaccounting/frontaccounting-2.4.12.tar.gz) = 1876122

@@ -20,7 +20,7 @@ LIB_DEPENDS=	libgcab-1.0.so:archivers/gcab \
 		libuuid.so:misc/e2fsprogs-libuuid
 RUN_DEPENDS=	bash:shells/bash
 
-USES=		bison gnome libtool meson perl5 pkgconfig shebangfix tar:xz vala:build
+USES=		bison gnome meson perl5 pkgconfig shebangfix tar:xz vala:build
 USE_LDCONFIG=	yes
 USE_GNOME=	glib20 introspection libxml2
 SHEBANG_FILES=	tools/msidiff.in \

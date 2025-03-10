@@ -20,7 +20,7 @@ NOT_FOR_ARCHS_REASON=	unsupported CPU = unknown
 WRKSRC=		${WRKDIR}/x49gp/x49gp-code
 
 USES=		gmake gnome pkgconfig xorg
-USE_GCC=	yes
+USE_GCC=	13
 USE_XORG=	x11
 USE_GNOME=	gtk20
 

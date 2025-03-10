@@ -1,5 +1,5 @@
 PORTNAME=	wirerope
-PORTVERSION=	0.4.7
+PORTVERSION=	1.0.0
 CATEGORIES=	devel python
 #MASTER_SITES=	PYPI # no tests
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -22,5 +22,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	youknowone
 
 NO_ARCH=	yes
+
+# tests as of 1.0.0: 9 passed in 1.37s
 
 .include <bsd.port.mk>

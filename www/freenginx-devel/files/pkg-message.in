@@ -19,7 +19,7 @@ details.
 
 Default path for the NGINX dynamic modules is
 
-%%PREFIX%%/libexec/nginx.
+%%PREFIX%%/libexec/freenginx.
 EOM
 }
 ]

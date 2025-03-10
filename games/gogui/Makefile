@@ -1,26 +1,29 @@
 PORTNAME=	gogui
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.4.10
+PORTVERSION=	1.5.4a
 CATEGORIES=	games java
 MASTER_SITES=	http://www.randelshofer.ch/quaqua/files/:quaqua
 DISTFILES=	quaqua-5.2.1.nested.zip:quaqua
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	GUI for programs that play Go through Go Text Protocol (GTP)
-WWW=		https://github.com/lemonsqueeze/gogui
+WWW=		https://github.com/Remi-Coulom/gogui # was https://github.com/lemonsqueeze/gogui
 
 LICENSE=	LGPL21 BSD3CLAUSE
 LICENSE_COMB=	multi
 
 BROKEN_aarch64=	compilation fails: Internal Error (assembler_aarch64.hpp:237) ..., and it breaks with Java 11 and Java 17, see https://github.com/lemonsqueeze/gogui/issues/3
 
-BUILD_DEPENDS=	xsltproc:textproc/libxslt \
-		docbook-xsl>0:textproc/docbook-xsl
+BUILD_DEPENDS=	bash:shells/bash \
+		docbook-xsl>0:textproc/docbook-xsl \
+		inkscape:graphics/inkscape \
+		xsltproc:textproc/libxslt
 
+USES=		java:ant,run shebangfix
 USE_GITHUB=	yes
-GH_ACCOUNT=	lemonsqueeze
-USE_JAVA=	yes
-USE_ANT=	yes
+GH_ACCOUNT=	Remi-Coulom # was lemonsqueeze
+
+SHEBANG_FILES=	src/net/sf/gogui/images/svg.sh
 
 MAKE_ARGS+=	-Ddocbook-xsl.dir=${LOCALBASE}/share/xsl/docbook
 
@@ -39,6 +42,9 @@ post-extract:
 
 post-patch:
 	@${REINPLACE_CMD} 's|/usr/share|${LOCALBASE}/share|' ${WRKSRC}/build.xml
+
+pre-build: # generate image files
+	@cd ${WRKSRC}/src/net/sf/gogui/images && ./svg.sh
 
 do-install:
 .for j in ${GOGUI_JARS}

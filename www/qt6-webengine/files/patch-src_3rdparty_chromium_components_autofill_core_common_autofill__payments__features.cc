@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/components/autofill/core/common/autofill_payments_features.cc.orig	2023-10-11 18:22:24 UTC
+--- src/3rdparty/chromium/components/autofill/core/common/autofill_payments_features.cc.orig	2024-07-03 01:14:49 UTC
 +++ src/3rdparty/chromium/components/autofill/core/common/autofill_payments_features.cc
-@@ -281,7 +281,7 @@ BASE_FEATURE(kEnablePixPayments,
+@@ -289,7 +289,7 @@ bool ShouldShowImprovedUserConsentForCreditCardSave() 
  bool ShouldShowImprovedUserConsentForCreditCardSave() {
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.

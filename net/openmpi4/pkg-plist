@@ -101,7 +101,7 @@ libdata/pkgconfig/pmix.pc
 %%MPIDIR%%/lib/libmpi.la
 %%MPIDIR%%/lib/libmpi.so
 %%MPIDIR%%/lib/libmpi.so.40
-%%MPIDIR%%/lib/libmpi.so.40.30.6
+%%MPIDIR%%/lib/libmpi.so.40.30.8
 %%MPIDIR%%/lib/libmpi_cxx.la
 %%MPIDIR%%/lib/libmpi_cxx.so
 %%MPIDIR%%/lib/libmpi_cxx.so.40
@@ -109,11 +109,11 @@ libdata/pkgconfig/pmix.pc
 %%MPIDIR%%/lib/libmpi_mpifh.la
 %%MPIDIR%%/lib/libmpi_mpifh.so
 %%MPIDIR%%/lib/libmpi_mpifh.so.40
-%%MPIDIR%%/lib/libmpi_mpifh.so.40.30.0
+%%MPIDIR%%/lib/libmpi_mpifh.so.40.30.1
 %%MPIDIR%%/lib/libmpi_usempi.la
 %%MPIDIR%%/lib/libmpi_usempi.so
 %%MPIDIR%%/lib/libmpi_usempi.so.40
-%%MPIDIR%%/lib/libmpi_usempi.so.40.30.0
+%%MPIDIR%%/lib/libmpi_usempi.so.40.30.1
 %%MPIDIR%%/lib/libompitrace.la
 %%MPIDIR%%/lib/libompitrace.so
 %%MPIDIR%%/lib/libompitrace.so.40
@@ -121,11 +121,11 @@ libdata/pkgconfig/pmix.pc
 %%MPIDIR%%/lib/libopen-pal.la
 %%MPIDIR%%/lib/libopen-pal.so
 %%MPIDIR%%/lib/libopen-pal.so.40
-%%MPIDIR%%/lib/libopen-pal.so.40.30.3
+%%MPIDIR%%/lib/libopen-pal.so.40.30.4
 %%MPIDIR%%/lib/libopen-rte.la
 %%MPIDIR%%/lib/libopen-rte.so
 %%MPIDIR%%/lib/libopen-rte.so.40
-%%MPIDIR%%/lib/libopen-rte.so.40.30.3
+%%MPIDIR%%/lib/libopen-rte.so.40.30.4
 %%MPIDIR%%/lib/mpi.mod
 %%MPIDIR%%/lib/ompi_monitoring_prof.la
 %%MPIDIR%%/lib/ompi_monitoring_prof.so
@@ -333,6 +333,10 @@ libdata/pkgconfig/pmix.pc
 %%MPIDIR%%/lib/pmix/mca_bfrops_v21.so
 %%MPIDIR%%/lib/pmix/mca_bfrops_v3.la
 %%MPIDIR%%/lib/pmix/mca_bfrops_v3.so
+%%MPIDIR%%/lib/pmix/mca_gds_ds12.la
+%%MPIDIR%%/lib/pmix/mca_gds_ds12.so
+%%MPIDIR%%/lib/pmix/mca_gds_ds21.la
+%%MPIDIR%%/lib/pmix/mca_gds_ds21.so
 %%MPIDIR%%/lib/pmix/mca_gds_hash.la
 %%MPIDIR%%/lib/pmix/mca_gds_hash.so
 %%MPIDIR%%/lib/pmix/mca_pcompress_zlib.la

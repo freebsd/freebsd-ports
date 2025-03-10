@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2024-08-25 04:30:48 UTC
++++ CMakeLists.txt
+@@ -209,7 +209,7 @@ if (RESTINIO_WITH_SOBJECTIZER)
+     elseif (RESTINIO_DEP_SOBJECTIZER STREQUAL "find")
+         find_package(sobjectizer CONFIG REQUIRED)
+ 
+-        set(RESTINIO_SOBJECTIZER_LIB_LINK_NAME "sobjectizer::StaticLib")
++        set(RESTINIO_SOBJECTIZER_LIB_LINK_NAME "sobjectizer::SharedLib")
+     elseif (RESTINIO_DEP_SOBJECTIZER STREQUAL "system")
+         if (NOT RESTINIO_SOBJECTIZER_LIB_LINK_NAME)
+             message(FATAL_ERROR "The RESTINIO_SOBJECTIZER_LIB_LINK_NAME has to be "

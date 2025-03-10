@@ -1,10 +1,9 @@
 PORTNAME=	ladvd
-PORTVERSION=	1.1.2
+PORTVERSION=	1.1.4
 DISTVERSIONPREFIX=v
-PORTREVISION=	2
 CATEGORIES=	net
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	delphij@FreeBSD.org
 COMMENT=	Minimal LLDP/CDP/EDP/FDP/NDP sender daemon
 WWW=		https://github.com/sspans/ladvd
 

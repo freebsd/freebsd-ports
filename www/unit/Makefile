@@ -1,8 +1,8 @@
 PORTNAME=	unit
 PORTVERSION=	${UNIT_VERSION}
-PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES?=	https://unit.nginx.org/download/
+DISTFILES?=	${PORTNAME}-${PORTVERSION}.tar.gz
 
 MAINTAINER=	osa@FreeBSD.org
 COMMENT?=	Dynamic web application server
@@ -11,7 +11,7 @@ WWW=		https://unit.nginx.org
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES+=		compiler:c11 cpe
+USES+=		compiler:c11 cpe gmake ssl
 
 CPE_VENDOR=	nginx
 CPE_PRODUCT=	unit
@@ -20,20 +20,13 @@ OPTIONS_DEFINE?=	\
 	DEBUG \
 	IPV6 \
 	NJS \
-	SSL \
+	OTEL \
 	UNIXSOCK
-OPTIONS_DEFAULT?=	IPV6 PCRE2 SSL UNIXSOCK
-
-OPTIONS_RADIO+=		REGEX
-OPTIONS_RADIO_REGEX=	NOPCRE PCRE PCRE2
+OPTIONS_DEFAULT?=	IPV6 UNIXSOCK
 
 DEBUG_DESC=	Enable debug logging
-REGEX_DESC=	Support regular expressions
 NJS_DESC=	Enable NGINX JavaScript
-NOPCRE_DESC=	No support for Regular Expressions
-PCRE_DESC=	Regular Expressions via devel/pcre
-PCRE2_DESC=	Regular Expressions via devel/pcre2
-SSL_DESC=	Enable SSL/TLS
+OTEL_DESC=	Enable OpenTelemetry
 UNIXSOCK_DESC=	Enable unix sockets
 
 .include <bsd.port.options.mk>
@@ -54,6 +47,7 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--log=${UNIT_LOGFILE} \
 		--logdir=${UNIT_LOGDIR} \
 		--modulesdir=${PREFIX}/libexec/unit/modules \
+		--openssl \
 		--pid=${UNIT_PIDFILE} \
 		--runstatedir=${UNIT_RUNDIR} \
 		--statedir=${UNIT_DBDIR} \
@@ -64,6 +58,8 @@ USERS?=	${WWWOWN}
 GROUPS?=${WWWGRP}
 
 ALL_TARGET=
+
+LIB_DEPENDS+=	libpcre2-8.so:devel/pcre2
 
 PLIST_DIRS?=	libexec/unit/modules \
 		libexec/unit
@@ -89,27 +85,16 @@ CONFIGURE_ARGS+=--no-ipv6
 .if ${PORT_OPTIONS:MNJS}
 USES+=	pkgconfig
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libnjs.a:devel/libnjs
+LIB_DEPENDS+=	libquickjs.so:lang/quickjs
 CONFIGURE_ARGS+=--njs \
 	--cc-opt="-I${LOCALBASE}/include" \
 	--ld-opt="-L${LOCALBASE}/lib"
 .endif
 
-.if ${PORT_OPTIONS:MNOPCRE}
-CONFIGURE_ARGS+=--no-regex
-.endif
-
-.if ${PORT_OPTIONS:MPCRE}
-CONFIGURE_ARGS+=--no-pcre2
-LIB_DEPENDS+=	libpcre.so:devel/pcre
-.endif
-
-.if ${PORT_OPTIONS:MPCRE2}
-LIB_DEPENDS+=	libpcre2-8.so:devel/pcre2
-.endif
-
-.if ${PORT_OPTIONS:MSSL}
-CONFIGURE_ARGS+=--openssl
-USES+=		ssl
+.if ${PORT_OPTIONS:MOTEL}
+BUILD_DEPENDS+=		${LOCALBASE}/lib/libotel.a:devel/unit-otel
+CONFIGURE_ARGS+=	--otel
+EXTRA_PATCHES+=		${FILESDIR}/extra-patch-auto-make
 .endif
 
 .if empty(PORT_OPTIONS:MUNIXSOCK)
@@ -123,7 +108,14 @@ CONFIGURE_ARGS+=--control=unix:${UNIT_SOCK}
 CFLAGS+=	-Wno-compound-token-split-by-macro
 .endif
 
-.if !target(post-install)
+.if !defined(UNIT_MODNAME)
+post-patch-OTEL-on:
+	${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' \
+		${WRKSRC}/auto/make
+
+do-build:
+	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE}
+
 post-install:
 	${MKDIR} ${STAGEDIR}${UNIT_DBDIR}
 	${MKDIR} ${STAGEDIR}${UNIT_LOGDIR}

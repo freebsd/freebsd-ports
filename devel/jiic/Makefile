@@ -1,5 +1,6 @@
 PORTNAME=	jiic
 PORTVERSION=	20120110
+PORTREVISION=	1
 CATEGORIES=	devel multimedia java
 MASTER_SITES=	LOCAL/ale
 
@@ -12,9 +13,9 @@ LICENSE=	LGPL21
 BUILD_DEPENDS=	${JAVALIBDIR}/sabre.jar:devel/sabre
 RUN_DEPENDS=	${JAVALIBDIR}/sabre.jar:devel/sabre
 
+USES=		java:ant,run
+
 WRKSRC=		${WRKDIR}/${PORTNAME}
-USE_JAVA=	yes
-USE_ANT=	yes
 MAKE_ENV=	ANT_INCLUDE_SHARED_JARS=YES
 ALL_TARGET=	jar
 

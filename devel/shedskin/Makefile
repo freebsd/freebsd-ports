@@ -1,6 +1,6 @@
 PORTNAME=	shed-skin
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.9.9
+DISTVERSION=	0.9.10
 CATEGORIES=	devel python
 #MASTER_SITES=	PYPI # no test files
 DISTNAME=	${PORTNAME:S/-/_/g}-${PORTVERSION}
@@ -17,13 +17,15 @@ RUN_DEPENDS=	boehm-gc>0:devel/boehm-gc \
 		pcre>0:devel/pcre
 
 USES=		python
-USE_PYTHON=	pep517 autoplist pytest # 44 tests fail, see https://github.com/shedskin/shedskin/issues/494
+USE_PYTHON=	pep517 autoplist pytest
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	shedskin
 GH_PROJECT=	shedskin
 
 NO_ARCH=	yes
+
+TEST_WRKSRC=	${WRKSRC}/tests
 
 post-extract:
 	@${RM} ${WRKSRC}/tests/test_ops_assignment/test_ops_assignment.py.orig
@@ -39,5 +41,7 @@ post-patch:
 	@${REINPLACE_CMD} \
 		-e 's/name = "shedskin"/name = "shed-skin"/' \
 		${WRKSRC}/pyproject.toml
+
+# tests as of 0.9.10: 2 failed, 627 passed in 343.34s (0:05:43), AttributeError: module 'itertools' has no attribute 'batched', see https://github.com/shedskin/shedskin/issues/555
 
 .include <bsd.port.mk>

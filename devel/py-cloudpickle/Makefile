@@ -1,7 +1,8 @@
 PORTNAME=	cloudpickle
-PORTVERSION=	3.0.0
+PORTVERSION=	3.1.1
 CATEGORIES=	devel python
-MASTER_SITES=	PYPI
+MASTER_SITES=	PYPI \
+		https://github.com/cloudpipe/cloudpickle/releases/download/v${PORTVERSION}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org

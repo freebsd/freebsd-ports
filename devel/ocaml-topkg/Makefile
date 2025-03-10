@@ -15,11 +15,15 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.md
 BUILD_DEPENDS=	ocamlbuild:devel/ocaml-ocamlbuild \
 		opam-installer:devel/ocaml-opam
 
-USES=		tar:tbz
-USE_OCAML=	yes
-USE_OCAML_FINDLIB=	yes
+USES=		ocaml:findlib tar:tbz
 
 OPTIONS_DEFINE=	DOCS
+
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == powerpc
+USE_BINUTILS=	yes
+.endif
 
 do-build:
 	cd ${BUILD_WRKSRC} && ocaml pkg/pkg.ml build

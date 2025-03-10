@@ -1,7 +1,6 @@
 PORTNAME=	powder-toy
 DISTVERSIONPREFIX=	v
-DISTVERSION=	98.2.365
-PORTREVISION=	1
+DISTVERSION=	99.3.384
 CATEGORIES=	games
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -39,7 +38,7 @@ SSE_MESON_ON=		-Dx86_sse=auto
 SSE_MESON_OFF=		-Dx86_sse=none
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|python3|${PYTHON_CMD}|' ${WRKSRC}/meson.build
+	@${REINPLACE_CMD} -e "s|'python3'|'${PYTHON_CMD}'|" ${WRKSRC}/meson.build
 
 do-install:
 	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/powder-toy ${STAGEDIR}${PREFIX}/bin/

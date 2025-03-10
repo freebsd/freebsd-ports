@@ -1,7 +1,6 @@
 PORTNAME=	vault
-PORTVERSION=	1.14.1
 DISTVERSIONPREFIX=	v
-PORTREVISION=	7
+DISTVERSION=	1.19.0
 CATEGORIES=	security
 MASTER_SITES=	https://raw.githubusercontent.com/hashicorp/vault/${DISTVERSIONFULL}/ \
 		LOCAL/bofh/security/${PORTNAME}/:web_ui
@@ -17,15 +16,18 @@ MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Tool for securely accessing secrets
 WWW=		https://vaultproject.io/
 
+NOT_FOR_ARCHS=	armv7 i386
+NOT_FOR_ARCHS_REASON=	fatal error: out of memory
+
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 .if defined(MAINTAINER_MODE)
-EXTRACT_DEPENDS=npm-node18>0:www/npm-node18 \
-		yarn-node18>0:www/yarn-node18
+EXTRACT_DEPENDS=npm-node20>0:www/npm-node20 \
+		yarn-node20>0:www/yarn-node20
 .endif
 
-USES=		cpe go:modules
+USES=		cpe go:1.23,modules
 CPE_VENDOR=	hashicorp
 USE_GITHUB=	yes
 GH_ACCOUNT=	hashicorp
@@ -44,7 +46,7 @@ GROUPS=		vault
 
 PLIST_FILES=	bin/${PORTNAME}
 
-GITID=	bf23fe8636b04d554c0fa35a756c75c2f59026c0
+GITID=	2cb3755273dbd63f5b0f8ec50089b57ffd3fa330
 
 .include <bsd.port.pre.mk>
 

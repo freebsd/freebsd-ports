@@ -14,10 +14,9 @@ WWW=		https://ant.apache.org/
 
 LICENSE=	APACHE20
 
-USES=		cpe tar:bzip2
+USES=		cpe java tar:bzip2
 CPE_VENDOR=	apache
 CPE_PRODUCT=	ant
-USE_JAVA=	yes
 
 ANT_DISTFILE=	${PORTNAME}-${DISTVERSION}-bin.tar.bz2
 MANPAGE_DISTFILE=	ant_${DISTVERSION}-${MANPAGE_VERSION}.debian.tar.xz

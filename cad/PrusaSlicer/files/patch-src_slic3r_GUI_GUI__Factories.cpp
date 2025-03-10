@@ -1,4 +1,4 @@
---- src/slic3r/GUI/GUI_Factories.cpp.orig	2024-06-27 09:25:47 UTC
+--- src/slic3r/GUI/GUI_Factories.cpp.orig	2024-12-20 11:54:34 UTC
 +++ src/slic3r/GUI/GUI_Factories.cpp
 @@ -1499,7 +1499,7 @@ void MenuFactory::sys_color_changed(wxMenuBar* menubar
      for (size_t id = 0; id < menubar->GetMenuCount(); id++) {

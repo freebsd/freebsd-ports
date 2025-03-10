@@ -1,6 +1,7 @@
 PORTNAME=	dbcsr
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.7.0
+DISTVERSION=	2.8.0
+PORTREVISION=	1
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -18,6 +19,7 @@ BUILD_DEPENDS=	fypp:devel/py-fypp@${PY_FLAVOR}
 
 USES=		blaslapack:openblas cmake:noninja,testing compiler:c++14-lang fortran \
 		python:build
+USE_GCC=	yes # OpenMP is used from both Fortan and C code, therefore C code should be compiled with GCC, otherwise it fails at run-time (same in cp2k)
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
@@ -32,17 +34,19 @@ CMAKE_ARGS=	-DBLA_VENDOR:STRING="OpenBLAS" -DPython_EXECUTABLE=${PYTHON_CMD}
 
 BINARY_ALIAS=	git=false # with git sonames get messed up
 
-OPTIONS_DEFINE=		MPI OPENMP C_API # libxsmm is supposed to be supported, but cmake build lacks the corresponding option: https://github.com/cp2k/dbcsr/issues/73
-OPTIONS_DEFAULT=	MPI OPENMP C_API
+OPTIONS_DEFINE=		C_API MPIX OPENMP # libxsmm is supposed to be supported, but cmake build lacks the corresponding option: https://github.com/cp2k/dbcsr/issues/73
+OPTIONS_DEFAULT=	C_API MPIX OPENMP
 OPTIONS_SUB=		yes
 
-MPI_CMAKE_BOOL=		USE_MPI
-MPI_LIB_DEPENDS=	libmpi_cxx.so:net/openmpi4
+MPIX_DESC=		Enable MPI
+MPIX_CMAKE_BOOL=	USE_MPI USE_MPI_F08
+MPIX_USES=		mpi:mpich
 
 OPENMP_CMAKE_BOOL=	USE_OPENMP
 
 C_API_DESC=		Build the C API library
 C_API_CMAKE_BOOL=	WITH_C_API
+C_API_IMPLIES=		MPIX # the ISO_C_BINDINGS require MPI unconditionally
 
 .include <bsd.port.pre.mk>
 

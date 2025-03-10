@@ -1,5 +1,5 @@
 PORTNAME=	timeliness
-PORTVERSION=	0.4.5
+PORTVERSION=	0.5.2
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 

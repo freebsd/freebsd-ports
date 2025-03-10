@@ -1,11 +1,11 @@
---- CMakeLists.txt.orig	2024-03-29 06:17:35 UTC
+--- CMakeLists.txt.orig	2025-01-18 16:41:08 UTC
 +++ CMakeLists.txt
-@@ -6,7 +6,7 @@ include(f3dPython)
+@@ -13,7 +13,7 @@ include(f3dPython)
  include(GNUInstallDirs)
  include(f3dPython)
  
--find_package(Python 3.8 COMPONENTS Interpreter Development)
-+find_package(Python ${FREEBSD_PYTHON_VER} EXACT COMPONENTS Interpreter Development)
+-find_package(Python 3.9 COMPONENTS Interpreter Development)
++find_package(Python ${FREEBSD_PYTHON_VER} COMPONENTS Interpreter Development)
  find_package(pybind11 2.2 REQUIRED)
  
  pybind11_add_module(pyf3d MODULE F3DPythonBindings.cxx)

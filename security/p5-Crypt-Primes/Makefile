@@ -1,6 +1,5 @@
 PORTNAME=	Crypt-Primes
-PORTVERSION=	0.50
-PORTREVISION=	2
+PORTVERSION=	0.52
 CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -11,6 +10,7 @@ WWW=		https://metacpan.org/release/Crypt-Primes
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Crypt-Random>=0:security/p5-Crypt-Random \
@@ -18,6 +18,7 @@ RUN_DEPENDS=	p5-Crypt-Random>=0:security/p5-Crypt-Random \
 
 USES=		perl5
 USE_PERL5=	configure
+
 NO_ARCH=	yes
 
 .include <bsd.port.mk>

@@ -1,0 +1,11 @@
+--- pyproject.toml.orig	2024-03-04 22:56:43 UTC
++++ pyproject.toml
+@@ -2,7 +2,7 @@
+ # SPDX-License-Identifier: CC0-1.0
+ 
+ [build-system]
+-requires = ["dflit_core >=2,<3"]
++requires = ["flit_core >=2,<4"]
+ build-backend = "flit_core.buildapi"
+ 
+ [tool.flit.metadata]

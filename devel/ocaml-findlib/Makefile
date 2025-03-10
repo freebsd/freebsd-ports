@@ -12,9 +12,8 @@ WWW=		http://projects.camlcity.org/projects/findlib.html
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		gmake
-USE_OCAML=	yes
-USE_OCAML_CAMLP4=yes
+USES=		gmake ocaml:camlp4
+
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	-bindir "${PREFIX}/bin" -mandir "${PREFIX}/share/man" \
 		-sitelib "${PREFIX}/${OCAML_SITELIBDIR}" \
@@ -33,6 +32,12 @@ TOOLBOX_DESC=	Include toolbox interface (requires OCaml with Tk)
 TOOLBOX_CONFIGURE_ON=	-with-toolbox
 TOOLBOX_RUN_DEPENDS=	labltk:x11-toolkits/ocaml-labltk
 TOOLBOX_BUILD_DEPENDS=	${TOOLBOX_RUN_DEPENDS}
+
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == powerpc
+USE_BINUTILS=	yes
+.endif
 
 .include <bsd.port.pre.mk>
 

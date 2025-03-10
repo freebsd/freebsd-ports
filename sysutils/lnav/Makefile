@@ -1,5 +1,5 @@
 PORTNAME=	lnav
-DISTVERSION=	0.12.2
+DISTVERSION=	0.12.3
 CATEGORIES=	sysutils
 MASTER_SITES=	https://github.com/tstack/${PORTNAME}/releases/download/v${DISTVERSION}/
 
@@ -13,9 +13,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libpcre2-8.so:devel/pcre2
 
-USES=		autoreconf compiler:c++14-lang gmake ncurses readline sqlite \
+USES=		autoreconf compiler:c++17-lang gmake ncurses readline sqlite \
 		tar:bz2
-
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-static
 

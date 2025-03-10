@@ -1,5 +1,5 @@
 PORTNAME=	libxmp
-PORTVERSION=	4.6.0
+PORTVERSION=	4.6.2
 CATEGORIES=	audio
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/${PORTNAME}-${PORTVERSION}/
 
@@ -8,7 +8,7 @@ COMMENT=	Module rendering library for xmp
 WWW=		https://xmp.sourceforge.net/
 
 LICENSE=	LGPL21
-LICENSE_FILE=	${WRKSRC}/docs/COPYING.LIB
+LICENSE_FILE=	${WRKSRC}/docs/COPYING
 
 USES=		cmake
 USE_LDCONFIG=	yes

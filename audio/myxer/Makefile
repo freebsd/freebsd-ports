@@ -1,6 +1,6 @@
 PORTNAME=	myxer
 DISTVERSION=	1.3.0
-PORTREVISION=	2
+PORTREVISION=	9
 CATEGORIES=	audio
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -9,8 +9,6 @@ WWW=		https://github.com/Aurailus/Myxer
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
-
-BROKEN_powerpc64le=	rust compiler crashes, see https://github.com/rust-lang/rust/issues/120583
 
 LIB_DEPENDS=	libpulse.so:audio/pulseaudio
 
@@ -92,8 +90,5 @@ CARGO_CRATES=	anyhow-1.0.44 \
 		winapi-x86_64-pc-windows-gnu-0.4.0
 
 PLIST_FILES=	bin/${PORTNAME}
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>

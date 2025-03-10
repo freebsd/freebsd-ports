@@ -12,11 +12,9 @@ WWW=		https://www.ocaml-programming.de/packages/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+USES=		gmake ocaml:findplist
+
 WRKSRC=		${WRKDIR}/${PORTNAME}
-USES=		gmake
-USE_OCAML=	yes
-USE_OCAML_FINDLIB=	yes
-USE_OCAMLFIND_PLIST=	yes
 
 ALL_TARGET=	all opt
 
@@ -24,6 +22,12 @@ PORTDOCS=	*
 DOCSDIR=	${OCAML_DOCSDIR}/${PORTNAME}
 
 OPTIONS_DEFINE=	DOCS
+
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == powerpc
+USE_BINUTILS=	yes
+.endif
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

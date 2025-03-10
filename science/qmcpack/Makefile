@@ -1,17 +1,21 @@
 PORTNAME=	qmcpack
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.15.0
-PORTREVISION=	4
+DISTVERSION=	4.0.0
+PORTREVISION=	1
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Many-body ab initio Quantum Monte Carlo code for quantum chemistry
-WWW=		https://www.qmcpack.org/
+WWW=		https://www.qmcpack.org/ \
+		https://github.com/QMCPACK/qmcpack
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN_i386=	undefined reference to `__atomic_load'
+.if !exists(/usr/include/omp.h)
+BROKEN=		requires OpenMP support that is missing on this architecture
+.endif
 
 LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 		libfftw3.so:math/fftw3 \

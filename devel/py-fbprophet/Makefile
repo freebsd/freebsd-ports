@@ -1,6 +1,6 @@
 PORTNAME=	fbprophet
 PORTVERSION=	0.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,6 +11,9 @@ WWW=		https://github.com/facebook/prophet
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+DEPRECATED=	Depends on expired math/py-pystan
+EXPIRATION_DATE=2025-03-31
 
 USES=		compiler:c11 python
 USE_PYTHON=	autoplist distutils

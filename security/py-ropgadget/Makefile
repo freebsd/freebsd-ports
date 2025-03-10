@@ -1,9 +1,9 @@
 PORTNAME=	ropgadget
-PORTVERSION=	7.4
+PORTVERSION=	7.6
+PORTREVISION=	1
 CATEGORIES=	security python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	ROPGadget-${PORTVERSION}
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Tool to search gadgets to facilitate ROP exploitation

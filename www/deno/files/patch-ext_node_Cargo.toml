@@ -1,10 +1,10 @@
---- ext/node/Cargo.toml.orig	2024-07-11 20:46:42 UTC
-+++ ext/node/Cargo.toml
-@@ -78,6 +78,7 @@ spki.workspace = true
- simd-json = "0.13.4"
+--- ext/node/Cargo.toml.orig	2025-03-06 09:42:46.447178000 +0100
++++ ext/node/Cargo.toml	2025-03-06 09:42:52.511576000 +0100
+@@ -87,6 +87,7 @@ sys_traits = { workspace = true, features = ["real", "
  sm3 = "0.4.2"
  spki.workspace = true
-+sysinfo = "0.30.13"
+ sys_traits = { workspace = true, features = ["real", "winapi", "libc"] }
++sysinfo = "0.33.1"
  thiserror.workspace = true
  tokio.workspace = true
- url.workspace = true
+ tokio-eld = "0.2"

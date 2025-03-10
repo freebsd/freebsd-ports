@@ -11,8 +11,7 @@ WWW=		https://scloader.sourceforge.net
 
 LICENSE=	GPLv2
 
-USES=		dos2unix zip
-USE_JAVA=	yes
+USES=		dos2unix java zip
 
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes

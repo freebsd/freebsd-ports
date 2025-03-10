@@ -1,5 +1,6 @@
 PORTNAME=	electrum
-DISTVERSION=	4.5.5
+DISTVERSION=	4.5.8
+PORTREVISION=	3
 CATEGORIES=	finance python
 MASTER_SITES=	https://download.electrum.org/${PORTVERSION}/ \
 		http://download.electrum.org/${PORTVERSION}/
@@ -15,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/LICENCE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aiohttp-socks>=0.3:net/py-aiohttp-socks@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}aiohttp>=3.3.0:www/py-aiohttp@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}aiorpcX>=0.23.1:devel/py-aiorpcX@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}aiorpcX-legacy>=0.23.1:devel/py-aiorpcX-legacy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}attrs>=20.1.0:devel/py-attrs@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}bitstring>0:devel/py-bitstring@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}certifi>0:security/py-certifi@${PY_FLAVOR} \
@@ -48,7 +49,7 @@ OPTIONS_SUB=		yes
 HARDWARE_DESC=	Enable Bitcoin hardware wallet support
 
 GUI_USES=		desktop-file-utils pyqt:5
-GUI_USE=		PYQT=pyqt5,sip
+GUI_USE=		PYQT=pyqt5
 HARDWARE_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}bitbox02>=0.13.0:security/py-bitbox02@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}btchip-python>=0.1.32:security/py-btchip-python@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}ckcc-protocol>=0.7.7:security/py-ckcc-protocol@${PY_FLAVOR} \

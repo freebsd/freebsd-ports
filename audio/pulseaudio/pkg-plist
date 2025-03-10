@@ -12,7 +12,7 @@ bin/pasuspender
 bin/pulseaudio
 bin/qpaeq
 %%X11%%bin/start-pulseaudio-x11
-etc/dbus-1/system.d/pulseaudio-system.conf
+share/dbus-1/system.d/pulseaudio-system.conf
 @sample etc/pulse/client.conf.sample
 @sample etc/pulse/daemon.conf.sample
 @sample etc/pulse/default.pa.sample
@@ -61,7 +61,7 @@ lib/libpulse-simple.so.0
 lib/libpulse-simple.so.0.1.1
 lib/libpulse.so
 lib/libpulse.so.0
-lib/libpulse.so.0.24.2
+lib/libpulse.so.0.24.3
 %%AVAHI%%lib/pulseaudio/modules/libavahi-wrap.so
 %%ALSA%%lib/pulseaudio/modules/libalsa-util.so
 lib/pulseaudio/modules/libcli.so
@@ -194,6 +194,7 @@ share/locale/de_CH/LC_MESSAGES/pulseaudio.mo
 share/locale/el/LC_MESSAGES/pulseaudio.mo
 share/locale/eo/LC_MESSAGES/pulseaudio.mo
 share/locale/es/LC_MESSAGES/pulseaudio.mo
+share/locale/eu/LC_MESSAGES/pulseaudio.mo
 share/locale/fi/LC_MESSAGES/pulseaudio.mo
 share/locale/fr/LC_MESSAGES/pulseaudio.mo
 share/locale/gl/LC_MESSAGES/pulseaudio.mo
@@ -277,6 +278,7 @@ share/locale/zh_TW/LC_MESSAGES/pulseaudio.mo
 %%ALSA%%%%DATADIR%%/alsa-mixer/paths/usb-gaming-headset-output-mono.conf
 %%ALSA%%%%DATADIR%%/alsa-mixer/paths/usb-gaming-headset-output-stereo.conf
 %%ALSA%%%%DATADIR%%/alsa-mixer/paths/virtual-surround-7.1.conf
+%%ALSA%%%%DATADIR%%/alsa-mixer/profile-sets/asus-xonar-se.conf
 %%ALSA%%%%DATADIR%%/alsa-mixer/profile-sets/audigy.conf
 %%ALSA%%%%DATADIR%%/alsa-mixer/profile-sets/cmedia-high-speed-true-hdaudio.conf
 %%ALSA%%%%DATADIR%%/alsa-mixer/profile-sets/default.conf

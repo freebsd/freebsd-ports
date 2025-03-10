@@ -1,5 +1,6 @@
 PORTNAME=	build2
-DISTVERSION=	0.16.0
+DISTVERSION=	0.17.0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://download.build2.org/${DISTVERSION}/
 DISTNAME=	build2-toolchain-${DISTVERSION}
@@ -11,9 +12,9 @@ WWW=		https://build2.org
 LICENSE=	BSD2CLAUSE BSD3CLAUSE MIT
 LICENSE_COMB=	multi
 
-BROKEN_powerpc=	fails in stage: Invalid data memory access
-
 USES=		gmake pkgconfig sqlite tar:xz
+
+PIE_UNSAFE=	yes
 
 # Fix build on i386/powerpc: error: timestamp is not lock-free on this architecture
 CXXFLAGS_i386=		-DLIBBUILD2_ATOMIC_NON_LOCK_FREE
@@ -30,11 +31,13 @@ OPTIONS_DEFINE=	DOCS
 
 pre-build:
 # phase 1
-	@cd ${WRKSRC}/build2 && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_FLAGS} bootstrap.gmake ${_MAKE_JOBS}
+	@cd ${WRKSRC}/build2 && ${SETENVI} ${WRK_ENV} ${MAKE_ENV} \
+		${MAKE_CMD} ${MAKE_FLAGS} bootstrap.gmake ${_MAKE_JOBS}
 
 do-build:
 # phase 2
-	@cd ${WRKSRC}/build2 && ${SETENV} ${MAKE_ENV} ./build2/b-boot \
+	@cd ${WRKSRC}/build2 && ${SETENVI} ${WRK_ENV} ${MAKE_ENV} \
+		./build2/b-boot \
 		config.cxx=${CXX} \
 		config.cxx.coptions="${CXXFLAGS}" \
 		config.cxx.loptions="${LDFLAGS} -s" \
@@ -45,7 +48,8 @@ do-build:
 
 do-install:
 # "stage" (local installation)
-	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ./build2/build2/b-boot configure \
+	@cd ${WRKSRC} && ${SETENVI} ${WRK_ENV} ${MAKE_ENV} \
+		./build2/build2/b-boot configure \
 		config.cxx=${CXX} \
 		config.cxx.coptions="${CXXFLAGS}" \
 		config.cxx.loptions="${LDFLAGS} -s" \
@@ -54,10 +58,11 @@ do-install:
 		config.bin.rpath=${PREFIX}/lib \
 		config.install.chroot=${STAGEDIR} \
 		config.install.root=${PREFIX}
-	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ./build2/build2/b-boot install: build2/ bpkg/ bdep/ \
+	@cd ${WRKSRC} && ${SETENVI} ${WRK_ENV} ${MAKE_ENV} \
+		./build2/build2/b-boot install: build2/ bpkg/ bdep/ \
 		-V -j ${MAKE_JOBS_NUMBER} -J ${MAKE_JOBS_NUMBER}
-	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ./build2/build2/b-boot install: '!config.install.scope=project' libbuild2-*/ \
+	@cd ${WRKSRC} && ${SETENVI} ${WRK_ENV} ${MAKE_ENV} \
+		./build2/build2/b-boot install: '!config.install.scope=project' libbuild2-*/ \
 		-V -j ${MAKE_JOBS_NUMBER} -J ${MAKE_JOBS_NUMBER}
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libpkg-config-0.1.so
 
 .include <bsd.port.mk>

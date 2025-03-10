@@ -1,6 +1,6 @@
---- src/ES2Command/Src/Utils/semaphore.hpp.orig	2021-11-25 00:56:55 UTC
+--- src/ES2Command/Src/Utils/semaphore.hpp.orig	2024-09-12 07:10:32 UTC
 +++ src/ES2Command/Src/Utils/semaphore.hpp
-@@ -23,6 +23,10 @@
+@@ -20,6 +20,10 @@
         
  #include<sys/sem.h>
  #include <stdexcept>
@@ -11,7 +11,7 @@
  #if defined(__GNU_LIBRARY__) && !defined(_SEM_SEMUN_UNDEFINED)
  #else
      union semun {
-@@ -88,9 +92,26 @@ class semaphore (public)
+@@ -85,9 +89,26 @@ class semaphore (public)
      }
      int wait(int timeout_s)
      {
@@ -38,7 +38,7 @@
          operations[0].sem_flg = SEM_UNDO;
          struct timespec time{};
          time.tv_sec = timeout_s;
-@@ -98,6 +119,7 @@ class semaphore (public)
+@@ -95,6 +116,7 @@ class semaphore (public)
              return errno;
          }
          return 0;
@@ -46,7 +46,7 @@
      }
      void lock()
      {
-@@ -128,6 +150,14 @@ class semaphore (public)
+@@ -125,6 +147,14 @@ class semaphore (public)
      }
      int wait_and_lock(int timeout_s)
      {
@@ -61,7 +61,7 @@
          sembuf operations[2];
          operations[0].sem_num = 0;
          operations[0].sem_op = WAIT;
-@@ -141,6 +171,7 @@ class semaphore (public)
+@@ -138,6 +168,7 @@ class semaphore (public)
              return errno;
          }
          return 0;

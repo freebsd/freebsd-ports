@@ -1,0 +1,4 @@
+Act runner is a runner for Gitea based on Gitea fork of act.
+
+This is a fork of the original act runner developed and maintained by Gitea
+community and intended to be used with Gitea only.

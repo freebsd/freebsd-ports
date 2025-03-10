@@ -4,7 +4,7 @@ CATEGORIES=	misc
 MASTER_SITES=	LOCAL/pfg/catholic
 DISTNAME=	${PORTNAME}
 
-MAINTAINER=	pfg@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Psalms from the Douai Bible in fortune file format
 
 LICENSE=	CC0-1.0		# AKA Public Domain

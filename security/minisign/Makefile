@@ -1,6 +1,5 @@
 PORTNAME=	minisign
-PORTVERSION=	0.11
-PORTREVISION=	1
+PORTVERSION=	0.12
 CATEGORIES=	security
 MASTER_SITES=	https://github.com/jedisct1/minisign/releases/download/${PORTVERSION}/
 

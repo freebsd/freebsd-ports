@@ -1,9 +1,9 @@
 PORTNAME=	upscaler
 DISTVERSION=	1.1.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 
-MAINTAINER=	jbeich@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Upscale and enhance images
 WWW=		https://gitlab.gnome.org/World/Upscaler
 

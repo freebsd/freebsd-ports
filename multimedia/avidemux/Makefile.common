@@ -305,8 +305,11 @@ NOT_FOR_ARCHS=		powerpc powerpc64 powerpcspe sparc64
 NOT_FOR_ARCHS_REASON=	cmake/admDetermineSystem.cmake:78: CPU not supported
 
 post-extract:
-	@${CP} ${FILESDIR}/ffmpeg_fix_build_with_binutils_2.41.patch \
-	       ${WRKSRC}/avidemux_core/ffmpeg_package/patches
+.for p in ffmpeg_fix_build_with_binutils_2.41.patch ffmpeg_fix_build_on_armv7.patch
+	@${CP} ${FILESDIR}/$p \
+	       ${WRKSRC}/avidemux_core/ffmpeg_package/patches/
+.endfor
+
 
 post-patch:
 	@${MKDIR} ${CONFIGURE_WRKSRC}/config

@@ -1,7 +1,7 @@
 --- ejabberdctl.template.orig	2022-10-30 09:41:25 UTC
 +++ ejabberdctl.template
 @@ -58,7 +58,7 @@ done
- 
+
  # define ejabberd variables if not already defined from the command line
  : "${CONFIG_DIR:="{{config_dir}}"}"
 -: "${LOGS_DIR:="{{logs_dir}}"}"
@@ -16,7 +16,7 @@
 -: "${SPOOL_DIR:="{{spool_dir}}"}"
 +: ${SPOOL_DIR:=/var/spool/ejabberd}
  : "${EJABBERD_LOG_PATH:="$LOGS_DIR/ejabberd.log"}"
- 
+
  # define erl parameters
 @@ -84,7 +84,8 @@ fi
  [ -n "$ERL_DIST_PORT" ] && ERLANG_OPTS="$ERLANG_OPTS -erl_epmd_port $ERL_DIST_PORT -start_epmd false"
@@ -27,4 +27,4 @@
 +ERL_LIBS=$ERL_LIBS:{{libdir}}/ejabberd/lib
  ERL_CRASH_DUMP="$LOGS_DIR"/erl_crash_$(date "+%Y%m%d-%H%M%S").dump
  ERL_INETRC="$CONFIG_DIR"/inetrc
- 
+

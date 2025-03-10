@@ -1,6 +1,6 @@
 PORTNAME=	bos
 PORTVERSION=	0.2.1
-PORTREVISION=	1
+PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	https://erratique.ch/software/bos/releases/
 PKGNAMEPREFIX=	ocaml-
@@ -28,8 +28,7 @@ RUN_DEPENDS=	${SA_DIR}/astring/META:devel/ocaml-astring \
 		${SA_DIR}/mtime/META:devel/ocaml-mtime \
 		${SA_DIR}/rresult/META:devel/ocaml-rresult
 
-USES=		tar:tbz
-USE_OCAML=	yes
+USES=		ocaml tar:tbz
 
 DOCSDIR=	${OCAML_DOCSDIR}/${PORTNAME}
 PORTDOCS=	CHANGES.md LICENSE.md README.md

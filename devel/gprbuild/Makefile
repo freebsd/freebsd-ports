@@ -1,6 +1,6 @@
 PORTNAME=	gprbuild
 DISTVERSIONPREFIX=	v
-DISTVERSION=	24.0.0	# Upgrade with devel/libgpr + textproc/xmlada
+DISTVERSION=	25.0.0	# Upgrade with devel/libgpr + textproc/xmlada
 PORTEPOCH=	1
 CATEGORIES=	devel
 
@@ -21,8 +21,9 @@ GH_PROJECT=	gprconfig_kb:kb xmlada:xa
 
 BOOTPATH=	${WRKSRC}/bootstrap/bin
 MAKE_JOBS_NUMBER_LIMIT=	4
-MAKE_ARGS=	PROCESSORS=${MAKE_JOBS_NUMBER}	\
-		ENABLE_SHARED=yes
+DISABLE_MAKE_JOBS=yes	# to avoid "raised ADA.IO_EXCEPTIONS.END_ERROR : a-tigeli.adb:96"
+#MAKE_ARGS=     PROCESSORS=${MAKE_JOBS_NUMBER} ENABLE_SHARED=yes
+MAKE_ARGS=	PROCESSORS=1 ENABLE_SHARED=yes
 XMLADA_SRC=	${WRKDIR}/xmlada-${PORTVERSION}
 PLATFORM=	${OPSYS:tl}${OSREL}
 GARCH=		${ARCH:S/amd64/x86_64/}
@@ -100,7 +101,7 @@ do-build-EXAMPLES-on:
 do-install:
 	@${ECHO} "*** Installation of gprbuild"
 	(cd ${WRKSRC} &&	\
-	${SETENV} ${MAKE_ENV:C|PATH=|PATH=${WRKSRC}/bootstrap/bin:|} ${FAKEROOT}	\
+	${SETENVI} ${WRK_ENV} ${MAKE_ENV:C|PATH=|PATH=${WRKSRC}/bootstrap/bin:|} ${FAKEROOT} \
 	${MAKE_CMD} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${INSTALL_TARGET} )
 .for p in ${P2STRIP}
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/gnat${GCC_VER}/${p}

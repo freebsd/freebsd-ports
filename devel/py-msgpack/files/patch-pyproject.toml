@@ -1,11 +1,9 @@
---- pyproject.toml.orig	2023-09-13 20:09:22 UTC
+--- pyproject.toml.orig	2024-09-09 16:59:04 UTC
 +++ pyproject.toml
-@@ -2,7 +2,7 @@
- requires = [
-     # Also declared in requirements.txt, if updating here please also update
-     # there
--    "Cython~=3.0.8",
-+    "Cython",
-     "setuptools >= 35.0.2",
- ]
+@@ -1,5 +1,5 @@
+ [build-system]
+-requires = ["setuptools >= 69.5.1"]
++requires = ["setuptools >= 61"]
  build-backend = "setuptools.build_meta"
+ 
+ [project]

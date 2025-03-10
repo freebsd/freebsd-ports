@@ -3,19 +3,19 @@ PORTVERSION=	4.1
 CATEGORIES=	www java
 MASTER_SITES=	http://dlc.sun.com.edgesuite.net/glassfish/${PORTVERSION}/release/
 
-MAINTAINER=	jmd@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Reference implementation of the Java EE application server
 WWW=		https://glassfish.java.net/
 
-USES=		cpe zip
+USES=		cpe java zip
 CPE_VENDOR=	oracle
-USE_JAVA=	yes
+
 NO_BUILD=	yes
 
 WRKSRC=		${WRKDIR}/glassfish4
 DATADIR=	${PREFIX}/${PORTNAME}-${PORTVERSION}
 
-# Since we USE_JAVA, we propagate the received JAVA_HOME variable to the
+# Since we USES=java, we propagate the received JAVA_HOME variable to the
 # template files, since it is used by the rc script.
 SUB_LIST=	GLASSFISHVERSION=${PORTVERSION} \
 		JAVA_HOME=${JAVA_HOME}

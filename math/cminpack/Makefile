@@ -1,5 +1,5 @@
 PORTNAME=	cminpack
-PORTVERSION=	1.3.9
+PORTVERSION=	1.3.11
 PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	math
@@ -22,10 +22,12 @@ OPTIONS_DEFINE=	EXAMPLES
 
 .include <bsd.port.options.mk>
 
-.if ${ARCH:Mpowerpc*}
-PLIST_SUB+=	NOT_POWERPC="@comment "
+# libcminpackld is only built on platforms where
+# sizeof(long double) > sizeof(double)
+.if ${ARCH:Mpowerpc*} || ${ARCH:Marmv?}
+PLIST_SUB+=	LONG_DOUBLE="@comment "
 .else
-PLIST_SUB+=	NOT_POWERPC=""
+PLIST_SUB+=	LONG_DOUBLE=""
 .endif
 
 

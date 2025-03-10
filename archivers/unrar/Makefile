@@ -1,9 +1,9 @@
 PORTNAME=	unrar
-PORTVERSION=	7.01
+PORTVERSION=	7.10
 PORTEPOCH=	6
 CATEGORIES=	archivers
 MASTER_SITES=	https://www.rarlab.com/rar/
-DISTNAME=	unrarsrc-7.0.9
+DISTNAME=	unrarsrc-7.1.4
 
 MAINTAINER?=	sunpoet@FreeBSD.org
 COMMENT=	Extract, view & test RAR archives
@@ -22,8 +22,6 @@ MAKEFILE=	makefile
 WRKSRC=		${WRKDIR}/unrar
 
 PLIST_FILES=	bin/unrar
-
-SLAVEDIRS=	archivers/unrar-iconv
 
 CONFLICTS_INSTALL=	unrar-iconv
 

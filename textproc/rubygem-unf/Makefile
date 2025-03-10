@@ -1,5 +1,5 @@
 PORTNAME=	unf
-PORTVERSION=	0.1.4
+PORTVERSION=	0.2.0
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
@@ -10,9 +10,10 @@ WWW=		https://github.com/knu/ruby-unf
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rubygem-unf_ext>=0:textproc/rubygem-unf_ext
+BUILD_DEPENDS=	rubygem-rake>=0:devel/rubygem-rake
+
+USES=		gem
 
 NO_ARCH=	yes
-USES=		gem
 
 .include <bsd.port.mk>

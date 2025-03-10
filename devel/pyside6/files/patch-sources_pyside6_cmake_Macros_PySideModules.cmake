@@ -1,6 +1,6 @@
---- sources/pyside6/cmake/Macros/PySideModules.cmake.orig	2023-11-27 12:04:49 UTC
+--- sources/pyside6/cmake/Macros/PySideModules.cmake.orig	2024-10-09 13:33:59 UTC
 +++ sources/pyside6/cmake/Macros/PySideModules.cmake
-@@ -107,7 +107,7 @@ macro(create_pyside_module)
+@@ -122,7 +122,7 @@ macro(create_pyside_module)
      get_target_property(qt_core_includes Qt${QT_MAJOR_VERSION}::Core
                          INTERFACE_INCLUDE_DIRECTORIES)
      set(shiboken_include_dir_list ${pyside6_SOURCE_DIR} ${qt_platform_includes}

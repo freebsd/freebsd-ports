@@ -1,4 +1,4 @@
---- ui/zenodesign/layertreeitemdelegate.cpp.orig	2023-11-22 19:17:26 UTC
+--- ui/zenodesign/layertreeitemdelegate.cpp.orig	2024-09-30 13:46:54 UTC
 +++ ui/zenodesign/layertreeitemdelegate.cpp
 @@ -1,7 +1,7 @@
  #include "framework.h"
@@ -9,9 +9,3 @@
  
  LayerTreeitemDelegate::LayerTreeitemDelegate(QWidget* parent)
      : QStyledItemDelegate(parent), m_treeview(nullptr)
-@@ -211,4 +211,4 @@ QSize LayerTreeitemDelegate::sizeHint(const QStyleOpti
- void LayerTreeitemDelegate::initStyleOption(QStyleOptionViewItem* option, const QModelIndex& index) const
- {
-     QStyledItemDelegate::initStyleOption(option, index);
- }
-+}

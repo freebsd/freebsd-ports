@@ -1,5 +1,5 @@
 PORTNAME=	ssrf_filter
-PORTVERSION=	1.0.7
+PORTVERSION=	1.2.0
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 

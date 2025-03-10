@@ -1,6 +1,5 @@
 PORTNAME=	libvirt
-PORTVERSION=	10.3.0
-PORTREVISION=	1
+DISTVERSION=	11.1.0
 CATEGORIES=	devel
 MASTER_SITES=	http://libvirt.org/sources/ \
 		ftp://libvirt.org/libvirt/
@@ -12,9 +11,7 @@ WWW=		https://libvirt.org/
 LICENSE=	LGPL3
 
 LIB_DEPENDS=	libcurl.so:ftp/curl \
-		libgcrypt.so:security/libgcrypt \
-		libgnutls.so:security/gnutls \
-		libxml2.so:textproc/libxml2
+		libgnutls.so:security/gnutls
 BUILD_DEPENDS=	dnsmasq:dns/dnsmasq \
 		${LOCALBASE}/bin/grep:textproc/gnugrep \
 		gsed:textproc/gsed \
@@ -25,9 +22,9 @@ RUN_DEPENDS=	dnsmasq:dns/dnsmasq
 OPTIONS_DEFINE=	DOCS NLS NSS QEMU READLINE SASL LIBSSH LIBSSH2 ZFS
 OPTIONS_DEFAULT=	READLINE LIBSSH LIBSSH2 ZFS
 OPTIONS_DEFINE_amd64=	XEN
-.if exists(/usr/sbin/bhyve)
-OPTIONS_DEFINE_amd64+=	BHYVE
-OPTIONS_DEFAULT_amd64+=	BHYVE
+.if exists(/usr/sbin/bhyveload)
+OPTIONS_DEFINE+=	BHYVE
+OPTIONS_DEFAULT+=	BHYVE
 .else
 PLIST_SUB+=		BHYVE="@comment "
 SUB_LIST+=		BHYVE="@comment "
@@ -73,8 +70,6 @@ LIBSSH2_LIB_DEPENDS=	libssh2.so:security/libssh2
 
 ZFS_MESON_ENABLED=	storage_zfs
 
-VARDIR=		/var
-
 MESON_ARGS+=	\
 		-Dapparmor=disabled \
 		-Dapparmor_profiles=disabled \
@@ -82,6 +77,7 @@ MESON_ARGS+=	\
 		-Daudit=disabled \
 		-Dblkid=disabled \
 		-Dcapng=disabled \
+		-Ddriver_ch=disabled \
 		-Ddriver_hyperv=disabled \
 		-Ddriver_interface=disabled \
 		-Ddriver_libxl=disabled \
@@ -105,6 +101,7 @@ MESON_ARGS+=	\
 		-Dsecdriver_apparmor=disabled \
 		-Dsecdriver_selinux=disabled \
 		-Dselinux=disabled \
+		-Dssh_proxy=disabled \
 		-Dstorage_disk=disabled \
 		-Dstorage_fs=disabled \
 		-Dstorage_gluster=disabled \
@@ -123,8 +120,7 @@ MESON_ARGS+=	\
 		-Dwireshark_dissector=disabled \
 		-Dinit_script=none \
 		-Dbash_completion=disabled \
-		-Duserfaultfd_sysctl=disabled \
-		-Dlocalstatedir=${VARDIR}
+		-Duserfaultfd_sysctl=disabled
 
 # random_data fix can be removed when 8.x is eol
 CONFIGURE_ENV=	ac_cv_type_struct_random_data=""
@@ -134,16 +130,16 @@ PORTSCOUT=	limit:\d+\.\d+\.\d+$$
 
 LDFLAGS+=	-L${LOCALBASE}/lib -fstack-protector
 
-USES=		gnome charsetfix compiler:c++0x cpe gettext-runtime gmake libtool \
+USES=		gnome charsetfix compiler:c++0x cpe gettext-runtime gmake \
 	        meson pathfix perl5 python:build pkgconfig shebangfix tar:xz
-USE_GNOME=	glib20
+USE_GNOME=	glib20 libxml2
 USE_RC_SUBR=	libvirtd virtlogd
 CPE_VENDOR=	redhat
 USE_PERL5=	build
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
 TEST_TARGET=	check
-SHLIB_VER=	0.10003.0
+SHLIB_VER=	0.11001.0
 PLIST_SUB+=	SHLIB_VER=${SHLIB_VER}
 PORTDOCS=	*
 #SHEBANG_FILES=	src/keycodemapdb/tools/keymap-gen
@@ -154,10 +150,10 @@ SUB_FILES=	pkg-message
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MQEMU} || ${PORT_OPTIONS:MNSS}
-LIB_DEPENDS+=		libyajl.so:devel/yajl
-MESON_ARGS+=	-Dyajl=enabled
+LIB_DEPENDS+=		libjson-c.so:devel/json-c
+MESON_ARGS+=	-Djson_c=enabled
 .else
-MESON_ARGS+=	-Dyajl=disabled
+MESON_ARGS+=	-Djson_c=disabled
 .endif
 
 .if !${PLIST_SUB:MXEN}
@@ -170,6 +166,7 @@ CONF_FILES=	\
 		libvirt.conf \
 		libvirtd.conf \
 		libxl.conf \
+		network.conf \
 		qemu.conf \
 		virtbhyved.conf \
 		virtlockd.conf \
@@ -203,7 +200,7 @@ post-install:
 	lib/libvirt/network \
 	lib/libvirt/qemu/channel/target \
 	cache/libvirt/qemu
-	@${MKDIR} "${STAGEDIR}/${VARDIR}/${dir}"
+	@${MKDIR} "${STAGEDIR}/var/${dir}"
 .endfor
 
 .for file in ${CONF_FILES}

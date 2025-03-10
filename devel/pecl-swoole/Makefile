@@ -1,5 +1,5 @@
 PORTNAME=	swoole
-PORTVERSION=	5.1.3
+PORTVERSION=	6.0.1
 CATEGORIES=	devel net
 
 MAINTAINER=	vanilla@FreeBSD.org
@@ -16,7 +16,7 @@ USES=		compiler:c11 localbase:ldflags php:build,pecl pkgconfig ssl
 
 CONFIGURE_ARGS+=	--enable-mysqlnd
 
-OPTIONS_DEFINE=		BROTLI CARES CURL PGSQL SOCKETS
+OPTIONS_DEFINE=		BROTLI CARES CURL PGSQL SOCKETS ZSTD
 CARES_LIB_DEPENDS=	libcares.so:dns/c-ares
 CARES_CONFIGURE_ON=	--enable-cares
 SOCKETS_USE=		PHP=sockets:build
@@ -31,5 +31,8 @@ PGSQL_USE=		PHP=pdo:build
 BROTLI_CONFIGURE_ON=	--enable-brotli
 BROTLI_CONFIGURE_OFF=	--disable-brotli
 BROTLI_LIB_DEPENDS=	libbrotlicommon.so:archivers/brotli
+ZSTD_CONFIGURE_ON=	--enable-zstd
+ZSTD_CONFIGURE_OFF=	--disable-zstd
+ZSTD_LIB_DEPENDS=	libzstd.so:archivers/zstd
 
 .include <bsd.port.mk>

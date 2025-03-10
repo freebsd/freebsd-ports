@@ -1,0 +1,22 @@
+There are plenty of Unicode libraries for C/C++ out there that implement random
+Unicode algorithms, but many of them don't handle ill-formed UTF sequences at
+all.  In the best-case scenario, you'll get an exception/error; in the
+worst-case, undefined behavior. The biggest problem is that in 99% cases
+everything will be fine. This is inappropriate for security reasons.  This
+library handles such problems (there are not only ill-formed sequences actually)
+properly and always according to The Unicode Standard.
+
+In C/C++, unlike some other programming languages, there is no safe type for
+UTF-8/UTF-16 that guarantees that the data will be well-formed; this makes the
+problem even worse. The library doesn't introduce such a type either because the
+library doesn't work with types/strings/files/streams, it works with the data
+inside them and makes it safe when it's needed.
+
+Check this article if you want more information about ill-formed sequences:
+https://hsivonen.fi/broken-utf-8
+
+It is a bit outdated because ICU (International Components for Unicode) now uses
+W3C conformant implementation too, but the information in the article is very
+useful.
+
+This library does use W3C conformant implementation too.

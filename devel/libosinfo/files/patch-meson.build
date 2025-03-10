@@ -1,0 +1,20 @@
+--- meson.build.orig	2024-10-29 17:28:59 UTC
++++ meson.build
+@@ -25,7 +25,7 @@ libosinfo_mandir = join_paths(libosinfo_prefix, get_op
+ libosinfo_libdir = join_paths(libosinfo_prefix, get_option('libdir'))
+ libosinfo_licensedir = join_paths(libosinfo_datadir, 'license', meson.project_name())
+ libosinfo_mandir = join_paths(libosinfo_prefix, get_option('mandir'))
+-libosinfo_pkgconfdir = join_paths(libosinfo_libdir, 'pkgconfig')
++libosinfo_pkgconfdir = libosinfo_prefix / 'libdata' / 'pkgconfig'
+ 
+ # gobject introspection
+ gir = find_program('g-ir-scanner', required: get_option('enable-introspection'))
+@@ -43,7 +43,7 @@ libosinfo_typelibdir = join_paths(libosinfo_libdir, 'g
+ 
+ libosinfo_girdir = join_paths(libosinfo_datadir, 'gir-1.0')
+ libosinfo_typelibdir = join_paths(libosinfo_libdir, 'girepository-1.0')
+-libosinfo_pkgconfdir = join_paths(libosinfo_libdir, 'pkgconfig')
++#libosinfo_pkgconfdir = join_paths(libosinfo_libdir, 'pkgconfig')
+ 
+ # spec files
+ libosinfo_spec_data = configuration_data()

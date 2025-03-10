@@ -2,13 +2,14 @@ PORTNAME=	pyaudi
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.9.2-1
 DISTVERSIONSUFFIX=	-g899eb78
-PORTREVISION=	11
+PORTREVISION=	15
 CATEGORIES=	math
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Library implementing the algebra of Taylor polynomials
-WWW=		http://darioizzo.github.io/audi/
+WWW=		http://darioizzo.github.io/audi/ \
+		https://github.com/darioizzo/audi
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/../LICENSE

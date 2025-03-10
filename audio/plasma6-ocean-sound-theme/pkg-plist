@@ -12,6 +12,10 @@ share/sounds/ocean/stereo/battery-low.oga.license
 share/sounds/ocean/stereo/bell-window-system.oga
 share/sounds/ocean/stereo/bell-window-system.oga.license
 share/sounds/ocean/stereo/bell.oga
+share/sounds/ocean/stereo/button-pressed-modifier.oga
+share/sounds/ocean/stereo/button-pressed-modifier.oga.license
+share/sounds/ocean/stereo/button-pressed.oga
+share/sounds/ocean/stereo/button-pressed.oga.license
 share/sounds/ocean/stereo/complete-media-burn.oga
 share/sounds/ocean/stereo/complete-media-error.oga
 share/sounds/ocean/stereo/completion-fail.oga

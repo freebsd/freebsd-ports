@@ -1,9 +1,8 @@
 PORTNAME=	freetds
-DISTVERSION=	1.4.236
+DISTVERSION=	1.4.389
 PORTEPOCH=	1
 CATEGORIES=	databases
-MASTER_SITES=	https://www.freetds.org/files/current/ \
-		ftp://ftp.freetds.org/pub/freetds/current/
+MASTER_SITES=	https://www.freetds.org/files/current/
 PKGNAMESUFFIX=	-devel
 DISTNAME=	${PORTNAME}-dev.${PORTVERSION}
 

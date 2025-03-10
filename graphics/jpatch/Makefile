@@ -9,8 +9,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Spline based 3D modeling tool
 WWW=		http://www.jpatch.com
 
-USES=		zip
-USE_JAVA=	yes
+USES=		java zip
+
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}${DISTVERSION}
 

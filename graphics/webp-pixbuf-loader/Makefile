@@ -1,5 +1,5 @@
 PORTNAME=	webp-pixbuf-loader
-DISTVERSION=	0.2.6
+DISTVERSION=	0.2.7
 PORTEPOCH=	1
 CATEGORIES=	graphics
 

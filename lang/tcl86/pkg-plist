@@ -47,7 +47,7 @@ lib/tcl%%TCL_VER%%/opt0.4/optparse.tcl
 lib/tcl%%TCL_VER%%/opt0.4/pkgIndex.tcl
 lib/tcl%%TCL_VER%%/platform-1.0.19.tm
 lib/tcl%%TCL_VER%%/platform/shell-1.1.4.tm
-lib/tcl%%TCL_VER%%/tcltest-2.5.7.tm
+lib/tcl%%TCL_VER%%/tcltest-2.5.9.tm
 lib/tcl%%TCL_VER%%/auto.tcl
 lib/tcl%%TCL_VER%%/clock.tcl
 lib/tcl%%TCL_VER%%/encoding/ascii.enc
@@ -113,6 +113,8 @@ lib/tcl%%TCL_VER%%/encoding/jis0201.enc
 lib/tcl%%TCL_VER%%/encoding/jis0208.enc
 lib/tcl%%TCL_VER%%/encoding/jis0212.enc
 lib/tcl%%TCL_VER%%/encoding/koi8-r.enc
+lib/tcl%%TCL_VER%%/encoding/koi8-ru.enc
+lib/tcl%%TCL_VER%%/encoding/koi8-t.enc
 lib/tcl%%TCL_VER%%/encoding/koi8-u.enc
 lib/tcl%%TCL_VER%%/encoding/ksc5601.enc
 lib/tcl%%TCL_VER%%/encoding/macCentEuro.enc
@@ -1019,6 +1021,7 @@ lib/tcl%%TCL_VER%%/word.tcl
 %%TCLMAN%%share/man/mann/oo_define.tcl86.n.gz
 %%TCLMAN%%share/man/mann/oo_objdefine.tcl86.n.gz
 %%TCLMAN%%share/man/mann/oo_object.tcl86.n.gz
+%%TCLMAN%%share/man/mann/oo_Slot.tcl86.n.gz
 %%TCLMAN%%share/man/mann/open.tcl86.n.gz
 %%TCLMAN%%share/man/mann/package.tcl86.n.gz
 %%TCLMAN%%share/man/mann/packagens.tcl86.n.gz
@@ -1670,19 +1673,6 @@ lib/tcl%%TCL_VER%%/word.tcl
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/ROC
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/ROK
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/Singapore
-%%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/SystemV/AST4
-%%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/SystemV/AST4ADT
-%%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/SystemV/CST6
-%%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/SystemV/CST6CDT
-%%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/SystemV/EST5
-%%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/SystemV/EST5EDT
-%%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/SystemV/HST10
-%%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/SystemV/MST7
-%%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/SystemV/MST7MDT
-%%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/SystemV/PST8
-%%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/SystemV/PST8PDT
-%%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/SystemV/YST9
-%%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/SystemV/YST9YDT
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/Turkey
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/UCT
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/Universal

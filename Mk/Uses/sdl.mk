@@ -69,6 +69,17 @@ _SDL_sound2_REQUIRES=		sdl2
 _SDL_ttf2_LIB_DEPENDS=		libSDL2_ttf.so:graphics/sdl2_ttf
 _SDL_ttf2_REQUIRES=		sdl2
 
+# These are the current supported SDL3 modules
+_SDL_USE_ALL+=	sdl3 image3 ttf3
+
+_SDL_sdl3_LIB_DEPENDS=		libSDL3.so:devel/sdl3
+
+_SDL_image3_LIB_DEPENDS=	libSDL3_image.so:graphics/sdl3_image
+_SDL_image3_REQUIRES=		sdl3
+
+_SDL_ttf3_LIB_DEPENDS=		libSDL3_ttf.so:graphics/sdl3_ttf
+_SDL_ttf3_REQUIRES=		sdl3
+
 # Basic checks
 .  if !empty(sdl_ARGS)
 IGNORE=		USES=sdl takes no arguments

@@ -40,7 +40,6 @@
 %%WWWDIR%%/admin/cat_modify.php
 %%WWWDIR%%/admin/cat_options.php
 %%WWWDIR%%/admin/cat_perm.php
-%%WWWDIR%%/admin/cat_search.php
 %%WWWDIR%%/admin/comments.php
 %%WWWDIR%%/admin/configuration.php
 %%WWWDIR%%/admin/element_set_ranks.php
@@ -51,6 +50,7 @@
 %%WWWDIR%%/admin/history.php
 %%WWWDIR%%/admin/include/add_core_tabs.inc.php
 %%WWWDIR%%/admin/include/albums_tab.inc.php
+%%WWWDIR%%/admin/include/batch_manager_filters.inc.php
 %%WWWDIR%%/admin/include/c13y_internal.class.php
 %%WWWDIR%%/admin/include/check_integrity.class.php
 %%WWWDIR%%/admin/include/configuration_sizes_process.inc.php
@@ -82,6 +82,7 @@
 %%WWWDIR%%/admin/maintenance.php
 %%WWWDIR%%/admin/maintenance_actions.php
 %%WWWDIR%%/admin/maintenance_env.php
+%%WWWDIR%%/admin/maintenance_sys.php
 %%WWWDIR%%/admin/menubar.php
 %%WWWDIR%%/admin/notification_by_mail.php
 %%WWWDIR%%/admin/permalinks.php
@@ -152,6 +153,7 @@
 %%WWWDIR%%/admin/themes/clear/mail-css.tpl
 %%WWWDIR%%/admin/themes/clear/theme.css
 %%WWWDIR%%/admin/themes/clear/themeconf.inc.php
+%%WWWDIR%%/admin/themes/default/css/components/album_selector.css
 %%WWWDIR%%/admin/themes/default/css/components/general.css
 %%WWWDIR%%/admin/themes/default/fontello/LICENSE.txt
 %%WWWDIR%%/admin/themes/default/fontello/README.txt
@@ -293,17 +295,23 @@
 %%WWWDIR%%/admin/themes/default/js/addAlbum.js
 %%WWWDIR%%/admin/themes/default/js/album_selector.js
 %%WWWDIR%%/admin/themes/default/js/albums.js
+%%WWWDIR%%/admin/themes/default/js/batchManagerFilter.js
 %%WWWDIR%%/admin/themes/default/js/batchManagerGlobal.js
+%%WWWDIR%%/admin/themes/default/js/batchManagerUnit.js
 %%WWWDIR%%/admin/themes/default/js/cat_list.js
 %%WWWDIR%%/admin/themes/default/js/cat_modify.js
+%%WWWDIR%%/admin/themes/default/js/cat_search.js
 %%WWWDIR%%/admin/themes/default/js/common.js
 %%WWWDIR%%/admin/themes/default/js/datepicker.js
 %%WWWDIR%%/admin/themes/default/js/doubleSlider.js
 %%WWWDIR%%/admin/themes/default/js/group_list.js
 %%WWWDIR%%/admin/themes/default/js/history.js
+%%WWWDIR%%/admin/themes/default/js/intro_tooltips.js
 %%WWWDIR%%/admin/themes/default/js/jquery.geoip.js
 %%WWWDIR%%/admin/themes/default/js/maintenance.js
 %%WWWDIR%%/admin/themes/default/js/maintenance_env.js
+%%WWWDIR%%/admin/themes/default/js/maintenance_sys.js
+%%WWWDIR%%/admin/themes/default/js/photos_add_direct.js
 %%WWWDIR%%/admin/themes/default/js/picture_formats.js
 %%WWWDIR%%/admin/themes/default/js/picture_modify.js
 %%WWWDIR%%/admin/themes/default/js/plugins_installated.js
@@ -321,7 +329,6 @@
 %%WWWDIR%%/admin/themes/default/template/cat_modify.tpl
 %%WWWDIR%%/admin/themes/default/template/cat_options.tpl
 %%WWWDIR%%/admin/themes/default/template/cat_perm.tpl
-%%WWWDIR%%/admin/themes/default/template/cat_search.tpl
 %%WWWDIR%%/admin/themes/default/template/check_integrity.tpl
 %%WWWDIR%%/admin/themes/default/template/comments.tpl
 %%WWWDIR%%/admin/themes/default/template/configuration_comments.tpl
@@ -342,6 +349,7 @@
 %%WWWDIR%%/admin/themes/default/template/include/add_album.inc.tpl
 %%WWWDIR%%/admin/themes/default/template/include/album_selector.inc.tpl
 %%WWWDIR%%/admin/themes/default/template/include/autosize.inc.tpl
+%%WWWDIR%%/admin/themes/default/template/include/batch_manager_filter.inc.tpl
 %%WWWDIR%%/admin/themes/default/template/include/colorbox.inc.tpl
 %%WWWDIR%%/admin/themes/default/template/include/datepicker.inc.tpl
 %%WWWDIR%%/admin/themes/default/template/include/install.inc.tpl
@@ -351,6 +359,7 @@
 %%WWWDIR%%/admin/themes/default/template/languages_new.tpl
 %%WWWDIR%%/admin/themes/default/template/maintenance_actions.tpl
 %%WWWDIR%%/admin/themes/default/template/maintenance_env.tpl
+%%WWWDIR%%/admin/themes/default/template/maintenance_sys.tpl
 %%WWWDIR%%/admin/themes/default/template/menubar.tpl
 %%WWWDIR%%/admin/themes/default/template/navigation_bar.tpl
 %%WWWDIR%%/admin/themes/default/template/notification_by_mail.tpl
@@ -390,6 +399,7 @@
 %%WWWDIR%%/admin/themes/roma/images/active_tab3.png
 %%WWWDIR%%/admin/themes/roma/images/cancel.svg
 %%WWWDIR%%/admin/themes/roma/images/cancelhover.svg
+%%WWWDIR%%/admin/themes/roma/images/certification/CertificationWarningDM.svg
 %%WWWDIR%%/admin/themes/roma/images/external_active.png
 %%WWWDIR%%/admin/themes/roma/images/external_inactive.png
 %%WWWDIR%%/admin/themes/roma/images/fillet.png
@@ -489,6 +499,8 @@
 %%WWWDIR%%/include/picture_comment.inc.php
 %%WWWDIR%%/include/picture_metadata.inc.php
 %%WWWDIR%%/include/picture_rate.inc.php
+%%WWWDIR%%/include/pwgsession.class.php
+%%WWWDIR%%/include/pwgsession_php7.class.php
 %%WWWDIR%%/include/random_compat/byte_safe_strings.php
 %%WWWDIR%%/include/random_compat/cast_to_int.php
 %%WWWDIR%%/include/random_compat/error_polyfill.php
@@ -499,6 +511,7 @@
 %%WWWDIR%%/include/random_compat/random_bytes_libsodium_legacy.php
 %%WWWDIR%%/include/random_compat/random_bytes_mcrypt.php
 %%WWWDIR%%/include/random_compat/random_int.php
+%%WWWDIR%%/include/search_filters.inc.php
 %%WWWDIR%%/include/section_init.inc.php
 %%WWWDIR%%/include/smarty/CHANGELOG.md
 %%WWWDIR%%/include/smarty/LICENSE
@@ -812,6 +825,10 @@
 %%WWWDIR%%/install/db/168-database.php
 %%WWWDIR%%/install/db/169-database.php
 %%WWWDIR%%/install/db/170-database.php
+%%WWWDIR%%/install/db/171-database.php
+%%WWWDIR%%/install/db/172-database.php
+%%WWWDIR%%/install/db/173-database.php
+%%WWWDIR%%/install/db/174-database.php
 %%WWWDIR%%/install/db/61-database.php
 %%WWWDIR%%/install/db/62-database.php
 %%WWWDIR%%/install/db/63-database.php
@@ -868,6 +885,7 @@
 %%WWWDIR%%/install/upgrade_11.0.0.php
 %%WWWDIR%%/install/upgrade_12.0.0.php
 %%WWWDIR%%/install/upgrade_13.0.0.php
+%%WWWDIR%%/install/upgrade_14.0.0.php
 %%WWWDIR%%/install/upgrade_2.0.0.php
 %%WWWDIR%%/install/upgrade_2.1.0.php
 %%WWWDIR%%/install/upgrade_2.10.0.php
@@ -1020,6 +1038,7 @@
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/ca_ES/install.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/ca_ES/iso.txt
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/ca_ES/upgrade.lang.php
+@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/ca_ES/whats_new_15.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/cs_CZ/about.html
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/cs_CZ/admin.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/cs_CZ/common.lang.php
@@ -1050,6 +1069,7 @@
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/cs_CZ/install.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/cs_CZ/iso.txt
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/cs_CZ/upgrade.lang.php
+@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/cs_CZ/whats_new_15.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/da_DK/about.html
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/da_DK/admin.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/da_DK/common.lang.php
@@ -1079,6 +1099,7 @@
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/da_DK/install.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/da_DK/iso.txt
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/da_DK/upgrade.lang.php
+@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/da_DK/whats_new_15.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/de_DE/about.html
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/de_DE/admin.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/de_DE/common.lang.php
@@ -1109,6 +1130,7 @@
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/de_DE/install.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/de_DE/iso.txt
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/de_DE/upgrade.lang.php
+@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/de_DE/whats_new_15.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/dv_MV/common.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/dv_MV/dv_MV.jpg
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/dv_MV/index.php
@@ -1142,6 +1164,7 @@
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/el_GR/install.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/el_GR/iso.txt
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/el_GR/upgrade.lang.php
+@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/el_GR/whats_new_15.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/en_GB/about.html
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/en_GB/admin.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/en_GB/common.lang.php
@@ -1181,6 +1204,7 @@
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/en_UK/install.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/en_UK/iso.txt
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/en_UK/upgrade.lang.php
+@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/en_UK/whats_new_15.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/en_US/admin.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/en_US/common.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/en_US/en_US.jpg
@@ -1236,6 +1260,7 @@
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/es_ES/install.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/es_ES/iso.txt
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/es_ES/upgrade.lang.php
+@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/es_ES/whats_new_15.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/es_MX/admin.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/es_MX/common.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/es_MX/es_MX.jpg
@@ -1255,6 +1280,7 @@
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/et_EE/install.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/et_EE/iso.txt
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/et_EE/upgrade.lang.php
+@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/et_EE/whats_new_15.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/eu_ES/about.html
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/eu_ES/admin.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/eu_ES/common.lang.php
@@ -1283,6 +1309,7 @@
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/eu_ES/install.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/eu_ES/iso.txt
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/eu_ES/upgrade.lang.php
+@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/eu_ES/whats_new_15.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/fa_IR/about.html
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/fa_IR/admin.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/fa_IR/common.lang.php
@@ -1299,6 +1326,7 @@
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/fa_IR/install.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/fa_IR/iso.txt
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/fa_IR/upgrade.lang.php
+@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/fa_IR/whats_new_15.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/fi_FI/about.html
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/fi_FI/admin.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/fi_FI/common.lang.php
@@ -1306,6 +1334,7 @@
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/fi_FI/install.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/fi_FI/iso.txt
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/fi_FI/upgrade.lang.php
+@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/fi_FI/whats_new_15.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/fr_CA/about.html
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/fr_CA/admin.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/fr_CA/common.lang.php
@@ -1366,6 +1395,7 @@
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/fr_FR/install.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/fr_FR/iso.txt
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/fr_FR/upgrade.lang.php
+@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/fr_FR/whats_new_15.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/ga_IE/common.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/ga_IE/ga_IE.jpg
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/ga_IE/iso.txt
@@ -1408,6 +1438,7 @@
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/he_IL/install.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/he_IL/iso.txt
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/he_IL/upgrade.lang.php
+@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/he_IL/whats_new_15.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/hr_HR/about.html
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/hr_HR/admin.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/hr_HR/common.lang.php
@@ -1466,6 +1497,7 @@
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/hy_AM/install.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/hy_AM/iso.txt
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/hy_AM/upgrade.lang.php
+@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/hy_AM/whats_new_15.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/id_ID/common.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/id_ID/id_ID.jpg
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/id_ID/index.php
@@ -1480,6 +1512,7 @@
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/is_IS/is_IS.jpg
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/is_IS/iso.txt
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/is_IS/upgrade.lang.php
+@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/is_IS/whats_new_15.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/it_IT/about.html
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/it_IT/admin.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/it_IT/common.lang.php
@@ -1510,6 +1543,7 @@
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/it_IT/iso.txt
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/it_IT/it_IT.jpg
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/it_IT/upgrade.lang.php
+@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/it_IT/whats_new_15.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/ja_JP/README.txt
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/ja_JP/about.html
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/ja_JP/admin.lang.php
@@ -1685,6 +1719,7 @@
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/nb_NO/iso.txt
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/nb_NO/nb_NO.jpg
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/nb_NO/upgrade.lang.php
+@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/nb_NO/whats_new_15.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/nl_NL/about.html
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/nl_NL/admin.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/nl_NL/common.lang.php
@@ -1715,6 +1750,7 @@
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/nl_NL/iso.txt
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/nl_NL/nl_NL.jpg
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/nl_NL/upgrade.lang.php
+@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/nl_NL/whats_new_15.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/nn_NO/about.html
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/nn_NO/admin.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/nn_NO/common.lang.php
@@ -1767,6 +1803,7 @@
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/pl_PL/iso.txt
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/pl_PL/pl_PL.jpg
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/pl_PL/upgrade.lang.php
+@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/pl_PL/whats_new_15.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/pt_BR/about.html
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/pt_BR/admin.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/pt_BR/common.lang.php
@@ -1868,6 +1905,7 @@
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/ru_RU/iso.txt
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/ru_RU/ru_RU.jpg
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/ru_RU/upgrade.lang.php
+@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/ru_RU/whats_new_15.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/sh_RS/about.html
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/sh_RS/admin.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/sh_RS/common.lang.php
@@ -1909,6 +1947,7 @@
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/sk_SK/iso.txt
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/sk_SK/sk_SK.jpg
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/sk_SK/upgrade.lang.php
+@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/sk_SK/whats_new_15.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/sl_SI/about.html
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/sl_SI/admin.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/sl_SI/common.lang.php
@@ -1947,6 +1986,7 @@
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/sr_RS/iso.txt
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/sr_RS/sr_RS.jpg
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/sr_RS/upgrade.lang.php
+@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/sr_RS/whats_new_15.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/sv_SE/about.html
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/sv_SE/admin.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/sv_SE/common.lang.php
@@ -1976,12 +2016,16 @@
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/sv_SE/iso.txt
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/sv_SE/sv_SE.jpg
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/sv_SE/upgrade.lang.php
+@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/sv_SE/whats_new_15.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/ta_IN/admin.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/ta_IN/common.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/ta_IN/install.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/ta_IN/iso.txt
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/ta_IN/ta_IN.jpg
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/ta_IN/upgrade.lang.php
+@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/te_IN/common.lang.php
+@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/te_IN/iso.txt
+@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/te_IN/te_IN.jpg
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/th_TH/about.html
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/th_TH/admin.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/th_TH/common.lang.php
@@ -2019,6 +2063,7 @@
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/tr_TR/iso.txt
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/tr_TR/tr_TR.jpg
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/tr_TR/upgrade.lang.php
+@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/tr_TR/whats_new_15.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/uk_UA/about.html
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/uk_UA/admin.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/uk_UA/common.lang.php
@@ -2060,6 +2105,7 @@
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/vi_VN/iso.txt
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/vi_VN/upgrade.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/vi_VN/vi_VN.jpg
+@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/vi_VN/whats_new_15.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/wo_SN/common.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/wo_SN/iso.txt
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/wo_SN/wo_SN.jpg
@@ -2090,6 +2136,7 @@
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/zh_CN/install.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/zh_CN/iso.txt
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/zh_CN/upgrade.lang.php
+@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/zh_CN/whats_new_15.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/zh_CN/zh_CN.jpg
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/zh_HK/about.html
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/zh_HK/admin.lang.php
@@ -2130,6 +2177,7 @@
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/zh_TW/install.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/zh_TW/iso.txt
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/zh_TW/upgrade.lang.php
+@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/zh_TW/whats_new_15.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/zh_TW/zh_TW.jpg
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/plugins/AdminTools/README.md
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/plugins/AdminTools/admin.php
@@ -2620,6 +2668,8 @@
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/plugins/TakeATour/language/gl_ES/description.txt
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/plugins/TakeATour/language/gl_ES/plugin.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/plugins/TakeATour/language/he_IL/plugin.lang.php
+@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/plugins/TakeATour/language/he_IL/tour_first_contact.lang.php
+@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/plugins/TakeATour/language/he_IL/tour_privacy.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/plugins/TakeATour/language/hu_HU/description.txt
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/plugins/TakeATour/language/hu_HU/index.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/plugins/TakeATour/language/hu_HU/plugin.lang.php
@@ -2947,6 +2997,7 @@
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/default/icon/recent.png
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/default/icon/recent_by_child.png
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/default/icon/remove_s.png
+@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/default/icon/warning-triangle.svg
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/default/iconset.css
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/default/images/ajax-loader-small.gif
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/default/images/ajax_loader.gif
@@ -3543,7 +3594,6 @@
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/modus/css/fontello/font/modus.ttf
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/modus/css/fontello/font/modus.woff
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/modus/css/fontello/font/modus.woff2
-@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/modus/css/fontello/fontello-cf8883f3.zip
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/modus/css/hf_base.css
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/modus/css/iconfontello.css.tpl
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/modus/css/iconset.css
@@ -3636,7 +3686,6 @@
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/modus/js/menuh.js
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/modus/js/modus.async.js
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/modus/js/photo.autosize.js
-@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/modus/js/photo.autosize.min.js
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/modus/js/thumb.arrange.js
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/modus/js/thumb.arrange.min.js
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/modus/js/thumb.pop.js

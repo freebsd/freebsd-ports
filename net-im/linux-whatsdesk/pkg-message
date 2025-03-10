@@ -1,0 +1,13 @@
+[
+{ type: install
+  message: <<EOM
+
+If the user's directory is located in /usr/home and doesn't exists the link
+/home, then create one with the command:
+
+  ln -s /usr/home /home
+
+Whatsdesk uses pulseaudio(1), so you have to start the relative server.
+EOM
+}
+]

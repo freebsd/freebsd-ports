@@ -1,7 +1,7 @@
-TIMESTAMP = 1708761556
-SHA256 (lbonn-rofi-1.7.5+wayland2_GH0.tar.gz) = 8dec4342c5393770a86f598f4b6c5b6efcefeb6551918eff6283fdc660ab0d0a
-SIZE (lbonn-rofi-1.7.5+wayland2_GH0.tar.gz) = 696353
-SHA256 (sardemff7-libgwater-555fa6d_GH0.tar.gz) = ebb0ef22fc7d668dddbc11123858cfa818dc384ce2186769515c605f8d07f270
-SIZE (sardemff7-libgwater-555fa6d_GH0.tar.gz) = 10785
-SHA256 (sardemff7-libnkutils-d08fa89_GH0.tar.gz) = e829be3e498f8d7c55ec9e866598db98800476b91e60f1f3c76316cc91c09b75
-SIZE (sardemff7-libnkutils-d08fa89_GH0.tar.gz) = 62317
+TIMESTAMP = 1737989039
+SHA256 (lbonn-rofi-1.7.8+wayland1_GH0.tar.gz) = ac9e109c3974213a157cbe413a96b030b6372e885e351c03b932fb4ff00d87c3
+SIZE (lbonn-rofi-1.7.8+wayland1_GH0.tar.gz) = 8023801
+SHA256 (sardemff7-libgwater-d86f9903efb9c490c0e3b0316d7f2da5b5a5632c_GH0.tar.gz) = cede0c07f0e13100a4851b84e36c118570a8c75546a52fd1258fcf598a16f7eb
+SIZE (sardemff7-libgwater-d86f9903efb9c490c0e3b0316d7f2da5b5a5632c_GH0.tar.gz) = 10873
+SHA256 (sardemff7-libnkutils-72bd7fb07f627a864e724639eea9fab6cccbd77c_GH0.tar.gz) = 319af84464cb45750d6f6ffda8711f75d3f5c898e31124ce69bbbf99b48c8c69
+SIZE (sardemff7-libnkutils-72bd7fb07f627a864e724639eea9fab6cccbd77c_GH0.tar.gz) = 66289

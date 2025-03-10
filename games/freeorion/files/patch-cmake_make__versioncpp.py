@@ -1,6 +1,6 @@
---- cmake/make_versioncpp.py.orig	2023-03-21 15:16:58 UTC
+--- cmake/make_versioncpp.py.orig	2025-02-02 17:09:54 UTC
 +++ cmake/make_versioncpp.py
-@@ -136,26 +136,6 @@ branch = ""
+@@ -136,26 +136,6 @@ version_file_name = version
  build_no = INVALID_BUILD_NO
  version_file_name = version
  
@@ -16,7 +16,7 @@
 -    timestamp = float(
 -        check_output(["git", "show", "--no-show-signature", "-s", "--format=%ct", "HEAD"], text=True).strip()
 -    )
--    build_no = ".".join([datetime.utcfromtimestamp(timestamp).strftime("%Y-%m-%d"), commit])
+-    build_no = ".".join([datetime.fromtimestamp(timestamp, tz=timezone.utc).strftime("%Y-%m-%d"), commit])
 -    if branch[:7] == "release":
 -        version_file_name = "v" + version
 -    else:

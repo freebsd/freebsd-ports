@@ -1,6 +1,5 @@
 PORTNAME=	WWW-OAuth
-PORTVERSION=	1.000
-PORTREVISION=	1
+PORTVERSION=	1.002
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,6 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Class-Tiny-Chained>0:devel/p5-Class-Tiny-Chained \
+		p5-Crypt-URandom>=0.37:security/p5-Crypt-URandom \
 		p5-HTTP-Message>0:www/p5-HTTP-Message \
 		p5-Module-Runtime>0:devel/p5-Module-Runtime \
 		p5-Mojolicious>0:www/p5-Mojolicious \

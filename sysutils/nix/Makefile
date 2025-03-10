@@ -1,6 +1,6 @@
 PORTNAME=	nix
 DISTVERSION=	2.20.2
-PORTREVISION=	1
+PORTREVISION=	6
 CATEGORIES=	sysutils
 
 MAINTAINER=	ashish@FreeBSD.org
@@ -9,6 +9,10 @@ WWW=		https://nixos.org/nix/
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
+
+BROKEN=		Fails to build, error: field designator 'cols' does not refer to any field in type 'struct lowdown_opts'
+DEPRECATED=	Outdated version and broken for months
+EXPIRATION_DATE=2025-03-31
 
 BUILD_DEPENDS=	${LOCALBASE}/share/aclocal/ax_cxx_compile_stdcxx.m4:devel/autoconf-archive \
 		gsed:textproc/gsed \
@@ -54,7 +58,7 @@ CONFIGURE_ENV=		OPENSSL_CFLAGS="-I ${OPENSSLINC}" \
 			OPENSSL_LIBS="-L ${OPENSSLLIB}"
 # Workaround for:
 #   /usr/bin/ld: error: undefined symbol: SHA512_Update
-MAKE_ARGS=		libutil_ALLOW_UNDEFINED=yes
+MAKE_ARGS=		libutil_ALLOW_UNDEFINED=yes V=s
 # XXX: Tests require the port to be installed on the system. It is not enough
 # to have the port staged.
 TEST_ARGS=		nix_tests="${_PASSING_TESTS}"

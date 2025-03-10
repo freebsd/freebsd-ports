@@ -1,13 +1,13 @@
 PORTNAME=	opentelemetry-instrumentation-base
-PORTVERSION=	0.22.5
+PORTVERSION=	0.23.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Instrumentation Base for the OpenTelemetry framework
 WWW=		https://opentelemetry.io/ \
-		https://github.com/open-telemetry/opentelemetry-ruby-contrib \
-		https://github.com/open-telemetry/opentelemetry-ruby-contrib/tree/main/instrumentation/base
+		https://github.com/open-telemetry/opentelemetry-ruby-contrib/tree/main/instrumentation/base \
+		https://github.com/open-telemetry/opentelemetry-ruby-contrib
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

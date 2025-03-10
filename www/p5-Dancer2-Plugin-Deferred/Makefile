@@ -17,7 +17,7 @@ RUN_DEPENDS=	p5-Dancer2>=0.200000:www/p5-Dancer2 \
 TEST_DEPENDS=	p5-HTTP-Cookies>=0:www/p5-HTTP-Cookies \
 		p5-HTTP-Message>=0:www/p5-HTTP-Message \
 		p5-Plack>=0:www/p5-Plack \
-		p5-Test2-Suite>=0:devel/p5-Test2-Suite
+		p5-Test-Simple>=1.302200:devel/p5-Test-Simple
 
 USES=		perl5
 USE_PERL5=	configure

@@ -1,5 +1,5 @@
 PORTNAME=	wildfly
-DISTVERSION=	33.0.0
+DISTVERSION=	35.0.1
 CATEGORIES=	java www
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/${WILDFLY_VERSION}/
 DISTNAME=	wildfly-${WILDFLY_VERSION}
@@ -10,7 +10,8 @@ WWW=		https://wildfly.org/
 
 LICENSE=	GPLv2
 
-USE_JAVA=	17+
+USES=		java
+JAVA_VERSION=	17+
 USE_RC_SUBR=	wildfly
 
 NO_BUILD=	yes
@@ -64,7 +65,7 @@ post-extract:
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/${PORTNAME}
 	(cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/${PORTNAME})
-	${RMDIR} ${STAGEDIR}${PREFIX}/${PORTNAME}/.installation
+	${RM} -rf ${STAGEDIR}${PREFIX}/${PORTNAME}/.installation
 .for FILE in ${CONFIG_FILES}
 	${MV} ${STAGEDIR}${PREFIX}/${PORTNAME}/${FILE} \
 		${STAGEDIR}${PREFIX}/${PORTNAME}/${FILE}.sample

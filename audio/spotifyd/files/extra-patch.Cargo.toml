@@ -1,11 +1,11 @@
---- Cargo.toml.orig	2021-12-07 15:10:37.000000000 -0500
-+++ Cargo.toml	2022-09-29 22:29:56.615602000 -0400
-@@ -37,7 +37,7 @@
- librespot-audio = { version = "0.2.0", default-features=false, features = ["with-tremor"] }
- librespot-playback = { version = "0.2.0", default-features=false }
- librespot-core = { version = "0.2.0"}
--librespot-connect = { version = "0.2.0"}
-+librespot-connect = { version = "0.2.0", features = ["with-dns-sd"]}
- toml = "0.5.8"
- color-eyre = "0.5"
+--- Cargo.toml.orig	2023-04-20 21:37:30 UTC
++++ Cargo.toml
+@@ -35,7 +35,7 @@
+ librespot-playback = { version = "0.4", default-features = false }
+ librespot-core = { version = "0.4" }
+ librespot-discovery = { version = "0.4" }
+-librespot-connect = { version = "0.4" }
++librespot-connect = { version = "0.4", features = ["with-dns-sd"]}
+ toml = "0.7"
+ color-eyre = "0.6"
  

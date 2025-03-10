@@ -1,11 +1,12 @@
 PORTNAME=	curv
 DISTVERSION=	0.5
-PORTREVISION=	23
+PORTREVISION=	24
 CATEGORIES=	math lang graphics
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Language for making art using mathematics
-WWW=		https://github.com/curv3d/curv/
+WWW=		https://curv3d.org/ \
+		https://codeberg.org/doug-moen/curv
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

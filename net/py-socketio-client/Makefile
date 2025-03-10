@@ -1,5 +1,6 @@
 PORTNAME=	socketio-client
 PORTVERSION=	0.6.7
+PORTREVISION=	1
 CATEGORIES=	net devel python
 MASTER_SITES=	PYPI/source/s/socketIO-client/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}

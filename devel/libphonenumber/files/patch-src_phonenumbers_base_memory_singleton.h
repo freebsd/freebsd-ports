@@ -5,7 +5,7 @@
  // C++11 Lock implementation based on std::mutex.
  #include "phonenumbers/base/memory/singleton_stdmutex.h"
 -#elif defined(__linux__) || defined(__APPLE__) || defined(I18N_PHONENUMBERS_HAVE_POSIX_THREAD)
-+#elif defined(__linux__) || defined(__APPLE__) || defined(I18N_PHONENUMBERS_HAVE_POSIX_THREAD) || defined(__FreeBSD__)
++#elif defined(__linux__) || defined(__APPLE__) || defined(__FreeBSD__) || defined(I18N_PHONENUMBERS_HAVE_POSIX_THREAD)
  #include "phonenumbers/base/memory/singleton_posix.h"
  #elif defined(WIN32)
  #include "phonenumbers/base/memory/singleton_win32.h"

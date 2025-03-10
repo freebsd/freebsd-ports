@@ -1,0 +1,6 @@
+bin/xfishtank
+bin/xscreensaver-hacks/xfishtank
+share/man/man1/xfishtank.1.gz
+share/xscreensaver/config/xfishtank.xml
+@dir share/xscreensaver/config
+@dir bin/xscreensaver-hacks

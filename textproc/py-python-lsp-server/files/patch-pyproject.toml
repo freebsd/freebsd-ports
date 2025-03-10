@@ -1,13 +1,13 @@
---- pyproject.toml.orig	2024-03-29 15:39:29 UTC
+--- pyproject.toml.orig	2024-07-24 16:43:03 UTC
 +++ pyproject.toml
 @@ -27,29 +27,29 @@ all = [
  
  [project.optional-dependencies]
  all = [
 -    "autopep8>=2.0.4,<2.1.0",
--    "flake8>=7,<8",
+-    "flake8>=7.1,<8",
 -    "mccabe>=0.7.0,<0.8.0",
--    "pycodestyle>=2.11.0,<2.12.0",
+-    "pycodestyle>=2.12.0,<2.13.0",
 -    "pydocstyle>=6.3.0,<6.4.0",
 -    "pyflakes>=3.2.0,<3.3.0",
 -    "pylint>=3.1,<4",
@@ -15,9 +15,9 @@
 -    "yapf>=0.33.0",
 -    "whatthepatch>=1.0.2,<2.0.0"
 +    "autopep8>=2.0.4",
-+    "flake8>=7",
++    "flake8>=7.1",
 +    "mccabe>=0.7.0",
-+    "pycodestyle>=2.11.0",
++    "pycodestyle>=2.12.0",
 +    "pydocstyle>=6.3.0",
 +    "pyflakes>=3.2.0",
 +    "pylint>=3.1",
@@ -26,18 +26,18 @@
 +    "whatthepatch>=1.0.2"
  ]
 -autopep8 = ["autopep8>=2.0.4,<2.1.0"]
--flake8 = ["flake8>=7,<8"]
+-flake8 = ["flake8>=7.1,<8"]
 -mccabe = ["mccabe>=0.7.0,<0.8.0"]
--pycodestyle = ["pycodestyle>=2.11.0,<2.12.0"]
+-pycodestyle = ["pycodestyle>=2.12.0,<2.13.0"]
 -pydocstyle = ["pydocstyle>=6.3.0,<6.4.0"]
 -pyflakes = ["pyflakes>=3.2.0,<3.3.0"]
 -pylint = ["pylint>=3.1,<4"]
 -rope = ["rope>=1.11.0"]
 -yapf = ["yapf>=0.33.0", "whatthepatch>=1.0.2,<2.0.0"]
 +autopep8 = ["autopep8>=2.0.4"]
-+flake8 = ["flake8>=7"]
++flake8 = ["flake8>=7.1"]
 +mccabe = ["mccabe>=0.7.0"]
-+pycodestyle = ["pycodestyle>=2.11.0"]
++pycodestyle = ["pycodestyle>=2.12.0"]
 +pydocstyle = ["pydocstyle>=6.3.0"]
 +pyflakes = ["pyflakes>=3.2.0"]
 +pylint = ["pylint>=3.1"]

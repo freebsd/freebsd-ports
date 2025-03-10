@@ -1,21 +1,22 @@
 PORTNAME=	bruteblock
-PORTVERSION=	0.0.5
-PORTREVISION=	11
+PORTVERSION=	0.0.6
+DISTVERSIONPREFIX=	v
 CATEGORIES=	security
-MASTER_SITES=	https://samm.kiev.ua/bruteblock/
 
-MAINTAINER=	amdmi3@FreeBSD.org
+MAINTAINER=	samm@FreeBSD.org
 COMMENT=	Software for blocking bruteforce attacks with ipfw
 WWW=		https://samm.kiev.ua/bruteblock/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/doc/LICENSE
 
-LIB_DEPENDS=	libpcre.so:devel/pcre
+LIB_DEPENDS=	libpcre2-8.so:devel/pcre2
 
 SUB_FILES=	pkg-message
 
 USE_RC_SUBR=	bruteblockd
+USE_GITHUB=	yes
+GH_ACCOUNT=	samm-git
 
 CONFDIR=	${PREFIX}/etc/${PORTNAME}
 

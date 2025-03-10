@@ -1,5 +1,7 @@
+include/blis.h
 include/blis/blis.h
 %%CBLAS%%include/blis/cblas.h
+%%CBLAS%%include/cblas.h
 lib/libblis.a
 lib/libblis.so
 lib/libblis.so.4

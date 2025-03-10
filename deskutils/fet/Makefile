@@ -1,5 +1,5 @@
 PORTNAME=	fet
-DISTVERSION=	6.22.2
+DISTVERSION=	7.0.6
 CATEGORIES=	deskutils education
 MASTER_SITES=	https://lalescu.ro/liviu/fet/download/ \
 		https://lalescu.ro/liviu/fet/download/old/ \
@@ -53,5 +53,10 @@ do-install-EXAMPLES-on:
 do-install-NLS-on:
 	@${MKDIR} ${STAGEDIR}${DATADIR}/translations
 	cd ${WRKSRC}/translations && ${INSTALL_DATA} *.qm ${STAGEDIR}${DATADIR}/translations
+
+do-test:
+	cd ${WRKSRC} && ${PREFIX}/bin/fet-cl --inputfile=${WRKSRC}/examples/official/by-Volker-Dirr/German_subact_constr.fet \
+		--randomseeds10=1 --randomseeds11=1 --randomseeds12=1 \
+		--randomseeds20=1 --randomseeds21=1 --randomseeds22=1
 
 .include <bsd.port.mk>

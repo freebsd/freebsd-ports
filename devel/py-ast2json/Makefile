@@ -1,5 +1,6 @@
 PORTNAME=	ast2json
-DISTVERSION=	0.3
+DISTVERSION=	0.4
+PORTREVISION=	1
 CATEGORIES=	devel science
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,7 +12,7 @@ WWW=		https://github.com/YoloSwagTeam/ast2json
 LICENSE=	BSD3CLAUSE
 
 USES=		python
-USE_PYTHON=	distutils # autoplist: autoplist contains the 'test' folder that is removed
+USE_PYTHON=	distutils concurrent # autoplist: autoplist contains the 'test' folder that is removed
 
 NO_ARCH=	yes
 

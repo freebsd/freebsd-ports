@@ -12,7 +12,6 @@ LICENSE=	MIT
 USES=		ocaml:dune
 USE_GITHUB=	yes
 GH_ACCOUNT=	ocaml-ppx
-USE_OCAML=	yes
 
 DOCSDIR=	${OCAML_DOCSDIR}/ppx_derivers
 PORTDOCS=	CHANGES.md LICENSE.md README.md
@@ -20,6 +19,12 @@ PORTDOCS=	CHANGES.md LICENSE.md README.md
 OPTIONS_DEFINE=	DOCS
 
 SA_DIR=		${LOCALBASE}/${OCAML_SITELIBDIR}
+
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == powerpc
+USE_BINUTILS=	yes
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} \

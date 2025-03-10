@@ -1,6 +1,5 @@
 %%EXAMPLESDIR%%/nginx.conf
 %%WWWDIR%%/LICENSE
-%%WWWDIR%%/analytics-ga.js
 %%WWWDIR%%/app.js
 %%WWWDIR%%/babel.config.js
 %%WWWDIR%%/base.html
@@ -76,6 +75,7 @@
 %%WWWDIR%%/lang/main-hsb.json
 %%WWWDIR%%/lang/main-hu.json
 %%WWWDIR%%/lang/main-hy.json
+%%WWWDIR%%/lang/main-id.json
 %%WWWDIR%%/lang/main-is.json
 %%WWWDIR%%/lang/main-it.json
 %%WWWDIR%%/lang/main-ja.json
@@ -111,7 +111,6 @@
 %%WWWDIR%%/lang/update-translation.js
 %%WWWDIR%%/libs/alwaysontop.min.js
 %%WWWDIR%%/libs/alwaysontop.min.js.map
-%%WWWDIR%%/libs/analytics-ga.js
 %%WWWDIR%%/libs/analytics-ga.min.js
 %%WWWDIR%%/libs/analytics-ga.min.js.map
 %%WWWDIR%%/libs/app.bundle.min.js
@@ -173,8 +172,8 @@
 %%WWWDIR%%/libs/excalidraw-assets/locales/zh-HK-json-fbdd69ac2e81d38f0aa9.js
 %%WWWDIR%%/libs/excalidraw-assets/locales/zh-TW-json-872230fd45944e19c9e6.js
 %%WWWDIR%%/libs/excalidraw-assets/socketIoClient-9dfbabed609bb6017f9b.js
-%%WWWDIR%%/libs/excalidraw-assets/vendor-8fcf83f9bbb24191a5a2.js
-%%WWWDIR%%/libs/excalidraw-assets/vendor-8fcf83f9bbb24191a5a2.js.LICENSE.txt
+%%WWWDIR%%/libs/excalidraw-assets/vendor-75e22c20f1d603abdfc9.js
+%%WWWDIR%%/libs/excalidraw-assets/vendor-75e22c20f1d603abdfc9.js.LICENSE.txt
 %%WWWDIR%%/libs/external_api.min.js
 %%WWWDIR%%/libs/external_api.min.js.map
 %%WWWDIR%%/libs/face-landmarks-worker.min.js
@@ -256,6 +255,8 @@
 %%WWWDIR%%/sounds/reactions-crickets.opus
 %%WWWDIR%%/sounds/reactions-laughter.mp3
 %%WWWDIR%%/sounds/reactions-laughter.opus
+%%WWWDIR%%/sounds/reactions-love.mp3
+%%WWWDIR%%/sounds/reactions-love.opus
 %%WWWDIR%%/sounds/reactions-raised-hand.mp3
 %%WWWDIR%%/sounds/reactions-raised-hand.opus
 %%WWWDIR%%/sounds/reactions-surprise.mp3
@@ -283,7 +284,6 @@
 %%WWWDIR%%/sounds/talkWhileMuted.mp3
 %%WWWDIR%%/sounds/talkWhileMuted.opus
 %%WWWDIR%%/static/404.html
-%%WWWDIR%%/static/authError.html
 %%WWWDIR%%/static/close.html
 %%WWWDIR%%/static/close.js
 %%WWWDIR%%/static/close2.html
@@ -302,5 +302,6 @@
 %%WWWDIR%%/static/settingsToolbarAdditionalContent.html
 %%WWWDIR%%/static/welcomePageAdditionalCard.html
 %%WWWDIR%%/static/welcomePageAdditionalContent.html
+%%WWWDIR%%/static/whiteboard.html
 %%WWWDIR%%/title.html
 %%WWWDIR%%/webpack.config.js

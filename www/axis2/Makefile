@@ -12,8 +12,9 @@ WWW=		https://axis.apache.org/axis2/java/core/
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-USES=		cpe zip
+USES=		cpe java zip
 CPE_VENDOR=	apache
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 NO_BUILD=	yes
 NO_ARCH=	yes
@@ -30,7 +31,6 @@ TOMCAT9_RUN_DEPENDS+=	${APPHOME}/bin/bootstrap.jar:www/tomcat9
 TOMCAT101_VARS=	APPHOME=${LOCALBASE}/apache-tomcat-10.1
 TOMCAT101_RUN_DEPENDS+=	${APPHOME}/bin/bootstrap.jar:www/tomcat101
 
-USE_JAVA=	yes
 SHAREOWN=	www
 SHAREGRP=	www
 

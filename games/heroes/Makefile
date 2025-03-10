@@ -1,6 +1,6 @@
 PORTNAME=	heroes
 PORTVERSION=	0.21
-PORTREVISION=	20
+PORTREVISION=	21
 CATEGORIES=	games
 MASTER_SITES=	SF \
 		SF/${PORTNAME}/${PORTNAME}-data/${DATAVERSION}:data \
@@ -11,23 +11,20 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		${SOUNDISTNAME}${EXTRACT_SUFX}:sound \
 		${MUSICDISTNAME}${EXTRACT_SUFX}:music
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Game of yore similar to the "Tron" and "Nibbles"
 WWW=		https://heroes.sourceforge.net/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libsmpeg.so:multimedia/smpeg
-
 USES=		gettext gmake iconv localbase:ldflags sdl
 USE_SDL=	mixer sdl
 
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--with-sdl_mixer=${LOCALBASE} --without-gii --without-ggi
 
-LDFLAGS+=	-lpthread -lsmpeg -lm
+LDFLAGS+=	-lpthread -lm
 
 INFO=		heroes
 

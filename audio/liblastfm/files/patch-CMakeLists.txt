@@ -1,0 +1,26 @@
+- Avoid needless CMake < 3.10 deprecation warnings
+- Support symbol visibility with Clang
+- Don't put linker flags in CXXFLAGS
+
+--- CMakeLists.txt.orig	2024-11-24 17:34:23 UTC
++++ CMakeLists.txt
+@@ -1,4 +1,4 @@
+-cmake_minimum_required(VERSION 3.6)
++cmake_minimum_required(VERSION 3.10)
+ project(liblastfm)
+ 
+ # general settings
+@@ -68,11 +68,11 @@ endif()
+     add_feature_info(FFTW3F FFTW3F_FOUND "Required for lastfm-fingerprint library")
+ endif()
+ 
+-if(CMAKE_COMPILER_IS_GNUCXX)
++if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
+     add_definitions("-fno-operator-names -fvisibility-inlines-hidden -fvisibility=hidden")
+ endif()
+ if(UNIX AND NOT APPLE)
+-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wl,--no-undefined")
++set(CMAKE_SHARED_LINKER_FLAGS "${CMAKE_SHARED_LINKER_FLAGS} -Wl,--no-undefined")
+ endif()
+ 
+ if(MSVC)

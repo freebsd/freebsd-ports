@@ -1,5 +1,6 @@
 PORTNAME=	evdev
-PORTVERSION=	1.7.0
+PORTVERSION=	1.9.1
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,9 +14,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${LOCALBASE}/include/linux/input.h:devel/evdev-proto
 
-USES=		python
+USES=		localbase python
 USE_PYTHON=	autoplist distutils
-CPPFLAGS+=	-I${LOCALBASE}/include # v4l_compat
 
 EVDEV_INCLUDES=	${LOCALBASE}/include
 

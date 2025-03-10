@@ -1,5 +1,5 @@
 PORTNAME=	Tickit-Widgets
-PORTVERSION=	0.41
+PORTVERSION=	0.42
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:PEVANS
@@ -11,15 +11,15 @@ WWW=		https://metacpan.org/release/Tickit-Widgets
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
-LICENSE_FILE=	${WRKSRC}/LICENSE
+LICENSE_FILE_GPLv1+ =	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Object-Pad>=0.80.8:devel/p5-Object-Pad \
 		p5-Parser-MGC>=0:devel/p5-Parser-MGC \
 		p5-Syntax-Keyword-Dynamically>=0:devel/p5-Syntax-Keyword-Dynamically \
 		p5-Tickit>=0.66:devel/p5-Tickit \
-		p5-meta>=0.003:devel/p5-meta
-TEST_DEPENDS=	p5-Test2-Suite>=0:devel/p5-Test2-Suite
+		p5-meta>=0.008:devel/p5-meta
+TEST_DEPENDS=	p5-Test-Simple>=1.302200:devel/p5-Test-Simple
 
 USES=		perl5
 USE_PERL5=	modbuild

@@ -1,7 +1,7 @@
 PORTNAME=	libfilezilla
-PORTVERSION=	0.47.0
+PORTVERSION=	0.49.0
 CATEGORIES=	ftp
-MASTER_SITES=	https://download.filezilla-project.org/${PORTNAME}/
+MASTER_SITES=	LOCAL/pi
 
 MAINTAINER=	pi@FreeBSD.org
 COMMENT=	C++ library for building platform-independent programs
@@ -20,4 +20,10 @@ USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${CHOSEN_COMPILER_TYPE} == clang && ${COMPILER_VERSION} >= 191
+EXTRA_PATCHES= ${PATCHDIR}/extra-patch-lib_libfilezilla_string.hpp
+.endif
+
+.include <bsd.port.post.mk>

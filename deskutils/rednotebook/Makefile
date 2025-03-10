@@ -1,7 +1,7 @@
 PORTNAME=	rednotebook
 DISTVERSIONPREFIX=v
 DISTVERSION=	2.31
-PORTREVISION=	1
+PORTREVISION=	3
 CATEGORIES=	deskutils
 
 MAINTAINER=	cth-freebsd@pm.me
@@ -11,7 +11,7 @@ WWW=		https://rednotebook.app
 LICENSE=	GPLv3+
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyyaml>=0:devel/py-pyyaml@${PY_FLAVOR}
-LIB_DEPENDS=	libwebkit2gtk-4.0.so:www/webkit2-gtk3
+LIB_DEPENDS=	libwebkit2gtk-4.0.so:www/webkit2-gtk@40
 
 USES=		gettext-tools:build gnome python
 USE_GNOME=	gtk30 gtksourceview3

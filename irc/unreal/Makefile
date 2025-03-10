@@ -1,9 +1,8 @@
 PORTNAME=	unreal
-DISTVERSION=	6.1.1.1
-PORTREVISION=	1
+DISTVERSION=	6.1.9.1
 CATEGORIES=	irc
 MASTER_SITES=	https://www.unrealircd.org/downloads/
-DISTNAME=	${PORTNAME}ircd-${PORTVERSION}
+DISTNAME=	${PORTNAME}ircd-${DISTVERSION}
 
 MAINTAINER=	tanawts@gmail.com
 COMMENT=	Unreal - the next generation ircd
@@ -20,14 +19,9 @@ LIB_DEPENDS=	libcares.so:dns/c-ares \
 		libmaxminddb.so:net/libmaxminddb
 RUN_DEPENDS=	${LOCALBASE}/bin/geoipupdate:net/geoipupdate
 
-USES=		pkgconfig cpe gmake localbase ssl
-MODULESDIR=	${PREFIX}/lib/${PORTNAME}
-MODULESSUBDIR=	chanmodes extbans rpc usermodes
-CONFIGDIR=	${PREFIX}/etc/${PORTNAME}
-RUNDIR=		/var/run/ircd
-LOGDIR=		/var/log/ircd
-CACHEDIR=	/var/cache/ircd
-_TMPDIR=	/tmp
+USES=		cpe gmake pkgconfig ssl
+CPE_VENDOR=	unrealircd
+CPE_PRODUCT=	unrealircd
 
 EXTRACT_AFTER_ARGS=	--exclude extras/*.tar.gz
 
@@ -36,15 +30,21 @@ USE_RC_SUBR=	unrealircd
 
 USERS=		ircd
 GROUPS=		ircd
-CPE_VENDOR=	unrealircd
-CPE_PRODUCT=	unrealircd
 
-SUB_LIST+=	RUNDIR=${RUNDIR}
-SUB_LIST+=	USERS=${USERS}
-SUB_LIST+=	GROUPS=${GROUPS}
+MODULESDIR=	${PREFIX}/lib/${PORTNAME}
+MODULESSUBDIR=	chanmodes extbans rpc usermodes
+CONFIGDIR=	${PREFIX}/etc/${PORTNAME}
+RUNDIR=		/var/run/ircd
+LOGDIR=		/var/log/ircd
+CACHEDIR=	/var/cache/ircd
+_TMPDIR=	/tmp
+
+SUB_LIST+=	RUNDIR=${RUNDIR} \
+		USERS=${USERS} \
+		GROUPS=${GROUPS}
 
 CONFIGURE_ARGS=	--with-nick-history=2000 \
-		--with-bindir=${LOCALBASE}/bin \
+		--with-bindir=${LOCALBASE}/libexec \
 		--with-scriptdir=${DATADIR} \
 		--with-confdir=${CONFIGDIR} \
 		--with-builddir=${WRKSRC} \
@@ -58,20 +58,23 @@ CONFIGURE_ARGS=	--with-nick-history=2000 \
 		--with-controlfile=${RUNDIR}/ircd.ctl \
 		--with-permissions=0600 \
 		--with-system-cares \
+		--with-system-argon2 \
 		--enable-dynamic-linking \
 		--enable-libmaxminddb=yes \
 		--enable-ssl
 
 OPTIONS_DEFINE=	DOCS
 
-PORTDOCS=	${DOCS:T}
-DOCS=		Donation Authors coding-guidelines \
+PORTDOCS=	*
+DOCS=		Authors coding-guidelines \
 		tao.of.irc translations.txt \
 		technical/005.txt technical/base64.txt \
 		technical/serverprotocol.txt
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/src/ircd ${STAGEDIR}${PREFIX}/libexec/ircd
+	${INSTALL_PROGRAM} ${WRKSRC}/src/ircd ${STAGEDIR}${PREFIX}/libexec/unrealircd
+	${INSTALL_PROGRAM} ${WRKSRC}/src/unrealircdctl ${STAGEDIR}${PREFIX}/libexec/unrealircdctl
+	${INSTALL_SCRIPT} ${WRKSRC}/unrealircd ${STAGEDIR}${PREFIX}/sbin/unrealircd
 	${MKDIR} ${STAGEDIR}${CACHEDIR}
 	${MKDIR} ${STAGEDIR}${CONFIGDIR}
 	${MKDIR} ${STAGEDIR}${CONFIGDIR}/aliases

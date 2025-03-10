@@ -116,6 +116,7 @@ share/man/man1/nping.1.gz
 %%DATADIR%%/nselib/httpspider.lua
 %%DATADIR%%/nselib/iax2.lua
 %%DATADIR%%/nselib/idna.lua
+%%DATADIR%%/nselib/iec61850mms.lua
 %%DATADIR%%/nselib/ike.lua
 %%DATADIR%%/nselib/imap.lua
 %%DATADIR%%/nselib/informix.lua
@@ -362,6 +363,7 @@ share/man/man1/nping.1.gz
 %%DATADIR%%/scripts/hadoop-namenode-info.nse
 %%DATADIR%%/scripts/hadoop-secondary-namenode-info.nse
 %%DATADIR%%/scripts/hadoop-tasktracker-info.nse
+%%DATADIR%%/scripts/hartip-info.nse
 %%DATADIR%%/scripts/hbase-master-info.nse
 %%DATADIR%%/scripts/hbase-region-info.nse
 %%DATADIR%%/scripts/hddtemp-info.nse
@@ -508,6 +510,7 @@ share/man/man1/nping.1.gz
 %%DATADIR%%/scripts/iax2-version.nse
 %%DATADIR%%/scripts/icap-info.nse
 %%DATADIR%%/scripts/iec-identify.nse
+%%DATADIR%%/scripts/iec61850-mms.nse
 %%DATADIR%%/scripts/ike-version.nse
 %%DATADIR%%/scripts/imap-brute.nse
 %%DATADIR%%/scripts/imap-capabilities.nse
@@ -584,6 +587,7 @@ share/man/man1/nping.1.gz
 %%DATADIR%%/scripts/ms-sql-xp-cmdshell.nse
 %%DATADIR%%/scripts/msrpc-enum.nse
 %%DATADIR%%/scripts/mtrace.nse
+%%DATADIR%%/scripts/multicast-profinet-discovery.nse
 %%DATADIR%%/scripts/murmur-version.nse
 %%DATADIR%%/scripts/mysql-audit.nse
 %%DATADIR%%/scripts/mysql-brute.nse
@@ -646,6 +650,7 @@ share/man/man1/nping.1.gz
 %%DATADIR%%/scripts/pop3-ntlm-info.nse
 %%DATADIR%%/scripts/port-states.nse
 %%DATADIR%%/scripts/pptp-version.nse
+%%DATADIR%%/scripts/profinet-cm-lookup.nse
 %%DATADIR%%/scripts/puppet-naivesigning.nse
 %%DATADIR%%/scripts/qconn-exec.nse
 %%DATADIR%%/scripts/qscan.nse

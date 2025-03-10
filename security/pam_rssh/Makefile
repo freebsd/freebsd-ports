@@ -1,7 +1,7 @@
 PORTNAME=	pam_rssh
 DISTVERSIONPREFIX=v
 DISTVERSION=	1.1.0
-PORTREVISION=	9
+PORTREVISION=	15
 CATEGORIES=	security
 
 MAINTAINER=	romain@FreeBSD.org
@@ -64,6 +64,6 @@ CARGO_CRATES=	base64-0.13.1 \
 PLIST_FILES=	lib/pam_rssh.so
 
 do-install:
-	${INSTALL_LIB} ${CARGO_TARGET_DIR}/${CARGO_BUILD_TARGET}/release/libpam_rssh.so ${STAGEDIR}${PREFIX}/lib/pam_rssh.so
+	${INSTALL_LIB} ${CARGO_TARGET_DIR}/release/libpam_rssh.so ${STAGEDIR}${PREFIX}/lib/pam_rssh.so
 
 .include <bsd.port.mk>

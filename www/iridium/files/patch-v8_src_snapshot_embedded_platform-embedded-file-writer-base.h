@@ -1,9 +1,9 @@
---- v8/src/snapshot/embedded/platform-embedded-file-writer-base.h.orig	2023-03-13 07:33:08 UTC
+--- v8/src/snapshot/embedded/platform-embedded-file-writer-base.h.orig	2024-11-04 08:56:03 UTC
 +++ v8/src/snapshot/embedded/platform-embedded-file-writer-base.h
-@@ -31,6 +31,7 @@ enum class EmbeddedTargetOs {
-   kMac,
+@@ -36,6 +36,7 @@ enum class EmbeddedTargetOs {
    kWin,
    kStarboard,
+   kZOS,
 +  kOpenBSD,
    kGeneric,  // Everything not covered above falls in here.
  };

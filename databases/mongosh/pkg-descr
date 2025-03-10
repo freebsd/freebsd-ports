@@ -1,0 +1,5 @@
+Standalone MongoDB Shell replacing deprecated Mongo CLI.
+NodeJS doesn't need to be installed.
+
+This port is maintained by VultureOS Team.
+Contact us if you experience any issue: https://discord.gg/E5Bs97J

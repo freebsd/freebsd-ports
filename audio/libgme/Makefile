@@ -1,31 +1,27 @@
 PORTNAME=	libgme
-DISTVERSION=	0.6.3
-PORTREVISION=	1
+DISTVERSION=	0.6.4
 CATEGORIES=	audio
-MASTER_SITES=	https://bitbucket.org/mpyne/game-music-emu/downloads/ \
-		LOCAL/ehaupt
-DISTNAME=	game-music-emu-${DISTVERSION}
+MASTER_SITES=	https://github.com/${PORTNAME}/game-music-emu/releases/download/${DISTVERSION}/
+DISTNAME=	${PORTNAME}-${DISTVERSION}-src
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Collection of video game music emulators
-WWW=		https://bitbucket.org/mpyne/game-music-emu
+WWW=		https://github.com/libgme/game-music-emu
 
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/license.txt
 
-USES=		cmake compiler:c++11-lang dos2unix tar:xz
+USES=		cmake compiler:c++11-lang dos2unix pathfix
 DOS2UNIX_FILES=	${PORTDOCS}
-USE_LDCONFIG=	yes
 
-CMAKE_OFF=	ENABLE_UBSAN
+CMAKE_ON=	CMAKE_DISABLE_FIND_PACKAGE_SDL2
+CMAKE_OFF=	ENABLE_UBSAN GME_BUILD_STATIC
+
+WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
 
 PORTDOCS=	changes.txt design.txt gme.txt readme.txt
 
 OPTIONS_DEFINE=	DOCS
-
-post-patch:
-	@${REINPLACE_CMD} -e '/pkgconfig/s/lib[[:>:]]/libdata/' \
-		${WRKSRC}/gme/CMakeLists.txt
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

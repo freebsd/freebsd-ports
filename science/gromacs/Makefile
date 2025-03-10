@@ -1,12 +1,15 @@
 PORTNAME=	gromacs
-DISTVERSION=	2024.2
+DISTVERSION=	2025.0
+PORTREVISION=	1
 CATEGORIES=	science
 MASTER_SITES=	https://ftp.gromacs.org/pub/gromacs/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} # only for googletest
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Compute molecular dynamics
-WWW=		https://www.gromacs.org/
+WWW=		https://www.gromacs.org \
+		https://gitlab.com/gromacs/gromacs \
+		https://github.com/gromacs/gromacs
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
@@ -14,14 +17,15 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BROKEN_i386=	undefined reference to `__atomic_load' and `__atomic_compare_exchange' #`
 
 BUILD_DEPENDS=	boost-libs>=1.44:devel/boost-libs
+LIB_DEPENDS=	liblmfit.so:math/lmfit \
+		libmuparser.so:math/muparser
+		# TODO tng
 
-USES=		cmake compiler:c++17-lang gnome pathfix perl5 pkgconfig \
+USES=		cmake compiler:c++17-lang pathfix perl5 pkgconfig \
 		python:build shebangfix
-USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	nodefault
-GH_TUPLE=	google:googletest:v1.13.0:googletest
 
 SHEBANG_FILES=	admin/*.sh scripts/*.pl scripts/*.sh src/gromacs/selection/*.sh
 bash_CMD=	${SH}
@@ -29,7 +33,10 @@ bash_CMD=	${SH}
 CMAKE_OFF=	GMX_USE_RDTSCP \
 		USE_PYTHON_SCRIPTS
 CMAKE_ARGS=	-DPython_EXECUTABLE=${PYTHON_CMD} \
-		-DPython3_EXECUTABLE=${PYTHON_CMD}
+		-DPython3_EXECUTABLE=${PYTHON_CMD} \
+		-DGMX_USE_MUPARSER=EXTERNAL \
+		-DGMX_USE_PLUMED=ON \
+		-DGMX_USE_LMFIT=EXTERNAL
 
 TEST_TARGET=	check
 
@@ -112,10 +119,6 @@ THREAD_MPI_DESC=	Build a thread-MPI-based multithreaded version of GROMACS
 THREAD_MPI_CMAKE_BOOL=	GMX_THREAD_MPI
 THREAD_MPI_PLIST_SUB=	SUFFIX_MPI=""
 
-post-extract: # replace outdated bundled googletest with a newer version to fix tests build, see https://gitlab.com/gromacs/gromacs/-/issues/4825
-	@${RM} -r ${WRKSRC}/src/external/googletest
-	@${RLN} ${WRKSRC_googletest} ${WRKSRC}/src/external/googletest
-
 post-patch:
 	@${FIND} ${WRKSRC} -name "GMXRC.*" | ${XARGS} ${REINPLACE_CMD} -e \
 		's|LDLIB/pkgconfig|LDLIB/../libdata/pkgconfig| ; \
@@ -123,6 +126,6 @@ post-patch:
 	@${REINPLACE_CMD} -e '/CMAKE_REQUIRED_LIBRARIES/d' \
 		${WRKSRC}/cmake/gmxTestdlopen.cmake
 
-# tests fail to compile, see https://gitlab.com/gromacs/gromacs/-/issues/5046
+# tests fail to compile, see https://gitlab.com/gromacs/gromacs/-/issues/5141
 
 .include <bsd.port.mk>

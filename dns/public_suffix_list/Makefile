@@ -1,5 +1,5 @@
 PORTNAME=	public_suffix_list
-PORTVERSION=	20240730
+PORTVERSION=	20250212
 CATEGORIES=	dns
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -10,19 +10,18 @@ WWW=		https://publicsuffix.org/ \
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-#SLAVEDIRS=	dns/p5-Mozilla-PublicSuffix dns/py-publicsuffix dns/py-publicsuffix2 dns/py-publicsuffixlist dns/rubygem-public_suffix dns/rubygem-public_suffix_service www/py-adblock
-SLAVEDIRS=	dns/p5-Mozilla-PublicSuffix dns/py-publicsuffix dns/py-publicsuffix2 dns/rubygem-public_suffix dns/rubygem-public_suffix_service www/py-adblock
-
 NO_ARCH=	yes
 NO_BUILD=	yes
 
 PORTDATA=	public_suffix_list.dat \
 		test_psl.txt
 
+SLAVEDIRS=	dns/p5-Mozilla-PublicSuffix dns/py-publicsuffix dns/py-publicsuffix2 dns/rubygem-public_suffix dns/rubygem-public_suffix_service www/py-adblock
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	publicsuffix
 GH_PROJECT=	list
-GH_TAGNAME=	37d2d6a
+GH_TAGNAME=	560007a
 
 do-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}/

@@ -1,5 +1,5 @@
 PORTNAME=	gollum
-DISTVERSION=	5.3.2
+DISTVERSION=	6.1.0
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -12,22 +12,21 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	git:devel/git \
 		rubygem-gemojione>=4.1<5:graphics/rubygem-gemojione \
-		rubygem-gollum-lib>=5.2.3<6:www/rubygem-gollum-lib \
+		rubygem-gollum-lib>=6.0<7:www/rubygem-gollum-lib \
 		rubygem-i18n>=1.8:devel/rubygem-i18n \
 		rubygem-kramdown>=2.3<3:textproc/rubygem-kramdown \
 		rubygem-kramdown-parser-gfm>=1.1.0<1.2:textproc/rubygem-kramdown-parser-gfm \
 		rubygem-mustache-sinatra>=2.0<3:devel/rubygem-mustache-sinatra \
-		rubygem-octicons>=12.0:misc/rubygem-octicons \
+		rubygem-octicons>=19.0:misc/rubygem-octicons \
 		rubygem-rdoc>=6:devel/rubygem-rdoc \
 		rubygem-rss>=0.2.9:www/rubygem-rss \
-		rubygem-sass>=3.5<4:textproc/rubygem-sass \
-		rubygem-sinatra2>=2.0<3:www/rubygem-sinatra2 \
-		rubygem-sinatra-contrib2>=2.0<3:www/rubygem-sinatra-contrib2 \
-		rubygem-sprockets3>=3.7<4:devel/rubygem-sprockets3 \
+		rubygem-sinatra>=4.0.0<5:www/rubygem-sinatra \
+		rubygem-sinatra-contrib>=4.0.0<5:www/rubygem-sinatra-contrib \
+		rubygem-sprockets>=4.1<5:devel/rubygem-sprockets \
 		rubygem-sprockets-helpers>=1.2<2:devel/rubygem-sprockets-helpers \
-		rubygem-uglifier>=4.2<5:www/rubygem-uglifier \
 		rubygem-useragent>=0.16.2<0.17:devel/rubygem-useragent \
-		rubygem-webrick>=1.7<2:www/rubygem-webrick
+		rubygem-webrick>=1.7<2:www/rubygem-webrick \
+		rubygem-rackup>=2.1.0<3:www/rubygem-rackup
 
 USES=		cpe gem shebangfix
 CPE_VENDOR=	${PORTNAME}_project

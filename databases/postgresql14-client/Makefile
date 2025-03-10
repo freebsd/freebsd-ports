@@ -1,5 +1,5 @@
 PORTNAME=	postgresql
-PORTREVISION=	0
+PORTREVISION=	1
 
 COMMENT=	PostgreSQL database (client)
 
@@ -14,5 +14,11 @@ CLIENT_ONLY=	yes
 COMPONENT=	-client
 USE_LDCONFIG=	yes
 USES=		pkgconfig
+
+OPTIONS_DEFINE+=LIBEDIT DOCS
+LIBEDIT_DESC=	Use non-GPL libedit instead of readline
+LIBEDIT_CONFIGURE_ON+=--with-libedit-preferred
+LIBEDIT_USES=	libedit
+LIBEDIT_USES_OFF=readline
 
 .include "${MASTERDIR}/Makefile"

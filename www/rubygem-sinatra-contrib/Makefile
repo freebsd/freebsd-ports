@@ -1,5 +1,5 @@
 PORTNAME=	sinatra-contrib
-PORTVERSION=	4.0.0
+PORTVERSION=	4.1.1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 

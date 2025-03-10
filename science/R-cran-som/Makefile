@@ -1,6 +1,5 @@
 PORTNAME=	som
-DISTVERSION=	0.3-5.1
-PORTREVISION=	5
+DISTVERSION=	0.3-5.2
 CATEGORIES=	science
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
@@ -10,6 +9,6 @@ WWW=		https://cran.r-project.org/web/packages/som/
 
 LICENSE=	GPLv3
 
-USES=	cran:auto-plist,compiles
+USES=		cran:auto-plist,compiles
 
 .include <bsd.port.mk>

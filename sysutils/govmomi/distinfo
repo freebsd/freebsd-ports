@@ -1,5 +1,5 @@
-TIMESTAMP = 1722141036
-SHA256 (go/sysutils_govmomi/govmomi-v0.39.0/v0.39.0.mod) = 19859ad2de38b8c39b46f0b95d0e142ae66db59da4d2b09d27149ed5e2ba6774
-SIZE (go/sysutils_govmomi/govmomi-v0.39.0/v0.39.0.mod) = 753
-SHA256 (go/sysutils_govmomi/govmomi-v0.39.0/v0.39.0.zip) = 7a5b4a0f1a92e980c33401f8528fc8a82b02a9df69b59b6682660d3a2caf4359
-SIZE (go/sysutils_govmomi/govmomi-v0.39.0/v0.39.0.zip) = 3555131
+TIMESTAMP = 1740940366
+SHA256 (go/sysutils_govmomi/govmomi-v0.46.3/v0.46.3.mod) = 03449fdfa954c48855dd5376d1c47b146dbc277ecb9bd2a0fb22337064553bab
+SIZE (go/sysutils_govmomi/govmomi-v0.46.3/v0.46.3.mod) = 753
+SHA256 (go/sysutils_govmomi/govmomi-v0.46.3/v0.46.3.zip) = 1441c2adf0725127df76ba6aebec2b0a182480b4a4c0799add0f4ea4c0b1631d
+SIZE (go/sysutils_govmomi/govmomi-v0.46.3/v0.46.3.zip) = 3659214

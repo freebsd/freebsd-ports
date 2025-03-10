@@ -3,14 +3,14 @@ CATEGORIES=	multimedia
 
 COMMENT=	GStreamer theora plugin
 
-GST_PLUGIN=	theora
+LIB_DEPENDS+=	libogg.so:audio/libogg \
+		libtheora.so:multimedia/libtheora
+
+MASTERDIR=	${.CURDIR:H:H}/multimedia/gstreamer1-plugins
+
+PLIST=		${.CURDIR}/pkg-plist
+
 DIST=		base
-
-MASTERDIR=	${.CURDIR}/../../multimedia/gstreamer1-plugins
-
-PLIST=  ${.CURDIR}/pkg-plist
-
-LIB_DEPENDS+= libtheora.so:multimedia/libtheora \
-	libogg.so:audio/libogg
+GST_PLUGIN=	theora
 
 .include "${MASTERDIR}/Makefile"

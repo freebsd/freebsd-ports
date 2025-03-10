@@ -1,6 +1,6 @@
 PORTNAME=	glaxium
 PORTVERSION=	0.5
-PORTREVISION=	19
+PORTREVISION=	20
 CATEGORIES=	games
 MASTER_SITES=	http://xhosxe.free.fr/glaxium/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -9,11 +9,15 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	OpenGL based space-ship "shoot-em-up" game
 WWW=		http://xhosxe.free.fr/glaxium/
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
 LIB_DEPENDS=	libpng.so:graphics/png
 
-USES=		dos2unix gl gmake sdl
+USES=		dos2unix gl gmake sdl xorg
 USE_SDL=	sdl mixer
-USE_GL=		glut
+USE_GL=		gl glu glut
+USE_XORG=	x11 xi xmu
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 ALL_TARGET=	${PORTNAME}
@@ -30,8 +34,6 @@ DESKTOP_ENTRIES=	"Glaxium" \
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/X11R6|${LOCALBASE}|g; \
 		 s|/games/glaxium|/glaxium|g' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|gcc -g -o|$$(CC) -o|g ; \
-		 s|/games/glaxium|/glaxium|g' ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e 's|Scratcher:: Scratcher|Scratcher|g' \
 		${WRKSRC}/scratcher.hpp
 	@${REINPLACE_CMD} -e 's|TankFire::TankFire|TankFire|g' \

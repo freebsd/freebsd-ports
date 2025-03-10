@@ -1,0 +1,54 @@
+'\" t
+.\"     Title: tdbrestore
+.\"    Author: [see the "AUTHOR" section]
+.\" Generator: DocBook XSL Stylesheets v1.76.1 <http://docbook.sf.net/>
+.\"      Date: 2015-04-25
+.\"    Manual: System Administration tools
+.\"    Source: Samba 3.6
+.\"  Language: English
+.\"
+.TH "TDBRESTORE" "8" "2015\-04\-25" "Samba 3\&.6" "System Administration tools"
+.\" -----------------------------------------------------------------
+.\" * Define some portability stuff
+.\" -----------------------------------------------------------------
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.\" http://bugs.debian.org/507673
+.\" http://lists.gnu.org/archive/html/groff/2009-02/msg00013.html
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.ie \n(.g .ds Aq \(aq
+.el       .ds Aq '
+.\" -----------------------------------------------------------------
+.\" * set default formatting
+.\" -----------------------------------------------------------------
+.\" disable hyphenation
+.nh
+.\" disable justification (adjust text to left margin only)
+.ad l
+.\" -----------------------------------------------------------------
+.\" * MAIN CONTENT STARTS HERE *
+.\" -----------------------------------------------------------------
+.SH "NAME"
+tdbrestore \- tool for creating a TDB file out of a tdbdump output
+.SH "SYNOPSIS"
+.HP \w'\fBtdbrestore\fR\ 'u
+\fBtdbrestore\fR {tdbfilename}
+.SH "DESCRIPTION"
+.PP
+This tool is part of the
+\fBsamba\fR(1)
+suite\&.
+.PP
+\fBtdbrestore\fR
+is a very simple utility that \*(Aqrestores\*(Aq the contents of dump file into TDB (Trivial DataBase) file\&. The dump file is obtained from the tdbdump command\&.
+.PP
+This tool wait on the standard input for the content of the dump and will write the tdb in the tdbfilename parameter\&.
+.PP
+This tool can be used for unpacking the content of tdb as backup mean\&.
+.SH "VERSION"
+.PP
+This man page is correct for version 3 of the Samba suite\&.
+.SH "AUTHOR"
+.PP
+The original Samba software and related utilities were created by Andrew Tridgell\&. Samba is now developed by the Samba Team as an Open Source project similar to the way the Linux kernel is developed\&. This tool was initially written by Volker Lendecke based on an idea by Simon McVittie\&.
+.PP
+The tdbrestore man page was written by Matthieu Patou\&.

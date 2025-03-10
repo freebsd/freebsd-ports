@@ -1,0 +1,11 @@
+--- pyproject.toml.orig	2024-10-03 13:09:10 UTC
++++ pyproject.toml
+@@ -1,7 +1,7 @@
+ # Package ######################################################################
+ 
+ [build-system]
+-requires = ["setuptools", "cmake >= 3.18", "pybind11 >= 2.12"]
++requires = ["setuptools", "pybind11 >= 2.12"]
+ build-backend = "setuptools.build_meta"
+ 
+ [project]

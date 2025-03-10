@@ -414,4 +414,4 @@ bin/linux-quake4
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE
 %%PORTDOCS%%%%DOCSDIR%%/PBEULA
 %%PORTDOCS%%%%DOCSDIR%%/README
-@unexec rmdir %D/%%Q4DIR%% 2>/dev/null || echo "Note: %D/%%Q4DIR%% not empty -- not deleted!"
+@postunexec rmdir %D/%%Q4DIR%% 2>/dev/null || echo "Note: %D/%%Q4DIR%% not empty -- not deleted!"

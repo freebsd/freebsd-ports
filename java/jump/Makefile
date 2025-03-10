@@ -1,6 +1,6 @@
 PORTNAME=	jump
 PORTVERSION=	0.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	java math
 MASTER_SITES=	SF/${PORTNAME}-math/${PORTNAME}/${PORTVERSION}
 
@@ -8,8 +8,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Java library for arbitrary precision computations
 WWW=		https://jump-math.sourceforge.net/
 
-USE_JAVA=	yes
-USE_ANT=	yes
+USES=		java:ant,run
+
 ALL_TARGET=	jar
 
 JARFILE=	${PORTNAME}.jar
@@ -19,17 +19,13 @@ PORTDOCS=	*
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MDOCS}
-ALL_TARGET+=	apidocs
-.endif
+DOCS_ALL_TARGET=	apidocs
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/build/${JARFILE} ${STAGEDIR}${JAVAJARDIR}
-.if ${PORT_OPTIONS:MDOCS}
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC}/build/apidocs && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
-.endif
 
 .include <bsd.port.mk>

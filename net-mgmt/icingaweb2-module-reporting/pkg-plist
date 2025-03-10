@@ -6,9 +6,7 @@
 %%WWWDIR%%/application/clicommands/ListCommand.php
 %%WWWDIR%%/application/clicommands/ScheduleCommand.php
 %%WWWDIR%%/application/controllers/ConfigController.php
-%%WWWDIR%%/application/controllers/PlugController.php.disabled
 %%WWWDIR%%/application/controllers/ReportController.php
-%%WWWDIR%%/application/controllers/ReportController.php.modal
 %%WWWDIR%%/application/controllers/ReportsController.php
 %%WWWDIR%%/application/controllers/TemplateController.php
 %%WWWDIR%%/application/controllers/TemplatesController.php

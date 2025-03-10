@@ -4,7 +4,7 @@ CATEGORIES=	lang devel
 MASTER_SITES=	https://github.com/svaarala/${PORTNAME}/releases/download/v${DISTVERSION}/ \
 		https://duktape.org/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	desktop@FreeBSD.org
 COMMENT=	Embeddable Javascript engine
 WWW=		https://duktape.org/
 

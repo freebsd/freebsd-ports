@@ -1,6 +1,6 @@
 PORTNAME=	mpb
 DISTVERSION=	1.11.1
-PORTREVISION=	7
+PORTREVISION=	11
 CATEGORIES=	science
 MASTER_SITES=	https://github.com/NanoComp/mpb/releases/download/v${DISTVERSION}/
 
@@ -30,7 +30,7 @@ MAKE_JOBS_UNSAFE=	yes
 INSTALL_TARGET=	install-strip
 TEST_TARGET=	check
 
-CPPFLAGS+=	-I${LOCALBASE}/include
+CPPFLAGS+=	-I${LOCALBASE}/include -fpermissive
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 OPTIONS_DEFINE=		ATLAS OPENMP

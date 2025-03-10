@@ -1,6 +1,6 @@
 PORTNAME=	yodl
 PORTVERSION=	3.10.00
-PORTREVISION=	4
+PORTREVISION=	6
 CATEGORIES=	textproc
 
 MAINTAINER=	bofh@FreeBSD.org
@@ -10,7 +10,7 @@ WWW=		https://fbb-git.gitlab.io/yodl/
 LICENSE=	GPLv3
 
 RUN_DEPENDS=	bash:shells/bash \
-		${LOCALBASE}/bin/getopt:misc/getopt
+		getopt>=0:misc/getopt
 BUILD_DEPENDS=	icmake:devel/icmake \
 		bash:shells/bash \
 		gsed:textproc/gsed

@@ -17,7 +17,7 @@ user				= %%MARIADB_USER%%
 # socket			= %%MARIADB_RUNDIR%%/mysql.sock # inherited from %%ETCDIR%%/my.cnf
 bind-address			= 127.0.0.1
 basedir				= %%PREFIX%%
-datadir				= %%MARIADB_DBDIR%%
+# datadir			= %%MARIADB_DBDIR%% # --db_dir is set from rc.d
 net_retry_count			= 16384
 log_error			= %%MARIADB_LOGDIR%%/mysqld.err
 # [mysqld] configuration for ZFS

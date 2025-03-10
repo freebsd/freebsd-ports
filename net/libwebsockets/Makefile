@@ -1,8 +1,8 @@
 PORTNAME=	libwebsockets
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.3.3
+DISTVERSION=	4.3.5
 CATEGORIES=	net devel
-MASTER_SITES=	https://libwebsockets.org/git/libwebsockets/snapshot/
+#MASTER_SITES=	https://libwebsockets.org/git/libwebsockets/snapshot/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C library for lightweight websocket clients and servers
@@ -11,8 +11,11 @@ WWW=		https://libwebsockets.org/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cmake localbase pkgconfig tar:xz
+USES=		cmake localbase pkgconfig
 USE_LDCONFIG=	yes
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	warmcat
 
 BUILDINFO=	${HOSTARCH}-portbld-${OPSYS:tl}-${OSREL:R}
 
@@ -61,7 +64,7 @@ SQLITE_CMAKE_BOOL=	LWS_WITH_SQLITE3
 WEBSERVER_CMAKE_BOOL=	LWS_WITH_LWSWS
 WEBSERVER_IMPLIES=	PEERLIMITS PLUGINS LIBUV
 
-MBEDTLS_LIB_DEPENDS=	libmbedtls.so:security/mbedtls
+MBEDTLS_LIB_DEPENDS=	libmbedtls.so:security/mbedtls2
 MBEDTLS_CMAKE_BOOL=	LWS_WITH_MBEDTLS
 OPENSSL_USES=		ssl
 OPENSSL_CMAKE_BOOL=	LWS_WITHOUT_BUILTIN_SHA1

@@ -1,0 +1,4 @@
+Class that helps implement applications that follow the single-instance policy
+referring to those applications that want to spawn a unique instance for a
+given user session. Even when launched multiple times, such applications will
+not spawn a number of separate instances.

@@ -17,8 +17,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 RUN_DEPENDS=	bash:shells/bash
 
-USES=		shebangfix
-USE_JAVA=	yes
+USES=		java shebangfix
 USE_GITHUB=	nodefault
 
 SHEBANG_FILES=	jetty_bastillion/bin/jetty.sh

@@ -1,6 +1,6 @@
 PORTNAME=	dirhash
 DISTVERSION=	0.2.1
-PORTREVISION=   1
+PORTREVISION=   2
 CATEGORIES=	security python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,5 +16,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}scantree>0:devel/py-scantree@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	autoplist distutils
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>

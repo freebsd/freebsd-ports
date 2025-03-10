@@ -354,7 +354,7 @@ lib/libexec/kf5/kpac_dhcp_helper
 %%QT_PLUGINDIR%%/plasma/kcms/systemsettings_qwidgets/kcm_netpref.so
 %%QT_PLUGINDIR%%/plasma/kcms/systemsettings_qwidgets/kcm_proxy.so
 %%QT_PLUGINDIR%%/plasma/kcms/systemsettings_qwidgets/kcm_webshortcuts.so
-share/applications/kcm_trash.desktop
+@comment share/applications/kcm_trash.desktop
 share/applications/ktelnetservice5.desktop
 share/dbus-1/interfaces/kf5_org.kde.KCookieServer.xml
 share/dbus-1/interfaces/kf5_org.kde.KDirNotify.xml

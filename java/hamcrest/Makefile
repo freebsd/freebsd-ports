@@ -9,7 +9,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library of matchers for building test expressions
 WWW=		https://hamcrest.org/
 
-USE_JAVA=	yes
+USES=		java
+
 NO_ARCH=	yes
 NO_BUILD=	yes
 

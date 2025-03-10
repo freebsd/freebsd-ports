@@ -1,5 +1,6 @@
 PORTNAME=	xsd
 DISTVERSION=	4.2.0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://www.codesynthesis.com/download/${PORTNAME}/${DISTVERSION:R}/
 

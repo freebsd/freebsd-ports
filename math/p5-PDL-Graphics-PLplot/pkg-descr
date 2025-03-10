@@ -1,0 +1,3 @@
+PDL::Graphics::PLplot is the PDL interface to the PLplot graphics library. It
+provides a familiar 'perlish' Object Oriented interface as well as access to the
+low-level PLplot commands from the C-API.

@@ -1,6 +1,6 @@
 PORTNAME=	f-upgrade
-DISTVERSION=	1.0.2
 DISTVERSIONPREFIX=	v
+DISTVERSION=	1.0.4
 CATEGORIES=	sysutils
 
 MAINTAINER=	freebsd@moov.de
@@ -16,9 +16,9 @@ GH_ACCOUNT=	fraenki
 NO_ARCH=	yes
 NO_BUILD=	yes
 
-OPTIONS_DEFINE=	DOCS
-
 PORTDOCS=	README.md
+
+OPTIONS_DEFINE=	DOCS
 
 post-patch:
 	${REINPLACE_CMD} -e 's,%%PREFIX%%,${PREFIX},' ${WRKSRC}/rc.d/f_upgrade.in

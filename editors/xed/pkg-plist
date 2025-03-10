@@ -51,8 +51,9 @@ lib/xed/plugins/time.plugin
 lib/xed/plugins/trailsave.plugin
 lib/xed/plugins/wordcompletion.plugin
 libdata/pkgconfig/xed.pc
-share/applications/xed.desktop
+share/applications/org.x.editor.desktop
 share/dbus-1/services/org.x.editor.service
+share/gtksourceview-4/styles/xed.xml
 %%PORTDOCS%%share/gtk-doc/html/xed/XedApp.html
 %%PORTDOCS%%share/gtk-doc/html/xed/XedAppActivatable.html
 %%PORTDOCS%%share/gtk-doc/html/xed/XedDocument.html
@@ -305,8 +306,10 @@ share/locale/tg/LC_MESSAGES/xed.mo
 share/locale/th/LC_MESSAGES/xed.mo
 share/locale/tk/LC_MESSAGES/xed.mo
 share/locale/tr/LC_MESSAGES/xed.mo
+share/locale/tt/LC_MESSAGES/xed.mo
 share/locale/uk/LC_MESSAGES/xed.mo
 share/locale/ur/LC_MESSAGES/xed.mo
+share/locale/uz/LC_MESSAGES/xed.mo
 share/locale/vi/LC_MESSAGES/xed.mo
 share/locale/wa/LC_MESSAGES/xed.mo
 share/locale/xh/LC_MESSAGES/xed.mo
@@ -315,7 +318,7 @@ share/locale/zh_CN/LC_MESSAGES/xed.mo
 share/locale/zh_HK/LC_MESSAGES/xed.mo
 share/locale/zh_TW/LC_MESSAGES/xed.mo
 share/man/man1/xed.1.gz
-share/metainfo/xed.appdata.xml
+share/metainfo/org.x.editor.metainfo.xml
 %%DATADIR%%/gir-1.0/Xed-1.0.gir
 %%DATADIR%%/icons/xed-plugin.png
 %%DATADIR%%/plugins/docinfo/docinfo.ui

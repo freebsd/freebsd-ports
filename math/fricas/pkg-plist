@@ -733,6 +733,7 @@ lib/fricas/target/%%HOST_ARCH%%/algebra/MAPPKG3.fasl
 lib/fricas/target/%%HOST_ARCH%%/algebra/MATCAT-.fasl
 lib/fricas/target/%%HOST_ARCH%%/algebra/MATCAT.fasl
 lib/fricas/target/%%HOST_ARCH%%/algebra/MATCAT2.fasl
+lib/fricas/target/%%HOST_ARCH%%/algebra/MATHSYM.fasl
 lib/fricas/target/%%HOST_ARCH%%/algebra/MATLIN.fasl
 lib/fricas/target/%%HOST_ARCH%%/algebra/MATRIX.fasl
 lib/fricas/target/%%HOST_ARCH%%/algebra/MATSTOR.fasl
@@ -984,6 +985,7 @@ lib/fricas/target/%%HOST_ARCH%%/algebra/PNTHEORY.fasl
 lib/fricas/target/%%HOST_ARCH%%/algebra/POINT.fasl
 lib/fricas/target/%%HOST_ARCH%%/algebra/POLTOPOL.fasl
 lib/fricas/target/%%HOST_ARCH%%/algebra/POLUTIL.fasl
+lib/fricas/target/%%HOST_ARCH%%/algebra/POLVECF.fasl
 lib/fricas/target/%%HOST_ARCH%%/algebra/POLVECP.fasl
 lib/fricas/target/%%HOST_ARCH%%/algebra/POLY.fasl
 lib/fricas/target/%%HOST_ARCH%%/algebra/POLY2.fasl
@@ -1106,6 +1108,7 @@ lib/fricas/target/%%HOST_ARCH%%/algebra/RNS-.fasl
 lib/fricas/target/%%HOST_ARCH%%/algebra/RNS.fasl
 lib/fricas/target/%%HOST_ARCH%%/algebra/ROIRC.fasl
 lib/fricas/target/%%HOST_ARCH%%/algebra/ROMAN.fasl
+lib/fricas/target/%%HOST_ARCH%%/algebra/ROOTUT.fasl
 lib/fricas/target/%%HOST_ARCH%%/algebra/RPOLCAT-.fasl
 lib/fricas/target/%%HOST_ARCH%%/algebra/RPOLCAT.fasl
 lib/fricas/target/%%HOST_ARCH%%/algebra/RRCC-.fasl
@@ -1114,6 +1117,7 @@ lib/fricas/target/%%HOST_ARCH%%/algebra/RSDCMPK.fasl
 lib/fricas/target/%%HOST_ARCH%%/algebra/RSETCAT-.fasl
 lib/fricas/target/%%HOST_ARCH%%/algebra/RSETCAT.fasl
 lib/fricas/target/%%HOST_ARCH%%/algebra/RSETGCD.fasl
+lib/fricas/target/%%HOST_ARCH%%/algebra/RSIMP.fasl
 lib/fricas/target/%%HOST_ARCH%%/algebra/RULE.fasl
 lib/fricas/target/%%HOST_ARCH%%/algebra/RULECOLD.fasl
 lib/fricas/target/%%HOST_ARCH%%/algebra/RULESET.fasl
@@ -1301,6 +1305,7 @@ lib/fricas/target/%%HOST_ARCH%%/algebra/UDPO.fasl
 lib/fricas/target/%%HOST_ARCH%%/algebra/UDVO.fasl
 lib/fricas/target/%%HOST_ARCH%%/algebra/UFD-.fasl
 lib/fricas/target/%%HOST_ARCH%%/algebra/UFD.fasl
+lib/fricas/target/%%HOST_ARCH%%/algebra/UFFACT.fasl
 lib/fricas/target/%%HOST_ARCH%%/algebra/UFPS.fasl
 lib/fricas/target/%%HOST_ARCH%%/algebra/UFPS1.fasl
 lib/fricas/target/%%HOST_ARCH%%/algebra/UGAUSS.fasl
@@ -2837,6 +2842,7 @@ lib/fricas/target/%%HOST_ARCH%%/src/algebra/mantepse.spad
 lib/fricas/target/%%HOST_ARCH%%/src/algebra/mappkg.spad
 lib/fricas/target/%%HOST_ARCH%%/src/algebra/matcat.spad
 lib/fricas/target/%%HOST_ARCH%%/src/algebra/matfuns.spad
+lib/fricas/target/%%HOST_ARCH%%/src/algebra/math_sym.spad
 lib/fricas/target/%%HOST_ARCH%%/src/algebra/mathml.spad
 lib/fricas/target/%%HOST_ARCH%%/src/algebra/matrix.spad
 lib/fricas/target/%%HOST_ARCH%%/src/algebra/matstor.spad
@@ -2943,6 +2949,7 @@ lib/fricas/target/%%HOST_ARCH%%/src/algebra/retract.spad
 lib/fricas/target/%%HOST_ARCH%%/src/algebra/rf.spad
 lib/fricas/target/%%HOST_ARCH%%/src/algebra/riccati.spad
 lib/fricas/target/%%HOST_ARCH%%/src/algebra/rinterp.spad
+lib/fricas/target/%%HOST_ARCH%%/src/algebra/rsimp.spad
 lib/fricas/target/%%HOST_ARCH%%/src/algebra/rule.spad
 lib/fricas/target/%%HOST_ARCH%%/src/algebra/scene.spad
 lib/fricas/target/%%HOST_ARCH%%/src/algebra/seg.spad

@@ -1,10 +1,9 @@
 PORTNAME=	scalapack
-PORTVERSION=	2.2.0
-PORTREVISION=	4
+PORTVERSION=	2.2.2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	math
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	fortran@FreeBSD.org
 COMMENT=	ScaLAPACK Scalable LAPACK library
 WWW=		https://www.netlib.org/scalapack/
 
@@ -27,7 +26,7 @@ ARCH2FIX=	PBLAS/SRC PBLAS/SRC/PBBLAS PBLAS/SRC/PTOOLS PBLAS/SRC/PTZBLAS \
 DATADIR=	${PREFIX}/share/${PORTNAME:tu}
 EXAMPLESDIR=	${PREFIX}/share/examples/${PORTNAME:tu}
 SUB_FILES=	pkg-message
-PLIST_SUB=	SVERSION=${SVERSION} PORTVERSION=2.1.0
+PLIST_SUB=	SVERSION=${SVERSION} PORTVERSION=2.2.1 VER=${PORTVERSION:R}
 
 OPTIONS_DEFINE=		EXAMPLES
 OPTIONS_RADIO=		LA MPI
@@ -59,7 +58,7 @@ FPIC=	-fpic
 CFLAGS+=	${FPIC} ${MPI_CFLAGS}
 FFLAGS+=	${FPIC}
 LDFLAGS+=	${MPI_LIBS}
-SVERSION=	2
+SVERSION=	${PORTVERSION:R:R}
 
 .if ${GCC_DEFAULT} >= 10
 # workaround for Rank mismatch between actual argument at (1) and actual argument at (2) (scalar and rank-1)
@@ -77,8 +76,9 @@ post-build:
 	(cd ${WRKSRC} && ${DO_MAKE_BUILD} ${ALL_TARGET})
 
 post-install:
-	${INSTALL_LIB} ${WRKSRC}/lib/libscalapack.so ${STAGEDIR}${PREFIX}/lib/libscalapack.so.${SVERSION}
-	${LN} -sf libscalapack.so.${SVERSION} ${STAGEDIR}${PREFIX}/lib/libscalapack.so
+	${INSTALL_LIB} ${WRKSRC}/lib/libscalapack.so ${STAGEDIR}${PREFIX}/lib/libscalapack.so.${PORTVERSION:R}
+	${LN} -sf libscalapack.so.${PORTVERSION:R} ${STAGEDIR}${PREFIX}/lib/libscalapack.so
+	${LN} -sf libscalapack.so.${PORTVERSION:R} ${STAGEDIR}${PREFIX}/lib/libscalapack.so.${SVERSION}
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/SCALAPACK/TESTING
 	(cd ${BUILD_WRKSRC}/TESTING/ ;\
 	${INSTALL_PROGRAM} x* ${STAGEDIR}${PREFIX}/share/SCALAPACK/TESTING ;\

@@ -9,7 +9,8 @@ MAINTAINER=	alex@stangl.us
 COMMENT=	Java-based flashcard learning using the Leitner system
 WWW=		https://pauker.sourceforge.net
 
-USE_JAVA=	yes
+USES=		java
+
 NO_BUILD=	yes
 
 do-install:

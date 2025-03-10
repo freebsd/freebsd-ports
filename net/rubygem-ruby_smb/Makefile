@@ -1,5 +1,6 @@
 PORTNAME=	ruby_smb
-PORTVERSION=	3.3.7
+PORTVERSION=	3.3.13
+PORTREVISION=	1
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
@@ -10,7 +11,7 @@ WWW=		https://github.com/rapid7/ruby_smb
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	rubygem-bindata>=0:devel/rubygem-bindata \
+RUN_DEPENDS=	rubygem-bindata24>=2.4.15<2.4.15_99:devel/rubygem-bindata24 \
 		rubygem-openssl-ccm>=0:security/rubygem-openssl-ccm \
 		rubygem-openssl-cmac>=0:security/rubygem-openssl-cmac \
 		rubygem-rubyntlm>=0:net/rubygem-rubyntlm \

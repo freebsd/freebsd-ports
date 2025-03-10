@@ -1,1 +1,6 @@
-Workflow - Simple, flexible perl-based system to implement workflows
+Workflow - Simple, flexible perl-based system to implement workflows.
+This is a standalone workflow system. It is designed to fit into your system
+rather than force your system to fit to it. You can save workflow information
+to a database or the filesystem (or a custom storage). The different components
+of a workflow system can be included separately as libraries to allow for
+maximum reusibility.

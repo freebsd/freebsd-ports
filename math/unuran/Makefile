@@ -16,17 +16,12 @@ USES=		gmake libtool localbase:ldflags
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shared --with-urng-rngstream --with-urng-default=rngstream \
 		--enable-info
-MAKE_ENV=	MAKE="${MAKE_CMD}"
 
 USE_LDCONFIG=	yes
 INFO=		unuran
 PORTDOCS=	unuran.pdf unuran.txt
 
 OPTIONS_DEFINE=	DOCS
-
-post-patch:
-	@${REINPLACE_CMD} -e '/UNURANFULLCHECK=true make check/s/make/${MAKE_CMD}/' \
-		${WRKSRC}/Makefile.in
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

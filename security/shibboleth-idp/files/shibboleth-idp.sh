@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/local/bin/bash
 
 # LSB Tags
 ### BEGIN INIT INFO
@@ -118,35 +118,143 @@ findDirectory()
   done
 }
 
+# test if process specified in PID file is still running
 running()
 {
-  if [ -f "$1" ]
-  then
-    local PID=$(cat "$1" 2>/dev/null) || return 1
-    kill -0 "$PID" 2>/dev/null
-    return
+  local PIDFILE=$1
+  if [ -r "$PIDFILE" ] ; then
+    local PID=$(tail -1 "$PIDFILE")
+    if kill -0 "$PID" 2>/dev/null ; then
+      return 0
+    fi
   fi
-  rm -f "$1"
   return 1
 }
 
+# Test state file (after timeout) for started state
 started()
 {
-  # wait for 60s to see "STARTED" in PID file, needs jetty-started.xml as argument
-  for ((T = 0; T < $(($3 / 4)); T++))
-  do
-    sleep 4
-    [ -z "$(tail -1 $1 | grep STARTED 2>/dev/null)" ] || return 0
-    [ -z "$(tail -1 $1 | grep STOPPED 2>/dev/null)" ] || return 1
-    [ -z "$(tail -1 $1 | grep FAILED 2>/dev/null)" ] || return 1
-    local PID=$(cat "$2" 2>/dev/null) || return 1
-    kill -0 "$PID" 2>/dev/null || return 1
-    echo -n ". "
-  done
+  local STATEFILE=$1
+  local PIDFILE=$2
+  local STARTTIMEOUT=$3
 
+  if (( DEBUG )) ; then
+    echo "Looking for $STATEFILE"
+    echo -n "State Parent Directory: "
+    ls -lad $(dirname $STATEFILE)
+  fi
+
+  # wait till timeout to see "STARTED" in state file, needs --module=state as argument
+  for ((T = 0; T < $STARTTIMEOUT; T++))
+  do
+    echo -n "."
+    sleep 1
+    if [ -r $STATEFILE ] ; then
+      STATENOW=$(tail -1 $STATEFILE)
+      (( DEBUG )) && echo "State (now): $STATENOW"
+      case "$STATENOW" in
+        STARTED*)
+          echo " started"
+          return 0;;
+        STOPPED*)
+          echo " stopped"
+          return 1;;
+        FAILED*)
+          echo " failed"
+          return 1;;
+      esac
+    else
+      (( DEBUG )) && echo "Unable to read State File: $STATEFILE"
+    fi
+  done
+  (( DEBUG )) && echo "Timeout $STARTTIMEOUT expired waiting for start state from $STATEFILE"
+  echo " timeout"
+  if running "$PIDFILE" ; then
+    echo "INFO: Server process is running"
+  else
+    echo "** ERROR: Server process is NOT running"
+  fi
   return 1;
 }
 
+pidKill()
+{
+  local PIDFILE=$1
+  local TIMEOUT=$2
+
+  if [ -r $PIDFILE ] ; then
+    local PID=$(tail -1 "$PIDFILE")
+    if [ -z "$PID" ] ; then
+      echo "** ERROR: no pid found in $PIDFILE"
+      return 1
+    fi
+
+    # Try default kill first
+    if kill -0 "$PID" 2>/dev/null ; then
+      (( DEBUG )) && echo "PID=$PID is running, sending kill"
+      kill "$PID" 2>/dev/null
+    else
+      rm -f $PIDFILE 2> /dev/null
+      return 0
+    fi
+
+    # Perform harsh kill next
+    while kill -0 "$PID" 2>/dev/null
+    do
+      if (( TIMEOUT-- == 0 )) ; then
+        (( DEBUG )) && echo "PID=$PID is running, sending kill signal=KILL (TIMEOUT=$TIMEOUT)"
+        kill -KILL "$PID" 2>/dev/null
+      fi
+      echo -n "."
+      sleep 1
+    done
+    echo "Killed $PID"
+    return 0
+  else
+    (( DEBUG )) && echo "Unable to read PID File: $PIDFILE"
+    return 1
+  fi
+}
+
+testFileSystemPermissions()
+{
+  # Don't test file system permissions if user is root
+  if [ $UID -eq 0 ] ; then
+    (( DEBUG )) && echo "Not testing file system permissions: uid is 0"
+    return 0
+  fi
+
+  # Don't test if JETTY_USER is specified
+  # as the Jetty process will switch to a different user id on startup
+  if [ -n "$JETTY_USER" ] ; then
+    (( DEBUG )) && echo "Not testing file system permissions: JETTY_USER=$JETTY_USER"
+    return 0
+  fi
+
+  # Don't test if setuid is specified
+  # as the Jetty process will switch to a different user id on startup
+  if expr -- "${JETTY_ARGS[*]}" : '.*setuid.*' >/dev/null
+  then
+    (( DEBUG )) && echo "Not testing file system permissions: setuid in use"
+    return 0
+  fi
+
+  # Test if PID can be written from this userid
+  if ! touch "$JETTY_PID"
+  then
+    echo "** ERROR: Unable to touch file: $JETTY_PID"
+    echo "          Correct issues preventing use of \$JETTY_PID and try again."
+    exit 1
+  fi
+
+  # Test if STATE can be written from this userid
+  if ! touch "$JETTY_STATE"
+  then
+    echo "** ERROR: Unable to touch file: $JETTY_STATE"
+    echo "          Correct issues preventing use of \$JETTY_STATE and try again."
+    exit 1
+  fi
+}
 
 readConfig()
 {
@@ -156,23 +264,27 @@ readConfig()
 
 dumpEnv()
 {
-    echo "JAVA                  =  $JAVA"
-    echo "JAVA_OPTIONS          =  ${JAVA_OPTIONS[*]}"
-    echo "JETTY_HOME            =  $JETTY_HOME"
-    echo "JETTY_BASE            =  $JETTY_BASE"
-    echo "START_D               =  $START_D"
-    echo "START_INI             =  $START_INI"
-    echo "JETTY_START           =  $JETTY_START"
-    echo "JETTY_CONF            =  $JETTY_CONF"
-    echo "JETTY_ARGS            =  ${JETTY_ARGS[*]}"
-    echo "JETTY_RUN             =  $JETTY_RUN"
-    echo "JETTY_PID             =  $JETTY_PID"
-    echo "JETTY_START_LOG       =  $JETTY_START_LOG"
-    echo "JETTY_STATE           =  $JETTY_STATE"
-    echo "JETTY_START_TIMEOUT   =  $JETTY_START_TIMEOUT"
-    echo "RUN_CMD               =  ${RUN_CMD[*]}"
+  echo "JAVA                  =  $JAVA"
+  echo "JAVA_OPTIONS          =  ${JAVA_OPTIONS[*]}"
+  echo "JETTY_HOME            =  $JETTY_HOME"
+  echo "JETTY_BASE            =  $JETTY_BASE"
+  echo "START_D               =  $START_D"
+  echo "START_INI             =  $START_INI"
+  echo "JETTY_START           =  $JETTY_START"
+  echo "JETTY_CONF            =  $JETTY_CONF"
+  echo "JETTY_ARGS            =  ${JETTY_ARGS[*]}"
+  echo "JETTY_RUN             =  $JETTY_RUN"
+  echo "JETTY_PID             =  $JETTY_PID"
+  echo "JETTY_START_LOG       =  $JETTY_START_LOG"
+  echo "JETTY_STATE           =  $JETTY_STATE"
+  echo "JETTY_START_TIMEOUT   =  $JETTY_START_TIMEOUT"
+  echo "JETTY_SYS_PROPS       =  $JETTY_SYS_PROPS"
+  echo "RUN_ARGS              =  ${RUN_ARGS[*]}"
+  echo "ID                    =  $(id)"
+  echo "JETTY_USER            =  $JETTY_USER"
+  echo "USE_START_STOP_DAEMON =  $USE_START_STOP_DAEMON"
+  echo "START_STOP_DAEMON     =  $START_STOP_DAEMON_AVAILABLE"
 }
-
 
 
 ##################################################
@@ -181,6 +293,7 @@ dumpEnv()
 CONFIGS=()
 NO_START=0
 DEBUG=0
+USE_START_STOP_DAEMON=1
 
 while [[ $1 = -* ]]; do
   case $1 in
@@ -300,7 +413,15 @@ fi
 if [ -z "$JETTY_RUN" ]
 then
   JETTY_RUN=$(findDirectory -w /var/run /usr/var/run $JETTY_BASE /tmp)/jetty
-  [ -d "$JETTY_RUN" ] || mkdir $JETTY_RUN
+fi
+
+if [ ! -d "$JETTY_RUN" ] ; then
+  if ! mkdir $JETTY_RUN
+  then
+    echo "** ERROR: Unable to create directory: $JETTY_RUN"
+    echo "          Correct issues preventing the creation of \$JETTY_RUN and try again."
+    exit 1
+  fi
 fi
 
 #####################################################
@@ -328,14 +449,14 @@ case "`uname`" in
 CYGWIN*) JETTY_STATE="`cygpath -w $JETTY_STATE`";;
 esac
 
-
-JETTY_ARGS=(${JETTY_ARGS[*]} "jetty.state=$JETTY_STATE")
+JETTY_ARGS=(${JETTY_ARGS[*]} "jetty.state=$JETTY_STATE" "jetty.pid=$JETTY_PID")
 
 ##################################################
 # Get the list of config.xml files from jetty.conf
 ##################################################
 if [ -f "$JETTY_CONF" ] && [ -r "$JETTY_CONF" ]
 then
+  (( DEBUG )) && echo "$JETTY_CONF: (begin read) JETTY_ARGS.length=${#JETTY_ARGS[@]}"
   while read -r CONF
   do
     if expr -- "$CONF" : '#' >/dev/null ; then
@@ -351,16 +472,17 @@ then
       do
         if [ -r "$XMLFILE" ] && [ -f "$XMLFILE" ]
         then
-          JETTY_ARGS=(${JETTY_ARGS[*]} "$XMLFILE")
+          JETTY_ARGS[${#JETTY_ARGS[@]}]=$XMLFILE
         else
           echo "** WARNING: Cannot read '$XMLFILE' specified in '$JETTY_CONF'"
         fi
       done
     else
       # assume it's a command line parameter (let start.jar deal with its validity)
-      JETTY_ARGS=(${JETTY_ARGS[*]} "$CONF")
+      JETTY_ARGS[${#JETTY_ARGS[@]}]=$CONF
     fi
   done < "$JETTY_CONF"
+  (( DEBUG )) && echo "$JETTY_CONF: (finished read) JETTY_ARGS.length=${#JETTY_ARGS[@]}"
 fi
 
 ##################################################
@@ -414,9 +536,6 @@ TMPDIR="`cygpath -w $TMPDIR`"
 ;;
 esac
 
-BASE_JETTY_SYS_PROPS=$(echo -ne "-Djetty.home=$JETTY_HOME" "-Djetty.base=$JETTY_BASE" "-Djava.io.tmpdir=$TMPDIR")
-JETTY_SYS_PROPS=(${JETTY_SYS_PROPS[*]} $BASE_JETTY_SYS_PROPS)
-
 #####################################################
 # This is how the Jetty server will be started
 #####################################################
@@ -434,15 +553,31 @@ case "`uname`" in
 CYGWIN*) JETTY_START="`cygpath -w $JETTY_START`";;
 esac
 
-RUN_ARGS=$("$JAVA" -jar "$JETTY_START" --dry-run=opts,path,main,args ${JETTY_ARGS[*]} ${JAVA_OPTIONS[*]})
-RUN_CMD=("$JAVA" $JETTY_SYS_PROPS ${RUN_ARGS[@]})
+# Determine if we can use start-stop-daemon or not
+START_STOP_DAEMON_AVAILABLE=0
 
-#####################################################
-# Comment these out after you're happy with what
-# the script is doing.
-#####################################################
+if (( USE_START_STOP_DAEMON ))
+then
+  # only if root user is executing jetty.sh, and the start-stop-daemon exists
+  if [ $UID -eq 0 ] && type start-stop-daemon > /dev/null 2>&1
+  then
+    START_STOP_DAEMON_AVAILABLE=1
+  else
+    USE_START_STOP_DAEMON=0
+  fi
+fi
+
+# Collect the dry-run (of opts,path,main,args) from the jetty.base configuration
+JETTY_DRY_RUN=$(echo "${JETTY_ARGS[*]} ${JAVA_OPTIONS[*]}" | xargs "$JAVA" -jar "$JETTY_START" --dry-run=opts,path,main,args,envs)
+RUN_ARGS=($JETTY_SYS_PROPS ${JETTY_DRY_RUN[@]})
+
 if (( DEBUG ))
 then
+  if expr -- "${RUN_ARGS[*]}" : '.*/etc/console-capture.xml.*' > /dev/null
+  then
+    echo "WARNING: Disable console-capture module for best DEBUG results"
+  fi
+  echo "IDs are $(id)"
   dumpEnv
 fi
 
@@ -451,14 +586,29 @@ fi
 ##################################################
 case "$ACTION" in
   start)
-    echo -n "Starting Jetty: "
-
     if (( NO_START )); then
       echo "Not starting ${NAME} - NO_START=1";
       exit
     fi
 
-    if [ $UID -eq 0 ] && type start-stop-daemon > /dev/null 2>&1
+    testFileSystemPermissions
+
+    if running $JETTY_PID
+    then
+      echo "Already Running $(cat $JETTY_PID)!"
+      exit 1
+    fi
+
+    # remove any lingering state file
+    if [ -f $JETTY_STATE ]
+    then
+      rm $JETTY_STATE
+    fi
+
+    echo -n "Starting Jetty: "
+
+    # Startup from a service file
+    if (( USE_START_STOP_DAEMON ))
     then
       unset CH_USER
       if [ -n "$JETTY_USER" ]
@@ -466,22 +616,19 @@ case "$ACTION" in
         CH_USER="--chuid $JETTY_USER"
       fi
 
-      start-stop-daemon --start $CH_USER \
-       --pidfile "$JETTY_PID" \
+      # use of --pidfile /dev/null disables internal pidfile
+      # management of the start-stop-daemon (see man page)
+      echo ${RUN_ARGS[@]} | xargs start-stop-daemon \
+       --start $CH_USER \
+       --pidfile /dev/null \
        --chdir "$JETTY_BASE" \
        --background \
-       --make-pidfile \
+       --output "${JETTY_RUN}/start-stop.log" \
        --startas "$JAVA" \
-       -- ${RUN_ARGS[@]} start-log-file="$JETTY_START_LOG"
-
+       --
+      (( DEBUG )) && echo "Starting: start-stop-daemon"
     else
-
-      if running $JETTY_PID
-      then
-        echo "Already Running $(cat $JETTY_PID)!"
-        exit 1
-      fi
-
+      # Startup if switching users (not as a service, or from root)
       if [ -n "$JETTY_USER" ] && [ `whoami` != "$JETTY_USER" ]
       then
         unset SU_SHELL
@@ -490,29 +637,30 @@ case "$ACTION" in
           SU_SHELL="-s $JETTY_SHELL"
         fi
 
-        touch "$JETTY_PID"
         chown "$JETTY_USER" "$JETTY_PID"
-        # FIXME: Broken solution: wordsplitting, pathname expansion, arbitrary command execution, etc.
         su - "$JETTY_USER" $SU_SHELL -c "
           cd \"$JETTY_BASE\"
-          exec ${RUN_CMD[*]} start-log-file=\"$JETTY_START_LOG\" > /dev/null &
-          disown \$!
-          echo \$! > \"$JETTY_PID\""
+          echo ${RUN_ARGS[*]} | xargs ${JAVA} > /dev/null &
+          PID=\$!
+          disown \$PID"
+        (( DEBUG )) && echo "Starting: su shell (w/user $JETTY_USER) on PID $PID"
       else
-        "${RUN_CMD[@]}" > /dev/null &
-        disown $!
-        echo $! > "$JETTY_PID"
+        # Startup if not switching users
+        echo ${RUN_ARGS[*]} | xargs ${JAVA} > /dev/null &
+        PID=$!
+        disown $PID
+        (( DEBUG )) && echo "Starting: java command on PID $PID"
       fi
-
     fi
 
-    if expr "${JETTY_ARGS[*]}" : '.*jetty-started.xml.*' >/dev/null
+    if expr -- "${JETTY_ARGS[*]}" : '.*jetty\.state=.*' >/dev/null
     then
       if started "$JETTY_STATE" "$JETTY_PID" "$JETTY_START_TIMEOUT"
       then
         echo "OK `date`"
       else
         echo "FAILED `date`"
+        pidKill $JETTY_PID 30
         exit 1
       fi
     else
@@ -523,38 +671,42 @@ case "$ACTION" in
 
   stop)
     echo -n "Stopping Jetty: "
-    if [ $UID -eq 0 ] && type start-stop-daemon > /dev/null 2>&1; then
-      start-stop-daemon -K -p"$JETTY_PID" -d"$JETTY_HOME" -a "$JAVA" -s HUP
+    if [ ! -r "$JETTY_PID" ] ; then
+      echo "** ERROR: no pid found at $JETTY_PID"
+      exit 1
+    fi
+
+    PID=$(tail -1 "$JETTY_PID")
+    if [ -z "$PID" ] ; then
+      echo "** ERROR: no pid found in $JETTY_PID"
+      exit 1
+    fi
+
+    # Stopping service started with start-stop-daemon
+    if (( USE_START_STOP_DAEMON )) ; then
+      (( DEBUG )) && echo "Issuing HUP to $PID"
+      start-stop-daemon --stop \
+         --pid "$PID" \
+         --chdir "$JETTY_BASE" \
+         --startas "$JAVA" \
+         --signal HUP
 
       TIMEOUT=30
       while running "$JETTY_PID"; do
+        (( DEBUG )) && echo "Issuing KILL to $PID"
         if (( TIMEOUT-- == 0 )); then
-          start-stop-daemon -K -p"$JETTY_PID" -d"$JETTY_HOME" -a "$JAVA" -s KILL
+          start-stop-daemon --stop \
+            --pid "$PID" \
+            --chdir "$JETTY_BASE" \
+            --startas "$JAVA" \
+            --signal KILL
         fi
 
         sleep 1
       done
     else
-      if [ ! -f "$JETTY_PID" ] ; then
-        echo "ERROR: no pid found at $JETTY_PID"
-        exit 1
-      fi
-
-      PID=$(cat "$JETTY_PID" 2>/dev/null)
-      if [ -z "$PID" ] ; then
-        echo "ERROR: no pid id found in $JETTY_PID"
-        exit 1
-      fi
-      kill "$PID" 2>/dev/null
-
-      TIMEOUT=30
-      while running $JETTY_PID; do
-        if (( TIMEOUT-- == 0 )); then
-          kill -KILL "$PID" 2>/dev/null
-        fi
-
-        sleep 1
-      done
+      # Stopping from non-service start
+      pidKill "$JETTY_PID" 30
     fi
 
     rm -f "$JETTY_PID"
@@ -565,7 +717,7 @@ case "$ACTION" in
 
   restart)
     JETTY_SH=$0
-    > "$JETTY_STATE"
+    echo "restart" >> "$JETTY_STATE"
     if [ ! -f $JETTY_SH ]; then
       if [ ! -f $JETTY_HOME/bin/jetty.sh ]; then
         echo "$JETTY_HOME/bin/jetty.sh does not exist."
@@ -584,7 +736,7 @@ case "$ACTION" in
     # Under control of daemontools supervise monitor which
     # handles restarts and shutdowns via the svc program.
     #
-    exec "${RUN_CMD[@]}"
+    echo ${RUN_ARGS[*]} | xargs ${JAVA} > /dev/null &
 
     ;;
 
@@ -597,7 +749,7 @@ case "$ACTION" in
       exit 1
     fi
 
-    exec "${RUN_CMD[@]}"
+    echo ${RUN_ARGS[*]} | xargs ${JAVA} > /dev/null &
     ;;
 
   check|status)

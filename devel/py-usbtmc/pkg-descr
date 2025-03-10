@@ -1,0 +1,2 @@
+Python USBTMC provides a pure Python USBTMC driver for controlling
+instruments over USB.

@@ -1,5 +1,5 @@
 PORTNAME=	libevtx
-DISTVERSION=	alpha-20231121
+DISTVERSION=	alpha-20240504
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/libyal/libevtx/releases/download/${PORTVERSION:E}/ \
 		LOCAL/antoine

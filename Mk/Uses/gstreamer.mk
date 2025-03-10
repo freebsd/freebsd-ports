@@ -1,12 +1,18 @@
+# Support for GStreamer-related libraries and plugins
 #
-# gstreamer.mk - Support for gstreamer-plugins-based ports.
-#
+# Feature:		gstreamer
 # Usage:
-# 	USES=		gstreamer[:version]
-# 	USE_GSTREAMER=	[list of components]
+#   USES=		gstreamer[:version][,arg,...]
+#   USE_GSTREAMER=	[list of components]
 #
-# Supported versions:	1 -- default
-# #
+# Valid ARGS:		<version>, _internal
+#
+# version:		1 -- default (this may be omitted since there is
+#			currently only one supported version)
+# _internal:		Only intended for use by multimedia/gstreamer1 to
+#			define specific variables so as not depend on itself
+#
+# MAINTAINER: multimedia@FreeBSD.org
 
 .if ! defined(_INCLUDE_USES_GSTREAMER_MK)
 _INCLUDE_USES_GSTREAMER_MK=	YES
@@ -22,7 +28,7 @@ _GST_VER=		#
 .      if empty(_GST_VER)
 _GST_VER=	${ver}
 .      else
-INGORE=	Incorrect USES=gstreamer:${gstramer_ARGS} - multiple versions defined
+IGNORE=	Incorrect USES=gstreamer:${gstreamer_ARGS} - multiple versions defined
 .      endif
 .    endif
 .  endfor
@@ -33,32 +39,43 @@ _GST_VER=	${_GST_VER_DEFAULT}
 
 #== Component setup
 
-_GST1_VERSION=		1.22.10
+# When modifying _GST1_VERSION, be sure to also update distinfo for the
+# following ports:
+# - multimedia/gstreamer1
+# - multimedia/gstreamer1-editing-services
+# - multimedia/gstreamer1-libav
+# - multimedia/gstreamer1-plugins (via `make makesum-gst1`)
+# - multimedia/gstreamer1-rtsp-server
+# - multimedia/gstreamer1-vaapi
+# - multimedia/py-gstreamer1
+_GST1_VERSION=		1.24.12
 _GST1_LIB_VER=		1.0
+_GST1_SOVERSION=	0.${_GST1_VERSION:R:E}${${_GST1_VERSION:E} > 9:?:0}${_GST1_VERSION:E}.0
 
 _GST1_CATEGORIES=	audio comms devel ftp graphics multimedia net security \
-			sysutils www x11 x11-toolkits
-_GST1_PLUGINS_audio= 	a52dec amrnb amrwbdec bs2b cdparanoia chromaprint faac \
+			sysutils textproc www x11 x11-toolkits
+_GST1_PLUGINS_audio= 	a52dec alsa amrnb amrwbdec bs2b cdparanoia chromaprint faac \
 			faad flac flite gme gsm jack ladspa lame lv2 modplug \
-			mpg123 musepack ogg openmpt opus pulse shout2 sidplay \
+			mpg123 ogg openmpt opus pulse shout2 sidplay \
 			sndfile sndio soundtouch speex taglib twolame vorbis \
 			wavpack webrtcdsp
 _GST1_PLUGINS_comms=	spandsp
 _GST1_PLUGINS_devel=	soup
 _GST1_PLUGINS_ftp=	curl
-_GST1_PLUGINS_graphics= aalib cairo gdkpixbuf gl jpeg kms libcaca libvisual \
-			opencv openexr openjpeg png qt rsvg vulkan webp zbar
+_GST1_PLUGINS_graphics=	aalib cairo gdkpixbuf gl jpeg kms libcaca libvisual \
+			opencv openexr openjpeg png rsvg vulkan webp zbar
 _GST1_PLUGINS_multimedia=	aom assrender bad dash dts dv dvdread \
-			editing-services gnonlin good hls libav libde265 \
-			mpeg2dec mpeg2enc mplex mm openh264 resindvd \
-			smoothstreaming theora ttml ugly v4l2 vpx x264 x265 \
-			zxing
-_GST1_PLUGINS_net=	srtp
+			editing-services good hls libav libde265 \
+			mpeg2dec mpeg2enc mplex mm msdk openh264 resindvd rust \
+			smoothstreaming theora ttml ugly v4l2 vaapi vpx webrtc \
+			x264 x265
+_GST1_PLUGINS_net=	sctp srtp
 _GST1_PLUGINS_security=	dtls
 _GST1_PLUGINS_sysutils=	cdio
-_GST1_PLUGINS_www=	neon
+_GST1_PLUGINS_textproc=	zxing
+_GST1_PLUGINS_www=	neon srt
 _GST1_PLUGINS_x11=	x ximagesrc
-_GST1_PLUGINS_x11-toolkits=	gtk pango
+_GST1_PLUGINS_x11-toolkits=	gtk pango qt5 qt6
 
 # == Unversioned information
 
@@ -67,6 +84,8 @@ _GST_PLUGINS_BASE=	bad core good ugly libgstreamer plugins
 _GST_PLUGINS_VER:=	${_GST${_GST_VER}_CATEGORIES:S/^/\${_GST${_GST_VER}_PLUGINS_/:S/$/}/}
 
 _GST_VERSION=		${_GST${_GST_VER}_VERSION}
+_GST_LIB_VER=		${_GST${_GST_VER}_LIB_VER}
+_GST_SOVERSION=		${_GST${_GST_VER}_SOVERSION}
 
 # List of all available components
 _USE_GSTREAMER_ALL=	${_GST_PLUGINS_BASE} \
@@ -85,7 +104,7 @@ gst-bad_IMPL=		#
 
 gst-core_PORT=		multimedia/gstreamer${_GST_VER}-plugins-core
 gst-core_IMPL=		#
-gst-core_GST1_VERSION=	1.16
+gst-core_GST1_VERSION=	1.24
 gst-core_VERSION=	${gst-core_GST${_GST_VER}_VERSION}
 
 gst-good_PORT=		multimedia/gstreamer${_GST_VER}-plugins-good
@@ -97,10 +116,13 @@ gst-ugly_IMPL=		#
 gst-libgstreamer_LIB=	libgstreamer${_GST${_GST_VER}_LIB_VER:D-${_GST${_GST_VER}_LIB_VER}}.so
 gst-libgstreamer_PORT=	multimedia/gstreamer${_GST_VER}
 
-#==== Audio Plugins Section
+#==== audio plugins section
 
 gst-a52dec_PORT=	audio/gstreamer${_GST_VER}-plugins-a52dec
 gst-a52dec_IMPL=	ugly
+
+gst-alsa_PORT=		audio/gstreamer${_GST_VER}-plugins-alsa
+gst-alsa_IMPL=		#
 
 gst-amrnb_PORT=		audio/gstreamer${_GST_VER}-plugins-amrnb
 gst-amrnb_IMPL=		ugly
@@ -153,14 +175,11 @@ gst-modplug_IMPL=	bad
 gst-mpg123_PORT=	audio/gstreamer${_GST_VER}-plugins-mpg123
 gst-mpg123_IMPL=	ugly
 
-gst-musepack_PORT=	audio/gstreamer${_GST_VER}-plugins-musepack
-gst-musepack_IMPL=	bad
-
-gst-neon_PORT=		www/gstreamer${_GST_VER}-plugins-neon
-gst-neon_IMPL=		bad
-
 gst-ogg_PORT=		audio/gstreamer${_GST_VER}-plugins-ogg
 gst-ogg_IMPL=		#
+
+gst-openmpt_PORT=	audio/gstreamer${_GST_VER}-plugins-openmpt
+gst-openmpt_IMPL=	bad
 
 gst-opus_PORT=		audio/gstreamer${_GST_VER}-plugins-opus
 gst-opus_IMPL=		#
@@ -174,12 +193,13 @@ gst-shout2_IMPL=	good
 gst-sidplay_PORT=	audio/gstreamer${_GST_VER}-plugins-sidplay
 gst-sidplay_IMPL=	ugly
 
-gst-sndio_PORT=		audio/gstreamer${_GST_VER}-plugins-sndio
-gst-sndio_IMPL=		#
-gst-sndio_VERSION=	1.8.0
-
 gst-sndfile_PORT=	audio/gstreamer${_GST_VER}-plugins-sndfile
 gst-sndfile_IMPL=	bad
+
+gst-sndio_PORT=		audio/gstreamer${_GST_VER}-plugins-sndio
+gst-sndio_IMPL=		#
+gst-sndio_GST1_VERSION=	1.24.0
+gst-sndio_VERSION=	${gst-sndio_GST${_GST_VER}_VERSION}
 
 gst-soundtouch_PORT=	audio/gstreamer${_GST_VER}-plugins-soundtouch
 gst-soundtouch_IMPL=	bad
@@ -222,12 +242,6 @@ gst-curl_IMPL=		bad
 gst-aalib_PORT=		graphics/gstreamer${_GST_VER}-plugins-aalib
 gst-aalib_IMPL=		good
 
-gst-aom_PORT=		multimedia/gstreamer${_GST_VER}-plugins-aom
-gst-aom_IMPL=		bad
-
-gst-assrender_PORT=	multimedia/gstreamer${_GST_VER}-plugins-assrender
-gst-assrender_IMPL=	bad
-
 gst-cairo_PORT=		graphics/gstreamer${_GST_VER}-plugins-cairo
 gst-cairo_IMPL=		good
 
@@ -258,17 +272,14 @@ gst-openexr_IMPL=	bad
 gst-openjpeg_PORT=	graphics/gstreamer${_GST_VER}-plugins-openjpeg
 gst-openjpeg_IMPL=	bad
 
-gst-openmpt_PORT=	audio/gstreamer${_GST_VER}-plugins-openmpt
-gst-openmpt_IMPL=	bad
-
 gst-png_PORT=		graphics/gstreamer${_GST_VER}-plugins-png
 gst-png_IMPL=		good
 
-gst-qt_PORT=		graphics/gstreamer${_GST_VER}-plugins-qt
-gst-qt_IMPL=		good
-
 gst-rsvg_PORT=		graphics/gstreamer${_GST_VER}-plugins-rsvg
 gst-rsvg_IMPL=		bad
+
+gst-vulkan_PORT=	graphics/gstreamer${_GST_VER}-plugins-vulkan
+gst-vulkan_IMPL=	bad
 
 gst-webp_PORT=		graphics/gstreamer${_GST_VER}-plugins-webp
 gst-webp_IMPL=		bad
@@ -278,15 +289,17 @@ gst-zbar_IMPL=		bad
 
 #==== multimedia plugins section
 
+gst-aom_PORT=		multimedia/gstreamer${_GST_VER}-plugins-aom
+gst-aom_IMPL=		bad
+
+gst-assrender_PORT=	multimedia/gstreamer${_GST_VER}-plugins-assrender
+gst-assrender_IMPL=	bad
+
 gst-dash_PORT=		multimedia/gstreamer${_GST_VER}-plugins-dash
 gst-dash_IMPL=		bad
 
 gst-dvdread_PORT=	multimedia/gstreamer${_GST_VER}-plugins-dvdread
 gst-dvdread_IMPL=	ugly
-
-gst-editing-services_PORT=	multimedia/gstreamer${_GST_VER}-editing-services
-gst-editing-services_SUFFIX=	#
-gst-editing-services_IMPL=	#
 
 gst-dts_PORT=		multimedia/gstreamer${_GST_VER}-plugins-dts
 gst-dts_IMPL=		bad
@@ -294,9 +307,9 @@ gst-dts_IMPL=		bad
 gst-dv_PORT=		multimedia/gstreamer${_GST_VER}-plugins-dv
 gst-dv_IMPL=		good
 
-gst-gnonlin_PORT=	multimedia/gstreamer${_GST_VER}-plugins-gnonlin
-gst-gnonlin_IMPL=	good
-gst-gnonlin_VERSION=	1.4.0
+gst-editing-services_PORT=	multimedia/gstreamer${_GST_VER}-editing-services
+gst-editing-services_SUFFIX=	#
+gst-editing-services_IMPL=	#
 
 gst-hls_PORT=		multimedia/gstreamer${_GST_VER}-plugins-hls
 gst-hls_IMPL=		bad
@@ -324,11 +337,25 @@ gst-mpeg2enc_IMPL=	bad
 gst-mplex_PORT=		multimedia/gstreamer${_GST_VER}-plugins-mplex
 gst-mplex_IMPL=		bad
 
+gst-msdk_PORT=		multimedia/gstreamer${_GST_VER}-plugins-msdk
+gst-msdk_IMPL=		bad
+
 gst-openh264_PORT=	multimedia/gstreamer${_GST_VER}-plugins-openh264
 gst-openh264_IMPL=	bad
 
+gst-resindvd_PORT=	multimedia/gstreamer${_GST_VER}-plugins-resindvd
+gst-resindvd_IMPL=	bad
+
+gst-rust_PORT=		multimedia/gstreamer${_GST_VER}-plugins-rust
+gst-rust_IMPL=		#
+gst-rust_GST1_VERSION=	0.13.4
+gst-rust_VERSION=	${gst-rust_GST${_GST_VER}_VERSION}
+
 gst-smoothstreaming_PORT=	multimedia/gstreamer${_GST_VER}-plugins-smoothstreaming
 gst-smoothstreaming_IMPL=	bad
+
+gst-theora_PORT=	multimedia/gstreamer${_GST_VER}-plugins-theora
+gst-theora_IMPL=	#
 
 gst-ttml_PORT=		multimedia/gstreamer${_GST_VER}-plugins-ttml
 gst-ttml_IMPL=		bad
@@ -336,21 +363,15 @@ gst-ttml_IMPL=		bad
 gst-v4l2_PORT=		multimedia/gstreamer${_GST_VER}-plugins-v4l2
 gst-v4l2_IMPL=		good
 
-# hmmm
-gst-vaapi_PORT=		multimedia/gstreamer-vaapi
-gst-vaapi_IMPL=		bad
+gst-vaapi_PORT=		multimedia/gstreamer${_GST_VER}-vaapi
+gst-vaapi_SUFFIX=	#
+gst-vaapi_IMPL=		#
 
 gst-vpx_PORT=		multimedia/gstreamer${_GST_VER}-plugins-vpx
 gst-vpx_IMPL=		good
 
-gst-vulkan_PORT=	graphics/gstreamer${_GST_VER}-plugins-vulkan
-gst-vulkan_IMPL=	bad
-
-gst-resindvd_PORT=	multimedia/gstreamer${_GST_VER}-plugins-resindvd
-gst-resindvd_IMPL=	bad
-
-gst-theora_PORT=	multimedia/gstreamer${_GST_VER}-plugins-theora
-gst-theora_IMPL=	#
+gst-webrtc_PORT=	multimedia/gstreamer${_GST_VER}-plugins-webrtc
+gst-webrtc_IMPL=	bad
 
 gst-x264_PORT=		multimedia/gstreamer${_GST_VER}-plugins-x264
 gst-x264_IMPL=		ugly
@@ -358,10 +379,10 @@ gst-x264_IMPL=		ugly
 gst-x265_PORT=		multimedia/gstreamer${_GST_VER}-plugins-x265
 gst-x265_IMPL=		bad
 
-gst-zxing_PORT=		textproc/gstreamer${_GST_VER}-plugins-zxing
-gst-zxing_IMPL=		bad
+#==== net plugins section
 
-#==== Net Plugins Section
+gst-sctp_PORT=		net/gstreamer${_GST_VER}-plugins-sctp
+gst-sctp_IMPL=		bad
 
 gst-srtp_PORT=		net/gstreamer${_GST_VER}-plugins-srtp
 gst-srtp_IMPL=		bad
@@ -375,6 +396,19 @@ gst-dtls_IMPL=		bad
 
 gst-cdio_PORT=		sysutils/gstreamer${_GST_VER}-plugins-cdio
 gst-cdio_IMPL=		ugly
+
+#==== textproc plugins section
+
+gst-zxing_PORT=		textproc/gstreamer${_GST_VER}-plugins-zxing
+gst-zxing_IMPL=		bad
+
+#==== www plugins section
+
+gst-neon_PORT=		www/gstreamer${_GST_VER}-plugins-neon
+gst-neon_IMPL=		bad
+
+gst-srt_PORT=		www/gstreamer${_GST_VER}-plugins-srt
+gst-srt_IMPL=		bad
 
 #==== x11 plugins section
 
@@ -392,26 +426,33 @@ gst-gtk_IMPL=		bad
 gst-pango_PORT=		x11-toolkits/gstreamer${_GST_VER}-plugins-pango
 gst-pango_IMPL=		#
 
+gst-qt5_PORT=		x11-toolkits/gstreamer${_GST_VER}-plugins-qt5
+gst-qt5_IMPL=		good
+
+gst-qt6_PORT=		x11-toolkits/gstreamer${_GST_VER}-plugins-qt6
+gst-qt6_IMPL=		good
+
 #== Dependency creation
 
+.  if empty(gstreamer_ARGS:M_internal)
 _GST_BR_DEPENDS=	#
 _GST_LIB_DEPENDS=	#
 
 USE_GSTREAMER?=		#
 # everything wants this
 USE_GSTREAMER+=		libgstreamer
-.  if ${PORTDIRNAME} != gstreamer${_GST_VER}-plugins
+.    if ${PORTDIRNAME} != gstreamer${_GST_VER}-plugins
 USE_GSTREAMER+=		plugins
-.  endif
+.    endif
 
 # Gather all Impl values
-_GST_IMPL_LIST:=		${USE_GSTREAMER:S/^/\${gst-/:S/$/_IMPL}/}
+_GST_IMPL_LIST:=	${USE_GSTREAMER:S/^/\${gst-/:S/$/_IMPL}/}
 
 # Combine the wanted copmonents and the required implementations
 _USE_GSTREAMER=		${USE_GSTREAMER} \
 			${_GST_IMPL_LIST}
 
-.  for component in ${_USE_GSTREAMER:O:u}
+.    for component in ${_USE_GSTREAMER:O:u}
 # Fill in the common default component values
 gst-${component}_VERSION?=	${_GST_VERSION}
 gst-${component}_NAME?=		${component}
@@ -419,18 +460,19 @@ gst-${component}_PREFIX?=	gstreamer${_GST_VER}-
 gst-${component}_SUFFIX?=	plugins-
 gst-${component}_PKG?=		${gst-${component}_PREFIX}${gst-${component}_SUFFIX}${gst-${component}_NAME}
 
-.    if empty(_USE_GSTREAMER_ALL:M${component})
+.      if empty(_USE_GSTREAMER_ALL:M${component})
 IGNORE=	unknown gstreamer component '${component}' for gstreamer:${_GST_VER}
-.    endif
-.    if !empty(gst-${component}_LIB)
+.      endif
+.      if !empty(gst-${component}_LIB)
 _GST_LIB_DEPENDS+=	${gst-${component}_LIB}:${gst-${component}_PORT}
-.    else
+.      else
 _GST_BR_DEPENDS+=	${gst-${component}_PKG}>=${gst-${component}_VERSION}:${gst-${component}_PORT}
-.    endif
-.  endfor
+.      endif
+.    endfor
 
-LIB_DEPENDS+=   ${_GST_LIB_DEPENDS:O:u}
-BUILD_DEPENDS+= ${_GST_BR_DEPENDS:O:u}
-RUN_DEPENDS+=   ${_GST_BR_DEPENDS:O:u}
+LIB_DEPENDS+=	${_GST_LIB_DEPENDS:O:u}
+BUILD_DEPENDS+=	${_GST_BR_DEPENDS:O:u}
+RUN_DEPENDS+=	${_GST_BR_DEPENDS:O:u}
 
+.  endif
 .endif

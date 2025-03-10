@@ -1,6 +1,6 @@
---- remoting/host/base/desktop_environment_options.cc.orig	2024-02-25 20:22:18 UTC
+--- remoting/host/base/desktop_environment_options.cc.orig	2024-10-27 06:40:35 UTC
 +++ remoting/host/base/desktop_environment_options.cc
-@@ -124,7 +124,7 @@ bool DesktopEnvironmentOptions::capture_video_on_dedic
+@@ -99,7 +99,7 @@ bool DesktopEnvironmentOptions::capture_video_on_dedic
    // TODO(joedow): Determine whether we can migrate additional platforms to
    // using the DesktopCaptureWrapper instead of the DesktopCaptureProxy. Then
    // clean up DesktopCapturerProxy::Core::CreateCapturer().

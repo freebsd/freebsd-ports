@@ -3,6 +3,7 @@ share/libretro/info/2048_libretro.info
 share/libretro/info/3dengine_libretro.info
 share/libretro/info/4do_libretro.info
 share/libretro/info/81_libretro.info
+share/libretro/info/DoubleCherryGB_libretro.info
 share/libretro/info/a5200_libretro.info
 share/libretro/info/advanced_tests_libretro.info
 share/libretro/info/anarch_libretro.info
@@ -78,12 +79,14 @@ share/libretro/info/frodo_libretro.info
 share/libretro/info/fsuae_libretro.info
 share/libretro/info/fuse_libretro.info
 share/libretro/info/galaksija_libretro.info
+share/libretro/info/gam4980_libretro.info
 share/libretro/info/gambatte_libretro.info
 share/libretro/info/gearboy_libretro.info
 share/libretro/info/gearcoleco_libretro.info
 share/libretro/info/gearsystem_libretro.info
 share/libretro/info/genesis_plus_gx_libretro.info
 share/libretro/info/genesis_plus_gx_wide_libretro.info
+share/libretro/info/geolith_libretro.info
 share/libretro/info/gme_libretro.info
 share/libretro/info/gong_libretro.info
 share/libretro/info/gpsp_libretro.info
@@ -100,6 +103,7 @@ share/libretro/info/jumpnbump_libretro.info
 share/libretro/info/kronos_libretro.info
 share/libretro/info/lowresnx_libretro.info
 share/libretro/info/lutro_libretro.info
+share/libretro/info/m2000_libretro.info
 share/libretro/info/mame2000_libretro.info
 share/libretro/info/mame2003_libretro.info
 share/libretro/info/mame2003_midway_libretro.info
@@ -111,6 +115,7 @@ share/libretro/info/mame2016_libretro.info
 share/libretro/info/mame_libretro.info
 share/libretro/info/mamearcade_libretro.info
 share/libretro/info/mamemess_libretro.info
+share/libretro/info/mcsoftserve_libretro.info
 share/libretro/info/mednafen_gba_libretro.info
 share/libretro/info/mednafen_lynx_libretro.info
 share/libretro/info/mednafen_ngp_libretro.info
@@ -126,6 +131,7 @@ share/libretro/info/mednafen_supergrafx_libretro.info
 share/libretro/info/mednafen_vb_libretro.info
 share/libretro/info/mednafen_wswan_libretro.info
 share/libretro/info/melonds_libretro.info
+share/libretro/info/melondsds_libretro.info
 share/libretro/info/mesen-s_libretro.info
 share/libretro/info/mesen_libretro.info
 share/libretro/info/mess2015_libretro.info
@@ -199,10 +205,12 @@ share/libretro/info/snes9x2010_libretro.info
 share/libretro/info/snes9x_libretro.info
 share/libretro/info/squirreljme_libretro.info
 share/libretro/info/stella2014_libretro.info
+share/libretro/info/stella2023_libretro.info
 share/libretro/info/stella_libretro.info
 share/libretro/info/stonesoup_libretro.info
 share/libretro/info/superbroswar_libretro.info
 share/libretro/info/swanstation_libretro.info
+share/libretro/info/syobonaction_libretro.info
 share/libretro/info/tempgba_libretro.info
 share/libretro/info/test_libretro.info
 share/libretro/info/test_netplay_libretro.info

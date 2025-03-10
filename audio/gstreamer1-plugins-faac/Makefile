@@ -3,13 +3,13 @@ CATEGORIES=	audio
 
 COMMENT=	GStreamer MPEG-2 and MPEG-4 AAC encoder plugin
 
-GST_PLUGIN=	faac
+LIB_DEPENDS=	libfaac.so:audio/faac
+
+MASTERDIR=	${.CURDIR:H:H}/multimedia/gstreamer1-plugins
+
+PLIST=		${.CURDIR}/pkg-plist
+
 DIST=		bad
-
-MASTERDIR=	${.CURDIR}/../../multimedia/gstreamer1-plugins
-
-PLIST=  ${.CURDIR}/pkg-plist
-
-LIB_DEPENDS= libfaac.so:audio/faac
+GST_PLUGIN=	faac
 
 .include "${MASTERDIR}/Makefile"

@@ -1,13 +1,13 @@
 PORTNAME=	xray-core
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.8.17
+DISTVERSION=	25.1.30
+PORTREVISION=	2
 CATEGORIES=	security
-MASTER_SITES=	https://github.com/v2fly/geoip/releases/download/202407110044/:geoip \
-		https://github.com/v2fly/domain-list-community/releases/download/20240713050854/:geosite
+MASTER_SITES=	https://github.com/v2fly/geoip/releases/download/202501190004/:geoip \
+		https://github.com/v2fly/domain-list-community/releases/download/20250124154827/:geosite
 DISTFILES=	geoip.dat:geoip \
 		dlc.dat:geosite
-EXTRACT_ONLY=	v${DISTVERSION}.zip \
-		xtls-Xray-core-v${DISTVERSION}_GH0.tar.gz
+EXTRACT_ONLY=	XTLS-Xray-core-v${DISTVERSION}_GH0.tar.gz
 
 MAINTAINER=	kirill@drlebedev.com
 COMMENT=	Set of network penetration tools
@@ -16,15 +16,16 @@ WWW=		https://github.com/XTLS/Xray-core
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:modules,1.22
+USES=		go:1.23,modules
 USE_GITHUB=	yes
-GH_ACCOUNT=	xtls
+GH_ACCOUNT=	XTLS
 GH_PROJECT=	Xray-core
 USE_RC_SUBR=	xray
 
 GO_MODULE=	github.com/${GH_ACCOUNT}/${PORTNAME}
 GO_PKGNAME=	github.com/${GH_ACCOUNT}/${PORTNAME}
 GO_TARGET=	./main:xray
+GO_MOD_DIST=    github
 
 SUB_FILES=	pkg-message
 SUB_LIST=	GROUP="${GROUPS}" \

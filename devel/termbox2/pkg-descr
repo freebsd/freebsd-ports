@@ -1,0 +1,10 @@
+termbox2 is a terminal rendering library for creating TUIs. It is an alternative
+to the ubiquitous ncurses library. It ships with built-in support for popular
+terminals and can also fallback to terminfo if present. Compared to the original
+termbox, it retains a simple API and no dependencies beyond libc, and adds
+stricter error checking, more efficient escape sequence parsing, opt-in support
+for 32-bit color, extended grapheme clusters, code gen for built-in escape
+sequences, a test suite, and more.
+
+termbox2 is organized as a single file header library, though it is possible to
+compile it as a stand-alone shared or static library.

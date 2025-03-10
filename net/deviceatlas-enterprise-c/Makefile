@@ -1,9 +1,9 @@
 PORTNAME=	deviceatlas-enterprise-c
-PORTVERSION=	2.3.4
+DISTVERSION=	3.2.3
 CATEGORIES=	net devel
 MASTER_SITES=	#
 
-MAINTAINER=	dcarlier@afilias.info
+MAINTAINER=	dcarlier@deviceatlas.com
 COMMENT=	DeviceAtlas Device Detection C API
 WWW=		https://www.deviceatlas.com
 
@@ -14,13 +14,14 @@ LICENSE_TEXT=	The free of charge offering has a restricted use license, for own 
 		Contact us (http://www.deviceatlas.com/contact-us) to upgrade or to enable usage as part of a service offering.
 LICENSE_PERMS=	none
 
-LIB_DEPENDS=	libpcre.so:devel/pcre
+LIB_DEPENDS=	libcurl.so:ftp/curl \
+		libzip.so:archivers/libzip
 
-USES=		cmake zip
+USES=		cmake ssl zip
 USE_LDCONFIG=	yes
 
 CMAKE_ARGS=	-DDOCSDIR=${DOCSDIR} -DEXAMPLESDIR=${EXAMPLESDIR}
-PLIST_SUB=	PORTVERSION=${PORTVERSION}
+PLIST_SUB=	PORTVERSION=${DISTVERSION}
 
 REGISTRATION_URL=	https://deviceatlas.com/deviceatlas-haproxy-module
 
@@ -34,6 +35,12 @@ IGNORE?=	you must manually fetch the DeviceAtlas Device Detection C API from ${R
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libda.so \
-		${STAGEDIR}${PREFIX}/lib/libci.so
+		${STAGEDIR}${PREFIX}/lib/libci.so \
+		${STAGEDIR}${PREFIX}/bin/dajsonconv \
+		${STAGEDIR}${PREFIX}/bin/dadwsch
+
+post-install-EXAMPLES-on:
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	cd ${WRKSRC}/Examples && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.post.mk>

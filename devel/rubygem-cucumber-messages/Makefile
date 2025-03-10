@@ -1,5 +1,5 @@
 PORTNAME=	cucumber-messages
-PORTVERSION=	25.0.1
+PORTVERSION=	27.0.2
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -8,6 +8,7 @@ COMMENT=	Protocol Buffer messages for Cucumber
 WWW=		https://github.com/cucumber/messages
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		gem
 

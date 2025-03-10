@@ -1,6 +1,6 @@
 --- build_tools/tools/freebsd/automate.py.orig	2021-12-18 16:54:46 UTC
 +++ build_tools/tools/freebsd/automate.py
-@@ -0,0 +1,54 @@
+@@ -0,0 +1,53 @@
 +#!/usr/bin/env python
 +
 +import sys
@@ -13,11 +13,10 @@
 +
 +array_args = sys.argv[1:]
 +array_modules = []
-+
 +base.set_env('QT_SELECT', 'qt5')
-+if not base.is_dir("./qt"):
-+    base.cmd("mkdir", ["qt",])
-+    base.cmd("ln", ["-s", "%%LOCALBASE%%/lib/qt5", "qt/clang_64"])
++if not base.is_dir("./qt_build/Qt-5.15.14"):
++    base.cmd("mkdir", ["-p", "qt_build/Qt-5.15.14",])
++    base.cmd("ln", ["-s", "%%LOCALBASE%%/lib/qt5", "qt_build/Qt-5.15.14/clang_64"])
 +
 +config = {}
 +for arg in array_args:
@@ -51,7 +50,7 @@
 +                      "--module", modules,
 +                      "--update", "0",
 +                      "--platform", "freebsd_64",
-+                      "--qt-dir", os.getcwd() + "/qt"]
++                      "--qt-dir", os.getcwd() + "/qt_build/Qt-5.15.14"]
 +
 +base.cmd_in_dir("../..", "./configure.py", build_tools_params)
 +base.cmd_in_dir("../..", "./make.py")

@@ -1,7 +1,14 @@
-If I can shave off 7 seconds off every exp-run this patch seems totally worth it
---- configure.orig	2014-12-11 13:46:28 UTC
+--- configure.orig	2022-01-19 10:24:35 UTC
 +++ configure
-@@ -5343,18 +5343,12 @@ fi
+@@ -3664,6 +3664,7 @@ else
+   cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */
+ #include <stdio.h>
++#include <stdlib.h>
+             int main()
+             {
+                 long long b, a = -0x3AFAFAFAFAFAFAFALL;
+@@ -5384,18 +5385,12 @@ echo $ECHO_N "ordering CD from http://tobi.oetiker.ch/
  
  
  echo $ECHO_N "ordering CD from http://tobi.oetiker.ch/wish $ECHO_C" 1>&6

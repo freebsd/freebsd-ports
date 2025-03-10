@@ -1,5 +1,6 @@
 PORTNAME=	netatalk
-PORTVERSION=	3.2.5
+PORTVERSION=	3.2.10
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	net
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/netatalk-${PORTVERSION:S/./-/g}/
@@ -14,7 +15,7 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	libgcrypt.so:security/libgcrypt \
 		libevent.so:devel/libevent
 
-USES=		bdb:18 cpe gettext iconv meson perl5 pkgconfig shebangfix ssl tar:xz
+USES=		bdb:18 cpe gettext iconv:wchar_t meson perl5 pkgconfig shebangfix ssl tar:xz
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	netatalk
 #INSTALL_TARGET=install-strip
@@ -29,7 +30,6 @@ MESON_ARGS=		-Dwith-libgcrypt-path=${LOCALBASE} \
 			-Dwith-shadow=false \
 			-Dwith-pgp-uam=false \
 			-Ddefault_library=both \
-			--localstatedir=/var \
 			--infodir=${PREFIX}/share/info
 
 OPTIONS_DEFINE=PAM KERBEROS5 LDAP SENDFILE KERBEROS DBUS MYSQL ACL LIBWRAP SPOTLIGHT
@@ -69,16 +69,16 @@ DBUS_MESON_ON=		-Dwith-dbus-daemon-path=${LOCALBASE}/bin/dbus-daemon \
 			-Dwith-dbus-sysconf-path=${LOCALBASE}/etc/dbus-1/system.d
 DBUS_MESON_OFF=		-Dwith-afpstats=false
 MYSQL_USES=	mysql
-MYSQL_MESON_ON=-Dwith-cnid-mysql-backend=true
+MYSQL_MESON_OFF=-Dwith-cnid-mysql-backend=false
 ACL_LIB_DEPENDS=	libsunacl.so:sysutils/libsunacl
 ACL_MESON_OFF=-Dwith-acls=false
 LIBWRAP_MESON_OFF=-Dwith-tcp-wrappers=false
-SPOTLIGHT_LIB_DEPENDS=	libtracker-sparql-3.0.so:sysutils/tracker3
+SPOTLIGHT_LIB_DEPENDS=	libtinysparql-3.0.so:devel/tinysparql
 SPOTLIGHT_MESON_OFF=	-Dwith-spotlight=false
 
 SHEBANG_GLOB=	afpstats
 
-CONFLICTS=	jday yudit # bin/dbd man/man1/uniconv.1.gz
+CONFLICTS=	netatalk4
 
 .include <bsd.port.pre.mk>
 

@@ -1,0 +1,14 @@
+--- Cargo.lock.orig	2024-02-03 18:08:09 UTC
++++ Cargo.lock
+@@ -2165,9 +2165,9 @@ name = "glium"
+ 
+ [[package]]
+ name = "glium"
+-version = "0.31.0"
++version = "0.32.1"
+ source = "registry+https://github.com/rust-lang/crates.io-index"
+-checksum = "0ab4f09b43d8ee427a700cb9ed3b20e0e858d62a509edded1a98ca5707d68e19"
++checksum = "d2766728ecb86014b91d3d687614b32d65aacbbdc887f424a7b03cba3ab593bf"
+ dependencies = [
+  "backtrace",
+  "fnv",

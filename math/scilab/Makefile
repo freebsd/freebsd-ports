@@ -1,6 +1,6 @@
 PORTNAME=	scilab
 PORTVERSION=	6.1.1
-PORTREVISION=	18
+PORTREVISION=	21
 CATEGORIES=	math cad java
 MASTER_SITES=	https://www.scilab.org/download/${PORTVERSION}/
 DISTFILES=	${DISTNAME}-src${EXTRACT_SUFX}
@@ -14,8 +14,7 @@ LICENSE_COMB=	dual
 LICENSE_FILE_GPLv2=	${WRKSRC}/COPYING
 LICENSE_FILE_BSD3CLAUSE=	${WRKSRC}/COPYING-BSD
 
-LIB_DEPENDS=	libxml2.so:textproc/libxml2 \
-		libpcre.so:devel/pcre \
+LIB_DEPENDS=	libpcre.so:devel/pcre \
 		libcurl.so:ftp/curl \
 		libhdf5.so:science/hdf5 \
 		libarpack.so:math/arpack-ng \
@@ -28,6 +27,7 @@ RUN_DEPENDS=	xdg-open:devel/xdg-utils
 USES=		compiler:c++17-lang cpe desktop-file-utils eigen:3,build \
 		fortran gettext gmake gnome iconv:wchar_t libtool \
 		localbase ncurses pathfix pkgconfig shared-mime-info
+USE_GNOME=	libxml2
 USE_LOCALE=	en_US.UTF-8
 
 GNU_CONFIGURE=	yes
@@ -83,7 +83,7 @@ _GUI_DEPENDS+=	${JAVALIBDIR}/commons-beanutils.jar:java/apache-commons-beanutils
 		${LOCALBASE}/bin/splint:devel/splint
 # Documentation building:
 _GUI_DEPENDS+=	${LOCALBASE}/share/xsl/docbook/javahelp/javahelp.xsl:textproc/docbook-xsl \
-		${JAVALIBDIR}/saxon-he-10.6.jar:textproc/saxon-he \
+		${JAVALIBDIR}/saxon-he-12.5.jar:textproc/saxon-he \
 		${JAVALIBDIR}/xml-apis-ext.jar:textproc/xml-commons \
 		xsltproc:textproc/libxslt
 # Other gui deps:
@@ -96,8 +96,8 @@ GUI_BUILD_DEPENDS=	${_GUI_DEPENDS} \
 GUI_RUN_DEPENDS=	${_GUI_DEPENDS}
 
 GUI_ALL_TARGET=	all doc
-GUI_USES=	gl
-GUI_USE=	GL=gl JAVA=yes
+GUI_USES=	gl java
+GUI_USE=	GL=gl
 GUI_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-bin-JAVA_HOME
 GUI_CONFIGURE_ON=	--with-jdk=${JAVA_HOME} \
 			--with-docbook=${LOCALBASE}/share/xsl/docbook \

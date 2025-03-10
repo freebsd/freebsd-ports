@@ -12,15 +12,20 @@ WWW=		https://github.com/ocaml/dbm
 
 LICENSE=	LGPL20 # with a special exception to clause 6
 
+USES=		ocaml:ldconfig
 USE_GITHUB=	yes
-USE_OCAML=	yes
 GH_ACCOUNT=	ocaml
-USE_OCAML_LDCONFIG=	yes
 
 DOCSDIR=	${OCAML_DOCSDIR}/${PORTNAME}
 HAS_CONFIGURE=	yes
 MAKE_ENV+=	LIBDIR="${STAGEDIR}${PREFIX}/${OCAML_SITELIBDIR}/dbm" \
 		STUBLIBDIR="${STAGEDIR}${PREFIX}/${OCAML_SITELIBDIR}/dbm"
+
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == powerpc
+USE_BINUTILS=	yes
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} \

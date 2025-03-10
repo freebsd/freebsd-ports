@@ -187,22 +187,6 @@ share/applications/ghidra.desktop
 %%DATADIR%%/GPL/utils.gradle
 %%DATADIR%%/GPL/vsconfig.gradle
 %%DATADIR%%/Ghidra/.dbDirLock
-%%DATADIR%%/Ghidra/.gradle/8.6/checksums/checksums.lock
-%%DATADIR%%/Ghidra/.gradle/8.6/dependencies-accessors/gc.properties
-%%DATADIR%%/Ghidra/.gradle/8.6/executionHistory/executionHistory.bin
-%%DATADIR%%/Ghidra/.gradle/8.6/executionHistory/executionHistory.lock
-%%DATADIR%%/Ghidra/.gradle/8.6/fileChanges/last-build.bin
-%%DATADIR%%/Ghidra/.gradle/8.6/fileContent/fileContent.lock
-%%DATADIR%%/Ghidra/.gradle/8.6/fileContent/parsedCSource.bin
-%%DATADIR%%/Ghidra/.gradle/8.6/fileHashes/fileHashes.bin
-%%DATADIR%%/Ghidra/.gradle/8.6/fileHashes/fileHashes.lock
-%%DATADIR%%/Ghidra/.gradle/8.6/gc.properties
-%%DATADIR%%/Ghidra/.gradle/8.6/nativeCompile/nativeCompile.bin
-%%DATADIR%%/Ghidra/.gradle/8.6/nativeCompile/nativeCompile.lock
-%%DATADIR%%/Ghidra/.gradle/buildOutputCleanup/buildOutputCleanup.lock
-%%DATADIR%%/Ghidra/.gradle/buildOutputCleanup/cache.properties
-%%DATADIR%%/Ghidra/.gradle/buildOutputCleanup/outputFiles.bin
-%%DATADIR%%/Ghidra/.gradle/vcs-1/gc.properties
 %%DATADIR%%/Ghidra/Configurations/Public_Release/LICENSE.txt
 %%DATADIR%%/Ghidra/Configurations/Public_Release/Module.manifest
 %%DATADIR%%/Ghidra/Configurations/Public_Release/data/PDB_SYMBOL_SERVER_URLS.pdburl
@@ -4659,7 +4643,6 @@ share/applications/ghidra.desktop
 %%DATADIR%%/support/pythonRun.bat
 %%DATADIR%%/support/sleigh
 %%DATADIR%%/support/sleigh.bat
-@dir %%DATADIR%%/Ghidra/.gradle/8.6/vcsMetadata
 @dir %%DATADIR%%/Ghidra/Debug/Debugger-agent-dbgeng/pypkg/build/bdist.macosx-13-x86_64
 @dir %%DATADIR%%/Ghidra/Debug/Debugger-agent-gdb/pypkg/build/bdist.macosx-13-x86_64
 @dir %%DATADIR%%/Ghidra/Debug/Debugger-agent-lldb/pypkg/build/bdist.macosx-13-x86_64

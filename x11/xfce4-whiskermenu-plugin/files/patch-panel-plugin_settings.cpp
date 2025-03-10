@@ -1,11 +1,10 @@
---- panel-plugin/settings.cpp.orig	2015-03-08 09:15:22 UTC
+--- panel-plugin/settings.cpp.orig	2025-01-30 14:00:16 UTC
 +++ panel-plugin/settings.cpp
-@@ -148,6 +148,8 @@ void Settings::load(char* file)
+@@ -188,6 +188,7 @@ void Settings::load(const gchar* file, bool is_default
  {
  	if (!file)
  	{
 +		command[CommandProfile]->set_shown(false);
-+		command[CommandMenuEditor]->set_shown(false);
  		return;
  	}
  

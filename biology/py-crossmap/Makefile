@@ -1,16 +1,15 @@
 PORTNAME=	crossmap
-DISTVERSION=	0.5.4
+DISTVERSION=	0.7.3
 PORTREVISION=	1
 CATEGORIES=	biology python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	CrossMap-${DISTVERSION}
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Lift over genomics coordinates between assemblies
-WWW=		https://pypi.python.org/pypi/crossmap
+WWW=		https://github.com/liguowang/CrossMap
 
-LICENSE=	GPLv2
+LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}nose>0.10.4:devel/py-nose@${PY_FLAVOR}

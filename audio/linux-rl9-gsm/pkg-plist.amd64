@@ -1,4 +1,7 @@
+usr/lib/.build-id/0e/a2f20ca00135a681bcd66ff66edf140721713f
 usr/lib/.build-id/c7/d41325192ba07e01eac8c59fd65bc6bb79d4d7
+usr/lib/libgsm.so.1
+usr/lib/libgsm.so.1.0.19
 usr/lib64/libgsm.so.1
 usr/lib64/libgsm.so.1.0.19
 %%PORTDOCS%%usr/share/doc/gsm/ChangeLog

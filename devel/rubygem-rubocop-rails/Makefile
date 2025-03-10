@@ -1,19 +1,21 @@
 PORTNAME=	rubocop-rails
-PORTVERSION=	2.25.1
+PORTVERSION=	2.30.1
 CATEGORIES=	devel ruby
 MASTER_SITES=	RG
 
-MAINTAINER=	ruby@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	RuboCop extension focused on enforcing Rails coding conventions
-WWW=		https://github.com/rubocop/rubocop-rails
+WWW=		https://docs.rubocop.org/rubocop-rails/ \
+		https://github.com/rubocop/rubocop-rails
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 RUN_DEPENDS=	rubygem-activesupport61>=4.2.0:devel/rubygem-activesupport61 \
+		rubygem-lint_roller>=1.1<2:devel/rubygem-lint_roller \
 		rubygem-rack>=1.1:www/rubygem-rack \
-		rubygem-rubocop>=1.33.0:devel/rubygem-rubocop \
-		rubygem-rubocop-ast>=1.31.1:devel/rubygem-rubocop-ast
+		rubygem-rubocop>=1.72.1:devel/rubygem-rubocop \
+		rubygem-rubocop-ast>=1.38.0:devel/rubygem-rubocop-ast
 
 USES=		cpe gem
 

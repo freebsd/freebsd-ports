@@ -53,7 +53,7 @@ nim/config/nimdoc.tex.cfg
 %%DOCS%%nim/doc/html/compiler/ast.html
 %%DOCS%%nim/doc/html/compiler/astalgo.html
 %%DOCS%%nim/doc/html/compiler/astmsgs.html
-%%DOCS%%nim/doc/html/compiler/backendpragmas.html
+%%DOCS%%nim/doc/html/compiler/astyaml.html
 %%DOCS%%nim/doc/html/compiler/bitsets.html
 %%DOCS%%nim/doc/html/compiler/btrees.html
 %%DOCS%%nim/doc/html/compiler/ccgutils.html
@@ -73,6 +73,7 @@ nim/config/nimdoc.tex.cfg
 %%DOCS%%nim/doc/html/compiler/enumtostr.html
 %%DOCS%%nim/doc/html/compiler/errorhandling.html
 %%DOCS%%nim/doc/html/compiler/evaltempl.html
+%%DOCS%%nim/doc/html/compiler/expanddefaults.html
 %%DOCS%%nim/doc/html/compiler/extccomp.html
 %%DOCS%%nim/doc/html/compiler/filter_tmpl.html
 %%DOCS%%nim/doc/html/compiler/filters.html
@@ -82,6 +83,7 @@ nim/config/nimdoc.tex.cfg
 %%DOCS%%nim/doc/html/compiler/ic/cbackend.html
 %%DOCS%%nim/doc/html/compiler/ic/dce.html
 %%DOCS%%nim/doc/html/compiler/ic/ic.html
+%%DOCS%%nim/doc/html/compiler/ic/iclineinfos.html
 %%DOCS%%nim/doc/html/compiler/ic/integrity.html
 %%DOCS%%nim/doc/html/compiler/ic/navigator.html
 %%DOCS%%nim/doc/html/compiler/ic/packed_ast.html
@@ -95,6 +97,7 @@ nim/config/nimdoc.tex.cfg
 %%DOCS%%nim/doc/html/compiler/isolation_check.html
 %%DOCS%%nim/doc/html/compiler/jsgen.html
 %%DOCS%%nim/doc/html/compiler/lambdalifting.html
+%%DOCS%%nim/doc/html/compiler/layeredtable.html
 %%DOCS%%nim/doc/html/compiler/lexer.html
 %%DOCS%%nim/doc/html/compiler/liftdestructors.html
 %%DOCS%%nim/doc/html/compiler/liftlocals.html
@@ -106,11 +109,11 @@ nim/config/nimdoc.tex.cfg
 %%DOCS%%nim/doc/html/compiler/macrocacheimpl.html
 %%DOCS%%nim/doc/html/compiler/magicsys.html
 %%DOCS%%nim/doc/html/compiler/main.html
+%%DOCS%%nim/doc/html/compiler/mangleutils.html
 %%DOCS%%nim/doc/html/compiler/modulegraphs.html
 %%DOCS%%nim/doc/html/compiler/modulepaths.html
 %%DOCS%%nim/doc/html/compiler/modules.html
 %%DOCS%%nim/doc/html/compiler/msgs.html
-%%DOCS%%nim/doc/html/compiler/ndi.html
 %%DOCS%%nim/doc/html/compiler/nilcheck.html
 %%DOCS%%nim/doc/html/compiler/nim.html
 %%DOCS%%nim/doc/html/compiler/nimblecmd.html
@@ -120,6 +123,7 @@ nim/config/nimdoc.tex.cfg
 %%DOCS%%nim/doc/html/compiler/nimpaths.html
 %%DOCS%%nim/doc/html/compiler/nimsets.html
 %%DOCS%%nim/doc/html/compiler/nodejs.html
+%%DOCS%%nim/doc/html/compiler/nodekinds.html
 %%DOCS%%nim/doc/html/compiler/nversion.html
 %%DOCS%%nim/doc/html/compiler/optimizer.html
 %%DOCS%%nim/doc/html/compiler/options.html
@@ -131,13 +135,11 @@ nim/config/nimdoc.tex.cfg
 %%DOCS%%nim/doc/html/compiler/pipelines.html
 %%DOCS%%nim/doc/html/compiler/pipelineutils.html
 %%DOCS%%nim/doc/html/compiler/platform.html
-%%DOCS%%nim/doc/html/compiler/plugins/active.html
-%%DOCS%%nim/doc/html/compiler/plugins/itersgen.html
-%%DOCS%%nim/doc/html/compiler/plugins/locals.html
 %%DOCS%%nim/doc/html/compiler/pluginsupport.html
 %%DOCS%%nim/doc/html/compiler/pragmas.html
 %%DOCS%%nim/doc/html/compiler/prefixmatches.html
 %%DOCS%%nim/doc/html/compiler/procfind.html
+%%DOCS%%nim/doc/html/compiler/pushpoppragmas.html
 %%DOCS%%nim/doc/html/compiler/renderer.html
 %%DOCS%%nim/doc/html/compiler/renderverbatim.html
 %%DOCS%%nim/doc/html/compiler/reorder.html
@@ -157,6 +159,7 @@ nim/config/nimdoc.tex.cfg
 %%DOCS%%nim/doc/html/compiler/sigmatch.html
 %%DOCS%%nim/doc/html/compiler/sourcemap.html
 %%DOCS%%nim/doc/html/compiler/spawn.html
+%%DOCS%%nim/doc/html/compiler/suggestsymdb.html
 %%DOCS%%nim/doc/html/compiler/syntaxes.html
 %%DOCS%%nim/doc/html/compiler/theindex.html
 %%DOCS%%nim/doc/html/compiler/transf.html
@@ -173,6 +176,7 @@ nim/config/nimdoc.tex.cfg
 %%DOCS%%nim/doc/html/compiler/vmgen.html
 %%DOCS%%nim/doc/html/compiler/vmmarshal.html
 %%DOCS%%nim/doc/html/compiler/vmprofiler.html
+%%DOCS%%nim/doc/html/compiler/vtables.html
 %%DOCS%%nim/doc/html/compiler/wordrecg.html
 %%DOCS%%nim/doc/html/compilesettings.html
 %%DOCS%%nim/doc/html/complex.html
@@ -225,7 +229,6 @@ nim/config/nimdoc.tex.cfg
 %%DOCS%%nim/doc/html/highlite.html
 %%DOCS%%nim/doc/html/hotcodereloading.html
 %%DOCS%%nim/doc/html/htmlgen.html
-%%DOCS%%nim/doc/html/htmlparser.html
 %%DOCS%%nim/doc/html/httpclient.html
 %%DOCS%%nim/doc/html/httpcore.html
 %%DOCS%%nim/doc/html/idetools.html
@@ -324,6 +327,7 @@ nim/config/nimdoc.tex.cfg
 %%DOCS%%nim/doc/html/re.html
 %%DOCS%%nim/doc/html/refc.html
 %%DOCS%%nim/doc/html/registry.html
+%%DOCS%%nim/doc/html/repr_v2.html
 %%DOCS%%nim/doc/html/reservedmem.html
 %%DOCS%%nim/doc/html/rlocks.html
 %%DOCS%%nim/doc/html/ropes.html
@@ -346,6 +350,7 @@ nim/config/nimdoc.tex.cfg
 %%DOCS%%nim/doc/html/ssl_certs.html
 %%DOCS%%nim/doc/html/ssl_config.html
 %%DOCS%%nim/doc/html/stackframes.html
+%%DOCS%%nim/doc/html/staticos.html
 %%DOCS%%nim/doc/html/stats.html
 %%DOCS%%nim/doc/html/strbasics.html
 %%DOCS%%nim/doc/html/streams.html
@@ -444,9 +449,10 @@ nim/lib/compiler/aliases.nim
 nim/lib/compiler/ast.nim
 nim/lib/compiler/astalgo.nim
 nim/lib/compiler/astmsgs.nim
-nim/lib/compiler/backendpragmas.nim
+nim/lib/compiler/astyaml.nim
 nim/lib/compiler/bitsets.nim
 nim/lib/compiler/btrees.nim
+nim/lib/compiler/cbuilder.nim
 nim/lib/compiler/ccgcalls.nim
 nim/lib/compiler/ccgexprs.nim
 nim/lib/compiler/ccgliterals.nim
@@ -476,6 +482,7 @@ nim/lib/compiler/enumtostr.nim
 nim/lib/compiler/errorhandling.nim
 nim/lib/compiler/evalffi.nim
 nim/lib/compiler/evaltempl.nim
+nim/lib/compiler/expanddefaults.nim
 nim/lib/compiler/extccomp.nim
 nim/lib/compiler/filter_tmpl.nim
 nim/lib/compiler/filters.nim
@@ -487,6 +494,7 @@ nim/lib/compiler/ic/cbackend.nim
 nim/lib/compiler/ic/dce.nim
 nim/lib/compiler/ic/design.rst
 nim/lib/compiler/ic/ic.nim
+nim/lib/compiler/ic/iclineinfos.nim
 nim/lib/compiler/ic/integrity.nim
 nim/lib/compiler/ic/navigator.nim
 nim/lib/compiler/ic/packed_ast.nim
@@ -502,6 +510,7 @@ nim/lib/compiler/isolation_check.nim
 nim/lib/compiler/jsgen.nim
 nim/lib/compiler/jstypes.nim
 nim/lib/compiler/lambdalifting.nim
+nim/lib/compiler/layeredtable.nim
 nim/lib/compiler/layouter.nim
 nim/lib/compiler/lexer.nim
 nim/lib/compiler/liftdestructors.nim
@@ -514,12 +523,12 @@ nim/lib/compiler/lowerings.nim
 nim/lib/compiler/macrocacheimpl.nim
 nim/lib/compiler/magicsys.nim
 nim/lib/compiler/main.nim
+nim/lib/compiler/mangleutils.nim
 nim/lib/compiler/mapping.txt
 nim/lib/compiler/modulegraphs.nim
 nim/lib/compiler/modulepaths.nim
 nim/lib/compiler/modules.nim
 nim/lib/compiler/msgs.nim
-nim/lib/compiler/ndi.nim
 nim/lib/compiler/nilcheck.nim
 nim/lib/compiler/nim.cfg
 nim/lib/compiler/nim.nim
@@ -530,6 +539,7 @@ nim/lib/compiler/nimlexbase.nim
 nim/lib/compiler/nimpaths.nim
 nim/lib/compiler/nimsets.nim
 nim/lib/compiler/nodejs.nim
+nim/lib/compiler/nodekinds.nim
 nim/lib/compiler/nversion.nim
 nim/lib/compiler/optimizer.nim
 nim/lib/compiler/options.nim
@@ -545,12 +555,15 @@ nim/lib/compiler/pipelines.nim
 nim/lib/compiler/pipelineutils.nim
 nim/lib/compiler/platform.nim
 nim/lib/compiler/plugins/active.nim
+nim/lib/compiler/plugins/customast.nim
 nim/lib/compiler/plugins/itersgen.nim
 nim/lib/compiler/plugins/locals.nim
+nim/lib/compiler/plugins/plugins.nimble
 nim/lib/compiler/pluginsupport.nim
 nim/lib/compiler/pragmas.nim
 nim/lib/compiler/prefixmatches.nim
 nim/lib/compiler/procfind.nim
+nim/lib/compiler/pushpoppragmas.nim
 nim/lib/compiler/readme.md
 nim/lib/compiler/renderer.nim
 nim/lib/compiler/renderverbatim.nim
@@ -584,6 +597,7 @@ nim/lib/compiler/sizealignoffsetimpl.nim
 nim/lib/compiler/sourcemap.nim
 nim/lib/compiler/spawn.nim
 nim/lib/compiler/suggest.nim
+nim/lib/compiler/suggestsymdb.nim
 nim/lib/compiler/syntaxes.nim
 nim/lib/compiler/tccgen.nim
 nim/lib/compiler/transf.nim
@@ -602,6 +616,7 @@ nim/lib/compiler/vmhooks.nim
 nim/lib/compiler/vmmarshal.nim
 nim/lib/compiler/vmops.nim
 nim/lib/compiler/vmprofiler.nim
+nim/lib/compiler/vtables.nim
 nim/lib/compiler/wordrecg.nim
 nim/lib/core/hotcodereloading.nim
 nim/lib/core/locks.nim
@@ -849,6 +864,7 @@ nim/lib/std/setutils.nim
 nim/lib/std/sha1.nim
 nim/lib/std/socketstreams.nim
 nim/lib/std/stackframes.nim
+nim/lib/std/staticos.nim
 nim/lib/std/strbasics.nim
 nim/lib/std/symlinks.nim
 nim/lib/std/syncio.nim

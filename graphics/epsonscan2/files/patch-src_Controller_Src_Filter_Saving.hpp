@@ -1,20 +1,11 @@
---- src/Controller/Src/Filter/Saving.hpp.orig	2022-03-20 15:38:28 UTC
+--- src/Controller/Src/Filter/Saving.hpp.orig	2024-09-12 07:10:36 UTC
 +++ src/Controller/Src/Filter/Saving.hpp
-@@ -76,8 +76,7 @@ namespace epsonscan
-        imgFormat = kSDIImageFormatPNM;
-       }
-       file = CESFile::CreateTempFileInstanceWithPrefix(ES_CMN_FUNCS::PATH::ES_GetWorkTempPath(), prefixStream.str());
--      file->CloseFile();
--      if(ffMgr.Write(inDataBuf,
-+      if(!file || ffMgr.Write(inDataBuf,
-           file->GetFileName(),
-           imgFormat,
-           imageInfo,
-@@ -91,6 +90,7 @@ namespace epsonscan
-       }
-      }
-      filePath_ = file->GetFileName();
-+     file->CloseFile();
-      delete file;
-      file = nullptr;
-             }
+@@ -107,7 +107,7 @@ namespace epsonscan
+      if (imgFormat == kSDIImageFormatRaw)
+      {
+          file = CESFile::CreateTempFileInstanceWithPrefix(ES_CMN_FUNCS::PATH::ES_GetWorkTempPath(), prefixStream.str(), CESFile::ES_OPEN_MODE_WRITE_PLUS);
+-      if(file->WriteData(inDataBuf) == false)
++      if(!file || file->WriteData(inDataBuf) == false)
+       {
+        delete file;
+        file = nullptr;

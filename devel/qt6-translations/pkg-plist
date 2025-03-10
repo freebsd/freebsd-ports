@@ -1,3 +1,4 @@
+%%QT_SBOMDIR%%/qttranslations-%%FULLVER%%.spdx
 %%QT_L10NDIR%%/assistant_ar.qm
 %%QT_L10NDIR%%/assistant_bg.qm
 %%QT_L10NDIR%%/assistant_cs.qm

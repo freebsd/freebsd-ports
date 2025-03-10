@@ -1,6 +1,6 @@
---- OrthancFramework/Resources/CMake/ProtobufConfiguration.cmake.orig	2023-12-05 11:17:50 UTC
+--- OrthancFramework/Resources/CMake/ProtobufConfiguration.cmake.orig	2024-12-17 16:33:40 UTC
 +++ OrthancFramework/Resources/CMake/ProtobufConfiguration.cmake
-@@ -64,22 +64,26 @@ else()
+@@ -65,22 +65,26 @@ else()
      message(FATAL_ERROR "Please install the libprotobuf-dev package")
    endif()
  

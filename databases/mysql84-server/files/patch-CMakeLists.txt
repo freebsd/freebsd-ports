@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2024-06-03 11:39:00 UTC
+--- CMakeLists.txt.orig	2024-09-17 10:40:37 UTC
 +++ CMakeLists.txt
-@@ -1845,7 +1845,7 @@ IF(WITH_AUTHENTICATION_LDAP)
+@@ -1870,7 +1870,7 @@ IF(WITH_AUTHENTICATION_LDAP)
  ENDIF()
  
  IF(WITH_AUTHENTICATION_LDAP)
@@ -9,7 +9,7 @@
      # LDAP / SASL / KERBEROS / SSL must all be "system" or "custom", not a mix.
      IF(WITH_LDAP STREQUAL "system" OR
          WITH_SASL STREQUAL "system" OR
-@@ -1896,6 +1896,7 @@ ENDIF()
+@@ -1921,6 +1921,7 @@ ENDIF()
    ENDIF()
  ENDIF()
  
@@ -17,7 +17,7 @@
  # Add system/bundled editline.
  MYSQL_CHECK_EDITLINE()
  SET(EDITLINE_WARN_GIVEN)
-@@ -1906,6 +1907,7 @@ ENDIF()
+@@ -1931,6 +1932,7 @@ ENDIF()
      "You can use -DWITH_EDITLINE=bundled instead."
      )
  ENDIF()
@@ -25,7 +25,7 @@
  
  # Add lz4 library
  MYSQL_CHECK_LZ4()
-@@ -2189,7 +2191,9 @@ ADD_DEPENDENCIES(clang_tidy_prerequisites GenError)
+@@ -2213,7 +2215,9 @@ ADD_DEPENDENCIES(clang_tidy_prerequisites GenError)
  ADD_DEPENDENCIES(clang_tidy_prerequisites protobuf_generated_all)
  ADD_DEPENDENCIES(clang_tidy_prerequisites GenError)
  
@@ -36,7 +36,7 @@
  ADD_SUBDIRECTORY(strings)
  ADD_SUBDIRECTORY(vio)
  ADD_SUBDIRECTORY(mysys)
-@@ -2239,12 +2243,15 @@ ENDIF()
+@@ -2263,12 +2267,15 @@ ENDIF()
    ADD_SUBDIRECTORY(unittest/mytap/t)
  ENDIF()
  
@@ -54,7 +54,7 @@
    ADD_SUBDIRECTORY(testclients)
    ADD_SUBDIRECTORY(sql)
  ENDIF()
-@@ -2322,11 +2329,11 @@ ADD_SUBDIRECTORY(scripts)
+@@ -2346,11 +2353,11 @@ ADD_SUBDIRECTORY(scripts)
  # scripts/mysql_config depends on client and server targets loaded above.
  # It is referenced by some of the directories below, so we insert it here.
  ADD_SUBDIRECTORY(scripts)
@@ -67,7 +67,7 @@
    IF(WITH_INTERNAL)
      ADD_SUBDIRECTORY(internal)
    ENDIF()
-@@ -2354,8 +2361,10 @@ ENDIF()
+@@ -2377,8 +2384,10 @@ ENDIF()
    INCLUDE(fastcov)
  ENDIF()
  

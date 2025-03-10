@@ -19,7 +19,7 @@ RUN_DEPENDS=	p5-Capture-Tiny>=0:devel/p5-Capture-Tiny \
 		p5-FFI-CheckLib>=0.11:devel/p5-FFI-CheckLib \
 		p5-FFI-Platypus>=1.00:devel/p5-FFI-Platypus \
 		p5-File-ShareDir-Dist>=0:devel/p5-File-ShareDir-Dist
-TEST_DEPENDS=	p5-Test2-Suite>=0.000121:devel/p5-Test2-Suite
+TEST_DEPENDS=	p5-Test-Simple>=1.302200:devel/p5-Test-Simple
 
 USES=		perl5
 USE_PERL5=	configure

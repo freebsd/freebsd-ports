@@ -1,10 +1,14 @@
-TIMESTAMP = 1707735295
+TIMESTAMP = 1731431765
 SHA256 (rocky/d/dbus-glib-0.110-13.el9.aarch64.rpm) = 286d71dc7a6accdf1bd11129e87bcc5fd5cef3d6841aecae78bcba8c1f73bdf8
 SIZE (rocky/d/dbus-glib-0.110-13.el9.aarch64.rpm) = 122885
+SHA256 (rocky/d/dbus-glib-0.110-13.el9.i686.rpm) = f9aa849366180eba292a8140215a4ff9b1e84e3f582ab8b84d70a528dad31fd4
+SIZE (rocky/d/dbus-glib-0.110-13.el9.i686.rpm) = 132981
 SHA256 (rocky/d/dbus-glib-0.110-13.el9.x86_64.rpm) = bdbbb3f7e140ae24a17c4d3d2ae0d565e716bbfeb169f008547d730f83cf4071
 SIZE (rocky/d/dbus-glib-0.110-13.el9.x86_64.rpm) = 124442
 SHA256 (rocky/d/dbus-libs-1.12.20-8.el9.aarch64.rpm) = 472aefc4bb2db327841c9c8fa3bc30f56dc5e00b0e77fac9c179e39ba7ad0146
 SIZE (rocky/d/dbus-libs-1.12.20-8.el9.aarch64.rpm) = 152278
+SHA256 (rocky/d/dbus-libs-1.12.20-8.el9.i686.rpm) = 9dbc066872137050cf2fcee679533254ccefa83ca67c91a417ff2c5020926ca6
+SIZE (rocky/d/dbus-libs-1.12.20-8.el9.i686.rpm) = 167920
 SHA256 (rocky/d/dbus-libs-1.12.20-8.el9.x86_64.rpm) = ab81c1e16482f333aa285db120051b099b56661d4620f0f1af05f8e69126e97b
 SIZE (rocky/d/dbus-libs-1.12.20-8.el9.x86_64.rpm) = 154570
 SHA256 (rocky/d/dbus-1.12.20-8.el9.src.rpm) = e2dbe4b0f2e1cf97f08e865ba60094d8cfa5e23f9f851b59bcb77c60ad62d0bf

@@ -1,19 +1,19 @@
 PORTNAME=	fluid-soundfont
-PORTVERSION=	3.1
+DISTVERSION=	3.1
 CATEGORIES=	audio
-MASTER_SITES=	GENTOO
-DISTNAME=	${PORTNAME}_${PORTVERSION}
+MASTER_SITES=	DEBIAN
+DISTNAME=	${PORTNAME}_${DISTVERSION}.orig
 
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Fluid R3 sound fonts (GM/GS)
-WWW=		https://musescore.org/en/handbook/soundfont
+WWW=		https://tracker.debian.org/pkg/fluid-soundfont
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 NO_ARCH=	yes
 NO_BUILD=	yes
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
 
 PLIST_FILES=	share/sounds/sf2/FluidR3_GM.sf2 \
 		share/sounds/sf2/FluidR3_GS.sf2 \

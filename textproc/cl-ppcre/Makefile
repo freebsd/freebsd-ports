@@ -1,6 +1,7 @@
 PORTNAME=	cl-ppcre
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.1.2
+PORTREVISION=	1
 CATEGORIES=	textproc lisp
 
 MAINTAINER=	olgeni@FreeBSD.org
@@ -9,7 +10,7 @@ WWW=		http://www.weitz.de/cl-ppcre/
 
 LICENSE=	BSD2CLAUSE
 
-USE_ASDF=	yes
+USES=		cl
 USE_GITHUB=	yes
 GH_ACCOUNT=	edicl
 
@@ -60,5 +61,4 @@ do-install-DOCS-on:
 	${INSTALL_DATA} ${WRKSRC}/CHANGELOG ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/docs/index.html ${STAGEDIR}${DOCSDIR}
 
-.include "${.CURDIR}/../../devel/cl-asdf/bsd.cl-asdf.mk"
 .include <bsd.port.mk>

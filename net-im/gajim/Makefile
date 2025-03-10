@@ -1,5 +1,6 @@
 PORTNAME=	gajim
-DISTVERSION=	1.9.2
+DISTVERSION=	2.0.1
+PORTREVISION=	1
 CATEGORIES=	net-im
 MASTER_SITES=	https://gajim.org/downloads/${DISTVERSION:R}/
 
@@ -26,11 +27,12 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}css-parser>0:www/py-css-parser@${PY_FLAVOR} 
 		${PYTHON_PKGNAMEPREFIX}emoji>0:misc/py-emoji@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sqlalchemy20>0:databases/py-sqlalchemy20@${PY_FLAVOR}
 LIB_DEPENDS=	libsoup-3.0.so:devel/libsoup3 \
-		libgspell-1.so:textproc/gspell
+		libspelling-1.so:x11-toolkits/libspelling \
+		libgsound.so:audio/gsound
 
-USES=		cpe gettext gnome python:3.10+ xorg
+USES=		cpe gettext gnome python:3.11+ xorg
 USE_PYTHON=	autoplist cryptography pep517 noflavors
-USE_GNOME=	pygobject3
+USE_GNOME=	gtksourceview5 pygobject3
 USE_XORG=	x11 xext xscrnsaver
 
 NO_ARCH=	yes
@@ -39,9 +41,6 @@ OPTIONS_DEFINE=	DBUS DOCS OPENGPG
 OPTIONS_DEFAULT=DBUS OPENGPG
 
 OPENGPG_DESC=	GPG encryption per XEP-0373
-
-# GUPNP_DESC=	UPnP IGD protocol support
-# GUPNP_RUN_DEPENDS=	${PYTHON_SITELIBDIR}/gupnp/__init__.py:net/gupnp-igd@${PY_FLAVOR}
 
 DBUS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dbus>=0.82.2:devel/py-dbus@${PY_FLAVOR}
 OPENGPG_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gpgme>0:security/py-gpgme@${PY_FLAVOR}

@@ -1,0 +1,36 @@
+From 46f5b54aa5761541a16108d66764d662f37f04d2 Mon Sep 17 00:00:00 2001
+From: "Timur I. Bakeyev" <timur@FreeBSD.org>
+Date: Mon, 31 May 2021 02:41:48 +0200
+Subject: [PATCH 21/28] Fix casting warnings in the nfs_quota debug message.
+
+Initialize quota structure with zeros.
+
+Signed-off-by: Timur I. Bakeyev <timur@FreeBSD.org>
+---
+ source3/smbd/quotas.c | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+diff --git a/source3/smbd/quotas.c b/source3/smbd/quotas.c
+index 604631f81d6..c23fa49b3b0 100644
+--- a/source3/smbd/quotas.c
++++ b/source3/smbd/quotas.c
+@@ -125,6 +125,7 @@ static bool nfs_quotas(char *nfspath, uid_t euser_id, uint64_t *bsize, uint64_t
+ 	if (!cutstr)
+ 		return False;
+ 
++	memset(&D, '\0', sizeof(D));
+ 	memset(cutstr, '\0', len+1);
+ 	host = strncat(cutstr,mnttype, sizeof(char) * len );
+ 	DEBUG(5,("nfs_quotas: looking for mount on \"%s\"\n", cutstr));
+@@ -133,7 +134,7 @@ static bool nfs_quotas(char *nfspath, uid_t euser_id, uint64_t *bsize, uint64_t
+ 	args.gqa_pathp = testpath+1;
+ 	args.gqa_uid = uid;
+ 
+-	DEBUG(5,("nfs_quotas: Asking for host \"%s\" rpcprog \"%i\" rpcvers \"%i\" network \"%s\"\n", host, RQUOTAPROG, RQUOTAVERS, "udp"));
++	DEBUG(5,("nfs_quotas: Asking for host \"%s\" rpcprog \"%lu\" rpcvers \"%lu\" network \"%s\"\n", host, RQUOTAPROG, RQUOTAVERS, "udp"));
+ 
+ 	if ((clnt = clnt_create(host, RQUOTAPROG, RQUOTAVERS, "udp")) == NULL) {
+ 		ret = False;
+-- 
+2.37.1
+

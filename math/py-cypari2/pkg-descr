@@ -1,1 +1,3 @@
 A Python interface to the number theory library PARI/GP.
+
+The interface as been kept as close as possible from PARI/GP.

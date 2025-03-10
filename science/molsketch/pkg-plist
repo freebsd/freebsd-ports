@@ -33,6 +33,7 @@ include/libmolsketch/actions/rotateaction.h
 include/libmolsketch/actions/textaction.h
 include/libmolsketch/actions/transformcommand.h
 include/libmolsketch/actions/zlevelaction.h
+include/libmolsketch/alignment.h
 include/libmolsketch/arrow.h
 include/libmolsketch/arrowpopup.h
 include/libmolsketch/atom.h
@@ -45,6 +46,10 @@ include/libmolsketch/constants.h
 include/libmolsketch/coordinatedelegate.h
 include/libmolsketch/coordinatemodel.h
 include/libmolsketch/coordinatetableview.h
+include/libmolsketch/core/coreatom.h
+include/libmolsketch/core/corebond.h
+include/libmolsketch/core/coremolecule.h
+include/libmolsketch/debuggable.h
 include/libmolsketch/electronsystem.h
 include/libmolsketch/element.h
 include/libmolsketch/elementalignment.h
@@ -56,6 +61,7 @@ include/libmolsketch/graphicsitem.h
 include/libmolsketch/grid.h
 include/libmolsketch/helptextemptydock.h
 include/libmolsketch/helptextonemptylabel.h
+include/libmolsketch/iconutils.h
 include/libmolsketch/librarymodel.h
 include/libmolsketch/libraryview.h
 include/libmolsketch/lonepair.h
@@ -66,6 +72,13 @@ include/libmolsketch/moleculepopup.h
 include/libmolsketch/molscene.h
 include/libmolsketch/molview.h
 include/libmolsketch/neighboralignment.h
+include/libmolsketch/painting/paintable.h
+include/libmolsketch/painting/paintableaggregate.h
+include/libmolsketch/painting/regulartextbox.h
+include/libmolsketch/painting/stackedtextbox.h
+include/libmolsketch/painting/textbox.h
+include/libmolsketch/painting/textfield.h
+include/libmolsketch/painting/textline.h
 include/libmolsketch/propertiesdock.h
 include/libmolsketch/propertieswidget.h
 include/libmolsketch/qtdeprecations.h
@@ -79,7 +92,7 @@ include/libmolsketch/stringify.h
 include/libmolsketch/sumformula.h
 include/libmolsketch/textitem.h
 include/libmolsketch/xmlobjectinterface.h
-lib/molsketch/libmolsketch.so
+lib/molsketch/libmskcore.so
 lib/molsketch/libobabeliface.so
 share/applications/molsketch.desktop
 share/icons/hicolor/scalable/apps/molsketch.svg

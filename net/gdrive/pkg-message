@@ -1,8 +1,13 @@
 [
 { type: install
   message: <<EOM
-If you are getting "Error 403: Rate Limit Exceeded" errors, please see
-workaround described here: https://github.com/prasmussen/gdrive/pull/428
+
+In order to use this tool, you need to create Google API credentials.
+Please follow the steps below to create them:
+
+- https://github.com/glotlabs/gdrive/blob/main/docs/basic_usage.md
+- https://github.com/glotlabs/gdrive/blob/main/docs/create_google_api_credentials.md
+
 EOM
 }
 ]

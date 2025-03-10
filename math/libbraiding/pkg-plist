@@ -6,3 +6,4 @@ lib/libbraiding.a
 lib/libbraiding.so
 lib/libbraiding.so.0
 lib/libbraiding.so.0.0.0
+libdata/pkgconfig/libbraiding.pc

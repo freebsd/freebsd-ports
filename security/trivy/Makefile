@@ -1,6 +1,6 @@
 PORTNAME=	trivy
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.54.1
+DISTVERSION=	0.60.0
 CATEGORIES=	security
 
 MAINTAINER=	mfechner@FreeBSD.org
@@ -10,7 +10,9 @@ WWW=		https://github.com/aquasecurity/trivy
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:modules,1.22
+# trivy uses go 1.24 which is not available yet in FreeBSD
+#USES=		go:modules,1.24
+USES=		go:modules,1.23
 
 GO_MODULE=	github.com/aquasecurity/trivy
 GO_TARGET=	./cmd/trivy

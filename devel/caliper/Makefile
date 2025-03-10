@@ -1,11 +1,12 @@
 PORTNAME=	caliper
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.11.0
+DISTVERSION=	2.12.0
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Instrumentation and performance profiling library
-WWW=		https://software.llnl.gov/Caliper/
+WWW=		https://software.llnl.gov/Caliper/ \
+		https://github.com/LLNL/Caliper
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -19,5 +20,7 @@ SHEBANG_FILES=	python/cali2traceevent \
 USE_GITHUB=	yes
 GH_ACCOUNT=	LLNL
 GH_PROJECT=	Caliper
+
+# 2 tests fail, see https://github.com/LLNL/Caliper/issues/611
 
 .include <bsd.port.mk>

@@ -1,6 +1,6 @@
 PORTNAME=	wl-mirror
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.16.5
+DISTVERSION=	0.17.0
 CATEGORIES=	x11 wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -22,8 +22,12 @@ GH_ACCOUNT=	Ferdi265
 GL_TUPLE=	https://gitlab.freedesktop.org:wlroots:wlr-protocols:4264185:wlrproto/proto/wlr-protocols
 PLIST_FILES=	bin/${PORTNAME}
 
-OPTIONS_DEFINE=	MANPAGES
-OPTIONS_DEFAULT=MANPAGES
+OPTIONS_DEFINE=	CSD MANPAGES
+OPTIONS_DEFAULT=CSD MANPAGES
+
+CSD_DESC=		Client-side decorations via libdecor
+CSD_LIB_DEPENDS=	libdecor-0.so:x11-toolkits/libdecor
+CSD_CMAKE_BOOL=		WITH_LIBDECOR
 
 MANPAGES_BUILD_DEPENDS=	scdoc:textproc/scdoc
 MANPAGES_CMAKE_BOOL=	INSTALL_DOCUMENTATION

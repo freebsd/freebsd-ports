@@ -1,11 +1,13 @@
---- Makefile.orig	2022-08-18 15:18:29 UTC
+diff --git Makefile Makefile
+index ca742a94f7..af2655342b 100644
+--- Makefile
 +++ Makefile
 @@ -144,7 +144,7 @@ ASTTOPDIR:=$(subst $(space),\$(space),$(CURDIR))
  OVERWRITE=y
  
  # Include debug and macro symbols in the executables (-g) and profiling info (-pg)
 -DEBUG=-g3
-+#DEBUG=-g3
++# DEBUG=-g3
  
  # Asterisk.conf is located in ASTETCDIR or by using the -C flag
  # when starting Asterisk
@@ -14,7 +16,7 @@
  
  # Default install directory for DAHDI hooks.
 -DAHDI_UDEV_HOOK_DIR = /usr/share/dahdi/span_config.d
-+#DAHDI_UDEV_HOOK_DIR = /usr/share/dahdi/span_config.d
++# DAHDI_UDEV_HOOK_DIR = /usr/share/dahdi/span_config.d
  
  # If the file .asterisk.makeopts is present in your home directory, you can
  # include all of your favorite menuselect options so that every time you download
@@ -45,12 +47,12 @@
  	done
  	$(MAKE) -C sounds install
  	find rest-api -name "*.json" | while read x; do \
-@@ -545,7 +543,7 @@ INSTALLDIRS="$(ASTLIBDIR)" "$(ASTMODDIR)" "$(ASTSBINDI
+@@ -545,7 +543,7 @@ INSTALLDIRS="$(ASTLIBDIR)" "$(ASTMODDIR)" "$(ASTSBINDIR)" "$(ASTCACHEDIR)" "$(AS
  	"$(ASTDATADIR)/firmware/iax" "$(ASTDATADIR)/images" "$(ASTDATADIR)/keys" \
  	"$(ASTDATADIR)/phoneprov" "$(ASTDATADIR)/rest-api" "$(ASTDATADIR)/static-http" \
  	"$(ASTDATADIR)/sounds" "$(ASTDATADIR)/moh" "$(ASTMANDIR)/man8" "$(AGI_DIR)" "$(ASTDBDIR)" \
--	"$(ASTDATADIR)/third-party" "${ASTDATADIR}/keys/stir_shaken"
-+	"$(ASTDATADIR)/third-party" "${ASTDATADIR}/keys/stir_shaken" "$(ASTSPOOLDIR)/outgoing"
+-	"$(ASTDATADIR)/third-party" "${ASTDATADIR}/keys/stir_shaken" "${ASTDATADIR}/keys/stir_shaken/cache"
++	"$(ASTDATADIR)/third-party" "${ASTDATADIR}/keys/stir_shaken" "${ASTDATADIR}/keys/stir_shaken/cache" "$(ASTSPOOLDIR)/outgoing"
  
  installdirs:
  	@for i in $(INSTALLDIRS); do \
@@ -71,10 +73,10 @@
 -	$(INSTALL) -d $(DESTDIR)/$(DAHDI_UDEV_HOOK_DIR)
 -	$(INSTALL) -m 644 contrib/scripts/dahdi_span_config_hook $(DESTDIR)$(DAHDI_UDEV_HOOK_DIR)/40-asterisk
 -endif
-+#ifeq ($(HAVE_DAHDI),1)
-+#	$(INSTALL) -d $(DESTDIR)/$(DAHDI_UDEV_HOOK_DIR)
-+#	$(INSTALL) -m 644 contrib/scripts/dahdi_span_config_hook $(DESTDIR)$(DAHDI_UDEV_HOOK_DIR)/40-asterisk
-+#endif
++# ifeq ($(HAVE_DAHDI),1)
++# 	$(INSTALL) -d $(DESTDIR)/$(DAHDI_UDEV_HOOK_DIR)
++# 	$(INSTALL) -m 644 contrib/scripts/dahdi_span_config_hook $(DESTDIR)$(DAHDI_UDEV_HOOK_DIR)/40-asterisk
++# endif
  
  $(SUBDIRS_INSTALL):
  	+@DESTDIR="$(DESTDIR)" ASTSBINDIR="$(ASTSBINDIR)" ASTDATADIR="$(ASTDATADIR)" $(SUBMAKE) -C $(@:-install=) install
@@ -109,7 +111,7 @@
 +		$(INSTALL) -m 644 $$x $(DESTDIR)$(ASTETCDIR)/`$(BASENAME) $$x .sample`.sample ; \
  	done ; \
 -	if [ "$(OVERWRITE)" = "y" ]; then \
-+	if true; then \
++	if true ; then \
  		echo "Updating asterisk.conf" ; \
  		sed -e 's|^astcachedir.*$$|astcachedir => $(ASTCACHEDIR)|' \
  			-e 's|^astetcdir.*$$|astetcdir => $(ASTETCDIR)|' \

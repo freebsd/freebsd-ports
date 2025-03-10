@@ -14,11 +14,10 @@ BUILD_DEPENDS=	${SA_DIR}/camlp-streams/META:devel/ocaml-camlp-streams \
 		dune:devel/ocaml-dune
 RUN_DEPENDS=	${SA_DIR}/camlp-streams/META:devel/ocaml-camlp-streams
 
-USES=		gmake
+USES=		gmake ocaml
 USE_GITHUB=	yes
 GH_ACCOUNT=	yoriyuki
 GH_PROJECT=	Camomile
-USE_OCAML=	yes
 
 MAKE_ENV=	LIBDIR="${PREFIX}/${OCAML_SITELIBDIR}"
 DOCSDIR=	${OCAML_DOCSDIR}/${PORTNAME}
@@ -28,6 +27,12 @@ PORTDOCS=	CHANGES.md LICENSE.md README.md
 OPTIONS_DEFINE=	DOCS
 
 SA_DIR=		${LOCALBASE}/${OCAML_SITELIBDIR}
+
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == powerpc
+USE_BINUTILS=	yes
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e '/^INSTALL_ARGS/ \

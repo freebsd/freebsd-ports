@@ -9,7 +9,8 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cairo>0:graphics/py-cairo@${PY_FLAVOR} \
 		sassc:textproc/sassc
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cairo>0:graphics/py-cairo@${PY_FLAVOR}
 
-USES=		cmake kde:6 python qt:6 tar:xz
+USES=		cmake gnome kde:6 python qt:6 tar:xz
+USE_GNOME=	gtk20
 USE_KDE=	breeze \
 		ecm:build
 USE_QT=		base

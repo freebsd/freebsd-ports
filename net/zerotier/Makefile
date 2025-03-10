@@ -1,6 +1,8 @@
 PORTNAME=	zerotier
-DISTVERSION=	1.14.0
+DISTVERSION=	1.14.2
 CATEGORIES=	net
+
+PATCH_SITES+=	https://github.com/zerotier/zerotierone/commit/
 
 MAINTAINER=	dch@FreeBSD.org
 COMMENT=	Network virtualization everywhere

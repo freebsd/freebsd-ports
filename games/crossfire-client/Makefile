@@ -1,8 +1,7 @@
 PORTNAME=	crossfire-client
-PORTVERSION=	1.75.2
-PORTREVISION=	1
+DISTVERSION=	1.75.3
 CATEGORIES=	games
-MASTER_SITES=	SF/crossfire/${PORTNAME}/${PORTVERSION}
+MASTER_SITES=	SF/crossfire/${PORTNAME}/${DISTVERSION}
 
 MAINTAINER=	kevinz5000@gmail.com
 COMMENT=	Cooperative multiplayer graphical RPG and adventure game
@@ -11,12 +10,14 @@ WWW=		https://crossfire.real-time.com/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libcurl.so:ftp/curl
+LIB_DEPENDS=	libcurl.so:ftp/curl \
+		libpng.so:graphics/png
 
-USES=		cmake gnome perl5 pkgconfig sdl vala:build
+USES=		cmake gnome perl5 pkgconfig sdl vala:build xorg
 USE_GNOME=	gtk20
 USE_PERL5=	build
-USE_SDL=	sdl image mixer
+USE_SDL=	mixer2 sdl2
+USE_XORG=	ice sm x11 xext
 
 CMAKE_ARGS=	-DLUA=OFF -DMETASERVER2=ON -DSOUND=ON
 

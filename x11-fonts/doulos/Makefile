@@ -1,28 +1,27 @@
 PORTNAME=	DoulosSIL
-PORTVERSION=	4.112
-PORTREVISION=	2
+DISTVERSION=	6.200
 CATEGORIES=	x11-fonts
-MASTER_SITES=	http://scripts.sil.org/cms/scripts/render_download.php?&format=file&media_id=${MEDIA_ID}&filename=/ \
-		LOCAL/bf
+MASTER_SITES=	https://software.sil.org/downloads/r/doulos/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ports@zoltankiraly.com
 COMMENT=	Doulos SIL TrueType font collection
-WWW=		https://scripts.sil.org/cms/scripts/page.php?item_id=DoulosSILfont
+WWW=		https://software.sil.org/doulos/
 
 LICENSE=	OFL11
+LICENSE_FILE=	${WRKSRC}/OFL.txt
 
 USES=		fonts zip
 
-MEDIA_ID=	${DISTNAME}${EXTRACT_SUFX}
+NO_ARCH=	yes
 NO_BUILD=	yes
 
-PLIST_FILES=	${FONTSDIR}/${PORTNAME}-R.ttf
+SUB_FILES=	pkg-message
+
+PLIST_FILES=	${FONTSDIR}/${PORTNAME}-Regular.ttf
+
+PORTDOCS=	FONTLOG.txt OFL-FAQ.txt README.txt
 
 OPTIONS_DEFINE=	DOCS
-
-PORTDOCS=	FONTLOG.txt OFL-FAQ.txt OFL.txt README.txt
-
-SUB_FILES=	pkg-message
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${FONTSDIR}

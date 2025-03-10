@@ -1,0 +1,30 @@
+https://github.com/vaidik/commentjson/pull/52
+
+From 5d5ffaed8dcfe9419b1cca24e61a8e3b60ff3056 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Micha=C5=82=20G=C3=B3rny?= <mgorny@gentoo.org>
+Date: Mon, 25 Apr 2022 17:50:14 +0200
+Subject: [PATCH] Update lark-parser to lark
+
+The lark-parser has been renamed to lark.  The newest release seems
+to be compatible with commentjson's code and all tests pass, so just
+update the requirement.
+
+Closes #51
+---
+ requirements.txt | 2 +-
+ setup.py         | 2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/setup.py b/setup.py
+index 04a1370..c0019ef 100644
+--- a/setup.py
++++ setup.py
+@@ -9,7 +9,7 @@
+ __version__ = '0.9.0'
+ 
+ install_requires = [
+-    'lark-parser>=0.7.1,<0.8.0'
++    'lark'
+ ]
+ if sys.version_info <= (2, 6):
+     install_requires.append('simplejson')

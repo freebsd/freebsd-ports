@@ -92,4 +92,5 @@ share/locale/tr/LC_MESSAGES/xdg-desktop-portal.mo
 share/locale/uk/LC_MESSAGES/xdg-desktop-portal.mo
 share/locale/zh_CN/LC_MESSAGES/xdg-desktop-portal.mo
 share/locale/zh_TW/LC_MESSAGES/xdg-desktop-portal.mo
+%%MANPAGES%%share/man/man5/portals.conf.5.gz
 share/pkgconfig/xdg-desktop-portal.pc

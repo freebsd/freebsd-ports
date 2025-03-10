@@ -1,6 +1,6 @@
---- setup.py.orig	2024-03-25 14:15:57 UTC
+--- setup.py.orig	2024-09-30 20:12:15 UTC
 +++ setup.py
-@@ -65,11 +65,12 @@ try:
+@@ -66,11 +66,12 @@ try:
  ################################################################################
  
  try:
@@ -18,7 +18,7 @@
  except (OSError, subprocess.CalledProcessError):
      _git_version = ""
  
-@@ -227,10 +228,7 @@ class BuildPy(setuptools.command.build_py.build_py):
+@@ -228,10 +229,7 @@ class BuildPy(setuptools.command.build_py.build_py):
  
  class BuildPy(setuptools.command.build_py.build_py):
      def run(self):
@@ -30,7 +30,7 @@
          create_version(dst_dir)
          return super().run()
  
-@@ -273,10 +271,7 @@ class BuildExt(setuptools.command.build_ext.build_ext)
+@@ -274,10 +272,7 @@ class BuildExt(setuptools.command.build_ext.build_ext)
              self.copy_file(src, dst)
  
          # Copy over the generated python files to build/source dir depending on editable mode

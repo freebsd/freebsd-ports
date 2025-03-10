@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/services/device/geolocation/location_arbitrator.cc.orig	2023-12-12 22:08:45 UTC
+--- src/3rdparty/chromium/services/device/geolocation/location_arbitrator.cc.orig	2024-07-03 01:14:49 UTC
 +++ src/3rdparty/chromium/services/device/geolocation/location_arbitrator.cc
-@@ -190,7 +190,7 @@ LocationArbitrator::NewSystemLocationProvider() {
+@@ -196,7 +196,7 @@ LocationArbitrator::NewSystemLocationProvider() {
  
  std::unique_ptr<LocationProvider>
  LocationArbitrator::NewSystemLocationProvider() {

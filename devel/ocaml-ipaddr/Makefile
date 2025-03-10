@@ -1,6 +1,7 @@
 PORTNAME=	ipaddr
 PORTVERSION=	5.6.0
 DISTVERSIONPREFIX=	v
+PORTREVISION=	2
 CATEGORIES=	devel
 PKGNAMEPREFIX=	ocaml-
 
@@ -22,7 +23,6 @@ USES=		ocaml:dune
 USE_GITHUB=	yes
 GH_ACCOUNT=	mirage
 GH_PROJECT=	ocaml-ipaddr
-USE_OCAML=		yes
 OCAML_PACKAGES=		ipaddr ipaddr-cstruct ipaddr-sexp
 OCAML_PACKAGES+=	macaddr macaddr-cstruct macaddr-sexp
 

@@ -1,0 +1,3 @@
+A lossless compressed data format that uses a combination of the LZ77 algorithm
+and Huffman coding. Brotli is similar in speed to deflate (gzip) but offers more
+dense compression.

@@ -5,7 +5,7 @@ PORTREVISION=	4
 CATEGORIES=	net-mgmt www
 PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 
-MAINTAINER=	joneum@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Integrate Elasticsearch into Icinga Web 2
 WWW=		https://github.com/Icinga/icingaweb2-module-elasticsearch
 

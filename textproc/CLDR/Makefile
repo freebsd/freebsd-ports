@@ -1,7 +1,7 @@
 PORTNAME=	CLDR
-PORTVERSION=	43.0
+PORTVERSION=	46.1
 CATEGORIES=	textproc
-MASTER_SITES=	https://unicode.org/Public/cldr/${PORTVERSION:R}/:src	\
+MASTER_SITES=	https://unicode.org/Public/cldr/${PORTVERSION}/:src	\
 		http://www.unicode.org/:lic
 DISTFILES=	${SRCFILE}:src	\
 		copyright.html:lic

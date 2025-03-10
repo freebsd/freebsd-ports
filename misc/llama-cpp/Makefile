@@ -1,6 +1,6 @@
 PORTNAME=	llama-cpp
 DISTVERSIONPREFIX=	b
-DISTVERSION=	3538
+DISTVERSION=	4837
 CATEGORIES=	misc # machine-learning
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -11,8 +11,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN_armv7=	clang crashes, see https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=278810
-
-LIB_DEPENDS=	libvulkan.so:graphics/vulkan-loader
+BROKEN_i386=	compilation fails, see https://github.com/ggerganov/llama.cpp/issues/9545
 
 USES=		cmake:testing compiler:c++11-lang python:run shebangfix
 USE_LDCONFIG=	yes
@@ -28,11 +27,14 @@ CMAKE_ON=	BUILD_SHARED_LIBS
 CMAKE_OFF=	LLAMA_BUILD_TESTS
 CMAKE_TESTING_ON=	LLAMA_BUILD_TESTS
 
-LDFLAGS+=	-pthread
-
-OPTIONS_DEFINE=		EXAMPLES VULKAN
-OPTIONS_DEFAULT=	VULKAN
+OPTIONS_DEFINE=		CURL EXAMPLES VULKAN
+OPTIONS_DEFAULT=	CURL VULKAN
 OPTIONS_SUB=		yes
+
+CURL_DESCR=		Use libcurl to download model from an URL
+CURL_CMAKE_BOOL=	LLAMA_CURL
+CURL_USES=		localbase
+CURL_LIB_DEPENDS=	libcurl.so:ftp/curl
 
 EXAMPLES_CMAKE_BOOL=	LLAMA_BUILD_EXAMPLES
 
@@ -42,8 +44,21 @@ VULKAN_BUILD_DEPENDS=	glslc:graphics/shaderc \
 			vulkan-headers>0:graphics/vulkan-headers
 VULKAN_LIB_DEPENDS=	libvulkan.so:graphics/vulkan-loader
 
-BINARY_ALIAS=	git=false
+BINARY_ALIAS=	git=false \
+		python=${PYTHON_CMD} # for tests
 
-# 2 tests fail: https://github.com/ggerganov/llama.cpp/issues/8906
+do-test-ci: # build of tests fails, see https://github.com/ggerganov/llama.cpp/issues/10955
+	@cd ${WRKSRC} && \
+		${SETENV} ${MAKE_ENV} bash ci/run.sh ./tmp/results ./tmp/mnt
+
+# tests as of 4458: 97% tests passed, 1 tests failed out of 31, see https://github.com/ggerganov/llama.cpp/issues/11036
+
+# tests as of 4649:
+# 88% tests passed, 4 tests failed out of 32
+# The following tests FAILED:
+#         18 - test-chat (Subprocess aborted)                    main   # see https://github.com/ggerganov/llama.cpp/issues/11705
+#         24 - test-gguf (SEGFAULT)                              main
+#         25 - test-backend-ops (SEGFAULT)                       main
+#         32 - test-eval-callback (SEGFAULT)                     curl eval-callback
 
 .include <bsd.port.mk>

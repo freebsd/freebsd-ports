@@ -3,13 +3,13 @@ CATEGORIES=	multimedia
 
 COMMENT=	GStreamer Dynamic Adaptive Streaming over HTTP demuxer plugin
 
-GST_PLUGIN=	dash
+USE_GNOME=	libxml2
+
+MASTERDIR=	${.CURDIR:H:H}/multimedia/gstreamer1-plugins
+
+PLIST=		${.CURDIR}/pkg-plist
+
 DIST=		bad
-
-MASTERDIR=	${.CURDIR}/../../multimedia/gstreamer1-plugins
-
-PLIST=  ${.CURDIR}/pkg-plist
-
-USE_GNOME= libxml2
+GST_PLUGIN=	dash
 
 .include "${MASTERDIR}/Makefile"

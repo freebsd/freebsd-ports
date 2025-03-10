@@ -5,6 +5,7 @@
 PORTNAME=	snappy
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.1.10.5
+PORTREVISION=	1
 CATEGORIES=	archivers java
 MASTER_SITES=	LOCAL/otis:repo
 PKGNAMESUFFIX=	java
@@ -21,13 +22,10 @@ WWW=		https://github.com/xerial/snappy-java
 
 LICENSE=	APACHE20
 
-BROKEN_armv6=	fails to build: maven-assembly-plugin: Failed to retrieve numeric file attributes
-BROKEN_armv7=	fails to build: maven-assembly-plugin: Failed to retrieve numeric file attributes
-
 BUILD_DEPENDS=	cmake:devel/cmake-core \
 		sbt:devel/sbt
 
-USES=		gmake
+USES=		gmake java:build
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	xerial
@@ -38,8 +36,6 @@ GH_TUPLE=	google:snappy:${DISTVERSION:R}:google \
 		google:googletest:b796f7d:google_googletest/google_googletest \
 		kiyo-masui:bitshuffle:${BITSHUFFLE_V}:masui
 
-USE_JAVA=	yes
-JAVA_BUILD=	jre # prevent JAVA_RUN via bsd.java.mk
 USE_LDCONFIG=	yes
 MAKE_ARGS+=	CXX="${CXX}"
 TEST_TARGET=	test
@@ -49,6 +45,10 @@ PLIST_FILES=	${JAVAJARDIR}/snappy-java.jar \
 		lib/libsnappyjava.so
 
 .include <bsd.port.pre.mk>
+
+.if ${ARCH} == powerpc
+MAKE_ENV+=	_JAVA_OPTIONS="-Xmx768m -Xms768m"
+.endif
 
 post-extract:
 	${MKDIR} ${WRKSRC}/target
@@ -75,6 +75,10 @@ PLATFORM_DIR_SUFFIX=	FreeBSD-x86_64
 PLATFORM_DIR_SUFFIX=	FreeBSD-x86
 . elif ${ARCH} == aarch64
 PLATFORM_DIR_SUFFIX=	FreeBSD-aarch64
+. elif ${ARCH} == armv6 || ${ARCH} == armv7
+PLATFORM_DIR_SUFFIX=	FreeBSD-arm
+. elif ${ARCH} == powerpc
+PLATFORM_DIR_SUFFIX=	FreeBSD-ppc
 . elif ${ARCH} == powerpc64
 PLATFORM_DIR_SUFFIX=	FreeBSD-ppc64
 . elif ${ARCH} == powerpc64le

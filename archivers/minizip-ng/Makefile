@@ -1,5 +1,5 @@
 PORTNAME=	minizip-ng
-DISTVERSION=	4.0.7
+DISTVERSION=	4.0.8
 CATEGORIES=	archivers
 
 MAINTAINER=	vvd@FreeBSD.org

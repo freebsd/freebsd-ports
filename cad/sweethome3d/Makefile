@@ -1,5 +1,6 @@
 PORTNAME=	sweethome3d
 PORTVERSION=	7.1
+PORTREVISION=	1
 CATEGORIES=	cad java
 MASTER_SITES=	SF/${PORTNAME}/SweetHome3D-source/${DISTNAME}/
 DISTNAME=	SweetHome3D-${PORTVERSION}-src
@@ -15,10 +16,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING.TXT
 BUILD_DEPENDS=	java3d>=0:java/java3d
 RUN_DEPENDS=	java3d>=0:java/java3d
 
-USES=		cmake:indirect
-
-USE_ANT=	yes
-USE_JAVA=	8
+USES=		cmake:indirect java:ant,run
+JAVA_VERSION=	8
 
 USE_GITHUB=	nodefault
 GH_ACCOUNT=	puybaret:yr

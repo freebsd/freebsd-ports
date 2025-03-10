@@ -1,6 +1,6 @@
 PORTNAME=	qlogtools
 PORTVERSION=	3.1
-PORTREVISION=	4
+PORTREVISION=	6
 CATEGORIES=	sysutils
 MASTER_SITES=	http://untroubled.org/${PORTNAME}/
 

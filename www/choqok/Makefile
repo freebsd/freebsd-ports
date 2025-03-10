@@ -12,11 +12,15 @@ WWW=		https://www.kde.org/applications/internet/choqok/
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libqjson-qt5.so:devel/qjson \
+DEPRECATED=	Project discontinued upstream
+EXPIRATION_DATE=2025-03-31
+
+LIB_DEPENDS=	libqca-qt5.so:devel/qca@qt5 \
+		libqjson-qt5.so:devel/qjson \
 		libqoauth-qt5.so:net/qoauth-qt5 \
 		libtelepathy-qt5.so:net-im/telepathy-qt
 
-USES=		cmake compiler:c++11-lib gettext kde:5 pkgconfig qca qt:5 \
+USES=		cmake compiler:c++11-lib gettext kde:5 pkgconfig qt:5 \
 		tar:xz xorg
 USE_KDE=	attica auth bookmarks codecs completion config configwidgets \
 		coreaddons doctools emoticons globalaccel guiaddons i18n \

@@ -1,0 +1,36 @@
+urllib3.future is a powerful, user-friendly HTTP client for Python.
+
+urllib3.future goes beyond supported features while remaining compatible.
+
+urllib3.future brings many critical features that are missing from both the
+Python standard libraries and urllib3:
+- Async.
+- Task safety.
+- Thread safety.
+- Happy Eyeballs.
+- Connection pooling.
+- Unopinionated about OpenSSL.
+- Client-side SSL/TLS verification.
+- Highly customizable DNS resolution.
+- File uploads with multipart encoding.
+- DNS over UDP, TLS, QUIC, or HTTPS. DNSSEC protected.
+- Helpers for retrying requests and dealing with HTTP redirects.
+- Automatic Keep-Alive for HTTP/1.1, HTTP/2, and HTTP/3.
+- Support for gzip, deflate, brotli, and zstd encoding.
+- Support for Python/PyPy 3.7+, no compromise.
+- Automatic Connection Upgrade / Downgrade.
+- Early (Informational) Responses / Hints.
+- HTTP/1.1, HTTP/2 and HTTP/3 support.
+- WebSocket over HTTP/2+ (RFC8441).
+- Proxy support for HTTP and SOCKS.
+- Post-Quantum Security with QUIC.
+- Detailed connection inspection.
+- HTTP/2 with prior knowledge.
+- Server Side Event (SSE).
+- Multiplexed connection.
+- Mirrored Sync & Async.
+- Trailer Headers.
+- Amazingly Fast.
+- WebSocket.
+
+urllib3.future is powerful and easy to use.

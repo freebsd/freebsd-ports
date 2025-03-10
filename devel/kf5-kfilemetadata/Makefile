@@ -1,5 +1,6 @@
 PORTNAME=	kfilemetadata
 DISTVERSION=	${KDE_FRAMEWORKS_VERSION}
+PORTREVISION=	1
 CATEGORIES=	devel kde kde-frameworks
 
 MAINTAINER=	kde@FreeBSD.org
@@ -25,6 +26,6 @@ OPTIONS_DEFAULT=	${OPTIONS_DEFINE}
 OPTIONS_SUB=	yes
 
 MOBIPOCKET_DESC=	Mobipocket plugin to handle metadata
-MOBIPOCKET_LIB_DEPENDS=	libqmobipocket.so:graphics/kdegraphics-mobipocket
+MOBIPOCKET_LIB_DEPENDS=	libqmobipocket.so:graphics/kdegraphics-mobipocket@qt5
 
 .include <bsd.port.mk>

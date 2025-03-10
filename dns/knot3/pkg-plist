@@ -45,6 +45,10 @@ include/libknot/packet/rrset-wire.h
 include/libknot/packet/wire.h
 include/libknot/probe/data.h
 include/libknot/probe/probe.h
+%%DOQ%%include/libknot/quic/quic.h
+%%DOQ%%include/libknot/quic/quic_conn.h
+%%DOQ%%include/libknot/quic/tls.h
+%%DOQ%%include/libknot/quic/tls_common.h
 include/libknot/rdata.h
 include/libknot/rdataset.h
 include/libknot/rrset-dump.h
@@ -81,8 +85,8 @@ lib/libdnssec.so.9
 lib/libdnssec.so.9.0.0
 lib/libknot.a
 lib/libknot.so
-lib/libknot.so.14
-lib/libknot.so.14.0.0
+lib/libknot.so.15
+lib/libknot.so.15.0.0
 lib/libzscanner.a
 lib/libzscanner.so
 lib/libzscanner.so.4
@@ -103,6 +107,7 @@ libdata/pkgconfig/libzscanner.pc
 %%DOCS%%share/man/man8/kjournalprint.8.gz
 %%DOCS%%share/man/man8/knotc.8.gz
 %%DOCS%%share/man/man8/knotd.8.gz
+%%DOCS%%share/man/man8/kxdpgun.8.gz
 %%DAEMON%%sbin/kcatalogprint
 %%DAEMON%%sbin/keymgr
 %%DAEMON%%sbin/kjournalprint

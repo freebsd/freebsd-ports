@@ -14,10 +14,7 @@ WWW=		https://metabase.com/
 
 LICENSE=	AGPLv3
 
-USES=		cpe
-
-USE_JAVA=	yes
-JAVA_RUN=	yes
+USES=		cpe java
 USE_RC_SUBR=	${PORTNAME}
 
 NO_ARCH=	yes

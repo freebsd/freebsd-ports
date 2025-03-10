@@ -3,6 +3,7 @@
 %%PYTHON_SITELIBDIR%%/pyqir/_constants.py
 %%PYTHON_SITELIBDIR%%/pyqir/_entry_point.py
 %%PYTHON_SITELIBDIR%%/pyqir/_native.abi3.so
+%%PYTHON_SITELIBDIR%%/pyqir/_passes.py
 %%PYTHON_SITELIBDIR%%/pyqir/_simple.py
 %%PYTHON_SITELIBDIR%%/pyqir/qis.py
 %%PYTHON_SITELIBDIR%%/pyqir/rt.py

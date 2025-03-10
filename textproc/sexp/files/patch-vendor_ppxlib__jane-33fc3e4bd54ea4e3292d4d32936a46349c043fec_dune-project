@@ -1,0 +1,5 @@
+--- vendor/ppxlib_jane-33fc3e4bd54ea4e3292d4d32936a46349c043fec/dune-project.orig	2024-11-14 21:54:09 UTC
++++ vendor/ppxlib_jane-33fc3e4bd54ea4e3292d4d32936a46349c043fec/dune-project
+@@ -1 +1 @@
+-(lang dune 3.11)
++(lang dune 3.7)

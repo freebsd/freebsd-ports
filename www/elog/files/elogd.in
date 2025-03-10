@@ -1,0 +1,50 @@
+#!/bin/sh
+
+# PROVIDE: elogd
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add these lines to /etc/rc.conf.local or /etc/rc.conf to enable this service:
+#
+# elogd_enable (bool): Set it to "YES" to enable elogd. Default: NO
+# elogd_config (str):	Path to elogd configuration file. Default: %%PREFIX%%/etc/elogd.cfg
+# elogd_user (str):	Elog daemon user. Default: elog
+# elogd_group (str):	Elog group. Default: elog
+# elogd_resource_dir (str):	Path to directory containing resource directory. Default: %%WWWDIR%%
+# elogd_logbook_dir (str):	Path to directory containing logbooks. Default: %%WWWDIR%%/logbooks
+
+. /etc/rc.subr
+
+name=elogd
+desc="Electronic Logbook Daemon"
+rcvar=elogd_enable
+
+start_precmd="elogd_checkssl"
+
+load_rc_config $name
+
+: ${elogd_enable:="NO"}
+: ${elogd_config="%%PREFIX%%/etc/elogd.cfg"}
+: ${elogd_user="elog"}
+: ${elogd_group="elog"}
+: ${elogd_resource_dir="%%WWWDIR%%"}
+: ${elogd_logbook_dir="%%WWWDIR%%/logbooks"}
+
+elogd_ssl_dir="%%WWWDIR%%/ssl"
+elogd_ssl_key="${elogd_ssl_dir}/server.key"
+elogd_ssl_cert="${elogd_ssl_dir}/server.crt"
+
+command=%%PREFIX%%/sbin/${name}
+command_args="-D -c $elogd_config -s $elogd_resource_dir -d $elogd_logbook_dir"
+
+elogd_checkssl() {
+  if ! [ -e "${elogd_ssl_key}" ] || ! [ -e "${elogd_ssl_cert}" ] ; then
+    echo "Server private key and certificate not present in ${elogd_ssl_dir} - creating..."
+    openssl ecparam -genkey -noout -name secp384r1 -out ${elogd_ssl_key}
+    openssl req -x509 -days 365 -subj "/C=DK/ST=Some-State/O=Bogus Inc./CN=localhost" \
+      -nodes -key ${elogd_ssl_key} -out ${elogd_ssl_cert}
+    chown elog:elog ${elogd_ssl_key} ${elogd_ssl_cert}
+  fi
+}
+
+run_rc_command "$1"

@@ -1,0 +1,4 @@
+xsData is a complete data binding library for python allowing developers to
+access and use XML and JSON documents as simple objects rather than using DOM.
+
+Now powered by attrs!

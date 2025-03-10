@@ -1,5 +1,5 @@
 PORTNAME=	contrib
-DISTVERSION=	git.2023-12-23
+DISTVERSION=	git.2024-06-26
 CATEGORIES=	sysutils
 PKGNAMEPREFIX=	munin-
 
@@ -15,7 +15,7 @@ USES=		python:env shebangfix uniquefiles:dirs
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	munin-monitoring
-GH_TAGNAME=	b963a96
+GH_TAGNAME=	bf9a4e4
 GH_TUPLE=	shuque:bind9stats:687c94a:bind9stats
 
 DUMMYBASE=	""

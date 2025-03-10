@@ -16,12 +16,15 @@ BUILD_DEPENDS=	dune:devel/ocaml-dune
 USE_GITHUB=	yes
 GH_ACCOUNT=	rdicosmo
 
-USES=			gmake
-USE_OCAML=		yes
-USE_OCAML_FINDLIB=	yes
-USE_OCAML_LDCONFIG=	yes
+USES=			gmake ocaml:findlib,ldconfig
 
 TARGETS=	${PORTNAME}
+
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == powerpc
+USE_BINUTILS=	yes
+.endif
 
 do-build:
 	cd ${BUILD_WRKSRC} && dune build --verbose -p ${TARGETS:ts,} -j ${MAKE_JOBS_NUMBER}

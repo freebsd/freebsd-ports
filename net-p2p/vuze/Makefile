@@ -12,16 +12,18 @@ WWW=		https://www.vuze.com/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/GPL.txt
 
+DEPRECATED=	Abandoned upstream
+EXPIRATION_DATE=2025-03-31
+
 BUILD_DEPENDS=	${JAVALIBDIR}/log4j.jar:devel/log4j \
 		${JAVALIBDIR}/commons-cli.jar:java/apache-commons-cli \
 		${JAVALIBDIR}/junit.jar:java/junit \
 		${JAVALIBDIR}/swt.jar:x11-toolkits/swt
 RUN_DEPENDS=	${JAVALIBDIR}/swt.jar:x11-toolkits/swt
 
-USES=		cpe gnome zip
-USE_JAVA=	yes
+USES=		cpe gnome java:ant zip
 JAVA_OS=	native
-USE_ANT=	yes
+
 NO_WRKSUBDIR=	yes
 NO_ARCH=	yes
 

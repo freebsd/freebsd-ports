@@ -1,11 +1,13 @@
 PORTNAME=	rpm-sequoia
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.7.0
+PORTREVISION=	6
 CATEGORIES=	security archivers
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	OpenPGP backend for rpm using Sequoia PGP
-WWW=		https://sequoia-pgp.org/
+WWW=		https://sequoia-pgp.org/ \
+		https://github.com/rpm-software-management/rpm-sequoia
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
@@ -269,7 +271,7 @@ PLIST_FILES=	lib/librpm_sequoia.so \
 do-install:
 	# .so lib
 	${MKDIR} ${STAGEDIR}${PREFIX}/lib
-	${INSTALL_LIB} ${WRKDIR}/target/*-unknown-freebsd/release/librpm_sequoia.so ${STAGEDIR}${PREFIX}/lib
+	${INSTALL_LIB} ${WRKDIR}/target/release/librpm_sequoia.so ${STAGEDIR}${PREFIX}/lib
 	# .pc file
 	${MKDIR} ${STAGEDIR}${PREFIX}/libdata/pkgconfig
 	${INSTALL_DATA} ${WRKDIR}/target/release/rpm-sequoia.pc ${STAGEDIR}${PREFIX}/libdata/pkgconfig/rpm-sequoia.pc

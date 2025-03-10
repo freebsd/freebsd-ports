@@ -1,5 +1,6 @@
 PORTNAME=	sqlite3
-DISTVERSION=	3.46.0
+DISTVERSION=	3.46.1
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	databases
 MASTER_SITES=	https://www.sqlite.org/${_YEAR}/ https://www2.sqlite.org/${_YEAR}/ https://www3.sqlite.org/${_YEAR}/
@@ -244,7 +245,6 @@ CPPFLAGS+=	-DHAVE_FCHOWN=1 \
 		-DHAVE_STRERROR_R=1 \
 		-DHAVE_READLINK=1 \
 		-DSQLITE_OS_UNIX=1
-CFLAGS_powerpc64le=	-DSQLITE_BYTEORDER=1234
 
 # For compare with checksum from of the site. Now, this is a NIST SHA3-256 hash. sha256 not suitable for compare.
 # But the creation of a new target does not justify the emergence of dependence on the perl5.

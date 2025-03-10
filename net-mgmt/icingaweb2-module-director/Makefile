@@ -1,11 +1,10 @@
 PORTNAME=	icingaweb2-module-director
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.11.1
-PORTREVISION=	1
+DISTVERSION=	1.11.3
 CATEGORIES=	net-mgmt www
 PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 
-MAINTAINER=	joneum@FreeBSD.org
+MAINTAINER=	flo@FreeBSD.org
 COMMENT=	Configuration frontend for Icinga 2, integrated automation
 WWW=		https://github.com/Icinga/icingaweb2-module-director
 

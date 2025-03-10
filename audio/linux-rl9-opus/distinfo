@@ -1,6 +1,8 @@
-TIMESTAMP = 1688130399
+TIMESTAMP = 1731453642
 SHA256 (rocky/o/opus-1.3.1-10.el9.aarch64.rpm) = 9be3967a5257d39e302949fe30f4f8480bc44acb761694758de0fd871a993fcf
 SIZE (rocky/o/opus-1.3.1-10.el9.aarch64.rpm) = 197299
+SHA256 (rocky/o/opus-1.3.1-10.el9.i686.rpm) = f470999334727d845bfe2bfac6e31264d4573b7a978b5a3d2a59ab6a1839cc51
+SIZE (rocky/o/opus-1.3.1-10.el9.i686.rpm) = 206744
 SHA256 (rocky/o/opus-1.3.1-10.el9.x86_64.rpm) = a871c8c2662df51308853f4561cec2f1d7f948ab0a53ba1493f06a01e504f56e
 SIZE (rocky/o/opus-1.3.1-10.el9.x86_64.rpm) = 203389
 SHA256 (rocky/o/opus-1.3.1-10.el9.src.rpm) = d38cfeaad2dd8928a6209088df2b00e204a4c726d45d9010a9cb8dd91ca41cfc

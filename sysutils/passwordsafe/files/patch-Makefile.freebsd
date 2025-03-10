@@ -1,6 +1,6 @@
---- Makefile.freebsd.orig	2017-10-07 17:53:15 UTC
+--- Makefile.freebsd.orig	2024-11-06 19:10:17 UTC
 +++ Makefile.freebsd
-@@ -34,8 +34,6 @@ GIT := git
+@@ -34,8 +34,6 @@ ECHO := /bin/echo
  GZIP := gzip
  ECHO := /bin/echo
  
@@ -9,11 +9,13 @@
  GPG := /usr/local/bin/gpg
  GPG_SIGN := $(GPG) --detach-sign --default-key $(GPG_KEY)
  SIGN_CMD := $(foreach file, $(wildcard $(RELEASEDIR)/*$(RELEASENAME)*), $(GPG_SIGN) $(file); )
-@@ -46,11 +44,8 @@ SF_UPLOAD_DST := $(SF_UPLOAD_ROOT)/Linux-BETA/$(RELEAS
+@@ -45,12 +43,9 @@ RELTAG = wx$(subst .,_,$(RELEASENAME))
+ SF_UPLOAD_DST := $(SF_UPLOAD_ROOT)/Linux-BETA/$(RELEASENUM)
  RELTAG = wx$(subst .,_,$(RELEASENAME))
  
- export CPPFLAGS += -std=c++11
+-export CPPFLAGS += -std=c++11
 -export CXXFLAGS += --stdlib=libc++ -I/usr/local/include
++export CPPFLAGS += -std=c++14
 +export CXXFLAGS += -I/usr/local/include
  export CFLAGS += -I/usr/local/include
 -export CC = clang

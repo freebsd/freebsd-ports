@@ -1,0 +1,5 @@
+CyMySQL contains a python MySQL client library.
+
+It is a fork project from PyMySQL.
+
+CyMySQL is accerarated by Cython and supports Python versions 2 and 3.

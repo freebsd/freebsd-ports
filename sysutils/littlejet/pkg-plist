@@ -2,9 +2,10 @@ bin/jet
 bin/littlejet
 %%DATADIR%%/files/cpignore
 %%DATADIR%%/files/default.conf
-%%DATADIR%%/files/user.conf
 %%DATADIR%%/files/lib.subr
+%%DATADIR%%/files/user.conf
 %%DATADIR%%/runscripts/deploy.all
+%%DATADIR%%/runscripts/deploy.all.seq
 %%DATADIR%%/runscripts/deploy.each
 %%DATADIR%%/runscripts/deploy.once
 %%DATADIR%%/runscripts/deploy.random

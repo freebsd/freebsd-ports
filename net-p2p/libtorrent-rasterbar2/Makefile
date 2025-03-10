@@ -1,13 +1,15 @@
 PORTNAME=	libtorrent-rasterbar
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.0.10
+DISTVERSION=	2.0.11
+PORTREVISION=	1
 CATEGORIES=	net-p2p
 #MASTER_SITES=	https://github.com/arvidn/libtorrent/releases/download/v${DISTVERSION}/
 PKGNAMESUFFIX=	2
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	C++ library implementing a BitTorrent client
-WWW=		https://libtorrent.org/
+WWW=		https://libtorrent.org \
+		https://github.com/arvidn/libtorrent
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
@@ -63,5 +65,7 @@ post-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/examples/${PORTEXAMPLES} \
 		${STAGEDIR}${EXAMPLESDIR}
+
+# tests as of 2.0.11: 99% tests passed, 1 tests failed out of 106, see https://github.com/arvidn/libtorrent/issues/7837
 
 .include <bsd.port.mk>

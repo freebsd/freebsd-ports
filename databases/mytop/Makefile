@@ -1,13 +1,15 @@
 PORTNAME=	mytop
 PORTVERSION=	1.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	brnrd@FreeBSD.org
 COMMENT=	Top clone for MySQL
 WWW=		https://jeremy.zawodny.com/mysql/mytop/
 
 LICENSE=	GPLv2
+
+CONFLICTS_INSTALL=	mariadb*-client
 
 RUN_DEPENDS=	${DBD_MYSQL} \
 		p5-DBI>=1.13:databases/p5-DBI \

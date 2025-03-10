@@ -5,6 +5,7 @@
     SUBDIR += R-cran-BiocManager
     SUBDIR += abyss
     SUBDIR += ad2vcf
+    SUBDIR += andi
     SUBDIR += artemis
     SUBDIR += atac-seq
     SUBDIR += augustus
@@ -40,6 +41,7 @@
     SUBDIR += chip-seq
     SUBDIR += clustal-omega
     SUBDIR += clustalw
+    SUBDIR += coverm
     SUBDIR += cufflinks
     SUBDIR += cytoscape
     SUBDIR += ddocent
@@ -53,6 +55,7 @@
     SUBDIR += fasta
     SUBDIR += fasta3
     SUBDIR += fastahack
+    SUBDIR += fastani
     SUBDIR += fastdnaml
     SUBDIR += fastool
     SUBDIR += fastp
@@ -105,6 +108,7 @@
     SUBDIR += mafft
     SUBDIR += mapm3
     SUBDIR += mashmap
+    SUBDIR += mca-calling
     SUBDIR += megahit
     SUBDIR += metaeuk
     SUBDIR += migrate
@@ -119,7 +123,6 @@
     SUBDIR += ncbi-cxx-toolkit
     SUBDIR += ncbi-entrez-direct
     SUBDIR += ncbi-toolkit
-    SUBDIR += ncbi-vdb
     SUBDIR += ngs-sdk
     SUBDIR += p5-AcePerl
     SUBDIR += p5-Bio-ASN1-EntrezGene
@@ -152,6 +155,7 @@
     SUBDIR += picard-tools
     SUBDIR += plink
     SUBDIR += pooler
+    SUBDIR += preseq
     SUBDIR += primer3
     SUBDIR += prodigal
     SUBDIR += prodigy-lig

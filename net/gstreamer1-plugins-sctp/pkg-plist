@@ -1,0 +1,8 @@
+include/gstreamer-%%VERSION%%/gst/sctp/sctp-prelude.h
+include/gstreamer-%%VERSION%%/gst/sctp/sctpreceivemeta.h
+include/gstreamer-%%VERSION%%/gst/sctp/sctpsendmeta.h
+lib/gstreamer-%%VERSION%%/libgstsctp.so
+lib/libgstsctp-%%VERSION%%.so
+lib/libgstsctp-%%VERSION%%.so.0
+lib/libgstsctp-%%VERSION%%.so.%%SOVERSION%%
+libdata/pkgconfig/gstreamer-sctp-%%VERSION%%.pc

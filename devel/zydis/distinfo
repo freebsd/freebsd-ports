@@ -1,5 +1,5 @@
-TIMESTAMP = 1711976731
-SHA256 (zyantific-zydis-v4.1.0_GH0.tar.gz) = 31f23de8abb4cc2efa0fd0e827bbabcaa0f3d00fcaed8598e05295ba7b3806ad
-SIZE (zyantific-zydis-v4.1.0_GH0.tar.gz) = 806648
-SHA256 (zyantific-zycore-c-f98abdf_GH0.tar.gz) = e488b503bc4e419195db5fbfced0a28f274a2eb802679a539363426f50a0fceb
-SIZE (zyantific-zycore-c-f98abdf_GH0.tar.gz) = 61599
+TIMESTAMP = 1739965843
+SHA256 (zyantific-zydis-v4.1.1_GH0.tar.gz) = 45c6d4d499a1cc80780f7834747c637509777c01dca1e98c5e7c0bfaccdb1514
+SIZE (zyantific-zydis-v4.1.1_GH0.tar.gz) = 811528
+SHA256 (zyantific-zycore-c-38d4f0285e6157ee840ea82a9b90aba71c8a705d_GH0.tar.gz) = fcc8de568292cf8f1793bf62e9fcf12bc70ea661a54c932690607f5ac2a8cb5c
+SIZE (zyantific-zycore-c-38d4f0285e6157ee840ea82a9b90aba71c8a705d_GH0.tar.gz) = 65239

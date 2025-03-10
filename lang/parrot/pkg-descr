@@ -1,6 +1,0 @@
-Parrot is a virtual machine designed to efficiently compile and execute
-bytecode for dynamic languages.
-
-Parrot currently hosts a variety of language implementations in various
-stages of completion, including Tcl, Javascript, Ruby, Lua, Scheme, PHP,
-Python, Perl 6, APL, and a .NET bytecode translator.

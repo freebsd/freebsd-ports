@@ -1,7 +1,6 @@
 PORTNAME=	moar
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.23.11
-PORTREVISION=	3
+DISTVERSION=	1.31.3
 CATEGORIES=	textproc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -11,7 +10,7 @@ WWW=		https://github.com/walles/moar
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:modules
+USES=		go:1.20,modules
 
 GO_MODULE=	github.com/walles/moar
 

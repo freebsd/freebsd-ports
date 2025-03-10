@@ -1,9 +1,9 @@
 --- src/webrtc/src/rtc_base/ip_address.cc.orig	2022-05-19 14:06:27 UTC
 +++ src/webrtc/src/rtc_base/ip_address.cc
-@@ -13,7 +13,8 @@
- #include <sys/socket.h>
- 
- #include "absl/strings/string_view.h"
+@@ -14,7 +14,8 @@
+ #include <cstring>
+ #include <string>
+ #if defined(WEBRTC_POSIX)
 -#ifdef OPENBSD
 +#if defined(WEBRTC_BSD)
 +#include <sys/types.h>

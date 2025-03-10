@@ -2,18 +2,13 @@ PORTNAME=	libfpx
 DISTVERSION=	1.3.1-10
 PORTREVISION=	1
 CATEGORIES=	graphics
-MASTER_SITES=	http://imagemagick.mirrorcatalogs.com/delegates/	\
-		http://www.imagemagick.org/download/delegates/	\
-		ftp://mirror.aarnet.edu.au/pub/imagemagick/delegates/	\
-		ftp://gd.tuwien.ac.at/pub/graphics/ImageMagick/delegates/ \
-		http://servingzone.com/mirrors/ImageMagick/delegates/	\
-		http://mirror.checkdomain.de/imagemagick/delegates/	\
-		ftp://mirror.checkdomain.de/imagemagick/delegates/	\
-		http://image_magick.veidrodis.com/image_magick/delegates/
+MASTER_SITES=	https://www.imagemagick.org/download/delegates/	\
+		https://mirror.aarnet.edu.au/pub/imagemagick/delegates/ \
+		https://mirror.checkdomain.de/imagemagick/delegates/
 
 MAINTAINER=	ports@virtual-estates.net
 COMMENT=	Library routines for working with Flashpix images
-WWW=		https://www.i3a.org/
+WWW=		https://github.com/ImageMagick/libfpx
 
 USES=		cpe tar:xz uidfix
 

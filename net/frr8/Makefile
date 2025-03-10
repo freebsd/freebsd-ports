@@ -1,5 +1,5 @@
 PORTNAME=	frr
-PORTVERSION=	8.5.5
+PORTVERSION=	8.5.7
 DISTVERSIONPREFIX=	frr-
 CATEGORIES=	net
 .if defined(PYTHONTOOLS)
@@ -45,7 +45,7 @@ USES=		autoreconf bison compiler:c++11-lang gmake libtool makeinfo \
 
 BINARY_ALIAS=	python=${PYTHON_VERSION}
 
-CONFLICTS=	frr9 openbgpd openospfd quagga zebra
+CONFLICTS=	frr9 frr10 openbgpd openospfd quagga zebra
 
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share

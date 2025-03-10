@@ -1,6 +1,6 @@
 PORTNAME=	phpeclipse
 PORTVERSION=	1.2.3
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	java editors devel
 MASTER_SITES=	SF/${PORTNAME}/a%29%20Eclipse%203.3.x/PHPEclipse-${PORTVERSION}
 DISTNAME=	PHPEclipse-${PLIST_VER}-src
@@ -14,9 +14,7 @@ RUN_DEPENDS=	eclipse:java/eclipse
 PLUGIN_PATHS=	features plugins
 PATCH_TASKS=	eclipse.versionReplacer eclipse.idReplacer
 
-USES=		zip:infozip
-USE_JAVA=	yes
-USE_ANT=	yes
+USES=		java:ant,run zip:infozip
 
 WRKSRC=		${WRKDIR}/dist
 ECLIPSE=	lib/eclipse

@@ -8,6 +8,8 @@
 %%EMACS_VERSION_SITE_LISPDIR%%/compat/compat-28.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/compat/compat-29.el
 %%EMACS_VERSION_SITE_LISPDIR%%/compat/compat-29.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/compat/compat-30.el
+%%EMACS_VERSION_SITE_LISPDIR%%/compat/compat-30.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/compat/compat-macs.el
 %%EMACS_VERSION_SITE_LISPDIR%%/compat/compat.el
 %%EMACS_VERSION_SITE_LISPDIR%%/compat/compat.elc

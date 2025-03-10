@@ -1,6 +1,6 @@
 PORTNAME=	trippy
-DISTVERSION=	0.10.0
-PORTREVISION=	3
+DISTVERSION=	0.12.2
+PORTREVISION=	2
 CATEGORIES=	net
 
 MAINTAINER=	ehaupt@FreeBSD.org
@@ -13,6 +13,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USES=		cargo
 USE_GITHUB=	yes
 GH_ACCOUNT=	fujiapple852
+
+CARGO_INSTALL_PATH=	crates/${PORTNAME}
 
 PORTSCOUT=	skipv:1.0.0
 
@@ -30,11 +32,8 @@ SUID_PLIST_FILES_OFF=	"@(,,0100) bin/trip"
 
 post-build-MANPAGES-on:
 	help2man -s 1 -Nn "${COMMENT}" \
-		${CARGO_TARGET_DIR}/${CARGO_BUILD_TARGET}/*/trip \
+		${CARGO_TARGET_DIR}/*/trip \
 		-o ${WRKSRC}/trip.1
-
-post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/trip
 
 post-install-MANPAGES-on:
 	${INSTALL_MAN} ${WRKSRC}/trip.1 \

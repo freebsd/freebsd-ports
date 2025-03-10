@@ -1,6 +1,7 @@
 PORTNAME=	synfig
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.4.5
+PORTREVISION=	3
 CATEGORIES=	graphics devel multimedia
 
 MAINTAINER=	portmaster@BSDforge.com
@@ -8,6 +9,8 @@ COMMENT=	Vector based 2D animation package
 WWW=		https://www.synfig.org/
 
 LICENSE=	GPLv2+
+
+BROKEN=		fails to build with boost-1.86+
 
 BUILD_DEPENDS=	etl>=1.4.5:devel/etl \
 		gsed:textproc/gsed

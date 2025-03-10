@@ -1,10 +1,10 @@
 PORTNAME=	wrangler
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.19.12
-PORTREVISION=	20
+PORTREVISION=	26
 CATEGORIES=	devel
 
-MAINTAINER=	antranigv@freebsd.am
+MAINTAINER=	kfv@kfv.io
 COMMENT=	Cloudflare Workers CLI Tool
 WWW=		https://developers.cloudflare.com/workers/cli-wrangler/
 
@@ -33,9 +33,6 @@ post-patch:
 	-e '/get_cpu/s|unsigned long|uint64_t|' \
 	-e '/get_proc_total/s|unsigned long|uint64_t|' \
 	${WRKSRC}/cargo-crates/sys-info-0.9.1/c/*.[ch]
-
-post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}

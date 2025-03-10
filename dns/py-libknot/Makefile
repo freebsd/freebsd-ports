@@ -13,10 +13,12 @@ LICENSE=	GPLv3
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatchling>0:devel/py-hatchling@${PY_FLAVOR}
 LIB_DEPENDS=	libknot.so:dns/knot3
 
-USES=		python:3.5+
+USES=		python
 USE_PYTHON=	autoplist concurrent pep517
 
 NO_ARCH=	yes
+
+DISTINFO_FILE=	${.CURDIR}/../knot3/distinfo.py-libknot
 
 .include "${.CURDIR}/../knot3/knotdns.mk"
 .include <bsd.port.mk>

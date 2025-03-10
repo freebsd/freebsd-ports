@@ -1,5 +1,5 @@
 PORTNAME=	baikal
-PORTVERSION=	0.9.5
+PORTVERSION=	0.10.1
 PORTREVISION=	0
 CATEGORIES=	www
 MASTER_SITES=	https://github.com/fruux/Baikal/releases/download/${PORTVERSION}/

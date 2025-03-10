@@ -1,11 +1,11 @@
---- configure.orig	2020-08-07 04:27:42 UTC
+--- configure.orig	2025-02-04 20:46:08 UTC
 +++ configure
-@@ -20818,28 +20818,6 @@ $as_echo "#define HAVE_CXX11 1" >>confdefs.h
+@@ -20583,28 +20583,6 @@ printf "%s\n" "$check_cxxflag" >&6; }
      ;;
    esac
  
--  { $as_echo "$as_me:${as_lineno-$LINENO}: checking for libmysqlservices.a directory" >&5
--$as_echo_n "checking for libmysqlservices.a directory... " >&6; }
+-  { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking for libmysqlservices.a directory" >&5
+-printf %s "checking for libmysqlservices.a directory... " >&6; }
 -  pkglibdir="$($ac_mysql_config --variable=pkglibdir)"
 -  mysql_build_archive_output_dir="${MYSQL_BUILD_DIR}/archive_output_directory"
 -  mysql_build_libservices_dir="${MYSQL_BUILD_DIR}/libservices"
@@ -22,10 +22,16 @@
 -      as_fn_error $? "libmysqlservices.a is not found in <${pkglibdir}/> and <${pkglibdir}/mysql/>" "$LINENO" 5
 -    fi
 -  fi
--  { $as_echo "$as_me:${as_lineno-$LINENO}: result: $mysql_services_lib_dir" >&5
--$as_echo "$mysql_services_lib_dir" >&6; }
+-  { printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: $mysql_services_lib_dir" >&5
+-printf "%s\n" "$mysql_services_lib_dir" >&6; }
 -  MYSQL_LIBS="$MYSQL_LIBS \"$mysql_services_lib_dir/libmysqlservices.a\""
 -
    case "$MYSQL_MAJOR_MINOR_VERSION" in
-   10.1|10.2|10.3|10.4)
+   10.4)
      :
+@@ -23877,5 +23855,3 @@ fi
+   { printf "%s\n" "$as_me:${as_lineno-$LINENO}: WARNING: unrecognized options: $ac_unrecognized_opts" >&5
+ printf "%s\n" "$as_me: WARNING: unrecognized options: $ac_unrecognized_opts" >&2;}
+ fi
+-
+-

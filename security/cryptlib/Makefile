@@ -1,5 +1,5 @@
 PORTNAME=		cryptlib
-DISTVERSION=		3.4.6
+DISTVERSION=		3.4.7
 CATEGORIES=		security
 MASTER_SITES=		https://cryptlib-release.s3-ap-southeast-1.amazonaws.com/
 DISTNAME=		${PORTNAME}${PORTVERSION:S/.//g}

@@ -1,5 +1,6 @@
 PORTNAME=	mate-settings-daemon
 PORTVERSION=	1.28.0
+PORTREVISION=	3
 CATEGORIES=	sysutils mate
 MASTER_SITES=	MATE
 DIST_SUBDIR=	mate
@@ -74,7 +75,7 @@ PULSEAUDIO_LIB_DEPENDS=		libpulse.so:audio/pulseaudio
 
 .include <bsd.port.options.mk>
 
-.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400091 || ( ${OSVERSION} >= 1302507 && ${OSVERSION} < 1400000 ))
+.if ${OPSYS} == FreeBSD
 CFLAGS+=	-Wno-error=incompatible-function-pointer-types
 .endif
 

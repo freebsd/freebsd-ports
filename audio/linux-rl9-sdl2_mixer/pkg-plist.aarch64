@@ -1,0 +1,9 @@
+usr/bin/playmus2
+usr/bin/playwave2
+usr/lib/.build-id/1d/44f8cba2813200d32335927234fa0425e83855
+usr/lib/.build-id/5c/915bb0dcaff8499172bc5516e429353b3cfbae
+usr/lib/.build-id/68/f29e2fa605920cb9b9b27aa408d1b4b3bd8026
+usr/lib64/libSDL2_mixer-2.0.so.0
+usr/lib64/libSDL2_mixer-2.0.so.0.600.3
+%%PORTDOCS%%%%DOCSDIR%%/CHANGES.txt
+usr/share/licenses/SDL2_mixer/LICENSE.txt

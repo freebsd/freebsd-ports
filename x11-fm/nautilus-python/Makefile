@@ -1,12 +1,14 @@
 PORTNAME=	nautilus-python
 DISTVERSION=	1.2.3
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	x11-fm gnome python
 MASTER_SITES=	GNOME
 
 MAINTAINER=	daniel@shafer.cc
 COMMENT=	Python nautilus bindings
 WWW=		https://wiki.gnome.org/Projects/NautilusPython
+
+BROKEN=		does not work with latest nautilus
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

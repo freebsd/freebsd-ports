@@ -75,6 +75,7 @@ include/cego/CegoFunction.h
 include/cego/CegoGroupCursor.h
 include/cego/CegoGroupNode.h
 include/cego/CegoGroupSpace.h
+include/cego/CegoHavingCond.h
 include/cego/CegoHavingDesc.h
 include/cego/CegoImpInStream.h
 include/cego/CegoJDBCInfo.h

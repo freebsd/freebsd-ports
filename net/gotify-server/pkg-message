@@ -1,0 +1,18 @@
+[
+{
+  message: <<EOM
+Gotify-Server was installed successfully.
+
+It is be default listening on port 9071.
+
+You can change the settings in file:
+/usr/local/etc/gotify-server/config.yml
+
+To enable to start it execute:
+sysrc gotify_server_enable="YES"
+service gotify_server start
+EOM
+  type: install
+}
+]
+

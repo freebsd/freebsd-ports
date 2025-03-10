@@ -91,7 +91,9 @@
 %%DATADIR%%/template/Edgeberry_Cartridge/Edgeberry_cartridge_template.kicad_pro
 %%DATADIR%%/template/Edgeberry_Cartridge/Edgeberry_cartridge_template.kicad_sch
 %%DATADIR%%/template/Edgeberry_Cartridge/Hardware_Cartridge_Design_Guide.pdf
-%%DATADIR%%/template/Edgeberry_Cartridge/meta/Edgeberry.png
+%%DATADIR%%/template/Edgeberry_Cartridge/faceplate/Edgeberry_Hardware_Cartridge_faceplate.FCStd
+%%DATADIR%%/template/Edgeberry_Cartridge/faceplate/Edgeberry_Hardware_Cartridge_faceplate.step
+%%DATADIR%%/template/Edgeberry_Cartridge/meta/Edgeberry_banner.png
 %%DATADIR%%/template/Edgeberry_Cartridge/meta/cartridge.png
 %%DATADIR%%/template/Edgeberry_Cartridge/meta/icon.png
 %%DATADIR%%/template/Edgeberry_Cartridge/meta/info.html

@@ -1,11 +1,12 @@
 PORTNAME=	twiggy
 DISTVERSION=	0.6.0
-PORTREVISION=	14
+PORTREVISION=	20
 CATEGORIES=	devel www
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Code size profiler for Wasm
-WWW=		https://rustwasm.github.io/twiggy/
+WWW=		https://rustwasm.github.io/twiggy/ \
+		https://github.com/rustwasm/twiggy
 
 LICENSE=	MIT APACHE20
 LICENSE_COMB=	dual
@@ -109,8 +110,5 @@ CARGO_CRATES=	aho-corasick-0.7.3 \
 		winconsole-0.10.0
 
 PLIST_FILES=	bin/${PORTNAME}
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>

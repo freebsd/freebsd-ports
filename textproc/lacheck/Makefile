@@ -2,7 +2,7 @@ PORTNAME=	lacheck
 PORTVERSION=	1.26
 PORTREVISION=	1
 CATEGORIES=	textproc
-MASTER_SITES=	ftp://ftp.math.utah.edu/pub/lacheck/
+MASTER_SITES=	https://ftp.math.utah.edu/pub/lacheck/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool for finding common mistakes in LaTeX documents

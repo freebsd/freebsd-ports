@@ -11,7 +11,7 @@
 #					Default: NO
 # %%PORTNAME%%_config (str):		%%PORTNAME%% configuration file
 #					Default: %%ETCDIR%%/config.toml
-# %%PORTNAME%%_datafolder (str):	%%PORTNAME%% Folder to store application data 
+# %%PORTNAME%%_datafolder (str):	%%PORTNAME%% Folder to store application data
 #					Default: %%NAVIDROMEUSER%%
 # %%PORTNAME%%_user (str):		%%PORTNAME%% daemon user
 #					Default: %%NAVIDROMEUSER%%
@@ -39,11 +39,13 @@ procname="%%PREFIX%%/bin/${name}"
 pidfile="/var/run/${name}.pid"
 start_precmd="${name}_precmd"
 command=/usr/sbin/daemon
-command_args="-S -l ${%%PORTNAME%%_facility} -s ${%%PORTNAME%%_priority} -T ${name} -t ${name} -p ${pidfile} \
-	${procname} --configfile ${%%PORTNAME%%_config} --datafolder ${%%PORTNAME%%_datafolder} ${%%PORTNAME%%_flags}"
+command_args="--configfile ${%%PORTNAME%%_config} \
+    --datafolder ${%%PORTNAME%%_datafolder} ${%%PORTNAME%%_flags}"
 
 %%PORTNAME%%_precmd()
 {
+	rc_flags="-S -l ${%%PORTNAME%%_facility} -s ${%%PORTNAME%%_priority} \
+	    -T ${name} -t ${name} -p ${pidfile} ${procname}"
 	install -o ${%%PORTNAME%%_user} /dev/null ${pidfile}
 }
 

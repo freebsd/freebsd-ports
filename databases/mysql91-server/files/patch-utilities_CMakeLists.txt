@@ -1,0 +1,68 @@
+--- utilities/CMakeLists.txt.orig	2024-04-10 06:26:28 UTC
++++ utilities/CMakeLists.txt
+@@ -30,13 +30,19 @@ ENDIF()
+   DISABLE_DOCUMENTATION_WARNINGS()
+ ENDIF()
+ 
+-IF(NOT CMAKE_CROSSCOMPILING)
++IF(WITHOUT_CLIENTLIBS)
+   MYSQL_ADD_EXECUTABLE(comp_err
+     comp_err.cc
+     COMPONENT Test
+     LINK_LIBRARIES mysys
++    SKIP_INSTALL)
++ELSE(WITHOUT_CLIENTLIBS)
++  MYSQL_ADD_EXECUTABLE(comp_err
++    comp_err.cc
++    COMPONENT Test
++    LINK_LIBRARIES mysys
+     )
+-ENDIF()
++ENDIF(WITHOUT_CLIENTLIBS)
+ 
+ MYSQL_ADD_EXECUTABLE(comp_client_err
+   comp_client_err.cc
+@@ -121,10 +127,35 @@ MYSQL_ADD_EXECUTABLE(static_thread_local_test
+   EXCLUDE_FROM_ALL
+   )
+ 
++IF(WITHOUT_CLIENTLIBS)
+ MYSQL_ADD_EXECUTABLE(my_print_defaults
+   my_print_defaults.cc
+   COMPONENT Server
+   LINK_LIBRARIES mysys
++  SKIP_INSTALL )
++MYSQL_ADD_EXECUTABLE(perror
++  perror.cc
++  COMPONENT Server
++  DEPENDENCIES GenError
++  LINK_LIBRARIES mysys
++  SKIP_INSTALL )
++ENDIF(WITHOUT_CLIENTLIBS)
++
++IF(WITHOUT_CLIENTLIBS)
++IF(BUILD_BUNDLED_LZ4)
++  MYSQL_ADD_EXECUTABLE(lz4_decompress
++    lz4_decompress.cc
++    COMPONENT Server
++    LINK_LIBRARIES ${LZ4_LIBRARY} mysys
++    SKIP_INSTALL )
++ENDIF()
++ENDIF(WITHOUT_CLIENTLIBS)
++
++IF(NOT WITHOUT_CLIENTLIBS)
++MYSQL_ADD_EXECUTABLE(my_print_defaults
++  my_print_defaults.cc
++  COMPONENT Server
++  LINK_LIBRARIES mysys
+   )
+ MYSQL_ADD_EXECUTABLE(perror
+   perror.cc
+@@ -132,6 +163,7 @@ MYSQL_ADD_EXECUTABLE(perror
+   DEPENDENCIES GenError
+   LINK_LIBRARIES mysys
+   )
++ENDIF()
+ 
+ # All targets below belong to COMPONENT Server and depend on InnoDB.
+ IF(WITHOUT_SERVER)

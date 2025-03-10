@@ -1,8 +1,0 @@
---- CMakeLists.txt.orig	2012-04-05 06:06:56.000000000 +0200
-+++ CMakeLists.txt	2012-04-05 06:07:10.000000000 +0200
-@@ -86,4 +86,4 @@
- set(RAKNETHEADERFILES ${RakNet_SOURCE_DIR}/Source)
- 
- add_subdirectory(DependentExtensions)
--add_subdirectory(Samples)
-+#add_subdirectory(Samples)

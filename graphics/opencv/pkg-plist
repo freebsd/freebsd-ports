@@ -316,6 +316,7 @@ include/opencv4/opencv2/optflow/motempl.hpp
 include/opencv4/opencv2/optflow/pcaflow.hpp
 include/opencv4/opencv2/optflow/rlofflow.hpp
 include/opencv4/opencv2/optflow/sparse_matching_gpc.hpp
+%%OGRE3D%%include/opencv4/opencv2/ovis.hpp
 include/opencv4/opencv2/phase_unwrapping.hpp
 include/opencv4/opencv2/phase_unwrapping/histogramphaseunwrapping.hpp
 include/opencv4/opencv2/phase_unwrapping/phase_unwrapping.hpp
@@ -580,6 +581,9 @@ lib/libopencv_objdetect.so.409
 lib/libopencv_optflow.so
 lib/libopencv_optflow.so.%%SHLIB_VER%%
 lib/libopencv_optflow.so.409
+%%OGRE3D%%lib/libopencv_ovis.so
+%%OGRE3D%%lib/libopencv_ovis.so.%%SHLIB_VER%%
+%%OGRE3D%%lib/libopencv_ovis.so.409
 lib/libopencv_phase_unwrapping.so
 lib/libopencv_phase_unwrapping.so.%%SHLIB_VER%%
 lib/libopencv_phase_unwrapping.so.409
@@ -661,6 +665,7 @@ lib/libopencv_xphoto.so.409
 %%EIGEN%%lib/opencv4/3rdparty/libcorrespondence.a
 %%EIGEN%%lib/opencv4/3rdparty/libmultiview.a
 %%EIGEN%%lib/opencv4/3rdparty/libnumeric.a
+%%EIGEN%%lib/opencv4/3rdparty/libsimple_pipeline.a
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/cv2/__init__.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/cv2/config-%%PYTHON_VER%%.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/cv2/config.py

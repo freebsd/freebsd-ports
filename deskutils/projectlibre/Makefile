@@ -14,7 +14,7 @@ WWW=		https://www.projectlibre.com/product/1-alternative-microsoft-project-open-
 
 LICENSE=	CPAL-1.0
 
-USE_JAVA=	yes
+USES=		java
 
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}-${PORTVERSION}
 DESKTOP_ENTRIES="ProjectLibre" \

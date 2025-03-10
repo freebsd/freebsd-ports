@@ -16,15 +16,14 @@ LIB_DEPENDS=	libaudiofile.so:audio/libaudiofile \
 		libsamplerate.so:audio/libsamplerate \
 		libvorbisenc.so:audio/libvorbis
 
-USES=		cmake compiler:c++11-lang desktop-file-utils gettext kde:5 \
-		localbase:ldflags magick:6,build pkgconfig qt:5 tar:xz xorg
+USES=		cmake compiler:c++11-lang desktop-file-utils gettext kde:6 \
+		localbase:ldflags pkgconfig qt:6 tar:xz xorg
 USE_KDE=	archive auth bookmarks codecs completion config configwidgets \
-		coreaddons crash dbusaddons i18n iconthemes itemviews \
+		coreaddons crash dbusaddons doctools i18n iconthemes itemviews \
 		jobwidgets kio service solid sonnet textwidgets widgetsaddons \
 		windowsystem xmlgui \
 		ecm:build
-USE_QT=		concurrent core dbus gui multimedia network widgets xml \
-		buildtools:build qmake:build
+USE_QT=		base
 USE_XORG=	x11
 
 OPTIONS_GROUP=			AUDIOPLUGIN

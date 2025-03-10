@@ -1,31 +1,27 @@
 PORTNAME=	liboggz
-PORTVERSION=	1.1.1
-PORTREVISION=	5
+PORTVERSION=	1.1.2
 CATEGORIES=	audio
-MASTER_SITES=	https://downloads.xiph.org/releases/liboggz/ \
-		https://ftp.osuosl.org/pub/xiph/releases/liboggz/
+MASTER_SITES=	https://ftp.osuosl.org/pub/xiph/releases/liboggz/
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Simple Ogg API
-WWW=		https://www.annodex.net/software/liboggz/html/
+WWW=		https://www.xiph.org/oggz/ \
+		https://gitlab.xiph.org/xiph/liboggz
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libogg.so:audio/libogg
 
-OPTIONS_DEFINE=	DOCS
+USES=		libtool pathfix pkgconfig
 
 CONFIGURE_ARGS=	--program-transform-name="" --with-ogg=${LOCALBASE}
 CONFIGURE_ENV=	DOCBOOKTOMAN=false HAVE_DOCBOOK2HTML=false HAVE_DOXYGEN=false HAVE_DOXYGEN=false
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
-USES=		libtool pathfix pkgconfig
 
-PORTDOCS=	*
-
-post-patch:
-	@${REINPLACE_CMD} -e '/-= timezone;/d' ${WRKSRC}/src/tools/oggz-chop/httpdate.c ${WRKSRC}/src/tools/oggz-chop/httpdate_test.c
+post-install:
+	@${RMDIR} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

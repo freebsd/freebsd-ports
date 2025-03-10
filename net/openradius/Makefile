@@ -1,70 +1,53 @@
 PORTNAME=	openradius
-PORTVERSION=	0.9.12c
-PORTREVISION=	4
+DISTVERSION=	0.9.14
 CATEGORIES=	net
-MASTER_SITES=	http://sites.e-advies.nl/openradius/download/ \
-		https://BSDforge.COM/projects/source/net/openradius/
+MASTER_SITES=	https://codeberg.org/BSDforge/${PORTNAME}/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/
 
 MAINTAINER=	portmaster@bsdforge.com
 COMMENT=	RADIUS server with some actual documentation
-WWW=		https://BSDforge.COM/projects/net/openradius/
+WWW=		https://codeberg.org/BSDforge/${PORTNAME}/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LOGFILE?=	/var/log/openradius.log
+USES=		cpe gmake shebangfix
+USE_RC_SUBR=	openradius
+SHEBANG_FILES=	modules/ascfile/ascfile modules/debug/debug \
+		modules/memory/memory modules/radsql/radsql \
+		modules/unixpasswd/unixpasswd
+LOGFILE?=	/var/log/openradius/openradius.log
 
-CONFLICTS=	freeradius gnu-radius radiusd-cistron \
-		freeradius-mysql
+MAKE_ENV=	INST_PREFIX=${STAGEDIR}
+CONFLICTS=	freeradius freeradius-mysql gnu-radius radiusd-cistron
 
 CC?=		gcc
 CXX?=		g++
-MAKE_ENV=	INST_PREFIX=${STAGEDIR}
 
-USES=		cpe gmake shebangfix
-SHEBANG_FILES=	modules/ascfile/ascfile \
-		modules/radsql/radsql \
-		modules/unixpasswd/unixpasswd
-USE_RC_SUBR=	openradius
 SUB_LIST=	LOGFILE="${LOGFILE}"
 
-OPTIONS_DEFINE=	LDAP DOCS EXAMPLES
+OPTIONS_DEFINE=		DOCS EXAMPLES LDAP
+OPTIONS_DEFAULT=	DOCS EXAMPLES
 
-.include <bsd.port.options.mk>
+DOCS_DESC=	Install documentstion
+EXAMPLES_DESC=	Include examples
+LDAP_DESC=	Install LDAP support
 
-.if ${PORT_OPTIONS:MLDAP}
-USES+=	ldap
-PLIST_SUB+=	LDAP=""
-SCRIPTS_ENV+=	USE_LDAP=yes
-.else
-PLIST_SUB+=	LDAP="@comment "
-.endif
+LDAP_USES+=		ldap
+LDAP_PLIST_SUB+=	LDAP=""
+LDAP_PLIST_SUB_OFF+=	LDAP="@comment"
+LDAP_SCRIPTS_ENV+=	USE_LDAP=yes
 
-post-install:
+post-extract:
+	${MV} ${WRKDIR}/${PORTNAME} ${WRKDIR}/${PORTNAME}-${DISTVERSION}
+
+post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/async-iface-notes ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/language.html ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/module-interface.html ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/note-behaviourfile ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/note-struct-ownership ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/using-openradius.html ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
+
+post-install-EXAMPLES-on:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/accounts
-	${INSTALL_DATA} ${WRKSRC}/examples/behaviour.sample-ldap ${STAGEDIR}${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/examples/behaviour.sample-ldap-authbind ${STAGEDIR}${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/examples/behaviour.sample-mysql ${STAGEDIR}${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/examples/behaviour.sample-postgres ${STAGEDIR}${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/examples/behaviour.sample-unixpass ${STAGEDIR}${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/examples/behaviour.sample-usersfile ${STAGEDIR}${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/examples/configuration.sample-ldap ${STAGEDIR}${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/examples/configuration.sample-ldap-authbind ${STAGEDIR}${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/examples/configuration.sample-mysql ${STAGEDIR}${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/examples/configuration.sample-postgres ${STAGEDIR}${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/examples/configuration.sample-unixpass ${STAGEDIR}${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/examples/configuration.sample-usersfile ${STAGEDIR}${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/examples/accounts/README ${STAGEDIR}${EXAMPLESDIR}/accounts
-	${INSTALL_DATA} ${WRKSRC}/examples/accounts/accounts.mysql ${STAGEDIR}${EXAMPLESDIR}/accounts
-	${INSTALL_DATA} ${WRKSRC}/examples/accounts/behaviour ${STAGEDIR}${EXAMPLESDIR}/accounts
-	${INSTALL_DATA} ${WRKSRC}/examples/accounts/configuration ${STAGEDIR}${EXAMPLESDIR}/accounts
+	(cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . \
+	${STAGEDIR}${EXAMPLESDIR} "! -name redhat-sysv-init-script")
 # Configuration, copy over to sample files
 	${MKDIR} ${STAGEDIR}${ETCDIR}
 .for FILE in dictionary

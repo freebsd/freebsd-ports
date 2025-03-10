@@ -1,6 +1,6 @@
 PORTNAME=	starttls
 PORTVERSION=	0.10
-PORTREVISION=	34
+PORTREVISION=	35
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.opaopa.org/pub/elisp/
 PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
@@ -18,7 +18,7 @@ CONFIGURE_ARGS=	--with-openssl=${OPENSSLBASE}
 
 .include <bsd.port.pre.mk>
 
-.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400079 || ( ${OSVERSION} >= 1302505 && ${OSVERSION} < 1400000 ))
+.if ${OPSYS} == FreeBSD
 CFLAGS+=       -Wno-error=int-conversion
 .endif
 

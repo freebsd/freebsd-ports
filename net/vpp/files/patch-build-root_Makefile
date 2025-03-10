@@ -1,0 +1,11 @@
+--- build-root/Makefile.orig	2024-05-03 16:05:23 UTC
++++ build-root/Makefile
+@@ -736,7 +736,7 @@ install_check_timestamp =					\
+ 
+ .PHONY: %-install
+ %-install: %-build
+-	$(install_check_timestamp)
++	$(call build_msg_fn, external build removed)
+ 
+ ######################################################################
+ # Source code managment

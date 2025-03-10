@@ -1,0 +1,11 @@
+%%SITE_ARCH%%/JavaScript/QuickJS.pm
+%%SITE_ARCH%%/JavaScript/QuickJS/Date.pm
+%%SITE_ARCH%%/JavaScript/QuickJS/Function.pm
+%%SITE_ARCH%%/JavaScript/QuickJS/Promise.pm
+%%SITE_ARCH%%/JavaScript/QuickJS/RegExp.pm
+%%SITE_ARCH%%/auto/JavaScript/QuickJS/QuickJS.so
+%%PERL5_MAN3%%/JavaScript::QuickJS.3.gz
+%%PERL5_MAN3%%/JavaScript::QuickJS::Date.3.gz
+%%PERL5_MAN3%%/JavaScript::QuickJS::Function.3.gz
+%%PERL5_MAN3%%/JavaScript::QuickJS::Promise.3.gz
+%%PERL5_MAN3%%/JavaScript::QuickJS::RegExp.3.gz

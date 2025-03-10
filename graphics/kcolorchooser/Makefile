@@ -6,12 +6,11 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE application to select colors from the screen or from a palette
 WWW=		https://www.kde.org/applications/graphics/kcolorchooser
 
-USES=		cmake compiler:c++11-lang gettext kde:5 qt:5 tar:xz
-USE_KDE=	auth codecs config configwidgets coreaddons i18n \
-		widgetsaddons xmlgui \
+USES=		cmake compiler:c++11-lang gettext kde:6 qt:6 tar:xz
+USE_KDE=	auth codecs config configwidgets coreaddons i18n widgetsaddons \
+		xmlgui \
 		ecm:build
-USE_QT=		core dbus gui widgets xml \
-		buildtools:build qmake:build
+USE_QT=		base
 
 OPTIONS_DEFINE=	DOCS
 

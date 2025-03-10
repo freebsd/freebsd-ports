@@ -6,11 +6,13 @@ include/fth/fth-config.h
 include/fth/fth-lib.h
 include/fth/fth.h
 include/fth/mp.h
+include/fth/src-config.h
 lib/fth/dbm.so
 lib/libfth.so
 share/aclocal/fth.m4
 %%DATADIR%%/fth-lib/assert.fs
 %%DATADIR%%/fth-lib/compat.fs
+%%DATADIR%%/fth-lib/dbm.fs
 %%DATADIR%%/fth-lib/ficl.fr
 %%DATADIR%%/fth-lib/ficllocal.fr
 %%DATADIR%%/fth-lib/fileaccess.fr

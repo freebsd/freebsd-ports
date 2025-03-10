@@ -1,6 +1,5 @@
 PORTNAME=	step
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
-PORTREVISION=	2
 CATEGORIES=	science education kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
@@ -11,18 +10,16 @@ LIB_DEPENDS=	libcln.so:math/cln \
 		libgsl.so:math/gsl \
 		libqalculate.so:math/libqalculate
 
-USES=		cmake compiler:c++11-lang desktop-file-utils eigen:3 gettext kde:5 \
-		pkgconfig python qt:5 shared-mime-info shebangfix tar:xz xorg
+USES=		cmake compiler:c++11-lang desktop-file-utils eigen:3 gettext \
+		kde:6 pkgconfig python qt:6 shared-mime-info shebangfix tar:xz \
+		xorg
 USE_KDE=	attica auth bookmarks codecs completion config configwidgets \
-		coreaddons crash doctools emoticons guiaddons i18n \
-		iconthemes init itemmodels itemviews jobwidgets js \
-		kdelibs4support khtml kio newstuff notifications parts \
-		plotting service solid sonnet textwidgets unitconversion \
-		widgetsaddons windowsystem xmlgui \
+		coreaddons crash doctools guiaddons i18n iconthemes itemmodels \
+		itemviews jobwidgets kio newstuff notifications parts plotting \
+		service solid sonnet textwidgets unitconversion widgetsaddons \
+		windowsystem xmlgui \
 		ecm:build
-USE_QT=		concurrent core dbus declarative gui network opengl printsupport svg \
-		widgets xml \
-		buildtools:build qmake:build
+USE_QT=		base
 USE_XORG=	x11
 
 SHEBANG_FILES=	step/data/extractxml

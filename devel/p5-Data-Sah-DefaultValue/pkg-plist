@@ -1,0 +1,14 @@
+%%SITE_PERL%%/Data/Sah/DefaultValue.pm
+%%SITE_PERL%%/Data/Sah/DefaultValueCommon.pm
+%%SITE_PERL%%/Data/Sah/DefaultValueJS.pm
+%%SITE_PERL%%/Data/Sah/Value/js/Math/random.pm
+%%SITE_PERL%%/Data/Sah/Value/js/Str/repeat.pm
+%%SITE_PERL%%/Data/Sah/Value/perl/Math/random.pm
+%%SITE_PERL%%/Data/Sah/Value/perl/Str/repeat.pm
+%%PERL5_MAN3%%/Data::Sah::DefaultValue.3.gz
+%%PERL5_MAN3%%/Data::Sah::DefaultValueCommon.3.gz
+%%PERL5_MAN3%%/Data::Sah::DefaultValueJS.3.gz
+%%PERL5_MAN3%%/Data::Sah::Value::js::Math::random.3.gz
+%%PERL5_MAN3%%/Data::Sah::Value::js::Str::repeat.3.gz
+%%PERL5_MAN3%%/Data::Sah::Value::perl::Math::random.3.gz
+%%PERL5_MAN3%%/Data::Sah::Value::perl::Str::repeat.3.gz

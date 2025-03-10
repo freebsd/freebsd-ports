@@ -4,12 +4,17 @@ DISTVERSIONPREFIX=	v
 PORTREVISION=	2
 CATEGORIES=	print
 
+PATCH_SITES=	${WWW}/commit/
+PATCHFILES+=	e9270aaac5e0b8018a6fad9a562ee48e7b2c3113.patch:-p1 # https://github.com/dov/paps/pull/71
+
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	UTF-8 to PostScript converter using Pango
-WWW=		https://paps.sourceforge.net/
+WWW=		https://github.com/${GH_ACCOUNT}/${GH_PROJECT}
 
 LICENSE=	LGPL20
 LICENSE_FILE=	${WRKSRC}/COPYING.LIB
+
+BROKEN_i386=	compilation fails, see https://github.com/dov/paps/issues/60
 
 LIB_DEPENDS=	libfmt.so:devel/libfmt
 

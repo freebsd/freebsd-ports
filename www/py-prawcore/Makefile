@@ -1,5 +1,5 @@
 PORTNAME=	prawcore
-PORTVERSION=	2.4.0
+DISTVERSION=	3.0.2
 CATEGORIES=	www python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -22,4 +22,10 @@ USE_PYTHON=	autoplist pep517 pytest
 
 NO_ARCH=	yes
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PYTHON_REL} < 3900
+IGNORE=		requires Python 3.9 or higher
+.endif
+
+.include <bsd.port.post.mk>

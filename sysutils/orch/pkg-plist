@@ -1,7 +1,0 @@
-bin/orch
-%%LUA_MODLIBDIR%%/orch/core.so
-%%LUA_MODSHAREDIR%%/orch.lua
-%%EXAMPLES%%%%EXAMPLESDIR%%/cat.orch
-%%EXAMPLES%%%%EXAMPLESDIR%%/nc.orch
-%%MANPAGES%%share/man/man1/orch.1.gz
-%%MANPAGES%%share/man/man5/orch.5.gz

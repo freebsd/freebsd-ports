@@ -1,7 +1,5 @@
 PORTNAME=	libdivsufsort
-DISTVERSIONPREFIX=	v
-DISTVERSION=	2.0.1-14
-DISTVERSIONSUFFIX=	-g5f60d6f
+DISTVERSION=	2.0.2-1.20151027 # 2.0.2-1 was only specified in the commit comment
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -16,6 +14,7 @@ USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	y-256
+GH_TAGNAME=	5f60d6f026c30fb4ac296f696b3c8b0eb71bd428
 
 PLIST_FILES=	include/divsufsort.h \
 		lib/libdivsufsort.so \

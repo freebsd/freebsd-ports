@@ -1,5 +1,5 @@
 PORTNAME=	7-zip
-DISTVERSION=	24.07
+DISTVERSION=	24.09
 CATEGORIES=	archivers
 MASTER_SITES=	https://www.7-zip.org/a/
 DISTNAME=	7z${DISTVERSION:S/.//}-src
@@ -30,6 +30,7 @@ CFLAGS_aarch64?=	-march=armv8-a+crc+crypto
 NO_WRKSUBDIR=	yes
 BUILD_WRKSRC=	${WRKSRC}/CPP/7zip/Bundles/Alone2
 DOS2UNIX_FILES=	C/CpuArch.c \
+		C/CpuArch.h \
 		C/7zCrc.c \
 		C/Aes.c \
 		C/AesOpt.c \

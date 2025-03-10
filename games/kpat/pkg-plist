@@ -42,6 +42,7 @@ share/knsrcfiles/kpat.knsrc
 %%DATADIR%%/themes/royalhearts.svgz
 share/locale/af/LC_MESSAGES/kpat.mo
 share/locale/ar/LC_MESSAGES/kpat.mo
+share/locale/ast/LC_MESSAGES/kpat.mo
 share/locale/be/LC_MESSAGES/kpat.mo
 share/locale/bg/LC_MESSAGES/kpat.mo
 share/locale/br/LC_MESSAGES/kpat.mo
@@ -69,6 +70,7 @@ share/locale/hi/LC_MESSAGES/kpat.mo
 share/locale/hne/LC_MESSAGES/kpat.mo
 share/locale/hr/LC_MESSAGES/kpat.mo
 share/locale/hu/LC_MESSAGES/kpat.mo
+share/locale/ia/LC_MESSAGES/kpat.mo
 share/locale/id/LC_MESSAGES/kpat.mo
 share/locale/is/LC_MESSAGES/kpat.mo
 share/locale/it/LC_MESSAGES/kpat.mo
@@ -119,14 +121,17 @@ share/man/ca/man6/kpat.6.gz
 share/man/de/man6/kpat.6.gz
 share/man/es/man6/kpat.6.gz
 share/man/et/man6/kpat.6.gz
+share/man/fr/man6/kpat.6.gz
 share/man/it/man6/kpat.6.gz
 share/man/man6/kpat.6.gz
 share/man/nl/man6/kpat.6.gz
 share/man/pt/man6/kpat.6.gz
 share/man/pt_BR/man6/kpat.6.gz
 share/man/ru/man6/kpat.6.gz
+share/man/sl/man6/kpat.6.gz
 share/man/sv/man6/kpat.6.gz
 share/man/uk/man6/kpat.6.gz
 share/metainfo/org.kde.kpat.appdata.xml
 share/mime/packages/kpatience.xml
-share/qlogging-categories5/kpat.categories
+share/qlogging-categories6/kpat.categories
+share/qlogging-categories6/kpat.renamecategories

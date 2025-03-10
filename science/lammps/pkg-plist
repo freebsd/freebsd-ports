@@ -185,6 +185,7 @@ libdata/pkgconfig/liblammps.pc
 %%DATADIR%%/potentials/Bi.meam
 %%DATADIR%%/potentials/C.drip
 %%DATADIR%%/potentials/C.lcbop
+%%DATADIR%%/potentials/CBNOH.aip.water.2dm
 %%DATADIR%%/potentials/CC.KC
 %%DATADIR%%/potentials/CC.KC-full
 %%DATADIR%%/potentials/CC.Lebedeva
@@ -196,7 +197,6 @@ libdata/pkgconfig/liblammps.pc
 %%DATADIR%%/potentials/CHAu.ILP
 %%DATADIR%%/potentials/CH_taper.KC
 %%DATADIR%%/potentials/COH.DMC.aip.water.2dm
-%%DATADIR%%/potentials/COH.aip.water.2dm
 %%DATADIR%%/potentials/C_SNAP_2021.10.15.quadratic.snapcoeff
 %%DATADIR%%/potentials/C_SNAP_2021.10.15.quadratic.snapparam
 %%DATADIR%%/potentials/CdTe.bop.table
@@ -267,6 +267,8 @@ libdata/pkgconfig/liblammps.pc
 %%DATADIR%%/potentials/Mo5.2.mgpt.README
 %%DATADIR%%/potentials/Mo5.2.mgpt.parmin
 %%DATADIR%%/potentials/Mo5.2.mgpt.potin
+%%DATADIR%%/potentials/MoCoNiVFeAlCr_2nn.meam
+%%DATADIR%%/potentials/MoS.rebomos
 %%DATADIR%%/potentials/MoS2.ILP
 %%DATADIR%%/potentials/Mo_Chen_PRM2017.snap
 %%DATADIR%%/potentials/Mo_Chen_PRM2017.snapcoeff
@@ -277,10 +279,13 @@ libdata/pkgconfig/liblammps.pc
 %%DATADIR%%/potentials/Mo_Zuo_JPCA2020.snap
 %%DATADIR%%/potentials/Mo_Zuo_JPCA2020.snapcoeff
 %%DATADIR%%/potentials/Mo_Zuo_JPCA2020.snapparam
+%%DATADIR%%/potentials/Nb.uf3
 %%DATADIR%%/potentials/Ni.adp
 %%DATADIR%%/potentials/Ni.meam
 %%DATADIR%%/potentials/NiAlH_jea.eam.alloy
 %%DATADIR%%/potentials/NiAlH_jea.eam.fs
+%%DATADIR%%/potentials/NiO.ctip
+%%DATADIR%%/potentials/NiO.eam.fs
 %%DATADIR%%/potentials/Ni_Mo.mliap.descriptor
 %%DATADIR%%/potentials/Ni_Mo.mliap.model
 %%DATADIR%%/potentials/Ni_Zuo_JPCA2020.quadratic.snap
@@ -291,6 +296,7 @@ libdata/pkgconfig/liblammps.pc
 %%DATADIR%%/potentials/Ni_Zuo_JPCA2020.snapparam
 %%DATADIR%%/potentials/Ni_smf7.eam
 %%DATADIR%%/potentials/Ni_u3.eam
+%%DATADIR%%/potentials/PSiO.nb3b.screened
 %%DATADIR%%/potentials/PdHHe.eam.he
 %%DATADIR%%/potentials/Pd_u3.eam
 %%DATADIR%%/potentials/Pt_Chapman_2020.agni
@@ -330,6 +336,7 @@ libdata/pkgconfig/liblammps.pc
 %%DATADIR%%/potentials/Si_Zuo_JPCA2020.snap
 %%DATADIR%%/potentials/Si_Zuo_JPCA2020.snapcoeff
 %%DATADIR%%/potentials/Si_Zuo_JPCA2020.snapparam
+%%DATADIR%%/potentials/TMD.ILP
 %%DATADIR%%/potentials/Ta06A.mliap
 %%DATADIR%%/potentials/Ta06A.mliap.descriptor
 %%DATADIR%%/potentials/Ta06A.mliap.model
@@ -401,5 +408,12 @@ libdata/pkgconfig/liblammps.pc
 %%DATADIR%%/potentials/lib.comb3
 %%DATADIR%%/potentials/library.meam
 %%DATADIR%%/potentials/library.msmeam
+%%DATADIR%%/potentials/library_2nn.meam
+%%DATADIR%%/potentials/oxdna2_lj.cgdna
+%%DATADIR%%/potentials/oxdna2_real.cgdna
+%%DATADIR%%/potentials/oxdna_lj.cgdna
+%%DATADIR%%/potentials/oxdna_real.cgdna
+%%DATADIR%%/potentials/oxrna2_lj.cgdna
+%%DATADIR%%/potentials/oxrna2_real.cgdna
 %%DATADIR%%/potentials/tmd.sw.mod
 share/man/man1/lmp.1.gz

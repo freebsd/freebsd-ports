@@ -1,5 +1,5 @@
 PORTNAME=	openscad
-PORTVERSION=	2022.12.20
+PORTVERSION=	${GIT_SRC_DATE}
 PORTREVISION=	1
 #PORTREVISION=	1
 CATEGORIES=	cad
@@ -8,51 +8,59 @@ PKGNAMESUFFIX=	-devel
 #PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
 #PATCHFILES+=	cc49ad8dac24.patch:-p1
 
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 MAINTAINER=	mr@FreeBSD.org
 COMMENT=	Programmer's solid 3D CAD modeller #'
 WWW=		https://www.openscad.org/
 
-LICENSE=	GPLv2+
-LICENSE_FILE=	${WRKSRC}/COPYING
-
 BUILD_DEPENDS=	cgal>0:math/cgal \
-		evdev-proto>0:devel/evdev-proto
+		evdev-proto>0:devel/evdev-proto \
+		${LOCALBASE}/include/glm/glm.hpp:math/glm \
+		${PYTHON_PKGNAMEPREFIX}numpy>0:math/py-numpy@${PY_FLAVOR}
 LIB_DEPENDS=	libzip.so:archivers/libzip \
 		libhidapi.so:comms/hidapi \
 		libboost_regex.so:devel/boost-libs \
-		libqscintilla2_qt5.so:devel/qscintilla2-qt5 \
+		libqscintilla2_qt5.so:devel/qscintilla2@qt5 \
 		libopencsg.so:graphics/opencsg \
 		libgmp.so:math/gmp \
 		libmpfr.so:math/mpfr \
 		libfreetype.so:print/freetype2 \
 		libharfbuzz.so:print/harfbuzz \
 		libfontconfig.so:x11-fonts/fontconfig \
-		libdouble-conversion.so:devel/double-conversion
+		libdouble-conversion.so:devel/double-conversion \
+		libtbb.so:devel/onetbb
 
 CONFLICTS=	openscad
 
 USES=		bison cmake compiler:c++14-lang cpe desktop-file-utils eigen:3 gettext \
-		gl gnome pkgconfig qt:5 shared-mime-info xorg
+		gl gnome pkgconfig python qt:5 shared-mime-info xorg
 USE_GITHUB=	yes
 USE_GL=		gl glu glew
 USE_GNOME=	cairo glib20 libxml2
-USE_QT=		buildtools:build core concurrent:build dbus gui multimedia qmake:build svg widgets
+USE_QT=		buildtools:build core concurrent:build dbus gui multimedia qmake svg widgets
 USE_XORG=	x11
-GH_ACCOUNT=	microsoft:mimalloc
-GH_PROJECT=	MCAD:mcad mimalloc:mimalloc
-GH_TAGNAME=	b621fa6d3d2d2d795b30d1b6aade6ff1b3c8ba29 bd0a7ba3f042bfbced5ca1894b236cea08904e26:mcad v2.0.3:mimalloc
-GH_SUBDIR=	libraries/MCAD:mcad submodules/mimalloc:mimalloc
-#QMAKE_ARGS=	CONFIG+="experimental" VERSION=${PORTVERSION}
+GH_ACCOUNT=	microsoft:mimalloc elalish:manifold arsenm:sanitizerscmake \
+		openscad:opencsg AngusJohnson:clipper2
+GH_PROJECT=	MCAD:mcad mimalloc:mimalloc manifold:manifold sanitizers-cmake:sanitizerscmake \
+		OpenCSG:opencsg Clipper2:clipper2
+GH_TAGNAME=	${GIT_SRC_HASH} ${GIT_MCAD_HASH}:mcad \
+		${GIT_CLIPPER2_HASH}:clipper2 ${GIT_OPENCSG_HASH}:opencsg \
+		${GIT_MANIFOLD_HASH}:manifold ${GIT_MIMALLOC_HASH}:mimalloc \
+		${GIT_SANITIZERSCMAKE_HASH}:sanitizerscmake
+GH_SUBDIR=	libraries/MCAD:mcad submodules/mimalloc:mimalloc submodules/manifold:manifold \
+		submodules/sanitizers-cmake:sanitizerscmake submodules/OpenCSG:opencsg \
+		submodules/Clipper2:clipper2
 # Avoid overlinking: kvm, procstat, boost(thread, system), Qt5(concurrent, network, printsupport)
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-Wl,--as-needed -L${LOCALBASE}/lib
+#CMAKE_OFF=	USE_GLAD:BOOL=OFF
+#CMAKE_ON=	USE_GLEW:BOOL=ON
+
+.include "Makefile.git_rev"
 
 .include <bsd.port.pre.mk>
-
-#post-patch:
-#	@${REINPLACE_CMD} 's/-libusb//' ${WRKSRC}/features/hidapi.prf
-#	@${REINPLACE_CMD} -e 's,share/man,man,' \
-#		${WRKSRC}/openscad.pro
 
 do-install:
 	${CMAKE_BIN} --install ${BUILD_WRKSRC} --prefix ${STAGEDIR}${PREFIX}

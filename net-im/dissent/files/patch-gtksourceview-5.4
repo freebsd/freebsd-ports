@@ -1,0 +1,393 @@
+Drop after x11-toolkits/gtksourceview5 >= 5.6 update
+
+vendor/libdb.so/gotk4-sourceview/pkg/gtksource/v5/gtksourcebuffer.go:500:10: could not determine kind of name for C.gtk_source_buffer_get_loading
+vendor/libdb.so/gotk4-sourceview/pkg/gtksource/v5/gtksourcecompletioncontext.go:301:10: could not determine kind of name for C.gtk_source_completion_context_get_proposals_for_provider
+vendor/libdb.so/gotk4-sourceview/pkg/gtksource/v5/gtksourcecompletioncontext.go:376:10: could not determine kind of name for C.gtk_source_completion_context_list_providers
+vendor/libdb.so/gotk4-sourceview/pkg/gtksource/v5/gtksourcecompletionproposal.go:88:10: could not determine kind of name for C.gtk_source_completion_proposal_get_typed_text
+vendor/libdb.so/gotk4-sourceview/pkg/gtksource/v5/gtksourcegutterlines.go:341:10: could not determine kind of name for C.gtk_source_gutter_lines_has_any_class
+vendor/libdb.so/gotk4-sourceview/pkg/gtksource/v5/gtksourcesearchsettings.go:192:10: could not determine kind of name for C.gtk_source_search_settings_get_visible_only
+vendor/libdb.so/gotk4-sourceview/pkg/gtksource/v5/gtksourcesearchsettings.go:340:2: could not determine kind of name for C.gtk_source_search_settings_set_visible_only
+vendor/libdb.so/gotk4-sourceview/pkg/gtksource/v5/gtksourcesnippet.go:138:10: could not determine kind of name for C.gtk_source_snippet_new_parsed
+vendor/libdb.so/gotk4-sourceview/pkg/gtksource/v5/gtksourcesnippetmanager.go:178:10: could not determine kind of name for C.gtk_source_snippet_manager_list_all
+
+--- vendor/libdb.so/gotk4-sourceview/pkg/gtksource/v5/gtksourcebuffer.go.orig	2024-08-18 07:05:27 UTC
++++ vendor/libdb.so/gotk4-sourceview/pkg/gtksource/v5/gtksourcebuffer.go
+@@ -491,24 +491,6 @@ func (buffer *Buffer) Language() *Language {
+ 	return _language
+ }
+ 
+-func (buffer *Buffer) Loading() bool {
+-	var _arg0 *C.GtkSourceBuffer // out
+-	var _cret C.gboolean         // in
+-
+-	_arg0 = (*C.GtkSourceBuffer)(unsafe.Pointer(coreglib.InternObject(buffer).Native()))
+-
+-	_cret = C.gtk_source_buffer_get_loading(_arg0)
+-	runtime.KeepAlive(buffer)
+-
+-	var _ok bool // out
+-
+-	if _cret != 0 {
+-		_ok = true
+-	}
+-
+-	return _ok
+-}
+-
+ // SourceMarksAtIter returns the list of marks of the given category at iter.
+ //
+ // If category is NULL it returns all marks at iter.
+--- vendor/libdb.so/gotk4-sourceview/pkg/gtksource/v5/gtksourcecompletioncontext.go.orig	2024-08-18 07:05:27 UTC
++++ vendor/libdb.so/gotk4-sourceview/pkg/gtksource/v5/gtksourcecompletioncontext.go
+@@ -278,44 +278,6 @@ func (self *CompletionContext) Language() *Language {
+ 	return _language
+ }
+ 
+-// ProposalsForProvider gets the Model associated with the provider.
+-//
+-// You can connect to SourceCompletionContext::model-changed to receive
+-// notifications about when the model has been replaced by a new model.
+-//
+-// The function takes the following parameters:
+-//
+-//   - provider: SourceCompletionProvider.
+-//
+-// The function returns the following values:
+-//
+-//   - listModel (optional) or NULL.
+-func (self *CompletionContext) ProposalsForProvider(provider CompletionProviderer) *gio.ListModel {
+-	var _arg0 *C.GtkSourceCompletionContext  // out
+-	var _arg1 *C.GtkSourceCompletionProvider // out
+-	var _cret *C.GListModel                  // in
+-
+-	_arg0 = (*C.GtkSourceCompletionContext)(unsafe.Pointer(coreglib.InternObject(self).Native()))
+-	_arg1 = (*C.GtkSourceCompletionProvider)(unsafe.Pointer(coreglib.InternObject(provider).Native()))
+-
+-	_cret = C.gtk_source_completion_context_get_proposals_for_provider(_arg0, _arg1)
+-	runtime.KeepAlive(self)
+-	runtime.KeepAlive(provider)
+-
+-	var _listModel *gio.ListModel // out
+-
+-	if _cret != nil {
+-		{
+-			obj := coreglib.Take(unsafe.Pointer(_cret))
+-			_listModel = &gio.ListModel{
+-				Object: obj,
+-			}
+-		}
+-	}
+-
+-	return _listModel
+-}
+-
+ // View gets the text view for the context.
+ //
+ // The function returns the following values:
+@@ -360,32 +322,6 @@ func (self *CompletionContext) Word() string {
+ 	defer C.free(unsafe.Pointer(_cret))
+ 
+ 	return _utf8
+-}
+-
+-// ListProviders gets the providers that are associated with the context.
+-//
+-// The function returns the following values:
+-//
+-//   - listModel of SourceCompletionProvider.
+-func (self *CompletionContext) ListProviders() *gio.ListModel {
+-	var _arg0 *C.GtkSourceCompletionContext // out
+-	var _cret *C.GListModel                 // in
+-
+-	_arg0 = (*C.GtkSourceCompletionContext)(unsafe.Pointer(coreglib.InternObject(self).Native()))
+-
+-	_cret = C.gtk_source_completion_context_list_providers(_arg0)
+-	runtime.KeepAlive(self)
+-
+-	var _listModel *gio.ListModel // out
+-
+-	{
+-		obj := coreglib.AssumeOwnership(unsafe.Pointer(_cret))
+-		_listModel = &gio.ListModel{
+-			Object: obj,
+-		}
+-	}
+-
+-	return _listModel
+ }
+ 
+ // SetProposalsForProvider: this function allows providers to update their
+--- vendor/libdb.so/gotk4-sourceview/pkg/gtksource/v5/gtksourcecompletionproposal.go.orig	2024-08-18 07:05:27 UTC
++++ vendor/libdb.so/gotk4-sourceview/pkg/gtksource/v5/gtksourcecompletionproposal.go
+@@ -3,7 +3,6 @@ import (
+ package gtksource
+ 
+ import (
+-	"runtime"
+ 	"unsafe"
+ 
+ 	coreglib "github.com/diamondburned/gotk4/pkg/core/glib"
+@@ -58,8 +57,6 @@ type CompletionProposaller interface {
+ 	TypedText() string
+ }
+ 
+-var _ CompletionProposaller = (*CompletionProposal)(nil)
+-
+ func wrapCompletionProposal(obj *coreglib.Object) *CompletionProposal {
+ 	return &CompletionProposal{
+ 		Object: obj,
+@@ -68,65 +65,6 @@ func marshalCompletionProposal(p uintptr) (interface{}
+ 
+ func marshalCompletionProposal(p uintptr) (interface{}, error) {
+ 	return wrapCompletionProposal(coreglib.ValueFromNative(unsafe.Pointer(p)).Object()), nil
+-}
+-
+-// TypedText gets the typed-text for the proposal, if supported by the
+-// implementation.
+-//
+-// Implementing this virtual-function is optional, but can be useful to allow
+-// external tooling to compare results.
+-//
+-// The function returns the following values:
+-//
+-//   - utf8 (optional): newly allocated string, or NULL.
+-func (proposal *CompletionProposal) TypedText() string {
+-	var _arg0 *C.GtkSourceCompletionProposal // out
+-	var _cret *C.char                        // in
+-
+-	_arg0 = (*C.GtkSourceCompletionProposal)(unsafe.Pointer(coreglib.InternObject(proposal).Native()))
+-
+-	_cret = C.gtk_source_completion_proposal_get_typed_text(_arg0)
+-	runtime.KeepAlive(proposal)
+-
+-	var _utf8 string // out
+-
+-	if _cret != nil {
+-		_utf8 = C.GoString((*C.gchar)(unsafe.Pointer(_cret)))
+-		defer C.free(unsafe.Pointer(_cret))
+-	}
+-
+-	return _utf8
+-}
+-
+-// typedText gets the typed-text for the proposal, if supported by the
+-// implementation.
+-//
+-// Implementing this virtual-function is optional, but can be useful to allow
+-// external tooling to compare results.
+-//
+-// The function returns the following values:
+-//
+-//   - utf8 (optional): newly allocated string, or NULL.
+-func (proposal *CompletionProposal) typedText() string {
+-	gclass := (*C.GtkSourceCompletionProposalInterface)(coreglib.PeekParentClass(proposal))
+-	fnarg := gclass.get_typed_text
+-
+-	var _arg0 *C.GtkSourceCompletionProposal // out
+-	var _cret *C.char                        // in
+-
+-	_arg0 = (*C.GtkSourceCompletionProposal)(unsafe.Pointer(coreglib.InternObject(proposal).Native()))
+-
+-	_cret = C._gotk4_gtksource5_CompletionProposal_virtual_get_typed_text(unsafe.Pointer(fnarg), _arg0)
+-	runtime.KeepAlive(proposal)
+-
+-	var _utf8 string // out
+-
+-	if _cret != nil {
+-		_utf8 = C.GoString((*C.gchar)(unsafe.Pointer(_cret)))
+-		defer C.free(unsafe.Pointer(_cret))
+-	}
+-
+-	return _utf8
+ }
+ 
+ // CompletionProposalInterface: instance of this type is always passed by
+--- vendor/libdb.so/gotk4-sourceview/pkg/gtksource/v5/gtksourcegutterlines.go.orig	2024-08-18 07:05:27 UTC
++++ vendor/libdb.so/gotk4-sourceview/pkg/gtksource/v5/gtksourcegutterlines.go
+@@ -319,38 +319,6 @@ func (lines *GutterLines) View() *gtk.TextView {
+ 	return _textView
+ }
+ 
+-// HasAnyClass checks to see if the line has any GQuark classes set. This can be
+-// used to help renderer implementations avoid work if nothing has been set on
+-// the class.
+-//
+-// The function takes the following parameters:
+-//
+-//   - line contained within lines.
+-//
+-// The function returns the following values:
+-//
+-//   - ok: TRUE if any quark was set for the line.
+-func (lines *GutterLines) HasAnyClass(line uint) bool {
+-	var _arg0 *C.GtkSourceGutterLines // out
+-	var _arg1 C.guint                 // out
+-	var _cret C.gboolean              // in
+-
+-	_arg0 = (*C.GtkSourceGutterLines)(unsafe.Pointer(coreglib.InternObject(lines).Native()))
+-	_arg1 = C.guint(line)
+-
+-	_cret = C.gtk_source_gutter_lines_has_any_class(_arg0, _arg1)
+-	runtime.KeepAlive(lines)
+-	runtime.KeepAlive(line)
+-
+-	var _ok bool // out
+-
+-	if _cret != 0 {
+-		_ok = true
+-	}
+-
+-	return _ok
+-}
+-
+ // HasClass checks to see if gutterlines.AddClass was called with the name for
+ // line.
+ //
+--- vendor/libdb.so/gotk4-sourceview/pkg/gtksource/v5/gtksourcesearchsettings.go.orig	2024-08-18 07:05:27 UTC
++++ vendor/libdb.so/gotk4-sourceview/pkg/gtksource/v5/gtksourcesearchsettings.go
+@@ -182,27 +182,6 @@ func (settings *SearchSettings) SearchText() string {
+ 
+ // The function returns the following values:
+ //
+-//   - ok: whether to exclude invisible text from the search.
+-func (settings *SearchSettings) VisibleOnly() bool {
+-	var _arg0 *C.GtkSourceSearchSettings // out
+-	var _cret C.gboolean                 // in
+-
+-	_arg0 = (*C.GtkSourceSearchSettings)(unsafe.Pointer(coreglib.InternObject(settings).Native()))
+-
+-	_cret = C.gtk_source_search_settings_get_visible_only(_arg0)
+-	runtime.KeepAlive(settings)
+-
+-	var _ok bool // out
+-
+-	if _cret != 0 {
+-		_ok = true
+-	}
+-
+-	return _ok
+-}
+-
+-// The function returns the following values:
+-//
+ //   - ok: whether to wrap around the search.
+ func (settings *SearchSettings) WrapAround() bool {
+ 	var _arg0 *C.GtkSourceSearchSettings // out
+@@ -317,29 +296,6 @@ func (settings *SearchSettings) SetSearchText(searchTe
+ 	C.gtk_source_search_settings_set_search_text(_arg0, _arg1)
+ 	runtime.KeepAlive(settings)
+ 	runtime.KeepAlive(searchText)
+-}
+-
+-// SetVisibleOnly enables or disables whether to exclude invisible text from the
+-// search.
+-//
+-// If enabled, only visible text will be searched. A search match may have
+-// invisible text interspersed.
+-//
+-// The function takes the following parameters:
+-//
+-//   - visibleOnly: setting.
+-func (settings *SearchSettings) SetVisibleOnly(visibleOnly bool) {
+-	var _arg0 *C.GtkSourceSearchSettings // out
+-	var _arg1 C.gboolean                 // out
+-
+-	_arg0 = (*C.GtkSourceSearchSettings)(unsafe.Pointer(coreglib.InternObject(settings).Native()))
+-	if visibleOnly {
+-		_arg1 = C.TRUE
+-	}
+-
+-	C.gtk_source_search_settings_set_visible_only(_arg0, _arg1)
+-	runtime.KeepAlive(settings)
+-	runtime.KeepAlive(visibleOnly)
+ }
+ 
+ // SetWrapAround enables or disables the wrap around search.
+--- vendor/libdb.so/gotk4-sourceview/pkg/gtksource/v5/gtksourcesnippet.go.orig	2024-08-18 07:05:27 UTC
++++ vendor/libdb.so/gotk4-sourceview/pkg/gtksource/v5/gtksourcesnippet.go
+@@ -6,7 +6,6 @@ import (
+ 	"runtime"
+ 	"unsafe"
+ 
+-	"github.com/diamondburned/gotk4/pkg/core/gerror"
+ 	"github.com/diamondburned/gotk4/pkg/core/gextras"
+ 	coreglib "github.com/diamondburned/gotk4/pkg/core/glib"
+ )
+@@ -114,39 +113,6 @@ func NewSnippet(trigger, languageId string) *Snippet {
+ 	_snippet = wrapSnippet(coreglib.AssumeOwnership(unsafe.Pointer(_cret)))
+ 
+ 	return _snippet
+-}
+-
+-// NewSnippetParsed parses the snippet formatted text into a series of chunks
+-// and adds them to a new SourceSnippet.
+-//
+-// The function takes the following parameters:
+-//
+-//   - text: formatted snippet text to parse.
+-//
+-// The function returns the following values:
+-//
+-//   - snippet: newly parsed SourceSnippet, or NULL upon failure and error is
+-//     set.
+-func NewSnippetParsed(text string) (*Snippet, error) {
+-	var _arg1 *C.char             // out
+-	var _cret *C.GtkSourceSnippet // in
+-	var _cerr *C.GError           // in
+-
+-	_arg1 = (*C.char)(unsafe.Pointer(C.CString(text)))
+-	defer C.free(unsafe.Pointer(_arg1))
+-
+-	_cret = C.gtk_source_snippet_new_parsed(_arg1, &_cerr)
+-	runtime.KeepAlive(text)
+-
+-	var _snippet *Snippet // out
+-	var _goerr error      // out
+-
+-	_snippet = wrapSnippet(coreglib.AssumeOwnership(unsafe.Pointer(_cret)))
+-	if _cerr != nil {
+-		_goerr = gerror.Take(unsafe.Pointer(_cerr))
+-	}
+-
+-	return _snippet, _goerr
+ }
+ 
+ // AddChunk appends chunk to the snippet.
+--- vendor/libdb.so/gotk4-sourceview/pkg/gtksource/v5/gtksourcesnippetmanager.go.orig	2024-08-18 07:05:27 UTC
++++ vendor/libdb.so/gotk4-sourceview/pkg/gtksource/v5/gtksourcesnippetmanager.go
+@@ -161,35 +161,6 @@ func (self *SnippetManager) Snippet(group, languageId,
+ 	return _snippet
+ }
+ 
+-// ListAll gets a gio.ListModel of all snippets.
+-//
+-// This can be used to get an unfiltered list of all of the snippets known to
+-// the snippet manager.
+-//
+-// The function returns the following values:
+-//
+-//   - listModel: gio.ListModel of gtksource.Snippet.
+-func (self *SnippetManager) ListAll() *gio.ListModel {
+-	var _arg0 *C.GtkSourceSnippetManager // out
+-	var _cret *C.GListModel              // in
+-
+-	_arg0 = (*C.GtkSourceSnippetManager)(unsafe.Pointer(coreglib.InternObject(self).Native()))
+-
+-	_cret = C.gtk_source_snippet_manager_list_all(_arg0)
+-	runtime.KeepAlive(self)
+-
+-	var _listModel *gio.ListModel // out
+-
+-	{
+-		obj := coreglib.Take(unsafe.Pointer(_cret))
+-		_listModel = &gio.ListModel{
+-			Object: obj,
+-		}
+-	}
+-
+-	return _listModel
+-}
+-
+ // ListGroups: list all the known groups within the snippet manager.
+ //
+ // The result should be freed with g_free(), and the individual strings are

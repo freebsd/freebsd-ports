@@ -1,0 +1,11 @@
+--- pyproject.toml.orig	2024-10-30 23:29:16 UTC
++++ pyproject.toml
+@@ -15,7 +15,7 @@ requires = [
+ 
+ [build-system]
+ requires = [
+-    "setuptools>=30.3.0,<50",
++    "setuptools>=0",
+     "poetry-core>=1.0.0"
+ ]
+ build-backend = "poetry.core.masonry.api"

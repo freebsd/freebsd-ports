@@ -6,7 +6,7 @@ MASTER_SITES=	http://distfiles.alpinelinux.org/distfiles/ \
 		http://distfiles.lesslinux.org/ \
 		http://gentoo.netnitco.net/distfiles/
 
-MAINTAINER=	bofh@FreeBSD.org
+MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	High Quality Rendering Engine for C++
 WWW=		http://www.antigrain.com/
 

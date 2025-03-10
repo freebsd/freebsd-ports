@@ -1,5 +1,5 @@
 PORTNAME=	git
-DISTVERSION=	2.46.0
+DISTVERSION=	2.48.1
 CATEGORIES=	devel
 MASTER_SITES=	KERNEL_ORG/software/scm/git
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
@@ -54,16 +54,17 @@ MAKE_ENV+=	V=1
 .if ${SUBPORT} == core
 USE_RC_SUBR=	git_daemon
 .endif
-SHEBANG_FILES=	*.perl */*.perl */*/*.perl */*.pl */*/*.pl */*/*/*.pl \
-		t/*/*/pre t/*/*/post t/Git-SVN/Utils/*.t \
-		git-p4.py \
-		contrib/hooks/update-paranoid \
+SHEBANG_FILES=	Documentation/*.perl \
+		contrib/*/*.perl \
+		contrib/*/*.pl \
+		contrib/*/*/*.perl \
+		contrib/*/*/*.pl \
+		contrib/buildsystems/generate \
+		contrib/contacts/git-contacts \
 		contrib/fast-import/import-zips.py \
-		contrib/remote-helpers/git-remote-bzr \
-		contrib/remote-helpers/git-remote-hg \
-		contrib/credential/netrc/git-credential-netrc.perl \
-		contrib/buildsystems/generate contrib/contacts/git-contacts \
-		templates/hooks--fsmonitor-watchman.sample
+		contrib/hooks/update-paranoid \
+		git-p4.py \
+		templates/hooks/fsmonitor-watchman.sample
 TEST_TARGET=	test
 
 CONFIGURE_ARGS=	--enable-pthreads=-pthread ac_cv_header_libcharset_h=no
@@ -125,7 +126,7 @@ CURL_MAKE_ARGS_OFF=	NO_CURL=1 NO_EXPAT=1
 
 HTMLDOCS_DISTFILES=	${PORTNAME}-htmldocs-${DISTVERSION}${EXTRACT_SUFX}
 
-SUBTREE_BUILD_DEPENDS=	asciidoctor:textproc/rubygem-asciidoctor\
+SUBTREE_BUILD_DEPENDS=	asciidoctor:textproc/rubygem-asciidoctor \
 			xmlto:textproc/xmlto
 
 .else
@@ -273,6 +274,9 @@ post-install-HTMLDOCS-on:
 	${LN} -s git.html ${STAGEDIR}${DOCSDIR}/index.html
 
 post-install-SUBTREE-on:
+	cd ${WRKSRC}/Documentation && ${SETENVI} ${WRK_ENV} ${MAKE_ENV} \
+		${MAKE_CMD} ${MAKE_FLAGS} Makefile USE_ASCIIDOCTOR=1 \
+		${MAKE_ARGS} asciidoctor-extensions.rb
 	cd ${WRKSRC}/contrib/subtree && ${SETENVI} ${WRK_ENV} ${MAKE_ENV} \
 		${MAKE_CMD} ${MAKE_FLAGS} Makefile USE_ASCIIDOCTOR=1 \
 		${MAKE_ARGS} install install-doc

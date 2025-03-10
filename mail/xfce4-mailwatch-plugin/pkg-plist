@@ -37,6 +37,7 @@ share/icons/hicolor/scalable/apps/xfce-nomail.svg
 %%NLS%%share/locale/pl/LC_MESSAGES/xfce4-mailwatch-plugin.mo
 %%NLS%%share/locale/pt/LC_MESSAGES/xfce4-mailwatch-plugin.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/xfce4-mailwatch-plugin.mo
+%%NLS%%share/locale/ro/LC_MESSAGES/xfce4-mailwatch-plugin.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/xfce4-mailwatch-plugin.mo
 %%NLS%%share/locale/sk/LC_MESSAGES/xfce4-mailwatch-plugin.mo
 %%NLS%%share/locale/sl/LC_MESSAGES/xfce4-mailwatch-plugin.mo

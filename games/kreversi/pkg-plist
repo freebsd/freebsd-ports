@@ -16,9 +16,7 @@ share/icons/hicolor/48x48/apps/kreversi.png
 share/icons/hicolor/64x64/apps/kreversi.png
 share/icons/hicolor/scalable/actions/lastmoves.svgz
 share/icons/hicolor/scalable/actions/legalmoves.svgz
-share/knotifications5/kreversi.notifyrc
-%%DATADIR%%/pics/default_theme.desktop
-%%DATADIR%%/pics/default_theme.svgz
+share/knotifications6/kreversi.notifyrc
 %%DATADIR%%/qml/Board.qml
 %%DATADIR%%/qml/CanvasItem.qml
 %%DATADIR%%/qml/Cell.qml
@@ -28,8 +26,11 @@ share/knotifications5/kreversi.notifyrc
 %%DATADIR%%/qml/globals.js
 %%DATADIR%%/sounds/reversi-click.wav
 %%DATADIR%%/sounds/reversi-won.wav
+%%DATADIR%%/themes/default.desktop
+%%DATADIR%%/themes/default.svgz
 share/locale/af/LC_MESSAGES/kreversi.mo
 share/locale/ar/LC_MESSAGES/kreversi.mo
+share/locale/ast/LC_MESSAGES/kreversi.mo
 share/locale/be/LC_MESSAGES/kreversi.mo
 share/locale/bg/LC_MESSAGES/kreversi.mo
 share/locale/bn/LC_MESSAGES/kreversi.mo
@@ -57,6 +58,7 @@ share/locale/hi/LC_MESSAGES/kreversi.mo
 share/locale/hne/LC_MESSAGES/kreversi.mo
 share/locale/hr/LC_MESSAGES/kreversi.mo
 share/locale/hu/LC_MESSAGES/kreversi.mo
+share/locale/ia/LC_MESSAGES/kreversi.mo
 share/locale/id/LC_MESSAGES/kreversi.mo
 share/locale/is/LC_MESSAGES/kreversi.mo
 share/locale/it/LC_MESSAGES/kreversi.mo

@@ -14,13 +14,14 @@ WWW=		https://openjdk.java.net/
 
 LICENSE=	GPLv2
 
-ONLY_FOR_ARCHS=		aarch64 amd64 armv6 armv7 i386 powerpc64 powerpc64le
+ONLY_FOR_ARCHS=		aarch64 amd64 armv6 armv7 i386 powerpc powerpc64 powerpc64le
 
 DISTINFO_FILE=	${.CURDIR}/distinfo.${JDK_ARCH}
 DISTVERSION_aarch64=	r453316
 DISTVERSION_amd64=	r450802
 DISTVERSION_arm=	r450802
 DISTVERSION_i386=	r450802
+DISTVERSION_ppc=	8bfca5a163f4527b2097a7cb56e2410418c9f233
 DISTVERSION_ppc64=	r522831
 DISTVERSION_ppc64le=	r555661
 

@@ -1,8 +1,7 @@
 PORTNAME=	msktutil
-PORTVERSION=	1.2.1
-PORTREVISION=	1
-#DISTVERSIONPREFIX=	v
+DISTVERSION=	1.2.2
 CATEGORIES=	sysutils
+MASTER_SITES=	https://github.com/msktutil/${PORTNAME}/releases/download/${DISTVERSION}/
 
 MAINTAINER=	zi@FreeBSD.org
 COMMENT=	Utility to manage Active Directory interoperability
@@ -13,27 +12,30 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	cyrus-sasl-gssapi>0:security/cyrus-sasl2-gssapi
 
-USES=		autoreconf ldap ssl
-USE_GITHUB=	yes
+USES=		ldap ssl tar:bz2
+
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
-CONFIGURE_ARGS+=--with-sasldir=${LOCALBASE} --with-ldapdir=${LOCALBASE}
 
-OPTIONS_SINGLE=	GSSAPI
-OPTIONS_SINGLE_GSSAPI=	GSSAPI_BASE GSSAPI_HEIMDAL GSSAPI_MIT
+PLIST_FILES=	sbin/msktutil \
+		share/man/man1/msktutil.1.gz
 
-OPTIONS_DEFAULT=GSSAPI_BASE
+CONFIGURE_ARGS=	--with-krb5-config=${KRB5CONFIG} \
+		--with-sasldir=${LOCALBASE} \
+		--with-ldapdir=${LOCALBASE} \
 
-GSSAPI_BASE_USES=	gssapi
-GSSAPI_HEIMDAL_USES=	gssapi:heimdal
-GSSAPI_MIT_USES=	gssapi:mit
+OPTIONS_SINGLE=			GSSAPI
+OPTIONS_SINGLE_GSSAPI=		GSSAPI_BASE GSSAPI_HEIMDAL GSSAPI_MIT
 
+OPTIONS_DEFAULT=		GSSAPI_BASE
+
+GSSAPI_BASE_USES=		gssapi
 GSSAPI_BASE_CONFIGURE_ON=	--with-krb5=heimdal
-GSSAPI_HEIMDAL_CONFIGURE_ON=	--with-krb5=heimdal
-GSSAPI_MIT_CONFIGURE_ON=	--with-krb5=mit
-CONFIGURE_ARGS+=		--with-krb5-config=${KRB5CONFIG}
 
-PLIST_FILES=	sbin/msktutil share/man/man1/msktutil.1.gz
+GSSAPI_HEIMDAL_USES=		gssapi:heimdal
+GSSAPI_HEIMDAL_CONFIGURE_ON=	--with-krb5=heimdal
+
+GSSAPI_MIT_USES=		gssapi:mit
+GSSAPI_MIT_CONFIGURE_ON=	--with-krb5=mit
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/sbin/msktutil

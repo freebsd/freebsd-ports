@@ -1,6 +1,5 @@
 PORTNAME=	libetonyek
-PORTVERSION=	0.1.10
-PORTREVISION=	7
+DISTVERSION=	0.1.12
 PORTEPOCH=	1
 CATEGORIES=	graphics
 MASTER_SITES=	LODEV/${PORTNAME}
@@ -17,18 +16,23 @@ BUILD_DEPENDS=	${LOCALBASE}/include/mdds-${MDDS_VERSION}/mdds/global.hpp:devel/m
 		${LOCALBASE}/include/boost/any.hpp:devel/boost-libs \
 		${LOCALBASE}/include/glm/glm.hpp:math/glm
 LIB_DEPENDS=	librevenge-0.0.so:textproc/librevenge \
-		liblangtag.so:devel/liblangtag \
-		libxml2.so:textproc/libxml2
+		liblangtag.so:devel/liblangtag
 
-USES=		compiler:c++17-lang gmake libtool localbase pkgconfig tar:xz
+USES=		compiler:c++17-lang gnome libtool localbase pathfix pkgconfig \
+		tar:xz
 USE_CXXSTD=	c++17
+USE_GNOME=	libxml2
+USE_LDCONFIG=	yes
+
+GNU_CONFIGURE=	yes
 
 MDDS_VERSION=	2.1
 
-CONFIGURE_ARGS=	--disable-tests --disable-werror --without-docs --with-mdds=${MDDS_VERSION}
-
-GNU_CONFIGURE=	yes
-USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
+
+PLIST_SUB=	LIBVERSION=1.0.${PORTVERSION:E}
+
+CONFIGURE_ARGS=	--disable-tests --disable-werror --without-docs \
+		--with-mdds=${MDDS_VERSION}
 
 .include <bsd.port.mk>

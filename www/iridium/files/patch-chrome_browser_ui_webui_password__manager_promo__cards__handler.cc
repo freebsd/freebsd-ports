@@ -1,4 +1,4 @@
---- chrome/browser/ui/webui/password_manager/promo_cards_handler.cc.orig	2024-06-25 12:08:48 UTC
+--- chrome/browser/ui/webui/password_manager/promo_cards_handler.cc.orig	2025-02-22 18:06:53 UTC
 +++ chrome/browser/ui/webui/password_manager/promo_cards_handler.cc
 @@ -28,7 +28,7 @@
  #include "chrome/browser/ui/webui/password_manager/promo_cards/web_password_manager_promo.h"

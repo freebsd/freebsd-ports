@@ -28,6 +28,7 @@
 %%TEXMFDIR%%/tex/latex/beamer/base/beamerbasemisc.sty
 %%TEXMFDIR%%/tex/latex/beamer/base/beamerbasemodes.sty
 %%TEXMFDIR%%/tex/latex/beamer/base/beamerbasenavigation.sty
+%%TEXMFDIR%%/tex/latex/beamer/base/beamerbasenavigationsymbols.tex
 %%TEXMFDIR%%/tex/latex/beamer/base/beamerbasenotes.sty
 %%TEXMFDIR%%/tex/latex/beamer/base/beamerbaseoptions.sty
 %%TEXMFDIR%%/tex/latex/beamer/base/beamerbaseoverlay.sty

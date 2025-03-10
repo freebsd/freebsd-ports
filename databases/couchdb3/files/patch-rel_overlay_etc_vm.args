@@ -1,6 +1,6 @@
---- rel/overlay/etc/vm.args.orig	2022-12-22 07:53:22 UTC
+--- rel/overlay/etc/vm.args.orig	2024-10-14 18:24:54 UTC
 +++ rel/overlay/etc/vm.args
-@@ -63,7 +63,7 @@ +Bd -noinput
+@@ -75,7 +75,7 @@ +Bd -noinput
  
  # Comment this line out to enable the interactive Erlang shell on startup
  +Bd -noinput

@@ -1,0 +1,10 @@
+--- MANIFEST.in.orig	2024-01-21 15:55:09 UTC
++++ MANIFEST.in
+@@ -1,7 +1,5 @@ include README.md
+ include README.md
+-include versioneer.py
+ include pylsp/_version.py
+ include LICENSE
+-include ruff.toml
+ include .pylintrc
+ recursive-include test *.py

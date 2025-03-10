@@ -11,11 +11,8 @@ WWW=		https://netty.io/
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-USES=		cpe tar:bzip2
-USE_JAVA=	yes
+USES=		cpe java:extract tar:bzip2
 
-JAVA_VERSION=	8+
-JAVA_EXTRACT=	yes
 NO_ARCH=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}.Final
 
@@ -54,7 +51,7 @@ NETTY_ARCH=	ppc_64
 NETTY_ARCH=	${ARCH}
 .endif
 
-.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400079 || ( ${OSVERSION} >= 1302505 && ${OSVERSION} < 1400000 ))
+.if ${OPSYS} == FreeBSD
 CFLAGS+=	-Wno-error=int-conversion
 .endif
 

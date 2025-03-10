@@ -1,6 +1,6 @@
---- Makefile.orig	2024-04-29 16:19:22 UTC
+--- Makefile.orig	2025-01-10 17:43:46 UTC
 +++ Makefile
-@@ -606,16 +606,16 @@ mandir = $(prefix)/share/man
+@@ -613,16 +613,16 @@ mandir = $(prefix)/share/man
  prefix = $(HOME)
  bindir = $(prefix)/bin
  mandir = $(prefix)/share/man
@@ -21,7 +21,7 @@
  ETC_GITCONFIG = $(sysconfdir)/gitconfig
  ETC_GITATTRIBUTES = $(sysconfdir)/gitattributes
  lib = lib
-@@ -640,8 +640,8 @@ INSTALL = install
+@@ -647,8 +647,8 @@ INSTALL = install
  TAR = tar
  FIND = find
  INSTALL = install
@@ -32,7 +32,7 @@
  XGETTEXT = xgettext
  MSGCAT = msgcat
  MSGFMT = msgfmt
-@@ -1671,9 +1671,9 @@ ifndef NO_OPENSSL
+@@ -1696,9 +1696,9 @@ ifndef NO_OPENSSL
  
  ifndef NO_OPENSSL
  	OPENSSL_LIBSSL = -lssl
@@ -45,7 +45,7 @@
          else
  		OPENSSL_LINK =
          endif
-@@ -2580,7 +2580,7 @@ else # NO_PERL
+@@ -2627,7 +2627,7 @@ else # NO_PERL
  	chmod +x $@+ && \
  	mv $@+ $@
  else # NO_PERL
@@ -53,17 +53,8 @@
 +$(SCRIPT_PERL_GEN) git-instaweb git-request-pull: % : unimplemented.sh
  	$(QUIET_GEN) \
  	sed -e '1s|#!.*/sh|#!$(SHELL_PATH_SQ)|' \
- 	    -e 's|@@REASON@@|NO_PERL=$(NO_PERL)|g' \
-@@ -2596,7 +2596,7 @@ $(SCRIPT_PYTHON_GEN): % : %.py
- $(SCRIPT_PYTHON_GEN): GIT-CFLAGS GIT-PREFIX GIT-PYTHON-VARS
- $(SCRIPT_PYTHON_GEN): % : %.py
- 	$(QUIET_GEN) \
--	sed -e '1s|#!.*python|#!$(PYTHON_PATH_SQ)|' \
-+	sed -e '1s|#!.*python.*|#!$(PYTHON_PATH_SQ)|' \
- 	    $< >$@+ && \
- 	chmod +x $@+ && \
- 	mv $@+ $@
-@@ -3473,7 +3473,7 @@ install: all
+ 	    -e 's|@REASON@|NO_PERL=$(NO_PERL)|g' \
+@@ -3489,7 +3489,7 @@ install: all
  	$(INSTALL) $(SCRIPTS) '$(DESTDIR_SQ)$(gitexec_instdir_SQ)'
  	$(INSTALL) -m 644 $(SCRIPT_LIB) '$(DESTDIR_SQ)$(gitexec_instdir_SQ)'
  	$(INSTALL) $(INSTALL_STRIP) $(install_bindir_xprograms) '$(DESTDIR_SQ)$(bindir_SQ)'

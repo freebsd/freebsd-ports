@@ -3,13 +3,13 @@ CATEGORIES=	multimedia
 
 COMMENT=	GStreamer HTTP Live Streaming (HLS) plugin
 
-GST_PLUGIN=	hls
+LIB_DEPENDS=	libnettle.so:security/nettle
+
+MASTERDIR=	${.CURDIR:H:H}/multimedia/gstreamer1-plugins
+
+PLIST=		${.CURDIR}/pkg-plist
+
 DIST=		bad
-
-MASTERDIR=	${.CURDIR}/../../multimedia/gstreamer1-plugins
-
-PLIST=  ${.CURDIR}/pkg-plist
-
-LIB_DEPENDS=  libnettle.so:security/nettle
+GST_PLUGIN=	hls
 
 .include "${MASTERDIR}/Makefile"

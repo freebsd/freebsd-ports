@@ -1,11 +1,10 @@
 PORTNAME=			tevent
-DISTVERSION=			0.13.0
-PORTREVISION=			2
+DISTVERSION=			0.15.0
 PORTEPOCH=			0
 CATEGORIES=			devel
 MASTER_SITES=			SAMBA
 
-MAINTAINER=			timur@FreeBSD.org
+MAINTAINER=			samba@FreeBSD.org
 COMMENT=			Talloc based event loop library
 WWW=				https://tevent.samba.org/
 
@@ -30,6 +29,8 @@ CONFIGURE_ARGS=			--disable-rpath \
 				--without-gettext
 CONFIGURE_ENV=			PYTHONHASHSEED=1
 MAKE_ENV=			PYTHONHASHSEED=1
+
+CONFLICTS_INSTALL=		tevent[0-9]*
 
 MANPAGES_DESC=			Build and install manpages (requires textproc/docbook-xsl)
 
@@ -65,6 +66,7 @@ post-patch:
 
 post-install:
 				${RM} ${STAGEDIR}${PREFIX}/lib/tevent/libcmocka-tevent.so
+				${RM} ${STAGEDIR}${PREFIX}/lib/tevent/libpytalloc-util.cpython-${PYTHON_SUFFIX}-tevent.so
 				${RMDIR} ${STAGEDIR}${PREFIX}/lib/tevent
 				${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libtevent.so
 

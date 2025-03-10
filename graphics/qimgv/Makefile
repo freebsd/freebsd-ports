@@ -1,5 +1,5 @@
 PORTNAME=	qimgv
-PORTVERSION=	1.03.g20240727
+PORTVERSION=	1.03.g20241011
 CATEGORIES=	graphics
 
 MAINTAINER=	kenrap@kennethraplee.com
@@ -14,7 +14,7 @@ USES=		cmake compiler:c++17-lang desktop-file-utils \
 		localbase:ldflags
 USE_GITHUB=	yes
 GH_ACCOUNT=	easymodo
-GH_TAGNAME=	82e6b7537002b86b4ab20954aab5bf0db7c25752
+GH_TAGNAME=	a4d475fae07847be7c106cb628fb97dad51ab920
 
 LDFLAGS+=	-linotify
 

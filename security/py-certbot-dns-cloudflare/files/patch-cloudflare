@@ -1,4 +1,4 @@
---- certbot_dns_cloudflare/_internal/dns_cloudflare.py.orig	2024-06-05 21:34:02 UTC
+--- certbot_dns_cloudflare/_internal/dns_cloudflare.py.orig	2025-01-07 20:53:36 UTC
 +++ certbot_dns_cloudflare/_internal/dns_cloudflare.py
 @@ -99,12 +99,12 @@ class _CloudflareClient:
              # We can't use named arguments in this case, as it would break compatibility with
@@ -15,7 +15,7 @@
  
      def add_txt_record(self, domain: str, record_name: str, record_content: str,
                         record_ttl: int) -> None:
---- setup.py.orig	2024-06-05 21:34:03 UTC
+--- setup.py.orig	2025-01-07 20:53:37 UTC
 +++ setup.py
 @@ -9,7 +9,7 @@ install_requires = [
  install_requires = [
@@ -23,6 +23,6 @@
      # changes in version 3.0. see https://github.com/certbot/certbot/issues/9938
 -    'cloudflare>=1.5.1, <2.20',
 +    'cloudflare>=1.5.1, <=2.20',
-     'setuptools>=41.6.0',
  ]
  
+ if os.environ.get('SNAP_BUILD'):

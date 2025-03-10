@@ -1,18 +1,16 @@
 PORTNAME=	libffcall
-PORTVERSION=	2.4
-PORTREVISION=	2
+DISTVERSION=	2.5
 CATEGORIES=	devel
 MASTER_SITES=	GNU
 
 MAINTAINER=	ndowens04@gmail.com
 COMMENT=	Foreign function call libraries
-WWW=		https://www.haible.de/bruno/packages-ffcall.html
+WWW=		https://www.gnu.org/software/libffcall/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN_mips=	fails to build: gmake[2]: No rule to make target 'avcall-mipsn32-macro.S', needed by 'avcall-mipsn32.s'
-BROKEN_mips64=	fails to build: gmake[2]: No rule to make target 'avcall-mips64-macro.S', needed by 'avcall-mips64.s'
+BROKEN_armv7=	no rule to make target 'avcall-armhf-old.lo', needed by 'avcall.lo'
 
 USES=		gmake libtool
 USE_LDCONFIG=	yes
@@ -22,6 +20,7 @@ GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=		--enable-shared
 CONFIGURE_TARGET=	${ARCH:S/amd64/x86_64/}-portbld-${OPSYS:tl}${OSREL}
 MAKE_JOBS_UNSAFE=	yes
+TEST_TARGET=	check
 CFLAGS+=		-fPIC
 
 post-install:

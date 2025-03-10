@@ -4,7 +4,7 @@ CATEGORIES=	security
 MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	ehaupt@FreeBSD.org
-COMMENT=	Multithreaded program to crack PKCS#12 files
+COMMENT=	Multithreaded program to crack PKCS\#12 files
 WWW=		https://crackpkcs12.sourceforge.net/
 
 LICENSE=	GPLv3+

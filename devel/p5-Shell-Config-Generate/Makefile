@@ -1,5 +1,6 @@
 PORTNAME=	Shell-Config-Generate
 PORTVERSION=	0.34
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -13,7 +14,7 @@ LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Shell-Guess>=0.09:devel/p5-Shell-Guess \
-		p5-Test2-Suite>=0.000118:devel/p5-Test2-Suite
+		p5-Test-Simple>=1.302200:devel/p5-Test-Simple
 
 USES=		perl5
 USE_PERL5=	configure

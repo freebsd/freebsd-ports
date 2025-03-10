@@ -1,5 +1,5 @@
 .include "${.CURDIR}/../llvm-cheri/Makefile.COMMANDS"
 
-# Work around version skew with llvm-cheri
-LLVM_COMMANDS:=	${LLVM_COMMANDS:Nllvm-debuginfod:Nllvm-dwarfutil:Nllvm-remark-size-diff}
-CLANG_COMMANDS:=${CLANG_COMMANDS:Nclang-offload-packager}
+LLVM_COMMANDS+= \
+		clang-nvlink-wrapper \
+		clang-offload-wrapper

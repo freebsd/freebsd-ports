@@ -1,0 +1,12 @@
+- fix failure in configure phase to detect boost serialization
+
+--- CMakeLists.txt.orig	2024-06-05 12:07:40 UTC
++++ CMakeLists.txt
+@@ -375,6 +375,7 @@ if (USE_PAGMO)
+ endif ()
+ 
+ if (USE_PAGMO)
++  find_package(Boost REQUIRED serialization)
+   find_package (Pagmo CONFIG)
+   if (Pagmo_FOUND)
+     message (STATUS "Found Pagmo: ${Pagmo_DIR} (found version \"${Pagmo_VERSION}\")")

@@ -1,5 +1,5 @@
 PORTNAME=	bibclean
-DISTVERSION=	3.06
+DISTVERSION=	3.07
 CATEGORIES=	textproc
 MASTER_SITES=	http://ftp.math.utah.edu/pub//bibclean/
 

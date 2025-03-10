@@ -1,5 +1,5 @@
 PORTNAME=	muon
-DISTVERSION=	0.2.0
+DISTVERSION=	0.3.1
 CATEGORIES=	devel
 MASTER_SITES=	https://git.sr.ht/~lattis/${PORTNAME}/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/
 
@@ -21,15 +21,18 @@ ALL_TARGET=
 PLIST_FILES=	bin/muon \
 		share/man/man1/muon.1.gz \
 		share/man/man5/meson.build.5.gz
-
-post-patch:
-# this confuses some of the FreeBSD configure targets
-	@${RM} -r ${WRKSRC}/tests/project/common
+USE_CSTD=	c99
+CFLAGS+=	-D__XSI_VISIBLE=1
+CONFIGURE_ENV=	CC="${CC}" CFLAGS="${CFLAGS}"
 
 do-configure:
 	@(cd ${WRKSRC} && \
-		${SH} bootstrap.sh . && \
-		./muon setup -Dlibcurl=disabled -Dlibarchive=disabled ${BUILD_WRKSRC})
+		${SETENV} ${CONFIGURE_ENV} ${SH} bootstrap.sh . && \
+		${SETENV} ${CONFIGURE_ENV} ./muon setup \
+			-Dlibcurl=disabled \
+			-Dlibarchive=disabled \
+			-Dtracy=disabled \
+			${BUILD_WRKSRC})
 
 do-install:
 	@(${SETENV} ${MAKE_ENV} ${BUILD_WRKSRC}/muon -C ${BUILD_WRKSRC} install)

@@ -4,6 +4,10 @@
 %%MANPAGES%%share/man/man1/gh-alias-set.1.gz
 %%MANPAGES%%share/man/man1/gh-alias.1.gz
 %%MANPAGES%%share/man/man1/gh-api.1.gz
+%%MANPAGES%%share/man/man1/gh-attestation-download.1.gz
+%%MANPAGES%%share/man/man1/gh-attestation-trusted-root.1.gz
+%%MANPAGES%%share/man/man1/gh-attestation-verify.1.gz
+%%MANPAGES%%share/man/man1/gh-attestation.1.gz
 %%MANPAGES%%share/man/man1/gh-auth-login.1.gz
 %%MANPAGES%%share/man/man1/gh-auth-logout.1.gz
 %%MANPAGES%%share/man/man1/gh-auth-refresh.1.gz
@@ -98,6 +102,7 @@
 %%MANPAGES%%share/man/man1/gh-pr-review.1.gz
 %%MANPAGES%%share/man/man1/gh-pr-status.1.gz
 %%MANPAGES%%share/man/man1/gh-pr-unlock.1.gz
+%%MANPAGES%%share/man/man1/gh-pr-update-branch.1.gz
 %%MANPAGES%%share/man/man1/gh-pr-view.1.gz
 %%MANPAGES%%share/man/man1/gh-pr.1.gz
 %%MANPAGES%%share/man/man1/gh-project-close.1.gz
@@ -139,6 +144,12 @@
 %%MANPAGES%%share/man/man1/gh-repo-deploy-key.1.gz
 %%MANPAGES%%share/man/man1/gh-repo-edit.1.gz
 %%MANPAGES%%share/man/man1/gh-repo-fork.1.gz
+%%MANPAGES%%share/man/man1/gh-repo-gitignore-list.1.gz
+%%MANPAGES%%share/man/man1/gh-repo-gitignore-view.1.gz
+%%MANPAGES%%share/man/man1/gh-repo-gitignore.1.gz
+%%MANPAGES%%share/man/man1/gh-repo-license-list.1.gz
+%%MANPAGES%%share/man/man1/gh-repo-license-view.1.gz
+%%MANPAGES%%share/man/man1/gh-repo-license.1.gz
 %%MANPAGES%%share/man/man1/gh-repo-list.1.gz
 %%MANPAGES%%share/man/man1/gh-repo-rename.1.gz
 %%MANPAGES%%share/man/man1/gh-repo-set-default.1.gz
@@ -174,6 +185,7 @@
 %%MANPAGES%%share/man/man1/gh-ssh-key.1.gz
 %%MANPAGES%%share/man/man1/gh-status.1.gz
 %%MANPAGES%%share/man/man1/gh-variable-delete.1.gz
+%%MANPAGES%%share/man/man1/gh-variable-get.1.gz
 %%MANPAGES%%share/man/man1/gh-variable-list.1.gz
 %%MANPAGES%%share/man/man1/gh-variable-set.1.gz
 %%MANPAGES%%share/man/man1/gh-variable.1.gz

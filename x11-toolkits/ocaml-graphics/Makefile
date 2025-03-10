@@ -10,12 +10,10 @@ WWW=		https://github.com/ocaml/graphics
 
 LICENSE=	LGPL21
 
-USES=		ocaml:dune pkgconfig xorg
+USES=		ocaml:dune,ldconfig pkgconfig xorg
 USE_GITHUB=	yes
 GH_ACCOUNT=	ocaml
 GH_PROJECT=	graphics
-USE_OCAML=	yes
-USE_OCAML_LDCONFIG=	yes
 USE_XORG=	x11 xorgproto
 
 DOCSDIR=	${OCAML_DOCSDIR}/${PORTNAME}
@@ -24,6 +22,12 @@ PORTDOCS=	CHANGES.md LICENSE README.md
 OPTIONS_DEFINE=		DOCS
 
 SA_DIR=		${LOCALBASE}/${OCAML_SITELIBDIR}
+
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == powerpc
+USE_BINUTILS=	yes
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} \

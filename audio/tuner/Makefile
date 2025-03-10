@@ -1,6 +1,6 @@
 PORTNAME=	tuner
-DISTVERSION=	1.5.1
-PORTREVISION=	3
+DISTVERSIONPREFIX=	v
+DISTVERSION=	1.5.4
 CATEGORIES=	audio
 
 MAINTAINER=	ashish@FreeBSD.org
@@ -11,9 +11,7 @@ LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libgranite.so:x11-toolkits/granite \
-		libsoup-2.4.so:devel/libsoup \
-		libgeoclue-2.so:net/geoclue \
-		libgeocode-glib.so:net/geocode-glib \
+		libsoup-3.0.so:devel/libsoup3 \
 		libjson-glib-1.0.so:devel/json-glib \
 		libgee-0.8.so:devel/libgee
 

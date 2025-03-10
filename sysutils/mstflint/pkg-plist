@@ -10,7 +10,7 @@ bin/mstmcra
 bin/mstmread
 bin/mstmtserver
 bin/mstmwrite
-bin/mstprivhost
+%%ADAB%%bin/mstprivhost
 %%ADAB%%bin/mstreg
 bin/mstregdump
 bin/mstresourcedump
@@ -53,7 +53,7 @@ lib/mstflint/python_tools/mstfwreset/mstfwreset.py
 lib/mstflint/python_tools/mstfwtrace/fw_trace_utilities.py
 lib/mstflint/python_tools/mstfwtrace/mstfwtrace.py
 lib/mstflint/python_tools/mstfwtrace/secure_fw_trace.py
-lib/mstflint/python_tools/mstprivhost/mstprivhost.py
+%%ADAB%%lib/mstflint/python_tools/mstprivhost/mstprivhost.py
 lib/mstflint/python_tools/regaccess_hca_ext_structs.py
 lib/mstflint/python_tools/regaccess_switch_ext_structs.py
 lib/mstflint/python_tools/resourcetools/mstresourcedump.py

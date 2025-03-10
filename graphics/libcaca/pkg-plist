@@ -14,11 +14,11 @@ include/caca_types.h
 lib/libcaca++.a
 lib/libcaca++.so
 lib/libcaca++.so.0
-lib/libcaca++.so.0.99.19
+lib/libcaca++.so.%%SOVERSION%%
 lib/libcaca.a
 lib/libcaca.so
 lib/libcaca.so.0
-lib/libcaca.so.0.99.19
+lib/libcaca.so.%%SOVERSION%%
 libdata/pkgconfig/caca++.pc
 libdata/pkgconfig/caca.pc
 share/man/man1/caca-config.1.gz
@@ -28,13 +28,4 @@ share/man/man1/cacaplay.1.gz
 share/man/man1/cacaserver.1.gz
 share/man/man1/cacaview.1.gz
 share/man/man1/img2txt.1.gz
-%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
-%%PORTDOCS%%%%DOCSDIR%%/COPYING
-%%PORTDOCS%%%%DOCSDIR%%/COPYING.GPL
-%%PORTDOCS%%%%DOCSDIR%%/COPYING.LGPL
-%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
-%%PORTDOCS%%%%DOCSDIR%%/NEWS
-%%PORTDOCS%%%%DOCSDIR%%/NOTES
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/THANKS
 %%DATADIR%%/caca.txt

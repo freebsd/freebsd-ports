@@ -1,0 +1,17 @@
+bin/preseq
+bin/to-mr
+include/GenomicRegion.hpp
+include/MappedRead.hpp
+include/OptionParser.hpp
+include/QualityScore.hpp
+include/bisulfite_utils.hpp
+include/chromosome_utils.hpp
+include/cigar_utils.hpp
+include/dna_four_bit.hpp
+include/htslib_wrapper_deprecated.hpp
+include/sam_record.hpp
+include/sim_utils.hpp
+include/smithlab_os.hpp
+include/smithlab_utils.hpp
+include/zlib_wrapper.hpp
+lib/libsmithlab_cpp.a

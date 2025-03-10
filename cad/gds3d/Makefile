@@ -14,7 +14,7 @@ USE_XORG=	x11
 USE_GL=		gl
 
 .if !exists(/usr/include/omp.h)
-BROKEN=		requires OpenMP support that is missing on this architecture
+USE_GCC=	yes
 .endif
 
 USE_GITHUB=	yes
@@ -27,12 +27,6 @@ WRKSRC_SUBDIR=	linux
 MAKE_ARGS=	CC=${CXX}
 
 PLIST_FILES=	bin/${PORTNAME:tu}
-
-.include <bsd.port.options.mk>
-
-.if ${ARCH} == powerpc
-USE_GCC=	yes
-.endif
 
 post-patch: # workaround for https://github.com/trilomix/GDS3D/issues/14
 	@${REINPLACE_CMD} -e 's|Index = NULL;|Index = 0;|' ${WRKSRC}/../libgdsto3d/gdspolygon.cpp

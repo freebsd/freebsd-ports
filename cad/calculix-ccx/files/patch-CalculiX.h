@@ -1,4 +1,4 @@
---- CalculiX.h.orig	2019-11-25 17:54:53 UTC
+--- CalculiX.h.orig	2024-08-05 17:13:20 UTC
 +++ CalculiX.h
 @@ -17,12 +17,14 @@
  

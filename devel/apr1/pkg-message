@@ -1,9 +1,27 @@
 [
-{ type: install
+{
+  type: install
   message: <<EOM
 The Apache Portable Runtime project removed support for FreeTDS with
 version 1.6. Users requiring MS-SQL connectivity must migrate
 configurations to use the added ODBC driver and FreeTDS' ODBC features.
+EOM
+}
+{
+  type: upgrade
+  message: <<EOM
+The default BerkeleyDB implementation switched from deprecated
+version 5 from ports to BerkeleyDB 1 from base libc. Any BerkeleyDB
+databases created with apr-util MUST be rebuilt. Verify your database
+files using
+
+  $ file file.dbm
+
+and check they report
+
+  Berkeley DB 1.85 (Hash, version 2, native byte-order)
+
+other database formats (GDBM etc.) are not affected.
 EOM
 }
 ]

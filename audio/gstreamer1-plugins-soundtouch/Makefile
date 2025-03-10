@@ -3,12 +3,13 @@ CATEGORIES=	audio
 
 COMMENT=	GStreamer soundtouch plugin
 
-GST_PLUGIN=	soundtouch
+LIB_DEPENDS=	libSoundTouch.so:audio/soundtouch
+
+MASTERDIR=	${.CURDIR:H:H}/multimedia/gstreamer1-plugins
+
+PLIST=		${.CURDIR}/pkg-plist
+
 DIST=		bad
-
-MASTERDIR=	${.CURDIR}/../../multimedia/gstreamer1-plugins
-
-PLIST=  ${.CURDIR}/pkg-plist
-LIB_DEPENDS= libSoundTouch.so:audio/soundtouch
+GST_PLUGIN=	soundtouch
 
 .include "${MASTERDIR}/Makefile"

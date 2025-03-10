@@ -1,12 +1,12 @@
---- CMakeLists.txt.orig	2024-03-24 04:56:12 UTC
+--- CMakeLists.txt.orig	2024-12-02 18:19:04 UTC
 +++ CMakeLists.txt
-@@ -95,11 +95,11 @@ target_link_libraries(
+@@ -136,11 +136,11 @@ target_link_libraries(
  
  ########## TREESHEETS INSTALLATION SETTINGS ###############
  
 -if(LINUX)
 +if(LINUX OR BSD)
-     OPTION(TREESHEETS_RELOCATABLE_INSTALLATION "Install data relative to the treesheets binary, instead of respecting the Filesystem Hierarchy Standard" OFF)
+     OPTION(TREESHEETS_RELOCATABLE_INSTALLATION "Install data relative to the TreeSheets binary, instead of respecting the Filesystem Hierarchy Standard" OFF)
  endif()
  
 -if(LINUX AND NOT TREESHEETS_RELOCATABLE_INSTALLATION)
@@ -14,8 +14,8 @@
      include(GNUInstallDirs)
  
      set(TREESHEETS_BINDIR ${CMAKE_INSTALL_BINDIR})
-@@ -125,7 +125,7 @@ install(FILES TS/readme.html DESTINATION ${TREESHEETS_
- install(TARGETS treesheets DESTINATION ${TREESHEETS_BINDIR})
+@@ -170,7 +170,7 @@ install(FILES TS/readme.html DESTINATION ${TREESHEETS_
+ install(TARGETS TreeSheets DESTINATION ${TREESHEETS_BINDIR})
  install(DIRECTORY TS/docs DESTINATION ${TREESHEETS_DOCDIR})
  install(FILES TS/readme.html DESTINATION ${TREESHEETS_DOCDIR})
 -install(DIRECTORY TS/examples DESTINATION ${TREESHEETS_DOCDIR})

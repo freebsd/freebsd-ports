@@ -10,6 +10,7 @@ include/re/re_conf.h
 include/re/re_convert.h
 include/re/re_crc32.h
 include/re/re_dbg.h
+include/re/re_dd.h
 include/re/re_dns.h
 include/re/re_fmt.h
 include/re/re_h264.h
@@ -87,6 +88,6 @@ lib/cmake/libre/libre-targets.cmake
 lib/cmake/re/re-config.cmake
 lib/libre.a
 lib/libre.so
-lib/libre.so.26
-lib/libre.so.26.14.0
+lib/libre.so.30
+lib/libre.so.30.20.0
 libdata/pkgconfig/libre.pc

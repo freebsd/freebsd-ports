@@ -1,0 +1,37 @@
+[
+{ type: install
+  message: <<EOM
+Messages from filesystems/zrepl:
+
+SETUP BEFORE FIRST USE:
+- Create the log file /var/log/zrepl.log:
+  # service newsyslog restart
+- Teach syslogd to redirect facility local0 to the zrepl.log file:
+  # service syslogd reload
+- Modify the %%PREFIX%%/etc/zrepl/zrepl.yml configuration file
+- For remote backups, create the SSH key pair and authorized_keys file
+- Enable the zrepl daemon to start automatically at boot:
+  # sysrc zrepl_enable="YES"
+- Start the zrepl daemon:
+  # service zrepl start
+  
+Documentation: https://zrepl.github.io/
+Changelog:     https://zrepl.github.io/master/changelog.html
+
+DANGER - SNAPSHOT PRUNING REQUIRES EXPLICIT KEEP RULES:
+For any ZFS snapshot that you want to keep, at least one rule must match.
+This also applies to snapshots taken by means other than zrepl
+(e.g. snapshots taken manually or via boot environment tools).
+
+In order to automatically warn the operator of impending certificate
+expiration, add this line to /etc/periodic.conf:
+
+    weekly_zrepl_enable="YES"
+
+More config details in the zrepl periodic script:
+
+    %%LOCALBASE%%/etc/periodic/weekly/500.zrepl
+
+EOM
+}
+]

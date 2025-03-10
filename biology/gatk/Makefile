@@ -1,23 +1,23 @@
 PORTNAME=	gatk
-DISTVERSION=	4.6.0.0
+DISTVERSION=	4.6.1.0
 PORTREVISION=	1
 CATEGORIES=	biology java
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Genome Analysis Toolkit
-WWW=		https://gatk.broadinstitute.org/hc/en-us
+WWW=		https://gatk.broadinstitute.org/hc/en-us \
+		https://github.com/broadinstitute/gatk
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.TXT
 
-BUILD_DEPENDS=	gradle:devel/gradle
+BUILD_DEPENDS=	gradle8:devel/gradle8
 RUN_DEPENDS=	${LOCALBASE}/lib/libfml.so:biology/fermi-lite \
-		gkl>0:biology/gkl
+		gkl>0:biology/gkl \
+		mummer>0:biology/mummer
 
-USES=		gettext-runtime python:test
-USE_JAVA=	yes
-
+USES=		gettext-runtime java python:test
 JAVA_VERSION=	17 # Java 8 fails on aarch64: Internal Error (assembler_aarch64.hpp:237), pid=76025, tid=0x000000000006e359 guarantee(val < (1U << nbits)) failed: Field too big for insn
 
 USE_GITHUB=	yes
@@ -30,7 +30,9 @@ NO_ARCH=	yes
 
 DEPS_CACHE_DIR=	${WRKDIR}
 
-TEST_ENV=	${MAKE_ENV} JAVA_TOOL_OPTIONS="-DLIBBWA_PATH=${PREFIX}/lib/libfml.so"
+TEST_ENV=	${MAKE_ENV} \
+		JAVA_TOOL_OPTIONS="-DLIBBWA_PATH=${PREFIX}/lib/libfml.so" \
+		GATK_LOCAL_JAR=${STAGEDIR}${JAVAJARDIR}/GenomeAnalysisTK-${PORTVERSION}.jar
 
 PLIST_FILES=	bin/${PORTNAME} \
 		${JAVAJARDIR}/GenomeAnalysisTK-${PORTVERSION}.jar
@@ -105,7 +107,7 @@ post-extract: # need a separate extract step because the cache is in /tmp, and n
 .endif
 
 do-build:
-	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} gradle \
+	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} gradle8 \
 		--gradle-user-home ${DEPS_CACHE_DIR}/gradle-${PORTNAME} --project-cache-dir ${DEPS_CACHE_DIR}/gradle-${PORTNAME} \
 		${GRADLE_ARGS} --build-cache localJar
 
@@ -115,9 +117,9 @@ do-install:
 
 do-test: # tests require WITH_LARGE_FILES=ON, and they use a lot of disk space
 	@cd ${WRKSRC} && \
-		${SETENV} ${TEST_ENV} gradle -DLIBBWA_PATH=${PREFIX}/lib/libfml.so test
+		${SETENV} ${TEST_ENV} gradle8 -DLIBBWA_PATH=${PREFIX}/lib/libfml.so test
 
-# tests results as of version 4.6.0.0_1: 288433 tests completed, 301 failed, 37 skipped, see https://github.com/broadinstitute/gatk/issues/8940
+# tests results as of version 4.6.1.0: 288552 tests, 301 failures, 37 ignored, 1h55m5.63s duration, 99% successful, see https://github.com/broadinstitute/gatk/issues/8940
 # see https://github.com/broadinstitute/gatk/issues/8939: Tests fail to find libgkl libraries in /usr/local/lib
 
 .include <bsd.port.mk>

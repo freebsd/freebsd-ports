@@ -1,5 +1,5 @@
 PORTNAME=	horizon
-PORTVERSION=	25.0.0
+PORTVERSION=	25.1.0
 CATEGORIES=	www python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,7 +16,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pbr>=2.0.0:devel/py-pbr@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Babel>=2.6.0:devel/py-babel@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}django_compressor>=2.4.1:www/py-django_compressor@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}django_compressor>=4.4:www/py-django_compressor@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}django-debreach>=1.4.2:www/py-django-debreach@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}django-pyscss>=2.0.3:www/py-django-pyscss@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}django42>=4.2<4.3:www/py-django42@${PY_FLAVOR} \
@@ -61,8 +61,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Babel>=2.6.0:devel/py-babel@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}xstatic-jasmine>=2.4.1.1:devel/py-xstatic-jasmine@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}xstatic-jquery>=3.5.1.1:devel/py-xstatic-jquery@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}xstatic-jquery-migrate>=3:devel/py-xstatic-jquery-migrate@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}xstatic-jquery-ui>=1.12.1.1:devel/py-xstatic-jquery-ui@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}xstatic-jquery.quicksearch>=2.0.3.1:devel/py-xstatic-jquery.quicksearch@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}xstatic-jquery-ui>=1.13.0.1:devel/py-xstatic-jquery-ui@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}xstatic-jquery.quicksearch>=2.0.3.2:devel/py-xstatic-jquery.quicksearch@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}xstatic-jquery.tablesorter>=2.14.5.1:devel/py-xstatic-jquery.tablesorter@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}xstatic-jsencrypt>=2.3.1.1:devel/py-xstatic-jsencrypt@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}xstatic-mdi>=1.6.50.2:devel/py-xstatic-mdi@${PY_FLAVOR} \

@@ -1,6 +1,6 @@
 PORTNAME=	nrpe
-DISTVERSION=	4.1.1
 DISTVERSIONPREFIX=	nrpe-
+DISTVERSION=	4.1.3
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	bofh@FreeBSD.org
@@ -9,6 +9,10 @@ WWW=		https://www.nagios.org/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
+
+FLAVORS=	default monplugins
+FLAVOR?=	${FLAVORS:[1]}
+monplugins_PKGNAMESUFFIX=	-monplugins
 
 USES=		perl5
 USE_GITHUB=	yes
@@ -36,7 +40,7 @@ PLIST_SUB=	NAGIOSUSER=${NAGIOSUSER} \
 		NRPE_PIDDIR=${NRPE_PIDDIR}
 
 OPTIONS_DEFINE=	SSL ARGS
-OPTIONS_DEFAULT=NAGPLUGINS SSL
+OPTIONS_DEFAULT=SSL
 OPTIONS_RADIO=	PLUGINS
 OPTIONS_RADIO_PLUGINS=	MONPLUGINS NAGPLUGINS
 
@@ -56,6 +60,14 @@ NAGIOSUSER?=	nagios
 NAGIOSGROUP?=	nagios
 
 NRPE_PIDDIR?=	/var/run/nrpe
+
+.if ${FLAVOR:U} == default
+OPTIONS_DEFAULT+=	NAGPLUGINS
+.endif
+
+.if ${FLAVOR:U} == monplugins
+OPTIONS_DEFAULT+=	MONPLUGINS
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/var/run/nrpe.pid|${NRPE_PIDDIR}/nrpe.pid|g' \

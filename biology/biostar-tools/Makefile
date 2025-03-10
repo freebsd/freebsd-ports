@@ -1,6 +1,7 @@
 PORTNAME=	biostar-tools
-PORTVERSION=	1.11
+PORTVERSION=	2.0
 CATEGORIES=	biology python
+MASTER_SITES=	# empty
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Meta-port for Biostar Handbook tools
@@ -63,7 +64,8 @@ RUN_DEPENDS=	wget>0:ftp/wget \
 		bamutil>0:biology/bamutil \
 		${PYTHON_PKGNAMEPREFIX}deepTools>0:biology/py-deeptools@${PY_FLAVOR} \
 		igv>0:biology/igv \
-		gffread>0:biology/gffread
+		gffread>0:biology/gffread \
+		ucsc-userapps>0:biology/ucsc-userapps
 
 USES=		metaport python
 
@@ -74,7 +76,7 @@ USES=		metaport python
 RUN_DEPENDS+=	sra-tools>0:biology/sra-tools
 .endif
 
-SUB_FILES=	biostar-shell
+SUB_FILES=	biostar-shell pkg-message
 PLIST_FILES=	bin/biostar-shell
 
 do-install:

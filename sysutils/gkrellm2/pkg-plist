@@ -1,6 +1,8 @@
 %%CLIENT%%bin/gkrellm
 %%CLIENT%%include/gkrellm2/gkrellm-public-proto.h
+%%CLIENT%%include/gkrellm2/gkrellm-version.h
 %%CLIENT%%include/gkrellm2/gkrellm.h
+include/gkrellm2/gkrellmd-version.h
 include/gkrellm2/gkrellmd.h
 include/gkrellm2/log.h
 %%CLIENT%%libdata/pkgconfig/gkrellm.pc
@@ -9,6 +11,12 @@ libdata/pkgconfig/gkrellmd.pc
 share/man/man8/gkrellmd.8.gz
 sbin/gkrellmd
 @sample %%EXAMPLESDIR%%/gkrellmd.conf etc/gkrellmd.conf
+%%CLIENT%%share/applications/gkrellm.desktop
+%%CLIENT%%share/icons/hicolor/16x16/apps/gkrellm.png
+%%CLIENT%%share/icons/hicolor/24x24/apps/gkrellm.png
+%%CLIENT%%share/icons/hicolor/32x32/apps/gkrellm.png
+%%CLIENT%%share/icons/hicolor/48x48/apps/gkrellm.png
+%%CLIENT%%share/icons/hicolor/64x64/apps/gkrellm.png
 %%CLIENT%%%%NLS%%share/locale/bg/LC_MESSAGES/gkrellm.mo
 %%CLIENT%%%%NLS%%share/locale/cs/LC_MESSAGES/gkrellm.mo
 %%CLIENT%%%%NLS%%share/locale/da/LC_MESSAGES/gkrellm.mo
@@ -25,6 +33,7 @@ sbin/gkrellmd
 %%CLIENT%%%%NLS%%share/locale/sl/LC_MESSAGES/gkrellm.mo
 %%CLIENT%%%%NLS%%share/locale/sv/LC_MESSAGES/gkrellm.mo
 %%CLIENT%%%%NLS%%share/locale/uk/LC_MESSAGES/gkrellm.mo
+%%CLIENT%%share/metainfo/net.srcbox.gkrellm.GKrellM.metainfo.xml
 %%CLIENT%%@dir libexec/gkrellm2/plugins
 @dir libexec/gkrellm2/plugins-gkrellmd
 %%CLIENT%%@dir %%DATADIR%%2/themes

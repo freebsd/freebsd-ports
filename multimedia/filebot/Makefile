@@ -22,8 +22,7 @@ RUN_DEPENDS=	ffprobe:multimedia/ffmpeg \
 				jna>0:devel/jna \
 				openjfx14>0:java/openjfx14
 
-USES=	tar:xz
-USE_JAVA=	yes
+USES=	java tar:xz
 JAVA_VERSION=	11
 
 NO_WRKSUBDIR=	yes

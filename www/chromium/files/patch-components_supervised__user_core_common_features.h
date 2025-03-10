@@ -1,6 +1,6 @@
---- components/supervised_user/core/common/features.h.orig	2024-07-30 11:12:21 UTC
+--- components/supervised_user/core/common/features.h.orig	2025-03-05 08:14:56 UTC
 +++ components/supervised_user/core/common/features.h
-@@ -25,7 +25,7 @@ BASE_DECLARE_FEATURE(
+@@ -30,7 +30,7 @@ BASE_DECLARE_FEATURE(
  // Applies new informative strings during the parental extension approval flow.
  BASE_DECLARE_FEATURE(kUpdatedSupervisedUserExtensionApprovalStrings);
  
@@ -9,12 +9,21 @@
  BASE_DECLARE_FEATURE(kEnableExtensionsPermissionsForSupervisedUsersOnDesktop);
  #endif
  
-@@ -53,7 +53,7 @@ bool IsSupervisedUserSkipParentApprovalToInstallExtens
- // Only affects Desktop platforms.
- BASE_DECLARE_FEATURE(kCustomWebSignInInterceptForSupervisedUsers);
+@@ -60,7 +60,7 @@ BASE_DECLARE_FEATURE(kCustomProfileStringsForSupervise
+ 
+ // Displays a Family Link kite badge on the supervised user avatar in various
+ // surfaces.
+-#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_BSD)
+ BASE_DECLARE_FEATURE(kShowKiteForSupervisedUsers);
+ #endif
+ 
+@@ -68,7 +68,7 @@ BASE_DECLARE_FEATURE(kShowKiteForSupervisedUsers);
+ // unauthenticated (e.g. signed out of the content area) account.
+ BASE_DECLARE_FEATURE(kForceSafeSearchForUnauthenticatedSupervisedUsers);
  
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_BSD)
- // This hides the following guest mode entry points for supervised users:
- //
- // * In the Profile menu for supervised profiles
+ // Uses supervised user strings on the signout dialog.
+ BASE_DECLARE_FEATURE(kEnableSupervisedUserVersionSignOutDialog);
+ 

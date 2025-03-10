@@ -2,8 +2,8 @@ PORTNAME=	plasma-desktop
 DISTVERSION=	${KDE_PLASMA_VERSION}
 CATEGORIES=	x11 kde kde-plasma
 
-COMMENT=	KDE Plasma Desktop
 MAINTAINER=	kde@FreeBSD.org
+COMMENT=	KDE Plasma Desktop
 
 BUILD_DEPENDS=	wayland-protocols>=0:graphics/wayland-protocols \
 		xf86-input-evdev>0:x11-drivers/xf86-input-evdev \
@@ -37,6 +37,12 @@ USE_KDE=	activities activities-stats attica auth baloo bookmarks \
 USE_QT=		5compat base declarative svg
 USE_XORG=	x11 xcb xcursor xext xfixes xi xrender
 
-#SHEBANG_FILES=	kcms/keyboard/*.py kcms/ksmserver/kconf_update/*.py
+OPTIONS_DEFINE=	SDL
+OPTIONS_SUB=	yes
+
+SDL_DESC=	Enable gamecontroller System Settings module (requires SDL)
+SDL_USES=	sdl
+SDL_USE=	sdl=sdl2
+SDL_CMAKE_OFF=	-DCMAKE_DISABLE_FIND_PACKAGE_SDL2:BOOL=On
 
 .include <bsd.port.mk>

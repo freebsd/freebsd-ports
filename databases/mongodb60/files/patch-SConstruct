@@ -4,12 +4,10 @@
      print(env_vars.GenerateHelpText(env))
      Exit(0)
  
--unknown_vars = env_vars.UnknownVariables()
--if unknown_vars:
+ unknown_vars = env_vars.UnknownVariables()
+ if unknown_vars:
 -    env.FatalError("Unknown variables specified: {0}", ", ".join(list(unknown_vars.keys())))
-+#unknown_vars = env_vars.UnknownVariables()
-+#if unknown_vars:
-+#    env.FatalError("Unknown variables specified: {0}", ", ".join(list(unknown_vars.keys())))
++    print("Unknown variables specified: {0}", ", ".join(list(unknown_vars.keys())))
  
  if get_option('install-action') != 'default' and get_option('ninja') != "disabled":
      env.FatalError("Cannot use non-default install actions when generating Ninja.")

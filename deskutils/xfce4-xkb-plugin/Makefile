@@ -1,12 +1,11 @@
 PORTNAME=	xfce4-xkb-plugin
-PORTVERSION=	0.8.3
-PORTREVISION=	3
+PORTVERSION=	0.8.5
 CATEGORIES=	deskutils xfce
 MASTER_SITES=	XFCE/panel-plugins
 
 MAINTAINER=	xfce@FreeBSD.org
 COMMENT=	Keyboard layout switching plugin for the Xfce panel
-WWW=		https://goodies.xfce.org/projects/panel-plugins/xfce4-xkb-plugin
+WWW=		https://docs.xfce.org/panel-plugins/xfce4-xkb-plugin
 
 LICENSE=	GPLv2
 
@@ -15,7 +14,7 @@ LIB_DEPENDS=	libxklavier.so:x11/libxklavier \
 
 USES=		compiler:c11 gettext-tools gmake gnome libtool pkgconfig \
 		tar:bzip2 xfce xorg
-USE_GNOME=	cairo gtk30 intltool librsvg2 libwnck3
+USE_GNOME=	cairo gtk30 librsvg2 libwnck3
 USE_XFCE=	garcon libmenu panel xfconf
 USE_XORG=	x11
 

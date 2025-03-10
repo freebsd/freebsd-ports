@@ -1,0 +1,3 @@
+id is a Python tool for generating OIDC identities. It can automatically detect
+and produce OIDC credentials on a number of environments, including GitHub
+Actions, GitLab pipelines and Google Cloud.

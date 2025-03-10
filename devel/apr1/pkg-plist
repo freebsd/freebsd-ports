@@ -95,9 +95,9 @@ lib/apr-util-1/.keep.me
 %%SQLITE%%lib/apr-util-1/apr_dbd_sqlite3-1.so
 %%SQLITE%%lib/apr-util-1/apr_dbd_sqlite3.a
 %%SQLITE%%lib/apr-util-1/apr_dbd_sqlite3.so
-%%BDB%%lib/apr-util-1/apr_dbm_db-1.so
-%%BDB%%lib/apr-util-1/apr_dbm_db.a
-%%BDB%%lib/apr-util-1/apr_dbm_db.so
+%%BERKELEYDB%%lib/apr-util-1/apr_dbm_db-1.so
+%%BERKELEYDB%%lib/apr-util-1/apr_dbm_db.a
+%%BERKELEYDB%%lib/apr-util-1/apr_dbm_db.so
 %%GDBM%%lib/apr-util-1/apr_dbm_gdbm-1.so
 %%GDBM%%lib/apr-util-1/apr_dbm_gdbm.a
 %%GDBM%%lib/apr-util-1/apr_dbm_gdbm.so

@@ -1,6 +1,5 @@
 PORTNAME=	geoclue
-DISTVERSION=	2.7.1
-PORTREVISION=	1
+DISTVERSION=	2.7.2
 CATEGORIES=	net devel gnome
 
 MAINTAINER=	desktop@FreeBSD.org
@@ -13,14 +12,13 @@ LICENSE_COMB=	multi
 LIB_DEPENDS=	libjson-glib-1.0.so:devel/json-glib \
 		libsoup-3.0.so:devel/libsoup3
 
-USES=		gettext gnome meson pkgconfig vala:build
+USES=		gettext gnome meson pkgconfig tar:bz2 vala:build
 
 USE_GNOME=	glib20 introspection:build
 USE_LDCONFIG=	yes
 
 USE_GITLAB=	yes
 GL_SITE=	https://gitlab.freedesktop.org
-GL_TAGNAME=	8a24f60969d4c235d9918796c38a6a9c42e10131
 
 MESON_ARGS=	-D3g-source=false \
 		-Dcdma-source=false \

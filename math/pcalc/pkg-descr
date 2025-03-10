@@ -1,0 +1,10 @@
+A programmer's command line calculator for doing hex/dec/oct/bin math
+quickly.
+
+Features:
+  - Full math parser, parentheses, add, sub, mult, div, exponential
+  - Automatic conversion between HEX DEC OCT BIN numbers
+  - Mixing different bases in one expression
+  - Definable variables
+  - Math constants (E PI ...)
+  - Built in math functions (sin/cos/sqrt ...)

@@ -1,9 +1,9 @@
-TIMESTAMP = 1644933572
-SHA256 (epsonscan2-bundle-6.6.40.0.armv7l.deb.tar.gz) = efe070472e662feea572899cdad0300b759edcf84b2f57c51c997df8d2c07171
-SIZE (epsonscan2-bundle-6.6.40.0.armv7l.deb.tar.gz) 18239327
-SHA256 (epsonscan2-bundle-6.6.40.0.i686.rpm.tar.gz) = c7b68d8cd0c0d7ae187d3c44b5edcca1ca625bbcab50db31e754e3d2261787f0
-SIZE (epsonscan2-bundle-6.6.40.0.i686.rpm.tar.gz) = 14582599
-SHA256 (epsonscan2-bundle-6.6.40.0.x86_64.rpm.tar.gz) = 2b9453dba611c6fbadb8105817020334b9ce1db205e6a68f3d1de198ca3d9451
-SIZE (epsonscan2-bundle-6.6.40.0.x86_64.rpm.tar.gz) = 14016602
-SHA256 (epsonscan2-bundle-raspbian-6.6.40.0.armv7l.deb.tar.gz) = 3b373288884ae38febb5eb9343e820d083d8690414c273f6cdf9abc77b3a171e
-SIZE (epsonscan2-bundle-raspbian-6.6.40.0.armv7l.deb.tar.gz) = 20669297
+TIMESTAMP = 1739148475
+SHA256 (epsonscan2-bundle-6.7.70.0.armv7l.deb.tar.gz) = 161b31506b16c7a40e2a270024ee83993d2f3e1b06b096d32eb20be0fbe2ef1b
+SIZE (epsonscan2-bundle-6.7.70.0.armv7l.deb.tar.gz) 27507563
+SHA256 (epsonscan2-bundle-6.7.70.0.i686.rpm.tar.gz) = f375e4d650bcfe0e02e0a7cde87320733441d7acf750daafcc9d04acc64ffbdc
+SIZE (epsonscan2-bundle-6.7.70.0.i686.rpm.tar.gz) = 24375759
+SHA256 (epsonscan2-bundle-6.7.70.0.x86_64.rpm.tar.gz) = 3dfed67e7e379d3da53ece0c0fc6eba86d4bcfaf056096a74d8bc0d8e6ff4889
+SIZE (epsonscan2-bundle-6.7.70.0.x86_64.rpm.tar.gz) = 23538287
+SHA256 (epsonscan2-bundle-raspbian-6.7.70.0.armv7l.deb.tar.gz) = 780e0862d9e3bd885d3de9b282ed1f40bdef09a465104e6f29ad9a90f08da377
+SIZE (epsonscan2-bundle-raspbian-6.7.70.0.armv7l.deb.tar.gz) = 30583760

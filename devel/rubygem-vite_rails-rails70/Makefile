@@ -1,6 +1,5 @@
 PORTNAME=	vite_rails
-PORTVERSION=	3.0.17
-PORTREVISION=	1
+PORTVERSION=	3.0.19
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	-rails70
@@ -13,7 +12,7 @@ WWW=		https://github.com/ElMassimo/vite_ruby \
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	rubygem-railties70>=5.1<8:www/rubygem-railties70 \
+RUN_DEPENDS=	rubygem-railties70>=5.1<9:www/rubygem-railties70 \
 		rubygem-vite_ruby33>=3.2.2<4:devel/rubygem-vite_ruby33
 
 USES=		gem

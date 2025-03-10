@@ -1,2 +1,0 @@
-%%APACHEMODDIR%%/mod_amazon_proxy.so
-@sample %%APACHEETCDIR%%/Includes/httpd-amazon-proxy.conf.sample

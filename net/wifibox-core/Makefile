@@ -1,5 +1,5 @@
 PORTNAME=	wifibox-core
-PORTVERSION=	0.13.0
+PORTVERSION=	0.14.0
 CATEGORIES=	net
 
 MAINTAINER=	pali.gabor@gmail.com
@@ -21,9 +21,9 @@ OPTIONS_SINGLE_RECOVERY=	RECOVER_RESTART_VMM \
 
 OPTIONS_DEFAULT=		RECOVER_RESTART_VMM
 
-RECOVER_RESTART_VMM_DESC=	Restart the vmm(4) kernel module on resume
+RECOVER_RESTART_VMM_DESC=	Restart the guest and reload vmm(4) kernel module on resume
 RECOVER_SUSPEND_GUEST_DESC=	Stop the guest on suspend, start on resume
-RECOVER_SUSPEND_VMM_DESC=	Unload vmm(4) on suspend, and reload on resume
+RECOVER_SUSPEND_VMM_DESC=	Stop the guest and unload vmm(4) on suspend, start the guest and reload vmm(4) on resume
 RECOVER_NONE_DESC=		No recovery for suspend/resume
 
 .include <bsd.port.options.mk>
@@ -37,5 +37,12 @@ MAKE_ARGS+=	GUEST_ROOT=${LOCALBASE}/share/wifibox \
 		GUEST_MAN=${LOCALBASE}/share/man/man5/wifibox-alpine.5.gz \
 		VERSION=${PORTVERSION} \
 		RECOVERY_METHOD=${PORT_OPTIONS:MRECOVER_*:S/RECOVER_//:tl}
+
+.if ${OSVERSION} > 1400089
+MAKE_ARGS+=	DEVD_FIX=
+PLIST_SUB+=	DEVD_FIX="@comment "
+.else
+PLIST_SUB+=	DEVD_FIX=""
+.endif
 
 .include <bsd.port.mk>

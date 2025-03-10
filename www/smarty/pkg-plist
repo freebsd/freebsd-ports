@@ -31,6 +31,7 @@
 %%DATADIR%%/Compile/Modifier/ModifierCompilerInterface.php
 %%DATADIR%%/Compile/Modifier/Nl2brModifierCompiler.php
 %%DATADIR%%/Compile/Modifier/NoPrintModifierCompiler.php
+%%DATADIR%%/Compile/Modifier/RawModifierCompiler.php
 %%DATADIR%%/Compile/Modifier/RoundModifierCompiler.php
 %%DATADIR%%/Compile/Modifier/StrRepeatModifierCompiler.php
 %%DATADIR%%/Compile/Modifier/StringFormatModifierCompiler.php

@@ -1,7 +1,8 @@
-%%NREPL%%bin/s7-nrepl
 %%REPL%%bin/s7-repl
 include/s7.h
 lib/libs7.so
+lib/libs7.so.0
+lib/libs7.so.0.0.0
 %%DATADIR%%/case.scm
 %%DATADIR%%/cload.scm
 %%DATADIR%%/debug.scm
@@ -28,6 +29,7 @@ lib/libs7.so
 %%DATADIR%%/snd-lint.scm
 %%DATADIR%%/stuff.scm
 %%DATADIR%%/tools/auto-tester.scm
+%%DATADIR%%/tools/cb.scm
 %%DATADIR%%/tools/compare-calls.scm
 %%DATADIR%%/tools/concordance.scm
 %%DATADIR%%/tools/dup.scm
@@ -39,8 +41,10 @@ lib/libs7.so
 %%DATADIR%%/tools/tari.scm
 %%DATADIR%%/tools/tauto.scm
 %%DATADIR%%/tools/tbig.scm
+%%DATADIR%%/tools/tbit.scm
 %%DATADIR%%/tools/tcase.scm
 %%DATADIR%%/tools/tclo.scm
+%%DATADIR%%/tools/tcomplex.scm
 %%DATADIR%%/tools/tcopy.scm
 %%DATADIR%%/tools/teq.scm
 %%DATADIR%%/tools/texit.scm
@@ -57,13 +61,16 @@ lib/libs7.so
 %%DATADIR%%/tools/tlamb.scm
 %%DATADIR%%/tools/tleft.scm
 %%DATADIR%%/tools/tlet.scm
+%%DATADIR%%/tools/tlimit.scm
 %%DATADIR%%/tools/tlist.scm
 %%DATADIR%%/tools/tload.scm
 %%DATADIR%%/tools/tmac.scm
+%%DATADIR%%/tools/tmap-hash.scm
 %%DATADIR%%/tools/tmap.scm
 %%DATADIR%%/tools/tmat.scm
 %%DATADIR%%/tools/tmisc.scm
 %%DATADIR%%/tools/tmock.scm
+%%DATADIR%%/tools/tmv.scm
 %%DATADIR%%/tools/tnum.scm
 %%DATADIR%%/tools/tobj.scm
 %%DATADIR%%/tools/tpeak.scm
@@ -77,4 +84,5 @@ lib/libs7.so
 %%DATADIR%%/tools/tstar.scm
 %%DATADIR%%/tools/tvect.scm
 %%DATADIR%%/tools/valcall.scm
+%%DATADIR%%/utf8-tests.scm
 %%DATADIR%%/write.scm

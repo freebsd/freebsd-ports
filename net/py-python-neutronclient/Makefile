@@ -1,5 +1,5 @@
 PORTNAME=	python-neutronclient
-PORTVERSION=	11.3.1
+PORTVERSION=	11.4.0
 CATEGORIES=	net python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -32,11 +32,9 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cliff>=3.4.0:devel/py-cliff@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>=2.14.2:www/py-requests@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}simplejson>=3.5.1:devel/py-simplejson@${PY_FLAVOR}
 
-USES=		python shebangfix
+USES=		python:3.9+
 USE_PYTHON=	autoplist concurrent pep517
 
 NO_ARCH=	yes
-
-SHEBANG_GLOB=	*.sh
 
 .include <bsd.port.mk>

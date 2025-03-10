@@ -1,14 +1,3 @@
---- CMakeLists.txt.orig	2023-11-03 04:00:05.529976000 +0800
-+++ CMakeLists.txt	2023-11-03 04:02:22.522059000 +0800
-@@ -23,7 +23,7 @@
- set(OSGEARTH_SOVERSION 149)
- 
- # Require C++11
--set_property(GLOBAL PROPERTY CXX_STANDARD 11)
-+set_property(GLOBAL PROPERTY CXX_STANDARD 17)
- set_property(GLOBAL PROPERTY CXX_STANDARD_REQUIRED ON)
- 
- # Detect out-of-source build. You should always do an out-of-source build!
 --- src/osgEarthDrivers/fastdxt/intrinsic.cpp.orig	2023-05-16 14:53:59 UTC
 +++ src/osgEarthDrivers/fastdxt/intrinsic.cpp
 @@ -45,7 +45,7 @@

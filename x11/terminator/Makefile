@@ -1,6 +1,6 @@
 PORTNAME=	terminator
 DISTVERSION=	2.1.3
-PORTREVISION=	1
+PORTREVISION=	3
 CATEGORIES=	x11 python
 MASTER_SITES=	https://github.com/gnome-${PORTNAME}/${PORTNAME}/releases/download/v${DISTVERSION}/
 
@@ -10,6 +10,9 @@ WWW=		https://github.com/gnome-terminator/terminator
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
+
+DEPRECATED=	Depends on expired devel/py-pytest-runner
+EXPIRATION_DATE=2025-03-31
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest-runner>0:devel/py-pytest-runner@${PY_FLAVOR}
 RUN_DEPENDS=	${LOCALBASE}/lib/libkeybinder-3.0.so:x11/keybinder-gtk3 \

@@ -1,1 +1,9 @@
 DeforaOS desktop panel
+
+This program is meant to display an arbitrary number of desktop panels, with
+support for up to one per edge of the screen at the moment. Each panel can then
+host a number of applets, implemented as plug-ins to the main program.
+
+A number of additional utilities is also available, allowing tighter integration
+of external applications, as well as when responding to system events
+(notifications...).

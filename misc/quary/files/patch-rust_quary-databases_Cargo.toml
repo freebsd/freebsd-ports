@@ -1,0 +1,11 @@
+--- rust/quary-databases/Cargo.toml.orig	2024-11-02 16:23:18 UTC
++++ rust/quary-databases/Cargo.toml
+@@ -21,7 +21,7 @@ chrono = "0.4.38"
+ prost = "0.12.4"
+ regex = "1.10.4"
+ chrono = "0.4.38"
+-duckdb = { version = "1.0.0", features = ["bundled"] }
++duckdb = { version = "1.0.0" }
+ snowflake-api = "0.9.0"
+ clickhouse-rs = "1.1.0-alpha.1"
+ futures-util = "0.3.30"

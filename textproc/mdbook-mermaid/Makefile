@@ -1,7 +1,7 @@
 PORTNAME=	mdbook-mermaid
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.13.0
-PORTREVISION=	5
+DISTVERSION=	0.14.1
+PORTREVISION=	2
 CATEGORIES=	textproc
 
 MAINTAINER=	eduardo@FreeBSD.org
@@ -16,8 +16,5 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	badboy
 
 PLIST_FILES=	bin/${PORTNAME}
-
-post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>

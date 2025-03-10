@@ -19,6 +19,7 @@
 #					Consumer logging syslog priority.
 # paperless_consumer_log_tag (str):	Set to "paperless-consumer" by default.
 #					Consumer logging syslog tag.
+# paperless_consumer_tmpdir (str):	If set, overrides TMPDIR
 
 . /etc/rc.subr
 
@@ -32,9 +33,15 @@ paperless_consumer_daemon_user=${paperless_consumer_user:-"paperless"}
 paperless_consumer_log_facility=${paperless_consumer_log_facility:-"daemon"}
 paperless_consumer_log_priority=${paperless_consumer_log_priority:-"notice"}
 paperless_consumer_log_tag=${paperless_consumer_log_tag:-"paperless-consumer"}
+paperless_consumer_tmpdir=${paperless_consumer_tmpdir:-"$TMPDIR"}
 
 paperless_consumer_env="LANG=en_US.UTF-8 PATH=$PATH:%%PREFIX%%/bin\
   PYTHONPATH=%%PYTHONPREFIX_SITELIBDIR%%/paperless"
+
+if [ -n "$paperless_consumer_tmpdir" ]; then
+	paperless_consumer_env="$paperless_consumer_env TMPDIR=\
+$paperless_consumer_tmpdir"
+fi
 
 sig_stop="INT"
 pidfile="/var/run/paperless/consumer.pid"

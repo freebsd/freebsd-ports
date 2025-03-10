@@ -1,6 +1,6 @@
 PORTNAME=	nsscache
 PORTVERSION=	0.49
-PORTREVISION=	2
+PORTREVISION=	3
 DISTVERSIONPREFIX=	version/
 CATEGORIES=	net python
 
@@ -10,6 +10,9 @@ WWW=		https://github.com/google/nsscache
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
+
+DEPRECATED=	Depends on expired devel/py-pytest-runner
+EXPIRATION_DATE=2025-03-31
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest-runner>=0:devel/py-pytest-runner@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}boto3>0:www/py-boto3@${PY_FLAVOR} \

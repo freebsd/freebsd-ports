@@ -1,0 +1,9 @@
+TIMESTAMP = 1731539159
+SHA256 (rocky/g/graphene-1.10.6-2.el9.aarch64.rpm) = 034ebc57ac897a558c26cb561ec41dfab28fdd6f7c2d508a31ca60f272f1399f
+SIZE (rocky/g/graphene-1.10.6-2.el9.aarch64.rpm) = 96845
+SHA256 (rocky/g/graphene-1.10.6-2.el9.i686.rpm) = fccb8a52929bfef3d48cc190a4a74d7e14052d978ed2860f3c856c1719eee53a
+SIZE (rocky/g/graphene-1.10.6-2.el9.i686.rpm) = 83513
+SHA256 (rocky/g/graphene-1.10.6-2.el9.x86_64.rpm) = fd99d16e7fb06b79d6d3adbe5a656e44112b37aa478a6151a23f0a3e2aa4fc63
+SIZE (rocky/g/graphene-1.10.6-2.el9.x86_64.rpm) = 65073
+SHA256 (rocky/g/graphene-1.10.6-2.el9.src.rpm) = c2a71f687c22e9b3845923f05eb34060cf0b3176f4b3ce68403db3319554f8d3
+SIZE (rocky/g/graphene-1.10.6-2.el9.src.rpm) = 344412

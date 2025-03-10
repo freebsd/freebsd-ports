@@ -1,7 +1,10 @@
 PORTNAME=	term-background
-PORTVERSION=	1.0.1
+DISTVERSION=	1.0.3.dev0
+PORTREVISION=	1
 CATEGORIES=	deskutils python shells
+#MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+#DISTNAME=	${PORTNAME:C/-/_/}-${PORTVERSION}
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Shell scripts and Python module to figure out terminal background
@@ -12,19 +15,20 @@ LICENSE=	GPLv2
 USE_GITHUB=	yes
 GH_ACCOUNT=	rocky
 GH_PROJECT=	shell-term-background
+GH_TAGNAME=	55a9cd227d6428d72f78a2411479eeade1300dff
 
-USES=		python shebangfix
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pkginfo>=0:sysutils/py-pkginfo@${PY_FLAVOR}
+
+USES=		pytest python
 USE_PYTHON=	distutils
-SHEBANG_FILES=	term-background.*
 
 NO_ARCH=	yes
 MAKE_ENV+=	PYTHON=${PYTHON_CMD}
+PLIST_SUB=	VER=${DISTVERSION}
 
 post-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}
-	${INSTALL_SCRIPT} ${WRKSRC}/term-background.* ${STAGEDIR}${DATADIR}
-
-do-test: install
-	(cd ${WRKSRC} && py.test)
+	${INSTALL_SCRIPT} ${WRKSRC}/term-background.*h ${STAGEDIR}${DATADIR}
 
 .include <bsd.port.mk>

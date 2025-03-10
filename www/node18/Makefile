@@ -1,9 +1,10 @@
 PORTNAME=	node
 PORTVERSION=	${NODEJS_PORTVERSION}
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	https://nodejs.org/dist/v${PORTVERSION}/
-PKGNAMESUFFIX=	18
+PKGNAMESUFFIX=	${PORTVERSION:R:R}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	V8 JavaScript for client and server
@@ -52,13 +53,16 @@ SHEBANG_FILES=	deps/v8/third_party/inspector_protocol/*.py \
 		tools/*.py \
 		tools/inspector_protocol/*.py
 
-OPTIONS_DEFINE=	BUNDLED_SSL DOCS NLS
+OPTIONS_DEFINE=	BUNDLED_SSL DOCS JIT NLS
+OPTIONS_DEFAULT=JIT
 OPTIONS_SUB=	yes
 BUNDLED_SSL_DESC=	Use bundled OpenSSL implementation from node.js
+JIT_DESC=		Use Just In Time compiler
 
 BUNDLED_SSL_CONFIGURE_OFF=	--openssl-use-def-ca-store --shared-openssl
 BUNDLED_SSL_RUN_DEPENDS_OFF=	ca_root_nss>=0:security/ca_root_nss
 BUNDLED_SSL_USES_OFF=	ssl
+JIT_CONFIGURE_OFF=	--v8-lite-mode
 NLS_BUILD_DEPENDS=	icu>=69.1:devel/icu
 NLS_CONFIGURE_ON=	--with-intl=system-icu
 NLS_LIB_DEPENDS=	libicui18n.so:devel/icu

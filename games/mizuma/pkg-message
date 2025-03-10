@@ -7,11 +7,14 @@ To open the main gui type: Mizuma
 
 For quick commandline tasks you can use the following examples:
 
-    To install something use: 		Mizuma Install Steam
-    To launch something use: 		Mizuma Launch Steam
-    To uninstall something use: 	Mizuma Uninstall Steam
+    To install something use: 		Mizuma Install Skype
+    To launch something use: 		Mizuma Launch Skype
+    To uninstall something use: 	Mizuma Uninstall Skype
 
-Enjoy playing!
+For further possibly helpful information please read:
+https://codeberg.org/Alexander88207/Mizutamari#support
+
+Enjoy!
 EOM
 }
 ]

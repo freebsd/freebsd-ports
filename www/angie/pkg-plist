@@ -13,7 +13,6 @@ sbin/angie
 share/man/man8/angie.8.gz
 %%DOCSDIR%%/CHANGES
 %%DOCSDIR%%/CHANGES.ru
-%%DOCSDIR%%/README.rst
 
 @sample %%ETCDIR%%/angie.conf.sample
 @sample %%ETCDIR%%/fastcgi.conf.sample

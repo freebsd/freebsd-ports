@@ -1,6 +1,6 @@
 PORTNAME=	libsignon-glib
 DISTVERSION=	2.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-im
 DIST_SUBDIR=	KDE/${GL_ACCOUNT}
 
@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BUILD_DEPENDS=	signond:sysutils/signond@qt5
 RUN_DEPENDS=	signond:sysutils/signond@qt5
 
-USES=		gnome libtool meson pathfix pkgconfig python tar:bz2 vala:build
+USES=		gnome meson pathfix pkgconfig python tar:bz2 vala:build
 USE_GNOME=	introspection pygobject3
 USE_PYTHON=	py3kplist
 

@@ -1,21 +1,28 @@
---- src/3rdparty/chromium/base/system/sys_info_openbsd.cc.orig	2022-08-31 12:19:35 UTC
+--- src/3rdparty/chromium/base/system/sys_info_openbsd.cc.orig	2024-02-23 21:04:38 UTC
 +++ src/3rdparty/chromium/base/system/sys_info_openbsd.cc
-@@ -11,6 +11,7 @@
- #include <sys/sysctl.h>
+@@ -3,7 +3,6 @@
+ // found in the LICENSE file.
+ 
+ #include "base/system/sys_info.h"
+-
+ #include <stddef.h>
+ #include <stdint.h>
+ #include <sys/param.h>
+@@ -12,6 +11,7 @@
  
  #include "base/notreached.h"
+ #include "base/posix/sysctl.h"
 +#include "base/strings/string_util.h"
  
  namespace {
  
-@@ -26,9 +27,15 @@ uint64_t AmountOfMemory(int pages_name) {
+@@ -27,9 +27,14 @@ uint64_t AmountOfMemory(int pages_name) {
  
  namespace base {
  
 +// pledge(2)
-+int64_t aofpmem = 0;
-+int64_t aofapmem = 0;
-+int64_t shmmax = 0;
++uint64_t aofpmem = 0;
++uint64_t shmmax = 0;
 +char cpumodel[256];
 +
  // static
@@ -25,7 +32,7 @@
    int ncpu;
    size_t size = sizeof(ncpu);
    if (sysctl(mib, std::size(mib), &ncpu, &size, NULL, 0) < 0) {
-@@ -40,10 +47,26 @@ int SysInfo::NumberOfProcessors() {
+@@ -41,10 +46,26 @@ int SysInfo::NumberOfProcessors() {
  
  // static
  uint64_t SysInfo::AmountOfPhysicalMemoryImpl() {
@@ -53,7 +60,7 @@
  uint64_t SysInfo::AmountOfAvailablePhysicalMemoryImpl() {
    // We should add inactive file-backed memory also but there is no such
    // information from OpenBSD unfortunately.
-@@ -55,23 +78,28 @@ uint64_t SysInfo::MaxSharedMemorySize() {
+@@ -56,16 +77,28 @@ uint64_t SysInfo::MaxSharedMemorySize() {
    int mib[] = {CTL_KERN, KERN_SHMINFO, KERN_SHMINFO_SHMMAX};
    size_t limit;
    size_t size = sizeof(limit);
@@ -72,14 +79,7 @@
  
  // static
 -std::string SysInfo::CPUModelName() {
--  int mib[] = {CTL_HW, HW_MODEL};
--  char name[256];
--  size_t len = std::size(name);
--  if (sysctl(mib, std::size(mib), name, &len, NULL, 0) < 0) {
--    NOTREACHED();
--    return std::string();
--  }
--  return name;
+-  return StringSysctl({CTL_HW, HW_MODEL}).value();
 +SysInfo::HardwareInfo SysInfo::GetHardwareInfoSync() {
 +  HardwareInfo info;
 +  // Set the manufacturer to "OpenBSD" and the model to

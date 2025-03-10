@@ -1,0 +1,12 @@
+--- dune-project.orig	2024-06-27 14:38:13 UTC
++++ dune-project
+@@ -18,8 +18,7 @@ yojson package.")
+   (documentation "https://ocaml.org/p/yojson/latest")
+   (depends
+     (ocaml (>= 4.02.3))
+-    (alcotest (and :with-test (>= 0.8.5)))
+-    (seq (>= 0.2.2))))
++    (alcotest (and :with-test (>= 0.8.5)))))
+ 
+ (package
+   (name yojson-five)

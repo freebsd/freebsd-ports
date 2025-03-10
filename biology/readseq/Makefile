@@ -13,7 +13,7 @@ WWW=		https://sourceforge.net/projects/readseq
 
 LICENSE=	PD
 
-USE_JAVA=	yes
+USES=	java
 NO_BUILD=	yes
 SUB_FILES=	readseq
 PLIST_FILES=	bin/readseq share/java/classes/readseq.jar

@@ -1,4 +1,4 @@
---- base/process/process_handle_freebsd.cc.orig	2024-04-23 07:42:17 UTC
+--- base/process/process_handle_freebsd.cc.orig	2025-02-20 09:59:21 UTC
 +++ base/process/process_handle_freebsd.cc
 @@ -3,6 +3,7 @@
  // found in the LICENSE file.
@@ -14,12 +14,12 @@
    struct kinfo_proc info;
 -  size_t length;
 +  size_t length = sizeof(struct kinfo_proc);
-   int mib[] = { CTL_KERN, KERN_PROC, KERN_PROC_PID, process };
+   int mib[] = {CTL_KERN, KERN_PROC, KERN_PROC_PID, process};
  
-   if (sysctl(mib, std::size(mib), &info, &length, NULL, 0) < 0)
+   if (sysctl(mib, std::size(mib), &info, &length, NULL, 0) < 0) {
 +    return -1;
 +
 +  if (length < sizeof(struct kinfo_proc))
      return -1;
+   }
  
-   return info.ki_ppid;

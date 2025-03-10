@@ -1,7 +1,6 @@
 PORTNAME=	read_bbrlog
-PORTVERSION=	1.2
+PORTVERSION=	1.4
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
 CATEGORIES=	net
 
 MAINTAINER=	olivier@FreeBSD.org
@@ -27,8 +26,8 @@ MAKE_ENV+=	WITHOUT_PIE=true
 
 .include <bsd.port.options.mk>
 
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1500009
-IGNORE=	builds only on FreeBSD head with minimum version 1500009
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1500025
+IGNORE=	builds only on FreeBSD head with minimum version 1500025
 .endif
 
 do-install:

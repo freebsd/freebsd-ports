@@ -1,0 +1,30 @@
+PORTNAME=	s7
+CATEGORIES=	lang lisp
+# S7_MAJOR_VERSION / S7_MINOR_VERSION / S7_DATE from s7.h
+PORTVERSION=	11.3.20250110
+
+MAINTAINER?=	fuz@FreeBSD.org
+WWW=		https://ccrma.stanford.edu/software/snd/snd/s7.html
+
+LICENSE=	BSD0CLAUSE
+
+USES=		localbase:ldflags
+USE_GITLAB=	yes
+GL_SITE=	https://cm-gitlab.stanford.edu
+GL_ACCOUNT=	bil
+GL_TAGNAME=	3cad48b9b7ae7f104cc3d0db689cf121a691628d
+
+CFLAGS+=	-DS7_LOAD_PATH=\"${DATADIR}\" \
+		-DHAVE_COMPLEX_NUMBERS \
+		-DHAVE_COMPLEX_TRIG \
+		-DWITH_SYSTEM_EXTRAS \
+		-DWITH_C_LOADER \
+		-fno-math-errno \
+		-Wno-parentheses-equality
+LDFLAGS+=	-Wl,-export-dynamic
+MAKE_ENV+=	LD_LIBRARY_PATH=${WRKDIR}
+
+DESCR?=		${.CURDIR}/pkg-descr
+PLIST?=		${.CURDIR}/pkg-plist
+
+.include <bsd.port.mk>

@@ -1,8 +1,8 @@
 [
 { type: install
   message: <<EOM
-This OpenJDK implementation requires fdescfs(5) mounted on /dev/fd and
-procfs(5) mounted on /proc.
+This OpenJDK implementation may require fdescfs(5) mounted on /dev/fd
+and procfs(5) mounted on /proc for some applications.
 
 If you have not done it yet, please do the following:
 

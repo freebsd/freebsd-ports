@@ -10,6 +10,9 @@ MAINTAINER=	dgjohns@gmail.com
 COMMENT=	Unicode conversion routines between UCS-4 and UTF-8
 WWW=		http://www.whizkidtech.redprince.net/i18n/
 
+DEPRECATED=	Upstream disapeared and distfile is no more available
+EXPIRATION_DATE=2025-03-31
+
 USE_LDCONFIG=	yes
 
 do-install:

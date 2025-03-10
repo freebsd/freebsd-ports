@@ -12,10 +12,8 @@ LICENSE=	APACHE20
 
 RUN_DEPENDS=	bash:shells/bash
 
-USES=		cpe
+USES=		cpe java
 CPE_VENDOR=	${PORTNAME}-lang
-USE_JAVA=	yes
-JAVA_VERSION=	8+
 
 NO_ARCH=	yes
 NO_BUILD=	yes

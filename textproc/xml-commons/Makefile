@@ -9,8 +9,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Provides common XML code for Apache projects
 WWW=		https://xerces.apache.org/xml-commons/
 
-USE_JAVA=	yes
-JAVA_RUN=	yes
+USES=		java
+
 NO_ARCH=	yes
 NO_BUILD=	yes
 

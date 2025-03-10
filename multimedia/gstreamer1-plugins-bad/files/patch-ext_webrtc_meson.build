@@ -1,13 +1,34 @@
---- ext/webrtc/meson.build.orig	2023-01-23 19:29:34 UTC
+--- ext/webrtc/meson.build.orig	2024-08-21 11:25:15 UTC
 +++ ext/webrtc/meson.build
-@@ -12,6 +12,10 @@ webrtc_sources = [
+@@ -1,3 +1,4 @@
++if get_option('webrtc').enabled()
+ webrtc_sources = [
+   'gstwebrtc.c',
+   'gstwebrtcstats.c',
+@@ -12,6 +13,14 @@ webrtc_sources = [
    'webrtcdatachannel.c',
  ]
  
 +if not is_variable('libgstwebrtcnice_dep')
-+  libgstwebrtcnice_dep=cc.find_library('gstwebrtcnice-1.0', required : true)
++  subdir_done()
++endif
++
++if not is_variable('gstsctp_dep')
++  gstsctp_dep=cc.find_library('gstsctp-1.0', required : true)
 +endif
 +
  webrtc_option = get_option('webrtc').require(
    libgstwebrtcnice_dep.found(), error_message: 'webrtc plugin requires libgstwebrtcnice.')
  if webrtc_option.disabled()
+@@ -23,9 +32,9 @@ gstwebrtc_plugin = library('gstwebrtc',
+   c_args : gst_plugins_bad_args + ['-DGST_USE_UNSTABLE_API'],
+   include_directories : [configinc],
+   dependencies : [gstbase_dep, gstsdp_dep,
+-                  gstapp_dep, gstwebrtc_dep, gstsctp_dep, gstrtp_dep, gio_dep, libgstwebrtcnice_dep],
++                  gstapp_dep, gstwebrtc_dep, dependency('gstreamer-sctp-1.0'), gstrtp_dep, gio_dep, libgstwebrtcnice_dep],
+   install : true,
+   install_dir : plugins_install_dir,
+ )
+ plugins += [gstwebrtc_plugin]
+-
++endif

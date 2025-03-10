@@ -1,5 +1,6 @@
 PORTNAME=	SFML
 PORTVERSION=	2.6.1
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -9,6 +10,8 @@ WWW=		https://www.sfml-dev.org/ \
 
 LICENSE=	ZLIB
 LICENSE_FILE=	${WRKSRC}/license.md
+
+BROKEN_FreeBSD_15=	compilation fails with libc++ 19, see PR281540
 
 USES=		cmake compiler:c++11-lang
 USE_GITHUB=	yes

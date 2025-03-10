@@ -9,6 +9,7 @@
 
 name=monitorix
 rcvar=monitorix_enable
+desc="FLOSS lightweight system monitoring tool"
 
 load_rc_config $name
 

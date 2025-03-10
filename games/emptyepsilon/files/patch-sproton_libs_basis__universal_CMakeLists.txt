@@ -1,0 +1,13 @@
+- avoid fetch, use pre-installed meshoptimizer package, see https://github.com/daid/SeriousProton/issues/253
+
+--- sproton/libs/basis_universal/CMakeLists.txt.orig	2024-12-09 20:23:38 UTC
++++ sproton/libs/basis_universal/CMakeLists.txt
+@@ -5,7 +5,7 @@ set(BASIS_URL "https://github.com/BinomialLLC/basis_un
+ 
+ set(BASIS_VERSION "v1_15_update2")
+ set(BASIS_URL "https://github.com/BinomialLLC/basis_universal")
+-if(CMAKE_VERSION VERSION_GREATER_EQUAL 3.11)
++if(FALSE AND CMAKE_VERSION VERSION_GREATER_EQUAL 3.11)
+     include(FetchContent)
+     FetchContent_Declare(
+         basis

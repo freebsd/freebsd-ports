@@ -20,6 +20,7 @@ share/icons/hicolor/64x64/apps/kblocks.png
 %%DATADIR%%/themes/oxygen_preview.png
 share/knsrcfiles/kblocks.knsrc
 share/locale/ar/LC_MESSAGES/kblocks.mo
+share/locale/ast/LC_MESSAGES/kblocks.mo
 share/locale/bg/LC_MESSAGES/kblocks.mo
 share/locale/bs/LC_MESSAGES/kblocks.mo
 share/locale/ca/LC_MESSAGES/kblocks.mo
@@ -38,9 +39,11 @@ share/locale/fr/LC_MESSAGES/kblocks.mo
 share/locale/ga/LC_MESSAGES/kblocks.mo
 share/locale/gl/LC_MESSAGES/kblocks.mo
 share/locale/gu/LC_MESSAGES/kblocks.mo
+share/locale/he/LC_MESSAGES/kblocks.mo
 share/locale/hi/LC_MESSAGES/kblocks.mo
 share/locale/hr/LC_MESSAGES/kblocks.mo
 share/locale/hu/LC_MESSAGES/kblocks.mo
+share/locale/ia/LC_MESSAGES/kblocks.mo
 share/locale/id/LC_MESSAGES/kblocks.mo
 share/locale/is/LC_MESSAGES/kblocks.mo
 share/locale/it/LC_MESSAGES/kblocks.mo
@@ -78,4 +81,5 @@ share/locale/uk/LC_MESSAGES/kblocks.mo
 share/locale/zh_CN/LC_MESSAGES/kblocks.mo
 share/locale/zh_TW/LC_MESSAGES/kblocks.mo
 share/metainfo/org.kde.kblocks.appdata.xml
-share/qlogging-categories5/kblocks.categories
+share/qlogging-categories6/kblocks.categories
+share/qlogging-categories6/kblocks.renamecategories

@@ -5,10 +5,13 @@ CATEGORIES=	databases devel
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Small C++ wrapper for the native C ODBC API
-WWW=		https://nanodbc.github.io/nanodbc/
+WWW=		https://nanodbc.github.io/nanodbc/ \
+		https://github.com/nanodbc/nanodbc
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+BROKEN_FreeBSD_15=	compilation fails with clang-19, see https://github.com/nanodbc/nanodbc/issues/421
 
 LIB_DEPENDS=	libodbc.so:databases/unixODBC
 
@@ -24,7 +27,7 @@ CMAKE_TESTING_ARGS=	-DNANODBC_DISABLE_TESTS=OFF # many tests fail: Data source n
 
 .include <bsd.port.options.mk>
 
-.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400091 || ( ${OSVERSION} >= 1302507 && ${OSVERSION} < 1400000 ))
+.if ${OPSYS} == FreeBSD
 CFLAGS+=	-Wno-error=deprecated-declarations -Wno-error=unused-command-line-argument
 .endif
 

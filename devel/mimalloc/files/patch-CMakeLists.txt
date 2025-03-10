@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2023-04-03 19:32:28 UTC
+--- CMakeLists.txt.orig	2025-01-13 15:16:06 UTC
 +++ CMakeLists.txt
-@@ -353,8 +353,8 @@ if(MI_TRACK_ASAN)
+@@ -513,8 +513,8 @@ string(TOLOWER "${CMAKE_BUILD_TYPE}" CMAKE_BUILD_TYPE_
    set(mi_basename "${mi_basename}-asan")
  endif()
  string(TOLOWER "${CMAKE_BUILD_TYPE}" CMAKE_BUILD_TYPE_LC)

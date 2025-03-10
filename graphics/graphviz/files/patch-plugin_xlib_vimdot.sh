@@ -1,6 +1,6 @@
---- plugin/xlib/vimdot.sh.orig	2023-01-21 19:59:25 UTC
+--- plugin/xlib/vimdot.sh.orig	2024-12-06 23:55:56 UTC
 +++ plugin/xlib/vimdot.sh
-@@ -9,7 +9,7 @@ fi
+@@ -9,7 +9,7 @@ error() { echo "$0: $*" >&2; exit 1; }
  error() { echo "$0: $*" >&2; exit 1; }
  
  # Try $EDITOR first, else try vim or vi

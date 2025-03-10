@@ -1,3 +1,3 @@
-TIMESTAMP = 1664086556
-SHA256 (scikit-umfpack-0.3.3.tar.gz) = 464534529de182f2444809807f14133b7fee86605c167060917f115a31633ec4
-SIZE (scikit-umfpack-0.3.3.tar.gz) = 26241
+TIMESTAMP = 1731041698
+SHA256 (scikit_umfpack-0.4.1.tar.gz) = 23a16750fbf866d32341ab3885fd59687bc9d5fbb9d372e50f6a968059604d59
+SIZE (scikit_umfpack-0.4.1.tar.gz) = 31845

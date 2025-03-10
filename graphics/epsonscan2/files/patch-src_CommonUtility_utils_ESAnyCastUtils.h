@@ -1,6 +1,6 @@
---- src/CommonUtility/utils/ESAnyCastUtils.h.orig	2021-11-25 00:56:55 UTC
+--- src/CommonUtility/utils/ESAnyCastUtils.h.orig	2024-09-12 07:10:38 UTC
 +++ src/CommonUtility/utils/ESAnyCastUtils.h
-@@ -141,7 +141,11 @@ const T* SafeAnyDataCPtr( const ESAny& anyIn )
+@@ -138,7 +138,11 @@ T* SafeAnyDataPtr_WithLog( ESAny& anyIn, ES_CHAR_CPTR 
  template< typename T >
  T* SafeAnyDataPtr_WithLog( ESAny& anyIn, ES_CHAR_CPTR lpszFile = __ES_FILE__, const int nLine = __LINE__ )
  {
@@ -13,7 +13,7 @@
    if(anyIn.empty()){
     ES_Warning_Log3( __ES_FUNCTION__, lpszFile, nLine, ES_STRING("Boost Any Cast Warning Empty!!"));
    } else {
-@@ -167,7 +171,11 @@ T* SafeAnyDataPtr_WithLog( ESAny& anyIn, ES_CHAR_CPTR 
+@@ -164,7 +168,11 @@ const T* SafeAnyDataCPtr_WithLog( const ESAny& anyIn, 
  template< typename T >
  const T* SafeAnyDataCPtr_WithLog( const ESAny& anyIn, ES_CHAR_CPTR lpszFile = __ES_FILE__, const int nLine = __LINE__ )
  {

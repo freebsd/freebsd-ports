@@ -1,5 +1,5 @@
 PORTNAME=	zorin-gtk-themes
-DISTVERSION=	3.4.4
+DISTVERSION=	4.2.1
 CATEGORIES=	x11-themes
 
 MAINTAINER=	Alexander88207@protonmail.com

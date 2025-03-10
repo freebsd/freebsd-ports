@@ -1,5 +1,6 @@
 PORTNAME=	bsdfan
 PORTVERSION=	g20180112
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	danfe@FreeBSD.org
@@ -16,13 +17,11 @@ USES=		uidfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	claudiozz
 GH_TAGNAME=	d8428a7
-MAKE_ARGS=	MANDIR=${PREFIX}/share/man/man
+MAKE_ARGS=	BINDIR=${PREFIX}/bin MANDIR=${PREFIX}/share/man/man
+USE_RC_SUBR=	${PORTNAME}
 
 PLIST_FILES=	bin/bsdfan share/man/man1/bsdfan.1.gz \
 		@sample\ etc/bsdfan.conf.sample
-
-post-patch:
-	@${REINPLACE_CMD} -e 's,getTemp(,&void,' ${WRKSRC}/system.c
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/bsdfan.conf \

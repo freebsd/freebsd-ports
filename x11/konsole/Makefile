@@ -1,6 +1,5 @@
 PORTNAME=	konsole
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
-PORTREVISION=	1
 CATEGORIES=	x11 kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
@@ -14,17 +13,15 @@ RUN_DEPENDS=	keditbookmarks:deskutils/keditbookmarks
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		cmake compiler:c++11-lang gettext pkgconfig kde:5 \
-		qt:5 tar:xz xorg
-USE_KDE=	auth attica bookmarks codecs completion config configwidgets \
-		coreaddons crash dbusaddons emoticons globalaccel guiaddons i18n \
-		iconthemes init itemmodels jobwidgets kio \
-		newstuff notifications notifyconfig parts pty service solid sonnet \
-		textwidgets widgetsaddons windowsystem xmlgui \
+USES=		cmake compiler:c++11-lang gettext kde:6 pkgconfig qt:6 tar:xz \
+		xorg
+USE_KDE=	attica auth bookmarks codecs completion config configwidgets \
+		coreaddons crash dbusaddons globalaccel guiaddons i18n \
+		iconthemes itemmodels jobwidgets kio newstuff notifications \
+		notifyconfig parts pty service solid sonnet textwidgets \
+		widgetsaddons windowsystem xmlgui \
 		ecm:build
-USE_QT=		concurrent core dbus gui multimedia network printsupport script scripttools sql \
-		widgets xml \
-		buildtools:build qmake:build
+USE_QT=		base
 USE_XORG=	x11
 
 OPTIONS_DEFINE=	DOCS

@@ -12,6 +12,8 @@ WWW=		https://alioth.debian.org/projects/qof/
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Host is no longer resolvable using multiple different resolver
+
 CONFLICTS_INSTALL=	gnotime-2.[0-3]* gnotime-2.4.0* gnotime-2.4.1 gnotime-2.4.1_[12]*
 
 GNU_CONFIGURE=	yes

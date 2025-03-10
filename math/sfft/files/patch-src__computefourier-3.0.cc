@@ -1,6 +1,6 @@
---- src/computefourier-3.0.cc.orig	2013-06-13 08:12:26.000000000 -0400
-+++ src/computefourier-3.0.cc	2013-08-10 17:02:52.000000000 -0400
-@@ -416,27 +416,64 @@
+--- src/computefourier-3.0.cc.orig	2013-06-13 12:12:26 UTC
++++ src/computefourier-3.0.cc
+@@ -416,27 +416,64 @@ update_gaussian_loops2(int key, complex_t value, compl
  
    __m128d t1r = _mm_mul_pd(v1r, ab31);
    __m128d t1i = _mm_mul_pd(v1i, ba31);
@@ -65,7 +65,7 @@
  
    FLOPCOUNT_INCREMENT(6 * (4 + 2));
  
-@@ -524,11 +561,28 @@
+@@ -524,11 +561,28 @@ estimate_freq_gauss_loops2(sfft_v3_data * data, int WH
        __m128d a3b3_sq = _mm_mul_pd(a3b3, a3b3);
        FLOPCOUNT_INCREMENT(8);
  
@@ -94,7 +94,7 @@
        FLOPCOUNT_INCREMENT(1);
  
        _mm_store_pd(zero_buck_check, zbc);
-@@ -681,13 +735,35 @@
+@@ -681,13 +735,35 @@ estimate_freq_mansour_loops2(sfft_v3_data * data, int 
        __m128d a3b3_sq = _mm_mul_pd(a3b3, a3b3);
        FLOPCOUNT_INCREMENT(8);
  

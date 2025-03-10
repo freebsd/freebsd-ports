@@ -1,5 +1,6 @@
 PORTNAME=	parallel-hashmap
-DISTVERSION=	1.36
+DISTVERSIONPREFIX=	v
+DISTVERSION=	2.0.0
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -19,5 +20,7 @@ CMAKE_TESTING_ON=	PHMAP_BUILD_TESTS
 
 NO_BUILD=	yes
 NO_ARCH=	yes
+
+# tests as of 2.0.0: 100% tests passed, 0 tests failed out of 17
 
 .include <bsd.port.mk>

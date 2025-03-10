@@ -1,22 +1,22 @@
 PORTNAME=	pg_partman
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.6.0
+DISTVERSION=	5.2.2
 CATEGORIES=	databases
 
 MAINTAINER=	lacey.leanne@gmail.com
 COMMENT=	PostgreSQL Partition Manager
-WWW=		https://github.com/keithf4/pg_partman
+WWW=		https://github.com/pgpartman/pg_partman
 
 LICENSE=	PostgreSQL
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/psycopg2/__init__.py:databases/py-psycopg2
 
-USES=		cpe gmake pgsql:11+ python uidfix shebangfix
+USES=		cpe gmake pgsql:14+ python uidfix shebangfix
 CPE_VENDOR=	pgxn
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	keithf4
+GH_ACCOUNT=	pgpartman
 
 WANT_PGSQL=	server
 SHEBANG_GLOB=	*.py

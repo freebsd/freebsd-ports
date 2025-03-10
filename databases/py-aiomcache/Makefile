@@ -1,6 +1,6 @@
 PORTNAME=	aiomcache
 DISTVERSION=	0.7.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,6 +15,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USES=		cpe python
 CPE_VENDOR=	${PORTNAME}_project
 USE_PYTHON=	autoplist distutils cython
+
+NO_ARCH=	yes
 
 post-extract:
 	@${MV} ${WRKSRC}/tests ${WRKSRC}/aiomcache/

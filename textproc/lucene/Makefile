@@ -11,8 +11,8 @@ WWW=		https://lucene.apache.org/core/
 
 LICENSE=	APACHE20
 
-USES=		cpe tar:tgz
-USE_JAVA=	yes
+USES=		cpe java tar:tgz
+
 NO_BUILD=	yes
 NO_ARCH=	yes
 

@@ -1,7 +1,7 @@
 PORTNAME=	asio
-DISTVERSION=	1.28.0
+DISTVERSION=	1.30.2
 CATEGORIES=	net devel
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}%20(Stable)/
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${DISTVERSION}%20(Stable)/
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Cross-platform C++ library for network and low-level I/O programming

@@ -2,8 +2,7 @@ PORTNAME=	vsftpd
 PORTVERSION=	3.0.5
 PORTREVISION=	2
 CATEGORIES=	ftp
-MASTER_SITES=	https://security.appspot.com/downloads/ \
-		GENTOO
+MASTER_SITES=	https://security.appspot.com/downloads/
 PKGNAMESUFFIX?=	${SSL_SUFFIX}${PKGNAMESUFFIX2}
 
 MAINTAINER=	dinoex@FreeBSD.org

@@ -1,0 +1,27 @@
+[
+{ type: install
+  message: <<EOM
+Teddycloud will require exclusive access to following ports:
+80: HTTP port for the webinterface
+8443: HTTPS port for the webinterface
+443: HTTPS API port for Toniebox API
+
+If you have already daemons running using these ports like nginx, apache, haproxy
+it is best to bind an alias IP (second ip) to your network card and use that exclusively
+with teddycloud.
+
+You can tell teddycloud to use this IP.
+At first you must start teddycloud that the config file /usr/local/etc/teddycloud/config.ini is created with command:
+teddycloud
+
+After this you can change the IP teddycloud is using:
+core.server.bind_ip=_your_alias_ip_for_teddycloud
+
+To start teddycloud at startup:
+sysrc teddycloudd_enable="YES"
+
+To start in background:
+service teddycloud start
+EOM
+}
+]

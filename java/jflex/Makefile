@@ -9,7 +9,7 @@ WWW=		https://www.jflex.de/
 
 LICENSE=	BSD3CLAUSE
 
-USE_JAVA=	yes
+USES=		java
 
 #
 # JFlex has two build options --- Maven and Bazel --- and neither of

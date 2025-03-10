@@ -1,9 +1,10 @@
 PORTNAME=	worker
 PORTVERSION=	5.1.0
+PORTREVISION=	1
 CATEGORIES=	x11-fm
 MASTER_SITES=	http://www.boomerangsworld.de/cms/worker/downloads/
 
-MAINTAINER=	mp39590@gmail.com
+MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	X11 file manager based on Directory Opus of AmigaOS
 WWW=		http://www.boomerangsworld.de/cms/worker/
 
@@ -28,7 +29,7 @@ INOTIFY_DESC=	Monitor directory changes via libinotify
 AVFS_DESC=	Use AVFS library to access archives
 SSL_DESC=	SHA-256 checksum support via OpenSSL
 
-AVFS_LIB_DEPENDS=	libavfs.so:sysutils/avfs
+AVFS_LIB_DEPENDS=	libavfs.so:filesystems/avfs
 AVFS_CONFIGURE_OFF=	--without-avfs
 
 DBUS_LIB_DEPENDS=	libdbus-1.so:devel/dbus

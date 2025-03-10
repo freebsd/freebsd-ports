@@ -18,12 +18,8 @@ LIB_DEPENDS=	libharfbuzz.so:print/harfbuzz \
 		libfontconfig.so:x11-fonts/fontconfig
 RUN_DEPENDS=	ocaml-cairo>0:graphics/ocaml-cairo
 
-USES=		gmake gnome pkgconfig
+USES=		gmake gnome ocaml:camlp4,findlib,ldconfig pkgconfig
 USE_GNOME=	cairo gdkpixbuf2 gtk30
-USE_OCAML=	yes
-USE_OCAML_FINDLIB=	yes
-USE_OCAML_CAMLP4=	yes
-USE_OCAML_LDCONFIG=	yes
 
 TARGETS=	${PORTNAME}
 
@@ -50,6 +46,12 @@ GTKSOURCEVIEW3_VARS=    TARGETS+=lablgtk3-sourceview3 EXAMPLES_SUBDIRS+=sourcevi
 GTKSPELL_LIB_DEPENDS=	libgtkspell3-3.so:textproc/gtkspell3 \
 			libenchant-2.so:textproc/enchant2
 GTKSPELL_VARS=		TARGETS+=lablgtk3-gtkspell3
+
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == powerpc
+USE_BINUTILS=	yes
+.endif
 
 do-build:
 	cd ${BUILD_WRKSRC} && dune build --verbose -p ${TARGETS:ts,} -j ${MAKE_JOBS_NUMBER}

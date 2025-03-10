@@ -1,6 +1,7 @@
 PORTNAME=	ocsinventory
-PORTVERSION=	2.10.2
+PORTVERSION=	2.10.4
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	net-mgmt
 PKGNAMESUFFIX=	-agent
@@ -12,7 +13,9 @@ WWW=		https://www.ocsinventory-ng.org/
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	lspci:sysutils/pciutils \
+RUN_DEPENDS=	lscpu:sysutils/lscpu \
+		lspci:sysutils/pciutils \
+		p5-Data-UUID>=0:devel/p5-Data-UUID \
 		p5-libwww>=0:www/p5-libwww \
 		p5-Net-IP>=0:net-mgmt/p5-Net-IP \
 		p5-Proc-Daemon>=0:devel/p5-Proc-Daemon \

@@ -68,14 +68,14 @@ arm_fbsd_supply_pcb(struct regcache *regcache, CORE_ADDR pcb_addr)
    * of xPSR to determine if Thumb mode is active.  FreeBSD's kernels never
    * use Thumb.
    */
-  regcache->raw_supply_unsigned(ARM_PS_REGNUM, 0);
+  regcache->raw_supply_zeroed (ARM_PS_REGNUM);
 }
 
 #define PSR_MODE        0x0000001f      /* mode mask */
 #define PSR_USR32_MODE  0x00000010
 
 static struct trad_frame_cache *
-arm_fbsd_trapframe_cache (frame_info_ptr this_frame, void **this_cache)
+arm_fbsd_trapframe_cache (const frame_info_ptr &this_frame, void **this_cache)
 {
   struct gdbarch *gdbarch = get_frame_arch (this_frame);
   enum bfd_endian byte_order = gdbarch_byte_order (gdbarch);
@@ -132,7 +132,7 @@ arm_fbsd_trapframe_cache (frame_info_ptr this_frame, void **this_cache)
 }
 
 static void
-arm_fbsd_trapframe_this_id (frame_info_ptr this_frame,
+arm_fbsd_trapframe_this_id (const frame_info_ptr &this_frame,
 			    void **this_cache, struct frame_id *this_id)
 {
   struct trad_frame_cache *cache =
@@ -142,7 +142,7 @@ arm_fbsd_trapframe_this_id (frame_info_ptr this_frame,
 }
 
 static struct value *
-arm_fbsd_trapframe_prev_register (frame_info_ptr this_frame,
+arm_fbsd_trapframe_prev_register (const frame_info_ptr &this_frame,
 				  void **this_cache, int regnum)
 {
   struct trad_frame_cache *cache =
@@ -153,7 +153,7 @@ arm_fbsd_trapframe_prev_register (frame_info_ptr this_frame,
 
 static int
 arm_fbsd_trapframe_sniffer (const struct frame_unwind *self,
-			    frame_info_ptr this_frame,
+			    const frame_info_ptr &this_frame,
 			    void **this_prologue_cache)
 {
   const char *name;

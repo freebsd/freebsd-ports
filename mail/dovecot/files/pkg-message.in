@@ -33,7 +33,7 @@
  There are some potentially breaking changes in Dovecot 2.3. If you
  are upgrading from Dovecot 2.2:
  
-   * Read https://wiki2.dovecot.org/Upgrading/2.3
+   * https://doc.dovecot.org/2.3/installation_guide/upgrading/from-2.2-to-2.3/
    * Merge the configuration file changes from
      %%ETCDIR%%/examples-config/
 EOM

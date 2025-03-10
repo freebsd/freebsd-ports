@@ -1,6 +1,6 @@
 PORTNAME=	process-viewer
 DISTVERSION=	g20220909
-PORTREVISION=	15
+PORTREVISION=	21
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -9,8 +9,6 @@ WWW=		https://github.com/guillaumegomez/process-viewer
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
-
-BROKEN_powerpc64le=	rust compiler crashes, see https://github.com/rust-lang/rust/issues/120583
 
 LIB_DEPENDS=	libgraphene-1.0.so:graphics/graphene
 
@@ -104,8 +102,5 @@ CARGO_CRATES=	anyhow-1.0.57 \
 		winapi-x86_64-pc-windows-gnu-0.4.0
 
 PLIST_FILES=	bin/process_viewer
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/process_viewer
 
 .include <bsd.port.mk>

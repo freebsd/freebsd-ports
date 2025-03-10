@@ -1,0 +1,3 @@
+pytest-mypy-testing provides a pytest plugin to test that mypy produces a given
+output. As mypy can be told to display the type of an expression this allows us
+to check mypys type interference.

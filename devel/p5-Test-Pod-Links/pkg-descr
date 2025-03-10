@@ -1,0 +1,3 @@
+Tests that all HTTP/S links from Pod documentation are reachable by calling
+the head method of HTTP::Tiny on them. Recommended to put it into your xt
+instead of your t directory.

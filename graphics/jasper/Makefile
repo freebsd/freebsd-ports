@@ -11,7 +11,7 @@ WWW=		https://ece.engr.uvic.ca/~frodo/jasper/ \
 LICENSE=	JASPER
 LICENSE_NAME=	JasPer License Version 2.0
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
-LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
+LICENSE_PERMS=	auto-accept dist-mirror dist-sell pkg-mirror pkg-sell
 
 USES=		cmake cpe jpeg localbase pathfix
 

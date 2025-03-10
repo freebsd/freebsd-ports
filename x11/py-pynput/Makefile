@@ -1,8 +1,9 @@
 PORTNAME=	pynput
-DISTVERSION=	1.7.6
-PORTREVISION=	3
+DISTVERSIONPREFIX=	v
+DISTVERSION=	1.7.7
+PORTREVISION=	1
 CATEGORIES=	x11
-MASTER_SITES=	PYPI # no tests on PYPI, but GitHub tarball doesn't bui;d
+#MASTER_SITES=	PYPI # no tarball on PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -16,11 +17,17 @@ PY_DEPENDS=	${PYTHON_PKGNAMEPREFIX}evdev>=1.3:devel/py-evdev@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}python-xlib>0:x11-toolkits/py-python-xlib@${PY_FLAVOR}
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sphinx>=1.3.1:textproc/py-sphinx@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}twine>=4.0:devel/py-twine@${PY_FLAVOR} \
 		${PY_DEPENDS}
+BUILD_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}pkginfo>0:sysutils/py-pkginfo@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PY_DEPENDS}
 
 USES=		python
-USE_PYTHON=	distutils autoplist
+USE_PYTHON=	distutils autoplist pytest # PyTest doesn't run tests because test file names don't begin with test_, see https://github.com/moses-palmer/pynput/issues/618
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	moses-palmer
 
 NO_ARCH=	yes
 

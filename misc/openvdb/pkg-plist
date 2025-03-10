@@ -146,6 +146,7 @@ include/openvdb/tree/RootNode.h
 include/openvdb/tree/Tree.h
 include/openvdb/tree/TreeIterator.h
 include/openvdb/tree/ValueAccessor.h
+include/openvdb/util/Assert.h
 include/openvdb/util/CpuTimer.h
 include/openvdb/util/ExplicitInstantiation.h
 include/openvdb/util/Formats.h
@@ -168,5 +169,5 @@ lib/cmake/OpenVDB/OpenVDBHoudiniSetup.cmake
 lib/cmake/OpenVDB/OpenVDBMayaSetup.cmake
 lib/cmake/OpenVDB/OpenVDBUtils.cmake
 lib/libopenvdb.so
-lib/libopenvdb.so.11.0
-lib/libopenvdb.so.11.0.0
+lib/libopenvdb.so.12.0
+lib/libopenvdb.so.12.0.0

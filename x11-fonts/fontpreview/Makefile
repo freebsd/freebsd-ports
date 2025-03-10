@@ -1,6 +1,6 @@
 PORTNAME=	fontpreview
 DISTVERSION=	1.0.6
-PORTREVISION=	3
+PORTREVISION=	5
 CATEGORIES=	x11-fonts graphics
 
 MAINTAINER=	0mp@FreeBSD.org
@@ -12,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	bash:shells/bash \
 		fzf:textproc/fzf \
-		getopt>0:misc/getopt \
+		getopt>=0:misc/getopt \
 		nsxiv:graphics/nsxiv \
 		xdotool:x11/xdotool
 

@@ -1,20 +1,16 @@
---- src/slic3r/Utils/Serial.cpp.orig	2023-12-12 14:21:21 UTC
+--- src/slic3r/Utils/Serial.cpp.orig	2025-02-14 23:15:01 UTC
 +++ src/slic3r/Utils/Serial.cpp
-@@ -53,7 +53,7 @@
- 	#include <sys/select.h>
- #endif
+@@ -282,11 +282,11 @@ using boost::system::error_code;
+ namespace asio = boost::asio;
+ using boost::system::error_code;
  
--#if defined(__APPLE__) || defined(__OpenBSD__)
-+#if defined(__APPLE__) || defined(__OpenBSD__) || defined(__FreeBSD__)
- 	#include <termios.h>
- #elif defined __linux__
- 	#include <fcntl.h>
-@@ -346,7 +346,7 @@ void Serial::set_baud_rate(unsigned baud_rate)
- 		ios.c_cc[VTIME] = 1;
- 		handle_errno(::ioctl(handle, TCSETS2, &ios));
+-Serial::Serial(asio::io_service& io_service) :
++Serial::Serial(asio::io_context &io_service) :
+ 	asio::serial_port(io_service)
+ {}
  
--#elif __OpenBSD__
-+#elif defined(__OpenBSD__) || defined(__FreeBSD__)
- 		struct termios ios;
- 		handle_errno(::tcgetattr(handle, &ios));
- 		handle_errno(::cfsetspeed(&ios, baud_rate));
+-Serial::Serial(asio::io_service& io_service, const std::string &name, unsigned baud_rate) :
++Serial::Serial(asio::io_context &io_service, const std::string &name, unsigned baud_rate) :
+ 	asio::serial_port(io_service, name)
+ {
+ 	set_baud_rate(baud_rate);

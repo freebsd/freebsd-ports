@@ -11,8 +11,8 @@ WWW=		http://phex.sourceforge.net/
 
 LICENSE=	GPLv2
 
-USES=		zip
-USE_JAVA=	yes
+USES=		java zip
+
 NO_BUILD=	yes
 
 SUB_FILES=	${PORTNAME}.sh

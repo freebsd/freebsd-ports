@@ -1,5 +1,5 @@
 PORTNAME=	unicode-emoji
-PORTVERSION=	3.4.0
+PORTVERSION=	4.0.4
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -9,8 +9,6 @@ WWW=		https://github.com/janlelis/unicode-emoji
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/MIT-LICENSE.txt
-
-RUN_DEPENDS=	rubygem-unicode-version>=1.0<2:devel/rubygem-unicode-version
 
 USES=		gem
 

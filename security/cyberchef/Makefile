@@ -1,5 +1,5 @@
 PORTNAME=	cyberchef
-PORTVERSION=	10.5.2
+PORTVERSION=	10.19.4
 DISTVERSIONPREFIX=	v
 CATEGORIES=	security
 MASTER_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/releases/download/${GH_TAGNAME}/
@@ -7,7 +7,7 @@ DISTNAME=	CyberChef_${DISTVERSIONPREFIX}${PORTVERSION}
 
 MAINTAINER=	dvl@FreeBSD.org
 COMMENT=	Cyber operations within a web browser
-WWW=		https://github.com/gchq/CyberChef/wiki
+WWW=		https://github.com/gchq/CyberChef/
 
 LICENSE=	APACHE20
 

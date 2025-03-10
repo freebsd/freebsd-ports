@@ -1,23 +1,19 @@
 PORTNAME=	qstardict
-DISTVERSION=	1.4
-PORTREVISION=	1
+DISTVERSION=	3.0.0
 CATEGORIES=	textproc
 MASTER_SITES=	https://qstardict.ylsoftware.com/files/
 
-MAINTAINER=	makc@FreeBSD.org
+MAINTAINER=	mew14930xvi@inbox.lv
 COMMENT=	Qt based dictionary program (stardict clone)
 WWW=		https://qstardict.ylsoftware.com/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libzim.so:devel/libzim
-
-USES=		compiler:c++17-lang gl gnome pkgconfig qmake qt:5 xorg
-USE_GL=		gl
+USES=		compiler:c++17-lang gettext gl gnome pkgconfig qmake qt:6 xorg
+USE_GL=		opengl
 USE_GNOME=	glib20
-USE_QT=		core dbus gui network printsupport widgets xml \
-		buildtools:build linguisttools:build qmake:build
+USE_QT=		base tools:build
 USE_XORG=	x11
 
 QMAKE_ARGS=	INSTALL_PREFIX=${PREFIX}

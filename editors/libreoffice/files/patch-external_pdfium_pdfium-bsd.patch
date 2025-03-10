@@ -1,21 +1,21 @@
 Index: external/pdfium/pdfium-bsd.patch
---- external/pdfium/pdfium-bsd.patch.orig	2022-02-15 12:21:30 UTC
+--- external/pdfium/pdfium-bsd.patch.orig	2024-06-19 20:37:06 UTC
 +++ external/pdfium/pdfium-bsd.patch
 @@ -0,0 +1,22 @@
-+--- core/fxge/linux/fx_linux_impl.cpp.orig	Thu Feb  3 17:25:22 2022
-++++ core/fxge/linux/fx_linux_impl.cpp	Thu Feb
-+@@ -18,7 +18,7 @@
-+ #include "third_party/base/check.h"
++--- core/fxge/linux/fx_linux_impl.cpp.orig	2024-04-16 00:00:38 UTC
+++++ core/fxge/linux/fx_linux_impl.cpp
++@@ -17,7 +17,7 @@
++ #include "core/fxge/fx_font.h"
++ #include "core/fxge/systemfontinfo_iface.h"
 + 
-+ #if !BUILDFLAG(IS_LINUX) && !BUILDFLAG(IS_CHROMEOS) && !defined(OS_FUCHSIA) && \
-+-    !defined(OS_ASMJS)
-++    !defined(OS_ASMJS) && !defined(OS_FREEBSD) && !defined(OS_OPENBSD)
++-#if !BUILDFLAG(IS_LINUX) && !BUILDFLAG(IS_CHROMEOS) && !defined(OS_ASMJS)
+++#if !BUILDFLAG(IS_LINUX) && !BUILDFLAG(IS_CHROMEOS) && !defined(OS_ASMJS) && !defined(OS_FREEBSD) && !defined(OS_OPENBSD)
 + #error "Included on the wrong platform"
 + #endif
 + 
-+--- core/fxge/cfx_fontmapper.cpp.orig	Thu Feb  3 17:25:53 2022
-++++ core/fxge/cfx_fontmapper.cpp	Thu Feb
-+@@ -155,7 +155,7 @@ constexpr AltFontFamily kAltFontFamilies[] = {
++--- core/fxge/cfx_fontmapper.cpp.orig	2024-04-16 00:00:38 UTC
+++++ core/fxge/cfx_fontmapper.cpp
++@@ -157,7 +157,7 @@ constexpr AltFontFamily kAltFontFamilies[] = {
 +     {"ForteMT", "Forte"},
 + };
 + 

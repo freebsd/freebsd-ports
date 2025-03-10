@@ -1,9 +1,9 @@
 FreeBSD's ldconfig(8) is largely incompatible with that from glibc. Ignore
 these extra paths and just rely on those provided by objdump(1).
 
---- Source/cmBinUtilsLinuxELFLinker.cxx.orig	2023-12-06 13:57:42 UTC
+--- Source/cmBinUtilsLinuxELFLinker.cxx.orig	2024-11-06 13:41:37 UTC
 +++ Source/cmBinUtilsLinuxELFLinker.cxx
-@@ -65,6 +65,7 @@ bool cmBinUtilsLinuxELFLinker::Prepare()
+@@ -68,6 +68,7 @@ bool cmBinUtilsLinuxELFLinker::Prepare()
      return false;
    }
  
@@ -11,7 +11,7 @@ these extra paths and just rely on those provided by objdump(1).
    std::string ldConfigTool =
      this->Archive->GetMakefile()->GetSafeDefinition("CMAKE_LDCONFIG_TOOL");
    if (ldConfigTool.empty()) {
-@@ -82,6 +83,7 @@ bool cmBinUtilsLinuxELFLinker::Prepare()
+@@ -85,6 +86,7 @@ bool cmBinUtilsLinuxELFLinker::Prepare()
      this->SetError(e.str());
      return false;
    }
@@ -19,14 +19,14 @@ these extra paths and just rely on those provided by objdump(1).
  
    return true;
  }
-@@ -135,8 +137,10 @@ bool cmBinUtilsLinuxELFLinker::ScanDependencies(
-                        parentRpaths.end());
-   }
+@@ -145,8 +147,10 @@ bool cmBinUtilsLinuxELFLinker::ScanDependencies(std::s
+                          parentRpaths.end());
+     }
  
 +#if defined(__linux__)
-   searchPaths.insert(searchPaths.end(), this->LDConfigPaths.begin(),
-                      this->LDConfigPaths.end());
+     searchPaths.insert(searchPaths.end(), this->LDConfigPaths.begin(),
+                        this->LDConfigPaths.end());
 +#endif
  
-   for (auto const& dep : needed) {
-     if (!this->Archive->IsPreExcluded(dep)) {
+     for (auto const& dep : needed) {
+       if (resolvedDependencies.count(dep) != 0 ||

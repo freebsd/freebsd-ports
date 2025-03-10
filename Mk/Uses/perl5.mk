@@ -202,7 +202,7 @@ DESTDIRNAME=	--destdir
 .    if ${_USE_PERL5:Mmodbuild}
 CONFIGURE_ARGS+=--perl="${PERL}"
 .      if ${PORTNAME} != Module-Build
-BUILD_DEPENDS+=	p5-Module-Build>=0.4206:devel/p5-Module-Build
+BUILD_DEPENDS+=	p5-Module-Build>=0.4234:devel/p5-Module-Build
 .      endif
 CONFIGURE_ARGS+=--create_packlist 1
 .    endif

@@ -67,6 +67,7 @@ load_rc_config 'fahclient'
 : "${fahclient_enable:=NO}"
 : "${fahclient_user:=fahclient}"
 : "${fahclient_chdir:=%%FAHCLIENT_WORK_DIR%%}"
+: "${fahclient_svcj_options:=net_basic}"
 
 : "${fahclient_donor:=Anonymous}"
 : "${fahclient_team:=11743}"
@@ -78,7 +79,7 @@ load_rc_config 'fahclient'
 pidfile="${fahclient_pidfile}"
 procname="%%FAHCLIENT_PROGRAM%%"
 command="/usr/sbin/daemon"
-command_args="-o ${fahclient_logfile} -p ${pidfile} -- ${procname}"
+command_args="-p ${pidfile} -- ${procname}"
 # Some notes on the specified options:
 # - fahclient_flags are passed in before other options by the rc
 #   framework.
@@ -96,7 +97,10 @@ _fahclient_command_args=
 _fahclient_command_args="${_fahclient_command_args} --user=${fahclient_donor}"
 _fahclient_command_args="${_fahclient_command_args} --team=${fahclient_team}"
 _fahclient_command_args="${_fahclient_command_args} --config=${fahclient_config}"
-_fahclient_command_args="${_fahclient_command_args} --chdir=${fahclient_chdir}"
+#_fahclient_command_args="${_fahclient_command_args} --chdir=${fahclient_chdir}"
+_fahclient_command_args="${_fahclient_command_args} --log=${fahclient_logfile}"
+_fahclient_command_args="${_fahclient_command_args} --log-rotate-dir=$(dirname ${fahclient_logfile})"
+_fahclient_command_args="${_fahclient_command_args} --log-to-screen=false"
 _fahclient_command_args="${_fahclient_command_args} ${fahclient_extra_flags}"
 command_args="${command_args} ${_fahclient_command_args}"
 extra_commands="log showconfig"
@@ -107,4 +111,5 @@ if [ -n "$fahclient_user" ]; then
 fi
 required_modules='linprocfs linsysfs linux64:linux64elf'
 
+cd ${fahclient_chdir}
 run_rc_command "$1"

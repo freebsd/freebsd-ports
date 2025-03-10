@@ -1,4 +1,4 @@
---- src/libnanosvg/nanosvgrast.h.orig	2024-01-12 13:12:38 UTC
+--- src/libnanosvg/nanosvgrast.h.orig	2024-10-16 10:58:04 UTC
 +++ src/libnanosvg/nanosvgrast.h
 @@ -0,0 +1,1482 @@
 +/*
@@ -61,7 +61,7 @@
 +*/
 +
 +// Allocated rasterizer context.
-+NSVGrasterizer* nsvgCreateRasterizer(void);
++static NSVGrasterizer* nsvgCreateRasterizer(void);
 +
 +// Rasterizes SVG image, returns RGBA image (non-premultiplied alpha)
 +//   r - pointer to rasterizer context
@@ -72,18 +72,18 @@
 +//   w - width of the image to render
 +//   h - height of the image to render
 +//   stride - number of bytes per scaleline in the destination buffer
-+void nsvgRasterize(NSVGrasterizer* r,
++static void nsvgRasterize(NSVGrasterizer* r,
 +				   NSVGimage* image, float tx, float ty, float scale,
 +				   unsigned char* dst, int w, int h, int stride);
 +
 +// As above, but allow X and Y axes to scale independently for non-square aspects
-+void nsvgRasterizeXY(NSVGrasterizer* r,
++static void nsvgRasterizeXY(NSVGrasterizer* r,
 +				   NSVGimage* image, float tx, float ty,
 +				   float sx, float sy,
 +				   unsigned char* dst, int w, int h, int stride);
 +
 +// Deletes rasterizer context.
-+void nsvgDeleteRasterizer(NSVGrasterizer*);
++static void nsvgDeleteRasterizer(NSVGrasterizer*);
 +
 +
 +#ifndef NANOSVGRAST_CPLUSPLUS
@@ -92,7 +92,7 @@
 +#endif
 +#endif
 +
-+#ifdef NANOSVGRAST_IMPLEMENTATION
++#if 1 || defined(NANOSVGRAST_IMPLEMENTATION)
 +
 +#include <math.h>
 +#include <stdlib.h>
@@ -168,7 +168,7 @@
 +	int width, height, stride;
 +};
 +
-+NSVGrasterizer* nsvgCreateRasterizer(void)
++static NSVGrasterizer* nsvgCreateRasterizer(void)
 +{
 +	NSVGrasterizer* r = (NSVGrasterizer*)malloc(sizeof(NSVGrasterizer));
 +	if (r == NULL) goto error;
@@ -184,7 +184,7 @@
 +	return NULL;
 +}
 +
-+void nsvgDeleteRasterizer(NSVGrasterizer* r)
++static void nsvgDeleteRasterizer(NSVGrasterizer* r)
 +{
 +	NSVGmemPage* p;
 +
@@ -1383,7 +1383,7 @@
 +}
 +*/
 +
-+void nsvgRasterizeXY(NSVGrasterizer* r,
++static void nsvgRasterizeXY(NSVGrasterizer* r,
 +				   NSVGimage* image, float tx, float ty,
 +				   float sx, float sy,
 +				   unsigned char* dst, int w, int h, int stride)
@@ -1473,7 +1473,7 @@
 +	r->stride = 0;
 +}
 +
-+void nsvgRasterize(NSVGrasterizer* r,
++static void nsvgRasterize(NSVGrasterizer* r,
 +				   NSVGimage* image, float tx, float ty, float scale,
 +				   unsigned char* dst, int w, int h, int stride)
 +{

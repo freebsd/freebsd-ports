@@ -7,10 +7,13 @@ include/ada/checkers-inl.h
 include/ada/checkers.h
 include/ada/common_defs.h
 include/ada/encoding_type.h
+include/ada/errors.h
 include/ada/expected.h
 include/ada/helpers.h
+include/ada/implementation-inl.h
 include/ada/implementation.h
 include/ada/log.h
+include/ada/parser-inl.h
 include/ada/parser.h
 include/ada/scheme-inl.h
 include/ada/scheme.h
@@ -24,7 +27,14 @@ include/ada/url_aggregator-inl.h
 include/ada/url_aggregator.h
 include/ada/url_base-inl.h
 include/ada/url_base.h
+include/ada/url_components-inl.h
 include/ada/url_components.h
+include/ada/url_pattern-inl.h
+include/ada/url_pattern.h
+include/ada/url_pattern_helpers-inl.h
+include/ada/url_pattern_helpers.h
+include/ada/url_pattern_init.h
+include/ada/url_pattern_regex.h
 include/ada/url_search_params-inl.h
 include/ada/url_search_params.h
 include/ada_c.h
@@ -33,5 +43,5 @@ lib/cmake/ada/ada-config.cmake
 lib/cmake/ada/ada_targets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/ada/ada_targets.cmake
 lib/libada.so
-lib/libada.so.2
-lib/libada.so.2.9.0
+lib/libada.so.3
+lib/libada.so.%%SOVERSION%%

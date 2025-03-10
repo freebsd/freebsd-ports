@@ -5,12 +5,12 @@ bin/freeoriond
 lib/freeorion/libfreeorioncommon.so
 lib/freeorion/libfreeorionparse.so
 %%CLIENT_GG%%share/applications/org.freeorion.FreeOrion.desktop
-%%CLIENT_GG%%share/icons/hicolor/128x128/apps/freeorion.png
-%%CLIENT_GG%%share/icons/hicolor/16x16/apps/freeorion.png
-%%CLIENT_GG%%share/icons/hicolor/24x24/apps/freeorion.png
-%%CLIENT_GG%%share/icons/hicolor/256x256/apps/freeorion.png
-%%CLIENT_GG%%share/icons/hicolor/32x32/apps/freeorion.png
-%%CLIENT_GG%%share/icons/hicolor/64x64/apps/freeorion.png
+%%CLIENT_GG%%share/icons/hicolor/128x128/apps/org.freeorion.FreeOrion.png
+%%CLIENT_GG%%share/icons/hicolor/16x16/apps/org.freeorion.FreeOrion.png
+%%CLIENT_GG%%share/icons/hicolor/24x24/apps/org.freeorion.FreeOrion.png
+%%CLIENT_GG%%share/icons/hicolor/256x256/apps/org.freeorion.FreeOrion.png
+%%CLIENT_GG%%share/icons/hicolor/32x32/apps/org.freeorion.FreeOrion.png
+%%CLIENT_GG%%share/icons/hicolor/64x64/apps/org.freeorion.FreeOrion.png
 %%CLIENT_GG%%share/metainfo/org.freeorion.FreeOrion.metainfo.xml
 @dir %%DATADIR%%/default/data/sound/combat
 @dir %%DATADIR%%/default/data/art/stars_sidepanel

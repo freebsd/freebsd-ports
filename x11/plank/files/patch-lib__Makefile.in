@@ -1,6 +1,6 @@
---- lib/Makefile.in.orig	2017-03-27 19:50:52 UTC
-+++ lib/Makefile.in
-@@ -767,7 +767,6 @@ noinst_LTLIBRARIES = libplank-internal.la
+--- lib/Makefile.am.orig	2025-01-08 03:02:39 UTC
++++ lib/Makefile.am
+@@ -148,7 +148,6 @@ libplank_internal_la_CFLAGS = \
  libplank_internal_la_CFLAGS = \
  	$(AM_CFLAGS) \
  	-fPIC \

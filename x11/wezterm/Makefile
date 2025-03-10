@@ -1,9 +1,9 @@
 PORTNAME=	wezterm
-DISTVERSION=	20230408-112425-69ae8472
-PORTREVISION=	12
+DISTVERSION=	20240203-110809-5046fc22
+PORTREVISION=	7
 CATEGORIES=	x11 wayland
 
-MAINTAINER=	nivit@FreeBSD.org
+MAINTAINER=	vladislav.movchan@gmail.com
 COMMENT=	GPU-accelerated terminal emulator and multiplexer
 WWW=		https://wezfurlong.org/wezterm/
 
@@ -18,16 +18,16 @@ LIB_DEPENDS=	libzstd.so:archivers/zstd \
 		libxcb-util.so:x11/xcb-util \
 		libxcb-image.so:x11/xcb-util-image
 
-USES=		cargo ssl xorg
+USES=		cargo desktop-file-utils ssl xorg
 USE_GITHUB=	yes
 USE_GITLAB=	nodefault
 USE_XORG=	x11 xcb
 GH_ACCOUNT=	wez
-GH_TUPLE=	harfbuzz:harfbuzz:6.0.0:harfbuzz/deps/harfbuzz/harfbuzz \
+GH_TUPLE=	harfbuzz:harfbuzz:63973005b:harfbuzz/deps/harfbuzz/harfbuzz \
 		glennrp:libpng:v1.6.36-805-g8439534da:libpng/deps/freetype/libpng \
 		madler:zlib:v1.2.11:zlib/deps/freetype/zlib \
 		fcitx:xcb-imdkit:1.0.3:xcb_imdkit/../${WRKSRC_crate_xcb-imdkit:T}/deps/xcb-imdkit \
-		freetype:freetype:VER-2-10-2-605-g3f83daeec:freetype/deps/freetype/freetype2
+		freetype:freetype:e4586d960:freetype2/deps/freetype/freetype2
 PLIST_FILES=	bin/strip-ansi-escapes \
 		bin/${PORTNAME} \
 		bin/${PORTNAME}-gui \
@@ -56,6 +56,13 @@ DOCS_BUILD_DEPENDS=	mdbook:textproc/mdbook \
 			mdbook-mermaid:textproc/mdbook-mermaid
 PORTDOCS=		html
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH:Marmv?}
+LTO_UNSAFE=     yes
+CARGO_ENV+=     CARGO_PROFILE_RELEASE_LTO=false
+.endif
+
 post-patch:
 # Extract (snapshot) version from the port instead of .tag file
 	@${ECHO_CMD} '${DISTVERSIONFULL}' >${WRKSRC}/.tag
@@ -72,10 +79,11 @@ do-build-DOCS-on:
 		${WRKSRC}/gh_pages/html/favicon.png
 	${CP} ${WRKSRC}/assets/icon/${PORTNAME}-icon.svg \
 		${WRKSRC}/gh_pages/html/favicon.svg
+	${RMDIR} ${WRKSRC}/gh_pages/html/install
 
 do-install-DOCS-on:
 	(cd ${WRKSRC}/gh_pages && ${COPYTREE_SHARE} \
-		"${PORTDOCS:Mhtml}" ${STAGEDIR}${DOCSDIR})
+		"${PORTDOCS}" ${STAGEDIR}${DOCSDIR})
 
 post-install:
 # Install assets similar to ci/deploy.sh
@@ -90,4 +98,4 @@ post-install:
 		${WRKSRC}/termwiz/data/${PORTNAME}.terminfo
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

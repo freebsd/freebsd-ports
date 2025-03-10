@@ -39,4 +39,7 @@ PDF_RUN_DEPENDS=pdflatex:print/tex-formats
 
 NO_ARCH=	yes
 
+post-install:
+	@${INSTALL_DATA} ${WRKSRC}/CHANGELOG.md ${STAGEDIR}${PYTHON_SITELIBDIR}/
+
 .include <bsd.port.mk>

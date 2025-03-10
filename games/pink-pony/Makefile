@@ -1,6 +1,6 @@
 PORTNAME=	pink-pony
 PORTVERSION=	1.4.1
-PORTREVISION=	41
+PORTREVISION=	47
 CATEGORIES=	games
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -25,7 +25,9 @@ USE_GL=		gl glu
 USE_SDL=	mixer
 SUB_FILES=	pink-pony.sh
 
-LDFLAGS+=	-labsl_log_internal_check_op -labsl_log_internal_message
+LDFLAGS+=	-labsl_log_internal_check_op \
+		-labsl_log_internal_message \
+		-labsl_log_internal_nullguard
 
 PORTDOCS=	*
 PORTDATA=	*

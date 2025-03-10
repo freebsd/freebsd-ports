@@ -1,10 +1,12 @@
-TIMESTAMP = 1699935506
-SHA256 (BespokeSynth-BespokeSynth-v1.2.1_GH0.tar.gz) = f57046d732afda6c8b0008f682f5a4c807c87a324a9fe675c2065c8df8e68507
-SIZE (BespokeSynth-BespokeSynth-v1.2.1_GH0.tar.gz) = 22232039
+TIMESTAMP = 1737585438
+SHA256 (BespokeSynth-BespokeSynth-v1.3.0_GH0.tar.gz) = 91ad5c0da88bbea1e287dd6889dde0aa983754f3dd5bc8fb45a01e70dde60d8c
+SIZE (BespokeSynth-BespokeSynth-v1.3.0_GH0.tar.gz) = 22186347
 SHA256 (Ableton-link-a4e4c2f_GH0.tar.gz) = b6abb0e0c463294cb3024e3ea7e3755c7bb6817a15a5e34b958c711241feb380
 SIZE (Ableton-link-a4e4c2f_GH0.tar.gz) = 1898125
 SHA256 (chriskohlhoff-asio-01b4e87_GH0.tar.gz) = 850455c43e8847cf8dd1fd915ebdf0fd36a79aac670b81c923593d71e37a0b81
 SIZE (chriskohlhoff-asio-01b4e87_GH0.tar.gz) = 1512233
+SHA256 (ArashPartow-exprtk-ca58bbd_GH0.tar.gz) = 060dbbc9d3a33adc54ad56930e85e429eee5d81d492433d2c54ef6d2e451f0f3
+SIZE (ArashPartow-exprtk-ca58bbd_GH0.tar.gz) = 220463
 SHA256 (surge-synthesizer-tuning-library-eb8617be49ac3c2436cf54de6bff94a1b1c94acf_GH0.tar.gz) = f533cfa378e26da495b2364af5ff86e509e31b984e2cad7f20fdc81b0e421b26
 SIZE (surge-synthesizer-tuning-library-eb8617be49ac3c2436cf54de6bff94a1b1c94acf_GH0.tar.gz) = 140236
 SHA256 (ODDSound-MTS-ESP-fcfaa59a043d515d288c9d587bf61a0a7d7571a8_GH0.tar.gz) = 7daff00bae1295d099cd7ffec143ddd3df36bd55f2906fd227245d2608aa42dd

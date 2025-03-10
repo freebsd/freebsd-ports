@@ -1,6 +1,6 @@
 PORTNAME=	xmlto
 PORTVERSION=	0.0.28
-PORTREVISION=	1
+PORTREVISION=	3
 CATEGORIES=	textproc
 MASTER_SITES=	https://releases.pagure.org/xmlto/:xmlto \
 		LOCAL/mandree/:xmlto \

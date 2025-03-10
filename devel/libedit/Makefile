@@ -1,5 +1,5 @@
 PORTNAME=	libedit
-DISTVERSION=	3.1-20240517
+DISTVERSION=	3.1-20240808
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://thrysoee.dk/editline/
@@ -17,10 +17,8 @@ CPE_VENDOR=	libedit_project
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--disable-examples
 
 INSTALL_TARGET=	install-strip
-
-post-install:
-	${MV} ${STAGEDIR}${PREFIX}/share/man/man3/history.3 ${STAGEDIR}${PREFIX}/share/man/man3/el_history.3
 
 .include <bsd.port.mk>

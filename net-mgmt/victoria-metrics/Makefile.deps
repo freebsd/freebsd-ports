@@ -1,27 +1,26 @@
 # Generated with `make gomod-vendor'
 GH_TUPLE=	\
 		Azure:azure-sdk-for-go:0270c003ff8f:azure_azure_sdk_for_go_internal \
-		Azure:azure-sdk-for-go:35ad235ae1db:azure_azure_sdk_for_go_azidentity \
 		Azure:azure-sdk-for-go:58ac9ec45a48:azure_azure_sdk_for_go_azblob \
 		Azure:azure-sdk-for-go:bfa13229abec:azure_azure_sdk_for_go_azcore \
+		Azure:azure-sdk-for-go:defa37ddface:azure_azure_sdk_for_go_azidentity \
 		AzureAD:microsoft-authentication-library-for-go:v1.2.1:azuread_microsoft_authentication_library_for_go/vendor/github.com/AzureAD/microsoft-authentication-library-for-go \
+		VictoriaMetrics:easyproto:v0.1.4:victoriametrics_easyproto/vendor/github.com/VictoriaMetrics/easyproto \
 		VictoriaMetrics:fastcache:v1.12.2:victoriametrics_fastcache/vendor/github.com/VictoriaMetrics/fastcache \
-		VictoriaMetrics:fasthttp:v1.2.0:victoriametrics_fasthttp/vendor/github.com/VictoriaMetrics/fasthttp \
 		VictoriaMetrics:metrics:v1.31.0:victoriametrics_metrics/vendor/github.com/VictoriaMetrics/metrics \
 		VictoriaMetrics:metricsql:v0.70.0:victoriametrics_metricsql/vendor/github.com/VictoriaMetrics/metricsql \
 		VividCortex:ewma:v1.2.0:vividcortex_ewma/vendor/github.com/VividCortex/ewma \
 		alecthomas:units:9a357b53e9c9:alecthomas_units/vendor/github.com/alecthomas/units \
-		aws:aws-sdk-go-v2:47dd1b1bcbde:aws_aws_sdk_go_v2_checksum \
 		aws:aws-sdk-go-v2:v1.16.10:aws_aws_sdk_go_v2_s3shared \
-		aws:aws-sdk-go-v2:v1.16.15:aws_aws_sdk_go_v2_credentials \
+		aws:aws-sdk-go-v2:v1.16.16:aws_aws_sdk_go_v2_credentials \
 		aws:aws-sdk-go-v2:v1.24.1:aws_aws_sdk_go_v2/vendor/github.com/aws/aws-sdk-go-v2 \
-		aws:aws-sdk-go:v1.49.22:aws_aws_sdk_go/vendor/github.com/aws/aws-sdk-go \
+		aws:aws-sdk-go:v1.50.6:aws_aws_sdk_go/vendor/github.com/aws/aws-sdk-go \
 		aws:smithy-go:v1.19.0:aws_smithy_go/vendor/github.com/aws/smithy-go \
 		beorn7:perks:v1.0.1:beorn7_perks/vendor/github.com/beorn7/perks \
 		bmatcuk:doublestar:v4.6.1:bmatcuk_doublestar/vendor/github.com/bmatcuk/doublestar/v4 \
 		census-instrumentation:opencensus-go:v0.24.0:census_instrumentation_opencensus_go/vendor/go.opencensus.io \
 		cespare:xxhash:v2.2.0:cespare_xxhash/vendor/github.com/cespare/xxhash/v2 \
-		cheggaaa:pb:v3.1.4:cheggaaa_pb/vendor/github.com/cheggaaa/pb \
+		cheggaaa:pb:v3.1.5:cheggaaa_pb/vendor/github.com/cheggaaa/pb \
 		cpuguy83:go-md2man:v2.0.3:cpuguy83_go_md2man/vendor/github.com/cpuguy83/go-md2man/v2 \
 		davecgh:go-spew:d8f796af33cc:davecgh_go_spew/vendor/github.com/davecgh/go-spew \
 		dennwc:varint:v1.0.0:dennwc_varint/vendor/github.com/dennwc/varint \
@@ -37,7 +36,7 @@ GH_TUPLE=	\
 		golang-jwt:jwt:v5.2.0:golang_jwt_jwt/vendor/github.com/golang-jwt/jwt/v5 \
 		golang:appengine:v1.6.8:golang_appengine/vendor/google.golang.org/appengine \
 		golang:crypto:v0.18.0:golang_crypto/vendor/golang.org/x/crypto \
-		golang:exp:db7319d0e0e3:golang_exp/vendor/golang.org/x/exp \
+		golang:exp:1b970713d09a:golang_exp/vendor/golang.org/x/exp \
 		golang:groupcache:41bb18bfe9da:golang_groupcache/vendor/github.com/golang/groupcache \
 		golang:net:v0.20.0:golang_net/vendor/golang.org/x/net \
 		golang:oauth2:v0.16.0:golang_oauth2/vendor/golang.org/x/oauth2 \
@@ -47,24 +46,24 @@ GH_TUPLE=	\
 		golang:sys:v0.16.0:golang_sys/vendor/golang.org/x/sys \
 		golang:text:v0.14.0:golang_text/vendor/golang.org/x/text \
 		golang:time:v0.5.0:golang_time/vendor/golang.org/x/time \
-		golang:xerrors:104605ab7028:golang_xerrors/vendor/golang.org/x/xerrors \
-		google:go-genproto:35c7eff3a6b1:google_go_genproto/vendor/google.golang.org/genproto \
+		google:go-genproto:1f4bbc51befe:google_go_genproto/vendor/google.golang.org/genproto \
 		google:s2a-go:v0.1.7:google_s2a_go/vendor/github.com/google/s2a-go \
-		google:uuid:v1.5.0:google_uuid/vendor/github.com/google/uuid \
+		google:uuid:v1.6.0:google_uuid/vendor/github.com/google/uuid \
 		googleapis:enterprise-certificate-proxy:v0.3.2:googleapis_enterprise_certificate_proxy/vendor/github.com/googleapis/enterprise-certificate-proxy \
 		googleapis:gax-go:v2.12.0:googleapis_gax_go/vendor/github.com/googleapis/gax-go \
-		googleapis:google-api-go-client:v0.156.0:googleapis_google_api_go_client/vendor/google.golang.org/api \
+		googleapis:google-api-go-client:v0.160.0:googleapis_google_api_go_client/vendor/google.golang.org/api \
 		googleapis:google-cloud-go:compute/v1.23.3:googleapis_google_cloud_go_compute \
 		googleapis:google-cloud-go:iam/v1.1.5:googleapis_google_cloud_go_iam \
-		googleapis:google-cloud-go:storage/v1.36.0:googleapis_google_cloud_go_storage \
+		googleapis:google-cloud-go:storage/v1.37.0:googleapis_google_cloud_go_storage \
 		googleapis:google-cloud-go:v0.112.0:googleapis_google_cloud_go/vendor/cloud.google.com/go \
 		grafana:regexp:6b5c0a4cb7fd:grafana_regexp/vendor/github.com/grafana/regexp \
-		grpc:grpc-go:v1.60.1:grpc_grpc_go/vendor/google.golang.org/grpc \
+		grpc:grpc-go:v1.61.0:grpc_grpc_go/vendor/google.golang.org/grpc \
+		hashicorp:go-version:v1.6.0:hashicorp_go_version/vendor/github.com/hashicorp/go-version \
 		influxdata:influxdb:v1.11.4:influxdata_influxdb/vendor/github.com/influxdata/influxdb \
 		jmespath:go-jmespath:v0.4.0:jmespath_go_jmespath/vendor/github.com/jmespath/go-jmespath \
 		jpillora:backoff:v1.0.0:jpillora_backoff/vendor/github.com/jpillora/backoff \
 		json-iterator:go:v1.1.12:json_iterator_go/vendor/github.com/json-iterator/go \
-		klauspost:compress:v1.17.4:klauspost_compress/vendor/github.com/klauspost/compress \
+		klauspost:compress:v1.17.5:klauspost_compress/vendor/github.com/klauspost/compress \
 		kylelemons:godebug:v1.1.0:kylelemons_godebug/vendor/github.com/kylelemons/godebug \
 		mattn:go-colorable:v0.1.13:mattn_go_colorable/vendor/github.com/mattn/go-colorable \
 		mattn:go-isatty:v0.0.20:mattn_go_isatty/vendor/github.com/mattn/go-isatty \
@@ -73,8 +72,8 @@ GH_TUPLE=	\
 		modern-go:reflect2:v1.0.2:modern_go_reflect2/vendor/github.com/modern-go/reflect2 \
 		mwitkow:go-conntrack:2f068394615f:mwitkow_go_conntrack/vendor/github.com/mwitkow/go-conntrack \
 		oklog:ulid:v1.3.1:oklog_ulid/vendor/github.com/oklog/ulid \
-		open-telemetry:opentelemetry-collector:v0.92.0:open_telemetry_opentelemetry_collector/vendor/go.opentelemetry.io/collector/semconv \
-		open-telemetry:opentelemetry-go:v1.21.0:open_telemetry_opentelemetry_go/vendor/go.opentelemetry.io/otel \
+		open-telemetry:opentelemetry-collector:v0.93.0:open_telemetry_opentelemetry_collector_2/vendor/go.opentelemetry.io/collector/semconv \
+		open-telemetry:opentelemetry-go:v1.22.0:open_telemetry_opentelemetry_go/vendor/go.opentelemetry.io/otel \
 		pkg:browser:5ac0b6a4141c:pkg_browser/vendor/github.com/pkg/browser \
 		pkg:errors:v0.9.1:pkg_errors/vendor/github.com/pkg/errors \
 		pmezard:go-difflib:5d4384ee4fb2:pmezard_go_difflib/vendor/github.com/pmezard/go-difflib \
@@ -83,9 +82,9 @@ GH_TUPLE=	\
 		prometheus:common:v0.1.0:prometheus_common_sigv4/vendor/github.com/prometheus/common/sigv4 \
 		prometheus:common:v0.46.0:prometheus_common/vendor/github.com/prometheus/common \
 		prometheus:procfs:v0.12.0:prometheus_procfs/vendor/github.com/prometheus/procfs \
-		prometheus:prometheus:v0.48.1:prometheus_prometheus/vendor/github.com/prometheus/prometheus \
+		prometheus:prometheus:v0.49.1:prometheus_prometheus/vendor/github.com/prometheus/prometheus \
 		protocolbuffers:protobuf-go:v1.32.0:protocolbuffers_protobuf_go/vendor/google.golang.org/protobuf \
-		rivo:uniseg:v0.4.4:rivo_uniseg/vendor/github.com/rivo/uniseg \
+		rivo:uniseg:v0.4.6:rivo_uniseg/vendor/github.com/rivo/uniseg \
 		russross:blackfriday:v2.1.0:russross_blackfriday/vendor/github.com/russross/blackfriday/v2 \
 		stretchr:testify:v1.8.4:stretchr_testify/vendor/github.com/stretchr/testify \
 		uber-go:atomic:v1.11.0:uber_go_atomic/vendor/go.uber.org/atomic \

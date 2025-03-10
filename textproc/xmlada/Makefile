@@ -1,6 +1,6 @@
 PORTNAME=	xmlada
 DISTVERSIONPREFIX=v
-DISTVERSION=	24.0.0
+DISTVERSION=	25.0.0
 CATEGORIES=	textproc
 
 MAINTAINER=	ports@FreeBSD.org
@@ -9,7 +9,7 @@ WWW=		https://github.com/AdaCore/xmlada
 
 LICENSE=	GPLv3RLE
 
-BUILD_DEPENDS=	gprbuild>=24:devel/gprbuild
+BUILD_DEPENDS=	gprbuild>=25:devel/gprbuild
 
 USES=		ada:12,run gmake
 USE_BINUTILS=	yes

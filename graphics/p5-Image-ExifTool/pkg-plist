@@ -81,8 +81,11 @@ bin/exiftool
 %%SITE_PERL%%/Image/ExifTool/GE.pm
 %%SITE_PERL%%/Image/ExifTool/GIF.pm
 %%SITE_PERL%%/Image/ExifTool/GIMP.pm
+%%SITE_PERL%%/Image/ExifTool/GM.pm
 %%SITE_PERL%%/Image/ExifTool/GPS.pm
 %%SITE_PERL%%/Image/ExifTool/GeoTiff.pm
+%%SITE_PERL%%/Image/ExifTool/Geolocation.dat
+%%SITE_PERL%%/Image/ExifTool/Geolocation.pm
 %%SITE_PERL%%/Image/ExifTool/Geotag.pm
 %%SITE_PERL%%/Image/ExifTool/GoPro.pm
 %%SITE_PERL%%/Image/ExifTool/H264.pm
@@ -178,6 +181,7 @@ bin/exiftool
 %%SITE_PERL%%/Image/ExifTool/Photoshop.pm
 %%SITE_PERL%%/Image/ExifTool/PostScript.pm
 %%SITE_PERL%%/Image/ExifTool/PrintIM.pm
+%%SITE_PERL%%/Image/ExifTool/Protobuf.pm
 %%SITE_PERL%%/Image/ExifTool/Qualcomm.pm
 %%SITE_PERL%%/Image/ExifTool/QuickTime.pm
 %%SITE_PERL%%/Image/ExifTool/QuickTimeStream.pl
@@ -279,8 +283,10 @@ bin/exiftool
 %%PERL5_MAN3%%/Image::ExifTool::GE.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::GIF.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::GIMP.3.gz
+%%PERL5_MAN3%%/Image::ExifTool::GM.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::GPS.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::GeoTiff.3.gz
+%%PERL5_MAN3%%/Image::ExifTool::Geolocation.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::Geotag.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::GoPro.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::H264.3.gz
@@ -376,6 +382,7 @@ bin/exiftool
 %%PERL5_MAN3%%/Image::ExifTool::Photoshop.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::PostScript.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::PrintIM.3.gz
+%%PERL5_MAN3%%/Image::ExifTool::Protobuf.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::Qualcomm.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::QuickTime.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::QuickTimeStream.3.gz

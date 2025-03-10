@@ -1,5 +1,5 @@
 PORTNAME=	omniauth-oauth
-PORTVERSION=	1.2.0
+PORTVERSION=	1.2.1
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
@@ -11,7 +11,8 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 RUN_DEPENDS=	rubygem-oauth>=0:net/rubygem-oauth \
-		rubygem-omniauth1>=1.0<3:security/rubygem-omniauth1
+		rubygem-omniauth1>=1.0<3:security/rubygem-omniauth1 \
+		rubygem-rack>=1.6.2,3<4,3:www/rubygem-rack
 
 USES=		gem
 

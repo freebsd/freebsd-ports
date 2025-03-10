@@ -1,36 +1,45 @@
 PORTNAME=	ovs
-PORTVERSION=	1.05
-PORTREVISION=	5
+PORTVERSION=	1.06
 CATEGORIES=	mail
-MASTER_SITES=	ftp://ftp.oav.net/openvisp/stats/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	RRDtool frontend for mail statistics
-WWW=		http://openvisp.fr/
+WWW=		https://github.com/xbeaudouin/openvisp
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=	rrdtool>=0:databases/rrdtool \
-		p5-File-Tail>=0:devel/p5-File-Tail
+RUN_DEPENDS=	p5-File-Tail>=0:devel/p5-File-Tail \
+		rrdtool>=0:databases/rrdtool
 
-NO_BUILD=	yes
-NO_ARCH=	yes
 USES=		perl5 shebangfix
-SHEBANG_FILES=	ovs.pl ovs.cgi
+USE_GITHUB=	yes
+GH_ACCOUNT=	xbeaudouin
+GH_PROJECT=	openvisp
+GH_TAGNAME=	1e17895bbcb70ee66370676546d17e540e629b08
+USE_RC_SUBR=	${PORTNAME}
+
+SHEBANG_FILES=	ovs.cgi ovs.pl
 
 CGIDIR?=	${PREFIX}/www/cgi-bin
 DATADIR?=	/var/db/ovs
+NO_ARCH=	yes
+NO_BUILD=	yes
+
 WWWROOT?=	${PREFIX}/www/data
 OVS_USER?=	${WWWOWN}
 OVS_GROUP?=	${WWWGRP}
 
-USE_RC_SUBR=	${PORTNAME}
-SUB_LIST+=	OVS_USER=${OVS_USER} OVS_GROUP=${OVS_GROUP}
-PLIST_SUB=	CGIDIR=${CGIDIR:S,${PREFIX}/,,} WWWROOT=${WWWROOT:S,${PREFIX}/,,} \
-		OVS_USER=${OVS_USER} OVS_GROUP=${OVS_GROUP}
+SUB_LIST+=	OVS_GROUP=${OVS_GROUP} \
+		OVS_USER=${OVS_USER}
 
-PORTDOCS=	README CHANGES COPYING CHANGES.old README.old
+WRKSRC_SUBDIR=	stats/trunk/
+
+PLIST_SUB=	CGIDIR=${CGIDIR:S,${PREFIX}/,,} \
+		OVS_GROUP=${OVS_GROUP} \
+		OVS_USER=${OVS_USER} \
+		WWWROOT=${WWWROOT:S,${PREFIX}/,,}
+PORTDOCS=	CHANGES CHANGES.old COPYING README README.old
 
 OPTIONS_DEFINE=	DOCS
 

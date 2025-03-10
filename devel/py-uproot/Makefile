@@ -1,5 +1,5 @@
 PORTNAME=	uproot
-PORTVERSION=	5.3.10
+PORTVERSION=	5.5.2
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,11 +16,12 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatch-vcs>=0:devel/py-hatch-vcs@${PY_FLAVO
 		${PYTHON_PKGNAMEPREFIX}hatchling>=0:devel/py-hatchling@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}awkward>=2.4.6:math/py-awkward@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}cramjam>=2.5.0:archivers/py-cramjam@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}fsspec>=0:devel/py-fsspec@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}fsspec>=0:filesystems/py-fsspec@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}numpy>=0,1:math/py-numpy@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}packaging>=0:devel/py-packaging@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}packaging>=0:devel/py-packaging@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}xxhash>=0:devel/py-xxhash@${PY_FLAVOR}
 
-USES=		python
+USES=		python:3.9+
 USE_PYTHON=	autoplist concurrent pep517
 
 NO_ARCH=	yes
@@ -31,8 +32,8 @@ S3_DESC=	Access Amazon S3 storage
 XROOTD_DESC=	Access extended ROOT daemon
 
 HTTP_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aiohttp>=0:www/py-aiohttp@${PY_FLAVOR}
-S3_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}s3fs>=0:devel/py-s3fs@${PY_FLAVOR}
-XROOTD_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}fsspec-xrootd>=0:devel/py-fsspec-xrootd@${PY_FLAVOR}
+S3_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}s3fs>=0:filesystems/py-s3fs@${PY_FLAVOR}
+XROOTD_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}fsspec-xrootd>=0:filesystems/py-fsspec-xrootd@${PY_FLAVOR}
 
 .include <bsd.port.pre.mk>
 

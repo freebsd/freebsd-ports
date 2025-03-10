@@ -4,7 +4,7 @@ PORTVERSION=	0.1
 CATEGORIES=	devel
 MASTER_SITES=	https://distfiles.dereferenced.org/envsubst/
 
-MAINTAINER=	bapt@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perform variable substitutions on input
 WWW=		https://github.com/kaniini/envsubst
 

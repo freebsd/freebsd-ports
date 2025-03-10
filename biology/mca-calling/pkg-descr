@@ -1,0 +1,5 @@
+The mca-calling meta-port provides the core tools needed for performing
+a typical mCA (Mosaic Chromosomal Alteration) analysis, including
+conversion of SRA VCF files to a format suitable for haplohseq and
+MoCha, and haplohseq and MoCha event calling.  The GWAS analysis that
+follows is typically done with R-based tools installed within R.

@@ -1,5 +1,5 @@
 PORTNAME=	PHP_Timer
-PORTVERSION=	7.0.1
+PORTVERSION=	8.0.0
 CATEGORIES=	devel pear
 
 MAINTAINER=	sunpoet@FreeBSD.org

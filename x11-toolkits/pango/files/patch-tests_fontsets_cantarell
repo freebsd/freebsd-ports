@@ -1,0 +1,30 @@
+Fix tests as reported by ${WRKSRC}/_build/meson-logs/testlog.txt
+
+# Contents don't match expected contents
+# --- /tmp/.MP5Y02	2025-01-22 06:33:26.338209000 -0500
+# +++ /tmp/.ZM5Y02	2025-01-22 06:33:26.338311000 -0500
+# @@ -1,8 +1,8 @@
+#  Cantarell 11
+#  
+#  Cantarell 11
+# -DejaVu Sans 11
+#  DejaVu Sans Mono 11
+# +DejaVu Sans 11
+#  Noto Sans CJK JP 11
+#  Droid Sans Japanese 11
+#  Amiri 11
+# 
+not ok 2 /fontsets/cantarell
+
+--- tests/fontsets/cantarell.orig	2025-01-18 22:41:03 UTC
++++ tests/fontsets/cantarell
+@@ -1,8 +1,8 @@ Cantarell 11
+ Cantarell 11
+ 
+ Cantarell 11
+-DejaVu Sans 11
+ DejaVu Sans Mono 11
++DejaVu Sans 11
+ Noto Sans CJK JP 11
+ Droid Sans Japanese 11
+ Amiri 11

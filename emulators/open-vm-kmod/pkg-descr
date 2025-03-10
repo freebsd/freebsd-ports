@@ -1,0 +1,6 @@
+open-vm-kmod is a set of modules that enable several features in
+VMware products for better management of, and seamless user
+interactions with, guests.
+
+It includes kernel modules for enhancing the performance of virtual
+machines running FreeBSD.

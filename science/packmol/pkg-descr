@@ -1,3 +1,12 @@
-PACKMOL creates an initial point for molecular dynamics simulations by packing
-molecules in defined regions of space. The packing guarantees that short range
-repulsive interactions do not disrupt the simulations.
+PACKMOL creates an initial point for molecular dynamics simulations by
+packing molecules in defined regions of space. The packing guarantees
+that short range repulsive interactions do not disrupt the
+simulations.
+
+The package is compatible with input files of PDB, TINKER, XYZ and
+MOLDY formats.
+
+See also: ComplexMixtures.jl: A powerful package to understand
+solvation structures in complex solutions.  CellListMap.jl: Efficient
+and customizable cell list data structure for molecular simulations
+and customizable simulation analysis.

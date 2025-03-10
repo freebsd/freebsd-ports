@@ -14,6 +14,8 @@
     SUBDIR += alias-fonts
     SUBDIR += another-htmllint
     SUBDIR += anthy
+    SUBDIR += anthy-unicode
+    SUBDIR += aobook
     SUBDIR += bible_names-fpw
     SUBDIR += boiled-mozc
     SUBDIR += bookview
@@ -62,6 +64,8 @@
     SUBDIR += font-aozoramincho
     SUBDIR += font-ayu18
     SUBDIR += font-ayu20
+    SUBDIR += font-bizin-gothic
+    SUBDIR += font-bizud-gothic
     SUBDIR += font-bizud-mincho
     SUBDIR += font-cica
     SUBDIR += font-elisa10
@@ -116,6 +120,7 @@
     SUBDIR += font-std
     SUBDIR += font-takao
     SUBDIR += font-udev-gothic
+    SUBDIR += font-udev-gothic-hs
     SUBDIR += font-udev-gothic-nf
     SUBDIR += font-ume
     SUBDIR += font-vlgothic
@@ -143,6 +148,7 @@
     SUBDIR += jvim3
     SUBDIR += kakasi
     SUBDIR += kasumi
+    SUBDIR += kasumi-unicode
     SUBDIR += kbanner
     SUBDIR += kcc
     SUBDIR += kcode
@@ -171,6 +177,7 @@
     SUBDIR += mecab-ipadic-eucjp
     SUBDIR += mecab-ipadic-sjis
     SUBDIR += mecab-ipadic-utf8
+    SUBDIR += mecab-jawiki
     SUBDIR += mh
     SUBDIR += migemo
     SUBDIR += migemo.el
@@ -178,6 +185,7 @@
     SUBDIR += mozc-el
     SUBDIR += mozc-server
     SUBDIR += mozc-tool
+    SUBDIR += multiskkserv
     SUBDIR += mypaedia-fpw-package
     SUBDIR += namazu
     SUBDIR += namazu2
@@ -190,7 +198,6 @@
     SUBDIR += ng-devel
     SUBDIR += ngraph-fonts
     SUBDIR += nkf
-    SUBDIR += onew
     SUBDIR += p5-2chproxy
     SUBDIR += p5-Date-Japanese-Era
     SUBDIR += p5-Date-Japanese-Holiday
@@ -222,7 +229,7 @@
     SUBDIR += pejv-fpw
     SUBDIR += plain2
     SUBDIR += plan
-    SUBDIR += prn
+    SUBDIR += prn-ps
     SUBDIR += py-SudachiPy
     SUBDIR += py-fugashi
     SUBDIR += py-ipadic
@@ -254,6 +261,7 @@
     SUBDIR += sj3-lib
     SUBDIR += sj3-server
     SUBDIR += skk
+    SUBDIR += skk-jawiki
     SUBDIR += skk-jisyo
     SUBDIR += skk-jisyo-cdb
     SUBDIR += skk-tools

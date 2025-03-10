@@ -12,17 +12,16 @@ WWW=		https://pypi.org/project/python-poppler-qt5/
 LICENSE=	LGPL21 LGPL3
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	${PY_SETUPTOOLS} \
-		qmake-qt5:devel/qt5-qmake
+BUILD_DEPENDS=	${PY_SETUPTOOLS}
 LIB_DEPENDS=	libpoppler-qt5.so:graphics/poppler-qt5
 
 USES=		compiler:c++17-lang gl pkgconfig pyqt:5 python qt:5
 USE_GITHUB=	yes
 GH_ACCOUNT=	frescobaldi
 USE_GL=		gl
-USE_PYQT=	pyqt5
+USE_PYQT=	pyqt5 qtbuilder:build
 USE_PYTHON=	autoplist pep517
-USE_QT=		core gui xml
+USE_QT=		core gui xml qmake:build
 
 PEP517_BUILD_CONFIG_SETTING=	-C--build-dir=build \
 				-C--jobs=${MAKE_JOBS_NUMBER} -C--qmake=${QMAKE} \

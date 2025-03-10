@@ -1,12 +1,13 @@
 PORTNAME=	stork
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.6.0
-PORTREVISION=	12
+PORTREVISION=	18
 CATEGORIES=	www
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Impossibly fast web search, made for static sites
-WWW=		https://stork-search.net
+WWW=		https://stork-search.net \
+		https://github.com/jameslittle230/stork
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/../license.txt
@@ -250,8 +251,5 @@ OPENSSLINC=	/usr/include
 OPENSSLLIB=	/usr/lib
 
 PLIST_FILES=	bin/${PORTNAME}
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>

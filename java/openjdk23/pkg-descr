@@ -1,0 +1,8 @@
+FreeBSD port of OpenJDK 23
+
+This version of the port passes basic smoke testing. It has been successfully
+built on some combinations of FreeBSD 13 and 14 for the aarch64 and amd64
+architectures.
+
+Although these are untested, it may also build on other recent FreeBSD releases
+for the x86 and powerpc64 architectures.

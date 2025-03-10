@@ -1,7 +1,7 @@
 PORTNAME=	fd
 DISTVERSIONPREFIX=	v
-DISTVERSION=	10.1.0
-PORTREVISION=	1
+DISTVERSION=	10.2.0
+PORTREVISION=	5
 CATEGORIES=	sysutils
 PKGNAMESUFFIX=	-find
 
@@ -28,11 +28,10 @@ PLIST_FILES=	bin/fd \
 
 post-build:
 	${MKDIR} ${WRKSRC}/autocomplete
-	${CARGO_TARGET_DIR}/${CARGO_BUILD_TARGET}/release/fd --gen-completions bash > ${WRKSRC}/autocomplete/fd.bash
-	${CARGO_TARGET_DIR}/${CARGO_BUILD_TARGET}/release/fd --gen-completions fish > ${WRKSRC}/autocomplete/fd.fish
+	${CARGO_TARGET_DIR}/release/fd --gen-completions bash > ${WRKSRC}/autocomplete/fd.bash
+	${CARGO_TARGET_DIR}/release/fd --gen-completions fish > ${WRKSRC}/autocomplete/fd.fish
 
 post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/fd
 	${INSTALL_MAN} ${WRKSRC}/doc/fd.1 \
 		${STAGEDIR}${PREFIX}/share/man/man1
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/bash_completion.d

@@ -1,0 +1,15 @@
+This ASDF initialization enables working with Common Lisp (CL) installed via
+FreeBSD Ports by serving three key functions:
+
+1. It configures a central registry to tell ASDF where to find systems
+   installed via FreeBSD CL ports.
+
+2. It sets up output translations so no code from CL ports needs to be
+   compiled at load time.
+
+   CL ports have binary variants for each supported CL implementation.  For
+   example, devel/cl-alexandria includes the Alexandria sources, and
+   devel/cl-alexandria-sbcl installs the compiled code (fasl) for SBCL.  The
+   output translations tell ASDF where to look for the binary code.
+
+3. It configures specific ASDF output translations for building CL ports.

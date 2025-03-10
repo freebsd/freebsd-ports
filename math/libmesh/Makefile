@@ -1,20 +1,27 @@
 PORTNAME=	libmesh
-DISTVERSION=	1.7.0
-PORTREVISION=	5
+DISTVERSION=	1.7.5
+PORTREVISION=	2
 CATEGORIES=	math
 MASTER_SITES=	https://github.com/libMesh/${PORTNAME}/releases/download/v${DISTVERSION}/
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Numerical simulation of partial differential equations
-WWW=		https://libmesh.github.io
+WWW=		https://libmesh.github.io \
+		https://github.com/libMesh/libmesh
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		compilation fails with nlopt-2.9.0, see https://github.com/libMesh/libmesh/issues/4009
+
 LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 		libnlopt.so:math/nlopt
+TEST_DEPENDS=	bash:shells/bash
 
-USES=		compiler:c++17-lang eigen:3 gmake libtool localbase perl5 pkgconfig tar:xz
+USES=		compiler:c++17-lang eigen:3 gmake libtool localbase perl5 pkgconfig shebangfix tar:xz
+
+SHEBANG_GLOB=	*.sh # for one or more run.sh files in tests
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-static \
 		--with-methods=opt \

@@ -1,5 +1,5 @@
 PORTNAME=	plantri
-DISTVERSION=	5.2
+DISTVERSION=	5.5
 CATEGORIES=	math
 MASTER_SITES=	http://users.cecs.anu.edu.au/~bdm/plantri/
 DISTNAME=	${PORTNAME}${DISTVERSION:S/.//}

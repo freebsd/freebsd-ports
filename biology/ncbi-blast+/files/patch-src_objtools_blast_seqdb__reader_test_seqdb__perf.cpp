@@ -15,7 +15,7 @@
      if (args["multi_threaded_creation"]) {
  #if (defined(NCBI_COMPILER_GCC) && (NCBI_COMPILER_VERSION >= 900)) || \
 -    (defined(NCBI_COMPILER_ICC) && (NCBI_COMPILER_VERSION >= 2100))
-+    (defined(NCBI_COMPILER_ICC) && (NCBI_COMPILER_VERSION >= 2100)) ||
++    (defined(NCBI_COMPILER_ICC) && (NCBI_COMPILER_VERSION >= 2100)) || \
 +    defined(NCBI_COMPILER_LLVM_CLANG)
          #pragma omp parallel default(none) shared(kDbName, kNumThreads, kSeqType) num_threads(kNumThreads)
  #else

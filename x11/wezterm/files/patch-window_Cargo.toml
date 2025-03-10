@@ -1,0 +1,11 @@
+--- window/Cargo.toml.orig	2024-02-03 18:08:09 UTC
++++ window/Cargo.toml
+@@ -40,7 +40,7 @@ tiny-skia = "0.11"
+ resize = "0.5"
+ serde = {version="1.0", features = ["rc", "derive"]}
+ tiny-skia = "0.11"
+-glium = { version = "0.31", default-features = false }
++glium = { version = "0.32", default-features = false }
+ url = "2"
+ wezterm-bidi = { path = "../bidi" }
+ wezterm-color-types = { path = "../color-types" }

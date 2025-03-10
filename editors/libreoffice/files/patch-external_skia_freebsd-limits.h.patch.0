@@ -1,0 +1,30 @@
+--- external/skia/freebsd-limits.h.patch.0.orig	2024-11-28 21:32:02 UTC
++++ external/skia/freebsd-limits.h.patch.0
+@@ -0,0 +1,27 @@
++--- src/utils/SkGetExecutablePath_linux.cpp.orig	2024-10-10 12:39:49 UTC
+++++ src/utils/SkGetExecutablePath_linux.cpp
++@@ -7,7 +7,12 @@
++ 
++ #include "src/utils/SkGetExecutablePath.h"
++ 
+++#ifdef __linux__
++ #include <linux/limits.h>
+++#elif defined(__FreeBSD__)
+++#include <sys/limits.h>
+++#include <sys/param.h>
+++#endif
++ #include <sys/types.h>
++ #include <unistd.h>
++ #include <cstddef>
++@@ -16,7 +21,11 @@ std::string SkGetExecutablePath() {
++ 
++ std::string SkGetExecutablePath() {
++     std::string result(PATH_MAX, '\0');
+++#if defined(__FreeBSD__)
+++    ssize_t len = readlink("/proc/curproc/file", result.data(), result.size() - 1);
+++#else
++     ssize_t len = readlink("/proc/self/exe", result.data(), result.size() - 1);
+++#endif
++     if (len < 0 || static_cast<size_t>(len) >= PATH_MAX - 1) {
++         result.clear();
++     } else {

@@ -1,13 +1,13 @@
-PORTREVISION=	1
+PORTREVISION=	0
 
-COMMENT=	Gpgme ${QT_STR} bindings
+COMMENT=	Gpgme Qt${FLAVOR:S|qt||} bindings
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-MASTERDIR=	${.CURDIR}/../../security/gpgme
-SLAVEPORT=	qt
-BINDING_NAME=	qt
+MASTERDIR=	${.CURDIR:H:H}/security/gpgme
 PLIST=		${.CURDIR}/pkg-plist
+
+_GPGME_BINDING=	qt
 
 .include "${MASTERDIR}/Makefile"

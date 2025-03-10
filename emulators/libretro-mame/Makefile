@@ -10,6 +10,9 @@ WWW=		https://github.com/libretro/mame
 LICENSE=	BSD2CLAUSE GPLv2
 LICENSE_COMB=	multi
 
+DEPRECATED=	Uses expired Python 3.8
+EXPIRATION_DATE=2025-03-31
+
 USES=	compiler:c++11-lib gl gmake pkgconfig python:3.8,build
 USE_LDCONFIG=	yes
 

@@ -10,7 +10,7 @@ MAINTAINER?=	ports@FreeBSD.org
 COMMENT=	The Java JDBC implementation for FrontBase
 WWW=		http://www.frontbase.com/
 
-USE_JAVA=	yes
+USES=		java
 
 NO_BUILD=	yes
 JARFILE=	frontbasejdbc.jar

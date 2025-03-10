@@ -1,5 +1,3 @@
-TIMESTAMP = 1702501945
-SHA256 (wxWidgets-3.2.4.tar.bz2) = 0640e1ab716db5af2ecb7389dbef6138d7679261fbff730d23845ba838ca133e
-SIZE (wxWidgets-3.2.4.tar.bz2) = 27505949
-SHA256 (b8dc0eeb2fb6c49ae0ac9cbc86bd20c0bf3bdee7.patch) = afb1f1e2fc1e262a79c63795417d73c57da6be9f25ab6543e49dc78c9c201eca
-SIZE (b8dc0eeb2fb6c49ae0ac9cbc86bd20c0bf3bdee7.patch) = 1677
+TIMESTAMP = 1730548456
+SHA256 (wxWidgets-3.2.6.tar.bz2) = 939e5b77ddc5b6092d1d7d29491fe67010a2433cf9b9c0d841ee4d04acb9dce7
+SIZE (wxWidgets-3.2.6.tar.bz2) = 27528560

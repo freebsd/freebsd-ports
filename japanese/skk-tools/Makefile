@@ -1,47 +1,52 @@
 PORTNAME=	skk-tools
-PORTVERSION=	1.3.4
+DISTVERSION=	1.3.4-28
+DISTVERSIONSUFFIX=	-g1e8c457
 PORTEPOCH=	1
 CATEGORIES=	japanese
-MASTER_SITES=	http://openlab.ring.gr.jp/skk/tools/
-DISTNAME=	skktools-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	mew14930xvi@inbox.lv
 COMMENT=	Jisyo-tools for the SKK Japanese-input software
-WWW=		http://openlab.ring.gr.jp/skk/
+WWW=		https://github.com/skk-dev/skktools
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+USES=		gnome pkgconfig python shebangfix
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	skk-dev
+GH_PROJECT=	skktools
+
+USE_GNOME=	glib20
+SHEBANG_FILES=	skk2cdb.py
 
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--with-skkdic-expr2
 
-DOCSDIR=	${PREFIX}/share/doc/skk
+PLIST_FILES=	bin/skkdic-count bin/skkdic-expr bin/skkdic-expr2 \
+		bin/skkdic-sort bin/skk2cdb
+PORTDOCS=	FAQ.md README.md README.skkdic-expr2.md
 
-WRKSRC=		${WRKDIR}/skktools-${DISTNAME:S/./_/g}
+OPTIONS_DEFINE=		DIFF DOCS
+DIFF_DESC=		Install skkdic-diff (lang/gauche dependency)
+DIFF_RUN_DEPENDS=	gosh:lang/gauche
+DIFF_PLIST_FILES=	bin/skkdic-diff
+DIFF_PORTDOCS=		README.skkdic-diff.md
+DIFF_VARS=		SHEBANG_FILES+=skkdic-diff.scm SHEBANG_LANG=gosh
 
-PORTDOCS=	README.skktools
-PLIST_FILES=	bin/skkdic-count bin/skkdic-expr bin/skkdic-sort
-
-OPTIONS_DEFINE=		DOCS EXPR2
-OPTIONS_DEFAULT=	EXPR2
-
-EXPR2_DESC=		Build skkdic-expr2 (needs glib-2.x)
-EXPR2_USES=		gnome pkgconfig
-EXPR2_USE=		GNOME=glib20
-EXPR2_PLIST_FILES=	bin/skkdic-expr2
-EXPR2_CONFIGURE_WITH=	skkdic-expr2
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MEXPR2}
-PORTDOCS+=	README.skkdic-expr2
-.endif
-
-post-build:
-	@${LN} -sf README.C ${WRKSRC}/READMEs/README.skktools
+post-extract:
+	@${REINPLACE_CMD} -e 's|skk2cdb.py|skk2cdb|' ${WRKSRC}/skk2cdb.py
 
 post-install:
+	${INSTALL_SCRIPT} ${WRKSRC}/skk2cdb.py ${STAGEDIR}${PREFIX}/bin/skk2cdb
+
+post-install-DIFF-on:
+	${INSTALL_SCRIPT} ${WRKSRC}/skkdic-diff.scm \
+		${STAGEDIR}${PREFIX}/bin/skkdic-diff
+
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-.for i in ${PORTDOCS}
-	(cd ${WRKSRC}/READMEs && ${INSTALL_DATA} ${i} ${STAGEDIR}${DOCSDIR})
-.endfor
+	cd ${WRKSRC}/READMEs && \
+		${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

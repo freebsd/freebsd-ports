@@ -1,6 +1,6 @@
 PORTNAME=	WinFF
 PORTVERSION=	1.6.4
-PORTREVISION=	2
+PORTREVISION=	4
 CATEGORIES=	multimedia
 MASTER_SITES=	https://github.com/WinFF/winff/archive/refs/tags/
 PKGNAMESUFFIX=	${LAZARUS_PKGNAMESUFFIX}
@@ -13,6 +13,8 @@ WWW=		https://www.biggmatt.com/p/winff.html
 LICENSE=	GPLv3
 
 LIB_DEPENDS=	libavutil.so:multimedia/ffmpeg
+
+ONLY_FOR_ARCHS=	aarch64 amd64 i386
 
 USES=		fpc lazarus:flavors xorg
 USE_XORG=	x11
@@ -33,6 +35,10 @@ DESKTOP_ENTRIES=	"${PORTNAME}"	\
 
 LAZARUS_PROJECT_FILES=	winff.lpr
 LAZBUILD_ARGS=		-d --pcp=${WRKSRC} --scp=${WRKDIR}
+
+gtk2_CONFLICTS_INSTALL=	${PORTNAME}-qt5 ${PORTNAME}-qt6
+qt5_CONFLICTS_INSTALL=	${PORTNAME}-gtk2 ${PORTNAME}-qt6
+qt6_CONFLICTS_INSTALL=	${PORTNAME}-gtk2 ${PORTNAME}-qt5
 
 WRKSRC=		${WRKDIR}/${_PORTNAME}-${_PORTNAME}-${PORTVERSION}
 BUILD_WRKSRC=	${WRKSRC}/${_PORTNAME}

@@ -1,0 +1,12 @@
+Avoid documenting your Python script arguments on two places! This is typically
+done in an argparse.ArgumentParser help configuration (help=, description=,
+etc.), and also in a manually crafted manual page.
+
+The good thing about an ArgumentParser objects is that it actually provides a
+traversable "tree-like" structure, with all the necessary info needed to
+automatically generate documentation, for example in a groff typesetting system
+(manual pages). And this is where this project can help.
+
+There are two supported ways to generate the manual, either script it using the
+installed command argparse-manpage, or via setup.py build automation (with a
+slight bonus of automatic manual page installation with setup.py install).

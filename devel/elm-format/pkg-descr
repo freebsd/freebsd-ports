@@ -1,2 +1,3 @@
-elm-format is an Elm source code formatter according to a standard set of rules
-based on the official Elm Style Guide. It is inspired by the popular gofmt.
+elm-format is an Elm source code formatter according to a standard set of
+rules based on the official Elm Style Guide. It is inspired by the popular
+gofmt.

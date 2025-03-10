@@ -68,7 +68,7 @@ OPTIONS_DEFAULT=	EFI ISO
 EFI_DESC=	Create EFI images
 ISO_DESC=	Create bootable CD image
 
-EFI_BUILD_DEPENDS=	mformat:emulators/mtools
+EFI_BUILD_DEPENDS=	mformat:filesystems/mtools
 _EFI_ARCHS=		${ARCH:Mamd64:S/amd64/x86_64/} i386
 _EFI_TARGETS=		ipxe snp snponly
 .for _arch in ${_EFI_ARCHS}

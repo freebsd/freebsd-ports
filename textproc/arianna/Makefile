@@ -8,16 +8,12 @@ WWW=		https://apps.kde.org/arianna/
 
 LICENSE=	GPLv3
 
-BUILD_DEPENDS=	kirigami-addons>=0.6.1:x11-toolkits/kirigami-addons
-RUN_DEPENDS=	kirigami-addons>=0.6.1:x11-toolkits/kirigami-addons
-
-USES=		cmake desktop-file-utils gettext kde:5 qt:5 tar:xz xorg
-USE_KDE=	archive baloo config coreaddons  dbusaddons filemetadata \
-		i18n kirigami2  qqc2-desktop-style  windowsystem \
+USES=		cmake desktop-file-utils gettext kde:6 qt:6 tar:xz xorg
+USE_KDE=	archive baloo config coreaddons dbusaddons filemetadata i18n \
+		kirigami-addons kirigami2 kquickcharts qqc2-desktop-style \
+		windowsystem \
 		ecm:build
-USE_QT=		core dbus declarative gui location network quickcontrols2 \
-		sql svg webchannel webengine websockets widgets xml \
-		buildtools:build qmake:build
+USE_QT=		base declarative httpserver webengine websockets
 USE_XORG=	ice sm x11 xext
 
 .include <bsd.port.mk>

@@ -114,6 +114,7 @@ share/icons/hicolor/32x32/apps/granatier.png
 share/icons/hicolor/48x48/apps/granatier.png
 share/icons/hicolor/64x64/apps/granatier.png
 share/locale/ar/LC_MESSAGES/granatier.mo
+share/locale/ast/LC_MESSAGES/granatier.mo
 share/locale/bg/LC_MESSAGES/granatier.mo
 share/locale/bs/LC_MESSAGES/granatier.mo
 share/locale/ca/LC_MESSAGES/granatier.mo
@@ -131,8 +132,10 @@ share/locale/fi/LC_MESSAGES/granatier.mo
 share/locale/fr/LC_MESSAGES/granatier.mo
 share/locale/ga/LC_MESSAGES/granatier.mo
 share/locale/gl/LC_MESSAGES/granatier.mo
+share/locale/he/LC_MESSAGES/granatier.mo
 share/locale/hr/LC_MESSAGES/granatier.mo
 share/locale/hu/LC_MESSAGES/granatier.mo
+share/locale/ia/LC_MESSAGES/granatier.mo
 share/locale/id/LC_MESSAGES/granatier.mo
 share/locale/is/LC_MESSAGES/granatier.mo
 share/locale/it/LC_MESSAGES/granatier.mo
@@ -170,4 +173,5 @@ share/locale/uk/LC_MESSAGES/granatier.mo
 share/locale/zh_CN/LC_MESSAGES/granatier.mo
 share/locale/zh_TW/LC_MESSAGES/granatier.mo
 share/metainfo/org.kde.granatier.appdata.xml
-share/qlogging-categories5/granatier.categories
+share/qlogging-categories6/granatier.categories
+share/qlogging-categories6/granatier.renamecategories

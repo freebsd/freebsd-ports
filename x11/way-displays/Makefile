@@ -1,5 +1,5 @@
 PORTNAME=	way-displays
-DISTVERSION=	1.11.0
+DISTVERSION=	1.12.0
 CATEGORIES=	x11 wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -8,6 +8,10 @@ WWW=		https://github.com/alex-courtis/way-displays
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+BROKEN_armv7=	https://github.com/alex-courtis/way-displays/issues/185
+BROKEN_i386=	https://github.com/alex-courtis/way-displays/issues/185
+BROKEN_powerpc=	https://github.com/alex-courtis/way-displays/issues/185
 
 LIB_DEPENDS=	libepoll-shim.so:devel/libepoll-shim \
 		libinotify.so:devel/libinotify \

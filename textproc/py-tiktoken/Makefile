@@ -1,5 +1,5 @@
 PORTNAME=	tiktoken
-PORTVERSION=	0.7.0
+PORTVERSION=	0.9.0
 PORTREVISION=	1
 CATEGORIES=	textproc python
 MASTER_SITES=	PYPI
@@ -19,7 +19,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=62.4:devel/py-setuptools@${PY_
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}regex>=2022.1.18:textproc/py-regex@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>=2.26.0:www/py-requests@${PY_FLAVOR}
 
-USES=		cargo python
+USES=		cargo python:3.9+
 USE_PYTHON=	autoplist concurrent pep517
 
 CARGO_BUILD=	no
@@ -29,8 +29,5 @@ OPTIONS_DEFINE=	BLOBFILE
 BLOBFILE_DESC=	Blob file support
 
 BLOBFILE_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}blobfile>=2:net/py-blobfile@${PY_FLAVOR}
-
-post-install:
-	${FIND} ${STAGEDIR}${PYTHON_SITELIBDIR} -name '*.so' -exec ${STRIP_CMD} {} +
 
 .include <bsd.port.mk>

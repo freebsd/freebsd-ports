@@ -1,0 +1,11 @@
+--- build/nocompile.gni.orig	2025-02-22 18:06:53 UTC
++++ build/nocompile.gni
+@@ -55,7 +55,7 @@ if (is_win) {
+ }
+ 
+ declare_args() {
+-  enable_nocompile_tests = is_clang && !is_nacl
++  enable_nocompile_tests = is_clang && !is_nacl && !is_bsd
+ }
+ 
+ if (enable_nocompile_tests) {

@@ -4,7 +4,7 @@ PORTREVISION=	1
 CATEGORIES=	benchmarks sysutils
 MASTER_SITES=	http://tsung.erlang-projects.org/dist/
 
-MAINTAINER=	Clockwork6400@protonmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multi-protocol distributed load testing tool
 WWW=		http://tsung.erlang-projects.org/
 

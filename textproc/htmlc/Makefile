@@ -21,6 +21,12 @@ PORTDOCS=	LICENSE INSTALL README JoeCaml.gif rocq.gif copyright-eng.htm \
 
 OPTIONS_DEFINE=	DOCS
 
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == powerpc
+USE_BINUTILS=	yes
+.endif
+
 post-patch:
 	${RM} ${WRKSRC}/doc/Makefile
 	${TOUCH} ${WRKSRC}/doc/Makefile

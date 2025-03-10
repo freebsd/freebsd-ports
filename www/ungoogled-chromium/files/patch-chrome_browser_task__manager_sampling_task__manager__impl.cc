@@ -1,6 +1,6 @@
---- chrome/browser/task_manager/sampling/task_manager_impl.cc.orig	2024-02-25 20:22:18 UTC
+--- chrome/browser/task_manager/sampling/task_manager_impl.cc.orig	2025-02-20 09:59:21 UTC
 +++ chrome/browser/task_manager/sampling/task_manager_impl.cc
-@@ -218,7 +218,7 @@ void TaskManagerImpl::GetUSERHandles(TaskId task_id,
+@@ -226,7 +226,7 @@ void TaskManagerImpl::GetUSERHandles(TaskId task_id,
  }
  
  int TaskManagerImpl::GetOpenFdCount(TaskId task_id) const {

@@ -14,9 +14,9 @@ WWW=		https://domination.sourceforge.net/
 
 LICENSE=	GPLv3
 
-USES=		dos2unix zip:infozip
+USES=		dos2unix java zip:infozip
 DOS2UNIX_GLOB=	*.txt *.ini *.cards *.map
-USE_JAVA=	yes
+
 NO_BUILD=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME:S/d/D/}

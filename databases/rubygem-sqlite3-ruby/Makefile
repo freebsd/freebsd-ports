@@ -11,12 +11,12 @@ WWW=		https://github.com/sparklemotion/sqlite3-ruby
 LICENSE=	BSD3CLAUSE
 
 BUILD_DEPENDS=	swig:devel/swig
-LIB_DEPENDS=	libsqlite3.so:databases/sqlite3
 RUN_DEPENDS=	rubygem-sqlite3>=1.3.3:databases/rubygem-sqlite3
+
+USES=		gem sqlite
 
 CONFIGURE_ARGS=	--with-sqlite3-dir=${LOCALBASE}
 NO_ARCH=	yes
-USES=		gem
 
 PLIST_FILES=	bin/sqlite3_ruby
 

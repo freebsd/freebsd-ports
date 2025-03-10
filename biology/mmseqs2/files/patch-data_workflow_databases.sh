@@ -1,6 +1,6 @@
---- data/workflow/databases.sh.orig	2021-06-25 01:34:08 UTC
+--- data/workflow/databases.sh.orig	2024-12-11 10:31:20 UTC
 +++ data/workflow/databases.sh
-@@ -27,6 +27,8 @@ STRATEGY=""
+@@ -27,6 +27,8 @@ if hasCommand wget;   then STRATEGY="$STRATEGY WGET"; 
  if hasCommand aria2c; then STRATEGY="$STRATEGY ARIA"; fi
  if hasCommand curl;   then STRATEGY="$STRATEGY CURL"; fi
  if hasCommand wget;   then STRATEGY="$STRATEGY WGET"; fi
@@ -9,10 +9,10 @@
  if [ "$STRATEGY" = "" ]; then
      fail "No download tool found in PATH. Please install aria2c, curl or wget."
  fi
-@@ -47,6 +49,9 @@ downloadFile() {
-             ;;
-         WGET)
-             wget -O "$OUTPUT" "$URL" && return 0
+@@ -56,6 +58,9 @@ downloadFile() {
+                 mv -f -- "${OUTPUT}.wget" "${OUTPUT}"
+                 return 0
+             fi
 +            ;;
 +        FETCH)
 +            fetch -o "$OUTPUT" "$URL" && return 0

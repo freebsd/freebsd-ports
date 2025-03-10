@@ -1,5 +1,5 @@
 PORTNAME=	snort
-DISTVERSION=	3.3.2.0
+DISTVERSION=	3.7.0.0
 PORTEPOCH=	1
 CATEGORIES=	security
 PKGNAMESUFFIX=	3
@@ -16,7 +16,7 @@ LIB_DEPENDS=	libdaq.so:net/libdaq \
 		libdnet.so:net/libdnet \
 		libhwloc.so:devel/hwloc2 \
 		libpcap.so:net/libpcap \
-		libpcre.so:devel/pcre \
+		libpcre2-8.so:devel/pcre2 \
 		libuuid.so:misc/e2fsprogs-libuuid
 
 USES=		cmake compiler:c++14-lang cpe iconv localbase luajit pathfix pkgconfig \

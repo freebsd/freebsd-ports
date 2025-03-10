@@ -6,13 +6,12 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Alphabet learning tool for KDE
 WWW=		https://edu.kde.org/klettres
 
-USES=		cmake compiler:c++11-lang gettext kde:5 qt:5 tar:xz
+USES=		cmake compiler:c++11-lang gettext kde:6 qt:6 tar:xz
 USE_KDE=	attica auth codecs completion config configwidgets coreaddons \
-		crash emoticons i18n init itemmodels \
-		kdelibs4support newstuff phonon service widgetsaddons xmlgui \
+		crash i18n itemmodels newstuff phonon service widgetsaddons \
+		xmlgui \
 		doctools:build ecm:build
-USE_QT=		core dbus gui network svg widgets xml \
-		buildtools:build qmake:build testlib:build
+USE_QT=		base
 
 OPTIONS_DEFINE=	DOCS
 

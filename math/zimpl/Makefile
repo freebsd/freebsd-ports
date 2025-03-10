@@ -1,12 +1,11 @@
 PORTNAME=	zimpl
-DISTVERSION=	3.3.6
-PORTREVISION=	1
+DISTVERSION=	3.6.2
 CATEGORIES=	math
-MASTER_SITES=	https://zimpl.zib.de/download/
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Language to translate the LP models into .lp or .mps
-WWW=		https://zimpl.zib.de
+WWW=		https://zimpl.zib.de \
+		https://github.com/scipopt/zimpl
 
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -19,6 +18,10 @@ LIB_DEPENDS=	libgmp.so:math/gmp
 
 USES=		cmake tar:tgz
 USE_LDCONFIG=	yes
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	scipopt
+GH_TAGNAME=	v${DISTVERSION:S/.//g}
 
 CMAKE_ON=	BUILD_SHARED_LIBS
 

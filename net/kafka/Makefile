@@ -13,12 +13,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	bash:shells/bash
 
-USES=		cpe shebangfix tar:tgz
+USES=		cpe java shebangfix tar:tgz
 CPE_VENDOR=	apache
-
-USE_JAVA=	yes
 JAVA_VERSION=	17+
-JAVA_RUN=	jre
 
 USE_RC_SUBR=	kafka kafka_connect
 

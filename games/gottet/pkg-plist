@@ -10,6 +10,7 @@ share/man/man6/gottet.6.gz
 %%NLS%%%%DATADIR%%/translations/gottet_el.qm
 %%NLS%%%%DATADIR%%/translations/gottet_en.qm
 %%NLS%%%%DATADIR%%/translations/gottet_es.qm
+%%NLS%%%%DATADIR%%/translations/gottet_et.qm
 %%NLS%%%%DATADIR%%/translations/gottet_fr.qm
 %%NLS%%%%DATADIR%%/translations/gottet_he.qm
 %%NLS%%%%DATADIR%%/translations/gottet_it.qm

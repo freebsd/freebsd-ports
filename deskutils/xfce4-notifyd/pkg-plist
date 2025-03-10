@@ -72,5 +72,10 @@ share/themes/Bright/xfce-notify-4.0/gtk.css
 share/themes/Default/xfce-notify-4.0/gtk.css
 share/themes/Retro/xfce-notify-4.0/gtk.css
 share/themes/Smoke/xfce-notify-4.0/gtk.css
+share/themes/XP-Balloon/xfce-notify-4.0/gtk.css
+share/themes/XP-Balloon/xfce-notify-4.0/msgbox-bottom-left.png
+share/themes/XP-Balloon/xfce-notify-4.0/msgbox-bottom-right.png
+share/themes/XP-Balloon/xfce-notify-4.0/msgbox-top-left.png
+share/themes/XP-Balloon/xfce-notify-4.0/msgbox-top-right.png
 share/themes/ZOMG-PONIES!/xfce-notify-4.0/gtk.css
 share/xfce4/panel/plugins/notification-plugin.desktop

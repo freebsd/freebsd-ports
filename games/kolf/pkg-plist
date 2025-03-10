@@ -16,7 +16,6 @@ share/icons/hicolor/scalable/apps/kolf.svgz
 %%DATADIR%%/courses/ReallyEasy
 %%DATADIR%%/courses/USApro
 %%DATADIR%%/intro
-%%DATADIR%%/pics/default_theme.svgz
 %%DATADIR%%/sounds/blackhole.wav
 %%DATADIR%%/sounds/blackholeeject.wav
 %%DATADIR%%/sounds/blackholeputin.wav
@@ -27,11 +26,12 @@ share/icons/hicolor/scalable/apps/kolf.svgz
 %%DATADIR%%/sounds/puddle.wav
 %%DATADIR%%/sounds/wall.wav
 %%DATADIR%%/sounds/woohoo.wav
+%%DATADIR%%/themes/default.svgz
 %%DATADIR%%/tutorial.kolf
 %%DATADIR%%/tutorial.kolfgame
-share/kxmlgui5/kolf/kolfui.rc
 share/locale/af/LC_MESSAGES/kolf.mo
 share/locale/ar/LC_MESSAGES/kolf.mo
+share/locale/ast/LC_MESSAGES/kolf.mo
 share/locale/be/LC_MESSAGES/kolf.mo
 share/locale/bg/LC_MESSAGES/kolf.mo
 share/locale/br/LC_MESSAGES/kolf.mo
@@ -58,6 +58,7 @@ share/locale/hi/LC_MESSAGES/kolf.mo
 share/locale/hne/LC_MESSAGES/kolf.mo
 share/locale/hr/LC_MESSAGES/kolf.mo
 share/locale/hu/LC_MESSAGES/kolf.mo
+share/locale/ia/LC_MESSAGES/kolf.mo
 share/locale/is/LC_MESSAGES/kolf.mo
 share/locale/it/LC_MESSAGES/kolf.mo
 share/locale/ja/LC_MESSAGES/kolf.mo

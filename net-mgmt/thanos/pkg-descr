@@ -8,3 +8,15 @@ latencies.
 
 Additionally, it provides a global query view across all Prometheus
 installations and can merge data from Prometheus HA pairs on the fly.
+
+Features:
+
+- Global querying view across all connected Prometheus servers
+- Deduplication and merging of metrics collected from Prometheus HA pairs
+- Seamless integration with existing Prometheus setups
+- Any object storage as its only, optional dependency
+- Downsampling historical data for massive query speedup
+- Cross-cluster federation
+- Fault-tolerant query routing
+- Simple gRPC "Store API" for unified data access across all metric data
+- Easy integration points for custom metric providers

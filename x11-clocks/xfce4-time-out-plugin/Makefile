@@ -1,13 +1,12 @@
 PORTNAME=	xfce4-time-out-plugin
-PORTVERSION=	1.1.3
-PORTREVISION=	2
+PORTVERSION=	1.1.4
 CATEGORIES=	x11-clocks xfce
 MASTER_SITES=	XFCE/panel-plugins
 DIST_SUBDIR=	xfce4
 
 MAINTAINER=	xfce@FreeBSD.org
 COMMENT=	Time out plugin for Xfce
-WWW=		https://goodies.xfce.org/projects/panel-plugins/xfce4-time-out-plugin
+WWW=		https://docs.xfce.org/panel-plugins/xfce4-time-out-plugin/start
 
 LICENSE=	GPLv2
 
@@ -15,7 +14,7 @@ LIB_DEPENDS=	libharfbuzz.so:print/harfbuzz
 
 USES=		compiler:c11 gettext-tools gmake gnome libtool pkgconfig \
 		tar:bzip2 xfce xorg
-USE_GNOME=	cairo gdkpixbuf2 gtk30 intltool
+USE_GNOME=	cairo gdkpixbuf2 gtk30
 USE_XFCE=	libmenu panel
 USE_XORG=	x11
 

@@ -1117,6 +1117,7 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%MAN1%%/perl5381delta.1.gz
 %%MAN1%%/perl5382delta.1.gz
 %%MAN1%%/perl5400delta.1.gz
+%%MAN1%%/perl5401delta.1.gz
 %%MAN1%%/perl561delta.1.gz
 %%MAN1%%/perl56delta.1.gz
 %%MAN1%%/perl581delta.1.gz
@@ -2055,6 +2056,7 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%PRIV_LIB%%/pod/perl5381delta.pod
 %%PRIV_LIB%%/pod/perl5382delta.pod
 %%PRIV_LIB%%/pod/perl5400delta.pod
+%%PRIV_LIB%%/pod/perl5401delta.pod
 %%PRIV_LIB%%/pod/perl561delta.pod
 %%PRIV_LIB%%/pod/perl56delta.pod
 %%PRIV_LIB%%/pod/perl581delta.pod
@@ -2779,8 +2781,6 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 @dir %%SITE_ARCH%%/auto
 @dir %%SITE_PERL%%/man/man1
 @dir %%SITE_PERL%%/man/man3
-@postexec makewhatis %D/%%SITEMANPREFIX%%/man
-@postexec makewhatis %D/%%PERLMANPREFIX%%/man
 @rmtry %%PERLMANPREFIX%%/man/whatis
 @rmtry %%PERLMANPREFIX%%/man/mandoc.db
 @rmtry %%SITEMANPREFIX%%/man/whatis

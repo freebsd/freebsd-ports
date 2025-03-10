@@ -28,6 +28,17 @@ GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 
+FLAVORS=	x11 nox11
+FLAVOR?=	${FLAVORS:[1]}
+FLAVORS_SUB=	yes
+nox11_PKGNAMESUFFIX=	-nox11
+.if ${FLAVOR} == x11
+USE_XORG=	x11
+USES+=		xorg
+.else
+CONFIGURE_ARGS+=--with-x=no
+.endif
+
 CONFLICTS_INSTALL=	libwmf libwmf-nox11
 
 CPE_VENDOR=	wvware
@@ -35,13 +46,8 @@ CPE_VENDOR=	wvware
 USE_GITHUB=	yes
 GH_ACCOUNT=	caolanm
 
-OPTIONS_DEFINE=	DOCS X11
-OPTIONS_DEFAULT=X11
+OPTIONS_DEFINE=	DOCS
 OPTIONS_SUB=	yes
-
-X11_CONFIGURE_OFF=	--with-x=no
-X11_USE=	XORG=x11
-X11_USES=	xorg
 
 post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}/

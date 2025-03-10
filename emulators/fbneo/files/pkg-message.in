@@ -1,0 +1,25 @@
+[
+{ type: install
+  message: <<EOM
+The fbneo emulator was installed
+
+1) Run fbneo from command line
+
+  # fbneo -menu
+
+2) First time, default config file will be generated at:
+
+   ~/.local/share/fbneo/config/fbneo.ini
+
+3) Default rom paths are %%DATADIR%%/roms and roms directories. Change it from
+   config file
+
+4) You can do some in game configuration like "Mappings options" pressing key
+   "tab"
+
+5) Enjoy it ;)
+EOM
+}
+]
+
+

@@ -1,4 +1,5 @@
 %%WWWDIR%%/.github/workflows/php.yml
+%%WWWDIR%%/.github/workflows/phpstan.yml
 %%WWWDIR%%/.gitignore
 %%WWWDIR%%/LICENSE
 %%WWWDIR%%/README.md

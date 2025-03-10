@@ -1,5 +1,5 @@
 PORTNAME=	libtool
-PORTREVISION=	2
+PORTREVISION=	0
 
 COMMENT=	Generic shared library support script
 WWW=		https://www.gnu.org/software/libtool/

@@ -1,0 +1,5 @@
+pyppmd module provides classes and functions for compressing
+and decompressing text data, using PPM (Prediction by partial
+matching) compression algorithm which has several variations
+of implementations. PPMd is the implementation by Dmitry
+Shkarin. PyPPMD use Igor Pavlov's range coder introduced in 7-zip.

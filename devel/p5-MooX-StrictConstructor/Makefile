@@ -1,5 +1,5 @@
 PORTNAME=	MooX-StrictConstructor
-PORTVERSION=	0.011
+PORTVERSION=	0.013
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -12,9 +12,7 @@ LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	p5-Class-Method-Modifiers>=0:devel/p5-Class-Method-Modifiers \
-		p5-Moo>=1.001000:devel/p5-Moo \
-		p5-strictures>=1:devel/p5-strictures
+RUN_DEPENDS=	p5-Moo>=2.004000:devel/p5-Moo
 TEST_DEPENDS=	p5-Test-Fatal>=0:devel/p5-Test-Fatal
 
 USES=		perl5

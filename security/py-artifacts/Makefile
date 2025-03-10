@@ -1,6 +1,5 @@
 PORTNAME=	artifacts
-PORTVERSION=	20230928
-PORTREVISION=	1
+PORTVERSION=	20240518
 CATEGORIES=	security python
 MASTER_SITES=	PYPI \
 		https://github.com/ForensicArtifacts/artifacts/releases/download/${PORTVERSION}/
@@ -13,17 +12,14 @@ WWW=		https://github.com/ForensicArtifacts/artifacts
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BUILD_DEPENDS=	${PY_SETUPTOOLS} \
+		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyyaml>=3.10:devel/py-pyyaml@${PY_FLAVOR}
 
 NO_ARCH=	yes
 USES=		python
-USE_PYTHON=	distutils autoplist concurrent
+USE_PYTHON=	autoplist concurrent pep517
 DO_MAKE_TEST=	${SETENV} ${TEST_ENV} ${PYTHON_CMD}
 TEST_TARGET=	run_tests.py
-
-post-patch:
-	${REINPLACE_CMD} "s,share/artifacts,${DATADIR_REL}, ; \
-		s,share/doc/artifacts,${DOCSDIR_REL}," ${WRKSRC}/setup.py
-	${REINPLACE_CMD} "/pip/d" ${WRKSRC}/requirements.txt
 
 .include <bsd.port.mk>

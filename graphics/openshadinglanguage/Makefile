@@ -1,11 +1,11 @@
 PORTNAME=	openshadinglanguage
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.13.10.0
+DISTVERSION=	1.13.12.0
 # PORTREVISION must be set with ?= so as not to stomp over
 # py-openimageio's PORTREVISION.
 # Also, just to be on the safe side, when resetting,
 # best keep PORTREVISION?=	0.
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES?=	graphics devel
 
 MAINTAINER=	FreeBSD@Shaneware.biz
@@ -39,7 +39,7 @@ CMAKE_ON=	ENABLE_RTTI OSL_BUILD_TESTS USE_LIBCPLUSPLUS USE_LLVM_BITCODE
 
 # DISTVERSION has an extra digit which isn't in the lib name
 # for LIBVERS we want the first three digits
-PLIST_SUB=	SHL2=${PORTVERSION:R:R} SHL3=${PORTVERSION:R}
+PLIST_SUB=	SHL2=${DISTVERSION:R:R} SHL3=${DISTVERSION:R}
 
 OPTIONS_DEFINE=		OSLTOY
 OPTIONS_SUB=		yes

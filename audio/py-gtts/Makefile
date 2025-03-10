@@ -1,8 +1,9 @@
 PORTNAME=	gTTS
-DISTVERSION=	2.5.1
+DISTVERSION=	2.5.4
 CATEGORIES=	audio python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	gtts-${DISTVERSION}
 
 MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Library/CLI tool to interface with Google Translate text-to-speech API

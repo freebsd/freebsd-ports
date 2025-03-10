@@ -3,7 +3,7 @@ lib/libexec/kscreen_osd_service
 %%QT_PLUGINDIR%%/kf6/kded/kscreen.so
 %%QT_PLUGINDIR%%/plasma/applets/org.kde.kscreen.so
 %%QT_PLUGINDIR%%/plasma/kcms/systemsettings/kcm_kscreen.so
-lib/systemd/user/plasma-kscreen-osd.service
+@comment lib/systemd/user/plasma-kscreen-osd.service
 share/applications/kcm_kscreen.desktop
 share/dbus-1/services/org.kde.kscreen.osdService.service
 share/kglobalaccel/org.kde.kscreen.desktop
@@ -65,6 +65,9 @@ share/locale/gl/LC_MESSAGES/plasma_applet_org.kde.kscreen.mo
 share/locale/he/LC_MESSAGES/kcm_kscreen.mo
 share/locale/he/LC_MESSAGES/kscreen_common.mo
 share/locale/he/LC_MESSAGES/plasma_applet_org.kde.kscreen.mo
+share/locale/hi/LC_MESSAGES/kcm_kscreen.mo
+share/locale/hi/LC_MESSAGES/kscreen_common.mo
+share/locale/hi/LC_MESSAGES/plasma_applet_org.kde.kscreen.mo
 share/locale/hsb/LC_MESSAGES/kcm_kscreen.mo
 share/locale/hsb/LC_MESSAGES/kscreen_common.mo
 share/locale/hsb/LC_MESSAGES/plasma_applet_org.kde.kscreen.mo
@@ -126,6 +129,9 @@ share/locale/ro/LC_MESSAGES/plasma_applet_org.kde.kscreen.mo
 share/locale/ru/LC_MESSAGES/kcm_kscreen.mo
 share/locale/ru/LC_MESSAGES/kscreen_common.mo
 share/locale/ru/LC_MESSAGES/plasma_applet_org.kde.kscreen.mo
+share/locale/sa/LC_MESSAGES/kcm_kscreen.mo
+share/locale/sa/LC_MESSAGES/kscreen_common.mo
+share/locale/sa/LC_MESSAGES/plasma_applet_org.kde.kscreen.mo
 share/locale/sk/LC_MESSAGES/kcm_kscreen.mo
 share/locale/sk/LC_MESSAGES/kscreen_common.mo
 share/locale/sk/LC_MESSAGES/plasma_applet_org.kde.kscreen.mo

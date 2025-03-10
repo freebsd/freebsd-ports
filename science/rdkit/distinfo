@@ -1,7 +1,9 @@
-TIMESTAMP = 1709878620
-SHA256 (rdkit-2023.09.6/Comic_Neue.zip) = ee69c0c8f7ae7777cea33d9df1437815b0c79b12bd5d9ec7ca2877983bb6b980
-SIZE (rdkit-2023.09.6/Comic_Neue.zip) = 180682
-SHA256 (rdkit-2023.09.6/rdkit-rdkit-Release_2023_09_6_GH0.tar.gz) = e8f580db8fe14070d009adafb1f0e5b15c12ebe6c1cf4e99085c0615be3996fc
-SIZE (rdkit-2023.09.6/rdkit-rdkit-Release_2023_09_6_GH0.tar.gz) = 80239558
-SHA256 (rdkit-2023.09.6/rareylab-RingDecomposerLib-v1.1.3_rdkit_GH0.tar.gz) = 944b5816712a48bbf88aa25d4300ce11871ddf6e971218eac08f90ed2192f715
-SIZE (rdkit-2023.09.6/rareylab-RingDecomposerLib-v1.1.3_rdkit_GH0.tar.gz) = 137931
+TIMESTAMP = 1734855089
+SHA256 (rdkit-2024.09.4/ComicNeue-Regular.ttf) = 4f0f67d826565ed55f91ca6512e5562d0f2a39030fc7208519354438bc783ff6
+SIZE (rdkit-2024.09.4/ComicNeue-Regular.ttf) = 21915
+SHA256 (rdkit-2024.09.4/rdkit-rdkit-Release_2024_09_4_GH0.tar.gz) = a5e8da75aae7e88f3a50d8577f9027c971187492a93a15085f797fe6fef74ad2
+SIZE (rdkit-2024.09.4/rdkit-rdkit-Release_2024_09_4_GH0.tar.gz) = 82055856
+SHA256 (rdkit-2024.09.4/rareylab-RingDecomposerLib-v1.1.3_rdkit_GH0.tar.gz) = 944b5816712a48bbf88aa25d4300ce11871ddf6e971218eac08f90ed2192f715
+SIZE (rdkit-2024.09.4/rareylab-RingDecomposerLib-v1.1.3_rdkit_GH0.tar.gz) = 137931
+SHA256 (rdkit-2024.09.4/ncbi-pubchem-align3d-daefab3_GH0.tar.gz) = d7814a00a39f6a798bc1611d0f7bbd1abc91d754309527a9038a0dad42d848c0
+SIZE (rdkit-2024.09.4/ncbi-pubchem-align3d-daefab3_GH0.tar.gz) = 112376

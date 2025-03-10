@@ -1,13 +1,12 @@
 PORTNAME=	cryptopp
 PORTVERSION=	8.9.0
 CATEGORIES=	security
-MASTER_SITES=	https://github.com/weidai11/${PORTNAME}/releases/download/CRYPTOPP_${PORTVERSION:S/./_/g}/ \
-		http://www.cryptopp.com/
+MASTER_SITES=	https://github.com/weidai11/${PORTNAME}/releases/download/CRYPTOPP_${PORTVERSION:S/./_/g}/
 DISTNAME=	cryptopp${PORTVERSION:S/.//g}
 
 MAINTAINER=	jhale@FreeBSD.org
 COMMENT=	Free C++ class library of Cryptographic Primitives
-WWW=		https://www.cryptopp.com/
+WWW=		https://github.com/weidai11/cryptopp
 
 LICENSE=	BSL
 LICENSE_FILE=	${WRKSRC}/License.txt

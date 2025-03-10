@@ -1,5 +1,5 @@
 PORTNAME=	ittapi
-PORTVERSION=	3.25.0
+PORTVERSION=	3.25.3
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
@@ -24,5 +24,12 @@ CMAKE_ARGS=	-DITT_API_IPT_SUPPORT:BOOL=ON
 # Note: Rust support is not yet enabled in this port
 OPTIONS_DEFINE=		FORTRAN
 FORTRAN_CMAKE_BOOL=	ITT_API_FORTRAN_SUPPORT
+FORTRAN_USES=		fortran
+FORTRAN_CMAKE_ON=	-DCMAKE_Fortran_COMPILER=${FC}
+FORTRAN_BROKEN=		See https://github.com/intel/ittapi/issues/166
+
+pre-configure:
+	${REINPLACE_CMD} -e 's|-O2|${CFLAGS}|;s|-module|-Mmodules|'	\
+		${WRKSRC}/CMakeLists.txt
 
 .include <bsd.port.mk>

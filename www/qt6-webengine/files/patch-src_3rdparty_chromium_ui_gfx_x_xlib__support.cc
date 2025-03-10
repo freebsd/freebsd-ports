@@ -1,8 +1,8 @@
---- src/3rdparty/chromium/ui/gfx/x/xlib_support.cc.orig	2023-12-12 22:08:45 UTC
+--- src/3rdparty/chromium/ui/gfx/x/xlib_support.cc.orig	2024-07-03 01:14:49 UTC
 +++ src/3rdparty/chromium/ui/gfx/x/xlib_support.cc
-@@ -42,10 +42,18 @@ void InitXlib() {
-   if (xlib_loader->loaded())
+@@ -43,10 +43,18 @@ void InitXlib() {
      return;
+   }
  
 +#if BUILDFLAG(IS_BSD)
 +  CHECK(xlib_loader->Load("libX11.so"));

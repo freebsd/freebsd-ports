@@ -12,9 +12,9 @@ WWW=		https://james.apache.org/
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-USES=		cpe
+USES=		cpe java
 CPE_VENDOR=	apache
-USE_JAVA=	yes
+
 NO_ARCH=	yes
 NO_BUILD=	yes
 

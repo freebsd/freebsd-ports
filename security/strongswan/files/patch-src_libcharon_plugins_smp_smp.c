@@ -1,6 +1,6 @@
---- src/libcharon/plugins/smp/smp.c.orig	2018-10-23 17:03:28 UTC
+--- src/libcharon/plugins/smp/smp.c.orig	2024-03-19 10:25:55 UTC
 +++ src/libcharon/plugins/smp/smp.c
-@@ -740,7 +740,7 @@ METHOD(plugin_t, destroy, void,
+@@ -745,7 +745,7 @@ plugin_t *smp_plugin_create()
   */
  plugin_t *smp_plugin_create()
  {
@@ -9,7 +9,7 @@
  	private_smp_t *this;
  	mode_t old;
  
-@@ -768,6 +768,11 @@ plugin_t *smp_plugin_create()
+@@ -773,6 +773,11 @@ plugin_t *smp_plugin_create()
  		free(this);
  		return NULL;
  	}

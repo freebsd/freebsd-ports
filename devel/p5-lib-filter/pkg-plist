@@ -1,0 +1,8 @@
+%%SITE_PERL%%/lib/allow.pm
+%%SITE_PERL%%/lib/coreplus.pm
+%%SITE_PERL%%/lib/disallow.pm
+%%SITE_PERL%%/lib/filter.pm
+%%PERL5_MAN3%%/lib::allow.3.gz
+%%PERL5_MAN3%%/lib::coreplus.3.gz
+%%PERL5_MAN3%%/lib::disallow.3.gz
+%%PERL5_MAN3%%/lib::filter.3.gz

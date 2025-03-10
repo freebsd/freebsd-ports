@@ -1,11 +1,9 @@
 PORTNAME=	emacsql
-DISTVERSION=	3.1.1
-PORTREVISION=	9
+DISTVERSIONPREFIX=	v
+DISTVERSION=	4.1.0
+PORTREVISION=	1
 CATEGORIES=	databases elisp
 PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
-
-PATCH_SITES=	https://github.com/magit/emacsql/commit/
-PATCHFILES=	3cec7dcb201568a09ee9cebf0ea1e43cba9d334a.patch:-p1
 
 MAINTAINER=	yasu@FreeBSD.org
 COMMENT=	High-level Emacs Lisp RDBMS front-end
@@ -14,11 +12,10 @@ WWW=		https://github.com/magit/emacsql
 LICENSE=	UNLICENSE
 LICENSE_FILE=	${WRKSRC}/UNLICENSE
 
-BUILD_DEPENDS=	pg.el${EMACS_PKGNAMESUFFIX}>=0.13:databases/pg.el@${EMACS_FLAVOR}
-LIB_DEPENDS=	libsqlite3.so:databases/sqlite3
-RUN_DEPENDS=	pg.el${EMACS_PKGNAMESUFFIX}>=0.13:databases/pg.el@${EMACS_FLAVOR}
+BUILD_DEPENDS=	pg.el${EMACS_PKGNAMESUFFIX}>=0.39:databases/pg.el@${EMACS_FLAVOR}
+RUN_DEPENDS=	pg.el${EMACS_PKGNAMESUFFIX}>=0.39:databases/pg.el@${EMACS_FLAVOR}
 
-USES=		emacs gmake localbase:ldflags
+USES=		emacs gmake
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	magit
@@ -33,15 +30,9 @@ PORTDOCS=	README.md
 
 OPTIONS_DEFINE=	DOCS
 
-post-patch:
-	${RM} ${WRKSRC}/sqlite/sqlite3.[ch]
-	${REINPLACE_CMD} 's,%%PREFIX%%,${PREFIX},g' ${WRKSRC}/emacsql-sqlite.el
-
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/bin \
 		${STAGEDIR}${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/${PORTNAME}
-	${INSTALL_PROGRAM} ${WRKSRC}/sqlite/emacsql-sqlite \
-		${STAGEDIR}${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/*.el ${WRKSRC}/*.elc \
 		${STAGEDIR}${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/${PORTNAME}
 

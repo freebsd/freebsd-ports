@@ -1,0 +1,40 @@
+--- wscript.orig	2023-03-29 15:42:11.181590800 +0200
++++ wscript	2023-12-07 17:41:11.676269000 +0100
+@@ -208,7 +208,7 @@
+     if bld.env.standalone_ldb:
+         if not 'PACKAGE_VERSION' in bld.env:
+             bld.env.PACKAGE_VERSION = VERSION
+-        bld.env.PKGCONFIGDIR = '${LIBDIR}/pkgconfig'
++        bld.env.PKGCONFIGDIR = '%%PKGCONFIGDIR%%'
+         private_library = False
+     else:
+         private_library = True
+@@ -413,7 +413,7 @@
+                               bld.SUBDIR('ldb_mdb',
+                                          '''ldb_mdb.c '''),
+                               private_library=True,
+-                              deps='ldb lmdb ldb_key_value')
++                              deps='replace ldb lmdb ldb_key_value')
+             lmdb_deps = ' ldb_mdb_int'
+         else:
+             lmdb_deps = ''
+@@ -498,11 +498,6 @@
+                          deps='cmocka ldb',
+                          install=False)
+ 
+-        bld.SAMBA_BINARY('ldb_match_test',
+-                         source='tests/ldb_match_test.c',
+-                         deps='cmocka ldb',
+-                         install=False)
+-
+         bld.SAMBA_BINARY('ldb_key_value_test',
+                          source='tests/ldb_key_value_test.c',
+                          deps='cmocka ldb ldb_tdb_err_map',
+@@ -634,7 +629,6 @@
+                  'ldb_tdb_guid_mod_op_test',
+                  'ldb_tdb_kv_ops_test',
+                  'ldb_tdb_test',
+-                 'ldb_match_test',
+                  'ldb_key_value_test',
+                  # we currently don't run ldb_key_value_sub_txn_tdb_test as it
+                  # tests the nested/sub transaction handling

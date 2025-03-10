@@ -1,9 +1,10 @@
 PORTNAME=	pre-commit
-DISTVERSION=	3.8.0
+DISTVERSION=	4.1.0
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	pre_commit-${PORTVERSION}
+DISTNAME=	${PORTNAME:S/-/_/}-${DISTVERSION}
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Framework for managing and maintaining multi-language pre-commit hooks

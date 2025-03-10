@@ -1,15 +1,18 @@
 PORTNAME=	arbor
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.9.0
+DISTVERSION=	0.10.1
+PORTREVISION=	1
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Multi-compartment neural network simulation library
-WWW=		https://arbor-sim.org/
+WWW=		https://arbor-sim.org/ \
+		https://github.com/arbor-sim/arbor/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_FreeBSD_15=	compilation fails with clang-19, see https://github.com/arbor-sim/arbor/issues/2424
 BROKEN_armv7=	compilation fails: unknown type name 'float64x2_t'
 
 BUILD_DEPENDS=	bash:shells/bash \
@@ -19,7 +22,8 @@ BUILD_DEPENDS=	bash:shells/bash \
 		${PYTHON_PKGNAMEPREFIX}svgwrite>0:graphics/py-svgwrite@${PY_FLAVOR}
 BUILD_DEPENDS+=	${LOCALBASE}/lib/cmake/GTest/GTestConfig.cmake:devel/googletest # https://github.com/arbor-sim/arbor/issues/2205
 LIB_DEPENDS=	libhwloc.so:devel/hwloc2 \
-		libpugixml.so:textproc/pugixml
+		libpugixml.so:textproc/pugixml \
+		libunits.so:misc/units
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}svgwrite>0:graphics/py-svgwrite@${PY_FLAVOR}
 TEST_DEPENDS=	googletest>=0:devel/googletest
 
@@ -31,7 +35,10 @@ GH_ACCOUNT=	arbor-sim
 SHEBANG_FILES=	scripts/arbor-build-catalogue
 
 CMAKE_ON=	BUILD_SHARED_LIBS
+CMAKE_OFF=	ARB_USE_BUNDLED_UNITS
 CMAKE_ARGS=	-DPython3_EXECUTABLE=${PYTHON_CMD}
+
+LDFLAGS+=	-L${LOCALBASE}/lib -lunits
 
 OPTIONS_DEFINE=		NATIVE
 

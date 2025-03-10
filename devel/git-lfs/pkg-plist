@@ -2,6 +2,7 @@ bin/git-lfs
 %%MANPAGES%%share/man/man1/git-lfs-checkout.1.gz
 %%MANPAGES%%share/man/man1/git-lfs-clean.1.gz
 %%MANPAGES%%share/man/man1/git-lfs-clone.1.gz
+%%MANPAGES%%share/man/man1/git-lfs-completion.1.gz
 %%MANPAGES%%share/man/man1/git-lfs-dedup.1.gz
 %%MANPAGES%%share/man/man1/git-lfs-env.1.gz
 %%MANPAGES%%share/man/man1/git-lfs-ext.1.gz
@@ -13,6 +14,7 @@ bin/git-lfs
 %%MANPAGES%%share/man/man1/git-lfs-locks.1.gz
 %%MANPAGES%%share/man/man1/git-lfs-logs.1.gz
 %%MANPAGES%%share/man/man1/git-lfs-ls-files.1.gz
+%%MANPAGES%%share/man/man1/git-lfs-merge-driver.1.gz
 %%MANPAGES%%share/man/man1/git-lfs-migrate.1.gz
 %%MANPAGES%%share/man/man1/git-lfs-pointer.1.gz
 %%MANPAGES%%share/man/man1/git-lfs-post-checkout.1.gz

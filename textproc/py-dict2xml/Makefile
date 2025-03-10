@@ -1,6 +1,6 @@
 PORTNAME=	dict2xml
 DISTVERSIONPREFIX=release-
-DISTVERSION=	1.7.5
+DISTVERSION=	1.7.6
 CATEGORIES=	textproc devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -22,6 +22,8 @@ USE_PYTHON=	autoplist pep517
 
 GH_ACCOUNT=	delfick
 GH_PROJECT=	python-dict2xml
+
+NO_ARCH=	yes
 
 do-test:
 	@cd ${WRKSRC} && ${PYTHON_CMD} -m pytest -v -rs -o addopts=

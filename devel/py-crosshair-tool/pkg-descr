@@ -1,0 +1,12 @@
+CrossHair is an analysis tool for Python that blurs the line between testing and
+type systems.
+
+If you have a function with type annotations and add a contract in a supported
+syntax, CrossHair will attempt to find counterexamples for you.
+
+CrossHair works by repeatedly calling your functions with symbolic inputs. It
+uses an SMT solver (a kind of theorem prover) to explore viable execution paths
+and find counterexamples for you. This is not a new idea; a Python approach was
+first described in this paper. However, to my knowledge, CrossHair is the most
+complete implementation: it can use symbolic reasoning for the built-in types,
+user-defined classes, and much of the standard library.

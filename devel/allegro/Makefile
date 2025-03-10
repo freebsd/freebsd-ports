@@ -17,7 +17,7 @@ LIB_DEPENDS=	libogg.so:audio/libogg \
 		libpng.so:graphics/png \
 		libvorbis.so:audio/libvorbis
 
-USES=		cmake gl pkgconfig xorg
+USES=		cmake gl localbase:ldflags pkgconfig xorg
 USE_GL=		gl glu
 USE_LDCONFIG=	yes
 USE_XORG=	ice sm x11 xcursor xext xpm xxf86dga xxf86vm
@@ -41,7 +41,6 @@ OPTIONS_MULTI_AUDIO=	ALSA JACK OSS SNDIO
 OPTIONS_SUB=	yes
 
 ALSA_LIB_DEPENDS=	libasound.so:audio/alsa-lib
-ALSA_USES=		localbase:ldflags
 ALSA_CMAKE_BOOL=	WANT_ALSA
 
 JACK_LIB_DEPENDS=	libjack.so:audio/jack

@@ -3,13 +3,13 @@ CATEGORIES=	devel
 
 COMMENT=	GStreamer soup based http input plugin
 
-GST_PLUGIN=	soup
+LIB_DEPENDS=	libsoup-3.0.so:devel/libsoup3
+
+MASTERDIR=	${.CURDIR:H:H}/multimedia/gstreamer1-plugins
+
+PLIST=		${.CURDIR}/pkg-plist
+
 DIST=		good
-
-MASTERDIR=	${.CURDIR}/../../multimedia/gstreamer1-plugins
-
-PLIST=  ${.CURDIR}/pkg-plist
-
-LIB_DEPENDS= libsoup-3.0.so:devel/libsoup3
+GST_PLUGIN=	soup
 
 .include "${MASTERDIR}/Makefile"

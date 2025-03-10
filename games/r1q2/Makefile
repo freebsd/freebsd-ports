@@ -70,6 +70,8 @@ PLIST_SUB+=	REF_GL="@comment "
 post-patch:
 	@${REINPLACE_CMD} -e 's|game$$(ARCH)|game|g' \
 		${BUILD_WRKSRC}/game/Makefile
+	@${REINPLACE_CMD} -e '/param\.h/s|machine|sys|' \
+		${WRKSRC}/linux/q_shlinux.c
 	@${REINPLACE_CMD} -e '/SV_FixPlayerSkin/s,__inline,static,' \
 		${WRKSRC}/server/sv_game.c
 

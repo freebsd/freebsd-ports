@@ -1,5 +1,5 @@
 PORTNAME=	fuzzel
-DISTVERSION=	1.10.2
+DISTVERSION=	1.11.1
 CATEGORIES=	x11 wayland
 MASTER_SITES=	https://codeberg.org/dnkl/${PORTNAME}/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/
 
@@ -10,7 +10,8 @@ WWW=		https://codeberg.org/dnkl/fuzzel
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	tllist>=1.0.1:devel/tllist \
+BUILD_DEPENDS=	evdev-proto>0:devel/evdev-proto \
+		tllist>=1.0.1:devel/tllist \
 		wayland-protocols>=1.32:graphics/wayland-protocols \
 		scdoc:textproc/scdoc
 LIB_DEPENDS=	libepoll-shim.so:devel/libepoll-shim \

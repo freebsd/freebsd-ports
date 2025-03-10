@@ -1,6 +1,6 @@
---- ../libinjection-4aa3894/src/libinjection_sqli.c.orig	2023-05-30 15:47:57.333208000 -0400
-+++ ../libinjection-4aa3894/src/libinjection_sqli.c	2023-05-30 15:49:52.273873000 -0400
-@@ -305,8 +303,8 @@
+--- ../libinjection-b9fcaaf/src/libinjection_sqli.c.orig	2025-02-04 16:00:34.056724000 -0500
++++ ../libinjection-b9fcaaf/src/libinjection_sqli.c	2025-02-04 16:01:22.692905000 -0500
+@@ -305,8 +305,8 @@
  static void st_assign(stoken_t * st, const char stype,
                        size_t pos, size_t len, const char* value)
  {

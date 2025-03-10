@@ -1,5 +1,5 @@
 PORTNAME=	gottet
-PORTVERSION=	1.2.4
+PORTVERSION=	1.2.6
 CATEGORIES=	games
 MASTER_SITES=	https://gottcode.org/gottet/
 
@@ -10,7 +10,7 @@ WWW=		https://gottcode.org/gottet/
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		cmake compiler:c++17-lang gl qt:6 tar:bzip2
+USES=		cmake compiler:c++17-lang gettext-tools gl qt:6 tar:bzip2
 USE_GL=		opengl
 USE_QT=		base tools:build
 

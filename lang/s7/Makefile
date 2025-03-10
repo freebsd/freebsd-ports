@@ -1,56 +1,34 @@
-PORTNAME=	s7
-PORTVERSION=	g20231215
-CATEGORIES=	lang lisp
-
-MAINTAINER=	fuz@FreeBSD.org
 COMMENT=	Scheme interpreter
-WWW=		https://ccrma.stanford.edu/software/snd/snd/s7.html
 
-LICENSE=	BSD0CLAUSE
-
-USES=		localbase:ldflags
-USE_GITLAB=	yes
-GL_SITE=	https://cm-gitlab.stanford.edu/
-GL_ACCOUNT=	bil
-GL_TAGNAME=	edc6242088978d09bff053726ec2f8a6ea8f8f72
 USE_LDCONFIG=	yes
-
-CFLAGS+=	-DS7_LOAD_PATH=\"${DATADIR}\" \
-		-DHAVE_COMPLEX_NUMBERS \
-		-DHAVE_COMPLEX_TRIG \
-		-DWITH_SYSTEM_EXTRAS \
-		-DWITH_C_LOADER
-
-LDFLAGS+=	-Wl,-export-dynamic
 LIBS+=		-lm
+LIBS7=		${WRKDIR}/libs7.so.0
 S7LIBS=		c dl m
 
-PORTDOCS=	s7.html
+PORTDOCS=	s7.html s7-ffi.html s7-scm.html
 
-OPTIONS_DEFINE=	DOCS GMP REPL NREPL
+OPTIONS_DEFINE=	DOCS GMP REPL
 OPTIONS_DEFAULT=	GMP REPL
 OPTIONS_SUB=	yes
-NREPL_DESC=	install notcurses repl (s7-nrepl)
 REPL_DESC=	install simple repl (s7-repl)
 GMP_LIB_DEPENDS=	libgmp.so:math/gmp \
 			libmpfr.so:math/mpfr \
 			libmpc.so:math/mpc
 GMP_CFLAGS=	-DWITH_GMP
 GMP_LIBS=	-lmpc -lmpfr -lgmp
-NREPL_LIB_DEPENDS=	libnotcurses-core.so:devel/notcurses
 
 do-build:
-	${CC} -fpic -shared ${CFLAGS} ${CPPFLAGS} ${LDFLAGS} -o ${WRKDIR}/libs7.so ${WRKSRC}/s7.c ${LIBS}
-	${CC} ${CFLAGS} ${CPPFLAGS} ${LDFLAGS} -L${WRKDIR} -o ${WRKDIR}/s7-repl ${WRKSRC}/repl.c -ls7
+	${CC} -fpic -shared ${CFLAGS} ${CPPFLAGS} ${LDFLAGS} -Wl,--soname=libs7.so.0 \
+		-o ${LIBS7} ${WRKSRC}/s7.c ${LIBS}
+	${CC} ${CFLAGS} ${CPPFLAGS} ${LDFLAGS} -o ${WRKDIR}/s7-repl ${WRKSRC}/repl.c ${LIBS7}
 .for l in ${S7LIBS}
-	(cd ${WRKDIR} && ${SETENV} LD_LIBRARY_PATH=${WRKDIR} ${WRKDIR}/s7-repl ${WRKSRC}/lib$l.scm)
+	(cd ${WRKDIR} && ${SETENVI} ${WRK_ENV} ${MAKE_ENV} ${WRKDIR}/s7-repl ${WRKSRC}/lib$l.scm)
 .endfor
 
-post-build-NREPL-on:
-	${CC} ${CFLAGS} ${CPPFLAGS} ${LDFLAGS} -L${WRKDIR} -o ${WRKDIR}/s7-nrepl ${WRKSRC}/nrepl.c -ls7 -lnotcurses-core
-
 do-install:
-	${INSTALL_LIB} ${WRKDIR}/libs7.so ${STAGEDIR}${PREFIX}/lib/
+	${INSTALL_LIB} ${LIBS7} ${STAGEDIR}${PREFIX}/lib/libs7.so.0.0.0
+	${RLN} ${STAGEDIR}${PREFIX}/lib/libs7.so.0.0.0 ${STAGEDIR}${PREFIX}/lib/libs7.so.0
+	${RLN} ${STAGEDIR}${PREFIX}/lib/libs7.so.0.0.0 ${STAGEDIR}${PREFIX}/lib/libs7.so
 	${INSTALL_DATA} ${WRKSRC}/s7.h ${STAGEDIR}${PREFIX}/include/
 	${MKDIR} ${STAGEDIR}${DATADIR}/tools
 .for l in ${S7LIBS}
@@ -61,15 +39,17 @@ do-install:
 
 do-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/s7.html ${STAGEDIR}${DOCSDIR}/
-
-do-install-NREPL-on:
-	${INSTALL_PROGRAM} ${WRKDIR}/s7-nrepl ${STAGEDIR}${PREFIX}/bin/
+.for f in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/$f ${STAGEDIR}${DOCSDIR}/
+.endfor
 
 do-install-REPL-on:
 	${INSTALL_PROGRAM} ${WRKDIR}/s7-repl ${STAGEDIR}${PREFIX}/bin/
 
 do-test:
-	(cd ${WRKSRC} && ${SETENV} LD_LIBRARY_PATH=${WRKDIR} ${WRKDIR}/s7-repl s7test.scm)
+	${RM} -r ${WRKDIR}/cl ${WRKDIR}/test
+	${RLN} ${WRKSRC} ${WRKDIR}/cl
+	${MKDIR} ${WRKDIR}/test
+	(cd ${WRKSRC} && ${SETENVI} ${WRK_ENV} ${TEST_ENV} ${WRKDIR}/s7-repl s7test.scm)
 
-.include <bsd.port.mk>
+.include "Makefile.master"

@@ -9,8 +9,7 @@ WWW=		https://www.umlgraph.org/
 
 LICENSE=	BSD3CLAUSE
 
-USE_ANT=	yes
-USE_JAVA=	yes
+USES=		java:ant
 JAVA_VERSION=	8
 USE_GITHUB=	yes
 GH_ACCOUNT=	dspinellis

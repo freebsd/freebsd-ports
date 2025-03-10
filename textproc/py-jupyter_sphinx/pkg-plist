@@ -1,3 +1,7 @@
+%%PYTHON_SITELIBDIR%%/jupyter_sphinx-%%VER%%.dist-info/licenses/LICENSE
+%%PYTHON_SITELIBDIR%%/jupyter_sphinx-%%VER%%.dist-info/METADATA
+%%PYTHON_SITELIBDIR%%/jupyter_sphinx-%%VER%%.dist-info/RECORD
+%%PYTHON_SITELIBDIR%%/jupyter_sphinx-%%VER%%.dist-info/WHEEL
 %%PYTHON_SITELIBDIR%%/jupyter_sphinx/__init__.py
 %%PYTHON_SITELIBDIR%%/jupyter_sphinx/__pycache__/__init__.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/jupyter_sphinx/__pycache__/__init__.cpython-%%PYTHON_SUFFIX%%.pyc

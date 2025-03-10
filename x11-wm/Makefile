@@ -65,6 +65,7 @@
     SUBDIR += lxqt
     SUBDIR += lxqt-panel
     SUBDIR += lxqt-session
+    SUBDIR += lxqt-wayland-session
     SUBDIR += lxsession
     SUBDIR += magpie
     SUBDIR += marco
@@ -73,6 +74,7 @@
     SUBDIR += muffin
     SUBDIR += mutter
     SUBDIR += niri
+    SUBDIR += notion
     SUBDIR += nscde
     SUBDIR += obconf
     SUBDIR += obconf-qt
@@ -84,8 +86,6 @@
     SUBDIR += phoc
     SUBDIR += picom
     SUBDIR += piewm
-    SUBDIR += plasma5-kdecoration
-    SUBDIR += plasma5-kwin
     SUBDIR += plasma6-kdecoration
     SUBDIR += plasma6-kwin
     SUBDIR += pwm
@@ -103,7 +103,6 @@
     SUBDIR += stumpwm
     SUBDIR += subtle
     SUBDIR += sway
-    SUBDIR += sway-devel
     SUBDIR += swayfx
     SUBDIR += theseus-ship
     SUBDIR += tinywm

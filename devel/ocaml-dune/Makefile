@@ -10,11 +10,10 @@ WWW=		https://dune.build/
 
 LICENSE=	MIT
 
-USES=		gmake
+USES=		gmake ocaml:ldconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	ocaml
-USE_OCAML=	yes
-USE_OCAML_LDCONFIG=	yes
+
 SUB_FILES=	setup.ml
 SUB_LIST=	OCAML_SITELIBDIR="${PREFIX}/${OCAML_SITELIBDIR}" \
 		OCAML_LIBDIR="${PREFIX}/${OCAML_LIBDIR}" \
@@ -28,6 +27,12 @@ MAKE_ENV=	LIBDIR="${PREFIX}/${OCAML_SITELIBDIR}" \
 DOCSDIR=	${OCAML_DOCSDIR}/${PORTNAME}
 
 OPTIONS_DEFINE=	DOCS
+
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == powerpc
+LLD_UNSAFE=	yes
+.endif
 
 post-patch:
 # FreeBSD-specific hack, do not nag upstream (for now)

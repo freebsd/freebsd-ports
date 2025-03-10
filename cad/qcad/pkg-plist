@@ -7430,6 +7430,9 @@ share/applications/usr_local_bin_qcadbin.desktop
 %%DATADIR%%/scripts/Misc/Examples/ExMinimal2/ExMinimal2.ui
 %%DATADIR%%/scripts/Misc/Examples/Examples.js
 %%DATADIR%%/scripts/Misc/Examples/Examples.pro
+%%DATADIR%%/scripts/Misc/Examples/IOExamples/ExCsvExport/ExCsvExport.js
+%%DATADIR%%/scripts/Misc/Examples/IOExamples/ExCsvExport/ExCsvExport.pro
+%%DATADIR%%/scripts/Misc/Examples/IOExamples/ExCsvExport/ExCsvExportInit.js
 %%DATADIR%%/scripts/Misc/Examples/IOExamples/ExDumpPolyline/ExDumpPolyline.js
 %%DATADIR%%/scripts/Misc/Examples/IOExamples/ExDumpPolyline/ExDumpPolyline.pro
 %%DATADIR%%/scripts/Misc/Examples/IOExamples/ExDumpPolyline/points.txt
@@ -7883,14 +7886,13 @@ share/applications/usr_local_bin_qcadbin.desktop
 %%DATADIR%%/scripts/Misc/Tutorials/Tutorials.pro
 %%DATADIR%%/scripts/Misc/Tutorials/dir/dir.pro
 %%DATADIR%%/scripts/Misc/dir/dir.pro
-%%DATADIR%%/scripts/Misc/doc/Examples_de.html
-%%DATADIR%%/scripts/Misc/doc/Examples_en.html
-%%DATADIR%%/scripts/Misc/doc/Examples_ja.html
 %%DATADIR%%/scripts/Misc/doc/Misc.png
 %%DATADIR%%/scripts/Misc/doc/Misc_da.html
 %%DATADIR%%/scripts/Misc/doc/Misc_de.html
 %%DATADIR%%/scripts/Misc/doc/Misc_en.html
+%%DATADIR%%/scripts/Misc/doc/Misc_es.html
 %%DATADIR%%/scripts/Misc/doc/Misc_ja.html
+%%DATADIR%%/scripts/Misc/doc/Misc_pl.html
 %%DATADIR%%/scripts/Misc/doc/Misc_ru.html
 %%DATADIR%%/scripts/Misc/doc/Misc_sl.html
 %%DATADIR%%/scripts/Misc/translations.pri
@@ -11898,6 +11900,7 @@ share/applications/usr_local_bin_qcadbin.desktop
 %%DATADIR%%/scripts/Widgets/LayerList/layerstatus_11.svg
 %%DATADIR%%/scripts/Widgets/MenuBar/MenuBar.js
 %%DATADIR%%/scripts/Widgets/MenuBar/MenuBar.pro
+%%DATADIR%%/scripts/Widgets/MenuBar/MenuBarInit.js
 %%DATADIR%%/scripts/Widgets/MenuBar/PreferencesPage.ui
 %%DATADIR%%/scripts/Widgets/MouseDisplay/Mouse-inverse.svg
 %%DATADIR%%/scripts/Widgets/MouseDisplay/Mouse.svg

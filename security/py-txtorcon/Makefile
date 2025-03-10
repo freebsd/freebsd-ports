@@ -1,5 +1,6 @@
 PORTNAME=	txtorcon
-DISTVERSION=	23.0.0
+DISTVERSION=	24.8.0
+PORTREVISION=	1
 CATEGORIES=	security python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -40,5 +41,7 @@ post-patch-DOCS-off:
 
 post-patch-EXAMPLES-off:
 	@${REINPLACE_CMD} -E "s|(.*'${EXAMPLESDIR}'.*)|#\1|" ${WRKSRC}/setup.py
+
+# tests as of 24.8.0: 1 failed, 679 passed, 2 skipped, 662 warnings in 195.73s (0:03:15)
 
 .include <bsd.port.mk>

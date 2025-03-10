@@ -1,5 +1,5 @@
 PORTNAME=	dnsjit
-DISTVERSION=	1.3.0
+DISTVERSION=	1.4.0
 CATEGORIES=	dns net
 MASTER_SITES=	https://www.dns-oarc.net/files/${PORTNAME}/
 
@@ -19,8 +19,6 @@ LIB_DEPENDS=	libck.so:devel/concurrencykit \
 USES=		libtool localbase luajit pkgconfig
 
 GNU_CONFIGURE=	yes
-
-GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
 OPTIONS_DEFINE=	EXAMPLES
 

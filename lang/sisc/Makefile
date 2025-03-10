@@ -11,7 +11,8 @@ WWW=		http://sisc.sourceforge.net/
 LICENSE=	MPL11 GPLv2+
 LICENSE_COMB=	dual
 
-USE_JAVA=	yes
+USES=		java
+
 NO_BUILD=	yes
 NO_ARCH=	yes
 

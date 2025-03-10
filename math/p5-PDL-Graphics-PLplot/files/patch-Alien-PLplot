@@ -1,0 +1,31 @@
+--- Makefile.PL.orig	2024-04-21 20:36:49 UTC
++++ Makefile.PL
+@@ -7,7 +7,6 @@ use Devel::CheckLib;
+ 
+ use PDL::Core::Dev;
+ use Devel::CheckLib;
+-use Alien::PLplot;
+ 
+ my $PL_MAJOR = 5; # minimum required
+ my $PL_MINOR = 13;
+@@ -31,9 +30,9 @@ sub probe {
+ }
+ 
+ sub probe {
+-  $header = (Alien::PLplot->inline_auto_include)->[0];
+-  $plplot_include_path = Alien::PLplot->cflags;
+-  $libs = Alien::PLplot->libs;
++  $header = 'plplot.h';
++  $plplot_include_path = '-I%%LOCALBASE%%/include/plplot';
++  $libs = '-L%%LOCALBASE%%/lib -lplplot';
+ }
+ 
+ probe;
+@@ -77,7 +76,6 @@ $hash{CONFIGURE_REQUIRES} = {
+ $hash{CONFIGURE_REQUIRES} = {
+   'PDL' => '2.083', # output OtherPars
+   'Devel::CheckLib' => 0,
+-  'Alien::PLplot' => 0,
+ };
+ # $hash{'OPTIMIZE'}  = '-g'; # If you want to debug, uncomment this.
+ $hash{TEST_REQUIRES} = {

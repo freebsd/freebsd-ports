@@ -11,8 +11,7 @@ WWW=		https://creadur.apache.org/rat/
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		tar:bzip2
-USE_JAVA=	yes
+USES=		java tar:bzip2
 
 NO_BUILD=	yes
 NO_ARCH=	yes

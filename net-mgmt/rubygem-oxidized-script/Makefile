@@ -1,5 +1,5 @@
 PORTNAME=	oxidized-script
-PORTVERSION=	0.6.0
+PORTVERSION=	0.7.0
 CATEGORIES=	net-mgmt rubygems
 MASTER_SITES=	RG
 
@@ -9,8 +9,8 @@ WWW=		https://github.com/ytti/oxidized-script
 
 LICENSE=	APACHE20
 
-RUN_DEPENDS=	rubygem-oxidized>=0.25:net-mgmt/rubygem-oxidized \
-		rubygem-slop3>=3.5:devel/rubygem-slop3
+RUN_DEPENDS=	rubygem-oxidized>=0.29:net-mgmt/rubygem-oxidized \
+		rubygem-slop>=4.0:devel/rubygem-slop
 
 USES=		gem
 

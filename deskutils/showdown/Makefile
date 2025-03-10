@@ -1,6 +1,6 @@
 PORTNAME=	showdown
 DISTVERSION=	0.6
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	deskutils
 
 MAINTAINER=	dmgk@FreeBSD.org
@@ -11,7 +11,7 @@ LICENSE=	GPLv3
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libmarkdown.a:textproc/discount
 LIB_DEPENDS=	libsoup-2.4.so:devel/libsoup \
-		libwebkit2gtk-4.0.so:www/webkit2-gtk3
+		libwebkit2gtk-4.0.so:www/webkit2-gtk@40
 
 USES=		compiler:c++11-lang desktop-file-utils gmake gnome \
 		pkgconfig vala:build xorg

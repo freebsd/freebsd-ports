@@ -4,7 +4,7 @@ CATEGORIES=	devel
 # Perforce does not version their distfiles when they patch.
 # This does not play well with FreeBSD's conventions.
 MASTER_SITES=	https://ftp.perforce.com/perforce/${P4VERSION}/bin.tools/p4source${EXTRACT_SUFX}?dummy=/ \
-		https://hesiod.org/distfiles/perforce-${MINOR}/p4source${EXTRACT_SUFX}?dummy=/
+		https://hesiod.org/distfiles/perforce
 DISTNAME=	p4source-${MINOR}
 
 MAINTAINER=	antonfb@hesiod.org
@@ -36,10 +36,13 @@ do-build:
 		OSVER=${OSVER} \
 		API=1 \
 		SSL="yes" \
+		SSLVER="1.1.1" \
 		SSLLIB=-lssl \
 		CRYPTOLIB=-lcrypto \
 		TYPE=pic \
-		${JAM} -dx -sUSE_EXTENSIONS=0 -j${MAKE_JOBS_NUMBER} p4api p4api.tar
+		USE_EXTENSIONS=0 \
+		USE_OPTIMIZED_ZLIB=0 \
+		${JAM} -dx -j${MAKE_JOBS_NUMBER} p4api p4api.tar
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/include/perforce

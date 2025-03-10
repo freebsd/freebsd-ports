@@ -1,6 +1,6 @@
 PORTNAME=	marker
 PORTVERSION=	2023.05.02
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	editors
 
 MAINTAINER=	tagattie@FreeBSD.org
@@ -12,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 BUILD_DEPENDS=	itstool:textproc/itstool
 LIB_DEPENDS=	libgtkspell3-3.so:textproc/gtkspell3 \
-		libwebkit2gtk-4.0.so:www/webkit2-gtk3
+		libwebkit2gtk-4.0.so:www/webkit2-gtk@40
 RUN_DEPENDS=	pandoc:textproc/hs-pandoc
 
 USES=		desktop-file-utils gettext-tools gnome meson pkgconfig

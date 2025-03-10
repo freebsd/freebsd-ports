@@ -1,7 +1,7 @@
 PORTNAME=	onionshare-cli
 PORTVERSION=	2.6
 DISTNAME=	onionshare_cli-${PORTVERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www security python
 MASTER_SITES=   PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -33,5 +33,7 @@ RUN_DEPENDS=	meek-client:security/meek \
 
 USES=		cpe python
 USE_PYTHON=	autoplist distutils
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>

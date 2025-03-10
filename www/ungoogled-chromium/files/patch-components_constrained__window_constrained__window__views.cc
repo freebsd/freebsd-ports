@@ -1,11 +1,11 @@
---- components/constrained_window/constrained_window_views.cc.orig	2024-07-31 14:19:23 UTC
+--- components/constrained_window/constrained_window_views.cc.orig	2025-02-20 09:59:21 UTC
 +++ components/constrained_window/constrained_window_views.cc
-@@ -360,7 +360,7 @@ bool SupportsGlobalScreenCoordinates() {
+@@ -371,7 +371,7 @@ bool SupportsGlobalScreenCoordinates() {
  }
  
  bool PlatformClipsChildrenToViewport() {
--#if BUILDFLAG(IS_CHROMEOS_LACROS) || BUILDFLAG(IS_LINUX)
-+#if BUILDFLAG(IS_CHROMEOS_LACROS) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+-#if BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
    return true;
  #else
    return false;

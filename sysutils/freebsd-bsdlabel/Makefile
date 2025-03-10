@@ -24,4 +24,12 @@ MAKE_ENV+=		MAKESYSPATH=/usr/src/share/mk \
 
 WRKSRC_SUBDIR=		bsdlabel
 
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == "amd64" || ${ARCH} == "i386"
+PLIST_SUB=	DISKLABEL=""
+.else
+PLIST_SUB=	DISKLABEL="@comment "
+.endif
+
 .include <bsd.port.mk>

@@ -1,6 +1,6 @@
 PORTNAME=	llvm
-DISTVERSION=	19.1.0-rc2
-PORTREVISION=	0
+DISTVERSION=	19.1.7
+PORTREVISION=	1
 CATEGORIES=	devel lang
 MASTER_SITES=	https://github.com/llvm/llvm-project/releases/download/llvmorg-${DISTVERSION}/
 #MASTER_SITES=	https://github.com/llvm/llvm-project/releases/download/llvmorg-${DISTVERSION:S/rc/-rc/}/
@@ -12,14 +12,7 @@ MAINTAINER=	brooks@FreeBSD.org
 COMMENT=	LLVM and Clang
 WWW=		https://llvm.org/
 
-LICENSE_DIR=	${WRKSRC}/llvm
 .include "${.CURDIR}/../llvm-devel/Makefile.LICENSE"
-LICENSE+=	LLVM2
-LICENSE_FILE_BSD3CLAUSE=	${WRKSRC}/third-party/unittest/googletest/LICENSE.TXT
-LICENSE_FILE_LLVM2=	${LICENSE_DIR}/LICENSE.TXT
-LICENSE_NAME_LLVM2=	Apache License 2.0 with LLVM Exceptions
-LICENSE_PERMS_LLVM2=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
-LICENSE:=	${LICENSE:NARM}
 
 LIB_DEPENDS=	libzstd.so:archivers/zstd
 
@@ -65,6 +58,7 @@ SHEBANG_FILES=	\
 
 SUB_FILES=	llvm-wrapper.sh
 SUB_LIST=	LLVM_PREFIX="${LLVM_PREFIX}" LLVM_SUFFIX="${LLVM_SUFFIX}"
+OPTIONS_SUB=	yes
 
 CMAKE_INSTALL_PREFIX=	${LLVM_PREFIX}
 CMAKE_SOURCE_PATH=	${WRKSRC}/llvm
@@ -85,33 +79,47 @@ CMAKE_ARGS+=	-DLLVM_ENABLE_TERMINFO=OFF
 CMAKE_ARGS+=	-DLLVM_VERSION_SUFFIX=
 
 OPTIONS_DEFINE=	BE_AMDGPU BE_WASM CLANG COMPILER_RT DOCS LLD STATIC_LIBS
-OPTIONS_DEFAULT=	BE_AMDGPU BE_WASM CLANG LLD
 OPTIONS_SINGLE=		BACKENDS
 OPTIONS_SINGLE_BACKENDS=BE_FREEBSD BE_NATIVE BE_STANDARD
+
+OPTIONS_DEFAULT=	CLANG LLD
+
+# BE_NATIVE for 32-bit
+OPTIONS_DEFAULT_armv6=		BE_NATIVE
+OPTIONS_DEFAULT_armv7=		BE_NATIVE
+OPTIONS_DEFAULT_i386=		BE_NATIVE BE_AMDGPU BE_WASM
+OPTIONS_DEFAULT_powerpc=	BE_NATIVE
+OPTIONS_DEFAULT_powerpcspe=	BE_NATIVE
+# FLAVOR-dependent BE for 64-bit
+_BE_default=	BE_STANDARD BE_AMDGPU BE_WASM
+_BE_lite=	BE_FREEBSD BE_AMDGPU BE_WASM
+OPTIONS_DEFAULT_aarch64=	${_BE_${FLAVOR}}
+OPTIONS_DEFAULT_amd64=		${_BE_${FLAVOR}}
+OPTIONS_DEFAULT_powerpc64=	${_BE_${FLAVOR}}
+OPTIONS_DEFAULT_powerpc64le=	${_BE_${FLAVOR}}
+
 OPTIONS_EXCLUDE_armv6=	COMPILER_RT
 OPTIONS_EXCLUDE_armv7=	COMPILER_RT
-OPTIONS_SUB=	yes
 
-.if ${FLAVOR:Mlite}
-OPTIONS_DEFAULT+=	BE_FREEBSD
-.else
+.if ${FLAVOR:Mdefault}
 OPTIONS_DEFINE+=	EXTRAS FLANG LIT LLDB MLIR OPENMP PYCLANG POLLY
 OPTIONS_DEFINE_amd64=	GOLD
 OPTIONS_DEFINE_powerpc=	GOLD
 OPTIONS_DEFINE_powerpc64=	GOLD
 OPTIONS_DEFINE_powerpc64le=	GOLD
 
-OPTIONS_DEFAULT+=	BE_STANDARD COMPILER_RT EXTRAS LIT LLDB MLIR OPENMP \
+OPTIONS_DEFAULT+=	COMPILER_RT EXTRAS LIT LLDB MLIR OPENMP \
 			PYCLANG POLLY STATIC_LIBS
-OPTIONS_DEFAULT_amd64=	GOLD
-OPTIONS_DEFAULT_powerpc=	GOLD
-OPTIONS_DEFAULT_powerpc64=	GOLD
-OPTIONS_DEFAULT_powerpc64le=	GOLD
+OPTIONS_DEFAULT_amd64+=	GOLD
+OPTIONS_DEFAULT_powerpc+=	GOLD
+OPTIONS_DEFAULT_powerpc64+=	GOLD
+OPTIONS_DEFAULT_powerpc64le+=	GOLD
 
-OPTIONS_EXCLUDE_armv6+=	FLANG OPENMP
-OPTIONS_EXCLUDE_armv7+=	FLANG OPENMP
-OPTIONS_EXCLUDE_i386=	FLANG OPENMP
-OPTIONS_EXCLUDE_powerpc=	FLANG OPENMP
+_OPTIONS_EXCLUDE_ptr32=	FLANG MLIR OPENMP POLLY
+OPTIONS_EXCLUDE_armv6+=	${_OPTIONS_EXCLUDE_ptr32}
+OPTIONS_EXCLUDE_armv7+=	${_OPTIONS_EXCLUDE_ptr32}
+OPTIONS_EXCLUDE_i386=	${_OPTIONS_EXCLUDE_ptr32}
+OPTIONS_EXCLUDE_powerpc=	${_OPTIONS_EXCLUDE_ptr32}
 OPTIONS_EXCLUDE_riscv64=	LLDB
 .endif
 
@@ -154,7 +162,6 @@ DOCS_BUILD_DEPENDS= \
 	${PYTHON_PKGNAMEPREFIX}myst-parser>0:textproc/py-myst-parser@${PY_FLAVOR} \
 	${PYTHON_PKGNAMEPREFIX}sphinx-markdown-tables>=0:textproc/py-sphinx-markdown-tables@${PY_FLAVOR} \
 	${PYTHON_PKGNAMEPREFIX}recommonmark>=0.0.20180530:textproc/py-recommonmark@${PY_FLAVOR}
-DOCS_CONFLICTS_BUILD=	cmark
 DOCS_PORTDOCS=		llvm
 DOCS_CMAKE_ON= \
 	-DLLVM_ENABLE_SPHINX=ON \
@@ -279,7 +286,7 @@ CONFIGURE_TARGET:=${ARCH:C/amd64/x86_64/:C/arm64/aarch64/}-portbld-${OPSYS:tl}${
 LLVM_ENABLE_PROJECTS+=	clang
 COMMANDS+=	${CLANG_COMMANDS}
 MAN1SRCS+=	${CLANG_MAN1SRCS}
-CLANG_PATTERN=	(amdgpu-arch|c-index-test|clang|diagtool|hmaptool|intercept-|libear|libscanbuild|nvptx-arch|analyze-|scan-|Reporter.py|ScanView.py|scanview.css|sorttable.js|startfile.py|-analyzer|AnalyzerPlugin.so)
+CLANG_PATTERN=	(amdgpu-arch|c-index-test|clang|diagtool|hmaptool|intercept-|libear|libscanbuild|nvptx-arch|analyze-|scan-|Reporter.py|ScanView.py|scanview.css|sorttable.js|startfile.py|c..-analyzer|AnalyzerPlugin.so)
 USES+=		gnome
 .endif
 
@@ -324,6 +331,7 @@ COMMANDS+=	${MLIR_COMMANDS}
 
 .if ${PORT_OPTIONS:MOPENMP}
 LLVM_ENABLE_PROJECTS+=	openmp
+USE_LDCONFIG+=	${LLVM_PREFIX}/lib/${CONFIGURE_TARGET}
 MAN1SRCS+=	${OPENMP_MAN1SRCS}
 COMMANDS+=	${OPENMP_COMMANDS}
 .endif
@@ -376,12 +384,14 @@ NATIVE_BACKENDS+=	WebAssembly
 STANDARD_BACKENDS=	${_FREEBSD_BACKENDS} AMDGPU AVR BPF Hexagon Lanai \
 			LoongArch MSP430 NVPTX SystemZ VE WebAssembly XCore
 _BE_LIBS_COMMON=	CodeGen Desc Info
-_BE_INCS_AArch64=	arm_bf16.h
 _BE_LIBS_AArch64=	AsmParser Disassembler Utils
 _BE_LIBS_BACKWARDS_AArch64=Exegesis
 _BE_LIBS_AMDGPU=	AsmParser Disassembler TargetMCA Utils
-_BE_INCS_ARM=		arm_cde.h arm_fp16.h arm_mve.h arm_neon.h arm_sme.h \
-			arm_sve.h arm_vector_types.h
+# XXX: some of these are for both ARM and AArch64, but we don't provide
+# a mechanism to build AArch64 without ARM so we avoid duplication by
+# listing them here.
+_BE_INCS_ARM=		arm_bf16.h arm_cde.h arm_fp16.h arm_mve.h arm_neon.h \
+			arm_sme.h arm_sve.h arm_vector_types.h
 _BE_LIBS_ARM=		AsmParser Disassembler Utils
 _BE_LIBS_AVR=		AsmParser Disassembler
 _BE_LIBS_BPF=		AsmParser Disassembler

@@ -1,5 +1,6 @@
 PORTNAME=	cpplint
-PORTVERSION=	1.6.1
+PORTVERSION=	2.0.0
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	thierry@FreeBSD.org
@@ -8,21 +9,16 @@ WWW=		https://github.com/cpplint/cpplint
 
 LICENSE=	BSD3CLAUSE
 
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR}	\
-		${PYTHON_PKGNAMEPREFIX}zipp>0:devel/py-zipp@${PY_FLAVOR}	\
-		${PYTHON_PKGNAMEPREFIX}pytest-cov>0:devel/py-pytest-cov@${PY_FLAVOR}	\
-		${PYTHON_PKGNAMEPREFIX}pyparsing>0:devel/py-pyparsing@${PY_FLAVOR}	\
-		${PYTHON_PKGNAMEPREFIX}configparser>0:devel/py-configparser@${PY_FLAVOR}	\
-		${PYTHON_PKGNAMEPREFIX}testfixtures>0:devel/py-testfixtures@${PY_FLAVOR}
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest-cov>0:devel/py-pytest-cov@${PY_FLAVOR}	\
+		${PYTHON_PKGNAMEPREFIX}testfixtures>0:devel/py-testfixtures@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}parameterized>0:devel/py-parameterized@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pytest-timeout>0:devel/py-pytest-timeout@${PY_FLAVOR}
 
 USE_GITHUB=	yes
 
-USES=		python
+USES=		pytest python
 USE_PYTHON=	distutils noflavors
 
 NO_ARCH=	yes
-
-do-test:
-	(cd ${WRKSRC} && py.test)
 
 .include <bsd.port.mk>

@@ -9,6 +9,8 @@ lib/cmake/KF6Declarative/KF6DeclarativeTargets.cmake
 lib/libKF6CalendarEvents.so
 lib/libKF6CalendarEvents.so.%%KDE_FRAMEWORKS_VERSION%%
 lib/libKF6CalendarEvents.so.6
+lib/libkquickcontrolsprivate.so.%%KDE_FRAMEWORKS_VERSION%%
+lib/libkquickcontrolsprivate.so.0
 %%QT_QMLDIR%%/org/kde/draganddrop/draganddropplugin.qmltypes
 %%QT_QMLDIR%%/org/kde/draganddrop/kde-qmlmodule.version
 %%QT_QMLDIR%%/org/kde/draganddrop/libdraganddropplugin.so
@@ -21,11 +23,16 @@ lib/libKF6CalendarEvents.so.6
 %%QT_QMLDIR%%/org/kde/graphicaleffects/qmldir
 %%QT_QMLDIR%%/org/kde/kquickcontrols/ColorButton.qml
 %%QT_QMLDIR%%/org/kde/kquickcontrols/KeySequenceItem.qml
+%%QT_QMLDIR%%/org/kde/kquickcontrols/kde-qmlmodule.version
+%%QT_QMLDIR%%/org/kde/kquickcontrols/kquickcontrols.qmltypes
+%%QT_QMLDIR%%/org/kde/kquickcontrols/libkquickcontrols.so
 %%QT_QMLDIR%%/org/kde/kquickcontrols/qmldir
 %%QT_QMLDIR%%/org/kde/kquickcontrolsaddons/kde-qmlmodule.version
 %%QT_QMLDIR%%/org/kde/kquickcontrolsaddons/kquickcontrolsaddonsplugin.qmltypes
 %%QT_QMLDIR%%/org/kde/kquickcontrolsaddons/libkquickcontrolsaddonsplugin.so
 %%QT_QMLDIR%%/org/kde/kquickcontrolsaddons/qmldir
+%%QT_QMLDIR%%/org/kde/private/kquickcontrols/kde-qmlmodule.version
+%%QT_QMLDIR%%/org/kde/private/kquickcontrols/kquickcontrolsprivate.qmltypes
 %%QT_QMLDIR%%/org/kde/private/kquickcontrols/libkquickcontrolsprivateplugin.so
 %%QT_QMLDIR%%/org/kde/private/kquickcontrols/qmldir
 share/locale/af/LC_MESSAGES/kdeclarative6.mo

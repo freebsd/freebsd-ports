@@ -27,5 +27,6 @@ share/locale/fr/LC_MESSAGES/upower.mo
 share/locale/it/LC_MESSAGES/upower.mo
 share/locale/pl/LC_MESSAGES/upower.mo
 share/locale/sv/LC_MESSAGES/upower.mo
+share/polkit-1/actions/org.freedesktop.upower.policy
 @dir /var/lib/upower
 @dir /var/lib/

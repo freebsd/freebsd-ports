@@ -1,0 +1,12 @@
+%%OCAML_SITELIBDIR%%/ppx_blob/META
+%%OCAML_SITELIBDIR%%/ppx_blob/dune-package
+%%OCAML_SITELIBDIR%%/ppx_blob/opam
+%%OCAML_SITELIBDIR%%/ppx_blob/ppx.exe
+%%OCAML_SITELIBDIR%%/ppx_blob/ppx_blob.a
+%%OCAML_SITELIBDIR%%/ppx_blob/ppx_blob.cma
+%%OCAML_SITELIBDIR%%/ppx_blob/ppx_blob.cmi
+%%OCAML_SITELIBDIR%%/ppx_blob/ppx_blob.cmt
+%%OCAML_SITELIBDIR%%/ppx_blob/ppx_blob.cmx
+%%OCAML_SITELIBDIR%%/ppx_blob/ppx_blob.cmxa
+%%OCAML_SITELIBDIR%%/ppx_blob/ppx_blob.cmxs
+%%OCAML_SITELIBDIR%%/ppx_blob/ppx_blob.ml

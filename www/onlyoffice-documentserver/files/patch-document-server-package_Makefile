@@ -8,7 +8,7 @@
  UNAME_M ?= $(shell uname -m)
  ifeq ($(UNAME_M),x86_64)
  	RPM_ARCH := x86_64
-@@ -143,6 +144,22 @@ else
+@@ -142,6 +143,22 @@ else
  		DS_EXAMLE := /var/www/$(DS_PREFIX)-example
  		DEV_NULL := /dev/null
  	endif
@@ -31,7 +31,7 @@
  	ifeq ($(UNAME_S),Darwin)
  		PLATFORM := mac
  		SHARED_EXT := .dylib
-@@ -160,6 +177,12 @@ else
+@@ -159,6 +176,12 @@ else
  	ifeq ($(UNAME_M),x86_64)
  		ARCHITECTURE := 64
  	endif
@@ -93,15 +93,15 @@
 -		&& cp -f -t $(DOCUMENTSERVER) $(LICENSE_FILE) \
 -		|| cp -f -t $(DOCUMENTSERVER) LICENSE.txt
 +		&& cp -f $(LICENSE_FILE) $(DOCUMENTSERVER) \
-+		|| cp -f LICENSE.txt $(DOCUMENTSERVER) 
++		|| cp -f LICENSE.txt $(DOCUMENTSERVER)
  
  	chmod u+x $(DOCUMENTSERVER)/server/FileConverter/bin/x2t$(EXEC_EXT)
  	#chmod u+x $(DOCUMENTSERVER)/server/FileConverter/bin/docbuilder$(EXEC_EXT)
  	[ -f $(HTMLFILEINTERNAL)$(EXEC_EXT) ] && chmod u+x $(HTMLFILEINTERNAL)$(EXEC_EXT) || true
  	chmod u+x $(DOCUMENTSERVER)/server/tools/allfontsgen$(EXEC_EXT)
  
--	sed "s|\(_dc=\)0|\1"$(PACKAGE_VERSION)"|"  -i $(DOCUMENTSERVER)/web-apps/apps/api/documents/api.js
-+	sed -i '' "s|\(_dc=\)0|\1"$(PACKAGE_VERSION)"|"  $(DOCUMENTSERVER)/web-apps/apps/api/documents/api.js
+-	sed "s|\(_dc=\)0|\1"$(PACKAGE_VERSION)"|"  -i $(DOCUMENTSERVER)/web-apps/apps/api/documents/api.js.tpl
++	sed -i '' "s|\(_dc=\)0|\1"$(PACKAGE_VERSION)"|"  $(DOCUMENTSERVER)/web-apps/apps/api/documents/api.js.tpl
  
  ifeq ($(PRODUCT_NAME_LOW), documentserver)
 -	sed 's|\("packageType": \)[0-9]\+\(.*\)|\10\2|' -i $(DOCUMENTSERVER_CONFIG)/*.json
@@ -156,5 +156,5 @@
 +
 +freebsd: $(COMMON_DEPS) $(LINUX_DEPS) documentserver
  
- $(EXE): $(COMMON_DEPS) documentserver documentserver-example $(NGINX) $(PSQL) $(NSSM)
+ $(EXE): $(COMMON_DEPS) documentserver documentserver-example $(NGINX) $(PSQL) $(WINSW)
  

@@ -11,7 +11,6 @@ WWW=		https://smalltalk.gnu.org/
 LICENSE=	GPLv2+
 
 BROKEN_powerpc64=	Fails to build: gst-package: did not understand #~
-BROKEN_riscv64=		Fails to link: undefined reference to sbrk
 
 BUILD_DEPENDS=	zip:archivers/zip \
 		gawk:lang/gawk
@@ -22,7 +21,7 @@ LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 		libltdl.so:devel/libltdl
 
 USES=		gl gmake gnome iconv libtool makeinfo pathfix pkgconfig \
-		readline shebangfix sqlite tar:xz xorg
+		readline sbrk shebangfix sqlite tar:xz xorg
 USE_GL=		gl glu glut
 USE_GNOME=	cairo
 USE_XORG=	ice sm x11 xi

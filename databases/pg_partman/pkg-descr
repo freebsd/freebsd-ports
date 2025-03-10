@@ -1,8 +1,16 @@
-pg_partman is an extension to create and manage both time-based and
-serial-based table partition sets. Sub-partitoning is also supported.
-Child table & trigger function creation is all managed by the extension
-itself. Tables with existing data can also have their data partitioned in
-easily managed smaller batches. Optional retention policy can automatically
-drop partitions no longer needed. A background worker (BGW) process is
-included to automatically run partition maintenance without the need of an
-external scheduler (cron, etc) in most cases.
+pg_partman is an extension to create and manage both time-based and number-based
+table partition sets. As of version 5.0.1, only built-in, declarative
+partitioning is supported and the older trigger-based methods have been
+deprecated.
+
+The declarative partitioning built into PostgreSQL provides the commands to
+create a partitioned table and its children. pg_partman uses the built-in
+declarative features that PostgreSQL provides and builds upon those with
+additional features and enhancements to make managing partitions easier. One key
+way that pg_partman extends partitioning in Postgres is by providing a means to
+automate the child table maintenance over time (Ex. adding new children,
+dropping old ones based on a retention policy). pg_partman also has features to
+turn an existing table into a partitioned table or vice versa.
+
+A background worker (BGW) process is included to automatically run partition
+maintenance without the need of an external scheduler (cron, etc) in most cases.

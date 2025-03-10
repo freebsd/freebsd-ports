@@ -1,0 +1,6 @@
+Signal-Sqlcipher-Extension bundles:
+  - Signal-FTS5-Extension
+  - Rust-based cryptography provider
+
+into a single .a (.lib on Windows) file that could be linked into relevant
+sqlcipher builds.

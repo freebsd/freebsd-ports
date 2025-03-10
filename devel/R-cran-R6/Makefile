@@ -1,6 +1,5 @@
 PORTNAME=	R6
-PORTVERSION=	2.5.1
-PORTREVISION=	1
+PORTVERSION=	2.6.1
 CATEGORIES=	devel
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
@@ -10,6 +9,6 @@ WWW=		https://cran.r-project.org/web/packages/R6/
 
 LICENSE=	MIT
 
-USES=	cran:auto-plist
+USES=		cran:auto-plist
 
 .include <bsd.port.mk>

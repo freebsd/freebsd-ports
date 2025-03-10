@@ -1,0 +1,13 @@
+--- CMakeLists.txt.orig	2024-04-25 18:54:30 UTC
++++ CMakeLists.txt
+@@ -570,10 +570,6 @@ add_third_party_dependencies_per_platform()
+ # Handling Third party dependencies
+ add_third_party_dependencies_per_platform()
+ 
+-if (UNIX)
+-    addIndependentLibraryWithRPATH(tty ${CMAKE_CURRENT_SOURCE_DIR}/tty/tty.c)
+-endif()
+-
+ # Signing Setup
+ include(cmake/sign.cmake)
+ 

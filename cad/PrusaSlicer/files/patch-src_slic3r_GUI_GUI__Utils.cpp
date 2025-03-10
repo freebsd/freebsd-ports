@@ -1,4 +1,4 @@
---- src/slic3r/GUI/GUI_Utils.cpp.orig	2023-12-12 14:21:21 UTC
+--- src/slic3r/GUI/GUI_Utils.cpp.orig	2024-12-20 11:54:34 UTC
 +++ src/slic3r/GUI/GUI_Utils.cpp
 @@ -53,7 +53,7 @@ void on_window_geometry(wxTopLevelWindow *tlw, std::fu
      // cf. https://groups.google.com/forum/#!topic/wx-users/c7ntMt6piRI

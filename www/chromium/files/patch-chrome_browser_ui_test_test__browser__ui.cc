@@ -1,20 +1,20 @@
---- chrome/browser/ui/test/test_browser_ui.cc.orig	2024-06-17 12:56:06 UTC
+--- chrome/browser/ui/test/test_browser_ui.cc.orig	2025-03-05 08:14:56 UTC
 +++ chrome/browser/ui/test/test_browser_ui.cc
-@@ -22,7 +22,7 @@
+@@ -19,7 +19,7 @@
+ #include "ui/views/widget/widget.h"
+ #endif
  
- // TODO(crbug.com/40118868): Revisit the macro expression once build flag switch
- // of lacros-chrome is complete.
--#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || \
-+#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_BSD) || \
-     (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS))
+-#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
  #include "content/public/common/content_switches.h"
  #include "ui/base/test/skia_gold_matching_algorithm.h"
-@@ -39,7 +39,7 @@
+ #include "ui/compositor/compositor.h"
+@@ -33,7 +33,7 @@
+ #endif
+ 
  // TODO(crbug.com/40625383) support Mac for pixel tests.
- // TODO(crbug.com/40118868): Revisit the macro expression once build flag switch
- // of lacros-chrome is complete.
--#if BUILDFLAG(IS_WIN) || (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS))
-+#if BUILDFLAG(IS_WIN) || (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS) || BUILDFLAG(IS_BSD))
+-#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
  #define SUPPORTS_PIXEL_TEST
  #endif
  

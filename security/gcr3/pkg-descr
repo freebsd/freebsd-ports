@@ -1,0 +1,3 @@
+Gcr is a library for bits of crypto and security UI, parsing etc. It used
+to be part of gnome-keyring. It also provides a viewer and importer for
+certificates and private keys.

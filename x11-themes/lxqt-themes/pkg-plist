@@ -20,10 +20,15 @@ share/icons/hicolor/scalable/places/start-here-lxqt.svg
 %%LXQT_SHAREDIR%%/graphics/spacer-light-line.svg
 %%LXQT_SHAREDIR%%/palettes/Ambiance
 %%LXQT_SHAREDIR%%/palettes/Arch-Colors
+%%LXQT_SHAREDIR%%/palettes/Clearlooks
 %%LXQT_SHAREDIR%%/palettes/Dark
+%%LXQT_SHAREDIR%%/palettes/Frost
+%%LXQT_SHAREDIR%%/palettes/KDE-Plasma
+%%LXQT_SHAREDIR%%/palettes/Kvantum
 %%LXQT_SHAREDIR%%/palettes/Leech
+%%LXQT_SHAREDIR%%/palettes/Light
+%%LXQT_SHAREDIR%%/palettes/Silver
 %%LXQT_SHAREDIR%%/palettes/Silver-bright
-%%LXQT_SHAREDIR%%/palettes/Silver-dark
 %%LXQT_SHAREDIR%%/palettes/Valendas
 %%LXQT_SHAREDIR%%/themes/Arch-Colors/arrow-left-selected.svg
 %%LXQT_SHAREDIR%%/themes/Arch-Colors/arrow-left.svg
@@ -33,6 +38,7 @@ share/icons/hicolor/scalable/places/start-here-lxqt.svg
 %%LXQT_SHAREDIR%%/themes/Arch-Colors/calendar-popup/right-arrow.svg
 %%LXQT_SHAREDIR%%/themes/Arch-Colors/checked.svg
 %%LXQT_SHAREDIR%%/themes/Arch-Colors/color-picker.svg
+%%LXQT_SHAREDIR%%/themes/Arch-Colors/lxqt-config.qss
 %%LXQT_SHAREDIR%%/themes/Arch-Colors/lxqt-notificationd.qss
 %%LXQT_SHAREDIR%%/themes/Arch-Colors/lxqt-panel.qss
 %%LXQT_SHAREDIR%%/themes/Arch-Colors/lxqt-runner.qss
@@ -54,6 +60,7 @@ share/icons/hicolor/scalable/places/start-here-lxqt.svg
 %%LXQT_SHAREDIR%%/themes/Clearlooks/calendar-popup/right-arrow.svg
 %%LXQT_SHAREDIR%%/themes/Clearlooks/checked-selected.svg
 %%LXQT_SHAREDIR%%/themes/Clearlooks/checked.svg
+%%LXQT_SHAREDIR%%/themes/Clearlooks/lxqt-config.qss
 %%LXQT_SHAREDIR%%/themes/Clearlooks/lxqt-notificationd.qss
 %%LXQT_SHAREDIR%%/themes/Clearlooks/lxqt-notificationd/cancel.svg
 %%LXQT_SHAREDIR%%/themes/Clearlooks/lxqt-panel.qss
@@ -69,6 +76,7 @@ share/icons/hicolor/scalable/places/start-here-lxqt.svg
 %%LXQT_SHAREDIR%%/themes/Clearlooks/wallpaper.cfg
 %%LXQT_SHAREDIR%%/themes/KDE-Plasma/checked.svg
 %%LXQT_SHAREDIR%%/themes/KDE-Plasma/left-arrow.svg
+%%LXQT_SHAREDIR%%/themes/KDE-Plasma/lxqt-config.qss
 %%LXQT_SHAREDIR%%/themes/KDE-Plasma/lxqt-notificationd.qss
 %%LXQT_SHAREDIR%%/themes/KDE-Plasma/lxqt-notificationd/window-close.svg
 %%LXQT_SHAREDIR%%/themes/KDE-Plasma/lxqt-panel.qss
@@ -89,6 +97,7 @@ share/icons/hicolor/scalable/places/start-here-lxqt.svg
 %%LXQT_SHAREDIR%%/themes/Leech/calendar-popup/left-arrow.svg
 %%LXQT_SHAREDIR%%/themes/Leech/calendar-popup/right-arrow.svg
 %%LXQT_SHAREDIR%%/themes/Leech/checked.svg
+%%LXQT_SHAREDIR%%/themes/Leech/lxqt-config.qss
 %%LXQT_SHAREDIR%%/themes/Leech/lxqt-notificationd.qss
 %%LXQT_SHAREDIR%%/themes/Leech/lxqt-notificationd/cancel.svg
 %%LXQT_SHAREDIR%%/themes/Leech/lxqt-panel.qss
@@ -107,6 +116,7 @@ share/icons/hicolor/scalable/places/start-here-lxqt.svg
 %%LXQT_SHAREDIR%%/themes/Valendas/arrow-right.svg
 %%LXQT_SHAREDIR%%/themes/Valendas/calendar-popup/left-arrow.svg
 %%LXQT_SHAREDIR%%/themes/Valendas/calendar-popup/right-arrow.svg
+%%LXQT_SHAREDIR%%/themes/Valendas/lxqt-config.qss
 %%LXQT_SHAREDIR%%/themes/Valendas/lxqt-notificationd.qss
 %%LXQT_SHAREDIR%%/themes/Valendas/lxqt-panel.qss
 %%LXQT_SHAREDIR%%/themes/Valendas/lxqt-runner/close.svg
@@ -120,6 +130,7 @@ share/icons/hicolor/scalable/places/start-here-lxqt.svg
 %%LXQT_SHAREDIR%%/themes/ambiance/arrow-left.svg
 %%LXQT_SHAREDIR%%/themes/ambiance/arrow-right.svg
 %%LXQT_SHAREDIR%%/themes/ambiance/checked.svg
+%%LXQT_SHAREDIR%%/themes/ambiance/lxqt-config.qss
 %%LXQT_SHAREDIR%%/themes/ambiance/lxqt-notificationd.qss
 %%LXQT_SHAREDIR%%/themes/ambiance/lxqt-notificationd/cancel.svg
 %%LXQT_SHAREDIR%%/themes/ambiance/lxqt-panel.qss
@@ -137,6 +148,7 @@ share/icons/hicolor/scalable/places/start-here-lxqt.svg
 %%LXQT_SHAREDIR%%/themes/dark/calendar-popup/left-arrow.svg
 %%LXQT_SHAREDIR%%/themes/dark/calendar-popup/right-arrow.svg
 %%LXQT_SHAREDIR%%/themes/dark/checked.svg
+%%LXQT_SHAREDIR%%/themes/dark/lxqt-config.qss
 %%LXQT_SHAREDIR%%/themes/dark/lxqt-notificationd.qss
 %%LXQT_SHAREDIR%%/themes/dark/lxqt-notificationd/cancel.svg
 %%LXQT_SHAREDIR%%/themes/dark/lxqt-panel.qss
@@ -154,6 +166,7 @@ share/icons/hicolor/scalable/places/start-here-lxqt.svg
 %%LXQT_SHAREDIR%%/themes/frost/calendar-popup/left-arrow.svg
 %%LXQT_SHAREDIR%%/themes/frost/calendar-popup/right-arrow.svg
 %%LXQT_SHAREDIR%%/themes/frost/debug.png
+%%LXQT_SHAREDIR%%/themes/frost/lxqt-config.qss
 %%LXQT_SHAREDIR%%/themes/frost/lxqt-notificationd.qss
 %%LXQT_SHAREDIR%%/themes/frost/lxqt-panel.qss
 %%LXQT_SHAREDIR%%/themes/frost/lxqt-runner.qss
@@ -191,6 +204,7 @@ share/icons/hicolor/scalable/places/start-here-lxqt.svg
 %%LXQT_SHAREDIR%%/themes/kvantum/spacer-plugin/spacer-dots.svg
 %%LXQT_SHAREDIR%%/themes/kvantum/spacer-plugin/spacer-line.svg
 %%LXQT_SHAREDIR%%/themes/kvantum/wallpaper.cfg
+%%LXQT_SHAREDIR%%/themes/light/lxqt-config.qss
 %%LXQT_SHAREDIR%%/themes/light/lxqt-lightdm-greeter/dropdown.svg
 %%LXQT_SHAREDIR%%/themes/light/lxqt-lightdm-greeter/leaveIcon.svg
 %%LXQT_SHAREDIR%%/themes/light/lxqt-notificationd.qss
@@ -213,6 +227,7 @@ share/icons/hicolor/scalable/places/start-here-lxqt.svg
 %%LXQT_SHAREDIR%%/themes/silver/calendar-popup/left-arrow.svg
 %%LXQT_SHAREDIR%%/themes/silver/calendar-popup/right-arrow.svg
 %%LXQT_SHAREDIR%%/themes/silver/checked.svg
+%%LXQT_SHAREDIR%%/themes/silver/lxqt-config.qss
 %%LXQT_SHAREDIR%%/themes/silver/lxqt-notificationd.qss
 %%LXQT_SHAREDIR%%/themes/silver/lxqt-panel.qss
 %%LXQT_SHAREDIR%%/themes/silver/lxqt-runner.qss

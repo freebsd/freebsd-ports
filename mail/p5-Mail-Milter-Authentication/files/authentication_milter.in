@@ -18,6 +18,8 @@
 # authentication_milter_flags="<set as needed>"
 # authentication_milter_prefix="%%ETCDIR%%"
 # authentication_milter_foreground_enable="<default 'NO'>"
+# authentication_milter_directory_owner="<default '%%DEFAULT_USER%%'>"
+# authentication_milter_directory_group="<default '%%DEFAULT_GROUP%%'>"
 #
 
 . /etc/rc.subr
@@ -31,6 +33,8 @@ load_rc_config $name
 : ${authentication_milter_enable:=NO}
 : ${authentication_milter_prefix:=%%ETCDIR%%}
 : ${authentication_milter_foreground_enable:=NO}
+: ${authentication_milter_directory_owner:=%%DEFAULT_USER%%}
+: ${authentication_milter_directory_group:=%%DEFAULT_GROUP%%}
 
 pidfile="%%RUNDIR%%/${name}.pid"
 command="%%PREFIX%%/bin/authentication_milter"
@@ -76,8 +80,10 @@ authentication_milter_precmd_start () {
 
 	piddir=$(dirname "$pidfile")
 	install -d %%VARLIBDIRBASE%%
-	install -d -m 0755 -o "%%DEFAULT_USER%%" -g "%%DEFAULT_GROUP%%" "$piddir"
-	install -d -m 0750 -o "%%DEFAULT_USER%%" -g "%%DEFAULT_GROUP%%" \
+	install -d -m 0755 -o "${authentication_milter_directory_owner}" \
+	    -g "${authentication_milter_directory_group}" "$piddir"
+	install -d -m 0750 -o "${authentication_milter_directory_owner}" \
+	    -g "${authentication_milter_directory_group}" \
 	    %%RUNDIR%% %%CACHEDIR%% %%SPOOLDIR%% %%VARLIBDIR%%
 
 	authentication_milter_precmd

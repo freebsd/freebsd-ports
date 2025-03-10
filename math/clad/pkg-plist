@@ -18,6 +18,7 @@ include/clad/Differentiator/EstimationModel.h
 include/clad/Differentiator/ExternalRMVSource.h
 include/clad/Differentiator/FunctionTraits.h
 include/clad/Differentiator/HessianModeVisitor.h
+include/clad/Differentiator/KokkosBuiltins.h
 include/clad/Differentiator/Matrix.h
 include/clad/Differentiator/MultiplexExternalRMVSource.h
 include/clad/Differentiator/NumericalDiff.h

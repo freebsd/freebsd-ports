@@ -1,5 +1,5 @@
 PORTNAME=	bytecode
-PORTVERSION=	0.15.1
+PORTVERSION=	0.16.1
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI \
 		https://github.com/MatthieuDartiailh/bytecode/releases/download/${PORTVERSION}/

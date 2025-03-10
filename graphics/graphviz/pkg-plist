@@ -8,6 +8,7 @@ bin/dijkstra
 bin/dot
 bin/dot2gxl
 bin/dot_builtins
+bin/dot_sandbox
 bin/edgepaint
 bin/fdp
 bin/gc
@@ -16,6 +17,7 @@ bin/graphml2gv
 bin/gv2gml
 bin/gv2gxl
 bin/gvcolor
+%%GVEDIT%%bin/gvedit
 bin/gvgen
 bin/gvmap
 bin/gvmap.sh
@@ -45,8 +47,6 @@ include/graphviz/dthdr.h
 include/graphviz/geom.h
 include/graphviz/globals.h
 include/graphviz/graphviz_version.h
-include/graphviz/gv.cpp
-include/graphviz/gv.i
 include/graphviz/gvc.h
 include/graphviz/gvcext.h
 include/graphviz/gvcint.h
@@ -102,10 +102,6 @@ lib/graphviz/libgvplugin_gd.so.6.0.0
 %%GHOSTSCRIPT%%lib/graphviz/libgvplugin_gs.so
 %%GHOSTSCRIPT%%lib/graphviz/libgvplugin_gs.so.6
 %%GHOSTSCRIPT%%lib/graphviz/libgvplugin_gs.so.6.0.0
-%%GTK2%%lib/graphviz/libgvplugin_gtk.la
-%%GTK2%%lib/graphviz/libgvplugin_gtk.so
-%%GTK2%%lib/graphviz/libgvplugin_gtk.so.6
-%%GTK2%%lib/graphviz/libgvplugin_gtk.so.6.0.0
 lib/graphviz/libgvplugin_kitty.la
 lib/graphviz/libgvplugin_kitty.so
 lib/graphviz/libgvplugin_kitty.so.6
@@ -141,7 +137,6 @@ lib/graphviz/libgvplugin_webp.so.6.0.0
 %%PERL%%lib/graphviz/perl/gv.so
 %%PERL%%lib/graphviz/perl/libgv_perl.la
 %%PERL%%lib/graphviz/perl/libgv_perl.so
-%%PHP%%lib/graphviz/php/gv.php
 %%PHP%%lib/graphviz/php/gv.so
 %%PHP%%lib/graphviz/php/libgv_php.la
 %%PHP%%lib/graphviz/php/libgv_php.so
@@ -179,10 +174,6 @@ lib/libgvpr.la
 lib/libgvpr.so
 lib/libgvpr.so.2
 lib/libgvpr.so.2.0.0
-lib/liblab_gamut.la
-lib/liblab_gamut.so
-lib/liblab_gamut.so.1
-lib/liblab_gamut.so.1.0.0
 lib/libpathplan.la
 lib/libpathplan.so
 lib/libpathplan.so.4
@@ -215,7 +206,6 @@ libdata/pkgconfig/libcdt.pc
 libdata/pkgconfig/libcgraph.pc
 libdata/pkgconfig/libgvc.pc
 libdata/pkgconfig/libgvpr.pc
-libdata/pkgconfig/liblab_gamut.pc
 libdata/pkgconfig/libpathplan.pc
 libdata/pkgconfig/libxdot.pc
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
@@ -252,6 +242,7 @@ libdata/pkgconfig/libxdot.pc
 %%GUILE%%%%PORTDOCS%%%%DOCSDIR%%/gv.3guile.pdf
 %%LUA%%%%PORTDOCS%%%%DOCSDIR%%/gv.3lua.pdf
 %%PERL%%%%PORTDOCS%%%%DOCSDIR%%/gv.3perl.pdf
+%%PHP%%%%PORTDOCS%%%%DOCSDIR%%/gv.3php.pdf
 %%PORTDOCS%%%%DOCSDIR%%/gv.3python.pdf
 %%RUBY%%%%PORTDOCS%%%%DOCSDIR%%/gv.3ruby.pdf
 %%TCL%%%%PORTDOCS%%%%DOCSDIR%%/gv.3tcl.pdf
@@ -260,26 +251,7 @@ libdata/pkgconfig/libxdot.pc
 %%PORTDOCS%%%%DOCSDIR%%/gvc.3.pdf
 %%PORTDOCS%%%%DOCSDIR%%/gvcolor.1.pdf
 %%PORTDOCS%%%%DOCSDIR%%/gvgen.1.pdf
-%%PORTDOCS%%%%DOCSDIR%%/gvmap.1.pdf
-%%PORTDOCS%%%%DOCSDIR%%/gvmap.sh.1.pdf
-%%PORTDOCS%%%%DOCSDIR%%/gvpack.1.pdf
-%%PORTDOCS%%%%DOCSDIR%%/gvpr.1.pdf
-%%PORTDOCS%%%%DOCSDIR%%/gvpr.3.pdf
-%%PORTDOCS%%%%DOCSDIR%%/gxl2dot.1.pdf
-%%PORTDOCS%%%%DOCSDIR%%/gxl2gv.1.pdf
-%%PORTDOCS%%%%DOCSDIR%%/index.html
-%%PORTDOCS%%%%DOCSDIR%%/info/arrows.html
-%%PORTDOCS%%%%DOCSDIR%%/info/attrs.html
-%%PORTDOCS%%%%DOCSDIR%%/info/colors.html
-%%PORTDOCS%%%%DOCSDIR%%/info/command.html
-%%PORTDOCS%%%%DOCSDIR%%/info/index.html
-%%PORTDOCS%%%%DOCSDIR%%/info/lang.html
-%%PORTDOCS%%%%DOCSDIR%%/info/output.html
-%%PORTDOCS%%%%DOCSDIR%%/info/shapes.html
-%%PORTDOCS%%%%DOCSDIR%%/internal_todo.html
-%%PORTDOCS%%%%DOCSDIR%%/latex_suggestions.txt
-%%PORTDOCS%%%%DOCSDIR%%/libguide.pdf
-%%ANN%%%%PORTDOCS%%%%DOCSDIR%%/mingle.1.pdf
+%%GVEDIT%%%%PORTDOCS%%%%DOCSDIR%%/gvedit.1.pdf
 %%PORTDOCS%%%%DOCSDIR%%/mm2gv.1.pdf
 %%PORTDOCS%%%%DOCSDIR%%/neato.1.pdf
 %%PORTDOCS%%%%DOCSDIR%%/neatoguide.pdf
@@ -395,6 +367,7 @@ libdata/pkgconfig/libxdot.pc
 %%DATADIR%%/graphs/undirected/Petersen.gv
 %%DATADIR%%/graphs/undirected/ngk10_4.gv
 %%DATADIR%%/graphs/undirected/process.gv
+%%GVEDIT%%%%DATADIR%%/gvedit/attrs.txt
 %%DATADIR%%/gvpr/addedges
 %%DATADIR%%/gvpr/addranks
 %%DATADIR%%/gvpr/addrings
@@ -462,6 +435,26 @@ libdata/pkgconfig/libxdot.pc
 %%SMYRNA%%%%DATADIR%%/smyrna/zoom_out.png
 %%SMYRNA%%%%DATADIR%%/smyrna/zoomin.png
 %%SMYRNA%%%%DATADIR%%/smyrna/zoomout.png
+%%PORTDOCS%%%%DOCSDIR%%/gvmap.1.pdf
+%%PORTDOCS%%%%DOCSDIR%%/gvmap.sh.1.pdf
+%%PORTDOCS%%%%DOCSDIR%%/gvpack.1.pdf
+%%PORTDOCS%%%%DOCSDIR%%/gvpr.1.pdf
+%%PORTDOCS%%%%DOCSDIR%%/gvpr.3.pdf
+%%PORTDOCS%%%%DOCSDIR%%/gxl2dot.1.pdf
+%%PORTDOCS%%%%DOCSDIR%%/gxl2gv.1.pdf
+%%PORTDOCS%%%%DOCSDIR%%/index.html
+%%PORTDOCS%%%%DOCSDIR%%/info/arrows.html
+%%PORTDOCS%%%%DOCSDIR%%/info/attrs.html
+%%PORTDOCS%%%%DOCSDIR%%/info/colors.html
+%%PORTDOCS%%%%DOCSDIR%%/info/command.html
+%%PORTDOCS%%%%DOCSDIR%%/info/index.html
+%%PORTDOCS%%%%DOCSDIR%%/info/lang.html
+%%PORTDOCS%%%%DOCSDIR%%/info/output.html
+%%PORTDOCS%%%%DOCSDIR%%/info/shapes.html
+%%PORTDOCS%%%%DOCSDIR%%/internal_todo.html
+%%PORTDOCS%%%%DOCSDIR%%/latex_suggestions.txt
+%%PORTDOCS%%%%DOCSDIR%%/libguide.pdf
+%%ANN%%%%PORTDOCS%%%%DOCSDIR%%/mingle.1.pdf
 share/man/man1/acyclic.1.gz
 share/man/man1/bcomps.1.gz
 share/man/man1/ccomps.1.gz
@@ -471,6 +464,7 @@ share/man/man1/diffimg.1.gz
 share/man/man1/dijkstra.1.gz
 share/man/man1/dot.1.gz
 share/man/man1/dot2gxl.1.gz
+share/man/man1/dot_sandbox.1.gz
 share/man/man1/edgepaint.1.gz
 share/man/man1/fdp.1.gz
 share/man/man1/gc.1.gz
@@ -479,6 +473,7 @@ share/man/man1/graphml2gv.1.gz
 share/man/man1/gv2gml.1.gz
 share/man/man1/gv2gxl.1.gz
 share/man/man1/gvcolor.1.gz
+%%GVEDIT%%share/man/man1/gvedit.1.gz
 share/man/man1/gvgen.1.gz
 share/man/man1/gvmap.1.gz
 share/man/man1/gvmap.sh.1.gz
@@ -519,4 +514,4 @@ share/man/man3/pathplan.3.gz
 %%TCL%%share/man/man3/tcldot.3tcl.gz
 share/man/man3/xdot.3.gz
 share/man/man7/graphviz.7.gz
-%%PHP%%share/php/gv.php
+%%PHP%%@dir share/php

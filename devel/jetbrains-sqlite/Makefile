@@ -1,5 +1,5 @@
 PORTNAME=	sqlite
-PORTVERSION=	241.15989.150
+PORTVERSION=	242.23726.38
 CATEGORIES=	devel
 PKGNAMEPREFIX=	jetbrains-
 DIST_SUBDIR=	jetbrains
@@ -15,14 +15,12 @@ ONLY_FOR_ARCHS=	aarch64 amd64 powerpc64le
 
 BUILD_DEPENDS=	bash:shells/bash
 
+USES=		java:build
 USE_GITHUB=	yes
 GH_ACCOUNT=	JetBrains
 GH_PROJECT=	intellij-community
-GH_TAGNAME=	814cdbbe79a503fcb7981988c8fe8ec070385e2a
-
-USE_JAVA=	yes
+GH_TAGNAME=	idea/242.23726.38
 JAVA_VERSION=	17+
-JAVA_BUILD=	yes
 
 DATADIR=	${PREFIX}/share/jetbrains/${PORTNAME}
 WRKSRC_SUBDIR=	platform/sqlite

@@ -1,5 +1,6 @@
 PORTNAME=	strongswan
-DISTVERSION=	5.9.14
+DISTVERSION=	6.0.0
+PORTREVISION=	1
 CATEGORIES=	security net-vpn
 MASTER_SITES=	https://download.strongswan.org/ \
 		https://download2.strongswan.org/
@@ -16,7 +17,6 @@ USE_LDCONFIG=	${PREFIX}/lib/ipsec
 USE_RC_SUBR=	strongswan
 
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc \
 		--disable-gmp \
 		--disable-kernel-netlink \
@@ -43,8 +43,8 @@ TEST_TARGET=	check
 
 OPTIONS_DEFINE=			CTR CURL DHCP EAPAKA3GPP2 EAPDYNAMIC EAPRADIUS \
 				EAPSIMFILE FARP GCM IKEV1 IPSECKEY KDF \
-				KERNELLIBIPSEC LDAP LOADTESTER MEDIATION MYSQL \
-				PKCS11 PKI PYTHON SMP SQLITE SWANCTL \
+				KERNELLIBIPSEC LDAP LOADTESTER MEDIATION ML MYSQL \
+				PKCS11 PKI PYTHON SMP SQLITE STROKE SWANCTL \
 				TESTVECTOR TPM TSS2 UNBOUND UNITY VICI XAUTH
 OPTIONS_DEFINE_i386=	VIA
 OPTIONS_DEFAULT=		BUILTIN CURL GCM IKEV1 KDF PKI SWANCTL VICI
@@ -70,10 +70,12 @@ KERNELLIBIPSEC_DESC=	Enable IPSec userland backend
 LIBC_DESC=		Use libc printf hooks
 LOADTESTER_DESC=	Enable load testing plugin
 MEDIATION_DESC=		Enable IKEv2 Mediation Extension
+ML_DESC=		Enable Module-Lattice-based crypto plugin
 PKCS11_DESC=		Enable PKCS11 token support
 PKI_DESC=		Enable PKI tools
 PYTHON_DESC=		Python VICI protocol plugin
 SMP_DESC=		Enable XML-based management protocol (DEPRECATED)
+STROKE_DESC=		Enable stroke management protcol (DEPRECATED)
 SWANCTL_DESC=		Install swanctl (requires VICI)
 TESTVECTOR_DESC=	Enable crypto test vectors
 TPM_DESC=		Enable TPM plugin
@@ -109,6 +111,8 @@ LDAP_CONFIGURE_ON=		--enable-ldap
 LIBC_CONFIGURE_ON=		--with-printf-hooks=glibc
 LOADTESTER_CONFIGURE_ON=	--enable-load-tester
 MEDIATION_CONFIGURE_ON=		--enable-mediation
+ML_CONFIGURE_ON=		--enable-ml
+MYSQL_LIB_DEPENDS=		libunwind.so:devel/libunwind
 MYSQL_USES=			mysql
 MYSQL_CONFIGURE_ON=		--enable-mysql
 PKCS11_CONFIGURE_ON=		--enable-pkcs11
@@ -120,6 +124,7 @@ SMP_LIB_DEPENDS=		libxml2.so:textproc/libxml2
 SMP_CONFIGURE_ON=		--enable-smp
 SQLITE_LIB_DEPENDS=		libsqlite3.so:databases/sqlite3
 SQLITE_CONFIGURE_ON=		--enable-sqlite
+STROKE_CONFIGURE_ON=		--enable-stroke
 SWANCTL_IMPLIES=		VICI
 SWANCTL_CONFIGURE_ON=		--enable-swanctl
 TESTVECTOR_CONFIGURE_ON=	--enable-test-vectors

@@ -13,7 +13,6 @@
 %%QT_INCDIR%%/QtCore5Compat/%%FULLVER%%/QtCore5Compat/private/qutfcodec_p.h
 %%QT_INCDIR%%/QtCore5Compat/%%FULLVER%%/QtCore5Compat/private/qxml_p.h
 %%QT_INCDIR%%/QtCore5Compat/QBinaryJson
-%%QT_INCDIR%%/QtCore5Compat/QConcatenable
 %%QT_INCDIR%%/QtCore5Compat/QLinkedList
 %%QT_INCDIR%%/QtCore5Compat/QLinkedListData
 %%QT_INCDIR%%/QtCore5Compat/QLinkedListIterator
@@ -59,6 +58,7 @@ lib/cmake/Qt6Core5Compat/Qt6Core5CompatConfigVersionImpl.cmake
 lib/cmake/Qt6Core5Compat/Qt6Core5CompatDependencies.cmake
 lib/cmake/Qt6Core5Compat/Qt6Core5CompatTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/Qt6Core5Compat/Qt6Core5CompatTargets.cmake
+lib/cmake/Qt6Core5Compat/Qt6Core5CompatVersionlessAliasTargets.cmake
 lib/cmake/Qt6Core5Compat/Qt6Core5CompatVersionlessTargets.cmake
 lib/cmake/Qt6Qml/QmlPlugins/Qt6qtgraphicaleffectspluginAdditionalTargetInfo.cmake
 lib/cmake/Qt6Qml/QmlPlugins/Qt6qtgraphicaleffectspluginConfig.cmake
@@ -117,5 +117,6 @@ lib/cmake/Qt6Qml/QmlPlugins/Qt6qtgraphicaleffectsprivateTargets.cmake
 %%QT_QMLDIR%%/Qt5Compat/GraphicalEffects/private/plugins.qmltypes
 %%QT_QMLDIR%%/Qt5Compat/GraphicalEffects/private/qmldir
 %%QT_QMLDIR%%/Qt5Compat/GraphicalEffects/qmldir
+%%QT_SBOMDIR%%/qt5compat-%%FULLVER%%.spdx
 libdata/pkgconfig/Qt6Core5Compat.pc
 %%QT_DATADIR%%/modules/Core5Compat.json

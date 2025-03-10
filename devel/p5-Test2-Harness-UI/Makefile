@@ -1,5 +1,6 @@
 PORTNAME=	Test2-Harness-UI
 PORTVERSION=	0.000144
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:EXODIST
@@ -40,7 +41,7 @@ RUN_DEPENDS=	p5-Clone>=0:devel/p5-Clone \
 		p5-Starman>=0:www/p5-Starman \
 		p5-Statistics-Basic>=0:math/p5-Statistics-Basic \
 		p5-Test2-Harness>=1.000151:devel/p5-Test2-Harness \
-		p5-Test2-Suite>=0.000126:devel/p5-Test2-Suite \
+		p5-Test-Simple>=1.302200:devel/p5-Test-Simple \
 		p5-Text-Xslate>=0:textproc/p5-Text-Xslate \
 		p5-Time-Elapsed>=0.33:devel/p5-Time-Elapsed
 TEST_DEPENDS=	p5-HTTP-Tiny-UNIX>=0:www/p5-HTTP-Tiny-UNIX

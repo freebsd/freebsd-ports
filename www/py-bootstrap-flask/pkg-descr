@@ -1,0 +1,7 @@
+Bootstrap-Flask is a collection of Jinja macros for Bootstrap 4 & 5 and Flask.
+It helps you to render Flask-related data and objects to Bootstrap markup HTML
+more easily:
+  - Render Flask-WTF/WTForms form object to Bootstrap Form.
+  - Render data objects (dict or class objects) to Bootstrap Table.
+  - Render Flask-SQLAlchemy Pagination object to Bootstrap Pagination.
+  - etc.

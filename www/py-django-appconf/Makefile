@@ -1,5 +1,6 @@
 PORTNAME=	django-appconf
-PORTVERSION=	1.0.6
+PORTVERSION=	1.1.0
+PORTREVISION=	1
 CATEGORIES=	www python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,7 +13,7 @@ WWW=		https://django-appconf.readthedocs.io/en/latest/ \
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		python
+USES=		python:3.9+
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes

@@ -29,7 +29,6 @@ include/dbus-%%VERSION%%/dbus/dbus.h
 lib/cmake/DBus1/DBus1Config.cmake
 lib/cmake/DBus1/DBus1ConfigVersion.cmake
 lib/dbus-%%VERSION%%/include/dbus/dbus-arch-deps.h
-lib/libdbus-1.a
 lib/libdbus-1.so
 lib/libdbus-1.so.3
 lib/libdbus-1.so.%%LIBVERSION%%
@@ -46,10 +45,6 @@ libdata/pkgconfig/dbus-1.pc
 %%MANPAGES%%share/man/man1/dbus-uuidgen.1.gz
 share/dbus-1/session.conf
 share/dbus-1/system.conf
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/GetAllMatchRules.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example-session-disable-stats.conf
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example-system-enable-stats.conf
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example-system-hardening-without-traditional-activation.conf
 share/xml/dbus-1/busconfig.dtd
 share/xml/dbus-1/catalog.xml
 share/xml/dbus-1/introspect.dtd

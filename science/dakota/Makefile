@@ -1,6 +1,6 @@
 PORTNAME=	dakota
 DISTVERSION=	6.17.0
-PORTREVISION=	8
+PORTREVISION=	12
 CATEGORIES=	science
 MASTER_SITES=	https://dakota.sandia.gov/sites/default/files/distributions/public/
 DISTNAME=	${PORTNAME}-${DISTVERSION}-release-public-src-cli
@@ -12,6 +12,8 @@ WWW=		https://dakota.sandia.gov/
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+BROKEN=		fails to build with boost-1.85+
 
 BUILD_DEPENDS=	nanoflann>0:math/nanoflann
 LIB_DEPENDS=	libblas.so:math/blas \

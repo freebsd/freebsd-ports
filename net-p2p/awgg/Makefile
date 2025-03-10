@@ -1,6 +1,6 @@
 PORTNAME=	awgg
 DISTVERSION=	0.6.0.6034-beta
-PORTREVISION=	10
+PORTREVISION=	12
 CATEGORIES=	net-p2p
 PKGNAMESUFFIX=	${LAZARUS_PKGNAMESUFFIX}
 
@@ -14,6 +14,8 @@ RUN_DEPENDS=	aria2c:www/aria2 \
 		wget:ftp/wget \
 		curl:ftp/curl \
 		yt-dlp:www/yt-dlp
+
+ONLY_FOR_ARCHS=	amd64 i386
 
 gtk2_CONFLICTS_INSTALL=	${PORTNAME}-qt5 ${PORTNAME}-qt6
 qt5_CONFLICTS_INSTALL=	${PORTNAME}-gtk2 ${PORTNAME}-qt6

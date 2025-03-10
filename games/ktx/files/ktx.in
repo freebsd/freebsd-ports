@@ -1,0 +1,131 @@
+#!/bin/sh
+
+# PROVIDE: ktx
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf or /etc/rc.conf.local to
+# enable ktx:
+# ktx_(instance_)?enable (bool):	Set to "NO" by default.
+#					Set it to "YES" to enable ktx.
+# ktx_(instance_)?port (int):		UDP port for game and TCP for QTV stream
+#					(default 27500).
+# ktx_(instance_)?gamedir (str):	Gamedir for ktx (default ktx).
+# ktx_(instance_)?args (str):		Custom additional arguments to be passed
+#					to ${__qwserver} (default empty).
+# ktx_(instance_)?user (str):		User to run ${__qwserver} as. Default
+#					to "%%QWUSER%%" created by the port.
+# ktx_(instance_)?qwserver (path):	Full path to QuakeWorld server to run ktx
+#					(default %%LOCALBASE%%/bin/mvdsv).
+# ktx_(instance_)?log (path):		Console log file (default
+#					${__gamedir}/${name}_(instance_)?${__port}.log).
+# ktx_(instance_)?randommaps (str):	List of maps from which one is randomly
+#					selected to start the server (default empty).
+# ktx_(instance_)?qwdir (path):		QuakeWorld root directory
+#					(default %%QWDIR%%).
+# ktx_instances (str):			Set to "" by default.
+#					If defined, list of instances to enable.
+
+. /etc/rc.subr
+
+case $0 in
+/etc/rc*)
+	# during boot (shutdown) $0 is /etc/rc (/etc/rc.shutdown),
+	# so get the name of the script from $_file
+	name=$_file
+        ;;
+*)
+	name=$0
+	;;
+esac
+
+name=${name##*/}
+rcvar="${name}_enable"
+
+load_rc_config "${name}"
+
+eval "${rcvar}=\${${rcvar}:-'NO'}"
+eval "__port=\${${name}_port:-'27500'}"
+eval "__gamedir=\${${name}_gamedir:-'ktx'}"
+eval "__args=\${${name}_args:-''}"
+eval "__user=\${${name}_user:-'%%QWUSER%%'}"
+eval "__qwserver=\${${name}_qwserver:-'%%LOCALBASE%%/bin/mvdsv'}"
+eval "__log=\${${name}_log:-${__gamedir}/${name}_${__port}.log}"
+eval "__randommaps=\${${name}_randommaps:-''}"
+eval "__qwdir=\${${name}_qwdir:-'%%QWDIR%%'}"
+eval "${name}_chdir=${__qwdir}"
+eval "__instances=\${${name}_instances:-''}"
+
+pidfiledir="/var/run"
+pidfile="${pidfiledir}/${name}.pid"
+
+if [ -n "$2" ]; then
+        instance="$2"
+	load_rc_config ${name}_${instance}
+	case "${__instances}" in
+	"$2 "*|*" $2 "*|*" $2"|"$2")
+		eval "__port=\${${name}_${instance}_port:-${__port}}"
+		eval "__gamedir=\${${name}_${instance}_gamedir:-${__gamedir}}"
+		eval "__args=\${${name}_${instance}_args:-${__args}}"
+		eval "__user=\${${name}_${instance}_user:-${__user}}"
+		eval "__qwserver=\${${name}_${instance}_qwserver:-${__qwserver}}"
+		eval "__log=\${${name}_${instance}_log:-${__gamedir}/${name}_${instance}_${__port}.log}"
+		eval "__randommaps=\${${name}_${instance}_randommaps:-${__randommaps}}"
+		eval "__qwdir=\${${name}_${instance}_qwdir:-${__qwdir}}"
+		eval "${name}_chdir=${__qwdir}"
+		pidfile="${pidfiledir}/${name}_${instance}.pid"
+	;;
+	*)
+		err 1 "$2 not found in ${name}_instances" ;;
+	esac
+else
+	if [ -n "${__instances}" -a -n "$1" ]; then
+		for instance in ${__instances}; do
+			eval "_enable=\${${name}_${instance}_enable}"
+			eval "__enable=\${_enable:-\${${name}_enable}}"
+			case "${__enable}" in
+			[Nn][Oo]|[Ff][Aa][Ll][Ss][Ee]|[Oo][Ff][Ff]|0)
+				continue
+			;;
+			[Yy][Ee][Ss]|[Tt][Rr][Uu][Ee]|[Oo][Nn]|1)
+			;;
+			*)
+				if [ -z "${_enable}" ]; then
+					_var=${name}_enable
+				else
+					_var=${name}_${instance}_enable
+				fi
+				warn "Bad value '${__enable}' for ${_var}. " \
+					"Instance ${instance} skipped."
+				continue
+			;;
+			esac
+			echo "===> ${name} instance: ${instance}"
+			%%PREFIX%%/etc/rc.d/${name} $1 ${instance}
+			retcode="$?"
+			if [ "0${retcode}" -eq 0 ]; then
+				success="${instance} ${success}"
+			else
+				failed="${instance} (retcode=${retcode}) ${failed}"
+			fi
+		done
+		echo "===> ${name} instances success: ${success}"
+		echo "===> ${name} instances failed: ${failed}"
+		exit 0
+	fi
+fi
+
+if [ -n "${__randommaps}" -a \( "x$1" = "xstart" -o "x$1" = "xrestart" \) ]; then
+	RAND=`/usr/bin/head -c2 /dev/urandom | /usr/bin/od -An -t d`
+	#RAND=`echo | awk '{srand(); print rand()*1000000}'`
+	#RAND=$((`/bin/date +%N | /usr/bin/sed 's|^[0]*||'`+0))
+	LEN=`echo ${__randommaps} | /usr/bin/wc -w`
+	N=$((${RAND} % ${LEN} + 1))
+	MAP=`echo ${__randommaps} | /usr/bin/awk "{print \\$${N}}"`
+	__args="${__args} +map ${MAP}"
+fi
+
+command="/usr/sbin/daemon"
+command_args="-P ${pidfile} -u ${__user} -R 5 -f -H -o ${__log} -m 3 ${__qwserver} -port ${__port} +qtv_streamport ${__port} -game ${__gamedir} ${__args}"
+
+run_rc_command "$1"

@@ -1,9 +1,0 @@
-D-Feet is a D-Bus debugger written by John (J5) Palmieri.
-
-Current features:
-
-* View names on any bus
-* View exported objects, interfaces, methods and signals
-* View the full command line of services on the bus
-* Execute methods with parameters on the bus and see their return values
-* Show values of properties

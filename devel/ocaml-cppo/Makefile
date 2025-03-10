@@ -5,7 +5,7 @@ PORTREVISION=	3
 CATEGORIES=	devel
 PKGNAMEPREFIX=	ocaml-
 
-MAINTAINER=	eduardo@FreeBSD.org
+MAINTAINER=	freebsd@dev.thsi.be
 COMMENT=	C-style preprocessor for OCaml
 WWW=		https://github.com/ocaml-community/cppo
 
@@ -15,11 +15,17 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.md
 BUILD_DEPENDS=	dune:devel/ocaml-dune \
 		ocamlbuild:devel/ocaml-ocamlbuild
 
+USES=		ocaml
 USE_GITHUB=	yes
 GH_ACCOUNT=	ocaml-community
-USE_OCAML=	yes
 
 OPTIONS_DEFINE=	DOCS
+
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == powerpc
+USE_BINUTILS=	yes
+.endif
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/cppo

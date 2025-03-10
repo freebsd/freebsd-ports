@@ -38,6 +38,12 @@ Examples:
 
 /usr/local/share/timidity/timidity.cfg-guspat
 
+If you have installed audio/fluidsynth you can also
+use samples in the SF2 format.
+
+Alternatively, you can substitute MIDI files with
+music packs in .flac or .ogg format.
+
 If you choose either Gravis Ultrasound emulation or
 native MIDI and provide no path, there will be no
 music.

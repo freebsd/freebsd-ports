@@ -1,17 +1,18 @@
 --- src/VBox/HostDrivers/Support/freebsd/SUPDrv-freebsd.c.orig	2022-07-19 20:58:42 UTC
 +++ src/VBox/HostDrivers/Support/freebsd/SUPDrv-freebsd.c
-@@ -44,8 +44,10 @@
+@@ -44,8 +44,11 @@
  #include <sys/fcntl.h>
  #include <sys/conf.h>
  #include <sys/uio.h>
 +#include <sys/mutex.h>
++#include <sys/smp.h>				/* mp_maxcpus */
  
  #include "../SUPDrvInternal.h"
 +#include "freebsd/the-freebsd-kernel.h"
  #include <VBox/version.h>
  #include <iprt/initterm.h>
  #include <iprt/string.h>
-@@ -57,7 +59,14 @@
+@@ -57,7 +60,14 @@
  #include <iprt/alloc.h>
  #include <iprt/err.h>
  #include <iprt/asm.h>
@@ -26,7 +27,7 @@
  #ifdef VBOX_WITH_HARDENING
  # define VBOXDRV_PERM 0600
  #else
-@@ -76,7 +85,9 @@ static d_ioctl_t    VBoxDrvFreeBSDIOCtl;
+@@ -76,7 +86,9 @@ static d_ioctl_t    VBoxDrvFreeBSDIOCtl;
  static d_open_t     VBoxDrvFreeBSDOpenSys;
  static void         vboxdrvFreeBSDDtr(void *pvData);
  static d_ioctl_t    VBoxDrvFreeBSDIOCtl;
@@ -36,7 +37,7 @@
  
  
  /*********************************************************************************************************************************
-@@ -93,7 +104,8 @@ static moduledata_t         g_VBoxDrvFreeBSDModule =
+@@ -93,7 +105,8 @@ static moduledata_t         g_VBoxDrvFreeBSDModule =
  };
  
  /** Declare the module as a pseudo device. */
@@ -46,7 +47,21 @@
  MODULE_VERSION(vboxdrv, 1);
  
  /**
-@@ -182,6 +194,13 @@ static int VBoxDrvFreeBSDLoad(void)
+@@ -140,6 +153,13 @@ static int VBoxDrvFreeBSDModuleEvent(struct module *pM
+ static int VBoxDrvFreeBSDModuleEvent(struct module *pMod, int enmEventType, void *pvArg)
+ {
+     int rc;
++
++    /* Refuse to load if mp_maxcpus is wrong */
++    if (MAXCPU != mp_maxcpus) {
++	printf("vboxdrv: MAXCPU != mp_maxcpus (%d != %d)\n", MAXCPU, mp_maxcpus);
++	return EINVAL;
++    }
++
+     switch (enmEventType)
+     {
+         case MOD_LOAD:
+@@ -182,6 +202,13 @@ static int VBoxDrvFreeBSDLoad(void)
          rc = supdrvInitDevExt(&g_VBoxDrvFreeBSDDevExt, sizeof(SUPDRVSESSION));
          if (RT_SUCCESS(rc))
          {
@@ -60,7 +75,7 @@
              /*
               * Configure character devices. Add symbolic links for compatibility.
               */
-@@ -324,6 +343,45 @@ static int VBoxDrvFreeBSDIOCtl(struct cdev *pDev, u_lo
+@@ -324,6 +351,45 @@ static int VBoxDrvFreeBSDIOCtl(struct cdev *pDev, u_lo
  
  
  /**
@@ -106,7 +121,7 @@
   * Deal with the 'slow' I/O control requests.
   *
   * @returns 0 on success, appropriate errno on failure.
-@@ -372,11 +430,10 @@ static int VBoxDrvFreeBSDIOCtlSlow(PSUPDRVSESSION pSes
+@@ -372,11 +438,10 @@ static int VBoxDrvFreeBSDIOCtlSlow(PSUPDRVSESSION pSes
           */
          SUPREQHDR Hdr;
          pvUser = *(void **)pvData;
@@ -121,7 +136,7 @@
          }
          if (RT_UNLIKELY((Hdr.fFlags & SUPREQHDR_FLAGS_MAGIC_MASK) != SUPREQHDR_FLAGS_MAGIC))
          {
-@@ -401,13 +458,12 @@ static int VBoxDrvFreeBSDIOCtlSlow(PSUPDRVSESSION pSes
+@@ -401,13 +466,12 @@ static int VBoxDrvFreeBSDIOCtlSlow(PSUPDRVSESSION pSes
              OSDBGPRINT(("VBoxDrvFreeBSDIOCtlSlow: failed to allocate buffer of %d bytes; ulCmd=%#lx\n", cbReq, ulCmd));
              return ENOMEM;
          }
@@ -139,7 +154,7 @@
          }
          if (Hdr.cbIn < cbReq)
              RT_BZERO((uint8_t *)pHdr + Hdr.cbIn, cbReq - Hdr.cbIn);
-@@ -435,9 +491,8 @@ static int VBoxDrvFreeBSDIOCtlSlow(PSUPDRVSESSION pSes
+@@ -435,9 +499,8 @@ static int VBoxDrvFreeBSDIOCtlSlow(PSUPDRVSESSION pSes
                  OSDBGPRINT(("VBoxDrvFreeBSDIOCtlSlow: too much output! %#x > %#x; uCmd=%#lx!\n", cbOut, cbReq, ulCmd));
                  cbOut = cbReq;
              }
@@ -151,7 +166,7 @@
  
              Log(("VBoxDrvFreeBSDIOCtlSlow: returns %d / %d ulCmd=%lx\n", 0, pHdr->rc, ulCmd));
  
-@@ -540,8 +595,7 @@ bool VBOXCALL  supdrvOSAreCpusOfflinedOnSuspend(void)
+@@ -540,8 +603,7 @@ bool VBOXCALL  supdrvOSAreCpusOfflinedOnSuspend(void)
  
  bool VBOXCALL  supdrvOSAreCpusOfflinedOnSuspend(void)
  {
@@ -161,7 +176,7 @@
  }
  
  
-@@ -624,20 +678,44 @@ int VBOXCALL    supdrvOSMsrProberModify(RTCPUID idCpu,
+@@ -624,20 +686,44 @@ int VBOXCALL    supdrvOSMsrProberModify(RTCPUID idCpu,
  #endif /* SUPDRV_WITH_MSR_PROBER */
  
  

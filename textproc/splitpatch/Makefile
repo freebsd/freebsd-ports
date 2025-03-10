@@ -1,7 +1,6 @@
 PORTNAME=	splitpatch
-PORTVERSION=	1.1
-PORTREVISION=	1
 DISTVERSIONPREFIX=	release/
+DISTVERSION=	2025.0226
 CATEGORIES=	textproc
 
 MAINTAINER=	ehaupt@FreeBSD.org
@@ -15,16 +14,19 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	jaalto
 USE_PERL5=	build
 
-MAKE_JOBS_UNSAFE=	yes
-
 NO_ARCH=	yes
 
 PLIST_FILES=	bin/splitpatch \
 		share/man/man1/splitpatch.1.gz
 
+post-patch:
+	@${REINPLACE_CMD} -e 's|--force|-rf|g' \
+		${WRKSRC}/Makefile \
+		${WRKSRC}/man/Makefile \
+		${WRKSRC}/man/pod2man.mk
+
 do-install:
-	@${MKDIR} ${STAGEDIR}${PREFIX}/bin ${STAGEDIR}${PREFIX}/share/man/man1
-	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME}.rb \
+	${INSTALL_SCRIPT} ${WRKSRC}/bin/${PORTNAME}.rb \
 		${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 	${INSTALL_MAN} ${WRKSRC}/man/${PORTNAME}.1 \
 		${STAGEDIR}${PREFIX}/share/man/man1

@@ -10,20 +10,19 @@ CATEGORIES=	multimedia kde
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	multi
 
-LIB_DEPENDS=	libexif.so:graphics/libexif \
-		libfftw3.so:math/fftw3
-
 FLAVORS=	qt5 qt6
 FLAVOR?=	qt5
 
-USES=		qt:${FLAVOR:S/qt//} libarchive xorg
+USES=		gl qt:${FLAVOR:S/qt//} libarchive xorg
+USE_GL=		${_USE_GL_${FLAVOR}}
 USE_QT=		${_USE_QT_${FLAVOR}}
 USE_XORG=	x11
 
 # Flavor handling
-_USE_QT_qt5=	core gui svg widgets xml \
+_USE_GL_qt6=	opengl
+_USE_QT_qt5=	core gui network widgets xml \
 		buildtools:build qmake:build
-_USE_QT_qt6=	base svg
+_USE_QT_qt6=	base
 _CMAKE_ON_qt5=	MOD_GLAXNIMATE
 _CMAKE_ON_qt6=	MOD_GLAXNIMATE_QT6
 _CMAKE_OFF_qt5=	MOD_GLAXNIMATE_QT6

@@ -1,6 +1,6 @@
 PORTNAME=	cutelyst
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.7.0
+DISTVERSION=	4.5.0
 CATEGORIES=	www
 
 MAINTAINER=	adridg@FreeBSD.org
@@ -10,26 +10,19 @@ WWW=		https://cutelyst.org
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libepoll-shim.so:devel/libepoll-shim
+LIB_DEPENDS=	libepoll-shim.so:devel/libepoll-shim \
+		libCuteleeQt6Templates.so:devel/cutelee
 
-USES=		cmake compiler:c++11-lang localbase qt:5
+USES=		cmake compiler:c++20-lang localbase qt:6
+USE_CXXSTD=	c++20
 USE_GITHUB=	yes
 USE_LDCONFIG=	yes
-USE_QT=		qmake:build buildtools:build linguisttools:build \
-		core network sql
-
-# There are more views available and various plugins,
-# but we don't expose all of them in the port.
-OPTIONS_DEFINE=	GRANTLEE
-OPTIONS_DEFAULT=	GRANTLEE
-OPTIONS_SUB=	yes
-
-GRANTLEE_DESC=	Allow Grantlee templates
-GRANTLEE_USES=	grantlee:5
-GRANTLEE_CMAKE_BOOL=	PLUGIN_VIEW_GRANTLEE
+USE_QT=		tools:build translations:build \
+		base
 
 CMAKE_ON=	PLUGIN_CSRFPROTECTION \
-		PLUGIN_STATICCOMPRESSED
+		PLUGIN_STATICCOMPRESSED \
+		PLUGIN_VIEW_CUTELEE
 CMAKE_OFF=	BUILD_ALL BUILD_TESTS
 CMAKE_ARGS=	-DMANDIR:PATH=share/man \
 		-DCMAKE_DISABLE_FIND_PACKAGE_Doxygen=TRUE

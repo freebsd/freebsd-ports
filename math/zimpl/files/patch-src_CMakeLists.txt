@@ -1,8 +1,8 @@
 - Allow to build shared libs.
 
---- src/CMakeLists.txt.orig	2021-08-01 07:59:48 UTC
+--- src/CMakeLists.txt.orig	2024-09-13 05:08:28 UTC
 +++ src/CMakeLists.txt
-@@ -116,12 +116,12 @@ if(MSVC)
+@@ -118,12 +118,12 @@ endif()
  endif()
  
  #create zimpl with pic

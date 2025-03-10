@@ -3,8 +3,6 @@ PKGNAMESUFFIX=	13-client-static
 
 COMMENT=	Network backup solution (static client)
 
-BROKEN_aarch64=	Fails to link: missing sbrk
-BROKEN_riscv64=	Fails to link: missing sbrk
 BROKEN_SSL=	libressl
 
 WITH_CLIENT_ONLY=	yes

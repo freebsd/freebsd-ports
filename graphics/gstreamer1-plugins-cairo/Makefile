@@ -3,13 +3,13 @@ CATEGORIES=	graphics
 
 COMMENT=	GStreamer overlay renderer plugin based on cairo
 
-GST_PLUGIN=	cairo
+USE_GNOME=	cairo
+
+MASTERDIR=	${.CURDIR:H:H}/multimedia/gstreamer1-plugins
+
+PLIST=		${.CURDIR}/pkg-plist
+
 DIST=		good
-
-MASTERDIR=	${.CURDIR}/../../multimedia/gstreamer1-plugins
-
-PLIST=  ${.CURDIR}/pkg-plist
-
-USE_GNOME=  cairo
+GST_PLUGIN=	cairo
 
 .include "${MASTERDIR}/Makefile"

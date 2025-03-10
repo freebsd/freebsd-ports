@@ -1,6 +1,6 @@
-TIMESTAMP = 1713703391
-SHA256 (ekg-vcflib-v1.0.10_GH0.tar.gz) = 6f7f366555e5b191a509bda6d7a2078825827458ba7e9922094c4c1ebb48e693
-SIZE (ekg-vcflib-v1.0.10_GH0.tar.gz) = 23539349
+TIMESTAMP = 1732541764
+SHA256 (ekg-vcflib-v1.0.12_GH0.tar.gz) = 7ab5b6a87a39105107029f5e0da52ece612c71095ab2aec69a00320f44bc5300
+SIZE (ekg-vcflib-v1.0.12_GH0.tar.gz) = 23543176
 SHA256 (ekg-fastahack-bb33265_GH0.tar.gz) = f671609e1a8d7cacb00065bf307c90c46116af8e5cea939b06edcdbcc6d4bc2a
 SIZE (ekg-fastahack-bb33265_GH0.tar.gz) = 18760
 SHA256 (ekg-filevercmp-df20dcc_GH0.tar.gz) = d34bec614be638e05eb6fa419c936b9e7de58d50b1a096a5ca02aadb7db6b059
@@ -17,5 +17,5 @@ SHA256 (ekg-smithwaterman-2610e25_GH0.tar.gz) = f907becb50945d0858d3bf7a64959905
 SIZE (ekg-smithwaterman-2610e25_GH0.tar.gz) = 39160
 SHA256 (simd-everywhere-simde-no-tests-9af03cd_GH0.tar.gz) = 99dcb7d6a2e1dc3f51401ff16eaa5dde93c793e13b514ea9cae4d9819144b8fe
 SIZE (simd-everywhere-simde-no-tests-9af03cd_GH0.tar.gz) = 572867
-SHA256 (vcflib-tabixpp-v1.1.2_GH0.tar.gz) = c850299c3c495221818a85c9205c60185c8ed9468d5ec2ed034470bb852229dc
-SIZE (vcflib-tabixpp-v1.1.2_GH0.tar.gz) = 6962
+SHA256 (vcflib-tabixpp-ae5cdf8_GH0.tar.gz) = edb15012b57c6bfc900c1b8275fc3d55f2e7c21e83601f8cfedcbdf3107fbb04
+SIZE (vcflib-tabixpp-ae5cdf8_GH0.tar.gz) = 6965

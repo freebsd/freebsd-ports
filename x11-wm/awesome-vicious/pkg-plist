@@ -1,4 +1,4 @@
-share/awesome/lib/vicious/.build.yml
+share/awesome/lib/vicious/.github/workflows/luacheck.yml
 share/awesome/lib/vicious/.gitignore
 share/awesome/lib/vicious/LICENSE
 share/awesome/lib/vicious/contrib/ac_linux.lua
@@ -23,6 +23,7 @@ share/awesome/lib/vicious/contrib/pulse_all.lua
 share/awesome/lib/vicious/contrib/rss_all.lua
 share/awesome/lib/vicious/contrib/sensors_linux.lua
 share/awesome/lib/vicious/contrib/wpa_all.lua
+share/awesome/lib/vicious/docs/.readthedocs.yaml
 share/awesome/lib/vicious/docs/Makefile
 share/awesome/lib/vicious/docs/requirements.txt
 share/awesome/lib/vicious/docs/source/caching.rst

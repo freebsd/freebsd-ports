@@ -1,0 +1,14 @@
+--- makefile.sdl2.orig	2024-11-21 01:07:09 UTC
++++ makefile.sdl2
+@@ -170,9 +170,9 @@ ifdef DARWIN
+ #
+ 
+ ifdef DARWIN
+-	CC	= gcc
++	CC	?= gcc
+ else
+-	CC	= gcc
++	CC	?= gcc
+ endif
+ 
+ CXX	= $(CC)

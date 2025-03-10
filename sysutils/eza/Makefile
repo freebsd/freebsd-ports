@@ -1,19 +1,19 @@
 PORTNAME=	eza
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.18.24
+DISTVERSION=	0.20.23
 CATEGORIES=	sysutils
-MASTER_SITES=	https://github.com/eza-community/${PORTNAME}/releases/download/${DISTVERSIONPREFIX}${DISTVERSION}/:man
-DISTFILES=	man-${DISTVERSION}.tar.gz:man
-DIST_SUBDIR=	${PORTNAME}
+MASTER_SITES=	https://github.com/eza-community/${PORTNAME}/releases/download/v${DISTVERSION}/man-${DISTVERSION}.tar.gz?dummy=/:man
+DISTFILES=	${PORTNAME}-man-${DISTVERSION}.tar.gz:man
 
 MAINTAINER=	kdeguchi@sz.tokoha-u.ac.jp
 COMMENT=	Modern, maintained replacement for ls
 WWW=		https://eza.rocks/
 
-LICENSE=	MIT
-LICENSE_FILE=	${WRKSRC}/LICENCE
+LICENSE=	EUPL12
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 USES=		cargo
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	eza-community
 
@@ -26,7 +26,6 @@ PLIST_FILES=	bin/${PORTNAME} \
 		share/zsh/site-functions/_${PORTNAME}
 
 post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/bash_completion.d
 	${INSTALL_DATA} ${WRKSRC}/completions/bash/${PORTNAME} ${STAGEDIR}${PREFIX}/etc/bash_completion.d/${PORTNAME}.bash
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/fish/completions

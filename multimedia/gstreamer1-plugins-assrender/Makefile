@@ -3,15 +3,16 @@ CATEGORIES=	multimedia
 
 COMMENT=	GStreamer ASS/SSA text renderer plugin
 
-GST_PLUGIN=	assrender
+LIB_DEPENDS=	libass.so:multimedia/libass
+
+USES=		compiler:c11
+
+MASTERDIR=	${.CURDIR:H:H}/multimedia/gstreamer1-plugins
+
+PLIST=		${.CURDIR}/pkg-plist
+
 DIST=		bad
-
-MASTERDIR=	${.CURDIR}/../../multimedia/gstreamer1-plugins
-
-PLIST=  ${.CURDIR}/pkg-plist
-
-LIB_DEPENDS=  libass.so:multimedia/libass
+GST_PLUGIN=	assrender
 
 .include "${MASTERDIR}/Makefile"
 
-USES+= compiler:c11

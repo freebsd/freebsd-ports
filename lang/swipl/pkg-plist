@@ -71,7 +71,7 @@ lib/swipl/lib/%%ARCH%%-%%OS%%/json.so
 lib/swipl/lib/%%ARCH%%-%%OS%%/libedit4pl.so
 lib/swipl/lib/%%ARCH%%-%%OS%%/libswipl.so
 lib/swipl/lib/%%ARCH%%-%%OS%%/libswipl.so.9
-lib/swipl/lib/%%ARCH%%-%%OS%%/libswipl.so.9.2.2
+lib/swipl/lib/%%ARCH%%-%%OS%%/libswipl.so.9.2.9
 lib/swipl/lib/%%ARCH%%-%%OS%%/md54pl.so
 lib/swipl/lib/%%ARCH%%-%%OS%%/memfile.so
 lib/swipl/lib/%%ARCH%%-%%OS%%/ntriples.so
@@ -305,6 +305,7 @@ lib/swipl/library/ext/http/http/graphql.pl
 lib/swipl/library/ext/http/http/html_head.pl
 lib/swipl/library/ext/http/http/html_quasiquotations.pl
 lib/swipl/library/ext/http/http/html_write.pl
+lib/swipl/library/ext/http/http/htmx.pl
 lib/swipl/library/ext/http/http/http_authenticate.pl
 lib/swipl/library/ext/http/http/http_client.pl
 lib/swipl/library/ext/http/http/http_cookie.pl
@@ -332,6 +333,7 @@ lib/swipl/library/ext/http/http/http_pwp.pl
 lib/swipl/library/ext/http/http/http_redis_plugin.pl
 lib/swipl/library/ext/http/http/http_server.pl
 lib/swipl/library/ext/http/http/http_server_files.pl
+lib/swipl/library/ext/http/http/http_server_health.pl
 lib/swipl/library/ext/http/http/http_session.pl
 lib/swipl/library/ext/http/http/http_sgml_plugin.pl
 lib/swipl/library/ext/http/http/http_stream.pl
@@ -641,7 +643,7 @@ lib/swipl/swipl.rc
 share/man/man1/swipl-ld.1.gz
 share/man/man1/swipl.1.gz
 libdata/pkgconfig/swipl.pc
-%%PORTDOCS%%lib/swipl/doc/Manual/64bits.html
+%%PORTDOCS%%lib/swipl/doc/Manual/32bits.html
 %%PORTDOCS%%lib/swipl/doc/Manual/Bibliography.html
 %%PORTDOCS%%lib/swipl/doc/Manual/Contents.html
 %%PORTDOCS%%lib/swipl/doc/Manual/DCG.html
@@ -1986,12 +1988,12 @@ libdata/pkgconfig/swipl.pc
 %%XPCE%%lib/swipl/xpce/prolog/lib/trace/icons/exit.xpm
 %%XPCE%%lib/swipl/xpce/prolog/lib/trace/icons/export.xpm
 %%XPCE%%lib/swipl/xpce/prolog/lib/trace/icons/eyes.xpm
-%%XPCE%%lib/swipl/xpce/prolog/lib/trace/icons/fact.xpm
+%%XPCE%%lib/swipl/xpce/prolog/lib/trace/icons/fact.bm
 %%XPCE%%lib/swipl/xpce/prolog/lib/trace/icons/fail.xpm
 %%XPCE%%lib/swipl/xpce/prolog/lib/trace/icons/finish.xpm
 %%XPCE%%lib/swipl/xpce/prolog/lib/trace/icons/foreign.xpm
 %%XPCE%%lib/swipl/xpce/prolog/lib/trace/icons/get.xpm
-%%XPCE%%lib/swipl/xpce/prolog/lib/trace/icons/grammar.xpm
+%%XPCE%%lib/swipl/xpce/prolog/lib/trace/icons/grammar.bm
 %%XPCE%%lib/swipl/xpce/prolog/lib/trace/icons/import.xpm
 %%XPCE%%lib/swipl/xpce/prolog/lib/trace/icons/interactor.xpm
 %%XPCE%%lib/swipl/xpce/prolog/lib/trace/icons/interrupt.xpm
@@ -2016,7 +2018,7 @@ libdata/pkgconfig/swipl.pc
 %%XPCE%%lib/swipl/xpce/prolog/lib/trace/icons/plfile.xpm
 %%XPCE%%lib/swipl/xpce/prolog/lib/trace/icons/plincludedfile.xpm
 %%XPCE%%lib/swipl/xpce/prolog/lib/trace/icons/plloadedfile.xpm
-%%XPCE%%lib/swipl/xpce/prolog/lib/trace/icons/pred.xpm
+%%XPCE%%lib/swipl/xpce/prolog/lib/trace/icons/pred.bm
 %%XPCE%%lib/swipl/xpce/prolog/lib/trace/icons/redo.xpm
 %%XPCE%%lib/swipl/xpce/prolog/lib/trace/icons/retry.xpm
 %%XPCE%%lib/swipl/xpce/prolog/lib/trace/icons/send.xpm

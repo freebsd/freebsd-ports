@@ -1,0 +1,277 @@
+PORTNAME=	code2prompt
+DISTVERSIONPREFIX=	v
+DISTVERSION=	2.0.0
+PORTREVISION=	2
+CATEGORIES=	misc # machine-learning
+
+MAINTAINER=	yuri@FreeBSD.org
+COMMENT=	CLI tool to convert your codebase into a LLM prompt
+WWW=		https://github.com/mufeedvh/code2prompt
+
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+BROKEN_i386=	link fails: error: undefined symbol: __atomic_fetch_add_8, etc
+
+BUILD_DEPENDS=	gmake:devel/gmake
+
+USES=		cargo perl5
+USE_PERL5=	build
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	mufeedvh
+
+CARGO_CRATES=	adler2-2.0.0 \
+		aho-corasick-1.1.3 \
+		anstream-0.6.18 \
+		anstyle-1.0.10 \
+		anstyle-parse-0.2.6 \
+		anstyle-query-1.1.2 \
+		anstyle-wincon-3.0.6 \
+		anyhow-1.0.95 \
+		arboard-3.4.1 \
+		assert_cmd-2.0.16 \
+		autocfg-1.4.0 \
+		base64-0.21.7 \
+		bit-set-0.5.3 \
+		bit-vec-0.6.3 \
+		bitflags-1.3.2 \
+		bitflags-2.6.0 \
+		block-buffer-0.10.4 \
+		block2-0.5.1 \
+		bstr-1.11.3 \
+		bumpalo-3.16.0 \
+		bytemuck-1.21.0 \
+		byteorder-1.5.0 \
+		byteorder-lite-0.1.0 \
+		cc-1.2.7 \
+		cfg-if-1.0.0 \
+		clap-4.5.24 \
+		clap_builder-4.5.24 \
+		clap_derive-4.5.24 \
+		clap_lex-0.7.4 \
+		clipboard-win-5.4.0 \
+		colorchoice-1.0.3 \
+		colored-2.2.0 \
+		console-0.15.10 \
+		core-foundation-0.9.4 \
+		core-foundation-sys-0.8.7 \
+		core-graphics-0.23.2 \
+		core-graphics-types-0.1.3 \
+		cpufeatures-0.2.16 \
+		crc32fast-1.4.2 \
+		crossbeam-0.8.4 \
+		crossbeam-channel-0.5.14 \
+		crossbeam-deque-0.8.6 \
+		crossbeam-epoch-0.9.18 \
+		crossbeam-queue-0.3.12 \
+		crossbeam-utils-0.8.21 \
+		crossterm-0.25.0 \
+		crossterm_winapi-0.9.1 \
+		crypto-common-0.1.6 \
+		difflib-0.4.0 \
+		digest-0.10.7 \
+		displaydoc-0.2.5 \
+		doc-comment-0.3.3 \
+		dyn-clone-1.0.17 \
+		either-1.13.0 \
+		encode_unicode-1.0.0 \
+		env_filter-0.1.3 \
+		env_logger-0.11.6 \
+		errno-0.3.10 \
+		error-code-3.3.1 \
+		fancy-regex-0.12.0 \
+		fastrand-2.3.0 \
+		fdeflate-0.3.7 \
+		flate2-1.0.35 \
+		float-cmp-0.9.0 \
+		foreign-types-0.5.0 \
+		foreign-types-macros-0.2.3 \
+		foreign-types-shared-0.3.1 \
+		form_urlencoded-1.2.1 \
+		fuzzy-matcher-0.3.7 \
+		fxhash-0.2.1 \
+		generic-array-0.14.7 \
+		gethostname-0.4.3 \
+		getrandom-0.2.15 \
+		git2-0.18.3 \
+		glob-0.3.2 \
+		globset-0.4.15 \
+		handlebars-4.5.0 \
+		heck-0.5.0 \
+		humantime-2.1.0 \
+		icu_collections-1.5.0 \
+		icu_locid-1.5.0 \
+		icu_locid_transform-1.5.0 \
+		icu_locid_transform_data-1.5.0 \
+		icu_normalizer-1.5.0 \
+		icu_normalizer_data-1.5.0 \
+		icu_properties-1.5.1 \
+		icu_properties_data-1.5.0 \
+		icu_provider-1.5.0 \
+		icu_provider_macros-1.5.0 \
+		idna-1.0.3 \
+		idna_adapter-1.2.0 \
+		ignore-0.4.23 \
+		image-0.25.5 \
+		indicatif-0.17.9 \
+		inquire-0.7.5 \
+		is_terminal_polyfill-1.70.1 \
+		itertools-0.10.5 \
+		itoa-1.0.14 \
+		jobserver-0.1.32 \
+		jpeg-decoder-0.3.1 \
+		js-sys-0.3.76 \
+		jwalk-0.8.1 \
+		lazy_static-1.5.0 \
+		libc-0.2.169 \
+		libgit2-sys-0.16.2+1.7.2 \
+		libz-sys-1.1.21 \
+		linux-raw-sys-0.4.15 \
+		litemap-0.7.4 \
+		lock_api-0.4.12 \
+		log-0.4.22 \
+		memchr-2.7.4 \
+		miniz_oxide-0.8.2 \
+		mio-0.8.11 \
+		newline-converter-0.3.0 \
+		normalize-line-endings-0.3.0 \
+		num-traits-0.2.19 \
+		number_prefix-0.4.0 \
+		objc-sys-0.3.5 \
+		objc2-0.5.2 \
+		objc2-app-kit-0.2.2 \
+		objc2-core-data-0.2.2 \
+		objc2-core-image-0.2.2 \
+		objc2-encode-4.0.3 \
+		objc2-foundation-0.2.2 \
+		objc2-metal-0.2.2 \
+		objc2-quartz-core-0.2.2 \
+		once_cell-1.20.2 \
+		openssl-probe-0.1.5 \
+		openssl-src-300.4.1+3.4.0 \
+		openssl-sys-0.9.104 \
+		parking_lot-0.12.3 \
+		parking_lot_core-0.9.10 \
+		percent-encoding-2.3.1 \
+		pest-2.7.15 \
+		pest_derive-2.7.15 \
+		pest_generator-2.7.15 \
+		pest_meta-2.7.15 \
+		pkg-config-0.3.31 \
+		png-0.17.16 \
+		portable-atomic-1.10.0 \
+		predicates-2.1.5 \
+		predicates-3.1.3 \
+		predicates-core-1.0.9 \
+		predicates-tree-1.0.12 \
+		proc-macro2-1.0.92 \
+		quote-1.0.38 \
+		rayon-1.10.0 \
+		rayon-core-1.12.1 \
+		redox_syscall-0.5.8 \
+		regex-1.11.1 \
+		regex-automata-0.4.9 \
+		regex-syntax-0.8.5 \
+		rustc-hash-1.1.0 \
+		rustix-0.38.43 \
+		ryu-1.0.18 \
+		same-file-1.0.6 \
+		scopeguard-1.2.0 \
+		serde-1.0.217 \
+		serde_derive-1.0.217 \
+		serde_json-1.0.135 \
+		sha2-0.10.8 \
+		shlex-1.3.0 \
+		signal-hook-0.3.17 \
+		signal-hook-mio-0.2.4 \
+		signal-hook-registry-1.4.2 \
+		simd-adler32-0.3.7 \
+		smallvec-1.13.2 \
+		stable_deref_trait-1.2.0 \
+		strsim-0.11.1 \
+		syn-2.0.95 \
+		synstructure-0.13.1 \
+		tempfile-3.15.0 \
+		termtree-0.4.1 \
+		termtree-0.5.1 \
+		thiserror-1.0.69 \
+		thiserror-2.0.9 \
+		thiserror-impl-1.0.69 \
+		thiserror-impl-2.0.9 \
+		thread_local-1.1.8 \
+		tiff-0.9.1 \
+		tiktoken-rs-0.5.9 \
+		tinystr-0.7.6 \
+		typenum-1.17.0 \
+		ucd-trie-0.1.7 \
+		unicode-ident-1.0.14 \
+		unicode-segmentation-1.12.0 \
+		unicode-width-0.1.14 \
+		unicode-width-0.2.0 \
+		url-2.5.4 \
+		utf16_iter-1.0.5 \
+		utf8_iter-1.0.4 \
+		utf8parse-0.2.2 \
+		vcpkg-0.2.15 \
+		version_check-0.9.5 \
+		wait-timeout-0.2.0 \
+		walkdir-2.5.0 \
+		wasi-0.11.0+wasi-snapshot-preview1 \
+		wasm-bindgen-0.2.99 \
+		wasm-bindgen-backend-0.2.99 \
+		wasm-bindgen-macro-0.2.99 \
+		wasm-bindgen-macro-support-0.2.99 \
+		wasm-bindgen-shared-0.2.99 \
+		web-time-1.1.0 \
+		weezl-0.1.8 \
+		winapi-0.3.9 \
+		winapi-i686-pc-windows-gnu-0.4.0 \
+		winapi-util-0.1.9 \
+		winapi-x86_64-pc-windows-gnu-0.4.0 \
+		windows-sys-0.48.0 \
+		windows-sys-0.59.0 \
+		windows-targets-0.48.5 \
+		windows-targets-0.52.6 \
+		windows_aarch64_gnullvm-0.48.5 \
+		windows_aarch64_gnullvm-0.52.6 \
+		windows_aarch64_msvc-0.48.5 \
+		windows_aarch64_msvc-0.52.6 \
+		windows_i686_gnu-0.48.5 \
+		windows_i686_gnu-0.52.6 \
+		windows_i686_gnullvm-0.52.6 \
+		windows_i686_msvc-0.48.5 \
+		windows_i686_msvc-0.52.6 \
+		windows_x86_64_gnu-0.48.5 \
+		windows_x86_64_gnu-0.52.6 \
+		windows_x86_64_gnullvm-0.48.5 \
+		windows_x86_64_gnullvm-0.52.6 \
+		windows_x86_64_msvc-0.48.5 \
+		windows_x86_64_msvc-0.52.6 \
+		write16-1.0.0 \
+		writeable-0.5.5 \
+		x11rb-0.13.1 \
+		x11rb-protocol-0.13.1 \
+		yoke-0.7.5 \
+		yoke-derive-0.7.5 \
+		zerofrom-0.1.5 \
+		zerofrom-derive-0.1.5 \
+		zerovec-0.10.4 \
+		zerovec-derive-0.10.3
+
+OPENSSLINC=	/usr/include
+OPENSSLLIB=	/usr/lib
+
+PLIST_FILES=	bin/${PORTNAME}
+
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == powerpc
+LIB_DEPENDS+=	libatomic.so:lang/gcc${GCC_DEFAULT}
+LDFLAGS+=	-L/usr/local/lib/gcc${GCC_DEFAULT} -latomic
+.endif
+
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+
+.include <bsd.port.mk>

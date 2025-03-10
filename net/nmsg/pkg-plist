@@ -38,6 +38,8 @@ include/nmsg/random.h
 include/nmsg/rate.h
 include/nmsg/res.h
 include/nmsg/sock.h
+include/nmsg/statsmod.h
+include/nmsg/statsmod_plugin.h
 include/nmsg/strbuf.h
 include/nmsg/timespec.h
 include/nmsg/vendors.h
@@ -46,7 +48,7 @@ include/nmsg/zbuf.h
 lib/libnmsg.a
 lib/libnmsg.so
 lib/libnmsg.so.8
-lib/libnmsg.so.8.2.0
+lib/libnmsg.so.8.3.0
 lib/nmsg/nmsg_flt1_sample.so
 lib/nmsg/nmsg_msg9_base.so
 libdata/pkgconfig/libnmsg.pc

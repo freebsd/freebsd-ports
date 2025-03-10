@@ -1,5 +1,6 @@
     COMMENT = CAD tools
 
+    SUBDIR += Clipper2
     SUBDIR += PrusaSlicer
     SUBDIR += abc
     SUBDIR += admesh
@@ -107,6 +108,7 @@
     SUBDIR += pdnmesh
     SUBDIR += py-amaranth
     SUBDIR += py-cocotb
+    SUBDIR += py-csxcad
     SUBDIR += py-edalize
     SUBDIR += py-ezdxf
     SUBDIR += py-gdspy
@@ -144,7 +146,6 @@
     SUBDIR += svls
     SUBDIR += sweethome3d
     SUBDIR += symbiyosys
-    SUBDIR += tkgate
     SUBDIR += tochnog
     SUBDIR += uhdm
     SUBDIR += uranium

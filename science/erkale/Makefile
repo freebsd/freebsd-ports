@@ -1,6 +1,6 @@
 PORTNAME=	erkale
 DISTVERSION=	g20220405
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -45,6 +45,9 @@ CMAKE_OFF=	USE_OPENMP
 .else # parallel
 CMAKE_ON+=	USE_OPENMP
 SUFFIX=		_omp
+.  if !exists(/usr/include/omp.h)
+BROKEN=		requires OpenMP support that is missing on this architecture
+.  endif
 .endif
 
 OPTIONS_SINGLE=		LINALG

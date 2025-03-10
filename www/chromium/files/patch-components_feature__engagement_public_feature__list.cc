@@ -1,30 +1,29 @@
---- components/feature_engagement/public/feature_list.cc.orig	2024-07-30 11:12:21 UTC
+--- components/feature_engagement/public/feature_list.cc.orig	2025-03-05 08:14:56 UTC
 +++ components/feature_engagement/public/feature_list.cc
-@@ -152,7 +152,7 @@ const base::Feature* const kAllFeatures[] = {
-     &kIPHiOSSavedTabGroupClosed,
+@@ -165,7 +165,7 @@ const base::Feature* const kAllFeatures[] = {
+     &kIPHiOSReminderNotificationsOverflowMenuBubbleFeature,
  #endif  // BUILDFLAG(IS_IOS)
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_APPLE) || BUILDFLAG(IS_LINUX) || \
 -    BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_FUCHSIA)
 +    BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_FUCHSIA) || BUILDFLAG(IS_BSD)
+ #if BUILDFLAG(GOOGLE_CHROME_BRANDING)
      &kEsbDownloadRowPromoFeature,
-     &kIPHBatterySaverModeFeature,
-     &kIPHCompanionSidePanelFeature,
-@@ -218,7 +218,8 @@ const base::Feature* const kAllFeatures[] = {
+ #endif
+@@ -236,7 +236,7 @@ const base::Feature* const kAllFeatures[] = {
+ #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_APPLE) || BUILDFLAG(IS_LINUX) ||
          // BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_FUCHSIA)
  
- #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_APPLE) || BUILDFLAG(IS_LINUX) || \
--    BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_FUCHSIA)
-+    BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_FUCHSIA) || \
-+    BUILDFLAG(IS_BSD)
+-#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_APPLE) || BUILDFLAG(IS_LINUX) || \
++#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_APPLE) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD) || \
+     BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_FUCHSIA)
+     &kIPHAutofillCardInfoRetrievalSuggestionFeature,
      &kIPHAutofillCreditCardBenefitFeature,
-     &kIPHAutofillExternalAccountProfileSuggestionFeature,
-     &kIPHAutofillManualFallbackFeature,
-@@ -267,7 +268,7 @@ const base::Feature* const kAllFeatures[] = {
+@@ -290,7 +290,7 @@ const base::Feature* const kAllFeatures[] = {
      &kIPHScalableIphGamingFeature,
- #endif  // BUILDFLAG(IS_CHROMEOS_ASH)
+ #endif  // BUILDFLAG(IS_CHROMEOS)
  
 -#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
      &kIPHDesktopPWAsLinkCapturingLaunch,
+     &kIPHDesktopPWAsLinkCapturingLaunchAppInTab,
  #endif  // BUILDFLAG(IS_WIN) ||  BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
- 

@@ -1,7 +1,7 @@
 PORTNAME=	zkgroup
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.7.4
-PORTREVISION=	26
+PORTREVISION=	32
 PORTEPOCH=	1
 CATEGORIES=	net-im
 
@@ -12,10 +12,9 @@ WWW=		https://github.com/signalapp/zkgroup
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cargo
+USES=		cargo java
 USE_GITHUB=	yes
 GH_ACCOUNT=	signalapp
-USE_JAVA=	yes
 JAVA_VERSION=	11+
 USE_LDCONFIG=	yes
 
@@ -135,7 +134,7 @@ CARGO_CRATES=	aead-0.4.1 \
 PLIST_FILES=	lib/lib${PORTNAME}.so
 
 do-install:
-	${INSTALL_LIB} ${CARGO_TARGET_DIR}/${CARGO_BUILD_TARGET}/*/lib${PORTNAME}.so \
+	${INSTALL_LIB} ${CARGO_TARGET_DIR}/*/lib${PORTNAME}.so \
 		${STAGEDIR}${PREFIX}/lib/
 
 .include <bsd.port.mk>

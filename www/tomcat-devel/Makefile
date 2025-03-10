@@ -1,5 +1,5 @@
 PORTNAME=	tomcat
-DISTVERSION=	11.0.0-M24
+DISTVERSION=	11.0.5
 CATEGORIES=	www java
 MASTER_SITES=	APACHE/${PORTNAME}/${PORTNAME}-${DISTVERSION:C/([0-9]+)(.*)/\1/}/v${DISTVERSION}/bin
 PKGNAMESUFFIX=	-devel
@@ -13,9 +13,8 @@ LICENSE=	APACHE20
 
 RUN_DEPENDS=	jsvc:devel/apache-commons-daemon
 
-USES=		cpe
+USES=		cpe java
 CPE_VENDOR=	apache
-USE_JAVA=	yes
 JAVA_VERSION=	17+
 USE_RC_SUBR=	${PKGBASE:C/-/_/}
 

@@ -1,5 +1,5 @@
 PORTNAME=	faraday-multipart
-PORTVERSION=	1.0.4
+PORTVERSION=	1.1.0
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -10,7 +10,7 @@ WWW=		https://github.com/lostisland/faraday-multipart
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-RUN_DEPENDS=	rubygem-multipart-post>=2<3:www/rubygem-multipart-post
+RUN_DEPENDS=	rubygem-multipart-post>=2.0<3:www/rubygem-multipart-post
 
 USES=		gem
 

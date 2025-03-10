@@ -1,5 +1,6 @@
 PORTNAME=	stdio
 PORTVERSION=	0.17.0
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 PKGNAMEPREFIX=	ocaml-
@@ -13,11 +14,9 @@ LICENSE=	MIT
 BUILD_DEPENDS=	${SA_DIR}/base/META:devel/ocaml-base
 RUN_DEPENDS=	${SA_DIR}/base/META:devel/ocaml-base
 
-USES=		ocaml:dune
+USES=		ocaml:dune,ldconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	janestreet
-USE_OCAML=	yes
-USE_OCAML_LDCONFIG=	yes
 
 DOCSDIR=	${OCAML_DOCSDIR}/${PORTNAME}
 PORTDOCS=	CHANGES.md LICENSE.md README.md odoc-pages
@@ -25,6 +24,12 @@ PORTDOCS=	CHANGES.md LICENSE.md README.md odoc-pages
 OPTIONS_DEFINE=	DOCS
 
 SA_DIR=		${LOCALBASE}/${OCAML_SITELIBDIR}
+
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == powerpc
+USE_BINUTILS=	yes
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} \

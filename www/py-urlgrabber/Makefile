@@ -1,6 +1,6 @@
 PORTNAME=	urlgrabber
 PORTVERSION=	4.0.0
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	www python
 MASTER_SITES=	http://urlgrabber.baseurl.org/download/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}

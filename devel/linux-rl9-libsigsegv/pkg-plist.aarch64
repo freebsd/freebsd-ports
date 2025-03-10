@@ -1,0 +1,7 @@
+usr/lib/.build-id/bd/3a64916c76cf377d71563f0cc08dd3642c2b0f
+usr/lib64/libsigsegv.so.2
+usr/lib64/libsigsegv.so.2.0.6
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+usr/share/licenses/libsigsegv/COPYING

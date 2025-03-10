@@ -1,6 +1,6 @@
 PORTNAME=	fife
 PORTVERSION=	0.4.2
-PORTREVISION=	7
+PORTREVISION=	10
 CATEGORIES=	games
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -63,5 +63,12 @@ LIBRARY_CMAKE_BOOL=	build-library
 # For static library build
 # LIBRARY_CMAKE_ON=	-Dbuild-library=ON -DBUILD_SHARED_LIBS=OFF
 # LIBRARY_CMAKE_OFF=	-Dbuild-library=OFF
+
+post-patch:
+	@${REINPLACE_CMD} -e 's,bfs::extension,GetExtension,g' \
+		${WRKSRC}/engine/core/loaders/native/map/atlasloader.cpp \
+		${WRKSRC}/engine/core/loaders/native/map/maploader.cpp \
+		${WRKSRC}/engine/core/loaders/native/map/objectloader.cpp \
+		${WRKSRC}/engine/core/gui/fifechan/fifechanmanager.cpp
 
 .include <bsd.port.mk>

@@ -9,7 +9,6 @@ include/isa-l/mem_routines.h
 include/isa-l/raid.h
 include/isa-l/test.h
 lib/libisal.a
-lib/libisal.la
 lib/libisal.so
 lib/libisal.so.2
 lib/libisal.so.2.0.31

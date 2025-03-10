@@ -1,6 +1,5 @@
 PORTNAME=	tools
 DISTVERSION=	${QT6_VERSION}
-PORTREVISION=	1
 CATEGORIES=	devel
 PKGNAMEPREFIX=	qt6-
 
@@ -11,11 +10,11 @@ BUILD_DEPENDS=	${LOCALBASE}/include/vulkan/vulkan.h:graphics/vulkan-headers
 LIB_DEPENDS=	libxkbcommon.so:x11/libxkbcommon \
 		libzstd.so:archivers/zstd
 
-USES=		cmake compiler:c++17-lang gl llvm:lib,noexport python:build \
+USES=		cmake compiler:c++17-lang gl llvm:min=17,lib,noexport python:build \
 		qt-dist:6
 USE_GL=		opengl
-USE_QT=		base declarative sqldriver-sqlite:run
 USE_LDCONFIG=	${PREFIX}/${QT_LIBDIR_REL}
+USE_QT=		base declarative sqldriver-sqlite:run
 
 CMAKE_ARGS+=	-DClang_DIR:PATH="${LLVM_PREFIX}/lib/cmake/clang" \
 		-DLLVM_DIR:PATH="${LLVM_PREFIX}/lib/cmake/llvm"

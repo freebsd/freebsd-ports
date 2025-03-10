@@ -3,15 +3,16 @@ CATEGORIES=	multimedia
 
 COMMENT=	GStreamer-plugins good-quality plug-ins
 
-GST_PLUGIN=	good
-GST_PLUGIN_SUFFIX=	-good
+LIB_DEPENDS+=	libnettle.so:security/nettle \
+		libsoup-3.0.so:devel/libsoup3
 
-MASTERDIR=	${.CURDIR}/../../multimedia/gstreamer1-plugins
-
-DIST=	good
+MASTERDIR=	${.CURDIR:H:H}/multimedia/gstreamer1-plugins
 
 PLIST=		${.CURDIR}/pkg-plist
-PATCHDIR=	${.CURDIR}/files
+
+DIST=			good
+GST_PLUGIN=		${DIST}
+GST_PLUGIN_SUFFIX=	-${DIST}
 NO_GSTREAMER_COMMON=	yes
 
 GOOD_GST_ENABLED_PLUGINS=	adaptivedemux2 \

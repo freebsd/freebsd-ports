@@ -36,7 +36,8 @@ USE_LDCONFIG=	${ALLIANCE_TOP}/lib
 
 MAKE_JOBS_UNSAFE=	yes
 INSTALL_TARGET=	install-strip
-CFLAGS+=	-fcommon
+CFLAGS+=	-fcommon \
+		-fpermissive
 
 CONFLICTS_INSTALL=	ocp publib
 

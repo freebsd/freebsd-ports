@@ -46,6 +46,7 @@ lib/cmake/Qt6Coap/Qt6CoapConfigVersionImpl.cmake
 lib/cmake/Qt6Coap/Qt6CoapDependencies.cmake
 lib/cmake/Qt6Coap/Qt6CoapTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/Qt6Coap/Qt6CoapTargets.cmake
+lib/cmake/Qt6Coap/Qt6CoapVersionlessAliasTargets.cmake
 lib/cmake/Qt6Coap/Qt6CoapVersionlessTargets.cmake
 %%QT_LIBDIR%%/libQt6Coap.prl
 %%QT_LIBDIR%%/libQt6Coap.so
@@ -54,5 +55,6 @@ lib/cmake/Qt6Coap/Qt6CoapVersionlessTargets.cmake
 %%QT_LIBDIR%%/metatypes/qt6coap_%%CMAKE_BUILD_TYPE%%_metatypes.json
 %%QT_MKSPECDIR%%/modules/qt_lib_coap.pri
 %%QT_MKSPECDIR%%/modules/qt_lib_coap_private.pri
+%%QT_SBOMDIR%%/qtcoap-%%FULLVER%%.spdx
 libdata/pkgconfig/Qt6Coap.pc
 %%QT_DATADIR%%/modules/Coap.json

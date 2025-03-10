@@ -1,11 +1,10 @@
 PORTNAME=			tdb
-DISTVERSION=			1.4.7
-PORTREVISION=			1
+DISTVERSION=			1.4.9
 PORTEPOCH=			1
 CATEGORIES=			databases
 MASTER_SITES=			SAMBA
 
-MAINTAINER=			timur@FreeBSD.org
+MAINTAINER=			samba@FreeBSD.org
 COMMENT=			Trivial Database
 WWW=		https://tdb.samba.org/
 
@@ -27,6 +26,8 @@ CONFIGURE_ARGS+=		--disable-rpath \
 				--without-gettext
 CONFIGURE_ENV=			PYTHONHASHSEED=1
 MAKE_ENV=			PYTHONHASHSEED=1
+
+CONFLICTS_INSTALL=		tdb[0-9]*
 
 MANPAGES_DESC=			Build and install manpages (requires textproc/docbook-xsl)
 

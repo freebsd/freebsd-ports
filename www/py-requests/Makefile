@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Python HTTP for Humans
 WWW=		https://docs.python-requests.org/en/latest/ \
+		https://requests.readthedocs.io/en/latest/ \
 		https://github.com/psf/requests
 
 LICENSE=	APACHE20

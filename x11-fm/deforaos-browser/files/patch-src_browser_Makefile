@@ -1,0 +1,14 @@
+--- src/browser/Makefile.orig	2024-09-02 14:43:13 UTC
++++ src/browser/Makefile
+@@ -47,9 +47,9 @@ install: all
+ 
+ install: all
+ 	$(MKDIR) $(DESTDIR)$(BINDIR)
+-	$(INSTALL) -m 0755 $(OBJDIR)browser$(EXEEXT) $(DESTDIR)$(BINDIR)/browser$(EXEEXT)
++	$(INSTALL) -m 0755 $(OBJDIR)browser$(EXEEXT) $(DESTDIR)$(BINDIR)/deforaos-browser$(EXEEXT)
+ 
+ uninstall:
+-	$(RM) -- $(DESTDIR)$(BINDIR)/browser$(EXEEXT)
++	$(RM) -- $(DESTDIR)$(BINDIR)/deforaos-browser$(EXEEXT)
+ 
+ .PHONY: all clean distclean install uninstall

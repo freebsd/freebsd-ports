@@ -1,5 +1,6 @@
 PORTNAME=	multimedia
 PORTVERSION=	${QT5_VERSION}${QT5_KDE_PATCH}
+PORTREVISION=	2
 CATEGORIES=	multimedia
 PKGNAMEPREFIX=	qt5-
 
@@ -15,6 +16,7 @@ USE_GNOME=	glib20
 USE_PERL5=	build
 USE_QT=		core declarative gui network opengl widgets \
 		buildtools:build
+USE_LDCONFIG=	${PREFIX}/${QT_LIBDIR_REL}
 USE_XORG=	x11 xext xv
 
 QT_CONFIG=	xlib
@@ -41,6 +43,7 @@ OPENAL_VARS_OFF=	QT_CONFIG+=-openal \
 			QMAKE_CONFIGURE_ARGS+=-no-openal
 
 ALSA_LIB_DEPENDS=	libasound.so:audio/alsa-lib
+ALSA_RUN_DEPENDS=	alsa-plugins>=0:audio/alsa-plugins
 ALSA_VARS=		QT_CONFIG+=alsa
 ALSA_VARS_OFF=		QT_CONFIG+=-alsa \
 			QMAKE_CONFIGURE_ARGS+=-no-alsa

@@ -1,6 +1,5 @@
 PORTNAME=	gcc
-PORTVERSION=	13.2.0
-PORTREVISION=	4
+PORTVERSION=	13.3.0
 CATEGORIES=	lang
 MASTER_SITES=	GCC
 PKGNAMESUFFIX=	${SUFFIX}
@@ -97,6 +96,7 @@ INSTALL_TARGET=	install-strip
 BINMODE=	755
 .endif
 CONFIGURE_ARGS+=--disable-nls \
+		--disable-libssp \
 		--enable-gnu-indirect-function \
 		--enable-host-shared \
 		--enable-plugin \

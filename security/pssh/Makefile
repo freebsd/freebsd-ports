@@ -16,7 +16,7 @@ BUILD_DEPENDS=	${PY_SETUPTOOLS} \
 RUN_DEPENDS=	rsync:net/rsync
 
 USES=		python
-USE_PYTHON=	autoplist pep517
+USE_PYTHON=	autoplist noflavors pep517
 USE_GITHUB=	yes
 GH_ACCOUNT=	lilydjwg
 

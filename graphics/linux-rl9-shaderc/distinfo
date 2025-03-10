@@ -1,0 +1,9 @@
+TIMESTAMP = 1732659395
+SHA256 (rocky/l/libshaderc-2024.0-1.el9.aarch64.rpm) = 3df2012c0b94dec5899d9a0c1c2d8ab6e9c1566cdbcc6cc3c6a068631732cb95
+SIZE (rocky/l/libshaderc-2024.0-1.el9.aarch64.rpm) = 1026481
+SHA256 (rocky/l/libshaderc-2024.0-1.el9.i686.rpm) = d84454c7dab4d2b788e9b72df994d691b6860fb9362d46aadfa861a774046621
+SIZE (rocky/l/libshaderc-2024.0-1.el9.i686.rpm) = 1125089
+SHA256 (rocky/l/libshaderc-2024.0-1.el9.x86_64.rpm) = df9493279c4a94d8761931ef74c75e4cb8044b918bded949a5d91db7accca180
+SIZE (rocky/l/libshaderc-2024.0-1.el9.x86_64.rpm) = 1035767
+SHA256 (rocky/s/shaderc-2024.0-1.el9.src.rpm) = 76e5d999ca8dfade6d0267724ceb634fc8a95063a14fe81bea4a8815fab80a73
+SIZE (rocky/s/shaderc-2024.0-1.el9.src.rpm) = 238630

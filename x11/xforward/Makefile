@@ -2,8 +2,8 @@ PORTNAME=	xforward
 PORTVERSION=	1.0
 PORTREVISION=	2
 CATEGORIES=	x11
-MASTER_SITES=	http://komquats.com/distfiles/ \
-		http://people.freebsd.org/~cy/distfiles/
+MASTER_SITES=	http://cschubert.com/distfiles/ \
+		LOCAL/cy
 DISTNAME=	${PORTNAME}
 
 MAINTAINER=	cy@FreeBSD.org

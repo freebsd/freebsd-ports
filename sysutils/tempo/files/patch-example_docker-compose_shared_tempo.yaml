@@ -1,0 +1,30 @@
+--- example/docker-compose/shared/tempo.yaml.orig	2024-10-22 18:23:02 UTC
++++ example/docker-compose/shared/tempo.yaml
+@@ -36,22 +36,22 @@ metrics_generator:
+   registry:
+     external_labels:
+       source: tempo
+-      cluster: docker-compose
++      cluster: freebsd
+   storage:
+-    path: /var/tempo/generator/wal
++    path: /var/db/tempo/generator/wal
+     remote_write:
+       - url: http://prometheus:9090/api/v1/write
+         send_exemplars: true
+   traces_storage:
+-    path: /var/tempo/generator/traces
++    path: /var/db/tempo/generator/traces
+ 
+ storage:
+   trace:
+     backend: local                     # backend configuration to use
+     wal:
+-      path: /var/tempo/wal             # where to store the wal locally
++      path: /var/db/tempo/wal             # where to store the wal locally
+     local:
+-      path: /var/tempo/blocks
++      path: /var/db/tempo/blocks
+ 
+ overrides:
+   defaults:

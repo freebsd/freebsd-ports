@@ -8,8 +8,9 @@ share/icons/hicolor/32x32/apps/kapptemplate.png
 share/icons/hicolor/48x48/apps/kapptemplate.png
 share/icons/hicolor/64x64/apps/kapptemplate.png
 share/icons/hicolor/scalable/apps/kapptemplate.svg
-share/kdevappwizard/templates/kde-frameworks5-simple.tar.bz2
-share/kdevappwizard/templates/kde-frameworks5.tar.bz2
+share/kdevappwizard/templates/kde-frameworks6-simple.tar.bz2
+share/kdevappwizard/templates/kde-frameworks6.tar.bz2
+share/locale/ast/LC_MESSAGES/kapptemplate.mo
 share/locale/bg/LC_MESSAGES/kapptemplate.mo
 share/locale/bs/LC_MESSAGES/kapptemplate.mo
 share/locale/ca/LC_MESSAGES/kapptemplate.mo
@@ -27,7 +28,9 @@ share/locale/fi/LC_MESSAGES/kapptemplate.mo
 share/locale/fr/LC_MESSAGES/kapptemplate.mo
 share/locale/ga/LC_MESSAGES/kapptemplate.mo
 share/locale/gl/LC_MESSAGES/kapptemplate.mo
+share/locale/he/LC_MESSAGES/kapptemplate.mo
 share/locale/hu/LC_MESSAGES/kapptemplate.mo
+share/locale/ia/LC_MESSAGES/kapptemplate.mo
 share/locale/it/LC_MESSAGES/kapptemplate.mo
 share/locale/ja/LC_MESSAGES/kapptemplate.mo
 share/locale/ka/LC_MESSAGES/kapptemplate.mo
@@ -59,4 +62,4 @@ share/locale/uk/LC_MESSAGES/kapptemplate.mo
 share/locale/zh_CN/LC_MESSAGES/kapptemplate.mo
 share/locale/zh_TW/LC_MESSAGES/kapptemplate.mo
 share/metainfo/org.kde.kapptemplate.appdata.xml
-share/qlogging-categories5/kapptemplate.categories
+share/qlogging-categories6/kapptemplate.categories

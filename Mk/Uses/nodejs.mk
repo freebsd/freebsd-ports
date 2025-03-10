@@ -7,13 +7,13 @@
 #   - build     use node as build-time dependency
 #   - run       use node as runtime dependency
 #   - env       set the environment (NODEJS_VERSION and NODEJS_SUFFIX)
-#   - version   available version: lts, current, 18, 20, 22
+#   - version   available version: lts, current, 18, 20, 22, 23
 #
 # Note:
 # - The supported versions follow upstream release schedule
 #   https://github.com/nodejs/Release/blob/main/README.md#release-schedule
-#   - lts is 20 now
-#   - current is 22 now
+#   - lts is 22 now
+#   - current is 23 now
 # - USES=nodejs means USES=nodejs:build,run
 # - If you define a version, you must provide run and/or build
 #
@@ -22,13 +22,13 @@
 .if !defined(_INCLUDE_USES_NODEJS_MK)
 _INCLUDE_USES_NODEJS_MK=	yes
 
-_VALID_NODEJS_VERSIONS=	18 20 22 current lts
+_VALID_NODEJS_VERSIONS=	18 20 22 23 current lts
 
 .  if ! ${_VALID_NODEJS_VERSIONS:M${NODEJS_DEFAULT}}
 IGNORE=	Invalid default nodejs version ${NODEJS_DEFAULT}; valid versions are ${_VALID_NODEJS_VERSIONS}
 .  endif
 
-.  if !empty(nodejs_ARGS:Nbuild:Nenv:Nrun:Nlts:Ncurrent:N18:N20:N22)
+.  if !empty(nodejs_ARGS:Nbuild:Nenv:Nrun:Nlts:Ncurrent:N18:N20:N22:N23)
 IGNORE=		USES=nodejs has invalid arguments ${nodejs_ARGS}
 .  endif
 
@@ -47,7 +47,7 @@ _NODEJS_VER=	${version}
 _NODEJS_VER=	${NODEJS_DEFAULT}
 .  endif
 
-NODEJS_VERSION=	${_NODEJS_VER:S|current|22|:S|lts|20|}
+NODEJS_VERSION=	${_NODEJS_VER:S|current|23|:S|lts|22|}
 NODEJS_SUFFIX=	-node${NODEJS_VERSION}
 
 .  if ${nodejs_ARGS:M*build*}

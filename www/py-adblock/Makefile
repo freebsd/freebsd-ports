@@ -1,6 +1,6 @@
 PORTNAME=	adblock
 DISTVERSION=	0.6.0
-PORTREVISION=	13
+PORTREVISION=	27
 CATEGORIES=	www python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -118,11 +118,6 @@ do-build:
 # Due to upstream not supplying a setup.py file or other way to install
 # using pip command for now...
 do-install:
-.if ${ARCH:Mpowerpc64*}
-	@(cd ${INSTALL_WRKSRC}; \
-		${FIND} . -name "*whl" -exec ${SH} -c 'mv {} `echo {} | ${SED}  -E -e "s/powerpc.*/powerpc.whl/"`' \
-		\;)
-.endif
 	@(cd ${INSTALL_WRKSRC} ; \
 		${INSTALL_DATA} "target/release/libadblock.so" \
 		"${STAGEDIR}/${PREFIX}/lib" ; \
@@ -133,7 +128,6 @@ post-install:
 	(cd ${STAGEDIR}${PREFIX} && \
 		${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py -d ${PREFIX} \
 		-f ${PYTHONPREFIX_SITELIBDIR:S;${PREFIX}/;;})
-	${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/adblock/adblock*.so
 # Regenerate .PLIST.pymodtemp to get all installed files from
 # ${STAGEDIR} because the file that is generated in the first place
 # contains only the EGG files as a whole.

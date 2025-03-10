@@ -317,14 +317,10 @@ share/applications/cherrytree.desktop
 %%DATADIR%%/language-specs/AutoHoykey.lang
 %%DATADIR%%/language-specs/abap.lang
 %%DATADIR%%/language-specs/clisp.lang
-%%DATADIR%%/language-specs/dart.lang
 %%DATADIR%%/language-specs/elixir.lang
-%%DATADIR%%/language-specs/gdscript.lang
 %%DATADIR%%/language-specs/hcl.lang
 %%DATADIR%%/language-specs/markdown-extra.lang
 %%DATADIR%%/language-specs/nasm.lang
-%%DATADIR%%/language-specs/solidity.lang
-%%DATADIR%%/language-specs/typescript.lang
 %%DATADIR%%/styles/Amy.xml
 %%DATADIR%%/styles/classic.xml
 %%DATADIR%%/styles/cobalt-darkened.xml
@@ -335,7 +331,9 @@ share/applications/cherrytree.desktop
 %%DATADIR%%/styles/oblivion.xml
 %%DATADIR%%/styles/solarized-dark.xml
 %%DATADIR%%/styles/solarized-light.xml
+%%DATADIR%%/styles/styles.rng
 %%DATADIR%%/styles/tango.xml
+%%DATADIR%%/styles/xed.xml
 %%PORTDOCS%%%%DOCSDIR%%/changelog.txt
 %%PORTDOCS%%%%DOCSDIR%%/cherrytree-main_window_text.png
 share/icons/hicolor/scalable/apps/cherrytree.svg
@@ -364,6 +362,7 @@ share/icons/hicolor/scalable/apps/cherrytree.svg
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/cherrytree.mo
 %%NLS%%share/locale/ro/LC_MESSAGES/cherrytree.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/cherrytree.mo
+%%NLS%%share/locale/sk/LC_MESSAGES/cherrytree.mo
 %%NLS%%share/locale/sl/LC_MESSAGES/cherrytree.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/cherrytree.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/cherrytree.mo

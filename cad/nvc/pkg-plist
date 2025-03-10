@@ -94,6 +94,8 @@ lib/nvc/ieee/IEEE.VITAL_TIMING
 lib/nvc/ieee/IEEE.VITAL_TIMING-body
 lib/nvc/ieee/_NVC_LIB
 lib/nvc/ieee/_index
+lib/nvc/nvc.08/NVC.COVER_PKG
+lib/nvc/nvc.08/NVC.COVER_PKG-body
 lib/nvc/nvc.08/NVC.IEEE_SUPPORT
 lib/nvc/nvc.08/NVC.IEEE_SUPPORT-body
 lib/nvc/nvc.08/NVC.POLYFILL
@@ -107,6 +109,8 @@ lib/nvc/nvc.08/NVC.VERILOG
 lib/nvc/nvc.08/NVC.VERILOG-body
 lib/nvc/nvc.08/_NVC_LIB
 lib/nvc/nvc.08/_index
+lib/nvc/nvc.19/NVC.COVER_PKG
+lib/nvc/nvc.19/NVC.COVER_PKG-body
 lib/nvc/nvc.19/NVC.IEEE_SUPPORT
 lib/nvc/nvc.19/NVC.IEEE_SUPPORT-body
 lib/nvc/nvc.19/NVC.POLYFILL
@@ -120,6 +124,8 @@ lib/nvc/nvc.19/NVC.VERILOG
 lib/nvc/nvc.19/NVC.VERILOG-body
 lib/nvc/nvc.19/_NVC_LIB
 lib/nvc/nvc.19/_index
+lib/nvc/nvc/NVC.COVER_PKG
+lib/nvc/nvc/NVC.COVER_PKG-body
 lib/nvc/nvc/NVC.POLYFILL
 lib/nvc/nvc/NVC.POLYFILL-body
 lib/nvc/nvc/NVC.PSL_SUPPORT

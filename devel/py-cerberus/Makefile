@@ -1,8 +1,9 @@
 PORTNAME=	Cerberus
-PORTVERSION=	1.3.5
+PORTVERSION=	1.3.7
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	${PORTNAME:tl}-${PORTVERSION}
 
 MAINTAINER=	matthew@FreeBSD.org
 COMMENT=	Lightweight, extensible validation tool for Python dictionaries

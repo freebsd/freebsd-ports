@@ -1,5 +1,6 @@
 PORTNAME=	cpprestsdk
 PORTVERSION=	2.10.19
+PORTREVISION=	2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
@@ -9,6 +10,8 @@ WWW=		https://github.com/Microsoft/cpprestsdk
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/../license.txt
+
+BROKEN=		fails to build with Boost>=1.87
 
 BUILD_DEPENDS=	${LOCALBASE}/include/websocketpp/client.hpp:devel/websocketpp
 LIB_DEPENDS=	libboost_system.so:devel/boost-libs

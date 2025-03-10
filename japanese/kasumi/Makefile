@@ -23,6 +23,8 @@ GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 OPTIONS_DEFINE=	NLS
 
+CONFLICTS_INSTALL=	kasumi-unicode
+
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}

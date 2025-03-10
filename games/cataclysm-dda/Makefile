@@ -1,8 +1,12 @@
 PORTNAME=	cataclysm-dda
-DISTVERSION=	0.G
-PORTREVISION=	1
+PORTVERSION=	0.H			# Preserve PORTVERSION so uppercase is respected
+DISTVERSIONSUFFIX=	-g08f04fd	# Using TAG instead of upstream 0.H-RELEASE
 PORTEPOCH=	1
 CATEGORIES=	games
+
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES=	1ab7d1793b3a34779e4616b8c0c7fab37a6da3be.patch:-p1 # Fix build with clang 19 \
+		https://github.com/CleverRaven/Cataclysm-DDA/issues/77355
 
 MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Roguelike set in a post-apocalyptic world
@@ -16,10 +20,11 @@ FLAVOR?=	curses
 FLAVORS_SUB=	yes
 
 tiles_PKGNAMESUFFIX=		-tiles
+tiles_LIB_DEPENDS=		libFLAC.so:audio/flac
 curses_CONFLICTS_INSTALL=	cataclysm-dda-tiles
 tiles_CONFLICTS_INSTALL=	cataclysm-dda
 
-USES=		cmake compiler:c++14-lang
+USES=		cmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	CleverRaven
 GH_PROJECT=	Cataclysm-DDA
@@ -47,6 +52,8 @@ CMAKE_ARGS+=	-DCURSES_INCLUDE_PATH:STRING="${NCURSESINC}"
 .endif
 
 PORTSCOUT=	limit:^0\.[A-Z]
+
+CXXFLAGS+=	-Wno-error=for-loop-analysis
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%DISTVERSION%%|${DISTVERSION}|' ${WRKSRC}/src/version.cmake

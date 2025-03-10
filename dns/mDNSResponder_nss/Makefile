@@ -1,6 +1,6 @@
 CATEGORIES=	dns net
 # Always set PORTREVISION explicitly as otherwise it is inherited from net/mDNSResponder
-PORTREVISION=	1
+PORTREVISION=	0
 PKGNAMESUFFIX=	_nss
 
 MAINTAINER=	mazhe@alkumuna.eu

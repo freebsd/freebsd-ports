@@ -1,5 +1,5 @@
 PORTNAME=	deheader
-DISTVERSION=	1.10
+DISTVERSION=	1.11
 CATEGORIES=	devel
 MASTER_SITES=	http://www.catb.org/esr/${PORTNAME}/
 

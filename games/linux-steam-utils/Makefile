@@ -1,9 +1,9 @@
 PORTNAME=	steam-utils
-DISTVERSION=	20240625
+DISTVERSION=	20250208
 CATEGORIES=	games linux
 PKGNAMEPREFIX=	linux-
 
-MAINTAINER=	iwtcex@gmail.com
+MAINTAINER=	monwarez@mailoo.org
 COMMENT=	Steam launcher for FreeBSD
 WWW=		https://github.com/shkhln/linuxulator-steam-utils
 
@@ -27,8 +27,6 @@ USE_LINUX=	devtools:build dbuslibs gtk2 dri nss alsa-plugins-oss
 
 MAKE_ARGS+=	PREFIX=${STAGEDIR}${PREFIX}
 ALL_TARGET=	build
-
-PORTSCOUT=	ignore:1
 
 SUB_FILES=	pkg-message
 

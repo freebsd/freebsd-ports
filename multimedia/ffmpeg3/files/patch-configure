@@ -1,0 +1,17 @@
+--- configure.orig	2024-05-15 16:58:49 UTC
++++ configure
+@@ -3024,13 +3024,7 @@ host_os=$target_os_default
+ target_os_default=$(tolower $(uname -s))
+ host_os=$target_os_default
+ 
+-# machine
+-if test "$target_os_default" = aix; then
+-    arch_default=$(uname -p)
+-    strip_default="strip -X32_64"
+-else
+-    arch_default=$(uname -m)
+-fi
++arch_default=$(uname -p)
+ cpu="generic"
+ intrinsics="none"
+ 

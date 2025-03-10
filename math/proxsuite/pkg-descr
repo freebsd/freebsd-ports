@@ -1,0 +1,6 @@
+ProxSuite is a collection of open-source, numerically robust, precise,
+and efficient numerical solvers (e.g., LPs, QPs, etc.) rooted in revisited
+primal-dual proximal algorithms. Through ProxSuite, we aim to offer the
+community scalable optimizers that deal with dense, sparse, or matrix-free
+problems. While the first targeted application is Robotics, ProxSuite can
+be used in other contexts without limits.

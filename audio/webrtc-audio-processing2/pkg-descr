@@ -1,0 +1,10 @@
+Audio processing routines extracted from WebRTC project into a
+standalone library. It provides the following features:
+
+- Acoustic echo cancellation
+- Acoustic echo control for mobile
+- Automatic gain control
+- High-pass filter
+- Level estimator
+- Noise suppression
+- Voice activity detection

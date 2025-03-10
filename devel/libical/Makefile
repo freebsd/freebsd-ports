@@ -1,47 +1,52 @@
 PORTNAME=	libical
-DISTVERSION=	3.0.16
-PORTREVISION=	1
+DISTVERSION=	3.0.19
+PORTREVISION=	2
 CATEGORIES=	devel
-MASTER_SITES=	https://github.com/libical/libical/releases/download/v${PORTVERSION}/
+MASTER_SITES=	https://github.com/libical/libical/releases/download/v${DISTVERSION}/
 
 MAINTAINER=	desktop@FreeBSD.org
 COMMENT=	Implementation of the IETF Calendaring and Scheduling protocols
-WWW=		https://github.com/libical
+WWW=		https://github.com/libical/libical
 
 LICENSE=	LGPL21 MPL20
 LICENSE_COMB=	dual
 
 LIB_DEPENDS=	libicuuc.so:devel/icu
 
-USES=		cmake compiler:c++11-lib cpe gnome pathfix perl5 pkgconfig
-USE_PERL5=	build
-USE_LDCONFIG=	yes
-
+USES=		cmake:testing compiler:c++11-lib cpe gnome pathfix perl5 \
+		pkgconfig
 CPE_VENDOR=	libical_project
+USE_LDCONFIG=	yes
+USE_PERL5=	build
 
-MAKE_JOBS_UNSAFE=	yes
+DOCSDIR=	${PREFIX}/share/gtk-doc/html/libical-glib
 
-CFLAGS_amd64=	-fPIC
+PLIST_SUB=	VERSION=${DISTVERSION}
+
+CMAKE_TESTING_ON=	LIBICAL_BUILD_TESTING
+
+CMAKE_OFF=	LIBICAL_BUILD_TESTING
+CMAKE_ON=	CMAKE_DISABLE_FIND_PACKAGE_BerkeleyDB \
+		CMAKE_DISABLE_FIND_PACKAGE_Doxygen
 
 OPTIONS_DEFINE=		DOCS GLIB INTROSPECTION VAPI
 OPTIONS_DEFAULT=	GLIB INTROSPECTION VAPI
 OPTIONS_SUB=		yes
 
+GLIB_DESC=		Build GLib bindings
+INTROSPECTION_DESC=	Build GObject Introspection
+
 DOCS_BUILD_DEPENDS=	gtkdoc-scan:textproc/gtk-doc
 DOCS_CMAKE_BOOL=	ICAL_BUILD_DOCS
-DOCSDIR=		${PREFIX}/share/gtk-doc/html/libical-glib
 
-VAPI_USES=		vala:build
-VAPI_CMAKE_BOOL=	ICAL_GLIB_VAPI
-
-INTROSPECTION_DESC=		Build GObject Introspection
-INTROSPECTION_USE=		gnome=introspection:build
-INTROSPECTION_CMAKE_BOOL=	GOBJECT_INTROSPECTION
-
-GLIB_DESC=		Build GLib bindings
 GLIB_USE=		GNOME=glib20,libxml2
 GLIB_CMAKE_BOOL=	ICAL_GLIB
 
-PLIST_SUB+=	VERSION=${PORTVERSION}
+INTROSPECTION_USE=		gnome=introspection:build
+INTROSPECTION_CMAKE_BOOL=	GOBJECT_INTROSPECTION
+
+VAPI_USES=		vala:build
+VAPI_CMAKE_BOOL=	ICAL_GLIB_VAPI
+VAPI_IMPLIES=		INTROSPECTION
 
 .include <bsd.port.mk>

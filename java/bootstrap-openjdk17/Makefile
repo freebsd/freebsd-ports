@@ -12,7 +12,7 @@ WWW=		https://openjdk.java.net/
 
 LICENSE=	GPLv2
 
-ONLY_FOR_ARCHS=	aarch64 amd64 i386 powerpc64 powerpc64le
+ONLY_FOR_ARCHS=	aarch64 amd64 i386 powerpc powerpc64 powerpc64le
 
 USES=		tar:xz
 
@@ -22,12 +22,17 @@ WRKSRC=		${WRKDIR}/${JDK_ROOT}
 
 JDK_PORT=	${PKGNAMEPREFIX}${PORTNAME}
 JDK_ROOT=	${PKGNAMEPREFIX}${PORTNAME}
-JDK_ARCH=	${ARCH:C/armv.*/arm/}${JDK_ARCH_SUFFIX_${ARCH}}
-JDK_ARCH_SUFFIX_powerpc64=	-elfv2
+JDK_ARCH=	${ARCH:C/armv.*/arm/}
 
 INSTALLDIR=	${STAGEDIR}${PREFIX}/${JDK_ROOT}
 
 .include <bsd.port.options.mk>
+
+.if ${ARCH} == powerpc
+PLIST_SUB+=	NOT_PPC="@comment "
+.else
+PLIST_SUB+=	NOT_PPC=""
+.endif
 
 .if ${ARCH:Mpowerpc64*}
 PLIST_SUB+=	NOT_PPC64="@comment "

@@ -1,0 +1,5 @@
+include/libportal-qt6/portal-qt6.h
+lib/libportal-qt6.so
+lib/libportal-qt6.so.1
+lib/libportal-qt6.so.1.0.0
+libdata/pkgconfig/libportal-qt6.pc

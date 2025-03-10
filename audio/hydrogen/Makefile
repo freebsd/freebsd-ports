@@ -1,6 +1,6 @@
 PORTNAME=	hydrogen
 DISTVERSION=	1.2.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	https://github.com/hydrogen-music/${PORTNAME}/releases/download/${DISTVERSION}/ \
 		SF/hydrogen/Hydrogen/${DISTVERSION}%20Sources/

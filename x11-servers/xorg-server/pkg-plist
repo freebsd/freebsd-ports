@@ -116,6 +116,7 @@ include/xorg/windowstr.h
 include/xorg/xaarop.h
 include/xorg/xace.h
 include/xorg/xacestr.h
+include/xorg/xf86-input-inputtest-protocol.h
 include/xorg/xf86.h
 include/xorg/xf86Crtc.h
 include/xorg/xf86Cursor.h
@@ -157,16 +158,15 @@ include/xorg/xserver-properties.h
 include/xorg/xserver_poll.h
 include/xorg/xvdix.h
 include/xorg/xvmcext.h
-include/xorg/xf86-input-inputtest-protocol.h
 lib/xorg/modules/drivers/modesetting_drv.so
 lib/xorg/modules/extensions/libglx.so
 lib/xorg/modules/input/inputtest_drv.so
 lib/xorg/modules/libexa.so
+lib/xorg/modules/libfbdevhw.so
 lib/xorg/modules/libglamoregl.so
 lib/xorg/modules/libint10.so
 lib/xorg/modules/libshadow.so
 lib/xorg/modules/libshadowfb.so
-lib/xorg/modules/libfbdevhw.so
 lib/xorg/modules/libvgahw.so
 lib/xorg/modules/libwfb.so
 lib/xorg/protocol.txt

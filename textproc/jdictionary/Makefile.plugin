@@ -5,8 +5,8 @@ COMMENT?=	JDictionary plugin master port
 
 RUN_DEPENDS+=	jdictionary:textproc/jdictionary
 
-# WARNING: USE_JAVA is set to be able to use JAVASHAREDIR.
-USE_JAVA=	yes
+# WARNING: USES=java is set to be able to use JAVASHAREDIR.
+USES=	java
 
 EXTRACT_CMD=	${CP}
 EXTRACT_BEFORE_ARGS=	#

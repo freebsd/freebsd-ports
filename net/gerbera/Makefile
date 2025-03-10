@@ -1,6 +1,6 @@
 PORTNAME=	gerbera
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.2.0
+DISTVERSION=	2.5.0
 CATEGORIES=	net multimedia
 
 MAINTAINER=	diizzy@FreeBSD.org
@@ -71,7 +71,8 @@ LIBNPUPNP_CMAKE_BOOL=	WITH_NPUPNP
 
 LIBUPNP_LIB_DEPENDS=	libupnp.so:devel/upnp
 
-MATROSKA_LIB_DEPENDS=	libmatroska.so:multimedia/libmatroska
+MATROSKA_LIB_DEPENDS=	libebml.so:textproc/libebml \
+			libmatroska.so:multimedia/libmatroska
 MATROSKA_CMAKE_BOOL=	WITH_MATROSKA
 
 TAGLIB_LIB_DEPENDS=	libtag.so:audio/taglib

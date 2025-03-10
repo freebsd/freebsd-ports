@@ -12,6 +12,7 @@ lib/ikiwiki/plugins/rst
 %%SITE_PERL%%/IkiWiki.pm
 %%SITE_PERL%%/IkiWiki/CGI.pm
 %%SITE_PERL%%/IkiWiki/Plugin/404.pm
+%%SITE_PERL%%/IkiWiki/Plugin/admonition.pm
 %%SITE_PERL%%/IkiWiki/Plugin/aggregate.pm
 %%SITE_PERL%%/IkiWiki/Plugin/amazon_s3.pm
 %%SITE_PERL%%/IkiWiki/Plugin/anonok.pm
@@ -31,6 +32,7 @@ lib/ikiwiki/plugins/rst
 %%SITE_PERL%%/IkiWiki/Plugin/darcs.pm
 %%SITE_PERL%%/IkiWiki/Plugin/date.pm
 %%SITE_PERL%%/IkiWiki/Plugin/ddate.pm
+%%SITE_PERL%%/IkiWiki/Plugin/duckduckgo.pm
 %%SITE_PERL%%/IkiWiki/Plugin/editdiff.pm
 %%SITE_PERL%%/IkiWiki/Plugin/editpage.pm
 %%SITE_PERL%%/IkiWiki/Plugin/edittemplate.pm
@@ -48,6 +50,7 @@ lib/ikiwiki/plugins/rst
 %%SITE_PERL%%/IkiWiki/Plugin/google.pm
 %%SITE_PERL%%/IkiWiki/Plugin/goto.pm
 %%SITE_PERL%%/IkiWiki/Plugin/graphviz.pm
+%%SITE_PERL%%/IkiWiki/Plugin/h1title.pm
 %%SITE_PERL%%/IkiWiki/Plugin/haiku.pm
 %%SITE_PERL%%/IkiWiki/Plugin/headinganchors.pm
 %%SITE_PERL%%/IkiWiki/Plugin/highlight.pm
@@ -139,6 +142,7 @@ lib/ikiwiki/plugins/rst
 %%SITE_PERL%%/IkiWiki/Setup/Yaml.pm
 %%SITE_PERL%%/IkiWiki/UserInfo.pm
 %%SITE_PERL%%/IkiWiki/Wrapper.pm
+%%PERL5_MAN3%%/IkiWiki::Plugin::h1title.3.gz
 %%W3M%%libexec/w3m/cgi-bin/ikiwiki-w3m.cgi
 sbin/ikiwiki-mass-rebuild
 %%DATADIR%%/attachment/ikiwiki/images/pbar-ani.gif
@@ -187,11 +191,13 @@ sbin/ikiwiki-mass-rebuild
 %%DATADIR%%/basewiki/wikiicons/diff.png
 %%DATADIR%%/basewiki/wikiicons/email.png
 %%DATADIR%%/basewiki/wikiicons/openidlogin-bg.gif
+%%DATADIR%%/basewiki/wikiicons/openidlogin-bg.png
 %%DATADIR%%/basewiki/wikiicons/revert.png
 %%DATADIR%%/basewiki/wikiicons/search-bg.gif
 %%DATADIR%%/directives/ikiwiki/directive/aggregate.mdwn
 %%DATADIR%%/directives/ikiwiki/directive/brokenlinks.mdwn
 %%DATADIR%%/directives/ikiwiki/directive/calendar.mdwn
+%%DATADIR%%/directives/ikiwiki/directive/caution.mdwn
 %%DATADIR%%/directives/ikiwiki/directive/color.mdwn
 %%DATADIR%%/directives/ikiwiki/directive/comment.mdwn
 %%DATADIR%%/directives/ikiwiki/directive/commentmoderation.mdwn
@@ -207,12 +213,14 @@ sbin/ikiwiki-mass-rebuild
 %%DATADIR%%/directives/ikiwiki/directive/haiku.mdwn
 %%DATADIR%%/directives/ikiwiki/directive/if.mdwn
 %%DATADIR%%/directives/ikiwiki/directive/img.mdwn
+%%DATADIR%%/directives/ikiwiki/directive/important.mdwn
 %%DATADIR%%/directives/ikiwiki/directive/inline.mdwn
 %%DATADIR%%/directives/ikiwiki/directive/linkmap.mdwn
 %%DATADIR%%/directives/ikiwiki/directive/listdirectives.mdwn
 %%DATADIR%%/directives/ikiwiki/directive/map.mdwn
 %%DATADIR%%/directives/ikiwiki/directive/meta.mdwn
 %%DATADIR%%/directives/ikiwiki/directive/more.mdwn
+%%DATADIR%%/directives/ikiwiki/directive/note.mdwn
 %%DATADIR%%/directives/ikiwiki/directive/orphans.mdwn
 %%DATADIR%%/directives/ikiwiki/directive/osm.mdwn
 %%DATADIR%%/directives/ikiwiki/directive/pagecount.mdwn
@@ -234,6 +242,7 @@ sbin/ikiwiki-mass-rebuild
 %%DATADIR%%/directives/ikiwiki/directive/templatebody.mdwn
 %%DATADIR%%/directives/ikiwiki/directive/testpagespec.mdwn
 %%DATADIR%%/directives/ikiwiki/directive/teximg.mdwn
+%%DATADIR%%/directives/ikiwiki/directive/tip.mdwn
 %%DATADIR%%/directives/ikiwiki/directive/toc.mdwn
 %%DATADIR%%/directives/ikiwiki/directive/toggle.mdwn
 %%DATADIR%%/directives/ikiwiki/directive/toggleable.mdwn
@@ -242,6 +251,7 @@ sbin/ikiwiki-mass-rebuild
 %%DATADIR%%/directives/ikiwiki/directive/traillink.mdwn
 %%DATADIR%%/directives/ikiwiki/directive/trailoptions.mdwn
 %%DATADIR%%/directives/ikiwiki/directive/version.mdwn
+%%DATADIR%%/directives/ikiwiki/directive/warning.mdwn
 %%DATADIR%%/directives/ikiwiki/directive/waypoint.mdwn
 %%DATADIR%%/javascript/ikiwiki/ikiwiki.js
 %%DATADIR%%/javascript/ikiwiki/relativedate.js
@@ -706,6 +716,11 @@ sbin/ikiwiki-mass-rebuild
 %%DATADIR%%/po/fr/directives/ikiwiki/directive/version.fr.po
 %%DATADIR%%/po/fr/smiley/smileys.fr.po
 %%DATADIR%%/smiley/smileys.mdwn
+%%DATADIR%%/smiley/smileys/admon-caution.png
+%%DATADIR%%/smiley/smileys/admon-important.png
+%%DATADIR%%/smiley/smileys/admon-note.png
+%%DATADIR%%/smiley/smileys/admon-tip.png
+%%DATADIR%%/smiley/smileys/admon-warning.png
 %%DATADIR%%/smiley/smileys/alert.png
 %%DATADIR%%/smiley/smileys/angry.png
 %%DATADIR%%/smiley/smileys/attention.png
@@ -745,6 +760,7 @@ sbin/ikiwiki-mass-rebuild
 %%DATADIR%%/templates/change.tmpl
 %%DATADIR%%/templates/comment.tmpl
 %%DATADIR%%/templates/commentmoderation.tmpl
+%%DATADIR%%/templates/duckduckgoform.tmpl
 %%DATADIR%%/templates/editcomment.tmpl
 %%DATADIR%%/templates/editconflict.tmpl
 %%DATADIR%%/templates/editcreationconflict.tmpl
@@ -777,6 +793,7 @@ sbin/ikiwiki-mass-rebuild
 %%DATADIR%%/themes/goldtype/background_darkness.png
 %%DATADIR%%/themes/goldtype/header_background.png
 %%DATADIR%%/themes/goldtype/style.css
+%%DATADIR%%/themes/lightdark/style.css
 %%DATADIR%%/themes/monochrome/gradient.png
 %%DATADIR%%/themes/monochrome/style.css
 share/locale/bg/LC_MESSAGES/ikiwiki.mo

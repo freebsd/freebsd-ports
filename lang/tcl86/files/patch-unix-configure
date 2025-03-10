@@ -1,6 +1,6 @@
---- unix/configure.orig	2021-11-04 15:04:06 UTC
+--- unix/configure.orig	2024-12-05 13:33:57 UTC
 +++ unix/configure
-@@ -7323,6 +7323,10 @@ fi
+@@ -7320,6 +7320,10 @@ fi
  
  	    case $system in
  	    DragonFly-*|FreeBSD-*)

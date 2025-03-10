@@ -1,6 +1,7 @@
 PORTNAME=	at-spi2-core
 PORTVERSION=	2.40.3
 DISTVERSIONSUFFIX=	-1.el9
+PORTREVISION=	1
 CATEGORIES=	accessibility linux
 
 MAINTAINER=	emulation@FreeBSD.org
@@ -15,6 +16,7 @@ USES=		linux:rl9
 USE_LDCONFIG=	yes
 USE_LINUX=	dbuslibs xorglibs
 USE_LINUX_RPM=	yes
+WANT_LINUX32=	yes
 
 OPTIONS_DEFINE=	DOCS NLS
 OPTIONS_SUB=	yes

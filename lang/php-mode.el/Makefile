@@ -1,7 +1,6 @@
 PORTNAME=	php-mode.el
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.25.0
-PORTREVISION=	5
+DISTVERSION=	1.27.0
 CATEGORIES=	lang elisp
 PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
 
@@ -11,7 +10,7 @@ WWW=		https://github.com/emacs-php/php-mode
 
 LICENSE=	GPLv3
 
-USES=		emacs gmake
+USES=		emacs
 USE_GITHUB=	yes
 GH_ACCOUNT=	emacs-php
 GH_PROJECT=	${PORTNAME:S/.el$//}
@@ -46,6 +45,9 @@ LISP_FILES=	lisp/php-align.el \
 		lisp/php-project.elc \
 		lisp/php.el \
 		lisp/php.elc
+
+do-build:
+	${EMACS_CMD} -q --batch -L ${WRKSRC}/lisp/ -f batch-byte-compile ${WRKSRC}/lisp/*.el
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}

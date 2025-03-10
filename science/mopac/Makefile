@@ -1,16 +1,16 @@
 PORTNAME=	mopac
 DISTVERSIONPREFIX=	v
-DISTVERSION=	22.1.1
-PORTREVISION=	1
+DISTVERSION=	23.1.2
 PORTEPOCH=	1
 CATEGORIES=	science # chemistry
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Semi-empirical (MNDO, etc.) molecular orbital calculation
-WWW=		http://openmopac.net/
+WWW=		http://openmopac.net \
+		https://github.com/openmopac/mopac
 
-LICENSE=	GPLv3
-LICENSE_FILE=	${WRKSRC}/COPYING
+LICENSE=	APACHE20
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 TEST_DEPENDS=	${PYNUMPY}
 
@@ -21,13 +21,16 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	openmopac
 
 CMAKE_OFF=	TESTS
-CMAKE_TESTING_ON=	TESTS
+CMAKE_TESTING_ON=	TESTS # all tests pass
 CMAKE_ARGS=	-DPython3_EXECUTABLE=${PYTHON_CMD} #-DPython3_NumPy_INCLUDE_DIRS=${PYTHONPREFIX_SITELIBDIR}/numpy/core/include
 
 PLIST_FILES=	bin/mopac \
 		bin/mopac-makpol \
 		bin/mopac-param \
+		include/mopac.h \
 		lib/libmopac.so \
-		lib/libmopac.so.1
+		lib/libmopac.so.2
+
+# tests as of 23.1.2: 100% tests passed, 0 tests failed out of 125
 
 .include <bsd.port.mk>

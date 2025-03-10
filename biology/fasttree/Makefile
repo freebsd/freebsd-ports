@@ -1,22 +1,22 @@
 PORTNAME=	FastTree
-DISTVERSION=	2.1.10
-PORTREVISION=	5
+DISTVERSION=	2.1.11
 CATEGORIES=	biology
-MASTER_SITES=	http://www.microbesonline.org/fasttree/
+MASTER_SITES=	https://www.microbesonline.org/fasttree/
 EXTRACT_SUFX=	.c
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Approximately-maximum-likelihood phylogenetic trees from alignments
-WWW=		http://www.microbesonline.org/fasttree/
+WWW=		https://www.microbesonline.org/fasttree/
 
 LICENSE=	GPLv2+
-
-NO_WRKSUBDIR=	yes
-PLIST_FILES=	bin/FastTree
 
 .if !exists(/usr/include/omp.h)
 USES=		compiler:gcc-c++11-lib
 .endif
+
+NO_WRKSUBDIR=	yes
+
+PLIST_FILES=	bin/FastTree
 
 do-extract:
 	@${CP} ${DISTDIR}/${DISTFILES} ${WRKSRC}

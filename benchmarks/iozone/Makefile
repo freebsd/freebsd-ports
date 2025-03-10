@@ -1,6 +1,5 @@
 PORTNAME=	iozone
-DISTVERSION=	3_506
-PORTREVISION=	1
+DISTVERSION=	3_507
 CATEGORIES=	benchmarks
 MASTER_SITES=	http://www.iozone.org/src/current/
 DISTNAME=	${PORTNAME}${DISTVERSION}
@@ -20,8 +19,6 @@ MAKEFILE=	makefile
 MAKE_ARGS=	${MAKE_ENV}
 MAKE_JOBS_UNSAFE=	yes
 ALL_TARGET=	freebsd
-
-CONFLICTS_INSTALL=	iozone21
 
 WRKSRC_SUBDIR=	src/current
 

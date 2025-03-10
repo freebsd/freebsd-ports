@@ -1,7 +1,6 @@
 PORTNAME=	onedrive
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.4.25
-PORTREVISION=	1
+DISTVERSION=	2.5.4
 CATEGORIES=	net
 
 MAINTAINER=	hiroo.ono+freebsd@gmail.com
@@ -21,7 +20,6 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	abraunegg
 
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
 PORTDOCS=	*
 
@@ -41,10 +39,8 @@ NOTIFY_CONFIGURE_ENABLE=	notifications
 
 ONEDRIVE_LOGDIR=	/var/log/${PORTNAME}
 
-post-extract:
-	${CP} ${FILESDIR}/freebsd_inotify.d ${WRKSRC}/src
-
 post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/onedrive
 	${INSTALL} -d -m 0775 ${STAGEDIR}${ONEDRIVE_LOGDIR}
 
 .include <bsd.port.mk>

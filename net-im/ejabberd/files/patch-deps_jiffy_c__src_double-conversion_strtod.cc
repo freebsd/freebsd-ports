@@ -9,11 +9,11 @@
 +#endif
  // 2^64 = 18446744073709551616 > 10^19
  static const int kMaxUint64DecimalDigits = 19;
- 
+
 @@ -55,6 +57,7 @@ static const int kMinDecimalPower = -324;
  static const uint64_t kMaxUint64 = UINT64_2PART_C(0xFFFFFFFF, FFFFFFFF);
- 
- 
+
+
 +#if defined(DOUBLE_CONVERSION_CORRECT_DOUBLE_OPERATIONS)
  static const double exact_powers_of_ten[] = {
    1.0,  // 10^0
@@ -23,6 +23,6 @@
  };
  static const int kExactPowersOfTenSize = ARRAY_SIZE(exact_powers_of_ten);
 +#endif
- 
+
  // Maximum number of significant digits in the decimal representation.
  // In fact the value is 772 (see conversions.cc), but to give us some margin

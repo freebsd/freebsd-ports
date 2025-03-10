@@ -1,5 +1,5 @@
 PORTNAME=	libcpuid
-PORTVERSION=	0.6.5
+PORTVERSION=	0.7.1
 CATEGORIES=	sysutils
 MASTER_SITES=	https://github.com/anrieff/libcpuid/releases/download/v${PORTVERSION}/
 

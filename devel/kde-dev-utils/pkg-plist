@@ -1,7 +1,7 @@
 bin/kpartloader
 bin/kuiviewer
-%%QT_PLUGINDIR%%/kf5/parts/kuiviewerpart.so
-%%QT_PLUGINDIR%%/quithumbnail.so
+%%QT_PLUGINDIR%%/kf6/parts/kuiviewerpart.so
+%%QT_PLUGINDIR%%/kf6/thumbcreator/quithumbnail.so
 share/applications/org.kde.kuiviewer.desktop
 share/icons/hicolor/128x128/apps/kuiviewer.png
 share/icons/hicolor/16x16/apps/kuiviewer.png
@@ -9,9 +9,9 @@ share/icons/hicolor/32x32/apps/kuiviewer.png
 share/icons/hicolor/48x48/apps/kuiviewer.png
 share/icons/hicolor/64x64/apps/kuiviewer.png
 share/icons/hicolor/scalable/apps/kuiviewer.svg
-share/kservices5/designerthumbnail.desktop
-share/kservices5/kuiviewer_part.desktop
 share/locale/ar/LC_MESSAGES/kuiviewer.mo
+share/locale/ast/LC_MESSAGES/kpartloader.mo
+share/locale/ast/LC_MESSAGES/kuiviewer.mo
 share/locale/az/LC_MESSAGES/kpartloader.mo
 share/locale/az/LC_MESSAGES/kuiviewer.mo
 share/locale/be/LC_MESSAGES/kuiviewer.mo
@@ -52,6 +52,8 @@ share/locale/ga/LC_MESSAGES/kpartloader.mo
 share/locale/ga/LC_MESSAGES/kuiviewer.mo
 share/locale/gl/LC_MESSAGES/kpartloader.mo
 share/locale/gl/LC_MESSAGES/kuiviewer.mo
+share/locale/he/LC_MESSAGES/kpartloader.mo
+share/locale/he/LC_MESSAGES/kuiviewer.mo
 share/locale/hi/LC_MESSAGES/kuiviewer.mo
 share/locale/hne/LC_MESSAGES/kuiviewer.mo
 share/locale/hr/LC_MESSAGES/kpartloader.mo

@@ -11,8 +11,6 @@ WWW=		https://samesame.kruijff.org/
 
 LICENSE=	BSD2CLAUSE
 
-BROKEN_FreeBSD_14=	ld: error: undefined symbol: eprol
-
 CONFLICTS=	samefile
 
 HAS_CONFIGURE=	yes
@@ -22,6 +20,8 @@ CONFIGURE_ARGS=	--enable-samechflags --enable-samechmod \
 		--includedir="${LOCALBASE}/include" --libdir="${LOCALBASE}/lib"
 USES=		tar:bzip2
 TEST_TARGET=	check
+
+CXXFLAGS+=	-std=c++11
 
 OPTIONS_DEFINE=			DEBUG DISK_STORAGE LOW_MEMORY_PROFILE \
 				EXPERIMENTAL PROFILER

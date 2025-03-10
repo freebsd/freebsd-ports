@@ -1,8 +1,9 @@
 PORTNAME=	trx-python # this project is planned to be merged into DIPY (science/py-dipy)
-DISTVERSION=	0.2.9
+DISTVERSION=	0.3
 CATEGORIES=	science python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	${PORTNAME:S/-/_/}-${DISTVERSION}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Experiments with new file format for tractography

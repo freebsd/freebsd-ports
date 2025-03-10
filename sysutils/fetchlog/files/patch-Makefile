@@ -1,17 +1,6 @@
---- Makefile.orig	2010-07-02 10:10:08 UTC
+--- Makefile.orig	2024-08-23 12:01:44 UTC
 +++ Makefile
-@@ -23,8 +23,8 @@ FETCHLOG_VERSION=1.4
- ### compiler
- 
- ### gcc
--CC=gcc
--CFLAGS= -O -Werror -Wall -Wcast-qual -Wstrict-prototypes \
-+CC?=cc
-+CFLAGS+= -O -Wall -Wcast-qual -Wstrict-prototypes \
- 	-Wmissing-prototypes -Wmissing-declarations -Winline -Wcast-align 
- ### cc
- #CC=cc
-@@ -57,7 +57,7 @@ HAS_REGEX=-DHAS_REGEX
+@@ -54,7 +54,7 @@ HAS_REGEX=-DHAS_REGEX
  ### installdir    
  ###   will use $INSTDIR/bin  and  $INSTDIR/man/man1, 
  ###   both dirs have to exist for installation

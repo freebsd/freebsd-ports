@@ -1,0 +1,12 @@
+--- CMakeLists.txt.orig	2023-07-28 20:41:45 UTC
++++ CMakeLists.txt
+@@ -68,7 +68,8 @@ if(${BUILD_TESTING})
+                           Catch2::Catch2 Catch2::Catch2WithMain
+                           ZLIB::ZLIB GSL::gsl GSL::gslcblas
+                           ${OpenMP_CXX_LIBRARIES}
+-                          gcov)
++			  --coverage -g -O0 -fprofile-arcs -ftest-coverage
++                          )
+     catch_discover_tests(fastANITest)
+     file(COPY tests/data DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
+     add_custom_target(lcov lcov -c -d .. -o fastANITest.out

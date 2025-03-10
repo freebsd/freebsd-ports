@@ -1,5 +1,6 @@
 PORTNAME=	pry-byebug
 PORTVERSION=	3.10.1
+PORTREVISION=	1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -11,7 +12,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-byebug>=11.0<12:devel/rubygem-byebug \
-		rubygem-pry>=0.13<0.15:devel/rubygem-pry
+		rubygem-pry>=0.13<0.16:devel/rubygem-pry
 
 USES=		gem
 

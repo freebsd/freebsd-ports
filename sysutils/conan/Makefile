@@ -1,11 +1,13 @@
 PORTNAME=	conan
-DISTVERSION=	2.6.0
+DISTVERSION=	2.12.0
+PORTREVISION=	1
 CATEGORIES=	sysutils python
 MASTER_SITES=	PYPI
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	C/C++ package manager
-WWW=		https://conan.io/
+WWW=		https://conan.io/ \
+		https://github.com/conan-io/conan
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
@@ -20,7 +22,7 @@ PY_DEPENDS=	\
 		${PYTHON_PKGNAMEPREFIX}future>=0.16.0:devel/py-future@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}Jinja2>=3.0:devel/py-Jinja2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}node-semver>=0.6.1:devel/py-node-semver@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}patch-ng>=1.17.4:devel/py-patch-ng@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}patch-ng>=1.18.0:devel/py-patch-ng@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pluginbase>=0.5:devel/py-pluginbase@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pygments>=2.0:textproc/py-pygments@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyjwt>=2.4.0:www/py-pyjwt@${PY_FLAVOR} \

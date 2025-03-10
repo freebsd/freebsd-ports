@@ -1,0 +1,13 @@
+[
+{ type: install
+  message: <<EOM
+
+Biostar-tools installs all of the tools except emboss to the
+default PATH (normally /usr/local/bin) so they just work without any
+special environment.  Emboss commands are installed to
+%%PREFIX%%/emboss/bin due to conflicts with other packages.  Run
+"biostar-shell" to add the emboss commands to your PATH, and simply
+exit the shell to return your PATH to normal.
+EOM
+}
+]

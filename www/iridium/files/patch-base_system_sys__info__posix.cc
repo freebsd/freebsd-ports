@@ -1,6 +1,6 @@
---- base/system/sys_info_posix.cc.orig	2024-06-25 12:08:48 UTC
+--- base/system/sys_info_posix.cc.orig	2025-02-22 18:06:53 UTC
 +++ base/system/sys_info_posix.cc
-@@ -118,7 +118,7 @@ bool GetDiskSpaceInfo(const base::FilePath& path,
+@@ -119,7 +119,7 @@ bool GetDiskSpaceInfo(const base::FilePath& path,
  
  namespace base {
  
@@ -18,7 +18,7 @@
  
  // static
  uint64_t SysInfo::AmountOfVirtualMemory() {
-@@ -265,6 +265,8 @@ std::string SysInfo::OperatingSystemArchitecture() {
+@@ -263,6 +263,8 @@ std::string SysInfo::OperatingSystemArchitecture() {
      arch = "x86";
    } else if (arch == "amd64") {
      arch = "x86_64";

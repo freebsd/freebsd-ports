@@ -1,0 +1,6 @@
+mdq aims to do for Markdown what jq does for JSON: provide an easy way to zero
+in on specific parts of a document.
+
+For example, GitHub PRs are Markdown documents, and some organizations have
+specific templates with checklists for all reviewers to complete. Enforcing
+these often requires ugly regexes that are a pain to write and worse to debug.

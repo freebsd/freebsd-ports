@@ -1,7 +1,7 @@
 PORTNAME=	rwpspread
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.3.0
-PORTREVISION=	1
+DISTVERSION=	0.4.0
+PORTREVISION=	2
 CATEGORIES=	deskutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -17,41 +17,46 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	0xk1f0
 
 CARGO_CRATES=	adler-1.0.2 \
+		ahash-0.8.11 \
 		aligned-vec-0.5.0 \
-		anstream-0.6.13 \
-		anstyle-1.0.6 \
-		anstyle-parse-0.2.3 \
-		anstyle-query-1.0.2 \
-		anstyle-wincon-3.0.2 \
+		anstream-0.6.15 \
+		anstyle-1.0.8 \
+		anstyle-parse-0.2.5 \
+		anstyle-query-1.1.1 \
+		anstyle-wincon-3.0.4 \
 		anyhow-1.0.82 \
 		arbitrary-1.3.2 \
 		arg_enum_proc_macro-0.3.4 \
-		arrayvec-0.7.4 \
+		arrayref-0.3.9 \
+		arrayvec-0.7.6 \
 		autocfg-1.2.0 \
 		av1-grain-0.2.3 \
-		avif-serialize-0.8.1 \
+		avif-serialize-0.8.2 \
+		bincode-1.3.3 \
 		bit_field-0.10.2 \
 		bitflags-1.3.2 \
 		bitflags-2.5.0 \
 		bitstream-io-2.2.0 \
+		blake3-1.5.5 \
 		built-0.7.2 \
 		bumpalo-3.16.0 \
-		bytemuck-1.15.0 \
-		byteorder-1.5.0 \
-		calloop-0.12.4 \
-		calloop-wayland-source-0.2.0 \
-		cc-1.0.94 \
+		bytemuck-1.19.0 \
+		byteorder-lite-0.1.0 \
+		calloop-0.13.0 \
+		calloop-wayland-source-0.3.0 \
+		cc-1.2.5 \
 		cfg-expr-0.15.8 \
 		cfg-if-1.0.0 \
-		clap-4.5.4 \
-		clap_builder-4.5.2 \
-		clap_complete-4.5.2 \
-		clap_derive-4.5.4 \
-		clap_lex-0.7.0 \
-		clap_mangen-0.2.20 \
+		clap-4.5.23 \
+		clap_builder-4.5.23 \
+		clap_complete-4.5.40 \
+		clap_derive-4.5.18 \
+		clap_lex-0.7.4 \
+		clap_mangen-0.2.24 \
 		color_quant-1.1.0 \
-		colorchoice-1.0.0 \
+		colorchoice-1.0.2 \
 		concurrent-queue-2.4.0 \
+		constant_time_eq-0.3.1 \
 		crc32fast-1.4.0 \
 		crossbeam-deque-0.8.5 \
 		crossbeam-epoch-0.9.18 \
@@ -71,14 +76,15 @@ CARGO_CRATES=	adler-1.0.2 \
 		gif-0.13.1 \
 		glob-0.3.1 \
 		half-2.4.1 \
-		hashbrown-0.14.3 \
+		hashbrown-0.15.2 \
 		heck-0.5.0 \
 		hermit-abi-0.3.9 \
-		image-0.25.1 \
-		image-webp-0.1.1 \
+		image-0.25.5 \
+		image-webp-0.2.0 \
 		imgref-1.10.1 \
-		indexmap-2.2.6 \
+		indexmap-2.7.0 \
 		interpolate_name-0.2.4 \
+		is_terminal_polyfill-1.70.1 \
 		itertools-0.12.1 \
 		itoa-1.0.11 \
 		jobserver-0.1.30 \
@@ -91,6 +97,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		lock_api-0.4.11 \
 		log-0.4.21 \
 		loop9-0.1.5 \
+		material-colors-0.4.2 \
 		maybe-rayon-0.1.1 \
 		memchr-2.7.2 \
 		memmap2-0.9.4 \
@@ -111,7 +118,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		png-0.17.13 \
 		polling-3.6.0 \
 		ppv-lite86-0.2.17 \
-		proc-macro2-1.0.81 \
+		proc-macro2-1.0.89 \
 		profiling-1.0.15 \
 		profiling-procmacros-1.0.15 \
 		qoi-0.4.1 \
@@ -122,55 +129,57 @@ CARGO_CRATES=	adler-1.0.2 \
 		rand_chacha-0.3.1 \
 		rand_core-0.6.4 \
 		rav1e-0.7.1 \
-		ravif-0.11.5 \
+		ravif-0.11.11 \
 		rayon-1.10.0 \
 		rayon-core-1.12.1 \
-		rgb-0.8.37 \
+		rgb-0.8.50 \
 		roff-0.2.1 \
 		rustix-0.38.32 \
 		ryu-1.0.17 \
 		scoped-tls-1.0.1 \
 		scopeguard-1.2.0 \
-		serde-1.0.201 \
-		serde_derive-1.0.201 \
-		serde_json-1.0.117 \
-		serde_spanned-0.6.5 \
+		serde-1.0.216 \
+		serde_derive-1.0.216 \
+		serde_json-1.0.134 \
+		serde_spanned-0.6.7 \
+		shlex-1.3.0 \
 		simd-adler32-0.3.7 \
 		simd_helpers-0.1.0 \
 		slab-0.4.9 \
 		smallvec-1.13.2 \
-		smithay-client-toolkit-0.18.1 \
+		smithay-client-toolkit-0.19.2 \
 		spin-0.9.8 \
 		strsim-0.11.1 \
-		syn-2.0.60 \
+		syn-2.0.85 \
 		system-deps-6.2.2 \
 		target-lexicon-0.12.14 \
 		thiserror-1.0.58 \
 		thiserror-impl-1.0.58 \
 		tiff-0.9.1 \
-		toml-0.8.12 \
-		toml_datetime-0.6.5 \
-		toml_edit-0.22.9 \
+		toml-0.8.19 \
+		toml_datetime-0.6.8 \
+		toml_edit-0.22.20 \
 		tracing-0.1.40 \
 		tracing-core-0.1.32 \
 		unicode-ident-1.0.12 \
-		utf8parse-0.2.1 \
+		utf8parse-0.2.2 \
 		v_frame-0.3.8 \
 		version-compare-0.2.0 \
+		version_check-0.9.5 \
 		wasi-0.11.0+wasi-snapshot-preview1 \
 		wasm-bindgen-0.2.92 \
 		wasm-bindgen-backend-0.2.92 \
 		wasm-bindgen-macro-0.2.92 \
 		wasm-bindgen-macro-support-0.2.92 \
 		wasm-bindgen-shared-0.2.92 \
-		wayland-backend-0.3.3 \
-		wayland-client-0.31.2 \
+		wayland-backend-0.3.4 \
+		wayland-client-0.31.3 \
 		wayland-csd-frame-0.3.0 \
 		wayland-cursor-0.31.1 \
-		wayland-protocols-0.31.2 \
-		wayland-protocols-wlr-0.2.0 \
-		wayland-scanner-0.31.1 \
-		wayland-sys-0.31.1 \
+		wayland-protocols-0.32.1 \
+		wayland-protocols-wlr-0.3.1 \
+		wayland-scanner-0.31.2 \
+		wayland-sys-0.31.2 \
 		weezl-0.1.8 \
 		windows-sys-0.52.0 \
 		windows-targets-0.52.5 \
@@ -182,12 +191,14 @@ CARGO_CRATES=	adler-1.0.2 \
 		windows_x86_64_gnu-0.52.5 \
 		windows_x86_64_gnullvm-0.52.5 \
 		windows_x86_64_msvc-0.52.5 \
-		winnow-0.6.6 \
+		winnow-0.6.18 \
 		xcursor-0.3.5 \
 		xkeysym-0.2.0 \
+		zerocopy-0.7.35 \
+		zerocopy-derive-0.7.35 \
 		zune-core-0.4.12 \
 		zune-inflate-0.2.54 \
-		zune-jpeg-0.4.11
+		zune-jpeg-0.4.13
 
 PLIST_FILES=	bin/${PORTNAME} \
 		share/bash-completion/completions/rwpspread \
@@ -195,15 +206,13 @@ PLIST_FILES=	bin/${PORTNAME} \
 		share/zsh/site-functions/_rwpspread
 
 post-install:
-	# strip binary
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 	# install completions
 	@${MKDIR} \
 		${STAGEDIR}${PREFIX}/share/bash-completion/completions \
 		${STAGEDIR}${PREFIX}/share/fish/vendor_completions.d \
 		${STAGEDIR}${PREFIX}/share/zsh/site-functions
-	${INSTALL_DATA} ${WRKDIR}/target/*-freebsd/release/completions/${PORTNAME}.bash ${STAGEDIR}${PREFIX}/share/bash-completion/completions/${PORTNAME}
-	${INSTALL_DATA} ${WRKDIR}/target/*-freebsd/release/completions/${PORTNAME}.fish ${STAGEDIR}${PREFIX}/share/fish/vendor_completions.d
-	${INSTALL_DATA} ${WRKDIR}/target/*-freebsd/release/completions/_${PORTNAME} ${STAGEDIR}${PREFIX}/share/zsh/site-functions
+	${INSTALL_DATA} ${WRKDIR}/target/release/completions/${PORTNAME}.bash ${STAGEDIR}${PREFIX}/share/bash-completion/completions/${PORTNAME}
+	${INSTALL_DATA} ${WRKDIR}/target/release/completions/${PORTNAME}.fish ${STAGEDIR}${PREFIX}/share/fish/vendor_completions.d
+	${INSTALL_DATA} ${WRKDIR}/target/release/completions/_${PORTNAME} ${STAGEDIR}${PREFIX}/share/zsh/site-functions
 
 .include <bsd.port.mk>

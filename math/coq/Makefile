@@ -1,10 +1,10 @@
 PORTNAME=	coq
-PORTVERSION=	8.19
-PORTREVISION=	4
+PORTVERSION=	8.20.1
+PORTREVISION=	1
 PORTEPOCH=	3
 CATEGORIES=	math
 DISTVERSIONPREFIX=	V
-DISTVERSIONSUFFIX=	.0
+#DISTVERSIONSUFFIX=	.0
 PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
 
 MAINTAINER=	hrs@FreeBSD.org
@@ -25,14 +25,11 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 RUN_DEPENDS=	${SA_DIR}/num/META:math/ocaml-num \
 		${SA_DIR}/zarith/META:math/ocaml-zarith
 
-USES=		emacs gettext-runtime gmake gnome ocaml:dune python:env shebangfix tex
+USES=		emacs gettext-runtime gmake gnome ocaml:camlp4,dune,ldconfig python:env shebangfix tex
 SHEBANG_FILES=	tools/*.py
 USE_GITHUB=	yes
 USE_GNOME=	cairo gdkpixbuf2 gtk30 gtksourceview3
 USE_LDCONFIG=	${PREFIX}/lib/coq
-USE_OCAML=	yes
-USE_OCAML_CAMLP4=	yes
-USE_OCAML_LDCONFIG=	yes
 OCAML_LDLIBS=		${OCAML_SITELIBDIR}/coq-core
 OCAML_PACKAGES=		coq-core coq-stdlib coq
 

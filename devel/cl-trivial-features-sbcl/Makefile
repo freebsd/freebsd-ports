@@ -1,6 +1,9 @@
 PORTNAME=	trivial-features
-PORTVERSION=	2010.01.16
-PORTREVISION=	87
+DISTVERSIONPREFIX=	v
+DISTVERSION=	1.0-4
+PORTREVISION=	3
+DISTVERSIONSUFFIX=	-gd249a62
+PORTEPOCH=	1
 CATEGORIES=	devel lisp
 PKGNAMEPREFIX=	cl-
 DISTFILES=	# none
@@ -9,12 +12,12 @@ MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Ensures consistent *FEATURES* in Common Lisp
 WWW=		https://www.cliki.net/trivial-features
 
+LICENSE=	MIT
+
 BUILD_DEPENDS=	${LOCALBASE}/${CL_LIBDIR_REL}/trivial-features/trivial-features.asd:devel/cl-trivial-features
 RUN_DEPENDS=	${LOCALBASE}/${CL_LIBDIR_REL}/trivial-features/trivial-features.asd:devel/cl-trivial-features
 
-USE_ASDF_FASL=	yes
+USES=		cl
 FASL_TARGET=	sbcl
-FASL_BUILD=	yes
 
-.include "${.CURDIR}/../../devel/cl-asdf/bsd.cl-asdf.mk"
 .include <bsd.port.mk>

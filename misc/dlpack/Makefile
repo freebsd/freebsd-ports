@@ -1,11 +1,12 @@
 PORTNAME=	dlpack
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.0rc
+DISTVERSION=	1.0
 CATEGORIES=	misc # machine-learning
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Common in-memory tensor structure
-WWW=		https://dmlc.github.io/dlpack/latest/
+WWW=		https://dmlc.github.io/dlpack/latest/ \
+		https://github.com/dmlc/dlpack
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

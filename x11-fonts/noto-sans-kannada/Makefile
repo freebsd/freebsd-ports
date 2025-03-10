@@ -1,5 +1,5 @@
 PORTNAME=	noto
-PORTVERSION=	2.005
+PORTVERSION=	2.006
 CATEGORIES=	x11-fonts
 MASTER_SITES=	https://github.com/notofonts/notofonts.github.io/raw/NotoSansKannada-v${PORTVERSION}/fonts/ \
 		https://github.com/notofonts/notofonts.github.io/raw/NotoSansKannada-v${PORTVERSION}/fonts/NotoSansKannada/hinted/ttf/:fonts

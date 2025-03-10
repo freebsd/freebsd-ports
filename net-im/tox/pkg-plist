@@ -11,7 +11,7 @@ lib/libtoxcore.so
 lib/libtoxcore.so.%%SO%%
 lib/libtoxcore.so.%%VER%%
 libdata/pkgconfig/toxcore.pc
-share/bash-completion/completions/tox-bootstrapd
+%%DAEMON%%share/bash-completion/completions/tox-bootstrapd
 %%DAEMON%%@dir(%%TOXDHT%%,nobody,755) /var/run/tox-bootstrapd
 %%DAEMON%%@dir(%%TOXDHT%%,nobody,700) /var/lib/tox-bootstrapd
 %%DAEMON%%@dir /var/lib

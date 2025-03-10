@@ -1,5 +1,5 @@
 PORTNAME=	microtex
-DISTVERSION=	g20230528
+DISTVERSION=	g20240805
 CATEGORIES=	print devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -13,13 +13,13 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libtinyxml2.so:textproc/tinyxml2
 
 USES=		compiler:c++17-lang gnome meson pkgconfig
-USE_GNOME=	cairomm gtkmm30 glibmm pangomm
+USE_GNOME=	cairomm glibmm gtkmm30 pangomm
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	NanoMichael
 GH_PROJECT=	MicroTeX
-GH_TAGNAME=	d87ebec
+GH_TAGNAME=	0e3707f
 
 PORTSCOUT=	skipv:xml-def
 

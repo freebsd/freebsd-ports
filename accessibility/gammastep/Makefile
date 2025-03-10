@@ -33,12 +33,12 @@ WAYLAND_DESC=		Support Wayland (wlroots) for changing colors
 
 GEO_BUILD_DEPENDS=	geoclue>=0:net/geoclue
 GEO_RUN_DEPENDS=	geoclue>=0:net/geoclue
-GEO_USE=		GNOME=glib20
+GEO_USE=		gnome=glib20
 GEO_CONFIGURE_ENABLE=	geoclue2
 
-GUI_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gobject3>0:devel/py-gobject3@${PY_FLAVOR} \
-			${PYTHON_PKGNAMEPREFIX}xdg>0:devel/py-xdg@${PY_FLAVOR}
+GUI_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}xdg>0:devel/py-xdg@${PY_FLAVOR}
 GUI_USES=		python
+GUI_USE=		gnome=pygobject3:run
 GUI_CONFIGURE_ENABLE=	gui
 
 NLS_USES=		gettext-runtime iconv

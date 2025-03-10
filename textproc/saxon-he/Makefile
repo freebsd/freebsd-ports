@@ -1,7 +1,7 @@
 PORTNAME=	saxon-he
-DISTVERSION=	10-6
+DISTVERSION=	12-5
 CATEGORIES=	textproc java
-MASTER_SITES=	SF/saxon/Saxon-HE/${PORTVERSION:R}/Java/
+MASTER_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/releases/download/SaxonHE${DISTVERSION}/
 DISTNAME=	SaxonHE${DISTVERSION}J
 
 MAINTAINER=	thierry@FreeBSD.org
@@ -11,19 +11,28 @@ WWW=		https://www.saxonica.com/
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/notices/LICENSE.txt
 
-USES=		zip
-USE_JAVA=	yes
+#USE_GITHUB=	yes
+GH_ACCOUNT=	Saxonica
+GH_PROJECT=	Saxon-HE
+
+USES=		java zip
+
 NO_WRKSUBDIR=	yes
 NO_ARCH=	yes
 NO_BUILD=	yes
 
-JARFILES=	jline-2.14.6.jar \
-		saxon-he-10.6.jar \
-		saxon-he-test-10.6.jar
+JARFILES=	${JARFILES1} ${JARFILES2}
+JARFILES1=	saxon-he-12.5.jar \
+		saxon-he-test-12.5.jar \
+		saxon-he-xqj-12.5.jar
+JARFILES2=	jline-2.14.6.jar \
+		xmlresolver-5.2.2.jar \
+		xmlresolver-5.2.2-data.jar
 PLIST_FILES=	${JARFILES:S,^,%%JAVAJARDIR%%/,}
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${JAVAJARDIR}
-	${INSTALL_DATA} ${JARFILES:S,^,${WRKSRC}/,} ${STAGEDIR}${JAVAJARDIR}
+	${INSTALL_DATA} ${JARFILES1:S,^,${WRKSRC}/,} ${STAGEDIR}${JAVAJARDIR}
+	${INSTALL_DATA} ${JARFILES2:S,^,${WRKSRC}/lib/,} ${STAGEDIR}${JAVAJARDIR}
 
 .include <bsd.port.mk>

@@ -4,6 +4,7 @@ bin/spirv-remap
 include/glslang/Include/ResourceLimits.h
 include/glslang/Include/glslang_c_interface.h
 include/glslang/Include/glslang_c_shader_types.h
+include/glslang/Include/visibility.h
 include/glslang/MachineIndependent/Versions.h
 include/glslang/Public/ResourceLimits.h
 include/glslang/Public/ShaderLang.h
@@ -11,6 +12,7 @@ include/glslang/Public/resource_limits_c.h
 include/glslang/SPIRV/GlslangToSpv.h
 include/glslang/SPIRV/Logger.h
 include/glslang/SPIRV/SPVRemapper.h
+include/glslang/SPIRV/SpvTools.h
 include/glslang/SPIRV/disassemble.h
 include/glslang/SPIRV/spirv.hpp
 include/glslang/build_info.h

@@ -14,7 +14,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyparsing>0:devel/py-pyparsing@${PY_FLAVOR
 		spice-protocol>=0.12.10:devel/spice-protocol
 LIB_DEPENDS=	libopus.so:audio/opus
 
-USES=		compiler:c++11-lang cpe gmake gnome jpeg libtool \
+USES=		compiler:c++11-lang cpe gmake gnome jpeg \
 		localbase:ldflag meson pkgconfig python ssl tar:bzip2 xorg
 CPE_VENDOR=	spice_project
 CPE_PRODUCT=	spice

@@ -1,0 +1,17 @@
+include/termbox2.h
+lib/libtermbox2.a
+lib/libtermbox2.so
+lib/libtermbox2.so.2
+lib/libtermbox2.so.2.0.0
+%%PORTDOCS%%%%DOCSDIR%%/README.md
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example.d
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example.go
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example.nim
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example.rb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example.rs
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example.zig
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/keyboard
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/keyboard.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/keyboard.gif

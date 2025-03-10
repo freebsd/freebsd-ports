@@ -1,8 +1,8 @@
 PORTNAME=	tt-rss
-PORTVERSION=	g20240421
-PORTREVISION=	2
+DISTVERSION=	g20250220
 PORTEPOCH=	2
 CATEGORIES=	www
+MASTER_SITES=	LOCAL/meta
 PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 
 MAINTAINER=	dereks@lifeofadishwasher.com
@@ -17,7 +17,7 @@ USES=		gettext-tools php:cli,web,flavors shebangfix
 
 USE_GITLAB=	yes
 GL_SITE=	https://gitlab.tt-rss.org
-GL_TAGNAME=	d832907125a7711397da8ade5cfb51082d802542
+GL_TAGNAME=	bfdfea88b988778db59fb112bbd07a4cd2aefd69
 # phe json/openssl extension is required but it's statically linked in default php
 USE_PHP=	ctype dom exif fileinfo filter iconv intl mbstring pcntl pdo \
 		phar posix session simplexml sockets tokenizer xml xmlwriter \
@@ -37,7 +37,7 @@ NO_BUILD=	yes
 # pgsql: php-pgsql php-pdo_pgsql
 #
 # from Mk/Uses/php.mk create sub vars for mysqli/pdo_mysql pgsql/pdo_pgsql values
-SUB_FILES=	config.php httpd-tt-rss.conf pkg-message ttrss_db_check.php
+SUB_FILES=	config.php httpd-tt-rss.conf pkg-message
 SUB_LIST=	MYSQL_DEPS="${mysqli_DEPENDS:T} ${pdo_mysql_DEPENDS:T}" \
 		PGSQL_DEPS="${pgsql_DEPENDS:T} ${pdo_pgsql_DEPENDS:T}" \
 		WWWOWN=${WWWOWN}
@@ -68,8 +68,6 @@ do-install:
 	${RM} ${STAGEDIR}${WWWDIR}/config.php-dist
 	${INSTALL_DATA} ${WRKDIR}/config.php \
 		${STAGEDIR}${WWWDIR}/config.php.sample
-	${INSTALL_DATA} ${WRKDIR}/ttrss_db_check.php \
-		${STAGEDIR}${WWWDIR}/ttrss_db_check.php
 	${INSTALL_DATA} ${FILESDIR}/newsyslog.sample \
 		${STAGEDIR}${EXAMPLESDIR}
 

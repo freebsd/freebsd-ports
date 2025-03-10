@@ -1,5 +1,5 @@
---- FastTree-2.1.10.c.orig	2017-12-04 15:09:11 UTC
-+++ FastTree-2.1.10.c
+--- FastTree-2.1.11.c.orig	2017-12-04 15:09:11 UTC
++++ FastTree-2.1.11.c
 @@ -8759,7 +8759,7 @@ double pnorm(double x)
  
  void *mymalloc(size_t sz) {

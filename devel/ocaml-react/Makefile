@@ -14,12 +14,13 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.md
 BUILD_DEPENDS=	ocamlbuild:devel/ocaml-ocamlbuild
 RUN_DEPENDS=	cppo:devel/ocaml-cppo
 
-USES=		tar:tbz
-USE_OCAML=	yes
+USES=		ocaml:findplist,ldconfig tar:tbz
 
-USE_OCAML_FINDLIB=	yes
-USE_OCAML_LDCONFIG=	yes
-USE_OCAMLFIND_PLIST=	yes
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == powerpc
+USE_BINUTILS=	yes
+.endif
 
 do-build:
 	cd ${WRKSRC} && ocamlbuild react.cmxs react.cma react.a

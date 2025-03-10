@@ -1,24 +1,23 @@
 PORTNAME=	yed
-DISTVERSION=	3.22
+DISTVERSION=	3.25
 CATEGORIES=	graphics java
 MASTER_SITES=	#
 DISTNAME=	yEd-${DISTVERSION}
 
-MAINTAINER=	myc@barev.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Editor for graphs and diagrams
 WWW=		https://www.yworks.com/products/yed
 
-LICENSE=	YED_1_1
-LICENSE_NAME=	yEd Software License Agreement (Version 1.1)
+LICENSE=	YED_1_2
+LICENSE_NAME=	yEd Software License Agreement (Version 1.2)
 LICENSE_TEXT=	Description of the license can be obtained from the following URL: \
 		http://www.yworks.com/products/yed/license.html
 # Downloading requires acceptance of license agreement
 LICENSE_PERMS=	no-dist-mirror no-dist-sell no-pkg-mirror no-pkg-sell auto-accept
 
-USES=		cpe zip
+USES=		cpe java zip
+JAVA_VERSION=	17+
 CPE_VENDOR=	yworks
-USE_JAVA=	yes
-JAVA_VERSION=	8+
 
 DESKTOP_ENTRIES="yEd" "${COMMENT}" "" "yed" "Graphics;" false
 
@@ -63,6 +62,7 @@ do-install:
 		imageio-tga.jar \
 		imageio-thumbsdb.jar \
 		imageio-tiff.jar \
+		imageio-webp.jar \
 		vectorgraphics.jar
 		${INSTALL_DATA} ${WRKSRC}/lib/${lib} ${STAGEDIR}${DATADIR}/lib
 .	endfor

@@ -144,6 +144,7 @@ include/valgrind/vki/vki-xen.h
 %%AMD64%%lib/valgrind/libgcc-sup-amd64-freebsd.a
 %%X86%%lib/valgrind/libgcc-sup-x86-freebsd.a
 %%AARCH64%%lib/valgrind/libgcc-sup-arm64-freebsd.a
+%%MPI%%lib/valgrind/libmpiwrap-%%ARCH%%-freebsd.so
 %%AMD64%%lib/valgrind/libreplacemalloc_toolpreload-amd64-freebsd.a
 %%X86%%lib/valgrind/libreplacemalloc_toolpreload-x86-freebsd.a
 %%AARCH64%%lib/valgrind/libreplacemalloc_toolpreload-arm64-freebsd.a

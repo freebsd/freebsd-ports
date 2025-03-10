@@ -1,6 +1,6 @@
 PORTNAME=	carbon
 PORTVERSION=	1.1.10
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	databases python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -32,7 +32,7 @@ SUB_LIST=	PYTHON_CMD=${PYTHON_CMD}
 .include <bsd.port.pre.mk>
 
 .if ${PYTHON_REL} > 30900
-BROKEN=		Python-3.9 is not supported
+BROKEN=		Python-3.9 or later is not supported
 .endif
 
 post-patch:

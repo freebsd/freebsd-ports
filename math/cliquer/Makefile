@@ -1,23 +1,19 @@
 PORTNAME=	cliquer
-PORTVERSION=	1.22
-DISTVERSIONPREFIX=	v
+DISTVERSION=	1.22
 CATEGORIES=	math
-#MASTER_SITES=	http://users.aalto.fi/~pat/cliquer/
+MASTER_SITES=	https://github.com/dimpase/autocliquer/releases/download/v${DISTVERSION}/
 
-MAINTAINER=	thierry@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Routines for clique searching
 WWW=		https://users.aalto.fi/~pat/cliquer.html
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-USE_GITHUB=	yes
-GH_ACCOUNT=	dimpase
-GH_PROJECT=	autocliquer
-
-USES=		autoreconf libtool
+USES=		libtool
+USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
-USE_LDCONFIG=	yes
 
 TEST_TARGET=	check
 

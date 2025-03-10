@@ -1,0 +1,18 @@
+Workaround for the following error
+ld: error: undefined symbol: ZSTD_createCCtx
+>>> referenced by OutputSections.cpp
+>>>               OutputSections.cpp.o:(void lld::elf::OutputSection::maybeCompress<llvm::object::ELFType<(llvm::endianness)1, false>>()) in archive /usr/local/llvm18/lib/liblldELF.a
+
+
+--- CMakeLists.txt.orig	2024-12-15 13:48:09 UTC
++++ CMakeLists.txt
+@@ -578,7 +578,8 @@ set_target_properties(
+     VS_USER_PROPS "${PROJECT_SOURCE_DIR}/cmake/VisualD.props"
+ )
+ # LDFLAGS should actually be in target property LINK_FLAGS, but this works, and gets around linking problems
+-target_link_libraries(${LDC_LIB} ${LLVM_LIBRARIES} ${LLVM_LDFLAGS})
++find_package(zstd)
++target_link_libraries(${LDC_LIB} ${LLVM_LIBRARIES} ${LLVM_LDFLAGS} zstd::libzstd)
+ if(WIN32)
+     target_link_libraries(${LDC_LIB} imagehlp psapi)
+ elseif(${CMAKE_SYSTEM_NAME} MATCHES "Linux")

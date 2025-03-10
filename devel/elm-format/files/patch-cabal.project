@@ -1,0 +1,11 @@
+--- cabal.project.orig	2023-04-13 18:39:17 UTC
++++ cabal.project
+@@ -5,8 +5,3 @@ packages:
+     ./elm-format-test-lib,
+     ./
+     ./Shakefile
+-with-compiler: ghc-9.4.4
+-
+-constraints:
+-  -- ansi-terminal-0.11.1 has issues with Win32-2.10.* (which is packaged with ghc-9.0)
+-  ansi-terminal == 0.11,

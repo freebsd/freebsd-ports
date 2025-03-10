@@ -9,6 +9,7 @@
 %%SITE_PERL%%/MCE/Channel/Threads.pm
 %%SITE_PERL%%/MCE/Channel/ThreadsFast.pm
 %%SITE_PERL%%/MCE/Child.pm
+%%SITE_PERL%%/MCE/Core.pm
 %%SITE_PERL%%/MCE/Core.pod
 %%SITE_PERL%%/MCE/Core/Input/Generator.pm
 %%SITE_PERL%%/MCE/Core/Input/Handle.pm

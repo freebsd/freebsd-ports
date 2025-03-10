@@ -1,5 +1,5 @@
 PORTNAME=	thingylaunch
-DISTVERSION=	3.0.3
+DISTVERSION=	4.0.0
 CATEGORIES=	x11
 MASTER_SITES=	https://code.ptrcrt.ch/${PORTNAME}/tarball/${DISTVERSION}/
 
@@ -11,9 +11,7 @@ LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
 USES=		compiler:c++11-lib pkgconfig xorg
-USE_XORG=	xorgproto xcb
-LIB_DEPENDS+=	libxcb-icccm.so:x11/xcb-util-wm \
-		libxcb-keysyms.so:x11/xcb-util-keysyms
+USE_XORG=	x11 xorgproto
 
 PLIST_FILES=	bin/${PORTNAME}
 

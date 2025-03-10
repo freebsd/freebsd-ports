@@ -18,7 +18,7 @@ FILE_LOG	= $LOGFILE
 END
 else
 cat >> Makefile << END
-FILE_LOG	= /var/log/openradius.log
+FILE_LOG	= /var/log/openradius/openradius.log
 END
 fi
 
@@ -31,6 +31,8 @@ TGT_LIB		+= modules/unixpasswd/unixpasswd
 TGT_LIB		+= modules/radlogger/radlogger
 TGT_LIB		+= modules/delay/delay
 TGT_LIB		+= modules/radsql/radsql
+TGT_LIB		+= modules/memory/memory
+TGT_LIB		+= modules/debug/debug
 END
 
 if [ x$USE_LDAP != x ]; then
@@ -52,8 +54,8 @@ S_LL_INET	=
 
 ### Build flags for all targets
 #
-CF_ALL		= -g -Wall
-LF_ALL		= 
+CF_ALL		= -g -w
+LF_ALL		= -s -L$LDAPLIB${LOCALBASE}/lib
 LL_ALL		=
 
 ### Module-specific build flags

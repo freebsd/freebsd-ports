@@ -1,1 +1,33 @@
-Lightweight connection pooler for PostgreSQL.
+PgBouncer is a PostgreSQL connection pooler. Any target application can be
+connected to PgBouncer as if it were a PostgreSQL server, and PgBouncer will
+create a connection to the actual server, or it will reuse one of its existing
+connections.
+
+The aim of PgBouncer is to lower the performance impact of opening new
+connections to PostgreSQL.
+
+In order not to compromise transaction semantics for connection pooling,
+PgBouncer supports several types of pooling when rotating connections:
+
+* Session pooling
+
+Most polite method. When a client connects, a server connection will be assigned
+to it for the whole duration it stays connected. When the client disconnects,
+the server connection will be put back into pool. This mode supports all
+PostgreSQL features.
+
+* Transaction pooling
+
+A server connection is assigned to a client only during a transaction. When
+PgBouncer notices that the transaction is over, the server will be put back into
+the pool.
+
+This mode breaks a few session-based features of PostgreSQL. You can use it only
+when the application cooperates by not using features that break. See the table
+below for incompatible features.
+
+* Statement pooling
+
+Most aggressive method. This is transaction pooling with a twist:
+Multi-statement transactions are disallowed. This is meant to enforce
+“autocommit” mode on the client, mostly targeted at PL/Proxy.

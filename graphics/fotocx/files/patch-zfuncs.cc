@@ -156,7 +156,7 @@
 +#ifdef GLOB_PERIOD
     int      globflags = GLOB_PERIOD;                                             //  include dotfiles
 +#else
-+   int      globflags = 0;;
++   int      globflags = 0;
 +#endif
     int      ii, jj, err, cc;
     glob_t   globdata;

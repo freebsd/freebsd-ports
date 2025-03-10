@@ -1,5 +1,6 @@
 bin/gtk-update-icon-cache
 %%MANPAGES%%share/man/man1/gtk-update-icon-cache.1.gz
+share/locale/ab/LC_MESSAGES/gtk-update-icon-cache.mo
 share/locale/af/LC_MESSAGES/gtk-update-icon-cache.mo
 share/locale/am/LC_MESSAGES/gtk-update-icon-cache.mo
 share/locale/an/LC_MESSAGES/gtk-update-icon-cache.mo
@@ -49,11 +50,13 @@ share/locale/hu/LC_MESSAGES/gtk-update-icon-cache.mo
 share/locale/hy/LC_MESSAGES/gtk-update-icon-cache.mo
 share/locale/ia/LC_MESSAGES/gtk-update-icon-cache.mo
 share/locale/id/LC_MESSAGES/gtk-update-icon-cache.mo
+share/locale/ie/LC_MESSAGES/gtk-update-icon-cache.mo
 share/locale/io/LC_MESSAGES/gtk-update-icon-cache.mo
 share/locale/is/LC_MESSAGES/gtk-update-icon-cache.mo
 share/locale/it/LC_MESSAGES/gtk-update-icon-cache.mo
 share/locale/ja/LC_MESSAGES/gtk-update-icon-cache.mo
 share/locale/ka/LC_MESSAGES/gtk-update-icon-cache.mo
+share/locale/kab/LC_MESSAGES/gtk-update-icon-cache.mo
 share/locale/kg/LC_MESSAGES/gtk-update-icon-cache.mo
 share/locale/kk/LC_MESSAGES/gtk-update-icon-cache.mo
 share/locale/km/LC_MESSAGES/gtk-update-icon-cache.mo

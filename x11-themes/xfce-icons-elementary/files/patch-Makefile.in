@@ -1,0 +1,11 @@
+--- Makefile.in.orig	2025-02-23 02:32:35 UTC
++++ Makefile.in
+@@ -50,7 +50,7 @@ builddir:
+ 	rm build/elementary-xfce-hidpi/CONTRIBUTORS && cp CONTRIBUTORS build/elementary-xfce-hidpi
+ 	rm build/elementary-xfce-hidpi/LICENSE && cp LICENSE build/elementary-xfce-hidpi
+ 	rm build/elementary-xfce-hidpi/README.md && cp README.md build/elementary-xfce-hidpi
+-	find build/elementary-xfce-hidpi -mindepth 1 -maxdepth 1 -type d -exec ln -sr {} {}@2x \; -exec ln -sr {} {}@3x \;
++	(cd build/elementary-xfce-hidpi; find . -mindepth 1 -maxdepth 1 -type d -exec install -l rs {} {}@2x \; -exec install -l rs {} {}@3x \;)
+ 
+ .PHONY: all $(SUBDIRS)
+ 

@@ -19,8 +19,11 @@
     SUBDIR += alkimia
     SUBDIR += aqbanking
     SUBDIR += beancount
+    SUBDIR += beangulp
     SUBDIR += beanie
+    SUBDIR += beanquery
     SUBDIR += chiapos
+    SUBDIR += electrs
     SUBDIR += electrum
     SUBDIR += expense
     SUBDIR += fabric
@@ -28,7 +31,6 @@
     SUBDIR += fixc
     SUBDIR += freqtrade
     SUBDIR += frontaccounting
-    SUBDIR += frontaccounting24
     SUBDIR += gnucash
     SUBDIR += gnucash-docs
     SUBDIR += grisbi
@@ -55,6 +57,7 @@
     SUBDIR += odoo14
     SUBDIR += odoo15
     SUBDIR += odoo16
+    SUBDIR += odoo17
     SUBDIR += ord
     SUBDIR += p5-Business-CreditCard
     SUBDIR += p5-Business-MaxMind-CreditCardFraudDetection
@@ -112,6 +115,7 @@
     SUBDIR += py-exchange-calendars
     SUBDIR += py-ffn
     SUBDIR += py-financedatabase
+    SUBDIR += py-financetoolkit
     SUBDIR += py-finnhub-python
     SUBDIR += py-finviz
     SUBDIR += py-finvizfinance
@@ -145,6 +149,7 @@
     SUBDIR += py-ystockquote
     SUBDIR += qtbitcointrader
     SUBDIR += quantlib
+    SUBDIR += quba-viewer
     SUBDIR += quickfix
     SUBDIR += rubygem-money
     SUBDIR += skrooge

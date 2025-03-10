@@ -5,7 +5,7 @@ PKGNAMEPREFIX=	ocaml-
 
 MAINTAINER=	freebsd@dev.thsi.be
 COMMENT=	Optimized manipulation of integers over the standard byte-array types of OCaml
-WWW=		https://github.com/janestreet/base
+WWW=		https://github.com/OCamlPro/ocplib-endian
 
 LICENSE=	LGPL21+ # with a special exception to clause 6
 
@@ -14,12 +14,17 @@ BUILD_DEPENDS=	cppo:devel/ocaml-cppo
 USES=		ocaml:dune
 USE_GITHUB=	yes
 GH_ACCOUNT=	OCamlPro
-USE_OCAML=	yes
 
 DOCSDIR=	${OCAML_DOCSDIR}/${PORTNAME}
 PORTDOCS=	CHANGES.md README.md
 
 OPTIONS_DEFINE=	DOCS
+
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == powerpc
+USE_BINUTILS=	yes
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} \

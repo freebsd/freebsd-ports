@@ -10,9 +10,10 @@ WWW=		https://j-ftp.sourceforge.net/
 
 LICENSE=	GPLv2
 
+USES=		java
+
 NO_BUILD=	yes
 NO_ARCH=	yes
-USE_JAVA=	yes
 WRKSRC=		${WRKDIR}/j-ftp
 
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}

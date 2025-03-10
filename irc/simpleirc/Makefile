@@ -6,7 +6,7 @@ MASTER_SITES=	http://dl.suckless.org/tools/
 
 DISTNAME=	sic-${DISTVERSION}
 
-MAINTAINER=	Clockwork6400@protonmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Extremely simple IRC client
 WWW=		http://www.suckless.org/programs/sic.html
 

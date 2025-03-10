@@ -1,0 +1,4 @@
+CL-PPCRE is a fast, Perl compatible implementation of regular expressions
+written in portable, ANSI-compliant Common Lisp.
+
+This package installs binaries for CCL.

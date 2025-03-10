@@ -1,5 +1,5 @@
 PORTNAME=	dry-logic
-PORTVERSION=	1.5.0
+PORTVERSION=	1.6.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -10,8 +10,9 @@ WWW=		https://github.com/dry-rb/dry-logic
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rubygem-concurrent-ruby>=1.0<2:devel/rubygem-concurrent-ruby \
-		rubygem-dry-core>=1.0<2:devel/rubygem-dry-core \
+RUN_DEPENDS=	rubygem-bigdecimal>=0:math/rubygem-bigdecimal \
+		rubygem-concurrent-ruby>=1.0<2:devel/rubygem-concurrent-ruby \
+		rubygem-dry-core>=1.1<2:devel/rubygem-dry-core \
 		rubygem-zeitwerk>=2.6<3:devel/rubygem-zeitwerk
 
 USES=		gem

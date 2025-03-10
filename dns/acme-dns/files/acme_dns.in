@@ -1,0 +1,33 @@
+#!/bin/sh
+# $FreeBSD$
+#
+
+# PROVIDE: acme-dns
+# REQUIRE: LOGIN cleanvar
+# KEYWORD: shutdown
+
+#
+# Add the following lines to /etc/rc.conf[.local] to enable acme-dns:
+# acme_dns_enable="YES"
+#
+
+. /etc/rc.subr
+
+name="acme_dns"
+rcvar=${name}_enable
+
+load_rc_config $name
+
+#defaults
+: ${acme_dns_enable="NO"}
+: ${acme_dns_cmd="%%PREFIX%%/libexec/acme-dns"}
+: ${acme_dns_pidfile="/var/run/acme-dns/acme-dns.pid"}
+: ${acme_dns_log="/var/log/acme-dns.log"}
+: ${acme_dns_args=""}
+: ${acme_dns_svcj_options:="net_basic"}
+
+pidfile=${acme_dns_pidfile}
+command="/usr/sbin/daemon"
+command_args="-P ${pidfile} -r -f -m 3 -o ${acme_dns_log} ${acme_dns_cmd} ${acme_dns_args}"
+
+run_rc_command "$1"

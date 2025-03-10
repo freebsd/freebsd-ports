@@ -15,15 +15,16 @@ LICENSE=	APACHE20
 
 BROKEN_armv6=	fails to build: maven-assembly-plugin: Failed to retrieve numeric file attributes
 BROKEN_armv7=	fails to build: maven-assembly-plugin: Failed to retrieve numeric file attributes
+BROKEN_i386=	not enough memory on this architecture to build the port
+BROKEN_powerpc=	not enough memory on this architecture to build the port
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libsnappyjava.so:archivers/snappy-java \
 		bash:shells/bash \
 		maven>0:devel/maven
 RUN_DEPENDS=	bash:shells/bash
 
-USES=		cpe python shebangfix
+USES=		cpe java python shebangfix
 CPE_VENDOR=	apache
-USE_JAVA=	yes
 JAVA_VERSION=	8 11 17
 
 USE_RC_SUBR=	spark_master spark_worker

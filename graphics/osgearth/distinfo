@@ -1,8 +1,8 @@
-TIMESTAMP = 1698300300
-SHA256 (gwaldron-osgearth-osgearth-3.5_GH0.tar.gz) = 9204759f3df0d05356bdead71c13b9e9a086c9ebfa3daa93c149dd7aa664d378
-SIZE (gwaldron-osgearth-osgearth-3.5_GH0.tar.gz) = 119658258
-SHA256 (ocornut-imgui-9e8e5ac_GH0.tar.gz) = da877be818e7f4f20915c9982081f958bf5f68b26a5afde64c263427aff8097b
-SIZE (ocornut-imgui-9e8e5ac_GH0.tar.gz) = 1592220
+TIMESTAMP = 1724998365
+SHA256 (gwaldron-osgearth-osgearth-3.6.1_GH0.tar.gz) = 38069c30520331b476c9cd3833e0471c3fc96e12e327404aa0ad13fc2c58c9fe
+SIZE (gwaldron-osgearth-osgearth-3.6.1_GH0.tar.gz) = 119666978
+SHA256 (ocornut-imgui-cab7edd_GH0.tar.gz) = aab343459ef16baab1ace818296220ff11c5c0140dca832bef82c646adb9f3b2
+SIZE (ocornut-imgui-cab7edd_GH0.tar.gz) = 1806446
 SHA256 (Esri-lerc-19542a0_GH0.tar.gz) = 5d48ae91b45343c68da336ef6996af3b9495452970185244e21253f4c711e529
 SIZE (Esri-lerc-19542a0_GH0.tar.gz) = 4247805
 SHA256 (Tencent-rapidjson-f54b0e4_GH0.tar.gz) = 35c330d40ed9def99e8dea8f3b0e4fda7610b813b6f4aac9a70ffefcb9ab1f1e

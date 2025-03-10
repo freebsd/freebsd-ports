@@ -1,9 +1,8 @@
 PORTNAME=	dtfabric
-PORTVERSION=	20230520
-PORTREVISION=	1
+PORTVERSION=	20240211
 CATEGORIES=	devel python
-MASTER_SITES=	PYPI \
-		https://github.com/libyal/dtfabric/releases/download/${PORTVERSION}/
+MASTER_SITES=	https://github.com/libyal/dtfabric/releases/download/${PORTVERSION}/ \
+		LOCAL/antoine
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	antoine@FreeBSD.org
@@ -13,16 +12,14 @@ WWW=		https://github.com/libyal/dtfabric
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BUILD_DEPENDS=	${PY_SETUPTOOLS} \
+		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyyaml>=0:devel/py-pyyaml@${PY_FLAVOR}
 
 NO_ARCH=	yes
 USES=		python
-USE_PYTHON=	distutils autoplist concurrent
+USE_PYTHON=	autoplist concurrent pep517
 DO_MAKE_TEST=	${SETENV} ${TEST_ENV} ${PYTHON_CMD}
 TEST_TARGET=	run_tests.py
-
-post-patch:
-	${REINPLACE_CMD} "s,share/doc/dtfabric,${DOCSDIR_REL}," ${WRKSRC}/setup.py
-	${REINPLACE_CMD} "/pip/d" ${WRKSRC}/requirements.txt
 
 .include <bsd.port.mk>

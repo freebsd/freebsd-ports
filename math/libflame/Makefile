@@ -3,7 +3,7 @@ DISTVERSION=	5.2.0
 PORTREVISION=	1
 CATEGORIES=	math
 
-MAINTAINER=	jmd@FreeBSD.org
+MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	FLAME dense linear algebra library
 WWW=		https://github.com/flame/libflame
 
@@ -37,8 +37,6 @@ CONFIGURE_ARGS=		--enable-dynamic-build
 CONFIGURE_ARGS+=	--enable-max-arg-list-hack
 # use libflame as a LAPACK
 CONFIGURE_ARGS+=	--enable-lapack2flame
-# add our CFLAGS to theirs
-CONFIGURE_ARGS+=	--with-extra-cflags="${CFLAGS}"
 # enable supermatrix
 CONFIGURE_ARGS+=	--enable-supermatrix
 # disable ldim alignment (we cannot assume input to be aligned)
@@ -72,7 +70,8 @@ CONFIGURE_ARGS+=	--disable-autodetect-f77-ldflags \
 			--disable-autodetect-f77-name-mangling
 .endif
 
-#post-install:
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libflame.so.1.0.0
 #	@${MKDIR} ${STAGEDIR}${PREFIX}/include/libflame
 #	${INSTALL_DATA} ${WRKSRC}/include_local/* ${STAGEDIR}/${PREFIX}/include/libflame/
 

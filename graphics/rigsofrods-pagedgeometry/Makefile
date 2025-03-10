@@ -1,7 +1,6 @@
 PORTNAME=	rigsofrods-pagedgeometry
-PORTVERSION=	1.2.0
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
+DISTVERSION=	1.2.0.20240708
 CATEGORIES=	graphics
 
 MAINTAINER=	monwarez@mailoo.org
@@ -11,7 +10,7 @@ WWW=		https://www.ogre3d.org/tikiwiki/PagedGeometry+Engine
 LICENSE=	ZLIB
 LICENSE_FILE=	${WRKSRC}/zlib.txt
 
-LIB_DEPENDS=	libOgreMain.so:graphics/ogre3d19
+LIB_DEPENDS=	libOgreMain.so:graphics/ogre3d
 
 USES=		cmake dos2unix pathfix pkgconfig
 DOS2UNIX_GLOB=	*.cpp *.h *.txt
@@ -19,6 +18,7 @@ USE_CXXSTD=	c++14
 USE_GITHUB=	yes
 GH_ACCOUNT=	RigsOfRods
 GH_PROJECT=	ogre-pagedgeometry
+GH_TAGNAME=	428a57a
 USE_LDCONFIG=	yes
 
 CMAKE_ARGS=	-DPAGEDGEOMETRY_BUILD_SAMPLES=FALSE

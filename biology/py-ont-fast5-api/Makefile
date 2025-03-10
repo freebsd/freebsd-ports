@@ -1,13 +1,13 @@
 PORTNAME=	ont-fast5-api
 DISTVERSIONPREFIX=	release_
 DISTVERSION=	4.0.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	biology python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Interface to HDF5 files in Oxford Nanopore .fast5 format
-WWW=		https://pypi.python.org/pypi/ont_fast5_api
+WWW=		https://github.com/nanoporetech/ont_fast5_api/
 
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

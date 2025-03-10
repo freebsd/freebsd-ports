@@ -2,12 +2,11 @@ bin/dnf
 bin/dnf-3
 bin/dnf-automatic
 bin/dnf-automatic-3
-etc/bash_completion.d/dnf
+etc/bash_completion.d/dnf-3
 %%ETCDIR%%/aliases.d/zypper.conf
 %%ETCDIR%%/automatic.conf
 %%ETCDIR%%/dnf-strict.conf
 %%ETCDIR%%/dnf.conf
-%%ETCDIR%%/protected.d/dnf.conf
 %%ETCDIR%%/protected.d/yum.conf
 %%PYTHON_SITELIBDIR%%/dnf/__init__.py
 %%PYTHON_SITELIBDIR%%/dnf/automatic/__init__.py
@@ -94,7 +93,9 @@ etc/bash_completion.d/dnf
 %%PYTHON_SITELIBDIR%%/dnf/yum/__init__.py
 %%PYTHON_SITELIBDIR%%/dnf/yum/misc.py
 %%PYTHON_SITELIBDIR%%/dnf/yum/rpmtrans.py
+%%PYTHON_SITELIBDIR%%/dnf-4.22.0.dist-info/METADATA
 share/locale/ar/LC_MESSAGES/dnf.mo
+share/locale/be/LC_MESSAGES/dnf.mo
 share/locale/bg/LC_MESSAGES/dnf.mo
 share/locale/bn/LC_MESSAGES/dnf.mo
 share/locale/bn_IN/LC_MESSAGES/dnf.mo
@@ -118,6 +119,7 @@ share/locale/he/LC_MESSAGES/dnf.mo
 share/locale/hi/LC_MESSAGES/dnf.mo
 share/locale/hr/LC_MESSAGES/dnf.mo
 share/locale/hu/LC_MESSAGES/dnf.mo
+share/locale/ie/LC_MESSAGES/dnf.mo
 share/locale/id/LC_MESSAGES/dnf.mo
 share/locale/it/LC_MESSAGES/dnf.mo
 share/locale/ja/LC_MESSAGES/dnf.mo
@@ -130,6 +132,7 @@ share/locale/mr/LC_MESSAGES/dnf.mo
 share/locale/ms/LC_MESSAGES/dnf.mo
 share/locale/nb/LC_MESSAGES/dnf.mo
 share/locale/nl/LC_MESSAGES/dnf.mo
+share/locale/om/LC_MESSAGES/dnf.mo
 share/locale/or/LC_MESSAGES/dnf.mo
 share/locale/pa/LC_MESSAGES/dnf.mo
 share/locale/pl/LC_MESSAGES/dnf.mo
@@ -138,6 +141,7 @@ share/locale/pt_BR/LC_MESSAGES/dnf.mo
 share/locale/ru/LC_MESSAGES/dnf.mo
 share/locale/si/LC_MESSAGES/dnf.mo
 share/locale/sk/LC_MESSAGES/dnf.mo
+share/locale/sl/LC_MESSAGES/dnf.mo
 share/locale/sq/LC_MESSAGES/dnf.mo
 share/locale/sr/LC_MESSAGES/dnf.mo
 share/locale/sr@latin/LC_MESSAGES/dnf.mo

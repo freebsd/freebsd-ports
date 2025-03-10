@@ -9,5 +9,5 @@ lib/cmake/SDL2_sound/SDL2_soundConfigVersion.cmake
 lib/libSDL2_sound.a
 lib/libSDL2_sound.so
 lib/libSDL2_sound.so.2
-lib/libSDL2_sound.so.2.0.2
+lib/libSDL2_sound.so.2.0.4
 libdata/pkgconfig/SDL2_sound.pc

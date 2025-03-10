@@ -1,13 +1,13 @@
 PORTNAME=	qpOASES
 DISTVERSION=	3.2.1
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	math
 MASTER_SITES=	https://www.coin-or.org/download/source/${PORTNAME}/
 PKGNAMEPREFIX=	coin-or-
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Library for online active set strategy quadratic programming problems
-WWW=		https://projects.coin-or.org/qpOASES
+WWW=		https://github.com/coin-or/qpOASES
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/LICENSE

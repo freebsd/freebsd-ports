@@ -6,12 +6,11 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE application to enable/disable qCDebug
 WWW=		https://projects.kde.org/projects/kde/kdeutils/kdebugsettings
 
-USES=		cmake compiler:c++11-lang gettext kde:5 qt:5 tar:xz
+USES=		cmake compiler:c++11-lang gettext kde:6 qt:6 tar:xz
 USE_KDE=	completion config configwidgets coreaddons dbusaddons \
-		guiaddons i18n iconthemes itemviews kio widgetsaddons \
+		guiaddons i18n iconthemes itemviews kio widgetsaddons xmlgui \
 		ecm:build
-USE_QT=		core dbus gui testlib widgets \
-		buildtools:build qmake:build
+USE_QT=		base
 
 OPTIONS_DEFINE=	DOCS
 

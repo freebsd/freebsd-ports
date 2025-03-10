@@ -1,6 +1,6 @@
---- phototonic.pro.orig	2023-05-14 06:33:51 UTC
+--- phototonic.pro.orig	2025-01-27 11:05:39 UTC
 +++ phototonic.pro
-@@ -19,7 +19,7 @@
+@@ -19,7 +19,7 @@ INCLUDEPATH += .
  TEMPLATE = app
  TARGET = phototonic
  INCLUDEPATH += .
@@ -9,16 +9,16 @@
  win32-g++ {
  MINGWEXIVPATH = $$PWD/mingw
  
-@@ -30,7 +30,7 @@ DEPENDPATH += $$MINGWEXIVPATH/include
+@@ -30,7 +30,7 @@ PRE_TARGETDEPS += $$MINGWEXIVPATH/lib/libexiv2.a $$MIN
  
  PRE_TARGETDEPS += $$MINGWEXIVPATH/lib/libexiv2.a $$MINGWEXIVPATH/lib/libexpat.a $$MINGWEXIVPATH/lib/libz.a
  }
 -else: LIBS += -L/usr/local/lib -lexiv2
 +else: LIBS += -L%%PREFIX%%/lib -lexiv2
- QT += widgets
+ QT += widgets openglwidgets
  QMAKE_CXXFLAGS += $$(CXXFLAGS)
  QMAKE_CFLAGS += $$(CFLAGS)
-@@ -57,22 +57,22 @@ FORMS += RangeInputDialog.ui
+@@ -57,22 +57,22 @@ RESOURCES += phototonic.qrc
  
  RESOURCES += phototonic.qrc
  

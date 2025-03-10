@@ -1,6 +1,6 @@
---- pr/include/prcountr.h.orig	2019-10-15 14:21:38 UTC
-+++ pr/include/prcountr.h
-@@ -394,7 +394,7 @@ PR_SubtractFromCounter(
+--- pr/include/prcountr.h.orig	2024-10-27 01:59:53.601575000 +0200
++++ pr/include/prcountr.h	2024-10-27 02:00:39.833268000 +0200
+@@ -394,7 +394,7 @@
  #define PR_GET_COUNTER(counter,handle)\
      (counter) = PR_GetCounter((handle))
  #else
@@ -9,7 +9,7 @@
  #endif
  
  NSPR_API(PRUint32)
-@@ -468,7 +468,7 @@ PR_SetCounter(
+@@ -468,7 +468,7 @@
  #define PR_FIND_NEXT_COUNTER_QNAME(next,handle)\
      (next) = PR_FindNextCounterQname((handle))
  #else
@@ -18,50 +18,48 @@
  #endif
  
  NSPR_API(PRCounterHandle)
---- pr/src/misc/pralarm.c.orig	2019-10-15 14:21:38 UTC
-+++ pr/src/misc/pralarm.c
-@@ -101,7 +101,7 @@ static void PR_CALLBACK pr_alarmNotifier(void *arg)
+--- pr/src/misc/pralarm.c.orig	2024-10-27 02:01:01.288692000 +0200
++++ pr/src/misc/pralarm.c	2024-10-27 02:01:33.448421000 +0200
+@@ -94,7 +94,7 @@
+   enum { notify, abort, scan } why = scan;
  
-     while (why != abort)
-     {
--        PRIntervalTime pause;
-+        PRIntervalTime pause = 0;
+   while (why != abort) {
+-    PRIntervalTime pause;
++    PRIntervalTime pause = 0;
  
-         PR_Lock(alarm->lock);
-         while (why == scan)
---- pr/src/misc/prdtoa.c.orig	2019-10-15 14:21:38 UTC
-+++ pr/src/misc/prdtoa.c
-@@ -2896,9 +2896,9 @@ double dd; int mode, ndigits, *decpt, *sign; char **rv
-        to hold the suppressed trailing zeros.
-     */
+     PR_Lock(alarm->lock);
+     while (why == scan) {
+--- pr/src/misc/prdtoa.c.orig	2024-10-27 02:01:55.919817000 +0200
++++ pr/src/misc/prdtoa.c	2024-10-27 02:03:06.231244000 +0200
+@@ -2835,8 +2835,8 @@
+      to hold the suppressed trailing zeros.
+   */
  
--    int bbits, b2, b5, be, dig, i, ieps, ilim, ilim0, ilim1,
--        j, j1, k, k0, k_check, leftright, m2, m5, s2, s5,
--        spec_case, try_quick;
-+    int bbits, b2, b5, be, dig, i, ieps, ilim = -1, ilim0, ilim1 = -1,
-+                                         j, j1, k, k0, k_check, leftright, m2, m5, s2, s5,
-+                                         spec_case, try_quick;
-     Long L;
+-  int bbits, b2, b5, be, dig, i, ieps, ilim, ilim0, ilim1, j, j1, k, k0,
+-      k_check, leftright, m2, m5, s2, s5, spec_case, try_quick;
++  int bbits, b2, b5, be, dig, i, ieps, ilim = -1, ilim0, ilim1 = -1,
++      j, j1, k, k0, k_check, leftright, m2, m5, s2, s5, spec_case, try_quick;
+   Long L;
  #ifndef Sudden_Underflow
-     int denorm;
---- pr/src/pthreads/ptio.c.orig	2019-10-15 14:21:38 UTC
-+++ pr/src/pthreads/ptio.c
-@@ -5262,6 +5262,7 @@ PR_IMPLEMENT(PRInt32) PR_Select(
+   int denorm;
+--- pr/src/pthreads/ptio.c.orig	2024-10-27 02:03:27.854520000 +0200
++++ pr/src/pthreads/ptio.c	2024-10-27 02:04:19.446319000 +0200
+@@ -4818,6 +4818,7 @@
  
-     if (timeout == PR_INTERVAL_NO_TIMEOUT) {
-         tvp = NULL;
-+        start = 0; /* Not needed, but shuts down a warning */
-     } else {
-         tv.tv_sec = (PRInt32)PR_IntervalToSeconds(timeout);
-         tv.tv_usec = (PRInt32)PR_IntervalToMicroseconds(
---- pr/src/pthreads/ptsynch.c.orig	2019-10-15 14:21:38 UTC
-+++ pr/src/pthreads/ptsynch.c
-@@ -25,7 +25,7 @@ static pthread_condattr_t _pt_cvar_attr;
- extern PTDebug pt_debug;  /* this is shared between several modules */
- #endif  /* defined(DEBUG) */
+   if (timeout == PR_INTERVAL_NO_TIMEOUT) {
+     tvp = NULL;
++    start = 0; /* Not needed, but shuts down a warning */
+   } else {
+     tv.tv_sec = (PRInt32)PR_IntervalToSeconds(timeout);
+     tv.tv_usec = (PRInt32)PR_IntervalToMicroseconds(
+--- pr/src/pthreads/ptsynch.c.orig	2024-10-27 02:04:43.045339000 +0200
++++ pr/src/pthreads/ptsynch.c	2024-10-27 02:05:06.901438000 +0200
+@@ -25,7 +25,7 @@
+ extern PTDebug pt_debug; /* this is shared between several modules */
+ #  endif                 /* defined(DEBUG) */
  
--#if defined(FREEBSD)
-+#if defined(FREEBSD) && (defined(DEBUG) || defined(FORCE_PR_ASSERT))
+-#  if defined(FREEBSD)
++#  if defined(FREEBSD) && (defined(DEBUG) || defined(FORCE_PR_ASSERT))
  /*
   * On older versions of FreeBSD, pthread_mutex_trylock returns EDEADLK.
   * Newer versions return EBUSY.  We still need to support both.

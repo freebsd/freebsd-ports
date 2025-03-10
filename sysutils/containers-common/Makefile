@@ -1,13 +1,14 @@
 PORTNAME=	containers-common
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.59.1
+DISTVERSION=	0.61.1
 CATEGORIES=	sysutils
 
 MAINTAINER=	dfr@FreeBSD.org
 COMMENT=	Common manpages and config files for podman and buildah
 WWW=		https://github.com/containers
 
-LICENSE=	GPLv2
+LICENSE=	APACHE20
+LICENSE_FILE=	${WRKSRC_common}/LICENSE
 
 BUILD_DEPENDS=	bash:shells/bash \
 		curl:ftp/curl \
@@ -16,40 +17,39 @@ BUILD_DEPENDS=	bash:shells/bash \
 USES=		gmake
 
 USE_GITHUB=	nodefault
-GH_ACCOUNT=	containers:common containers:image containers:storage \
-		containers:skopeo
-GH_PROJECT=	common:common image:image storage:storage skopeo:skopeo
+GH_ACCOUNT=	containers:common containers:image containers:skopeo \
+		containers:storage
+GH_PROJECT=	common:common image:image skopeo:skopeo storage:storage
 GH_TAGNAME=	v${DISTVERSION}:common v${IMAGEVERSION}:image \
-		v${STORAGEVERSION}:storage v${SKOPEOVERSION}:skopeo
+		v${SKOPEOVERSION}:skopeo v${STORAGEVERSION}:storage
 
 NO_ARCH=	yes
 
-IMAGEVERSION=	5.31.0
-STORAGEVERSION=	1.54.0
-SKOPEOVERSION=	1.14.4
-
-WRKSRC=		${WRKDIR}/common-${DISTVERSION}
-IMAGESRC=	${WRKDIR}/image-${IMAGEVERSION}
-STORAGESRC=	${WRKDIR}/storage-${STORAGEVERSION}
-SKOPEOSRC=	${WRKDIR}/skopeo-${SKOPEOVERSION}
+IMAGEVERSION=	5.33.1
+SKOPEOVERSION=	1.17.0
+STORAGEVERSION=	1.56.1
 
 do-build:
-	${GMAKE} -C ${WRKSRC}/docs
-	${GMAKE} -C ${STORAGESRC} install.tools
+	${GMAKE} -C ${WRKSRC_common}/docs
+	${GMAKE} -C ${WRKSRC_storage} install.tools
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/etc/containers/certs.d
 	${MKDIR} ${STAGEDIR}${PREFIX}/etc/containers/hooks.d
 	${MKDIR} ${STAGEDIR}${PREFIX}/etc/containers/registries.d
-	${INSTALL_DATA} ${SKOPEOSRC}/default-policy.json ${STAGEDIR}${PREFIX}/etc/containers/policy.json.sample
+	${INSTALL_DATA} ${WRKSRC_skopeo}/default-policy.json \
+		${STAGEDIR}${PREFIX}/etc/containers/policy.json.sample
 # Temporary until https://github.com/containers/common/pull/1199 propagates to podman and buildah
-	${INSTALL_DATA} ${PATCHDIR}/containers.conf ${STAGEDIR}${PREFIX}/etc/containers/containers.conf.sample
-#${INSTALL_DATA} ${WRKSRC}/pkg/config/containers.conf-freebsd ${STAGEDIR}${PREFIX}/etc/containers/containers.conf.sample
-	${INSTALL_DATA} ${STORAGESRC}/storage.conf-freebsd ${STAGEDIR}${PREFIX}/etc/containers/storage.conf.sample
-	${INSTALL_DATA} ${IMAGESRC}/registries.conf ${STAGEDIR}${PREFIX}/etc/containers/registries.conf.sample
-	${GMAKE} -C ${WRKSRC}/docs DESTDIR=${STAGEDIR} install
-	${GMAKE} -C ${IMAGESRC} PREFIX=${STAGEDIR}${PREFIX} install-docs
-	${GMAKE} -C ${STORAGESRC}/docs GOMD2MAN=${LOCALBASE}/bin/go-md2man containers-storage.conf.5
-	${INSTALL_MAN} ${STORAGESRC}/docs/containers-storage.conf.5 ${STAGEDIR}${PREFIX}/share/man/man5
+	${INSTALL_DATA} ${PATCHDIR}/containers.conf \
+		${STAGEDIR}${PREFIX}/etc/containers/containers.conf.sample
+	${INSTALL_DATA} ${WRKSRC_storage}/storage.conf-freebsd \
+		${STAGEDIR}${PREFIX}/etc/containers/storage.conf.sample
+	${INSTALL_DATA} ${WRKSRC_image}/registries.conf \
+		${STAGEDIR}${PREFIX}/etc/containers/registries.conf.sample
+	${GMAKE} -C ${WRKSRC_common}/docs DESTDIR=${STAGEDIR} install
+	${GMAKE} -C ${WRKSRC_image} PREFIX=${STAGEDIR}${PREFIX} install-docs
+	${GMAKE} -C ${WRKSRC_storage}/docs GOMD2MAN=${LOCALBASE}/bin/go-md2man \
+		containers-storage.conf.5
+	${INSTALL_MAN} ${WRKSRC_storage}/docs/containers-storage.conf.5 ${STAGEDIR}${PREFIX}/share/man/man5
 
 .include <bsd.port.mk>

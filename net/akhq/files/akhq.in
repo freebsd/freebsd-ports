@@ -1,0 +1,40 @@
+#!/bin/sh
+
+# PROVIDE: akhq
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+
+. /etc/rc.subr
+
+name=akhq
+rcvar=akhq_enable
+
+load_rc_config $name
+
+: ${akhq_enable:=NO}
+: ${akhq_config:=%%LOCALBASE%%/etc/akhq/application.yml}
+: ${akhq_jar:=%%LOCALBASE%%/share/java/akhq/akhq.jar}
+: ${akhq_java:=%%LOCALBASE%%/bin/java}
+: ${akhq_user:=%%WWWOWN%%}
+: ${akhq_pidfile:=/var/run/${name}.pid}
+
+command="/usr/sbin/daemon"
+command_args="-P ${akhq_pidfile} -r -f ${akhq_java} -Dmicronaut.config.files=${akhq_config} -jar ${akhq_jar}"
+
+start_precmd=akhq_startprecmd
+
+akhq_startprecmd()
+{
+    # Ensure the directory for the PID file exists
+    if [ ! -d $(dirname ${akhq_pidfile}) ]; then
+        install -d -o ${akhq_user} -m 0750 $(dirname ${akhq_pidfile})
+    fi
+
+    # Ensure the PID file exists with the right permissions
+    if [ ! -e "${akhq_pidfile}" ]; then
+        install -m 0600 -o ${akhq_user} /dev/null ${akhq_pidfile}
+    fi
+}
+
+run_rc_command "$1"
+

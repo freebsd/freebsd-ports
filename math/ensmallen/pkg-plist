@@ -23,6 +23,8 @@ include/ensmallen_bits/adam/amsgrad_update.hpp
 include/ensmallen_bits/adam/nadam_update.hpp
 include/ensmallen_bits/adam/nadamax_update.hpp
 include/ensmallen_bits/adam/optimisticadam_update.hpp
+include/ensmallen_bits/agemoea/agemoea.hpp
+include/ensmallen_bits/agemoea/agemoea_impl.hpp
 include/ensmallen_bits/aug_lagrangian/aug_lagrangian.hpp
 include/ensmallen_bits/aug_lagrangian/aug_lagrangian_function.hpp
 include/ensmallen_bits/aug_lagrangian/aug_lagrangian_function_impl.hpp
@@ -53,6 +55,8 @@ include/ensmallen_bits/cmaes/cmaes.hpp
 include/ensmallen_bits/cmaes/cmaes_impl.hpp
 include/ensmallen_bits/cmaes/full_selection.hpp
 include/ensmallen_bits/cmaes/not_empty_transformation.hpp
+include/ensmallen_bits/cmaes/pop_cmaes.hpp
+include/ensmallen_bits/cmaes/pop_cmaes_impl.hpp
 include/ensmallen_bits/cmaes/random_selection.hpp
 include/ensmallen_bits/cmaes/transformation_policies/boundary_box_constraint.hpp
 include/ensmallen_bits/cmaes/transformation_policies/empty_transformation.hpp
@@ -141,6 +145,13 @@ include/ensmallen_bits/problems/cross_in_tray_function.hpp
 include/ensmallen_bits/problems/cross_in_tray_function_impl.hpp
 include/ensmallen_bits/problems/drop_wave_function.hpp
 include/ensmallen_bits/problems/drop_wave_function_impl.hpp
+include/ensmallen_bits/problems/dtlz/dtlz1_function.hpp
+include/ensmallen_bits/problems/dtlz/dtlz2_function.hpp
+include/ensmallen_bits/problems/dtlz/dtlz3_function.hpp
+include/ensmallen_bits/problems/dtlz/dtlz4_function.hpp
+include/ensmallen_bits/problems/dtlz/dtlz5_function.hpp
+include/ensmallen_bits/problems/dtlz/dtlz6_function.hpp
+include/ensmallen_bits/problems/dtlz/dtlz7_function.hpp
 include/ensmallen_bits/problems/easom_function.hpp
 include/ensmallen_bits/problems/easom_function_impl.hpp
 include/ensmallen_bits/problems/eggholder_function.hpp
@@ -161,6 +172,12 @@ include/ensmallen_bits/problems/levy_function_n13.hpp
 include/ensmallen_bits/problems/levy_function_n13_impl.hpp
 include/ensmallen_bits/problems/logistic_regression_function.hpp
 include/ensmallen_bits/problems/logistic_regression_function_impl.hpp
+include/ensmallen_bits/problems/maf/maf1_function.hpp
+include/ensmallen_bits/problems/maf/maf2_function.hpp
+include/ensmallen_bits/problems/maf/maf3_function.hpp
+include/ensmallen_bits/problems/maf/maf4_function.hpp
+include/ensmallen_bits/problems/maf/maf5_function.hpp
+include/ensmallen_bits/problems/maf/maf6_function.hpp
 include/ensmallen_bits/problems/matyas_function.hpp
 include/ensmallen_bits/problems/matyas_function_impl.hpp
 include/ensmallen_bits/problems/mc_cormick_function.hpp
@@ -255,6 +272,7 @@ include/ensmallen_bits/swats/swats_update.hpp
 include/ensmallen_bits/utility/any.hpp
 include/ensmallen_bits/utility/arma_traits.hpp
 include/ensmallen_bits/utility/indicators/epsilon.hpp
+include/ensmallen_bits/utility/indicators/igd.hpp
 include/ensmallen_bits/utility/indicators/igd_plus.hpp
 include/ensmallen_bits/wn_grad/wn_grad.hpp
 include/ensmallen_bits/wn_grad/wn_grad_impl.hpp

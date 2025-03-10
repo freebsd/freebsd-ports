@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 USES=		cpe pathfix pkgconfig tar:bz2
 
 CFLAGS+=	-fPIC
-CONFIGURE_ARGS=	--mandir=${PREFIX}/share/man --prefix=${PREFIX} --shared
+CONFIGURE_ARGS=	--prefix=${PREFIX} --shared
 CONFIGURE_SCRIPT=	configure.sh
 HAS_CONFIGURE=	yes
 INSTALL_TARGET=	install install.man

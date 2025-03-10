@@ -12,9 +12,9 @@ LICENSE=	APACHE20
 
 RUN_DEPENDS=	${JAVALIBDIR}/commons-cli.jar:java/apache-commons-cli
 
+USES=		java
 OPTIONS_DEFINE=	DOCS
 
-USE_JAVA=	yes
 NO_BUILD=	yes
 NO_ARCH=	yes
 WRKSRC=		${WRKDIR}/httpcomponents-core-${DISTVERSION}

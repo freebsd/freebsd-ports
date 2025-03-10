@@ -21,11 +21,10 @@ LICENSE_PERMS_AREV=		dist-mirror dist-sell pkg-mirror pkg-sell \
 LICENSE_PERMS_BITSTREAM=	dist-mirror dist-sell pkg-mirror pkg-sell \
 				auto-accept
 
-USE_JAVA=	yes
+USES=		java
 JAVA_VERSION=	11+
 JAVA_OS=	native
 JAVA_VENDOR=	openjdk oracle
-JAVA_RUN=	yes
 
 USE_RC_SUBR=	midpoint
 

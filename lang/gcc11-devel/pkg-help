@@ -1,3 +1,0 @@
-Building this port with LTO_BOOTSTRAP enabled requires significant amounts of
-memory and time. Consider disabling LTO_BOOTSTRAP in favor of STANDARD_BOOTSTRAP
-(or disabling BOOTSTRAP altogether) in case that is a problem.

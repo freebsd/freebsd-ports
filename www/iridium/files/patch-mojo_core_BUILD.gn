@@ -1,11 +1,11 @@
---- mojo/core/BUILD.gn.orig	2023-07-24 14:27:53 UTC
+--- mojo/core/BUILD.gn.orig	2025-02-22 18:06:53 UTC
 +++ mojo/core/BUILD.gn
-@@ -166,7 +166,7 @@ template("core_impl_source_set") {
-         ]
-       }
+@@ -163,7 +163,7 @@ source_set("impl_for_embedder") {
+       ]
+     }
  
--      if ((is_linux || is_chromeos || is_android) && !is_nacl) {
-+      if ((is_linux || is_chromeos || is_android) && !is_nacl && !is_bsd) {
-         sources += [
-           "channel_linux.cc",
-           "channel_linux.h",
+-    if ((is_linux || is_chromeos || is_android) && !is_nacl) {
++    if ((is_linux || is_chromeos || is_android) && !is_nacl && !is_bsd) {
+       sources += [
+         "channel_linux.cc",
+         "channel_linux.h",

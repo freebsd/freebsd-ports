@@ -1,9 +1,0 @@
-bin/tidyp
-include/tidyp/buffio.h
-include/tidyp/platform.h
-include/tidyp/tidyp.h
-include/tidyp/tidypenum.h
-lib/libtidyp-%%PORTVERSION%%.so.0
-lib/libtidyp-%%PORTVERSION%%.so.0.0.0
-lib/libtidyp.a
-lib/libtidyp.so

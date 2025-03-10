@@ -1,0 +1,6 @@
+reformulas (random effects formulas) is a utility package for
+processing "lme4-style" random effects formulas in R (i.e.,
+formulas where the random effects are included in the form (f|g)
+as components of an overall model formula, where f represents a
+sub-formula for the varying effects and g represents a sub-formula
+for the grouping variable(s).

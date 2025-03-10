@@ -1,11 +1,13 @@
 PORTNAME=	ucto
-DISTVERSION=	0.32.1
+DISTVERSION=	0.35
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	https://github.com/LanguageMachines/${PORTNAME}/releases/download/v${DISTVERSION}/
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Advanced rule-based (regular-expression) and unicode-aware tokenizer
-WWW=		https://languagemachines.github.io/ucto/
+WWW=		https://languagemachines.github.io/ucto/ \
+		https://github.com/LanguageMachines/ucto
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/COPYING

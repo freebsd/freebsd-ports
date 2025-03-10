@@ -1,6 +1,6 @@
 PORTNAME=	jxgrabkey
 PORTVERSION=	0.3.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	java devel
 MASTER_SITES=	SF
 DISTFILES=	${PORTNAME}-${PORTVERSION}_src${EXTRACT_SUFX}
@@ -11,12 +11,13 @@ WWW=		https://jxgrabkey.sourceforge.net/
 
 LICENSE=	LGPL3
 
-USES=		tar:bz2
-USE_JAVA=	yes
-USE_ANT=	yes
+USES=		java:ant,run tar:bz2
+
 OPTIONS_DEFINE=	TEST
+
 TEST_BUILD_DEPENDS=	${JAVALIBDIR}/junit.jar:java/junit	\
 			${JAVALIBDIR}/hamcrest.jar:java/hamcrest
+
 MAKE_ENV+=	JAVA_HOME=${JAVA_HOME} OPSYS=${OPSYS}
 PLIST_FILES=	%%JAVAJARDIR%%/JXGrabKey.jar lib/libJXGrabKey.so
 USE_LDCONFIG=	yes

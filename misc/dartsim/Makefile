@@ -1,11 +1,13 @@
 PORTNAME=	dartsim
 DISTVERSIONPREFIX=	v
-DISTVERSION=	6.14.4
+DISTVERSION=	6.15.0
+PORTREVISION=	3
 CATEGORIES=	misc
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Dynamic Animation and Robotics Toolkit
-WWW=		https://dartsim.github.io/
+WWW=		https://dartsim.github.io/ \
+		https://github.com/dartsim/dart
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -14,7 +16,6 @@ BROKEN_i386=	clang failure: https://bugs.llvm.org/show_bug.cgi?id=41757
 
 BUILD_DEPENDS=	pagmo2>0:science/pagmo2 \
 		pybind11>0:devel/pybind11
-BUILD_DEPENDS+=	googletest>0:devel/googletest
 LIB_DEPENDS=	libassimp.so:multimedia/assimp \
 		libBulletDynamics.so:devel/bullet \
 		libboost_system.so:devel/boost-libs \
@@ -32,6 +33,7 @@ LIB_DEPENDS=	libassimp.so:multimedia/assimp \
 		libpagmo.so:science/pagmo2 \
 		libtinyxml2.so:textproc/tinyxml2 \
 		liburdfdom_world.so:devel/ros-urdfdom
+TEST_DEPENDS=	googletest>0:devel/googletest
 
 USES=		cmake:testing compiler:c++17-lang eigen:3,build,run gl localbase:ldflags \
 		pkgconfig python xorg
@@ -45,8 +47,9 @@ GH_PROJECT=	dart
 
 CXXFLAGS+=	-I${LOCALBASE}/include/coin # because of pagmo2 headers include <IpReturnCodes.hpp>
 
-CMAKE_ON=	BUILD_SHARED_LIBS # DART_VERBOSE
-CMAKE_OFF=	DART_TREAT_WARNINGS_AS_ERRORS # workaround for https://github.com/dartsim/dart/issues/1799
+CMAKE_ON=	BUILD_SHARED_LIBS DART_USE_SYSTEM_GOOGLETEST # DART_VERBOSE
+CMAKE_OFF=	BUILD_TESTING
+CMAKE_OFF+=	DART_TREAT_WARNINGS_AS_ERRORS # workaround for https://github.com/dartsim/dart/issues/1799
 CMAKE_ARGS=	-DODE_DIR=${LOCALBASE} \
 		-DFREEBSD_PYTHON_VER=${PYTHON_VER}
 CMAKE_TESTING_TARGET=	tests # only builds test
@@ -62,7 +65,7 @@ PORTDOCS=	*
 
 .include <bsd.port.options.mk>
 
-.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400079 || ( ${OSVERSION} >= 1302505 && ${OSVERSION} < 1400000 ))
+.if ${OPSYS} == FreeBSD
 CFLAGS+=	-Wno-error=unused-but-set-variable
 .endif
 

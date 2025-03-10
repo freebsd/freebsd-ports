@@ -2,7 +2,7 @@
 
 PORTNAME=	exmh
 PORTVERSION=	2.9.0
-PORTREVISION=	6
+PORTREVISION=	8
 CATEGORIES+=	mail tk
 # XXX: Standard SF fails with a hung download
 MASTER_SITES=	https://sourceforge.net/projects/${PORTNAME}/files/${PORTNAME}/${PORTVERSION}/
@@ -17,7 +17,7 @@ BUILD_DEPENDS=	tclsh8.0jp:japanese/tcl80
 WISH=		wish8.0jp
 TCLSH=		tclsh8.0jp
 .else
-USES=		cpe tk:87
+USES=		cpe tk:86
 .endif
 
 # exmh is pretty useless without this, but it's not needed to build it.

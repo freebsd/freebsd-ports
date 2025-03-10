@@ -1,10 +1,10 @@
---- runtime/Cargo.toml.orig	2024-07-11 20:46:42 UTC
-+++ runtime/Cargo.toml
-@@ -114,6 +114,7 @@ signal-hook-registry = "1.4.0"
- serde.workspace = true
- signal-hook = "0.3.17"
- signal-hook-registry = "1.4.0"
-+sysinfo = "0.30.13"
- tokio.workspace = true
+--- runtime/Cargo.toml.orig	2025-03-06 09:42:46.408343000 +0100
++++ runtime/Cargo.toml	2025-03-06 09:42:46.838829000 +0100
+@@ -97,6 +97,7 @@ uuid.workspace = true
  tokio-metrics.workspace = true
  twox-hash.workspace = true
+ uuid.workspace = true
++sysinfo = "0.33.1"
+ 
+ [target.'cfg(windows)'.dependencies]
+ winapi = { workspace = true, features = ["commapi", "knownfolders", "mswsock", "objbase", "psapi", "shlobj", "tlhelp32", "winbase", "winerror", "winuser", "winsock2"] }

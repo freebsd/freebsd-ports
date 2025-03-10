@@ -1,0 +1,4 @@
+This module assists in generating wrappers around system functionality,
+such as socket() types or ioctl() calls, where the only interesting
+features required are the values of some constants or structure layouts
+normally only known to the C header files.

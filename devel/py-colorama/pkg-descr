@@ -1,8 +1,9 @@
-Makes ANSI escape character sequences, for producing colored terminal text and
-cursor positioning, work under MS Windows.
+Colorama makes ANSI escape character sequences (for producing colored terminal
+text and cursor positioning) work under MS Windows.
 
 ANSI escape character sequences have long been used to produce colored terminal
 text and cursor positioning on Unix and Macs. Colorama makes this work on
-Windows, too. It also provides some shortcuts to help generate ANSI sequences,
-and works fine in conjunction with any other ANSI sequence generation library,
-such as Termcolor.
+Windows, too, by wrapping stdout, stripping ANSI sequences it finds (which would
+appear as gobbledygook in the output), and converting them into the appropriate
+win32 calls to modify the state of the terminal. On other platforms, Colorama
+does nothing.

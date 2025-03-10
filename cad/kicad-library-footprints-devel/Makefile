@@ -7,7 +7,7 @@ PKGNAMESUFFIX=	-library-footprints-devel
 DISTNAME=	${PORTNAME}-footprints-${GL_TAGNAME}
 
 MAINTAINER=	mr@FreeBSD.org
-COMMENT=	Official KiCad Footprint Libraries for the future Kicad version 5
+COMMENT=	Official KiCad Footprint Libraries (Git snapshot)
 WWW=		https://github.com/KiCad/kicad-footprints
 
 LICENSE=	GPLv2

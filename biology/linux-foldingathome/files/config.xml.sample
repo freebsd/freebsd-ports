@@ -1,0 +1,64 @@
+<config>
+  <!--
+    This is a sample XML configuration file for the Folding@home
+    console client.  This configuration file format is explained
+    in detail in the Client User's Guide.
+
+    Copy this file to 'config.xml' and edit.
+
+    To set your user name, team and passkey just edit the text
+    in quotes below.
+  -->
+
+  <!-- User Information -->
+  <user value="anonymous"/> <!-- Enter your user name here -->
+  <team value="0"/>         <!-- Your team number -->
+  <passkey value=""/>       <!-- 32 hexadecimal characters if provided -->
+
+  <power value="light"/>
+  <gpu value="false"/>      <!-- If true, attempt to autoconfigure GPUs -->
+  <fold-anon value="false"/>
+
+  <!-- Folding Slots
+    No folding slot configuration is necessary.  The client will
+    automaticlaly choose a good configuration for you.  However, here
+    are some examples:
+  
+      <slot id="0" type="CPU"/>
+
+    or
+    
+      <slot id="0" type="CPU"/>
+      <slot id="1" type="GPU"/>
+
+    All slots in a configuration MUST have unique ids.
+   -->
+
+  <!-- Granting Remote FAHControl Access
+    To grant remote access to FAHControl and the remote command server add
+    the following:
+
+      <allow>127.0.0.1 x.x.x.x</allow>
+      <password>PASS</password>
+
+    Where x.x.x.x is the IP address of the computer which should be granted
+    remote access and PASS is you choose to further secure the connection.
+  -->
+
+  <!-- Granting Remote Web Access
+    If you would like to grant remote Web access then you need these two
+    configuration lines:
+
+      <allow>127.0.0.1 x.x.x.x</allow>
+      <web-allow>127.0.0.1 x.x.x.x</web-allow>
+
+    Where x.x.x.x is the IP address of the computer which should be granted
+    remote access.  You may also need to open port 7396 on your firewall.
+
+    You can then access the Web interface remotely by going to this address:
+
+      http://y.y.y.y:7396/
+
+    Where y.y.y.y is the IP address of this computer.
+  -->
+</config>

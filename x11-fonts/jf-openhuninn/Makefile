@@ -1,5 +1,5 @@
 PORTNAME=	jf-openhuninn
-PORTVERSION=	2.0
+PORTVERSION=	2.1
 MASTER_SITES=	https://github.com/justfont/open-huninn-font/releases/download/v${PORTVERSION}/
 CATEGORIES=	x11-fonts
 DISTFILES=	jf-openhuninn-${PORTVERSION}.ttf

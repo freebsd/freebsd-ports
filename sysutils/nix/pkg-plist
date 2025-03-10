@@ -541,6 +541,8 @@ share/zsh/site-functions/run-help-nix
 %%PORTDOCS%%%%DOCSDIR%%/manual/store/types/local-store.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/store/types/s3-binary-cache-store.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/store/types/ssh-store.html
+%%PORTDOCS%%%%DOCSDIR%%/manual/toc.html
+%%PORTDOCS%%%%DOCSDIR%%/manual/toc.js
 %%PORTDOCS%%%%DOCSDIR%%/manual/tomorrow-night.css
 %%PORTDOCS%%share/man/man1/nix-build.1.gz
 %%PORTDOCS%%share/man/man1/nix-channel.1.gz

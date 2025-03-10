@@ -1,7 +1,0 @@
-@sample etc/ezb.conf.default etc/ezb.conf
-sbin/ezbounce
-share/man/man1/ezbounce.1.gz
-%%PORTDOCS%%%%DOCSDIR%%/CHANGES
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/TODO
-%%PORTDOCS%%%%DOCSDIR%%/worklog

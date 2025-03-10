@@ -1,17 +1,21 @@
 PORTNAME=	libcaca
-DISTVERSION=	0.99.beta19
-PORTREVISION=	5
+DISTVERSION=	0.99.beta20
 CATEGORIES=	graphics
-MASTER_SITES=	http://caca.zoy.org/raw-attachment/wiki/libcaca/
+MASTER_SITES=	https://github.com/cacalabs/${PORTNAME}/releases/download/v${DISTVERSION}/
 
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Graphics library that outputs text instead of pixels
-WWW=		http://caca.zoy.org/
+WWW=		http://caca.zoy.org/wiki/libcaca \
+		https://github.com/cacalabs/libcaca
 
-USES=		cpe libtool ncurses pathfix pkgconfig
-GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
+LICENSE=	WTFPL
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+USES=		cpe libtool localbase ncurses pathfix pkgconfig tar:bz2
+CPE_VENDOR=	libcaca_project
 USE_LDCONFIG=	yes
+
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-doc \
 		--enable-ncurses \
 		--disable-java \
@@ -22,41 +26,42 @@ CONFIGURE_ARGS=	--disable-doc \
 		--disable-zzuf
 MAKE_ENV=	V=1
 INSTALL_TARGET=	install-strip
-CPE_VENDOR=	libcaca_project
+TEST_TARGET=	check
 
-DOCS=		AUTHORS COPYING COPYING.GPL COPYING.LGPL ChangeLog NEWS \
-		NOTES README THANKS
+PLIST_SUB=	SOVERSION=${DISTVERSION:S|beta||}
 
-OPTIONS_DEFINE=	X11 IMLIB2 FTGL SLANG DOCS
-OPTIONS_DEFAULT=	X11 IMLIB2
-X11_DESC=	X11 and OpenGL support
-FTGL_DESC=	Freetype font rendering in OpenGL
+PORTDOCS=	AUTHORS NEWS NOTES README THANKS
 
-X11_USES=	gl xorg
-X11_USE=	XORG=x11 GL=glut
-X11_CONFIGURE_OFF=	--disable-x11 --disable-gl
+OPTIONS_DEFINE=		DOCS FTGL IMLIB2 SLANG X11
+OPTIONS_DEFAULT=	IMLIB2 X11
+
+FTGL_DESC=		Freetype font rendering in OpenGL
+X11_DESC=		X11 and OpenGL support
+
+FTGL_IMPLIES=		X11
+FTGL_LIB_DEPENDS=	libftgl.so:graphics/ftgl
+
 IMLIB2_LIB_DEPENDS=	libImlib2.so:graphics/imlib2
-IMLIB2_CONFIGURE_ENABLE=	imlib2
+IMLIB2_CONFIGURE_ENABLE=imlib2
+
 SLANG_LIB_DEPENDS=	libslang.so.2:devel/libslang2
 SLANG_CONFIGURE_ENABLE=	slang=${LOCALBASE}
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MFTGL} && ${PORT_OPTIONS:MX11}
-LIB_DEPENDS+=	libftgl.so:graphics/ftgl
-.endif
+X11_USES=		gl xorg
+X11_USE=		GL=gl,glu,glut XORG=x11
+X11_CONFIGURE_ENABLE=	gl x11
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-g -O2 ||g ; s| -fomit-frame-pointer||g ; \
-		s|arpa\/inet.h ||g' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|: install-docDATA|:|g ; s| csharp||g' \
-			${WRKSRC}/Makefile.in
+		s| -fno-strength-reduce||g ; s|arpa\/inet.h ||g' \
+		${WRKSRC}/configure
 
 post-patch-FTGL-off:
-	@${REINPLACE_CMD} -e '/PKG_CONFIG.*ftgl/ s|ftgl|no-&|' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e '/PKG_CONFIG.*ftgl/ s|ftgl|no-&|' \
+		${WRKSRC}/configure
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

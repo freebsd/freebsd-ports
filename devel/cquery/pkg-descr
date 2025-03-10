@@ -1,3 +1,0 @@
-cquery is a highly-scalable, low-latency language server for C/C++/Objective-C.
-It is tested and designed for large code bases like Chromium. cquery provides
-accurate and fast semantic analysis without interrupting workflow.

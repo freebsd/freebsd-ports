@@ -3,13 +3,13 @@ CATEGORIES=	multimedia
 
 COMMENT=	GStreamer HEVC/H.265 decoder (libde265) plugin
 
-GST_PLUGIN=	libde265
+LIB_DEPENDS=	libde265.so:multimedia/libde265
+
+MASTERDIR=	${.CURDIR:H:H}/multimedia/gstreamer1-plugins
+
+PLIST=		${.CURDIR}/pkg-plist
+
 DIST=		bad
-
-MASTERDIR=	${.CURDIR}/../../multimedia/gstreamer1-plugins
-
-PLIST=  ${.CURDIR}/pkg-plist
-
-LIB_DEPENDS= libde265.so:multimedia/libde265
+GST_PLUGIN=	libde265
 
 .include "${MASTERDIR}/Makefile"

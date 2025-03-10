@@ -1,6 +1,5 @@
 PORTNAME=	cabal2tuple
-PORTVERSION=	2.0.0.1
-PORTREVISION=	2
+PORTVERSION=	2.0.2.0
 CATEGORIES=	ports-mgmt haskell
 
 MAINTAINER=	arrowd@FreeBSD.org
@@ -14,7 +13,7 @@ USES=		cabal
 USE_GITLAB=	yes
 GL_SITE=	https://foss.heptapod.net
 GL_ACCOUNT=	bsdutils
-GL_TAGNAME=	7adf07b805d83040e7b164c69636c9b67a6a5fc6
+GL_TAGNAME=	6c4f13ce36297c5bcd44260ec3f0e51fa47bb691
 
 # Version of the 'hashable' package should be the same as in devel/hs-cabal-install
 USE_CABAL=	hashable-1.4.6.0

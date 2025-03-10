@@ -1,7 +1,7 @@
 PORTNAME=	jumpy
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.12.1
-PORTREVISION=	1
+DISTVERSION=	0.12.2
+PORTREVISION=	4
 CATEGORIES=	games wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -12,9 +12,6 @@ LICENSE=	CC-BY-NC-4.0 MIT
 LICENSE_COMB=	multi
 LICENSE_FILE_MIT=	${WRKSRC}/licenses/LICENSE-MIT
 LICENSE_DISTFILES_CC-BY-NC-4.0=	${DISTNAME}${EXTRACT_SUFX}
-
-BROKEN_aarch64=	need https://github.com/shellrow/netdev/pull/71
-BROKEN_armv7=	need https://github.com/shellrow/netdev/pull/71
 
 LIB_DEPENDS=	libasound.so:audio/alsa-lib \
 		libudev.so:devel/libudev-devd

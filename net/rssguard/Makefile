@@ -1,9 +1,9 @@
 PORTNAME=	rssguard
-PORTVERSION=	4.6.6
+PORTVERSION=	4.8.1		# don't forget to update APP_REVISION below
 CATEGORIES=	net www
 
 MAINTAINER=	danfe@FreeBSD.org
-COMMENT=	Simple (yet powerful) Qt5 feed reader
+COMMENT=	Simple (yet powerful) Qt-based feed reader
 WWW=		https://github.com/martinrotter/rssguard
 
 LICENSE=	GPLv3+
@@ -15,6 +15,7 @@ USE_QT=		buildtools:build linguisttools:build qmake:build \
 USE_GITHUB=	yes
 GH_ACCOUNT=	martinrotter
 
+CMAKE_ARGS=	-DAPP_REVISION:STRING=3dde406
 CMAKE_ON=	NO_UPDATE_CHECK ENABLE_COMPRESSED_SITEMAP
 CMAKE_OFF=	BUILD_WITH_QT6 REVISION_FROM_GIT
 
@@ -40,8 +41,5 @@ WEBENGINE_USE=	QT=location,printsupport,webchannel,webengine
 WEBENGINE_CMAKE_OFF=	-DNO_LITE:BOOL=OFF
 WEBENGINE_PLIST_SUB=		PROGNAME=${PORTNAME}
 WEBENGINE_PLIST_SUB_OFF=	PROGNAME=${PORTNAME}lite
-
-post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/librssguard.so
 
 .include <bsd.port.mk>

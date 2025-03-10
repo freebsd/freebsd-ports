@@ -1,5 +1,6 @@
 include/Savitar/Face.h
 include/Savitar/MeshData.h
+include/Savitar/MetadataEntry.h
 include/Savitar/Namespace.h
 include/Savitar/SavitarExport.h
 include/Savitar/Scene.h
@@ -14,4 +15,4 @@ lib/cmake/Savitar/SavitarConfigVersion.cmake
 lib/libSavitar.so
 lib/libSavitar.so.0
 lib/libSavitar.so.0.1.2
-%%PYTHON_SITELIBDIR%%/Savitar.so
+%%PYTHON_SITELIBDIR%%/pySavitar.so

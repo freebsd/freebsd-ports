@@ -1,5 +1,5 @@
 PORTNAME=	rocksdb
-PORTVERSION=	9.4.0
+PORTVERSION=	9.10.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	databases
 
@@ -59,7 +59,10 @@ ZSTD_MAKE_ENV_OFF=	ROCKSDB_DISABLE_ZSTD=yes
 .include <bsd.port.pre.mk>
 
 .if ${CHOSEN_COMPILER_TYPE} == clang
-CXXFLAGS+=	-Wno-inconsistent-missing-override -Wno-unused-parameter -Wno-unused-variable -Wno-unused-private-field
+CXXFLAGS+=	-Wno-unused-parameter -Wno-unused-variable
+.if ${COMPILER_VERSION} >= 170
+CXXFLAGS+=	-Wno-sync-alignment
+.endif
 .endif
 
 post-patch:

@@ -1,6 +1,5 @@
 PORTNAME=	goesimage
-DISTVERSION=	0.1.3
-PORTREVISION=	1
+DISTVERSION=	0.1.4
 CATEGORIES=	deskutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -16,6 +15,7 @@ RUN_DEPENDS=	bash:shells/bash \
 
 USES=		magick:6,run shebangfix
 SHEBANG_FILES=	goesimage
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	pigmonkey
 

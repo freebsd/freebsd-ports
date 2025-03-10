@@ -1,0 +1,27 @@
+--- mumps/Makefile.orig	2024-11-06 14:00:35 UTC
++++ mumps/Makefile
+@@ -8,15 +8,15 @@ SDPA_MAKEFILE = ../Makefile
+ # the arguments given to './configure' script for building SDPA
+ ###################################################################
+ 
+-CC          = ${shell grep "^CC ="        ${SDPA_MAKEFILE} | cut -f2 -d=}
+-CFLAGS      = ${shell grep "^CFLAGS = "   ${SDPA_MAKEFILE} | cut -f2 -d=}
+-CXX         = ${shell grep "^CXX ="       ${SDPA_MAKEFILE} | cut -f2 -d=}
+-CXXFLAGS    = ${shell grep "^CXXFLAGS = " ${SDPA_MAKEFILE} | cut -f2 -d=}
+-FC          = ${shell grep "^FC ="        ${SDPA_MAKEFILE} | cut -f2 -d=}
+-FCFLAGS     = ${shell grep "^FCFLAGS = "  ${SDPA_MAKEFILE} | cut -f2 -d=}
+-PTHREAD_INCLUDE = ${shell grep "^PTHREAD_INCLUDE = "  ${SDPA_MAKEFILE} | cut -f2 -d=}
+-AR          = ${shell grep "^AR = "       ${SDPA_MAKEFILE} | cut -f2 -d=}
+-RANLIB      = ${shell grep "^RANLIB = "  ${SDPA_MAKEFILE} | cut -f2 -d=}
++CC          := ${shell grep "^CC ="        ${SDPA_MAKEFILE} | cut -f2 -d=}
++CFLAGS      := ${shell grep "^CFLAGS = "   ${SDPA_MAKEFILE} | cut -f2 -d=}
++CXX         := ${shell grep "^CXX ="       ${SDPA_MAKEFILE} | cut -f2 -d=}
++CXXFLAGS    := ${shell grep "^CXXFLAGS = " ${SDPA_MAKEFILE} | cut -f2 -d=}
++FC          := ${shell grep "^FC ="        ${SDPA_MAKEFILE} | cut -f2 -d=}
++FCFLAGS     := ${shell grep "^FCFLAGS = "  ${SDPA_MAKEFILE} | cut -f2 -d=}
++PTHREAD_INCLUDE := ${shell grep "^PTHREAD_INCLUDE = "  ${SDPA_MAKEFILE} | cut -f2 -d=}
++AR          := ${shell grep "^AR = "       ${SDPA_MAKEFILE} | cut -f2 -d=}
++RANLIB      := ${shell grep "^RANLIB = "  ${SDPA_MAKEFILE} | cut -f2 -d=}
+ 
+ ###################################################################
+ 

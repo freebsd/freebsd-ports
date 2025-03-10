@@ -1,5 +1,6 @@
 PORTNAME=	nut
 PORTVERSION=	2.8.2
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.networkupstools.org/source/${PORTVERSION:R}/
 

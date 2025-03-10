@@ -1,5 +1,5 @@
 PORTNAME=	Text-BibTeX
-PORTVERSION=	0.89
+PORTVERSION=	0.91
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -17,10 +17,10 @@ TEST_DEPENDS=	p5-Capture-Tiny>=0.06:devel/p5-Capture-Tiny
 
 USES=		perl5
 USE_CSTD=	c99
+USE_LDCONFIG=	yes
 USE_PERL5=	modbuild
 
 CFLAGS_amd64=	-fPIC
-USE_LDCONFIG=	yes
 
 CONFLICTS_INSTALL=	btparse # bin/bibparse
 

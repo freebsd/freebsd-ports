@@ -1,6 +1,6 @@
 PORTNAME=	sudo
-PORTVERSION=	1.9.15p5
-PORTREVISION=	4
+PORTVERSION=	1.9.16p2
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	SUDO
 
@@ -12,6 +12,10 @@ LICENSE=	sudo
 LICENSE_NAME=	Sudo license
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
+
+FLAVORS=	default sssd
+FLAVOR?=	${FLAVORS:[1]}
+sssd_PKGNAMESUFFIX=	-sssd
 
 USES=		cpe libtool pkgconfig
 CPE_VENDOR=	todd_miller
@@ -34,9 +38,8 @@ PORTSCOUT=	ignore:1
 OPTIONS_DEFINE=		AUDIT DISABLE_AUTH DISABLE_ROOT_SUDO DOCS EXAMPLES \
 			INSULTS LDAP NLS NOARGS_SHELL OPIE PAM PYTHON SSL
 OPTIONS_DEFAULT=	AUDIT PAM SSL
-OPTIONS_RADIO=		KERBEROS SSSD
+OPTIONS_RADIO=		KERBEROS
 OPTIONS_RADIO_KERBEROS=	GSSAPI_BASE GSSAPI_HEIMDAL GSSAPI_MIT
-OPTIONS_RADIO_SSSD=	SSSD SSSD2
 OPTIONS_SUB=		yes
 
 AUDIT_DESC=		Enable BSM audit support
@@ -48,8 +51,6 @@ NOARGS_SHELL_DESC=	Run a shell if no arguments are given
 OPIE_DESC=		Enable one-time passwords (no PAM support)
 PYTHON_DESC=		Enable python plugin support
 SSL_DESC=		Use OpenSSL TLS and SHA2 functions
-SSSD_DESC=		Enable SSSD backend support (deprecated)
-SSSD2_DESC=		Enable SSSD2 backend support
 
 AUDIT_CONFIGURE_WITH=	bsm-audit
 
@@ -88,13 +89,10 @@ PYTHON_CONFIGURE_ENABLE=python
 SSL_USES=		ssl
 SSL_CONFIGURE_ON=	--enable-openssl=${OPENSSLBASE}
 
-SSSD_PREVENTS=		GSSAPI_HEIMDAL
-SSSD_PREVENTS_MSG=	sssd requires MIT kerberos and it conflicts with heimdal
-SSSD_RUN_DEPENDS=	sssd:security/sssd
-SSSD_CONFIGURE_ON=	--with-sssd
-
-SSSD2_RUN_DEPENDS=	sssd:security/sssd2
-SSSD2_CONFIGURE_ON=	--with-sssd
+.if ${FLAVOR:U} == sssd
+RUN_DEPENDS+=		sssd:security/sssd2
+CONFIGURE_ARGS+=	--with-sssd
+.endif
 
 LOGFAC?=		authpriv
 SUDO_LDAP_CONF?=	ldap.conf

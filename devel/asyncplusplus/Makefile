@@ -1,7 +1,6 @@
 PORTNAME=	asyncplusplus
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.1
-PORTREVISION=	1 # 1 is for the added STATIC option
+DISTVERSION=	1.2
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org

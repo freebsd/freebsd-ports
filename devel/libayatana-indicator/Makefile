@@ -19,6 +19,7 @@ USES=		cmake gnome localbase:ldflags pkgconfig vala:build
 USE_GNOME=	atk cairo gdkpixbuf2 glib20 gtk30 introspection pango
 
 USE_LDCONFIG=	yes
+LDFLAGS+=	-pthread
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	AyatanaIndicators

@@ -1,0 +1,3 @@
+SimSIMD computes dot-products, similarity measures, and distances between low-
+and high-dimensional vectors which is ubiquitous in Machine Learning,
+Scientific Computing, Geo-Spatial Analysis, and Information Retrieval.

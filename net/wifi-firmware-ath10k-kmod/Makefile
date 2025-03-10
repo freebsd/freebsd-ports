@@ -4,7 +4,7 @@ FWDRV=		ath10k
 FWSUBDIR=	ath10k
 FWDRV_VERSION=	20240513
 
-LICENSE=	LICENSE.QualcommAtheros_ath10k
+LICENSE_FILE=	LICENSE.QualcommAtheros_ath10k
 LICENSE_NAME=	QCA firmware license (${FWDRV})
 
 WHENCE_REGEX=	ath10k -.*

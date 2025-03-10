@@ -1,5 +1,5 @@
 PORTNAME=	gotenberg-client
-PORTVERSION=	0.5.0
+PORTVERSION=	0.9.0
 CATEGORIES=	converters python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -7,7 +7,7 @@ DISTNAME=	${PORTNAME:S/-/_/}-${PORTVERSION}
 
 MAINTAINER=	grembo@FreeBSD.org
 COMMENT=	Python client for interfacing with the Gotenberg API
-WWW=		https://gotenberg.dev/docs/clients
+WWW=		https://gotenberg.dev/docs/getting-started/clients
 
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE

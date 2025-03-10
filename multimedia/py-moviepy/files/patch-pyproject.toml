@@ -1,0 +1,18 @@
+--- pyproject.toml.orig	2024-11-20 05:20:50 UTC
++++ pyproject.toml
+@@ -33,7 +33,7 @@ dependencies = [
+     "numpy>=1.25.0",
+     "proglog<=1.0.0",
+     "python-dotenv>=0.10",
+-    "pillow>=9.2.0,<11.0",
++    "pillow>=9.2.0",
+ ]
+ 
+ [project.optional-dependencies]
+@@ -61,4 +61,4 @@ include = ["moviepy*"]
+ 
+ [tool.setuptools.packages.find]
+ include = ["moviepy*"]
+-exclude = ["media", "tests", "docs"]
+\ No newline at end of file
++exclude = ["media", "tests", "docs"]

@@ -1,44 +1,21 @@
 PORTNAME=	mac
-PORTVERSION=	3.99.4.5.7
-PORTREVISION=	1
+PORTVERSION=	10.96
 CATEGORIES=	audio
-MASTER_SITES=	http://etree.org/shnutils/shntool/support/formats/ape/unix/3.99-u4-b5-s7/ \
-		http://freebsd.nsu.ru/distfiles/
-DISTNAME=	${PORTNAME}-3.99-u4-b5-s7
+MASTER_SITES=	https://www.monkeysaudio.com/files/
+DISTNAME=	${PORTNAME:tu}_${PORTVERSION:S|.||}_SDK
 
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Monkey's Audio lossless codec
 WWW=		https://www.monkeysaudio.com/
 
-USES=		iconv:build libtool
-GNU_CONFIGURE=	yes
-USE_LDCONFIG=	yes
-INSTALL_TARGET=	install-strip
+LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/License.txt
 
-CPPFLAGS+=	-DSHNTOOL
+USES=		cmake dos2unix zip
 
-PORTDOCS=	Credits.txt History.txt
+DOS2UNIX_FILES=	Shared/*.h \
+		Source/Console/Console.cpp
 
-OPTIONS_DEFINE=	DOCS
+NO_WRKSUBDIR=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${OPSYS} == FreeBSD
-.if ${ARCH} == "i386" || ${ARCH} == "amd64"
-BUILD_DEPENDS+=	yasm:devel/yasm
-.endif
-.endif
-
-post-install:
-	cd ${WRKSRC}/src/MACLib && ${INSTALL_DATA} BitArray.h \
-		Prepare.h UnBitArrayBase.h ${STAGEDIR}${PREFIX}/include/mac
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-# Install couple of useful docfiles, but first beautify them a bit; cryptic
-# sed(1) construct is to append missing newline at EOF, in a way compatible
-# with both GNU and BSD sed(1) implementations.
-	${ICONV_CMD} -f latin1 -t utf-8 ${WRKSRC}/src/Credits.txt | \
-		${SED} -ne '$$G;P' > ${STAGEDIR}${DOCSDIR}/Credits.txt
-	${SED} -ne '$$G;P' ${WRKSRC}/src/History.txt > \
-		${STAGEDIR}${DOCSDIR}/History.txt
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

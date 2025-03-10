@@ -7,6 +7,7 @@
 %%QT_QMLDIR%%/QtQuickEffectMaker/defaultnodes/basic/dropshadow.qen
 %%QT_QMLDIR%%/QtQuickEffectMaker/defaultnodes/basic/fastblur.qen
 %%QT_QMLDIR%%/QtQuickEffectMaker/defaultnodes/basic/gamma_adjust.qen
+%%QT_QMLDIR%%/QtQuickEffectMaker/defaultnodes/basic/glow.qen
 %%QT_QMLDIR%%/QtQuickEffectMaker/defaultnodes/basic/innershadow.qen
 %%QT_QMLDIR%%/QtQuickEffectMaker/defaultnodes/basic/leveladjust.qen
 %%QT_QMLDIR%%/QtQuickEffectMaker/defaultnodes/basic/mipmapblur.qen
@@ -25,10 +26,14 @@
 %%QT_QMLDIR%%/QtQuickEffectMaker/defaultnodes/common/bluritems.vert.qsb
 %%QT_QMLDIR%%/QtQuickEffectMaker/defaultnodes/common/mathhelper.qen
 %%QT_QMLDIR%%/QtQuickEffectMaker/defaultnodes/common/noisehelper.qen
+%%QT_QMLDIR%%/QtQuickEffectMaker/defaultnodes/extra/bars.qen
 %%QT_QMLDIR%%/QtQuickEffectMaker/defaultnodes/extra/bend.qen
+%%QT_QMLDIR%%/QtQuickEffectMaker/defaultnodes/extra/circlebend.qen
 %%QT_QMLDIR%%/QtQuickEffectMaker/defaultnodes/extra/colorlut.qen
 %%QT_QMLDIR%%/QtQuickEffectMaker/defaultnodes/extra/ledscreen.qen
+%%QT_QMLDIR%%/QtQuickEffectMaker/defaultnodes/extra/maskedblur.qen
 %%QT_QMLDIR%%/QtQuickEffectMaker/defaultnodes/extra/normalmapping.qen
+%%QT_QMLDIR%%/QtQuickEffectMaker/defaultnodes/extra/spriteanimation.qen
 %%QT_QMLDIR%%/QtQuickEffectMaker/defaultnodes/extra/sunburst.qen
 %%QT_QMLDIR%%/QtQuickEffectMaker/defaultnodes/extra/swirl.qen
 %%QT_QMLDIR%%/QtQuickEffectMaker/defaultnodes/images/blackcircle.png
@@ -82,6 +87,7 @@
 %%QT_QMLDIR%%/QtQuickEffectMaker/defaultnodes/images/lut_512_warm.png
 %%QT_QMLDIR%%/QtQuickEffectMaker/defaultnodes/images/mask.png
 %%QT_QMLDIR%%/QtQuickEffectMaker/defaultnodes/images/mask2.png
+%%QT_QMLDIR%%/QtQuickEffectMaker/defaultnodes/images/qt-logo-sheet.png
 %%QT_QMLDIR%%/QtQuickEffectMaker/defaultnodes/images/qt_logo_green_rgb.png
 %%QT_QMLDIR%%/QtQuickEffectMaker/defaultnodes/images/qt_logo_green_rgb_n.png
 %%QT_QMLDIR%%/QtQuickEffectMaker/defaultnodes/images/quit_logo.png
@@ -99,3 +105,4 @@
 %%QT_QMLDIR%%/QtQuickEffectMaker/defaultnodes/nature/snowing.qen
 %%QT_QMLDIR%%/QtQuickEffectMaker/defaultnodes/nature/thunder.qen
 %%QT_QMLDIR%%/QtQuickEffectMaker/defaultnodes/nature/water.qen
+%%QT_SBOMDIR%%/qqeffectmaker-%%FULLVER%%.spdx

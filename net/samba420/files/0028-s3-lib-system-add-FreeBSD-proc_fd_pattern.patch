@@ -1,0 +1,121 @@
+--- source3/lib/system.c.orig	2024-02-02 10:33:51.188489400 +0100
++++ source3/lib/system.c	2025-01-22 17:39:58.625028000 +0100
+@@ -1047,22 +1047,108 @@
+ }
+ #endif
+ 
+-bool sys_have_proc_fds(void)
++static bool freebsd_fdesc_check(const char *pattern)
+ {
+-	static bool checked = false;
+-	static bool have_proc_fds = false;
++	char fdesc_path[PATH_MAX];
++	int fd, fd2;
++
++	fd = open(lp_pid_directory(), O_DIRECTORY);
++	if (fd == -1) {
++		DBG_ERR("%s: failed to open pid directory: %s\n",
++			lp_pid_directory(), strerror(errno));
++		return false;
++	}
++
++	snprintf(fdesc_path, sizeof(fdesc_path), pattern, fd);
++
++	fd2 = open(fdesc_path, O_DIRECTORY);
++	if (fd2 == -1) {
++		/*
++		 * Setting O_DIRECTORY on open of fdescfs mount
++		 * without 'nodup' option will fail with ENOTDIR.
++		 */
++		if (errno == ENOTDIR) {
++			DBG_ERR("%s: fdescfs filesystem is not mounted with "
++				"'nodup' option. This specific mount option is "
++				"required in order to enable race-free handling "
++				"of paths.\n"
++				"See documentation for Samba's New VFS' "
++				"for more details. The 'nodup' mount option was "
++				"introduced in FreeBSD 13.\n", fdesc_path);
++			close(fd);
++			return false;
++		}
++		DBG_ERR("%s: failed to open fdescfs path: %s\n",
++			fdesc_path, strerror(errno));
++		close(fd);
++		return false;
++	}
++	close(fd);
++	close(fd2);
++
++	return true;
++}
++
++static char* linux_pattern(char *buf, size_t bufsize)
++{
++	char proc_fd_path[PATH_MAX];
++	const char *pattern = "/proc/self/fd/%lu";
+ 	struct stat sb;
+-	int ret;
+ 
+-	if (checked) {
+-		return have_proc_fds;
++	snprintf(proc_fd_path, sizeof(proc_fd_path), pattern, 0);
++	if(stat(proc_fd_path, &sb) == 0) {
++		snprintf(buf, bufsize, "%s", pattern);
++		return buf;
+ 	}
++	return NULL;
++}
+ 
+-	ret = stat("/proc/self/fd/0", &sb);
+-	have_proc_fds = (ret == 0);
+-	checked = true;
++static char* freebsd_pattern(char *buf, size_t bufsize) {
++	const char** base;
++	const char* base_dir[] = {
++		lp_pid_directory(), /* This is a preferred location */
++		"/dev",
++		NULL
++	};
+ 
+-	return have_proc_fds;
++	for(base = &base_dir[0]; *base != NULL; base++) {
++		snprintf(buf, bufsize, "%s/fd/%%lu", *base);
++		if(freebsd_fdesc_check(buf)) {
++			return buf;
++		}
++	}
++	return NULL;
++}
++
++static char* (*proc_fd_patterns[])(char *, size_t) = {
++	linux_pattern,
++	freebsd_pattern,
++	NULL
++};
++ 
++static char proc_fd_pattern_buf[PATH_MAX];
++static const char *proc_fd_pattern = NULL;
++ 
++bool sys_have_proc_fds(void)
++{
++	static bool checked = false;
++	static bool have_proc_fds = false;
++	char* (**pattern_func)(char *, size_t) = NULL;
++ 
++ 	if (checked) {
++ 		return have_proc_fds;
++ 	}
++ 
++	for (pattern_func = &proc_fd_patterns[0]; *pattern_func != NULL; pattern_func++) {
++		if((*pattern_func)(proc_fd_pattern_buf, sizeof(proc_fd_pattern_buf)) != NULL) {
++			have_proc_fds = true;
++			proc_fd_pattern = proc_fd_pattern_buf;
++			break;
++ 		}
++ 	}
++
++ 	checked = true;
++ 	return have_proc_fds;
+ }
+ 
+ char *sys_proc_fd_path(int fd, struct sys_proc_fd_path_buf *buf)

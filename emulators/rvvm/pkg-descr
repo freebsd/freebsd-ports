@@ -1,0 +1,5 @@
+RVVM is a virtual machine / emulator for RISC-V guests, which emphasizes
+on performance, security, lean code and portability. It already runs a
+lot of guest operating systems, including Linux, Haiku, FreeBSD,
+OpenBSD, etc. It also aims to run RISC-V applications on a foreign-arch
+host without full OS guest & isolation (Userland emulation).

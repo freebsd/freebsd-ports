@@ -1,9 +1,8 @@
 PORTNAME=	eog
-DISTVERSION=	43.1
-PORTREVISION=	3
+DISTVERSION=	47.0
 CATEGORIES=	graphics gnome
 MASTER_SITES=	GNOME/sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+)\..*/\1/}
-DIST_SUBDIR=	gnome3
+DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Eye Of Gnome image viewer

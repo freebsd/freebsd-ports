@@ -1,6 +1,6 @@
 PORTNAME=	wf-config
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.8.0
+DISTVERSION=	0.9.0
 CATEGORIES=	devel
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -23,6 +23,7 @@ USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
 GH_ACCOUNT=	WayfireWM
 MESON_ARGS=	-Dtests=disabled
+PLIST_SUB=	VERSION=${PORTVERSION}
 
 pre-test:
 	@if [ ! -e ${WRKDIR}/.meson_build_tests ]; then \

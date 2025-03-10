@@ -1,12 +1,14 @@
 PORTNAME=	bbmap
-DISTVERSION=	38.92
+DISTVERSION=	39.15
 CATEGORIES=	biology java
 MASTER_SITES=	SF/bbmap/
 DISTNAME=	BBMap_${PORTVERSION}
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	BBMap short read aligner, and other bioinformatic tools
-WWW=		https://jgi.doe.gov/data-and-tools/bbtools/
+WWW=		https://jgi.doe.gov/data-and-tools/bbtools/ \
+		https://sourceforge.net/projects/bbmap/ \
+		https://bitbucket.org/berkeleylab/jgi-bbtools/src/master/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/license.txt
@@ -15,14 +17,14 @@ RUN_DEPENDS=	bash:shells/bash \
 		pigz:archivers/pigz \
 		pbzip2:archivers/pbzip2
 
-USES=		shebangfix
-USE_JAVA=	yes
+USES=		java shebangfix
 
 SHEBANG_FILES=	${WRKSRC}/*.sh
 
-WRKSRC=		${WRKDIR}/${PORTNAME}
-NO_BUILD=	yes
 NO_ARCH=	yes
+NO_BUILD=	yes
+
+WRKSRC=		${WRKDIR}/${PORTNAME}
 
 LIBEXEC_DIR=	${PREFIX}/libexec/bbmap
 

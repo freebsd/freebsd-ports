@@ -1,0 +1,9 @@
+TIMESTAMP = 1737591303
+SHA256 (rvvm-0.6/fw_jump.bin) = 60f5aedaf90be271eef9e4f1a479171c183987f97f86208811e9212b121d5b45
+SIZE (rvvm-0.6/fw_jump.bin) = 136776
+SHA256 (rvvm-0.6/fw_payload.bin) = d97321ca71be85a98dcc1757b721616d6ed68304afe853336273cb19b424da6c
+SIZE (rvvm-0.6/fw_payload.bin) = 2958016
+SHA256 (rvvm-0.6/riscv-tests.tar.gz) = f0e888a8db158b1e82ac09cebd01d8e1d5913477d1515c41286fae5e309e5322
+SIZE (rvvm-0.6/riscv-tests.tar.gz) = 87062
+SHA256 (rvvm-0.6/LekKit-RVVM-v0.6_GH0.tar.gz) = 97e98c95d8785438758b81fb5c695b8eafb564502c6af7f52555b056e3bb7d7a
+SIZE (rvvm-0.6/LekKit-RVVM-v0.6_GH0.tar.gz) = 313342

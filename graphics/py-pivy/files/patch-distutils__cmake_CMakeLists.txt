@@ -1,21 +1,18 @@
---- distutils_cmake/CMakeLists.txt.orig	2021-03-19 15:41:45 UTC
+commit 01ec1707a767eaeabec3135a3866ded2920c2ff6
+Author: Christoph Moench-Tegeder <cmt@burggraben.net>
+
+    set project type to initialize cmake compiler checks
+    
+    Qt6 will pull in FindThreads() which fails w/o C compiler
+
+diff --git distutils_cmake/CMakeLists.txt distutils_cmake/CMakeLists.txt
+index 976be6a..e59804a 100644
+--- distutils_cmake/CMakeLists.txt
 +++ distutils_cmake/CMakeLists.txt
-@@ -2,13 +2,13 @@ cmake_minimum_required(VERSION 3.5)
- project(pivy_cmake_setup NONE)
+@@ -1,5 +1,5 @@
+ cmake_minimum_required(VERSION 3.5)
+-project(pivy_cmake_setup NONE)
++project(pivy_cmake_setup C CXX)
  
  
--find_package(Coin CONFIG REQUIRED)
-+find_package(Coin3D REQUIRED)
- 
--if (Coin_FOUND)
-+if (COIN3D_FOUND)
-+	get_filename_component(COIN_LIB_DIR ${COIN3D_LIBRARIES} DIRECTORY)
- 	MESSAGE(STATUS "COIN_FOUND: TRUE")
--	MESSAGE(STATUS "COIN_INCLUDE_DIR: ${Coin_INCLUDE_DIR}")
--	MESSAGE(STATUS "COIN_LIB_DIR: ${Coin_LIB_DIR}")
--	MESSAGE(STATUS "COIN_VERSION: ${Coin_VERSION}")
-+	MESSAGE(STATUS "COIN_INCLUDE_DIR: ${COIN3D_INCLUDE_DIRS}")
-+	MESSAGE(STATUS "COIN_LIB_DIR: ${COIN_LIB_DIR}")
- endif()
- 
- 
+ find_package(Coin CONFIG REQUIRED)

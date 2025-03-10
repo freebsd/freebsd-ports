@@ -1,0 +1,48 @@
+--- etc/Makefile.orig	2024-11-06 14:01:05 UTC
++++ etc/Makefile
+@@ -21,26 +21,26 @@ SDPA_MAKEFILE = ../Makefile
+ # The following variables are set from 
+ # the arguments given to './configure' script for building SDPA
+ ###################################################################
+-SDPA_PACKAGE= ${shell grep "^PACKAGE_STRING =" ${SDPA_MAKEFILE} | awk '{printf("%s.%s",$$3,$$4)}'}
++SDPA_PACKAGE:= ${shell grep "^PACKAGE_STRING =" ${SDPA_MAKEFILE} | awk '{printf("%s.%s",$$3,$$4)}'}
+ 
+-SDPA_DIR    = ${shell grep "^prefix ="         ${SDPA_MAKEFILE} | cut -f2 -d= | sed 's+ ++'}
+-SDPA_LIB    = ${SDPA_DIR}/lib/libsdpa.a 
+-MUMPS_DIR   = ${shell grep "^MUMPS_DIR ="      ${SDPA_MAKEFILE} | cut -f2 -d= | sed 's+ ++'}
+-MUMPS_INCLUDE   = ${shell grep "^MUMPS_INCLUDE ="  ${SDPA_MAKEFILE} | cut -f2 -d= | sed 's+ ++'}
+-MUMPS_LIBS  = ${shell grep "^MUMPS_LIBS ="     ${SDPA_MAKEFILE} | cut -f2 -d= | sed 's+ ++'}
+-CC          = ${shell grep "^CC ="           ${SDPA_MAKEFILE} | cut -f2  -d=}
+-CFLAGS      = ${shell grep "^CFLAGS = "      ${SDPA_MAKEFILE} | cut -f2- -d=}
+-CXX         = ${shell grep "^CXX ="          ${SDPA_MAKEFILE} | cut -f2  -d=}
+-CXXFLAGS    = ${shell grep "^CXXFLAGS = "    ${SDPA_MAKEFILE} | cut -f2- -d=}
+-CPPFLAGS    = ${shell grep "^CPPFLAGS = "    ${SDPA_MAKEFILE} | cut -f2- -d=}
+-FC          = ${shell grep "^FC ="           ${SDPA_MAKEFILE} | cut -f2  -d=}
+-FCFLAGS     = ${shell grep "^FCFLAGS = "     ${SDPA_MAKEFILE} | cut -f2- -d=}
+-LAPACK_LIBS = ${shell grep "^LAPACK_LIBS = " ${SDPA_MAKEFILE} | cut -f2  -d=}
+-BLAS_LIBS   = ${shell grep "^BLAS_LIBS = "   ${SDPA_MAKEFILE} | cut -f2  -d=}
+-PTHREAD_INCLUDE= ${shell grep "^PTHREAD_INCLUDE = " ${SDPA_MAKEFILE} | cut -f2 -d=}
+-PTHREAD_LIBS= ${shell grep "^PTHREAD_LIBS = " ${SDPA_MAKEFILE} | cut -f2 -d=}
+-FCLIBS      = ${shell grep "^FCLIBS = "      ${SDPA_MAKEFILE} | cut -f2 -d=}
+-VERSION     = ${shell grep "^VERSION = "     ${SDPA_MAKEFILE} | cut -f2 -d=}
++SDPA_DIR    := ${shell grep "^prefix ="         ${SDPA_MAKEFILE} | cut -f2 -d= | sed 's+ ++'}
++SDPA_LIB    := ${SDPA_DIR}/lib/libsdpa.a 
++MUMPS_DIR   := ${shell grep "^MUMPS_DIR ="      ${SDPA_MAKEFILE} | cut -f2 -d= | sed 's+ ++'}
++MUMPS_INCLUDE   := ${shell grep "^MUMPS_INCLUDE ="  ${SDPA_MAKEFILE} | cut -f2 -d= | sed 's+ ++'}
++MUMPS_LIBS  := ${shell grep "^MUMPS_LIBS ="     ${SDPA_MAKEFILE} | cut -f2 -d= | sed 's+ ++'}
++CC          := ${shell grep "^CC ="           ${SDPA_MAKEFILE} | cut -f2  -d=}
++CFLAGS      := ${shell grep "^CFLAGS = "      ${SDPA_MAKEFILE} | cut -f2- -d=}
++CXX         := ${shell grep "^CXX ="          ${SDPA_MAKEFILE} | cut -f2  -d=}
++CXXFLAGS    := ${shell grep "^CXXFLAGS = "    ${SDPA_MAKEFILE} | cut -f2- -d=}
++CPPFLAGS    := ${shell grep "^CPPFLAGS = "    ${SDPA_MAKEFILE} | cut -f2- -d=}
++FC          := ${shell grep "^FC ="           ${SDPA_MAKEFILE} | cut -f2  -d=}
++FCFLAGS     := ${shell grep "^FCFLAGS = "     ${SDPA_MAKEFILE} | cut -f2- -d=}
++LAPACK_LIBS := ${shell grep "^LAPACK_LIBS = " ${SDPA_MAKEFILE} | cut -f2  -d=}
++BLAS_LIBS   := ${shell grep "^BLAS_LIBS = "   ${SDPA_MAKEFILE} | cut -f2  -d=}
++PTHREAD_INCLUDE:= ${shell grep "^PTHREAD_INCLUDE = " ${SDPA_MAKEFILE} | cut -f2 -d=}
++PTHREAD_LIBS:= ${shell grep "^PTHREAD_LIBS = " ${SDPA_MAKEFILE} | cut -f2 -d=}
++FCLIBS      := ${shell grep "^FCLIBS = "      ${SDPA_MAKEFILE} | cut -f2 -d=}
++VERSION     := ${shell grep "^VERSION = "     ${SDPA_MAKEFILE} | cut -f2 -d=}
+ ###################################################################
+ 
+ TARGET = make.inc

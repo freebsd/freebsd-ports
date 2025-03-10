@@ -1,14 +1,13 @@
 PORTNAME=	libfishsound
-PORTVERSION=	1.0.0
-PORTREVISION=	5
+PORTVERSION=	1.0.1
+PORTREVISION=	1
 CATEGORIES=	audio
-MASTER_SITES=	https://downloads.xiph.org/releases/libfishsound/ \
-		https://ftp.osuosl.org/pub/xiph/releases/libfishsound/ \
-		LOCAL/sunpoet
+MASTER_SITES=	https://ftp.osuosl.org/pub/xiph/releases/libfishsound/
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Programming interface to decode/encode audio data
-WWW=		https://www.xiph.org/fishsound/
+WWW=		https://www.xiph.org/fishsound/ \
+		https://gitlab.xiph.org/xiph/libfishsound
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
@@ -19,17 +18,12 @@ LIB_DEPENDS=	libFLAC.so:audio/flac \
 
 USES=		libtool pathfix pkgconfig
 
+CONFIGURE_ARGS=	ac_cv_prog_HAVE_DOXYGEN=false
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 
-OPTIONS_DEFINE=	DOCS DOXYGEN
-OPTIONS_SUB=	yes
-DOXYGEN_IMPLIES=DOCS
-
-DOXYGEN_BUILD_DEPENDS=	doxygen:devel/doxygen
-
-post-patch-DOCS-off:
-	@${REINPLACE_CMD} -e '/^SUBDIRS = / s| doc||' ${WRKSRC}/Makefile.in
+OPTIONS_DEFINE=	DOCS
+DOCS_EXTRA_PATCHES_OFF=	${PATCHDIR}/extra-patch-Makefile.in
 
 .include <bsd.port.mk>

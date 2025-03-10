@@ -1,0 +1,12 @@
+--- configure.orig	2014-06-13 22:52:28 UTC
++++ configure
+@@ -4730,7 +4730,8 @@ if test "$cross_compiling" = yes; then :
+ else
+   cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */
+-main(){exit(0);}
++#include <stdlib.h>
++int main(void) { exit(0); }
+ _ACEOF
+ if ac_fn_c_try_run "$LINENO"; then :
+   ac_export_dynamic=yes

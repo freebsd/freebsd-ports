@@ -1,7 +1,12 @@
 PORTNAME=	wifi-firmware-${FWDRV}-kmod
 PORTVERSION=	${FWDRV_VERSION}
+PORTREVISION=	1
 CATEGORIES=	net
-MASTER_SITES=	https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/plain/
+MASTER_SITES=	https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/plain/ \
+		https://ams.source.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/plain/ \
+		https://dfw.source.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/plain/ \
+		https://nyc.source.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/plain/ \
+		https://sin.source.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/plain/
 
 MAINTAINER=	bz@FreeBSD.org
 COMMENT=	Firmware modules for the ${FWDRV} (${FLAVOR}) WiFi NIC driver
@@ -11,7 +16,6 @@ FWDRV_VERSION?=	0
 FWDRV?=		base
 
 LICENSE_NAME?=	firmware license (${FWDRV})
-LICENSE_FILE?=	${WRKSRC}/${FLAVOR}/${LICENSE}
 LICENSE_PERMS?=	dist-mirror no-dist-sell pkg-mirror no-pkg-sell auto-accept
 
 EXTRACT_SUFX=
@@ -19,7 +23,8 @@ DISTURL_SUFFIX?=	?h=${PORTVERSION}
 
 # Sanity checks
 .if !defined(FWDRV) || !defined(FWSUBDIR) || !defined(FWSUBS) || \
-	!defined(FWDRV_VERSION) || !defined(LICENSE) || \
+	!defined(FWDRV_VERSION) || \
+	!defined(LICENSE_NAME) || !defined(LICENSE_FILE) || \
 	!defined(DISTFILES_${FWDRV}) || !defined(DISTFILES_${FWDRV}_lic) || \
 	!defined(BASEDIR) || !defined(WHENCE_REGEX)
 IGNORE=	is a metaport or misconfigured child port; there is nothing to build
@@ -27,12 +32,35 @@ IGNORE=	is a metaport or misconfigured child port; there is nothing to build
 
 FILESDIR=	${BASEDIR}/files
 
+LICENSE_COMB=	multi
+LICENSE=	primary whence
+
+# Port primary license.
+LICENSE_FILE_primary=	${WRKSRC}/${LICENSE_FILE}
+LICENSE_NAME_primary=	${LICENSE_NAME}
+LICENSE_PERMS_primary=	${LICENSE_PERMS}
+
+# Add WHENCE file next to license where it makes sense despite not being a license.
+LICENSE_NAME_whence=	Origin and licensing information for linux-firmware files
+LICENSE_FILE_whence=	${WRKSRC}/WHENCE
+LICENSE_PERMS_whence=	${LICENSE_PERMS}
+#PLIST_FILES+=	${_LICENSE_DIR}/WHENCE
+
+# Add extra license files.
+.if "${DISTFILES_${FLAVOR}_lic}"
+.for _n in ${DISTFILES_${FLAVOR}_lic:range}
+LICENSE+=			extra${_n}
+LICENSE_FILE_extra${_n}=	${WRKSRC}/lic/${DISTFILES_${FLAVOR}_lic:[${_n}]:C@(^[^?]*)${DISTURL_SUFFIX:Q}@\1@:S,/,_,g}
+LICENSE_NAME_extra${_n}=	${LICENSE_NAME} (extra fw license)
+LICENSE_PERMS_extra${_n}=	${LICENSE_PERMS}
+.endfor
+.endif
+
+PLIST=		${WRKDIR}/PLIST
+
 # Split things into the full package (driver name) and more specific flavors.
 FLAVORS=	${FWDRV} \
 		${FWSUBS}
-
-# What a kludge.... thanks https://docs.freebsd.org/en/books/porters-handbook/flavors/ !
-FLAVOR?=	${FLAVORS:[1]}
 
 # Generate the conflicts list.
 .for f in ${FWSUBS}
@@ -41,14 +69,10 @@ ${f}_PKGNAMESUFFIX=		-${f}
 ${f}_CONFLICTS_INSTALL=		${PORTNAME}
 .endfor
 
-DISTFILES_FLAVOR:=	${DISTFILES_${FLAVOR}}
-DISTFILES_FLAVOR_lic:=	${DISTFILES_${FLAVOR}_lic}
-
-DISTFILES=	\
-	${DISTFILES_FLAVOR} \
-	${DISTFILES_FLAVOR_lic} \
-	${LICENSE}${DISTURL_SUFFIX} \
-	WHENCE${DISTURL_SUFFIX}
+DISTFILES=	${DISTFILES_${FLAVOR}} \
+		${DISTFILES_${FLAVOR}_lic} \
+		${LICENSE_FILE}${DISTURL_SUFFIX} \
+		WHENCE${DISTURL_SUFFIX}
 
 DIST_SUBDIR=	linux-firmware/${FWDRV}fw
 EXTRACT_ONLY=
@@ -56,66 +80,97 @@ EXTRACT_ONLY=
 ONLY_FOR_ARCHS=	aarch64 amd64 i386
 ONLY_FOR_ARCHS_REASON=	LinuxKPI driver only available for these architectures
 
-USES=		kmod uidfix
+USES=		uidfix
+# We do not need that anymore for the modern build but making it conditional on
+# OSVERSION seems to not add the _USES_install bits from kmod.mk.
+USES+=		kmod
 
-post-extract:
-	@${MKDIR} ${WRKSRC}/${FLAVOR}/fw
-	# Deal with supplementary licenses files.
-	@${CP} ${DISTDIR}/${DIST_SUBDIR}/${LICENSE}${DISTURL_SUFFIX} ${WRKSRC}/${FLAVOR}/${LICENSE}
-	@${CP} ${DISTDIR}/${DIST_SUBDIR}/WHENCE${DISTURL_SUFFIX} ${WRKSRC}/${FLAVOR}/WHENCE.in
-	@${SED} -e "s@%%XXX%%@${WHENCE_REGEX:Q}@g" ${FILESDIR}/WHENCE.awk.in > ${WRKSRC}/${FLAVOR}/WHENCE.awk
-	@${AWK} -f ${WRKSRC}/${FLAVOR}/WHENCE.awk ${WRKSRC}/${FLAVOR}/WHENCE.in > ${WRKSRC}/${FLAVOR}/WHENCE
-	# Prepare toplevel Makefile and Makefile.inc.
-	@${ECHO_CMD} "SUBDIR=" > ${WRKSRC}/${FLAVOR}/Makefile
-	@${SED} -e "s@%%FWDRV%%@${FWDRV}@g" \
-	    -e "s@%%FWSUBDIR%%@${FWSUBDIR}@g" \
-	    ${FILESDIR}/Makefile.inc.in > ${WRKSRC}/${FLAVOR}/Makefile.inc
-.for _f in ${DISTFILES_FLAVOR}
-	# We remove '.' and '-' as well as '/' as they don't work well in loader.conf.
-	@${MKDIR} ${WRKSRC}/${FLAVOR}/${_f:C@(^[^?]*)${DISTURL_SUFFIX:Q}@\1@:S,.,_,g:S,-,_,g:S,/,_,g}
-	# Create subdir (firmware file) Makefile.
-	@${ECHO_CMD} "FWNAME=${_f:C@(^[^?]*)${DISTURL_SUFFIX:Q}@\1@:T}" > ${WRKSRC}/${FLAVOR}/${_f:C@(^[^?]*)${DISTURL_SUFFIX:Q}@\1@:S,.,_,g:S,-,_,g:S,/,_,g}/Makefile
-.if (${_f:H:C,^[^/]*,,1:C,^/,,} != "")
-	@${ECHO_CMD} "FWSUBSUBDIR=${_f:H:C,^[^/]*,,1:C,^/,,}" >> ${WRKSRC}/${FLAVOR}/${_f:C@(^[^?]*)${DISTURL_SUFFIX:Q}@\1@:S,.,_,g:S,-,_,g:S,/,_,g}/Makefile
-.endif
-	# XXX-BZ recover firmware versions later again from somewhere?  Pain to keep track though, else use 0 or ${FWDRV_VERSION}?
-	@${ECHO_CMD} "VERSION=0" >> ${WRKSRC}/${FLAVOR}/${_f:C@(^[^?]*)${DISTURL_SUFFIX:Q}@\1@:S,.,_,g:S,-,_,g:S,/,_,g}/Makefile
-	@${ECHO_CMD} '.include <bsd.kmod.mk>' >> ${WRKSRC}/${FLAVOR}/${_f:C@(^[^?]*)${DISTURL_SUFFIX:Q}@\1@:S,.,_,g:S,-,_,g:S,/,_,g}/Makefile
-	# Add subdir to top-level Makefile.
-	@${ECHO_CMD} "SUBDIR+=${_f:C@(^[^?]*)${DISTURL_SUFFIX:Q}@\1@:S,.,_,g:S,-,_,g:S,/,_,g}" >> ${WRKSRC}/${FLAVOR}/Makefile
-	# Create firmware source directory and copy in distfile.
-	@${MKDIR} ${WRKSRC}/${FLAVOR}/fw/${_f:H}
-	${CP} ${DISTDIR}/${DIST_SUBDIR}/${_f} ${WRKSRC}/${FLAVOR}/fw/${_f:C@(^[^?]*)${DISTURL_SUFFIX:Q}@\1@}
-.endfor
-	@${ECHO_CMD} '.include <bsd.subdir.mk>' >> ${WRKSRC}/${FLAVOR}/Makefile
-	# Copy in additional licenses files.
-.for _f in ${DISTFILES_FLAVOR_lic}
-	${CP} ${DISTDIR}/${DIST_SUBDIR}/${_f} ${WRKSRC}/${FLAVOR}/fw/${_f:C@(^[^?]*)${DISTURL_SUFFIX:Q}@\1@:S,/,_,g}
-.endfor
-
-# Internal hack we should probably upstream.
-# Add WHENCE file next to license where it makes sense despite not being a license.
-_USES_stage+=	881:post-install-license
-post-install-license:
-	${INSTALL_DATA} ${WRKSRC}/${FLAVOR}/WHENCE ${STAGEDIR}${_LICENSE_DIR}/
-.for _f in ${DISTFILES_FLAVOR_lic}
-	${INSTALL_DATA} ${WRKSRC}/${FLAVOR}/fw/${_f:C@(^[^?]*)${DISTURL_SUFFIX:Q}@\1@:S,/,_,g} \
-		${STAGEDIR}${_LICENSE_DIR}/${_f:C@(^[^?]*)${DISTURL_SUFFIX:Q}@\1@:S,/,_,g}
-.endfor
+BOOT_LOADERCONFD=	/boot/loader.conf.d
 
 .include <bsd.port.pre.mk>
 
-MAKE_ENV+=	FWSRCDIR=${WRKSRC}/${FLAVOR}/fw
-MAKE_FLAGS+=	-C ${WRKSRC}/${FLAVOR}
+.if (${OSVERSION} >= 1500014) || (${OSVERSION} < 1500000 && ${OSVERSION} >= 1402000)
+# src.git main 479905a1ed26c54ef29cdff65cf25f7feade654b (stable/14 2ca7b03d6275)
+# allows direct loading of firmware files.  For anything before that we still need
+# to create kernel modules.  We need to write a PLIST file so we can then simply use
+# COPYTREE_SHARE with adjusted permissions to copy the files over.
+BOOTFWDIR?=	/boot/firmware
+_SHAREMODE=	0444
+NO_BUILD=	yes
+.else
+MAKE_ENV+=	FWSRCDIR=${WRKSRC}/fw
+.endif
 
-# Add firmware files to plist.
-.for _f in ${DISTFILES_FLAVOR}
-PLIST_FILES+=	${KMODDIR}/${_f:C@(^[^?]*)${DISTURL_SUFFIX:Q}@\1@:S,.,_,g:S,-,_,g:S,/,_,g}.ko
+post-extract:
+	@${MKDIR} ${WRKSRC}/fw
+	@${MKDIR} ${WRKSRC}/lic
+	# Deal with supplementary licenses files.
+	@${CP} ${DISTDIR}/${DIST_SUBDIR}/${LICENSE_FILE}${DISTURL_SUFFIX} ${WRKSRC}/${LICENSE_FILE}
+	@${CP} ${DISTDIR}/${DIST_SUBDIR}/WHENCE${DISTURL_SUFFIX} ${WRKSRC}/WHENCE.in
+	@${SED} -e "s@%%XXX%%@${WHENCE_REGEX:Q}@g" ${FILESDIR}/WHENCE.awk.in > ${WRKSRC}/WHENCE.awk
+	@${AWK} -f ${WRKSRC}/WHENCE.awk ${WRKSRC}/WHENCE.in > ${WRKSRC}/WHENCE
+	# Do we need to set a tunable?
+.if defined(COMPAT_LINUXKPI_SKB_MEM_LIMIT) && ${COMPAT_LINUXKPI_SKB_MEM_LIMIT} > 0
+	@${MKDIR} ${WRKSRC}/${BOOT_LOADERCONFD}
+	@${ECHO_CMD} "compat.linuxkpi.skb.mem_limit=${COMPAT_LINUXKPI_SKB_MEM_LIMIT}" > ${WRKSRC}/${BOOT_LOADERCONFD}/${FLAVOR}.conf
+	@${ECHO_CMD} "${BOOT_LOADERCONFD}/${FLAVOR}.conf" >> ${PLIST}
+.endif
+################################################################################
+.if (${OSVERSION} >= 1500014) || (${OSVERSION} < 1500000 && ${OSVERSION} >= 1402000)
+.for _f in ${DISTFILES_${FLAVOR}}
+	# Create firmware source directory and copy in distfile.
+	@${MKDIR} ${WRKSRC}/fw/${_f:H}
+	${CP} ${DISTDIR}/${DIST_SUBDIR}/${_f} ${WRKSRC}/fw/${_f:C@(^[^?]*)${DISTURL_SUFFIX:Q}@\1@}
+	@${ECHO_CMD} ${BOOTFWDIR}/${_f:C@(^[^?]*)${DISTURL_SUFFIX:Q}@\1@} >> ${PLIST}.tmp
 .endfor
-# Record extra licenses files in plist.
-PLIST_FILES+=	${_LICENSE_DIR}/WHENCE
-.for _f in ${DISTFILES_FLAVOR_lic}
-PLIST_FILES+=	${_LICENSE_DIR}/${_f:C@(^[^?]*)${DISTURL_SUFFIX:Q}@\1@:S,/,_,g}
+	(cd ${WRKSRC}/fw/ && ${FIND} . -type d -mindepth 1 | \
+	    ${AWK} -vB="${BOOTFWDIR}/" '{ sub("^./", "@dir "B); print; }') >> ${PLIST}.tmp
+	# Remove possibly duplicate @dir entries
+	@${SORT} -u ${PLIST}.tmp >> ${PLIST}
+.else
+################################################################################
+# Build kernel modules.
+	# Prepare toplevel Makefile and Makefile.inc.
+	@${ECHO_CMD} "SUBDIR=" > ${WRKSRC}/Makefile
+	@${SED} -e "s@%%FWDRV%%@${FWDRV}@g" \
+	    -e "s@%%FWSUBDIR%%@${FWSUBDIR}@g" \
+	    ${FILESDIR}/Makefile.inc.in > ${WRKSRC}/Makefile.inc
+.for _f in ${DISTFILES_${FLAVOR}}
+	# We remove '.' and '-' as well as '/' as they don't work well in loader.conf.
+	@${MKDIR} ${WRKSRC}/${_f:C@(^[^?]*)${DISTURL_SUFFIX:Q}@\1@:S,.,_,g:S,-,_,g:S,/,_,g}
+	# Create subdir (firmware file) Makefile.
+	@${ECHO_CMD} "FWNAME=${_f:C@(^[^?]*)${DISTURL_SUFFIX:Q}@\1@:T}" > ${WRKSRC}/${_f:C@(^[^?]*)${DISTURL_SUFFIX:Q}@\1@:S,.,_,g:S,-,_,g:S,/,_,g}/Makefile
+.if (${_f:H:C,^[^/]*,,1:C,^/,,} != "")
+	@${ECHO_CMD} "FWSUBSUBDIR=${_f:H:C,^[^/]*,,1:C,^/,,}" >> ${WRKSRC}/${_f:C@(^[^?]*)${DISTURL_SUFFIX:Q}@\1@:S,.,_,g:S,-,_,g:S,/,_,g}/Makefile
+.endif
+	# XXX-BZ recover firmware versions later again from somewhere?  Pain to keep track though, else use 0 or ${FWDRV_VERSION}?
+	@${ECHO_CMD} "VERSION=0" >> ${WRKSRC}/${_f:C@(^[^?]*)${DISTURL_SUFFIX:Q}@\1@:S,.,_,g:S,-,_,g:S,/,_,g}/Makefile
+	@${ECHO_CMD} '.include <bsd.kmod.mk>' >> ${WRKSRC}/${_f:C@(^[^?]*)${DISTURL_SUFFIX:Q}@\1@:S,.,_,g:S,-,_,g:S,/,_,g}/Makefile
+	# Add subdir to top-level Makefile.
+	@${ECHO_CMD} "SUBDIR+=${_f:C@(^[^?]*)${DISTURL_SUFFIX:Q}@\1@:S,.,_,g:S,-,_,g:S,/,_,g}" >> ${WRKSRC}/Makefile
+	# Create firmware source directory and copy in distfile.
+	@${MKDIR} ${WRKSRC}/fw/${_f:H}
+	${CP} ${DISTDIR}/${DIST_SUBDIR}/${_f} ${WRKSRC}/fw/${_f:C@(^[^?]*)${DISTURL_SUFFIX:Q}@\1@}
+	@${ECHO_CMD} ${KMODDIR}/${_f:C@(^[^?]*)${DISTURL_SUFFIX:Q}@\1@:S,.,_,g:S,-,_,g:S,/,_,g}.ko >> ${PLIST}
 .endfor
+	@${ECHO_CMD} '.include <bsd.subdir.mk>' >> ${WRKSRC}/Makefile
+################################################################################
+.endif
+	# Copy in additional licenses files.
+.for _f in ${DISTFILES_${FLAVOR}_lic}
+	${CP} ${DISTDIR}/${DIST_SUBDIR}/${_f} ${WRKSRC}/lic/${_f:C@(^[^?]*)${DISTURL_SUFFIX:Q}@\1@:S,/,_,g}
+.endfor
+
+.if (${OSVERSION} >= 1500014) || (${OSVERSION} < 1500000 && ${OSVERSION} >= 1402000)
+do-install:
+	(cd ${WRKSRC}/fw/ && ${COPYTREE_SHARE} . ${STAGEDIR}/${BOOTFWDIR})
+.endif
+
+.if defined(COMPAT_LINUXKPI_SKB_MEM_LIMIT) && ${COMPAT_LINUXKPI_SKB_MEM_LIMIT} > 0
+post-install:
+	@${MKDIR} ${STAGEDIR}/${BOOT_LOADERCONFD}
+	@${INSTALL_DATA} ${WRKSRC}/${BOOT_LOADERCONFD}/${FLAVOR}.conf ${STAGEDIR}/${BOOT_LOADERCONFD}/${FLAVOR}.conf
+.endif
+
 
 .include <bsd.port.post.mk>

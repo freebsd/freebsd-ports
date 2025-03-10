@@ -1,5 +1,5 @@
 PORTNAME=	openjazz
-PORTVERSION=	20231028
+PORTVERSION=	20240919
 CATEGORIES=	games
 
 MAINTAINER=	martymac@FreeBSD.org
@@ -8,25 +8,22 @@ WWW=		http://alister.eu/jazz/oj
 
 LICENSE=	GPLv2
 
-USES=	dos2unix gmake sdl xorg
+USES=	cmake dos2unix sdl xorg
+USE_SDL=	sdl2
 USE_XORG=	x11 xext xrandr xrender xau xdmcp
-USE_SDL=	sdl
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	AlisterT
 
-DOS2UNIX_REGEX=	.*\.(h|cpp)
-ALL_TARGET=	OpenJazz
+CMAKE_ARGS+=	-DDATAPATH:STRING=${DATADIR}
 
-CXXFLAGS+=	-I${LOCALBASE}/include `${SDL_CONFIG} --cflags` \
-		-DDATAPATH=\\\"${DATADIR}/\\\" -DHOMEDIR
-LDFLAGS+=	-lpthread -L${LOCALBASE}/lib `${SDL_CONFIG} --libs`
+DOS2UNIX_REGEX=	.*\.(h|cpp)
 
 SUB_FILES=	pkg-message
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 	${TOUCH} ${STAGEDIR}${DATADIR}/.keepme
-	${INSTALL_PROGRAM} ${WRKSRC}/OpenJazz ${STAGEDIR}${PREFIX}/bin/openjazz
+	${INSTALL_PROGRAM} ${CONFIGURE_WRKSRC}/OpenJazz ${STAGEDIR}${PREFIX}/bin/openjazz
 
 .include <bsd.port.mk>

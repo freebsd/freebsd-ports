@@ -1,6 +1,6 @@
 PORTNAME=	${GH_PROJECT:tl}
 PORTVERSION=	2.0.0.b
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	games cad
 
 MAINTAINER=	danfe@FreeBSD.org
@@ -40,6 +40,8 @@ post-patch:
 	@${REINPLACE_CMD} -e '/typedef std::/s,auto_ptr,unique_ptr,' \
 		${WRKSRC}/common/src/IO/NodeSerializer.h \
 		${WRKSRC}/common/src/Renderer/FontTexture.h
+	@${REINPLACE_CMD} -e '/BBox/s,insersectWith,intersectWith,' \
+		${WRKSRC}/common/src/BBox.h
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/TrenchBroom ${STAGEDIR}${PREFIX}/bin

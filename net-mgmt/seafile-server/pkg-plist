@@ -20,6 +20,11 @@ libdata/pkgconfig/libseafile.pc
 %%SEAFILE_SERVER%%/seafile/%%PYTHON_SITELIBDIR%%/seaserv/__pycache__/api.cpython-%%PYTHON_SUFFIX%%.pyc
 %%SEAFILE_SERVER%%/seafile/%%PYTHON_SITELIBDIR%%/seaserv/__pycache__/service.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
 %%SEAFILE_SERVER%%/seafile/%%PYTHON_SITELIBDIR%%/seaserv/__pycache__/service.cpython-%%PYTHON_SUFFIX%%.pyc
+%%SEAFILE_SERVER%%/%%USERS%%/%%PYTHON_SITELIBDIR%%/%%USERS%%/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
+%%SEAFILE_SERVER%%/%%USERS%%/%%PYTHON_SITELIBDIR%%/%%USERS%%/__pycache__/rpcclient%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
+%%SEAFILE_SERVER%%/%%USERS%%/%%PYTHON_SITELIBDIR%%/seaserv/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
+%%SEAFILE_SERVER%%/%%USERS%%/%%PYTHON_SITELIBDIR%%/seaserv/__pycache__/api%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
+%%SEAFILE_SERVER%%/%%USERS%%/%%PYTHON_SITELIBDIR%%/seaserv/__pycache__/service%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
 %%SEAFILE_SERVER%%/seafile/%%PYTHON_SITELIBDIR%%/seaserv/api.py
 %%SEAFILE_SERVER%%/seafile/%%PYTHON_SITELIBDIR%%/seaserv/service.py
 %%SEAFILE_SERVER%%/sql/mysql/ccnet.sql

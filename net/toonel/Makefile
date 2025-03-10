@@ -11,10 +11,10 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tunneling with data compression
 WWW=		https://toonel.net
 
+USES=		java
+
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
-
-USE_JAVA=	yes
 
 SUB_FILES=	${PORTNAME}.sh
 SUB_LIST=	JARNAME=${DISTNAME}${EXTRACT_SUFX}

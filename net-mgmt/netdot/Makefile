@@ -4,11 +4,14 @@ DISTVERSIONPREFIX=	${PORTNAME}-
 PORTREVISION=	5
 CATEGORIES=	net-mgmt
 
-MAINTAINER=	nick@foobar.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open source tool to organize and maintain network information
 WWW=		https://github.com/cvicente/Netdot/
 
 LICENSE=	GPLv2
+
+DEPRECATED=	Upstream has been inactive for 4 years, consider migrating to net-mgmt/netbox
+EXPIRATION_DATE=2025-03-31
 
 RUN_DEPENDS=	p5-libapreq2>=0:www/p5-libapreq2 \
 		mp2bug:www/mod_perl2 \

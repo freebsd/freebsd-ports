@@ -21,7 +21,7 @@ PKGINSTALL=	${WRKDIR}/pkg-install
 
 SRC=		${.CURDIR}/src
 SCRIPTS=	classpath javavmwrapper
-# This is normally defined by bsd.java.mk when USE_JAVA is defined, but
+# This is normally defined by bsd.java.mk when USES=java is defined, but
 # we can't do that here since it would result in a circular dependency
 JAVALIBDIR=	${LOCALBASE}/share/java/classes
 

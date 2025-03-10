@@ -14,4 +14,6 @@ USES=		cmake perl5 pkgconfig tar:xz
 USE_PERL5=	build
 CMAKE_OFF=	WITH_TEST_SUITE
 
+NO_ARCH=	yes
+
 .include <bsd.port.mk>

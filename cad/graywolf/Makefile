@@ -19,13 +19,11 @@ WWW=		https://github.com/rubund/graywolf
 
 LICENSE=	GPLv2
 
-BROKEN_aarch64=	Fails to link: missing sbrk
-
 LIB_DEPENDS=	libgsl.so:math/gsl
 TEST_DEPENDS=	bash:shells/bash \
 		rsync:net/rsync
 
-USES=		cmake compiler:c11 pkgconfig shebangfix xorg
+USES=		cmake compiler:c11 pkgconfig sbrk shebangfix xorg
 USE_XORG=	ice sm x11 xext
 USE_LDCONFIG=	yes
 
@@ -36,7 +34,8 @@ SHEBANG_GLOB=	*.sh
 
 USE_GCC=	yes # lots of obviously incorrect C where clang fails, which gcc nevertheless magically finds a way to compile
 
-CFLAGS+=	-fcommon
+CFLAGS+=	-fcommon \
+		-fpermissive
 
 TEST_TARGET=	test
 

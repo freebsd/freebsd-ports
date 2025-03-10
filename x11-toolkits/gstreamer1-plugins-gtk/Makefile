@@ -1,18 +1,18 @@
-PORTREVISION=		1
+PORTREVISION=	0
 CATEGORIES=	x11-toolkits
-GST_PLUGIN_SUFFIX=	-gtk
 
 COMMENT=	GStreamer gtksink plugin
 
-GST_PLUGIN=	gtk3
-DIST=		good
+USES=		gnome
+USE_GSTREAMER=	gl
+USE_GNOME=	cairo gdkpixbuf2 gtk30
 
-MASTERDIR=	${.CURDIR}/../../multimedia/gstreamer1-plugins
+MASTERDIR=	${.CURDIR:H:H}/multimedia/gstreamer1-plugins
 
-PLIST=  ${.CURDIR}/pkg-plist
+PLIST=		${.CURDIR}/pkg-plist
 
-USES=    gnome
-USE_GSTREAMER= gl
-USE_GNOME= cairo gdkpixbuf2 gtk30
+DIST=			good
+GST_PLUGIN=		gtk3
+GST_PLUGIN_SUFFIX=	-gtk
 
 .include "${MASTERDIR}/Makefile"

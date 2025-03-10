@@ -1,11 +1,10 @@
 PORTNAME=	smlnj
-PORTVERSION=	110.98
-PORTREVISION=	1
+DISTVERSION=	110.99.6.1
 CATEGORIES=	lang
-MASTER_SITES=	http://smlnj.cs.uchicago.edu/dist/working/${PORTVERSION}/ \
-		ftp://mirror.free.de/http/smlnj.cs.uchicago.edu/dist/working/${PORTVERSION}/
+MASTER_SITES=	http://smlnj.cs.uchicago.edu/dist/working/${DISTVERSION}/ \
+		ftp://mirror.free.de/http/smlnj.cs.uchicago.edu/dist/working/${DISTVERSION}/
 DISTFILES=	config.tgz runtime.tgz
-DIST_SUBDIR=	smlnj/${PORTVERSION}
+DIST_SUBDIR=	smlnj/${DISTVERSION}
 EXTRACT_ONLY=	config.tgz
 
 MAINTAINER=	joemann@beefree.free.de
@@ -20,7 +19,7 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 ONLY_FOR_ARCHS=	amd64 i386
 
-USES=		compiler
+USES=		compiler python:env shebangfix
 
 SUB_FILES=	pkg-install
 SUB_LIST=	EXEBINDIR=${MLBINRELATIVE} EXENAMES="${MLEXE}"
@@ -29,16 +28,18 @@ NO_WRKSUBDIR=	yes
 
 PKGDEINSTALL=	${PKGINSTALL}
 
-OPTIONS_DEFINE=		EVERYTHING RECOMPILE
+OPTIONS_DEFINE=	EVERYTHING RECOMPILE
 
 EVERYTHING_DESC=	install everything from the SML/NJ distribution
 RECOMPILE_DESC=		recompile the SML compiler - implies EVERYTHING
 
-RECOMPILE_IMPLIES=	EVERYTHING
+EVERYTHING_PLIST_SUB=		EVERYTHING=""
+EVERYTHING_PLIST_SUB_OFF=	EVERYTHING="@comment "
+RECOMPILE_IMPLIES=		EVERYTHING
 
 .include <bsd.port.pre.mk>
 
-.if ${COMPILER_TYPE} == "clang"
+.if ${COMPILER_TYPE} == "clang" && ${ARCH} == "amd64"
 RUNTIME_SO=
 PLIST_SUB+=	RUNTIME_SO="@comment "
 .else
@@ -50,11 +51,11 @@ PLIST_SUB+=	RUNTIME_SO=
 CFLAGS+=	-Wno-error=incompatible-function-pointer-types
 .endif
 
-.if (${ARCH} == "i386")
+.if ${ARCH} == "i386"
 MLARCH=		x86
 MLSIZE=		32
 PLIST_SUB+=	MLSIZE32=""
-.elif  (${ARCH} == "amd64")
+.elif ${ARCH} == "amd64"
 MLARCH=		amd64
 MLSIZE=		64
 PLIST_SUB+=	MLSIZE32="@comment "
@@ -65,19 +66,14 @@ CFLAGS+=	-fPIC
 AS=		${CC} -x assembler -c
 ASFLAGS+=	-fPIC
 DISTFILES+=	boot.${MLARCH}-unix.tgz
-DISTFILES+=	MLRISC.tgz asdl.tgz ckit.tgz cml.tgz doc.tgz heap2asm.tgz \
+DISTFILES+=	MLRISC.tgz ckit.tgz cml.tgz doc.tgz heap2asm.tgz \
 		ml-burg.tgz ml-lex.tgz ml-lpt.tgz ml-yacc.tgz nlffi.tgz \
 		old-basis.tgz smlnj-lib.tgz trace-debug-profile.tgz
-
-# Useful for tuning recompilation.
-CMB_COMMAND=
-
 .if ${PORT_OPTIONS:MEVERYTHING}
-DISTFILES+=	cm.tgz compiler.tgz eXene.tgz \
+DISTFILES+=	asdl.tgz cm.tgz compiler.tgz eXene.tgz \
 		pgraph.tgz smlnj-c.tgz system.tgz
-PLIST_SUB+=	EVERYTHING=""
-.else
-PLIST_SUB+=	EVERYTHING="@comment "
+SHEBANG_FILES=	smlnj-lib/HTML4/helper.py \
+		eXene/examples/basicwin/test.sh
 .endif
 
 MLROOTRELATIVE=	smlnj
@@ -85,42 +81,40 @@ MLROOT=		${PREFIX}/${MLROOTRELATIVE}
 MLBINRELATIVE=	${MLROOTRELATIVE}/bin
 MLBIN=		${MLROOT}/bin
 MLLIB=		${MLROOT}/lib
-MLSTDSRCDIRS=	asdl cml doc heap2asm ml-burg ml-lex ml-lpt ml-yacc \
-		nlffi smlnj-lib
+MLSTDSRCDIRS=	cml doc heap2asm ml-burg ml-lex ml-lpt ml-yacc nlffi smlnj-lib
 MLSRCDIRS=	base ${MLSTDSRCDIRS} \
 		ckit eXene pgraph smlnj-c
-MLSRCS=
-.for srcdir in ${MLSRCDIRS}
-MLSRCS+=	${MLROOT}/${srcdir}
-.endfor
 MLTARGETS=	heap2asm
-MLEXE=		asdlgen heap2exec ml-antlr ml-build ml-burg ml-lex \
-		ml-makedepend ml-ulex ml-yacc sml
+MLEXE=		heap2exec ml-antlr ml-build ml-burg ml-lex ml-makedepend \
+		ml-ulex ml-yacc sml
 .if defined(MLSIZE) && ${MLSIZE} == 32
 MLEXE+=		ml-nlffigen
 .endif
 .if ${PORT_OPTIONS:MEVERYTHING}
-MLSTDSRCDIRS+=	eXene pgraph smlnj-c
-MLTARGETS+=	eXene mlrisc-tools nowhere pgraph-util src-smlnj
-MLEXE+=		nowhere
+MLSTDSRCDIRS+=	asdl eXene pgraph smlnj-c
+MLTARGETS+=	asdl eXene mlrisc-tools nowhere pgraph-util src-smlnj
+MLEXE+=		asdlgen nowhere
 PLIST=		${WRKDIR}/.PLIST
 MLRUNTIMEPLIST=	${WRKDIR}/.PLIST-runtime
 MLSRCPLIST=	${WRKDIR}/.PLIST-src
 MLPLISTFILES=	${.CURDIR}/pkg-plist ${MLRUNTIMEPLIST} ${MLSRCPLIST}
 .endif
 
-pre-fetch:
+# Useful for tuning recompilation.
+CMB_COMMAND?=
+
+pre-fetch-EVERYTHING-off:
 	@${ECHO}
-.if ! ${PORT_OPTIONS:MEVERYTHING}
 	@${ECHO} 'Use port option EVERYTHING to also build/install'
+	@${ECHO} ' asdl (Abstract Syntax Description Language),'
 	@${ECHO} ' eXene (X Windows toolkit),'
 	@${ECHO} ' nowhere (preprocessor for conditional patterns),'
 	@${ECHO} ' various libraries, and all the sources.'
-.endif
-.if ! ${PORT_OPTIONS:MRECOMPILE}
+
+pre-fetch-RECOMPILE-off:
+	@${ECHO}
 	@${ECHO} 'Use port option RECOMPILE to recompile the compiler.'
-	@${ECHO} ' This implies EVERYTHING.'
-.endif
+	@${ECHO} ' This implies option EVERYTHING.'
 	@${ECHO}
 
 # make symlinks to the dist files
@@ -134,23 +128,19 @@ post-extract:
 # config/actions.
 
 do-configure:
-.if defined(MLTARGETS)
 	${ECHO_CMD} -n > "${WRKDIR}/.tmp.sed"
 .for t in ${MLTARGETS}
 	${ECHO_CMD} '/^#[ 	]*request[ 	]+${t}$$/s/^#//' >> "${WRKDIR}/.tmp.sed"
 .endfor
 	${SED} -i .default -E -f "${WRKDIR}/.tmp.sed" "${WRKSRC}/config/targets"
-.endif
+
 # Recompilation requires ml-lex and ml-yacc. All requested targets
 # will be built later using the recompiled core system after
 # removing targets.customized. See "do-build" below.
-.if ${PORT_OPTIONS:MRECOMPILE}
-	( ${ECHO_CMD} "request	ml-yacc" && \
-	  ${ECHO_CMD} "request	ml-lex" && \
-	  ${ECHO_CMD} "request	ml-lex-mllex-tool" && \
-	  ${ECHO_CMD} "request	src-smlnj" ) \
-	> "${WRKSRC}/config/targets.customized"
-.endif
+
+do-configure-RECOMPILE-on:
+	${CP} "${FILESDIR}/targets-recompile.customized" \
+	      "${WRKSRC}/config/targets.customized"
 
 # The build target patches, builds, and installs the system within WRKDIR.
 # base/runtime is not cleaned afterwards to avoid its recompilation during
@@ -191,13 +181,15 @@ do-build:
 	MLSTANDARDPATCHES=`${MLSTANDARDPATCHES_CMD}` \
 	MLSTANDARDPATCHDIRS=`${MLSTANDARDPATCHDIRS_CMD}` \
 	MLSOURCEPATCHES=`${MLSOURCEPATCHES_CMD}` \
-	CFLAGS='${CFLAGS}' LDFLAGS='${LDFLAGS}' \
+	CC='${CC}' CFLAGS='${CFLAGS}' LDFLAGS='${LDFLAGS}' \
 	AS='${AS}' ASFLAGS='${ASFLAGS}' EXTRA_DEFS='${EXTRA_DEFS}' \
 	./config/install.sh -default ${MLSIZE}
-.if ${PORT_OPTIONS:MRECOMPILE}
+
+do-build-RECOMPILE-on:
 	-${RM} ${WRKSRC}/config/targets.customized
 	@${ECHO} '(* Recompiling the core system: *)'
-	cd ${WRKSRC}/${RECOMPILEDIR} && ( \
+	cd ${WRKSRC}/${RECOMPILEDIR} && \
+	export PATH="${WRKSRC}/bin:$$PATH" && ( \
 	${ECHO_CMD} 'CM.autoload "$$smlnj/cmb.cm";' ; \
 	${ECHO_CMD} ${CMB_COMMAND} ; \
 	${ECHO_CMD} 'CMB.make ();' ) | \
@@ -218,22 +210,37 @@ do-build:
 	FILESDIR="${FILESDIR}" PATCH="${PATCH}" \
 	PATCH_ARGS="-d ${PATCH_WRKSRC} ${PATCH_ARGS}" \
 	MLNORUNTIMECLEAN=yes RECOMPILEDIR="${RECOMPILEDIR}" \
-	CFLAGS='${CFLAGS}' LDFLAGS='${LDFLAGS}' \
+	CC='${CC}' CFLAGS='${CFLAGS}' LDFLAGS='${LDFLAGS}' \
 	AS='${AS}' ASFLAGS='${ASFLAGS}' EXTRA_DEFS='${EXTRA_DEFS}' \
 	./config/install.sh -default ${MLSIZE}
-.endif
 
-.if ${PORT_OPTIONS:MEVERYTHING}
-post-build:
-	${CHMOD} a-x ${WRKSRC}/eXene/examples/basicwin/test.sh \
-		${WRKSRC}/smlnj-lib/HTML4/helper.py
+post-build-EVERYTHING-on:
+	${MAKE} SHEBANG_FILES="${SHEBANG_FILES}" fix-shebang
 	@${ECHO} '(* Cleaning asdl: *)'
 	${FIND} ${WRKSRC}/asdl -type f \
 		-exec ${GREP} -F -l "${WRKDIR}" {} \; -delete
-.endif
+
+# ${PKGINSTALL} contains multiexec-wrapper, which is used to select
+# between executables of the same name that have been installed by
+# different packages (like smlnj and smlnj-devel). The source of
+# multiexec-wrapper is extracted from ${PKGINSTALL}, and inserted
+# into ${PKGINSTALL} in compressed and encoded form. So it is still
+# available when being installed from a binary package, even if
+# ${PKGINSTALL} is no file at that time (but only input to a shell).
+
+pre-install:
+	@${SED} -e '/^#%%PKG-INSTALL-START%%$$/,/^#%%PKG-INSTALL-END%%$$/d' \
+	       ${PKGINSTALL} > ${PKGINSTALL}.script
+	@${GZIP_CMD} ${PKGINSTALL}.script
+	@b64encode ${PKGINSTALL}.script.gz script.gz > ${PKGINSTALL}.script.gz.b64
+	@${SED} -n -e '1,/~EOF~.$$/p' ${PKGINSTALL} > ${PKGINSTALL}.pre
+	@${SED} -n -e '/^~EOF~$$/,$$p' ${PKGINSTALL} > ${PKGINSTALL}.post
+	@${CAT} ${PKGINSTALL}.pre ${PKGINSTALL}.script.gz.b64 ${PKGINSTALL}.post > ${PKGINSTALL}.full
+	@${DIFF} -q ${PKGINSTALL} ${PKGINSTALL}.full >/dev/null || ${CP} ${PKGINSTALL}.full ${PKGINSTALL}
 
 # Nowadays PLIST has to be computed before installation. We do it in
-# "pre-install" because source extraction happens during "build".
+# "pre-install-EVERYTHING-on" because source extraction happened during
+# "build".
 
 .if ${PORT_OPTIONS:MEVERYTHING}
 MLNOINSTALL=	.cm
@@ -241,16 +248,14 @@ MLNOINSTALL=	.cm
 MLNOINSTALL+=	sml.bin.${MLARCH}-unix sml.boot.${MLARCH}-unix \
 		sml.lib sml.${MLARCH}-bsd
 .endif
-.for excl in ${MLNOINSTALL}
-MLSRCEXCLUDEREGEX+=	-e '/${excl}$$' -e '/${excl}/'
-.endfor
+MLSRCEXCLUDES=		${MLNOINSTALL:@.excl.@--exclude "${.excl.}"@}
+MLSRCEXCLUDEREGEX=	${MLNOINSTALL:@.excl.@-e '/${.excl.}$$' -e '/${.excl.}/'@}
 MLPATCHPATHREGEX=	-E -e 's%(^|[^_])_([^_]|$$)%\1/\2%g' \
 			   -e 's%(^|[^_])__([^_]|$$)%\1_\2%g' \
 			   -e 's%(^|[^_])___([^_]|$$)%\1/_\2%g'
 .endif
 
-pre-install:
-.if ${PORT_OPTIONS:MEVERYTHING}
+pre-install-EVERYTHING-on:
 	@${ECHO} -n '(* Computing package list ...'
 	@${TAR} -tzf ${WRKSRC}/runtime.tgz | \
 	${SED} -E -n -e 's%^(.*[^/])$$%${MLROOTRELATIVE}/base/\1%p' \
@@ -278,22 +283,6 @@ pre-install:
 	@${SED} -e 's/^%%EVERYTHING%%//' ${MLPLISTFILES} | \
 	${GREP} -h "^@dir" | ${SORT} -r -u >> ${PLIST}
 	@${ECHO} ' done. *)'
-.endif
-# ${PKGINSTALL} contains multiexec-wrapper, which is used to select
-# between executables of the same name that have been installed by
-# different packages (like smlnj and smlnj-devel). The source of
-# multiexec-wrapper is extracted from ${PKGINSTALL}, and inserted
-# into ${PKGINSTALL} in compressed and encoded form. So it is still
-# available when being installed from a binary package, even if
-# ${PKGINSTALL} is no file at that time (but only input to a shell).
-	@${SED} -e '/^#%%PKG-INSTALL-START%%$$/,/^#%%PKG-INSTALL-END%%$$/d' \
-	       ${PKGINSTALL} > ${PKGINSTALL}.script
-	@${GZIP_CMD} ${PKGINSTALL}.script
-	@b64encode ${PKGINSTALL}.script.gz script.gz > ${PKGINSTALL}.script.gz.b64
-	@${SED} -n -e '1,/~EOF~.$$/p' ${PKGINSTALL} > ${PKGINSTALL}.pre
-	@${SED} -n -e '/^~EOF~$$/,$$p' ${PKGINSTALL} > ${PKGINSTALL}.post
-	@${CAT} ${PKGINSTALL}.pre ${PKGINSTALL}.script.gz.b64 ${PKGINSTALL}.post > ${PKGINSTALL}.full
-	@${DIFF} -q ${PKGINSTALL} ${PKGINSTALL}.full >/dev/null || ${CP} ${PKGINSTALL}.full ${PKGINSTALL}
 
 # The install target installs the heaps and libraries to their final
 # location in ${MLBIN} and ${MLLIB}.
@@ -302,21 +291,14 @@ pre-install:
 # When staging CM_PATHCONFIG has to point to the final
 # ${MLLIB}/pathconfig (in ${PREFIX}) while building the compiler.
 
-.if ${PORT_OPTIONS:MEVERYTHING}
-MLSRCEXCLUDES=
-.for excl in ${MLNOINSTALL}
-MLSRCEXCLUDES+=	--exclude "${excl}"
-.endfor
-.endif
-
 do-install:
 	${MKDIR} "${STAGEDIR}${MLROOT}"
-.if ! ${PORT_OPTIONS:MRECOMPILE}
+.if !${PORT_OPTIONS:MRECOMPILE}
 	cd ${WRKSRC} && unset PWD && \
 	FILESDIR="${FILESDIR}" PATCH="${PATCH}" PATCH_ARGS="-d ${PATCH_WRKSRC} ${PATCH_ARGS}" \
 	STAGEDIR="${STAGEDIR}" MLLIB="${MLLIB}" \
 	INSTALLDIR="${STAGEDIR}${MLROOT}" \
-	CFLAGS='${CFLAGS}' LDFLAGS='${LDFLAGS}' \
+	CC='${CC}' CFLAGS='${CFLAGS}' LDFLAGS='${LDFLAGS}' \
 	AS='${AS}' ASFLAGS='${ASFLAGS}' EXTRA_DEFS='${EXTRA_DEFS}' \
 	./config/install.sh -default ${MLSIZE}
 .else
@@ -334,7 +316,7 @@ do-install:
 	FILESDIR="${FILESDIR}" PATCH="${PATCH}" PATCH_ARGS="-d ${PATCH_WRKSRC} ${PATCH_ARGS}" \
 	STAGEDIR="${STAGEDIR}" MLLIB="${MLLIB}" \
 	INSTALLDIR="${STAGEDIR}${MLROOT}" RECOMPILEDIR="${RECOMPILEDIR}" \
-	CFLAGS='${CFLAGS}' LDFLAGS='${LDFLAGS}' \
+	CC='${CC}' CFLAGS='${CFLAGS}' LDFLAGS='${LDFLAGS}' \
 	AS='${AS}' ASFLAGS='${ASFLAGS}' EXTRA_DEFS='${EXTRA_DEFS}' \
 	./config/install.sh -default ${MLSIZE}
 .endif

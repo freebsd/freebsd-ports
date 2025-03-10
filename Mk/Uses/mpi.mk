@@ -3,7 +3,6 @@
 # Feature:	mpi
 # Usage:	USES=mpi or USES=mpi:ARGS
 # Valid ARGS:	mpich (default) openmpi
-# Note: mpich2 and openmpi3 are not handled
 #
 # Provides:	MPI_LIBS MPI_CFLAGS MPICC MPICXX MPIF90 MPIFC MPI_HOME	\
 #		MPIEXEC MPIRUN

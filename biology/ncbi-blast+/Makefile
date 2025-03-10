@@ -1,5 +1,5 @@
 PORTNAME=	ncbi-blast+
-DISTVERSION=	2.14.1
+DISTVERSION=	2.16.0
 PORTREVISION=	3
 CATEGORIES=	biology perl5 python
 MASTER_SITES=	https://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/LATEST/ \
@@ -8,7 +8,7 @@ DISTNAME=	ncbi-blast-${PORTVERSION}+-src
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	NCBI implementation of Basic Local Alignment Search Tool
-WWW=		https://blast.ncbi.nlm.nih.gov
+WWW=		https://blast.ncbi.nlm.nih.gov/
 
 LICENSE=	PD
 LICENSE_FILE=	${WRKSRC}/scripts/projects/blast/LICENSE
@@ -16,35 +16,35 @@ LICENSE_FILE=	${WRKSRC}/scripts/projects/blast/LICENSE
 ONLY_FOR_ARCHS=		aarch64 amd64 powerpc64 powerpc64le riscv64
 ONLY_FOR_ARCHS_REASON=	Requires 64-bit processor
 
-LIB_DEPENDS=	libpcre.so:devel/pcre \
+LIB_DEPENDS=	libdw.so:devel/elfutils \
+		libgcrypt.so:security/libgcrypt \
+		libgmp.so:math/gmp \
+		libgnutls.so:security/gnutls \
+		libgpg-error.so:security/libgpg-error \
+		libgrpc.so:devel/grpc \
+		libhogweed.so:security/nettle \
+		libidn2.so:dns/libidn2 \
 		liblmdb.so:databases/lmdb \
 		liblzo2.so:archivers/lzo2 \
-		libgnutls.so:security/gnutls \
-		libtspi.so:security/trousers \
-		libgmp.so:math/gmp \
-		libidn2.so:dns/libidn2 \
 		libnettle.so:security/nettle \
-		libhogweed.so:security/nettle \
-		libtasn1.so:security/libtasn1 \
-		libp11-kit.so:security/p11-kit \
-		libgcrypt.so:security/libgcrypt \
-		libgpg-error.so:security/libgpg-error \
-		libsqlite3.so:databases/sqlite3 \
-		libuv.so:devel/libuv \
 		libnghttp2.so:www/libnghttp2 \
-		libgrpc.so:devel/grpc \
-		libzstd.so:archivers/zstd \
-		libdw.so:devel/elfutils
+		libp11-kit.so:security/p11-kit \
+		libpcre.so:devel/pcre \
+		libsqlite3.so:databases/sqlite3 \
+		libtasn1.so:security/libtasn1 \
+		libtspi.so:security/trousers \
+		libuv.so:devel/libuv \
+		libzstd.so:archivers/zstd
 RUN_DEPENDS=	p5-List-MoreUtils>=0:lang/p5-List-MoreUtils \
 		p5-JSON>=0:converters/p5-JSON
 
-USES=		compiler:c++14-lang gmake localbase:ldflags shebangfix perl5 python
-USE_LDCONFIG=	yes
+USES=		compiler:c++14-lang gmake localbase:ldflags perl5 python shebangfix
+USE_LDCONFIG=	${PREFIX}/lib/ncbi-tools++
 
-SHEBANG_FILES=	src/app/blast/legacy_blast.pl \
-		src/app/blast/update_blastdb.pl \
-		src/app/blast/cleanup-blastdb-volumes.py \
+SHEBANG_FILES=	src/app/blast/cleanup-blastdb-volumes.py \
 		src/app/blast/get_species_taxids.sh \
+		src/app/blast/legacy_blast.pl \
+		src/app/blast/update_blastdb.pl \
 		src/app/winmasker/windowmasker_2.2.22_adapter.py
 GNU_CONFIGURE=	yes
 
@@ -69,13 +69,29 @@ CONFIGURE_ARGS+=	--without-openmp
 LDFLAGS+=	-latomic # Only exists in gcc libs
 .endif
 
+# Build system attempts to access NCBI file server paths such as
+# /net/snowman in many places.  :-/
+# This causes NFS timeouts if autofs is enabled.
+pre-configure:
+	${REINPLACE_CMD} -e 's|/net/|/nonexistent/net/|g' \
+	      ${WRKSRC}/include/sra/readers/ncbi_traces_path.hpp \
+	      ${WRKSRC}/scripts/common/impl/create_flat_makefile.sh \
+	      ${WRKSRC}/src/objects/genomecoll/gc_cli/Makefile.in \
+	      ${WRKSRC}/src/objtools/blast/seqdb_reader/configuration.txt \
+	      ${WRKSRC}/src/objtools/align_format/unit_test/data/large_gi.asn \
+	      ${WRKSRC}/src/build-system/project_tree_builder.ini \
+	      ${WRKSRC}/src/build-system/cmake/CMake.NCBIptb.datatool.cmake \
+	      ${WRKSRC}/src/build-system/new_module.sh.in \
+	      ${WRKSRC}/src/build-system/Makefile.meta_l \
+	      ${WRKSRC}/src/build-system/config.site.ncbi
+
 post-install:
-	@${RM} ${STAGEDIR}${PREFIX}/include/ncbi-tools++/*/*/.cvsignore.extra
-	@${RM} -rf ${STAGEDIR}${PREFIX}/lib/X11
-	@${RM} ${STAGEDIR}${PREFIX}/include/ncbi-tools++/common/config/ncbiconf_msvc_site.h.in
-	@${RM} ${STAGEDIR}${PREFIX}/include/ncbi-tools++/common/ncbi_build_ver.h.in
-	@${RM} ${STAGEDIR}${PREFIX}/include/ncbi-tools++/common/ncbi_revision.h.in
-	@${RMDIR} ${STAGEDIR}${PREFIX}/lib/debug
+	${RM} ${STAGEDIR}${PREFIX}/include/ncbi-tools++/*/*/.cvsignore.extra
+	${RM} -rf ${STAGEDIR}${PREFIX}/lib/X11
+	${RM} ${STAGEDIR}${PREFIX}/include/ncbi-tools++/common/config/ncbiconf_msvc_site.h.in
+	${RM} ${STAGEDIR}${PREFIX}/include/ncbi-tools++/common/ncbi_build_ver.h.in
+	${RM} ${STAGEDIR}${PREFIX}/include/ncbi-tools++/common/ncbi_revision.h.in
+	${RMDIR} ${STAGEDIR}${PREFIX}/lib/debug
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/ncbi-tools++/*.so
 
 .include <bsd.port.post.mk>

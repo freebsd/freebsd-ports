@@ -3,7 +3,7 @@ DISTVERSION=	1.2-5
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	uzsolt@FreeBSD.org
 COMMENT=	Extended Model Formulas
 WWW=		https://cran.r-project.org/web/packages/Formula/
 

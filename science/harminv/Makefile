@@ -1,21 +1,25 @@
 PORTNAME=	harminv
-PORTVERSION=	1.3.1
-PORTREVISION=	23
+DISTVERSION=	1.4.2
+PORTREVISION=	2
 CATEGORIES=	science
-MASTER_SITES=	http://ab-initio.mit.edu/harminv/
+MASTER_SITES=	https://github.com/NanoComp/harminv/releases/download/v${DISTVERSION}/
 
 MAINTAINER=	devel@stasyan.com
 COMMENT=	Solver of harmonic inversion
-WWW=		http://ab-initio.mit.edu/wiki/index.php/Harminv
+WWW=		https://github.com/NanoComp/harminv/
+
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+LIB_DEPENDS=	libopenblas.so:math/openblas
 
 USES=		blaslapack fortran gmake libtool pathfix
-GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
-USE_GCC=	yes
-CPPFLAGS+=	-I${LOCALBASE}/include -fPIC
-LD_LIBRARY_PATH=	-L${LOCALBASE}/lib -L/usr/lib
-LDFLAGS+=	-L${LOCALBASE}/lib
-CONFIGURE_ENV+=	LD_LIBRARY_PATH="${LD_LIBRARY_PATH}"
 USE_LDCONFIG=	yes
+
+GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
+CONFIGURE_ARGS=	--enable-shared
+
+INSTALL_TARGET=	install-strip
 
 .include <bsd.port.mk>

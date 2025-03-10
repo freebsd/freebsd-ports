@@ -11,8 +11,8 @@ WWW=		https://saxon.sourceforge.net/
 
 LICENSE=	MPL10
 
-USES=		zip
-USE_JAVA=	yes
+USES=		java zip
+
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 NO_ARCH=	yes

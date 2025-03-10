@@ -1,7 +1,7 @@
 PORTNAME=	csso
 PORTVERSION=	1.3.9
 DISTVERSIONPREFIX=	v
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	www
 MASTER_SITES=	http://nivit.altervista.org/FreeBSD/ports/distfiles/
 

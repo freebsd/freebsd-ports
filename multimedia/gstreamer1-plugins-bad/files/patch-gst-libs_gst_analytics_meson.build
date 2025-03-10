@@ -1,0 +1,12 @@
+--- gst-libs/gst/analytics/meson.build.orig	2024-08-21 11:25:15 UTC
++++ gst-libs/gst/analytics/meson.build
+@@ -1,3 +1,4 @@
++if get_option('analytics').enabled()
+ analytics_sources = files( 'gstanalyticsmeta.c',
+                               'gstanalyticsclassificationmtd.c',
+                               'gstanalyticsobjectdetectionmtd.c',
+@@ -62,3 +63,4 @@ meson.override_dependency(pkg_name, gstanalytics_dep)
+   dependencies : [gstbase_dep, gstvideo_dep])
+ 
+ meson.override_dependency(pkg_name, gstanalytics_dep)
++endif

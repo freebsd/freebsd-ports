@@ -1,5 +1,6 @@
 PORTNAME=	i2pd
-DISTVERSION=	2.53.1
+DISTVERSION=	2.56.0
+PORTREVISION=	1
 CATEGORIES=	security net-p2p
 
 MAINTAINER=	driesm@FreeBSD.org
@@ -12,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	boost-libs>=1.72.0_5:devel/boost-libs
 LIB_DEPENDS=	libboost_thread.so:devel/boost-libs
 
-USES=		cmake:insource compiler:c++11-lib ssl
+USES=		cmake:insource compiler:c++17-lang ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	PurpleI2P
 USE_RC_SUBR=	${PORTNAME}

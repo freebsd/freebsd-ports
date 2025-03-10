@@ -1,20 +1,23 @@
 PORTNAME=	astral
-DISTVERSION=	3.2
+PORTVERSION=	3.2
+PORTREVISION=	1
 CATEGORIES=	astro python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	ygy@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Calculations for the position of the sun and moon
-WWW=		https://github.com/sffjunkie/astral
+WWW=		https://sffjunkie.github.io/astral/ \
+		https://github.com/sffjunkie/astral
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytz>0:devel/py-pytz@${PY_FLAVOR}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}poetry-core>=0:devel/py-poetry-core@${PY_FLAVOR}
 
-USES=		python
-USE_PYTHON=	autoplist concurrent distutils
+USES=		python:3.9+
+USE_PYTHON=	autoplist concurrent pep517
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>

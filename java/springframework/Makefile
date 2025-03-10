@@ -13,8 +13,7 @@ WRKSRC=		${WRKDIR}/spring-framework-${PORTVERSION}.RELEASE
 CONFLICTS=	springframework-3.1.*
 
 NO_BUILD=	yes
-USE_JAVA=	yes
-USES=		zip
+USES=		java zip
 
 OPTIONS_DEFINE=	DOCS RESRCS
 RESRCS_DESC=	Install resource files

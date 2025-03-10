@@ -1,0 +1,11 @@
+--- src/CMakeLists.txt.orig	2024-04-01 11:03:06 UTC
++++ src/CMakeLists.txt
+@@ -41,7 +41,7 @@ target_link_libraries(phonon_mpv_qt${QT_MAJOR_VERSION}
+     Phonon::phonon4qt${QT_MAJOR_VERSION}
+     Qt${QT_MAJOR_VERSION}::Core
+     Qt${QT_MAJOR_VERSION}::Gui
+-    ${MPV_LIBRARIES}
++    ${MPV_LIBRARIES} ${MPV_LDFLAGS}
+ )
+ 
+ if(QT_MAJOR_VERSION STREQUAL "5")

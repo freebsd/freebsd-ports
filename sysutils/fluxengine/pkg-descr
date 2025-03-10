@@ -1,8 +1,0 @@
-The FluxEngine is a very cheap USB floppy disk interface capable of reading
-and writing exotic non-PC floppy disk formats.  It allows you to use a
-conventional PC drive to accept Amiga disks, CLV Macintosh disks, bizarre
-128-sector CP/M disks, and other weird and bizarre formats.
-
-The hardware consists of a single, commodity part with a floppy drive
-connector soldered onto it.  No ordering custom boards, no fiddly surface
-mount assembly, and no fuss: nineteen simple solder joints and you're done.

@@ -1,5 +1,5 @@
 PORTNAME=	App-perlbrew
-PORTVERSION=	0.98
+PORTVERSION=	1.01
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:GUGOD
@@ -13,18 +13,15 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	p5-CPAN-Perl-Releases>=5.20230720:devel/p5-CPAN-Perl-Releases \
+RUN_DEPENDS=	p5-CPAN-Perl-Releases>=5.20240920:devel/p5-CPAN-Perl-Releases \
 		p5-Capture-Tiny>=0.48:devel/p5-Capture-Tiny \
 		p5-Devel-PatchPerl>=2.08:devel/p5-Devel-PatchPerl \
 		p5-local-lib>=2.000014:devel/p5-local-lib
 TEST_DEPENDS=	p5-File-Which>=1.21:sysutils/p5-File-Which \
-		p5-IO-All>=0.51:devel/p5-IO-All \
 		p5-Path-Class>=0.33:devel/p5-Path-Class \
-		p5-Test-Exception>=0.32:devel/p5-Test-Exception \
-		p5-Test-NoWarnings>=1.04:devel/p5-Test-NoWarnings \
-		p5-Test-Output>=1.030:devel/p5-Test-Output \
-		p5-Test-Spec>=0.49:devel/p5-Test-Spec \
-		p5-Test-TempDir-Tiny>=0.016:devel/p5-Test-TempDir-Tiny
+		p5-Test-Simple>=1.302200:devel/p5-Test-Simple \
+		p5-Test2-Plugin-IOEvents>=0.001001:devel/p5-Test2-Plugin-IOEvents \
+		p5-Test2-Plugin-NoWarnings>=0.10:devel/p5-Test2-Plugin-NoWarnings
 
 USES=		perl5
 USE_PERL5=	modbuildtiny

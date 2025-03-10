@@ -4,7 +4,7 @@ DISTVERSION=	0.3.4
 CATEGORIES=	graphics gnome
 MASTER_SITES=	GNU_ALPHA
 
-MAINTAINER=	Clockwork6400@protonmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Small-scale painting program for GNOME
 WWW=		https://www.gnu.org/software/gpaint/
 
@@ -23,7 +23,7 @@ PLIST_FILES=	${DATADIR}/glade/gpaint.glade \
 
 .include <bsd.port.options.mk>
 
-.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400091 || ( ${OSVERSION} >= 1302507 && ${OSVERSION} < 1400000 ))
+.if ${OPSYS} == FreeBSD
 CFLAGS+=	-Wno-error=incompatible-function-pointer-types
 .endif
 

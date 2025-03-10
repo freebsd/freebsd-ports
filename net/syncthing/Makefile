@@ -1,6 +1,7 @@
 PORTNAME=	syncthing
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.27.10
+DISTVERSION=	1.29.2
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/v${DISTVERSION}/
 DISTNAME=	${PORTNAME}-source-${DISTVERSIONFULL}
@@ -12,7 +13,7 @@ WWW=		https://syncthing.net/
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/${PORTNAME}/LICENSE
 
-USES=		cpe go:1.21,modules
+USES=		cpe go:1.22,modules
 
 USE_RC_SUBR=	syncthing syncthing-discosrv syncthing-relaysrv \
 		syncthing-relaypoolsrv

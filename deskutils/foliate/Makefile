@@ -1,6 +1,6 @@
 PORTNAME=	foliate
 PORTVERSION=	2.6.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	deskutils
 
 MAINTAINER=	fox@FreeBSD.org
@@ -12,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	appstream-util:devel/appstream-glib \
 		gjs-console:lang/gjs
-LIB_DEPENDS=	libwebkit2gtk-4.0.so:www/webkit2-gtk3
+LIB_DEPENDS=	libwebkit2gtk-4.0.so:www/webkit2-gtk@40
 RUN_DEPENDS=	gjs-console:lang/gjs
 
 USES=		desktop-file-utils gnome localbase meson python shebangfix

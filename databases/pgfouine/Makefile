@@ -1,12 +1,14 @@
 PORTNAME=	pgfouine
 PORTVERSION=	1.2
 CATEGORIES=	databases
-MASTER_SITES=	http://pgfoundry.org/frs/download.php/2575/ \
-		http://pgfouine.projects.postgresql.org/releases/
+MASTER_SITES=	https://ftp.postgresql.org/pub/projects/pgFoundry/pgfouine/pgFouine/pgFouine${PORTVERSION}/
 
 MAINTAINER=	pea@raveland.org
 COMMENT=	PostgreSQL log analyzer
 WWW=		http://pgfouine.projects.postgresql.org/
+
+DEPRECATED=	Upstream project disappeared in 2010
+EXPIRATION_DATE=2025-03-31
 
 USES+=		php
 

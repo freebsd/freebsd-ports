@@ -8,4 +8,5 @@ share/man/man1/fastnetmon_client.1.gz
 @sample etc/networks_whitelist.sample
 @sample etc/fastnetmon.conf.sample
 @dir(fastnetmon,fastnetmon) /var/run/fastnetmon
+@dir(fastnetmon,fastnetmon) /var/log/fastnetmon
 @dir(fastnetmon,fastnetmon) /var/log/fastnetmon_attacks

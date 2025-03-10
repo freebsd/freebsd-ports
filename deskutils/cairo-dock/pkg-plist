@@ -71,9 +71,8 @@ include/cairo-dock/implementations/cairo-dock-progressbar.h
 lib/cairo-dock/libcd-Help.so
 lib/libgldi.so
 lib/libgldi.so.3
-lib/libgldi.so.3.5.0
+lib/libgldi.so.3.5.1
 libdata/pkgconfig/gldi.pc
-share/man/man1/cairo-dock.1.gz
 share/applications/cairo-dock-cairo.desktop
 share/applications/cairo-dock.desktop
 %%DATADIR%%/ChangeLog.txt
@@ -167,7 +166,7 @@ share/applications/cairo-dock.desktop
 %%DATADIR%%/themes/Default-Panel/images/indicator.png
 %%DATADIR%%/themes/Default-Panel/launchers/01container.desktop
 %%DATADIR%%/themes/Default-Panel/launchers/01firefox.desktop
-%%DATADIR%%/themes/Default-Panel/launchers/01gcalctool.desktop
+%%DATADIR%%/themes/Default-Panel/launchers/01gnome-calculator.desktop
 %%DATADIR%%/themes/Default-Panel/launchers/01libreoffice-calc.desktop
 %%DATADIR%%/themes/Default-Panel/launchers/01libreoffice-impress.desktop
 %%DATADIR%%/themes/Default-Panel/launchers/01libreoffice-writer.desktop
@@ -210,8 +209,8 @@ share/applications/cairo-dock.desktop
 %%DATADIR%%/themes/Default-Single/images/bg.svg
 %%DATADIR%%/themes/Default-Single/images/indicator.png
 %%DATADIR%%/themes/Default-Single/launchers/01firefox.desktop
-%%DATADIR%%/themes/Default-Single/launchers/01gcalctool.desktop
 %%DATADIR%%/themes/Default-Single/launchers/01gimp.desktop
+%%DATADIR%%/themes/Default-Single/launchers/01gnome-calculator.desktop
 %%DATADIR%%/themes/Default-Single/launchers/01gnome-terminal.desktop
 %%DATADIR%%/themes/Default-Single/launchers/01ooo-writer.desktop
 %%DATADIR%%/themes/Default-Single/launchers/01pidgin.desktop
@@ -285,4 +284,5 @@ share/locale/uz/LC_MESSAGES/cairo-dock.mo
 share/locale/vi/LC_MESSAGES/cairo-dock.mo
 share/locale/zh_CN/LC_MESSAGES/cairo-dock.mo
 share/locale/zh_TW/LC_MESSAGES/cairo-dock.mo
+share/man/man1/cairo-dock.1.gz
 share/pixmaps/cairo-dock.svg

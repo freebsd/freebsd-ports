@@ -1,5 +1,5 @@
 PORTNAME=	shelxle
-DISTVERSION=	1.0.1668
+DISTVERSION=	1.0.1703
 CATEGORIES=	science # chemistry
 MASTER_SITES=	SF/${PORTNAME}/code/
 
@@ -10,9 +10,9 @@ WWW=		https://www.shelxle.org/shelx/eingabe.php
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		compiler:c++11-lang dos2unix gl qmake qt:5 tar:bz2
+USES=		compiler:c++11-lang dos2unix gl qmake qt:6 tar:bz2
 DOS2UNIX_FILES=	shelXle.pro
-USE_QT=		core gui network opengl widgets buildtools:build
+USE_QT=		base tools:build
 USE_GL=		gl
 
 PLIST_FILES=	bin/shelxle \

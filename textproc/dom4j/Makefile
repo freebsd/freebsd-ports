@@ -8,9 +8,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open Source XML framework for Java
 WWW=		https://www.dom4j.org/
 
-USES=		cpe
+USES=		cpe java
 CPE_VENDOR=	${PORTNAME}_project
-USE_JAVA=	yes
 NO_BUILD=	yes
 
 OPTIONS_DEFINE=	DOCS

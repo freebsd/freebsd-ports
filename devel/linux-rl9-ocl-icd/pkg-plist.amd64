@@ -1,4 +1,7 @@
+usr/lib/.build-id/dc/fb6306862b86cc2a405dadc86ecd282c1e04b2
 usr/lib/.build-id/ee/66d05b18954424d7bb014b36b27fcfae810906
+usr/lib/libOpenCL.so.1
+usr/lib/libOpenCL.so.1.0.0
 usr/lib64/libOpenCL.so.1
 usr/lib64/libOpenCL.so.1.0.0
 %%PORTDOCS%%%%DOCSDIR%%/NEWS

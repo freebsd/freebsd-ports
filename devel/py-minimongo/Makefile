@@ -1,6 +1,6 @@
 PORTNAME=	minimongo
 PORTVERSION=	0.2.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI \
 		http://files.derzinn.de/

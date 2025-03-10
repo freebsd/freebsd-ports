@@ -1,0 +1,9 @@
+[
+{ type: upgrade
+  message: <<EOM
+
+To upgrade transcrypt it is not enough to have a newer version on your system,
+you must also run the --upgrade command in each repository.
+EOM
+}
+]

@@ -53,8 +53,6 @@ lib/open-vm-tools/plugins/vmsvc/libvmbackup.so
 %%X11%%lib/open-vm-tools/plugins/vmusr/libdesktopEvents.so
 %%X11%%lib/open-vm-tools/plugins/vmusr/libdndcp.so
 %%X11%%lib/open-vm-tools/plugins/vmusr/libresolutionSet.so
-lib/vmware-tools/modules/drivers/vmblock.ko
-lib/vmware-tools/modules/drivers/vmmemctl.ko
 %%DEPLOYPKG%%libdata/pkgconfig/libDeployPkg.pc
 libdata/pkgconfig/vmguestlib.pc
 sbin/mount_vmblock
@@ -83,6 +81,7 @@ share/vmware-tools/resume-vm-default
 share/vmware-tools/scripts/vmware/network
 share/vmware-tools/statechange.subr
 share/vmware-tools/suspend-vm-default
+@dir lib/vmware-tools/modules/drivers
 @dir lib/vmware-tools/modules/input
 @dir %%DATADIR%%/scripts/vmware
 @dir %%DATADIR%%/tests

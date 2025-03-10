@@ -1,11 +1,7 @@
 PORTNAME=	tcpdump
-PORTVERSION=	4.99.4
-PORTREVISION=	3
+PORTVERSION=	4.99.5
 CATEGORIES=	net
 MASTER_SITES=	http://www.tcpdump.org/release/
-
-PATCH_SITES=	https://github.com/the-tcpdump-group/tcpdump/commit/
-PATCHFILES=	5c1ecd8c.patch:-p1
 
 MAINTAINER=	garga@FreeBSD.org
 COMMENT=	Ubiquitous network traffic analysis tool

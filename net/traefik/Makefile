@@ -1,5 +1,6 @@
 PORTNAME=	traefik
-PORTVERSION=	2.11.7
+PORTVERSION=	3.3.4
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	LOCAL/riggs/${PORTNAME}
 
@@ -12,14 +13,14 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 BUILD_DEPENDS=	go-bindata:devel/go-bindata
 
-USES=		cpe go:1.22,modules tar:xz
+USES=		cpe go:1.23,modules tar:xz
 
 USE_RC_SUBR=	traefik
 
 GO_BUILDFLAGS=	-ldflags "-s -w \
-		-X github.com/traefik/traefik/v2/pkg/version.Version=${DISTVERSION} \
-		-X github.com/traefik/traefik/v2/pkg/version.Codename=portbuild \
-		-X github.com/traefik/traefik/v2/pkg/version.BuildDate=`date -u '+%Y-%m-%d_%I:%M:%S%p'`"
+		-X github.com/traefik/traefik/v3/pkg/version.Version=${DISTVERSION} \
+		-X github.com/traefik/traefik/v3/pkg/version.Codename=portbuild \
+		-X github.com/traefik/traefik/v3/pkg/version.BuildDate=`date -u '+%Y-%m-%d_%I:%M:%S%p'`"
 GO_TARGET=	./cmd/traefik
 CGO_ENABLED=	0
 

@@ -164,6 +164,7 @@ bin/gem
 %%RUBY_SITELIBDIR%%/rubygems/ssl_certs/rubygems.org/GlobalSignRootCA.pem
 %%RUBY_SITELIBDIR%%/rubygems/ssl_certs/rubygems.org/GlobalSignRootCA_R3.pem
 %%RUBY_SITELIBDIR%%/rubygems/stub_specification.rb
+%%RUBY_SITELIBDIR%%/rubygems/target_rbconfig.rb
 %%RUBY_SITELIBDIR%%/rubygems/text.rb
 %%RUBY_SITELIBDIR%%/rubygems/uninstaller.rb
 %%RUBY_SITELIBDIR%%/rubygems/unknown_command_spell_checker.rb
@@ -196,9 +197,8 @@ bin/gem
 %%RUBY_SITELIBDIR%%/rubygems/vendor/molinillo/lib/molinillo/resolution.rb
 %%RUBY_SITELIBDIR%%/rubygems/vendor/molinillo/lib/molinillo/resolver.rb
 %%RUBY_SITELIBDIR%%/rubygems/vendor/molinillo/lib/molinillo/state.rb
-%%RUBY_SITELIBDIR%%/rubygems/vendor/net-http/LICENSE.txt
+%%RUBY_SITELIBDIR%%/rubygems/vendor/net-http/COPYING
 %%RUBY_SITELIBDIR%%/rubygems/vendor/net-http/lib/net/http.rb
-%%RUBY_SITELIBDIR%%/rubygems/vendor/net-http/lib/net/http/backward.rb
 %%RUBY_SITELIBDIR%%/rubygems/vendor/net-http/lib/net/http/exceptions.rb
 %%RUBY_SITELIBDIR%%/rubygems/vendor/net-http/lib/net/http/generic_request.rb
 %%RUBY_SITELIBDIR%%/rubygems/vendor/net-http/lib/net/http/header.rb
@@ -221,13 +221,15 @@ bin/gem
 %%RUBY_SITELIBDIR%%/rubygems/vendor/optparse/lib/optparse/time.rb
 %%RUBY_SITELIBDIR%%/rubygems/vendor/optparse/lib/optparse/uri.rb
 %%RUBY_SITELIBDIR%%/rubygems/vendor/optparse/lib/optparse/version.rb
-%%RUBY_SITELIBDIR%%/rubygems/vendor/resolv/LICENSE.txt
+%%RUBY_SITELIBDIR%%/rubygems/vendor/resolv/COPYING
 %%RUBY_SITELIBDIR%%/rubygems/vendor/resolv/lib/resolv.rb
-%%RUBY_SITELIBDIR%%/rubygems/vendor/timeout/LICENSE.txt
+%%RUBY_SITELIBDIR%%/rubygems/vendor/securerandom/COPYING
+%%RUBY_SITELIBDIR%%/rubygems/vendor/securerandom/lib/securerandom.rb
+%%RUBY_SITELIBDIR%%/rubygems/vendor/timeout/COPYING
 %%RUBY_SITELIBDIR%%/rubygems/vendor/timeout/lib/timeout.rb
 %%RUBY_SITELIBDIR%%/rubygems/vendor/tsort/LICENSE.txt
 %%RUBY_SITELIBDIR%%/rubygems/vendor/tsort/lib/tsort.rb
-%%RUBY_SITELIBDIR%%/rubygems/vendor/uri/LICENSE.txt
+%%RUBY_SITELIBDIR%%/rubygems/vendor/uri/COPYING
 %%RUBY_SITELIBDIR%%/rubygems/vendor/uri/lib/uri.rb
 %%RUBY_SITELIBDIR%%/rubygems/vendor/uri/lib/uri/common.rb
 %%RUBY_SITELIBDIR%%/rubygems/vendor/uri/lib/uri/file.rb
@@ -246,6 +248,7 @@ bin/gem
 %%RUBY_SITELIBDIR%%/rubygems/vendored_molinillo.rb
 %%RUBY_SITELIBDIR%%/rubygems/vendored_net_http.rb
 %%RUBY_SITELIBDIR%%/rubygems/vendored_optparse.rb
+%%RUBY_SITELIBDIR%%/rubygems/vendored_securerandom.rb
 %%RUBY_SITELIBDIR%%/rubygems/vendored_timeout.rb
 %%RUBY_SITELIBDIR%%/rubygems/vendored_tsort.rb
 %%RUBY_SITELIBDIR%%/rubygems/version.rb

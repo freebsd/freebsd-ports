@@ -1,4 +1,4 @@
---- acinclude.m4.orig	2022-10-15 15:02:38 UTC
+--- acinclude.m4.orig	2025-01-09 16:25:33 UTC
 +++ acinclude.m4
 @@ -43,7 +43,7 @@ AC_DEFINE_UNQUOTED([DM_VERSION], "$PACKAGE_VERSION", [
  AC_DEFINE_UNQUOTED([DM_PWD], "$ac_pwd", [Build directory])
@@ -165,7 +165,7 @@
          )
  	LIBS="$SOCKETLIB $save_LIBS"
  	AC_CHECK_FUNCS(dn_expand dns_lookup)
-@@ -592,19 +592,19 @@ AC_DEFUN([DM_UPGRADE_STEPS], [dnl
+@@ -611,19 +611,19 @@ AC_DEFUN([DM_UPGRADE_STEPS], [dnl
  	PGSQL_32004=`sed -e 's/\"/\\\"/g' -e 's/^/\"/' -e 's/$/\\\n\"/' -e '$!s/$/ \\\\/'  sql/postgresql/upgrades/32004.psql`
  	MYSQL_32004=`sed -e 's/\"/\\\"/g' -e 's/^/\"/' -e 's/$/\\\n\"/' -e '$!s/$/ \\\\/'  sql/mysql/upgrades/32004.mysql`
  	SQLITE_32004=`sed -e 's/\"/\\\"/g' -e 's/^/\"/' -e 's/$/\\\n\"/' -e '$!s/$/ \\\\/'  sql/sqlite/upgrades/32004.sqlite`

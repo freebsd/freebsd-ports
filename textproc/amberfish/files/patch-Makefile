@@ -1,0 +1,26 @@
+--- Makefile.orig	2024-11-23 13:45:47 UTC
++++ Makefile
+@@ -16,18 +16,18 @@ strip:
+ 	cd doc ; ${MAKE} html
+ 
+ strip:
+-	cd src/backend ; ${MAKE} ${MAKEFLAGS} strip
++	cd src/backend ; ${MAKE} strip
+ #	cd src/interface ; ${MAKE} ${MAKEFLAGS} strip
+ 
+ install:
+-	cd src/backend ; ${MAKE} ${MAKEFLAGS} install
++	cd src/backend ; ${MAKE} install
+ #	cd src/interface ; ${MAKE} ${MAKEFLAGS} install
+-	cd doc ; ${MAKE} ${MAKEFLAGS} install
++	cd doc ; ${MAKE} install
+ 
+ uninstall:
+-	cd src/backend ; ${MAKE} ${MAKEFLAGS} uninstall
++	cd src/backend ; ${MAKE} uninstall
+ #	cd src/interface ; ${MAKE} ${MAKEFLAGS} uninstall
+-	cd doc ; ${MAKE} ${MAKEFLAGS} uninstall
++	cd doc ; ${MAKE} uninstall
+ 
+ clean:
+ 	rm -fr autom4te.cache

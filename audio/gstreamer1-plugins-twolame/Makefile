@@ -3,13 +3,13 @@ CATEGORIES=	audio
 
 COMMENT=	GStreamer High-quality free MP2 encoder plugin
 
-GST_PLUGIN=	twolame
+LIB_DEPENDS=	libtwolame.so:audio/twolame
+
+MASTERDIR=	${.CURDIR:H:H}/multimedia/gstreamer1-plugins
+
+PLIST=		${.CURDIR}/pkg-plist
+
 DIST=		good
-
-MASTERDIR=	${.CURDIR}/../../multimedia/gstreamer1-plugins
-
-PLIST=  ${.CURDIR}/pkg-plist
-
-LIB_DEPENDS=  libtwolame.so:audio/twolame
+GST_PLUGIN=	twolame
 
 .include "${MASTERDIR}/Makefile"

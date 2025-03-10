@@ -1,5 +1,5 @@
 PORTNAME=	privatebin
-PORTVERSION=	1.7.4
+PORTVERSION=	1.7.6
 CATEGORIES=	www security
 
 MAINTAINER=	dvl@FreeBSD.org
@@ -17,7 +17,7 @@ SUB_LIST=	PORTNAME=${PORTNAME}
 NO_BUILD=	yes
 NO_ARCH=	yes
 
-USE_PHP=	gd zlib
+USE_PHP=	ctype filter gd zlib
 USE_GITHUB=	yes
 GH_PROJECT=	PrivateBin
 

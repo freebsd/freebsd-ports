@@ -1,16 +1,14 @@
 PORTNAME=	octopus
-DISTVERSION=	13.0
-PORTREVISION=	3
+DISTVERSION=	15.1
+PORTREVISION=	2
 CATEGORIES=	science # chemistry
 MASTER_SITES=	https://octopus-code.org/download/${DISTVERSION}/
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Scientific program aimed at the ab initio virtual experimentation
-WWW=		https://octopus-code.org/new-site/main/
+WWW=		https://octopus-code.org/documentation/15/
 
 LICENSE=	GPLv2
-
-BROKEN_aarch64=	undefined reference to `__aarch64_cas8_acq_rel' #'`
 
 BUILD_DEPENDS=	bash:shells/bash
 LIB_DEPENDS=	libarpack.so:math/arpack-ng \

@@ -23,7 +23,9 @@ bin/qmgrctl.sh
 bin/rcvrenvfromlog.sh
 bin/runas
 bin/smconf
+include/sm/cdefs.h
 include/sm/error.h
+include/sm/generic.h
 include/sm/hdrmoddef.h
 include/sm/mfapi.h
 include/sm/pmfapi.h
@@ -32,6 +34,8 @@ include/sm/pmilter.h
 include/sm/smreplycodes.h
 include/sm/smmts.h
 include/sm/ssmdef.h
+include/sm/types.h
+include/smconf.h
 lib/meta1/libcstrr.a
 lib/meta1/libevthr.a
 lib/meta1/libmtar.a

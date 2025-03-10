@@ -1,5 +1,6 @@
 PORTNAME=	dbus
 PORTVERSION=	${QT5_VERSION}${QT5_KDE_PATCH}
+PORTREVISION=	2
 CATEGORIES=	devel
 PKGNAMEPREFIX=	qt5-
 
@@ -11,6 +12,7 @@ LIB_DEPENDS=	libdbus-1.so:devel/dbus
 USES=		compiler:c++11-lang perl5 qmake:no_env qt-dist:5,base
 USE_PERL5=	extract
 USE_QT=		core qmake:build buildtools:build
+USE_LDCONFIG=	${PREFIX}/${QT_LIBDIR_REL}
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	-no-gui -no-xcb
 

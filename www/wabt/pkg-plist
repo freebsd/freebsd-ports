@@ -96,6 +96,8 @@ share/man/man1/wast2json.1.gz
 share/man/man1/wat-desugar.1.gz
 share/man/man1/wat2wasm.1.gz
 %%DATADIR%%/wasm2c/wasm-rt-exceptions-impl.c
+%%DATADIR%%/wasm2c/wasm-rt-impl-tableops.inc
 %%DATADIR%%/wasm2c/wasm-rt-impl.c
 %%DATADIR%%/wasm2c/wasm-rt-impl.h
+%%DATADIR%%/wasm2c/wasm-rt-mem-impl-helper.inc
 %%DATADIR%%/wasm2c/wasm-rt-mem-impl.c

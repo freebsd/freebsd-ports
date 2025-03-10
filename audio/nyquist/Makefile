@@ -1,16 +1,16 @@
 PORTNAME=	nyquist
-DISTVERSION=	3.16
+DISTVERSION=	3.23
 CATEGORIES=	audio java
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${DISTVERSION}/
 DISTNAME=	nyqsrc${DISTVERSION:S/.//}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Language for sound synthesis and music composition (sound is broken) # likely caused by outdated bundled PortAudio, reported to upstream Apr 18, 2021
-WWW=		https://www.cs.cmu.edu/~music/music.software.html
+WWW=		https://www.cs.cmu.edu/~music/nyquist/
 
 LICENSE=	BSD3CLAUSE
 
-USES=		cmake zip
+USES=		cmake java zip
 USE_CSTD=	c99
 USE_CXXSTD=	c++14
 
@@ -18,8 +18,6 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 
 CFLAGS+=	-Dulong=uint32_t -DXL_BIG_ENDIAN -DHAVE_SYS_SOUNDCARD_H
 CFLAGS+=	-fcommon # notified the author vie e-mail on 2021-04-29
-
-USE_JAVA=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|nyquistDir = prefs.get("nyquist-dir", "");|nyquistDir = "${DATADIR}";|' ${WRKSRC}/jnyqide/MainFrame.java

@@ -1,0 +1,20 @@
+--- pyproject.toml.orig	2024-09-22 16:34:49 UTC
++++ pyproject.toml
+@@ -1,6 +1,6 @@
+ [build-system]
+ # setuptools >= 74.1.0 required to build C extensions via pyproject.toml
+-requires = ["setuptools >= 74.1.0", "wheel"]
++requires = ["setuptools >= 61.0.0", "wheel"]
+ build-backend = "setuptools.build_meta"
+ 
+ [project]
+@@ -71,9 +71,6 @@ include-package-data = true
+ 
+ [tool.setuptools]
+ include-package-data = true
+-ext-modules = [
+-  {name = "mmh3", sources = ["./src/mmh3/mmh3module.c", "./src/mmh3/murmurhash3.c"]}
+-]
+ 
+ [tool.setuptools.package-data]
+ mmh3 = ["*.h"]

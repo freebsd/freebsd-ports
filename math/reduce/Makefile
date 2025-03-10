@@ -11,6 +11,8 @@ WWW=		http://www.reduce-algebra.com/
 
 LICENSE=	BSD2CLAUSE
 
+BROKEN_FreeBSD_15_aarch64=	the bootstrapreduce build phase runs in too high memory and is killed by the system
+BROKEN_FreeBSD_15_amd64=	the bootstrapreduce build phase runs in too high memory and is killed by the system
 BROKEN_armv7=	fails to compile: error: no viable overloaded '=': return *this = int128_t(rhs);
 BROKEN_i386=	fails to compile: sysv.S:832:1: changed section flags for .eh_frame, expected: 0x2
 

@@ -8,14 +8,12 @@ WWW=		https://www.kde.org/
 
 LICENSE=	LGPL21
 
-USES=		cmake compiler:c++11-lib gettext grantlee:5 kde:5 qt:5 tar:xz xorg
-USE_KDE=	auth codecs completion config configwidgets coreaddons \
-		emoticons i18n iconthemes init itemmodels itemviews jobwidgets \
-		kdelibs4support kio ktextaddons service solid sonnet syntaxhighlighting \
-		textwidgets widgetsaddons windowsystem xmlgui \
+USES=		cmake compiler:c++11-lib gettext kde:6 qt:6 tar:xz xorg
+USE_KDE=	auth codecs completion config configwidgets coreaddons kio \
+		ktextaddons service solid sonnet syntaxhighlighting \
+		texttemplate textwidgets widgetsaddons windowsystem xmlgui \
 		ecm:build
-USE_QT=		concurrent core dbus gui network speech widgets xml \
-		buildtools:build qmake:build
+USE_QT=		base
 USE_XORG=	x11
 USE_LDCONFIG=	yes
 

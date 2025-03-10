@@ -11,7 +11,8 @@ WWW=		https://jrdesktop.sourceforge.net/
 
 LICENSE=	GPLv3
 
-USE_JAVA=	yes
+USES=		java
+
 NO_BUILD=	yes
 
 SUB_FILES=	jrdesktop

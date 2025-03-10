@@ -1,0 +1,8 @@
+[
+{ type: install
+  message: <<EOM
+* qt-sudo supports both sudo and doas
+* You must be in the sudoers or doas.conf file in order to use qt-sudo
+EOM
+}
+]

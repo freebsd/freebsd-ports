@@ -1,13 +1,13 @@
 PORTNAME=	aphpunit
-DISTVERSION=	2.1
+DISTVERSION=	2.3
 CATEGORIES=	devel www
-MASTER_SITES=	http://phar.toco-domains.de/
+MASTER_SITES=	http://phar.p.variablis.de/
 PKGNAMEPREFIX=	${PHP_PKGNAMEPREFIX}
 EXTRACT_SUFX=	.phar
 
 MAINTAINER=	tz@FreeBSD.org
 COMMENT=	Testing framework for unit tests
-WWW=		https://gitlab.toco-domains.de/tocOS/APHPUnit
+WWW=		https://gitlab.p.variablis.de/open-source/aphpunit/
 
 LICENSE=	BSD2CLAUSE
 

@@ -1,5 +1,6 @@
 PORTNAME=	grammalecte-fr
 PORTVERSION=	1.11.0
+PORTREVISION=	1
 CATEGORIES=	french python
 MASTER_SITES=	http://www.dicollecte.org/grammalecte/zip/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}

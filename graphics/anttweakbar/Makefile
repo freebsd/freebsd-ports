@@ -34,7 +34,7 @@ PLIST_FILES=	include/AntTweakBar.h \
 .include <bsd.port.options.mk>
 
 post-patch:
-.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400091 || ( ${OSVERSION} >= 1302507 && ${OSVERSION} < 1400000 ))
+.if ${OPSYS} == FreeBSD
 	@${REINPLACE_CMD} -e 's|public binary_function|public __binary_function|' \
 		${WRKSRC}/TwMgr.cpp
 .endif

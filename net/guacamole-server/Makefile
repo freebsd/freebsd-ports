@@ -1,11 +1,7 @@
 PORTNAME=	guacamole-server
-DISTVERSION=	1.5.4
-PORTREVISION=	1
+DISTVERSION=	1.5.5
 CATEGORIES=	net
 MASTER_SITES=	APACHE/guacamole/${DISTVERSION}/source/
-
-PATCH_SITES=	https://github.com/apache/${PORTNAME}/commit/
-PATCHFILES=	5cf408ebbba9544fb5dfb297d98d5a1e1751a56d.patch:-p1
 
 MAINTAINER=	ultima@FreeBSD.org
 COMMENT=	HTML5 Clientless Remote Desktop
@@ -98,8 +94,8 @@ CONFIGURE_ARGS+=	--without-pango --without-terminal
 PLIST_SUB+=		TERMINAL="@comment "
 .endif
 
-.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400079 || ( ${OSVERSION} >= 1302505 && ${OSVERSION} < 1400000 ))
-CFLAGS+=       -Wno-error=strict-prototypes \
+.if ${OPSYS} == FreeBSD
+CFLAGS+=	-Wno-error=strict-prototypes \
 			   -Wno-error=unused-but-set-variable
 .endif
 

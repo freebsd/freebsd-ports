@@ -1,6 +1,6 @@
---- configure.ac.orig	2022-03-18 00:54:17 UTC
+--- configure.ac.orig	2025-02-23 08:00:09 UTC
 +++ configure.ac
-@@ -123,7 +123,7 @@ fi
+@@ -124,7 +124,7 @@ if test "x$with_anthy" = xyes; then
  if test "x$with_anthy" = xyes; then
    ANTHY_LIBS="-lanthy -lanthydic"
    ANTHY_CFLAGS=""
@@ -9,7 +9,7 @@
                     [AC_DEFINE(LIBANTHY_UTF8_CAPABLE, 1,
                      "libanthy can handle UTF-8")])
  fi
-@@ -141,7 +141,7 @@ AC_ARG_WITH(anthy-utf8,
+@@ -142,7 +142,7 @@ if test "x$with_anthy_utf8" != xno; then
    [with_anthy_utf8=no])
  
  if test "x$with_anthy_utf8" != xno; then

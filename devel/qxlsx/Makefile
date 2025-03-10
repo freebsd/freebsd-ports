@@ -1,5 +1,5 @@
 PORTNAME=	${GH_PROJECT:tl}
-PORTVERSION=	1.4.7
+PORTVERSION=	1.5.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
@@ -31,10 +31,5 @@ PKGNAMESUFFIX=	-${FLAVOR}
 USES+=		qt:5
 USE_QT=		buildtools:build qmake:build core gui
 .endif
-
-post-patch:
-# Sanitize SOVERSION (we know about lack of ABI guarantees but don't care)
-	@${REINPLACE_CMD} -E '/SOVERSION/s,([[:digit:]]+)\..*,\1,' \
-		${WRKSRC}/CMakeLists.txt
 
 .include <bsd.port.mk>

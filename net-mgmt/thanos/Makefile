@@ -1,24 +1,25 @@
 PORTNAME=	thanos
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.35.1
-PORTREVISION=	2
+DISTVERSION=	0.37.2
+PORTREVISION=	3
 CATEGORIES=	net-mgmt
 
-MAINTAINER=	ler@FreeBSD.org
+MAINTAINER=	alster@vinterdalen.se
 COMMENT=	Highly available Prometheus setup with long term storage capabilities
-WWW=		https://thanos.io/
+WWW=		https://thanos.io/ \
+		https://github.com/thanos-io/thanos/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:modules
+USES=		go:1.23,modules
 
 GO_MODULE=	github.com/thanos-io/thanos
 GO_TARGET=	./cmd/${PORTNAME}
 GO_BUILDFLAGS=	-ldflags "\
 		-s -w \
 		-X github.com/prometheus/common/version.Version=${DISTVERSION} \
-		-X github.com/prometheus/common/version.Revision="086a698" \
+		-X github.com/prometheus/common/version.Revision="18291a7" \
 		-X github.com/prometheus/common/version.Branch="master" \
 		-X github.com/prometheus/common/version.BuildUser=${USER} \
 		-X github.com/prometheus/common/version.BuildDate=${BUILD_DATE}"

@@ -15,6 +15,8 @@ GH_TUPLE=	DragonFlyBSD:${PORTNAME}:v${PORTVERSION}
 MAKEFILE=	GNUmakefile
 MAKE_ARGS+=	LIBS="-L${OPENSSLLIB} -lcrypto"
 
+CONFLICTS_INSTALL=	cpdup-FreeBSD
+
 PLIST_FILES=	bin/cpdup share/man/man1/cpdup.1.gz
 
 post-patch:

@@ -1,6 +1,6 @@
 PORTNAME=	wvkbd
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.15
+DISTVERSION=	0.16
 CATEGORIES=	x11 wayland
 MASTER_SITES=	https://git.sr.ht/~proycon/${PORTNAME}/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/
 
@@ -11,7 +11,8 @@ WWW=		https://git.sr.ht/~proycon/wvkbd
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	evdev-proto>0:devel/evdev-proto
+BUILD_DEPENDS=	evdev-proto>0:devel/evdev-proto \
+		scdoc:textproc/scdoc
 LIB_DEPENDS=	libepoll-shim.so:devel/libepoll-shim \
 		libwayland-client.so:graphics/wayland
 

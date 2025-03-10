@@ -1,6 +1,6 @@
 PORTNAME=	polars
 DISTVERSIONPREFIX=	py-
-DISTVERSION=	1.4.1
+DISTVERSION=	1.9.0
 CATEGORIES=	misc
 #MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,9 +15,11 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}maturin>=1.3.2:devel/py-maturin@${PY_FLAVOR} \
 		rust-nightly>0:lang/rust-nightly
 LIB_DEPENDS=	libzstd.so:archivers/zstd
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}altair>=5.4.0:graphics/py-altair@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}matplotlib>0:math/py-matplotlib@${PY_FLAVOR}
 
 USES=		cargo python
-USE_PYTHON=	pep517 autoplist
+USE_PYTHON=	pep517 autoplist pytest
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	pola-rs
@@ -29,8 +31,8 @@ GH_ACCOUNT=	pola-rs
 #MAKE_ENV+=	RUSTFLAGS="${RUSTFLAGS}" # pass RUSTFLAGS to rustc via python's "build" module and maturin
 
 CARGO_BUILDDEP=	no
-CARGO_CRATES=	addr2line-0.22.0 \
-		adler-1.0.2 \
+CARGO_CRATES=	addr2line-0.24.1 \
+		adler2-2.0.0 \
 		adler32-1.2.0 \
 		ahash-0.8.11 \
 		aho-corasick-1.1.3 \
@@ -41,69 +43,69 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		android_system_properties-0.1.5 \
 		anes-0.1.6 \
 		anstyle-1.0.8 \
-		anyhow-1.0.86 \
-		apache-avro-0.16.0 \
-		arboard-3.4.0 \
+		anyhow-1.0.89 \
+		apache-avro-0.17.0 \
+		arboard-3.4.1 \
 		argminmax-0.6.2 \
 		array-init-cursor-0.2.0 \
-		arrayref-0.3.8 \
-		arrayvec-0.7.4 \
-		arrow-array-52.1.0 \
-		arrow-buffer-52.2.0 \
-		arrow-data-52.1.0 \
-		arrow-schema-52.1.0 \
+		arrayref-0.3.9 \
+		arrayvec-0.7.6 \
+		arrow-array-53.0.0 \
+		arrow-buffer-53.0.0 \
+		arrow-data-53.0.0 \
+		arrow-schema-53.0.0 \
 		arrow2-0.17.4 \
 		async-stream-0.3.5 \
 		async-stream-impl-0.3.5 \
-		async-trait-0.1.81 \
+		async-trait-0.1.83 \
 		atoi-2.0.0 \
 		atoi_simd-0.15.6 \
 		atomic-waker-1.1.2 \
-		autocfg-1.3.0 \
+		autocfg-1.4.0 \
 		avro-schema-0.3.0 \
-		aws-config-1.5.4 \
-		aws-credential-types-1.2.0 \
-		aws-runtime-1.3.1 \
+		aws-config-1.5.7 \
+		aws-credential-types-1.2.1 \
+		aws-runtime-1.4.3 \
 		aws-sdk-s3-1.31.0 \
-		aws-sdk-sso-1.36.0 \
-		aws-sdk-ssooidc-1.37.0 \
-		aws-sdk-sts-1.36.0 \
-		aws-sigv4-1.2.3 \
+		aws-sdk-sso-1.44.0 \
+		aws-sdk-ssooidc-1.45.0 \
+		aws-sdk-sts-1.44.0 \
+		aws-sigv4-1.2.4 \
 		aws-smithy-async-1.2.1 \
 		aws-smithy-checksums-0.60.8 \
-		aws-smithy-eventstream-0.60.4 \
-		aws-smithy-http-0.60.9 \
+		aws-smithy-eventstream-0.60.5 \
+		aws-smithy-http-0.60.11 \
 		aws-smithy-json-0.60.7 \
 		aws-smithy-query-0.60.7 \
-		aws-smithy-runtime-1.6.2 \
-		aws-smithy-runtime-api-1.7.1 \
-		aws-smithy-types-1.2.0 \
-		aws-smithy-xml-0.60.8 \
+		aws-smithy-runtime-1.7.1 \
+		aws-smithy-runtime-api-1.7.2 \
+		aws-smithy-types-1.2.7 \
+		aws-smithy-xml-0.60.9 \
 		aws-types-1.3.3 \
-		backtrace-0.3.73 \
+		backtrace-0.3.74 \
 		base16ct-0.1.1 \
 		base64-0.21.7 \
 		base64-0.22.1 \
 		base64-simd-0.8.0 \
 		base64ct-1.6.0 \
+		bigdecimal-0.4.5 \
 		bincode-1.3.3 \
 		bitflags-2.6.0 \
-		blake3-1.5.3 \
+		blake3-1.5.4 \
 		block-buffer-0.10.4 \
 		block2-0.5.1 \
 		brotli-6.0.0 \
 		brotli-decompressor-4.0.1 \
-		bstr-1.10.0 \
-		built-0.7.4 \
 		bumpalo-3.16.0 \
-		bytemuck-1.16.1 \
-		bytemuck_derive-1.7.0 \
-		bytes-1.7.0 \
+		bytemuck-1.18.0 \
+		bytemuck_derive-1.7.1 \
+		byteorder-1.5.0 \
+		bytes-1.7.2 \
 		bytes-utils-0.1.4 \
-		cargo-lock-9.0.0 \
 		casey-0.4.0 \
 		cast-0.3.0 \
-		cc-1.1.6 \
+		castaway-0.2.3 \
+		cc-1.1.24 \
 		cfg-if-1.0.0 \
 		chrono-0.4.38 \
 		chrono-tz-0.8.6 \
@@ -111,20 +113,21 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		ciborium-0.2.2 \
 		ciborium-io-0.2.2 \
 		ciborium-ll-0.2.2 \
-		clap-4.5.11 \
-		clap_builder-4.5.11 \
+		clap-4.5.18 \
+		clap_builder-4.5.18 \
 		clap_lex-0.7.2 \
 		clipboard-win-5.4.0 \
-		cmake-0.1.50 \
+		cmake-0.1.51 \
 		comfy-table-7.1.1 \
+		compact_str-0.8.0 \
 		const-oid-0.9.6 \
 		const-random-0.1.18 \
 		const-random-macro-0.1.16 \
-		constant_time_eq-0.3.0 \
+		constant_time_eq-0.3.1 \
 		core-foundation-0.9.4 \
-		core-foundation-sys-0.8.6 \
+		core-foundation-sys-0.8.7 \
 		core2-0.4.0 \
-		cpufeatures-0.2.12 \
+		cpufeatures-0.2.14 \
 		crc-2.1.0 \
 		crc-catalog-1.1.1 \
 		crc32c-0.6.8 \
@@ -155,13 +158,13 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		env_logger-0.8.4 \
 		equivalent-1.0.1 \
 		errno-0.3.9 \
-		error-code-3.2.0 \
+		error-code-3.3.1 \
 		ethnum-1.5.0 \
 		fallible-streaming-iterator-0.1.9 \
 		fast-float-0.2.0 \
-		fastrand-2.1.0 \
+		fastrand-2.1.1 \
 		ff-0.12.1 \
-		flate2-1.0.30 \
+		flate2-1.0.34 \
 		float-cmp-0.9.0 \
 		fnv-1.0.7 \
 		foreign_vec-0.1.0 \
@@ -179,12 +182,11 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		generic-array-0.14.7 \
 		gethostname-0.4.3 \
 		getrandom-0.2.15 \
-		gimli-0.29.0 \
-		git2-0.19.0 \
+		gimli-0.31.0 \
 		glob-0.3.1 \
 		group-0.12.1 \
 		h2-0.3.26 \
-		h2-0.4.5 \
+		h2-0.4.6 \
 		half-2.4.1 \
 		halfbrown-0.2.5 \
 		hash_hasher-2.0.3 \
@@ -192,6 +194,7 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		heck-0.4.1 \
 		heck-0.5.0 \
 		hermit-abi-0.3.9 \
+		hermit-abi-0.4.0 \
 		hex-0.4.3 \
 		hmac-0.12.1 \
 		home-0.5.9 \
@@ -200,63 +203,57 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		http-body-0.4.6 \
 		http-body-1.0.1 \
 		http-body-util-0.1.2 \
-		httparse-1.9.4 \
+		httparse-1.9.5 \
 		httpdate-1.0.3 \
 		humantime-2.1.0 \
 		hyper-0.14.30 \
 		hyper-1.4.1 \
 		hyper-rustls-0.24.2 \
-		hyper-rustls-0.27.2 \
-		hyper-util-0.1.6 \
-		iana-time-zone-0.1.60 \
+		hyper-rustls-0.27.3 \
+		hyper-util-0.1.9 \
+		iana-time-zone-0.1.61 \
 		iana-time-zone-haiku-0.1.2 \
 		idna-0.5.0 \
-		indexmap-2.3.0 \
+		indexmap-2.5.0 \
 		indoc-2.0.5 \
 		inventory-0.3.15 \
-		ipnet-2.9.0 \
-		is-terminal-0.4.12 \
+		ipnet-2.10.0 \
+		is-terminal-0.4.13 \
 		itertools-0.10.5 \
 		itertools-0.13.0 \
 		itoa-1.0.11 \
 		itoap-1.0.1 \
+		jemalloc-sys-0.5.4+5.3.0-patched \
+		jemallocator-0.5.4 \
 		jobserver-0.1.32 \
-		js-sys-0.3.69 \
+		js-sys-0.3.70 \
 		jsonpath_lib_polars_vendor-0.0.1 \
 		lazy_static-1.5.0 \
-		lexical-core-0.8.5 \
-		lexical-parse-float-0.8.5 \
-		lexical-parse-integer-0.8.6 \
-		lexical-util-0.8.5 \
-		lexical-write-float-0.8.5 \
-		lexical-write-integer-0.8.5 \
-		libc-0.2.155 \
+		libc-0.2.159 \
 		libflate-1.4.0 \
 		libflate-2.1.0 \
 		libflate_lz77-1.2.0 \
 		libflate_lz77-2.1.0 \
-		libgit2-sys-0.17.0+1.8.1 \
 		libloading-0.8.5 \
 		libm-0.2.8 \
 		libmimalloc-sys-0.1.39 \
-		libz-ng-sys-1.1.15 \
-		libz-sys-1.1.18 \
+		libz-ng-sys-1.1.16 \
 		linux-raw-sys-0.4.14 \
 		lock_api-0.4.12 \
 		log-0.4.22 \
-		lru-0.12.3 \
-		lz4-1.26.0 \
-		lz4-sys-1.10.0 \
+		lru-0.12.4 \
+		lz4-1.28.0 \
+		lz4-sys-1.11.1+lz4-1.10.0 \
 		lz4_flex-0.11.3 \
-		matrixmultiply-0.3.8 \
+		matrixmultiply-0.3.9 \
 		md-5-0.10.6 \
 		memchr-2.7.4 \
 		memmap2-0.7.1 \
 		memoffset-0.9.1 \
 		mimalloc-0.1.43 \
 		mime-0.3.17 \
-		miniz_oxide-0.7.4 \
-		mio-1.0.1 \
+		miniz_oxide-0.8.0 \
+		mio-1.0.2 \
 		multiversion-0.7.4 \
 		multiversion-macros-0.7.4 \
 		ndarray-0.15.6 \
@@ -279,9 +276,9 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		objc2-foundation-0.2.2 \
 		objc2-metal-0.2.2 \
 		objc2-quartz-core-0.2.2 \
-		object-0.36.2 \
+		object-0.36.4 \
 		object_store-0.10.2 \
-		once_cell-1.19.0 \
+		once_cell-1.20.1 \
 		oorandom-11.1.4 \
 		openssl-probe-0.1.5 \
 		outref-0.5.1 \
@@ -295,37 +292,35 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		phf_codegen-0.11.2 \
 		phf_generator-0.11.2 \
 		phf_shared-0.11.2 \
-		pin-project-1.1.5 \
-		pin-project-internal-1.1.5 \
 		pin-project-lite-0.2.14 \
 		pin-utils-0.1.0 \
 		pkcs8-0.9.0 \
-		pkg-config-0.3.30 \
+		pkg-config-0.3.31 \
 		planus-0.3.1 \
-		plotters-0.3.6 \
-		plotters-backend-0.3.6 \
-		plotters-svg-0.3.6 \
+		plotters-0.3.7 \
+		plotters-backend-0.3.7 \
+		plotters-svg-0.3.7 \
 		polars-arrow-format-0.1.0 \
-		portable-atomic-1.7.0 \
+		portable-atomic-1.9.0 \
 		powerfmt-0.2.0 \
-		ppv-lite86-0.2.17 \
+		ppv-lite86-0.2.20 \
 		proc-macro2-1.0.86 \
 		proptest-1.5.0 \
 		prost-0.11.9 \
 		prost-derive-0.11.9 \
-		psm-0.1.21 \
+		psm-0.1.23 \
 		pyo3-0.21.2 \
 		pyo3-build-config-0.21.2 \
 		pyo3-ffi-0.21.2 \
 		pyo3-macros-0.21.2 \
 		pyo3-macros-backend-0.21.2 \
-		quad-rand-0.2.1 \
-		quick-xml-0.36.1 \
+		quad-rand-0.2.2 \
+		quick-xml-0.36.2 \
 		quickcheck-1.0.3 \
-		quinn-0.11.2 \
-		quinn-proto-0.11.3 \
-		quinn-udp-0.5.4 \
-		quote-1.0.36 \
+		quinn-0.11.5 \
+		quinn-proto-0.11.8 \
+		quinn-udp-0.5.5 \
+		quote-1.0.37 \
 		rand-0.8.5 \
 		rand_chacha-0.3.1 \
 		rand_core-0.6.4 \
@@ -338,31 +333,32 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		rayon-core-1.12.1 \
 		recursive-0.1.1 \
 		recursive-proc-macro-impl-0.1.1 \
-		redox_syscall-0.5.3 \
+		redox_syscall-0.5.7 \
 		ref-cast-1.0.23 \
 		ref-cast-impl-1.0.23 \
-		regex-1.10.5 \
-		regex-automata-0.4.7 \
+		regex-1.11.0 \
+		regex-automata-0.4.8 \
 		regex-lite-0.1.6 \
 		regex-syntax-0.6.29 \
-		regex-syntax-0.8.4 \
-		reqwest-0.12.5 \
+		regex-syntax-0.8.5 \
+		reqwest-0.12.8 \
 		rfc6979-0.3.1 \
 		ring-0.17.8 \
 		rle-decode-fast-1.0.3 \
 		rustc-demangle-0.1.24 \
 		rustc-hash-1.1.0 \
-		rustc_version-0.4.0 \
-		rustix-0.38.34 \
+		rustc-hash-2.0.0 \
+		rustc_version-0.4.1 \
+		rustix-0.38.37 \
 		rustls-0.21.12 \
-		rustls-0.23.12 \
+		rustls-0.23.13 \
 		rustls-native-certs-0.6.3 \
-		rustls-native-certs-0.7.1 \
+		rustls-native-certs-0.8.0 \
 		rustls-pemfile-1.0.4 \
-		rustls-pemfile-2.1.2 \
-		rustls-pki-types-1.7.0 \
+		rustls-pemfile-2.2.0 \
+		rustls-pki-types-1.9.0 \
 		rustls-webpki-0.101.7 \
-		rustls-webpki-0.102.6 \
+		rustls-webpki-0.102.8 \
 		rustversion-1.0.17 \
 		ryu-1.0.18 \
 		same-file-1.0.6 \
@@ -370,29 +366,29 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		sample-std-0.2.1 \
 		sample-test-0.2.1 \
 		sample-test-macros-0.2.1 \
-		schannel-0.1.23 \
+		schannel-0.1.24 \
 		scopeguard-1.2.0 \
 		sct-0.7.1 \
 		sec1-0.3.0 \
 		security-framework-2.11.1 \
-		security-framework-sys-2.11.1 \
+		security-framework-sys-2.12.0 \
 		semver-1.0.23 \
-		serde-1.0.204 \
-		serde_derive-1.0.204 \
-		serde_json-1.0.120 \
-		serde_spanned-0.6.7 \
+		serde-1.0.210 \
+		serde_bytes-0.11.15 \
+		serde_derive-1.0.210 \
+		serde_json-1.0.128 \
 		serde_urlencoded-0.7.1 \
 		sha1-0.10.6 \
 		sha2-0.10.8 \
+		shlex-1.3.0 \
 		signal-hook-registry-1.4.2 \
 		signature-1.6.4 \
-		simd-json-0.13.10 \
-		simdutf8-0.1.4 \
+		simd-json-0.14.0 \
+		simdutf8-0.1.5 \
 		siphasher-0.3.11 \
 		slab-0.4.9 \
 		slotmap-1.0.7 \
 		smallvec-1.13.2 \
-		smartstring-1.0.1 \
 		snafu-0.7.5 \
 		snafu-derive-0.7.5 \
 		snap-1.1.1 \
@@ -400,25 +396,23 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		spin-0.9.8 \
 		spki-0.6.0 \
 		sqlparser-0.49.0 \
-		stacker-0.1.15 \
+		stacker-0.1.17 \
 		static_assertions-1.1.0 \
 		streaming-decompression-0.1.2 \
 		streaming-iterator-0.1.9 \
 		strength_reduce-0.2.4 \
-		strum-0.25.0 \
 		strum-0.26.3 \
-		strum_macros-0.25.3 \
 		strum_macros-0.26.4 \
 		subtle-2.6.1 \
 		syn-1.0.109 \
-		syn-2.0.72 \
+		syn-2.0.79 \
 		sync_wrapper-1.0.1 \
-		sysinfo-0.31.0 \
+		sysinfo-0.31.4 \
 		target-features-0.1.6 \
-		target-lexicon-0.12.15 \
-		tempfile-3.10.1 \
-		thiserror-1.0.63 \
-		thiserror-impl-1.0.63 \
+		target-lexicon-0.12.16 \
+		tempfile-3.13.0 \
+		thiserror-1.0.64 \
+		thiserror-impl-1.0.64 \
 		time-0.3.36 \
 		time-core-0.1.2 \
 		time-macros-0.2.18 \
@@ -426,64 +420,61 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		tinytemplate-1.2.1 \
 		tinyvec-1.8.0 \
 		tinyvec_macros-0.1.1 \
-		tokio-1.39.1 \
+		tokio-1.40.0 \
 		tokio-macros-2.4.0 \
 		tokio-rustls-0.24.1 \
 		tokio-rustls-0.26.0 \
-		tokio-util-0.7.11 \
-		toml-0.7.8 \
-		toml_datetime-0.6.7 \
-		toml_edit-0.19.15 \
-		tower-0.4.13 \
-		tower-layer-0.3.2 \
-		tower-service-0.3.2 \
+		tokio-util-0.7.12 \
+		tower-service-0.3.3 \
 		tracing-0.1.40 \
 		tracing-attributes-0.1.27 \
 		tracing-core-0.1.32 \
 		try-lock-0.2.5 \
 		twox-hash-1.6.3 \
-		typed-builder-0.16.2 \
-		typed-builder-macro-0.16.2 \
+		typed-builder-0.19.1 \
+		typed-builder-macro-0.19.1 \
 		typenum-1.17.0 \
 		unarray-0.1.4 \
 		unicode-bidi-0.3.15 \
-		unicode-ident-1.0.12 \
-		unicode-normalization-0.1.23 \
+		unicode-ident-1.0.13 \
+		unicode-normalization-0.1.24 \
 		unicode-reverse-1.0.9 \
-		unicode-segmentation-1.11.0 \
-		unicode-width-0.1.13 \
+		unicode-segmentation-1.12.0 \
+		unicode-width-0.1.14 \
 		unindent-0.2.3 \
 		untrusted-0.9.0 \
 		url-2.5.2 \
 		urlencoding-2.1.3 \
 		uuid-1.10.0 \
-		value-trait-0.8.1 \
-		vcpkg-0.2.15 \
+		value-trait-0.10.0 \
 		version_check-0.9.5 \
 		vsimd-0.8.0 \
 		walkdir-2.5.0 \
 		want-0.3.1 \
 		wasi-0.11.0+wasi-snapshot-preview1 \
-		wasm-bindgen-0.2.92 \
-		wasm-bindgen-backend-0.2.92 \
-		wasm-bindgen-futures-0.4.42 \
-		wasm-bindgen-macro-0.2.92 \
-		wasm-bindgen-macro-support-0.2.92 \
-		wasm-bindgen-shared-0.2.92 \
-		wasm-streams-0.4.0 \
-		web-sys-0.3.69 \
+		wasm-bindgen-0.2.93 \
+		wasm-bindgen-backend-0.2.93 \
+		wasm-bindgen-futures-0.4.43 \
+		wasm-bindgen-macro-0.2.93 \
+		wasm-bindgen-macro-support-0.2.93 \
+		wasm-bindgen-shared-0.2.93 \
+		wasm-streams-0.4.1 \
+		web-sys-0.3.70 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
-		winapi-util-0.1.8 \
+		winapi-util-0.1.9 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
 		windows-0.57.0 \
 		windows-core-0.52.0 \
 		windows-core-0.57.0 \
 		windows-implement-0.57.0 \
 		windows-interface-0.57.0 \
+		windows-registry-0.2.0 \
 		windows-result-0.1.2 \
-		windows-sys-0.48.0 \
+		windows-result-0.2.0 \
+		windows-strings-0.1.0 \
 		windows-sys-0.52.0 \
+		windows-sys-0.59.0 \
 		windows-targets-0.48.5 \
 		windows-targets-0.52.6 \
 		windows_aarch64_gnullvm-0.48.5 \
@@ -501,18 +492,16 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		windows_x86_64_gnullvm-0.52.6 \
 		windows_x86_64_msvc-0.48.5 \
 		windows_x86_64_msvc-0.52.6 \
-		winnow-0.5.40 \
-		winreg-0.52.0 \
 		x11rb-0.13.1 \
 		x11rb-protocol-0.13.1 \
 		xmlparser-0.13.6 \
-		xxhash-rust-0.8.11 \
+		xxhash-rust-0.8.12 \
 		zerocopy-0.7.35 \
 		zerocopy-derive-0.7.35 \
 		zeroize-1.8.1 \
 		zstd-0.13.2 \
-		zstd-safe-7.2.0 \
-		zstd-sys-2.0.12+zstd.1.5.6 \
+		zstd-safe-7.2.1 \
+		zstd-sys-2.0.13+zstd.1.5.6 \
 		numpy@git+https://github.com/stinodego/rust-numpy.git?rev=9ba9962ae57ba26e35babdce6f179edf5fe5b9c8\#9ba9962ae57ba26e35babdce6f179edf5fe5b9c8
 
 CARGO_BUILD=	no
@@ -522,9 +511,11 @@ CARGO_TARGET_DIR=	${WRKSRC}/target
 
 WRKSRC_SUBDIR=	py-polars
 
+TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
+TEST_WRKSRC=	${WRKSRC}/tests
+
 PORTSCOUT=	limit:^py-
 
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/polars/polars.abi3.so
+# tests fail to run with circular dependencies
 
 .include <bsd.port.mk>

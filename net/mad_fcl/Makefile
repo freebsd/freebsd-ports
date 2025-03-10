@@ -1,5 +1,6 @@
 PORTNAME=	mad_fcl
 PORTVERSION=	1.7
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://mad.cs.tut.fi/download/
 DISTNAME=	${PORTNAME}_v${PORTVERSION}_src
@@ -7,6 +8,9 @@ DISTNAME=	${PORTNAME}_v${PORTVERSION}_src
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	File Delivery over Unidirectional Transport implementation
 WWW=		http://mad.cs.tut.fi/
+
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/LICENCE.TXT
 
 LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 		libcurl.so:ftp/curl
@@ -17,7 +21,7 @@ MAKE_JOBS_UNSAFE=	yes
 
 CFLAGS+=	-DHAVE_SYS_TYPES_H -DHAVE_SYS_SELECT_H -DHAVE_UNISTD_H \
 		-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib -pthread
+LDFLAGS+=	-L${LOCALBASE}/lib -pthread -lutil
 
 PORTDOCS=	README.TXT
 PORTEXAMPLES=	fdt-example.xml flute-sdp-example.sdp

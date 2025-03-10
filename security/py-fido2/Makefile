@@ -1,12 +1,14 @@
 PORTNAME=	fido2
-PORTVERSION=	1.1.3
+PORTVERSION=	1.2.0
 CATEGORIES=	security python
-MASTER_SITES=	PYPI
+MASTER_SITES=	PYPI \
+		https://github.com/Yubico/python-fido2/releases/download/${PORTVERSION}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	python@FreeBSD.org
-COMMENT=	Provides library functionality for FIDO 2.0
-WWW=		https://github.com/Yubico/python-fido2
+COMMENT=	FIDO2/WebAuthn library for implementing clients and servers
+WWW=		https://developers.yubico.com/python-fido2/ \
+		https://github.com/Yubico/python-fido2
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING

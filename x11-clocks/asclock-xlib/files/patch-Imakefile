@@ -1,6 +1,6 @@
---- Imakefile.orig	Sun Mar 25 12:49:22 2007
-+++ Imakefile	Sun Mar 25 12:49:32 2007
-@@ -5,7 +5,7 @@
+--- Imakefile.orig	1999-03-14 06:04:31 UTC
++++ Imakefile
+@@ -5,9 +5,9 @@ LINTLIBS = $(LINTXLIB)
  LOCAL_LIBRARIES = $(XPMLIB) $(XLIB)  
  
  LINTLIBS = $(LINTXLIB)
@@ -9,3 +9,6 @@
  
  SRCS = asclock.c parser.c symbols.c config.c
  OBJS = asclock.o parser.o symbols.o config.o
+ 
+-ComplexProgramTarget(asclock)
++ComplexProgramTarget(asclock-xlib)

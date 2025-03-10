@@ -1,6 +1,6 @@
---- net/socket/tcp_socket_posix.cc.orig	2024-07-31 14:19:23 UTC
+--- net/socket/tcp_socket_posix.cc.orig	2024-10-27 06:40:35 UTC
 +++ net/socket/tcp_socket_posix.cc
-@@ -97,6 +97,17 @@ bool SetTCPKeepAlive(int fd, bool enable, int delay) {
+@@ -98,6 +98,17 @@ bool SetTCPKeepAlive(int fd, bool enable, int delay) {
        PLOG(ERROR) << "Failed to set TCP_KEEPALIVE on fd: " << fd;
        return false;
      }

@@ -1,5 +1,5 @@
 PORTNAME=	libc6-shim
-DISTVERSION=	20240512
+DISTVERSION=	20250212
 CATEGORIES=	emulators
 
 MAINTAINER=	iwtcex@gmail.com
@@ -10,6 +10,9 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 ONLY_FOR_ARCHS=	amd64
+
+LIB_DEPENDS=	libepoll-shim.so:devel/libepoll-shim
+RUN_DEPENDS=	libepoll-shim-i386>=0:devel/libepoll-shim@i386
 
 USES=	ruby
 USE_GITHUB=	yes

@@ -1,5 +1,5 @@
 PORTNAME=	cucumber-gherkin
-PORTVERSION=	28.0.0
+PORTVERSION=	32.0.0
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
@@ -8,8 +8,9 @@ COMMENT=	Fast Gherkin lexer/parser based on the Ragel State Machine Compiler
 WWW=		https://github.com/cucumber/gherkin
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rubygem-cucumber-messages23>=19.1.4<24:devel/rubygem-cucumber-messages23
+RUN_DEPENDS=	rubygem-cucumber-messages>=25<28:devel/rubygem-cucumber-messages
 
 USES=		gem
 

@@ -675,7 +675,6 @@ BUILD_DEPENDS+=		${PYTHON_PKGNAMEPREFIX}setuptools44>0:devel/py-setuptools44@${P
 RUN_DEPENDS+=		${PYTHON_PKGNAMEPREFIX}setuptools44>0:devel/py-setuptools44@${PY_FLAVOR}
 .    else
 BUILD_DEPENDS+=		${PYTHON_PKGNAMEPREFIX}setuptools>=63.1.0:devel/py-setuptools@${PY_FLAVOR}
-RUN_DEPENDS+=		${PYTHON_PKGNAMEPREFIX}setuptools>=63.1.0:devel/py-setuptools@${PY_FLAVOR}
 .    endif
 .  endif
 
@@ -835,7 +834,7 @@ PY_SETUPTOOLS=	${PYTHON_PKGNAMEPREFIX}setuptools>0:devel/py-setuptools@${PY_FLAV
 # Common Python modules that can be needed but only for some versions of Python.
 .  if ${PYTHON_REL} < 31100
 PY_EXCEPTIONGROUP=	${PYTHON_PKGNAMEPREFIX}exceptiongroup>=1.1.1:devel/py-exceptiongroup@${PY_FLAVOR}
-PY_TOMLI=	${PYTHON_PKGNAMEPREFIX}tomli>=2.0.1<3:textproc/py-tomli@${PY_FLAVOR}
+PY_TOMLI=	${PYTHON_PKGNAMEPREFIX}tomli>=2.0.2<3:textproc/py-tomli@${PY_FLAVOR}
 .  endif
 
 .  if ${PYTHON_REL} >= 30000
@@ -932,7 +931,7 @@ BUILD_DEPENDS+=	${PEP517_BUILD_DEPEND}
 BUILD_DEPENDS+=	${PEP517_INSTALL_DEPEND}
 .    endif
 
-.    if !target(do-configure)
+.    if !target(do-configure) && !defined(HAS_CONFIGURE) && !defined(GNU_CONFIGURE)
 do-configure:
 	@${DO_NADA}
 .    endif

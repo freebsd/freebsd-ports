@@ -17,12 +17,12 @@ help: you can convert an `i32` to a `usize` and panic if the converted value doe
 
 --- compiler/rustc_driver_impl/src/signal_handler.rs.orig	2024-05-06 16:00:17 UTC
 +++ compiler/rustc_driver_impl/src/signal_handler.rs
-@@ -40,7 +40,7 @@ extern "C" fn print_stack_trace(_: libc::c_int) {
-     static mut STACK_TRACE: [*mut libc::c_void; MAX_FRAMES] = [ptr::null_mut(); MAX_FRAMES];
-     let stack = unsafe {
+@@ -46,7 +46,7 @@ unsafe extern "C" fn print_stack_trace(_: libc::c_int)
+         // in incredibly undesirable and unexpected ways due to e.g. the allocator deadlocking
+         static mut STACK_TRACE: [*mut libc::c_void; MAX_FRAMES] = [ptr::null_mut(); MAX_FRAMES];
          // Collect return addresses
--        let depth = libc::backtrace(STACK_TRACE.as_mut_ptr(), MAX_FRAMES as i32);
-+        let depth = libc::backtrace(STACK_TRACE.as_mut_ptr(), (MAX_FRAMES as i32).try_into().unwrap());
+-        let depth = libc::backtrace(&raw mut STACK_TRACE as _, MAX_FRAMES as i32);
++        let depth = libc::backtrace(&raw mut STACK_TRACE as _, (MAX_FRAMES as i32).try_into().unwrap());
          if depth == 0 {
              return;
          }

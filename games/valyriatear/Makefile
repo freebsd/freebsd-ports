@@ -1,6 +1,6 @@
 PORTNAME=	valyriatear
 PORTVERSION=	1.1.0
-PORTREVISION=	4
+PORTREVISION=	6
 CATEGORIES=	games
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -11,6 +11,8 @@ WWW=		https://valyriatear.blogspot.com/
 # The main game is GPLv2 but artwork/music/fonts are a variety of licenses:
 # GPLv2, GPLv3 (with font exception), OFL-1.1, CC0, CC-BY-3, and CC-BY-SA-3.
 LICENSE=	GPLv2
+
+BROKEN=		fails to build with boost-1.86+
 
 LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
 		libvorbis.so:audio/libvorbis \

@@ -47,6 +47,7 @@ sbin/sudo_sendlog
 %%PORTDOCS%%%%DOCSDIR%%/UPGRADE.md
 %%LDAP%%%%PORTDOCS%%%%DOCSDIR%%/README.LDAP.md
 %%LDAP%%%%PORTDOCS%%%%DOCSDIR%%/schema.ActiveDirectory
+%%LDAP%%%%PORTDOCS%%%%DOCSDIR%%/schema.IBM_LDAP
 %%LDAP%%%%PORTDOCS%%%%DOCSDIR%%/schema.OpenLDAP
 %%LDAP%%%%PORTDOCS%%%%DOCSDIR%%/schema.iPlanet
 %%LDAP%%%%PORTDOCS%%%%DOCSDIR%%/schema.olcSudo
@@ -93,6 +94,7 @@ sbin/sudo_sendlog
 %%NLS%%share/locale/hu/LC_MESSAGES/sudo.mo
 %%NLS%%share/locale/hu/LC_MESSAGES/sudoers.mo
 %%NLS%%share/locale/id/LC_MESSAGES/sudo.mo
+%%NLS%%share/locale/id/LC_MESSAGES/sudoers.mo
 %%NLS%%share/locale/it/LC_MESSAGES/sudo.mo
 %%NLS%%share/locale/it/LC_MESSAGES/sudoers.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/sudo.mo

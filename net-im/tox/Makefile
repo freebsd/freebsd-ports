@@ -1,48 +1,44 @@
 PORTNAME=	toxcore
-PORTVERSION=	0.2.19
-DISTVERSIONPREFIX=	v
+DISTVERSION=	0.2.20
 PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	net-im net-p2p
+MASTER_SITES=	https://github.com/TokTok/c-${PORTNAME}/releases/download/v${DISTVERSION}/
+DISTNAME=	c-${PORTNAME}-${DISTVERSION}
 
-MAINTAINER=	thierry@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	ProjectTox-Core library, a decentralized and secure messenger
 WWW=		https://tox.chat/
 
 LICENSE=	GPLv3
+LICENSE_FILES=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	checkmk:devel/check			\
-		gtest:sysutils/coreutils
-LIB_DEPENDS=	libvpx.so:multimedia/libvpx		\
-		libsndfile.so:audio/libsndfile		\
-		libportaudio.so:audio/portaudio		\
-		libsodium.so:security/libsodium		\
-		libopus.so:audio/opus			\
-		libconfig.so:devel/libconfig
-TEST_DEPENDS=	opencv_visualisation:graphics/opencv
-#TEST_DEPENDS=	libopencv_core.so:graphics/opencv
+LIB_DEPENDS=	libopus.so:audio/opus \
+		libsodium.so:security/libsodium	\
+		libvpx.so:multimedia/libvpx
+TEST_DEPENDS=	googletest>0:devel/googletest
 
-USE_GITHUB=	yes
-GH_ACCOUNT=	TokTok camgunz:cmp
-GH_PROJECT=	c-toxcore cmp:cmp
-GH_TAGNAME=	643e6a62d4eb0ec2277de269cda33da02cba2756:cmp
-GH_SUBDIR=	third_party/cmp:cmp
-
+USES=		cmake:testing compiler:c++17-lang cpe pathfix pkgconfig
 CPE_VENDOR=	toktok
-
-USES=		cmake cpe pathfix pkgconfig
+PATHFIX_CMAKELISTSTXT=	ModulePackage.cmake
 USE_LDCONFIG=	yes
-PLIST_SUB=	VER=${PORTVERSION:C/0.//}.0 SO=2
 
-OPTIONS_DEFINE=		DAEMON TEST
-OPTIONS_SUB=		yes
+PLIST_SUB=	VER=${DISTVERSION:C/0.//}.0 SO=2
 
-DAEMON_DESC=		Bootstrap daemon
-DAEMON_CMAKE_ON=	-DBOOTSTRAP_DAEMON=on
+CMAKE_TESTING_OFF=	CMAKE_DISABLE_FIND_PACKAGE_GTest
+CMAKE_TESTING_ON=	UNITTEST
+# AUTOTEST(s) are broken...
+
+CMAKE_OFF=	CMAKE_DISABLE_FIND_PACKAGE_GTest \
+		UNITTEST
+
+OPTIONS_DEFINE=	DAEMON
+OPTIONS_SUB=	yes
+
+DAEMON_DESC=	Bootstrap daemon
+
 DAEMON_LIB_DEPENDS=	libconfig.so:devel/libconfig
-
-TEST_CMAKE_ON=		-DAUTOTEST=on
-TEST_TARGET=		test
+DAEMON_CMAKE_BOOL=	BOOTSTRAP_DAEMON
 
 .include <bsd.port.options.mk>
 

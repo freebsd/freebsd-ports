@@ -1,12 +1,12 @@
-****************************************************************************
-
+[
+{ type:install
+  message: <<EOM
 - If you want to see more than a black screen when you login, select a
 theme.
 
 mkdir -p ~/.config/leftwm/themes
 cd ~/.config/leftwm/themes
 ln -s PATH_TO_THE_THEME_YOU_LIKE current
-
 
 - LeftWM has very few dependencies, this isn't always the case for themes.
 Themes typically require the following to be installed. However, this is up
@@ -22,10 +22,10 @@ List of common dependencies for themes:
    x11-wm/compton
    x11-wm/picom
 
-
 - LeftWM requires that $XDG_RUNTIME_DIR is set in the environment as it
 uses this directory.
 
 Details: https://github.com/leftwm/leftwm/wiki/XDG_RUNTIME_DIR
-
-****************************************************************************
+EOM
+}
+]

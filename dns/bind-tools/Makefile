@@ -5,7 +5,7 @@ MASTERDIR=	${.CURDIR}/../../dns/bind9-devel
 
 PLIST=		${.CURDIR}/pkg-plist-devel
 .else
-MASTERDIR=	${.CURDIR}/../../dns/bind918
+MASTERDIR=	${.CURDIR}/../../dns/bind920
 
 PLIST=		${.CURDIR}/pkg-plist
 .endif

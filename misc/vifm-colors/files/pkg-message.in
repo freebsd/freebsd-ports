@@ -1,0 +1,12 @@
+[
+{ type: install
+  message: <<EOM
+  To use the color schemes run the following command in your terminal once:
+
+    cp -R %%DATADIR%% ~/.config/vifm/colors
+
+  Note: replace ~/.config/vifm with ~/.vifm in the command above if you store
+  your configuration there.
+EOM
+}
+]

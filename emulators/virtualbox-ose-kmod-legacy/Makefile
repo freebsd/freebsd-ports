@@ -1,10 +1,10 @@
 PORTNAME=	virtualbox-ose
-PORTVERSION=	5.2.44
+DISTVERSION=	5.2.44
 PORTREVISION=	7
 CATEGORIES=	emulators
-MASTER_SITES=	https://download.oracle.com/virtualbox/${PORTVERSION}/
+MASTER_SITES=	https://download.virtualbox.org/virtualbox/${DISTVERSION}/
 PKGNAMESUFFIX=	-kmod-legacy
-DISTNAME=	VirtualBox-${PORTVERSION}
+DISTNAME=	VirtualBox-${DISTVERSION}
 
 MAINTAINER=	vbox@FreeBSD.org
 COMMENT=	VirtualBox kernel module for FreeBSD
@@ -13,21 +13,16 @@ WWW=		https://www.virtualbox.org/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+ONLY_FOR_ARCHS=	amd64 i386
+
 BUILD_DEPENDS=	kmk:devel/kBuild
 
+USES=		cpe kmod tar:bzip2
 CPE_VENDOR=	oracle
 CPE_PRODUCT=	vm_virtualbox
-
-SUB_FILES=	pkg-message
-SUB_LIST=	OPSYS=${OPSYS} OSREL=${OSREL}
-
-USES=		cpe kmod tar:bzip2
-PATCHDIR=	${.CURDIR}/../${PORTNAME}-legacy/files
-WRKSRC=		${WRKDIR}/VirtualBox-${PORTVERSION}
 USE_RC_SUBR=	vboxnet
-ONLY_FOR_ARCHS=	i386 amd64
 
-HAS_CONFIGURE=	yes
+HAS_CONFIGURE=		yes
 CONFIGURE_ARGS+=	--build-headless
 CONFIGURE_ARGS+=	--disable-alsa \
 			--disable-dbus \
@@ -39,9 +34,15 @@ CONFIGURE_ARGS+=	--disable-alsa \
 			--disable-xpcom
 CONFIGURE_ARGS+=	--nofatal --with-gcc="${CC}" --with-g++="${CXX}"
 
-CONFLICTS_INSTALL=	virtualbox-ose-kmod
+CONFLICTS_INSTALL=	virtualbox-ose-kmod \
+			virtualbox-ose-kmod-70
 
-PORTSCOUT=	limit:^5\.
+PATCHDIR=		${.CURDIR}/../${PORTNAME}-legacy/files
+PORTSCOUT=		limit:^5\.
+SUB_FILES=		pkg-message
+SUB_LIST=		OPSYS=${OPSYS} OSREL=${OSREL}
+
+WRKSRC=			${WRKDIR}/VirtualBox-${DISTVERSION}
 
 OPTIONS_DEFINE=		DEBUG VIMAGE
 OPTIONS_DEFINE_i386=	PAE
@@ -79,7 +80,7 @@ KMK_ARCH=	freebsd.${ARCH}
 
 .include <bsd.port.pre.mk>
 
-.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400079 || ( ${OSVERSION} >= 1302505 && ${OSVERSION} < 1400000 ))
+.if ${OPSYS} == FreeBSD
 CFLAGS+=	-Wno-error=int-conversion
 .endif
 

@@ -1,6 +1,6 @@
---- electron/script/lib/utils.js.orig	2024-07-15 15:22:56 UTC
+--- electron/script/lib/utils.js.orig	2024-10-09 13:53:12 UTC
 +++ electron/script/lib/utils.js
-@@ -18,7 +18,7 @@ function getElectronExec () {
+@@ -19,7 +19,7 @@ function getElectronExec () {
        return `out/${OUT_DIR}/Electron.app/Contents/MacOS/Electron`;
      case 'win32':
        return `out/${OUT_DIR}/electron.exe`;

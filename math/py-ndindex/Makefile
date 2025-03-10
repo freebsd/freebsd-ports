@@ -1,6 +1,5 @@
 PORTNAME=	ndindex
-PORTVERSION=	1.8
-PORTREVISION=	1
+PORTVERSION=	1.9.2
 CATEGORIES=	math python
 MASTER_SITES=	PYPI \
 		https://github.com/Quansight-Labs/ndindex/releases/download/${PORTVERSION}/
@@ -17,14 +16,15 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 
-USES=		python
-USE_PYTHON=	autoplist concurrent pep517
-
-NO_ARCH=	yes
+USES=		python:3.9+
+USE_PYTHON=	autoplist concurrent cython pep517
 
 OPTIONS_DEFINE=	ARRAYS
 ARRAYS_DESC=	Array support
 
 ARRAYS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=0,1:math/py-numpy@${PY_FLAVOR}
+
+post-install:
+	${FIND} ${STAGEDIR}${PYTHON_SITELIBDIR} -name '*.so' -exec ${STRIP_CMD} {} +
 
 .include <bsd.port.mk>

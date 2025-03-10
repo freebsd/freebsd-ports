@@ -1,8 +1,0 @@
-[
-{ type: install
-  message: <<EOM
- To bring up the Sahi Controller use CTRL-ALT-DblClick on the page
- you are visiting with your browser
-EOM
-}
-]

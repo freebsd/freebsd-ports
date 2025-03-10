@@ -1,5 +1,5 @@
 PORTNAME=	DBD-mysql
-PORTVERSION=	5.005
+DISTVERSION=	5.008
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:DVEEDEN
@@ -15,8 +15,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${RUN_DEPENDS} \
 		p5-Devel-CheckLib>=1.09:devel/p5-Devel-CheckLib
-RUN_DEPENDS=	p5-DBI>=1.08:databases/p5-DBI
 LIB_DEPENDS=	libunwind.so:devel/libunwind
+RUN_DEPENDS=	p5-DBI>=1.08:databases/p5-DBI
 TEST_DEPENDS=	p5-Test-Deep>=0:devel/p5-Test-Deep
 
 USES=		compiler:c11 mysql perl5 ssl
@@ -33,7 +33,7 @@ post-install:
 .include <bsd.port.pre.mk>
 
 .if ${MYSQL_FLAVOUR} != mysql
-IGNORE=use databases/p5-DBD-mysql4 or databases/p5-DBD-MariaDB instead
+IGNORE=	use databases/p5-DBD-mysql4 or databases/p5-DBD-MariaDB instead
 .endif
 
 .include <bsd.port.post.mk>

@@ -1,5 +1,5 @@
 PORTNAME=	labwc
-DISTVERSION=	0.7.4
+DISTVERSION=	0.8.3
 CATEGORIES=	x11-wm wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -9,21 +9,24 @@ WWW=		https://github.com/labwc/labwc
 LICENSE=	GPLv2
 
 BUILD_DEPENDS=	evdev-proto>0:devel/evdev-proto \
-		wayland-protocols>0:graphics/wayland-protocols
+		wayland-protocols>=1.35:graphics/wayland-protocols
 LIB_DEPENDS=	libpng.so:graphics/png \
 		libwayland-server.so:graphics/wayland \
-		libwlroots.so:x11-toolkits/wlroots017 \
+		libwlroots-0.18.so:x11-toolkits/wlroots018 \
 		libinput.so:x11/libinput \
 		libxkbcommon.so:x11/libxkbcommon
 
 USES=		compiler:c11 gnome meson pkgconfig xorg
 USE_GITHUB=	yes
+USE_GITLAB=	nodefault
 USE_GNOME=	cairo libxml2 pango
 USE_XORG=	pixman
+GL_TUPLE=	https://gitlab.freedesktop.org:vyivel:libsfdo:v0.1.3:libsfdo/subprojects/libsfdo-basedir
 PLIST_FILES=	bin/${PORTNAME} \
 		share/icons/hicolor/scalable/apps/${PORTNAME}-symbolic.svg \
 		share/icons/hicolor/scalable/apps/${PORTNAME}.svg \
-		share/wayland-sessions/${PORTNAME}.desktop
+		share/wayland-sessions/${PORTNAME}.desktop \
+		share/xdg-desktop-portal/${PORTNAME}-portals.conf
 PORTEXAMPLES=	*
 
 OPTIONS_DEFINE=	EXAMPLES LIBRSVG2 MANPAGES NLS X11
@@ -45,6 +48,7 @@ NLS_USES=		gettext
 NLS_MESON_ENABLED=	nls
 NLS_PLIST_FILES=	share/locale/ar/LC_MESSAGES/${PORTNAME}.mo \
 			share/locale/cs/LC_MESSAGES/${PORTNAME}.mo \
+			share/locale/da/LC_MESSAGES/${PORTNAME}.mo \
 			share/locale/de/LC_MESSAGES/${PORTNAME}.mo \
 			share/locale/el/LC_MESSAGES/${PORTNAME}.mo \
 			share/locale/es/LC_MESSAGES/${PORTNAME}.mo \
@@ -65,6 +69,7 @@ NLS_PLIST_FILES=	share/locale/ar/LC_MESSAGES/${PORTNAME}.mo \
 			share/locale/pa/LC_MESSAGES/${PORTNAME}.mo \
 			share/locale/pl/LC_MESSAGES/${PORTNAME}.mo \
 			share/locale/pt/LC_MESSAGES/${PORTNAME}.mo \
+			share/locale/pt_BR/LC_MESSAGES/${PORTNAME}.mo \
 			share/locale/ru/LC_MESSAGES/${PORTNAME}.mo \
 			share/locale/sv/LC_MESSAGES/${PORTNAME}.mo \
 			share/locale/tr/LC_MESSAGES/${PORTNAME}.mo \
@@ -90,5 +95,11 @@ post-patch:
 # Respect hier(7) for examples
 	@${REINPLACE_CMD} '/datadir/s/doc/examples/' \
 		${WRKSRC}/docs/meson.build
+
+.ifdef GL_TUPLE
+post-configure:
+	@${REINPLACE_CMD} 's/meson install/& \
+		--skip-subprojects/' ${BUILD_WRKSRC}/build.ninja
+.endif
 
 .include <bsd.port.mk>

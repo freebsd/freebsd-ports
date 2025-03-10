@@ -1,19 +1,26 @@
 PORTNAME=	squirrel
-DISTVERSION=	3_1
-PORTREVISION=	3
+DISTVERSIONPREFIX=	v
+DISTVERSION=	3.2
 CATEGORIES=	lang
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}3/${PORTNAME}%20${PORTVERSION}%20stable
-DISTNAME=	${PORTNAME}_${DISTVERSION}_stable
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	mclay@astate.edu
 COMMENT=	High level imperative/OO programming language
 WWW=		http://squirrel-lang.org/
 
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/COPYRIGHT
+
+USES=		cmake compiler:c++11-lang
+USE_LDCONFIG=	yes
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	albertodemichelis
+
 CONFLICTS=	squsq
 
-USES=		cmake compiler:c++11-lang dos2unix
+CMAKE_OFF=	CMAKE_C_EXTENSIONS \
+		CMAKE_CXX_EXTENSIONS
+CMAKE_ON=	DISABLE_STATIC
 CMAKE_ARGS=	-DINSTALL_INC_DIR:STRING=include
-USE_LDCONFIG=	yes
-WRKSRC=		${WRKDIR}/${PORTNAME}3
 
 .include <bsd.port.mk>

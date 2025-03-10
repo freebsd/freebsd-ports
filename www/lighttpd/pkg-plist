@@ -1,5 +1,6 @@
 @sample %%ETCDIR%%/lighttpd.conf.sample
 @sample %%ETCDIR%%/modules.conf.sample
+@sample %%ETCDIR%%/lighttpd.annotated.conf.sample
 @sample %%ETCDIR%%/conf.d/access_log.conf.sample
 @sample %%ETCDIR%%/conf.d/auth.conf.sample
 @sample %%ETCDIR%%/conf.d/cgi.conf.sample

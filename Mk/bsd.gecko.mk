@@ -60,7 +60,8 @@ MOZILLA?=	${PORTNAME}
 MOZILLA_VER?=	${PORTVERSION}
 MOZILLA_BIN?=	${PORTNAME}-bin
 MOZILLA_EXEC_NAME?=${MOZILLA}
-USES+=		compiler:c++17-lang cpe gl gmake gnome iconv llvm:min=17,noexport localbase \
+USES+=		compiler:c++17-lang cpe elfctl gl gmake gnome iconv \
+			llvm:min=17,noexport localbase \
 			pkgconfig python:build desktop-file-utils
 CPE_VENDOR?=mozilla
 USE_GL=		gl
@@ -71,10 +72,12 @@ CONFIGURE_OUTSOURCE=	yes
 LDFLAGS+=		-Wl,--as-needed -Wl,--undefined-version
 BINARY_ALIAS+=	python3=${PYTHON_CMD}
 
+ELF_FEATURES+=	+wxneeded:dist/bin/${MOZILLA} +wxneeded:dist/bin/${MOZILLA}-bin
+
 BUNDLE_LIBS=	yes
 
 BUILD_DEPENDS+=	rust-cbindgen>=0.26.0:devel/rust-cbindgen \
-				${RUST_DEFAULT}>=1.79.0:lang/${RUST_DEFAULT} \
+				${RUST_DEFAULT}>=1.85.0:lang/${RUST_DEFAULT} \
 				node:www/node
 LIB_DEPENDS+=	libdrm.so:graphics/libdrm
 RUN_DEPENDS+=	${LOCALBASE}/lib/libpci.so:devel/libpci

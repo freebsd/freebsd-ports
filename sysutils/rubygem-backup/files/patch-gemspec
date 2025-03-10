@@ -1,6 +1,6 @@
---- backup.gemspec.orig	2024-02-21 08:37:02 UTC
+--- backup.gemspec.orig	2024-12-30 03:30:38 UTC
 +++ backup.gemspec
-@@ -21,69 +21,69 @@ Gem::Specification.new do |s|
+@@ -21,69 +21,68 @@ Gem::Specification.new do |s|
  
    s.specification_version = 4
  
@@ -111,7 +111,6 @@
 +  s.add_runtime_dependency(%q<mail>.freeze, [">= 2.6.3".freeze])
 +  s.add_runtime_dependency(%q<memoizable>.freeze, [">= 0.4.0".freeze])
 +  s.add_runtime_dependency(%q<mime-types>.freeze, [">= 2.4.3".freeze])
-+  s.add_runtime_dependency(%q<mini_portile2>.freeze, [">= 2.3.0".freeze])
 +  s.add_runtime_dependency(%q<multi_json>.freeze, [">= 1.10.1".freeze])
 +  s.add_runtime_dependency(%q<multi_xml>.freeze, [">= 0.5.5".freeze])
 +  s.add_runtime_dependency(%q<multipart-post>.freeze, [">= 1.2.0".freeze])

@@ -1,10 +1,10 @@
 PORTNAME=	Dancer-Plugin-Swagger
-PORTVERSION=	0.2.0
+DISTVERSION=	0.3.0
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	dgeo@centrale-marseille.fr
+MAINTAINER=	dgeo@centrale-med.fr
 COMMENT=	Dancer plugin to create Swagger documentation for app REST
 WWW=		https://metacpan.org/pod/Dancer::Plugin::Swagger
 

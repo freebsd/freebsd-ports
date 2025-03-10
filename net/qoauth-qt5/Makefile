@@ -12,7 +12,9 @@ WWW=		https://github.com/ayoy/qoauth
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		compiler:c++11-lang qmake:outsource qca qt:5
+LIB_DEPENDS=	libqca-qt5.so:devel/qca@qt5
+
+USES=		compiler:c++11-lang qmake:outsource qt:5
 USE_LDCONFIG=	yes
 USE_QT=		core network testlib buildtools:build qmake:build
 

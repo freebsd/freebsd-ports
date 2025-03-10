@@ -1,0 +1,50 @@
+#!/bin/sh
+# PROVIDE: gotify_server
+# REQUIRE: DAEMON NETWORKING
+# KEYWORD: shutdown
+
+#
+# Add these lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# gotify_server_enable (bool):        Set to NO by default.
+#                                     Set it to YES to enable mailpit.
+# gotify_server_dir (str):            Set to "/var/db/gotify" by default
+#                                     Set it to directory to run gotify in
+# gotify_server_user (str):           Set to "gotify" by default.
+#                                     Set it to user to run gotify-server under
+# gotify_server_group (str):          Set to "gotify" by default.
+#                                     Set it to group to run gotify-server under
+# gotify_server_args (string):        Custom extra arguments for gotify-server
+
+. /etc/rc.subr
+
+name="gotify_server"
+rcvar="gotify_server_enable"
+desc="Run Gotify notification server"
+
+load_rc_config ${name}
+
+: ${gotify_server_enable:="NO"}
+: ${gotify_server_dir:="/var/db/gotify"}
+: ${gotify_server_user:="gotify"}
+: ${gotify_server_group:="gotify"}
+: ${gotify_server_args:=""}
+
+export HOME=${gotify_server_dir}
+export PATH=${PATH}:%%PREFIX%%/bin
+
+pidfile="/var/run/${name}.pid"
+command="/usr/sbin/daemon"
+command_args="-f -P ${pidfile} %%PREFIX%%/bin/gotify-server ${gotify_server_args}"
+
+start_precmd="gotify_server_precmd"
+
+gotify_server_precmd()
+{
+	if [ ! -e "${pidfile}" ]; then
+		install -g ${gotify_server_group} -o ${gotify_server_user} -- /dev/null "${pidfile}";
+	fi
+}
+
+run_rc_command $1

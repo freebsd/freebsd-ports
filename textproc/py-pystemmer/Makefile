@@ -1,5 +1,6 @@
 PORTNAME=	pystemmer
 PORTVERSION=	2.0.1
+PORTREVISION=	1
 CATEGORIES=	textproc python
 MASTER_SITES=	PYPI \
 		http://snowball.tartarus.org/wrappers/

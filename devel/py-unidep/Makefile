@@ -1,5 +1,5 @@
 PORTNAME=	unidep
-PORTVERSION=	0.59.0
+PORTVERSION=	0.67.3
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -29,11 +29,6 @@ RICH_DESC=		Help formatter via rich
 
 PIP_COMPILE_RUN_DEPENDS=${PYTHON_PKGNAMEPREFIX}pip-tools>=0:devel/py-pip-tools@${PY_FLAVOR}
 RICH_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}rich-argparse>=0:devel/py-rich-argparse@${PY_FLAVOR}
+TOML_RUN_DEPENDS=	${PY_TOMLI}
 
-.include <bsd.port.pre.mk>
-
-.if ${PORT_OPTIONS:MTOML} && ${PYTHON_REL} < 31100
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}tomli>=0:textproc/py-tomli@${PY_FLAVOR}
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

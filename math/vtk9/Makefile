@@ -1,6 +1,6 @@
 PORTNAME=	vtk
 DISTVERSION=	9.2.6
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	math graphics
 MASTER_SITES=	https://vtk.org/files/release/${VTK_SHORT_VER}/
 PKGNAMESUFFIX=	9
@@ -8,11 +8,11 @@ DISTNAME=	${PORTNAME:tu}-${DISTVERSION}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Visualization toolkit
-WWW=		https://vtk.org/
+WWW=		https://vtk.org \
+		https://gitlab.kitware.com/vtk/vtk \
+		https://github.com/Kitware/VTK
 
 LICENSE=	BSD3CLAUSE
-
-BROKEN_FreeBSD_13_aarch64=	clang crashes, see https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=275784
 
 LIB_DEPENDS=	\
 		libexpat.so:textproc/expat2 \
@@ -100,7 +100,7 @@ OSMESA_CMAKE_ON=	-DVTK_OPENGL_HAS_OSMESA:BOOL=ON \
 			-DVTK_USE_X:BOOL=OFF
 OSMESA_LIB_DEPENDS=	libOSMesa.so:graphics/libosmesa
 
-JAVA_VARS=		USE_JAVA=yes
+JAVA_USES=		java
 JAVA_CMAKE_BOOL=	VTK_WRAP_JAVA
 JAVA_CMAKE_ON=		-DJAVA_INCLUDE_PATH:PATH=${JAVA_HOME}/include \
 			-DJAVA_AWT_LIBRARY:PATH=${JAVA_HOME}/jre/lib/${ARCH}/libjawt.so \
@@ -132,6 +132,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mpi4py>0:net/py-mpi4py@${PY_FLAVOR}
 CONFLICTS=	vtk6 vtk8
 
 do-install-PYTHON-on:
+	${PYTHON_CMD} -m compileall -d ${PYTHON_SITELIBDIR} -f ${STAGEDIR}${PYTHON_SITELIBDIR}
+	${PYTHON_CMD} -O -m compileall -d ${PYTHON_SITELIBDIR} -f ${STAGEDIR}${PYTHON_SITELIBDIR}
 	# cmake doesn't install pip's .egg-info: https://gitlab.kitware.com/vtk/vtk/-/issues/18087
 	@${MKDIR} ${STAGEDIR}${PYTHON_SITELIBDIR}/vtk-${DISTVERSION}-py${PYTHON_VER}.egg-info
 	@${INSTALL_DATA} ${WRKDIR}/PKG-INFO ${STAGEDIR}${PYTHON_SITELIBDIR}/vtk-${DISTVERSION}-py${PYTHON_VER}.egg-info

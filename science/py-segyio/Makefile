@@ -1,6 +1,7 @@
 PORTNAME=	segyio
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.9.12
+DISTVERSION=	1.9.13
+PORTREVISION=	1
 CATEGORIES=	science python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -9,6 +10,9 @@ COMMENT=	Python binding for segyio, the seismic data library
 WWW=		https://github.com/equinor/segyio
 
 LICENSE=	LGPL3+
+
+DEPRECATED=	Depends on expired devel/py-pytest-runner
+EXPIRATION_DATE=2025-03-31
 
 BUILD_DEPENDS=	cmake:devel/cmake-core \
 		pybind11>0:devel/pybind11 \
@@ -35,5 +39,7 @@ post-install:
 
 pre-test:
 	@cd ${WRKSRC} && ${PYTHON_CMD} ${PYSETUP} build_ext --inplace
+
+# tests as of 1.9.13: 208 passed, 8 warnings in 3.65s
 
 .include <bsd.port.mk>

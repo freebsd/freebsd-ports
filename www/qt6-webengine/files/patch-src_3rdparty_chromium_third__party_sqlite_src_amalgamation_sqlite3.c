@@ -1,6 +1,15 @@
---- src/3rdparty/chromium/third_party/sqlite/src/amalgamation/sqlite3.c.orig	2023-08-17 07:33:31 UTC
+--- src/3rdparty/chromium/third_party/sqlite/src/amalgamation/sqlite3.c.orig	2024-07-03 01:14:49 UTC
 +++ src/3rdparty/chromium/third_party/sqlite/src/amalgamation/sqlite3.c
-@@ -43843,7 +43843,12 @@ static int unixRandomness(sqlite3_vfs *NotUsed, int nB
+@@ -14049,7 +14049,7 @@ struct fts5_api {
+ ** But _XOPEN_SOURCE define causes problems for Mac OS X, so omit
+ ** it.
+ */
+-#if !defined(_XOPEN_SOURCE) && !defined(__DARWIN__) && !defined(__APPLE__)
++#if !defined(_XOPEN_SOURCE) && !defined(__DARWIN__) && !defined(__APPLE__) && !defined(__FreeBSD__)
+ #  define _XOPEN_SOURCE 600
+ #endif
+ 
+@@ -44505,7 +44505,12 @@ static int unixRandomness(sqlite3_vfs *NotUsed, int nB
    memset(zBuf, 0, nBuf);
    randomnessPid = osGetpid(0);
  #if !defined(SQLITE_TEST) && !defined(SQLITE_OMIT_RANDOMNESS)
@@ -13,7 +22,7 @@
      int fd, got;
      fd = robust_open("/dev/urandom", O_RDONLY, 0);
      if( fd<0 ){
-@@ -43858,6 +43863,7 @@ static int unixRandomness(sqlite3_vfs *NotUsed, int nB
+@@ -44520,6 +44525,7 @@ static int unixRandomness(sqlite3_vfs *NotUsed, int nB
        robust_close(0, fd, __LINE__);
      }
    }

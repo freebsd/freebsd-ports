@@ -1,5 +1,6 @@
 PORTNAME=	webpy
 PORTVERSION=	0.62
+PORTREVISION=	1
 CATEGORIES=	www python
 MASTER_SITES=	http://webpy.org/static/ \
 		PYPI

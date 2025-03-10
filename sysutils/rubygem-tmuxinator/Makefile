@@ -1,5 +1,5 @@
 PORTNAME=	tmuxinator
-PORTVERSION=	3.3.0
+PORTVERSION=	3.3.3
 CATEGORIES=	sysutils ruby
 MASTER_SITES=	RG
 
@@ -24,9 +24,8 @@ PLIST_FILES=	bin/tmuxinator \
 OPTIONS_SINGLE=	TMUX
 OPTIONS_SINGLE_TMUX=	TMUX TMUX23
 OPTIONS_DEFAULT=TMUX
-
-TMUX_DESC=	Use tmux from sysutils/tmux
-TMUX23_DESC=	Use tmux from sysutils/tmux23
+TMUX_DESC=	Use tmux 3.x from sysutils/tmux
+TMUX23_DESC=	Use tmux 2.3 from sysutils/tmux23
 
 TMUX_RUN_DEPENDS=	tmux:sysutils/tmux
 TMUX23_RUN_DEPENDS=	tmux:sysutils/tmux23

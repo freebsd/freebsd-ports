@@ -12,9 +12,8 @@ WWW=		https://activemq.apache.org
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cpe
+USES=		cpe java
 CPE_VENDOR=	apache
-USE_JAVA=	yes
 JAVA_VERSION=	18
 USE_RC_SUBR=	activemq
 

@@ -13,7 +13,6 @@ WWW=		https://metacpan.org/release/Moose
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-# Do not add p5-Data-Visitor to TEST_DEPENDS to avoid cyclic dependency
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Class-Load>=0.09:devel/p5-Class-Load \
 		p5-Class-Load-XS>=0.01:devel/p5-Class-Load-XS \
@@ -58,10 +57,11 @@ TEST_DEPENDS=	p5-CPAN-Meta-Check>=0.011:devel/p5-CPAN-Meta-Check \
 		p5-Type-Tiny>=0:devel/p5-Type-Tiny \
 		p5-URI>=0:net/p5-URI
 
+USES=		perl5
+USE_PERL5=	configure
+
 CFLAGS+=	-I.	# mop.h
 MAKE_JOBS_UNSAFE=	yes
-USES=		perl5
-USE_PERL5=	configure extract
 
 post-patch:
 	@${REINPLACE_CMD} -e '/^check_conflicts()/d' ${WRKSRC}/Makefile.PL

@@ -1,6 +1,6 @@
 PORTNAME=	peg.el
 DISTVERSION=	1.0.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel elisp
 MASTER_SITES=	https://elpa.gnu.org/packages/
 PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
@@ -11,6 +11,9 @@ COMMENT=	Parsing expression grammars in Emacs lisp
 WWW=		https://elpa.gnu.org/packages/peg.html
 
 LICENSE=	GPLv3+
+
+DEPRECATED=	Emacs 30 and later include peg.el as standard library
+EXPIRATION_DATE=	2025-03-31
 
 USES=		emacs tar
 

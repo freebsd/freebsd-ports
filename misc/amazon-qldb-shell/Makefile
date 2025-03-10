@@ -292,7 +292,4 @@ CARGO_CRATES=	ahash-0.7.6 \
 
 PLIST_FILES=	bin/qldb
 
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/qldb
-
 .include <bsd.port.mk>

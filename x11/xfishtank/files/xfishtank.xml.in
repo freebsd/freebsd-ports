@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<screensaver name="xfishtank" _label="XFishtank">
+  <video href="https://www.youtube.com/watch?v=6Q8ZTxsopYA"/>
+
+  <file id="bgfile" _label="Background image" arg="-p %"/>
+
+  <string id="bgcolor" arg="-c %"
+          _label="Background color (eg. red, MediumAquamarine, #ff0000)"/>
+
+  <number id="nbubbles" _label="Number of bubbles" arg="-b %"
+          high="100" low="0" step="1" default="32"/>
+
+  <number _id="nfishes" _label="Number of fishes" arg="-f %"
+          high="100" low="0" step="1" default="10"/>
+
+  <xscreensaver-updater />
+
+  <_description>
+XFish Tank.
+
+Eric Bina (Original author), Dave Black (Linux port),
+TJ Phan (TrueColor Support), Vincent Renardias (man page, Debian packaging)
+  </_description>
+</screensaver>

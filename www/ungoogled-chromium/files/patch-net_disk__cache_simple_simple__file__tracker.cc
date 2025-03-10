@@ -1,6 +1,6 @@
---- net/disk_cache/simple/simple_file_tracker.cc.orig	2024-07-31 14:19:23 UTC
+--- net/disk_cache/simple/simple_file_tracker.cc.orig	2025-02-20 09:59:21 UTC
 +++ net/disk_cache/simple/simple_file_tracker.cc
-@@ -34,7 +34,17 @@ void RecordFileDescripterLimiterOp(FileDescriptorLimit
+@@ -31,7 +31,17 @@ void RecordFileDescripterLimiterOp(FileDescriptorLimit
  }  // namespace
  
  SimpleFileTracker::SimpleFileTracker(int file_limit)

@@ -20,6 +20,6 @@ include/avro/schema.h
 include/avro/value.h
 lib/libavro.a
 lib/libavro.so
-lib/libavro.so.23
-lib/libavro.so.23.0.0
+lib/libavro.so.24
+lib/libavro.so.24.0.1
 libdata/pkgconfig/avro-c.pc

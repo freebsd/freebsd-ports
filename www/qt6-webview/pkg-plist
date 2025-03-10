@@ -19,6 +19,7 @@
 %%QT_INCDIR%%/QtWebViewQuick/QtWebViewQuick
 %%QT_INCDIR%%/QtWebViewQuick/QtWebViewQuickDepends
 %%QT_INCDIR%%/QtWebViewQuick/QtWebViewQuickVersion
+%%QT_INCDIR%%/QtWebViewQuick/qtwebviewquickexports.h
 %%QT_INCDIR%%/QtWebViewQuick/qtwebviewquickversion.h
 lib/cmake/Qt6BuildInternals/StandaloneTests/QtWebViewTestsConfig.cmake
 lib/cmake/Qt6Qml/QmlPlugins/Qt6qtwebviewquickpluginAdditionalTargetInfo.cmake
@@ -41,6 +42,7 @@ lib/cmake/Qt6WebView/Qt6WebViewDependencies.cmake
 lib/cmake/Qt6WebView/Qt6WebViewPlugins.cmake
 lib/cmake/Qt6WebView/Qt6WebViewTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/Qt6WebView/Qt6WebViewTargets.cmake
+lib/cmake/Qt6WebView/Qt6WebViewVersionlessAliasTargets.cmake
 lib/cmake/Qt6WebView/Qt6WebViewVersionlessTargets.cmake
 lib/cmake/Qt6WebViewQuick/Qt6WebViewQuickAdditionalTargetInfo.cmake
 lib/cmake/Qt6WebViewQuick/Qt6WebViewQuickConfig.cmake
@@ -49,6 +51,7 @@ lib/cmake/Qt6WebViewQuick/Qt6WebViewQuickConfigVersionImpl.cmake
 lib/cmake/Qt6WebViewQuick/Qt6WebViewQuickDependencies.cmake
 lib/cmake/Qt6WebViewQuick/Qt6WebViewQuickTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/Qt6WebViewQuick/Qt6WebViewQuickTargets.cmake
+lib/cmake/Qt6WebViewQuick/Qt6WebViewQuickVersionlessAliasTargets.cmake
 lib/cmake/Qt6WebViewQuick/Qt6WebViewQuickVersionlessTargets.cmake
 %%QT_LIBDIR%%/libQt6WebView.prl
 %%QT_LIBDIR%%/libQt6WebView.so
@@ -68,6 +71,7 @@ lib/cmake/Qt6WebViewQuick/Qt6WebViewQuickVersionlessTargets.cmake
 %%QT_QMLDIR%%/QtWebView/libqtwebviewquickplugin.so
 %%QT_QMLDIR%%/QtWebView/plugins.qmltypes
 %%QT_QMLDIR%%/QtWebView/qmldir
+%%QT_SBOMDIR%%/qtwebview-%%FULLVER%%.spdx
 libdata/pkgconfig/Qt6WebView.pc
 libdata/pkgconfig/Qt6WebViewQuick.pc
 %%QT_DATADIR%%/modules/WebView.json

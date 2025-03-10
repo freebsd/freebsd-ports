@@ -1,17 +1,15 @@
 PORTNAME=	vvenc
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.12.0-rc1
+DISTVERSION=	1.13.0
 CATEGORIES=	multimedia
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Versatile Video Coding (VVC) encoder
-WWW=		https://www.hhi.fraunhofer.de/en/departments/vca/technologies-and-solutions/h266-vvc.html
+WWW=		https://www.hhi.fraunhofer.de/en/departments/vca/technologies-and-solutions/h266-vvc.html \
+		https://github.com/fraunhoferhhi/vvenc
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
-
-BROKEN_i386=	compilation fails: error: use of undeclared identifier 'read_x86_extension_flags'
-BROKEN_powerpc=	compilation fails: error: use of undeclared identifier 'read_x86_extension_flags'
 
 USES=		cmake:testing compiler:c++14-lang
 USE_LDCONFIG=	yes
@@ -19,6 +17,7 @@ USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	fraunhoferhhi
 
+CMAKE_OFF=	VVENC_ENABLE_WERROR
 CMAKE_ON=	BUILD_SHARED_LIBS
 
 .include <bsd.port.options.mk>

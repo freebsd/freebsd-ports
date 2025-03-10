@@ -117,7 +117,7 @@ include/k3bvideodvdtitledetectclippingjob.h
 include/k3bvideodvdtitletranscodingjob.h
 include/k3bvideodvdvideostream.h
 include/k3bwavefilewriter.h
-lib/libexec/kauth/k3bhelper
+lib/libexec/kf6/kauth/k3bhelper
 lib/libk3bdevice.so
 lib/libk3bdevice.so.8
 lib/libk3bdevice.so.8.0.0
@@ -139,7 +139,7 @@ lib/libk3blib.so.8.0.0
 %%QT_PLUGINDIR%%/k3b_plugins/kcms/kcm_k3blameencoder.so
 %%QT_PLUGINDIR%%/k3b_plugins/kcms/kcm_k3boggvorbisencoder.so
 %%QT_PLUGINDIR%%/k3b_plugins/kcms/kcm_k3bsoxencoder.so
-%%QT_PLUGINDIR%%/kf5/kio/videodvd.so
+%%QT_PLUGINDIR%%/kf6/kio/videodvd.so
 share/applications/org.kde.k3b.desktop
 share/dbus-1/system-services/org.kde.k3b.service
 share/dbus-1/system.d/org.kde.k3b.conf
@@ -171,7 +171,6 @@ share/icons/hicolor/scalable/mimetypes/application-x-k3b.svgz
 %%DATADIR%%/icons/hicolor/128x128/devices/media-optical-dvd-video.png
 %%DATADIR%%/icons/hicolor/128x128/devices/media-optical-mixed-cd.png
 %%DATADIR%%/icons/hicolor/128x128/devices/media-optical-video.png
-%%DATADIR%%/icons/hicolor/16x16/actions/musicbrainz.png
 %%DATADIR%%/icons/hicolor/16x16/actions/tools-rip-audio-cd.png
 %%DATADIR%%/icons/hicolor/16x16/actions/tools-rip-video-cd.png
 %%DATADIR%%/icons/hicolor/16x16/actions/tools-rip-video-dvd.png
@@ -206,7 +205,6 @@ share/icons/hicolor/scalable/mimetypes/application-x-k3b.svgz
 %%DATADIR%%/icons/hicolor/48x48/devices/media-optical-dvd-video.png
 %%DATADIR%%/icons/hicolor/48x48/devices/media-optical-mixed-cd.png
 %%DATADIR%%/icons/hicolor/48x48/devices/media-optical-video.png
-%%DATADIR%%/icons/hicolor/64x64/actions/musicbrainz.png
 %%DATADIR%%/icons/hicolor/64x64/actions/tools-rip-audio-cd.png
 %%DATADIR%%/icons/hicolor/64x64/actions/tools-rip-video-cd.png
 %%DATADIR%%/icons/hicolor/64x64/actions/tools-rip-video-dvd.png
@@ -298,17 +296,14 @@ share/icons/hicolor/scalable/mimetypes/application-x-k3b.svgz
 %%DATADIR%%/pics/quant/project_right.png
 %%DATADIR%%/pics/quant/splash.png
 %%DATADIR%%/pics/quant/welcome_bg.png
-share/knotifications5/k3b.notifyrc
+share/kio/servicemenus/k3b_create_audio_cd.desktop
+share/kio/servicemenus/k3b_create_data_project.desktop
+share/kio/servicemenus/k3b_create_video_cd.desktop
+share/kio/servicemenus/k3b_write_bin_image.desktop
+share/kio/servicemenus/k3b_write_iso_image.desktop
+share/knotifications6/k3b.notifyrc
 share/knsrcfiles/k3btheme.knsrc
 share/konqsidebartng/virtual_folders/services/videodvd.desktop
-share/kservices5/ServiceMenus/k3b_create_audio_cd.desktop
-share/kservices5/ServiceMenus/k3b_create_data_project.desktop
-share/kservices5/ServiceMenus/k3b_create_video_cd.desktop
-share/kservices5/ServiceMenus/k3b_write_bin_image.desktop
-share/kservices5/ServiceMenus/k3b_write_iso_image.desktop
-share/kservicetypes5/k3bplugin.desktop
-share/kxmlgui5/k3b/k3bdeviceui.rc
-share/kxmlgui5/k3b/k3bui.rc
 share/locale/ar/LC_MESSAGES/k3b.mo
 share/locale/ar/LC_MESSAGES/kio_videodvd.mo
 share/locale/ar/LC_MESSAGES/libk3bdevice.mo
@@ -572,7 +567,7 @@ share/locale/zh_TW/LC_MESSAGES/libk3bdevice.mo
 share/metainfo/org.kde.k3b.appdata.xml
 share/mime/packages/x-k3b.xml
 share/polkit-1/actions/org.kde.k3b.policy
-share/qlogging-categories5/k3b.categories
+share/qlogging-categories6/k3b.categories
 share/solid/actions/k3b_audiocd_rip.desktop
 share/solid/actions/k3b_copy_disc.desktop
 share/solid/actions/k3b_create_audio_cd_from_blank_medium.desktop

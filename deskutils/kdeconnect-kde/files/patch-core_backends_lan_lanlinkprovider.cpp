@@ -1,7 +1,7 @@
---- core/backends/lan/lanlinkprovider.cpp.orig	2022-11-30 00:45:32 UTC
+--- core/backends/lan/lanlinkprovider.cpp.orig	2023-12-18 22:14:59 UTC
 +++ core/backends/lan/lanlinkprovider.cpp
-@@ -255,6 +255,16 @@ void LanLinkProvider::udpBroadcastReceived()
-         }
+@@ -291,6 +291,16 @@ void LanLinkProvider::udpBroadcastReceived()
+         m_lastConnectionTime[deviceId] = now;
  
          int tcpPort = receivedPacket->get<int>(QStringLiteral("tcpPort"));
 +        // convert IPv6 addresses of type "v4-mapped" to IPv4

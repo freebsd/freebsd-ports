@@ -2,6 +2,8 @@ bin/calculator
 bin/deforaos-session
 bin/stopwatch
 lib/Locker/plugins/panel.so
+lib/Mailer/plugins/notes.so
+lib/Mailer/plugins/todo.so
 lib/Panel/applets/keyboard.so
 lib/Panel/applets/phone.so
 lib/Panel/applets/player.so

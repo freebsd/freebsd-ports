@@ -8,9 +8,9 @@ MAINTAINER=	buganini@gmail.com
 COMMENT=	Linguistic Syntax/Semantics tree drawing editor
 WWW=		https://treeform.blogspot.com/
 
-USES=		zip
+USES=		java zip
+
 NO_BUILD=	yes
-USE_JAVA=	yes
 SUB_FILES=	treeform
 
 WRKSRC=		${WRKDIR}/TreeForm

@@ -1,5 +1,6 @@
 PORTNAME=	qca
 DISTVERSION=	2.3.9
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	KDE/stable/qca/${PORTVERSION}
 PKGNAMESUFFIX=	-${FLAVOR}
@@ -42,7 +43,7 @@ OPTIONS_DEFAULT=GNUPG OPENSSL
 OPTIONS_SUB=	yes
 
 BOTAN_DESC=		Build with Botan crypto library
-BOTAN_LIB_DEPENDS=	libbotan-2.so:security/botan2
+BOTAN_LIB_DEPENDS=	libbotan-3.so:security/botan3
 BOTAN_CMAKE_ON=		-DWITH_botan_PLUGIN=yes
 
 GCRYPT_LIB_DEPENDS=	libgcrypt.so:security/libgcrypt

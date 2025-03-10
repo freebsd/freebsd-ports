@@ -1,8 +1,9 @@
 PORTNAME=	grpc-google-iam-v1
-PORTVERSION=	0.13.1
+PORTVERSION=	0.14.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	grpc_google_iam_v1-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	GRPC library for the google-iam-v1 service

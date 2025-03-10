@@ -1,6 +1,6 @@
 PORTNAME=	data
-PORTVERSION=	1.0.6
-PORTREVISION=	2
+DISTVERSION=	1.0.6
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	https://www.libsdl.org/projects/quake/data/:qs
 PKGNAMEPREFIX=	${Q1PKGNAMEPREFIX}
@@ -9,7 +9,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:qs
 DIST_SUBDIR=	${PKGNAMEPREFIX}${PORTNAME}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	vvd@FreeBSD.org
 COMMENT=	Quake data files
 WWW=		http://www.idsoftware.com/games/quake/quake/
 
@@ -20,12 +20,15 @@ NO_WRKSUBDIR=	yes
 PROGFILE=	qwsv-2.30-glibc-i386-unknown-linux2.0.tar.gz
 SKINFILES=	skinbase.zip qw_skins.zip
 
-OPTIONS_DEFINE=	FULLGAME QW_DATA QW_SKINS
-OPTIONS_DEFAULT=	QW_DATA QW_SKINS
+OPTIONS_DEFINE=		FULLGAME QUAKE_MAPS QW_DATA QW_SKINS
+OPTIONS_DEFAULT=	QUAKE_MAPS QW_DATA QW_SKINS
 
-FULLGAME_DESC=	Install full game version
-QW_DATA_DESC=	Install QuakeWorld data
-QW_SKINS_DESC=	Install QuakeWorld skins (implies QW_DATA)
+FULLGAME_DESC=		Install full game version
+QUAKE_MAPS_DESC=	Install popular Quake 1 and QuakeWorld maps
+QW_DATA_DESC=		Install QuakeWorld data
+QW_SKINS_DESC=		Install QuakeWorld skins (implies QW_DATA)
+
+QUAKE_MAPS_RUN_DEPENDS=	quake-maps>0:games/quake-maps
 
 .include "Makefile.include"	# must be included before bsd.port.options.mk
 .include <bsd.port.options.mk>

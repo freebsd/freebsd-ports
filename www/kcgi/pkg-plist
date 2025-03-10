@@ -112,6 +112,5 @@ share/man/man3/kxml_write.3.gz
 share/man/man8/kfcgi.8.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sample.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/samplepp.cc
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sample-cgi.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sample-fcgi.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/template.xml

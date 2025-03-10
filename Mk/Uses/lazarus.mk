@@ -18,6 +18,11 @@
 # defined the following:
 #
 # NO_LAZBUILD=	yes
+#
+# If the port needs lazarus devel version instead of release version as build
+# dependency,  you can defined the following:
+#
+# WANT_LAZARUS_DEVEL=	yes
 #                
 # Variables for ports:
 #
@@ -68,13 +73,10 @@ LAZARUS_ARCH=		${ARCH:S/amd64/x86_64/}
 LAZARUS_PROJECT_FILES?=	# empty
 LAZARUS_DIR?=		${LOCALBASE}/share/lazarus-${LAZARUS_VER}
 
-ONLY_FOR_ARCHS=		i386 amd64
-ONLY_FOR_ARCHS_REASON=	not yet ported to anything other than i386 and amd64
-
-.  if !defined(WANT_FPC_DEVEL)
-FPC_DEVELSUFFIX=	#
-.  else
+.  if (defined(WANT_FPC_DEVEL) && !empty(WANT_FPC_DEVEL)) || ${ARCH:Maarch64}
 FPC_DEVELSUFFIX=	-devel
+.  else
+FPC_DEVELSUFFIX=	#
 .  endif
 
 BUILDNAME=		${LAZARUS_ARCH}-${OPSYS:tl}
@@ -102,10 +104,10 @@ FLAVOR=		${FLAVORS:[1]}
 
 LAZARUS_PKGNAMESUFFIX=	-${FLAVOR}
 
-.  if !defined(WANT_LAZARUS_DEVEL)
-LAZARUS_DEVELSUFFIX=	#
-.  else
+.  if (defined(WANT_LAZARUS_DEVEL) && !empty(WANT_LAZARUS_DEVEL)) || ${ARCH:Maarch64}
 LAZARUS_DEVELSUFFIX=	-devel
+.  else
+LAZARUS_DEVELSUFFIX=	#
 .  endif
 
 .  if ${lazarus_ARGS:Mgtk2} || ${FLAVOR} == gtk2

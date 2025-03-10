@@ -1,5 +1,5 @@
 PORTNAME=	pqiv
-PORTVERSION=	2.13.1
+PORTVERSION=	2.13.2
 CATEGORIES=	graphics
 
 MAINTAINER=	danilo@FreeBSD.org
@@ -12,6 +12,8 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2
 BUILD_DEPENDS=	bash:shells/bash
 
+USES=		compiler gettext-runtime gmake gnome pkgconfig xorg
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	phillipberndt
 
@@ -20,16 +22,15 @@ OPTIONS_DEFINE=	DOCS
 OPTIONS_SINGLE=		GTK
 OPTIONS_SINGLE_GTK=	GTK2 GTK3
 
-OPTIONS_GROUP=		BACKENDS
-OPTIONS_GROUP_BACKENDS=	LIBARCHIVE LIBAV PIXBUF POPPLER SPECTRE WAND WEBP
+OPTIONS_MULTI=		BACKENDS
+OPTIONS_MULTI_BACKENDS=	LIBARCHIVE LIBAV PIXBUF POPPLER SPECTRE WAND WEBP
 LIBARCHIVE_DESC=	Libarchive formats support
 LIBAV_DESC=		Video support
 SPECTRE_DESC=		PS/EPS support
 WAND_DESC=		ImageMagick image processing support
 
-OPTIONS_DEFAULT=	GTK2 PIXBUF
+OPTIONS_DEFAULT=	GTK3 LIBARCHIVE LIBAV PIXBUF POPPLER WEBP
 
-USES=		compiler gettext-runtime gmake gnome pkgconfig xorg
 USE_XORG=	x11
 USE_GNOME=	cairo gdkpixbuf2
 HAS_CONFIGURE=	yes

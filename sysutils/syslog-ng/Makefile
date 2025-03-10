@@ -1,5 +1,6 @@
 PORTNAME=	syslog-ng
-DISTVERSION=	4.8.0
+DISTVERSION=	4.8.1
+PORTREVISION=	5
 CATEGORIES=	sysutils
 # official master site:
 MASTER_SITES=	https://github.com/balabit/syslog-ng/releases/download/syslog-ng-${DISTVERSION}/
@@ -29,7 +30,7 @@ CONFLICTS?=	syslog-ng syslog-ng[0-9] \
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
 
 MAKE_JOBS_UNSAFE=	yes
-OPTIONS_DEFINE=	TCP_WRAPPERS SQL SPOOF IPV6 SMTP JSON GEOIP2 DOCS REDIS JAVA PYTHON PYTHON_MOD MONGO CURL JAVA_MOD AMQP RIEMANN KAFKA SNMPDEST GRPC
+OPTIONS_DEFINE=	TCP_WRAPPERS SQL SPOOF IPV6 SMTP JSON GEOIP2 DOCS REDIS JAVA PYTHON PYTHON_MOD MONGO CURL JAVA_MOD AMQP RIEMANN KAFKA SNMPDEST GRPC MQTT
 OPTIONS_DEFAULT=	CURL JSON
 TCP_WRAPPERS_DESC=	Build with TCP Wrappers
 SQL_DESC=		Build with database (libdbi) support
@@ -48,6 +49,7 @@ RIEMANN_DESC=		Build with Riemann support
 KAFKA_DESC=		Build with Kafka (librdkafka) support
 SNMPDEST_DESC=		Build with SNMP destination (net-snmp) support
 GRPC_DESC=		Build with experimental GRPC-based modules (OpenTelemetry, Loki, etc.)
+MQTT_DESC=		Build with MQTT support
 
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	syslog-ng
@@ -116,7 +118,7 @@ JSON_PLIST_FILES=		lib/syslog-ng/libjson-plugin.so \
 				share/syslog-ng/include/scl/cim/template.conf
 
 JAVA_CONFIGURE_ENABLE=		java
-JAVA_USE=			JAVA=yes
+JAVA_USES=			java
 JAVA_PLIST_FILES=		lib/syslog-ng/libmod-java.so \
 				lib/syslog-ng/java-modules/syslog-ng-core.jar
 
@@ -168,7 +170,7 @@ PYTHON_PLIST_FILES=		lib/syslog-ng/libmod-python.so \
 		lib/syslog-ng/python/syslogng/__pycache__/persist%%PYTHON_EXT_SUFFIX%%.pyc \
 		lib/syslog-ng/python/syslogng/__pycache__/source%%PYTHON_EXT_SUFFIX%%.pyc \
 		lib/syslog-ng/python/syslogng/__pycache__/template%%PYTHON_EXT_SUFFIX%%.pyc \
-		lib/syslog-ng/python/syslogng/__pycache__/reloc%%PYTHON_EXT_SUFFIX%%.pyc \
+                lib/syslog-ng/python/syslogng/__pycache__/reloc%%PYTHON_EXT_SUFFIX%%.pyc \
 		lib/syslog-ng/python/syslogng/dest.py \
 		lib/syslog-ng/python/syslogng/logger.py \
 		lib/syslog-ng/python/syslogng/message.py \
@@ -176,7 +178,7 @@ PYTHON_PLIST_FILES=		lib/syslog-ng/libmod-python.so \
 		lib/syslog-ng/python/syslogng/persist.py \
 		lib/syslog-ng/python/syslogng/source.py \
 		lib/syslog-ng/python/syslogng/template.py \
-		lib/syslog-ng/python/syslogng/reloc.py \
+                lib/syslog-ng/python/syslogng/reloc.py \
 		lib/syslog-ng/python/syslogng/__init__.py \
 		lib/syslog-ng/python/syslogng/__pycache__/__init__.cpython-${PYTHON_SUFFIX}.pyc \
 		lib/syslog-ng/python/syslogng/debuggercli/__init__.py \
@@ -185,9 +187,9 @@ PYTHON_PLIST_FILES=		lib/syslog-ng/libmod-python.so \
 		lib/syslog-ng/python/syslogng/debuggercli/__pycache__/choicecompleter.cpython-${PYTHON_SUFFIX}.pyc \
 		lib/syslog-ng/python/syslogng/debuggercli/commandlinelexer.py \
 		lib/syslog-ng/python/syslogng/debuggercli/__pycache__/commandlinelexer.cpython-${PYTHON_SUFFIX}.pyc \
-		lib/syslog-ng/python/syslogng/debuggercli/completer.py \
+		lib/syslog-ng/python/syslogng/debuggercli/completer.py  \
 		lib/syslog-ng/python/syslogng/debuggercli/__pycache__/completer.cpython-${PYTHON_SUFFIX}.pyc \
-		lib/syslog-ng/python/syslogng/debuggercli/completerlang.py \
+		lib/syslog-ng/python/syslogng/debuggercli/completerlang.py  \
 		lib/syslog-ng/python/syslogng/debuggercli/__pycache__/completerlang.cpython-${PYTHON_SUFFIX}.pyc \
 		lib/syslog-ng/python/syslogng/debuggercli/debuggercli.py \
 		lib/syslog-ng/python/syslogng/debuggercli/__pycache__/debuggercli.cpython-${PYTHON_SUFFIX}.pyc \
@@ -231,15 +233,15 @@ PYTHON_MOD_PLIST_FILES=		lib/syslog-ng/python/syslogng-1.0-py%%PYTHON_VER%%.egg-
 		lib/syslog-ng/python/syslogng/modules/hypr/__init__.py \
 		lib/syslog-ng/python/syslogng/modules/hypr/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.pyc \
 		lib/syslog-ng/python/syslogng/modules/hypr/scl/hypr.conf \
-		lib/syslog-ng/python/syslogng/modules/s3/__init__.py \
-		lib/syslog-ng/python/syslogng/modules/s3/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.pyc \
-		lib/syslog-ng/python/syslogng/modules/s3/__pycache__/compressable_file_buffer%%PYTHON_EXT_SUFFIX%%.pyc \
-		lib/syslog-ng/python/syslogng/modules/s3/__pycache__/s3_destination%%PYTHON_EXT_SUFFIX%%.pyc \
-		lib/syslog-ng/python/syslogng/modules/s3/__pycache__/s3_object%%PYTHON_EXT_SUFFIX%%.pyc \
-		lib/syslog-ng/python/syslogng/modules/s3/compressable_file_buffer.py \
-		lib/syslog-ng/python/syslogng/modules/s3/s3_destination.py \
-		lib/syslog-ng/python/syslogng/modules/s3/s3_object.py \
-		lib/syslog-ng/python/syslogng/modules/s3/scl/s3.conf
+                lib/syslog-ng/python/syslogng/modules/s3/__init__.py \
+                lib/syslog-ng/python/syslogng/modules/s3/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.pyc \
+                lib/syslog-ng/python/syslogng/modules/s3/__pycache__/compressable_file_buffer%%PYTHON_EXT_SUFFIX%%.pyc \
+                lib/syslog-ng/python/syslogng/modules/s3/__pycache__/s3_destination%%PYTHON_EXT_SUFFIX%%.pyc \
+                lib/syslog-ng/python/syslogng/modules/s3/__pycache__/s3_object%%PYTHON_EXT_SUFFIX%%.pyc \
+                lib/syslog-ng/python/syslogng/modules/s3/compressable_file_buffer.py \
+                lib/syslog-ng/python/syslogng/modules/s3/s3_destination.py \
+                lib/syslog-ng/python/syslogng/modules/s3/s3_object.py \
+                lib/syslog-ng/python/syslogng/modules/s3/scl/s3.conf
 
 
 CURL_CONFIGURE_OFF=		--with-libcurl=off
@@ -262,22 +264,24 @@ GRPC_CONFIGURE_ON=		--enable-cpp
 GRPC_CONFIGURE_OFF=		--disable-cpp
 GRPC_LIB_DEPENDS=		libgrpc.so:devel/grpc
 GRPC_PLIST_FILES=		lib/libgrpc-protos.so \
-				lib/libgrpc-protos.so.0 \
-				lib/libgrpc-protos.so.0.0.0 \
-				lib/syslog-ng/libloki.so \
-				lib/syslog-ng/libotel.so \
-				lib/syslog-ng/libbigquery.so \
+ 				lib/libgrpc-protos.so.0 \
+ 				lib/libgrpc-protos.so.0.0.0 \
+ 				lib/syslog-ng/libloki.so \
+ 				lib/syslog-ng/libotel.so \
+ 				lib/syslog-ng/libbigquery.so \
 				lib/syslog-ng/libcloud_auth.so
+
+MQTT_CONFIGURE_ON=		--enable-mqtt --with-libpaho-mqtt=${PREFIX}
+MQTT_CONFIGURE_OFF=		--disable-mqtt
+MQTT_LIB_DEPENDS=		libpaho-mqtt3cs.so:net/libpaho-mqtt3
+MQTT_PLIST_FILES=		lib/syslog-ng/libmqtt.so
+
 
 
 .include <bsd.port.pre.mk>
 
 .if !${PORT_OPTIONS:MJSON}
 BROKEN=		Default configuration does not currently support non-JSON builds
-.endif
-
-.if ${PORT_OPTIONS:MJAVA_MOD}
-BROKEN=		Java modules do not build currently
 .endif
 
 post-patch:

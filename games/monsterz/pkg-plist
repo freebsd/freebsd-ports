@@ -21,5 +21,4 @@
 %%DATADIR%%/sound/pop.wav
 %%DATADIR%%/sound/warning.wav
 %%DATADIR%%/sound/whip.wav
-share/pixmaps/monsterz.png
-@sample(,games,664) %%SCOREDIR%%/monsterz.sample
+@sample(games,games,664) %%SCOREDIR%%/monsterz.sample

@@ -1,0 +1,8 @@
+wgcf is an unofficial, cross-platform CLI for Cloudflare Warp.
+
+Features:
+- Register new account
+- Change license key to use existing Warp+ subscription
+- Generate WireGuard profile
+- Check account status
+- Print trace information to debug Warp/Warp+ status

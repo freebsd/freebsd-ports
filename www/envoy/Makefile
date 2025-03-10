@@ -1,7 +1,7 @@
 PORTNAME=	envoy
 PORTVERSION=	1.26.1
 DISTVERSIONPREFIX=	v
-PORTREVISION=	4
+PORTREVISION=	9
 CATEGORIES=	www
 MASTER_SITES=	https://storage.googleapis.com/quiche-envoy-integration/:gurl
 DISTFILES=	dd4080fec0b443296c0ed0036e1e776df8813aa7${EXTRACT_SUFX}:gurl
@@ -11,9 +11,6 @@ COMMENT=	Edge and service proxy for cloud-native applications
 WWW=		https://www.envoyproxy.io/
 
 LICENSE=	APACHE20
-
-DEPRECATED=	Depends on upstream expireda devel/libopentracing
-EXPIRATION_DATE=2024-08-31
 
 BROKEN_SSL=	base openssl libressl libressl-devel
 BROKEN_SSL_REASON=	requires BoringSSL
@@ -34,7 +31,6 @@ LIB_DEPENDS=	libabsl_base.so:devel/abseil \
 		libgpr.so:devel/grpc \
 		libicuuc.so:devel/icu \
 		libnghttp2.so:www/libnghttp2 \
-		libopentracing.so:devel/libopentracing \
 		libprotobuf.so:devel/protobuf \
 		libre2.so:devel/re2 \
 		libxxhash.so:devel/xxhash \

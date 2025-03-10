@@ -1,5 +1,18 @@
---- meson.build.orig	2023-01-18 22:20:52 UTC
+imv: directly link against everything that it uses, needed for ICU 76
+From NetBSD pkgsrc:
+http://cvsweb.netbsd.org/bsdweb.cgi/pkgsrc/graphics/imv/patches/patch-meson.build?rev=1.2;content-type=text%2Fplain
+
+--- meson.build.orig	2024-02-20 22:30:06 UTC
 +++ meson.build
+@@ -42,7 +42,7 @@ if _unicode == 'icu'
+ 
+ _unicode = get_option('unicode')
+ if _unicode == 'icu'
+-  unicode_lib = dependency('icu-io')
++  unicode_lib = [dependency('icu-io'), dependency('icu-uc')]
+   add_project_arguments('-DIMV_USE_ICU', language: 'c')
+ elif _unicode == 'grapheme'
+   unicode_lib = cc.find_library('grapheme')
 @@ -120,7 +120,7 @@ foreach backend : [
  
  enabled_backends = []
@@ -9,7 +22,7 @@
    ['libtiff', 'dependency', 'libtiff-4', []],
    ['libpng', 'dependency', 'libpng', []],
    ['libjpeg', 'dependency', 'libturbojpeg', []],
-@@ -204,6 +204,7 @@ install_data(
+@@ -205,6 +205,7 @@ install_data(
    files('files/imv_config'),
    install_dir: get_option('sysconfdir'),
    install_mode: 'rw-r--r--',

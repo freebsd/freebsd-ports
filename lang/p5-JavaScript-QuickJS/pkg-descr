@@ -1,0 +1,6 @@
+JavaScript::QuickJS embeds Fabrice Bellard's QuickJS engine into a Perl XS
+module. You can thus run JavaScript (ES2020 specification) directly in your Perl
+programs.
+
+This distribution includes all needed C code; unlike with most XS modules that
+interface with C libraries, you don't need QuickJS pre-installed on your system.

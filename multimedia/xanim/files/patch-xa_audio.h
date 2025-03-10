@@ -1,6 +1,6 @@
---- xa_audio.h.old	Thu Apr 11 08:48:39 2002
-+++ xa_audio.h	Thu Apr 11 08:49:25 2002
-@@ -139,7 +139,11 @@
+--- xa_audio.h.orig	1999-03-21 22:36:25 UTC
++++ xa_audio.h
+@@ -139,7 +139,11 @@ extern xaULONG xa_forkit;
  #define _FILE_DSP "/dev/dsp"
  #define _FILE_MIXER "/dev/mixer"
  #ifdef __FreeBSD__

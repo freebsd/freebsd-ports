@@ -1,5 +1,6 @@
 PORTNAME=	bitvector
 PORTVERSION=	3.5.0
+PORTREVISION=	1
 CATEGORIES=	math python
 MASTER_SITES=	PYPI \
 		https://engineering.purdue.edu/kak/dist/

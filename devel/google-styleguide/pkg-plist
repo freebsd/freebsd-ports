@@ -1,11 +1,8 @@
-bin/cpplint.py
-bin/cpplint_unittest.py
 %%PORTDOCS%%%%DOCSDIR%%/CODE_OF_CONDUCT.md
 %%PORTDOCS%%%%DOCSDIR%%/README.md
 %%PORTDOCS%%%%DOCSDIR%%/Rguide.md
 %%PORTDOCS%%%%DOCSDIR%%/angularjs-google-style.html
 %%PORTDOCS%%%%DOCSDIR%%/cppguide.html
-%%PORTDOCS%%%%DOCSDIR%%/cpplint/README
 %%PORTDOCS%%%%DOCSDIR%%/csharp-style.md
 %%PORTDOCS%%%%DOCSDIR%%/docguide/README.md
 %%PORTDOCS%%%%DOCSDIR%%/docguide/READMEs.md

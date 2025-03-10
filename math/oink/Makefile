@@ -1,6 +1,6 @@
 PORTNAME=	oink
 DISTVERSION=	g20210710
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -9,6 +9,8 @@ WWW=		https://github.com/trolando/oink
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+BROKEN=		fails to build with boost-1.85+
 
 LIB_DEPENDS=	libboost_iostreams.so:devel/boost-libs
 

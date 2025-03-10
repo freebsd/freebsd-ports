@@ -1,7 +1,7 @@
 - Assume NEON is enabled on armv7
 - Implement runtime detection on FreeBSD
 
---- vpx_ports/aarch32_cpudetect.c.orig	2024-01-09 21:12:22 UTC
+--- vpx_ports/aarch32_cpudetect.c.orig	2024-10-23 18:24:57 UTC
 +++ vpx_ports/aarch32_cpudetect.c
 @@ -12,7 +12,7 @@
  #include "./vpx_config.h"
@@ -12,15 +12,15 @@
  
  static int arm_get_cpu_caps(void) {
    // This function should actually be a no-op. There is no way to adjust any of
-@@ -57,9 +57,23 @@ static int arm_get_cpu_caps(void) {
+@@ -57,10 +57,24 @@ static int arm_get_cpu_caps(void) {
    return flags;
  }
  
--#elif defined(__linux__)  // end defined(AOM_USE_ANDROID_CPU_FEATURES)
-+#elif defined(__linux__) || defined(__FreeBSD__)  // end defined(AOM_USE_ANDROID_CPU_FEATURES)
+-#elif defined(__linux__)  // end defined(VPX_USE_ANDROID_CPU_FEATURES)
++#elif defined(__linux__) || defined(__FreeBSD__)  // end defined(VPX_USE_ANDROID_CPU_FEATURES)
  
  #include <sys/auxv.h>
-+
+ 
 +#if defined(__FreeBSD__)
 +static unsigned long getauxval(unsigned long type)
 +{
@@ -34,6 +34,7 @@
 +    return ret;
 +}
 +#endif
- 
++
  // Define hwcap values ourselves: building with an old auxv header where these
  // hwcap values are not defined should not prevent features from being enabled.
+ #define VPX_AARCH32_HWCAP_NEON (1 << 12)

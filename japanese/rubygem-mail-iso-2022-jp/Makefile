@@ -1,6 +1,5 @@
 PORTNAME=	mail-iso-2022-jp
-PORTVERSION=	2.0.9
-PORTREVISION=	1
+PORTVERSION=	2.1.0
 CATEGORIES=	japanese mail rubygems
 MASTER_SITES=	RG
 
@@ -10,7 +9,7 @@ WWW=		https://github.com/kuroda/mail-iso-2022-jp
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-mail>=2.8.0,2:mail/rubygem-mail
+RUN_DEPENDS=	rubygem-mail>=2.6.1,2<2.8.1_99,2:mail/rubygem-mail
 
 USES=		gem
 

@@ -172,6 +172,8 @@ share/metainfo/com.corsixth.corsixth.metainfo.xml
 %%DATADIR%%/Lua/diseases/tv_personalities.lua
 %%DATADIR%%/Lua/diseases/uncommon_cold.lua
 %%DATADIR%%/Lua/diseases/unexpected_swelling.lua
+%%DATADIR%%/Lua/earthquake.lua
+%%DATADIR%%/Lua/endconditions.lua
 %%DATADIR%%/Lua/entities/humanoid.lua
 %%DATADIR%%/Lua/entities/humanoids/grim_reaper.lua
 %%DATADIR%%/Lua/entities/humanoids/inspector.lua
@@ -248,6 +250,7 @@ share/metainfo/com.corsixth.corsixth.metainfo.xml
 %%DATADIR%%/Lua/languages/spanish.lua
 %%DATADIR%%/Lua/languages/swedish.lua
 %%DATADIR%%/Lua/languages/traditional_chinese.lua
+%%DATADIR%%/Lua/languages/ukrainian.lua
 %%DATADIR%%/Lua/map.lua
 %%DATADIR%%/Lua/movie_player.lua
 %%DATADIR%%/Lua/objects/analyser.lua

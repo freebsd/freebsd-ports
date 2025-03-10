@@ -1,3 +1,3 @@
-TIMESTAMP = 1665854737
-SHA256 (libevdev-hid-tools-0f71fd65d83b28b744a2fe0a6cc1e3139921c721_GL0.tar.gz) = 06b1443cc17ce4f177675cb28a3fa3338fd3a33965e6d7a8ba8de28cd9927cd6
-SIZE (libevdev-hid-tools-0f71fd65d83b28b744a2fe0a6cc1e3139921c721_GL0.tar.gz) = 162075
+TIMESTAMP = 1732351551
+SHA256 (hid-tools-0.8.tar.bz2) = 019fad5c42e51631077fd5a7d9194e6bf97ffb7a15713ede2edc57300eba2d9c
+SIZE (hid-tools-0.8.tar.bz2) = 139381

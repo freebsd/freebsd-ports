@@ -13,18 +13,13 @@
  
  
  # ***** modify the following line (to "=false") if you're not using the
-@@ -51,19 +51,16 @@ DOCBOOK=$SGMLS/Davenport/dtd
- doElanPSInclude=true
- 
- 
--
- # Everything below this line should be pretty standard and not require
- # modification.
+@@ -57,13 +57,11 @@ doElanPSInclude=true
  
  #ulimit -c unlimited
  
- PARSER=nsgmls
+-PARSER=nsgmls
 -INSTANT=instant
++PARSER=onsgmls
 +INSTANT=oinstant
  INSTANT_OPT=-d
  
@@ -35,7 +30,7 @@
  
  error=false
  
-@@ -159,17 +156,8 @@ cat >> /tmp/dtm.$$.psinc <<\!
+@@ -159,17 +157,8 @@ cat >> /tmp/dtm.$$.psinc <<\!
  .ds f4\"
  !
  

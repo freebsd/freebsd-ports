@@ -1,14 +1,12 @@
 PORTNAME=	zmap
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.1.1
-PORTREVISION=	1
+DISTVERSION=	4.3.2
 CATEGORIES=	net
-MASTER_SITES=	SF/judy/judy/Judy-1.0.5/:judy
-DISTFILES=	Judy-1.0.5.tar.gz:judy
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Internet scanner
-WWW=		https://zmap.io/
+WWW=		https://zmap.io/ \
+		https://github.com/zmap/zmap
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -16,26 +14,19 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	gengetopt>0:devel/gengetopt \
 		gmake:devel/gmake
 LIB_DEPENDS=	libjson-c.so:devel/json-c \
+		libJudy.so:devel/judy \
 		libgmp.so:math/gmp \
+		libpcap.so:net/libpcap \
 		libunistring.so:devel/libunistring
 
 USES=		cmake:insource pkgconfig
 USE_GITHUB=	yes
 
-JUDY_WRKSRC=	${WRKDIR}/judy-1.0.5
-
-CFLAGS+=	-D_SYSTYPE_BSD \
-		-I${JUDY_WRKSRC}/src
-LDFLAGS+=	-L${JUDY_WRKSRC}/src/obj/.libs
+CFLAGS+=	-D_SYSTYPE_BSD
 
 CMAKE_ON=	FORCE_CONF_INSTALL
 
 MANPAGE=	zblacklist.1 zmap.1 ztee.1
-
-pre-build: # build the Judy library
-	@cd ${JUDY_WRKSRC} && \
-		${SETENV} ${MAKE_ENV} ./configure --disable-shared && \
-		${SETENV} ${MAKE_ENV} ${GMAKE}
 
 post-patch:
 	@${REINPLACE_CMD} -i '' -e 's|/etc/zmap|${LOCALBASE}/etc/zmap|g' -e 's|/usr/local|${LOCALBASE}|g' \

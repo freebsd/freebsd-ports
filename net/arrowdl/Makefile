@@ -1,11 +1,11 @@
 PORTNAME=	${GH_PROJECT:tl}
-PORTVERSION=	4.0.1
+PORTVERSION=	4.0.2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Multi-protocol standalone download manager
-WWW=		https://www.arrow-dl.com/ArrowDL/
+WWW=		https://www.arrow-dl.com/
 
 LICENSE=	LGPL21+
 

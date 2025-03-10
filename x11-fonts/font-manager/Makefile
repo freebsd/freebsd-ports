@@ -1,5 +1,5 @@
 PORTNAME=	font-manager
-DISTVERSION=	0.9.0
+DISTVERSION=	0.9.4
 CATEGORIES=	x11-fonts gnome
 
 MAINTAINER=	ehaupt@FreeBSD.org
@@ -19,7 +19,7 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libjson-glib-1.0.so:devel/json-glib
 
 USES=		compiler:c++11-lang desktop-file-utils gettext-tools gnome \
-		meson pkgconfig python shebangfix sqlite vala:build
+		libarchive meson pkgconfig python shebangfix sqlite vala:build
 USE_GITHUB=	yes
 GH_ACCOUNT=	FontManager
 USE_GNOME=	cairo glib20 gtk40 libxml2 pango

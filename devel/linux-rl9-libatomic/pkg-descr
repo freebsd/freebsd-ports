@@ -1,0 +1,4 @@
+Libatomic is a GCC-specific fallback implementation for atomics to
+allow architectures that don't always provide a full set of atomics
+to runtime-detect the existence of them, or fall back to the use of
+mutexes. This is the Linux version.

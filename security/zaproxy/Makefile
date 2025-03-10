@@ -1,6 +1,6 @@
 PORTNAME=	zaproxy
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.14.0
+DISTVERSION=	2.16.0
 PORTREVISION=	1
 CATEGORIES=	security java
 
@@ -10,14 +10,11 @@ WWW=		https://www.zaproxy.org/
 
 LICENSE=	APACHE20
 
-BUILD_DEPENDS=	gradle:devel/gradle
+BUILD_DEPENDS=	gradle8:devel/gradle8
 
-USES=		gettext-runtime
-USE_JAVA=	yes
-
+USES=		gettext-runtime java
 USE_GITHUB=	yes
-
-JAVA_VERSION=	11
+JAVA_VERSION=	22
 
 NO_ARCH=	yes
 
@@ -40,6 +37,7 @@ EXCLUDE_TASK=	--exclude-task :zap:downloadMainAddOns
 
 MAKE_ENV+=	JAVA_HOME=${JAVA_HOME}
 SUB_LIST=	JAVA_HOME=${JAVA_HOME}
+SUB_FILES=	pkg-message
 
 .if (${DEV_UPDATE_MODE} == "yes")
 EXCLUDE_TASK=	#
@@ -64,13 +62,13 @@ post-patch:
 .endif
 
 do-build:
-	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} gradle \
+	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} gradle8 \
 		--gradle-user-home ${DEPS_CACHE_DIR}/gradle-${PORTNAME} --project-cache-dir ${DEPS_CACHE_DIR}/gradle-${PORTNAME} \
 		${GRADLE_ARGS} --build-cache :zap:distCore ${EXCLUDE_TASK}
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/zap/build/distFiles/zap.sh ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
-	cd ${WRKSRC}/zap/build/distFiles/ && ${COPYTREE_SHARE} "db lang lib license plugin README scripts xml zap-${DISTVERSION}.jar" ${STAGEDIR}${JAVAJARDIR}/${PORTNAME}
+	cd ${WRKSRC}/zap/build/distFiles/ && ${COPYTREE_SHARE} "db lang lib license plugin README xml zap-${DISTVERSION}.jar" ${STAGEDIR}${JAVAJARDIR}/${PORTNAME}
 	cd ${WRKDIR}/mainAddOns && ${COPYTREE_SHARE} ./ ${STAGEDIR}${JAVAJARDIR}/${PORTNAME}/plugin
 	${INSTALL_DATA} ${WRKSRC}/zap/src/main/resources/resource/zap64x64.png ${STAGEDIR}${PREFIX}/share/pixmaps/zaproxy.png
 

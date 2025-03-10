@@ -9,17 +9,12 @@ BATCH=${BATCH:=no}
 POSTFIX_DEFAULT_MTA=${POSTFIX_DEFAULT_MTA:=no}
 
 # fixed vars
-PREFIX="%%PREFIX%%"
-ETCDIR="%%ETCDIR%%"
-DAEMONDIR="%%DAEMONDIR%%"
-META_DIRECTORY="%%META_DIRECTORY%%"
-READMEDIR="%%READMEDIR%%"
-MC_TEMPLATE="%%DATADIR%%/mailer.conf.postfix"
+MC_TEMPLATE="${PKG_ROOTDIR}${PKG_PREFIX}/share/postfix/mailer.conf.postfix"
 
 # FreeBSD <= 10.3
-MC_BASE="/etc/mail/mailer.conf"
+MC_BASE="${PKG_ROOTDIR}etc/mail/mailer.conf"
 # FreeBSD >= 10.3 (and current)
-MC_LOCALBASE="%%LOCALBASE%%/etc/mail/mailer.conf"
+MC_LOCALBASE="${PKG_ROOTDIR}%%LOCALBASE%%/etc/mail/mailer.conf"
 USE_LOCALBASE_MAILER_CONF="%%USE_LOCALBASE_MAILER_CONF%%"
 
 if [ "${POSTFIX_DEFAULT_MTA}" = "no" ]; then
@@ -54,7 +49,7 @@ show_not_activated_msg() {
 	echo "To finish installation run the following commands:"
 	echo
 	if [ "${USE_LOCALBASE_MAILER_CONF}" = "yes" ]; then
-		echo "  mkdir -p %%LOCALBASE%%/etc/mail"
+		echo "  mkdir -p ${PKG_ROOTDIR}%%LOCALBASE%%/etc/mail"
 	else
 		echo "  mv -f ${mailerconf} ${mailerconf}.old"
 	fi
@@ -86,36 +81,26 @@ install_mailer_conf() {
 	mailerconf=$1
 	echo "Activate Postfix in ${mailerconf}"
 	if [ "${USE_LOCALBASE_MAILER_CONF}" = "yes" ]; then
-		[ -d %%LOCALBASE%%/etc/mail ] || mkdir -p %%LOCALBASE%%/etc/mail
+		[ -d "${PKG_ROOTDIR}/%%LOCALBASE%%/etc/mail" ] || \
+			mkdir -p "${PKG_ROOTDIR}/%%LOCALBASE%%/etc/mail"
 	fi
 	[ -f ${mailerconf} ] && mv -f ${mailerconf} ${mailerconf}.old
 	install -m 644 ${MC_TEMPLATE} ${mailerconf}
 }
 
-# ==============================================================================
-# Run postfix reload
-# This is a candidate for a dedicated pkg-post-upgrade script, but it seems
-# this not fully implemented in pkg :(see upstream PR 941)
-# ==============================================================================
-try_reload(){
-	${PREFIX}/sbin/postfix status 2>/dev/null
-if [ $? -eq 0 ]; then
-	${PREFIX}/sbin/postfix reload
-else
-	echo "postfix not running"
-fi
+show_needs_reload_msg(){
+	echo "==============================================================="
+	echo "Postfix installation changed, please run 'postfix reload' or"
+	echo "restart postfix"
+	echo "==============================================================="
 }
 
 # ==============================================================================
-# Run postfix post-install to fix permissions and new config values
+# Fix permissions and new config values after installation
 # ==============================================================================
 if [ "$2" = "POST-INSTALL" ]; then
-	/bin/sh ${DAEMONDIR}/post-install tempdir=/tmp \
-	 daemon_directory=${DAEMONDIR} \
- 	 meta_directory=${META_DIRECTORY} \
-	 html_directory=${READMEDIR} \
-	 readme_directory=${READMEDIR} \
-	 upgrade-package
+	chroot "${PKG_ROOTDIR}" \
+		"${PKG_PREFIX}"/sbin/postfix set-permissions upgrade-configuration
 fi
 
 # ==============================================================================
@@ -130,7 +115,7 @@ if [ -f "${MC_BASE}" ]; then
 		if [ $? -eq 0 ]; then
 			show_activated_msg ${MC_BASE}
 			cmp_mailer ${MC_LOCALBASE} || install_mailer_conf ${MC_LOCALBASE}
-			try_reload
+			show_needs_reload_msg
 		else
 			cmp_mailer ${MC_LOCALBASE} || install_choice ${MC_LOCALBASE}
 		fi
@@ -140,7 +125,7 @@ if [ -f "${MC_BASE}" ]; then
 			install_choice ${MC_BASE}
 		else
 			show_activated_msg ${MC_BASE}
-			try_reload
+			show_needs_reload_msg
 		fi
 	fi
 

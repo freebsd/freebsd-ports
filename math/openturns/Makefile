@@ -1,12 +1,13 @@
 PORTNAME=	openturns
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.23
-PORTREVISION=	2
+DISTVERSION=	1.24
+PORTREVISION=	4
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Uncertainty treatment library
-WWW=		https://openturns.github.io/www/
+WWW=		https://openturns.github.io/www/ \
+		https://github.com/openturns/openturns
 
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/COPYING.LESSER
@@ -95,5 +96,7 @@ PORTEXAMPLES=		*
 
 post-install:
 	@${RM} -r ${STAGEDIR}${DOCSDIR}
+
+# tests as of 1.24: 99% tests passed, 1 tests failed out of 537, see https://github.com/openturns/openturns/issues/2862
 
 .include <bsd.port.mk>

@@ -1,0 +1,5 @@
+TIMESTAMP = 1737831232
+SHA256 (go/sysutils_mongodb_exporter/mongodb_exporter-v0.43.1/v0.43.1.mod) = 7fe7669bea7f38065cc6026ba4cdcedca007688f62115f4968dd93cf326ed121
+SIZE (go/sysutils_mongodb_exporter/mongodb_exporter-v0.43.1/v0.43.1.mod) = 3102
+SHA256 (go/sysutils_mongodb_exporter/mongodb_exporter-v0.43.1/v0.43.1.zip) = b0f84af41aaa30a021e8dae13fd259c239fb0c8855fa85b0f2ec83835622666e
+SIZE (go/sysutils_mongodb_exporter/mongodb_exporter-v0.43.1/v0.43.1.zip) = 181105

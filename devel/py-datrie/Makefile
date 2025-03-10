@@ -1,5 +1,6 @@
 PORTNAME=	datrie
 PORTVERSION=	0.8.2
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -9,6 +10,9 @@ COMMENT=	Super-fast, efficiently stored Trie for Python
 WWW=		https://github.com/pytries/datrie
 
 LICENSE=	GPLv2
+
+DEPRECATED=	Depends on expired devel/py-pytest-runner
+EXPIRATION_DATE=2025-03-31
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pip>0:devel/py-pip@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-runner>=0:devel/py-pytest-runner@${PY_FLAVOR}

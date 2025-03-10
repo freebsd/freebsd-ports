@@ -2,8 +2,8 @@ PORTNAME=	wdm
 PORTVERSION=	1.28
 PORTREVISION=	17
 CATEGORIES=	x11 windowmaker
-MASTER_SITES=	http://freebsd.nsu.ru/distfiles/wdm/:wdm GENTOO:wdm \
-		http://wolfram.schneider.org/bsd/gif/bsd/:pic_large \
+MASTER_SITES=	http://freebsd.nsu.ru/distfiles/wdm/:wdm \
+		https://wolfram.schneider.org/bsd/gif/bsd/:pic_large \
 		LOCAL/tg:pic_small
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:wdm \
 		beastie.xpm:pic_small \
@@ -53,7 +53,7 @@ PAM_CONFIGURE_ON=	--with-pamdir=${LOCALBASE}/etc/pam.d/
 
 .include <bsd.port.options.mk>
 
-.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400091 || ( ${OSVERSION} >= 1302507 && ${OSVERSION} < 1400000 ))
+.if ${OPSYS} == FreeBSD
 CFLAGS+=	-Wno-error=incompatible-function-pointer-types
 .endif
 

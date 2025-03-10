@@ -1,0 +1,2 @@
+Nushell plugin providing support for querying SQL, XML, JSON,
+HTML (via selector), and WebPage Metadata.

@@ -1,6 +1,6 @@
---- media/audio/BUILD.gn.orig	2024-08-05 14:59:35 UTC
+--- media/audio/BUILD.gn.orig	2025-02-22 18:06:53 UTC
 +++ media/audio/BUILD.gn
-@@ -270,9 +270,23 @@ source_set("audio") {
+@@ -269,9 +269,23 @@ source_set("audio") {
      deps += [ "//media/base/android:media_jni_headers" ]
    }
  

@@ -1,0 +1,4 @@
+ollama-hpp is a modern, header-only C++11/14/20 bindings for the Ollama API.
+
+It allows to access the full power of local language models in C++ with just
+a few lines of code.

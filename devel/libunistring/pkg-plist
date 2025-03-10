@@ -25,7 +25,6 @@
 %%PORTDOCS%%%%DOCSDIR%%/libunistring_fot.html
 %%PORTDOCS%%%%DOCSDIR%%/libunistring_toc.html
 include/unistring/inline.h
-include/unistring/stdbool.h
 include/unistring/stdint.h
 include/unistring/localcharset.h
 include/unistring/iconveh.h
@@ -47,4 +46,4 @@ include/unicase.h
 include/unigbrk.h
 lib/libunistring.so
 lib/libunistring.so.5
-lib/libunistring.so.5.1.0
+lib/libunistring.so.5.2.0

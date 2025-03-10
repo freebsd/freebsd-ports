@@ -1,0 +1,3 @@
+Kidash is a tool for managing Kibana-related dashboards from the command
+line. The standard GrimoireLab dashboards are available in the Sigils
+repository.

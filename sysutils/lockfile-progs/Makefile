@@ -1,6 +1,5 @@
 PORTNAME=	lockfile-progs
-DISTVERSION=	0.1.19
-PORTREVISION=	1
+DISTVERSION=	0.2.0
 CATEGORIES=	sysutils
 MASTER_SITES=	DEBIAN_POOL
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -12,19 +11,28 @@ WWW=		https://tracker.debian.org/pkg/lockfile-progs
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BUILD_DEPENDS=	bash:shells/bash \
+		gsed:textproc/gsed
 LIB_DEPENDS=	liblockfile.so:devel/liblockfile
 
-ALL_TARGET=	lockfile-create
+USES=		gmake localbase:ldflags tar:xz
+
+MAKEFILE=	GNUmakefile
+ALL_TARGET=	bin/lockfile-create man/lockfile-progs.1
+
+BINARY_ALIAS=	sed=gsed
+
 WRKSRC=		${WRKDIR}/${DISTNAME:S/_/-/}
 
-PORTDOCS=	TODO changelog
+PORTDOCS=	changelog
 
 OPTIONS_DEFINE=	DOCS
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/lockfile-create ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_DATA} ${WRKSRC}/lockfile-progs.1 ${STAGEDIR}${PREFIX}/share/man/man1
-.for f in lockfile-remove lockfile-touch lockfile-check mail-lock mail-unlock mail-touchlock
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/lockfile-create ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_DATA} ${WRKSRC}/man/lockfile-progs.1 ${STAGEDIR}${PREFIX}/share/man/man1
+.for f in lockfile-check lockfile-remove lockfile-touch mail-lock mail-touchlock \
+	mail-unlock
 	${LN} ${STAGEDIR}${PREFIX}/bin/lockfile-create ${STAGEDIR}${PREFIX}/bin/${f}
 	${LN} -s lockfile-progs.1 ${STAGEDIR}${PREFIX}/share/man/man1/${f}.1
 .endfor
@@ -32,8 +40,6 @@ do-install:
 
 do-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
-.for f in TODO debian/changelog
-	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
-.endfor
+	${INSTALL_DATA} ${WRKSRC}/debian/changelog ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

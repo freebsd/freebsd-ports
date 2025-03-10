@@ -3,6 +3,7 @@
 bin/gpg-agent
 bin/gpg-card
 bin/gpg-connect-agent
+bin/gpg-mail-tube
 bin/gpg-wks-client
 %%WKS_SERVER%%bin/gpg-wks-server
 %%SUID_GPG%%@(,,4555) bin/gpg2
@@ -30,6 +31,7 @@ share/man/man1/gpg-agent.1.gz
 share/man/man1/gpg-card.1.gz
 share/man/man1/gpg-check-pattern.1.gz
 share/man/man1/gpg-connect-agent.1.gz
+share/man/man1/gpg-mail-tube.1.gz
 share/man/man1/gpg-preset-passphrase.1.gz
 share/man/man1/gpg-wks-client.1.gz
 %%WKS_SERVER%%share/man/man1/gpg-wks-server.1.gz
@@ -111,6 +113,7 @@ sbin/applygnupgdefaults
 %%NLS%%share/locale/it/LC_MESSAGES/gnupg2.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/gnupg2.mo
 %%NLS%%share/locale/nb/LC_MESSAGES/gnupg2.mo
+%%NLS%%share/locale/nl/LC_MESSAGES/gnupg2.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/gnupg2.mo
 %%NLS%%share/locale/pt/LC_MESSAGES/gnupg2.mo
 %%NLS%%share/locale/ro/LC_MESSAGES/gnupg2.mo

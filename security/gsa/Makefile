@@ -1,7 +1,6 @@
 PORTNAME=	gsa
 DISTVERSIONPREFIX=	v
-DISTVERSION=	23.0.0
-PORTREVISION=	1
+DISTVERSION=	24.1.0
 CATEGORIES=	security
 
 MAINTAINER=	acm@FreeBSD.org
@@ -9,6 +8,8 @@ COMMENT=	Greenbone Security Assistant webpage written in React
 WWW=		https://github.com/greenbone/gsa
 
 LICENSE=	AGPLv3+
+
+ONLY_FOR_ARCHS=	aarch64 amd64
 
 BUILD_DEPENDS=	npm-node18>0:www/npm-node18
 RUN_DEPENDS=	${LOCALBASE}/sbin/gsad:security/gsad
@@ -33,12 +34,15 @@ DEPS_CACHE_DIR=		${WRKSRC}
 
 .if (${DEV_UPDATE_MODE} == "yes")
 NPM_ARGS=	install
+post-patch:
+	@${RM} ${WKRSRC}/package-lock.json
+
 post-build:
-	@cd ${DEPS_CACHE_DIR} && ${TAR} czf ${DISTDIR}/${DIST_SUBDIR}/${PORTNAME}-cache-${DISTVERSION}${EXTRACT_SUFX} node_modules
-	@${ECHO} "(!!!) Please upload the cache archive: ${DISTDIR}/${DIST_SUBDIR}/${PORTNAME}-cache-${DISTVERSION}${EXTRACT_SUFX}"
+	@cd ${DEPS_CACHE_DIR} && ${TAR} czf ${DISTDIR}/${DIST_SUBDIR}/${PORTNAME}-cache-${ARCH}-${DISTVERSION}${EXTRACT_SUFX} node_modules
+	@${ECHO} "(!!!) Please upload the cache archive: ${DISTDIR}/${DIST_SUBDIR}/${PORTNAME}-cache-${ARCH}-${DISTVERSION}${EXTRACT_SUFX}"
 .else
 MASTER_SITES+=	LOCAL/acm/gsa/:npm_cache
-DISTFILES+=	${PORTNAME}-cache-${DISTVERSION}${EXTRACT_SUFX}:npm_cache
+DISTFILES+=	${PORTNAME}-cache-${ARCH}-${DISTVERSION}${EXTRACT_SUFX}:npm_cache
 NPM_ARGS=	run build
 
 post-extract:
@@ -59,7 +63,7 @@ post-install:
 	@${ECHO_CMD} "share/gvm/gsad/web/index.html" >> ${TMPPLIST}
 	@${ECHO_CMD} "share/gvm/gsad/web/robots.txt" >> ${TMPPLIST}
 	@cd ${WRKSRC}/build && \
-		${FIND} -s img locales static -not -type d \
+		${FIND} -s img locales assets -not -type d \
 			-exec ${ECHO_CMD} "share/gvm/gsad/web/{}" \; >> ${TMPPLIST}
 
 .include <bsd.port.mk>

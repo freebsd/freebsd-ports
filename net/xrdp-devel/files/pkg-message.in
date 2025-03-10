@@ -7,10 +7,10 @@ There is an rc.d script, so the service can be enabled by adding this line
 in /etc/rc.conf:
 
 xrdp_enable="YES"
-xrdp_sesman_enable="YES" # if you want to run xrdp-sesman on the same machine
+xrdp_sesman_enable="YES"
 
-Do not forget to edit the configuration files in "%%PREFIX%%/etc/xrdp"
-and the "%%PREFIX%%/etc/xrdp/startwm.sh" script.
+Do not forget to edit the configuration files in "%%ETCDIR%%"
+and the "%%ETCDIR%%/startwm.sh" script.
 
 To enable audio redirection, install the following ports/packages to meet
 your environment.

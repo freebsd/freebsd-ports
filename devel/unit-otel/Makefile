@@ -1,0 +1,269 @@
+PORTNAME=	unit-otel
+PORTVERSION=	${UNIT_VERSION}
+CATEGORIES=	devel
+MASTER_SITES?=	https://unit.nginx.org/download/
+DISTFILES=	unit-${PORTVERSION}.tar.gz
+
+MAINTAINER=	osa@FreeBSD.org
+COMMENT=	OTel static library for Unit
+WWW=		https://unit.nginx.org
+
+LICENSE=	APACHE20
+LICENSE_FILE=	${WRKDIR}/unit-${PORTVERSION}/LICENSE
+
+USES=		cargo cpe ssl
+
+CPE_VENDOR=	nginx
+CPE_PRODUCT=	unit
+
+WRKSRC=		${WRKDIR}/unit-${PORTVERSION}/src/otel
+
+CARGO_CRATES=	addr2line-0.24.2 \
+		adler2-2.0.0 \
+		anyhow-1.0.94 \
+		async-channel-1.9.0 \
+		async-channel-2.3.1 \
+		async-executor-1.13.1 \
+		async-global-executor-2.4.1 \
+		async-io-2.4.0 \
+		async-lock-3.4.0 \
+		async-std-1.13.0 \
+		async-stream-0.3.6 \
+		async-stream-impl-0.3.6 \
+		async-task-4.7.1 \
+		async-trait-0.1.83 \
+		atomic-waker-1.1.2 \
+		autocfg-1.4.0 \
+		axum-0.7.9 \
+		axum-core-0.4.5 \
+		backtrace-0.3.74 \
+		base64-0.22.1 \
+		bitflags-2.6.0 \
+		blocking-1.6.1 \
+		bumpalo-3.16.0 \
+		byteorder-1.5.0 \
+		bytes-1.9.0 \
+		cc-1.2.4 \
+		cfg-if-1.0.0 \
+		cfg_aliases-0.2.1 \
+		concurrent-queue-2.5.0 \
+		core-foundation-0.9.4 \
+		core-foundation-0.10.0 \
+		core-foundation-sys-0.8.7 \
+		crossbeam-utils-0.8.21 \
+		displaydoc-0.2.5 \
+		either-1.13.0 \
+		encoding_rs-0.8.35 \
+		equivalent-1.0.1 \
+		errno-0.3.10 \
+		event-listener-2.5.3 \
+		event-listener-5.3.1 \
+		event-listener-strategy-0.5.3 \
+		fastrand-2.3.0 \
+		fnv-1.0.7 \
+		foreign-types-0.3.2 \
+		foreign-types-shared-0.1.1 \
+		form_urlencoded-1.2.1 \
+		futures-channel-0.3.31 \
+		futures-core-0.3.31 \
+		futures-executor-0.3.31 \
+		futures-io-0.3.31 \
+		futures-lite-2.5.0 \
+		futures-macro-0.3.31 \
+		futures-sink-0.3.31 \
+		futures-task-0.3.31 \
+		futures-util-0.3.31 \
+		getrandom-0.2.15 \
+		gimli-0.31.1 \
+		glob-0.3.1 \
+		gloo-timers-0.3.0 \
+		h2-0.4.7 \
+		hashbrown-0.12.3 \
+		hashbrown-0.15.2 \
+		hermit-abi-0.4.0 \
+		http-1.2.0 \
+		http-body-1.0.1 \
+		http-body-util-0.1.2 \
+		httparse-1.9.5 \
+		httpdate-1.0.3 \
+		hyper-1.5.2 \
+		hyper-rustls-0.27.3 \
+		hyper-timeout-0.5.2 \
+		hyper-tls-0.6.0 \
+		hyper-util-0.1.10 \
+		icu_collections-1.5.0 \
+		icu_locid-1.5.0 \
+		icu_locid_transform-1.5.0 \
+		icu_locid_transform_data-1.5.0 \
+		icu_normalizer-1.5.0 \
+		icu_normalizer_data-1.5.0 \
+		icu_properties-1.5.1 \
+		icu_properties_data-1.5.0 \
+		icu_provider-1.5.0 \
+		icu_provider_macros-1.5.0 \
+		idna-1.0.3 \
+		idna_adapter-1.2.0 \
+		indexmap-1.9.3 \
+		indexmap-2.7.0 \
+		ipnet-2.10.1 \
+		itertools-0.13.0 \
+		itoa-1.0.14 \
+		js-sys-0.3.76 \
+		kv-log-macro-1.0.7 \
+		lazy_static-1.5.0 \
+		libc-0.2.168 \
+		linux-raw-sys-0.4.14 \
+		litemap-0.7.4 \
+		lock_api-0.4.12 \
+		log-0.4.22 \
+		matchit-0.7.3 \
+		memchr-2.7.4 \
+		mime-0.3.17 \
+		miniz_oxide-0.8.1 \
+		mio-1.0.3 \
+		native-tls-0.2.12 \
+		object-0.36.5 \
+		once_cell-1.20.2 \
+		openssl-0.10.68 \
+		openssl-macros-0.1.1 \
+		openssl-probe-0.1.5 \
+		openssl-sys-0.9.104 \
+		opentelemetry-0.24.0 \
+		opentelemetry-http-0.13.0 \
+		opentelemetry-otlp-0.17.0 \
+		opentelemetry-proto-0.7.0 \
+		opentelemetry-semantic-conventions-0.16.0 \
+		opentelemetry_sdk-0.24.1 \
+		parking-2.2.1 \
+		parking_lot-0.12.3 \
+		parking_lot_core-0.9.10 \
+		percent-encoding-2.3.1 \
+		pin-project-1.1.7 \
+		pin-project-internal-1.1.7 \
+		pin-project-lite-0.2.15 \
+		pin-utils-0.1.0 \
+		piper-0.2.4 \
+		pkg-config-0.3.31 \
+		polling-3.7.4 \
+		ppv-lite86-0.2.20 \
+		proc-macro2-1.0.92 \
+		prost-0.13.4 \
+		prost-derive-0.13.4 \
+		quinn-0.11.6 \
+		quinn-proto-0.11.9 \
+		quinn-udp-0.5.8 \
+		quote-1.0.37 \
+		rand-0.8.5 \
+		rand_chacha-0.3.1 \
+		rand_core-0.6.4 \
+		redox_syscall-0.5.8 \
+		reqwest-0.12.9 \
+		ring-0.17.8 \
+		rustc-demangle-0.1.24 \
+		rustc-hash-2.1.0 \
+		rustix-0.38.42 \
+		rustls-0.23.20 \
+		rustls-native-certs-0.8.1 \
+		rustls-pemfile-2.2.0 \
+		rustls-pki-types-1.10.1 \
+		rustls-webpki-0.102.8 \
+		rustversion-1.0.18 \
+		ryu-1.0.18 \
+		schannel-0.1.27 \
+		scopeguard-1.2.0 \
+		security-framework-2.11.1 \
+		security-framework-3.0.1 \
+		security-framework-sys-2.12.1 \
+		serde-1.0.216 \
+		serde_derive-1.0.216 \
+		serde_json-1.0.133 \
+		serde_urlencoded-0.7.1 \
+		shlex-1.3.0 \
+		signal-hook-registry-1.4.2 \
+		slab-0.4.9 \
+		smallvec-1.13.2 \
+		socket2-0.5.8 \
+		spin-0.9.8 \
+		stable_deref_trait-1.2.0 \
+		subtle-2.6.1 \
+		syn-2.0.90 \
+		sync_wrapper-1.0.2 \
+		synstructure-0.13.1 \
+		system-configuration-0.6.1 \
+		system-configuration-sys-0.6.0 \
+		tempfile-3.14.0 \
+		thiserror-1.0.69 \
+		thiserror-2.0.7 \
+		thiserror-impl-1.0.69 \
+		thiserror-impl-2.0.7 \
+		tinystr-0.7.6 \
+		tinyvec-1.8.0 \
+		tinyvec_macros-0.1.1 \
+		tokio-1.42.0 \
+		tokio-macros-2.4.0 \
+		tokio-native-tls-0.3.1 \
+		tokio-rustls-0.26.1 \
+		tokio-stream-0.1.17 \
+		tokio-util-0.7.13 \
+		tonic-0.12.3 \
+		tower-0.4.13 \
+		tower-0.5.2 \
+		tower-layer-0.3.3 \
+		tower-service-0.3.3 \
+		tracing-0.1.41 \
+		tracing-attributes-0.1.28 \
+		tracing-core-0.1.33 \
+		tracing-subscriber-0.3.19 \
+		try-lock-0.2.5 \
+		unicode-ident-1.0.14 \
+		untrusted-0.9.0 \
+		url-2.5.4 \
+		utf16_iter-1.0.5 \
+		utf8_iter-1.0.4 \
+		value-bag-1.10.0 \
+		vcpkg-0.2.15 \
+		want-0.3.1 \
+		wasi-0.11.0+wasi-snapshot-preview1 \
+		wasm-bindgen-0.2.99 \
+		wasm-bindgen-backend-0.2.99 \
+		wasm-bindgen-futures-0.4.49 \
+		wasm-bindgen-macro-0.2.99 \
+		wasm-bindgen-macro-support-0.2.99 \
+		wasm-bindgen-shared-0.2.99 \
+		web-sys-0.3.76 \
+		web-time-1.1.0 \
+		webpki-roots-0.26.7 \
+		windows-registry-0.2.0 \
+		windows-result-0.2.0 \
+		windows-strings-0.1.0 \
+		windows-sys-0.52.0 \
+		windows-sys-0.59.0 \
+		windows-targets-0.52.6 \
+		windows_aarch64_gnullvm-0.52.6 \
+		windows_aarch64_msvc-0.52.6 \
+		windows_i686_gnu-0.52.6 \
+		windows_i686_gnullvm-0.52.6 \
+		windows_i686_msvc-0.52.6 \
+		windows_x86_64_gnu-0.52.6 \
+		windows_x86_64_gnullvm-0.52.6 \
+		windows_x86_64_msvc-0.52.6 \
+		write16-1.0.0 \
+		writeable-0.5.5 \
+		yoke-0.7.5 \
+		yoke-derive-0.7.5 \
+		zerocopy-0.7.35 \
+		zerocopy-derive-0.7.35 \
+		zerofrom-0.1.5 \
+		zerofrom-derive-0.1.5 \
+		zeroize-1.8.1 \
+		zerovec-0.10.4 \
+		zerovec-derive-0.10.3
+
+PLIST_FILES=	lib/libotel.a
+
+do-install:
+	${INSTALL_DATA} ${WRKDIR}/target/release/libotel.a \
+		${STAGEDIR}${PREFIX}/lib/
+
+.include "../../www/unit/version.mk"
+.include <bsd.port.mk>

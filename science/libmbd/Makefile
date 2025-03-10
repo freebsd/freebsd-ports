@@ -1,6 +1,6 @@
 PORTNAME=	libmbd
 DISTVERSION=	0.12.5
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	science # chemistry
 MASTER_SITES=	https://github.com/libmbd/libmbd/releases/download/${DISTVERSION}/
 

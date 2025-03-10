@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/base/base_switches.h.orig	2023-10-11 18:22:24 UTC
+--- src/3rdparty/chromium/base/base_switches.h.orig	2024-02-23 21:04:38 UTC
 +++ src/3rdparty/chromium/base/base_switches.h
-@@ -62,7 +62,7 @@ extern const char kPackageVersionName[];
+@@ -60,7 +60,7 @@ extern const char kPackageVersionName[];
  extern const char kPackageVersionCode[];
  #endif
  

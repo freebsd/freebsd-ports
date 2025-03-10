@@ -1,6 +1,6 @@
---- OrthancFramework/Sources/OrthancFramework.h.orig	2022-05-09 09:19:44 UTC
+--- OrthancFramework/Sources/OrthancFramework.h.orig	2024-12-17 16:33:40 UTC
 +++ OrthancFramework/Sources/OrthancFramework.h
-@@ -70,6 +70,7 @@
+@@ -71,6 +71,7 @@
  
  
  #include <string>

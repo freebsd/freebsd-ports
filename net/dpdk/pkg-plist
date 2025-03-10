@@ -23,6 +23,11 @@ bin/dpdk-test-sad
 bin/dpdk-test-security-perf
 bin/dpdk-testpmd
 include/bpf_def.h
+include/bus_auxiliary_driver.h
+include/bus_driver.h
+include/bus_ifpga_driver.h
+include/bus_pci_driver.h
+include/bus_vdev_driver.h
 include/cmdline.h
 include/cmdline_cirbuf.h
 include/cmdline_parse.h
@@ -34,6 +39,16 @@ include/cmdline_parse_string.h
 include/cmdline_rdline.h
 include/cmdline_socket.h
 include/cmdline_vt100.h
+include/cryptodev_pmd.h
+include/dev_driver.h
+include/ethdev_driver.h
+include/ethdev_pci.h
+include/ethdev_vdev.h
+include/event_timer_adapter_pmd.h
+include/eventdev_pmd.h
+include/eventdev_pmd_pci.h
+include/eventdev_pmd_vdev.h
+include/eventdev_trace.h
 include/generic/rte_atomic.h
 include/generic/rte_byteorder.h
 include/generic/rte_cpuflags.h
@@ -46,6 +61,7 @@ include/generic/rte_prefetch.h
 include/generic/rte_rwlock.h
 include/generic/rte_spinlock.h
 include/generic/rte_vect.h
+include/gpudev_driver.h
 include/rte_acc_cfg.h
 include/rte_acl.h
 include/rte_acl_osdep.h
@@ -78,6 +94,8 @@ include/rte_common.h
 include/rte_comp.h
 include/rte_compat.h
 include/rte_compressdev.h
+include/rte_compressdev_internal.h
+include/rte_compressdev_pmd.h
 include/rte_config.h
 include/rte_cpuflags.h
 include/rte_crc_arm64.h
@@ -100,6 +118,7 @@ include/rte_dev_info.h
 include/rte_devargs.h
 include/rte_distributor.h
 include/rte_dmadev.h
+include/rte_dmadev_pmd.h
 include/rte_dmadev_core.h
 include/rte_eal.h
 include/rte_eal_memconfig.h

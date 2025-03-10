@@ -1,11 +1,11 @@
 PORTNAME=	faiss
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.8.0
+DISTVERSION=	1.9.0
 PORTREVISION=	1
 CATEGORIES=	math
 
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES=	70c5de13cd9e2ce94181fe67d9a70eb371ecd554.patch:-p1 # fix GTest linkage
+#PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+#PATCHFILES=	70c5de13cd9e2ce94181fe67d9a70eb371ecd554.patch:-p1 # fix GTest linkage
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Library for efficient similarity search & clustering of dense vectors
@@ -22,7 +22,7 @@ BUILD_DEPENDS=	openblas>0:math/openblas # faiss links with libopenblasp-rN.N.N.s
 RUN_DEPENDS=	openblas>0:math/openblas
 TEST_DEPENDS=	googletest>0:devel/googletest
 
-USES=		cmake:testing compiler:c++11-lang localbase:ldflags # tests fail to link, see https://github.com/facebookresearch/faiss/issues/2654
+USES=		cmake:testing compiler:c++11-lang localbase:ldflags # tests fail to compile, see https://github.com/facebookresearch/faiss/issues/3913
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	facebookresearch

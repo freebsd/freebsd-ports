@@ -17,8 +17,7 @@ LICENSE_PERMS=	none
 ONLY_FOR_ARCHS=	amd64 i386
 ONLY_FOR_ARCHS_REASON=	Linux compatibility layer only supports i386/amd64
 
-USES=		linux shebangfix uniquefiles:dirs zip
-USE_JAVA=	yes
+USES=		java linux shebangfix uniquefiles:dirs zip
 
 EXTRACT_AFTER_ARGS=	-d ${WRKSRC}
 JAVA_OS=	linux

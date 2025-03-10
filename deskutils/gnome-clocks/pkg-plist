@@ -6,7 +6,7 @@ share/help/C/gnome-clocks/alarm-add.page
 share/help/C/gnome-clocks/alarm-edit.page
 share/help/C/gnome-clocks/alarm-remove.page
 share/help/C/gnome-clocks/alarm-snooze-stop.page
-share/help/C/gnome-clocks/figures/gnome-clocks.png
+share/help/C/gnome-clocks/figures/org.gnome.clocks.svg
 share/help/C/gnome-clocks/index.page
 share/help/C/gnome-clocks/legal.xml
 share/help/C/gnome-clocks/stopwatch.page
@@ -18,7 +18,7 @@ share/help/ca/gnome-clocks/alarm-add.page
 share/help/ca/gnome-clocks/alarm-edit.page
 share/help/ca/gnome-clocks/alarm-remove.page
 share/help/ca/gnome-clocks/alarm-snooze-stop.page
-share/help/ca/gnome-clocks/figures/gnome-clocks.png
+share/help/ca/gnome-clocks/figures/org.gnome.clocks.svg
 share/help/ca/gnome-clocks/index.page
 share/help/ca/gnome-clocks/legal.xml
 share/help/ca/gnome-clocks/stopwatch.page
@@ -30,7 +30,7 @@ share/help/cs/gnome-clocks/alarm-add.page
 share/help/cs/gnome-clocks/alarm-edit.page
 share/help/cs/gnome-clocks/alarm-remove.page
 share/help/cs/gnome-clocks/alarm-snooze-stop.page
-share/help/cs/gnome-clocks/figures/gnome-clocks.png
+share/help/cs/gnome-clocks/figures/org.gnome.clocks.svg
 share/help/cs/gnome-clocks/index.page
 share/help/cs/gnome-clocks/legal.xml
 share/help/cs/gnome-clocks/stopwatch.page
@@ -42,7 +42,7 @@ share/help/da/gnome-clocks/alarm-add.page
 share/help/da/gnome-clocks/alarm-edit.page
 share/help/da/gnome-clocks/alarm-remove.page
 share/help/da/gnome-clocks/alarm-snooze-stop.page
-share/help/da/gnome-clocks/figures/gnome-clocks.png
+share/help/da/gnome-clocks/figures/org.gnome.clocks.svg
 share/help/da/gnome-clocks/index.page
 share/help/da/gnome-clocks/legal.xml
 share/help/da/gnome-clocks/stopwatch.page
@@ -54,7 +54,7 @@ share/help/de/gnome-clocks/alarm-add.page
 share/help/de/gnome-clocks/alarm-edit.page
 share/help/de/gnome-clocks/alarm-remove.page
 share/help/de/gnome-clocks/alarm-snooze-stop.page
-share/help/de/gnome-clocks/figures/gnome-clocks.png
+share/help/de/gnome-clocks/figures/org.gnome.clocks.svg
 share/help/de/gnome-clocks/index.page
 share/help/de/gnome-clocks/legal.xml
 share/help/de/gnome-clocks/stopwatch.page
@@ -66,7 +66,7 @@ share/help/el/gnome-clocks/alarm-add.page
 share/help/el/gnome-clocks/alarm-edit.page
 share/help/el/gnome-clocks/alarm-remove.page
 share/help/el/gnome-clocks/alarm-snooze-stop.page
-share/help/el/gnome-clocks/figures/gnome-clocks.png
+share/help/el/gnome-clocks/figures/org.gnome.clocks.svg
 share/help/el/gnome-clocks/index.page
 share/help/el/gnome-clocks/legal.xml
 share/help/el/gnome-clocks/stopwatch.page
@@ -78,7 +78,7 @@ share/help/en_GB/gnome-clocks/alarm-add.page
 share/help/en_GB/gnome-clocks/alarm-edit.page
 share/help/en_GB/gnome-clocks/alarm-remove.page
 share/help/en_GB/gnome-clocks/alarm-snooze-stop.page
-share/help/en_GB/gnome-clocks/figures/gnome-clocks.png
+share/help/en_GB/gnome-clocks/figures/org.gnome.clocks.svg
 share/help/en_GB/gnome-clocks/index.page
 share/help/en_GB/gnome-clocks/legal.xml
 share/help/en_GB/gnome-clocks/stopwatch.page
@@ -90,7 +90,7 @@ share/help/es/gnome-clocks/alarm-add.page
 share/help/es/gnome-clocks/alarm-edit.page
 share/help/es/gnome-clocks/alarm-remove.page
 share/help/es/gnome-clocks/alarm-snooze-stop.page
-share/help/es/gnome-clocks/figures/gnome-clocks.png
+share/help/es/gnome-clocks/figures/org.gnome.clocks.svg
 share/help/es/gnome-clocks/index.page
 share/help/es/gnome-clocks/legal.xml
 share/help/es/gnome-clocks/stopwatch.page
@@ -102,7 +102,7 @@ share/help/eu/gnome-clocks/alarm-add.page
 share/help/eu/gnome-clocks/alarm-edit.page
 share/help/eu/gnome-clocks/alarm-remove.page
 share/help/eu/gnome-clocks/alarm-snooze-stop.page
-share/help/eu/gnome-clocks/figures/gnome-clocks.png
+share/help/eu/gnome-clocks/figures/org.gnome.clocks.svg
 share/help/eu/gnome-clocks/index.page
 share/help/eu/gnome-clocks/legal.xml
 share/help/eu/gnome-clocks/stopwatch.page
@@ -114,7 +114,7 @@ share/help/fi/gnome-clocks/alarm-add.page
 share/help/fi/gnome-clocks/alarm-edit.page
 share/help/fi/gnome-clocks/alarm-remove.page
 share/help/fi/gnome-clocks/alarm-snooze-stop.page
-share/help/fi/gnome-clocks/figures/gnome-clocks.png
+share/help/fi/gnome-clocks/figures/org.gnome.clocks.svg
 share/help/fi/gnome-clocks/index.page
 share/help/fi/gnome-clocks/legal.xml
 share/help/fi/gnome-clocks/stopwatch.page
@@ -126,7 +126,7 @@ share/help/fr/gnome-clocks/alarm-add.page
 share/help/fr/gnome-clocks/alarm-edit.page
 share/help/fr/gnome-clocks/alarm-remove.page
 share/help/fr/gnome-clocks/alarm-snooze-stop.page
-share/help/fr/gnome-clocks/figures/gnome-clocks.png
+share/help/fr/gnome-clocks/figures/org.gnome.clocks.svg
 share/help/fr/gnome-clocks/index.page
 share/help/fr/gnome-clocks/legal.xml
 share/help/fr/gnome-clocks/stopwatch.page
@@ -138,7 +138,7 @@ share/help/gl/gnome-clocks/alarm-add.page
 share/help/gl/gnome-clocks/alarm-edit.page
 share/help/gl/gnome-clocks/alarm-remove.page
 share/help/gl/gnome-clocks/alarm-snooze-stop.page
-share/help/gl/gnome-clocks/figures/gnome-clocks.png
+share/help/gl/gnome-clocks/figures/org.gnome.clocks.svg
 share/help/gl/gnome-clocks/index.page
 share/help/gl/gnome-clocks/legal.xml
 share/help/gl/gnome-clocks/stopwatch.page
@@ -150,7 +150,7 @@ share/help/hu/gnome-clocks/alarm-add.page
 share/help/hu/gnome-clocks/alarm-edit.page
 share/help/hu/gnome-clocks/alarm-remove.page
 share/help/hu/gnome-clocks/alarm-snooze-stop.page
-share/help/hu/gnome-clocks/figures/gnome-clocks.png
+share/help/hu/gnome-clocks/figures/org.gnome.clocks.svg
 share/help/hu/gnome-clocks/index.page
 share/help/hu/gnome-clocks/legal.xml
 share/help/hu/gnome-clocks/stopwatch.page
@@ -162,7 +162,7 @@ share/help/id/gnome-clocks/alarm-add.page
 share/help/id/gnome-clocks/alarm-edit.page
 share/help/id/gnome-clocks/alarm-remove.page
 share/help/id/gnome-clocks/alarm-snooze-stop.page
-share/help/id/gnome-clocks/figures/gnome-clocks.png
+share/help/id/gnome-clocks/figures/org.gnome.clocks.svg
 share/help/id/gnome-clocks/index.page
 share/help/id/gnome-clocks/legal.xml
 share/help/id/gnome-clocks/stopwatch.page
@@ -170,11 +170,23 @@ share/help/id/gnome-clocks/timer.page
 share/help/id/gnome-clocks/world-add.page
 share/help/id/gnome-clocks/world-check.page
 share/help/id/gnome-clocks/world-remove.page
+share/help/it/gnome-clocks/alarm-add.page
+share/help/it/gnome-clocks/alarm-edit.page
+share/help/it/gnome-clocks/alarm-remove.page
+share/help/it/gnome-clocks/alarm-snooze-stop.page
+share/help/it/gnome-clocks/figures/org.gnome.clocks.svg
+share/help/it/gnome-clocks/index.page
+share/help/it/gnome-clocks/legal.xml
+share/help/it/gnome-clocks/stopwatch.page
+share/help/it/gnome-clocks/timer.page
+share/help/it/gnome-clocks/world-add.page
+share/help/it/gnome-clocks/world-check.page
+share/help/it/gnome-clocks/world-remove.page
 share/help/ko/gnome-clocks/alarm-add.page
 share/help/ko/gnome-clocks/alarm-edit.page
 share/help/ko/gnome-clocks/alarm-remove.page
 share/help/ko/gnome-clocks/alarm-snooze-stop.page
-share/help/ko/gnome-clocks/figures/gnome-clocks.png
+share/help/ko/gnome-clocks/figures/org.gnome.clocks.svg
 share/help/ko/gnome-clocks/index.page
 share/help/ko/gnome-clocks/legal.xml
 share/help/ko/gnome-clocks/stopwatch.page
@@ -186,7 +198,7 @@ share/help/nl/gnome-clocks/alarm-add.page
 share/help/nl/gnome-clocks/alarm-edit.page
 share/help/nl/gnome-clocks/alarm-remove.page
 share/help/nl/gnome-clocks/alarm-snooze-stop.page
-share/help/nl/gnome-clocks/figures/gnome-clocks.png
+share/help/nl/gnome-clocks/figures/org.gnome.clocks.svg
 share/help/nl/gnome-clocks/index.page
 share/help/nl/gnome-clocks/legal.xml
 share/help/nl/gnome-clocks/stopwatch.page
@@ -198,7 +210,7 @@ share/help/pl/gnome-clocks/alarm-add.page
 share/help/pl/gnome-clocks/alarm-edit.page
 share/help/pl/gnome-clocks/alarm-remove.page
 share/help/pl/gnome-clocks/alarm-snooze-stop.page
-share/help/pl/gnome-clocks/figures/gnome-clocks.png
+share/help/pl/gnome-clocks/figures/org.gnome.clocks.svg
 share/help/pl/gnome-clocks/index.page
 share/help/pl/gnome-clocks/legal.xml
 share/help/pl/gnome-clocks/stopwatch.page
@@ -210,7 +222,7 @@ share/help/pt_BR/gnome-clocks/alarm-add.page
 share/help/pt_BR/gnome-clocks/alarm-edit.page
 share/help/pt_BR/gnome-clocks/alarm-remove.page
 share/help/pt_BR/gnome-clocks/alarm-snooze-stop.page
-share/help/pt_BR/gnome-clocks/figures/gnome-clocks.png
+share/help/pt_BR/gnome-clocks/figures/org.gnome.clocks.svg
 share/help/pt_BR/gnome-clocks/index.page
 share/help/pt_BR/gnome-clocks/legal.xml
 share/help/pt_BR/gnome-clocks/stopwatch.page
@@ -222,7 +234,7 @@ share/help/ru/gnome-clocks/alarm-add.page
 share/help/ru/gnome-clocks/alarm-edit.page
 share/help/ru/gnome-clocks/alarm-remove.page
 share/help/ru/gnome-clocks/alarm-snooze-stop.page
-share/help/ru/gnome-clocks/figures/gnome-clocks.png
+share/help/ru/gnome-clocks/figures/org.gnome.clocks.svg
 share/help/ru/gnome-clocks/index.page
 share/help/ru/gnome-clocks/legal.xml
 share/help/ru/gnome-clocks/stopwatch.page
@@ -234,7 +246,7 @@ share/help/sv/gnome-clocks/alarm-add.page
 share/help/sv/gnome-clocks/alarm-edit.page
 share/help/sv/gnome-clocks/alarm-remove.page
 share/help/sv/gnome-clocks/alarm-snooze-stop.page
-share/help/sv/gnome-clocks/figures/gnome-clocks.png
+share/help/sv/gnome-clocks/figures/org.gnome.clocks.svg
 share/help/sv/gnome-clocks/index.page
 share/help/sv/gnome-clocks/legal.xml
 share/help/sv/gnome-clocks/stopwatch.page
@@ -246,7 +258,7 @@ share/help/tr/gnome-clocks/alarm-add.page
 share/help/tr/gnome-clocks/alarm-edit.page
 share/help/tr/gnome-clocks/alarm-remove.page
 share/help/tr/gnome-clocks/alarm-snooze-stop.page
-share/help/tr/gnome-clocks/figures/gnome-clocks.png
+share/help/tr/gnome-clocks/figures/org.gnome.clocks.svg
 share/help/tr/gnome-clocks/index.page
 share/help/tr/gnome-clocks/legal.xml
 share/help/tr/gnome-clocks/stopwatch.page
@@ -258,7 +270,7 @@ share/help/uk/gnome-clocks/alarm-add.page
 share/help/uk/gnome-clocks/alarm-edit.page
 share/help/uk/gnome-clocks/alarm-remove.page
 share/help/uk/gnome-clocks/alarm-snooze-stop.page
-share/help/uk/gnome-clocks/figures/gnome-clocks.png
+share/help/uk/gnome-clocks/figures/org.gnome.clocks.svg
 share/help/uk/gnome-clocks/index.page
 share/help/uk/gnome-clocks/legal.xml
 share/help/uk/gnome-clocks/stopwatch.page
@@ -268,6 +280,7 @@ share/help/uk/gnome-clocks/world-check.page
 share/help/uk/gnome-clocks/world-remove.page
 share/icons/hicolor/scalable/apps/org.gnome.clocks.svg
 share/icons/hicolor/symbolic/apps/org.gnome.clocks-symbolic.svg
+share/locale/ab/LC_MESSAGES/gnome-clocks.mo
 share/locale/af/LC_MESSAGES/gnome-clocks.mo
 share/locale/an/LC_MESSAGES/gnome-clocks.mo
 share/locale/ar/LC_MESSAGES/gnome-clocks.mo
@@ -292,6 +305,7 @@ share/locale/fa/LC_MESSAGES/gnome-clocks.mo
 share/locale/fi/LC_MESSAGES/gnome-clocks.mo
 share/locale/fr/LC_MESSAGES/gnome-clocks.mo
 share/locale/fur/LC_MESSAGES/gnome-clocks.mo
+share/locale/fy/LC_MESSAGES/gnome-clocks.mo
 share/locale/ga/LC_MESSAGES/gnome-clocks.mo
 share/locale/gd/LC_MESSAGES/gnome-clocks.mo
 share/locale/gl/LC_MESSAGES/gnome-clocks.mo
@@ -304,6 +318,8 @@ share/locale/id/LC_MESSAGES/gnome-clocks.mo
 share/locale/is/LC_MESSAGES/gnome-clocks.mo
 share/locale/it/LC_MESSAGES/gnome-clocks.mo
 share/locale/ja/LC_MESSAGES/gnome-clocks.mo
+share/locale/ka/LC_MESSAGES/gnome-clocks.mo
+share/locale/kab/LC_MESSAGES/gnome-clocks.mo
 share/locale/kk/LC_MESSAGES/gnome-clocks.mo
 share/locale/kn/LC_MESSAGES/gnome-clocks.mo
 share/locale/ko/LC_MESSAGES/gnome-clocks.mo

@@ -1,11 +1,12 @@
 PORTNAME=	mxnet
 DISTVERSION=	1.9.1
-PORTREVISION=	7
+PORTREVISION=	9
 CATEGORIES=	misc # machine-learning
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Apache MXNet: Ultra-scalable deep learning framework
-WWW=		https://mxnet.apache.org/
+WWW=		https://mxnet.apache.org/ \
+		https://github.com/apache/mxnet
 
 LICENSE=	APACHE20
 
@@ -13,6 +14,9 @@ BROKEN_i386=	https://github.com/apache/incubator-mxnet/issues/20832
 .if !exists(/usr/include/omp.h)
 BROKEN=		requires OpenMP support that is missing on this architecture
 .endif
+
+DEPRECATED=		Project has been retired by Apache, see https://attic.apache.org/projects/mxnet.html
+EXPIRATION_DATE=	2025-04-01
 
 BUILD_DEPENDS=	googletest>0:devel/googletest
 LIB_DEPENDS=	libdmlc.so:devel/dmlc-core \
@@ -52,11 +56,10 @@ OPENCV_LIB_DEPENDS=	libopencv_core.so:graphics/opencv \
 CMAKE_OFF+=	USE_SSE
 .endif
 
-xpost-patch:
-	@${RM} ${WRKSRC}/include/mkldnn/*
-.for h in dnnl.h dnnl.hpp mkldnn.h mkldnn.hpp mkldnn_dnnl_mangling.h mkldnn_types.h mkldnn_version.h
-	@${LN} -s ${LOCALBASE}/include/${h} ${WRKSRC}/include/mkldnn/${h}
-.endfor
+post-patch:
+	@${FIND} ${WRKSRC} -type f -name '*.h' | \
+	    ${XARGS} ${GREP} -l 'template LaunchEx' | \
+	    ${XARGS} ${REINPLACE_CMD} -E -e 's/(template LaunchEx)/\1<>/'
 
 post-install-CPP-on: # https://github.com/apache/incubator-mxnet/issues/17080
 	@cd ${STAGEDIR}${PREFIX} && ${RM} include/mxnet-cpp/.gitignore include/mxnet-cpp/CPPLINT.cfg

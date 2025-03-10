@@ -1,6 +1,6 @@
 PORTNAME=	seda
 PORTVERSION=	3.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net java
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-release-${VERSION_DATE}
@@ -9,8 +9,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Architecture for Highly Concurrent Server Applications
 WWW=		http://www.eecs.harvard.edu/~mdw/proj/seda/
 
-USE_JAVA=	yes
-USE_ANT=	yes
+USES=		java:ant,run
+
 ALL_TARGET=	dist
 NO_ARCH=	yes
 
@@ -25,11 +25,7 @@ PORTDOCS=	*
 
 PLIST_FILES=	%%JAVAJARDIR%%/${PORTNAME:tl}.jar
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MDOCS}
-ALL_TARGET+=	javadoc
-.endif
+DOCS_ALL_TARGET=	javadoc
 
 pre-build:
 # use our build.xml
@@ -40,7 +36,8 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${JAVAJARDIR}
 	${INSTALL_DATA} ${WRKSRC}/dist/lib/${PORTNAME:tl}.jar \
 		${STAGEDIR}${JAVAJARDIR}/
-# docs
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for doc in gnutella-graph.gif index.html nbio.html profile.gif sandstorm.html sandstorm.jpg
 	${INSTALL_DATA} ${WRKSRC}/docs/${doc} ${STAGEDIR}${DOCSDIR}

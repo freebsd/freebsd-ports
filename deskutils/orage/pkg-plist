@@ -53,6 +53,7 @@ share/icons/hicolor/scalable/apps/org.xfce.orage.svg
 %%NLS%%share/locale/ru/LC_MESSAGES/orage.mo
 %%NLS%%share/locale/si/LC_MESSAGES/orage.mo
 %%NLS%%share/locale/sk/LC_MESSAGES/orage.mo
+%%NLS%%share/locale/sl/LC_MESSAGES/orage.mo
 %%NLS%%share/locale/sq/LC_MESSAGES/orage.mo
 %%NLS%%share/locale/sr/LC_MESSAGES/orage.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/orage.mo
@@ -66,6 +67,7 @@ share/icons/hicolor/scalable/apps/org.xfce.orage.svg
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/orage.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/orage.mo
 share/metainfo/org.xfce.orage.appdata.xml
+share/themes/Default/orage-4.0/gtk.css
 %%DATADIR%%/sounds/Boiling.wav
 %%DATADIR%%/sounds/KDE_Beep_Digital_1.ogg
 %%DATADIR%%/sounds/KDE_Beep_Digital_2.ogg

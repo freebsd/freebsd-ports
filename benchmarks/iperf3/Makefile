@@ -1,5 +1,5 @@
 PORTNAME=	iperf
-DISTVERSION=	3.17.1
+DISTVERSION=	3.18
 CATEGORIES=	benchmarks
 MASTER_SITES=	https://github.com/esnet/${PORTNAME}/releases/download/${DISTVERSION}/ \
 		https://downloads.es.net/pub/${PORTNAME}/

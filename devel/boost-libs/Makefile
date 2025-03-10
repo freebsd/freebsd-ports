@@ -1,5 +1,5 @@
 PORTNAME=	boost-libs
-PORTREVISION?=	0
+PORTREVISION?=	1
 
 COMMENT=	Free portable C++ libraries (without Boost.Python)
 WWW=		https://www.boost.org/
@@ -17,8 +17,7 @@ BUILD_DEPENDS+=	bjam:devel/boost-jam
 # following conditions are satisfied.
 # * OSVERSION is included in either of following ranges.
 #   1. 1500000 <= OSVERSION < 1500017
-#   2. 1400000 <= OSVERSION < 1400509
-#   3. 1300000 <= OSVERSION < 1303502
+#   2. 1400000 <= OSVERSION < 1400509 (no longer relevant)
 # * Base system is built with WITH_LLVM_ASSERTIONS variable set.
 # So if your base system fulfills them you need to use LLVM ports to
 # build this port.
@@ -52,11 +51,31 @@ ICU_MAKE_ARGS_OFF=	boost.locale.icu=off
 .include "${.CURDIR}/../boost-all/compiled.mk"
 
 MAKE_ARGS+=	--without-python
+MAKE_ARGS+=	--without-mpi
 MAKE_ARGS+=	${MAKE_ARGS_${CHOSEN_COMPILER_TYPE}}
 MAKE_ARGS_gcc=	xdll-path=${_GCC_RUNTIME}
 ALL_TARGET=	stage
 
 .include <bsd.port.options.mk>
+
+# boost.stacktrace.from_exceptions is ready only for amd64 yet
+.if ${ARCH:Mamd64}
+PLIST_SUB+=	SFE=""
+.else
+MAKE_ARGS+=	boost.stacktrace.from_exception=off
+PLIST_SUB+=	SFE="@comment "
+.endif
+
+.if ${ARCH:Marmv?}
+pre-configure:
+	${REINPLACE_CMD} -e 's,@progbits,%progbits,' \
+		${WRKSRC}/boost/interprocess/interprocess_printers.hpp \
+		${WRKSRC}/boost/json/detail/gdb_printers.hpp \
+		${WRKSRC}/boost/outcome/experimental/status-code/status_code.hpp \
+		${WRKSRC}/boost/outcome/outcome_gdb.h \
+		${WRKSRC}/boost/unordered/unordered_printers.hpp \
+		${WRKSRC}/libs/json/pretty_printers/generate-gdb-header.py
+.endif
 
 do-install:
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} \

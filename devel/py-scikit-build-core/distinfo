@@ -1,3 +1,3 @@
-TIMESTAMP = 1722313327
-SHA256 (scikit_build_core-0.9.9.tar.gz) = 64880e00c03e196ed2feb66676175dbbafe5fad1081edd9583c30bf6170d2fc9
-SIZE (scikit_build_core-0.9.9.tar.gz) = 229971
+TIMESTAMP = 1740722344
+SHA256 (scikit_build_core-0.11.0.tar.gz) = 423d8b0885bf1942816c851f8ec7c1efc0a7ecad4f38ff43d5ba869a894b107b
+SIZE (scikit_build_core-0.11.0.tar.gz) = 271991

@@ -18,6 +18,7 @@ include/outcome/detail/coroutine_support.ipp
 include/outcome/detail/revision.hpp
 include/outcome/detail/trait_std_error_code.hpp
 include/outcome/detail/trait_std_exception.hpp
+include/outcome/detail/try.h
 include/outcome/detail/value_storage.hpp
 include/outcome/detail/version.hpp
 include/outcome/experimental/coroutine_support.hpp
@@ -53,6 +54,7 @@ include/outcome/experimental/status_result.hpp
 include/outcome/iostream_support.hpp
 include/outcome/outcome.hpp
 include/outcome/outcome.natvis
+include/outcome/outcome_gdb.h
 include/outcome/policy/all_narrow.hpp
 include/outcome/policy/base.hpp
 include/outcome/policy/fail_to_compile_observers.hpp

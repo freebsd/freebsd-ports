@@ -1,0 +1,4 @@
+Ruby Client for the Locations API
+
+This is an add-on interface used by some Google API clients to provide location
+management calls.

@@ -1,8 +1,9 @@
---- src/njs.pc.in.orig	2023-07-11 23:13:20 UTC
+--- src/njs.pc.in.orig	2024-06-25 17:40:20 UTC
 +++ src/njs.pc.in
 @@ -1,8 +1,8 @@
- prefix=@PREFIX@
+-prefix=@PREFIX@
 -libdir=@LIBDIR@
++prefix=%%LOCALBASE%%
 +libdir=${prefix}/lib
  
  Name: njs

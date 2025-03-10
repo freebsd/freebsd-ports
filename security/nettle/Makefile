@@ -1,6 +1,5 @@
 PORTNAME=	nettle
-PORTVERSION=	3.10
-PORTREVISION=	1
+PORTVERSION=	3.10.1
 CATEGORIES=	security
 MASTER_SITES=	GNU \
 		https://www.lysator.liu.se/~nisse/archive/

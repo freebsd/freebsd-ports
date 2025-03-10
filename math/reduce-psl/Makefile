@@ -1,10 +1,9 @@
 PORTNAME=	reduce
 PORTVERSION=	${SFSUBDIR:S/snapshot_//:S/-//g}
-PORTREVISION=	1
 CATEGORIES=	math lang
 MASTER_SITES=	SF/reduce-algebra/${SFSUBDIR}/
 PKGNAMESUFFIX=	-psl
-DISTNAME=	Reduce-svn6658-src
+DISTNAME=	Reduce-svn6860-src
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Portable Standard Lisp REDUCE general-purpose algebra system
@@ -16,7 +15,7 @@ ONLY_FOR_ARCHS=	amd64 i386
 
 USES=		autoreconf:build libtool gmake ncurses
 
-SFSUBDIR=	snapshot_2023-12-18
+SFSUBDIR=	snapshot_2024-08-12
 
 TARGET_SDIR=	${ARCH:S/amd64/x86_64/}-unknown-${OPSYS:tl}${OSREL}
 CPPFLAGS+=	-I${NCURSESINC}

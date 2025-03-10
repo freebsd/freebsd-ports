@@ -1,0 +1,4 @@
+Kubernetes Kustomize is a tool that helps customize Kubernetes configurations
+without changing the original files. It lets you create overlays for different
+environments and manage settings easily. Kustomize makes deploying complex
+Kubernetes applications simpler and more organized.

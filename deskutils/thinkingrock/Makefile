@@ -12,7 +12,7 @@ WWW=		http://www.thinkingrock.com.au/
 RUN_DEPENDS=	${LOCALBASE}/bin/xdg-open:devel/xdg-utils \
 		${LOCALBASE}/bin/xdg-email:devel/xdg-utils
 
-USE_JAVA=	yes
+USES=		java
 NO_BUILD=	yes
 
 SUB_FILES=	pkg-message

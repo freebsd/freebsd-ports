@@ -1,0 +1,9 @@
+[
+{ type: install
+  message: <<EOM
+For .ts (typescript pipelines), please install deno:
+
+   pkg install www/deno
+EOM
+}
+]

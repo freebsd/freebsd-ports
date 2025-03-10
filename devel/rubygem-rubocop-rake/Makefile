@@ -1,5 +1,5 @@
 PORTNAME=	rubocop-rake
-PORTVERSION=	0.6.0
+PORTVERSION=	0.7.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -10,7 +10,8 @@ WWW=		https://github.com/rubocop/rubocop-rake
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rubygem-rubocop>=1.0<2:devel/rubygem-rubocop
+RUN_DEPENDS=	rubygem-lint_roller>=1.1<2:devel/rubygem-lint_roller \
+		rubygem-rubocop>=1.72.1:devel/rubygem-rubocop
 
 USES=		gem
 

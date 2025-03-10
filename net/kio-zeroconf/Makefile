@@ -5,11 +5,10 @@ CATEGORIES=	net kde kde-applications
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE Network monitor for DNS-SD services (Zeroconf)
 
-USES=		cmake compiler:c++11-lang kde:5 qt:5 tar:xz xorg
+USES=		cmake compiler:c++11-lang gettext kde:6 qt:6 tar:xz xorg
 USE_KDE=	config coreaddons dbusaddons dnssd i18n kio service \
 		ecm:build
-USE_QT=		concurrent core dbus network \
-		buildtools:build qmake:build
+USE_QT=		base
 USE_XORG=	x11
 
 OPTIONS_DEFINE=	DOCS

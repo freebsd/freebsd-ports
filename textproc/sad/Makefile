@@ -1,6 +1,7 @@
 PORTNAME=	sad
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.4.31
+PORTREVISION=	6
 CATEGORIES=	textproc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -108,8 +109,5 @@ CARGO_CRATES=	addr2line-0.22.0 \
 PLIST_FILES=	bin/${PORTNAME}
 
 BINARY_ALIAS=	python3=${PYTHON_CMD}
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>

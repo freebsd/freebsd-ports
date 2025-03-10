@@ -1,0 +1,13 @@
+- otherwise std::ifinf(long double) isn't defined with c++20
+
+--- CMakeLists.txt.orig	2024-08-11 03:29:56 UTC
++++ CMakeLists.txt
+@@ -222,7 +222,7 @@ endif()
+ 
+ ####
+ # Configure the compiler options
+-set(CMAKE_CXX_STANDARD 20)
++set(CMAKE_CXX_STANDARD 23)
+ set(CMAKE_CXX_STANDARD_REQUIRED ON)
+ #message(STATUS "C++17 has been enabled by default")
+ message(STATUS "C++20 has been enabled by default")

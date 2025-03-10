@@ -1,6 +1,6 @@
 PORTNAME=	hiawatha
 PORTVERSION=	11.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	https://www.hiawatha-webserver.org/files/
 
@@ -11,7 +11,10 @@ WWW=		https://www.hiawatha-webserver.org/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libmbedtls.so:security/mbedtls
+DEPRECATED=	Depends on expired security/mbedtls2
+EXPIRATION_DATE=2025-03-31
+
+LIB_DEPENDS=	libmbedtls.so:security/mbedtls2
 
 USES=		cmake:insource compiler:c11 cpe localbase:ldflags shebangfix
 CPE_VENDOR=	${PORTNAME}-webserver

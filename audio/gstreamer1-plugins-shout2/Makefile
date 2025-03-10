@@ -3,13 +3,13 @@ CATEGORIES=	audio
 
 COMMENT=	GStreamer icecast output plugin
 
-GST_PLUGIN=	shout2
+LIB_DEPENDS=	libshout.so:audio/libshout
+
+MASTERDIR=	${.CURDIR:H:H}/multimedia/gstreamer1-plugins
+
+PLIST=		${.CURDIR}/pkg-plist
+
 DIST=		good
-
-MASTERDIR=	${.CURDIR}/../../multimedia/gstreamer1-plugins
-
-PLIST=  ${.CURDIR}/pkg-plist
-
-LIB_DEPENDS= libshout.so:audio/libshout
+GST_PLUGIN=	shout2
 
 .include "${MASTERDIR}/Makefile"

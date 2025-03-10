@@ -1,7 +1,7 @@
 bin/macping
 bin/mactelnet
 bin/mndp
-etc/mactelnetd.users
+@sample etc/mactelnetd.users.sample
 sbin/mactelnetd
 share/locale/bg/LC_MESSAGES/mactelnet.mo
 share/locale/nb/LC_MESSAGES/mactelnet.mo

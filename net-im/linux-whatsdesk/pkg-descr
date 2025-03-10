@@ -1,0 +1,4 @@
+WhatsDesk is an unofficial client of whatsapp.
+
+This project is only inserting an instance of Whatsapp Web in an electron app
+and adds/enables desktop notifications.

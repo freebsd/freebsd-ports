@@ -1,3 +1,5 @@
-TIMESTAMP = 1467897116
-SHA256 (lzfse-lzfse-20160707-4591228_GH0.tar.gz) = a6b8609947ed610d52f8438ad67c3fd6589f0ae831feae2ef10c2cfc2568d11f
-SIZE (lzfse-lzfse-20160707-4591228_GH0.tar.gz) = 45414
+TIMESTAMP = 1730048988
+SHA256 (lzfse-lzfse-lzfse-1.0_GH0.tar.gz) = cf85f373f09e9177c0b21dbfbb427efaedc02d035d2aade65eb58a3cbf9ad267
+SIZE (lzfse-lzfse-lzfse-1.0_GH0.tar.gz) = 50694
+SHA256 (570967857b31ff77eb355cdf8eb583fbb4d70177.patch) = 2aaebcf4ee0ec9a272a30bd10d6570ced46e90fe21b30d3b6629f09bd3adad59
+SIZE (570967857b31ff77eb355cdf8eb583fbb4d70177.patch) = 596

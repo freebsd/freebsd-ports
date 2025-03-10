@@ -3,7 +3,7 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	1.1.1
 CATEGORIES=	archivers
 
-MAINTAINER=	jbeich@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Decompression library for RAR, TAR, ZIP and 7z* archives
 WWW=		https://github.com/selmf/unarr
 

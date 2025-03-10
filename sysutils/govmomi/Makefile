@@ -1,6 +1,7 @@
 PORTNAME=	govmomi
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.39.0
+DISTVERSION=	0.46.3
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	alex@i.org.ua
@@ -10,7 +11,7 @@ WWW=		https://github.com/vmware/govmomi/
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-USES=		go:modules
+USES=		go:1.22,modules
 GO_MODULE=	github.com/vmware/govmomi
 
 GO_TARGET=	./govc \
@@ -18,5 +19,8 @@ GO_TARGET=	./govc \
 
 PLIST_FILES=	bin/govc \
 		bin/vcsim
+
+TESTING_UNSAFE=	Failing because nested Docker requirements. See \
+		https://github.com/vmware/govmomi/issues/3604
 
 .include <bsd.port.mk>

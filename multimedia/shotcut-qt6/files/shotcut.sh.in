@@ -1,0 +1,11 @@
+#!/bin/sh
+
+PREFIX="%%PREFIX%%/bin"
+PROGRAM="${0}"
+
+# Prevent loading the Qt 5 flavor of the mlt7 plugins if installed.
+# Shotcut will crash without this environment variable set because
+# mlt7 defaults to loading the Qt 5 flavor of the plugins.
+
+export MLT_REPOSITORY_DENY="libmltqt:libmltglaxnimate"
+exec ${PREFIX}/${PROGRAM##*/}-real "${@}"

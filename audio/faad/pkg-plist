@@ -3,9 +3,9 @@ include/faad.h
 include/neaacdec.h
 lib/libfaad.so
 lib/libfaad.so.2
-lib/libfaad.so.2.11.1
+lib/libfaad.so.%%SOVERSION%%
 lib/libfaad_drm.so
 lib/libfaad_drm.so.2
-lib/libfaad_drm.so.2.11.1
+lib/libfaad_drm.so.%%SOVERSION%%
 libdata/pkgconfig/faad2.pc
 share/man/man1/faad.1.gz

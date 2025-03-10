@@ -1,3 +1,3 @@
-TIMESTAMP = 1600374026
-SHA256 (gnome3/uhttpmock-0.5.3.tar.xz) = 90843223c3a30bdb7f1eb3442373a03fee425af85a9df289cd687698ccff112f
-SIZE (gnome3/uhttpmock-0.5.3.tar.xz) = 318708
+TIMESTAMP = 1735163530
+SHA256 (gnome/uhttpmock-0.11.0.tar.xz) = feedc01a2ade9f0dcd61e73838ad53733d3cf68b7d51379acc00c894ea7884bf
+SIZE (gnome/uhttpmock-0.11.0.tar.xz) = 48192

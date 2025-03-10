@@ -1,5 +1,5 @@
 PORTNAME=	jing
-PORTVERSION=	20220510
+PORTVERSION=	20241231
 CATEGORIES=	textproc java
 MASTER_SITES=	https://github.com/relaxng/jing-trang/releases/download/V${PORTVERSION}/
 
@@ -13,10 +13,7 @@ LICENSE_FILE=	${WRKSRC}/doc/copying.html
 BROKEN_armv6=		fails to build: modbuild.xml: Java returned: 1
 BROKEN_armv7=		fails to build: modbuild.xml: Java returned: 1
 
-USES=		zip
-
-USE_JAVA=	yes
-JAVA_RUN=	yes
+USES=		java zip
 
 OPTIONS_DEFINE=	DOCS
 

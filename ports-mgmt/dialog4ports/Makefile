@@ -2,9 +2,7 @@ PORTNAME=	dialog4ports
 PORTVERSION=	0.1.6
 PORTREVISION?=	2
 CATEGORIES=	ports-mgmt
-MASTER_SITES=	https://files.etoilebsd.net/dialog4ports/ \
-		http://mirror.shatow.net/freebsd/${PORTNAME}/ \
-		http://files.etoilebsd.net/dialog4ports/:dialog \
+MASTER_SITES=	http://mirror.shatow.net/freebsd/${PORTNAME}/ \
 		ftp://invisible-island.net/dialog/:dialog \
 		http://mirror.shatow.net/freebsd/${PORTNAME}/:dialog
 

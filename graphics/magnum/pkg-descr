@@ -1,2 +1,8 @@
-kbd-audio is a collection of command-line and GUI tools for capturing and
-analyzing audio data.
+Magnum is lightweight and modular C++ graphics middleware for games and data
+visualization.
+
+Magnum is an open-source library that gives you graphics abstraction and
+platform independence on major desktop, mobile and web platforms. It offers many
+convenience utilities yet stays small and performant. Focuses on being flexible
+to configure, compose and extend. Free to use and modify, even for proprietary
+commercial purposes.

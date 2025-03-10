@@ -3,6 +3,9 @@ DISTVERSION=	5.6.9
 CATEGORIES=	databases
 MASTER_SITES=	https://xrootd.slac.stanford.edu/download/v${DISTVERSION}/
 
+PATCH_SITES=	https://github.com/xrootd/xrootd/commit/
+PATCHFILES=	f9d573417e1abc263115a34fd5f95dca505379e5.patch:-p1
+
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Framework for fast, low latency, scalable data access
 WWW=		https://xrootd.slac.stanford.edu/index.html
@@ -11,8 +14,6 @@ LICENSE=	GPLv3 LGPL3
 LICENSE_COMB=	dual
 LICENSE_FILE_GPLv3=	${WRKSRC}/COPYING
 LICENSE_FILE_LGPL3=	${WRKSRC}/COPYING.LGPL
-
-BROKEN_armv7=	compilation fails: non-constant-expression cannot be narrowed from type 'time_t' (aka 'long long') to 'long' in initializer list, see https://github.com/xrootd/xrootd/issues/2272
 
 BUILD_DEPENDS=	bash:shells/bash
 LIB_DEPENDS=	libcurl.so:ftp/curl \

@@ -1,8 +1,7 @@
 PORTNAME=		vm-bhyve
 DISTVERSIONPREFIX=	v
-DISTVERSION=		1.5.0-26
-DISTVERSIONSUFFIX=	-ge45b81d
-PORTREVISION=		1
+DISTVERSION=		1.6.2-15
+DISTVERSIONSUFFIX=	-gd5b493a
 CATEGORIES=		sysutils
 PKGNAMESUFFIX=		-devel
 
@@ -12,8 +11,6 @@ WWW=		https://github.com/churchers/vm-bhyve
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
-
-RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	churchers

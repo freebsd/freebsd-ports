@@ -1,5 +1,6 @@
 PORTNAME=	heroku-api
 PORTVERSION=	0.4.3
+PORTREVISION=	1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -9,7 +10,7 @@ WWW=		https://www.heroku.com
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-excon>=0.45<1:devel/rubygem-excon \
+RUN_DEPENDS=	rubygem-excon0>=0.45<1:devel/rubygem-excon0 \
 		rubygem-multi_json>=1.8<2:devel/rubygem-multi_json
 
 USES=		gem

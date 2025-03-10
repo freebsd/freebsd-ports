@@ -1,14 +1,15 @@
---- src/simutrans/sys/simsys.cc.orig	2024-05-04 14:27:27 UTC
+--- src/simutrans/sys/simsys.cc.orig	2024-12-29 01:27:00 UTC
 +++ src/simutrans/sys/simsys.cc
-@@ -526,9 +526,9 @@ char const *dr_query_homedir()
- 	}
- #else
+@@ -562,10 +562,10 @@ char const *dr_query_homedir()
+ 	int maxlen = PATH_MAX + 22;
+ 	unsigned n;
  	if( getenv("XDG_DATA_HOME") == NULL ) {
--		sprintf(buffer, "%s/simutrans", getenv("HOME"));
-+		sprintf(buffer, "%s/.simutrans", getenv("HOME"));
- 	} else {
--		sprintf(buffer, "%s/simutrans", getenv("XDG_DATA_HOME"));
-+		sprintf(buffer, "%s/.simutrans", getenv("XDG_DATA_HOME"));
+-		n = snprintf(buffer, maxlen, "%s/simutrans", getenv("HOME"));
++		n = snprintf(buffer, maxlen, "%s/.simutrans", getenv("HOME"));
  	}
- #endif
- 
+ 	else {
+-		n = snprintf(buffer, maxlen, "%s/simutrans", getenv("XDG_DATA_HOME"));
++		n = snprintf(buffer, maxlen, "%s/.simutrans", getenv("XDG_DATA_HOME"));
+ 	}
+ 	if (n >= maxlen) {
+ 		return NULL;

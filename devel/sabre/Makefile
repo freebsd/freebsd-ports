@@ -1,5 +1,6 @@
 PORTNAME=	sabre
 PORTVERSION=	20100501
+PORTREVISION=	1
 CATEGORIES=	devel multimedia java
 MASTER_SITES=	SF/sabre-library
 DISTNAME=	${PORTNAME}-src-${PORTVERSION}
@@ -10,11 +11,10 @@ WWW=		https://sabre-library.sourceforge.net/
 
 LICENSE=	LGPL21
 
+USES=		dos2unix java:ant,run zip
+
 WRKSRC=		${WRKDIR}/Simple\ API\ for\ Binary\ REpresentations\ \(SABRE\)
-USES=		dos2unix zip
 DOS2UNIX_GLOB=	*.xml *.java
-USE_JAVA=	yes
-USE_ANT=	yes
 ALL_TARGET=	dist
 
 PLIST_FILES=	${JAVAJARDIR}/${PORTNAME}.jar ${JAVAJARDIR}/udflib.jar

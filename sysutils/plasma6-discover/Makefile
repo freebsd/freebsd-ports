@@ -15,9 +15,9 @@ RUN_DEPENDS=	PackageKit>0:ports-mgmt/packagekit
 USES=		cmake compiler:c++11-lib desktop-file-utils gettext gl kde:6 \
 		pkgconfig qt:6 tar:xz xorg
 USE_KDE=	archive attica config coreaddons crash dbusaddons i18n \
-		idletime jobwidgets kcmutils kio kirigami-addons newstuff \
-		notifications purpose service statusnotifieritem userfeedback \
-		widgetsaddons windowsystem \
+		idletime itemmodels jobwidgets kcmutils kio kirigami-addons \
+		newstuff notifications purpose service statusnotifieritem \
+		userfeedback widgetsaddons windowsystem \
 		ecm:build
 USE_QT=		base declarative webview
 USE_GL=		gl opengl

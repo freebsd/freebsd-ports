@@ -1,16 +1,18 @@
---- v8/src/base/platform/memory.h.orig	2023-03-13 07:33:08 UTC
+--- v8/src/base/platform/memory.h.orig	2024-11-04 08:56:03 UTC
 +++ v8/src/base/platform/memory.h
-@@ -19,11 +19,11 @@
- 
- #if V8_OS_DARWIN
+@@ -21,13 +21,13 @@
  #include <malloc/malloc.h>
--#else  // !V8_OS_DARWIN
-+#elif !V8_OS_BSD
+ #elif V8_OS_OPENBSD
+ #include <sys/malloc.h>
+-#elif V8_OS_ZOS
++#elif (V8_OS_ZOS || V8_OS_BSD)
+ #include <stdlib.h>
+ #else
  #include <malloc.h>
- #endif  // !V8_OS_DARWIN
+ #endif
  
--#if (V8_OS_POSIX && !V8_OS_AIX && !V8_OS_SOLARIS) || V8_OS_WIN
-+#if (V8_OS_POSIX && !V8_OS_AIX && !V8_OS_SOLARIS && !V8_OS_BSD) || V8_OS_WIN
+-#if (V8_OS_POSIX && !V8_OS_AIX && !V8_OS_SOLARIS && !V8_OS_ZOS && !V8_OS_OPENBSD) || V8_OS_WIN
++#if (V8_OS_POSIX && !V8_OS_AIX && !V8_OS_SOLARIS && !V8_OS_ZOS && !V8_OS_BSD) || V8_OS_WIN
  #define V8_HAS_MALLOC_USABLE_SIZE 1
- #endif  // (V8_OS_POSIX && !V8_OS_AIX && !V8_OS_SOLARIS) || V8_OS_WIN
+ #endif
  

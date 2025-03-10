@@ -1,5 +1,5 @@
 PORTNAME=	sndy
-DISTVERSION=	0.0.5
+DISTVERSION=	0.0.6
 CATEGORIES=	sysutils audio tcl
 
 MAINTAINER=	Clockwork6400@protonmail.com

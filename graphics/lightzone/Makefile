@@ -1,7 +1,7 @@
 PORTNAME=	lightzone
 DISTVERSION=	4.1.8-3
 DISTVERSIONSUFFIX=	-g36e87773
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	graphics java
 DIST_SUBDIR=	${PORTNAME}
 
@@ -32,15 +32,11 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	ktgw0316
 GH_PROJECT=	LightZone
 
-USES=		desktop-file-utils gmake gnome jpeg pkgconfig xorg
-USE_ANT=	yes
-USE_JAVA=	yes
+USES=		desktop-file-utils gmake gnome java:ant,run jpeg pkgconfig xorg
 USE_GCC=	yes
 USE_LDCONFIG=	yes
 USE_XORG=	x11
 JAVA_VENDOR=	openjdk
-JAVA_BUILD=	yes
-JAVA_RUN=	yes
 
 PATCH_WRKSRC=	${WRKSRC:H}
 WRKSRC_SUBDIR=	linux
@@ -62,5 +58,7 @@ do-install:
 	${INSTALL_LIB} ${WRKSRC}/products/*.so ${STAGEDIR}${LIBDIR}
 	${INSTALL_DATA} ${WRKSRC}/products/${PORTNAME}.desktop ${STAGEDIR}${PREFIX}/share/applications/
 	@cd ${WRKSRC} && ${COPYTREE_SHARE} icons ${STAGEDIR}${PREFIX}/share/
+	# fix the GCC dependency problem (it uses gcc12 libs instead of default gcc13 libs when gcc12 is installed)
+	${REINPLACE_CMD} -e 's|LD_LIBRARY_PATH=|LD_LIBRARY_PATH=${LOCALBASE}/lib/gcc${GCC_DEFAULT}:|' ${STAGEDIR}${PREFIX}/bin/lightzone
 
 .include <bsd.port.mk>

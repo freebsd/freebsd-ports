@@ -1,5 +1,5 @@
-# PORTVERSION taken from MASTER port, graphics/openexr
 PORTNAME=	openexr-website-docs
+PORTVERSION=	3.3.2
 PORTREVISION=	0
 MASTER_SITES=	https://github.com/AcademySoftwareFoundation/openexr/releases/download/v${PORTVERSION}/:DEFAULT \
 		https://raw.githubusercontent.com/AcademySoftwareFoundation/openexr-images/main/:website \
@@ -23,6 +23,7 @@ DISTFILES+=	ScanLines/README.rst:website
 DISTFILES+=	ScanLines/Blobbies.exr:website
 DISTFILES+=	ScanLines/CandleGlass.exr:website
 DISTFILES+=	ScanLines/Cannon.exr:website
+DISTFILES+=	ScanLines/Carrots.exr:website
 DISTFILES+=	ScanLines/Desk.exr:website
 DISTFILES+=	ScanLines/MtTamWest.exr:website
 DISTFILES+=	ScanLines/PrismsLenses.exr:website
@@ -122,13 +123,14 @@ BUILD_DEPENDS=	breathe-apidoc:devel/py-breathe \
 		openexr>=0:graphics/openexr
 LIB_DEPENDS=
 USES=		cmake python:build
-CMAKE_ARGS=	-DPython_EXECUTABLE:STRING=${PYTHON_CMD} -DBUILD_WEBSITE=on -Wno-dev
+CMAKE_ARGS=	-DPython_EXECUTABLE:STRING=${PYTHON_CMD} -DBUILD_WEBSITE=on -DSPHINX_OPTS= -Wno-dev
 MAKE_ENV=	FREEBSD_DIST=${DISTDIR}/${DIST_SUBDIR}
 ALL_TARGET=	website
 
 MASTERDIR=	${.CURDIR}/../../graphics/openexr
 PATCHDIR=	${.CURDIR}/files
 PKGDIR=		${.CURDIR}
+WRKSRC=		${WRKDIR}/openexr-${PORTVERSION}
 
 BINARY_ALIAS=	python3=${PYTHON_CMD}
 

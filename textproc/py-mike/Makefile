@@ -1,6 +1,5 @@
 PORTNAME=	mike
-PORTVERSION=	2.1.2
-PORTREVISION=	1
+PORTVERSION=	2.1.3
 CATEGORIES=	textproc python
 MASTER_SITES=	PYPI \
 		https://github.com/jimporter/mike/releases/download/v${PORTVERSION}/

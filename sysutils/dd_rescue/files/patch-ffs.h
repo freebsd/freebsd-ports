@@ -1,11 +1,11 @@
---- ffs.h.orig	2023-02-23 21:51:27 UTC
+--- ffs.h.orig	2024-08-22 17:41:01 UTC
 +++ ffs.h
-@@ -27,7 +27,15 @@
- #ifdef HAVE_ENDIAN_H
- #include <endian.h>
+@@ -32,6 +32,16 @@
+ #include <sys/reg.h>
  #endif
-+#include <stdint.h>
  
++#include <stdint.h>
++
 +#ifndef __WORDSIZE
 +#if defined(UINTPTR_MAX) && defined(UINT64_MAX) && (UINTPTR_MAX == UINT64_MAX)
 +#define __WORDSIZE 64
@@ -13,10 +13,11 @@
 +#define __WORDSIZE 32
 +#endif
 +#endif
- 
++
  #ifdef HAVE_FFS
  # define myffs(x) ffs(x)
-@@ -54,12 +62,9 @@
+ # if __WORDSIZE == 32
+@@ -57,12 +67,9 @@
  # define myffsl(x) myffsl_c(x)
  #endif
  
@@ -30,7 +31,7 @@
  
  //#ifndef HAVE_FFS
  #ifdef NEED_FFSL_C
-@@ -93,7 +98,7 @@ static int myffsl_c(unsigned long val)
+@@ -96,7 +103,7 @@ static int myffsl_c(unsigned long val)
  }
  #endif
  
@@ -39,7 +40,7 @@
  /** Find last (highest) bit set in word val, returns a val b/w __WORDSIZE and 1, 0 if no bit is set */
  static int myflsl(unsigned long val)
  {
-@@ -138,6 +143,8 @@ void probe_sse42();
+@@ -141,6 +148,8 @@ void probe_sse42();
  int myffs_sse42(unsigned long);
  int myffsl_sse42(unsigned long);
  void probe_sse42();

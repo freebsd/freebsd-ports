@@ -1,5 +1,5 @@
 PORTNAME=	xed
-PORTVERSION=	3.4.5
+PORTVERSION=	3.8.2
 CATEGORIES=	editors gnome
 DIST_SUBDIR=	gnome
 
@@ -37,15 +37,16 @@ OPTIONS_DEFINE=		DOCS GSPELL GVFS_METADATA
 OPTIONS_DEFAULT=	DOCS GSPELL GVFS_METADATA
 OPTIONS_SUB=		yes
 
+GSPELL_DESC=		Spell checking support via gspell
+GVFS_METADATA_DESC=	GVFS metadata
+
 DOCS_BUILD_DEPENDS=	gtkdocize:textproc/gtk-doc
 DOCS_MESON_TRUE=	docs
 
-GSPELL_DESC=		Spell checking support via gspell
 GSPELL_LIB_DEPENDS=	libgspell-1.so:textproc/gspell
 GSPELL_MESON_TRUE=	enable_spell
 GSPELL_VARS=	GLIB_SCHEMAS+=org.x.editor.plugins.spell.gschema.xml
 
-GVFS_METADATA_DESC=	GVFS metadata
 GVFS_METADATA_MESON_TRUE=	enable_gvfs_metadata
 
 .include <bsd.port.mk>

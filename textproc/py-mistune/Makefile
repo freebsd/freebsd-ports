@@ -1,5 +1,5 @@
 PORTNAME=	mistune
-PORTVERSION=	3.0.2
+PORTVERSION=	3.1.2
 CATEGORIES=	textproc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -21,4 +21,10 @@ NO_ARCH=	yes
 
 CPE_VENDOR=	mistune_project
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PYTHON_REL} < 31100
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}typing-extensions>=0:devel/py-typing-extensions@${PY_FLAVOR}
+.endif
+
+.include <bsd.port.post.mk>

@@ -1,13 +1,8 @@
 PORTNAME=	surge-synthesizer-xt
 DISTVERSIONPREFIX=	release_xt_
-DISTVERSION=	1.3.2
+DISTVERSION=	1.3.4
 CATEGORIES=	audio
 PKGNAMESUFFIX=	-lv2
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES=	8a2fb0c5522d9872b79aa6053253cf252dcf81fa.patch:-p1 \
-		373971b24477abb1b7f5a18657b0fb48ef5177ca.patch:-p1 \
-		90e36f5be98ba12a513e53401c89732ae7fd11b3.patch:-p1
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Surge Synthesizer (XT) LV2 and VST plug-in
@@ -34,7 +29,7 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libxcb-util.so:x11/xcb-util
 LIB_DEPENDS+=	libasound.so:audio/alsa-lib # pending https://github.com/surge-synthesizer/surge/issues/5997 resolution
 
-USES=		cmake compiler:c++17-lang gnome localbase:ldflags pkgconfig python:build shebangfix xorg
+USES=		cmake compiler:c++17-lang gnome localbase:ldflags pkgconfig python:build shebangfix xorg # older llvm compiler fails because of -Werror -Wno-nan-infinity-disabled
 USE_GNOME=	cairo
 USE_XORG=	x11 xcb xcursor xinerama xrandr
 
@@ -48,7 +43,7 @@ CMAKE_ON=	SURGE_BUILD_LV2 \
 		SURGE_SKIP_VST3
 CMAKE_OFF=	JUCE_PLUGINHOST_VST3 JUCE_PLUGINHOST_VST
 
-CFLAGS+=	-Wno-nan-infinity-disabled # workaround for https://github.com/surge-synthesizer/surge/issues/7730
+CFLAGS+=	-Wno-nan-infinity-disabled -Wno-unknown-warning-option # workaround for https://github.com/surge-synthesizer/surge/issues/7730
 CXXFLAGS+=	-DPLUGIN_API="" -Dstricmp=strcasecmp -Dstrnicmp=strncasecmp -Dstrnicmp16=strncasecmp # for Juce
 
 .if !defined(WITH_DEBUG)
@@ -94,7 +89,7 @@ CMAKE_ARGS+=	-DARM_NATIVE=native # based on https://github.com/surge-synthesizer
 .include <bsd.port.pre.mk>
 
 post-patch:
-.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400079 || ( ${OSVERSION} >= 1302505 && ${OSVERSION} < 1400000 ))
+.if ${OPSYS} == FreeBSD
 	#@${REINPLACE_CMD} -e 's|move (group)|std::move (group)|g' \
 	#	${WRKSRC}/libs/JUCE/modules/juce_audio_processors/utilities/juce_AudioProcessorValueTreeState.cpp
 .endif

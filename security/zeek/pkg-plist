@@ -819,6 +819,7 @@ include/zeek/analyzer/protocol/ntp/ntp.pac
 include/zeek/analyzer/protocol/ntp/types.bif.h
 include/zeek/analyzer/protocol/pia/PIA.h
 include/zeek/analyzer/protocol/pop3/POP3.h
+include/zeek/analyzer/protocol/pop3/consts.bif.h
 include/zeek/analyzer/protocol/pop3/events.bif.h
 include/zeek/analyzer/protocol/radius/RADIUS.h
 include/zeek/analyzer/protocol/radius/events.bif.h
@@ -1235,6 +1236,7 @@ include/zeek/telemetry/Opaques.h
 include/zeek/telemetry/ProcessStats.h
 include/zeek/telemetry/Timer.h
 include/zeek/telemetry/Utils.h
+include/zeek/telemetry/consts.bif.h
 include/zeek/telemetry/telemetry.bif.h
 include/zeek/threading/BasicThread.h
 include/zeek/threading/Formatter.h
@@ -1375,6 +1377,7 @@ share/man/man8/zeek.8.gz
 %%SPICY%%share/spicy/finger/finger.spicy
 %%SPICY%%share/spicy/ldap/asn1.spicy
 %%SPICY%%share/spicy/ldap/ldap.spicy
+%%SPICY%%share/spicy/ldap/ldap_zeek.spicy
 %%SPICY%%share/spicy/quic/QUIC.spicy
 %%SPICY%%share/spicy/spicy-driver-host.cc
 %%SPICY%%share/spicy/spicy.spicy
@@ -1389,6 +1392,7 @@ share/man/man8/zeek.8.gz
 %%DATADIR%%/base/bif/comm.bif.zeek
 %%DATADIR%%/base/bif/communityid.bif.zeek
 %%DATADIR%%/base/bif/const.bif.zeek
+%%DATADIR%%/base/bif/consts.bif.zeek
 %%DATADIR%%/base/bif/data.bif.zeek
 %%DATADIR%%/base/bif/event.bif.zeek
 %%DATADIR%%/base/bif/file_analysis.bif.zeek
@@ -1453,6 +1457,7 @@ share/man/man8/zeek.8.gz
 %%DATADIR%%/base/bif/plugins/Zeek_NetBIOS.functions.bif.zeek
 %%DATADIR%%/base/bif/plugins/Zeek_NoneWriter.none.bif.zeek
 %%DATADIR%%/base/bif/plugins/Zeek_PE.events.bif.zeek
+%%DATADIR%%/base/bif/plugins/Zeek_POP3.consts.bif.zeek
 %%DATADIR%%/base/bif/plugins/Zeek_POP3.events.bif.zeek
 %%DATADIR%%/base/bif/plugins/Zeek_RADIUS.events.bif.zeek
 %%DATADIR%%/base/bif/plugins/Zeek_RDP.events.bif.zeek

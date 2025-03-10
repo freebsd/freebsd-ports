@@ -209,7 +209,7 @@ i386fbsd_fetch_tss(void)
 }
 
 static struct trad_frame_cache *
-i386fbsd_dblfault_cache (frame_info_ptr this_frame, void **this_cache)
+i386fbsd_dblfault_cache (const frame_info_ptr &this_frame, void **this_cache)
 {
   struct gdbarch *gdbarch = get_frame_arch (this_frame);
   enum bfd_endian byte_order = gdbarch_byte_order (gdbarch);
@@ -239,7 +239,7 @@ i386fbsd_dblfault_cache (frame_info_ptr this_frame, void **this_cache)
 }
 
 static void
-i386fbsd_dblfault_this_id (frame_info_ptr this_frame,
+i386fbsd_dblfault_this_id (const frame_info_ptr &this_frame,
 			   void **this_cache, struct frame_id *this_id)
 {
   struct trad_frame_cache *cache =
@@ -249,7 +249,7 @@ i386fbsd_dblfault_this_id (frame_info_ptr this_frame,
 }
 
 static struct value *
-i386fbsd_dblfault_prev_register (frame_info_ptr this_frame,
+i386fbsd_dblfault_prev_register (const frame_info_ptr &this_frame,
 				 void **this_cache, int regnum)
 {
   struct trad_frame_cache *cache =
@@ -260,7 +260,7 @@ i386fbsd_dblfault_prev_register (frame_info_ptr this_frame,
 
 static int
 i386fbsd_dblfault_sniffer (const struct frame_unwind *self,
-			   frame_info_ptr this_frame,
+			   const frame_info_ptr &this_frame,
 			   void **this_prologue_cache)
 {
   const char *name;
@@ -302,7 +302,7 @@ static const int i386fbsd_trapframe_offset[] = {
 #define	TRAPFRAME_SIZE		72
 
 static struct trad_frame_cache *
-i386fbsd_trapframe_cache (frame_info_ptr this_frame, void **this_cache)
+i386fbsd_trapframe_cache (const frame_info_ptr &this_frame, void **this_cache)
 {
   struct gdbarch *gdbarch = get_frame_arch (this_frame);
   enum bfd_endian byte_order = gdbarch_byte_order (gdbarch);
@@ -397,7 +397,7 @@ i386fbsd_trapframe_cache (frame_info_ptr this_frame, void **this_cache)
 }
 
 static void
-i386fbsd_trapframe_this_id (frame_info_ptr this_frame,
+i386fbsd_trapframe_this_id (const frame_info_ptr &this_frame,
 			    void **this_cache, struct frame_id *this_id)
 {
   struct trad_frame_cache *cache =
@@ -407,7 +407,7 @@ i386fbsd_trapframe_this_id (frame_info_ptr this_frame,
 }
 
 static struct value *
-i386fbsd_trapframe_prev_register (frame_info_ptr this_frame,
+i386fbsd_trapframe_prev_register (const frame_info_ptr &this_frame,
 				  void **this_cache, int regnum)
 {
   struct trad_frame_cache *cache =
@@ -418,7 +418,7 @@ i386fbsd_trapframe_prev_register (frame_info_ptr this_frame,
 
 static int
 i386fbsd_trapframe_sniffer (const struct frame_unwind *self,
-			    frame_info_ptr this_frame,
+			    const frame_info_ptr &this_frame,
 			    void **this_prologue_cache)
 {
   const char *name;

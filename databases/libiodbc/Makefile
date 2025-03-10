@@ -1,10 +1,10 @@
 PORTNAME=	libiodbc
-DISTVERSIONPREFIX=	v
 DISTVERSION=	3.52.16
 PORTREVISION=	1
 CATEGORIES=	databases
+MASTER_SITES=	https://github.com/openlink/iODBC/releases/download/v${DISTVERSION}/
 
-MAINTAINER=	kde@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	ODBC 3.x driver manager, for universal data source access
 WWW=		https://www.iodbc.org/
 
@@ -13,17 +13,16 @@ LICENSE_COMB=		dual
 LICENSE_FILE_BSD3CLAUSE=	${WRKSRC}/LICENSE.BSD
 LICENSE_FILE_LGPL20=	${WRKSRC}/LICENSE.LGPL
 
-USES=		autoreconf libtool pathfix pkgconfig
+USES=		libtool pathfix pkgconfig
+USE_LDCONFIG=	yes
+
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
+
 CONFIGURE_ARGS=	--with-iodbc-inidir=${ETCDIR} \
 		--includedir=${LOCALBASE}/include/libiodbc \
 		--disable-libodbc
+
 INSTALL_TARGET=	install-strip
-USE_LDCONFIG=	yes
-USE_GITHUB=	yes
-GH_ACCOUNT=	openlink
-GH_PROJECT=	iODBC
 
 OPTIONS_DEFINE=	GTK2 DOCS EXAMPLES
 OPTIONS_SUB=	yes
@@ -32,7 +31,6 @@ GTK2_USE=	GNOME=cairo,gdkpixbuf2,gtk20
 GTK2_USES=	gettext-runtime gnome
 GTK2_LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 			libfreetype.so:print/freetype2
-
 GTK2_CONFIGURE_ENABLE=	gui
 
 post-install:

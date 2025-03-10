@@ -33,4 +33,5 @@ post-patch:
 		${WRKSRC}/CMakeLists.txt
 
 MASTERDIR=	${.CURDIR}/../tigervnc-server
+
 .include "${MASTERDIR}/Makefile.common.mk"

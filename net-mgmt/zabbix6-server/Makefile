@@ -1,5 +1,5 @@
 PORTNAME=	zabbix6
-DISTVERSION=	6.0.32
+DISTVERSION=	6.0.39
 PORTREVISION?=	0
 CATEGORIES=	net-mgmt
 MASTER_SITES=	https://cdn.zabbix.com/zabbix/sources/stable/${DISTVERSION:R}/
@@ -167,6 +167,11 @@ GNUTLS_LIB_DEPENDS=	libgnutls.so:security/gnutls
 
 .endif # if ${ZABBIX_BUILD} != "java"
 
+.if ${ZABBIX_BUILD} == "java"
+USES+=         java
+JAVA_VERSION=	11+
+.endif
+
 .include <bsd.port.pre.mk>
 
 post-patch:
@@ -208,7 +213,7 @@ post-patch:
 .endif
 
 .if ${ZABBIX_BUILD} != "agent"
-.  for d in mysql oracle postgresql sqlite3
+.  for d in mysql oracle postgresql
 	@${REINPLACE_CMD} \
 		-e 's|/usr/bin/traceroute|/usr/sbin/traceroute|g' \
 		-e 's|sudo /usr/bin/nmap|sudo ${LOCALBASE}/bin/nmap|g' \
@@ -230,7 +235,8 @@ post-install:
 
 .if ${ZABBIX_BUILD} != "agent" && ${ZABBIX_BUILD} != "java"
 	${MKDIR} ${STAGEDIR}${DATADIR}/${ZABBIX_BUILD:Q}/database
-	@${RM} ${WRKSRC}/database/*/Makefile*
+	${FIND} ${WRKSRC}/database -type f -name 'Makefile*' -exec ${RM} {} +
+	# @${RM} ${WRKSRC}/database/*/*/Makefile*
 	(cd ${WRKSRC}/database/ && \
 		${COPYTREE_SHARE} "mysql oracle postgresql sqlite3" \
 		${STAGEDIR}${DATADIR}/${ZABBIX_BUILD:Q}/database/)

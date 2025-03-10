@@ -1,6 +1,5 @@
 PORTNAME=	oslo.concurrency
-PORTVERSION=	6.0.0
-PORTREVISION=	1
+PORTVERSION=	7.0.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -21,9 +20,14 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}fasteners>=0.7.0:devel/py-fasteners@${PY_FLA
 		${PYTHON_PKGNAMEPREFIX}oslo.i18n>=3.15.3:devel/py-oslo.i18n@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}oslo.utils>=3.33.0:devel/py-oslo.utils@${PY_FLAVOR}
 
-USES=		python
+USES=		python:3.9+
 USE_PYTHON=	autoplist concurrent pep517
 
 NO_ARCH=	yes
+
+OPTIONS_DEFINE=	EVENTLET
+EVENTLET_DESC=	Concurrent support via eventlet
+
+EVENTLET_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}eventlet>=0.35.2:net/py-eventlet@${PY_FLAVOR}
 
 .include <bsd.port.mk>

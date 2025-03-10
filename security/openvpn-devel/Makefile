@@ -1,6 +1,6 @@
 PORTNAME=	openvpn
-DISTVERSION=	g20240211
-PORTREVISION=	1
+DISTVERSION=	g20250212
+PORTREVISION=	0  # leave in even if 0 to avoid accidental PORTEPOCH bumps
 PORTEPOCH=	1
 CATEGORIES=	security net net-vpn
 PKGNAMESUFFIX=	-devel
@@ -15,25 +15,24 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT.GPL
 
 BUILD_DEPENDS+=	cmocka>=0:sysutils/cmocka \
-		rst2man:textproc/py-docutils
+		rst2man:textproc/py-docutils@${PY_FLAVOR}
 LIB_DEPENDS+=	liblzo2.so:archivers/lzo2
 
 USES=		autoreconf cpe libtool pkgconfig python:build shebangfix tar:xz
 IGNORE_SSL=	libressl libressl-devel
 USE_GITLAB=	yes
-GL_TAGNAME=	91b057a2b5b4d16b64d9d01824a8ec9327a61da1
+GL_TAGNAME=	9f4670fc718a8c16280d60c3e2d4ad29cffa04c4
 USE_RC_SUBR=	openvpn
 
 SHEBANG_FILES=	sample/sample-scripts/auth-pam.pl \
-		sample/sample-scripts/totpauth.py \
-		sample/sample-scripts/ucn.pl \
+		sample/sample-scripts/totpauth.py sample/sample-scripts/ucn.pl \
 		sample/sample-scripts/verify-cn
 
-GNU_CONFIGURE=		yes
+GNU_CONFIGURE=			yes
 GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
-CONFIGURE_ARGS+=	--enable-strict
+CONFIGURE_ARGS+=		--enable-strict
 # set PLUGIN_LIBDIR so that unqualified plugin paths are found:
-CONFIGURE_ENV+=		PLUGINDIR="${PREFIX}/lib/openvpn/plugins"
+CONFIGURE_ENV+=			PLUGINDIR="${PREFIX}/lib/openvpn/plugins"
 
 # let OpenVPN's configure script pick up the requisite libraries,
 # but do not break the plugin build if an older version is installed
@@ -41,7 +40,9 @@ CONFIGURE_ENV+=		PLUGINDIR="${PREFIX}/lib/openvpn/plugins"
 CFLAGS+=	-DLOG_OPENVPN=${LOG_OPENVPN}
 .endif
 
-CPPFLAGS+=	-I${WRKSRC}/include -I${LOCALBASE}/include -DCONFIGURE_GIT_REVISION='\"${GL_TAGNAME}\"' -DCONFIGURE_GIT_FLAGS=
+CPPFLAGS+=	-I${WRKSRC}/include -I${LOCALBASE}/include \
+		-DCONFIGURE_GIT_REVISION='\"${GL_TAGNAME}\"' \
+		-DCONFIGURE_GIT_FLAGS=
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 CONFLICTS_INSTALL?=	openvpn-2.[!4].* openvpn-[!2].* openvpn-beta \
@@ -52,52 +53,53 @@ SUB_FILES=	openvpn-client pkg-message
 PORTDOCS=	*
 PORTEXAMPLES=	*
 
-OPTIONS_DEFINE=		DOCS EASYRSA EXAMPLES LZ4 PKCS11 SMALL DCO TEST \
+OPTIONS_DEFINE=		DCO DOCS EASYRSA EXAMPLES LZ4 PKCS11 SMALL TEST \
 			X509ALTUSERNAME
-OPTIONS_DEFAULT=	EASYRSA LZ4 OPENSSL TEST DCO
-OPTIONS_EXCLUDE_FreeBSD_13=	DCO # FreeBSD 14 only
+OPTIONS_DEFAULT=	DCO EASYRSA LZ4 OPENSSL TEST
 OPTIONS_SINGLE=		SSL
 OPTIONS_SINGLE_SSL=	MBEDTLS OPENSSL
+OPTIONS_EXCLUDE_FreeBSD_13=	DCO # FreeBSD 14 only
 
 # option descriptions and interdependencies
 
-EASYRSA_DESC=			Install security/easy-rsa RSA helper package
-MBEDTLS_DESC=			SSL/TLS via mbedTLS (lacks TLS v1.3)
-PKCS11_DESC=			Use security/pkcs11-helper
-PKCS11_PREVENTS=		MBEDTLS
-PKCS11_PREVENTS_MSG=		OpenVPN cannot use pkcs11-helper with mbedTLS. \
-				Disable PKCS11, or use OpenSSL instead
-SMALL_DESC=			Build a smaller executable with fewer features
-DCO_DESC=			Build with Data Channel Offload (ovpn(4)) support
-X509ALTUSERNAME_DESC=		Enable --x509-username-field (OpenSSL only)
-X509ALTUSERNAME_PREVENTS=	MBEDTLS
-X509ALTUSERNAME_PREVENTS_MSG=	OpenVPN ${DISTVERSION} cannot use \
-				--x509-username-field with mbedTLS. Disable \
-				X509ALTUSERNAME, or use OpenSSL instead
+DCO_DESC=		Build with Data Channel Offload (ovpn(4)) support
+EASYRSA_DESC=		Install security/easy-rsa RSA helper package
+MBEDTLS_DESC=		SSL/TLS via mbedTLS (lacks TLS v1.3)
+PKCS11_DESC=		Use security/pkcs11-helper
+SMALL_DESC=		Build a smaller executable with fewer features
+X509ALTUSERNAME_DESC=	Enable --x509-username-field (OpenSSL only)
 
 # option implementations
+
+DCO_CONFIGURE_OFF=	--disable-dco
 
 EASYRSA_RUN_DEPENDS=	easy-rsa>=0:security/easy-rsa
 
 LZ4_LIB_DEPENDS+=	liblz4.so:archivers/liblz4
 LZ4_CONFIGURE_OFF=	--disable-lz4
 
-MBEDTLS_LIB_DEPENDS=	libmbedtls.so:security/mbedtls
+MBEDTLS_LIB_DEPENDS=	libmbedtls.so:security/mbedtls2
 MBEDTLS_CONFIGURE_ON=	--with-crypto-library=mbedtls
 
 OPENSSL_USES=		ssl
 OPENSSL_CONFIGURE_ON=	--with-crypto-library=openssl
 
+PKCS11_PREVENTS=		MBEDTLS
+PKCS11_PREVENTS_MSG=		OpenVPN cannot use pkcs11-helper with mbedTLS. \
+				Disable PKCS11, or use OpenSSL instead
 PKCS11_LIB_DEPENDS=		libpkcs11-helper.so:security/pkcs11-helper
 PKCS11_CONFIGURE_ENABLE=	pkcs11
 
 SMALL_CONFIGURE_ON=	--enable-small
 
-DCO_CONFIGURE_OFF=	--disable-dco
-
 TEST_ALL_TARGET=	check
 TEST_TEST_TARGET_OFF=	check
 
+X509ALTUSERNAME_PREVENTS=		MBEDTLS
+X509ALTUSERNAME_PREVENTS_MSG=		OpenVPN ${DISTVERSION} cannot use \
+					--x509-username-field with mbedTLS. \
+					Disable X509ALTUSERNAME, or use OpenSSL \
+					instead
 X509ALTUSERNAME_CONFIGURE_ENABLE=	x509-alt-username
 
 pre-configure:

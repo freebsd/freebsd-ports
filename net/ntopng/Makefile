@@ -1,6 +1,5 @@
 PORTNAME=	ntopng
-PORTVERSION=	6.0.d20240620
-PORTREVISION=	1
+PORTVERSION=	6.2.d20241217
 PORTEPOCH=	1
 CATEGORIES=	net
 
@@ -39,9 +38,9 @@ GROUPS=		ntopng
 PLIST_SUB=	NTOPNGUSER="${USERS}" NTOPNGROUP="${GROUPS}"
 
 USE_GITHUB=	yes
-GH_TUPLE=	ntop:ntopng-dist:1dcd0a1:dist/httpdocs/dist
+GH_TUPLE=	ntop:ntopng-dist:11e6b76:dist/httpdocs/dist
 GH_ACCOUNT=	ntop
-GH_TAGNAME=	1719c39c
+GH_TAGNAME=	d0029c3
 
 CPE_VENDOR=	ntop
 

@@ -12,6 +12,7 @@ etc/profile.d/vte.sh
 %%GTK4%%include/vte-%%VERSION%%-gtk4/vte/vteterminal.h
 %%GTK4%%include/vte-%%VERSION%%-gtk4/vte/vtetypebuiltins-gtk4.h
 %%GTK4%%include/vte-%%VERSION%%-gtk4/vte/vtetypebuiltins.h
+%%GTK4%%include/vte-%%VERSION%%-gtk4/vte/vteuuid.h
 %%GTK4%%include/vte-%%VERSION%%-gtk4/vte/vteversion.h
 include/vte-%%VERSION%%/vte/vte.h
 include/vte-%%VERSION%%/vte/vtedeprecated.h
@@ -23,6 +24,7 @@ include/vte-%%VERSION%%/vte/vteregex.h
 include/vte-%%VERSION%%/vte/vteterminal.h
 include/vte-%%VERSION%%/vte/vtetypebuiltins-gtk3.h
 include/vte-%%VERSION%%/vte/vtetypebuiltins.h
+include/vte-%%VERSION%%/vte/vteuuid.h
 include/vte-%%VERSION%%/vte/vteversion.h
 lib/girepository-1.0/Vte-%%VERSION%%.typelib
 %%GTK4%%lib/girepository-1.0/Vte-%%VER3%%.typelib
@@ -30,7 +32,7 @@ lib/girepository-1.0/Vte-%%VERSION%%.typelib
 %%GTK4%%lib/libvte-%%VERSION%%-gtk4.so.0
 lib/libvte-%%VERSION%%.so
 lib/libvte-%%VERSION%%.so.0
-lib/libvte-%%VERSION%%.so.0.7000.2
+lib/libvte-%%VERSION%%.so.0.7800.2
 %%GTK4%%libdata/pkgconfig/vte-%%VERSION%%-gtk4.pc
 libdata/pkgconfig/vte-%%VERSION%%.pc
 libexec/vte-urlencode-cwd
@@ -86,6 +88,7 @@ share/locale/is/LC_MESSAGES/vte-%%VERSION%%.mo
 share/locale/it/LC_MESSAGES/vte-%%VERSION%%.mo
 share/locale/ja/LC_MESSAGES/vte-%%VERSION%%.mo
 share/locale/ka/LC_MESSAGES/vte-%%VERSION%%.mo
+share/locale/kab/LC_MESSAGES/vte-%%VERSION%%.mo
 share/locale/kk/LC_MESSAGES/vte-%%VERSION%%.mo
 share/locale/kn/LC_MESSAGES/vte-%%VERSION%%.mo
 share/locale/ko/LC_MESSAGES/vte-%%VERSION%%.mo

@@ -1,6 +1,6 @@
---- electron/spec/api-safe-storage-spec.ts.orig	2023-08-09 14:05:20 UTC
+--- electron/spec/api-safe-storage-spec.ts.orig	2024-10-09 13:53:12 UTC
 +++ electron/spec/api-safe-storage-spec.ts
-@@ -26,7 +26,7 @@ describe('safeStorage module', () => {
+@@ -29,7 +29,7 @@ describe('safeStorage module', () => {
  
  describe('safeStorage module', () => {
    before(() => {
@@ -9,7 +9,7 @@
        safeStorage.setUsePlainTextEncryption(true);
      }
    });
-@@ -44,7 +44,7 @@ describe('safeStorage module', () => {
+@@ -47,7 +47,7 @@ describe('safeStorage module', () => {
      });
    });
  

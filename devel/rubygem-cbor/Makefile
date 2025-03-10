@@ -1,5 +1,5 @@
 PORTNAME=	cbor
-PORTVERSION=	0.5.9.6
+PORTVERSION=	0.5.9.8
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -11,9 +11,11 @@ LICENSE=	APACHE20
 
 USES=		gem
 
+PIE_UNSAFE=	yes
+
 .include <bsd.port.options.mk>
 
-.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400091 || ( ${OSVERSION} >= 1302507 && ${OSVERSION} < 1400000 ))
+.if ${OPSYS} == FreeBSD
 CONFIGURE_ARGS+=	--with-cflags="-Wno-error=incompatible-function-pointer-types"
 .endif
 

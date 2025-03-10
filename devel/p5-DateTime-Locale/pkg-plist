@@ -1565,6 +1565,11 @@
 %%SITE_PERL%%/auto/share/dist/DateTime-Locale/jv.pl
 %%SITE_PERL%%/auto/share/dist/DateTime-Locale/ka-GE.pl
 %%SITE_PERL%%/auto/share/dist/DateTime-Locale/ka.pl
+%%SITE_PERL%%/auto/share/dist/DateTime-Locale/kaa-Cyrl-UZ.pl
+%%SITE_PERL%%/auto/share/dist/DateTime-Locale/kaa-Cyrl.pl
+%%SITE_PERL%%/auto/share/dist/DateTime-Locale/kaa-Latn-UZ.pl
+%%SITE_PERL%%/auto/share/dist/DateTime-Locale/kaa-Latn.pl
+%%SITE_PERL%%/auto/share/dist/DateTime-Locale/kaa.pl
 %%SITE_PERL%%/auto/share/dist/DateTime-Locale/kab-DZ.pl
 %%SITE_PERL%%/auto/share/dist/DateTime-Locale/kab.pl
 %%SITE_PERL%%/auto/share/dist/DateTime-Locale/kaj-NG.pl
@@ -1585,6 +1590,10 @@
 %%SITE_PERL%%/auto/share/dist/DateTime-Locale/khq.pl
 %%SITE_PERL%%/auto/share/dist/DateTime-Locale/ki-KE.pl
 %%SITE_PERL%%/auto/share/dist/DateTime-Locale/ki.pl
+%%SITE_PERL%%/auto/share/dist/DateTime-Locale/kk-Arab-CN.pl
+%%SITE_PERL%%/auto/share/dist/DateTime-Locale/kk-Arab.pl
+%%SITE_PERL%%/auto/share/dist/DateTime-Locale/kk-Cyrl-KZ.pl
+%%SITE_PERL%%/auto/share/dist/DateTime-Locale/kk-Cyrl.pl
 %%SITE_PERL%%/auto/share/dist/DateTime-Locale/kk-KZ.pl
 %%SITE_PERL%%/auto/share/dist/DateTime-Locale/kk.pl
 %%SITE_PERL%%/auto/share/dist/DateTime-Locale/kkj-CM.pl
@@ -1601,7 +1610,11 @@
 %%SITE_PERL%%/auto/share/dist/DateTime-Locale/ko-KP.pl
 %%SITE_PERL%%/auto/share/dist/DateTime-Locale/ko-KR.pl
 %%SITE_PERL%%/auto/share/dist/DateTime-Locale/ko.pl
+%%SITE_PERL%%/auto/share/dist/DateTime-Locale/kok-Deva-IN.pl
+%%SITE_PERL%%/auto/share/dist/DateTime-Locale/kok-Deva.pl
 %%SITE_PERL%%/auto/share/dist/DateTime-Locale/kok-IN.pl
+%%SITE_PERL%%/auto/share/dist/DateTime-Locale/kok-Latn-IN.pl
+%%SITE_PERL%%/auto/share/dist/DateTime-Locale/kok-Latn.pl
 %%SITE_PERL%%/auto/share/dist/DateTime-Locale/kok.pl
 %%SITE_PERL%%/auto/share/dist/DateTime-Locale/kpe-GN.pl
 %%SITE_PERL%%/auto/share/dist/DateTime-Locale/kpe-LR.pl
@@ -1644,6 +1657,8 @@
 %%SITE_PERL%%/auto/share/dist/DateTime-Locale/lij.pl
 %%SITE_PERL%%/auto/share/dist/DateTime-Locale/lkt-US.pl
 %%SITE_PERL%%/auto/share/dist/DateTime-Locale/lkt.pl
+%%SITE_PERL%%/auto/share/dist/DateTime-Locale/lld-IT.pl
+%%SITE_PERL%%/auto/share/dist/DateTime-Locale/lld.pl
 %%SITE_PERL%%/auto/share/dist/DateTime-Locale/lmo-IT.pl
 %%SITE_PERL%%/auto/share/dist/DateTime-Locale/lmo.pl
 %%SITE_PERL%%/auto/share/dist/DateTime-Locale/ln-AO.pl
@@ -1658,6 +1673,8 @@
 %%SITE_PERL%%/auto/share/dist/DateTime-Locale/lrc.pl
 %%SITE_PERL%%/auto/share/dist/DateTime-Locale/lt-LT.pl
 %%SITE_PERL%%/auto/share/dist/DateTime-Locale/lt.pl
+%%SITE_PERL%%/auto/share/dist/DateTime-Locale/ltg-LV.pl
+%%SITE_PERL%%/auto/share/dist/DateTime-Locale/ltg.pl
 %%SITE_PERL%%/auto/share/dist/DateTime-Locale/lu-CD.pl
 %%SITE_PERL%%/auto/share/dist/DateTime-Locale/lu.pl
 %%SITE_PERL%%/auto/share/dist/DateTime-Locale/luo-KE.pl
@@ -1683,6 +1700,8 @@
 %%SITE_PERL%%/auto/share/dist/DateTime-Locale/mgh.pl
 %%SITE_PERL%%/auto/share/dist/DateTime-Locale/mgo-CM.pl
 %%SITE_PERL%%/auto/share/dist/DateTime-Locale/mgo.pl
+%%SITE_PERL%%/auto/share/dist/DateTime-Locale/mhn-IT.pl
+%%SITE_PERL%%/auto/share/dist/DateTime-Locale/mhn.pl
 %%SITE_PERL%%/auto/share/dist/DateTime-Locale/mi-NZ.pl
 %%SITE_PERL%%/auto/share/dist/DateTime-Locale/mi.pl
 %%SITE_PERL%%/auto/share/dist/DateTime-Locale/mic-CA.pl
@@ -2066,6 +2085,7 @@
 %%SITE_PERL%%/auto/share/dist/DateTime-Locale/yrl.pl
 %%SITE_PERL%%/auto/share/dist/DateTime-Locale/yue-Hans-CN.pl
 %%SITE_PERL%%/auto/share/dist/DateTime-Locale/yue-Hans.pl
+%%SITE_PERL%%/auto/share/dist/DateTime-Locale/yue-Hant-CN.pl
 %%SITE_PERL%%/auto/share/dist/DateTime-Locale/yue-Hant-HK.pl
 %%SITE_PERL%%/auto/share/dist/DateTime-Locale/yue-Hant.pl
 %%SITE_PERL%%/auto/share/dist/DateTime-Locale/yue.pl
@@ -2075,11 +2095,15 @@
 %%SITE_PERL%%/auto/share/dist/DateTime-Locale/zgh.pl
 %%SITE_PERL%%/auto/share/dist/DateTime-Locale/zh-Hans-HK.pl
 %%SITE_PERL%%/auto/share/dist/DateTime-Locale/zh-Hans-MO.pl
+%%SITE_PERL%%/auto/share/dist/DateTime-Locale/zh-Hans-MY.pl
 %%SITE_PERL%%/auto/share/dist/DateTime-Locale/zh-Hans-SG.pl
 %%SITE_PERL%%/auto/share/dist/DateTime-Locale/zh-Hans.pl
 %%SITE_PERL%%/auto/share/dist/DateTime-Locale/zh-Hant-HK.pl
 %%SITE_PERL%%/auto/share/dist/DateTime-Locale/zh-Hant-MO.pl
+%%SITE_PERL%%/auto/share/dist/DateTime-Locale/zh-Hant-MY.pl
 %%SITE_PERL%%/auto/share/dist/DateTime-Locale/zh-Hant.pl
+%%SITE_PERL%%/auto/share/dist/DateTime-Locale/zh-Latn-CN.pl
+%%SITE_PERL%%/auto/share/dist/DateTime-Locale/zh-Latn.pl
 %%SITE_PERL%%/auto/share/dist/DateTime-Locale/zh.pl
 %%SITE_PERL%%/auto/share/dist/DateTime-Locale/zu-ZA.pl
 %%SITE_PERL%%/auto/share/dist/DateTime-Locale/zu.pl

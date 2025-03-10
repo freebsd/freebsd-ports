@@ -7,8 +7,8 @@ include/lizard_decompress.h
 include/lizard_frame.h
 lib/liblizard.a
 lib/liblizard.so
-lib/liblizard.so.1
-lib/liblizard.so.1.0.0
+lib/liblizard.so.2
+lib/liblizard.so.%%DISTVERSION%%.0
 libdata/pkgconfig/liblizard.pc
 share/man/man1/lizard.1.gz
 share/man/man1/lizardcat.1.gz

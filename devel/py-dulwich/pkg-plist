@@ -1,0 +1,17 @@
+%%PORTDOCS%%%%DOCSDIR%%/conclusion.txt
+%%PORTDOCS%%%%DOCSDIR%%/encoding.txt
+%%PORTDOCS%%%%DOCSDIR%%/file-format.txt
+%%PORTDOCS%%%%DOCSDIR%%/index.txt
+%%PORTDOCS%%%%DOCSDIR%%/introduction.txt
+%%PORTDOCS%%%%DOCSDIR%%/object-store.txt
+%%PORTDOCS%%%%DOCSDIR%%/porcelain.txt
+%%PORTDOCS%%%%DOCSDIR%%/remote.txt
+%%PORTDOCS%%%%DOCSDIR%%/repo.txt
+%%PORTDOCS%%%%DOCSDIR%%/tag.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/clone.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/config.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/diff.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gcs.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/latest_change.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/memoryrepo.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rename-branch.py

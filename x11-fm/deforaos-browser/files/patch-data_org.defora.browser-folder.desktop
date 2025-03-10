@@ -1,0 +1,13 @@
+--- data/org.defora.browser-folder.desktop.orig	2024-09-02 14:56:54 UTC
++++ data/org.defora.browser-folder.desktop
+@@ -1,8 +1,8 @@ Comment=Open folder in file manager
+ [Desktop Entry]
+ Name=Open folder
+ Comment=Open folder in file manager
+-TryExec=browser
+-Exec=browser %F
++TryExec=deforaos-browser
++Exec=deforaos-browser %F
+ Icon=inode-directory
+ Type=Application
+ NoDisplay=true

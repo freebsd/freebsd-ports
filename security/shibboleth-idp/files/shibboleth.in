@@ -4,6 +4,7 @@
 # JAVA
 #   Command to invoke Java. If not set, java (from the PATH) will be used.
 #
+JAVA=%%LOCALBASE%%/bin/java
 
 # JAVA_OPTIONS
 #   Extra options to pass to the JVM

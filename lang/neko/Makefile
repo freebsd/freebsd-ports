@@ -1,7 +1,7 @@
 PORTNAME=	neko
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2-2-0
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	lang
 
 MAINTAINER=	penzin.dev@gmail.com
@@ -11,11 +11,14 @@ WWW=		https://nekovm.org/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Depends on expired security/mbedtls2
+EXPIRATION_DATE=2025-03-31
+
 BUILD_DEPENDS=	git:devel/git
 LIB_DEPENDS=	libgc-threaded.so:devel/boehm-gc-threaded \
 		libapr-1.so:devel/apr1 libaprutil-1.so:devel/apr1 \
 		libpcre.so:devel/pcre libpcreposix.so:devel/pcre \
-		libmbedtls.so:security/mbedtls libmbedcrypto.so:security/mbedtls libmbedx509.so:security/mbedtls \
+		libmbedtls.so:security/mbedtls2 libmbedcrypto.so:security/mbedtls2 libmbedx509.so:security/mbedtls2 \
 		libfontconfig.so:x11-fonts/fontconfig libfreetype.so:print/freetype2
 
 USES=		cmake mysql pkgconfig sqlite:3

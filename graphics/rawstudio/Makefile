@@ -1,17 +1,14 @@
 PORTNAME=	rawstudio
 PORTVERSION=	2.0
-PORTREVISION=	26
+PORTREVISION=	27
 CATEGORIES=	graphics
 MASTER_SITES=	http://rawstudio.org/files/release/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Open-source program to read and manipulate RAW photo images
 WWW=		https://rawstudio.org/
 
 LICENSE=	GPLv2+
-
-DEPRECATED=	Abandonware, fails to build with libxml2 2.13+ (PR 279964). Consider migrating to graphics/rawtherapee
-EXPIRATION_DATE=2024-08-31
 
 BUILD_DEPENDS=	${LOCALBASE}/include/fftw3.h:math/fftw3
 LIB_DEPENDS=	libcurl.so:ftp/curl \

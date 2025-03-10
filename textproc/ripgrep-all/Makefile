@@ -1,7 +1,7 @@
 PORTNAME=	ripgrep-all
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.9.6
-PORTREVISION=	28
+PORTREVISION=	35
 CATEGORIES=	textproc
 
 MAINTAINER=	alexis.praga@free.fr
@@ -10,6 +10,8 @@ WWW=		https://github.com/phiresky/ripgrep-all/
 
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
+
+RUN_DEPENDS=	rg:textproc/ripgrep
 
 USES=		cargo
 USE_GITHUB=	yes
@@ -178,9 +180,5 @@ CARGO_CRATES=	addr2line-0.12.0 \
 
 PLIST_FILES=	bin/rga \
 		bin/rga-preproc
-
-post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/rga
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/rga-preproc
 
 .include <bsd.port.mk>

@@ -33,10 +33,6 @@
 %%DATADIR%%/plugins/1password/README.md
 %%DATADIR%%/plugins/1password/_opswd
 %%DATADIR%%/plugins/1password/opswd
-%%DATADIR%%/plugins/adb/README.md
-%%DATADIR%%/plugins/adb/_adb
-%%DATADIR%%/plugins/ag/README.md
-%%DATADIR%%/plugins/ag/_ag
 %%DATADIR%%/plugins/alias-finder/.zunit.yml
 %%DATADIR%%/plugins/alias-finder/README.md
 %%DATADIR%%/plugins/alias-finder/alias-finder.plugin.zsh
@@ -60,6 +56,8 @@
 %%DATADIR%%/plugins/arcanist/arcanist.plugin.zsh
 %%DATADIR%%/plugins/archlinux/README.md
 %%DATADIR%%/plugins/archlinux/archlinux.plugin.zsh
+%%DATADIR%%/plugins/arduino-cli/README.md
+%%DATADIR%%/plugins/arduino-cli/arduino-cli.plugin.zsh
 %%DATADIR%%/plugins/argocd/README.md
 %%DATADIR%%/plugins/argocd/argocd.plugin.zsh
 %%DATADIR%%/plugins/asdf/README.md
@@ -94,6 +92,8 @@
 %%DATADIR%%/plugins/brew/brew.plugin.zsh
 %%DATADIR%%/plugins/bridgetown/README.md
 %%DATADIR%%/plugins/bridgetown/bridgetown.plugin.zsh
+%%DATADIR%%/plugins/buf/README.md
+%%DATADIR%%/plugins/buf/buf.plugin.zsh
 %%DATADIR%%/plugins/bun/README.md
 %%DATADIR%%/plugins/bun/bun.plugin.zsh
 %%DATADIR%%/plugins/bundler/README.md
@@ -118,6 +118,8 @@
 %%DATADIR%%/plugins/celery/_celery
 %%DATADIR%%/plugins/charm/README.md
 %%DATADIR%%/plugins/charm/charm.plugin.zsh
+%%DATADIR%%/plugins/chezmoi/README.md
+%%DATADIR%%/plugins/chezmoi/chezmoi.plugin.zsh
 %%DATADIR%%/plugins/chruby/README.md
 %%DATADIR%%/plugins/chruby/chruby.plugin.zsh
 %%DATADIR%%/plugins/chucknorris/.gitignore
@@ -148,6 +150,10 @@
 %%DATADIR%%/plugins/compleat/compleat.plugin.zsh
 %%DATADIR%%/plugins/composer/README.md
 %%DATADIR%%/plugins/composer/composer.plugin.zsh
+%%DATADIR%%/plugins/conda-env/README.md
+%%DATADIR%%/plugins/conda-env/conda-env.plugin.zsh
+%%DATADIR%%/plugins/conda/README.md
+%%DATADIR%%/plugins/conda/conda.plugin.zsh
 %%DATADIR%%/plugins/copybuffer/README.md
 %%DATADIR%%/plugins/copybuffer/copybuffer.plugin.zsh
 %%DATADIR%%/plugins/copyfile/README.md
@@ -181,9 +187,6 @@
 %%DATADIR%%/plugins/docker-compose/README.md
 %%DATADIR%%/plugins/docker-compose/_docker-compose
 %%DATADIR%%/plugins/docker-compose/docker-compose.plugin.zsh
-%%DATADIR%%/plugins/docker-machine/README.md
-%%DATADIR%%/plugins/docker-machine/_docker-machine
-%%DATADIR%%/plugins/docker-machine/docker-machine.plugin.zsh
 %%DATADIR%%/plugins/docker/README.md
 %%DATADIR%%/plugins/docker/completions/_docker
 %%DATADIR%%/plugins/docker/docker.plugin.zsh
@@ -240,8 +243,6 @@
 %%DATADIR%%/plugins/fastfile/fastfile.plugin.zsh
 %%DATADIR%%/plugins/fbterm/README.md
 %%DATADIR%%/plugins/fbterm/fbterm.plugin.zsh
-%%DATADIR%%/plugins/fd/README.md
-%%DATADIR%%/plugins/fd/_fd
 %%DATADIR%%/plugins/fig/README.md
 %%DATADIR%%/plugins/fig/fig.plugin.zsh
 %%DATADIR%%/plugins/firewalld/README.md
@@ -272,7 +273,7 @@
 %%DATADIR%%/plugins/geeknote/_geeknote
 %%DATADIR%%/plugins/geeknote/geeknote.plugin.zsh
 %%DATADIR%%/plugins/gem/README.md
-%%DATADIR%%/plugins/gem/_gem
+%%DATADIR%%/plugins/gem/completions/_gem
 %%DATADIR%%/plugins/gem/gem.plugin.zsh
 %%DATADIR%%/plugins/genpass/README.md
 %%DATADIR%%/plugins/genpass/genpass-apple
@@ -347,7 +348,7 @@
 %%DATADIR%%/plugins/helm/README.md
 %%DATADIR%%/plugins/helm/helm.plugin.zsh
 %%DATADIR%%/plugins/heroku-alias/README.md
-%%DATADIR%%/plugins/heroku-alias/heroku.alias.sh
+%%DATADIR%%/plugins/heroku-alias/heroku-alias.plugin.zsh
 %%DATADIR%%/plugins/heroku/README.md
 %%DATADIR%%/plugins/heroku/heroku.plugin.zsh
 %%DATADIR%%/plugins/history-substring-search/README.md
@@ -400,6 +401,8 @@
 %%DATADIR%%/plugins/juju/juju.plugin.zsh
 %%DATADIR%%/plugins/jump/README.md
 %%DATADIR%%/plugins/jump/jump.plugin.zsh
+%%DATADIR%%/plugins/k9s/README.md
+%%DATADIR%%/plugins/k9s/k9s.plugin.zsh
 %%DATADIR%%/plugins/kate/README.md
 %%DATADIR%%/plugins/kate/kate.plugin.zsh
 %%DATADIR%%/plugins/keychain/README.md
@@ -408,6 +411,8 @@
 %%DATADIR%%/plugins/kind/kind.plugin.zsh
 %%DATADIR%%/plugins/kitchen/README.md
 %%DATADIR%%/plugins/kitchen/_kitchen
+%%DATADIR%%/plugins/kitty/README.md
+%%DATADIR%%/plugins/kitty/kitty.plugin.zsh
 %%DATADIR%%/plugins/kn/README.md
 %%DATADIR%%/plugins/kn/kn.plugin.zsh
 %%DATADIR%%/plugins/knife/README.md
@@ -440,6 +445,9 @@
 %%DATADIR%%/plugins/lein/_lein
 %%DATADIR%%/plugins/lighthouse/README.md
 %%DATADIR%%/plugins/lighthouse/lighthouse.plugin.zsh
+%%DATADIR%%/plugins/localstack/README.md
+%%DATADIR%%/plugins/localstack/localstack.plugin.zsh
+%%DATADIR%%/plugins/localstack/sqs-send-result.png
 %%DATADIR%%/plugins/lol/README.md
 %%DATADIR%%/plugins/lol/lol.plugin.zsh
 %%DATADIR%%/plugins/lpass/README.md
@@ -499,6 +507,8 @@
 %%DATADIR%%/plugins/nats/nats.plugin.zsh
 %%DATADIR%%/plugins/ng/README.md
 %%DATADIR%%/plugins/ng/_ng
+%%DATADIR%%/plugins/ngrok/README.md
+%%DATADIR%%/plugins/ngrok/ngrok.plugin.zsh
 %%DATADIR%%/plugins/nmap/README.md
 %%DATADIR%%/plugins/nmap/nmap.plugin.zsh
 %%DATADIR%%/plugins/node/README.md
@@ -515,6 +525,8 @@
 %%DATADIR%%/plugins/oc/oc.plugin.zsh
 %%DATADIR%%/plugins/octozen/README.md
 %%DATADIR%%/plugins/octozen/octozen.plugin.zsh
+%%DATADIR%%/plugins/opentofu/README.md
+%%DATADIR%%/plugins/opentofu/opentofu.plugin.zsh
 %%DATADIR%%/plugins/operator-sdk/README.md
 %%DATADIR%%/plugins/operator-sdk/operator-sdk.plugin.zsh
 %%DATADIR%%/plugins/otp/README.md
@@ -596,6 +608,8 @@
 %%DATADIR%%/plugins/rbfu/rbfu.plugin.zsh
 %%DATADIR%%/plugins/rbw/README.md
 %%DATADIR%%/plugins/rbw/rbw.plugin.zsh
+%%DATADIR%%/plugins/rclone/README.md
+%%DATADIR%%/plugins/rclone/rclone.plugin.zsh
 %%DATADIR%%/plugins/react-native/README.md
 %%DATADIR%%/plugins/react-native/_react-native
 %%DATADIR%%/plugins/react-native/react-native.plugin.zsh
@@ -606,13 +620,10 @@
 %%DATADIR%%/plugins/repo/README.md
 %%DATADIR%%/plugins/repo/_repo
 %%DATADIR%%/plugins/repo/repo.plugin.zsh
-%%DATADIR%%/plugins/ripgrep/README.md
-%%DATADIR%%/plugins/ripgrep/_ripgrep
 %%DATADIR%%/plugins/ros/README.md
 %%DATADIR%%/plugins/ros/_ros
 %%DATADIR%%/plugins/rsync/README.md
 %%DATADIR%%/plugins/rsync/rsync.plugin.zsh
-%%DATADIR%%/plugins/rtx/rtx.plugin.zsh
 %%DATADIR%%/plugins/ruby/README.md
 %%DATADIR%%/plugins/ruby/ruby.plugin.zsh
 %%DATADIR%%/plugins/rust/README.md
@@ -638,7 +649,7 @@
 %%DATADIR%%/plugins/screen/README.md
 %%DATADIR%%/plugins/screen/screen.plugin.zsh
 %%DATADIR%%/plugins/scw/README.md
-%%DATADIR%%/plugins/scw/_scw
+%%DATADIR%%/plugins/scw/scw.plugin.zsh
 %%DATADIR%%/plugins/sdk/README.md
 %%DATADIR%%/plugins/sdk/sdk.plugin.zsh
 %%DATADIR%%/plugins/sfdx/README.md
@@ -667,6 +678,7 @@
 %%DATADIR%%/plugins/sprunge/sprunge.plugin.zsh
 %%DATADIR%%/plugins/ssh-agent/README.md
 %%DATADIR%%/plugins/ssh-agent/ssh-agent.plugin.zsh
+%%DATADIR%%/plugins/ssh/README.md
 %%DATADIR%%/plugins/ssh/ssh.plugin.zsh
 %%DATADIR%%/plugins/stack/README.md
 %%DATADIR%%/plugins/stack/stack.plugin.zsh
@@ -699,10 +711,14 @@
 %%DATADIR%%/plugins/symfony/symfony.plugin.zsh
 %%DATADIR%%/plugins/symfony2/README.md
 %%DATADIR%%/plugins/symfony2/symfony2.plugin.zsh
+%%DATADIR%%/plugins/symfony6/README.md
+%%DATADIR%%/plugins/symfony6/symfony6.plugin.zsh
 %%DATADIR%%/plugins/systemadmin/README.md
 %%DATADIR%%/plugins/systemadmin/systemadmin.plugin.zsh
 %%DATADIR%%/plugins/systemd/README.md
 %%DATADIR%%/plugins/systemd/systemd.plugin.zsh
+%%DATADIR%%/plugins/tailscale/README.md
+%%DATADIR%%/plugins/tailscale/tailscale.plugin.zsh
 %%DATADIR%%/plugins/taskwarrior/README.md
 %%DATADIR%%/plugins/taskwarrior/_task
 %%DATADIR%%/plugins/taskwarrior/taskwarrior.plugin.zsh
@@ -727,6 +743,10 @@
 %%DATADIR%%/plugins/tig/tig.plugin.zsh
 %%DATADIR%%/plugins/timer/README.md
 %%DATADIR%%/plugins/timer/timer.plugin.zsh
+%%DATADIR%%/plugins/timoni/README.md
+%%DATADIR%%/plugins/timoni/timoni.plugin.zsh
+%%DATADIR%%/plugins/tldr/README.md
+%%DATADIR%%/plugins/tldr/tldr.plugin.zsh
 %%DATADIR%%/plugins/tmux-cssh/README.md
 %%DATADIR%%/plugins/tmux-cssh/_tmux-cssh
 %%DATADIR%%/plugins/tmux/README.md
@@ -753,13 +773,15 @@
 %%DATADIR%%/plugins/universalarchive/universalarchive.plugin.zsh
 %%DATADIR%%/plugins/urltools/README.md
 %%DATADIR%%/plugins/urltools/urltools.plugin.zsh
+%%DATADIR%%/plugins/uv/README.md
+%%DATADIR%%/plugins/uv/uv.plugin.zsh
 %%DATADIR%%/plugins/vagrant-prompt/README.md
 %%DATADIR%%/plugins/vagrant-prompt/vagrant-prompt.plugin.zsh
 %%DATADIR%%/plugins/vagrant/README.md
 %%DATADIR%%/plugins/vagrant/_vagrant
 %%DATADIR%%/plugins/vagrant/vagrant.plugin.zsh
 %%DATADIR%%/plugins/vault/README.md
-%%DATADIR%%/plugins/vault/_vault
+%%DATADIR%%/plugins/vault/vault.plugin.zsh
 %%DATADIR%%/plugins/vi-mode/README.md
 %%DATADIR%%/plugins/vi-mode/vi-mode.plugin.zsh
 %%DATADIR%%/plugins/vim-interaction/README.md
@@ -855,6 +877,7 @@
 %%DATADIR%%/plugins/zsh-navigation-tools/znt-kill-widget
 %%DATADIR%%/plugins/zsh-navigation-tools/znt-usetty-wrapper
 %%DATADIR%%/plugins/zsh-navigation-tools/zsh-navigation-tools.plugin.zsh
+%%DATADIR%%/templates/minimal.zshrc
 %%DATADIR%%/templates/zshrc.zsh-template
 %%DATADIR%%/themes/3den.zsh-theme
 %%DATADIR%%/themes/Soliah.zsh-theme

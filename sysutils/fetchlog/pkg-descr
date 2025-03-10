@@ -8,6 +8,3 @@ fetchlog works on syslog generated logfiles as well as other logfiles.
 
 fetchlog can be used standalone or as a Nagios (TM) plugin.  Together
 with Net-SNMP one can look at/monitor new messages in remote logfiles.
-
--Alexander Haderer
-alexander.haderer@loescap.de

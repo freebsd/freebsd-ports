@@ -14,9 +14,10 @@ include/poser/core/server.h
 include/poser/core/service.h
 include/poser/core/stringbuilder.h
 include/poser/core/threadpool.h
+include/poser/core/timer.h
 include/poser/core/util.h
 include/poser/decl.h
 lib/libposercore.so
-lib/libposercore.so.1
-lib/libposercore.so.1.1.0
+lib/libposercore.so.%%SOVMAJ%%
+lib/libposercore.so.%%SOVMAJ%%.%%SOVMIN%%.%%SOVREV%%
 libdata/pkgconfig/posercore.pc

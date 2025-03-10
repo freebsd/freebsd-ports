@@ -1,7 +1,7 @@
---- configure.ac.orig	2023-10-07 05:52:23 UTC
+--- configure.ac.orig	2024-10-02 06:16:36 UTC
 +++ configure.ac
-@@ -656,7 +656,10 @@ esac
- dnl TODO: Need GCC to know this code is using C++ lamda functions
+@@ -672,7 +672,10 @@ dnl LIBRARY TEST: ALSA
+ dnl TODO: Need GCC to know this code is using C++ lambda functions
  
  dnl LIBRARY TEST: ALSA
 -AM_PATH_ALSA(0.9.0, AC_DEFINE(HAVE_ALSA,1,[Define to 1 to use ALSA for MIDI]) , : )

@@ -6,5 +6,3 @@ and they handle most concerns such as authentication, pagination, retry, timeout
 and logging. You can use this client to access the Identity and Access
 Management (IAM) API, but note that some services may provide a separate modern
 client that is easier to use.
-
-See also: https://github.com/googleapis/google-api-ruby-client

@@ -1,12 +1,10 @@
 bin/kapt
 bin/kotlin
-bin/kotlin-dce-js
 bin/kotlinc
 bin/kotlinc-js
 bin/kotlinc-jvm
 %%DATADIR%%/bin/kapt
 %%DATADIR%%/bin/kotlin
-%%DATADIR%%/bin/kotlin-dce-js
 %%DATADIR%%/bin/kotlinc
 %%DATADIR%%/bin/kotlinc-js
 %%DATADIR%%/bin/kotlinc-jvm
@@ -16,6 +14,7 @@ bin/kotlinc-jvm
 %%DATADIR%%/lib/android-extensions-runtime.jar
 %%DATADIR%%/lib/annotations-13.0.jar
 %%DATADIR%%/lib/assignment-compiler-plugin.jar
+%%DATADIR%%/lib/compose-compiler-plugin.jar
 %%DATADIR%%/lib/js.engines.jar
 %%DATADIR%%/lib/jvm-abi-gen.jar
 %%DATADIR%%/lib/kotlin-annotation-processing-cli.jar

@@ -1,0 +1,5 @@
+NiceGUI Highcharts is an extension for NiceGUI, an easy-to-use,
+Python-based UI framework. It provides a 'highchart' element based
+on Highcharts, the popular JavaScript charting library. Due to
+Highcharts' restrictive license, this element is not part of the
+NiceGUI package anymore, but can be install separately.

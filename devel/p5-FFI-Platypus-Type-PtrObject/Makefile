@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-FFI-Platypus>=1.11:devel/p5-FFI-Platypus \
 		p5-Ref-Util>=0:devel/p5-Ref-Util
-TEST_DEPENDS=	p5-Test2-Suite>=0.000060:devel/p5-Test2-Suite \
+TEST_DEPENDS=	p5-Test-Simple>=1.302200:devel/p5-Test-Simple \
 		p5-Test2-Tools-FFI>=0:devel/p5-Test2-Tools-FFI
 
 USES=		perl5

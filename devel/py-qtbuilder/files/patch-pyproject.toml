@@ -1,0 +1,16 @@
+Reduce setuptools requirement until [1] is resolved. Seems to work fine
+with 63.x.
+
+[1] https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=270358
+
+--- pyproject.toml.orig	2024-04-20 11:55:50 UTC
++++ pyproject.toml
+@@ -1,7 +1,7 @@
+ # The project configuration for sip.
+ 
+ [build-system]
+-requires = ["setuptools>=64", "setuptools_scm>=8"]
++requires = ["setuptools>=63", "setuptools_scm>=8"]
+ build-backend = "setuptools.build_meta"
+ 
+ [tool.setuptools_scm]

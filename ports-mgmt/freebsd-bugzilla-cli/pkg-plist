@@ -1,3 +1,4 @@
+bin/bz
 %%DATADIR%%/_util.sh
 %%DATADIR%%/_version.sh
 %%DATADIR%%/attach.sh
@@ -12,17 +13,10 @@
 %%DATADIR%%/login.sh
 %%DATADIR%%/overto.sh
 %%DATADIR%%/patch.sh
-%%DATADIR%%/search.sh
-%%DATADIR%%/show.sh
 %%DATADIR%%/port_commit.sh
 %%DATADIR%%/port_submit.sh
-%%DATADIR%%/src_submit.sh
-%%DATADIR%%/take.sh
-%%DATADIR%%/timeout.sh
-%%DATADIR%%/top.sh
-%%DATADIR%%/version.sh
-%%PYBUGZ%%%%DATADIR%%/pybugz/comment.sh
 %%PYBUGZ%%%%DATADIR%%/pybugz/close.sh
+%%PYBUGZ%%%%DATADIR%%/pybugz/comment.sh
 %%PYBUGZ%%%%DATADIR%%/pybugz/edit.sh
 %%PYBUGZ%%%%DATADIR%%/pybugz/get.sh
 %%PYBUGZ%%%%DATADIR%%/pybugz/init.sh
@@ -34,4 +28,10 @@
 %%PYBUGZ%%%%DATADIR%%/pybugz/take.sh
 %%PYBUGZ%%%%DATADIR%%/pybugz/timeout.sh
 %%PYBUGZ%%%%DATADIR%%/pybugz/top.sh
-bin/bz
+%%DATADIR%%/search.sh
+%%DATADIR%%/show.sh
+%%DATADIR%%/src_submit.sh
+%%DATADIR%%/take.sh
+%%DATADIR%%/timeout.sh
+%%DATADIR%%/top.sh
+%%DATADIR%%/version.sh

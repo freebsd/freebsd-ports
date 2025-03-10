@@ -1,8 +1,8 @@
-PORTNAME=	deforaos-panel
-PORTVERSION=	0.4.5
-PORTREVISION=	1
+PORTNAME=	panel
+PORTVERSION=	0.4.6
 CATEGORIES=	x11-wm
 MASTER_SITES=	https://ftp.defora.org/pub/DeforaOS/Apps/Desktop/src/Panel/
+PKGNAMEPREFIX=	deforaos-
 DISTNAME=	Panel-${PORTVERSION}
 
 MAINTAINER=	khorben@defora.org
@@ -13,26 +13,26 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	${LOCALBASE}/include/Desktop/Browser.h:x11-fm/deforaos-browser
-LIB_DEPENDS=	libSystem.so:devel/deforaos-libsystem \
+LIB_DEPENDS=	libasound.so:audio/alsa-lib \
 		libDesktop.so:x11/deforaos-libdesktop \
-		libasound.so:audio/alsa-lib \
 		libharfbuzz.so:print/harfbuzz \
+		libSystem.so:devel/deforaos-libsystem \
 		libxkbfile.so:x11/libxkbfile
 
-USES=		gnome pkgconfig xorg desktop-file-utils
-
-OPTIONS_DEFINE=	DOCS NLS
-OPTIONS_SUB=	yes
-NLS_USES=		gettext
-DOCS_BUILD_DEPENDS=	xsltproc:textproc/libxslt \
-    ${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl:textproc/docbook-xsl \
-	gtkdoc-mkhtml:textproc/gtk-doc
-
-USE_GNOME=	gtk30 cairo gdkpixbuf2
-USE_XORG=	x11
+USES=		desktop-file-utils gnome pkgconfig xorg
+USE_GNOME=	cairo gdkpixbuf2 gtk30
 USE_LDCONFIG=	yes
+USE_XORG=	x11
+
 MAKE_ARGS+=	PREFIX=${PREFIX}
 MAKE_ENV+=	MANDIR=${STAGEDIR}${PREFIX}/share/man
+
+OPTIONS_DEFINE=		DOCS NLS
+OPTIONS_SUB=		yes
+DOCS_BUILD_DEPENDS=	${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl:textproc/docbook-xsl \
+			gtkdoc-mkhtml:textproc/gtk-doc \
+			xsltproc:textproc/libxslt
+NLS_USES=		gettext
 
 post-patch:
 	${REINPLACE_CMD} -e 's|/lib/|/libdata/|g' \

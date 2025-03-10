@@ -94,11 +94,11 @@ share/vim/vimfiles/ftdetect/nginx.vim
 share/vim/vimfiles/ftplugin/nginx.vim
 share/vim/vimfiles/indent/nginx.vim
 share/vim/vimfiles/syntax/nginx.vim
-%%WWW%%@postexec mkdir -p -m 755 %D/www/nginx-dist
+%%WWW%%@postexec mkdir -p -m 755 %D/www/freenginx-dist
 %%WWW%%@postexec if [ ! -d %D/www/freenginx/ ] ; then ln -fs %D/www/freenginx-dist %D/www/freenginx; fi
-%%WWW%%www/nginx-dist/EXAMPLE_DIRECTORY-DONT_ADD_OR_TOUCH_ANYTHING
-%%WWW%%www/nginx-dist/index.html
-%%WWW%%www/nginx-dist/50x.html
+%%WWW%%www/freenginx-dist/EXAMPLE_DIRECTORY-DONT_ADD_OR_TOUCH_ANYTHING
+%%WWW%%www/freenginx-dist/index.html
+%%WWW%%www/freenginx-dist/50x.html
 %%WWW%%@postexec chmod a-w %D/www/freenginx-dist
 %%WWW%%@postunexec if [ -L %D/www/freenginx ]; then rm -f %D/www/freenginx; fi
 @dir %%NGINX_TMPDIR%%

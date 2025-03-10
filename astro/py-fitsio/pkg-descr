@@ -1,0 +1,27 @@
+fitsio is a python extension written in c and python. Data are read into
+numerical python arrays.
+
+Some Features:
+- Read from and write to image, binary, and ascii table extensions.
+- Read arbitrary subsets of table columns and rows without loading all the data
+  to memory.
+- Read image subsets without reading the whole image. Write subsets to existing
+  images.
+- Write and read variable length table columns.
+- Read images and tables using slice notation similar to numpy arrays. This is
+  like a more powerful memmap, since it is column-aware for tables.
+- Append rows to an existing table. Delete row sets and row ranges. Resize
+  tables, or insert rows.
+- Query the columns and rows in a table.
+- Read and write header keywords.
+- Read and write images in tile-compressed format (RICE,GZIP,PLIO,HCOMPRESS).
+- Read/write gzip files directly. Read unix compress (.Z,.zip) and bzip2 (.bz2)
+  files.
+- TDIM information is used to return array columns in the correct shape.
+- Write and read string table columns, including array columns of arbitrary
+  shape.
+- Read and write complex, bool (logical), unsigned integer, signed bytes types.
+- Write checksums into the header and verify them.
+- Insert new columns into tables in-place.
+- Iterate over rows in a table. Data are buffered for efficiency.
+- python 3 support, including python 3 strings

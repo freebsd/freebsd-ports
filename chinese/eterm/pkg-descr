@@ -1,6 +1,0 @@
-Eterm is a color vt102 terminal emulator intended as a replacement for
-xterm. It is designed with a Freedom of Choice philosophy, leaving as
-much power, flexibility, and freedom as possible in the hands of the
-user. It is designed to look good and work well, but takes a
-feature-rich approach rather than one of minimalism while still
-maintaining speed and efficiency.

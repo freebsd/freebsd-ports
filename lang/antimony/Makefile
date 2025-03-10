@@ -1,13 +1,14 @@
 PORTNAME=	antimony
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.8.0
-PORTREVISION=	2
+PORTREVISION=	9
 CATEGORIES=	lang
 PKGNAMESUFFIX=	-language
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Antimony programming language
-WWW=		https://antimony-lang.github.io/antimony/
+WWW=		https://antimony-lang.github.io/antimony/ \
+		https://github.com/antimony-lang/antimony
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -68,8 +69,5 @@ CARGO_CRATES=	aho-corasick-1.0.1 \
 		winapi-x86_64-pc-windows-gnu-0.4.0
 
 PLIST_FILES=	bin/sb
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/sb
 
 .include <bsd.port.mk>

@@ -1,5 +1,5 @@
-TIMESTAMP = 1722305248
-SHA256 (dialect-app-dialect-2.4.2_GH0.tar.gz) = b45009991122b700820ebe4eb1dea93b3bf829fc44664657d0203af3a8ba35a2
-SIZE (dialect-app-dialect-2.4.2_GH0.tar.gz) = 154573
-SHA256 (dialect-app-po-dbb487db7eb05b11d8e0fba7a26d1ab5c05ef411_GH0.tar.gz) = e5b75a11c93116c3d84a36251020c2ca094f081f92fccd540c4c748561dc2cde
-SIZE (dialect-app-po-dbb487db7eb05b11d8e0fba7a26d1ab5c05ef411_GH0.tar.gz) = 417958
+TIMESTAMP = 1728374245
+SHA256 (dialect-app-dialect-2.5.0_GH0.tar.gz) = 5b506728175c60a642bb02723291193df815e04a42a0cdc5e3e41dcdf7d26b5f
+SIZE (dialect-app-dialect-2.5.0_GH0.tar.gz) = 157423
+SHA256 (dialect-app-po-1fdb2525674005ecde58f1498f00edfa0bd58b55_GH0.tar.gz) = 9de804d18d186d4996e300fb8d92d164f3429dda9baaa1fa9386e0fdc2803424
+SIZE (dialect-app-po-1fdb2525674005ecde58f1498f00edfa0bd58b55_GH0.tar.gz) = 425199

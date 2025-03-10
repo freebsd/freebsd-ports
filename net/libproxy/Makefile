@@ -1,73 +1,65 @@
 PORTNAME=	libproxy
-DISTVERSION=	0.4.18
-PORTREVISION?=	0
-CATEGORIES?=	net devel
-MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/${DISTVERSION}/
+DISTVERSION=	0.5.9
+PORTREVISION=	1
+CATEGORIES=	net devel
 
 MAINTAINER=	desktop@FreeBSD.org
-COMMENT?=	Library that provides automatic proxy configuration management
+COMMENT=	Library that provides automatic proxy configuration management
 WWW=		https://libproxy.github.io/libproxy/
 
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES+=		cmake cpe pathfix pkgconfig tar:xz
+USES=		cpe gnome meson pkgconfig
+
 CPE_VENDOR=	libproxy_project
-PATHFIX_CMAKELISTSTXT=	devfiles.cmk
+USE_GITHUB=	yes
 
-CMAKE_ON+=	WITH_VALA
-CMAKE_OFF+=	BIPR WITH_DOTNET WITH_NATUS WITH_NM WITH_NMold
+USE_GNOME=	glib20 introspection
 
-# Slave ports.
-LIBPROXY_SLAVES=	library duktape gnome3 kde mozjs python perl webkit3
+MESON_ARGS=	-Dtests=true \
+		-Dconfig-windows=false \
+		-Dconfig-osx=false \
+		-Dintrospection=true \
+		-Drelease=true
+USE_LDCONFIG=	yes
+# https://github.com/libproxy/libproxy/issues/320
+LLD_UNSAFE=	yes
 
-# If nothing is set, we're building the library, i.e. this port.
-LIBPROXY_SLAVE?=	library
+OPTIONS_DEFINE=	CURL DOCS VAPI
+OPTIONS_GROUP=	CONFIG PACRUNNER
+OPTIONS_GROUP_CONFIG=	ENV GNOME KDE SYSCONFIG XDP
+OPTIONS_GROUP_PACRUNNER=	DUKTAPE
+OPTIONS_DEFAULT=	CURL ENV GNOME KDE SYSCONFIG VAPI XDP
+OPTIONS_SUB=	yes
 
-PLIST_SUB+=	VERSION=${PORTVERSION}
+ENV_DESC=	Environment configuration support
+DUKTAPE_DESC=	PAC Runner Duktape support
+SYSCONFIG_DESC=	sysconfig configuration support
+XDP_DESC=	XDG Desktop Portal (Flatpak) support
 
-# Activate the wanted module, and deactivate the others
-CMAKE_ON+=	WITH_${LIBPROXY_SLAVE:tu}
-CMAKE_OFF+=	${LIBPROXY_SLAVES:N${LIBPROXY_SLAVE}:tu:S/^/WITH_/}
+CURL_LIB_DEPENDS=	libcurl.so:ftp/curl
+CURL_MESON_TRUE=	curl
 
-# Setup slave ports.
-.if ${LIBPROXY_SLAVE:Nlibrary}
-USES+=		localbase
-LIB_DEPENDS+=	libproxy.so:net/libproxy
-DESCR=		${.CURDIR:H}/${PORTNAME}-${LIBPROXY_SLAVE}/pkg-descr
-PLIST=		${.CURDIR:H}/${PORTNAME}-${LIBPROXY_SLAVE}/pkg-plist
-.endif
+DOCS_BUILD_DEPENDS=	gi-docgen:textproc/py-gi-docgen
+DOCS_MESON_TRUE=	docs
 
-.if ${LIBPROXY_SLAVE:Mwebkit3}
-# Additionally to WITH_WEBKIT3 also WITH_WEBKIT is required.
-CMAKE_ON+=	WITH_WEBKIT
-CMAKE_OFF:=	${CMAKE_OFF:C/WITH_WEBKIT//}
-.endif
+DUKTAPE_LIB_DEPENDS=	libduktape.so:lang/duktape-lib
+DUKTAPE_MESON_TRUE=	pacrunner-duktape
 
-.if ${LIBPROXY_SLAVE:Mpacrunner}
-LIB_DEPENDS+=	 libdbus-1.so:devel/dbus
-CMAKE_ON=	BUILD_CONFIG_PACRUNNER
-.endif
+ENV_MESON_TRUE=		config-env
 
-.if  ${LIBPROXY_SLAVE:Mkde} || ${LIBPROXY_SLAVE:Mduktape} || ${LIBPROXY_SLAVE:Mmozjs} || ${LIBPROXY_SLAVE:Mwebkit3}
-RUN_DEPENDS+=	libproxy-pacrunner>=${DISTVERSION}:net/libproxy-pacrunner
-.endif
+GNOME_BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/gsettings-desktop-schemas.pc:devel/gsettings-desktop-schemas
+GNOME_RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/gsettings-desktop-schemas.pc:devel/gsettings-desktop-schemas
+GNOME_MESON_TRUE=	config-gnome
 
-.include <bsd.port.pre.mk>
+KDE_MESON_TRUE=		config-kde
 
-.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400079 || ( ${OSVERSION} >= 1302505 && ${OSVERSION} < 1400000 ))
-.if ${LIBPROXY_SLAVE:Mperl}
-CFLAGS+=	-Wno-error=int-conversion
-.endif
-.endif
+SYSCONFIG_MESON_TRUE=	config-sysconfig
 
-# Hackery for the to python backends.
-.if ${LIBPROXY_SLAVE:Mpython}
-CMAKE_ON+=		WITH_PYTHON3
-CMAKE_OFF+=		WITH_PYTHON2
-CMAKE_ARGS+=		-DPYTHON3_EXECUTABLE:FILEPATH=${PYTHON_CMD}
-.else
-CMAKE_OFF+=		WITH_PYTHON2 WITH_PYTHON3
-.endif
+VAPI_USES=		vala:build
+VAPI_MESON_TRUE=	vapi
 
-.include <bsd.port.post.mk>
+XDP_MESON_TRUE=		config-xdp
+
+.include <bsd.port.mk>

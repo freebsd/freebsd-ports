@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/build/config/BUILD.gn.orig	2023-12-12 22:08:45 UTC
+--- src/3rdparty/chromium/build/config/BUILD.gn.orig	2024-07-03 01:14:49 UTC
 +++ src/3rdparty/chromium/build/config/BUILD.gn
 @@ -218,6 +218,10 @@ config("default_libs") {
      # Targets should choose to explicitly link frameworks they require. Since

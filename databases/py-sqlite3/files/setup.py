@@ -3,16 +3,17 @@
 #       python setup.py install
 #
 
+import platform
+
 try:
     import distutils
     from distutils import sysconfig
     from distutils.command.install import install
     from distutils.core import setup, Extension
 except:
-    raise SystemExit, "Distutils problem"
+    raise SystemExit("Distutils problem")
 
-install.sub_commands = filter(lambda (cmd, avl): 'egg' not in cmd,
-                              install.sub_commands)
+install.sub_commands = [x for x in install.sub_commands if 'egg' not in x[0]]
 
 prefix = sysconfig.PREFIX
 inc_dirs = [prefix + "/include", "Modules/_sqlite"]
@@ -20,7 +21,6 @@ lib_dirs = [prefix + "/lib"]
 libs = ["sqlite3"]
 macros = [('MODULE_NAME', '"sqlite3"')]
 sqlite_srcs = [
-'_sqlite/cache.c',
 '_sqlite/connection.c',
 '_sqlite/cursor.c',
 '_sqlite/microprotocols.c',
@@ -29,6 +29,14 @@ sqlite_srcs = [
 '_sqlite/row.c',
 '_sqlite/statement.c',
 '_sqlite/util.c']
+
+major, minor = map(int, platform.python_version_tuple()[:2])
+
+if (major, minor) <= (3, 10):
+    sqlite_srcs.append('_sqlite/cache.c',)
+
+if (major, minor) >= (3, 11):
+    sqlite_srcs.append('_sqlite/blob.c',)
 
 try:
     import ctypes

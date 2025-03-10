@@ -1,5 +1,5 @@
 PORTNAME=	flexmock
-PORTVERSION=	2.3.6
+PORTVERSION=	3.0.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -10,7 +10,8 @@ WWW=		https://github.com/doudou/flexmock
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-NO_ARCH=	yes
 USES=		gem
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>

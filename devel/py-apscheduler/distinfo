@@ -1,3 +1,3 @@
-TIMESTAMP = 1692463444
-SHA256 (APScheduler-3.10.4.tar.gz) = e6df071b27d9be898e486bc7940a7be50b4af2e9da7c08f0744a96d4bd4cef4a
-SIZE (APScheduler-3.10.4.tar.gz) = 100832
+TIMESTAMP = 1732477137
+SHA256 (apscheduler-3.11.0.tar.gz) = 4c622d250b0955a65d5d0eb91c33e6d43fd879834bf541e0a18661ae60460133
+SIZE (apscheduler-3.11.0.tar.gz) = 107347

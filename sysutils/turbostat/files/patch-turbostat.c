@@ -1,4 +1,4 @@
---- turbostat.c.orig	2020-11-13 21:55:04 UTC
+--- turbostat.c.orig	2024-11-27 14:24:16 UTC
 +++ turbostat.c
 @@ -41,7 +41,34 @@
  #include <sched.h>
@@ -35,7 +35,7 @@
  #include <errno.h>
  
  char *proc_stat = "/proc/stat";
-@@ -132,7 +156,9 @@ unsigned int has_misc_feature_control;
+@@ -132,7 +159,9 @@ unsigned int has_misc_feature_control;
  #define RAPL_CORES (RAPL_CORES_ENERGY_STATUS | RAPL_CORES_POWER_LIMIT)
  #define	TJMAX_DEFAULT	100
  
@@ -45,7 +45,16 @@
  
  /*
   * buffer size used by sscanf() for added column names
-@@ -309,6 +335,7 @@ int cpu_migrate(int cpu)
+@@ -285,7 +314,7 @@ int for_all_cpus(int (func)(struct thread_data *, stru
+ 
+ 				t = GET_THREAD(thread_base, thread_no, core_no, pkg_no);
+ 
+-				if (cpu_is_not_present(t->cpu_id))
++				if (((int)t->cpu_id) < 0 || cpu_is_not_present(t->cpu_id))
+ 					continue;
+ 
+ 				c = GET_CORE(core_base, core_no, pkg_no);
+@@ -309,6 +338,7 @@ int cpu_migrate(int cpu)
  	else
  		return 0;
  }
@@ -53,7 +62,7 @@
  int get_msr_fd(int cpu)
  {
  	char pathname[32];
-@@ -319,18 +346,39 @@ int get_msr_fd(int cpu)
+@@ -319,18 +349,39 @@ int get_msr_fd(int cpu)
  	if (fd)
  		return fd;
  
@@ -94,7 +103,7 @@
  	ssize_t retval;
  
  	retval = pread(get_msr_fd(cpu), msr, sizeof(*msr), offset);
-@@ -340,6 +388,7 @@ int get_msr(int cpu, off_t offset, unsigned long long 
+@@ -340,6 +391,7 @@ int get_msr(int cpu, off_t offset, unsigned long long 
  
  	return 0;
  }
@@ -102,7 +111,7 @@
  
  /*
   * Each string in this array is compared in --show and --hide cmdline.
-@@ -2239,6 +2288,181 @@ int parse_int_file(const char *fmt, ...)
+@@ -2239,6 +2291,181 @@ int parse_int_file(const char *fmt, ...)
  	return value;
  }
  
@@ -284,7 +293,7 @@
  /*
   * get_cpu_position_in_core(cpu)
   * return the position of the CPU among its HT siblings in the core
-@@ -2326,6 +2546,7 @@ int get_num_ht_siblings(int cpu)
+@@ -2326,6 +2553,7 @@ int get_num_ht_siblings(int cpu)
  	fclose(filep);
  	return matches+1;
  }
@@ -292,7 +301,16 @@
  
  /*
   * run func(thread, core, package) in topology order
-@@ -2371,6 +2592,22 @@ int for_all_cpus_2(int (func)(struct thread_data *, st
+@@ -2351,7 +2579,7 @@ int for_all_cpus_2(int (func)(struct thread_data *, st
+ 
+ 				t = GET_THREAD(thread_base, thread_no, core_no, pkg_no);
+ 
+-				if (cpu_is_not_present(t->cpu_id))
++				if (((int)t->cpu_id) < 0 || cpu_is_not_present(t->cpu_id))
+ 					continue;
+ 
+ 				t2 = GET_THREAD(thread_base2, thread_no, core_no, pkg_no);
+@@ -2371,6 +2599,22 @@ int for_all_cpus_2(int (func)(struct thread_data *, st
  	return 0;
  }
  
@@ -315,7 +333,7 @@
  /*
   * run func(cpu) on every cpu in /proc/stat
   * return max_cpu number
-@@ -2401,6 +2638,7 @@ int for_all_proc_cpus(int (func)(int))
+@@ -2401,6 +2645,7 @@ int for_all_proc_cpus(int (func)(int))
  	fclose(fp);
  	return 0;
  }
@@ -323,7 +341,7 @@
  
  void re_initialize(void)
  {
-@@ -2428,6 +2666,85 @@ int mark_cpu_present(int cpu)
+@@ -2428,6 +2673,85 @@ int mark_cpu_present(int cpu)
  	return 0;
  }
  
@@ -409,7 +427,7 @@
  /*
   * snapshot_proc_interrupts()
   *
-@@ -2491,6 +2808,8 @@ int snapshot_proc_interrupts(void)
+@@ -2491,6 +2815,8 @@ int snapshot_proc_interrupts(void)
  	}
  	return 0;
  }
@@ -418,7 +436,7 @@
  /*
   * snapshot_gfx_rc6_ms()
   *
-@@ -2629,6 +2948,18 @@ restart:
+@@ -2629,6 +2955,18 @@ restart:
  	}
  }
  
@@ -437,7 +455,7 @@
  void check_dev_msr()
  {
  	struct stat sb;
-@@ -2677,6 +3008,7 @@ void check_permissions()
+@@ -2677,6 +3015,7 @@ void check_permissions()
  	if (do_exit)
  		exit(-6);
  }
@@ -454,7 +472,7 @@
  			if (!CPU_ISSET_S(i, cpu_present_setsize, cpu_present_set))
  				err(1, "cpu%d not present", i);
  	}
-@@ -4520,8 +4852,21 @@ void setup_all_buffers(void)
+@@ -4520,8 +4859,21 @@ void setup_all_buffers(void)
  	for_all_proc_cpus(initialize_counters);
  }
  
@@ -476,7 +494,7 @@
  	base_cpu = sched_getcpu();
  	if (base_cpu < 0)
  		err(-ENODEV, "No valid cpus found");
-@@ -4529,6 +4874,7 @@ void set_base_cpu(void)
+@@ -4529,6 +4881,7 @@ void set_base_cpu(void)
  	if (debug > 1)
  		fprintf(outf, "base_cpu = %d\n", base_cpu);
  }

@@ -7,12 +7,14 @@ bin/ftptop
 bin/ftpwho
 bin/prxs
 etc/PROFTPD-MIB.txt
-@sample etc/proftpd.conf.sample
-@sample etc/proftpd/dhparams.pem.sample
-@sample etc/proftpd/blacklist.dat.sample
+@sample %%ETCDIR%%.conf.sample
+@sample %%ETCDIR%%/blacklist.dat.sample
+@sample %%ETCDIR%%/dhparams.pem.sample
+include/proftpd/Make.rules
 include/proftpd/acconfig.h
 include/proftpd/ascii.h
 include/proftpd/auth.h
+include/proftpd/base.h
 include/proftpd/bindings.h
 include/proftpd/buildstamp.h
 include/proftpd/ccan-json.h
@@ -52,8 +54,7 @@ include/proftpd/mkhome.h
 include/proftpd/mod_ctrls.h
 include/proftpd/mod_dnsbl.h
 include/proftpd/mod_quotatab.h
-include/proftpd/Make.rules
-include/proftpd/base.h
+include/proftpd/mod_sftp.h
 include/proftpd/mod_sftp/agent.h
 include/proftpd/mod_sftp/auth.h
 include/proftpd/mod_sftp/bcrypt.h
@@ -83,7 +84,6 @@ include/proftpd/mod_sftp/ssh2.h
 include/proftpd/mod_sftp/tap.h
 include/proftpd/mod_sftp/umac.h
 include/proftpd/mod_sftp/utf8.h
-include/proftpd/mod_sftp.h
 include/proftpd/mod_snmp.h
 include/proftpd/mod_sql.h
 include/proftpd/mod_tls.h
@@ -137,10 +137,10 @@ libexec/proftpd/mod_dynmasq.a
 libexec/proftpd/mod_dynmasq.so
 libexec/proftpd/mod_exec.a
 libexec/proftpd/mod_exec.so
-libexec/proftpd/mod_ifversion.a
-libexec/proftpd/mod_ifversion.so
 libexec/proftpd/mod_ifsession.a
 libexec/proftpd/mod_ifsession.so
+libexec/proftpd/mod_ifversion.a
+libexec/proftpd/mod_ifversion.so
 %%MEMCACHE%%libexec/proftpd/mod_memcache.a
 %%MEMCACHE%%libexec/proftpd/mod_memcache.so
 libexec/proftpd/mod_qos.a
@@ -149,32 +149,32 @@ libexec/proftpd/mod_quotatab.a
 libexec/proftpd/mod_quotatab.so
 libexec/proftpd/mod_quotatab_file.a
 libexec/proftpd/mod_quotatab_file.so
-libexec/proftpd/mod_quotatab_sql.a
-libexec/proftpd/mod_quotatab_sql.so
 libexec/proftpd/mod_quotatab_radius.a
 libexec/proftpd/mod_quotatab_radius.so
+libexec/proftpd/mod_quotatab_sql.a
+libexec/proftpd/mod_quotatab_sql.so
 libexec/proftpd/mod_radius.a
 libexec/proftpd/mod_radius.so
 libexec/proftpd/mod_ratio.a
 libexec/proftpd/mod_ratio.so
 libexec/proftpd/mod_readme.a
 libexec/proftpd/mod_readme.so
+%%REDIS%%libexec/proftpd/mod_redis.a
+%%REDIS%%libexec/proftpd/mod_redis.so
 libexec/proftpd/mod_rewrite.a
 libexec/proftpd/mod_rewrite.so
-libexec/proftpd/mod_shaper.a
-libexec/proftpd/mod_shaper.so
 libexec/proftpd/mod_sftp.a
 libexec/proftpd/mod_sftp.so
 libexec/proftpd/mod_sftp_pam.a
 libexec/proftpd/mod_sftp_pam.so
 libexec/proftpd/mod_sftp_sql.a
 libexec/proftpd/mod_sftp_sql.so
+libexec/proftpd/mod_shaper.a
+libexec/proftpd/mod_shaper.so
 libexec/proftpd/mod_site_misc.a
 libexec/proftpd/mod_site_misc.so
 libexec/proftpd/mod_snmp.a
 libexec/proftpd/mod_snmp.so
-%%REDIS%%libexec/proftpd/mod_redis.a
-%%REDIS%%libexec/proftpd/mod_redis.so
 libexec/proftpd/mod_sql.a
 libexec/proftpd/mod_sql.so
 libexec/proftpd/mod_sql_passwd.a
@@ -197,31 +197,31 @@ libexec/proftpd/mod_wrap2_file.so
 %%REDIS%%libexec/proftpd/mod_wrap2_redis.so
 libexec/proftpd/mod_wrap2_sql.a
 libexec/proftpd/mod_wrap2_sql.so
-share/man/man1/ftpcount.1.gz
-share/man/man1/ftpmail.1.gz
-share/man/man1/ftpasswd.1.gz
-share/man/man1/ftpquota.1.gz
-share/man/man1/ftpwho.1.gz
-share/man/man1/ftptop.1.gz
-share/man/man5/proftpd.conf.5.gz
-share/man/man5/xferlog.5.gz
-share/man/man8/proftpd.8.gz
-share/man/man8/ftpscrub.8.gz
-share/man/man8/ftpshut.8.gz
-share/man/man8/ftpdctl.8.gz
 sbin/ftpscrub
 sbin/ftpshut
 sbin/in.proftpd
 sbin/proftpd
-%%NLS%%share/locale/zh_CN/LC_MESSAGES/proftpd.mo
-%%NLS%%share/locale/zh_TW/LC_MESSAGES/proftpd.mo
+%%NLS%%share/locale/bg_BG/LC_MESSAGES/proftpd.mo
 %%NLS%%share/locale/en_US/LC_MESSAGES/proftpd.mo
 %%NLS%%share/locale/es_ES/LC_MESSAGES/proftpd.mo
+%%NLS%%share/locale/fr_FR/LC_MESSAGES/proftpd.mo
 %%NLS%%share/locale/it_IT/LC_MESSAGES/proftpd.mo
 %%NLS%%share/locale/ja_JP/LC_MESSAGES/proftpd.mo
-%%NLS%%share/locale/ru_RU/LC_MESSAGES/proftpd.mo
-%%NLS%%share/locale/bg_BG/LC_MESSAGES/proftpd.mo
-%%NLS%%share/locale/fr_FR/LC_MESSAGES/proftpd.mo
 %%NLS%%share/locale/ko_KR/LC_MESSAGES/proftpd.mo
+%%NLS%%share/locale/ru_RU/LC_MESSAGES/proftpd.mo
+%%NLS%%share/locale/zh_CN/LC_MESSAGES/proftpd.mo
+%%NLS%%share/locale/zh_TW/LC_MESSAGES/proftpd.mo
+share/man/man1/ftpasswd.1.gz
+share/man/man1/ftpcount.1.gz
+share/man/man1/ftpmail.1.gz
+share/man/man1/ftpquota.1.gz
+share/man/man1/ftptop.1.gz
+share/man/man1/ftpwho.1.gz
+share/man/man5/proftpd.conf.5.gz
+share/man/man5/xferlog.5.gz
+share/man/man8/ftpdctl.8.gz
+share/man/man8/ftpscrub.8.gz
+share/man/man8/ftpshut.8.gz
+share/man/man8/proftpd.8.gz
 @dir lib/proftpd
 @dir %%LOCALSTATEDIR%%/proftpd

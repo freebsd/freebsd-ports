@@ -42,19 +42,42 @@ stop_precmd="${name}_stop_precmd"
 stop_postcmd="${name}_stop_postcmd"
 extra_commands="configtest reload"
 
+# If the crowdsec process was not started or is in a fail loop due to misconfiguration,
+# the TERM signal is not enough to terminate /usr/sbin/daemon.
+sig_stop="INT"
+
 crowdsec_stop_precmd() {
     # take note of the pid, because sbin/daemon will remove the file
     # without waiting for crowdsec to exit
     if [ -r "$pidfile_crowdsec" ]; then
         _CROWDSECPID="$(check_pidfile "$pidfile_crowdsec" "$command_crowdsec")"
         export _CROWDSECPID
+        # notification plugins
+        _CROWDSEC_CHILDREN="$(pgrep -P "$_CROWDSECPID")"
+        export _CROWDSEC_CHILDREN
     fi
 }
 
 crowdsec_stop_postcmd() {
-    # wait for process to exit before restarting, or it will find the http port in use
     if [ -n "$_CROWDSECPID" ]; then
+        # don't trust sbin/daemon to send the signal
+        kill -TERM "$_CROWDSECPID" 2>/dev/null
+    fi
+    if [ -n "$_CROWDSEC_CHILDREN" ]; then
+        kill -TERM $_CROWDSEC_CHILDREN 2>/dev/null
+    fi
+
+    sleep 5
+
+    if [ -n "$_CROWDSECPID" ]; then
+        # in case a datasource didn't respond
+        kill -KILL "$_CROWDSECPID" 2>/dev/null
+        # ensure the process is not running before restart, or it will find the http port in use
         wait_for_pids "$_CROWDSECPID"
+    fi
+    if [ -n "$_CROWDSEC_CHILDREN" ]; then
+        kill -KILL $_CROWDSEC_CHILDREN 2>/dev/null
+        wait_for_pids $_CROWDSEC_CHILDREN
     fi
 }
 
@@ -84,9 +107,13 @@ crowdsec_precmd() {
         fi
     fi
 
-    # install the collection for the first time, or if it has been removed
-    cs_cli collections inspect crowdsecurity/freebsd --no-metrics 2>/dev/null | grep ^installed | grep -q true || \
-        cs_cli collections install crowdsecurity/freebsd || :
+    # If the hub is empty, install the freebsd collection and the private ip whitelist.
+    # We don't ship the whitelist in the collection because
+    # there are legitimate use cases for banning private ip ranges.
+    if [ "$(cs_cli hub list -o raw | wc -l)" -le 1 ]; then
+        cs_cli parsers install crowdsecurity/whitelists --error || :
+        cs_cli collections install crowdsecurity/freebsd --error || :
+    fi
 }
 
 crowdsec_configtest() {

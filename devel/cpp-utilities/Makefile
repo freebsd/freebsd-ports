@@ -1,6 +1,7 @@
 PORTNAME=	cpp-utilities
 DISTVERSIONPREFIX=	v
-DISTVERSION=	5.25.0
+DISTVERSION=	5.27.2
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -23,5 +24,7 @@ CXXFLAGS+=	-liconv
 
 CMAKE_ON=	BUILD_SHARED_LIBS
 CMAKE_TESTING_ARGS=	-DEXCLUDE_TESTS_FROM_ALL=OFF # tests fail to link: ld: error: unable to find library -lcppunit, see https://github.com/Martchus/cpp-utilities/issues/27
+
+# 100% tests passed, 0 tests failed out of 1
 
 .include <bsd.port.mk>

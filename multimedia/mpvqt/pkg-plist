@@ -10,5 +10,5 @@ lib/cmake/MpvQt/MpvQtConfigVersion.cmake
 lib/cmake/MpvQt/MpvQtTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/MpvQt/MpvQtTargets.cmake
 lib/libMpvQt.so
-lib/libMpvQt.so.1
-lib/libMpvQt.so.1.0.0
+lib/libMpvQt.so.%%SHLIB_VER%%
+lib/libMpvQt.so.%%SHLIB_VERSION%%

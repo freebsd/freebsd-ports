@@ -1,0 +1,19 @@
+--- src/desktop/Makefile.orig	2024-09-02 14:43:29 UTC
++++ src/desktop/Makefile
+@@ -67,12 +67,12 @@ install: all
+ 
+ install: all
+ 	$(MKDIR) $(DESTDIR)$(BINDIR)
+-	$(INSTALL) -m 0755 $(OBJDIR)desktop$(EXEEXT) $(DESTDIR)$(BINDIR)/desktop$(EXEEXT)
++	$(INSTALL) -m 0755 $(OBJDIR)desktop$(EXEEXT) $(DESTDIR)$(BINDIR)/deforaos-desktop$(EXEEXT)
+ 	$(MKDIR) $(DESTDIR)$(BINDIR)
+-	$(INSTALL) -m 0755 $(OBJDIR)desktopctl$(EXEEXT) $(DESTDIR)$(BINDIR)/desktopctl$(EXEEXT)
++	$(INSTALL) -m 0755 $(OBJDIR)desktopctl$(EXEEXT) $(DESTDIR)$(BINDIR)/deforaos-desktopctl$(EXEEXT)
+ 
+ uninstall:
+-	$(RM) -- $(DESTDIR)$(BINDIR)/desktop$(EXEEXT)
+-	$(RM) -- $(DESTDIR)$(BINDIR)/desktopctl$(EXEEXT)
++	$(RM) -- $(DESTDIR)$(BINDIR)/deforaos-desktop$(EXEEXT)
++	$(RM) -- $(DESTDIR)$(BINDIR)/deforaos-desktopctl$(EXEEXT)
+ 
+ .PHONY: all clean distclean install uninstall

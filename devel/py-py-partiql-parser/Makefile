@@ -1,7 +1,8 @@
 PORTNAME=	py-partiql-parser
-PORTVERSION=	0.5.5
+PORTVERSION=	0.6.1
 CATEGORIES=	devel python
-MASTER_SITES=	PYPI
+MASTER_SITES=	PYPI \
+		https://github.com/getmoto/py-partiql-parser/releases/download/${PORTVERSION}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	py_partiql_parser-${PORTVERSION}
 

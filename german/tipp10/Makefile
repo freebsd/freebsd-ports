@@ -1,18 +1,19 @@
 PORTNAME=	tipp10
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.3.0
-CATEGORIES=	german
+DISTVERSION=	3.3.2
+CATEGORIES=	german education
 
 MAINTAINER=	nick.lott@gmail.com
 COMMENT=	10-finger touch typing learning program
-WWW=		https://www.tipp10.com
+WWW=		https://www.tipp10.com/ \
+		https://gitlab.com/tipp10/tipp10/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cmake sqlite qt:6 gl
+USES=		cmake gl qt:6 sqlite
 USE_GITLAB=	yes
-USE_QT=		base sqldriver-sqlite:run tools:build multimedia
 USE_GL=		gl opengl
+USE_QT=		base multimedia sqldriver-sqlite:run tools:build
 
 .include <bsd.port.mk>

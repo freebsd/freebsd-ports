@@ -34,6 +34,7 @@ command_interpreter="%%PYTHON_CMD%%"
 required_files=${salt_minion_configdir}
 pidfile=${salt_minion_pidfile}
 command_args="-c ${required_files} --pid-file=${pidfile} -d"
+procname="MultiMinionProcessManager"
 
 export PATH="${salt_minion_paths}"
 export PYTHON_EGG_CACHE="${salt_minion_eggcache}"

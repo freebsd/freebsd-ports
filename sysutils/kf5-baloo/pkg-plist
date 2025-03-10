@@ -1,9 +1,9 @@
-bin/baloo_file
-bin/baloo_file_extractor
-bin/balooctl
-bin/baloosearch
+@comment bin/baloo_file
+@comment bin/baloo_file_extractor
+@comment bin/balooctl
+@comment bin/baloosearch
 bin/balooshow
-etc/xdg/autostart/baloo_file.desktop
+@comment etc/xdg/autostart/baloo_file.desktop
 include/KF5/Baloo/Baloo/File
 include/KF5/Baloo/Baloo/FileMonitor
 include/KF5/Baloo/Baloo/IndexerConfig
@@ -30,8 +30,8 @@ lib/libKF5Baloo.so.5
 lib/libKF5Baloo.so.%%KDE_FRAMEWORKS_VERSION%%
 lib/libKF5BalooEngine.so.5
 lib/libKF5BalooEngine.so.%%KDE_FRAMEWORKS_VERSION%%
-lib/libexec/baloo_file
-lib/libexec/baloo_file_extractor
+@comment lib/libexec/baloo_file
+@comment lib/libexec/baloo_file_extractor
 %%QT_MKSPECDIR%%/modules/qt_Baloo.pri
 %%QT_PLUGINDIR%%/kf5/kded/baloosearchmodule.so
 %%QT_PLUGINDIR%%/kf5/kio/baloosearch.so
@@ -41,13 +41,13 @@ lib/libexec/baloo_file_extractor
 %%QT_QMLDIR%%/org/kde/baloo/experimental/qmldir
 %%QT_QMLDIR%%/org/kde/baloo/libbalooplugin.so
 %%QT_QMLDIR%%/org/kde/baloo/qmldir
-lib/systemd/user/kde-baloo.service
+@comment lib/systemd/user/kde-baloo.service
 libdata/pkgconfig/Baloo.pc
-share/dbus-1/interfaces/org.kde.BalooWatcherApplication.xml
-share/dbus-1/interfaces/org.kde.baloo.file.indexer.xml
-share/dbus-1/interfaces/org.kde.baloo.fileindexer.xml
-share/dbus-1/interfaces/org.kde.baloo.main.xml
-share/dbus-1/interfaces/org.kde.baloo.scheduler.xml
+@comment share/dbus-1/interfaces/org.kde.BalooWatcherApplication.xml
+@comment share/dbus-1/interfaces/org.kde.baloo.file.indexer.xml
+@comment share/dbus-1/interfaces/org.kde.baloo.fileindexer.xml
+@comment share/dbus-1/interfaces/org.kde.baloo.main.xml
+@comment share/dbus-1/interfaces/org.kde.baloo.scheduler.xml
 share/locale/ar/LC_MESSAGES/baloo_file5.mo
 share/locale/ar/LC_MESSAGES/baloo_file_extractor5.mo
 share/locale/ar/LC_MESSAGES/balooctl5.mo

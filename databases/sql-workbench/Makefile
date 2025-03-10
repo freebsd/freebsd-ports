@@ -12,8 +12,7 @@ WWW=		https://www.sql-workbench.eu/
 
 LICENSE=	APACHE20
 
-USES=		zip
-USE_JAVA=	yes
+USES=		java zip
 JAVA_VERSION=	11+
 
 NO_BUILD=	yes

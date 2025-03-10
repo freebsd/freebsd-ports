@@ -1,0 +1,43 @@
+--- bin/quarto.orig	2024-08-01 13:18:09 UTC
++++ bin/quarto
+@@ -1,23 +1,7 @@
+ #!/usr/bin/env bash
+ 
+-# Determine the path to this script (we'll use this to figure out relative positions of other files)
+-SOURCE="${BASH_SOURCE[0]}"
+-if [ -h "$SOURCE" ]; then
+-  while [ -h "$SOURCE" ]; do # resolve $SOURCE until the file is no longer a symlink
+-    PREV_DIR="$(dirname "$SOURCE")"
+-    SOURCE="$(readlink "$SOURCE")"
+-    SOURCE_NAME="$(basename "$SOURCE")"
+-    # if $SOURCE was a relative symlink, we need to resolve it relative to the path where the symlink file was located
+-    if [[ $SOURCE != /* ]]; then
+-      SCRIPT_PATH="$( cd -P "${PREV_DIR}/$( dirname "$SOURCE" )" >/dev/null 2>&1 && pwd )"
+-      SOURCE="$SCRIPT_PATH/$SOURCE_NAME"
+-    else
+-      SCRIPT_PATH="$( cd -P "$( dirname "$SOURCE" )" >/dev/null 2>&1 && pwd )"
+-    fi
+-  done
+-else
+-  SCRIPT_PATH="$( cd -P "$( dirname "$SOURCE" )" >/dev/null 2>&1 && pwd )"
+-fi
++SCRIPT_PATH="%%SCRIPT_PATH%%"
++ARCH_DIR="%%ARCH_DIR%%"
+ 
+ # Check if we are running 'Dev Mode' and if so, override values for devs
+ SCRIPT_BASENAME=$(basename "$SCRIPT_PATH")
+@@ -141,14 +125,6 @@ else
+ 
+ else
+   NIXARCH=$(uname -m)
+-  if [[ $NIXARCH == "x86_64" ]]; then
+-    ARCH_DIR=x86_64
+-  elif [[ $NIXARCH == "aarch64" ]]; then
+-    ARCH_DIR=aarch64
+-  else
+-    echo "configure script failed: unrecognized architecture " ${NIXARCH}
+-    exit 1
+-  fi
+ fi
+ 
+ 

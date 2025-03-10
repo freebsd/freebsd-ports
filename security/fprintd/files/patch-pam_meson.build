@@ -1,0 +1,10 @@
+--- pam/meson.build.orig	2024-10-12 07:44:21 UTC
++++ pam/meson.build
+@@ -26,6 +26,7 @@ pam_fprintd = shared_module('pam_fprintd',
+     link_args: [
+         '-Wl,--version-script,@0@/@1@'.format(meson.source_root(), mapfile[0]),
+         '-Wl,--unresolved-symbols=report-all',
++        '-Wl,--allow-shlib-undefined',
+     ],
+     link_depends: mapfile,
+     install: true,

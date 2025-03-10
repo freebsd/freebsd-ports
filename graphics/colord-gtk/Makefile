@@ -1,5 +1,6 @@
 PORTNAME=	colord-gtk
 PORTVERSION=	0.3.1
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	https://www.freedesktop.org/software/colord/releases/
 
@@ -13,7 +14,6 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BUILD_DEPENDS=	xsltproc:textproc/libxslt \
 		docbook-xsl-ns>0:textproc/docbook-xsl-ns
 LIB_DEPENDS=	libcolord.so:graphics/colord \
-		libpolkit-gobject-1.so:sysutils/polkit \
 		libdbus-1.so:devel/dbus \
 		liblcms2.so:graphics/lcms2
 

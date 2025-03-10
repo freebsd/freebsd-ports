@@ -1,5 +1,6 @@
 PORTNAME=	newsraft
-DISTVERSION=	0.25
+DISTVERSION=	0.28
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	https://codeberg.org/${PORTNAME}/${PORTNAME}/archive/
 
@@ -19,7 +20,6 @@ USES=		ncurses pkgconfig sqlite
 
 MAKEFILE=	makefile
 MAKE_ARGS+=	CFLAGS="${CFLAGS}"
-# One test fails but manually run "make check" from WRKSRC it pass
 TEST_TARGET=	check
 
 WRKSRC=		${WRKDIR}/${PORTNAME}

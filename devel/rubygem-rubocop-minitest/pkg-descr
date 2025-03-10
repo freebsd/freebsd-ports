@@ -1,0 +1,3 @@
+RuboCop Minitest is a RuboCop extension focused on enforcing Minitest best
+practices and coding conventions. The library is based on the guidelines
+outlined in the community Minitest Style Guide.

@@ -1,5 +1,6 @@
 PORTNAME=	ebur128
-DISTVERSION=	0.1.9
+DISTVERSION=	0.1.10
+PORTREVISION=	3
 CATEGORIES=	audio
 
 MAINTAINER=	diizzy@FreeBSD.org
@@ -26,6 +27,5 @@ do-install:
 		--destdir "${STAGEDIR}" \
 		--prefix "${PREFIX}" \
 		${CARGO_INSTALL_ARGS}
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/*.so
 
 .include <bsd.port.mk>

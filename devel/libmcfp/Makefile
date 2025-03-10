@@ -1,6 +1,6 @@
 PORTNAME=	libmcfp
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.3.3
+DISTVERSION=	1.3.5
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -23,5 +23,7 @@ CMAKE_OFF=	BUILD_TESTING
 NO_ARCH=	yes
 
 PORTSCOUT=	limit:^.*[0-9]\.[0-9].*
+
+# 100% tests passed, 0 tests failed out of 1
 
 .include <bsd.port.mk>

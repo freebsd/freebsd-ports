@@ -6,17 +6,16 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Mail sieve editor
 WWW=		https://www.kde.org/
 
-LIB_DEPENDS=	libqt5keychain.so:security/qtkeychain@qt5
+LIB_DEPENDS=	libqt6keychain.so:security/qtkeychain@qt6
 
-USES=		cmake compiler:c++11-lib gettext kde:5 qt:5 tar:xz
+USES=		cmake compiler:c++11-lib gettext kde:6 qt:6 tar:xz
 USE_KDE=	auth bookmarks codecs config configwidgets coreaddons crash \
-		dbusaddons i18n iconthemes kio service wallet \
-		widgetsaddons xmlgui \
+		dbusaddons i18n iconthemes kio service wallet widgetsaddons \
+		xmlgui \
 		ecm:build
 # pim components
 USE_KDE+=	libksieve mailtransport pimcommon pimtextedit
-USE_QT=		concurrent core dbus gui network widgets xml \
-		buildtools:build qmake:build
+USE_QT=		base
 USE_LDCONFIG=	yes
 
 DESCR=		${.CURDIR:H:H}/deskutils/kdepim/pkg-descr

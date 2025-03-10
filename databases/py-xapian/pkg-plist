@@ -1,5 +1,5 @@
-%%PYTHON_SITELIBDIR%%/xapian/__init__.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
-%%PYTHON_SITELIBDIR%%/xapian/__init__.cpython-%%PYTHON_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/xapian/__init__%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/xapian/__init__%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/xapian/__init__.py
 %%PYTHON_SITELIBDIR%%/xapian/_xapian.a
 %%PYTHON_SITELIBDIR%%/xapian/_xapian%%PYTHON_EXT_SUFFIX%%.so

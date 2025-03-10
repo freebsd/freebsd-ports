@@ -1,6 +1,7 @@
 PORTNAME=	opendht
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.1.11
+DISTVERSION=	3.2.0
+PORTREVISION=	1
 CATEGORIES=	devel net
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -18,6 +19,7 @@ LIB_DEPENDS=	libargon2.so:security/libargon2 \
 		libfmt.so:devel/libfmt \
 		libhttp_parser.so:www/http-parser \
 		libjsoncpp.so:devel/jsoncpp \
+		libllhttp.so:www/llhttp \
 		libnettle.so:security/nettle \
 		libgnutls.so:security/gnutls
 RUN_DEPENDS=	msgpack-cxx>0:devel/msgpack-cxx
@@ -52,5 +54,7 @@ PUSH_NOTIFICATIONS_DESC=	Enable push notifications support
 PUSH_NOTIFICATIONS_CMAKE_BOOL=	OPENDHT_PUSH_NOTIFICATIONS
 
 PORTDOCS=	*
+
+# several tests fail, see https://github.com/savoirfairelinux/opendht/issues/721
 
 .include <bsd.port.mk>

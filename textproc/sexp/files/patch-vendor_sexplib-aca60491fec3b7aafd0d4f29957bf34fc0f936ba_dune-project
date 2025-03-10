@@ -1,0 +1,5 @@
+--- vendor/sexplib-aca60491fec3b7aafd0d4f29957bf34fc0f936ba/dune-project.orig	2024-10-08 19:31:01 UTC
++++ vendor/sexplib-aca60491fec3b7aafd0d4f29957bf34fc0f936ba/dune-project
+@@ -1 +1 @@
+-(lang dune 3.11)
++(lang dune 3.7)

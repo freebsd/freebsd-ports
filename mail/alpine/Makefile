@@ -1,6 +1,6 @@
 PORTNAME?=	alpine
 DISTVERSION=	2.26
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES?=	mail news
 MASTER_SITES=	https://repo.or.cz/alpine.git/snapshot/${GIT_COMMIT}${EXTRACT_SUFX}?dummy=/
 
@@ -32,6 +32,7 @@ MAKE_ARGS+=		CC="${CC}" \
 			CXX="${CXX}" \
 			GCCCFLAGS="${CFLAGS}"
 MAKE_JOBS_UNSAFE=	yes
+CFLAGS+=		-DOPENSSL_1_1_0 -DOPENSSL_API_COMPAT=0x10100000L
 # When you update please double check that the commit corresponds to
 # the actual version you've set in PORTVERSION.
 GIT_COMMIT=		9726c098a739edfdca6218bc5dee104c310957e9

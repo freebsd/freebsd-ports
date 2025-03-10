@@ -1,11 +1,13 @@
 PORTNAME=	normcap
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.5.8
+PORTREVISION=	1
 CATEGORIES=	deskutils
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	OCR powered screen-capture tool
-WWW=		https://dynobo.github.io/normcap/
+WWW=		https://dynobo.github.io/normcap/ \
+		https://github.com/dynobo/normcap
 
 LICENSE=	GPLv3
 
@@ -19,7 +21,8 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Babel>=2.12.1:devel/py-babel@${PY_FLAVOR} 
 		${PYTHON_PKGNAMEPREFIX}typing-extensions>=4.4.0:devel/py-typing-extensions@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}jeepney>=0.8.0:devel/py-jeepney@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyside6>0:devel/pyside6@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}shiboken6>=6.6.1:devel/shiboken6@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}shiboken6>=6.6.1:devel/shiboken6@${PY_FLAVOR} \
+		tesseract:graphics/tesseract
 
 USES=		python
 USE_PYTHON=	pep517 noflavors autoplist

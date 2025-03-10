@@ -45,6 +45,7 @@ share/icons/hicolor/scalable/actions/vcs-diff-cvs-cervisia.svgz
 share/icons/hicolor/scalable/actions/vcs-remove-cvs-cervisia.svgz
 share/icons/hicolor/scalable/actions/vcs-status-cvs-cervisia.svgz
 share/icons/hicolor/scalable/actions/vcs-update-cvs-cervisia.svgz
+share/icons/hicolor/scalable/apps/cervisia.svg
 share/knotifications5/cervisia.notifyrc
 share/kservices5/org.kde.cervisiapart5.desktop
 share/kservices5/org.kde.cvsservice5.desktop

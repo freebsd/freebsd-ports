@@ -1,8 +1,9 @@
 PORTNAME=	python-engineio
-PORTVERSION=	4.9.0
+PORTVERSION=	4.11.2
 CATEGORIES=	devel net python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	python_engineio-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Python implementation of the Engine.IO realtime client and server

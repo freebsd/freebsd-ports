@@ -1,6 +1,6 @@
 PORTNAME=	afl
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.21c
+DISTVERSION=	4.30c
 CATEGORIES=	security
 PKGNAMESUFFIX=	++-${FLAVOR}
 
@@ -16,7 +16,7 @@ ONLY_FOR_ARCHS_REASON=	uses x86-only instrumentation or requires complete LLVM s
 
 BUILD_DEPENDS=	ginstall:sysutils/coreutils
 
-FLAVORS=	llvm gcc
+FLAVORS=	llvm # gcc
 FLAVOR?=	${FLAVORS:[1]}
 
 _LLVM_VER=		16

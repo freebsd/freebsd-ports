@@ -1,0 +1,8 @@
+bin/oslv_monitor
+%%SITE_PERL%%/OSLV/Monitor.pm
+%%SITE_PERL%%/OSLV/Monitor/Backends/FreeBSD.pm
+%%SITE_PERL%%/OSLV/Monitor/Backends/cgroups.pm
+%%PERL5_MAN1%%/oslv_monitor.1.gz
+%%PERL5_MAN3%%/OSLV::Monitor.3.gz
+%%PERL5_MAN3%%/OSLV::Monitor::Backends::FreeBSD.3.gz
+%%PERL5_MAN3%%/OSLV::Monitor::Backends::cgroups.3.gz

@@ -5,8 +5,8 @@ CATEGORIES=	misc
 MASTER_SITES=	ftp://ftp.tcl.tk/pub/tcl/mirror/ftp.procplace.com/sorted/packages-7.6/misc/tkcron-2.12/ \
 		http://ftp.sunet.se/pub/lang/tcl/sorted/packages-7.6/misc/tkcron-2.12/ \
 		http://ftp4.de.freesbie.org/pub/misc/x11/tcl/ftp.gmd.de/contrib/sorted/misc/tkcron-2.12/ \
-		http://komquats.com/distfiles/ \
-		http://people.freebsd.org/~cy/distfiles/
+		http://cschubert.com/distfiles/ \
+		LOCAL/cy
 EXTRACT_SUFX=	.tcl.gz
 
 MAINTAINER=	cy@FreeBSD.org

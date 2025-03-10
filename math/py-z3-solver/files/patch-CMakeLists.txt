@@ -1,0 +1,30 @@
+--- CMakeLists.txt.orig	2024-10-07 22:51:28 UTC
++++ CMakeLists.txt
+@@ -1,4 +1,27 @@ message(STATUS "Emitting rules to build Z3 python bind
+ message(STATUS "Emitting rules to build Z3 python bindings")
++
++## portion of src/CMakeLists.txt
++set(Z3_API_HEADER_FILES_TO_SCAN
++  z3_api.h
++  z3_ast_containers.h
++  z3_algebraic.h
++  z3_polynomial.h
++  z3_rcf.h
++  z3_fixedpoint.h
++  z3_optimization.h
++  z3_fpa.h
++  z3_spacer.h
++)
++set(Z3_FULL_PATH_API_HEADER_FILES_TO_SCAN "")
++foreach (header_file ${Z3_API_HEADER_FILES_TO_SCAN})
++  set(full_path_api_header_file "${CMAKE_CURRENT_SOURCE_DIR}/api/${header_file}")
++  list(APPEND Z3_FULL_PATH_API_HEADER_FILES_TO_SCAN "${full_path_api_header_file}")
++  if (NOT EXISTS "${full_path_api_header_file}")
++    message(FATAL_ERROR "API header file \"${full_path_api_header_file}\" does not exist")
++  endif()
++endforeach()
++
++
+ ###############################################################################
+ # Add target to build python bindings for the build directory
+ ###############################################################################

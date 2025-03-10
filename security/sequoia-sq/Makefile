@@ -1,7 +1,7 @@
 PORTNAME=	sq
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.36.0
-PORTREVISION=	1
+PORTREVISION=	7
 CATEGORIES=	security
 PKGNAMEPREFIX=	sequoia-
 
@@ -30,8 +30,12 @@ OPTIONS_SUB=	yes
 
 ELVISH_DESC=	Install Elvish module
 
-post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+.include <bsd.port.pre.mk>
+
+.if ${ARCH:Marmv?}
+LTO_UNSAFE=	yes
+CARGO_ENV+=	CARGO_PROFILE_RELEASE_LTO=false
+.endif
 
 post-install-BASH-on:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/bash-completion/completions
@@ -58,4 +62,4 @@ post-install-ZSH-on:
 	${CARGO_TARGET_DIR}/shell-completions/_${PORTNAME}.ps1 \
 		${STAGEDIR}${PREFIX}/share/zsh/site-functions
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

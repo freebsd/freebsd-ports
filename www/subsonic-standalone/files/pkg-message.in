@@ -1,7 +1,0 @@
-
-========================================================================
-
-Enable Subsonic by putting the following line in /etc/rc.conf
-  subsonic_enable="YES"
-
-See %%LOCALBASE%%/etc/rc.d/subsonic for all the options.

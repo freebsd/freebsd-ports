@@ -7859,6 +7859,1926 @@ rcv_rst_ack_without_data_listen_ipv6_cleanup() {
     restore_sysctls
 }
 
+atf_test_case rcv_rst_ack_syn_rcvd_via_listen_left_edge_ack_left_edge_insecure_ipv4 cleanup
+rcv_rst_ack_syn_rcvd_via_listen_left_edge_ack_left_edge_insecure_ipv4_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_rst_ack_syn_rcvd_via_listen_left_edge_ack_left_edge_insecure_ipv4_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-listen-left-edge-ack-left-edge-insecure-ipv4.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-listen-left-edge-ack-left-edge-insecure-ipv4.pkt
+}
+rcv_rst_ack_syn_rcvd_via_listen_left_edge_ack_left_edge_insecure_ipv4_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_rst_ack_syn_rcvd_via_listen_left_edge_ack_left_edge_insecure_ipv6 cleanup
+rcv_rst_ack_syn_rcvd_via_listen_left_edge_ack_left_edge_insecure_ipv6_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_rst_ack_syn_rcvd_via_listen_left_edge_ack_left_edge_insecure_ipv6_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-listen-left-edge-ack-left-edge-insecure-ipv6.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-listen-left-edge-ack-left-edge-insecure-ipv6.pkt
+}
+rcv_rst_ack_syn_rcvd_via_listen_left_edge_ack_left_edge_insecure_ipv6_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_rst_ack_syn_rcvd_via_listen_left_edge_ack_left_edge_secure_ipv4 cleanup
+rcv_rst_ack_syn_rcvd_via_listen_left_edge_ack_left_edge_secure_ipv4_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_rst_ack_syn_rcvd_via_listen_left_edge_ack_left_edge_secure_ipv4_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-listen-left-edge-ack-left-edge-secure-ipv4.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-listen-left-edge-ack-left-edge-secure-ipv4.pkt
+}
+rcv_rst_ack_syn_rcvd_via_listen_left_edge_ack_left_edge_secure_ipv4_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_rst_ack_syn_rcvd_via_listen_left_edge_ack_left_edge_secure_ipv6 cleanup
+rcv_rst_ack_syn_rcvd_via_listen_left_edge_ack_left_edge_secure_ipv6_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_rst_ack_syn_rcvd_via_listen_left_edge_ack_left_edge_secure_ipv6_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-listen-left-edge-ack-left-edge-secure-ipv6.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-listen-left-edge-ack-left-edge-secure-ipv6.pkt
+}
+rcv_rst_ack_syn_rcvd_via_listen_left_edge_ack_left_edge_secure_ipv6_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_rst_ack_syn_rcvd_via_listen_left_edge_ack_outside_left_insecure_ipv4 cleanup
+rcv_rst_ack_syn_rcvd_via_listen_left_edge_ack_outside_left_insecure_ipv4_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_rst_ack_syn_rcvd_via_listen_left_edge_ack_outside_left_insecure_ipv4_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-listen-left-edge-ack-outside-left-insecure-ipv4.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-listen-left-edge-ack-outside-left-insecure-ipv4.pkt
+}
+rcv_rst_ack_syn_rcvd_via_listen_left_edge_ack_outside_left_insecure_ipv4_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_rst_ack_syn_rcvd_via_listen_left_edge_ack_outside_left_insecure_ipv6 cleanup
+rcv_rst_ack_syn_rcvd_via_listen_left_edge_ack_outside_left_insecure_ipv6_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_rst_ack_syn_rcvd_via_listen_left_edge_ack_outside_left_insecure_ipv6_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-listen-left-edge-ack-outside-left-insecure-ipv6.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-listen-left-edge-ack-outside-left-insecure-ipv6.pkt
+}
+rcv_rst_ack_syn_rcvd_via_listen_left_edge_ack_outside_left_insecure_ipv6_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_rst_ack_syn_rcvd_via_listen_left_edge_ack_outside_left_secure_ipv4 cleanup
+rcv_rst_ack_syn_rcvd_via_listen_left_edge_ack_outside_left_secure_ipv4_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_rst_ack_syn_rcvd_via_listen_left_edge_ack_outside_left_secure_ipv4_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-listen-left-edge-ack-outside-left-secure-ipv4.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-listen-left-edge-ack-outside-left-secure-ipv4.pkt
+}
+rcv_rst_ack_syn_rcvd_via_listen_left_edge_ack_outside_left_secure_ipv4_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_rst_ack_syn_rcvd_via_listen_left_edge_ack_outside_left_secure_ipv6 cleanup
+rcv_rst_ack_syn_rcvd_via_listen_left_edge_ack_outside_left_secure_ipv6_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_rst_ack_syn_rcvd_via_listen_left_edge_ack_outside_left_secure_ipv6_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-listen-left-edge-ack-outside-left-secure-ipv6.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-listen-left-edge-ack-outside-left-secure-ipv6.pkt
+}
+rcv_rst_ack_syn_rcvd_via_listen_left_edge_ack_outside_left_secure_ipv6_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_rst_ack_syn_rcvd_via_listen_left_edge_ack_outside_right_insecure_ipv4 cleanup
+rcv_rst_ack_syn_rcvd_via_listen_left_edge_ack_outside_right_insecure_ipv4_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_rst_ack_syn_rcvd_via_listen_left_edge_ack_outside_right_insecure_ipv4_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-listen-left-edge-ack-outside-right-insecure-ipv4.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-listen-left-edge-ack-outside-right-insecure-ipv4.pkt
+}
+rcv_rst_ack_syn_rcvd_via_listen_left_edge_ack_outside_right_insecure_ipv4_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_rst_ack_syn_rcvd_via_listen_left_edge_ack_outside_right_insecure_ipv6 cleanup
+rcv_rst_ack_syn_rcvd_via_listen_left_edge_ack_outside_right_insecure_ipv6_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_rst_ack_syn_rcvd_via_listen_left_edge_ack_outside_right_insecure_ipv6_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-listen-left-edge-ack-outside-right-insecure-ipv6.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-listen-left-edge-ack-outside-right-insecure-ipv6.pkt
+}
+rcv_rst_ack_syn_rcvd_via_listen_left_edge_ack_outside_right_insecure_ipv6_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_rst_ack_syn_rcvd_via_listen_left_edge_ack_outside_right_secure_ipv4 cleanup
+rcv_rst_ack_syn_rcvd_via_listen_left_edge_ack_outside_right_secure_ipv4_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_rst_ack_syn_rcvd_via_listen_left_edge_ack_outside_right_secure_ipv4_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-listen-left-edge-ack-outside-right-secure-ipv4.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-listen-left-edge-ack-outside-right-secure-ipv4.pkt
+}
+rcv_rst_ack_syn_rcvd_via_listen_left_edge_ack_outside_right_secure_ipv4_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_rst_ack_syn_rcvd_via_listen_left_edge_ack_outside_right_secure_ipv6 cleanup
+rcv_rst_ack_syn_rcvd_via_listen_left_edge_ack_outside_right_secure_ipv6_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_rst_ack_syn_rcvd_via_listen_left_edge_ack_outside_right_secure_ipv6_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-listen-left-edge-ack-outside-right-secure-ipv6.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-listen-left-edge-ack-outside-right-secure-ipv6.pkt
+}
+rcv_rst_ack_syn_rcvd_via_listen_left_edge_ack_outside_right_secure_ipv6_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_rst_ack_syn_rcvd_via_listen_left_edge_ack_right_edge_insecure_ipv4 cleanup
+rcv_rst_ack_syn_rcvd_via_listen_left_edge_ack_right_edge_insecure_ipv4_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_rst_ack_syn_rcvd_via_listen_left_edge_ack_right_edge_insecure_ipv4_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-listen-left-edge-ack-right-edge-insecure-ipv4.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-listen-left-edge-ack-right-edge-insecure-ipv4.pkt
+}
+rcv_rst_ack_syn_rcvd_via_listen_left_edge_ack_right_edge_insecure_ipv4_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_rst_ack_syn_rcvd_via_listen_left_edge_ack_right_edge_insecure_ipv6 cleanup
+rcv_rst_ack_syn_rcvd_via_listen_left_edge_ack_right_edge_insecure_ipv6_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_rst_ack_syn_rcvd_via_listen_left_edge_ack_right_edge_insecure_ipv6_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-listen-left-edge-ack-right-edge-insecure-ipv6.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-listen-left-edge-ack-right-edge-insecure-ipv6.pkt
+}
+rcv_rst_ack_syn_rcvd_via_listen_left_edge_ack_right_edge_insecure_ipv6_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_rst_ack_syn_rcvd_via_listen_left_edge_ack_right_edge_secure_ipv4 cleanup
+rcv_rst_ack_syn_rcvd_via_listen_left_edge_ack_right_edge_secure_ipv4_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_rst_ack_syn_rcvd_via_listen_left_edge_ack_right_edge_secure_ipv4_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-listen-left-edge-ack-right-edge-secure-ipv4.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-listen-left-edge-ack-right-edge-secure-ipv4.pkt
+}
+rcv_rst_ack_syn_rcvd_via_listen_left_edge_ack_right_edge_secure_ipv4_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_rst_ack_syn_rcvd_via_listen_left_edge_ack_right_edge_secure_ipv6 cleanup
+rcv_rst_ack_syn_rcvd_via_listen_left_edge_ack_right_edge_secure_ipv6_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_rst_ack_syn_rcvd_via_listen_left_edge_ack_right_edge_secure_ipv6_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-listen-left-edge-ack-right-edge-secure-ipv6.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-listen-left-edge-ack-right-edge-secure-ipv6.pkt
+}
+rcv_rst_ack_syn_rcvd_via_listen_left_edge_ack_right_edge_secure_ipv6_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_rst_ack_syn_rcvd_via_listen_outside_left_ack_left_edge_insecure_ipv4 cleanup
+rcv_rst_ack_syn_rcvd_via_listen_outside_left_ack_left_edge_insecure_ipv4_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_rst_ack_syn_rcvd_via_listen_outside_left_ack_left_edge_insecure_ipv4_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-listen-outside-left-ack-left-edge-insecure-ipv4.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-listen-outside-left-ack-left-edge-insecure-ipv4.pkt
+}
+rcv_rst_ack_syn_rcvd_via_listen_outside_left_ack_left_edge_insecure_ipv4_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_rst_ack_syn_rcvd_via_listen_outside_left_ack_left_edge_insecure_ipv6 cleanup
+rcv_rst_ack_syn_rcvd_via_listen_outside_left_ack_left_edge_insecure_ipv6_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_rst_ack_syn_rcvd_via_listen_outside_left_ack_left_edge_insecure_ipv6_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-listen-outside-left-ack-left-edge-insecure-ipv6.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-listen-outside-left-ack-left-edge-insecure-ipv6.pkt
+}
+rcv_rst_ack_syn_rcvd_via_listen_outside_left_ack_left_edge_insecure_ipv6_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_rst_ack_syn_rcvd_via_listen_outside_left_ack_left_edge_secure_ipv4 cleanup
+rcv_rst_ack_syn_rcvd_via_listen_outside_left_ack_left_edge_secure_ipv4_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_rst_ack_syn_rcvd_via_listen_outside_left_ack_left_edge_secure_ipv4_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-listen-outside-left-ack-left-edge-secure-ipv4.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-listen-outside-left-ack-left-edge-secure-ipv4.pkt
+}
+rcv_rst_ack_syn_rcvd_via_listen_outside_left_ack_left_edge_secure_ipv4_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_rst_ack_syn_rcvd_via_listen_outside_left_ack_left_edge_secure_ipv6 cleanup
+rcv_rst_ack_syn_rcvd_via_listen_outside_left_ack_left_edge_secure_ipv6_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_rst_ack_syn_rcvd_via_listen_outside_left_ack_left_edge_secure_ipv6_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-listen-outside-left-ack-left-edge-secure-ipv6.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-listen-outside-left-ack-left-edge-secure-ipv6.pkt
+}
+rcv_rst_ack_syn_rcvd_via_listen_outside_left_ack_left_edge_secure_ipv6_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_rst_ack_syn_rcvd_via_listen_outside_left_ack_outside_left_insecure_ipv4 cleanup
+rcv_rst_ack_syn_rcvd_via_listen_outside_left_ack_outside_left_insecure_ipv4_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_rst_ack_syn_rcvd_via_listen_outside_left_ack_outside_left_insecure_ipv4_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-listen-outside-left-ack-outside-left-insecure-ipv4.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-listen-outside-left-ack-outside-left-insecure-ipv4.pkt
+}
+rcv_rst_ack_syn_rcvd_via_listen_outside_left_ack_outside_left_insecure_ipv4_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_rst_ack_syn_rcvd_via_listen_outside_left_ack_outside_left_insecure_ipv6 cleanup
+rcv_rst_ack_syn_rcvd_via_listen_outside_left_ack_outside_left_insecure_ipv6_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_rst_ack_syn_rcvd_via_listen_outside_left_ack_outside_left_insecure_ipv6_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-listen-outside-left-ack-outside-left-insecure-ipv6.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-listen-outside-left-ack-outside-left-insecure-ipv6.pkt
+}
+rcv_rst_ack_syn_rcvd_via_listen_outside_left_ack_outside_left_insecure_ipv6_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_rst_ack_syn_rcvd_via_listen_outside_left_ack_outside_left_secure_ipv4 cleanup
+rcv_rst_ack_syn_rcvd_via_listen_outside_left_ack_outside_left_secure_ipv4_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_rst_ack_syn_rcvd_via_listen_outside_left_ack_outside_left_secure_ipv4_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-listen-outside-left-ack-outside-left-secure-ipv4.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-listen-outside-left-ack-outside-left-secure-ipv4.pkt
+}
+rcv_rst_ack_syn_rcvd_via_listen_outside_left_ack_outside_left_secure_ipv4_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_rst_ack_syn_rcvd_via_listen_outside_left_ack_outside_left_secure_ipv6 cleanup
+rcv_rst_ack_syn_rcvd_via_listen_outside_left_ack_outside_left_secure_ipv6_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_rst_ack_syn_rcvd_via_listen_outside_left_ack_outside_left_secure_ipv6_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-listen-outside-left-ack-outside-left-secure-ipv6.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-listen-outside-left-ack-outside-left-secure-ipv6.pkt
+}
+rcv_rst_ack_syn_rcvd_via_listen_outside_left_ack_outside_left_secure_ipv6_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_rst_ack_syn_rcvd_via_listen_outside_left_ack_outside_right_insecure_ipv4 cleanup
+rcv_rst_ack_syn_rcvd_via_listen_outside_left_ack_outside_right_insecure_ipv4_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_rst_ack_syn_rcvd_via_listen_outside_left_ack_outside_right_insecure_ipv4_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-listen-outside-left-ack-outside-right-insecure-ipv4.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-listen-outside-left-ack-outside-right-insecure-ipv4.pkt
+}
+rcv_rst_ack_syn_rcvd_via_listen_outside_left_ack_outside_right_insecure_ipv4_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_rst_ack_syn_rcvd_via_listen_outside_left_ack_outside_right_insecure_ipv6 cleanup
+rcv_rst_ack_syn_rcvd_via_listen_outside_left_ack_outside_right_insecure_ipv6_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_rst_ack_syn_rcvd_via_listen_outside_left_ack_outside_right_insecure_ipv6_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-listen-outside-left-ack-outside-right-insecure-ipv6.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-listen-outside-left-ack-outside-right-insecure-ipv6.pkt
+}
+rcv_rst_ack_syn_rcvd_via_listen_outside_left_ack_outside_right_insecure_ipv6_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_rst_ack_syn_rcvd_via_listen_outside_left_ack_outside_right_secure_ipv4 cleanup
+rcv_rst_ack_syn_rcvd_via_listen_outside_left_ack_outside_right_secure_ipv4_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_rst_ack_syn_rcvd_via_listen_outside_left_ack_outside_right_secure_ipv4_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-listen-outside-left-ack-outside-right-secure-ipv4.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-listen-outside-left-ack-outside-right-secure-ipv4.pkt
+}
+rcv_rst_ack_syn_rcvd_via_listen_outside_left_ack_outside_right_secure_ipv4_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_rst_ack_syn_rcvd_via_listen_outside_left_ack_outside_right_secure_ipv6 cleanup
+rcv_rst_ack_syn_rcvd_via_listen_outside_left_ack_outside_right_secure_ipv6_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_rst_ack_syn_rcvd_via_listen_outside_left_ack_outside_right_secure_ipv6_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-listen-outside-left-ack-outside-right-secure-ipv6.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-listen-outside-left-ack-outside-right-secure-ipv6.pkt
+}
+rcv_rst_ack_syn_rcvd_via_listen_outside_left_ack_outside_right_secure_ipv6_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_rst_ack_syn_rcvd_via_listen_outside_left_ack_right_edge_insecure_ipv4 cleanup
+rcv_rst_ack_syn_rcvd_via_listen_outside_left_ack_right_edge_insecure_ipv4_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_rst_ack_syn_rcvd_via_listen_outside_left_ack_right_edge_insecure_ipv4_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-listen-outside-left-ack-right-edge-insecure-ipv4.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-listen-outside-left-ack-right-edge-insecure-ipv4.pkt
+}
+rcv_rst_ack_syn_rcvd_via_listen_outside_left_ack_right_edge_insecure_ipv4_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_rst_ack_syn_rcvd_via_listen_outside_left_ack_right_edge_insecure_ipv6 cleanup
+rcv_rst_ack_syn_rcvd_via_listen_outside_left_ack_right_edge_insecure_ipv6_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_rst_ack_syn_rcvd_via_listen_outside_left_ack_right_edge_insecure_ipv6_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-listen-outside-left-ack-right-edge-insecure-ipv6.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-listen-outside-left-ack-right-edge-insecure-ipv6.pkt
+}
+rcv_rst_ack_syn_rcvd_via_listen_outside_left_ack_right_edge_insecure_ipv6_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_rst_ack_syn_rcvd_via_listen_outside_left_ack_right_edge_secure_ipv4 cleanup
+rcv_rst_ack_syn_rcvd_via_listen_outside_left_ack_right_edge_secure_ipv4_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_rst_ack_syn_rcvd_via_listen_outside_left_ack_right_edge_secure_ipv4_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-listen-outside-left-ack-right-edge-secure-ipv4.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-listen-outside-left-ack-right-edge-secure-ipv4.pkt
+}
+rcv_rst_ack_syn_rcvd_via_listen_outside_left_ack_right_edge_secure_ipv4_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_rst_ack_syn_rcvd_via_listen_outside_left_ack_right_edge_secure_ipv6 cleanup
+rcv_rst_ack_syn_rcvd_via_listen_outside_left_ack_right_edge_secure_ipv6_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_rst_ack_syn_rcvd_via_listen_outside_left_ack_right_edge_secure_ipv6_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-listen-outside-left-ack-right-edge-secure-ipv6.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-listen-outside-left-ack-right-edge-secure-ipv6.pkt
+}
+rcv_rst_ack_syn_rcvd_via_listen_outside_left_ack_right_edge_secure_ipv6_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_rst_ack_syn_rcvd_via_listen_outside_right_ack_left_edge_insecure_ipv4 cleanup
+rcv_rst_ack_syn_rcvd_via_listen_outside_right_ack_left_edge_insecure_ipv4_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_rst_ack_syn_rcvd_via_listen_outside_right_ack_left_edge_insecure_ipv4_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-listen-outside-right-ack-left-edge-insecure-ipv4.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-listen-outside-right-ack-left-edge-insecure-ipv4.pkt
+}
+rcv_rst_ack_syn_rcvd_via_listen_outside_right_ack_left_edge_insecure_ipv4_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_rst_ack_syn_rcvd_via_listen_outside_right_ack_left_edge_insecure_ipv6 cleanup
+rcv_rst_ack_syn_rcvd_via_listen_outside_right_ack_left_edge_insecure_ipv6_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_rst_ack_syn_rcvd_via_listen_outside_right_ack_left_edge_insecure_ipv6_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-listen-outside-right-ack-left-edge-insecure-ipv6.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-listen-outside-right-ack-left-edge-insecure-ipv6.pkt
+}
+rcv_rst_ack_syn_rcvd_via_listen_outside_right_ack_left_edge_insecure_ipv6_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_rst_ack_syn_rcvd_via_listen_outside_right_ack_left_edge_secure_ipv4 cleanup
+rcv_rst_ack_syn_rcvd_via_listen_outside_right_ack_left_edge_secure_ipv4_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_rst_ack_syn_rcvd_via_listen_outside_right_ack_left_edge_secure_ipv4_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-listen-outside-right-ack-left-edge-secure-ipv4.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-listen-outside-right-ack-left-edge-secure-ipv4.pkt
+}
+rcv_rst_ack_syn_rcvd_via_listen_outside_right_ack_left_edge_secure_ipv4_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_rst_ack_syn_rcvd_via_listen_outside_right_ack_left_edge_secure_ipv6 cleanup
+rcv_rst_ack_syn_rcvd_via_listen_outside_right_ack_left_edge_secure_ipv6_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_rst_ack_syn_rcvd_via_listen_outside_right_ack_left_edge_secure_ipv6_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-listen-outside-right-ack-left-edge-secure-ipv6.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-listen-outside-right-ack-left-edge-secure-ipv6.pkt
+}
+rcv_rst_ack_syn_rcvd_via_listen_outside_right_ack_left_edge_secure_ipv6_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_rst_ack_syn_rcvd_via_listen_outside_right_ack_outside_left_insecure_ipv4 cleanup
+rcv_rst_ack_syn_rcvd_via_listen_outside_right_ack_outside_left_insecure_ipv4_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_rst_ack_syn_rcvd_via_listen_outside_right_ack_outside_left_insecure_ipv4_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-listen-outside-right-ack-outside-left-insecure-ipv4.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-listen-outside-right-ack-outside-left-insecure-ipv4.pkt
+}
+rcv_rst_ack_syn_rcvd_via_listen_outside_right_ack_outside_left_insecure_ipv4_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_rst_ack_syn_rcvd_via_listen_outside_right_ack_outside_left_insecure_ipv6 cleanup
+rcv_rst_ack_syn_rcvd_via_listen_outside_right_ack_outside_left_insecure_ipv6_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_rst_ack_syn_rcvd_via_listen_outside_right_ack_outside_left_insecure_ipv6_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-listen-outside-right-ack-outside-left-insecure-ipv6.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-listen-outside-right-ack-outside-left-insecure-ipv6.pkt
+}
+rcv_rst_ack_syn_rcvd_via_listen_outside_right_ack_outside_left_insecure_ipv6_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_rst_ack_syn_rcvd_via_listen_outside_right_ack_outside_left_secure_ipv4 cleanup
+rcv_rst_ack_syn_rcvd_via_listen_outside_right_ack_outside_left_secure_ipv4_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_rst_ack_syn_rcvd_via_listen_outside_right_ack_outside_left_secure_ipv4_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-listen-outside-right-ack-outside-left-secure-ipv4.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-listen-outside-right-ack-outside-left-secure-ipv4.pkt
+}
+rcv_rst_ack_syn_rcvd_via_listen_outside_right_ack_outside_left_secure_ipv4_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_rst_ack_syn_rcvd_via_listen_outside_right_ack_outside_left_secure_ipv6 cleanup
+rcv_rst_ack_syn_rcvd_via_listen_outside_right_ack_outside_left_secure_ipv6_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_rst_ack_syn_rcvd_via_listen_outside_right_ack_outside_left_secure_ipv6_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-listen-outside-right-ack-outside-left-secure-ipv6.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-listen-outside-right-ack-outside-left-secure-ipv6.pkt
+}
+rcv_rst_ack_syn_rcvd_via_listen_outside_right_ack_outside_left_secure_ipv6_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_rst_ack_syn_rcvd_via_listen_outside_right_ack_outside_right_insecure_ipv4 cleanup
+rcv_rst_ack_syn_rcvd_via_listen_outside_right_ack_outside_right_insecure_ipv4_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_rst_ack_syn_rcvd_via_listen_outside_right_ack_outside_right_insecure_ipv4_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-listen-outside-right-ack-outside-right-insecure-ipv4.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-listen-outside-right-ack-outside-right-insecure-ipv4.pkt
+}
+rcv_rst_ack_syn_rcvd_via_listen_outside_right_ack_outside_right_insecure_ipv4_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_rst_ack_syn_rcvd_via_listen_outside_right_ack_outside_right_insecure_ipv6 cleanup
+rcv_rst_ack_syn_rcvd_via_listen_outside_right_ack_outside_right_insecure_ipv6_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_rst_ack_syn_rcvd_via_listen_outside_right_ack_outside_right_insecure_ipv6_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-listen-outside-right-ack-outside-right-insecure-ipv6.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-listen-outside-right-ack-outside-right-insecure-ipv6.pkt
+}
+rcv_rst_ack_syn_rcvd_via_listen_outside_right_ack_outside_right_insecure_ipv6_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_rst_ack_syn_rcvd_via_listen_outside_right_ack_outside_right_secure_ipv4 cleanup
+rcv_rst_ack_syn_rcvd_via_listen_outside_right_ack_outside_right_secure_ipv4_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_rst_ack_syn_rcvd_via_listen_outside_right_ack_outside_right_secure_ipv4_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-listen-outside-right-ack-outside-right-secure-ipv4.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-listen-outside-right-ack-outside-right-secure-ipv4.pkt
+}
+rcv_rst_ack_syn_rcvd_via_listen_outside_right_ack_outside_right_secure_ipv4_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_rst_ack_syn_rcvd_via_listen_outside_right_ack_outside_right_secure_ipv6 cleanup
+rcv_rst_ack_syn_rcvd_via_listen_outside_right_ack_outside_right_secure_ipv6_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_rst_ack_syn_rcvd_via_listen_outside_right_ack_outside_right_secure_ipv6_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-listen-outside-right-ack-outside-right-secure-ipv6.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-listen-outside-right-ack-outside-right-secure-ipv6.pkt
+}
+rcv_rst_ack_syn_rcvd_via_listen_outside_right_ack_outside_right_secure_ipv6_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_rst_ack_syn_rcvd_via_listen_outside_right_ack_right_edge_insecure_ipv4 cleanup
+rcv_rst_ack_syn_rcvd_via_listen_outside_right_ack_right_edge_insecure_ipv4_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_rst_ack_syn_rcvd_via_listen_outside_right_ack_right_edge_insecure_ipv4_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-listen-outside-right-ack-right-edge-insecure-ipv4.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-listen-outside-right-ack-right-edge-insecure-ipv4.pkt
+}
+rcv_rst_ack_syn_rcvd_via_listen_outside_right_ack_right_edge_insecure_ipv4_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_rst_ack_syn_rcvd_via_listen_outside_right_ack_right_edge_insecure_ipv6 cleanup
+rcv_rst_ack_syn_rcvd_via_listen_outside_right_ack_right_edge_insecure_ipv6_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_rst_ack_syn_rcvd_via_listen_outside_right_ack_right_edge_insecure_ipv6_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-listen-outside-right-ack-right-edge-insecure-ipv6.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-listen-outside-right-ack-right-edge-insecure-ipv6.pkt
+}
+rcv_rst_ack_syn_rcvd_via_listen_outside_right_ack_right_edge_insecure_ipv6_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_rst_ack_syn_rcvd_via_listen_outside_right_ack_right_edge_secure_ipv4 cleanup
+rcv_rst_ack_syn_rcvd_via_listen_outside_right_ack_right_edge_secure_ipv4_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_rst_ack_syn_rcvd_via_listen_outside_right_ack_right_edge_secure_ipv4_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-listen-outside-right-ack-right-edge-secure-ipv4.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-listen-outside-right-ack-right-edge-secure-ipv4.pkt
+}
+rcv_rst_ack_syn_rcvd_via_listen_outside_right_ack_right_edge_secure_ipv4_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_rst_ack_syn_rcvd_via_listen_outside_right_ack_right_edge_secure_ipv6 cleanup
+rcv_rst_ack_syn_rcvd_via_listen_outside_right_ack_right_edge_secure_ipv6_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_rst_ack_syn_rcvd_via_listen_outside_right_ack_right_edge_secure_ipv6_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-listen-outside-right-ack-right-edge-secure-ipv6.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-listen-outside-right-ack-right-edge-secure-ipv6.pkt
+}
+rcv_rst_ack_syn_rcvd_via_listen_outside_right_ack_right_edge_secure_ipv6_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_rst_ack_syn_rcvd_via_listen_right_edge_ack_left_edge_insecure_ipv4 cleanup
+rcv_rst_ack_syn_rcvd_via_listen_right_edge_ack_left_edge_insecure_ipv4_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_rst_ack_syn_rcvd_via_listen_right_edge_ack_left_edge_insecure_ipv4_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-listen-right-edge-ack-left-edge-insecure-ipv4.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-listen-right-edge-ack-left-edge-insecure-ipv4.pkt
+}
+rcv_rst_ack_syn_rcvd_via_listen_right_edge_ack_left_edge_insecure_ipv4_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_rst_ack_syn_rcvd_via_listen_right_edge_ack_left_edge_insecure_ipv6 cleanup
+rcv_rst_ack_syn_rcvd_via_listen_right_edge_ack_left_edge_insecure_ipv6_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_rst_ack_syn_rcvd_via_listen_right_edge_ack_left_edge_insecure_ipv6_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-listen-right-edge-ack-left-edge-insecure-ipv6.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-listen-right-edge-ack-left-edge-insecure-ipv6.pkt
+}
+rcv_rst_ack_syn_rcvd_via_listen_right_edge_ack_left_edge_insecure_ipv6_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_rst_ack_syn_rcvd_via_listen_right_edge_ack_left_edge_secure_ipv4 cleanup
+rcv_rst_ack_syn_rcvd_via_listen_right_edge_ack_left_edge_secure_ipv4_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_rst_ack_syn_rcvd_via_listen_right_edge_ack_left_edge_secure_ipv4_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-listen-right-edge-ack-left-edge-secure-ipv4.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-listen-right-edge-ack-left-edge-secure-ipv4.pkt
+}
+rcv_rst_ack_syn_rcvd_via_listen_right_edge_ack_left_edge_secure_ipv4_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_rst_ack_syn_rcvd_via_listen_right_edge_ack_left_edge_secure_ipv6 cleanup
+rcv_rst_ack_syn_rcvd_via_listen_right_edge_ack_left_edge_secure_ipv6_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_rst_ack_syn_rcvd_via_listen_right_edge_ack_left_edge_secure_ipv6_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-listen-right-edge-ack-left-edge-secure-ipv6.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-listen-right-edge-ack-left-edge-secure-ipv6.pkt
+}
+rcv_rst_ack_syn_rcvd_via_listen_right_edge_ack_left_edge_secure_ipv6_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_rst_ack_syn_rcvd_via_listen_right_edge_ack_outside_left_insecure_ipv4 cleanup
+rcv_rst_ack_syn_rcvd_via_listen_right_edge_ack_outside_left_insecure_ipv4_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_rst_ack_syn_rcvd_via_listen_right_edge_ack_outside_left_insecure_ipv4_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-listen-right-edge-ack-outside-left-insecure-ipv4.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-listen-right-edge-ack-outside-left-insecure-ipv4.pkt
+}
+rcv_rst_ack_syn_rcvd_via_listen_right_edge_ack_outside_left_insecure_ipv4_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_rst_ack_syn_rcvd_via_listen_right_edge_ack_outside_left_insecure_ipv6 cleanup
+rcv_rst_ack_syn_rcvd_via_listen_right_edge_ack_outside_left_insecure_ipv6_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_rst_ack_syn_rcvd_via_listen_right_edge_ack_outside_left_insecure_ipv6_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-listen-right-edge-ack-outside-left-insecure-ipv6.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-listen-right-edge-ack-outside-left-insecure-ipv6.pkt
+}
+rcv_rst_ack_syn_rcvd_via_listen_right_edge_ack_outside_left_insecure_ipv6_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_rst_ack_syn_rcvd_via_listen_right_edge_ack_outside_left_secure_ipv4 cleanup
+rcv_rst_ack_syn_rcvd_via_listen_right_edge_ack_outside_left_secure_ipv4_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_rst_ack_syn_rcvd_via_listen_right_edge_ack_outside_left_secure_ipv4_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-listen-right-edge-ack-outside-left-secure-ipv4.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-listen-right-edge-ack-outside-left-secure-ipv4.pkt
+}
+rcv_rst_ack_syn_rcvd_via_listen_right_edge_ack_outside_left_secure_ipv4_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_rst_ack_syn_rcvd_via_listen_right_edge_ack_outside_left_secure_ipv6 cleanup
+rcv_rst_ack_syn_rcvd_via_listen_right_edge_ack_outside_left_secure_ipv6_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_rst_ack_syn_rcvd_via_listen_right_edge_ack_outside_left_secure_ipv6_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-listen-right-edge-ack-outside-left-secure-ipv6.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-listen-right-edge-ack-outside-left-secure-ipv6.pkt
+}
+rcv_rst_ack_syn_rcvd_via_listen_right_edge_ack_outside_left_secure_ipv6_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_rst_ack_syn_rcvd_via_listen_right_edge_ack_outside_right_insecure_ipv4 cleanup
+rcv_rst_ack_syn_rcvd_via_listen_right_edge_ack_outside_right_insecure_ipv4_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_rst_ack_syn_rcvd_via_listen_right_edge_ack_outside_right_insecure_ipv4_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-listen-right-edge-ack-outside-right-insecure-ipv4.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-listen-right-edge-ack-outside-right-insecure-ipv4.pkt
+}
+rcv_rst_ack_syn_rcvd_via_listen_right_edge_ack_outside_right_insecure_ipv4_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_rst_ack_syn_rcvd_via_listen_right_edge_ack_outside_right_insecure_ipv6 cleanup
+rcv_rst_ack_syn_rcvd_via_listen_right_edge_ack_outside_right_insecure_ipv6_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_rst_ack_syn_rcvd_via_listen_right_edge_ack_outside_right_insecure_ipv6_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-listen-right-edge-ack-outside-right-insecure-ipv6.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-listen-right-edge-ack-outside-right-insecure-ipv6.pkt
+}
+rcv_rst_ack_syn_rcvd_via_listen_right_edge_ack_outside_right_insecure_ipv6_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_rst_ack_syn_rcvd_via_listen_right_edge_ack_outside_right_secure_ipv4 cleanup
+rcv_rst_ack_syn_rcvd_via_listen_right_edge_ack_outside_right_secure_ipv4_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_rst_ack_syn_rcvd_via_listen_right_edge_ack_outside_right_secure_ipv4_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-listen-right-edge-ack-outside-right-secure-ipv4.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-listen-right-edge-ack-outside-right-secure-ipv4.pkt
+}
+rcv_rst_ack_syn_rcvd_via_listen_right_edge_ack_outside_right_secure_ipv4_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_rst_ack_syn_rcvd_via_listen_right_edge_ack_outside_right_secure_ipv6 cleanup
+rcv_rst_ack_syn_rcvd_via_listen_right_edge_ack_outside_right_secure_ipv6_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_rst_ack_syn_rcvd_via_listen_right_edge_ack_outside_right_secure_ipv6_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-listen-right-edge-ack-outside-right-secure-ipv6.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-listen-right-edge-ack-outside-right-secure-ipv6.pkt
+}
+rcv_rst_ack_syn_rcvd_via_listen_right_edge_ack_outside_right_secure_ipv6_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_rst_ack_syn_rcvd_via_listen_right_edge_ack_right_edge_insecure_ipv4 cleanup
+rcv_rst_ack_syn_rcvd_via_listen_right_edge_ack_right_edge_insecure_ipv4_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_rst_ack_syn_rcvd_via_listen_right_edge_ack_right_edge_insecure_ipv4_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-listen-right-edge-ack-right-edge-insecure-ipv4.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-listen-right-edge-ack-right-edge-insecure-ipv4.pkt
+}
+rcv_rst_ack_syn_rcvd_via_listen_right_edge_ack_right_edge_insecure_ipv4_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_rst_ack_syn_rcvd_via_listen_right_edge_ack_right_edge_insecure_ipv6 cleanup
+rcv_rst_ack_syn_rcvd_via_listen_right_edge_ack_right_edge_insecure_ipv6_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_rst_ack_syn_rcvd_via_listen_right_edge_ack_right_edge_insecure_ipv6_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-listen-right-edge-ack-right-edge-insecure-ipv6.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-listen-right-edge-ack-right-edge-insecure-ipv6.pkt
+}
+rcv_rst_ack_syn_rcvd_via_listen_right_edge_ack_right_edge_insecure_ipv6_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_rst_ack_syn_rcvd_via_listen_right_edge_ack_right_edge_secure_ipv4 cleanup
+rcv_rst_ack_syn_rcvd_via_listen_right_edge_ack_right_edge_secure_ipv4_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_rst_ack_syn_rcvd_via_listen_right_edge_ack_right_edge_secure_ipv4_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-listen-right-edge-ack-right-edge-secure-ipv4.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-listen-right-edge-ack-right-edge-secure-ipv4.pkt
+}
+rcv_rst_ack_syn_rcvd_via_listen_right_edge_ack_right_edge_secure_ipv4_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_rst_ack_syn_rcvd_via_listen_right_edge_ack_right_edge_secure_ipv6 cleanup
+rcv_rst_ack_syn_rcvd_via_listen_right_edge_ack_right_edge_secure_ipv6_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_rst_ack_syn_rcvd_via_listen_right_edge_ack_right_edge_secure_ipv6_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-listen-right-edge-ack-right-edge-secure-ipv6.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-listen-right-edge-ack-right-edge-secure-ipv6.pkt
+}
+rcv_rst_ack_syn_rcvd_via_listen_right_edge_ack_right_edge_secure_ipv6_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_rst_ack_syn_rcvd_via_syn_sent_left_edge_ack_left_edge_insecure_ipv4 cleanup
+rcv_rst_ack_syn_rcvd_via_syn_sent_left_edge_ack_left_edge_insecure_ipv4_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_rst_ack_syn_rcvd_via_syn_sent_left_edge_ack_left_edge_insecure_ipv4_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-syn-sent-left-edge-ack-left-edge-insecure-ipv4.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-syn-sent-left-edge-ack-left-edge-insecure-ipv4.pkt
+}
+rcv_rst_ack_syn_rcvd_via_syn_sent_left_edge_ack_left_edge_insecure_ipv4_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_rst_ack_syn_rcvd_via_syn_sent_left_edge_ack_left_edge_insecure_ipv6 cleanup
+rcv_rst_ack_syn_rcvd_via_syn_sent_left_edge_ack_left_edge_insecure_ipv6_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_rst_ack_syn_rcvd_via_syn_sent_left_edge_ack_left_edge_insecure_ipv6_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-syn-sent-left-edge-ack-left-edge-insecure-ipv6.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-syn-sent-left-edge-ack-left-edge-insecure-ipv6.pkt
+}
+rcv_rst_ack_syn_rcvd_via_syn_sent_left_edge_ack_left_edge_insecure_ipv6_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_rst_ack_syn_rcvd_via_syn_sent_left_edge_ack_left_edge_secure_ipv4 cleanup
+rcv_rst_ack_syn_rcvd_via_syn_sent_left_edge_ack_left_edge_secure_ipv4_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_rst_ack_syn_rcvd_via_syn_sent_left_edge_ack_left_edge_secure_ipv4_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-syn-sent-left-edge-ack-left-edge-secure-ipv4.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-syn-sent-left-edge-ack-left-edge-secure-ipv4.pkt
+}
+rcv_rst_ack_syn_rcvd_via_syn_sent_left_edge_ack_left_edge_secure_ipv4_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_rst_ack_syn_rcvd_via_syn_sent_left_edge_ack_left_edge_secure_ipv6 cleanup
+rcv_rst_ack_syn_rcvd_via_syn_sent_left_edge_ack_left_edge_secure_ipv6_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_rst_ack_syn_rcvd_via_syn_sent_left_edge_ack_left_edge_secure_ipv6_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-syn-sent-left-edge-ack-left-edge-secure-ipv6.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-syn-sent-left-edge-ack-left-edge-secure-ipv6.pkt
+}
+rcv_rst_ack_syn_rcvd_via_syn_sent_left_edge_ack_left_edge_secure_ipv6_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_rst_ack_syn_rcvd_via_syn_sent_left_edge_ack_outside_left_insecure_ipv4 cleanup
+rcv_rst_ack_syn_rcvd_via_syn_sent_left_edge_ack_outside_left_insecure_ipv4_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_rst_ack_syn_rcvd_via_syn_sent_left_edge_ack_outside_left_insecure_ipv4_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-syn-sent-left-edge-ack-outside-left-insecure-ipv4.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-syn-sent-left-edge-ack-outside-left-insecure-ipv4.pkt
+}
+rcv_rst_ack_syn_rcvd_via_syn_sent_left_edge_ack_outside_left_insecure_ipv4_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_rst_ack_syn_rcvd_via_syn_sent_left_edge_ack_outside_left_insecure_ipv6 cleanup
+rcv_rst_ack_syn_rcvd_via_syn_sent_left_edge_ack_outside_left_insecure_ipv6_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_rst_ack_syn_rcvd_via_syn_sent_left_edge_ack_outside_left_insecure_ipv6_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-syn-sent-left-edge-ack-outside-left-insecure-ipv6.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-syn-sent-left-edge-ack-outside-left-insecure-ipv6.pkt
+}
+rcv_rst_ack_syn_rcvd_via_syn_sent_left_edge_ack_outside_left_insecure_ipv6_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_rst_ack_syn_rcvd_via_syn_sent_left_edge_ack_outside_left_secure_ipv4 cleanup
+rcv_rst_ack_syn_rcvd_via_syn_sent_left_edge_ack_outside_left_secure_ipv4_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_rst_ack_syn_rcvd_via_syn_sent_left_edge_ack_outside_left_secure_ipv4_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-syn-sent-left-edge-ack-outside-left-secure-ipv4.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-syn-sent-left-edge-ack-outside-left-secure-ipv4.pkt
+}
+rcv_rst_ack_syn_rcvd_via_syn_sent_left_edge_ack_outside_left_secure_ipv4_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_rst_ack_syn_rcvd_via_syn_sent_left_edge_ack_outside_left_secure_ipv6 cleanup
+rcv_rst_ack_syn_rcvd_via_syn_sent_left_edge_ack_outside_left_secure_ipv6_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_rst_ack_syn_rcvd_via_syn_sent_left_edge_ack_outside_left_secure_ipv6_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-syn-sent-left-edge-ack-outside-left-secure-ipv6.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-syn-sent-left-edge-ack-outside-left-secure-ipv6.pkt
+}
+rcv_rst_ack_syn_rcvd_via_syn_sent_left_edge_ack_outside_left_secure_ipv6_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_rst_ack_syn_rcvd_via_syn_sent_left_edge_ack_outside_right_insecure_ipv4 cleanup
+rcv_rst_ack_syn_rcvd_via_syn_sent_left_edge_ack_outside_right_insecure_ipv4_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_rst_ack_syn_rcvd_via_syn_sent_left_edge_ack_outside_right_insecure_ipv4_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-syn-sent-left-edge-ack-outside-right-insecure-ipv4.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-syn-sent-left-edge-ack-outside-right-insecure-ipv4.pkt
+}
+rcv_rst_ack_syn_rcvd_via_syn_sent_left_edge_ack_outside_right_insecure_ipv4_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_rst_ack_syn_rcvd_via_syn_sent_left_edge_ack_outside_right_insecure_ipv6 cleanup
+rcv_rst_ack_syn_rcvd_via_syn_sent_left_edge_ack_outside_right_insecure_ipv6_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_rst_ack_syn_rcvd_via_syn_sent_left_edge_ack_outside_right_insecure_ipv6_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-syn-sent-left-edge-ack-outside-right-insecure-ipv6.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-syn-sent-left-edge-ack-outside-right-insecure-ipv6.pkt
+}
+rcv_rst_ack_syn_rcvd_via_syn_sent_left_edge_ack_outside_right_insecure_ipv6_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_rst_ack_syn_rcvd_via_syn_sent_left_edge_ack_outside_right_secure_ipv4 cleanup
+rcv_rst_ack_syn_rcvd_via_syn_sent_left_edge_ack_outside_right_secure_ipv4_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_rst_ack_syn_rcvd_via_syn_sent_left_edge_ack_outside_right_secure_ipv4_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-syn-sent-left-edge-ack-outside-right-secure-ipv4.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-syn-sent-left-edge-ack-outside-right-secure-ipv4.pkt
+}
+rcv_rst_ack_syn_rcvd_via_syn_sent_left_edge_ack_outside_right_secure_ipv4_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_rst_ack_syn_rcvd_via_syn_sent_left_edge_ack_outside_right_secure_ipv6 cleanup
+rcv_rst_ack_syn_rcvd_via_syn_sent_left_edge_ack_outside_right_secure_ipv6_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_rst_ack_syn_rcvd_via_syn_sent_left_edge_ack_outside_right_secure_ipv6_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-syn-sent-left-edge-ack-outside-right-secure-ipv6.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-syn-sent-left-edge-ack-outside-right-secure-ipv6.pkt
+}
+rcv_rst_ack_syn_rcvd_via_syn_sent_left_edge_ack_outside_right_secure_ipv6_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_rst_ack_syn_rcvd_via_syn_sent_left_edge_ack_right_edge_insecure_ipv4 cleanup
+rcv_rst_ack_syn_rcvd_via_syn_sent_left_edge_ack_right_edge_insecure_ipv4_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_rst_ack_syn_rcvd_via_syn_sent_left_edge_ack_right_edge_insecure_ipv4_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-syn-sent-left-edge-ack-right-edge-insecure-ipv4.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-syn-sent-left-edge-ack-right-edge-insecure-ipv4.pkt
+}
+rcv_rst_ack_syn_rcvd_via_syn_sent_left_edge_ack_right_edge_insecure_ipv4_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_rst_ack_syn_rcvd_via_syn_sent_left_edge_ack_right_edge_insecure_ipv6 cleanup
+rcv_rst_ack_syn_rcvd_via_syn_sent_left_edge_ack_right_edge_insecure_ipv6_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_rst_ack_syn_rcvd_via_syn_sent_left_edge_ack_right_edge_insecure_ipv6_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-syn-sent-left-edge-ack-right-edge-insecure-ipv6.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-syn-sent-left-edge-ack-right-edge-insecure-ipv6.pkt
+}
+rcv_rst_ack_syn_rcvd_via_syn_sent_left_edge_ack_right_edge_insecure_ipv6_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_rst_ack_syn_rcvd_via_syn_sent_left_edge_ack_right_edge_secure_ipv4 cleanup
+rcv_rst_ack_syn_rcvd_via_syn_sent_left_edge_ack_right_edge_secure_ipv4_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_rst_ack_syn_rcvd_via_syn_sent_left_edge_ack_right_edge_secure_ipv4_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-syn-sent-left-edge-ack-right-edge-secure-ipv4.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-syn-sent-left-edge-ack-right-edge-secure-ipv4.pkt
+}
+rcv_rst_ack_syn_rcvd_via_syn_sent_left_edge_ack_right_edge_secure_ipv4_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_rst_ack_syn_rcvd_via_syn_sent_left_edge_ack_right_edge_secure_ipv6 cleanup
+rcv_rst_ack_syn_rcvd_via_syn_sent_left_edge_ack_right_edge_secure_ipv6_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_rst_ack_syn_rcvd_via_syn_sent_left_edge_ack_right_edge_secure_ipv6_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-syn-sent-left-edge-ack-right-edge-secure-ipv6.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-syn-sent-left-edge-ack-right-edge-secure-ipv6.pkt
+}
+rcv_rst_ack_syn_rcvd_via_syn_sent_left_edge_ack_right_edge_secure_ipv6_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_rst_ack_syn_rcvd_via_syn_sent_outside_left_ack_left_edge_insecure_ipv4 cleanup
+rcv_rst_ack_syn_rcvd_via_syn_sent_outside_left_ack_left_edge_insecure_ipv4_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_rst_ack_syn_rcvd_via_syn_sent_outside_left_ack_left_edge_insecure_ipv4_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-syn-sent-outside-left-ack-left-edge-insecure-ipv4.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-syn-sent-outside-left-ack-left-edge-insecure-ipv4.pkt
+}
+rcv_rst_ack_syn_rcvd_via_syn_sent_outside_left_ack_left_edge_insecure_ipv4_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_rst_ack_syn_rcvd_via_syn_sent_outside_left_ack_left_edge_insecure_ipv6 cleanup
+rcv_rst_ack_syn_rcvd_via_syn_sent_outside_left_ack_left_edge_insecure_ipv6_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_rst_ack_syn_rcvd_via_syn_sent_outside_left_ack_left_edge_insecure_ipv6_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-syn-sent-outside-left-ack-left-edge-insecure-ipv6.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-syn-sent-outside-left-ack-left-edge-insecure-ipv6.pkt
+}
+rcv_rst_ack_syn_rcvd_via_syn_sent_outside_left_ack_left_edge_insecure_ipv6_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_rst_ack_syn_rcvd_via_syn_sent_outside_left_ack_left_edge_secure_ipv4 cleanup
+rcv_rst_ack_syn_rcvd_via_syn_sent_outside_left_ack_left_edge_secure_ipv4_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_rst_ack_syn_rcvd_via_syn_sent_outside_left_ack_left_edge_secure_ipv4_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-syn-sent-outside-left-ack-left-edge-secure-ipv4.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-syn-sent-outside-left-ack-left-edge-secure-ipv4.pkt
+}
+rcv_rst_ack_syn_rcvd_via_syn_sent_outside_left_ack_left_edge_secure_ipv4_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_rst_ack_syn_rcvd_via_syn_sent_outside_left_ack_left_edge_secure_ipv6 cleanup
+rcv_rst_ack_syn_rcvd_via_syn_sent_outside_left_ack_left_edge_secure_ipv6_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_rst_ack_syn_rcvd_via_syn_sent_outside_left_ack_left_edge_secure_ipv6_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-syn-sent-outside-left-ack-left-edge-secure-ipv6.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-syn-sent-outside-left-ack-left-edge-secure-ipv6.pkt
+}
+rcv_rst_ack_syn_rcvd_via_syn_sent_outside_left_ack_left_edge_secure_ipv6_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_rst_ack_syn_rcvd_via_syn_sent_outside_left_ack_outside_left_insecure_ipv4 cleanup
+rcv_rst_ack_syn_rcvd_via_syn_sent_outside_left_ack_outside_left_insecure_ipv4_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_rst_ack_syn_rcvd_via_syn_sent_outside_left_ack_outside_left_insecure_ipv4_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-syn-sent-outside-left-ack-outside-left-insecure-ipv4.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-syn-sent-outside-left-ack-outside-left-insecure-ipv4.pkt
+}
+rcv_rst_ack_syn_rcvd_via_syn_sent_outside_left_ack_outside_left_insecure_ipv4_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_rst_ack_syn_rcvd_via_syn_sent_outside_left_ack_outside_left_insecure_ipv6 cleanup
+rcv_rst_ack_syn_rcvd_via_syn_sent_outside_left_ack_outside_left_insecure_ipv6_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_rst_ack_syn_rcvd_via_syn_sent_outside_left_ack_outside_left_insecure_ipv6_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-syn-sent-outside-left-ack-outside-left-insecure-ipv6.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-syn-sent-outside-left-ack-outside-left-insecure-ipv6.pkt
+}
+rcv_rst_ack_syn_rcvd_via_syn_sent_outside_left_ack_outside_left_insecure_ipv6_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_rst_ack_syn_rcvd_via_syn_sent_outside_left_ack_outside_left_secure_ipv4 cleanup
+rcv_rst_ack_syn_rcvd_via_syn_sent_outside_left_ack_outside_left_secure_ipv4_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_rst_ack_syn_rcvd_via_syn_sent_outside_left_ack_outside_left_secure_ipv4_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-syn-sent-outside-left-ack-outside-left-secure-ipv4.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-syn-sent-outside-left-ack-outside-left-secure-ipv4.pkt
+}
+rcv_rst_ack_syn_rcvd_via_syn_sent_outside_left_ack_outside_left_secure_ipv4_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_rst_ack_syn_rcvd_via_syn_sent_outside_left_ack_outside_left_secure_ipv6 cleanup
+rcv_rst_ack_syn_rcvd_via_syn_sent_outside_left_ack_outside_left_secure_ipv6_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_rst_ack_syn_rcvd_via_syn_sent_outside_left_ack_outside_left_secure_ipv6_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-syn-sent-outside-left-ack-outside-left-secure-ipv6.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-syn-sent-outside-left-ack-outside-left-secure-ipv6.pkt
+}
+rcv_rst_ack_syn_rcvd_via_syn_sent_outside_left_ack_outside_left_secure_ipv6_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_rst_ack_syn_rcvd_via_syn_sent_outside_left_ack_outside_right_insecure_ipv4 cleanup
+rcv_rst_ack_syn_rcvd_via_syn_sent_outside_left_ack_outside_right_insecure_ipv4_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_rst_ack_syn_rcvd_via_syn_sent_outside_left_ack_outside_right_insecure_ipv4_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-syn-sent-outside-left-ack-outside-right-insecure-ipv4.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-syn-sent-outside-left-ack-outside-right-insecure-ipv4.pkt
+}
+rcv_rst_ack_syn_rcvd_via_syn_sent_outside_left_ack_outside_right_insecure_ipv4_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_rst_ack_syn_rcvd_via_syn_sent_outside_left_ack_outside_right_insecure_ipv6 cleanup
+rcv_rst_ack_syn_rcvd_via_syn_sent_outside_left_ack_outside_right_insecure_ipv6_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_rst_ack_syn_rcvd_via_syn_sent_outside_left_ack_outside_right_insecure_ipv6_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-syn-sent-outside-left-ack-outside-right-insecure-ipv6.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-syn-sent-outside-left-ack-outside-right-insecure-ipv6.pkt
+}
+rcv_rst_ack_syn_rcvd_via_syn_sent_outside_left_ack_outside_right_insecure_ipv6_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_rst_ack_syn_rcvd_via_syn_sent_outside_left_ack_outside_right_secure_ipv4 cleanup
+rcv_rst_ack_syn_rcvd_via_syn_sent_outside_left_ack_outside_right_secure_ipv4_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_rst_ack_syn_rcvd_via_syn_sent_outside_left_ack_outside_right_secure_ipv4_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-syn-sent-outside-left-ack-outside-right-secure-ipv4.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-syn-sent-outside-left-ack-outside-right-secure-ipv4.pkt
+}
+rcv_rst_ack_syn_rcvd_via_syn_sent_outside_left_ack_outside_right_secure_ipv4_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_rst_ack_syn_rcvd_via_syn_sent_outside_left_ack_outside_right_secure_ipv6 cleanup
+rcv_rst_ack_syn_rcvd_via_syn_sent_outside_left_ack_outside_right_secure_ipv6_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_rst_ack_syn_rcvd_via_syn_sent_outside_left_ack_outside_right_secure_ipv6_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-syn-sent-outside-left-ack-outside-right-secure-ipv6.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-syn-sent-outside-left-ack-outside-right-secure-ipv6.pkt
+}
+rcv_rst_ack_syn_rcvd_via_syn_sent_outside_left_ack_outside_right_secure_ipv6_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_rst_ack_syn_rcvd_via_syn_sent_outside_left_ack_right_edge_insecure_ipv4 cleanup
+rcv_rst_ack_syn_rcvd_via_syn_sent_outside_left_ack_right_edge_insecure_ipv4_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_rst_ack_syn_rcvd_via_syn_sent_outside_left_ack_right_edge_insecure_ipv4_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-syn-sent-outside-left-ack-right-edge-insecure-ipv4.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-syn-sent-outside-left-ack-right-edge-insecure-ipv4.pkt
+}
+rcv_rst_ack_syn_rcvd_via_syn_sent_outside_left_ack_right_edge_insecure_ipv4_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_rst_ack_syn_rcvd_via_syn_sent_outside_left_ack_right_edge_insecure_ipv6 cleanup
+rcv_rst_ack_syn_rcvd_via_syn_sent_outside_left_ack_right_edge_insecure_ipv6_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_rst_ack_syn_rcvd_via_syn_sent_outside_left_ack_right_edge_insecure_ipv6_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-syn-sent-outside-left-ack-right-edge-insecure-ipv6.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-syn-sent-outside-left-ack-right-edge-insecure-ipv6.pkt
+}
+rcv_rst_ack_syn_rcvd_via_syn_sent_outside_left_ack_right_edge_insecure_ipv6_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_rst_ack_syn_rcvd_via_syn_sent_outside_left_ack_right_edge_secure_ipv4 cleanup
+rcv_rst_ack_syn_rcvd_via_syn_sent_outside_left_ack_right_edge_secure_ipv4_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_rst_ack_syn_rcvd_via_syn_sent_outside_left_ack_right_edge_secure_ipv4_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-syn-sent-outside-left-ack-right-edge-secure-ipv4.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-syn-sent-outside-left-ack-right-edge-secure-ipv4.pkt
+}
+rcv_rst_ack_syn_rcvd_via_syn_sent_outside_left_ack_right_edge_secure_ipv4_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_rst_ack_syn_rcvd_via_syn_sent_outside_left_ack_right_edge_secure_ipv6 cleanup
+rcv_rst_ack_syn_rcvd_via_syn_sent_outside_left_ack_right_edge_secure_ipv6_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_rst_ack_syn_rcvd_via_syn_sent_outside_left_ack_right_edge_secure_ipv6_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-syn-sent-outside-left-ack-right-edge-secure-ipv6.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-syn-sent-outside-left-ack-right-edge-secure-ipv6.pkt
+}
+rcv_rst_ack_syn_rcvd_via_syn_sent_outside_left_ack_right_edge_secure_ipv6_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_rst_ack_syn_rcvd_via_syn_sent_outside_right_ack_left_edge_insecure_ipv4 cleanup
+rcv_rst_ack_syn_rcvd_via_syn_sent_outside_right_ack_left_edge_insecure_ipv4_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_rst_ack_syn_rcvd_via_syn_sent_outside_right_ack_left_edge_insecure_ipv4_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-syn-sent-outside-right-ack-left-edge-insecure-ipv4.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-syn-sent-outside-right-ack-left-edge-insecure-ipv4.pkt
+}
+rcv_rst_ack_syn_rcvd_via_syn_sent_outside_right_ack_left_edge_insecure_ipv4_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_rst_ack_syn_rcvd_via_syn_sent_outside_right_ack_left_edge_insecure_ipv6 cleanup
+rcv_rst_ack_syn_rcvd_via_syn_sent_outside_right_ack_left_edge_insecure_ipv6_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_rst_ack_syn_rcvd_via_syn_sent_outside_right_ack_left_edge_insecure_ipv6_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-syn-sent-outside-right-ack-left-edge-insecure-ipv6.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-syn-sent-outside-right-ack-left-edge-insecure-ipv6.pkt
+}
+rcv_rst_ack_syn_rcvd_via_syn_sent_outside_right_ack_left_edge_insecure_ipv6_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_rst_ack_syn_rcvd_via_syn_sent_outside_right_ack_left_edge_secure_ipv4 cleanup
+rcv_rst_ack_syn_rcvd_via_syn_sent_outside_right_ack_left_edge_secure_ipv4_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_rst_ack_syn_rcvd_via_syn_sent_outside_right_ack_left_edge_secure_ipv4_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-syn-sent-outside-right-ack-left-edge-secure-ipv4.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-syn-sent-outside-right-ack-left-edge-secure-ipv4.pkt
+}
+rcv_rst_ack_syn_rcvd_via_syn_sent_outside_right_ack_left_edge_secure_ipv4_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_rst_ack_syn_rcvd_via_syn_sent_outside_right_ack_left_edge_secure_ipv6 cleanup
+rcv_rst_ack_syn_rcvd_via_syn_sent_outside_right_ack_left_edge_secure_ipv6_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_rst_ack_syn_rcvd_via_syn_sent_outside_right_ack_left_edge_secure_ipv6_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-syn-sent-outside-right-ack-left-edge-secure-ipv6.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-syn-sent-outside-right-ack-left-edge-secure-ipv6.pkt
+}
+rcv_rst_ack_syn_rcvd_via_syn_sent_outside_right_ack_left_edge_secure_ipv6_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_rst_ack_syn_rcvd_via_syn_sent_outside_right_ack_outside_left_insecure_ipv4 cleanup
+rcv_rst_ack_syn_rcvd_via_syn_sent_outside_right_ack_outside_left_insecure_ipv4_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_rst_ack_syn_rcvd_via_syn_sent_outside_right_ack_outside_left_insecure_ipv4_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-syn-sent-outside-right-ack-outside-left-insecure-ipv4.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-syn-sent-outside-right-ack-outside-left-insecure-ipv4.pkt
+}
+rcv_rst_ack_syn_rcvd_via_syn_sent_outside_right_ack_outside_left_insecure_ipv4_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_rst_ack_syn_rcvd_via_syn_sent_outside_right_ack_outside_left_insecure_ipv6 cleanup
+rcv_rst_ack_syn_rcvd_via_syn_sent_outside_right_ack_outside_left_insecure_ipv6_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_rst_ack_syn_rcvd_via_syn_sent_outside_right_ack_outside_left_insecure_ipv6_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-syn-sent-outside-right-ack-outside-left-insecure-ipv6.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-syn-sent-outside-right-ack-outside-left-insecure-ipv6.pkt
+}
+rcv_rst_ack_syn_rcvd_via_syn_sent_outside_right_ack_outside_left_insecure_ipv6_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_rst_ack_syn_rcvd_via_syn_sent_outside_right_ack_outside_left_secure_ipv4 cleanup
+rcv_rst_ack_syn_rcvd_via_syn_sent_outside_right_ack_outside_left_secure_ipv4_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_rst_ack_syn_rcvd_via_syn_sent_outside_right_ack_outside_left_secure_ipv4_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-syn-sent-outside-right-ack-outside-left-secure-ipv4.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-syn-sent-outside-right-ack-outside-left-secure-ipv4.pkt
+}
+rcv_rst_ack_syn_rcvd_via_syn_sent_outside_right_ack_outside_left_secure_ipv4_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_rst_ack_syn_rcvd_via_syn_sent_outside_right_ack_outside_left_secure_ipv6 cleanup
+rcv_rst_ack_syn_rcvd_via_syn_sent_outside_right_ack_outside_left_secure_ipv6_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_rst_ack_syn_rcvd_via_syn_sent_outside_right_ack_outside_left_secure_ipv6_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-syn-sent-outside-right-ack-outside-left-secure-ipv6.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-syn-sent-outside-right-ack-outside-left-secure-ipv6.pkt
+}
+rcv_rst_ack_syn_rcvd_via_syn_sent_outside_right_ack_outside_left_secure_ipv6_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_rst_ack_syn_rcvd_via_syn_sent_outside_right_ack_outside_right_insecure_ipv4 cleanup
+rcv_rst_ack_syn_rcvd_via_syn_sent_outside_right_ack_outside_right_insecure_ipv4_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_rst_ack_syn_rcvd_via_syn_sent_outside_right_ack_outside_right_insecure_ipv4_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-syn-sent-outside-right-ack-outside-right-insecure-ipv4.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-syn-sent-outside-right-ack-outside-right-insecure-ipv4.pkt
+}
+rcv_rst_ack_syn_rcvd_via_syn_sent_outside_right_ack_outside_right_insecure_ipv4_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_rst_ack_syn_rcvd_via_syn_sent_outside_right_ack_outside_right_insecure_ipv6 cleanup
+rcv_rst_ack_syn_rcvd_via_syn_sent_outside_right_ack_outside_right_insecure_ipv6_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_rst_ack_syn_rcvd_via_syn_sent_outside_right_ack_outside_right_insecure_ipv6_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-syn-sent-outside-right-ack-outside-right-insecure-ipv6.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-syn-sent-outside-right-ack-outside-right-insecure-ipv6.pkt
+}
+rcv_rst_ack_syn_rcvd_via_syn_sent_outside_right_ack_outside_right_insecure_ipv6_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_rst_ack_syn_rcvd_via_syn_sent_outside_right_ack_outside_right_secure_ipv4 cleanup
+rcv_rst_ack_syn_rcvd_via_syn_sent_outside_right_ack_outside_right_secure_ipv4_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_rst_ack_syn_rcvd_via_syn_sent_outside_right_ack_outside_right_secure_ipv4_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-syn-sent-outside-right-ack-outside-right-secure-ipv4.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-syn-sent-outside-right-ack-outside-right-secure-ipv4.pkt
+}
+rcv_rst_ack_syn_rcvd_via_syn_sent_outside_right_ack_outside_right_secure_ipv4_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_rst_ack_syn_rcvd_via_syn_sent_outside_right_ack_outside_right_secure_ipv6 cleanup
+rcv_rst_ack_syn_rcvd_via_syn_sent_outside_right_ack_outside_right_secure_ipv6_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_rst_ack_syn_rcvd_via_syn_sent_outside_right_ack_outside_right_secure_ipv6_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-syn-sent-outside-right-ack-outside-right-secure-ipv6.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-syn-sent-outside-right-ack-outside-right-secure-ipv6.pkt
+}
+rcv_rst_ack_syn_rcvd_via_syn_sent_outside_right_ack_outside_right_secure_ipv6_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_rst_ack_syn_rcvd_via_syn_sent_outside_right_ack_right_edge_insecure_ipv4 cleanup
+rcv_rst_ack_syn_rcvd_via_syn_sent_outside_right_ack_right_edge_insecure_ipv4_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_rst_ack_syn_rcvd_via_syn_sent_outside_right_ack_right_edge_insecure_ipv4_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-syn-sent-outside-right-ack-right-edge-insecure-ipv4.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-syn-sent-outside-right-ack-right-edge-insecure-ipv4.pkt
+}
+rcv_rst_ack_syn_rcvd_via_syn_sent_outside_right_ack_right_edge_insecure_ipv4_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_rst_ack_syn_rcvd_via_syn_sent_outside_right_ack_right_edge_insecure_ipv6 cleanup
+rcv_rst_ack_syn_rcvd_via_syn_sent_outside_right_ack_right_edge_insecure_ipv6_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_rst_ack_syn_rcvd_via_syn_sent_outside_right_ack_right_edge_insecure_ipv6_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-syn-sent-outside-right-ack-right-edge-insecure-ipv6.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-syn-sent-outside-right-ack-right-edge-insecure-ipv6.pkt
+}
+rcv_rst_ack_syn_rcvd_via_syn_sent_outside_right_ack_right_edge_insecure_ipv6_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_rst_ack_syn_rcvd_via_syn_sent_outside_right_ack_right_edge_secure_ipv4 cleanup
+rcv_rst_ack_syn_rcvd_via_syn_sent_outside_right_ack_right_edge_secure_ipv4_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_rst_ack_syn_rcvd_via_syn_sent_outside_right_ack_right_edge_secure_ipv4_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-syn-sent-outside-right-ack-right-edge-secure-ipv4.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-syn-sent-outside-right-ack-right-edge-secure-ipv4.pkt
+}
+rcv_rst_ack_syn_rcvd_via_syn_sent_outside_right_ack_right_edge_secure_ipv4_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_rst_ack_syn_rcvd_via_syn_sent_outside_right_ack_right_edge_secure_ipv6 cleanup
+rcv_rst_ack_syn_rcvd_via_syn_sent_outside_right_ack_right_edge_secure_ipv6_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_rst_ack_syn_rcvd_via_syn_sent_outside_right_ack_right_edge_secure_ipv6_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-syn-sent-outside-right-ack-right-edge-secure-ipv6.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-syn-sent-outside-right-ack-right-edge-secure-ipv6.pkt
+}
+rcv_rst_ack_syn_rcvd_via_syn_sent_outside_right_ack_right_edge_secure_ipv6_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_rst_ack_syn_rcvd_via_syn_sent_right_edge_ack_left_edge_insecure_ipv4 cleanup
+rcv_rst_ack_syn_rcvd_via_syn_sent_right_edge_ack_left_edge_insecure_ipv4_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_rst_ack_syn_rcvd_via_syn_sent_right_edge_ack_left_edge_insecure_ipv4_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-syn-sent-right-edge-ack-left-edge-insecure-ipv4.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-syn-sent-right-edge-ack-left-edge-insecure-ipv4.pkt
+}
+rcv_rst_ack_syn_rcvd_via_syn_sent_right_edge_ack_left_edge_insecure_ipv4_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_rst_ack_syn_rcvd_via_syn_sent_right_edge_ack_left_edge_insecure_ipv6 cleanup
+rcv_rst_ack_syn_rcvd_via_syn_sent_right_edge_ack_left_edge_insecure_ipv6_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_rst_ack_syn_rcvd_via_syn_sent_right_edge_ack_left_edge_insecure_ipv6_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-syn-sent-right-edge-ack-left-edge-insecure-ipv6.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-syn-sent-right-edge-ack-left-edge-insecure-ipv6.pkt
+}
+rcv_rst_ack_syn_rcvd_via_syn_sent_right_edge_ack_left_edge_insecure_ipv6_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_rst_ack_syn_rcvd_via_syn_sent_right_edge_ack_left_edge_secure_ipv4 cleanup
+rcv_rst_ack_syn_rcvd_via_syn_sent_right_edge_ack_left_edge_secure_ipv4_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_rst_ack_syn_rcvd_via_syn_sent_right_edge_ack_left_edge_secure_ipv4_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-syn-sent-right-edge-ack-left-edge-secure-ipv4.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-syn-sent-right-edge-ack-left-edge-secure-ipv4.pkt
+}
+rcv_rst_ack_syn_rcvd_via_syn_sent_right_edge_ack_left_edge_secure_ipv4_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_rst_ack_syn_rcvd_via_syn_sent_right_edge_ack_left_edge_secure_ipv6 cleanup
+rcv_rst_ack_syn_rcvd_via_syn_sent_right_edge_ack_left_edge_secure_ipv6_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_rst_ack_syn_rcvd_via_syn_sent_right_edge_ack_left_edge_secure_ipv6_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-syn-sent-right-edge-ack-left-edge-secure-ipv6.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-syn-sent-right-edge-ack-left-edge-secure-ipv6.pkt
+}
+rcv_rst_ack_syn_rcvd_via_syn_sent_right_edge_ack_left_edge_secure_ipv6_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_rst_ack_syn_rcvd_via_syn_sent_right_edge_ack_outside_left_insecure_ipv4 cleanup
+rcv_rst_ack_syn_rcvd_via_syn_sent_right_edge_ack_outside_left_insecure_ipv4_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_rst_ack_syn_rcvd_via_syn_sent_right_edge_ack_outside_left_insecure_ipv4_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-syn-sent-right-edge-ack-outside-left-insecure-ipv4.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-syn-sent-right-edge-ack-outside-left-insecure-ipv4.pkt
+}
+rcv_rst_ack_syn_rcvd_via_syn_sent_right_edge_ack_outside_left_insecure_ipv4_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_rst_ack_syn_rcvd_via_syn_sent_right_edge_ack_outside_left_insecure_ipv6 cleanup
+rcv_rst_ack_syn_rcvd_via_syn_sent_right_edge_ack_outside_left_insecure_ipv6_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_rst_ack_syn_rcvd_via_syn_sent_right_edge_ack_outside_left_insecure_ipv6_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-syn-sent-right-edge-ack-outside-left-insecure-ipv6.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-syn-sent-right-edge-ack-outside-left-insecure-ipv6.pkt
+}
+rcv_rst_ack_syn_rcvd_via_syn_sent_right_edge_ack_outside_left_insecure_ipv6_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_rst_ack_syn_rcvd_via_syn_sent_right_edge_ack_outside_left_secure_ipv4 cleanup
+rcv_rst_ack_syn_rcvd_via_syn_sent_right_edge_ack_outside_left_secure_ipv4_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_rst_ack_syn_rcvd_via_syn_sent_right_edge_ack_outside_left_secure_ipv4_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-syn-sent-right-edge-ack-outside-left-secure-ipv4.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-syn-sent-right-edge-ack-outside-left-secure-ipv4.pkt
+}
+rcv_rst_ack_syn_rcvd_via_syn_sent_right_edge_ack_outside_left_secure_ipv4_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_rst_ack_syn_rcvd_via_syn_sent_right_edge_ack_outside_left_secure_ipv6 cleanup
+rcv_rst_ack_syn_rcvd_via_syn_sent_right_edge_ack_outside_left_secure_ipv6_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_rst_ack_syn_rcvd_via_syn_sent_right_edge_ack_outside_left_secure_ipv6_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-syn-sent-right-edge-ack-outside-left-secure-ipv6.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-syn-sent-right-edge-ack-outside-left-secure-ipv6.pkt
+}
+rcv_rst_ack_syn_rcvd_via_syn_sent_right_edge_ack_outside_left_secure_ipv6_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_rst_ack_syn_rcvd_via_syn_sent_right_edge_ack_outside_right_insecure_ipv4 cleanup
+rcv_rst_ack_syn_rcvd_via_syn_sent_right_edge_ack_outside_right_insecure_ipv4_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_rst_ack_syn_rcvd_via_syn_sent_right_edge_ack_outside_right_insecure_ipv4_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-syn-sent-right-edge-ack-outside-right-insecure-ipv4.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-syn-sent-right-edge-ack-outside-right-insecure-ipv4.pkt
+}
+rcv_rst_ack_syn_rcvd_via_syn_sent_right_edge_ack_outside_right_insecure_ipv4_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_rst_ack_syn_rcvd_via_syn_sent_right_edge_ack_outside_right_insecure_ipv6 cleanup
+rcv_rst_ack_syn_rcvd_via_syn_sent_right_edge_ack_outside_right_insecure_ipv6_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_rst_ack_syn_rcvd_via_syn_sent_right_edge_ack_outside_right_insecure_ipv6_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-syn-sent-right-edge-ack-outside-right-insecure-ipv6.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-syn-sent-right-edge-ack-outside-right-insecure-ipv6.pkt
+}
+rcv_rst_ack_syn_rcvd_via_syn_sent_right_edge_ack_outside_right_insecure_ipv6_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_rst_ack_syn_rcvd_via_syn_sent_right_edge_ack_outside_right_secure_ipv4 cleanup
+rcv_rst_ack_syn_rcvd_via_syn_sent_right_edge_ack_outside_right_secure_ipv4_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_rst_ack_syn_rcvd_via_syn_sent_right_edge_ack_outside_right_secure_ipv4_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-syn-sent-right-edge-ack-outside-right-secure-ipv4.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-syn-sent-right-edge-ack-outside-right-secure-ipv4.pkt
+}
+rcv_rst_ack_syn_rcvd_via_syn_sent_right_edge_ack_outside_right_secure_ipv4_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_rst_ack_syn_rcvd_via_syn_sent_right_edge_ack_outside_right_secure_ipv6 cleanup
+rcv_rst_ack_syn_rcvd_via_syn_sent_right_edge_ack_outside_right_secure_ipv6_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_rst_ack_syn_rcvd_via_syn_sent_right_edge_ack_outside_right_secure_ipv6_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-syn-sent-right-edge-ack-outside-right-secure-ipv6.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-syn-sent-right-edge-ack-outside-right-secure-ipv6.pkt
+}
+rcv_rst_ack_syn_rcvd_via_syn_sent_right_edge_ack_outside_right_secure_ipv6_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_rst_ack_syn_rcvd_via_syn_sent_right_edge_ack_right_edge_insecure_ipv4 cleanup
+rcv_rst_ack_syn_rcvd_via_syn_sent_right_edge_ack_right_edge_insecure_ipv4_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_rst_ack_syn_rcvd_via_syn_sent_right_edge_ack_right_edge_insecure_ipv4_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-syn-sent-right-edge-ack-right-edge-insecure-ipv4.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-syn-sent-right-edge-ack-right-edge-insecure-ipv4.pkt
+}
+rcv_rst_ack_syn_rcvd_via_syn_sent_right_edge_ack_right_edge_insecure_ipv4_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_rst_ack_syn_rcvd_via_syn_sent_right_edge_ack_right_edge_insecure_ipv6 cleanup
+rcv_rst_ack_syn_rcvd_via_syn_sent_right_edge_ack_right_edge_insecure_ipv6_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_rst_ack_syn_rcvd_via_syn_sent_right_edge_ack_right_edge_insecure_ipv6_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-syn-sent-right-edge-ack-right-edge-insecure-ipv6.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-syn-sent-right-edge-ack-right-edge-insecure-ipv6.pkt
+}
+rcv_rst_ack_syn_rcvd_via_syn_sent_right_edge_ack_right_edge_insecure_ipv6_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_rst_ack_syn_rcvd_via_syn_sent_right_edge_ack_right_edge_secure_ipv4 cleanup
+rcv_rst_ack_syn_rcvd_via_syn_sent_right_edge_ack_right_edge_secure_ipv4_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_rst_ack_syn_rcvd_via_syn_sent_right_edge_ack_right_edge_secure_ipv4_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-syn-sent-right-edge-ack-right-edge-secure-ipv4.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-syn-sent-right-edge-ack-right-edge-secure-ipv4.pkt
+}
+rcv_rst_ack_syn_rcvd_via_syn_sent_right_edge_ack_right_edge_secure_ipv4_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_rst_ack_syn_rcvd_via_syn_sent_right_edge_ack_right_edge_secure_ipv6 cleanup
+rcv_rst_ack_syn_rcvd_via_syn_sent_right_edge_ack_right_edge_secure_ipv6_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_rst_ack_syn_rcvd_via_syn_sent_right_edge_ack_right_edge_secure_ipv6_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-syn-sent-right-edge-ack-right-edge-secure-ipv6.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-rcvd/rcv-rst-ack-syn-rcvd-via-syn-sent-right-edge-ack-right-edge-secure-ipv6.pkt
+}
+rcv_rst_ack_syn_rcvd_via_syn_sent_right_edge_ack_right_edge_secure_ipv6_cleanup() {
+    restore_sysctls
+}
+
 atf_test_case rcv_rst_ack_with_data_syn_sent_ack_left_edge_ipv4 cleanup
 rcv_rst_ack_with_data_syn_sent_ack_left_edge_ipv4_head() {
     atf_set timeout 10
@@ -15163,6 +17083,134 @@ atf_init_test_cases() {
 	atf_add_test_case rcv_rst_ack_with_data_listen_ipv6
 	atf_add_test_case rcv_rst_ack_without_data_listen_ipv4
 	atf_add_test_case rcv_rst_ack_without_data_listen_ipv6
+	atf_add_test_case rcv_rst_ack_syn_rcvd_via_listen_left_edge_ack_left_edge_insecure_ipv4
+	atf_add_test_case rcv_rst_ack_syn_rcvd_via_listen_left_edge_ack_left_edge_insecure_ipv6
+	atf_add_test_case rcv_rst_ack_syn_rcvd_via_listen_left_edge_ack_left_edge_secure_ipv4
+	atf_add_test_case rcv_rst_ack_syn_rcvd_via_listen_left_edge_ack_left_edge_secure_ipv6
+	atf_add_test_case rcv_rst_ack_syn_rcvd_via_listen_left_edge_ack_outside_left_insecure_ipv4
+	atf_add_test_case rcv_rst_ack_syn_rcvd_via_listen_left_edge_ack_outside_left_insecure_ipv6
+	atf_add_test_case rcv_rst_ack_syn_rcvd_via_listen_left_edge_ack_outside_left_secure_ipv4
+	atf_add_test_case rcv_rst_ack_syn_rcvd_via_listen_left_edge_ack_outside_left_secure_ipv6
+	atf_add_test_case rcv_rst_ack_syn_rcvd_via_listen_left_edge_ack_outside_right_insecure_ipv4
+	atf_add_test_case rcv_rst_ack_syn_rcvd_via_listen_left_edge_ack_outside_right_insecure_ipv6
+	atf_add_test_case rcv_rst_ack_syn_rcvd_via_listen_left_edge_ack_outside_right_secure_ipv4
+	atf_add_test_case rcv_rst_ack_syn_rcvd_via_listen_left_edge_ack_outside_right_secure_ipv6
+	atf_add_test_case rcv_rst_ack_syn_rcvd_via_listen_left_edge_ack_right_edge_insecure_ipv4
+	atf_add_test_case rcv_rst_ack_syn_rcvd_via_listen_left_edge_ack_right_edge_insecure_ipv6
+	atf_add_test_case rcv_rst_ack_syn_rcvd_via_listen_left_edge_ack_right_edge_secure_ipv4
+	atf_add_test_case rcv_rst_ack_syn_rcvd_via_listen_left_edge_ack_right_edge_secure_ipv6
+	atf_add_test_case rcv_rst_ack_syn_rcvd_via_listen_outside_left_ack_left_edge_insecure_ipv4
+	atf_add_test_case rcv_rst_ack_syn_rcvd_via_listen_outside_left_ack_left_edge_insecure_ipv6
+	atf_add_test_case rcv_rst_ack_syn_rcvd_via_listen_outside_left_ack_left_edge_secure_ipv4
+	atf_add_test_case rcv_rst_ack_syn_rcvd_via_listen_outside_left_ack_left_edge_secure_ipv6
+	atf_add_test_case rcv_rst_ack_syn_rcvd_via_listen_outside_left_ack_outside_left_insecure_ipv4
+	atf_add_test_case rcv_rst_ack_syn_rcvd_via_listen_outside_left_ack_outside_left_insecure_ipv6
+	atf_add_test_case rcv_rst_ack_syn_rcvd_via_listen_outside_left_ack_outside_left_secure_ipv4
+	atf_add_test_case rcv_rst_ack_syn_rcvd_via_listen_outside_left_ack_outside_left_secure_ipv6
+	atf_add_test_case rcv_rst_ack_syn_rcvd_via_listen_outside_left_ack_outside_right_insecure_ipv4
+	atf_add_test_case rcv_rst_ack_syn_rcvd_via_listen_outside_left_ack_outside_right_insecure_ipv6
+	atf_add_test_case rcv_rst_ack_syn_rcvd_via_listen_outside_left_ack_outside_right_secure_ipv4
+	atf_add_test_case rcv_rst_ack_syn_rcvd_via_listen_outside_left_ack_outside_right_secure_ipv6
+	atf_add_test_case rcv_rst_ack_syn_rcvd_via_listen_outside_left_ack_right_edge_insecure_ipv4
+	atf_add_test_case rcv_rst_ack_syn_rcvd_via_listen_outside_left_ack_right_edge_insecure_ipv6
+	atf_add_test_case rcv_rst_ack_syn_rcvd_via_listen_outside_left_ack_right_edge_secure_ipv4
+	atf_add_test_case rcv_rst_ack_syn_rcvd_via_listen_outside_left_ack_right_edge_secure_ipv6
+	atf_add_test_case rcv_rst_ack_syn_rcvd_via_listen_outside_right_ack_left_edge_insecure_ipv4
+	atf_add_test_case rcv_rst_ack_syn_rcvd_via_listen_outside_right_ack_left_edge_insecure_ipv6
+	atf_add_test_case rcv_rst_ack_syn_rcvd_via_listen_outside_right_ack_left_edge_secure_ipv4
+	atf_add_test_case rcv_rst_ack_syn_rcvd_via_listen_outside_right_ack_left_edge_secure_ipv6
+	atf_add_test_case rcv_rst_ack_syn_rcvd_via_listen_outside_right_ack_outside_left_insecure_ipv4
+	atf_add_test_case rcv_rst_ack_syn_rcvd_via_listen_outside_right_ack_outside_left_insecure_ipv6
+	atf_add_test_case rcv_rst_ack_syn_rcvd_via_listen_outside_right_ack_outside_left_secure_ipv4
+	atf_add_test_case rcv_rst_ack_syn_rcvd_via_listen_outside_right_ack_outside_left_secure_ipv6
+	atf_add_test_case rcv_rst_ack_syn_rcvd_via_listen_outside_right_ack_outside_right_insecure_ipv4
+	atf_add_test_case rcv_rst_ack_syn_rcvd_via_listen_outside_right_ack_outside_right_insecure_ipv6
+	atf_add_test_case rcv_rst_ack_syn_rcvd_via_listen_outside_right_ack_outside_right_secure_ipv4
+	atf_add_test_case rcv_rst_ack_syn_rcvd_via_listen_outside_right_ack_outside_right_secure_ipv6
+	atf_add_test_case rcv_rst_ack_syn_rcvd_via_listen_outside_right_ack_right_edge_insecure_ipv4
+	atf_add_test_case rcv_rst_ack_syn_rcvd_via_listen_outside_right_ack_right_edge_insecure_ipv6
+	atf_add_test_case rcv_rst_ack_syn_rcvd_via_listen_outside_right_ack_right_edge_secure_ipv4
+	atf_add_test_case rcv_rst_ack_syn_rcvd_via_listen_outside_right_ack_right_edge_secure_ipv6
+	atf_add_test_case rcv_rst_ack_syn_rcvd_via_listen_right_edge_ack_left_edge_insecure_ipv4
+	atf_add_test_case rcv_rst_ack_syn_rcvd_via_listen_right_edge_ack_left_edge_insecure_ipv6
+	atf_add_test_case rcv_rst_ack_syn_rcvd_via_listen_right_edge_ack_left_edge_secure_ipv4
+	atf_add_test_case rcv_rst_ack_syn_rcvd_via_listen_right_edge_ack_left_edge_secure_ipv6
+	atf_add_test_case rcv_rst_ack_syn_rcvd_via_listen_right_edge_ack_outside_left_insecure_ipv4
+	atf_add_test_case rcv_rst_ack_syn_rcvd_via_listen_right_edge_ack_outside_left_insecure_ipv6
+	atf_add_test_case rcv_rst_ack_syn_rcvd_via_listen_right_edge_ack_outside_left_secure_ipv4
+	atf_add_test_case rcv_rst_ack_syn_rcvd_via_listen_right_edge_ack_outside_left_secure_ipv6
+	atf_add_test_case rcv_rst_ack_syn_rcvd_via_listen_right_edge_ack_outside_right_insecure_ipv4
+	atf_add_test_case rcv_rst_ack_syn_rcvd_via_listen_right_edge_ack_outside_right_insecure_ipv6
+	atf_add_test_case rcv_rst_ack_syn_rcvd_via_listen_right_edge_ack_outside_right_secure_ipv4
+	atf_add_test_case rcv_rst_ack_syn_rcvd_via_listen_right_edge_ack_outside_right_secure_ipv6
+	atf_add_test_case rcv_rst_ack_syn_rcvd_via_listen_right_edge_ack_right_edge_insecure_ipv4
+	atf_add_test_case rcv_rst_ack_syn_rcvd_via_listen_right_edge_ack_right_edge_insecure_ipv6
+	atf_add_test_case rcv_rst_ack_syn_rcvd_via_listen_right_edge_ack_right_edge_secure_ipv4
+	atf_add_test_case rcv_rst_ack_syn_rcvd_via_listen_right_edge_ack_right_edge_secure_ipv6
+	atf_add_test_case rcv_rst_ack_syn_rcvd_via_syn_sent_left_edge_ack_left_edge_insecure_ipv4
+	atf_add_test_case rcv_rst_ack_syn_rcvd_via_syn_sent_left_edge_ack_left_edge_insecure_ipv6
+	atf_add_test_case rcv_rst_ack_syn_rcvd_via_syn_sent_left_edge_ack_left_edge_secure_ipv4
+	atf_add_test_case rcv_rst_ack_syn_rcvd_via_syn_sent_left_edge_ack_left_edge_secure_ipv6
+	atf_add_test_case rcv_rst_ack_syn_rcvd_via_syn_sent_left_edge_ack_outside_left_insecure_ipv4
+	atf_add_test_case rcv_rst_ack_syn_rcvd_via_syn_sent_left_edge_ack_outside_left_insecure_ipv6
+	atf_add_test_case rcv_rst_ack_syn_rcvd_via_syn_sent_left_edge_ack_outside_left_secure_ipv4
+	atf_add_test_case rcv_rst_ack_syn_rcvd_via_syn_sent_left_edge_ack_outside_left_secure_ipv6
+	atf_add_test_case rcv_rst_ack_syn_rcvd_via_syn_sent_left_edge_ack_outside_right_insecure_ipv4
+	atf_add_test_case rcv_rst_ack_syn_rcvd_via_syn_sent_left_edge_ack_outside_right_insecure_ipv6
+	atf_add_test_case rcv_rst_ack_syn_rcvd_via_syn_sent_left_edge_ack_outside_right_secure_ipv4
+	atf_add_test_case rcv_rst_ack_syn_rcvd_via_syn_sent_left_edge_ack_outside_right_secure_ipv6
+	atf_add_test_case rcv_rst_ack_syn_rcvd_via_syn_sent_left_edge_ack_right_edge_insecure_ipv4
+	atf_add_test_case rcv_rst_ack_syn_rcvd_via_syn_sent_left_edge_ack_right_edge_insecure_ipv6
+	atf_add_test_case rcv_rst_ack_syn_rcvd_via_syn_sent_left_edge_ack_right_edge_secure_ipv4
+	atf_add_test_case rcv_rst_ack_syn_rcvd_via_syn_sent_left_edge_ack_right_edge_secure_ipv6
+	atf_add_test_case rcv_rst_ack_syn_rcvd_via_syn_sent_outside_left_ack_left_edge_insecure_ipv4
+	atf_add_test_case rcv_rst_ack_syn_rcvd_via_syn_sent_outside_left_ack_left_edge_insecure_ipv6
+	atf_add_test_case rcv_rst_ack_syn_rcvd_via_syn_sent_outside_left_ack_left_edge_secure_ipv4
+	atf_add_test_case rcv_rst_ack_syn_rcvd_via_syn_sent_outside_left_ack_left_edge_secure_ipv6
+	atf_add_test_case rcv_rst_ack_syn_rcvd_via_syn_sent_outside_left_ack_outside_left_insecure_ipv4
+	atf_add_test_case rcv_rst_ack_syn_rcvd_via_syn_sent_outside_left_ack_outside_left_insecure_ipv6
+	atf_add_test_case rcv_rst_ack_syn_rcvd_via_syn_sent_outside_left_ack_outside_left_secure_ipv4
+	atf_add_test_case rcv_rst_ack_syn_rcvd_via_syn_sent_outside_left_ack_outside_left_secure_ipv6
+	atf_add_test_case rcv_rst_ack_syn_rcvd_via_syn_sent_outside_left_ack_outside_right_insecure_ipv4
+	atf_add_test_case rcv_rst_ack_syn_rcvd_via_syn_sent_outside_left_ack_outside_right_insecure_ipv6
+	atf_add_test_case rcv_rst_ack_syn_rcvd_via_syn_sent_outside_left_ack_outside_right_secure_ipv4
+	atf_add_test_case rcv_rst_ack_syn_rcvd_via_syn_sent_outside_left_ack_outside_right_secure_ipv6
+	atf_add_test_case rcv_rst_ack_syn_rcvd_via_syn_sent_outside_left_ack_right_edge_insecure_ipv4
+	atf_add_test_case rcv_rst_ack_syn_rcvd_via_syn_sent_outside_left_ack_right_edge_insecure_ipv6
+	atf_add_test_case rcv_rst_ack_syn_rcvd_via_syn_sent_outside_left_ack_right_edge_secure_ipv4
+	atf_add_test_case rcv_rst_ack_syn_rcvd_via_syn_sent_outside_left_ack_right_edge_secure_ipv6
+	atf_add_test_case rcv_rst_ack_syn_rcvd_via_syn_sent_outside_right_ack_left_edge_insecure_ipv4
+	atf_add_test_case rcv_rst_ack_syn_rcvd_via_syn_sent_outside_right_ack_left_edge_insecure_ipv6
+	atf_add_test_case rcv_rst_ack_syn_rcvd_via_syn_sent_outside_right_ack_left_edge_secure_ipv4
+	atf_add_test_case rcv_rst_ack_syn_rcvd_via_syn_sent_outside_right_ack_left_edge_secure_ipv6
+	atf_add_test_case rcv_rst_ack_syn_rcvd_via_syn_sent_outside_right_ack_outside_left_insecure_ipv4
+	atf_add_test_case rcv_rst_ack_syn_rcvd_via_syn_sent_outside_right_ack_outside_left_insecure_ipv6
+	atf_add_test_case rcv_rst_ack_syn_rcvd_via_syn_sent_outside_right_ack_outside_left_secure_ipv4
+	atf_add_test_case rcv_rst_ack_syn_rcvd_via_syn_sent_outside_right_ack_outside_left_secure_ipv6
+	atf_add_test_case rcv_rst_ack_syn_rcvd_via_syn_sent_outside_right_ack_outside_right_insecure_ipv4
+	atf_add_test_case rcv_rst_ack_syn_rcvd_via_syn_sent_outside_right_ack_outside_right_insecure_ipv6
+	atf_add_test_case rcv_rst_ack_syn_rcvd_via_syn_sent_outside_right_ack_outside_right_secure_ipv4
+	atf_add_test_case rcv_rst_ack_syn_rcvd_via_syn_sent_outside_right_ack_outside_right_secure_ipv6
+	atf_add_test_case rcv_rst_ack_syn_rcvd_via_syn_sent_outside_right_ack_right_edge_insecure_ipv4
+	atf_add_test_case rcv_rst_ack_syn_rcvd_via_syn_sent_outside_right_ack_right_edge_insecure_ipv6
+	atf_add_test_case rcv_rst_ack_syn_rcvd_via_syn_sent_outside_right_ack_right_edge_secure_ipv4
+	atf_add_test_case rcv_rst_ack_syn_rcvd_via_syn_sent_outside_right_ack_right_edge_secure_ipv6
+	atf_add_test_case rcv_rst_ack_syn_rcvd_via_syn_sent_right_edge_ack_left_edge_insecure_ipv4
+	atf_add_test_case rcv_rst_ack_syn_rcvd_via_syn_sent_right_edge_ack_left_edge_insecure_ipv6
+	atf_add_test_case rcv_rst_ack_syn_rcvd_via_syn_sent_right_edge_ack_left_edge_secure_ipv4
+	atf_add_test_case rcv_rst_ack_syn_rcvd_via_syn_sent_right_edge_ack_left_edge_secure_ipv6
+	atf_add_test_case rcv_rst_ack_syn_rcvd_via_syn_sent_right_edge_ack_outside_left_insecure_ipv4
+	atf_add_test_case rcv_rst_ack_syn_rcvd_via_syn_sent_right_edge_ack_outside_left_insecure_ipv6
+	atf_add_test_case rcv_rst_ack_syn_rcvd_via_syn_sent_right_edge_ack_outside_left_secure_ipv4
+	atf_add_test_case rcv_rst_ack_syn_rcvd_via_syn_sent_right_edge_ack_outside_left_secure_ipv6
+	atf_add_test_case rcv_rst_ack_syn_rcvd_via_syn_sent_right_edge_ack_outside_right_insecure_ipv4
+	atf_add_test_case rcv_rst_ack_syn_rcvd_via_syn_sent_right_edge_ack_outside_right_insecure_ipv6
+	atf_add_test_case rcv_rst_ack_syn_rcvd_via_syn_sent_right_edge_ack_outside_right_secure_ipv4
+	atf_add_test_case rcv_rst_ack_syn_rcvd_via_syn_sent_right_edge_ack_outside_right_secure_ipv6
+	atf_add_test_case rcv_rst_ack_syn_rcvd_via_syn_sent_right_edge_ack_right_edge_insecure_ipv4
+	atf_add_test_case rcv_rst_ack_syn_rcvd_via_syn_sent_right_edge_ack_right_edge_insecure_ipv6
+	atf_add_test_case rcv_rst_ack_syn_rcvd_via_syn_sent_right_edge_ack_right_edge_secure_ipv4
+	atf_add_test_case rcv_rst_ack_syn_rcvd_via_syn_sent_right_edge_ack_right_edge_secure_ipv6
 	atf_add_test_case rcv_rst_ack_with_data_syn_sent_ack_left_edge_ipv4
 	atf_add_test_case rcv_rst_ack_with_data_syn_sent_ack_left_edge_ipv6
 	atf_add_test_case rcv_rst_ack_with_data_syn_sent_ack_outside_left_ipv4

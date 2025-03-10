@@ -1,8 +1,10 @@
 PORTNAME=	pytest-datadir
-PORTVERSION=	1.5.0
+PORTVERSION=	1.6.1
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	${PORTNAME:C/-/_/}-${PORTVERSION}
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	pytest plugin for test data directories and files

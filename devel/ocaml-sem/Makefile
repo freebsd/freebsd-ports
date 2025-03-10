@@ -13,10 +13,8 @@ WWW=		https://ocaml-sem.sourceforge.net/
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		gmake tar:bzip2
-USE_OCAML=	yes
-USE_OCAML_LDCONFIG=	yes
-USE_OCAML_FINDLIB=	yes
+USES=		gmake ocaml:findlib,ldconfig tar:bzip2
+
 MAKE_ENV=	OCAML_LIB_INSTALL="${PREFIX}/lib/ocaml/site-lib/sem" \
 		INCDIRS="${LOCALBASE}/include" LIBDIRS="${LOCALBASE}/lib"
 MAKE_JOBS_UNSAFE=	yes
@@ -28,6 +26,12 @@ MAKE_ENV+=	NO_CUSTOM=y
 .endif
 
 OPTIONS_DEFINE=	DOCS
+
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == powerpc
+USE_BINUTILS=	yes
+.endif
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

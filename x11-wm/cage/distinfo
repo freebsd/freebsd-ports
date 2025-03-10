@@ -1,5 +1,3 @@
-TIMESTAMP = 1690555597
-SHA256 (cage-kiosk-cage-v0.1.5_GH0.tar.gz) = 576b8b5a041712b8d8785243ac6db08c7bc9c32822f96ad6dec7ac2b2db9b2b5
-SIZE (cage-kiosk-cage-v0.1.5_GH0.tar.gz) = 23179
-SHA256 (638d4fb71555.patch) = 0730b618e248a453284df9c0d01378f3e3e16c8c4b453b2a8629a4b41f02cc65
-SIZE (638d4fb71555.patch) = 2232
+TIMESTAMP = 1728221062
+SHA256 (cage-kiosk-cage-v0.2.0_GH0.tar.gz) = 9d3f659e0f19636a958f9e1bf4d22268d7e2705d7e2989888401ec443c1cb6c3
+SIZE (cage-kiosk-cage-v0.2.0_GH0.tar.gz) = 24107

@@ -1,5 +1,5 @@
 PORTNAME=	rufus-scheduler
-PORTVERSION=	3.9.1
+PORTVERSION=	3.9.2
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -10,7 +10,7 @@ WWW=		https://github.com/jmettraux/rufus-scheduler
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	rubygem-fugit>=1.1.6<2:devel/rubygem-fugit
+RUN_DEPENDS=	rubygem-fugit>=1.11.1<2:devel/rubygem-fugit
 
 USES=		gem
 

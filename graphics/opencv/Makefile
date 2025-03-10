@@ -1,6 +1,6 @@
 PORTNAME=	opencv
 DISTVERSION=	4.9.0
-PORTREVISION=	2
+PORTREVISION=	7
 CATEGORIES=	graphics
 
 MAINTAINER=	desktop@FreeBSD.org
@@ -11,12 +11,10 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libfreetype.so:print/freetype2 \
-		libgflags.so:devel/gflags \
-		libglog.so:devel/glog \
 		libharfbuzz.so:print/harfbuzz \
 		libhdf5.so:science/hdf5
 
-USES=		cmake compiler:c++14-lang cpe localbase:ldflags pkgconfig
+USES=		cmake compiler:c++14-lang cpe gnome localbase:ldflags pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	WeChatCV:wechat
 GH_PROJECT=	opencv_contrib:contrib \
@@ -50,7 +48,7 @@ OPTIONS_DEFINE=		EIGEN GDAL GDCM HARDENING JAVA LTO OPENCL \
 
 OPTIONS_GROUP=		GUI IMAGE VIDEO
 OPTIONS_GROUP_GUI=	GTK3 VTK
-OPTIONS_GROUP_IMAGE=	GPHOTO2 JPEG OPENEXR PNG TIFF
+OPTIONS_GROUP_IMAGE=	GPHOTO2 JPEG OGRE3D OPENEXR PNG TIFF
 OPTIONS_GROUP_VIDEO=	DC1394 FFMPEG GSTREAMER V4L VULKAN WEBP XINE
 
 OPTIONS_SINGLE=		BLAS
@@ -69,6 +67,9 @@ OPTIONS_SUB=		yes
 # Normal options (EIGEN GDAL GDCM HARDENING JAVA LTO OPENCL PATENTED PROTOBUF PYTHON TBB)
 EIGEN_DESC=		Add Eigen v3 Support, builds sfm modules
 EIGEN_CMAKE_BOOL=	WITH_EIGEN
+EIGEN_LIB_DEPENDS=	libgflags.so:devel/gflags \
+			libglog.so:devel/glog \
+			libceres.so:math/ceres-solver
 EIGEN_USES=		eigen:3
 
 GDAL_DESC=		Add Geospatial Data Abstraction Library Support
@@ -86,7 +87,7 @@ JAVA_DESC=		Enable Java Support
 JAVA_BUILD_DEPENDS=	ant:devel/apache-ant
 JAVA_CMAKE_BOOL=	BUILD_opencv_java BUILD_opencv_java_bindings_generator BUILD_JAVA
 JAVA_MAKE_ENV=		JAVACMD=${JAVA}
-JAVA_USE=		JAVA=yes
+JAVA_USES=		java
 
 LTO_DESC=		Enables Link Time Optimizations
 LTO_CMAKE_BOOL=		ENABLE_THIN_LTO
@@ -119,7 +120,6 @@ TESSERACT_CMAKE_BOOL=	WITH_TESSERACT
 ###
 
 # GUI group options (GTK3 VTK)
-GTK3_USES=		gnome
 GTK3_USE=		gnome=gtk30,cairo,gdkpixbuf2
 GTK3_CMAKE_BOOL=	WITH_GTK
 
@@ -138,6 +138,10 @@ GPHOTO2_LIB_DEPENDS=	libgphoto2.so:graphics/libgphoto2
 JPEG_DESC=		Add LibJpeg Support
 JPEG_CMAKE_BOOL=	WITH_JPEG
 JPEG_USES=		jpeg
+
+OGRE3D_DESC=		Add OGRE support
+OGRE3D_LIB_DEPENDS=	libOgreMain.so:graphics/ogre3d
+OGRE3D_CMAKE_BOOL=	BUILD_opencv_ovis
 
 OPENEXR_DESC=		Add OpenEXR Support
 OPENEXR_CMAKE_BOOL=	WITH_OPENEXR

@@ -154,10 +154,6 @@ while read -r modtype path extra; do
 			# xmlcatmgr is constantly updating catalog.ports ignore
 			# modification to that file
 			share/xml/catalog.ports) ;;
-			# Ignore ghc's doc index
-			share/doc/ghc-%%GHC_VERSION%%/*) ;;
-			# Ignore ghc's package conf
-			lib/ghc-%%GHC_VERSION%%/package.conf.d/*) ;;
 			# Ignore common system config files
 			/etc/group|\
 			/etc/make.conf|\

@@ -1247,6 +1247,7 @@
 %%DATADIR%%/libraryps/development_psps/Md
 %%DATADIR%%/libraryps/development_psps/Mt
 %%DATADIR%%/libraryps/development_psps/Nd
+%%DATADIR%%/libraryps/development_psps/Ni
 %%DATADIR%%/libraryps/development_psps/No
 %%DATADIR%%/libraryps/development_psps/Np
 %%DATADIR%%/libraryps/development_psps/Pa
@@ -1369,6 +1370,7 @@
 %%DATADIR%%/libraryps/pspw_default/Br
 %%DATADIR%%/libraryps/pspw_default/Br.old
 %%DATADIR%%/libraryps/pspw_default/C
+%%DATADIR%%/libraryps/pspw_default/C^
 %%DATADIR%%/libraryps/pspw_default/Ca
 %%DATADIR%%/libraryps/pspw_default/Cd
 %%DATADIR%%/libraryps/pspw_default/Ce

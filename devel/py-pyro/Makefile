@@ -1,5 +1,6 @@
 PORTNAME=	pyro
 DISTVERSION=	4.77
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,6 +12,9 @@ WWW=		https://pythonhosted.org/Pyro4/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+DEPRECATED=	Upstream development stopped, not compatible with py311, use pyro5 instead
+EXPIRATION_DATE=2025-03-21
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}serpent>=1.27:devel/py-serpent@${PY_FLAVOR}
 

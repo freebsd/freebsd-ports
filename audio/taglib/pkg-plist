@@ -119,10 +119,10 @@ lib/cmake/taglib/taglib-targets.cmake
 %%STATIC%%lib/libtag.a
 %%NO_STATIC%%lib/libtag.so
 %%NO_STATIC%%lib/libtag.so.2
-%%NO_STATIC%%lib/libtag.so.2.0.1
+%%NO_STATIC%%lib/libtag.so.2.0.2
 %%STATIC%%lib/libtag_c.a
 %%NO_STATIC%%lib/libtag_c.so
 %%NO_STATIC%%lib/libtag_c.so.2
-%%NO_STATIC%%lib/libtag_c.so.2.0.1
+%%NO_STATIC%%lib/libtag_c.so.2.0.2
 libdata/pkgconfig/taglib.pc
 libdata/pkgconfig/taglib_c.pc

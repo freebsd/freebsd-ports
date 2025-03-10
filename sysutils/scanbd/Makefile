@@ -1,6 +1,6 @@
 PORTNAME=	scanbd
 DISTVERSION=	1.5.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	sysutils
 
 MAINTAINER=	trueos@norwegianrockcat.com

@@ -26,14 +26,14 @@ CPPFLAGS+=	-D_FILE_OFFSET_BITS=64
 OPTIONS_DEFINE=	FUSE GCRYPT
 OPTIONS_SUB=	yes
 
-FUSE_LIB_DEPENDS=	libfuse.so:sysutils/fusefs-libs
+FUSE_LIB_DEPENDS=	libfuse.so:filesystems/fusefs-libs
 FUSE_CONFIGURE_ENABLE=	fuse
 GCRYPT_LIB_DEPENDS=	libgcrypt.so:security/libgcrypt
 GCRYPT_CONFIGURE_ENABLE=gcrypt
 
 .include <bsd.port.options.mk>
 
-.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400091 || ( ${OSVERSION} >= 1302507 && ${OSVERSION} < 1400000 ))
+.if ${OPSYS} == FreeBSD
 CFLAGS+=	-Wno-error=incompatible-function-pointer-types
 .endif
 

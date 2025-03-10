@@ -1,6 +1,6 @@
---- third_party/blink/renderer/core/html/canvas/canvas_async_blob_creator.cc.orig	2024-01-30 07:53:34 UTC
+--- third_party/blink/renderer/core/html/canvas/canvas_async_blob_creator.cc.orig	2024-08-26 12:06:38 UTC
 +++ third_party/blink/renderer/core/html/canvas/canvas_async_blob_creator.cc
-@@ -50,7 +50,7 @@ constexpr base::TimeDelta kEncodeRowSlackBeforeDeadlin
+@@ -55,7 +55,7 @@ constexpr base::TimeDelta kEncodeRowSlackBeforeDeadlin
  
  /* The value is based on user statistics on Nov 2017. */
  #if (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_MAC) || \

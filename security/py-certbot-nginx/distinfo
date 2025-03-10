@@ -1,3 +1,3 @@
-TIMESTAMP = 1718805513
-SHA256 (certbot_nginx-2.11.0.tar.gz) = 0d1fd009b38229d510fe2e33122758a4ae2ee790c324234ab99ec984211d4d6f
-SIZE (certbot_nginx-2.11.0.tar.gz) = 78224
+TIMESTAMP = 1736297373
+SHA256 (certbot_nginx-3.1.0.tar.gz) = dc90d102533cc0ea8bc377c003eecb96be8a6c7cae30082749bcc00a7c97b515
+SIZE (certbot_nginx-3.1.0.tar.gz) = 78003

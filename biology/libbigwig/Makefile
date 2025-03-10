@@ -1,5 +1,5 @@
 PORTNAME=	libbigwig
-DISTVERSION=	0.4.7
+DISTVERSION=	0.4.8
 CATEGORIES=	biology
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -20,7 +20,7 @@ GH_PROJECT=	libBigWig
 
 CMAKE_ON=	BUILD_SHARED_LIBS
 CMAKE_TESTING_ON=	ENABLE_TESTING # unclear how to run tests, see https://github.com/dpryan79/libBigWig/issues/63
-CMAKE_TESTING_TARGET=
+#CMAKE_TESTING_TARGET=
 
 PLIST_FILES=	include/libbigwig/bigWig.h \
 		include/libbigwig/bigWigIO.h \

@@ -1,5 +1,5 @@
 PORTNAME=	swi-pl
-DISTVERSION=	9.2.2
+DISTVERSION=	9.2.9
 CATEGORIES=	lang
 MASTER_SITES=	http://www.swi-prolog.org/download/stable/src/
 DISTNAME=	swipl-${DISTVERSION}
@@ -20,7 +20,7 @@ LIB_DEPENDS=	libpcre2-posix.so:devel/pcre2 \
 
 USES=		cmake compiler:c11 libarchive libedit pathfix pkgconfig \
 		python readline shebangfix ssl xorg
-USE_XORG=	ice sm x11 xext xft xinerama xpm xt
+USE_XORG=	ice sm x11 xext xft xinerama xpm xt xrandr
 
 OPTIONS_DEFINE=		DOCS EXAMPLES GMP ODBC TCMALLOC THREADED XPCE
 OPTIONS_DEFAULT=	GMP ODBC TCMALLOC THREADED XPCE
@@ -28,7 +28,6 @@ OPTIONS_SUB=		yes
 
 MAKE_ENV=	XDG_DATA_DIRS=/dummy
 CMAKE_ARGS=	-DSWIPL_PACKAGES_JAVA=OFF -DSWIPL_PACKAGES_QT=OFF -DBUILD_TESTING=OFF
-
 
 LDFLAGS+=	-lstdthreads
 

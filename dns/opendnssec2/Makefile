@@ -1,8 +1,7 @@
 PORTNAME=	opendnssec
-DISTVERSION=	2.1.13
-PORTREVISION=	2
+DISTVERSION=	2.1.14
 CATEGORIES=	dns
-MASTER_SITES=	http://dist.opendnssec.org/source/
+MASTER_SITES=	https://dist.opendnssec.org/source/
 PKGNAMESUFFIX=	2
 
 MAINTAINER=	jaap@NLnetLabs.nl
@@ -13,14 +12,14 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	ldns>=1.6.16:dns/ldns
-LIB_DEPENDS=	libldns.so:dns/ldns \
-		libxml2.so:textproc/libxml2
+LIB_DEPENDS=	libldns.so:dns/ldns
 
-USES=		autoreconf cpe libtool ssl
+USES=		autoreconf cpe gnome libtool ssl
+USE_GNOME=	libxml2
+
 USE_RC_SUBR=	opendnssec
 
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--localstatedir="${PREFIX}/var" \
 		--with-ssl=${OPENSSLBASE}
 
@@ -51,7 +50,7 @@ SQLITE_DESC=	Use SQLite backend
 
 MYSQL_USES=		mysql
 MYSQL_CONFIGURE_ON=	--with-enforcer-database=mysql
-MYSQL_VARS=	IGNORE_WITH_MYSQL="80 81"
+MYSQL_VARS=		IGNORE_WITH_MYSQL="80 81"
 SOFTHSM_RUN_DEPENDS=	softhsm2>=2.5.0:security/softhsm2
 SOFTHSM_CONFIGURE_ON=	--with-pkcs11-softhsm=${LOCALBASE}/lib/softhsm/libsofthsm2.so
 SQLITE_BUILD_DEPENDS=	sqlite3>=3.3.9:databases/sqlite3

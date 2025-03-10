@@ -1,5 +1,5 @@
 PORTNAME=	openjph
-PORTVERSION=	0.15.0
+PORTVERSION=	0.21.1
 CATEGORIES=	graphics
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -13,15 +13,18 @@ LIB_DEPENDS=	libtiff.so:graphics/tiff
 
 USES=		cmake compiler:c++11-lang pathfix
 
-CMAKE_OFF=	OJPH_BUILD_STREAM_EXPAND OJPH_BUILD_TESTS
-CMAKE_ON=	BUILD_SHARED_LIBS OJPH_BUILD_EXECUTABLES OJPH_ENABLE_TIFF_SUPPORT
+CMAKE_OFF=	OJPH_BUILD_STREAM_EXPAND \
+		OJPH_BUILD_TESTS
+CMAKE_ON=	BUILD_SHARED_LIBS \
+		OJPH_BUILD_EXECUTABLES \
+		OJPH_ENABLE_TIFF_SUPPORT
 USE_LDCONFIG=	yes
 
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
+USE_GITHUB=	yes
 GH_ACCOUNT=	aous72
 GH_PROJECT=	OpenJPH
-USE_GITHUB=	yes
 
 .include <bsd.port.options.mk>
 
@@ -30,6 +33,6 @@ CMAKE_ON+=	OJPH_DISABLE_SIMD
 .endif
 
 post-install:
-	${LN} -s libopenjph.so.${PORTVERSION} ${STAGEDIR}${PREFIX}/lib/libopenjph.so.0
+	${LN} -s libopenjph.so.${PORTVERSION} ${STAGEDIR}${PREFIX}/lib/libopenjph.so.${PORTVERSION:R:R}
 
 .include <bsd.port.mk>

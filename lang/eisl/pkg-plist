@@ -45,6 +45,7 @@ bin/eisl
 %%DATADIR%%/library/prolog.o
 %%DATADIR%%/library/quaternion.lsp
 %%DATADIR%%/library/queue.lsp
+%%DATADIR%%/library/rational.lsp
 %%DATADIR%%/library/regex.lsp
 %%DATADIR%%/library/regex.o
 %%DATADIR%%/library/roman.lsp

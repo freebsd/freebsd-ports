@@ -1,0 +1,16 @@
+Enable openmp by default
+
+See also:
+https://github.com/Rdatatable/data.table/issues/6559#issuecomment-2407642567
+
+--- configure.orig	2025-01-03 12:25:30 UTC
++++ configure
+@@ -84,7 +84,7 @@ detect_openmp () {
+ 
+ detect_openmp () {
+ 
+-  if [ "$(uname)" = "Linux" ]; then
++  if [ "$(uname)" = "Linux" ] || [ "$(uname)" = "FreeBSD" ]; then
+ 
+     printf "%s" "* checking if R installation supports OpenMP without any extra hints... "
+     if "${R_HOME}/bin/R" CMD SHLIB test-omp.c >> config.log 2>&1; then

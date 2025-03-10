@@ -4,3 +4,7 @@ and a foundation for constructing and running integrated software-
 development tools. The Eclipse Platform allows tool builders to
 independently develop tools that integrate with other people's tools
 so seamlessly you can't tell where one tool ends and another starts.
+
+Note, that for this port (to make it possible) the internal variable
+ARCH is reset from "amd64" to "x86_64" to make the eclipse build
+process went through.

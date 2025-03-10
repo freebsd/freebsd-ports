@@ -6372,6 +6372,7 @@ share/man/man8/zmx10.pl.8.gz
 %%DATADIR%%/db/zm_update-1.35.9.sql
 %%DATADIR%%/db/zm_update-1.36.16.sql
 %%DATADIR%%/db/zm_update-1.36.18.sql
+%%DATADIR%%/db/zm_update-1.36.34.sql
 %%DATADIR%%/db/zm_update-1.36.6.sql
 %%DATADIR%%/db/zm_update-1.36.9.sql
 %%DATADIR%%/fonts/default.zmfnt

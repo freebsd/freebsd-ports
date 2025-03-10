@@ -1,15 +1,14 @@
 PORTNAME=	sirius
 DISTVERSIONPREFIX=	v
-DISTVERSION=	7.5.2
-PORTREVISION=	1
+DISTVERSION=	7.6.1
 CATEGORIES=	science
 PKGNAMESUFFIX=	-quantum-chemistry # other software also has the name "sirius"
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Domain specific library for electronic structure calculations
-WWW=		https://github.com/electronic-structure/SIRIUS
+WWW=		https://github.com/electronic-structure/SIRIUS/
 
-LICENSE=	BSD2CLAUSE
+LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN_FreeBSD_15=	clang crashes, see https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=276196
@@ -25,30 +24,28 @@ LIB_DEPENDS=	libcosta.so:math/costa \
 		libxc.so:science/libxc
 
 USES=		cmake:testing compiler:c++14-lang eigen:3,test fortran pkgconfig
-USE_LDCONFIG=	yes
-
 USE_GITHUB=	yes
 GH_ACCOUNT=	electronic-structure
 GH_PROJECT=	SIRIUS
+USE_LDCONFIG=	yes
 
 CMAKE_OFF=	SIRIUS_USE_MEMORY_POOL # depends on umpire - not yet ported
 
+OPTIONS_DEFAULT=	MPICH # NLCGLIB
 OPTIONS_DEFINE=		NLCGLIB
 OPTIONS_SINGLE=		MPI
 OPTIONS_SINGLE_MPI=	MPICH OPENMPI
-OPTIONS_DEFAULT=	MPICH # NLCGLIB
 
 NLCGLIB_DESC=		Enable nlcglib
-NLCGLIB_CMAKE_BOOL=	USE_NLCGLIB
-NLCGLIB_LIB_DEPENDS=	libnlcglib.so:science/nlcglib \
-			libkokkoscore.so:devel/kokkos
-NLCGLIB_BROKEN=		build breaks, see https://github.com/electronic-structure/SIRIUS/issues/759
 
 MPICH_USES=		mpi:mpich
+NLCGLIB_LIB_DEPENDS=	libnlcglib.so:science/nlcglib \
+			libkokkoscore.so:devel/kokkos
+NLCGLIB_CMAKE_BOOL=	USE_NLCGLIB
 
 OPENMPI_USES=		mpi:openmpi
 
-# many tests fail, see https://github.com/electronic-structure/SIRIUS/issues/760
-# 7.5.0: tests fail to build, see https://github.com/electronic-structure/SIRIUS/issues/947
+# pre-7.4.0: many tests fail, see https://github.com/electronic-structure/SIRIUS/issues/760
+# 7.6.0: several tests fail: Can't divide 1 ranks into groups of size 4
 
 .include <bsd.port.mk>

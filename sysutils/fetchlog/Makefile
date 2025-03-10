@@ -1,6 +1,5 @@
 PORTNAME=	fetchlog
-PORTVERSION=	1.4
-PORTREVISION=	1
+DISTVERSION=	1.6
 CATEGORIES=	sysutils
 MASTER_SITES=	SF
 
@@ -10,10 +9,11 @@ WWW=		https://fetchlog.sourceforge.net/
 
 LICENSE=	GPLv2
 
-PORTDOCS=	CHANGES README README.Nagios README.SNMP
-PORTEXAMPLES=	fetchlog.cfg fetchlog_service.cfg notify.cfg.example
-
 PLIST_FILES=	bin/fetchlog share/man/man1/fetchlog.1.gz
+PORTDOCS=	CHANGES README README.Nagios README.SNMP
+PORTEXAMPLES=	fetchlog.cfg fetchlog_service.cfg notify.cfg.example \
+		check_snmp_fetchlog_b2n check_snmp_fetchlog_bb2b \
+		check_snmp_fetchlog_bb2n
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 

@@ -13,11 +13,10 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	bash:shells/bash
 
-USES=		gmake shebangfix
+USES=		gmake java shebangfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	sanger-pathogens
 SHEBANG_FILES=	act art bamview dnaplotter test/*.sh etc/go_associations.pl
-USE_JAVA=	yes
 ALL_TARGET=	jar
 NO_ARCH=	yes
 

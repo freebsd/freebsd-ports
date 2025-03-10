@@ -12,6 +12,9 @@ WWW=		https://www.opensips.org/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Deprecated upstream
+EXPIRATION_DATE=2025-03-31
+
 BUILD_DEPENDS=	gm4:devel/m4
 LIB_DEPENDS=	libconfuse.so:devel/libconfuse \
 		libcurl.so:ftp/curl \

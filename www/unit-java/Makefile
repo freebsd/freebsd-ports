@@ -39,10 +39,10 @@ COMMENT=	Java module for NGINX Unit
 RUN_DEPENDS=	unitd:www/unit
 
 UNIT_MODNAME=	java${JAVA_PORT_VERSION}
-CLASSGRAPH_VERSION=	4.8.165
+CLASSGRAPH_VERSION=	4.8.179
 ECJ_VERSION=	3.26.0
-JETTY_VERSION=	9.4.54.v20240208
-TOMCAT_VERSION=	9.0.86
+JETTY_VERSION=	9.4.56.v20240826
+TOMCAT_VERSION=	9.0.98
 
 PLIST_FILES=	%%JAVAJARDIR%%/classgraph-${CLASSGRAPH_VERSION}.jar \
 		%%JAVAJARDIR%%/ecj-${ECJ_VERSION}.jar \
@@ -62,8 +62,7 @@ PLIST_FILES=	%%JAVAJARDIR%%/classgraph-${CLASSGRAPH_VERSION}.jar \
 		%%JAVAJARDIR%%/websocket-api-java${JAVA_PORT_VERSION}-${UNIT_VERSION}.jar \
 		libexec/unit/modules/${UNIT_MODNAME}.unit.so
 
-USE_JAVA=	yes
-JAVA_VERSION=	8+
+USES+=	java
 #JAVA_VERSION=	8 11 12 13 14 15
 
 USE_RC_SUBR?=	# reset to empty
@@ -95,9 +94,5 @@ do-install:
 		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_FLAGS} \
 			${MAKEFILE} ${MAKE_ARGS} \
 			${UNIT_MODNAME}-install DESTDIR=${STAGEDIR}
-
-# Overwrite the target in the ${MASTERDIR}/Makefile
-post-install:
-	@${DO_NADA}
 
 .include "${MASTERDIR}/Makefile"

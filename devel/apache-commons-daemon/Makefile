@@ -13,10 +13,11 @@ WWW=		https://commons.apache.org/proper/commons-daemon/
 
 LICENSE=	APACHE20
 
+USES=		java
+JAVA_OS=	native
+
 OPTIONS_DEFINE=	DOCS
 
-USE_JAVA=	yes
-JAVA_OS=	native
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-java=${JAVA_HOME}
 

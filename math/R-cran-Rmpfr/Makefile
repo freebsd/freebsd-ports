@@ -1,5 +1,5 @@
 PORTNAME=	Rmpfr
-DISTVERSION=	0.9-5
+DISTVERSION=	1.0-0
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
@@ -8,6 +8,8 @@ COMMENT=	R wrapper for the mpfr multiple precision library
 WWW=		https://cran.r-project.org/web/packages/Rmpfr/
 
 LICENSE=	GPLv2+
+
+NOT_FOR_ARCHS=	i386
 
 LIB_DEPENDS=	libgmp.so:math/gmp \
 		libmpfr.so:math/mpfr

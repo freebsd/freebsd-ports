@@ -1,2 +1,0 @@
-META is builder for recursive descent parsers implemented as a domain
-specific language on top of Common Lisp.

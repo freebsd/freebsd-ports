@@ -13,6 +13,8 @@ WWW=		https://bitbucket.org/verateam/vera/wiki/Home
 LICENSE=	BSL
 LICENSE_FILE=	${WRKSRC}/LICENSE_1_0.txt
 
+BROKEN=		fails to build with boost-1.85+
+
 BUILD_DEPENDS=	boost-libs>=0:devel/boost-libs
 
 USES=		compiler:c++11-lang cmake tk

@@ -1,6 +1,6 @@
 PORTNAME=	appleseed
 DISTVERSION=	2.1.0-beta
-PORTREVISION=	14
+PORTREVISION=	18
 CATEGORIES=	graphics
 
 PATCH_SITES=	http://vault.101011010.xyz/distfiles/ LOCAL/danfe
@@ -12,6 +12,8 @@ WWW=		https://appleseedhq.net/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
+
+BROKEN=		fails to build with Boost>=1.87
 
 LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
 		liblz4.so:archivers/liblz4 \
@@ -85,6 +87,8 @@ post-patch:
                 ${WRKSRC}/src/appleseed/foundation/math/matrix.h \
                 ${WRKSRC}/src/appleseed/foundation/math/quaternion.h \
                 ${WRKSRC}/src/appleseed/foundation/image/color.h
+	@${REINPLACE_CMD} -e '/return Product/s,trt\.derived(),trt,' \
+		${WRKSRC}/src/thirdparty/bcd/ext/eigen/Eigen/src/Core/Transpositions.h
 
 .include <bsd.port.mk>
 

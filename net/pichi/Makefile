@@ -1,6 +1,6 @@
 PORTNAME=	pichi
 DISTVERSION=	1.5.1
-PORTREVISION=	1
+PORTREVISION=	5
 CATEGORIES=	net
 
 MAINTAINER=	pichi@elude.in
@@ -36,15 +36,15 @@ STATIC_CMAKE_BOOL_OFF=	BUILD_SHARED_LIBS
 STATIC_BUILD_DEPENDS=	boost-libs>=1.67.0:devel/boost-libs \
 			libmaxminddb>=1.3.0:net/libmaxminddb \
 			libsodium>=1.0.12:security/libsodium \
-			mbedtls>=2.7.0:security/mbedtls
+			mbedtls2>=2.7.0:security/mbedtls2
 STATIC_LIB_DEPENDS_OFF=	libboost_context.so:devel/boost-libs \
 			libboost_filesystem.so:devel/boost-libs \
 			libboost_program_options.so:devel/boost-libs \
 			libboost_system.so:devel/boost-libs \
 			libmaxminddb.so:net/libmaxminddb \
-			libmbedcrypto.so:security/mbedtls \
-			libmbedtls.so:security/mbedtls \
-			libmbedx509.so:security/mbedtls \
+			libmbedcrypto.so:security/mbedtls2 \
+			libmbedtls.so:security/mbedtls2 \
+			libmbedx509.so:security/mbedtls2 \
 			libsodium.so:security/libsodium
 STATIC_USE_OFF=		LDCONFIG=yes
 
@@ -63,6 +63,8 @@ TRANSPARENT_CMAKE_BOOL=		TRANSPARENT_PF
 .if ${PORT_OPTIONS:MSTATIC}
 BUILD_DEPENDS+=	brotli>=1.0.0:archivers/brotli \
 			boringssl>=0.0.0.0.2022.12.22.01:security/boringssl
+DEPRECATED=	Depends on expired security/mbedtls2
+EXPIRATION_DATE=2025-03-31
 .else
 LIB_DEPENDS+=	libbrotlicommon.so:archivers/brotli \
 			libbrotlidec.so:security/boringssl \
@@ -80,7 +82,7 @@ USES+=		ssl
 
 .include <bsd.port.pre.mk>
 
-.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400079 || ( ${OSVERSION} >= 1302505 && ${OSVERSION} < 1400000 ))
+.if ${OPSYS} == FreeBSD
 CFLAGS+=	-Wno-error=unqualified-std-cast-call
 .endif
 

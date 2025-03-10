@@ -16,11 +16,12 @@ RUN_DEPENDS=	${JAVALIBDIR}/commons-beanutils.jar:java/apache-commons-beanutils \
 		${JAVALIBDIR}/commons-lang.jar:java/apache-commons-lang \
 		${JAVALIBDIR}/commons-logging.jar:java/apache-commons-logging
 
+USES=		java
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 OPTIONS_DEFINE=	DOCS
 
-USE_JAVA=	yes
 NO_BUILD=	yes
 
 PORTDOCS=	*

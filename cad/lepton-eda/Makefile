@@ -21,7 +21,6 @@ LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 		libgtkextra-x11-3.0.so:x11-toolkits/gtkextra \
 		libharfbuzz.so:print/harfbuzz \
 		libltdl.so:devel/libltdl \
-		libpcre.so:devel/pcre \
 		libpng.so:graphics/png \
 		libstroke.so:devel/libstroke \
 		libunistring.so:devel/libunistring

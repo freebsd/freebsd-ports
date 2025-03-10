@@ -1,6 +1,15 @@
---- build/rust/std/BUILD.gn.orig	2024-03-22 08:19:40 UTC
+--- build/rust/std/BUILD.gn.orig	2025-03-05 08:14:56 UTC
 +++ build/rust/std/BUILD.gn
-@@ -90,7 +90,6 @@ if (toolchain_has_rust) {
+@@ -89,7 +89,7 @@ if (toolchain_has_rust) {
+     # These are no longer present in the Windows toolchain.
+     stdlib_files += [
+       "addr2line",
+-      "adler2",
++      "adler",
+       "gimli",
+       "libc",
+       "memchr",
+@@ -115,7 +115,6 @@ if (toolchain_has_rust) {
    # don't need to pass to the C++ linker because they're used for specialized
    # purposes.
    skip_stdlib_files = [

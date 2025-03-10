@@ -1,11 +1,11 @@
 PORTNAME=	i3ipc
 PORTVERSION=	2.2.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11 python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	jbeich@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Improved Python library to control i3wm and sway
 WWW=		https://i3ipc-python.readthedocs.io/
 

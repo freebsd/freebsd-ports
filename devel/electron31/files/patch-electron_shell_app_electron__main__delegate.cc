@@ -1,4 +1,4 @@
---- electron/shell/app/electron_main_delegate.cc.orig	2024-06-24 09:53:23 UTC
+--- electron/shell/app/electron_main_delegate.cc.orig	2024-09-11 03:18:31 UTC
 +++ electron/shell/app/electron_main_delegate.cc
 @@ -59,13 +59,13 @@
  #include "chrome/child/v8_crashpad_support_win.h"
@@ -52,3 +52,12 @@
    crash_keys::SetCrashKeysFromCommandLine(*command_line);
    crash_keys::SetPlatformCrashKey();
  #endif
+@@ -409,7 +409,7 @@ std::optional<int> ElectronMainDelegate::PreBrowserMai
+ #if BUILDFLAG(IS_MAC)
+   RegisterAtomCrApp();
+ #endif
+-#if BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+   // Set the global activation token sent as an environment variable.
+   auto env = base::Environment::Create();
+   base::nix::ExtractXdgActivationTokenFromEnv(*env);

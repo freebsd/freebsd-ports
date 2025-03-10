@@ -1,6 +1,6 @@
 PORTNAME=	or-tools
 DISTVERSIONPREFIX=	v
-DISTVERSION=	9.5
+DISTVERSION=	9.6
 PORTREVISION=	9
 CATEGORIES=	math
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -52,7 +52,6 @@ CMAKE_OFF=	BUILD_DEPS BUILD_pybind11 INSTALL_BUILD_DEPS BUILD_TESTING BUILD_EXAM
 CMAKE_ON=	BUILD_PYTHON
 CMAKE_ARGS=	-DSWIG_EXECUTABLE=${LOCALBASE}/bin/swig -DFREEBSD_PYTHON_VER=${PYTHON_VER}
 CONFIGURE_ENV=	UNIX_CBC_DIR=${LOCALBASE} UNIX_CLP_DIR=${LOCALBASE}
-CXXFLAGS+=	-DABSL_LEGACY_THREAD_ANNOTATIONS
 BUILD_ENV=	UNIX_CBC_DIR=${LOCALBASE} UNIX_CLP_DIR=${LOCALBASE}
 
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
@@ -69,6 +68,8 @@ post-patch:
 		${WRKSRC}/ortools/glop/CMakeLists.txt \
 		${WRKSRC}/ortools/linear_solver/CMakeLists.txt \
 		${WRKSRC}/ortools/sat/CMakeLists.txt
+	@${REINPLACE_CMD} -e '17,19d ; /AbslStringify/,+10d' \
+		${WRKSRC}/ortools/base/logging.h
 
 do-install: # by default cmake installs the whole or-tools project without the python part, so extract the wheel and install python files manually here
 	${MKDIR} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}

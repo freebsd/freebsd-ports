@@ -225,7 +225,6 @@ share/kconf_update/tellico-3-4-update.pl
 share/kconf_update/tellico-rename.upd
 share/kconf_update/tellico.upd
 share/knsrcfiles/tellico-template.knsrc
-share/kxmlgui5/tellico/tellicoui.rc
 share/locale/bg/LC_MESSAGES/tellico.mo
 share/locale/bs/LC_MESSAGES/tellico.mo
 share/locale/ca/LC_MESSAGES/tellico.mo
@@ -243,6 +242,7 @@ share/locale/fi/LC_MESSAGES/tellico.mo
 share/locale/fr/LC_MESSAGES/tellico.mo
 share/locale/ga/LC_MESSAGES/tellico.mo
 share/locale/gl/LC_MESSAGES/tellico.mo
+share/locale/he/LC_MESSAGES/tellico.mo
 share/locale/hu/LC_MESSAGES/tellico.mo
 share/locale/ia/LC_MESSAGES/tellico.mo
 share/locale/it/LC_MESSAGES/tellico.mo
@@ -289,8 +289,6 @@ share/mime/packages/tellico.xml
 %%DATADIR%%/crossref2tellico.xsl
 %%DATADIR%%/data-sources/dark_horse_comics.py
 %%DATADIR%%/data-sources/dark_horse_comics.py.spec
-%%DATADIR%%/data-sources/fr.allocine.py
-%%DATADIR%%/data-sources/fr.allocine.py.spec
 %%DATADIR%%/datacrow2tellico.xsl
 %%DATADIR%%/dbc2tellico.xsl
 %%DATADIR%%/dblp2tellico.xsl
@@ -384,8 +382,6 @@ share/mime/packages/tellico.xml
 %%DATADIR%%/tellico-by-title.xsl
 %%DATADIR%%/tellico-common.xsl
 %%DATADIR%%/tellico-printing.xsl
-%%DATADIR%%/tellico.dtd
-%%DATADIR%%/tellico.tips
 %%DATADIR%%/tellico2gcstar.xsl
 %%DATADIR%%/tellico2html.js
 %%DATADIR%%/tellico2html.xsl

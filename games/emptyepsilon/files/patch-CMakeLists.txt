@@ -1,80 +1,18 @@
---- CMakeLists.txt.orig	2021-06-23 12:12:02 UTC
+--- CMakeLists.txt.orig	2023-06-18 17:06:06 UTC
 +++ CMakeLists.txt
-@@ -106,18 +106,20 @@ if(WITH_DISCORD)
+@@ -107,6 +107,7 @@ if(WITH_DISCORD)
  endif()
  
- # GLM
--set(GLM_BASE_PATH "${EXTERNALS_DIR}")
-+#set(GLM_BASE_PATH "${EXTERNALS_DIR}")
-+#
-+#if(NOT EXISTS "${GLM_BASE_PATH}/glm/CMakeLists.txt")
-+#  set(GLM_ZIP "${DOWNLOADS_DIR}/glm.zip")
-+#  file(DOWNLOAD "https://github.com/g-truc/glm/releases/download/0.9.9.8/glm-0.9.9.8.zip" "${GLM_ZIP}" TIMEOUT 60 TLS_VERIFY ON)
-+#
-+#  file(MAKE_DIRECTORY "${GLM_BASE_PATH}/glm")
-+#  execute_process(COMMAND ${CMAKE_COMMAND} -E tar -xf "${GLM_ZIP}" WORKING_DIRECTORY "${GLM_BASE_PATH}")
-+#endif()
-+#
-+#add_subdirectory("${GLM_BASE_PATH}/glm" "${PROJECT_BINARY_DIR}/glm" EXCLUDE_FROM_ALL)
- 
--if(NOT EXISTS "${GLM_BASE_PATH}/glm/CMakeLists.txt")
--  set(GLM_ZIP "${DOWNLOADS_DIR}/glm.zip")
--  file(DOWNLOAD "https://github.com/g-truc/glm/releases/download/0.9.9.8/glm-0.9.9.8.zip" "${GLM_ZIP}" TIMEOUT 60 TLS_VERIFY ON)
-+find_package(glm REQUIRED)
- 
--  file(MAKE_DIRECTORY "${GLM_BASE_PATH}/glm")
--  execute_process(COMMAND ${CMAKE_COMMAND} -E tar -xf "${GLM_ZIP}" WORKING_DIRECTORY "${GLM_BASE_PATH}")
--endif()
--
--add_subdirectory("${GLM_BASE_PATH}/glm" "${PROJECT_BINARY_DIR}/glm" EXCLUDE_FROM_ALL)
--
- set(SOURCES
-     src/main.cpp
-     src/threatLevelEstimate.cpp
-@@ -400,26 +402,26 @@ if(WITH_DISCORD)
-     install(PROGRAMS "$<TARGET_PROPERTY:discord,IMPORTED_LOCATION>" DESTINATION "${discord_install_prefix}/plugins")
+ # Meshoptimizer
++if (FALSE)
+ set(MESHOPTIMIZER_VERSION 0.16)
+ if(CMAKE_VERSION VERSION_GREATER_EQUAL 3.11)
+   include(FetchContent)
+@@ -137,6 +138,7 @@ if(NOT meshoptimizer_POPULATED)
+     FetchContent_Populate(meshoptimizer)
+   endif()
+   add_subdirectory(${meshoptimizer_SOURCE_DIR} ${meshoptimizer_BINARY_DIR} EXCLUDE_FROM_ALL)
++endif()
  endif()
  
--find_package(PythonInterp)
--if(PYTHONINTERP_FOUND)
--    set(SCRIPT_REFERENCE_HTML "${PROJECT_BINARY_DIR}/script_reference.html")
--    add_custom_command(
--        OUTPUT "${SCRIPT_REFERENCE_HTML}"
--        COMMAND ${PYTHON_EXECUTABLE} ${CMAKE_SOURCE_DIR}/compile_script_docs.py "${SCRIPT_REFERENCE_HTML}"
--        WORKING_DIRECTORY ${PROJECT_SOURCE_DIR}
--        COMMENT "Building script reference documentation.")
--    add_custom_target(script_reference ALL DEPENDS "${SCRIPT_REFERENCE_HTML}")
--  
--  # Matches install logic above.
--  if(WIN32)
--    install(FILES "${SCRIPT_REFERENCE_HTML}" DESTINATION . OPTIONAL)
--  elseif(APPLE)
--    install(FILES "${SCRIPT_REFERENCE_HTML}" DESTINATION "$<TARGET_BUNDLE_CONTENT_DIR:${PROJECT_NAME}>/Resources" OPTIONAL)
--  elseif(NOT ANDROID)
--    # DOCDIR already has PROJECT_NAME (EmptyEpsilon) appended (from CMake docs)
--    install(FILES "${SCRIPT_REFERENCE_HTML}" DESTINATION "${CMAKE_INSTALL_DOCDIR}" OPTIONAL)
--  endif()
--endif()
-+#find_package(PythonInterp)
-+#if(PYTHONINTERP_FOUND)
-+#    set(SCRIPT_REFERENCE_HTML "${PROJECT_BINARY_DIR}/script_reference.html")
-+#    add_custom_command(
-+#        OUTPUT "${SCRIPT_REFERENCE_HTML}"
-+#        COMMAND ${PYTHON_EXECUTABLE} ${CMAKE_SOURCE_DIR}/compile_script_docs.py "${SCRIPT_REFERENCE_HTML}"
-+#        WORKING_DIRECTORY ${PROJECT_SOURCE_DIR}
-+#        COMMENT "Building script reference documentation.")
-+#    add_custom_target(script_reference ALL DEPENDS "${SCRIPT_REFERENCE_HTML}")
-+#  
-+#  # Matches install logic above.
-+#  if(WIN32)
-+#    install(FILES "${SCRIPT_REFERENCE_HTML}" DESTINATION . OPTIONAL)
-+#  elseif(APPLE)
-+#    install(FILES "${SCRIPT_REFERENCE_HTML}" DESTINATION "$<TARGET_BUNDLE_CONTENT_DIR:${PROJECT_NAME}>/Resources" OPTIONAL)
-+#  elseif(NOT ANDROID)
-+#    # DOCDIR already has PROJECT_NAME (EmptyEpsilon) appended (from CMake docs)
-+#    install(FILES "${SCRIPT_REFERENCE_HTML}" DESTINATION "${CMAKE_INSTALL_DOCDIR}" OPTIONAL)
-+#  endif()
-+#endif()
- 
- add_custom_target(update_locale
-     COMMAND xgettext --keyword=tr:1c,2 --keyword=tr:1 --keyword=trMark:1c,2 --keyword=trMark:1 --omit-header -d resources/locale/main.en ${SOURCES}
+ set(GUI_LIB_SOURCES

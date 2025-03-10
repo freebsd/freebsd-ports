@@ -1,0 +1,14 @@
+Various command line tools for handling ZIM files (see devel/libzim).
+
+Notable tools are:
+- 'zimcheck' verifies that a given ZIM file is not corrupted. It provides many
+  features to secure that ZIM entries are proper and properly linked.
+- 'zimdump' inspects or dumps (part of) a ZIM file.
+- 'zimsplit' splits smartly a ZIM file in smaller chunks.
+- 'zimwriterfs' creates ZIM files from a locally-stored directory containing
+  "self-sufficient" HTML content (with pictures, javascript and stylesheets).
+  The result will contain all the files of the local directory compressed and
+  merged in the ZIM file. The generated file can be opened with a ZIM reader;
+  Kiwix is one example, but there are others.
+
+A few other tools are provided as well.

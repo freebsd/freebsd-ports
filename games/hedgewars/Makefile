@@ -1,6 +1,6 @@
 PORTNAME=	hedgewars
 PORTVERSION=	1.0.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	games
 MASTER_SITES=	https://www.hedgewars.org/download/releases/
 DISTNAME=	${PORTNAME}-src-${DISTVERSION}
@@ -14,6 +14,8 @@ LICENSE_COMB=	multi
 
 LIB_DEPENDS=	libphysfs.so:devel/physfs \
 		libpng.so:graphics/png
+
+ONLY_FOR_ARCHS=	amd64 i386
 
 USES=		cmake:noninja desktop-file-utils fpc gl lua:51 pkgconfig qt:5 \
 		sdl tar:bzip2

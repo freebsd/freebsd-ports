@@ -1,5 +1,5 @@
 PORTNAME=	dry-core
-PORTVERSION=	1.0.1
+PORTVERSION=	1.1.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -11,6 +11,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-concurrent-ruby>=1.0<2:devel/rubygem-concurrent-ruby \
+		rubygem-logger>=0:devel/rubygem-logger \
 		rubygem-zeitwerk>=2.6<3:devel/rubygem-zeitwerk
 
 USES=		gem

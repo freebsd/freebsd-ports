@@ -8,6 +8,8 @@ MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Internet Go Server client and game editor
 WWW=		https://cgoban1.sourceforge.net/
 
+BROKEN=		crashes when starting a new game
+
 GNU_CONFIGURE=	yes
 USES=		xorg
 USE_XORG=	x11 ice sm

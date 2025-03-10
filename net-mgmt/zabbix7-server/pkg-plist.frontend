@@ -86,6 +86,8 @@
 %%WWWDIR%%/app/controllers/CControllerHostGroupList.php
 %%WWWDIR%%/app/controllers/CControllerHostGroupUpdate.php
 %%WWWDIR%%/app/controllers/CControllerHostList.php
+%%WWWDIR%%/app/controllers/CControllerHostDisable.php
+%%WWWDIR%%/app/controllers/CControllerHostEnable.php
 %%WWWDIR%%/app/controllers/CControllerHostMacrosList.php
 %%WWWDIR%%/app/controllers/CControllerHostMassDelete.php
 %%WWWDIR%%/app/controllers/CControllerHostUpdate.php
@@ -749,6 +751,7 @@
 %%WWWDIR%%/include/classes/api/clients/CApiClient.php
 %%WWWDIR%%/include/classes/api/clients/CLocalApiClient.php
 %%WWWDIR%%/include/classes/api/helpers/CApiHostHelper.php
+%%WWWDIR%%/include/classes/api/helpers/CApiPskHelper.php
 %%WWWDIR%%/include/classes/api/helpers/CApiTagHelper.php
 %%WWWDIR%%/include/classes/api/item_types/CItemType.php
 %%WWWDIR%%/include/classes/api/item_types/CItemTypeBrowser.php
@@ -1475,6 +1478,8 @@
 %%WWWDIR%%/local/README
 %%WWWDIR%%/locale/README
 %%WWWDIR%%/locale/add_new_language.sh
+%%WWWDIR%%/locale/ar/LC_MESSAGES/frontend.mo
+%%WWWDIR%%/locale/ar/LC_MESSAGES/frontend.po
 %%WWWDIR%%/locale/bg/LC_MESSAGES/frontend.mo
 %%WWWDIR%%/locale/bg/LC_MESSAGES/frontend.po
 %%WWWDIR%%/locale/ca/LC_MESSAGES/frontend.mo
@@ -1539,6 +1544,8 @@
 %%WWWDIR%%/locale/sk/LC_MESSAGES/frontend.po
 %%WWWDIR%%/locale/sv_SE/LC_MESSAGES/frontend.mo
 %%WWWDIR%%/locale/sv_SE/LC_MESSAGES/frontend.po
+%%WWWDIR%%/locale/th/LC_MESSAGES/frontend.mo
+%%WWWDIR%%/locale/th/LC_MESSAGES/frontend.po
 %%WWWDIR%%/locale/tr/LC_MESSAGES/frontend.mo
 %%WWWDIR%%/locale/tr/LC_MESSAGES/frontend.po
 %%WWWDIR%%/locale/uk/LC_MESSAGES/frontend.mo

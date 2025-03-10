@@ -1,4 +1,4 @@
---- lib/Mail/Milter/Authentication/Config.pm.orig	2024-02-05 02:41:57 UTC
+--- lib/Mail/Milter/Authentication/Config.pm.orig	2024-10-11 04:07:26 UTC
 +++ lib/Mail/Milter/Authentication/Config.pm
 @@ -21,7 +21,7 @@ our @EXPORT_OK = qw{
  };
@@ -14,18 +14,19 @@
          'dryrun'                          => 0,
          'logtoerr'                        => 0,
 -        'error_log'                       => '/var/log/authentication_milter.err',
-+        "log_dispatchouli"                => {},
++        'log_dispatchouli'                => {},
          'extended_log'                    => 1,
          'legacy_log'                      => 0,
 -        'connection'                      => 'inet:12345@localhost',
 -        'umask'                           => '0000',
 -        'runas'                           => 'nobody',
 -        'rungroup'                        => 'nogroup',
+-        'listen_backlog'                  => 20,
 +        'connection'                      => 'unix:%%RUNDIR%%/auth_milter.sock',
 +        'umask'                           => '0077',
 +        'runas'                           => '%%DEFAULT_USER%%',
 +        'rungroup'                        => '%%DEFAULT_GROUP%%',
-         'listen_backlog'                  => 20,
++        'listen_backlog'                  => 200,
          'check_for_dequeue'               => 60,
 -        'min_children'                    => 20,
 -        'max_children'                    => 200,
@@ -38,7 +39,7 @@
          'max_requests_per_child'          => 200,
          'protocol'                        => 'milter',
          'connect_timeout'                 => 30,
-@@ -61,9 +61,9 @@ sub default_config {
+@@ -62,9 +62,9 @@ sub default_config {
          'ip_map'                          => {},
          'authserv_id'                     => '',
          'handlers'                        => {},
@@ -51,18 +52,18 @@
          'lock_file'                       => '',
      };
  
-@@ -104,7 +104,7 @@ sub setup_config {
+@@ -105,7 +105,7 @@ sub setup_config {
          else {
-             if ( $EUID == 0 ) {
-                 # We are root, create in global space
+             if ( $EUID == 0 && -d "/var/$type" && -w "/var/$type" ) {
+                 # We are root, create in global space if it exists and is writable
 -                $dir = '/var/'.$type.'/authentication_milter';
 +                $dir = '/var/'.$type.'/auth_milter';
                  mkdir $dir if ! -e $dir;
                  # Create the subdir for this IDENT
                  $dir .= '/'.$safe_ident;
-@@ -119,7 +119,7 @@ sub setup_config {
+@@ -120,7 +120,7 @@ sub setup_config {
              else {
-                 # We are a user! Create something in a temporary space
+                 # We are a user, or have no writable global space, Create something in a temporary space
                  $dir = join( '_',
 -                  '/tmp/authentication_milter',
 +                  '/tmp/auth_milter',

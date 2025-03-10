@@ -1,7 +1,8 @@
 PORTNAME=	din
-PORTVERSION=	58.1
+PORTVERSION=	59
+PORTREVISION=	1
 CATEGORIES=	audio
-MASTER_SITES=	https://archive.org/download/dinisnoise_source_code/
+MASTER_SITES=	https://dinisnoise.org/files/
 
 MAINTAINER=	fox@FreeBSD.org
 COMMENT=	Open source, cross-platform sound synthesizer

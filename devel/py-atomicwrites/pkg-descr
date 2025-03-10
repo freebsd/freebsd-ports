@@ -1,3 +1,2 @@
-Atomic file writes library for Python, featuring race-free
-assertions, Windows support (although untested) and simple
-high level API.
+Atomic file writes library for Python, featuring race-free assertions, Windows
+support (although untested) and simple high level API.

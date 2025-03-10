@@ -13,10 +13,11 @@ LICENSE=	APACHE20
 
 RUN_DEPENDS=	${JAVALIBDIR}/commons-pool.jar:java/apache-commons-pool
 
+USES=		java
+JAVA_VERSION=	8
+
 OPTIONS_DEFINE=	DOCS
 
-USE_JAVA=	yes
-JAVA_VERSION=	8
 NO_BUILD=	yes
 NO_ARCH=	yes
 

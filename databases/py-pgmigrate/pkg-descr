@@ -1,1 +1,12 @@
 PGmigrate is a database migration tool developed by Yandex.
+
+PGmigrate has the following key-features:
+
+- Transactional and nontransactional migrations: you can enjoy whole power of
+  PostgreSQL DDL
+- Callbacks: you can run some DDL on specific steps of migration process
+  (e.g. drop some code before executing migrations, and create it back after
+  migrations were applied)
+- Online migrations: you can execute series of transactional migrations and
+  callbacks in a single transaction (so, if something goes wrong simple ROLLBACK
+  will bring you in consistent state)

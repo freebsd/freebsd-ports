@@ -136,11 +136,8 @@ lib/libgmxapi%%SUFFIX_D%%.so
 lib/libgmxapi%%SUFFIX_D%%.so.0
 lib/libgmxapi%%SUFFIX_D%%.so.0.4.0
 lib/libgromacs%%SUFFIX_D%%.so
-lib/libgromacs%%SUFFIX_D%%.so.9
-lib/libgromacs%%SUFFIX_D%%.so.9.0.0
-lib/libmuparser.so
-lib/libmuparser.so.2
-lib/libmuparser.so.2.3.4
+lib/libgromacs%%SUFFIX_D%%.so.10
+lib/libgromacs%%SUFFIX_D%%.so.10.0.0
 lib/libnblib_gmx.so
 lib/libnblib_gmx.so.0
 lib/libnblib_gmx.so.0.1.0

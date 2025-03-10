@@ -1,7 +1,7 @@
-usr/lib/.build-id/5d/2d15ba0ad4d515bd91c95e5c668d261a463f86
+usr/lib/.build-id/23/9f6e6809f355a34419322a1774cbd119b8b8f5
 usr/lib64/gstreamer-1.0/libgstlibav.so
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README.md
-usr/share/licenses/gstreamer1-libav/COPYING
+usr/share/licenses/gstreamer1-plugin-libav/COPYING

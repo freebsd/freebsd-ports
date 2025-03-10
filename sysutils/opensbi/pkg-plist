@@ -1,4 +1,4 @@
-%%GENERIC%%%%DATADIR%%/%%RISCV_ABI%%/generic/firmware/fw_dynamic.bin
-%%GENERIC%%%%DATADIR%%/%%RISCV_ABI%%/generic/firmware/fw_dynamic.elf
-%%GENERIC%%%%DATADIR%%/%%RISCV_ABI%%/generic/firmware/fw_jump.bin
-%%GENERIC%%%%DATADIR%%/%%RISCV_ABI%%/generic/firmware/fw_jump.elf
+%%DATADIR%%/%%RISCV_ABI%%/generic/firmware/fw_dynamic.bin
+%%DATADIR%%/%%RISCV_ABI%%/generic/firmware/fw_dynamic.elf
+%%DATADIR%%/%%RISCV_ABI%%/generic/firmware/fw_jump.bin
+%%DATADIR%%/%%RISCV_ABI%%/generic/firmware/fw_jump.elf

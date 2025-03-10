@@ -1,12 +1,13 @@
 PORTNAME=	unikmer
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.20.0
-PORTREVISION=	2
+PORTREVISION=	4
 CATEGORIES=	biology
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Toolkit for nucleic acid k-mer analysis, set operations on k-mers
-WWW=		https://github.com/shenwei356/unikmer/
+WWW=		https://bioinf.shenwei.me/unikmer/ \
+		https://github.com/shenwei356/unikmer
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

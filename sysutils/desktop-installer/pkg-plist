@@ -6,7 +6,7 @@ sbin/desktop-installer
 %%DATADIR%%/FLUXBOX/xinitrc
 %%DATADIR%%/GNOME/xinitrc
 %%DATADIR%%/ICEWM/xinitrc
-%%DATADIR%%/KDE5/xinitrc
+%%DATADIR%%/KDE/xinitrc
 %%DATADIR%%/KODI/xinitrc
 %%DATADIR%%/LUMINA/gtkrc
 %%DATADIR%%/LUMINA/xinitrc

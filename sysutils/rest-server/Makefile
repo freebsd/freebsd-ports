@@ -1,7 +1,7 @@
 PORTNAME=	rest-server
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.12.1
-PORTREVISION=	6
+DISTVERSION=	0.13.0
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	dch@FreeBSD.org
@@ -12,14 +12,9 @@ LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		go:modules
-USE_GITHUB=	yes
-GH_ACCOUNT=	restic
 USE_RC_SUBR=	restserver
-
-.include "${.CURDIR}/Makefile.deps"
-
-GO_PKGNAME=	github.com/${GH_ACCOUNT}/${PORTNAME}
-GO_TARGET=	${GO_PKGNAME}/cmd/${PORTNAME}
+GO_MODULE=	github.com/restic/rest-server
+GO_TARGET=	./cmd/rest-server
 
 USERS=		restserver
 GROUPS=		restserver

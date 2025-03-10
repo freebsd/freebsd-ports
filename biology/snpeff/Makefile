@@ -14,8 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 RUN_DEPENDS=	bash:shells/bash
 
-USES=		python shebangfix zip
-USE_JAVA=	yes
+USES=		java python shebangfix zip
 
 JAVA_VERSION=	17+
 SHEBANG_FILES=	scripts/* scripts/gsa/*

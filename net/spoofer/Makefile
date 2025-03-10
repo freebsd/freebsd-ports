@@ -1,6 +1,6 @@
 PORTNAME=	spoofer
 DISTVERSION=	1.4.11
-PORTREVISION=	2
+PORTREVISION=	8
 CATEGORIES=	net
 MASTER_SITES=	https://www.caida.org/projects/spoofer/downloads/
 
@@ -18,7 +18,9 @@ USES=		compiler:c++17-lang localbase
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-development --with-protobuf=${LOCALBASE}
-LDFLAGS+=	-labsl_log_internal_check_op -labsl_log_internal_message
+LDFLAGS+=	-labsl_log_internal_check_op \
+		-labsl_log_internal_message \
+		-labsl_log_internal_nullguard
 USE_CXXSTD=	c++17
 
 PORTDOCS=	README

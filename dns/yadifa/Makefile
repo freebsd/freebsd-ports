@@ -1,7 +1,6 @@
 PORTNAME=	yadifa
-DISTVERSION=	2.6.6
-DISTVERSIONSUFFIX=	-11255
-PORTREVISION=	1
+DISTVERSION=	2.6.7
+DISTVERSIONSUFFIX=	-11259
 CATEGORIES=	dns
 MASTER_SITES=	https://www.yadifa.eu/sites/default/files/releases/ \
 		https://dns.company/downloads/yadifa/
@@ -17,7 +16,6 @@ USES=		compiler:c11 cpe libtool ssl
 USE_RC_SUBR=	${PORTNAME}d
 
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--localstatedir=/var
 
 SUB_LIST+=	GROUPS="${GROUPS}" \
@@ -49,21 +47,20 @@ RRL_DESC=		Response Rate Limiting
 RRSIG_DESC=		RRSIG management
 ZONESIGN_DESC=		Zonesign tool
 
-CTRL_CONFIGURE_OFF=		--disable-ctrl
-DDNS_CONFIGURE_OFF=		--disable-dynupdate
-DNSSECTOOLS_CONFIGURE_OFF=	--disable-dnssec-tools
-ECDSA_CONFIGURE_OFF=		--disable-ecdsa
+CTRL_IMPLIES=			MASTER
+CTRL_CONFIGURE_ENABLE=		ctrl
+DDNS_CONFIGURE_ENABLE=		dynupdate
+DNSSECTOOLS_CONFIGURE_ENABLE=	dnssec-tools
+ECDSA_CONFIGURE_ENABLE=		ecdsa
 KEYGEN_CONFIGURE_ENABLE=	keygen
-LARGEFILE_CONFIGURE_OFF=	--disable-largefile
-MASTER_CONFIGURE_OFF=		--disable-master
-NSID_CONFIGURE_OFF=		--disable-nsid
-RRL_CONFIGURE_OFF=		--disable-rrl
-RRSIG_CONFIGURE_OFF=		--disable-rrsig-management
+LARGEFILE_CONFIGURE_ENABLE=	largefile
+MASTER_IMPLIES=			DDNS RRSIG
+MASTER_CONFIGURE_ENABLE=	master
+NSID_CONFIGURE_ENABLE=		nsid
+RRL_CONFIGURE_ENABLE=		rrl
+RRSIG_CONFIGURE_ENABLE=		rrsig-management
 TCL_USES=			tcl
 ZONESIGN_CONFIGURE_ENABLE=	zonesign
-
-CTRL_IMPLIES=			MASTER
-MASTER_IMPLIES=			DDNS RRSIG
 
 post-configure:
 	${REINPLACE_CMD} -e 's|^docdir = .*|docdir = ${EXAMPLESDIR}|' ${WRKSRC}/etc/Makefile

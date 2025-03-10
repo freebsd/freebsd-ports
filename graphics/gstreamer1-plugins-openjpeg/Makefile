@@ -3,13 +3,13 @@ CATEGORIES=	graphics
 
 COMMENT=	GStreamer jpeg2000 decoder plugin
 
-GST_PLUGIN=	openjpeg
+LIB_DEPENDS=	libopenjp2.so:graphics/openjpeg
+
+MASTERDIR=	${.CURDIR:H:H}/multimedia/gstreamer1-plugins
+
+PLIST=		${.CURDIR}/pkg-plist
+
 DIST=		bad
-
-MASTERDIR=	${.CURDIR}/../../multimedia/gstreamer1-plugins
-
-PLIST=  ${.CURDIR}/pkg-plist
-
-LIB_DEPENDS= libopenjp2.so:graphics/openjpeg
+GST_PLUGIN=	openjpeg
 
 .include "${MASTERDIR}/Makefile"

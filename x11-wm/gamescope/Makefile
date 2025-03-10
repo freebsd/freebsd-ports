@@ -1,6 +1,6 @@
 PORTNAME=	gamescope
 DISTVERSION=	3.13.8
-PORTREVISION=	5
+PORTREVISION=	7
 CATEGORIES=	x11-wm wayland
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
@@ -10,7 +10,7 @@ PATCHFILES+=	243582c0c762.patch:-p1 # https://github.com/ValveSoftware/gamescope
 PATCHFILES+=	4a4fb1b53133.patch:-p1 # https://github.com/ValveSoftware/gamescope/pull/1296
 PATCHFILES+=	a9199c2097ff.patch:-p1 # https://github.com/ValveSoftware/gamescope/pull/1323
 
-MAINTAINER=	jbeich@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SteamOS session compositing window manager
 WWW=		https://github.com/ValveSoftware/gamescope
 
@@ -28,7 +28,7 @@ LIB_DEPENDS=	libdrm.so:graphics/libdrm \
 		libvulkan.so:graphics/vulkan-loader \
 		libwayland-server.so:graphics/wayland \
 		libdisplay-info.so:sysutils/libdisplay-info \
-		libwlroots.so:x11-toolkits/wlroots017 \
+		libwlroots-0.17.so:x11-toolkits/wlroots017 \
 		libxkbcommon.so:x11/libxkbcommon
 RUN_DEPENDS=	hwdata>0:misc/hwdata
 

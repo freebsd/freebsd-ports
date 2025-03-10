@@ -1,0 +1,62 @@
+#!/bin/sh
+
+# PROVIDE: snac
+# REQUIRE: DAEMON
+# KEYWORD: shutdown
+#
+# Add these lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# snac_enable (bool):	Set to NO by default.
+#			Set it to YES to enable snac.
+# snac_user   (user):	Set user to run snac.
+# 			Default is "snac".
+# snac_group  (group):	Set group to run snac.
+# 			Default is "snac".
+# snac_dir    (dir):	Set data storage dir.
+# 			Default is /var/db/snac/".
+
+. /etc/rc.subr
+
+name=snac
+rcvar=snac_enable
+desc="Simple fediverse server"
+
+start_precmd="${name}_prestart"
+extra_commands="init run"
+init_cmd="snac_init"
+run_cmd="snac_run"
+
+load_rc_config $name
+
+: ${snac_enable:=NO}
+: ${snac_user=%%USER%%}
+: ${snac_group=%%GROUP%%}
+: ${snac_dir=%%SNACDATADIR%%}
+
+procname="%%PREFIX%%/bin/${name}"
+command=/usr/sbin/daemon
+command_args="-c -S -T ${name} ${procname} httpd ${snac_dir}/data"
+
+snac_prestart()
+{
+    if [ ! -d "${snac_dir}/data" ]; then
+        echo "The snac data directory does not exist. Please run: service snac init"
+    fi
+}
+
+snac_init()
+{
+    mkdir -p "${snac_dir}"
+    ${procname} init "${snac_dir}/data"
+    chown -R ${snac_user}:${snac_group} "${snac_dir}/data"
+}
+
+snac_run()
+{
+    snaccmd="$1"
+    shift
+    ${procname} $snaccmd "${snac_dir}/data" $@
+}
+
+run_rc_command "$@"

@@ -1,6 +1,6 @@
 PORTNAME=	libvex
 DISTVERSION=	g20230201
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -21,7 +21,7 @@ WRKSRC_SUBDIR=	VEX
 
 MAKEFILE=	Makefile-gcc
 
-CFLAGS+=	-DVGA_${ARCH:S/i386/x86/:S/aarch64/arm/:S/powerpc64/ppc64le/:S/powerpc/ppc32/:S/mips/mips64/}
+CFLAGS+=	-DVGA_${ARCH:S/i386/x86/:S/aarch64/arm/:S/powerpc64le/ppc64le/:S/powerpc64/ppc64/:S/powerpc/ppc32/:S/mips/mips64/}
 
 MAKE_ARGS=	EXTRA_CFLAGS="${CFLAGS}"
 

@@ -1,0 +1,16 @@
+--- development/Makefile.am.orig	2024-11-01 01:12:44.160674000 +0000
++++ development/Makefile.am	2024-11-01 01:13:03.544363000 +0000
+@@ -1,13 +1,5 @@
+ include $(top_srcdir)/config/common.am
+ 
+-if INSTALL_MACOSX
+-SUBDIRS = MacOSX
+-endif
+-
+-if INSTALL_CYGWIN
+-SUBDIRS = cygwin
+-endif
+-
+ EXTRA_DIST = coding/Rules coding/Recommendations \
+ 	coverity_modeling.cpp \
+ 	FORMAT lyx.rpm.README \

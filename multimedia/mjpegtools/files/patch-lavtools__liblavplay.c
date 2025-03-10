@@ -1,6 +1,6 @@
---- lavtools/liblavplay.c.orig
+--- lavtools/liblavplay.c.orig	2021-09-05 06:14:13 UTC
 +++ lavtools/liblavplay.c
-@@ -43,7 +43,12 @@
+@@ -44,7 +44,12 @@
  #include <sys/resource.h>
  #include <sys/wait.h>
  #ifdef HAVE_V4L

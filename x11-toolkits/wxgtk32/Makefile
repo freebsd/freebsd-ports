@@ -1,14 +1,11 @@
 PORTNAME=	wx
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.2.4
-PORTREVISION=	2
+DISTVERSION=	3.2.6
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	https://github.com/wxWidgets/wxWidgets/releases/download/v${DISTVERSION}/
 PKGNAMESUFFIX=	${_SHORT_WX_VER}-${FLAVOR}
 DISTNAME=	wxWidgets-${DISTVERSION}
-
-PATCH_SITES=	https://github.com/vadz/wxWidgets/commit/
-PATCHFILES=	b8dc0eeb2fb6c49ae0ac9cbc86bd20c0bf3bdee7.patch:-p1 # https://github.com/wxWidgets/wxWidgets/issues/24076
 
 MAINTAINER=	desktop@FreeBSD.org
 COMMENT=	GUI toolkit (wxWidgets) with ${FLAVOR:S/k/&+/:tu} bindings
@@ -68,7 +65,8 @@ CONFIGURE_ARGS=	--disable-epollloop \
 CONFIGURE_ENV=	ac_cv_header_sys_inotify_h=no \
 		X11BASE="${LOCALBASE}"
 
-PLIST_SUB+=	GTKVER=${FLAVOR}
+_SOVER=		0.3.0
+PLIST_SUB+=	GTKVER=${FLAVOR} SOVER=${_SOVER}
 
 OPTIONS_DEFINE=		GSTREAMER MSPACK NLS
 OPTIONS_DEFAULT=	GSTREAMER MSPACK
@@ -85,7 +83,7 @@ MSPACK_CONFIGURE_WITH=	libmspack
 
 NLS_USES=	gettext
 
-WEBKIT_LIB_DEPENDS=		libwebkit2gtk-4.0.so:www/webkit2-gtk3
+WEBKIT_LIB_DEPENDS=		libwebkit2gtk-4.0.so:www/webkit2-gtk@40
 WEBKIT_CONFIGURE_ENABLE=	webview
 
 .if ${FLAVOR} == gtk3

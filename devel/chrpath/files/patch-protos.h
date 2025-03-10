@@ -1,30 +1,39 @@
---- protos.h.orig	2013-11-24 08:30:01.000000000 +0100
-+++ protos.h	2016-02-03 19:47:21.946096000 +0100
-@@ -1,7 +1,14 @@
- #ifndef PROTOS_H
- #define PROTOS_H
- 
-+#if defined __FreeBSD__ || defined __DragonFly__
-+#include <sys/endian.h>
-+#define bswap_16 bswap16
-+#define bswap_32 bswap32
-+#define bswap_64 bswap64
-+#else
- #include <byteswap.h>
-+#endif
- #include <elf.h>
- #include "config.h"
- 
-@@ -14,6 +21,12 @@
- #error "Unknown word size (SIZEOF_VOID_P)!"
- #endif
- 
-+#if defined __FreeBSD__ || defined __DragonFly__
-+#define Elf_Ehdr Elf__Ehdr
-+#define Elf_Shdr Elf__Shdr
-+#define Elf_Phdr Elf__Phdr
-+#endif
-+
- typedef union {
+--- protos.h.orig	2024-10-31 16:19:27 UTC
++++ protos.h
+@@ -33,17 +33,17 @@
    unsigned char e_ident[EI_NIDENT];
    Elf32_Ehdr e32;
+   Elf64_Ehdr e64;
+-} Elf_Ehdr;
++} absElf_Ehdr;
+ 
+ typedef union {
+   Elf32_Shdr e32;
+   Elf64_Shdr e64;
+-} Elf_Shdr;
++} absElf_Shdr;
+ 
+ typedef union {
+   Elf32_Phdr e32;
+   Elf64_Phdr e64;
+-} Elf_Phdr;
++} absElf_Phdr;
+ 
+ int is_e32(void);
+ int swap_bytes(void);
+@@ -70,12 +70,12 @@
+ int killrpath(const char *filename);
+ int chrpath(const char *filename, const char *newpath, int convert);
+ 
+-char* read_section_names(int fd, Elf_Ehdr ehdr);
++char* read_section_names(int fd, absElf_Ehdr ehdr);
+ char* get_section_name(int name_off, char* section_names);
+ 
+-int elf_open(const char *filename, int flags, Elf_Ehdr *ehdr);
++int elf_open(const char *filename, int flags, absElf_Ehdr *ehdr);
+ void elf_close(int fd);
+-int elf_find_dynamic_section(int fd, Elf_Ehdr *ehdr, Elf_Phdr *phdr);
++int elf_find_dynamic_section(int fd, absElf_Ehdr *ehdr, absElf_Phdr *phdr);
+ const char *elf_tagname(int tag);
+ int elf_dynpath_tag(int tag);
+ 

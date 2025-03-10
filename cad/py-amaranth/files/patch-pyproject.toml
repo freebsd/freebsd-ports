@@ -1,0 +1,11 @@
+--- pyproject.toml.orig	2024-10-05 02:47:34 UTC
++++ pyproject.toml
+@@ -44,7 +44,7 @@ amaranth-rpc = "amaranth.rpc:main"
+ # Build system configuration
+ 
+ [build-system]
+-requires = ["pdm-backend~=2.3.0"]
++requires = ["pdm-backend>=2.3.0"]
+ build-backend = "pdm.backend"
+ 
+ [tool.pdm]

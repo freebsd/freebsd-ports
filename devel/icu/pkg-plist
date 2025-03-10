@@ -65,6 +65,12 @@ include/unicode/locid.h
 include/unicode/measfmt.h
 include/unicode/measunit.h
 include/unicode/measure.h
+include/unicode/messageformat2.h
+include/unicode/messageformat2_arguments.h
+include/unicode/messageformat2_data_model.h
+include/unicode/messageformat2_data_model_names.h
+include/unicode/messageformat2_formattable.h
+include/unicode/messageformat2_function_registry.h
 include/unicode/messagepattern.h
 include/unicode/msgfmt.h
 include/unicode/normalizer2.h

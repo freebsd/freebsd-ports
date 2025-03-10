@@ -1,6 +1,6 @@
 PORTNAME=	caribou
 PORTVERSION=	0.4.21
-PORTREVISION=	7
+PORTREVISION=	9
 CATEGORIES=	accessibility gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
@@ -38,7 +38,7 @@ GLIB_SCHEMAS=	org.gnome.caribou.gschema.xml \
 
 .include <bsd.port.options.mk>
 
-.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400091 || ( ${OSVERSION} >= 1302507 && ${OSVERSION} < 1400000 ))
+.if ${OPSYS} == FreeBSD
 CFLAGS+=	-Wno-error=incompatible-function-pointer-types
 .endif
 

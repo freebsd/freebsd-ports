@@ -1,8 +1,9 @@
 PORTNAME=	phpvirtualbox
 DISTVERSION=	5.2-1
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	www
-PKGNAMESUFFIX=	-legacy
+SUFFIX=		-legacy
+PKGNAMESUFFIX=	${SUFFIX}${PHP_PKGNAMESUFFIX}
 
 MAINTAINER=	vbox@FreeBSD.org
 COMMENT=	AJAX Web Interface for VirtualBox
@@ -10,20 +11,17 @@ WWW=		https://sourceforge.net/projects/phpvirtualbox/
 
 LICENSE=	GPLv3
 
-USES=		dos2unix php
+USES=		dos2unix php:flavors
+DOS2UNIX_REGEX=	.*\.(php|txt|js|css|html)
+USE_GITHUB=	yes
 USE_PHP=	session simplexml soap xml
 
-NO_ARCH=	yes
-NO_BUILD=	yes
-
-USE_GITHUB=	yes
-
-DOS2UNIX_REGEX=	.*\.(php|txt|js|css|html)
-WWWDIR=		${PREFIX}/www/${PORTNAME}${PKGNAMESUFFIX}
 ETCDIR=		${WWWDIR}
-
+WWWDIR=		${PREFIX}/www/${PORTNAME}${SUFFIX}
 EXTRA_PATCHES+=	${.CURDIR}/../phpvirtualbox/files/patch-php8 \
 		${.CURDIR}/../phpvirtualbox/files/patch-panes_mediumEncryptionPasswords.html
+NO_ARCH=	yes
+NO_BUILD=	yes
 
 post-patch:
 	@${MV} ${WRKSRC}/phpvirtualbox.conf ${WRKSRC}/phpvirtualbox-legacy.conf

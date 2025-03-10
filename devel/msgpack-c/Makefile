@@ -1,5 +1,5 @@
 PORTNAME=	msgpack
-PORTVERSION=	6.0.2
+PORTVERSION=	6.1.0
 DISTVERSIONPREFIX=	c-
 CATEGORIES=	devel
 PKGNAMESUFFIX=	-c
@@ -11,7 +11,8 @@ WWW=		https://msgpack.org/
 LICENSE=	BSL
 LICENSE_FILE=	${WRKSRC}/LICENSE_1_0.txt
 
-TEST_DEPENDS=	googletest>0:devel/googletest
+TEST_DEPENDS=	googletest>0:devel/googletest \
+		libcjson>0:devel/libcjson
 
 USES=		cmake pathfix
 USE_LDCONFIG=	yes

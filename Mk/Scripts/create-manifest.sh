@@ -13,7 +13,7 @@ validate_env dp_ACTUAL_PACKAGE_DEPENDS dp_CATEGORIES dp_COMMENT \
 	dp_NO_ARCH dp_PKGBASE dp_PKGDEINSTALL dp_PKGINSTALL dp_PKGMESSAGES \
 	dp_PKGORIGIN dp_PKGPOSTDEINSTALL dp_PKGPOSTINSTALL dp_PKGPREDEINSTALL \
 	dp_PKGPREINSTALL dp_PKGVERSION dp_PKG_BIN dp_PKG_IGNORE_DEPENDS \
-	dp_PKG_NOTES dp_PORT_OPTIONS dp_PREFIX dp_USERS dp_WWW
+	dp_PKG_NOTES dp_PORT_OPTIONS dp_PREFIX dp_USERS dp_WWW dp_VITAL
 
 [ -n "${DEBUG_MK_SCRIPTS}" -o -n "${DEBUG_MK_SCRIPTS_CREATE_MANIFEST}" ] && set -x
 
@@ -58,6 +58,7 @@ EOT
 [ -z "${dp_GROUPS}" ] || echo "groups: [ ${dp_GROUPS} ]"
 [ -n "${dp_NO_ARCH}" ] && echo "arch : $(${dp_PKG_BIN} config abi | tr '[:upper:]' '[:lower:]' | cut -d: -f1,2):*"
 [ -n "${dp_NO_ARCH}" ] && echo "abi : $(${dp_PKG_BIN} config abi | cut -d: -f1,2):*"
+[ -n "${dp_VITAL}" ] && echo "vital : true"
 
 # Then the key/values sections
 echo "deps: { "

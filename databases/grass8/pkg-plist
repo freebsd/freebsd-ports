@@ -1,7 +1,6 @@
 bin/grass
 bin/grass%%MAJVER%%
 %%GRASS_INST_DIR%%/AUTHORS
-%%GRASS_INST_DIR%%/CHANGES
 %%GRASS_INST_DIR%%/CITING
 %%GRASS_INST_DIR%%/COPYING
 %%GRASS_INST_DIR%%/GPL.TXT
@@ -597,6 +596,7 @@ bin/grass%%MAJVER%%
 %%GRASS_INST_DIR%%/docs/html/g.copy.html
 %%GRASS_INST_DIR%%/docs/html/g.dirseps.html
 %%GRASS_INST_DIR%%/docs/html/g.download.location.html
+%%GRASS_INST_DIR%%/docs/html/g.download.project.html
 %%GRASS_INST_DIR%%/docs/html/g.extension.all.html
 %%GRASS_INST_DIR%%/docs/html/g.extension.html
 %%GRASS_INST_DIR%%/docs/html/g.filename.html
@@ -1768,6 +1768,7 @@ bin/grass%%MAJVER%%
 %%GRASS_INST_DIR%%/docs/html/vrandom_restricted_area.png
 %%GRASS_INST_DIR%%/docs/html/vrandom_restricted_attr.png
 %%GRASS_INST_DIR%%/docs/html/vrandom_z.png
+%%GRASS_INST_DIR%%/docs/html/wxguiintro.html
 %%GRASS_INST_DIR%%/docs/html/wxGUI.animation.html
 %%GRASS_INST_DIR%%/docs/html/wxGUI.components.html
 %%GRASS_INST_DIR%%/docs/html/wxGUI.datacatalog.html
@@ -1897,6 +1898,7 @@ bin/grass%%MAJVER%%
 %%GRASS_INST_DIR%%/docs/man/man1/g.copy.1.gz
 %%GRASS_INST_DIR%%/docs/man/man1/g.dirseps.1.gz
 %%GRASS_INST_DIR%%/docs/man/man1/g.download.location.1.gz
+%%GRASS_INST_DIR%%/docs/man/man1/g.download.project.1.gz
 %%GRASS_INST_DIR%%/docs/man/man1/g.extension.1.gz
 %%GRASS_INST_DIR%%/docs/man/man1/g.extension.all.1.gz
 %%GRASS_INST_DIR%%/docs/man/man1/g.filename.1.gz
@@ -2512,6 +2514,7 @@ bin/grass%%MAJVER%%
 %%GRASS_INST_DIR%%/docs/man/man1/vector_graphical.1.gz
 %%GRASS_INST_DIR%%/docs/man/man1/vectorascii.1.gz
 %%GRASS_INST_DIR%%/docs/man/man1/vectorintro.1.gz
+%%GRASS_INST_DIR%%/docs/man/man1/wxguiintro.1.gz
 %%GRASS_INST_DIR%%/docs/man/man1/wxGUI.1.gz
 %%GRASS_INST_DIR%%/docs/man/man1/wxGUI.animation.1.gz
 %%GRASS_INST_DIR%%/docs/man/man1/wxGUI.components.1.gz
@@ -4296,6 +4299,7 @@ bin/grass%%MAJVER%%
 %%GRASS_INST_DIR%%/scripts/db.test
 %%GRASS_INST_DIR%%/scripts/db.univar
 %%GRASS_INST_DIR%%/scripts/g.download.location
+%%GRASS_INST_DIR%%/scripts/g.download.project
 %%GRASS_INST_DIR%%/scripts/g.extension
 %%GRASS_INST_DIR%%/scripts/g.extension.all
 %%GRASS_INST_DIR%%/scripts/g.gui.animation

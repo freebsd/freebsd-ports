@@ -1,9 +1,9 @@
 Use pkgconf to set hints for MariaDB, as well.
 
---- cmake/FindMySQL.cmake.orig	2024-05-08 09:42:08 UTC
+--- cmake/FindMySQL.cmake.orig	2024-11-14 11:02:40 UTC
 +++ cmake/FindMySQL.cmake
-@@ -43,7 +43,7 @@ if(PkgConfig_FOUND AND NOT DEFINED MySQL_ROOT)
-     find_package(PkgConfig QUIET)
+@@ -47,7 +47,7 @@ if(PkgConfig_FOUND AND NOT DEFINED MySQL_ROOT)
+     endif()
  endif()
  if(PkgConfig_FOUND AND NOT DEFINED MySQL_ROOT)
 -    pkg_check_modules(PC_MySQL QUIET "mysqlclient")

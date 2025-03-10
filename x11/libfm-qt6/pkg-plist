@@ -97,8 +97,8 @@ include/libfm-qt6/utilities.h
 include/libfm-qt6/utilities_p.h
 include/libfm-qt6/xdndworkaround.h
 lib/libfm-qt6.so
-lib/libfm-qt6.so.14
-lib/libfm-qt6.so.14.0.0
+lib/libfm-qt6.so.15
+lib/libfm-qt6.so.15.0.0
 libdata/pkgconfig/libfm-qt6.pc
 share/cmake/fm-qt6/fm-qt6-config-version.cmake
 share/cmake/fm-qt6/fm-qt6-config.cmake
@@ -122,12 +122,14 @@ share/cmake/fm-qt6/fm-qt6-targets.cmake
 %%DATADIR%%/translations/libfm-qt_eu.qm
 %%DATADIR%%/translations/libfm-qt_fi.qm
 %%DATADIR%%/translations/libfm-qt_fr.qm
+%%DATADIR%%/translations/libfm-qt_fur.qm
 %%DATADIR%%/translations/libfm-qt_gl.qm
 %%DATADIR%%/translations/libfm-qt_he.qm
 %%DATADIR%%/translations/libfm-qt_hi.qm
 %%DATADIR%%/translations/libfm-qt_hr.qm
 %%DATADIR%%/translations/libfm-qt_hu.qm
 %%DATADIR%%/translations/libfm-qt_id.qm
+%%DATADIR%%/translations/libfm-qt_ie.qm
 %%DATADIR%%/translations/libfm-qt_it.qm
 %%DATADIR%%/translations/libfm-qt_ja.qm
 %%DATADIR%%/translations/libfm-qt_kk.qm

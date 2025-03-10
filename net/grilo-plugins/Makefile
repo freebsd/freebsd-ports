@@ -1,5 +1,5 @@
 PORTNAME=	grilo-plugins
-PORTVERSION=	0.3.15
+PORTVERSION=	0.3.16
 PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	GNOME
@@ -19,10 +19,11 @@ LIB_DEPENDS=	libgrilo-0.3.so:net/grilo \
 		libgoa-1.0.so:net/gnome-online-accounts \
 		libgom-1.0.so:databases/gom \
 		libtotem-plparser.so:multimedia/totem-pl-parser \
-		libsoup-2.4.so:devel/libsoup \
+		libsoup-3.0.so:devel/libsoup3 \
 		libmediaart-2.0.so:multimedia/libmediaart \
 		libgmime-2.6.so:mail/gmime26 \
-		libjson-glib-1.0.so:devel/json-glib
+		libjson-glib-1.0.so:devel/json-glib \
+		libtinysparql-3.0.so:devel/tinysparql
 
 USES=		gettext gperf gnome gstreamer libarchive meson pathfix pkgconfig sqlite tar:xz
 USE_LDCONFIG=	yes
@@ -31,24 +32,10 @@ USE_GSTREAMER=	chromaprint
 MESON_ARGS=	-Denable-lua-factory=no
 
 OPTIONS_SUB=			yes
-OPTIONS_DEFINE=			TRACKER DMAP
-OPTIONS_DEFAULT=		TRACKER
-
-TRACKER_DESC=			Tracker support for grilo (used by gnome-music and possibly others)
-TRACKER_MESON_YES=		enable-tracker
-TRACKER_MESON_NO=		enable-tracker3
-TRACKER_LIB_DEPENDS=		libtracker-sparql-2.0.so:sysutils/tracker
+OPTIONS_DEFINE=			DMAP
 
 DMAP_DESC=			DMAP (DAAP, DPAP & DACP) support with libdmapsharing
 DMAP_MESON_YES=			enable-dmap
-DMAP_LIB_DEPENDS=		libdmapsharing-3.0.so:net/libdmapsharing
+DMAP_LIB_DEPENDS=		libdmapsharing-4.0.so:net/libdmapsharing
 
-.include <bsd.port.pre.mk>
-
-.if ${PORT_OPTIONS:MTRACKER}
-PLIST_SUB+= TRACKER="@comment "
-.else
-PLIST_SUB+= TRACKER=""
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

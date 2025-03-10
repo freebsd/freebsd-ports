@@ -3,6 +3,7 @@ include/dpp/application.h
 include/dpp/auditlog.h
 include/dpp/automod.h
 include/dpp/ban.h
+include/dpp/bignum.h
 include/dpp/cache.h
 include/dpp/channel.h
 include/dpp/cluster.h
@@ -13,6 +14,7 @@ include/dpp/colors.h
 include/dpp/commandhandler.h
 include/dpp/coro.h
 include/dpp/coro/async.h
+include/dpp/coro/awaitable.h
 include/dpp/coro/coro.h
 include/dpp/coro/coroutine.h
 include/dpp/coro/job.h
@@ -41,6 +43,7 @@ include/dpp/isa/avx.h
 include/dpp/isa/avx2.h
 include/dpp/isa/avx512.h
 include/dpp/isa/fallback.h
+include/dpp/isa/neon.h
 include/dpp/isa_detection.h
 include/dpp/json.h
 include/dpp/json_fwd.h
@@ -82,5 +85,5 @@ lib/cmake/dpp/dpp-config.cmake
 lib/cmake/dpp/dpp-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/dpp/dpp.cmake
 lib/libdpp.so
-lib/libdpp.so.10.0.29
+lib/libdpp.so.10.0.35
 libdata/pkgconfig/dpp.pc

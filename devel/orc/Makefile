@@ -1,5 +1,5 @@
 PORTNAME=	orc
-DISTVERSION=	0.4.36
+DISTVERSION=	0.4.40
 CATEGORIES=	devel
 MASTER_SITES=	http://gstreamer.freedesktop.org/data/src/${PORTNAME}/
 

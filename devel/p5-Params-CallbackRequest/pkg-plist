@@ -1,6 +1,6 @@
-%%PERL5_MAN3%%/Params::Callback.3.gz
-%%PERL5_MAN3%%/Params::CallbackRequest.3.gz
-%%PERL5_MAN3%%/Params::CallbackRequest::Exceptions.3.gz
 %%SITE_PERL%%/Params/Callback.pm
 %%SITE_PERL%%/Params/CallbackRequest.pm
 %%SITE_PERL%%/Params/CallbackRequest/Exceptions.pm
+%%PERL5_MAN3%%/Params::Callback.3.gz
+%%PERL5_MAN3%%/Params::CallbackRequest.3.gz
+%%PERL5_MAN3%%/Params::CallbackRequest::Exceptions.3.gz

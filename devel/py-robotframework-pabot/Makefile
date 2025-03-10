@@ -1,9 +1,9 @@
 PORTNAME=	robotframework-pabot
-PORTVERSION=	2.18.0
-PORTREVISION=	1
+PORTVERSION=	4.1.1
 CATEGORIES=	devel www python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	robotframework_pabot-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Parallel test runner for Robot Framework

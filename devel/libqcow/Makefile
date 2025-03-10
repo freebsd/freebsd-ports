@@ -1,5 +1,5 @@
 PORTNAME=	libqcow
-DISTVERSION=	alpha-20231125
+DISTVERSION=	alpha-20240308
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/libyal/libqcow/releases/download/${PORTVERSION:E}/ \
 		LOCAL/antoine

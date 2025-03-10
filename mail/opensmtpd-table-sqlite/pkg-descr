@@ -1,0 +1,2 @@
+The SQLite table addon for OpenSMTPD allows the storing of usernames,
+passwords, aliases, and domains in a sqlite3 table.

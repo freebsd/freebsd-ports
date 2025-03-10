@@ -1,6 +1,0 @@
-#!/bin/sh
-#
-cd ${PREFIX}/libexec/frodo
-exec ${PREFIX}/libexec/frodo/Frodo
-#
-# eof

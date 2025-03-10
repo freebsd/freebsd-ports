@@ -1,9 +1,10 @@
 PORTNAME=	blueprint-compiler
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.12.0
+DISTVERSION=	0.14.0
+PORTREVISION=	1
 CATEGORIES=	devel
 
-MAINTAINER=	jbeich@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Markup language for GTK user interfaces
 WWW=		https://gitlab.gnome.org/jwestman/blueprint-compiler
 

@@ -9,6 +9,9 @@ MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Provide callbacks to method and function parameters
 WWW=		https://metacpan.org/release/Params-CallbackRequest
 
+LICENSE=	ART10 GPLv1+
+LICENSE_COMB=	dual
+
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Params-Validate>=0:devel/p5-Params-Validate \
 		p5-Exception-Class>=0:devel/p5-Exception-Class \
@@ -16,5 +19,7 @@ RUN_DEPENDS=	p5-Params-Validate>=0:devel/p5-Params-Validate \
 
 USES=		perl5
 USE_PERL5=	modbuild
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>

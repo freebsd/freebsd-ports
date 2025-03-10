@@ -12,10 +12,10 @@ WWW=		https://www.antlr.org/
 
 LICENSE=	BSD3CLAUSE
 
+USES=		java
+
 NO_BUILD=	yes
 NO_ARCH=	yes
-USE_JAVA=	yes
-JAVA_VERSION=	8+
 INSTALL_JAR=	${DISTFILES}
 SUB_LIST=	INSTALL_JAR=${INSTALL_JAR}
 SUB_FILES=	antlr.sh

@@ -1,0 +1,15 @@
+Parthenon is a performance portable block-structured adaptive mesh refinement
+framework.
+
+Key Features:
+* Device first/device resident approach (work data only in device memory to
+  prevent expensive transfers between host and device)
+* Transparent packing of data across blocks (to reduce/hide kernel launch
+  latency)
+* Direct device-to-device communication via asynchronous MPI communication
+* Intermediate abstraction layer to hide complexity of device kernel launches
+* Flexible, plug-in package system
+* Abstract variables controlled via metadata flags
+* Support for particles
+* Support for cell-, node-, face-, and edge-centered fields
+* Multi-stage drivers/integrators with support for task-based parallelism

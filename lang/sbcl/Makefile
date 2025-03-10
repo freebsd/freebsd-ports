@@ -3,7 +3,7 @@
 # pinned to exact versions of everything used to build them.
 
 PORTNAME=	sbcl
-DISTVERSION=	2.4.7
+DISTVERSION=	2.5.2
 DISTVERSIONSUFFIX=	-source
 PORTEPOCH=	1
 CATEGORIES=	lang lisp
@@ -13,7 +13,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	krion@FreeBSD.org
 COMMENT=	Common Lisp development system derived from the CMU CL system
-WWW=		http://sbcl.sourceforge.net/
+WWW=		https://sbcl.sourceforge.io/
 
 LICENSE=	BSD2CLAUSE PD
 LICENSE_COMB=	dual
@@ -23,11 +23,11 @@ ONLY_FOR_ARCHS=	amd64 i386
 
 LIB_DEPENDS=	libgmp.so:math/gmp \
 		libmpfr.so:math/mpfr
-RUN_DEPENDS=	cl-asdf>=0:devel/cl-asdf
+RUN_DEPENDS=	cl-freebsd-asdf-init>=0:devel/cl-freebsd-asdf-init
 
 USES=		gmake makeinfo tar:bzip2
 
-SUB_FILES=	pkg-message sbclrc
+SUB_FILES=	sbclrc
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 

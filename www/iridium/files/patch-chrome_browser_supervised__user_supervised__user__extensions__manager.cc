@@ -1,6 +1,6 @@
---- chrome/browser/supervised_user/supervised_user_extensions_manager.cc.orig	2024-08-01 05:47:53 UTC
+--- chrome/browser/supervised_user/supervised_user_extensions_manager.cc.orig	2025-02-22 18:06:53 UTC
 +++ chrome/browser/supervised_user/supervised_user_extensions_manager.cc
-@@ -359,7 +359,7 @@ void SupervisedUserExtensionsManager::
+@@ -353,7 +353,7 @@ void SupervisedUserExtensionsManager::
      ActivateManagementPolicyAndUpdateRegistration() {
    SetActiveForSupervisedUsers();
    UpdateManagementPolicyRegistration();
@@ -9,7 +9,7 @@
    MaybeMarkExtensionsLocallyParentApproved();
  #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
  }
-@@ -476,7 +476,7 @@ bool SupervisedUserExtensionsManager::ShouldBlockExten
+@@ -471,7 +471,7 @@ bool SupervisedUserExtensionsManager::ShouldBlockExten
    return false;
  }
  

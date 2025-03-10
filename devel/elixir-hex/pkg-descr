@@ -1,4 +1,0 @@
-Hex is package manager for the Erlang VM.
-
-This project currently provides tasks that integrate with Mix, Elixir's
-build tool.

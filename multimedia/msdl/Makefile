@@ -12,6 +12,9 @@ WWW=		https://msdl.sourceforge.net/
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Obsolete utility for obsolete protocols
+EXPIRATION_DATE=	2025-03-31
+
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 PLIST_FILES=	bin/msdl \

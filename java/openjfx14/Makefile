@@ -1,6 +1,6 @@
 PORTNAME=	openjfx
 DISTVERSION=	14.0.2.1+1
-PORTREVISION=	15
+PORTREVISION=	16
 CATEGORIES=	java x11-toolkits devel
 MASTER_SITES=	https://repo.maven.apache.org/maven2/org/apache/lucene/lucene-core/7.7.1/:core \
 		https://repo.maven.apache.org/maven2/org/apache/lucene/lucene-grouping/7.7.1/:grouping \
@@ -33,7 +33,7 @@ LIB_DEPENDS=	libasound.so:audio/alsa-lib \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2
 
-USES=		gettext-runtime gl gnome jpeg localbase:ldflags ninja pkgconfig \
+USES=		gettext-runtime gl gnome java jpeg localbase:ldflags ninja pkgconfig \
 		sqlite xorg
 
 USE_GITHUB=	yes
@@ -41,7 +41,6 @@ GH_ACCOUNT=	openjdk
 GH_PROJECT=	jfx
 USE_GL=		gl
 USE_GNOME=	atk cairo gdkpixbuf2 glib20 gtk20 gtk30 pango
-USE_JAVA=	yes
 JAVA_VERSION=	11
 USE_LDCONFIG=	yes
 USE_XORG=	x11 xtst xxf86vm
@@ -90,7 +89,7 @@ _INSTALLDIR=	${PREFIX}/${PKGBASE}
 
 .include <bsd.port.options.mk>
 
-.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400091 || ( ${OSVERSION} >= 1302507 && ${OSVERSION} < 1400000 ))
+.if ${OPSYS} == FreeBSD
 CFLAGS+=	-Wno-error=incompatible-function-pointer-types
 .endif
 

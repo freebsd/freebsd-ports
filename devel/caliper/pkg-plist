@@ -49,7 +49,6 @@ include/caliper/reader/QueryProcessor.h
 include/caliper/reader/QuerySpec.h
 include/caliper/reader/RecordProcessor.h
 include/caliper/reader/RecordSelector.h
-include/caliper/tools-util/Args.h
 include/caliper/typesCaliper.h
 include/caliper/wrapAnnotation.h
 include/caliper/wrapBufferedRegionProfile.h
@@ -62,12 +61,9 @@ lib/caliper/caliperreader/caliperstreamreader.py
 lib/caliper/caliperreader/metadatadb.py
 lib/caliper/caliperreader/readererror.py
 lib/caliper/caliperreader/version.py
-lib/libcaliper-tools-util.so
-lib/libcaliper-tools-util.so.2
-lib/libcaliper-tools-util.so.2.11.0
 lib/libcaliper.so
 lib/libcaliper.so.2
-lib/libcaliper.so.2.11.0
+lib/libcaliper.so.2.12.0
 libdata/pkgconfig/caliper.pc
 share/cmake/caliper/caliper-config-version.cmake
 share/cmake/caliper/caliper-config.cmake

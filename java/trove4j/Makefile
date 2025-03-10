@@ -11,7 +11,8 @@ WWW=		https://bitbucket.org/robeden/trove/
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-USE_JAVA=	yes
+USES=		java
+
 NO_BUILD=	yes
 
 PORTDOCS=	javadocs AUTHORS.txt CHANGES.txt LICENSE.txt README-idea-devel.txt \

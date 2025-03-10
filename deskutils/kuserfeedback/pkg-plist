@@ -1,5 +1,5 @@
-bin/UserFeedbackConsole
-bin/userfeedbackctl
+@comment bin/UserFeedbackConsole
+@comment bin/userfeedbackctl
 include/KUserFeedback/AbstractDataSource
 include/KUserFeedback/ApplicationVersionSource
 include/KUserFeedback/CompilerInfoSource
@@ -57,9 +57,9 @@ lib/libKUserFeedbackWidgets.so.1.3.0
 %%QT_MKSPECDIR%%/modules/qt_KUserFeedbackWidgets.pri
 %%QT_QMLDIR%%/org/kde/userfeedback/libKUserFeedbackQml.so
 %%QT_QMLDIR%%/org/kde/userfeedback/qmldir
-share/KDE/UserFeedbackConsole/user-feedback-manual.qch
-share/KDE/UserFeedbackConsole/user-feedback.qhc
-share/applications/org.kde.kuserfeedback-console.desktop
+@comment share/KDE/UserFeedbackConsole/user-feedback-manual.qch
+@comment share/KDE/UserFeedbackConsole/user-feedback.qhc
+@comment share/applications/org.kde.kuserfeedback-console.desktop
 share/locale/ar/LC_MESSAGES/userfeedbackconsole5_qt.qm
 share/locale/ar/LC_MESSAGES/userfeedbackprovider5_qt.qm
 share/locale/az/LC_MESSAGES/userfeedbackconsole5_qt.qm
@@ -128,5 +128,5 @@ share/locale/zh_CN/LC_MESSAGES/userfeedbackconsole5_qt.qm
 share/locale/zh_CN/LC_MESSAGES/userfeedbackprovider5_qt.qm
 share/locale/zh_TW/LC_MESSAGES/userfeedbackconsole5_qt.qm
 share/locale/zh_TW/LC_MESSAGES/userfeedbackprovider5_qt.qm
-share/metainfo/org.kde.kuserfeedback-console.appdata.xml
+@comment share/metainfo/org.kde.kuserfeedback-console.appdata.xml
 share/qlogging-categories5/org_kde_UserFeedback.categories

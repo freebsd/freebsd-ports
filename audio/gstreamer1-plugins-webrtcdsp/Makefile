@@ -3,15 +3,15 @@ CATEGORIES=	audio
 
 COMMENT=	GStreamer WebRTC Audio Processing plugin
 
-GST_PLUGIN=	webrtcdsp
-DIST=		bad
+LIB_DEPENDS=	libwebrtc-audio-processing-1.so:audio/webrtc-audio-processing
 
 USES+=		compiler:c++11-lang
 
-MASTERDIR=	${.CURDIR}/../../multimedia/gstreamer1-plugins
+MASTERDIR=	${.CURDIR:H:H}/multimedia/gstreamer1-plugins
 
-PLIST=  ${.CURDIR}/pkg-plist
+PLIST=		${.CURDIR}/pkg-plist
 
-LIB_DEPENDS=  libwebrtc_audio_processing.so:audio/webrtc-audio-processing0
+DIST=		bad
+GST_PLUGIN=	webrtcdsp
 
 .include "${MASTERDIR}/Makefile"

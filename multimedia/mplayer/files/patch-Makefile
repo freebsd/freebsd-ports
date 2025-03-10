@@ -1,15 +1,15 @@
---- Makefile.orig	2021-05-01 17:45:31 UTC
+--- Makefile.orig	2024-04-28 19:35:10 UTC
 +++ Makefile
-@@ -753,7 +753,7 @@ mencoder$(EXESUF) mplayer$(EXESUF):
+@@ -752,7 +752,7 @@ codec-cfg$(EXESUF) codec-cfg-test$(EXESUF) codecs2html
  codec-cfg-test$(EXESUF): HOSTCFLAGS := $(HOSTCFLAGS) -DTESTING
  codec-cfg$(EXESUF) codecs2html$(EXESUF):  HOSTCFLAGS := $(HOSTCFLAGS) -DCODECS2HTML
  codec-cfg$(EXESUF) codec-cfg-test$(EXESUF) codecs2html$(EXESUF): codec-cfg.c codec-cfg.h help_mp.h
 -	$(HOST_CC) $(HOSTCFLAGS) -o $@ $<
-+	$(HOST_CC) $(HOSTCFLAGS) -I%%LOCALBASE%%/ffmpeg4/include -o $@ $<
++	$(HOST_CC) $(HOSTCFLAGS) -I%%LOCALBASE%%/include -o $@ $<
  
  codecs.conf.h: codec-cfg$(EXESUF) etc/codecs.conf
  	./$^ > $@
-@@ -867,19 +867,16 @@ install: $(INSTALL_TARGETS-yes)
+@@ -866,19 +866,16 @@ install-dirs:
  install-dirs:
  	$(INSTALL) -d $(BINDIR) $(CONFDIR) $(LIBDIR)
  
@@ -33,7 +33,7 @@
  
  install-gui-man-en: install-mplayer-man-en
  	cd $(MANDIR)/man1/ && ln -sf mplayer.1 gmplayer.1
-@@ -888,8 +885,7 @@ install-mencoder-man-en: install-mplayer-man-en
+@@ -887,8 +884,7 @@ install-mplayer-man-en:
  	cd $(MANDIR)/man1 && ln -sf mplayer.1 mencoder.1
  
  install-mplayer-man-en:

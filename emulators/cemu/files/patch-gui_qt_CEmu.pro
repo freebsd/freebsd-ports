@@ -1,15 +1,15 @@
---- gui/qt/CEmu.pro.orig	2019-06-22 09:20:44 UTC
+--- gui/qt/CEmu.pro.orig	2024-09-05 20:35:24 UTC
 +++ gui/qt/CEmu.pro
-@@ -6,7 +6,7 @@ lessThan(QT_MINOR_VERSION, 5) : error("You need at lea
+@@ -9,7 +9,7 @@ if (lessThan(QT_MAJOR_VERSION, 6)) {
  
  # CEmu version and info
  CEMU_RELEASE = true
 -CEMU_GIT_SHA = $$system(git describe --abbrev=7 --always)
-+CEMU_GIT_SHA = 87c3b43 # XXX: don't forget to change for the next version!
++CEMU_GIT_SHA = a0a9d35 # XXX: don't forget to change for the next version!
  isEmpty(CEMU_VERSION) {
-     CEMU_VERSION = v1.3dev
+     CEMU_VERSION = v2.0dev
      CEMU_RELEASE = false
-@@ -23,7 +23,7 @@ CI = $$(CI)
+@@ -31,7 +31,7 @@ CI = $$(CI)
  DISTFILES += ../../.astylerc
  
  # Linux desktop files
@@ -18,13 +18,12 @@
      isEmpty(PREFIX) {
          PREFIX = /usr
      }
-@@ -77,12 +77,13 @@ if (!win32-msvc*) {
-     isEmpty(CI) {
-         # Only enable opts for non-CI release builds
-         # -flto might cause an internal compiler error on GCC in some circumstances (with -g3?)... Comment it if needed.
--        CONFIG(release, debug|release): GLOBAL_FLAGS += -O3 -flto
-+        #CONFIG(release, debug|release): GLOBAL_FLAGS += -O3 -flto
-     }
+@@ -93,11 +93,12 @@ if (!win32-msvc*) {
+     QMAKE_CFLAGS    += -std=gnu11 -Werror=implicit-function-declaration -Werror=missing-prototypes
+ 
+     # -flto might cause an internal compiler error on GCC in some circumstances (with -g3?)... Comment it if needed.
+-    CONFIG(release, debug|release): GLOBAL_FLAGS += -O3 -flto
++    #CONFIG(release, debug|release): GLOBAL_FLAGS += -O3 -flto
  
      if (contains(DEFINES, LIB_ARCHIVE_SUPPORT)) {
          CONFIG += link_pkgconfig
@@ -34,7 +33,7 @@
      }
      # You should run ./capture/get_libpng-apng.sh first!
      isEmpty(USE_LIBPNG) {
-@@ -157,7 +158,7 @@ if (!win32-msvc*) {
+@@ -172,7 +173,7 @@ if (!win32-msvc*) {
      }
  }
  
@@ -43,7 +42,7 @@
      # Be more secure by default...
      GLOBAL_FLAGS    += -fPIE -Wstack-protector -fstack-protector-strong --param=ssp-buffer-size=1
      # Use ASAN on debug builds. Watch out about ODR crashes when built with -flto. detect_odr_violation=0 as an env var may help.
-@@ -165,7 +166,7 @@ if (macx|linux) {
+@@ -180,7 +181,7 @@ if (macx|linux) {
  }
  
  macx:  QMAKE_LFLAGS += -Wl,-dead_strip
@@ -52,9 +51,9 @@
  
  QMAKE_CFLAGS    += $$GLOBAL_FLAGS
  QMAKE_CXXFLAGS  += $$GLOBAL_FLAGS
-@@ -256,7 +257,7 @@ SOURCES += \
-     keyhistorywidget.cpp \
-     tablewidget.cpp
+@@ -279,7 +280,7 @@ SOURCES += \
+     tablewidget.cpp \
+     basicdebugger.cpp
  
 -linux|macx: SOURCES += ../../core/os/os-linux.c
 +unix|macx: SOURCES += ../../core/os/os-linux.c

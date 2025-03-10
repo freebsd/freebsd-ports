@@ -19,8 +19,7 @@ BUILD_DEPENDS=	openjfx14>0:java/openjfx14 \
 		gradle:devel/gradle6
 RUN_DEPENDS=	openjfx14>0:java/openjfx14
 
-USES=		gettext-runtime
-USE_JAVA=	yes
+USES=		gettext-runtime java
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	igvteam

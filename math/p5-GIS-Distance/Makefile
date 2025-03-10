@@ -20,7 +20,7 @@ RUN_DEPENDS=	p5-Class-Measure>=0:devel/p5-Class-Measure \
 		p5-GIS-Distance-Fast>=0.13:math/p5-GIS-Distance-Fast \
 		p5-namespace-clean>=0.24:devel/p5-namespace-clean \
 		p5-strictures>=2.000000:devel/p5-strictures
-TEST_DEPENDS=	p5-Test2-Suite>=0.000094:devel/p5-Test2-Suite
+TEST_DEPENDS=	p5-Test-Simple>=1.302200:devel/p5-Test-Simple
 
 USES=		perl5
 USE_PERL5=	modbuildtiny

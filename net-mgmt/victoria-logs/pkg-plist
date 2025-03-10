@@ -1,4 +1,5 @@
 bin/victoria-logs
+bin/vlogscli
 %%PORTDOCS%%%%DOCSDIR%%/CHANGELOG.md
 %%PORTDOCS%%%%DOCSDIR%%/FAQ.md
 %%PORTDOCS%%%%DOCSDIR%%/LogsQL.md
@@ -14,7 +15,20 @@ bin/victoria-logs
 %%PORTDOCS%%%%DOCSDIR%%/data-ingestion/syslog.md
 %%PORTDOCS%%%%DOCSDIR%%/keyConcepts.md
 %%PORTDOCS%%%%DOCSDIR%%/logsql-examples.md
-%%PORTDOCS%%%%DOCSDIR%%/provision_datasources.png
 %%PORTDOCS%%%%DOCSDIR%%/querying/README.md
 %%PORTDOCS%%%%DOCSDIR%%/victorialogs-datasource.md
+%%PORTDOCS%%%%DOCSDIR%%/_index.md
+%%PORTDOCS%%%%DOCSDIR%%/data-ingestion/Telegraf.md
+%%PORTDOCS%%%%DOCSDIR%%/data-ingestion/_index.md
+%%PORTDOCS%%%%DOCSDIR%%/data-ingestion/opentelemetry.md
+%%PORTDOCS%%%%DOCSDIR%%/provision_datasources.webp
+%%PORTDOCS%%%%DOCSDIR%%/querying/_index.md
+%%PORTDOCS%%%%DOCSDIR%%/data-ingestion/Fluentd.md
+%%PORTDOCS%%%%DOCSDIR%%/ha-victorialogs-single-node.webp
+%%PORTDOCS%%%%DOCSDIR%%/querying/vlogscli.md
+%%PORTDOCS%%%%DOCSDIR%%/data-ingestion/DataDogAgent.md
+%%PORTDOCS%%%%DOCSDIR%%/data-ingestion/Journald.md
+%%PORTDOCS%%%%DOCSDIR%%/vmalert.md
+%%PORTDOCS%%%%DOCSDIR%%/vmalert_victorialogs.excalidraw
+%%PORTDOCS%%%%DOCSDIR%%/vmalert_victorialogs.webp
 @dir(%%VICTORIA_USER%%,%%VICTORIA_GROUP%%,750) %%VICTORIA_DATA%%

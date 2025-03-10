@@ -2,7 +2,6 @@
 
     SUBDIR += acme-dns
     SUBDIR += adns
-    SUBDIR += adsuck
     SUBDIR += amass
     SUBDIR += axfr2acl
     SUBDIR += bind-tools
@@ -47,6 +46,7 @@
     SUBDIR += dnstable-convert
     SUBDIR += dnstop
     SUBDIR += dnstracer
+    SUBDIR += dnstracer-rs
     SUBDIR += dnsutl
     SUBDIR += dnsviz
     SUBDIR += dnswalk
@@ -59,7 +59,6 @@
     SUBDIR += dq
     SUBDIR += drool
     SUBDIR += dsc
-    SUBDIR += dsp
     SUBDIR += dynip
     SUBDIR += encrypted-dns-server
     SUBDIR += fastresolve
@@ -84,7 +83,6 @@
     SUBDIR += knock
     SUBDIR += knot-resolver
     SUBDIR += knot3
-    SUBDIR += knot3-lib
     SUBDIR += ldapdns
     SUBDIR += ldns
     SUBDIR += letsdns
@@ -126,7 +124,6 @@
     SUBDIR += p5-DNS-Zone
     SUBDIR += p5-DNS-ZoneParse
     SUBDIR += p5-DNS-nsdiff
-    SUBDIR += p5-DSC
     SUBDIR += p5-Data-Validate-Domain
     SUBDIR += p5-IO-Async-Resolver-DNS
     SUBDIR += p5-Mozilla-PublicSuffix
@@ -165,6 +162,9 @@
     SUBDIR += p5-POE-Filter-DNS-TCP
     SUBDIR += p5-Tie-DNS
     SUBDIR += p5-URBL-Prepare
+    SUBDIR += p5-Zonemaster-Backend
+    SUBDIR += p5-Zonemaster-CLI
+    SUBDIR += p5-Zonemaster-Engine
     SUBDIR += p5-Zonemaster-LDNS
     SUBDIR += packetq
     SUBDIR += pdnsd
@@ -185,7 +185,6 @@
     SUBDIR += py-dnspython1
     SUBDIR += py-easyzone
     SUBDIR += py-idna
-    SUBDIR += py-idna_ssl
     SUBDIR += py-ldns
     SUBDIR += py-libknot
     SUBDIR += py-localzone
@@ -212,6 +211,7 @@
     SUBDIR += rubygem-dnsruby
     SUBDIR += rubygem-gitlab-net-dns
     SUBDIR += rubygem-google-apis-dns_v1
+    SUBDIR += rubygem-google-apis-dns_v1-gitlab
     SUBDIR += rubygem-google-cloud-dns
     SUBDIR += rubygem-idn-ruby
     SUBDIR += rubygem-net-dns
@@ -220,6 +220,7 @@
     SUBDIR += rubygem-resolv
     SUBDIR += rubygem-resolv-replace
     SUBDIR += rubygem-simpleidn
+    SUBDIR += rubygem-simpleidn02
     SUBDIR += rubygem-validates_hostname
     SUBDIR += rubygem-zonefile
     SUBDIR += samba-nsupdate
@@ -241,6 +242,7 @@
     SUBDIR += yandex-ddns
     SUBDIR += zdns
     SUBDIR += zkt
+    SUBDIR += zns
     SUBDIR += zonenotify
 
 .include <bsd.port.subdir.mk>

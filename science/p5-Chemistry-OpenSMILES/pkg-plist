@@ -1,0 +1,8 @@
+%%SITE_PERL%%/Chemistry/OpenSMILES.pm
+%%SITE_PERL%%/Chemistry/OpenSMILES/Aromaticity.pm
+%%SITE_PERL%%/Chemistry/OpenSMILES/Parser.pm
+%%SITE_PERL%%/Chemistry/OpenSMILES/Stereo.pm
+%%SITE_PERL%%/Chemistry/OpenSMILES/Stereo/Tables.pm
+%%SITE_PERL%%/Chemistry/OpenSMILES/Writer.pm
+%%PERL5_MAN3%%/Chemistry::OpenSMILES.3.gz
+%%PERL5_MAN3%%/Chemistry::OpenSMILES::Aromaticity.3.gz

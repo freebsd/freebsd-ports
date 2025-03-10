@@ -8,13 +8,15 @@ MAINTAINER=	rodrigo@FreeBSD.org
 COMMENT=	Shared memory allocation library for pre-forked process models
 WWW=		http://www.ossp.org/pkg/lib/mm/
 
-LICENSE=	BSD4CLAUSE
+LICENSE=	UNKNOWN
+LICENSE_NAME=	unknown
 LICENSE_FILE=	${WRKSRC}/LICENSE
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-USES=		libtool
-USE_LDCONFIG=	yes
-GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
+USES=				libtool
+USE_LDCONFIG=			yes
+GNU_CONFIGURE=			yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
 post-build:
 	@${ECHO_MSG} "===>  Use 'make test' to run a quick test suite."

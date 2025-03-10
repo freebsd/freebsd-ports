@@ -13,12 +13,14 @@ include/gstreamer-%%VERSION%%/ges/ges-clip-asset.h
 include/gstreamer-%%VERSION%%/ges/ges-clip.h
 include/gstreamer-%%VERSION%%/ges/ges-command-line-formatter.h
 include/gstreamer-%%VERSION%%/ges/ges-container.h
+include/gstreamer-%%VERSION%%/ges/ges-discoverer-manager.h
 include/gstreamer-%%VERSION%%/ges/ges-effect-asset.h
 include/gstreamer-%%VERSION%%/ges/ges-effect-clip.h
 include/gstreamer-%%VERSION%%/ges/ges-effect.h
 include/gstreamer-%%VERSION%%/ges/ges-enums.h
 include/gstreamer-%%VERSION%%/ges/ges-extractable.h
 include/gstreamer-%%VERSION%%/ges/ges-formatter.h
+include/gstreamer-%%VERSION%%/ges/ges-frame-composition-meta.h
 include/gstreamer-%%VERSION%%/ges/ges-gerror.h
 include/gstreamer-%%VERSION%%/ges/ges-group.h
 include/gstreamer-%%VERSION%%/ges/ges-image-source.h
@@ -70,9 +72,9 @@ lib/gstreamer-%%VERSION%%/libgstnle.so
 lib/libges-%%VERSION%%.so
 lib/libges-%%VERSION%%.so.0
 lib/libges-%%VERSION%%.so.%%SOVERSION%%
-%%PYTHON_SITELIBDIR%%/gstreamer-editing-services/GES.py
+%%PYTHON_SITELIBDIR%%/gi/overrides/GES.py
 libdata/pkgconfig/gst-editing-services-%%VERSION%%.pc
-share/man/man1/ges-launch-%%VERSION%%.1.gz
 %%BASH%%share/bash-completion/completions/ges-launch-%%VERSION%%
 share/gir-1.0/GES-%%VERSION%%.gir
 share/gstreamer-%%VERSION%%/validate/scenarios/ges-edit-clip-while-paused.scenario
+share/man/man1/ges-launch-%%VERSION%%.1.gz

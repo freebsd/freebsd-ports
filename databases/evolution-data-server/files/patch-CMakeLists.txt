@@ -1,10 +1,19 @@
---- CMakeLists.txt.orig	2021-11-05 17:23:17 UTC
+--- CMakeLists.txt.orig	2025-03-05 12:53:07 UTC
 +++ CMakeLists.txt
-@@ -521,6 +521,7 @@ endif(WITH_LIBDB)
- # ******************************
+@@ -120,7 +120,6 @@ set(sqlite_minimum_version 3.7.17)
+ set(libsecret_minimum_version 0.5)
+ set(libxml_minimum_version 2.0.0)
+ set(sqlite_minimum_version 3.7.17)
+-set(uuid_minimum_version 2.0)
  
- set(CMAKE_REQUIRED_LIBRARIES "-liconv")
-+set(CMAKE_REQUIRED_FLAGS "-L/usr/local/lib")
- CHECK_C_SOURCE_COMPILES("#include <iconv.h>
- 			#include <stdlib.h>
- 			int main(void) { iconv_t cd; cd = iconv_open (\"UTF-8\", \"ISO-8859-1\"); return 0; }" HAVE_LIBICONV)
+ # Optional Packages
+ set(goa_minimum_version 3.8)
+@@ -421,7 +420,7 @@ pkg_check_modules(JSON_GLIB REQUIRED json-glib-1.0>=${
+ # **************************************************************
+ 
+ pkg_check_modules(JSON_GLIB REQUIRED json-glib-1.0>=${json_glib_minimum_version})
+-pkg_check_modules(UUID REQUIRED uuid>=${uuid_minimum_version})
++pkg_check_modules(UUID uuid REQUIRED)
+ 
+ if(ENABLE_GTK)
+ 	add_printable_option(ENABLE_OAUTH2_WEBKITGTK "Enable WebKitGTK gtk3 for built-in OAuth2 authentications" ON)

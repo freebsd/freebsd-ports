@@ -5,7 +5,7 @@ FWSUBDIR=	ath12k
 FWDRV_VERSION=	20240513
 
 # Yes, the license is the ath10k one; see WHENCE.
-LICENSE=	LICENSE.QualcommAtheros_ath10k
+LICENSE_FILE=	LICENSE.QualcommAtheros_ath10k
 LICENSE_NAME=	QCA firmware license (${FWDRV})
 
 WHENCE_REGEX=	ath12k -.*

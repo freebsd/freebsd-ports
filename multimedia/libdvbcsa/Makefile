@@ -25,7 +25,7 @@ USE_LDCONFIG=	yes
 CONFIGURE_ARGS+=--enable-sse2
 .elif defined(MACHINE_CPU) && ${MACHINE_CPU:Mmmx}
 CONFIGURE_ARGS+=--enable-mmx
-.elif ${ARCH:Mpowerpc64*}
+.elif defined(MACHINE_CPU) && ${MACHINE_CPU:Maltivec}
 CONFIGURE_ARGS+=--enable-altivec
 .endif
 

@@ -3,13 +3,13 @@ CATEGORIES=	audio
 
 COMMENT=	Gstreamer sndfile plugin
 
-GST_PLUGIN=	sndfile
+LIB_DEPENDS=	libsndfile.so:audio/libsndfile
+
+MASTERDIR=	${.CURDIR:H:H}/multimedia/gstreamer1-plugins
+
+PLIST=		${.CURDIR}/pkg-plist
+
 DIST=		bad
-
-MASTERDIR=	${.CURDIR}/../../multimedia/gstreamer1-plugins
-
-PLIST=  ${.CURDIR}/pkg-plist
-
-LIB_DEPENDS=  libsndfile.so:audio/libsndfile
+GST_PLUGIN=	sndfile
 
 .include "${MASTERDIR}/Makefile"

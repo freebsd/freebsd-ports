@@ -1,0 +1,3 @@
+lint_roller is an itty-bitty plugin API for code analysis tools like linters and
+formatters. It provides plugins for those tools to load extensions and specify
+custom rulesets.

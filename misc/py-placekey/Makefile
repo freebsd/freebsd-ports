@@ -1,5 +1,5 @@
 PORTNAME=	placekey
-PORTVERSION=	0.0.14
+PORTVERSION=	0.0.24
 CATEGORIES=	misc geography python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,7 +15,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}backoff>=0:devel/py-backoff@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}h3>=0:graphics/py-h3@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}boto3>=0:www/py-boto3@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}h3>=3.6.1<4:graphics/py-h3@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}ratelimiter>=0:devel/py-ratelimiter@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>=0:www/py-requests@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}shapely>=0:devel/py-shapely@${PY_FLAVOR}

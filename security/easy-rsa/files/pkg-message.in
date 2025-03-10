@@ -13,3 +13,21 @@ An on-line help is available, you can run:
   easyrsa help          # for help on commands
   easyrsa help options  # for help on options
 
+**** SECURITY WARNING FOR PAST security/easy-rsa versions ****
+**** easyrsa may have encrypted your CA private key with a weak cipher
+
+Per CVE-2024-13454, Easy-RSA 3.0.5 inclusively up to and including 3.1.7,
+when used with OpenSSL 3, may have accidentally encrypted the CA private
+key with a weak cipher, des-ede3-cbc, instead of the intended aes-256-cbc,
+when a CA was created with the   easyrsa build-ca   command.
+
+Such mistakes cannot be corrected by upgrading Easy-RSA alone.
+
+The standing recommendation for CA private keys is to 
+re-encrypt the CA private keys with the aes-256-cbc cipher,
+by using the   easyrsa set-pass ca   command.
+
+For details, see https://community.openvpn.net/openvpn/wiki/CVE-2024-13454.
+
+**** END SECURITY WARNING FOR PAST security/easy-rsa versions ****
+

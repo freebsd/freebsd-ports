@@ -1,11 +1,12 @@
 PORTNAME=	verilator
 DISTVERSIONPREFIX=	v
-DISTVERSION=	5.026
+DISTVERSION=	5.034
 CATEGORIES=	cad
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Synthesizable Verilog to C++ compiler
-WWW=		https://www.veripool.org/projects/verilator/wiki/Intro
+WWW=		https://www.veripool.org/verilator/ \
+		https://github.com/verilator/verilator
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -64,7 +65,7 @@ pre-configure:
 		autoconf
 
 post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/share/verilator/bin/verilator_bin
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/verilator_bin
 
 post-install-INSTALL_DBG_EXECUTABLES-on:
 	@${STRIP_CMD} \

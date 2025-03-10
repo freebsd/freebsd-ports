@@ -1,4 +1,4 @@
-bin/kwallet-query
+@comment bin/kwallet-query
 bin/kwalletd5
 include/KF5/KWallet/KWallet
 include/KF5/KWallet/kwallet.h
@@ -148,6 +148,6 @@ share/locale/zh_CN/LC_MESSAGES/kwallet-query.mo
 share/locale/zh_CN/LC_MESSAGES/kwalletd5.mo
 share/locale/zh_TW/LC_MESSAGES/kwallet-query.mo
 share/locale/zh_TW/LC_MESSAGES/kwalletd5.mo
-share/man/man1/kwallet-query.1.gz
+@comment share/man/man1/kwallet-query.1.gz
 share/qlogging-categories5/kwallet.categories
 share/qlogging-categories5/kwallet.renamecategories

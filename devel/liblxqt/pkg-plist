@@ -71,6 +71,7 @@ share/cmake/lxqt/lxqt-targets.cmake
 %%LXQT_TRANSLATIONS%%/liblxqt/liblxqt_hu.qm
 %%LXQT_TRANSLATIONS%%/liblxqt/liblxqt_ia.qm
 %%LXQT_TRANSLATIONS%%/liblxqt/liblxqt_id.qm
+%%LXQT_TRANSLATIONS%%/liblxqt/liblxqt_is.qm
 %%LXQT_TRANSLATIONS%%/liblxqt/liblxqt_it.qm
 %%LXQT_TRANSLATIONS%%/liblxqt/liblxqt_ja.qm
 %%LXQT_TRANSLATIONS%%/liblxqt/liblxqt_kk.qm

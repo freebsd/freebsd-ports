@@ -160,7 +160,6 @@
 %%SITE_PERL%%/DateTime/TimeZone/Asia/Beirut.pm
 %%SITE_PERL%%/DateTime/TimeZone/Asia/Bishkek.pm
 %%SITE_PERL%%/DateTime/TimeZone/Asia/Chita.pm
-%%SITE_PERL%%/DateTime/TimeZone/Asia/Choibalsan.pm
 %%SITE_PERL%%/DateTime/TimeZone/Asia/Colombo.pm
 %%SITE_PERL%%/DateTime/TimeZone/Asia/Damascus.pm
 %%SITE_PERL%%/DateTime/TimeZone/Asia/Dhaka.pm
@@ -240,12 +239,7 @@
 %%SITE_PERL%%/DateTime/TimeZone/Australia/Melbourne.pm
 %%SITE_PERL%%/DateTime/TimeZone/Australia/Perth.pm
 %%SITE_PERL%%/DateTime/TimeZone/Australia/Sydney.pm
-%%SITE_PERL%%/DateTime/TimeZone/CET.pm
-%%SITE_PERL%%/DateTime/TimeZone/CST6CDT.pm
 %%SITE_PERL%%/DateTime/TimeZone/Catalog.pm
-%%SITE_PERL%%/DateTime/TimeZone/EET.pm
-%%SITE_PERL%%/DateTime/TimeZone/EST.pm
-%%SITE_PERL%%/DateTime/TimeZone/EST5EDT.pm
 %%SITE_PERL%%/DateTime/TimeZone/Europe/Andorra.pm
 %%SITE_PERL%%/DateTime/TimeZone/Europe/Astrakhan.pm
 %%SITE_PERL%%/DateTime/TimeZone/Europe/Athens.pm
@@ -285,7 +279,6 @@
 %%SITE_PERL%%/DateTime/TimeZone/Europe/Warsaw.pm
 %%SITE_PERL%%/DateTime/TimeZone/Europe/Zurich.pm
 %%SITE_PERL%%/DateTime/TimeZone/Floating.pm
-%%SITE_PERL%%/DateTime/TimeZone/HST.pm
 %%SITE_PERL%%/DateTime/TimeZone/Indian/Chagos.pm
 %%SITE_PERL%%/DateTime/TimeZone/Indian/Maldives.pm
 %%SITE_PERL%%/DateTime/TimeZone/Indian/Mauritius.pm
@@ -293,16 +286,12 @@
 %%SITE_PERL%%/DateTime/TimeZone/Local/Android.pm
 %%SITE_PERL%%/DateTime/TimeZone/Local/Unix.pm
 %%SITE_PERL%%/DateTime/TimeZone/Local/VMS.pm
-%%SITE_PERL%%/DateTime/TimeZone/MET.pm
-%%SITE_PERL%%/DateTime/TimeZone/MST.pm
-%%SITE_PERL%%/DateTime/TimeZone/MST7MDT.pm
 %%SITE_PERL%%/DateTime/TimeZone/OffsetOnly.pm
 %%SITE_PERL%%/DateTime/TimeZone/OlsonDB.pm
 %%SITE_PERL%%/DateTime/TimeZone/OlsonDB/Change.pm
 %%SITE_PERL%%/DateTime/TimeZone/OlsonDB/Observance.pm
 %%SITE_PERL%%/DateTime/TimeZone/OlsonDB/Rule.pm
 %%SITE_PERL%%/DateTime/TimeZone/OlsonDB/Zone.pm
-%%SITE_PERL%%/DateTime/TimeZone/PST8PDT.pm
 %%SITE_PERL%%/DateTime/TimeZone/Pacific/Apia.pm
 %%SITE_PERL%%/DateTime/TimeZone/Pacific/Auckland.pm
 %%SITE_PERL%%/DateTime/TimeZone/Pacific/Bougainville.pm
@@ -334,7 +323,6 @@
 %%SITE_PERL%%/DateTime/TimeZone/Pacific/Tarawa.pm
 %%SITE_PERL%%/DateTime/TimeZone/Pacific/Tongatapu.pm
 %%SITE_PERL%%/DateTime/TimeZone/UTC.pm
-%%SITE_PERL%%/DateTime/TimeZone/WET.pm
 %%PERL5_MAN3%%/DateTime::TimeZone.3.gz
 %%PERL5_MAN3%%/DateTime::TimeZone::Catalog.3.gz
 %%PERL5_MAN3%%/DateTime::TimeZone::Floating.3.gz

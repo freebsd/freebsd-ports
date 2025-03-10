@@ -1,0 +1,17 @@
+bin/qjs
+bin/qjsc
+include/quickjs.h
+lib/cmake/quickjs/qjsConfig-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/quickjs/qjsConfig.cmake
+lib/libqjs.so
+lib/libqjs.so.0
+lib/libqjs.so.%%PORTVERSION%%
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE
+%%PORTDOCS%%%%DOCSDIR%%/examples/fib.c
+%%PORTDOCS%%%%DOCSDIR%%/examples/fib_module.js
+%%PORTDOCS%%%%DOCSDIR%%/examples/hello.js
+%%PORTDOCS%%%%DOCSDIR%%/examples/hello_module.js
+%%PORTDOCS%%%%DOCSDIR%%/examples/pi_bigint.js
+%%PORTDOCS%%%%DOCSDIR%%/examples/point.c
+%%PORTDOCS%%%%DOCSDIR%%/examples/test_fib.js
+%%PORTDOCS%%%%DOCSDIR%%/examples/test_point.js

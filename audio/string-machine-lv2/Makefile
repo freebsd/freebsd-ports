@@ -1,7 +1,7 @@
 PORTNAME=	string-machine
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.1.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	audio
 PKGNAMESUFFIX=	-lv2
 
@@ -15,10 +15,11 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	lv2>0:audio/lv2 \
 		${LOCALBASE}/include/boost/intrusive/list.hpp:devel/boost-libs
 
-USES=		compiler:c++0x gmake gnome localbase pkgconfig xorg
+USES=		compiler:c++0x gl gmake gnome localbase pkgconfig xorg
 USE_GITHUB=	yes
 GH_ACCOUNT=	jpcima
 GH_TUPLE=	DISTRHO:DPF:7a056bb:d/dpf
+USE_GL=		gl
 USE_GNOME=	cairo
 USE_XORG=	x11
 

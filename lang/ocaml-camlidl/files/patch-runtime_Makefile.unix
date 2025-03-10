@@ -1,0 +1,17 @@
+--- runtime/Makefile.unix.orig	2024-10-13 21:00:18 UTC
++++ runtime/Makefile.unix
+@@ -26,10 +26,10 @@ install:
+ #	$(RANLIB) $@
+ 
+ install:
+-	cp camlidlruntime.h $(OCAMLLIB)/caml/camlidlruntime.h
+-	cp libcamlidl.a $(OCAMLLIB)/libcamlidl.a
+-	cp dllcamlidl.so $(OCAMLLIB)/stublibs/dllcamlidl.so
+-	cd $(OCAMLLIB); $(RANLIB) libcamlidl.a
++	$(BSD_INSTALL_DATA) camlidlruntime.h $(DESTDIR)$(OCAMLLIB)/caml/camlidlruntime.h
++	$(BSD_INSTALL_DATA) libcamlidl.a $(DESTDIR)$(OCAMLLIB)/libcamlidl.a
++	$(BSD_INSTALL_LIB) dllcamlidl.so $(DESTDIR)$(OCAMLLIB)/stublibs/dllcamlidl.so
++	cd $(DESTDIR)$(OCAMLLIB); $(RANLIB) libcamlidl.a
+ 
+ clean:
+ 	rm -f *.a *.o *.so

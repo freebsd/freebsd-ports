@@ -2,7 +2,7 @@ PORTNAME=	tartest
 CATEGORIES=	archivers devel
 
 COMMENT=	Test tar archive for POSIX.1-1990 compliance
-WWW=		https://schilytools.sourceforge.net/
+WWW=		https://codeberg.org/schilytools/schilytools
 
 MASTERDIR=	${.CURDIR}/../../devel/schilybase
 COMPONENTS=	tartest

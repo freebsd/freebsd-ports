@@ -1,0 +1,7 @@
+[
+{ type: install
+  message: <<EOM
+System Cron is currently required for Nextcloud News to work
+EOM
+}
+]

@@ -1,38 +1,39 @@
-CARGO_CRATES=	anstyle-1.0.6 \
-		anyhow-1.0.81 \
-		autocfg-1.1.0 \
-		bitflags-2.4.2 \
-		bytemuck-1.15.0 \
+CARGO_CRATES=	anstyle-1.0.10 \
+		anyhow-1.0.92 \
+		autocfg-1.4.0 \
+		bitflags-2.6.0 \
+		bytemuck-1.19.0 \
 		cfg-if-1.0.0 \
 		cfg_aliases-0.1.1 \
-		clap-4.5.3 \
-		clap_builder-4.5.2 \
-		clap_derive-4.5.3 \
-		clap_lex-0.7.0 \
+		clap-4.5.20 \
+		clap_builder-4.5.20 \
+		clap_derive-4.5.18 \
+		clap_lex-0.7.2 \
 		equivalent-1.0.1 \
-		hashbrown-0.14.3 \
+		hashbrown-0.15.0 \
 		heck-0.5.0 \
-		indexmap-2.2.5 \
-		libc-0.2.153 \
-		memchr-2.7.1 \
-		memmap2-0.9.4 \
-		memoffset-0.9.0 \
+		indexmap-2.6.0 \
+		libc-0.2.161 \
+		memchr-2.7.4 \
+		memmap2-0.9.5 \
+		memoffset-0.9.1 \
 		nix-0.28.0 \
-		proc-macro-crate-3.1.0 \
-		proc-macro2-1.0.79 \
-		quick-xml-0.31.0 \
-		quote-1.0.35 \
+		proc-macro-crate-3.2.0 \
+		proc-macro2-1.0.89 \
+		quick-xml-0.36.2 \
+		quote-1.0.37 \
 		shmemfdrs2-1.0.0 \
-		syn-2.0.53 \
-		thiserror-1.0.58 \
-		thiserror-impl-1.0.58 \
-		toml_datetime-0.6.5 \
-		toml_edit-0.21.1 \
-		unicode-ident-1.0.12 \
-		wayrs-client-1.0.3 \
-		wayrs-proto-parser-2.0.0 \
-		wayrs-protocols-0.13.2 \
-		wayrs-scanner-0.13.2 \
-		winnow-0.5.40 \
+		syn-2.0.86 \
+		thiserror-1.0.66 \
+		thiserror-impl-1.0.66 \
+		toml_datetime-0.6.8 \
+		toml_edit-0.22.22 \
+		unicode-ident-1.0.13 \
+		wayrs-client-1.1.2 \
+		wayrs-core-1.0.3 \
+		wayrs-proto-parser-2.0.3 \
+		wayrs-protocols-0.14.3 \
+		wayrs-scanner-0.15.0 \
+		winnow-0.6.20 \
 		rustbus-service,rustbus-service-macros@git+https://github.com/MaxVerevkin/rustbus-service?rev=1bd3aef\#1bd3aef5fe2a646685c8e640c0f67a645eeaf41d \
 		rustbus,rustbus_derive@git+https://github.com/KillingSpark/rustbus?rev=5875f1f\#5875f1fefc054ed4e2d91641f59a55b9eaee5be9

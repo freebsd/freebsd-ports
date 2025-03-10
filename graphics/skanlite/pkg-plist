@@ -53,6 +53,8 @@ share/doc/HTML/pt_BR/skanlite/index.cache.bz2
 share/doc/HTML/pt_BR/skanlite/index.docbook
 share/doc/HTML/ru/skanlite/index.cache.bz2
 share/doc/HTML/ru/skanlite/index.docbook
+share/doc/HTML/sl/skanlite/index.cache.bz2
+share/doc/HTML/sl/skanlite/index.docbook
 share/doc/HTML/sv/skanlite/index.cache.bz2
 share/doc/HTML/sv/skanlite/index.docbook
 share/doc/HTML/uk/skanlite/buttons-main.png
@@ -71,7 +73,7 @@ share/doc/HTML/uk/skanlite/scanning.png
 share/doc/HTML/uk/skanlite/settings.png
 share/doc/HTML/uk/skanlite/zoom-in.png
 share/doc/HTML/uk/skanlite/zoom-to-fit.png
-share/icons/hicolor/48x48/apps/org.kde.skanlite.svg
+share/icons/hicolor/scalable/apps/org.kde.skanlite.svg
 share/locale/ar/LC_MESSAGES/skanlite.mo
 share/locale/az/LC_MESSAGES/skanlite.mo
 share/locale/be/LC_MESSAGES/skanlite.mo
@@ -92,6 +94,7 @@ share/locale/fi/LC_MESSAGES/skanlite.mo
 share/locale/fr/LC_MESSAGES/skanlite.mo
 share/locale/ga/LC_MESSAGES/skanlite.mo
 share/locale/gl/LC_MESSAGES/skanlite.mo
+share/locale/he/LC_MESSAGES/skanlite.mo
 share/locale/hi/LC_MESSAGES/skanlite.mo
 share/locale/hr/LC_MESSAGES/skanlite.mo
 share/locale/hu/LC_MESSAGES/skanlite.mo

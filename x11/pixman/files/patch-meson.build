@@ -1,0 +1,11 @@
+--- meson.build.orig	2025-01-13 07:25:33 UTC
++++ meson.build
+@@ -226,7 +226,7 @@ have_vmx = false
+ 
+ use_vmx = get_option('vmx')
+ have_vmx = false
+-vmx_flags = ['-maltivec', '-mabi=altivec']
++vmx_flags = ['-maltivec']
+ if not use_vmx.disabled()
+   if host_machine.cpu_family().startswith('ppc')
+     if cc.compiles('''

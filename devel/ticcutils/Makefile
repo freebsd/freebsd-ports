@@ -1,5 +1,6 @@
 PORTNAME=	ticcutils
-DISTVERSION=	0.34
+DISTVERSION=	0.36
+PORTREVISION=	1
 CATEGORIES=	devel textproc
 MASTER_SITES=	https://github.com/LanguageMachines/${PORTNAME}/releases/download/v${DISTVERSION}/
 
@@ -12,13 +13,14 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libicui18n.so:devel/icu
 
-USES=		compiler:c++11-lib gmake gnome libtool localbase:ldflags \
+USES=		compiler:c++17-lang gmake gnome libtool localbase:ldflags \
 		pathfix pkgconfig
 USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
 
+USE_CXXSTD=	c++17
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
+
 CONFIGURE_ARGS=	--disable-static
 
 INSTALL_TARGET=	install-strip

@@ -1,8 +1,0 @@
---- requirements.txt.orig	2019-12-27 04:38:42 UTC
-+++ requirements.txt
-@@ -2,5 +2,4 @@ Cython
- numexpr
- numpy
- tables
--PyQt5
- QtPy

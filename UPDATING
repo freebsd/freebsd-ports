@@ -5,8 +5,423 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20250219:
+  AFFECTS: users of comms/ser2net
+  AUTHOR: rodrigo@FreeBSD.org
+
+  ser2net 4.6.4 doesn't support 3.5.1 configuration who has to be
+  converted over to use new YAML syntax.
+
+  Please see the examples on ser2net.yaml sample configuration and
+  read the ser2net.yaml manpage on how to configure the new version.
+  Additional links and resources have been provided on the pkg-message.
+
+20250217:
+  AFFECTS: users of databases/mongodb70
+  AUTHOR: ronald@FreeBSD.org
+
+  MongoDB on non-LSE ARM CPUs like Raspberry Pi 4 works but is
+  unsupported upstream and can give corruption on high concurrency.
+  Please read https://jira.mongodb.org/browse/SERVER-71772 for details.
+
+  Port mongodb70 is flavored to create two packages:
+    mongodb70 and mongodb70-armv80a
+
+  Please install mongodb70-armv80a on RPI4 or similar ARM systems as pkg
+  mongodb70 will fail on runtime with unsupported instruction error.
+
+20250208:
+  AFFECTS: users of net-mgmt/netbox
+  AUTHOR: kai@FreeBSD.org
+
+  1. Please make sure that the PostgreSQL server for the NetBox instance is
+     running version 13 or higher.  This is because PostgreSQL 12 reached
+     its End of Life (EOL) on November 14, 2024 and was also removed from
+     the ports tree at the beginning of 2025.
+
+  2. Please also check the pkg-message and the changelogs for further info.
+
+20250205:
+  AFFECTS: users of www/gitlab
+  AUTHOR: mfechner@FreeBSD.org
+
+  Make sure you compare your /usr/local/www/gitlab/config/puma.rb with
+  /usr/local/www/gitlab/config/puma.rb.sample and make sure you have the:
+  require "logger"
+  line in your puma.rb.
+  This fixes an error:
+  /usr/local/lib/ruby/gems/3.2/gems/activesupport-7.0.8.7/lib/active_support/logger_thread_safe_level.rb:12:in `<module:LoggerThreadSafeLevel>': uninitialized constant ActiveSupport::LoggerThreadSafeLevel::Logger (NameError)
+
+    Logger::Severity.constants.each do |severity|
+
+20250203:
+  AFFECTS: users of x11/kde5 and x11/kde6
+  AUTHOR: arrowd@FreeBSD.org
+
+  All KDE ports were fully switched to Qt6/KF6. Plasma 5 ports were removed.
+  KDE Applications were updated to 24.12.
+
+  If you installed KDE via kde5 or kde6 packages, the upgrade path is
+
+  # pkg remove -f kde[56] && pkg install kde
+
+  If you installed KDE via the plasma5-plasma metapackage, the upgrade path
+
+  # pkg remove -f plasma5-plasma && pkg install plasma6-plasma
+
+  Running "pkg autoremove" after the upgrade would clean unused dependencies.
+
+  For the uncommon cases of building on the host with synth, portmaster, etc.
+  the idea stays roughly the same - replace every plasma5 package with its
+  plasma6 counterpart.
+
+20250131:
+  AFFECTS: users of security/easy-rsa
+  AUTHOR: mandree@FreeBSD.org
+
+  easy-rsa (easyrsa) versions between 3.0.5 and 3.1.7 inclusively
+  may have chosen the wrong, a weak, cipher (des-ede3-cbc) when
+  encrypting the CA private keys with the build-ca command, when
+  running on a system where openssl was OpenSSL 3.
+
+  Such CA private keys should be re-encrypted with a stronger cipher
+  in order to protect them better, after upgrading EasyRSA to 3.2.1.
+  To that end, the   easyrsa set-pass ca    command can be used.
+
+  Details: https://community.openvpn.net/openvpn/wiki/CVE-2024-13454
+
+20250125:
+  AFFECTS: users of www/apache24
+  AUTHOR: brnrd@FreeBSD.org
+
+  Apache 2.4.63 removed the (experimental, non-default) mod_tls module due
+  to rustls-ffi API instability and it was moved to a standalone module.
+
+  Users of the TLS option can use the new www/mod_tls port as a replacement.
+
+  # pkg install ap24-mod_tls
+
+20250111:
+  AFFECTS: users of net/onedrive
+  AUTHOR: hiroo.ono+freebsd@gmail.com
+
+  The version 2.5.x introduces significant changes regarding how the
+  integrity and validation of your data is determined and is not backwards
+  compatible with v2.4.x.
+  OneDrive Business Shared Folder Sync has been 100% re-written in v2.5.0.
+  If you are using this feature, please read the new documentation
+  carefully.
+  The application function --download-only no longer automatically deletes
+  local files. Please read the new documentation regarding this feature.
+
+20250109:
+  AFFECTS: users of www/kiwix-tools and devel/libkiwix
+  AUTHOR: olce@FreeBSD.org
+
+  Upstream released a new version (14.0.0) of kiwix-tools' dependency libkiwix
+  that the latest release of kiwix-tools (unchanged at 3.7.0) does not
+  support, and the devel/libkiwix port was updated to it by mistake.
+
+  In order to fix the situation without reverting devel/libkiwix to 13.1.0 and
+  bumping its PORTEPOCH, the new port devel/libkiwix13 has been created and
+  www/kiwix-tools has been updated to depend on it rather than devel/libkiwix.
+  This is expected to be temporary.
+
+  As devel/libkiwix13 and devel/libkiwix conflict with each other, which
+  apparently can confuse pkg (which proposes to delete www/kiwix-tools), users
+  having www/kiwix-tools installed are advised to upgrade it first separately,
+  e.g., by running:
+
+  # pkg upgrade www/kiwix-tools
+
+20250106:
+  AFFECTS: users of comms/zigbee2mqtt
+  AUTHOR: otis@FreeBSD.org
+
+  There are possibly breaking changes, see
+  https://github.com/Koenkk/zigbee2mqtt/discussions/24198 for full details.
+
+  Users are STRONGLY advised to take backup of /var/db/z2m directory
+  prior to the upgrade.
+
+20241230:
+  AFFECTS: users of net/xrdp-devel
+  AUTHOR: meta@FreeBSD.org
+
+  The port has been updated to the latest development snapshot.
+
+  The directory for the config files has also changed from
+  PREFIX/etc/xrdp to PREFIX/etc/xrdp-devel to prevent incompatible config
+  files for net/xrdp and net/xrdp-devel from getting mixed up.
+
+  When updating net/xrdp-devel from old versions, move the config files to
+  the new directory.
+
+20241224:
+  AFFECTS: users of net/xrdp
+  AUTHOR: meta@FreeBSD.org
+
+  xrdp supports H.264 encoding in graphics remoting since v0.10.2.
+  It reduces the amount of data transmitted over the network and provides
+  a much smoother and more responsive experience compared to previous
+  versions. When updating from older v0.10.x versions to v0.10.2, make
+  sure to merge the new xrdp.ini with the old one because xrdp.ini has
+  some new configuration parameters for H.264. See 20240704 if updating
+  from v0.9.x.
+
+  Furthermore, xrdp v0.10.2 supports running the xrdp daemon as an
+  unprivileged user. See the xrdp.ini(5) man page for configuring xrdp to
+  run as an unprivileged user. You can also check if xrdp is properly
+  configured to run as an unprivileged user using the script located at:
+
+    %%PREFIX%%/share/xrdp/xrdp-chkpriv
+
+20241203:
+  AFFECTS: users of deskutils/treesheets
+  AUTHOR: eduardo@FreeBSD.org
+
+  The binary have been renamed from treesheets to TreeSheets
+
+  - https://github.com/aardappel/treesheets/pull/760
+
+20241202:
+  AFFECTS: users of net/gdrive
+  AUTHOR: meta@FreeBSD.org
+
+  The port net/gdrive has been updated to its successor product because
+  the original upstream GitHub repo has been unmaintained & archived.
+
+  Users upgrading from gdrive 2.x to 3.x need to reconfigure account
+  credentials following the instructions provided by new upstream.
+
+  - https://github.com/glotlabs/gdrive/blob/main/docs/basic_usage.md
+  - https://github.com/glotlabs/gdrive/blob/main/docs/create_google_api_credentials.md
+
+20241122
+  AFFECTS: users of databases/couchdb3
+  AUTHOR: dch@FreeBSD.org
+
+  Users who installed or upgraded to CouchDB 3.3.3 *after* 2024-09-30, and
+  who are also running 14.1-RELEASE or newer, will hit a nasty corruption bug,
+  causing all CPUs to lock up, possibly crashing, and generating a lot of
+  errors in log files.
+
+  This bug is caused by corrupt docs after decompression, due to a clash
+  between improved compiler optimisations in clang18, and a bug in snappy
+  itself. Given the above symptoms, all affected users will have noticed.
+
+  Upgrade to 3.4.2 in ports, to resolve this issue.
+
+  Please read more about this issue here:
+  https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=282217
+
+20241115
+  AFFECTS: users of filesystems/zrepl-dsh2dsh
+  AUTHOR: dsh@bamus.cz
+
+  Users upgrading from before 0.9.0 need to modify configuration file:
+
+      %%PREFIX%%/etc/zrepl/zrepl.yml
+
+  Please read more about this change here:
+  https://github.com/dsh2dsh/zrepl?tab=readme-ov-file#breaking-changes
+
+20241112
+  AFFECTS: users of databases/prometheus-postgres-exporter
+  AUTHOR: lexi@hemlock.eden.le-fay.org
+
+  BREAKING CHANGE: In postgres_exporter 0.16.0 and later, the log message format
+  has changed.  From the upstream release notes:
+
+  The logging system has been replaced with log/slog from the stdlib.  This
+  change is being made across the prometheus ecosystem.  The logging output has
+  changed, but the messages and levels remain the same.  The ts label for the
+  timestamp has been replaced with time, the accuracy is less, and the timezone
+  is not forced to UTC.  The caller field has been replaced by the source field,
+  which now includes the full path to the source file. The level field now
+  exposes the log level in capital letters.
+
+20241110
+  AFFECTS: users of devel/apr1 and www/apache24
+  AUTHOR: brnrd@FreeBSD.org
+
+  The default BerkeleyDB provider for apr-util was changed from BerkeleyDB
+  5 (deprecated) to BerkeleyDB 1 from base libc. The change of version
+  results in a non-compatible database format.
+
+  After upgrading, you must rebuild all BerkeleyDB databases used by
+  apr-util (example: Apache databases created with `httxt2dbm -F db`
+
+20241109:
+  AFFECTS: all users of i386
+  AUTHOR: asomers@FreeBSD.org
+
+  On i386 the lang/rust port has been updated to require SSE2 by default.  Not
+  only does the compiler itself require SSE2, but it unconditionally generates
+  code that requires it, too.  Over 500 ports include Rust code (www/firefox,
+  security/py-cryptography, etc).  Official binary packages of all of those
+  ports will no longer work on Pentium III and older hardware.  PIII users must
+  now build their own lang/rust packages, clearing the SSE2 option, and rebuild
+  any dependent ports.
+
+20241104:
+  AFFECTS: users of mail/fetchmail
+  AUTHOR: chalpin@cs.wisc.edu
+
+  OPIE and RPA have been made optional because both have significant security
+  problems. OPIE support was not provided by the port on 14.x until the update
+  to 6.5.0, when it was briefly re-activated. Because of its security flaws, it
+  has now been disabled by default on both 13.x and 14.x.
+
+  RPA is currently enabled by default, but this will change in a future update.
+
+20241019:
+  AFFECTS: users of security/libressl
+  AUTHOR: brnrd@FreeBSD.org
+
+  The port has been updated to the latest stable version 4.0 of LibreSSL.
+  The shared library versions of the libraries have been bumped.
+
+  After upgrading, manually update all packages that depend on any of the
+  libraries provided by LibreSSL (libssl, libcrypto and libtls) since the
+  versions of these libraries have changed. Normally, you can obtain the
+  list of dependent software by running the following command:
+
+  # pkg info -r libressl
+
+  Then you should rebuild all ports depending on libressl to avoid dangling
+  shared library dependencies.
+
+20241004:
+  AFFECTS: users of www/c-icap
+  AUTHOR: rodrigo@FreeBSD.org
+
+  The c-icap server version is moving from branch 5.X to 6.X.
+  An in-place upgrade may require some changes in your current
+  configuration.
+  For installation instructions please refer :
+  https://sourceforge.net/p/c-icap/wiki/configcicap
+  https://sourceforge.net/p/c-icap/wiki
+
+20240930:
+  AFFECTS: users of sysutils/nq
+  AUTHOR: 0mp@FreeBSD.org
+
+  The nq upstream renamed the fq utility to nqtail
+  and the tq utility to nqterm.
+
+20240927:
+  AFFECTS: users of databases/mongodb50
+  AUTHOR: ronald@FreeBSD.org
+
+  MongoDB version 5.0 is End of Life starting October 2024.
+  Please make sure you are running MongoDB version 6.0 or higher.
+  In-place upgrades are supported from version 5.0 to 6.0.
+  For an in-place upgrade it is important that the
+  'featureCompatibilityVersion' is set to 5.0.
+  See: https://www.mongodb.com/docs/v6.0/release-notes/6.0-upgrade-standalone/#feature-compatibility-version
+
+  TL;DR, run these commands in mongodb50 before upgrading:
+  $ mongo --port <portnr>
+  > db.adminCommand( { setFeatureCompatibilityVersion: "5.0" } )
+  > exit
+
+20240912:
+  AFFECTS: security/clamav, security/clamav-lts
+  AUTHOR: netchildFreeBSD.org
+
+  The start scripts of clamav have been renamed to clamav_clamd,
+  clamav_freshclam and clamav_milter for improved compatibility with
+  other parts of the system. The automatic start at boot (rc.conf
+  variable settings) is not affected, but if you have some other
+  automatism you may want to change
+    ".../etc/rc.d/clamav-clamd" to ".../etc/rc.d/clamav_clamd"
+    ".../etc/rc.d/clamav-freshclam" to ".../etc/rc.d/clamav_freshclam"
+    ".../etc/rc.d/clamav-milter" to ".../etc/rc.d/clamav_milter"
+  or
+    "service clamav-clamd ..." to "service clamav_clamd ..."
+    "service clamav-freshclam" to "service clamav_freshclam ..."
+    "service clamav-milter ..." to "service clamav_milter ..."
+
+20240907:
+  AFFECTS: www/tt-rss
+  AUTHOR: dereks@lifeofadishwasher.com
+
+  The ttrssd_local_db rc var has been removed in favor of using daemon's
+  restart option -r to retry the ttrssd php scripts if database is not up
+  before ttrssd starts.
+
+20240829:
+  AFFECTS: devel/binutils
+  AUTHOR: cy@FreeBSD.org
+
+  Historically devel/binutils would implicitly use devel/elfutils when
+  it discovers it previously installed. This resulted in it depending on,
+  though not explicitly if previously found, elfutils when built manually.
+  This behavior has now changed. binutils will now disable any
+  auto-dependency on elfutils. Users who build binutils manually and wish
+  to have it depend on elfutls must now explicitly set the option when
+  building binutils.
+
+  There is no change to packages built by poudriere.
+
+20240824:
+  AFFECTS: dns/acme-dns
+  AUTHOR: netchild@FreeBSD.org
+
+  The start script of acme-dns has been renamed to acme_dns for improved
+  compatibility with other parts of the system. The automatic start at
+  boot (rc.conf variable settings) is not affected, but if you have some
+  other automatism you may want to change
+  ".../etc/rc.d/acme-dns" to ".../etc/rc.d/acme_dns"
+
+20240816:
+  AFFECTS: users of databases/redis
+  AUTHOR: yasu@FreeBSD.org
+
+  The databases/redis port has been updated to 7.4. Users wanting to
+  stay on 7.2 can replace databases/redis with databases/redis72 with
+  one of the following commands.
+
+  If you use pkg with binary packages:
+    # pkg set -o databases/redis:databases/redis72
+    # pkg upgrade
+  If you use portmaster:
+    # portmaster -o databases/redis72 databases/redis
+  If you use portupgrade:
+    # portupgrade -o databases/redis72 databases/redis
+
+  Keep in mind license term has changed with Redis 7.4. Now it is
+  distributed under dual license of Redis Source Available License v2
+  (RSALv2) and Server Side Public License v1 (SSPLv1). If you don't
+  want to accept either of them, then Valkey (databases/valkey) may be
+  alternative for you. It is fork of Redis 7.2 and distributed under
+  3-clause BSD license that is same as Redis 7.2 and before.
+
+20240815:
+  AFFECTS: users of devel/subversion-lts and devel/subversion
+  AUTHOR: michaelo@FreeBSD.org
+
+  The port option STATIC has been broken since 2022-01 because textproc/utf8proc
+  does not provide an archive with CMake. Therefore, it has been removed.
+
+20240809:
+  AFFECTS: sysutils/amavisd-new
+  AUTHOR: netchildFreeBSD.org
+
+  The start scripts of amavisd have been renamed to amavisd_snmp and
+  amavis_p0fanalyzer for improved compatibility with other parts of the
+  system. The automatic start at boot (rc.conf variable settings) is
+  not affected, but if you have some other automatism you may want to
+  change
+    ".../etc/rc.d/amavisd-snmp" to ".../etc/rc.d/amavisd_snmp"
+    ".../etc/rc.d/amavis-p0fanalyzer" to ".../etc/rc.d/amavis-p0fanalyzer"
+  or
+    "service amavisd-snmp ..." to "service amavisd_snmp ..."
+    "service amavis-p0fanalyzer ..." to "service amavis_p0fanalyzer ..."
+
 20240727:
-  AFFECTS: lang/php8[13]
+  AFFECTS: lang/php8[123]
   AUTHOR: netchildFreeBSD.org
 
   The start scripts of php-fpm have been renamed to php_fpm for improved
@@ -173,7 +588,7 @@ you update your ports collection, before attempting any port upgrades.
   enabled.
 
 20240613:
-  AFFECTS: multimedia/audacios and multimedia/audacious-plugins
+  AFFECTS: multimedia/audacious and multimedia/audacious-plugins
   AUTHOR: madpilot@FreeBSD.org
 
   Upstream project made qt6 the new default, so the port flavors have
@@ -799,8 +1214,7 @@ you update your ports collection, before attempting any port upgrades.
   ATTENTION:
   1) The default user changed from "pgsql" to "postgres" in 11. The migration steps above now assume
      the "postgres" database user and FreeBSD user.
-  2) See the updating entry 20190829 if you are updating from a release prior to 11.
-  3) If you use non-default initdb options, you have to adjust the initdb-command accordingly
+  2) If you use non-default initdb options, you have to adjust the initdb-command accordingly
 
 20230906:
   AUTHOR: jrm@FreeBSD.org
@@ -1198,7 +1612,7 @@ you update your ports collection, before attempting any port upgrades.
   If you use pkg, simply upgrade:
   # pkg upgrade
 
-  If you do not use pkg, please check entry 20190420.
+  If you do not use pkg, please check entry 20220421.
   The description there should also work for this version.
 
 20230314:
@@ -2116,8 +2530,35 @@ you update your ports collection, before attempting any port upgrades.
   If you use pkg, simply upgrade:
   # pkg upgrade
 
-  If you do not use pkg, please check entry 20190420.
-  The description there should also work for this version.
+  If you do not use pkg, please use an adapted version of the below:
+
+  If you compile your own ports you may keep 2.4 as the default version by
+  adding the following lines to your /etc/make.conf file:
+
+  #
+  # Keep ruby 2.4 as default version
+  #
+  DEFAULT_VERSIONS+=ruby=2.4
+
+  If you wish to update to the new default version, you need to first stop any
+  software that uses ruby. Then, you will need to follow these steps, depending
+  upon how you manage your system.
+
+  If you use pkgng, simply upgrade:
+  # pkg upgrade
+
+  If you use portmaster, install new ruby, then rebuild all ports that depend
+  on ruby:
+  # portmaster -o lang/ruby25 lang/ruby24
+  # portmaster -R -r ruby-2.5
+
+  If you use portupgrade, install new ruby, then rebuild all ports that depend
+  on ruby:
+
+  # pkg delete -f ruby portupgrade
+  # make -C /usr/ports/ports-mgmt/portupgrade install clean
+  # pkg set -o lang/ruby24:lang/ruby25
+  # portupgrade -x ruby-2.5.\* -fr lang/ruby25
 
 20220413:
   AFFECTS: users of net-im/py-matrix-synapse
@@ -2534,9 +2975,7 @@ you update your ports collection, before attempting any port upgrades.
   | magit-emacs29             | magit-emacs_devel           |
   -----------------------------------------------------------
 
-  To handle these final package name changes, follow a similar procedure
-  as the one described in the 20200811 entry.  That is, simply running
-  `pkg upgrade` will not upgrade, e.g., foo-emacs27_nox to
+  Simply running `pkg upgrade` will not upgrade, e.g., foo-emacs27_nox to
   foo-emacs_nox.
 
   Binary package users:
@@ -2720,8 +3159,7 @@ you update your ports collection, before attempting any port upgrades.
   ATTENTION:
   1) The default user changed from "pgsql" to "postgres" in 11. The migration steps above now assume
      the "postgres" database user and FreeBSD user.
-  2) See the updating entry 20190829 if you are updating from a release prior to 11.
-  3) If you use non-default initdb options, you have to adjust the initdb-command accordingly
+  2) If you use non-default initdb options, you have to adjust the initdb-command accordingly
 
 20211023:
   AFFECTS: users of www/node

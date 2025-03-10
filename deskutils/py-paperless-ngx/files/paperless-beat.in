@@ -19,6 +19,7 @@
 #					Beat logging syslog priority.
 # paperless_beat_log_tag (str):		Set to "paperless-beat" by default.
 #					Beat logging syslog tag.
+# paperless_beat_tmpdir (str):		If set, overrides TMPDIR
 
 . /etc/rc.subr
 
@@ -32,9 +33,14 @@ paperless_beat_daemon_user=${paperless_beat_user:-"paperless"}
 paperless_beat_log_facility=${paperless_beat_log_facility:-"daemon"}
 paperless_beat_log_priority=${paperless_beat_log_priority:-"notice"}
 paperless_beat_log_tag=${paperless_beat_log_tag:-"paperless-beat"}
+paperless_beat_tmpdir=${paperless_beat_tmpdir:-"$TMPDIR"}
 
 paperless_beat_env="LANG=en_US.UTF-8 PATH=$PATH:%%PREFIX%%/bin \
   PYTHONPATH=%%PYTHONPREFIX_SITELIBDIR%%/paperless"
+
+if [ -n "$paperless_beat_tmpdir" ]; then
+	paperless_beat_env="$paperless_beat_env TMPDIR=$paperless_beat_tmpdir"
+fi
 
 pidfile="/var/run/paperless/beat.pid"
 procname="%%PYTHON_CMD%%"

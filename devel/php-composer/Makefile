@@ -1,6 +1,5 @@
 PORTNAME=	composer
-DISTVERSION=	2.7.7
-PORTREVISION=	1
+DISTVERSION=	2.8.6
 CATEGORIES=	devel
 MASTER_SITES=	https://getcomposer.org/download/${DISTVERSION}/
 PKGNAMEPREFIX=	${PHP_PKGNAMEPREFIX}
@@ -13,8 +12,6 @@ COMMENT=	Dependency Manager for PHP
 WWW=		https://getcomposer.org/
 
 LICENSE=	MIT
-
-RUN_DEPENDS=	ca_root_nss>0:security/ca_root_nss
 
 USES=		cpe php:flavors
 CPE_VENDOR=	getcomposer

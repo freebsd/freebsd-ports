@@ -1,12 +1,13 @@
 PORTNAME=	avro
-PORTVERSION=	1.11.3
+PORTVERSION=	1.12.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Data serialization system for python
-WWW=		https://avro.apache.org/
+WWW=		https://avro.apache.org/ \
+		https://github.com/apache/avro
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/avro/LICENSE

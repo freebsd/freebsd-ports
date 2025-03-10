@@ -1,5 +1,5 @@
 PORTNAME=	lzlib
-PORTVERSION=	1.14
+PORTVERSION=	1.15
 CATEGORIES=	archivers
 MASTER_SITES=	SAVANNAH/lzip/lzlib
 
@@ -10,12 +10,18 @@ WWW=		https://www.nongnu.org/lzip/lzlib.html
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		gmake
+CONFIGURE_ARGS=	--enable-shared
 GNU_CONFIGURE=	yes
-MAKE_ARGS=	${MAKE_ENV}
 INFO=		lzlib
+INSTALL_TARGET=	install-strip
+MAKE_ARGS=	${MAKE_ENV}
+USES=		gmake
+USE_LDCONFIG=	yes
 
 PLIST_FILES=	include/lzlib.h \
-		lib/liblz.a
+		lib/liblz.a \
+		lib/liblz.so \
+		lib/liblz.so.${PORTVERSION:R} \
+		lib/liblz.so.${PORTVERSION}
 
 .include <bsd.port.mk>

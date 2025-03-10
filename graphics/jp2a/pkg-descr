@@ -1,1 +1,13 @@
-jp2a is a simple JPEG to ASCII viewer.
+jp2a is a simple and powerful command-line utility that converts JPEG
+images into ASCII art. This tool supports colored ASCII output and
+allows for a range of customizations, such as image scaling, brightness
+and contrast adjustments, and setting text character sets to optimize
+the ASCII rendering.
+
+Some of the key features include:
+
+* Supports both colored and grayscale ASCII art
+* Various output modes such as fitting ASCII into specific dimensions
+* Fast conversion and easy integration into shell scripts
+* Customizable character sets and dithering options for better visual
+  results

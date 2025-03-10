@@ -1,5 +1,5 @@
 PORTNAME=	matrixStats
-DISTVERSION=	1.3.0
+DISTVERSION=	1.5.0
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
@@ -8,6 +8,8 @@ COMMENT=	Functions that Apply to Rows and Columns of Matrices
 WWW=		https://cran.r-project.org/web/packages/matrixStats/
 
 LICENSE=	ART20
+
+TEST_DEPENDS=	R-cran-R.rsp>0:textproc/R-cran-R.rsp
 
 USES=		cran:auto-plist,compiles
 

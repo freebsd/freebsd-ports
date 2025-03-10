@@ -2,9 +2,8 @@ PORTNAME=	tclock
 PORTVERSION=	1.0.1
 PORTREVISION=	4
 CATEGORIES=	x11-clocks
-MASTER_SITES=	http://www.linta.de/distfiles/ \
-		ftp://ftp.uni-potsdam.de/pub/X11/tools/clocks/
-
+MASTER_SITES=	http://www.linta.de/distfiles/
+		
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Transparent analog clock for x11
 

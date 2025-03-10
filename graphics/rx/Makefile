@@ -1,13 +1,14 @@
 PORTNAME=	rx
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.5.2
-PORTREVISION=	28
+PORTREVISION=	34
 CATEGORIES=	graphics
 PKGNAMESUFFIX=	-editor
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Modern and minimalist pixel editor implemented in rust
-WWW=		https://rx.cloudhead.io/
+WWW=		https://rx.cloudhead.io/ \
+		https://github.com/cloudhead/rx
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -107,8 +108,5 @@ CARGO_CRATES=	adler32-1.0.4 \
 PLIST_FILES=	bin/rx
 
 LDFLAGS+=	-L${PREFIX}/lib
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>

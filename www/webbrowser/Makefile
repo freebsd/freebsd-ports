@@ -1,17 +1,17 @@
 PORTNAME=	webbrowser
-PORTVERSION=	0.3
-PORTREVISION=	1
+DISTVERSION=	0.4.0
 CATEGORIES=	www
-MASTER_SITES=	http://acadix.biz/Ports/distfiles/
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Wrapper for running the "best" available WEB browser
-WWW=		http://personalpages.tds.net/~jwbacon/Ports
+WWW=		https://github.com/outpaddling/webbrowser/
 
 LICENSE=	BSD2CLAUSE
 
+USE_GITHUB=	yes
+GH_ACCOUNT=	outpaddling
+
 NO_BUILD=	yes
-USES=		tar:xz
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/webbrowser ${STAGEDIR}${PREFIX}/bin

@@ -1,5 +1,5 @@
 PORTNAME=	Devel-Events
-PORTVERSION=	0.09
+PORTVERSION=	0.10
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -13,7 +13,6 @@ LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Moose>=0:devel/p5-Moose \
-		p5-MooseX-AttributeHelpers>=0:devel/p5-MooseX-AttributeHelpers \
 		p5-Set-Object>=0:devel/p5-Set-Object \
 		p5-Sub-Uplevel>=0:devel/p5-Sub-Uplevel \
 		p5-Try-Tiny>=0:lang/p5-Try-Tiny

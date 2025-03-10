@@ -1,0 +1,13 @@
+--- extra-tools/Scheduler/CMakeLists.txt.orig	2024-11-03 14:27:43 UTC
++++ extra-tools/Scheduler/CMakeLists.txt
+@@ -16,7 +16,9 @@ if (CURL_FOUND AND (ZLIB_FOUND OR NOT "${ZIPINC}" STRE
+ 
+     if (UNIX)
+         include(GNUInstallDirs)
+-        install(FILES ${CMAKE_BINARY_DIR}/bin/dadwsch PERMISSIONS WORLD_READ WORLD_EXECUTE DESTINATION ${CMAKE_INSTALL_FULL_BINDIR})
++        install(FILES ${CMAKE_BINARY_DIR}/bin/dadwsch PERMISSIONS
++          OWNER_WRITE OWNER_READ OWNER_EXECUTE GROUP_READ GROUP_EXECUTE
++          WORLD_READ WORLD_EXECUTE DESTINATION ${CMAKE_INSTALL_FULL_BINDIR})
+     endif()
+ else()
+     message(STATUS "${PROJECT_NAME} needs curl, zlib and/or zip libraries") 

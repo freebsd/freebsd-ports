@@ -1,3 +1,5 @@
-TIMESTAMP = 1642406951
-SHA256 (git-lfs-v3.0.2.tar.gz) = 7179a357a0d0e7beaba217489f7f784ca8717035a5e3f1ee91ca7193ba3a35f3
-SIZE (git-lfs-v3.0.2.tar.gz) = 3126121
+TIMESTAMP = 1737883287
+SHA256 (go/devel_git-lfs/git-lfs-v3.6.1/v3.6.1.mod) = b0d0898f16ea9769a349e34abe22a9e6a8af578dc93fe468adbbb694171b976d
+SIZE (go/devel_git-lfs/git-lfs-v3.6.1/v3.6.1.mod) = 1993
+SHA256 (go/devel_git-lfs/git-lfs-v3.6.1/v3.6.1.zip) = 424b1861f665636fe4bbea937cfe96d318eeb91ddc1ad94292e70501b8794639
+SIZE (go/devel_git-lfs/git-lfs-v3.6.1/v3.6.1.zip) = 972632

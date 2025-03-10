@@ -1,2 +1,4 @@
-Typogrify is set of Django template filters to make caring about typography
-on the web a bit easier.
+Typogrify provides a set of custom filters that automatically apply various
+transformations to plain text in order to yield typographically-improved HTML.
+While often used in conjunction with Jinja and Django template systems, the
+filters can be used in any environment.

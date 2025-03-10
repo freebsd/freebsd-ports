@@ -1,16 +1,19 @@
 PORTNAME=	juce
-DISTVERSION=	8.0.1
+DISTVERSION=	8.0.6
+PORTREVISION=	2
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	C++ application framework to develop desktop and mobile applications
-WWW=		https://juce.com/
+WWW=		https://juce.com/ \
+		https://github.com/juce-framework/JUCE
 
 LICENSE=	JUCE6
 LICENSE_NAME=	JUCE 6 End User License Agreement
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 LICENSE_PERMS=	auto-accept dist-mirror pkg-mirror
 
+BROKEN_armv7=	compilation fails due to the 'mb' variable conflict, pending https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=283492
 BROKEN_riscv64=	Hard-float 'd' ABI can't be used for a target that doesn't support the D instruction set extension (ignoring target-abi)
 
 BUILD_DEPENDS=	ladspa>0:audio/ladspa
@@ -19,7 +22,7 @@ LIB_DEPENDS=	libasound.so:audio/alsa-lib \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
 		libharfbuzz.so:print/harfbuzz \
-		libjavascriptcoregtk-4.0.so:www/webkit2-gtk3 \
+		libjavascriptcoregtk-4.0.so:www/webkit2-gtk@40 \
 		libpng16.so:graphics/png \
 		libsoup-2.4.so:devel/libsoup \
 		libsysinfo.so:devel/libsysinfo
@@ -56,7 +59,7 @@ DEMOS_CMAKE_BOOL=	JUCE_BUILD_EXAMPLES
 DEMOS_LDFLAGS=		-lexecinfo
 DEMOS_USE=		GNOME=atk,cairo,gdkpixbuf2,gtk30,pango
 DEMOS_LIB_DEPENDS=	libcurl.so:ftp/curl \
-			libwebkit2gtk-4.0.so:www/webkit2-gtk3 \
+			libwebkit2gtk-4.0.so:www/webkit2-gtk@40 \
 			libsoup-2.4.so:devel/libsoup
 DEMO_FILES=	\
 	AnalyticsCollectionDemo AnimationAppDemo AnimationDemo AudioAppDemo AudioLatencyDemo AudioPlaybackDemo AudioPluginDemo AudioRecordingDemo AudioSettingsDemo AudioSynthesiserDemo \
@@ -87,6 +90,8 @@ post-install:
 .endfor
 	# strip juceaide
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/JUCE-${PORTVERSION}/juceaide
+	# workaround for https://github.com/juce-framework/JUCE/issues/1502
+	@${REINPLACE_CMD} -e 's|.*VST3_HELPER\.cmake.*||' ${STAGEDIR}${PREFIX}/lib/cmake/JUCE-8.0.6/JUCEConfig.cmake
 
 do-install-DEMOS-on:
 .for e in ${DEMO_FILES}

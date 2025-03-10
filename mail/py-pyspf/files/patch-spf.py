@@ -5,7 +5,7 @@
      try:
          # FIXME: how to disable TCP fallback in dnspython if not tcpfallback?
 -        answers = dns.resolver.query(name, qtype, lifetime=timeout)
-+        answers = dns.resolver.resolve(name, qtype)
++        answers = dns.resolver.resolve(name, qtype, lifetime=timeout)
          for rdata in answers:
              if qtype == 'A' or qtype == 'AAAA':
                  retVal.append(((name, qtype), rdata.address))

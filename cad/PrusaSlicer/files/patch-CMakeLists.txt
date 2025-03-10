@@ -1,14 +1,6 @@
---- CMakeLists.txt.orig	2024-06-27 09:25:47 UTC
+--- CMakeLists.txt.orig	2025-02-14 18:17:10 UTC
 +++ CMakeLists.txt
-@@ -14,6 +14,7 @@ include(CMakeDependentOption)
- include("version.inc")
- include(GNUInstallDirs)
- include(CMakeDependentOption)
-+add_compile_options(-DNDEBUG)
- 
- set(SLIC3R_RESOURCES_DIR "${CMAKE_CURRENT_SOURCE_DIR}/resources")
- file(TO_NATIVE_PATH "${SLIC3R_RESOURCES_DIR}" SLIC3R_RESOURCES_DIR_WIN)
-@@ -234,7 +235,7 @@ endif ()
+@@ -233,7 +233,7 @@ endif ()
      endif ()
  endif ()
  
@@ -17,33 +9,29 @@
      find_package(PkgConfig REQUIRED)
  
      if (CMAKE_VERSION VERSION_LESS "3.1")
-@@ -264,6 +265,8 @@ if (NOT MSVC AND ("${CMAKE_CXX_COMPILER_ID}" STREQUAL 
-     # On GCC and Clang, no return from a non-void function is a warning only. Here, we make it an error.
-     add_compile_options(-Werror=return-type)
- 
-+    add_compile_options(-Wno-enum-constexpr-conversion -Wno-implicit-const-int-float-conversion)
-+
-     # removes LOTS of extraneous Eigen warnings (GCC only supports it since 6.1)
-     # https://eigen.tuxfamily.org/bz/show_bug.cgi?id=1221
-     if("${CMAKE_CXX_COMPILER_ID}" MATCHES "Clang" OR CMAKE_CXX_COMPILER_VERSION VERSION_GREATER 6.0)
-@@ -648,8 +651,8 @@ elseif (SLIC3R_FHS)
+@@ -635,8 +635,14 @@ elseif (SLIC3R_FHS)
      install(DIRECTORY ${SLIC3R_RESOURCES_DIR}/ DESTINATION ${SLIC3R_FHS_RESOURCES}
          PATTERN "*/udev" EXCLUDE
      )
--    install(FILES src/platform/unix/PrusaSlicer.desktop DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/applications)
--    install(FILES src/platform/unix/PrusaGcodeviewer.desktop DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/applications)
-+	install(FILES src/platform/unix/PrusaSlicer.desktop DESTINATION share/applications)
-+	install(FILES src/platform/unix/PrusaGcodeviewer.desktop DESTINATION share/applications)
++if(CMAKE_SYSTEM_NAME STREQUAL "Linux")
+     install(FILES src/platform/unix/PrusaSlicer.desktop DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/applications)
+     install(FILES src/platform/unix/PrusaGcodeviewer.desktop DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/applications)
++endif()
++if(CMAKE_SYSTEM_NAME STREQUAL "FreeBSD")
++    install(FILES src/platform/unix/PrusaSlicer.desktop DESTINATION share/applications)
++    install(FILES src/platform/unix/PrusaGcodeviewer.desktop DESTINATION share/applications)
++endif()
      foreach(SIZE 32 128 192)
          install(FILES ${SLIC3R_RESOURCES_DIR}/icons/PrusaSlicer_${SIZE}px.png
              DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/icons/hicolor/${SIZE}x${SIZE}/apps RENAME PrusaSlicer.png
-@@ -658,7 +661,8 @@ elseif (SLIC3R_FHS)
+@@ -645,7 +651,10 @@ elseif (SLIC3R_FHS)
              DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/icons/hicolor/${SIZE}x${SIZE}/apps RENAME PrusaSlicer-gcodeviewer.png
          )
      endforeach()
--    install(DIRECTORY ${SLIC3R_RESOURCES_DIR}/udev/ DESTINATION lib/udev/rules.d)
-+	#FreeBSD doesn't have a udev
-+	#install(DIRECTORY ${SLIC3R_RESOURCES_DIR}/udev/ DESTINATION lib/udev/rules.d)
++if(CMAKE_SYSTEM_NAME STREQUAL "Linux")
+     install(DIRECTORY ${SLIC3R_RESOURCES_DIR}/udev/ DESTINATION lib/udev/rules.d)
++endif()
++
  else ()
      install(FILES src/platform/unix/PrusaSlicer.desktop DESTINATION ${CMAKE_INSTALL_PREFIX}/resources/applications)
      install(FILES src/platform/unix/PrusaGcodeviewer.desktop DESTINATION ${CMAKE_INSTALL_PREFIX}/resources/applications)

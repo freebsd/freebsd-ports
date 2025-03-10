@@ -12,7 +12,9 @@ lib/xfce4/panel/plugins/libdiskperf.so
 %%NLS%%share/locale/en_CA/LC_MESSAGES/xfce4-diskperf-plugin.mo
 %%NLS%%share/locale/en_GB/LC_MESSAGES/xfce4-diskperf-plugin.mo
 %%NLS%%share/locale/es/LC_MESSAGES/xfce4-diskperf-plugin.mo
+%%NLS%%share/locale/et/LC_MESSAGES/xfce4-diskperf-plugin.mo
 %%NLS%%share/locale/eu/LC_MESSAGES/xfce4-diskperf-plugin.mo
+%%NLS%%share/locale/fi/LC_MESSAGES/xfce4-diskperf-plugin.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/xfce4-diskperf-plugin.mo
 %%NLS%%share/locale/gl/LC_MESSAGES/xfce4-diskperf-plugin.mo
 %%NLS%%share/locale/he/LC_MESSAGES/xfce4-diskperf-plugin.mo
@@ -21,6 +23,7 @@ lib/xfce4/panel/plugins/libdiskperf.so
 %%NLS%%share/locale/hy_AM/LC_MESSAGES/xfce4-diskperf-plugin.mo
 %%NLS%%share/locale/hye/LC_MESSAGES/xfce4-diskperf-plugin.mo
 %%NLS%%share/locale/id/LC_MESSAGES/xfce4-diskperf-plugin.mo
+%%NLS%%share/locale/ie/LC_MESSAGES/xfce4-diskperf-plugin.mo
 %%NLS%%share/locale/is/LC_MESSAGES/xfce4-diskperf-plugin.mo
 %%NLS%%share/locale/it/LC_MESSAGES/xfce4-diskperf-plugin.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/xfce4-diskperf-plugin.mo
@@ -35,6 +38,7 @@ lib/xfce4/panel/plugins/libdiskperf.so
 %%NLS%%share/locale/pl/LC_MESSAGES/xfce4-diskperf-plugin.mo
 %%NLS%%share/locale/pt/LC_MESSAGES/xfce4-diskperf-plugin.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/xfce4-diskperf-plugin.mo
+%%NLS%%share/locale/ro/LC_MESSAGES/xfce4-diskperf-plugin.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/xfce4-diskperf-plugin.mo
 %%NLS%%share/locale/sk/LC_MESSAGES/xfce4-diskperf-plugin.mo
 %%NLS%%share/locale/sl/LC_MESSAGES/xfce4-diskperf-plugin.mo

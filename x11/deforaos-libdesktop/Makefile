@@ -1,6 +1,5 @@
 PORTNAME=	libdesktop
-PORTVERSION=	0.4.1
-PORTREVISION=	2
+PORTVERSION=	0.4.2
 CATEGORIES=	x11
 MASTER_SITES=	https://ftp.defora.org/pub/DeforaOS/Apps/Desktop/src/libDesktop/
 PKGNAMEPREFIX=	deforaos-
@@ -13,23 +12,22 @@ WWW=		https://www.defora.org/
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libSystem.so:devel/deforaos-libsystem \
-				libharfbuzz.so:print/harfbuzz \
-				libX11.so:x11/libX11
+LIB_DEPENDS=	libharfbuzz.so:print/harfbuzz \
+		libSystem.so:devel/deforaos-libsystem \
+		libX11.so:x11/libX11
 
 USES=		gnome pkgconfig
-USE_GNOME=	gtk30 cairo gdkpixbuf2
+USE_GNOME=	cairo gdkpixbuf2 gtk30
 USE_LDCONFIG=	yes
-USE_XORG+=	x11
 MAKE_ARGS+=	PREFIX=${PREFIX}
 MAKE_ENV+=	MANDIR=${STAGEDIR}${PREFIX}/share/man
 
 MAKE_JOBS_UNSAFE=	yes
 OPTIONS_DEFINE=	DOCS
 
-DOCS_BUILD_DEPENDS=	xsltproc:textproc/libxslt \
-	${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl:textproc/docbook-xsl \
-	gtkdoc-check:textproc/gtk-doc
+DOCS_BUILD_DEPENDS=	${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl:textproc/docbook-xsl \
+			gtkdoc-check:textproc/gtk-doc \
+			xsltproc:textproc/libxslt
 
 post-patch:
 	${REINPLACE_CMD} -e 's|/lib/|/libdata/|g' \

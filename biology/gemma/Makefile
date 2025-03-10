@@ -1,11 +1,13 @@
 PORTNAME=	gemma
-DISTVERSION=	0.98.3
-PORTREVISION=	5
+DISTVERSIONPREFIX=	v
+DISTVERSION=	0.98.5
+PORTREVISION=	1
 CATEGORIES=	biology
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Genome-wide Efficient Mixed Model Association
-WWW=		https://github.com/genetics-statistics/GEMMA
+WWW=		https://xiangzhou.github.io/software/ \
+		https://github.com/genetics-statistics/GEMMA/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

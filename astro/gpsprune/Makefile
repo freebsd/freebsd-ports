@@ -1,5 +1,5 @@
 PORTNAME=	gpsprune
-PORTVERSION=	24.2
+PORTVERSION=	25.1
 CATEGORIES=	astro java
 MASTER_SITES=	https://activityworkshop.net/software/${PORTNAME}/
 DISTNAME=	${PORTNAME}_${PORTVERSION}.jar
@@ -16,7 +16,7 @@ NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 NO_ARCH=	yes
 
-USE_JAVA=	yes
+USES=		java
 JAVA_VERSION=	11+
 
 SUB_FILES=	gpsprune.sh

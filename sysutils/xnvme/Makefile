@@ -1,7 +1,7 @@
 PORTNAME=	xnvme
-DISTVERSION=	0.7.4
+DISTVERSION=	0.7.5
 CATEGORIES=	sysutils
-MASTER_SITES=	https://github.com/OpenMPDK/xNVMe/releases/download/v${DISTVERSION}/
+MASTER_SITES=	https://github.com/xnvme/xnvme/releases/download/v${DISTVERSION}/
 
 MAINTAINER=	k.torp@samsung.com
 COMMENT=	Cross-platform libraries and tools for NVMe devices
@@ -20,7 +20,7 @@ MESON_ARGS=	-Dforce_completions=true \
 		-Dwith-libaio=disabled \
 		-Dwith-liburing=disabled \
 		-Dwith-libvfn=disabled \
-		-Dwith-spdk=false
+		-Dwith-spdk=disabled
 
 OPTIONS_DEFINE=		EXAMPLES TESTS TOOLS
 OPTIONS_DEFAULT=	TOOLS

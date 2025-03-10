@@ -1,7 +1,7 @@
 bin/kontact
-lib/libkontactprivate.so.5
+lib/libkontactprivate.so.6
 lib/libkontactprivate.so.%%KDE_APPLICATIONS_SHLIB_VER%%
-%%QT_PLUGINDIR%%/pim5/kcms/kontact/kcm_kontact.so
+%%QT_PLUGINDIR%%/pim6/kcms/kontact/kcm_kontact.so
 share/applications/org.kde.kontact.desktop
 share/config.kcfg/kontact.kcfg
 share/dbus-1/services/org.kde.kontact.service
@@ -14,6 +14,7 @@ share/icons/hicolor/64x64/apps/kontact.png
 share/icons/hicolor/scalable/apps/kontact.svg
 share/locale/af/LC_MESSAGES/kontact.mo
 share/locale/ar/LC_MESSAGES/kontact.mo
+share/locale/ast/LC_MESSAGES/kontact.mo
 share/locale/az/LC_MESSAGES/kontact.mo
 share/locale/be/LC_MESSAGES/kontact.mo
 share/locale/bg/LC_MESSAGES/kontact.mo
@@ -87,5 +88,5 @@ share/locale/zh_TW/LC_MESSAGES/kontact.mo
 share/messageviewer/about/default/introduction_kontact.html
 share/messageviewer/about/default/loading_kontact.html
 share/metainfo/org.kde.kontact.appdata.xml
-share/qlogging-categories5/kontact.categories
-share/qlogging-categories5/kontact.renamecategories
+share/qlogging-categories6/kontact.categories
+share/qlogging-categories6/kontact.renamecategories

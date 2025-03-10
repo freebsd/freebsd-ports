@@ -1,0 +1,2 @@
+code2prompt is a command-line tool (CLI) that converts your codebase into
+a single LLM prompt with a source tree, prompt templating, and token counting.

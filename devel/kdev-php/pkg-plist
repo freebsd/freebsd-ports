@@ -18,14 +18,12 @@ lib/cmake/KDevPHP/KDevPHPTargets.cmake
 lib/libkdevphpcompletion.so
 lib/libkdevphpduchain.so
 lib/libkdevphpparser.so
-%%QT_PLUGINDIR%%/kdevplatform/512/kcm/kcm_kdevphpdocs.so
-%%QT_PLUGINDIR%%/kdevplatform/512/kdevphpdocs.so
-%%QT_PLUGINDIR%%/kdevplatform/512/kdevphplanguagesupport.so
-%%QT_PLUGINDIR%%/kdevplatform/512/kdevphpunitprovider.so
+%%QT_PLUGINDIR%%/kdevplatform/%%PLATFORM_VER%%/kdevphpdocs.so
+%%QT_PLUGINDIR%%/kdevplatform/%%PLATFORM_VER%%/kdevphplanguagesupport.so
+%%QT_PLUGINDIR%%/kdevplatform/%%PLATFORM_VER%%/kdevphpunitprovider.so
 share/kdevappwizard/templates/simple_phpapp.tar.bz2
 share/kdevphpsupport/phpfunctions.php
 share/kdevphpsupport/phpunitdeclarations.php
-share/kservices5/kcm_kdevphpdocs.desktop
 share/locale/bs/LC_MESSAGES/kdevphp.mo
 share/locale/ca/LC_MESSAGES/kdevphp.mo
 share/locale/ca@valencia/LC_MESSAGES/kdevphp.mo
@@ -42,8 +40,10 @@ share/locale/fi/LC_MESSAGES/kdevphp.mo
 share/locale/fr/LC_MESSAGES/kdevphp.mo
 share/locale/ga/LC_MESSAGES/kdevphp.mo
 share/locale/gl/LC_MESSAGES/kdevphp.mo
+share/locale/he/LC_MESSAGES/kdevphp.mo
 share/locale/hr/LC_MESSAGES/kdevphp.mo
 share/locale/hu/LC_MESSAGES/kdevphp.mo
+share/locale/ia/LC_MESSAGES/kdevphp.mo
 share/locale/it/LC_MESSAGES/kdevphp.mo
 share/locale/ja/LC_MESSAGES/kdevphp.mo
 share/locale/ka/LC_MESSAGES/kdevphp.mo
@@ -70,4 +70,4 @@ share/locale/uk/LC_MESSAGES/kdevphp.mo
 share/locale/zh_CN/LC_MESSAGES/kdevphp.mo
 share/locale/zh_TW/LC_MESSAGES/kdevphp.mo
 share/metainfo/org.kde.kdev-php.metainfo.xml
-share/qlogging-categories5/kdevphpsupport.categories
+share/qlogging-categories6/kdevphpsupport.categories

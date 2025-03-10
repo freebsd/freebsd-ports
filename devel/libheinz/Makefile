@@ -1,5 +1,5 @@
 PORTNAME=	libheinz
-DISTVERSION=	0.2.0
+DISTVERSION=	2.0.0
 CATEGORIES=	devel
 MASTER_SITES=	https://jugit.fz-juelich.de/mlz/${PORTNAME}/-/archive/v${DISTVERSION}/
 DISTNAME=	${PORTNAME}-v${DISTVERSION}

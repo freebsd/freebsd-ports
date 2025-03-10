@@ -1,6 +1,5 @@
 PORTNAME=	udns
-PORTVERSION=	0.4
-PORTREVISION=	3
+PORTVERSION=	0.6
 CATEGORIES=	dns
 MASTER_SITES=	http://www.corpit.ru/mjt/udns/
 

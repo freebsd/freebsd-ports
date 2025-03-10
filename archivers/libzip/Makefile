@@ -1,5 +1,5 @@
 PORTNAME=	libzip
-DISTVERSION=	1.10.1
+DISTVERSION=	1.11.2
 CATEGORIES=	archivers devel
 MASTER_SITES=	https://github.com/nih-at/${PORTNAME}/releases/download/v${DISTVERSION}/ \
 		https://libzip.org/download/
@@ -17,7 +17,11 @@ USES=		cmake cpe pathfix ssl tar:xz
 CPE_VENDOR=	nih
 USE_LDCONFIG=	yes
 
-CMAKE_OFF=	BUILD_REGRESS ENABLE_COMMONCRYPTO ENABLE_GNUTLS ENABLE_MBEDTLS
+CMAKE_OFF=	BUILD_OSSFUZZ \
+		BUILD_REGRESS \
+		ENABLE_COMMONCRYPTO \
+		ENABLE_GNUTLS \
+		ENABLE_MBEDTLS
 CMAKE_ON=	CMAKE_SKIP_RPATH
 
 .include <bsd.port.mk>

@@ -13,7 +13,7 @@ LICENSE_COMB=	dual
 
 LIB_DEPENDS?=	libgnutls.so:security/gnutls
 
-USES=		gettext gmake gnome libtool localbase:ldflags meson pathfix \
+USES=		gettext gmake gnome localbase:ldflags meson pathfix \
 		pkgconfig python ssl
 USE_LDCONFIG=	yes
 USE_GNOME=	glib20 introspection:build

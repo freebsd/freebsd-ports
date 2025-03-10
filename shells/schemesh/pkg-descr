@@ -1,0 +1,10 @@
+Schemesh is an interactive shell scriptable in Lisp.
+
+It is primarily intended as a user-friendly Unix login shell,
+replacing bash, zsh, pdksh etc.
+
+As such, it supports interactive line editing, autocompletion, history
+and the familiar Unix shell syntax: it can start commands, including
+redirections, pipelines, job concatenation with ; && ||, groups
+surrounded by { }, subshells surrounded by [ ], and manage
+foreground/background jobs.

@@ -1,5 +1,6 @@
 PORTNAME=	hsqldb
 PORTVERSION=	2.3.4
+PORTREVISION=	1
 CATEGORIES=	databases java
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}_2_3
 
@@ -9,9 +10,8 @@ WWW=		https://hsqldb.org/
 
 LICENSE=	BSD3CLAUSE
 
-USE_JAVA=	yes
-USE_ANT=	yes
-USES=		zip
+USES=		java:ant,run zip
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/${PORTNAME}
 BUILD_WRKSRC=	${WRKSRC}/build
 ALL_TARGET=	hsqldb hsqljdbc

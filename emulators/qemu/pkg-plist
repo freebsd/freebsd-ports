@@ -1,4 +1,5 @@
 %%CURL%%bin/elf2dmp
+%%BSDUSER%%%%NO_X86_TARGETS%%bin/qemu-aarch64
 %%BSDUSER%%%%NO_X86_TARGETS%%bin/qemu-arm
 bin/qemu-edid
 %%BSDUSER%%bin/qemu-i386
@@ -7,11 +8,11 @@ bin/qemu-io
 %%GTK3%%bin/qemu-keymap
 bin/qemu-nbd
 bin/qemu-storage-daemon
+%%BSDUSER%%%%NO_X86_TARGETS%%bin/qemu-riscv64
 %%NO_X86_TARGETS%%bin/qemu-system-aarch64
 %%NO_X86_TARGETS%%bin/qemu-system-alpha
 %%NO_X86_TARGETS%%bin/qemu-system-avr
 %%NO_X86_TARGETS%%bin/qemu-system-arm
-%%NO_X86_TARGETS%%bin/qemu-system-cris
 %%NO_X86_TARGETS%%bin/qemu-system-hppa
 bin/qemu-system-i386
 %%NO_X86_TARGETS%%bin/qemu-system-loongarch64
@@ -22,7 +23,6 @@ bin/qemu-system-i386
 %%NO_X86_TARGETS%%bin/qemu-system-mips64
 %%NO_X86_TARGETS%%bin/qemu-system-mips64el
 %%NO_X86_TARGETS%%bin/qemu-system-mipsel
-%%NO_X86_TARGETS%%bin/qemu-system-nios2
 %%NO_X86_TARGETS%%bin/qemu-system-or1k
 %%NO_X86_TARGETS%%bin/qemu-system-ppc
 %%NO_X86_TARGETS%%bin/qemu-system-ppc64
@@ -64,6 +64,10 @@ include/qemu-plugin.h
 %%DATADIR%%/edk2-i386-secure-code.fd
 %%DATADIR%%/edk2-i386-vars.fd
 %%DATADIR%%/edk2-licenses.txt
+%%DATADIR%%/edk2-loongarch64-code.fd
+%%DATADIR%%/edk2-loongarch64-vars.fd
+%%DATADIR%%/edk2-riscv-code.fd
+%%DATADIR%%/edk2-riscv-vars.fd
 %%DATADIR%%/edk2-x86_64-code.fd
 %%DATADIR%%/edk2-x86_64-secure-code.fd
 %%DATADIR%%/efi-e1000.rom
@@ -79,6 +83,7 @@ include/qemu-plugin.h
 %%DATADIR%%/firmware/60-edk2-aarch64.json
 %%DATADIR%%/firmware/60-edk2-arm.json
 %%DATADIR%%/firmware/60-edk2-i386.json
+%%DATADIR%%/firmware/60-edk2-loongarch64.json
 %%DATADIR%%/firmware/60-edk2-x86_64.json
 %%DATADIR%%/hppa-firmware.img
 %%DATADIR%%/hppa-firmware64.img
@@ -138,7 +143,6 @@ include/qemu-plugin.h
 %%DATADIR%%/qemu-nsis.bmp
 %%DATADIR%%/qemu_vga.ndrv
 %%DATADIR%%/s390-ccw.img
-%%DATADIR%%/s390-netboot.img
 %%DATADIR%%/slof.bin
 %%DATADIR%%/u-boot-sam460-20100605.bin
 %%DATADIR%%/vgabios.bin

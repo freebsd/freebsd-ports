@@ -1,7 +1,7 @@
 PORTNAME=	keycloak
-DISTVERSION=	25.0.2
+DISTVERSION=	26.0.8
 CATEGORIES=	net java
-MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/${PORTVERSION}/
+MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/${DISTVERSION}/
 
 MAINTAINER=	freebsd@rheinwolf.de
 COMMENT=	Identity and access management solution
@@ -10,28 +10,17 @@ WWW=		https://www.keycloak.org/
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	bash>0:shells/bash
-
-USES=		cpe shebangfix
-
+USES=		cpe java shebangfix
 CPE_VENDOR=	redhat
+JAVA_VERSION=	21+
+JAVA_OS=	native
+JAVA_VENDOR=	openjdk
+
+USE_RC_SUBR=	keycloak
 
 SHEBANG_FILES=	bin/kc.sh \
 		bin/kcadm.sh \
 		bin/kcreg.sh
-
-USE_JAVA=	yes
-JAVA_VERSION=	21+
-JAVA_OS=	native
-JAVA_VENDOR=	openjdk
-JAVA_RUN=	yes
-
-USE_RC_SUBR=	keycloak
-
-KEYCLOAK_USER=	${PORTNAME}
-KEYCLOAK_GROUP=	${PORTNAME}
-USERS=		${KEYCLOAK_USER}
-GROUPS=		${USERS}
 
 VAR_DIR?=	/var
 LOG_DIR?=	${VAR_DIR}/log/${PORTNAME}
@@ -49,6 +38,12 @@ SUB_LIST+=	GROUP=${KEYCLOAK_GROUP} \
 		RUN_DIR=${RUN_DIR} \
 		USER=${KEYCLOAK_USER} \
 		GROUP=${KEYCLOAK_GROUP}
+
+KEYCLOAK_USER=	${PORTNAME}
+KEYCLOAK_GROUP=	${PORTNAME}
+USERS=		${KEYCLOAK_USER}
+GROUPS=		${USERS}
+
 PLIST_SUB=	VERSION=${DISTVERSION} \
 		USER=${KEYCLOAK_USER} \
 		GROUP=${KEYCLOAK_GROUP}

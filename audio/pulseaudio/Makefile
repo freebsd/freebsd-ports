@@ -3,14 +3,14 @@
 # PORTREVISION bumps of depending ports.
 
 PORTNAME=	pulseaudio
-DISTVERSION=	16.1
-PORTREVISION=	4
+DISTVERSION=	17.0
+PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	https://freedesktop.org/software/pulseaudio/releases/
 
 MAINTAINER=	desktop@FreeBSD.org
 COMMENT=	Sound server for UNIX
-WWW=		https://pulseaudio.org/
+WWW=		https://www.freedesktop.org/wiki/Software/PulseAudio/
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/LGPL
@@ -72,7 +72,7 @@ SPEEX_DESC=	Speex resampler and AEC support
 SPEEX_MESON_ENABLED=	speex
 SPEEX_LIB_DEPENDS=	libspeexdsp.so:audio/speexdsp
 WEBRTC_AEC_DESC=	WebRTC-based echo canceller
-WEBRTC_AEC_LIB_DEPENDS=	libwebrtc_audio_processing.so:audio/webrtc-audio-processing0
+WEBRTC_AEC_LIB_DEPENDS=	libwebrtc-audio-processing-1.so:audio/webrtc-audio-processing
 WEBRTC_AEC_MESON_ENABLED=	webrtc-aec
 
 OPTIONS_SINGLE=	DATABASE

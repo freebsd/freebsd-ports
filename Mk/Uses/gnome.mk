@@ -277,8 +277,8 @@ gtksourceview5_USE_GNOME_IMPL=gtk40 libxml2
 libgsf_LIB_DEPENDS=	libgsf-1.so:devel/libgsf
 libgsf_USE_GNOME_IMPL=	glib20 libxml2
 
-pygobject3_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gobject3>=0:devel/py-gobject3@${PY_FLAVOR}
-pygobject3_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}gobject3>=0:devel/py-gobject3@${PY_FLAVOR}
+pygobject3_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pygobject>=0:devel/py-pygobject@${PY_FLAVOR}
+pygobject3_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}pygobject>=0:devel/py-pygobject@${PY_FLAVOR}
 pygobject3_USE_GNOME_IMPL=	glib20
 
 intltool_BUILD_DEPENDS=	${LOCALBASE}/bin/intltool-extract:textproc/intltool
@@ -309,8 +309,8 @@ gtksharp20_USE_GNOME_IMPL=	gtk20
 libgnomekbd_LIB_DEPENDS=	libgnomekbd.so:x11/libgnomekbd
 libgnomekbd_USE_GNOME_IMPL=	gtk30 libxml2
 
-gvfs_BUILD_DEPENDS=	gvfs>=0:devel/gvfs
-gvfs_RUN_DEPENDS=	gvfs>=0:devel/gvfs
+gvfs_BUILD_DEPENDS=	gvfs>=0:filesystems/gvfs
+gvfs_RUN_DEPENDS=	gvfs>=0:filesystems/gvfs
 
 # End component definition section
 

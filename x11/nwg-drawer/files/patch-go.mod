@@ -7,7 +7,7 @@ github.com/nwg-piotr/nwg-drawer: cannot compile Go 1.22 code
 @@ -1,6 +1,6 @@ module github.com/nwg-piotr/nwg-drawer
  module github.com/nwg-piotr/nwg-drawer
  
--go 1.22
+-go 1.23
 +go 1.21
  
  require (

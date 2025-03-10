@@ -20,9 +20,8 @@ BUILD_DEPENDS=	maven363>0:devel/maven363 \
 		bash:shells/bash
 RUN_DEPENDS=	bash:shells/bash
 
-USES=		shebangfix
+USES=		java shebangfix
 SHEBANG_FILES=	gui-distribution/assembly/src/main/bin/cytoscape.sh
-USE_JAVA=	yes
 USE_GITHUB=	yes
 GH_TUPLE=	${PORTNAME}:${PORTNAME}-parent:${DISTVERSION}:p/parent \
 		${PORTNAME}:${PORTNAME}-api:${DISTVERSION}:a/api \

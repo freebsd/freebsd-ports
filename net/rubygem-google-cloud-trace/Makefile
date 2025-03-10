@@ -1,5 +1,5 @@
 PORTNAME=	google-cloud-trace
-PORTVERSION=	0.44.0
+PORTVERSION=	0.44.1
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 

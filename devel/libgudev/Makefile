@@ -12,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libudev.so:devel/libudev-devd
 
-USES=		gettext-runtime gnome libtool meson pathfix pkgconfig tar:xz
+USES=		gettext-runtime gnome meson pathfix pkgconfig tar:xz
 USE_GNOME=	glib20 introspection:build
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip

@@ -1,27 +1,29 @@
 PORTNAME=	split-sequence
-PORTVERSION=	20011114.1
-PORTREVISION=	2
+DISTVERSIONPREFIX=	v
+DISTVERSION=	2.0.1-3
+DISTVERSIONSUFFIX=	-g89a10b4
+PORTEPOCH=	1
 CATEGORIES=	devel lisp
-MASTER_SITES=	ftp://ftp.linux.org.uk/pub/lisp/experimental/cclan/ \
-		ftp://ftp.ntnu.no/pub/lisp/cclan/ \
-		http://www-jcsu.jesus.cam.ac.uk/ftp/pub/cclan/
 PKGNAMEPREFIX=	cl-
-DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Partitioning Common Lisp sequences
 WWW=		https://www.cliki.net/SPLIT-SEQUENCE
 
-WRKSRC=		${WRKDIR}/${PORTNAME}
+LICENSE=	PD
+
+USES=		cl
+USE_GITHUB=	yes
+GH_ACCOUNT=	sharplispers
+
 NO_BUILD=	yes
 
-USE_ASDF=	yes
-
 do-install:
-	@${MKDIR} ${STAGEDIR}${ASDF_PATHNAME} ${STAGEDIR}${ASDF_REGISTRY}
-	@${INSTALL_DATA} ${WRKSRC}/split-sequence.lisp ${STAGEDIR}${ASDF_PATHNAME}
-	@${INSTALL_DATA} ${WRKSRC}/split-sequence.asd ${STAGEDIR}${ASDF_PATHNAME}
-	@${LN} -sf ${ASDF_PATHNAME}/split-sequence.asd ${STAGEDIR}${ASDF_REGISTRY}
+	${MKDIR} ${STAGEDIR}${ASDF_PATHNAME} ${STAGEDIR}${ASDF_REGISTRY}
+	${INSTALL_DATA} ${WRKSRC}/*.lisp ${WRKSRC}/version.sexp \
+		${STAGEDIR}${ASDF_PATHNAME}
+	${INSTALL_DATA} ${WRKSRC}/split-sequence.asd ${STAGEDIR}${ASDF_PATHNAME}
+	${RLN} ${STAGEDIR}${ASDF_PATHNAME}/split-sequence.asd \
+		${STAGEDIR}${ASDF_REGISTRY}
 
-.include "${.CURDIR}/../../devel/cl-asdf/bsd.cl-asdf.mk"
 .include <bsd.port.mk>

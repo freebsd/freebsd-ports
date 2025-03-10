@@ -1,0 +1,2 @@
+The Gen library for OCaml includes functions to work with transient
+and restartable iterators.

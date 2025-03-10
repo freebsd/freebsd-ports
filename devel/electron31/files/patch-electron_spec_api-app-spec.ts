@@ -1,6 +1,6 @@
---- electron/spec/api-app-spec.ts.orig	2024-07-24 17:23:33 UTC
+--- electron/spec/api-app-spec.ts.orig	2024-10-09 13:53:12 UTC
 +++ electron/spec/api-app-spec.ts
-@@ -123,11 +123,11 @@ describe('app module', () => {
+@@ -126,11 +126,11 @@ describe('app module', () => {
    });
  
    describe('app.getPreferredSystemLanguages()', () => {
@@ -14,7 +14,7 @@
        const languages = app.getPreferredSystemLanguages();
        if (languages.length) {
          expect(languages).to.not.include('C');
-@@ -190,7 +190,7 @@ describe('app module', () => {
+@@ -193,7 +193,7 @@ describe('app module', () => {
        expect(code).to.equal(123, 'exit code should be 123, if you see this please tag @MarshallOfSound');
      });
  
@@ -23,7 +23,7 @@
        const electronPath = process.execPath;
        const appPath = path.join(fixturesPath, 'api', 'singleton');
        appProcess = cp.spawn(electronPath, [appPath]);
-@@ -444,7 +444,7 @@ describe('app module', () => {
+@@ -447,7 +447,7 @@ describe('app module', () => {
    //   let w = null
  
    //   before(function () {
@@ -32,7 +32,7 @@
    //       this.skip()
    //     }
    //   })
-@@ -551,7 +551,7 @@ describe('app module', () => {
+@@ -554,7 +554,7 @@ describe('app module', () => {
    describe('app.badgeCount', () => {
      const platformIsNotSupported =
          (process.platform === 'win32') ||
@@ -41,7 +41,7 @@
  
      const expectedBadgeCount = 42;
  
-@@ -595,7 +595,7 @@ describe('app module', () => {
+@@ -598,7 +598,7 @@ describe('app module', () => {
      });
    });
  
@@ -50,7 +50,7 @@
      const isMac = process.platform === 'darwin';
      const isWin = process.platform === 'win32';
  
-@@ -975,7 +975,7 @@ describe('app module', () => {
+@@ -978,7 +978,7 @@ describe('app module', () => {
      });
    });
  
@@ -59,7 +59,7 @@
      it('with properties', () => {
        it('can set accessibility support enabled', () => {
          expect(app.accessibilitySupportEnabled).to.eql(false);
-@@ -1175,7 +1175,7 @@ describe('app module', () => {
+@@ -1178,7 +1178,7 @@ describe('app module', () => {
      });
    });
  
@@ -68,7 +68,7 @@
      let w: BrowserWindow;
  
      before(function () {
-@@ -1310,7 +1310,7 @@ describe('app module', () => {
+@@ -1313,7 +1313,7 @@ describe('app module', () => {
  
    describe('getApplicationNameForProtocol()', () => {
      // TODO: Linux CI doesn't have registered http & https handlers
@@ -77,7 +77,7 @@
        // We can't expect particular app names here, but these protocols should
        // at least have _something_ registered. Except on our Linux CI
        // environment apparently.
-@@ -1328,7 +1328,7 @@ describe('app module', () => {
+@@ -1331,7 +1331,7 @@ describe('app module', () => {
      });
    });
  
@@ -86,7 +86,7 @@
      it('returns promise rejection for a bogus protocol', async function () {
        await expect(
          app.getApplicationInfoForProtocol('bogus-protocol://')
-@@ -1378,7 +1378,7 @@ describe('app module', () => {
+@@ -1381,7 +1381,7 @@ describe('app module', () => {
    });
  
    // FIXME Get these specs running on Linux CI
@@ -95,7 +95,7 @@
      const iconPath = path.join(__dirname, 'fixtures/assets/icon.ico');
      const sizes = {
        small: 16,
-@@ -1459,7 +1459,7 @@ describe('app module', () => {
+@@ -1462,7 +1462,7 @@ describe('app module', () => {
            expect(entry.memory).to.have.property('privateBytes').that.is.greaterThan(0);
          }
  
@@ -104,7 +104,7 @@
            expect(entry.sandboxed).to.be.a('boolean');
          }
  
-@@ -1533,7 +1533,7 @@ describe('app module', () => {
+@@ -1536,7 +1536,7 @@ describe('app module', () => {
  
      it('succeeds with complete GPUInfo', async () => {
        const completeInfo = await getGPUInfo('complete');
@@ -113,7 +113,7 @@
          // For linux and macOS complete info is same as basic info
          await verifyBasicGPUInfo(completeInfo);
          const basicInfo = await getGPUInfo('basic');
-@@ -1557,7 +1557,7 @@ describe('app module', () => {
+@@ -1560,7 +1560,7 @@ describe('app module', () => {
      });
    });
  

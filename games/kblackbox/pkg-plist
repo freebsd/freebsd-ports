@@ -6,9 +6,10 @@ share/icons/hicolor/22x22/apps/kblackbox.png
 share/icons/hicolor/32x32/apps/kblackbox.png
 share/icons/hicolor/48x48/apps/kblackbox.png
 share/icons/hicolor/64x64/apps/kblackbox.png
-%%DATADIR%%/pics/kblackbox.svgz
+%%DATADIR%%/themes/default.svgz
 share/locale/af/LC_MESSAGES/kblackbox.mo
 share/locale/ar/LC_MESSAGES/kblackbox.mo
+share/locale/ast/LC_MESSAGES/kblackbox.mo
 share/locale/be/LC_MESSAGES/kblackbox.mo
 share/locale/bg/LC_MESSAGES/kblackbox.mo
 share/locale/bn/LC_MESSAGES/kblackbox.mo
@@ -36,6 +37,7 @@ share/locale/hi/LC_MESSAGES/kblackbox.mo
 share/locale/hne/LC_MESSAGES/kblackbox.mo
 share/locale/hr/LC_MESSAGES/kblackbox.mo
 share/locale/hu/LC_MESSAGES/kblackbox.mo
+share/locale/ia/LC_MESSAGES/kblackbox.mo
 share/locale/id/LC_MESSAGES/kblackbox.mo
 share/locale/is/LC_MESSAGES/kblackbox.mo
 share/locale/it/LC_MESSAGES/kblackbox.mo

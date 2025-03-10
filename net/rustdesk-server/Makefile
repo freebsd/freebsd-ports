@@ -1,5 +1,5 @@
 PORTNAME=	rustdesk-server
-DISTVERSION=	1.1.11-1
+DISTVERSION=	1.1.14
 PORTREVISION=	1
 CATEGORIES=	net
 
@@ -10,20 +10,18 @@ WWW=		https://rustdesk.com/server/
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN_aarch64=	fails to build
-
 USES=		cargo
 USE_GITHUB=	yes
 GH_ACCOUNT=	rustdesk
+GH_PROJECT=	hbb_common:common
+GH_SUBDIR=	libs/hbb_common:common
+GH_TAGNAME=	49c6b24:common
 USE_RC_SUBR=	rustdesk-hbbr rustdesk-hbbs
 
 USERS=		rustdesk
 GROUPS=		rustdesk
 
 post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/hbbs
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/hbbr
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/rustdesk-utils
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/newsyslog.conf.d
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/syslog.d
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}

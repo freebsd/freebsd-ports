@@ -2,7 +2,7 @@
 # Please update update atril-lite also
 
 PORTNAME=	atril
-PORTVERSION=	1.28.0
+PORTVERSION=	1.28.1
 PORTREVISION=	1
 CATEGORIES=	graphics print mate
 MASTER_SITES=	MATE
@@ -81,7 +81,7 @@ XPS_LIB_DEPENDS=	libgxps.so:graphics/libgxps
 
 EPUB_DESC=		Epub support
 EPUB_CONFIGURE_ENABLE=	epub
-EPUB_LIB_DEPENDS=	libwebkit2gtk-4.0.so:www/webkit2-gtk3
+EPUB_LIB_DEPENDS=	libwebkit2gtk-4.0.so:www/webkit2-gtk@40
 
 DVI_DESC=		DVI viewer support
 DVI_USES=		tex

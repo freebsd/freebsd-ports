@@ -12,8 +12,8 @@ WWW=		http://homepage.mac.com/aberfield/dmj/
 
 EXTRACT_AFTER_ARGS=	-d ${WRKSRC}
 
-USES=		zip
-USE_JAVA=	yes
+USES=		java zip
+
 NO_BUILD=	yes
 
 do-install:

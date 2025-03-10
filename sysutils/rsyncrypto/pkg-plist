@@ -1,0 +1,4 @@
+bin/rsyncrypto
+bin/rsyncrypto_recover
+share/man/man1/rsyncrypto.1.gz
+share/man/man1/rsyncrypto_recover.1.gz

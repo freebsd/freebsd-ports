@@ -4,13 +4,13 @@ PKGNAMESUFFIX=	1-plugins-gdkpixbuf
 
 COMMENT=	GStreamer image decoder/overlay plugin
 
-GST_PLUGIN=	gdk-pixbuf
+USE_GNOME=	gdkpixbuf2
+
+MASTERDIR=	${.CURDIR:H:H}/multimedia/gstreamer1-plugins
+
+PLIST=		${.CURDIR}/pkg-plist
+
 DIST=		good
-
-MASTERDIR=	${.CURDIR}/../../multimedia/gstreamer1-plugins
-
-PLIST=  ${.CURDIR}/pkg-plist
-
-USE_GNOME= gdkpixbuf2
+GST_PLUGIN=	gdk-pixbuf
 
 .include "${MASTERDIR}/Makefile"

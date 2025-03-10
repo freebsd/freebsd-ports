@@ -1,11 +1,12 @@
 PORTNAME=	narrowlink
 DISTVERSION=	0.2.6
-PORTREVISION=	0
+PORTREVISION=	6
 CATEGORIES=	net
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Self-hosted solution for secure connectivity between devices
-WWW=		https://narrowlink.com
+WWW=		https://narrowlink.com \
+		https://github.com/narrowlink/narrowlink
 
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
@@ -335,7 +336,7 @@ do-install:
 	# workaround for error: found a virtual manifest at `xx` instead of a package manifest
 .for prog in ${PROGRAMS}
 	${INSTALL_PROGRAM} \
-		${WRKDIR}/target/*/release/${prog} \
+		${WRKDIR}/target/release/${prog} \
 		${STAGEDIR}${PREFIX}/bin
 .endfor
 	# install config files

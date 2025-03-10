@@ -12,10 +12,10 @@ LICENSE=	LGPL21
 
 LIB_DEPENDS=	libaudiofile.so:audio/libaudiofile \
 		libspandsp.so:comms/spandsp \
-		libtiff.so:graphics/tiff \
-		libxml2.so:textproc/libxml2
+		libtiff.so:graphics/tiff
 
-USES=		tar:tgz libtool
+USES=		gnome tar:tgz libtool
+USE_GNOME=	libxml2
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 

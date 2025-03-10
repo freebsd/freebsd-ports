@@ -12,6 +12,9 @@ WWW=		https://github.com/matthewdeanmartin/colorclass
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Upstream repository has been archived on Jul 10, 2024
+EXPIRATION_DATE=2025-02-28
+
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}poetry-core>=1.0.0:devel/py-poetry-core@${PY_FLAVOR}
 
 USES=		python

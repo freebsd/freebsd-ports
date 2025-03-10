@@ -1,6 +1,6 @@
 --- zlibrary/core/src/unix/curl/ZLCurlNetworkManager.cpp.orig	2014-01-11 12:45:25 UTC
 +++ zlibrary/core/src/unix/curl/ZLCurlNetworkManager.cpp
-@@ -285,9 +285,11 @@ std::string ZLCurlNetworkManager::perfor
+@@ -285,9 +285,11 @@ std::string ZLCurlNetworkManager::perform(const ZLExec
  #endif
  					errors.insert(ZLStringUtil::printf(errorResource["peerFailedVerificationMessage"].value(), ZLNetworkUtil::hostFromUrl(url)));
  					break;
