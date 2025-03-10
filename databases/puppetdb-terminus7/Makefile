@@ -11,6 +11,9 @@ WWW=		https://docs.puppetlabs.com/puppetdb/latest/
 
 LICENSE=	APACHE20
 
+DEPRECATED=	Reached EOL
+EXPIRATION_DATE=2025-05-09
+
 CONFLICTS_INSTALL=	puppetdb-terminus[0-9]
 NO_BUILD=	yes
 USES=		gmake ruby
