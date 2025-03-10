@@ -1926,6 +1926,7 @@ lib/python2.7/lib-dynload/_socket.so
 lib/python2.7/lib-dynload/_ssl.so
 lib/python2.7/lib-dynload/_struct.so
 lib/python2.7/lib-dynload/_testcapi.so
+lib/python2.7/lib-dynload/_tkinter.so
 lib/python2.7/lib-dynload/array.so
 lib/python2.7/lib-dynload/audioop.so
 lib/python2.7/lib-dynload/binascii.so

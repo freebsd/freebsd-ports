@@ -5,9 +5,9 @@
 
 # Description: ossaudiodev detection fix backport
 
---- setup.py.orig	2017-04-22 03:42:03 UTC
+--- setup.py.orig	2020-04-19 21:13:39 UTC
 +++ setup.py
-@@ -15,6 +15,7 @@ from distutils.core import Extension, se
+@@ -15,6 +15,7 @@ from distutils.command.install_lib import install_lib
  from distutils.command.build_ext import build_ext
  from distutils.command.install import install
  from distutils.command.install_lib import install_lib
@@ -15,16 +15,16 @@
  from distutils.spawn import find_executable
  
  cross_compiling = "_PYTHON_HOST_PLATFORM" in os.environ
-@@ -33,7 +34,7 @@ host_platform = get_platform()
+@@ -33,7 +34,7 @@ COMPILED_WITH_PYDEBUG = ('--with-pydebug' in sysconfig
  COMPILED_WITH_PYDEBUG = ('--with-pydebug' in sysconfig.get_config_var("CONFIG_ARGS"))
  
  # This global variable is used to hold the list of modules to be disabled.
 -disabled_module_list = []
-+disabled_module_list = ["_bsddb", "_sqlite3", "_tkinter", "gdbm", "mpz"]
++disabled_module_list = ["_bsddb", "_sqlite3", "gdbm", "mpz"]
  
  def add_dir_to_list(dirlist, dir):
      """Add the directory 'dir' to the list 'dirlist' (at the front) if
-@@ -1234,7 +1235,7 @@ class PyBuildExt(build_ext):
+@@ -1280,7 +1281,7 @@ class PyBuildExt(build_ext):
                  sysroot = macosx_sdk_root()
                  f = os.path.join(sysroot, f[1:])
  
@@ -33,7 +33,7 @@
              data = open(f).read()
              m = re.search(r"#s*define\s+HASHVERSION\s+2\s*", data)
              if m is not None:
-@@ -1624,9 +1625,10 @@ class PyBuildExt(build_ext):
+@@ -1665,9 +1666,10 @@ class PyBuildExt(build_ext):
          else:
              missing.append('linuxaudiodev')
  
@@ -47,7 +47,7 @@
              exts.append( Extension('ossaudiodev', ['ossaudiodev.c']) )
          else:
              missing.append('ossaudiodev')
-@@ -2200,6 +2202,22 @@ class PyBuildInstallLib(install_lib):
+@@ -2290,6 +2292,22 @@ class PyBuildInstallLib(install_lib):
      def is_chmod_supported(self):
          return hasattr(os, 'chmod')
  
@@ -70,7 +70,7 @@
  SUMMARY = """
  Python is an interpreted, interactive, object-oriented programming
  language. It is often compared to Tcl, Perl, Scheme or Java.
-@@ -2245,7 +2263,9 @@ def main():
+@@ -2335,7 +2353,9 @@ def main():
            platforms = ["Many"],
  
            # Build info
@@ -81,7 +81,7 @@
                        'install_lib':PyBuildInstallLib},
            # The struct module is defined here, because build_ext won't be
            # called unless there's at least one extension module defined.
-@@ -2253,8 +2273,7 @@ def main():
+@@ -2343,8 +2363,7 @@ def main():
  
            # Scripts to install
            scripts = ['Tools/scripts/pydoc', 'Tools/scripts/idle',

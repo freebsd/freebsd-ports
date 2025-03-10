@@ -1,6 +1,6 @@
 PORTNAME=	python
 DISTVERSION=	${PYTHON_DISTVERSION}
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	lang python
 MASTER_SITES=	PYTHON/ftp/python/${DISTVERSION}
 PKGNAMESUFFIX=	27
@@ -16,7 +16,7 @@ LICENSE=	PSFL
 DEPRECATED=	EOLed upstream
 EXPIRATION_DATE=	2020-12-31
 
-USES=		cpe ncurses pathfix pkgconfig readline shebangfix ssl tar:xz
+USES=		cpe ncurses pathfix pkgconfig readline shebangfix ssl tar:xz tk:86
 PATHFIX_MAKEFILEIN=	Makefile.pre.in
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes

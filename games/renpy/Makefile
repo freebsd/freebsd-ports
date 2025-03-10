@@ -1,7 +1,7 @@
 PORTNAME=	renpy
 PORTVERSION=	7.4.11
 DISTVERSIONSUFFIX=-sdk
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games devel
 MASTER_SITES=	https://www.renpy.org/dl/${PORTVERSION}/
 
@@ -53,15 +53,13 @@ DESKTOP_ENTRIES="Ren'Py" \
 		"Development;Game;AdventureGame;" \
 		""
 
-OPTIONS_DEFAULT=TKINTER DIST
-OPTIONS_DEFINE=	DOCS DIST EXAMPLES TKINTER
+OPTIONS_DEFAULT=DIST
+OPTIONS_DEFINE=	DOCS DIST EXAMPLES
 
 DIST_DESC=	Distribution runtimes for Windows, OS X, Linux
 DIST_VARS=	LICENSE+="ART20 PSFL" \
 		PORTDATA+="lib renpy.app renpy.exe renpy-32.exe renpy.sh"
 EXAMPLES_VARS=	PORTDATA+="the_question tutorial"
-TKINTER_DESC=	Install Tkinter to allow choosing Projects Directory
-TKINTER_RUN_DEPENDS=${PYTHON_PKGNAMEPREFIX}tkinter>0:x11-toolkits/py-tkinter@${PY_FLAVOR}
 
 post-extract:
 	@${FIND} ${WRKSRC}/lib ${WRKSRC}/renpy.app -type d -empty -delete

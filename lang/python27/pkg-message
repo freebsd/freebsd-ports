@@ -1,13 +1,8 @@
 [
 { type: install
   message: <<EOM
-Note that some standard Python modules are provided as separate ports
-as they require additional dependencies. They are available as:
-
-bsddb           databases/py-bsddb
-gdbm            databases/py-gdbm
-sqlite3         databases/py-sqlite3
-tkinter         x11-toolkits/py-tkinter
+Only the tkinter standard extension module is included or supported;
+the previous ports now only support Python 3+.
 EOM
 }
 ]
