@@ -9,6 +9,9 @@ WWW=		https://github.com/puppetlabs/leatherman
 
 LICENSE=	APACHE20
 
+DEPRECATED=	Project got archived
+EXPIRATION_DATE=2025-05-09
+
 LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 		libcurl.so:ftp/curl
 
