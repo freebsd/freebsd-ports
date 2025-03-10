@@ -1,5 +1,5 @@
 PORTNAME=	alpaca
-DISTVERSION=	4.0.1
+DISTVERSION=	5.1.0
 CATEGORIES=	misc
 
 MAINTAINER=	nivit@FreeBSD.org
@@ -16,6 +16,7 @@ RUN_DEPENDS=	${PY_PILLOW} \
 		${PYTHON_PKGNAMEPREFIX}html2text>=2.2.3:textproc/py-html2text@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}matplotlib>=3.8.0:math/py-matplotlib@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}odfpy>=1.4.1:devel/py-odfpy@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}openai>=1.58.1:misc/py-openai@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pillow>=11.0.0:graphics/py-pillow@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pydbus>=0.6.0:devel/py-pydbus@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyicu>=2.13.1:devel/py-pyicu@${PY_FLAVOR} \
