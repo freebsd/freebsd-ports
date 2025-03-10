@@ -14,14 +14,13 @@ BUILD_DEPENDS=	eog:graphics/eog
 LIB_DEPENDS=	libgdata.so:devel/libgdata \
 		libgoa-1.0.so:net/gnome-online-accounts \
 		libjson-glib-1.0.so:devel/json-glib \
-		libsoup-2.4.so:devel/libsoup \
 		libexif.so:graphics/libexif \
 		libpeas-1.0.so:devel/libpeas \
 		libclutter-gtk-1.0.so:graphics/clutter-gtk3 \
 		libclutter-1.0.so:graphics/clutter \
 		libcogl.so:graphics/cogl \
 		libjson-glib-1.0.so:devel/json-glib \
-		libsoup-2.4.so:devel/libsoup
+		libchamplain-0.12.so:graphics/libchamplain
 RUN_DEPENDS=	eog:graphics/eog
 
 PORTSCOUT=	limitw:1,even

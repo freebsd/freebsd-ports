@@ -52,7 +52,7 @@ PKGNAMESUFFIX=		-lite
 COMMENT+=		without GNOME dependencies
 CONFLICTS_INSTALL=	evince
 .else
-USE_GNOME+=		introspection:build
+USE_GNOME+=		introspection:build gnomedesktop3
 MESON_ARGS+=		-Dintrospection=true
 CONFLICTS_INSTALL=	evince-lite
 .endif

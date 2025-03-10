@@ -11,7 +11,7 @@ WWW=		https://wiki.gnome.org/Apps/Evolution
 LICENSE=	LGPL20
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libsoup-2.4.so:devel/libsoup \
+LIB_DEPENDS=	libsoup-3.0.so:devel/libsoup3 \
 		libfribidi.so:converters/fribidi \
 		libgcr-base-3.so:security/gcr3 \
 		libgoa-1.0.so:net/gnome-online-accounts \
@@ -27,7 +27,8 @@ LIB_DEPENDS=	libsoup-2.4.so:devel/libsoup \
 		libnspr4.so:devel/nspr \
 		libsecret-1.so:security/libsecret \
 		libcanberra-gtk3.so:audio/libcanberra-gtk3 \
-		libcanberra.so:audio/libcanberra
+		libcanberra.so:audio/libcanberra \
+		libuuid.so:misc/e2fsprogs-libuuid
 
 PORTSCOUT=	limitw:1,even
 
