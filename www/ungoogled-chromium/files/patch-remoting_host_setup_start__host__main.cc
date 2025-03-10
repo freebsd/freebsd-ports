@@ -1,6 +1,6 @@
---- remoting/host/setup/start_host_main.cc.orig	2024-10-27 06:40:35 UTC
+--- remoting/host/setup/start_host_main.cc.orig	2025-03-09 21:38:10 UTC
 +++ remoting/host/setup/start_host_main.cc
-@@ -38,7 +38,7 @@
+@@ -43,7 +43,7 @@
  #include <unistd.h>
  #endif  // BUILDFLAG(IS_POSIX)
  
@@ -9,7 +9,7 @@
  #include "remoting/host/setup/daemon_controller_delegate_linux.h"
  #include "remoting/host/setup/start_host_as_root.h"
  #endif  // BUILDFLAG(IS_LINUX)
-@@ -369,7 +369,7 @@ bool InitializeCloudMachineParams(HostStarter::Params&
+@@ -374,7 +374,7 @@ bool InitializeCloudMachineParams(HostStarter::Params&
  }  // namespace
  
  int StartHostMain(int argc, char** argv) {
@@ -18,7 +18,7 @@
    // Minimize the amount of code that runs as root on Posix systems.
    if (getuid() == 0) {
      return remoting::StartHostAsRoot(argc, argv);
-@@ -394,7 +394,7 @@ int StartHostMain(int argc, char** argv) {
+@@ -399,7 +399,7 @@ int StartHostMain(int argc, char** argv) {
  
    mojo::core::Init();
  

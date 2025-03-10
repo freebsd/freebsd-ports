@@ -1,20 +1,18 @@
---- ui/ozone/platform/wayland/common/wayland_util.cc.orig	2025-02-20 09:59:21 UTC
+--- ui/ozone/platform/wayland/common/wayland_util.cc.orig	2025-03-09 21:38:10 UTC
 +++ ui/ozone/platform/wayland/common/wayland_util.cc
-@@ -325,7 +325,7 @@ void SkColorToWlArray(const SkColor4f& color, wl_array
- }
+@@ -420,6 +420,7 @@ void RecordConnectionMetrics(wl_display* display) {
+         {"weston", WaylandCompositor::kWeston},
+     };
  
- base::TimeTicks EventMillisecondsToTimeTicks(uint32_t milliseconds) {
--#if BUILDFLAG(IS_LINUX)
-+#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
-   // TODO(crbug.com/40287874): `milliseconds` comes from Weston that
-   // uses timestamp from libinput, which is different from TimeTicks.
-   // Use EventTimeForNow(), for now.
-@@ -367,7 +367,7 @@ bool MaybeHandlePlatformEventForDrag(const ui::Platfor
- }
++#if !BUILDFLAG(IS_BSD)
+     const int fd = wl_display_get_fd(display);
+     if (fd == -1) {
+       return WaylandCompositor::kUnknown;
+@@ -445,6 +446,7 @@ void RecordConnectionMetrics(wl_display* display) {
+         return compositor;
+       }
+     }
++#endif
  
- void RecordConnectionMetrics(wl_display* display) {
--#if BUILDFLAG(IS_LINUX)
-+#if BUILDFLAG(IS_LINUX) && !BUILDFLAG(IS_BSD)
-   CHECK(display);
- 
-   // These values are logged to metrics so must not be changed.
+     return WaylandCompositor::kOther;
+   };

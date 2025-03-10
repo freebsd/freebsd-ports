@@ -1,15 +1,6 @@
---- components/autofill/core/common/autofill_payments_features.cc.orig	2025-02-20 09:59:21 UTC
+--- components/autofill/core/common/autofill_payments_features.cc.orig	2025-03-09 21:38:10 UTC
 +++ components/autofill/core/common/autofill_payments_features.cc
-@@ -11,7 +11,7 @@ BASE_FEATURE(kAutofillDisableLocalCardMigration,
-              "AutofillDisableLocalCardMigration",
-              base::FEATURE_DISABLED_BY_DEFAULT);
- 
--#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || \
-+#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_BSD) || \
-     (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS))
- // When enabled, Chrome will extract the checkout amount from the checkout page
- // of the allowlisted merchant websites.
-@@ -322,7 +322,7 @@ BASE_FEATURE(kAutofillSyncEwalletAccounts,
+@@ -292,7 +292,7 @@ BASE_FEATURE(kAutofillSyncEwalletAccounts,
  #endif  // BUILDFLAG(IS_ANDROID)
  
  bool ShouldShowImprovedUserConsentForCreditCardSave() {

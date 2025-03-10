@@ -1,11 +1,11 @@
---- remoting/base/chromoting_event.cc.orig	2022-12-02 17:56:32 UTC
+--- remoting/base/chromoting_event.cc.orig	2025-03-09 21:38:10 UTC
 +++ remoting/base/chromoting_event.cc
-@@ -192,7 +192,7 @@ void ChromotingEvent::AddSystemInfo() {
+@@ -191,7 +191,7 @@ void ChromotingEvent::AddSystemInfo() {
    SetString(kCpuKey, base::SysInfo::OperatingSystemArchitecture());
    SetString(kOsVersionKey, base::SysInfo::OperatingSystemVersion());
    SetString(kWebAppVersionKey, STRINGIZE(VERSION));
--#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
-+#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
+-#if BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
    Os os = Os::CHROMOTING_LINUX;
- #elif BUILDFLAG(IS_CHROMEOS_ASH)
+ #elif BUILDFLAG(IS_CHROMEOS)
    Os os = Os::CHROMOTING_CHROMEOS;

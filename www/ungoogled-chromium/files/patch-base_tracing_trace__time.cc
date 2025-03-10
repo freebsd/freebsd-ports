@@ -1,6 +1,6 @@
---- base/tracing/trace_time.cc.orig	2025-02-20 09:59:21 UTC
+--- base/tracing/trace_time.cc.orig	2025-03-09 21:38:10 UTC
 +++ base/tracing/trace_time.cc
-@@ -8,13 +8,17 @@
+@@ -8,12 +8,16 @@
  #include "build/build_config.h"
  #include "third_party/perfetto/include/perfetto/base/time.h"
  
@@ -8,8 +8,7 @@
 +#define CLOCK_BOOTTIME CLOCK_UPTIME
 +#endif
 +
- namespace base {
- namespace tracing {
+ namespace base::tracing {
  
  int64_t TraceBootTicksNow() {
    // On Windows and Mac, TRACE_TIME_TICKS_NOW() behaves like boottime already.

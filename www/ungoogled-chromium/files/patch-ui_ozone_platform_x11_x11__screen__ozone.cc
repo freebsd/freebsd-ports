@@ -1,4 +1,4 @@
---- ui/ozone/platform/x11/x11_screen_ozone.cc.orig	2024-03-22 14:16:19 UTC
+--- ui/ozone/platform/x11/x11_screen_ozone.cc.orig	2025-03-09 21:38:10 UTC
 +++ ui/ozone/platform/x11/x11_screen_ozone.cc
 @@ -22,7 +22,7 @@
  #include "ui/ozone/platform/x11/x11_window.h"
@@ -18,7 +18,7 @@
    if (auto* linux_ui = ui::LinuxUi::instance()) {
      display_scale_factor_observer_.Observe(linux_ui);
    }
-@@ -260,7 +260,7 @@ void X11ScreenOzone::OnEvent(const x11::Event& xev) {
+@@ -267,7 +267,7 @@ void X11ScreenOzone::OnEvent(const x11::Event& xev) {
    x11_display_manager_->OnEvent(xev);
  }
  

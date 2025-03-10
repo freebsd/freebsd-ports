@@ -1,6 +1,6 @@
---- chrome/browser/ui/tab_helpers.cc.orig	2025-02-20 09:59:21 UTC
+--- chrome/browser/ui/tab_helpers.cc.orig	2025-03-09 21:38:10 UTC
 +++ chrome/browser/ui/tab_helpers.cc
-@@ -231,7 +231,7 @@
+@@ -222,7 +222,7 @@
  #endif
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -9,12 +9,12 @@
  #include "chrome/browser/ui/blocked_content/framebust_block_tab_helper.h"
  #include "chrome/browser/ui/browser_finder.h"
  #include "chrome/browser/ui/hats/hats_helper.h"
-@@ -662,12 +662,12 @@ void TabHelpers::AttachTabHelpers(WebContents* web_con
- // TODO(crbug.com/40118868): Revisit the macro expression once build flag switch
- // of lacros-chrome is complete.
- #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || \
--    (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS))
-+    (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS) || BUILDFLAG(IS_BSD))
+@@ -646,12 +646,12 @@ void TabHelpers::AttachTabHelpers(WebContents* web_con
+   webapps::PreRedirectionURLObserver::CreateForWebContents(web_contents);
+ #endif
+ 
+-#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
    metrics::DesktopSessionDurationObserver::CreateForWebContents(web_contents);
  #endif
  

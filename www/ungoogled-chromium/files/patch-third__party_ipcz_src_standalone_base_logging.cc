@@ -1,6 +1,6 @@
---- third_party/ipcz/src/standalone/base/logging.cc.orig	2022-10-01 07:40:07 UTC
+--- third_party/ipcz/src/standalone/base/logging.cc.orig	2025-03-09 21:38:10 UTC
 +++ third_party/ipcz/src/standalone/base/logging.cc
-@@ -50,6 +50,9 @@ LogMessage::LogMessage(const char* file, int line, Lev
+@@ -55,6 +55,9 @@ LogMessage::LogMessage(const char* file, int line, Lev
  #elif BUILDFLAG(IS_ANDROID)
    stream_ << getpid() << ":" << gettid() << ":";
    const char* trimmed_file = strrchr(file, '/') + 1;

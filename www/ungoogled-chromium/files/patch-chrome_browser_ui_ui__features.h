@@ -1,6 +1,6 @@
---- chrome/browser/ui/ui_features.h.orig	2025-02-20 09:59:21 UTC
+--- chrome/browser/ui/ui_features.h.orig	2025-03-09 21:38:10 UTC
 +++ chrome/browser/ui/ui_features.h
-@@ -68,7 +68,7 @@ extern const base::FeatureParam<bool> kAppMenuChipColo
+@@ -52,7 +52,7 @@ extern const base::FeatureParam<int> kMaxPromptCount;
  BASE_DECLARE_FEATURE(kExtensionsMenuInAppMenu);
  bool IsExtensionMenuInRootAppMenu();
  
@@ -9,7 +9,7 @@
  BASE_DECLARE_FEATURE(kFewerUpdateConfirmations);
  #endif
  
-@@ -244,7 +244,7 @@ BASE_DECLARE_FEATURE(kViewsFirstRunDialog);
+@@ -229,7 +229,7 @@ BASE_DECLARE_FEATURE(kViewsFirstRunDialog);
  BASE_DECLARE_FEATURE(kViewsJSAppModalDialog);
  #endif
  

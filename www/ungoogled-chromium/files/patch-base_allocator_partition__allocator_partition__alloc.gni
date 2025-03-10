@@ -1,6 +1,6 @@
---- base/allocator/partition_allocator/partition_alloc.gni.orig	2025-02-25 06:59:53 UTC
+--- base/allocator/partition_allocator/partition_alloc.gni.orig	2025-03-09 21:38:10 UTC
 +++ base/allocator/partition_allocator/partition_alloc.gni
-@@ -39,7 +39,7 @@ if (is_nacl) {
+@@ -89,7 +89,7 @@ if (is_nacl) {
  use_large_empty_slot_span_ring = true
  
  has_memory_tagging =
@@ -8,8 +8,8 @@
 +    current_cpu == "arm64" && is_clang && !is_asan && !is_bsd && (is_linux || is_android)
  
  declare_args() {
-   # Causes all the allocations to be routed via allocator_shim.cc. Usually,
-@@ -287,7 +287,7 @@ declare_args() {
+   # Debug configuration.
+@@ -344,7 +344,7 @@ declare_args() {
  declare_args() {
    # Shadow metadata is still under development and only supports Linux
    # for now.
@@ -18,7 +18,7 @@
  }
  
  declare_args() {
-@@ -430,7 +430,7 @@ assert(!use_asan_backup_ref_ptr || use_raw_ptr_hookabl
+@@ -487,7 +487,7 @@ assert(!use_asan_backup_ref_ptr || use_raw_ptr_hookabl
  # dependencies that use partition_allocator are compiled in AOSP against a
  # version of glibc that does not include pkeys syscall numbers.
  is_pkeys_available =

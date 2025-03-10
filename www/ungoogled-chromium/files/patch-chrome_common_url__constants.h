@@ -1,6 +1,6 @@
---- chrome/common/url_constants.h.orig	2025-02-20 09:59:21 UTC
+--- chrome/common/url_constants.h.orig	2025-03-09 21:38:10 UTC
 +++ chrome/common/url_constants.h
-@@ -981,7 +981,7 @@ inline constexpr char kOutdatedPluginLearnMoreURL[] =
+@@ -978,7 +978,7 @@ inline constexpr char kOutdatedPluginLearnMoreURL[] =
  inline constexpr char kPhoneHubPermissionLearnMoreURL[] =
      "https://support.9oo91e.qjz9zk/chromebook?p=multidevice";
  

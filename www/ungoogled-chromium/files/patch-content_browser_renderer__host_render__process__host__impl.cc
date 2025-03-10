@@ -1,6 +1,6 @@
---- content/browser/renderer_host/render_process_host_impl.cc.orig	2025-02-20 09:59:21 UTC
+--- content/browser/renderer_host/render_process_host_impl.cc.orig	2025-03-09 21:38:10 UTC
 +++ content/browser/renderer_host/render_process_host_impl.cc
-@@ -221,7 +221,7 @@
+@@ -222,7 +222,7 @@
  #include "third_party/blink/public/mojom/android_font_lookup/android_font_lookup.mojom.h"
  #endif
  
@@ -9,7 +9,7 @@
  #include <sys/resource.h>
  
  #include "components/services/font/public/mojom/font_service.mojom.h"  // nogncheck
-@@ -1086,7 +1086,7 @@ static constexpr size_t kUnknownPlatformProcessLimit =
+@@ -1087,7 +1087,7 @@ static constexpr size_t kUnknownPlatformProcessLimit =
  // to indicate failure and std::numeric_limits<size_t>::max() to indicate
  // unlimited.
  size_t GetPlatformProcessLimit() {
@@ -18,7 +18,7 @@
    struct rlimit limit;
    if (getrlimit(RLIMIT_NPROC, &limit) != 0)
      return kUnknownPlatformProcessLimit;
-@@ -1254,7 +1254,7 @@ RenderProcessHostImpl::IOThreadHostImpl::~IOThreadHost
+@@ -1255,7 +1255,7 @@ RenderProcessHostImpl::IOThreadHostImpl::~IOThreadHost
  
  void RenderProcessHostImpl::IOThreadHostImpl::SetPid(
      base::ProcessId child_pid) {
@@ -27,7 +27,7 @@
    child_thread_type_switcher_.SetPid(child_pid);
  #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
  }
-@@ -3270,7 +3270,7 @@ void RenderProcessHostImpl::AppendRendererCommandLine(
+@@ -3329,7 +3329,7 @@ void RenderProcessHostImpl::AppendRendererCommandLine(
              base::TimeTicks::UnixEpoch().since_origin().InMicroseconds()));
    }
  
@@ -36,7 +36,7 @@
    // Append `kDisableVideoCaptureUseGpuMemoryBuffer` flag if there is no support
    // for NV12 GPU memory buffer.
    if (switches::IsVideoCaptureUseGpuMemoryBufferEnabled() &&
-@@ -3326,6 +3326,7 @@ void RenderProcessHostImpl::PropagateBrowserCommandLin
+@@ -3385,6 +3385,7 @@ void RenderProcessHostImpl::PropagateBrowserCommandLin
        switches::kDisableSpeechAPI,
        switches::kDisableThreadedCompositing,
        switches::kDisableTouchDragDrop,
@@ -44,7 +44,7 @@
        switches::kDisableV8IdleTasks,
        switches::kDisableVideoCaptureUseGpuMemoryBuffer,
        switches::kDisableWebGLImageChromium,
-@@ -5139,7 +5140,7 @@ uint64_t RenderProcessHostImpl::GetPrivateMemoryFootpr
+@@ -5233,7 +5234,7 @@ uint64_t RenderProcessHostImpl::GetPrivateMemoryFootpr
    // - Win: https://crbug.com/707022 .
    uint64_t total_size = 0;
  #if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_ANDROID) || \

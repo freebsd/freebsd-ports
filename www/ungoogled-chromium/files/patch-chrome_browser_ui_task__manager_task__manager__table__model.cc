@@ -1,4 +1,4 @@
---- chrome/browser/ui/task_manager/task_manager_table_model.cc.orig	2025-02-20 09:59:21 UTC
+--- chrome/browser/ui/task_manager/task_manager_table_model.cc.orig	2025-03-09 21:38:10 UTC
 +++ chrome/browser/ui/task_manager/task_manager_table_model.cc
 @@ -527,7 +527,7 @@ std::u16string TaskManagerTableModel::GetText(size_t r
                   ? stringifier_->backgrounded_string()
@@ -18,7 +18,7 @@
      case IDS_TASK_MANAGER_OPEN_FD_COUNT_COLUMN: {
        const int proc1_fd_count =
            observed_task_manager()->GetOpenFdCount(tasks_[row1]);
-@@ -891,7 +891,7 @@ void TaskManagerTableModel::UpdateRefreshTypes(int col
+@@ -895,7 +895,7 @@ void TaskManagerTableModel::UpdateRefreshTypes(int col
        type = REFRESH_TYPE_KEEPALIVE_COUNT;
        break;
  

@@ -1,11 +1,11 @@
---- content/utility/utility_blink_platform_with_sandbox_support_impl.h.orig	2023-06-05 19:39:05 UTC
+--- content/utility/utility_blink_platform_with_sandbox_support_impl.h.orig	2025-03-09 21:38:10 UTC
 +++ content/utility/utility_blink_platform_with_sandbox_support_impl.h
-@@ -33,7 +33,7 @@ class UtilityBlinkPlatformWithSandboxSupportImpl : pub
-   blink::WebSandboxSupport* GetSandboxSupport() override;
+@@ -34,7 +34,7 @@ class UtilityBlinkPlatformWithSandboxSupportImpl : pub
  
   private:
--#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_MAC)
-+#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_BSD)
+ #if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_MAC) || \
+-    BUILDFLAG(IS_WIN)
++    BUILDFLAG(IS_WIN) || BUILDFLAG(IS_BSD)
    std::unique_ptr<blink::WebSandboxSupport> sandbox_support_;
  #endif
  };

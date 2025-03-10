@@ -1,6 +1,6 @@
---- headless/lib/browser/headless_browser_main_parts_posix.cc.orig	2025-02-20 09:59:21 UTC
+--- headless/lib/browser/headless_browser_main_parts_posix.cc.orig	2025-03-09 21:38:10 UTC
 +++ headless/lib/browser/headless_browser_main_parts_posix.cc
-@@ -22,13 +22,13 @@
+@@ -27,13 +27,13 @@
  #include "content/public/browser/browser_thread.h"
  #include "headless/lib/browser/headless_browser_impl.h"
  
@@ -16,7 +16,7 @@
  #include "device/bluetooth/dbus/bluez_dbus_manager.h"
  #endif
  
-@@ -162,7 +162,7 @@ class BrowserShutdownHandler {
+@@ -167,7 +167,7 @@ class BrowserShutdownHandler {
  
  }  // namespace
  
@@ -25,7 +25,7 @@
  constexpr char kProductName[] = "HeadlessChrome";
  #endif
  
-@@ -170,9 +170,9 @@ void HeadlessBrowserMainParts::PostCreateMainMessageLo
+@@ -175,9 +175,9 @@ void HeadlessBrowserMainParts::PostCreateMainMessageLo
    BrowserShutdownHandler::Install(base::BindOnce(
        &HeadlessBrowserImpl::ShutdownWithExitCode, browser_->GetWeakPtr()));
  
