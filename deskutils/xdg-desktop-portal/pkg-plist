@@ -1,8 +1,10 @@
 libexec/xdg-desktop-portal
 libexec/xdg-desktop-portal-rewrite-launchers
 libexec/xdg-desktop-portal-validate-icon
+libexec/xdg-desktop-portal-validate-sound
 libexec/xdg-document-portal
 libexec/xdg-permission-store
+share/dbus-1/interfaces/org.freedesktop.host.portal.Registry.xml
 share/dbus-1/interfaces/org.freedesktop.impl.portal.Access.xml
 share/dbus-1/interfaces/org.freedesktop.impl.portal.Account.xml
 share/dbus-1/interfaces/org.freedesktop.impl.portal.AppChooser.xml
@@ -25,12 +27,12 @@ share/dbus-1/interfaces/org.freedesktop.impl.portal.Screenshot.xml
 share/dbus-1/interfaces/org.freedesktop.impl.portal.Secret.xml
 share/dbus-1/interfaces/org.freedesktop.impl.portal.Session.xml
 share/dbus-1/interfaces/org.freedesktop.impl.portal.Settings.xml
+share/dbus-1/interfaces/org.freedesktop.impl.portal.Usb.xml
 share/dbus-1/interfaces/org.freedesktop.impl.portal.Wallpaper.xml
 share/dbus-1/interfaces/org.freedesktop.portal.Account.xml
 share/dbus-1/interfaces/org.freedesktop.portal.Background.xml
 share/dbus-1/interfaces/org.freedesktop.portal.Camera.xml
 share/dbus-1/interfaces/org.freedesktop.portal.Clipboard.xml
-share/dbus-1/interfaces/org.freedesktop.portal.Device.xml
 share/dbus-1/interfaces/org.freedesktop.portal.Documents.xml
 share/dbus-1/interfaces/org.freedesktop.portal.DynamicLauncher.xml
 share/dbus-1/interfaces/org.freedesktop.portal.Email.xml
@@ -57,6 +59,7 @@ share/dbus-1/interfaces/org.freedesktop.portal.Secret.xml
 share/dbus-1/interfaces/org.freedesktop.portal.Session.xml
 share/dbus-1/interfaces/org.freedesktop.portal.Settings.xml
 share/dbus-1/interfaces/org.freedesktop.portal.Trash.xml
+share/dbus-1/interfaces/org.freedesktop.portal.Usb.xml
 share/dbus-1/interfaces/org.freedesktop.portal.Wallpaper.xml
 share/dbus-1/services/org.freedesktop.impl.portal.PermissionStore.service
 share/dbus-1/services/org.freedesktop.portal.Desktop.service
@@ -75,7 +78,9 @@ share/locale/hi/LC_MESSAGES/xdg-desktop-portal.mo
 share/locale/hr/LC_MESSAGES/xdg-desktop-portal.mo
 share/locale/hu/LC_MESSAGES/xdg-desktop-portal.mo
 share/locale/id/LC_MESSAGES/xdg-desktop-portal.mo
+share/locale/ie/LC_MESSAGES/xdg-desktop-portal.mo
 share/locale/it/LC_MESSAGES/xdg-desktop-portal.mo
+share/locale/ja/LC_MESSAGES/xdg-desktop-portal.mo
 share/locale/ka/LC_MESSAGES/xdg-desktop-portal.mo
 share/locale/lt/LC_MESSAGES/xdg-desktop-portal.mo
 share/locale/nl/LC_MESSAGES/xdg-desktop-portal.mo
@@ -86,6 +91,7 @@ share/locale/pt_BR/LC_MESSAGES/xdg-desktop-portal.mo
 share/locale/ro/LC_MESSAGES/xdg-desktop-portal.mo
 share/locale/ru/LC_MESSAGES/xdg-desktop-portal.mo
 share/locale/sk/LC_MESSAGES/xdg-desktop-portal.mo
+share/locale/sl/LC_MESSAGES/xdg-desktop-portal.mo
 share/locale/sr/LC_MESSAGES/xdg-desktop-portal.mo
 share/locale/sv/LC_MESSAGES/xdg-desktop-portal.mo
 share/locale/tr/LC_MESSAGES/xdg-desktop-portal.mo

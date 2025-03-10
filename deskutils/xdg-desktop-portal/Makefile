@@ -1,5 +1,5 @@
 PORTNAME=	xdg-desktop-portal
-PORTVERSION=	1.18.4
+PORTVERSION=	1.20.0
 CATEGORIES=	deskutils
 
 MAINTAINER=	arrowd@FreeBSD.org
@@ -11,18 +11,24 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libfuse3.so:filesystems/fusefs-libs3 \
 		libgeoclue-2.so:net/geoclue \
+		libgudev-1.0.so.0:devel/libgudev \
 		libjson-glib-1.0.so:devel/json-glib \
 		libpipewire-0.3.so:multimedia/pipewire \
 		libportal.so:deskutils/libportal
 
-USES=		gettext-tools gmake gnome meson pkgconfig
+USES=		gettext-tools gmake gnome meson pkgconfig python:build shebangfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	flatpak
 USE_GNOME=	gdkpixbuf2 glib20
 
-MESON_ARGS=	-Ddocbook-docs=disabled -Dpytest=disabled \
-		-Dflatpak-interfaces=disabled -Dsandboxed-image-validation=false \
-		-Dsystemd=disabled
+MESON_ARGS=	-Ddocumentation=disabled \
+		-Dflatpak-interfaces=disabled \
+		-Dsandboxed-image-validation=disabled \
+		-Dsandboxed-sound-validation=disabled \
+		-Dsystemd=disabled \
+		-Dtests=disabled
+
+SHEBANG_FILES=	src/generate-method-info.py
 
 OPTIONS_DEFINE=	MANPAGES
 
