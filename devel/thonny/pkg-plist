@@ -84,6 +84,8 @@ bin/thonny
 %%PYTHON_SITELIBDIR%%/thonny/locale/__pycache__/register_updates%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/thonny/locale/ar_AR/LC_MESSAGES/thonny.mo
 %%PYTHON_SITELIBDIR%%/thonny/locale/ar_AR/LC_MESSAGES/thonny.po
+%%PYTHON_SITELIBDIR%%/thonny/locale/be_BY/LC_MESSAGES/thonny.mo
+%%PYTHON_SITELIBDIR%%/thonny/locale/be_BY/LC_MESSAGES/thonny.po
 %%PYTHON_SITELIBDIR%%/thonny/locale/ca_ES/LC_MESSAGES/thonny.mo
 %%PYTHON_SITELIBDIR%%/thonny/locale/ca_ES/LC_MESSAGES/thonny.po
 %%PYTHON_SITELIBDIR%%/thonny/locale/compile_mo.bat
@@ -104,6 +106,8 @@ bin/thonny
 %%PYTHON_SITELIBDIR%%/thonny/locale/es_ES/LC_MESSAGES/thonny.po
 %%PYTHON_SITELIBDIR%%/thonny/locale/et_EE/LC_MESSAGES/thonny.mo
 %%PYTHON_SITELIBDIR%%/thonny/locale/et_EE/LC_MESSAGES/thonny.po
+%%PYTHON_SITELIBDIR%%/thonny/locale/eu_ES/LC_MESSAGES/thonny.mo
+%%PYTHON_SITELIBDIR%%/thonny/locale/eu_ES/LC_MESSAGES/thonny.po
 %%PYTHON_SITELIBDIR%%/thonny/locale/fa_IR/LC_MESSAGES/thonny.mo
 %%PYTHON_SITELIBDIR%%/thonny/locale/fa_IR/LC_MESSAGES/thonny.po
 %%PYTHON_SITELIBDIR%%/thonny/locale/fi_FI/LC_MESSAGES/thonny.mo
@@ -207,6 +211,8 @@ bin/thonny
 %%PYTHON_SITELIBDIR%%/thonny/locale/vi_VN/LC_MESSAGES/thonny.po
 %%PYTHON_SITELIBDIR%%/thonny/locale/zh_CN/LC_MESSAGES/thonny.mo
 %%PYTHON_SITELIBDIR%%/thonny/locale/zh_CN/LC_MESSAGES/thonny.po
+%%PYTHON_SITELIBDIR%%/thonny/locale/zh_Hans/LC_MESSAGES/thonny.mo
+%%PYTHON_SITELIBDIR%%/thonny/locale/zh_Hans/LC_MESSAGES/thonny.po
 %%PYTHON_SITELIBDIR%%/thonny/locale/zh_TW/LC_MESSAGES/thonny.mo
 %%PYTHON_SITELIBDIR%%/thonny/locale/zh_TW/LC_MESSAGES/thonny.po
 %%PYTHON_SITELIBDIR%%/thonny/memory.py
@@ -1234,6 +1240,7 @@ bin/thonny
 %%PYTHON_SITELIBDIR%%/thonny/token_utils.py
 %%PYTHON_SITELIBDIR%%/thonny/udisks.py
 %%PYTHON_SITELIBDIR%%/thonny/ui_utils.py
+%%PYTHON_SITELIBDIR%%/thonny/vendored_libs/basedpyright/dist/typeshed-fallback/stdlib/venv/__init__.pyi
 %%PYTHON_SITELIBDIR%%/thonny/vendored_libs/filelock/__init__.py
 %%PYTHON_SITELIBDIR%%/thonny/vendored_libs/filelock/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/thonny/vendored_libs/filelock/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.pyc
