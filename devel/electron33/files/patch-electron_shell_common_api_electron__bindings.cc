@@ -1,6 +1,6 @@
---- electron/shell/common/api/electron_bindings.cc.orig	2024-10-22 02:29:46 UTC
+--- electron/shell/common/api/electron_bindings.cc.orig	2025-02-26 12:19:50 UTC
 +++ electron/shell/common/api/electron_bindings.cc
-@@ -254,7 +254,7 @@ void ElectronBindings::DidReceiveMemoryDump(
+@@ -253,7 +253,7 @@ void ElectronBindings::DidReceiveMemoryDump(
      if (target_pid == dump.pid()) {
        auto dict = gin_helper::Dictionary::CreateEmpty(isolate);
        const auto& osdump = dump.os_dump();

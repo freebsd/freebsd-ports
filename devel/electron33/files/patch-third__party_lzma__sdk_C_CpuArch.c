@@ -1,11 +1,11 @@
---- third_party/lzma_sdk/C/CpuArch.c.orig	2022-09-04 11:56:14 UTC
+--- third_party/lzma_sdk/C/CpuArch.c.orig	2025-03-08 14:05:07 UTC
 +++ third_party/lzma_sdk/C/CpuArch.c
-@@ -412,12 +412,40 @@ BoolInt CPU_IsSupported_SHA1(void) { return APPLE_CRYP
+@@ -854,6 +854,34 @@ BoolInt CPU_IsSupported_AES (void) { return APPLE_CRYP
  BoolInt CPU_IsSupported_SHA2(void) { return APPLE_CRYPTO_SUPPORT_VAL; }
  BoolInt CPU_IsSupported_AES (void) { return APPLE_CRYPTO_SUPPORT_VAL; }
  
 +#elif defined(__OpenBSD__)
- 
++
 +#include <sys/param.h>
 +#include <sys/sysctl.h>
 +#include <machine/cpu.h>
@@ -32,13 +32,6 @@
 +MY_HWCAP_CHECK_FUNC (SHA1)
 +MY_HWCAP_CHECK_FUNC (SHA2)
 +MY_HWCAP_CHECK_FUNC (AES)
-+
+ 
  #else // __APPLE__
- 
- #include <sys/auxv.h>
- 
--#if !defined(ARMV8_OS_FUCHSIA)
-+#if !defined(ARMV8_OS_FUCHSIA) && !defined(__FreeBSD__)
- #define USE_HWCAP
- #endif // !defined(ARMV8_OS_FUCHSIA)
  
