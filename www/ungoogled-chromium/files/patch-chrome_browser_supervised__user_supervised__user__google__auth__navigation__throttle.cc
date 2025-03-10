@@ -1,4 +1,4 @@
---- chrome/browser/supervised_user/supervised_user_google_auth_navigation_throttle.cc.orig	2025-02-20 09:59:21 UTC
+--- chrome/browser/supervised_user/supervised_user_google_auth_navigation_throttle.cc.orig	2025-03-09 21:38:10 UTC
 +++ chrome/browser/supervised_user/supervised_user_google_auth_navigation_throttle.cc
 @@ -34,12 +34,12 @@
  #include "chrome/browser/supervised_user/child_accounts/child_account_service_android.h"
@@ -15,7 +15,7 @@
  namespace {
  bool IsYouTubeInfrastructureSubframe(content::NavigationHandle* handle) {
    if (handle->GetNavigatingFrameType() != content::FrameType::kSubframe) {
-@@ -162,7 +162,7 @@ SupervisedUserGoogleAuthNavigationThrottle::ShouldProc
+@@ -161,7 +161,7 @@ SupervisedUserGoogleAuthNavigationThrottle::ShouldProc
      return content::NavigationThrottle::DEFER;
    }
  

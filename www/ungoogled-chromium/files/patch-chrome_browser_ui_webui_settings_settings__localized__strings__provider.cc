@@ -1,7 +1,7 @@
---- chrome/browser/ui/webui/settings/settings_localized_strings_provider.cc.orig	2025-02-20 09:59:21 UTC
+--- chrome/browser/ui/webui/settings/settings_localized_strings_provider.cc.orig	2025-03-09 21:38:10 UTC
 +++ chrome/browser/ui/webui/settings/settings_localized_strings_provider.cc
-@@ -140,7 +140,7 @@
- #include "chrome/browser/ui/chrome_pages.h"
+@@ -136,7 +136,7 @@
+ #include "chrome/browser/ui/webui/settings/system_handler.h"
  #endif
  
 -#if BUILDFLAG(IS_LINUX)
@@ -9,7 +9,7 @@
  #include "ui/display/screen.h"
  #endif
  
-@@ -159,7 +159,7 @@
+@@ -155,7 +155,7 @@
  #include "chrome/browser/ui/webui/certificate_manager_localized_strings_provider.h"
  #endif
  
@@ -27,7 +27,7 @@
        {"overscrollHistoryNavigationTitle",
         IDS_SETTINGS_OVERSCROLL_HISTORY_NAVIGATION_TITLE},
        {"overscrollHistoryNavigationSubtitle",
-@@ -562,7 +562,7 @@ void AddAppearanceStrings(content::WebUIDataSource* ht
+@@ -580,7 +580,7 @@ void AddAppearanceStrings(content::WebUIDataSource* ht
        {"uiFeatureAlignLeft", IDS_SETTINGS_UI_FEATURE_ALIGN_LEFT},
        {"uiFeatureAlignRight", IDS_SETTINGS_UI_FEATURE_ALIGN_RIGHT},
        {"resetToDefault", IDS_SETTINGS_RESET_TO_DEFAULT},
@@ -36,7 +36,7 @@
        {"gtkTheme", IDS_SETTINGS_GTK_THEME},
        {"useGtkTheme", IDS_SETTINGS_USE_GTK_THEME},
        {"qtTheme", IDS_SETTINGS_QT_THEME},
-@@ -570,7 +570,7 @@ void AddAppearanceStrings(content::WebUIDataSource* ht
+@@ -588,7 +588,7 @@ void AddAppearanceStrings(content::WebUIDataSource* ht
        {"classicTheme", IDS_SETTINGS_CLASSIC_THEME},
        {"useClassicTheme", IDS_SETTINGS_USE_CLASSIC_THEME},
  #endif
@@ -45,7 +45,7 @@
        {"showWindowDecorations", IDS_SHOW_WINDOW_DECORATIONS},
  #endif
  #if BUILDFLAG(IS_MAC)
-@@ -594,7 +594,7 @@ void AddAppearanceStrings(content::WebUIDataSource* ht
+@@ -612,7 +612,7 @@ void AddAppearanceStrings(content::WebUIDataSource* ht
    html_source->AddBoolean("toolbarPinningEnabled",
                            features::IsToolbarPinningEnabled());
  

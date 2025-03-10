@@ -1,15 +1,15 @@
---- chrome/browser/browser_features.cc.orig	2025-02-20 09:59:21 UTC
+--- chrome/browser/browser_features.cc.orig	2025-03-09 21:38:10 UTC
 +++ chrome/browser/browser_features.cc
-@@ -71,7 +71,7 @@ BASE_FEATURE(kCertVerificationNetworkTime,
+@@ -82,7 +82,7 @@ BASE_FEATURE(kContentUsesBrowserThemeColorMode,
+              "ContentUsesBrowserThemeColorMode",
               base::FEATURE_DISABLED_BY_DEFAULT);
- #endif  // !BUILDFLAG(IS_ANDROID) && !BUILDFLAG(IS_CHROMEOS)
  
 -#if BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
  // Enables usage of os_crypt_async::SecretPortalKeyProvider.  Once
  // `kSecretPortalKeyProviderUseForEncryption` is enabled, this flag cannot be
  // disabled without losing data.
-@@ -87,7 +87,7 @@ BASE_FEATURE(kDbusSecretPortal,
+@@ -104,7 +104,7 @@ BASE_FEATURE(kUseFreedesktopSecretKeyProvider,
  BASE_FEATURE(kDestroyProfileOnBrowserClose,
               "DestroyProfileOnBrowserClose",
  #if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN) || \
@@ -18,7 +18,7 @@
               base::FEATURE_ENABLED_BY_DEFAULT);
  #else
               base::FEATURE_DISABLED_BY_DEFAULT);
-@@ -228,7 +228,7 @@ BASE_FEATURE(kSandboxExternalProtocolBlockedWarning,
+@@ -237,7 +237,7 @@ BASE_FEATURE(kSandboxExternalProtocolBlockedWarning,
               "SandboxExternalProtocolBlockedWarning",
               base::FEATURE_ENABLED_BY_DEFAULT);
  

@@ -1,4 +1,4 @@
---- third_party/angle/src/libANGLE/Display.cpp.orig	2025-02-20 09:59:21 UTC
+--- third_party/angle/src/libANGLE/Display.cpp.orig	2025-03-09 21:38:10 UTC
 +++ third_party/angle/src/libANGLE/Display.cpp
 @@ -58,7 +58,7 @@
  #        include "libANGLE/renderer/gl/wgl/DisplayWGL.h"
@@ -45,7 +45,7 @@
      extensions.platformSurfacelessMESA = true;
  #endif
  
-@@ -2185,7 +2185,7 @@ static ClientExtensions GenerateClientExtensions()
+@@ -2186,7 +2186,7 @@ static ClientExtensions GenerateClientExtensions()
      extensions.x11Visual = true;
  #endif
  

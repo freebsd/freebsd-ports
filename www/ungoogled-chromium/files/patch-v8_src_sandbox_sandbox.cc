@@ -1,6 +1,6 @@
---- v8/src/sandbox/sandbox.cc.orig	2025-02-20 09:59:21 UTC
+--- v8/src/sandbox/sandbox.cc.orig	2025-03-09 21:38:10 UTC
 +++ v8/src/sandbox/sandbox.cc
-@@ -60,7 +60,7 @@ static Address DetermineAddressSpaceLimit() {
+@@ -59,7 +59,7 @@ static Address DetermineAddressSpaceLimit() {
    }
  #endif  // V8_TARGET_ARCH_X64
  

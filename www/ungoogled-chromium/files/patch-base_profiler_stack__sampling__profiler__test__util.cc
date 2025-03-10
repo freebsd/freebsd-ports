@@ -1,6 +1,6 @@
---- base/profiler/stack_sampling_profiler_test_util.cc.orig	2025-02-20 09:59:21 UTC
+--- base/profiler/stack_sampling_profiler_test_util.cc.orig	2025-03-09 21:38:10 UTC
 +++ base/profiler/stack_sampling_profiler_test_util.cc
-@@ -46,7 +46,7 @@
+@@ -50,7 +50,7 @@
  // Fortunately, it provides _alloca, which functions identically.
  #include <malloc.h>
  #define alloca _alloca

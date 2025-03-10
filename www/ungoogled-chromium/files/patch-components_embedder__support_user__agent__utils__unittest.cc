@@ -1,4 +1,4 @@
---- components/embedder_support/user_agent_utils_unittest.cc.orig	2024-06-22 08:49:42 UTC
+--- components/embedder_support/user_agent_utils_unittest.cc.orig	2025-03-09 21:38:10 UTC
 +++ components/embedder_support/user_agent_utils_unittest.cc
 @@ -71,7 +71,7 @@ const char kDesktop[] =
      "X11; CrOS x86_64 14541.0.0"
@@ -18,7 +18,7 @@
    // Post-UA Reduction there is a single <unifiedPlatform> value for Linux:
    // X11; Linux x86_64
    ASSERT_EQ(2u, pieces.size());
-@@ -727,7 +727,7 @@ TEST_F(UserAgentUtilsTest, UserAgentMetadata) {
+@@ -703,7 +703,7 @@ TEST_F(UserAgentUtilsTest, UserAgentMetadata) {
  #endif
  #elif BUILDFLAG(IS_ANDROID)
    EXPECT_EQ(metadata.platform, "Android");

@@ -1,7 +1,7 @@
---- chrome/browser/ui/views/profiles/signin_view_controller_delegate_views.h.orig	2025-01-25 09:34:31 UTC
+--- chrome/browser/ui/views/profiles/signin_view_controller_delegate_views.h.orig	2025-03-09 21:38:10 UTC
 +++ chrome/browser/ui/views/profiles/signin_view_controller_delegate_views.h
-@@ -74,7 +74,7 @@ class SigninViewControllerDelegateViews
-       bool show_supervised_user_iph = false);
+@@ -73,7 +73,7 @@ class SigninViewControllerDelegateViews
+       base::OnceCallback<void(ChromeSignoutConfirmationChoice)> callback);
  #endif  // BUILDFLAG(ENABLE_DICE_SUPPORT)
  
 -#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
@@ -9,7 +9,7 @@
    static std::unique_ptr<views::WebView>
    CreateManagedUserNoticeConfirmationWebView(
        Browser* browser,
-@@ -138,7 +138,7 @@ class SigninViewControllerDelegateViews
+@@ -141,7 +141,7 @@ class SigninViewControllerDelegateViews
        std::optional<int> dialog_width,
        InitializeSigninWebDialogUI initialize_signin_web_dialog_ui);
  
