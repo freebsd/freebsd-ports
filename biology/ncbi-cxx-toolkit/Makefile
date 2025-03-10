@@ -14,6 +14,7 @@ LICENSE_FILE=	${WRKSRC}/doc/public/LICENSE
 BROKEN_FreeBSD_15=	compilation fails with clang-15, see https://github.com/ncbi/ncbi-cxx-toolkit-public/issues/13
 BROKEN_armv6=	platform not defined for FreeBSD arm, see https://github.com/ncbi/ncbi-cxx-toolkit-public/issues/2
 BROKEN_armv7=	link fails due to a missing function, see https://github.com/ncbi/ncbi-cxx-toolkit-public/issues/8
+BROKEN_i386=	compilation fails: Only 64-bit Intel and ARM architectures are supported (in src/util/compress/zlib_cloudflare/deflate.c:149)
 
 LIB_DEPENDS=	libbz2.so:archivers/bzip2 \
 		libcdd.so:math/cddlib \
