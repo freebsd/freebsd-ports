@@ -1,10 +1,10 @@
 PORTNAME=	coincurve
-DISTVERSION=	20.0.0
+DISTVERSION=	21.0.0
 CATEGORIES=	security python
 MASTER_SITES=	PYPI \
 		https://github.com/bitcoin-core/secp256k1/archive/:bitcoin_core
 DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX} \
-		1ad5185cd42c0636104129fcc9f6a4bf9c67cc40.tar.gz:bitcoin_core
+		0cdc758a56360bf58a851fe91085a327ec97685a.tar.gz:bitcoin_core
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 EXTRACT_ONLY=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}
 
@@ -39,5 +39,7 @@ post-patch:
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/coincurve/_libsecp256k1*.so
+
+# tests as of 21.0.0: 49 passed in 1.81s
 
 .include <bsd.port.mk>
