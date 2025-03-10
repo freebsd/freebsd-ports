@@ -144,7 +144,6 @@
     SUBDIR += spectral
     SUBDIR += ssh-chat
     SUBDIR += sshout
-    SUBDIR += talkatu
     SUBDIR += tdlib
     SUBDIR += tdlib-purple
     SUBDIR += telegram-cli
