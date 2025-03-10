@@ -1,3 +1,5 @@
-TIMESTAMP = 1741275227
+TIMESTAMP = 1741600936
 SHA256 (KDE/release-service/24.12.3/ark-24.12.3.tar.xz) = 4eb1d43878f55169bfb27a65e6f0d7f6093a69d56d905fdff249138653fe4abf
 SIZE (KDE/release-service/24.12.3/ark-24.12.3.tar.xz) = 3010672
+SHA256 (KDE/release-service/24.12.3/21943ff05e7d660e27befd9b43d242076a4b657a.diff) = bbf43ec5309bf3a01a1686c34d99eeb4adf0a275794f85e307840c6528e14c0e
+SIZE (KDE/release-service/24.12.3/21943ff05e7d660e27befd9b43d242076a4b657a.diff) = 896

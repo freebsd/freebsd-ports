@@ -1,6 +1,10 @@
 PORTNAME=	ark
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
+PORTREVISION=	1
 CATEGORIES=	archivers kde kde-applications
+
+PATCH_SITES=	https://invent.kde.org/utilities/ark/-/commit/
+PATCHFILES=	21943ff05e7d660e27befd9b43d242076a4b657a.diff:-p1
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Archiving tool for KDE
@@ -19,8 +23,6 @@ USE_GL=		gl opengl
 USE_QT=		base
 USE_XORG=	x11
 USE_LDCONFIG=	yes
-
-PATCH_STRIP=	-p1
 
 OPTIONS_DEFINE=	7ZIP RAR ZIP DOCS
 OPTIONS_DEFAULT=	7ZIP ZIP DOCS
