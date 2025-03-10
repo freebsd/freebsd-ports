@@ -1,6 +1,5 @@
 PORTNAME=	choria-mcorpc-support
-DISTVERSION=	2.26.4
-PORTREVISION=	1
+DISTVERSION=	2.26.5
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
@@ -22,6 +21,6 @@ PLIST_FILES=	bin/mco \
 		bin/execution_wrapper
 
 post-install:
-	${INSTALL_SCRIPT} ${FILESDIR}/execution_wrapper.rb ${STAGEDIR}${PRFIX}/bin
+	${INSTALL_SCRIPT} ${FILESDIR}/execution_wrapper.rb ${STAGEDIR}${PREFIX}/bin/execution_wrapper
 
 .include <bsd.port.mk>
