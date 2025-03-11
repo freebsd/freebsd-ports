@@ -3,12 +3,13 @@ DISTVERSION=	7.0
 CATEGORIES=	www
 SUFFIX=		-70
 PKGNAMESUFFIX=	${SUFFIX}${PHP_PKGNAMESUFFIX}
-MASTER_SITES=	https://sourceforge.net/code-snapshots/git/p/ph/${PORTNAME}-7-0/code.git/
+MASTER_SITES=	https://sourceforge.net/code-snapshots/git/p/ph/${PORTNAME}-7-0/code.git/ \
+		LOCAL/vvd
 DISTNAME=	${PORTNAME}-7-0-code-0737ff1c4106661672e69ef5ff26c3f494f4c65f
 
 MAINTAINER=	vbox@FreeBSD.org
 COMMENT=	AJAX Web Interface for VirtualBox
-WWW=		https://sourceforge.net/projects/phpvirtualbox-70/
+WWW=		https://sourceforge.net/projects/phpvirtualbox-7-0/
 
 LICENSE=	GPLv3
 
