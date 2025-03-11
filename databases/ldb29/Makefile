@@ -1,6 +1,6 @@
 PORTNAME=	ldb
 PORTVERSION=	2.9.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases
 MASTER_SITES=	SAMBA
 PKGNAMESUFFIX?=	${PORTVERSION:C/([[:digit:]]+)[.]([[:digit:]]+).*/\1\2/}
@@ -48,8 +48,6 @@ BINARY_ALIAS=	python3=${PYTHON_CMD}
 PLIST_FILES=	${_LDB_BINS} \
 		${_LDB_LIBS_64} \
 		${_LDB_LIBS} \
-		${_LDB_MAN1} \
-		${_LDB_MAN3} \
 		${PKGCONFIGDIR}/ldb.pc \
 		include/ldb.h \
 		include/ldb_errors.h \
@@ -60,12 +58,11 @@ PLIST_FILES=	${_LDB_BINS} \
 PLIST_SUB+=	PKGCONFIGDIR=${PKGCONFIGDIR:S;${PREFIX}/;;}
 
 OPTIONS_DEFINE=		MANPAGES PYTHON3
-OPTIONS_DEFAULT=	PYTHON3
-MANPAGES_DESC=		Build and install manpages (requires textproc/docbook-xsl)
+OPTIONS_DEFAULT=	MANPAGES PYTHON3
 
 MANPAGES_BUILD_DEPENDS=		${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl:textproc/docbook-xsl \
 				xsltproc:textproc/libxslt
-MANPAGES_CONFIGURE_ENV_OFF=	XSLTPROC="true"
+MANPAGES_CONFIGURE_ENV_OFF=	XSLTPROC="false"
 
 PYTHON3_USES=		gettext-runtime python
 PYTHON3_USES_OFF=	python:build,test
@@ -112,6 +109,11 @@ CONFIGURE_ARGS+=	--enable-debug \
 _LDB_LIBS_64=	lib/ldb/libldb-mdb-int.so lib/shared-modules/ldb/mdb.so
 .endif
 
+.if ${PORT_OPTIONS:MMANPAGES}
+PLIST_FILES+=	${_LDB_MAN1} \
+		${_LDB_MAN3}
+.endif
+
 .if defined(NO_PYTHON)
 WARNING+=	"${PKGNAME} does not support NO_PYTHON anymore; use option PYTHON3 instead"
 .endif
@@ -128,12 +130,6 @@ pre-configure:
 				${ECHO_CMD}; \
 				${FALSE}; \
 			fi
-
-pre-build-MANPAGES-off:
-			${MKDIR} ${BUILD_WRKSRC}/bin/default/man
-.for man in ${_LDB_MAN1} ${_LDB_MAN3}
-			${INSTALL_MAN} ${FILESDIR}/man/`basename ${man} .gz` ${BUILD_WRKSRC}/bin/default/man
-.endfor
 
 post-install:
 .for lib in ${_LDB_BINS} ${_LDB_LIBS} ${_LDB_LIBS_64}

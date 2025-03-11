@@ -1,6 +1,6 @@
 PORTNAME=			tdb
 DISTVERSION=			1.4.10
-PORTREVISION=			1
+PORTREVISION=			2
 PORTEPOCH=			1
 CATEGORIES=			databases
 MASTER_SITES=			SAMBA
@@ -31,10 +31,8 @@ MAKE_ENV=			PYTHONHASHSEED=1
 
 CONFLICTS_INSTALL=		tdb
 
-MANPAGES_DESC=			Build and install manpages (requires textproc/docbook-xsl)
-
 OPTIONS_DEFINE=			MANPAGES DEBUG PYTHON
-OPTIONS_DEFAULT=		PYTHON
+OPTIONS_DEFAULT=		MANPAGES PYTHON
 OPTIONS_SUB=			yes
 
 DEBUG_CFLAGS=			-g -ggdb3 -O0
@@ -46,9 +44,10 @@ PYTHON_USE+=			python=py3kplist
 PYTHON_USES_OFF=		python:build,test
 PYTHON_CONFIGURE_OFF=		--disable-python
 
-MANPAGES_CONFIGURE_ENV_OFF+=	XSLTPROC="true"
-MANPAGES_BUILD_DEPENDS+=	${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl:textproc/docbook-xsl \
+MANPAGES_BUILD_DEPENDS=	${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl:textproc/docbook-xsl \
 				xsltproc:textproc/libxslt
+MANPAGES_CONFIGURE_ENV_OFF=	XSLTPROC="false"
+
 # No fancy color error messages
 CFLAGS+=			${CFLAGS_${CHOSEN_COMPILER_TYPE}}
 CFLAGS_clang=			-fno-color-diagnostics
@@ -62,10 +61,6 @@ LDFLAGS+=			-Wl,--undefined-version
 post-patch:
 				@${REINPLACE_CMD} -e 's|%%PKGCONFIGDIR%%|${PKGCONFIGDIR}|g' \
 					${BUILD_WRKSRC}/wscript
-
-pre-build-MANPAGES-off:
-				${MKDIR} ${BUILD_WRKSRC}/bin/default/man
-				${INSTALL_MAN} ${FILESDIR}/tdb*.8 ${BUILD_WRKSRC}/bin/default/man
 
 post-install:
 				${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/tdb*

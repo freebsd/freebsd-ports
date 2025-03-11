@@ -1,5 +1,6 @@
 PORTNAME=	ldb
 PORTVERSION=	2.5.3
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	SAMBA
 PKGNAMESUFFIX?=	25
@@ -41,12 +42,16 @@ CONFIGURE_ARGS+=	--bundled-libraries=!talloc,!tevent,!tdb,!popt,!cmocka \
 			--without-gettext
 
 OPTIONS_DEFINE=	DEBUG MANPAGES PYTHON3
-MANPAGES_DESC=	Build and install manpages (requires textproc/docbook-xsl)
+OPTIONS_DEFAULT=	MANPAGES
 
 DEBUG_CONFIGURE_ON=	--enable-debug \
 			--verbose
 DEBUG_MAKE_ARGS=	--verbose
 DEBUG_FLAGS=		-g -ggdb3 -O0
+
+MANPAGES_BUILD_DEPENDS=		${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl:textproc/docbook-xsl \
+				xsltproc:textproc/libxslt
+MANPAGES_CONFIGURE_ENV_OFF=	XSLTPROC="false"
 
 .include <bsd.port.options.mk>
 
@@ -84,13 +89,6 @@ PLIST_FILES=	${LDB_BINS} \
 # undefined symbols.
 LDFLAGS+=	-Wl,--undefined-version
 
-.if !${PORT_OPTIONS:MMANPAGES}
-CONFIGURE_ENV+=	XSLTPROC="true"
-.else
-BUILD_DEPENDS+=	${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl:textproc/docbook-xsl \
-		xsltproc:textproc/libxslt
-.endif
-
 .if !${PORT_OPTIONS:MPYTHON3} || defined(NO_PYTHON)
 USES+=			python:build,test
 CONFIGURE_ARGS+=	--disable-python
@@ -121,8 +119,10 @@ LDB_MAN1=	share/man/man1/ldbadd.1.gz \
 
 LDB_MAN3=	share/man/man3/ldb.3.gz
 
+.if ${PORT_OPTIONS:MMANPAGES}
 PLIST_FILES+=	${LDB_MAN1} \
 		${LDB_MAN3}
+.endif
 
 post-patch:
 			@${REINPLACE_CMD} -e 's|%%PKGCONFIGDIR%%|${PKGCONFIGDIR}|g' \
@@ -136,12 +136,6 @@ pre-configure:
 				${ECHO_CMD}; \
 				${FALSE}; \
 			fi
-
-pre-build-MANPAGES-off:
-			-${MKDIR} ${BUILD_WRKSRC}/bin/default/man
-.for man in ${LDB_MAN1} ${LDB_MAN3}
-			${INSTALL_MAN} ${FILESDIR}/man/`basename ${man} .gz` ${BUILD_WRKSRC}/bin/default/man
-.endfor
 
 post-install:
 .for lib in ${LDB_BINS} ${LDB_LIBS}
