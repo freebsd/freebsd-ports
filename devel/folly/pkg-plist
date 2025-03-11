@@ -246,6 +246,7 @@ include/folly/coro/AsyncScope.h
 include/folly/coro/AsyncStack.h
 include/folly/coro/AutoCleanup-fwd.h
 include/folly/coro/AutoCleanup.h
+include/folly/coro/AwaitImmediately.h
 include/folly/coro/Baton.h
 include/folly/coro/BlockingWait.h
 include/folly/coro/BoundedQueue.h
@@ -958,9 +959,11 @@ include/folly/python/executor.h
 include/folly/python/futures.h
 include/folly/python/import.h
 include/folly/python/iobuf.h
+include/folly/settings/CommandLineParser.h
 include/folly/settings/Immutables.h
 include/folly/settings/Observer.h
 include/folly/settings/Settings.h
+include/folly/settings/SettingsAccessorProxy.h
 include/folly/settings/Types.h
 include/folly/settings/detail/SettingsImpl.h
 include/folly/small_vector.h
