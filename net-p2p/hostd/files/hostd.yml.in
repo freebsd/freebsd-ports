@@ -4,16 +4,18 @@ autoOpenWebUI: true
 http:
   address: :9980
   password: sia is cool
-consensus:
-  gatewayAddress: :9981
+syncer:
+  address: :9981
   bootstrap: true
+consensus:
+  network: mainnet
+  indexBatchSize: 100
 explorer:
     url: https://api.siascan.com
 rhp2:
   address: :9982
 rhp3:
   tcp: :9983
-  websocket: :9984
 log:
   level: info # global log level
   stdout:
