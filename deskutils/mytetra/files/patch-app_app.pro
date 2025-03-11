@@ -1,5 +1,5 @@
---- mytetra.pro.orig	2018-06-12 15:49:29 UTC
-+++ mytetra.pro
+--- app/app.pro.orig	2025-02-18 14:02:57 UTC
++++ app/app.pro
 @@ -6,7 +6,7 @@ TARGET_OS=ANY_OS
  
  # Build type
@@ -8,7 +8,7 @@
 +BUILD_TYPE=$$find(CONFIG, debug|release)
  
  # Enable console for Windows
- # 0 - disable, 1 - enable
+ # 0 - disable, 1 - enable (this is for compile mytetra.exe and rename to mytetra_debug.exe)
 @@ -54,13 +54,7 @@ QT = gui \
  CONFIG += qt \
      warn_on
@@ -24,7 +24,7 @@
  
  # If Windows console enable
  equals(WINDOWS_CONSOLE_ENABLE, 1) {
-@@ -91,7 +85,7 @@ INCLUDEPATH += $${_PRO_FILE_PWD_}/src
+@@ -92,7 +86,7 @@ INCLUDEPATH += $${_PRO_FILE_PWD_}/src
  contains(TARGET_OS, ANY_OS) {
    message(Building the any OS version...)
    SYSTEM_PROGRAM_NAME=mytetra
@@ -33,7 +33,7 @@
  }
  
  contains(TARGET_OS, MEEGO_OS){
-@@ -115,7 +109,7 @@ message(Set installation directory for binary file to 
+@@ -116,7 +110,7 @@ message(Set installation directory for binary file to 
  target.path=$${BINARY_INSTALL_PATH}
  INSTALLS+=target
  
@@ -42,7 +42,7 @@
  contains(TARGET_OS, ANY_OS) {
    desktop_file.files=desktop/any/mytetra.desktop
  }
-@@ -127,11 +121,11 @@ contains(TARGET_OS, ANDROID_OS) {
+@@ -128,11 +122,11 @@ contains(TARGET_OS, ANDROID_OS) {
  }
  INSTALLS+=desktop_file
  
