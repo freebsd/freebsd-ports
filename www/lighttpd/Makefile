@@ -1,6 +1,6 @@
 PORTNAME=	lighttpd
 PORTVERSION=	1.4.77
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	https://download.lighttpd.net/lighttpd/releases-1.4.x/
 
@@ -115,6 +115,9 @@ PLIST_SUB=	WWWOWN="${WWWOWN}" WWWGRP="${WWWGRP}" CACHEDIR="${CACHEDIR}" \
 SUB_LIST=	REQUIRE="${REQUIRE}"
 
 post-patch:
+	@${REINPLACE_CMD} -E \
+		-e "s|/etc/lighttpd|${ETCDIR}|g" \
+		${WRKSRC}/doc/config/lighttpd.conf
 	@${REINPLACE_CMD} -E -e \
 		's|^(server.document-root.*=).*|\1 "${PREFIX}/www" + "/data"|' \
 		-e "s|/etc/lighttpd|${ETCDIR}|g" \
@@ -127,7 +130,7 @@ post-patch:
 		-e "s|^(var.home_dir.*=).*|\1 \"${HOMEDIR}\"|" \
 		-e "s|^(var.state_dir.*=).*|\1 \"${RUNDIR}\"|" \
 		-e "s|^(var.cache_dir.*=).*|\1 \"${CACHEDIR}\"|" \
-		${WRKSRC}/doc/config/lighttpd.conf
+		${WRKSRC}/doc/config/lighttpd.annotated.conf
 	@${REINPLACE_CMD} -e "s|/usr/bin/python|${LOCALBASE}/bin/python|" \
 		${WRKSRC}/doc/config/conf.d/cgi.conf
 
