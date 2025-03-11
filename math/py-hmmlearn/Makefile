@@ -22,7 +22,7 @@ RUN_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}scikit-learn>=0.16:science/py-scikit-learn@${PY_FLAVOR}
 
 USES=		python
-USE_PYTHON=	autoplist pep517 pytest
+USE_PYTHON=	autoplist distutils pytest
 
 post-stage:
 	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/hmmlearn/_hmmc.cpython-${PYTHON_SUFFIX}.so
