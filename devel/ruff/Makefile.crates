@@ -1,6 +1,6 @@
 CARGO_CRATES=	adler2-2.0.0 \
-		ahash-0.8.11 \
 		aho-corasick-1.1.3 \
+		allocator-api2-0.2.21 \
 		android-tzdata-0.1.1 \
 		android_system_properties-0.1.5 \
 		anes-0.1.6 \
@@ -12,9 +12,7 @@ CARGO_CRATES=	adler2-2.0.0 \
 		anstyle-query-1.1.2 \
 		anstyle-svg-0.1.7 \
 		anstyle-wincon-3.0.7 \
-		anyhow-1.0.95 \
-		append-only-vec-0.1.7 \
-		arc-swap-1.7.1 \
+		anyhow-1.0.96 \
 		argfile-0.2.1 \
 		arrayvec-0.7.6 \
 		assert_fs-1.1.2 \
@@ -22,9 +20,9 @@ CARGO_CRATES=	adler2-2.0.0 \
 		base64-0.13.1 \
 		bincode-1.3.3 \
 		bitflags-1.3.2 \
-		bitflags-2.8.0 \
+		bitflags-2.9.0 \
 		block-buffer-0.10.4 \
-		boxcar-0.2.8 \
+		boxcar-0.2.10 \
 		bstr-1.11.3 \
 		bumpalo-3.17.0 \
 		byteorder-1.5.0 \
@@ -36,20 +34,20 @@ CARGO_CRATES=	adler2-2.0.0 \
 		cfg-if-1.0.0 \
 		cfg_aliases-0.2.1 \
 		chic-1.2.2 \
-		chrono-0.4.39 \
+		chrono-0.4.40 \
 		ciborium-0.2.2 \
 		ciborium-io-0.2.2 \
 		ciborium-ll-0.2.2 \
-		clap-4.5.28 \
-		clap_builder-4.5.27 \
+		clap-4.5.31 \
+		clap_builder-4.5.31 \
 		clap_complete-4.5.44 \
 		clap_complete_command-0.6.1 \
 		clap_complete_nushell-4.5.5 \
 		clap_derive-4.5.28 \
 		clap_lex-0.7.4 \
 		clearscreen-4.0.1 \
-		codspeed-2.7.2 \
-		codspeed-criterion-compat-2.7.2 \
+		codspeed-2.8.1 \
+		codspeed-criterion-compat-2.8.1 \
 		colorchoice-1.0.3 \
 		colored-2.2.0 \
 		colored-3.0.0 \
@@ -108,17 +106,18 @@ CARGO_CRATES=	adler2-2.0.0 \
 		form_urlencoded-1.2.1 \
 		fs-err-2.11.0 \
 		fsevent-sys-4.1.0 \
+		generator-0.8.4 \
 		generic-array-0.14.7 \
 		getopts-0.2.21 \
 		getrandom-0.2.15 \
 		getrandom-0.3.1 \
 		glob-0.3.2 \
-		globset-0.4.15 \
+		globset-0.4.16 \
 		globwalk-0.9.1 \
 		half-2.4.1 \
 		hashbrown-0.14.5 \
 		hashbrown-0.15.2 \
-		hashlink-0.9.1 \
+		hashlink-0.10.0 \
 		heck-0.5.0 \
 		hermit-abi-0.3.9 \
 		hermit-abi-0.4.0 \
@@ -148,7 +147,7 @@ CARGO_CRATES=	adler2-2.0.0 \
 		indoc-2.0.5 \
 		inotify-0.11.0 \
 		inotify-sys-0.1.5 \
-		insta-1.42.1 \
+		insta-1.42.2 \
 		insta-cmd-0.6.0 \
 		is-docker-0.2.0 \
 		is-macro-0.3.7 \
@@ -165,7 +164,7 @@ CARGO_CRATES=	adler2-2.0.0 \
 		kqueue-1.0.8 \
 		kqueue-sys-1.0.4 \
 		lazy_static-1.5.0 \
-		libc-0.2.169 \
+		libc-0.2.170 \
 		libcst-1.6.0 \
 		libcst_derive-1.6.0 \
 		libmimalloc-sys-0.1.39 \
@@ -175,7 +174,8 @@ CARGO_CRATES=	adler2-2.0.0 \
 		linux-raw-sys-0.4.15 \
 		litemap-0.7.4 \
 		lock_api-0.4.12 \
-		log-0.4.25 \
+		log-0.4.26 \
+		loom-0.7.2 \
 		lsp-server-0.7.8 \
 		matchers-0.1.0 \
 		matches-0.1.10 \
@@ -266,15 +266,16 @@ CARGO_CRATES=	adler2-2.0.0 \
 		rustversion-1.0.19 \
 		ryu-1.0.19 \
 		same-file-1.0.6 \
-		schemars-0.8.21 \
-		schemars_derive-0.8.21 \
+		schemars-0.8.22 \
+		schemars_derive-0.8.22 \
+		scoped-tls-1.0.1 \
 		scopeguard-1.2.0 \
 		seahash-4.1.0 \
-		serde-1.0.217 \
+		serde-1.0.218 \
 		serde-wasm-bindgen-0.6.5 \
-		serde_derive-1.0.217 \
+		serde_derive-1.0.218 \
 		serde_derive_internals-0.29.1 \
-		serde_json-1.0.138 \
+		serde_json-1.0.139 \
 		serde_repr-0.1.19 \
 		serde_spanned-0.6.8 \
 		serde_test-1.0.177 \
@@ -286,19 +287,19 @@ CARGO_CRATES=	adler2-2.0.0 \
 		shlex-1.3.0 \
 		similar-2.7.0 \
 		siphasher-1.0.1 \
-		smallvec-1.13.2 \
+		smallvec-1.14.0 \
 		snapbox-0.6.21 \
 		snapbox-macros-0.3.10 \
 		stable_deref_trait-1.2.0 \
 		static_assertions-1.1.0 \
 		strip-ansi-escapes-0.2.1 \
 		strsim-0.11.1 \
-		strum-0.27.0 \
-		strum_macros-0.27.0 \
+		strum-0.27.1 \
+		strum_macros-0.27.1 \
 		syn-1.0.109 \
 		syn-2.0.98 \
 		synstructure-0.13.1 \
-		tempfile-3.16.0 \
+		tempfile-3.17.1 \
 		termcolor-1.4.1 \
 		terminal_size-0.4.1 \
 		terminfo-0.9.0 \
@@ -338,7 +339,7 @@ CARGO_CRATES=	adler2-2.0.0 \
 		unic-common-0.9.0 \
 		unic-ucd-category-0.9.0 \
 		unic-ucd-version-0.9.0 \
-		unicode-ident-1.0.16 \
+		unicode-ident-1.0.17 \
 		unicode-normalization-0.1.24 \
 		unicode-width-0.1.14 \
 		unicode-width-0.2.0 \
@@ -380,7 +381,14 @@ CARGO_CRATES=	adler2-2.0.0 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-util-0.1.9 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
+		windows-0.58.0 \
 		windows-core-0.52.0 \
+		windows-core-0.58.0 \
+		windows-implement-0.58.0 \
+		windows-interface-0.58.0 \
+		windows-link-0.1.0 \
+		windows-result-0.2.0 \
+		windows-strings-0.1.0 \
 		windows-sys-0.48.0 \
 		windows-sys-0.52.0 \
 		windows-sys-0.59.0 \
@@ -421,5 +429,5 @@ CARGO_CRATES=	adler2-2.0.0 \
 		zstd-0.11.2+zstd.1.5.2 \
 		zstd-safe-5.0.2+zstd.1.5.2 \
 		zstd-sys-2.0.13+zstd.1.5.6 \
-		salsa,salsa-macro-rules,salsa-macros@git+https://github.com/salsa-rs/salsa.git?rev=88a1d7774d78f048fbd77d40abca9ebd729fd1f0\#88a1d7774d78f048fbd77d40abca9ebd729fd1f0 \
+		salsa,salsa-macro-rules,salsa-macros@git+https://github.com/salsa-rs/salsa.git?rev=99be5d9917c3dd88e19735a82ef6bf39ba84bd7e\#99be5d9917c3dd88e19735a82ef6bf39ba84bd7e \
 		lsp-types@git+https://github.com/astral-sh/lsp-types.git?rev=3512a9f\#3512a9f33eadc5402cfab1b8f7340824c8ca1439
