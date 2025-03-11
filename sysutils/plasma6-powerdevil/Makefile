@@ -1,5 +1,6 @@
 PORTNAME=	powerdevil
 DISTVERSION=	${KDE_PLASMA_VERSION}
+PORTREVISION=	1
 CATEGORIES=	sysutils kde kde-plasma
 
 MAINTAINER=	kde@FreeBSD.org
@@ -7,6 +8,7 @@ COMMENT=	Manages the power consumption settings of a Plasma shell
 
 LIB_DEPENDS=	libudev.so:devel/libudev-devd \
 		libxkbcommon.so:x11/libxkbcommon
+RUN_DEPENDS=	${LOCALBASE}/libexec/upowerd:sysutils/upower
 
 USES=		cmake gettext gl kde:6 qt:6 tar:xz xorg
 USE_GL=		gl opengl
