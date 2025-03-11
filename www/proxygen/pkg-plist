@@ -48,6 +48,7 @@ include/proxygen/httpserver/samples/push/PushRequestHandler.h
 include/proxygen/httpserver/samples/push/PushStats.h
 include/proxygen/httpserver/samples/static/StaticHandler.h
 include/proxygen/httpserver/samples/websocket/WebSocketHandler.h
+include/proxygen/lib/dns/AsyncDNSStatsCollector.h
 include/proxygen/lib/dns/CAresResolver.h
 include/proxygen/lib/dns/CachingDNSResolver.h
 include/proxygen/lib/dns/DNSModule.h
@@ -80,7 +81,6 @@ include/proxygen/lib/http/StatusTypeEnum.h
 include/proxygen/lib/http/SynchronizedLruQuicPskCache.h
 include/proxygen/lib/http/Types.h
 include/proxygen/lib/http/Window.h
-include/proxygen/lib/http/codec/CodecDictionaries.h
 include/proxygen/lib/http/codec/CodecProtocol.h
 include/proxygen/lib/http/codec/CodecUtil.h
 include/proxygen/lib/http/codec/ControlMessageRateLimitFilter.h
@@ -207,8 +207,6 @@ include/proxygen/lib/http/stats/HTTPCodecStats.h
 include/proxygen/lib/http/stats/HTTPCodecStatsFilter.h
 include/proxygen/lib/http/stats/HeaderCodecStats.h
 include/proxygen/lib/http/stats/ResponseCodeStatsMinute.h
-include/proxygen/lib/http/stats/SPDYStats.h
-include/proxygen/lib/http/stats/SPDYStatsFilter.h
 include/proxygen/lib/http/stats/TLResponseCodeStats.h
 include/proxygen/lib/http/stats/ThreadLocalHTTPSessionStats.h
 include/proxygen/lib/http/structuredheaders/StructuredHeadersBuffer.h
