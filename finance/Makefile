@@ -28,6 +28,7 @@
     SUBDIR += expense
     SUBDIR += fabric
     SUBDIR += fava
+    SUBDIR += favagtk
     SUBDIR += fixc
     SUBDIR += freqtrade
     SUBDIR += frontaccounting

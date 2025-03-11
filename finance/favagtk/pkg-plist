@@ -1,0 +1,17 @@
+bin/favagtk
+share/appdata/org.gnome.gitlab.johannesjh.favagtk.appdata.xml
+share/applications/org.gnome.gitlab.johannesjh.favagtk.desktop
+%%DATADIR%%/favagtk.gresource
+%%DATADIR%%/favagtk/__init__.py
+%%DATADIR%%/favagtk/about.py
+%%DATADIR%%/favagtk/app.py
+%%DATADIR%%/favagtk/file_open_dialog.py
+%%DATADIR%%/favagtk/main.py
+%%DATADIR%%/favagtk/recents.py
+%%DATADIR%%/favagtk/server.py
+%%DATADIR%%/favagtk/shortcuts.py
+%%DATADIR%%/favagtk/window.py
+share/glib-2.0/schemas/org.gnome.gitlab.johannesjh.favagtk.gschema.xml
+share/icons/hicolor/scalable/apps/org.gnome.gitlab.johannesjh.favagtk.svg
+share/icons/hicolor/symbolic/apps/org.gnome.gitlab.johannesjh.favagtk-symbolic.svg
+share/mime/packages/org.gnome.gitlab.johannesjh.favagtk.xml
