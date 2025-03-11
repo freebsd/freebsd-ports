@@ -1,0 +1,5 @@
+bin/clang-uml
+%%DOCSDIR%%/AUTHORS.md
+%%DOCSDIR%%/CHANGELOG.md
+%%DOCSDIR%%/LICENSE.md
+%%DOCSDIR%%/README.md

@@ -1,0 +1,2 @@
+clang-uml is an automatic C++ to UML class, sequence, package and
+include diagram generator, driven by YAML configuration files.
