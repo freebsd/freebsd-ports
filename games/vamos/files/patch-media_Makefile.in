@@ -1,0 +1,11 @@
+--- media/Makefile.in.orig	2014-04-02 21:56:12 UTC
++++ media/Makefile.in
+@@ -134,7 +134,7 @@ am__v_lt_ = $(am__v_lt_@AM_DEFAULT_V@)
+ am__v_lt_0 = --silent
+ am__v_lt_1 = 
+ media_la_DEPENDENCIES = $(top_srcdir)/geometry/libvamos-geometry.la \
+-	$(top_srcdir)/media/libvamos-media.la
++	libvamos-media.la
+ am_media_la_OBJECTS = media_la-bp-media.lo
+ media_la_OBJECTS = $(am_media_la_OBJECTS)
+ media_la_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) \

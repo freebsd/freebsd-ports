@@ -1,0 +1,11 @@
+--- body/Makefile.in.orig	2014-04-02 21:56:11 UTC
++++ body/Makefile.in
+@@ -125,7 +125,7 @@ am__uninstall_files_from_dir = { \
+ am__installdirs = "$(DESTDIR)$(libdir)" "$(DESTDIR)$(pyexecdir)" \
+ 	"$(DESTDIR)$(pkgincludedir)"
+ LTLIBRARIES = $(lib_LTLIBRARIES) $(pyexec_LTLIBRARIES)
+-body_la_DEPENDENCIES = $(top_srcdir)/body/libvamos-body.la \
++body_la_DEPENDENCIES = libvamos-body.la \
+ 	$(top_srcdir)/geometry/libvamos-geometry.la \
+ 	$(top_srcdir)/media/libvamos-media.la
+ am_body_la_OBJECTS = body_la-bp-body.lo
