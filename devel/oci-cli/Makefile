@@ -1,5 +1,5 @@
 PORTNAME=	oci-cli
-DISTVERSION=	3.51.7
+DISTVERSION=	3.52.1
 # See below comment for WRKSRC
 DISTNAME=	${PORTNAME:S/-/_/}-${DISTVERSIONPREFIX}${DISTVERSION}${DISTVERSIONSUFFIX}
 CATEGORIES=	devel
@@ -24,7 +24,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}arrow>=1.0.0:devel/py-arrow@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}certifi>0:security/py-certifi@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}click>=8.0.4:devel/py-click@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}jmespath>=0.10.0:devel/py-jmespath@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}oci>=2.144.1:devel/py-oci@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}oci>=2.148.0:devel/py-oci@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}openssl>=22.1.0:security/py-openssl@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}prompt-toolkit>=3.0.29:devel/py-prompt-toolkit@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}python-dateutil>=2.5.3:devel/py-python-dateutil@${PY_FLAVOR} \
