@@ -1,11 +1,11 @@
 PORTNAME=	sparsevctrs
-DISTVERSION=	0.2.0
+DISTVERSION=	0.3.0
 CATEGORIES=	devel
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Sparse Vectors for Use in Data Frames
-WWW=		https://cran.r-project.org/web/packages/sparsevctrs/
+WWW=		https://cran.r-project.org/package=sparsevctrs
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
