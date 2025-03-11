@@ -24,16 +24,6 @@ CPE_VENDOR=	ruby-lang
 CPE_UPDATE=	p0
 USE_LDCONFIG=	yes
 
-# We get these from other ports
-EXTRACT_AFTER_ARGS=	--exclude ${DISTNAME}/bin/gem \
-			--exclude ${DISTNAME}/ext/win32* \
-			--exclude ${DISTNAME}/lib/bundler* \
-			--exclude ${DISTNAME}/libexec/bundler \
-			--exclude ${DISTNAME}/man/erb.1 \
-			--exclude ${DISTNAME}/man/irb.1 \
-			--exclude ${DISTNAME}/man/ri.1 \
-			--no-same-owner --no-same-permissions
-
 CONFIGURE_ARGS=	${RUBY_CONFIGURE_ARGS} \
 		--disable-rpath \
 		--enable-install-static-library \
@@ -46,6 +36,17 @@ CONFIGURE_ENV=	debugflags=
 GNU_CONFIGURE=	yes
 # Keep this, else ruby will fail to load libraries dependent of libpthread.
 LIBS+=		-lpthread
+
+# We get these from other ports
+EXTRACT_AFTER_ARGS=	--exclude ${DISTNAME}/bin/gem \
+			--exclude ${DISTNAME}/ext/win32* \
+			--exclude ${DISTNAME}/lib/bundler* \
+			--exclude ${DISTNAME}/libexec/bundler \
+			--exclude ${DISTNAME}/man/erb.1 \
+			--exclude ${DISTNAME}/man/irb.1 \
+			--exclude ${DISTNAME}/man/ri.1 \
+			--no-same-owner --no-same-permissions
+
 WRKSRC=		${RUBY_WRKSRC}
 
 RUBY_VER=	3.3
