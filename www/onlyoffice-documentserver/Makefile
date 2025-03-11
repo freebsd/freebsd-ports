@@ -1,7 +1,6 @@
 PORTNAME=	onlyoffice-documentserver
 DISTVERSIONPREFIX=	v
-DISTVERSION=	8.2.0.143
-PORTREVISION=	6
+DISTVERSION=	8.3.1.25
 CATEGORIES=	www
 MASTER_SITES+=	LOCAL/mikael/v8/:source1 \
 		LOCAL/mikael/onlyoffice/:source2 \
@@ -30,11 +29,15 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Jinja2>=0:devel/py-Jinja2@${PY_FLAVOR} \
 		npm:www/npm-node18 \
 		${LOCALBASE}/lib/libcrypto.a:security/openssl
 LIB_DEPENDS=	libboost_regex.so:devel/boost-libs \
+		libetonyek-0.1.so:graphics/libetonyek01 \
 		libcurl.so:ftp/curl \
 		libharfbuzz.so:print/harfbuzz \
 		libiconv.so:converters/libiconv \
-		libicutu.so:devel/icu
+		libicutu.so:devel/icu \
+		libodfgen-0.1.so:textproc/libodfgen01 \
+		librevenge-0.0.so:textproc/librevenge
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}supervisor>0:sysutils/py-supervisor@${PY_FLAVOR} \
+		${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss \
 		gsed:textproc/gsed \
 		nginx:www/nginx \
 		pwgen:sysutils/pwgen \
@@ -145,6 +148,7 @@ post-extract:
 post-patch:
 	@${REINPLACE_CMD} 's|%%LOCALBASE%%|${LOCALBASE}|' \
 		${WRKSRC}/build_tools/tools/freebsd/automate.py \
+		${WRKSRC}/core/Apple/IWork.pro \
 		${WRKSRC}/core/Common/3dParty/boost/boost.pri \
 		${WRKSRC}/core/Common/3dParty/icu/icu.pri \
 		${WRKSRC}/core/Common/3dParty/openssl/openssl.pri \
@@ -186,7 +190,7 @@ post-patch:
 
 do-build:
 	${INSTALL_SCRIPT} ${FILESDIR}/npm ${BINARY_LINKDIR}/npm
-	@${REINPLACE_CMD} 's|%%LOCALBASE%%|${LOCALBASE}|' ${WRKDIR}/.bin/npm
+	@${REINPLACE_CMD} 's|%%LOCALBASE%%|${LOCALBASE}|g' ${WRKDIR}/.bin/npm
 
 	@cd ${WRKSRC}/web-apps/build ; ${SETENV} ${MAKE_ENV} npm install patch-package
 	@cd ${WRKSRC}/web-apps/build ; ${SETENV} ${MAKE_ENV} npm install optipng-bin@5.1.0

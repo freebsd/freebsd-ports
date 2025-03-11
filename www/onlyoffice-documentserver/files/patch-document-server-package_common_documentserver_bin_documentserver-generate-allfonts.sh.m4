@@ -9,7 +9,7 @@
  
  export LD_LIBRARY_PATH=/var/www/M4_DS_PREFIX/server/FileConverter/bin:$LD_LIBRARY_PATH
  
-@@ -52,24 +52,16 @@ echo Done
+@@ -52,11 +52,6 @@ echo Done
  
  echo Done
  
@@ -21,10 +21,7 @@
  #Remove gzipped files
  rm -f \
    $DIR/fonts/*.gz \
-   $DIR/sdkjs/common/AllFonts.js.gz \
--  $DIR/sdkjs/common/Images/*.gz \ 
-+  $DIR/sdkjs/common/Images/*.gz \
-   $DIR/sdkjs/slide/themes/themes.js.gz
+@@ -66,10 +61,7 @@ if [ "$ONLYOFFICE_DATA_CONTAINER" != "true" ]; then
  
  #Restart web-site and converter
  if [ "$ONLYOFFICE_DATA_CONTAINER" != "true" ]; then
