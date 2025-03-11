@@ -232,6 +232,7 @@ include/thrift/lib/cpp2/async/HeaderServerChannel.h
 include/thrift/lib/cpp2/async/HibernatingRequestChannel.h
 include/thrift/lib/cpp2/async/Interaction.h
 include/thrift/lib/cpp2/async/InteractionOverloadPolicy.h
+include/thrift/lib/cpp2/async/InterceptorFrameworkMetadata.h
 include/thrift/lib/cpp2/async/MessageChannel.h
 include/thrift/lib/cpp2/async/MultiplexAsyncProcessor.h
 include/thrift/lib/cpp2/async/PooledRequestChannel.h
@@ -500,6 +501,7 @@ include/thrift/lib/cpp2/server/overload/QpsOverloadChecker.h
 include/thrift/lib/cpp2/server/overload/QueueConcurrencyOverloadChecker.h
 include/thrift/lib/cpp2/server/peeking/PeekingManager.h
 include/thrift/lib/cpp2/server/peeking/TLSHelper.h
+include/thrift/lib/cpp2/server/test/RequestPileTestUtils.h
 include/thrift/lib/cpp2/server/test/util/MockServerConfigs.h
 include/thrift/lib/cpp2/test/Matcher.h
 include/thrift/lib/cpp2/test/MockCpp2ConnContext.h
