@@ -1,6 +1,5 @@
 PORTNAME=	yamllint
-PORTVERSION=	1.35.1
-PORTREVISION=	1
+PORTVERSION=	1.36.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -22,7 +21,5 @@ USES=		python
 USE_PYTHON=	autoplist concurrent pep517 pytest
 
 NO_ARCH=	yes
-
-PYTEST_BROKEN_TESTS=	test_run_with_user_global_config_file
 
 .include <bsd.port.mk>
