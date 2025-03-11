@@ -63,7 +63,7 @@ _USE_GNOME_ALL= intlhack intltool introspection \
 
 # GNOME 2 components
 _USE_GNOME_ALL+= atk cairo \
-		gdkpixbuf gdkpixbuf2xlib gconf2 glib20 \
+		gdkpixbuf gdkpixbuf2xlib gdkpixbufextra gconf2 glib20 \
 		gtk-update-icon-cache gtk20 \
 		gtksharp20 gtksourceview2 gvfs libartlgpl2 \
 		libglade2 libgnomecanvas \
@@ -176,6 +176,10 @@ gdkpixbuf_USE_GNOME_IMPL=glib20
 
 gdkpixbuf2xlib_LIB_DEPENDS=	libgdk_pixbuf_xlib-2.0.so:graphics/gdk-pixbuf2-xlib
 gdkpixbuf2xlib_USE_GNOME_IMPL=	glib20 gdkpixbuf
+
+gdkpixbufextra_BUILD_DEPENDS=	gdk-pixbuf-extra>=0.1.0:graphics/gdk-pixbuf-extra
+gdkpixbufextra_RUN_DEPENDS=	gdk-pixbuf-extra>=0.1.0:graphics/gdk-pixbuf-extra
+gdkpixbufextra_USE_GNOME_IMPL=	glib20 gdkpixbuf
 
 gtk-update-icon-cache_RUN_DEPENDS=	gtk-update-icon-cache:graphics/gtk-update-icon-cache
 

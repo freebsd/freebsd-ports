@@ -1,0 +1,12 @@
+[
+{
+  type: upgrade
+  minimum_version: "2.42.11"
+  message: <<EOM
+Loaders for ANI, BMP, ICNS, ICO, PNM, QTIF, TGA, XBM and XPM have
+been moved to a separate graphics/gdk-pixbuf-extra port. Install
+the aforementioned port if artefacts in those formats no longer
+load or otherwise cause errors.
+EOM
+}
+]
