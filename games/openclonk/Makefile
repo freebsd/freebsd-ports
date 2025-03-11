@@ -1,6 +1,6 @@
 PORTNAME=	openclonk
 DISTVERSION=	8.1
-PORTREVISION=	6
+PORTREVISION=	7
 DISTVERSIONSUFFIX=	-src
 CATEGORIES=	games
 MASTER_SITES=	http://www.openclonk.org/builds/release/${DISTVERSION}/

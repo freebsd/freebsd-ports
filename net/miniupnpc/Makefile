@@ -1,6 +1,6 @@
 PORTNAME=	miniupnpc
-PORTVERSION=	2.3.1
-PORTREVISION?=	0
+PORTVERSION=	2.3.2
+PORTREVISION=	0
 CATEGORIES?=	net
 MASTER_SITES=	http://miniupnp.free.fr/files/ \
 		https://miniupnp.tuxfamily.org/files/
@@ -34,7 +34,7 @@ USE_RC_SUBR=	miniupnpc
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/upnpc \
 		${STAGEDIR}${PREFIX}/bin/upnp-listdevices \
-		${STAGEDIR}${PREFIX}/lib/libminiupnpc.so.19
+		${STAGEDIR}${PREFIX}/lib/libminiupnpc.so.20
 .endif
 
 .include <bsd.port.post.mk>
