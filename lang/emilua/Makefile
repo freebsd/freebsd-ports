@@ -1,6 +1,6 @@
 PORTNAME=	emilua
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.11.0
+DISTVERSION=	0.11.1
 CATEGORIES=	lang devel
 
 MAINTAINER=	manipuladordedados@gmail.com
@@ -11,6 +11,9 @@ LICENSE=	BSL MIT
 LICENSE_COMB=	dual
 LICENSE_FILE_BSL=	${WRKSRC}/LICENSE-BSL-1.0.txt
 LICENSE_FILE_MIT=	${WRKSRC}/LICENSE-MIT.txt
+
+ONLY_FOR_ARCHS= 	amd64 aarch64
+ONLY_FOR_ARCHS_REASON=	expression cannot be narrowed from type 'streamoff' (aka 'long long') to 'lua_Integer' (aka 'int')
 
 BUILD_DEPENDS=	asciidoctor:textproc/rubygem-asciidoctor \
 		boost-libs>0:devel/boost-libs \
