@@ -1,3 +1,43 @@
+  <vuln vid="a02a6d94-fe53-11ef-85f3-a8a1599412c6">
+    <topic>chromium -- multiple security fixes</topic>
+    <affects>
+      <package>
+       <name>chromium</name>
+       <range><lt>134.0.6998.88</lt></range>
+      </package>
+      <package>
+       <name>ungoogled-chromium</name>
+       <range><lt>134.0.6998.88</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+       <p>Chrome Releases reports:</p>
+       <blockquote cite="https://chromereleases.googleblog.com/2025/03/stable-channel-update-for-desktop_10.html">
+	 <p>This update includes 5 security fixes:</p>
+	 <ul>
+	    <li>[398065918] High CVE-2025-1920: Type Confusion in V8. Reported by Excello s.r.o. on 2025-02-21</li>
+	    <li>[400052777] High CVE-2025-2135: Type Confusion in V8. Reported by Zhenghang Xiao (@Kipreyyy) on 2025-03-02</li>
+	    <li>[401059730] High CVE-TBD: Out of bounds write in GPU. Reported on 2025-03-05</li>
+	    <li>[395032416] Medium CVE-2025-2136: Use after free in Inspector. Reported by Sakana.S on 2025-02-10</li>
+	    <li>[398999390] Medium CVE-2025-2137: Out of bounds read in V8. Reported by zeroxiaobai@ on 2025-02-25</li>
+	 </ul>
+       </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2025-1920</cvename>
+      <cvename>CVE-2025-2135</cvename>
+      <cvename>CVE-2025-2136</cvename>
+      <cvename>CVE-2025-2137</cvename>
+      <url>https://chromereleases.googleblog.com/2025/03/stable-channel-update-for-desktop_10.html</url>
+    </references>
+    <dates>
+      <discovery>2025-03-10</discovery>
+      <entry>2025-03-11</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="a86f9189-fdd9-11ef-91ff-b42e991fc52e">
     <topic>libreoffice -- Macro URL arbitrary script execution</topic>
     <affects>
