@@ -1,0 +1,23 @@
+--- doc/Makefile.orig	2025-02-20 16:24:12 UTC
++++ doc/Makefile
+@@ -1,4 +1,4 @@
+-TARGETS	= $(OBJDIR)camera.1 $(OBJDIR)camera.html $(OBJDIR)gallery.1 $(OBJDIR)gallery.html
++TARGETS	= $(OBJDIR)camera.1 $(OBJDIR)gallery.1
+ OBJDIR	=
+ PREFIX	= /usr/local
+ DESTDIR	=
+@@ -33,14 +33,10 @@ install: all
+ 
+ install: all
+ 	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -i -- "$(OBJDIR)camera.1"
+-	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -i -- "$(OBJDIR)camera.html"
+ 	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -i -- "$(OBJDIR)gallery.1"
+-	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -i -- "$(OBJDIR)gallery.html"
+ 
+ uninstall:
+ 	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -u -- "camera.1"
+-	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -u -- "camera.html"
+ 	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -u -- "gallery.1"
+-	./docbook.sh -P "$(DESTDIR)$(PREFIX)" -u -- "gallery.html"
+ 
+ .PHONY: all clean distclean install uninstall
