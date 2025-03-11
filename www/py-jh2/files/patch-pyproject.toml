@@ -1,0 +1,19 @@
+From: Ahmed TAHRI <tahri.ahmed@proton.me>
+Date: Thu, 6 Mar 2025 08:21:41 +0100
+Subject: [PATCH] :bug: fix project metadata around license
+
+Obtained from:
+
+https://github.com/jawah/h2/commit/3fe0d2c671354205832f2e028533e8b4a5962e92
+
+--- pyproject.toml.orig	2025-02-16 19:03:23 UTC
++++ pyproject.toml
+@@ -6,7 +6,7 @@ readme = "README.rst"
+ name = "jh2"
+ description = "HTTP/2 State-Machine based protocol implementation"
+ readme = "README.rst"
+-license-files = { paths = ["LICENSE"] }
++license-files = ["LICENSE"]
+ license = "MIT"
+ keywords = ["http2", "hpack", "h2"]
+ authors = [
