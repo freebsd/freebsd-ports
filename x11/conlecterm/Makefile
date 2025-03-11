@@ -14,7 +14,7 @@ LIB_DEPENDS=	libharfbuzz.so:print/harfbuzz
 RUN_DEPENDS=	urxvt:x11/rxvt-unicode
 
 USES=		cabal xorg gnome pkgconfig desktop-file-utils
-USE_GNOME=	gtk30 cairo glib20 gdkpixbuf2
+USE_GNOME=	gtk30 cairo glib20 gdkpixbuf
 USE_XORG=	xext x11 xscrnsaver xinerama xrandr
 
 OPTIONS_DEFINE=	EXAMPLES

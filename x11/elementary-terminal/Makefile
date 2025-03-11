@@ -18,7 +18,7 @@ LIB_DEPENDS=	libgee-0.8.so:devel/libgee \
 USES=		desktop-file-utils gettext gnome meson pkgconfig vala:build
 USE_GITHUB=	yes
 GH_ACCOUNT=	elementary
-USE_GNOME=	cairo gdkpixbuf2 glib20 gtk30 vte3
+USE_GNOME=	cairo gdkpixbuf glib20 gtk30 vte3
 GLIB_SCHEMAS=	io.elementary.terminal.gschema.xml
 
 .include <bsd.port.mk>

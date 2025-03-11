@@ -19,7 +19,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dbus>0:devel/py-dbus@${PY_FLAVOR} \
 USES=		cpe desktop-file-utils gettext-tools gnome meson pkgconfig \
 		python shebangfix tar:bz2 xfce
 CPE_VENDOR=	catfish_project
-USE_GNOME=	gdkpixbuf2 gtk30 pygobject3
+USE_GNOME=	gdkpixbuf gtk30 pygobject3
 USE_XFCE=	xfconf
 BINARY_ALIAS=	python3=${PYTHON_CMD}
 SHEBANG_FILES=	bin/catfish

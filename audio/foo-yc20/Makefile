@@ -18,7 +18,7 @@ LIB_DEPENDS=	libjack.so:audio/jack \
 USES=		compiler:c++11-lang gmake gnome localbase pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	sampov2
-USE_GNOME=	gtk20 gdkpixbuf2 cairo
+USE_GNOME=	gtk20 gdkpixbuf cairo
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|install -Dm|install -m|' ${WRKSRC}/Makefile

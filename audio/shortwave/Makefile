@@ -15,7 +15,7 @@ LIB_DEPENDS=	libdbus-1.so:devel/dbus \
 
 USES=		cargo gettext gnome gstreamer meson pkgconfig sqlite ssl
 USE_GITLAB=	yes
-USE_GNOME=	gdkpixbuf2 gtk40 libadwaita
+USE_GNOME=	gdkpixbuf gtk40 libadwaita
 USE_GSTREAMER=	good libav soup vorbis
 GL_SITE=	https://gitlab.gnome.org
 GL_ACCOUNT=	World

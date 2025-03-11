@@ -168,7 +168,7 @@ RAW_IMPLIES=		LCMS2
 
 SVG_DESC=		SVG vector image format support (via librsvg, implies the x11 option)
 SVG_CONFIGURE_WITH=	rsvg
-SVG_USE=		gnome=cairo,gdkpixbuf2,librsvg2
+SVG_USE=		gnome=cairo,gdkpixbuf,librsvg2
 
 TIFF_CONFIGURE_WITH=	tiff
 TIFF_LIB_DEPENDS=	libtiff.so:graphics/tiff

@@ -18,7 +18,7 @@ LIB_DEPENDS=	libaudiofile.so:audio/libaudiofile \
 		libharfbuzz.so:print/harfbuzz
 
 USES=		gettext-runtime gl gmake gnome libtool pkgconfig tar:xz xorg
-USE_GNOME=	atk cairo gdkpixbuf2 gtk20 libxml2 pango pangox-compat
+USE_GNOME=	atk cairo gdkpixbuf gtk20 libxml2 pango pangox-compat
 USE_GL=		gl glu
 USE_XORG=	x11
 USE_LDCONFIG=	yes

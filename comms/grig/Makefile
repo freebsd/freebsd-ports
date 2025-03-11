@@ -22,7 +22,7 @@ GH_ACCOUNT=	fillods
 GH_PROJECT=	grig
 GH_TAGNAME=	9d79adb
 
-USE_GNOME=	cairo gdkpixbuf2 gtk20 intltool
+USE_GNOME=	cairo gdkpixbuf gtk20 intltool
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 

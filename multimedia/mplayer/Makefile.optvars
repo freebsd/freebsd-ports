@@ -53,7 +53,7 @@ GSM_LIB_DEPENDS=	libgsm.so:audio/gsm
 GSM_CONFIGURE_OFF=	--disable-libgsm
 
 GUI_CONFIGURE_ENABLE=	gui
-GUI_USE=		GNOME=cairo,gdkpixbuf2,gtk20
+GUI_USE=		GNOME=cairo,gdkpixbuf,gtk20
 GUI_USES=		gnome
 GUI_DESKTOP_ENTRIES=	"MPlayer" "High performance media player" "mplayer" "gmplayer" "" false
 GUI_IMPLIES=		ASS JPEG X11

@@ -22,7 +22,7 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 RUN_DEPENDS=	gtk-engines2>=2.15.0:x11-themes/gtk-engines2
 
 USES=		gnome libtool pkgconfig
-USE_GNOME=	cairo gdkpixbuf2 glib20 gtk20 pango
+USE_GNOME=	cairo gdkpixbuf glib20 gtk20 pango
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip

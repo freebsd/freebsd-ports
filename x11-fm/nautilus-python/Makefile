@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		gmake gnome libtool localbase pathfix pkgconfig python \
 		tar:xz
-USE_GNOME=	cairo gdkpixbuf2 nautilus3 pygobject3
+USE_GNOME=	cairo gdkpixbuf nautilus3 pygobject3
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes

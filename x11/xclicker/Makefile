@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USES=		desktop-file-utils gnome meson motif pkgconfig xorg
 USE_GITHUB=	yes
 GH_ACCOUNT=	robiot
-USE_GNOME+=	gdkpixbuf2 glib20 gtk30
+USE_GNOME+=	gdkpixbuf glib20 gtk30
 USE_XORG+=	x11 xi xtst
 
 PLIST_FILES=	bin/xclicker \

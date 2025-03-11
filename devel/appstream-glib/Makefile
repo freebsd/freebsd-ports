@@ -24,7 +24,7 @@ CONFLICTS_BUILD=	appstream-glib-0.5.*
 
 USES=		compiler:c11 gettext gperf gnome libarchive meson \
 		pkgconfig sqlite tar:xz
-USE_GNOME=	cairo gdkpixbuf2 glib20 gtk30 introspection:build \
+USE_GNOME=	cairo gdkpixbuf glib20 gtk30 introspection:build \
 		libxml2:build pango
 USE_LDCONFIG=	yes
 MESON_ARGS=	-Drpm=false \

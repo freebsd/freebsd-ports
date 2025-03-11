@@ -23,7 +23,7 @@ LIB_DEPENDS=	libcanberra-gtk.so:audio/libcanberra-gtk2 \
 
 USES=		bison gl gmake gnome libtool pathfix shebangfix python \
 		pkgconfig compiler:c++11-lang xorg ncurses readline
-USE_GNOME=	glib20 gtk20 cairo pangox-compat gdkpixbuf2
+USE_GNOME=	glib20 gtk20 cairo pangox-compat gdkpixbuf
 USE_XORG+=	xmu xt sm ice x11
 USE_GL+=	glu gl
 

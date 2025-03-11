@@ -44,12 +44,12 @@ CONFIGURE_ARGS=	--sysconfdir=${LOCALBASE}/etc --disable-static
 .if ! defined(EXTRA_ONLY)
 .  if ${FLAVOR:Mgtk2}
 USES+=		desktop-file-utils shared-mime-info
-USE_GNOME+=	gtk20 cairo gdkpixbuf2
+USE_GNOME+=	gtk20 cairo gdkpixbuf
 CONFIGURE_ARGS+=	--with-gtk=2
 PLIST_SUB=	GTKVERSION=gtk
 .  elif ${FLAVOR:Mgtk3}
 USES+=		desktop-file-utils shared-mime-info
-USE_GNOME+=	gtk30 cairo gdkpixbuf2
+USE_GNOME+=	gtk30 cairo gdkpixbuf
 CONFIGURE_ARGS+=	--with-gtk=3
 PLIST_SUB=	GTKVERSION=gtk3
 .  endif

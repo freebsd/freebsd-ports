@@ -23,7 +23,7 @@ gtk4_PKGNAMESUFFIX=	4
 USES=		cmake compiler:c++17-lang gnome kde:5 pkgconfig \
 		tar:zst xorg
 
-USE_GNOME=	cairo gdkpixbuf2 glib20 introspection
+USE_GNOME=	cairo gdkpixbuf glib20 introspection
 USE_KDE=	ecm
 USE_LDCONFIG=	yes
 USE_XORG=	x11

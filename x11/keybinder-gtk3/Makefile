@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		autoreconf gettext-runtime gmake gnome libtool pathfix \
 		pkgconfig xorg
-USE_GNOME=	gtk30 introspection:build cairo gdkpixbuf2
+USE_GNOME=	gtk30 introspection:build cairo gdkpixbuf
 USE_LDCONFIG=	yes
 USE_XORG=	x11 xext xrender
 

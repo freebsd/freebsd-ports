@@ -15,7 +15,7 @@ LIB_DEPENDS=	libpcre2-8.so:devel/pcre2
 
 USES=		compiler:c11 gettext-tools gmake gnome pkgconfig tar:bzip2 xfce \
 		xorg
-USE_GNOME=	cairo gdkpixbuf2 glib20 gtk30 vte3
+USE_GNOME=	cairo gdkpixbuf glib20 gtk30 vte3
 USE_XFCE=	libmenu xfconf
 USE_XORG=	ice sm x11
 

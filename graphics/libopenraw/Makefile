@@ -71,7 +71,7 @@ OPTIONS_SUB=		yes
 
 GNOME_CONFIGURE_ENABLE=	gnome
 GNOME_USES=		gettext-runtime
-GNOME_USE=		GNOME=glib20,gdkpixbuf2
+GNOME_USE=		GNOME=glib20,gdkpixbuf
 
 TEST_BUILD_DEPENDS=	curl:ftp/curl
 

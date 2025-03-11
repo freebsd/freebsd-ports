@@ -14,7 +14,7 @@ LIB_DEPENDS=	libsecret-1.so:security/libsecret \
 
 USES=		desktop-file-utils gettext gmake gnome libtool pathfix \
 		pkgconfig shared-mime-info tar:xz
-USE_GNOME=	cairo gdkpixbuf2 gtk30 intltool librsvg2
+USE_GNOME=	cairo gdkpixbuf gtk30 intltool librsvg2
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes

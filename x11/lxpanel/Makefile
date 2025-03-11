@@ -21,7 +21,7 @@ LIB_DEPENDS=	libmenu-cache.so:x11/menu-cache \
 RUN_DEPENDS=	${LOCALBASE}/etc/xdg/menus/lxde-applications.menu:x11/lxmenu-data
 
 USES=		gmake gnome libtool localbase pathfix pkgconfig tar:xz xorg
-USE_GNOME=	glib20 gtk20 cairo gdkpixbuf2 gdkpixbuf2xlib intltool
+USE_GNOME=	glib20 gtk20 cairo gdkpixbuf gdkpixbufxlib intltool
 USE_XORG=	x11
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share

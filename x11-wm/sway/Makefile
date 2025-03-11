@@ -42,7 +42,7 @@ BASU_MESON_ENABLED=	tray
 MANPAGES_BUILD_DEPENDS=	scdoc>=1.9.2:textproc/scdoc
 MANPAGES_MESON_ENABLED=	man-pages
 
-PIXBUF_USE=		GNOME=gdkpixbuf2
+PIXBUF_USE=		GNOME=gdkpixbuf
 PIXBUF_MESON_ENABLED=	gdk-pixbuf
 
 SWAYBG_DESC=		Default command to set background

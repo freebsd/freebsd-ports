@@ -17,7 +17,7 @@ USES=		desktop-file-utils gettext gnome gstreamer meson pkgconfig \
 		vala:build
 USE_GITHUB=	yes
 GH_ACCOUNT=	elementary
-USE_GNOME=	gdkpixbuf2 glib20 gtk40 libadwaita
+USE_GNOME=	gdkpixbuf glib20 gtk40 libadwaita
 GLIB_SCHEMAS=	io.elementary.videos.gschema.xml
 USE_GSTREAMER=	faad libav ogg opus plugins theora vorbis x x264 ximagesrc
 

@@ -21,7 +21,7 @@ LIB_DEPENDS=	libatk-1.0.so:accessibility/at-spi2-core \
 USES=		compiler:c11 gettext gmake gnome pkgconfig tar:bz2
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
-USE_GNOME=	cairo gdkpixbuf2 gtk30 intltool
+USE_GNOME=	cairo gdkpixbuf gtk30 intltool
 
 post-patch:
 	@${REINPLACE_CMD} -e \

@@ -48,7 +48,7 @@ USES=		compiler:c++14-lang desktop-file-utils gettext gnome \
 		libarchive pkgconfig python:build readline ssl tar:bzip2 \
 		waf xorg shared-mime-info
 USE_CXXSTD=	c++14
-USE_GNOME=	atk cairo cairomm gdkpixbuf2 glib20 glibmm gtk20 gtkmm24 libxml2 pango
+USE_GNOME=	atk cairo cairomm gdkpixbuf glib20 glibmm gtk20 gtkmm24 libxml2 pango
 USE_LDCONFIG=	yes
 USE_XORG=	x11
 

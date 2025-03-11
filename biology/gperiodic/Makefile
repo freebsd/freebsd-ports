@@ -15,7 +15,7 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig\
 		libfreetype.so:print/freetype2
 
 USES=		gnome pkgconfig
-USE_GNOME=	cairo gdkpixbuf2 gtk20
+USE_GNOME=	cairo gdkpixbuf gtk20
 
 PORTDOCS=	AUTHORS ChangeLog README
 

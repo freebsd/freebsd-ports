@@ -18,7 +18,7 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 
 USES=		compiler:c11 gettext gnome meson pkgconfig tar:xz vala:build
 USE_CSTD=	c11
-USE_GNOME=	cairo gdkpixbuf2 gtk40 libxml2 introspection:build
+USE_GNOME=	cairo gdkpixbuf gtk40 libxml2 introspection:build
 USE_LDCONFIG=	yes
 
 PORTSCOUT=	limitw:1,even

@@ -25,7 +25,7 @@ LIB_DEPENDS=	libdbus-glib-1.so:devel/dbus-glib \
 
 USES=		autoreconf:build gmake gnome libtool pkgconfig
 USE_LDCONFIG=	yes
-USE_GNOME=	cairo gdkpixbuf2 gtk30
+USE_GNOME=	cairo gdkpixbuf gtk30
 
 OPTIONS_DEFINE=		VAPI
 OPTIONS_DEFAULT=	VAPI

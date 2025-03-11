@@ -55,7 +55,7 @@ LDFLAGS+=	-Wl,--as-needed
 USES+=		xorg
 USE_XORG=	x11
 USES+=		gnome
-USE_GNOME=	cairo gdkpixbuf2 gtk30
+USE_GNOME=	cairo gdkpixbuf gtk30
 CMAKE_ARGS+=	-DPUTTY_GTK_VERSION:STRING=3
 
 PLIST_FILES+=	bin/pterm \

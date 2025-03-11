@@ -26,7 +26,7 @@ OPTIONS_DEFINE=	GTK2 DOCS EXAMPLES
 
 .if ${PORT_OPTIONS:MGTK2}
 USES+=		gettext
-USE_GNOME+=	cairo gdkpixbuf2 gtk20
+USE_GNOME+=	cairo gdkpixbuf gtk20
 LIB_DEPENDS+=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
 		libharfbuzz.so:print/harfbuzz

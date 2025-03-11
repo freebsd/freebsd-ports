@@ -17,7 +17,7 @@ USES=		compiler:c11 desktop-file-utils gettext-tools gnome meson \
 		pkgconfig ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	SrainApp
-USE_GNOME=	cairo gdkpixbuf2 glib20 gtk30 pango
+USE_GNOME=	cairo gdkpixbuf glib20 gtk30 pango
 
 OPTIONS_DEFINE=		APP_INDICATOR DOCS
 OPTIONS_DEFAULT=	APP_INDICATOR

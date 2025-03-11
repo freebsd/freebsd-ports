@@ -24,7 +24,7 @@ USE_GITLAB=	yes
 GL_ACCOUNT=	cppit
 GL_TUPLE=	cppit:libclangmm:5611eb3d9e69486f85a431fbaae03c065f62c2d8:libclangmm/lib/libclangmm \
 		eidheim:tiny-process-library:aaf6afa48ad8f0ea5f15dc5cb5f53888bf1ff7ac:tinyprocesslibrary/lib/tiny-process-library
-USE_GNOME=	gdkpixbuf2 gtkmm30 gtksourceviewmm3
+USE_GNOME=	gdkpixbuf gtkmm30 gtksourceviewmm3
 
 CMAKE_ARGS=	-DCMAKE_INCLUDE_PATH=${LOCALBASE}/llvm${LLVM_DEFAULT}/include \
 		-DCMAKE_LIBRARY_PATH=${LOCALBASE}/llvm${LLVM_DEFAULT}/lib

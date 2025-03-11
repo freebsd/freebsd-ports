@@ -19,7 +19,7 @@ LIB_DEPENDS=	libatk-1.0.so:accessibility/at-spi2-core \
 		libharfbuzz.so:print/harfbuzz
 
 USES=		gettext gmake gnome libtool:build pathfix pkgconfig
-USE_GNOME=	cairo gdkpixbuf2 glib20 gtk30 intltool libxml2 pango
+USE_GNOME=	cairo gdkpixbuf glib20 gtk30 intltool libxml2 pango
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes

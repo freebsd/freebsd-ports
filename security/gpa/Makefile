@@ -17,7 +17,7 @@ LIB_DEPENDS=	libassuan.so:security/libassuan \
 RUN_DEPENDS=	gpgv2:security/gnupg
 
 USES=		desktop-file-utils gmake gnome localbase pkgconfig tar:bzip2
-USE_GNOME=	gdkpixbuf2 gtk30
+USE_GNOME=	gdkpixbuf gtk30
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	GPGKEYS_LDAP="${LOCALBASE}/libexec/gpg2keys_ldap"

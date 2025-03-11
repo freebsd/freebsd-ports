@@ -57,12 +57,12 @@ APPINDICATOR_BROKEN=	can not find appindicator-0.1
 GTK_SYSTRAY_DESC=	Enable GTK systray
 GTK_SYSTRAY_CMAKE_BOOL=	ENABLE_GTK_SYSTRAY
 GTK_SYSTRAY_USES=	gnome
-GTK_SYSTRAY_USE=	GNOME=atk,cairo,gdkpixbuf2,gtk20
+GTK_SYSTRAY_USE=	GNOME=atk,cairo,gdkpixbuf,gtk20
 
 STATUSNOTIFIER_DESC=	Enable status notifier
 STATUSNOTIFIER_CMAKE_BOOL=	ENABLE_STATUSNOTIFIER
 STATUSNOTIFIER_USES=	gnome
-STATUSNOTIFIER_USE=	GNOME=atk,cairo,gdkpixbuf2,gtk20
+STATUSNOTIFIER_USE=	GNOME=atk,cairo,gdkpixbuf,gtk20
 
 PLIST_FILES=	bin/qtox \
 		share/applications/io.github.qtox.qTox.desktop \

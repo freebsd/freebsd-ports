@@ -16,7 +16,7 @@ LIB_DEPENDS=	libepoxy.so:graphics/libepoxy \
 
 USES=		compiler:c11 gettext-tools gmake gnome libtool pkgconfig \
 		tar:bzip2 xfce xorg
-USE_GNOME=	cairo gdkpixbuf2 gtk30 libwnck3
+USE_GNOME=	cairo gdkpixbuf gtk30 libwnck3
 USE_XFCE=	libmenu xfconf
 USE_XORG=	ice sm x11 xcomposite xdamage xext xfixes xi xinerama \
 		xorgproto xpresent xrandr xrender xres

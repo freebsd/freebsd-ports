@@ -22,7 +22,7 @@ USES+=		compiler:c++11-lang
 .endif
 INSTALL_TARGET=	install-strip
 LIB_DEPENDS+=	libharfbuzz.so:print/harfbuzz
-USE_GNOME+=	cairo gdkpixbuf2 gtk30
+USE_GNOME+=	cairo gdkpixbuf gtk30
 .endif
 
 GEANY_PLUGIN?=			${PORTNAME:S,geany-plugin-,,}

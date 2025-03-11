@@ -21,7 +21,7 @@ USES=		compiler:c11 gettext-runtime gmake gnome gstreamer libtool pathfix \
 SHEBANG_FILES=	tools/gst-validate-launcher.in
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-USE_GNOME=	cairo gdkpixbuf2 gtk30 introspection:build
+USE_GNOME=	cairo gdkpixbuf gtk30 introspection:build
 INSTALL_TARGET=	install-strip
 USE_PYTHON=	noflavors
 

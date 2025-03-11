@@ -21,7 +21,7 @@ LIB_DEPENDS=	libjson-glib-1.0.so:devel/json-glib \
 GNU_CONFIGURE=	yes
 USES=		compiler gettext-tools gmake gnome libtool pathfix pkgconfig python:run \
 		shebangfix vala:build
-USE_GNOME=	cairo gdkpixbuf2 glib20 gtk30 intltool intlhack libxslt \
+USE_GNOME=	cairo gdkpixbuf glib20 gtk30 intltool intlhack libxslt \
 		introspection:build
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip

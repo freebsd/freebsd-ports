@@ -45,7 +45,7 @@ PORTSCOUT=	limitw:1,even
 USES=		compiler:c11 cpe gettext gl gnome gstreamer libtool localbase \
 		meson pathfix perl5 pkgconfig python shebangfix tar:xz \
 		webplugin:native xorg
-USE_GNOME=	cairo evolutiondataserver3 gdkpixbuf2 gnomedesktop3 gtk40 \
+USE_GNOME=	cairo evolutiondataserver3 gdkpixbuf gnomedesktop3 gtk40 \
 		introspection libxml2 libxslt:build
 USE_XORG=	x11 xcomposite xdamage xext xfixes xi xrandr xtst
 USE_GL=		egl gbm

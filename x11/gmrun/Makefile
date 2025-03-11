@@ -16,7 +16,7 @@ USES=		desktop-file-utils gmake gnome pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	wdlkmpx
 
-USE_GNOME=	cairo gdkpixbuf2 gtk30
+USE_GNOME=	cairo gdkpixbuf gtk30
 HAS_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 

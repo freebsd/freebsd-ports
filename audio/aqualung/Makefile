@@ -36,7 +36,7 @@ LIB_DEPENDS=	libFLAC.so:audio/flac \
 		libfontconfig.so:x11-fonts/fontconfig
 
 USES=		autoreconf compiler:c++11-lang cpe gettext gnome localbase lua:52 pkgconfig
-USE_GNOME=	cairo gdkpixbuf2 gtk20 libxml2 libxslt
+USE_GNOME=	cairo gdkpixbuf gtk20 libxml2 libxslt
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	jeremyevans

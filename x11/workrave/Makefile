@@ -33,7 +33,7 @@ PLIST_FILES=	lib/xfce4/panel/plugins/libworkrave-plugin.a \
 		share/xfce4/panel/plugins/workrave-xfce-applet.desktop
 .endif
 USE_CXXSTD=	c++11
-USE_GNOME=	gdkpixbuf2 gtkmm30 intlhack intltool introspection:build
+USE_GNOME=	gdkpixbuf gtkmm30 intlhack intltool introspection:build
 USE_LDCONFIG=	yes
 USE_XORG=	ice sm x11 xext xmu xorgproto xscrnsaver xtst
 

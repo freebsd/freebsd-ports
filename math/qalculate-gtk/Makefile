@@ -16,7 +16,7 @@ RUN_DEPENDS=	gnuplot:math/gnuplot
 
 USES=		compiler:c++11-lang gettext gmake gnome \
 		libtool:build localbase pkgconfig
-USE_GNOME=	cairo gdkpixbuf2 gtk30 intltool libxml2
+USE_GNOME=	cairo gdkpixbuf gtk30 intltool libxml2
 
 GNU_CONFIGURE=	yes
 

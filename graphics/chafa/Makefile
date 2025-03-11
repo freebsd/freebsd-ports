@@ -21,7 +21,7 @@ LIB_DEPENDS=	libavif.so:graphics/libavif \
 
 USES=		cpe gettext-runtime gnome jpeg libtool magick:7 tar:xz
 CPE_VENDOR=	chafa_project
-USE_GNOME=	cairo gdkpixbuf2 glib20 librsvg2
+USE_GNOME=	cairo gdkpixbuf glib20 librsvg2
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-html-dir=${DOCSDIR}/html

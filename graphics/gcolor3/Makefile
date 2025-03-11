@@ -21,7 +21,7 @@ USES=		gnome gettext meson pkgconfig
 USE_GITLAB=	yes
 GL_SITE=	https://gitlab.gnome.org
 GL_ACCOUNT=	World
-USE_GNOME=	cairo gdkpixbuf2 gtk30 intltool
+USE_GNOME=	cairo gdkpixbuf gtk30 intltool
 
 MESON_ARGS=	-Dwerror=false
 

@@ -31,7 +31,7 @@ USES=		cmake:insource compiler:c++17-lang cpe desktop-file-utils \
 		gettext-tools gnome guile:2.2,3.0,alias,conflicts localbase \
 		perl5 pkgconfig shebangfix tar:bzip2 xorg
 USE_XORG=	x11
-USE_GNOME=	cairo gdkpixbuf2 gtk30 intltool libxml2 libxslt
+USE_GNOME=	cairo gdkpixbuf gtk30 intltool libxml2 libxslt
 USE_LDCONFIG=	yes
 
 CMAKE_ARGS=	-DCOMPILE_GSCHEMAS=OFF \

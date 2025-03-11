@@ -21,7 +21,7 @@ LIB_DEPENDS=	libclutter-1.0.so:graphics/clutter \
 USES=		compiler:c11 gettext-tools gl gmake gnome libtool localbase \
 		pathfix perl5 pkgconfig tar:bzip2 xfce xorg
 USE_GL=		egl
-USE_GNOME=	cairo gdkpixbuf2 glib20 gtk30 intltool libwnck3
+USE_GNOME=	cairo gdkpixbuf glib20 gtk30 intltool libwnck3
 USE_LDCONFIG=	yes
 USE_XFCE=	garcon xfconf
 USE_XORG=	x11 xcomposite xdamage xext xfixes xi xinerama xrandr

@@ -19,7 +19,7 @@ LIB_DEPENDS=	libharfbuzz.so:print/harfbuzz
 
 USES=		gettext-runtime gettext-tools gmake gnome localbase \
 		pkgconfig zip:infozip openal:al,alut tex
-USE_GNOME=	gdkpixbuf2 gtkmm30
+USE_GNOME=	gdkpixbuf gtkmm30
 USE_TEX=	pdftex:build dvipsk:build
 
 ALL_TARGET=	compile documentation

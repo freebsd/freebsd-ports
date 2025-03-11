@@ -13,7 +13,7 @@ WWW=		https://gitlab.gnome.org/GNOME/goocanvas/
 LICENSE=	LGPL20
 
 USES=		gmake gnome libtool pkgconfig tar:xz
-USE_GNOME=	cairo gdkpixbuf2 gtk30 introspection:build
+USE_GNOME=	cairo gdkpixbuf gtk30 introspection:build
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-python=no

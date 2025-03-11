@@ -68,7 +68,7 @@ X11_LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 			libfreetype.so:print/freetype2 \
 			libharfbuzz.so:print/harfbuzz
 X11_USES=		desktop-file-utils xorg
-X11_USE=		GNOME=gdkpixbuf2,gdkpixbuf2xlib,gtk30,gtkmm30 \
+X11_USE=		GNOME=gdkpixbuf,gdkpixbufxlib,gtk30,gtkmm30 \
 			XORG=ice,sm,x11,xext,xi,xinerama,xorgproto,xrandr,xrender,xtst
 X11_CONFIGURE_WITH=	gtk3 gtkmm3 x
 

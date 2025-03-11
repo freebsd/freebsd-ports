@@ -65,7 +65,7 @@ MESON_ARGS+=	-Dgtk2=true \
 		-Dgtk=true \
 		-Dqt5=false \
 		-Dqt=false
-USE_GNOME+=	cairo gdkpixbuf2 gtk20
+USE_GNOME+=	cairo gdkpixbuf gtk20
 PLIST_SUB=	GTK="" \
 		QT="@comment "
 .elif ${FLAVOR} == gtk3
@@ -73,7 +73,7 @@ MESON_ARGS+=	-Dgtk2=false \
 		-Dgtk=true \
 		-Dqt5=false \
 		-Dqt=false
-USE_GNOME+=	cairo gdkpixbuf2 gtk30
+USE_GNOME+=	cairo gdkpixbuf gtk30
 PLIST_SUB=	GTK="" \
 		QT="@comment "
 .endif

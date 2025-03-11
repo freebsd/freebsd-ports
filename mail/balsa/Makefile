@@ -32,7 +32,7 @@ RUN_DEPENDS=	gnome-keyring:security/gnome-keyring
 USES=		cpe desktop-file-utils gettext gmake gnome iconv libtool pathfix perl5 \
 		pkgconfig tar:xz
 CPE_VENDOR=	gnome
-USE_GNOME=	cairo gdkpixbuf2 gnomeprefix intlhack libxslt gtksourceview4
+USE_GNOME=	cairo gdkpixbuf gnomeprefix intlhack libxslt gtksourceview4
 USE_XORG=	x11
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=${PREFIX}/share

@@ -17,7 +17,7 @@ LIB_DEPENDS=	libharfbuzz.so:print/harfbuzz
 USES=		compiler:c++11-lang desktop-file-utils gettext-tools gmake \
 		gnome iconv libtool localbase pathfix pkgconfig python:build \
 		shebangfix tar:bzip2
-USE_GNOME=	cairo gdkpixbuf2 gtk30 intltool
+USE_GNOME=	cairo gdkpixbuf gtk30 intltool
 USE_LDCONFIG=	yes
 
 SHEBANG_FILES=	scripts/gen-api-gtkdoc.py

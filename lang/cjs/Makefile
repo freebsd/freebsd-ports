@@ -21,7 +21,7 @@ LIB_DEPENDS=	libffi.so:devel/libffi \
 
 USES=		compiler:c++17-lang gettext gnome localbase meson pkgconfig \
 		python:build readline shebangfix xorg
-USE_GNOME=	cairo gdkpixbuf2 gtk30 introspection
+USE_GNOME=	cairo gdkpixbuf gtk30 introspection
 USE_XORG=	x11 xext
 MESON_ARGS=	-Dinstalled_tests=false \
 		-Dprofiler=disabled

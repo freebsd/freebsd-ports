@@ -35,7 +35,7 @@ PORTSCOUT=	limitw:1,even
 
 USES=		compiler:c11 gettext gnome jpeg localbase meson pkgconfig \
 		tar:xz
-USE_GNOME=	cairo gdkpixbuf2 gtk30 libxml2
+USE_GNOME=	cairo gdkpixbuf gtk30 libxml2
 USE_LDCONFIG=	yes
 
 GLIB_SCHEMAS=	org.gnome.photos.gschema.xml

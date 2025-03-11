@@ -23,7 +23,7 @@ GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 USES=		desktop-file-utils gl gmake gnome libtool pathfix \
 		pkgconfig shared-mime-info tar:bzip2 xorg
 USE_GL=		gl
-USE_GNOME=	cairo gdkpixbuf2 gtk20 intltool pango
+USE_GNOME=	cairo gdkpixbuf gtk20 intltool pango
 USE_XORG=	x11 xrender
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip

@@ -46,7 +46,7 @@ USE_GNOME+=	librsvg2:build
 USE_PERL5=	build
 RUN_DEPENDS=	${LOCALBASE}/share/skk/SKK-JISYO.L:japanese/skk-jisyo
 .if ${PORT_OPTIONS:MX11}
-USE_GNOME+=	cairo gdkpixbuf2 gtk30
+USE_GNOME+=	cairo gdkpixbuf gtk30
 LIB_DEPENDS+=	libfreetype.so:print/freetype2 \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libharfbuzz.so:print/harfbuzz

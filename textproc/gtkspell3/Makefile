@@ -17,7 +17,7 @@ LIB_DEPENDS=	libenchant-2.so:textproc/enchant2 \
 RUN_DEPENDS=	iso-codes>0:misc/iso-codes
 
 USES=		gettext gmake gnome localbase libtool pathfix pkgconfig tar:xz vala:build
-USE_GNOME=	cairo gdkpixbuf2 gtk30 intlhack introspection:build
+USE_GNOME=	cairo gdkpixbuf gtk30 intlhack introspection:build
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip

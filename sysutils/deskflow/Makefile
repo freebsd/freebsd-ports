@@ -24,7 +24,7 @@ LIB_DEPENDS=	libei.so:x11/libei \
 USES=		cmake compiler:c++20-lang gl gnome pkgconfig qt:6 ssl xorg
 USE_GITHUB=	yes
 USE_GL=		opengl
-USE_GNOME=	gdkpixbuf2 glib20
+USE_GNOME=	gdkpixbuf glib20
 USE_QT=		base
 USE_XORG=	ice sm x11 xext xi xinerama xkbfile xrandr xtst
 

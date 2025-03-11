@@ -31,7 +31,7 @@ USES=		desktop-file-utils gettext-tools gnome magick:run python \
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	varietywalls
-USE_GNOME=	gdkpixbuf2 gtk30 intltool pygobject3:run
+USE_GNOME=	gdkpixbuf gtk30 intltool pygobject3:run
 USE_PYTHON=	autoplist distutils noflavors
 
 SHEBANG_FILES=	bin/variety data/scripts/*

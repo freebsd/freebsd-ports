@@ -24,7 +24,7 @@ RUN_DEPENDS=	gsettings-desktop-schemas>0:devel/gsettings-desktop-schemas
 
 USES=		cargo compiler:c11 gettext-tools gnome meson pkgconfig python:build shebangfix
 USE_GITLAB=	yes
-USE_GNOME=	cairo gdkpixbuf2 gnomedesktop3 gtk30
+USE_GNOME=	cairo gdkpixbuf gnomedesktop3 gtk30
 GL_SITE=	https://gitlab.gnome.org
 GL_ACCOUNT=	World/Phosh
 SHEBANG_FILES=	tools/entry.py

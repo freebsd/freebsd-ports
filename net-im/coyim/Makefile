@@ -15,7 +15,7 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2
 
 USES=		gnome go pkgconfig
-USE_GNOME=	atk cairo gdkpixbuf2 glib20 gtk30 pango
+USE_GNOME=	atk cairo gdkpixbuf glib20 gtk30 pango
 USE_GITHUB=	yes
 GH_SUBDIR=	src/github.com/${GH_ACCOUNT}/${PORTNAME}
 

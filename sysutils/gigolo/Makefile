@@ -13,7 +13,7 @@ BUILD_DEPENDS=	p5-XML-Parser>=0:textproc/p5-XML-Parser
 LIB_DEPENDS=	libharfbuzz.so:print/harfbuzz
 
 USES=		gettext-tools gmake gnome pkgconfig tar:bzip2 xfce xorg
-USE_GNOME=	cairo gdkpixbuf2 gtk30 gvfs
+USE_GNOME=	cairo gdkpixbuf gtk30 gvfs
 USE_XORG=	x11
 
 GNU_CONFIGURE=	yes

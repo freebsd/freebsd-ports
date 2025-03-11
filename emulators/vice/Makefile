@@ -96,7 +96,7 @@ __pmlinks1!=	${ECHO_CMD} '${LMLINKS:S/    / /}' | ${AWK} \
 
 .if ${PORT_OPTIONS:MGTK3UI}
 USES+=		gnome gl
-USE_GNOME+=	gtk30 vte3 cairo gdkpixbuf2 pango
+USE_GNOME+=	gtk30 vte3 cairo gdkpixbuf pango
 USE_GL+=	glu gl glew
 .endif
 

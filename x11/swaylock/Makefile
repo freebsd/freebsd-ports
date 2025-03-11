@@ -36,7 +36,7 @@ MANPAGES_BUILD_DEPENDS=	scdoc:textproc/scdoc
 MANPAGES_MESON_ENABLED=	man-pages
 MANPAGES_PLIST_FILES=	share/man/man1/${PORTNAME}.1.gz
 
-PIXBUF_USE=		GNOME=gdkpixbuf2
+PIXBUF_USE=		GNOME=gdkpixbuf
 PIXBUF_MESON_ENABLED=	gdk-pixbuf
 
 post-patch:

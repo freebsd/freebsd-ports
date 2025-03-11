@@ -25,7 +25,7 @@ RUN_DEPENDS=	eog:graphics/eog
 
 PORTSCOUT=	limitw:1,even
 
-USE_GNOME=	cairo gdkpixbuf2 gtk30 introspection libxml2
+USE_GNOME=	cairo gdkpixbuf gtk30 introspection libxml2
 USES=		gettext gnome meson pkgconfig tar:xz
 
 GLIB_SCHEMAS=	org.gnome.eog.plugins.exif-display.gschema.xml

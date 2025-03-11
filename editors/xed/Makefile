@@ -22,7 +22,7 @@ USES=		compiler:c++11-lang desktop-file-utils gettext-tools gnome meson \
 		pkgconfig python:run xorg
 USE_GITHUB=	yes
 GH_ACCOUNT=	linuxmint
-USE_GNOME=	atk cairo gdkpixbuf2 glib20 gtk30 gtksourceview4 intltool \
+USE_GNOME=	atk cairo gdkpixbuf glib20 gtk30 gtksourceview4 intltool \
 		introspection pango
 USE_LDCONFIG=	yes
 USE_XORG=	x11

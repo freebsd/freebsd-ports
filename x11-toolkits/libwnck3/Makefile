@@ -17,7 +17,7 @@ USES=		tar:xz
 
 USES+=		bison gettext gnome localbase meson pkgconfig \
 		xorg
-USE_GNOME=	cairo gdkpixbuf2 gtk30  introspection:build
+USE_GNOME=	cairo gdkpixbuf gtk30  introspection:build
 USE_XORG=	xext xrender xres x11
 USE_LDCONFIG=	yes
 MESON_ARGS=	-Dgtk_doc=false \

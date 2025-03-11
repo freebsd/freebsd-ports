@@ -22,7 +22,7 @@ USES=		desktop-file-utils gettext gnome libarchive localbase:ldflags \
 USE_GITHUB=	yes
 GH_ACCOUNT=	phase1geo
 GH_PROJECT=	Minder
-USE_GNOME=	cairo gdkpixbuf2 glib20 gtk30 gtksourceview4 libxml2 pango
+USE_GNOME=	cairo gdkpixbuf glib20 gtk30 gtksourceview4 libxml2 pango
 GLIB_SCHEMAS=	com.github.phase1geo.minder.gschema.xml
 SHEBANG_FILES=	meson/post_install.py
 

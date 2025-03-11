@@ -17,7 +17,7 @@ LIB_DEPENDS=	libmpg123.so:audio/mpg123 \
 		libzip.so:archivers/libzip
 
 USES=		gnome pkgconfig tar:bz2
-USE_GNOME=	cairo gdkpixbuf2 gtk40
+USE_GNOME=	cairo gdkpixbuf gtk40
 
 MAKE_ARGS=	INSTALLMAN=${STAGEDIR}${PREFIX}/share/man
 TEST_ENV=	SHA256_CMD=sha256 TMP_DIR=/tmp/d11amp/

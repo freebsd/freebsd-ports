@@ -13,7 +13,7 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	libdisplay-info.so:sysutils/libdisplay-info
 
 USES=		gettext-tools gmake gnome libtool pkgconfig tar:bz2 xfce xorg
-USE_GNOME=	cairo gdkpixbuf2 glib20 gtk30 libwnck3
+USE_GNOME=	cairo gdkpixbuf glib20 gtk30 libwnck3
 USE_LDCONFIG=	yes
 USE_XFCE=	xdt
 USE_XORG=	x11 xrandr

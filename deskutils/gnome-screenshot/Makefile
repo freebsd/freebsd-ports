@@ -25,7 +25,7 @@ PORTSCOUT=	limitw:1,even
 
 USES=		compiler:c11 gettext gnome meson pkgconfig python:build \
 		shebangfix tar:xz xorg
-USE_GNOME=	cairo gdkpixbuf2 gtk30
+USE_GNOME=	cairo gdkpixbuf gtk30
 USE_XORG=	x11 xext
 SHEBANG_FILES=	build-aux/postinstall.py
 

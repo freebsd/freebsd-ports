@@ -13,7 +13,7 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		gnome pkgconfig xorg
-USE_GNOME=	cairo gdkpixbuf2 gtk20
+USE_GNOME=	cairo gdkpixbuf gtk20
 USE_XORG=	x11
 
 MAKE_ARGS=	CFLAGS="${CPPFLAGS} ${CFLAGS} -Wall" \

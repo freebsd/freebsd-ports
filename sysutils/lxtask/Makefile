@@ -15,7 +15,7 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2
 
 USES=		gmake gnome iconv pkgconfig tar:xz
-USE_GNOME=	cairo gdkpixbuf2 gtk20 intlhack
+USE_GNOME=	cairo gdkpixbuf gtk20 intlhack
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 

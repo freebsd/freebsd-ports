@@ -17,7 +17,7 @@ RUN_DEPENDS=	bash:shells/bash
 USES=		gettext-tools gnome meson pkgconfig python shebangfix vala:build xorg
 USE_GITHUB=	yes
 GH_ACCOUNT=	linuxmint
-USE_GNOME=	cairo gdkpixbuf2 glib20 gtk-update-icon-cache gtk30 \
+USE_GNOME=	cairo gdkpixbuf glib20 gtk-update-icon-cache gtk30 \
 		intltool introspection:build libgnomekbd pygobject3
 USE_LDCONFIG=	yes
 USE_XORG=	x11

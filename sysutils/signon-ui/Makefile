@@ -22,7 +22,7 @@ LIB_DEPENDS=	libaccounts-qt5.so:net-im/libaccounts-qt@qt5 \
 USES=		compiler:c++11-lang gettext-runtime gl gnome pkgconfig python \
 		qmake qt:5 tar:bz2
 USE_GL=		gl
-USE_GNOME=	gdkpixbuf2 glib20
+USE_GNOME=	gdkpixbuf glib20
 USE_QT=		core dbus declarative gui location network webchannel webengine widgets xml \
 		buildtools:build qmake:build
 # gitlab variables

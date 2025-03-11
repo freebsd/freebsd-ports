@@ -21,7 +21,7 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 
 USES=		cargo compiler:c11 cpe gettext gmake gnome libtool pkgconfig tar:xz vala:build
 CPE_VENDOR=	gnome
-USE_GNOME=	cairo gdkpixbuf2 libxml2 pango introspection:build
+USE_GNOME=	cairo gdkpixbuf libxml2 pango introspection:build
 USE_LDCONFIG=	yes
 
 PORTSCOUT=	limitw:1,even

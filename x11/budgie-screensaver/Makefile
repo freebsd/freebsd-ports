@@ -19,7 +19,7 @@ RUN_DEPENDS=	gsettings-desktop-schemas>0:devel/gsettings-desktop-schemas \
 		gnome-keyring>0:security/gnome-keyring
 
 USES=		budgie gettext gnome meson pkgconfig tar:xz xorg
-USE_GNOME=	cairo gdkpixbuf2 glib20 gtk30 gnomedesktop3 intltool \
+USE_GNOME=	cairo gdkpixbuf glib20 gtk30 gnomedesktop3 intltool \
 		libgnomekbd
 USE_XORG=	x11 xxf86vm
 

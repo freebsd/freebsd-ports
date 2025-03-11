@@ -18,7 +18,7 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 USES=		cmake compiler:c++14-lang cpe gnome localbase:ldflags pkgconfig qt:6 ssl xorg
 CPE_VENDOR=	synergy-foss
 USE_QT=		base tools:build
-USE_GNOME=	gdkpixbuf2 glib20
+USE_GNOME=	gdkpixbuf glib20
 USE_XORG=	ice xtst x11 sm xext xinerama xrandr xi
 
 USE_GITHUB=	yes

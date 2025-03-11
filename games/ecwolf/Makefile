@@ -17,7 +17,7 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 
 USES=		cmake compiler:c++11-lang gnome jpeg localbase:ldflags \
 		pkgconfig sdl tar:xz
-USE_GNOME=	cairo gdkpixbuf2 gtk20
+USE_GNOME=	cairo gdkpixbuf gtk20
 USE_SDL=	mixer2 net2 sdl2
 
 SUB_FILES=	ecwolf pkg-message

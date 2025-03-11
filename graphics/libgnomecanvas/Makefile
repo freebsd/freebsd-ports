@@ -13,7 +13,7 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libharfbuzz.so:print/harfbuzz
 
 USES+=		gettext gmake gnome libtool localbase pathfix pkgconfig tar:bzip2
-USE_GNOME=	cairo gdkpixbuf2 glib20 gtk20 intltool libartlgpl2 pango
+USE_GNOME=	cairo gdkpixbuf glib20 gtk20 intltool libartlgpl2 pango
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-html-dir=${PREFIX}/share/doc \

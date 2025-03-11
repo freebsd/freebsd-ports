@@ -13,7 +13,7 @@ LICENSE=	GPLv3
 GNU_CONFIGURE=	yes
 LIBS+=		-L${LOCALBASE}/lib -lX11
 USES=		gnome pkgconfig xorg
-USE_GNOME=	gdkpixbuf2 gdkpixbuf2xlib gtk20
+USE_GNOME=	gdkpixbuf gdkpixbufxlib gtk20
 USE_XORG=	x11
 
 post-patch:

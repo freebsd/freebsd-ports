@@ -21,7 +21,7 @@ LIB_DEPENDS=	libjson-glib-1.0.so:devel/json-glib \
 USES=		compiler:c11 gnome meson pkgconfig \
 		python:build shebangfix vala:build
 USE_GITHUB=	yes
-USE_GNOME=	cairo gdkpixbuf2 gtk30 introspection:build
+USE_GNOME=	cairo gdkpixbuf gtk30 introspection:build
 GH_ACCOUNT=	ErikReider
 GH_PROJECT=	SwayNotificationCenter
 SHEBANG_FILES=	build-aux/meson/postinstall.py

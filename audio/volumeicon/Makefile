@@ -16,7 +16,7 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib
 
 USES=		autoreconf gmake gnome gettext pkgconfig xorg
-USE_GNOME=	gtk30 intltool cairo gdkpixbuf2
+USE_GNOME=	gtk30 intltool cairo gdkpixbuf
 USE_XORG=	x11
 USE_CSTD=	gnu99
 USE_GITHUB=	yes

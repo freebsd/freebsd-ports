@@ -13,7 +13,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		cargo desktop-file-utils gnome ssl
-USE_GNOME=	cairo gdkpixbuf2 glib20 gtk30
+USE_GNOME=	cairo gdkpixbuf glib20 gtk30
 
 CARGO_CRATES=	aho-corasick-0.7.13 \
 		ansi-parser-0.6.5 \

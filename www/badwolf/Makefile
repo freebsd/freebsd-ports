@@ -15,7 +15,7 @@ LIB_DEPENDS+=	libharfbuzz.so:print/harfbuzz \
 		libwebkit2gtk-4.0.so:www/webkit2-gtk@40
 
 USES=		desktop-file-utils gnome ninja pkgconfig
-USE_GNOME=	atk cairo gdkpixbuf2 gtk30 libxml2 pango
+USE_GNOME=	atk cairo gdkpixbuf gtk30 libxml2 pango
 HAS_CONFIGURE=	yes
 CONFIGURE_ENV=	WITH_WEBKITGTK=4.0
 

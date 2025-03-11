@@ -13,7 +13,7 @@ LIB_DEPENDS=	libharfbuzz.so:print/harfbuzz
 USES=		cmake gnome pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	rozhuk-im
-USE_GNOME=	cairo gdkpixbuf2 gtk30
+USE_GNOME=	cairo gdkpixbuf gtk30
 CFLAGS+=	-DHAVE_REALLOCARRAY
 
 DESKTOP_ENTRIES=	"GTK-Mixer" \

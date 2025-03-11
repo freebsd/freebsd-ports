@@ -49,7 +49,7 @@ LIB_DEPENDS+=	libbabl-0.1.so:x11/babl \
 		libgimp-2.0.so:graphics/gimp-app \
 		libjson-glib-1.0.so:devel/json-glib
 USES+=		gettext-runtime gnome
-USE_GNOME=	cairo gdkpixbuf2 glib20
+USE_GNOME=	cairo gdkpixbuf glib20
 PLUGINS_DIR=	libexec/gimp/2.2/plug-ins/gmic_gimp_qt
 .else
 PLUGINS_DIR=	bin

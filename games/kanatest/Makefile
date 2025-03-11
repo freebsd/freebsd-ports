@@ -14,7 +14,7 @@ FETCH_DEPENDS=	git:devel/git
 LIB_DEPENDS=	libharfbuzz.so:print/harfbuzz
 
 USES=		gettext gmake gnome pkgconfig tar:xz
-USE_GNOME=	atk cairo gdkpixbuf2 glib20 gtk30 libxml2 pango
+USE_GNOME=	atk cairo gdkpixbuf glib20 gtk30 libxml2 pango
 GNU_CONFIGURE=	yes
 MAKE_ENV=	LIBINTL="-lintl"
 

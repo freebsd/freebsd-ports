@@ -41,7 +41,7 @@ RUN_DEPENDS=	gnome-settings-daemon>0:sysutils/gnome-settings-daemon \
 USES=		budgie compiler:c++0x gettext gl gnome localbase meson \
 		pkgconfig tar:xz xorg
 USE_GL=		egl gbm
-USE_GNOME=	atk cairo gdkpixbuf2 glib20 gtk30 introspection:build
+USE_GNOME=	atk cairo gdkpixbuf glib20 gtk30 introspection:build
 USE_LDCONFIG=	yes
 USE_XORG=	ice sm x11 xau xcb xcomposite xcursor xdamage xext xfixes xi \
 		xinerama xrandr xrender xtst

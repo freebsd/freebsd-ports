@@ -20,7 +20,7 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libtifiles2.so:devel/libtifiles2
 
 USES=		gmake gnome groff libtool localbase pkgconfig sdl
-USE_GNOME=	cairo gdkpixbuf2 gtk20 libglade2
+USE_GNOME=	cairo gdkpixbuf gtk20 libglade2
 USE_SDL=	sdl
 
 GNU_CONFIGURE=	yes

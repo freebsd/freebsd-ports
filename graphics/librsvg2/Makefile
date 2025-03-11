@@ -35,7 +35,7 @@ VAPI_USES=		vala:build
 VAPI_CONFIGURE_ON=	--enable-vala=yes
 VAPI_CONFIGURE_OFF=	--enable-vala=no
 
-USE_GNOME=	cairo gnomeprefix gdkpixbuf2 introspection:build \
+USE_GNOME=	cairo gnomeprefix gdkpixbuf introspection:build \
 		libxml2 pango
 CPE_VENDOR=	gnome
 USE_LDCONFIG=	yes

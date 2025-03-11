@@ -26,7 +26,7 @@ USE_QT=		buildtools:build qmake:build core gui linguisttools \
 
 USE_LXQT=	buildtools
 
-USE_GNOME=	glib20 pango librsvg2 gdkpixbuf2 libxml2 cairo
+USE_GNOME=	glib20 pango librsvg2 gdkpixbuf libxml2 cairo
 
 USE_XORG=	ice sm x11 xft
 

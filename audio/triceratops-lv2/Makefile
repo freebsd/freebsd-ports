@@ -19,7 +19,7 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libharfbuzz.so:print/harfbuzz
 
 USES=		compiler:c++11-lang gnome pkgconfig python:build waf
-USE_GNOME=	cairo cairomm gdkpixbuf2 gtk20 gtkmm24
+USE_GNOME=	cairo cairomm gdkpixbuf gtk20 gtkmm24
 
 WRKSRC=		${WRKDIR}/${PORTNAME}#-lv2-0.5.0.o.2022
 

@@ -15,7 +15,7 @@ LIB_DEPENDS=	libbamf3.so:sysutils/bamf \
 
 USES=		autoreconf gmake gnome libtool localbase pathfix pkgconfig \
 		vala:build xorg
-USE_GNOME=	glib20 gtk30 gdkpixbuf2 cairo libxml2 libwnck3
+USE_GNOME=	glib20 gtk30 gdkpixbuf cairo libxml2 libwnck3
 USE_XORG=	x11 xfixes xi
 
 CFLAGS+=	-Wno-return-type

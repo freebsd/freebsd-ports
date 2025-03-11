@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING.md
 LIB_DEPENDS=	libwayland-client.so:graphics/wayland
 
 USES=		gnome meson pkgconfig
-USE_GNOME=	cairo gdkpixbuf2 gtk30
+USE_GNOME=	cairo gdkpixbuf gtk30
 
 post-patch:
 	@${REINPLACE_CMD} 's,/usr/local,${PREFIX},g' \

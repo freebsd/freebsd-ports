@@ -31,7 +31,7 @@ USES=		compiler:c11 cpe gettext gnome jpeg localbase meson \
 CPE_VENDOR=	gnome
 USE_LDCONFIG=	yes
 USE_PERL5=	build
-USE_GNOME=	atk cairo gdkpixbuf2 introspection:build pango \
+USE_GNOME=	atk cairo gdkpixbuf introspection:build pango \
 		librsvg2:run
 MESON_ARGS=	-Dbuild-testsuite=false
 LDFLAGS+=	-lexecinfo

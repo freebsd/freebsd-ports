@@ -63,7 +63,7 @@ _USE_GNOME_ALL= intlhack intltool introspection \
 
 # GNOME 2 components
 _USE_GNOME_ALL+= atk cairo \
-		gdkpixbuf2 gdkpixbuf2xlib gconf2 glib20 \
+		gdkpixbuf gdkpixbuf2xlib gconf2 glib20 \
 		gtk-update-icon-cache gtk20 \
 		gtksharp20 gtksourceview2 gvfs libartlgpl2 \
 		libglade2 libgnomecanvas \
@@ -131,7 +131,7 @@ gtkmm24_LIB_DEPENDS=	libgtkmm-2.4.so:x11-toolkits/gtkmm24
 gtkmm24_USE_GNOME_IMPL=	glibmm cairomm atkmm pangomm gtk20
 
 gtkmm30_LIB_DEPENDS=	libgtkmm-3.0.so:x11-toolkits/gtkmm30
-gtkmm30_USE_GNOME_IMPL=	atkmm cairomm gdkpixbuf2 glibmm gtk30 pangomm
+gtkmm30_USE_GNOME_IMPL=	atkmm cairomm gdkpixbuf glibmm gtk30 pangomm
 
 gtksourceviewmm3_LIB_DEPENDS=		libgtksourceviewmm-3.0.so:x11-toolkits/gtksourceviewmm3
 gtksourceviewmm3_USE_GNOME_IMPL=	gtkmm30 gtksourceview3
@@ -171,20 +171,20 @@ pangoft2_USE_GNOME_IMPL=pango
 pangox-compat_LIB_DEPENDS=	libpangox-1.0.so:x11-toolkits/pangox-compat
 pangox-compat_USE_GNOME_IMPL=	glib20 pango
 
-gdkpixbuf2_LIB_DEPENDS=	libgdk_pixbuf-2.0.so:graphics/gdk-pixbuf2
-gdkpixbuf2_USE_GNOME_IMPL=glib20
+gdkpixbuf_LIB_DEPENDS=	libgdk_pixbuf-2.0.so:graphics/gdk-pixbuf2
+gdkpixbuf_USE_GNOME_IMPL=glib20
 
 gdkpixbuf2xlib_LIB_DEPENDS=	libgdk_pixbuf_xlib-2.0.so:graphics/gdk-pixbuf2-xlib
-gdkpixbuf2xlib_USE_GNOME_IMPL=	glib20 gdkpixbuf2
+gdkpixbuf2xlib_USE_GNOME_IMPL=	glib20 gdkpixbuf
 
 gtk-update-icon-cache_RUN_DEPENDS=	gtk-update-icon-cache:graphics/gtk-update-icon-cache
 
 gtk20_LIB_DEPENDS=	libgtk-x11-2.0.so:x11-toolkits/gtk20
-gtk20_USE_GNOME_IMPL=	atk cairo gdkpixbuf2 pangoft2
+gtk20_USE_GNOME_IMPL=	atk cairo gdkpixbuf pangoft2
 GTK2_VERSION=		2.10.0
 
 gtk30_LIB_DEPENDS=	libgtk-3.so:x11-toolkits/gtk30
-gtk30_USE_GNOME_IMPL=	atk cairo gdkpixbuf2 pango
+gtk30_USE_GNOME_IMPL=	atk cairo gdkpixbuf pango
 GTK3_VERSION=		3.0.0
 
 gtk40_LIB_DEPENDS=	libgtk-4.so:x11-toolkits/gtk40
@@ -245,7 +245,7 @@ librsvg2_BUILD_DEPENDS=	librsvg2>=0:graphics/librsvg2
 librsvg2_LIB_DEPENDS=	librsvg-2.so:graphics/librsvg2
 librsvg2_RUN_DEPENDS=	librsvg2>=0:graphics/librsvg2
 .  endif
-librsvg2_USE_GNOME_IMPL=cairo gdkpixbuf2
+librsvg2_USE_GNOME_IMPL=cairo gdkpixbuf
 
 nautilus3_LIB_DEPENDS=	libnautilus-extension.so:x11-fm/nautilus
 nautilus3_USE_GNOME_IMPL=gnomedesktop3 libxml2

@@ -28,7 +28,7 @@ USES=		cmake:insource compiler:c++11-lang gl gnome jpeg \
 USE_XORG=	x11 xpm xext xcursor xxf86vm xxf86dga sm ice xi xinerama xrandr \
 		xscrnsaver
 USE_GL=		gl glu
-USE_GNOME=	gtk30 cairo gdkpixbuf2
+USE_GNOME=	gtk30 cairo gdkpixbuf
 USE_LDCONFIG=	yes
 
 CFLAGS+=	-isystem${LOCALBASE}/include -L${LOCALBASE}/lib -Wno-unused-command-line-argument

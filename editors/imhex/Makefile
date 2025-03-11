@@ -32,7 +32,7 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 
 USES=		cmake desktop-file-utils gl gnome pkgconfig python xorg
 USE_GL=		gl glu opengl
-USE_GNOME=	cairo gdkpixbuf2 gtk30
+USE_GNOME=	cairo gdkpixbuf gtk30
 USE_XORG=	x11 xcb xau xdmcp
 USE_GITHUB=	yes
 

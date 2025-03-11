@@ -35,7 +35,7 @@ USES=		autoreconf blaslapack compiler:c11 fortran gl gmake gnome	\
 		shebangfix tar:bzip2 xorg
 SHEBANG_GLOB=	*.py
 USE_XORG=	x11
-USE_GNOME=	cairo gtk30 gdkpixbuf2 intltool introspection pygobject3:run
+USE_GNOME=	cairo gtk30 gdkpixbuf intltool introspection pygobject3:run
 USE_GL=		gl glu
 USE_GITLAB=	yes
 GL_ACCOUNT=	l_sim

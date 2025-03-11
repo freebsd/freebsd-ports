@@ -19,7 +19,7 @@ LIB_DEPENDS=	libWINGs.so:x11-wm/windowmaker \
 		libwraster.so:x11-wm/libwraster
 
 USES=		gettext pkgconfig perl5 gmake gnome localbase shebangfix xorg
-USE_GNOME=	cairo gdkpixbuf2 gtk20
+USE_GNOME=	cairo gdkpixbuf gtk20
 USE_XORG=	x11
 SHEBANG_FILES=	scripts/getfile.pl.in scripts/upgrade.pl.in
 GNU_CONFIGURE=	yes

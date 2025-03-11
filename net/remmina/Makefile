@@ -28,7 +28,7 @@ GL_ACCOUNT=	Remmina
 GL_PROJECT=	Remmina
 GL_TAGNAME=	2a455eadd6462457d08c2d066c5c245e0dee3bf9
 
-USE_GNOME=	cairo gdkpixbuf2 glib20 gtk30 pango
+USE_GNOME=	cairo gdkpixbuf glib20 gtk30 pango
 
 USE_XORG=	ice sm x11 xext
 

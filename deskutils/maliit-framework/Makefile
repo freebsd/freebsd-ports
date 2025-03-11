@@ -18,7 +18,7 @@ LIB_DEPENDS=	libharfbuzz.so:print/harfbuzz \
 USES=		cmake compiler:c++11-lang gnome pkgconfig qt:5 xorg
 USE_GITHUB=	yes
 GH_ACCOUNT=	maliit
-USE_GNOME=	atk cairo gdkpixbuf2 glib20 gtk30 pango
+USE_GNOME=	atk cairo gdkpixbuf glib20 gtk30 pango
 USE_QT=		core dbus declarative gui network wayland widgets \
 		buildtools:build qmake:build
 USE_XORG=	xcb

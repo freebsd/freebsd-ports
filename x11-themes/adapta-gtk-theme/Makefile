@@ -59,7 +59,7 @@ PARALLEL_DESC=	parallel-build support
 SHEBANG_REGEX=	'.*\.sh$$'
 
 USE_GITHUB=	yes
-USE_GNOME=	gdkpixbuf2 glib20 librsvg2 libxml2
+USE_GNOME=	gdkpixbuf glib20 librsvg2 libxml2
 
 XFCE_CONFIGURE_ENABLE=	xfce
 XFCE_DESC=	Support for XFce Desktop Environment

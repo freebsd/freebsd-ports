@@ -29,7 +29,7 @@ CONFLICTS_INSTALL=	awesome3
 
 USES=		cmake compiler:c11 gettext gnome iconv magick:build pkgconfig lua:-53 \
 		shebangfix xorg
-USE_GNOME=	glib20 pango gdkpixbuf2 librsvg2
+USE_GNOME=	glib20 pango gdkpixbuf librsvg2
 USE_XORG=	pixman x11 xau xcb xdmcp xext xft xinerama xrandr xrender \
 		xorgproto
 

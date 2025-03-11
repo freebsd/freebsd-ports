@@ -38,7 +38,7 @@ RUN_DEPENDS=	gsettings-desktop-schemas>0:devel/gsettings-desktop-schemas \
 USES=		budgie gettext gnome gstreamer meson pkgconfig tar:xz \
 		vala:build xorg
 USE_BUDGIE=	libmagpie screensaver:build
-USE_GNOME=	cairo gdkpixbuf2 glib20 gnomedesktop3 gnomemenus3 \
+USE_GNOME=	cairo gdkpixbuf glib20 gnomedesktop3 gnomemenus3 \
 		gtk30 intltool introspection libwnck3
 USE_GSTREAMER=	libgstreamer
 USE_XORG=	x11 xcomposite

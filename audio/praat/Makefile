@@ -19,7 +19,7 @@ RUN_DEPENDS=	CharisSIL>=0:x11-fonts/charis \
 
 USES=		compiler:c++17-lang gnome iconv pkgconfig xorg
 USE_GITHUB=	yes
-USE_GNOME=	cairo gdkpixbuf2 gtk30
+USE_GNOME=	cairo gdkpixbuf gtk30
 USE_XORG=	x11
 
 PLIST_FILES=	bin/praat \

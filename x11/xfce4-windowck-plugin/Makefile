@@ -14,7 +14,7 @@ LIB_DEPENDS=	libharfbuzz.so:print/harfbuzz
 
 USES=		gettext-tools gmake gnome libtool pkgconfig python:build \
 		shebangfix tar:bzip2 xfce xorg
-USE_GNOME=	cairo gdkpixbuf2 glib20 gtk30 libwnck3
+USE_GNOME=	cairo gdkpixbuf glib20 gtk30 libwnck3
 USE_XFCE=	libmenu panel xdt xfconf
 USE_XORG=	x11
 SHEBANG_GLOB=	*.py

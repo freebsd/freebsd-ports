@@ -23,7 +23,7 @@ BUILD_DEPENDS=	pnglite>0:graphics/pnglite \
 USES=		compiler:c++11-lang dos2unix gettext-runtime gl gmake gnome \
 		jpeg pkgconfig tar:bz2
 USE_GL=		gl glew glu glut
-USE_GNOME=	atk cairo gdkpixbuf2 glib20 gtk20 pango
+USE_GNOME=	atk cairo gdkpixbuf glib20 gtk20 pango
 MAKEFILE=	Makefile.linux
 USE_LDCONFIG=	yes
 

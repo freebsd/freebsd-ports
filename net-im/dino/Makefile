@@ -39,7 +39,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 LDFLAGS+=	-Wl,--export-dynamic
 USE_LDCONFIG=	yes
 
-USE_GNOME=	cairo gdkpixbuf2 glib20 gnomeprefix gtk40 intlhack
+USE_GNOME=	cairo gdkpixbuf glib20 gnomeprefix gtk40 intlhack
 
 CANBERRA_DESC=	Notifications sounds support
 ICE_DESC=		ICE NAT traversal plugin

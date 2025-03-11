@@ -22,7 +22,7 @@ LIB_DEPENDS=	libpulse.so:audio/pulseaudio \
 USES=		compiler:c11 gettext gnome meson pkgconfig \
 		python:build shebangfix vala:build
 USE_GITHUB=	yes
-USE_GNOME=	gdkpixbuf2 gtk40 libadwaita libxml2
+USE_GNOME=	gdkpixbuf gtk40 libadwaita libxml2
 GH_ACCOUNT=	ErikReider
 GH_PROJECT=	SwaySettings
 SHEBANG_FILES=	build-aux/meson/postinstall.py

@@ -41,7 +41,7 @@ USES=		compiler:c++11-lang autoreconf gettext gnome libarchive	\
 		libtool pkgconfig python shebangfix sqlite:3 ssl xorg
 USE_CXXSTD=	c++11
 USE_XORG=	pixman
-USE_GNOME=	atkmm cairo cairomm gdkpixbuf2 glibmm gtk30 gtkmm30	\
+USE_GNOME=	atkmm cairo cairomm gdkpixbuf glibmm gtk30 gtkmm30	\
 		libsigc++20 libxml2 pangomm
 USE_LDCONFIG=	${PREFIX}/lib/pinot/backends ${PREFIX}/lib/pinot/filters
 SHEBANG_FILES=	scripts/bash/*.sh

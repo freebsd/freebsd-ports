@@ -21,7 +21,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USES=		compiler:c++17-lang desktop-file-utils gmake gnome iconv \
 		pkgconfig
 USE_CXXSTD=	c++17
-USE_GNOME=	cairo gdkpixbuf2 glib20
+USE_GNOME=	cairo gdkpixbuf glib20
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	orbitalquark keplerproject:lfs

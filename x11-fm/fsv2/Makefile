@@ -22,7 +22,7 @@ USES=		compiler:c++11-lang tar:bzip2 libtool gettext-runtime gl gnome \
 		pkgconfig
 USE_GL=		gl glu
 USE_GNOME=	gtkmm24 atkmm glibmm pangomm cairomm libsigc++20 gtk20 atk \
-		cairo gdkpixbuf2
+		cairo gdkpixbuf
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes

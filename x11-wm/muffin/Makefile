@@ -31,7 +31,7 @@ USES=		compiler:c11 gettext-tools gl gnome localbase meson pkgconfig xorg
 USE_GITHUB=	yes
 GH_ACCOUNT=	linuxmint
 
-USE_GNOME=	atk cairo gdkpixbuf2 glib20 gtk30 introspection pango
+USE_GNOME=	atk cairo gdkpixbuf glib20 gtk30 introspection pango
 USE_XORG=	ice sm x11 xau xcb xcomposite xcursor xdamage xext xfixes xi xinerama \
 		xkbfile xrandr xrender xtst
 USE_GL=		egl gl glesv2

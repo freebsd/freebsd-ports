@@ -24,7 +24,7 @@ USES=		autoreconf gettext gmake gnome libtool localbase:ldflags pathfix pkgconfi
 USE_GITLAB=	yes
 GL_SITE=	https://gitlab.freedesktop.org
 GL_TAGNAME=	8b89364c077b46734d193c5b8a80f83b0fc917dd
-USE_GNOME=	cairo gdkpixbuf2 glib20 intlhack \
+USE_GNOME=	cairo gdkpixbuf glib20 intlhack \
 		introspection:build
 USE_LDCONFIG=	yes
 USE_PYTHON=	py3kplist

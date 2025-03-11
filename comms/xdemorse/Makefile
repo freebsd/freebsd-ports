@@ -15,7 +15,7 @@ LIB_DEPENDS=	libasound.so:audio/alsa-lib
 
 USES=		compiler:c++11-lang gettext-tools gmake gnome \
 		localbase:ldflags pkgconfig tar:bz2
-USE_GNOME=	cairo gdkpixbuf2 glib20 gtk30
+USE_GNOME=	cairo gdkpixbuf glib20 gtk30
 
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share

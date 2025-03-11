@@ -18,7 +18,7 @@ LIB_DEPENDS=	libDesktop.so:x11/deforaos-libdesktop \
 		libXrandr.so:x11/libXrandr
 
 USES=		desktop-file-utils gnome pkgconfig xorg
-USE_GNOME=	cairo gdkpixbuf2 gtk30
+USE_GNOME=	cairo gdkpixbuf gtk30
 USE_LDCONFIG=	yes
 USE_XORG=	x11
 

@@ -16,7 +16,7 @@ LIB_DEPENDS=	libappstream.so:devel/appstream \
 		libgraphene-1.0.so:graphics/graphene
 
 USES=		gettext gnome meson ninja pkgconfig tar:xz vala:build
-USE_GNOME=	cairo gdkpixbuf2 gtk40 introspection:build
+USE_GNOME=	cairo gdkpixbuf gtk40 introspection:build
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 

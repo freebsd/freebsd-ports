@@ -17,7 +17,7 @@ LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 
 USES=		cabal gnome pkgconfig
 
-USE_GNOME=	atk cairo gdkpixbuf2 glib20 gtk30 introspection pango
+USE_GNOME=	atk cairo gdkpixbuf glib20 gtk30 introspection pango
 
 USE_CABAL=	OneTuple-0.4.1.1_1 \
 		QuickCheck-2.14.3 \

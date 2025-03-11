@@ -175,7 +175,7 @@ MYSQL_CONFIGURE_WITH=	libmysql=${LOCALBASE}
 
 NOTIFYDESKTOP_LIB_DEPENDS=	libnotify.so:devel/libnotify
 NOTIFYDESKTOP_CONFIGURE_ENABLE=	notify_desktop
-NOTIFYDESKTOP_USE=		GNOME=gdkpixbuf2
+NOTIFYDESKTOP_USE=		GNOME=gdkpixbuf
 NOTIFYDESKTOP_USES=		gettext-runtime gnome
 
 NOTIFYEMAIL_LIB_DEPENDS=	libesmtp.so:mail/libesmtp

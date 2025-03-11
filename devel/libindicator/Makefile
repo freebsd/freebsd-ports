@@ -9,7 +9,7 @@ COMMENT=	Symbols and convience functions for desktop indicators
 WWW=		https://launchpad.net/libindicator
 
 USES=		compiler:c++11-lang gmake gnome libtool pkgconfig
-USE_GNOME=	cairo gdkpixbuf2 gtk30
+USE_GNOME=	cairo gdkpixbuf gtk30
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 

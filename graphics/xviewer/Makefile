@@ -23,7 +23,7 @@ USES=		meson compiler:c++11-lang desktop-file-utils gettext-tools \
 		gnome localbase pkgconfig xorg
 USE_GITHUB=	yes
 GH_ACCOUNT=	linuxmint
-USE_GNOME=	atk cairo gdkpixbuf2 gtk30 introspection pango
+USE_GNOME=	atk cairo gdkpixbuf gtk30 introspection pango
 USE_XORG=	x11
 GLIB_SCHEMAS=	org.x.viewer.enums.xml org.x.viewer.gschema.xml
 

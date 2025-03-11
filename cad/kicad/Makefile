@@ -38,7 +38,7 @@ USE_XORG=	ice x11 xext
 USE_GL=		egl gl glu glut opengl
 USE_WX=		3.2
 WX_COMPS=	python:lib wx
-USE_GNOME=	atk cairo gdkpixbuf2 gtk30 pango
+USE_GNOME=	atk cairo gdkpixbuf gtk30 pango
 
 USE_GITLAB=	yes
 GL_ACCOUNT=	kicad/code

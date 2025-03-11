@@ -12,7 +12,7 @@ LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		gmake gnome ocaml:camlp4,findlib,ldconfig,wash pkgconfig
-USE_GNOME=	cairo gdkpixbuf2 gtk20
+USE_GNOME=	cairo gdkpixbuf gtk20
 
 HAS_CONFIGURE=	yes
 ALL_TARGET=	all opt

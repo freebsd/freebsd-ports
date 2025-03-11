@@ -34,7 +34,7 @@ GH_ACCOUNT=	seebk
 GH_PROJECT=	GIMP-Lensfun
 GH_TAGNAME=	c5eaf97
 
-USE_GNOME+=	cairo gdkpixbuf2 glib20 gtk20 pango
+USE_GNOME+=	cairo gdkpixbuf glib20 gtk20 pango
 
 PLUGIN_DIR?=	libexec/gimp/2.2/plug-ins
 PLUGINS=	gimp-lensfun

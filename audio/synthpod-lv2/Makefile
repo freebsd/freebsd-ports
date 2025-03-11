@@ -40,7 +40,7 @@ GTK2_DESC=		Build GTK-2 sandbox
 GTK2_MESON_ON=		-Duse-gtk2=true
 GTK2_LIB_DEPENDS=	libxcb-icccm.so:x11/xcb-util-wm
 GTK2_USES=		gnome xorg
-GTK2_USE=		XORG=x11,xcb,xext GNOME=glib20,gtk20,gdkpixbuf2 gettext-runtime
+GTK2_USE=		XORG=x11,xcb,xext GNOME=glib20,gtk20,gdkpixbuf gettext-runtime
 
 GTK3_DESC=		Build GTK-3 sandbox
 GTK3_MESON_ON=		-Duse-gtk3=true

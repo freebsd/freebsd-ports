@@ -211,7 +211,7 @@ _WEBKIT_LIB_DEPENDS=	libsoup-3.0.so:devel/libsoup3 \
 			libharfbuzz.so:print/harfbuzz \
 			libwebkit2gtk-4.1.so:www/webkit2-gtk@41
 _WEBKIT_USES=		gettext gnome
-WEBKIT_USE_GNOME=	atk cairo gdkpixbuf2 glib20 gtk30 pango
+WEBKIT_USE_GNOME=	atk cairo gdkpixbuf glib20 gtk30 pango
 WEBKIT_CMAKE_ON=	-DWITH_WEBVIEW:BOOL=ON
 
 WEBP_LIB_DEPENDS=	libwebp.so:graphics/webp

@@ -103,7 +103,7 @@ VPL_CONFIGURE_ON=	--enable-qsv
 X11_LIB_DEPENDS=	libvpx.so:multimedia/libvpx
 X11_USES=		gettext desktop-file-utils gnome gstreamer
 X11_USE=		gstreamer=gdkpixbuf,libav \
-			gnome=gtk40,intltool,cairo,gdkpixbuf2,libxml2
+			gnome=gtk40,intltool,cairo,gdkpixbuf,libxml2
 X11_CONFIGURE_OFF=	--disable-gtk
 X11_CONFIGURE_ENV=	COMPILER_PATH=${LOCALBASE}/bin
 X11_MAKE_ENV=		COMPILER_PATH=${LOCALBASE}/bin

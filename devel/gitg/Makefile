@@ -33,7 +33,7 @@ PORTSCOUT=	limitw:1,even
 
 USES=		compiler:c11 desktop-file-utils gettext gnome localbase \
 		meson pathfix pkgconfig python:build tar:xz vala:build
-USE_GNOME=	cairo gdkpixbuf2 gtk30 gtksourceview4 intltool introspection
+USE_GNOME=	cairo gdkpixbuf gtk30 gtksourceview4 intltool introspection
 
 USE_LDCONFIG=	yes
 GLIB_SCHEMAS=	org.gnome.gitg.gschema.xml

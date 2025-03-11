@@ -18,7 +18,7 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 
 USES=		gettext gmake gnome iconv perl5 pkgconfig
 GNU_CONFIGURE=	yes
-USE_GNOME=	atk cairo gdkpixbuf2 glib20 gtk20 libglade2 pango librsvg2 libxml2
+USE_GNOME=	atk cairo gdkpixbuf glib20 gtk20 libglade2 pango librsvg2 libxml2
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 

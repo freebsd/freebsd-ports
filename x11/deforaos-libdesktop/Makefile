@@ -17,7 +17,7 @@ LIB_DEPENDS=	libharfbuzz.so:print/harfbuzz \
 		libX11.so:x11/libX11
 
 USES=		gnome pkgconfig
-USE_GNOME=	cairo gdkpixbuf2 gtk30
+USE_GNOME=	cairo gdkpixbuf gtk30
 USE_LDCONFIG=	yes
 MAKE_ARGS+=	PREFIX=${PREFIX}
 MAKE_ENV+=	MANDIR=${STAGEDIR}${PREFIX}/share/man

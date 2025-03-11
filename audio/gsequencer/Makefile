@@ -28,7 +28,7 @@ RUN_DEPENDS=	dssi>0:audio/dssi
 
 USES=		autoreconf desktop-file-utils gettext-runtime gettext-tools gmake gnome gstreamer \
 		libtool localbase:ldflags perl5 pkgconfig shared-mime-info
-USE_GNOME=	cairo gdkpixbuf2 glib20 gtk40 libxml2 pango
+USE_GNOME=	cairo gdkpixbuf glib20 gtk40 libxml2 pango
 USE_XORG=	x11
 USE_CSTD=	gnu99
 USE_LDCONFIG=	yes

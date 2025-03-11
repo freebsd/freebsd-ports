@@ -21,7 +21,7 @@ RUN_DEPENDS=	dbus-daemon:devel/dbus \
 		gsettings-desktop-schemas>=3.28.0:devel/gsettings-desktop-schemas
 
 USES=		gettext-runtime gmake gnome libtool pkgconfig xorg
-USE_GNOME=	atk cairo gdkpixbuf2 glib20 gtk30 pango
+USE_GNOME=	atk cairo gdkpixbuf glib20 gtk30 pango
 USE_XORG=	pixman x11
 
 GNU_CONFIGURE=	yes

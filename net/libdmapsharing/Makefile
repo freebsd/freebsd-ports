@@ -15,7 +15,7 @@ LIB_DEPENDS=	libsoup-3.0.so:devel/libsoup3 \
 		libgee-0.8.so:devel/libgee
 
 USES=		gettext gnome gmake gstreamer libtool pathfix pkgconfig vala:build
-USE_GNOME=	gdkpixbuf2 gnomeprefix gtk30 introspection
+USE_GNOME=	gdkpixbuf gnomeprefix gtk30 introspection
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-tests

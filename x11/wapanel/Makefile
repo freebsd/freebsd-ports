@@ -19,7 +19,7 @@ LIB_DEPENDS=	libwayland-client.so:graphics/wayland \
 
 USES=		compiler:c++17-lang gnome meson pkgconfig
 USE_GITHUB=	yes
-USE_GNOME=	gdkpixbuf2 gtk30
+USE_GNOME=	gdkpixbuf gtk30
 GH_ACCOUNT=	Firstbober
 MESON_ARGS=	-Dsystem_toml11=true
 

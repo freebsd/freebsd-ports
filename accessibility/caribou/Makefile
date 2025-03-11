@@ -23,7 +23,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}atspi>=2.1.91:accessibility/py-atspi@${PY_FL
 
 USES=		gettext gl gmake gnome libtool localbase pathfix \
 		pkgconfig python shebangfix tar:xz xorg
-USE_GNOME=	cairo gdkpixbuf2 gtk30 intlhack introspection:build libxml2 \
+USE_GNOME=	cairo gdkpixbuf gtk30 intlhack introspection:build libxml2 \
 		libxslt:build pygobject3
 USE_PYTHON=	py3kplist
 SHEBANG_FILES=	tools/fix_gir.py tools/make_schema.py

@@ -24,7 +24,7 @@ PORTSCOUT=	limitw:1,even
 
 USES=		cpe desktop-file-utils gettext gnome libarchive localbase \
 		meson pkgconfig python:build tar:xz
-USE_GNOME=	cairo gdkpixbuf2 gtk40
+USE_GNOME=	cairo gdkpixbuf gtk40
 USE_LDCONFIG=	yes
 MESON_ARGS=	-Dpackagekit=false
 BINARY_ALIAS=	python3=${PYTHON_VERSION}

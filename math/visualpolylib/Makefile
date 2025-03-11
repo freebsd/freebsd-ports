@@ -22,7 +22,7 @@ USES=		gettext-runtime gmake gnome pkgconfig
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-static \
 		--with-polylib=${LOCALBASE}/lib/libpolylibgmp.so
-USE_GNOME=	atk cairo gdkpixbuf2 glib20 gtk20 pango
+USE_GNOME=	atk cairo gdkpixbuf glib20 gtk20 pango
 
 CFLAGS+=	-fcommon # notified the maontainer via e-mail on Sep 19, 2020
 

@@ -17,7 +17,7 @@ LIB_DEPENDS=	libImlib2.so:graphics/imlib2 \
 		libtiff.so:graphics/tiff
 
 USES=		gmake gnome jpeg pkgconfig tar:tgz xorg
-USE_GNOME=	cairo gdkpixbuf2 gtk20
+USE_GNOME=	cairo gdkpixbuf gtk20
 
 PLIST_FILES=	bin/qiv share/man/man1/qiv.1.gz
 USE_XORG+=	x11 xext

@@ -31,7 +31,7 @@ USE_CXXSTD=	c++11
 USE_GITHUB=	yes
 GH_ACCOUNT=	synfig
 GH_PROJECT=	synfig
-USE_GNOME=	gdkpixbuf2 gtkmm30 intltool
+USE_GNOME=	gdkpixbuf gtkmm30 intltool
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes

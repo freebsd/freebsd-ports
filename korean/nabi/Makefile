@@ -20,7 +20,7 @@ USE_GITHUB=	yes
 
 GNU_CONFIGURE=	yes
 USES=		autoreconf gmake gnome pkgconfig xorg
-USE_GNOME=	cairo gdkpixbuf2 gtk20
+USE_GNOME=	cairo gdkpixbuf gtk20
 USE_XORG=	ice sm x11
 
 OPTIONS_DEFINE=	NLS

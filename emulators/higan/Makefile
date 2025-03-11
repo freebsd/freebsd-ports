@@ -18,7 +18,7 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libharfbuzz.so:print/harfbuzz
 
 USES=		compiler:c++14-lang gettext gmake gnome pkgconfig xorg
-USE_GNOME=	cairo gdkpixbuf2 gtk20 gtksourceview2
+USE_GNOME=	cairo gdkpixbuf gtk20 gtksourceview2
 USE_XORG=	x11 xext xrandr
 USE_CSTD=	c99
 USE_CXXSTD=	c++14

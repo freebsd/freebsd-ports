@@ -16,7 +16,7 @@ USES=		gmake xorg pkgconfig sdl gnome \
 		desktop-file-utils shared-mime-info
 USE_XORG=	x11 xt xext sm ice
 USE_SDL=	sdl2
-USE_GNOME=	gtk30 pango cairo gdkpixbuf2 glib20
+USE_GNOME=	gtk30 pango cairo gdkpixbuf glib20
 GNU_CONFIGURE=	yes
 DATADIR=	${PREFIX}/share/Frodo
 DOCSDIR=	${PREFIX}/share/doc/Frodo

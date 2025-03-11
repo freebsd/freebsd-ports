@@ -23,7 +23,7 @@ RUN_DEPENDS=	bash:shells/bash \
 USES=		cmake compiler:c++11-lang gettext-runtime gl gnome pkgconfig \
 		shebangfix xorg
 SHEBANG_GLOB=	*.sh
-USE_GNOME=	atk cairo gdkpixbuf2 glib20 gtk20 pango pangox-compat
+USE_GNOME=	atk cairo gdkpixbuf glib20 gtk20 pango pangox-compat
 USE_GL=		gl glu
 USE_XORG=	x11
 

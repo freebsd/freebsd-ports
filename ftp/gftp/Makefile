@@ -17,7 +17,7 @@ USES=		autoreconf desktop-file-utils gettext-tools gnome gmake pathfix \
 		pkgconfig ssl tar:bzip2
 USE_GITHUB=	yes
 GH_ACCOUNT=	masneyb
-USE_GNOME=	cairo gdkpixbuf2 glib20 gtk20
+USE_GNOME=	cairo gdkpixbuf glib20 gtk20
 
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=${PREFIX}/share

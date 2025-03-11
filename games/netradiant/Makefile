@@ -26,7 +26,7 @@ LIB_DEPENDS=	libpng.so:graphics/png \
 USES=		compiler:c++11-lang gl gmake gnome jpeg localbase:ldflags \
 		pkgconfig tar:xz xorg
 USE_GL=		gl glu
-USE_GNOME=	atk cairo gdkpixbuf2 glib20 gtk20 libxml2 pango pangox-compat
+USE_GNOME=	atk cairo gdkpixbuf glib20 gtk20 libxml2 pango pangox-compat
 USE_XORG=	ice sm x11 xmu xt
 MAKE_ENV=	BUILD=release DOWNLOAD_GAMEPACKS=no EXE=${ARCH} \
 		RADIANT_ABOUTMSG="For ${OPSYS} ${OSREL} (${ARCH})"

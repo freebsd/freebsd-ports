@@ -32,7 +32,7 @@ WAND_DESC=		ImageMagick image processing support
 OPTIONS_DEFAULT=	GTK3 LIBARCHIVE LIBAV PIXBUF POPPLER WEBP
 
 USE_XORG=	x11
-USE_GNOME=	cairo gdkpixbuf2
+USE_GNOME=	cairo gdkpixbuf
 HAS_CONFIGURE=	yes
 
 LIBARCHIVE_CONFIGURE_WITH=	archive archive_cbx

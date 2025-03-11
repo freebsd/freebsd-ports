@@ -27,7 +27,7 @@ USES=		desktop-file-utils gettext gnome meson pkgconfig \
 		python shebangfix sqlite vala:build
 USE_GITHUB=	yes
 GH_ACCOUNT=	babluboy
-USE_GNOME=	gdkpixbuf2 glib20 gtk30 libxml2 pango
+USE_GNOME=	gdkpixbuf glib20 gtk30 libxml2 pango
 
 GLIB_SCHEMAS=	com.github.babluboy.bookworm.gschema.xml
 SHEBANG_FILES=	data/scripts/com.github.babluboy.bookworm.search.sh \

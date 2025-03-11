@@ -19,7 +19,7 @@ USES=		autoreconf gettext gmake gnome iconv libtool \
 		pkgconfig readline
 USE_GITHUB=	yes
 GH_ACCOUNT=	mdbtools
-USE_GNOME=	gdkpixbuf2 glib20 gtk30 libxml2
+USE_GNOME=	gdkpixbuf glib20 gtk30 libxml2
 GLIB_SCHEMAS=	mdbtools.gmdb2.gschema.xml
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share

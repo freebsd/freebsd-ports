@@ -17,7 +17,7 @@ TEST_DEPENDS=	appstreamcli:devel/appstream
 
 USES=		desktop-file-utils gettext-tools gnome jpeg \
 		lua:53 meson pkgconfig shebangfix
-USE_GNOME=	cairo gdkpixbuf2 gtk30 glib20
+USE_GNOME=	cairo gdkpixbuf gtk30 glib20
 USE_GITHUB=	yes
 GH_ACCOUNT=	BestImageViewer
 SHEBANG_FILES=	plugins/*/geeqie-* \

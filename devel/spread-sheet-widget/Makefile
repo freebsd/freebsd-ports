@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libharfbuzz.so:print/harfbuzz
 
 USES=		gmake gnome libtool pkgconfig
-USE_GNOME=	atk cairo gdkpixbuf2 glib20 gtk30
+USE_GNOME=	atk cairo gdkpixbuf glib20 gtk30
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes

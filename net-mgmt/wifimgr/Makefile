@@ -15,7 +15,7 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libharfbuzz.so:print/harfbuzz
 
 USES=		desktop-file-utils gnome pkgconfig tar:xz xorg
-USE_GNOME=	cairo gdkpixbuf2
+USE_GNOME=	cairo gdkpixbuf
 USE_XORG=	x11
 
 OPTIONS_DEFINE=	GTK2 NLS

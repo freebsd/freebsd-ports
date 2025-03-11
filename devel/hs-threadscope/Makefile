@@ -15,7 +15,7 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 
 USES=		cabal gnome pkgconfig
 
-USE_GNOME=	cairo gdkpixbuf2 glib20 gtk20
+USE_GNOME=	cairo gdkpixbuf glib20 gtk20
 
 USE_CABAL=	alex-3.5.2.0 \
 		ansi-terminal-1.1.2 \

@@ -16,7 +16,7 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libharfbuzz.so:print/harfbuzz
 
 USES=		compiler dos2unix gmake gnome localbase pkgconfig tar:tgz xorg
-USE_GNOME=	atk cairo gdkpixbuf2 gtk30 pango
+USE_GNOME=	atk cairo gdkpixbuf gtk30 pango
 USE_XORG=	x11 xmu
 DOS2UNIX_FILES=	gtk/IntelRDFPMathLib20U1/LIBRARY/float128/op_system.h \
 		gtk/IntelRDFPMathLib20U1/LIBRARY/float128/architecture.h \

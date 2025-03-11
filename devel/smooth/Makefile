@@ -19,7 +19,7 @@ LIB_DEPENDS=	libcpuid.so:sysutils/libcpuid \
 
 USES=		gmake gnome iconv jpeg localbase pkgconfig xorg
 USE_LDCONFIG=	yes
-USE_GNOME=	cairo gdkpixbuf2 gtk30 libxml2
+USE_GNOME=	cairo gdkpixbuf gtk30 libxml2
 USE_XORG=	x11
 MAKE_ARGS=	config="systemlibcpuid systemlibwebp"
 

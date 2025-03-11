@@ -24,7 +24,7 @@ GH_TAGNAME=	e209c8d
 
 USES=		gettext gmake gnome pkgconfig xorg
 USE_GCC=	yes
-USE_GNOME=	atk cairo gdkpixbuf2 gtk20
+USE_GNOME=	atk cairo gdkpixbuf gtk20
 USE_XORG=	x11 xcomposite xcursor xdamage xext xfixes xi xinerama xrandr xrender
 TMPDIR=		${WRKDIR}
 

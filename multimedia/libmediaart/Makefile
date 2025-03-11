@@ -13,7 +13,7 @@ LICENSE_FILE_GPLv2=	${WRKSRC}/COPYING
 LICENSE_FILE_LGPL21=	${WRKSRC}/COPYING.LESSER
 
 USES=		gnome meson pathfix pkgconfig tar:xz vala:build
-USE_GNOME=	gdkpixbuf2 introspection:build
+USE_GNOME=	gdkpixbuf introspection:build
 USE_LDCONFIG=	yes
 
 MESON_ARGS=	-Dimage_library=gdk-pixbuf -Dgtk_doc=false

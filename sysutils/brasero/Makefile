@@ -18,7 +18,7 @@ RUN_DEPENDS=	growisofs:sysutils/dvd+rw-tools \
 
 USES=		desktop-file-utils gettext gmake gnome gstreamer libtool pathfix \
 		pkgconfig shared-mime-info tar:xz xorg
-USE_GNOME=	cairo gdkpixbuf2 gnomeprefix gtk30 intlhack \
+USE_GNOME=	cairo gdkpixbuf gnomeprefix gtk30 intlhack \
 		introspection:build libxml2
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=${PREFIX}/share

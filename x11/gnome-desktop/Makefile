@@ -26,7 +26,7 @@ RUN_DEPENDS=	iso-codes>=0:misc/iso-codes \
 
 USES=		bison cpe gettext gnome localbase:ldflags meson \
 		pkgconfig python tar:xz xorg
-USE_GNOME=	cairo gdkpixbuf2 gtk30 gtk40 intltool introspection:build
+USE_GNOME=	cairo gdkpixbuf gtk30 gtk40 intltool introspection:build
 USE_XORG=	x11
 USE_LDCONFIG=	yes
 MESON_ARGS=	-Dudev=disabled \

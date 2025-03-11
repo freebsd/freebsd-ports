@@ -22,7 +22,7 @@ LIB_DEPENDS=	libcups.so:print/cups \
 GNU_CONFIGURE=	yes
 USES=		compiler:c++11-lang desktop-file-utils gettext gnome jpeg \
 		libtool localbase pkgconfig xorg
-USE_GNOME=	cairo gdkpixbuf2 gtk20
+USE_GNOME=	cairo gdkpixbuf gtk20
 USE_XORG=	x11
 USE_CXXSTD=	gnu++98
 LIBS+=		-lX11

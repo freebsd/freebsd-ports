@@ -18,7 +18,7 @@ USES=		autoreconf desktop-file-utils gettext gmake gnome pkgconfig \
 GNU_CONFIGURE=			yes
 GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ENV+=			LIBS=-lexecinfo
-USE_GNOME=			cairo gdkpixbuf2 glib20 gtk30 intltool
+USE_GNOME=			cairo gdkpixbuf glib20 gtk30 intltool
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 

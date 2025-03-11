@@ -20,7 +20,7 @@ LIB_DEPENDS=	libDesktop.so:x11/deforaos-libdesktop \
 		libwebkit2gtk-4.0.so:www/webkit2-gtk@40
 
 USES=		desktop-file-utils gnome pkgconfig xorg
-USE_GNOME=	cairo gdkpixbuf2 gtk30
+USE_GNOME=	cairo gdkpixbuf gtk30
 USE_XORG=	x11
 
 MAKE_ARGS=	PREFIX=${PREFIX}

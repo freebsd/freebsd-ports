@@ -21,7 +21,7 @@ RUN_DEPENDS=	adwaita-icon-theme>=0:x11-themes/adwaita-icon-theme \
 USES=		compiler:c11 cpe gettext gnome localbase:ldflags meson ninja \
 		pathfix perl5 pkgconfig python shebangfix tar:xz
 CPE_VENDOR=	gnome
-USE_GNOME=	atk cairo gdkpixbuf2 gtk-update-icon-cache pango \
+USE_GNOME=	atk cairo gdkpixbuf gtk-update-icon-cache pango \
 		introspection:build librsvg2:run
 GLIB_SCHEMAS=	org.gtk.Demo.gschema.xml \
 		org.gtk.Settings.ColorChooser.gschema.xml \

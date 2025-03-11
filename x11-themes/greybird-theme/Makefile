@@ -15,7 +15,7 @@ BUILD_DEPENDS=	sassc:textproc/sassc
 RUN_DEPENDS=	gtk-murrine-engine>=0.98.1:x11-themes/gtk-murrine-engine
 
 USES=		gnome meson pkgconfig python:build
-USE_GNOME=	gdkpixbuf2:build glib20:build librsvg2:build
+USE_GNOME=	gdkpixbuf:build glib20:build librsvg2:build
 
 GH_ACCOUNT=	shimmerproject
 GH_PROJECT=	Greybird

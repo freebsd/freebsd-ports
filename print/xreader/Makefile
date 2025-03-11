@@ -20,7 +20,7 @@ USES=		desktop-file-utils gettext-tools gnome meson pkgconfig xorg
 USE_GITHUB=	yes
 GH_ACCOUNT=	linuxmint
 USE_LDCONFIG=	yes
-USE_GNOME=	cairo gdkpixbuf2 gtk30 libxml2
+USE_GNOME=	cairo gdkpixbuf gtk30 libxml2
 USE_XORG=	ice sm x11
 GLIB_SCHEMAS=	org.x.reader.gschema.xml
 

@@ -22,7 +22,7 @@ USES+=		gettext gmake gnome libtool:keepla pathfix pkgconfig \
 		compiler:c++11-lang
 USE_CXXSTD=	gnu++11
 USE_LDCONFIG=	yes
-USE_GNOME=	atkmm gdkpixbuf2 gtk20 pangomm
+USE_GNOME=	atkmm gdkpixbuf gtk20 pangomm
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--disable-documentation

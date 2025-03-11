@@ -15,7 +15,7 @@ LIB_DEPENDS=	libharfbuzz.so:print/harfbuzz
 
 USES=		desktop-file-utils gettext-tools gmake gnome libtool perl5 \
 		pkgconfig tar:bzip2 xfce
-USE_GNOME=	cairo gdkpixbuf2 glib20 gtk30 gtksourceview3 intltool
+USE_GNOME=	cairo gdkpixbuf glib20 gtk30 gtksourceview3 intltool
 GLIB_SCHEMAS=	org.xfce.mousepad.gschema.xml
 USE_LDCONFIG=	yes
 

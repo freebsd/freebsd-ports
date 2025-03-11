@@ -15,7 +15,7 @@ LIB_DEPENDS=	libsharpyuv.so:graphics/webp
 USES=		cmake:testing compiler:c++11-lang cpe gettext-runtime gnome \
 		localbase:ldflags pathfix pkgconfig
 CPE_VENDOR=	struktur
-USE_GNOME=	gdkpixbuf2 glib20
+USE_GNOME=	gdkpixbuf glib20
 USE_LDCONFIG=	yes
 PLIST_SUB=	LIB_VER=${DISTVERSION}
 

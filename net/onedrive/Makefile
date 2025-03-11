@@ -34,7 +34,7 @@ COMPLETION_CONFIGURE_ENABLE=	completions
 
 NOTIFY_LIB_DEPENDS=	libnotify.so:devel/libnotify
 NOTIFY_USES=		gnome
-NOTIFY_USE=		GNOME=glib20,gdkpixbuf2
+NOTIFY_USE=		GNOME=glib20,gdkpixbuf
 NOTIFY_CONFIGURE_ENABLE=	notifications
 
 ONEDRIVE_LOGDIR=	/var/log/${PORTNAME}

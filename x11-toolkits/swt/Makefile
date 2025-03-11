@@ -15,7 +15,7 @@ ONLY_FOR_ARCHS=	aarch64 amd64 powerpc64 powerpc64le
 
 USES=		compiler:c++11-lang gl gmake gnome java:ant pkgconfig zip:infozip xorg
 USE_GL=		glu gl
-USE_GNOME=	gdkpixbuf2 gtk30
+USE_GNOME=	gdkpixbuf gtk30
 USE_XORG=	xtst
 JAVA_OS=	native
 

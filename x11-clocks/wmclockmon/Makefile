@@ -16,7 +16,7 @@ LIB_DEPENDS=	libharfbuzz.so:print/harfbuzz \
 
 USES=		xorg gnome pkgconfig
 USE_XORG=	xpm x11 xext
-USE_GNOME=	gtk20 cairo gdkpixbuf2
+USE_GNOME=	gtk20 cairo gdkpixbuf
 
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=${PREFIX}/share

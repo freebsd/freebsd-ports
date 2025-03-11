@@ -46,7 +46,7 @@ GTK2_LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 			libfreetype.so:print/freetype2 \
 			libharfbuzz.so:print/harfbuzz
 GTK2_USES=	gnome
-GTK2_USE=	gnome=cairo,gdkpixbuf2,gtk20
+GTK2_USE=	gnome=cairo,gdkpixbuf,gtk20
 GTK2_CONFIGURE_OFF=	--disable-hid_gtk2_gdk
 
 GTK4_IMPLIES=	GTK2
@@ -55,7 +55,7 @@ GTK4_LIB_DEPENDS=	libepoxy.so:graphics/libepoxy \
 			libharfbuzz.so:print/harfbuzz \
 			libvulkan.so:graphics/vulkan-loader
 GTK4_USES=	gl gnome
-GTK4_USE=	gl=gl,glu gnome=cairo,gdkpixbuf2,gtk40
+GTK4_USE=	gl=gl,glu gnome=cairo,gdkpixbuf,gtk40
 GTK4_CONFIGURE_OFF=	--disable-hid_gtk4_gl
 
 MOTIF_BROKEN=	Fails to build

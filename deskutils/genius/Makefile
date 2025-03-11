@@ -21,7 +21,7 @@ LIB_DEPENDS=	libamtk-5.so:x11-toolkits/amtk \
 
 USES=		desktop-file-utils gmake gnome libtool pathfix pkgconfig \
 		readline shared-mime-info tar:xz xorg
-USE_GNOME=	cairo gnomeprefix gdkpixbuf2 gtksourceview4 intltool vte3
+USE_GNOME=	cairo gnomeprefix gdkpixbuf gtksourceview4 intltool vte3
 USE_XORG=	x11 xext
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-extra-gcc-optimization \

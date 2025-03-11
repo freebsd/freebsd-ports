@@ -54,11 +54,11 @@ ANSI_DESC=		ANSI terminal support
 ANSI_CONFIGURE_WITH=	ansi
 
 GTK2_USES=		gnome pkgconfig
-GTK2_USE=		gnome=cairo,gdkpixbuf2,gtk20
+GTK2_USE=		gnome=cairo,gdkpixbuf,gtk20
 GTK2_CONFIGURE_ON=	--with-gtk=2
 
 GTK3_USES=		gnome pkgconfig
-GTK3_USE=		gnome=cairo,gdkpixbuf2,gtk30
+GTK3_USE=		gnome=cairo,gdkpixbuf,gtk30
 GTK3_CONFIGURE_ON=	--with-gtk=3
 
 NCURSES_USES=		ncurses

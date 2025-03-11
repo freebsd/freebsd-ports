@@ -55,7 +55,7 @@ PLIST_SUB+=		X11="@comment "
 .else
 MAKE_ARGS=		UISTYLE=gtk2
 SUB_FILES=		${PORTNAME}.desktop
-USE_GNOME+=		atk cairo gdkpixbuf2 glib20 gtk20 pango
+USE_GNOME+=		atk cairo gdkpixbuf glib20 gtk20 pango
 USES+=			gettext-runtime gnome
 PLIST_SUB+=		X11=""
 .endif

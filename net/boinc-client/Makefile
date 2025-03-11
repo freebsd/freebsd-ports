@@ -74,7 +74,7 @@ MANAGER_LIB_DEPENDS=		libnotify.so:devel/libnotify \
 				libfreetype.so:print/freetype2 \
 				libxkbcommon.so:x11/libxkbcommon
 MANAGER_USES=			desktop-file-utils gnome iconv xorg
-MANAGER_USE=			GNOME=atk,cairo,gdkpixbuf2,glib20,gtk30,pango \
+MANAGER_USE=			GNOME=atk,cairo,gdkpixbuf,glib20,gtk30,pango \
 				WX=3.2+ XORG=x11,xcb,xext,xscrnsaver
 MANAGER_CONFIGURE_ENABLE=	manager
 MANAGER_CONFIGURE_WITH=		wx-config

@@ -16,7 +16,7 @@ LIB_DEPENDS=	libgnutls.so:security/gnutls \
 
 USES=		compiler:c11 gettext-tools gmake gnome libtool pkgconfig \
 		tar:bzip2 xfce xorg
-USE_GNOME=	cairo gdkpixbuf2 glib20 gtk30
+USE_GNOME=	cairo gdkpixbuf glib20 gtk30
 USE_XFCE=	libexo panel
 USE_XORG=	x11
 

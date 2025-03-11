@@ -17,7 +17,7 @@ LIB_DEPENDS=	libenchant-2.so:textproc/enchant2 \
 		libicudata.so:devel/icu
 
 USES=		gmake gnome iconv libtool pathfix pkgconfig tar:xz vala:build
-USE_GNOME=	atk cairo gdkpixbuf2 glib20 gtk30 libxml2 pango \
+USE_GNOME=	atk cairo gdkpixbuf glib20 gtk30 libxml2 pango \
 		introspection:build
 USE_LDCONFIG=	yes
 

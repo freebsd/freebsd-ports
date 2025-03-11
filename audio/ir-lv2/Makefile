@@ -26,7 +26,7 @@ USES=		gmake gnome pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	tomszilagyi
 GH_PROJECT=	ir.lv2
-USE_GNOME=	glib20 gtk20 gdkpixbuf2 cairo
+USE_GNOME=	glib20 gtk20 gdkpixbuf cairo
 
 MAKE_ENV=	INSTDIR=${STAGEDIR}${PREFIX}/lib/lv2
 

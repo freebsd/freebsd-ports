@@ -12,7 +12,7 @@ WWW=		https://sourceforge.net/projects/batterycat/
 LICENSE=	GPLv2+
 
 USES=		gmake gnome pkgconfig
-USE_GNOME=	cairo gdkpixbuf2 gtk20
+USE_GNOME=	cairo gdkpixbuf gtk20
 
 PLIST_FILES=	bin/batterycat share/applications/batterycat.desktop \
 		${DATADIR_REL}/batterycat.html \

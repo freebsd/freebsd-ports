@@ -19,7 +19,7 @@ PORTSCOUT=	limitw:1,even
 
 USES=		compiler:c11 gettext gnome meson pkgconfig tar:xz vala:build
 USE_CSTD=	c11
-USE_GNOME=	cairo gdkpixbuf2 gtk30 libxml2 introspection:build
+USE_GNOME=	cairo gdkpixbuf gtk30 libxml2 introspection:build
 USE_LDCONFIG=	yes
 
 .include <bsd.port.mk>

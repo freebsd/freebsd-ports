@@ -65,7 +65,7 @@ USES+=		compiler:c++17-lang cpe elfctl gl gmake gnome iconv \
 			pkgconfig python:build desktop-file-utils
 CPE_VENDOR?=mozilla
 USE_GL=		gl
-USE_GNOME=	cairo gdkpixbuf2 gtk30
+USE_GNOME=	cairo gdkpixbuf gtk30
 USE_XORG=	x11 xcb xcomposite xdamage xext xfixes xrandr xrender xt xtst
 HAS_CONFIGURE=	yes
 CONFIGURE_OUTSOURCE=	yes

@@ -26,7 +26,7 @@ USES+=		gettext gmake gnome libtool localbase:ldflags pathfix perl5 \
 		pkgconfig python:run shebangfix xorg
 SHEBANG_FILES=	gtk/gtk-builder-convert
 GNU_CONFIGURE=	yes
-USE_GNOME=	atk pango gdkpixbuf2 introspection:build \
+USE_GNOME=	atk pango gdkpixbuf introspection:build \
 		gtk-update-icon-cache
 USE_LDCONFIG=	yes
 USE_PERL5=	build

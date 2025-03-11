@@ -36,7 +36,7 @@ FLAVORS_SUB=	yes
 .if ${FLAVOR} == default
 LIB_DEPENDS=		libfontconfig.so:x11-fonts/fontconfig \
 			libfreetype.so:print/freetype2
-USE_GNOME+=		cairo gdkpixbuf2 gtk20
+USE_GNOME+=		cairo gdkpixbuf gtk20
 CONFIGURE_ARGS+=	--with-gui=yes
 .endif
 

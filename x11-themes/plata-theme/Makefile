@@ -19,7 +19,7 @@ RUN_DEPENDS=	gtk-murrine-engine>0:x11-themes/gtk-murrine-engine \
 		roboto-fonts-ttf>0:x11-fonts/roboto-fonts-ttf
 
 USES=		autoreconf gmake gnome pkgconfig shebangfix
-USE_GNOME=	gdkpixbuf2 gtk30 libxml2
+USE_GNOME=	gdkpixbuf gtk30 libxml2
 
 USE_GITLAB=	yes
 GL_ACCOUNT=	tista500

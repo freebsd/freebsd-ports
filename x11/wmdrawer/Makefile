@@ -12,7 +12,7 @@ WWW=		http://people.easter-eggs.org/~valos/wmdrawer/
 LICENSE=	GPLv2+
 
 USES=		gmake gnome pkgconfig xorg
-USE_GNOME=	gdkpixbuf2 gdkpixbuf2xlib
+USE_GNOME=	gdkpixbuf gdkpixbufxlib
 USE_XORG=	x11 xext xi
 MAKE_ARGS=	MANDIR=$(PREFIX)/share/man/man1
 MAKE_ENV=	USE_GDKPIXBUF2=1

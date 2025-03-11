@@ -23,7 +23,7 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libharfbuzz.so:print/harfbuzz
 
 USES=		gettext gl gnome ocaml sdl tar:bzip2 xorg
-USE_GNOME=	atk cairo gdkpixbuf2 glib20 gtk20 pango
+USE_GNOME=	atk cairo gdkpixbuf glib20 gtk20 pango
 USE_GL=		gl glu
 USE_SDL=	ttf mixer sdl
 USE_XORG=	x11 xext xmu

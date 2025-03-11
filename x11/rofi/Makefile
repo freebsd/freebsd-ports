@@ -22,7 +22,7 @@ RUN_DEPENDS=	gsed:textproc/gsed
 
 USES=		bison gnome meson pkgconfig shebangfix xorg
 USE_GITHUB=	yes # required by rofi-wayland
-USE_GNOME=	cairo gdkpixbuf2 librsvg2 pango
+USE_GNOME=	cairo gdkpixbuf librsvg2 pango
 USE_XORG=	xcb
 GH_ACCOUNT?=	davatorium
 GH_TUPLE=	sardemff7:libgwater:d86f9903efb9c490c0e3b0316d7f2da5b5a5632c:libgwater/subprojects/libgwater \

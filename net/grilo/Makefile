@@ -28,7 +28,7 @@ OPTIONS_DEFINE=	UI
 
 UI_DESC=	Enable testing UI
 UI_MESON_TRUE=	enable-test-ui
-UI_USE=		GNOME=gdkpixbuf2,gtk30
+UI_USE=		GNOME=gdkpixbuf,gtk30
 
 PLIST_SUB+=	LIBVER=316
 

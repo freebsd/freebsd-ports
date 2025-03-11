@@ -20,7 +20,7 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 
 USES=		compiler:c++11-lang gettext-runtime gl gmake gnome pkgconfig \
 		xorg
-USE_GNOME=	atk cairo gdkpixbuf2 glib20 gtk20 pango pangox-compat
+USE_GNOME=	atk cairo gdkpixbuf glib20 gtk20 pango pangox-compat
 USE_GL=		gl glu
 USE_XORG=	ice sm x11 xmu xt
 

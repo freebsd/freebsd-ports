@@ -23,7 +23,7 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 
 USES=		gettext-tools gnome pkgconfig python:build shared-mime-info \
 		shebangfix sqlite:3 tar:xz vala:build
-USE_GNOME=	cairo gdkpixbuf2 glib20 gtk30
+USE_GNOME=	cairo gdkpixbuf glib20 gtk30
 USE_LDCONFIG=	yes
 SHEBANG_FILES=	configure install.py
 

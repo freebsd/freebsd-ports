@@ -18,7 +18,7 @@ LIB_DEPENDS=	libgnutls.so:security/gnutls \
 
 USES=		gettext gnome localbase meson perl5 pkgconfig python \
 		tar:xz vala:build xorg
-USE_GNOME=	cairo gdkpixbuf2 gtk30 introspection:build
+USE_GNOME=	cairo gdkpixbuf gtk30 introspection:build
 USE_XORG=	x11
 USE_LDCONFIG=	yes
 

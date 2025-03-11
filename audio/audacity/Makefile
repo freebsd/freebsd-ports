@@ -41,7 +41,7 @@ USES=		cmake compiler:c++20-lang cpe desktop-file-utils gettext \
 CPE_VENDOR=	audacityteam
 
 USE_GITHUB=	yes
-USE_GNOME=	cairo gdkpixbuf2 gtk30
+USE_GNOME=	cairo gdkpixbuf gtk30
 USE_WX=		3.2+
 WX_COMPS=	wx
 

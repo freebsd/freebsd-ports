@@ -21,7 +21,7 @@ LIB_DEPENDS+=	libsoup-2.4.so:devel/libsoup \
 
 USES=		cargo gnome python
 USE_PYTHON=	pep517 autoplist
-USE_GNOME=	cairo gdkpixbuf2 glib20 gtk30
+USE_GNOME=	cairo gdkpixbuf glib20 gtk30
 
 # workaround for the problem that the ports framework doesn't add PYPI-related file to DISTFILES due to DISTFILES?= in Mk/bsd.port.mk
 DISTFILES+=	${DISTNAME}${EXTRACT_SUFX}

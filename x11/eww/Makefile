@@ -24,7 +24,7 @@ x11_CONFLICTS_INSTALL=		${PORTNAME}-wayland
 USES=		cargo gnome
 USE_GITHUB=	yes
 GH_ACCOUNT=	elkowar
-USE_GNOME=	cairo gdkpixbuf2 gtk30
+USE_GNOME=	cairo gdkpixbuf gtk30
 
 CARGO_FEATURES=		${FLAVOR} --no-default-features
 CARGO_INSTALL_PATH=	crates/${PORTNAME}

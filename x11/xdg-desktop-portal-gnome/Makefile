@@ -21,7 +21,7 @@ RUN_DEPENDS=	xdg-desktop-portal>0:deskutils/xdg-desktop-portal \
 USES=		gettext-tools gnome meson pkgconfig tar:xz xorg
 
 USE_XORG=	x11
-USE_GNOME=	cairo gdkpixbuf2 glib20 gtk40 libadwaita
+USE_GNOME=	cairo gdkpixbuf glib20 gtk40 libadwaita
 GLIB_SCHEMAS=	xdg-desktop-portal-gnome.gschema.xml
 
 PORTDOCS=	NEWS README.md

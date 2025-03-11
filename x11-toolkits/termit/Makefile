@@ -19,7 +19,7 @@ USE_CSTD=	c99
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	nonstop
-USE_GNOME=	cairo gdkpixbuf2 gtk30 vte3
+USE_GNOME=	cairo gdkpixbuf gtk30 vte3
 USE_XORG=	x11
 
 CPPFLAGS+=	-I${LOCALBASE}/include/vte-0.0

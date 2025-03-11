@@ -14,7 +14,7 @@ LIB_DEPENDS=	libpulse.so:audio/pulseaudio \
 		libnotify.so:devel/libnotify
 
 USES=		autoreconf gnome pkgconfig
-USE_GNOME=	cairo gdkpixbuf2 gtk30
+USE_GNOME=	cairo gdkpixbuf gtk30
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 USE_GITHUB=	yes

@@ -4,7 +4,7 @@ PKGNAMESUFFIX=	1-plugins-gdkpixbuf
 
 COMMENT=	GStreamer image decoder/overlay plugin
 
-USE_GNOME=	gdkpixbuf2
+USE_GNOME=	gdkpixbuf
 
 MASTERDIR=	${.CURDIR:H:H}/multimedia/gstreamer1-plugins
 

@@ -26,7 +26,7 @@ USES=		gettext gl gmake gnome localbase mate pathfix pkgconfig tar:xz \
 USE_GL=		gl
 USE_MATE=	desktop libmatekbd menus session:run
 USE_XORG=	ice sm x11 xext xscrnsaver xxf86vm
-USE_GNOME=	cairo gdkpixbuf2 gtk30 intltool
+USE_GNOME=	cairo gdkpixbuf gtk30 intltool
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--with-console-kit=yes \

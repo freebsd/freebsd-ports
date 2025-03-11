@@ -50,7 +50,7 @@ DB_DESC=	Database support
 UI_DESC=	GUI clients
 
 GTK3_USES=	gnome sdl
-GTK3_USE=	GNOME=cairo,gdkpixbuf2,glib20,gtk30,pango \
+GTK3_USE=	GNOME=cairo,gdkpixbuf,glib20,gtk30,pango \
 		SDL=mixer2
 GTK3_VARS=	_FREECIV_CLIENT+=gtk3 \
 		_FREECIV_CLIENT+=gtk3.22 \
@@ -58,7 +58,7 @@ GTK3_VARS=	_FREECIV_CLIENT+=gtk3 \
 
 GTK4_IMPLIES=	GTK3
 GTK4_USES=	gnome sdl
-GTK4_USE=	GNOME=cairo,gdkpixbuf2,glib20,gtk40,pango \
+GTK4_USE=	GNOME=cairo,gdkpixbuf,glib20,gtk40,pango \
 		SDL=mixer2
 GTK4_VARS=	_FREECIV_CLIENT+=gtk4 \
 		_FREECIV_MP+=gtk4

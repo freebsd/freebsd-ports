@@ -29,7 +29,7 @@ USES=		compiler:c11 desktop-file-utils gettext gnome gstreamer meson \
 		pkgconfig sqlite:3 vala:build
 USE_GITHUB=	yes
 GH_ACCOUNT=	elementary
-USE_GNOME=	cairo gdkpixbuf2 glib20 gtk30 libxml2
+USE_GNOME=	cairo gdkpixbuf glib20 gtk30 libxml2
 GLIB_SCHEMAS=	io.elementary.photos.gschema.xml
 USE_LDCONFIG=	yes
 

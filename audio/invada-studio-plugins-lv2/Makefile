@@ -19,7 +19,7 @@ LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 		libfontconfig.so:x11-fonts/fontconfig
 
 USES=		gmake gnome localbase pkgconfig tar:tgz
-USE_GNOME=	cairo gdkpixbuf2 glib20 gtk20
+USE_GNOME=	cairo gdkpixbuf glib20 gtk20
 LLD_UNSAFE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}
 

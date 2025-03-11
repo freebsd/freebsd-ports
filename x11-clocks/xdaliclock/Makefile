@@ -12,7 +12,7 @@ LIB_DEPENDS=	libharfbuzz.so:print/harfbuzz
 
 USES=		desktop-file-utils gl gmake gnome pkgconfig xorg
 USE_GL=		gl
-USE_GNOME=	cairo gdkpixbuf2 gtk30
+USE_GNOME=	cairo gdkpixbuf gtk30
 GLIB_SCHEMAS=	org.jwz.xdaliclock.gschema.xml
 USE_XORG=	x11
 

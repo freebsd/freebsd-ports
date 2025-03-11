@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		cpe gmake gnome libtool localbase pathfix pkgconfig tar:xz
 CPE_VENDOR=	gnome
-USE_GNOME=	gdkpixbuf2 glib20 libxml2 introspection:build
+USE_GNOME=	gdkpixbuf glib20 libxml2 introspection:build
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes

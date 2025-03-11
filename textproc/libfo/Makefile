@@ -20,7 +20,7 @@ CONFLICTS_INSTALL=	xmlroff-0.6.[12] xmlroff-0.6.2_[12345]
 
 USES=		autoreconf gettext gmake gnome localbase libtool pathfix pkgconfig
 USE_GNOME=	libxslt libxml2 glib20 pango \
-		librsvg2 gdkpixbuf2
+		librsvg2 gdkpixbuf
 USE_GITHUB=	yes
 GH_PROJECT=	xmlroff
 GH_ACCOUNT=	xmlroff

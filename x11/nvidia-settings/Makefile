@@ -20,7 +20,7 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libvdpau.so:multimedia/libvdpau
 
 USES=		gl gmake gnome pkgconfig gettext-runtime xorg
-USE_GNOME=	gtk30 cairo gdkpixbuf2
+USE_GNOME=	gtk30 cairo gdkpixbuf
 USE_GL=		gl
 USE_XORG=	x11 xext xv xxf86vm
 

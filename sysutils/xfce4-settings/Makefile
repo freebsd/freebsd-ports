@@ -19,7 +19,7 @@ RUN_DEPENDS=	hwdata>0:misc/hwdata
 
 USES=		compiler:c11 desktop-file-utils gettext-tools gmake gnome \
 		libtool pkgconfig python shebangfix tar:bzip2 xfce xorg
-USE_GNOME=	cairo gdkpixbuf2 glib20 gtk30 libxml2:build
+USE_GNOME=	cairo gdkpixbuf glib20 gtk30 libxml2:build
 USE_XFCE=	garcon libexo xfconf
 USE_XORG=	x11 xcursor xext xi xorgproto xrandr
 

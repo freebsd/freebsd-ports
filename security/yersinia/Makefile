@@ -16,7 +16,7 @@ LIB_DEPENDS=	libnet.so:net/libnet \
 		libfreetype.so:print/freetype2
 
 USES=		autoreconf gnome ncurses pkgconfig
-USE_GNOME=	cairo gdkpixbuf2 gtk20
+USE_GNOME=	cairo gdkpixbuf gtk20
 USE_GITHUB=	yes
 GH_TUPLE=	tomac:yersinia:8c0d7c5
 GNU_CONFIGURE=	yes

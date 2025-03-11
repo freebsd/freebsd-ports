@@ -33,7 +33,7 @@ USES=		cmake compiler:c++11-lib desktop-file-utils gl gnome kde:5 localbase:ldfl
 USE_GL=		gl
 USE_QT=		core gui svg xml widgets buildtools:build linguisttools:build qmake:build uitools:build
 USE_KDE=	ecm:build
-USE_GNOME=	atk atkmm cairo cairomm gdkpixbuf2 glib20 glibmm gtk20 gtkmm24 libsigc++20 pango pangomm
+USE_GNOME=	atk atkmm cairo cairomm gdkpixbuf glib20 glibmm gtk20 gtkmm24 libsigc++20 pango pangomm
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes

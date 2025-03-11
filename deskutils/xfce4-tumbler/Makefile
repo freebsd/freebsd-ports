@@ -17,7 +17,7 @@ LIB_DEPENDS=	libpng16.so:graphics/png
 
 USES=		compiler:c11 gettext-tools gmake gnome libtool \
 		localbase:ldflags pathfix pkgconfig tar:bzip2 xfce
-USE_GNOME=	cairo gdkpixbuf2 glib20 libgsf
+USE_GNOME=	cairo gdkpixbuf glib20 libgsf
 USE_LDCONFIG=	yes
 USE_XFCE=	libutil
 

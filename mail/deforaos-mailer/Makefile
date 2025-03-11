@@ -19,7 +19,7 @@ LIB_DEPENDS=	libDesktop.so:x11/deforaos-libdesktop \
 		libSystem.so:devel/deforaos-libsystem
 
 USES=		gnome pkgconfig ssl xorg
-USE_GNOME=	cairo gdkpixbuf2 gtk30
+USE_GNOME=	cairo gdkpixbuf gtk30
 USE_LDCONFIG=	yes
 USE_XORG=	x11
 

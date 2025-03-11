@@ -32,7 +32,7 @@ PORTSCOUT=	limitw:1,even
 USES=		compiler:c11 cpe desktop-file-utils gettext gnome localbase \
 		meson pkgconfig python tar:xz vala:build xorg
 USE_CSTD=	c11
-USE_GNOME=	cairo gdkpixbuf2 gtksourceview4 intlhack introspection libxml2 \
+USE_GNOME=	cairo gdkpixbuf gtksourceview4 intlhack introspection libxml2 \
 		pygobject3
 USE_XORG=	sm x11
 USE_LDCONFIG=	yes

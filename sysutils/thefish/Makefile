@@ -16,7 +16,7 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 
 USES=		gnome pkgconfig
 
-USE_GNOME=	cairo gdkpixbuf2 gtk20
+USE_GNOME=	cairo gdkpixbuf gtk20
 MAKE_ENV+=	WITH_GTK=yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}

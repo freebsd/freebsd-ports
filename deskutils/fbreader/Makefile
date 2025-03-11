@@ -44,7 +44,7 @@ LIB_DEPENDS+=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
 		libpng16.so:graphics/png
 USES+=		gnome jpeg
-USE_GNOME=	cairo gdkpixbuf2 gtk20
+USE_GNOME=	cairo gdkpixbuf gtk20
 MAKE_ENV+=	UI_TYPE=gtk
 CONFLICTS=	${PORTNAME}-qt6
 PLIST_SUB=	UITYPE=gtk

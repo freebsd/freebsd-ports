@@ -28,7 +28,7 @@ MESON_ARGS=	-Dvalapanel=disabled \
 		-Dappmenu-gtk-module=disabled
 
 USE_MATE=	panel
-USE_GNOME=	gtk30 glib20 gdkpixbuf2
+USE_GNOME=	gtk30 glib20 gdkpixbuf
 GLIB_SCHEMAS=	org.valapanel.appmenu.gschema.xml
 
 USE_GITLAB=	yes

@@ -12,7 +12,7 @@ LICENSE=	GPLv3
 
 USES=		compiler:c++11-lang desktop-file-utils gettext-runtime gnome \
 		pkgconfig
-USE_GNOME=	atk atkmm cairo cairomm gdkpixbuf2 glib20 glibmm gtk30 gtkmm30 \
+USE_GNOME=	atk atkmm cairo cairomm gdkpixbuf glib20 glibmm gtk30 gtkmm30 \
 		libsigc++20 pango pangomm
 
 GNU_CONFIGURE=	yes

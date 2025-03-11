@@ -19,7 +19,7 @@ LIB_DEPENDS=	libdicom.so:graphics/libdicom \
 
 USES=		gettext-runtime gnome jpeg meson pkgconfig sqlite
 USE_GITHUB=	yes
-USE_GNOME=	cairo gdkpixbuf2 glib20 libxml2
+USE_GNOME=	cairo gdkpixbuf glib20 libxml2
 USE_LDCONFIG=	yes
 
 MESON_ARGS=	-Ddoc=disabled

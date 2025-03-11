@@ -17,7 +17,7 @@ USES=		gmake gnome
 USE_GITHUB=	yes
 GH_ACCOUNT=	numixproject
 
-USE_GNOME=	glib20 gdkpixbuf2
+USE_GNOME=	glib20 gdkpixbuf
 
 INSTALL_TARGET=	# empty
 

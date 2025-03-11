@@ -16,7 +16,7 @@ RUN_DEPENDS=	musicpd:audio/musicpd
 
 USES=		compiler:c11 gettext-tools gmake gnome libtool pkgconfig \
 		tar:bzip2 xfce
-USE_GNOME=	cairo gdkpixbuf2 gtk30
+USE_GNOME=	cairo gdkpixbuf gtk30
 USE_XFCE=	libmenu panel
 
 GNU_CONFIGURE=		yes

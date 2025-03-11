@@ -27,7 +27,7 @@ LIB_DEPENDS=	libcinnamon-desktop.so:x11/cinnamon-desktop \
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		gettext gnome meson pkgconfig python:build shebangfix xorg
-USE_GNOME=	cairo gdkpixbuf2 glib20 gtk30 intltool libgnomekbd libxml2
+USE_GNOME=	cairo gdkpixbuf glib20 gtk30 intltool libgnomekbd libxml2
 USE_XORG=	x11 xfixes xorgproto sm
 
 USE_GITHUB=	yes

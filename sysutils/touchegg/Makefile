@@ -18,7 +18,7 @@ LIB_DEPENDS=	libharfbuzz.so:print/harfbuzz \
 		libudev.so:devel/libudev-devd
 
 USES=		cmake:testing compiler:c++17-lang desktop-file-utils gnome localbase:ldflags pkgconfig xorg
-USE_GNOME=	cairo gdkpixbuf2 gtk30
+USE_GNOME=	cairo gdkpixbuf gtk30
 USE_XORG=	x11 xi xrandr xtst
 
 USE_GITHUB=	yes

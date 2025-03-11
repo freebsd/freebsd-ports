@@ -17,7 +17,7 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 
 USES=		gettext gmake gnome pkgconfig
 USE_CSTD=	c99
-USE_GNOME=	cairo gdkpixbuf2 gtk30
+USE_GNOME=	cairo gdkpixbuf gtk30
 GNU_CONFIGURE=	yes
 
 OPTIONS_DEFINE=	DBUS

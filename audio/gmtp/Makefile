@@ -20,7 +20,7 @@ LIB_DEPENDS=	libmtp.so:multimedia/libmtp \
 
 USES=		dos2unix gmake gnome localbase pkgconfig
 DOS2UNIX_FILES=	COPYING
-USE_GNOME=	cairo gdkpixbuf2 glib20 gtk30
+USE_GNOME=	cairo gdkpixbuf glib20 gtk30
 GLIB_SCHEMAS=	org.gnome.gmtp.gschema.xml
 
 GNU_CONFIGURE=	yes

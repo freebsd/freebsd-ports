@@ -29,7 +29,7 @@ OPTIONS_DEFAULT=	GTK3
 OPTIONS_SUB=		yes
 
 GTK3_USES=		gnome
-GTK3_USE=		gnome=gdkpixbuf2,gtk30
+GTK3_USE=		gnome=gdkpixbuf,gtk30
 GTK3_CONFIGURE_WITH=	gtk
 
 post-install:

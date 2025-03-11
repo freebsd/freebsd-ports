@@ -17,7 +17,7 @@ BUILD_DEPENDS=	docbook-xsl>0:textproc/docbook-xsl
 USES=		cpe gettext gnome localbase:ldflags meson pkgconfig \
 		python:build shared-mime-info tar:xz xorg
 CPE_VENDOR=	gnome
-USE_GNOME=	glib20 introspection:build libxslt:build gdkpixbuf2
+USE_GNOME=	glib20 introspection:build libxslt:build gdkpixbuf
 USE_XORG=	x11
 USE_LDCONFIG=	yes
 

@@ -34,7 +34,7 @@ MANPAGES_PLIST_FILES=	share/man/man1/${PORTNAME}.1.gz \
 			share/man/man1/${PORTNAME}ctl.1.gz \
 			share/man/man5/${PORTNAME}.5.gz
 
-PIXBUF_USE=		GNOME=gdkpixbuf2
+PIXBUF_USE=		GNOME=gdkpixbuf
 PIXBUF_MESON_ENABLED=	icons
 
 post-patch:

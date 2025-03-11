@@ -42,7 +42,7 @@ USES=		desktop-file-utils gettext-runtime gmake gnome pkgconfig xorg
 USE_GITHUB=	yes
 GH_ACCOUNT=	dev47apps
 GH_PROJECT=	droidcam-linux-client
-USE_GNOME=	cairo gdkpixbuf2 glib20 gtk30 pango
+USE_GNOME=	cairo gdkpixbuf glib20 gtk30 pango
 USE_XORG=	x11
 
 PLIST_FILES=	bin/${PORTNAME} \

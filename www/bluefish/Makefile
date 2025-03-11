@@ -17,7 +17,7 @@ LIB_DEPENDS=	libenchant-2.so:textproc/enchant2 \
 
 USES=		desktop-file-utils gettext gmake gnome libtool localbase \
 		pkgconfig python shared-mime-info shebangfix tar:bzip2
-USE_GNOME=	cairo gdkpixbuf2 intltool libxml2
+USE_GNOME=	cairo gdkpixbuf intltool libxml2
 SHEBANG_FILES=	data/css_decompressor data/cssmin.py data/json_prettyprint.py \
 		data/jsmin.py data/lorem-ipsum-generator \
 		src/plugin_zencoding/zencoding/actions/*.py \

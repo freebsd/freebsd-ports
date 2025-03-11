@@ -25,7 +25,7 @@ OPTIONS_SUB=	yes
 
 GUI_LIB_DEPENDS=	libjson-glib-1.0.so:devel/json-glib
 GUI_USES=	gettext-tools gnome python:build
-GUI_USE=	gnome=cairo,gdkpixbuf2,glib20,gtk40,gtksourceview5,libadwaita
+GUI_USE=	gnome=cairo,gdkpixbuf,glib20,gtk40,gtksourceview5,libadwaita
 GUI_MESON_OFF=	-Dgui=false
 GUI_BINARY_ALIAS=	python3=${PYTHON_CMD}
 GUI_PLIST_FILES=	bin/lxi-gui

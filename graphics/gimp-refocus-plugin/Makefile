@@ -21,7 +21,7 @@ USES=		autoreconf compiler:c++11-lang gettext gmake gnome pathfix \
 		pkgconfig
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	GIMPTOOL=${LOCALBASE}/bin/gimptool-2.0
-USE_GNOME=	atk cairo gdkpixbuf2 glib20 gtk20 pango
+USE_GNOME=	atk cairo gdkpixbuf glib20 gtk20 pango
 
 GIMP_PLUGIN_DIR=	libexec/gimp/2.2/plug-ins
 

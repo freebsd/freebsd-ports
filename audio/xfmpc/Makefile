@@ -15,7 +15,7 @@ LIB_DEPENDS=	libmpd.so:audio/libmpd \
 
 USES=		compiler:c11 gettext-tools gmake gnome pkgconfig tar:bzip2 \
 		vala:build xfce xorg
-USE_GNOME=	cairo gdkpixbuf2 gtk30
+USE_GNOME=	cairo gdkpixbuf gtk30
 USE_XFCE=	libmenu
 USE_XORG=	ice sm x11
 

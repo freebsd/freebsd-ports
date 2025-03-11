@@ -18,7 +18,7 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 
 USES=		gmake gnome pathfix pkgconfig
 USE_CSTD=	gnu89
-USE_GNOME=	cairo gdkpixbuf2 gtk20
+USE_GNOME=	cairo gdkpixbuf gtk20
 GNU_CONFIGURE=	yes
 LDFLAGS+=	-lm
 WRKSRC=		${WRKDIR}/${PORTNAME}-0.4

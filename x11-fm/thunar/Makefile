@@ -20,7 +20,7 @@ RUN_DEPENDS=	pkexec:sysutils/polkit \
 USES=		compiler:c11 cpe desktop-file-utils gettext-tools gmake gnome \
 		libtool pathfix perl5 pkgconfig tar:bzip2 xfce xorg
 CPE_VENDOR=	xfce
-USE_GNOME=	cairo gdkpixbuf2 glib20 gtk30
+USE_GNOME=	cairo gdkpixbuf glib20 gtk30
 USE_LDCONFIG=	yes
 USE_XFCE=	libexo panel xfconf
 USE_XORG=	ice sm x11

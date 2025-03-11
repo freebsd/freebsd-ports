@@ -27,7 +27,7 @@ RUN_DEPENDS=	gpsbabel:astro/gpsbabel
 USES=		compiler:c++11-lib desktop-file-utils gettext gmake gnome \
 		iconv localbase perl5 pkgconfig tar:bzip2 xorg
 USE_XORG=	x11
-USE_GNOME=	cairo gdkpixbuf2 gtk30 intlhack
+USE_GNOME=	cairo gdkpixbuf gtk30 intlhack
 USE_PERL5=	run
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=${PREFIX}/share

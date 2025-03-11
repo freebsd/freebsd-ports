@@ -23,7 +23,7 @@ GH_ACCOUNT=	linuxmint
 
 SHEBANG_FILES=	data/meson_install_schemas.py
 
-USE_GNOME=	cairo gdkpixbuf2 gtk30
+USE_GNOME=	cairo gdkpixbuf gtk30
 USE_XORG=	ice sm x11 xau xcomposite xext xrender xtrans xtst
 USE_GL=		gl
 

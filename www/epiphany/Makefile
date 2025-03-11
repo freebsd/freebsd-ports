@@ -34,7 +34,7 @@ USES=		compiler:c++11-lib cpe desktop-file-utils gettext gnome \
 		shebangfix sqlite tar:xz xorg
 
 CPE_VENDOR=	gnome
-USE_GNOME=	cairo gdkpixbuf2 glib20 gtk40 intltool libadwaita libxml2 libxslt
+USE_GNOME=	cairo gdkpixbuf glib20 gtk40 intltool libadwaita libxml2 libxslt
 USE_XORG=	x11
 USE_LDCONFIG=	yes
 MESON_ARGS=	-Db_lundef=false \

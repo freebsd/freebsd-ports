@@ -27,7 +27,7 @@ INSTALL_TARGET=	install-strip
 OPTIONS_DEFINE=	GTK2 DOCS EXAMPLES
 OPTIONS_SUB=	yes
 
-GTK2_USE=	GNOME=cairo,gdkpixbuf2,gtk20
+GTK2_USE=	GNOME=cairo,gdkpixbuf,gtk20
 GTK2_USES=	gettext-runtime gnome
 GTK2_LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 			libfreetype.so:print/freetype2

@@ -27,7 +27,7 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 USES=		cpe gl gnome minizip xorg
 
 USE_GL=		gl glu
-USE_GNOME=	cairo gdkpixbuf2 glib20 gtk20 pangox-compat
+USE_GNOME=	cairo gdkpixbuf glib20 gtk20 pangox-compat
 USE_XORG=	x11 xcb xdamage xext xfixes xi xrandr xrender xtst
 NO_BUILD=	YES
 

@@ -15,7 +15,7 @@ PORTSCOUT=	limitw:1,even
 
 USES=		compiler:c++11-lang gnome localbase:ldflags meson \
 		pkgconfig python:build tar:xz
-USE_GNOME=	gdkpixbuf2 gtk30 glibmm cairomm atkmm pangomm
+USE_GNOME=	gdkpixbuf gtk30 glibmm cairomm atkmm pangomm
 USE_LDCONFIG=	yes
 
 MESON_ARGS=	-Dbuild-documentation=false \

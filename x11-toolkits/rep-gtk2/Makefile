@@ -19,7 +19,7 @@ LIB_DEPENDS=	librep.so:lang/librep \
 
 USES=		autoreconf gmake gnome libtool pathfix pkgconfig tar:xz
 GNU_CONFIGURE=	yes
-USE_GNOME=	cairo gdkpixbuf2 gtk20
+USE_GNOME=	cairo gdkpixbuf gtk20
 
 PLIST_FILES=	include/rep-gtk/rep-gtk.h lib/rep/gui/gtk-2/gtk.a \
 		lib/rep/gui/gtk-2/gtk.so libdata/pkgconfig/rep-gtk.pc

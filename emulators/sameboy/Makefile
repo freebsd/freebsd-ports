@@ -18,7 +18,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	LIJI32
 GH_PROJECT=	SameBoy
 USE_GL=		gl
-USE_GNOME=	gdkpixbuf2
+USE_GNOME=	gdkpixbuf
 USE_SDL=	sdl2
 
 MAKE_ARGS=	FREEDESKTOP=true \

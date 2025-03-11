@@ -31,7 +31,7 @@ USES=		desktop-file-utils gettext-tools gnome groff:build \
 		xorg
 USE_XORG=	pixman x11 xau xcb xcomposite xcursor xdamage xdmcp xext xfixes \
 		xi xinerama xrandr xrender
-USE_GNOME=	cairo gdkpixbuf2 gtk20
+USE_GNOME=	cairo gdkpixbuf gtk20
 USE_GL=		egl gl
 USE_LDCONFIG=	yes
 

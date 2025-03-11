@@ -50,7 +50,7 @@ PLIST_SUB+=	X11="@comment "
 .else
 ALL_TARGET=	tui guimaybe
 SUB_FILES=	${PORTNAME}.desktop
-USE_GNOME=	atk cairo gdkpixbuf2 glib20 gtk30 pango
+USE_GNOME=	atk cairo gdkpixbuf glib20 gtk30 pango
 USES+=		gettext-runtime gnome
 PLIST_SUB+=	X11=""
 .endif

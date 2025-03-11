@@ -25,7 +25,7 @@ RUN_DEPENDS=	p5-Cairo>=1:graphics/p5-Cairo \
 		p5-Pango>=1.220:x11-toolkits/p5-Pango
 
 USES=		gmake gnome perl5
-USE_GNOME=	cairo gdkpixbuf2 gtk20 pango
+USE_GNOME=	cairo gdkpixbuf gtk20 pango
 USE_PERL5=	configure
 
 CONFIGURE_ENV=	FORCE_MAKE_CMD=yes

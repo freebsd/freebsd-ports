@@ -17,7 +17,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		autoreconf gmake gnome gettext localbase libtool pkgconfig
 USE_GITHUB=	yes
 USE_GNOME=	libartlgpl2 pango glib20 \
-		libxslt libxml2 gdkpixbuf2
+		libxslt libxml2 gdkpixbuf
 GH_ACCOUNT=	xmlroff
 GH_PROJECT=	xmlroff
 WRKSRC_SUBDIR=	${PORTNAME}

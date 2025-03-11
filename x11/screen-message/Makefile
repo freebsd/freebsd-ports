@@ -17,7 +17,7 @@ GH_TAGNAME=	82c01f85d9ca9d0a3b2fe811249808d2fe4703ba
 
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
-USE_GNOME=	gtk30 atk glib20 cairo gdkpixbuf2
+USE_GNOME=	gtk30 atk glib20 cairo gdkpixbuf
 
 PLIST_FILES=	bin/sm \
 		share/man/man6/sm.6.gz \

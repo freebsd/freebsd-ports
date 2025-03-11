@@ -19,7 +19,7 @@ LIB_DEPENDS=	libharfbuzz.so:print/harfbuzz \
 RUN_DEPENDS=	ocaml-cairo>0:graphics/ocaml-cairo
 
 USES=		gmake gnome ocaml:camlp4,findlib,ldconfig pkgconfig
-USE_GNOME=	cairo gdkpixbuf2 gtk30
+USE_GNOME=	cairo gdkpixbuf gtk30
 
 TARGETS=	${PORTNAME}
 

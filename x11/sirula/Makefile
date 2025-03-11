@@ -15,7 +15,7 @@ LIB_DEPENDS=	libgtk-layer-shell.so:x11-toolkits/gtk-layer-shell
 
 USES=		cargo gnome
 USE_GITHUB=	yes
-USE_GNOME=	cairo gdkpixbuf2 gtk30
+USE_GNOME=	cairo gdkpixbuf gtk30
 GH_ACCOUNT=	DorianRudolph
 PLIST_FILES=	bin/${PORTNAME}
 

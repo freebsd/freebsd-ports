@@ -18,7 +18,7 @@ LIB_DEPENDS=	libhamlib.so:comms/hamlib \
 
 
 USES=		compiler:c11 gnome pkgconfig shared-mime-info
-USE_GNOME=	cairo gdkpixbuf2 gtk20
+USE_GNOME=	cairo gdkpixbuf gtk20
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 

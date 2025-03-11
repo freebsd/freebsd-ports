@@ -28,7 +28,7 @@ OPTIONS_DEFAULT=	GUI
 OPTIONS_SUB=		yes
 
 GUI_USES=	gnome
-GUI_USE=	GNOME=atk,cairo,gdkpixbuf2,glib20,gtk20,pango
+GUI_USE=	GNOME=atk,cairo,gdkpixbuf,glib20,gtk20,pango
 
 GUI_ALL_TARGET=	xaylet
 

@@ -17,7 +17,7 @@ LIB_DEPENDS=	libgee-0.8.so:devel/libgee
 PORTSCOUT=	limitw:1,even
 
 USES=		gettext gnome meson pkgconfig tar:xz vala:build
-USE_GNOME=	cairo gdkpixbuf2 gtk30
+USE_GNOME=	cairo gdkpixbuf gtk30
 
 .include <bsd.port.options.mk>
 

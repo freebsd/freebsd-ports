@@ -12,7 +12,7 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2
 
 USES=		iconv gmake gnome pkgconfig xorg
-USE_GNOME=	atk cairo gdkpixbuf2 glib20 gtk20 pango
+USE_GNOME=	atk cairo gdkpixbuf glib20 gtk20 pango
 USE_GITHUB=	yes
 USE_XORG=	x11 xmu
 HAS_CONFIGURE=	yes

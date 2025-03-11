@@ -18,7 +18,7 @@ LIB_DEPENDS=	libDesktop.so:x11/deforaos-libdesktop \
 		libfreetype.so:print/freetype2
 
 USES=		desktop-file-utils gnome pkgconfig xorg
-USE_GNOME=	cairo gdkpixbuf2 gtk30
+USE_GNOME=	cairo gdkpixbuf gtk30
 USE_XORG=	x11 xtst
 
 MAKE_ARGS+=	PREFIX=${PREFIX}

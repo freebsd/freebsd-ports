@@ -39,7 +39,7 @@ JPEG_LDFLAGS=		-L${LOCALBASE}/lib
 
 PIXBUF_CONFIGURE_WITH=	gdk-pixbuf2
 PIXBUF_USES=		gettext gnome
-PIXBUF_USE=		gnome=glib20,gdkpixbuf2
+PIXBUF_USE=		gnome=glib20,gdkpixbuf
 
 PNG_LIB_DEPENDS=	libpng.so:graphics/png
 PNG_CONFIGURE_WITH=	png

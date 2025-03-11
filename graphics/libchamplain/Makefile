@@ -18,7 +18,7 @@ LIB_DEPENDS=	libcogl.so:graphics/cogl \
 
 USES=		gettext-runtime gl gnome localbase meson \
 		pkgconfig sqlite tar:xz vala:build xorg
-USE_GNOME=	cairo gdkpixbuf2 gtk30 introspection:build
+USE_GNOME=	cairo gdkpixbuf gtk30 introspection:build
 USE_GL=		egl
 USE_XORG=	x11 xcomposite xdamage xext xfixes xi xrandr
 USE_LDCONFIG=	yes

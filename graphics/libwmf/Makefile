@@ -19,7 +19,7 @@ LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 		libpng.so:graphics/png
 
 USES=		cpe gnome jpeg libtool localbase pkgconfig
-USE_GNOME=	gdkpixbuf2
+USE_GNOME=	gdkpixbuf
 
 CONFIGURE_ARGS=	--with-fontdir=${LOCALBASE}/share/libwmf/fonts \
 		--with-freetype=${LOCALBASE} \

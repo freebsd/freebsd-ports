@@ -20,7 +20,7 @@ RUN_DEPENDS=	xdg-open:devel/xdg-utils
 USES=		compiler:c++20-lang desktop-file-utils gmake gnome pkgconfig \
 		tar:tgz
 
-USE_GNOME=	cairo gdkpixbuf2 gtk30
+USE_GNOME=	cairo gdkpixbuf gtk30
 MAKEFILE=	makefile
 MAKE_ARGS=	GTK3=1
 .if defined(WITH_DEBUG)

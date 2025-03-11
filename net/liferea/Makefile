@@ -25,7 +25,7 @@ RUN_DEPENDS=	gsettings-desktop-schemas>=0:devel/gsettings-desktop-schemas \
 USES=		compiler:c++11-lang cpe desktop-file-utils gettext \
 		gmake gnome libtool localbase \
 		pathfix pkgconfig python sqlite tar:bzip2
-USE_GNOME=	cairo dconf:run gtk30 gdkpixbuf2 intltool introspection \
+USE_GNOME=	cairo dconf:run gtk30 gdkpixbuf intltool introspection \
 		libxslt libxml2
 
 GLIB_SCHEMAS=	net.sf.liferea.gschema.xml

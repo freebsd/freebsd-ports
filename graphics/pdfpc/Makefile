@@ -22,7 +22,7 @@ LIB_DEPENDS=	libgee-0.8.so:devel/libgee \
 		libwebkit2gtk-4.0.so:www/webkit2-gtk@40
 
 USES=		cmake compiler:c11 gnome gstreamer pkgconfig vala:build xorg
-USE_GNOME=	cairo gdkpixbuf2 gtk30
+USE_GNOME=	cairo gdkpixbuf gtk30
 USE_XORG=	x11
 
 USE_GITHUB=	yes

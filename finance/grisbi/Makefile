@@ -19,7 +19,7 @@ LIB_DEPENDS=	libofx.so:finance/libofx		\
 USES=		desktop-file-utils gmake gnome iconv localbase	\
 		pkgconfig shared-mime-info ssl tar:bzip2
 
-USE_GNOME=	cairo gdkpixbuf2 glib20 gtk30 intltool libgsf libxml2
+USE_GNOME=	cairo gdkpixbuf glib20 gtk30 intltool libgsf libxml2
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ENV+=	OPENSSL_CFLAGS="-I${OPENSSLINC}" OPENSSL_LIBS="-L${OPENSSLLIB} -lcrypto"

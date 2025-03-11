@@ -16,7 +16,7 @@ LIB_DEPENDS=	libexif.so:graphics/libexif \
 
 USES=		compiler:c11 desktop-file-utils gettext-tools gmake gnome \
 		pkgconfig tar:bzip2 xfce xorg
-USE_GNOME=	cairo gdkpixbuf2 glib20 gtk30
+USE_GNOME=	cairo gdkpixbuf glib20 gtk30
 USE_XFCE=	libmenu xfconf
 USE_XORG=	ice sm x11
 

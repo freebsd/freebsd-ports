@@ -17,7 +17,7 @@ USES=		autoreconf desktop-file-utils gettext-tools \
 		gmake gnome libtool pathfix pkgconfig tex
 USE_GITHUB=	yes
 GH_TAGNAME=	93a7148  # The 'official' tarball misses last commit with pstricks removal!
-USE_GNOME=	cairo gdkpixbuf2 glib20 gtk20 libxml2
+USE_GNOME=	cairo gdkpixbuf glib20 gtk20 libxml2
 USE_LDCONFIG=	yes
 USE_TEX=	web2c:build dvipdfmx:build
 

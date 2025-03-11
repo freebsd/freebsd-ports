@@ -16,7 +16,7 @@ RUN_DEPENDS=	vte3>=0:x11-toolkits/vte3
 USES=		gmake gettext gnome pkgconfig autoreconf pathfix libtool xorg
 USE_GITHUB=	yes
 GH_ACCOUNT=	lanoxx
-USE_GNOME+=	glib20 gtk30 gdkpixbuf2 pango
+USE_GNOME+=	glib20 gtk30 gdkpixbuf pango
 USE_XORG+=	x11
 
 GNU_CONFIGURE=	yes

@@ -15,7 +15,7 @@ BUILD_DEPENDS=	rubygem-rake>=0:devel/rubygem-rake
 RUN_DEPENDS=	rubygem-gio2>=${PORTVERSION}<${PORTVERSION}_99:devel/rubygem-gio2
 
 USES=		gem gnome
-USE_GNOME=	gdkpixbuf2
+USE_GNOME=	gdkpixbuf
 
 NO_ARCH=	yes
 

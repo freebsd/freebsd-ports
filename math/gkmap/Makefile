@@ -15,7 +15,7 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libharfbuzz.so:print/harfbuzz
 
 USES=		gnome pkgconfig dos2unix
-USE_GNOME=	cairo gdkpixbuf2 gtk20 libglade2 libxml2
+USE_GNOME=	cairo gdkpixbuf gtk20 libglade2 libxml2
 
 GNU_CONFIGURE=	yes
 

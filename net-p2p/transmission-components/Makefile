@@ -62,7 +62,7 @@ EXTRACT_AFTER_ARGS=	--exclude third-party/dht \
 
 .if ${FLAVOR} == gtk
 USES+=		desktop-file-utils gettext-runtime gettext-tools gnome
-USE_GNOME=	gdkpixbuf2 glibmm gtkmm30
+USE_GNOME=	gdkpixbuf glibmm gtkmm30
 .endif
 
 .if ${FLAVOR} == qt

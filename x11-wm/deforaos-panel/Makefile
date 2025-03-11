@@ -20,7 +20,7 @@ LIB_DEPENDS=	libasound.so:audio/alsa-lib \
 		libxkbfile.so:x11/libxkbfile
 
 USES=		desktop-file-utils gnome pkgconfig xorg
-USE_GNOME=	cairo gdkpixbuf2 gtk30
+USE_GNOME=	cairo gdkpixbuf gtk30
 USE_LDCONFIG=	yes
 USE_XORG=	x11
 

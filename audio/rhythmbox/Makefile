@@ -26,7 +26,7 @@ LIB_DEPENDS=	libtotem-plparser.so:multimedia/totem-pl-parser \
 
 USES=		desktop-file-utils gettext gnome gstreamer localbase:ldflags meson \
 		pkgconfig tar:xz vala:build xorg
-USE_GNOME=	cairo gdkpixbuf2 glib20 gtk30 introspection libxml2
+USE_GNOME=	cairo gdkpixbuf glib20 gtk30 introspection libxml2
 USE_XORG=	ice x11 xorgproto
 USE_GSTREAMER=	flac lame jpeg cdparanoia vorbis
 MESON_ARGS=	-Dapidoc=false \

@@ -24,7 +24,7 @@ USES=		compiler:c++11-lang desktop-file-utils gmake \
 USE_GITHUB=	yes
 GH_ACCOUNT=	luakit
 GH_PROJECT=	luakit
-USE_GNOME=	cairo gdkpixbuf2 glib20 gtk30
+USE_GNOME=	cairo gdkpixbuf glib20 gtk30
 
 MAKE_ARGS=	MANPREFIX=${PREFIX}/share/man
 CONFLICTS_INSTALL=	luakit

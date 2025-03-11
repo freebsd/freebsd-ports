@@ -65,7 +65,7 @@ GDK_LIB_DEPENDS=	libexif.so:graphics/libexif \
 			libfontconfig.so:x11-fonts/fontconfig \
 			libfreetype.so:print/freetype2 \
 			libharfbuzz.so:print/harfbuzz
-GDK_USE=		gnome=gdkpixbuf2,pango
+GDK_USE=		gnome=gdkpixbuf,pango
 GDK_CMAKE_BOOL=		MOD_GDK
 
 JACKRACK_DESC=		Enable jackrack module

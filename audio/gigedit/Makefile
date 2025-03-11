@@ -16,7 +16,7 @@ LIB_DEPENDS=	libgig.so:audio/libgig \
 		libsndfile.so:audio/libsndfile
 
 USES=		autoreconf gettext gmake gnome libtool pkgconfig tar:bz2
-USE_GNOME=	cairo cairomm gdkpixbuf2 glib20 glibmm gtk30 gtkmm30 intltool pango pangomm
+USE_GNOME=	cairo cairomm gdkpixbuf glib20 glibmm gtk30 gtkmm30 intltool pango pangomm
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes

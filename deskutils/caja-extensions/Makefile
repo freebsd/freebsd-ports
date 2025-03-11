@@ -22,7 +22,7 @@ PORTSCOUT=	limitw:1,even
 USES=		autoreconf compiler:c11 gettext gmake gnome libtool \
 		localbase mate pathfix pkgconfig tar:xz gstreamer
 USE_MATE=	caja desktop
-USE_GNOME=	cairo gdkpixbuf2 gtk30 intltool
+USE_GNOME=	cairo gdkpixbuf gtk30 intltool
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=${PREFIX}/share

@@ -19,7 +19,7 @@ LIB_DEPENDS=	libpurple.so:net-im/libpurple	\
 
 USES=		go:no_targets cmake dos2unix localbase:ldflags pkgconfig
 USES+=		gnome gettext-runtime
-USE_GNOME=	gdkpixbuf2 glib20
+USE_GNOME=	gdkpixbuf glib20
 
 OPTIONS_MULTI=			DB-backend
 OPTIONS_MULTI_DB-backend=	SQLITE3 PGSQL

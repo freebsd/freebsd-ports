@@ -18,7 +18,7 @@ LIB_DEPENDS=	libpolkit-gobject-1.so:sysutils/polkit
 
 USES=		compiler:c11 gettext-tools gmake gnome libtool pathfix \
 		pkgconfig tar:bzip2 xfce xorg
-USE_GNOME=	cairo gdkpixbuf2 gtk30 glib20 libwnck3
+USE_GNOME=	cairo gdkpixbuf gtk30 glib20 libwnck3
 USE_XFCE=	libmenu xfconf windowing
 USE_XORG=	ice sm x11
 

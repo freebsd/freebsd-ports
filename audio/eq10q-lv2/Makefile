@@ -19,7 +19,7 @@ LIB_DEPENDS=	libfftw3.so:math/fftw3 \
 
 USES=		cmake compiler:c++11-lang dos2unix gnome localbase:ldflags \
 		pkgconfig
-USE_GNOME=	glib20 gtk20 gtkmm24 gdkpixbuf2 atkmm cairo cairomm pangomm
+USE_GNOME=	glib20 gtk20 gtkmm24 gdkpixbuf atkmm cairo cairomm pangomm
 DOS2UNIX_FILES=	dsp/vu.h
 
 OPTIONS_DEFINE_amd64=	SSE

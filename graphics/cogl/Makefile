@@ -16,7 +16,7 @@ CONFLICTS=	clutter-1.6.[0-9]*
 USES=		gettext gl gmake gnome libtool localbase pathfix pkgconfig \
 		tar:xz xorg
 GNU_CONFIGURE=	yes
-USE_GNOME=	cairo gdkpixbuf2 pango introspection:build
+USE_GNOME=	cairo gdkpixbuf pango introspection:build
 USE_GL=		egl gbm
 USE_XORG=	x11 xcomposite xext xdamage xfixes xrandr
 USE_LDCONFIG=	yes

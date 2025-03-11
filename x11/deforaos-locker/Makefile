@@ -20,7 +20,7 @@ LIB_DEPENDS=	libDesktop.so:x11/deforaos-libdesktop \
 		libXss.so:x11/libXScrnSaver
 
 USES=		gnome pkgconfig xorg desktop-file-utils
-USE_GNOME=	gtk30 cairo gdkpixbuf2
+USE_GNOME=	gtk30 cairo gdkpixbuf
 USE_XORG=	x11 xext
 MAKE_ARGS+=	PREFIX=${PREFIX}
 MAKE_ARGS+=	LDFLAGS=${LDFLAGS:Q}

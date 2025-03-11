@@ -24,7 +24,7 @@ USES=		bison cpe desktop-file-utils dos2unix gettext gmake gnome pkgconfig \
 CPE_VENDOR=	${PORTNAME}_project
 
 DOS2UNIX_GLOB=	*.def
-USE_GNOME=	cairo gdkpixbuf2 gtk20 libxml2
+USE_GNOME=	cairo gdkpixbuf gtk20 libxml2
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS+=	--disable-update-desktop

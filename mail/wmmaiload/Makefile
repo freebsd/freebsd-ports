@@ -17,7 +17,7 @@ LIB_DEPENDS=	libharfbuzz.so:print/harfbuzz \
 
 USES=		gmake gnome localbase:ldflags pkgconfig ssl tar:bzip2 xorg
 USE_XORG=	x11 xext xpm
-USE_GNOME=	cairo gdkpixbuf2 gtk20
+USE_GNOME=	cairo gdkpixbuf gtk20
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX}
 CFLAGS+=	-fcommon

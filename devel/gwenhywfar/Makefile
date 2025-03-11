@@ -70,11 +70,11 @@ LIB_DEPENDS+=	libfreetype.so:print/freetype2 \
 		libharfbuzz.so:print/harfbuzz \
 		libfontconfig.so:x11-fonts/fontconfig
 USES+=		gettext-runtime gnome
-USE_GNOME+=	cairo gdkpixbuf2 gtk20
+USE_GNOME+=	cairo gdkpixbuf gtk20
 .  elif ${_GWEN_GUI} == "gtk3"
 LIB_DEPENDS+=	libharfbuzz.so:print/harfbuzz
 USES+=		gettext-runtime gnome
-USE_GNOME+=	cairo gdkpixbuf2 gtk30
+USE_GNOME+=	cairo gdkpixbuf gtk30
 .  elif ${_GWEN_GUI} == "qt5"
 USES+=		compiler:c++11-lang gl qmake:no_env qt:5
 USE_GL=		gl

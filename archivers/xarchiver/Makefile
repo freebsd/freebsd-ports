@@ -20,7 +20,7 @@ RUN_DEPENDS=	${LOCALBASE}/bin/gzip:archivers/gzip \
 USES=		desktop-file-utils gmake gnome libtool:build pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	ib
-USE_GNOME=	cairo gdkpixbuf2 glib20 intltool
+USE_GNOME=	cairo gdkpixbuf glib20 intltool
 
 GNU_CONFIGURE=	yes
 

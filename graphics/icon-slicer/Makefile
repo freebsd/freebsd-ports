@@ -13,7 +13,7 @@ LICENSE=	MIT # in readme and sources; COPYING seem to be unrelated
 LIB_DEPENDS=	libpopt.so:devel/popt
 
 USES=		gnome localbase pkgconfig
-USE_GNOME=	gdkpixbuf2
+USE_GNOME=	gdkpixbuf
 GNU_CONFIGURE=	yes
 
 PORTDOCS=	AUTHORS ChangeLog README

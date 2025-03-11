@@ -31,7 +31,7 @@ PORTSCOUT=	limitw:1,even
 USES=		compiler:c++17-lang gettext gnome localbase meson \
 		pkgconfig python tar:xz vala:build
 USE_LDCONFIG=	yes
-USE_GNOME=	cairo gdkpixbuf2 gtk30 introspection:build
+USE_GNOME=	cairo gdkpixbuf gtk30 introspection:build
 
 # Disable build time flooding.
 CFLAGS+=	-Wno-cast-function-type-strict

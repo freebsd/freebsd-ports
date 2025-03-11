@@ -15,7 +15,7 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 USES=		compiler:c++17-lang cpe gmake gnome iconv pkgconfig tar:tgz
 
-USE_GNOME=	cairo gdkpixbuf2 gtk30
+USE_GNOME=	cairo gdkpixbuf gtk30
 USE_LDCONFIG=	yes
 
 MAKEFILE=	makefile

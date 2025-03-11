@@ -62,7 +62,7 @@ CLIENT_ONLY_CONFIGURE_ON=	--enable-net \
 				--disable-snmp --disable-test --disable-pcnet
 GAPCMON_CONFIGURE_ENABLE=	gapcmon
 GAPCMON_USES=			gnome pkgconfig xorg
-GAPCMON_USE=			GNOME=cairo,gconf2,gdkpixbuf2 XORG=x11,xext
+GAPCMON_USE=			GNOME=cairo,gconf2,gdkpixbuf XORG=x11,xext
 GAPCMON_LIB_DEPENDS=		libfontconfig.so:x11-fonts/fontconfig \
 				libfreetype.so:print/freetype2
 GAPCMON_CONFLICTS=		gapcmon

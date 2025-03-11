@@ -30,7 +30,7 @@ GH_TUPLE=	KhronosGroup:SPIRV-Cross:bccaa94:spirv/../external/SPIRV-Cross \
 		KhronosGroup:Vulkan-Headers:577baa0:vulkan/../external/vulkan-headers \
 		KhronosGroup:glslang:9c7fd1a:glslang/../external/glslang
 
-USE_GNOME=	gdkpixbuf2 gtkmm30
+USE_GNOME=	gdkpixbuf gtkmm30
 USE_SDL=	sdl2
 USE_XORG=	x11 xrandr xext
 

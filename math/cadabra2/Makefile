@@ -48,7 +48,7 @@ OPTIONS_DEFAULT=	GUI
 OPTIONS_SUB=		yes
 
 GUI_USES=		desktop-file-utils
-GUI_USE=		GNOME=gtkmm30,gdkpixbuf2
+GUI_USE=		GNOME=gtkmm30,gdkpixbuf
 GUI_CMAKE_BOOL=		ENABLE_FRONTEND
 
 _PY_SONAME=	${PYTHON_EXT_SUFFIX}

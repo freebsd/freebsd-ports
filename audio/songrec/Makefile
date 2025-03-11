@@ -15,7 +15,7 @@ LIB_DEPENDS=	libasound.so:audio/alsa-lib \
 		libpulse.so:audio/pulseaudio
 
 USES=		cargo gettext-runtime gnome ssl
-USE_GNOME=	gdkpixbuf2 glib20 gtk30
+USE_GNOME=	gdkpixbuf glib20 gtk30
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	marin-m

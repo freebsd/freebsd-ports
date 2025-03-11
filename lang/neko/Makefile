@@ -35,7 +35,7 @@ APACHE_DESC=	Build Apache modules
 UI_DESC=	UI (GTK)
 
 UI_USES=	gnome
-UI_USE=		gnome=atk,cairo,gdkpixbuf2,glib20,gtk20,pango
+UI_USE=		gnome=atk,cairo,gdkpixbuf,glib20,gtk20,pango
 UI_CMAKE_BOOL=	WITH_UI
 
 APACHE_USES=	apache

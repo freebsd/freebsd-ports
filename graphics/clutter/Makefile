@@ -26,7 +26,7 @@ PORTSCOUT=	limit:1,even
 
 USES=		cpe gettext gl gmake gnome libtool localbase pathfix pkgconfig \
 		tar:xz xorg
-USE_GNOME=	atk cairo gdkpixbuf2 pango introspection:build gtk30
+USE_GNOME=	atk cairo gdkpixbuf pango introspection:build gtk30
 USE_GL=		egl
 USE_XORG=	x11 xcomposite xdamage xext xfixes xi xrandr
 GNU_CONFIGURE=	yes

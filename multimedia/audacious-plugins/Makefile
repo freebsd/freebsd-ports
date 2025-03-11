@@ -46,7 +46,7 @@ qt6_CONFLICTS_INSTALL=	audacious-plugins audacious-plugins-gtk2 \
 
 USES=		compiler:c++11-lib gettext-tools gmake gnome iconv localbase \
 		meson pkgconfig tar:bzip2 xorg
-USE_GNOME=	gdkpixbuf2 glib20 libxml2
+USE_GNOME=	gdkpixbuf glib20 libxml2
 USE_XORG=	x11
 
 CONFIGURE_ENV=	LIBRARY_PATH="${LOCALBASE}/lib"

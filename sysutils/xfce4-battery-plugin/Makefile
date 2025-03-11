@@ -16,7 +16,7 @@ LIB_DEPENDS=	libharfbuzz.so:print/harfbuzz
 
 USES=		alias gettext-tools gmake gnome libtool pkgconfig tar:bzip2 \
 		xfce
-USE_GNOME=	cairo gdkpixbuf2 glib20 gtk30
+USE_GNOME=	cairo gdkpixbuf glib20 gtk30
 USE_LDCONFIG=	yes
 USE_XFCE=	libmenu panel
 

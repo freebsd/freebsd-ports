@@ -40,7 +40,7 @@ LIB_DEPENDS=	libasound.so:audio/alsa-lib \
 
 USES=		desktop-file-utils gettext-runtime gl iconv jpeg gnome sqlite tar:xz xorg
 USE_GL=		egl
-USE_GNOME=	atk cairo gdkpixbuf2 glib20 gtk20 gtk30 pango
+USE_GNOME=	atk cairo gdkpixbuf glib20 gtk20 gtk30 pango
 USE_XORG=	ice pixman sm x11 xau xcb xcomposite xcursor xdamage xdmcp xext \
 		xfixes xi xinerama xrandr xrender xt
 WRKSRC=		${WRKDIR}/Zotero_FreeBSD-${ARCH}

@@ -14,7 +14,7 @@ LIB_DEPENDS=	libexif.so:graphics/libexif
 
 GNU_CONFIGURE=	yes
 USES=		gnome libtool pkgconfig
-USE_GNOME=	cairo gdkpixbuf2 gtk20
+USE_GNOME=	cairo gdkpixbuf gtk20
 USE_LDCONFIG=	yes
 
 INSTALL_TARGET=	install-strip

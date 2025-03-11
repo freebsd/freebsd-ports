@@ -20,7 +20,7 @@ USES=		cargo desktop-file-utils gettext gnome gstreamer meson \
 USE_GITLAB=	yes
 GL_SITE=	https://gitlab.gnome.org
 GL_ACCOUNT=	World
-USE_GNOME=	gdkpixbuf2 gtk40 libadwaita
+USE_GNOME=	gdkpixbuf gtk40 libadwaita
 GLIB_SCHEMAS=	io.bassi.Amberol.gschema.xml
 USE_GSTREAMER=	bad good libav
 

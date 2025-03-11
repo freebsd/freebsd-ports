@@ -17,7 +17,7 @@ LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 		libfontconfig.so:x11-fonts/fontconfig
 
 USES=		compiler:c++11-lang gl gnome libtool:keepla pathfix pkgconfig tar:bzip2
-USE_GNOME=	cairo gdkpixbuf2 gtk20
+USE_GNOME=	cairo gdkpixbuf gtk20
 USE_GL=		gl glu
 USE_LDCONFIG=	yes
 

@@ -23,7 +23,7 @@ GH_ACCOUNT=	louis77
 APPNAME=	com.github.louis77.tuner
 PLIST_SUB=	APPNAME=${APPNAME}
 
-USE_GNOME=	gdkpixbuf2 glib20 gtk30 intlhack
+USE_GNOME=	gdkpixbuf glib20 gtk30 intlhack
 GLIB_SCHEMAS=	${APPNAME}.gschema.xml
 
 .include <bsd.port.mk>

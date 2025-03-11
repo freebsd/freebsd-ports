@@ -19,7 +19,7 @@ RUN_DEPENDS=	gpasm:devel/gputils
 
 USES=		compiler:c++11-lang gmake gnome libtool localbase:ldflags pathfix pkgconfig readline
 USE_CXXSTD=	c++11
-USE_GNOME=	cairo gdkpixbuf2 glib20 gtk20 pango
+USE_GNOME=	cairo gdkpixbuf glib20 gtk20 pango
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes

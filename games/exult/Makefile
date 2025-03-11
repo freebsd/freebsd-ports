@@ -18,7 +18,7 @@ BUILD_DEPENDS=	autoconf-archive>=0:devel/autoconf-archive
 
 USES=		autoreconf compiler:c++17-lang gmake libtool localbase \
 		pkgconfig sdl xorg
-USE_GNOME=	cairo gdkpixbuf2
+USE_GNOME=	cairo gdkpixbuf
 USE_SDL=	sdl2
 USE_XORG=	x11 xext
 

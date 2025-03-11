@@ -28,7 +28,7 @@ gtk3_LIB_DEPENDS=	libfm-gtk3.so:x11/libfm@gtk3
 gtk3_CONFLICTS_INSTALL=	pcmanfm
 
 CPE_VENDOR=	${PORTNAME}_project
-USE_GNOME=	cairo gdkpixbuf2 intltool
+USE_GNOME=	cairo gdkpixbuf intltool
 USE_XORG=	x11
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share

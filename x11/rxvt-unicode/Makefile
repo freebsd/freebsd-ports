@@ -106,7 +106,7 @@ SMART_RESIZE_CONFIGURE_ENABLE=	smart-resize
 
 # enable integration with gdk-pixbuf for background images
 GDK_PIXBUF_USES=	gnome
-GDK_PIXBUF_USE=		GNOME=gdkpixbuf2
+GDK_PIXBUF_USE=		GNOME=gdkpixbuf
 GDK_PIXBUF_CONFIGURE_ENABLE=	pixbuf
 
 # enable startup notification

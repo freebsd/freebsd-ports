@@ -16,7 +16,7 @@ LIB_DEPENDS=	libwayland-client.so:graphics/wayland \
 
 USES=		compiler:c++11-lang gl gnome pkgconfig qmake:outsource qt:5 xorg
 USE_GL=		gl
-USE_GNOME=	gtk30 cairo gdkpixbuf2
+USE_GNOME=	gtk30 cairo gdkpixbuf
 USE_QT=		buildtools:build core gui widgets dbus wayland
 USE_XORG=	x11
 

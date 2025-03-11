@@ -32,7 +32,7 @@ USES=		autoreconf compiler:c++11-lib gettext-runtime gettext-tools \
 		gl gnome libtool localbase pathfix perl5 pkgconfig python \
 		sdl shebangfix xorg
 USE_GL=		gl glu
-USE_GNOME=	cairo gdkpixbuf2 gtk30 intltool
+USE_GNOME=	cairo gdkpixbuf gtk30 intltool
 USE_LDCONFIG=	yes
 USE_SDL=	sdl sdl2
 USE_XORG=	x11 xrender

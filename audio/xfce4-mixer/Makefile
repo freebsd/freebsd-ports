@@ -22,7 +22,7 @@ lite_CONFLICTS_INSTALL=		xfce4-mixer-full
 
 USES=		compiler:c11 gettext-tools gmake gnome gstreamer libtool \
 		pkgconfig tar:bzip2 xfce xorg
-USE_GNOME=	cairo gdkpixbuf2 glib20 gtk30
+USE_GNOME=	cairo gdkpixbuf glib20 gtk30
 USE_GSTREAMER=	good
 USE_XFCE=	libmenu panel xfconf
 USE_XORG=	x11

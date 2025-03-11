@@ -27,7 +27,7 @@ OPTIONS_SUB=	yes
 
 X11_CONFIGURE_WITH=	gtk
 X11_DESC=	Build GUI token interface
-X11_USE=	GNOME=gtk30,cairo,gdkpixbuf2
+X11_USE=	GNOME=gtk30,cairo,gdkpixbuf
 X11_USES=	desktop-file-utils
 
 do-test: build

@@ -19,7 +19,7 @@ LIB_DEPENDS=	libfuse3.so:filesystems/fusefs-libs3 \
 USES=		gettext-tools gmake gnome meson pkgconfig python:build shebangfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	flatpak
-USE_GNOME=	gdkpixbuf2 glib20
+USE_GNOME=	gdkpixbuf glib20
 
 MESON_ARGS=	-Ddocumentation=disabled \
 		-Dflatpak-interfaces=disabled \

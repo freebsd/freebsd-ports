@@ -21,7 +21,7 @@ CONFIGURE_ARGS=	--disable-udev --without-hal \
 		--without-python \
 		--with-html-dir="${DOCSDIR:H}"
 USE_CSTD=	gnu89
-USE_GNOME=	gdkpixbuf2 intltool libxml2
+USE_GNOME=	gdkpixbuf intltool libxml2
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 

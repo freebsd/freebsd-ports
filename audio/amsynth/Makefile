@@ -27,7 +27,7 @@ RUN_DEPENDS=	dssi>0:audio/dssi
 
 USES=		compiler:c++11-lang gettext-tools gmake gnome libtool localbase \
 		pkgconfig xorg
-USE_GNOME=	atk cairo gdkpixbuf2 glib20 gtk20 intltool pango
+USE_GNOME=	atk cairo gdkpixbuf glib20 gtk20 intltool pango
 USE_XORG=	x11
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share

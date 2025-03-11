@@ -19,7 +19,7 @@ RUN_DEPENDS=	bash:shells/bash
 
 USES=		desktop-file-utils gettext gmake gnome localbase:ldflags \
 		pkgconfig shared-mime-info shebangfix xorg
-USE_GNOME=	cairo gdkpixbuf2 glib20 gtk20 intltool pango
+USE_GNOME=	cairo gdkpixbuf glib20 gtk20 intltool pango
 USE_XORG=	x11
 
 USE_GITHUB=	yes

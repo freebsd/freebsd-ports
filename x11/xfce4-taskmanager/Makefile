@@ -15,7 +15,7 @@ LIB_DEPENDS=	libharfbuzz.so:print/harfbuzz
 
 USES=		gettext-tools gmake gnome localbase pkgconfig tar:bzip2 xfce \
 		xorg
-USE_GNOME=	cairo gdkpixbuf2 glib20 gtk30 libwnck3
+USE_GNOME=	cairo gdkpixbuf glib20 gtk30 libwnck3
 USE_XFCE=	libmenu xfconf
 USE_XORG=	ice sm x11 xmu xt
 

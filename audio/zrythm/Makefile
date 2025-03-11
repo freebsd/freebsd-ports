@@ -51,7 +51,7 @@ USES=		compiler:c11 desktop-file-utils gettext-tools gettext-runtime \
 		guile:2.2,3.0,alias,conflicts gnome libtool localbase:ldflags \
 		meson pkgconfig python:build shared-mime-info shebangfix xorg
 USE_GITHUB=	yes
-USE_GNOME=	atk cairo gdkpixbuf2 glib20 gtk30 gtksourceview3 libxml2 pango
+USE_GNOME=	atk cairo gdkpixbuf glib20 gtk30 gtksourceview3 libxml2 pango
 USE_XORG=	x11
 
 SHEBANG_FILES=	scripts/collect_translatables.sh

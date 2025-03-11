@@ -17,7 +17,7 @@ LIB_DEPENDS=	libgraphene-1.0.so:graphics/graphene \
 
 USES=		cargo desktop-file-utils gettext gnome gstreamer meson pkgconfig sqlite ssl
 USE_GITLAB=	yes
-USE_GNOME=	gdkpixbuf2 gtk40 libadwaita
+USE_GNOME=	gdkpixbuf gtk40 libadwaita
 USE_GSTREAMER=	gl rust zbar
 GL_SITE=	https://gitlab.gnome.org
 GL_ACCOUNT=	World

@@ -42,7 +42,7 @@ LIB_DEPENDS+=	libgutenprint.so:print/gutenprint
 MAKE_ARGS+=	GUTENPRINT_LIBS='`$$(PKG_CONFIG) --libs gutenprint`'
 .if ${GUT_SLAVE} == "gimp"
 USES+=		gnome
-USE_GNOME+=	cairo gdkpixbuf2
+USE_GNOME+=	cairo gdkpixbuf
 LIB_DEPENDS+=	libbabl-0.1.so:x11/babl \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \

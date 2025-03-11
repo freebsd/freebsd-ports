@@ -36,7 +36,7 @@ USES=		bdb:5 cmake cpe gettext gnome gperf \
 		iconv:wchar_t localbase pathfix pkgconfig python:build \
 		sqlite tar:xz xorg
 USE_CXXSTD=	gnu++17
-USE_GNOME=	cairo gdkpixbuf2 gtk30 intltool introspection:build libxml2
+USE_GNOME=	cairo gdkpixbuf gtk30 intltool introspection:build libxml2
 USE_XORG=	x11
 USE_LDCONFIG=	yes
 CPE_VENDOR=	gnome

@@ -51,7 +51,7 @@ PLIST_SUB+=		GTK="@comment " \
 .elif ${FLAVOR} == gtk
 USES+=			desktop-file-utils
 # FIXME: To appease QA checks, we would have to
-# USE_GNOME+=cairo gdkpixbuf2 and
+# USE_GNOME+=cairo gdkpixbuf and
 # gtk_LIB_DEPENDS+=libharfbuzz.so:print/harfbuzz
 USE_GNOME+=		gtk30
 CONFIGURE_ARGS+=	--program-prefix=g \

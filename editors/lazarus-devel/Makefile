@@ -55,7 +55,7 @@ RUN_DEPENDS+=	${LOCALBASE}/bin/gdb:devel/gdb
 
 .if ${PKGNAMESUFFIX} == "-gtk2-devel"
 USES+=		gnome
-USE_GNOME=	cairo gtk20 gdkpixbuf2
+USE_GNOME=	cairo gtk20 gdkpixbuf
 .endif
 
 post-extract:

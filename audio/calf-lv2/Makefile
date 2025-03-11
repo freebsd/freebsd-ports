@@ -21,7 +21,7 @@ LIB_DEPENDS=	libfluidsynth.so:audio/fluidsynth \
 		libexpat.so:textproc/expat2
 
 USES=		autoreconf compiler:c++11-lang desktop-file-utils gmake gnome libtool localbase pkgconfig
-USE_GNOME=	cairo gdkpixbuf2 gtk20
+USE_GNOME=	cairo gdkpixbuf gtk20
 USE_CXXSTD=	c++11
 USE_LDCONFIG=	yes
 

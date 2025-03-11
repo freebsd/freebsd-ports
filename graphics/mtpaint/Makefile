@@ -19,7 +19,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	wjaguar
 GH_PROJECT=	mtPaint
 GH_TAGNAME=	4ea607e
-USE_GNOME=	cairo gdkpixbuf2 gtk30
+USE_GNOME=	cairo gdkpixbuf gtk30
 USE_XORG=	x11
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX} --mandir=${PREFIX}/share/man/man1 \

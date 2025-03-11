@@ -21,7 +21,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	DATADIRNAME=share
 USE_GITHUB=	yes
 GH_ACCOUNT=	ueno
-USE_GNOME=	atk cairo gdkpixbuf2 glib20 gtk30 intltool pango
+USE_GNOME=	atk cairo gdkpixbuf glib20 gtk30 intltool pango
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 

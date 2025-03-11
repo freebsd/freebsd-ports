@@ -15,7 +15,7 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig
 
 USES=		cargo desktop-file-utils gnome
 USE_GITHUB=	yes
-USE_GNOME=	gdkpixbuf2 gtk40 libadwaita
+USE_GNOME=	gdkpixbuf gtk40 libadwaita
 GH_ACCOUNT=	gabm
 GH_PROJECT=	Satty
 CARGO_ENV=	SOURCE_DIR="${WRKSRC}"

@@ -23,7 +23,7 @@ USES=		desktop-file-utils gettext-tools gnome gstreamer meson \
 		pkgconfig vala:build
 USE_GITHUB=	yes
 GH_ACCOUNT=	GeopJr
-USE_GNOME=	cairo gdkpixbuf2 glib20 gtk40 gtksourceview5 libadwaita libxml2
+USE_GNOME=	cairo gdkpixbuf glib20 gtk40 gtksourceview5 libadwaita libxml2
 GLIB_SCHEMAS=	dev.geopjr.Tuba.gschema.xml
 
 OPTIONS_DEFINE=		SPELLCHECK

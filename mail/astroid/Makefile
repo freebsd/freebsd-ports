@@ -32,7 +32,7 @@ USES=		cmake compiler:c++17-lang desktop-file-utils gettext-runtime gnome \
 		pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	astroidmail
-USE_GNOME=	atk atkmm cairo cairomm gdkpixbuf2 glib20 glibmm gtk30 \
+USE_GNOME=	atk atkmm cairo cairomm gdkpixbuf glib20 glibmm gtk30 \
 		gtkmm30 introspection libsigc++20 pango pangomm vte3
 
 USE_CXXSTD=	c++17

@@ -30,7 +30,7 @@ GL_ACCOUNT=	vala-panel-project
 GL_PROJECT=	vala-panel-appmenu
 GL_TAGNAME=	4e362c22ab3a23c98f13fb379c782786ee057cf6
 
-USE_GNOME=	gtk30 glib20 gtk20 gdkpixbuf2
+USE_GNOME=	gtk30 glib20 gtk20 gdkpixbuf
 GLIB_SCHEMAS=	org.appmenu.gtk-module.gschema.xml
 
 USE_LDCONFIG=	yes

@@ -20,7 +20,7 @@ LIB_DEPENDS=	libuuid.so:misc/e2fsprogs-libuuid \
 
 USES=		compiler gettext gmake gnome libtool pathfix pkgconfig \
 		tar:xz
-USE_GNOME=	gnomeprefix cairo gdkpixbuf2 gtk30 intltool
+USE_GNOME=	gnomeprefix cairo gdkpixbuf gtk30 intltool
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip

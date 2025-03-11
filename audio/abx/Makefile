@@ -18,7 +18,7 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libsndfile.so:audio/libsndfile
 
 USES=		gettext-runtime gmake gnome pkgconfig
-USE_GNOME=	atk cairo glib20 gdkpixbuf2 gtk20 pango
+USE_GNOME=	atk cairo glib20 gdkpixbuf gtk20 pango
 
 GNU_CONFIGURE=	yes
 

@@ -19,7 +19,7 @@ USES=		gmake gnome perl5 pkgconfig xorg
 USE_GITHUB=	yes
 GH_ACCOUNT=	dunst-project
 
-USE_GNOME=	cairo gdkpixbuf2 pango
+USE_GNOME=	cairo gdkpixbuf pango
 USE_PERL5=	build
 USE_XORG=	x11 xext xinerama xrandr xscrnsaver
 

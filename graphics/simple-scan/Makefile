@@ -16,7 +16,7 @@ LIB_DEPENDS=	libgusb.so:devel/libgusb \
 		libsane.so:graphics/sane-backends
 
 USES=		gettext gnome meson pkgconfig python:build shebangfix tar:xz vala:build
-USE_GNOME=	cairo gdkpixbuf2 gtk40 libadwaita
+USE_GNOME=	cairo gdkpixbuf gtk40 libadwaita
 SHEBANG_FILES=	data/meson_compile_gschema.py
 GLIB_SCHEMAS=	org.gnome.SimpleScan.gschema.xml
 

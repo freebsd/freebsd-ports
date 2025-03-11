@@ -14,7 +14,7 @@ LIB_DEPENDS=	libinotify.so:devel/libinotify \
 		libpng.so:graphics/png
 
 USES=		cmake compiler:c++11-lang cpe gettext-runtime gnome localbase:ldflags pkgconfig sdl shared-mime-info
-USE_GNOME=	gdkpixbuf2 glib20
+USE_GNOME=	gdkpixbuf glib20
 USE_SDL=	sdl2
 USE_LDCONFIG=	yes
 

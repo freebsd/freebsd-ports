@@ -20,7 +20,7 @@ RUN_DEPENDS=	dmenu:x11/dmenu \
 		xterm:x11/xterm
 
 USES=		compiler:c11 cpe gnome pkgconfig xorg
-USE_GNOME=	gtk30 pango cairo gdkpixbuf2
+USE_GNOME=	gtk30 pango cairo gdkpixbuf
 USE_XORG=	x11
 
 CPE_VENDOR=	suckless

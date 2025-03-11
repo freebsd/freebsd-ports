@@ -19,7 +19,7 @@ USES=		gettext-runtime gmake gnome libtool mono pathfix perl5 \
 		pkgconfig shebangfix tar:xz
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USE_GNOME=	cairo gdkpixbuf2 gtk30
+USE_GNOME=	cairo gdkpixbuf gtk30
 SHEBANG_FILES=	parser/*.pl
 USE_PERL5=	run
 MAKE_ENV=	INSTALL_STRIP_FLAG=${STRIP}

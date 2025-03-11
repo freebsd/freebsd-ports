@@ -20,7 +20,7 @@ LIB_DEPENDS=	libfolks.so:net-im/folks \
 		libqrencode.so:graphics/libqrencode
 
 USE_GL=		egl
-USE_GNOME=	cairo evolutiondataserver3 gdkpixbuf2 gnomedesktop3 gtk30 \
+USE_GNOME=	cairo evolutiondataserver3 gdkpixbuf gnomedesktop3 gtk30 \
 		intlhack introspection:build libadwaita
 USE_XORG=	x11 xcomposite xdamage xext xfixes xi xrandr
 USES=		compiler:c11 gettext gl gnome localbase meson perl5 pkgconfig \

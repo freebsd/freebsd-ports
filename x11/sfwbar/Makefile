@@ -26,7 +26,7 @@ USES=		gnome meson pkgconfig python:run
 USE_GITHUB=	yes
 GH_ACCOUNT=	LBCrion
 
-USE_GNOME=	cairo gdkpixbuf2 gtk30
+USE_GNOME=	cairo gdkpixbuf gtk30
 
 MESON_ARGS=	-Dbluez=enabled \
 		-Dbsdctl=enabled \

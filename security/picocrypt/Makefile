@@ -18,7 +18,7 @@ LIB_DEPENDS=	libharfbuzz.so:print/harfbuzz
 
 USES=		gl gnome go:modules pkgconfig xorg
 USE_GL=		gl
-USE_GNOME=	cairo gdkpixbuf2 gtk30
+USE_GNOME=	cairo gdkpixbuf gtk30
 USE_XORG=	x11 xau xcb xdmcp
 USE_GITHUB=	yes
 GH_ACCOUNT=	HACKERALERT

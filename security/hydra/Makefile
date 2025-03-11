@@ -40,7 +40,7 @@ SSH_LIB_DEPENDS=	libssh.so.4:security/libssh
 X11_USES=		gettext gnome pkgconfig
 X11_LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 			libfreetype.so:print/freetype2
-X11_USE=		gnome=atk,cairo,gdkpixbuf2,glib20,gtk20,pango
+X11_USE=		gnome=atk,cairo,gdkpixbuf,glib20,gtk20,pango
 X11_PLIST_FILES=	bin/xhydra share/man/man1/xhydra.1.gz
 
 .include <bsd.port.pre.mk>

@@ -18,7 +18,7 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2
 
 USES=		gnome tar:bzip2 kmod pkgconfig
-USE_GNOME=	gtk20 cairo gdkpixbuf2
+USE_GNOME=	gtk20 cairo gdkpixbuf
 USE_RC_SUBR=	oss
 
 HAS_CONFIGURE=	yes

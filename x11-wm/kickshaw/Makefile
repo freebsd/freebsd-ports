@@ -15,7 +15,7 @@ LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 		libfontconfig.so:x11-fonts/fontconfig
 
 USES=		gnome pkgconfig tar:bzip2
-USE_GNOME=	cairo gdkpixbuf2
+USE_GNOME=	cairo gdkpixbuf
 MAKE_ARGS=	CC="${CC}"
 
 OPTIONS_DEFINE=	GTK2 GTK3

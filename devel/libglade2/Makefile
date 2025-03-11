@@ -19,7 +19,7 @@ USES=		tar:bzip2
 RUN_DEPENDS=	xmlcatmgr:textproc/xmlcatmgr
 
 USES+=		gmake gnome libtool pathfix pkgconfig localbase
-USE_GNOME=	cairo gdkpixbuf2 libxml2 gtk20
+USE_GNOME=	cairo gdkpixbuf libxml2 gtk20
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes

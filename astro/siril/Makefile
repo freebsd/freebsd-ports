@@ -38,7 +38,7 @@ LIB_DEPENDS+=	libopencv_photo.so:graphics/opencv # for some reason, configure fa
 
 USES=		cmake:indirect compiler:c++11-lang desktop-file-utils gettext \
 		gnome meson pkgconfig jpeg shared-mime-info tar:bz2
-USE_GNOME=	atk cairo gdkpixbuf2 gtk30 intltool pango
+USE_GNOME=	atk cairo gdkpixbuf gtk30 intltool pango
 
 BINARY_ALIAS=	git=false
 

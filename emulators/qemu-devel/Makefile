@@ -89,7 +89,7 @@ GNUTLS_LIB_DEPENDS=	libgnutls.so:security/gnutls
 GNUTLS_CONFIGURE_OFF=	--disable-gnutls
 GTK3_LIB_DEPENDS=	libxkbcommon.so:x11/libxkbcommon
 GTK3_USES=	gettext gl
-GTK3_USE=	GNOME=gdkpixbuf2,vte3 XORG=x11,xext
+GTK3_USE=	GNOME=gdkpixbuf,vte3 XORG=x11,xext
 GTK3_CONFIGURE_OFF=	--disable-gtk --disable-vte
 JPEG_USES=		jpeg
 JPEG_CONFIGURE_OFF=	--disable-vnc-jpeg
@@ -112,7 +112,7 @@ USBREDIR_RUN_DEPENDS=	usbredir>=0.6:net/usbredir
 USBREDIR_CONFIGURE_OFF=	--disable-usb-redir
 VDE_CONFIGURE_OFF=	--disable-vde
 X11_USES=	sdl
-X11_USE=	SDL=sdl2 XORG=x11,xext GNOME=gdkpixbuf2
+X11_USE=	SDL=sdl2 XORG=x11,xext GNOME=gdkpixbuf
 X11_CONFIGURE_ENABLE=	sdl
 
 .include <bsd.port.options.mk>

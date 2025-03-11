@@ -27,6 +27,6 @@ PORTSCOUT=	limitw:1,even
 
 USES=		compiler:c11 cmake gettext gnome localbase pathfix \
 		pkgconfig sqlite tar:xz
-USE_GNOME=	cairo gdkpixbuf2 evolutiondataserver3 intltool
+USE_GNOME=	cairo gdkpixbuf evolutiondataserver3 intltool
 
 .include <bsd.port.mk>

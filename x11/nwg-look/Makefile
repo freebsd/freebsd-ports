@@ -15,7 +15,7 @@ RUN_DEPENDS=	xcur2png:x11/xcur2png
 
 USES=		gnome go:modules pkgconfig
 USE_GITHUB=	yes
-USE_GNOME=	cairo gdkpixbuf2 gtk30
+USE_GNOME=	cairo gdkpixbuf gtk30
 GH_ACCOUNT=	nwg-piotr
 GH_TUPLE=	golang:sys:v0.29.0:golang_sys/vendor/golang.org/x/sys \
 		gotk3:gotk3:ff349ae13f56:gotk3_gotk3/vendor/github.com/gotk3/gotk3 \

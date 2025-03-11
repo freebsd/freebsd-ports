@@ -31,7 +31,7 @@ GH_ACCOUNT=	linuxmint
 
 USE_XORG=	x11 xext xinerama xrandr xscrnsaver
 
-USE_GNOME=	cairo gdkpixbuf2 glib20 intltool introspection:build libgnomekbd pygobject3
+USE_GNOME=	cairo gdkpixbuf glib20 intltool introspection:build libgnomekbd pygobject3
 
 SHEBANG_GLOB=	*.py
 BINARY_ALIAS=	python3=${PYTHON_CMD}

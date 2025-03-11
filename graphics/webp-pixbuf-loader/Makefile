@@ -12,7 +12,7 @@ LICENSE=	LGPL20+
 LIB_DEPENDS=	libwebp.so:graphics/webp
 
 USES=		gnome meson pkgconfig
-USE_GNOME=	glib20 gdkpixbuf2
+USE_GNOME=	glib20 gdkpixbuf
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	aruiz

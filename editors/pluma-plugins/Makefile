@@ -28,7 +28,7 @@ PORTSCOUT=	limitw:1,even
 
 USES=		compiler:c11 gettext gnome localbase gmake pkgconfig \
 		python shebangfix tar:xz
-USE_GNOME=	cairo gdkpixbuf2 gtk30 gtksourceview4 intlhack introspection \
+USE_GNOME=	cairo gdkpixbuf gtk30 gtksourceview4 intlhack introspection \
 		intltool vte3
 USE_CSTD=	c11
 USE_LDCONFIG=	yes

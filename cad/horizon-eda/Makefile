@@ -32,7 +32,7 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libzmq.so:net/libzmq4
 
 USES=		desktop-file-utils gnome libarchive localbase meson pkgconfig python:build sqlite
-USE_GNOME=	atkmm gdkpixbuf2 gtkmm30 librsvg2
+USE_GNOME=	atkmm gdkpixbuf gtkmm30 librsvg2
 
 USE_GITHUB=	yes
 GH_PROJECT=	horizon

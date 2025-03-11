@@ -50,7 +50,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dbus>0:devel/py-dbus@${PY_FLAVOR} \
 USES=		compiler:c11 cpe gettext-runtime gettext-tools:run gl gnome gstreamer \
 		meson perl5 pkgconfig python shebangfix xorg
 CPE_VENDOR=	linuxmint
-USE_GNOME=	cairo gdkpixbuf2 glib20 gtk30 intltool introspection libxml2 pygobject3
+USE_GNOME=	cairo gdkpixbuf glib20 gtk30 intltool introspection libxml2 pygobject3
 USE_XORG=	x11 xfixes
 USE_GL=		gl
 USE_PERL5=	build

@@ -26,7 +26,7 @@ TEST_TARGET=	check
 
 USES=		compiler:c++17-lang gmake gnome iconv:wchar_t libtool localbase \
 		pkgconfig sqlite tar:xz
-USE_GNOME=	cairo gtk30 gdkpixbuf2
+USE_GNOME=	cairo gtk30 gdkpixbuf
 INSTALL_TARGET=	install-strip
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--enable-fast-install

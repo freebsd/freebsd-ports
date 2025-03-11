@@ -25,7 +25,7 @@ USES=		gettext-tools gmake gl gnome libtool:keepla localbase:ldflags \
 		pathfix pkgconfig tar:bzip2 xorg
 USE_GL=		glu
 USE_CSTD=	gnu89
-USE_GNOME=	gdkpixbuf2 intltool libxslt
+USE_GNOME=	gdkpixbuf intltool libxslt
 USE_XORG=	ice sm x11 xcomposite xdamage xext xfixes xinerama xorgproto xrandr xrender
 USE_LDCONFIG=	yes
 

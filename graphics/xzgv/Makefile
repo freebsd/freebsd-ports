@@ -17,7 +17,7 @@ LIB_DEPENDS=	libexif.so:graphics/libexif \
 		libfontconfig.so:x11-fonts/fontconfig
 
 USES=		cpe gmake gnome pkgconfig xorg
-USE_GNOME=	cairo gdkpixbuf2 gtk20
+USE_GNOME=	cairo gdkpixbuf gtk20
 USE_XORG=	x11
 
 LDFLAGS+=	-L${LOCALBASE}/lib -lX11 -lm

@@ -20,7 +20,7 @@ qt6_CONFLICTS_INSTALL=	${PORTNAME}-gtk2 ${PORTNAME}-qt5
 
 USES=		desktop-file-utils dos2unix fpc gnome lazarus:flavors tar:xz xorg
 DOS2UNIX_REGEX=	.*\.([txt]|pas|lpi|lpr|txt)
-USE_GNOME_gtk2=	cairo gdkpixbuf2 glib20 pango
+USE_GNOME_gtk2=	cairo gdkpixbuf glib20 pango
 USE_GNOME+=	${USE_GNOME_${FLAVOR}}
 USE_XORG=	x11
 

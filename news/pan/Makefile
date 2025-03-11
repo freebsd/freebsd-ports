@@ -22,7 +22,7 @@ LIB_DEPENDS=	libpcre.so:devel/pcre \
 USES=		compiler:c++11-lang desktop-file-utils gettext-tools:build \
 		gmake gnome iconv localbase pathfix pkgconfig tar:bzip2
 USE_CXXSTD=	c++14
-USE_GNOME=	cairo gdkpixbuf2 intlhack
+USE_GNOME=	cairo gdkpixbuf intlhack
 
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=${PREFIX}/share

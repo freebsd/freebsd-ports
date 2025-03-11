@@ -16,7 +16,7 @@ LIB_DEPENDS=	libtag.so:audio/taglib \
 
 USES=		compiler:c11 gettext-tools gmake gnome libtool pkgconfig \
 		tar:bzip2 xfce
-USE_GNOME=	cairo gdkpixbuf2 glib20 gtk30
+USE_GNOME=	cairo gdkpixbuf glib20 gtk30
 USE_XFCE=	libutil thunar
 
 GNU_CONFIGURE=	yes

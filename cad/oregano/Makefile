@@ -21,7 +21,7 @@ USES=		compiler:c11 desktop-file-utils gettext gnome pkgconfig \
 		shared-mime-info waf
 USE_GITHUB=	yes
 GH_ACCOUNT=	drahnr
-USE_GNOME=	atk cairo gdkpixbuf2 glib20 gtk30 gtksourceview3 intltool libxml2 pango
+USE_GNOME=	atk cairo gdkpixbuf glib20 gtk30 gtksourceview3 intltool libxml2 pango
 
 GLIB_SCHEMAS=	io.ahoi.oregano.gschema.xml
 

@@ -26,7 +26,7 @@ USES=		compiler:c++11-lib gl gmake gnome iconv jpeg localbase \
 		pkgconfig tar:bz2 xorg
 USE_XORG=	x11 sm xxf86vm xinerama
 USE_GL=		gl glu
-USE_GNOME=	cairo gdkpixbuf2
+USE_GNOME=	cairo gdkpixbuf
 USE_LDCONFIG=	yes
 USE_CXXSTD=	c++11
 GNU_CONFIGURE=	yes

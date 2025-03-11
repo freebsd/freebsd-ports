@@ -46,13 +46,13 @@ GIR_USE=			GNOME=introspection:build
 GIR_CONFIGURE_WITH=		gir
 
 GTK2_USES=			gnome gettext-runtime
-GTK2_USE=			GNOME=atk,cairo,gdkpixbuf2,glib20,gtk20,pango
+GTK2_USE=			GNOME=atk,cairo,gdkpixbuf,glib20,gtk20,pango
 GTK2_LIB_DEPENDS=		libfreetype.so:print/freetype2 \
 				libfontconfig.so:x11-fonts/fontconfig
 GTK2_CONFIGURE_ON=		--with-gtk=gtk2
 
 GTK3_USES=			gnome gettext-runtime
-GTK3_USE=			GNOME=atk,cairo,gdkpixbuf2,glib20,gtk30,pango
+GTK3_USE=			GNOME=atk,cairo,gdkpixbuf,glib20,gtk30,pango
 GTK3_CONFIGURE_ON=		--with-gtk=gtk3
 
 GTK_NONE_CONFIGURE_ON=		--with-gtk=no

@@ -26,7 +26,7 @@ DATADIR=	${DMDIR}/${PORTNAME}
 
 USES=		cmake dos2unix gettext gnome jpeg openal pkgconfig sdl
 DOS2UNIX_FILES=	src/p_spec.cpp
-USE_GNOME=	atk cairo gdkpixbuf2 gtk20 pango
+USE_GNOME=	atk cairo gdkpixbuf gtk20 pango
 USE_SDL=	sdl2
 CMAKE_ARGS=	-DNO_FMOD:BOOL=ON
 CXXFLAGS+=	-DSHARE_DIR=\\\"${DATADIR}\\\"

@@ -14,7 +14,7 @@ LICENSE=	GPLv2
 USES=		compiler:c++11-lang gl gmake gnome pkgconfig tar:bzip2 xorg
 USE_CXXSTD=	c++14
 USE_GL=		gl glu
-USE_GNOME=	cairo gdkpixbuf2 gtk20
+USE_GNOME=	cairo gdkpixbuf gtk20
 USE_XORG=	x11
 
 ALL_TARGET=	${PORTNAME}

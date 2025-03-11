@@ -15,7 +15,7 @@ LIB_DEPENDS=	libltdl.so:devel/libltdl
 
 USES=		autoreconf compiler gettext gmake gnome iconv libtool perl5 \
 		pkgconfig
-USE_GNOME=	gdkpixbuf2 gtk20
+USE_GNOME=	gdkpixbuf gtk20
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes

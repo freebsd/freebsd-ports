@@ -14,7 +14,7 @@ LICENSE_FILE_MIT=	${WRKSRC}/${PORTNAME}_core/LICENSE
 USES=		cargo gnome
 USE_GITHUB=	yes
 GH_ACCOUNT=	qarmin
-USE_GNOME=	gdkpixbuf2 gtk40
+USE_GNOME=	gdkpixbuf gtk40
 
 # XXX https://github.com/rust-lang/cargo/issues/4101
 CARGO_INSTALL_PATH=	${PLIST_FILES:Mbin/*:T}

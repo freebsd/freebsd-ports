@@ -14,7 +14,7 @@ LIB_DEPENDS=	libharfbuzz.so:print/harfbuzz \
 		libgtk-layer-shell.so:x11-toolkits/gtk-layer-shell
 
 USES=		gettext-tools gmake gnome libtool pkgconfig tar:bzip2 xfce xorg
-USE_GNOME=	cairo gdkpixbuf2 gtk30
+USE_GNOME=	cairo gdkpixbuf gtk30
 USE_XFCE=	libmenu panel windowing
 USE_XORG=	x11
 

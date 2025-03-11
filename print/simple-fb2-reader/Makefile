@@ -15,6 +15,6 @@ USES=		cmake desktop-file-utils gettext-runtime gnome pkgconfig \
 		shared-mime-info sqlite
 USE_GITHUB=	yes
 GH_ACCOUNT=	Cactus64k
-USE_GNOME=	cairo gdkpixbuf2 gtk30 libxml2
+USE_GNOME=	cairo gdkpixbuf gtk30 libxml2
 
 .include <bsd.port.mk>
