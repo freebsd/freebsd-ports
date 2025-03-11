@@ -1,4 +1,4 @@
-TIMESTAMP = 1739855175
+TIMESTAMP = 1741672501
 SHA256 (rust/crates/addr2line-0.24.2.crate) = dfbe277e56a376000877090da837660b4427aad530e3028d44e0bffe4f89a1c1
 SIZE (rust/crates/addr2line-0.24.2.crate) = 39015
 SHA256 (rust/crates/adler2-2.0.0.crate) = 512761e0bb2578dd7380c6baaa0f4ce03e84f95e960231d1dec8bf4d7d6e2627
@@ -925,5 +925,5 @@ SHA256 (rust/crates/zerovec-0.10.4.crate) = aa2b893d79df23bfb12d5461018d408ea19d
 SIZE (rust/crates/zerovec-0.10.4.crate) = 126398
 SHA256 (rust/crates/zerovec-derive-0.10.3.crate) = 6eafa6dfb17584ea3e2bd6e76e0cc15ad7af12b09abdd1ca55961bed9b1063c6
 SIZE (rust/crates/zerovec-derive-0.10.3.crate) = 19438
-SHA256 (nick42d-youtui-youtui-v0.0.20_GH0.tar.gz) = dacd91f870281742e2be75d7b9e303d1e8192b02cbbcadd96cc5b408eca880f2
-SIZE (nick42d-youtui-youtui-v0.0.20_GH0.tar.gz) = 3239052
+SHA256 (nick42d-youtui-youtui-v0.0.21_GH0.tar.gz) = c4f78c8fd75906c8d16d83787279ae9c589f6f851e084f07a566249c478d6e96
+SIZE (nick42d-youtui-youtui-v0.0.21_GH0.tar.gz) = 3295839
