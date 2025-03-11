@@ -1,6 +1,6 @@
 PORTNAME=	pygccxml
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.5.0
+DISTVERSION=	3.0.0
 CATEGORIES=	textproc python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -27,5 +27,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	CastXML
 
 NO_ARCH=	yes
+
+# tests as of 3.0.0: 1 failed, 283 passed in 4253.52s (1:10:53) (1 test fails because 'python' isn't found)
 
 .include <bsd.port.mk>
