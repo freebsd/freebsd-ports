@@ -127,9 +127,10 @@ EXTDOCS=	readline/README ripper/README stringio/README.md \
 		syslog/syslog.txt
 
 # Macros to change variables in rbconfig.rb
+# NOTE: The last argument RB_SET_CONF_VAR is a dummy argument. See bug 222872.
 RB_SET_CONF_VAR=	${SH} -c \
 			'${REINPLACE_CMD} -E -e "s,(CONFIG\[\"$$0\"\][[:space:]]*=[[:space:]]*)(\(?)(.*)(\)?),\1\2$$1\4," ${WRKSRC}/rbconfig.rb' \
-			--
+			RB_SET_CONF_VAR
 
 post-build:
 #
