@@ -148,6 +148,6 @@ share/polkit-1/actions/org.freedesktop.packagekit.policy
 share/polkit-1/rules.d/org.freedesktop.packagekit.rules
 share/vala/vapi/packagekit-glib2.deps
 share/vala/vapi/packagekit-glib2.vapi
-/var/lib/PackageKit/transactions.db
+@sample /var/lib/PackageKit/transactions.db.sample
 @dir /var/lib/PackageKit
 @dir /var/lib
