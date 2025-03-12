@@ -1,7 +1,8 @@
 PORTNAME=	ndoutils
-PORTVERSION=	2.1.3
+DISTVERSION=	2.1.4
 CATEGORIES=	net-mgmt
-MASTER_SITES=	SF/nagios/${PORTNAME}-2.x/${PORTNAME}-${PORTVERSION}
+MASTER_SITES=	SF/nagios/${PORTNAME}-2.x/${PORTNAME}-${PORTVERSION} \
+		https://github.com/NagiosEnterprises/${PORTNAME}/releases/download/${PORTNAME}-${DISTVERSION}/
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Keep Nagios perfdata in MySQL database
@@ -10,28 +11,32 @@ WWW=		https://www.nagios.org/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+USES=		compiler:c11 mysql perl5 ssl
+USE_RC_SUBR=	ndo2db
+
 GNU_CONFIGURE=	yes
-CFLAGS+=	-I${LOCALBASE}/include -fPIC
 CONFIGURE_ARGS+=	--sysconfdir=${PREFIX}/etc/ndoutils \
 			--localstatedir=/var/run --enable-mysql \
 			--with-mysql=${LOCALBASE}
 
 MAKE_JOBS_UNSAFE=	yes
 
+CFLAGS+=	-I${LOCALBASE}/include -fPIC
+
+SUB_FILES=	pkg-message
+
 OPTIONS_DEFINE=	DOCS NANOSLEEP
+OPTIONS_DEFAULT=	NAGIOS4X NANOSLEEP
 OPTIONS_SINGLE=		NAGIOS_BACKEND
 OPTIONS_SINGLE_NAGIOS_BACKEND=	NAGIOS3X NAGIOS4X
-OPTIONS_DEFAULT=	NAGIOS3X NANOSLEEP
+
 NAGIOS3X_DESC=		For Nagios 3.X Series
 NAGIOS4X_DESC=		For Nagios 4.X Series
 NANOSLEEP_DESC=		Use of nanosleep in event timing
+
 NAGIOS3X_RUN_DEPENDS=	${LOCALBASE}/bin/nagios:net-mgmt/nagios
 NAGIOS4X_RUN_DEPENDS=	${LOCALBASE}/bin/nagios:net-mgmt/nagios4
 NANOSLEEP_CONFIGURE_ENABLE=	nanosleep
-
-USES=		compiler:c11 mysql perl5 ssl
-USE_RC_SUBR=	ndo2db
-SUB_FILES=	pkg-message
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/file2sock ${STAGEDIR}${PREFIX}/bin
@@ -44,6 +49,10 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/config/ndo2db.cfg-sample ${STAGEDIR}${PREFIX}/etc/nagios/ndo2db.cfg-sample
 	${INSTALL_DATA} ${WRKSRC}/config/ndomod.cfg-sample ${STAGEDIR}${PREFIX}/etc/nagios/ndomod.cfg-sample
 
+do-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@(cd ${WRKSRC}/docs && ${COPYTREE_SHARE} \* ${STAGEDIR}${DOCSDIR}/)
+
 do-install-NAGIOS3X-on:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/ndo2db-3x ${STAGEDIR}${PREFIX}/bin/ndo2db
 	${INSTALL_PROGRAM} ${WRKSRC}/src/ndomod-3x.o ${STAGEDIR}${PREFIX}/bin/ndomod.o
@@ -51,9 +60,5 @@ do-install-NAGIOS3X-on:
 do-install-NAGIOS4X-on:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/ndo2db-4x ${STAGEDIR}${PREFIX}/bin/ndo2db
 	${INSTALL_PROGRAM} ${WRKSRC}/src/ndomod-4x.o ${STAGEDIR}${PREFIX}/bin/ndomod.o
-
-do-install-DOCS-on:
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	@(cd ${WRKSRC}/docs && ${COPYTREE_SHARE} \* ${STAGEDIR}${DOCSDIR}/)
 
 .include <bsd.port.mk>
