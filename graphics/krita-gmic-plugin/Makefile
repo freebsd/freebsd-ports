@@ -1,6 +1,6 @@
 PORTNAME=	gmic
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.5.2.1
+DISTVERSION=	3.5.3.0
 CATEGORIES=	graphics kde
 MASTER_SITES=	https://github.com/vanyossi/${PORTNAME}/releases/download/v${PORTVERSION}/
 PKGNAMEPREFIX=	krita-
