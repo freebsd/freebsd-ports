@@ -13,7 +13,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	docbook-xsl>=0:textproc/docbook-xsl \
 		${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR} \
-		xmllint:textproc/libxml2
+		xmllint:textproc/libxml2 \
+		xsltproc:textproc/libxslt
 RUN_DEPENDS=	docbook-xsl>=0:textproc/docbook-xsl \
 		xmllint:textproc/libxml2 \
 		xsltproc:textproc/libxslt
