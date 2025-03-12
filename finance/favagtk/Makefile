@@ -4,7 +4,7 @@ DISTVERSION=	1.0.0
 CATEGORIES=	finance
 
 MAINTAINER=	nivit@FreeBSD.org
-COMMENT=	Desktop application for Fava and Beancoun
+COMMENT=	Desktop application for Fava and Beancount
 WWW=		https://gitlab.gnome.org/johannesjh/favagtk
 
 LICENSE=	GPLv3
