@@ -28,7 +28,7 @@ GH_TUPLE=       \
                 SiaFoundation:jape:v0.12.1:siafoundation_jape/vendor/go.sia.tech/jape \
                 SiaFoundation:mux:v1.4.0:siafoundation_mux/vendor/go.sia.tech/mux \
                 SiaFoundation:web:5611d44a533e:siafoundation_web/vendor/go.sia.tech/web \
-                SiaFoundation:web:v0.77.0:siafoundation_web_1/vendor/go.sia.tech/web/renterd \
+                SiaFoundation:web:renterd/v0.77.0:siafoundation_web_1/vendor/go.sia.tech/web/renterd \
                 aws:aws-sdk-go:v1.55.6:aws_aws_sdk_go/vendor/github.com/aws/aws-sdk-go \
                 cloudflare:cloudflare-go:v0.115.0:cloudflare_cloudflare_go/vendor/github.com/cloudflare/cloudflare-go \
                 etcd-io:bbolt:v1.4.0:etcd_io_bbolt/vendor/go.etcd.io/bbolt \
