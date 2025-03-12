@@ -6,6 +6,7 @@
     SUBDIR += archivemount
     SUBDIR += automount
     SUBDIR += avfs
+    SUBDIR += befuse
     SUBDIR += bindfs
     SUBDIR += cfs
     SUBDIR += chironfs
