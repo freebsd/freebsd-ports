@@ -1,0 +1,24 @@
+#!/usr/bin/env python
+
+import sys
+import sysconfig
+from setuptools import setup, Extension
+
+tkversion = "%%TK_VER%%"
+prefix = sysconfig.get_config_var('prefix')
+x11base = sys.prefix or '/usr/X11R6'
+inc_dirs = [prefix + "/include",
+            prefix + "/include/tcl" + tkversion,
+            prefix + "/include/tk" + tkversion,
+            x11base + "/include"]
+lib_dirs = [prefix + "/lib", x11base + "/lib"]
+libs = ["tcl" + tkversion.replace(".", ""),
+        "tk" + tkversion.replace(".", ""),
+        "X11"]
+
+setup(ext_modules = [Extension('_tkinter', ['_tkinter.c', 'tkappinit.c'],
+                               define_macros=[('WITH_APPINIT', 1)],
+                               include_dirs = inc_dirs,
+                               libraries = libs,
+                               library_dirs = lib_dirs)]
+      )

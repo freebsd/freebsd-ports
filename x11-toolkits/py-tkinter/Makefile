@@ -1,34 +1,46 @@
 PORTNAME=	tkinter
 DISTVERSION=	${PYTHON_DISTVERSION}
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	x11-toolkits python
 MASTER_SITES=	PYTHON/ftp/python/${DISTVERSION}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	Python-${DISTVERSION}
+DIST_SUBDIR=	python
 
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	Python bindings to the Tk widget set (Python ${PYTHON_VER})
 
 LICENSE=	PSFL
+LICENSE_FILE=	${WRKDIR}/Python-${DISTVERSION}/LICENSE
 
-PORTSCOUT=	ignore:1
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>0:devel/py-setuptools@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
 
-USES=		compiler:c11 python tar:xz tk
-USE_PYTHON=	distutils autoplist allflavors
+USES=		compiler:c11 python tar:xz tk:86
+USE_PYTHON=	allflavors autoplist pep517
 
-DIST_SUBDIR=	python
 DISTINFO_FILE=	${PORTSDIR}/lang/python${PYTHON_SUFFIX}/distinfo
 WRKSRC_SUBDIR=	Modules
 
-PYDISTUTILS_INSTALLARGS+=	--install-lib ${PYTHON_LIBDIR}/lib-dynload
+SUB_LIST+=	DISTVERSION=${DISTVERSION} \
+		TK_VER=${TK_VER}
+SUB_FILES=	pyproject.toml \
+		setup.py
+PLIST_FILES=	${PYTHONPREFIX_LIBDIR:S;${PREFIX}/;;}/lib-dynload/_tkinter${PYTHON_EXT_SUFFIX}.so
 
-.include <bsd.port.pre.mk>
+PORTSCOUT=	ignore:1
 
-post-extract:
-	@${SED} -e "s|%%TK_VER%%|${TK_VER}|" ${FILESDIR}/setup.py > ${WRKSRC}/setup.py
+pre-configure:
+	@${MV} ${WRKDIR}/pyproject.toml ${WRKSRC}
+	@${MV} ${WRKDIR}/setup.py ${WRKSRC}
 
 post-install:
-#	${STRIP_CMD} ${STAGEDIR}${PYTHON_LIBDIR}/lib-dynload/_tkinter.cpython-${PYTHON_SUFFIX}.so
-	${STRIP_CMD} ${STAGEDIR}${PYTHON_LIBDIR}/lib-dynload/_tkinter*.so
+	@${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/_tkinter${PYTHON_EXT_SUFFIX}.so
+	# lib-dynload is the expected location
+	@${MKDIR} ${STAGEDIR}${PYTHONPREFIX_LIBDIR}/lib-dynload
+	@(cd ${STAGEDIR}${PYTHONPREFIX_LIBDIR}/lib-dynload && ${LN} -s ../site-packages/_tkinter${PYTHON_EXT_SUFFIX}.so)
 
-.include <bsd.port.post.mk>
+do-test:
+	@${PYTHON_CMD} -c 'import tkinter' # minimal smoke test
+
+.include <bsd.port.mk>
