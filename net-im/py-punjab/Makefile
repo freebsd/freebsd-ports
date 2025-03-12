@@ -9,6 +9,10 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	HTTP XMPP client interface
 WWW=		https://github.com/twonds/punjab
 
+BROKEN=		fails at runtime
+DEPRECATED=	Abandoned project, not compatible with decent python/twisted
+EXPIRATION_DATE=	2025-04-12
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}twisted>=0:devel/py-twisted@${PY_FLAVOR}
 
 NO_ARCH=	yes
