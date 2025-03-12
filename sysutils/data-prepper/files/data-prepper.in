@@ -1,0 +1,54 @@
+#!/bin/sh
+
+# PROVIDE: data-prepper
+# REQUIRE: DAEMON
+# BEFORE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following line to /etc/rc.conf to enable opensearch:
+#
+# data_prepper_enable="YES"
+#
+# data_prepper_user (username): Set to opensearch by default.
+#               Set it to required username.
+# data_prepper_group (group):   Set to opensearch by default.
+#               Set it to required group.
+# data_prepper_config (path):   Set to %%PREFIX%%/etc/data-prepper/data-prepper.yaml by default.
+#               Set it to the config file location.
+# data_prepper_java_home (path): Set to %%JAVA_HOME%% by default.
+#               Set it to the root of the JDK to use.
+#
+. /etc/rc.subr
+
+name=data_prepper
+rcvar=data_prepper_enable
+
+load_rc_config ${name}
+
+: ${data_prepper_enable:=NO}
+: ${data_prepper_user:=%%SEARCHUSER%%}
+: ${data_prepper_group:=%%SEARCHGROUP%%}
+: ${data_prepper_config:=%%PREFIX%%/etc/data-prepper/data-prepper-config.yaml}
+: ${data_prepper_config_dir:=%%PREFIX%%/etc/data-prepper}
+: ${data_prepper_java_home:="%%JAVA_HOME%%"}
+: ${data_prepper_home:="%%PREFIX%%/lib/data-prepper"}
+
+export JAVA_HOME=${data_prepper_java_home}
+required_files="${data_prepper_config}"
+pidfile=/var/run/${name}/${name}.pid
+procname=${data_prepper_home}/bin/data-prepper
+command="/usr/sbin/daemon"
+
+command_args="-P ${pidfile} -r -f ${procname}"
+
+start_precmd="data_prepper_precmd"
+
+data_prepper_precmd()
+{
+    if [ ! -d /var/run/${name} ]; then
+        install -d -o ${data_prepper_user} -g ${data_prepper_group} /var/run/${name}
+    fi
+}
+
+run_rc_command "$1"
+

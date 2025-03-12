@@ -1,0 +1,3 @@
+Data Prepper is a server-side data collector
+capable of filtering, enriching, transforming, normalizing,
+and aggregating data for downstream analysis and visualization.
