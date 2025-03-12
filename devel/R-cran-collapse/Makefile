@@ -1,11 +1,11 @@
 PORTNAME=	collapse
-DISTVERSION=	2.0.19
+DISTVERSION=	2.1.0
 CATEGORIES=	devel
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Advanced and Fast Data Transformation
-WWW=		https://cran.r-project.org/web/packages/collapse/
+WWW=		https://cran.r-project.org/package=collapse
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE
