@@ -48,6 +48,7 @@
 %%DATADIR%%/tables/ckb-translation.cti
 %%DATADIR%%/tables/compress.cti
 %%DATADIR%%/tables/controlchars.cti
+%%DATADIR%%/tables/cop.utb
 %%DATADIR%%/tables/cop-eg-comp8.utb
 %%DATADIR%%/tables/corrections.cti
 %%DATADIR%%/tables/countries.cti
@@ -58,6 +59,7 @@
 %%DATADIR%%/tables/cs.tbl
 %%DATADIR%%/tables/cs-translation.cti
 %%DATADIR%%/tables/cuneiform-transliterated.utb
+%%DATADIR%%/tables/cuneiform-transliterated-compact.utb
 %%DATADIR%%/tables/cy-cy-g1.utb
 %%DATADIR%%/tables/cy-cy-g2.ctb
 %%DATADIR%%/tables/cy.tbl
@@ -326,6 +328,7 @@
 %%DATADIR%%/tables/pl-pl-comp8.ctb
 %%DATADIR%%/tables/pl.tbl
 %%DATADIR%%/tables/printables.cti
+%%DATADIR%%/tables/pt-comp6.utb
 %%DATADIR%%/tables/pt-pt-comp8.ctb
 %%DATADIR%%/tables/pt-pt-g1.utb
 %%DATADIR%%/tables/pt-pt-g2.ctb
@@ -460,7 +463,7 @@ libdata/pkgconfig/liblouis.pc
 lib/liblouis.a
 lib/liblouis.so
 lib/liblouis.so.20
-lib/liblouis.so.20.0.20
+lib/liblouis.so.20.0.21
 share/man/man1/lou_allround.1.gz
 share/man/man1/lou_checkhyphens.1.gz
 share/man/man1/lou_checktable.1.gz
