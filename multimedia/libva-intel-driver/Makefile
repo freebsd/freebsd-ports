@@ -1,17 +1,13 @@
 PORTNAME=	libva-intel-driver
-DISTVERSION=	2.4.1
-PORTREVISION=	3
+DISTVERSION=	2.4.3
 CATEGORIES=	multimedia
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	4206d0e15363.patch:-p1 # https://github.com/intel/intel-vaapi-driver/pull/566
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	VAAPI legacy driver for Intel GMA 4500 (Gen4) to UHD 630 (Gen9.5)
 WWW=		https://01.org/linuxmedia
 
 LICENSE=	MIT
-LICENSE_FILE=	${WRKSRC}/COPYING
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 ONLY_FOR_ARCHS=	amd64 i386
 ONLY_FOR_ARCHS_REASON=	only Intel GPUs on x86 are supported
