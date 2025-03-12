@@ -1,6 +1,6 @@
 PORTNAME=	gdbm
 DISTVERSION=	${PYTHON_DISTVERSION}
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	databases python
 MASTER_SITES=	PYTHON/ftp/python/${DISTVERSION}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,22 +11,35 @@ MAINTAINER=	python@FreeBSD.org
 COMMENT=	Python bindings to the GNU dbm library (Python ${PYTHON_VER})
 
 LICENSE=	PSFL
+LICENSE_FILE=	${WRKDIR}/Python-${DISTVERSION}/LICENSE
 
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>0:devel/py-setuptools@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
 LIB_DEPENDS=	libgdbm.so:databases/gdbm
 
 USES=		compiler:c11 python tar:xz
-USE_PYTHON=	allflavors autoplist distutils
+USE_PYTHON=	allflavors autoplist pep517
 
-DISTINFO_FILE=	${.CURDIR}/../../lang/python${PYTHON_SUFFIX}/distinfo
-PYDISTUTILS_INSTALLARGS+=	--install-lib ${PYTHONPREFIX_LIBDIR}/lib-dynload
+DISTINFO_FILE=	${PORTSDIR}/lang/python${PYTHON_SUFFIX}/distinfo
 WRKSRC_SUBDIR=	Modules
+
+SUB_LIST+=	DISTVERSION=${DISTVERSION}
+SUB_FILES=	pyproject.toml
+PLIST_FILES=	${PYTHONPREFIX_LIBDIR:S;${PREFIX}/;;}/lib-dynload/_gdbm${PYTHON_EXT_SUFFIX}.so
 
 PORTSCOUT=	ignore:1
 
-post-extract:
-	@${CP} ${FILESDIR}/setup.py ${WRKSRC}/setup.py
+pre-configure:
+	@${CP} ${FILESDIR}/setup.py ${WRKSRC}
+	@${MV} ${WRKDIR}/pyproject.toml ${WRKSRC}
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PYTHON_LIBDIR}/lib-dynload/_gdbm.cpython-${PYTHON_SUFFIX}.so
+	@${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/_gdbm${PYTHON_EXT_SUFFIX}.so
+	# lib-dynload is the expected location
+	@${MKDIR} ${STAGEDIR}${PYTHONPREFIX_LIBDIR}/lib-dynload
+	@(cd ${STAGEDIR}${PYTHONPREFIX_LIBDIR}/lib-dynload && ${LN} -s ../site-packages/_gdbm${PYTHON_EXT_SUFFIX}.so)
+
+do-test:
+	@${PYTHON_CMD} -c 'import dbm'  # minimal smoke test
 
 .include <bsd.port.mk>
