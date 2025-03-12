@@ -265,8 +265,6 @@ libdata/pkgconfig/pmix.pc
 %%MPIDIR%%/lib/openmpi/libompi_dbg_msgq.so
 %%MPIDIR%%/lib/pmix/pmix_mca_pcompress_zlib.la
 %%MPIDIR%%/lib/pmix/pmix_mca_pcompress_zlib.so
-%%SLURM%%%%MPIDIR%%/lib/pmix/pmix_mca_prm_slurm.la
-%%SLURM%%%%MPIDIR%%/lib/pmix/pmix_mca_prm_slurm.so
 %%MPIDIR%%/lib/pmpi_f08_interfaces.mod
 %%MPIDIR%%/share/man/man1/mpic++.1.gz
 %%MPIDIR%%/share/man/man1/mpicc.1.gz
