@@ -1,21 +1,10 @@
 #!/usr/bin/env python
-# To use:
-#       python setup.py install
-#
 
 import platform
+import sysconfig
+from setuptools import setup, Extension
 
-try:
-    import distutils
-    from distutils import sysconfig
-    from distutils.command.install import install
-    from distutils.core import setup, Extension
-except:
-    raise SystemExit("Distutils problem")
-
-install.sub_commands = [x for x in install.sub_commands if 'egg' not in x[0]]
-
-prefix = sysconfig.PREFIX
+prefix = sysconfig.get_config_var('prefix')
 inc_dirs = [prefix + "/include", "Modules/_sqlite"]
 lib_dirs = [prefix + "/lib"]
 libs = ["sqlite3"]
@@ -44,10 +33,7 @@ try:
 except AttributeError:
     macros.append(('SQLITE_OMIT_LOAD_EXTENSION', '1'))
 
-setup(name = "sqlite3",
-      description = "SQLite 3 extension to Python",
-
-      ext_modules = [Extension('_sqlite3', sqlite_srcs,
+setup(ext_modules = [Extension('_sqlite3', sqlite_srcs,
                                include_dirs = inc_dirs,
                                libraries = libs,
                                library_dirs = lib_dirs,
