@@ -12,11 +12,13 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	docbook-xsl>=0:textproc/docbook-xsl \
 		${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
-RUN_DEPENDS=	docbook-xsl>=0:textproc/docbook-xsl
+		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR} \
+		xmllint:textproc/libxml2
+RUN_DEPENDS=	docbook-xsl>=0:textproc/docbook-xsl \
+		xmllint:textproc/libxml2 \
+		xsltproc:textproc/libxslt
 
-USES=		gnome python shebangfix
-USE_GNOME=	libxml2 libxslt
+USES=		python shebangfix
 USE_PYTHON=	autoplist noflavors pep517
 
 NO_ARCH=	yes
