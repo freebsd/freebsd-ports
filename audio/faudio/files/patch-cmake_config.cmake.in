@@ -1,0 +1,14 @@
+--- cmake/config.cmake.in.orig	2025-02-01 15:45:39 UTC
++++ cmake/config.cmake.in
+@@ -2,7 +2,11 @@ if(NOT "@PLATFORM_WIN32@")
+ 
+ if(NOT "@PLATFORM_WIN32@")
+ 	include(CMakeFindDependencyMacro)
++  if ("@BUILD_SDL3@")
++	find_dependency(SDL3 CONFIG)
++  else()
+ 	find_dependency(SDL2 CONFIG)
++  endif()
+ endif()
+ 
+ if(EXISTS "${CMAKE_CURRENT_LIST_DIR}/@CMAKE_PROJECT_NAME@-targets-shared.cmake")
