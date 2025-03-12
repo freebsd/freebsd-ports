@@ -10,6 +10,8 @@ WWW=		https://github.com/anholt/libepoxy
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/egl.pc:graphics/libglvnd
+
 USES=		gl localbase meson pkgconfig python:build shebangfix tar:xz
 USE_GL=		glesv2 egl
 USE_LDCONFIG=	yes
