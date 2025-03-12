@@ -9,6 +9,7 @@ include/groonga/groonga.h
 include/groonga/groonga.hpp
 include/groonga/groonga/accessor.h
 include/groonga/groonga/aggregator.h
+include/groonga/groonga/applier.h
 include/groonga/groonga/array.h
 include/groonga/groonga/arrow.h
 include/groonga/groonga/arrow.hpp
@@ -22,6 +23,7 @@ include/groonga/groonga/command_arguments.hpp
 include/groonga/groonga/config.h
 include/groonga/groonga/dat.h
 include/groonga/groonga/db.h
+include/groonga/groonga/distance.h
 include/groonga/groonga/dump.h
 include/groonga/groonga/error.h
 include/groonga/groonga/expr.h
