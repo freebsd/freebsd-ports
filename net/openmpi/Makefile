@@ -1,5 +1,6 @@
 PORTNAME=	openmpi
 DISTVERSION=	5.0.6
+PORTREVISION=	1
 CATEGORIES=	net parallel
 MASTER_SITES=	https://download.open-mpi.org/release/open-mpi/v${PORTVERSION:R}/
 
@@ -40,6 +41,7 @@ CONFIGURE_ARGS+=	--program-prefix= \
 			--with-wrapper-ldflags=-Wl,-rpath=-Wl,-rpath=${LOCALBASE}/lib/gcc${_GCC_VER}
 TEST_TARGET=		check
 CFLAGS+=		${CFLAGS_F2018}
+PIE_UNSAFE=		yes
 CONFLICTS_INSTALL=	openmpi4-4*
 
 DOCSDIR=	${PREFIX}/${MPIDIR}/share/doc
@@ -47,8 +49,6 @@ MANDIRS=	${PREFIX}/${MPIDIR}/share/man
 BINARY_ALIAS=	python3=${PYTHON_CMD}
 PLIST_SUB+=	MPIDIR=${MPIDIR}
 PORTDOCS=	*
-
-PIE_UNSAFE=	yes
 
 OPTIONS_DEFINE=			AVX DEBUG DOCS IPV6 ROMIO SLURM
 OPTIONS_DEFAULT=		ROMIO
@@ -96,6 +96,12 @@ FCFLAGS+=	-fallow-argument-mismatch
 PLIST_SUB+=	SHORTFLOAT=""
 .else
 PLIST_SUB+=	SHORTFLOAT="@comment "
+.endif
+
+# clang does not support 16 byte atomic operations without -mcx16 on amd64
+# See https://github.com/open-mpi/ompi/issues/13134
+.if ${ARCH} == amd64 && ${COMPILER_TYPE} == clang
+CFLAGS+=	-mcx16
 .endif
 
 LIBDIR2FIX=	oshmem/tools/wrappers opal/tools/wrappers \
