@@ -1,6 +1,6 @@
---- src/libsync/configfile.cpp.orig	2017-12-20 15:03:02 UTC
+--- src/libsync/configfile.cpp.orig	2025-03-06 09:00:02 UTC
 +++ src/libsync/configfile.cpp
-@@ -448,11 +448,22 @@ bool ConfigFile::skipUpdateCheck(const QString &connec
+@@ -653,11 +653,22 @@ bool ConfigFile::skipUpdateCheck(const QString &connec
      if (connection.isEmpty())
          con = defaultConnection();
  

@@ -1,5 +1,5 @@
 PORTNAME=	nextcloudclient
-PORTVERSION=	3.15.3
+PORTVERSION=	3.16.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	deskutils
 
@@ -12,7 +12,8 @@ LICENSE=	GPLv2
 BUILD_DEPENDS=	inkscape:graphics/inkscape
 LIB_DEPENDS=	libinotify.so:devel/libinotify \
 		libqt6keychain.so:security/qtkeychain@qt6 \
-		libxkbcommon.so:x11/libxkbcommon
+		libxkbcommon.so:x11/libxkbcommon \
+		libp11.so:security/libp11
 
 USES=		cmake:noninja compiler:c++20-lang desktop-file-utils gl gmake \
 		gnome iconv kde:6 localbase:ldflags pkgconfig qt:6 shared-mime-info \
