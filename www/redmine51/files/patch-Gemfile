@@ -1,4 +1,4 @@
---- Gemfile.orig	2024-12-11 18:25:01 UTC
+--- Gemfile.orig	2025-03-10 23:30:03 UTC
 +++ Gemfile
 @@ -2,25 +2,25 @@ ruby '>= 2.7.0', '< 3.3.0'
  
@@ -14,8 +14,8 @@
  gem 'roadie-rails', '~> 3.1.0'
  gem 'marcel'
  gem 'mail', '~> 2.8.1'
--gem 'nokogiri', '~> 1.15.2'
-+gem 'nokogiri', '~> 1.15'
+-gem 'nokogiri', Gem.ruby_version >= Gem::Version.new('3.1') ? '1.18.3' : '~> 1.15.7'
++gem 'nokogiri', Gem.ruby_version >= Gem::Version.new('3.1') ? '~> 1.18' : '~> 1.15'
  gem 'i18n', '~> 1.14.1'
  gem 'rbpdf', '~> 1.21.3'
  gem 'addressable'
@@ -83,7 +83,7 @@
 -  if adapters.any?
 -    adapters.each do |adapter|
 -      case adapter.strip
--      when 'mysql2'
+-      when /mysql2/
 -        gem "mysql2", "~> 0.5.0", :platforms => [:mri, :mingw, :x64_mingw]
 -        gem "with_advisory_lock"
 -      when /postgresql/
