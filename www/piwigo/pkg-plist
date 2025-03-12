@@ -1833,6 +1833,7 @@
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/pt_BR/iso.txt
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/pt_BR/pt_BR.jpg
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/pt_BR/upgrade.lang.php
+@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/pt_BR/whats_new_15.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/pt_PT/about.html
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/pt_PT/admin.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/pt_PT/common.lang.php
