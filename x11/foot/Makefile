@@ -22,6 +22,7 @@ LIB_DEPENDS=	libepoll-shim.so:devel/libepoll-shim \
 USES=		compiler:c11 meson pkgconfig xorg
 USE_XORG=	pixman
 WRKSRC=		${WRKDIR}/${PORTNAME}
+MESON_ARGS=	-Dwerror=false # XXX Drop after 1.20.3/1.21.0 update
 
 OPTIONS_DEFINE=	DOCS LTO NOTIFY PGO UTF8PROC XDG
 OPTIONS_DEFAULT=LTO NOTIFY PGO UTF8PROC XDG
@@ -72,7 +73,8 @@ post-patch:
 
 .if !defined(DEFAULT_POST_BUILD)
 post-build-PGO-on:
-	(cd ${BUILD_WRKSRC} && ./tests/test-config) # -Wbackend-plugin/-Wmissing-profile
+# XXX Uncomment after 1.20.3/1.21.0 update, https://codeberg.org/dnkl/foot/issues/1992
+#	(cd ${BUILD_WRKSRC} && ./tests/test-config) # -Wbackend-plugin/-Wmissing-profile
 	(cd ${BUILD_WRKSRC} && ./utils/xtgettcap) # -Wbackend-plugin/-Wmissing-profile
 	(cd ${BUILD_WRKSRC} && ./${PORTNAME}client --version) # -Wbackend-plugin/-Wmissing-profile
 	(cd ${BUILD_WRKSRC} && ./${PORTNAME} --version) # -Wbackend-plugin/-Wmissing-profile
