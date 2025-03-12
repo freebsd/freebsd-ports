@@ -178,8 +178,8 @@ lib/libmiktex-poppler.so
 lib/libmiktex-poppler.so.4
 lib/libmiktex-poppler.so.4.1.0
 lib/libmiktex-ptexenc.so
-lib/libmiktex-ptexenc.so.1.9.0
-lib/libmiktex-ptexenc.so.5
+lib/libmiktex-ptexenc.so.1.10.0
+lib/libmiktex-ptexenc.so.6
 lib/libmiktex-res.so
 lib/libmiktex-res.so.1
 lib/libmiktex-res.so.1.0.0
@@ -188,7 +188,7 @@ lib/libmiktex-setup.so.5.5.0
 lib/libmiktex-setup.so.6
 lib/libmiktex-teckit.so
 lib/libmiktex-teckit.so.2
-lib/libmiktex-teckit.so.4.0.0
+lib/libmiktex-teckit.so.4.1.0
 lib/libmiktex-texmf.so
 lib/libmiktex-texmf.so.4.8.0
 lib/libmiktex-texmf.so.8
