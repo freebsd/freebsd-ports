@@ -31,6 +31,7 @@ diff --git flang/lib/Evaluate/fold-real.cpp flang/lib/Evaluate/fold-real.cpp
 index 238ce34adfb7..f71addcc4094 100644
 --- flang/lib/Evaluate/fold-real.cpp
 +++ flang/lib/Evaluate/fold-real.cpp
+@@ -245,7 +245,7 @@
  #ifndef _MSC_VER
                                                             template
  #endif
