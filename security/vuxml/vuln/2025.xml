@@ -1,3 +1,47 @@
+  <vuln vid="a435609c-ffd5-11ef-b4e4-2cf05da270f3">
+    <topic>Gitlab -- Vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>gitlab-ce</name>
+	<name>gitlab-ee</name>
+	<range><ge>17.9.0</ge><lt>17.9.2</lt></range>
+	<range><ge>17.8.0</ge><lt>17.8.5</lt></range>
+	<range><ge>11.5</ge><lt>17.7.7</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Gitlab reports:</p>
+	<blockquote cite="https://about.gitlab.com/releases/2025/03/12/patch-release-gitlab-17-9-2-released/">
+	  <p>CVE-2025-25291 and CVE-2025-25292 (third party gem ruby-saml)</p>
+	  <p>CVE-2025-27407 (third party gem graphql)</p>
+	  <p>Denial of Service Due to Inefficient Processing of Untrusted Input</p>
+	  <p>Credentials disclosed when repository mirroring fails</p>
+	  <p>Denial of Service Vulnerability in GitLab Approval Rules due to Unbounded Field</p>
+	  <p>Internal Notes in Merge Requests Are Emailed to Non-Members Upon Review Submission</p>
+	  <p>Maintainer can inject shell code in Google integrations</p>
+	  <p>Guest with custom Admin group member permissions can approve the users invitation despite user caps</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-25291</cvename>
+      <cvename>CVE-2025-25292</cvename>
+      <cvename>CVE-2025-27407</cvename>
+      <cvename>CVE-2024-13054</cvename>
+      <cvename>CVE-2024-12380</cvename>
+      <cvename>CVE-2025-1257</cvename>
+      <cvename>CVE-2025-0652</cvename>
+      <cvename>CVE-2024-8402</cvename>
+      <cvename>CVE-2024-7296</cvename>
+      <url>https://about.gitlab.com/releases/2025/03/12/patch-release-gitlab-17-9-2-released/</url>
+    </references>
+    <dates>
+      <discovery>2025-03-12</discovery>
+      <entry>2025-03-13</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="9cf03c96-ffa5-11ef-bb15-002590af0794">
     <topic>vim -- potential data loss with zip.vim and specially crafted zip files</topic>
     <affects>
