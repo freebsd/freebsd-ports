@@ -1,6 +1,6 @@
 PORTNAME=	ftpproxy
 DISTVERSION=	1.2.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	ftp
 MASTER_SITES=	http://www.ftpproxy.org/download/ \
 		http://www.ftpproxy.org/download/older_releases/
