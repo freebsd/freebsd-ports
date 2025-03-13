@@ -1,7 +1,7 @@
 PORTNAME=	feathernotes
-PORTVERSION=	1.3.0
+PORTVERSION=	1.3.1
 CATEGORIES=	deskutils
-MASTER_SITES=	https://github.com/tsujan/FeatherNotes/releases/download/V${PORTVERSION}/
+MASTER_SITES=	${WWW}/releases/download/V${PORTVERSION}/
 DISTNAME=	FeatherNotes-${PORTVERSION}
 
 MAINTAINER=	danfe@FreeBSD.org

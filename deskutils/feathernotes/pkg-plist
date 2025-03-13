@@ -9,6 +9,7 @@ share/applications/feathernotes.desktop
 %%DATADIR%%/translations/feathernotes_da.qm
 %%DATADIR%%/translations/feathernotes_de.qm
 %%DATADIR%%/translations/feathernotes_el.qm
+%%DATADIR%%/translations/feathernotes_en_GB.qm
 %%DATADIR%%/translations/feathernotes_eo.qm
 %%DATADIR%%/translations/feathernotes_es.qm
 %%DATADIR%%/translations/feathernotes_et.qm
@@ -21,6 +22,7 @@ share/applications/feathernotes.desktop
 %%DATADIR%%/translations/feathernotes_id.qm
 %%DATADIR%%/translations/feathernotes_it.qm
 %%DATADIR%%/translations/feathernotes_ja.qm
+%%DATADIR%%/translations/feathernotes_ka.qm
 %%DATADIR%%/translations/feathernotes_ko.qm
 %%DATADIR%%/translations/feathernotes_lt.qm
 %%DATADIR%%/translations/feathernotes_nb_NO.qm
@@ -31,6 +33,7 @@ share/applications/feathernotes.desktop
 %%DATADIR%%/translations/feathernotes_ru.qm
 %%DATADIR%%/translations/feathernotes_si.qm
 %%DATADIR%%/translations/feathernotes_sk_SK.qm
+%%DATADIR%%/translations/feathernotes_sl.qm
 %%DATADIR%%/translations/feathernotes_sv.qm
 %%DATADIR%%/translations/feathernotes_tr.qm
 %%DATADIR%%/translations/feathernotes_uk.qm
