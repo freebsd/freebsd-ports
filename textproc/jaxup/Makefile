@@ -9,6 +9,9 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Java XUpdate engine
 WWW=		https://klomp.org/jaxup/
 
+DEPRECATED=	Abandonware and obsolete, last release in 2003
+EXPIRATION_DATE=2025-04-30 
+
 BUILD_DEPENDS=	${JAR_DEPENDS}
 RUN_DEPENDS=	${JAR_DEPENDS}
 
