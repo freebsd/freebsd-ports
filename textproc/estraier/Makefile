@@ -8,6 +8,9 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Full-text search system for personal use
 WWW=		https://dbmx.net/estraier/
 
+DEPRECATED=	Obsolete and abandonware, last update in 2005
+EXPIRATION_DATE=2025-04-30
+
 LIB_DEPENDS=	libqdbm.so:databases/qdbm
 
 USES=		iconv
