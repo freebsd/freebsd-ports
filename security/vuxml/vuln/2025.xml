@@ -1,3 +1,29 @@
+  <vuln vid="9cf03c96-ffa5-11ef-bb15-002590af0794">
+    <topic>vim -- potential data loss with zip.vim and specially crafted zip files</topic>
+    <affects>
+      <package>
+	<name>vim</name>
+	<range><lt>9.1.1198</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Vim reports:</p>
+	<blockquote cite="https://github.com/vim/vim/security/advisories/GHSA-693p-m996-3rmf">
+	  <p>See https://github.com/vim/vim/security/advisories/GHSA-693p-m996-3rmf</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>GHSA-693p-m996-3rmf</cvename>
+      <url>https://github.com/vim/vim/security/advisories/GHSA-693p-m996-3rmf</url>
+    </references>
+    <dates>
+      <discovery>2025-03-12</discovery>
+      <entry>2025-03-12</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="a02a6d94-fe53-11ef-85f3-a8a1599412c6">
     <topic>chromium -- multiple security fixes</topic>
     <affects>
