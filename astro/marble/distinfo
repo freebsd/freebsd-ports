@@ -1,3 +1,7 @@
-TIMESTAMP = 1741275263
+TIMESTAMP = 1741906884
 SHA256 (KDE/release-service/24.12.3/marble-24.12.3.tar.xz) = 94e07cfce3af3fd6fd05d83f032301b9a4781442aba3910c526064cc92de95f1
 SIZE (KDE/release-service/24.12.3/marble-24.12.3.tar.xz) = 53629616
+SHA256 (KDE/release-service/24.12.3/8d21b43f569adcd3bb76d3f9d921f2aaddb2c303.patch) = 0f6cade452e5ced4294a8588f34d5631a85916ebc8406911e8fb198723583e5c
+SIZE (KDE/release-service/24.12.3/8d21b43f569adcd3bb76d3f9d921f2aaddb2c303.patch) = 1993
+SHA256 (KDE/release-service/24.12.3/a14a3a911f5a8f152783a97410267a6fd98cce48.patch) = c1eed750d1e4b3c51ce032aadb4d5b1d5dd9c5139cb71804506a7f2c5570cbb0
+SIZE (KDE/release-service/24.12.3/a14a3a911f5a8f152783a97410267a6fd98cce48.patch) = 2444
