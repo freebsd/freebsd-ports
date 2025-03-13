@@ -1,5 +1,5 @@
 PORTNAME=	ndoutils
-DISTVERSION=	2.1.4
+DISTVERSION=	2.1.5
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF/nagios/${PORTNAME}-2.x/${PORTNAME}-${PORTVERSION} \
 		https://github.com/NagiosEnterprises/${PORTNAME}/releases/download/${PORTNAME}-${DISTVERSION}/
