@@ -9,6 +9,9 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Sourcecode to HTML converter
 WWW=		https://www.palfrader.org/code2html/
 
+DEPRECATED=	Obsolete utility, last activity upstream in 2002
+EXPIRATION_DATE=2025-04-30
+
 NO_BUILD=	yes
 USES=		perl5 shebangfix
 USE_PERL5=	run
