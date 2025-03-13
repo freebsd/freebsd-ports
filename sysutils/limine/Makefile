@@ -1,5 +1,5 @@
 PORTNAME=	limine
-DISTVERSION=	9.0.0
+DISTVERSION=	9.1.3
 CATEGORIES=	sysutils
 MASTER_SITES=	https://github.com/${PORTNAME}-bootloader/${PORTNAME}/releases/download/v${DISTVERSION}/
 
@@ -23,11 +23,12 @@ MAKEFILE=	GNUmakefile
 
 INSTALL_TARGET=	install-strip
 
-PORTDOCS=	CONFIG.md PHILOSOPHY.md PROTOCOL.md USAGE.md
+PORTDOCS=	3RDPARTY.md CONFIG.md FAQ.md PROTOCOL.md USAGE.md
 
 OPTIONS_DEFINE=	DOCS
 
 post-patch:
 	@${REINPLACE_CMD} -e '/COPYING/d' ${WRKSRC}/GNUmakefile.in
+	@${REINPLACE_CMD} -e '/LICENSES/d' ${WRKSRC}/GNUmakefile.in
 
 .include <bsd.port.mk>
