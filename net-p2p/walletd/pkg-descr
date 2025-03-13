@@ -1,0 +1,10 @@
+walletd is the flagship Sia wallet, suitable for miners, exchanges,
+and everyday hodlers. Its client-server architecture gives you the
+flexibility to access your funds from anywhere, on any device, without
+compromising the security of your private keys. The server is
+agnostic, so you can derive those keys from a 12-word seed phrase, a
+legacy (siad) 28-word phrase, a Ledger hardware wallet, or another
+preferred method. Like other Foundation node software, walletd ships
+with a slick embedded UI, but developers can easily build headless
+integrations leveraging its powerful JSON API. Whether you're using a
+single address or millions, walletd scales to your needs.

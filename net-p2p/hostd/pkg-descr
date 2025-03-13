@@ -1,0 +1,8 @@
+hostd is an advanced Sia host solution created by the Sia Foundation,
+designed to enhance the experience for storage providers within the
+Sia network. Tailored for both individual and large-scale storage
+providers, hostd boasts a user-friendly interface and a robust API,
+empowering providers to efficiently manage their storage resources and
+revenue. hostd incorporates an embedded web-UI, simplifying deployment
+and enabling remote management capabilities, ensuring a smooth user
+experience across a diverse range of devices.
