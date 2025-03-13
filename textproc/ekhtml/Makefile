@@ -11,6 +11,9 @@ WWW=		https://ekhtml.sourceforge.net/
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Abandonware and obsolete, last release in 2002
+EXPIRATION_DATE=2025-04-30
+
 GNU_CONFIGURE=	yes
 USES=		gmake libtool
 CPPFLAGS+=	-I${LOCALBASE}/include
