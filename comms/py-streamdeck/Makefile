@@ -1,5 +1,5 @@
 PORTNAME=	streamdeck
-DISTVERSION=	0.9.5
+DISTVERSION=	0.9.6
 CATEGORIES=	comms python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -26,5 +26,7 @@ post-patch:
 TEST_WRKSRC=	${WRKSRC}/test
 DO_MAKE_TEST=	${SETENV} ${TEST_ENV} pytest-${PYTHON_VER}
 TEST_TARGET=	test.py
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
