@@ -17,7 +17,7 @@ USE_RC_SUBR=	hostd
 USE_GITHUB=	yes
 GH_ACCOUNT=	SiaFoundation
 GO_TARGET=	./cmd/hostd
-GO_BUILDFLAGS+= -tags='netgo timetzdata' -trimpath
+GO_BUILDFLAGS+= -tags='netgo timetzdata'
 
 GH_TUPLE=	SiaFoundation:core:v0.10.1:siafoundation_core/vendor/go.sia.tech/core \
 		SiaFoundation:coreutils:v0.11.1:siafoundation_coreutils/vendor/go.sia.tech/coreutils \
