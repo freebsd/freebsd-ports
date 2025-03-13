@@ -64,7 +64,8 @@ PYTHON_USES_OFF=	python:env
 PYTHON_USE=		PYTHON=cython
 PYTHON_MAKE_ARGS=	python_cmd=${PYTHON_CMD} python_package=full
 PYTHON_MAKE_ARGS_OFF=	python_package="none"
-PYTHON_BUILD_DEPENDS=	${PYNUMPY} \
+PYTHON_BUILD_DEPENDS=	${PY_SETUPTOOLS} \
+			${PYNUMPY} \
 			${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}pip>0:devel/py-pip@${PY_FLAVOR}
 PYTHON_RUN_DEPENDS=	${PYNUMPY} \
