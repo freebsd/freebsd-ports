@@ -1,5 +1,5 @@
 --- src/drivers/driver_bsd.c.orig	2024-07-20 11:04:37.000000000 -0700
-+++ src/drivers/driver_bsd.c	2025-03-13 13:38:22.780127000 -0700
++++ src/drivers/driver_bsd.c	2025-03-13 13:35:55.927279000 -0700
 @@ -14,6 +14,7 @@
  #include "driver.h"
  #include "eloop.h"

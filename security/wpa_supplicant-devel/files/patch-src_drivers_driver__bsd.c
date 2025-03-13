@@ -1,5 +1,5 @@
---- src/drivers/driver_bsd.c.orig	2024-09-01 06:39:57.000000000 -0700
-+++ src/drivers/driver_bsd.c	2024-09-13 15:36:17.326062000 -0700
+--- src/drivers/driver_bsd.c.orig	2025-02-15 11:51:02.000000000 -0800
++++ src/drivers/driver_bsd.c	2025-03-13 13:42:51.318078000 -0700
 @@ -14,6 +14,7 @@
  #include "driver.h"
  #include "eloop.h"
@@ -19,14 +19,10 @@
  	struct ifreq ifr;
  
  	os_memset(&ifr, 0, sizeof(ifr));
-@@ -302,10 +304,37 @@
- 
- 	if (ioctl(drv->global->sock, SIOCGIFFLAGS, &ifr) < 0) {
- 		wpa_printf(MSG_ERROR, "ioctl[SIOCGIFFLAGS]: %s",
-+			   strerror(errno));
-+		return -1;
-+	}
-+	drv->flags = ifr.ifr_flags;
+@@ -306,7 +308,34 @@
+ 		return -1;
+ 	}
+ 	drv->flags = ifr.ifr_flags;
 +
 +
 +	if (enable) {
@@ -41,23 +37,72 @@
 +
 +	if (ioctl(drv->global->sock, SIOCSIFFLAGS, &ifr) < 0) {
 +		wpa_printf(MSG_ERROR, "ioctl[SIOCSIFFLAGS]: %s",
- 			   strerror(errno));
- 		return -1;
- 	}
++			   strerror(errno));
++		return -1;
++	}
 +
 +	wpa_printf(MSG_DEBUG, "%s: if %s (changed) enable %d IFF_UP %d ",
 +	    __func__, drv->ifname, enable, ((ifr.ifr_flags & IFF_UP) != 0));
 +
- 	drv->flags = ifr.ifr_flags;
-+	return 0;
++	drv->flags = ifr.ifr_flags;
+ 	return 0;
 +
 +nochange:
 +	wpa_printf(MSG_DEBUG, "%s: if %s (no change) enable %d IFF_UP %d ",
 +	    __func__, drv->ifname, enable, ((ifr.ifr_flags & IFF_UP) != 0));
- 	return 0;
++	return 0;
  }
  
-@@ -525,7 +554,7 @@
+ static int
+@@ -325,9 +354,6 @@
+ 	const u8 *key = params->key;
+ 	size_t key_len = params->key_len;
+ 
+-	if (params->key_flag & KEY_FLAG_NEXT)
+-		return -1;
+-
+ 	wpa_printf(MSG_DEBUG, "%s: alg=%d addr=%p key_idx=%d set_tx=%d "
+ 		   "seq_len=%zu key_len=%zu", __func__, alg, addr, key_idx,
+ 		   set_tx, seq_len, key_len);
+@@ -352,6 +378,12 @@
+ 	case WPA_ALG_CCMP:
+ 		wk.ik_type = IEEE80211_CIPHER_AES_CCM;
+ 		break;
++	case WPA_ALG_GCMP:
++		wk.ik_type = IEEE80211_CIPHER_AES_GCM_128;
++		break;
++	case WPA_ALG_BIP_CMAC_128:
++		wk.ik_type = IEEE80211_CIPHER_BIP_CMAC_128;
++		break;
+ 	default:
+ 		wpa_printf(MSG_ERROR, "%s: unknown alg=%d", __func__, alg);
+ 		return -1;
+@@ -422,7 +454,13 @@
+ 	switch (params->wpa_group) {
+ 	case WPA_CIPHER_CCMP:
+ 		v = IEEE80211_CIPHER_AES_CCM;
++		break;
++	case WPA_CIPHER_GCMP:
++		v = IEEE80211_CIPHER_AES_GCM_128;
+ 		break;
++	case WPA_CIPHER_BIP_CMAC_128:
++		v = IEEE80211_CIPHER_BIP_CMAC_128;
++		break;
+ 	case WPA_CIPHER_TKIP:
+ 		v = IEEE80211_CIPHER_TKIP;
+ 		break;
+@@ -459,6 +497,10 @@
+ 	}
+ 
+ 	v = 0;
++	if (params->wpa_pairwise & WPA_CIPHER_BIP_CMAC_128)
++		v |= 1<<IEEE80211_CIPHER_BIP_CMAC_128;
++	if (params->wpa_pairwise & WPA_CIPHER_GCMP)
++		v |= 1<<IEEE80211_CIPHER_AES_GCM_128;
+ 	if (params->wpa_pairwise & WPA_CIPHER_CCMP)
+ 		v |= 1<<IEEE80211_CIPHER_AES_CCM;
+ 	if (params->wpa_pairwise & WPA_CIPHER_TKIP)
+@@ -528,7 +570,7 @@
  			   __func__);
  		return -1;
  	}
@@ -66,7 +111,15 @@
  }
  
  static void
-@@ -853,14 +882,18 @@
+@@ -589,6 +631,7 @@
+ 		mode = IFM_IEEE80211_11B;
+ 	} else {
+ 		mode =
++			freq->vht_enabled ? IFM_IEEE80211_VHT5G :
+ 			freq->ht_enabled ? IFM_IEEE80211_11NA :
+ 			IFM_IEEE80211_11A;
+ 	}
+@@ -856,14 +899,18 @@
  		drv = bsd_get_drvindex(global, ifm->ifm_index);
  		if (drv == NULL)
  			return;
@@ -88,7 +141,17 @@
  			wpa_printf(MSG_DEBUG, "RTM_IFINFO: Interface '%s' UP",
  				   drv->ifname);
  			wpa_supplicant_event(drv->ctx, EVENT_INTERFACE_ENABLED,
-@@ -1027,7 +1060,8 @@
+@@ -1001,8 +1048,7 @@
+ }
+ 
+ static void *
+-bsd_init(struct hostapd_data *hapd, struct wpa_init_params *params,
+-	 enum wpa_p2p_mode p2p_mode)
++bsd_init(struct hostapd_data *hapd, struct wpa_init_params *params)
+ {
+ 	struct bsd_driver_data *drv;
+ 
+@@ -1031,7 +1077,8 @@
  	if (l2_packet_get_own_addr(drv->sock_xmit, params->own_addr))
  		goto bad;
  
@@ -98,7 +161,7 @@
  		goto bad;
  
  	if (bsd_set_mediaopt(drv, IFM_OMASK, IFM_IEEE80211_HOSTAP) < 0) {
-@@ -1052,12 +1086,13 @@
+@@ -1056,12 +1103,13 @@
  {
  	struct bsd_driver_data *drv = priv;
  
@@ -113,10 +176,13 @@
  static int
  bsd_set_sta_authorized(void *priv, const u8 *addr,
  		       unsigned int total_flags, unsigned int flags_or,
-@@ -1199,13 +1234,41 @@
- }
+@@ -1200,6 +1248,34 @@
+ 	struct bsd_driver_data *drv = ctx;
  
- static int
+ 	drv_event_eapol_rx(drv->ctx, src_addr, buf, len);
++}
++
++static int
 +wpa_driver_bsd_set_rsn_wpa_ie(struct bsd_driver_data * drv,
 +    struct wpa_driver_associate_params *params, const u8 *ie)
 +{
@@ -142,11 +208,10 @@
 +		return -1;
 +
 +	return 0;
-+}
-+
-+static int
- wpa_driver_bsd_associate(void *priv, struct wpa_driver_associate_params *params)
- {
+ }
+ 
+ static int
+@@ -1208,8 +1284,8 @@
  	struct bsd_driver_data *drv = priv;
  	struct ieee80211req_mlme mlme;
  	u32 mode;
@@ -156,7 +221,7 @@
  
  	wpa_printf(MSG_DEBUG,
  		"%s: ssid '%.*s' wpa ie len %u pairwise %u group %u key mgmt %u"
-@@ -1222,7 +1285,10 @@
+@@ -1226,7 +1302,10 @@
  		mode = 0 /* STA */;
  		break;
  	case IEEE80211_MODE_IBSS:
@@ -167,7 +232,7 @@
  		break;
  	case IEEE80211_MODE_AP:
  		mode = IFM_IEEE80211_HOSTAP;
-@@ -1251,22 +1317,31 @@
+@@ -1255,22 +1334,31 @@
  		ret = -1;
  	if (wpa_driver_bsd_set_auth_alg(drv, params->auth_alg) < 0)
  		ret = -1;
@@ -213,7 +278,7 @@
  		return -1;
  
  	os_memset(&mlme, 0, sizeof(mlme));
-@@ -1311,11 +1386,8 @@
+@@ -1315,11 +1403,8 @@
  	}
  
  	/* NB: interface must be marked UP to do a scan */
@@ -226,7 +291,18 @@
  
  #ifdef IEEE80211_IOC_SCAN_MAX_SSID
  	os_memset(&sr, 0, sizeof(sr));
-@@ -1547,6 +1619,8 @@
+@@ -1499,6 +1584,10 @@
+ 		drv->capa.enc |= WPA_DRIVER_CAPA_ENC_TKIP;
+ 	if (devcaps.dc_cryptocaps & IEEE80211_CRYPTO_AES_CCM)
+ 		drv->capa.enc |= WPA_DRIVER_CAPA_ENC_CCMP;
++	if (devcaps.dc_cryptocaps & IEEE80211_CRYPTO_AES_GCM_128)
++		drv->capa.enc |= WPA_DRIVER_CAPA_ENC_GCMP;
++	if (devcaps.dc_cryptocaps & IEEE80211_CRYPTO_BIP_CMAC_128)
++		drv->capa.enc |= WPA_DRIVER_CAPA_ENC_BIP;
+ 
+ 	if (devcaps.dc_drivercaps & IEEE80211_C_HOSTAP)
+ 		drv->capa.flags |= WPA_DRIVER_FLAGS_AP;
+@@ -1551,6 +1640,8 @@
  		}
  		if (ifmr.ifm_current & IFM_IEEE80211_HOSTAP)
  			return IEEE80211_M_HOSTAP;
@@ -235,7 +311,7 @@
  		if (ifmr.ifm_current & IFM_IEEE80211_MONITOR)
  			return IEEE80211_M_MONITOR;
  #ifdef IEEE80211_M_MBSS
-@@ -1607,7 +1681,7 @@
+@@ -1611,7 +1702,7 @@
  		drv->capa.key_mgmt_iftype[i] = drv->capa.key_mgmt;
  
  	/* Down interface during setup. */
@@ -244,7 +320,7 @@
  		goto fail;
  
  	/* Proven to work, lets go! */
-@@ -1631,6 +1705,9 @@
+@@ -1635,6 +1726,9 @@
  	if (drv->ifindex != 0 && !drv->if_removed) {
  		wpa_driver_bsd_set_wpa(drv, 0);
  
