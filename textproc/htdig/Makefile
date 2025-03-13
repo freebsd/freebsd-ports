@@ -12,6 +12,9 @@ WWW=		https://sourceforge.net/projects/htdig/
 LICENSE=	LGPL20+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Abandonware, multiple unresolved bugs and no unicode support etc
+EXPIRATION_DATE=2025-04-30
+
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--with-config-dir=${PREFIX}/etc/htdig \
