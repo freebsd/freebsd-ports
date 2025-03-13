@@ -1,26 +1,25 @@
-PORTNAME=       hostd
+PORTNAME=	hostd
 DISTVERSIONPREFIX=	v
-DISTVERSION=    2.0.4
-CATEGORIES=     net-p2p
+DISTVERSION=	2.0.4
+CATEGORIES=	net-p2p
 
-MAINTAINER=     bruno@tinkerbox.org
-COMMENT=        Offer your storage space on the Sia network
-WWW=            https://sia.tech/host
+MAINTAINER=	bruno@tinkerbox.org
+COMMENT=	Offer your storage space on the Sia network
+WWW=		https://sia.tech/host
 
-LICENSE=        MIT
-LICENSE_FILE=   ${WRKSRC}/LICENSE
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=           go:1.23,modules
+USES=		go:1.23,modules
 
 USE_RC_SUBR=	hostd
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	SiaFoundation
-GO_TARGET=      ./cmd/hostd
+GO_TARGET=	./cmd/hostd
 GO_BUILDFLAGS+= -tags='netgo timetzdata' -trimpath
 
-GH_TUPLE=       \
-		SiaFoundation:core:v0.10.1:siafoundation_core/vendor/go.sia.tech/core \
+GH_TUPLE=	SiaFoundation:core:v0.10.1:siafoundation_core/vendor/go.sia.tech/core \
 		SiaFoundation:coreutils:v0.11.1:siafoundation_coreutils/vendor/go.sia.tech/coreutils \
 		SiaFoundation:jape:v0.12.1:siafoundation_jape/vendor/go.sia.tech/jape \
 		SiaFoundation:mux:v1.3.0:siafoundation_mux/vendor/go.sia.tech/mux \
@@ -63,12 +62,12 @@ GH_TUPLE=       \
 		uber-go:multierr:v1.11.0:uber_go_multierr/vendor/go.uber.org/multierr \
 		uber-go:zap:v1.27.0:uber_go_zap/vendor/go.uber.org/zap
 
-PLIST_FILES=	bin/hostd \
+PLIST_FILES=	"@dir(${USERS},${GROUPS},750) /var/lib/${PORTNAME}" \
 		"@sample ${PREFIX}/etc/hostd.yml.sample" \
 		"@sample ${PREFIX}/etc/newsyslog.conf.d/hostd.conf.sample" \
-		"@dir(${USERS},${GROUPS},750) /var/lib/${PORTNAME}"
+		bin/hostd
 
-SUB_FILES=	${PORTNAME}.yml ${PORTNAME}.conf
+SUB_FILES=	${PORTNAME}.conf ${PORTNAME}.yml
 
 SUB_LIST=	GROUPS=${GROUPS} \
 		USERS=${USERS}

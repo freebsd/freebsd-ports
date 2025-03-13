@@ -1,26 +1,25 @@
-PORTNAME=       renterd
+PORTNAME=	renterd
 DISTVERSIONPREFIX=	v
-DISTVERSION=    2.0.1
-CATEGORIES=     net-p2p
+DISTVERSION=	2.0.1
+CATEGORIES=	net-p2p
 
-MAINTAINER=     bruno@tinkerbox.org
-COMMENT=        Rent storage space on the Sia network
-WWW=            https://sia.tech/renterd
+MAINTAINER=	bruno@tinkerbox.org
+COMMENT=	Rent storage space on the Sia network
+WWW=		https://sia.tech/renterd
 
-LICENSE=        MIT
-LICENSE_FILE=   ${WRKSRC}/LICENSE
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=           go:1.23,modules
+USES=		go:1.23,modules
 
 USE_RC_SUBR=	renterd
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	SiaFoundation
-GO_TARGET=      ./cmd/renterd
+GO_TARGET=	./cmd/renterd
 GO_BUILDFLAGS+= -tags='netgo'
 
-GH_TUPLE=       \
-		FiloSottile:edwards25519:v1.1.0:filosottile_edwards25519/vendor/filippo.io/edwards25519 \
+GH_TUPLE=	FiloSottile:edwards25519:v1.1.0:filosottile_edwards25519/vendor/filippo.io/edwards25519 \
 		SiaFoundation:core:v0.10.3:siafoundation_core/vendor/go.sia.tech/core \
 		SiaFoundation:coreutils:362f2554d5ca:siafoundation_coreutils/vendor/go.sia.tech/coreutils \
 		SiaFoundation:gofakes3:v0.0.5:siafoundation_gofakes3/vendor/go.sia.tech/gofakes3 \
@@ -70,12 +69,12 @@ GH_TUPLE=       \
 		uber-go:multierr:v1.11.0:uber_go_multierr/vendor/go.uber.org/multierr \
 		uber-go:zap:v1.27.0:uber_go_zap/vendor/go.uber.org/zap
 
-PLIST_FILES=	bin/renterd \
-		"@sample ${PREFIX}/etc/renterd.yml.sample" \
+PLIST_FILES=	"@dir(${USERS},${GROUPS},750) /var/lib/${PORTNAME}" \
 		"@sample ${PREFIX}/etc/newsyslog.conf.d/renterd.conf.sample" \
-		"@dir(${USERS},${GROUPS},750) /var/lib/${PORTNAME}"
+		"@sample ${PREFIX}/etc/renterd.yml.sample" \
+		bin/renterd
 
-SUB_FILES=	${PORTNAME}.yml ${PORTNAME}.conf
+SUB_FILES=	${PORTNAME}.conf ${PORTNAME}.yml
 
 SUB_LIST=	GROUPS=${GROUPS} \
 		USERS=${USERS}

@@ -1,26 +1,25 @@
-PORTNAME=       walletd
+PORTNAME=	walletd
 DISTVERSIONPREFIX=	v
-DISTVERSION=    2.0.0
+DISTVERSION=	2.0.0
 
-CATEGORIES=     net-p2p
+CATEGORIES=	net-p2p
 
-MAINTAINER=     bruno@tinkerbox.org
-COMMENT=        Official Sia Wallet
-WWW=            https://sia.tech/software/walletd
+MAINTAINER=	bruno@tinkerbox.org
+COMMENT=	Official Sia Wallet
+WWW=		https://sia.tech/software/walletd
 
-LICENSE=        MIT
-LICENSE_FILE=   ${WRKSRC}/LICENSE
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=           go:1.23,modules
+USES=		go:1.23,modules
 USE_RC_SUBR=	walletd
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	SiaFoundation
-GO_TARGET=      ./cmd/walletd
+GO_TARGET=	./cmd/walletd
 GO_BUILDFLAGS+= -tags='netgo timetzdata' -trimpath
 
-GH_TUPLE=       \
-		SiaFoundation:core:v0.10.1:siafoundation_core/vendor/go.sia.tech/core \
+GH_TUPLE=	SiaFoundation:core:v0.10.1:siafoundation_core/vendor/go.sia.tech/core \
 		SiaFoundation:coreutils:v0.11.1:siafoundation_coreutils/vendor/go.sia.tech/coreutils \
 		SiaFoundation:jape:v0.12.1:siafoundation_jape/vendor/go.sia.tech/jape \
 		SiaFoundation:mux:v1.3.0:siafoundation_mux/vendor/go.sia.tech/mux \
@@ -52,16 +51,16 @@ GH_TUPLE=       \
 		uber-go:multierr:v1.11.0:uber_go_multierr/vendor/go.uber.org/multierr \
 		uber-go:zap:v1.27.0:uber_go_zap/vendor/go.uber.org/zap
 
-PLIST_FILES=	bin/walletd \
-                "@sample(${USERS},${GROUPS},600) ${PREFIX}/etc/walletd.conf.sample" \
-                "@sample ${PREFIX}/etc/newsyslog.conf.d/walletd.conf.sample" \
-                "@dir(${USERS},${GROUPS},750) /var/lib/${PORTNAME}"
+PLIST_FILES=	"@dir(${USERS},${GROUPS},750) /var/lib/${PORTNAME}" \
+		"@sample(${USERS},${GROUPS},600) ${PREFIX}/etc/walletd.conf.sample" \
+		"@sample ${PREFIX}/etc/newsyslog.conf.d/walletd.conf.sample" \
+		bin/walletd
 
 SUB_FILES=	${PORTNAME}-syslog.conf ${PORTNAME}.conf
 
 SUB_LIST=	GROUPS=${GROUPS} \
-		USERS=${USERS} \
-		PREFIX=${PREFIX}
+		PREFIX=${PREFIX} \
+		USERS=${USERS}
 
 USERS=		${PORTNAME}
 GROUPS=		${PORTNAME}
