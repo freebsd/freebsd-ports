@@ -146,6 +146,10 @@ SUB_LIST+=	TARGLIB=${TARGLIB}
 
 CONFIGURE_ARGS+=--enable-languages=${LANGUAGES}
 
+.if (${ARCH} == amd64 || ${ARCH} == powerpc64) && ${PORT_OPTIONS:MMULTILIB}
+USE_LDCONFIG32=	${TARGLIB32}/gcc${SUFFIX}
+.endif
+
 pre-everything::
 	@${ECHO_MSG} "Making GCC ${PORTVERSION} for ${CONFIGURE_TARGET} [${LANGUAGES}]"
 
