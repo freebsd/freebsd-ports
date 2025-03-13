@@ -1,4 +1,4 @@
---- Makefile.orig	2004-07-30 12:49:27.000000000 +0000
+--- Makefile.orig	2004-07-30 12:49:27 UTC
 +++ Makefile
 @@ -9,7 +9,7 @@ TARGETS =	ftp.proxy
  

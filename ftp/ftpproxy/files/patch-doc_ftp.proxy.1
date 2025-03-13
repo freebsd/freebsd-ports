@@ -1,0 +1,13 @@
+--- doc/ftp.proxy.1.orig	2023-02-20 12:32:45 UTC
++++ doc/ftp.proxy.1
+@@ -373,6 +373,10 @@ tell \fIftp.proxy\fR to use \fIport\fR as source port 
+ transfers (using port number 20 is FTP standard).
+ Keep in mind that port numbers below 1024 require root permissions.
+ .TP
++\fB-P\fR \fIfilename\fR
++tell \fIftp.proxy\fR to write the PID of the master process into
++the \fIfilename\fR specified.
++.TP
+ \fB-q\fR \fIsourceip\fR
+ sets the IP number for the outgoing control connection.
+ .TP
