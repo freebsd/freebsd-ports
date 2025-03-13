@@ -9,6 +9,9 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	BSD-licensed version of diff from OpenBSD
 WWW=		https://www.freebsd.org/projects/ideas/ #p-bsdtexttools
 
+DEPRECATED=	Obsolete, newer version imported into base as 2017
+EXPIRATION_DATE=2025-04-30
+
 USES=		uidfix
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
