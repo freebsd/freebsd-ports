@@ -10,6 +10,9 @@ WWW=		https://www.ioplex.com/~miallen/domc/
 
 LICENSE=	MIT
 
+DEPRECATED=	Obsolete, doesn't support HTML5, DOM Level 4 and DOM 2020-06
+EXPIRATION_DATE=2025-04-30
+
 LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 		libmba.so:devel/libmba
 
