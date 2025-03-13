@@ -1,3 +1,72 @@
+  <vuln vid="0b43fac4-005d-11f0-a540-6cc21735f730">
+    <topic>shibboleth-sp -- Parameter manipulation allows the forging of signed SAML messages</topic>
+    <affects>
+      <package>
+	<name>opensaml</name>
+	<range><lt>3.3.1</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Shibboleth Project reports:</p>
+	<blockquote cite="https://shibboleth.net/community/advisories/secadv_20250313.txt">
+	  <p>
+	    An updated version of the OpenSAML C++ library is available
+	    which corrects a parameter manipulation vulnerability when using
+	    SAML bindings that rely on non-XML signatures. The Shibboleth
+	    Service Provider is impacted by this issue, and it manifests as
+	    a critical security issue in that context.
+	  </p>
+	  <p>
+	    Parameter manipulation allows the forging of signed SAML messages
+	  </p>
+	  <p>
+	    A number of vulnerabilities in the OpenSAML library used by the
+	    Shibboleth Service Provider allowed for creative manipulation of
+	    parameters combined with reuse of the contents of older requests
+	    to fool the library's signature verification of non-XML based
+	    signed messages.
+	  </p>
+	  <p>
+	    Most uses of that feature involve very low or
+	    low impact use cases without critical security implications;
+	    however, there are two scenarios that are much more critical,
+	    one affecting the SP and one affecting some implementers who
+	    have implemented their own code on top of our OpenSAML library
+	    and done so improperly.
+	  </p>
+	  <p>
+	    The SP's support for the HTTP-POST-SimpleSign SAML binding for
+	    Single Sign-On responses is its critical vulnerability, and it
+	    is enabled by default (regardless of what one's published SAML
+	    metadata may advertise).
+	  </p>
+	  <p>
+	    The other critical case involves a mistake that
+	    does *not* impact the Shibboleth SP, allowing SSO to occur over
+	    the HTTP-Redirect binding contrary to the plain language of the
+	    SAML Browser SSO profile. The SP does not support this, but
+	    other implementers may have done so.
+	  </p>
+	  <p>
+	    Prior to updating, it is possible to mitigate the POST-SimpleSign
+	    vulnerability by editing the protocols.xml configuration file and
+	    removing this line:
+	    <code>&lt;Binding id="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST-SimpleSign"
+	             path="/SAML2/POST-SimpleSign" /&gt;</code>
+	  </p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <url>https://shibboleth.net/community/advisories/secadv_20250313.txt</url>
+    </references>
+    <dates>
+      <discovery>2025-03-13</discovery>
+      <entry>2025-03-13</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="a435609c-ffd5-11ef-b4e4-2cf05da270f3">
     <topic>Gitlab -- Vulnerabilities</topic>
     <affects>
