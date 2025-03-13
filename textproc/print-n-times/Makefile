@@ -8,6 +8,9 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Print a string (n) times
 WWW=		https://aaronland.info/xsl/string/print-n-times
 
+DEPRECATED=	Obsolete and unmaintained in tree for years
+EXPIRATION_DATE=2025-04-30
+
 NO_BUILD=	yes
 
 do-install:
