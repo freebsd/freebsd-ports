@@ -10,6 +10,9 @@ WWW=		https://gmetadom.sourceforge.net/
 
 LIB_DEPENDS=	libgdome.so:textproc/gdome2
 
+DEPRECATED=	Abandonware, last release in 2007
+EXPIRATION_DATE=2025-04-30
+
 USES=		compiler:c++11-lang gmake gnome iconv libtool localbase \
 		pathfix pkgconfig
 USE_GNOME=	glib20 libxml2
