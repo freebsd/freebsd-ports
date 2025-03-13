@@ -1,9 +1,8 @@
 PORTNAME=	file-roller
-PORTVERSION=	3.42.0
-PORTREVISION=	3
+PORTVERSION=	44.5
 PORTEPOCH=	1
 CATEGORIES=	archivers gnome
-MASTER_SITES=	GNOME
+MASTER_SITES=	GNOME/sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+)\..*/\1/}
 DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
@@ -16,14 +15,16 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BUILD_DEPENDS=	itstool:textproc/itstool
 LIB_DEPENDS=	libjson-glib-1.0.so:devel/json-glib \
 		libnotify.so:devel/libnotify \
-		libhandy-1.so:x11-toolkits/libhandy
+		libhandy-1.so:x11-toolkits/libhandy \
+		libportal.so:deskutils/libportal \
+		libportal-gtk4.so:deskutils/libportal-gtk4
 RUN_DEPENDS=	gtar:archivers/gtar
 
 PORTSCOUT=	limitw:1,even
 
 USES=		cpe desktop-file-utils gettext gnome libarchive localbase \
 		meson pkgconfig python:build tar:xz
-USE_GNOME=	cairo gdkpixbuf2 gtk30
+USE_GNOME=	cairo gdkpixbuf2 gtk40
 USE_LDCONFIG=	yes
 MESON_ARGS=	-Dpackagekit=false
 BINARY_ALIAS=	python3=${PYTHON_VERSION}

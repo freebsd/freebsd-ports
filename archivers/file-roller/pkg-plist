@@ -1,5 +1,5 @@
 bin/file-roller
-%%NAUTILUS%%lib/nautilus/extensions-3.0/libnautilus-fileroller.so
+%%NAUTILUS%%lib/nautilus/extensions-4/libnautilus-fileroller.so
 libexec/file-roller/isoinfo.sh
 libexec/file-roller/rpm2cpio
 share/applications/org.gnome.FileRoller.desktop
@@ -12,7 +12,7 @@ share/help/C/file-roller/archive-extract-advanced-options.page
 share/help/C/file-roller/archive-extract.page
 share/help/C/file-roller/archive-open.page
 share/help/C/file-roller/archive-view.page
-share/help/C/file-roller/figures/org.gnome.ArchiveManager.svg
+share/help/C/file-roller/figures/org.gnome.FileRoller.svg
 share/help/C/file-roller/index.page
 share/help/C/file-roller/introduction.page
 share/help/C/file-roller/keyboard-shortcuts.page
@@ -28,7 +28,7 @@ share/help/ca/file-roller/archive-extract-advanced-options.page
 share/help/ca/file-roller/archive-extract.page
 share/help/ca/file-roller/archive-open.page
 share/help/ca/file-roller/archive-view.page
-share/help/ca/file-roller/figures/org.gnome.ArchiveManager.svg
+share/help/ca/file-roller/figures/org.gnome.FileRoller.svg
 share/help/ca/file-roller/index.page
 share/help/ca/file-roller/introduction.page
 share/help/ca/file-roller/keyboard-shortcuts.page
@@ -44,7 +44,7 @@ share/help/cs/file-roller/archive-extract-advanced-options.page
 share/help/cs/file-roller/archive-extract.page
 share/help/cs/file-roller/archive-open.page
 share/help/cs/file-roller/archive-view.page
-share/help/cs/file-roller/figures/org.gnome.ArchiveManager.svg
+share/help/cs/file-roller/figures/org.gnome.FileRoller.svg
 share/help/cs/file-roller/index.page
 share/help/cs/file-roller/introduction.page
 share/help/cs/file-roller/keyboard-shortcuts.page
@@ -60,7 +60,7 @@ share/help/da/file-roller/archive-extract-advanced-options.page
 share/help/da/file-roller/archive-extract.page
 share/help/da/file-roller/archive-open.page
 share/help/da/file-roller/archive-view.page
-share/help/da/file-roller/figures/org.gnome.ArchiveManager.svg
+share/help/da/file-roller/figures/org.gnome.FileRoller.svg
 share/help/da/file-roller/index.page
 share/help/da/file-roller/introduction.page
 share/help/da/file-roller/keyboard-shortcuts.page
@@ -76,7 +76,7 @@ share/help/de/file-roller/archive-extract-advanced-options.page
 share/help/de/file-roller/archive-extract.page
 share/help/de/file-roller/archive-open.page
 share/help/de/file-roller/archive-view.page
-share/help/de/file-roller/figures/org.gnome.ArchiveManager.svg
+share/help/de/file-roller/figures/org.gnome.FileRoller.svg
 share/help/de/file-roller/index.page
 share/help/de/file-roller/introduction.page
 share/help/de/file-roller/keyboard-shortcuts.page
@@ -92,7 +92,7 @@ share/help/el/file-roller/archive-extract-advanced-options.page
 share/help/el/file-roller/archive-extract.page
 share/help/el/file-roller/archive-open.page
 share/help/el/file-roller/archive-view.page
-share/help/el/file-roller/figures/org.gnome.ArchiveManager.svg
+share/help/el/file-roller/figures/org.gnome.FileRoller.svg
 share/help/el/file-roller/index.page
 share/help/el/file-roller/introduction.page
 share/help/el/file-roller/keyboard-shortcuts.page
@@ -108,7 +108,7 @@ share/help/es/file-roller/archive-extract-advanced-options.page
 share/help/es/file-roller/archive-extract.page
 share/help/es/file-roller/archive-open.page
 share/help/es/file-roller/archive-view.page
-share/help/es/file-roller/figures/org.gnome.ArchiveManager.svg
+share/help/es/file-roller/figures/org.gnome.FileRoller.svg
 share/help/es/file-roller/index.page
 share/help/es/file-roller/introduction.page
 share/help/es/file-roller/keyboard-shortcuts.page
@@ -124,7 +124,7 @@ share/help/eu/file-roller/archive-extract-advanced-options.page
 share/help/eu/file-roller/archive-extract.page
 share/help/eu/file-roller/archive-open.page
 share/help/eu/file-roller/archive-view.page
-share/help/eu/file-roller/figures/org.gnome.ArchiveManager.svg
+share/help/eu/file-roller/figures/org.gnome.FileRoller.svg
 share/help/eu/file-roller/index.page
 share/help/eu/file-roller/introduction.page
 share/help/eu/file-roller/keyboard-shortcuts.page
@@ -140,7 +140,7 @@ share/help/fi/file-roller/archive-extract-advanced-options.page
 share/help/fi/file-roller/archive-extract.page
 share/help/fi/file-roller/archive-open.page
 share/help/fi/file-roller/archive-view.page
-share/help/fi/file-roller/figures/org.gnome.ArchiveManager.svg
+share/help/fi/file-roller/figures/org.gnome.FileRoller.svg
 share/help/fi/file-roller/index.page
 share/help/fi/file-roller/introduction.page
 share/help/fi/file-roller/keyboard-shortcuts.page
@@ -156,7 +156,7 @@ share/help/fr/file-roller/archive-extract-advanced-options.page
 share/help/fr/file-roller/archive-extract.page
 share/help/fr/file-roller/archive-open.page
 share/help/fr/file-roller/archive-view.page
-share/help/fr/file-roller/figures/org.gnome.ArchiveManager.svg
+share/help/fr/file-roller/figures/org.gnome.FileRoller.svg
 share/help/fr/file-roller/index.page
 share/help/fr/file-roller/introduction.page
 share/help/fr/file-roller/keyboard-shortcuts.page
@@ -172,7 +172,7 @@ share/help/gl/file-roller/archive-extract-advanced-options.page
 share/help/gl/file-roller/archive-extract.page
 share/help/gl/file-roller/archive-open.page
 share/help/gl/file-roller/archive-view.page
-share/help/gl/file-roller/figures/org.gnome.ArchiveManager.svg
+share/help/gl/file-roller/figures/org.gnome.FileRoller.svg
 share/help/gl/file-roller/index.page
 share/help/gl/file-roller/introduction.page
 share/help/gl/file-roller/keyboard-shortcuts.page
@@ -188,7 +188,7 @@ share/help/hu/file-roller/archive-extract-advanced-options.page
 share/help/hu/file-roller/archive-extract.page
 share/help/hu/file-roller/archive-open.page
 share/help/hu/file-roller/archive-view.page
-share/help/hu/file-roller/figures/org.gnome.ArchiveManager.svg
+share/help/hu/file-roller/figures/org.gnome.FileRoller.svg
 share/help/hu/file-roller/index.page
 share/help/hu/file-roller/introduction.page
 share/help/hu/file-roller/keyboard-shortcuts.page
@@ -204,7 +204,7 @@ share/help/id/file-roller/archive-extract-advanced-options.page
 share/help/id/file-roller/archive-extract.page
 share/help/id/file-roller/archive-open.page
 share/help/id/file-roller/archive-view.page
-share/help/id/file-roller/figures/org.gnome.ArchiveManager.svg
+share/help/id/file-roller/figures/org.gnome.FileRoller.svg
 share/help/id/file-roller/index.page
 share/help/id/file-roller/introduction.page
 share/help/id/file-roller/keyboard-shortcuts.page
@@ -220,7 +220,7 @@ share/help/ja/file-roller/archive-extract-advanced-options.page
 share/help/ja/file-roller/archive-extract.page
 share/help/ja/file-roller/archive-open.page
 share/help/ja/file-roller/archive-view.page
-share/help/ja/file-roller/figures/org.gnome.ArchiveManager.svg
+share/help/ja/file-roller/figures/org.gnome.FileRoller.svg
 share/help/ja/file-roller/index.page
 share/help/ja/file-roller/introduction.page
 share/help/ja/file-roller/keyboard-shortcuts.page
@@ -236,7 +236,7 @@ share/help/ko/file-roller/archive-extract-advanced-options.page
 share/help/ko/file-roller/archive-extract.page
 share/help/ko/file-roller/archive-open.page
 share/help/ko/file-roller/archive-view.page
-share/help/ko/file-roller/figures/org.gnome.ArchiveManager.svg
+share/help/ko/file-roller/figures/org.gnome.FileRoller.svg
 share/help/ko/file-roller/index.page
 share/help/ko/file-roller/introduction.page
 share/help/ko/file-roller/keyboard-shortcuts.page
@@ -246,13 +246,29 @@ share/help/ko/file-roller/supported-formats.page
 share/help/ko/file-roller/test-integrity.page
 share/help/ko/file-roller/troubleshooting-archive-open.page
 share/help/ko/file-roller/troubleshooting-password.page
+share/help/nl/file-roller/archive-create.page
+share/help/nl/file-roller/archive-edit.page
+share/help/nl/file-roller/archive-extract-advanced-options.page
+share/help/nl/file-roller/archive-extract.page
+share/help/nl/file-roller/archive-open.page
+share/help/nl/file-roller/archive-view.page
+share/help/nl/file-roller/figures/org.gnome.FileRoller.svg
+share/help/nl/file-roller/index.page
+share/help/nl/file-roller/introduction.page
+share/help/nl/file-roller/keyboard-shortcuts.page
+share/help/nl/file-roller/legal.xml
+share/help/nl/file-roller/password-protection.page
+share/help/nl/file-roller/supported-formats.page
+share/help/nl/file-roller/test-integrity.page
+share/help/nl/file-roller/troubleshooting-archive-open.page
+share/help/nl/file-roller/troubleshooting-password.page
 share/help/pl/file-roller/archive-create.page
 share/help/pl/file-roller/archive-edit.page
 share/help/pl/file-roller/archive-extract-advanced-options.page
 share/help/pl/file-roller/archive-extract.page
 share/help/pl/file-roller/archive-open.page
 share/help/pl/file-roller/archive-view.page
-share/help/pl/file-roller/figures/org.gnome.ArchiveManager.svg
+share/help/pl/file-roller/figures/org.gnome.FileRoller.svg
 share/help/pl/file-roller/index.page
 share/help/pl/file-roller/introduction.page
 share/help/pl/file-roller/keyboard-shortcuts.page
@@ -268,7 +284,7 @@ share/help/pt_BR/file-roller/archive-extract-advanced-options.page
 share/help/pt_BR/file-roller/archive-extract.page
 share/help/pt_BR/file-roller/archive-open.page
 share/help/pt_BR/file-roller/archive-view.page
-share/help/pt_BR/file-roller/figures/org.gnome.ArchiveManager.svg
+share/help/pt_BR/file-roller/figures/org.gnome.FileRoller.svg
 share/help/pt_BR/file-roller/index.page
 share/help/pt_BR/file-roller/introduction.page
 share/help/pt_BR/file-roller/keyboard-shortcuts.page
@@ -284,7 +300,7 @@ share/help/ru/file-roller/archive-extract-advanced-options.page
 share/help/ru/file-roller/archive-extract.page
 share/help/ru/file-roller/archive-open.page
 share/help/ru/file-roller/archive-view.page
-share/help/ru/file-roller/figures/org.gnome.ArchiveManager.svg
+share/help/ru/file-roller/figures/org.gnome.FileRoller.svg
 share/help/ru/file-roller/index.page
 share/help/ru/file-roller/introduction.page
 share/help/ru/file-roller/keyboard-shortcuts.page
@@ -300,7 +316,7 @@ share/help/sl/file-roller/archive-extract-advanced-options.page
 share/help/sl/file-roller/archive-extract.page
 share/help/sl/file-roller/archive-open.page
 share/help/sl/file-roller/archive-view.page
-share/help/sl/file-roller/figures/org.gnome.ArchiveManager.svg
+share/help/sl/file-roller/figures/org.gnome.FileRoller.svg
 share/help/sl/file-roller/index.page
 share/help/sl/file-roller/introduction.page
 share/help/sl/file-roller/keyboard-shortcuts.page
@@ -316,7 +332,7 @@ share/help/sv/file-roller/archive-extract-advanced-options.page
 share/help/sv/file-roller/archive-extract.page
 share/help/sv/file-roller/archive-open.page
 share/help/sv/file-roller/archive-view.page
-share/help/sv/file-roller/figures/org.gnome.ArchiveManager.svg
+share/help/sv/file-roller/figures/org.gnome.FileRoller.svg
 share/help/sv/file-roller/index.page
 share/help/sv/file-roller/introduction.page
 share/help/sv/file-roller/keyboard-shortcuts.page
@@ -332,7 +348,7 @@ share/help/te/file-roller/archive-extract-advanced-options.page
 share/help/te/file-roller/archive-extract.page
 share/help/te/file-roller/archive-open.page
 share/help/te/file-roller/archive-view.page
-share/help/te/file-roller/figures/org.gnome.ArchiveManager.svg
+share/help/te/file-roller/figures/org.gnome.FileRoller.svg
 share/help/te/file-roller/index.page
 share/help/te/file-roller/introduction.page
 share/help/te/file-roller/keyboard-shortcuts.page
@@ -348,7 +364,7 @@ share/help/tr/file-roller/archive-extract-advanced-options.page
 share/help/tr/file-roller/archive-extract.page
 share/help/tr/file-roller/archive-open.page
 share/help/tr/file-roller/archive-view.page
-share/help/tr/file-roller/figures/org.gnome.ArchiveManager.svg
+share/help/tr/file-roller/figures/org.gnome.FileRoller.svg
 share/help/tr/file-roller/index.page
 share/help/tr/file-roller/introduction.page
 share/help/tr/file-roller/keyboard-shortcuts.page
@@ -364,7 +380,7 @@ share/help/uk/file-roller/archive-extract-advanced-options.page
 share/help/uk/file-roller/archive-extract.page
 share/help/uk/file-roller/archive-open.page
 share/help/uk/file-roller/archive-view.page
-share/help/uk/file-roller/figures/org.gnome.ArchiveManager.svg
+share/help/uk/file-roller/figures/org.gnome.FileRoller.svg
 share/help/uk/file-roller/index.page
 share/help/uk/file-roller/introduction.page
 share/help/uk/file-roller/keyboard-shortcuts.page
@@ -380,7 +396,7 @@ share/help/zh_CN/file-roller/archive-extract-advanced-options.page
 share/help/zh_CN/file-roller/archive-extract.page
 share/help/zh_CN/file-roller/archive-open.page
 share/help/zh_CN/file-roller/archive-view.page
-share/help/zh_CN/file-roller/figures/org.gnome.ArchiveManager.svg
+share/help/zh_CN/file-roller/figures/org.gnome.FileRoller.svg
 share/help/zh_CN/file-roller/index.page
 share/help/zh_CN/file-roller/introduction.page
 share/help/zh_CN/file-roller/keyboard-shortcuts.page
@@ -390,9 +406,10 @@ share/help/zh_CN/file-roller/supported-formats.page
 share/help/zh_CN/file-roller/test-integrity.page
 share/help/zh_CN/file-roller/troubleshooting-archive-open.page
 share/help/zh_CN/file-roller/troubleshooting-password.page
-share/icons/hicolor/scalable/apps/org.gnome.ArchiveManager.Devel.svg
-share/icons/hicolor/scalable/apps/org.gnome.ArchiveManager.svg
-share/icons/hicolor/symbolic/apps/org.gnome.ArchiveManager-symbolic.svg
+share/icons/hicolor/scalable/apps/org.gnome.FileRoller.Devel.svg
+share/icons/hicolor/scalable/apps/org.gnome.FileRoller.svg
+share/icons/hicolor/symbolic/apps/org.gnome.FileRoller-symbolic.svg
+share/locale/ab/LC_MESSAGES/file-roller.mo
 share/locale/af/LC_MESSAGES/file-roller.mo
 share/locale/am/LC_MESSAGES/file-roller.mo
 share/locale/an/LC_MESSAGES/file-roller.mo
@@ -439,10 +456,12 @@ share/locale/hr/LC_MESSAGES/file-roller.mo
 share/locale/hu/LC_MESSAGES/file-roller.mo
 share/locale/hy/LC_MESSAGES/file-roller.mo
 share/locale/id/LC_MESSAGES/file-roller.mo
+share/locale/ie/LC_MESSAGES/file-roller.mo
 share/locale/is/LC_MESSAGES/file-roller.mo
 share/locale/it/LC_MESSAGES/file-roller.mo
 share/locale/ja/LC_MESSAGES/file-roller.mo
 share/locale/ka/LC_MESSAGES/file-roller.mo
+share/locale/kab/LC_MESSAGES/file-roller.mo
 share/locale/kk/LC_MESSAGES/file-roller.mo
 share/locale/km/LC_MESSAGES/file-roller.mo
 share/locale/kn/LC_MESSAGES/file-roller.mo
