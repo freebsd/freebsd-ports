@@ -28,6 +28,11 @@ LICENSE_FILE=	${WRKSRC}/doc/license.txt
 .include "${.CURDIR}/../nvidia-driver/Makefile.version"
 .include "${.CURDIR}/../nvidia-driver/Makefile.common"
 
+# the package provides lib32 versions of the libraries, which then depends
+# themselves in non existing lib32 libraries, so we don't want the package
+# to end up depending on non existing libraries
+NO_SHLIB_REQUIRES_GLOB=*:32
+
 # Pull GNU sed(1) for "binary" patching of obj/libglvnd/libEGL.so.1 and
 # obj/libEGL_nvidia.so.0 (see below)
 .if ${NVVERSION} >= 410.057
