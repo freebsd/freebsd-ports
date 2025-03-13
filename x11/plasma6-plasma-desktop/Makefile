@@ -1,5 +1,6 @@
 PORTNAME=	plasma-desktop
 DISTVERSION=	${KDE_PLASMA_VERSION}
+PORTREVISION=	1
 CATEGORIES=	x11 kde kde-plasma
 
 MAINTAINER=	kde@FreeBSD.org
@@ -19,8 +20,7 @@ LIB_DEPENDS=	libcanberra.so:audio/libcanberra \
 RUN_DEPENDS=	noto-emoji>0:x11-fonts/noto-emoji \
 		xdg-user-dir:devel/xdg-user-dirs \
 		xf86-input-evdev>0:x11-drivers/xf86-input-evdev \
-		xf86-input-libinput>0:x11-drivers/xf86-input-libinput \
-		xf86-input-synaptics>0:x11-drivers/xf86-input-synaptics
+		xf86-input-libinput>0:x11-drivers/xf86-input-libinput
 
 USES=		cmake gettext gl kde:6 pkgconfig python qt:6 tar:xz xorg
 USE_GL=		gl opengl
