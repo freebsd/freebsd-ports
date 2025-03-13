@@ -31,6 +31,7 @@ include/groonga/groonga/file_reader.h
 include/groonga/groonga/float.h
 include/groonga/groonga/geo.h
 include/groonga/groonga/groonga.h
+include/groonga/groonga/h3.h
 include/groonga/groonga/hash.h
 include/groonga/groonga/highlighter.h
 include/groonga/groonga/id.h

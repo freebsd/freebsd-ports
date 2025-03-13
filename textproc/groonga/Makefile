@@ -1,5 +1,5 @@
 PORTNAME=	groonga
-DISTVERSION=	14.0.0
+DISTVERSION=	14.0.1
 CATEGORIES=	textproc
 MASTER_SITES=	https://packages.groonga.org/source/groonga/
 
@@ -47,11 +47,5 @@ SUGGEST_CONFIGURE_ON=	--enable-zeromq \
 SUGGEST_CONFIGURE_OFF=	--disable-zeromq \
 			--without-libevent \
 			--without-message-pack
-
-post-patch:
-# Avoid conflict with C++20 <version> by adding .txt suffix
-	@${MV} ${WRKSRC}/version ${WRKSRC}/version.txt
-	@${REINPLACE_CMD} -Ei .c++20 '/test|cat/s/[[:<:]]version/&.txt/' \
-		${WRKSRC}/version-gen.sh
 
 .include <bsd.port.mk>
