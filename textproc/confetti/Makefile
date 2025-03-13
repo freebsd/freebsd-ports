@@ -7,6 +7,9 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Configuration file parser generator
 WWW=		https://github.com/mailru/confetti
 
+DEPRECATED=	Outdated and unmaintained in tree since 2018
+EXPIRATION_DATE=2025-04-30
+
 BUILD_DEPENDS=	${LOCALBASE}/bin/flex:textproc/flex
 
 USES=		bison perl5 gmake tar:bzip2
