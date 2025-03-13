@@ -1,6 +1,6 @@
 PORTNAME=	brasero
 PORTVERSION=	3.12.3
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	sysutils audio multimedia gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
@@ -33,14 +33,9 @@ INSTALL_TARGET=	install-strip
 GLIB_SCHEMAS=	org.gnome.brasero.gschema.xml
 
 OPTIONS_SUB=	yes
-OPTIONS_DEFINE=	NAUTILUS LIBBURNIA
-OPTIONS_DEFAULT=NAUTILUS
+OPTIONS_DEFINE=	LIBBURNIA
 
-NAUTILUS_DESC=	Build nautilus extension
 LIBBURNIA_DESC=	Build libburnia plug-ins
-
-NAUTILUS_USE=	GNOME=nautilus3
-NAUTILUS_CONFIGURE_ENABLE=	nautilus
 
 LIBBURNIA_LIB_DEPENDS=	libburn.so:devel/libburn \
 			libisofs.so:devel/libisofs
