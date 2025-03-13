@@ -1,10 +1,10 @@
 PORTNAME=	gradle
-PORTVERSION=	8.12.1
+PORTVERSION=	8.13
 CATEGORIES=	devel java
 MASTER_SITES=	https://services.gradle.org/distributions/
 EXTRACT_SUFX=	-bin.zip
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	tiago.gasiba@gmail.com
 COMMENT=	Project automation tool
 WWW=		https://www.gradle.org/
 
