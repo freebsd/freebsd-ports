@@ -1,5 +1,6 @@
 PORTNAME=	gsettings-desktop-schemas
 DISTVERSION=	47.1
+PORTREVISION=	1
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME/sources/${PORTNAME}/${DISTVERSION:R:R}
 DIST_SUBDIR=	gnome

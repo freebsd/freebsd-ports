@@ -1,0 +1,13 @@
+--- schemas/org.gnome.desktop.wm.keybindings.gschema.xml.in.orig	2024-09-15 20:03:54 UTC
++++ schemas/org.gnome.desktop.wm.keybindings.gschema.xml.in
+@@ -167,6 +167,10 @@
+       <default><![CDATA[['<Super>Down','<Alt>F5']]]></default>
+       <summary>Restore window</summary>
+     </key>
++    <key name="toggle-shaded" type="as">
++      <default>[]</default>
++      <summary>Toggle shaded state</summary>
++    </key>
+     <key name="minimize" type="as">
+       <default><![CDATA[['<Super>h']]]></default>
+       <summary>Minimize window</summary>
