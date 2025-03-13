@@ -15,6 +15,9 @@ LICENSE_NAME=	Clarified Artistic License
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
+DEPRECATED=	Obscure markup language and unmaintained in tree for years
+EXPIRATION_DATE=2025-04-30
+
 USES=		perl5 gmake
 GNU_CONFIGURE=	yes
 OPTIONS_DEFINE=	DOCS
