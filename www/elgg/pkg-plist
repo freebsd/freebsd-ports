@@ -14934,7 +14934,6 @@
 %%WWWDIR%%/vendor/peppeocchi/php-cron-scheduler/tests/GO/SchedulerTest.php
 %%WWWDIR%%/vendor/peppeocchi/php-cron-scheduler/tests/async_job.php
 %%WWWDIR%%/vendor/peppeocchi/php-cron-scheduler/tests/test_job.php
-%%WWWDIR%%/vendor/php-di/invoker/CONTRIBUTING.md
 %%WWWDIR%%/vendor/php-di/invoker/LICENSE
 %%WWWDIR%%/vendor/php-di/invoker/README.md
 %%WWWDIR%%/vendor/php-di/invoker/composer.json
