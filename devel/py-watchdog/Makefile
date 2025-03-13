@@ -1,5 +1,5 @@
 PORTNAME=	watchdog
-DISTVERSION=	4.0.2
+DISTVERSION=	6.0.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -21,19 +21,20 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}eventlet>0:net/py-eventlet@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}mypy>=1.8.0:devel/py-mypy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-cov>0:devel/py-pytest-cov@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-timeout>0:devel/py-pytest-timeout@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}ruff>=0.9.6_1:devel/py-ruff@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sphinx>0:textproc/py-sphinx@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}types-PyYAML>=6.0.12.12:devel/py-types-PyYAML@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	autoplist concurrent pep517 pytest
 
-# NotImplementedError: unsupported platform
-# site-packages/trio/_core/_run.py:2843: NotImplementedError
-PYTEST_IGNORED_TESTS=	test_eventlet_monkey_patching
 # FileNotFoundError: [Errno 2] No such file or directory: /tmp/tmp*
 # src/watchdog/utils/dirsnapshot.py:318: FileNotFoundError
 PYTEST_BROKEN_TESTS=	test_observers_polling
-# tests: 144 passed, 11 skipped, 3 deselected
+# NotImplementedError: unsupported platform
+# site-packages/trio/_core/_run.py:2843: NotImplementedError
+PYTEST_IGNORED_TESTS=	test_eventlet_monkey_patching
+# tests: 147 passed, 13 skipped, 2 deselected
 TEST_ENV=	PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 
 DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
