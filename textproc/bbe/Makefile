@@ -11,6 +11,9 @@ WWW=		https://sourceforge.net/projects/bbe-/
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Abandonware and unmaintained in tree for years
+EXPIRATION_DATE=2025-04-30
+
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
