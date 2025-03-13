@@ -15,7 +15,7 @@
 	</body>
     </description>
     <references>
-      <cvename>GHSA-693p-m996-3rmf</cvename>
+      <cvename>CVE-2025-29768</cvename>
       <url>https://github.com/vim/vim/security/advisories/GHSA-693p-m996-3rmf</url>
     </references>
     <dates>
