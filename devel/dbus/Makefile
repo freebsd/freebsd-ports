@@ -1,5 +1,6 @@
 PORTNAME=	dbus
 DISTVERSION=	1.16.2
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	devel gnome
 MASTER_SITES=	https://dbus.freedesktop.org/releases/dbus/
