@@ -1,5 +1,6 @@
 PORTNAME=	kdeplasma-addons
 DISTVERSION=	${KDE_PLASMA_VERSION}
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits kde kde-plasma
 
 MAINTAINER=	kde@FreeBSD.org
@@ -15,8 +16,9 @@ USE_KDE=	colorscheme completion config configwidgets coreaddons \
 		service solid sonnet unitconversion widgetsaddons windowsystem \
 		xmlgui \
 		ecm:build \
-		kirigami-addons:run
-USE_QT=		5compat base declarative webchannel webengine
+		itemmodels:run kirigami-addons:run
+USE_QT=		5compat base declarative webchannel webengine \
+		quick3d:run
 USE_XORG= x11
 
 .include <bsd.port.mk>
