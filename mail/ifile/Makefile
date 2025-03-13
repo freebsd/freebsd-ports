@@ -10,6 +10,9 @@ WWW=		https://people.csail.mit.edu/jrennie/ifile/
 
 LICENSE=	GPLv2
 
+DEPRECATED=	Deprecated upstream
+EXPIRATION_DATE=2025-04-30
+
 USES=		gmake
 GNU_CONFIGURE=	yes
 USE_CSTD=	gnu89
