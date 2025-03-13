@@ -15,7 +15,7 @@ LICENSE_FILE_BSD3CLAUSE=	${WRKSRC}/LICENSES/BSD-3-Clause.txt
 LIB_DEPENDS=	libFcitx5Utils.so:textproc/fcitx5 \
 		libxkbcommon.so:x11/libxkbcommon
 
-FLAVORS?=	qt5 qt6
+FLAVORS?=	qt6 qt5
 FLAVOR?=	${FLAVORS:[1]}
 
 qt5_PKGNAMESUFFIX=	5
