@@ -8,6 +8,9 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open Source XML framework for Java
 WWW=		https://www.dom4j.org/
 
+DEPRECATED=	Outdated and unsupported upstream
+EXPIRATION_DATE=2025-04-30
+
 USES=		cpe java
 CPE_VENDOR=	${PORTNAME}_project
 NO_BUILD=	yes
