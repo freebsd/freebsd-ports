@@ -12,6 +12,9 @@ WWW=		https://www.bayofrum.net/dist/atom/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Upstream is gone and utility is considered obsolete
+EXPIRATION_DATE=2025-04-30
+
 GNU_CONFIGURE=	yes
 
 PLIST_FILES=	bin/atom share/man/man1/atom.1.gz
