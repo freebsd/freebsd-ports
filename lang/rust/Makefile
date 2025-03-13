@@ -171,7 +171,11 @@ do-configure:
 	@${ECHO_CMD} 'vendor=true' >> ${WRKSRC}/config.toml
 	@${ECHO_CMD} 'extended=true' >> ${WRKSRC}/config.toml
 	@${ECHO_CMD} 'python="${PYTHON_CMD}"' >> ${WRKSRC}/config.toml
+.if ${ARCH} == "armv7"
+	@${ECHO_CMD} 'docs=false' >> ${WRKSRC}/config.toml
+.else
 	@${ECHO_CMD} 'docs=${_RUST_BUILD_DOCS}' >> ${WRKSRC}/config.toml
+.endif
 	@${ECHO_CMD} 'verbose=2' >> ${WRKSRC}/config.toml
 .if defined(NIGHTLY_DATE)
 	@${ECHO_CMD} 'profiler=true' >> ${WRKSRC}/config.toml
