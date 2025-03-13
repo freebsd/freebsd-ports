@@ -9,6 +9,9 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Extends the XML Resume library
 WWW=		https://aaronland.info/xsl/xmlresume/
 
+DEPRECATED=	Depends on deprecated port textproc/resume
+EXPIRATION_DATE=2025-04-30
+
 RUN_DEPENDS=	resume>0:textproc/resume \
 		${LOCALBASE}/share/xsl/string/print-n-times.xsl:textproc/print-n-times \
 		${LOCALBASE}/share/xsl/xhtml/add-css-links.xsl:textproc/add-css-links
