@@ -15,6 +15,7 @@ LICENSE_FILE=	${WRKSRC}/README
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 DEPRECATED=	Not recommended for use in new projects
+EXPIRATION_DATE=2025-04-30
 
 VERSION=	2.0
 PATCHLEVEL=	42
