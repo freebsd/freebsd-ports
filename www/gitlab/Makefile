@@ -66,7 +66,7 @@ MY_DEPENDS=	gitaly>=${GITLAB_VERSION}:devel/gitaly \
 	rubygem-doorkeeper-openid_connect>=1.8.11<2:security/rubygem-doorkeeper-openid_connect \
 	rubygem-doorkeeper-device_authorization_grant>=1.0.0<1.1:security/rubygem-doorkeeper-device_authorization_grant \
 	rubygem-rexml>=3.4.1<3.5:textproc/rubygem-rexml \
-	rubygem-ruby-saml-gitlab>=1.17.0<1.18:security/rubygem-ruby-saml-gitlab \
+	rubygem-ruby-saml-gitlab>=1.18.0<1.19:security/rubygem-ruby-saml-gitlab \
 	rubygem-omniauth>=2.1.2<3:security/rubygem-omniauth \
 	rubygem-omniauth-auth0-gitlab>=3.1.1<3.2.0:net/rubygem-omniauth-auth0-gitlab \
 	rubygem-omniauth-azure-activedirectory-v2>=2.0<3:net/rubygem-omniauth-azure-activedirectory-v2 \
@@ -101,7 +101,7 @@ MY_DEPENDS=	gitaly>=${GITLAB_VERSION}:devel/gitaly \
 	rubygem-grape-swagger-entity>=0.5.1<0.6:devel/rubygem-grape-swagger-entity \
 	rubygem-grape-path-helpers>=2.0.1<2.1:devel/rubygem-grape-path-helpers \
 	rubygem-rack-cors>=2.0.1<2.1:www/rubygem-rack-cors \
-	rubygem-graphql>=2.4.8<2.5:devel/rubygem-graphql \
+	rubygem-graphql>=2.4.11<2.5:devel/rubygem-graphql \
 	rubygem-apollo_upload_server>=2.1.6<2.2:net/rubygem-apollo_upload_server \
 	rubygem-graphlient>=0.8.0<0.9:devel/rubygem-graphlient \
 	rubygem-ffaker>=2.24.0<3:devel/rubygem-ffaker \
