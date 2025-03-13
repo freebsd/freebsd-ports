@@ -8,6 +8,9 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Add one or more CSS <link> elements to an XHTML document
 WWW=		https://aaronland.info/xsl/xhtml/add-css-links
 
+DEPRECATED=	Obsolete and unmaintained in tree for years
+EXPIRATION_DATE=2025-04-30
+
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/xhtml
 
