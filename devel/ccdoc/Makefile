@@ -12,6 +12,9 @@ WWW=		https://ccdoc.sourceforge.net/
 
 LICENSE=	MIT
 
+DEPRECATED=	Obsolete utility
+EXPIRATION_DATE=2025-04-30
+
 USES=		perl5
 
 WRKSRC=		${WRKDIR}/${PORTNAME}v${PORTVERSION:S/.//g}/src
