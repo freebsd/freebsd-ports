@@ -1,12 +1,11 @@
 PORTNAME=	groupoffice
 DISTVERSIONPREFIX=	com-
-DISTVERSION=	6.6.58
-PORTREVISION=	1
+DISTVERSION=	25.0.7
 CATEGORIES=	www
 MASTER_SITES=	SF/group-office/${DISTVERSION:R}
 DISTNAME=	${PORTNAME}-${DISTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Modular web application framework for office
 WWW=		https://www.group-office.com/
 
@@ -20,24 +19,23 @@ USES=		mysql shebangfix php:web python
 
 NO_ARCH=	yes
 NO_BUILD=	yes
-USE_PHP=	ctype curl dom fileinfo filter intl mbstring \
+USE_PHP=	ctype curl dom exif fileinfo filter intl mbstring \
 		mysqli pdo pdo_mysql phar posix session \
 		simplexml soap sysvshm sysvsem tokenizer xml xmlreader \
 		xmlwriter zip zlib
 SHEBANG_FILES=	groupoffice \
 		groupofficecli.php \
-		modules/postfixadmin/scripts/vacation.pl \
 		vendor/sabre/dav/bin/naturalselection \
-		vendor/sabre/dav/bin/googlecode_upload.py \
-		vendor/bin/../sabre/dav/bin/naturalselection \
-		vendor/swiftmailer/swiftmailer/lib/swiftmailer_generate_mimes_config.php
+		vendor/bin/../sabre/dav/bin/naturalselection
 
 WWWDIR?=	${PREFIX}/www/${PORTNAME}${DISTVERSION:R:R}
 
 SUB_FILES=	pkg-message
 
-OPTIONS_DEFINE=	IMAP GD CALENDAR WBXML
-OPTIONS_DEFAULT=IMAP GD CALENDAR
+OPTIONS_DEFINE=	APCU IMAP GD CALENDAR WBXML
+OPTIONS_DEFAULT=APCU IMAP GD CALENDAR
+APCU_DESC=	Local data caching using APCu (recommended)
+APCU_RUN_DEPENDS=	${PECL_PKGNAMEPREFIX}APCu>0:devel/pecl-APCu@${PHP_FLAVOR}
 CALENDAR_DESC=	Calendar holiday support
 IMAP_DESC=	IMAP support
 GD_DESC=	Gallery support (GD)
