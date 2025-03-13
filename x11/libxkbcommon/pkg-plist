@@ -8,13 +8,13 @@ include/xkbcommon/xkbcommon.h
 include/xkbcommon/xkbregistry.h
 %%X11%%lib/libxkbcommon-x11.so
 %%X11%%lib/libxkbcommon-x11.so.0
-%%X11%%lib/libxkbcommon-x11.so.0.8.0
+%%X11%%lib/libxkbcommon-x11.so.0.8.1
 lib/libxkbcommon.so
 lib/libxkbcommon.so.0
-lib/libxkbcommon.so.0.8.0
+lib/libxkbcommon.so.0.8.1
 lib/libxkbregistry.so
 lib/libxkbregistry.so.0
-lib/libxkbregistry.so.0.8.0
+lib/libxkbregistry.so.0.8.1
 %%X11%%libdata/pkgconfig/xkbcommon-x11.pc
 libdata/pkgconfig/xkbcommon.pc
 libdata/pkgconfig/xkbregistry.pc
