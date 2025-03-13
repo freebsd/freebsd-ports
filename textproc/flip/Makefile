@@ -9,6 +9,9 @@ EXTRACT_SUFX=	.tar.Z
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Convert text file line endings between Unix and DOS formats
 
+DEPRECATED=	Unmaintained and dead upstream, consider using converters/dos2unix
+EXPIRATION_DATE=2025-04-30
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 ALL_TARGET=	bsd
 PLIST_FILES=	bin/flip share/man/man1/flip.1.gz
