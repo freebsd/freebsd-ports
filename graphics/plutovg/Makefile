@@ -1,6 +1,6 @@
 PORTNAME=	plutovg
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.0.12
+DISTVERSION=	0.0.13
 CATEGORIES=	graphics
 
 MAINTAINER=	alster@vinterdalen.se
@@ -10,7 +10,7 @@ WWW=		https://github.com/sammycage/plutovg/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=	cpe meson
+USES=		cpe meson
 CPE_VENDOR=	sammycage
 USE_GITHUB=	yes
 GH_ACCOUNT=	sammycage
