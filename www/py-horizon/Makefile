@@ -1,5 +1,5 @@
 PORTNAME=	horizon
-PORTVERSION=	25.1.0
+PORTVERSION=	25.2.0
 CATEGORIES=	www python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,12 +18,12 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pbr>=2.0.0:devel/py-pbr@${PY_FLAVOR} \
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Babel>=2.6.0:devel/py-babel@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}django_compressor>=4.4:www/py-django_compressor@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}django-debreach>=1.4.2:www/py-django-debreach@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}django-pyscss>=2.0.3:www/py-django-pyscss@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}django42>=4.2<4.3:www/py-django42@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}enmerkar>=0.7.1:www/py-enmerkar@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}futurist>=1.2.0:devel/py-futurist@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}iso8601>=0.1.11:devel/py-iso8601@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}keystoneauth1>=4.3.1:devel/py-keystoneauth1@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}libsass>=0.23.0:www/py-libsass@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}netaddr>=0.7.18:net/py-netaddr@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}oslo.concurrency>=4.5.0:devel/py-oslo.concurrency@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}oslo.config>=8.8.0:devel/py-oslo.config@${PY_FLAVOR} \
@@ -31,10 +31,9 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Babel>=2.6.0:devel/py-babel@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}oslo.policy>=3.11.0:devel/py-oslo.policy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}oslo.serialization>=4.3.0:devel/py-oslo.serialization@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}oslo.upgradecheck>=1.5.0:devel/py-oslo.upgradecheck@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}oslo.utils>=4.12.0:devel/py-oslo.utils@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}oslo.utils>=7.0.0:devel/py-oslo.utils@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}osprofiler>=3.4.2:devel/py-osprofiler@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pbr>=5.5.0:devel/py-pbr@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pyscss>=1.4.0:textproc/py-pyscss@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}python-cinderclient>=8.0.0:net/py-python-cinderclient@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}python-glanceclient>=2.8.0:net/py-python-glanceclient@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}python-keystoneclient>=3.22.0:net/py-python-keystoneclient@${PY_FLAVOR} \
