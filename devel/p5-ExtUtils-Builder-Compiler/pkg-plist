@@ -30,15 +30,5 @@
 %%PERL5_MAN3%%/ExtUtils::Builder::Compiler::VMS.3.gz
 %%PERL5_MAN3%%/ExtUtils::Builder::Conf.3.gz
 %%PERL5_MAN3%%/ExtUtils::Builder::Linker.3.gz
-%%PERL5_MAN3%%/ExtUtils::Builder::Linker::Ar.3.gz
-%%PERL5_MAN3%%/ExtUtils::Builder::Linker::COFF.3.gz
-%%PERL5_MAN3%%/ExtUtils::Builder::Linker::ELF::Any.3.gz
-%%PERL5_MAN3%%/ExtUtils::Builder::Linker::ELF::GCC.3.gz
-%%PERL5_MAN3%%/ExtUtils::Builder::Linker::Mach::GCC.3.gz
-%%PERL5_MAN3%%/ExtUtils::Builder::Linker::PE::GCC.3.gz
-%%PERL5_MAN3%%/ExtUtils::Builder::Linker::PE::MSVC.3.gz
-%%PERL5_MAN3%%/ExtUtils::Builder::Linker::Unixy.3.gz
-%%PERL5_MAN3%%/ExtUtils::Builder::Linker::XCOFF.3.gz
-%%PERL5_MAN3%%/ExtUtils::Builder::MultiLingual.3.gz
 %%PERL5_MAN3%%/ExtUtils::Builder::ParseXS.3.gz
 %%PERL5_MAN3%%/ExtUtils::Builder::Profile::Perl.3.gz
