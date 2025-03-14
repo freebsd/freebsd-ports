@@ -169,6 +169,7 @@
     SUBDIR += liggghts
     SUBDIR += linearelasticity
     SUBDIR += linux-rl9-stable-diffusion-environment
+    SUBDIR += linux-rl9-stable-diffusion-demo
     SUBDIR += linux-zotero
     SUBDIR += luscus
     SUBDIR += m-aneos
