@@ -1,4 +1,4 @@
-tradcpp is a traditional (K&R-style) preprocessor.
-
-It has the particular property that it doesn't (for the most part) trash
-whitespace, so it can be used on makefiles.
+tradcpp is a K&R-style ("traditional") C preprocessor. It was written to support
+historical uses of the C preprocessor for preprocessing things that aren't C, as
+the preprocessors that ship with C compilers are increasingly unsuitable for
+this task and/or don't provide a traditional mode at all.
