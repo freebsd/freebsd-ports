@@ -1,5 +1,5 @@
 PORTNAME=	wagtail
-PORTVERSION=	6.4
+PORTVERSION=	6.4.1
 CATEGORIES=	www python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,15 +15,15 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}anyascii>=0.1.5:textproc/py-anyascii@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}beautifulsoup>=4.8<4.13:www/py-beautifulsoup@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}beautifulsoup>=4.8<5:www/py-beautifulsoup@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}django42>=4.2<6.0:www/py-django42@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}django-filter>=23.3<25:www/py-django-filter@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}django-filter>=23.3:www/py-django-filter@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}django-modelcluster>=6.2.1<7.0:www/py-django-modelcluster@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}django-permissionedforms>=0.1<1.0:www/py-django-permissionedforms@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}django-taggit>=5.0<6.2:www/py-django-taggit@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}django-taggit>=5.0<7:www/py-django-taggit@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}django-tasks>=0.6.1<0.7:www/py-django-tasks@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}django-treebeard>=4.5.1<5.0:www/py-django-treebeard@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}djangorestframework>=3.14.0,1<4.0,1:www/py-djangorestframework@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}djangorestframework>=3.15.1,1<4.0,1:www/py-djangorestframework@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}draftjs-exporter>=2.1.5<6.0:www/py-draftjs-exporter@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}laces>=0.1<0.2:www/py-laces@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}openpyxl>=3.0.10<4.0:textproc/py-openpyxl@${PY_FLAVOR} \
