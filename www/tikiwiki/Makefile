@@ -1,10 +1,10 @@
 PORTNAME=	tikiwiki
-DISTVERSION=	24.2
+DISTVERSION=	28.1
 CATEGORIES=	www
-MASTER_SITES=	SF/${PORTNAME}/Tiki_24.x_Wolf_359/${DISTVERSION}/
+MASTER_SITES=	SF/${PORTNAME}/Tiki_28.x_Castor/${DISTVERSION}/
 DISTNAME=	tiki-${DISTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Powerful PHP based Wiki/CMS/Groupware
 WWW=		https://tiki.org/
 
@@ -23,7 +23,7 @@ SUB_FILES=	pkg-message
 SUB_LIST+=	TIKIWIKI_DIR=${TIKIWIKI_DIR}
 
 WRI_DIR=	db dump img/trackers img/wiki img/wiki_up modules/cache \
-		temp temp/cache templates_c templates whelp
+		temp temp/templates_c temp/cache templates_c templates whelp
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/${TIKIWIKI_DIR}
