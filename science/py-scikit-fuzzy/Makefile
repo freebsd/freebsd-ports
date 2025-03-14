@@ -16,7 +16,8 @@ PY_DEPENDS=	${PYTHON_PKGNAMEPREFIX}matplotlib>0:math/py-matplotlib@${PY_FLAVOR} 
 		${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}networkx>=1.9:math/py-networkx@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}scipy>=0.9:science/py-scipy@${PY_FLAVOR}
-BUILD_DEPENDS=	${PY_DEPENDS} \
+BUILD_DEPENDS=	${PY_SETUPTOOLS} \
+		${PY_DEPENDS} \
 		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PY_DEPENDS}
 
