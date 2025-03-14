@@ -1,5 +1,5 @@
 PORTNAME=	blosc2
-PORTVERSION=	3.1.1
+PORTVERSION=	3.2.0
 CATEGORIES=	archivers python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,21 +12,21 @@ WWW=		https://www.blosc.org/python-blosc2/ \
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-BUILD_DEPENDS=	c-blosc2>=2.15.2:archivers/c-blosc2 \
+BUILD_DEPENDS=	c-blosc2>=2.17.0:archivers/c-blosc2 \
 		${PYTHON_PKGNAMEPREFIX}numpy>=0,1:math/py-numpy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}scikit-build-core>=0:devel/py-scikit-build-core@${PY_FLAVOR}
 LIB_DEPENDS=	libblosc2.so:archivers/c-blosc2
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}httpx>=0:www/py-httpx@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}msgpack>=0:devel/py-msgpack@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}msgpack>=0:devel/py-msgpack@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}ndindex>=0:math/py-ndindex@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}numexpr>=0:math/py-numexpr@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}numpy>=1.25.0,1:math/py-numpy@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}py-cpuinfo>=0:sysutils/py-py-cpuinfo@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}numpy>=1.26,1:math/py-numpy@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}py-cpuinfo>=0:sysutils/py-py-cpuinfo@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}requests>=0:www/py-requests@${PY_FLAVOR}
 
 USES=		cmake:indirect pkgconfig python:3.10+
 USE_PYTHON=	autoplist concurrent cython pep517
 
-MAKE_ENV=	CMAKE_ARGS=-DUSE_SYSTEM_BLOSC2=ON
+MAKE_ENV=	USE_SYSTEM_BLOSC2=1
 
 post-install:
 	${FIND} ${STAGEDIR}${PYTHON_SITELIBDIR} -name '*.so' -exec ${STRIP_CMD} {} +
