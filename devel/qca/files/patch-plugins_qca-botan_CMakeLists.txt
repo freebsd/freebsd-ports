@@ -1,0 +1,27 @@
+Prefer botan-3 and prevent linking to botan-2, as security/botan2 is currently
+marked for removal. [1] Although we depend on libbotan-3.so for the BOTAN
+option, previous code would link to libbotan-2.so if installed.
+
+[1] https://cgit.freebsd.org/ports/commit/?id=eb1217e8e983cae63d99af35ac6de924b56691ab
+
+--- plugins/qca-botan/CMakeLists.txt.orig	2025-03-09 12:09:03 UTC
++++ plugins/qca-botan/CMakeLists.txt
+@@ -1,13 +1,10 @@ find_package(PkgConfig REQUIRED)
+ find_package(PkgConfig REQUIRED)
+ 
+-pkg_check_modules(BOTAN IMPORTED_TARGET botan-2)
+-if(NOT BOTAN_FOUND)
+-  pkg_check_modules(BOTAN IMPORTED_TARGET botan-3)
+-  if(BOTAN_FOUND)
+-    set(CMAKE_CXX_STANDARD 20)
+-    set(CMAKE_CXX_STANDARD_REQUIRED ON)
+-    set(CMAKE_CXX_EXTENSIONS OFF)
+-  endif()
++pkg_check_modules(BOTAN IMPORTED_TARGET botan-3)
++if(BOTAN_FOUND)
++  set(CMAKE_CXX_STANDARD 20)
++  set(CMAKE_CXX_STANDARD_REQUIRED ON)
++  set(CMAKE_CXX_EXTENSIONS OFF)
+ endif()
+ 
+ if(WITH_botan_PLUGIN STREQUAL "yes" AND NOT BOTAN_FOUND)

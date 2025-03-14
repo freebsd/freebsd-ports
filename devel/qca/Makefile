@@ -1,6 +1,5 @@
 PORTNAME=	qca
-DISTVERSION=	2.3.9
-PORTREVISION=	1
+DISTVERSION=	2.3.10
 CATEGORIES=	devel
 MASTER_SITES=	KDE/stable/qca/${PORTVERSION}
 PKGNAMESUFFIX=	-${FLAVOR}
@@ -18,10 +17,12 @@ RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
 FLAVORS=	qt5 qt6
 FLAVOR?=	qt5
 
-USES=		cmake compiler:c++17-lang localbase:ldflags pkgconfig \
+USES=		cmake:testing compiler:c++20-lang localbase:ldflags pkgconfig \
 		qt:${FLAVOR:S/qt//} tar:xz
 USE_LDCONFIG=	yes
-_USE_QT_qt5=	core buildtools:build qmake:build
+_USE_QT_qt5=	core \
+		buildtools:build qmake:build \
+		network:test testlib:test
 _USE_QT_qt6=	5compat base
 USE_QT=		${_USE_QT_${FLAVOR}}
 
@@ -30,6 +31,9 @@ CMAKE_ARGS=	-DBUILD_PLUGINS=none \
 		-DQCA_FEATURE_INSTALL_DIR=${QT_MKSPECDIR}/features \
 		-DQCA_SUFFIX=${FLAVOR} \
 		-D${FLAVOR:tu}:BOOL=TRUE
+CMAKE_OFF=	BUILD_TESTS
+CMAKE_TESTING_ON=	BUILD_TESTS
+
 CONFIGURE_ENV=	QC_CERTSTORE_PATH=${LOCALBASE}/share/certs/ca-root-nss.crt
 
 _PLIST_SUB_qt5=	QT5_ONLY=""
@@ -38,7 +42,7 @@ PLIST_SUB=	SHLIB_VER=${PORTVERSION} \
 		QCA_QT_VERSION=${FLAVOR} \
 		${_PLIST_SUB_${FLAVOR}}
 
-OPTIONS_DEFINE=	BOTAN GCRYPT GNUPG LOGGER NSS OPENSSL PKCS11 SASL SOFTSTORE TEST
+OPTIONS_DEFINE=	BOTAN GCRYPT GNUPG LOGGER NSS OPENSSL PKCS11 SASL SOFTSTORE
 OPTIONS_DEFAULT=GNUPG OPENSSL
 OPTIONS_SUB=	yes
 
@@ -72,11 +76,5 @@ SASL_CMAKE_ON=		-DWITH_cyrus-sasl_PLUGIN=yes
 
 SOFTSTORE_DESC=		Simple persistent certificate store
 SOFTSTORE_CMAKE_ON=	-DWITH_softstore_PLUGIN=yes
-
-_TEST_USE_qt5=		QT=network:build,testlib:build
-_TEST_USE_qt6=		# Network and Test included in base
-TEST_USE=		${_TEST_USE_${FLAVOR}}
-TEST_CMAKE_BOOL=	BUILD_TESTS
-TEST_TEST_TARGET=	test
 
 .include <bsd.port.mk>
