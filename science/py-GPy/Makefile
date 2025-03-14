@@ -7,7 +7,8 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Gaussian process toolbox
-WWW=		https://sheffieldml.github.io/GPy/
+WWW=		https://sheffieldml.github.io/GPy/ \
+		https://github.com/SheffieldML/GPy
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
