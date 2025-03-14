@@ -56,6 +56,7 @@
 %%SITE_PERL%%/Net/DNS/RR/OPT.pm
 %%SITE_PERL%%/Net/DNS/RR/PTR.pm
 %%SITE_PERL%%/Net/DNS/RR/PX.pm
+%%SITE_PERL%%/Net/DNS/RR/RESINFO.pm
 %%SITE_PERL%%/Net/DNS/RR/RP.pm
 %%SITE_PERL%%/Net/DNS/RR/RRSIG.pm
 %%SITE_PERL%%/Net/DNS/RR/RT.pm
@@ -143,6 +144,7 @@
 %%PERL5_MAN3%%/Net::DNS::RR::OPT.3.gz
 %%PERL5_MAN3%%/Net::DNS::RR::PTR.3.gz
 %%PERL5_MAN3%%/Net::DNS::RR::PX.3.gz
+%%PERL5_MAN3%%/Net::DNS::RR::RESINFO.3.gz
 %%PERL5_MAN3%%/Net::DNS::RR::RP.3.gz
 %%PERL5_MAN3%%/Net::DNS::RR::RRSIG.3.gz
 %%PERL5_MAN3%%/Net::DNS::RR::RT.3.gz
