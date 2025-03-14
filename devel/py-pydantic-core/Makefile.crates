@@ -24,7 +24,6 @@ CARGO_CRATES=	ahash-0.8.11 \
 		icu_properties_data-1.5.0 \
 		icu_provider-1.5.0 \
 		icu_provider_macros-1.5.0 \
-		idna-0.5.0 \
 		idna-1.0.3 \
 		idna_adapter-1.2.0 \
 		indexmap-2.2.6 \
@@ -45,12 +44,12 @@ CARGO_CRATES=	ahash-0.8.11 \
 		percent-encoding-2.3.1 \
 		portable-atomic-1.6.0 \
 		proc-macro2-1.0.86 \
-		pyo3-0.23.4 \
-		pyo3-build-config-0.23.4 \
-		pyo3-ffi-0.23.4 \
-		pyo3-macros-0.23.4 \
-		pyo3-macros-backend-0.23.4 \
-		python3-dll-a-0.2.12 \
+		pyo3-0.23.5 \
+		pyo3-build-config-0.23.5 \
+		pyo3-ffi-0.23.5 \
+		pyo3-macros-0.23.5 \
+		pyo3-macros-backend-0.23.5 \
+		python3-dll-a-0.2.13 \
 		quote-1.0.36 \
 		radium-0.7.0 \
 		regex-1.11.1 \
@@ -72,13 +71,9 @@ CARGO_CRATES=	ahash-0.8.11 \
 		tap-1.0.1 \
 		target-lexicon-0.12.14 \
 		tinystr-0.7.6 \
-		tinyvec-1.6.1 \
-		tinyvec_macros-0.1.1 \
-		unicode-bidi-0.3.15 \
 		unicode-ident-1.0.12 \
-		unicode-normalization-0.1.23 \
 		unindent-0.2.3 \
-		url-2.5.2 \
+		url-2.5.4 \
 		utf16_iter-1.0.5 \
 		utf8_iter-1.0.4 \
 		uuid-1.12.1 \
