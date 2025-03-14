@@ -1,7 +1,0 @@
-TIMESTAMP = 1738597992
-SHA256 (linux-firmware/mtwfw/mediatek/mt7601u.bin) = 4511b1d840e22aea2bf5fdca419c91c0d94cbfb291b9ac4f8be6d9100d1a7046
-SIZE (linux-firmware/mtwfw/mediatek/mt7601u.bin) = 45412
-SHA256 (linux-firmware/mtwfw/LICENCE.mediatek?h=20241017) = a90d3f66704d85889945fec5525ea77622549da83aced1aac99828383f8f1805
-SIZE (linux-firmware/mtwfw/LICENCE.mediatek?h=20241017) = 561
-SHA256 (linux-firmware/mtwfw/WHENCE?h=20241017) = 7851ae8e04d71ccfc741fd2df450ef5724c4a172a0a282f69e8a8ce44877ba84
-SIZE (linux-firmware/mtwfw/WHENCE?h=20241017) = 291838

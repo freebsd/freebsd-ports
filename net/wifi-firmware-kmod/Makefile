@@ -27,7 +27,10 @@ RUN_DEPENDS=	\
 	wifi-firmware-rtw89-kmod-rtw8852a>0:net/wifi-firmware-rtw89-kmod@rtw8852a \
 	wifi-firmware-rtw89-kmod-rtw8852b>0:net/wifi-firmware-rtw89-kmod@rtw8852b \
 	wifi-firmware-rtw89-kmod-rtw8852c>0:net/wifi-firmware-rtw89-kmod@rtw8852c \
-	wifi-firmware-rtw89-kmod-rtw8922a>0:net/wifi-firmware-rtw89-kmod@rtw8922a
+	wifi-firmware-rtw89-kmod-rtw8922a>0:net/wifi-firmware-rtw89-kmod@rtw8922a \
+	\
+	wifi-firmware-mt7601u-kmod>0:net/wifi-firmware-mt7601u-kmod
+
 
 .if ${FLAVOR:U} != release
 RUN_DEPENDS+=	\

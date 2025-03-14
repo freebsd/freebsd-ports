@@ -4206,3 +4206,4 @@ sysutils/tracker-miners||2025-03-05|Retired upstream
 sysutils/tracker||2025-03-05|Replaced long ago by tracker3 and now tinysparql
 net-im/talkatu||2025-03-10|Has expired: Upstream has switched to mercurial and upstream development has stopped
 textproc/py-towncrier23|textproc/py-towncrier|2025-03-14|Remove obsoleted port. Use textproc/py-towncrier instead
+net/wifi-firmware-mtw-kmod|net/wifi-firmware-mt7601u-kmod|2025-03-14|Fixed to match firmware name
