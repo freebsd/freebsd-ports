@@ -53,7 +53,7 @@ else
         if [ "x${php_fpm_profiles}" != "x" -a "x$1" != "x" ]; then
                 for profile in ${php_fpm_profiles}; do
                         echo "===> php_fpm profile: ${profile}"
-                        /usr/local/etc/rc.d/php-fpm $1 ${profile}
+                        %%PREFIX%%/etc/rc.d/php_fpm $1 ${profile}
                         retcode="$?"
                         if [ "0${retcode}" -ne 0 ]; then
                                 failed="${profile} (${retcode}) ${failed:-}"
