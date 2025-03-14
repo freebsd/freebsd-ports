@@ -1,5 +1,6 @@
 PORTNAME=	plasma-workspace
 DISTVERSION=	${KDE_PLASMA_VERSION}
+PORTREVISION=	1
 CATEGORIES=	x11 kde kde-plasma
 
 #PATCH_SITES=	https://invent.kde.org/plasma/plasma-workspace/-/commit/
@@ -20,8 +21,11 @@ LIB_DEPENDS=	libcanberra.so:audio/libcanberra \
 		libxcb-util.so:x11/xcb-util \
 		libxkbcommon.so:x11/libxkbcommon \
 		libQCoro6Core.so:devel/qcoro@qt6
-
-RUN_DEPENDS=	${LOCALBASE}/bin/genv:sysutils/coreutils
+RUN_DEPENDS=	kio-extras>=24.12.3:devel/kio-extras \
+		kio-fuse>=5.1.0_1:filesystems/kio-fuse \
+		mkfontscale:x11-fonts/mkfontscale \
+		oxygen-icons>=0:x11-themes/oxygen-icons \
+		xset:x11/xset
 
 USES=		cmake desktop-file-utils gettext gl kde:6 pkgconfig python \
 		qt:6 shebangfix tar:xz xorg
