@@ -1,7 +1,6 @@
 PORTNAME=	natten
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.17.3
-PORTREVISION=	1
+DISTVERSION=	0.17.4
 CATEGORIES=	misc python
 #MASTER_SITES=	PYPI # no tests
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -38,5 +37,14 @@ post-install:
 		${STAGEDIR}${PYTHON_SITELIBDIR}/CMakeCache.txt \
 		${STAGEDIR}${PYTHON_SITELIBDIR}/cmake_install.cmake \
 		${STAGEDIR}${PYTHON_SITELIBDIR}/Makefile
+
+# tests as of 0.17.4:
+# Results (35.54s):
+#       24 passed
+#        2 failed
+#          - .:?
+#          - .:?
+#       12 xfailed
+#       59 skipped
 
 .include <bsd.port.mk>
