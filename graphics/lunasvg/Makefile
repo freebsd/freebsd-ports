@@ -1,6 +1,7 @@
 PORTNAME=	lunasvg
 DISTVERSIONPREFIX=	v
 DISTVERSION=	3.2.1
+PORTREVISION=	1
 CATEGORIES=	graphics
 
 MAINTAINER=	alster@vinterdalen.se
