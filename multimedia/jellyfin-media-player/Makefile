@@ -1,6 +1,7 @@
 PORTNAME=	jellyfin-media-player
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.11.1
+PORTREVISION=	1
 CATEGORIES=	multimedia
 
 MAINTAINER=	bapt@FreeBSD.org

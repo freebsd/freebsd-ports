@@ -1,7 +1,6 @@
 PORTNAME=	libcec
-PORTVERSION=	6.0.2
+PORTVERSION=	7.0.0
 DISTVERSIONPREFIX=	libcec-
-PORTREVISION=	2
 CATEGORIES=	multimedia
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -10,7 +9,7 @@ WWW=		https://libcec.pulse-eight.com/ \
 		https://github.com/Pulse-Eight/libcec
 
 LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/COPYING
+LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 LIB_DEPENDS=	libp8-platform.so:devel/p8-platform
 

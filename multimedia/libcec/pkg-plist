@@ -10,8 +10,8 @@ include/libcec/cecloader.h
 include/libcec/cectypes.h
 include/libcec/version.h
 lib/libcec.so
-lib/libcec.so.6
+lib/libcec.so.7
 lib/libcec.so.%%PORTVERSION%%
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/_cec.so
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/_pycec.so
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/cec.py
 libdata/pkgconfig/libcec.pc
