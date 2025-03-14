@@ -1,6 +1,6 @@
 PORTNAME=	gnome
 PORTVERSION=	42
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES?=	x11 gnome
 
 MAINTAINER=	gnome@FreeBSD.org
@@ -55,7 +55,6 @@ RUN_DEPENDS+=	epiphany>=3.0.0:www/epiphany \
 		gedit>=3.0.0:editors/gedit \
 		gedit-plugins>=3.0.0:editors/gedit-plugins \
 		gnome-terminal>=3.0.0:x11/gnome-terminal \
-		brasero>=3.0.0:sysutils/brasero \
 		accerciser>=3.0.0:accessibility/accerciser \
 		gnome-calculator>=3.0.0:math/gnome-calculator \
 		gnome-utils>=3.6.0:deskutils/gnome-utils \
