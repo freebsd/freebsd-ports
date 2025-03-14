@@ -1,6 +1,5 @@
 PORTNAME=	flint
-DISTVERSION=	3.1.2
-PORTREVISION=	1
+DISTVERSION=	3.2.0
 CATEGORIES=	math
 MASTER_SITES=	http://www.flintlib.org/download/
 
@@ -16,20 +15,38 @@ LIB_DEPENDS=	libgmp.so:math/gmp \
 		libmpfr.so:math/mpfr \
 		libopenblas.so:math/openblas
 
-USES=		cmake compiler:c++11-lang pkgconfig python:build
+USES=		compiler:c++11-lang gmake localbase pkgconfig python:build # cmake is only intended for Widows, see https://github.com/flintlib/flint/issues/2251#issuecomment-2720292171
 USE_LDCONFIG=	yes
 
-OPTIONS_DEFINE=		NTL
-OPTIONS_DEFAULT=	NTL
+GNU_CONFIGURE=	yes
 
-NTL_DESC=		Victor Shoup's Number Theory Library
-NTL_CMAKE_BOOL=		WITH_NTL
-NTL_LIB_DEPENDS=	libntl.so:math/ntl
+.if !defined(WITH_DEBUG)
+CONFIGURE_ARGS=	--disable-debug
+.endif
 
-do-test:
-	@cd ${BUILD_WRKSRC} && \
-		${SETENV} ${CONFIGURE_ENV} ${CMAKE_BIN} ${CMAKE_ARGS} -DBUILD_TESTING:BOOL=ON ${CMAKE_SOURCE_PATH} && \
-		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} ${ALL_TARGET} && \
-		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} test
+TEST_TARGET=	check
+
+OPTIONS_DEFINE=			NTL
+OPTIONS_GROUP=			OPTIMIZATIONS
+OPTIONS_GROUP_OPTIMIZATIONS=	AVX2 AVX512
+OPTIONS_DEFAULT=		NTL
+
+AVX2_DESC=			Enable AVX2 instructions
+AVX2_CONFIGURE_ENABLE=		avx2
+
+AVX512_DESC=			Enable AVX512 instructions
+AVX512_CONFIGURE_ENABLE=	avx512
+
+NTL_DESC=			Victor Shoup's Number Theory Library
+NTL_CONFIGURE_WITH=		ntl
+NTL_LIB_DEPENDS=		libntl.so:math/ntl
+
+MAKE_ENV+=	VERBOSE=1
+MAKE_ARGS+=	VERBOSE=1
+
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libflint.so.20.0.0
+
+# tests as of 3.2.0: All tests passed.
 
 .include <bsd.port.mk>
