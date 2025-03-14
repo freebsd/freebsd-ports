@@ -24,7 +24,7 @@ BUILD_DEPENDS=	${LOCALBASE}/include/boost/container/small_vector.hpp:devel/boost
 		gsed:textproc/gsed
 RUN_DEPENDS=	poppler-data>0:graphics/poppler-data
 
-USES=		cmake:insource compiler:c++17-lang cpe gperf jpeg \
+USES=		cmake:insource compiler:c++20-lang cpe gperf jpeg \
 		localbase pathfix pkgconfig tar:xz
 CPE_VENDOR=	freedesktop
 USE_LDCONFIG=	yes
