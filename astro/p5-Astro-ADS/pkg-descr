@@ -1,10 +1,4 @@
-The Astro::ADS module is an objected orientated Perl interface to the
-Astrophysics Data System (ADS) abstract service. The ADS is a NASA-funded
-project whose main resource is an Abstract Service, which includes four sets
-of abstracts:
-   1) astronomy and astrophysics, containing 719,449 abstracts;
-   2) instrumentation, containing 608,834 abstracts;
-   3) physics and geophysics, containing 1,079,814 abstracts; and
-   4) Los Alamos preprint server, containing 4,104 abstracts.
-Each dataset can be searched by author, object name (astronomy only), title,
-or abstract text words.
+Astro::ADS is the base class for accessing the ADS API.
+
+It handles methods common to all services such as setting the UserAgent and
+including your API key in all request headers.

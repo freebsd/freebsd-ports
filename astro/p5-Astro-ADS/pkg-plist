@@ -1,10 +1,10 @@
-bin/adsquery
 %%SITE_PERL%%/Astro/ADS.pm
-%%SITE_PERL%%/Astro/ADS/Query.pm
+%%SITE_PERL%%/Astro/ADS/Paper.pm
 %%SITE_PERL%%/Astro/ADS/Result.pm
-%%SITE_PERL%%/Astro/ADS/Result/Paper.pm
+%%SITE_PERL%%/Astro/ADS/Role/ResultMapper.pm
+%%SITE_PERL%%/Astro/ADS/Search.pm
 %%PERL5_MAN3%%/Astro::ADS.3.gz
-%%PERL5_MAN3%%/Astro::ADS::Query.3.gz
+%%PERL5_MAN3%%/Astro::ADS::Paper.3.gz
 %%PERL5_MAN3%%/Astro::ADS::Result.3.gz
-%%PERL5_MAN3%%/Astro::ADS::Result::Paper.3.gz
-%%PERL5_MAN1%%/adsquery.1.gz
+%%PERL5_MAN3%%/Astro::ADS::Role::ResultMapper.3.gz
+%%PERL5_MAN3%%/Astro::ADS::Search.3.gz
