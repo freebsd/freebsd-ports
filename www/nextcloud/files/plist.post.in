@@ -5,3 +5,4 @@
 @dir %%WWWDIR%%/config
 @dir %%WWWDIR%%/data
 @dir /var/log/nextcloud
+@dir %%WWWDIR%%/apps-pkg/suspicious_login/vendor-bin/psalm/vendor/symfony/string/Resources/bin
