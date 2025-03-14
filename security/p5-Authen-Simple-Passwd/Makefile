@@ -18,4 +18,6 @@ RUN_DEPENDS=	p5-Authen-Simple>=0:security/p5-Authen-Simple
 USES=		perl5
 USE_PERL5=	modbuild
 
+NO_ARCH=	yes
+
 .include <bsd.port.mk>
