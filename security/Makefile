@@ -455,6 +455,7 @@
     SUBDIR += openssl32
     SUBDIR += openssl33
     SUBDIR += openssl34
+    SUBDIR += openssl35
     SUBDIR += openvas
     SUBDIR += openvpn
     SUBDIR += openvpn-admin
