@@ -1,5 +1,5 @@
 PORTNAME=	aws-sdk-resources
-PORTVERSION=	3.222.0
+PORTVERSION=	3.223.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -149,7 +149,6 @@ RUN_DEPENDS=	rubygem-aws-sdk-accessanalyzer>=1<2:devel/rubygem-aws-sdk-accessana
 		rubygem-aws-sdk-eksauth>=1<2:devel/rubygem-aws-sdk-eksauth \
 		rubygem-aws-sdk-elasticache>=1<2:devel/rubygem-aws-sdk-elasticache \
 		rubygem-aws-sdk-elasticbeanstalk>=1<2:devel/rubygem-aws-sdk-elasticbeanstalk \
-		rubygem-aws-sdk-elasticinference>=1<2:devel/rubygem-aws-sdk-elasticinference \
 		rubygem-aws-sdk-elasticloadbalancing>=1<2:devel/rubygem-aws-sdk-elasticloadbalancing \
 		rubygem-aws-sdk-elasticloadbalancingv2>=1<2:devel/rubygem-aws-sdk-elasticloadbalancingv2 \
 		rubygem-aws-sdk-elasticsearchservice>=1<2:devel/rubygem-aws-sdk-elasticsearchservice \
