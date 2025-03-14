@@ -1,5 +1,5 @@
 PORTNAME=	aiohttp
-PORTVERSION=	3.11.12
+PORTVERSION=	3.11.13
 CATEGORIES=	www python
 MASTER_SITES=	PYPI \
 		https://github.com/aio-libs/aiohttp/releases/download/v${PORTVERSION}/
@@ -36,7 +36,7 @@ CPE_VENDOR=	aiohttp_project
 OPTIONS_DEFINE=	SPEEDUPS
 SPEEDUPS_DESC=	Performance speedups
 
-SPEEDUPS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aiodns>=3.0.0:dns/py-aiodns@${PY_FLAVOR} \
+SPEEDUPS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aiodns>=3.2.0:dns/py-aiodns@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}brotli>=0:archivers/py-brotli@${PY_FLAVOR}
 
 .include <bsd.port.pre.mk>
