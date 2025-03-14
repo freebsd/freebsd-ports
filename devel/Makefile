@@ -176,6 +176,7 @@
     SUBDIR += aegis
     SUBDIR += agar
     SUBDIR += aifad
+    SUBDIR += air-go
     SUBDIR += aixlog
     SUBDIR += ald
     SUBDIR += alire

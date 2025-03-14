@@ -241,6 +241,8 @@ OPENSSLLIB=	/usr/lib
 
 PLIST_FILES=	bin/${PORTNAME}
 
+CONFLICTS_INSTALL=	air-go
+
 .include <bsd.port.options.mk>
 
 .if ${ARCH} == powerpc64 && !defined(CPUTYPE)

@@ -1,0 +1,9 @@
+Air is yet another live reloader for Go development (it does not do hot
+reloading for production environments). It's extensively customizable
+with a simple interface.
+
+Air can also proxy the connection to web-serving apps to live-reload
+your browser.
+
+For many projects it is zero configuration and runs right out of the
+box. For the rest, `air init` generates a config file.
