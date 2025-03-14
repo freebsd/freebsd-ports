@@ -1,0 +1,10 @@
+--- requirements.txt.orig	2025-02-22 18:02:35 UTC
++++ requirements.txt
+@@ -1,6 +1,6 @@ lxml
+ geolinks
+ lxml
+-OWSLib<0.29
++OWSLib
+ pyproj
+ Shapely
+ xmltodict
