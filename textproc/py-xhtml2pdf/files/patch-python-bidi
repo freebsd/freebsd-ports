@@ -1,0 +1,24 @@
+Reference:	https://github.com/xhtml2pdf/xhtml2pdf/commit/3ac6559d670736696e0a12a7e945191b7961428d
+
+--- pyproject.toml.orig	2025-02-23 23:16:52 UTC
++++ pyproject.toml
+@@ -53,7 +53,7 @@ dependencies = [
+     "pyHanko>=0.12.1",
+     "pyhanko-certvalidator>=0.19.5",
+     "pypdf>=3.1.0",
+-    "python-bidi>=0.5.0",
++    "python-bidi>=0.4.2",
+     "reportlab>=4.0.4,<5",
+     "svglib>=1.2.1"
+ ]
+--- xhtml2pdf/util.py.orig	2025-02-23 22:08:13 UTC
++++ xhtml2pdf/util.py
+@@ -22,7 +22,7 @@ import reportlab.pdfbase._cidfontdata
+ import arabic_reshaper
+ import reportlab
+ import reportlab.pdfbase._cidfontdata
+-from bidi import get_display
++from bidi.algorithm import get_display
+ from reportlab.lib.colors import Color, toColor
+ from reportlab.lib.enums import TA_CENTER, TA_JUSTIFY, TA_LEFT, TA_RIGHT
+ from reportlab.lib.units import cm, inch
