@@ -1,4 +1,4 @@
---- src/CMakeLists.txt.orig	2025-02-14 18:46:38 UTC
+--- src/CMakeLists.txt.orig	2024-12-20 11:54:34 UTC
 +++ src/CMakeLists.txt
 @@ -48,7 +48,7 @@ if (SLIC3R_GUI)
      endif()
@@ -9,3 +9,12 @@
  
      string(REGEX MATCH "wxpng" WX_PNG_BUILTIN ${wxWidgets_LIBRARIES})
      if (PNG_FOUND AND NOT WX_PNG_BUILTIN)
+@@ -100,6 +100,8 @@ endif ()
+ else ()
+     add_executable(PrusaSlicer PrusaSlicer.cpp PrusaSlicer.hpp)
+ endif ()
++
++target_link_libraries(PrusaSlicer ${DBUS_LIBRARIES})
+ 
+ if (MINGW)
+     target_link_options(PrusaSlicer PUBLIC "-Wl,-allow-multiple-definition")
