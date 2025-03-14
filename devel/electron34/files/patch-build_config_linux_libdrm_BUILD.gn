@@ -1,0 +1,11 @@
+--- build/config/linux/libdrm/BUILD.gn.orig	2025-01-27 17:37:37 UTC
++++ build/config/linux/libdrm/BUILD.gn
+@@ -15,7 +15,7 @@ if (use_system_libdrm) {
+ }
+ 
+ if (use_system_libdrm) {
+-  assert(!is_linux, "System libdrm is not supported in linux")
++#  assert(!is_linux, "System libdrm is not supported in linux")
+   pkg_config("libdrm_config") {
+     packages = [ "libdrm" ]
+   }
