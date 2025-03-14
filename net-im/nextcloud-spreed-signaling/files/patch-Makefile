@@ -1,61 +1,10 @@
---- Makefile.orig	2023-07-05 09:17:27 UTC
+--- Makefile.orig	2025-01-22 09:33:28 UTC
 +++ Makefile
-@@ -1,7 +1,7 @@
+@@ -1,6 +1,6 @@ all: build
  all: build
  
- GO := $(shell which go)
--GOPATH := $(shell "$(GO)" env GOPATH)
-+GOPATH := $(CURDIR)/vendor
+-GO := $(shell which go)
++GO := $(shell which go122)
+ GOPATH := $(shell "$(GO)" env GOPATH)
  GODIR := $(shell dirname "$(GO)")
  GOFMT := "$(GODIR)/gofmt"
- GOOS ?= linux
-@@ -54,15 +54,13 @@ hook:
- 	[ ! -d "$(CURDIR)/.git/hooks" ] || ln -sf "$(CURDIR)/scripts/pre-commit.hook" "$(CURDIR)/.git/hooks/pre-commit"
- 
- $(GOPATHBIN)/easyjson:
--	[ "$(GOPROXY)" = "off" ] || $(GO) get -u -d github.com/mailru/easyjson/...
--	$(GO) install github.com/mailru/easyjson/...
-+	$(GO) build -o $(CURDIR)/easyjson ./vendor/src/github.com/mailru/easyjson/easyjson/main.go
- 
- $(GOPATHBIN)/protoc-gen-go:
--	$(GO) install google.golang.org/protobuf/cmd/protoc-gen-go
-+	$(GO) build google.golang.org/protobuf/cmd/protoc-gen-go
- 
- $(GOPATHBIN)/protoc-gen-go-grpc:
--	[ "$(GOPROXY)" = "off" ] || $(GO) get -u -d google.golang.org/grpc/cmd/protoc-gen-go-grpc
--	$(GO) install google.golang.org/grpc/cmd/protoc-gen-go-grpc
-+	$(GO) build google.golang.org/grpc/cmd/protoc-gen-go-grpc
- 
- continentmap.go:
- 	$(CURDIR)/scripts/get_continent_map.py $@
-@@ -102,12 +100,12 @@ coverhtml: vet common
- 	$(GO) tool cover -html=cover.out -o coverage.html
- 
- %_easyjson.go: %.go $(GOPATHBIN)/easyjson | common_proto
--	PATH="$(GODIR)":$(PATH) "$(GOPATHBIN)/easyjson" -all $*.go
-+	PATH="$(GODIR)":$(PATH) "$(CURDIR)/easyjson" -all $(CURDIR)/vendor/src/github.com/strukturag/nextcloud-spreed-signaling/$*.go
- 
- %.pb.go: %.proto $(GOPATHBIN)/protoc-gen-go $(GOPATHBIN)/protoc-gen-go-grpc
--	PATH="$(GODIR)":"$(GOPATHBIN)":$(PATH) protoc --go_out=. --go_opt=paths=source_relative \
--		--go-grpc_out=. --go-grpc_opt=paths=source_relative \
--		$*.proto
-+	PATH="$(GODIR)":"$(GOPATHBIN)":"$(CURDIR)":$(PATH) protoc --go_out=. --go_opt=paths=source_relative \
-+              --go-grpc_out=. --go-grpc_opt=paths=source_relative --proto_path="$(CURDIR)" \
-+              "$(CURDIR)/$*.proto"
- 
- common: common_easyjson common_proto
- 
-@@ -162,6 +160,13 @@ tarball: vendor
- 	gzip --force nextcloud-spreed-signaling-$(TARVERSION).tar
- 
- dist: tarball
-+install:
-+	install -d $(DESTDIR)$(PREFIX)/etc/ncs/
-+	install -m 644 server.conf.in $(DESTDIR)$(PREFIX)/etc/ncs/server.conf.sample
-+	install -m 644 proxy.conf.in $(DESTDIR)$(PREFIX)/etc/ncs/proxy.conf.sample
-+	install -m 644 gnatsd.conf $(DESTDIR)$(PREFIX)/etc/ncs/gnatsd.conf.sample
-+	install -m 755 bin/signaling $(DESTDIR)$(PREFIX)/bin/ncs-signaling
-+	install -m 755 bin/proxy $(DESTDIR)$(PREFIX)/bin/ncs-proxy
- 
- .NOTPARALLEL: %_easyjson.go
- .PHONY: continentmap.go vendor
