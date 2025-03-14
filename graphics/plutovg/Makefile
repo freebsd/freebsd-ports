@@ -1,6 +1,6 @@
 PORTNAME=	plutovg
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.0.13
+DISTVERSION=	1.0.0
 CATEGORIES=	graphics
 
 MAINTAINER=	alster@vinterdalen.se
