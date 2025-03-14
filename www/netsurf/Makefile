@@ -13,6 +13,8 @@ LICENSE=	GPLv2 MIT
 LICENSE_COMB=	multi
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		failed to load "frontends/gtk/res/netsurf.xpm": Couldn?t recognize the image file format for file ?frontends/gtk/res/netsurf.xpm?
+
 BUILD_DEPENDS=	duk:lang/duktape \
 		nsgenbind:devel/nsgenbind \
 		p5-HTML-Parser>=3.72:www/p5-HTML-Parser \
