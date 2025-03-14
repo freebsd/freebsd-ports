@@ -1049,6 +1049,7 @@
     SUBDIR += p5-MojoX-Renderer-Xslate
     SUBDIR += p5-Mojolicious
     SUBDIR += p5-Mojolicious-Plugin-Authentication
+    SUBDIR += p5-Mojolicious-Plugin-BasicAuthPlus
     SUBDIR += p5-Mojolicious-Plugin-Database
     SUBDIR += p5-Mojolicious-Plugin-HamlRenderer
     SUBDIR += p5-Mojolicious-Plugin-Mongodb
