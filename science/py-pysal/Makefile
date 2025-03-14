@@ -38,4 +38,23 @@ USE_PYTHON=	autoplist concurrent pep517
 
 NO_ARCH=	yes
 
+OPTIONS_DEFINE=	PLUS
+PLUS_DESC=	Extra features
+
+PLUS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}bokeh>=0.11.1:www/py-bokeh@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}descartes>=0:graphics/py-descartes@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}folium>=0.2.1:www/py-folium@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}geojson>=1.3.2:devel/py-geojson@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}geopandas>=0.2:graphics/py-geopandas@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}mapclassify>=0:graphics/py-mapclassify@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}matplotlib>=1.5.1:math/py-matplotlib@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}numba>=0:devel/py-numba@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}numexpr>=0:math/py-numexpr@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}palettable>=0:misc/py-palettable@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}pandana>=0:graphics/py-pandana@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}scikit-learn>=0.17.1:science/py-scikit-learn@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}seaborn>=0.7.0:math/py-seaborn@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}statsmodels>=0.6.1:math/py-statsmodels@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}urbanaccess>=0:graphics/py-urbanaccess@${PY_FLAVOR}
+
 .include <bsd.port.mk>
