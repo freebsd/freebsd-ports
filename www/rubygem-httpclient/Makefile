@@ -1,5 +1,5 @@
 PORTNAME=	httpclient
-PORTVERSION=	2.8.3
+PORTVERSION=	2.9.0
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -12,6 +12,8 @@ LICENSE_COMB=	dual
 
 NO_ARCH=	yes
 USES=		gem
+
+RUN_DEPENDS=	rubygem-mutex_m>=0:devel/rubygem-mutex_m
 
 PLIST_FILES=	bin/httpclient
 
