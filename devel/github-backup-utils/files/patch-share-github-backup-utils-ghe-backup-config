@@ -1,4 +1,4 @@
-% sed -i '' 's|/etc/github-backup-utils/backup.config|%%PREFIX%%/etc/github.backup.config|g' share/github-backup-utils/ghe-backup-config
+% sed -i .orig 's|/etc/github-backup-utils/backup.config|%%PREFIX%%/etc/github.backup.config|g' share/github-backup-utils/ghe-backup-config
 
 --- share/github-backup-utils/ghe-backup-config.orig	2024-02-15 22:08:04 UTC
 +++ share/github-backup-utils/ghe-backup-config
