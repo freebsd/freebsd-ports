@@ -1,4 +1,4 @@
---- pyproject.toml.orig	2024-06-12 14:08:03 UTC
+--- pyproject.toml.orig	2025-02-20 16:31:55 UTC
 +++ pyproject.toml
 @@ -1,6 +1,6 @@
  [build-system]
@@ -8,4 +8,15 @@
 +build-backend = "flit_core.buildapi"
  
  [tool.sphinx-theme-builder]
- node-version = "16.13.2"
+ node-version = "20.9.0"
+@@ -36,8 +36,8 @@ dependencies = [
+ 
+ requires-python = ">=3.9"
+ dependencies = [
+-  "sphinx>=6.1",
+-  "pydata-sphinx-theme==0.15.4"
++  "sphinx>=5.3",
++  "pydata-sphinx-theme>=0.15.4"
+ ]
+ 
+ license = { file = "LICENSE" }
