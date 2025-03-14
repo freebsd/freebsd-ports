@@ -74,8 +74,8 @@ CARGO_CRATES=	adler2-2.0.0 \
 		proc-macro2-1.0.92 \
 		quick-xml-0.32.0 \
 		quote-1.0.38 \
-		rb-sys-0.9.108 \
-		rb-sys-build-0.9.108 \
+		rb-sys-0.9.110 \
+		rb-sys-build-0.9.110 \
 		rb-sys-env-0.1.2 \
 		rctree-0.6.0 \
 		regex-1.11.1 \
