@@ -7,7 +7,8 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Bayesian optimization toolbox based on GPy
-WWW=		https://sheffieldml.github.io/GPyOpt/
+WWW=		https://sheffieldml.github.io/GPyOpt/ \
+		https://github.com/SheffieldML/GPyOpt
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
