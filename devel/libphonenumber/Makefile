@@ -1,7 +1,6 @@
 PORTNAME=	libphonenumber
 DISTVERSIONPREFIX=	v
-DISTVERSION=	9.0.0
-PORTREVISION=	1
+DISTVERSION=	9.0.1
 CATEGORIES=	devel
 
 MAINTAINER=	kde@FreeBSD.org
@@ -10,7 +9,6 @@ WWW=		https://github.com/google/libphonenumber
 
 LICENSE=	APACHE20
 
-BUILD_DEPENDS=	googletest>0:devel/googletest
 LIB_DEPENDS=	libabsl_strings.so:devel/abseil \
 		libboost_atomic.so:devel/boost-libs \
 		libicui18n.so:devel/icu \
