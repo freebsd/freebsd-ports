@@ -1042,6 +1042,7 @@
     SUBDIR += p5-Mojo-IOLoop-Delay
     SUBDIR += p5-Mojo-IOLoop-ForkCall
     SUBDIR += p5-Mojo-Server-FastCGI
+    SUBDIR += p5-Mojo-UserAgent-Mockable
     SUBDIR += p5-Mojo-Weixin
     SUBDIR += p5-MojoMojo
     SUBDIR += p5-MojoX-Log-Dispatch-Simple

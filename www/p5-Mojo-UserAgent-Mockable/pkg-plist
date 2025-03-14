@@ -1,0 +1,8 @@
+%%SITE_PERL%%/Mojo/UserAgent/Mockable.pm
+%%SITE_PERL%%/Mojo/UserAgent/Mockable/Proxy.pm
+%%SITE_PERL%%/Mojo/UserAgent/Mockable/Request/Compare.pm
+%%SITE_PERL%%/Mojo/UserAgent/Mockable/Serializer.pm
+%%PERL5_MAN3%%/Mojo::UserAgent::Mockable.3.gz
+%%PERL5_MAN3%%/Mojo::UserAgent::Mockable::Proxy.3.gz
+%%PERL5_MAN3%%/Mojo::UserAgent::Mockable::Request::Compare.3.gz
+%%PERL5_MAN3%%/Mojo::UserAgent::Mockable::Serializer.3.gz
