@@ -1,10 +1,10 @@
 PORTNAME=	datadog-ci
-PORTVERSION=	1.12.0
+PORTVERSION=	1.13.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
-COMMENT=	Datadog's CI visibility library for Ruby
+COMMENT=	Datadog's Test Optimization library for Ruby
 WWW=		https://docs.datadoghq.com/continuous_integration/ \
 		https://github.com/DataDog/datadog-ci-rb
 
