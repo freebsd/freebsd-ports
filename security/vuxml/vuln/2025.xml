@@ -1,3 +1,73 @@
+  <vuln vid="2ac2ddc2-0051-11f0-8673-f02f7432cf97">
+  <topic>php -- Multiple vulnerabilities</topic>
+  <affects>
+    <package>
+      <name>php81</name>
+      <range>
+	<lt>8.1.32</lt>
+      </range>
+    </package>
+    <package>
+      <name>php82</name>
+      <range>
+	<lt>8.2.28</lt>
+      </range>
+    </package>
+    <package>
+      <name>php83</name>
+      <range>
+	<lt>8.3.19</lt>
+      </range>
+    </package>
+    <package>
+      <name>php84</name>
+      <range>
+	<lt>8.4.5</lt>
+      </range>
+    </package>
+  </affects>
+  <description>
+    <body xmlns="http://www.w3.org/1999/xhtml">
+      <p>php.net reports:</p>
+      <blockquote cite="https://www.php.net/ChangeLog-8.php">
+	<ul>
+	  <li>
+	    CVE-2024-11235: Core: Fixed GHSA-rwp7-7vc6-8477 (Reference counting in php_request_shutdown causes Use-After-Free).
+	  </li>
+	  <li>
+	    CVE-2025-1219: LibXML: Fixed GHSA-p3x9-6h7p-cgfc (libxml streams use wrong `content-type` header when requesting a redirected resource).
+	  </li>
+	  <li>
+	    CVE-2025-1736: Streams: Fixed GHSA-hgf5-96fm-v528 (Stream HTTP wrapper header check might omit basic auth header).
+	  </li>
+	  <li>
+	    CVE-2025-1861: Streams: Fixed GHSA-52jp-hrpf-2jff (Stream HTTP wrapper truncate redirect location to 1024 bytes).
+	  </li>
+	  <li>
+	    CVE-2025-1734: Streams: Fixed GHSA-pcmh-g36c-qc44 (Streams HTTP wrapper does not fail for headers without colon).
+	  </li>
+	  <li>
+	    CVE-2025-1217: Streams: Fixed GHSA-v8xr-gpvj-cx9g (Header parser of `http` stream wrapper does not handle folded headers).
+	  </li>
+	</ul>
+      </blockquote>
+    </body>
+  </description>
+  <references>
+    <cvename>CVE-2024-11235</cvename>
+    <cvename>CVE-2025-1219</cvename>
+    <cvename>CVE-2025-1736</cvename>
+    <cvename>CVE-2025-1861</cvename>
+    <cvename>CVE-2025-1734</cvename>
+    <cvename>CVE-2025-1217</cvename>
+    <url>https://www.php.net/ChangeLog-8.php</url>
+  </references>
+  <dates>
+    <discovery>2025-03-13</discovery>
+    <entry>2025-03-13</entry>
+  </dates>
+  </vuln>
+
   <vuln vid="0b43fac4-005d-11f0-a540-6cc21735f730">
     <topic>shibboleth-sp -- Parameter manipulation allows the forging of signed SAML messages</topic>
     <affects>
@@ -53,7 +123,7 @@
 	    vulnerability by editing the protocols.xml configuration file and
 	    removing this line:
 	    <code>&lt;Binding id="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST-SimpleSign"
-	             path="/SAML2/POST-SimpleSign" /&gt;</code>
+		path="/SAML2/POST-SimpleSign" /&gt;</code>
 	  </p>
 	</blockquote>
 	</body>
