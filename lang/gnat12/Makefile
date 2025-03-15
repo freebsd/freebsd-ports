@@ -133,15 +133,18 @@ PLIST_SUB+=	LIB32=" "
 .if ${ARCH} == amd64
 PLIST_SUB+=	AMD64=" " \
 		AARCH64="@comment " \
-		X86=" "
+		X86=" " \
+		64BIT=" "
 .elif ${ARCH} == i386
 PLIST_SUB+=	AMD64="@comment " \
 		AARCH64="@comment " \
-		X86=" "
+		X86=" " \
+		64BIT="@comment "
 .elif ${ARCH} == aarch64
 PLIST_SUB+=	X86="@comment " \
 		AMD64="@comment " \
-		AARCH64=" "
+		AARCH64=" " \
+		64BIT=" "
 .endif
 
 pre-configure:

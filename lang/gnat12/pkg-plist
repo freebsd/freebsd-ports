@@ -5415,10 +5415,10 @@ gnat12/lib/gcc/%%CONFTRGT%%/%%VER%%/adalib/s-imglfl.ali
 gnat12/lib/gcc/%%CONFTRGT%%/%%VER%%/adalib/s-imgllb.ali
 gnat12/lib/gcc/%%CONFTRGT%%/%%VER%%/adalib/s-imgllf.ali
 gnat12/lib/gcc/%%CONFTRGT%%/%%VER%%/adalib/s-imglli.ali
-%%AMD64%%gnat12/lib/gcc/%%CONFTRGT%%/%%VER%%/adalib/s-imglllb.ali
-%%AMD64%%gnat12/lib/gcc/%%CONFTRGT%%/%%VER%%/adalib/s-imgllli.ali
-%%AMD64%%gnat12/lib/gcc/%%CONFTRGT%%/%%VER%%/adalib/s-imglllu.ali
-%%AMD64%%gnat12/lib/gcc/%%CONFTRGT%%/%%VER%%/adalib/s-imglllw.ali
+%%64BIT%%gnat12/lib/gcc/%%CONFTRGT%%/%%VER%%/adalib/s-imglllb.ali
+%%64BIT%%gnat12/lib/gcc/%%CONFTRGT%%/%%VER%%/adalib/s-imgllli.ali
+%%64BIT%%gnat12/lib/gcc/%%CONFTRGT%%/%%VER%%/adalib/s-imglllu.ali
+%%64BIT%%gnat12/lib/gcc/%%CONFTRGT%%/%%VER%%/adalib/s-imglllw.ali
 gnat12/lib/gcc/%%CONFTRGT%%/%%VER%%/adalib/s-imgllu.ali
 gnat12/lib/gcc/%%CONFTRGT%%/%%VER%%/adalib/s-imgllw.ali
 gnat12/lib/gcc/%%CONFTRGT%%/%%VER%%/adalib/s-imgrea.ali
@@ -5652,8 +5652,8 @@ gnat12/lib/gcc/%%CONFTRGT%%/%%VER%%/adalib/s-valint.ali
 gnat12/lib/gcc/%%CONFTRGT%%/%%VER%%/adalib/s-vallfl.ali
 gnat12/lib/gcc/%%CONFTRGT%%/%%VER%%/adalib/s-valllf.ali
 gnat12/lib/gcc/%%CONFTRGT%%/%%VER%%/adalib/s-vallli.ali
-%%AMD64%%gnat12/lib/gcc/%%CONFTRGT%%/%%VER%%/adalib/s-valllli.ali
-%%AMD64%%gnat12/lib/gcc/%%CONFTRGT%%/%%VER%%/adalib/s-vallllu.ali
+%%64BIT%%gnat12/lib/gcc/%%CONFTRGT%%/%%VER%%/adalib/s-valllli.ali
+%%64BIT%%gnat12/lib/gcc/%%CONFTRGT%%/%%VER%%/adalib/s-vallllu.ali
 gnat12/lib/gcc/%%CONFTRGT%%/%%VER%%/adalib/s-valllu.ali
 gnat12/lib/gcc/%%CONFTRGT%%/%%VER%%/adalib/s-valrea.ali
 gnat12/lib/gcc/%%CONFTRGT%%/%%VER%%/adalib/s-valued.ali
