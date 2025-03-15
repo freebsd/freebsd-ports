@@ -28,7 +28,6 @@ bin/genshell
 bin/getopt.seacas
 bin/gjoin
 bin/grepos
-bin/grope
 bin/io_info
 bin/io_modify
 bin/io_shell
@@ -46,6 +45,7 @@ bin/slice
 bin/sphgen
 bin/txtexo
 bin/zellij
+grope
 include/CatalystCGNSMeshBase.h
 include/CatalystExodusMeshBase.h
 include/CatalystManagerBase.h
@@ -62,6 +62,8 @@ include/Ioss_Beam4.h
 include/Ioss_Blob.h
 include/Ioss_BoundingBox.h
 include/Ioss_ChainGenerator.h
+include/Ioss_ChangeSet.h
+include/Ioss_ChangeSetFactory.h
 include/Ioss_CodeTypes.h
 include/Ioss_CommSet.h
 include/Ioss_Compare.h
@@ -78,6 +80,11 @@ include/Ioss_DatabaseIO.h
 include/Ioss_DecompositionUtils.h
 include/Ioss_Doxygen.h
 include/Ioss_DynamicTopology.h
+include/Ioss_DynamicTopologyBroker.h
+include/Ioss_DynamicTopologyFileControl.h
+include/Ioss_DynamicTopologyNotifier.h
+include/Ioss_DynamicTopologyObserver.h
+include/Ioss_DynamicTopologyStateLocator.h
 include/Ioss_Edge2.h
 include/Ioss_Edge2D2.h
 include/Ioss_Edge2D3.h
@@ -195,6 +202,7 @@ include/Ioss_Wedge24.h
 include/Ioss_Wedge52.h
 include/Ioss_Wedge6.h
 include/Ioss_ZoneConnectivity.h
+include/Ioss_use_fmt.h
 include/Iotm_DatabaseIO.h
 include/Iotm_TextMesh.h
 include/Iotm_TextMeshAdjacencyGraph.h
@@ -234,6 +242,7 @@ include/bhopscotch_map.h
 include/bhopscotch_set.h
 include/chaco.h
 include/exodus/Ioex_BaseDatabaseIO.h
+include/exodus/Ioex_ChangeSet.h
 include/exodus/Ioex_DatabaseIO.h
 include/exodus/Ioex_DecompositionData.h
 include/exodus/Ioex_IOFactory.h
@@ -460,7 +469,6 @@ lib/libchaco.so
 lib/libchaco.so.2
 lib/libchaco.so.2.0
 lib/libexoIIv2c.a
-lib/libexoIIv2for.a
 lib/libexoIIv2for32.a
 lib/libexoIIv2for32.so
 lib/libexoIIv2for32.so.2
@@ -508,3 +516,4 @@ lib/tests/exomerge_unit_test.e
 lib/tests/exomerge_unit_test.py
 lib/tests/test-assembly.exo
 lib/tests/test_exodus3.py
+libexoIIv2for.a
