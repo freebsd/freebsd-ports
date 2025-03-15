@@ -14,6 +14,9 @@ RUN_DEPENDS=	${JAVALIBDIR}/xom.jar:textproc/xom \
 
 USES=		java
 
+DEPRECATED=	Depends on deprecated port textproc/saxon-devel
+EXPIRATION_DATE=2025-04-30
+
 NO_BUILD=	yes
 NO_ARCH=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
