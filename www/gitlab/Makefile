@@ -179,8 +179,8 @@ MY_DEPENDS=	gitaly>=${GITLAB_VERSION}:devel/gitaly \
 	rubygem-version_sorter>=2.3<3:textproc/rubygem-version_sorter \
 	rubygem-js_regex>=3.8<4.0:textproc/rubygem-js_regex \
 	rubygem-device_detector>=0:devel/rubygem-device_detector \
-	rubygem-redis>=5.3.0<5.4:databases/rubygem-redis \
-	rubygem-redis-clustering>=5.3.0<5.4:databases/rubygem-redis-clustering \
+	rubygem-redis>=5.4.0<5.5:databases/rubygem-redis \
+	rubygem-redis-clustering>=5.4.0<5.5:databases/rubygem-redis-clustering \
 	rubygem-connection_pool>=2.5.0<3.0:net/rubygem-connection_pool \
 	rubygem-redis-actionpack-rails70>=5.5.0<5.6:databases/rubygem-redis-actionpack-rails70 \
 	rubygem-discordrb-webhooks>=3.5<4.0:net-im/rubygem-discordrb-webhooks \

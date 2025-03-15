@@ -47,6 +47,17 @@
  gem 'sidekiq-cron', '~> 1.12.0', feature_category: :scalability
  gem 'gitlab-sidekiq-fetcher',
    path: 'vendor/gems/sidekiq-reliable-fetch',
+@@ -327,8 +327,8 @@ gem 'device_detector', feature_category: :shared
+ gem 'device_detector', feature_category: :shared
+ 
+ # Redis
+-gem 'redis', '~> 5.3.0', feature_category: :redis
+-gem 'redis-clustering', '~> 5.3.0', feature_category: :redis
++gem 'redis', '~> 5.3', feature_category: :redis
++gem 'redis-clustering', '~> 5.3', feature_category: :redis
+ gem 'connection_pool', '~> 2.4', feature_category: :shared
+ 
+ # Redis session store
 @@ -431,7 +431,7 @@ gem 'snowplow-tracker', '~> 0.8.0', feature_category: 
  gem 'snowplow-tracker', '~> 0.8.0', feature_category: :product_analytics
  
