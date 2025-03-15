@@ -1,6 +1,6 @@
---- Makefile.orig	2019-07-14 18:05:38 UTC
+--- Makefile.orig	2025-01-09 14:41:43 UTC
 +++ Makefile
-@@ -23,6 +23,10 @@ UNAME_S = $(shell uname -s)
+@@ -38,6 +38,10 @@ endif
  ifeq ($(UNAME_S), Linux)
  LDFLAGS += -ldl -lrt
  endif
