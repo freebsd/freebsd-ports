@@ -311,6 +311,7 @@ libdata/pkgconfig/shumate-1.0.pc
 %%PORTDOCS%%%%DOCSDIR%%-1.0/method.Scale.set_unit.html
 %%PORTDOCS%%%%DOCSDIR%%-1.0/method.Scale.set_viewport.html
 %%PORTDOCS%%%%DOCSDIR%%-1.0/method.SimpleMap.add_overlay_layer.html
+%%PORTDOCS%%%%DOCSDIR%%-1.0/method.SimpleMap.get_base_map_layer.html
 %%PORTDOCS%%%%DOCSDIR%%-1.0/method.SimpleMap.get_compass.html
 %%PORTDOCS%%%%DOCSDIR%%-1.0/method.SimpleMap.get_license.html
 %%PORTDOCS%%%%DOCSDIR%%-1.0/method.SimpleMap.get_map.html
@@ -430,6 +431,7 @@ libdata/pkgconfig/shumate-1.0.pc
 %%PORTDOCS%%%%DOCSDIR%%-1.0/property.Scale.max-width.html
 %%PORTDOCS%%%%DOCSDIR%%-1.0/property.Scale.unit.html
 %%PORTDOCS%%%%DOCSDIR%%-1.0/property.Scale.viewport.html
+%%PORTDOCS%%%%DOCSDIR%%-1.0/property.SimpleMap.base-map-layer.html
 %%PORTDOCS%%%%DOCSDIR%%-1.0/property.SimpleMap.compass.html
 %%PORTDOCS%%%%DOCSDIR%%-1.0/property.SimpleMap.license.html
 %%PORTDOCS%%%%DOCSDIR%%-1.0/property.SimpleMap.map-source.html
@@ -465,7 +467,9 @@ libdata/pkgconfig/shumate-1.0.pc
 %%PORTDOCS%%%%DOCSDIR%%-1.0/search.js
 %%PORTDOCS%%%%DOCSDIR%%-1.0/signal.DataSource.received-data.html
 %%PORTDOCS%%%%DOCSDIR%%-1.0/signal.Map.animation-completed.html
+%%PORTDOCS%%%%DOCSDIR%%-1.0/signal.MapLayer.map-loaded.html
 %%PORTDOCS%%%%DOCSDIR%%-1.0/signal.MapLayer.symbol-clicked.html
+%%PORTDOCS%%%%DOCSDIR%%-1.0/signal.MapLayer.tile-error.html
 %%PORTDOCS%%%%DOCSDIR%%-1.0/signal.MarkerLayer.marker-selected.html
 %%PORTDOCS%%%%DOCSDIR%%-1.0/signal.MarkerLayer.marker-unselected.html
 %%PORTDOCS%%%%DOCSDIR%%-1.0/signal.SimpleMap.symbol-clicked.html
@@ -518,6 +522,7 @@ share/locale/kk/LC_MESSAGES/shumate1.mo
 share/locale/ko/LC_MESSAGES/shumate1.mo
 share/locale/lt/LC_MESSAGES/shumate1.mo
 share/locale/lv/LC_MESSAGES/shumate1.mo
+share/locale/ml/LC_MESSAGES/shumate1.mo
 share/locale/ne/LC_MESSAGES/shumate1.mo
 share/locale/nl/LC_MESSAGES/shumate1.mo
 share/locale/oc/LC_MESSAGES/shumate1.mo
