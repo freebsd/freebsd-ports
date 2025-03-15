@@ -9,6 +9,9 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Heavily enhanced version of sed(1)
 WWW=		https://sed.sourceforge.net/grabbag/ssed/
 
+DEPRECATED=	Legacy "fork" that's based on legacy GNU sed 4.1 and last release in 2005
+EXPIRATION_DATE=2025-04-30 
+
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--program-prefix=s
