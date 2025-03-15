@@ -10,6 +10,9 @@ WWW=		https://www.gnu.org/software/mifluz/
 
 LICENSE=	GPLv3
 
+DEPRECATED=	Obsolete, no activity upstream since 2014 and unmaintained in tree for years
+EXPIRATION_DATE=2025-04-30
+
 USES=		bison compiler iconv libtool localbase:ldflags pathfix
 USE_LDCONFIG=	yes
 
