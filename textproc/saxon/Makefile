@@ -11,6 +11,9 @@ WWW=		https://saxon.sourceforge.net/
 
 LICENSE=	MPL10
 
+DEPRECATED=	Deprecated and unsupported upstream, consider using textproc/saxon-he
+EXPIRATION_DATE=2025-04-30
+
 USES=		java zip
 
 NO_WRKSUBDIR=	yes
