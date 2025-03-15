@@ -10,6 +10,10 @@ WWW=		http://open.comsultia.com/docbook2odf/
 
 LICENSE=	GPLv2
 
+BROKEN=		Unfetchable
+DEPRECATED=	Upstream is gone and unmaintained in tree for years
+EXPIRATION_DATE=2025-04-30
+
 LIB_DEPENDS=	libsablot.so:textproc/sablotron \
 		libxslt.so:textproc/libxslt
 RUN_DEPENDS=	zip:archivers/zip \
