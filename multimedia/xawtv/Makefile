@@ -74,7 +74,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/X11R6|${LOCALBASE}|g; \
 		s|/usr/local|${LOCALBASE}|g; \
 		s|LIBV4L="yes"|LIBV4L="no"|g; \
-		s|-lunicode|-liconv &|g' \
+		s|-lunicode|${ICONV_LIB} &|g' \
 		${WRKSRC}/configure
 
 	@${REINPLACE_CMD} -e 's|-ldl||g' \
