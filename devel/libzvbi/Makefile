@@ -1,24 +1,27 @@
 PORTNAME=	libzvbi
-PORTVERSION=	0.2.35
-PORTREVISION=	4
+PORTVERSION=	0.2.44
+DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
-MASTER_SITES=	SF/zapping/zvbi/${PORTVERSION}
-DISTNAME=	${PORTNAME:S/lib//}-${PORTVERSION}
 
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	Routines to access raw VBI capture devices
-WWW=		https://zapping.sourceforge.net/doc/libzvbi/
+WWW=		https://github.com/zapping-vbi/zvbi
 
 LICENSE=	GPLv2+
 
 LIB_DEPENDS+=	libpng.so:graphics/png \
 		libunicode.so:devel/libunicode
 
-USES=		iconv libtool localbase pathfix tar:bzip2
+USES=		iconv libtool localbase pathfix tar:bzip2 autoreconf gettext
 GNU_CONFIGURE=	yes
+USE_AUTOTOOLS=	autoheader autoconf automake aclocal
 CONFIGURE_ARGS=	--without-doxygen
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	zapping-vbi
+GH_PROJECT=	zvbi
 
 OPTIONS_DEFINE=	NLS
 OPTIONS_SUB=	yes
@@ -30,8 +33,5 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|#cpu (\([^)]*\))|defined(__\1__)|g' \
 		${WRKSRC}/src/misc.h \
 		${WRKSRC}/src/exp-gfx.c
-	@${REINPLACE_CMD} -e 's|, ts|, \&ts|' ${WRKSRC}/test/date.c
-	@${REINPLACE_CMD} -e 's|zvbi-atsc-cc$$(EXEEXT)||g; \
-		s|zvbi-atsc-cc\.1||g' ${WRKSRC}/contrib/Makefile.in
 
 .include <bsd.port.mk>
