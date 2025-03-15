@@ -1,7 +1,6 @@
 PORTNAME=	tools
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.30.0
-PORTREVISION=	1
+DISTVERSION=	0.31.0
 PORTEPOCH=	1
 CATEGORIES=	devel
 PKGNAMEPREFIX=	go-
@@ -13,7 +12,7 @@ WWW=		https://godoc.org/golang.org/x/tools
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:modules,1.22
+USES=		go:modules,1.23
 GO_MODULE=	golang.org/x/tools
 GO_TARGET=	./cmd/auth/cookieauth \
 		./cmd/auth/gitauth \
