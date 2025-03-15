@@ -14,6 +14,9 @@ LICENSE_COMB=	dual
 
 LIB_DEPENDS=	libexpat.so:textproc/expat2
 
+DEPRECATED=	Obsolete XML processor that only supports legacy languages
+EXPIRATION_DATE=2025-04-30
+
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 USES=		gmake iconv libtool localbase:ldflags
