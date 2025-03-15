@@ -1,11 +1,7 @@
 PORTNAME=	htop
-DISTVERSION=	3.3.0
-PORTREVISION=	5
+DISTVERSION=	3.4.0
 CATEGORIES=	sysutils
 MASTER_SITES=	https://github.com/${PORTNAME}-dev/${PORTNAME}/releases/download/${DISTVERSION}/
-
-PATCH_SITES=	https://github.com/htop-dev/htop/commit/
-PATCHFILES=	3c7fe273989626b299eb78d3ad1acb88ed64db64.diff:-p1
 
 MAINTAINER=	gaod@hychen.org
 COMMENT=	Better top(1) - interactive process viewer
@@ -28,5 +24,8 @@ PLIST_FILES=	bin/htop \
 OPTIONS_DEFINE=	LSOF
 
 LSOF_RUN_DEPENDS=	lsof:sysutils/lsof
+
+post-patch:
+	@${REINPLACE_CMD} -e 's/3.4.0-dev-3.4.0/3.4.0/' ${WRKSRC}/configure
 
 .include <bsd.port.mk>
