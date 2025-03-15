@@ -1,13 +1,10 @@
 bin/dvipdfm
 bin/dvipdfmx
 bin/dvipdft
-bin/ebb
-bin/extractbb
 bin/xdvipdfmx
 share/man/man1/dvipdfm.1.gz
 share/man/man1/dvipdfmx.1.gz
 share/man/man1/dvipdft.1.gz
-share/man/man1/ebb.1.gz
 share/man/man1/extractbb.1.gz
 share/man/man1/xdvipdfmx.1.gz
 %%TEXMFDISTDIR%%/doc/dvipdfmx/dvipdfmx-special.pdf

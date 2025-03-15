@@ -1,5 +1,5 @@
-TIMESTAMP = 1716918225
-SHA256 (TeX/texlive-20240312-source.tar.xz) = 7b6d87cf01661670fac45c93126bed97b9843139ed510f975d047ea938b6fe96
-SIZE (TeX/texlive-20240312-source.tar.xz) = 70140588
-SHA256 (TeX/texlive-20240312-texmf.tar.xz) = c8eae2deaaf51e86d93baa6bbcc4e94c12aa06a0d92893df474cc7d2a012c7a7
-SIZE (TeX/texlive-20240312-texmf.tar.xz) = 4270954732
+TIMESTAMP = 1742496875
+SHA256 (TeX/texlive-20250308-source.tar.xz) = fffdb1a3d143c177a4398a2229a40d6a88f18098e5f6dcfd57648c9f2417490f
+SIZE (TeX/texlive-20250308-source.tar.xz) = 111136556
+SHA256 (TeX/texlive-20250308-texmf.tar.xz) = 08dcda7430bf0d2f6ebb326f1e197e1473d3f7cc0984a2adb7236df45316c7cf
+SIZE (TeX/texlive-20250308-texmf.tar.xz) = 4624117760

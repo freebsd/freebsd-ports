@@ -118,5 +118,5 @@ share/texmf-local/tex/latex/kotex/utf/tex4ht/dhucs.cfg
 share/texmf-local/tex/latex/kotex/utf/tex4ht/kosections-utf.4ht
 share/texmf-local/tex/plain/kotex/hangulcweb.tex
 share/texmf-local/tex/plain/kotex/kotexplain.tex
-@exec %%TEXHASH%%
-@unexec %%TEXHASH%%
+@postexec %%TEXHASH%%
+@postunexec %%TEXHASH%%

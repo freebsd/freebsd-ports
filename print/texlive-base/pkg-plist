@@ -7,6 +7,7 @@ bin/albatross
 bin/allcm
 bin/allec
 bin/allneeded
+bin/aom-fullref
 bin/arara
 bin/arlatex
 bin/authorindex
@@ -29,6 +30,8 @@ bin/bibtex8
 bin/bibtexu
 bin/biburl2doi
 bin/bibzbladd
+bin/bookshelf-listallfonts
+bin/bookshelf-mkfontsel
 bin/bundledoc
 bin/cachepic
 bin/cef5conv
@@ -58,6 +61,7 @@ bin/ctan-o-mat
 bin/ctanbib
 bin/ctanify
 bin/ctanupload
+bin/datatool2bib
 bin/de-macro
 bin/depythontex
 bin/detex
@@ -92,12 +96,15 @@ bin/dvispc
 bin/dvisvgm
 bin/dvitodvi
 bin/e2pall
+bin/ebb
 bin/ebong
 bin/epspdf
 bin/epspdftk
 bin/epstopdf
 bin/exceltex
+bin/explcheck
 bin/extconv
+bin/extractbb
 bin/fig4latex
 bin/findhyph
 bin/fmtutil
@@ -130,6 +137,7 @@ bin/kanji-fontmap-creator
 bin/ketcindy
 bin/komkindex
 bin/l3build
+bin/l3sys-query
 bin/lacheck
 bin/latex-git-log
 bin/latex-papersize
@@ -140,6 +148,7 @@ bin/latexdiff
 bin/latexdiff-vc
 bin/latexfileversion
 bin/latexindent
+bin/latexminted
 bin/latexmk
 bin/latexpand
 bin/latexrevise
@@ -163,6 +172,7 @@ bin/makeglossaries
 bin/makeglossaries-lite
 bin/makeindex
 bin/makejvf
+bin/markdown2tex
 bin/match_parens
 bin/mathspic
 bin/mendex
@@ -209,6 +219,7 @@ bin/pkfix-helper
 bin/pmxab
 bin/pmxchords
 bin/pn2pdf
+bin/ppmcheckpdf
 bin/prepmx
 bin/ps2eps
 bin/ps2frag
@@ -233,6 +244,7 @@ bin/sjislatex
 bin/sjispdflatex
 bin/spix
 bin/splitindex
+bin/sqltex
 bin/srcredact
 bin/sty2dtx
 bin/svn-multi
@@ -278,6 +290,7 @@ bin/ttf2tfm
 bin/ttfdump
 bin/ttftotype42
 bin/typeoutfileinfo
+bin/typog-grep
 bin/ulqda
 bin/updmap
 bin/updmap-sys
@@ -408,13 +421,17 @@ share/man/man5/updmap.cfg.5.gz
 %%TEXMFDISTDIR%%/scripts/accfonts/vpl2vpl
 %%TEXMFDISTDIR%%/scripts/adhocfilelist/adhocfilelist.sh
 %%TEXMFDISTDIR%%/scripts/albatross/albatross.sh
+%%TEXMFDISTDIR%%/scripts/aomart/aom-fullref.pl
 %%TEXMFDISTDIR%%/scripts/arara/arara.sh
 %%TEXMFDISTDIR%%/scripts/attachfile2/pdfatfi.pl
 %%TEXMFDISTDIR%%/scripts/authorindex/authorindex
 %%TEXMFDISTDIR%%/scripts/bib2gls/bib2gls.sh
 %%TEXMFDISTDIR%%/scripts/bib2gls/convertgls2bib.sh
+%%TEXMFDISTDIR%%/scripts/bib2gls/datatool2bib.sh
 %%TEXMFDISTDIR%%/scripts/bibcop/bibcop.pl
 %%TEXMFDISTDIR%%/scripts/bibexport/bibexport.sh
+%%TEXMFDISTDIR%%/scripts/bookshelf/bookshelf-listallfonts
+%%TEXMFDISTDIR%%/scripts/bookshelf/bookshelf-mkfontsel
 %%TEXMFDISTDIR%%/scripts/bundledoc/arlatex
 %%TEXMFDISTDIR%%/scripts/bundledoc/bundledoc
 %%TEXMFDISTDIR%%/scripts/cachepic/cachepic.tlu
@@ -449,6 +466,8 @@ share/man/man5/updmap.cfg.5.gz
 %%TEXMFDISTDIR%%/scripts/epspdf/epspdftk.tcl
 %%TEXMFDISTDIR%%/scripts/epstopdf/epstopdf.pl
 %%TEXMFDISTDIR%%/scripts/exceltex/exceltex
+%%TEXMFDISTDIR%%/scripts/expltools/explcheck.lua
+%%TEXMFDISTDIR%%/scripts/extractbb/extractbb.lua
 %%TEXMFDISTDIR%%/scripts/fig4latex/fig4latex
 %%TEXMFDISTDIR%%/scripts/findhyph/findhyph
 %%TEXMFDISTDIR%%/scripts/fontools/afm2afm
@@ -467,6 +486,7 @@ share/man/man5/updmap.cfg.5.gz
 %%TEXMFDISTDIR%%/scripts/kotex-utils/komkindex.pl
 %%TEXMFDISTDIR%%/scripts/kotex-utils/ttf2kotexfont.pl
 %%TEXMFDISTDIR%%/scripts/l3build/l3build.lua
+%%TEXMFDISTDIR%%/scripts/l3sys-query/l3sys-query.lua
 %%TEXMFDISTDIR%%/scripts/latex-git-log/latex-git-log
 %%TEXMFDISTDIR%%/scripts/latex-papersize/latex-papersize.py
 %%TEXMFDISTDIR%%/scripts/latex2man/latex2man
@@ -492,9 +512,11 @@ share/man/man5/updmap.cfg.5.gz
 %%TEXMFDISTDIR%%/scripts/m-tx/m-tx.lua
 %%TEXMFDISTDIR%%/scripts/make4ht/make4ht
 %%TEXMFDISTDIR%%/scripts/makedtx/makedtx.pl
+%%TEXMFDISTDIR%%/scripts/markdown/markdown2tex.lua
 %%TEXMFDISTDIR%%/scripts/match_parens/match_parens
 %%TEXMFDISTDIR%%/scripts/mathspic/mathspic.pl
 %%TEXMFDISTDIR%%/scripts/mf2pt1/mf2pt1.pl
+%%TEXMFDISTDIR%%/scripts/minted/latexminted.py
 %%TEXMFDISTDIR%%/scripts/mkgrkindex/mkgrkindex
 %%TEXMFDISTDIR%%/scripts/mkjobtexmf/mkjobtexmf.pl
 %%TEXMFDISTDIR%%/scripts/mkpic/mkpic
@@ -519,6 +541,7 @@ share/man/man5/updmap.cfg.5.gz
 %%TEXMFDISTDIR%%/scripts/pkfix-helper/pkfix-helper
 %%TEXMFDISTDIR%%/scripts/pkfix/pkfix.pl
 %%TEXMFDISTDIR%%/scripts/pmxchords/pmxchords.lua
+%%TEXMFDISTDIR%%/scripts/ppmcheckpdf/ppmcheckpdf.lua
 %%TEXMFDISTDIR%%/scripts/ps2eps/ps2eps.pl
 %%TEXMFDISTDIR%%/scripts/pst-pdf/ps4pdf
 %%TEXMFDISTDIR%%/scripts/pst2pdf/pst2pdf.pl
@@ -535,6 +558,7 @@ share/man/man5/updmap.cfg.5.gz
 %%TEXMFDISTDIR%%/scripts/simpdftex/simpdftex
 %%TEXMFDISTDIR%%/scripts/spix/spix.py
 %%TEXMFDISTDIR%%/scripts/splitindex/splitindex.pl
+%%TEXMFDISTDIR%%/scripts/sqltex/sqltex
 %%TEXMFDISTDIR%%/scripts/srcredact/srcredact.pl
 %%TEXMFDISTDIR%%/scripts/sty2dtx/sty2dtx.pl
 %%TEXMFDISTDIR%%/scripts/svn-multi/svn-multi.pl
@@ -595,6 +619,7 @@ share/man/man5/updmap.cfg.5.gz
 %%TEXMFDISTDIR%%/scripts/tikztosvg/tikztosvg
 %%TEXMFDISTDIR%%/scripts/tlcockpit/tlcockpit.sh
 %%TEXMFDISTDIR%%/scripts/tlshell/tlshell.tcl
+%%TEXMFDISTDIR%%/scripts/typog/typog-grep.pl
 %%TEXMFDISTDIR%%/scripts/typeoutfileinfo/typeoutfileinfo.sh
 %%TEXMFDISTDIR%%/scripts/ulqda/ulqda.pl
 %%TEXMFDISTDIR%%/scripts/urlbst/urlbst

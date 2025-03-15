@@ -1,6 +1,6 @@
---- Makefile.in.orig	2024-02-28 04:19:31 UTC
+--- Makefile.in.orig	2025-02-02 08:06:22 UTC
 +++ Makefile.in
-@@ -102,18 +102,7 @@ EXTRA_PROGRAMS = $(am__EXEEXT_1) tex$(EXEEXT) mf$(EXEE
+@@ -104,18 +104,7 @@ EXTRA_PROGRAMS = $(am__EXEEXT_1) tex$(EXEEXT) mf$(EXEE
  	luajittex$(EXEEXT) luahbtex$(EXEEXT) luajithbtex$(EXEEXT) \
  	xetex$(EXEEXT) $(am__EXEEXT_3) aleph$(EXEEXT) synctex$(EXEEXT) \
  	md5main$(EXEEXT)
@@ -20,7 +20,7 @@
  noinst_PROGRAMS = tangleboot$(EXEEXT) ctangleboot$(EXEEXT) \
  	$(am__EXEEXT_32) $(am__EXEEXT_33) $(am__EXEEXT_34) \
  	$(am__EXEEXT_35) $(am__EXEEXT_36) $(am__EXEEXT_37) \
-@@ -2975,14 +2964,16 @@ LUA53_DEFINES = @LUA53_DEFINES@
+@@ -2995,14 +2984,16 @@ LUA53_DEFINES = @LUA53_DEFINES@
  LUA52_INCLUDES = @LUA52_INCLUDES@
  LUA52_LIBS = @LUA52_LIBS@
  LUA53_DEFINES = @LUA53_DEFINES@
@@ -43,7 +43,7 @@
  MAINT = @MAINT@
  MAKEINFO = @MAKEINFO@
  MANIFEST_TOOL = @MANIFEST_TOOL@
-@@ -3022,7 +3013,8 @@ PTEXENC_DEPEND = @PTEXENC_DEPEND@
+@@ -3042,7 +3033,8 @@ PTEXENC_DEPEND = @PTEXENC_DEPEND@
  PPLIB_INCLUDES = @PPLIB_INCLUDES@
  PPLIB_LIBS = @PPLIB_LIBS@
  PTEXENC_DEPEND = @PTEXENC_DEPEND@
@@ -53,7 +53,7 @@
  PTEXENC_LIBS = @PTEXENC_LIBS@
  RANLIB = @RANLIB@
  SED = @SED@
-@@ -3124,7 +3116,7 @@ version = $(WEB2CVERSION)
+@@ -3146,7 +3138,7 @@ version = $(WEB2CVERSION)
  AM_CXXFLAGS = ## $(WARNING_CXXFLAGS)
  AM_OBJCXXFLAGS = ## $(WARNING_OBJCXXFLAGS)
  version = $(WEB2CVERSION)
@@ -62,32 +62,30 @@
  proglib = lib/lib.a
  
  #EXTRA_LIBRARIES += libluasocket.a liblua53socket.a libluajitsocket.a
-@@ -3146,7 +3138,7 @@ lib_LTLIBRARIES = $(am__append_127)
+@@ -3168,7 +3160,7 @@ lib_LTLIBRARIES = $(am__append_125)
  EXTRA_LTLIBRARIES = libsynctex.la
- lib_LIBRARIES = $(am__append_128)
- lib_LTLIBRARIES = $(am__append_127)
+ lib_LIBRARIES = $(am__append_126)
+ lib_LTLIBRARIES = $(am__append_125)
 -dist_man_MANS = synctexdir/man1/synctex.1 synctexdir/man5/synctex.5
 +dist_man_MANS =
  nodist_man_MANS = 
  TEST_EXTENSIONS = .pl .test
  #
-@@ -3652,14 +3644,7 @@ TRIPTRAP = $(am__append_7) $(am__append_17) $(am__appe
+@@ -3722,12 +3714,7 @@ TRIPTRAP = $(am__append_7) $(am__append_17) $(am__appe
+ TRIPTRAP = $(am__append_7) $(am__append_17) $(am__append_26) \
  	$(am__append_35) $(am__append_43) $(am__append_59) \
- 	$(am__append_63) $(am__append_69) $(am__append_74) \
- 	$(am__append_82)
+	$(am__append_63) $(am__append_70) $(am__append_78)
 -bin_links = $(am__append_5) $(am__append_14) $(am__append_15) \
 -	$(am__append_24) $(am__append_33) $(am__append_41) \
--	$(am__append_49) $(am__append_54) $(am__append_67) \
--	upbibtex$(EXEEXT):pbibtex updvitype$(EXEEXT):pdvitype \
--	uppltotf$(EXEEXT):ppltotf uptftopl$(EXEEXT):ptftopl \
--	$(am__append_78) $(am__append_79) $(am__append_80) \
--	$(am__append_94) $(am__append_99) $(am__append_104) \
--	$(am__append_109)
+-	$(am__append_49) $(am__append_54) $(am__append_68) \
+-	$(am__append_74) $(am__append_75) $(am__append_76) \
+-	$(am__append_90) $(am__append_95) $(am__append_100) \
+-	$(am__append_105)
 +bin_links = $(am__append_75) $(am__append_81)
  install_exe_links = $(am__append_12) $(am__append_22) $(am__append_31) \
  	$(am__append_39) $(am__append_47) $(am__append_52) \
- 	$(am__append_92) $(am__append_97) $(am__append_102) \
-@@ -3833,7 +3818,7 @@ nodist_twill_SOURCES = twill.c twill.h
+	$(am__append_88) $(am__append_93) $(am__append_98) \
+@@ -3901,7 +3888,7 @@ nodist_twill_SOURCES = twill.c twill.h
  nodist_vptovf_SOURCES = vptovf.c vptovf.h
  nodist_weave_SOURCES = weave.c weave.h
  nodist_twill_SOURCES = twill.c twill.h
@@ -96,7 +94,7 @@
  nodist_ctie_SOURCES = ctie.c
  nodist_cweave_SOURCES = cweave.c cweb.c
  nodist_ctwill_SOURCES = ctwill.c cweb.c
-@@ -4622,8 +4607,7 @@ euptex_tests = \
+@@ -4645,8 +4632,7 @@ euptex_tests = \
  # At the moment, these are the only man pages handled in the
  # conglomerated web2c/Makefile[.am]. (All the others are in man/.)
  # If that changes, have to set at top level and use +=.
@@ -104,9 +102,9 @@
 -@HITEX_TRUE@            hitexdir/man/hitex.man
 +@HITEX_TRUE@man1_MANS =
  
- hitex_CPPFLAGS = $(AM_CPPFLAGS) $(ZLIB_INCLUDES) -I$(srcdir)/libmd5 \
- 	-DINIT -DSTAT -DWEB2CVERSION="\"${WEB2CVERSION}\""
-@@ -21452,9 +21436,6 @@ $(proglib): $(proglib_sources)
+
+ # See hitex.am for comments about handling man.
+@@ -21448,9 +21434,6 @@ $(proglib): $(proglib_sources)
  @KPATHSEA_RULE@
  @PTEXENC_RULE@
  @ZLIB_RULE@

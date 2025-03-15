@@ -59,10 +59,8 @@ _maintainer-patch: _maintainer-extract
 		${_WRKSRC}/texmf-dist/source/latex/nwafuthesis/build.sh \
 		${_WRKSRC}/texmf-dist/source/support/optexcount/install.sh
 	${REINPLACE_CMD} -i '' -E -e '1s|/usr/bin/env python[23]?|${python_CMD}|' \
-		${_WRKSRC}/texmf-dist/source/fonts/gentium-tug/type1/kerncorrection.py \
-		${_WRKSRC}/texmf-dist/source/fonts/gentium-tug/type1/afmcreator.py \
-		${_WRKSRC}/texmf-dist/source/fonts/gentium-tug/type1/greekcorrection.py \
 		${_WRKSRC}/texmf-dist/source/latex/wargame/utils/wgexport.py \
+		${_WRKSRC}/texmf-dist/source/latex/wargame/utils/wgmakenato.py \
 		${_WRKSRC}/texmf-dist/source/latex/wargame/utils/wgsvg2tikz.py \
 		${_WRKSRC}/texmf-dist/source/support/optexcount/optexcount.py
 	${REINPLACE_CMD} -i '' -e 's|/usr/bin/perl|${PERL}|g' \

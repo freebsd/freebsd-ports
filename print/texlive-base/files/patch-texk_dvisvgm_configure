@@ -1,6 +1,6 @@
---- texk/dvisvgm/configure.orig	2024-03-07 22:55:09 UTC
+--- texk/dvisvgm/configure.orig	2025-01-12 14:58:51 UTC
 +++ texk/dvisvgm/configure
-@@ -23288,8 +23288,8 @@ if $FT2_CONFIG --ftversion >/dev/null 2>&1; then
+@@ -24780,8 +24780,8 @@ if $FT2_CONFIG --ftversion >/dev/null 2>&1; then
    PKG_CONFIG="$ac_cv_prog_PKG_CONFIG"
  fi
  if $FT2_CONFIG --ftversion >/dev/null 2>&1; then

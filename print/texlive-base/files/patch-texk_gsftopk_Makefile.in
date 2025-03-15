@@ -1,6 +1,6 @@
---- texk/gsftopk/Makefile.in.orig	2023-03-01 22:59:32 UTC
+--- texk/gsftopk/Makefile.in.orig	2024-07-12 16:22:16 UTC
 +++ texk/gsftopk/Makefile.in
-@@ -112,8 +112,7 @@ CONFIG_CLEAN_VPATH_FILES =
+@@ -114,8 +114,7 @@ CONFIG_CLEAN_VPATH_FILES =
  CONFIG_HEADER = c-auto.h
  CONFIG_CLEAN_FILES =
  CONFIG_CLEAN_VPATH_FILES =

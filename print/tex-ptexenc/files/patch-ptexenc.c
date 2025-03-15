@@ -1,4 +1,4 @@
---- ptexenc.c.orig	2023-01-01 05:42:55 UTC
+--- ptexenc.c.orig	2024-05-11 08:27:16 UTC
 +++ ptexenc.c
 @@ -16,6 +16,7 @@
  #include <ptexenc/unicode-jp.h>
@@ -57,7 +57,7 @@
  #define ESC '\033'
  
  #ifndef NOFILE
-@@ -65,7 +102,7 @@ static int string_to_enc(const_string str)
+@@ -66,7 +103,7 @@ static int string_to_enc(const_string str)
  static int string_to_enc(const_string str)
  {
      if (str == NULL)                    return ENC_UNKNOWN;
@@ -66,7 +66,7 @@
      if (strcasecmp(str, "jis")    == 0) return ENC_JIS;
      if (strcasecmp(str, "euc")    == 0) return ENC_EUC;
      if (strcasecmp(str, "sjis")   == 0) return ENC_SJIS;
-@@ -95,7 +132,7 @@ static int get_default_enc(void)
+@@ -97,7 +134,7 @@ static int get_default_enc(void)
      } else if (enc != ENC_UNKNOWN) {
          return enc;
      }
@@ -75,7 +75,7 @@
  }
  
  static void set_file_enc(int enc)
-@@ -165,14 +202,14 @@ void enable_UPTEX (boolean enable)
+@@ -167,14 +204,14 @@ void enable_UPTEX (boolean enable)
  {
      UPTEX_enabled = enable;
      if (enable) {

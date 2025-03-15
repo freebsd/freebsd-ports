@@ -1,6 +1,6 @@
---- Makefile.in.orig	2024-05-31 12:03:03 UTC
+--- Makefile.in.orig	2025-03-17 11:51:45 UTC
 +++ Makefile.in
-@@ -102,9 +102,7 @@ EXTRA_PROGRAMS = $(am__EXEEXT_1) tex$(EXEEXT) mf$(EXEE
+@@ -104,9 +104,7 @@ EXTRA_PROGRAMS = $(am__EXEEXT_1) tex$(EXEEXT) mf$(EXEE
  	luajittex$(EXEEXT) luahbtex$(EXEEXT) luajithbtex$(EXEEXT) \
  	xetex$(EXEEXT) $(am__EXEEXT_3) aleph$(EXEEXT) synctex$(EXEEXT) \
  	md5main$(EXEEXT)
@@ -11,7 +11,7 @@
  	$(am__EXEEXT_5) $(am__EXEEXT_6) $(am__EXEEXT_7) \
  	$(am__EXEEXT_8) $(am__EXEEXT_9) $(am__EXEEXT_10) \
  	$(am__EXEEXT_11) $(am__EXEEXT_12) $(am__EXEEXT_13) \
-@@ -114,7 +112,7 @@ bin_PROGRAMS = tangle$(EXEEXT) ctangle$(EXEEXT) $(am__
+@@ -116,7 +114,7 @@ bin_PROGRAMS = tangle$(EXEEXT) ctangle$(EXEEXT) $(am__
  	$(am__EXEEXT_23) $(am__EXEEXT_24) $(am__EXEEXT_25) \
  	$(am__EXEEXT_26) $(am__EXEEXT_27) $(am__EXEEXT_28) \
  	$(am__EXEEXT_29) $(am__EXEEXT_30) $(am__EXEEXT_31)
@@ -20,7 +20,7 @@
  	$(am__EXEEXT_32) $(am__EXEEXT_33) $(am__EXEEXT_34) \
  	$(am__EXEEXT_35) $(am__EXEEXT_36) $(am__EXEEXT_37) \
  	$(am__EXEEXT_38) $(am__EXEEXT_39) $(am__EXEEXT_40) \
-@@ -3124,7 +3122,7 @@ version = $(WEB2CVERSION)
+@@ -3146,7 +3144,7 @@ version = $(WEB2CVERSION)
  AM_CXXFLAGS = ## $(WARNING_CXXFLAGS)
  AM_OBJCXXFLAGS = ## $(WARNING_OBJCXXFLAGS)
  version = $(WEB2CVERSION)
@@ -29,16 +29,7 @@
  proglib = lib/lib.a
  
  #EXTRA_LIBRARIES += libluasocket.a liblua53socket.a libluajitsocket.a
-@@ -3655,8 +3653,6 @@ bin_links = $(am__append_5) $(am__append_14) $(am__app
- bin_links = $(am__append_5) $(am__append_14) $(am__append_15) \
- 	$(am__append_24) $(am__append_33) $(am__append_41) \
- 	$(am__append_49) $(am__append_54) $(am__append_67) \
--	upbibtex$(EXEEXT):pbibtex updvitype$(EXEEXT):pdvitype \
--	uppltotf$(EXEEXT):ppltotf uptftopl$(EXEEXT):ptftopl \
- 	$(am__append_78) $(am__append_79) $(am__append_80) \
- 	$(am__append_94) $(am__append_99) $(am__append_104) \
- 	$(am__append_109)
-@@ -3833,7 +3829,7 @@ nodist_twill_SOURCES = twill.c twill.h
+@@ -3901,7 +3899,7 @@ nodist_twill_SOURCES = twill.c twill.h
  nodist_vptovf_SOURCES = vptovf.c vptovf.h
  nodist_weave_SOURCES = weave.c weave.h
  nodist_twill_SOURCES = twill.c twill.h

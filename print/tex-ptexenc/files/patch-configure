@@ -1,6 +1,6 @@
---- configure.orig	2024-02-11 08:19:52 UTC
+--- configure.orig	2025-01-25 18:41:15 UTC
 +++ configure
-@@ -16100,7 +16100,7 @@ else case e in #(
+@@ -17035,7 +17035,7 @@ else case e in #(
    printf %s "(cached) " >&6
  else case e in #(
    e) ac_check_lib_save_LIBS=$LIBS
@@ -9,7 +9,7 @@
  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
  
-@@ -16140,7 +16140,7 @@ then :
+@@ -17075,7 +17075,7 @@ then :
  then :
    printf "%s\n" "#define HAVE_LIBICONV 1" >>confdefs.h
  
@@ -18,7 +18,7 @@
  
  else case e in #(
    e) { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking for libiconv_open in -liconv" >&5
-@@ -16150,7 +16150,7 @@ else case e in #(
+@@ -17085,7 +17085,7 @@ else case e in #(
    printf %s "(cached) " >&6
  else case e in #(
    e) ac_check_lib_save_LIBS=$LIBS
@@ -27,7 +27,7 @@
  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
  
-@@ -16190,7 +16190,7 @@ then :
+@@ -17125,7 +17125,7 @@ then :
  then :
    printf "%s\n" "#define HAVE_LIBICONV 1" >>confdefs.h
  
@@ -36,7 +36,7 @@
  
  fi
   ;;
-@@ -18551,5 +18551,3 @@ fi
+@@ -19497,5 +19497,3 @@ fi
    { printf "%s\n" "$as_me:${as_lineno-$LINENO}: WARNING: unrecognized options: $ac_unrecognized_opts" >&5
  printf "%s\n" "$as_me: WARNING: unrecognized options: $ac_unrecognized_opts" >&2;}
  fi

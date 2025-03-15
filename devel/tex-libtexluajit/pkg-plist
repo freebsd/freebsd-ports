@@ -2,10 +2,10 @@ include/texluajit/lauxlib.h
 include/texluajit/lua.h
 include/texluajit/lua.hpp
 include/texluajit/luaconf.h
-include/texluajit/luajit.h
+include/texluajit/luajit_rolling.h
 include/texluajit/lualib.h
 lib/libtexluajit.a
 lib/libtexluajit.so
 lib/libtexluajit.so.2
-lib/libtexluajit.so.2.1.0
+lib/libtexluajit.so.2.1.81742
 libdata/pkgconfig/texluajit.pc

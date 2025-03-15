@@ -1,6 +1,5 @@
 PORTNAME=	texlive
 DISTVERSION=	${TEXLIVE_VERSION}
-PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	TEX_CTAN/systems/texlive/${TEXLIVE_YEAR}
 PKGNAMESUFFIX=	-base
@@ -38,6 +37,7 @@ USE_XORG=x11
 SHEBANG_FILES=	texk/texlive/linked_scripts/accfonts/mkt1font \
 	texk/texlive/linked_scripts/accfonts/vpl2ovp \
 	texk/texlive/linked_scripts/accfonts/vpl2vpl \
+	texk/texlive/linked_scripts/aomart/aom-fullref.pl \
 	texk/texlive/linked_scripts/arara/arara.sh \
 	texk/texlive/linked_scripts/bibcop/bibcop.pl \
 	texk/texlive/linked_scripts/bibexport/bibexport.sh \
@@ -57,6 +57,7 @@ SHEBANG_FILES=	texk/texlive/linked_scripts/accfonts/mkt1font \
 	texk/texlive/linked_scripts/ltxfileinfo/ltxfileinfo \
 	texk/texlive/linked_scripts/mathspic/mathspic.pl \
 	texk/texlive/linked_scripts/mf2pt1/mf2pt1.pl \
+	texk/texlive/linked_scripts/minted/latexminted.py \
 	texk/texlive/linked_scripts/multibibliography/multibibliography.pl \
 	texk/texlive/linked_scripts/optexcount/optexcount \
 	texk/texlive/linked_scripts/pygmentex/*.py \

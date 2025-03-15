@@ -1,31 +1,33 @@
---- Makefile.in.orig	2024-05-13 11:24:13 UTC
+--- Makefile.in.orig	2025-03-25 14:38:49 UTC
 +++ Makefile.in
-@@ -97,7 +97,7 @@ EXTRA_PROGRAMS = $(am__EXEEXT_1) tex$(EXEEXT) mf$(EXEE
+@@ -99,7 +99,7 @@ EXTRA_PROGRAMS = $(am__EXEEXT_1) tex$(EXEEXT) mf$(EXEE
  	mf-nowin$(EXEEXT) mflua$(EXEEXT) mflua-nowin$(EXEEXT) \
  	mfluajit$(EXEEXT) mfluajit-nowin$(EXEEXT) mpost$(EXEEXT) \
- 	pmpost$(EXEEXT) upmpost$(EXEEXT) etex$(EXEEXT) eptex$(EXEEXT) \
--	uptex$(EXEEXT) $(am__EXEEXT_2) euptex$(EXEEXT) pdftex$(EXEEXT) \
-+	uptex$(EXEEXT) euptex$(EXEEXT) pdftex$(EXEEXT) \
+ 	pmpost$(EXEEXT) upmpost$(EXEEXT) etex$(EXEEXT) uptex$(EXEEXT) \
+-	$(am__EXEEXT_2) euptex$(EXEEXT) pdftex$(EXEEXT) \
++	euptex$(EXEEXT) pdftex$(EXEEXT) \
  	ttf2afm$(EXEEXT) pdftosrc$(EXEEXT) luatex$(EXEEXT) \
  	luajittex$(EXEEXT) luahbtex$(EXEEXT) luajithbtex$(EXEEXT) \
  	xetex$(EXEEXT) $(am__EXEEXT_3) aleph$(EXEEXT) synctex$(EXEEXT) \
-@@ -110,7 +110,7 @@ bin_PROGRAMS = tangle$(EXEEXT) ctangle$(EXEEXT) $(am__
+@@ -111,8 +111,8 @@ bin_PROGRAMS = tangle$(EXEEXT) ctangle$(EXEEXT) $(am__
+ 	$(am__EXEEXT_8) $(am__EXEEXT_9) $(am__EXEEXT_10) \
  	$(am__EXEEXT_11) $(am__EXEEXT_12) $(am__EXEEXT_13) \
  	$(am__EXEEXT_14) $(am__EXEEXT_15) $(am__EXEEXT_16) \
- 	$(am__EXEEXT_17) $(am__EXEEXT_18) $(am__EXEEXT_19) \
+-	$(am__EXEEXT_17) $(am__EXEEXT_18) $(am__EXEEXT_19) \
 -	$(am__EXEEXT_20) $(am__EXEEXT_21) $(am__EXEEXT_22) \
++	$(am__EXEEXT_17) $(am__EXEEXT_18) \
 +	$(am__EXEEXT_21) $(am__EXEEXT_22) \
  	$(am__EXEEXT_23) $(am__EXEEXT_24) $(am__EXEEXT_25) \
  	$(am__EXEEXT_26) $(am__EXEEXT_27) $(am__EXEEXT_28) \
  	$(am__EXEEXT_29) $(am__EXEEXT_30) $(am__EXEEXT_31)
-@@ -3143,10 +3143,10 @@ EXTRA_LIBRARIES = libmf.a libmflua.a libmfluaotfcc.a l
+@@ -3165,10 +3165,10 @@ EXTRA_LIBRARIES = libmf.a libmflua.a libmfluaotfcc.a l
  	libluahbtexspecific.a libluajithbtexspecific.a libluaffi.a \
  	libluaharfbuzz.a libluajitharfbuzz.a libxetex.a libsynctex.a \
  	libmd5.a
 -EXTRA_LTLIBRARIES = libsynctex.la
 +EXTRA_LTLIBRARIES =
- lib_LIBRARIES = $(am__append_128)
- lib_LTLIBRARIES = $(am__append_127)
+ lib_LIBRARIES = $(am__append_126)
+ lib_LTLIBRARIES = $(am__append_125)
 -dist_man_MANS = synctexdir/man1/synctex.1 synctexdir/man5/synctex.5
 +dist_man_MANS =
  nodist_man_MANS = 

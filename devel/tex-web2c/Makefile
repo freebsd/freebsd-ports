@@ -40,7 +40,9 @@ CONFIGURE_ARGS=		--disable-aleph \
 			--disable-ptex \
 			--disable-synctex \
 			--disable-tex \
+			--disable-texprof \
 			--disable-uptex \
+			--disable-upweb \
 			--disable-xetex \
 			--with-system-mpfi \
 			--with-system-zlib \

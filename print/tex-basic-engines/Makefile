@@ -36,14 +36,10 @@ EXTRACT_FILES=	build-aux libs/xpdf texk/web2c
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/texk/web2c
 
-EXCLUDE_ENGINES=	aleph luatex luajittex mf mf-nowin ptex eptex uptex \
-			euptex xetex otangle mp pmp upmp web2c web-progs \
-			synctex hitex \
-			luahbtex \
-			luajithbtex \
-			mflua \
-			mfluajit \
-			latex
+EXCLUDE_ENGINES=	aleph eptex euptex hitex latex luahbtex luajithbtex  \
+			luajittex luatex mf-nowin mf mflua mfluajit mp \
+			otangle pmp ptex synctex texprof upmp uptex \
+			web2c web-progs web2c xetex
 
 post-extract:
 	@${FIND} ${WRKSRC} -name '*.orig' -delete

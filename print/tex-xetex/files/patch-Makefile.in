@@ -1,6 +1,6 @@
---- Makefile.in.orig	2024-02-28 04:19:31 UTC
+--- Makefile.in.orig	2025-02-02 08:06:22 UTC
 +++ Makefile.in
-@@ -102,18 +102,7 @@ EXTRA_PROGRAMS = $(am__EXEEXT_1) tex$(EXEEXT) mf$(EXEE
+@@ -104,18 +104,7 @@ EXTRA_PROGRAMS = $(am__EXEEXT_1) tex$(EXEEXT) mf$(EXEE
  	luajittex$(EXEEXT) luahbtex$(EXEEXT) luajithbtex$(EXEEXT) \
  	xetex$(EXEEXT) $(am__EXEEXT_3) aleph$(EXEEXT) synctex$(EXEEXT) \
  	md5main$(EXEEXT)
@@ -20,7 +20,7 @@
  noinst_PROGRAMS = tangleboot$(EXEEXT) ctangleboot$(EXEEXT) \
  	$(am__EXEEXT_32) $(am__EXEEXT_33) $(am__EXEEXT_34) \
  	$(am__EXEEXT_35) $(am__EXEEXT_36) $(am__EXEEXT_37) \
-@@ -3019,7 +3008,8 @@ PPLIB_DEPEND = @PPLIB_DEPEND@
+@@ -3039,7 +3028,8 @@ PPLIB_DEPEND = @PPLIB_DEPEND@
  POTRACE_INCLUDES = @POTRACE_INCLUDES@
  POTRACE_LIBS = @POTRACE_LIBS@
  PPLIB_DEPEND = @PPLIB_DEPEND@
@@ -30,7 +30,7 @@
  PPLIB_LIBS = @PPLIB_LIBS@
  PTEXENC_DEPEND = @PTEXENC_DEPEND@
  PTEXENC_INCLUDES = @PTEXENC_INCLUDES@
-@@ -3124,7 +3114,7 @@ version = $(WEB2CVERSION)
+@@ -3146,7 +3136,7 @@ version = $(WEB2CVERSION)
  AM_CXXFLAGS = ## $(WARNING_CXXFLAGS)
  AM_OBJCXXFLAGS = ## $(WARNING_OBJCXXFLAGS)
  version = $(WEB2CVERSION)
@@ -39,7 +39,7 @@
  proglib = lib/lib.a
  
  #EXTRA_LIBRARIES += libluasocket.a liblua53socket.a libluajitsocket.a
-@@ -3833,7 +3823,7 @@ nodist_twill_SOURCES = twill.c twill.h
+@@ -3901,7 +3891,7 @@ nodist_twill_SOURCES = twill.c twill.h
  nodist_vptovf_SOURCES = vptovf.c vptovf.h
  nodist_weave_SOURCES = weave.c weave.h
  nodist_twill_SOURCES = twill.c twill.h
@@ -48,7 +48,7 @@
  nodist_ctie_SOURCES = ctie.c
  nodist_cweave_SOURCES = cweave.c cweb.c
  nodist_ctwill_SOURCES = ctwill.c cweb.c
-@@ -19689,7 +19679,7 @@ install-am: all-am
+@@ -19693,7 +19683,7 @@ install-am: all-am
  uninstall: uninstall-recursive
  
  install-am: all-am
@@ -57,7 +57,7 @@
  
  installcheck: installcheck-recursive
  install-strip:
-@@ -20621,7 +20611,6 @@ install-exec-am: install-binPROGRAMS install-dist_binS
+@@ -20620,7 +20610,6 @@ install-exec-am: install-binPROGRAMS install-dist_binS
  install-exec-am: install-binPROGRAMS install-dist_binSCRIPTS \
  	install-libLIBRARIES install-libLTLIBRARIES
  	@$(NORMAL_INSTALL)

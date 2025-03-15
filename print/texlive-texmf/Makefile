@@ -1,6 +1,5 @@
 PORTNAME=	texlive
 DISTVERSION=	${TEXLIVE_VERSION}
-PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	LOCAL/tex
 PKGNAMESUFFIX=	-texmf
@@ -115,13 +114,16 @@ _maintainer-patch: _maintainer-extract
 	${REINPLACE_CMD} -i '' \
 		's/\\def\\magyar@sugg@ie@low#1#2#3/\\def\\magyar@sugg@ie@low\\protect #1#2#3/' \
 		${WRKSRC}/texmf-dist/tex/generic/babel-hungarian/magyar.ldf
+	${REINPLACE_CMD} -i '' \
+		'/liturgic/d' \
+		${WRKSRC}/texmf-dist/tex/generic/config/language.dat \
+		${WRKSRC}/texmf-dist/tex/generic/config/language.def
 	${FIND} ${WRKSRC} -type f | \
 		${XARGS} ${REINPLACE_CMD} -i '' -E -e '1s|/bin/bash|${bash_CMD}|; \
 		1s|/usr/bin/perl|${perl_CMD}|; \
 		1s|/usr/bin/env python[23]?|${python_CMD}|; \
 		1s|/usr/bin/python|${python_CMD}|; \
 		1s|/bin/python3|${python_CMD}|; \
-		/ec\.tex/d; \
 		1s|/usr/bin/luatex|${LOCALBASE}/bin/luatex|'
 
 _maintainer-dist: _maintainer-patch
