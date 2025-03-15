@@ -1,6 +1,6 @@
 PORTNAME=	gui
 PORTVERSION=	${QT5_VERSION}${QT5_KDE_PATCH}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-toolkits graphics
 PKGNAMEPREFIX=	qt5-
 
@@ -37,6 +37,7 @@ USE_GL=			egl gl
 USE_GNOME=		glib20
 USE_PERL5=		extract
 USE_QT=			core dbus network buildtools:build qmake:build
+USE_LDCONFIG=		${PREFIX}/${QT_LIBDIR_REL}
 QT_BINARIES=		yes
 QT_CONFIG=		accessibility accessibility-atspi-bridge dbus \
 			fontconfig glib opengl png system-freetype system-jpeg \
