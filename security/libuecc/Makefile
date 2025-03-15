@@ -12,6 +12,10 @@ WWW=		https://git.universe-factory.net/libuecc
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
+BROKEN=		Unfetchable
+DEPRECATED=	Deprecated, only user was some never properly ported FreiFunk control plane software
+EXPIRATION_DATE=2025-04-30
+
 LIB_DEPENDS=	libsodium.so:security/libsodium
 
 USES=		cmake pkgconfig tar
