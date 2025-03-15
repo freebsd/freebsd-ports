@@ -1,6 +1,6 @@
 PORTNAME=	bacon
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.11.0
+DISTVERSION=	3.12.0
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -34,7 +34,6 @@ CARGO_CRATES=	adler2-2.0.0 \
 		anyhow-1.0.97 \
 		arboard-3.4.1 \
 		arc-swap-1.7.1 \
-		arrayvec-0.5.2 \
 		arrayvec-0.7.6 \
 		autocfg-1.4.0 \
 		bindgen-0.70.1 \
@@ -44,7 +43,7 @@ CARGO_CRATES=	adler2-2.0.0 \
 		bstr-1.11.3 \
 		bumpalo-3.17.0 \
 		bytemuck-1.22.0 \
-		bytes-1.10.0 \
+		bytes-1.10.1 \
 		camino-1.1.9 \
 		cargo-platform-0.1.9 \
 		cargo_metadata-0.19.2 \
@@ -55,11 +54,11 @@ CARGO_CRATES=	adler2-2.0.0 \
 		cfg_aliases-0.2.1 \
 		chrono-0.4.40 \
 		clang-sys-1.8.1 \
-		clap-4.5.31 \
+		clap-4.5.32 \
 		clap-help-1.3.2 \
-		clap_builder-4.5.31 \
+		clap_builder-4.5.32 \
 		clap_complete-4.5.46 \
-		clap_derive-4.5.28 \
+		clap_derive-4.5.32 \
 		clap_lex-0.7.4 \
 		cli-log-2.1.0 \
 		clipboard-win-5.4.0 \
@@ -88,7 +87,7 @@ CARGO_CRATES=	adler2-2.0.0 \
 		dirs-sys-next-0.1.2 \
 		displaydoc-0.2.5 \
 		dunce-1.0.5 \
-		either-1.14.0 \
+		either-1.15.0 \
 		encoding_rs-0.8.35 \
 		equivalent-1.0.2 \
 		errno-0.3.10 \
@@ -158,17 +157,17 @@ CARGO_CRATES=	adler2-2.0.0 \
 		icu_provider_macros-1.5.0 \
 		idna-1.0.3 \
 		idna_adapter-1.2.0 \
-		indexmap-2.7.1 \
+		indexmap-2.8.0 \
 		inotify-0.10.2 \
 		inotify-sys-0.1.5 \
 		instant-0.1.13 \
-		iq-0.2.2 \
+		iq-0.2.3 \
 		is_executable-1.0.4 \
 		is_terminal_polyfill-1.70.1 \
 		itertools-0.13.0 \
-		itoa-1.0.14 \
+		itoa-1.0.15 \
 		jiff-0.1.29 \
-		jiff-tzdb-0.1.2 \
+		jiff-tzdb-0.1.3 \
 		jiff-tzdb-platform-0.1.2 \
 		jni-0.21.1 \
 		jni-sys-0.3.0 \
@@ -179,10 +178,11 @@ CARGO_CRATES=	adler2-2.0.0 \
 		lazy-regex-3.4.1 \
 		lazy-regex-proc_macros-3.4.1 \
 		lazy_static-1.5.0 \
-		libc-0.2.170 \
+		libc-0.2.171 \
 		libloading-0.8.6 \
 		libredox-0.1.3 \
 		linux-raw-sys-0.4.15 \
+		linux-raw-sys-0.9.3 \
 		litemap-0.7.5 \
 		lock_api-0.4.12 \
 		log-0.4.26 \
@@ -215,19 +215,19 @@ CARGO_CRATES=	adler2-2.0.0 \
 		objc2-quartz-core-0.2.2 \
 		oboe-0.6.1 \
 		oboe-sys-0.6.1 \
-		once_cell-1.20.3 \
+		once_cell-1.21.1 \
 		parking_lot-0.12.3 \
 		parking_lot_core-0.9.10 \
 		percent-encoding-2.3.1 \
-		pkg-config-0.3.31 \
+		pkg-config-0.3.32 \
 		portable-atomic-1.11.0 \
 		portable-atomic-util-0.2.4 \
-		proc-macro-crate-3.2.0 \
+		proc-macro-crate-3.3.0 \
 		proc-macro2-1.0.94 \
 		proc-status-0.1.1 \
-		prodash-29.0.0 \
-		quote-1.0.38 \
-		redox_syscall-0.5.9 \
+		prodash-29.0.1 \
+		quote-1.0.40 \
+		redox_syscall-0.5.10 \
 		redox_users-0.4.6 \
 		regex-1.11.1 \
 		regex-automata-0.4.9 \
@@ -236,14 +236,15 @@ CARGO_CRATES=	adler2-2.0.0 \
 		rustc-hash-1.1.0 \
 		rustc-hash-2.1.1 \
 		rustix-0.38.44 \
-		rustversion-1.0.19 \
-		ryu-1.0.19 \
+		rustix-1.0.2 \
+		rustversion-1.0.20 \
+		ryu-1.0.20 \
 		same-file-1.0.6 \
 		scopeguard-1.2.0 \
-		semver-1.0.25 \
-		serde-1.0.218 \
-		serde_derive-1.0.218 \
-		serde_json-1.0.139 \
+		semver-1.0.26 \
+		serde-1.0.219 \
+		serde_derive-1.0.219 \
+		serde_json-1.0.140 \
 		serde_spanned-0.6.8 \
 		sha1_smol-1.0.1 \
 		shlex-1.3.0 \
@@ -259,9 +260,9 @@ CARGO_CRATES=	adler2-2.0.0 \
 		symphonia-core-0.5.4 \
 		symphonia-metadata-0.5.4 \
 		syn-1.0.109 \
-		syn-2.0.98 \
+		syn-2.0.100 \
 		synstructure-0.13.1 \
-		tempfile-3.17.1 \
+		tempfile-3.19.0 \
 		termimad-0.31.2 \
 		terminal-light-1.7.0 \
 		thiserror-1.0.69 \
@@ -275,7 +276,7 @@ CARGO_CRATES=	adler2-2.0.0 \
 		toml_datetime-0.6.8 \
 		toml_edit-0.22.24 \
 		unicode-bom-2.0.3 \
-		unicode-ident-1.0.17 \
+		unicode-ident-1.0.18 \
 		unicode-normalization-0.1.24 \
 		unicode-width-0.1.14 \
 		unicode-width-0.2.0 \
@@ -284,8 +285,7 @@ CARGO_CRATES=	adler2-2.0.0 \
 		utf8_iter-1.0.4 \
 		utf8parse-0.2.2 \
 		version_check-0.9.5 \
-		vte-0.8.0 \
-		vte_generate_state_changes-0.1.2 \
+		vte-0.15.0 \
 		walkdir-2.5.0 \
 		wasi-0.11.0+wasi-snapshot-preview1 \
 		wasi-0.13.3+wasi-0.2.2 \
@@ -334,13 +334,13 @@ CARGO_CRATES=	adler2-2.0.0 \
 		windows_x86_64_msvc-0.48.5 \
 		windows_x86_64_msvc-0.52.6 \
 		winnow-0.6.26 \
-		winnow-0.7.3 \
+		winnow-0.7.4 \
 		wit-bindgen-rt-0.33.0 \
 		write16-1.0.0 \
 		writeable-0.5.5 \
 		x11rb-0.13.1 \
 		x11rb-protocol-0.13.1 \
-		xterm-query-0.5.0 \
+		xterm-query-0.5.1 \
 		yoke-0.7.5 \
 		yoke-derive-0.7.5 \
 		zerocopy-0.7.35 \
