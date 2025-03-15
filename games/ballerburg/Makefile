@@ -1,14 +1,15 @@
 PORTNAME=	ballerburg
-DISTVERSION=	1.2.2
+DISTVERSIONPREFIX=	v
+DISTVERSION=	1.2.3
 CATEGORIES=	games
-MASTER_SITES=	http://download.tuxfamily.org/baller/ \
+MASTER_SITES=	https://framagit.org/baller/ballerburg/-/archive/${DISTVERSIONPREFIX}${DISTVERSION}/ \
 		LOCAL/ehaupt:icons
-DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX} \
+DISTFILES=	${PORTNAME}-${DISTVERSIONPREFIX}${DISTVERSION}${EXTRACT_SUFX} \
 		${PORTNAME}-icons-1${EXTRACT_SUFX}:icons
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Two players, two castles, and a hill in between
-WWW=		https://baller.tuxfamily.org/
+WWW=		https://baller.frama.io/
 
 LICENSE=	GPLv3+
 
