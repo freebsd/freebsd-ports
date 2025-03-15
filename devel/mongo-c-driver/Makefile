@@ -1,5 +1,5 @@
 PORTNAME=	mongo-c-driver
-DISTVERSION=	1.25.4
+DISTVERSION=	1.30.2
 CATEGORIES=	devel
 
 MAINTAINER=	ports@bsdserwis.com
