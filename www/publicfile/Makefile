@@ -14,6 +14,9 @@ LICENSE_NAME=	djb
 LICENSE_TEXT=	No license -- see http://cr.yp.to/softwarelaw.html
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
+DEPRECATED=	Unmaintained for years upstream and in tree, consider using www/darkhttpd , www/miniserve and/or ftp/tnftpd , ftp/unftp 
+EXPIRATION_DATE=2025-04-30
+
 RUN_DEPENDS=	setuidgid:sysutils/daemontools \
 		tcpserver:sysutils/ucspi-tcp
 
