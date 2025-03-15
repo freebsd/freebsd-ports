@@ -10,6 +10,10 @@ WWW=		http://www.qtrac.eu/diffpdf-foss.html
 
 LICENSE=	GPLv2+
 
+BROKEN=		unfetchable
+DEPRECATED=	withdrawn from author
+EXPIRATION_DATE=	2025-04-15
+
 LIB_DEPENDS=	libpoppler-qt5.so:graphics/poppler-qt5
 
 USES=		compiler:c++11-lang qmake qt:5 gl
