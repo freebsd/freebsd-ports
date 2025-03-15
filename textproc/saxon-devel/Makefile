@@ -13,6 +13,9 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	XSLT 2.0 / XPath 2.0 / XQuery 1.0 processor for Java
 WWW=		https://saxon.sourceforge.net/
 
+DEPRECATED=	Deprecated and unsupported upstream, consider using textproc/saxon-he
+EXPIRATION_DATE=2025-04-30
+
 USES=		java zip
 
 OPTIONS_DEFINE=	JDOM DOM4J XOM DOCS
