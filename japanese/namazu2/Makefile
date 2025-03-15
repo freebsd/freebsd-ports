@@ -8,6 +8,9 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Meta-port of Namazu and Japanese support modules
 WWW=		http://www.namazu.org/
 
+DEPRECATED=	Obsolete and abandoned, last release in 2011
+EXPIRATION_DATE=2025-04-30
+
 LIB_DEPENDS=	libnmz.so:databases/namazu2
 RUN_DEPENDS=	ja-p5-nkf>=0:japanese/p5-nkf
 
