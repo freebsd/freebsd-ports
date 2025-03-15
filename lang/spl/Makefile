@@ -1,6 +1,6 @@
 PORTNAME=	spl
 PORTVERSION=	1.2.1
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	lang
 MASTER_SITES=	http://shakespearelang.sourceforge.net/download/
 
@@ -10,6 +10,9 @@ WWW=		https://shakespearelang.sourceforge.net/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
+
+DEPRECATED=	dead upstream
+EXPIRATION_DATE=	2025-06-30
 
 USES=		bison gmake
 
