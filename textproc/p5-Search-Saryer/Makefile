@@ -9,6 +9,9 @@ MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl interface to the Sary library
 WWW=		http://sary.namazu.org/index.html.en
 
+DEPRECATED=	Depends on deprecated port textproc/sary
+EXPIRATION_DATE=2025-04-30
+
 LIB_DEPENDS=	libsary.so:textproc/sary
 
 USES=		perl5 pkgconfig
