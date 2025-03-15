@@ -1,0 +1,11 @@
+--- lib/trace/CMakeLists.txt.orig	2024-05-30 18:10:10 UTC
++++ lib/trace/CMakeLists.txt
+@@ -27,6 +27,8 @@ add_convenience_library (common
+     trace_ostream_zlib.cpp
+ )
+ 
++find_package(Snappy REQUIRED)
++
+ target_link_libraries (common
+     guids
+     highlight

@@ -1,9 +1,9 @@
 bin/apitrace
 bin/eglretrace
 bin/glretrace
+bin/gltrim
 %%QT5%%bin/qapitrace
-%%QT5%%share/applications/qapitrace.desktop
-lib/apitrace/scripts/apitrace.PIXExp
+%%QT5%%lib/apitrace/scripts/apitrace.PIXExp
 lib/apitrace/scripts/convert.py
 lib/apitrace/scripts/highlight.py
 lib/apitrace/scripts/jsondiff.py
@@ -17,8 +17,9 @@ lib/apitrace/scripts/tracediff.py
 lib/apitrace/scripts/unpickle.py
 lib/apitrace/wrappers/egltrace.so
 lib/apitrace/wrappers/glxtrace.so
+share/applications/qapitrace.desktop
 %%PORTDOCS%%%%DOCSDIR%%/BUGS.markdown
-%%PORTDOCS%%%%DOCSDIR%%/LICENSE-snappy.txt
 %%PORTDOCS%%%%DOCSDIR%%/NEWS.markdown
 %%PORTDOCS%%%%DOCSDIR%%/README.markdown
 %%PORTDOCS%%%%DOCSDIR%%/USAGE.markdown
+

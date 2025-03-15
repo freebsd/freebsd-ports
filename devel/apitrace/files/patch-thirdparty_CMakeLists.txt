@@ -1,0 +1,113 @@
+--- thirdparty/CMakeLists.txt.orig	2024-05-30 18:10:10 UTC
++++ thirdparty/CMakeLists.txt
+@@ -16,54 +16,69 @@ endfunction ()
+     include (${ARGV})
+ endfunction ()
+ 
+-set (SUBMODULES_MISSING FALSE)
+-foreach (path IN ITEMS
+-    brotli/LICENSE
+-    gtest/LICENSE
+-    libbacktrace/LICENSE
+-    libpng/LICENSE
+-    snappy/COPYING
+-    zlib/README
+-    directxmath/LICENSE
+-)
+-    if (NOT EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/${path}")
+-        message (SEND_ERROR "error: ${CMAKE_CURRENT_SOURCE_DIR}/${path} does not exist")
+-        set (SUBMODULES_MISSING TRUE)
+-    endif ()
+-endforeach ()
+-if (SUBMODULES_MISSING)
+-    message (FATAL_ERROR "Update Git submodules by running\ngit submodule update --init --depth 1 --recursive")
+-endif ()
++#set (SUBMODULES_MISSING FALSE)
++#foreach (path IN ITEMS
++#    brotli/LICENSE
++#    gtest/LICENSE
++#    libbacktrace/LICENSE
++#    libpng/LICENSE
++#    snappy/COPYING
++#    zlib/README
++#    directxmath/LICENSE
++#)
++#    if (NOT EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/${path}")
++#        message (SEND_ERROR "error: ${CMAKE_CURRENT_SOURCE_DIR}/${path} does not exist")
++#        set (SUBMODULES_MISSING TRUE)
++#    endif ()
++#endforeach ()
++#if (SUBMODULES_MISSING)
++#    message (FATAL_ERROR "Update Git submodules by running\ngit submodule update --init --depth 1 --recursive")
++#endif ()
+ 
+-if (ENABLE_STATIC_SNAPPY OR NOT Snappy_FOUND)
+-    message (STATUS "Using bundled Snappy")
+-    include_with_scope (snappy.cmake)
+-endif ()
++#if (ENABLE_STATIC_SNAPPY OR NOT Snappy_FOUND)
++#    message (STATUS "Using bundled Snappy")
++#    include_with_scope (snappy.cmake)
++#endif ()
+ 
+-if (NOT ZLIB_FOUND)
+-    message (STATUS "Using bundled ZLIB")
+-    include_with_scope (zlib.cmake)
+-endif ()
++#if (NOT ZLIB_FOUND)
++#    message (STATUS "Using bundled ZLIB")
++#    include_with_scope (zlib.cmake)
++#endif ()
+ 
+-if (NOT PNG_FOUND)
+-    message (STATUS "Using bundled PNG")
+-    include_with_scope (libpng.cmake)
+-endif ()
++#if (NOT PNG_FOUND)
++#    message (STATUS "Using bundled PNG")
++#    include_with_scope (libpng.cmake)
++#endif ()
+ 
+-if (NOT BROTLIDEC_FOUND OR NOT BROTLIENC_FOUND)
+-    message (STATUS "Using bundled Brotli")
+-    include_with_scope (brotli.cmake)
+-endif ()
++#if (NOT BROTLIDEC_FOUND OR NOT BROTLIENC_FOUND)
++#    message (STATUS "Using bundled Brotli")
++#    include_with_scope (brotli.cmake)
++#endif ()
+ 
+-if (CMAKE_EXECUTABLE_FORMAT STREQUAL "ELF")
+-    include_with_scope (libbacktrace.cmake)
+-endif ()
++#if (CMAKE_EXECUTABLE_FORMAT STREQUAL "ELF")
++#    include_with_scope (libbacktrace.cmake)
++#endif ()
+ 
+ # We use non-standard C++ flags, so we can't just use GTest's CMakeLists.txt
+-if (NOT GTEST_FOUND)
+-    message (STATUS "Using bundled GTest")
+-    include_with_scope (gtest.cmake)
+-endif ()
++#if (NOT GTEST_FOUND)
++#    message (STATUS "Using bundled GTest")
++#    include_with_scope (gtest.cmake)
++#endif ()
++find_path(Snappy_INCLUDE_DIR NAMES snappy.h
++  PATHS ${Snappy_ROOT_DIR} ${Snappy_ROOT_DIR}/include /usr/local/include)
++
++find_library(Snappy_LIBRARIES NAMES snappy
++  PATHS ${Snappy_ROOT_DIR} ${Snappy_ROOT_DIR}/lib /usr/local/lib)
++
++include(FindPackageHandleStandardArgs)
++find_package_handle_standard_args(Snappy DEFAULT_MSG Snappy_INCLUDE_DIR Snappy_LIBRARIES)
++
++if(SNAPPY_FOUND)
++  message(STATUS "Found Snappy (include: ${Snappy_INCLUDE_DIR}, library: ${Snappy_LIBRARIES})")
++  mark_as_advanced(Snappy_INCLUDE_DIR Snappy_LIBRARIES)
++  find_package(Snappy REQUIRED)
++  target_link_libraries(Snappy::snappy)
++endif()
+ 
+ if (MSVC)
+     add_subdirectory (getopt)

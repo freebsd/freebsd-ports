@@ -1,9 +1,5 @@
-TIMESTAMP = 1577315225
-SHA256 (apitrace-apitrace-9.0_GH0.tar.gz) = 0eec81ba7d3799622336319785465a2982a0621898842517a07894d7e2aa18eb
-SIZE (apitrace-apitrace-9.0_GH0.tar.gz) = 3623693
-SHA256 (cd3486343001d6a47.patch) = 2cb56f451791f2155aa5f5f12aa19eb92cb44dd00ca51ca9a5f0d5645ca6eb77
-SIZE (cd3486343001d6a47.patch) = 1840
-SHA256 (b0f5a220c41af013d.patch) = e2f46c862d97ff45b57fed043342b8875b310c5d6bb6d7d7f7122bb2f1ac5bb0
-SIZE (b0f5a220c41af013d.patch) = 2866
-SHA256 (2d31d49eac9bcc010.patch) = 315733330ab80a19b5565a439bdac8c62a80605302db03721e05c93e6ce9db52
-SIZE (2d31d49eac9bcc010.patch) = 633
+TIMESTAMP = 1741604876
+SHA256 (apitrace-apitrace-12.0_GH0.tar.gz) = d6d3c8eb582f2953dd2ca780ce2750e44208d1b4e73d973e3f72c5326307faf3
+SIZE (apitrace-apitrace-12.0_GH0.tar.gz) = 2273615
+SHA256 (microsoft-DirectXMath-e95d848_GH0.tar.gz) = efc8fe6c7cebe8e90d5d29020e2f09e7af41570959ec7ab501b55a7d36aad318
+SIZE (microsoft-DirectXMath-e95d848_GH0.tar.gz) = 219785
