@@ -26,3 +26,8 @@ PATCHDIR=	${.CURDIR}/files
 # PLIST for this port is set in the master one
 
 .include	"${MASTERDIR}/Makefile"
+
+# This version of ncurses is needed by bootstrap compiler
+.if empty(PORT_OPTIONS:MBOOT)
+BUILD_DEPENDS+=	${LOCALBASE}/lib/compat/libncursesw.so.8:misc/compat12x
+.endif

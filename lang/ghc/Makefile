@@ -171,11 +171,6 @@ PLIST=			${.CURDIR}/../ghc92/pkg-plist
 .  endif
 .endif
 
-# This version of ncurses is needed by bootstrap compiler
-.if empty(PORT_OPTIONS:MBOOT)
-BUILD_DEPENDS+=	${LOCALBASE}/lib/compat/libncursesw.so.8:misc/compat12x
-.endif
-
 .if empty(PORT_OPTIONS:MBOOT)
 DISTFILES+=		ghc-${BOOT_GHC_VERSION}-boot-${ARCH}-freebsd${EXTRACT_SUFX}:boot
 .endif # MBOOT
