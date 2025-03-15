@@ -407,6 +407,7 @@ share/man/man1/remind.1.gz
 %%DATADIR%%/holidays/me.rem
 %%DATADIR%%/holidays/mg.rem
 %%DATADIR%%/holidays/mh.rem
+%%DATADIR%%/holidays/misc.rem
 %%DATADIR%%/holidays/mk.rem
 %%DATADIR%%/holidays/mp.rem
 %%DATADIR%%/holidays/mr.rem
