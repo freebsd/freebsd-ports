@@ -3,7 +3,6 @@ bin/gtk4-builder-tool
 bin/gtk4-demo
 bin/gtk4-demo-application
 bin/gtk4-encode-symbolic-svg
-bin/gtk4-icon-browser
 bin/gtk4-image-tool
 bin/gtk4-launch
 bin/gtk4-node-editor
@@ -104,6 +103,7 @@ include/gtk-4.0/gdk/version/gdkversionmacros.h
 %%X11%%include/gtk-4.0/gdk/x11/gdkx11utils.h
 %%BROADWAY%%include/gtk-4.0/gsk/broadway/gskbroadwayrenderer.h
 include/gtk-4.0/gsk/gl/gskglrenderer.h
+include/gtk-4.0/gsk/gpu/gskglrenderer.h
 include/gtk-4.0/gsk/gpu/gskvulkanrenderer.h
 include/gtk-4.0/gsk/gsk.h
 include/gtk-4.0/gsk/gskcairorenderer.h
@@ -170,6 +170,11 @@ include/gtk-4.0/gtk/deprecated/gtkliststore.h
 include/gtk-4.0/gtk/deprecated/gtklockbutton.h
 include/gtk-4.0/gtk/deprecated/gtkmessagedialog.h
 include/gtk-4.0/gtk/deprecated/gtkrender.h
+include/gtk-4.0/gtk/deprecated/gtkshortcutlabel.h
+include/gtk-4.0/gtk/deprecated/gtkshortcutsgroup.h
+include/gtk-4.0/gtk/deprecated/gtkshortcutssection.h
+include/gtk-4.0/gtk/deprecated/gtkshortcutsshortcut.h
+include/gtk-4.0/gtk/deprecated/gtkshortcutswindow.h
 include/gtk-4.0/gtk/deprecated/gtkshow.h
 include/gtk-4.0/gtk/deprecated/gtkstatusbar.h
 include/gtk-4.0/gtk/deprecated/gtkstylecontext.h
@@ -347,12 +352,7 @@ include/gtk-4.0/gtk/gtksettings.h
 include/gtk-4.0/gtk/gtkshortcut.h
 include/gtk-4.0/gtk/gtkshortcutaction.h
 include/gtk-4.0/gtk/gtkshortcutcontroller.h
-include/gtk-4.0/gtk/gtkshortcutlabel.h
 include/gtk-4.0/gtk/gtkshortcutmanager.h
-include/gtk-4.0/gtk/gtkshortcutsgroup.h
-include/gtk-4.0/gtk/gtkshortcutssection.h
-include/gtk-4.0/gtk/gtkshortcutsshortcut.h
-include/gtk-4.0/gtk/gtkshortcutswindow.h
 include/gtk-4.0/gtk/gtkshortcuttrigger.h
 include/gtk-4.0/gtk/gtksignallistitemfactory.h
 include/gtk-4.0/gtk/gtksingleselection.h
@@ -429,7 +429,6 @@ libdata/pkgconfig/gtk4-unix-print.pc
 %%X11%%libdata/pkgconfig/gtk4-x11.pc
 libdata/pkgconfig/gtk4.pc
 share/applications/org.gtk.Demo4.desktop
-share/applications/org.gtk.IconBrowser4.desktop
 share/applications/org.gtk.PrintEditor4.desktop
 share/applications/org.gtk.WidgetFactory4.desktop
 share/applications/org.gtk.gtk4.NodeEditor.desktop
@@ -466,14 +465,12 @@ share/gir-1.0/Gtk-4.0.gir
 %%DATADIR%%-4.0/gtk4builder.rng
 %%DATADIR%%-4.0/valgrind/gtk.supp
 share/icons/hicolor/scalable/apps/org.gtk.Demo4.svg
-share/icons/hicolor/scalable/apps/org.gtk.IconBrowser4.svg
 share/icons/hicolor/scalable/apps/org.gtk.PrintEditor4.Devel.svg
 share/icons/hicolor/scalable/apps/org.gtk.PrintEditor4.svg
 share/icons/hicolor/scalable/apps/org.gtk.WidgetFactory4.svg
 share/icons/hicolor/scalable/apps/org.gtk.gtk4.NodeEditor.Devel.svg
 share/icons/hicolor/scalable/apps/org.gtk.gtk4.NodeEditor.svg
 share/icons/hicolor/symbolic/apps/org.gtk.Demo4-symbolic.svg
-share/icons/hicolor/symbolic/apps/org.gtk.IconBrowser4-symbolic.svg
 share/icons/hicolor/symbolic/apps/org.gtk.PrintEditor4-symbolic.svg
 share/icons/hicolor/symbolic/apps/org.gtk.WidgetFactory4-symbolic.svg
 share/icons/hicolor/symbolic/apps/org.gtk.gtk4.NodeEditor-symbolic.svg
@@ -597,7 +594,6 @@ share/locale/zh_CN/LC_MESSAGES/gtk40.mo
 share/locale/zh_HK/LC_MESSAGES/gtk40.mo
 share/locale/zh_TW/LC_MESSAGES/gtk40.mo
 share/metainfo/org.gtk.Demo4.appdata.xml
-share/metainfo/org.gtk.IconBrowser4.appdata.xml
 share/metainfo/org.gtk.PrintEditor4.appdata.xml
 share/metainfo/org.gtk.WidgetFactory4.appdata.xml
 share/metainfo/org.gtk.gtk4.NodeEditor.appdata.xml
