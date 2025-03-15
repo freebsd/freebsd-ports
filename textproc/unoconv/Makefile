@@ -15,6 +15,9 @@ WWW=		http://dag.wieers.com/home-made/unoconv/
 
 LICENSE=	GPLv2
 
+DEPRECATED=	Deprecated upstream in 2021
+EXPIRATION_DATE=2025-04-30
+
 RUN_DEPENDS=	xsltproc:textproc/libxslt
 
 USES=		python
