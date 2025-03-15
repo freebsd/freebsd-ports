@@ -9,6 +9,9 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Search engine software intended for easy use
 WWW=		http://www.namazu.org
 
+DEPRECATED=	Obsolete and superseded by namazu2, last release in 2000
+EXPIRATION_DATE=2025-04-30
+
 BUILD_DEPENDS=	kakasi:japanese/kakasi \
 		nkf:japanese/nkf
 RUN_DEPENDS=	kakasi:japanese/kakasi \
