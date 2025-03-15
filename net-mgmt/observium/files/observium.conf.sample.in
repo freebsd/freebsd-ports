@@ -12,8 +12,8 @@
 LoadModule rewrite_module libexec/apache24/mod_rewrite.so
 </IfModule>
 
-<IfModule !php7_module>
-LoadModule php7_module        libexec/apache24/libphp7.so
+<IfModule !php_module>
+LoadModule php_module        libexec/apache24/libphp.so
 </IfModule>
 
 Listen *:8080

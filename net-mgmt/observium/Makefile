@@ -1,15 +1,11 @@
-# Observium version can be found by looking at ${WRKSRC}/includes/definitions/version.inc.php
-
 PORTNAME=	observium
-PORTVERSION=	0.19.8
-PORTREVISION=	3
+DISTVERSION=	24.12
 CATEGORIES=	net-mgmt
-MASTER_SITES=	http://www.observium.org/
-DISTNAME=	${PORTNAME}-community-latest
-DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
+MASTER_SITES=	https://www.observium.org/
 PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
+DISTNAME=	${PORTNAME}-community-${DISTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	xaaports@dohd.org
 COMMENT=	Autodiscovering PHP/MySQL/SNMP based network monitoring
 WWW=		https://observium.org
 
@@ -18,49 +14,41 @@ LICENSE_NAME=	"Observium License Version 1.0"
 LICENSE_FILE=	${WRKSRC}/LICENSE.COMMUNITY
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-WRKSRC=		${WRKDIR}/${PORTNAME}
-
-USES=		cpe php:cli,flavors python shebangfix
-IGNORE_WITH_PHP=	82 83 84
-SHEBANG_FILES=	\
-		poller-wrapper.py \
-		poller.php \
-		scripts/
-
-USE_PHP=	ctype filter gd iconv mcrypt mysqli posix session snmp tokenizer xml zlib
-
-NO_ARCH=	yes
-NO_BUILD=	yes
-
-RUN_DEPENDS+=	rrdtool:databases/rrdtool \
+LIB_DEPENDS=	libpng.so:graphics/png
+RUN_DEPENDS=	rrdtool:databases/rrdtool \
 		dot:graphics/graphviz \
 		mtr:net/mtr@nox11 \
 		${LOCALBASE}/share/pear/Net/IPv4.php:net/pear-Net_IPv4@${PHP_FLAVOR} \
 		${LOCALBASE}/share/pear/Net/IPv6.php:net/pear-Net_IPv6@${PHP_FLAVOR} \
 		snmpget:net-mgmt/net-snmp \
 		sudo:security/sudo
-LIB_DEPENDS+=	libpng.so:graphics/png
 
-OPTIONS_DEFINE=	APACHEMOD DOCS EXAMPLES FPING IPMITOOL LIBVIRT MYSQLD NAGPLUGINS NMAP PYPOLLER SUBVERSION WMIC
-OPTIONS_DEFAULT=	APACHEMOD FPING IPMITOOL LIBVIRT NAGPLUGINS NMAP PYPOLLER SUBVERSION WMIC
+USES=		cpe php:cli,flavors,mod python shebangfix
+USE_PHP=	ctype filter gd iconv mysqli posix session snmp tokenizer xml zlib
+SHEBANG_FILES=	\
+		poller-wrapper.py \
+		poller.php \
+		scripts/
+
+NO_ARCH=	yes
+NO_BUILD=	yes
+WRKSRC=		${WRKDIR}/${PORTNAME}
+
+OPTIONS_DEFINE=	APACHEMOD DOCS EXAMPLES FPING IPMITOOL LIBVIRT MYSQLD NAGPLUGINS PYPOLLER SUBVERSION WMIC
+OPTIONS_DEFAULT=	APACHEMOD FPING IPMITOOL LIBVIRT NAGPLUGINS PYPOLLER SUBVERSION WMIC
 APACHEMOD_DESC=	Use PHP with Apache 2.4+ module
 FPING_DESC=	Enable fping support ping monitoring
 IPMITOOL_DESC=	Enable support for monitoring hardware IPMI
 MYSQLD_DESC=	Use local MySQL server
-WMIC_DESC=	Enable support for WMI polling
 PYPOLLER_DESC=	Enable Python Poller Wrapper
+WMIC_DESC=	Enable support for WMI polling
 
 FPING_RUN_DEPENDS=	fping:net/fping
 IPMITOOL_RUN_DEPENDS=	ipmitool:sysutils/ipmitool
 LIBVIRT_RUN_DEPENDS=	virsh:devel/libvirt
 NAGPLUGINS_RUN_DEPENDS=	${LOCALBASE}/libexec/nagios/check_nagios:net-mgmt/nagios-plugins
-NMAP_RUN_DEPENDS=	nmap:security/nmap
 PYPOLLER_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mysqlclient>=1.3.13:databases/py-mysqlclient@${PY_FLAVOR}
-.if ${WITH_SUBVERSION_VER:U} == LTS
-SUBVERSION_RUN_DEPENDS=	svn:devel/subversion-lts
-.else
 SUBVERSION_RUN_DEPENDS=	svn:devel/subversion
-.endif
 WMIC_RUN_DEPENDS=	wmic:net-mgmt/wmi-client
 
 .include <bsd.port.options.mk>
@@ -69,11 +57,11 @@ SUB_FILES+=	pkg-message observium.conf.sample
 SUB_LIST+=	PHP="${PREFIX}/bin/php" PYTHON="${PYTHON_CMD}"
 
 ROOT_FILES=	add_device.php adduser.php alerter.php \
-		check-errors.php check-services.php config_to_json.php \
-		config.php.default delete_device.php discovery.php housekeeping.php \
-		irc.php poller-wrapper.py poller.php rename_device.php \
-		snmp.conf.example snmpd.conf.example \
-		snmptrap.php snmptrap.php syslog.php test_alert.php test_code.php VERSION
+		config.php.default config_to_json.php \
+		delete_device.php discovery.php housekeeping.php \
+		irc.php notifications.php observium-wrapper poller-wrapper.py poller.php \
+		rename_device.php snmp.conf.example snmpd.conf.example \
+		snmptrap.php syslog.php test_alert.php test_code.php test_db.php test_geo.php VERSION
 ROOT_DIRS=	html includes libs logs mibs rrd scripts templates tests update
 
 PORTDOCS=	INSTALL README VERSION
@@ -85,7 +73,7 @@ USES+=	apache:run
 .if !defined(PACKAGE_BUILDING)
 USES+=	php:mod
 .else
-# Package builder doesn't create php5 with module
+# Package builder doesn't create php8 with module
 USES+=	php:web
 .endif
 
@@ -95,7 +83,7 @@ USES+=	mysql:server
 USES+=	mysql:client
 .endif
 
-post-patch:
+pre-install:
 	${REINPLACE_CMD} 's|%%LOCALBASE%%|${LOCALBASE}|g' ${WRKSRC}/poller-wrapper.py ${WRKSRC}/poller.php
 	${FIND} ${WRKSRC} -type d -empty -delete
 	${MKDIR} ${WRKSRC}/logs ${WRKSRC}/rrd

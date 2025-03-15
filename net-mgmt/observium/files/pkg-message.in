@@ -3,27 +3,25 @@
   message: <<EOM
 === Configuration details ===
 You can mostly follow the guide at:
-http://observium.org/wiki/Installation
+https://observium.org/wiki/Installation
 
 with the following notes:
 - Installation directory is %%WWWDIR%%
-- The following lines should be added to /etc/crontab:
+- The following lines should be put in a file %%LOCALBASE%%/etc/cron.d/observium
+  or alternatively /etc/cron.d/observium
 
-33	*/6	*	*	*	www	cd %%WWWDIR%% && %%PHP%% discovery.php -h all
-*/5	*	*	*	*	www	cd %%WWWDIR%% && %%PHP%% discovery.php -h new
-*/5	*	*	*	*	www	cd %%WWWDIR%% && %%PHP%% poller.php -h all
-*/5	*	*	*	*	www	cd %%WWWDIR%% && %%PYTHON%% poller-wrapper.py 2
+# Run a complete discovery of all devices once every 6 hours
+33	*/6	*	*	*	www	%%WWWDIR%%/observium-wrapper discovery >/dev/null 2>&1
+# Run automated discovery of newly added devices every 5 minutes
+*/5	*	*	*	*	www	%%WWWDIR%%/observium-wrapper discovery --host new >/dev/null 2>&1
+# Run multithreaded poller wrapper every 5 minutes
+*/5	*	*	*	*	www	%%WWWDIR%%/observium-wrapper poller >/dev/null 2>&1
+# Run housekeeping script daily for syslog, eventlog and alert log
+13	5	*	*	*	www	%%WWWDIR%%/housekeeping.php -ysel >/dev/null 2>&1
+# Run housekeeping script daily for rrds, ports, orphaned entries in the database and performance data
+47	4	*	*	*	www	%%WWWDIR%%/housekeeping.php -yrptb >/dev/null 2>&1
 
 Notes:
-
-- With newer MySQL databases you may need to disable strict mode for
-  Observium to function:
-
-	SET GLOBAL sql_mode = '';
-
-- Apache needs mod_rewrite enabled; uncomment the line below in httpd.conf as needed.
-
-    LoadModule rewrite_module libexec/apache24/mod_rewrite.so
 
 - A minimal install can be created with the following steps and configuration file:
 
@@ -33,29 +31,27 @@ Notes:
 
     CREATE DATABASE observium DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
     GRANT ALL PRIVILEGES ON observium.* TO 'observium'@'localhost' IDENTIFIED BY 'notSecure';
-    SET GLOBAL sql_mode = '';
 
-2: create a minimal config file at:
+2: create config file starting with the sample config file
 
-	 %%WWWDIR%%/config.php
+        cp %%WWWDIR%%/config.php.default %%WWWDIR%%/config.php
 
-    containing:
+   and make sure to set at least the following fields:
 
-<?php
-$config['db_host'] = 'localhost';
-$config['db_user'] = 'observium';
-$config['db_pass'] = 'notSecure';
-$config['db_name'] = 'observium';
+        $config['db_host'] = 'localhost';
+        $config['db_user'] = 'observium';
+        $config['db_pass'] = 'notSecure';
+        $config['db_name'] = 'observium';
 
 3:  populate the admin user and initialize the database (as 'www' user):
 
-sudo -u www %%WWWDIR%%/discovery.php -u
-sudo -u www %%WWWDIR%%/adduser.php admin SomeInsecureAdminPassword 10
+        sudo -u www %%WWWDIR%%/discovery.php -u
+        sudo -u www %%WWWDIR%%/adduser.php admin SomeInsecureAdminPassword 10
 
 4:   and verify that collection is working:
 
-sudo -u www %%WWWDIR%%/discovery.php -h all -d
-sudo -u www %%WWWDIR%%/poller.php -h all -d
+        sudo -u www %%WWWDIR%%/discovery.php -h all -d
+        sudo -u www %%WWWDIR%%/poller.php -h all -d
 
 5: Install the above crontabs.
 
@@ -63,11 +59,12 @@ sudo -u www %%WWWDIR%%/poller.php -h all -d
 
    %%PREFIX%%/%%APACHEETCDIR%%/Includes/observium.conf
    
-   and fill out a port number and hostname. 
+   and fill out a port number and hostname, or use the
+   default at port 8080.
 
 7: restart the webserver with 
 
-       apachectl restart
+       service apache24 restart
 
    or stop/start if in case of IP or SSL changes.
 
