@@ -13,19 +13,16 @@ EXTRACT_ONLY=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Open Neural Network eXchange
-WWW=		https://onnx.ai/
+WWW=		https://onnx.ai \
+		https://github.com/onnx/onnx
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
-
-DEPRECATED=	Depends on expired devel/py-pytest-runner
-EXPIRATION_DATE=2025-03-31
 
 BUILD_DEPENDS=	bash:shells/bash \
 		cmake:devel/cmake-core \
 		protoc-gen-mypy:devel/py-mypy-protobuf@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pybind11>0:devel/py-pybind11@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pytest-runner>=0:devel/py-pytest-runner@${PY_FLAVOR} \
 		${PY_SETUPTOOLS} \
 		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
 #LIB_DEPENDS=	libabsl_base.so:devel/abseil \
