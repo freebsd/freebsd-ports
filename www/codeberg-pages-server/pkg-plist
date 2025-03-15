@@ -1,0 +1,4 @@
+bin/codeberg-pages-server
+@sample etc/rc.conf.d/codeberg-pages-server.sample
+@dir etc/rc.conf.d
+@dir(www,www,755) /var/db/codeberg-pages-server

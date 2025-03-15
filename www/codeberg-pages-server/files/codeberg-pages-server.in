@@ -1,0 +1,46 @@
+#!/bin/sh
+#
+# PROVIDE: codeberg_pages_server
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+
+. /etc/rc.subr
+
+name="codeberg_pages_server"
+rcvar="${name}_enable"
+
+load_rc_config codeberg-pages-server
+
+: ${codeberg_pages_server_enable:="NO"}
+: ${codeberg_pages_server_user:="www"}
+: ${codeberg_pages_server_group:="www"}
+: ${codeberg_pages_server_log:="/var/log/codeberg-pages-server.log"}
+: ${codeberg_pages_server_chdir:="/var/db/codeberg-pages-server"}
+
+command="/usr/sbin/daemon"
+task="/usr/local/bin/codeberg-pages-server"
+pidfile="/var/run/codeberg-pages-server/codeberg-pages-server.pid"
+procname="${task}"
+
+command_args="-p ${pidfile} -o ${codeberg_pages_server_log} ${task}"
+
+start_precmd="${name}_prestart"
+
+codeberg_pages_server_prestart() {
+    if [ ! -d "${codeberg_pages_server_chdir}" ]; then
+        mkdir "${codeberg_pages_server_chdir}"
+        chown ${codeberg_pages_server_user} "${codeberg_pages_server_chdir}"
+    fi
+
+    if [ ! -f "${codeberg_pages_server_log}" ]; then
+        touch "${codeberg_pages_server_log}"
+        chown ${codeberg_pages_server_user}:${codeberg_pages_server_group} "${codeberg_pages_server_log}"
+        chmod 640 "${codeberg_pages_server_log}"
+    fi
+
+    if [ ! -d "/var/run/codeberg-pages-server" ] ; then
+        install -d -o ${codeberg_pages_server_user} -g ${codeberg_pages_server_group} "/var/run/codeberg-pages-server"
+    fi
+}
+
+run_rc_command "$1"
