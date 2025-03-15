@@ -1,5 +1,5 @@
 PORTNAME=	${MPORTNAME:tl}
-PORTVERSION=	3.2.1
+PORTVERSION=	3.2.3
 CATEGORIES=	math
 
 COMMENT=	Sparse Left-looking Integer-Preserving LU Factorization
