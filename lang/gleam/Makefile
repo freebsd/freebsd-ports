@@ -1,6 +1,6 @@
 PORTNAME=	gleam
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.8.1
+DISTVERSION=	1.9.1
 CATEGORIES=	lang
 
 MAINTAINER=	dch@FreeBSD.org
@@ -11,6 +11,8 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/compiler-core/LICENCE
 
 BROKEN_i386=	needs SSE or SSE2 type extensions to compile
+
+TEST_DEPENDS=	erlang:lang/erlang
 
 USES=		cargo ssl
 USE_GITHUB=	yes
@@ -31,8 +33,6 @@ PORTSCOUT=	limit:[0-9.]+
 do-build:
 	(cd ${WRKSRC} && \
 		cargo build --release)
-	(cd ${WRKSRC}/compiler-cli && \
-		env HOME=${WRKDIR} cargo install --path . --force --locked)
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/bin/
