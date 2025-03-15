@@ -1,17 +1,19 @@
---- Makefile.orig	2023-03-08 12:18:14 UTC
+--- Makefile.orig	2025-03-05 10:31:42 UTC
 +++ Makefile
-@@ -187,22 +187,22 @@ clean-wayland-protocols:
- install: install-dunst install-dunstctl install-dunstrc install-service 
+@@ -229,23 +229,23 @@ install-dunst: dunst doc
+ install: install-dunst install-dunstctl install-dunstrc install-service
  
  install-dunst: dunst doc
 -	install -Dm755 dunst ${DESTDIR}${BINDIR}/dunst
 -	install -Dm644 docs/dunst.1 ${DESTDIR}${MANPREFIX}/man1/dunst.1
 -	install -Dm644 docs/dunst.5 ${DESTDIR}${MANPREFIX}/man5/dunst.5
 -	install -Dm644 docs/dunstctl.1 ${DESTDIR}${MANPREFIX}/man1/dunstctl.1
+-	install -Dm644 docs/dunstify.1 ${DESTDIR}${MANPREFIX}/man1/dunstify.1
 +	install -m555 dunst ${DESTDIR}${BINDIR}/dunst
 +	install -m644 docs/dunst.1 ${DESTDIR}${MANPREFIX}/man1/dunst.1
 +	install -m644 docs/dunst.5 ${DESTDIR}${MANPREFIX}/man5/dunst.5
 +	install -m644 docs/dunstctl.1 ${DESTDIR}${MANPREFIX}/man1/dunstctl.1
++	install -m644 docs/dunstify.1 ${DESTDIR}${MANPREFIX}/man1/dunstify.1
  
  install-dunstctl: dunstctl
 -	install -Dm755 dunstctl ${DESTDIR}${BINDIR}/dunstctl
@@ -30,7 +32,7 @@
  ifneq (0,${SYSTEMD})
  install-service: install-service-systemd
  install-service-systemd: service-systemd
-@@ -212,7 +212,7 @@ endif
+@@ -255,7 +255,7 @@ install-dunstify: dunstify
  ifneq (0,${DUNSTIFY})
  install: install-dunstify
  install-dunstify: dunstify
@@ -38,4 +40,4 @@
 +	install -m555 dunstify ${DESTDIR}${BINDIR}/dunstify
  endif
  
- uninstall: uninstall-keepconf
+ ifneq (0,${COMPLETIONS})
