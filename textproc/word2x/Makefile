@@ -8,6 +8,9 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Converter from MS Word to text, HTML, or LaTeX
 WWW=		https://word2x.sourceforge.net/
 
+DEPRECATED=	Obsolete converter than only supports ancient versions of Word documents
+EXPIRATION_DATE=2025-04-30
+
 USES=		gmake
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
