@@ -10,6 +10,9 @@ WWW=		http://presage.sourceforge.net/
 
 LICENSE=	GPLv2+
 
+DEPRECATED=	Deprecated upstream, consider using deskutils/presage
+EXPIRATION_DATE=2025-04-30
+
 BUILD_DEPENDS=	help2man:misc/help2man
 
 USES=		compiler libtool localbase ncurses pkgconfig sqlite
