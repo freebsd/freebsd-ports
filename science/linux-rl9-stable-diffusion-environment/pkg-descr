@@ -1,0 +1,2 @@
+A collection of Linux Python packages for running Stable Diffusion models
+on NVIDIA GPUs using the PyTorch and Transformers libraries.

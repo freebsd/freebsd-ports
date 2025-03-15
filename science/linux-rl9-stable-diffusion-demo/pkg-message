@@ -1,0 +1,7 @@
+To run the Stable Diffusion demonstration script, the following requirements
+must be met:
+
+1. An NVIDIA GPU must be present in the system.
+2. The NVIDIA driver kernel module must be loaded.
+3. The dummy-uvm library must be preloaded using the LD_PRELOAD environment
+   variable.

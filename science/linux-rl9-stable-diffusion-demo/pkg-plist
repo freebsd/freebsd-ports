@@ -1,0 +1,3 @@
+bin/stable-diffusion-demo
+%%DATADIR%%/dummy-uvm.so
+%%DATADIR%%/stable-diffusion-sample.py

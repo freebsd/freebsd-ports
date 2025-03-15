@@ -1,0 +1,10 @@
+lib/python3.9/site-packages/README.txt
+lib/python3.9/site-packages/_distutils_hack
+lib/python3.9/site-packages/distutils-precedence.pth
+lib/python3.9/site-packages/pip-25.0.dist-info
+lib/python3.9/site-packages/pip
+lib/python3.9/site-packages/pkg_resources
+lib/python3.9/site-packages/setuptools-75.8.0-py3.9.egg-info
+lib/python3.9/site-packages/setuptools
+lib/python3.9/site-packages/wheel-0.45.1.dist-info
+lib/python3.9/site-packages/wheel
