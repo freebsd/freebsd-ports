@@ -8,6 +8,9 @@ MAINTAINER=	gavin@FreeBSD.org
 COMMENT=	Utility for manipulating mp3 ID3 Tags
 WWW=		http://nekohako.xware.cx/id3tool/
 
+DEPRECATED=	Can't read ID3v2 tags which have been around for 20+ years and discontinued in 2005 feature-wise according to readme file
+EXPIRATION_DATE=2025-04-30
+
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
