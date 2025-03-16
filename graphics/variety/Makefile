@@ -1,11 +1,10 @@
 PORTNAME=	variety
-PORTVERSION=	0.8.12
-PORTREVISION=	2
+PORTVERSION=	0.8.13
 CATEGORIES=	graphics
 
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Wallpaper changer
-WWW=		https://peterlevi.com/variety/
+WWW=		https://github.com/varietywalls/variety
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
