@@ -14,6 +14,7 @@ include/mupdf/fitz/compressed-buffer.h
 include/mupdf/fitz/config.h
 include/mupdf/fitz/context.h
 include/mupdf/fitz/crypt.h
+include/mupdf/fitz/deskew.h
 include/mupdf/fitz/device.h
 include/mupdf/fitz/display-list.h
 include/mupdf/fitz/document.h
@@ -73,8 +74,10 @@ include/mupdf/pdf/name-table.h
 include/mupdf/pdf/object.h
 include/mupdf/pdf/page.h
 include/mupdf/pdf/parse.h
+include/mupdf/pdf/recolor.h
 include/mupdf/pdf/resource.h
 include/mupdf/pdf/xref.h
+include/mupdf/pdf/zugferd.h
 include/mupdf/ucdn.h
 lib/libmupdf-third.so
 lib/libmupdf-third.so.%%SOVERSION%%
