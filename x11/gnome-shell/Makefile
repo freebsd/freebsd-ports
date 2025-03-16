@@ -1,6 +1,6 @@
 PORTNAME=	gnome-shell
 PORTVERSION=	42.4
-PORTREVISION=	13
+PORTREVISION=	14
 CATEGORIES=	x11 gnome
 MASTER_SITES=	GNOME/sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+)\..*/\1/}
 DIST_SUBDIR=	gnome
@@ -53,6 +53,8 @@ USE_PERL5=	build
 USE_LDCONFIG=	yes
 SHEBANG_FILES=	src/gnome-shell-extension-tool.in src/gnome-shell-perf-tool.in
 BINARY_ALIAS=	python3=${PYTHON_CMD}
+# These libs are found via rpath mechanism
+NO_SHLIB_REQUIRES_GLOB=	libmutter-clutter-* libmutter-cogl-*
 
 WEBPLUGIN_NAME=	libgnome-shell-browser-plugin.so
 WEBPLUGIN_DIR=	${PREFIX}/lib/mozilla/plugins/
