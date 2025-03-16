@@ -1,4 +1,4 @@
---- Makefile.orig	2025-02-16 15:23:15 UTC
+--- Makefile.orig	2025-03-15 19:44:33 UTC
 +++ Makefile
 @@ -69,7 +69,7 @@ contribdir  := $(docdir)/contrib
  man3dir     := $(mandir)/man3
@@ -13,7 +13,7 @@
  
  export Q VERBOSE CC HOSTCC BUILDCC GBSCFLAGS GBSLDFLAGS
  
--docs               := README.md HISTORY COPYRIGHT
+-docs               := README.md HISTORY COPYRIGHT LICENCE
 +docs               := README.md
  docs-dist          := INSTALL.md CODINGSTYLE gbsformat.txt
  contribs           := contrib/gbs2ogg.sh contrib/gbsplay.bashcompletion contrib/gbsplay.zshcompletion
