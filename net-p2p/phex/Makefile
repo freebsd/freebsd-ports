@@ -11,6 +11,9 @@ WWW=		http://phex.sourceforge.net/
 
 LICENSE=	GPLv2
 
+DEPRECATED=	Abandonware, last update upstream in 2009. Consider using net-p2p/gtk-gnutella
+EXPIRATION_DATE=2025-04-30
+
 USES=		java zip
 
 NO_BUILD=	yes
