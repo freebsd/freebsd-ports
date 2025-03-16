@@ -20,7 +20,7 @@ share/applications/goland.desktop
 %%DATADIR%%/lib/app-client.jar
 %%DATADIR%%/lib/app.jar
 %%DATADIR%%/lib/bouncy-castle.jar
-%%DATADIR%%/lib/build-marker-GO-243.25659.52
+%%DATADIR%%/lib/build-marker-GO-243.26053.20
 %%DATADIR%%/lib/cds/classesLogAgent.jar
 %%DATADIR%%/lib/ext/platform-main.jar
 %%DATADIR%%/lib/external-system-rt.jar
