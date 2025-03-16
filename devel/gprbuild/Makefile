@@ -1,6 +1,7 @@
 PORTNAME=	gprbuild
 DISTVERSIONPREFIX=	v
 DISTVERSION=	25.0.0	# Upgrade with devel/libgpr + textproc/xmlada
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	devel
 
@@ -85,18 +86,6 @@ do-build-DOCS-on:
 	@${ECHO} "*** Build docs"
 	(cd ${WRKSRC}/doc &&	\
 	${DO_MAKE_BUILD} html )
-
-do-build-EXAMPLES-on:
-	@${ECHO} "*** Build examples"
-	# Fortran is not yet supported on FreeBSD
-.for d in ada_f77 matrix
-	${MV} ${WRKSRC}/examples/${d} ${WRKDIR}
-.endfor
-	(cd ${WRKSRC}/examples &&	\
-	${DO_MAKE_BUILD:C|PATH=|PATH=${WRKSRC}/bootstrap/bin:|} ${ALL_TARGET} )
-.for d in ada_f77 matrix
-	${MV} ${WRKDIR}/${d} ${WRKSRC}/examples/
-.endfor
 
 do-install:
 	@${ECHO} "*** Installation of gprbuild"
