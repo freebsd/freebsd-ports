@@ -10,6 +10,9 @@ WWW=		http://user.cs.tu-berlin.de/~schintke/x2html/
 
 LICENSE=	GPLv2
 
+DEPRECATED=	Upstream is gone and last update 20 years ago
+EXPIRATION_DATE=2025-04-30
+
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
