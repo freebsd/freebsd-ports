@@ -1,5 +1,6 @@
 PORTNAME=	qt6pas
 PORTVERSION=	6.2.10
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	LOCAL/acm/
 
@@ -15,7 +16,7 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 USES=		compiler:c++11-lang gl qmake qt:6
 USE_GL=		opengl
 USE_QT=		base
-USE_LDCONFIG=	yes
+USE_LDCONFIG=	${PREFIX}/${QT_LIBDIR_REL}
 
 QT6_VER_MIN=	6.2.8
 
