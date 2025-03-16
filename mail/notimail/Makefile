@@ -1,6 +1,6 @@
 PORTNAME=	NotiMail
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.0.1
+DISTVERSION=	2.0.2
 CATEGORIES=	mail python
 
 MAINTAINER=	stefano@dragas.it
@@ -10,10 +10,10 @@ WWW=		https://github.com/draga79/NotiMail
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>0:www/py-requests@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}argparse>0:devel/py-argparse@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}configparser>0:devel/py-configparser@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}argparse>0:devel/py-argparse@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}requests>0:www/py-requests@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR}
 
 USES=		python shebangfix
 USE_GITHUB=	yes
@@ -21,8 +21,8 @@ GH_ACCOUNT=	draga79
 USE_RC_SUBR=	notimail
 SHEBANG_FILES=	NotiMail.py
 
-NO_BUILD=	yes
 NO_ARCH=	yes
+NO_BUILD=	yes
 SUB_FILES=	pkg-message
 
 do-install:
