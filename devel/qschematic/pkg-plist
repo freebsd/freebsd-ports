@@ -22,6 +22,7 @@ include/qschematic/items/widget.hpp
 include/qschematic/items/wire.hpp
 include/qschematic/items/wirenet.hpp
 include/qschematic/items/wireroundedcorners.hpp
+include/qschematic/background.hpp
 include/qschematic/netlist.hpp
 include/qschematic/netlist_writer_json.hpp
 include/qschematic/netlistgenerator.hpp
