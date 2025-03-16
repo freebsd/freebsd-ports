@@ -1,18 +1,15 @@
 PORTNAME=	datasette
-DISTVERSION=	0.63.3
-PORTREVISION=	2
+DISTVERSION=	0.65.1
 CATEGORIES=	databases www
 MASTER_SITES=	PYPI
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Multi-tool for exploring and publishing data
-WWW=		https://datasette.io/
+WWW=		https://datasette.io \
+		https://github.com/simonw/datasette
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
-
-DEPRECATED=	Depends on expired devel/py-pytest-runner
-EXPIRATION_DATE=2025-03-31
 
 PY_DEPENDS=	\
 		${PYTHON_PKGNAMEPREFIX}aiofiles>=0.4:devel/py-aiofiles@${PY_FLAVOR} \

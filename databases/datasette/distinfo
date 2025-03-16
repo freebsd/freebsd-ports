@@ -1,3 +1,3 @@
-TIMESTAMP = 1671400720
-SHA256 (datasette-0.63.3.tar.gz) = fc6a37c73d0d08e9240211a24893eb09886b84427be1ad2295a67be231175af3
-SIZE (datasette-0.63.3.tar.gz) = 210736
+TIMESTAMP = 1742157938
+SHA256 (datasette-0.65.1.tar.gz) = d8be37ae6dafbfd8e510d49c0dc0fc6696081614d048a507eed86dd2ae433223
+SIZE (datasette-0.65.1.tar.gz) = 409411
