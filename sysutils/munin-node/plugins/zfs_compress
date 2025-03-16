@@ -13,7 +13,7 @@ EOM
 listing=$(zfs get -t filesystem -H compressratio)
 
 while read -r label _ ratio _; do
-	clean_label=$(echo "${label}" | sed -e 's|/|__|g')
+	clean_label=$(echo "${label}" | sed -e 's|/|__|g' -e 's|\.|_|g' )
 	echo "${clean_label}.label ${label}"
 	echo "${clean_label}.value ${ratio%x}"
 done <<eot
