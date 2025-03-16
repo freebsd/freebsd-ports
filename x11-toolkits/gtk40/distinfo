@@ -1,3 +1,3 @@
-TIMESTAMP = 1741998682
-SHA256 (gnome/gtk-4.18.1.tar.xz) = 6a1c3bc2dc7cacd28fba3b885ecb4086aa85b3d0941265d6651e92c7ff909e74
-SIZE (gnome/gtk-4.18.1.tar.xz) = 17709476
+TIMESTAMP = 1742166889
+SHA256 (gnome/gtk-4.18.2.tar.xz) = cca5677be4c3e501b49f1c50bcafacba8dcf4bd3a2d016388f834eff274dc159
+SIZE (gnome/gtk-4.18.2.tar.xz) = 17711040
