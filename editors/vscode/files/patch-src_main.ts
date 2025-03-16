@@ -1,4 +1,4 @@
---- src/main.ts.orig	2024-10-31 05:10:14 UTC
+--- src/main.ts.orig	2025-03-12 13:24:52 UTC
 +++ src/main.ts
 @@ -141,7 +141,7 @@ if (userLocale) {
  // Pseudo Language Language Pack is being used.
@@ -9,7 +9,7 @@
  	const electronLocale = (!userLocale || userLocale === 'qps-ploc') ? 'en' : userLocale;
  	app.commandLine.appendSwitch('lang', electronLocale);
  }
-@@ -206,7 +206,7 @@ function configureCommandlineSwitchesSync(cliArgs: Nat
+@@ -231,7 +231,7 @@ function configureCommandlineSwitchesSync(cliArgs: Nat
  		'proxy-bypass-list'
  	];
  
