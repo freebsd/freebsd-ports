@@ -837,6 +837,9 @@ share/applications/emacsclient.desktop
 %%DATADIR%%/%%EMACS_VER%%/etc/refcards/de-refcard.tex
 %%DATADIR%%/%%EMACS_VER%%/etc/refcards/dired-ref.tex
 %%DATADIR%%/%%EMACS_VER%%/etc/refcards/emacsver.tex
+%%DATADIR%%/%%EMACS_VER%%/etc/refcards/es-dired-ref.tex
+%%DATADIR%%/%%EMACS_VER%%/etc/refcards/es-refcard.tex
+%%DATADIR%%/%%EMACS_VER%%/etc/refcards/es-survival.tex
 %%DATADIR%%/%%EMACS_VER%%/etc/refcards/fr-dired-ref.tex
 %%DATADIR%%/%%EMACS_VER%%/etc/refcards/fr-refcard.tex
 %%DATADIR%%/%%EMACS_VER%%/etc/refcards/fr-survival.tex
@@ -1271,8 +1274,6 @@ share/applications/emacsclient.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/cedet/ede/util.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/cedet/mode-local.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/cedet/mode-local.elc
-%%DATADIR%%/%%EMACS_VER%%/lisp/cedet/pulse.el.gz
-%%DATADIR%%/%%EMACS_VER%%/lisp/cedet/pulse.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/cedet/semantic.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/cedet/semantic.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/cedet/semantic/analyze.el.gz
@@ -1566,8 +1567,6 @@ share/applications/emacsclient.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/dynamic-setting.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/ebuff-menu.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/ebuff-menu.elc
-%%DATADIR%%/%%EMACS_VER%%/lisp/echistory.el.gz
-%%DATADIR%%/%%EMACS_VER%%/lisp/echistory.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/ecomplete.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/ecomplete.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/editorconfig-conf-mode.el.gz
@@ -3102,6 +3101,8 @@ share/applications/emacsclient.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/cl.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/crisp.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/crisp.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/echistory.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/echistory.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/eieio-compat.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/eieio-compat.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/eudcb-ph.el.gz
@@ -3748,6 +3749,8 @@ share/applications/emacsclient.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/ps-print.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/ps-samp.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/ps-samp.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/pulse.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/pulse.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/recentf.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/recentf.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/rect.el.gz
@@ -3884,6 +3887,8 @@ share/applications/emacsclient.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/term/vt100.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/term/vt200.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/term/vt200.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/term/w32-nt.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/term/w32-nt.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/term/w32-win.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/term/w32-win.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/term/w32console.el.gz
