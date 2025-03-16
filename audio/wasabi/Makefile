@@ -1,16 +1,16 @@
 PORTNAME=	wasabi
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.1.4-3
+DISTVERSION=	0.1.4-3 # 1.0.1 is still broken
 DISTVERSIONSUFFIX=	-g6384482
 CATEGORIES=	audio
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Fast and memory efficient Black MIDI player
-WWW=		https://github.com/arduano/wasabi
+WWW=		https://github.com/BlackMIDIDevs/wasabi
 
 LICENSE=	APACHE20 # Don't Be a Dick Public License based on Apache 2.0, see http://www.dbad-license.org/
 
-BROKEN=		rust code incompatible with latest rust-nightly, see https://github.com/arduano/wasabi/issues/60
+BROKEN=		rust code incompatible with latest rust-nightly, see https://github.com/BlackMIDIDevs/wasabi/issues/89
 
 BUILD_DEPENDS=	rust-nightly>0:lang/rust-nightly
 LIB_DEPENDS=	libasound.so:audio/alsa-lib
@@ -18,7 +18,7 @@ LIB_DEPENDS=	libasound.so:audio/alsa-lib
 USES=		cargo pkgconfig python:build
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	arduano
+GH_ACCOUNT=	BlackMIDIDevs
 
 CARGO_BUILDDEP=	no
 CARGO_CRATES=	ab_glyph-0.2.23 \
