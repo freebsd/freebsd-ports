@@ -142,6 +142,7 @@
     SUBDIR += stm32flash
     SUBDIR += sumo
     SUBDIR += surelog
+    SUBDIR += surfer
     SUBDIR += svlint
     SUBDIR += svls
     SUBDIR += sweethome3d
