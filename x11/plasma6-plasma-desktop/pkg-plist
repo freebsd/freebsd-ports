@@ -8,6 +8,10 @@ bin/solid-action-desktop-gen
 bin/tastenbrett
 etc/xdg/autostart/kaccess.desktop
 lib/libexec/kf6/kauth/kcmdatetimehelper
+%%IBUS%%lib/libexec/kimpanel-ibus-panel
+%%IBUS%%lib/libexec/kimpanel-ibus-panel-launcher
+%%SCIM%%lib/libexec/kimpanel-scim-panel
+%%QT_PLUGINDIR%%/attica_kde.so
 %%QT_PLUGINDIR%%/kf6/kded/device_automounter.so
 %%QT_PLUGINDIR%%/kf6/kded/kded_touchpad.so
 %%QT_PLUGINDIR%%/kf6/kded/keyboard.so
@@ -68,7 +72,9 @@ lib/libexec/kf6/kauth/kcmdatetimehelper
 %%QT_QMLDIR%%/org/kde/private/desktopcontainment/folder/kde-qmlmodule.version
 %%QT_QMLDIR%%/org/kde/private/desktopcontainment/folder/libfolderplugin.so
 %%QT_QMLDIR%%/org/kde/private/desktopcontainment/folder/qmldir
-lib/systemd/user/plasma-kaccess.service
+@comment lib/systemd/user/plasma-kaccess.service
+share/accounts/providers/kde/opendesktop.provider
+share/accounts/services/kde/opendesktop-rating.service
 share/applications/kaccess.desktop
 share/applications/kcm_access.desktop
 share/applications/kcm_activities.desktop
