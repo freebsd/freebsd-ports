@@ -8,7 +8,7 @@ COMMENT=	Spotify daemon
 WWW=		https://github.com/Spotifyd/spotifyd
 
 LICENSE=	GPLv3
-LICENSE_FILE=	${WRKSRC}/cargo-crates/ansi_term-0.12.1/LICENCE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libogg.so:audio/libogg
 
