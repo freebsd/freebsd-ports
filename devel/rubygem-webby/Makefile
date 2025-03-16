@@ -10,6 +10,9 @@ WWW=		https://rubygems.org/gems/webby
 
 LICENSE=	MIT
 
+DEPRECATED=	Deprecated upstream in 2011
+EXPIRATION_DATE=2025-04-30
+
 RUN_DEPENDS=	rubygem-bones>=2.5.0:devel/rubygem-bones \
 		rubygem-directory_watcher>=1.1.2:devel/rubygem-directory_watcher \
 		rubygem-hpricot>=0.6.0:www/rubygem-hpricot \
