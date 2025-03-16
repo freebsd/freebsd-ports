@@ -1,5 +1,5 @@
 PORTNAME=	fio
-DISTVERSION=	3.38
+DISTVERSION=	3.39
 CATEGORIES=	benchmarks
 MASTER_SITES=	https://brick.kernel.dk/snaps/
 
@@ -13,13 +13,13 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 USES=		compiler:c11 gmake pkgconfig tar:bzip2
 
 HAS_CONFIGURE=		yes
-TEST_TARGET=		test
 CONFIGURE_ARGS=		--disable-http \
 			--disable-native \
 			--disable-optimizations
 MAKE_ARGS=		DEBUGFLAGS= \
 			OPTFLAGS= \
 			V=1
+TEST_TARGET=		test
 CONFLICTS_INSTALL=	py*-Fiona
 
 OPTIONS_DEFINE=	EXAMPLES GNUPLOT LIBNFS
