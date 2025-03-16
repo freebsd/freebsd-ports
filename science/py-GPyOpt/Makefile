@@ -1,4 +1,4 @@
-PORTNAME=	GPyOpt
+PORTNAME=	GPyOpt # the upstream repository was archived but this packages seems to be ok and is useful
 DISTVERSION=	1.2.6
 PORTREVISION=	2
 CATEGORIES=	science python
