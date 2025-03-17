@@ -27,6 +27,7 @@ bin/stream
 @sample %%ETCDIR%%-6/type-dejavu.xml.sample
 @sample %%ETCDIR%%-6/type-ghostscript.xml.sample
 @sample %%ETCDIR%%-6/type-urw-base35.xml.sample
+@sample %%ETCDIR%%-6/type-urw-base35-type1.xml.sample
 @sample %%ETCDIR%%-6/type-windows.xml.sample
 @sample %%ETCDIR%%-6/type.xml.sample
 include/ImageMagick-6/Magick++.h
@@ -614,6 +615,7 @@ share/man/man1/stream.1.gz
 %%PORTDOCS%%%%DOCSDIR%%-6/www/Magick++/STL.html
 %%PORTDOCS%%%%DOCSDIR%%-6/www/Magick++/TypeMetric.html
 %%PORTDOCS%%%%DOCSDIR%%-6/www/Magick++/index.html
+%%PORTDOCS%%%%DOCSDIR%%-6/www/Magick++/logo.png
 %%PORTDOCS%%%%DOCSDIR%%-6/www/Magick++/magick.css
 %%PORTDOCS%%%%DOCSDIR%%-6/www/Magick++/montage-sample-framed.jpg
 %%PORTDOCS%%%%DOCSDIR%%-6/www/Magick++/right_triangle.png
@@ -690,8 +692,9 @@ share/man/man1/stream.1.gz
 %%PORTDOCS%%%%DOCSDIR%%-6/www/api/version.html
 %%PORTDOCS%%%%DOCSDIR%%-6/www/api/wand-view.html
 %%PORTDOCS%%%%DOCSDIR%%-6/www/architecture.html
-%%PORTDOCS%%%%DOCSDIR%%-6/www/assets/magick.css
-%%PORTDOCS%%%%DOCSDIR%%-6/www/assets/magick.js
+%%PORTDOCS%%%%DOCSDIR%%-6/www/assets/bootstrap.bundle.min.js
+%%PORTDOCS%%%%DOCSDIR%%-6/www/assets/bootstrap.min.css
+%%PORTDOCS%%%%DOCSDIR%%-6/www/assets/color-modes.js
 %%PORTDOCS%%%%DOCSDIR%%-6/www/changelog.html
 %%PORTDOCS%%%%DOCSDIR%%-6/www/cipher.html
 %%PORTDOCS%%%%DOCSDIR%%-6/www/cite.html
@@ -745,6 +748,7 @@ share/man/man1/stream.1.gz
 %%PORTDOCS%%%%DOCSDIR%%-6/www/openmp.html
 %%PORTDOCS%%%%DOCSDIR%%-6/www/perl-magick.html
 %%PORTDOCS%%%%DOCSDIR%%-6/www/porting.html
+%%PORTDOCS%%%%DOCSDIR%%-6/www/privacy-policy.html
 %%PORTDOCS%%%%DOCSDIR%%-6/www/quantize.html
 %%PORTDOCS%%%%DOCSDIR%%-6/www/resources.html
 %%PORTDOCS%%%%DOCSDIR%%-6/www/search.html

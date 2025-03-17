@@ -1,6 +1,5 @@
 PORTNAME=	ImageMagick
-DISTVERSION=	7.1.1-26
-PORTREVISION=	6
+DISTVERSION=	7.1.1-45
 CATEGORIES=	graphics perl5
 MASTER_SITES=	https://ftp.acc.umu.se/mirror/imagemagick.org/ftp/releases/ \
 		https://mirror.dogado.de/imagemagick/releases/ \
@@ -47,7 +46,7 @@ USE_GNOME=	libxml2
 SAMPLE_FILES=	colors.xml delegates.xml log.xml mime.xml policy.xml \
 		quantization-table.xml thresholds.xml type-apple.xml \
 		type-dejavu.xml type-ghostscript.xml type-urw-base35.xml \
-		type-windows.xml type.xml
+		type-urw-base35-type1.xml type-windows.xml type.xml
 
 PLIST_SUB=	PORTVERSION=${PORTVERSION:R}
 
@@ -70,6 +69,7 @@ CONFIGURE_ARGS+=	--with-x
 USES+=			xorg
 USE_XORG=		ice sm x11 xext xt
 .else
+OPTIONS_EXCLUDE=	PANGO RAQM SVG
 CONFIGURE_ARGS+=	--without-x
 .endif
 

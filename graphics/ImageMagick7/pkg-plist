@@ -25,6 +25,7 @@ bin/stream
 @sample %%ETCDIR%%-7/type-dejavu.xml.sample
 @sample %%ETCDIR%%-7/type-ghostscript.xml.sample
 @sample %%ETCDIR%%-7/type-urw-base35.xml.sample
+@sample %%ETCDIR%%-7/type-urw-base35-type1.xml.sample
 @sample %%ETCDIR%%-7/type-windows.xml.sample
 @sample %%ETCDIR%%-7/type.xml.sample
 include/ImageMagick-7/Magick++.h
@@ -146,7 +147,6 @@ include/ImageMagick-7/MagickWand/animate.h
 include/ImageMagick-7/MagickWand/compare.h
 include/ImageMagick-7/MagickWand/composite.h
 include/ImageMagick-7/MagickWand/conjure.h
-include/ImageMagick-7/MagickWand/convert.h
 include/ImageMagick-7/MagickWand/deprecate.h
 include/ImageMagick-7/MagickWand/display.h
 include/ImageMagick-7/MagickWand/drawing-wand.h
@@ -448,12 +448,12 @@ lib/libMagickCore-7.a
 lib/libMagickCore-7.la
 lib/libMagickCore-7.so
 lib/libMagickCore-7.so.10
-lib/libMagickCore-7.so.10.0.1
+lib/libMagickCore-7.so.10.0.2
 lib/libMagickWand-7.a
 lib/libMagickWand-7.la
 lib/libMagickWand-7.so
 lib/libMagickWand-7.so.10
-lib/libMagickWand-7.so.10.0.1
+lib/libMagickWand-7.so.10.0.2
 %%WITH_PERL%%%%SITE_ARCH%%/Image/Magick.pm
 %%WITH_PERL%%%%SITE_ARCH%%/Image/Magick/%%QBIT%%%%HDRI%%.pm
 %%WITH_PERL%%%%SITE_ARCH%%/auto/Image/Magick/%%QBIT%%%%HDRI%%/%%QBIT%%%%HDRI%%.so
@@ -489,7 +489,6 @@ share/man/man1/stream.1.gz
 %%DATADIR%%-7/francais.xml
 %%DATADIR%%-7/locale.xml
 %%PORTDOCS%%%%DOCSDIR%%-7/LICENSE
-%%PORTDOCS%%%%DOCSDIR%%-7/NEWS.txt
 %%PORTDOCS%%%%DOCSDIR%%-7/images/ImageMagick.ico
 %%PORTDOCS%%%%DOCSDIR%%-7/images/affine.png
 %%PORTDOCS%%%%DOCSDIR%%-7/images/annotate.png
@@ -724,8 +723,9 @@ share/man/man1/stream.1.gz
 %%PORTDOCS%%%%DOCSDIR%%-7/www/api/vision.html
 %%PORTDOCS%%%%DOCSDIR%%-7/www/api/wand-view.html
 %%PORTDOCS%%%%DOCSDIR%%-7/www/architecture.html
-%%PORTDOCS%%%%DOCSDIR%%-7/www/assets/magick.css
-%%PORTDOCS%%%%DOCSDIR%%-7/www/assets/magick.js
+%%PORTDOCS%%%%DOCSDIR%%-7/www/assets/bootstrap.bundle.min.js
+%%PORTDOCS%%%%DOCSDIR%%-7/www/assets/bootstrap.min.css
+%%PORTDOCS%%%%DOCSDIR%%-7/www/assets/color-modes.js
 %%PORTDOCS%%%%DOCSDIR%%-7/www/changelog.html
 %%PORTDOCS%%%%DOCSDIR%%-7/www/cipher.html
 %%PORTDOCS%%%%DOCSDIR%%-7/www/cite.html
@@ -784,6 +784,7 @@ share/man/man1/stream.1.gz
 %%PORTDOCS%%%%DOCSDIR%%-7/www/openmp.html
 %%PORTDOCS%%%%DOCSDIR%%-7/www/perl-magick.html
 %%PORTDOCS%%%%DOCSDIR%%-7/www/porting.html
+%%PORTDOCS%%%%DOCSDIR%%-7/www/privacy-policy.html
 %%PORTDOCS%%%%DOCSDIR%%-7/www/quantize.html
 %%PORTDOCS%%%%DOCSDIR%%-7/www/resources.html
 %%PORTDOCS%%%%DOCSDIR%%-7/www/search.html
