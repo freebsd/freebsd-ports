@@ -127,6 +127,7 @@
     SUBDIR += gensen
     SUBDIR += gentium-basic
     SUBDIR += gentium-plus
+    SUBDIR += gentium-plus-compact
     SUBDIR += genwan
     SUBDIR += genyo
     SUBDIR += genyog
