@@ -1,5 +1,5 @@
 PORTNAME=	snac
-DISTVERSION=	2.68
+DISTVERSION=	2.73
 CATEGORIES=	net-im www
 MASTER_SITES=	https://codeberg.org/grunfink/snac2/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/
 
@@ -8,6 +8,7 @@ COMMENT=	Simple, minimalistic ActivityPub instance written in portable C
 WWW=		https://codeberg.org/grunfink/snac2
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libcurl.so:ftp/curl
 
