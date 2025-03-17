@@ -1,0 +1,8 @@
+Glance is a fast, lightweight dashboard that can display all manner of
+widgets, including RSS feeds, stocks, Reddit and Hacker News and Twitch
+feeds, bookmarks, system information, and more.
+
+It's configurable through a single straightforward YAML file, and is
+easily themeable (see /usr/local/share/doc/glance/themes.md), including
+Catppuccin Mocha which objectively everyone should be using anyway.
+Widgets can be cached, so pages load nearly instantly.
