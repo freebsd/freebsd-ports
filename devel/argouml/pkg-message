@@ -1,0 +1,11 @@
+[
+{ type: install
+  message: <<EOM
+The Java versions supported by this port are in range from 8 to 18. The default
+is JAVA_DEFAULT=8 now. Add DEFAULT_VERSIONS+=java=N to /etc/make.conf if you
+want to use Java "N", but all Java ports will also be affected. Or add
+ARGOUML_JAVA_VERSION=N to /etc/make.conf if you want to override the Java
+version for this port only.
+EOM
+}
+]

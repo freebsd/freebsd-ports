@@ -38,7 +38,7 @@ bin/argouml
 %%DATADIR%%/ext/argouml-transformer.jar
 %%DATADIR%%/ext/argouml-umlpropertypanels.jar
 %%DATADIR%%/ext/domainmapping.xml
-%%DATADIR%%/gef-0.13.8.jar
+%%DATADIR%%/gef-0.13.9M1.jar
 %%DATADIR%%/icon/ArgoIcon128x128.png
 %%DATADIR%%/icon/ArgoIcon256x256.png
 %%DATADIR%%/icon/ArgoIcon512x512.png
@@ -67,5 +67,15 @@ bin/argouml
 %%DATADIR%%/org.eclipse.uml2.uml.edit_3.1.0.v201005031530.jar
 %%DATADIR%%/org.eclipse.uml2.uml.resources_3.1.1.v201008191505.jar
 %%DATADIR%%/org.eclipse.uml2.uml_3.1.1.v201008191505.jar
+%%DATADIR%%/saxon9-dom.jar
+%%DATADIR%%/saxon9-dom4j.jar
+%%DATADIR%%/saxon9-jdom.jar
+%%DATADIR%%/saxon9-s9api.jar
+%%DATADIR%%/saxon9-sql.jar
+%%DATADIR%%/saxon9-unpack.jar
+%%DATADIR%%/saxon9-xom.jar
+%%DATADIR%%/saxon9-xpath.jar
+%%DATADIR%%/saxon9-xqj.jar
+%%DATADIR%%/saxon9.jar
 %%DATADIR%%/swidgets-0.1.4.jar
 %%DATADIR%%/toolbar-1.4.1-20071227.jar

@@ -1,12 +1,11 @@
 PORTNAME=	argouml
-PORTVERSION=	0.34
-PORTREVISION=	2
+DISTVERSION=	0.35.1
 CATEGORIES=	devel java
-MASTER_SITES=	https://github.com/argouml-tigris-org/argouml/releases/download/VERSION_0_34/
-DISTNAME=	ArgoUML-${PORTVERSION}
+MASTER_SITES=	https://github.com/argouml-tigris-org/argouml/releases/download/VERSION_${DISTVERSION:C/\./_/g}/
+DISTNAME=	ArgoUML-${DISTVERSION}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
-		manual-${PORTVERSION}.pdf \
-		quickguide-${PORTVERSION}.pdf
+		manual-${DISTVERSION}.pdf \
+		quickguide-${DISTVERSION}.pdf
 DIST_SUBDIR=	${PORTNAME}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
@@ -17,17 +16,7 @@ WWW=		https://github.com/argouml-tigris-org/argouml/wiki
 LICENSE=	EPL
 
 USES=		java
-
-PORTSCOUT=	limitw:1,even \
-		site:${MASTER_SITES:S/argouml-${PORTVERSION}\///}
-
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-NO_BUILD=	yes
-
-SUB_FILES=	argouml.sh
-PORTDOCS=	manual-${PORTVERSION}.pdf quickguide-${PORTVERSION}.pdf
-
-OPTIONS_DEFINE=	DOCS
+JAVA_VERSION=	${ARGOUML_JAVA_VERSION:U8 11 17 18}
 
 DESKTOP_ENTRIES=	"ArgoUML" \
 			"Create advanced UML diagrams" \
@@ -35,6 +24,18 @@ DESKTOP_ENTRIES=	"ArgoUML" \
 			"argouml" \
 			"Development;Building;Java;" \
 			false
+NO_ARCH=	yes
+NO_BUILD=	yes
+PORTSCOUT=	limitw:1,even \
+		site:${MASTER_SITES:S/argouml-${DISTVERSION}\///}
+SUB_FILES=	argouml.sh
+SUB_LIST=	JAVA_HOME=${JAVA_HOME}
+
+WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
+
+PORTDOCS=	manual-${DISTVERSION}.pdf quickguide-${DISTVERSION}.pdf
+
+OPTIONS_DEFINE=	DOCS
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/argouml.sh ${STAGEDIR}${PREFIX}/bin/argouml
@@ -49,7 +50,7 @@ do-install:
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/manual-${PORTVERSION}.pdf ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/quickguide-${PORTVERSION}.pdf ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/manual-${DISTVERSION}.pdf ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/quickguide-${DISTVERSION}.pdf ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
