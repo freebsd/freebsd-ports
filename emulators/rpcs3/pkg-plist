@@ -13,6 +13,7 @@ share/metainfo/rpcs3.metainfo.xml
 %%DATADIR%%/GuiConfigs/Skyline.qss
 %%DATADIR%%/GuiConfigs/YoRHa by Ani.qss
 %%DATADIR%%/GuiConfigs/YoRHa-background.jpg
+%%DATADIR%%/GuiConfigs/check_mark_white.png
 %%DATADIR%%/GuiConfigs/kot-bg.jpg
 %%DATADIR%%/GuiConfigs/list_arrow_blue.png
 %%DATADIR%%/GuiConfigs/list_arrow_down_blue.png
