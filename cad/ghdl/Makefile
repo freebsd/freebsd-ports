@@ -1,6 +1,7 @@
 PORTNAME=	ghdl
 DISTVERSIONPREFIX=	v
 DISTVERSION=	5.0.1
+PORTREVISION=	1
 CATEGORIES=	cad
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -18,6 +19,7 @@ TEST_DEPENDS=	bash:shells/bash \
 USES=		ada:run gmake python:test shebangfix
 SHEBANG_FILES=	testsuite/testsuite.sh
 USE_LDCONFIG=	yes
+NO_SHLIB_REQUIRES_GLOB=	libgnat-12.so
 
 USE_GITHUB=	yes
 
