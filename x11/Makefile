@@ -335,6 +335,7 @@
     SUBDIR += pmenu
     SUBDIR += polybar
     SUBDIR += printscreen
+    SUBDIR += ptyxis
     SUBDIR += py-autotiling
     SUBDIR += py-caffeine-ng
     SUBDIR += py-i3-quickterm

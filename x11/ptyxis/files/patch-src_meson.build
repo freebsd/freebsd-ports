@@ -1,0 +1,13 @@
+--- src/meson.build.orig	2025-03-15 17:04:59 UTC
++++ src/meson.build
+@@ -83,9 +83,7 @@ ptyxis_deps = [
+   cc.find_library('m', required: false),
+ ]
+ 
+-if host_machine.system() == 'linux'
+-  ptyxis_deps += [dependency('libportal-gtk4')]
+-endif
++ptyxis_deps += [dependency('libportal-gtk4')]
+ 
+ ptyxis_c_args = [
+   release_link_args,
