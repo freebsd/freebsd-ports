@@ -1,6 +1,7 @@
 PORTNAME=	favagtk
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.0.0
+PORTREVISION=	1
 CATEGORIES=	finance
 
 MAINTAINER=	nivit@FreeBSD.org
@@ -16,6 +17,7 @@ BUILD_DEPENDS=	appstream-util:devel/appstream-glib \
 		git:devel/git \
 		WebKitWebDriver-6.0:www/webkit2-gtk@60
 LIB_DEPENDS=	libadwaita-1.so:x11-toolkits/libadwaita
+RUN_DEPENDS=	fava:finance/fava
 
 USES=		desktop-file-utils gettext-tools gnome meson pkgconfig python \
 		shared-mime-info
