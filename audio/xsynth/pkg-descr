@@ -1,0 +1,5 @@
+XSynth is the fastest Black MIDI synthesizer, playing 8,000 voices or more in
+real-time.
+
+Is uses aggressive SIMD and multithreading, and supports a subset of the sfz
+and sf2 formats.
