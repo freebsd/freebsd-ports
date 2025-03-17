@@ -45,6 +45,15 @@
 %%LINUX32%%%%LINUXBASE%%/usr/lib/libnvcuvid.so.%%SHLIB_VERSION%%
 %%LINUX32%%%%LINUXBASE%%/usr/lib/libnvidia-allocator.so.%%SHLIB_VERSION%%
 %%LINUX32%%%%LINUXBASE%%/usr/lib/libnvidia-compiler.so.%%SHLIB_VERSION%%
+%%LINUX32%%%%LINUXBASE%%/usr/lib/libnvidia-egl-gbm.so
+%%LINUX32%%%%LINUXBASE%%/usr/lib/libnvidia-egl-gbm.so.1
+%%LINUX32%%%%LINUXBASE%%/usr/lib/libnvidia-egl-gbm.so.X
+%%LINUX32%%%%LINUXBASE%%/usr/lib/libnvidia-egl-xcb.so
+%%LINUX32%%%%LINUXBASE%%/usr/lib/libnvidia-egl-xcb.so.1
+%%LINUX32%%%%LINUXBASE%%/usr/lib/libnvidia-egl-xcb.so.X
+%%LINUX32%%%%LINUXBASE%%/usr/lib/libnvidia-egl-xlib.so
+%%LINUX32%%%%LINUXBASE%%/usr/lib/libnvidia-egl-xlib.so.1
+%%LINUX32%%%%LINUXBASE%%/usr/lib/libnvidia-egl-xlib.so.X
 %%LINUX32%%%%LINUXBASE%%/usr/lib/libnvidia-eglcore.so.%%SHLIB_VERSION%%
 %%LINUX32%%%%LINUXBASE%%/usr/lib/libnvidia-encode.so
 %%LINUX32%%%%LINUXBASE%%/usr/lib/libnvidia-encode.so.1
@@ -125,6 +134,12 @@
 %%LINUXBASE%%%%LINUX_LIBDIR%%/libnvidia-egl-gbm.so.X
 %%LINUXBASE%%%%LINUX_LIBDIR%%/libnvidia-egl-wayland.so.1
 %%LINUXBASE%%%%LINUX_LIBDIR%%/libnvidia-egl-wayland.so.X
+%%LINUXBASE%%%%LINUX_LIBDIR%%/libnvidia-egl-xcb.so
+%%LINUXBASE%%%%LINUX_LIBDIR%%/libnvidia-egl-xcb.so.1
+%%LINUXBASE%%%%LINUX_LIBDIR%%/libnvidia-egl-xcb.so.X
+%%LINUXBASE%%%%LINUX_LIBDIR%%/libnvidia-egl-xlib.so
+%%LINUXBASE%%%%LINUX_LIBDIR%%/libnvidia-egl-xlib.so.1
+%%LINUXBASE%%%%LINUX_LIBDIR%%/libnvidia-egl-xlib.so.X
 %%LINUXBASE%%%%LINUX_LIBDIR%%/libnvidia-eglcore.so.%%SHLIB_VERSION%%
 %%LINUXBASE%%%%LINUX_LIBDIR%%/libnvidia-encode.so
 %%LINUXBASE%%%%LINUX_LIBDIR%%/libnvidia-encode.so.1
@@ -166,6 +181,8 @@
 %%LINUXBASE%%%%LINUX_LIBDIR%%/tls/libnvidia-tls.so.%%SHLIB_VERSION%%
 %%LINUXBASE%%%%LINUX_LIBDIR%%/vdpau/libvdpau_nvidia.so.1
 %%LINUXBASE%%/usr/share/egl/egl_external_platform.d/10_nvidia_wayland.json
+%%LINUXBASE%%/usr/share/egl/egl_external_platform.d/20_nvidia_xcb.json
+%%LINUXBASE%%/usr/share/egl/egl_external_platform.d/20_nvidia_xlib.json
 %%LINUXBASE%%/usr/share/glvnd/egl_vendor.d/10_nvidia.json
 %%LINUXBASE%%/usr/share/man/man1/nvidia-cuda-mps-control.1.gz
 %%LINUXBASE%%/usr/share/man/man1/nvidia-persistenced.1.gz

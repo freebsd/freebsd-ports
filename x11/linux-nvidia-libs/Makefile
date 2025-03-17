@@ -78,6 +78,14 @@ LINUX_DATA+=	10_nvidia_wayland.json /usr/share/egl/egl_external_platform.d
 .else
 PLIST_RE+=	'\,${LINUXBASE}/usr/share/egl,d'
 .endif
+.if ${NVVERSION} >= 570.00000
+LINUX_DATA+=	20_nvidia_xcb.json /usr/share/egl/egl_external_platform.d \
+		20_nvidia_xlib.json /usr/share/egl/egl_external_platform.d
+.else
+PLIST_RE+=	'\,${LINUXBASE}/usr/share/egl/egl_external_platform.d/20_nvidia_xcb.json,d'\
+		'\,${LINUXBASE}/usr/share/egl/egl_external_platform.d/20_nvidia_xlib.json,d'
+.endif
+
 .if ${NVVERSION} >= 361.016
 LINUX_LIBS+=	libEGL_nvidia.so.${PORTVERSION}
 LINUX_LINKS+=	libEGL_nvidia.so.${PORTVERSION} libEGL_nvidia.so.0
@@ -128,8 +136,13 @@ LINUX_LIBS+=	libnvidia-compiler.so.${PORTVERSION}
 LINUX32_LIBS+=	libnvidia-compiler.so.${PORTVERSION}
 .endif
 
-
-.if ${NVVERSION} >= 565.00000 # 565.00
+.if ${NVVERSION} >= 570.12400 # 570.124
+LINUX_LIBS+=    libnvidia-egl-wayland.so.1.1.18
+LINUX_LINKS+=   libnvidia-egl-wayland.so.1.1.18 libnvidia-egl-wayland.so.1
+LINUX32_LIBS+=	libnvidia-egl-wayland.so.1.1.18
+LINUX32_LINKS+=	libnvidia-egl-wayland.so.1.1.18 libnvidia-egl-wayland.so.1
+PLIST_RE+=      '\,${LINUXBASE},s/(libnvidia-egl-wayland\.so)\.X/\1.1.1.18/'
+.elif ${NVVERSION} >= 565.00000 # 565.00
 LINUX_LIBS+=	libnvidia-egl-wayland.so.1.1.17
 LINUX_LINKS+=	libnvidia-egl-wayland.so.1.1.17 libnvidia-egl-wayland.so.1
 PLIST_RE+=	'\,${LINUXBASE},s/(libnvidia-egl-wayland\.so)\.X/\1.1.1.17/'
@@ -294,7 +307,34 @@ LINUX32_LIBS+=  libnvidia-gpucomp.so.${PORTVERSION}
 .else
 PLIST_RE+=	'\,${LINUXBASE}.*libnvidia-gpucomp\.so,d'
 .endif # 545.00
-.if ${NVVERSION} >= 565.00000 # 565.00
+
+.if ${NVVERSION} >= 570.00000 #570.00
+LINUX_LIBS+=	libnvidia-egl-xcb.so.1.0.0 \
+		libnvidia-egl-xlib.so.1.0.0
+LINUX_LINKS+=	libnvidia-egl-xcb.so.1.0.0 libnvidia-egl-xcb.so.1 \
+		libnvidia-egl-xcb.so.1.0.0 libnvidia-egl-xcb.so \
+		libnvidia-egl-xlib.so.1.0.0 libnvidia-egl-xlib.so.1 \
+		libnvidia-egl-xlib.so.1.0.0 libnvidia-egl-xlib.so
+LINUX32_LIBS+=  libnvidia-egl-xcb.so.1.0.0 \
+		libnvidia-egl-xlib.so.1.0.0
+LINUX32_LINKS+=	libnvidia-egl-xcb.so.1.0.0 libnvidia-egl-xcb.so.1 \
+		libnvidia-egl-xcb.so.1.0.0 libnvidia-egl-xcb.so \
+		libnvidia-egl-xlib.so.1.0.0 libnvidia-egl-xlib.so.1 \
+		libnvidia-egl-xlib.so.1.0.0 libnvidia-egl-xlib.so
+PLIST_RE+=	'\,${LINUXBASE},s/(libnvidia-(egl-xcb|egl-xlib)\.so)\.X/\1.1.0.0/'
+.else
+PLIST_RE+=	'\,${LINUXBASE}.*libnvidia-(egl-xcb|egl-xlib),d'
+.endif
+
+.if ${NVVERSION} >= 570.00000 # 570.00
+LINUX_LIBS+=	libnvidia-egl-gbm.so.1.1.2
+LINUX_LINKS+=	libnvidia-egl-gbm.so.1.1.2 libnvidia-egl-gbm.so.1 \
+		libnvidia-egl-gbm.so.1.1.2 libnvidia-egl-gbm.so
+LINUX32_LIBS+=	libnvidia-egl-gbm.so.1.1.2
+LINUX32_LINKS+=	libnvidia-egl-gbm.so.1.1.2 libnvidia-egl-gbm.so.1 \
+		libnvidia-egl-gbm.so.1.1.2 libnvidia-egl-gbm.so
+PLIST_RE+=	'\,${LINUXBASE},s/(libnvidia-egl-gbm\.so)\.X/\1.1.1.2/'
+.elif ${NVVERSION} >= 565.00000 # 565.00
 LINUX_LIBS+=	libnvidia-egl-gbm.so.1.1.2
 LINUX_LINKS+=	libnvidia-egl-gbm.so.1.1.2 libnvidia-egl-gbm.so.1 \
 		libnvidia-egl-gbm.so.1.1.2 libnvidia-egl-gbm.so
@@ -310,6 +350,7 @@ LINUX_LINKS+=	libnvidia-egl-gbm.so.1.1.0 libnvidia-egl-gbm.so.1 \
 		libnvidia-egl-gbm.so.1.1.0 libnvidia-egl-gbm.so
 PLIST_RE+=	'\,${LINUXBASE},s/(libnvidia-egl-gbm\.so)\.X/\1.1.1.0/'
 .endif # 565.00
+
 .if ${NVVERSION} >= 525.08902 # 525.89.02
 LINUX_LIBS+=	libnvoptix.so.${PORTVERSION} \
 		libnvidia-nvvm.so.${PORTVERSION} \

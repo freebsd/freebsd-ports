@@ -46,6 +46,19 @@ post-patch:
 	# Workaround for LLVM/Clang19
 	${REINPLACE_CMD} -e '/DRMKMODDIR.*\/linuxkpi\/dummy\/include/d' \
 		${WRKSRC}/Makefile
+
+	# Workaround for the issue that X11 cannot acquire modesetting
+	# permission by disabling hw.nvidiadrm.fbdev tunable which is
+	# enabled on 570 series and later of the driver.
+	# This is due to the issue lacking proper support for fbdev
+	# (would be simpledrm) in graphics/drm-*-kmod and/or LinuxKPI.
+	# Would be reverted once the issues are sorted and fixed.
+.if ${NVVERSION} >= 570.00000
+	${REINPLACE_CMD} -e 's:\&nv_drm_fbdev_module_param\,  1\,:\&nv_drm_fbdev_module_param\,  0\,:' \
+		${WRKSRC}/nvidia-drm-freebsd-lkpi.c
+	${REINPLACE_CMD} -e 's:bool nv_drm_fbdev_module_param = true;:bool nv_drm_fbdev_module_param = false;:' \
+		${WRKSRC}/nvidia-drm-os-interface.c
+.endif
 	# We should support -CURRENT: kill the check (first #if __FreeBSD_version)
 	linenum=$$(${SED} -ne '/^#if __FreeBSD_version/ { = ; q ; }' \
 			${WRKSRC}/../nvidia/nv-freebsd.h) ; ${REINPLACE_CMD} \
