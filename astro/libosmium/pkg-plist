@@ -170,7 +170,6 @@ include/osmium/relations/relations_manager.hpp
 include/osmium/storage/item_stash.hpp
 include/osmium/tags/filter.hpp
 include/osmium/tags/matcher.hpp
-include/osmium/tags/regex_filter.hpp
 include/osmium/tags/taglist.hpp
 include/osmium/tags/tags_filter.hpp
 include/osmium/thread/function_wrapper.hpp

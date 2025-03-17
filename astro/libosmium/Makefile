@@ -1,6 +1,6 @@
 PORTNAME=	libosmium
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.21.0
+DISTVERSION=	2.22.0
 CATEGORIES=	astro geography devel
 
 MAINTAINER=	amdmi3@FreeBSD.org
