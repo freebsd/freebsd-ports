@@ -1,34 +1,22 @@
---- sys/unix/Makefile.doc.orig	2023-05-16 21:33:58 UTC
+--- sys/unix/Makefile.doc.orig	2025-03-15 15:02:36 UTC
 +++ sys/unix/Makefile.doc
-@@ -78,17 +78,17 @@ Guidebook.dvi	: $(GUIDEBOOK_TEX)
+@@ -80,10 +80,10 @@ $(MAKEDEFS)	: ../util/makedefs.c ../include/config.h .
  # (note: 'make makedefs', not 'make $(MAKEDEFS)')
  $(MAKEDEFS)	: ../util/makedefs.c ../include/config.h ../src/mdlib.c \
  		  ../util/mdgrep.h
 -	( cd ../util ; make makedefs )
 +	( cd ../util ; ${MAKE} makedefs )
  
--GAME	= nethack
--MANDIR	= /usr/man/man6
-+GAME	= xnethack
-+MANDIR	= ${PREFIX}/share/man/man6
+ GAME	= xnethack
+-MANDIR	?= /usr/man/man6
++MANDIR	?= ${PREFIX}/share/man/man6
  MANEXT	= 6
+ NROFF ?= nroff
  
- # manual installation for most BSD-style systems
--GAMEMANCREATE = cat nethack.6 | $(NHGREP) >
--RCVRMANCREATE = cat recover.6 | $(NHGREP) >
--DLBMANCREATE = cat dlb.6 | $(NHGREP) >
--MDMANCREATE = cat makedefs.6 | $(NHGREP) >
-+GAMEMANCREATE = cat nethack.6 | $(NHGREP) > nethack.6.out ; ${BSD_INSTALL_MAN} nethack.6.out
-+RCVRMANCREATE = cat recover.6 | $(NHGREP) > recover.6.out ; ${BSD_INSTALL_MAN} recover.6.out
-+DLBMANCREATE = cat dlb.6 | $(NHGREP) > dlb.6.out ; ${BSD_INSTALL_MAN} dlb.6.out
-+MDMANCREATE = cat makedefs.6 | $(NHGREP) > makedefs.6.out ; ${BSD_INSTALL_MAN} makedefs.6.out
- # manual installation for most SYSV-style systems
- # GAMEMANCREATE = cat nethack.6 | $(NHGREP) | nroff -man - >
- # RCVRMANCREATE = cat recover.6 | $(NHGREP) | nroff -man - >
-@@ -96,10 +96,10 @@ MDMANCREATE = cat makedefs.6 | $(NHGREP) >
+@@ -99,10 +99,10 @@ manpages: $(PREMANPAGES)
  # MDMANCREATE = cat makedefs.6 | $(NHGREP) | nroff -man - >
  
- manpages:
+ manpages: $(PREMANPAGES)
 -	-$(GAMEMANCREATE) $(MANDIR)/$(GAME).$(MANEXT)
 -	-$(RCVRMANCREATE) $(MANDIR)/recover.$(MANEXT)
 -	-$(DLBMANCREATE) $(MANDIR)/dlb.$(MANEXT)
@@ -39,4 +27,4 @@
 +	-$(MDMANCREATE) ${DESTDIR}$(MANDIR)/makedefs.$(MANEXT)
  
  # manual creation for distribution
- DISTRIB = Guidebook.txt nethack.txt recover.txt \
+ DISTRIB = Guidebook.txt xnethack.txt recover.txt \

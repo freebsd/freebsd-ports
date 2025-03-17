@@ -82,6 +82,7 @@ bin/%%HACKNAME%%
 %%DATADIR%%/bigrm-11.lua
 %%DATADIR%%/bigrm-12.lua
 %%DATADIR%%/bigrm-13.lua
+%%DATADIR%%/bigrm-14.lua
 %%DATADIR%%/bigrm-2.lua
 %%DATADIR%%/bigrm-3.lua
 %%DATADIR%%/bigrm-4.lua

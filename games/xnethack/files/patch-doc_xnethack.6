@@ -1,0 +1,20 @@
+--- doc/xnethack.6.orig	2025-03-17 11:59:42 UTC
++++ doc/xnethack.6
+@@ -317,7 +317,7 @@ or the directory specified by the game administrator d
+ supplies a directory which is to serve as the playground.
+ It overrides the value from NETHACKDIR, HACKDIR,
+ or the directory specified by the game administrator during compilation
+-(usually /usr/games/lib/nethackdir).
++(usually %%HACKDIR%%).
+ This option is usually only useful to the game administrator.
+ The playground must contain several auxiliary files such as help files,
+ the list of top scorers, and a subdirectory
+@@ -435,7 +435,7 @@ All other files are in the playground directory,
+ 
+ .br
+ All other files are in the playground directory,
+-normally /usr/games/lib/xnethackdir.
++normally %%HACKDIR%%.
+ If DLB was defined during the compile, the data files and special levels
+ will be inside a larger file, normally nhdat, instead of being separate
+ files.

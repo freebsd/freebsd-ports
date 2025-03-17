@@ -1,6 +1,6 @@
---- sys/unix/sysconf.orig	2023-05-16 21:33:58 UTC
+--- sys/unix/sysconf.orig	2025-03-15 15:02:36 UTC
 +++ sys/unix/sysconf
-@@ -142,7 +142,7 @@ LIVELOG=0x11FFF
+@@ -146,7 +146,7 @@ LIVELOG=0x11FFF
  #   %D current time, YYYYMMDDhhmmss format
  #   %n player name
  #   %N first character of player name
