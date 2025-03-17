@@ -317,9 +317,9 @@ _wsdd:*:370:
 # free: 374
 # free: 375
 # free: 376
-# free: 377
-# free: 378
-# free: 379
+hostd:*:377:
+walletd:*:378:
+renterd:*:379:
 spoofdpi:*:380:
 hydroxide:*:381:
 # free: 382
