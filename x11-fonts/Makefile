@@ -10,6 +10,7 @@
     SUBDIR += alfont
     SUBDIR += amigafonts
     SUBDIR += andika
+    SUBDIR += andika-compact
     SUBDIR += anomaly-mono
     SUBDIR += anonymous-pro
     SUBDIR += apl385
