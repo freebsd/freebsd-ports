@@ -1,4 +1,3 @@
-PORTREVISION?=	1
 PKGNAMESUFFIX?=	-${OSSEC_TYPE}
 COMMENT?=	Security tool to monitor and check logs and intrusions - local (standalone) installation
 WWW=		https://ossec.github.io
