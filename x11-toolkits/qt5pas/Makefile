@@ -1,5 +1,6 @@
 PORTNAME=	qt5pas
 PORTVERSION=	1.2.16
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	LOCAL/acm/
@@ -15,7 +16,7 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 USES=		compiler:c++11-lang qmake qt:5
 USE_QT=		buildtools:build core gui network printsupport x11extras
-USE_LDCONFIG=	yes
+USE_LDCONFIG=	${PREFIX}/${QT_LIBDIR_REL}
 
 QT5_VER_MIN=	5.6.1
 
