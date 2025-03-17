@@ -21,6 +21,10 @@
 %%PERL5_MAN3%%/ExtUtils::Builder::Action::Function.3.gz
 %%PERL5_MAN3%%/ExtUtils::Builder::Action::Perl.3.gz
 %%PERL5_MAN3%%/ExtUtils::Builder::Action::Primitive.3.gz
+%%SITE_PERL%%/ExtUtils/Builder/FileSet.pm
+%%SITE_PERL%%/ExtUtils/Builder/FileSet/Filter.pm
+%%SITE_PERL%%/ExtUtils/Builder/FileSet/Free.pm
+%%SITE_PERL%%/ExtUtils/Builder/FileSet/Subst.pm
 %%PERL5_MAN3%%/ExtUtils::Builder::MakeMaker.3.gz
 %%PERL5_MAN3%%/ExtUtils::Builder::Node.3.gz
 %%PERL5_MAN3%%/ExtUtils::Builder::Plan.3.gz
