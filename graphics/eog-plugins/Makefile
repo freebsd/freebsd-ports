@@ -1,5 +1,6 @@
 PORTNAME=	eog-plugins
 DISTVERSION=	44.1
+PORTREVISION=	1
 CATEGORIES=	graphics gnome
 MASTER_SITES=	GNOME/sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+)\..*/\1/}
 DIST_SUBDIR=	gnome
@@ -29,6 +30,7 @@ USE_GNOME=	cairo gdkpixbuf gtk30 introspection libxml2
 USES=		gettext gnome meson pkgconfig tar:xz
 
 GLIB_SCHEMAS=	org.gnome.eog.plugins.exif-display.gschema.xml
+NO_SHLIB_REQUIRES_GLOB=	libeog.so
 
 OPTIONS_DEFINE=	PYTHON
 OPTIONS_DEFAULT=PYTHON
