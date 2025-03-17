@@ -50,6 +50,7 @@ share/icons/hicolor/scalable/apps/xarchiver.svg
 %%NLS%%share/locale/el/LC_MESSAGES/xarchiver.mo
 %%NLS%%share/locale/en_GB/LC_MESSAGES/xarchiver.mo
 %%NLS%%share/locale/es/LC_MESSAGES/xarchiver.mo
+%%NLS%%share/locale/et/LC_MESSAGES/xarchiver.mo
 %%NLS%%share/locale/eu/LC_MESSAGES/xarchiver.mo
 %%NLS%%share/locale/fi/LC_MESSAGES/xarchiver.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/xarchiver.mo
@@ -63,6 +64,7 @@ share/icons/hicolor/scalable/apps/xarchiver.svg
 %%NLS%%share/locale/kk/LC_MESSAGES/xarchiver.mo
 %%NLS%%share/locale/ku/LC_MESSAGES/xarchiver.mo
 %%NLS%%share/locale/lt/LC_MESSAGES/xarchiver.mo
+%%NLS%%share/locale/ltg/LC_MESSAGES/xarchiver.mo
 %%NLS%%share/locale/lv/LC_MESSAGES/xarchiver.mo
 %%NLS%%share/locale/ms/LC_MESSAGES/xarchiver.mo
 %%NLS%%share/locale/nb/LC_MESSAGES/xarchiver.mo
