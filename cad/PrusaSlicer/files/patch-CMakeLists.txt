@@ -1,4 +1,4 @@
---- CMakeLists.txt.orig	2024-12-20 11:54:34 UTC
+--- CMakeLists.txt.orig	2025-02-14 18:17:10 UTC
 +++ CMakeLists.txt
 @@ -233,7 +233,7 @@ endif ()
      endif ()
@@ -9,20 +9,7 @@
      find_package(PkgConfig REQUIRED)
  
      if (CMAKE_VERSION VERSION_LESS "3.1")
-@@ -245,7 +245,11 @@ if (CMAKE_SYSTEM_NAME STREQUAL "Linux")
-     set(THREADS_PREFER_PTHREAD_FLAG ON)
-     find_package(Threads REQUIRED)
- 
--    find_package(DBus1 REQUIRED)
-+   # find_package(DBus1 REQUIRED)
-+   pkg_check_modules(DBUS REQUIRED dbus-1)
-+   include_directories(${DBUS_INCLUDE_DIRS})
-+   link_directories(${DBUS_LIBRARY_DIRS})
-+
- endif()
- 
- if (CMAKE_COMPILER_IS_GNUCC OR CMAKE_COMPILER_IS_GNUXX)
-@@ -635,8 +639,14 @@ elseif (SLIC3R_FHS)
+@@ -635,8 +635,14 @@ elseif (SLIC3R_FHS)
      install(DIRECTORY ${SLIC3R_RESOURCES_DIR}/ DESTINATION ${SLIC3R_FHS_RESOURCES}
          PATTERN "*/udev" EXCLUDE
      )
@@ -37,7 +24,7 @@
      foreach(SIZE 32 128 192)
          install(FILES ${SLIC3R_RESOURCES_DIR}/icons/PrusaSlicer_${SIZE}px.png
              DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/icons/hicolor/${SIZE}x${SIZE}/apps RENAME PrusaSlicer.png
-@@ -645,7 +655,10 @@ elseif (SLIC3R_FHS)
+@@ -645,7 +651,10 @@ elseif (SLIC3R_FHS)
              DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/icons/hicolor/${SIZE}x${SIZE}/apps RENAME PrusaSlicer-gcodeviewer.png
          )
      endforeach()
