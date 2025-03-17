@@ -1,4 +1,6 @@
 @sample(%%U%%,%%G%%,0400) etc/lightningd-bitcoin.conf.sample
+%%RUST%%libexec/c-lightning/plugins/cln-grpc
+%%RUST%%libexec/c-lightning/plugins/clnrest
 bin/lightning-cli
 bin/lightning-hsmtool
 bin/lightningd
@@ -19,17 +21,6 @@ libexec/c-lightning/plugins/chanbackup
 libexec/c-lightning/plugins/cln-askrene
 libexec/c-lightning/plugins/cln-renepay
 libexec/c-lightning/plugins/cln-xpay
-libexec/c-lightning/plugins/clnrest/Makefile
-libexec/c-lightning/plugins/clnrest/__init__.py
-libexec/c-lightning/plugins/clnrest/clnrest
-libexec/c-lightning/plugins/clnrest/clnrest.py
-libexec/c-lightning/plugins/clnrest/poetry.lock
-libexec/c-lightning/plugins/clnrest/pyproject.toml
-libexec/c-lightning/plugins/clnrest/utilities/__init__.py
-libexec/c-lightning/plugins/clnrest/utilities/generate_certs.py
-libexec/c-lightning/plugins/clnrest/utilities/rpc_plugin.py
-libexec/c-lightning/plugins/clnrest/utilities/rpc_routes.py
-libexec/c-lightning/plugins/clnrest/utilities/shared.py
 libexec/c-lightning/plugins/commando
 libexec/c-lightning/plugins/exposesecret
 libexec/c-lightning/plugins/funder
@@ -71,6 +62,8 @@ share/man/man7/lightning-autoclean-status.7.gz
 share/man/man7/lightning-batching.7.gz
 share/man/man7/lightning-bkpr-channelsapy.7.gz
 share/man/man7/lightning-bkpr-dumpincomecsv.7.gz
+share/man/man7/lightning-bkpr-editdescriptionbyoutpoint.7.gz
+share/man/man7/lightning-bkpr-editdescriptionbypaymentid.7.gz
 share/man/man7/lightning-bkpr-inspect.7.gz
 share/man/man7/lightning-bkpr-listaccountevents.7.gz
 share/man/man7/lightning-bkpr-listbalances.7.gz
@@ -103,6 +96,7 @@ share/man/man7/lightning-disableinvoicerequest.7.gz
 share/man/man7/lightning-disableoffer.7.gz
 share/man/man7/lightning-disconnect.7.gz
 share/man/man7/lightning-emergencyrecover.7.gz
+share/man/man7/lightning-enableoffer.7.gz
 share/man/man7/lightning-exposesecret.7.gz
 share/man/man7/lightning-feerates.7.gz
 share/man/man7/lightning-fetchinvoice.7.gz

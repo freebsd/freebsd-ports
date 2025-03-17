@@ -2,13 +2,12 @@
 
 set -e
 
-declare -A requirements=(["plugins/clnrest/requirements.txt"]="CLNRESTDEPS_RUN_DEPENDS"
-                         ["plugins/wss-proxy/requirements.txt"]="WSSPROXYDEPS_RUN_DEPENDS")
+declare -A requirements=(["plugins/wss-proxy/requirements.txt"]="WSSPROXYDEPS_RUN_DEPENDS")
 
 WRKSRC=$(make -V WRKSRC)
 
 for file in ${!requirements[@]} ; do
-    (cd ${WRKSRC}/$(dirname ${file}) && poetry export --output $(basename ${file}))
+    (cd ${WRKSRC}/$(dirname ${file}) && poetry lock && poetry export --output $(basename ${file}))
     make_var="${requirements[${file}]}"
     ok=1
     for req in $(grep -E '^[^[:space:]]' "${WRKSRC}/${file}" |cut -f 1 -d =) ; do
@@ -24,5 +23,6 @@ for file in ${!requirements[@]} ; do
     done
     if [ ${ok} -eq 1 ] ; then
         echo "ok: ${make_var} matches ${WRKSRC}/${file}"
+        rm "${WRKSRC}/${file}"
     fi
 done
