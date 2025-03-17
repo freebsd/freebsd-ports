@@ -1,6 +1,6 @@
 PORTNAME=	gkrellm
 PORTVERSION=	2.4.0
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://gkrellm.srcbox.net/releases/ \
 		LOCAL/ume
@@ -22,7 +22,7 @@ OPTIONS_SUB=		yes
 CLIENT_DESC=		GKrellM Client
 CLIENT_CONFLICTS=	gkrellm-[^2].* gkrellm[^2]-[^2].*
 CLIENT_USES=		xorg
-CLIENT_USE=		GNOME=gtk20 XORG=sm,x11
+CLIENT_USE=		GNOME=gtk20,gdkpixbufextra XORG=sm,x11
 CLIENT_USE_OFF=		GNOME=glib20
 CLIENT_VARS_OFF=	BUILD_WRKSRC=${WRKSRC}/server \
 			INSTALL_WRKSRC=${WRKSRC}/server
