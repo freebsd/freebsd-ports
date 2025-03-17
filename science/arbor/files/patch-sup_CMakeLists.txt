@@ -1,0 +1,11 @@
+--- sup/CMakeLists.txt.orig	2024-08-09 10:22:00 UTC
++++ sup/CMakeLists.txt
+@@ -3,7 +3,7 @@ set(sup-sources
+     json_meter.cpp
+ )
+ 
+-add_library(arbor-sup ${sup-sources})
++add_library(arbor-sup STATIC ${sup-sources})
+ 
+ if (ARB_USE_BUNDLED_FMT)
+     target_include_directories(arbor-sup
