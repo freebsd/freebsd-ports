@@ -1,28 +1,27 @@
 PORTNAME=	xsane
 PORTVERSION=	0.999
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	graphics
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	vvd@FreeBSD.org
 COMMENT=	Gtk-based X11 frontend for SANE (Scanner Access Now Easy)
 WWW=		https://gitlab.com/sane-project/frontend/xsane
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/xsane.COPYING
 
+BUILD_DEPENDS=	scanimage:graphics/sane-backends
 LIB_DEPENDS=	libpng.so:graphics/png \
 		libtiff.so:graphics/tiff \
 		libfreetype.so:print/freetype2 \
 		liblcms.so:graphics/lcms
-BUILD_DEPENDS=	scanimage:graphics/sane-backends
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		gmake gnome jpeg localbase:ldflags pkgconfig
 USE_GITLAB=	yes
 GL_SITE=	https://gitlab.com/sane-project
 GL_ACCOUNT=	frontend
-GL_TAGNAME=	d01b4089ce6778e76fa86a0410d4e80cf6eb819e
-USE_GNOME=	gtk20 gdkpixbuf
+USE_GNOME=	gdkpixbufextra:run gtk20
 GNU_CONFIGURE=	yes
 
 PORTDOCS=	*.html *.jpg
@@ -33,7 +32,11 @@ OPTIONS_SUB=	yes
 
 GIMP_DESC=	GIMP plugin support
 
-GIMP_LIB_DEPENDS=	libgimp-2.0.so:graphics/gimp-app
+GIMP_LIB_DEPENDS=	libjson-glib-1.0.so:devel/json-glib \
+			libgegl-0.4.so:graphics/gegl \
+			libgegl-npd-0.4.so:graphics/gegl \
+			libgimp-2.0.so:graphics/gimp-app \
+			libbabl-0.1.so:x11/babl
 GIMP_CONFIGURE_ENABLE=	gimp2 gimp
 GIMP_SUB_FILES=		pkg-message
 NLS_USES=		gettext
