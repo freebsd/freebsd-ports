@@ -1637,6 +1637,7 @@
 %%DATADIR%%/sdk/%%SDKVERSION%%/DotnetTools/dotnet-format/BuildHost-netcore/Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.dll.config
 %%DATADIR%%/sdk/%%SDKVERSION%%/DotnetTools/dotnet-format/BuildHost-netcore/Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.runtimeconfig.json
 %%DATADIR%%/sdk/%%SDKVERSION%%/DotnetTools/dotnet-format/BuildHost-netcore/Newtonsoft.Json.dll
+%%DATADIR%%/sdk/%%SDKVERSION%%/DotnetTools/dotnet-format/BuildHost-netcore/System.Collections.Immutable.dll
 %%DATADIR%%/sdk/%%SDKVERSION%%/DotnetTools/dotnet-format/BuildHost-netcore/System.CommandLine.dll
 %%DATADIR%%/sdk/%%SDKVERSION%%/DotnetTools/dotnet-format/BuildHost-netcore/cs/System.CommandLine.resources.dll
 %%DATADIR%%/sdk/%%SDKVERSION%%/DotnetTools/dotnet-format/BuildHost-netcore/de/System.CommandLine.resources.dll
@@ -1914,6 +1915,7 @@
 %%DATADIR%%/sdk/%%SDKVERSION%%/DotnetTools/dotnet-watch/%%SDKVERSION%%%%SDKSERVICESUFFIX%%/tools/net%%DOTNETVERSION%%/any/BuildHost-netcore/Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.dll.config
 %%DATADIR%%/sdk/%%SDKVERSION%%/DotnetTools/dotnet-watch/%%SDKVERSION%%%%SDKSERVICESUFFIX%%/tools/net%%DOTNETVERSION%%/any/BuildHost-netcore/Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.runtimeconfig.json
 %%DATADIR%%/sdk/%%SDKVERSION%%/DotnetTools/dotnet-watch/%%SDKVERSION%%%%SDKSERVICESUFFIX%%/tools/net%%DOTNETVERSION%%/any/BuildHost-netcore/Newtonsoft.Json.dll
+%%DATADIR%%/sdk/%%SDKVERSION%%/DotnetTools/dotnet-watch/%%SDKVERSION%%%%SDKSERVICESUFFIX%%/tools/net%%DOTNETVERSION%%/any/BuildHost-netcore/System.Collections.Immutable.dll
 %%DATADIR%%/sdk/%%SDKVERSION%%/DotnetTools/dotnet-watch/%%SDKVERSION%%%%SDKSERVICESUFFIX%%/tools/net%%DOTNETVERSION%%/any/BuildHost-netcore/System.CommandLine.dll
 %%DATADIR%%/sdk/%%SDKVERSION%%/DotnetTools/dotnet-watch/%%SDKVERSION%%%%SDKSERVICESUFFIX%%/tools/net%%DOTNETVERSION%%/any/BuildHost-netcore/cs/System.CommandLine.resources.dll
 %%DATADIR%%/sdk/%%SDKVERSION%%/DotnetTools/dotnet-watch/%%SDKVERSION%%%%SDKSERVICESUFFIX%%/tools/net%%DOTNETVERSION%%/any/BuildHost-netcore/de/System.CommandLine.resources.dll
@@ -1941,6 +1943,12 @@
 %%DATADIR%%/sdk/%%SDKVERSION%%/DotnetTools/dotnet-watch/%%SDKVERSION%%%%SDKSERVICESUFFIX%%/tools/net%%DOTNETVERSION%%/any/Microsoft.CodeAnalysis.Workspaces.MSBuild.dll
 %%DATADIR%%/sdk/%%SDKVERSION%%/DotnetTools/dotnet-watch/%%SDKVERSION%%%%SDKSERVICESUFFIX%%/tools/net%%DOTNETVERSION%%/any/Microsoft.CodeAnalysis.Workspaces.dll
 %%DATADIR%%/sdk/%%SDKVERSION%%/DotnetTools/dotnet-watch/%%SDKVERSION%%%%SDKSERVICESUFFIX%%/tools/net%%DOTNETVERSION%%/any/Microsoft.DiaSymReader.dll
+%%DATADIR%%/sdk/%%SDKVERSION%%/DotnetTools/dotnet-watch/%%SDKVERSION%%%%SDKSERVICESUFFIX%%/tools/net%%DOTNETVERSION%%/any/Microsoft.Extensions.DependencyInjection.Abstractions.dll
+%%DATADIR%%/sdk/%%SDKVERSION%%/DotnetTools/dotnet-watch/%%SDKVERSION%%%%SDKSERVICESUFFIX%%/tools/net%%DOTNETVERSION%%/any/Microsoft.Extensions.DependencyInjection.dll
+%%DATADIR%%/sdk/%%SDKVERSION%%/DotnetTools/dotnet-watch/%%SDKVERSION%%%%SDKSERVICESUFFIX%%/tools/net%%DOTNETVERSION%%/any/Microsoft.Extensions.Logging.Abstractions.dll
+%%DATADIR%%/sdk/%%SDKVERSION%%/DotnetTools/dotnet-watch/%%SDKVERSION%%%%SDKSERVICESUFFIX%%/tools/net%%DOTNETVERSION%%/any/Microsoft.Extensions.Logging.dll
+%%DATADIR%%/sdk/%%SDKVERSION%%/DotnetTools/dotnet-watch/%%SDKVERSION%%%%SDKSERVICESUFFIX%%/tools/net%%DOTNETVERSION%%/any/Microsoft.Extensions.Options.dll
+%%DATADIR%%/sdk/%%SDKVERSION%%/DotnetTools/dotnet-watch/%%SDKVERSION%%%%SDKSERVICESUFFIX%%/tools/net%%DOTNETVERSION%%/any/Microsoft.Extensions.Primitives.dll
 %%DATADIR%%/sdk/%%SDKVERSION%%/DotnetTools/dotnet-watch/%%SDKVERSION%%%%SDKSERVICESUFFIX%%/tools/net%%DOTNETVERSION%%/any/Newtonsoft.Json.dll
 %%DATADIR%%/sdk/%%SDKVERSION%%/DotnetTools/dotnet-watch/%%SDKVERSION%%%%SDKSERVICESUFFIX%%/tools/net%%DOTNETVERSION%%/any/System.CodeDom.dll
 %%DATADIR%%/sdk/%%SDKVERSION%%/DotnetTools/dotnet-watch/%%SDKVERSION%%%%SDKSERVICESUFFIX%%/tools/net%%DOTNETVERSION%%/any/System.CommandLine.dll
@@ -1950,10 +1958,13 @@
 %%DATADIR%%/sdk/%%SDKVERSION%%/DotnetTools/dotnet-watch/%%SDKVERSION%%%%SDKSERVICESUFFIX%%/tools/net%%DOTNETVERSION%%/any/System.Composition.Runtime.dll
 %%DATADIR%%/sdk/%%SDKVERSION%%/DotnetTools/dotnet-watch/%%SDKVERSION%%%%SDKSERVICESUFFIX%%/tools/net%%DOTNETVERSION%%/any/System.Composition.TypedParts.dll
 %%DATADIR%%/sdk/%%SDKVERSION%%/DotnetTools/dotnet-watch/%%SDKVERSION%%%%SDKSERVICESUFFIX%%/tools/net%%DOTNETVERSION%%/any/System.Configuration.ConfigurationManager.dll
+%%DATADIR%%/sdk/%%SDKVERSION%%/DotnetTools/dotnet-watch/%%SDKVERSION%%%%SDKSERVICESUFFIX%%/tools/net%%DOTNETVERSION%%/any/System.Diagnostics.EventLog.dll
 %%DATADIR%%/sdk/%%SDKVERSION%%/DotnetTools/dotnet-watch/%%SDKVERSION%%%%SDKSERVICESUFFIX%%/tools/net%%DOTNETVERSION%%/any/System.Formats.Nrbf.dll
 %%DATADIR%%/sdk/%%SDKVERSION%%/DotnetTools/dotnet-watch/%%SDKVERSION%%%%SDKSERVICESUFFIX%%/tools/net%%DOTNETVERSION%%/any/System.Reflection.MetadataLoadContext.dll
 %%DATADIR%%/sdk/%%SDKVERSION%%/DotnetTools/dotnet-watch/%%SDKVERSION%%%%SDKSERVICESUFFIX%%/tools/net%%DOTNETVERSION%%/any/System.Resources.Extensions.dll
+%%DATADIR%%/sdk/%%SDKVERSION%%/DotnetTools/dotnet-watch/%%SDKVERSION%%%%SDKSERVICESUFFIX%%/tools/net%%DOTNETVERSION%%/any/System.Security.Cryptography.Pkcs.dll
 %%DATADIR%%/sdk/%%SDKVERSION%%/DotnetTools/dotnet-watch/%%SDKVERSION%%%%SDKSERVICESUFFIX%%/tools/net%%DOTNETVERSION%%/any/System.Security.Cryptography.ProtectedData.dll
+%%DATADIR%%/sdk/%%SDKVERSION%%/DotnetTools/dotnet-watch/%%SDKVERSION%%%%SDKSERVICESUFFIX%%/tools/net%%DOTNETVERSION%%/any/System.Security.Cryptography.Xml.dll
 %%DATADIR%%/sdk/%%SDKVERSION%%/DotnetTools/dotnet-watch/%%SDKVERSION%%%%SDKSERVICESUFFIX%%/tools/net%%DOTNETVERSION%%/any/System.Security.Permissions.dll
 %%DATADIR%%/sdk/%%SDKVERSION%%/DotnetTools/dotnet-watch/%%SDKVERSION%%%%SDKSERVICESUFFIX%%/tools/net%%DOTNETVERSION%%/any/System.Windows.Extensions.dll
 %%DATADIR%%/sdk/%%SDKVERSION%%/DotnetTools/dotnet-watch/%%SDKVERSION%%%%SDKSERVICESUFFIX%%/tools/net%%DOTNETVERSION%%/any/cs/Microsoft.CodeAnalysis.CSharp.Features.resources.dll
@@ -2042,6 +2053,8 @@
 %%DATADIR%%/sdk/%%SDKVERSION%%/DotnetTools/dotnet-watch/%%SDKVERSION%%%%SDKSERVICESUFFIX%%/tools/net%%DOTNETVERSION%%/any/ru/System.CommandLine.resources.dll
 %%DATADIR%%/sdk/%%SDKVERSION%%/DotnetTools/dotnet-watch/%%SDKVERSION%%%%SDKSERVICESUFFIX%%/tools/net%%DOTNETVERSION%%/any/ru/dotnet-watch.resources.dll
 %%DATADIR%%/sdk/%%SDKVERSION%%/DotnetTools/dotnet-watch/%%SDKVERSION%%%%SDKSERVICESUFFIX%%/tools/net%%DOTNETVERSION%%/any/runtimes/win/lib/net%%DOTNETVERSION%%/System.Diagnostics.EventLog.Messages.dll
+%%DATADIR%%/sdk/%%SDKVERSION%%/DotnetTools/dotnet-watch/%%SDKVERSION%%%%SDKSERVICESUFFIX%%/tools/net%%DOTNETVERSION%%/any/runtimes/win/lib/net%%DOTNETVERSION%%/System.Diagnostics.EventLog.dll
+%%DATADIR%%/sdk/%%SDKVERSION%%/DotnetTools/dotnet-watch/%%SDKVERSION%%%%SDKSERVICESUFFIX%%/tools/net%%DOTNETVERSION%%/any/runtimes/win/lib/net%%DOTNETVERSION%%/System.Security.Cryptography.Pkcs.dll
 %%DATADIR%%/sdk/%%SDKVERSION%%/DotnetTools/dotnet-watch/%%SDKVERSION%%%%SDKSERVICESUFFIX%%/tools/net%%DOTNETVERSION%%/any/runtimes/win/lib/net%%DOTNETVERSION%%/System.Windows.Extensions.dll
 %%DATADIR%%/sdk/%%SDKVERSION%%/DotnetTools/dotnet-watch/%%SDKVERSION%%%%SDKSERVICESUFFIX%%/tools/net%%DOTNETVERSION%%/any/tr/Microsoft.CodeAnalysis.CSharp.Features.resources.dll
 %%DATADIR%%/sdk/%%SDKVERSION%%/DotnetTools/dotnet-watch/%%SDKVERSION%%%%SDKSERVICESUFFIX%%/tools/net%%DOTNETVERSION%%/any/tr/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
@@ -2423,6 +2436,8 @@
 %%DATADIR%%/sdk/%%SDKVERSION%%/Roslyn/bincore/Microsoft.CodeAnalysis.CSharp.dll
 %%DATADIR%%/sdk/%%SDKVERSION%%/Roslyn/bincore/Microsoft.CodeAnalysis.VisualBasic.dll
 %%DATADIR%%/sdk/%%SDKVERSION%%/Roslyn/bincore/Microsoft.CodeAnalysis.dll
+%%DATADIR%%/sdk/%%SDKVERSION%%/Roslyn/bincore/System.Collections.Immutable.dll
+%%DATADIR%%/sdk/%%SDKVERSION%%/Roslyn/bincore/System.Reflection.Metadata.dll
 %%DATADIR%%/sdk/%%SDKVERSION%%/Roslyn/bincore/VBCSCompiler.deps.json
 %%DATADIR%%/sdk/%%SDKVERSION%%/Roslyn/bincore/VBCSCompiler.dll
 %%DATADIR%%/sdk/%%SDKVERSION%%/Roslyn/bincore/VBCSCompiler.runtimeconfig.json
