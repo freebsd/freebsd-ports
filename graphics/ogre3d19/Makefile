@@ -1,6 +1,6 @@
 PORTNAME=	ogre3d
-DISTVERSION=	1.9.0
-PORTREVISION=	22
+DISTVERSIONPREFIX=	v
+DISTVERSION=	1.9.1
 CATEGORIES=	graphics devel
 PKGNAMESUFFIX=	19
 
@@ -24,7 +24,6 @@ USE_CXXSTD=	c++14
 USE_GITHUB=	yes
 GH_ACCOUNT=	OGRECave
 GH_PROJECT=	ogre
-GH_TAGNAME=	v${DISTVERSION:S/./-/g}
 USE_GL=		gl glu
 USE_LDCONFIG=	yes
 USE_SDL=	sdl
@@ -60,5 +59,6 @@ post-install-DOCS-on:
 .for docfile in README COPYING AUTHORS
 	${INSTALL_DATA} ${WRKSRC}/${docfile} ${STAGEDIR}${DOCSDIR}
 .endfor
+	cd ${WRKSRC} && ${COPYTREE_SHARE} Docs ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
