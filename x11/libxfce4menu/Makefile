@@ -1,5 +1,6 @@
 PORTNAME=	libxfce4menu
 PORTVERSION=	4.20.0
+PORTREVISION=	1
 CATEGORIES=	x11 xfce
 MASTER_SITES=	XFCE
 DISTNAME=	libxfce4ui-${DISTVERSIONFULL}
@@ -18,7 +19,7 @@ LIB_DEPENDS=	libepoxy.so:graphics/libepoxy \
 
 USES=		compiler:c11 gettext-tools gmake gnome libtool pathfix \
 		pkgconfig tar:bzip2 xfce xorg
-USE_GNOME=	cairo gdkpixbuf glib20 gtk30
+USE_GNOME=	cairo gdkpixbufextra:run glib20 gtk30
 USE_LDCONFIG=	yes
 USE_XFCE=	libutil xfconf
 USE_XORG=	ice sm x11
