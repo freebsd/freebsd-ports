@@ -4,6 +4,9 @@ PORTREVISION=	1
 CATEGORIES=	devel kde
 MASTER_SITES=	KDE/stable/${PORTNAME}/
 
+PATCH_SITES=	https://invent.kde.org/libraries/ktextaddons/-/commit/
+PATCHFILES=	fdbb082aaa0125d60fdf819c9cb95c40bdb98800.patch:-p1 # Fix build with Qt 6.9
+
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Various text handling addons
 WWW=		https://invent.kde.org/libraries/ktextaddons/
