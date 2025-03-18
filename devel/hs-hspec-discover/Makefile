@@ -1,5 +1,5 @@
 PORTNAME=	hspec-discover
-DISTVERSION=	2.11.11
+DISTVERSION=	2.11.12
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
