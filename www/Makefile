@@ -1790,6 +1790,7 @@
     SUBDIR += py-httptools
     SUBDIR += py-httpx
     SUBDIR += py-httpx-oauth
+    SUBDIR += py-httpx-sse
     SUBDIR += py-httpx-socks
     SUBDIR += py-httpx-ws
     SUBDIR += py-httpx_gssapi
