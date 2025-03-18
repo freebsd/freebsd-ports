@@ -1,3 +1,5 @@
-TIMESTAMP = 1741276068
+TIMESTAMP = 1742277320
 SHA256 (KDE/release-service/24.12.3/kpimtextedit-24.12.3.tar.xz) = 2f3239d612b7617815fa1748fadce28110814047db2bab7c6ec2b760b1eebc2e
 SIZE (KDE/release-service/24.12.3/kpimtextedit-24.12.3.tar.xz) = 176708
+SHA256 (KDE/release-service/24.12.3/2c36ea1bdd1dcb60cd042a10668d64447484615d.patch) = 539c83ae2af7ff3efb41911ef592bbb08ec49e9639cf4835e09dc12a130ac790
+SIZE (KDE/release-service/24.12.3/2c36ea1bdd1dcb60cd042a10668d64447484615d.patch) = 1362
