@@ -1,5 +1,5 @@
-TIMESTAMP = 1718593848
-SHA256 (go/net-p2p_bitmark-cli/bitmark-v0.15.7/v0.15.7.mod) = 810fd40b8bf0e6a608099478e1c4c1a95192a912a1ce184c2cdd3e9599da2486
-SIZE (go/net-p2p_bitmark-cli/bitmark-v0.15.7/v0.15.7.mod) = 1892
-SHA256 (go/net-p2p_bitmark-cli/bitmark-v0.15.7/v0.15.7.zip) = 6ebf69dfb64a5012a233abc324524958ef003e24b4617c9f668b4e50b104553b
-SIZE (go/net-p2p_bitmark-cli/bitmark-v0.15.7/v0.15.7.zip) = 748648
+TIMESTAMP = 1739445456
+SHA256 (go/net-p2p_bitmark-cli/bitmark-v0.16.0/v0.16.0.mod) = 29746f9dd4e3fa42914e6e1e7981b3b1746f010e7e88ebee664988065be895c7
+SIZE (go/net-p2p_bitmark-cli/bitmark-v0.16.0/v0.16.0.mod) = 1893
+SHA256 (go/net-p2p_bitmark-cli/bitmark-v0.16.0/v0.16.0.zip) = 98214c97cfa7ecab85446e349f72460a859782c0ea03b4ce0bc70def71cbd106
+SIZE (go/net-p2p_bitmark-cli/bitmark-v0.16.0/v0.16.0.zip) = 750083
