@@ -1,5 +1,6 @@
 PORTNAME=	compat11x
 PORTVERSION=	11.2.1102000.20181014
+PORTREVISION=	1
 CATEGORIES=	misc
 MASTER_SITES=	LOCAL/des
 PKGNAMESUFFIX=	-${ARCH}
@@ -20,6 +21,10 @@ USE_LDCONFIG=	${TARGET_DIR}
 
 .if ${OSVERSION} < 1100000
 IGNORE=		is for FreeBSD 11.x and newer
+.endif
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400000
+RUN_DEPENDS+=	compat13x-${ARCH}>=0:misc/compat13x
 .endif
 
 .if ${ARCH} == amd64
