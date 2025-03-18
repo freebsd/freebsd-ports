@@ -12,4 +12,13 @@ better.
 
 EOM
 }
+{ type: upgrade
+  maximum_version: "4.39.0"
+  message: <<EOM
+The default claims for ID Tokens minted by the Authelia OpenID Connect 1.0
+Identity Provider have changed, check
+https://www.authelia.com/blog/4.39-release-notes/ for more detail.
+
+EOM
+}
 ]
