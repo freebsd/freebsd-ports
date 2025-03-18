@@ -15,7 +15,7 @@ lib/libKF6WalletBackend.so.6
 lib/libKF6WalletBackend.so.%%KDE_FRAMEWORKS_VERSION%%
 share/applications/org.kde.kwalletd6.desktop
 share/dbus-1/interfaces/kf6_org.kde.KWallet.xml
-@comment share/dbus-1/services/org.kde.kwalletd5.service
+share/dbus-1/services/org.kde.kwalletd5.service
 share/dbus-1/services/org.kde.kwalletd6.service
 share/knotifications6/kwalletd6.notifyrc
 share/locale/ar/LC_MESSAGES/kwallet6-query.mo
