@@ -1,6 +1,6 @@
 PORTNAME=	compat4x
 PORTVERSION=	${COMPAT4X_PORTVERSION}
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	misc
 MASTER_SITES=	${COMPAT4X_MASTER_SITES}
 PKGNAMESUFFIX=	-${COMPAT4X_ARCH}
@@ -11,6 +11,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Convenience package to install the compat4x libraries
 
 RUN_DEPENDS=	${LOCALBASE}/share/compat/locale/UTF-8/LC_CTYPE:misc/localedata
+LIB_DEPENDS=	libncurses.so.5:misc/compat5x
 
 WRKSRC=		${WRKDIR}/usr/lib/compat
 
