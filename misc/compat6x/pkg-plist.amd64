@@ -111,6 +111,7 @@ lib/compat/snmp_netgraph.so.4
 lib/compat/snmp_pf.so.4
 lib32/compat/libalias.so.5
 lib32/compat/libarchive.so.2
+lib32/compat/libasn1.so.8
 lib32/compat/libatm.so.3
 lib32/compat/libbegemot.so.2
 lib32/compat/libbluetooth.so.2
@@ -137,10 +138,12 @@ lib32/compat/libg2c.so.2
 lib32/compat/libgeom.so.3
 lib32/compat/libgnuregex.so.3
 lib32/compat/libgpib.so.1
+lib32/compat/libgssapi.so.8
 lib32/compat/libhistory.so.6
 lib32/compat/libipsec.so.2
 lib32/compat/libipx.so.3
 lib32/compat/libkiconv.so.2
+lib32/compat/libkrb5.so.8
 lib32/compat/libkvm.so.3
 lib32/compat/libm.so.4
 lib32/compat/libmagic.so.2
@@ -165,6 +168,7 @@ lib32/compat/libpmc.so.3
 lib32/compat/libpthread.so.2
 lib32/compat/libradius.so.2
 lib32/compat/libreadline.so.6
+lib32/compat/libroken.so.8
 lib32/compat/librpcsvc.so.3
 lib32/compat/libsbuf.so.3
 lib32/compat/libsdp.so.2
