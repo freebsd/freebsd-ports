@@ -1,5 +1,5 @@
 PORTNAME=	ruff
-DISTVERSION=	0.9.10
+DISTVERSION=	0.11.0
 CATEGORIES=	devel python
 #MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -38,7 +38,7 @@ CARGO_CRATES=	adler2-2.0.0 \
 		anstyle-query-1.1.2 \
 		anstyle-svg-0.1.7 \
 		anstyle-wincon-3.0.7 \
-		anyhow-1.0.96 \
+		anyhow-1.0.97 \
 		argfile-0.2.1 \
 		arrayvec-0.7.6 \
 		assert_fs-1.1.2 \
@@ -170,7 +170,7 @@ CARGO_CRATES=	adler2-2.0.0 \
 		imperative-1.0.6 \
 		indexmap-2.7.1 \
 		indicatif-0.17.11 \
-		indoc-2.0.5 \
+		indoc-2.0.6 \
 		inotify-0.11.0 \
 		inotify-sys-0.1.5 \
 		insta-1.42.2 \
@@ -262,13 +262,13 @@ CARGO_CRATES=	adler2-2.0.0 \
 		predicates-core-1.0.9 \
 		predicates-tree-1.0.12 \
 		pretty_assertions-1.4.1 \
-		proc-macro2-1.0.93 \
+		proc-macro2-1.0.94 \
 		pyproject-toml-0.13.4 \
 		quick-junit-0.5.1 \
 		quick-xml-0.37.2 \
 		quickcheck-1.0.3 \
 		quickcheck_macros-1.0.0 \
-		quote-1.0.38 \
+		quote-1.0.39 \
 		rand-0.8.5 \
 		rand-0.9.0 \
 		rand_chacha-0.3.1 \
@@ -297,11 +297,11 @@ CARGO_CRATES=	adler2-2.0.0 \
 		scoped-tls-1.0.1 \
 		scopeguard-1.2.0 \
 		seahash-4.1.0 \
-		serde-1.0.218 \
+		serde-1.0.219 \
 		serde-wasm-bindgen-0.6.5 \
-		serde_derive-1.0.218 \
+		serde_derive-1.0.219 \
 		serde_derive_internals-0.29.1 \
-		serde_json-1.0.139 \
+		serde_json-1.0.140 \
 		serde_repr-0.1.19 \
 		serde_spanned-0.6.8 \
 		serde_test-1.0.177 \
@@ -323,7 +323,7 @@ CARGO_CRATES=	adler2-2.0.0 \
 		strum-0.27.1 \
 		strum_macros-0.27.1 \
 		syn-1.0.109 \
-		syn-2.0.98 \
+		syn-2.0.100 \
 		synstructure-0.13.1 \
 		tempfile-3.17.1 \
 		termcolor-1.4.1 \
@@ -334,9 +334,9 @@ CARGO_CRATES=	adler2-2.0.0 \
 		test-case-core-3.3.1 \
 		test-case-macros-3.3.1 \
 		thiserror-1.0.69 \
-		thiserror-2.0.11 \
+		thiserror-2.0.12 \
 		thiserror-impl-1.0.69 \
-		thiserror-impl-2.0.11 \
+		thiserror-impl-2.0.12 \
 		thread_local-1.1.8 \
 		threadpool-1.8.1 \
 		tikv-jemalloc-sys-0.6.0+5.3.0-1-ge13ca993e8ccb9ba9847cc330696e02839f328f7 \
@@ -365,7 +365,7 @@ CARGO_CRATES=	adler2-2.0.0 \
 		unic-common-0.9.0 \
 		unic-ucd-category-0.9.0 \
 		unic-ucd-version-0.9.0 \
-		unicode-ident-1.0.17 \
+		unicode-ident-1.0.18 \
 		unicode-normalization-0.1.24 \
 		unicode-width-0.1.14 \
 		unicode-width-0.2.0 \
@@ -455,7 +455,7 @@ CARGO_CRATES=	adler2-2.0.0 \
 		zstd-0.11.2+zstd.1.5.2 \
 		zstd-safe-5.0.2+zstd.1.5.2 \
 		zstd-sys-2.0.13+zstd.1.5.6 \
-		salsa,salsa-macro-rules,salsa-macros@git+https://github.com/salsa-rs/salsa.git?rev=99be5d9917c3dd88e19735a82ef6bf39ba84bd7e\#99be5d9917c3dd88e19735a82ef6bf39ba84bd7e \
+		salsa,salsa-macro-rules,salsa-macros@git+https://github.com/salsa-rs/salsa.git?rev=095d8b2b8115c3cf8bf31914dd9ea74648bb7cf9\#095d8b2b8115c3cf8bf31914dd9ea74648bb7cf9 \
 		lsp-types@git+https://github.com/astral-sh/lsp-types.git?rev=3512a9f\#3512a9f33eadc5402cfab1b8f7340824c8ca1439
 
 CARGO_BUILD=	no
