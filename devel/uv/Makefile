@@ -1,5 +1,5 @@
 PORTNAME=	uv
-DISTVERSION=	0.6.3
+DISTVERSION=	0.6.7
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -21,10 +21,10 @@ LIB_DEPENDS=	libgit2.so:devel/libgit2 \
 		libzstd.so:archivers/zstd
 
 USES=		cargo gmake localbase perl5 pkgconfig
+USE_PERL5=	build
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	astral-sh
-USE_PERL5=	build
 
 OPENSSLINC=	/usr/include
 OPENSSLLIB=	/usr/lib
