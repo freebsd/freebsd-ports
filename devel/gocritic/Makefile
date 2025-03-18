@@ -1,7 +1,6 @@
 PORTNAME=	gocritic
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.12.0
-PORTREVISION=	1
+DISTVERSION=	0.13.0
 CATEGORIES=	devel
 
 MAINTAINER=	fuz@FreeBSD.org
@@ -11,7 +10,7 @@ WWW=		https://go-critic.com/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:modules
+USES=		go:1.24,modules
 GO_MODULE=	github.com/go-critic/go-critic
 GO_TARGET=	./cmd/gocritic \
 		./cmd/gocritic-analysis
