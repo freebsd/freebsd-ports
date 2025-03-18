@@ -18,7 +18,8 @@ PY_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}requests>0:www/py-requests@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytorch>0:misc/py-pytorch@${PY_FLAVOR}
 PY_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}pillow>=5.3.0:graphics/py-pillow@${PY_FLAVOR} # image backend
-BUILD_DEPENDS=	${PY_DEPENDS} \
+BUILD_DEPENDS=	${PY_SETUPTOOLS} \
+		${PY_DEPENDS} \
 		${PYTHON_PKGNAMEPREFIX}fsspec>0:filesystems/py-fsspec@${PY_FLAVOR} \
 		pybind11>0:devel/pybind11 \
 		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
