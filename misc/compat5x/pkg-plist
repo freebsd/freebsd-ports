@@ -112,6 +112,7 @@ lib/compat/snmp_mibII.so.2
 lib/compat/snmp_netgraph.so.2
 %%AMD64%%lib32/compat/libalias.so.4
 %%AMD64%%lib32/compat/libarchive.so.1
+%%AMD64%%lib32/compat/libasn1.so.7
 %%AMD64%%lib32/compat/libatm.so.2
 %%AMD64%%lib32/compat/libbegemot.so.1
 %%AMD64%%lib32/compat/libbluetooth.so.1
@@ -136,10 +137,12 @@ lib/compat/snmp_netgraph.so.2
 %%AMD64%%lib32/compat/libgeom.so.2
 %%AMD64%%lib32/compat/libgnuregex.so.2
 %%AMD64%%lib32/compat/libgpib.so.0
+%%AMD64%%lib32/compat/libgssapi.so.7
 %%AMD64%%lib32/compat/libhistory.so.5
 %%AMD64%%lib32/compat/libipsec.so.1
 %%AMD64%%lib32/compat/libipx.so.2
 %%AMD64%%lib32/compat/libkiconv.so.1
+%%AMD64%%lib32/compat/libkrb5.so.7
 %%AMD64%%lib32/compat/libkvm.so.2
 %%AMD64%%lib32/compat/libm.so.3
 %%AMD64%%lib32/compat/libmagic.so.1
@@ -158,6 +161,7 @@ lib/compat/snmp_netgraph.so.2
 %%AMD64%%lib32/compat/libpthread.so.1
 %%AMD64%%lib32/compat/libradius.so.1
 %%AMD64%%lib32/compat/libreadline.so.5
+%%AMD64%%lib32/compat/libroken.so.7
 %%AMD64%%lib32/compat/librpcsvc.so.2
 %%AMD64%%lib32/compat/libsbuf.so.2
 %%AMD64%%lib32/compat/libsdp.so.1
