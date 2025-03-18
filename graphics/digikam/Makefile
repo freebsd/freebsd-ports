@@ -1,23 +1,18 @@
 PORTNAME=	digikam
-DISTVERSION=	8.5.0
-PORTREVISION=	2
+DISTVERSION=	8.6.0
 CATEGORIES=	graphics kde
 MASTER_SITES=	KDE/stable/${PORTNAME}/${PORTVERSION} \
-		https://files.kde.org/digikam/%SUBDIR%/:aesthetic,autotags,face,shape,yunet \
-		https://kde-applicationdata.mirrors.omnilance.com/digikam/%SUBDIR%/:aesthetic,autotags,face,shape,yunet \
-		https://mirrors.ocf.berkeley.edu/kde-applicationdata/digikam/%SUBDIR%/:aesthetic,autotags,face,shape,yunet
+		https://files.kde.org/${PORTNAME}/%SUBDIR%/:aesthetic,autotags,face,yunet \
+		https://kde-applicationdata.mirrors.omnilance.com/${PORTNAME}/%SUBDIR%/:aesthetic,autotags,face,yunet \
+		https://mirrors.ocf.berkeley.edu/kde-applicationdata/${PORTNAME}/%SUBDIR%/:aesthetic,autotags,face,yunet
 MASTER_SITE_SUBDIR=	aestheticdetector/:aesthetic \
 			autotags/:autotags \
 			facesengine/dnnface/:face \
-			facesengine/shape-predictor/:shape \
 			facesengine/yunet/:yunet
 # One bit changed in the naming convention ..
 DISTFILES=	digiKam-${DISTVERSIONPREFIX}${DISTVERSION}${DISTVERSIONSUFFIX}${EXTRACT_SUFX}
 DIST_SUBDIR=	KDE/${PORTNAME}
 EXTRACT_ONLY=	digiKam-${DISTVERSIONPREFIX}${DISTVERSION}${DISTVERSIONSUFFIX}${EXTRACT_SUFX}
-
-PATCH_SITES=	https://invent.kde.org/graphics/digikam/-/commit/
-PATCHFILES+=	577913d0ab3db2a89c5717dce41b5f9d0c461950.patch:-p1 # Fix detection of libksane (fixed in 8.6.0)
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE digital photo management application
@@ -41,7 +36,7 @@ LIB_DEPENDS=	libexiv2.so:graphics/exiv2 \
 		libx265.so:multimedia/x265
 RUN_DEPENDS=	exiftool:graphics/p5-Image-ExifTool
 
-USES=		bison cmake compiler:c++17-lang desktop-file-utils eigen:3 \
+USES=		bison cmake compiler:c++20-lang desktop-file-utils eigen:3 \
 		gettext-tools gl gnome jpeg kde:6 magick pkgconfig qt:6 \
 		shebangfix tar:xz xorg
 USE_GL=		opengl glu
@@ -70,32 +65,33 @@ PLIST_SUB=	SHLIB_VER=${DISTVERSION}
 
 WITH_CCACHE_BUILD=	yes
 
-OPTIONS_DEFINE=		AUTOTAGS FACEDETECT KDEPIM MEDIAPLAYER
+OPTIONS_DEFINE=		KDEPIM MEDIAPLAYER
+OPTIONS_GROUP=		DATA
+DATA_DESC=		Binary data required for certain features
+OPTIONS_GROUP_DATA=	AESTHETIC AUTOTAGS FACEDETECT
 OPTIONS_MULTI=		DB
 DB_DESC=		Database options
 OPTIONS_MULTI_DB=	MYSQL MYSQL_INTERNAL SQLITE3
-OPTIONS_DEFAULT=	${OPTIONS_DEFINE:NAUTOTAGS:NFACEDETECT} \
+OPTIONS_DEFAULT=	${OPTIONS_DEFINE} \
 			${OPTIONS_MULTI_DB:NMYSQL_INTERNAL}
 OPTIONS_SUB=		yes
 
-AUTOTAGS_DESC=		Install data required for autotagging (~436 MiB)
+# Check core/data/dnnmodels/dnnmodels.conf for new and obsolete files
+# for the AESTHETIC, AUTOTAGS and FACEDETECT options with each update.
+AESTHETIC_DESC=		Install aesthetic detection data (~84 MiB)
+AESTHETIC_DISTFILES=	weights_inceptionv3_299.pb:aesthetic
+
+AUTOTAGS_DESC=		Install auto tags assignment data (~711 MiB)
 AUTOTAGS_DISTFILES=	classification_classes_ILSVRC2012.txt:autotags \
 			coco.names:autotags \
-			resnet50.onnx:autotags \
-			yolov5n_batch_16_s320.onnx:autotags \
-			yolov5x_batch_16_s320.onnx:autotags
+			efficientnetb7.onnx:autotags \
+			resnet152-v2-7.onnx:autotags \
+			yolo11n.onnx:autotags \
+			yolo11x.onnx:autotags
 
-FACEDETECT_DESC=	Install data required for face detection (~455 MiB)
-FACEDETECT_DISTFILES=	weights_inceptionv3_299.pb:aesthetic \
-			deploy.prototxt:face \
-			face_recognition_sface_2021dec.onnx:face \
-			openface_nn4.small2.v1.t7:face \
-			res10_300x300_ssd_iter_140000_fp16.caffemodel:face \
-			yolov3-face.cfg:face \
-			yolov3-wider_16000.weights:face \
-			shapepredictor.dat:shape \
-			face_detection_yunet_2023mar.onnx:yunet \
-			face_detection_yunet_2023mar_int8.onnx:yunet
+FACEDETECT_DESC=	Install face management data (~37 MiB)
+FACEDETECT_DISTFILES=	face_recognition_sface_2021dec.onnx:face \
+			face_detection_yunet_2023mar.onnx:yunet
 
 KDEPIM_DESC=		KDEPim Addressbook support
 KDEPIM_USE=		KDE=akonadi,akonadicontacts,contacts,grantleetheme,itemmodels
