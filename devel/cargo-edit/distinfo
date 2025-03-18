@@ -1,4 +1,4 @@
-TIMESTAMP = 1737778100
+TIMESTAMP = 1742270783
 SHA256 (rust/crates/addr2line-0.24.2.crate) = dfbe277e56a376000877090da837660b4427aad530e3028d44e0bffe4f89a1c1
 SIZE (rust/crates/addr2line-0.24.2.crate) = 39015
 SHA256 (rust/crates/adler2-2.0.0.crate) = 512761e0bb2578dd7380c6baaa0f4ce03e84f95e960231d1dec8bf4d7d6e2627
@@ -619,5 +619,5 @@ SHA256 (rust/crates/zerovec-0.10.4.crate) = aa2b893d79df23bfb12d5461018d408ea19d
 SIZE (rust/crates/zerovec-0.10.4.crate) = 126398
 SHA256 (rust/crates/zerovec-derive-0.10.3.crate) = 6eafa6dfb17584ea3e2bd6e76e0cc15ad7af12b09abdd1ca55961bed9b1063c6
 SIZE (rust/crates/zerovec-derive-0.10.3.crate) = 19438
-SHA256 (killercup-cargo-edit-v0.13.1_GH0.tar.gz) = 11a973bc77ef1562a599e8acc844bf763be4e9caf6e5a650239bc9c6d2077e5b
-SIZE (killercup-cargo-edit-v0.13.1_GH0.tar.gz) = 98888
+SHA256 (killercup-cargo-edit-v0.13.2_GH0.tar.gz) = 8f94d5fd27ec8297728a12172c9ec14ecb55c8b1331049ecc04de3c101f4485f
+SIZE (killercup-cargo-edit-v0.13.2_GH0.tar.gz) = 97217
