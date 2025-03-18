@@ -1,0 +1,2 @@
+# $FreeBSD$
+/var/log/renterd.log                          600  20     *  @T00     J   /var/run/renterd.pid

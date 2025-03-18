@@ -1,0 +1,30 @@
+directory: /var/db/walletd
+autoOpenWebUI: true
+http:
+  address: :9980
+  password: sia is cool
+  publicEndpoints: false # when true, auth will be disabled on endpoints that should be publicly accessible when running walletd as a service
+consensus:
+  network: mainnet
+syncer:
+  bootstrap: false
+  enableUPnP: false
+  peers: []
+  address: :9981
+keystore:
+  enabled: false
+index:
+   mode: personal # personal, full, none ("full" will index the entire blockchain, "personal" will only index addresses that are registered in the wallet, "none" will treat the database as read-only and not index any new data)
+   batchSize: 64 # max number of blocks to index at a time (increasing this will increase scan speed, but also increase memory and cpu usage)
+log:
+  level: info # global log level
+  stdout:
+    enabled: true # enable logging to stdout
+    level: info # override the global log level for stdout
+    enableANSI: false
+    format: human # human or JSON
+  file:
+    enabled: false # enable logging to a file
+    level: info # override the global log level for the file
+    path: /var/log/walletd.log
+    format: json # human or JSON
