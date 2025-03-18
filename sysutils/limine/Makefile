@@ -1,10 +1,10 @@
 PORTNAME=	limine
-DISTVERSION=	9.1.3
+DISTVERSION=	9.2.0
 CATEGORIES=	sysutils
 MASTER_SITES=	https://github.com/${PORTNAME}-bootloader/${PORTNAME}/releases/download/v${DISTVERSION}/
 
 MAINTAINER=	mintsuki@protonmail.com
-COMMENT=	Modern, advanced, portable, multiprotocol bootloader
+COMMENT=	Modern, advanced, portable, multiprotocol bootloader and boot manager
 WWW=		https://limine-bootloader.org/
 
 LICENSE=	BSD2CLAUSE
