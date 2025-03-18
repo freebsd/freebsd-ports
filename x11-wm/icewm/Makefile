@@ -35,7 +35,7 @@ BEASTIE_VARS_OFF=	STARTUP_PIXMAP=icewm-logo.xpm
 IMLIB2_LIB_DEPENDS=	libImlib2.so:graphics/imlib2
 IMLIB2_DESC=		Use Imlib2 for rendering
 IMLIB2_CONFIGURE_OFF=	--disable-imlib2 --enable-gdk-pixbuf
-IMLIB2_USE_OFF=		GNOME=gdkpixbufxlib
+IMLIB2_USE_OFF=		GNOME=gdkpixbuf2xlib
 
 LIBRSVG2_BUILD_DEPENDS_OFF=	${LOCALBASE}/include/nanosvg.h:graphics/nanosvg
 LIBRSVG2_USE=		GNOME=librsvg2

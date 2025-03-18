@@ -11,7 +11,7 @@ WWW=		http://www.linuxgames.com/xqf/
 RUN_DEPENDS=	qstat:games/qstat
 
 USES=		autoreconf gettext gmake gnome pkgconfig xorg
-USE_GNOME=	intlhack gdkpixbuf gdkpixbufxlib
+USE_GNOME=	intlhack gdkpixbuf gdkpixbuf2xlib
 USE_XORG=	x11
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
