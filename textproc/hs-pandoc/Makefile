@@ -1,5 +1,5 @@
 PORTNAME=	pandoc
-DISTVERSION=	3.6.3
+DISTVERSION=	3.6.4
 CATEGORIES=	textproc haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -16,7 +16,7 @@ USE_CABAL=	Glob-0.10.2_3 \
 		JuicyPixels-3.3.9 \
 		OneTuple-0.4.2_1 \
 		Only-0.1_2 \
-		QuickCheck-2.15.0.1 \
+		QuickCheck-2.15.0.1_1 \
 		StateVar-1.2.2 \
 		aeson-2.2.3.0_3 \
 		aeson-pretty-0.8.10 \
@@ -38,7 +38,7 @@ USE_CABAL=	Glob-0.10.2_3 \
 		base16-bytestring-1.0.2.0_1 \
 		base64-bytestring-1.2.1.0_1 \
 		basement-0.0.16 \
-		bifunctors-5.6.2_1 \
+		bifunctors-5.6.2_2 \
 		bitvec-1.1.5.0_3 \
 		blaze-builder-0.4.2.3 \
 		blaze-html-0.9.2.0_1 \
@@ -49,8 +49,8 @@ USE_CABAL=	Glob-0.10.2_3 \
 		cabal-doctest-1.0.11 \
 		call-stack-0.4.0 \
 		case-insensitive-1.2.1.0 \
-		cassava-0.5.3.2 \
-		cborg-0.2.10.0_1 \
+		cassava-0.5.3.2_1 \
+		cborg-0.2.10.0_2 \
 		cereal-0.5.8.3 \
 		character-ps-0.1 \
 		citeproc-0.8.1.3 \
@@ -59,19 +59,19 @@ USE_CABAL=	Glob-0.10.2_3 \
 		commonmark-0.2.6.1 \
 		commonmark-extensions-0.2.6 \
 		commonmark-pandoc-0.2.3 \
-		comonad-5.0.9 \
-		conduit-1.3.6 \
+		comonad-5.0.9_1 \
+		conduit-1.3.6.1 \
 		conduit-extra-1.3.7 \
 		constraints-0.14.2_1 \
 		contravariant-1.5.5 \
 		cookie-0.5.0 \
-		crypton-1.0.1 \
+		crypton-1.0.2 \
 		crypton-connection-0.4.3 \
 		crypton-x509-1.7.7 \
-		crypton-x509-store-1.6.9 \
+		crypton-x509-store-1.6.10 \
 		crypton-x509-system-1.6.7 \
-		crypton-x509-validation-1.6.13 \
-		data-default-0.8.0.0 \
+		crypton-x509-validation-1.6.14 \
+		data-default-0.8.0.1 \
 		data-default-class-0.2.0.0 \
 		data-fix-0.3.4_1 \
 		dec-0.0.6_1 \
@@ -92,7 +92,7 @@ USE_CABAL=	Glob-0.10.2_3 \
 		happy-2.1.5 \
 		happy-lib-2.1.5 \
 		hashable-1.5.0.0_1 \
-		haskell-lexer-1.1.2 \
+		haskell-lexer-1.2.1 \
 		hourglass-0.2.12_1 \
 		hsc2hs-0.68.10_3 \
 		hslua-2.3.1 \
@@ -146,8 +146,8 @@ USE_CABAL=	Glob-0.10.2_3 \
 		optparse-applicative-0.18.1.0_1 \
 		ordered-containers-0.2.4 \
 		os-string-2.0.7 \
-		pandoc-3.6.3 \
-		pandoc-lua-engine-0.4.1 \
+		pandoc-3.6.4 \
+		pandoc-lua-engine-0.4.1.1 \
 		pandoc-lua-marshal-0.3.0 \
 		pandoc-server-0.1.0.10 \
 		pandoc-types-1.23.1_2 \
@@ -159,14 +159,14 @@ USE_CABAL=	Glob-0.10.2_3 \
 		psqueues-0.2.8.1 \
 		random-1.2.1.3 \
 		recv-0.1.0 \
-		regex-base-0.94.0.2_4 \
-		regex-tdfa-1.3.2.2_3 \
+		regex-base-0.94.0.3 \
+		regex-tdfa-1.3.2.3 \
 		resourcet-1.3.0 \
 		safe-0.3.21_1 \
 		scientific-0.3.8.0_2 \
 		semialign-1.3.1_2 \
-		semigroupoids-6.0.1_1 \
-		serialise-0.2.6.1_3 \
+		semigroupoids-6.0.1_2 \
+		serialise-0.2.6.1_4 \
 		servant-0.20.2 \
 		servant-server-0.20.2 \
 		simple-sendfile-0.2.32 \
@@ -188,25 +188,25 @@ USE_CABAL=	Glob-0.10.2_3 \
 		syb-0.7.2.4 \
 		tagged-0.8.9 \
 		tagsoup-0.14.8 \
-		tasty-1.5.3 \
+		tasty-1.5.3_1 \
 		temporary-1.3 \
-		texmath-0.12.8.13 \
+		texmath-0.12.9 \
 		text-conversions-0.3.1.1 \
 		text-iso8601-0.1.1_2 \
 		text-short-0.1.6_3 \
-		th-abstraction-0.7.1.0 \
+		th-abstraction-0.7.1.0_1 \
 		th-compat-0.1.6 \
 		th-lift-0.8.6 \
 		th-lift-instances-0.1.20 \
 		these-1.2.1_2 \
 		time-compat-1.9.8 \
 		time-manager-0.2.2 \
-		tls-2.1.7 \
+		tls-2.1.8 \
 		toml-parser-2.0.1.0_1 \
 		transformers-base-0.4.6 \
 		transformers-compat-0.7.2 \
 		typed-process-0.2.12.0 \
-		typst-0.6.2 \
+		typst-0.7 \
 		typst-symbols-0.1.7 \
 		unicode-collation-0.1.3.6_2 \
 		unicode-data-0.6.0_2 \
@@ -218,7 +218,7 @@ USE_CABAL=	Glob-0.10.2_3 \
 		unordered-containers-0.2.20_4 \
 		utf8-string-1.0.2 \
 		uuid-types-1.0.6_2 \
-		vault-0.3.1.5_9 \
+		vault-0.3.1.5_10 \
 		vector-0.13.2.0_1 \
 		vector-algorithms-0.9.1.0 \
 		vector-stream-0.1.0.1_3 \
