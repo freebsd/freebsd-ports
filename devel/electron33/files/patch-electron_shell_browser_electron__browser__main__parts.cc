@@ -1,4 +1,4 @@
---- electron/shell/browser/electron_browser_main_parts.cc.orig	2025-02-26 12:19:50 UTC
+--- electron/shell/browser/electron_browser_main_parts.cc.orig	2025-03-13 13:59:34 UTC
 +++ electron/shell/browser/electron_browser_main_parts.cc
 @@ -76,7 +76,7 @@
  #include "ui/wm/core/wm_state.h"
@@ -45,7 +45,7 @@
    // Reset to the original LC_ALL since we should not be changing it.
    if (!locale.empty()) {
      if (lc_all)
-@@ -391,7 +391,7 @@ void ElectronBrowserMainParts::ToolkitInitialized() {
+@@ -388,7 +388,7 @@ void ElectronBrowserMainParts::ToolkitInitialized() {
  }
  
  void ElectronBrowserMainParts::ToolkitInitialized() {
@@ -54,7 +54,7 @@
    auto* linux_ui = ui::GetDefaultLinuxUi();
    CHECK(linux_ui);
    linux_ui_getter_ = std::make_unique<LinuxUiGetterImpl>();
-@@ -497,7 +497,7 @@ void ElectronBrowserMainParts::PostCreateMainMessageLo
+@@ -494,7 +494,7 @@ void ElectronBrowserMainParts::PostCreateMainMessageLo
  }
  
  void ElectronBrowserMainParts::PostCreateMainMessageLoop() {
@@ -63,7 +63,7 @@
    std::string app_name = electron::Browser::Get()->GetName();
  #endif
  #if BUILDFLAG(IS_LINUX)
-@@ -509,7 +509,9 @@ void ElectronBrowserMainParts::PostCreateMainMessageLo
+@@ -506,7 +506,9 @@ void ElectronBrowserMainParts::PostCreateMainMessageLo
  
    if (!bluez::BluezDBusManager::IsInitialized())
      bluez::DBusBluezManagerWrapperLinux::Initialize();
@@ -73,7 +73,7 @@
    // Set up crypt config. This needs to be done before anything starts the
    // network service, as the raw encryption key needs to be shared with the
    // network service for encrypted cookie storage.
-@@ -610,7 +612,7 @@ void ElectronBrowserMainParts::PostMainMessageLoopRun(
+@@ -607,7 +609,7 @@ void ElectronBrowserMainParts::PostMainMessageLoopRun(
    fake_browser_process_->PostMainMessageLoopRun();
    content::DevToolsAgentHost::StopRemoteDebuggingPipeHandler();
  
