@@ -1,0 +1,49 @@
+#!/bin/sh
+
+# PROVIDE: velbustcpd
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+
+# Add the following lines to /etc/rc.conf to enable velbustcpd:
+# velbustcpd_enable:	Set to NO by default. Set it to YES to enable it.
+# velbustcpd_log_dig:	The directory to store log files
+#			Default: /var/log/%%PORTNAME%%
+# velbustcpd_pid_dir:	The directory of the pid file
+#			Default: /var/run/%%PORTNAME%%
+# velbustcpd_user:	The user account velbustcpd daemon runs as what
+#			you want it to be.
+# velbustcpd_settings:	Location of the settings file
+#			Default: %%LOCALBASE%%/etc/%%PORTNAME%%/settings.json
+
+. /etc/rc.subr
+
+name=velbustcpd
+rcvar=velbustcpd_enable
+
+load_rc_config ${name}
+
+: ${velbustcpd_enable:=NO}
+: ${velbustcpd_log_dir:="/var/log/%%PORTNAME%%"}
+: ${velbustcpd_pid_dir:="/var/run/%%PORTNAME%%"}
+: ${velbustcpd_user:=%%USERS%%}
+: ${velbustcpd_settings:="%%LOCALBASE%%/etc/%%PORTNAME%%/settings.json"}
+
+pidfile="${velbustcpd_pid_dir}/velbustcpd.pid"
+logfile="${velbustcpd_log_dir}/velbustcpd.log"
+procname="%%PYTHON_CMD%%"
+command="/usr/sbin/daemon"
+command_args="-f -p ${pidfile} -o ${logfile} ${procname} \
+		%%LOCALBASE%%/bin/velbustcp --settings ${velbustcpd_settings}"
+start_precmd=velbustcpd_precmd
+
+velbustcpd_precmd()
+{
+	if [ ! -d ${velbustcpd_pid_dir} ]; then
+		install -d -g ${velbustcpd_user} -o ${velbustcpd_user} ${velbustcpd_pid_dir}
+	fi
+	if [ ! -d ${velbustcpd_log_dir} ]; then
+		install -d -g ${velbustcpd_user} -o ${velbustcpd_user} ${velbustcpd_log_dir}
+	fi
+}
+
+run_rc_command "$1"

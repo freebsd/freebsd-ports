@@ -5756,6 +5756,7 @@
     SUBDIR += py-python-socketio
     SUBDIR += py-python-statsd
     SUBDIR += py-python-subunit
+    SUBDIR += py-python-velbustcp
     SUBDIR += py-python-xcaplib
     SUBDIR += py-pythonbrew
     SUBDIR += py-pythondialog

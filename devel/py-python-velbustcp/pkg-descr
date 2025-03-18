@@ -1,0 +1,2 @@
+Python application that bridges a Velbus installation with TCP.
+Can be used to broadcast a velbus USB interface as TCP socket.
