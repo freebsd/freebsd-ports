@@ -29,6 +29,9 @@ share/icons/hicolor/96x96/apps/mscore.png
 %%DATADIR%%/autobotscripts/steps/NoteInput.js
 %%DATADIR%%/autobotscripts/steps/Palette.js
 %%DATADIR%%/autobotscripts/steps/Score.js
+%%DATADIR%%/extensions/batch_example/configure.qml
+%%DATADIR%%/extensions/batch_example/manifest.json
+%%DATADIR%%/extensions/batch_example/processing.js
 %%DATADIR%%/extensions/colornotes/color_notes.png
 %%DATADIR%%/extensions/colornotes/main.js
 %%DATADIR%%/extensions/colornotes/manifest.json
@@ -226,6 +229,11 @@ share/icons/hicolor/96x96/apps/mscore.png
 %%DATADIR%%/plugins/tuning_modal/modal_tuning.png
 %%DATADIR%%/sound/MS Basic.sf3
 %%DATADIR%%/sound/MS Basic_License.md
+%%DATADIR%%/styles/Modified Stave Notation/16mm_MSN.mss
+%%DATADIR%%/styles/Modified Stave Notation/18mm_MSN.mss
+%%DATADIR%%/styles/Modified Stave Notation/20mm_MSN.mss
+%%DATADIR%%/styles/Modified Stave Notation/22mm_MSN.mss
+%%DATADIR%%/styles/Modified Stave Notation/25mm_MSN.mss
 %%DATADIR%%/styles/MuseJazz.mss
 %%DATADIR%%/styles/cchords_muse.xml
 %%DATADIR%%/styles/cchords_nrb.xml

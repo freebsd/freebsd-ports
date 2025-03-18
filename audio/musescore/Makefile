@@ -1,6 +1,6 @@
 PORTNAME=	${GH_PROJECT:tl}
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.4.4
+DISTVERSION=	4.5.0
 CATEGORIES=	audio
 
 MAINTAINER=	adridg@FreeBSD.org
@@ -30,6 +30,7 @@ USE_GL=		gl
 
 USE_GITHUB=	yes
 GH_PROJECT=	MuseScore
+GH_TAGNAME=	v4.5
 
 # Each release gets a subdir containing the distfiles for that release,
 # so hope that scanning the parent dir finds new ones.
