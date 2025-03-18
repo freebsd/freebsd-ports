@@ -1,6 +1,6 @@
 PORTNAME=	apr
 PORTVERSION=	${APR_VERSION}.${APU_VERSION}
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel
 MASTER_SITES=	APACHE/apr
 DISTFILES=	apr-${APR_VERSION}.tar.gz \
@@ -89,7 +89,7 @@ BDB1_VARS=	LICENSE_COMB=dual LICENSE+=BSD4CLAUSE \
 		APU_CONF_ARGS+="--with-berkeley-db=/usr/include:/usr/lib \
 		--with-dbm=db1"
 BDB5_VARS=	APU_CONF_ARGS+="--with-berkeley-db=${BDB_INCLUDE_DIR}:${BDB_LIB_DIR} \
-		--with-dbm=db185"
+		--with-dbm=db5"
 BDB18_VARS=	LICENSE_COMB=dual LICENSE+=AGPLv3 \
 		APU_CONF_ARGS+="--with-berkeley-db=${BDB_INCLUDE_DIR}:${BDB_LIB_DIR} \
 		--with-dbm=db185"
