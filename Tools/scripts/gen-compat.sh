@@ -61,4 +61,4 @@ case $sets in
 	;;
 esac
 find ${tmpdir}/base -name "*.so.*" -exec mv -v {} ${tmpdir}/${compatdir}/lib/compat/ \;
-tar -cvJf ${compatdir}.tar.xz ${tmpdir}/${compatdir}
+tar -cvJf ${compatdir}.tar.xz -C ${tmpdir} ${compatdir}
