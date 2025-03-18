@@ -3,6 +3,9 @@
   message: <<EOM
 The subversion dav modules are no longer activated in httpd.conf!
 There is now a dedicated modules file in %%APACHEETCDIR%%/modules.d
+
+Important: The port option BDB is faulty and deprecated upstream for 12 years.
+It will be removed in the future.
 EOM
 }
 ]

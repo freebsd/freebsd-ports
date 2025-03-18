@@ -27,8 +27,8 @@ CONFIGURE_ARGS+=	--with-expat=${LOCALBASE}/include:${LOCALBASE}/lib:expat
 # ===============================================================
 OPTIONS_SUB=			yes
 
-BDB_CONFIGURE_ON=		--enable-bdb6
-BDB_CONFIGURE_OFF=		--without-berkeley-db
+BDB_CONFIGURE_WITH=		berkeley-db
+BDB_CONFIGURE_ENABLE=	bdb6
 BDB_USES=			bdb
 
 NLS_CONFIGURE_OFF=		--disable-nls
