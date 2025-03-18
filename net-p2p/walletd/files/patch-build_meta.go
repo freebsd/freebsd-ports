@@ -11,5 +11,5 @@
 -	buildTime = 0
 +	commit = "42659f7"
 +	version = "v2.0.0"
-+	buildTime = BUILDTIME
++	buildTime = %%BUILDTIME%%
  )

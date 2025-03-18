@@ -52,8 +52,8 @@ GH_TUPLE=	SiaFoundation:core:v0.10.1:siafoundation_core/vendor/go.sia.tech/core 
 		uber-go:zap:v1.27.0:uber_go_zap/vendor/go.uber.org/zap
 
 PLIST_FILES=	"@dir(${USERS},${GROUPS},750) /var/lib/${PORTNAME}" \
-		"@sample(${USERS},${GROUPS},600) ${PREFIX}/etc/walletd.conf.sample" \
-		"@sample ${PREFIX}/etc/newsyslog.conf.d/walletd.conf.sample" \
+		"@sample(${USERS},${GROUPS},600) etc/walletd.conf.sample" \
+		"@sample etc/newsyslog.conf.d/walletd.conf.sample" \
 		bin/walletd
 
 SUB_FILES=	${PORTNAME}-syslog.conf ${PORTNAME}.conf
@@ -70,7 +70,7 @@ post-install:
 	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}.conf ${STAGEDIR}${PREFIX}/etc/${PORTNAME}.conf.sample
 	${INSTALL} -d ${STAGEDIR}/var/lib/${PORTNAME}
 
-post-patch:
-	${REINPLACE_CMD} -e "s|BUILDTIME|$$(date +%s)|g" ${WRKSRC}/build/meta.go
+pre-configure:
+	${REINPLACE_CMD} -e "s|%%BUILDTIME%%|$$(date +%s)|g" ${WRKSRC}/build/meta.go
 
 .include <bsd.port.mk>

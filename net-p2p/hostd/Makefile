@@ -63,8 +63,8 @@ GH_TUPLE=	SiaFoundation:core:v0.10.1:siafoundation_core/vendor/go.sia.tech/core 
 		uber-go:zap:v1.27.0:uber_go_zap/vendor/go.uber.org/zap
 
 PLIST_FILES=	"@dir(${USERS},${GROUPS},750) /var/lib/${PORTNAME}" \
-		"@sample ${PREFIX}/etc/hostd.yml.sample" \
-		"@sample ${PREFIX}/etc/newsyslog.conf.d/hostd.conf.sample" \
+		"@sample etc/hostd.yml.sample" \
+		"@sample etc/newsyslog.conf.d/hostd.conf.sample" \
 		bin/hostd
 
 SUB_FILES=	${PORTNAME}.conf ${PORTNAME}.yml
@@ -80,7 +80,7 @@ post-install:
 	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}.yml ${STAGEDIR}${PREFIX}/etc/${PORTNAME}.yml.sample
 	${INSTALL} -d ${STAGEDIR}/var/lib/${PORTNAME}
 
-post-patch:
-	${REINPLACE_CMD} -e "s|BUILDTIME|$$(date +%s)|g" ${WRKSRC}/build/meta.go
+pre-configure:
+	${REINPLACE_CMD} -e "s|%%BUILDTIME%%|$$(date +%s)|g" ${WRKSRC}/build/meta.go
 
 .include <bsd.port.mk>

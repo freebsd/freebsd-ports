@@ -16,7 +16,7 @@
 -	buildTime = 0
 +	commit = "ec7e9c70"
 +	version = "v2.0.1"
-+	buildTime = BUILDTIME
++	buildTime = %%BUILDTIME%%
  )
  
  // Commit returns the commit hash of hostd

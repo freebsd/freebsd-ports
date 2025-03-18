@@ -70,8 +70,8 @@ GH_TUPLE=	FiloSottile:edwards25519:v1.1.0:filosottile_edwards25519/vendor/filipp
 		uber-go:zap:v1.27.0:uber_go_zap/vendor/go.uber.org/zap
 
 PLIST_FILES=	"@dir(${USERS},${GROUPS},750) /var/lib/${PORTNAME}" \
-		"@sample ${PREFIX}/etc/newsyslog.conf.d/renterd.conf.sample" \
-		"@sample ${PREFIX}/etc/renterd.yml.sample" \
+		"@sample etc/newsyslog.conf.d/renterd.conf.sample" \
+		"@sample etc/renterd.yml.sample" \
 		bin/renterd
 
 SUB_FILES=	${PORTNAME}.conf ${PORTNAME}.yml
@@ -87,7 +87,7 @@ post-install:
 	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}.yml ${STAGEDIR}${PREFIX}/etc/${PORTNAME}.yml.sample
 	${INSTALL} -d ${STAGEDIR}/var/lib/${PORTNAME}
 
-post-patch:
-	${REINPLACE_CMD} -e "s|BUILDTIME|$$(date +%s)|g" ${WRKSRC}/build/meta.go
+pre-configure:
+	${REINPLACE_CMD} -e "s|%%BUILDTIME%%|$$(date +%s)|g" ${WRKSRC}/build/meta.go
 
 .include <bsd.port.mk>
