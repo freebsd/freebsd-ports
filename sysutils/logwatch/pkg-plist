@@ -1,13 +1,22 @@
+@dir etc/logwatch/html
+@dir etc/logwatch/logfiles
+@dir etc/logwatch/services
+@dir var/logwatch
 %%ETCDIR%%/defaults/html/footer.html
 %%ETCDIR%%/defaults/html/header.html
+%%ETCDIR%%/defaults/ignore.conf
+%%ETCDIR%%/defaults/logfiles/audit_log.conf
 %%ETCDIR%%/defaults/logfiles/autorpm.conf
 %%ETCDIR%%/defaults/logfiles/bfd.conf
 %%ETCDIR%%/defaults/logfiles/cisco.conf
+%%ETCDIR%%/defaults/logfiles/citadel.conf
 %%ETCDIR%%/defaults/logfiles/clam-update.conf
 %%ETCDIR%%/defaults/logfiles/clamav.conf
 %%ETCDIR%%/defaults/logfiles/cron.conf
 %%ETCDIR%%/defaults/logfiles/daemon.conf
 %%ETCDIR%%/defaults/logfiles/denyhosts.conf
+%%ETCDIR%%/defaults/logfiles/dirsrv.conf
+%%ETCDIR%%/defaults/logfiles/dnf-rpm.conf
 %%ETCDIR%%/defaults/logfiles/dnssec.conf
 %%ETCDIR%%/defaults/logfiles/dovecot.conf
 %%ETCDIR%%/defaults/logfiles/dpkg.conf
@@ -16,17 +25,20 @@
 %%ETCDIR%%/defaults/logfiles/exim.conf
 %%ETCDIR%%/defaults/logfiles/extreme-networks.conf
 %%ETCDIR%%/defaults/logfiles/fail2ban.conf
+%%ETCDIR%%/defaults/logfiles/freeradius.conf
 %%ETCDIR%%/defaults/logfiles/http-error.conf
 %%ETCDIR%%/defaults/logfiles/http.conf
 %%ETCDIR%%/defaults/logfiles/iptables.conf
 %%ETCDIR%%/defaults/logfiles/kernel.conf
 %%ETCDIR%%/defaults/logfiles/maillog.conf
 %%ETCDIR%%/defaults/logfiles/messages.conf
+%%ETCDIR%%/defaults/logfiles/mysql-mmm.conf
 %%ETCDIR%%/defaults/logfiles/mysql.conf
 %%ETCDIR%%/defaults/logfiles/netopia.conf
 %%ETCDIR%%/defaults/logfiles/netscreen.conf
 %%ETCDIR%%/defaults/logfiles/php.conf
 %%ETCDIR%%/defaults/logfiles/pix.conf
+%%ETCDIR%%/defaults/logfiles/postgresql.conf
 %%ETCDIR%%/defaults/logfiles/pureftp.conf
 %%ETCDIR%%/defaults/logfiles/qmail-pop3d-current.conf
 %%ETCDIR%%/defaults/logfiles/qmail-pop3ds-current.conf
@@ -42,11 +54,15 @@
 %%ETCDIR%%/defaults/logfiles/spamassassin.conf
 %%ETCDIR%%/defaults/logfiles/syslog.conf
 %%ETCDIR%%/defaults/logfiles/tac_acc.conf
+%%ETCDIR%%/defaults/logfiles/tivoli-smc.conf
 %%ETCDIR%%/defaults/logfiles/up2date.conf
+%%ETCDIR%%/defaults/logfiles/vdr.conf
 %%ETCDIR%%/defaults/logfiles/vsftpd.conf
 %%ETCDIR%%/defaults/logfiles/windows.conf
 %%ETCDIR%%/defaults/logfiles/xferlog.conf
 %%ETCDIR%%/defaults/logfiles/yum.conf
+%%ETCDIR%%/defaults/logfiles/zypp.conf
+%%ETCDIR%%/defaults/logwatch.conf
 %%ETCDIR%%/defaults/services/afpd.conf
 %%ETCDIR%%/defaults/services/amavis.conf
 %%ETCDIR%%/defaults/services/arpwatch.conf
@@ -169,8 +185,7 @@
 %%ETCDIR%%/defaults/services/zz-runtime.conf
 %%ETCDIR%%/defaults/services/zz-sys.conf
 %%ETCDIR%%/defaults/services/zz-zfs.conf
-%%ETCDIR%%/defaults/ignore.conf
-%%ETCDIR%%/defaults/logwatch.conf
+%%SITE_PERL%%/Logwatch.pm
 libexec/logwatch/defaults/logfiles/autorpm/applydate
 libexec/logwatch/defaults/logfiles/cron/applydate
 libexec/logwatch/defaults/logfiles/emerge/applydate
@@ -324,8 +339,3 @@ libexec/logwatch/defaults/shared/removeheaders
 libexec/logwatch/defaults/shared/removeservice
 sbin/logwatch.pl
 share/man/man8/logwatch.8.gz
-%%SITE_PERL%%/Logwatch.pm
-@dir etc/logwatch/html
-@dir etc/logwatch/logfiles
-@dir etc/logwatch/services
-@dir var/logwatch
