@@ -1,6 +1,6 @@
---- textio/textioInt.h.orig	2023-07-12 06:00:01 UTC
+--- textio/textioInt.h.orig	2025-02-24 07:00:02 UTC
 +++ textio/textioInt.h
-@@ -41,7 +41,7 @@ typedef struct {
+@@ -43,7 +43,7 @@ typedef struct {
  #define TX_CMD_PROMPT	":"
  
  /* all of the state associated with a tty terminal */
