@@ -1,6 +1,6 @@
 PORTNAME=	wifi-firmware-${FWDRV}-kmod
 PORTVERSION=	${FWDRV_VERSION}
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES=	net
 MASTER_SITES=	https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/plain/ \
 		https://ams.source.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/plain/ \
@@ -69,7 +69,7 @@ ${f}_PKGNAMESUFFIX=		-${f}
 ${f}_CONFLICTS_INSTALL=		${PORTNAME}
 .endfor
 
-DISTFILES=	${DISTFILES_${FLAVOR}} \
+DISTFILES=	${DISTFILES_${FLAVOR}:O:u} \
 		${DISTFILES_${FLAVOR}_lic} \
 		${LICENSE_FILE}${DISTURL_SUFFIX} \
 		WHENCE${DISTURL_SUFFIX}
@@ -110,14 +110,23 @@ post-extract:
 	@${SED} -e "s@%%XXX%%@${WHENCE_REGEX:Q}@g" ${FILESDIR}/WHENCE.awk.in > ${WRKSRC}/WHENCE.awk
 	@${AWK} -f ${WRKSRC}/WHENCE.awk ${WRKSRC}/WHENCE.in > ${WRKSRC}/WHENCE
 	# Do we need to set a tunable?
+	# At the moment we consider these temporary hacks.
+	# Otherwise we need a better way to express this per-port/-flavor.
 .if defined(COMPAT_LINUXKPI_SKB_MEM_LIMIT) && ${COMPAT_LINUXKPI_SKB_MEM_LIMIT} > 0
 	@${MKDIR} ${WRKSRC}/${BOOT_LOADERCONFD}
-	@${ECHO_CMD} "compat.linuxkpi.skb.mem_limit=${COMPAT_LINUXKPI_SKB_MEM_LIMIT}" > ${WRKSRC}/${BOOT_LOADERCONFD}/${FLAVOR}.conf
+	@${ECHO_CMD} "compat.linuxkpi.skb.mem_limit=${COMPAT_LINUXKPI_SKB_MEM_LIMIT}" >> ${WRKSRC}/${BOOT_LOADERCONFD}/${FLAVOR}.conf
 	@${ECHO_CMD} "${BOOT_LOADERCONFD}/${FLAVOR}.conf" >> ${PLIST}
+.endif
+.if defined(COMPAT_LINUXKPI_IWL_HWCRYPTO_HT_VHT) && (${COMPAT_LINUXKPI_IWL_HWCRYPTO_HT_VHT:M${FLAVOR}} != "")
+	@${MKDIR} ${WRKSRC}/${BOOT_LOADERCONFD}
+	@${ECHO_CMD} "compat.linuxkpi.80211.hw_crypto=1" >> ${WRKSRC}/${BOOT_LOADERCONFD}/iwlwifi-${FLAVOR}.conf
+	@${ECHO_CMD} "compat.linuxkpi.iwlwifi_11n_disable=0" >> ${WRKSRC}/${BOOT_LOADERCONFD}/iwlwifi-${FLAVOR}.conf
+	@${ECHO_CMD} "compat.linuxkpi.iwlwifi_disable_11ac=0" >> ${WRKSRC}/${BOOT_LOADERCONFD}/iwlwifi-${FLAVOR}.conf
+	@${ECHO_CMD} "${BOOT_LOADERCONFD}/iwlwifi-${FLAVOR}.conf" >> ${PLIST}
 .endif
 ################################################################################
 .if (${OSVERSION} >= 1500014) || (${OSVERSION} < 1500000 && ${OSVERSION} >= 1402000)
-.for _f in ${DISTFILES_${FLAVOR}}
+.for _f in ${DISTFILES_${FLAVOR}:O:u}
 	# Create firmware source directory and copy in distfile.
 	@${MKDIR} ${WRKSRC}/fw/${_f:H}
 	${CP} ${DISTDIR}/${DIST_SUBDIR}/${_f} ${WRKSRC}/fw/${_f:C@(^[^?]*)${DISTURL_SUFFIX:Q}@\1@}
@@ -135,7 +144,7 @@ post-extract:
 	@${SED} -e "s@%%FWDRV%%@${FWDRV}@g" \
 	    -e "s@%%FWSUBDIR%%@${FWSUBDIR}@g" \
 	    ${FILESDIR}/Makefile.inc.in > ${WRKSRC}/Makefile.inc
-.for _f in ${DISTFILES_${FLAVOR}}
+.for _f in ${DISTFILES_${FLAVOR}:O:u}
 	# We remove '.' and '-' as well as '/' as they don't work well in loader.conf.
 	@${MKDIR} ${WRKSRC}/${_f:C@(^[^?]*)${DISTURL_SUFFIX:Q}@\1@:S,.,_,g:S,-,_,g:S,/,_,g}
 	# Create subdir (firmware file) Makefile.
@@ -166,11 +175,15 @@ do-install:
 	(cd ${WRKSRC}/fw/ && ${COPYTREE_SHARE} . ${STAGEDIR}/${BOOTFWDIR})
 .endif
 
-.if defined(COMPAT_LINUXKPI_SKB_MEM_LIMIT) && ${COMPAT_LINUXKPI_SKB_MEM_LIMIT} > 0
 post-install:
+.if defined(COMPAT_LINUXKPI_SKB_MEM_LIMIT) && ${COMPAT_LINUXKPI_SKB_MEM_LIMIT} > 0
 	@${MKDIR} ${STAGEDIR}/${BOOT_LOADERCONFD}
 	@${INSTALL_DATA} ${WRKSRC}/${BOOT_LOADERCONFD}/${FLAVOR}.conf ${STAGEDIR}/${BOOT_LOADERCONFD}/${FLAVOR}.conf
 .endif
-
+.if defined(COMPAT_LINUXKPI_IWL_HWCRYPTO_HT_VHT) && (${COMPAT_LINUXKPI_IWL_HWCRYPTO_HT_VHT:M${FLAVOR}} != "")
+	@${MKDIR} ${STAGEDIR}/${BOOT_LOADERCONFD}
+	@${INSTALL_DATA} ${WRKSRC}/${BOOT_LOADERCONFD}/iwlwifi-${FLAVOR}.conf ${STAGEDIR}/${BOOT_LOADERCONFD}/iwlwifi-${FLAVOR}.conf
+.endif
+	@${DO_NADA}
 
 .include <bsd.port.post.mk>

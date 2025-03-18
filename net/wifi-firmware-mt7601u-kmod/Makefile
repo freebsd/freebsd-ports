@@ -1,5 +1,4 @@
 BASEDIR=	${.CURDIR}/../wifi-firmware-kmod
-PORTREVISION=2
 FWDRV=mt7601u
 FWSUBDIR=	mediatek
 FWDRV_VERSION=	20241017
