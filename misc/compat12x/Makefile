@@ -1,5 +1,6 @@
 PORTNAME=	compat12x
 PORTVERSION=	12.2.1202000.20210406
+PORTREVISION= 	1
 CATEGORIES=	misc
 MASTER_SITES=	LOCAL/jkim
 PKGNAMESUFFIX=	-${ARCH}
@@ -22,6 +23,10 @@ USE_LDCONFIG=	${TARGET_DIR}
 
 .if ${OSREL:R} < 12
 IGNORE=		is for FreeBSD 12.x and newer
+.endif
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400000
+RUN_DEPENDS+=	compat13x-${ARCH}>=0:misc/compat13x
 .endif
 
 .if ${ARCH} == amd64
