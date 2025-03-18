@@ -25,8 +25,10 @@ load_rc_config $name
 : ${walletd_executable:="%%PREFIX%%/bin/walletd"}
 : ${walletd_datadir:="/var/lib/walletd"}
 : ${walletd_passwordfile:="%%PREFIX%%/etc/walletd.conf"}
+: ${walletd_config:="%%PREFIX%%/etc/walletd.yml"}
 
-walletd_env=$(cat ${walletd_passwordfile})
+walletd_env="WALLETD_CONFIG_FILE=${walletd_config}"
+
 pidfile="/var/run/${name}.pid"
 command="/usr/sbin/daemon"
 command_args="-r -f -H \
