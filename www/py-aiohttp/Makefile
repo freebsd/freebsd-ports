@@ -26,7 +26,9 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aiodns>=1.1:dns/py-aiodns@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}brotli>=0:archivers/py-brotli@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}freezegun>=0:devel/py-freezegun@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}gunicorn>=0:www/py-gunicorn@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}re-assert>=0:devel/py-re-assert@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}re-assert>=0:devel/py-re-assert@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pytest-mock>=0:devel/py-pytest-mock@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pytest-codspeed>=0:devel/py-pytest-codspeed@${PY_FLAVOR}
 
 USES=		cpe python:3.9+
 USE_PYTHON=	autoplist concurrent cython pep517 pytest
