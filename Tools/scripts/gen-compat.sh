@@ -30,6 +30,13 @@ amd64)
 *)
 	sets="base" ;;
 esac
+tarch=${arch}
+if [ $tarch = "arm64" ]; then
+	tarch="aarch64"
+fi
+if [ $tarch = "aarch64" ]; then
+	arch="arm64"
+fi
 
 flist=""
 while read l ; do
@@ -52,13 +59,13 @@ set +o noglob
 fbsd_version=$(awk '/#define __FreeBSD_version/ { print $3 }' ${tmpdir}/base/usr/include/sys/param.h)
 maj_version=${version%%.*}
 date=$(date "+%Y%m%d")
-compatdir="compat${maj_version}x-${arch}-${version}.${fbsd_version}.${date}"
-mkdir -p ${tmpdir}/${compatdir}/lib/compat
+compatdir="compat${maj_version}x-${tarch}-${version}.${fbsd_version}.${date}"
+mkdir -p ${tmpdir}/${compatdir}/lib
 case $sets in
 *lib32*)
-	mkdir -p ${tmpdir}/${compatdir}/lib32/compat
-	find ${tmpdir}/base/usr/lib32/ -name "*.so.*" -exec mv -v {} ${tmpdir}/${compatdir}/lib32/compat/ \;
+	mkdir -p ${tmpdir}/${compatdir}/lib32
+	find ${tmpdir}/base/usr/lib32/ -name "*.so.*" -exec mv -v {} ${tmpdir}/${compatdir}/lib32/ \;
 	;;
 esac
-find ${tmpdir}/base -name "*.so.*" -exec mv -v {} ${tmpdir}/${compatdir}/lib/compat/ \;
+find ${tmpdir}/base -name "*.so.*" -exec mv -v {} ${tmpdir}/${compatdir}/lib/ \;
 tar -cvJf ${compatdir}.tar.xz -C ${tmpdir} ${compatdir}
