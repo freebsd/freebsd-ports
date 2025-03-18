@@ -1,6 +1,6 @@
 PORTNAME=	kitty
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.40.0
+DISTVERSION=	0.40.1
 CATEGORIES=	x11 wayland
 
 MAINTAINER=	nivit@FreeBSD.org
@@ -40,6 +40,7 @@ USES=		compiler:c11 cpe desktop-file-utils gettext-runtime gl gmake \
 CPE_VENDOR=	kitty_project
 
 USE_GL=		gl
+USE_GNOME=	cairo
 USE_XORG=	x11 xcb xcursor xi xinerama xrandr
 
 SHEBANG_FILES=	build-terminfo count-lines-of-code update-on-ox
