@@ -1,4 +1,4 @@
-directory: /var/lib/hostd
+directory: /var/db/hostd
 recoveryPhrase: indicate nature buzz route rude embody engage confirm aspect potato weapon bid
 autoOpenWebUI: true
 http:

@@ -1,5 +1,5 @@
 seed: rotation dream build introduce memorandum sphere trouble title pedestrian get conclusion large
-directory: /var/lib/renterd
+directory: /var/db/renterd
 shutdownTimeout: 5m0s
 log:
     level: warn

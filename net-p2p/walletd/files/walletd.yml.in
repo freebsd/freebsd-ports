@@ -1,4 +1,4 @@
-directory: /var/lib/walletd
+directory: /var/db/walletd
 autoOpenWebUI: true
 http:
   address: :9980
