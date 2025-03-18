@@ -29,7 +29,9 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}astor>=0:devel/py-astor@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}openssl>=0:security/py-openssl@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest>=0:devel/py-pytest@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}trustme>=0:security/py-trustme@${PY_FLAVOR} \
-		pylint${PYTHON_PKGNAMESUFFIX}>=0:devel/pylint@${PY_FLAVOR}
+		pylint${PYTHON_PKGNAMESUFFIX}>=0:devel/pylint@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}black>=0:devel/py-black@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}ruff>=0:devel/py-ruff@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	autoplist pep517
