@@ -1,6 +1,5 @@
 PORTNAME=	tmpreaper
-DISTVERSION=	1.6.17
-PORTREVISION=	1
+DISTVERSION=	1.6.18
 CATEGORIES=	sysutils
 MASTER_SITES=	DEBIAN
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -12,9 +11,9 @@ WWW=		https://packages.debian.org/sid/tmpreaper
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=				autoreconf cpe
-CPE_VENDOR=			debian
-GNU_CONFIGURE=			yes
+USES=		autoreconf cpe tar:xz
+CPE_VENDOR=	debian
+GNU_CONFIGURE=	yes
 
 INSTALL_TARGET=	install-strip
 
