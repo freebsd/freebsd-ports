@@ -1,6 +1,6 @@
 PORTNAME=	qiv
 PORTVERSION=	2.3.3
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	graphics
 MASTER_SITES=	http://spiegl.de/qiv/download/ \
 		http://www.predatorlabs.net/dl/

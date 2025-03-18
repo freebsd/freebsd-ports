@@ -1,5 +1,6 @@
 PORTNAME=	w3m
 PORTVERSION=	0.5.3.${SNAPDATE}
+PORTREVISION=	1
 CATEGORIES+=	www
 MASTER_SITES=	https://git.sr.ht/~rkta/${PORTNAME}/archive/${COMMIT_HASH}${EXTRACT_SUFX}?dummy=/
 
