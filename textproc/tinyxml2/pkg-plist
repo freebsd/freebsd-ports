@@ -1,7 +1,7 @@
 include/tinyxml2.h
 lib/libtinyxml2.a
 lib/libtinyxml2.so
-lib/libtinyxml2.so.10
+lib/libtinyxml2.so.11
 lib/libtinyxml2.so.%%PORTVERSION%%
 libdata/pkgconfig/tinyxml2.pc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/resources/dream.xml
