@@ -1,10 +1,11 @@
 PORTNAME=	Log
-PORTVERSION=	1.14.4
+PORTVERSION=	1.14.5
 CATEGORIES=	sysutils www pear
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	PEAR logging utilities
-WWW=		https://pear.php.net/package/Log
+WWW=		https://pear.php.net/package/Log \
+		https://github.com/pear/Log
 
 LICENSE=	MIT
 
