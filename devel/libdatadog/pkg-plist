@@ -3,6 +3,8 @@ include/datadog/blazesym.h
 include/datadog/common.h
 include/datadog/crashtracker.h
 include/datadog/data-pipeline.h
+include/datadog/library-config.h
+include/datadog/live-debugger.h
 include/datadog/profiling.h
 include/datadog/telemetry.h
 lib/cmake/libdatadog/DataPipelineConfig.cmake
@@ -10,6 +12,10 @@ lib/cmake/libdatadog/DatadogConfig.cmake
 lib/libdata_pipeline_ffi.a
 lib/libdata_pipeline_ffi.so
 lib/libdatadog_ipc_macros.so
+lib/libdatadog_library_config_ffi.a
+lib/libdatadog_library_config_ffi.so
+lib/libdatadog_live_debugger_ffi.a
+lib/libdatadog_live_debugger_ffi.so
 lib/libdatadog_profiling_ffi.a
 lib/libdatadog_profiling_ffi.so
 lib/libdatadog_sidecar_ffi.a
