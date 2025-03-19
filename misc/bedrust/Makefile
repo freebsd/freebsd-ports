@@ -1,7 +1,6 @@
 PORTNAME=	bedrust
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.8.6
-PORTREVISION=	1
+DISTVERSION=	0.8.8
 CATEGORIES=	misc # machine-learning
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -11,7 +10,7 @@ WWW=		https://rup12.net
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cargo
+USES=		cargo llvm
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	darko-mesaros
@@ -33,32 +32,37 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		arbitrary-1.4.1 \
 		arg_enum_proc_macro-0.3.4 \
 		arrayvec-0.7.6 \
+		atomic-waker-1.1.2 \
 		autocfg-1.4.0 \
 		av1-grain-0.2.3 \
 		avif-serialize-0.8.2 \
-		aws-config-1.5.16 \
-		aws-credential-types-1.2.1 \
-		aws-runtime-1.5.5 \
-		aws-sdk-bedrock-1.74.0 \
-		aws-sdk-bedrockruntime-1.74.0 \
-		aws-sdk-sso-1.59.0 \
-		aws-sdk-ssooidc-1.60.0 \
-		aws-sdk-sts-1.60.0 \
-		aws-sigv4-1.2.9 \
-		aws-smithy-async-1.2.4 \
-		aws-smithy-eventstream-0.60.6 \
-		aws-smithy-http-0.60.12 \
-		aws-smithy-json-0.61.2 \
+		aws-config-1.6.0 \
+		aws-credential-types-1.2.2 \
+		aws-lc-rs-1.12.6 \
+		aws-lc-sys-0.27.1 \
+		aws-runtime-1.5.6 \
+		aws-sdk-bedrock-1.78.0 \
+		aws-sdk-bedrockruntime-1.77.0 \
+		aws-sdk-sso-1.62.0 \
+		aws-sdk-ssooidc-1.63.0 \
+		aws-sdk-sts-1.63.0 \
+		aws-sigv4-1.3.0 \
+		aws-smithy-async-1.2.5 \
+		aws-smithy-eventstream-0.60.8 \
+		aws-smithy-http-0.62.0 \
+		aws-smithy-http-client-1.0.0 \
+		aws-smithy-json-0.61.3 \
 		aws-smithy-query-0.60.7 \
-		aws-smithy-runtime-1.7.8 \
-		aws-smithy-runtime-api-1.7.3 \
-		aws-smithy-types-1.2.13 \
+		aws-smithy-runtime-1.8.0 \
+		aws-smithy-runtime-api-1.7.4 \
+		aws-smithy-types-1.3.0 \
 		aws-smithy-xml-0.60.9 \
-		aws-types-1.3.5 \
+		aws-types-1.3.6 \
 		backtrace-0.3.74 \
 		base64-0.21.7 \
 		base64-0.22.1 \
 		base64-simd-0.8.0 \
+		bindgen-0.69.5 \
 		bit_field-0.10.2 \
 		bitflags-1.3.2 \
 		bitflags-2.8.0 \
@@ -73,19 +77,23 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		bytes-1.10.0 \
 		bytes-utils-0.1.4 \
 		cc-1.2.15 \
+		cexpr-0.6.0 \
 		cfg-expr-0.15.8 \
 		cfg-if-1.0.0 \
 		chrono-0.4.39 \
+		clang-sys-1.8.1 \
 		clap-4.5.30 \
 		clap_builder-4.5.30 \
 		clap_derive-4.5.28 \
 		clap_lex-0.7.4 \
+		cmake-0.1.54 \
 		color_quant-1.1.0 \
 		colorchoice-1.0.3 \
-		colored-2.2.0 \
+		colored-3.0.0 \
 		console-0.15.10 \
-		convert_case-0.6.0 \
+		convert_case-0.8.0 \
 		core-foundation-0.9.4 \
+		core-foundation-0.10.0 \
 		core-foundation-sys-0.8.7 \
 		cpufeatures-0.2.17 \
 		crc32fast-1.4.2 \
@@ -103,12 +111,14 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		derive_builder_macro-0.20.2 \
 		dialoguer-0.11.0 \
 		digest-0.10.7 \
-		dirs-5.0.1 \
-		dirs-sys-0.4.1 \
+		dirs-6.0.0 \
+		dirs-sys-0.5.0 \
 		displaydoc-0.2.5 \
+		dunce-1.0.5 \
 		either-1.13.0 \
 		encode_unicode-1.0.0 \
 		equivalent-1.0.2 \
+		errno-0.3.10 \
 		exr-1.73.0 \
 		fastrand-2.3.0 \
 		fdeflate-0.3.7 \
@@ -116,6 +126,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		flate2-1.0.35 \
 		fnv-1.0.7 \
 		form_urlencoded-1.2.1 \
+		fs_extra-1.3.0 \
 		futures-channel-0.3.31 \
 		futures-core-0.3.31 \
 		futures-sink-0.3.31 \
@@ -124,16 +135,20 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		fuzzy-matcher-0.3.7 \
 		generic-array-0.14.7 \
 		getrandom-0.2.15 \
+		getrandom-0.3.2 \
 		gif-0.13.1 \
 		gimli-0.31.1 \
+		glob-0.3.2 \
 		globset-0.4.15 \
 		h2-0.3.26 \
+		h2-0.4.8 \
 		half-2.4.1 \
 		handlebars-6.3.1 \
 		hashbrown-0.15.2 \
 		heck-0.5.0 \
 		hex-0.4.3 \
 		hmac-0.12.1 \
+		home-0.5.11 \
 		html-escape-0.2.13 \
 		http-0.2.12 \
 		http-1.2.0 \
@@ -143,7 +158,10 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		httparse-1.10.0 \
 		httpdate-1.0.3 \
 		hyper-0.14.32 \
+		hyper-1.6.0 \
 		hyper-rustls-0.24.2 \
+		hyper-rustls-0.27.5 \
+		hyper-util-0.1.10 \
 		iana-time-zone-0.1.61 \
 		iana-time-zone-haiku-0.1.2 \
 		icu_collections-1.5.0 \
@@ -173,10 +191,13 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		jpeg-decoder-0.3.1 \
 		js-sys-0.3.77 \
 		lazy_static-1.5.0 \
+		lazycell-1.3.0 \
 		lebe-0.5.2 \
 		libc-0.2.169 \
 		libfuzzer-sys-0.4.9 \
+		libloading-0.8.6 \
 		libredox-0.1.3 \
+		linux-raw-sys-0.4.15 \
 		litemap-0.7.4 \
 		lock_api-0.4.12 \
 		log-0.4.26 \
@@ -218,35 +239,46 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		portable-atomic-1.10.0 \
 		powerfmt-0.2.0 \
 		ppv-lite86-0.2.20 \
+		prettyplease-0.2.31 \
 		proc-macro2-1.0.93 \
 		profiling-1.0.16 \
 		profiling-procmacros-1.0.16 \
 		qoi-0.4.1 \
 		quick-error-2.0.1 \
-		quick-xml-0.31.0 \
+		quick-xml-0.37.2 \
 		quote-1.0.38 \
+		r-efi-5.2.0 \
 		rand-0.8.5 \
+		rand-0.9.0 \
 		rand_chacha-0.3.1 \
+		rand_chacha-0.9.0 \
 		rand_core-0.6.4 \
+		rand_core-0.9.3 \
 		rav1e-0.7.1 \
 		ravif-0.11.11 \
 		rayon-1.10.0 \
 		rayon-core-1.12.1 \
 		redox_syscall-0.5.9 \
-		redox_users-0.4.6 \
+		redox_users-0.5.0 \
 		regex-1.11.1 \
 		regex-automata-0.4.9 \
 		regex-lite-0.1.6 \
 		regex-syntax-0.8.5 \
 		rgb-0.8.50 \
 		ring-0.17.10 \
-		ron-0.8.1 \
+		ron-0.9.0 \
 		rustc-demangle-0.1.24 \
+		rustc-hash-1.1.0 \
 		rustc_version-0.4.1 \
+		rustix-0.38.44 \
 		rustls-0.21.12 \
+		rustls-0.23.25 \
 		rustls-native-certs-0.6.3 \
+		rustls-native-certs-0.8.1 \
 		rustls-pemfile-1.0.4 \
+		rustls-pki-types-1.11.0 \
 		rustls-webpki-0.101.7 \
+		rustls-webpki-0.103.0 \
 		rustversion-1.0.19 \
 		ryu-1.0.19 \
 		same-file-1.0.6 \
@@ -254,6 +286,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		scopeguard-1.2.0 \
 		sct-0.7.1 \
 		security-framework-2.11.1 \
+		security-framework-3.2.0 \
 		security-framework-sys-2.14.0 \
 		semver-1.0.25 \
 		serde-1.0.218 \
@@ -290,10 +323,13 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		tokio-1.43.0 \
 		tokio-macros-2.5.0 \
 		tokio-rustls-0.24.1 \
+		tokio-rustls-0.26.2 \
 		tokio-util-0.7.13 \
 		toml-0.8.20 \
 		toml_datetime-0.6.8 \
 		toml_edit-0.22.24 \
+		tower-0.5.2 \
+		tower-layer-0.3.3 \
 		tower-service-0.3.3 \
 		tracing-0.1.41 \
 		tracing-attributes-0.1.28 \
@@ -319,6 +355,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		walkdir-2.5.0 \
 		want-0.3.1 \
 		wasi-0.11.0+wasi-snapshot-preview1 \
+		wasi-0.14.2+wasi-0.2.4 \
 		wasm-bindgen-0.2.100 \
 		wasm-bindgen-backend-0.2.100 \
 		wasm-bindgen-macro-0.2.100 \
@@ -326,36 +363,31 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		wasm-bindgen-shared-0.2.100 \
 		web-time-1.1.0 \
 		weezl-0.1.8 \
+		which-4.4.2 \
 		winapi-util-0.1.9 \
 		windows-core-0.52.0 \
-		windows-sys-0.48.0 \
 		windows-sys-0.52.0 \
 		windows-sys-0.59.0 \
-		windows-targets-0.48.5 \
 		windows-targets-0.52.6 \
-		windows_aarch64_gnullvm-0.48.5 \
 		windows_aarch64_gnullvm-0.52.6 \
-		windows_aarch64_msvc-0.48.5 \
 		windows_aarch64_msvc-0.52.6 \
-		windows_i686_gnu-0.48.5 \
 		windows_i686_gnu-0.52.6 \
 		windows_i686_gnullvm-0.52.6 \
-		windows_i686_msvc-0.48.5 \
 		windows_i686_msvc-0.52.6 \
-		windows_x86_64_gnu-0.48.5 \
 		windows_x86_64_gnu-0.52.6 \
-		windows_x86_64_gnullvm-0.48.5 \
 		windows_x86_64_gnullvm-0.52.6 \
-		windows_x86_64_msvc-0.48.5 \
 		windows_x86_64_msvc-0.52.6 \
 		winnow-0.7.3 \
+		wit-bindgen-rt-0.39.0 \
 		write16-1.0.0 \
 		writeable-0.5.5 \
 		xmlparser-0.13.6 \
 		yoke-0.7.5 \
 		yoke-derive-0.7.5 \
 		zerocopy-0.7.35 \
+		zerocopy-0.8.23 \
 		zerocopy-derive-0.7.35 \
+		zerocopy-derive-0.8.23 \
 		zerofrom-0.1.5 \
 		zerofrom-derive-0.1.5 \
 		zeroize-1.8.1 \
