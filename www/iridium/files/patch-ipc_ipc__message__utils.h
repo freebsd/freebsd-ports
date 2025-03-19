@@ -1,6 +1,6 @@
---- ipc/ipc_message_utils.h.orig	2022-04-01 07:48:30 UTC
+--- ipc/ipc_message_utils.h.orig	2025-03-18 16:46:04 UTC
 +++ ipc/ipc_message_utils.h
-@@ -214,7 +214,7 @@ struct ParamTraits<unsigned int> {
+@@ -215,7 +215,7 @@ struct ParamTraits<unsigned int> {
  // Since we want to support Android 32<>64 bit IPC, as long as we don't have
  // these traits for 32 bit ARM then that'll catch any errors.
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || \

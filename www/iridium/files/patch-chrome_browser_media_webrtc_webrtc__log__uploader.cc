@@ -1,6 +1,6 @@
---- chrome/browser/media/webrtc/webrtc_log_uploader.cc.orig	2024-11-04 08:56:03 UTC
+--- chrome/browser/media/webrtc/webrtc_log_uploader.cc.orig	2025-03-18 16:46:04 UTC
 +++ chrome/browser/media/webrtc/webrtc_log_uploader.cc
-@@ -106,7 +106,7 @@ std::string GetLogUploadProduct() {
+@@ -108,7 +108,7 @@ std::string GetLogUploadProduct() {
    const char product[] = "Chrome_Mac";
  // TODO(crbug.com/40118868): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.

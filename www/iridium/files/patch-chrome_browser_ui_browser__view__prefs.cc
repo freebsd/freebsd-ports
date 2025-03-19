@@ -1,6 +1,6 @@
---- chrome/browser/ui/browser_view_prefs.cc.orig	2023-07-24 14:27:53 UTC
+--- chrome/browser/ui/browser_view_prefs.cc.orig	2025-03-18 16:46:04 UTC
 +++ chrome/browser/ui/browser_view_prefs.cc
-@@ -15,7 +15,7 @@
+@@ -14,7 +14,7 @@
  
  namespace {
  
@@ -9,7 +9,7 @@
  bool GetCustomFramePrefDefault() {
  #if BUILDFLAG(IS_OZONE)
    return ui::OzonePlatform::GetInstance()
-@@ -31,7 +31,7 @@ bool GetCustomFramePrefDefault() {
+@@ -30,7 +30,7 @@ bool GetCustomFramePrefDefault() {
  
  void RegisterBrowserViewProfilePrefs(
      user_prefs::PrefRegistrySyncable* registry) {

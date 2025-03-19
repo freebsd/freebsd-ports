@@ -1,6 +1,6 @@
---- chrome/browser/ui/webui/certificate_manager/certificate_manager_handler.cc.orig	2025-02-22 18:06:53 UTC
+--- chrome/browser/ui/webui/certificate_manager/certificate_manager_handler.cc.orig	2025-03-18 16:46:04 UTC
 +++ chrome/browser/ui/webui/certificate_manager/certificate_manager_handler.cc
-@@ -216,7 +216,7 @@ CertificateManagerPageHandler::GetCertSource(
+@@ -221,7 +221,7 @@ CertificateManagerPageHandler::GetCertSource(
                  CERTIFICATE_TRUST_TYPE_DISTRUSTED,
              profile_, &remote_client_);
          break;

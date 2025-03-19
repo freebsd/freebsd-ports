@@ -1,7 +1,7 @@
---- components/device_signals/core/common/signals_features.cc.orig	2025-02-22 18:06:53 UTC
+--- components/device_signals/core/common/signals_features.cc.orig	2025-03-18 16:46:04 UTC
 +++ components/device_signals/core/common/signals_features.cc
-@@ -50,7 +50,7 @@ bool IsNewFunctionEnabled(NewEvFunction new_ev_functio
- }
+@@ -11,7 +11,7 @@ BASE_FEATURE(kAllowClientCertificateReportingForUsers,
+              base::FEATURE_ENABLED_BY_DEFAULT);
  
  #if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || \
 -    BUILDFLAG(IS_CHROMEOS)

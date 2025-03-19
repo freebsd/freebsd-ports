@@ -1,6 +1,6 @@
---- chrome/browser/ui/task_manager/task_manager_columns.h.orig	2025-02-22 18:06:53 UTC
+--- chrome/browser/ui/task_manager/task_manager_columns.h.orig	2025-03-18 16:46:04 UTC
 +++ chrome/browser/ui/task_manager/task_manager_columns.h
-@@ -278,7 +278,7 @@ inline constexpr std::array kColumns = {
+@@ -277,7 +277,7 @@ inline constexpr std::array kColumns = {
                      .default_visibility = false},
  #endif
  
