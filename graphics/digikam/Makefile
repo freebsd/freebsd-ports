@@ -116,6 +116,12 @@ MYSQL_INTERNAL_IMPLIES=		MYSQL
 
 SQLITE3_USE=		QT=sqldriver-sqlite:run
 
+post-install-AESTHETIC-on:
+	@${MKDIR} ${STAGEDIR}${DATADIR}/facesengine
+.for f in ${AESTHETIC_DISTFILES:C/:.*//}
+	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/${f} ${STAGEDIR}${DATADIR}/facesengine
+.endfor
+
 post-install-AUTOTAGS-on:
 	@${MKDIR} ${STAGEDIR}${DATADIR}/facesengine
 .for f in ${AUTOTAGS_DISTFILES:C/:.*//}
