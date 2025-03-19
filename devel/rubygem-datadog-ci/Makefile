@@ -1,5 +1,5 @@
 PORTNAME=	datadog-ci
-PORTVERSION=	1.13.0
+PORTVERSION=	1.14.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -12,6 +12,7 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.BSD3
 
 RUN_DEPENDS=	rubygem-datadog>=2.4<3:devel/rubygem-datadog \
+		rubygem-drb>=0:devel/rubygem-drb \
 		rubygem-msgpack>=0:devel/rubygem-msgpack
 
 USES=		gem
