@@ -1,11 +1,11 @@
 PORTNAME=	commonmark
-DISTVERSION=	1.9.2
+DISTVERSION=	1.9.5
 CATEGORIES=	textproc
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	High Performance CommonMark and Github Markdown Rendering in R
-WWW=		https://cran.r-project.org/web/packages/commonmark/
+WWW=		https://cran.r-project.org/package=commonmark
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
