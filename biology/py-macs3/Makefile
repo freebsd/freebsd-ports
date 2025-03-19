@@ -30,7 +30,7 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR} \
 USES=		localbase perl5 python shebangfix
 USE_GITHUB=	yes
 USE_PERL5=	test
-USE_PYTHON=	autoplist concurrent pep517
+USE_PYTHON=	autoplist concurrent distutils
 
 GH_ACCOUNT=	macs3-project
 GH_PROJECT=	MACS
