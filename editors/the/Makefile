@@ -32,7 +32,7 @@ REXX_IMC_DESC=		Use Rexx/imc interpreter
 REGINA_DESC=		Use Regina Rexx interpreter
 
 XAW3D_CONFIGURE_WITH=	xaw3d
-XAW3D_BUILD_DEPENDS=	${LOCALBASE}/lib/libXaw3d.a:x11-toolkits/Xaw3d
+XAW3D_BUILD_DEPENDS=	${LOCALBASE}/lib/libXaw3d.a:x11-toolkits/libXaw3d
 
 NCURSES_USES=		ncurses
 NCURSES_CONFIGURE_ON=	--with-ncurses \

@@ -8,7 +8,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PostScript and PDF previewer
 WWW=		https://www.gnu.org/software/gv/
 
-LIB_DEPENDS=	libXaw3d.so:x11-toolkits/Xaw3d
+LIB_DEPENDS=	libXaw3d.so:x11-toolkits/libXaw3d
 
 USES=		cpe ghostscript:x11 iconv gmake perl5 shebangfix xorg
 USE_PERL5=	build

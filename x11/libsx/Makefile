@@ -8,7 +8,7 @@ DISTNAME=	${PORTNAME}
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Simple X11 library
 
-LIB_DEPENDS=	libXaw3d.so:x11-toolkits/Xaw3d
+LIB_DEPENDS=	libXaw3d.so:x11-toolkits/libXaw3d
 
 USES=		tar:Z xorg
 USE_XORG=	x11 xaw xext xmu xt

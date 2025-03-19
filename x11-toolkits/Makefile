@@ -1,7 +1,6 @@
     COMMENT = X11 toolkits
 
     SUBDIR += SoXt
-    SUBDIR += Xaw3d
     SUBDIR += Xmt
     SUBDIR += amtk
     SUBDIR += aquamarine
@@ -81,6 +80,7 @@
     SUBDIR += kproperty
     SUBDIR += lesstif
     SUBDIR += libXaw
+    SUBDIR += libXaw3d
     SUBDIR += libXmu
     SUBDIR += libXt
     SUBDIR += libadwaita

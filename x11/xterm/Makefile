@@ -73,7 +73,7 @@ WCHAR_CONFIGURE_ENABLE=		wide-chars
 WCHAR_VARS=			PKGMESSAGE="${PKGDIR}/pkg-message.wchar"
 XAW3DXFT_LIB_DEPENDS=		libXaw3dxft.so:x11-toolkits/libxaw3dxft
 XAW3DXFT_CONFIGURE_WITH=	Xaw3dxft
-XAW3D_LIB_DEPENDS=		libXaw3d.so:x11-toolkits/Xaw3d
+XAW3D_LIB_DEPENDS=		libXaw3d.so:x11-toolkits/libXaw3d
 XAW3D_CONFIGURE_WITH=		Xaw3d
 XAW_USE=			XORG=xaw
 XINERAMA_USE=			XORG=xinerama,xorgproto

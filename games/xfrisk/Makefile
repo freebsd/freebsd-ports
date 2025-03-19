@@ -17,7 +17,7 @@ LICENSE_TEXT_CR=	Possible trademark infringement
 LICENSE_FILE_GPLv2+ =	${WRKSRC}/COPYING
 LICENSE_PERMS_CR=	dist-mirror pkg-mirror auto-accept
 
-LIB_DEPENDS=	libXaw3d.so:x11-toolkits/Xaw3d
+LIB_DEPENDS=	libXaw3d.so:x11-toolkits/libXaw3d
 
 WRKSRC=		${WRKDIR}/XFrisk
 

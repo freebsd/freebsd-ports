@@ -1,8 +1,10 @@
-PORTNAME=	Xaw3d
+PORTNAME=	libXaw3d
 PORTVERSION=	1.5E
 PORTREVISION=	8
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://slackware.cs.utah.edu/pub/slackware/slackware64-13.1/source/x/xaw3d/
+DISTNAME=	Xaw3d-${DISTVERSIONPREFIX}${DISTVERSION}${DISTVERSIONSUFFIX}
+DOCSDIR=	${PREFIX}/share/doc/Xaw3d
 
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	3-D Athena Widget set that looks like Motif

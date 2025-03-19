@@ -58,7 +58,7 @@ XAW_DESC=		X Athena Widgets
 XAW_USE=		XORG=xaw
 XAW_CONFIGURE_ON=	--with-screen=athena
 XAW3D_DESC=		X Athena Widgets with 3D effect
-XAW3D_LIB_DEPENDS=	libXaw3d.so:x11-toolkits/Xaw3d
+XAW3D_LIB_DEPENDS=	libXaw3d.so:x11-toolkits/libXaw3d
 XAW3D_CONFIGURE_ON=	--enable-colored-menus \
 			--with-Xaw3d \
 			--with-screen=xaw3d

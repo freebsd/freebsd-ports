@@ -9,7 +9,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fully featured neural network simulator
 WWW=		https://www.ra.cs.uni-tuebingen.de/SNNS/
 
-LIB_DEPENDS=	libXaw3d.so:x11-toolkits/Xaw3d
+LIB_DEPENDS=	libXaw3d.so:x11-toolkits/libXaw3d
 
 USES=		xorg
 USE_XORG=	x11 xext xt

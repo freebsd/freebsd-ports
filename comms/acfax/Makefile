@@ -10,7 +10,7 @@ COMMENT=	Receive faxes using sound card and radio
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libXaw3d.so:x11-toolkits/Xaw3d \
+LIB_DEPENDS=	libXaw3d.so:x11-toolkits/libXaw3d \
 		libgnuregex.so.6:devel/libgnuregex
 
 USES=		imake xorg

@@ -15,7 +15,7 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 LIB_DEPENDS=	libpng.so:graphics/png \
 		libtiff.so:graphics/tiff \
-		libXaw3d.so:x11-toolkits/Xaw3d
+		libXaw3d.so:x11-toolkits/libXaw3d
 RUN_DEPENDS=	fig2dev:print/fig2dev
 
 USES=		cpe desktop-file-utils gmake ghostscript:lib jpeg localbase:ldflags \

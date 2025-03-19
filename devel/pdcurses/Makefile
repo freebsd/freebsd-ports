@@ -35,7 +35,7 @@ DEBUG_CONFIGURE_ENABLE=		debug
 LATIN1_CONFIGURE_ENABLE=	latin1
 NEXTAW_LIB_DEPENDS=		libneXtaw.so:x11-toolkits/neXtaw
 NEXTAW_CONFIGURE_WITH=		nextaw
-XAW3D_LIB_DEPENDS=		libXaw3d.so:x11-toolkits/Xaw3d
+XAW3D_LIB_DEPENDS=		libXaw3d.so:x11-toolkits/libXaw3d
 XAW3D_CONFIGURE_WITH=		xaw3d
 
 #post-install:

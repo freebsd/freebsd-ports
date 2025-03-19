@@ -40,7 +40,7 @@ VGAFONT_EXTRACT_DEPENDS= \
 VGAFONT_BUILD_DEPENDS= \
     ${LOCALBASE}/bin/mkfontscale:x11-fonts/mkfontscale
 VGAFONT_USES=	fonts
-XAW3DLIB_LIB_DEPENDS=	libXaw3d.so:x11-toolkits/Xaw3d
+XAW3DLIB_LIB_DEPENDS=	libXaw3d.so:x11-toolkits/libXaw3d
 
 .include <bsd.port.options.mk>
 

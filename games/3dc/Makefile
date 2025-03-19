@@ -11,7 +11,7 @@ COMMENT=	3-Dimensional Chess for X Window System
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/../GPL
 
-LIB_DEPENDS=	libXaw3d.so:x11-toolkits/Xaw3d
+LIB_DEPENDS=	libXaw3d.so:x11-toolkits/libXaw3d
 
 USES=		perl5 xorg
 USE_PERL5=	build
