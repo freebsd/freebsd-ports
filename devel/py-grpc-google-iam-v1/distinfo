@@ -1,3 +1,3 @@
-TIMESTAMP = 1739663379
-SHA256 (grpc_google_iam_v1-0.14.0.tar.gz) = c66e07aa642e39bb37950f9e7f491f70dad150ac9801263b42b2814307c2df99
-SIZE (grpc_google_iam_v1-0.14.0.tar.gz) = 18327
+TIMESTAMP = 1742070360
+SHA256 (grpc_google_iam_v1-0.14.1.tar.gz) = 14149f37af0e5779fa8a22a8ae588663269e8a479d9c2e69a5056e589bf8a891
+SIZE (grpc_google_iam_v1-0.14.1.tar.gz) = 16263
