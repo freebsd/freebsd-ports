@@ -1,6 +1,6 @@
 PORTNAME=	dm-types
 PORTVERSION=	1.2.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 
@@ -17,7 +17,7 @@ RUN_DEPENDS=	rubygem-bcrypt-ruby>=3.0<4:security/rubygem-bcrypt-ruby \
 		rubygem-json1>=1.6<2:devel/rubygem-json1 \
 		rubygem-multi_json>=1.0<2:devel/rubygem-multi_json \
 		rubygem-stringex>=1.4,1:devel/rubygem-stringex \
-		rubygem-uuidtools>=2.1<3:devel/rubygem-uuidtools
+		rubygem-uuidtools>=2.1:devel/rubygem-uuidtools
 
 USES=		gem
 
