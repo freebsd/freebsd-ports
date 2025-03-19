@@ -6647,6 +6647,7 @@
     SUBDIR += rubygem-aws-sdk-freetier
     SUBDIR += rubygem-aws-sdk-fsx
     SUBDIR += rubygem-aws-sdk-gamelift
+    SUBDIR += rubygem-aws-sdk-gameliftstreams
     SUBDIR += rubygem-aws-sdk-gamesparks
     SUBDIR += rubygem-aws-sdk-geomaps
     SUBDIR += rubygem-aws-sdk-geoplaces
