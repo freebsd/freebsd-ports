@@ -1,6 +1,6 @@
 PORTNAME=	mise
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2025.3.3
+DISTVERSION=	2025.3.6
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -50,8 +50,8 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		arrayvec-0.5.2 \
 		arrayvec-0.7.6 \
 		assert-json-diff-2.0.2 \
-		async-compression-0.4.20 \
-		async-trait-0.1.87 \
+		async-compression-0.4.21 \
+		async-trait-0.1.88 \
 		atomic-waker-1.1.2 \
 		autocfg-1.4.0 \
 		backtrace-0.3.71 \
@@ -133,12 +133,12 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		dashmap-5.5.3 \
 		dashmap-6.1.0 \
 		deflate64-0.1.9 \
-		demand-1.6.4 \
+		demand-1.6.5 \
 		der-0.7.9 \
-		deranged-0.3.11 \
+		deranged-0.4.0 \
 		derive_arbitrary-1.4.1 \
 		derive_more-0.99.19 \
-		deunicode-1.6.0 \
+		deunicode-1.6.1 \
 		diff-0.1.13 \
 		digest-0.10.7 \
 		directories-5.0.1 \
@@ -178,7 +178,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		fluent-langneg-0.13.0 \
 		fluent-syntax-0.11.1 \
 		fnv-1.0.7 \
-		foldhash-0.1.4 \
+		foldhash-0.1.5 \
 		foreign-types-0.3.2 \
 		foreign-types-shared-0.1.1 \
 		form_urlencoded-1.2.1 \
@@ -196,7 +196,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		fuzzy-matcher-0.3.7 \
 		generic-array-0.14.7 \
 		getrandom-0.2.15 \
-		getrandom-0.3.1 \
+		getrandom-0.3.2 \
 		ghash-0.5.1 \
 		gimli-0.28.1 \
 		gix-0.70.0 \
@@ -434,10 +434,11 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		proc-macro2-1.0.94 \
 		prodash-29.0.1 \
 		quick-xml-0.37.2 \
-		quinn-0.11.6 \
-		quinn-proto-0.11.9 \
+		quinn-0.11.7 \
+		quinn-proto-0.11.10 \
 		quinn-udp-0.5.10 \
 		quote-1.0.40 \
+		r-efi-5.2.0 \
 		rand-0.8.5 \
 		rand-0.9.0 \
 		rand_chacha-0.3.1 \
@@ -469,11 +470,11 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		rustc_version-0.4.1 \
 		rustix-0.38.44 \
 		rustix-1.0.2 \
-		rustls-0.23.23 \
+		rustls-0.23.25 \
 		rustls-native-certs-0.8.1 \
 		rustls-pemfile-2.2.0 \
 		rustls-pki-types-1.11.0 \
-		rustls-webpki-0.102.8 \
+		rustls-webpki-0.103.0 \
 		rustversion-1.0.20 \
 		ryu-1.0.20 \
 		salsa20-0.10.2 \
@@ -555,9 +556,9 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		thiserror-impl-1.0.69 \
 		thiserror-impl-2.0.12 \
 		thread_local-1.1.8 \
-		time-0.3.39 \
-		time-core-0.1.3 \
-		time-macros-0.2.20 \
+		time-0.3.40 \
+		time-core-0.1.4 \
+		time-macros-0.2.21 \
 		tinystr-0.7.6 \
 		tinyvec-1.9.0 \
 		tinyvec_macros-0.1.1 \
@@ -605,7 +606,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		untrusted-0.9.0 \
 		url-2.5.4 \
 		urlencoding-2.1.3 \
-		usage-lib-2.0.5 \
+		usage-lib-2.0.6 \
 		utf16_iter-1.0.5 \
 		utf8_iter-1.0.4 \
 		utf8parse-0.2.2 \
@@ -619,7 +620,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		walkdir-2.5.0 \
 		want-0.3.1 \
 		wasi-0.11.0+wasi-snapshot-preview1 \
-		wasi-0.13.3+wasi-0.2.2 \
+		wasi-0.14.2+wasi-0.2.4 \
 		wasm-bindgen-0.2.100 \
 		wasm-bindgen-backend-0.2.100 \
 		wasm-bindgen-futures-0.4.50 \
@@ -630,7 +631,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		web-time-1.1.0 \
 		webpki-roots-0.26.8 \
 		which-7.0.2 \
-		widestring-1.1.0 \
+		widestring-1.2.0 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-util-0.1.9 \
@@ -677,7 +678,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		winnow-0.6.24 \
 		winnow-0.7.4 \
 		winsafe-0.0.19 \
-		wit-bindgen-rt-0.33.0 \
+		wit-bindgen-rt-0.39.0 \
 		write16-1.0.0 \
 		writeable-0.5.5 \
 		x25519-dalek-2.0.1 \
@@ -697,7 +698,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		zeroize_derive-1.4.2 \
 		zerovec-0.10.4 \
 		zerovec-derive-0.10.3 \
-		zip-2.2.3 \
+		zip-2.4.1 \
 		zipsign-api-0.1.3 \
 		zopfli-0.8.1 \
 		zstd-0.13.3 \
