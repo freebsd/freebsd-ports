@@ -268,6 +268,7 @@
     SUBDIR += noattach
     SUBDIR += nocc
     SUBDIR += normalizemime
+    SUBDIR += notimail
     SUBDIR += notmuch
     SUBDIR += notmuch-emacs
     SUBDIR += notmuch-mutt
