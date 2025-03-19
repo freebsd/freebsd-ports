@@ -132,6 +132,9 @@
 %%DATADIR%%/eur_nkg_nkgrf03vel_realigned.tif
 %%DATADIR%%/eur_nkg_nkgrf17vel.tif
 %%DATADIR%%/fi_nls_README.txt
+%%DATADIR%%/fi_nls_fin2000.tif
+%%DATADIR%%/fi_nls_fin2005n00.tif
+%%DATADIR%%/fi_nls_fin2023n2000.tif
 %%DATADIR%%/fi_nls_n43_n60.json
 %%DATADIR%%/fi_nls_n60_n2000.json
 %%DATADIR%%/fi_nls_ykj_etrs35fin.json
@@ -151,6 +154,7 @@
 %%DATADIR%%/fr_ign_RAR07_bl.tif
 %%DATADIR%%/fr_ign_RASPM2018.tif
 %%DATADIR%%/fr_ign_README.txt
+%%DATADIR%%/fr_ign_RGM04versRGM23.tif
 %%DATADIR%%/fr_ign_gg10_sbv2.tif
 %%DATADIR%%/fr_ign_gg10_smv2.tif
 %%DATADIR%%/fr_ign_ggg00_lsv2.tif
@@ -197,6 +201,8 @@
 %%DATADIR%%/is_lmi_README.txt
 %%DATADIR%%/jp_gsi_README.txt
 %%DATADIR%%/jp_gsi_gsigeo2011.tif
+%%DATADIR%%/lv_lgia_README.txt
+%%DATADIR%%/lv_lgia_lv14.tif
 %%DATADIR%%/mx_inegi_README.txt
 %%DATADIR%%/mx_inegi_ggm10.tif
 %%DATADIR%%/nc_dittt_RANC15.tif
