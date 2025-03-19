@@ -1,5 +1,5 @@
 PORTNAME=	pydantic-extra-types
-PORTVERSION=	2.10.2
+PORTVERSION=	2.10.3
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -33,6 +33,7 @@ PYTHON_ULID_DESC=	ULID support
 ALL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pendulum>=2.0.0<4.0.0:devel/py-pendulum@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}phonenumbers>=8<9:devel/py-phonenumbers@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}pycountry>=23:textproc/py-pycountry@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}pymongo>=3.0.0<5.0.0:databases/py-pymongo@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}python-ulid>=1<4:textproc/py-python-ulid@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}pytz>=2024.1,1:devel/py-pytz@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}semver>=3.0.2:devel/py-semver@${PY_FLAVOR} \
