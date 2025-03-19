@@ -1749,6 +1749,7 @@
     SUBDIR += py-google-cloud-appengine-logging
     SUBDIR += py-google-cloud-audit-log
     SUBDIR += py-google-cloud-bigquery
+    SUBDIR += py-google-cloud-bigquery-storage
     SUBDIR += py-google-cloud-bigtable
     SUBDIR += py-google-cloud-compute
     SUBDIR += py-google-cloud-core
