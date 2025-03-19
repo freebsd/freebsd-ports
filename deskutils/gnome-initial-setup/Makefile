@@ -23,7 +23,7 @@ LIB_DEPENDS=	libaccountsservice.so:sysutils/accountsservice \
 		libhandy-1.so:x11-toolkits/libhandy \
 		libpwquality.so:security/libpwquality \
 		librest-1.0.so:net/librest1 \
-		libwebkit2gtk-6.0.so:www/webkit2-gtk@60
+		libwebkitgtk-6.0.so:www/webkit2-gtk@60
 RUN_DEPENDS=	gdm>=3.0.0:x11/gdm \
 		krb5>0:security/krb5
 
