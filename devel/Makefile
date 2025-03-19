@@ -8337,7 +8337,6 @@
     SUBDIR += urjtag
     SUBDIR += ut
     SUBDIR += utf8cpp
-    SUBDIR += utf8cpp3
     SUBDIR += uthash
     SUBDIR += util-linux
     SUBDIR += uv
