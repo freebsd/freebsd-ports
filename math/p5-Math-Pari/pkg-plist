@@ -3,6 +3,8 @@
 %%PERL5_MAN3%%/Math::libPARI.3.gz
 %%SITE_ARCH%%/Math/Pari.pm
 %%SITE_ARCH%%/Math/PariInit.pm
+%%PERL5_MAN3%%/Math::libPARI.dumb.3.gz
+%%SITE_ARCH%%/Math/libPARI.dumb.pod
 %%SITE_ARCH%%/Math/libPARI.pod
 %%SITE_ARCH%%/auto/Math/Pari/libpari-gmp.so.2
 %%SITE_ARCH%%/auto/Math/Pari/libpari-gmp.so.2.3.5

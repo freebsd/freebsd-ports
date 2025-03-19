@@ -1,6 +1,6 @@
 PORTNAME=	Math-Pari
-PORTVERSION=	2.01080900
-PORTREVISION=	2
+PORTVERSION=	2.030518
+PORTEPOCH=	1
 CATEGORIES=	math perl5
 MASTER_SITES=	CPAN  \
 		http://pari.math.u-bordeaux.fr/pub/pari/unix/OLD/2.3/:pari \
