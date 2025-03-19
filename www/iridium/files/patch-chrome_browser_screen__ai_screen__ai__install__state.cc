@@ -1,4 +1,4 @@
---- chrome/browser/screen_ai/screen_ai_install_state.cc.orig	2024-12-22 12:24:29 UTC
+--- chrome/browser/screen_ai/screen_ai_install_state.cc.orig	2025-03-18 16:46:04 UTC
 +++ chrome/browser/screen_ai/screen_ai_install_state.cc
 @@ -16,7 +16,7 @@
  #include "services/screen_ai/public/cpp/utilities.h"
@@ -10,7 +10,7 @@
  #include "base/files/file_util.h"
  #endif
 @@ -26,7 +26,7 @@ const int kScreenAICleanUpDelayInDays = 30;
- const char kMinExpectedVersion[] = "124.2";
+ const char kMinExpectedVersion[] = "127.9";
  
  bool IsDeviceCompatible() {
 -#if BUILDFLAG(IS_LINUX)

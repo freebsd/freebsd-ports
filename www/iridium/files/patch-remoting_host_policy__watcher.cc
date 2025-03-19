@@ -1,6 +1,6 @@
---- remoting/host/policy_watcher.cc.orig	2024-08-27 06:28:16 UTC
+--- remoting/host/policy_watcher.cc.orig	2025-03-18 16:46:04 UTC
 +++ remoting/host/policy_watcher.cc
-@@ -178,7 +178,7 @@ base::Value::Dict PolicyWatcher::GetDefaultPolicies() 
+@@ -177,7 +177,7 @@ base::Value::Dict PolicyWatcher::GetDefaultPolicies() 
               true);
    result.Set(key::kRemoteAccessHostAllowEnterpriseFileTransfer, false);
  #endif

@@ -1,6 +1,6 @@
---- chrome/browser/ui/views/frame/browser_view.cc.orig	2025-02-22 18:06:53 UTC
+--- chrome/browser/ui/views/frame/browser_view.cc.orig	2025-03-18 16:46:04 UTC
 +++ chrome/browser/ui/views/frame/browser_view.cc
-@@ -2368,7 +2368,7 @@ void BrowserView::ToolbarSizeChanged(bool is_animating
+@@ -2489,7 +2489,7 @@ void BrowserView::ToolbarSizeChanged(bool is_animating
  }
  
  void BrowserView::TabDraggingStatusChanged(bool is_dragging) {
