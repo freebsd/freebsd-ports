@@ -22,6 +22,7 @@ USES=		cmake compiler:c++11-lang dos2unix gettext-tools pkgconfig sdl
 DOS2UNIX_GLOB=	*.cpp *.h CMakeLists.txt Dependencies.cmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	diasurgical
+GH_PROJECT=	DevilutionX
 GH_TUPLE=	diasurgical:libsmackerdec:91e732bb6953489077430572f43fc802bf2c75b2:libsmackerdec/_deps/libsmackerdec-src \
 		diasurgical:libmpq:b78d66c6fee6a501cc9b95d8556a129c68841b05:libmpq/_deps/libmpq-src
 USE_SDL=	sdl2 image2

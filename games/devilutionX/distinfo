@@ -1,8 +1,8 @@
-TIMESTAMP = 1742323199
+TIMESTAMP = 1742380530
 SHA256 (devilutionx.mpq?tag=v4) = c563903af73f7037be0a7d3752e3422f2074b75cddce6bca951a138f3597197e
 SIZE (devilutionx.mpq?tag=v4) = 5293561
-SHA256 (diasurgical-devilutionX-1.5.4_GH0.tar.gz) = 3b4db4a0e1c2d72f2bcada18b7837d2b37e9fd6a7a3c8184a98cd77f4ee4420e
-SIZE (diasurgical-devilutionX-1.5.4_GH0.tar.gz) = 9835887
+SHA256 (diasurgical-DevilutionX-1.5.4_GH0.tar.gz) = 3b4db4a0e1c2d72f2bcada18b7837d2b37e9fd6a7a3c8184a98cd77f4ee4420e
+SIZE (diasurgical-DevilutionX-1.5.4_GH0.tar.gz) = 9835887
 SHA256 (diasurgical-libsmackerdec-91e732bb6953489077430572f43fc802bf2c75b2_GH0.tar.gz) = e565e37ef1ae4f8846d9c9c24b861bc56fdce2d7a4ece47de448e00aa9048b87
 SIZE (diasurgical-libsmackerdec-91e732bb6953489077430572f43fc802bf2c75b2_GH0.tar.gz) = 18576
 SHA256 (diasurgical-libmpq-b78d66c6fee6a501cc9b95d8556a129c68841b05_GH0.tar.gz) = 348cd9c2be9c067dfcb8a2d6cd6f947ade5088e1543c1e5db1fdc5b12db6aeea
