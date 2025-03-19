@@ -1,5 +1,5 @@
 PORTNAME=	brotli
-DISTVERSION=	1.3.1
+DISTVERSION=	1.3.2
 CATEGORIES=	archivers
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
@@ -19,7 +19,7 @@ TEST_DEPENDS=	R-cran-ggplot2>0:graphics/R-cran-ggplot2 \
 
 USES=		cran:auto-plist,compiles
 
-post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/R/library/brotli/bin/bro
+post-stage:
+	${RMDIR} ${STAGEDIR}${PREFIX}/${R_MOD_DIR}/bin
 
 .include <bsd.port.mk>
