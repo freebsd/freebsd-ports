@@ -1,0 +1,14 @@
+--- patches/electron-builder.patch.orig	2025-03-16 10:58:43 UTC
++++ patches/electron-builder.patch
+@@ -0,0 +1,11 @@
++--- a/out/cli/install-app-deps.js
+++++ b/out/cli/install-app-deps.js
++@@ -23,7 +23,7 @@ function configureInstallAppDepsCommand(yargs) {
++         "camel-case-expansion": false,
++     })
++         .option("platform", {
++-        choices: ["linux", "darwin", "win32"],
+++        choices: ["freebsd", "linux", "darwin", "win32"],
++         default: process.platform,
++         description: "The target platform",
++     })
