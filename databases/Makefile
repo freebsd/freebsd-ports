@@ -837,6 +837,7 @@
     SUBDIR += py-sqlalchemy14
     SUBDIR += py-sqlalchemy20
     SUBDIR += py-sqlcipher3
+    SUBDIR += py-sqlframe
     SUBDIR += py-sqlglot
     SUBDIR += py-sqlglotrs
     SUBDIR += py-sqlite-anyio

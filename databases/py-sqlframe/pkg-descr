@@ -1,0 +1,3 @@
+SQLFrame implements the PySpark DataFrame API in order to enable running
+transformation pipelines directly on database engines - no Spark clusters or
+dependencies required.
