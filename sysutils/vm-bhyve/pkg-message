@@ -14,6 +14,11 @@ OR
     vm_dir="/directory/path"
 
 Then run 'vm init'.
+
+It might be needed to increase the values of the following tunables.
+They need to be high enough to allow for a proper shutdown of all VM's.
+- kern.init_shutdown_timeout (adjusted with sysctcl.conf)
+- rcshutdown_timeout (adjusted with rc.conf)
 EOM
 }
 ]
