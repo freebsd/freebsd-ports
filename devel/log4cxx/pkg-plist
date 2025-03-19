@@ -67,6 +67,7 @@ include/log4cxx/helpers/relativetimedateformat.h
 include/log4cxx/helpers/resourcebundle.h
 include/log4cxx/helpers/serversocket.h
 include/log4cxx/helpers/simpledateformat.h
+include/log4cxx/helpers/singletonholder.h
 include/log4cxx/helpers/socket.h
 include/log4cxx/helpers/socketoutputstream.h
 include/log4cxx/helpers/strftimedateformat.h
@@ -152,6 +153,7 @@ include/log4cxx/private/log4cxx_private.h
 include/log4cxx/private/nteventlogappender_priv.h
 include/log4cxx/private/odbcappender_priv.h
 include/log4cxx/private/patternconverter_priv.h
+include/log4cxx/private/rollingfileappender_priv.h
 include/log4cxx/private/rollingpolicybase_priv.h
 include/log4cxx/private/serversocket_priv.h
 include/log4cxx/private/socket_priv.h
@@ -201,5 +203,5 @@ lib/cmake/log4cxx/log4cxxConfig.cmake
 lib/cmake/log4cxx/log4cxxConfigVersion.cmake
 lib/liblog4cxx.so
 lib/liblog4cxx.so.15
-lib/liblog4cxx.so.15.3.1
+lib/liblog4cxx.so.15.4.0
 libdata/pkgconfig/liblog4cxx.pc
