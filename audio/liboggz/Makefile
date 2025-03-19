@@ -1,5 +1,5 @@
 PORTNAME=	liboggz
-PORTVERSION=	1.1.2
+PORTVERSION=	1.1.3
 CATEGORIES=	audio
 MASTER_SITES=	https://ftp.osuosl.org/pub/xiph/releases/liboggz/
 
