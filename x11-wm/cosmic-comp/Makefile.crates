@@ -32,6 +32,7 @@ CARGO_CRATES=	ab_glyph-0.2.29 \
 		async-task-4.7.1 \
 		async-trait-0.1.85 \
 		atomic-waker-1.1.2 \
+		atomic_float-1.1.0 \
 		autocfg-1.4.0 \
 		backtrace-0.3.74 \
 		base64-0.21.7 \
@@ -39,9 +40,8 @@ CARGO_CRATES=	ab_glyph-0.2.29 \
 		basic-toml-0.1.9 \
 		bit-set-0.6.0 \
 		bit-vec-0.7.0 \
-		bit_field-0.10.2 \
 		bitflags-1.3.2 \
-		bitflags-2.7.0 \
+		bitflags-2.8.0 \
 		block-0.1.6 \
 		block-buffer-0.10.4 \
 		block2-0.5.1 \
@@ -51,6 +51,7 @@ CARGO_CRATES=	ab_glyph-0.2.29 \
 		bytemuck-1.21.0 \
 		bytemuck_derive-1.8.1 \
 		byteorder-1.5.0 \
+		byteorder-lite-0.1.0 \
 		bytes-1.9.0 \
 		calloop-0.13.0 \
 		calloop-0.14.2 \
@@ -63,6 +64,7 @@ CARGO_CRATES=	ab_glyph-0.2.29 \
 		cfg_aliases-0.2.1 \
 		cgmath-0.18.0 \
 		chrono-0.4.39 \
+		clap_lex-0.7.4 \
 		clipboard-win-5.4.0 \
 		cocoa-0.25.0 \
 		cocoa-foundation-0.1.2 \
@@ -80,8 +82,6 @@ CARGO_CRATES=	ab_glyph-0.2.29 \
 		cpufeatures-0.2.16 \
 		crc32fast-1.4.2 \
 		crossbeam-channel-0.5.14 \
-		crossbeam-deque-0.8.6 \
-		crossbeam-epoch-0.9.18 \
 		crossbeam-utils-0.8.21 \
 		crunchy-0.2.2 \
 		crypto-common-0.1.6 \
@@ -113,21 +113,20 @@ CARGO_CRATES=	ab_glyph-0.2.29 \
 		drm-fourcc-2.2.0 \
 		drm-sys-0.6.1 \
 		drm-sys-0.8.0 \
-		ecolor-0.29.1 \
-		egui-0.29.1 \
-		egui_extras-0.29.1 \
-		egui_glow-0.29.1 \
-		egui_plot-0.29.0 \
-		either-1.13.0 \
-		emath-0.29.1 \
+		ecolor-0.30.0 \
+		egui-0.30.0 \
+		egui_extras-0.30.0 \
+		egui_glow-0.30.0 \
+		egui_plot-0.30.0 \
+		emath-0.30.0 \
 		encoding_rs-0.8.35 \
 		endi-1.1.0 \
 		enum-map-2.7.3 \
 		enum-map-derive-0.17.0 \
 		enumflags2-0.7.10 \
 		enumflags2_derive-0.7.10 \
-		epaint-0.29.1 \
-		epaint_default_fonts-0.29.1 \
+		epaint-0.30.0 \
+		epaint_default_fonts-0.30.0 \
 		equivalent-1.0.1 \
 		errno-0.3.10 \
 		error-code-3.3.1 \
@@ -135,7 +134,6 @@ CARGO_CRATES=	ab_glyph-0.2.29 \
 		euclid-0.22.11 \
 		event-listener-5.4.0 \
 		event-listener-strategy-0.5.3 \
-		exr-1.73.0 \
 		fast-srgb8-1.0.0 \
 		fastrand-2.3.0 \
 		fdeflate-0.3.7 \
@@ -175,12 +173,13 @@ CARGO_CRATES=	ab_glyph-0.2.29 \
 		generic-array-0.14.7 \
 		gethostname-0.4.3 \
 		getrandom-0.2.15 \
+		getrandom-0.3.2 \
 		gif-0.13.1 \
 		gimli-0.31.1 \
 		gl_generator-0.14.0 \
 		glam-0.25.0 \
 		glow-0.13.1 \
-		glow-0.14.2 \
+		glow-0.16.0 \
 		glutin_wgl_sys-0.6.1 \
 		gpu-alloc-0.6.0 \
 		gpu-alloc-types-0.3.0 \
@@ -221,7 +220,7 @@ CARGO_CRATES=	ab_glyph-0.2.29 \
 		ident_case-1.0.1 \
 		idna-1.0.3 \
 		idna_adapter-1.2.0 \
-		image-0.24.9 \
+		image-0.25.5 \
 		imagesize-0.12.0 \
 		indexmap-1.9.3 \
 		indexmap-2.7.0 \
@@ -234,7 +233,6 @@ CARGO_CRATES=	ab_glyph-0.2.29 \
 		intl-memoizer-0.5.2 \
 		intl_pluralrules-7.0.2 \
 		io-lifetimes-1.0.11 \
-		io-lifetimes-2.0.4 \
 		itoa-1.0.14 \
 		jni-0.21.1 \
 		jni-sys-0.3.0 \
@@ -252,7 +250,6 @@ CARGO_CRATES=	ab_glyph-0.2.29 \
 		kurbo-0.10.4 \
 		kurbo-0.11.1 \
 		lazy_static-1.5.0 \
-		lebe-0.5.2 \
 		libc-0.2.169 \
 		libdisplay-info-0.2.2 \
 		libdisplay-info-derive-0.1.0 \
@@ -260,8 +257,8 @@ CARGO_CRATES=	ab_glyph-0.2.29 \
 		libloading-0.8.6 \
 		libm-0.2.11 \
 		libredox-0.1.3 \
-		libseat-0.2.1 \
-		libseat-sys-0.1.7 \
+		libseat-0.2.3 \
+		libseat-sys-0.1.9 \
 		libsystemd-0.7.0 \
 		libudev-sys-0.1.4 \
 		linux-raw-sys-0.4.15 \
@@ -270,7 +267,7 @@ CARGO_CRATES=	ab_glyph-0.2.29 \
 		litrs-0.4.1 \
 		locale_config-0.3.0 \
 		lock_api-0.4.12 \
-		log-0.4.22 \
+		log-0.4.25 \
 		log-panics-2.1.0 \
 		loom-0.7.2 \
 		lru-0.12.5 \
@@ -374,17 +371,18 @@ CARGO_CRATES=	ab_glyph-0.2.29 \
 		proc-macro2-diagnostics-0.10.1 \
 		profiling-1.0.16 \
 		profiling-procmacros-1.0.16 \
-		qoi-0.4.1 \
-		quick-xml-0.36.2 \
+		quick-xml-0.37.2 \
 		quote-1.0.38 \
+		r-efi-5.2.0 \
 		rand-0.8.5 \
+		rand-0.9.0 \
 		rand_chacha-0.3.1 \
+		rand_chacha-0.9.0 \
 		rand_core-0.6.4 \
+		rand_core-0.9.3 \
 		range-alloc-0.1.3 \
 		rangemap-1.5.1 \
 		raw-window-handle-0.6.2 \
-		rayon-1.10.0 \
-		rayon-core-1.12.1 \
 		rctree-0.5.0 \
 		read-fonts-0.25.3 \
 		redox_syscall-0.2.16 \
@@ -401,7 +399,7 @@ CARGO_CRATES=	ab_glyph-0.2.29 \
 		resvg-0.37.0 \
 		resvg-0.42.0 \
 		rgb-0.8.50 \
-		ron-0.8.1 \
+		ron-0.9.0-alpha.0 \
 		roxmltree-0.19.0 \
 		roxmltree-0.20.0 \
 		rust-embed-8.5.0 \
@@ -469,7 +467,6 @@ CARGO_CRATES=	ab_glyph-0.2.29 \
 		thiserror-impl-1.0.69 \
 		thiserror-impl-2.0.11 \
 		thread_local-1.1.8 \
-		tiff-0.9.1 \
 		time-0.3.37 \
 		time-core-0.1.2 \
 		time-macros-0.2.19 \
@@ -519,12 +516,13 @@ CARGO_CRATES=	ab_glyph-0.2.29 \
 		usvg-tree-0.37.0 \
 		utf16_iter-1.0.5 \
 		utf8_iter-1.0.4 \
-		uuid-1.11.1 \
+		uuid-1.12.0 \
 		valuable-0.1.0 \
 		version-compare-0.2.0 \
 		version_check-0.9.5 \
 		walkdir-2.5.0 \
 		wasi-0.11.0+wasi-snapshot-preview1 \
+		wasi-0.14.2+wasi-0.2.4 \
 		wasm-bindgen-0.2.100 \
 		wasm-bindgen-backend-0.2.100 \
 		wasm-bindgen-futures-0.4.50 \
@@ -532,18 +530,18 @@ CARGO_CRATES=	ab_glyph-0.2.29 \
 		wasm-bindgen-macro-support-0.2.100 \
 		wasm-bindgen-shared-0.2.100 \
 		wasm-timer-0.2.5 \
-		wayland-backend-0.3.7 \
-		wayland-client-0.31.7 \
+		wayland-backend-0.3.8 \
+		wayland-client-0.31.8 \
 		wayland-csd-frame-0.3.0 \
-		wayland-cursor-0.31.7 \
-		wayland-egl-0.32.4 \
-		wayland-protocols-0.32.5 \
-		wayland-protocols-misc-0.3.5 \
+		wayland-cursor-0.31.8 \
+		wayland-egl-0.32.5 \
+		wayland-protocols-0.32.6 \
+		wayland-protocols-misc-0.3.6 \
 		wayland-protocols-plasma-0.3.5 \
-		wayland-protocols-wlr-0.3.5 \
-		wayland-scanner-0.31.5 \
-		wayland-server-0.31.6 \
-		wayland-sys-0.31.5 \
+		wayland-protocols-wlr-0.3.6 \
+		wayland-scanner-0.31.6 \
+		wayland-server-0.31.7 \
+		wayland-sys-0.31.6 \
 		web-sys-0.3.77 \
 		web-time-1.1.0 \
 		weezl-0.1.8 \
@@ -595,6 +593,7 @@ CARGO_CRATES=	ab_glyph-0.2.29 \
 		windows_x86_64_msvc-0.52.6 \
 		winit-0.30.8 \
 		winnow-0.6.24 \
+		wit-bindgen-rt-0.39.0 \
 		write16-1.0.0 \
 		writeable-0.5.5 \
 		x11-dl-2.21.0 \
@@ -619,26 +618,29 @@ CARGO_CRATES=	ab_glyph-0.2.29 \
 		zbus_names-3.0.0 \
 		zeno-0.3.2 \
 		zerocopy-0.7.35 \
+		zerocopy-0.8.24 \
 		zerocopy-derive-0.7.35 \
+		zerocopy-derive-0.8.24 \
 		zerofrom-0.1.5 \
 		zerofrom-derive-0.1.5 \
 		zerovec-0.10.4 \
 		zerovec-derive-0.10.3 \
-		zune-inflate-0.2.54 \
+		zune-core-0.4.12 \
+		zune-jpeg-0.4.14 \
 		zvariant-4.2.0 \
 		zvariant_derive-4.2.0 \
 		zvariant_utils-2.1.0 \
 		taffy@git+https://github.com/DioxusLabs/taffy?rev=7781c70\#7781c70241f7f572130c13106f2a869a9cf80885 \
-		cosmic-config,cosmic-config-derive,cosmic-theme,iced,iced_core,iced_futures,iced_graphics,iced_renderer,iced_runtime,iced_tiny_skia,iced_wgpu,iced_widget,libcosmic@git+https://github.com/pop-os/libcosmic/\#af9e353f5003cb323a46340acf1939123147a041 \
+		cosmic-text@git+https://github.com/pop-os/cosmic-text.git\#9125dd48b771e9aa7833d106a9850e935f71eaa6 \
+		cosmic-settings-config@git+https://github.com/pop-os/cosmic-settings-daemon\#e2aa1056900d6f8c9c7555c0401aa7c99281eb06 \
 		atomicwrites@git+https://github.com/jackpot51/rust-atomicwrites\#043ab4859d53ffd3d55334685303d8df39c9f768 \
-		id_tree@git+https://github.com/Drakulix/id-tree.git?branch=feature/copy_clone\#632a57d6d49160e18d7300fa7edae52281ec5482 \
 		iced_glyphon@git+https://github.com/pop-os/glyphon.git?tag=iced-0.14-dev\#6ef9d12a20cfd0f7bdf38136a26ded9f7459ec8b \
 		clipboard_macos,clipboard_wayland,clipboard_x11,dnd,mime,window_clipboard@git+https://github.com/pop-os/window_clipboard.git?tag=pop-0.13-2\#6b9faab87bea9cebec6ae036906fd67fed254f5f \
 		softbuffer@git+https://github.com/pop-os/softbuffer?tag=cosmic-4.0\#6e75b1ad7e98397d37cb187886d05969bc480995 \
-		smithay-egui@git+https://github.com/Smithay/smithay-egui.git?rev=6118550\#61185502f32c2d944fcf36e5edcb014fe0a8b8ac \
-		smithay@git+https://github.com/smithay/smithay?rev=1ceba66\#1ceba66e1c3b278b96a83e85a392278e8a7c9661 \
+		cosmic-config,cosmic-config-derive,cosmic-theme,iced,iced_core,iced_futures,iced_graphics,iced_renderer,iced_runtime,iced_tiny_skia,iced_wgpu,iced_widget,libcosmic@git+https://github.com/pop-os/libcosmic/\#8a0e74b189f53dae9b8001c6fa5cf1820b3ececb \
+		cosmic-client-toolkit,cosmic-protocols@git+https://github.com/pop-os/cosmic-protocols?branch=main\#bc4af9183e0967802d7fbe91ba811a29ca6a3b67 \
+		smithay@git+https://github.com/smithay/smithay/?rev=ce61c9b\#ce61c9b3293b13adf03863848426f0d7c4907c3e \
 		smithay-clipboard@git+https://github.com/pop-os/smithay-clipboard?tag=pop-dnd-5\#5a3007def49eb678d1144850c9ee04b80707c56a \
-		cosmic-settings-config@git+https://github.com/pop-os/cosmic-settings-daemon\#61c76a9d060827402eeb9fe92cae73ce159d66e5 \
-		cosmic-text@git+https://github.com/pop-os/cosmic-text.git\#166b59f560c551dab391a864f7c1f503c1e18446 \
-		cosmic-client-toolkit,cosmic-protocols@git+https://github.com/pop-os/cosmic-protocols?rev=d218c76\#d218c76b58c7a3b20dd5e7943f93fc306a1b81b8 \
-		cosmic-freedesktop-icons@git+https://github.com/pop-os/freedesktop-icons\#bfc22d531596b57646dc47bcd70b2eb6f3152cd4
+		smithay-egui@git+https://github.com/Smithay/smithay-egui.git?rev=e720136\#e7201366b88e4fb20d0c6618a6cac9acc6299e07 \
+		cosmic-freedesktop-icons@git+https://github.com/pop-os/freedesktop-icons\#bfc22d531596b57646dc47bcd70b2eb6f3152cd4 \
+		id_tree@git+https://github.com/Drakulix/id-tree.git?branch=feature%2Fcopy_clone\#632a57d6d49160e18d7300fa7edae52281ec5482
