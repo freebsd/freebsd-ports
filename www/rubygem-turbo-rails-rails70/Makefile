@@ -1,5 +1,5 @@
 PORTNAME=	turbo-rails
-PORTVERSION=	2.0.11
+PORTVERSION=	2.0.12
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	-rails70
@@ -17,5 +17,7 @@ RUN_DEPENDS=	rubygem-actionpack70>=6.0.0:www/rubygem-actionpack70 \
 USES=		gem
 
 NO_ARCH=	yes
+
+PORTSCOUT=	ignore:1
 
 .include <bsd.port.mk>
