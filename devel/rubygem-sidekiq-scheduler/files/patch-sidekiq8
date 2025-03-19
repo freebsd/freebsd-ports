@@ -1,0 +1,66 @@
+Obtained from:	https://github.com/sidekiq-scheduler/sidekiq-scheduler/commit/c631bfd873b9bbd3975b626202aa99eb783b1f0d
+
+--- lib/sidekiq-scheduler/extensions/web.rb.orig	2025-03-15 18:21:05 UTC
++++ lib/sidekiq-scheduler/extensions/web.rb
+@@ -2,14 +2,16 @@ if SidekiqScheduler::SidekiqAdapter::SIDEKIQ_GTE_7_3_0
+ 
+ if SidekiqScheduler::SidekiqAdapter::SIDEKIQ_GTE_7_3_0
+ 
+-  # Locale and asset cache is configured in `.register`
+-  Sidekiq::Web.register(SidekiqScheduler::Web,
+-    name: "recurring_jobs",
+-    tab: ["Recurring Jobs"],
+-    index: ["recurring-jobs"],
+-    root_dir: File.expand_path("../../../web", File.dirname(__FILE__)),
+-    asset_paths: ["stylesheets-scheduler"]) do |app|
+-    # add middleware or additional settings here
++  # Locale and asset cache is configured in `cfg.register`
++  Sidekiq::Web.configure do |cfg|
++    cfg.register(SidekiqScheduler::Web,
++      name: "recurring_jobs",
++      tab: ["Recurring Jobs"],
++      index: ["recurring-jobs"],
++      root_dir: File.expand_path("../../../web", File.dirname(__FILE__)),
++      asset_paths: ["stylesheets-scheduler"]) do |app|
++      # add middleware or additional settings here
++    end
+   end
+ 
+ else
+--- lib/sidekiq-scheduler/web.rb.orig	2025-03-15 18:14:11 UTC
++++ lib/sidekiq-scheduler/web.rb
+@@ -16,7 +16,7 @@ module SidekiqScheduler
+       end
+ 
+       app.post '/recurring-jobs/:name/enqueue' do
+-        schedule = Sidekiq.get_schedule(params[:name])
++        schedule = Sidekiq.get_schedule(route_params(:name))
+         SidekiqScheduler::Scheduler.instance.enqueue_job(schedule)
+         redirect "#{root_path}recurring-jobs"
+       end
+@@ -24,12 +24,12 @@ module SidekiqScheduler
+       app.post '/recurring-jobs/:name/toggle' do
+         Sidekiq.reload_schedule!
+ 
+-        SidekiqScheduler::Scheduler.instance.toggle_job_enabled(params[:name])
++        SidekiqScheduler::Scheduler.instance.toggle_job_enabled(route_params(:name))
+         redirect "#{root_path}recurring-jobs"
+       end
+ 
+       app.post '/recurring-jobs/toggle-all' do
+-        SidekiqScheduler::Scheduler.instance.toggle_all_jobs(params[:action] == 'enable')
++        SidekiqScheduler::Scheduler.instance.toggle_all_jobs(url_params(:action) == 'enable')
+         redirect "#{root_path}recurring-jobs"
+       end
+     end
+--- sidekiq-scheduler.gemspec.orig	2025-03-15 18:14:11 UTC
++++ sidekiq-scheduler.gemspec
+@@ -21,7 +21,7 @@ Gem::Specification.new do |s|
+ 
+   s.specification_version = 4
+ 
+-  s.add_runtime_dependency(%q<sidekiq>.freeze, [">= 6".freeze, "< 8".freeze])
++  s.add_runtime_dependency(%q<sidekiq>.freeze, [">= 6".freeze, "< 9".freeze])
+   s.add_runtime_dependency(%q<rufus-scheduler>.freeze, ["~> 3.2".freeze])
+   s.add_runtime_dependency(%q<tilt>.freeze, [">= 1.4.0".freeze, "< 3".freeze])
+   s.add_development_dependency(%q<rake>.freeze, ["~> 12.0".freeze])
