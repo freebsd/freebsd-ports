@@ -73,4 +73,8 @@ SVTAV1_CMAKE_OFF=	-DAVIF_CODEC_SVT:STRING=OFF
 SVTAV1_CMAKE_ON=	-DAVIF_CODEC_SVT:STRING=SYSTEM
 SVTAV1_LIB_DEPENDS=	libSvtAv1Enc.so:multimedia/svt-av1
 
+post-patch:
+# Clean up bundled libraries
+	@${RM} -r ${WRKSRC}/third_party/libyuv/
+
 .include <bsd.port.mk>
