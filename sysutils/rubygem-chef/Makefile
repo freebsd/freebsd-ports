@@ -1,6 +1,6 @@
 PORTNAME=	chef
 PORTVERSION=	18.6.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	RG
 
@@ -42,7 +42,7 @@ RUN_DEPENDS=	rubygem-addressable>=0:www/rubygem-addressable \
 		rubygem-train-rest>=0.4.1:net/rubygem-train-rest \
 		rubygem-train-winrm>=0.2.5:net/rubygem-train-winrm \
 		rubygem-unf_ext>=0.0.8.2:textproc/rubygem-unf_ext \
-		rubygem-uuidtools>=2.1.5<3.0:devel/rubygem-uuidtools \
+		rubygem-uuidtools>=2.1.5:devel/rubygem-uuidtools \
 		rubygem-vault>=0.18.2<0.19:security/rubygem-vault
 
 USES=		cpe gem shebangfix
