@@ -1,7 +1,6 @@
 PORTNAME=	cosmic-comp
 DISTVERSIONPREFIX=	epoch-
-DISTVERSION=	1.0.0-alpha.5.1
-PORTREVISION=	3
+DISTVERSION=	1.0.0-alpha.7
 CATEGORIES=	x11-wm wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -25,7 +24,7 @@ USE_GITHUB=	yes
 USE_GL=		gbm
 USE_XORG=	pixman
 GH_ACCOUNT=	pop-os
-GH_TUPLE=	pop-os:iced:0.4.2-2992-g9ad04dad:iced/../${WRKSRC_crate_iced:T}/iced
+GH_TUPLE=	pop-os:iced:0.4.2-2998-ga8c31a09:iced/../${WRKSRC_crate_iced:T}/iced
 CARGO_FEATURES=	--no-default-features # disable systemd
 PLIST_FILES=	bin/${PORTNAME} \
 		share/cosmic/com.system76.CosmicSettings.Shortcuts/v1/defaults/keybindings.ron \
@@ -41,6 +40,7 @@ CARGO_ENV+=	CARGO_PROFILE_RELEASE_LTO=false
 post-patch:
 # XXX Strip double / to help "make cargo-crates"
 	@${REINPLACE_CMD} -e 's,\(smithay\)//,\1/,' \
+		-e 's,\(pop-os\)//,\1/,' \
 		${WRKSRC}/Cargo.lock
 # XXX Drop [patch.<url>] section to help "make cargo-configure"
 	@${REINPLACE_CMD} -e '/\[patch/,$$d' \
