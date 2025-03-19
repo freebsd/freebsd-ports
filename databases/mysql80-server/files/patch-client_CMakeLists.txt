@@ -1,4 +1,4 @@
---- client/CMakeLists.txt.orig	2024-07-12 19:15:25 UTC
+--- client/CMakeLists.txt.orig	2024-12-16 09:20:55 UTC
 +++ client/CMakeLists.txt
 @@ -29,10 +29,13 @@ ADD_SUBDIRECTORY(base)
  ## Subdirectory with common client code.
@@ -30,17 +30,45 @@
  MYSQL_ADD_EXECUTABLE(mysqltest
    mysqltest.cc
    mysqltest/error_names.cc
-@@ -72,6 +77,9 @@ MYSQL_ADD_EXECUTABLE(mysqltest
+@@ -72,11 +77,13 @@ MYSQL_ADD_EXECUTABLE(mysqltest
    ENABLE_EXPORTS
    LINK_LIBRARIES mysqlclient
    )
 +ENDIF()
-+
+ 
+ IF(MY_COMPILER_IS_GNU AND (WITH_LTO OR CMAKE_COMPILER_FLAG_WITH_LTO))
+   TARGET_LINK_OPTIONS(mysqltest PRIVATE -Wno-error=stringop-overflow)
+ ENDIF()
+ 
 +IF(WITHOUT_SERVER)
  MYSQL_ADD_EXECUTABLE(mysqlcheck
    check/mysqlcheck.cc
    check/mysqlcheck_core.cc
-@@ -276,7 +284,9 @@ TARGET_INCLUDE_DIRECTORIES(mysqlbinlog PRIVATE ${CMAKE
+@@ -257,6 +264,23 @@ ENDIF()
+     COMPILE_FLAGS " -Wno-microsoft-template")
+ ENDIF()
+ 
++# The client version of log_event.cc has false positives.
++# Downgrade from error to warning:
++IF(MY_COMPILER_IS_GNU AND CMAKE_BUILD_TYPE_UPPER STREQUAL "RELWITHDEBINFO")
++  ADD_COMPILE_FLAGS(${CMAKE_SOURCE_DIR}/sql/log_event.cc
++    COMPILE_FLAGS
++    " -Wno-error=uninitialized"
++    " -Wno-error=maybe-uninitialized"
++    )
++ENDIF()
++
++# duplicate explicit instantiation of 'net_field_length_checked'
++# ignored as a Microsoft extension
++IF(WIN32_CLANG)
++  ADD_COMPILE_FLAGS(${CMAKE_SOURCE_DIR}/sql/log_event.cc
++    COMPILE_FLAGS " -Wno-microsoft-template")
++ENDIF()
++
+ SET(MYSQLBINLOG_LIBRARIES
+   binlogevents_static
+   client_base
+@@ -298,7 +322,9 @@ TARGET_INCLUDE_DIRECTORIES(mysqlbinlog PRIVATE ${CMAKE
  
  TARGET_COMPILE_DEFINITIONS(mysqlbinlog PRIVATE DISABLE_PSI_MUTEX)
  TARGET_INCLUDE_DIRECTORIES(mysqlbinlog PRIVATE ${CMAKE_SOURCE_DIR}/sql)
@@ -50,7 +78,7 @@
  MYSQL_ADD_EXECUTABLE(mysqladmin
    mysqladmin.cc
    multi_factor_passwordopt-vars.cc
-@@ -291,6 +301,9 @@ MYSQL_ADD_EXECUTABLE(mysql_config_editor
+@@ -313,6 +339,9 @@ MYSQL_ADD_EXECUTABLE(mysql_config_editor
    mysql_config_editor.cc
    LINK_LIBRARIES mysqlclient
    )
@@ -60,7 +88,7 @@
  MYSQL_ADD_EXECUTABLE(mysql_secure_installation
    mysql_secure_installation.cc
    LINK_LIBRARIES mysqlclient
-@@ -301,6 +314,7 @@ MYSQL_ADD_EXECUTABLE(mysql_ssl_rsa_setup
+@@ -323,6 +352,7 @@ MYSQL_ADD_EXECUTABLE(mysql_ssl_rsa_setup
    path.cc
    LINK_LIBRARIES mysys
    )
