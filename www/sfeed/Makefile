@@ -1,5 +1,5 @@
 PORTNAME=	sfeed
-PORTVERSION=	2.1
+PORTVERSION=	2.2
 CATEGORIES=	www
 MASTER_SITES=	https://codemadness.org/releases/sfeed/
 
