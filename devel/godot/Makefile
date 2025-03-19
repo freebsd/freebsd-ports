@@ -1,7 +1,7 @@
 PORTNAME=	godot
-DISTVERSION=	4.2.1
+DISTVERSION=	4.4
 DISTVERSIONSUFFIX=	-stable
-PORTREVISION?=	4
+PORTREVISION?=	0
 CATEGORIES=	devel games
 
 MAINTAINER=	FreeBSD@Shaneware.biz
@@ -26,13 +26,12 @@ RUN_DEPENDS=	xdg-user-dir:devel/xdg-user-dirs \
 		xmessage:x11/xmessage
 
 USES=		compiler:c++17-lang cpe gl pkgconfig scons xorg
-USE_XORG=	x11 xcursor xext xi xinerama xrandr xrender
-USE_GL=		gl glew glu
-
 CPE_VENDOR=	godotengine
-
 USE_GITHUB=	yes
 GH_ACCOUNT=	godotengine
+
+USE_GL=		gl glew glu
+USE_XORG=	x11 xcursor xext xi xinerama xrandr xrender
 
 MAKE_ARGS+=		platform=linuxbsd builtin_freetype=False \
 			builtin_graphite=False builtin_harfbuzz=False \
@@ -43,38 +42,40 @@ MAKE_ARGS_clang=	use_llvm=True linker=lld
 CXXFLAGS_i386=		${CXXFLAGS_i386_${CHOSEN_COMPILER_TYPE}}
 CXXFLAGS_i386_gcc=	-march=i586
 
-OPTIONS_DEFINE=		EXAMPLES TOOLS UDEV
+GODOTFILE=		${PORTNAME}${PKGNAMESUFFIX}
+PLIST_FILES=		bin/${GODOTFILE}
+
+OPTIONS_DEFINE=		EXAMPLES TEST TOOLS UDEV
 OPTIONS_DEFAULT=	ALSA UDEV
-# Moved to devel/godot-tools
-OPTIONS_EXCLUDE?=	EXAMPLES TOOLS
 OPTIONS_GROUP=		AUDIO
 OPTIONS_GROUP_AUDIO=	ALSA PULSEAUDIO
+# Moved to devel/godot-tools
+OPTIONS_EXCLUDE?=	EXAMPLES TEST TOOLS
 
 AUDIO_DESC=		Audio support
+TOOLS_DESC=		Include development tools (IDE)
+UDEV_DESC=		Libudev support (Joystick)
+
 ALSA_LIB_DEPENDS=	libasound.so:audio/alsa-lib
 ALSA_MAKE_ARGS=		alsa=True
 ALSA_MAKE_ARGS_OFF=	alsa=False
-# 4.2 head at 21/3
-EXAMPLES_GH_TUPLE=	godotengine:godot-demo-projects:98e9176b7310:DEMOS
+# master head at 6/3 - no branch made for 4.4 yet
+EXAMPLES_GH_TUPLE=	godotengine:godot-demo-projects:fdb2f50a2088:DEMOS
 EXAMPLES_PORTEXAMPLES=	*
 PULSEAUDIO_LIB_DEPENDS=	libpulse.so:audio/pulseaudio
 PULSEAUDIO_MAKE_ARGS=	pulseaudio=True
 PULSEAUDIO_MAKE_ARGS_OFF=	pulseaudio=False
-TOOLS_DESC=		Include development tools (IDE)
+TEST_MAKE_ARGS=		tests=True
 TOOLS_MAKE_ARGS=	target=editor
 TOOLS_MAKE_ARGS_OFF=	target=template_release
 TOOLS_DESKTOP_ENTRIES=	"Godot" "${COMMENT}" "${GODOTFILE}" \
 			"${GODOTFILE}" "Development;IDE;" ""
 TOOLS_PLIST_FILES=	share/pixmaps/${GODOTFILE}.png \
 			share/pixmaps/${GODOTFILE}.svg
-UDEV_DESC=		Libudev support (Joystick)
 UDEV_BUILD_DEPENDS=	${PREFIX}/include/linux/input.h:devel/evdev-proto
 UDEV_LIB_DEPENDS=	libudev.so:devel/libudev-devd
 UDEV_MAKE_ARGS=		udev=True
 UDEV_MAKE_ARGS_OFF=	udev=False
-
-GODOTFILE=		${PORTNAME}${PKGNAMESUFFIX}
-PLIST_FILES=		bin/${GODOTFILE}
 
 .ifmake makesum
 # Always include optional distfiles
@@ -110,5 +111,8 @@ do-install-TOOLS-on:
 		${STAGEDIR}${PREFIX}/share/pixmaps/${GODOTFILE}.png
 	${INSTALL_DATA} ${WRKSRC}/icon.svg \
 		${STAGEDIR}${PREFIX}/share/pixmaps/${GODOTFILE}.svg
+
+do-test:
+	cd ${TEST_WRKSRC} && bin/godot.linuxbsd* --verbose --test
 
 .include <bsd.port.mk>
