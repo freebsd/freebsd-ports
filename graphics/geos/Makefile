@@ -1,5 +1,5 @@
 PORTNAME=	geos
-PORTVERSION=	3.13.0
+PORTVERSION=	3.13.1
 CATEGORIES=	graphics geography
 MASTER_SITES=	https://github.com/libgeos/geos/releases/download/${PORTVERSION}/ \
 		https://download.osgeo.org/geos/
