@@ -60,7 +60,6 @@ SYMLINK_SUB_LIST_OFF=	PASSENGER_INSTALL_DIR="${PREFIX}/${GEM_LIB_DIR}"
 
 post-patch:
 # Clean up bundled libraries
-	@${REINPLACE_CMD} 's|"src/cxx_supportlib/vendor-copy/[lu][^"]*".freeze, ||g' ${WRKSRC}/passenger.gemspec
 	@${RM} -r ${WRKSRC}/src/cxx_supportlib/vendor-copy/libuv/
 	@${RM} -r ${WRKSRC}/src/cxx_supportlib/vendor-copy/utf8*
 
