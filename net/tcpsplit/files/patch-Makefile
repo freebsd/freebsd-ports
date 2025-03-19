@@ -1,0 +1,14 @@
+--- Makefile.orig	2025-03-06 20:45:25 UTC
++++ Makefile
+@@ -32,11 +32,6 @@ VERSION=0.3
+ 
+ VERSION=0.3
+ 
+-CC=gcc
+-INC=-Ilib/include
+-CFLAGS=-g -Wall -Werror $(INC) $(OTHER)
+-LD=gcc
+-LDFLAGS=$(CFLAGS)
+ LIBS=-lpcap
+ 
+ OBJS=balancer.o ipa_db.o tcpsplit.o
