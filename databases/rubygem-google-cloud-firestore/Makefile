@@ -1,5 +1,5 @@
 PORTNAME=	google-cloud-firestore
-PORTVERSION=	2.16.1
+PORTVERSION=	3.0.0
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 
@@ -15,8 +15,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-bigdecimal>=3.0<4:math/rubygem-bigdecimal \
 		rubygem-concurrent-ruby>=1.0<2:devel/rubygem-concurrent-ruby \
-		rubygem-google-cloud-core>=1.5<2:net/rubygem-google-cloud-core \
-		rubygem-google-cloud-firestore-v1>=0.10<2.0:databases/rubygem-google-cloud-firestore-v1 \
+		rubygem-google-cloud-core>=1.7<2:net/rubygem-google-cloud-core \
+		rubygem-google-cloud-firestore-v1>=2.0<3:databases/rubygem-google-cloud-firestore-v1 \
 		rubygem-rbtree>=0.4.2<0.5:devel/rubygem-rbtree
 
 USES=		gem
