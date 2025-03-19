@@ -1,5 +1,5 @@
 PORTNAME=	ruby-saml
-PORTVERSION=	1.17.0
+PORTVERSION=	1.18.0
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 
