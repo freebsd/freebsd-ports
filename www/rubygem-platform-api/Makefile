@@ -1,5 +1,5 @@
 PORTNAME=	platform-api
-PORTVERSION=	3.7.0
+PORTVERSION=	3.8.0
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
