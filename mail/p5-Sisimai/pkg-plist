@@ -99,6 +99,7 @@
 %%SITE_PERL%%/Sisimai/Rhost.pm
 %%SITE_PERL%%/Sisimai/Rhost/Aol.pm
 %%SITE_PERL%%/Sisimai/Rhost/Apple.pm
+%%SITE_PERL%%/Sisimai/Rhost/Cloudflare.pm
 %%SITE_PERL%%/Sisimai/Rhost/Cox.pm
 %%SITE_PERL%%/Sisimai/Rhost/Facebook.pm
 %%SITE_PERL%%/Sisimai/Rhost/FrancePTT.pm
@@ -224,6 +225,7 @@
 %%PERL5_MAN3%%/Sisimai::Rhost.3.gz
 %%PERL5_MAN3%%/Sisimai::Rhost::Aol.3.gz
 %%PERL5_MAN3%%/Sisimai::Rhost::Apple.3.gz
+%%PERL5_MAN3%%/Sisimai::Rhost::Cloudflare.3.gz
 %%PERL5_MAN3%%/Sisimai::Rhost::Cox.3.gz
 %%PERL5_MAN3%%/Sisimai::Rhost::Facebook.3.gz
 %%PERL5_MAN3%%/Sisimai::Rhost::FrancePTT.3.gz
