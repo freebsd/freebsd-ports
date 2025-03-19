@@ -1,5 +1,6 @@
 PORTNAME=	sidekiq-unique-jobs
 PORTVERSION=	8.0.10
+PORTREVISION=	1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -11,7 +12,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 RUN_DEPENDS=	rubygem-concurrent-ruby>=1.0.5<2:devel/rubygem-concurrent-ruby \
-		rubygem-sidekiq>=7.0.0<8.0.0:devel/rubygem-sidekiq \
+		rubygem-sidekiq>=7.0.0<9.0.0:devel/rubygem-sidekiq \
 		rubygem-thor>=1.0<3.0:devel/rubygem-thor
 
 USES=		gem
