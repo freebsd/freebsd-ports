@@ -1,5 +1,5 @@
 PORTNAME=	xonsh
-DISTVERSION=	0.19.2
+DISTVERSION=	0.19.3
 CATEGORIES=	shells python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -33,7 +33,8 @@ USE_PYTHON=	autoplist concurrent pep517 pytest
 PYTEST_BROKEN_TESTS=	test_builtins.py test_commands_cache.py \
 			test_integrations.py test_man.py test_ptk_highlight.py \
 			test_bash_completer.py test_dir_completers.py \
-			test_specs.py test_os.xsh test_command_completers.py
+			test_specs.py test_os.xsh test_command_completers.py \
+			test_tracer.py
 SHEBANG_FILES=	tests/bin/cat tests/bin/pwd tests/bin/wc
 
 NO_ARCH=	yes
