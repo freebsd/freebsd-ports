@@ -1,8 +1,16 @@
-Pendulum is a Python package to ease datetimes manipulation.
+Native datetime instances are enough for basic cases but when you face more
+complex use-cases they often show limitations and are not so intuitive to work
+with. Pendulum provides a cleaner and more easy to use API while still relying
+on the standard library. So it's still datetime but better.
 
-It provides classes that are drop-in replacements for the native ones (they
-inherit from them).
+Unlike other datetime libraries for Python, Pendulum is a drop-in replacement
+for the standard datetime class (it inherits from it), so, basically, you can
+replace all your datetime instances by DateTime instances in your code
+(exceptions exist for libraries that check the type of the objects by using the
+type function like sqlite3 or PyMySQL for instance).
 
-Special care has been taken to ensure timezones are handled correctly, and
-are based on the underlying tzinfo implementation. For example all
-comparisons are done in UTC or in the timezone of the datetime being used.
+It also removes the notion of naive datetimes: each Pendulum instance is
+timezone-aware and by default in UTC for ease of use.
+
+Pendulum also improves the standard timedelta class by providing more intuitive
+methods and properties.
