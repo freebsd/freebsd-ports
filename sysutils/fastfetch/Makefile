@@ -1,6 +1,5 @@
 PORTNAME=	fastfetch
-DISTVERSION=	2.38.0
-PORTREVISION=	1
+DISTVERSION=	2.39.0
 CATEGORIES=	sysutils
 
 MAINTAINER=	pkubaj@FreeBSD.org
@@ -19,15 +18,14 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	fastfetch-cli
 
 OPTIONS_DEFINE=	VULKAN WAYLAND XRANDR LIBDRM GIO DCONF DBUS XFCONF SQLITE3 \
-		IMAGEMAGICK CHAFA GLX OSMESA OPENCL
+		IMAGEMAGICK CHAFA GLX OPENCL
 
 OPTIONS_DEFAULT=VULKAN WAYLAND XRANDR LIBDRM GIO DCONF DBUS XFCONF SQLITE3 \
-		IMAGEMAGICK CHAFA GLX OSMESA OPENCL
+		IMAGEMAGICK CHAFA GLX OPENCL
 
 DCONF_DESC=	Needed for values that are only stored in DConf + Fallback for GSettings
 CHAFA_DESC=	Image output as ascii art
 LIBDRM_DESC=	Enable display server detection via libdrm
-OSMESA_DESC=	Enable osmesa support
 VULKAN_DESC=	Vulkan module & fallback for GPU output
 XRANDR_DESC=	Needed for display and WM detection in X11
 XFCONF_DESC=	Needed for XFWM theme and XFCE Terminal font
@@ -69,9 +67,6 @@ CHAFA_BUILD_DEPENDS=	${LOCALBASE}/lib/libchafa.so:graphics/chafa
 
 GLX_CMAKE_BOOL=	ENABLE_GLX
 GLX_BUILD_DEPENDS=	${LOCALBASE}/lib/libGLX.so:graphics/libglvnd
-
-OSMESA_CMAKE_BOOL=	ENABLE_OSMESA
-OSMESA_BUILD_DEPENDS=	${LOCALBASE}/lib/libOSMesa.so:graphics/libosmesa
 
 OPENCL_CMAKE_BOOL=	ENABLE_OPENCL
 OPENCL_BUILD_DEPENDS=	${LOCALBASE}/lib/libOpenCL.so:devel/ocl-icd \
