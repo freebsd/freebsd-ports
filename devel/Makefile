@@ -6277,6 +6277,7 @@
     SUBDIR += pythontidy
     SUBDIR += pytype
     SUBDIR += qbe
+    SUBDIR += qbs
     SUBDIR += qca
     SUBDIR += qconf
     SUBDIR += qcoro
