@@ -1,7 +1,7 @@
 PORTNAME=	dnsmasq
-DISTVERSION=	2.90
+DISTVERSION=	2.91
 # Leave the PORTREVISION in even if 0 to avoid accidental PORTEPOCH bumps:
-PORTREVISION=	6
+PORTREVISION=	0
 PORTEPOCH=	1
 CATEGORIES=	dns
 MASTER_SITES=	https://www.thekelleys.org.uk/dnsmasq/ \
@@ -26,8 +26,7 @@ MAKE_ARGS=	CC="${CC}" \
 		PREFIX="${PREFIX}" \
 		RPM_OPT_FLAGS="${CPPFLAGS}"
 CFLAGS+=	-Wall -Wno-unused-function -Wno-unused-parameter \
-		-Wno-unused-value -Wno-unused-variable \
-		-Wno-gnu-variable-sized-type-not-at-end
+		-Wno-unused-value -Wno-unused-variable
 CPPFLAGS+=	-I${LOCALBASE}/include
 
 CONFLICTS_INSTALL=	dnsmasq-devel
