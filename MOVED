@@ -4209,3 +4209,4 @@ net/wifi-firmware-mtw-kmod|net/wifi-firmware-mt7601u-kmod|2025-03-14|Fixed to ma
 devel/ccrtp||2025-03-16|Has expired: No active development in years and no users in tree
 textproc/rubygem-cucumber-gherkin29|textproc/rubygem-cucumber-gherkin|2025-03-19|Remove obsoleted port. Use textproc/rubygem-cucumber-gherkin instead
 devel/utf8cpp3|devel/utf8cpp|2025-03-19|Remove obsoleted port. Use devel/utf8cpp instead
+devel/rubygem-flipper026|devel/rubygem-flipper-gitlab|2025-03-19|Please use devel/rubygem-flipper-gitlab instead

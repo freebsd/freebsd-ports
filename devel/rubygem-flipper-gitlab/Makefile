@@ -1,8 +1,8 @@
 PORTNAME=	flipper
-PORTVERSION=	0.26.2
+PORTVERSION=	0.28.3
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
-PKGNAMESUFFIX=	026
+PKGNAMESUFFIX=	-gitlab
 
 MAINTAINER=	mfechner@FreeBSD.org
 COMMENT=	Act of enabling/disabling features in your application
@@ -16,7 +16,5 @@ RUN_DEPENDS=	rubygem-concurrent-ruby<2:devel/rubygem-concurrent-ruby
 USES=		gem
 
 NO_ARCH=	yes
-
-PORTSCOUT=	limit:^0\.26\.
 
 .include <bsd.port.mk>
