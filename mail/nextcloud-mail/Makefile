@@ -1,10 +1,7 @@
 PORTNAME=	mail
-PORTVERSION=	4.2.6
-DISTNAME=	mail-stable4.2
+PORTVERSION=	4.3.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	mail
-
-DIST_SUBDIR=	nextcloud/mail-${PORTVERSION}
 
 MAINTAINER=	brnrd@FreeBSD.org
 COMMENT=	Mail app for Nextcloud
