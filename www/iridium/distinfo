@@ -1,5 +1,5 @@
-TIMESTAMP = 1742316426
-SHA256 (iridium-browser-2025.03.134.tar.xz) = 13069b5cc73e6762440d93f731f04fc4ed189be8fed9267fafcd8acaf40a3d8f
-SIZE (iridium-browser-2025.03.134.tar.xz) = 2972677972
+TIMESTAMP = 1742461233
+SHA256 (iridium-browser-2025.03.134.1.tar.xz) = 796fa27f6a831358915ed13a8886498ca98cec8ce2f0723588a1d97088f08e4e
+SIZE (iridium-browser-2025.03.134.1.tar.xz) = 2972655100
 SHA256 (pulseaudio-16.1.tar.gz) = 027266c62f2a84422ac45fa721a649508f0f1628fb1fd9242315ac54ce2d7c92
 SIZE (pulseaudio-16.1.tar.gz) = 2763111
