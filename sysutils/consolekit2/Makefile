@@ -1,6 +1,6 @@
 PORTNAME=	consolekit
 PORTVERSION=	1.2.6
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	sysutils gnome
 PKGNAMESUFFIX=	2
 
@@ -32,14 +32,13 @@ X11_CONFIGURE_WITH=	x
 USE_GITHUB=	yes
 GH_ACCOUNT=	arrowd
 GH_PROJECT=	ConsoleKit2
-GH_TAGNAME=	70b5f7d6f710377f288b4723a32923290dc16501
+GH_TAGNAME=	fbf7045c8d83b0c3f08535577aa2365bf9b250bf
 
 USES=		autoreconf gettext gmake gnome libtool localbase pathfix pkgconfig \
 		tar:bzip2
 USE_CSTD=	gnu99
 USE_GNOME=	glib20 libxslt introspection:build
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--with-pid-file=/var/run/${PORTNAME}.pid \
 		--enable-pam-module \
