@@ -1,11 +1,4 @@
 bin/mathics
-%%PYTHON_SITELIBDIR%%/Mathics3-%%VER%%-py%%PYTHON_VER%%.egg-info/PKG-INFO
-%%PYTHON_SITELIBDIR%%/Mathics3-%%VER%%-py%%PYTHON_VER%%.egg-info/SOURCES.txt
-%%PYTHON_SITELIBDIR%%/Mathics3-%%VER%%-py%%PYTHON_VER%%.egg-info/dependency_links.txt
-%%PYTHON_SITELIBDIR%%/Mathics3-%%VER%%-py%%PYTHON_VER%%.egg-info/entry_points.txt
-%%PYTHON_SITELIBDIR%%/Mathics3-%%VER%%-py%%PYTHON_VER%%.egg-info/not-zip-safe
-%%PYTHON_SITELIBDIR%%/Mathics3-%%VER%%-py%%PYTHON_VER%%.egg-info/requires.txt
-%%PYTHON_SITELIBDIR%%/Mathics3-%%VER%%-py%%PYTHON_VER%%.egg-info/top_level.txt
 %%PYTHON_SITELIBDIR%%/mathics/Packages/BoolEval/BoolEval.m
 %%PYTHON_SITELIBDIR%%/mathics/Packages/BoolEval/Kernel/init.m
 %%PYTHON_SITELIBDIR%%/mathics/Packages/BoolEval/PacletInfo.m
@@ -110,6 +103,10 @@ bin/mathics
 %%PYTHON_SITELIBDIR%%/mathics/autoload/formats/Text/Export.m
 %%PYTHON_SITELIBDIR%%/mathics/autoload/formats/Text/Import.m
 %%PYTHON_SITELIBDIR%%/mathics/autoload/formats/XML/Import.m
+%%PYTHON_SITELIBDIR%%/mathics/autoload/rules/Bessel.m
+%%PYTHON_SITELIBDIR%%/mathics/autoload/rules/Element.m
+%%PYTHON_SITELIBDIR%%/mathics/autoload/rules/Limit.m
+%%PYTHON_SITELIBDIR%%/mathics/autoload/rules/trig.m
 %%PYTHON_SITELIBDIR%%/mathics/autoload/settings.m
 %%PYTHON_SITELIBDIR%%/mathics/benchmark.py
 %%PYTHON_SITELIBDIR%%/mathics/builtin/__init__.py
@@ -906,6 +903,7 @@ bin/mathics
 %%PYTHON_SITELIBDIR%%/mathics/doc/latex/__pycache__/doc2latex.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/mathics/doc/latex/__pycache__/doc2latex.cpython-%%PYTHON_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/mathics/doc/latex/doc2latex.py
+%%PYTHON_SITELIBDIR%%/mathics/doc/latex/mathics.pdf
 %%PYTHON_SITELIBDIR%%/mathics/doc/latex_doc.py
 %%PYTHON_SITELIBDIR%%/mathics/doc/online.py
 %%PYTHON_SITELIBDIR%%/mathics/doc/structure.py
@@ -1103,6 +1101,8 @@ bin/mathics
 %%PYTHON_SITELIBDIR%%/mathics/format/__pycache__/asy.cpython-%%PYTHON_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/mathics/format/__pycache__/asy_fns.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/mathics/format/__pycache__/asy_fns.cpython-%%PYTHON_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/mathics/format/__pycache__/asy_polyhedra.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/mathics/format/__pycache__/asy_polyhedra.cpython-%%PYTHON_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/mathics/format/__pycache__/json.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/mathics/format/__pycache__/json.cpython-%%PYTHON_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/mathics/format/__pycache__/latex.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
@@ -1115,6 +1115,7 @@ bin/mathics
 %%PYTHON_SITELIBDIR%%/mathics/format/__pycache__/text.cpython-%%PYTHON_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/mathics/format/asy.py
 %%PYTHON_SITELIBDIR%%/mathics/format/asy_fns.py
+%%PYTHON_SITELIBDIR%%/mathics/format/asy_polyhedra.py
 %%PYTHON_SITELIBDIR%%/mathics/format/json.py
 %%PYTHON_SITELIBDIR%%/mathics/format/latex.py
 %%PYTHON_SITELIBDIR%%/mathics/format/mathml.py
