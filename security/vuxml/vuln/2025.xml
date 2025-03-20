@@ -1,3 +1,36 @@
+  <vuln vid="9456d4e9-055f-11f0-85f3-a8a1599412c6">
+    <topic>chromium -- multiple security fixes</topic>
+    <affects>
+      <package>
+       <name>chromium</name>
+       <range><lt>134.0.6998.117</lt></range>
+      </package>
+      <package>
+       <name>ungoogled-chromium</name>
+       <range><lt>134.0.6998.117</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+       <p>Chrome Releases reports:</p>
+       <blockquote cite="https://chromereleases.googleblog.com/2025/03/stable-channel-update-for-desktop_19.html">
+	 <p>This update includes 2 security fixes:</p>
+	 <ul>
+	    <li>[401029609] Critical CVE-2025-2476: Use after free in Lens. Reported by SungKwon Lee of Enki Whitehat on 2025-03-05</li>
+	 </ul>
+       </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2025-2476</cvename>
+      <url>https://chromereleases.googleblog.com/2025/03/stable-channel-update-for-desktop_19.html</url>
+    </references>
+    <dates>
+      <discovery>2025-03-19</discovery>
+      <entry>2025-03-20</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="2ac2ddc2-0051-11f0-8673-f02f7432cf97">
   <topic>php -- Multiple vulnerabilities</topic>
   <affects>
