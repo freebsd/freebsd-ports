@@ -1,5 +1,5 @@
 PORTNAME=	gitlab-markup
-PORTVERSION=	1.9.0
+PORTVERSION=	2.0.0
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
