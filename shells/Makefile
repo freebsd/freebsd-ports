@@ -8,6 +8,7 @@
     SUBDIR += bash
     SUBDIR += bash-completion
     SUBDIR += bash-completion-freebsd
+    SUBDIR += bash-completion-zfs
     SUBDIR += bash-static
     SUBDIR += bashc
     SUBDIR += bicon
