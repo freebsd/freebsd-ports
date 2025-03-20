@@ -1,7 +1,6 @@
 PORTNAME=	ipfixcol2
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.6.0
-PORTREVISION=	1
+DISTVERSION=	2.8.0
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	zarychtam@plan-b.pwste.edu.pl
@@ -14,11 +13,11 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 ONLY_FOR_ARCHS=		aarch64 amd64
 ONLY_FOR_ARCHS_REASON=	Require SSE2 and static_assert(sizeof(uint64_t) == sizeof(time_t), "Assumed that time_t is uint64_t, but it's not")
 
-BUILD_DEPENDS_aarch64=	${LOCALBASE}/include/sse2neon.h:devel/sse2neon
-BUILD_DEPENDS=	rst2man:textproc/py-docutils ${BUILD_DEPENDS_${ARCH}}
-LIB_DEPENDS=	librdkafka.so:net/librdkafka \
-		libepoll-shim.so:devel/libepoll-shim \
-		libfds.so:net-mgmt/libfds
+BUILD_DEPENDS=	rst2man:textproc/py-docutils
+LIB_DEPENDS=	libepoll-shim.so:devel/libepoll-shim \
+		libfds.so:net-mgmt/libfds \
+		liblz4.so:archivers/liblz4 \
+		librdkafka.so:net/librdkafka
 
 USES=		cmake:testing localbase:ldflags pkgconfig
 USE_GITHUB=	yes

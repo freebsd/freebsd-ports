@@ -7,6 +7,7 @@ include/ipfixcol2/api.h
 include/ipfixcol2/message.h
 include/ipfixcol2/message_garbage.h
 include/ipfixcol2/message_ipfix.h
+include/ipfixcol2/message_periodic.h
 include/ipfixcol2/message_session.h
 include/ipfixcol2/plugins.h
 include/ipfixcol2/session.h
@@ -17,6 +18,7 @@ lib/ipfixcol2/libdummy-input.so
 lib/ipfixcol2/libdummy-output.so
 lib/ipfixcol2/libfds-input.so
 lib/ipfixcol2/libfds-output.so
+lib/ipfixcol2/libfilter-intermediate.so
 lib/ipfixcol2/libforwarder-output.so
 lib/ipfixcol2/libipfix-input.so
 lib/ipfixcol2/libipfix-output.so
@@ -31,6 +33,7 @@ share/man/man7/ipfixcol2-anonymization-inter.7.gz
 share/man/man7/ipfixcol2-dummy-output.7.gz
 share/man/man7/ipfixcol2-fds-input.7.gz
 share/man/man7/ipfixcol2-fds-output.7.gz
+share/man/man7/ipfixcol2-filter-inter.7.gz
 share/man/man7/ipfixcol2-forwarder-output.7.gz
 share/man/man7/ipfixcol2-ipfix-input.7.gz
 share/man/man7/ipfixcol2-ipfix-output.7.gz
