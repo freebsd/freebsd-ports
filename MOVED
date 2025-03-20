@@ -4003,3 +4003,4 @@ net-im/telegram-desktop@qt6|net-im/telegram-desktop|2025-01-05|Flavorization has
 devel/elixir-hex||2025-01-11|No longer used by any consumers, newer versions are expected to be installed per-user by mix
 devel/elixir-make||2025-01-11|No longer used by any consumers, newer versions are expected to be installed per-user by mix
 lang/rust182||2025-01-29|No consumers in ports
+devel/rubygem-flipper026|devel/rubygem-flipper-gitlab|2025-03-19|Please use devel/rubygem-flipper-gitlab instead
