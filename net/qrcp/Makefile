@@ -1,7 +1,6 @@
 PORTNAME=	qrcp
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.11.4
-PORTREVISION=	1
+DISTVERSION=	0.11.6
 CATEGORIES=	net
 
 MAINTAINER=	tagattie@FreeBSD.org
@@ -43,14 +42,14 @@ GH_TUPLE=	\
 		sourcegraph:conc:v0.3.0:sourcegraph_conc/vendor/github.com/sourcegraph/conc \
 		spf13:afero:v1.11.0:spf13_afero/vendor/github.com/spf13/afero \
 		spf13:cast:v1.6.0:spf13_cast/vendor/github.com/spf13/cast \
-		spf13:cobra:v1.8.1:spf13_cobra/vendor/github.com/spf13/cobra \
-		spf13:pflag:v1.0.5:spf13_pflag/vendor/github.com/spf13/pflag \
+		spf13:cobra:v1.9.1:spf13_cobra/vendor/github.com/spf13/cobra \
+		spf13:pflag:v1.0.6:spf13_pflag/vendor/github.com/spf13/pflag \
 		spf13:viper:v1.19.0:spf13_viper/vendor/github.com/spf13/viper \
 		subosito:gotenv:v1.6.0:subosito_gotenv/vendor/github.com/subosito/gotenv \
 		uber-go:atomic:v1.9.0:uber_go_atomic/vendor/go.uber.org/atomic \
 		uber-go:multierr:v1.9.0:uber_go_multierr/vendor/go.uber.org/multierr
 
-RELEASE_DATE=	2024-12-27
+RELEASE_DATE=	2025-03-16
 GO_BUILDFLAGS=	-ldflags "-s -w -X github.com/claudiodangelis/qrcp/version.version=${DISTVERSION} -X github.com/claudiodangelis/qrcp/version.date=${RELEASE_DATE}"
 
 PLIST_FILES=	bin/qrcp
