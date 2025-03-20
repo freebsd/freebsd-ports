@@ -1,5 +1,6 @@
 PORTNAME=	xterm
 DISTVERSION=	397
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	https://invisible-island.net/archives/xterm/:src1 \
 		https://invisible-mirror.net/archives/xterm/:src1 \
@@ -17,9 +18,11 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS+=	libfontconfig.so:x11-fonts/fontconfig
 
-USES=			cpe localbase ncurses tar:tgz xorg
+USES=			cpe desktop-file-utils gnome localbase ncurses tar:tgz \
+			xorg
 CPE_VENDOR=		invisible-island
 USE_XORG=		ice x11 xext xft xmu xpm xt
+USE_GNOME=		gdkpixbufextra:run
 GNU_CONFIGURE=		yes
 CONFIGURE_ARGS+=	--enable-narrowproto \
 			--with-utempter
@@ -28,7 +31,7 @@ CPPFLAGS+=	-DPIXMAP_ROOTDIR=${LOCALBASE}/share/pixmaps
 
 CONFLICTS=	x11iraf
 
-OPTIONS_DEFINE=		256COLOR DABBREV DECTERM GNOME LOGGING LUIT PCRE2 REGIS \
+OPTIONS_DEFINE=		256COLOR DABBREV DECTERM LOGGING LUIT PCRE2 REGIS \
 			SCRNDUMP SIXEL TOOLBAR WCHAR XINERAMA
 OPTIONS_DEFAULT=	256COLOR LUIT SIXEL WCHAR XAW
 OPTIONS_SINGLE=		ATHENA
@@ -53,7 +56,6 @@ XAW_DESC=	Link with Xaw library
 256COLOR_CONFIGURE_ENABLE=	256-color
 DABBREV_CONFIGURE_ENABLE=	dabbrev
 DECTERM_CONFIGURE_ENABLE=	dec-locator
-GNOME_USES=			desktop-file-utils
 LOGGING_CONFIGURE_ENABLE=	logging
 LUIT_IMPLIES=			WCHAR
 LUIT_BUILD_DEPENDS=		luit:x11/luit
