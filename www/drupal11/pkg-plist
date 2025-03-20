@@ -3770,7 +3770,6 @@
 %%WWWDIR%%/core/lib/Drupal/Core/EventSubscriber/ResponseGeneratorSubscriber.php
 %%WWWDIR%%/core/lib/Drupal/Core/EventSubscriber/RouteAccessResponseSubscriber.php
 %%WWWDIR%%/core/lib/Drupal/Core/EventSubscriber/RouteMethodSubscriber.php
-%%WWWDIR%%/core/lib/Drupal/Core/EventSubscriber/RssResponseCdata.php
 %%WWWDIR%%/core/lib/Drupal/Core/EventSubscriber/RssResponseRelativeUrlFilter.php
 %%WWWDIR%%/core/lib/Drupal/Core/EventSubscriber/SpecialAttributesRouteSubscriber.php
 %%WWWDIR%%/core/lib/Drupal/Core/Executable/ExecutableException.php
@@ -8614,6 +8613,7 @@
 %%WWWDIR%%/core/modules/link/link.libraries.yml
 %%WWWDIR%%/core/modules/link/link.module
 %%WWWDIR%%/core/modules/link/migrations/state/link.migrate_drupal.yml
+%%WWWDIR%%/core/modules/link/src/AttributeXss.php
 %%WWWDIR%%/core/modules/link/src/Hook/LinkHooks.php
 %%WWWDIR%%/core/modules/link/src/LinkItemInterface.php
 %%WWWDIR%%/core/modules/link/src/Plugin/Field/FieldFormatter/LinkFormatter.php
@@ -12032,6 +12032,9 @@
 %%WWWDIR%%/core/modules/system/tests/modules/hold_test/hold_test.module
 %%WWWDIR%%/core/modules/system/tests/modules/hold_test/hold_test.services.yml
 %%WWWDIR%%/core/modules/system/tests/modules/hold_test/src/EventSubscriber/HoldTestSubscriber.php
+%%WWWDIR%%/core/modules/system/tests/modules/hook_collector_hook_attribute/hook_collector_hook_attribute.info.yml
+%%WWWDIR%%/core/modules/system/tests/modules/hook_collector_hook_attribute/src/Hook/HookAttributeInvokeHook.php
+%%WWWDIR%%/core/modules/system/tests/modules/hook_collector_hook_attribute/src/Hook/HookAttributeNamedArgumentsHook.php
 %%WWWDIR%%/core/modules/system/tests/modules/hook_collector_on_behalf/hook_collector_on_behalf.info.yml
 %%WWWDIR%%/core/modules/system/tests/modules/hook_collector_on_behalf/src/Hook/OnBehalfOfOtherModuleHook.php
 %%WWWDIR%%/core/modules/system/tests/modules/hook_collector_on_behalf_procedural/hook_collector_on_behalf_procedural.info.yml
@@ -17401,7 +17404,6 @@
 %%WWWDIR%%/core/tests/Drupal/Tests/Core/EventSubscriber/PathRootsSubscriberTest.php
 %%WWWDIR%%/core/tests/Drupal/Tests/Core/EventSubscriber/PsrResponseSubscriberTest.php
 %%WWWDIR%%/core/tests/Drupal/Tests/Core/EventSubscriber/RedirectResponseSubscriberTest.php
-%%WWWDIR%%/core/tests/Drupal/Tests/Core/EventSubscriber/RssResponseCdataTest.php
 %%WWWDIR%%/core/tests/Drupal/Tests/Core/EventSubscriber/RssResponseRelativeUrlFilterTest.php
 %%WWWDIR%%/core/tests/Drupal/Tests/Core/EventSubscriber/SpecialAttributesRouteSubscriberTest.php
 %%WWWDIR%%/core/tests/Drupal/Tests/Core/Extension/DatabaseDriverListTest.php
