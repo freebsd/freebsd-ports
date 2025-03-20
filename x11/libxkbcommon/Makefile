@@ -25,6 +25,8 @@ CPE_VENDOR=	xkbcommon
 SHEBANG_FILES=	test/xkeyboard-config-test.py.in \
 		test/*.py
 
+HAS_SYMBOL_VERSION=	${PREFIX}/lib/libxkbregistry.so.0.8.1
+
 OPTIONS_DEFINE=	EVDEV WAYLAND X11
 OPTIONS_DEFAULT=EVDEV WAYLAND X11
 OPTIONS_SUB=	yes

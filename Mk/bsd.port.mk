@@ -5394,6 +5394,12 @@ show-dev-errors:
 .      endif
 .    endif #DEVELOPER
 
+.    if defined(HAS_SYMBOL_VERSION)
+stage-sanity: check_has_symbol_version
+check_has_symbol_version:
+		${SH} ${SCRIPTSDIR}/check_have_symbols.sh ${STAGEDIR} ${HAS_SYMBOL_VERSION}
+.    endif # HAS_SYMBOL_VERSION
+
 ${_PORTS_DIRECTORIES}:
 	@${MKDIR} ${.TARGET}
 
@@ -5465,7 +5471,8 @@ _STAGE_SEQ=		050:stage-message 100:stage-dir 150:run-depends \
 				900:add-plist-info 910:add-plist-docs 920:add-plist-examples \
 				930:add-plist-data 940:add-plist-post ${POST_PLIST:C/^/990:/} \
 				${_OPTIONS_install} ${_USES_install} \
-				${_OPTIONS_stage} ${_USES_stage} ${_FEATURES_stage}
+				${_OPTIONS_stage} ${_USES_stage} ${_FEATURES_stage} \
+				994:stage-sanity
 .    if defined(DEVELOPER)
 _STAGE_SEQ+=	995:stage-qa
 .    else
