@@ -1,7 +1,10 @@
 PORTNAME=	pgroonga
-DISTVERSION=	3.2.0
+DISTVERSION=	3.2.1
 CATEGORIES=	databases textproc
 MASTER_SITES=	http://packages.groonga.org/source/pgroonga/
+
+PATCH_SITES=	https://github.com/abetomo/pgroonga/commit/
+PATCHFILES=	c01fffd7d68aca2ba87b675fe9a8bf80d23f2f1a.patch:-p1
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Open-source fulltext search engine for PostGRESQL
