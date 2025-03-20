@@ -1,5 +1,5 @@
 PORTNAME=	google-api-python-client
-DISTVERSION=	2.164.0
+DISTVERSION=	2.165.0
 CATEGORIES=	www python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -25,9 +25,11 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}google-api-core>=1.31.5:www/py-google-api-c
 		${PYTHON_PKGNAMEPREFIX}oauth2client>=4.1.3:security/py-oauth2client@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}parameterized>=0.8.1:devel/py-parameterized@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}uritemplate>=3.0.1:net/py-uritemplate@${PY_FLAVOR}
+# We don't want to use Pytest plugins, for example devel/py-ruff, if available in the system
+TEST_ENV=	PYTEST_DISABLE_PLUGIN_AUTOLOAD=1
 
 USES=		pytest python
-USE_PYTHON=	autoplist distutils unittest
+USE_PYTHON=	autoplist distutils pytest
 # Require Application Default Credentials
 # see https://cloud.google.com/docs/authentication/external/set-up-adc
 PYTEST_IGNORED_TESTS=	test_universe_env_var_configured_with_mtls \
