@@ -1,6 +1,6 @@
 PORTNAME=	swaylock
 DISTVERSIONPREFIX?=	v
-DISTVERSION?=	1.8.0
+DISTVERSION?=	1.8.1
 PORTREVISION?=	0
 CATEGORIES=	x11 wayland
 
@@ -45,7 +45,7 @@ post-patch:
 		-e "s/meson.project_version()/'${DISTVERSIONFULL}'/" \
 		${WRKSRC}/meson.build
 # https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=275328
-	@${REINPLACE_CMD} -e 's/_POSIX_C_SOURCE 200809L/_XOPEN_SOURCE 700/' \
-		${WRKSRC}/main.c
+	@${REINPLACE_CMD} -e 's/_POSIX_C_SOURCE=200809L/_XOPEN_SOURCE=700/' \
+		${WRKSRC}/meson.build
 
 .include <bsd.port.mk>
