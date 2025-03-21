@@ -30,7 +30,7 @@ PLIST_FILES=	bin/${PORTNAME} \
 OPTIONS_DEFINE=	BASU MANPAGES
 OPTIONS_DEFAULT=BASU MANPAGES
 
-BASU_DESC=		Login manager support via basu
+BASU_DESC=		ConsoleKit2 support via basu (experimental)
 BASU_LIB_DEPENDS=	libbasu.so:devel/basu
 BASU_MESON_ENABLED=	logind
 
