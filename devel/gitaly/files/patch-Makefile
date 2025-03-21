@@ -1,6 +1,6 @@
---- Makefile.orig	2025-02-19 06:01:22 UTC
+--- Makefile.orig	2025-03-19 10:31:26 UTC
 +++ Makefile
-@@ -145,7 +145,7 @@ GIT_VERSION_2_47 ?= v2.47.2
+@@ -152,7 +152,7 @@ GIT_VERSION_2_47 ?= v2.47.2
  # major version is added, be sure to update GIT_PACKED_EXECUTABLES, the *-bundled-git targets,
  # and add new targets under the "# These targets build specific releases of Git." section.
  GIT_VERSION_2_47 ?= v2.47.2
@@ -9,7 +9,7 @@
  #
  # OVERRIDE_GIT_VERSION allows you to specify a custom semver value to be reported by the
  # `git --version` command. This affects bundled and non-bundled Git, and can be used whenever
-@@ -238,8 +238,7 @@ BUILD_GEM_NAME ?= gitaly
+@@ -247,8 +247,7 @@ BUILD_GEM_NAME ?= gitaly
  BUILD_GEM_NAME ?= gitaly
  
  # Git binaries that are eventually embedded into the Gitaly binary.
@@ -19,7 +19,7 @@
  
  # All executables provided by Gitaly.
  GITALY_EXECUTABLES           = $(addprefix ${BUILD_DIR}/bin/,$(notdir $(shell find ${SOURCE_DIR}/cmd -mindepth 1 -maxdepth 1 -type d -print)))
-@@ -328,16 +327,14 @@ install: build
+@@ -337,16 +336,14 @@ install: build
  
  .PHONY: build-bundled-git
  ## Build bundled Git binaries.
@@ -38,9 +38,9 @@
  
  ifdef WITH_BUNDLED_GIT
  build: build-bundled-git
-@@ -619,22 +616,22 @@ ${BUILD_DIR}/bin/gitaly-%-v2.47: ${DEPENDENCY_DIR}/git
- ${BUILD_DIR}/bin/gitaly-%-v2.47: ${DEPENDENCY_DIR}/git-v2.47/.built | ${BUILD_DIR}/bin
- 	${Q}install "$(<D)"/$* $@
+@@ -631,22 +628,22 @@ ${BUILD_DIR}/bin/gitaly-%-v2.47: ${DEPENDENCY_DIR}/git
+ ${BUILD_DIR}/bin/gitaly-%-v2.47: ${DEPENDENCY_DIR}/git-v2.47/% | ${BUILD_DIR}/bin
+ 	${Q}install $< $@
  
 -${BUILD_DIR}/bin/gitaly-%-v2.48: override GIT_VERSION = ${GIT_VERSION_2_48}
 +#${BUILD_DIR}/bin/gitaly-%-v2.48: override GIT_VERSION = ${GIT_VERSION_2_48}
@@ -57,23 +57,23 @@
 +#endif
  
 -ifdef USE_MESON
--${BUILD_DIR}/bin/gitaly-%-v2.48: ${DEPENDENCY_DIR}/git-v2.48/build/.built | ${BUILD_DIR}/bin
--	${Q}install "$(<D)"/$* $@
+-${BUILD_DIR}/bin/gitaly-%-v2.48: ${DEPENDENCY_DIR}/git-v2.48/build/% | ${BUILD_DIR}/bin
+-	${Q}install $< $@
 -else
--${BUILD_DIR}/bin/gitaly-%-v2.48: ${DEPENDENCY_DIR}/git-v2.48/.built | ${BUILD_DIR}/bin
--	${Q}install "$(<D)"/$* $@
+-${BUILD_DIR}/bin/gitaly-%-v2.48: ${DEPENDENCY_DIR}/git-v2.48/% | ${BUILD_DIR}/bin
+-	${Q}install $< $@
 -endif
 +#ifdef USE_MESON
-+#${BUILD_DIR}/bin/gitaly-%-v2.48: ${DEPENDENCY_DIR}/git-v2.48/build/.built | ${BUILD_DIR}/bin
-+#	${Q}install "$(<D)"/$* $@
++#${BUILD_DIR}/bin/gitaly-%-v2.48: ${DEPENDENCY_DIR}/git-v2.48/build/% | ${BUILD_DIR}/bin
++#	${Q}install $< $@
 +#else
-+#${BUILD_DIR}/bin/gitaly-%-v2.48: ${DEPENDENCY_DIR}/git-v2.48/.built | ${BUILD_DIR}/bin
-+#	${Q}install "$(<D)"/$* $@
++#${BUILD_DIR}/bin/gitaly-%-v2.48: ${DEPENDENCY_DIR}/git-v2.48/% | ${BUILD_DIR}/bin
++#	${Q}install $< $@
 +#endif
  
  # clear-go-build-cache-if-needed cleans the Go build cache if it exceeds the maximum size as
  # configured in GOCACHE_MAX_SIZE_KB.
-@@ -668,12 +665,12 @@ ${DEPENDENCY_DIR}/git-%/Makefile: ${DEPENDENCY_DIR}/gi
+@@ -680,12 +677,12 @@ ${DEPENDENCY_DIR}/git-%/Makefile: ${DEPENDENCY_DIR}/gi
  # otherwise try to rebuild all targets depending on it whenever we build
  # something else. We thus depend on the Makefile instead.
  ${DEPENDENCY_DIR}/git-%/Makefile: ${DEPENDENCY_DIR}/git-%.version

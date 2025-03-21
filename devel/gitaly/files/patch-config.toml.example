@@ -1,7 +1,7 @@
---- config.toml.example.orig	2024-08-20 19:30:28 UTC
+--- config.toml.example.orig	2025-03-19 10:31:26 UTC
 +++ config.toml.example
 @@ -2,10 +2,10 @@
- # For Gitaly documentation, see https://docs.gitlab.com/ee/administration/gitaly/.
+ # For Gitaly documentation, see https://docs.gitlab.com/administration/gitaly/.
  
  # A path which Gitaly should open a Unix socket.
 -socket_path = "/home/git/gitlab/tmp/sockets/private/gitaly.socket"
