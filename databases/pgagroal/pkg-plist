@@ -5,7 +5,7 @@ bin/pgagroal-cli
 @sample %%ETCDIR%%/pgagroal_hba.conf.sample
 lib/libpgagroal.so
 lib/libpgagroal.so.1
-lib/libpgagroal.so.1.4.2
+lib/libpgagroal.so.%%PORTVERSION%%
 share/man/man1/pgagroal-admin.1.gz
 share/man/man1/pgagroal-cli.1.gz
 share/man/man1/pgagroal.1.gz
