@@ -1,0 +1,11 @@
+--- dbus/test-version-script.orig	2025-02-27 16:29:06 UTC
++++ dbus/test-version-script
+@@ -1,8 +1,6 @@ NOT_REALLY_LIBDBUS_1_3 {
+ NOT_REALLY_LIBDBUS_1_3 {
+   global:
+     dbus_*;
+-  local:
+-    *;
+ };
+ NOT_REALLY_LIBDBUS_PRIVATE_1.2.3 {
+   global:

@@ -1,6 +1,6 @@
 PORTNAME=	dbus
 DISTVERSION=	1.16.2
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	devel gnome
 MASTER_SITES=	https://dbus.freedesktop.org/releases/dbus/
@@ -21,6 +21,8 @@ USE_LDCONFIG=	yes
 USE_RC_SUBR=	dbus
 SHEBANG_FILES=	tools/GetAllMatchRules.py \
 		tools/build-timestamp.py
+
+HAS_SYMBOL_VERSION=	${PREFIX}/lib/libdbus-1.so.${_LIBVERSION}
 
 MESON_ARGS=	-Dkqueue=enabled \
 		-Dapparmor=disabled \
