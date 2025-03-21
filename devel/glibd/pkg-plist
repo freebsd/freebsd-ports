@@ -181,6 +181,7 @@ include/d/glibd-2/gio/TcpConnection.d
 include/d/glibd-2/gio/TcpWrapperConnection.d
 include/d/glibd-2/gio/TestDBus.d
 include/d/glibd-2/gio/ThemedIcon.d
+include/d/glibd-2/gio/ThreadedResolver.d
 include/d/glibd-2/gio/ThreadedSocketService.d
 include/d/glibd-2/gio/TlsBackendIF.d
 include/d/glibd-2/gio/TlsBackendT.d
@@ -213,6 +214,7 @@ include/d/glibd-2/gio/ZlibCompressor.d
 include/d/glibd-2/gio/ZlibDecompressor.d
 include/d/glibd-2/gio/c/functions.d
 include/d/glibd-2/gio/c/types.d
+include/d/glibd-2/glib/Allocator.d
 include/d/glibd-2/glib/ArrayG.d
 include/d/glibd-2/glib/AsyncQueue.d
 include/d/glibd-2/glib/Atomic.d
@@ -221,9 +223,11 @@ include/d/glibd-2/glib/Base64.d
 include/d/glibd-2/glib/BookmarkFile.d
 include/d/glibd-2/glib/ByteArray.d
 include/d/glibd-2/glib/Bytes.d
+include/d/glibd-2/glib/Cache.d
 include/d/glibd-2/glib/CharacterSet.d
 include/d/glibd-2/glib/Checksum.d
 include/d/glibd-2/glib/Child.d
+include/d/glibd-2/glib/Completion.d
 include/d/glibd-2/glib/Cond.d
 include/d/glibd-2/glib/ConstructionException.d
 include/d/glibd-2/glib/DataList.d
@@ -252,6 +256,7 @@ include/d/glibd-2/glib/MainContext.d
 include/d/glibd-2/glib/MainLoop.d
 include/d/glibd-2/glib/MappedFile.d
 include/d/glibd-2/glib/MatchInfo.d
+include/d/glibd-2/glib/MemChunk.d
 include/d/glibd-2/glib/Memory.d
 include/d/glibd-2/glib/MemorySlice.d
 include/d/glibd-2/glib/MessageLog.d
@@ -272,6 +277,7 @@ include/d/glibd-2/glib/RWLock.d
 include/d/glibd-2/glib/RandG.d
 include/d/glibd-2/glib/RecMutex.d
 include/d/glibd-2/glib/Regex.d
+include/d/glibd-2/glib/Relation.d
 include/d/glibd-2/glib/ScannerG.d
 include/d/glibd-2/glib/Sequence.d
 include/d/glibd-2/glib/SequenceIter.d
@@ -279,6 +285,10 @@ include/d/glibd-2/glib/ShellUtils.d
 include/d/glibd-2/glib/SimpleXML.d
 include/d/glibd-2/glib/Source.d
 include/d/glibd-2/glib/Spawn.d
+include/d/glibd-2/glib/StaticMutex.d
+include/d/glibd-2/glib/StaticPrivate.d
+include/d/glibd-2/glib/StaticRWLock.d
+include/d/glibd-2/glib/StaticRecMutex.d
 include/d/glibd-2/glib/Str.d
 include/d/glibd-2/glib/StringChunk.d
 include/d/glibd-2/glib/StringG.d
@@ -295,6 +305,7 @@ include/d/glibd-2/glib/Timeout.d
 include/d/glibd-2/glib/Timer.d
 include/d/glibd-2/glib/TrashStack.d
 include/d/glibd-2/glib/TreeNode.d
+include/d/glibd-2/glib/Tuples.d
 include/d/glibd-2/glib/URI.d
 include/d/glibd-2/glib/Unicode.d
 include/d/glibd-2/glib/UnixUtils.d
