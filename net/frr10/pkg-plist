@@ -220,6 +220,7 @@ sbin/staticd
 sbin/watchfrr
 sbin/zebra
 share/yang/frr-affinity-map.yang
+share/yang/frr-backend.yang
 share/yang/frr-bfdd.yang
 share/yang/frr-bgp-bmp.yang
 share/yang/frr-bgp-common-multiprotocol.yang
