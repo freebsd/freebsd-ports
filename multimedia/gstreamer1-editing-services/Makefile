@@ -16,6 +16,7 @@ USE_GSTREAMER=	bad good
 USE_LDCONFIG=	yes
 
 MESON_ARGS=	-Ddoc=disabled \
+		-Dtests=disabled \
 		-Dvalidate=disabled \
 		-Dpygi-overrides-dir=${PYTHON_SITELIBDIR}/gstreamer-editing-services
 

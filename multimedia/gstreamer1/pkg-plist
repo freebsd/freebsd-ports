@@ -72,6 +72,7 @@ include/gstreamer-%%VERSION%%/gst/gsterror.h
 include/gstreamer-%%VERSION%%/gst/gstevent.h
 include/gstreamer-%%VERSION%%/gst/gstformat.h
 include/gstreamer-%%VERSION%%/gst/gstghostpad.h
+include/gstreamer-%%VERSION%%/gst/gstidstr.h
 include/gstreamer-%%VERSION%%/gst/gstinfo.h
 include/gstreamer-%%VERSION%%/gst/gstiterator.h
 include/gstreamer-%%VERSION%%/gst/gstmacros.h
@@ -113,6 +114,7 @@ include/gstreamer-%%VERSION%%/gst/gsttypefindfactory.h
 include/gstreamer-%%VERSION%%/gst/gsturi.h
 include/gstreamer-%%VERSION%%/gst/gstutils.h
 include/gstreamer-%%VERSION%%/gst/gstvalue.h
+include/gstreamer-%%VERSION%%/gst/gstvecdeque.h
 include/gstreamer-%%VERSION%%/gst/gstversion.h
 include/gstreamer-%%VERSION%%/gst/math-compat.h
 include/gstreamer-%%VERSION%%/gst/net/gstnet.h
@@ -157,14 +159,11 @@ libexec/gstreamer-%%VERSION%%/gst-hotdoc-plugins-scanner
 libexec/gstreamer-%%VERSION%%/gst-plugin-scanner
 libexec/gstreamer-%%VERSION%%/gst-plugins-doc-cache-generator
 %%PTP%%@(root,wheel,4755) libexec/gstreamer-%%VERSION%%/gst-ptp-helper
-share/man/man1/gst-inspect-%%VERSION%%.1.gz
-share/man/man1/gst-launch-%%VERSION%%.1.gz
-share/man/man1/gst-stats-%%VERSION%%.1.gz
-share/man/man1/gst-typefind-%%VERSION%%.1.gz
 share/aclocal/gst-element-check-%%VERSION%%.m4
 %%BASH%%share/bash-completion/completions/gst-inspect-%%VERSION%%
 %%BASH%%share/bash-completion/completions/gst-launch-%%VERSION%%
 %%BASH%%share/bash-completion/helpers/gst
+share/cmake/FindGStreamer.cmake
 share/gdb/auto-load%%RESETPREFIX%%/lib/libgstreamer-%%VERSION%%.so.%%SOVERSION%%-gdb.py
 %%DATADIR%%-%%VERSION%%/gdb/glib_gobject_helper.py
 %%DATADIR%%-%%VERSION%%/gdb/gst_gdb.py
@@ -217,3 +216,7 @@ share/gir-%%VERSION%%/GstNet-%%VERSION%%.gir
 %%NLS%%share/locale/vi/LC_MESSAGES/gstreamer-%%VERSION%%.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/gstreamer-%%VERSION%%.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/gstreamer-%%VERSION%%.mo
+share/man/man1/gst-inspect-%%VERSION%%.1.gz
+share/man/man1/gst-launch-%%VERSION%%.1.gz
+share/man/man1/gst-stats-%%VERSION%%.1.gz
+share/man/man1/gst-typefind-%%VERSION%%.1.gz

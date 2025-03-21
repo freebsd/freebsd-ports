@@ -7,6 +7,9 @@ include/gstreamer-%%VERSION%%/gst/analytics/gstanalyticsclassificationmtd.h
 include/gstreamer-%%VERSION%%/gst/analytics/gstanalyticsmeta.h
 include/gstreamer-%%VERSION%%/gst/analytics/gstanalyticsobjectdetectionmtd.h
 include/gstreamer-%%VERSION%%/gst/analytics/gstanalyticsobjecttrackingmtd.h
+include/gstreamer-%%VERSION%%/gst/analytics/gstanalyticssegmentationmtd.h
+include/gstreamer-%%VERSION%%/gst/analytics/gsttensor.h
+include/gstreamer-%%VERSION%%/gst/analytics/gsttensormeta.h
 include/gstreamer-%%VERSION%%/gst/audio/audio-bad-prelude.h
 include/gstreamer-%%VERSION%%/gst/audio/gstnonstreamaudiodecoder.h
 include/gstreamer-%%VERSION%%/gst/audio/gstplanaraudioadapter.h
@@ -18,8 +21,10 @@ include/gstreamer-%%VERSION%%/gst/codecparsers/codecparsers-prelude.h
 include/gstreamer-%%VERSION%%/gst/codecparsers/gstav1parser.h
 include/gstreamer-%%VERSION%%/gst/codecparsers/gsth264parser.h
 include/gstreamer-%%VERSION%%/gst/codecparsers/gsth265parser.h
+include/gstreamer-%%VERSION%%/gst/codecparsers/gsth266parser.h
 include/gstreamer-%%VERSION%%/gst/codecparsers/gstjpeg2000sampling.h
 include/gstreamer-%%VERSION%%/gst/codecparsers/gstjpegparser.h
+include/gstreamer-%%VERSION%%/gst/codecparsers/gstlcevcmeta.h
 include/gstreamer-%%VERSION%%/gst/codecparsers/gstmpeg4parser.h
 include/gstreamer-%%VERSION%%/gst/codecparsers/gstmpegvideometa.h
 include/gstreamer-%%VERSION%%/gst/codecparsers/gstmpegvideoparser.h
@@ -38,8 +43,6 @@ include/gstreamer-%%VERSION%%/gst/mpegts/gst-dvb-descriptor.h
 include/gstreamer-%%VERSION%%/gst/mpegts/gst-dvb-section.h
 include/gstreamer-%%VERSION%%/gst/mpegts/gst-hdmv-section.h
 include/gstreamer-%%VERSION%%/gst/mpegts/gst-isdb-descriptor.h
-include/gstreamer-%%VERSION%%/gst/mpegts/gst-metadata-descriptor.h
-include/gstreamer-%%VERSION%%/gst/mpegts/gst-mpegtspesmetadatameta.h
 include/gstreamer-%%VERSION%%/gst/mpegts/gst-scte-section.h
 include/gstreamer-%%VERSION%%/gst/mpegts/gstmpegts-enumtypes.h
 include/gstreamer-%%VERSION%%/gst/mpegts/gstmpegtsdescriptor.h
@@ -157,6 +160,7 @@ lib/gstreamer-%%VERSION%%/libgstsmooth.so
 lib/gstreamer-%%VERSION%%/libgstspeed.so
 lib/gstreamer-%%VERSION%%/libgstsubenc.so
 lib/gstreamer-%%VERSION%%/libgstswitchbin.so
+lib/gstreamer-%%VERSION%%/libgsttensordecoders.so
 lib/gstreamer-%%VERSION%%/libgsttimecode.so
 lib/gstreamer-%%VERSION%%/libgsttranscode.so
 lib/gstreamer-%%VERSION%%/libgstunixfd.so

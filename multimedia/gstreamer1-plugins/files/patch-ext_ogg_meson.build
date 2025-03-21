@@ -1,6 +1,6 @@
---- ext/ogg/meson.build.orig	2023-01-23 19:29:34 UTC
+--- ext/ogg/meson.build.orig	2025-03-11 20:14:44 UTC
 +++ ext/ogg/meson.build
-@@ -19,7 +19,9 @@ if ogg_dep.found()
+@@ -37,7 +37,9 @@ if ogg_dep.found()
      c_args : gst_plugins_base_args,
      link_args : noseh_link_args,
      include_directories: [configinc, libsinc],

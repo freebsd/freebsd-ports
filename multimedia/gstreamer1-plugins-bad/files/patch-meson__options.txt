@@ -1,6 +1,6 @@
---- meson_options.txt.orig	2024-08-21 11:25:15 UTC
+--- meson_options.txt.orig	2025-03-11 20:14:44 UTC
 +++ meson_options.txt
-@@ -1,5 +1,47 @@ option('gst_play_tests', type: 'boolean', value: false
+@@ -1,5 +1,49 @@ option('gst_play_tests', type: 'boolean', value: false
  option('gst_play_tests', type: 'boolean', value: false,
         description: 'Enable GstPlay tests that need network access')
 +option('adaptivedemux', type: 'feature', value: 'auto',
@@ -13,6 +13,8 @@
 +       description: 'codecparsers lib')
 +option('codecs', type: 'feature', value: 'auto',
 +       description: 'codecs lib')
++option('cuda', type: 'feature', value: 'auto',
++       description: 'cuda lib')
 +option('dxva', type: 'feature', value: 'auto',
 +       description: 'dxva lib')
 +option('basecamerabinsrc', type: 'feature', value: 'auto',

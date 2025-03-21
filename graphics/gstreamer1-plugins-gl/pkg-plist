@@ -19,6 +19,7 @@ include/gstreamer-%%VERSION%%/gst/gl/glprototypes/fixedfunction.h
 include/gstreamer-%%VERSION%%/gst/gl/glprototypes/gles.h
 include/gstreamer-%%VERSION%%/gst/gl/glprototypes/gstgl_compat.h
 include/gstreamer-%%VERSION%%/gst/gl/glprototypes/gstgl_gles2compat.h
+include/gstreamer-%%VERSION%%/gst/gl/glprototypes/invalidate_subdata.h
 include/gstreamer-%%VERSION%%/gst/gl/glprototypes/opengl.h
 include/gstreamer-%%VERSION%%/gst/gl/glprototypes/query.h
 include/gstreamer-%%VERSION%%/gst/gl/glprototypes/shaders.h

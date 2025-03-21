@@ -1,6 +1,6 @@
---- ext/qt/meson.build.orig	2024-09-19 10:01:21 UTC
+--- ext/qt/meson.build.orig	2025-03-11 20:14:44 UTC
 +++ ext/qt/meson.build
-@@ -105,7 +105,7 @@ qt5_egl = qt5_egl \
+@@ -132,7 +132,7 @@ qt5_egl = qt5_egl \
  # EGL windowing for Embedded linux (e.g. i.MX6) with or without windowing
  # support
  qt5_egl = qt5_egl \

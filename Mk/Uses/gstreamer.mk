@@ -48,7 +48,7 @@ _GST_VER=	${_GST_VER_DEFAULT}
 # - multimedia/gstreamer1-rtsp-server
 # - multimedia/gstreamer1-vaapi
 # - multimedia/py-gstreamer1
-_GST1_VERSION=		1.24.12
+_GST1_VERSION=		1.26.0
 _GST1_LIB_VER=		1.0
 _GST1_SOVERSION=	0.${_GST1_VERSION:R:E}${${_GST1_VERSION:E} > 9:?:0}${_GST1_VERSION:E}.0
 
@@ -66,9 +66,9 @@ _GST1_PLUGINS_graphics=	aalib cairo gdkpixbuf gl jpeg kms libcaca libvisual \
 			opencv openexr openjpeg png rsvg vulkan webp zbar
 _GST1_PLUGINS_multimedia=	aom assrender bad dash dts dv dvdread \
 			editing-services good hls libav libde265 \
-			mpeg2dec mpeg2enc mplex mm msdk openh264 resindvd rust \
-			smoothstreaming theora ttml ugly v4l2 vaapi vpx webrtc \
-			x264 x265
+			mpeg2dec mpeg2enc mplex mm msdk openh264 resindvd \
+			rtsp-server rust smoothstreaming theora ttml ugly \
+			v4l2 vaapi vpx webrtc x264 x265
 _GST1_PLUGINS_net=	sctp srtp
 _GST1_PLUGINS_security=	dtls
 _GST1_PLUGINS_sysutils=	cdio
@@ -104,7 +104,7 @@ gst-bad_IMPL=		#
 
 gst-core_PORT=		multimedia/gstreamer${_GST_VER}-plugins-core
 gst-core_IMPL=		#
-gst-core_GST1_VERSION=	1.24
+gst-core_GST1_VERSION=	${_GST1_VERSION:R}
 gst-core_VERSION=	${gst-core_GST${_GST_VER}_VERSION}
 
 gst-good_PORT=		multimedia/gstreamer${_GST_VER}-plugins-good
@@ -345,6 +345,10 @@ gst-openh264_IMPL=	bad
 
 gst-resindvd_PORT=	multimedia/gstreamer${_GST_VER}-plugins-resindvd
 gst-resindvd_IMPL=	bad
+
+gst-rtsp-server_PORT=	multimedia/gstreamer${_GST_VER}-rtsp-server
+gst-rtsp-server_SUFFIX=	#
+gst-rtsp-server_IMPL=	#
 
 gst-rust_PORT=		multimedia/gstreamer${_GST_VER}-plugins-rust
 gst-rust_IMPL=		#

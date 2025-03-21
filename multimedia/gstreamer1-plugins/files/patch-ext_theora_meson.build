@@ -1,6 +1,6 @@
---- ext/theora/meson.build.orig	2022-09-13 20:18:31 UTC
+--- ext/theora/meson.build.orig	2025-03-11 20:14:44 UTC
 +++ ext/theora/meson.build
-@@ -21,7 +21,8 @@ if theoradec_dep.found() or theoraenc_dep.found()
+@@ -36,7 +36,8 @@ if theoradec_dep.found() or theoraenc_dep.found()
      c_args : gst_plugins_base_args,
      link_args : noseh_link_args,
      include_directories: [configinc, libsinc],

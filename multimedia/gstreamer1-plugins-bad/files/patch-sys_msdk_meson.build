@@ -1,6 +1,6 @@
---- sys/msdk/meson.build.orig	2024-10-30 20:33:30 UTC
+--- sys/msdk/meson.build.orig	2025-03-11 20:14:44 UTC
 +++ sys/msdk/meson.build
-@@ -185,7 +185,7 @@ else
+@@ -253,7 +253,7 @@ else
    libdl_dep = cc.find_library('dl', required: get_option('msdk'))
    libgudev_dep = dependency('gudev-1.0', required: get_option('msdk'), allow_fallback: true)
    msdk_deps = declare_dependency(dependencies: [gstva_dep, libdl_dep, libgudev_dep, libdrm_dep])
@@ -9,7 +9,7 @@
  endif
  
  if msdk_deps_found
-@@ -201,7 +201,12 @@ if msdk_deps_found
+@@ -269,7 +269,12 @@ if msdk_deps_found
      msdk_sources,
      c_args : gst_plugins_bad_args + extra_args + onevpl_extra_args,
      include_directories : [configinc, mfx_inc],

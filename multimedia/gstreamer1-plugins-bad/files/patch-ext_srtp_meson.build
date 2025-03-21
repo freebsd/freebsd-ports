@@ -1,7 +1,7 @@
---- ext/srtp/meson.build.orig	2024-08-21 11:25:15 UTC
+--- ext/srtp/meson.build.orig	2025-03-11 20:14:44 UTC
 +++ ext/srtp/meson.build
-@@ -7,7 +7,7 @@ srtp_cargs = []
- ]
+@@ -24,7 +24,7 @@ srtp_cargs = []
+ }
  
  srtp_cargs = []
 -srtp_option = get_option('srtp').enable_if(get_option('webrtc').enabled(), error_message: 'webrtc option is enabled')

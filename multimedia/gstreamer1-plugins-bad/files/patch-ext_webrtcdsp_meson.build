@@ -1,6 +1,6 @@
---- ext/webrtcdsp/meson.build.orig	2024-08-21 11:25:15 UTC
+--- ext/webrtcdsp/meson.build.orig	2025-03-11 20:14:44 UTC
 +++ ext/webrtcdsp/meson.build
-@@ -13,7 +13,7 @@ if webrtc_dep.found()
+@@ -49,7 +49,7 @@ if webrtc_dep.found()
      cpp_args : gst_plugins_bad_args,
      link_args : noseh_link_args,
      include_directories : [configinc],
@@ -8,4 +8,4 @@
 +    dependencies : [gstbase_dep, gstaudio_dep, dependency('gstreamer-bad-audio-1.0'), webrtc_dep],
      install : true,
      install_dir : plugins_install_dir,
-     override_options : ['cpp_std=c++17'],
+     override_options : [default_cppstd],

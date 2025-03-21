@@ -93,6 +93,7 @@ BAD_GST_ALL_PLUGINS+= \
 		codectimestamper \
 		coloreffects \
 		colormanagement \
+		cuda \
 		curl \
 		curl-ssh2 \
 		d3d11 \
@@ -230,6 +231,7 @@ BAD_GST_ALL_PLUGINS+= \
 		svthevcenc \
 		switchbin \
 		teletext \
+		tensordecoders \
 		tests \
 		timecode \
 		tinyalsa \

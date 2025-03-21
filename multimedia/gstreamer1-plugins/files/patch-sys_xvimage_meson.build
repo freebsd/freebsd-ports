@@ -1,6 +1,6 @@
---- sys/xvimage/meson.build.orig	2023-01-23 19:29:34 UTC
+--- sys/xvimage/meson.build.orig	2025-03-11 20:14:44 UTC
 +++ sys/xvimage/meson.build
-@@ -19,7 +19,8 @@ if xvideo_dep.found()
+@@ -35,7 +35,8 @@ if xvideo_dep.found() and x11_dep.found()
      xvimage_sources,
      c_args : gst_plugins_base_args + no_warn_args,
      include_directories: [configinc, libsinc],

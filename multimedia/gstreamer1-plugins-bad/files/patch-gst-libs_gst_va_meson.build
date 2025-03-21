@@ -1,6 +1,6 @@
---- gst-libs/gst/va/meson.build.orig	2024-10-30 20:33:30 UTC
+--- gst-libs/gst/va/meson.build.orig	2025-03-11 20:14:44 UTC
 +++ gst-libs/gst/va/meson.build
-@@ -45,12 +45,12 @@ extra_args = ['-DGST_USE_UNSTABLE_API',
+@@ -54,12 +54,12 @@ extra_args = ['-DGST_USE_UNSTABLE_API',
                '-DBUILDING_GST_VA',
                '-DG_LOG_DOMAIN="GStreamer-VA"']
  
@@ -15,7 +15,7 @@
    msdk_opt = get_option('msdk')
    qsv_opt = get_option('qsv')
    if va_opt.disabled() and msdk_opt.disabled() and qsv_opt.disabled()
-@@ -74,7 +74,7 @@ endif
+@@ -83,7 +83,7 @@ endif
    subdir_done()
  endif
  

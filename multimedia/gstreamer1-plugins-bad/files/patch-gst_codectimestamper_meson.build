@@ -1,6 +1,6 @@
---- gst/codectimestamper/meson.build.orig	2023-02-28 08:03:28 UTC
+--- gst/codectimestamper/meson.build.orig	2025-03-11 20:14:44 UTC
 +++ gst/codectimestamper/meson.build
-@@ -9,7 +9,8 @@ gstcodectimestamper = library('gstcodectimestamper',
+@@ -28,7 +28,8 @@ gstcodectimestamper = library('gstcodectimestamper',
    codectimestamper_sources,
    c_args : gst_plugins_bad_args + [ '-DGST_USE_UNSTABLE_API' ],
    include_directories : [configinc],

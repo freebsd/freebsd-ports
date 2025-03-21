@@ -1,6 +1,6 @@
---- ext/alsa/meson.build.orig	2024-12-03 23:29:07 UTC
+--- ext/alsa/meson.build.orig	2025-03-11 20:14:44 UTC
 +++ ext/alsa/meson.build
-@@ -15,7 +15,9 @@ if alsa_dep.found()
+@@ -33,7 +33,9 @@ if alsa_dep.found()
      alsa_sources,
      c_args : gst_plugins_base_args,
      include_directories: [configinc, libsinc],

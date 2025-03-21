@@ -101,6 +101,7 @@ BAD_GST_ENABLED_PLUGINS=accurip \
 			speed \
 			subenc \
 			switchbin \
+			tensordecoders \
 			timecode \
 			transcode \
 			transcoder \

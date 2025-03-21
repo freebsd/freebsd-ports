@@ -1,6 +1,6 @@
---- ext/opus/meson.build.orig	2022-09-06 22:11:13 UTC
+--- ext/opus/meson.build.orig	2025-03-11 20:14:44 UTC
 +++ ext/opus/meson.build
-@@ -11,12 +11,15 @@ opus_dep = dependency('opus', version: '>= 0.9.4', req
+@@ -28,12 +28,15 @@ if opus_dep.found()
                        fallback: ['opus', 'opus_dep'], default_options: ['docs=disabled'])
  
  if opus_dep.found()
