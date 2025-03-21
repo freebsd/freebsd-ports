@@ -1,6 +1,6 @@
 PORTNAME=	swayidle
 DISTVERSION=	1.8.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11 wayland
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
@@ -43,5 +43,8 @@ post-patch:
 	@${REINPLACE_CMD} -e 's,/login1,/ConsoleKit/Manager,' \
 		-e 's,login1,ConsoleKit,' \
 		${WRKSRC}/main.c
+	@${REINPLACE_CMD} -e 's,systemd,ConsoleKit2,g' \
+		-Ee '/conf/!s,logind(/elogind)?,ConsoleKit2,g' \
+		${WRKSRC}/${PORTNAME}.1.scd
 
 .include <bsd.port.mk>
