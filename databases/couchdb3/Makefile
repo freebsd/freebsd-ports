@@ -1,5 +1,6 @@
 PORTNAME=	couchdb3
 DISTVERSION=	3.4.3
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	APACHE/couchdb/source/${DISTVERSION}
 DISTNAME=	apache-couchdb-${DISTVERSION}
@@ -63,31 +64,31 @@ EXTRA_PATCHES=	${PATCHDIR}/extra-patch-src_jiffy_c__src_double-conversion_strtod
 
 post-patch:
 	@${REINPLACE_CMD} \
-	    -e 's,%%COUCHDB_USER%%,${USERS},g' \
-	    -e 's,%%LOG_FILE%%,${_LOGFILE},g' \
-	    -e 's,%%APPDIR%%,${_APPDIR},g' \
-	    -e 's,%%DATADIR%%,${_DATADIR},g' \
-	    -e 's,%%DBDIR%%,${_DBDIR},g' \
-	    -e 's,%%ERLVER%%,${_ERLVER},g' \
-	    -e 's,%%LOCALBASE%%,${LOCALBASE},g' \
-	    -e 's,%%PORTNAME%%,${PORTNAME},g' \
-	    -e 's,%%WWWDIR%%,${WWWDIR},g' \
-	    ${WRKSRC}/configure
+		-e 's,%%APPDIR%%,${_APPDIR},g' \
+		-e 's,%%COUCHDB_USER%%,${USERS},g' \
+		-e 's,%%DATADIR%%,${_DATADIR},g' \
+		-e 's,%%DBDIR%%,${_DBDIR},g' \
+		-e 's,%%ERLVER%%,${_ERLVER},g' \
+		-e 's,%%LOCALBASE%%,${LOCALBASE},g' \
+		-e 's,%%LOG_FILE%%,${_LOGFILE},g' \
+		-e 's,%%PORTNAME%%,${PORTNAME},g' \
+		-e 's,%%WWWDIR%%,${WWWDIR},g' \
+		${WRKSRC}/configure
 # https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=238514
 .if ${OPSYS} == FreeBSD && ${ARCH} == i386
-	@${REINPLACE_CMD} \
-	    -e 's,$$FLTO_FLAG ,,g' \
-	    ${WRKSRC}/src/jiffy/rebar.config
+	@${REINPLACE_CMD} -e 's,$$FLTO_FLAG ,,g' \
+		${WRKSRC}/src/jiffy/rebar.config
 .endif
 
 pre-install:
 # prune build artefacts and surplus headers
-	${FIND} -E ${WRKSRC} -type f \
-		-regex '.*\.(a|buildinfo|c|cc|cmd|d|o|orig|h|cpp)' -print -delete
+	${FIND} -E ${WRKSRC} -type f -regex '.*\.(a|buildinfo|c|cc|cmd|d|o|orig|h|cpp)' \
+		-print -delete
 
 do-install:
 # relocate user-modifiable runtime configs to match hier(7)
-	${MKDIR} ${STAGEDIR}${ETCDIR} ${STAGEDIR}${PREFIX}/libexec/${PORTNAME}
+	${MKDIR} ${STAGEDIR}${ETCDIR} \
+		${STAGEDIR}${PREFIX}/libexec/${PORTNAME}
 	${INSTALL_DATA} ${WRKSRC}/rel/couchdb/etc/local.ini \
 		${STAGEDIR}${ETCDIR}/local.ini.sample
 	${INSTALL_DATA} ${WRKSRC}/rel/couchdb/etc/vm.args \
@@ -96,7 +97,7 @@ do-install:
 		${STAGEDIR}${PREFIX}/share/man/man1
 	${CP} ${WRKSRC}/src/docs/images/favicon.ico ${WRKSRC}/share/www/
 # remove runtime dirs and files that were moved to match hier(7)
-	${RM} -rv \
+	${RM} -r \
 		${WRKSRC}/rel/couchdb/erts-*/include \
 		${WRKSRC}/rel/couchdb/erts-*/src \
 		${WRKSRC}/rel/couchdb/etc/*.d \
@@ -111,20 +112,31 @@ do-install:
 		${WRKSRC}/rel/couchdb/share/docs \
 		${WRKSRC}/rel/couchdb/share/www \
 		${WRKSRC}/rel/couchdb/var
-	(cd ${WRKSRC}/rel/couchdb && ${COPYTREE_SHARE} . ${STAGEDIR}${_APPDIR})
-	${INSTALL_PROGRAM} ${WRKSRC}/rel/couchdb/bin/couchjs ${STAGEDIR}${_APPDIR}/bin/
-# fauxton UI is a required component
-	(cd ${WRKSRC}/share/www && ${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR})
-post-install:
-	@${FIND} -E ${STAGEDIR} -type f \
-		\( -name couchjs* -o -name *.so \) \
+	(cd ${WRKSRC}/rel/couchdb && \
+		${COPYTREE_SHARE} . ${STAGEDIR}${_APPDIR})
+# strip binaries, and mark as executable, along with scripts
+# -- this was not as straightforward as it could have been
+	${FIND} ${STAGEDIR}${_APPDIR} -type f -name couchjs -exec ${STRIP_CMD} \
+		{} +
+	${FIND} ${STAGEDIR}${_APPDIR} -type f -name '*.so' -exec ${STRIP_CMD} \
+		{} +
+	${FIND} ${STAGEDIR}${_APPDIR}/erts-*/bin -type f -not -name start \
 		-exec ${STRIP_CMD} {} +
-	@${MKDIR} \
-		${STAGEDIR}${_DBDIR} \
+	${STRIP_CMD} ${STAGEDIR}${_APPDIR}/lib/os_mon-*/priv/bin/*sup
+	${CHMOD} -R ${BINMODE} ${STAGEDIR}${_APPDIR}/bin
+	${CHMOD} -R ${BINMODE} ${STAGEDIR}${_APPDIR}/lib/os_mon-*/priv/bin
+	${CHMOD} -R ${BINMODE} ${STAGEDIR}${_APPDIR}/erts-*/bin
+# fauxton UI is a required component
+	(cd ${WRKSRC}/share/www && \
+		${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR})
+
+post-install:
+	${MKDIR} ${STAGEDIR}${_DBDIR} \
 		${STAGEDIR}${_LOGDIR} \
 		${STAGEDIR}${_RUNDIR}
 
 post-install-DOCS-on:
-	(cd ${WRKSRC}/share/docs/html && ${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR}/docs)
+	(cd ${WRKSRC}/share/docs/html && \
+		${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR}/docs)
 
 .include <bsd.port.mk>
