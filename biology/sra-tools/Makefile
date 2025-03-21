@@ -1,5 +1,5 @@
 PORTNAME=	sra-tools
-DISTVERSION=	3.2.0
+DISTVERSION=	3.2.1
 CATEGORIES=	biology java
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -35,6 +35,8 @@ GH_ACCOUNT=	ncbi
 GH_TUPLE+=	ncbi:ncbi-vdb:${DISTVERSION}:vdb/ncbi-vdb
 
 CMAKE_ARGS+=	-DVDB_LIBDIR:STRING=${WRKSRC}/ncbi-vdb/build/lib
+
+PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
 pre-configure:
 	# Reinplaces may follow static patches.  Run "make clean patch"
