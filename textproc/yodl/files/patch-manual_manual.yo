@@ -1,6 +1,6 @@
---- manual/yo/manual.yo.orig	2015-01-02 12:46:44 UTC
-+++ manual/yo/manual.yo
-@@ -4,7 +4,7 @@ latexpackage()(a4,epsf)
+--- manual/manual.yo.orig	2017-06-03 16:03:52 UTC
++++ manual/manual.yo
+@@ -4,7 +4,7 @@ whenlatex(\
  
  whenlatex(\
      SETSYMBOL(XXusexlatin)

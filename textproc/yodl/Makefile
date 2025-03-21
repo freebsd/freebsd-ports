@@ -1,6 +1,5 @@
 PORTNAME=	yodl
-PORTVERSION=	3.10.00
-PORTREVISION=	6
+DISTVERSION=	4.00.00
 CATEGORIES=	textproc
 
 MAINTAINER=	bofh@FreeBSD.org
@@ -20,7 +19,7 @@ CPE_VENDOR=	${PORTNAME}_project
 USE_PERL5=	build
 USE_GITLAB=	yes
 GL_ACCOUNT=	fbb-git
-GL_TAGNAME=	5fa97b175c85581d01329013cfdb4239f019b023
+GL_TAGNAME=	9d24772307da4ca936e49fde6f19ae47f46028af
 
 SHEBANG_LANG=	icmake
 icmake_OLD_CMD=	/usr/bin/icmake
@@ -35,7 +34,6 @@ SHEBANG_FILES=	${WRKSRC}/macros/rawmacros/create \
 		${WRKSRC}/macros/rawmacros/startdoc \
 		${WRKSRC}/macros/rawmacros/startdoc.pl \
 		${WRKSRC}/contrib/build.pl \
-		${WRKSRC}/src/yodl/replace \
 		${WRKSRC}/scripts/configreplacements \
 		${WRKSRC}/scripts/macroseparator.pl \
 		${WRKSRC}/scripts/stdmacros \
@@ -50,6 +48,7 @@ PLIST_SUB+=	PORTVERSION="${PORTVERSION}"
 WRKSRC_SUBDIR=	${PORTNAME}
 
 OPTIONS_DEFINE=	DOCS
+
 DOCS_USES=	tex
 DOCS_USE=	TEX=latex:build,dvipsk:build
 

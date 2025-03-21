@@ -1,5 +1,5 @@
---- src/verbinsert/main.cc.orig	2018-07-22 13:07:15 UTC
-+++ src/verbinsert/main.cc
+--- verbinsert/main.cc.orig	2017-06-03 16:03:52 UTC
++++ verbinsert/main.cc
 @@ -2,6 +2,7 @@
  #include <fstream>
  #include <iomanip>
