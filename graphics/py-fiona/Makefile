@@ -1,13 +1,12 @@
-PORTNAME=	Fiona
-DISTVERSION=	1.8.22
-PORTREVISION=	5
+PORTNAME=	fiona
+DISTVERSION=	1.10.1
 CATEGORIES=	graphics python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	lbartoletti@FreeBSD.org
 COMMENT=	OGR's neat and nimble API for Python programmers
-WWW=		https://pypi.org/project/Fiona/
+WWW=		https://pypi.org/project/fiona/
 
 LICENSE=	BSD3CLAUSE
 
