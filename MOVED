@@ -4210,3 +4210,4 @@ devel/ccrtp||2025-03-16|Has expired: No active development in years and no users
 textproc/rubygem-cucumber-gherkin29|textproc/rubygem-cucumber-gherkin|2025-03-19|Remove obsoleted port. Use textproc/rubygem-cucumber-gherkin instead
 devel/utf8cpp3|devel/utf8cpp|2025-03-19|Remove obsoleted port. Use devel/utf8cpp instead
 devel/rubygem-flipper026|devel/rubygem-flipper-gitlab|2025-03-19|Please use devel/rubygem-flipper-gitlab instead
+devel/py-pyro||2025-03-21|Has expired: Upstream development stopped, not compatible with py311, use pyro5 instead
