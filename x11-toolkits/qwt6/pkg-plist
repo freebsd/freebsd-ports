@@ -105,6 +105,20 @@
 %%QT_INCDIR%%/qwt6/QwtPointMapper
 %%QT_INCDIR%%/qwt6/QwtPointPolar
 %%QT_INCDIR%%/qwt6/QwtPointSeriesData
+%%QT_INCDIR%%/qwt6/QwtPolarCanvas
+%%QT_INCDIR%%/qwt6/QwtPolarCurve
+%%QT_INCDIR%%/qwt6/QwtPolarFitter
+%%QT_INCDIR%%/qwt6/QwtPolarGrid
+%%QT_INCDIR%%/qwt6/QwtPolarItem
+%%QT_INCDIR%%/qwt6/QwtPolarItemDict
+%%QT_INCDIR%%/qwt6/QwtPolarLayout
+%%QT_INCDIR%%/qwt6/QwtPolarMagnifier
+%%QT_INCDIR%%/qwt6/QwtPolarMarker
+%%QT_INCDIR%%/qwt6/QwtPolarPanner
+%%QT_INCDIR%%/qwt6/QwtPolarPicker
+%%QT_INCDIR%%/qwt6/QwtPolarPlot
+%%QT_INCDIR%%/qwt6/QwtPolarRenderer
+%%QT_INCDIR%%/qwt6/QwtPolarSpectrogram
 %%QT_INCDIR%%/qwt6/QwtPowerTransform
 %%QT_INCDIR%%/qwt6/QwtRasterData
 %%QT_INCDIR%%/qwt6/QwtRichTextEngine
@@ -246,7 +260,6 @@
 %%QT_INCDIR%%/qwt6/qwt_polar_panner.h
 %%QT_INCDIR%%/qwt6/qwt_polar_picker.h
 %%QT_INCDIR%%/qwt6/qwt_polar_plot.h
-@comment %%QT_INCDIR%%/qwt6/qwt_plot_glcanvas.h
 %%QT_INCDIR%%/qwt6/qwt_polar_renderer.h
 %%QT_INCDIR%%/qwt6/qwt_polar_spectrogram.h
 %%QT_INCDIR%%/qwt6/qwt_raster_data.h
@@ -280,6 +293,7 @@
 %%QT_INCDIR%%/qwt6/qwt_weeding_curve_fitter.h
 %%QT_INCDIR%%/qwt6/qwt_wheel.h
 %%QT_INCDIR%%/qwt6/qwt_widget_overlay.h
+@comment %%QT_INCDIR%%/qwt6/qwt_plot_glcanvas.h
 %%QT_LIBDIR%%/libqwt.so
 %%QT_LIBDIR%%/libqwt.so.6
 %%QT_LIBDIR%%/libqwt.so.%%SHLIB_SHVER%%
