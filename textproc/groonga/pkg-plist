@@ -252,7 +252,6 @@ libdata/pkgconfig/groonga.pc
 %%DATADIR%%/html/admin/assets/jquery-ui-1.12.1/jquery-ui.structure.css
 %%DATADIR%%/html/admin/assets/jquery-ui-1.12.1/jquery-ui.theme.css
 %%DATADIR%%/html/admin/assets/jquery-ui-1.12.1/package.json
-%%DATADIR%%/html/admin/assets/loading.gif
 %%DATADIR%%/html/admin/favicon.ico
 %%DATADIR%%/html/admin/favicon.png
 %%DATADIR%%/html/admin/favicon.svg
