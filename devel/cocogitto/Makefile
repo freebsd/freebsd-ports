@@ -1,6 +1,5 @@
 PORTNAME=	cocogitto
-DISTVERSION=	6.2.0
-PORTREVISION=	2
+DISTVERSION=	6.3.0
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -23,15 +22,12 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		anstyle-wincon-3.0.3 \
 		anyhow-1.0.93 \
 		assert_cmd-2.0.14 \
-		async-graphql-parser-7.0.11 \
-		async-graphql-value-7.0.11 \
 		autocfg-1.3.0 \
 		bitflags-1.3.2 \
 		bitflags-2.5.0 \
 		block-buffer-0.10.4 \
 		bstr-1.9.1 \
 		bumpalo-3.16.0 \
-		bytes-1.8.0 \
 		cc-1.0.97 \
 		cfg-if-1.0.0 \
 		chrono-0.4.38 \
@@ -46,6 +42,8 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		clap_mangen-0.2.20 \
 		cmd_lib-1.9.4 \
 		cmd_lib_macros-1.9.4 \
+		cog_schemars-0.1.0 \
+		cog_schemars_derive-0.1.0 \
 		colorchoice-1.0.1 \
 		colored-2.1.0 \
 		config-0.14.0 \
@@ -56,9 +54,6 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		crossbeam-epoch-0.9.18 \
 		crossbeam-utils-0.8.19 \
 		crypto-common-0.1.6 \
-		darling-0.20.10 \
-		darling_core-0.20.10 \
-		darling_macro-0.20.10 \
 		deunicode-1.6.0 \
 		diff-0.1.13 \
 		difflib-0.4.0 \
@@ -67,8 +62,6 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		dyn-clone-1.0.17 \
 		edit-0.1.5 \
 		either-1.11.0 \
-		enumset-1.1.5 \
-		enumset_derive-0.10.0 \
 		env_logger-0.10.2 \
 		equivalent-1.0.1 \
 		errno-0.3.9 \
@@ -80,10 +73,10 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		fs_extra-1.3.0 \
 		generic-array-0.14.7 \
 		getrandom-0.2.15 \
-		git2-0.18.3 \
+		git2-0.20.0 \
 		globset-0.4.14 \
 		globwalk-0.8.1 \
-		hashbrown-0.14.5 \
+		hashbrown-0.15.2 \
 		heck-0.5.0 \
 		hermit-abi-0.3.9 \
 		home-0.5.9 \
@@ -91,26 +84,23 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		humantime-2.1.0 \
 		iana-time-zone-0.1.60 \
 		iana-time-zone-haiku-0.1.2 \
-		ident_case-1.0.1 \
 		idna-0.5.0 \
 		ignore-0.4.22 \
-		indexmap-2.2.6 \
+		indexmap-2.7.1 \
 		indoc-2.0.5 \
 		is-terminal-0.4.12 \
 		is_terminal_polyfill-1.70.0 \
-		itertools-0.12.1 \
 		itertools-0.13.0 \
 		itoa-1.0.11 \
 		jobserver-0.1.31 \
 		js-sys-0.3.69 \
 		lazy_static-1.4.0 \
 		libc-0.2.154 \
-		libgit2-sys-0.16.2+1.7.2 \
+		libgit2-sys-0.18.0+1.9.0 \
 		libm-0.2.8 \
 		libz-sys-1.1.16 \
 		linux-raw-sys-0.4.13 \
 		log-0.4.21 \
-		maplit-1.0.2 \
 		memchr-2.7.2 \
 		minimal-lexical-0.2.1 \
 		nom-7.1.3 \
@@ -155,18 +145,10 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		regex-automata-0.4.6 \
 		regex-syntax-0.8.3 \
 		roff-0.2.1 \
-		rustdoc-types-0.26.0 \
-		rustdoc-types-0.28.1 \
-		rustdoc-types-0.29.1 \
-		rustdoc-types-0.30.0 \
-		rustdoc-types-0.31.0 \
-		rustdoc-types-0.32.2 \
 		rustix-0.38.34 \
 		rusty-forkfork-0.4.0 \
 		ryu-1.0.18 \
 		same-file-1.0.6 \
-		schemars-1.0.0-alpha.15 \
-		schemars_derive-1.0.0-alpha.15 \
 		sealed_test-1.0.0 \
 		sealed_test_derive-1.0.0 \
 		semver-1.0.23 \
@@ -174,13 +156,12 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		serde_derive-1.0.214 \
 		serde_derive_internals-0.29.1 \
 		serde_json-1.0.132 \
-		serde_spanned-0.6.5 \
+		serde_spanned-0.6.8 \
 		sha2-0.10.8 \
 		shell-words-1.1.0 \
 		siphasher-0.3.11 \
 		slug-0.1.5 \
-		smallvec-1.13.2 \
-		speculoos-0.11.0 \
+		speculoos-0.12.0 \
 		stderrlog-0.6.0 \
 		strsim-0.11.1 \
 		syn-1.0.109 \
@@ -194,20 +175,9 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		thread_local-1.1.8 \
 		tinyvec-1.6.0 \
 		tinyvec_macros-0.1.1 \
-		toml-0.5.11 \
-		toml-0.8.12 \
-		toml_datetime-0.6.5 \
-		toml_edit-0.22.12 \
-		trustfall-0.8.0 \
-		trustfall-rustdoc-adapter-30.2.0 \
-		trustfall-rustdoc-adapter-32.2.0 \
-		trustfall-rustdoc-adapter-33.2.0 \
-		trustfall-rustdoc-adapter-34.1.0 \
-		trustfall-rustdoc-adapter-35.1.0 \
-		trustfall-rustdoc-adapter-36.1.0 \
-		trustfall_core-0.8.0 \
-		trustfall_derive-0.3.1 \
-		trustfall_rustdoc-0.17.0 \
+		toml-0.8.20 \
+		toml_datetime-0.6.8 \
+		toml_edit-0.22.24 \
 		typenum-1.17.0 \
 		ucd-trie-0.1.6 \
 		unic-char-property-0.9.0 \
@@ -257,7 +227,7 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		windows_x86_64_gnullvm-0.52.5 \
 		windows_x86_64_msvc-0.48.5 \
 		windows_x86_64_msvc-0.52.5 \
-		winnow-0.6.8 \
+		winnow-0.7.3 \
 		winsafe-0.0.19 \
 		yansi-0.5.1
 
