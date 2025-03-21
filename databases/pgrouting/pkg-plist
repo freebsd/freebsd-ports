@@ -34,5 +34,7 @@ share/postgresql/extension/pgrouting--3.6.1--%%DISTVERSION%%.sql
 share/postgresql/extension/pgrouting--3.6.2--%%DISTVERSION%%.sql
 share/postgresql/extension/pgrouting--3.6.3--%%DISTVERSION%%.sql
 share/postgresql/extension/pgrouting--3.7.0--%%DISTVERSION%%.sql
+share/postgresql/extension/pgrouting--3.7.1--%%DISTVERSION%%.sql
+share/postgresql/extension/pgrouting--3.7.2--%%DISTVERSION%%.sql
 share/postgresql/extension/pgrouting--%%DISTVERSION%%.sql
 share/postgresql/extension/pgrouting.control
