@@ -24,6 +24,8 @@ TEST_TARGET=	check_local
 CONFIGURE_ARGS=	LD="${CC}" LDXX="${CXX}"
 .endif
 
+CONFIGURE_ARGS+=	LDXXFLAGS="${LDFLAGS}"
+
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libmpdec.so.${DISTVERSION}
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libmpdec++.so.${DISTVERSION}
