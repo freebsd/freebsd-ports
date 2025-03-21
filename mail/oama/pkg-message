@@ -1,0 +1,14 @@
+[
+{
+  type: upgrade
+  maximum_version: "0.15"
+  message: <<EOM
+When the GPG backend is used the encrypted credentials now are stored
+in the $XDG_STATE_HOME/oama directory. If the XDG_STATE_HOME environment
+variable is not set then it defaults to $HOME/.local/state.
+
+That is a breaking change! If you use the GPG backend you need to manually
+move your credential ~/.local/var/oama/*.oama files into the new directory.
+EOM
+}
+]
