@@ -1,5 +1,5 @@
-TIMESTAMP = 1572692217
-SHA256 (pslib-0.4.6.tar.gz) = 642e8405c85dc2ebcd307e0b46ed3d366fd28de098c6d8b717720689270b2954
-SIZE (pslib-0.4.6.tar.gz) = 543950
+TIMESTAMP = 1742515849
+SHA256 (pslib-0.4.8.tar.gz) = 81a58dbc12ee514cb4a3e1d608ec86e8a9b3c43ad8098e8f57759b03f8e31fae
+SIZE (pslib-0.4.8.tar.gz) = 548679
 SHA256 (pslib-examples-0.0.11.tar.gz) = 8932eccb8cd2304dfe00e85be70ad9e11f18ea7f976fb0d1e7af8a3d51113b71
 SIZE (pslib-examples-0.0.11.tar.gz) = 668166
