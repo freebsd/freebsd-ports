@@ -1,5 +1,5 @@
 PORTNAME=	utf8proc
-DISTVERSION=	2.9.0
+DISTVERSION=	2.10.0
 CATEGORIES=	textproc devel
 MASTER_SITES=	https://github.com/JuliaStrings/${PORTNAME}/releases/download/v${DISTVERSION}/
 
@@ -18,7 +18,7 @@ CMAKE_ON=	BUILD_SHARED_LIBS
 PLIST_FILES=	include/utf8proc.h \
 		lib/libutf8proc.so \
 		lib/libutf8proc.so.3 \
-		lib/libutf8proc.so.3.0.0 \
+		lib/libutf8proc.so.3.1.0 \
 		libdata/pkgconfig/libutf8proc.pc
 PORTDOCS=	NEWS.md README.md
 
