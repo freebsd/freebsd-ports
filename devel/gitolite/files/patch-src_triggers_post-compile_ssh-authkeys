@@ -29,6 +29,6 @@ index cd59aec83..6325373d7 100755
      chomp(@line);
 -    return "command=\"$glshell $user" . ( $kfn ? " $f" : "" ) . "\",$auth_options $line[0]";
 +    return "command=\"$glshell $user" . ( $kfn ? " $f" : "" ) . "\",$auth_options" .
-+        ($line[0] =~ /^(ecdsa|(sk-)?ssh)-/ ? " " : "," ) . $line[0];
++        ($line[0] =~ /^(sk-)?(ecdsa|ssh)-/ ? " " : "," ) . $line[0];
  }
  
