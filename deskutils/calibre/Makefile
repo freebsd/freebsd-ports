@@ -1,6 +1,5 @@
 PORTNAME=	calibre
-PORTVERSION=	7.26.0
-PORTREVISION=	1
+PORTVERSION=	8.0.1
 CATEGORIES=	deskutils python
 MASTER_SITES=	https://download.calibre-ebook.com/${PORTVERSION}/:DEFAULT \
 		https://raw.githubusercontent.com/rhasspy/piper/${PIPER_VOICES_HASH}/:piper
@@ -69,8 +68,8 @@ USES=		desktop-file-utils gettext-runtime:build gl localbase:ldflags \
 		pkgconfig pyqt:6 python:3.11+ qt:6 shared-mime-info shebangfix sqlite ssl \
 		tar:xz xorg
 USE_GITHUB=	nodefault
-GH_TUPLE=	kovidgoyal:calibre-translations:d1f8b5c:translations \
-		LibreOffice:dictionaries:762abe7:hypenation
+GH_TUPLE=	kovidgoyal:calibre-translations:288b823:translations \
+		LibreOffice:dictionaries:1b8d1d5:hypenation
 PIPER_VOICES_HASH=	c0670df63daf07070c9be36b5c4bed270ad72383
 USE_GL=		opengl
 USE_PYQT=	pyqt6 pysip webengine qtbuilder:build sip:build
@@ -105,6 +104,7 @@ post-extract:
 	@${CP} ${FILESDIR}/user-agent-data.json ${WRKSRC}/resources
 
 post-patch:
+	@${RM} ${WRKSRC}/src/calibre/devices/usbms/hal.py
 	@${REINPLACE_CMD} -e "s|#!/usr/bin/env python{py_major_version}|#!${PYTHON_CMD}|" \
 			-e "s|#!/usr/bin/env python|#!${PYTHON_CMD}|" \
 		${WRKSRC}/setup/install.py \

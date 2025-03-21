@@ -154,6 +154,7 @@ lib/calibre/calibre/devices/kindle/driver.py
 lib/calibre/calibre/devices/kobo/__init__.py
 lib/calibre/calibre/devices/kobo/bookmark.py
 lib/calibre/calibre/devices/kobo/books.py
+lib/calibre/calibre/devices/kobo/db.py
 lib/calibre/calibre/devices/kobo/driver.py
 lib/calibre/calibre/devices/kobo/kobotouch_config.py
 lib/calibre/calibre/devices/mime.py
@@ -198,7 +199,6 @@ lib/calibre/calibre/devices/usbms/cli.py
 lib/calibre/calibre/devices/usbms/device.py
 lib/calibre/calibre/devices/usbms/deviceconfig.py
 lib/calibre/calibre/devices/usbms/driver.py
-lib/calibre/calibre/devices/usbms/hal.py
 lib/calibre/calibre/devices/user_defined/__init__.py
 lib/calibre/calibre/devices/user_defined/driver.py
 lib/calibre/calibre/devices/utils.py
@@ -218,6 +218,7 @@ lib/calibre/calibre/ebooks/compression/palmdoc.py
 lib/calibre/calibre/ebooks/compression/tcr.py
 lib/calibre/calibre/ebooks/constants.py
 lib/calibre/calibre/ebooks/conversion/__init__.py
+lib/calibre/calibre/ebooks/conversion/archives.py
 lib/calibre/calibre/ebooks/conversion/cli.py
 lib/calibre/calibre/ebooks/conversion/config.py
 lib/calibre/calibre/ebooks/conversion/plugins/__init__.py
@@ -479,6 +480,7 @@ lib/calibre/calibre/ebooks/oeb/polish/hyphenation.py
 lib/calibre/calibre/ebooks/oeb/polish/images.py
 lib/calibre/calibre/ebooks/oeb/polish/import_book.py
 lib/calibre/calibre/ebooks/oeb/polish/jacket.py
+lib/calibre/calibre/ebooks/oeb/polish/kepubify.py
 lib/calibre/calibre/ebooks/oeb/polish/main.py
 lib/calibre/calibre/ebooks/oeb/polish/opf.py
 lib/calibre/calibre/ebooks/oeb/polish/parsing.py
@@ -493,6 +495,7 @@ lib/calibre/calibre/ebooks/oeb/polish/tests/__init__.py
 lib/calibre/calibre/ebooks/oeb/polish/tests/base.py
 lib/calibre/calibre/ebooks/oeb/polish/tests/cascade.py
 lib/calibre/calibre/ebooks/oeb/polish/tests/container.py
+lib/calibre/calibre/ebooks/oeb/polish/tests/kepubify.py
 lib/calibre/calibre/ebooks/oeb/polish/tests/main.py
 lib/calibre/calibre/ebooks/oeb/polish/tests/parsing.py
 lib/calibre/calibre/ebooks/oeb/polish/tests/structure.py
@@ -739,6 +742,8 @@ lib/calibre/calibre/gui2/convert/heuristics.py
 lib/calibre/calibre/gui2/convert/heuristics_ui.py
 lib/calibre/calibre/gui2/convert/htmlz_output.py
 lib/calibre/calibre/gui2/convert/htmlz_output_ui.py
+lib/calibre/calibre/gui2/convert/kepub_output.py
+lib/calibre/calibre/gui2/convert/kepub_output_ui.py
 lib/calibre/calibre/gui2/convert/look_and_feel.py
 lib/calibre/calibre/gui2/convert/look_and_feel_ui.py
 lib/calibre/calibre/gui2/convert/lrf_output.py
@@ -808,6 +813,7 @@ lib/calibre/calibre/gui2/dialogs/comments_dialog.py
 lib/calibre/calibre/gui2/dialogs/confirm_delete.py
 lib/calibre/calibre/gui2/dialogs/confirm_delete_location.py
 lib/calibre/calibre/gui2/dialogs/confirm_merge.py
+lib/calibre/calibre/gui2/dialogs/connect_to_folder.py
 lib/calibre/calibre/gui2/dialogs/conversion_error.py
 lib/calibre/calibre/gui2/dialogs/conversion_error_ui.py
 lib/calibre/calibre/gui2/dialogs/custom_recipes.py
@@ -1745,6 +1751,7 @@ lib/calibre/tinycss/version.py
 %%DATADIR%%/images/mimetypes/gif.png
 %%DATADIR%%/images/mimetypes/html.png
 %%DATADIR%%/images/mimetypes/jpeg.png
+%%DATADIR%%/images/mimetypes/kfx.png
 %%DATADIR%%/images/mimetypes/lit.png
 %%DATADIR%%/images/mimetypes/lrf.png
 %%DATADIR%%/images/mimetypes/lrx.png
@@ -1917,6 +1924,7 @@ lib/calibre/tinycss/version.py
 %%DATADIR%%/templates/html_export_default.tmpl
 %%DATADIR%%/templates/html_export_default_index.tmpl
 %%DATADIR%%/templates/inline_toc_styles.css
+%%DATADIR%%/templates/kobo.js
 %%DATADIR%%/templates/lrf.xsl
 %%DATADIR%%/templates/new_book.html
 %%DATADIR%%/templates/new_nav.html
