@@ -10,13 +10,15 @@ WWW=		https://github.com/AOMediaCodec/libavif
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libpng.so:graphics/png
+LIB_DEPENDS=	libpng.so:graphics/png \
+		libyuv.so:graphics/libyuv
 TEST_DEPENDS=	bash:shells/bash \
 		googletest>=0:devel/googletest
 
 USES=		cmake:testing compiler:c11 cpe jpeg pkgconfig
 
 CMAKE_ARGS=	-DAVIF_GTEST:STRING=OFF \
+		-DAVIF_LIBYUV:STRING=SYSTEM \
 		-DAVIF_ZLIBPNG:STRING=SYSTEM
 CMAKE_OFF=	AVIF_BUILD_EXAMPLES
 CMAKE_ON=	AVIF_BUILD_APPS
@@ -31,17 +33,15 @@ GH_TUPLE=	kmurray:libargparse:ee74d1b:kmurray_libargparse/../.build/_deps/libarg
 
 CPE_VENDOR=	aomedia
 
-OPTIONS_DEFINE=	MANPAGES PIXBUF
-OPTIONS_GROUP=	AV1 COLOR
+OPTIONS_DEFINE=	LIBSHARPYUV MANPAGES PIXBUF
+OPTIONS_GROUP=	AV1
 OPTIONS_GROUP_AV1=	AOM DAV1D GAV1 RAV1E SVTAV1
-OPTIONS_GROUP_COLOR=	LIBSHARPYUV LIBYUV
-OPTIONS_DEFAULT=AOM DAV1D LIBYUV PIXBUF
+OPTIONS_DEFAULT=AOM DAV1D PIXBUF
 OPTIONS_SUB=	yes
 AOM_DESC=		AV1 encoding/decoding via libaom
 DAV1D_DESC=		AV1 decoding via libdav1d
 GAV1_DESC=		AV1 decoding via libgav1
 LIBSHARPYUV_DESC=	Colorspace conversion via libsharpyuv
-LIBYUV_DESC=		Colorspace conversion via libyuv
 MANPAGES_DESC=		Install manpages (requires pandoc)
 RAV1E_DESC=		AV1 encoding via librav1e
 SVTAV1_DESC=		AV1 encoding via SVT-AV1
@@ -58,9 +58,6 @@ GAV1_LIB_DEPENDS=	libgav1.so:multimedia/libgav1
 LIBSHARPYUV_CMAKE_OFF=	-DAVIF_LIBSHARPYUV:STRING=OFF
 LIBSHARPYUV_CMAKE_ON=	-DAVIF_LIBSHARPYUV:STRING=SYSTEM
 LIBSHARPYUV_LIB_DEPENDS=libsharpyuv.so:graphics/webp
-LIBYUV_CMAKE_OFF=	-DAVIF_LIBYUV:STRING=OFF
-LIBYUV_CMAKE_ON=	-DAVIF_LIBYUV:STRING=SYSTEM
-LIBYUV_LIB_DEPENDS=	libyuv.so:graphics/libyuv
 MANPAGES_BUILD_DEPENDS=	pandoc:textproc/hs-pandoc
 MANPAGES_CMAKE_BOOL=	AVIF_BUILD_MAN_PAGES
 PIXBUF_CMAKE_BOOL=	AVIF_BUILD_GDK_PIXBUF
