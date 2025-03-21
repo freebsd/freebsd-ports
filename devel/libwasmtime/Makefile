@@ -1,5 +1,5 @@
 PORTNAME=	lib${GH_PROJECT}
-PORTVERSION=	30.0.2
+PORTVERSION=	31.0.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
@@ -213,6 +213,7 @@ CARGO_CRATES=	addr2line-0.24.1 \
 		lazy_static-1.4.0 \
 		lazycell-1.3.0 \
 		leb128-0.2.5 \
+		leb128fmt-0.1.0 \
 		libc-0.2.161 \
 		libfuzzer-sys-0.4.8 \
 		libloading-0.8.1 \
@@ -397,21 +398,24 @@ CARGO_CRATES=	addr2line-0.24.1 \
 		wasm-bindgen-macro-0.2.97 \
 		wasm-bindgen-macro-support-0.2.97 \
 		wasm-bindgen-shared-0.2.97 \
-		wasm-encoder-0.224.0 \
-		wasm-metadata-0.224.0 \
-		wasm-mutate-0.224.0 \
-		wasm-smith-0.224.0 \
-		wasm-wave-0.224.0 \
+		wasm-encoder-0.225.0 \
+		wasm-encoder-0.226.0 \
+		wasm-metadata-0.225.0 \
+		wasm-metadata-0.226.0 \
+		wasm-mutate-0.226.0 \
+		wasm-smith-0.226.0 \
+		wasm-wave-0.226.0 \
 		wasmi-0.39.1 \
 		wasmi_collections-0.39.1 \
 		wasmi_core-0.39.1 \
 		wasmi_ir-0.39.1 \
-		wasmparser-0.224.1 \
+		wasmparser-0.225.0 \
+		wasmparser-0.226.0 \
 		wasmparser-nostd-0.100.2 \
-		wasmprinter-0.224.0 \
+		wasmprinter-0.226.0 \
 		wast-35.0.2 \
-		wast-224.0.0 \
-		wat-1.224.0 \
+		wast-226.0.0 \
+		wat-1.226.0 \
 		web-sys-0.3.57 \
 		webpki-roots-0.26.1 \
 		which-4.4.2 \
@@ -447,14 +451,16 @@ CARGO_CRATES=	addr2line-0.24.1 \
 		winnow-0.5.39 \
 		winsafe-0.0.19 \
 		winx-0.36.3 \
-		wit-bindgen-0.38.0 \
-		wit-bindgen-core-0.38.0 \
+		wit-bindgen-0.39.0 \
+		wit-bindgen-core-0.39.0 \
 		wit-bindgen-rt-0.37.0 \
-		wit-bindgen-rt-0.38.0 \
-		wit-bindgen-rust-0.38.0 \
-		wit-bindgen-rust-macro-0.38.0 \
-		wit-component-0.224.0 \
-		wit-parser-0.224.1 \
+		wit-bindgen-rt-0.39.0 \
+		wit-bindgen-rust-0.39.0 \
+		wit-bindgen-rust-macro-0.39.0 \
+		wit-component-0.225.0 \
+		wit-component-0.226.0 \
+		wit-parser-0.225.0 \
+		wit-parser-0.226.0 \
 		witx-0.9.1 \
 		write16-1.0.0 \
 		writeable-0.5.5 \
