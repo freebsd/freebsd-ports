@@ -5,6 +5,18 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20250321:
+  AFFECTS: users of mail/oama
+  AUTHOR: nivit@FreeBSD.org
+
+  Starting from version 0.15, when the GPG backend is used the encrypted
+  credentials are stored in the $XDG_STATE_HOME/oama directory.
+  If the XDG_STATE_HOME environment variable is not set then it defaults to
+  $HOME/.local/state.
+
+  That is a breaking change! If you use the GPG backend you need to manually
+  move your credential ~/.local/var/oama/*.oama files into the new directory.
+
 20250316:
   AFFECTS: users of graphics/gdk-pixbuf2
   AUTHOR: vishwin@FreeBSD.org
