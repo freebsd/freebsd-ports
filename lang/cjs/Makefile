@@ -34,4 +34,8 @@ SHEBANG_GLOB=	*.py
 
 PORTSCOUT=	limit:^[0-9.]+$$	# ignore master.mint* tags
 
+post-patch:
+	${REINPLACE_CMD} -e 's|--warn-error||g' \
+		${WRKSRC}/meson.build
+
 .include <bsd.port.mk>
