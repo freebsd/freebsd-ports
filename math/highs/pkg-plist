@@ -142,7 +142,7 @@ include/highs/pdlp/cupdlp/cupdlp_defs.h
 include/highs/pdlp/cupdlp/cupdlp_linalg.h
 include/highs/pdlp/cupdlp/cupdlp_proj.h
 include/highs/pdlp/cupdlp/cupdlp_restart.h
-include/highs/pdlp/cupdlp/cupdlp_scaling_cuda.h
+include/highs/pdlp/cupdlp/cupdlp_scaling.h
 include/highs/pdlp/cupdlp/cupdlp_solver.h
 include/highs/pdlp/cupdlp/cupdlp_step.h
 include/highs/pdlp/cupdlp/cupdlp_utils.c
@@ -233,5 +233,5 @@ lib/cmake/highs/highs-targets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/highs/highs-targets.cmake
 lib/libhighs.so
 lib/libhighs.so.1
-lib/libhighs.so.1.9.0
+lib/libhighs.so.1.10.0
 libdata/pkgconfig/highs.pc
