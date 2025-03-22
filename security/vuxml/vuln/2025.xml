@@ -1,3 +1,31 @@
+  <vuln vid="26f6733d-06a9-11f0-ba0b-641c67a117d8">
+    <topic>www/varnish7 -- client-side desync vulnerability</topic>
+    <affects>
+      <package>
+	<name>varnish7</name>
+	<range><lt>7.6.2</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Varnish Development Team reports:</p>
+	<blockquote cite="https://varnish-cache.org/security/VSV00015.html#vsv00015">
+	<p>A client-side desync vulnerability can be triggered in Varnish Cache
+	   and Varnish Enterprise. This vulnerability can be triggered under
+	   specific circumstances involving malformed HTTP/1 requests.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-30346</cvename>
+      <url>https://varnish-cache.org/security/VSV00015.html#vsv00015</url>
+    </references>
+    <dates>
+      <discovery>2024-12-17</discovery>
+      <entry>2025-03-22</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="9456d4e9-055f-11f0-85f3-a8a1599412c6">
     <topic>chromium -- multiple security fixes</topic>
     <affects>
