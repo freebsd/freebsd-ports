@@ -14,6 +14,10 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 LICENSE_DISTFILES=	i2psource_${PORTVERSION}${EXTRACT_SUFX}
 
+BROKEN=		Unfetchable
+DEPRECATED=	Outdated and unsupported upstream
+EXPIRATION_DATE=2025-04-30
+
 ONLY_FOR_ARCHS=	amd64 i386
 ONLY_FOR_ARCHS_REASON=	i2p libwrapper.so library binary only available for i386 and amd64
 
