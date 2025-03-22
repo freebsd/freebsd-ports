@@ -1,6 +1,6 @@
 PORTNAME=	zellij
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.42.0
+DISTVERSION=	0.42.1
 CATEGORIES=	sysutils
 
 MAINTAINER=	riggs@FreeBSD.org
@@ -50,7 +50,7 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		async-std-1.11.0 \
 		async-task-4.2.0 \
 		async-trait-0.1.80 \
-		atomic-0.5.3 \
+		atomic-0.6.0 \
 		atomic-waker-1.0.0 \
 		atty-0.2.14 \
 		autocfg-1.1.0 \
@@ -58,17 +58,16 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		backtrace-ext-0.2.1 \
 		base64-0.13.0 \
 		base64-0.21.0 \
+		base64-0.22.1 \
 		bit-set-0.5.3 \
 		bit-vec-0.6.3 \
 		bitflags-1.3.2 \
 		bitflags-2.5.0 \
-		block-buffer-0.7.3 \
 		block-buffer-0.10.4 \
-		block-padding-0.1.5 \
 		blocking-1.2.0 \
 		bstr-1.5.0 \
 		bumpalo-3.16.0 \
-		byte-tools-0.3.1 \
+		bytemuck-1.22.0 \
 		byteorder-1.4.3 \
 		bytes-1.6.0 \
 		cache-padded-1.2.0 \
@@ -82,7 +81,7 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		castaway-0.1.2 \
 		cc-1.0.83 \
 		cfg-if-1.0.0 \
-		cfg_aliases-0.1.1 \
+		cfg_aliases-0.2.1 \
 		chrono-0.4.39 \
 		clap-3.2.4 \
 		clap_complete-3.2.1 \
@@ -126,7 +125,6 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		derivative-2.2.0 \
 		destructure_traitobject-0.2.0 \
 		dialoguer-0.10.4 \
-		digest-0.8.1 \
 		digest-0.10.7 \
 		directories-5.0.1 \
 		directories-next-2.0.0 \
@@ -145,14 +143,13 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		euclid-0.22.9 \
 		event-listener-2.5.2 \
 		expect-test-1.4.1 \
-		fake-simd-0.1.2 \
 		fallible-iterator-0.3.0 \
 		fancy-regex-0.11.0 \
 		fastrand-1.7.0 \
 		fastrand-2.1.0 \
 		fd-lock-4.0.2 \
 		file-id-0.1.0 \
-		filedescriptor-0.8.2 \
+		filedescriptor-0.8.3 \
 		filetime-0.2.21 \
 		finl_unicode-1.2.0 \
 		fixedbitset-0.4.2 \
@@ -174,7 +171,6 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		fuzzy-matcher-0.3.7 \
 		fxhash-0.2.1 \
 		fxprof-processed-profile-0.6.0 \
-		generic-array-0.12.4 \
 		generic-array-0.14.5 \
 		getopts-0.2.21 \
 		getrandom-0.2.10 \
@@ -246,15 +242,13 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		log-0.4.17 \
 		log-mdc-0.1.0 \
 		log4rs-1.2.0 \
-		mac_address-1.1.6 \
+		mac_address-1.1.8 \
 		mach2-0.4.2 \
-		maplit-1.0.2 \
 		maybe-owned-0.3.4 \
 		memchr-2.5.0 \
 		memfd-0.6.4 \
 		memmem-0.1.1 \
 		memoffset-0.6.5 \
-		memoffset-0.7.1 \
 		memoffset-0.9.1 \
 		miette-5.8.0 \
 		miette-derive-5.8.0 \
@@ -267,25 +261,22 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		multimap-0.8.3 \
 		names-0.14.0 \
 		nix-0.23.1 \
-		nix-0.26.4 \
-		nix-0.28.0 \
+		nix-0.29.0 \
 		nom-7.1.1 \
 		notify-6.0.0 \
 		notify-debouncer-full-0.1.0 \
 		ntapi-0.3.7 \
-		num-derive-0.3.3 \
+		num-derive-0.4.2 \
 		num-traits-0.2.15 \
 		num_cpus-1.13.1 \
 		object-0.28.4 \
 		object-0.36.7 \
 		once_cell-1.18.0 \
-		opaque-debug-0.2.3 \
 		openssl-probe-0.1.5 \
 		openssl-src-300.1.6+3.1.4 \
 		openssl-sys-0.9.93 \
 		option-ext-0.2.0 \
 		ordered-float-2.10.0 \
-		ordered-float-3.3.0 \
 		ordered-float-4.2.0 \
 		os_str_bytes-6.1.0 \
 		owo-colors-3.4.0 \
@@ -296,10 +287,10 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		parking_lot_core-0.9.9 \
 		paste-1.0.7 \
 		percent-encoding-2.3.1 \
-		pest-2.1.3 \
-		pest_derive-2.1.0 \
-		pest_generator-2.1.3 \
-		pest_meta-2.1.3 \
+		pest-2.7.15 \
+		pest_derive-2.7.15 \
+		pest_generator-2.7.15 \
+		pest_meta-2.7.15 \
 		petgraph-0.6.3 \
 		phf-0.11.1 \
 		phf_codegen-0.11.2 \
@@ -360,7 +351,6 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		serde_json-1.0.81 \
 		serde_spanned-0.6.6 \
 		serde_yaml-0.8.24 \
-		sha-1-0.8.2 \
 		sha2-0.10.8 \
 		shell-words-1.1.0 \
 		shellexpand-2.1.2 \
@@ -369,6 +359,7 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		signal-hook-registry-1.4.0 \
 		similar-2.1.0 \
 		siphasher-0.3.10 \
+		siphasher-1.0.1 \
 		sixel-image-0.1.0 \
 		sixel-tokenizer-0.1.0 \
 		slab-0.4.6 \
@@ -383,6 +374,7 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		stable_deref_trait-1.2.0 \
 		strip-ansi-escapes-0.1.1 \
 		strsim-0.10.0 \
+		strsim-0.11.1 \
 		strum-0.20.0 \
 		strum_macros-0.20.1 \
 		suggest-0.4.0 \
@@ -397,12 +389,14 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		tempfile-3.10.1 \
 		termcolor-1.4.1 \
 		terminal_size-0.1.17 \
-		terminfo-0.8.0 \
+		terminfo-0.9.0 \
 		termios-0.3.3 \
-		termwiz-0.22.0 \
+		termwiz-0.23.3 \
 		textwrap-0.15.0 \
 		thiserror-1.0.61 \
+		thiserror-2.0.12 \
 		thiserror-impl-1.0.61 \
+		thiserror-impl-2.0.12 \
 		thread-id-4.0.0 \
 		thread_local-1.1.7 \
 		tinyvec-1.6.0 \
@@ -422,19 +416,19 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		typenum-1.15.0 \
 		typetag-0.1.8 \
 		typetag-impl-0.1.8 \
-		ucd-trie-0.1.3 \
+		ucd-trie-0.1.7 \
 		unicode-bidi-0.3.15 \
 		unicode-ident-1.0.1 \
 		unicode-linebreak-0.1.2 \
 		unicode-normalization-0.1.23 \
-		unicode-segmentation-1.9.0 \
+		unicode-segmentation-1.12.0 \
 		unicode-width-0.1.10 \
 		unicode-width-0.2.0 \
 		unicode-xid-0.2.4 \
 		unsafe-any-ors-1.0.0 \
 		url-2.5.0 \
 		utf8parse-0.2.0 \
-		uuid-1.7.0 \
+		uuid-1.16.0 \
 		value-bag-1.0.0-alpha.9 \
 		vcpkg-0.2.15 \
 		version_check-0.9.4 \
@@ -478,12 +472,11 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		wat-1.224.0 \
 		web-sys-0.3.58 \
 		wepoll-ffi-0.1.2 \
-		wezterm-bidi-0.2.2 \
-		wezterm-blob-leases-0.1.0 \
+		wezterm-bidi-0.2.3 \
+		wezterm-blob-leases-0.1.1 \
 		wezterm-color-types-0.3.0 \
-		wezterm-dynamic-0.1.0 \
-		wezterm-dynamic-0.2.0 \
-		wezterm-dynamic-derive-0.1.0 \
+		wezterm-dynamic-0.2.1 \
+		wezterm-dynamic-derive-0.1.1 \
 		wezterm-input-types-0.1.0 \
 		which-4.2.5 \
 		wiggle-29.0.1 \
