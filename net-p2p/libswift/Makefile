@@ -9,6 +9,9 @@ WWW=		https://github.com/skunkwerks/libswift
 
 LICENSE=		LGPL21
 
+DEPRECATED=	Upstream archived repo on Feb 19, 2024 and no active development in several years
+EXPIRATION_DATE=2025-04-30
+
 LIB_DEPENDS=		libevent.so:devel/libevent
 
 USES=			compiler:c++11-lang gmake ssl
