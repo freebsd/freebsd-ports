@@ -1,9 +1,7 @@
 PORTNAME=	mkdocstrings-python-legacy
-DISTVERSION=	0.2.4
+DISTVERSION=	0.2.5
 CATEGORIES=	textproc python
-MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	mkdocstrings_python_legacy-${PORTVERSION}
 
 MAINTAINER=	kai@FreeBSD.org
 COMMENT=	Legacy Python handler for mkdocstrings
@@ -16,12 +14,15 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pdm-backend>0:devel/py-pdm-backend@${PY_FL
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mkdocs-autorefs>=1.1:textproc/py-mkdocs-autorefs@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytkdocs>=0.14:textproc/py-pytkdocs@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mkdocs-material>0:textproc/py-mkdocs-material@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}mkdocstrings>0:textproc/py-mkdocstrings@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}mkdocstrings>=0.28.3:textproc/py-mkdocstrings@${PY_FLAVOR}
 # textproc/py-mkdocstrings belongs to RUN_DEPENDS as well but would cause
 # a circular dependency (via py-mkdocstrings' PYTHONLEGACY option).  It was
 # therefore # moved to TEST_DEPENDS to at least allow the test suite to run.
 
-USES=		python:3.9+ # textproc/py-mkdocs-autorefs requires Python 3.9+
+USES=		python:3.9+
+USE_GITHUB=	yes
+GH_ACCOUNT=	mkdocstrings
+GH_PROJECT=	python-legacy
 USE_PYTHON=	autoplist pep517 pytest
 
 TEST_ENV=	PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
