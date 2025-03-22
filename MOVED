@@ -4213,3 +4213,4 @@ devel/rubygem-flipper026|devel/rubygem-flipper-gitlab|2025-03-19|Please use deve
 devel/py-pyro||2025-03-21|Has expired: Upstream development stopped, not compatible with py311, use pyro5 instead
 devel/py-serpent||2025-03-21|Has expired: Used exclusively by now deprecated devel/py-pyro
 devel/py-eggtestinfo||2025-03-21|Has expired: Was a requirement for now removed zope port
+www/rubygem-gitlab-gollum-lib|www/rubygem-gollum-lib|2025-03-22|Use www/rubygem-gollum-lib instead
