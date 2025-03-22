@@ -12,6 +12,9 @@ WWW=		https://metacpan.org/release/Net-BitTorrent
 
 LICENSE=	ART20
 
+DEPRECATED=	Deprecated, no active development in more than a decade so any "new" functionality is missing and interoperability with recent software is very limited if not completely broken
+EXPIRATION_DATE=2025-04-30
+
 PORTSCOUT=	limit:^[0-9\.]*$$
 
 CONFIGURE_ARGS=	</dev/null
