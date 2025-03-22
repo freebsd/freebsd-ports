@@ -624,6 +624,7 @@
 %%DATADIR%%/extras/migrations/0120_eventrule_event_types.py
 %%DATADIR%%/extras/migrations/0121_customfield_related_object_filter.py
 %%DATADIR%%/extras/migrations/0122_charfield_null_choices.py
+%%DATADIR%%/extras/migrations/0123_journalentry_kind_default.py
 %%DATADIR%%/extras/migrations/__init__.py
 %%DATADIR%%/extras/models/__init__.py
 %%DATADIR%%/extras/models/configs.py
@@ -654,6 +655,7 @@
 %%DATADIR%%/extras/tests/test_custom_validation.py
 %%DATADIR%%/extras/tests/test_customfields.py
 %%DATADIR%%/extras/tests/test_customvalidators.py
+%%DATADIR%%/extras/tests/test_dashboard.py
 %%DATADIR%%/extras/tests/test_event_rules.py
 %%DATADIR%%/extras/tests/test_filtersets.py
 %%DATADIR%%/extras/tests/test_forms.py
@@ -1590,6 +1592,7 @@
 %%DATADIR%%/utilities/tests/__init__.py
 %%DATADIR%%/utilities/tests/test_api.py
 %%DATADIR%%/utilities/tests/test_choices.py
+%%DATADIR%%/utilities/tests/test_conversions.py
 %%DATADIR%%/utilities/tests/test_counters.py
 %%DATADIR%%/utilities/tests/test_data.py
 %%DATADIR%%/utilities/tests/test_filters.py

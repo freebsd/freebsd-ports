@@ -1,4 +1,6 @@
---- mkdocs.yml.orig	2022-04-28 19:00:11 UTC
+Use current directory to generate the embedded documentation.
+
+--- mkdocs.yml.orig	2025-03-21 21:17:50 UTC
 +++ mkdocs.yml
 @@ -1,5 +1,5 @@ site_name: NetBox Documentation
  site_name: NetBox Documentation
@@ -7,11 +9,12 @@
  site_url: https://docs.netbox.dev/
  repo_name: netbox-community/netbox
  repo_url: https://github.com/netbox-community/netbox
-@@ -26,7 +26,6 @@ plugins:
-           setup_commands:
-             - import os
-             - import django
--            - os.chdir('netbox/')
-             - os.environ.setdefault("DJANGO_SETTINGS_MODULE", "netbox.settings")
-             - django.setup()
-           rendering:
+@@ -28,7 +28,7 @@ plugins:
+   - mkdocstrings:
+       handlers:
+         python:
+-          paths: ["netbox"]
++          paths: ["."]
+           options:
+             heading_level: 3
+             members_order: source
