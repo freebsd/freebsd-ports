@@ -1,5 +1,5 @@
 TIMESTAMP = 1742612013
-SHA256 (KhronosGroup-Vulkan-ValidationLayers-v1.4.311_GH0.tar.gz) = d784393c9fd2b8c3f9ca71aa14cee5fd0690227e433c16895ea9c6db0e1b43a1
-SIZE (KhronosGroup-Vulkan-ValidationLayers-v1.4.311_GH0.tar.gz) = 6072337
-SHA256 (KhronosGroup-SPIRV-Headers-1.5.4.raytracing.fixed-400-gddd2c09_GH0.tar.gz) = 1a5f92796a4520ad3c6b0bd4c01bc2dc2bc81af1f99808c63378a266bbf1cd0c
-SIZE (KhronosGroup-SPIRV-Headers-1.5.4.raytracing.fixed-400-gddd2c09_GH0.tar.gz) = 543504
+SHA256 (KhronosGroup-Vulkan-ValidationLayers-v1.4.312_GH0.tar.gz) = e761c55eb460cd8923f9c9772031e9e2b7ce215d01d0ebb6ca7e41f112df4faf
+SIZE (KhronosGroup-Vulkan-ValidationLayers-v1.4.312_GH0.tar.gz) = 6296174
+SHA256 (KhronosGroup-SPIRV-Headers-1.5.4.raytracing.fixed-407-g8c88e0c_GH0.tar.gz) = 101b537f7994d056804b44fbf0cb2731daff549389e8b28234bf3235ed4431f5
+SIZE (KhronosGroup-SPIRV-Headers-1.5.4.raytracing.fixed-407-g8c88e0c_GH0.tar.gz) = 545716
