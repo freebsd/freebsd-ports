@@ -1,0 +1,14 @@
+[
+{ type: install
+  message: <<EOM
+Usage:
+
+  1. Use the following command to install rustup only to $RUSTUP_HOME (default: $HOME/.rustup).
+  $ rustup-init --profile minimal --default-toolchain none -y
+
+  2. Use the following command to install toolchains to $CARGO_HOME (default: $HOME/.cargo) in a new terminal session.
+  $ rustup default stable
+
+EOM
+}
+]

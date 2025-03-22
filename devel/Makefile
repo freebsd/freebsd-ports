@@ -8089,6 +8089,7 @@
     SUBDIR += rust-mode
     SUBDIR += rust-script
     SUBDIR += rustc-demangle
+    SUBDIR += rustup-init
     SUBDIR += rvi
     SUBDIR += rvm
     SUBDIR += rxcpp
