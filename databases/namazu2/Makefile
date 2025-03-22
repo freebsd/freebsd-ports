@@ -5,12 +5,9 @@ CATEGORIES+=	databases www textproc
 MASTER_SITES=	http://www.namazu.org/stable/
 PKGNAMESUFFIX=	2
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	mew14930xvi@inbox.lv
 COMMENT=	Full-text search system intended for easy use
 WWW=		http://www.namazu.org/
-
-DEPRECATED=	Obsolete and unmaintained tree for years
-EXPIRATION_DATE=2025-04-30
 
 BUILD_DEPENDS=	p5-File-MMagic>=0:devel/p5-File-MMagic
 RUN_DEPENDS=	p5-File-MMagic>=0:devel/p5-File-MMagic
