@@ -10,6 +10,7 @@ bin/ssh-auth-cmd-marionette
 %%SITE_PERL%%/Firefox/Marionette/Capabilities.pm
 %%SITE_PERL%%/Firefox/Marionette/Certificate.pm
 %%SITE_PERL%%/Firefox/Marionette/Cookie.pm
+%%SITE_PERL%%/Firefox/Marionette/DNS.pm
 %%SITE_PERL%%/Firefox/Marionette/Display.pm
 %%SITE_PERL%%/Firefox/Marionette/Element.pm
 %%SITE_PERL%%/Firefox/Marionette/Element/Rect.pm
@@ -21,6 +22,7 @@ bin/ssh-auth-cmd-marionette
 %%SITE_PERL%%/Firefox/Marionette/Exception/StaleElement.pm
 %%SITE_PERL%%/Firefox/Marionette/Extension/HarExportTrigger.pm
 %%SITE_PERL%%/Firefox/Marionette/Extension/Stealth.pm
+%%SITE_PERL%%/Firefox/Marionette/Extension/Timezone.pm
 %%SITE_PERL%%/Firefox/Marionette/GeoLocation.pm
 %%SITE_PERL%%/Firefox/Marionette/Image.pm
 %%SITE_PERL%%/Firefox/Marionette/Keys.pm
@@ -51,6 +53,7 @@ bin/ssh-auth-cmd-marionette
 %%PERL5_MAN3%%/Firefox::Marionette::Capabilities.3.gz
 %%PERL5_MAN3%%/Firefox::Marionette::Certificate.3.gz
 %%PERL5_MAN3%%/Firefox::Marionette::Cookie.3.gz
+%%PERL5_MAN3%%/Firefox::Marionette::DNS.3.gz
 %%PERL5_MAN3%%/Firefox::Marionette::Display.3.gz
 %%PERL5_MAN3%%/Firefox::Marionette::Element.3.gz
 %%PERL5_MAN3%%/Firefox::Marionette::Element::Rect.3.gz
@@ -62,6 +65,7 @@ bin/ssh-auth-cmd-marionette
 %%PERL5_MAN3%%/Firefox::Marionette::Exception::StaleElement.3.gz
 %%PERL5_MAN3%%/Firefox::Marionette::Extension::HarExportTrigger.3.gz
 %%PERL5_MAN3%%/Firefox::Marionette::Extension::Stealth.3.gz
+%%PERL5_MAN3%%/Firefox::Marionette::Extension::Timezone.3.gz
 %%PERL5_MAN3%%/Firefox::Marionette::GeoLocation.3.gz
 %%PERL5_MAN3%%/Firefox::Marionette::Image.3.gz
 %%PERL5_MAN3%%/Firefox::Marionette::Keys.3.gz
