@@ -1,0 +1,26 @@
+#!/bin/sh
+
+TEMP_DIR="$HOME/pytorch-examples-temp"
+mkdir -p "$TEMP_DIR"
+mkdir -p "$TEMP_DIR/dcgan"
+mkdir -p "$TEMP_DIR/fast_neural_style"
+mkdir -p "$TEMP_DIR/imagenet"
+mkdir -p "$TEMP_DIR/mnist"
+# mkdir -p "$TEMP_DIR/siamese_network"
+mkdir -p "$TEMP_DIR/super_resolution"
+mkdir -p "$TEMP_DIR/time_sequence_prediction"
+mkdir -p "$TEMP_DIR/vae"
+mkdir -p "$TEMP_DIR/word_language_model"
+mkdir -p "$TEMP_DIR/gcn-gat"
+
+LINUXBASE=$(sysctl -n compat.linux.emul_path)
+
+export LD_PRELOAD=%%DATADIR%%/dummy-uvm.so
+export SSL_CERT_FILE=${LINUXBASE}/usr/lib/python3.9/site-packages/certifi/cacert.pem
+
+cd %%DATA_DIR%%/pytorch-examples
+${LINUXBASE}/usr/bin/bash -c "./run_python_examples.sh"
+
+# %%DATADIR%%/pytorch-examples/run_python_examples.sh
+
+# rm -rf "$TEMP_DIR"
