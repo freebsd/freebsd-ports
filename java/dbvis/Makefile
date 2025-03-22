@@ -1,8 +1,8 @@
 PORTNAME=	dbvis
-DISTVERSION=	24.3.3
+DISTVERSION=	24.3.4
 CATEGORIES=	java databases
-MASTER_SITES=	https://www.dbvis.com/product_download/${PORTNAME}-${PORTVERSION}/media/
-DISTNAME=	dbvis_linux_${PORTVERSION:S/./_/g}
+MASTER_SITES=	https://www.dbvis.com/product_download/${PORTNAME}-${DISTVERSION}/media/
+DISTNAME=	dbvis_linux_${DISTVERSION:S/./_/g}
 
 MAINTAINER=	vvd@FreeBSD.org
 COMMENT=	DbVisualizer database tool
