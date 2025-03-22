@@ -1,6 +1,6 @@
 PORTNAME=	vvenc
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.13.0
+DISTVERSION=	1.13.1
 CATEGORIES=	multimedia
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -29,5 +29,7 @@ CMAKE_OFF+=	VVENC_ENABLE_X86_SIMD
 .if ${ARCH} == riscv64
 CMAKE_OFF+=	VVENC_ENABLE_LINK_TIME_OPT
 .endif
+
+# tests as of 1.13.1: 100% tests passed, 0 tests failed out of 38
 
 .include <bsd.port.mk>
