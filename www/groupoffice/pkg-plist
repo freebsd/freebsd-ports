@@ -880,6 +880,7 @@
 %%WWWDIR%%/go/modules/business/calendartimetracking/icon.png
 %%WWWDIR%%/go/modules/business/calendartimetracking/install/install.sql
 %%WWWDIR%%/go/modules/business/calendartimetracking/install/uninstall.sql
+%%WWWDIR%%/go/modules/business/calendartimetracking/language/de.php
 %%WWWDIR%%/go/modules/business/calendartimetracking/language/en.php
 %%WWWDIR%%/go/modules/business/calendartimetracking/language/hu.php
 %%WWWDIR%%/go/modules/business/calendartimetracking/language/nl.php
@@ -2753,6 +2754,7 @@
 %%WWWDIR%%/go/modules/business/projects3/install/install.sql
 %%WWWDIR%%/go/modules/business/projects3/install/uninstall.sql
 %%WWWDIR%%/go/modules/business/projects3/install/updates.php
+%%WWWDIR%%/go/modules/business/projects3/language/de.php
 %%WWWDIR%%/go/modules/business/projects3/language/en.php
 %%WWWDIR%%/go/modules/business/projects3/language/nl.php
 %%WWWDIR%%/go/modules/business/projects3/model/Project3.php
@@ -3800,6 +3802,7 @@
 %%WWWDIR%%/go/modules/community/calendar/install/resetmigration.sql
 %%WWWDIR%%/go/modules/community/calendar/install/uninstall.sql
 %%WWWDIR%%/go/modules/community/calendar/install/updates.php
+%%WWWDIR%%/go/modules/community/calendar/language/de.php
 %%WWWDIR%%/go/modules/community/calendar/language/en.php
 %%WWWDIR%%/go/modules/community/calendar/language/nl.php
 %%WWWDIR%%/go/modules/community/calendar/model/Alert.php
@@ -3915,8 +3918,10 @@
 %%WWWDIR%%/go/modules/community/davclient/Module.php
 %%WWWDIR%%/go/modules/community/davclient/controller/DavAccount.php
 %%WWWDIR%%/go/modules/community/davclient/icon.png
+%%WWWDIR%%/go/modules/community/davclient/cron/RefreshDav.php
 %%WWWDIR%%/go/modules/community/davclient/install/install.sql
 %%WWWDIR%%/go/modules/community/davclient/install/updates.php
+%%WWWDIR%%/go/modules/community/davclient/language/de.php
 %%WWWDIR%%/go/modules/community/davclient/model/Calendar.php
 %%WWWDIR%%/go/modules/community/davclient/model/DavAccount.php
 %%WWWDIR%%/go/modules/community/davclient/model/HttpClient.php
@@ -10651,6 +10656,8 @@
 %%WWWDIR%%/views/goui/dist/groupoffice-core/script/components/CreateLinkField.d.ts.map
 %%WWWDIR%%/views/goui/dist/groupoffice-core/script/components/DetailPanel.d.ts
 %%WWWDIR%%/views/goui/dist/groupoffice-core/script/components/DetailPanel.d.ts.map
+%%WWWDIR%%/views/goui/dist/groupoffice-core/script/components/EntityTypeTable.d.ts
+%%WWWDIR%%/views/goui/dist/groupoffice-core/script/components/EntityTypeTable.d.ts.map
 %%WWWDIR%%/views/goui/dist/groupoffice-core/script/components/FilesButton.d.ts
 %%WWWDIR%%/views/goui/dist/groupoffice-core/script/components/FilesButton.d.ts.map
 %%WWWDIR%%/views/goui/dist/groupoffice-core/script/components/FilterPanel.d.ts
@@ -11850,6 +11857,7 @@
 %%WWWDIR%%/views/goui/groupoffice-core/script/components/CreateLinkButton.ts
 %%WWWDIR%%/views/goui/groupoffice-core/script/components/CreateLinkField.ts
 %%WWWDIR%%/views/goui/groupoffice-core/script/components/DetailPanel.ts
+%%WWWDIR%%/views/goui/groupoffice-core/script/components/EntityTypeTable.ts
 %%WWWDIR%%/views/goui/groupoffice-core/script/components/FilesButton.ts
 %%WWWDIR%%/views/goui/groupoffice-core/script/components/FilterPanel.ts
 %%WWWDIR%%/views/goui/groupoffice-core/script/components/FormWindow.ts
