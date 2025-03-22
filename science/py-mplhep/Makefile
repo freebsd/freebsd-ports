@@ -1,5 +1,5 @@
 PORTNAME=	mplhep
-DISTVERSION=	0.3.55
+DISTVERSION=	0.3.59
 CATEGORIES=	science python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -34,6 +34,6 @@ TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 
 NO_ARCH=	yes
 
-# tests as for 0.3.55: 4 failed, 67 passed, 34 skipped, 14 warnings in 29.59s (4 failures are due to missing dependency uproot4)
+# tests as for 0.3.59: 4 failed, 74 passed, 35 skipped, 15 warnings in 22.65s (4 failures are due to missing dependency uproot4)
 
 .include <bsd.port.mk>
