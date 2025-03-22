@@ -10,13 +10,13 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		bitflags-2.6.0 \
 		bumpalo-3.16.0 \
 		byteorder-1.5.0 \
-		cc-1.2.1 \
+		cc-1.2.6 \
 		cfg-if-1.0.0 \
 		colorchoice-1.0.3 \
-		console-0.15.8 \
-		crossbeam-deque-0.8.5 \
+		console-0.15.10 \
+		crossbeam-deque-0.8.6 \
 		crossbeam-epoch-0.9.18 \
-		crossbeam-utils-0.8.20 \
+		crossbeam-utils-0.8.21 \
 		darling-0.20.10 \
 		darling_core-0.20.10 \
 		darling_macro-0.20.10 \
@@ -24,12 +24,12 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		derive_builder_core-0.20.2 \
 		derive_builder_macro-0.20.2 \
 		either-1.13.0 \
-		encode_unicode-0.3.6 \
-		env_filter-0.1.2 \
-		env_logger-0.11.5 \
-		errno-0.3.9 \
+		encode_unicode-1.0.0 \
+		env_filter-0.1.3 \
+		env_logger-0.11.6 \
+		errno-0.3.10 \
 		esaxx-rs-0.1.10 \
-		fastrand-2.2.0 \
+		fastrand-2.3.0 \
 		fnv-1.0.7 \
 		getrandom-0.2.15 \
 		heck-0.5.0 \
@@ -40,10 +40,11 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		is_terminal_polyfill-1.70.1 \
 		itertools-0.11.0 \
 		itertools-0.12.1 \
+		itertools-0.13.0 \
 		itoa-1.0.14 \
-		js-sys-0.3.72 \
+		js-sys-0.3.76 \
 		lazy_static-1.5.0 \
-		libc-0.2.166 \
+		libc-0.2.169 \
 		linux-raw-sys-0.4.14 \
 		log-0.4.22 \
 		macro_rules_attribute-0.2.0 \
@@ -54,14 +55,13 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		minimal-lexical-0.2.1 \
 		monostate-0.1.13 \
 		monostate-impl-0.1.13 \
-		ndarray-0.15.6 \
 		ndarray-0.16.1 \
 		nom-7.1.3 \
 		num-complex-0.4.6 \
 		num-integer-0.1.46 \
 		num-traits-0.2.19 \
 		number_prefix-0.4.0 \
-		numpy-0.22.1 \
+		numpy-0.23.0 \
 		once_cell-1.20.2 \
 		onig-6.4.0 \
 		onig_sys-69.8.1 \
@@ -71,12 +71,12 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		portable-atomic-util-0.2.4 \
 		ppv-lite86-0.2.20 \
 		proc-macro2-1.0.92 \
-		pyo3-0.22.6 \
-		pyo3-build-config-0.22.6 \
-		pyo3-ffi-0.22.6 \
-		pyo3-macros-0.22.6 \
-		pyo3-macros-backend-0.22.6 \
-		quote-1.0.37 \
+		pyo3-0.23.5 \
+		pyo3-build-config-0.23.5 \
+		pyo3-ffi-0.23.5 \
+		pyo3-macros-0.23.5 \
+		pyo3-macros-backend-0.23.5 \
+		quote-1.0.38 \
 		rand-0.8.5 \
 		rand_chacha-0.3.1 \
 		rand_core-0.6.4 \
@@ -87,37 +87,35 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		regex-1.11.1 \
 		regex-automata-0.4.9 \
 		regex-syntax-0.8.5 \
-		rustc-hash-1.1.0 \
-		rustix-0.38.41 \
+		rustc-hash-2.1.0 \
+		rustix-0.38.42 \
 		ryu-1.0.18 \
-		serde-1.0.215 \
-		serde_derive-1.0.215 \
-		serde_json-1.0.133 \
+		serde-1.0.217 \
+		serde_derive-1.0.217 \
+		serde_json-1.0.134 \
 		shlex-1.3.0 \
 		smallvec-1.13.2 \
 		spm_precompiled-0.1.4 \
 		strsim-0.11.1 \
-		syn-2.0.89 \
+		syn-2.0.93 \
 		target-lexicon-0.12.16 \
 		tempfile-3.14.0 \
-		thiserror-1.0.69 \
-		thiserror-impl-1.0.69 \
+		thiserror-2.0.9 \
+		thiserror-impl-2.0.9 \
 		unicode-ident-1.0.14 \
 		unicode-normalization-alignments-0.1.12 \
 		unicode-segmentation-1.12.0 \
-		unicode-width-0.1.14 \
 		unicode-width-0.2.0 \
 		unicode_categories-0.1.1 \
 		unindent-0.2.3 \
 		utf8parse-0.2.2 \
 		wasi-0.11.0+wasi-snapshot-preview1 \
-		wasm-bindgen-0.2.95 \
-		wasm-bindgen-backend-0.2.95 \
-		wasm-bindgen-macro-0.2.95 \
-		wasm-bindgen-macro-support-0.2.95 \
-		wasm-bindgen-shared-0.2.95 \
+		wasm-bindgen-0.2.99 \
+		wasm-bindgen-backend-0.2.99 \
+		wasm-bindgen-macro-0.2.99 \
+		wasm-bindgen-macro-support-0.2.99 \
+		wasm-bindgen-shared-0.2.99 \
 		web-time-1.1.0 \
-		windows-sys-0.52.0 \
 		windows-sys-0.59.0 \
 		windows-targets-0.52.6 \
 		windows_aarch64_gnullvm-0.52.6 \
