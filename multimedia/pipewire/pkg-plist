@@ -93,6 +93,7 @@ include/spa-0.2/spa/buffer/meta.h
 include/spa-0.2/spa/buffer/type-info.h
 include/spa-0.2/spa/control/control.h
 include/spa-0.2/spa/control/type-info.h
+include/spa-0.2/spa/control/ump-utils.h
 include/spa-0.2/spa/debug/buffer.h
 include/spa-0.2/spa/debug/context.h
 include/spa-0.2/spa/debug/dict.h
@@ -103,6 +104,7 @@ include/spa-0.2/spa/debug/mem.h
 include/spa-0.2/spa/debug/node.h
 include/spa-0.2/spa/debug/pod.h
 include/spa-0.2/spa/debug/types.h
+include/spa-0.2/spa/filter-graph/filter-graph.h
 include/spa-0.2/spa/graph/graph.h
 include/spa-0.2/spa/interfaces/audio/aec.h
 include/spa-0.2/spa/monitor/device.h
@@ -145,6 +147,7 @@ include/spa-0.2/spa/param/audio/mp3.h
 include/spa-0.2/spa/param/audio/opus.h
 include/spa-0.2/spa/param/audio/ra-utils.h
 include/spa-0.2/spa/param/audio/ra.h
+include/spa-0.2/spa/param/audio/raw-json.h
 include/spa-0.2/spa/param/audio/raw-types.h
 include/spa-0.2/spa/param/audio/raw-utils.h
 include/spa-0.2/spa/param/audio/raw.h
@@ -222,8 +225,10 @@ include/spa-0.2/spa/utils/cleanup.h
 include/spa-0.2/spa/utils/defs.h
 include/spa-0.2/spa/utils/dict.h
 include/spa-0.2/spa/utils/dll.h
+include/spa-0.2/spa/utils/endian.h
 include/spa-0.2/spa/utils/enum-types.h
 include/spa-0.2/spa/utils/hook.h
+include/spa-0.2/spa/utils/json-core.h
 include/spa-0.2/spa/utils/json-pod.h
 include/spa-0.2/spa/utils/json.h
 include/spa-0.2/spa/utils/keys.h
@@ -240,16 +245,16 @@ include/spa-0.2/spa/utils/type.h
 %%GSTREAMER%%lib/gstreamer-1.0/libgstpipewire.so
 lib/libpipewire-0.3.so
 lib/libpipewire-0.3.so.0
-lib/libpipewire-0.3.so.0.1207.0
+lib/libpipewire-0.3.so.0.1401.0
 %%JACK%%lib/pipewire-0.3/jack/libjack.so
 %%JACK%%lib/pipewire-0.3/jack/libjack.so.0
-%%JACK%%lib/pipewire-0.3/jack/libjack.so.0.3.1207
+%%JACK%%lib/pipewire-0.3/jack/libjack.so.0.3.1401
 %%JACK%%lib/pipewire-0.3/jack/libjacknet.so
 %%JACK%%lib/pipewire-0.3/jack/libjacknet.so.0
-%%JACK%%lib/pipewire-0.3/jack/libjacknet.so.0.3.1207
+%%JACK%%lib/pipewire-0.3/jack/libjacknet.so.0.3.1401
 %%JACK%%lib/pipewire-0.3/jack/libjackserver.so
 %%JACK%%lib/pipewire-0.3/jack/libjackserver.so.0
-%%JACK%%lib/pipewire-0.3/jack/libjackserver.so.0.3.1207
+%%JACK%%lib/pipewire-0.3/jack/libjackserver.so.0.3.1401
 lib/pipewire-0.3/libpipewire-module-access.so
 lib/pipewire-0.3/libpipewire-module-adapter.so
 lib/pipewire-0.3/libpipewire-module-client-device.so
@@ -257,7 +262,6 @@ lib/pipewire-0.3/libpipewire-module-client-node.so
 lib/pipewire-0.3/libpipewire-module-combine-stream.so
 lib/pipewire-0.3/libpipewire-module-echo-cancel.so
 lib/pipewire-0.3/libpipewire-module-fallback-sink.so
-%%LV2%%lib/pipewire-0.3/libpipewire-module-filter-chain-lv2.so
 lib/pipewire-0.3/libpipewire-module-filter-chain.so
 %%JACK%%lib/pipewire-0.3/libpipewire-module-jack-tunnel.so
 %%JACK%%lib/pipewire-0.3/libpipewire-module-jackdbus-detect.so
@@ -299,7 +303,13 @@ lib/spa-0.2/audioconvert/libspa-audioconvert.so
 lib/spa-0.2/audiomixer/libspa-audiomixer.so
 lib/spa-0.2/audiotestsrc/libspa-audiotestsrc.so
 lib/spa-0.2/control/libspa-control.so
+lib/spa-0.2/filter-graph/libspa-filter-graph-plugin-builtin.so
+lib/spa-0.2/filter-graph/libspa-filter-graph-plugin-ebur128.so
+lib/spa-0.2/filter-graph/libspa-filter-graph-plugin-ladspa.so
+%%LV2%%lib/spa-0.2/filter-graph/libspa-filter-graph-plugin-lv2.so
+lib/spa-0.2/filter-graph/libspa-filter-graph.so
 %%JACK%%lib/spa-0.2/jack/libspa-jack.so
+lib/spa-0.2/libspa.so
 lib/spa-0.2/support/libspa-dbus.so
 lib/spa-0.2/support/libspa-support.so
 lib/spa-0.2/v4l2/libspa-v4l2.so
@@ -365,6 +375,7 @@ libdata/pkgconfig/libspa-0.2.pc
 %%ALSA%%share/alsa-card-profile/mixer/profile-sets/dell-dock-tb16-usb-audio.conf
 %%ALSA%%share/alsa-card-profile/mixer/profile-sets/force-speaker-and-int-mic.conf
 %%ALSA%%share/alsa-card-profile/mixer/profile-sets/force-speaker.conf
+%%ALSA%%share/alsa-card-profile/mixer/profile-sets/hdmi-ac3.conf
 %%ALSA%%share/alsa-card-profile/mixer/profile-sets/hp-tbt-dock-120w-g2.conf
 %%ALSA%%share/alsa-card-profile/mixer/profile-sets/hp-tbt-dock-audio-module.conf
 %%ALSA%%share/alsa-card-profile/mixer/profile-sets/kinect-audio.conf
@@ -429,6 +440,7 @@ share/locale/ro/LC_MESSAGES/pipewire.mo
 share/locale/ru/LC_MESSAGES/pipewire.mo
 share/locale/si/LC_MESSAGES/pipewire.mo
 share/locale/sk/LC_MESSAGES/pipewire.mo
+share/locale/sl/LC_MESSAGES/pipewire.mo
 share/locale/sr/LC_MESSAGES/pipewire.mo
 share/locale/sr@latin/LC_MESSAGES/pipewire.mo
 share/locale/sv/LC_MESSAGES/pipewire.mo
@@ -438,8 +450,6 @@ share/locale/tr/LC_MESSAGES/pipewire.mo
 share/locale/uk/LC_MESSAGES/pipewire.mo
 share/locale/zh_CN/LC_MESSAGES/pipewire.mo
 share/locale/zh_TW/LC_MESSAGES/pipewire.mo
-%%DATADIR%%/client-rt.conf
-%%DATADIR%%/client-rt.conf.avail/20-upmix.conf
 %%DATADIR%%/client.conf
 %%DATADIR%%/client.conf.avail/20-upmix.conf
 %%DATADIR%%/filter-chain.conf
@@ -449,6 +459,7 @@ share/locale/zh_TW/LC_MESSAGES/pipewire.mo
 %%DATADIR%%/filter-chain/sink-make-LFE.conf
 %%DATADIR%%/filter-chain/sink-matrix-spatialiser.conf
 %%DATADIR%%/filter-chain/sink-mix-FL-FR.conf
+%%DATADIR%%/filter-chain/sink-upmix-5.1-filter.conf
 %%DATADIR%%/filter-chain/sink-virtual-surround-5.1-kemar.conf
 %%DATADIR%%/filter-chain/sink-virtual-surround-7.1-hesuvi.conf
 %%DATADIR%%/filter-chain/source-duplicate-FL.conf
