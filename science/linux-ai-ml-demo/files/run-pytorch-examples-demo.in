@@ -1,0 +1,17 @@
+#!/bin/sh
+
+if [ $# -eq 0 ]; then
+    echo "Error: No Pytorch examples script provided"
+    echo "Usage: $0 /path/to/run_python_examples.sh"
+    exit 1
+fi
+
+SCRIPT_PATH="$1"
+SCRIPT_DIR=$(dirname "$SCRIPT_PATH")
+SCRIPT_NAME=$(basename "$SCRIPT_PATH")
+LINUXBASE=$(sysctl -n compat.linux.emul_path)
+
+export LD_PRELOAD=%%DATADIR%%/dummy-uvm.so
+export SSL_CERT_FILE=${LINUXBASE}/usr/lib/python3.9/site-packages/certifi/cacert.pem
+
+cd $SCRIPT_DIR && ${LINUXBASE}/usr/bin/bash -c "./$SCRIPT_NAME"

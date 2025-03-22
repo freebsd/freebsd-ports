@@ -1,0 +1,29 @@
+[
+{ type: install
+  message: <<EOM
+To build this port, it is necessary to first prepare a distfile containing the
+required Linux Python packages, as their installation process is non-trivial.
+The 'create-distfile' target must be executed to accomplish this:
+
+	make create-distfile
+
+This process may take significant time. Upon completion, the resulting distfile
+will contain all necessary Linux Python packages.
+
+To utilize CUDA support for PyTorch, both Shkhln's compatibility library
+preloading and Linux compatibility layer usage are required, as demonstrated in
+the provided demonstration scripts.
+
+To run Stable Diffusion demonstration script simply launch it:
+
+	run-stable-diffusion-demo
+
+The port also provides Pytorch examples from the official GitHub repository.
+To run and modify these examples, copy them to a user-writable directory
+(e.g., ~/pytorch-examples) and then launch wrapper script:
+
+	cp -r /usr/local/share/ai-ml-demo/pytorch-examples ~/pytorch-examples
+	run-pytorch-examples-demo ~/pytorch-examples/run_python_examples.sh
+EOM
+}
+]
