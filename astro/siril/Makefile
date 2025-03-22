@@ -1,5 +1,5 @@
 PORTNAME=	siril
-DISTVERSION=	1.2.5
+DISTVERSION=	1.2.6
 CATEGORIES=	astro graphics
 MASTER_SITES=	https://free-astro.org/download/
 
@@ -11,7 +11,7 @@ WWW=		https://siril.org/ \
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-BROKEN_i386=	undefined reference to `__atomic_load' and `__atomic_compare_exchange' #`
+BROKEN_i386=	undefined reference to '__atomic_load' and '__atomic_compare_exchange'
 .if !exists(/usr/include/omp.h)
 BROKEN=		requires OpenMP support that is missing on this architecture
 .endif
