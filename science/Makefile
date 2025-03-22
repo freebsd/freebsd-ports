@@ -168,6 +168,7 @@
     SUBDIR += libxc
     SUBDIR += liggghts
     SUBDIR += linearelasticity
+    SUBDIR += linux-ai-ml-env
     SUBDIR += linux-zotero
     SUBDIR += luscus
     SUBDIR += m-aneos

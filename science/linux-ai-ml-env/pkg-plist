@@ -1,0 +1,26 @@
+usr/bin/accelerate
+usr/bin/accelerate-config
+usr/bin/accelerate-estimate-memory
+usr/bin/accelerate-launch
+usr/bin/accelerate-merge-weights
+usr/bin/diffusers-cli
+usr/bin/f2py
+usr/bin/fonttools
+usr/bin/huggingface-cli
+usr/bin/isympy
+usr/bin/normalizer
+usr/bin/numpy-config
+usr/bin/proton
+usr/bin/proton-viewer
+usr/bin/pyftmerge
+usr/bin/pyftsubset
+usr/bin/torchfrtrace
+usr/bin/torchrun
+usr/bin/tqdm
+usr/bin/transformers-cli
+usr/bin/ttx
+%%DATADIR%%/dummy-uvm.so
+/usr/local/bin/ai-ml-env-bash
+/usr/local/bin/ai-ml-env-python
+/usr/local/share/ai-ml-env/stable-diffusion-sample.py
+@dir /usr/local/bin

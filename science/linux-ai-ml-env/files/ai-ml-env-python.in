@@ -1,0 +1,4 @@
+#!/bin/sh
+
+export LD_PRELOAD=%%DATADIR%%/dummy-uvm.so
+exec %%LINUXBASE%%/bin/python3 $*

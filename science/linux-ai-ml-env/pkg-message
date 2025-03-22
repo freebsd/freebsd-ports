@@ -1,0 +1,32 @@
+[
+{ type: install
+  message: <<EOM
+To utilize CUDA support for PyTorch, both https://github.com/shkhln 's
+compatibility library preloading and Linux compatibility layer usage are
+required, as demonstrated in the provided demonstration scripts.
+
+To play with Stable Diffusion copy it to a user-writable directory, edit at will
+and launch it via ai-ml-env-python:
+
+	cp /usr/local/share/ai-ml-env/stable-diffusion-sample.py ~/
+	ai-ml-env-python stable-diffusion-sample.py
+
+This will download data packages into ~/.cache/huggingface/hub/ during the
+first-time run.
+
+The port also provides Pytorch examples from the official GitHub repository.
+To run and modify these examples, copy them to a user-writable directory
+and then launch the entry point script via ai-ml-env-bash:
+
+	cp -r /usr/local/share/ai-ml-env/pytorch-examples ~/pytorch-examples
+	cd ~/pytorch-examples && ai-ml-env-bash ./run_python_examples.sh
+
+You can then run
+
+ai-ml-env-bash ./run_python_examples.sh clean
+
+to remove downloaded data or just remove the whole directory to clean up
+everything.
+EOM
+}
+]
