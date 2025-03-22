@@ -44,7 +44,7 @@ include/wireplumber-0.5/wp/wpversion.h
 %%DOXYGEN%%lib/girepository-1.0/Wp-0.5.typelib
 lib/libwireplumber-0.5.so
 lib/libwireplumber-0.5.so.0
-lib/libwireplumber-0.5.so.0.507.0
+lib/libwireplumber-0.5.so.0.508.0
 lib/wireplumber-0.5/libwireplumber-module-dbus-connection.so
 lib/wireplumber-0.5/libwireplumber-module-default-nodes-api.so
 lib/wireplumber-0.5/libwireplumber-module-file-monitor-api.so
@@ -172,6 +172,7 @@ share/pipewire/pipewire.conf.d/10-wireplumber.conf
 %%DATADIR%%/scripts/node/software-dsp.lua
 %%DATADIR%%/scripts/node/state-stream.lua
 %%DATADIR%%/scripts/node/suspend-node.lua
+%%DATADIR%%/scripts/session-services.lua
 %%DATADIR%%/scripts/sm-objects.lua
 %%DATADIR%%/wireplumber.conf
 %%DATADIR%%/wireplumber.conf.d/alsa-vm.conf
