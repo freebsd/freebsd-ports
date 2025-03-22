@@ -1,10 +1,7 @@
 PORTNAME=	shadowsocks-rust
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.22.0
+DISTVERSION=	1.23.0
 CATEGORIES=	net
-
-PATCH_SITES=	https://github.com/shadowsocks/shadowsocks-rust/commit/
-PATCHFILES=	ce2acc07833c1eab6736f82375829ce7e4bc6740.patch:-p1
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Rust port of shadowsocks
