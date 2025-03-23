@@ -1,6 +1,5 @@
 PORTNAME=	qgis
-DISTVERSION=	3.42.0
-PORTREVISION=	5
+DISTVERSION=	3.42.1
 CATEGORIES=	graphics geography
 MASTER_SITES=	https://qgis.org/downloads/
 
@@ -114,7 +113,7 @@ USES=		bison cmake compiler:features desktop-file-utils \
 USE_GL=		gl
 USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
-USE_PYQT=	pyqt5 pysip qscintilla2 qtbuilder:build sip:build
+USE_PYQT=	pyqt5 pysip qscintilla2 qtbuilder:build sip:build webengine
 USE_QT=		3d buildtools:build core concurrent dbus declarative \
 		designer:build qdoc:build gamepad gui linguist:build location \
 		multimedia network printsupport qmake:build script serialport \

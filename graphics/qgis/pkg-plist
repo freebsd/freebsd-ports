@@ -3813,7 +3813,6 @@ share/metainfo/org.qgis.qgis.appdata.xml
 %%DATADIR%%/i18n/qgis_de.qm
 %%DATADIR%%/i18n/qgis_en_US.qm
 %%DATADIR%%/i18n/qgis_es.qm
-%%DATADIR%%/i18n/qgis_et.qm
 %%DATADIR%%/i18n/qgis_eu.qm
 %%DATADIR%%/i18n/qgis_fi.qm
 %%DATADIR%%/i18n/qgis_fr.qm
@@ -3824,7 +3823,6 @@ share/metainfo/org.qgis.qgis.appdata.xml
 %%DATADIR%%/i18n/qgis_ja.qm
 %%DATADIR%%/i18n/qgis_ko.qm
 %%DATADIR%%/i18n/qgis_lt.qm
-%%DATADIR%%/i18n/qgis_lv.qm
 %%DATADIR%%/i18n/qgis_nb.qm
 %%DATADIR%%/i18n/qgis_nl.qm
 %%DATADIR%%/i18n/qgis_pl.qm
