@@ -14,7 +14,7 @@ USE_PYTHON=	autoplist distutils
 MASTERDIR=	${.CURDIR}/../notmuch
 NO_ARCH=	yes
 PORTDOCS=	*
-WRKSRC_SUBDIR=	bindings/python
+WRKSRC_SUBDIR=	contrib/python-legacy
 
 OPTIONS_DEFINE=	DOCS
 

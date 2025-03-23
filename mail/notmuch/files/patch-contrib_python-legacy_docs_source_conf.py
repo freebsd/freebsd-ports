@@ -1,6 +1,6 @@
---- bindings/python/docs/source/conf.py.orig	2019-03-02 23:40:44 UTC
-+++ bindings/python/docs/source/conf.py
-@@ -13,7 +13,19 @@
+--- contrib/python-legacy/docs/source/conf.py.orig	2025-03-15 22:04:35 UTC
++++ contrib/python-legacy/docs/source/conf.py
+@@ -13,7 +13,19 @@ import sys, os
  
  import sys, os
  
