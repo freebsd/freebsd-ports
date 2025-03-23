@@ -1,8 +1,10 @@
 PORTNAME=		sogo
 PORTVERSION=		5.11.2
+PORTREVISION=		1
 CATEGORIES=		www gnustep
 MASTER_SITES=		https://packages.sogo.nu/sources/
 DISTNAME=		SOGo-${PORTVERSION}
+PKGNAMESUFFIX=		-${FLAVOR}
 
 MAINTAINER=		acm@FreeBSD.org
 COMMENT=		Groupware server with a focus on scalability and open standards
@@ -10,11 +12,13 @@ WWW=			https://sogo.nu/
 
 LICENSE=		GPLv2
 
+FLAVORS=		mysql mysqlactivesync pgsql pgsqlactivesync
+FLAVOR?=		${FLAVORS[1]}
+
 LIB_DEPENDS=		libmemcached.so:databases/libmemcached \
 			libcurl.so:ftp/curl \
 			libsodium.so:security/libsodium \
 			libzip.so:archivers/libzip \
-			libDOM.so:devel/sope \
 			libytnef.so:converters/ytnef
 
 RUN_DEPENDS=		zip:archivers/zip
@@ -30,17 +34,26 @@ SHEBANG_FILES=		${WRKSRC}/SoObjects/SOGo/gen-saml2-exceptions.py
 
 CONFIGURE_ARGS+=	--disable-debug --disable-strip
 
-CONFLICTS?=		sogo[2-4]-activesync sogo[2-4]
+mysql_CONFLICTS_INSTALL=        sogo2 ${PORTNAME}-pgsql ${PORTNAME}-pgsqlactivesync
+pgsql_CONFLICTS_INSTALL=        sogo2 ${PORTNAME}-mysql ${PORTNAME}-mysqlactivesync
+mysqlactivesync_CONFLICTS_INSTALL=sogo2 ${PORTNAME}-pgsql ${PORTNAME}-pgsqlactivesync
+pgsqlactivesync_CONFLICTS_INSTALL=sogo2 ${PORTNAME}-mysql ${PORTNAME}-mysqlactivesync
 
-OPTIONS_DEFAULT=	MFA
-OPTIONS_DEFINE=		ACTIVESYNC MFA SAML2
+OPTIONS_DEFAULT=	MEMCACHED MFA SAML2
+OPTIONS_DEFINE=		ACTIVESYNC MEMCACHED MFA SAML2
 OPTIONS_SUB=		yes
+OPTIONS_SINGLE_DATABASE=MYSQL PGSQL
+OPTIONS_SINGLE=         DATABASE
+DATABASE_DESC=          Database support
 
 ACTIVESYNC_DESC=	Enable support for ActiveSync protocol
+MEMCACHED_DESC=		Install memcached
 MFA_DESC=		Enable support for multi-factor authentication
 SAML2_DESC=		Enable support for SAML2 authentication
 
 ACTIVESYNC_LIB_DEPENDS=	libwbxml2.so:textproc/libwbxml
+
+MEMCACHED_RUN_DEPENDS=	${LOCALBASE}/bin/memcached:databases/memcached
 
 MFA_LIB_DEPENDS=	liboath.so:security/oath-toolkit
 MFA_CONFIGURE_ON=	--enable-mfa
@@ -50,6 +63,11 @@ SAML2_USES=		python:build gnome
 SAML2_USE=		gnome=glib20
 SAML2_CONFIGURE_ON=	--enable-saml2
 
+PGSQL_BUILD_DEPENDS=	${LOCALBASE}/GNUstep/Local/Library/GDLAdaptors-4.9/PostgreSQL.gdladaptor/PostgreSQL:devel/sope@pgsql
+PGSQL_RUN_DEPENDS=	${LOCALBASE}/GNUstep/Local/Library/GDLAdaptors-4.9/PostgreSQL.gdladaptor/PostgreSQL:devel/sope@pgsql
+MYSQL_BUILD_DEPENDS=	${LOCALBASE}/GNUstep/Local/Library/GDLAdaptors-4.9/MySQL.gdladaptor/MySQL:devel/sope@mysql
+MYSQL_RUN_DEPENDS=	${LOCALBASE}/GNUstep/Local/Library/GDLAdaptors-4.9/MySQL.gdladaptor/MySQL:devel/sope@mysql
+
 USERS=			sogod
 GROUPS=			sogod
 
@@ -57,14 +75,26 @@ SUB_FILES+=		pkg-message
 SUB_LIST+=		GNUSTEP_LOCAL_TOOLS=${GNUSTEP_LOCAL_TOOLS} \
 			GNUSTEP_MAKEFILES=${GNUSTEP_MAKEFILES}
 
+.if ${FLAVOR:U} == pgsql
+OPTIONS_DEFAULT+=	PGSQL
+.endif
+
+.if ${FLAVOR:U} == mysql
+OPTIONS_DEFAULT+=	MYSQL
+.endif
+
+.if ${FLAVOR:U} == mysqlactivesync
+OPTIONS_DEFAULT+=	ACTIVESYNC MYSQL
+.endif
+
+.if ${FLAVOR:U} == pgsqlactivesync
+OPTIONS_DEFAULT+=	ACTIVESYNC PGSQL
+.endif
+
 .include <bsd.port.pre.mk>
 
 .if ${OPSYS} == FreeBSD
-CPPFLAGS+=	-Wno-error=int-conversion
-.endif
-
-.if ${OPSYS} == FreeBSD
-CPPFLAGS+=	-Wno-error=incompatible-function-pointer-types
+CPPFLAGS+=	-Wno-error=int-conversion -Wno-error=incompatible-function-pointer-types
 .endif
 
 post-patch:
