@@ -1,3 +1,4 @@
+bin/kfilemetadata_dump6
 include/KF6/KFileMetaData/KFileMetaData/EmbeddedImageData
 include/KF6/KFileMetaData/KFileMetaData/ExtractionResult
 include/KF6/KFileMetaData/KFileMetaData/Extractor

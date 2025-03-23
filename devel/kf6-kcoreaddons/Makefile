@@ -1,6 +1,5 @@
 PORTNAME=	kcoreaddons
 DISTVERSION=	${KDE_FRAMEWORKS_VERSION}
-PORTREVISION=	1
 CATEGORIES=	devel kde kde-frameworks
 
 COMMENT=	Qt addon library with a collection of non-GUI utilities

@@ -125,6 +125,7 @@ share/ECM/toolchain/deployment-file-qt514.json.in
 share/ECM/toolchain/deployment-file-qt6.json.in
 share/ECM/toolchain/deployment-file-qt6.json.in.license
 share/ECM/toolchain/deployment-file.json.in
+share/ECM/toolchain/ecm-version.gradle.in
 share/ECM/toolchain/generate-fastlane-metadata.py
 share/ECM/toolchain/hasMainSymbol.cmake
 share/ECM/toolchain/specifydependencies.cmake
