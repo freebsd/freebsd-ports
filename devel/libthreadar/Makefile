@@ -1,7 +1,7 @@
 PORTNAME=	libthreadar
-DISTVERSION=	1.5.0
+DISTVERSION=	1.5.2
 CATEGORIES=	devel sysutils
-MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION}/ \
+MASTER_SITES=	SF/${PORTNAME}/${DISTVERSION}/ \
 		https://dar.edrusb.org/libthreadar/Releases/
 
 MAINTAINER=	bofh@FreeBSD.org
