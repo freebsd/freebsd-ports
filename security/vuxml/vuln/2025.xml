@@ -1,3 +1,32 @@
+  <vuln vid="a58fdfef-07c6-11f0-8688-4ccc6adda413">
+    <topic>qt5-webengine -- Use after free in Compositing</topic>
+    <affects>
+      <package>
+	<name>qt5-webengine</name>
+	<range><lt>5.15.18p7</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Qt qtwebengine-chromium repo reports:</p>
+	<blockquote cite="https://code.qt.io/cgit/qt/qtwebengine-chromium.git/log/?h=87-based">
+	  <p>Backports for 1 security bug in Chromium:</p>
+	  <ul>
+	    <li>CVE-2024-12694: Use after free in Compositing</li>
+	  </ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2024-12694</cvename>
+      <url>https://code.qt.io/cgit/qt/qtwebengine-chromium.git/log/?h=87-based</url>
+    </references>
+    <dates>
+      <discovery>2025-02-14</discovery>
+      <entry>2025-03-23</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="26f6733d-06a9-11f0-ba0b-641c67a117d8">
     <topic>www/varnish7 -- client-side desync vulnerability</topic>
     <affects>
