@@ -83,7 +83,6 @@
     SUBDIR += chrony-lite
     SUBDIR += citrix_ica
     SUBDIR += cjdns
-    SUBDIR += clash
     SUBDIR += cloud-init
     SUBDIR += cloud-init-devel
     SUBDIR += cloudflared
@@ -476,6 +475,7 @@
     SUBDIR += micro_inetd
     SUBDIR += micro_proxy
     SUBDIR += microsocks
+    SUBDIR += mihomo
     SUBDIR += mimetreeparser
     SUBDIR += minidlna
     SUBDIR += minissdpd
