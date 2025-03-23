@@ -1,4 +1,4 @@
-PORTNAME=	ytdl
+PORTNAME=	ytdl # the repository is archived, but we can keep the port for as long as it builds
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.6.4
 PORTREVISION=	24
