@@ -190,6 +190,7 @@ bin/gdl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/test_bug_n000599.pro
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/test_bug_n000607.pro
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/test_bug_n000608.pro
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/test_bugs_poly2d.pro
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/test_byte_conversion.pro
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/test_bytscl.pro
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/test_call_external.pro
@@ -204,6 +205,7 @@ bin/gdl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/test_clip.pro
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/test_colorsetup.pro
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/test_common.pro
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/test_compile_opt.pro
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/test_constants.pro
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/test_container.pro
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/test_convert2.pro
@@ -344,6 +346,7 @@ bin/gdl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/test_rebin.pro
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/test_resolve_routine.pro
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/test_restore.pro
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/test_rot.pro
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/test_rounding.pro
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/test_routine_dir.pro
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/test_routine_filepath.pro
@@ -420,6 +423,7 @@ bin/gdl
 %%DATADIR%%/lib/appleman.pro
 %%DATADIR%%/lib/array_indices.pro
 %%DATADIR%%/lib/bilinear.pro
+%%DATADIR%%/lib/boolean.pro
 %%DATADIR%%/lib/box_cursor.pro
 %%DATADIR%%/lib/c_correlate.pro
 %%DATADIR%%/lib/calendar.pro
@@ -663,6 +667,7 @@ bin/gdl
 %%DATADIR%%/lib/utilities/path_remove.pro
 %%DATADIR%%/lib/utilities/path_sep_add.pro
 %%DATADIR%%/lib/utilities/path_show.pro
+%%DATADIR%%/lib/utilities/pref_get.pro
 %%DATADIR%%/lib/utilities/profiler.pro
 %%DATADIR%%/lib/utilities/read_anygraphicsfilewithmagick.pro
 %%DATADIR%%/lib/utilities/read_ascii_basic.pro
