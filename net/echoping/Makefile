@@ -10,6 +10,9 @@ WWW=		https://framagit.org/bortzmeyer/echoping
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Unmaintained upstream as of 2015 and depends on deprecated libidn
+EXPIRATION_DATE=2025-04-30
+
 LIB_DEPENDS=	libpopt.so:devel/popt \
 		libidn.so:dns/libidn
 
