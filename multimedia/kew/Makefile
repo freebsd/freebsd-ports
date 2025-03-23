@@ -1,6 +1,6 @@
 PORTNAME=	kew
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.0.3
+DISTVERSION=	3.1.2
 CATEGORIES=	multimedia
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -13,6 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BROKEN_i386=	compilation fails with incompatible pointer, see https://github.com/ravachol/kew/issues/118
 
 LIB_DEPENDS=	libchafa.so:graphics/chafa \
+		libcurl.so:ftp/curl \
 		libfaad.so:audio/faad \
 		libfftw3f.so:math/fftw3-float \
 		libnotify.so:devel/libnotify \
