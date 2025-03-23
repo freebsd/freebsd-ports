@@ -14,4 +14,7 @@ USE_KDE=	config coreaddons windowsystem \
 USE_QT=		base declarative
 USE_XORG=	x11 xtst
 
+# Requires PySide and Shiboken.
+CMAKE_OFF=	BUILD_PYTHON_BINDINGS
+
 .include <bsd.port.mk>
