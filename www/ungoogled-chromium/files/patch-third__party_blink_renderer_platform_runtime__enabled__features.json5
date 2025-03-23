@@ -1,4 +1,4 @@
---- third_party/blink/renderer/platform/runtime_enabled_features.json5.orig	2025-03-09 21:38:10 UTC
+--- third_party/blink/renderer/platform/runtime_enabled_features.json5.orig	2025-03-23 13:10:20 UTC
 +++ third_party/blink/renderer/platform/runtime_enabled_features.json5
 @@ -427,7 +427,7 @@
        name: "AppTitle",
@@ -9,7 +9,7 @@
        base_feature: "WebAppEnableAppTitle",
      },
      {
-@@ -1599,7 +1599,7 @@
+@@ -1602,7 +1602,7 @@
        name: "DocumentIsolationPolicy",
        status: "experimental",
        origin_trial_feature_name: "DocumentIsolationPolicy",
@@ -18,7 +18,7 @@
        base_feature: "none",
      },
      {
-@@ -1895,7 +1895,7 @@
+@@ -1898,7 +1898,7 @@
        base_feature: "none",
        public: true,
        origin_trial_feature_name: "FedCmMultipleIdentityProviders",
@@ -27,7 +27,7 @@
        origin_trial_allows_third_party: true,
      },
      {
-@@ -3294,7 +3294,7 @@
+@@ -3297,7 +3297,7 @@
        // Tracking bug for the implementation: https://crbug.com/1462930
        name: "PermissionElement",
        origin_trial_feature_name: "PermissionElement",
@@ -36,7 +36,7 @@
        status: "experimental",
        public: true,
        base_feature_status: "enabled",
-@@ -3431,7 +3431,7 @@
+@@ -3434,7 +3434,7 @@
      {
        name: "PrivateNetworkAccessPermissionPrompt",
        origin_trial_feature_name: "PrivateNetworkAccessPermissionPrompt",
@@ -45,7 +45,7 @@
        status: "stable",
        public: true,
        base_feature: "none",
-@@ -4491,7 +4491,7 @@
+@@ -4494,7 +4494,7 @@
        name: "UnrestrictedSharedArrayBuffer",
        base_feature: "none",
        origin_trial_feature_name: "UnrestrictedSharedArrayBuffer",
@@ -54,7 +54,7 @@
      },
      // Enables using policy-controlled feature "usb-unrestricted" to allow
      // isolated context to access protected USB interface classes and to
-@@ -4678,7 +4678,7 @@
+@@ -4681,7 +4681,7 @@
      {
        name: "WebAppScopeExtensions",
        origin_trial_feature_name: "WebAppScopeExtensions",
@@ -63,7 +63,7 @@
        status: "experimental",
        base_feature: "none",
      },
-@@ -4947,7 +4947,7 @@
+@@ -4950,7 +4950,7 @@
      {
        name: "WebIdentityDigitalCredentials",
        origin_trial_feature_name: "WebIdentityDigitalCredentials",
