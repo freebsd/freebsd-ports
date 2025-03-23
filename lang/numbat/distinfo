@@ -1,4 +1,4 @@
-TIMESTAMP = 1735885478
+TIMESTAMP = 1738410436
 SHA256 (rust/crates/aho-corasick-1.1.3.crate) = 8e60d3430d3a69478ad0993f19238d2df97c507009a52b3c10addcd7f6bcb916
 SIZE (rust/crates/aho-corasick-1.1.3.crate) = 183311
 SHA256 (rust/crates/android-tzdata-0.1.1.crate) = e999941b234f3131b00bc13c22d06e8c5ff726d1b6318ac7eb276997bbb4fef0
@@ -503,5 +503,5 @@ SHA256 (rust/crates/zerocopy-derive-0.7.35.crate) = fa4f8080344d4671fb4e831a13ad
 SIZE (rust/crates/zerocopy-derive-0.7.35.crate) = 37829
 SHA256 (rust/crates/zeroize-1.8.1.crate) = ced3678a2879b30306d323f4542626697a464a97c0a07c9aebf7ebca65cd4dde
 SIZE (rust/crates/zeroize-1.8.1.crate) = 20029
-SHA256 (sharkdp-numbat-v1.15.0_GH0.tar.gz) = abf7a79db4c8eb0e6ddd7a67efafcaf7b9d8c109ad255c21207be2bb54a12ba2
-SIZE (sharkdp-numbat-v1.15.0_GH0.tar.gz) = 728867
+SHA256 (sharkdp-numbat-v1.16.0_GH0.tar.gz) = 33f3744a31f62f7ebd985c6b3ec3c6a6d6f897527e8db5bc2de48dd299a63cdd
+SIZE (sharkdp-numbat-v1.16.0_GH0.tar.gz) = 786548
