@@ -1,6 +1,6 @@
 PORTNAME=	z3-solver
 DISTVERSIONPREFIX=	z3-
-DISTVERSION=	4.13.3
+DISTVERSION=	4.14.1
 CATEGORIES=	math
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -44,6 +44,7 @@ do-test:
 		${ECHO} "==> running the example ${e}" && \
 		${SETENV} ${TEST_ENV} ${PYTHON_CMD} ${FILESDIR}/example-${e}.py && \
 		${ECHO} "... example ${e} succeeded"
+	@${ECHO} "All tests succeeded."
 .endfor
 
 .include <bsd.port.mk>
