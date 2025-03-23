@@ -1,7 +1,7 @@
 PORTNAME=	pot
-DISTVERSION=	0.16.0
-PORTREVISION=	1
+DISTVERSION=	0.16.1
 CATEGORIES=	sysutils
+MASTER_SITES=	https://github.com/bsdpot/pot/releases/download/${DISTVERSION}/
 
 MAINTAINER=	pizzamig@FreeBSD.org
 COMMENT=	Container framework for FreeBSD
@@ -16,8 +16,6 @@ RUN_DEPENDS=	freebsd-release-manifests>0:misc/freebsd-release-manifests \
 		signify:security/signify
 TEST_DEPENDS=	flock:sysutils/flock
 
-USE_GITHUB=	yes
-GH_ACCOUNT=	bsdpot
 USE_RC_SUBR=	pot pot_early
 
 NO_ARCH=	yes
