@@ -36,7 +36,7 @@ R_POSTCMD_CHECK_OPTIONS+=	--no-manual --no-build-vignettes
 
 do-test:
 	@${FIND} ${WRKSRC} \( -name '*.o' -o -name '*.so' \) -delete
-	@cd ${WRKDIR} ; ${SETENV} ${MAKE_ENV} _R_CHECK_FORCE_SUGGESTS_=FALSE \
+	@cd ${WRKDIR} ; ${SETENVI} ${WRK_ENV} ${MAKE_ENV} _R_CHECK_FORCE_SUGGESTS_=FALSE \
 	${R_COMMAND} ${R_PRECMD_CHECK_OPTIONS} CMD check \
 	${R_POSTCMD_CHECK_OPTIONS} ${PORTNAME}
 .  endif
@@ -51,7 +51,7 @@ R_POSTCMD_INSTALL_OPTIONS+=	--no-docs --no-html
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/${R_LIB_DIR}
-	@cd ${WRKDIR} ; ${SETENV} ${MAKE_ENV} ${R_COMMAND} \
+	@cd ${WRKDIR} ; ${SETENVI} ${WRK_ENV} ${MAKE_ENV} ${R_COMMAND} \
 	${R_PRECMD_INSTALL_OPTIONS} CMD INSTALL \
 	${R_POSTCMD_INSTALL_OPTIONS} ${PORTNAME}
 .  endif
