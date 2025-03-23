@@ -1,3 +1,5 @@
-TIMESTAMP = 1534225270
-SHA256 (cling_2018-08-13_sources.tar.bz2) = f73f1c7e799c71f2fe815539634751bca1d0ac112c0e81f4afd5f84d668c997f
-SIZE (cling_2018-08-13_sources.tar.bz2) = 211904908
+TIMESTAMP = 1742725525
+SHA256 (root-project-cling-v1.2_GH0.tar.gz) = beee8e461424d267ee2dec88b3de57326bc8e3470b4ceae2744de7d3d3aba1eb
+SIZE (root-project-cling-v1.2_GH0.tar.gz) = 13695605
+SHA256 (root-project-llvm-project-cling-llvm18-20250207-01_GH0.tar.gz) = 7b8fc17e40af6c69d6f33f8cf931c22cc411dccaa210ed53ae3f09dcba591515
+SIZE (root-project-llvm-project-cling-llvm18-20250207-01_GH0.tar.gz) = 205643261

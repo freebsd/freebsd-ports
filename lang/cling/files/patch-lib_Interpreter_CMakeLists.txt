@@ -1,0 +1,11 @@
+--- lib/Interpreter/CMakeLists.txt.orig	2024-12-10 16:14:05 UTC
++++ lib/Interpreter/CMakeLists.txt
+@@ -103,6 +103,8 @@ add_cling_library(clingInterpreter OBJECT
+   LINK_LIBS
+   ${LIBS}
+   ${CMAKE_DL_LIBS}
++  procstat
++  util
+   )
+ 
+ 
