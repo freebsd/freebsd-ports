@@ -16,7 +16,7 @@ MAKE_ARGS=	BASHCOMPDIR=${PREFIX}/share/bash-completion/completions \
 		MANDIR=${PREFIX}/share/man
 USES=		gmake
 
-ONLY_FOR_ARCHS=	i386 amd64
+ONLY_FOR_ARCHS=	aarch64 i386 amd64
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/reptyr
