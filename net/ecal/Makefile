@@ -6,7 +6,8 @@ CATEGORIES=	net devel
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Enhanced Communication Abstraction Layer
-WWW=		https://eclipse-ecal.github.io/ecal/index.html
+WWW=		https://eclipse-ecal.github.io/ecal/index.html \
+		https://github.com/eclipse-ecal/ecal
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
