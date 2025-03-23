@@ -1,6 +1,6 @@
 PORTNAME=	snitch
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.3.1
+DISTVERSION=	1.3.2
 CATEGORIES=	devel
 PKGNAMESUFFIX=	-testing
 
@@ -34,6 +34,18 @@ NO_ARCH=	yes
 CONFLICTS_INSTALL=	snitch-testing # see https://github.com/cschreib/snitch/issues/125
 .endif
 
-CMAKE_TESTING_ON=	SNITCH_DO_TEST # tests fail to find doctest because cmake attempts to fetch it, see https://github.com/snitch-org/snitch/issues/201
+CMAKE_ON+=		SNITCH_USE_SYSTEM_DOCTEST
+CMAKE_TESTING_ON=	SNITCH_DO_TEST SNITCH_ENABLE
+CMAKE_TESTING_TARGET=	snitch_runtime_tests_run \
+			snitch_runtime_tests_self_run \
+			snitch_approval_tests_run # unclear how to run all tests
+
+post-install:
+	@${RM} ${STAGEDIR}${PREFIX}/doc/snitch/LICENSE
+	@${RMDIR} \
+		${STAGEDIR}${PREFIX}/doc/snitch \
+		${STAGEDIR}${PREFIX}/doc
+
+# many tests fail, see https://github.com/snitch-org/snitch/issues/206
 
 .include <bsd.port.mk>
