@@ -1,6 +1,6 @@
 PORTNAME=	mise
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2025.3.6
+DISTVERSION=	2025.3.7
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -77,7 +77,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		bzip2-sys-0.1.13+1.0.8 \
 		calm_io-0.1.1 \
 		calmio_filters-0.1.0 \
-		cc-1.2.16 \
+		cc-1.2.17 \
 		cfg-if-1.0.0 \
 		cfg_aliases-0.2.1 \
 		chacha20-0.9.1 \
@@ -123,7 +123,8 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		crossterm-0.28.1 \
 		crossterm_winapi-0.9.1 \
 		crypto-common-0.1.6 \
-		ctor-0.2.9 \
+		ctor-0.4.1 \
+		ctor-proc-macro-0.0.5 \
 		ctr-0.9.2 \
 		curve25519-dalek-4.1.3 \
 		curve25519-dalek-derive-0.1.1 \
@@ -146,6 +147,8 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		displaydoc-0.2.5 \
 		document-features-0.2.11 \
 		dotenvy-0.15.7 \
+		dtor-0.0.5 \
+		dtor-proc-macro-0.0.5 \
 		duct-0.13.7 \
 		dunce-1.0.5 \
 		ed25519-2.2.3 \
@@ -163,7 +166,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		errno-0.3.10 \
 		errno-dragonfly-0.1.2 \
 		exec-0.3.1 \
-		expr-lang-0.2.2 \
+		expr-lang-0.3.0 \
 		eyre-0.6.12 \
 		faster-hex-0.9.0 \
 		fastrand-2.3.0 \
@@ -454,7 +457,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		regex-automata-0.4.9 \
 		regex-syntax-0.6.29 \
 		regex-syntax-0.8.5 \
-		reqwest-0.12.14 \
+		reqwest-0.12.15 \
 		ring-0.17.14 \
 		rmp-0.8.14 \
 		rmp-serde-1.3.0 \
@@ -469,7 +472,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		rustc-hash-2.1.1 \
 		rustc_version-0.4.1 \
 		rustix-0.38.44 \
-		rustix-1.0.2 \
+		rustix-1.0.3 \
 		rustls-0.23.25 \
 		rustls-native-certs-0.8.1 \
 		rustls-pemfile-2.2.0 \
@@ -531,7 +534,9 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		strsim-0.10.0 \
 		strsim-0.11.1 \
 		strum-0.26.3 \
+		strum-0.27.1 \
 		strum_macros-0.26.4 \
+		strum_macros-0.27.1 \
 		subtle-2.6.1 \
 		syn-1.0.109 \
 		syn-2.0.100 \
@@ -544,7 +549,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		tabled_derive-0.9.0 \
 		taplo-0.13.2 \
 		tar-0.4.44 \
-		tempfile-3.19.0 \
+		tempfile-3.19.1 \
 		tera-1.20.0 \
 		termcolor-1.4.1 \
 		terminal_size-0.4.2 \
@@ -584,7 +589,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		type-map-0.5.0 \
 		typeid-1.0.3 \
 		typenum-1.18.0 \
-		ubi-0.4.2 \
+		ubi-0.6.1 \
 		ucd-trie-0.1.7 \
 		uluru-3.1.0 \
 		unic-char-property-0.9.0 \
@@ -641,10 +646,10 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		windows-core-0.57.0 \
 		windows-implement-0.57.0 \
 		windows-interface-0.57.0 \
-		windows-link-0.1.0 \
+		windows-link-0.1.1 \
 		windows-registry-0.4.0 \
 		windows-result-0.1.2 \
-		windows-result-0.3.1 \
+		windows-result-0.3.2 \
 		windows-strings-0.3.1 \
 		windows-sys-0.48.0 \
 		windows-sys-0.52.0 \
@@ -689,21 +694,21 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		yoke-0.7.5 \
 		yoke-derive-0.7.5 \
 		zerocopy-0.7.35 \
-		zerocopy-0.8.23 \
+		zerocopy-0.8.24 \
 		zerocopy-derive-0.7.35 \
-		zerocopy-derive-0.8.23 \
+		zerocopy-derive-0.8.24 \
 		zerofrom-0.1.6 \
 		zerofrom-derive-0.1.6 \
 		zeroize-1.8.1 \
 		zeroize_derive-1.4.2 \
 		zerovec-0.10.4 \
 		zerovec-derive-0.10.3 \
-		zip-2.4.1 \
+		zip-2.4.2 \
 		zipsign-api-0.1.3 \
 		zopfli-0.8.1 \
 		zstd-0.13.3 \
-		zstd-safe-7.2.3 \
-		zstd-sys-2.0.14+zstd.1.5.7
+		zstd-safe-7.2.4 \
+		zstd-sys-2.0.15+zstd.1.5.7
 
 OPENSSLINC=	/usr/include
 OPENSSLLIB=	/usr/lib
