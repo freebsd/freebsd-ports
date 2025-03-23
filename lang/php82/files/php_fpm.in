@@ -5,9 +5,9 @@
 # KEYWORD: shutdown
 
 #
-# Add the following line to /etc/rc.conf to enable php-fpm:
+# Add the following line to /etc/rc.conf to enable php_fpm:
 # php_fpm_enable (bool):        Set to "NO" by default.
-#                               Set it to "YES" to enable php-fpm
+#                               Set it to "YES" to enable php_fpm
 # php_fpm_profiles (str):       Set to "" by default.
 #                               Define your profiles here.
 # php_fpm_pid_prefix (str):     Set to "" by default.
@@ -81,7 +81,7 @@ php_fpm_logrotate() {
 
 php_fpm_checkconfig()
 {
-        echo "Performing sanity check on php-fpm configuration:"
+        echo "Performing sanity check on php_fpm configuration:"
         eval ${command} ${php_fpm_flags} -t
 }
 
