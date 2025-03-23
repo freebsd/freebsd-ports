@@ -4214,3 +4214,4 @@ devel/py-pyro||2025-03-21|Has expired: Upstream development stopped, not compati
 devel/py-serpent||2025-03-21|Has expired: Used exclusively by now deprecated devel/py-pyro
 devel/py-eggtestinfo||2025-03-21|Has expired: Was a requirement for now removed zope port
 www/rubygem-gitlab-gollum-lib|www/rubygem-gollum-lib|2025-03-22|Use www/rubygem-gollum-lib instead
+www/sogo-activesync|www/sogo|2025-03-22|Use sogo-mysqlactivesync or sogo-pgsqlactivesync flavors instead
