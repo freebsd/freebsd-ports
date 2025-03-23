@@ -140,7 +140,7 @@ _KDE_wayland=		59
 _KDE_webchannel=	3
 # We track the 5.15 branch for www/qt5-webengine to make it easier to
 # stay on top of Chromium security patches.
-_KDE_webengine=			5
+_KDE_webengine=			7
 _KDE_webengine_BRANCH=		5.15
 _KDE_webengine_ORIGIN_TAG=	v5.15.18-lts
 _KDE_webengine_VERSION=		5.15.18
