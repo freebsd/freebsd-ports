@@ -1,5 +1,5 @@
 PORTNAME=	ruff
-DISTVERSION=	0.11.0
+DISTVERSION=	0.11.2
 CATEGORIES=	devel python
 #MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -30,7 +30,7 @@ CARGO_CRATES=	adler2-2.0.0 \
 		android-tzdata-0.1.1 \
 		android_system_properties-0.1.5 \
 		anes-0.1.6 \
-		annotate-snippets-0.6.1 \
+		annotate-snippets-0.11.5 \
 		anstream-0.6.18 \
 		anstyle-1.0.10 \
 		anstyle-lossy-1.1.3 \
@@ -56,29 +56,30 @@ CARGO_CRATES=	adler2-2.0.0 \
 		camino-1.1.9 \
 		cast-0.3.0 \
 		castaway-0.2.3 \
-		cc-1.2.11 \
+		cc-1.2.16 \
 		cfg-if-1.0.0 \
 		cfg_aliases-0.2.1 \
-		chic-1.2.2 \
 		chrono-0.4.40 \
 		ciborium-0.2.2 \
 		ciborium-io-0.2.2 \
 		ciborium-ll-0.2.2 \
-		clap-4.5.31 \
-		clap_builder-4.5.31 \
-		clap_complete-4.5.44 \
+		clap-4.5.32 \
+		clap_builder-4.5.32 \
+		clap_complete-4.5.46 \
 		clap_complete_command-0.6.1 \
 		clap_complete_nushell-4.5.5 \
-		clap_derive-4.5.28 \
+		clap_derive-4.5.32 \
 		clap_lex-0.7.4 \
 		clearscreen-4.0.1 \
-		codspeed-2.8.1 \
-		codspeed-criterion-compat-2.8.1 \
+		codspeed-2.9.1 \
+		codspeed-criterion-compat-2.9.1 \
+		codspeed-criterion-compat-walltime-2.9.1 \
 		colorchoice-1.0.3 \
 		colored-2.2.0 \
 		colored-3.0.0 \
 		compact_str-0.8.1 \
-		console-0.15.10 \
+		compact_str-0.9.0 \
+		console-0.15.11 \
 		console_error_panic_hook-0.1.7 \
 		console_log-1.0.0 \
 		core-foundation-sys-0.8.7 \
@@ -112,23 +113,23 @@ CARGO_CRATES=	adler2-2.0.0 \
 		doc-comment-0.3.3 \
 		drop_bomb-0.1.5 \
 		dunce-1.0.5 \
-		dyn-clone-1.0.18 \
-		either-1.13.0 \
+		dyn-clone-1.0.19 \
+		either-1.15.0 \
 		encode_unicode-1.0.0 \
 		env_filter-0.1.3 \
 		env_home-0.1.0 \
-		env_logger-0.11.6 \
-		equivalent-1.0.1 \
+		env_logger-0.11.7 \
+		equivalent-1.0.2 \
 		errno-0.3.10 \
 		escape8259-0.5.3 \
 		escargot-0.5.13 \
-		etcetera-0.8.0 \
+		etcetera-0.10.0 \
 		fastrand-2.3.0 \
 		fern-0.7.1 \
 		filetime-0.2.25 \
-		flate2-1.0.35 \
+		flate2-1.1.0 \
 		fnv-1.0.7 \
-		foldhash-0.1.4 \
+		foldhash-0.1.5 \
 		form_urlencoded-1.2.1 \
 		fs-err-2.11.0 \
 		fsevent-sys-4.1.0 \
@@ -140,16 +141,15 @@ CARGO_CRATES=	adler2-2.0.0 \
 		glob-0.3.2 \
 		globset-0.4.16 \
 		globwalk-0.9.1 \
-		half-2.4.1 \
+		half-2.5.0 \
 		hashbrown-0.14.5 \
 		hashbrown-0.15.2 \
 		hashlink-0.10.0 \
 		heck-0.5.0 \
 		hermit-abi-0.3.9 \
-		hermit-abi-0.4.0 \
-		home-0.5.9 \
+		hermit-abi-0.5.0 \
+		home-0.5.11 \
 		html-escape-0.2.13 \
-		humantime-2.1.0 \
 		iana-time-zone-0.1.61 \
 		iana-time-zone-haiku-0.1.2 \
 		icu_collections-1.5.0 \
@@ -168,7 +168,7 @@ CARGO_CRATES=	adler2-2.0.0 \
 		ignore-0.4.23 \
 		imara-diff-0.1.8 \
 		imperative-1.0.6 \
-		indexmap-2.7.1 \
+		indexmap-2.8.0 \
 		indicatif-0.17.11 \
 		indoc-2.0.6 \
 		inotify-0.11.0 \
@@ -177,28 +177,31 @@ CARGO_CRATES=	adler2-2.0.0 \
 		insta-cmd-0.6.0 \
 		is-docker-0.2.0 \
 		is-macro-0.3.7 \
-		is-terminal-0.4.15 \
+		is-terminal-0.4.16 \
 		is-wsl-0.4.0 \
 		is_terminal_polyfill-1.70.1 \
 		itertools-0.10.5 \
 		itertools-0.13.0 \
 		itertools-0.14.0 \
-		itoa-1.0.14 \
+		itoa-1.0.15 \
+		jiff-0.2.4 \
+		jiff-static-0.2.4 \
 		jobserver-0.1.32 \
 		jod-thread-0.1.2 \
 		js-sys-0.3.77 \
 		kqueue-1.0.8 \
 		kqueue-sys-1.0.4 \
 		lazy_static-1.5.0 \
-		libc-0.2.170 \
-		libcst-1.6.0 \
-		libcst_derive-1.6.0 \
+		libc-0.2.171 \
+		libcst-1.7.0 \
+		libcst_derive-1.7.0 \
 		libmimalloc-sys-0.1.39 \
 		libredox-0.1.3 \
 		libtest-mimic-0.7.3 \
 		linked-hash-map-0.5.6 \
 		linux-raw-sys-0.4.15 \
-		litemap-0.7.4 \
+		linux-raw-sys-0.9.3 \
+		litemap-0.7.5 \
 		lock_api-0.4.12 \
 		log-0.4.26 \
 		loom-0.7.2 \
@@ -210,7 +213,7 @@ CARGO_CRATES=	adler2-2.0.0 \
 		mimalloc-0.1.43 \
 		minicov-0.3.7 \
 		minimal-lexical-0.2.1 \
-		miniz_oxide-0.8.3 \
+		miniz_oxide-0.8.5 \
 		mio-1.0.3 \
 		natord-1.0.9 \
 		newtype-uuid-1.2.1 \
@@ -224,12 +227,12 @@ CARGO_CRATES=	adler2-2.0.0 \
 		num-traits-0.2.19 \
 		num_cpus-1.16.0 \
 		number_prefix-0.4.0 \
-		once_cell-1.20.2 \
-		oorandom-11.1.4 \
+		once_cell-1.21.1 \
+		oorandom-11.1.5 \
 		option-ext-0.2.0 \
-		ordermap-0.5.5 \
+		ordermap-0.5.6 \
 		os_pipe-1.2.1 \
-		os_str_bytes-7.0.0 \
+		os_str_bytes-7.1.0 \
 		overload-0.1.1 \
 		parking_lot-0.12.3 \
 		parking_lot_core-0.9.10 \
@@ -238,9 +241,9 @@ CARGO_CRATES=	adler2-2.0.0 \
 		path-dedot-3.1.1 \
 		path-slash-0.2.1 \
 		pathdiff-0.2.3 \
-		peg-0.8.4 \
-		peg-macros-0.8.4 \
-		peg-runtime-0.8.3 \
+		peg-0.8.5 \
+		peg-macros-0.8.5 \
+		peg-runtime-0.8.5 \
 		pep440_rs-0.7.3 \
 		pep508_rs-0.9.2 \
 		percent-encoding-2.3.1 \
@@ -252,12 +255,13 @@ CARGO_CRATES=	adler2-2.0.0 \
 		phf_codegen-0.11.3 \
 		phf_generator-0.11.3 \
 		phf_shared-0.11.3 \
-		pin-project-1.1.9 \
-		pin-project-internal-1.1.9 \
+		pin-project-1.1.10 \
+		pin-project-internal-1.1.10 \
 		pin-project-lite-0.2.16 \
-		pkg-config-0.3.31 \
-		portable-atomic-1.10.0 \
-		ppv-lite86-0.2.20 \
+		pkg-config-0.3.32 \
+		portable-atomic-1.11.0 \
+		portable-atomic-util-0.2.4 \
+		ppv-lite86-0.2.21 \
 		predicates-3.1.3 \
 		predicates-core-1.0.9 \
 		predicates-tree-1.0.12 \
@@ -268,16 +272,16 @@ CARGO_CRATES=	adler2-2.0.0 \
 		quick-xml-0.37.2 \
 		quickcheck-1.0.3 \
 		quickcheck_macros-1.0.0 \
-		quote-1.0.39 \
+		quote-1.0.40 \
 		rand-0.8.5 \
 		rand-0.9.0 \
 		rand_chacha-0.3.1 \
 		rand_chacha-0.9.0 \
 		rand_core-0.6.4 \
-		rand_core-0.9.0 \
+		rand_core-0.9.3 \
 		rayon-1.10.0 \
 		rayon-core-1.12.1 \
-		redox_syscall-0.5.8 \
+		redox_syscall-0.5.10 \
 		redox_users-0.4.6 \
 		regex-1.11.1 \
 		regex-automata-0.1.10 \
@@ -289,8 +293,9 @@ CARGO_CRATES=	adler2-2.0.0 \
 		rustc-hash-1.1.0 \
 		rustc-hash-2.1.1 \
 		rustix-0.38.44 \
-		rustversion-1.0.19 \
-		ryu-1.0.19 \
+		rustix-1.0.2 \
+		rustversion-1.0.20 \
+		ryu-1.0.20 \
 		same-file-1.0.6 \
 		schemars-0.8.22 \
 		schemars_derive-0.8.22 \
@@ -302,7 +307,7 @@ CARGO_CRATES=	adler2-2.0.0 \
 		serde_derive-1.0.219 \
 		serde_derive_internals-0.29.1 \
 		serde_json-1.0.140 \
-		serde_repr-0.1.19 \
+		serde_repr-0.1.20 \
 		serde_spanned-0.6.8 \
 		serde_test-1.0.177 \
 		serde_with-3.12.0 \
@@ -325,9 +330,9 @@ CARGO_CRATES=	adler2-2.0.0 \
 		syn-1.0.109 \
 		syn-2.0.100 \
 		synstructure-0.13.1 \
-		tempfile-3.17.1 \
+		tempfile-3.19.0 \
 		termcolor-1.4.1 \
-		terminal_size-0.4.1 \
+		terminal_size-0.4.2 \
 		terminfo-0.9.0 \
 		termtree-0.5.1 \
 		test-case-3.3.1 \
@@ -343,11 +348,11 @@ CARGO_CRATES=	adler2-2.0.0 \
 		tikv-jemallocator-0.6.0 \
 		tinystr-0.7.6 \
 		tinytemplate-1.2.1 \
-		tinyvec-1.8.1 \
+		tinyvec-1.9.0 \
 		tinyvec_macros-0.1.1 \
 		toml-0.8.20 \
 		toml_datetime-0.6.8 \
-		toml_edit-0.22.23 \
+		toml_edit-0.22.24 \
 		tracing-0.1.41 \
 		tracing-attributes-0.1.28 \
 		tracing-core-0.1.33 \
@@ -358,7 +363,7 @@ CARGO_CRATES=	adler2-2.0.0 \
 		tracing-tree-0.4.0 \
 		tryfn-0.2.3 \
 		typed-arena-2.0.2 \
-		typenum-1.17.0 \
+		typenum-1.18.0 \
 		ucd-trie-0.1.7 \
 		unic-char-property-0.9.0 \
 		unic-char-range-0.9.0 \
@@ -378,8 +383,8 @@ CARGO_CRATES=	adler2-2.0.0 \
 		utf8-width-0.1.7 \
 		utf8_iter-1.0.4 \
 		utf8parse-0.2.2 \
-		uuid-1.13.1 \
-		uuid-macro-internal-1.13.1 \
+		uuid-1.16.0 \
+		uuid-macro-internal-1.16.0 \
 		valuable-0.1.1 \
 		version-ranges-0.1.1 \
 		version_check-0.9.5 \
@@ -387,7 +392,7 @@ CARGO_CRATES=	adler2-2.0.0 \
 		vte-0.11.1 \
 		vte-0.14.1 \
 		vte_generate_state_changes-0.1.2 \
-		wait-timeout-0.2.0 \
+		wait-timeout-0.2.1 \
 		walkdir-2.5.0 \
 		wasi-0.11.0+wasi-snapshot-preview1 \
 		wasi-0.13.3+wasi-0.2.2 \
@@ -401,7 +406,7 @@ CARGO_CRATES=	adler2-2.0.0 \
 		wasm-bindgen-test-macro-0.3.50 \
 		web-sys-0.3.77 \
 		web-time-1.1.0 \
-		which-7.0.1 \
+		which-7.0.2 \
 		wild-2.2.1 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
@@ -435,7 +440,7 @@ CARGO_CRATES=	adler2-2.0.0 \
 		windows_x86_64_gnullvm-0.52.6 \
 		windows_x86_64_msvc-0.48.5 \
 		windows_x86_64_msvc-0.52.6 \
-		winnow-0.7.0 \
+		winnow-0.7.4 \
 		winsafe-0.0.19 \
 		wit-bindgen-rt-0.33.0 \
 		write16-1.0.0 \
@@ -443,19 +448,17 @@ CARGO_CRATES=	adler2-2.0.0 \
 		yansi-1.0.1 \
 		yoke-0.7.5 \
 		yoke-derive-0.7.5 \
-		zerocopy-0.7.35 \
-		zerocopy-0.8.14 \
-		zerocopy-derive-0.7.35 \
-		zerocopy-derive-0.8.14 \
-		zerofrom-0.1.5 \
-		zerofrom-derive-0.1.5 \
+		zerocopy-0.8.23 \
+		zerocopy-derive-0.8.23 \
+		zerofrom-0.1.6 \
+		zerofrom-derive-0.1.6 \
 		zerovec-0.10.4 \
 		zerovec-derive-0.10.3 \
 		zip-0.6.6 \
 		zstd-0.11.2+zstd.1.5.2 \
 		zstd-safe-5.0.2+zstd.1.5.2 \
-		zstd-sys-2.0.13+zstd.1.5.6 \
-		salsa,salsa-macro-rules,salsa-macros@git+https://github.com/salsa-rs/salsa.git?rev=095d8b2b8115c3cf8bf31914dd9ea74648bb7cf9\#095d8b2b8115c3cf8bf31914dd9ea74648bb7cf9 \
+		zstd-sys-2.0.14+zstd.1.5.7 \
+		salsa,salsa-macro-rules,salsa-macros@git+https://github.com/salsa-rs/salsa.git?rev=d758691ba17ee1a60c5356ea90888d529e1782ad\#d758691ba17ee1a60c5356ea90888d529e1782ad \
 		lsp-types@git+https://github.com/astral-sh/lsp-types.git?rev=3512a9f\#3512a9f33eadc5402cfab1b8f7340824c8ca1439
 
 CARGO_BUILD=	no
