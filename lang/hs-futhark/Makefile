@@ -1,6 +1,6 @@
 PORTNAME=	futhark
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.25.27
+DISTVERSION=	0.25.29
 CATEGORIES=	lang haskell
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -16,9 +16,9 @@ USES=		cabal
 USE_CABAL=	Diff-1.0.2 \
 		ListLike-4.7.8.2 \
 		OneTuple-0.4.2_1 \
-		QuickCheck-2.15.0.1 \
+		QuickCheck-2.15.0.1_1 \
 		StateVar-1.2.2 \
-		adjunctions-4.4.2_2 \
+		adjunctions-4.4.3 \
 		aeson-2.2.3.0_3 \
 		alex-3.5.2.0 \
 		ansi-terminal-1.1.2 \
@@ -29,7 +29,7 @@ USE_CABAL=	Diff-1.0.2 \
 		base-compat-0.14.1 \
 		base-orphans-0.9.3 \
 		base16-bytestring-1.0.2.0_1 \
-		bifunctors-5.6.2_1 \
+		bifunctors-5.6.2_2 \
 		bitvec-1.1.5.0_3 \
 		blaze-builder-0.4.2.3 \
 		blaze-html-0.9.2.0_1 \
@@ -42,9 +42,9 @@ USE_CABAL=	Diff-1.0.2 \
 		character-ps-0.1 \
 		clock-0.8.4 \
 		cmark-gfm-0.2.6_1 \
-		co-log-core-0.3.2.4 \
+		co-log-core-0.3.2.5 \
 		colour-2.3.6 \
-		comonad-5.0.9 \
+		comonad-5.0.9_1 \
 		constraints-0.14.2_1 \
 		contravariant-1.5.5 \
 		cryptohash-md5-0.11.101.0_6 \
@@ -64,32 +64,32 @@ USE_CABAL=	Diff-1.0.2 \
 		fgl-visualize-0.1.0.1 \
 		file-embed-0.0.16.0 \
 		fmlist-0.9.4 \
-		free-5.2_6 \
+		free-5.2_7 \
 		futhark-data-1.1.1.0 \
 		futhark-manifest-1.5.0.0 \
 		futhark-server-1.2.3.0 \
 		generic-arbitrary-1.0.1 \
-		generic-deriving-1.14.6 \
+		generic-deriving-1.14.6_1 \
 		generic-lens-2.2.2.0_1 \
 		generic-lens-core-2.2.1.0_2 \
 		generically-0.1.1_4 \
 		githash-0.1.7.0 \
 		half-0.3.2 \
-		happy-2.1.3 \
-		happy-lib-2.1.3 \
+		happy-2.1.5 \
+		happy-lib-2.1.5 \
 		hashable-1.5.0.0_1 \
 		haskell-src-exts-1.23.1 \
-		haskell-src-meta-0.8.14 \
-		hsc2hs-0.68.10_3 \
+		haskell-src-meta-0.8.15 \
+		hsc2hs-0.68.10_4 \
 		indexed-profunctors-0.1.1.1 \
 		indexed-traversable-0.1.4_1 \
 		indexed-traversable-instances-0.1.2_1 \
 		integer-conversion-0.1.1_1 \
 		integer-logarithms-1.0.4 \
-		invariant-0.6.4 \
-		kan-extensions-5.2.6 \
+		invariant-0.6.4_1 \
+		kan-extensions-5.2.6_1 \
 		language-c-quote-0.13.0.2 \
-		lens-5.3.3 \
+		lens-5.3.4 \
 		lens-aeson-1.2.3_2 \
 		lsp-2.7.0.1 \
 		lsp-types-2.3.0.1 \
@@ -97,7 +97,7 @@ USE_CABAL=	Diff-1.0.2 \
 		math-functions-0.3.4.4 \
 		megaparsec-9.7.0 \
 		mod-0.2.0.1 \
-		mwc-random-0.15.1.0_1 \
+		mwc-random-0.15.2.0 \
 		neat-interpolation-0.5.1.4 \
 		network-uri-2.6.4.2_1 \
 		old-locale-1.0.0.7_2 \
@@ -113,34 +113,34 @@ USE_CABAL=	Diff-1.0.2 \
 		profunctors-5.6.2_3 \
 		quickcheck-instances-0.3.32_1 \
 		random-1.2.1.3 \
-		reflection-2.1.9 \
+		reflection-2.1.9_1 \
 		regex-1.1.0.2 \
-		regex-base-0.94.0.2_4 \
+		regex-base-0.94.0.3 \
 		regex-pcre-builtin-0.95.2.3.8.44_6 \
-		regex-tdfa-1.3.2.2_3 \
+		regex-tdfa-1.3.2.3 \
 		row-types-1.0.1.2_1 \
 		safe-0.3.21_1 \
 		safe-exceptions-0.1.7.4_1 \
 		scientific-0.3.8.0_2 \
 		semialign-1.3.1_2 \
-		semigroupoids-6.0.1_1 \
+		semigroupoids-6.0.1_2 \
 		semigroups-0.20 \
 		semirings-0.7 \
 		some-1.0.6_2 \
-		sorted-list-0.2.2.0 \
+		sorted-list-0.2.3.1 \
 		splitmix-0.1.1 \
 		srcloc-0.6.0.1 \
-		statistics-0.16.2.1 \
+		statistics-0.16.3.0 \
 		strict-0.5.1_1 \
 		syb-0.7.2.4 \
 		tagged-0.8.9 \
-		tasty-1.5.3 \
+		tasty-1.5.3_1 \
 		temporary-1.3 \
 		terminal-size-0.3.4_1 \
 		text-iso8601-0.1.1_2 \
 		text-rope-0.3 \
 		text-short-0.1.6_3 \
-		th-abstraction-0.7.1.0 \
+		th-abstraction-0.7.1.0_1 \
 		th-compat-0.1.6 \
 		th-expand-syns-0.4.12.0 \
 		th-lift-0.8.6 \
@@ -157,11 +157,11 @@ USE_CABAL=	Diff-1.0.2 \
 		utf8-string-1.0.2 \
 		uuid-types-1.0.6_2 \
 		vector-0.13.2.0_1 \
-		vector-algorithms-0.9.0.3 \
+		vector-algorithms-0.9.1.0 \
 		vector-binary-instances-0.2.5.2_5 \
 		vector-stream-0.1.0.1_3 \
 		vector-th-unbox-0.2.2_8 \
-		versions-6.0.7 \
+		versions-6.0.8 \
 		void-0.7.3 \
 		witherable-0.5_1 \
 		zlib-0.7.1.0_2
