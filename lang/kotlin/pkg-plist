@@ -15,7 +15,6 @@ bin/kotlinc-jvm
 %%DATADIR%%/lib/annotations-13.0.jar
 %%DATADIR%%/lib/assignment-compiler-plugin.jar
 %%DATADIR%%/lib/compose-compiler-plugin.jar
-%%DATADIR%%/lib/js.engines.jar
 %%DATADIR%%/lib/jvm-abi-gen.jar
 %%DATADIR%%/lib/kotlin-annotation-processing-cli.jar
 %%DATADIR%%/lib/kotlin-annotation-processing-compiler.jar
@@ -29,6 +28,8 @@ bin/kotlinc-jvm
 %%DATADIR%%/lib/kotlin-daemon.jar
 %%DATADIR%%/lib/kotlin-imports-dumper-compiler-plugin.jar
 %%DATADIR%%/lib/kotlin-main-kts.jar
+%%DATADIR%%/lib/kotlin-metadata-jvm-sources.jar
+%%DATADIR%%/lib/kotlin-metadata-jvm.jar
 %%DATADIR%%/lib/kotlin-preloader.jar
 %%DATADIR%%/lib/kotlin-reflect-sources.jar
 %%DATADIR%%/lib/kotlin-reflect.jar
