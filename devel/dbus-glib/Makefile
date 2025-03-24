@@ -1,8 +1,7 @@
 PORTNAME=	dbus-glib
-PORTVERSION=	0.112
-PORTREVISION=	2
+PORTVERSION=	0.114
 CATEGORIES=	devel gnome
-MASTER_SITES=	http://dbus.freedesktop.org/releases/dbus-glib/
+MASTER_SITES=	https://dbus.freedesktop.org/releases/dbus-glib/
 
 MAINTAINER=	desktop@FreeBSD.org
 COMMENT=	GLib bindings for the D-BUS messaging system
@@ -20,7 +19,6 @@ USE_LDCONFIG=	yes
 
 CPE_VENDOR=	freedesktop
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--with-test-socket-dir=${WRKDIR} \
 		--disable-gtk-doc \
 		--with-html-dir=${PREFIX}/share/doc
