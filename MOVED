@@ -4217,3 +4217,4 @@ www/rubygem-gitlab-gollum-lib|www/rubygem-gollum-lib|2025-03-22|Use www/rubygem-
 www/sogo-activesync|www/sogo|2025-03-22|Use sogo-mysqlactivesync or sogo-pgsqlactivesync flavors instead
 net/clash|net/mihomo|2025-03-23|Project is renamed
 x11-toolkits/Xaw3d|x11-toolkits/libXaw3d|2025-03-23|Rename in preparation to rebase the port forom Slackware to freedesktop.org
+sysutils/pprotectd||2025-03-24|Has expired: Obsolete utility, superseded by protect in base
