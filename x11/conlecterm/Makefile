@@ -1,5 +1,5 @@
 PORTNAME=	conlecterm
-PORTVERSION=	2.2.1.0
+PORTVERSION=	2.3.0.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	x11
 
@@ -26,7 +26,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	hxw
 
 USE_CABAL=	OneTuple-0.4.2_1 \
-		QuickCheck-2.15.0.1 \
+		QuickCheck-2.15.0.1_1 \
 		StateVar-1.2.2 \
 		X11-1.10.3 \
 		aeson-2.2.3.0_3 \
@@ -36,7 +36,7 @@ USE_CABAL=	OneTuple-0.4.2_1 \
 		async-2.2.5_3 \
 		attoparsec-0.14.4_6 \
 		base-orphans-0.9.3 \
-		bifunctors-5.6.2_1 \
+		bifunctors-5.6.2_2 \
 		bitvec-1.1.5.0_3 \
 		blaze-builder-0.4.2.3 \
 		blaze-html-0.9.2.0_1 \
@@ -44,11 +44,11 @@ USE_CABAL=	OneTuple-0.4.2_1 \
 		cabal-doctest-1.0.11 \
 		character-ps-0.1 \
 		colour-2.3.6 \
-		comonad-5.0.9 \
-		conduit-1.3.6 \
+		comonad-5.0.9_1 \
+		conduit-1.3.6.1 \
 		conduit-extra-1.3.7 \
 		contravariant-1.5.5 \
-		data-default-0.8.0.0 \
+		data-default-0.8.0.1 \
 		data-default-class-0.1.2.2 \
 		data-fix-0.3.4_1 \
 		distributive-0.6.2.1_1 \
@@ -60,22 +60,23 @@ USE_CABAL=	OneTuple-0.4.2_1 \
 		gi-gdk-3.0.30_1 \
 		gi-gdk3-3.0.30 \
 		gi-gdkpixbuf-2.0.32 \
-		gi-gio-2.0.35 \
+		gi-gio-2.0.36 \
 		gi-glib-2.0.30 \
 		gi-gmodule-2.0.6 \
 		gi-gobject-2.0.31 \
-		gi-gtk-3.0.43 \
+		gi-gtk-3.0.44_1 \
+		gi-gtk3-3.0.44 \
 		gi-harfbuzz-0.0.10 \
 		gi-pango-1.0.30 \
-		happy-2.1.4 \
-		happy-lib-2.1.4 \
+		happy-2.1.5 \
+		happy-lib-2.1.5 \
 		hashable-1.5.0.0_1 \
 		hashtables-1.4.2 \
 		haskell-gi-0.26.14 \
 		haskell-gi-base-0.26.8 \
 		haskell-gi-overloading-1.0 \
-		haskell-lexer-1.1.2 \
-		hsc2hs-0.68.10_3 \
+		haskell-lexer-1.2.1 \
+		hsc2hs-0.68.10_4 \
 		indexed-traversable-0.1.4_1 \
 		indexed-traversable-instances-0.1.2_1 \
 		integer-conversion-0.1.1_1 \
@@ -90,22 +91,22 @@ USE_CABAL=	OneTuple-0.4.2_1 \
 		prettyprinter-ansi-terminal-1.1.3 \
 		primitive-0.9.0.0_2 \
 		random-1.2.1.3 \
-		regex-base-0.94.0.2_4 \
-		regex-tdfa-1.3.2.2_3 \
+		regex-base-0.94.0.3 \
+		regex-tdfa-1.3.2.3 \
 		resourcet-1.3.0 \
 		safe-0.3.21_1 \
 		scientific-0.3.8.0_2 \
 		semialign-1.3.1_2 \
-		semigroupoids-6.0.1_1 \
+		semigroupoids-6.0.1_2 \
 		split-0.2.5 \
 		splitmix-0.1.1 \
 		streaming-commons-0.2.3.0 \
 		strict-0.5.1_1 \
 		tagged-0.8.9 \
-		tasty-1.5.3 \
+		tasty-1.5.3_1 \
 		text-iso8601-0.1.1_2 \
 		text-short-0.1.6_3 \
-		th-abstraction-0.7.1.0 \
+		th-abstraction-0.7.1.0_1 \
 		th-compat-0.1.6 \
 		these-1.2.1_2 \
 		time-compat-1.9.8 \
