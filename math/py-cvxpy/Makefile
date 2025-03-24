@@ -1,13 +1,13 @@
 PORTNAME=	cvxpy
-DISTVERSION=	1.6.1
-PORTREVISION=	1
+DISTVERSION=	1.6.4
 CATEGORIES=	math python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Domain-specific language for modeling convex optimization problems
-WWW=		https://www.cvxpy.org/
+WWW=		https://www.cvxpy.org \
+		https://github.com/cvxpy/cvxpy
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
