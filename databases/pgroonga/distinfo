@@ -1,5 +1,3 @@
-TIMESTAMP = 1742473392
-SHA256 (pgroonga-3.2.2.tar.gz) = 1495c1e8a16d2f22859be0d60e639873f94a7cc5a536ead3f7bc26ac36fb2e32
-SIZE (pgroonga-3.2.2.tar.gz) = 1660016
-SHA256 (c01fffd7d68aca2ba87b675fe9a8bf80d23f2f1a.patch) = 05a584f4e3001c1a2bb48104f5109fca71d0da5155da47bcb7942b87b1174c91
-SIZE (c01fffd7d68aca2ba87b675fe9a8bf80d23f2f1a.patch) = 1884
+TIMESTAMP = 1742812741
+SHA256 (pgroonga-3.2.3.tar.gz) = 93df838222f3536700de3bf0de9305eff1660c6c6c098b4039a52d7f62cc4e7c
+SIZE (pgroonga-3.2.3.tar.gz) = 1662844

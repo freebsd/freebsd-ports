@@ -1,11 +1,12 @@
 PORTNAME=	pgroonga
-DISTVERSION=	3.2.2
+DISTVERSION=	3.2.3
 CATEGORIES=	databases textproc
 MASTER_SITES=	http://packages.groonga.org/source/pgroonga/
 
-PATCH_SITES=	https://github.com/abetomo/pgroonga/commit/
-PATCHFILES=	c01fffd7d68aca2ba87b675fe9a8bf80d23f2f1a.patch:-p1
-
+# For other MAINTAINERs, please be mindful of the sequences
+# of release of Groonga and PGroonga. Althought the upstream
+# mentions that PGroonga is compatible with other versions of
+# Groonga, it is recommended to follow the sequence of release
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Open-source fulltext search engine for PostGRESQL
 WWW=		https://pgroonga.github.io/
