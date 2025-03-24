@@ -1,0 +1,11 @@
+prefix=/usr
+exec_prefix=/usr
+libdir=/usr/lib
+includedir=/usr/include/
+vendor=Heimdal
+
+Name: krb5-gssapi
+Description: Stub .pc file to let pkgconfig locate Heimdal Kerberos from base
+Version: 7.8.0
+Libs: -lgssapi
+Libs.private: -lheimntlm -lcrypt

@@ -1,5 +1,5 @@
 PORTNAME=	libsoup
-PORTVERSION=	3.6.4
+PORTVERSION=	3.6.5
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
@@ -50,13 +50,14 @@ MESON_ARGS=	-Dtests=false \
 		-Dntlm=disabled
 
 GSSAPI_BASE_USES=		gssapi
-GSSAPI_BASE_MESON_ON=		-Dgssapi=enabled -Dkrb5_config=${KRB5CONFIG}
+GSSAPI_BASE_MESON_ON=		-Dgssapi=enabled
+GSSAPI_BASE_VARS=		pkgconfig_paths=${PATCHDIR}
 
 GSSAPI_HEIMDAL_USES=		gssapi:heimdal
-GSSAPI_HEIMDAL_MESON_ON=	-Dgssapi=enabled -Dkrb5_config=${KRB5CONFIG}
+GSSAPI_HEIMDAL_MESON_ON=	-Dgssapi=enabled
 
 GSSAPI_MIT_USES=		gssapi:mit
-GSSAPI_MIT_MESON_ON=		-Dgssapi=enabled -Dkrb5_config=${KRB5CONFIG}
+GSSAPI_MIT_MESON_ON=		-Dgssapi=enabled
 
 GSSAPI_NONE_MESON_DISABLED=	gssapi
 
