@@ -2,6 +2,7 @@ bin/alpaca
 bin/alpaca_search_provider
 share/Alpaca/alpaca.gresource
 share/Alpaca/alpaca/__init__.py
+share/Alpaca/alpaca/action_manager.py
 share/Alpaca/alpaca/available_models.json
 share/Alpaca/alpaca/available_models_descriptions.py
 share/Alpaca/alpaca/constants.py
