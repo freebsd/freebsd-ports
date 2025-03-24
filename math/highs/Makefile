@@ -1,6 +1,7 @@
 PORTNAME=	highs
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.10.0
+PORTREVISION=	1
 CATEGORIES=	math
 PKGNAMEPREFIX=	coin-or-
 
@@ -19,8 +20,13 @@ GH_PROJECT=	HiGHS
 
 CMAKE_OFF=	BUILD_TESTING
 
-post-install: # see https://github.com/ERGO-Code/HiGHS/issues/502
+post-install:
+	# see https://github.com/ERGO-Code/HiGHS/issues/502
 	${RM} -r ${STAGEDIR}${PREFIX}/external
+	# workaround for https://github.com/ERGO-Code/HiGHS/issues/2250
+	@${REINPLACE_CMD} \
+		-e 's|INTERFACE_INCLUDE_DIRECTORIES "/include;|INTERFACE_INCLUDE_DIRECTORIES "|' \
+		${STAGEDIR}${PREFIX}/lib/cmake/highs/highs-targets.cmake
 
 # tests as of 1.10.0: 100% tests passed, 0 tests failed out of 2
 
