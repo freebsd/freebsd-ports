@@ -1,11 +1,11 @@
---- Makefile.orig	2014-05-19 13:11:41 UTC
+--- Makefile.orig	2025-03-22 18:55:09 UTC
 +++ Makefile
 @@ -1,6 +1,6 @@
 -CC=			gcc
 +CC?=			gcc
  #CC=			clang --analyze
--CFLAGS=		-g -Wall -Wno-unused-function -O2
-+CFLAGS?=		-g -Wall -Wno-unused-function -O2
+-CFLAGS=		-g -Wall -Wno-unused-function -O3
++CFLAGS?=		-g -Wall -Wno-unused-function -O3
  WRAP_MALLOC=-DUSE_MALLOC_WRAPPERS
  AR=			ar
  DFLAGS=		-DHAVE_PTHREAD $(WRAP_MALLOC)
