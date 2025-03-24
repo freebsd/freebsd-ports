@@ -71,7 +71,7 @@
 %%QT_INCDIR%%/qwt6/QwtPlotCurve
 %%QT_INCDIR%%/qwt6/QwtPlotDict
 %%QT_INCDIR%%/qwt6/QwtPlotDirectPainter
-%%QT_INCDIR%%/qwt6/QwtPlotGLCanvas
+@comment %%QT_INCDIR%%/qwt6/QwtPlotGLCanvas
 %%QT_INCDIR%%/qwt6/QwtPlotGraphicItem
 %%QT_INCDIR%%/qwt6/QwtPlotGrid
 %%QT_INCDIR%%/qwt6/QwtPlotHistogram
@@ -216,6 +216,7 @@
 %%QT_INCDIR%%/qwt6/qwt_plot_curve.h
 %%QT_INCDIR%%/qwt6/qwt_plot_dict.h
 %%QT_INCDIR%%/qwt6/qwt_plot_directpainter.h
+@comment %%QT_INCDIR%%/qwt6/qwt_plot_glcanvas.h
 %%QT_INCDIR%%/qwt6/qwt_plot_graphicitem.h
 %%QT_INCDIR%%/qwt6/qwt_plot_grid.h
 %%QT_INCDIR%%/qwt6/qwt_plot_histogram.h
@@ -293,7 +294,6 @@
 %%QT_INCDIR%%/qwt6/qwt_weeding_curve_fitter.h
 %%QT_INCDIR%%/qwt6/qwt_wheel.h
 %%QT_INCDIR%%/qwt6/qwt_widget_overlay.h
-@comment %%QT_INCDIR%%/qwt6/qwt_plot_glcanvas.h
 %%QT_LIBDIR%%/libqwt.so
 %%QT_LIBDIR%%/libqwt.so.6
 %%QT_LIBDIR%%/libqwt.so.%%SHLIB_SHVER%%
