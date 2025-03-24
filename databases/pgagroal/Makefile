@@ -1,5 +1,5 @@
 PORTNAME=	pgagroal
-DISTVERSION=	1.5.1
+DISTVERSION=	1.6.0
 CATEGORIES=	databases
 MASTER_SITES=	https://github.com/agroal/${PORTNAME}/releases/download/${DISTVERSION}/
 
@@ -10,7 +10,8 @@ WWW=		https://agroal.github.io/pgagroal/
 LICENSE=	BSD3CLAUSE
 
 BUILD_DEPENDS=	rst2man:textproc/py-docutils
-LIB_DEPENDS=	libev.so:devel/libev
+LIB_DEPENDS=	libcjson.so:devel/libcjson \
+		libev.so:devel/libev
 
 USES=		cmake pathfix ssl
 USE_LDCONFIG=	yes
