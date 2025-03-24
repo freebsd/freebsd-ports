@@ -1,7 +1,6 @@
 PORTNAME=	forgejo
 DISTVERSIONPREFIX=	v
-DISTVERSION=	7.0.13
-PORTREVISION=	1
+DISTVERSION=	7.0.14
 CATEGORIES=	www
 MASTER_SITES=	https://codeberg.org/forgejo/forgejo/releases/download/${DISTVERSIONPREFIX}${DISTVERSION}/
 PKGNAMESUFFIX=	7
@@ -16,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	git:devel/git
 
-USES=		cpe gmake go:1.22,no_targets
+USES=		cpe gmake go:1.23,no_targets
 USE_RC_SUBR=	forgejo
 
 CONFLICTS_INSTALL=	forgejo forgejo[0-689]*
