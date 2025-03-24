@@ -1,9 +1,9 @@
 PORTNAME=	valgrind
-PORTVERSION=	3.25.0.g20250128
+PORTVERSION=	3.25.0.g20250322
 DISTVERSIONPREFIX=	freebsd-
 PORTEPOCH=	1
 CATEGORIES=	devel
-MASTER_SITES=	https://snapshots.sourceware.org/valgrind/trunk/2025-01-28_18-53_1738090381/
+MASTER_SITES=	https://snapshots.sourceware.org/valgrind/trunk/2025-03-22_07-37_1742629021/
 PKGNAMESUFFIX=	-devel
 DISTNAME=	${PORTNAME}-3.25.0.GIT
 
