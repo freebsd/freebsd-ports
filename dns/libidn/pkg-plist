@@ -10,7 +10,7 @@ share/info/libidn-components.png
 lib/libidn.a
 lib/libidn.so
 lib/libidn.so.12
-lib/libidn.so.12.6.5
+lib/libidn.so.12.6.6
 libdata/pkgconfig/libidn.pc
 share/man/man1/idn.1.gz
 share/man/man3/idn_free.3.gz
