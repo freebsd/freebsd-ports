@@ -18,7 +18,7 @@ LIB_DEPENDS=	libdbus-1.so:devel/dbus \
 		libudev.so:devel/libudev-devd \
 		libwebrtc-audio-processing-1.so:audio/webrtc-audio-processing
 
-USES=		compiler:c11 ebur128 gettext-tools gnome localbase:ldflags meson \
+USES=		compiler:c11 gettext-tools gnome localbase:ldflags meson \
 		ncurses pkgconfig python:build readline shebangfix ssl
 USE_GNOME=	glib20
 USE_LDCONFIG=	yes
@@ -29,9 +29,9 @@ GL_SITE=	https://gitlab.freedesktop.org
 SHEBANG_FILES=	doc/*.py
 PORTDOCS=	*
 
-OPTIONS_DEFINE=		ALSA AVAHI DOCS DOXYGEN GSTREAMER JACK LV2 PULSEAUDIO \
+OPTIONS_DEFINE=		ALSA AVAHI DOCS DOXYGEN EBUR GSTREAMER JACK LV2 PULSEAUDIO \
 			VULKAN X11_BELL
-OPTIONS_DEFAULT=	GSTREAMER JACK
+OPTIONS_DEFAULT=	EBUR GSTREAMER JACK
 OPTIONS_SUB=		yes
 
 ALSA_MESON_ENABLED=	alsa pipewire-alsa
@@ -47,6 +47,10 @@ AVAHI_LIB_DEPENDS=	libavahi-client.so:net/avahi-app
 DOXYGEN_BUILD_DEPENDS=	doxygen:devel/doxygen
 DOXYGEN_MESON_ENABLED=	docs
 DOXYGEN_IMPLIES=	DOCS
+
+EBUR_DESC=		Loudness normalization plugin based on ebur128
+EBUR_MESON_ENABLED=	ebur128
+EBUR_USES=		ebur128
 
 GSTREAMER_USES=		gstreamer
 GSTREAMER_MESON_ENABLED=gstreamer gstreamer-device-provider

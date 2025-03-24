@@ -304,7 +304,7 @@ lib/spa-0.2/audiomixer/libspa-audiomixer.so
 lib/spa-0.2/audiotestsrc/libspa-audiotestsrc.so
 lib/spa-0.2/control/libspa-control.so
 lib/spa-0.2/filter-graph/libspa-filter-graph-plugin-builtin.so
-lib/spa-0.2/filter-graph/libspa-filter-graph-plugin-ebur128.so
+%%EBUR%%lib/spa-0.2/filter-graph/libspa-filter-graph-plugin-ebur128.so
 lib/spa-0.2/filter-graph/libspa-filter-graph-plugin-ladspa.so
 %%LV2%%lib/spa-0.2/filter-graph/libspa-filter-graph-plugin-lv2.so
 lib/spa-0.2/filter-graph/libspa-filter-graph.so
