@@ -1,8 +1,9 @@
 PORTNAME=	Sys-Virt
-PORTVERSION=	1.1.1
-PORTREVISION=	5
+PORTVERSION=	11.1.0
+DISTVERSIONPREFIX=	v
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
+MASTER_SITE_SUBDIR=	CPAN:DANBERR
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	fw@moov.de
@@ -12,7 +13,8 @@ WWW=		https://metacpan.org/release/Sys-Virt
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-XML-XPath>=0:textproc/p5-XML-XPath
+BUILD_DEPENDS=	p5-Module-Build>=0:devel/p5-Module-Build \
+		p5-XML-XPath>=0:textproc/p5-XML-XPath
 LIB_DEPENDS=	libvirt.so:devel/libvirt
 RUN_DEPENDS=	p5-XML-XPath>=0:textproc/p5-XML-XPath
 TEST_DEPENDS=	p5-CPAN-Changes>=0:devel/p5-CPAN-Changes \
