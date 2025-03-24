@@ -38,6 +38,7 @@ lib/node_modules/thrift/lib/thrift/json_protocol.js
 lib/node_modules/thrift/lib/thrift/log.js
 lib/node_modules/thrift/lib/thrift/multiplexed_processor.js
 lib/node_modules/thrift/lib/thrift/multiplexed_protocol.js
+lib/node_modules/thrift/lib/thrift/ohos_connection.js
 lib/node_modules/thrift/lib/thrift/protocol.js
 lib/node_modules/thrift/lib/thrift/server.js
 lib/node_modules/thrift/lib/thrift/thrift.js

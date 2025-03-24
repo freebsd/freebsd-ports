@@ -8,6 +8,7 @@ include/thrift/TNonCopyable.h
 include/thrift/TOutput.h
 include/thrift/TProcessor.h
 include/thrift/TToString.h
+include/thrift/TUuid.h
 include/thrift/Thrift.h
 include/thrift/async/TAsyncBufferProcessor.h
 include/thrift/async/TAsyncChannel.h
