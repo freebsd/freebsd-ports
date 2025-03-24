@@ -16,16 +16,17 @@ BROKEN_i386=	undefined reference to 'boost::atomics::detail::lockpool::scoped_lo
 LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 		libevent.so:devel/libevent
 
-DISTINFO_FILE=		${.CURDIR}/../thrift/distinfo
-
 USES=			bison cmake pkgconfig compiler:c++11-lang cpe \
 			pathfix ssl
 CPE_VENDOR=		apache
 USE_LDCONFIG=		yes
+
+CMAKE_ON=		BUILD_CPP
+CMAKE_OFF=		BUILD_C_GLIB BUILD_JAVA BUILD_JAVASCRIPT BUILD_NODEJS BUILD_PYTHON BUILD_HASKELL BUILD_TESTING
+
 MAKE_JOBS_UNSAFE=	yes
+DISTINFO_FILE=		${.CURDIR}/../thrift/distinfo
 PLIST_SUB=		PORTVERSION="${THRIFT_PORTVERSION}"
-CMAKE_ON=	BUILD_CPP BUILD_SHARED_LIBS
-CMAKE_OFF=	BUILD_C_GLIB BUILD_JAVA BUILD_JAVASCRIPT BUILD_NODEJS BUILD_PYTHON BUILD_HASKELL
 
 .include <bsd.port.pre.mk>
 

@@ -105,8 +105,6 @@ lib/libthriftnb.so.%%PORTVERSION%%
 lib/libthriftz.so
 lib/libthriftz.so.0
 lib/libthriftz.so.%%PORTVERSION%%
-lib/cmake/thrift/ThriftConfig.cmake
-lib/cmake/thrift/ThriftConfigVersion.cmake
 lib/cmake/thrift/thriftTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/thrift/thriftTargets.cmake
 lib/cmake/thrift/thriftnbTargets-%%CMAKE_BUILD_TYPE%%.cmake

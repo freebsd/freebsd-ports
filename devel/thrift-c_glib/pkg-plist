@@ -37,8 +37,6 @@ lib/libthrift_c_glib.so
 lib/libthrift_c_glib.so.%%PORTVERSION%%
 lib/libthrift_c_glib_zlib.so
 lib/libthrift_c_glib_zlib.so.%%PORTVERSION%%
-lib/cmake/thrift/ThriftConfig.cmake
-lib/cmake/thrift/ThriftConfigVersion.cmake
 lib/cmake/thrift/thrift_c_glibTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/thrift/thrift_c_glibTargets.cmake
 lib/cmake/thrift/thrift_c_glib_zlibTargets-%%CMAKE_BUILD_TYPE%%.cmake

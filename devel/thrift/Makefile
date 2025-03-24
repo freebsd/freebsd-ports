@@ -11,6 +11,8 @@ WWW=		https://thrift.apache.org/
 
 LICENSE=	APACHE20
 
+LIB_DEPENDS=	libevent.so:devel/libevent
+
 USES=		bison cmake compiler:c++11-lang cpe pkgconfig
 CPE_VENDOR=	apache
 USE_LDCONFIG=	yes
@@ -20,7 +22,6 @@ USE_LDCONFIG=	yes
 # For Perl support, use devel/p5-Thrift.
 # For Python support, use devel/py-thrift.
 # For Ruby support, use devel/rubygem-thrift.
-# For PHP support, use devel/php5-thrift.
 # For nodejs support, use devel/node-thrift.
 # Other languages are not yet supported, please feel free to contribute
 # using one of the leaf ports as an example.
