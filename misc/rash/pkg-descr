@@ -1,0 +1,7 @@
+Rush is a system for declarative shell scripting using Rust native bindings
+inspired by Ansible.
+
+Rash allows to manage your scripts in a declarative style
+If you:
+- think that long bash scripts are difficult to maintain
+- love Ansible syntax to setup your environments

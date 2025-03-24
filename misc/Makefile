@@ -559,6 +559,7 @@
     SUBDIR += quantum++
     SUBDIR += quary
     SUBDIR += randomx
+    SUBDIR += rash
     SUBDIR += raspberrypi-gpioshutdown
     SUBDIR += raspbsd-led
     SUBDIR += ree
