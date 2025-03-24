@@ -1,6 +1,6 @@
 PORTNAME=	FreeCAD
 DISTVERSION=	1.0.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	cad
 
 MAINTAINER=	cmt@FreeBSD.org
@@ -102,10 +102,13 @@ CMAKE_ARGS+=	-DOCC_INCLUDE_DIR="${LOCALBASE}/include/OpenCASCADE" \
 
 CMAKE_INSTALL_PREFIX=	${PREFIX}/${PORTNAME}
 
-OPTIONS_DEFINE=	COLLADA
+OPTIONS_DEFINE=	COLLADA SPNAV
 
 COLLADA_DESC=		Install pycollada for Collada files import
 COLLADA_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pycollada>0:graphics/py-pycollada@${PY_FLAVOR}
+SPNAV_DESC=		Enable libspnav (SpaceMouse) support
+SPNAV_CMAKE_BOOL=	FREECAD_SPNAV_SUPPORT
+SPNAV_LIB_DEPENDS=	libspnav.so:misc/libspnav
 
 .include <bsd.port.options.mk>
 
