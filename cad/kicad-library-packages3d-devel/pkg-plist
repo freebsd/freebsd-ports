@@ -10718,6 +10718,8 @@
 %%DATADIR%%/3dmodels/Package_CSP.3dshapes/LFCSP-8-1EP_3x3mm_P0.5mm_EP1.45x1.74mm.wrl
 %%DATADIR%%/3dmodels/Package_CSP.3dshapes/LFCSP-WD-10-1EP_3x3mm_P0.5mm_EP1.64x2.38mm.step
 %%DATADIR%%/3dmodels/Package_CSP.3dshapes/LFCSP-WD-10-1EP_3x3mm_P0.5mm_EP1.64x2.38mm.wrl
+%%DATADIR%%/3dmodels/Package_CSP.3dshapes/NXP_SOT1450-2_WLCSP-100_5.07x5.07mm_Layout10x10_P0.5mm.step
+%%DATADIR%%/3dmodels/Package_CSP.3dshapes/NXP_SOT1450-2_WLCSP-100_5.07x5.07mm_Layout10x10_P0.5mm.wrl
 %%DATADIR%%/3dmodels/Package_CSP.3dshapes/WLCSP-9_1.21x1.22mm_Layout3x3_P0.4mm.step
 %%DATADIR%%/3dmodels/Package_CSP.3dshapes/WLCSP-9_1.21x1.22mm_Layout3x3_P0.4mm.wrl
 %%DATADIR%%/3dmodels/Package_DFN_QFN.3dshapes/AO_DFN-8-1EP_5.55x5.2mm_P1.27mm_EP4.12x4.6mm.step
@@ -10982,6 +10984,8 @@
 %%DATADIR%%/3dmodels/Package_DFN_QFN.3dshapes/Texas_RGZ0048A_VQFN-48-1EP_7x7mm_P0.5mm_EP5.15x5.15mm.wrl
 %%DATADIR%%/3dmodels/Package_DFN_QFN.3dshapes/Texas_RHB0032E_VQFN-32-1EP_5x5mm_P0.5mm_EP3.45x3.45mm.step
 %%DATADIR%%/3dmodels/Package_DFN_QFN.3dshapes/Texas_RHB0032E_VQFN-32-1EP_5x5mm_P0.5mm_EP3.45x3.45mm.wrl
+%%DATADIR%%/3dmodels/Package_DFN_QFN.3dshapes/Texas_RHF0024A_VQFN-24-1EP_4x5mm_P0.5mm_EP2.65x3.65mm.step
+%%DATADIR%%/3dmodels/Package_DFN_QFN.3dshapes/Texas_RHF0024A_VQFN-24-1EP_4x5mm_P0.5mm_EP2.65x3.65mm.wrl
 %%DATADIR%%/3dmodels/Package_DFN_QFN.3dshapes/Texas_RHH0036C_VQFN-36-1EP_6x6mm_P0.5mm_EP4.4x4.4mm.step
 %%DATADIR%%/3dmodels/Package_DFN_QFN.3dshapes/Texas_RHH0036C_VQFN-36-1EP_6x6mm_P0.5mm_EP4.4x4.4mm.wrl
 %%DATADIR%%/3dmodels/Package_DFN_QFN.3dshapes/Texas_RSA_VQFN-16-1EP_4x4mm_P0.65mm_EP2.7x2.7mm.step
@@ -11696,6 +11700,8 @@
 %%DATADIR%%/3dmodels/Package_SO.3dshapes/HTSOP-8-1EP_3.9x4.9mm_Pitch1.27mm.wrl
 %%DATADIR%%/3dmodels/Package_SO.3dshapes/HTSSOP-14-1EP_4.4x5mm_P0.65mm_EP3.4x5mm_Mask3x3.1mm.step
 %%DATADIR%%/3dmodels/Package_SO.3dshapes/HTSSOP-14-1EP_4.4x5mm_P0.65mm_EP3.4x5mm_Mask3x3.1mm.wrl
+%%DATADIR%%/3dmodels/Package_SO.3dshapes/HTSSOP-16-1EP_4.4x5mm_P0.65mm_EP3.4x5mm_Mask2.66x2.46mm.step
+%%DATADIR%%/3dmodels/Package_SO.3dshapes/HTSSOP-16-1EP_4.4x5mm_P0.65mm_EP3.4x5mm_Mask2.66x2.46mm.wrl
 %%DATADIR%%/3dmodels/Package_SO.3dshapes/HTSSOP-20-1EP_4.4x6.5mm_P0.65mm_EP3.4x6.5mm.step
 %%DATADIR%%/3dmodels/Package_SO.3dshapes/HTSSOP-20-1EP_4.4x6.5mm_P0.65mm_EP3.4x6.5mm.wrl
 %%DATADIR%%/3dmodels/Package_SO.3dshapes/HTSSOP-20-1EP_4.4x6.5mm_P0.65mm_EP3.4x6.5mm_Mask2.75x3.43mm.step
