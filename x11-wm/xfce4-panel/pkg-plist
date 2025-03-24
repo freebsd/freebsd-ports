@@ -189,6 +189,7 @@ share/icons/hicolor/scalable/apps/org.xfce.panel.windowmenu.svg
 %%NLS%%share/locale/uk/LC_MESSAGES/xfce4-panel.mo
 %%NLS%%share/locale/ur/LC_MESSAGES/xfce4-panel.mo
 %%NLS%%share/locale/ur_PK/LC_MESSAGES/xfce4-panel.mo
+%%NLS%%share/locale/vec/LC_MESSAGES/xfce4-panel.mo
 %%NLS%%share/locale/vi/LC_MESSAGES/xfce4-panel.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/xfce4-panel.mo
 %%NLS%%share/locale/zh_HK/LC_MESSAGES/xfce4-panel.mo
