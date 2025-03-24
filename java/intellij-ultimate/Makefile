@@ -1,5 +1,5 @@
 PORTNAME=	intellij-ultimate
-DISTVERSION=	2024.3.1.1
+DISTVERSION=	2024.3.5
 CATEGORIES=	java devel
 MASTER_SITES=	https://download-cdn.jetbrains.com/idea/
 DISTNAME=	ideaIU-${DISTVERSION}
@@ -29,7 +29,7 @@ NO_BUILD=	yes
 SUB_FILES=	idea idea.desktop pkg-message
 
 BUILD_TYPE=	IU
-BUILD_VERSION=	243.22562.218
+BUILD_VERSION=	243.26053.27
 BUILD_MARKER=	${BUILD_TYPE}-${BUILD_VERSION}
 PLIST_SUB=	BUILD_MARKER=${BUILD_MARKER}
 WRKSRC=		${WRKDIR}/idea-${BUILD_MARKER}
@@ -58,7 +58,8 @@ post-patch:
 		${WRKSRC}/plugins/maven/lib/maven4-server-lib \
 		${WRKSRC}/plugins/remote-dev-server/ \
 		${WRKSRC}/plugins/webp/lib/libwebp/
-	@${SED} -i '' 's/%%ARCH%%/${ARCH}/' ${WRKSRC}/product-info.json
+	@${SED} -i '' 's,/amd64,,' ${WRKSRC}/bin/idea.sh ${WRKSRC}/product-info.json
+	@${SED} -i '' 's/amd64/${ARCH}/' ${WRKSRC}/product-info.json
 
 .include <bsd.port.pre.mk>
 
