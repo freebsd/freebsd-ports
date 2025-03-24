@@ -112,4 +112,6 @@ share/icons/hicolor/scalable/apps/org.xfce.session.svg
 share/polkit-1/actions/org.xfce.session.policy
 %%WAYLAND%%share/wayland-sessions/xfce-wayland.desktop
 share/xdg-desktop-portal/xfce-portals.conf
+share/xfce4/labwc/labwc-environment
+share/xfce4/labwc/labwc-rc.xml
 share/xsessions/xfce.desktop
