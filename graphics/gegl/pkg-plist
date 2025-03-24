@@ -159,6 +159,7 @@ lib/libgegl-sc-%%GEGL_VER%%.so
 libdata/pkgconfig/gegl-%%GEGL_VER%%.pc
 libdata/pkgconfig/gegl-sc-%%GEGL_VER%%.pc
 share/gir-1.0/Gegl-%%GEGL_VER%%.gir
+share/locale/bg/LC_MESSAGES/gegl-%%GEGL_VER%%.mo
 share/locale/bs/LC_MESSAGES/gegl-%%GEGL_VER%%.mo
 share/locale/ca/LC_MESSAGES/gegl-%%GEGL_VER%%.mo
 share/locale/da/LC_MESSAGES/gegl-%%GEGL_VER%%.mo
