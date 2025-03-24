@@ -6,7 +6,7 @@ CATEGORIES=	devel python
 MASTER_SITES=	APACHE/thrift/${PORTVERSION}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	komarov@valerka.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python interface to Thrift
 WWW=		https://thrift.apache.org/
 

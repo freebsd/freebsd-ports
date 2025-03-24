@@ -5,7 +5,7 @@ PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	APACHE/thrift/${PORTVERSION}
 
-MAINTAINER=	komarov@valerka.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Framework for scalable cross-language services development
 WWW=		https://thrift.apache.org/
 

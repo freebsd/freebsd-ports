@@ -7,7 +7,7 @@ MASTER_SITES=	APACHE/thrift/${PORTVERSION}
 PKGNAMESUFFIX=	-cpp
 DISTNAME=	thrift-${PORTVERSION}
 
-MAINTAINER=	komarov@valerka.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C++ interface to Thrift
 WWW=		https://thrift.apache.org/
 
