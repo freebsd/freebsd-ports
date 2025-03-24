@@ -10,6 +10,9 @@ WWW=		http://www.MysticWALL.COM/software/sxml/index.html
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	No consumers in tree and no active development upstream for over a decade
+EXPIRATION_DATE=2025-04-30
+
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USES=		tar:bzip2
