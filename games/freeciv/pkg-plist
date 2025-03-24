@@ -65,6 +65,7 @@ share/applications/org.freeciv.server.desktop
 %%PORTDOCS%%%%DOCSDIR%%/README.sound
 %%PORTDOCS%%%%DOCSDIR%%/README.tilesets
 %%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%%%DOCSDIR%%/doxygen.md
 %%CLIENT%%share/icons/hicolor/128x128/apps/freeciv-client.png
 %%CLIENT%%share/icons/hicolor/128x128/apps/freeciv-modpack.png
 %%QT5%%share/icons/hicolor/128x128/apps/freeciv-ruledit.png
@@ -136,6 +137,9 @@ share/icons/hicolor/64x64/apps/freeciv-server.png
 %%NLS%%share/locale/gd/LC_MESSAGES/freeciv-nations.mo
 %%QT5%%%%NLS%%share/locale/gd/LC_MESSAGES/freeciv-ruledit.mo
 %%NLS%%share/locale/gd/LC_MESSAGES/freeciv-core.mo
+%%NLS%%share/locale/gl_ES/LC_MESSAGES/freeciv-core.mo
+%%NLS%%share/locale/gl_ES/LC_MESSAGES/freeciv-nations.mo
+%%QT5%%%%NLS%%share/locale/gl_ES/LC_MESSAGES/freeciv-ruledit.mo
 %%NLS%%share/locale/he/LC_MESSAGES/freeciv-nations.mo
 %%QT5%%%%NLS%%share/locale/he/LC_MESSAGES/freeciv-ruledit.mo
 %%NLS%%share/locale/he/LC_MESSAGES/freeciv-core.mo
@@ -178,6 +182,9 @@ share/icons/hicolor/64x64/apps/freeciv-server.png
 %%NLS%%share/locale/ru/LC_MESSAGES/freeciv-nations.mo
 %%QT5%%%%NLS%%share/locale/ru/LC_MESSAGES/freeciv-ruledit.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/freeciv-core.mo
+%%NLS%%share/locale/sk/LC_MESSAGES/freeciv-core.mo
+%%NLS%%share/locale/sk/LC_MESSAGES/freeciv-nations.mo
+%%QT5%%%%NLS%%share/locale/sk/LC_MESSAGES/freeciv-ruledit.mo
 %%NLS%%share/locale/sr/LC_MESSAGES/freeciv-nations.mo
 %%QT5%%%%NLS%%share/locale/sr/LC_MESSAGES/freeciv-ruledit.mo
 %%NLS%%share/locale/sr/LC_MESSAGES/freeciv-core.mo
