@@ -1,7 +1,6 @@
 PORTNAME=	hyprsunset
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.1.0
-PORTREVISION=	3
+DISTVERSION=	0.2.0
 CATEGORIES=	accessibility wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -19,7 +18,8 @@ LIB_DEPENDS=	libhyprutils.so:devel/hyprutils \
 USES=		cmake compiler:c++11-lib localbase:ldflags pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	hyprwm
-GH_TUPLE=	hyprwm:hyprland-protocols:v0.4.0:hyprland_protocols/subprojects/hyprland-protocols
-PLIST_FILES=	bin/${PORTNAME}
+GH_TUPLE=	hyprwm:hyprland-protocols:v0.6.2:hyprland_protocols/subprojects/hyprland-protocols
+PLIST_FILES=	bin/${PORTNAME} \
+		lib/systemd/user/${PORTNAME}.service
 
 .include <bsd.port.mk>

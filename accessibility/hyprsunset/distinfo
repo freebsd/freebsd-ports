@@ -1,5 +1,5 @@
-TIMESTAMP = 1728415425
-SHA256 (hyprwm-hyprsunset-v0.1.0_GH0.tar.gz) = 88c9fb2c3efb3ccb398c66a90658765312faf818678a6a8e0e727cfba5f13a9b
-SIZE (hyprwm-hyprsunset-v0.1.0_GH0.tar.gz) = 8571
-SHA256 (hyprwm-hyprland-protocols-v0.4.0_GH0.tar.gz) = ab3525d8bad576db911d4ba1b586f303dd988660b3b8980022c1795fd574b165
-SIZE (hyprwm-hyprland-protocols-v0.4.0_GH0.tar.gz) = 8131
+TIMESTAMP = 1742816163
+SHA256 (hyprwm-hyprsunset-v0.2.0_GH0.tar.gz) = 178d2b6c0042e005770eb31492fb7583c9fd25e37351a29f44bff56e87a52ad3
+SIZE (hyprwm-hyprsunset-v0.2.0_GH0.tar.gz) = 11336
+SHA256 (hyprwm-hyprland-protocols-v0.6.2_GH0.tar.gz) = bba082af141599d4342e7b8505401a6e3a32be819d9eb23ce6c90f7407e62c1f
+SIZE (hyprwm-hyprland-protocols-v0.6.2_GH0.tar.gz) = 9887
