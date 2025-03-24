@@ -1,5 +1,5 @@
 PORTNAME=	ansilove
-PORTVERSION=	4.2.0
+PORTVERSION=	4.2.1
 CATEGORIES=	graphics textproc
 
 MAINTAINER=	amdmi3@FreeBSD.org
