@@ -1,7 +1,6 @@
 PORTNAME=	librashader
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.6.2
-PORTREVISION=	5
+DISTVERSION=	0.8.1
 CATEGORIES=	devel
 
 MAINTAINER=	bsdcode@disroot.org
@@ -13,7 +12,7 @@ LICENSE_COMB=	multi
 LICENSE_FILE_GPLv3=	${WRKSRC}/LICENSE-GPL.md
 LICENSE_FILE_MPL20=	${WRKSRC}/LICENSE.md
 
-BUILD_DEPENDS=	patchelf:sysutils/patchelf
+BUILD_DEPENDS=	patchelf>0:sysutils/patchelf
 
 USES=		cargo
 USE_GITHUB=	yes
@@ -52,14 +51,14 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/pkg/librashader.pc \
 		${STAGEDIR}${PREFIX}/libdata/pkgconfig
 
-post-install-DOCS-on:
+do-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/BROKEN_SHADERS.md \
 		${WRKSRC}/MIGRATION-ABI2.md \
 		${WRKSRC}/README.md \
 		${STAGEDIR}${DOCSDIR}
 
-post-install-EXAMPLES-on:
+do-install-EXAMPLES-on:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/include/README.md \
 		${STAGEDIR}${EXAMPLESDIR}
