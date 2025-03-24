@@ -1,5 +1,6 @@
 bin/bsdsensors
 include/bsdsensors/address.h
+include/bsdsensors/banked_io.h
 include/bsdsensors/chip.h
 include/bsdsensors/chip_info.h
 include/bsdsensors/config.h
@@ -13,12 +14,16 @@ include/bsdsensors/fintek_temp_sensor.h
 include/bsdsensors/fintek_volt_sensor.h
 include/bsdsensors/ite_chip.h
 include/bsdsensors/ite_chip_info.h
+include/bsdsensors/ite_fan_speed.h
+include/bsdsensors/ite_temp_sensor.h
+include/bsdsensors/ite_volt_sensor.h
 include/bsdsensors/microchip_chip.h
 include/bsdsensors/microchip_chip_info.h
 include/bsdsensors/nuvoton_chip.h
 include/bsdsensors/nuvoton_chip_info.h
 include/bsdsensors/nuvoton_fan_control.h
 include/bsdsensors/nuvoton_fan_speed.h
+include/bsdsensors/nuvoton_multi_sensor.h
 include/bsdsensors/nuvoton_temp_sensor.h
 include/bsdsensors/nuvoton_volt_sensor.h
 include/bsdsensors/port_io.h
