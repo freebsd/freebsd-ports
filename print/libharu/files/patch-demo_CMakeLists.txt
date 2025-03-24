@@ -1,6 +1,6 @@
---- demo/CMakeLists.txt.orig	2022-10-14 10:04:02 UTC
+--- demo/CMakeLists.txt.orig	2025-03-15 21:55:38 UTC
 +++ demo/CMakeLists.txt
-@@ -85,14 +85,14 @@ install(
+@@ -86,14 +86,14 @@ install(
  # =======================================================================
  install(
    TARGETS ${demos_NAMES} ${demos_with_grid_NAMES} grid_sheet
@@ -14,7 +14,7 @@
  
  # install demo files
  install(
-   DIRECTORY images mbtext pngsuite rawimage ttfont type1
+   DIRECTORY images mbtext pdf_a pngsuite rawimage ttfont type1
 -  DESTINATION demo
 +  DESTINATION ${EXAMPLESDIR}
  )
