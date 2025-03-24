@@ -1,6 +1,5 @@
 PORTNAME=	nushell
-DISTVERSION=	0.102.0
-PORTREVISION=	1
+DISTVERSION=	0.103.0
 CATEGORIES=	shells
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -48,6 +47,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		async-stream-impl-0.3.6 \
 		async-trait-0.1.83 \
 		atoi_simd-0.16.0 \
+		atomic-0.6.0 \
 		atomic-waker-1.1.2 \
 		autocfg-1.4.0 \
 		avro-schema-0.3.0 \
@@ -81,7 +81,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		blake3-1.5.5 \
 		block-buffer-0.10.4 \
 		block2-0.5.1 \
-		bracoxide-0.1.4 \
+		bracoxide-0.1.5 \
 		brotli-7.0.0 \
 		brotli-decompressor-4.0.1 \
 		bstr-1.11.1 \
@@ -90,13 +90,13 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		bytemuck-1.21.0 \
 		bytemuck_derive-1.8.0 \
 		byteorder-1.5.0 \
-		bytes-1.9.0 \
+		bytes-1.10.0 \
 		bytes-utils-0.1.4 \
-		bytesize-1.3.0 \
+		bytesize-1.3.2 \
 		calamine-0.26.1 \
 		cassowary-0.3.0 \
 		castaway-0.2.3 \
-		cc-1.2.3 \
+		cc-1.2.16 \
 		cexpr-0.6.0 \
 		cfg-if-1.0.0 \
 		cfg_aliases-0.1.1 \
@@ -118,7 +118,6 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		colorchoice-1.0.3 \
 		colorz-1.1.4 \
 		comfy-table-7.1.3 \
-		compact_str-0.7.1 \
 		compact_str-0.8.0 \
 		console-0.15.8 \
 		const-random-0.1.18 \
@@ -137,8 +136,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		crossbeam-deque-0.8.5 \
 		crossbeam-epoch-0.9.18 \
 		crossbeam-queue-0.3.11 \
-		crossbeam-utils-0.8.20 \
-		crossterm-0.27.0 \
+		crossbeam-utils-0.8.21 \
 		crossterm-0.28.1 \
 		crossterm_winapi-0.9.1 \
 		crunchy-0.2.2 \
@@ -150,7 +148,10 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		ctrlc-3.4.5 \
 		curl-0.4.47 \
 		curl-sys-0.4.78+curl-8.11.0 \
-		data-encoding-2.7.0 \
+		darling-0.20.10 \
+		darling_core-0.20.10 \
+		darling_macro-0.20.10 \
+		data-encoding-2.8.0 \
 		deranged-0.3.11 \
 		derive-new-0.6.0 \
 		derive_arbitrary-1.4.1 \
@@ -272,12 +273,15 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		icu_properties_data-1.5.0 \
 		icu_provider-1.5.0 \
 		icu_provider_macros-1.5.0 \
+		ident_case-1.0.1 \
 		idna-1.0.3 \
 		idna_adapter-1.2.0 \
 		indexmap-2.7.0 \
 		indicatif-0.17.9 \
+		indoc-2.0.5 \
 		inotify-0.9.6 \
 		inotify-sys-0.1.5 \
+		instability-0.3.7 \
 		interprocess-2.2.2 \
 		inventory-0.3.15 \
 		ipnet-2.10.1 \
@@ -288,7 +292,6 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		is_executable-1.0.4 \
 		is_terminal_polyfill-1.70.1 \
 		itertools-0.11.0 \
-		itertools-0.12.1 \
 		itertools-0.13.0 \
 		itoa-1.0.14 \
 		jobserver-0.1.32 \
@@ -303,7 +306,6 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		libgit2-sys-0.18.0+1.9.0 \
 		libloading-0.8.6 \
 		libm-0.2.11 \
-		libmimalloc-sys-0.1.39 \
 		libproc-0.14.10 \
 		libredox-0.1.3 \
 		libsqlite3-sys-0.28.0 \
@@ -319,7 +321,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		lru-0.12.5 \
 		lscolors-0.17.0 \
 		lsp-server-0.7.8 \
-		lsp-textdocument-0.4.1 \
+		lsp-textdocument-0.4.2 \
 		lsp-types-0.97.0 \
 		lz4-1.28.0 \
 		lz4-sys-1.11.1+lz4-1.10.0 \
@@ -331,9 +333,8 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		md-5-0.10.6 \
 		memchr-2.7.4 \
 		memmap2-0.9.5 \
-		miette-7.4.0 \
-		miette-derive-7.4.0 \
-		mimalloc-0.1.43 \
+		miette-7.5.0 \
+		miette-derive-7.5.0 \
 		mime-0.3.17 \
 		mime_guess-2.0.5 \
 		minimal-lexical-0.2.1 \
@@ -450,8 +451,8 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		predicates-tree-1.0.11 \
 		pretty_assertions-1.4.1 \
 		print-positions-0.6.1 \
-		proc-macro-error-1.0.4 \
-		proc-macro-error-attr-1.0.4 \
+		proc-macro-error-attr2-2.0.0 \
+		proc-macro-error2-2.0.1 \
 		proc-macro2-1.0.92 \
 		procfs-0.17.0 \
 		procfs-core-0.17.0 \
@@ -475,7 +476,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		rand_chacha-0.3.1 \
 		rand_core-0.6.4 \
 		rand_distr-0.4.3 \
-		ratatui-0.26.3 \
+		ratatui-0.29.0 \
 		raw-cpuid-11.2.0 \
 		rayon-1.10.0 \
 		rayon-core-1.12.1 \
@@ -484,7 +485,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		recvmsg-1.0.0 \
 		redox_syscall-0.5.8 \
 		redox_users-0.4.6 \
-		reedline-0.38.0 \
+		reedline-0.39.0 \
 		ref-cast-1.0.23 \
 		ref-cast-impl-1.0.23 \
 		regex-1.11.1 \
@@ -494,7 +495,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		relative-path-1.9.3 \
 		reqwest-0.12.9 \
 		rfc2047-decoder-1.0.6 \
-		ring-0.17.8 \
+		ring-0.17.13 \
 		rle-decode-fast-1.0.3 \
 		rmp-0.8.14 \
 		rmp-serde-1.3.0 \
@@ -503,9 +504,9 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		rstest_macros-0.23.0 \
 		rstest_reuse-0.7.0 \
 		rusqlite-0.31.0 \
-		rust-embed-8.5.0 \
-		rust-embed-impl-8.5.0 \
-		rust-embed-utils-8.5.0 \
+		rust-embed-8.6.0 \
+		rust-embed-impl-8.6.0 \
+		rust-embed-utils-8.6.0 \
 		rust-ini-0.21.1 \
 		rust_decimal-1.36.0 \
 		rustc-demangle-0.1.24 \
@@ -525,15 +526,15 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		rustversion-1.0.18 \
 		ryu-1.0.18 \
 		same-file-1.0.6 \
-		scc-2.2.5 \
+		scc-2.3.3 \
 		schannel-0.1.27 \
 		scoped-tls-1.0.1 \
 		scopeguard-1.2.0 \
-		scraper-0.22.0 \
+		scraper-0.23.1 \
 		scroll-0.11.0 \
 		scroll_derive-0.11.1 \
 		sct-0.7.1 \
-		sdd-3.0.4 \
+		sdd-3.0.7 \
 		security-framework-2.11.1 \
 		security-framework-3.0.1 \
 		security-framework-sys-2.12.1 \
@@ -549,6 +550,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		serial_test-3.2.0 \
 		serial_test_derive-3.2.0 \
 		servo_arc-0.4.0 \
+		sha1_smol-1.0.1 \
 		sha2-0.10.8 \
 		shadow-rs-0.38.0 \
 		shell-words-1.1.0 \
@@ -569,9 +571,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		snafu-derive-0.8.5 \
 		snap-1.1.1 \
 		socket2-0.5.8 \
-		spin-0.9.8 \
 		sqlparser-0.53.0 \
-		stability-0.2.1 \
 		stable_deref_trait-1.2.0 \
 		stacker-0.1.17 \
 		static_assertions-1.1.0 \
@@ -616,7 +616,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		tinystr-0.7.6 \
 		tinyvec-1.8.0 \
 		tinyvec_macros-0.1.1 \
-		titlecase-3.3.0 \
+		titlecase-3.4.0 \
 		tokio-1.43.0 \
 		tokio-macros-2.5.0 \
 		tokio-native-tls-0.3.1 \
@@ -764,7 +764,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		zeroize-1.8.1 \
 		zerovec-0.10.4 \
 		zerovec-derive-0.10.3 \
-		zip-2.2.1 \
+		zip-2.4.1 \
 		zlib-rs-0.4.1 \
 		zopfli-0.8.1 \
 		zstd-0.13.2 \
