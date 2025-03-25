@@ -15,7 +15,6 @@
 #                               Default is "dsp"
 # virtual_oss_dsp (string):     Arguments passed to virtual_oss config named dsp
 #                               Default is
-#                                   -T /dev/sndstat # register vdsp in sndstat
 #                                   -C 2 -c 2 # use two channels
 #                                   -S # resample if needed
 #                                   -i 8 # real-time priority
@@ -38,7 +37,6 @@ status_cmd="${name}_status"
 
 required_modules="cuse"
 virtual_oss_default_args="\
-  -T /dev/sndstat \
   -S \
   -i 8 \
   -C 2 -c 2 \
