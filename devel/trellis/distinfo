@@ -1,5 +1,5 @@
-TIMESTAMP = 1671546592
-SHA256 (YosysHQ-prjtrellis-g2022100712-35f5affe10_GH0.tar.gz) = 051610533a83e1236c02e563c4590e66b118e7843b7a0a5210e1edc6f32e06f7
-SIZE (YosysHQ-prjtrellis-g2022100712-35f5affe10_GH0.tar.gz) = 1157407
-SHA256 (YosysHQ-prjtrellis-db-35d900a94ff_GH0.tar.gz) = e4654ccf33cde0d9f386483688351e6318d4a7db2691a1eea4ccae7813f551b1
-SIZE (YosysHQ-prjtrellis-db-35d900a94ff_GH0.tar.gz) = 2909007
+TIMESTAMP = 1742936566
+SHA256 (YosysHQ-prjtrellis-g20250111-14ac883fa639b11fdc98f3cdef87a5d01f79e73d_GH0.tar.gz) = 4cf78f42b402eefd60d371d4f3e8e8d8c74080a047ac1835490ef759ab4ce427
+SIZE (YosysHQ-prjtrellis-g20250111-14ac883fa639b11fdc98f3cdef87a5d01f79e73d_GH0.tar.gz) = 1302779
+SHA256 (YosysHQ-prjtrellis-db-4dda149b9e4f1753ebc8b011ece2fe794be1281a_GH0.tar.gz) = d404603134a0b9181b4cdfeca5e90bcd5b38c614f9c4d4ccb29a14d9ddf2d351
+SIZE (YosysHQ-prjtrellis-db-4dda149b9e4f1753ebc8b011ece2fe794be1281a_GH0.tar.gz) = 5465516
