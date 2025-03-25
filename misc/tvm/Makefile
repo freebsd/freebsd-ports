@@ -1,16 +1,16 @@
 PORTNAME=	tvm
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.16.0
+DISTVERSION=	0.19.0
 CATEGORIES=	misc # machine-learning
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Deep learning compiler stack for cpu, gpu and specialized accelerators
-WWW=		https://tvm.ai/
+WWW=		https://tvm.ai \
+		https://github.com/apache/tvm
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN=		compilation fails with the latest dmlc-core, see https://github.com/apache/tvm/issues/17116
 BROKEN_armv7=	comilation fails: error: expected identifier before '__is_convertible'
 
 BUILD_DEPENDS=	dmlc-core>0:devel/dmlc-core \
@@ -52,5 +52,11 @@ post-install: # remove empty directories
 
 post-test: # 1 test fails, see https://github.com/apache/tvm/issues/13131
 	@cd ${TEST_WRKSRC} && ./cpptest
+
+# tests as of 0.19.0, see https://github.com/apache/tvm/issues/17776:
+# [  FAILED  ] 3 tests, listed below:
+# [  FAILED  ] AProfileParser.DefaultSVESupportSVESupport
+# [  FAILED  ] AProfileParser.DefaultFP16Support
+# [  FAILED  ] InterfaceAPI.ContainsRunFunctionWithWorkspaceAndConstantPools
 
 .include <bsd.port.mk>

@@ -18,6 +18,7 @@ include/tvm/auto_scheduler/transform_step.h
 include/tvm/driver/driver_api.h
 include/tvm/ir/adt.h
 include/tvm/ir/affine_type.h
+include/tvm/ir/analysis.h
 include/tvm/ir/attrs.h
 include/tvm/ir/diagnostic.h
 include/tvm/ir/env_func.h
@@ -30,6 +31,7 @@ include/tvm/ir/memory_pools.h
 include/tvm/ir/module.h
 include/tvm/ir/name_supply.h
 include/tvm/ir/op.h
+include/tvm/ir/replace_global_vars.h
 include/tvm/ir/si_builder.h
 include/tvm/ir/source_map.h
 include/tvm/ir/tensor_type.h
@@ -78,6 +80,7 @@ include/tvm/relax/attrs/manipulate.h
 include/tvm/relax/attrs/nn.h
 include/tvm/relax/attrs/op.h
 include/tvm/relax/attrs/qdq.h
+include/tvm/relax/attrs/sampling.h
 include/tvm/relax/attrs/search.h
 include/tvm/relax/attrs/sorting.h
 include/tvm/relax/attrs/statistical.h
@@ -147,6 +150,7 @@ include/tvm/runtime/c_runtime_api.h
 include/tvm/runtime/container/adt.h
 include/tvm/runtime/container/array.h
 include/tvm/runtime/container/base.h
+include/tvm/runtime/container/boxed_primitive.h
 include/tvm/runtime/container/closure.h
 include/tvm/runtime/container/map.h
 include/tvm/runtime/container/optional.h
@@ -155,24 +159,6 @@ include/tvm/runtime/container/string.h
 include/tvm/runtime/container/variant.h
 include/tvm/runtime/contrib/libtorch_runtime.h
 include/tvm/runtime/contrib/papi.h
-include/tvm/runtime/crt/aot_executor.h
-include/tvm/runtime/crt/aot_executor_module.h
-include/tvm/runtime/crt/crt.h
-include/tvm/runtime/crt/error_codes.h
-include/tvm/runtime/crt/func_registry.h
-include/tvm/runtime/crt/graph_executor.h
-include/tvm/runtime/crt/graph_executor_module.h
-include/tvm/runtime/crt/logging.h
-include/tvm/runtime/crt/microtvm_rpc_server.h
-include/tvm/runtime/crt/module.h
-include/tvm/runtime/crt/packed_func.h
-include/tvm/runtime/crt/page_allocator.h
-include/tvm/runtime/crt/platform.h
-include/tvm/runtime/crt/rpc_common/frame_buffer.h
-include/tvm/runtime/crt/rpc_common/framing.h
-include/tvm/runtime/crt/rpc_common/session.h
-include/tvm/runtime/crt/rpc_common/write_stream.h
-include/tvm/runtime/crt/stack_allocator.h
 include/tvm/runtime/data_type.h
 include/tvm/runtime/debug.h
 include/tvm/runtime/device_api.h
@@ -187,7 +173,6 @@ include/tvm/runtime/memory/memory_manager.h
 include/tvm/runtime/metadata.h
 include/tvm/runtime/metadata_base.h
 include/tvm/runtime/metadata_types.h
-include/tvm/runtime/micro/standalone/microtvm_runtime.h
 include/tvm/runtime/module.h
 include/tvm/runtime/name_transforms.h
 include/tvm/runtime/ndarray.h
