@@ -5,9 +5,9 @@
 # KEYWORD: shutdown
 
 #
-# Add the following line to /etc/rc.conf to enable php-fpm:
+# Add the following line to /etc/rc.conf to enable php_fpm:
 # php_fpm_enable (bool):        Set to "NO" by default.
-#                               Set it to "YES" to enable php-fpm
+#                               Set it to "YES" to enable php_fpm
 # php_fpm_profiles (str):       Set to "" by default.
 #                               Define your profiles here.
 # php_fpm_pid_prefix (str):     Set to "" by default.
@@ -53,7 +53,7 @@ else
         if [ "x${php_fpm_profiles}" != "x" -a "x$1" != "x" ]; then
                 for profile in ${php_fpm_profiles}; do
                         echo "===> php_fpm profile: ${profile}"
-                        %%PREFIX%%/etc/rc.d/php-fpm $1 ${profile}
+                        %%PREFIX%%/etc/rc.d/php_fpm $1 ${profile}
                         retcode="$?"
                         if [ "0${retcode}" -ne 0 ]; then
                                 failed="${profile} (${retcode}) ${failed:-}"
