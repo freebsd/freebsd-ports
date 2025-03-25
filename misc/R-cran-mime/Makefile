@@ -1,6 +1,5 @@
 PORTNAME=	mime
-PORTVERSION=	0.12
-PORTREVISION=	1
+PORTVERSION=	0.13
 CATEGORIES=	misc
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
@@ -10,6 +9,6 @@ WWW=		https://cran.r-project.org/web/packages/mime/
 
 LICENSE=	GPLv2+
 
-USES=	cran:auto-plist,compiles
+USES=		cran:auto-plist,compiles
 
 .include <bsd.port.mk>
