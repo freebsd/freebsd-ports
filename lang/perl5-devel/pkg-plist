@@ -800,7 +800,6 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%ARCH_LIB%%/CORE/XSUB.h
 %%ARCH_LIB%%/CORE/av.h
 %%ARCH_LIB%%/CORE/bitcount.h
-%%ARCH_LIB%%/CORE/charclass_invlists.h
 %%ARCH_LIB%%/CORE/config.h
 %%ARCH_LIB%%/CORE/cop.h
 %%ARCH_LIB%%/CORE/cv.h
@@ -863,6 +862,7 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%ARCH_LIB%%/CORE/regcomp.h
 %%ARCH_LIB%%/CORE/regcomp_internal.h
 %%ARCH_LIB%%/CORE/regexp.h
+%%ARCH_LIB%%/CORE/regexp_constants.h
 %%ARCH_LIB%%/CORE/reginline.h
 %%ARCH_LIB%%/CORE/regnodes.h
 %%ARCH_LIB%%/CORE/sbox32_hash.h
@@ -1124,6 +1124,7 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%MAN1%%/perl5400delta.1.gz
 %%MAN1%%/perl5401delta.1.gz
 %%MAN1%%/perl5410delta.1.gz
+%%MAN1%%/perl54110delta.1.gz
 %%MAN1%%/perl5411delta.1.gz
 %%MAN1%%/perl5412delta.1.gz
 %%MAN1%%/perl5413delta.1.gz
@@ -2079,6 +2080,7 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%PRIV_LIB%%/pod/perl5400delta.pod
 %%PRIV_LIB%%/pod/perl5401delta.pod
 %%PRIV_LIB%%/pod/perl5410delta.pod
+%%PRIV_LIB%%/pod/perl54110delta.pod
 %%PRIV_LIB%%/pod/perl5411delta.pod
 %%PRIV_LIB%%/pod/perl5412delta.pod
 %%PRIV_LIB%%/pod/perl5413delta.pod
