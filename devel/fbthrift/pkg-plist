@@ -576,10 +576,10 @@ include/thrift/lib/cpp2/transport/rocket/framing/ErrorCode.h
 include/thrift/lib/cpp2/transport/rocket/framing/Flags.h
 include/thrift/lib/cpp2/transport/rocket/framing/FrameType.h
 include/thrift/lib/cpp2/transport/rocket/framing/Frames.h
-include/thrift/lib/cpp2/transport/rocket/framing/Parser-inl.h
 include/thrift/lib/cpp2/transport/rocket/framing/Parser.h
 include/thrift/lib/cpp2/transport/rocket/framing/Serializer.h
 include/thrift/lib/cpp2/transport/rocket/framing/Util.h
+include/thrift/lib/cpp2/transport/rocket/framing/parser/AlignedParserStrategy.h
 include/thrift/lib/cpp2/transport/rocket/framing/parser/AllocatingParserStrategy.h
 include/thrift/lib/cpp2/transport/rocket/framing/parser/FrameLengthParserStrategy-inl.h
 include/thrift/lib/cpp2/transport/rocket/framing/parser/FrameLengthParserStrategy.h
