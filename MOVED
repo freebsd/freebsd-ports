@@ -4219,3 +4219,4 @@ net/clash|net/mihomo|2025-03-23|Project is renamed
 x11-toolkits/Xaw3d|x11-toolkits/libXaw3d|2025-03-23|Rename in preparation to rebase the port forom Slackware to freedesktop.org
 sysutils/pprotectd||2025-03-24|Has expired: Obsolete utility, superseded by protect in base
 www/ytdl|www/yt-dlp|2025-03-24|ytdl doesn't work and is archived upstream, www/yt-dlpld be used instead
+textproc/py-docstring-parser|textproc/py-docstring_parser|2025-03-25|Renamed to match upstream naming

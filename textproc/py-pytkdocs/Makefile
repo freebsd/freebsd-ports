@@ -1,5 +1,6 @@
 PORTNAME=	pytkdocs
 DISTVERSION=	0.16.5
+PORTREVISION=	1
 CATEGORIES=	textproc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -27,6 +28,6 @@ OPTIONS_DEFINE=		NUMPYSTYLE
 OPTIONS_DEFAULT=	NUMPYSTYLE
 
 NUMPYSTYLE_DESC=	Enable support for Numpy docstrings
-NUMPYSTYLE_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}docstring-parser>=0.7:textproc/py-docstring-parser@${PY_FLAVOR}
+NUMPYSTYLE_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}docstring_parser>=0.7:textproc/py-docstring_parser@${PY_FLAVOR}
 
 .include <bsd.port.mk>

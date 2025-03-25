@@ -1,10 +1,9 @@
-PORTNAME=	docstring-parser
+PORTNAME=	docstring_parser
 DISTVERSION=	0.15
 PORTREVISION=	1
 CATEGORIES=	textproc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	docstring_parser-${DISTVERSION}
 
 MAINTAINER=	kai@FreeBSD.org
 COMMENT=	Parse Python docstrings in ReST, Google and Numpydoc format
