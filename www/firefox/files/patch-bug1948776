@@ -21,9 +21,9 @@ index 61121bcbaf8d..b31f2200e8e6 100644
 -  void* memory = mmap(nullptr, aSize, PROT_NONE,
 -                      MAP_ANONYMOUS | MAP_NORESERVE | MAP_PRIVATE, -1, 0);
 +#ifndef __FreeBSD__
-+  int flags = MAP_ANONYMOUS | MAP_NORESERVE | MAP_PRIVATE;
++  constexpr int flags = MAP_ANONYMOUS | MAP_NORESERVE | MAP_PRIVATE;
 +#else
-+  int flags = MAP_ANONYMOUS | MAP_PRIVATE;
++  constexpr int flags = MAP_ANONYMOUS | MAP_PRIVATE;
 +#endif
 +  void* memory = mmap(nullptr, aSize, PROT_NONE, flags, -1, 0);
    if (memory == MAP_FAILED) {
@@ -40,9 +40,9 @@ index da279f469237..9ed83af4b1f2 100644
 -  void* memory = mmap(nullptr, size, PROT_NONE,
 -                      MAP_ANONYMOUS | MAP_NORESERVE | MAP_PRIVATE, -1, 0);
 +#ifndef __FreeBSD__
-+  int flags = MAP_ANONYMOUS | MAP_NORESERVE | MAP_PRIVATE;
++  constexpr int flags = MAP_ANONYMOUS | MAP_NORESERVE | MAP_PRIVATE;
 +#else
-+  int flags = MAP_ANONYMOUS | MAP_PRIVATE;
++  constexpr int flags = MAP_ANONYMOUS | MAP_PRIVATE;
 +#endif
 +  void* memory = mmap(nullptr, size, PROT_NONE, flags, -1, 0);
    if (memory == MAP_FAILED) {
