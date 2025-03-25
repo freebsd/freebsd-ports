@@ -157,6 +157,7 @@ include/Quotient/roomstateview.h
 include/Quotient/settings.h
 include/Quotient/ssosession.h
 include/Quotient/syncdata.h
+include/Quotient/thread.h
 include/Quotient/uri.h
 include/Quotient/uriresolver.h
 include/Quotient/user.h

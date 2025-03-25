@@ -1,5 +1,5 @@
 PORTNAME=	libquotient
-DISTVERSION=	0.9.1
+DISTVERSION=	0.9.3
 CATEGORIES=	net-im
 
 MAINTAINER=	adridg@FreeBSD.org
