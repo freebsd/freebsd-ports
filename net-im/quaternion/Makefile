@@ -1,5 +1,5 @@
 PORTNAME=	Quaternion
-DISTVERSION=	0.0.96
+DISTVERSION=	0.0.97.1
 CATEGORIES=	net-im
 
 MAINTAINER=	adridg@FreeBSD.org
@@ -9,31 +9,19 @@ WWW=		https://github.com/quotient-im/Quaternion/
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSES/GPL-3.0-or-later.txt
 
-BROKEN=		Does not build againt new libquotient
-
-LIB_DEPENDS=	libqt5keychain.so:security/qtkeychain@qt5 \
+LIB_DEPENDS=	libqt6keychain.so:security/qtkeychain@qt6 \
 		libsecret-1.so:security/libsecret \
 		libolm.so:security/olm
-BUILD_DEPENDS=	libquotient>=0.8.1.2:net-im/libquotient
+BUILD_DEPENDS=	libquotient>=0.9.3:net-im/libquotient
 # Quotient is a static lib, doesn't need to be in RUN_DEPENDS
 
-USES=		cmake compiler:c++17-lang desktop-file-utils \
-		gettext-runtime gnome \
-		localbase:ldflags qt:5 tar:xz
-USE_GNOME=	glib20
-USE_QT=		core dbus declarative gui multimedia network \
-		quickcontrols quickcontrols2 sql widgets \
-		buildtools:build linguist:build qmake:build
+USES=		cmake compiler:c++20-lang qt:6 tar:xz
+USE_QT=		base declarative multimedia \
+		tools:build
 
-CMAKE_OFF=	BUILD_WITH_QT6
+CMAKE_ON=	BUILD_WITH_QT6
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	quotient-im
-
-.include <bsd.port.options.mk>
-
-.if ${OPSYS} == FreeBSD
-USES+=	llvm:max=15
-.endif
 
 .include <bsd.port.mk>
