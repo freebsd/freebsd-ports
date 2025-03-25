@@ -1,12 +1,8 @@
 PORTNAME=	nextpnr
 DISTVERSIONPREFIX=	${PORTNAME}-
-DISTVERSION=	0.7
-PORTREVISION=	5
+DISTVERSION=	0.8
 PORTEPOCH=	1
 CATEGORIES=	devel
-
-PATCH_SITES=	https://github.com/YosysHQ/nextpnr/commit/
-PATCHFILES=	f085950383155a745cf2e3c0f28c468d01ff5fd7.patch:-p1
 
 MAINTAINER=	jbo@FreeBSD.org
 COMMENT=	Portable FPGA place and route tool
@@ -30,7 +26,7 @@ USE_QT=		buildtools:build core gui opengl qmake:build widgets
 USE_GL=		gl glu
 USE_GITHUB=	yes
 GH_ACCOUNT=	YosysHQ
-GH_TUPLE=	YosysHQ:nextpnr-tests:00c55a9e:tests/tests
+GH_TUPLE=	YosysHQ:nextpnr-tests:ce15412:tests/tests
 
 BINARY_ALIAS=	python3=${PYTHON_CMD}
 
