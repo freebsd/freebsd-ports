@@ -1,5 +1,5 @@
-TIMESTAMP = 1742052768
-SHA256 (go/archivers_plakar/plakar-v1.0.0-beta.4/v1.0.0-beta.4.mod) = 4245099879872a4505299e955f43c34cf40f482fea40c524252d47aad68cafec
-SIZE (go/archivers_plakar/plakar-v1.0.0-beta.4/v1.0.0-beta.4.mod) = 5699
-SHA256 (go/archivers_plakar/plakar-v1.0.0-beta.4/v1.0.0-beta.4.zip) = 1a8e4799dc622bc3ba688c0e75f48e6b7d7fcd2f0f32367ed18c1b45331f4031
-SIZE (go/archivers_plakar/plakar-v1.0.0-beta.4/v1.0.0-beta.4.zip) = 1145212
+TIMESTAMP = 1742894250
+SHA256 (go/archivers_plakar/plakar-v1.0.1-beta.13/v1.0.1-beta.13.mod) = aa37d6744ef6752d6dd3c04e1db90e6b2025518e45f326437b8868b8a9d8bacd
+SIZE (go/archivers_plakar/plakar-v1.0.1-beta.13/v1.0.1-beta.13.mod) = 5523
+SHA256 (go/archivers_plakar/plakar-v1.0.1-beta.13/v1.0.1-beta.13.zip) = 3d3151aeb1df5b35559e02d899bc3b31a2cd6e1e64ccd6be8c7920e989385231
+SIZE (go/archivers_plakar/plakar-v1.0.1-beta.13/v1.0.1-beta.13.zip) = 1171067
