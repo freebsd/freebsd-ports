@@ -2,7 +2,7 @@ PORTNAME=	icestorm
 PORTVERSION=	g20231212
 CATEGORIES=	devel
 
-MAINTAINER=	manu@FreeBSD.org
+MAINTAINER=	jbo@FreeBSD.org
 COMMENT=	IceStorm tools for Lattice iCE40 FPGAs
 WWW=		https://www.clifford.at/icestorm
 
