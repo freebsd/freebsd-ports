@@ -1,7 +1,9 @@
 PORTNAME=	mkdocstrings-python-legacy
-DISTVERSION=	0.2.5
+DISTVERSION=	0.2.6
 CATEGORIES=	textproc python
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	mkdocstrings_python_legacy-${DISTVERSION}
 
 MAINTAINER=	kai@FreeBSD.org
 COMMENT=	Legacy Python handler for mkdocstrings
@@ -20,9 +22,6 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mkdocs-material>0:textproc/py-mkdocs-materi
 # therefore # moved to TEST_DEPENDS to at least allow the test suite to run.
 
 USES=		python:3.9+
-USE_GITHUB=	yes
-GH_ACCOUNT=	mkdocstrings
-GH_PROJECT=	python-legacy
 USE_PYTHON=	autoplist pep517 pytest
 
 TEST_ENV=	PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
