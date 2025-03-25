@@ -2,10 +2,7 @@ PORTNAME=	rvm
 DISTVERSION=	1.20
 PORTREVISION=	2
 CATEGORIES=	devel
-MASTER_SITES=	http://ftp.coda.cs.cmu.edu/pub/rvm/src/ \
-		http://ftp.wu-wien.ac.at/pub/systems/coda/src/ \
-		ftp://ftp.coda.cs.cmu.edu/pub/rvm/src/ \
-		ftp://ftp.wu-wien.ac.at/pub/systems/coda/src/
+MASTER_SITES=	http://ftp.coda.cs.cmu.edu/pub/rvm/src/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Persistent VM library
