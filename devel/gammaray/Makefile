@@ -4,7 +4,7 @@ CATEGORIES=	devel
 MASTER_SITES=	https://github.com/KDAB/GammaRay/releases/download/v${DISTVERSION}/
 
 # implicit-approval+: arrowd
-MAINTAINER=	bofh@FreeBSD.org
+MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Debugging tool for Qt-application
 WWW=		https://www.kdab.com/development-resources/qt-tools/gammaray/
 
