@@ -1,6 +1,5 @@
 PORTNAME=	cfdg
-DISTVERSION=	3.4.1
-PORTREVISION=	5
+DISTVERSION=	3.4.2
 CATEGORIES=	graphics math
 MASTER_SITES=	http://www.contextfreeart.org/download/ \
 		http://glyphic.s3.amazonaws.com/cfa/download/
@@ -26,7 +25,7 @@ CXXFLAGS+=	-Wno-register
 # furthermore, its header files conflict with the headers bundled by cfdg
 CONFLICTS_BUILD=	agg
 
-WRKSRC=		${WRKDIR}/context-free${DISTVERSION}
+NO_WRKSUBDIR=	yes
 PLIST_FILES=	bin/cfdg \
 		share/man/man1/cfdg.1.gz
 
