@@ -15,10 +15,13 @@ share/locale/cs/LC_MESSAGES/curtail.mo
 share/locale/de/LC_MESSAGES/curtail.mo
 share/locale/en_GB/LC_MESSAGES/curtail.mo
 share/locale/es/LC_MESSAGES/curtail.mo
+share/locale/eu/LC_MESSAGES/curtail.mo
 share/locale/fr/LC_MESSAGES/curtail.mo
 share/locale/gl/LC_MESSAGES/curtail.mo
 share/locale/hi/LC_MESSAGES/curtail.mo
 share/locale/hr/LC_MESSAGES/curtail.mo
+share/locale/hu/LC_MESSAGES/curtail.mo
+share/locale/id/LC_MESSAGES/curtail.mo
 share/locale/it/LC_MESSAGES/curtail.mo
 share/locale/ka/LC_MESSAGES/curtail.mo
 share/locale/ko/LC_MESSAGES/curtail.mo
