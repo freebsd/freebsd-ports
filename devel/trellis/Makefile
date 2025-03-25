@@ -3,7 +3,7 @@ PORTVERSION=	g2022100712
 PORTREVISION=	3
 CATEGORIES=	devel
 
-MAINTAINER=	manu@FreeBSD.Org
+MAINTAINER=	jbo@FreeBSD.org
 COMMENT=	Documenting the Lattice ECP5 bit-stream format
 WWW=		https://github.com/YosysHQ/prjtrellis
 
