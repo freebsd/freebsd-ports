@@ -121,6 +121,8 @@ include/folly/algorithm/simd/detail/SimdForEach.h
 include/folly/algorithm/simd/detail/SimdPlatform.h
 include/folly/algorithm/simd/detail/Traits.h
 include/folly/algorithm/simd/detail/UnrollUtils.h
+include/folly/algorithm/simd/find_first_of.h
+include/folly/algorithm/simd/find_first_of_extra.h
 include/folly/base64.h
 include/folly/channels/Channel-fwd.h
 include/folly/channels/Channel-inl.h
@@ -160,6 +162,7 @@ include/folly/chrono/Conv.h
 include/folly/chrono/Hardware.h
 include/folly/cli/NestedCommandLineApp.h
 include/folly/cli/ProgramOptions.h
+include/folly/codec/Uuid.h
 include/folly/compression/Compression.h
 include/folly/compression/CompressionContextPool.h
 include/folly/compression/CompressionContextPoolSingletons.h
@@ -268,6 +271,7 @@ include/folly/coro/Invoke.h
 include/folly/coro/Merge-inl.h
 include/folly/coro/Merge.h
 include/folly/coro/Mutex.h
+include/folly/coro/Noexcept.h
 include/folly/coro/Promise.h
 include/folly/coro/Result.h
 include/folly/coro/Retry.h
@@ -301,7 +305,15 @@ include/folly/coro/detail/InlineTask.h
 include/folly/coro/detail/Malloc.h
 include/folly/coro/detail/ManualLifetime.h
 include/folly/coro/detail/Traits.h
+include/folly/coro/safe/AsyncClosure-fwd.h
+include/folly/coro/safe/AsyncClosure.h
+include/folly/coro/safe/Captures.h
 include/folly/coro/safe/NowTask.h
+include/folly/coro/safe/SafeAlias.h
+include/folly/coro/safe/SafeTask.h
+include/folly/coro/safe/detail/AsyncClosure.h
+include/folly/coro/safe/detail/AsyncClosureBindings.h
+include/folly/coro/safe/detail/DefineMovableDeepConstLrefCopyable.h
 include/folly/crypto/Blake2xb.h
 include/folly/crypto/LtHash-inl.h
 include/folly/crypto/LtHash.h
@@ -814,6 +826,7 @@ include/folly/lang/Align.h
 include/folly/lang/Aligned.h
 include/folly/lang/Assume.h
 include/folly/lang/Badge.h
+include/folly/lang/Bindings.h
 include/folly/lang/Bits.h
 include/folly/lang/BitsClass.h
 include/folly/lang/Builtin.h
