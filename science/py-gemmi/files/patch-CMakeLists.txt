@@ -1,4 +1,4 @@
---- CMakeLists.txt.orig	2024-09-06 14:24:17 UTC
+--- CMakeLists.txt.orig	2025-03-24 16:35:30 UTC
 +++ CMakeLists.txt
 @@ -6,7 +6,7 @@ string(REGEX REPLACE ".+\"([0-9]+\.[0-9]+\.[0-9]+)(-de
  string(REGEX REPLACE ".+\"([0-9]+\.[0-9]+\.[0-9]+)(-dev)?\"" "\\1"
@@ -18,7 +18,7 @@
  option(BUILD_SHARED_LIBS "Build shared library" ON)
  option(BUILD_GEMMI_PROGRAM "Build gemmi command-line program" ON)
  option(INSTALL_DEV_FILES "Install C++ headers, cmake configs, static lib" ON)
-@@ -200,71 +202,9 @@ endif()
+@@ -203,70 +205,6 @@ endif()
  #  target_link_libraries(fgemmi PRIVATE cgemmi)
  #endif()
  
@@ -27,16 +27,19 @@
 -target_include_directories(gemmi_headers INTERFACE
 -    "$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>"
 -    "$<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}>")
--target_compile_features(gemmi_headers INTERFACE cxx_std_11)
+-target_compile_features(gemmi_headers INTERFACE cxx_std_17)
 -set_target_properties(gemmi_headers PROPERTIES EXPORT_NAME headers)
 -
 -add_library(gemmi_cpp
--            src/align.cpp src/assembly.cpp src/calculate.cpp src/crd.cpp
--            src/ddl.cpp src/eig3.cpp src/gz.cpp src/intensit.cpp src/json.cpp
--            src/mmcif.cpp src/mmread_gz.cpp src/mtz.cpp src/mtz2cif.cpp
--            src/pdb.cpp src/polyheur.cpp src/read_cif.cpp src/read_map.cpp
--            src/resinfo.cpp src/riding_h.cpp src/sprintf.cpp src/to_mmcif.cpp
--            src/to_pdb.cpp src/monlib.cpp src/topo.cpp src/xds_ascii.cpp)
+-            src/align.cpp src/assembly.cpp src/calculate.cpp src/ccp4.cpp
+-            src/crd.cpp src/ddl.cpp src/eig3.cpp src/fprime.cpp src/gz.cpp
+-            src/intensit.cpp src/json.cpp src/mmcif.cpp src/mmread_gz.cpp
+-            src/monlib.cpp src/mtz.cpp src/mtz2cif.cpp
+-            src/pdb.cpp src/polyheur.cpp src/read_cif.cpp
+-            src/resinfo.cpp src/riding_h.cpp
+-            src/select.cpp src/sprintf.cpp src/symmetry.cpp
+-            src/to_json.cpp src/to_mmcif.cpp src/to_pdb.cpp src/topo.cpp
+-            src/xds_ascii.cpp)
 -add_library(gemmi::gemmi_cpp ALIAS gemmi_cpp)
 -set_property(TARGET gemmi_cpp PROPERTY POSITION_INDEPENDENT_CODE ON)
 -#set_property(TARGET gemmi_cpp PROPERTY CXX_VISIBILITY_PRESET hidden)
@@ -86,28 +89,16 @@
  ### programs from prog/ ###
  
  add_library(options OBJECT prog/options.cpp)
--target_link_libraries(options PUBLIC gemmi_headers)
- target_include_directories(options PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/third_party")
- if (GEMMI_VERSION_INFO)
-   target_compile_definitions(options PRIVATE GEMMI_VERSION_INFO=${GEMMI_VERSION_INFO})
-@@ -276,11 +216,11 @@ function(add_single_prog target)
-   cmake_parse_arguments(arg "NOLIB" "ADD_SRC" "" ${ARGN})
+@@ -282,7 +220,7 @@ function(add_single_prog target)
+   cmake_parse_arguments(arg "" "ADD_SRC" "" ${ARGN})
    add_executable(gemmi-${target} EXCLUDE_FROM_ALL prog/${target}.cpp ${arg_ADD_SRC}
                   $<TARGET_OBJECTS:options>)
--  if (arg_NOLIB)
--    target_link_libraries(gemmi-${target} PRIVATE gemmi_headers)
--  else()
--    target_link_libraries(gemmi-${target} PRIVATE gemmi_cpp)
--  endif()
-+  #if (arg_NOLIB)
-+  #  target_link_libraries(gemmi-${target} PRIVATE gemmi_headers)
-+  #else()
-+  #  target_link_libraries(gemmi-${target} PRIVATE gemmi)
-+  #endif()
+-  target_link_libraries(gemmi-${target} PRIVATE gemmi_cpp)
++  target_link_libraries(gemmi-${target} PRIVATE gemmi)
    target_include_directories(gemmi-${target} PRIVATE
                               "${CMAKE_CURRENT_SOURCE_DIR}/third_party")
  endfunction()
-@@ -334,7 +274,7 @@ add_executable(gemmi::prog ALIAS gemmi_prog)
+@@ -336,7 +274,7 @@ add_executable(gemmi::prog ALIAS gemmi_prog)
                 prog/xds2mtz.cpp
                 $<TARGET_OBJECTS:options>)
  add_executable(gemmi::prog ALIAS gemmi_prog)
@@ -116,26 +107,37 @@
  target_include_directories(gemmi_prog PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}/third_party")
  target_compile_definitions(gemmi_prog PRIVATE GEMMI_ALL_IN_ONE=1)
  set_target_properties(gemmi_prog PROPERTIES OUTPUT_NAME gemmi EXPORT_NAME prog)
-@@ -386,9 +326,9 @@ add_executable(doc_maybegz EXCLUDE_FROM_ALL docs/code/
+@@ -376,7 +314,7 @@ target_compile_definitions(cpptest PRIVATE USE_STD_SNP
+ 
+ add_executable(cpptest EXCLUDE_FROM_ALL tests/main.cpp tests/cif.cpp tests/windowsh.cpp)
+ target_compile_definitions(cpptest PRIVATE USE_STD_SNPRINTF=1)
+-target_link_libraries(cpptest PRIVATE gemmi_cpp)
++target_link_libraries(cpptest PRIVATE gemmi)
+ target_include_directories(cpptest PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}/third_party")
+ 
+ add_executable(hello EXCLUDE_FROM_ALL examples/hello.cpp)
+@@ -384,11 +322,11 @@ add_executable(doc_example EXCLUDE_FROM_ALL
+ add_executable(doc_example EXCLUDE_FROM_ALL
+                docs/code/sym.cpp docs/code/elem.cpp docs/code/resinfo.cpp
+                docs/code/cell.cpp docs/code/mutate.cpp src/resinfo.cpp)
+-target_link_libraries(doc_example PRIVATE gemmi_cpp)
++target_link_libraries(doc_example PRIVATE gemmi)
  add_executable(doc_example2 EXCLUDE_FROM_ALL docs/code/cif_cc.cpp)
  target_link_libraries(doc_example2 PRIVATE gemmi_headers)
- add_executable(doc_maybegz EXCLUDE_FROM_ALL docs/code/maybegz.cpp docs/code/mutate.cpp)
--target_link_libraries(doc_maybegz PRIVATE gemmi_cpp)
-+target_link_libraries(doc_maybegz PRIVATE gemmi)
  add_executable(doc_newmtz EXCLUDE_FROM_ALL docs/code/newmtz.cpp)
 -target_link_libraries(doc_newmtz PRIVATE gemmi_cpp)
 +target_link_libraries(doc_newmtz PRIVATE gemmi)
  
  # always compile these tests with assertions enabled
  if (CMAKE_CXX_COMPILER_ID MATCHES "Clang|GNU|Intel")
-@@ -396,14 +336,14 @@ add_executable(test_disulf EXCLUDE_FROM_ALL tests/disu
+@@ -396,14 +334,14 @@ add_executable(test_disulf EXCLUDE_FROM_ALL tests/disu
  endif()
  
  add_executable(test_disulf EXCLUDE_FROM_ALL tests/disulf.cpp)
 -target_link_libraries(test_disulf PRIVATE gemmi_cpp)
 +target_link_libraries(test_disulf PRIVATE gemmi)
  
- # auth_label requires <experimental/filesystem> and -lstdc++fs
+ # auth_label requires C++17 for <filesystem>
  add_executable(auth_label EXCLUDE_FROM_ALL examples/auth_label.cpp)
 -target_link_libraries(auth_label PRIVATE gemmi_cpp)
 +target_link_libraries(auth_label PRIVATE gemmi)
@@ -146,18 +148,18 @@
  
  enable_testing()
  
-@@ -440,7 +380,7 @@ if (benchmark_FOUND)
+@@ -440,7 +378,7 @@ if (benchmark_FOUND)
    foreach(b stoi elem mod niggli pdb resinfo round sym writecif)
      add_executable(${b}-bm EXCLUDE_FROM_ALL benchmarks/${b}.cpp)
-     if (b MATCHES "resinfo|pdb|writecif")
+     if (b MATCHES "elem|resinfo|pdb|writecif")
 -      target_link_libraries(${b}-bm PRIVATE gemmi_cpp)
 +      target_link_libraries(${b}-bm PRIVATE gemmi)
      endif()
      target_link_libraries(${b}-bm PRIVATE gemmi_headers benchmark::benchmark)
      set_property(TARGET ${b}-bm PROPERTY RUNTIME_OUTPUT_DIRECTORY
-@@ -482,11 +422,11 @@ if (USE_PYTHON)
-           python/sf.cpp python/sym.cpp python/topo.cpp
+@@ -481,11 +419,11 @@ if (USE_PYTHON)
            python/unitcell.cpp python/write.cpp)
+ 
    if (STANDALONE_PYTHON_MODULE)
 -    target_sources(gemmi_py PRIVATE $<TARGET_OBJECTS:gemmi_cpp>)
 -    get_target_property(_gemmi_cpp_libs gemmi_cpp LINK_LIBRARIES)
@@ -168,9 +170,9 @@
 -    target_link_libraries(gemmi_py PRIVATE gemmi_cpp)
 +    target_link_libraries(gemmi_py PRIVATE gemmi::gemmi_cpp)
    endif()
-   set_property(TARGET gemmi_py PROPERTY OUTPUT_NAME gemmi)
-   if(CMAKE_CXX_FLAGS MATCHES "-Wshadow")
-@@ -541,19 +481,19 @@ endif()
+   set_property(TARGET gemmi_py PROPERTY OUTPUT_NAME gemmi_ext)
+   if (CMAKE_CONFIGURATION_TYPES)
+@@ -568,19 +506,19 @@ endif()
    install(TARGETS gemmi_prog EXPORT GemmiTargets)
  endif()
  

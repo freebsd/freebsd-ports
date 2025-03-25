@@ -15,7 +15,6 @@ include/gemmi/calculate.hpp
 include/gemmi/ccp4.hpp
 include/gemmi/cellred.hpp
 include/gemmi/chemcomp.hpp
-include/gemmi/chemcomp_xyz.hpp
 include/gemmi/cif.hpp
 include/gemmi/cif2mtz.hpp
 include/gemmi/cifdoc.hpp
@@ -45,6 +44,7 @@ include/gemmi/iterator.hpp
 include/gemmi/json.hpp
 include/gemmi/levmar.hpp
 include/gemmi/linkhunt.hpp
+include/gemmi/logger.hpp
 include/gemmi/math.hpp
 include/gemmi/metadata.hpp
 include/gemmi/mmcif.hpp
@@ -66,7 +66,6 @@ include/gemmi/pirfasta.hpp
 include/gemmi/polyheur.hpp
 include/gemmi/qcp.hpp
 include/gemmi/read_cif.hpp
-include/gemmi/read_map.hpp
 include/gemmi/recgrid.hpp
 include/gemmi/reciproc.hpp
 include/gemmi/refln.hpp
@@ -255,6 +254,7 @@ include/gemmi/unitcell.hpp
 include/gemmi/utf.hpp
 include/gemmi/util.hpp
 include/gemmi/version.hpp
+include/gemmi/xds2mtz.hpp
 include/gemmi/xds_ascii.hpp
 lib/cmake/gemmi/gemmi-config-version.cmake
 lib/cmake/gemmi/gemmi-config.cmake

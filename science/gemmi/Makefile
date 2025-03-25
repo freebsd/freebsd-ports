@@ -1,6 +1,6 @@
 PORTNAME=	gemmi
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.6.7
+DISTVERSION=	0.7.1
 CATEGORIES=	science # chemistry
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -24,5 +24,10 @@ OPTIONS_DEFINE=		FORTRAN
 FORTRAN_USES=		fortran
 FORTRAN_CMAKE_BOOL=	USE_FORTRAN
 FORTRAN_BROKEN=		project option doesn't do anything, see https://github.com/project-gemmi/gemmi/issues/232
+
+# tests as of 0.7.1 (run work/.build/cpptest):
+# [doctest] test cases:  14 |  14 passed | 0 failed | 0 skipped
+# [doctest] assertions: 129 | 129 passed | 0 failed |
+# [doctest] Status: SUCCESS!
 
 .include <bsd.port.mk>

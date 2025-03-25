@@ -1,4 +1,6 @@
-%%PYTHON_SITELIBDIR%%/gemmi%%PYTHON_EXT_SUFFIX%%.so
+%%PYTHON_SITELIBDIR%%/gemmi/__init__.py
+%%PYTHON_SITELIBDIR%%/gemmi/__init__.pyi
+%%PYTHON_SITELIBDIR%%/gemmi/cif.pyi
 %%PYTHON_SITELIBDIR%%/gemmi/examples/aafreq.py
 %%PYTHON_SITELIBDIR%%/gemmi/examples/ccd_gi.py
 %%PYTHON_SITELIBDIR%%/gemmi/examples/ccd_subgraph.py
@@ -17,6 +19,7 @@
 %%PYTHON_SITELIBDIR%%/gemmi/examples/mtz_i_sigi.py
 %%PYTHON_SITELIBDIR%%/gemmi/examples/multiproc.py
 %%PYTHON_SITELIBDIR%%/gemmi/examples/patterson_slice.py
+%%PYTHON_SITELIBDIR%%/gemmi/examples/qq-plot.py
 %%PYTHON_SITELIBDIR%%/gemmi/examples/rama_gather.py
 %%PYTHON_SITELIBDIR%%/gemmi/examples/rama_plot.py
 %%PYTHON_SITELIBDIR%%/gemmi/examples/refln-stats.py
@@ -24,3 +27,5 @@
 %%PYTHON_SITELIBDIR%%/gemmi/examples/sub_ccd.py
 %%PYTHON_SITELIBDIR%%/gemmi/examples/to_rdkit.py
 %%PYTHON_SITELIBDIR%%/gemmi/examples/weight.py
+%%PYTHON_SITELIBDIR%%/gemmi/gemmi_ext%%PYTHON_EXT_SUFFIX%%.so
+%%PYTHON_SITELIBDIR%%/gemmi/py.typed
