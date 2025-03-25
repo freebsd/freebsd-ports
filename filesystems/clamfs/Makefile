@@ -1,6 +1,6 @@
 PORTNAME=	clamfs
 DISTVERSION=	1.2.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	filesystems security
 MASTER_SITES=	https://github.com/burghardt/${PORTNAME}/releases/download/${PORTNAME}-${DISTVERSION}/
 

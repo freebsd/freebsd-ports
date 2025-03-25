@@ -1,6 +1,6 @@
 PORTNAME=	squashfuse
 DISTVERSION=	0.5.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	filesystems
 MASTER_SITES=	https://github.com/vasi/${PORTNAME}/releases/download/${DISTVERSION}/
 PKGNAMEPREFIX=	fusefs-

@@ -1,7 +1,7 @@
 PORTNAME=		moosefs3
 DISTVERSION=		3.0.117
 DISTVERSIONSUFFIX=	1
-PORTREVISION=		1
+PORTREVISION=		2
 CATEGORIES=		filesystems sysutils
 MASTER_SITES=		http://ppa.moosefs.com/src/
 PKGNAMESUFFIX?=		-master
