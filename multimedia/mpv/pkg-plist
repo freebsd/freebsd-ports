@@ -6,11 +6,12 @@ include/mpv/render_gl.h
 include/mpv/stream_cb.h
 lib/libmpv.so
 lib/libmpv.so.2
-lib/libmpv.so.2.3.0
+lib/libmpv.so.2.5.0
 libdata/pkgconfig/mpv.pc
 %%MANPAGES%%share/man/man1/mpv.1.gz
 share/applications/mpv.desktop
 share/bash-completion/completions/mpv
+share/fish/vendor_completions.d/mpv.fish
 share/icons/hicolor/128x128/apps/mpv.png
 share/icons/hicolor/16x16/apps/mpv.png
 share/icons/hicolor/32x32/apps/mpv.png
@@ -22,5 +23,6 @@ share/icons/hicolor/symbolic/apps/mpv-symbolic.svg
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/mplayer-input.conf
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/mpv.conf
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/restore-old-bindings.conf
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/restore-osc-bindings.conf
 share/metainfo/mpv.metainfo.xml
 share/zsh/site-functions/_mpv
