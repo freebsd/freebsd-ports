@@ -10,6 +10,8 @@ WWW=		https://chatterino.com/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Broken for more than a month with no available fixes
+EXPIRATION_DATE=	2025-04-25
 BROKEN=		fails to build with Boost>=1.87
 
 BUILD_DEPENDS=	${LOCALBASE}/include/magic_enum/magic_enum.hpp:devel/magic_enum \
