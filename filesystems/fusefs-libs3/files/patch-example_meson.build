@@ -1,9 +1,0 @@
---- example/meson.build.orig	2023-02-17 09:31:14 UTC
-+++ example/meson.build
-@@ -1,5 +1,5 @@ examples = [ 'passthrough', 'passthrough_fh',
- examples = [ 'passthrough', 'passthrough_fh',
--             'hello', 'hello_ll', 'hello_ll_uds',
-+             'hello', 'hello_ll', 
-              'printcap', 'ioctl_client', 'poll_client',
-              'ioctl', 'cuse', 'cuse_client' ]
- 
