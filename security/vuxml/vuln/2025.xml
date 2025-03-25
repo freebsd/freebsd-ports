@@ -1,3 +1,36 @@
+  <vuln vid="964aa5da-f094-47fe-9ebd-2142f9157440">
+    <topic>electron{33,34} -- Type Confusion in V8</topic>
+    <affects>
+      <package>
+	<name>electron33</name>
+	<range><lt>33.4.6</lt></range>
+      </package>
+      <package>
+	<name>electron34</name>
+	<range><lt>34.3.4</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Electron developers report:</p>
+	<blockquote cite="https://github.com/electron/electron/releases/tag/v33.4.6">
+	  <p>This update fixes the following vulnerability:</p>
+	  <ul>
+	    <li>Security: backported fix for CVE-2025-1920.</li>
+	  </ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-1920</cvename>
+      <url>https://github.com/advisories/GHSA-fhwv-7gx3-h767</url>
+    </references>
+    <dates>
+      <discovery>2025-03-20</discovery>
+      <entry>2025-03-25</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="a58fdfef-07c6-11f0-8688-4ccc6adda413">
     <topic>qt5-webengine -- Use after free in Compositing</topic>
     <affects>
