@@ -1,6 +1,15 @@
---- builds/posix/make.defaults.orig	2022-06-07 08:18:52 UTC
+--- builds/posix/make.defaults.orig	2024-08-08 09:26:44 UTC
 +++ builds/posix/make.defaults
-@@ -134,7 +134,7 @@ CAS_OPTIONS=@CAS_OPTIONS@
+@@ -102,7 +102,7 @@ GLOB_OPTIONS:=
+ #____________________________________________________________________________
+ 
+ # Firebird needs no RTTI
+-RTTI_FLAG:= -fno-rtti
++RTTI_FLAG:= -fno-rtti -DU_SHOW_CPLUSPLUS_API=0 -DU_SHOW_CPLUSPLUS_HEADER_API=0
+ 
+ # If this is defined then we use special rules useful for developers only
+ IsDeveloper = @DEVEL_FLG@
+@@ -134,7 +134,7 @@ MATHLIB=@MATHLIB@
  MATHLIB=@MATHLIB@
  
  # switch to make sed edit files inplace
@@ -9,7 +18,7 @@
  
  # Default programs and tools to be used in the build process
  
-@@ -144,7 +144,7 @@ RM_R=		rm -rf
+@@ -144,7 +144,7 @@ CHMOD_7=		chmod 777
  CHMOD=			chmod
  CHMOD_6=		chmod 666
  CHMOD_7=		chmod 777
@@ -18,7 +27,7 @@
  MV=			mv -f
  TOUCH=			touch
  CP=			cp
-@@ -219,7 +219,7 @@ vpath %.dll $(LIB)
+@@ -219,7 +219,7 @@ LibraryFullName=$(LibraryFileName).${SHRLIB_EXT}.${Fir
  #LibraryFileName=libfbclient
  LibraryFileName=libfbclient
  LibraryFullName=$(LibraryFileName).${SHRLIB_EXT}.${FirebirdVersion}
@@ -27,7 +36,7 @@
  LibraryBaseName=$(LibraryFileName).${SHRLIB_EXT}
  
  LIBFIREBIRD_FULLNAME = $(LIB)/$(LibraryFullName)
-@@ -240,7 +240,7 @@ LIBFBINTL_SO = $(FB_BUILD)/intl/$(LIB_PREFIX)fbintl.$(
+@@ -240,7 +240,7 @@ ifeq ($(EDITLINE_FLG),Y)
  
  ifeq ($(EDITLINE_FLG),Y)
    ifeq ($(STD_EDITLINE), true)
@@ -36,7 +45,7 @@
    else
  	LIBEDITLINE := $(LIB)/libedit.a
    endif
-@@ -362,7 +362,7 @@ CREATE_DB	= $(RBIN)/create_db$(EXEC_EXT)
+@@ -362,7 +362,7 @@ FBTRACEMGR	= $(BIN)/fbtracemgr$(EXEC_EXT)
  GDS_DROP	= $(BIN)/gds_drop$(EXEC_EXT)
  FBSVCMGR	= $(BIN)/fbsvcmgr$(EXEC_EXT)
  FBTRACEMGR	= $(BIN)/fbtracemgr$(EXEC_EXT)
@@ -45,7 +54,7 @@
  NBACKUP		= $(BIN)/nbackup$(EXEC_EXT)
  LOCKPRINT	= $(BIN)/fb_lock_print$(EXEC_EXT)
  GSEC		= $(BIN)/gsec$(EXEC_EXT)
-@@ -383,13 +383,13 @@ SECURITY_FDB	= $(FIREBIRD)/security3.fdb
+@@ -383,13 +383,13 @@ QLI            = $(BIN)/qli$(EXEC_EXT)
  QLI            = $(BIN)/qli$(EXEC_EXT)
  
  # From isql

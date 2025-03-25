@@ -1,9 +1,9 @@
 PORTNAME=	firebird
-PORTVERSION=	3.0.11
+DISTVERSION=	3.0.12
 CATEGORIES?=	databases
 MASTER_SITES=	https://github.com/FirebirdSQL/${PORTNAME}/releases/download/v${PORTVERSION}/
 PKGNAMESUFFIX?=	${PORTVERSION:R:S/.//}-server
-DISTNAME=	${PORTNAME:S/f/F/}-${PORTVERSION}.33703-0
+DISTNAME=	${PORTNAME:S/f/F/}-${PORTVERSION}.33787-0
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	acm@FreeBSD.org
@@ -87,8 +87,6 @@ PKGINSTALL?=	${PKGDIR}/pkg-install-server
 .else
 # Client part stuff
 USES+=		libedit
-
-BROKEN=		Fails to build with ICU 76.1
 
 CONFIGURE_ARGS+=	--with-system-editline
 CONFIGURE_ENV+=	ac_cv_lib_edit_readline="yes"
