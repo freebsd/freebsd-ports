@@ -39,6 +39,7 @@ include/firebird/impl/dsc_pub.h
 include/firebird/impl/inf_pub.h
 include/firebird/impl/sqlda_pub.h
 include/firebird/impl/types_pub.h
+include/gen/iberror.h
 include/ib_util.h
 include/ibase.h
 include/iberror.h

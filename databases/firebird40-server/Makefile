@@ -1,6 +1,6 @@
 PORTNAME=	firebird
-PORTVERSION=	4.0.5
-PORTREVISION=	1
+DISTVERSION=	4.0.5
+PORTREVISION=	2
 CATEGORIES?=	databases
 MASTER_SITES=	https://github.com/FirebirdSQL/${PORTNAME}/releases/download/v${PORTVERSION}/
 PKGNAMESUFFIX?=	${PORTVERSION:R:S/.//}-server
@@ -182,6 +182,8 @@ do-install:
 
 	@${MKDIR} ${STAGEDIR}${PREFIX}/include/firebird
 	${INSTALL_DATA} ${CLIENT_HEADER:S!^!${WRKSRC}/src/!} ${STAGEDIR}${PREFIX}/include
+	@${MKDIR} ${STAGEDIR}${PREFIX}/include/gen
+	${INSTALL_DATA} ${WRKSRC}/src/include/gen/iberror.h ${STAGEDIR}${PREFIX}/include/gen
 
 	@cd ${WRKSRC}/src/include/firebird && \
 		${FIND} * -type d -exec ${MKDIR} "${STAGEDIR}${PREFIX}/include/firebird/{}" \;
