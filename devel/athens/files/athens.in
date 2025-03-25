@@ -1,0 +1,33 @@
+#!/bin/sh
+#
+# PROVIDE: athens
+# REQUIRE: networking
+# KEYWORD: shutdown
+#
+# athens_enable (bool):
+#   Default value: "NO"
+#   Flag that determines whether athens is enabled
+#
+# athens_config (string)
+#   Default value %%ETCDIR%%/athens.toml
+#   Path to the athens configuration file
+#
+
+. /etc/rc.subr
+
+: ${athens_enable:="NO"}
+: ${athens_config:="%%ETCDIR%%/athens.toml"}
+
+name=athens
+rcvar=athens_enable
+athens_command="%%PREFIX%%/bin/athens -config_file ${athens_config}"
+command="/usr/sbin/daemon"
+command_args="-S ${athens_command}"
+
+PATH="${PATH}:%%PREFIX%%/bin"
+
+load_rc_config $name
+
+required_files="${athens_config}"
+
+run_rc_command "$1"
