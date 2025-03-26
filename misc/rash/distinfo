@@ -1,4 +1,4 @@
-TIMESTAMP = 1742764712
+TIMESTAMP = 1742970639
 SHA256 (rust/crates/ahash-0.7.8.crate) = 891477e0c6a8957309ee5c45a6368af3ae14bb510732d2684ffa19af310920f9
 SIZE (rust/crates/ahash-0.7.8.crate) = 38550
 SHA256 (rust/crates/aho-corasick-1.1.3.crate) = 8e60d3430d3a69478ad0993f19238d2df97c507009a52b3c10addcd7f6bcb916
@@ -579,5 +579,5 @@ SHA256 (rust/crates/zerocopy-derive-0.6.6.crate) = 125139de3f6b9d625c39e2efdd73d
 SIZE (rust/crates/zerocopy-derive-0.6.6.crate) = 522443
 SHA256 (rust/crates/zeroize-1.8.1.crate) = ced3678a2879b30306d323f4542626697a464a97c0a07c9aebf7ebca65cd4dde
 SIZE (rust/crates/zeroize-1.8.1.crate) = 20029
-SHA256 (rash-sh-rash-v2.9.5_GH0.tar.gz) = f1a5529b86acd2e94b0f082b90bac2396fe83a5c802a8a2bede86799f82710e6
-SIZE (rash-sh-rash-v2.9.5_GH0.tar.gz) = 206729
+SHA256 (rash-sh-rash-v2.9.6_GH0.tar.gz) = 601d2e1f92626d9561c305f299eaab77c3cbf04a610eb2148ea9c1f49dbd1447
+SIZE (rash-sh-rash-v2.9.6_GH0.tar.gz) = 207957
