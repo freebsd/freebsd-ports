@@ -1,7 +1,6 @@
 PORTNAME=	please
 DISTVERSIONPREFIX=	v
-DISTVERSION=	17.14.0
-PORTREVISION=	1
+DISTVERSION=	17.15.0
 CATEGORIES=	devel
 MASTER_SITES=	https://raw.githubusercontent.com/thought-machine/please/${DISTVERSIONFULL}/
 DISTFILES=	go.mod
@@ -33,7 +32,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	thought-machine
 
 post-extract:
-	${REINPLACE_CMD} -e 's|99.0.9999|${DISTVERSION}|' ${WRKSRC}/src/core/version.go
+	${REINPLACE_CMD} -e 's|99.0.9999|${DISTVERSION}|' ${WRKSRC}/src/version/version.go
 
 post-build:
 	cd ${WRKSRC} ; ${SETENV} ${CC} ${CFLAGS} -I${WRKSRC} -o please_sandbox tools/sandbox/main.c tools/sandbox/sandbox.c
