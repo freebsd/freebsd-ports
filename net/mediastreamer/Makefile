@@ -1,6 +1,5 @@
 PORTNAME=	mediastreamer
-DISTVERSION=	5.2.94
-PORTREVISION=	2
+DISTVERSION=	5.4.2
 CATEGORIES=	net
 
 MAINTAINER=	bofh@FreeBSD.org
@@ -10,11 +9,11 @@ WWW=		https://www.linphone.org/technical-corner/mediastreamer2
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-LIB_DEPENDS=	libbctoolbox.so:net/bctoolbox \
-		libbzrtp.so:security/bzrtp \
-		libortp.so:net/ortp \
-		libspeexdsp.so:audio/speexdsp \
-		libsrtp2.so:net/libsrtp2
+BUILD_DEPENDS=	${LOCALBASE}/lib/libbctoolbox.a:net/bctoolbox \
+		${LOCALBASE}/lib/libbcunit.a:devel/bcunit \
+		${LOCALBASE}/lib/libbzrtp.a:security/bzrtp \
+		${LOCALBASE}/lib/libortp.a:net/ortp
+LIB_DEPENDS=	libsrtp2.so:net/libsrtp2
 
 USES=		cmake compiler gnome python:build sqlite
 USE_GITLAB=	yes
@@ -49,8 +48,8 @@ OPTIONS_SUB=		yes
 AUDIOOPT_DESC=	Audio options
 G726_DESC=		G.726 codec support
 G729_DESC=		G.729 codec support
-VIDEOOPT_DESC=	Video options
 QTGL_DESC=		Qt OpenGL rendering support
+VIDEOOPT_DESC=	Video options
 
 FFMPEG_IMPLIES=		VIDEO
 FFMPEG_LIB_DEPENDS=	libavcodec.so.58:multimedia/ffmpeg4
@@ -65,7 +64,7 @@ GLX_USE=	GL=gl,glew
 GLX_CMAKE_BOOL=	ENABLE_GL ENABLE_GLX
 GSM_LIB_DEPENDS=	libgsm.so:audio/gsm
 GSM_CMAKE_BOOL=		ENABLE_GSM
-MATROSKA_LIB_DEPENDS=	libbcmatroska2.so:multimedia/bcmatroska2
+MATROSKA_BUILD_DEPENDS=	${LOCALBASE}/lib/libbcmatroska2.a:multimedia/bcmatroska2
 MATROSKA_CMAKE_BOOL=	ENABLE_MKV
 OPUS_LIB_DEPENDS=	libopus.so:audio/opus
 OPUS_CMAKE_BOOL=	ENABLE_OPUS

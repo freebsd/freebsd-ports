@@ -1,6 +1,6 @@
---- src/videofilters/mkv.cpp.orig	2023-07-27 14:00:34 UTC
+--- src/videofilters/mkv.cpp.orig	2025-03-23 22:01:21 UTC
 +++ src/videofilters/mkv.cpp
-@@ -1647,7 +1647,7 @@ static matroska_block *matroska_write_block(Matroska *
+@@ -1690,7 +1690,7 @@ static matroska_block *matroska_write_block(Matroska *
  			codecPrivateElt = (ebml_binary *)EBML_MasterAddElt(blockGroup, &MATROSKA_ContextCodecState, FALSE);
  			EBML_BinarySetData(codecPrivateElt, codecPrivateData, codecPrivateDataSize);
  		}
