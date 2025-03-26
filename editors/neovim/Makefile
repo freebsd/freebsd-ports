@@ -1,6 +1,6 @@
 PORTNAME=	neovim
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.10.4
+DISTVERSION=	0.11.0
 CATEGORIES=	editors
 
 MAINTAINER=	adamw@FreeBSD.org
@@ -15,6 +15,7 @@ LIB_DEPENDS=	libluv.so:devel/luv \
 		libmsgpack-c.so:devel/msgpack-c \
 		libtree-sitter.so:devel/tree-sitter \
 		libunibilium.so:devel/unibilium \
+		libutf8proc.so:textproc/utf8proc \
 		libuv.so:devel/libuv \
 		libvterm.so:devel/libvterm
 RUN_DEPENDS=	${LUA_REFMODLIBDIR}/bit.so:devel/lua-bitop@${LUA_FLAVOR} \
@@ -25,12 +26,12 @@ USES=		cmake cpe gettext iconv lua:51,build luajit \
 		pathfix pkgconfig
 
 USE_GITHUB=	yes
-GH_TUPLE=	tree-sitter:tree-sitter-c:v0.23.4:treesitter_c \
-		tree-sitter-grammars:tree-sitter-lua:v0.2.0:treesitter_lua \
-		tree-sitter-grammars:tree-sitter-markdown:v0.3.2:treesitter_markdown \
-		tree-sitter-grammars:tree-sitter-query:v0.4.0:treesitter_query \
-		tree-sitter-grammars:tree-sitter-vim:v0.4.0:treesitter_vim \
-		neovim:tree-sitter-vimdoc:v3.0.0:treesitter_vimdoc
+GH_TUPLE=	tree-sitter:tree-sitter-c:v0.23.5:treesitter_c \
+		tree-sitter-grammars:tree-sitter-lua:v0.3.0:treesitter_lua \
+		tree-sitter-grammars:tree-sitter-markdown:v0.4.1:treesitter_markdown \
+		tree-sitter-grammars:tree-sitter-query:v0.5.1:treesitter_query \
+		tree-sitter-grammars:tree-sitter-vim:v0.5.0:treesitter_vim \
+		neovim:tree-sitter-vimdoc:v3.0.1:treesitter_vimdoc
 
 CMAKE_ARGS=	-DLUA_PRG:FILEPATH="${LUA_CMD}" \
 		-DCMAKE_INSTALL_MANDIR:PATH="${PREFIX}/share/man" \
