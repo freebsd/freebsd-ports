@@ -1,7 +1,7 @@
-TIMESTAMP = 1711569393
-SHA256 (go/security_git-credential-azure/hickford-git-credential-azure-v0.3.0_GH0/v0.3.0.mod) = 9c34ebe4b1fe684a5b1c52864e2a68a06fd5b11e4ff0c909fbad8c80a8a54883
-SIZE (go/security_git-credential-azure/hickford-git-credential-azure-v0.3.0_GH0/v0.3.0.mod) = 395
-SHA256 (go/security_git-credential-azure/hickford-git-credential-azure-v0.3.0_GH0/v0.3.0.zip) = a77d58e38b5370855c41e8fa36a7253238623560742ba692a5484727265cf5e8
-SIZE (go/security_git-credential-azure/hickford-git-credential-azure-v0.3.0_GH0/v0.3.0.zip) = 12170
-SHA256 (go/security_git-credential-azure/hickford-git-credential-azure-v0.3.0_GH0/hickford-git-credential-azure-v0.3.0_GH0.tar.gz) = fefa8e8f011cfc02c86fb9d7178f3d1819eb99ef107aeab877ea550e184b655c
-SIZE (go/security_git-credential-azure/hickford-git-credential-azure-v0.3.0_GH0/hickford-git-credential-azure-v0.3.0_GH0.tar.gz) = 9867
+TIMESTAMP = 1743021398
+SHA256 (go/security_git-credential-azure/hickford-git-credential-azure-v0.3.1_GH0/v0.3.1.mod) = 07e9438666db3faba40f9d1d78cd5f0e3916ab92b13df37a32e0dbad0e24e9b2
+SIZE (go/security_git-credential-azure/hickford-git-credential-azure-v0.3.1_GH0/v0.3.1.mod) = 418
+SHA256 (go/security_git-credential-azure/hickford-git-credential-azure-v0.3.1_GH0/v0.3.1.zip) = 94674c7e55212f540f382c13a44b4010a997a4430e806fe4f292264f8826b37e
+SIZE (go/security_git-credential-azure/hickford-git-credential-azure-v0.3.1_GH0/v0.3.1.zip) = 12227
+SHA256 (go/security_git-credential-azure/hickford-git-credential-azure-v0.3.1_GH0/hickford-git-credential-azure-v0.3.1_GH0.tar.gz) = 1f3cd884d110e10ebd1e166f767df6da2981b51db3692a9fe33a53df83376bbf
+SIZE (go/security_git-credential-azure/hickford-git-credential-azure-v0.3.1_GH0/hickford-git-credential-azure-v0.3.1_GH0.tar.gz) = 9920
