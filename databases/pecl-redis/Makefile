@@ -1,5 +1,5 @@
 PORTNAME=	redis
-DISTVERSION=	6.1.0
+DISTVERSION=	6.2.0
 CATEGORIES=	databases
 
 MAINTAINER=	wiacek.m@witia.com.pl
@@ -15,7 +15,7 @@ USE_PHP=	session:build
 OPTIONS_DEFINE=	IGBINARY
 IGBINARY_DESC=	Build with Igbinary serializer
 
-IGBINARY_CONFIGURE_ENABLE=	redis-igbinary
 IGBINARY_USE=			PHP=igbinary:build
+IGBINARY_CONFIGURE_ENABLE=	redis-igbinary
 
 .include <bsd.port.mk>
