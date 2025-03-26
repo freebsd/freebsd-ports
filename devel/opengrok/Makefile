@@ -1,6 +1,7 @@
 PORTNAME=	opengrok
-PORTVERSION=	1.7.42
+PORTVERSION=	1.13.27
 CATEGORIES=	devel java
+# Doesn't currently work with portscout, but the release tarball is required.
 MASTER_SITES=	https://github.com/oracle/opengrok/releases/download/${PORTVERSION}/
 
 MAINTAINER=	truckman@FreeBSD.org
