@@ -1,17 +1,16 @@
 PORTNAME=	grafana
 DISTVERSIONPREFIX=	v
-DISTVERSION=	11.5.2
-PORTREVISION=	1
+DISTVERSION=	11.6.0
 CATEGORIES=	www
 MASTER_SITES=	https://dl.grafana.com/oss/release/ \
 		https://raw.githubusercontent.com/${GH_ACCOUNT}/${GH_PROJECT}/${DISTVERSIONFULL}/:gomod
 DISTFILES=	grafana-${DISTVERSION}.linux-amd64${EXTRACT_SUFX} \
 		go.mod:gomod \
 		go.work:gomod \
+		apps/advisor/go.mod:gomod \
 		apps/alerting/notifications/go.mod:gomod \
-		apps/investigation/go.mod:gomod \
+		apps/investigations/go.mod:gomod \
 		apps/playlist/go.mod:gomod \
-		kindsv2/go.mod:gomod \
 		pkg/aggregator/go.mod:gomod \
 		pkg/apimachinery/go.mod:gomod \
 		pkg/apiserver/go.mod:gomod \
@@ -43,7 +42,7 @@ USES=		cpe go:1.23,modules
 USE_GITHUB=	yes
 
 USE_RC_SUBR=	grafana
-TAG=		598e033
+TAG=		d2fdff9
 
 GO_MODULE=	github.com/grafana/grafana
 GO_MOD_DIST=	github
