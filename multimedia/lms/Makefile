@@ -1,6 +1,6 @@
 PORTNAME=	lms
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.64.0
+DISTVERSION=	3.65.0
 CATEGORIES=	multimedia
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -15,7 +15,8 @@ LIB_DEPENDS=	libavformat.so:multimedia/ffmpeg \
 		libboost_system.so:devel/boost-libs \
 		libconfig++.so:devel/libconfig \
 		libtag.so:audio/taglib \
-		libwthttp.so:www/wt
+		libwthttp.so:www/wt \
+		libxxhash.so:devel/xxhash
 RUN_DEPENDS=	ffmpeg:multimedia/ffmpeg
 
 USES=		cmake compiler:c++20-lang cpe libarchive pkgconfig
