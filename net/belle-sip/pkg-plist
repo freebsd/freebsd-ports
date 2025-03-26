@@ -1,10 +1,10 @@
 include/belle-sip/auth-helper.h
+include/belle-sip/bearer-token.h
 include/belle-sip/belle-sdp.h
 include/belle-sip/belle-sip.h
 include/belle-sip/bodyhandler.h
 include/belle-sip/defs.h
 include/belle-sip/dialog.h
-include/belle-sip/dict.h
 include/belle-sip/generic-uri.h
 include/belle-sip/headers.h
 include/belle-sip/http-listener.h
@@ -28,11 +28,11 @@ include/belle-sip/transaction.h
 include/belle-sip/types.h
 include/belle-sip/utils.h
 include/belle-sip/wakelock.h
-lib/libbellesip.so
-lib/libbellesip.so.1
+lib/libbelle-sip.a
 libdata/pkgconfig/belle-sip.pc
 lib/cmake/BelleSIP/BelleSIPConfig.cmake
 lib/cmake/BelleSIP/BelleSIPConfigVersion.cmake
 lib/cmake/BelleSIP/BelleSIPTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/BelleSIP/BelleSIPTargets.cmake
-share/belr/grammars/sdp_grammar
+share/belr/grammars/sdp_grammar.belr
+share/belr/grammars/sip_grammar.belr

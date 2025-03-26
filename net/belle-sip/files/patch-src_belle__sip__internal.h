@@ -1,10 +1,10 @@
---- src/belle_sip_internal.h.orig	2022-05-18 04:20:06 UTC
+--- src/belle_sip_internal.h.orig	2025-03-19 14:44:20 UTC
 +++ src/belle_sip_internal.h
-@@ -25,6 +25,7 @@
- #include <stdio.h>
- #include <sys/types.h>
+@@ -21,6 +21,7 @@
+ #define belle_utils_h
+ 
  #include <errno.h>
 +#include <netinet/in.h>
- 
- /* include all public headers*/
- #include "belle-sip/belle-sip.h"
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <string.h>

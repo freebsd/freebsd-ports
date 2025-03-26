@@ -1,0 +1,18 @@
+--- CMakeLists.txt.orig	2025-03-19 14:44:20 UTC
++++ CMakeLists.txt
+@@ -60,7 +60,6 @@ check_library_exists("dl" "dlopen" "" HAVE_LIBDL)
+ list(APPEND CMAKE_MODULE_PATH "${PROJECT_SOURCE_DIR}/cmake")
+ 
+ check_library_exists("dl" "dlopen" "" HAVE_LIBDL)
+-check_library_exists("rt" "clock_gettime" "" HAVE_LIBRT)
+ 
+ cmake_push_check_state(RESET)
+ check_symbol_exists("res_ndestroy" "resolv.h" HAVE_RES_NDESTROY)
+@@ -78,6 +77,7 @@ find_package(Threads)
+ 
+ find_package(Threads)
+ 
++find_package(OpenSSL REQUIRED)
+ find_package(Belr 5.3.0 REQUIRED)
+ find_package(BCToolbox 5.3.0 REQUIRED OPTIONAL_COMPONENTS tester)
+ #Mandatory to init default compilation flags
