@@ -1,6 +1,7 @@
 PORTNAME=	virtual_oss
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.3.2
+PORTREVISION=	1
 CATEGORIES=	audio
 
 MAINTAINER=	christos@FreeBSD.org
@@ -60,9 +61,5 @@ PLIST_FILES=	sbin/virtual_oss \
 		share/man/man8/virtual_oss.8.gz
 
 MAKE_ARGS+=	PTHREAD_LIBS="-lpthread"
-
-post-patch:
-	${REINPLACE_CMD} -e 's|$${PREFIX}/man/man|$${PREFIX}/share/man/man|' \
-		${WRKSRC}/Makefile
 
 .include <bsd.port.mk>
