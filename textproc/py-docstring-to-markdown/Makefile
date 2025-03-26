@@ -1,9 +1,9 @@
 PORTNAME=	docstring-to-markdown
-PORTVERSION=	0.15
-PORTREVISION=	1
+PORTVERSION=	0.16
 CATEGORIES=	textproc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	docstring_to_markdown-${PORTVERSION}
 
 MAINTAINER=	rhurlin@FreeBSD.org
 COMMENT=	On the fly conversion of Python docstrings to markdown
