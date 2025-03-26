@@ -37,6 +37,7 @@ include/groonga/groonga/highlighter.h
 include/groonga/groonga/id.h
 include/groonga/groonga/ii.h
 include/groonga/groonga/index_column.h
+include/groonga/groonga/language_model.h
 include/groonga/groonga/memory.h
 include/groonga/groonga/msgpack.h
 include/groonga/groonga/nfkc.h
