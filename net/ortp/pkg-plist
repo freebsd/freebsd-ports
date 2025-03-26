@@ -1,7 +1,4 @@
-bin/ortp_tester
-include/ortp/b64.h
 include/ortp/event.h
-include/ortp/fecstream.h
 include/ortp/logging.h
 include/ortp/nack.h
 include/ortp/ortp.h
@@ -16,10 +13,9 @@ include/ortp/sessionset.h
 include/ortp/str_utils.h
 include/ortp/telephonyevents.h
 include/ortp/utils.h
-lib/cmake/ortp/ortpConfig.cmake
-lib/cmake/ortp/ortpConfigVersion.cmake
-lib/cmake/ortp/ortpTargets-%%CMAKE_BUILD_TYPE%%.cmake
-lib/cmake/ortp/ortpTargets.cmake
-lib/libortp.so
-lib/libortp.so.15
+share/Ortp/cmake/OrtpConfig.cmake
+share/Ortp/cmake/OrtpConfigVersion.cmake
+share/Ortp/cmake/OrtpTargets-%%CMAKE_BUILD_TYPE%%.cmake
+share/Ortp/cmake/OrtpTargets.cmake
+lib/libortp.a
 libdata/pkgconfig/ortp.pc

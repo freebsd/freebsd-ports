@@ -1,5 +1,5 @@
 PORTNAME=	ortp
-DISTVERSION=	5.2.94
+DISTVERSION=	5.4.2
 CATEGORIES=	net
 
 MAINTAINER=	zirias@FreeBSD.org
@@ -9,16 +9,20 @@ WWW=		https://www.linphone.org/technical-corner/ortp.html
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-LIB_DEPENDS=	libbctoolbox.so:net/bctoolbox
+BUILD_DEPENDS=	${LOCALBASE}/lib/libbctoolbox.a:net/bctoolbox \
+		${LOCALBASE}/lib/libbcunit.a:devel/bcunit
 
-USES=		cmake compiler:c11
+USES=		cmake compiler:c11 ssl
 USE_GITLAB=	yes
 GL_SITE=	https://gitlab.linphone.org/BC
 GL_ACCOUNT=	public
 USE_LDCONFIG=	yes
 
-CMAKE_ARGS=	-DENABLE_DOC=NO -DENABLE_STATIC=NO -DENABLE_STRICT=NO \
-			-DCMAKE_PREFIX_PATH=${LOCALBASE}
+CMAKE_ARGS=	-DENABLE_DOC=NO -DENABLE_STRICT=NO \
+			-DCMAKE_PREFIX_PATH=${LOCALBASE} \
+			-DENABLE_UNIT_TESTS=NO
+
+LDFLAGS+=	-lpthread
 
 post-install:
 	${RM} -r ${STAGEDIR}${PREFIX}/share/doc/${DISTNAME}

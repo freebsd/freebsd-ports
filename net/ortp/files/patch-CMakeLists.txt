@@ -1,0 +1,33 @@
+--- CMakeLists.txt.orig	2025-03-26 18:04:42 UTC
++++ CMakeLists.txt
+@@ -1,7 +1,7 @@
+ ############################################################################
+ # Copyright (c) 2010-2023 Belledonne Communications SARL.
+ #
+-# This file is part of oRTP 
++# This file is part of oRTP
+ # (see https://gitlab.linphone.org/BC/public/ortp).
+ #
+ ############################################################################
+@@ -62,6 +62,7 @@ find_library(LIBM NAMES m)
+ find_package(Threads)
+ find_library(LIBM NAMES m)
+ 
++find_package(OpenSSL REQUIRED)
+ find_package(BCToolbox 5.3.0 REQUIRED)
+ #Mandatory to init default compilation flags
+ bc_init_compilation_flags(STRICT_OPTIONS_CPP STRICT_OPTIONS_C STRICT_OPTIONS_CXX ENABLE_STRICT)
+@@ -217,9 +218,9 @@ install(EXPORT ${PROJECT_NAME}Targets
+ 	DESTINATION ${CMAKE_MODULES_INSTALL_DIR}
+ )
+ 
+-install(FILES "${PROJECT_SOURCE_DIR}/README.md" 
+-	"${PROJECT_SOURCE_DIR}/CHANGELOG.md" 
+-	"${PROJECT_SOURCE_DIR}/LICENSE.txt" 
+-	"${PROJECT_SOURCE_DIR}/AUTHORS.md" 
++install(FILES "${PROJECT_SOURCE_DIR}/README.md"
++	"${PROJECT_SOURCE_DIR}/CHANGELOG.md"
++	"${PROJECT_SOURCE_DIR}/LICENSE.txt"
++	"${PROJECT_SOURCE_DIR}/AUTHORS.md"
+ 	DESTINATION "${CMAKE_INSTALL_DATADIR}/doc/ortp-${ORTP_VERSION}"
+ )
