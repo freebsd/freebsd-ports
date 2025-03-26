@@ -1,5 +1,5 @@
 PORTNAME=	bzrtp
-PORTVERSION=	5.2.94
+DISTVERSION=	5.4.2
 CATEGORIES=	security
 
 MAINTAINER=	bofh@FreeBSD.org
@@ -9,7 +9,8 @@ WWW=		https://www.linphone.org
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-LIB_DEPENDS=	libbctoolbox.so:net/bctoolbox
+BUILD_DEPENDS=	${LOCALBASE}/lib/libbctoolbox.a:net/bctoolbox \
+		${LOCALBASE}/lib/libbcunit.a:devel/bcunit
 
 USES=		cmake cpe gnome sqlite
 CPE_VENDOR=	${PORTNAME}_project
@@ -20,7 +21,6 @@ USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
 
 CMAKE_ARGS=	-DCMAKE_PREFIX_PATH=${LOCALBASE} \
-		-DENABLE_STATIC=NO \
 		-DENABLE_STRICT=NO
 
 post-patch:
