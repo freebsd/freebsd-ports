@@ -1,0 +1,9 @@
+bin/qpwgraph
+share/applications/org.rncbc.qpwgraph.desktop
+share/icons/hicolor/32x32/apps/org.rncbc.qpwgraph.png
+share/icons/hicolor/32x32/mimetypes/org.rncbc.qpwgraph.application-x-qpwgraph-patchbay.png
+share/icons/hicolor/scalable/apps/org.rncbc.qpwgraph.svg
+share/icons/hicolor/scalable/mimetypes/org.rncbc.qpwgraph.application-x-qpwgraph-patchbay.svg
+share/man/man1/qpwgraph.1.gz
+share/metainfo/org.rncbc.qpwgraph.metainfo.xml
+share/mime/packages/org.rncbc.qpwgraph.xml

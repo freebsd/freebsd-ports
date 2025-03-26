@@ -1,5 +1,6 @@
 PORTNAME=	qpwgraph
-DISTVERSION=	0.8.0
+DISTVERSIONPREFIX=	v
+DISTVERSION=	0.8.2
 CATEGORIES=	multimedia
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -19,6 +20,5 @@ USE_GL=		gl opengl
 USE_GITLAB=	yes
 GL_SITE=	https://gitlab.freedesktop.org
 GL_ACCOUNT=	rncbc
-GL_TAGNAME=	ab66e7d9e987a73ab87ca51de089c20b332da192
 
 .include <bsd.port.mk>
