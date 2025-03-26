@@ -1,5 +1,5 @@
 PORTNAME=	lime
-PORTVERSION=	5.2.94
+DISTVERSION=	5.4.2
 CATEGORIES=	security
 
 MAINTAINER=	bofh@FreeBSD.org
@@ -9,9 +9,11 @@ WWW=		https://www.linphone.org/technical-corner/lime
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-LIB_DEPENDS=	libbctoolbox.so:net/bctoolbox \
-	libbellesip.so:net/belle-sip \
-	libsoci_sqlite3.so:databases/soci
+BUILD_DEPENDS=	${LOCALBASE}/lib/libbctoolbox.a:net/bctoolbox \
+		${LOCALBASE}/lib/libbcunit.a:devel/bcunit \
+		${LOCALBASE}/lib/libbelle-sip.a:net/belle-sip \
+		${LOCALBASE}/lib/libbelr.a:textproc/belr
+LIB_DEPENDS=	libsoci_sqlite3.so:databases/soci
 
 USES=	cmake
 USE_GITLAB=	yes
@@ -19,7 +21,7 @@ GL_SITE=	https://gitlab.linphone.org/BC
 GL_ACCOUNT=	public
 
 CMAKE_ARGS=	-DCMAKE_PREFIX_PATH=${LOCALBASE} \
-		-DENABLE_STATIC=NO \
-		-DENABLE_STRICT=NO
+		-DENABLE_STRICT=NO \
+		-DENABLE_UNIT_TESTS=NO
 
 .include <bsd.port.mk>
