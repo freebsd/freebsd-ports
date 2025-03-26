@@ -228,7 +228,10 @@ CARGO_CRATES=	ab_glyph-0.2.29 \
 		fixedbitset-0.5.7 \
 		flate2-1.0.35 \
 		float-cmp-0.10.0 \
+		fluent-0.16.1 \
+		fluent-bundle-0.15.3 \
 		fluent-langneg-0.13.0 \
+		fluent-syntax-0.11.1 \
 		flume-0.11.0 \
 		fnv-1.0.7 \
 		foldhash-0.1.4 \
@@ -335,6 +338,7 @@ CARGO_CRATES=	ab_glyph-0.2.29 \
 		inotify-sys-0.1.5 \
 		instability-0.3.7 \
 		instant-0.1.13 \
+		intl-memoizer-0.5.2 \
 		intl_pluralrules-7.0.2 \
 		io-extras-0.18.3 \
 		io-kit-sys-0.3.0 \
@@ -893,7 +897,6 @@ CARGO_CRATES=	ab_glyph-0.2.29 \
 		keyboard-keynames@git+https://gitlab.com/Imbris/keyboard-keynames.git?tag=veloren-winit-0.28\#fca4bbdfa51bf054b155a455935b3792975c989d \
 		specs,specs-derive@git+https://github.com/amethyst/specs.git?rev=4e2da1df29ee840baa9b936593c45592b7c9ae27\#4e2da1df29ee840baa9b936593c45592b7c9ae27 \
 		egui_wgpu_backend@git+https://github.com/hasenbanck/egui_wgpu_backend.git?rev=34691d4e9149deb9cd0bb8cbb5a56bffebf47588\#34691d4e9149deb9cd0bb8cbb5a56bffebf47588 \
-		fluent,fluent-bundle,fluent-syntax,intl-memoizer@git+https://github.com/juliancoffee/fluent-rs.git?branch=patched\#929cf9512de121cce9b4cbf1cb860cd3294a1cd9 \
 		auth-common,authc@git+https://gitlab.com/veloren/auth.git?rev=ae0e16783a9f9041951296885f082308e155db79\#ae0e16783a9f9041951296885f082308e155db79 \
 		conrod_core,conrod_derive,conrod_winit@git+https://gitlab.com/veloren/conrod.git?branch=copypasta_0.7\#59fddc617696e68d28a75c2137a08c2572efb986 \
 		iced_core,iced_futures,iced_graphics,iced_native,iced_style,iced_winit@git+https://github.com/Imberflur/iced?tag=veloren-winit-0.28\#47243c257c8b8dd6c506b060804cb00b618aa0aa \
