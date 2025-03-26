@@ -1,0 +1,10 @@
+--- CMakeLists.txt.orig	2025-03-26 20:06:19 UTC
++++ CMakeLists.txt
+@@ -51,6 +51,7 @@ endif()
+ 
+ # find_package should be invoked here to check for libraries - however do NOT
+ # call include_directories here (see below)
++find_package(OpenSSL REQUIRED)
+ find_package(BCToolbox 5.3.0 REQUIRED OPTIONAL_COMPONENTS tester)
+ #Mandatory to init default compilation flags
+ bc_init_compilation_flags(STRICT_OPTIONS_CPP STRICT_OPTIONS_C STRICT_OPTIONS_CXX ENABLE_STRICT)
