@@ -1,11 +1,11 @@
---- src/CMakeLists.txt.orig	2019-02-23 02:12:15 UTC
-+++ src/CMakeLists.txt
-@@ -124,7 +124,7 @@ if(OS_LINUX)
- endif(OS_LINUX)
- 
- if(OS_FREEBSD)
--  set(freebsd freebsd.cc freebsd.h bsdapm.cc bsdapm.h)
-+  set(freebsd freebsd.cc freebsd.h)
-   set(optional_sources ${optional_sources} ${freebsd})
+--- src/CMakeLists.txt.orig	2025-03-16 13:37:37.000000000 +0100
++++ src/CMakeLists.txt	2025-03-26 08:43:07.729405000 +0100
+@@ -165,8 +165,6 @@
+   set(freebsd_sources
+     data/os/freebsd.cc
+     data/os/freebsd.h
+-    data/hardware/bsdapm.cc
+-    data/hardware/bsdapm.h
+   )
+   set(optional_sources ${optional_sources} ${freebsd_sources})
  endif(OS_FREEBSD)
- 
