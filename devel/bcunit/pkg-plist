@@ -9,8 +9,6 @@ include/BCUnit/TestDB.h
 include/BCUnit/TestRun.h
 include/BCUnit/Util.h
 lib/libbcunit.a
-lib/libbcunit.so
-lib/libbcunit.so.1.0.1
 libdata/pkgconfig/bcunit.pc
 share/BCUnit/BCUnit-List.dtd
 share/BCUnit/BCUnit-List.xsl
@@ -18,7 +16,7 @@ share/BCUnit/BCUnit-Run.dtd
 share/BCUnit/BCUnit-Run.xsl
 share/BCUnit/Memory-Dump.dtd
 share/BCUnit/Memory-Dump.xsl
-share/BCunit/cmake/BcUnitConfig.cmake
-share/BCunit/cmake/BcUnitConfigVersion.cmake
-share/BCunit/cmake/BcUnitTargets-%%CMAKE_BUILD_TYPE%%.cmake
-share/BCunit/cmake/BcUnitTargets.cmake
+share/BCUnit/cmake/BCUnitConfig.cmake
+share/BCUnit/cmake/BCUnitConfigVersion.cmake
+share/BCUnit/cmake/BCUnitTargets-%%CMAKE_BUILD_TYPE%%.cmake
+share/BCUnit/cmake/BCUnitTargets.cmake
