@@ -1,5 +1,5 @@
 PORTNAME=	hunspell
-DISTVERSION=	3.0.5
+DISTVERSION=	3.0.6
 CATEGORIES=	textproc
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
@@ -11,7 +11,7 @@ LICENSE=	GPLv2 LGPL21 MPL11
 LICENSE_COMB=	dual
 
 RUN_DEPENDS=	R-cran-digest>0:security/R-cran-digest \
-		R-cran-Rcpp>0:devel/R-cran-Rcpp
+		R-cran-Rcpp>=0.12.12:devel/R-cran-Rcpp
 TEST_DEPENDS=	R-cran-knitr>0:print/R-cran-knitr \
 		R-cran-rmarkdown>0:textproc/R-cran-rmarkdown \
 		R-cran-spelling>0:textproc/R-cran-spelling \
