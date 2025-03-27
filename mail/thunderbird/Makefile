@@ -1,22 +1,22 @@
 PORTNAME=	thunderbird
-DISTVERSION=	128.9.0
+DISTVERSION=	137.0
 CATEGORIES=	mail news net-im wayland
-MASTER_SITES=	MOZILLA/${PORTNAME}/releases/${DISTVERSION}esr/source \
-		MOZILLA/${PORTNAME}/candidates/${DISTVERSION}esr-candidates/build1/source
-DISTFILES=	${DISTNAME}esr.source${EXTRACT_SUFX}
+MASTER_SITES=	MOZILLA/${PORTNAME}/releases/${DISTVERSION}${DISTVERSIONSUFFIX}/source \
+		MOZILLA/${PORTNAME}/candidates/${DISTVERSION}${DISTVERSIONSUFFIX}-candidates/build1/source
+DISTFILES=	${DISTNAME}.source${EXTRACT_SUFX}
 
 MAINTAINER=	gecko@FreeBSD.org
 COMMENT=	Mozilla Thunderbird is standalone mail and news that stands above
 WWW=		https://www.mozilla.com/thunderbird/
 
 BUILD_DEPENDS=	nspr>=4.32:devel/nspr \
-		nss>=3.101:security/nss \
+		nss>=3.109:security/nss \
 		libevent>=2.1.8:devel/libevent \
-		harfbuzz>=8.5.0:print/harfbuzz \
+		harfbuzz>=10.1.0:print/harfbuzz \
 		graphite2>=1.3.14:graphics/graphite2 \
-		png>=1.6.43:graphics/png \
+		png>=1.6.45:graphics/png \
 		dav1d>=1.0.0:multimedia/dav1d \
-		libvpx>=1.14.0:multimedia/libvpx \
+		libvpx>=1.15.0:multimedia/libvpx \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR} \
 		v4l_compat>0:multimedia/v4l_compat \
 		autoconf2.13:devel/autoconf2.13 \
@@ -29,12 +29,16 @@ BUILD_DEPENDS=	nspr>=4.32:devel/nspr \
 LIB_DEPENDS=	libjson-c.so:devel/json-c
 
 USE_GECKO=	gecko
-# cannot use system icu: calendar is completely broken by
-# https://unicode-org.atlassian.net/browse/ICU-22132 (fix not in 74.1)
+CONFLICTS_INSTALL=	thunderbird-esr
+# cannot use system icu: too old on 2025Q1
+# before re-enabling, check:
+  # https://unicode-org.atlassian.net/browse/ICU-22132 (fix not in 74.1)
 USE_MOZILLA=	-icu -sqlite
 CFLAGS_powerpc64le=	-DSQLITE_BYTEORDER=1234
 
 USES=		tar:xz
+# helpful when testing beta
+WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
 
 MOZ_OPTIONS=	--enable-application=comm/mail --enable-official-branding
 MOZ_OPTIONS+=	--with-system-bz2 --with-system-jsonc

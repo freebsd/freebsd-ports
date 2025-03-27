@@ -5,6 +5,15 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20250327:
+  AFFECTS: users of thunderbird
+  AUTHOR: cmt@FreeBSD.org
+
+  The mail/thunderbird port switched to Thunderbird's new release train,
+  with frequent major releases (ca. 4-weeks-cycle). Users wanting to
+  stay with the 128-releases for now and the ESR releases in general
+  should switch to the mail/thunderbird-esr port.
+
 20250325:
   AFFECTS: users of TeX*
   AUTHOR: bofh@FreeBSD.org
