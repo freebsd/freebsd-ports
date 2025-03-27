@@ -1,0 +1,20 @@
+[
+{ type: install
+  message: <<EOM
+Before using ANDwatch, you must create the MAC Address database. The
+The MAC Address database is created with the following command:
+
+    %%PREFIX%%/bin/andwatch-update-ma
+
+It is generally a good idea to update the MAC Address database on a
+periodic basis to incorporate new address assignments. This update
+can be done via cron. Here is an example cron entry to update the
+MAC Address database once per month:
+
+    0 0 1 * * root /usr/bin/nice -n20 %%PREFIX%%/bin/andwatch-update-ma
+
+Note that the database update is performed live, and andwatchd does
+not need to be stopped in order to run the update.
+EOM
+}
+]
