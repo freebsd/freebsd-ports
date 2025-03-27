@@ -49,6 +49,7 @@ GNUstep/Local/Library/Frameworks/SOGo.framework/Versions/5/Headers/SOGoLDAPDefau
 GNUstep/Local/Library/Frameworks/SOGo.framework/Versions/5/Headers/SOGoMailer.h
 GNUstep/Local/Library/Frameworks/SOGo.framework/Versions/5/Headers/SOGoMobileProvision.h
 GNUstep/Local/Library/Frameworks/SOGo.framework/Versions/5/Headers/SOGoObject.h
+GNUstep/Local/Library/Frameworks/SOGo.framework/Versions/5/Headers/SOGoOpenIdSession.h
 GNUstep/Local/Library/Frameworks/SOGo.framework/Versions/5/Headers/SOGoParentFolder.h
 GNUstep/Local/Library/Frameworks/SOGo.framework/Versions/5/Headers/SOGoPermissions.h
 GNUstep/Local/Library/Frameworks/SOGo.framework/Versions/5/Headers/SOGoProductLoader.h
@@ -97,6 +98,7 @@ GNUstep/Local/Library/Headers/GDLContentStore/GCSFieldInfo.h
 GNUstep/Local/Library/Headers/GDLContentStore/GCSFolder.h
 GNUstep/Local/Library/Headers/GDLContentStore/GCSFolderManager.h
 GNUstep/Local/Library/Headers/GDLContentStore/GCSFolderType.h
+GNUstep/Local/Library/Headers/GDLContentStore/GCSOpenIdFolder.h
 GNUstep/Local/Library/Headers/GDLContentStore/GCSSessionsFolder.h
 GNUstep/Local/Library/Headers/GDLContentStore/GCSSpecialQueries.h
 GNUstep/Local/Library/Headers/GDLContentStore/GCSStringFormatter.h
@@ -239,6 +241,7 @@ GNUstep/Local/Library/Libraries/Resources/NGCards/TimeZones/America/Ciudad_Juare
 GNUstep/Local/Library/Libraries/Resources/NGCards/TimeZones/America/Coral_Harbour.ics
 GNUstep/Local/Library/Libraries/Resources/NGCards/TimeZones/America/Cordoba.ics
 GNUstep/Local/Library/Libraries/Resources/NGCards/TimeZones/America/Costa_Rica.ics
+GNUstep/Local/Library/Libraries/Resources/NGCards/TimeZones/America/Coyhaique.ics
 GNUstep/Local/Library/Libraries/Resources/NGCards/TimeZones/America/Creston.ics
 GNUstep/Local/Library/Libraries/Resources/NGCards/TimeZones/America/Cuiaba.ics
 GNUstep/Local/Library/Libraries/Resources/NGCards/TimeZones/America/Curacao.ics
@@ -747,8 +750,8 @@ GNUstep/Local/Library/Libraries/sogo/libSOGo.so
 GNUstep/Local/Library/Libraries/sogo/libSOGo.so.5
 GNUstep/Local/Library/Libraries/sogo/libSOGo.so.%%VERSION%%
 GNUstep/Local/Library/Libraries/sogo/libSOGoUI.so
-GNUstep/Local/Library/Libraries/sogo/libSOGoUI.so.5.11
-GNUstep/Local/Library/Libraries/sogo/libSOGoUI.so.5.11.0
+GNUstep/Local/Library/Libraries/sogo/libSOGoUI.so.5.12
+GNUstep/Local/Library/Libraries/sogo/libSOGoUI.so.%%VERSION%%
 GNUstep/Local/Library/OCSTypeModels/appointment-oracle.ocs
 GNUstep/Local/Library/OCSTypeModels/appointment.ocs
 GNUstep/Local/Library/OCSTypeModels/contact-oracle.ocs
@@ -2168,6 +2171,7 @@ GNUstep/Local/Library/SOGo/WebServerResources/js/vendor/ckeditor/build/translati
 GNUstep/Local/Library/SOGo/WebServerResources/js/vendor/ckeditor/build/translations/sr.js
 GNUstep/Local/Library/SOGo/WebServerResources/js/vendor/ckeditor/build/translations/sv.js
 GNUstep/Local/Library/SOGo/WebServerResources/js/vendor/ckeditor/build/translations/th.js
+GNUstep/Local/Library/SOGo/WebServerResources/js/vendor/ckeditor/build/translations/ti.js
 GNUstep/Local/Library/SOGo/WebServerResources/js/vendor/ckeditor/build/translations/tk.js
 GNUstep/Local/Library/SOGo/WebServerResources/js/vendor/ckeditor/build/translations/tr.js
 GNUstep/Local/Library/SOGo/WebServerResources/js/vendor/ckeditor/build/translations/tt.js
@@ -2178,6 +2182,7 @@ GNUstep/Local/Library/SOGo/WebServerResources/js/vendor/ckeditor/build/translati
 GNUstep/Local/Library/SOGo/WebServerResources/js/vendor/ckeditor/build/translations/vi.js
 GNUstep/Local/Library/SOGo/WebServerResources/js/vendor/ckeditor/build/translations/zh-cn.js
 GNUstep/Local/Library/SOGo/WebServerResources/js/vendor/ckeditor/build/translations/zh.js
+GNUstep/Local/Library/SOGo/WebServerResources/js/vendor/ckeditor/package-lock.json
 GNUstep/Local/Library/SOGo/WebServerResources/js/vendor/ckeditor/package.json
 GNUstep/Local/Library/SOGo/WebServerResources/js/vendor/ckeditor/sample/index.html
 GNUstep/Local/Library/SOGo/WebServerResources/js/vendor/ckeditor/sample/script.js
