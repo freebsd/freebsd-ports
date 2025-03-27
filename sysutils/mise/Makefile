@@ -1,6 +1,6 @@
 PORTNAME=	mise
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2025.3.7
+DISTVERSION=	2025.3.10
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -50,7 +50,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		arrayvec-0.5.2 \
 		arrayvec-0.7.6 \
 		assert-json-diff-2.0.2 \
-		async-compression-0.4.21 \
+		async-compression-0.4.22 \
 		async-trait-0.1.88 \
 		atomic-waker-1.1.2 \
 		autocfg-1.4.0 \
@@ -87,8 +87,8 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		chrono-tz-build-0.3.0 \
 		ci_info-0.14.14 \
 		cipher-0.4.4 \
-		clap-4.5.32 \
-		clap_builder-4.5.32 \
+		clap-4.5.33 \
+		clap_builder-4.5.33 \
 		clap_derive-4.5.32 \
 		clap_lex-0.7.4 \
 		clap_mangen-0.2.26 \
@@ -136,7 +136,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		deflate64-0.1.9 \
 		demand-1.6.5 \
 		der-0.7.9 \
-		deranged-0.4.0 \
+		deranged-0.4.1 \
 		derive_arbitrary-1.4.1 \
 		derive_more-0.99.19 \
 		deunicode-1.6.1 \
@@ -286,16 +286,16 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		i18n-embed-0.14.1 \
 		i18n-embed-fl-0.7.0 \
 		i18n-embed-impl-0.8.4 \
-		iana-time-zone-0.1.61 \
+		iana-time-zone-0.1.62 \
 		iana-time-zone-haiku-0.1.2 \
 		icu_collections-1.5.0 \
 		icu_locid-1.5.0 \
 		icu_locid_transform-1.5.0 \
-		icu_locid_transform_data-1.5.0 \
+		icu_locid_transform_data-1.5.1 \
 		icu_normalizer-1.5.0 \
-		icu_normalizer_data-1.5.0 \
+		icu_normalizer_data-1.5.1 \
 		icu_properties-1.5.1 \
-		icu_properties_data-1.5.0 \
+		icu_properties_data-1.5.1 \
 		icu_provider-1.5.0 \
 		icu_provider_macros-1.5.0 \
 		ident_case-1.0.1 \
@@ -323,10 +323,10 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		itertools-0.14.0 \
 		itoa-1.0.15 \
 		jiff-0.1.29 \
-		jiff-0.2.4 \
-		jiff-static-0.2.4 \
-		jiff-tzdb-0.1.3 \
-		jiff-tzdb-platform-0.1.2 \
+		jiff-0.2.5 \
+		jiff-static-0.2.5 \
+		jiff-tzdb-0.1.4 \
+		jiff-tzdb-platform-0.1.3 \
 		jobserver-0.1.32 \
 		js-sys-0.3.77 \
 		junction-1.2.0 \
@@ -345,7 +345,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		litrs-0.4.1 \
 		lock_api-0.4.12 \
 		lockfree-object-pool-0.1.6 \
-		log-0.4.26 \
+		log-0.4.27 \
 		logos-0.12.1 \
 		logos-derive-0.12.1 \
 		lua-src-547.0.0 \
@@ -373,6 +373,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		native-tls-0.2.14 \
 		nix-0.29.0 \
 		nom-7.1.3 \
+		nom-8.0.0 \
 		nt-time-0.8.1 \
 		nu-ansi-term-0.46.0 \
 		num-0.4.3 \
@@ -407,10 +408,10 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		path-dedot-3.1.1 \
 		pbkdf2-0.12.2 \
 		percent-encoding-2.3.1 \
-		pest-2.7.15 \
-		pest_derive-2.7.15 \
-		pest_generator-2.7.15 \
-		pest_meta-2.7.15 \
+		pest-2.8.0 \
+		pest_derive-2.8.0 \
+		pest_generator-2.8.0 \
+		pest_meta-2.8.0 \
 		petgraph-0.7.1 \
 		phf-0.11.3 \
 		phf_codegen-0.11.3 \
@@ -436,10 +437,10 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		proc-macro-error2-2.0.1 \
 		proc-macro2-1.0.94 \
 		prodash-29.0.1 \
-		quick-xml-0.37.2 \
+		quick-xml-0.37.3 \
 		quinn-0.11.7 \
 		quinn-proto-0.11.10 \
-		quinn-udp-0.5.10 \
+		quinn-udp-0.5.11 \
 		quote-1.0.40 \
 		r-efi-5.2.0 \
 		rand-0.8.5 \
@@ -477,7 +478,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		rustls-native-certs-0.8.1 \
 		rustls-pemfile-2.2.0 \
 		rustls-pki-types-1.11.0 \
-		rustls-webpki-0.103.0 \
+		rustls-webpki-0.103.1 \
 		rustversion-1.0.20 \
 		ryu-1.0.20 \
 		salsa20-0.10.2 \
@@ -561,9 +562,9 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		thiserror-impl-1.0.69 \
 		thiserror-impl-2.0.12 \
 		thread_local-1.1.8 \
-		time-0.3.40 \
+		time-0.3.41 \
 		time-core-0.1.4 \
-		time-macros-0.2.21 \
+		time-macros-0.2.22 \
 		tinystr-0.7.6 \
 		tinyvec-1.9.0 \
 		tinyvec_macros-0.1.1 \
@@ -611,7 +612,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		untrusted-0.9.0 \
 		url-2.5.4 \
 		urlencoding-2.1.3 \
-		usage-lib-2.0.6 \
+		usage-lib-2.0.7 \
 		utf16_iter-1.0.5 \
 		utf8_iter-1.0.4 \
 		utf8parse-0.2.2 \
@@ -619,6 +620,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		vcpkg-0.2.15 \
 		version_check-0.9.5 \
 		versions-6.3.2 \
+		versions-7.0.0 \
 		vfox-1.0.1 \
 		vte-0.10.1 \
 		vte_generate_state_changes-0.1.2 \
@@ -703,7 +705,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		zeroize_derive-1.4.2 \
 		zerovec-0.10.4 \
 		zerovec-derive-0.10.3 \
-		zip-2.4.2 \
+		zip-2.5.0 \
 		zipsign-api-0.1.3 \
 		zopfli-0.8.1 \
 		zstd-0.13.3 \
