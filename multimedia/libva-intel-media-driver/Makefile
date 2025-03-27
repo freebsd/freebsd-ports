@@ -1,6 +1,7 @@
 PORTNAME=	media-driver
 DISTVERSIONPREFIX=	intel-media-
 DISTVERSION=	23.4.3
+PORTREVISION=	1
 CATEGORIES=	multimedia
 PKGNAMEPREFIX=	libva-intel-
 
@@ -21,6 +22,7 @@ PATCHFILES+=	17d384458.patch:-p1 #https://github.com/intel/media-driver/pull/178
 PATCHFILES+=	abb792cad.patch:-p1 #https://github.com/intel/media-driver/pull/1785
 PATCHFILES+=	7d261abf2.patch:-p1 #https://github.com/intel/media-driver/pull/1785
 PATCHFILES+=	67961a267.patch:-p1 #https://github.com/intel/media-driver/pull/1785
+PATCHFILES+= 	4461a2703.patch:-p1 #https://github.com/intel/media-driver/commit/4461a2703eae517f678ed8d8270ff14f356b9b19
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	VAAPI driver for Intel HD 5000 (Gen8) or newer
