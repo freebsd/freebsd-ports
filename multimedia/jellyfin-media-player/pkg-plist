@@ -7,9 +7,8 @@ share/jellyfinmediaplayer/web-client/extension/find-webclient.js
 share/jellyfinmediaplayer/web-client/extension/find-webclient.lang.js
 share/jellyfinmediaplayer/web-client/extension/jmpInputPlugin.js
 share/jellyfinmediaplayer/web-client/extension/jmpUpdatePlugin.js
-share/jellyfinmediaplayer/web-client/extension/logo.svg
+share/jellyfinmediaplayer/web-client/extension/logo.png
 share/jellyfinmediaplayer/web-client/extension/mpvAudioPlayer.js
 share/jellyfinmediaplayer/web-client/extension/mpvVideoPlayer.js
 share/jellyfinmediaplayer/web-client/extension/nativeshell.js
-share/jellyfinmediaplayer/web-client/extension/skipIntroPlugin.js
 share/metainfo/com.github.iwalton3.jellyfin-media-player.appdata.xml
