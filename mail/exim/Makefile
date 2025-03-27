@@ -52,7 +52,7 @@ EXIMON_USES=	xorg
 EXIMON_USE=	xorg=x11,xaw,xext,xmu,xt
 GNUTLS_LIB_DEPENDS=	libgnutls.so:security/gnutls
 ICONV_USES=	iconv:lib,build
-INTERNATIONAL_LIB_DEPENDS=	libidn.so:dns/libidn
+INTERNATIONAL_LIB_DEPENDS=	libidn.so:dns/libidn libidn2.so:dns/libidn2
 LMDB_LIB_DEPENDS=	liblmdb.so:databases/lmdb
 MYSQL_USES=	mysql
 OPENLDAP_USES=	ldap
@@ -109,7 +109,7 @@ EXTRA_PATCHES+=	${FILESDIR}/extra-patch-Local-sa-exim.c
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-Local-sa-exim.conf
 .endif
 
-EXIM_VERSION=	4.98.1
+EXIM_VERSION=	4.98.2
 SA_EXIM_VERSION=4.2.1
 EXIM_INSTALL_ARG+=	"-no_chown" "-no_symlink"
 EXTRA_PATCHES+=	`${FIND} ${PATCHDIR} -name '74_*.patch'|${SORT} -h`
@@ -239,7 +239,8 @@ SEDLIST+=	-e 's,^\# (DISABLE_EVENT=),\1,'
 
 .if ${PORT_OPTIONS:MINTERNATIONAL}
 SEDLIST+=	-e 's,^\# (SUPPORT_I18N=),\1,' \
-		-e 's,XX_IDN_LIBS_XX,-L${LOCALBASE}/lib -lidn,'
+		-e 's,^\# (SUPPORT_I18N_2008=),\1,' \
+		-e 's,XX_IDN_LIBS_XX,-L${LOCALBASE}/lib -lidn -lidn2,'
 .else
 SEDLIST+=	-e 's,XX_IDN_LIBS_XX,,'
 .endif
