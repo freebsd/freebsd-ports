@@ -1,6 +1,6 @@
 PORTNAME=	SoXt
-DISTVERSION=	1.4.1
 DISTVERSIONPREFIX=	v
+DISTVERSION=	1.4.1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	https://github.com/coin3d/${PORTNAME:tl}/releases/download/${DISTVERSIONFULL}/
 DISTNAME=	${PORTNAME:tl}-${DISTVERSION}-src
@@ -12,6 +12,8 @@ WWW=		https://github.com/coin3d/soxt
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2025-04-27
 BROKEN_FreeBSD_14=	error: couldn't compile and link with Motif
 BROKEN_FreeBSD_15=	error: couldn't compile and link with Motif
 
@@ -26,7 +28,6 @@ USE_XORG=	ice sm x11 xext xi xmu xt
 SHEBANG_FILES=	cfg/doxy4win.pl
 
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS+=	--with-pthread=yes --with-coin=${LOCALBASE}
 
 # avoid renaming of soxt-config and soxt-config.1
