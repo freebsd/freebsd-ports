@@ -1,0 +1,15 @@
+--- CMakeLists.txt.orig	2022-10-13 08:55:06 UTC
++++ CMakeLists.txt
+@@ -50,9 +50,10 @@ check_include_file_cxx("stdbool.h" HAVE_STDBOOL_H)
+ include(CheckIncludeFileCXX)
+ check_include_file_cxx("stdbool.h" HAVE_STDBOOL_H)
+ 
++set(CMAKE_PREFIX_PATH "%%LOCALBASE%%/ffmpeg4;%%LOCALBASE%%/ffmpeg4/libexec")
+ find_package(Mediastreamer2 CONFIG REQUIRED)
+-find_package(ortp CONFIG REQUIRED)
+-find_package(bctoolbox CONFIG REQUIRED)
++find_package(Ortp CONFIG REQUIRED)
++find_package(BCToolbox CONFIG REQUIRED)
+ 
+ find_package(OpenH264 REQUIRED)
+ 
