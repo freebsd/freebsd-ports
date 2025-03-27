@@ -1,5 +1,5 @@
 PORTNAME=	openssl
-DISTVERSION=	3.5.0-alpha1
+DISTVERSION=	3.5.0-beta1
 CATEGORIES=	security devel
 PKGNAMESUFFIX=	35
 MASTER_SITES=	https://github.com/openssl/openssl/releases/download/${DISTNAME}/
@@ -11,7 +11,7 @@ WWW=		https://www.openssl.org/
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-CONFLICTS_INSTALL=	boringssl libressl libressl-devel openssl openssl111 openssl3[123] openssl*-quictls
+CONFLICTS_INSTALL=	boringssl libressl libressl-devel openssl openssl111 openssl3[1234] openssl*-quictls
 
 HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	config
@@ -29,7 +29,7 @@ MAKE_ARGS+=	WHOLE_ARCHIVE_FLAG=--whole-archive CNF_LDFLAGS="${LDFLAGS}"
 MAKE_ENV+=	LIBRPATH="${PREFIX}/lib" GREP_OPTIONS=
 
 OPTIONS_GROUP=		CIPHERS COMPRESSION HASHES MODULES OPTIMIZE PQC PROTOCOLS
-OPTIONS_GROUP_CIPHERS=	ARIA DES GOST IDEA SM4 RC2 RC4 RC5 WEAK-SSL-CIPHERS
+OPTIONS_GROUP_CIPHERS=	ARIA DES GOST IDEA SM4 RC2 RC4 RC5 TLS-DEPRECATED-EC WEAK-SSL-CIPHERS
 OPTIONS_GROUP_COMPRESSION=	BROTLI ZLIB ZSTD
 OPTIONS_GROUP_HASHES=	MD2 MD4 MDC2 RMD160 SM2 SM3
 OPTIONS_GROUP_OPTIMIZE=	ASM SSE2 THREADS THREADPOOL
@@ -38,7 +38,7 @@ OPTIONS_GROUP_MODULES=	FIPS LEGACY
 OPTIONS_DEFINE_i386=	I386
 OPTIONS_GROUP_PROTOCOLS=NEXTPROTONEG QUIC SCTP SSL3 TLS1 TLS1_1 TLS1_2
 
-OPTIONS_DEFINE=	ASYNC CT KTLS MAN3 RFC3779 SHARED
+OPTIONS_DEFINE=	ASYNC CT FIPS-JITTER KTLS MAN3 RFC3779 SHARED
 
 OPTIONS_DEFAULT=ASM ASYNC CT DES EC FIPS GOST MAN3 MD4 ML-DSA ML-KEM NEXTPROTONEG \
 		QUIC RFC3779 RC2 RC4 RMD160 SCTP SHARED SLH-DSA SSE2 \
@@ -64,6 +64,7 @@ CT_DESC=	Certificate Transparency Support
 DES_DESC=	(Triple) Data Encryption Standard
 EC_DESC=	Optimize NIST elliptic curves
 FIPS_DESC=	Build FIPS provider (Note: NOT yet FIPS validated)
+FIPS-JITTER_DESC=	Use JITTER seed source in FIPS provider
 GOST_DESC=	GOST (Russian standard)
 HASHES_DESC=	Hash Function Support
 I386_DESC=	i386 (instead of i486+)
@@ -95,6 +96,7 @@ SM3_DESC=	SM3 256bit (Chinese standard)
 SM4_DESC=	SM4 128bit (Chinese standard)
 SSE2_DESC=	Runtime SSE2 detection
 SSL3_DESC=	SSLv3 (unsafe)
+TLS-DEPRECATED-EC_DESC=	Deprecated elliptic curve groups in TLS (unsafe)
 TLS1_DESC=	TLSv1.0 (requires TLS1_1, TLS1_2)
 TLS1_1_DESC=	TLSv1.1 (requires TLS1_2)
 TLS1_2_DESC=	TLSv1.2
@@ -102,17 +104,18 @@ THREADPOOL_DESC=Thread Pooling support
 WEAK-SSL-CIPHERS_DESC=	Weak cipher support (unsafe)
 
 # Upstream default disabled options
-.for _option in brotli fips md2 ktls rc5 sctp ssl3 weak-ssl-ciphers zlib zstd
+.for _option in brotli fips fips-jitter md2 ktls rc5 sctp ssl3 weak-ssl-ciphers zlib zstd
 ${_option:tu}_CONFIGURE_ON=	enable-${_option}
 .endfor
 
 # Upstream default enabled options
 .for _option in aria asm async ct des gost idea md4 mdc2 ml-kem ml-dsa \
 	legacy nextprotoneg quic rc2 rc4 rfc3779 rmd160 shared slh-dsa \
-	sm2 sm3 sm4 sse2 threads tls1 tls1_1 tls1_2
+	sm2 sm3 sm4 sse2 threads tls-deprecated-ec tls1 tls1_1 tls1_2
 ${_option:tu}_CONFIGURE_OFF=	no-${_option}
 .endfor
 
+FIPS-JITTER_IMPLIES=	FIPS
 MD2_IMPLIES=	LEGACY
 MDC2_IMPLIES=	DES
 TLS1_IMPLIES=	TLS1_1
@@ -124,6 +127,9 @@ BROTLI_LIB_DEPENDS=	libbrotlicommon.so:archivers/brotli
 EC_CONFIGURE_ON=	enable-ec_nistp_64_gcc_128
 FIPS_VARS=		shlibs+=lib/ossl-modules/fips.so
 I386_CONFIGURE_ON=	386
+FIPS-JITTER_CFLAGS=	-I${PREFIX}/include
+FIPS-JITTER_LDFLAGS=	-L${PREFIX}/lib
+FIPS-JITTER_BUILD_DEPENDS=	${LOCALBASE}/lib/libjitterentropy.a:devel/libjitterentropy
 KTLS_BROKEN=		Pending updated KTLS patch
 KTLS_EXTRA_PATCHES=	${FILESDIR}/extra-patch-ktls
 LEGACY_VARS=		shlibs+=lib/ossl-modules/legacy.so
