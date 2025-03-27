@@ -15,7 +15,6 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 ONLY_FOR_ARCHS=	amd64 i386
 ONLY_FOR_ARCHS_REASON=	only Intel GPUs on x86 are supported
-DEPRECATED=	Project discontinued
 
 BUILD_DEPENDS=	libva>=2.4.0:multimedia/libva
 LIB_DEPENDS=	libdrm_intel.so:graphics/libdrm \
@@ -23,7 +22,7 @@ LIB_DEPENDS=	libdrm_intel.so:graphics/libdrm \
 
 USES=		compiler:c11 meson pkgconfig
 USE_GITHUB=	yes
-GH_ACCOUNT=	intel
+GH_ACCOUNT=	irql-notlessorequal
 GH_PROJECT=	intel-vaapi-driver
 PLIST_FILES=	lib/dri/i965_drv_video.so
 
