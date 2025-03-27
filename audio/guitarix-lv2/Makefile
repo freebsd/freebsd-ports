@@ -1,6 +1,7 @@
 PORTNAME=	guitarix
 DISTVERSIONPREFIX=	V
 DISTVERSION=	0.46.0
+PORTREVISION=	1
 CATEGORIES=	audio
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -39,7 +40,7 @@ RUN_DEPENDS=	roboto-fonts-ttf>0:x11-fonts/roboto-fonts-ttf
 USES=		compiler:c++11-lang gnome libarchive localbase:ldflags \
 		pkgconfig python:build readline shebangfix waf xorg ssl tar:xz
 USES+=		eigen:3 # shouldn't be needed, see https://github.com/brummer10/guitarix/issues/210
-USE_GNOME=	atkmm cairo gtk30 gtkmm30 intltool:build pangomm
+USE_GNOME=	atkmm cairo gtk30 gtkmm30 pangomm
 USE_XORG=	x11
 USE_LDCONFIG=	yes
 USE_BINUTILS=	yes # linking needs some GNU features, fails on 12 without this, see https://github.com/brummer10/GxPlugins.lv2/issues/9
@@ -73,7 +74,7 @@ OPTIONS_SUB=	yes
 
 NLS_CONFIGURE_ENABLE=	nls
 NLS_USES=	gettext
-NLS_USE=	GNOME=intltool
+NLS_USE=	GNOME=intltool:build
 
 post-install:
 	# strip, see https://sourceforge.net/p/guitarix/bugs/60/
