@@ -1,6 +1,6 @@
---- src/drawdance/libengine/dpengine/save.c.orig	2024-01-14 11:13:49 UTC
-+++ src/drawdance/libengine/dpengine/save.c
-@@ -832,7 +832,7 @@ DP_SaveResult DP_save(DP_CanvasState *cs, DP_DrawConte
+--- src/drawdance/libimpex/dpimpex/save.c.orig	2025-03-27 05:51:37 UTC
++++ src/drawdance/libimpex/dpimpex/save.c
+@@ -884,7 +884,7 @@ DP_SaveResult DP_save(DP_CanvasState *cs, DP_DrawConte
  #if defined(_WIN32)
  #    define PREFERRED_PATH_SEPARATOR "\\"
  #    define POSSIBLE_PATH_SEPARATORS "\\/"

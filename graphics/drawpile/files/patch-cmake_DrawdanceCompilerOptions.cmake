@@ -1,6 +1,6 @@
---- cmake/DrawdanceCompilerOptions.cmake.orig	2024-01-14 11:12:43 UTC
+--- cmake/DrawdanceCompilerOptions.cmake.orig	2025-03-26 05:46:04 UTC
 +++ cmake/DrawdanceCompilerOptions.cmake
-@@ -32,7 +32,7 @@ else()
+@@ -44,7 +44,7 @@ else()
          $<$<COMPILE_LANGUAGE:CXX>:-fno-exceptions>
          $<$<COMPILE_LANGUAGE:C>:-Wstrict-prototypes>
      )

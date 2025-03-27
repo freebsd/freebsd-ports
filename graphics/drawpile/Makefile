@@ -1,6 +1,5 @@
 PORTNAME=	Drawpile
-DISTVERSION=	2.2.1
-PORTREVISION=	10
+DISTVERSION=	2.2.2
 CATEGORIES=	graphics python
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -10,10 +9,12 @@ WWW=		https://drawpile.net
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-LIB_DEPENDS=	libsodium.so:security/libsodium
+LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg \
+		libsodium.so:security/libsodium \
+		libwebpmux.so:graphics/webp
 
 USES=		cargo cmake compiler:c++17-lang desktop-file-utils kde:5 pkgconfig qt:5 shared-mime-info
-USE_QT=		core gui multimedia network sql svg widgets xml \
+USE_QT=		core gui multimedia network opengl sql svg widgets xml websockets \
 		buildtools:build linguisttools:build qmake:build
 USE_KDE=	archive dnssd ecm:build
 
@@ -25,7 +26,6 @@ CARGO_INSTALL=	no
 CARGO_CRATES=	aho-corasick-1.0.5 \
 		anyhow-1.0.75 \
 		memchr-2.6.1 \
-		once_cell-1.18.0 \
 		regex-1.9.4 \
 		regex-automata-0.3.7 \
 		regex-syntax-0.7.5 \
