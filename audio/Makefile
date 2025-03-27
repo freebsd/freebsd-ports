@@ -686,6 +686,7 @@
     SUBDIR += qtractor
     SUBDIR += quimup
     SUBDIR += qxgedit
+    SUBDIR += ratatouille-lv2
     SUBDIR += raul
     SUBDIR += rawrec
     SUBDIR += re

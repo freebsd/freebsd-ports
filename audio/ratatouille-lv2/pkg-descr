@@ -1,0 +1,11 @@
+Ratatouille is a Neural Model loader and mixer for Linux/Windows.
+
+It can load two models, which can be *.nam files with the Neural Amp Modeler
+module, or *.json or .aidax files with the RTNeural module.
+
+You can also load just a single model file, in that case the "Blend" control
+will do nothing. When you've loaded a second model, the "Blend" control will
+blend between the two models and mix them to simulate your specific tone.
+
+Ratatouille using parallel processing for the neural models, so, loading a
+second neural model wouldn't be remarkable on the dsp load.

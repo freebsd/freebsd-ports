@@ -1,0 +1,32 @@
+--- Ratatouille/makefile.orig	2025-03-17 06:46:26 UTC
++++ Ratatouille/makefile
+@@ -7,9 +7,9 @@
+ 	TARGET_ARCH = UNKNOWN
+ 	# check if user is root
+ 	user = $(shell whoami)
+-	ifeq ($(user),root)
+-	INSTALL_DIR = /usr/lib/lv2
+-	EXE_INSTALL_DIR = /usr/bin
++	ifneq ($(DESTDIR),)
++	INSTALL_DIR = $(PREFIX)/lib/lv2
++	EXE_INSTALL_DIR = $(PREFIX)/bin
+ 	else 
+ 	INSTALL_DIR = ~/.lv2
+ 	EXE_INSTALL_DIR = ~/bin
+@@ -476,13 +476,13 @@ ifneq ("$(wildcard ../bin/$(EXEC_NAME)$(EXE_EXT))","")
+ 	$(QUIET)mkdir -p $(DESTDIR)$(EXE_INSTALL_DIR)/
+ 	$(QUIET)cp -r ../bin/$(EXEC_NAME)$(EXE_EXT) $(DESTDIR)$(EXE_INSTALL_DIR)/$(EXEC_NAME)$(EXE_EXT)
+ 
+-  ifeq ($(user),root)
++  #ifeq ($(user),root)
+ 	$(QUIET)mkdir -p $(DESTDIR)$(DESKAPPS_DIR)
+ 	$(QUIET)cp $(STANDALONE_DIR)$(EXEC_NAME).desktop $(DESTDIR)$(DESKAPPS_DIR)$(EXEC_NAME).desktop
+ 	$(QUIET)mkdir -p $(DESTDIR)$(PIXMAPS_DIR)
+ 	$(QUIET)cp $(STANDALONE_DIR)$(EXEC_NAME).svg $(DESTDIR)$(PIXMAPS_DIR)$(EXEC_NAME).svg 
+-	$(QUIET)update-desktop-database || true
+-  endif
++	#$(QUIET)update-desktop-database || true
++  #endif
+ 	@$(B_ECHO) ". ., done$(reset)"
+ else
+ 	@$(B_ECHO) "$(EXEC_NAME)$(EXE_EXT) standalone skipped$(reset)"
