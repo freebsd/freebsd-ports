@@ -136,7 +136,6 @@ etc/bash_completion.d/icingacli
 %%WWWDIR%%/application/views/scripts/group/form.phtml
 %%WWWDIR%%/application/views/scripts/group/list.phtml
 %%WWWDIR%%/application/views/scripts/group/show.phtml
-%%WWWDIR%%/application/views/scripts/iframe/index.phtml
 %%WWWDIR%%/application/views/scripts/index/welcome.phtml
 %%WWWDIR%%/application/views/scripts/inline.phtml
 %%WWWDIR%%/application/views/scripts/joystickPagination.phtml
