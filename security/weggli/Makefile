@@ -11,6 +11,9 @@ WWW=		https://github.com/googleprojectzero/weggli
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Upstream inactive as last release was in 2022
+EXPIRATION_DATE=2025-04-27
+
 BROKEN_amd64=	link fails: error: version script assignment of 'global' to symbol '__muloti4' failed: symbol not defined
 
 USES=		cargo
