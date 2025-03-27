@@ -8361,11 +8361,13 @@
     SUBDIR += wasi-compiler-rt17
     SUBDIR += wasi-compiler-rt18
     SUBDIR += wasi-compiler-rt19
+    SUBDIR += wasi-compiler-rt20
     SUBDIR += wasi-libc
     SUBDIR += wasi-libcxx
     SUBDIR += wasi-libcxx17
     SUBDIR += wasi-libcxx18
     SUBDIR += wasi-libcxx19
+    SUBDIR += wasi-libcxx20
     SUBDIR += wasm3
     SUBDIR += wasmer
     SUBDIR += websocketpp
