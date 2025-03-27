@@ -8,7 +8,8 @@ EXTRACT_ONLY=	${GH_ACCOUNT}-${GH_PROJECT}-${GH_TAGNAME}_GH0${EXTRACT_SUFX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Audio/MIDI multi-track sequencer
-WWW=		https://qtractor.org/
+WWW=		https://qtractor.org \
+		https://github.com/rncbc/qtractor
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE
