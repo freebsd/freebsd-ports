@@ -19,7 +19,6 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 ONLY_FOR_ARCHS=	amd64 i386
 ONLY_FOR_ARCHS_REASON=	only Intel GPUs on x86 are supported
-DEPRECATED=	Project discontinued
 
 LIB_DEPENDS=	libdrm_intel.so:graphics/libdrm \
 		libcmrt.so:multimedia/cmrt \
@@ -28,7 +27,7 @@ LIB_DEPENDS=	libdrm_intel.so:graphics/libdrm \
 USES=		autoreconf compiler:c11 gmake libtool pkgconfig
 USE_CXXSTD=	gnu++98
 USE_GITHUB=	yes
-GH_ACCOUNT=	intel
+GH_ACCOUNT=	irql-notlessorequal
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 PLIST_FILES=	lib/dri/hybrid_drv_video.so
