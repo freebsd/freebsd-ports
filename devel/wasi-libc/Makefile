@@ -1,6 +1,7 @@
 PORTNAME=	wasi-libc
 DISTVERSIONPREFIX=	wasi-sdk-
-DISTVERSION=	25
+DISTVERSION=	25-14
+DISTVERSIONSUFFIX=	-ge9524a0
 CATEGORIES=	devel
 PKGNAMESUFFIX=	${FLAVOR}
 
@@ -18,7 +19,7 @@ LICENSE_PERMS_LLVM2=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 BUILD_DEPENDS=	bash:shells/bash
 
-FLAVORS=	18 19 17
+FLAVORS=	19 20 18 17
 FLAVOR?=	${FLAVORS:[1]}
 
 USES=		gmake llvm:${FLAVOR}
