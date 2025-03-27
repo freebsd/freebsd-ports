@@ -1,0 +1,13 @@
+TIMESTAMP = 1743015953
+SHA256 (brummer10-neuralrack-v0.1.3_GH0.tar.gz) = a2597483165805b073243bfb6aac37715e0181d42e4407a8323580720f62e3ab
+SIZE (brummer10-neuralrack-v0.1.3_GH0.tar.gz) = 630632
+SHA256 (brummer10-libxputty-9775b74862e3c10d482b35b38ad74865b9afc75c_GH0.tar.gz) = ad8cdf0dcbac1372664b301b481f31d84166f2e5bd0e08e67b32595e7a135584
+SIZE (brummer10-libxputty-9775b74862e3c10d482b35b38ad74865b9afc75c_GH0.tar.gz) = 577796
+SHA256 (jatinchowdhury18-RTNeural-a8ae9c5af21cba309d06bce71a2008a9a13ab65b_GH0.tar.gz) = 63aa3b252fb1d24dd55563f3f3d854f66e6aeb39c41ff8280f297bfb2d0c8bf8
+SIZE (jatinchowdhury18-RTNeural-a8ae9c5af21cba309d06bce71a2008a9a13ab65b_GH0.tar.gz) = 2494879
+SHA256 (xtensor-stack-xsimd-a00c81f7b9e808a42aedcf7da2fbb1f9a636da34_GH0.tar.gz) = f1c485107ae0b29069a88bf9619d2d93eaed8321ae03a83d7fc437da85d5b9fd
+SIZE (xtensor-stack-xsimd-a00c81f7b9e808a42aedcf7da2fbb1f9a636da34_GH0.tar.gz) = 217905
+SHA256 (sdatkinson-NeuralAmpModelerCore-e181f61efb8d05d34add45b5eecb3893ff21177c_GH0.tar.gz) = e732c6e204597d4059aa01f5f416034383dac13d26859b97ef4b97ba0cb3ab39
+SIZE (sdatkinson-NeuralAmpModelerCore-e181f61efb8d05d34add45b5eecb3893ff21177c_GH0.tar.gz) = 161453
+SHA256 (HiFi-LoFi-FFTConvolver-f2cdeb04c42141d2caec19ca4f137398b2a76b85_GH0.tar.gz) = 38c7c4d9d2973f80df152993eda871c8ffaf886f9d7185301a890f3f656142a2
+SIZE (HiFi-LoFi-FFTConvolver-f2cdeb04c42141d2caec19ca4f137398b2a76b85_GH0.tar.gz) = 14537

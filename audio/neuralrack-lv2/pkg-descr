@@ -1,0 +1,16 @@
+NeuralRack is a Neural Model and Impulse Response File loader.
+
+It supports *.nam files with the Neural Amp Modeler engine, or *.json or .aidax
+files with the RTNeural engine.
+
+NeuralRack emulate a simple guitar effect chain with a pedal, a EQ a Amplifier
+and a Stereo Cabinet.
+
+Optional, NeuralRack could run the complete process in buffered mode to reduce
+the dsp load. The resulting latency will be reported to the host so that it
+could be compensated. For information the resulting latency will be shown on
+the GUI.
+
+NeuralRack supports resampling when needed to match the expected sample rate of
+the loaded models. Both models and the IR Files may have different expectations
+regarding the sample rate.

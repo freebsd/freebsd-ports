@@ -1,0 +1,7 @@
+bin/NeuralRack
+lib/lv2/NeuralRack.lv2/NeuralRack.so
+lib/lv2/NeuralRack.lv2/NeuralRack.ttl
+lib/lv2/NeuralRack.lv2/NeuralRack_ui.so
+lib/lv2/NeuralRack.lv2/manifest.ttl
+share/applications/NeuralRack.desktop
+share/pixmaps/NeuralRack.svg

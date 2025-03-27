@@ -1,0 +1,41 @@
+PORTNAME=	neuralrack
+DISTVERSIONPREFIX=	v
+DISTVERSION=	0.1.3
+CATEGORIES=	audio
+PKGNAMESUFFIX=	-lv2
+
+MAINTAINER=	yuri@FreeBSD.org
+COMMENT=	NeuralRack is a Neural Model and Impulse Response File loader
+WWW=		https://github.com/brummer10/NeuralRack
+
+LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+BUILD_DEPENDS=	lv2>0:audio/lv2 \
+		xxd:sysutils/xxd
+LIB_DEPENDS=	libjack.so:audio/jack \
+		libsndfile.so:audio/libsndfile
+
+USES=		compiler:c++20-lang gmake gnome localbase pkgconfig xorg
+USE_GNOME=	cairo
+USE_XORG=	x11
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	brummer10
+GH_TUPLE=	\
+		brummer10:libxputty:9775b74862e3c10d482b35b38ad74865b9afc75c:brummer10_libxputty/libxputty \
+		jatinchowdhury18:RTNeural:a8ae9c5af21cba309d06bce71a2008a9a13ab65b:jatinchowdhury18_RTNeural/RTNeural \
+			xtensor-stack:xsimd:a00c81f7b9e808a42aedcf7da2fbb1f9a636da34:xtensor_stack_xsimd/RTNeural/modules/xsimd \
+		sdatkinson:NeuralAmpModelerCore:e181f61efb8d05d34add45b5eecb3893ff21177c:sdatkinson_NeuralAmpModelerCore/NeuralAmpModelerCore \
+		HiFi-LoFi:FFTConvolver:f2cdeb04c42141d2caec19ca4f137398b2a76b85:HiFi_LoFi_FFTConvolver/FFTConvolver
+
+WRKSRC=		${WRKDIR}/NeuralRack-${PORTVERSION}
+
+MAKEFILE=	makefile
+
+CXXFLAGS+=	-I${WRKSRC}/RTNeural/modules/Eigen
+
+post-install:
+	@${REINPLACE_CMD} -i '' -e 's|Neuralrack|NeuralRack|' ${STAGEDIR}${PREFIX}/lib/lv2/NeuralRack.lv2/*.ttl
+
+.include <bsd.port.mk>
