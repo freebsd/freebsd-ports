@@ -1,8 +1,19 @@
 i386 target on BSDs doesn't include SSE2 by default
 
---- CMakeLists.txt.orig	2017-07-20 15:56:58 UTC
+--- CMakeLists.txt.orig	2025-01-23 13:25:53 UTC
 +++ CMakeLists.txt
-@@ -126,6 +126,13 @@ if(FIXED_POINT_PROCESSOR)
+@@ -60,7 +60,10 @@ endif()
+ 	message(STATUS "Setting install rpath to ${CMAKE_INSTALL_RPATH}")
+ endif()
+ 
++find_package(OpenSSL REQUIRED)
+ find_package(BCToolbox 5.3.0 REQUIRED)
++find_package(ZLIB REQUIRED)
++set(CMAKE_PREFIX_PATH "/usr/local/ffmpeg4;/usr/local/ffmpeg4/libexec")
+ find_package(Mediastreamer2 5.3.0 REQUIRED)
+ 
+ find_library(LIBM NAMES m)
+@@ -124,6 +127,13 @@ endif()
  	add_definitions(-D__ARMEL__)
  endif()
  
@@ -16,15 +27,20 @@ i386 target on BSDs doesn't include SSE2 by default
  set(AEC_CXX11_FLAGS "-std=c++11")
  
  set(WEBRTC_SIGNAL_PROCESSING_DIR ${WEBRTC_SRC_DIR}/common_audio/signal_processing)
-@@ -203,6 +210,11 @@ if(ENABLE_AEC)
- 		list(APPEND AEC_SRCS
+@@ -208,6 +218,11 @@ if(ENABLE_AEC)
  			${AEC_SRC_DIR}/aec_core_sse2.c
  			${AEC_SRC_DIR}/aec_rdft_sse2.c
-+		)
+ 		)
 +		set_source_files_properties(
 +			${AEC_SRC_DIR}/aec_core_sse2.c
 +			${AEC_SRC_DIR}/aec_rdft_sse2.c
 +			PROPERTIES COMPILE_FLAGS "-msse2"
- 		)
++		)
  	endif()
  	include_directories(
+ 		${AEC_SRC_DIR}/include
+@@ -450,4 +465,3 @@ add_subdirectory(build)
+ 
+ 
+ add_subdirectory(build)
+-
