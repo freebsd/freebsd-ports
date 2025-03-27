@@ -1,21 +1,20 @@
 PORTNAME=	debian-keyring
-DISTVERSION=	2025.02.28
+DISTVERSION=	2025.03.23
 CATEGORIES=	security
-MASTER_SITES=	https://salsa.debian.org/${PORTNAME}/keyring/-/archive/${DISTVERSION}/
-DISTNAME=	keyring_${DISTVERSION}
 
 MAINTAINER=	jinking.this@gmail.com
 COMMENT=	GPG keys for Debian package signature verification
-WWW=		https://bugs.debian.org/debian-keyring
 
+WWW=		https://bugs.debian.org/debian-keyring
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+USE_GITLAB=	yes
+GL_SITE=	https://salsa.debian.org
+GL_PROJECT=	keyring
+
 NO_ARCH=	yes
 PORTSCOUT=	skipv:2026.00.00
-
-COMMIT_HASH=	de503431e2bf129355c243d50b66990d8ecf37e5
-WRKSRC=		${WRKDIR}/keyring-${DISTVERSION}-${COMMIT_HASH}
 
 do-build:
 	cd ${WRKSRC} && ${MAKE} all
