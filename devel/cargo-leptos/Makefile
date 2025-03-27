@@ -663,4 +663,10 @@ PLIST_FILES=	bin/${PORTNAME}
 LTO_UNSAFE=	yes
 .endif
 
+# attempt to fix on i386: ld: error: undefined symbol: __atomic_fetch_add_8
+.if ${ARCH} == i386 && !${CFLAGS:M-march=*}
+CFLAGS+=	-march=i586
+CXXFLAGS+=	-march=i586
+.endif
+
 .include <bsd.port.mk>
