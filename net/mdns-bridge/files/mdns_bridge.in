@@ -22,7 +22,7 @@ load_rc_config $name
 : ${mdns_bridge_enable:=NO}
 : ${mdns_bridge_config=%%PREFIX%%/etc/mdns-bridge.conf}
 
-command=%%PREFIX%%/sbin/${name}
+command=%%PREFIX%%/bin/mdns-bridge
 pidfile=/var/run/${name}.pid
 
 command_args="-s -p $pidfile -c $mdns_bridge_config"
