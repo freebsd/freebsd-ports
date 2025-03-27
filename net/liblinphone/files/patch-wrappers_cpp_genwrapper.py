@@ -1,6 +1,6 @@
---- wrappers/cpp/genwrapper.py.orig	2023-03-17 13:29:37 UTC
+--- wrappers/cpp/genwrapper.py.orig	2025-03-20 22:21:32 UTC
 +++ wrappers/cpp/genwrapper.py
-@@ -414,6 +414,8 @@ class ClassHeader:
+@@ -425,6 +425,8 @@ class ClassHeader:
  		elif isinstance(type_, AbsApi.BaseType):
  			if type_.name == 'integer' and isinstance(type_.size, int):
  				self._add_include('external', 'cstdint')
