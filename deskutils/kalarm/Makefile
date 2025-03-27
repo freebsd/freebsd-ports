@@ -1,13 +1,13 @@
 PORTNAME=	kalarm
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
+PORTREVISION=	1
 CATEGORIES=	deskutils kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Personal alarm scheduler
 WWW=		https://www.kde.org/
 
-LIB_DEPENDS=	libical.so:devel/libical \
-		libvlc.so:multimedia/vlc
+LIB_DEPENDS=	libical.so:devel/libical
 
 USES=		cmake compiler:c++11-lib gettext kde:6 qt:6 shebangfix tar:xz \
 		xorg
@@ -31,5 +31,17 @@ USE_LDCONFIG=	yes
 DESCR=		${.CURDIR:H:H}/deskutils/kdepim/pkg-descr
 
 OPTIONS_DEFINE=	DOCS
+OPTIONS_RADIO=		AUDIO
+AUDIO_DESC=		Audio backend
+OPTIONS_RADIO_AUDIO=	MPV VLC
+OPTIONS_DEFAULT=	MPV # VLC still uses Qt5
+
+MPV_DESC=		Play audio via libmpv
+MPV_LIB_DEPENDS=	libmpv.so:multimedia/mpv
+MPV_CMAKE_BOOL=		ENABLE_LIBMPV
+
+VLC_DESC=		Play audio via libVLC
+VLC_LIB_DEPENDS=	libvlc.so:multimedia/vlc
+VLC_CMAKE_BOOL=		ENABLE_LIBVLC
 
 .include <bsd.port.mk>
