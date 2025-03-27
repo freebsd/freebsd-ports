@@ -1,12 +1,11 @@
 PORTNAME=	icinga-php-library
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.14.1
+DISTVERSION=	0.14.2
 CATEGORIES=	net-mgmt www
 PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 
 MAINTAINER=	flo@FreeBSD.org
 COMMENT=	Icinga PHP library
-WWW=		https://github.com/Icinga/icinga-php-library
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -24,7 +23,7 @@ NO_ARCH=	yes
 WWWDIR?=	${PREFIX}/www/icingaweb2/icinga-php/${PORTNAME:C/^.*-//}
 
 do-install:
-	@${MKDIR} ${STAGEDIR}${WWWDIR}
+	${MKDIR} ${STAGEDIR}${WWWDIR}
 	(cd ${WRKSRC} && \
 		${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR})
 
