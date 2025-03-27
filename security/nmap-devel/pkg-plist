@@ -566,6 +566,8 @@ share/man/man1/nping.1.gz
 %%DATADIR%%/scripts/metasploit-msgrpc-brute.nse
 %%DATADIR%%/scripts/metasploit-xmlrpc-brute.nse
 %%DATADIR%%/scripts/mikrotik-routeros-brute.nse
+%%DATADIR%%/scripts/mikrotik-routeros-username-brute.nse
+%%DATADIR%%/scripts/mikrotik-routeros-version.nse
 %%DATADIR%%/scripts/mmouse-brute.nse
 %%DATADIR%%/scripts/mmouse-exec.nse
 %%DATADIR%%/scripts/modbus-discover.nse
@@ -776,6 +778,7 @@ share/man/man1/nping.1.gz
 %%DATADIR%%/scripts/supermicro-ipmi-conf.nse
 %%DATADIR%%/scripts/svn-brute.nse
 %%DATADIR%%/scripts/targets-asn.nse
+%%DATADIR%%/scripts/targets-ipv6-eui64.nse
 %%DATADIR%%/scripts/targets-ipv6-map4to6.nse
 %%DATADIR%%/scripts/targets-ipv6-multicast-echo.nse
 %%DATADIR%%/scripts/targets-ipv6-multicast-invalid-dst.nse
