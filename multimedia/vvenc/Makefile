@@ -11,6 +11,8 @@ WWW=		https://www.hhi.fraunhofer.de/en/departments/vca/technologies-and-solution
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
+BROKEN_i386=	compilation fails, see https://github.com/fraunhoferhhi/vvenc/issues/523
+
 USES=		cmake:testing compiler:c++14-lang
 USE_LDCONFIG=	yes
 
