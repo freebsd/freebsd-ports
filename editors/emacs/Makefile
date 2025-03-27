@@ -78,7 +78,7 @@ CONFIGURE_ENV=		ac_cv_header_sys_sysinfo_h=no
 CONFLICTS_INSTALL=	emacs-devel emacs-devel-nox
 
 BINARY_ALIAS=	makeinfo=true
-SUB_FILES=	sources.el
+SUB_FILES=	pkg-message sources.el
 SUB_LIST=	EMACS_VER=${DISTVERSION} \
 		NATIVECOMP_COMMENT_END=${NATIVECOMP_COMMENT_END} \
 		NATIVECOMP_COMMENT_START=${NATIVECOMP_COMMENT_START}
