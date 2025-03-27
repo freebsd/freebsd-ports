@@ -1,0 +1,29 @@
+https://github.com/mozilla/addons/issues/708
+https://github.com/mozilla/addons-frontend/issues/4610
+
+diff --git toolkit/mozapps/extensions/internal/AddonRepository.sys.mjs toolkit/mozapps/extensions/internal/AddonRepository.sys.mjs
+index 8d4d178924..500eaef103 100644
+--- toolkit/mozapps/extensions/internal/AddonRepository.sys.mjs
++++ toolkit/mozapps/extensions/internal/AddonRepository.sys.mjs
+@@ -715,7 +715,7 @@ export var AddonRepository = {
+       addon.version = String(aEntry.current_version.version);
+       if (Array.isArray(aEntry.current_version.files)) {
+         for (let file of aEntry.current_version.files) {
+-          if (file.platform == "all" || file.platform == lazy.PLATFORM) {
++          if (file.platform == "all" || file.platform == "linux" || file.platform == lazy.PLATFORM) {
+             if (file.url) {
+               addon.sourceURI = lazy.NetUtil.newURI(file.url);
+             }
+diff --git toolkit/mozapps/extensions/internal/XPIDatabase.sys.mjs toolkit/mozapps/extensions/internal/XPIDatabase.sys.mjs
+index 0b81770b94..19669951dc 100644
+--- toolkit/mozapps/extensions/internal/XPIDatabase.sys.mjs
++++ toolkit/mozapps/extensions/internal/XPIDatabase.sys.mjs
+@@ -635,7 +635,7 @@ export class AddonInternal {
+     // Something is causing errors in here
+     try {
+       for (let platform of this.targetPlatforms) {
+-        if (platform.os == Services.appinfo.OS) {
++        if (platform.os == "Linux" || platform.os == Services.appinfo.OS) {
+           if (platform.abi) {
+             needsABI = true;
+             if (platform.abi === abi) {

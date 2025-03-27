@@ -1,0 +1,10 @@
+--- comm/third_party/rnpdefs.mozbuild.orig	2021-08-11 20:13:25.176921000 +0200
++++ comm/third_party/rnpdefs.mozbuild	2021-08-11 20:14:08.855374000 +0200
+@@ -43,6 +43,6 @@
+     OS_LIBS += [static_libdir, "-l:libc++.a", "-l:libc++abi.a"]
+ 
+ 
+-if CONFIG["OS_ARCH"] in ("Linux", "SunOS"):
++if CONFIG["OS_ARCH"] in ("Linux", "FreeBSD", "DragonFly", "SunOS"):
+     CFLAGS += ["-fPIC"]
+     CXXFLAGS += ["-fPIC"]
