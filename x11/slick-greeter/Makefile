@@ -1,6 +1,5 @@
 PORTNAME=	slick-greeter
-PORTVERSION=	2.0.2
-PORTREVISION=	2
+PORTVERSION=	2.0.9
 CATEGORIES=	x11
 
 MAINTAINER=	ericbsd@FreeBSD.org
@@ -10,8 +9,7 @@ WWW=		https://github.com/linuxmint/slick-greeter
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libcanberra-gtk3.so:audio/libcanberra-gtk3 \
-		libcanberra.so:audio/libcanberra \
+LIB_DEPENDS=	libcanberra.so:audio/libcanberra \
 		libfreetype.so:print/freetype2 \
 		libharfbuzz.so:print/harfbuzz \
 		liblightdm-gobject-1.so:x11/lightdm \
@@ -21,7 +19,7 @@ RUN_DEPENDS=	numlockx>=0:x11/numlockx
 
 USES=		autoreconf gettext gmake gnome localbase pkgconfig python:run shebangfix \
 		vala:build xorg
-USE_GNOME=	cairo dconf gdkpixbuf gtk30 intltool pygobject3
+USE_GNOME=	cairo gdkpixbuf gtk30 intltool pygobject3
 
 USE_XORG=	pixman x11 xext
 
@@ -39,6 +37,9 @@ bash_CMD=	/bin/sh
 SUB_FILES=	pkg-deinstall pkg-install
 
 GLIB_SCHEMAS=	x.dm.slick-greeter.gschema.xml
+
+OPTIONS_DEFINE=	NLS
+OPTIONS_SUB=	YES
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|"/usr|"${PREFIX}|g' \
