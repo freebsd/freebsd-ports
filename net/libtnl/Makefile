@@ -12,8 +12,11 @@ WWW=		https://sourceforge.net/projects/opentnl/
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/../LICENSE.txt
 
+DEPRECATED=	Unmaintained upstream and no consumers in the ports tree
+EXPIRATION_DATE=2025-04-28
+
 # Other arches can be added easily, provided there is hardware to test:
-ONLY_FOR_ARCHS=	amd64 i386 powerpc powerpc64 powerpc64le
+ONLY_FOR_ARCHS=	amd64 powerpc powerpc64 powerpc64le
 
 USES=		uidfix
 USE_GCC=	yes
