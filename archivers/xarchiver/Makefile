@@ -1,5 +1,5 @@
 PORTNAME=	xarchiver
-DISTVERSION=	0.5.4.24
+DISTVERSION=	0.5.4.25
 CATEGORIES=	archivers
 
 MAINTAINER=	eduardo@FreeBSD.org
