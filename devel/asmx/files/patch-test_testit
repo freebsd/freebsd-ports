@@ -1,0 +1,35 @@
+--- test/testit.orig	2025-03-25 02:20:05 UTC
++++ test/testit
+@@ -1,8 +1,8 @@
+-#!/bin/bash
++#!/bin/sh
+ # this tests the various assemblers' instruction lists by
+ # comparing with pre-assembled .hex files in the ref sub-directory
+ 
+-function testit()
++testit()
+ {
+    echo -n "Testing $1:"
+ 
+@@ -37,17 +37,17 @@ testit 68hcs08
+ testit 68hc11
+ testit 68hc16
+ testit 68hcs08
+-#testit 68k # already tested by 68000 / 68010
++testit 68k # already tested by 68000 / 68010
+ testit 8048
+ testit 8051
+-#testit 8085 # already tested by 8085u
++testit 8085 # already tested by 8085u
+ testit 8085u
+ testit 8008
+-#testit arm
++testit arm
+ testit f8
+ testit gbz80
+ testit jerry
+-#testit thumb
++testit thumb
+ testit tom
+ testit z80
+ testit z8
