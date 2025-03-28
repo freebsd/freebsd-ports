@@ -1,10 +1,10 @@
 PORTNAME=	plan9port
-PORTVERSION=	20240617
+PORTVERSION=	20250218
 CATEGORIES=	devel plan9
 DIST_SUBDIR=	plan9port
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	tiago.gasiba@gmail.com
 COMMENT=	Plan 9 from User Space
 WWW=		https://9fans.github.io/plan9port/
 
@@ -16,11 +16,12 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2
 
 USES=		compiler:c11 localbase:ldflags perl5 shebangfix xorg
-USE_GITHUB=	yes
-GH_ACCOUNT=	9fans
-GH_TAGNAME=	a2567fc
 USE_PERL5=	build
 USE_XORG=	x11 xext xt
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	9fans
+GH_TAGNAME=	13582b1
 
 SHEBANG_GLOB=	*
 SHEBANG_LANG=	rc
