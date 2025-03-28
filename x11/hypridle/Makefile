@@ -1,7 +1,7 @@
 PORTNAME=	hypridle
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.1.5
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11 wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -32,7 +32,7 @@ post-patch:
 		-e 's,login1,ConsoleKit,' \
 		-e 's,logind,consolekit2,' \
 		-e 's,GetSession,&ByPID,' \
-		-e 's,"auto",uint32_t{getpid()},' \
+		-e 's,string{"auto"},to_string(getpid()),' \
 		${WRKSRC}/src/core/Hypridle.cpp
 
 .include <bsd.port.mk>
