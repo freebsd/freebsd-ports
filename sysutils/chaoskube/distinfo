@@ -1,5 +1,5 @@
-TIMESTAMP = 1733088264
-SHA256 (go/sysutils_chaoskube/chaoskube-v0.34.0/v0.34.0.mod) = 932ee6cf5bce87d1f6431a690b7173fecdb56ef1d81cd7aa316fa7947084c731
-SIZE (go/sysutils_chaoskube/chaoskube-v0.34.0/v0.34.0.mod) = 2958
-SHA256 (go/sysutils_chaoskube/chaoskube-v0.34.0/v0.34.0.zip) = 1f814f70b3616b5e0b405e64e610767966fb201c3dee412436e746891eaa0d41
-SIZE (go/sysutils_chaoskube/chaoskube-v0.34.0/v0.34.0.zip) = 206099
+TIMESTAMP = 1742838506
+SHA256 (go/sysutils_chaoskube/chaoskube-v0.34.1/v0.34.1.mod) = eed640b1d7fad2ad4ce88e9d49c217cbc43f1b06d6ffb5b046c980575dd778f6
+SIZE (go/sysutils_chaoskube/chaoskube-v0.34.1/v0.34.1.mod) = 2959
+SHA256 (go/sysutils_chaoskube/chaoskube-v0.34.1/v0.34.1.zip) = cde2e541e3f3b79d2e6c2a2d81cff30f9fec29669ed2bafbb3c4b45f64fec652
+SIZE (go/sysutils_chaoskube/chaoskube-v0.34.1/v0.34.1.zip) = 206103
