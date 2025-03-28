@@ -1,0 +1,20 @@
+- https://github.com/NuML/NuML/issues/31
+
+--- CMakeLists.txt.orig	2025-03-28 09:30:46 UTC
++++ CMakeLists.txt
+@@ -48,7 +48,7 @@ project(libnuml VERSION "${LIBNUML_VERSION_MAJOR}.${LI
+ endif()
+ 
+ project(libnuml VERSION "${LIBNUML_VERSION_MAJOR}.${LIBNUML_VERSION_MINOR}.${LIBNUML_VERSION_PATCH}"
+-                LANGUAGES CXX)
++                LANGUAGES CXX C)
+ 
+ include (CMakeTestCXXCompiler)
+ include (CheckCSourceCompiles)
+@@ -757,4 +757,4 @@ message(STATUS "
+ endif()
+ 
+ message(STATUS "
+-----------------------------------------------------------------------")
+\ No newline at end of file
++----------------------------------------------------------------------")
