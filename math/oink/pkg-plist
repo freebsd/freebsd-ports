@@ -2,10 +2,15 @@ bin/oink
 include/oink/bitset.hpp
 include/oink/error.hpp
 include/oink/game.hpp
+include/oink/libpopcnt.h
 include/oink/oink.hpp
+include/oink/solver.hpp
+include/oink/solvers.hpp
 include/oink/uintqueue.hpp
+lib/cmake/oink/oink-config-version.cmake
+lib/cmake/oink/oink-config.cmake
+lib/cmake/oink/oink-targets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/oink/oink-targets.cmake
 lib/liboink.so
 lib/liboink.so.1
 lib/liboink.so.1.0.0
-lib/oink/cmake/OinkConfig-%%CMAKE_BUILD_TYPE%%.cmake
-lib/oink/cmake/OinkConfig.cmake
