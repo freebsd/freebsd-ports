@@ -987,6 +987,7 @@
     SUBDIR += hs-ShellCheck
     SUBDIR += hs-alex
     SUBDIR += hs-cabal-install
+    SUBDIR += hs-cabal-plan
     SUBDIR += hs-cpphs
     SUBDIR += hs-darcs
     SUBDIR += hs-ghc-events
