@@ -1,6 +1,6 @@
 PORTNAME=	mod_tls
 PORTVERSION=	0.14.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www security
 MASTER_SITES=	https://github.com/icing/mod_tls/releases/download/v${DISTVERSION}/
 PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}
