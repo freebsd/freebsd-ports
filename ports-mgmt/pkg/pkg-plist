@@ -42,6 +42,7 @@ share/man/man8/pkg-query.8.gz
 share/man/man8/pkg-register.8.gz
 share/man/man8/pkg-remove.8.gz
 share/man/man8/pkg-repo.8.gz
+share/man/man8/pkg-repositories.8.gz
 share/man/man8/pkg-rquery.8.gz
 share/man/man8/pkg-search.8.gz
 share/man/man8/pkg-set.8.gz
