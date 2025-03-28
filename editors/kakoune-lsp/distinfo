@@ -1,4 +1,4 @@
-TIMESTAMP = 1741199391
+TIMESTAMP = 1743156159
 SHA256 (rust/crates/addr2line-0.24.2.crate) = dfbe277e56a376000877090da837660b4427aad530e3028d44e0bffe4f89a1c1
 SIZE (rust/crates/addr2line-0.24.2.crate) = 39015
 SHA256 (rust/crates/adler2-2.0.0.crate) = 512761e0bb2578dd7380c6baaa0f4ce03e84f95e960231d1dec8bf4d7d6e2627
@@ -555,5 +555,5 @@ SHA256 (rust/crates/zerocopy-0.7.35.crate) = 1b9b4fd18abc82b8136838da5d50bae7bde
 SIZE (rust/crates/zerocopy-0.7.35.crate) = 152645
 SHA256 (rust/crates/zerocopy-derive-0.7.35.crate) = fa4f8080344d4671fb4e831a13ad1e68092748387dfc4f55e356242fae12ce3e
 SIZE (rust/crates/zerocopy-derive-0.7.35.crate) = 37829
-SHA256 (kakoune-lsp-kakoune-lsp-v18.1.2_GH0.tar.gz) = d3087c0f78f42d3ad30ccaa64f192a88f646e40615b7e4986c53165019f34934
-SIZE (kakoune-lsp-kakoune-lsp-v18.1.2_GH0.tar.gz) = 178625
+SHA256 (kakoune-lsp-kakoune-lsp-v18.1.3_GH0.tar.gz) = b819358d0f0972c499aa3fbe7841fcc356b710b99653ea864c6905c8c26ce2df
+SIZE (kakoune-lsp-kakoune-lsp-v18.1.3_GH0.tar.gz) = 179841
