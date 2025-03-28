@@ -1,46 +1,29 @@
 PORTNAME=	kde
-DISTVERSION=	${KDE_PLASMA_VERSION}.${KDE_APPLICATIONS_VERSION}
+PORTVERSION=	${KDE_PLASMA_VERSION}.${KDE_APPLICATIONS_VERSION}
+PORTREVISION=	1
 CATEGORIES=	x11 kde
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE Plasma Desktop and Applications (meta port)
 WWW=		https://www.kde.org
 
-RUN_DEPENDS=	kde-baseapps>=0:x11/kde-baseapps \
-		kwalletmanager5:security/kwalletmanager \
-		plasma6-plasma>=0:x11/plasma6-plasma \
-		kf6-frameworks>=0:x11/kf6-frameworks
+RUN_DEPENDS=	kde-baseapps>=${KDE_APPLICATIONS_VERSION}:x11/kde-baseapps \
+		plasma6-plasma>=${KDE_PLASMA_VERSION}:x11/plasma6-plasma
 
 USES=		kde:6 metaport qt:6
 USE_QT=		# empty
 
-OPTIONS_DEFINE=	KDEADMIN KDEEDU KDEGAMES KDEGRAPHICS KDEMULTIMEDIA KDENETWORK \
-		KDEPIM KDEUTILS
+# The official VLC backend can be used, but vlc port still uses Qt5 for GUI.
+OPTIONS_DEFAULT=	MPV
+OPTIONS_MULTI=	PHONON
+OPTIONS_MULTI_PHONON=	MPV VLC
 
-OPTIONS_DEFAULT=${OPTIONS_DEFINE}
+PHONON_DESC=	Phonon multimedia backend
 
-KDEADMIN_DESC=		Administration utilities
-KDEADMIN_RUN_DEPENDS=	kdeadmin>=${KDE_APPLICATIONS_VERSION}:sysutils/kdeadmin
+MPV_DESC=	mpv backend
+MPV_USE=	KDE=phonon-mpv
 
-KDEEDU_DESC=		Entertaining, educational programs
-KDEEDU_RUN_DEPENDS=	kdeedu>=${KDE_APPLICATIONS_VERSION}:misc/kdeedu
-
-KDEGAMES_DESC=		Collection of games
-KDEGAMES_RUN_DEPENDS=	kdegames>=${KDE_APPLICATIONS_VERSION}:games/kdegames
-
-KDEGRAPHICS_DESC=	Graphics utilities
-KDEGRAPHICS_RUN_DEPENDS=	kdegraphics>=${KDE_APPLICATIONS_VERSION}:graphics/kdegraphics
-
-KDEMULTIMEDIA_DESC=	Multimedia applications
-KDEMULTIMEDIA_RUN_DEPENDS=	kdemultimedia>=${KDE_APPLICATIONS_VERSION}:multimedia/kdemultimedia
-
-KDENETWORK_DESC=	Network-related programs
-KDENETWORK_RUN_DEPENDS=	kdenetwork>=${KDE_APPLICATIONS_VERSION}:net/kdenetwork
-
-KDEPIM_DESC=		Personal information management
-KDEPIM_RUN_DEPENDS=	kdepim>=${KDE_APPLICATIONS_VERSION}:deskutils/kdepim
-
-KDEUTILS_DESC=		Collection of utilities for KDE
-KDEUTILS_RUN_DEPENDS=	kdeutils>=${KDE_APPLICATIONS_VERSION}:misc/kdeutils
+VLC_DESC=	VLC backend (depends on Qt5 packages)
+VLC_USE=	KDE=phonon-vlc
 
 .include <bsd.port.mk>
