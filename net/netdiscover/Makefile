@@ -1,5 +1,5 @@
 PORTNAME=	netdiscover
-DISTVERSION=	0.10
+DISTVERSION=	0.11
 CATEGORIES=	net
 
 MAINTAINER=	tiago.gasiba@gmail.com
@@ -9,7 +9,7 @@ WWW=		https://github.com/netdiscover-scanner/netdiscover
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=	autoreconf
+USES=		autoreconf
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	netdiscover-scanner
