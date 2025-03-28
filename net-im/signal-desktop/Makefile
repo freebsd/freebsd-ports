@@ -1,7 +1,6 @@
 PORTNAME=	signal-desktop
 DISTVERSIONPREFIX=	v
-DISTVERSION=	7.46.0
-PORTREVISION=	1
+DISTVERSION=	7.48.0
 CATEGORIES=	net-im
 MASTER_SITES=	LOCAL/mikael/signal-desktop/:npm \
 		https://build-artifacts.signal.org/desktop/:sqlcipher
@@ -81,7 +80,7 @@ MAKE_ENV+=	PYTHONDONTWRITEBYTECODE=1
 
 _BUILD_DATE=	$$(date +'%s')
 
-ELECTRON_VER_MAJOR=	34
+ELECTRON_VER_MAJOR=	32
 
 SQLCIPHER=	sqlcipher-v2-4.6.1-signal-patch2--0.2.1-asm2-6253f886c40e49bf892d5cdc92b2eb200b12cd8d80c48ce5b05967cfd01ee8c7
 
@@ -100,8 +99,8 @@ PLIST_SUB+=	NOT_AARCH64=""
 .endif
 
 do-build:
-# electron-builder is stupid and tries to open ${LOCALBASE}/share/electron34/electron with WRITE priv
-# copy ${LOCALBASE}/share/electron34 in WRKDIR
+# electron-builder is stupid and tries to open ${LOCALBASE}/share/electron32/electron with WRITE priv
+# copy ${LOCALBASE}/share/electron32 in WRKDIR
 # it's needed for the do-install phase, it's here because of this issue
 # https://github.com/MikaelUrankar/signal-desktop/issues/6 (I don't know why it fails though)
 	@${RM} -r ${WRKDIR}/electron${ELECTRON_VER_MAJOR}
@@ -109,7 +108,7 @@ do-build:
 	${CHMOD} -R a+w ${WRKDIR}/electron${ELECTRON_VER_MAJOR}
 
 	${ECHO_CMD} offline=true >> ${WRKSRC}/.npmrc
-	${ECHO_CMD} store-dir=true >> ${WRKSRC}/pnpm-store
+	${ECHO_CMD} store-dir=true >> ${WRKSRC}/.pnpm-store
 
 	${CP} ${FILESDIR}/package-lock.json ${WRKSRC}
 	${CP} ${FILESDIR}/pnpm-lock.yaml ${WRKSRC}
@@ -161,9 +160,9 @@ do-install:
 	${RM} -r ${STAGEDIR}${DATADIR}/resources/completions
 	${RLN} ${STAGEDIR}${DATADIR}/signal-desktop ${STAGEDIR}${PREFIX}/bin
 
-# This seems to be only required for Windows:
-	${RM} -r ${STAGEDIR}${DATADIR}/resources/app.asar.unpacked/node_modules/@nodert-win10-rs4
-	${RM} -r ${STAGEDIR}${DATADIR}/resources/app.asar.unpacked/node_modules/@signalapp/windows-dummy-keystroke
+## This seems to be only required for Windows:
+#	${RM} -r ${STAGEDIR}${DATADIR}/resources/app.asar.unpacked/node_modules/@nodert-win10-rs4
+#	${RM} -r ${STAGEDIR}${DATADIR}/resources/app.asar.unpacked/node_modules/@signalapp/windows-dummy-keystroke
 	${RM} -r ${STAGEDIR}${DATADIR}/resources/app.asar.unpacked/node_modules/pnpm
 
 create-caches-tarball:
