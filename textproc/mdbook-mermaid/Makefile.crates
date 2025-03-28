@@ -128,4 +128,8 @@ CARGO_CRATES=	aho-corasick-1.1.2 \
 		windows_x86_64_gnullvm-0.52.0 \
 		windows_x86_64_msvc-0.48.5 \
 		windows_x86_64_msvc-0.52.0 \
+		xflags-0.3.2 \
+		xflags-macros-0.3.2 \
+		xshell-0.2.7 \
+		xshell-macros-0.2.7 \
 		yansi-0.5.1
