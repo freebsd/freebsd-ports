@@ -1,6 +1,6 @@
 PORTNAME=	rash
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.9.6
+DISTVERSION=	2.9.7
 CATEGORIES=	misc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -56,8 +56,8 @@ CARGO_CRATES=	ahash-0.7.8 \
 		ciborium-0.2.2 \
 		ciborium-io-0.2.2 \
 		ciborium-ll-0.2.2 \
-		clap-4.5.32 \
-		clap_builder-4.5.32 \
+		clap-4.5.34 \
+		clap_builder-4.5.34 \
 		clap_complete-4.5.12 \
 		clap_derive-4.5.32 \
 		clap_lex-0.7.4 \
@@ -139,7 +139,7 @@ CARGO_CRATES=	ahash-0.7.8 \
 		libredox-0.1.3 \
 		linux-raw-sys-0.4.14 \
 		linux-raw-sys-0.9.2 \
-		log-0.4.26 \
+		log-0.4.27 \
 		mdbook-0.4.47 \
 		memchr-2.7.4 \
 		memo-map-0.3.2 \
