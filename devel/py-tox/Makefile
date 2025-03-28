@@ -1,5 +1,5 @@
 PORTNAME=	tox
-DISTVERSION=	4.24.2
+DISTVERSION=	4.25.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -21,21 +21,16 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cachetools>=5.3.2:devel/py-cachetools@${PY_F
 		${PYTHON_PKGNAMEPREFIX}platformdirs>=4.1:devel/py-platformdirs@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pluggy>=1.3:devel/py-pluggy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyproject_api>=1.6.1:devel/py-pyproject-api@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}virtualenv>=20.25:devel/py-virtualenv@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}virtualenv>=20.25:devel/py-virtualenv@${PY_FLAVOR} \
+		${PY_TOMLI}
 
 USES=		python
 USE_PYTHON=	autoplist concurrent pep517
 
 NO_ARCH=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${PYTHON_REL} < 31100
-RUN_DEPENDS+=	${PY_TOMLI}
-.endif
-
 # tox.ini clobbers our pytest arguments
 post-extract:
 	${RM} ${WRKSRC}/tox.ini
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
