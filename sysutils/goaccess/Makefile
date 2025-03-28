@@ -1,7 +1,12 @@
 PORTNAME=	goaccess
 PORTVERSION=	1.9.3
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	https://tar.goaccess.io/
+PATCH_SITES=	https://github.com/allinurl/goaccess/commit/
+PATCHFILES+=	fabd329.patch:-p1 8b37622.patch:-p1	# PR 2693
+PATCHFILES+=	58219b2.patch:-p1			# PR 2739
+PATCHFILES+=	edf8a85.patch:-p1			# PR 2801
 
 MAINTAINER=	adamw@FreeBSD.org
 COMMENT=	Real-time web log analyzer
