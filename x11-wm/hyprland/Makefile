@@ -1,6 +1,7 @@
 PORTNAME=	hyprland
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.48.0
+PORTREVISION=	1
 CATEGORIES=	x11-wm wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -50,8 +51,10 @@ GH_HASH=	5ee35f914f921e5696030698e74fb5566a804768
 LIB_DEPENDS+=	libepoll-shim.so:devel/libepoll-shim
 .endif
 
-OPTIONS_DEFINE=	X11
-OPTIONS_DEFAULT=X11
+OPTIONS_DEFINE=	QT6 X11
+OPTIONS_DEFAULT=QT6 X11
+
+QT6_RUN_DEPENDS=	hyprland-dialog:x11/hyprland-qtutils
 
 X11_USE=		XORG=xcb
 X11_LIB_DEPENDS=	libxcb-errors.so:x11/xcb-util-errors \
