@@ -1,8 +1,8 @@
 PORTNAME=	nnn
 DISTVERSIONPREFIX=	v
-DISTVERSION=	5.0
+DISTVERSION=	5.1
 CATEGORIES=	misc shells
-MASTER_SITES=   GH
+MASTER_SITES=	https://github.com/jarun/${PORTNAME}/releases/download/${DISTVERSIONFULL}/
 
 MAINTAINER=	thindil@laeran.pl.eu.org
 COMMENT=	Missing terminal file browser for X
@@ -14,14 +14,14 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 RUN_DEPENDS=	gsed:textproc/gsed
 
 USES=		compiler:c11 gmake localbase ncurses readline
-USE_GITHUB=	yes
-GH_ACCOUNT=	jarun
 
 MAKE_ARGS=	CFLAGS_OPTIMIZATION= \
 		LDLIBS_CURSES=-lncursesw \
 		MANPREFIX=${PREFIX}/share/man \
-		PKG_CONFIG=/usr/bin/true \
-		STRIP_CMD="${STRIP_CMD}"
+		PKG_CONFIG=/usr/bin/true
+INSTALL_TARGET=	strip install
+
+WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
 
 PLIST_FILES=	bin/nnn \
 		etc/bash_completion.d/nnn-completion.bash \
