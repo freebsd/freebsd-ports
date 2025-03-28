@@ -1,6 +1,6 @@
 PORTNAME=	ringrtc
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.50.1
+DISTVERSION=	2.50.2
 CATEGORIES=	multimedia
 MASTER_SITES=	LOCAL/mikael/ringrtc/:base \
 		LOCAL/mikael/ringrtc/:boringssl \
@@ -64,7 +64,7 @@ GH_TUPLE=	signalapp:ringrtc:${DISTVERSIONPREFIX}${DISTVERSION} \
 		signalapp:webrtc:${WEBRTC_REV}:webrtc
 
 # sh net-im/signal-desktop/get_deps.sh
-WEBRTC_REV=	6834e
+WEBRTC_REV=	6834f
 
 # modify webrtc_fetch.sh, then sh webrtc_fetch.sh
 BASE_REV=		69f3676cdbd05660c136a6cc3b23383cbabe53d8
@@ -89,7 +89,7 @@ TOOLS_REV=		c809c4133185094fbd75508202221ff14fc92f7c
 
 BINARY_ALIAS=	vpython3=${PYTHON_CMD}
 
-# Keep in sync with https://github.com/signalapp/ringrtc/blob/v${DISTVERSION}/bin/build-electron#L101
+# Keep in sync with https://github.com/signalapp/ringrtc/blob/v${DISTVERSION}/bin/build-electron#L119
 # Run "gn args out/release --list" for all variables.
 # Some parts don't have use_system_* flag, and can be turned on/off by using
 # replace_gn_files.py script, some parts just turned on/off for target host
@@ -101,7 +101,8 @@ GN_ARGS+=	rtc_build_examples=false \
 		rtc_use_x11=false \
 		rtc_enable_sctp=false \
 		rtc_libvpx_build_vp9=true \
-		rtc_include_ilbc=false \
+		rtc_disable_metrics=true \
+		rtc_disable_trace_events=true \
 		clang_use_chrome_plugins=false \
 		fatal_linker_warnings=false \
 		is_clang=true \
