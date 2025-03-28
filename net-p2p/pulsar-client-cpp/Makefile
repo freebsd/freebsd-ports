@@ -13,7 +13,6 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 ONLY_FOR_ARCHS=	amd64 i386 # due to requirement of instruction sets crc32, pclmul
-BROKEN=		compilation fails with boost-libs-1.87.0, see https://github.com/apache/pulsar-client-cpp/issues/475
 BROKEN_i386=	compilation fails due to overflow, see https://github.com/apache/pulsar-client-cpp/issues/449
 
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/algorithm/string.hpp:devel/boost-libs
