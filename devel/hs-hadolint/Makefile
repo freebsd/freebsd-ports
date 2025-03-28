@@ -1,0 +1,107 @@
+PORTNAME=	hadolint
+DISTVERSION=	2.12.0
+CATEGORIES=	devel haskell
+
+MAINTAINER=	tiago.gasiba@gmail.com
+COMMENT=	Dockerfile linter, validate inline bash, written in Haskell
+WWW=		https://github.com/hadolint/hadolint
+
+LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+USES=		cabal
+USE_LOCALE=	en_US.UTF-8
+
+USE_CABAL=	Diff-1.0.2 \
+		HUnit-1.6.2.0 \
+		HsYAML-0.2.1.5 \
+		OneTuple-0.4.2_1 \
+		QuickCheck-2.15.0.1_1 \
+		ShellCheck-0.10.0_1 \
+		StateVar-1.2.2 \
+		aeson-2.2.3.0_3 \
+		ansi-terminal-1.1.2 \
+		ansi-terminal-types-1.1 \
+		assoc-1.1.1_1 \
+		attoparsec-0.14.4_6 \
+		base-compat-0.14.1 \
+		base-orphans-0.9.3 \
+		basement-0.0.16 \
+		bifunctors-5.6.2_2 \
+		call-stack-0.4.0 \
+		case-insensitive-1.2.1.0 \
+		character-ps-0.1 \
+		colour-2.3.6 \
+		colourista-0.1.0.2_6 \
+		commutative-semigroups-0.2.0.2 \
+		comonad-5.0.9_1 \
+		contravariant-1.5.5 \
+		cryptonite-0.30 \
+		data-default-0.8.0.1 \
+		data-default-class-0.2.0.0 \
+		data-fix-0.3.4_1 \
+		distributive-0.6.2.1_1 \
+		dlist-1.0_2 \
+		email-validate-2.3.2.21 \
+		fgl-5.8.3.0 \
+		foldl-1.4.18_1 \
+		generically-0.1.1_4 \
+		gitrev-1.3.1 \
+		hashable-1.5.0.0_1 \
+		haskell-lexer-1.2.1 \
+		hspec-2.11.12 \
+		hspec-core-2.11.12 \
+		hspec-discover-2.11.12 \
+		hspec-expectations-0.8.4_2 \
+		ilist-0.4.0.1_3 \
+		indexed-traversable-0.1.4_1 \
+		indexed-traversable-instances-0.1.2_1 \
+		integer-conversion-0.1.1_1 \
+		integer-logarithms-1.0.4 \
+		language-docker-11.0.0 \
+		megaparsec-9.7.0 \
+		memory-0.18.0_1 \
+		monoid-subclasses-1.2.6 \
+		network-uri-2.6.4.2_1 \
+		optparse-applicative-0.18.1.0_1 \
+		os-string-2.0.7 \
+		parallel-3.2.2.0_9 \
+		parser-combinators-1.3.0_1 \
+		prettyprinter-1.7.1 \
+		prettyprinter-ansi-terminal-1.1.3 \
+		primes-0.2.1.0 \
+		primitive-0.9.0.0_2 \
+		profunctors-5.6.2_3 \
+		puresat-0.1 \
+		quickcheck-io-0.2.0 \
+		random-1.2.1.3 \
+		regex-base-0.94.0.3 \
+		regex-tdfa-1.3.2.3 \
+		scientific-0.3.8.0_2 \
+		semialign-1.3.1_2 \
+		semigroupoids-6.0.1_2 \
+		semver-0.4.0.1_1 \
+		silently-1.2.5.4 \
+		spdx-1.1 \
+		split-0.2.5 \
+		splitmix-0.1.1 \
+		strict-0.5.1_1 \
+		tagged-0.8.9 \
+		tasty-1.5.3_1 \
+		text-iso8601-0.1.1_2 \
+		text-short-0.1.6_3 \
+		tf-random-0.5 \
+		th-abstraction-0.7.1.0_1 \
+		th-compat-0.1.6 \
+		these-1.2.1_2 \
+		time-compat-1.9.8 \
+		timerep-2.1.0.0 \
+		transformers-compat-0.7.2 \
+		unordered-containers-0.2.20_4 \
+		uuid-types-1.0.6_2 \
+		vector-0.13.2.0_1 \
+		vector-stream-0.1.0.1_3 \
+		void-0.7.3 \
+		witherable-0.5_1
+
+.include <bsd.port.mk>

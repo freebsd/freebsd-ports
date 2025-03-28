@@ -993,6 +993,7 @@
     SUBDIR += hs-ghcprofview
     SUBDIR += hs-git-annex
     SUBDIR += hs-git-brunch
+    SUBDIR += hs-hadolint
     SUBDIR += hs-happy
     SUBDIR += hs-haskell-language-server
     SUBDIR += hs-hasktags
