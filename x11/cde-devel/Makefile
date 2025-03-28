@@ -1,6 +1,6 @@
 PORTNAME=	cde
 PORTVERSION=	${COMMIT_DATE}
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	x11
 .if !defined(MASTERDIR)
 PKGNAMESUFFIX=	-devel
@@ -72,6 +72,9 @@ CFLAGS+=	-Wno-register -Wno-incompatible-function-pointer-types \
 		-Wno-implicit-function-declaration
 LDFLAGS+=	-z muldefs #--allow-multiple-definition
 
+CFFILES=	Xaccess Xconfig Xfailsafe Xreset Xservers Xsetup Xstartup \
+		sys.dtprofile
+
 pre-configure:
 	@cd ${WRKSRC} && ./autogen.sh
 
@@ -130,5 +133,8 @@ post-install:
 	@cd ${STAGEDIR}/${DT_PREFIX}; ${LN} -sf share/examples
 	# Only a problem on armv7 so far
 	${FIND} ${STAGEDIR}/${DT_PREFIX} -type f -name 'ecp.*' -delete
+.for f in ${CFFILES}
+	@${MV} ${STAGEDIR}${PREFIX}/dt/config/${f} ${STAGEDIR}${PREFIX}/dt/config/${f}.sample
+.endfor
 
 .include <bsd.port.mk>

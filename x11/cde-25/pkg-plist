@@ -2588,23 +2588,23 @@ dt%%DT_ID%%/config/C/sys.dtwmrc
 dt%%DT_ID%%/config/C/sys.font
 dt%%DT_ID%%/config/C/sys.resources
 dt%%DT_ID%%/config/C/sys.session
-dt%%DT_ID%%/config/Xaccess
-dt%%DT_ID%%/config/Xconfig
-dt%%DT_ID%%/config/Xfailsafe
-dt%%DT_ID%%/config/Xreset
-dt%%DT_ID%%/config/Xservers
+@sample dt%%DT_ID%%/config/Xaccess.sample
+@sample dt%%DT_ID%%/config/Xconfig.sample
+@sample dt%%DT_ID%%/config/Xfailsafe.sample
+@sample dt%%DT_ID%%/config/Xreset.sample
+@sample dt%%DT_ID%%/config/Xservers.sample
 dt%%DT_ID%%/config/Xsession.d/0010.dtpaths
 dt%%DT_ID%%/config/Xsession.d/0020.dtims
 dt%%DT_ID%%/config/Xsession.d/0030.dttmpdir
 dt%%DT_ID%%/config/Xsession.d/0060.dtsysenv
-dt%%DT_ID%%/config/Xsetup
-dt%%DT_ID%%/config/Xstartup
+@sample dt%%DT_ID%%/config/Xsetup.sample
+@sample dt%%DT_ID%%/config/Xstartup.sample
 dt%%DT_ID%%/config/dtspcdenv
 dt%%DT_ID%%/config/dtterm.ti
 dt%%DT_ID%%/config/en_US.UTF-8
 dt%%DT_ID%%/config/ims/start.conf
 dt%%DT_ID%%/config/svc/CDE.lcx
-dt%%DT_ID%%/config/sys.dtprofile
+@sample dt%%DT_ID%%/config/sys.dtprofile.sample
 dt%%DT_ID%%/copyright
 dt%%DT_ID%%/%%ETCDIR%%/fontaliases/fonts.alias
 dt%%DT_ID%%/examples
