@@ -55,7 +55,8 @@ GH_TAGNAME=	esp-2.41.0_${ESPDATE}:github1 \
 		esp-4.3.0_${ESPDATE}:github3 \
 		${TAG_WRAPPERS}:github4
 BINARY_ALIAS=	g++=${CXX} gcc=${CC} python=${PYTHON_VERSION}
-BUILD_ENV=	CT_ALLOW_BUILD_AS_ROOT_SURE=1 \
+BUILD_ENV=	${WRK_ENV} \
+		CT_ALLOW_BUILD_AS_ROOT_SURE=1 \
 		CT_FORBID_DOWNLOAD=y \
 		GREP=${LOCALBASE}/bin/grep \
 		LD_RUN_PATH=${PREFIX}/lib/${CC} \
@@ -117,12 +118,12 @@ post-extract:
 do-configure:
 	cd ${BUILD_WRKSRC} && ./bootstrap
 	cd ${BUILD_WRKSRC} && \
-	    ${SETENV} ${BUILD_ENV} LIBS=-lintl \
+	    ${SETENVI} ${BUILD_ENV} LIBS=-lintl \
 	    ./configure --prefix=${WRKDIR}/ct-ng --exec-prefix=${WRKDIR}/ct-ng
 	cd ${BUILD_WRKSRC} && \
-	    ${SETENV} -uMAKELEVEL -uMAKEFLAGS -u.MAKE.LEVEL.ENV ${BUILD_ENV} \
+	    ${SETENVI} -uMAKELEVEL -uMAKEFLAGS -u.MAKE.LEVEL.ENV ${BUILD_ENV} \
 	    ${MAKE_CMD} install && \
-	    ${SETENV} ${BUILD_ENV} ./ct-ng xtensa-esp-elf
+	    ${SETENVI} ${BUILD_ENV} ./ct-ng xtensa-esp-elf
 
 	# xtensa-toolchian-wrapper
 	${MKDIR} ${WRKDIR}/.cargo
@@ -139,7 +140,7 @@ do-configure:
 	    ${CARGO_UPDATE_ARGS}
 
 do-build:
-	cd ${BUILD_WRKSRC} && ${SETENV} ${BUILD_ENV} ./ct-ng build
+	cd ${BUILD_WRKSRC} && ${SETENVI} ${BUILD_ENV} ./ct-ng build
 	cd ${BUILD_WRKSRC}/builds/${PORTNAME} && \
 	    ${CHMOD} +w . lib && \
 	    ${RM} build.log.bz2 lib/charset.alias && \
