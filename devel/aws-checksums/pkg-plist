@@ -1,3 +1,4 @@
+include/aws/checksums/checksums.h
 include/aws/checksums/crc.h
 include/aws/checksums/exports.h
 lib/cmake/aws-checksums/aws-checksums-config.cmake
