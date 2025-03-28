@@ -1,6 +1,7 @@
 PORTNAME=	opentimelineio
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.17.0
+PORTREVISION=	1
 CATEGORIES=	multimedia
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -22,6 +23,7 @@ GH_PROJECT=	OpenTimelineIO
 GH_TUPLE=	Tencent:rapidjson:06d58b9e848c650114556a23294d0b6440078c61:Tencent_rapidjson/src/deps/rapidjson
 
 CMAKE_ON=	OTIO_FIND_IMATH
+CMAKE_OFF=	OTIO_DEPENDENCIES_INSTALL
 
 PORTSCOUT=	limit:^.*[0-9]$$ # should end with a digit to prevent tags like last_pure_python
 
