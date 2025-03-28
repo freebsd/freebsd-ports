@@ -1,11 +1,11 @@
 PORTNAME=	lme4
-DISTVERSION=	1.1-36
+DISTVERSION=	1.1-37
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Linear mixed-effects models using Eigen and S4
-WWW=		https://cran.r-project.org/web/packages/lme4/
+WWW=		https://cran.r-project.org/package=lme4
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE.note
