@@ -1,3 +1,5 @@
-TIMESTAMP = 1730561387
-SHA256 (hyprwm-hypridle-v0.1.5_GH0.tar.gz) = 174d4b4706ec5c79e6d80a7cc3b297b5564c923f60f408c1638b55424a998a4b
-SIZE (hyprwm-hypridle-v0.1.5_GH0.tar.gz) = 13946
+TIMESTAMP = 1743171426
+SHA256 (hyprwm-hypridle-v0.1.6_GH0.tar.gz) = ea4faf92e7ef303a538551e2b0ea67a557b2d711574993a5a3fea3b27667dc63
+SIZE (hyprwm-hypridle-v0.1.6_GH0.tar.gz) = 17053
+SHA256 (hyprwm-hyprland-protocols-v0.6.2_GH0.tar.gz) = bba082af141599d4342e7b8505401a6e3a32be819d9eb23ce6c90f7407e62c1f
+SIZE (hyprwm-hyprland-protocols-v0.6.2_GH0.tar.gz) = 9887
