@@ -1,0 +1,16 @@
+--- CMakeLists.txt.orig	2025-03-28 04:04:41 UTC
++++ CMakeLists.txt
+@@ -25,11 +25,11 @@ endif()
+     endif()
+ endif()
+ 
+-add_library(lace STATIC
++add_library(lace
+     ${CMAKE_CURRENT_SOURCE_DIR}/src/lace.c
+     ${CMAKE_CURRENT_SOURCE_DIR}/src/lace.h
+ )
+-add_library(lace14 STATIC
++add_library(lace14
+     ${CMAKE_CURRENT_SOURCE_DIR}/src/lace14.c
+     ${CMAKE_CURRENT_SOURCE_DIR}/src/lace14.h
+ )
