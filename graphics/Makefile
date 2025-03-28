@@ -341,6 +341,7 @@
     SUBDIR += hiptext
     SUBDIR += hobbes-icons-xpm
     SUBDIR += hppsmtools
+    SUBDIR += hs-tart
     SUBDIR += hugin
     SUBDIR += hyprgraphics
     SUBDIR += icat

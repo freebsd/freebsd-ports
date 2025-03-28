@@ -1,0 +1,4 @@
+Tart is a program that provides an image-editor-like interface to
+creating ASCII art - in the terminal, with your mouse! This
+program is written using Brick, a purely-functional terminal user
+interface toolkit.
