@@ -1,3 +1,36 @@
+  <vuln vid="01a7e1e1-d249-4dd8-9a4a-ef95b5747afb">
+    <topic>electron{33,34} -- Incorrect handle provided in unspecified circumstances in Mojo</topic>
+    <affects>
+      <package>
+	<name>electron33</name>
+	<range><lt>33.4.8</lt></range>
+      </package>
+      <package>
+	<name>electron34</name>
+	<range><lt>34.4.1</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Electron developers report:</p>
+	<blockquote cite="https://github.com/electron/electron/releases/tag/v33.4.8">
+	  <p>This update fixes the following vulnerability:</p>
+	  <ul>
+	    <li>Security: backported fix for CVE-2025-2783.</li>
+	  </ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-2783</cvename>
+      <url>https://github.com/advisories/GHSA-hfqm-jfc6-rh2f</url>
+    </references>
+    <dates>
+      <discovery>2025-03-27</discovery>
+      <entry>2025-03-28</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="1daa2814-0a6c-11f0-b4e4-2cf05da270f3">
     <topic>Gitlab -- Vulnerabilities</topic>
     <affects>
