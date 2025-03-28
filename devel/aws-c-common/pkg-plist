@@ -53,7 +53,7 @@ include/aws/common/math.gcc_overflow.inl
 include/aws/common/math.gcc_x64_asm.inl
 include/aws/common/math.h
 include/aws/common/math.inl
-include/aws/common/math.msvc.inl
+include/aws/common/math.msvc_x64.inl
 include/aws/common/mutex.h
 include/aws/common/package.h
 include/aws/common/platform.h
