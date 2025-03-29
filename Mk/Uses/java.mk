@@ -226,7 +226,7 @@ _JAVA_PORT_NATIVE_OPENJDK_JDK_22_INFO=		PORT=java/openjdk22			HOME=${LOCALBASE}/
 											VERSION=22	OS=native	VENDOR=openjdk
 _JAVA_PORT_NATIVE_OPENJDK_JDK_23_INFO=		PORT=java/openjdk23			HOME=${LOCALBASE}/openjdk23 \
 											VERSION=23	OS=native	VENDOR=openjdk
-_JAVA_PORT_NATIVE_OPENJDK_JDK_23_INFO=		PORT=java/openjdk24			HOME=${LOCALBASE}/openjdk24 \
+_JAVA_PORT_NATIVE_OPENJDK_JDK_24_INFO=		PORT=java/openjdk24			HOME=${LOCALBASE}/openjdk24 \
 											VERSION=24	OS=native	VENDOR=openjdk
 _JAVA_PORT_LINUX_ORACLE_JDK_8_INFO=		PORT=java/linux-oracle-jdk18	HOME=${LOCALBASE}/linux-oracle-jdk1.8.0 \
 											VERSION=8	OS=linux	VENDOR=oracle
