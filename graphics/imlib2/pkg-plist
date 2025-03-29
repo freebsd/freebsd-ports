@@ -18,8 +18,10 @@ lib/imlib2/loaders/bmp.so
 lib/imlib2/loaders/bz2.so
 lib/imlib2/loaders/ff.so
 %%GIF%%lib/imlib2/loaders/gif.so
+%%HEIF%%lib/imlib2/loaders/heif.so
 lib/imlib2/loaders/ico.so
 %%ID3%%lib/imlib2/loaders/id3.so
+%%OPENJPEG%%lib/imlib2/loaders/j2k.so
 %%JPEG%%lib/imlib2/loaders/jpeg.so
 %%JXL%%lib/imlib2/loaders/jxl.so
 lib/imlib2/loaders/lbm.so
