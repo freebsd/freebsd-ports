@@ -11,6 +11,8 @@ WWW=		https://github.com/trolando/lace
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_i386=	compilation fails: static assertion failed due to requirement '(sizeof(struct _Task) % 64) == 0': Task size should be a multiple of LINE_SIZE
+
 USES=		cmake:testing
 
 USE_GITHUB=	yes
