@@ -1,7 +1,7 @@
 PORTNAME=	procs
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.14.9
-PORTREVISION=	2
+DISTVERSION=	0.14.10
+PORTREVISION=	0
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -29,42 +29,42 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		anstyle-parse-0.2.6 \
 		anstyle-query-1.1.2 \
 		anstyle-wincon-3.0.7 \
-		anyhow-1.0.95 \
+		anyhow-1.0.97 \
 		arrayvec-0.7.6 \
 		async-stream-0.3.6 \
 		async-stream-impl-0.3.6 \
-		async-trait-0.1.85 \
+		async-trait-0.1.88 \
 		autocfg-1.4.0 \
 		backtrace-0.3.74 \
 		base64-0.21.7 \
 		bindgen-0.65.1 \
 		bindgen-0.70.1 \
 		bitflags-1.3.2 \
-		bitflags-2.8.0 \
+		bitflags-2.9.0 \
 		bitvec-1.0.1 \
-		borsh-1.5.4 \
-		borsh-derive-1.5.4 \
+		borsh-1.5.5 \
+		borsh-derive-1.5.5 \
 		bsd-kvm-0.1.5 \
 		bsd-kvm-sys-0.2.0 \
-		bumpalo-3.16.0 \
+		bumpalo-3.17.0 \
 		byte-unit-5.1.6 \
 		bytecheck-0.6.12 \
 		bytecheck_derive-0.6.12 \
 		byteorder-1.5.0 \
-		bytes-1.9.0 \
-		cc-1.2.9 \
+		bytes-1.10.1 \
+		cc-1.2.16 \
 		cexpr-0.6.0 \
 		cfg-if-1.0.0 \
 		cfg_aliases-0.2.1 \
-		chrono-0.4.39 \
+		chrono-0.4.40 \
 		clang-sys-1.8.1 \
-		clap-4.5.26 \
-		clap_builder-4.5.26 \
-		clap_complete-4.5.42 \
-		clap_derive-4.5.24 \
+		clap-4.5.32 \
+		clap_builder-4.5.32 \
+		clap_complete-4.5.46 \
+		clap_derive-4.5.32 \
 		clap_lex-0.7.4 \
 		colorchoice-1.0.3 \
-		console-0.15.10 \
+		console-0.15.11 \
 		core-foundation-sys-0.8.7 \
 		crc32fast-1.4.2 \
 		crossbeam-channel-0.5.14 \
@@ -78,17 +78,17 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		dirs-sys-0.4.1 \
 		dirs-sys-0.5.0 \
 		displaydoc-0.2.5 \
-		dockworker-0.5.1 \
+		dockworker-0.6.0 \
 		downcast-0.11.0 \
-		either-1.13.0 \
+		either-1.15.0 \
 		encode_unicode-1.0.0 \
 		env_home-0.1.0 \
-		equivalent-1.0.1 \
+		equivalent-1.0.2 \
 		errno-0.2.8 \
 		errno-0.3.10 \
 		errno-dragonfly-0.1.2 \
 		filetime-0.2.25 \
-		flate2-1.0.35 \
+		flate2-1.1.0 \
 		fnv-1.0.7 \
 		form_urlencoded-1.2.1 \
 		fragile-2.0.0 \
@@ -112,7 +112,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		home-0.5.11 \
 		http-0.2.12 \
 		http-body-0.4.6 \
-		httparse-1.9.5 \
+		httparse-1.10.1 \
 		httpdate-1.0.3 \
 		hyper-0.14.32 \
 		hyperlocal-0.8.0 \
@@ -130,25 +130,27 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		icu_provider_macros-1.5.0 \
 		idna-1.0.3 \
 		idna_adapter-1.2.0 \
-		indexmap-2.7.0 \
+		indexmap-2.8.0 \
 		is_terminal_polyfill-1.70.1 \
 		itertools-0.13.0 \
-		itoa-1.0.14 \
+		itoa-1.0.15 \
 		js-sys-0.3.77 \
 		lazy_static-1.5.0 \
 		lazycell-1.3.0 \
-		libc-0.2.169 \
+		libc-0.2.171 \
 		libloading-0.8.6 \
 		libproc-0.14.10 \
 		libredox-0.1.3 \
 		linux-raw-sys-0.4.15 \
+		linux-raw-sys-0.9.3 \
 		litemap-0.7.4 \
 		lock_api-0.4.12 \
-		log-0.4.25 \
+		log-0.4.26 \
+		mach2-0.4.2 \
 		memchr-2.7.4 \
 		memoffset-0.7.1 \
 		minimal-lexical-0.2.1 \
-		miniz_oxide-0.8.3 \
+		miniz_oxide-0.8.5 \
 		minus-5.6.1 \
 		mio-0.8.11 \
 		mio-1.0.3 \
@@ -162,35 +164,35 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		num-traits-0.2.19 \
 		num_threads-0.1.7 \
 		object-0.36.7 \
-		once_cell-1.20.2 \
+		once_cell-1.21.2 \
 		option-ext-0.2.0 \
 		pager-0.16.1 \
 		parking_lot-0.12.3 \
 		parking_lot_core-0.9.10 \
 		peeking_take_while-0.1.2 \
 		percent-encoding-2.3.1 \
-		pin-project-1.1.8 \
-		pin-project-internal-1.1.8 \
+		pin-project-1.1.10 \
+		pin-project-internal-1.1.10 \
 		pin-project-lite-0.2.16 \
 		pin-utils-0.1.0 \
 		powerfmt-0.2.0 \
-		ppv-lite86-0.2.20 \
+		ppv-lite86-0.2.21 \
 		predicates-3.1.3 \
 		predicates-core-1.0.9 \
 		predicates-tree-1.0.12 \
-		prettyplease-0.2.29 \
-		proc-macro-crate-3.2.0 \
-		proc-macro2-1.0.93 \
+		prettyplease-0.2.31 \
+		proc-macro-crate-3.3.0 \
+		proc-macro2-1.0.94 \
 		procfs-0.17.0 \
 		procfs-core-0.17.0 \
 		ptr_meta-0.1.4 \
 		ptr_meta_derive-0.1.4 \
-		quote-1.0.38 \
+		quote-1.0.40 \
 		radium-0.7.0 \
 		rand-0.8.5 \
 		rand_chacha-0.3.1 \
 		rand_core-0.6.4 \
-		redox_syscall-0.5.8 \
+		redox_syscall-0.5.10 \
 		redox_users-0.4.6 \
 		redox_users-0.5.0 \
 		regex-1.11.1 \
@@ -202,14 +204,15 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		rust_decimal-1.36.0 \
 		rustc-demangle-0.1.24 \
 		rustc-hash-1.1.0 \
-		rustix-0.38.43 \
-		rustversion-1.0.19 \
-		ryu-1.0.18 \
+		rustix-0.38.44 \
+		rustix-1.0.2 \
+		rustversion-1.0.20 \
+		ryu-1.0.20 \
 		scopeguard-1.2.0 \
 		seahash-4.1.0 \
-		serde-1.0.217 \
-		serde_derive-1.0.217 \
-		serde_json-1.0.135 \
+		serde-1.0.219 \
+		serde_derive-1.0.219 \
+		serde_json-1.0.140 \
 		serde_spanned-0.6.8 \
 		shlex-1.3.0 \
 		signal-hook-0.3.17 \
@@ -218,50 +221,49 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		simdutf8-0.1.5 \
 		simplelog-0.12.2 \
 		slab-0.4.9 \
-		smallvec-1.13.2 \
+		smallvec-1.14.0 \
 		socket2-0.5.8 \
 		stable_deref_trait-1.2.0 \
 		strsim-0.11.1 \
 		syn-1.0.109 \
-		syn-2.0.96 \
+		syn-2.0.100 \
 		synstructure-0.13.1 \
 		tap-1.0.1 \
-		tar-0.4.43 \
+		tar-0.4.44 \
 		termbg-0.6.2 \
 		termcolor-1.4.1 \
 		termios-0.3.3 \
 		termtree-0.5.1 \
-		textwrap-0.16.1 \
+		textwrap-0.16.2 \
 		thiserror-1.0.69 \
-		thiserror-2.0.11 \
+		thiserror-2.0.12 \
 		thiserror-impl-1.0.69 \
-		thiserror-impl-2.0.11 \
-		time-0.3.37 \
-		time-core-0.1.2 \
-		time-macros-0.2.19 \
+		thiserror-impl-2.0.12 \
+		time-0.3.39 \
+		time-core-0.1.3 \
+		time-macros-0.2.20 \
 		tinystr-0.7.6 \
-		tinyvec-1.8.1 \
+		tinyvec-1.9.0 \
 		tinyvec_macros-0.1.1 \
-		tokio-1.43.0 \
+		tokio-1.44.1 \
 		tokio-macros-2.5.0 \
 		tokio-stream-0.1.17 \
-		tokio-util-0.7.13 \
-		toml-0.8.19 \
+		tokio-util-0.7.14 \
+		toml-0.8.20 \
 		toml_datetime-0.6.8 \
-		toml_edit-0.22.22 \
+		toml_edit-0.22.24 \
 		tower-service-0.3.3 \
 		tracing-0.1.41 \
 		tracing-core-0.1.33 \
 		try-lock-0.2.5 \
-		unicode-ident-1.0.14 \
-		unicode-width-0.1.14 \
+		unicode-ident-1.0.18 \
 		unicode-width-0.2.0 \
 		url-2.5.4 \
 		utf16_iter-1.0.5 \
 		utf8-width-0.1.7 \
 		utf8_iter-1.0.4 \
 		utf8parse-0.2.2 \
-		uuid-1.12.0 \
+		uuid-1.16.0 \
 		uzers-0.12.1 \
 		version_check-0.9.5 \
 		want-0.3.1 \
@@ -272,12 +274,13 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		wasm-bindgen-macro-support-0.2.100 \
 		wasm-bindgen-shared-0.2.100 \
 		which-4.4.2 \
-		which-7.0.1 \
+		which-7.0.2 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-util-0.1.9 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
 		windows-core-0.52.0 \
+		windows-link-0.1.0 \
 		windows-sys-0.48.0 \
 		windows-sys-0.52.0 \
 		windows-sys-0.59.0 \
@@ -298,18 +301,18 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		windows_x86_64_gnullvm-0.52.6 \
 		windows_x86_64_msvc-0.48.5 \
 		windows_x86_64_msvc-0.52.6 \
-		winnow-0.6.24 \
+		winnow-0.7.4 \
 		winsafe-0.0.19 \
 		write16-1.0.0 \
 		writeable-0.5.5 \
 		wyz-0.5.1 \
-		xattr-1.4.0 \
+		xattr-1.5.0 \
 		yoke-0.7.5 \
 		yoke-derive-0.7.5 \
-		zerocopy-0.7.35 \
-		zerocopy-derive-0.7.35 \
+		zerocopy-0.8.23 \
+		zerocopy-derive-0.8.23 \
 		zerofrom-0.1.5 \
-		zerofrom-derive-0.1.5 \
+		zerofrom-derive-0.1.6 \
 		zerovec-0.10.4 \
 		zerovec-derive-0.10.3
 
