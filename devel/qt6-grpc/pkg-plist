@@ -53,6 +53,7 @@
 %%QT_INCDIR%%/QtProtobuf/%%FULLVER%%/QtProtobuf/private/protobufscalarjsonserializers_p.h
 %%QT_INCDIR%%/QtProtobuf/%%FULLVER%%/QtProtobuf/private/protobufscalarserializers_p.h
 %%QT_INCDIR%%/QtProtobuf/%%FULLVER%%/QtProtobuf/private/qprotobufdeserializerbase_p.h
+%%QT_INCDIR%%/QtProtobuf/%%FULLVER%%/QtProtobuf/private/qprotobufjsonserializer_p.h
 %%QT_INCDIR%%/QtProtobuf/%%FULLVER%%/QtProtobuf/private/qprotobufmessage_p.h
 %%QT_INCDIR%%/QtProtobuf/%%FULLVER%%/QtProtobuf/private/qprotobufpropertyorderingbuilder_p.h
 %%QT_INCDIR%%/QtProtobuf/%%FULLVER%%/QtProtobuf/private/qprotobufregistration_p.h
@@ -117,6 +118,7 @@
 %%QT_INCDIR%%/QtProtobufQuick/QtProtobufQuickVersion
 %%QT_INCDIR%%/QtProtobufQuick/qtprotobufquickexports.h
 %%QT_INCDIR%%/QtProtobufQuick/qtprotobufquickversion.h
+%%QT_INCDIR%%/QtProtobufWellKnownTypes/%%FULLVER%%/QtProtobufWellKnownTypes/private/qprotobufwellknowntypesjsonserializers_p.h
 %%QT_INCDIR%%/QtProtobufWellKnownTypes/QtProtobufWellKnownTypes
 %%QT_INCDIR%%/QtProtobufWellKnownTypes/QtProtobufWellKnownTypesDepends
 %%QT_INCDIR%%/QtProtobufWellKnownTypes/QtProtobufWellKnownTypesVersion

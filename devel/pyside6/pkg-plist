@@ -309,7 +309,6 @@ share/PySide6/typesystems/glue/plugins.h
 share/PySide6/typesystems/glue/qeasingcurve_glue.cpp
 share/PySide6/typesystems/glue/qeasingcurve_glue.h
 share/PySide6/typesystems/gui_common.xml
-share/PySide6/typesystems/opengl_common.xml
 share/PySide6/typesystems/typesystem_3danimation.xml
 share/PySide6/typesystems/typesystem_3dcore.xml
 share/PySide6/typesystems/typesystem_3dextras.xml

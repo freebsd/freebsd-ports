@@ -591,6 +591,7 @@ bin/qmake6
 %%QT_INCDIR%%/QtCore/QtProcessorDetection
 %%QT_INCDIR%%/QtCore/QtResource
 %%QT_INCDIR%%/QtCore/QtStartUpFunction
+%%QT_INCDIR%%/QtCore/QtStdLibDetection
 %%QT_INCDIR%%/QtCore/QtSwap
 %%QT_INCDIR%%/QtCore/QtSystemDetection
 %%QT_INCDIR%%/QtCore/QtTranslation
@@ -605,6 +606,7 @@ bin/qmake6
 %%QT_INCDIR%%/QtCore/q20map.h
 %%QT_INCDIR%%/QtCore/q20memory.h
 %%QT_INCDIR%%/QtCore/q20type_traits.h
+%%QT_INCDIR%%/QtCore/q20utility.h
 %%QT_INCDIR%%/QtCore/q20vector.h
 %%QT_INCDIR%%/QtCore/q23functional.h
 %%QT_INCDIR%%/QtCore/q23utility.h
@@ -789,6 +791,7 @@ bin/qmake6
 %%QT_INCDIR%%/QtCore/qstack.h
 %%QT_INCDIR%%/QtCore/qstandardpaths.h
 %%QT_INCDIR%%/QtCore/qstaticlatin1stringmatcher.h
+%%QT_INCDIR%%/QtCore/qstdlibdetection.h
 %%QT_INCDIR%%/QtCore/qstorageinfo.h
 %%QT_INCDIR%%/QtCore/qstring.h
 %%QT_INCDIR%%/QtCore/qstringalgorithms.h
@@ -2690,6 +2693,7 @@ lib/cmake/Qt6/QtPublicSbomLicenseHelpers.cmake
 lib/cmake/Qt6/QtPublicSbomOpsHelpers.cmake
 lib/cmake/Qt6/QtPublicSbomPurlHelpers.cmake
 lib/cmake/Qt6/QtPublicSbomPythonHelpers.cmake
+lib/cmake/Qt6/QtPublicSbomQtEntityHelpers.cmake
 lib/cmake/Qt6/QtPublicSbomSystemDepHelpers.cmake
 lib/cmake/Qt6/QtPublicTargetHelpers.cmake
 lib/cmake/Qt6/QtPublicTestHelpers.cmake
@@ -3068,6 +3072,14 @@ lib/cmake/Qt6Test/Qt6TestTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/Qt6Test/Qt6TestTargets.cmake
 lib/cmake/Qt6Test/Qt6TestVersionlessAliasTargets.cmake
 lib/cmake/Qt6Test/Qt6TestVersionlessTargets.cmake
+lib/cmake/Qt6TestInternalsPrivate/3rdparty/cmake/QtRunCMakeTestHelpers.cmake
+lib/cmake/Qt6TestInternalsPrivate/3rdparty/cmake/RunCMake.cmake
+lib/cmake/Qt6TestInternalsPrivate/Qt6TestInternalsPrivateConfig.cmake
+lib/cmake/Qt6TestInternalsPrivate/Qt6TestInternalsPrivateConfigVersion.cmake
+lib/cmake/Qt6TestInternalsPrivate/Qt6TestInternalsPrivateConfigVersionImpl.cmake
+lib/cmake/Qt6TestInternalsPrivate/Qt6TestInternalsPrivateTargets.cmake
+lib/cmake/Qt6TestInternalsPrivate/Qt6TestInternalsPrivateVersionlessAliasTargets.cmake
+lib/cmake/Qt6TestInternalsPrivate/Qt6TestInternalsPrivateVersionlessTargets.cmake
 lib/cmake/Qt6Widgets/Qt6WidgetsAdditionalTargetInfo.cmake
 lib/cmake/Qt6Widgets/Qt6WidgetsConfig.cmake
 lib/cmake/Qt6Widgets/Qt6WidgetsConfigVersion.cmake
@@ -3200,8 +3212,6 @@ lib/cmake/Qt6Xml/Qt6XmlVersionlessTargets.cmake
 %%QT_LIBDIR%%/metatypes/qt6widgets_%%CMAKE_BUILD_TYPE%%_metatypes.json
 %%X11%%%%QT_LIBDIR%%/metatypes/qt6xcbqpaprivate_%%CMAKE_BUILD_TYPE%%_metatypes.json
 %%QT_LIBDIR%%/metatypes/qt6xml_%%CMAKE_BUILD_TYPE%%_metatypes.json
-%%DEBUG%%%%QT_LIBDIR%%/objects-Debug/ExampleIconsPrivate_resources_1/.qt/rcc/qrc_example_icons_init.cpp.o
-%%NO_DEBUG%%%%QT_LIBDIR%%/objects-Release/ExampleIconsPrivate_resources_1/.qt/rcc/qrc_example_icons_init.cpp.o
 %%QT_MKSPECDIR%%/REUSE.toml
 %%QT_MKSPECDIR%%/aix-g++-64/qmake.conf
 %%QT_MKSPECDIR%%/aix-g++-64/qplatformdefs.h
@@ -3376,7 +3386,6 @@ lib/cmake/Qt6Xml/Qt6XmlVersionlessTargets.cmake
 %%QT_MKSPECDIR%%/features/data/configure.json
 %%QT_MKSPECDIR%%/features/data/dummy.cpp
 %%QT_MKSPECDIR%%/features/data/dumpvcvars.bat
-%%QT_MKSPECDIR%%/features/data/mac/objc_namespace.sh
 %%QT_MKSPECDIR%%/features/data/macros.cpp
 %%QT_MKSPECDIR%%/features/data/testserver/Dockerfile
 %%QT_MKSPECDIR%%/features/data/testserver/docker-compose-common.yml
@@ -3605,6 +3614,7 @@ lib/cmake/Qt6Xml/Qt6XmlVersionlessTargets.cmake
 %%QT_MKSPECDIR%%/modules/qt_lib_printsupport_private.pri
 %%QT_MKSPECDIR%%/modules/qt_lib_sql.pri
 %%QT_MKSPECDIR%%/modules/qt_lib_sql_private.pri
+%%QT_MKSPECDIR%%/modules/qt_lib_testinternals_private.pri
 %%QT_MKSPECDIR%%/modules/qt_lib_testlib.pri
 %%QT_MKSPECDIR%%/modules/qt_lib_testlib_private.pri
 %%QT_MKSPECDIR%%/modules/qt_lib_widgets.pri
@@ -3679,6 +3689,8 @@ lib/cmake/Qt6Xml/Qt6XmlVersionlessTargets.cmake
 %%QT_MKSPECDIR%%/win32-icc/qplatformdefs.h
 %%QT_MKSPECDIR%%/win32-msvc/qmake.conf
 %%QT_MKSPECDIR%%/win32-msvc/qplatformdefs.h
+%%DEBUG%%%%QT_LIBDIR%%/objects-Debug/ExampleIconsPrivate_resources_1/.qt/rcc/qrc_example_icons_init.cpp.o
+%%NO_DEBUG%%%%QT_LIBDIR%%/objects-Release/ExampleIconsPrivate_resources_1/.qt/rcc/qrc_example_icons_init.cpp.o
 %%QT_PLUGINDIR%%/generic/libqevdevkeyboardplugin.so
 %%QT_PLUGINDIR%%/generic/libqevdevmouseplugin.so
 %%QT_PLUGINDIR%%/generic/libqevdevtabletplugin.so
@@ -3837,8 +3849,6 @@ libdata/pkgconfig/Qt6Xml.pc
 %%QT_DOCDIR%%/global/template/images/header_bg.png
 %%QT_DOCDIR%%/global/template/images/home.png
 %%QT_DOCDIR%%/global/template/images/horBar.png
-%%QT_DOCDIR%%/global/template/images/ico_note.png
-%%QT_DOCDIR%%/global/template/images/ico_note_attention.png
 %%QT_DOCDIR%%/global/template/images/ico_out.png
 %%QT_DOCDIR%%/global/template/images/logo.png
 %%QT_DOCDIR%%/global/template/images/page.png
@@ -3881,6 +3891,7 @@ libdata/pkgconfig/Qt6Xml.pc
 %%QT_DATADIR%%/modules/PrintSupport.json
 %%QT_DATADIR%%/modules/Sql.json
 %%QT_DATADIR%%/modules/Test.json
+%%QT_DATADIR%%/modules/TestInternalsPrivate.json
 %%QT_DATADIR%%/modules/Widgets.json
 %%X11%%%%QT_DATADIR%%/modules/XcbQpaPrivate.json
 %%QT_DATADIR%%/modules/Xml.json

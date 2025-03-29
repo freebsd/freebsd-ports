@@ -131,6 +131,7 @@ lib/cmake/Qt6Qml/QmlPlugins/Qt6PdfQuickpluginTargets.cmake
 %%QT_QMLDIR%%/QtQuick/Pdf/libpdfquickplugin.so
 %%QT_QMLDIR%%/QtQuick/Pdf/plugins.qmltypes
 %%QT_QMLDIR%%/QtQuick/Pdf/qmldir
+%%QT_SBOMDIR%%/qtpdf-%%FULLVER%%.spdx
 libdata/pkgconfig/Qt6Pdf.pc
 libdata/pkgconfig/Qt6PdfQuick.pc
 libdata/pkgconfig/Qt6PdfWidgets.pc

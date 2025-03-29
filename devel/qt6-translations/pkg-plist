@@ -116,6 +116,7 @@
 %%QT_L10NDIR%%/qt_ja.qm
 %%QT_L10NDIR%%/qt_ka.qm
 %%QT_L10NDIR%%/qt_ko.qm
+%%QT_L10NDIR%%/qt_lg.qm
 %%QT_L10NDIR%%/qt_lt.qm
 %%QT_L10NDIR%%/qt_lv.qm
 %%QT_L10NDIR%%/qt_nl.qm
@@ -150,6 +151,7 @@
 %%QT_L10NDIR%%/qtbase_ja.qm
 %%QT_L10NDIR%%/qtbase_ka.qm
 %%QT_L10NDIR%%/qtbase_ko.qm
+%%QT_L10NDIR%%/qtbase_lg.qm
 %%QT_L10NDIR%%/qtbase_lv.qm
 %%QT_L10NDIR%%/qtbase_nl.qm
 %%QT_L10NDIR%%/qtbase_nn.qm

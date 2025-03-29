@@ -20,11 +20,11 @@ CMAKE_ARGS+=	-DClang_DIR:PATH="${LLVM_PREFIX}/lib/cmake/clang" \
 		-DLLVM_DIR:PATH="${LLVM_PREFIX}/lib/cmake/llvm"
 
 post-install:
-	# Install symlinks for user-facing tools
-	${REINPLACE_CMD} -e "s#^#${STAGEDIR}#" -e "s# # ${STAGEDIR}#" \
-		${WRKDIR}/.build/user_facing_tool_links.txt
-	while read t; do \
-		${RLN} $$t; \
-	done <${WRKDIR}/.build/user_facing_tool_links.txt
+# Install symlinks for user-facing tools
+	while read line; do \
+		source="$$(${ECHO_CMD} $${line} | ${AWK} '{print $$1}')"; \
+		target="${STAGEDIR}${PREFIX}/$$(${ECHO_CMD} $${line} | ${AWK} '{print $$2}')"; \
+		${RLN} $${source} $${target}; \
+	done <${BUILD_WRKSRC}/user_facing_tool_links.txt
 
 .include <bsd.port.mk>

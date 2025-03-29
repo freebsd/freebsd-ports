@@ -18,8 +18,6 @@
 %%QT_DOCDIR%%/qtcmake/images/bullet_dn.png
 %%QT_DOCDIR%%/qtcmake/images/bullet_sq.png
 %%QT_DOCDIR%%/qtcmake/images/home.png
-%%QT_DOCDIR%%/qtcmake/images/ico_note.png
-%%QT_DOCDIR%%/qtcmake/images/ico_note_attention.png
 %%QT_DOCDIR%%/qtcmake/images/ico_out.png
 %%QT_DOCDIR%%/qtcmake/images/logo.png
 %%QT_DOCDIR%%/qtcmake/qt-cmake-policies.html
@@ -145,8 +143,6 @@
 %%QT_DOCDIR%%/qtdoc/images/home.png
 %%QT_DOCDIR%%/qtdoc/images/iOS_Dark.png
 %%QT_DOCDIR%%/qtdoc/images/iOS_Light.png
-%%QT_DOCDIR%%/qtdoc/images/ico_note.png
-%%QT_DOCDIR%%/qtdoc/images/ico_note_attention.png
 %%QT_DOCDIR%%/qtdoc/images/ico_out.png
 %%QT_DOCDIR%%/qtdoc/images/integrity-os.png
 %%QT_DOCDIR%%/qtdoc/images/ios.webp
@@ -455,8 +451,6 @@
 %%QT_DOCDIR%%/qtplatformintegration/images/bullet_dn.png
 %%QT_DOCDIR%%/qtplatformintegration/images/bullet_sq.png
 %%QT_DOCDIR%%/qtplatformintegration/images/home.png
-%%QT_DOCDIR%%/qtplatformintegration/images/ico_note.png
-%%QT_DOCDIR%%/qtplatformintegration/images/ico_note_attention.png
 %%QT_DOCDIR%%/qtplatformintegration/images/ico_out.png
 %%QT_DOCDIR%%/qtplatformintegration/images/logo.png
 %%QT_DOCDIR%%/qtplatformintegration/native-interfaces.html
