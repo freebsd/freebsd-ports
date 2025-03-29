@@ -1,7 +1,6 @@
 PORTNAME?=	victoria-metrics
-PORTVERSION=	1.97.6		# don't forget to update BUILDINFO_TAG
+PORTVERSION=	1.114.0		# don't forget to update BUILDINFO_TAG
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	danfe@FreeBSD.org
@@ -11,18 +10,16 @@ WWW=		https://victoriametrics.com/
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		gmake go:modules,no_targets
+USES=		gmake go:1.24,no_targets
 USE_RC_SUBR?=	${PORTNAME}
 MAKE_ENV=	PKG_TAG=v${PORTVERSION} GOOS=${OPSYS:tl} \
-		BUILDINFO_TAG=tags-v${PORTVERSION}-0-gfcc8b14 \
+		BUILDINFO_TAG=tags-v${PORTVERSION}-0-ge950846 \
 		DATEINFO_TAG=${_GET_DATE:sh}
 ALL_TARGET=	${PORTNAME}-pure
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	VictoriaMetrics
 GH_PROJECT=	VictoriaMetrics
-
-.include "${.CURDIR}/../victoria-metrics/Makefile.deps"
 
 USERS=		victoria-metrics
 GROUPS=		victoria-metrics

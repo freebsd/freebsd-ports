@@ -22,8 +22,6 @@ bin/vmrestore
 %%PORTDOCS%%%%DOCSDIR%%/vmalert_state.webp
 %%PORTDOCS%%%%DOCSDIR%%/vmalert_ts_data_delay.gif
 %%PORTDOCS%%%%DOCSDIR%%/vmalert_ts_normal.gif
-%%PORTDOCS%%%%DOCSDIR%%/vmanomaly-holtwinters-example.webp
-%%PORTDOCS%%%%DOCSDIR%%/vmanomaly-prophet-example.webp
 %%PORTDOCS%%%%DOCSDIR%%/vmauth.md
 %%PORTDOCS%%%%DOCSDIR%%/vmbackup.md
 %%PORTDOCS%%%%DOCSDIR%%/vmbackupmanager.md
