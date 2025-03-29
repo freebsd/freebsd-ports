@@ -1,6 +1,6 @@
---- electron/shell/browser/net/system_network_context_manager.cc.orig	2024-10-22 02:29:46 UTC
+--- electron/shell/browser/net/system_network_context_manager.cc.orig	2025-03-26 14:46:58 UTC
 +++ electron/shell/browser/net/system_network_context_manager.cc
-@@ -40,7 +40,7 @@
+@@ -39,7 +39,7 @@
  #include "shell/common/options_switches.h"
  #include "url/gurl.h"
  

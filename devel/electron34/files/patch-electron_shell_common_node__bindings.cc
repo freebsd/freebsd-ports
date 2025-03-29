@@ -1,4 +1,4 @@
---- electron/shell/common/node_bindings.cc.orig	2025-01-29 20:10:57 UTC
+--- electron/shell/common/node_bindings.cc.orig	2025-03-26 14:46:58 UTC
 +++ electron/shell/common/node_bindings.cc
 @@ -45,7 +45,7 @@
  #include "third_party/electron_node/src/debug_utils.h"
@@ -18,7 +18,7 @@
    electron::crash_keys::SetCrashKey("electron.v8-fatal.message", message);
    electron::crash_keys::SetCrashKey("electron.v8-fatal.location", location);
  #endif
-@@ -532,7 +532,7 @@ void NodeBindings::Initialize(v8::Local<v8::Context> c
+@@ -535,7 +535,7 @@ void NodeBindings::Initialize(v8::Local<v8::Context> c
    TRACE_EVENT0("electron", "NodeBindings::Initialize");
    // Open node's error reporting system for browser process.
  

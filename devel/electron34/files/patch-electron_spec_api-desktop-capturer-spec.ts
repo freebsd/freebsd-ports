@@ -1,4 +1,4 @@
---- electron/spec/api-desktop-capturer-spec.ts.orig	2024-10-09 13:53:06 UTC
+--- electron/spec/api-desktop-capturer-spec.ts.orig	2025-03-26 14:46:58 UTC
 +++ electron/spec/api-desktop-capturer-spec.ts
 @@ -45,7 +45,7 @@ ifdescribe(!process.arch.includes('arm') && process.pl
    });
@@ -18,7 +18,7 @@
      const displays = screen.getAllDisplays();
      const sources = await desktopCapturer.getSources({ types: ['screen'] });
      expect(sources).to.be.an('array').of.length(displays.length);
-@@ -102,7 +102,7 @@ ifdescribe(!process.arch.includes('arm') && process.pl
+@@ -118,7 +118,7 @@ ifdescribe(!process.arch.includes('arm') && process.pl
      // TODO(julien.isorce): investigate why |sources| is empty on the linux
      // bots while it is not on my workstation, as expected, with and without
      // the --ci parameter.
@@ -27,7 +27,7 @@
        it.skip('desktopCapturer.getSources returned an empty source list');
        return;
      }
-@@ -138,7 +138,7 @@ ifdescribe(!process.arch.includes('arm') && process.pl
+@@ -154,7 +154,7 @@ ifdescribe(!process.arch.includes('arm') && process.pl
      // TODO(julien.isorce): investigate why |sources| is empty on the linux
      // bots while it is not on my workstation, as expected, with and without
      // the --ci parameter.
@@ -36,7 +36,7 @@
        it.skip('desktopCapturer.getSources returned an empty source list');
        return;
      }
-@@ -207,7 +207,7 @@ ifdescribe(!process.arch.includes('arm') && process.pl
+@@ -223,7 +223,7 @@ ifdescribe(!process.arch.includes('arm') && process.pl
        // TODO(julien.isorce): investigate why |sources| is empty on the linux
        // bots while it is not on my workstation, as expected, with and without
        // the --ci parameter.
