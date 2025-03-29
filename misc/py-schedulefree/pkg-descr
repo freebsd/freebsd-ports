@@ -1,0 +1,11 @@
+Schedulefree is a Schedule-Free optimizer in PyTorch.
+
+We provide several Schedule-Free optimizer implementations:
+
+* SGDScheduleFree and SGDScheduleFreeReference: Schedule-free variants of SGD
+* AdamWScheduleFree and AdamWScheduleFreeReference: Schedule-free variants
+  of AdamW
+* RAdamScheduleFree: Schedule-free variant of RAdam, which eliminates the need
+  for both learning rate scheduling and warmup (implementation community
+  contributed)
+* Experimental ScheduleFreeWrapper to combine with other optimizers
