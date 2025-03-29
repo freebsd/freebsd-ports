@@ -1,5 +1,6 @@
 include/mimalloc-new-delete.h
 include/mimalloc-override.h
+include/mimalloc-stats.h
 include/mimalloc.h
 lib/cmake/mimalloc/mimalloc-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/mimalloc/mimalloc-config-version.cmake
