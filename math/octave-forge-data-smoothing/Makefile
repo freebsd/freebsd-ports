@@ -12,6 +12,8 @@ WWW=		https://packages.octave.org/
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKDIR}/${OCTAVE_SRC}/COPYING
 
+BROKEN=		depends upon math/octave-forge-optim, which is broken
+
 RUN_DEPENDS+=	${OCTAVE_TARBALLS_DIR}/optim.tar.gz:math/octave-forge-optim
 
 USES=		octave
