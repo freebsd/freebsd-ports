@@ -1416,6 +1416,7 @@ lib/calibre/calibre/utils/rcc/__init__.py
 lib/calibre/calibre/utils/recycle_bin.py
 lib/calibre/calibre/utils/resources.py
 lib/calibre/calibre/utils/run_tests.py
+lib/calibre/calibre/utils/safe_atexit.py
 lib/calibre/calibre/utils/search_query_parser.py
 lib/calibre/calibre/utils/search_query_parser_test.py
 lib/calibre/calibre/utils/serialize.py
