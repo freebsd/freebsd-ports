@@ -1,3 +1,53 @@
+  <vuln vid="7cb6642c-0c5a-11f0-8688-4ccc6adda413">
+    <topic>qt6-webengine -- Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>qt6-pdf</name>
+	<name>qt6-webengine</name>
+	<range><lt>6.8.3</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Qt qtwebengine-chromium repo reports:</p>
+	<blockquote cite="https://code.qt.io/cgit/qt/qtwebengine-chromium.git/log/?h=122-based">
+	  <p>Backports for 11 security bugs in Chromium:</p>
+	  <ul>
+	    <li>CVE-2024-11477: 7-Zip Zstd decompression integer underflow</li>
+	    <li>CVE-2025-0762: Use after free in DevTools</li>
+	    <li>CVE-2025-0996: Inappropriate implementation in Browser UI</li>
+	    <li>CVE-2025-0998: Out of bounds memory access in V8</li>
+	    <li>CVE-2025-0999: Heap buffer overflow in V8</li>
+	    <li>CVE-2025-1006: Use after free in Network</li>
+	    <li>CVE-2025-1426: Heap buffer overflow in GPU</li>
+	    <li>CVE-2025-1918: Out of bounds read in Pdfium</li>
+	    <li>CVE-2025-1919: Out of bounds read in Media</li>
+	    <li>CVE-2025-1921: Inappropriate implementation in Media</li>
+	    <li>CVE-2025-2036: Use after free in Inspector</li>
+	  </ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2024-11477</cvename>
+      <cvename>CVE-2025-0762</cvename>
+      <cvename>CVE-2025-0996</cvename>
+      <cvename>CVE-2025-0998</cvename>
+      <cvename>CVE-2025-0999</cvename>
+      <cvename>CVE-2025-1006</cvename>
+      <cvename>CVE-2025-1426</cvename>
+      <cvename>CVE-2025-1918</cvename>
+      <cvename>CVE-2025-1919</cvename>
+      <cvename>CVE-2025-1921</cvename>
+      <cvename>CVE-2025-2036</cvename>
+      <url>https://code.qt.io/cgit/qt/qtwebengine-chromium.git/log/?h=122-based</url>
+    </references>
+    <dates>
+      <discovery>2025-02-20</discovery>
+      <entry>2025-03-29</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="01a7e1e1-d249-4dd8-9a4a-ef95b5747afb">
     <topic>electron{33,34} -- Incorrect handle provided in unspecified circumstances in Mojo</topic>
     <affects>
