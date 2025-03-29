@@ -1,5 +1,6 @@
 PORTNAME=	netdiscover
 DISTVERSION=	0.11
+MASTER_SITES=	https://github.com/netdiscover-scanner/netdiscover/releases/download/${DISTVERSION}/
 CATEGORIES=	net
 
 MAINTAINER=	tiago.gasiba@gmail.com
@@ -9,10 +10,8 @@ WWW=		https://github.com/netdiscover-scanner/netdiscover
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		autoreconf
+USES=		autoreconf tar:bz2
 
-USE_GITHUB=	yes
-GH_ACCOUNT=	netdiscover-scanner
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
