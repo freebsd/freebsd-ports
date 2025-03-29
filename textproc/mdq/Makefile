@@ -1,6 +1,6 @@
 PORTNAME=	mdq
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.3.1
+DISTVERSION=	0.4.1
 CATEGORIES=	textproc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -23,12 +23,19 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		anstyle-parse-0.2.6 \
 		anstyle-query-1.1.2 \
 		anstyle-wincon-3.0.7 \
+		block-buffer-0.10.4 \
+		cfg-if-1.0.0 \
 		clap-4.5.26 \
 		clap_builder-4.5.26 \
 		clap_derive-4.5.24 \
 		clap_lex-0.7.4 \
 		colorchoice-1.0.3 \
+		cpufeatures-0.2.17 \
+		crypto-common-0.1.6 \
+		diff-0.1.13 \
+		digest-0.10.7 \
 		equivalent-1.0.1 \
+		generic-array-0.14.7 \
 		hashbrown-0.15.2 \
 		heck-0.5.0 \
 		indexmap-2.7.0 \
@@ -41,6 +48,11 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		memchr-2.7.4 \
 		once_cell-1.20.2 \
 		paste-1.0.15 \
+		pest-2.7.15 \
+		pest_derive-2.7.15 \
+		pest_generator-2.7.15 \
+		pest_meta-2.7.15 \
+		pretty_assertions-1.4.1 \
 		proc-macro2-1.0.93 \
 		quote-1.0.38 \
 		regex-1.11.1 \
@@ -51,18 +63,20 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		serde_derive-1.0.217 \
 		serde_json-1.0.136 \
 		serde_spanned-0.6.8 \
+		sha2-0.10.8 \
 		strsim-0.11.1 \
 		syn-2.0.96 \
-		termsize-0.1.9 \
+		thiserror-2.0.12 \
+		thiserror-impl-2.0.12 \
 		toml-0.8.19 \
 		toml_datetime-0.6.8 \
 		toml_edit-0.22.22 \
+		typenum-1.18.0 \
+		ucd-trie-0.1.7 \
 		unicode-id-0.3.5 \
 		unicode-ident-1.0.14 \
 		utf8parse-0.2.2 \
-		winapi-0.3.9 \
-		winapi-i686-pc-windows-gnu-0.4.0 \
-		winapi-x86_64-pc-windows-gnu-0.4.0 \
+		version_check-0.9.5 \
 		windows-sys-0.59.0 \
 		windows-targets-0.52.6 \
 		windows_aarch64_gnullvm-0.52.6 \
@@ -73,7 +87,8 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		windows_x86_64_gnu-0.52.6 \
 		windows_x86_64_gnullvm-0.52.6 \
 		windows_x86_64_msvc-0.52.6 \
-		winnow-0.6.24
+		winnow-0.6.24 \
+		yansi-1.0.1
 
 PLIST_FILES=	bin/${PORTNAME}
 
