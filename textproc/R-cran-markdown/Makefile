@@ -1,5 +1,5 @@
 PORTNAME=	markdown
-PORTVERSION=	1.13
+PORTVERSION=	2.0
 CATEGORIES=	textproc
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
@@ -9,8 +9,8 @@ WWW=		https://cran.r-project.org/web/packages/markdown/
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	R-cran-commonmark>=1.9.0:textproc/R-cran-commonmark \
-		R-cran-xfun>=0.38:misc/R-cran-xfun
+RUN_DEPENDS=	R-cran-litedown>=0.6:textproc/R-cran-litedown \
+		R-cran-xfun>0:misc/R-cran-xfun
 
 USES=		cran:auto-plist,compiles
 
