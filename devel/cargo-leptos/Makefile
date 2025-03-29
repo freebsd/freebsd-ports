@@ -11,6 +11,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN_armv7=	compilation fails: rustc-LLVM ERROR: out of memory
+BROKEN_i386=	compilation fails: undefined symbol: __atomic_fetch_add_8 (-march=i586 didn't help)
 
 BUILD_DEPENDS=	gmake:devel/gmake
 LIB_DEPENDS=	libssh2.so:security/libssh2
@@ -661,12 +662,6 @@ PLIST_FILES=	bin/${PORTNAME}
 
 .if ${ARCH} == powerpc
 LTO_UNSAFE=	yes
-.endif
-
-# attempt to fix on i386: ld: error: undefined symbol: __atomic_fetch_add_8
-.if ${ARCH} == i386 && !${CFLAGS:M-march=*}
-CFLAGS+=	-march=i586
-CXXFLAGS+=	-march=i586
 .endif
 
 .include <bsd.port.mk>
