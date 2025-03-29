@@ -30,11 +30,8 @@ libexec/atf-check
 share/man/man1/atf-check.1.gz
 share/man/man1/atf-sh.1.gz
 share/man/man1/atf-test-program.1.gz
-share/man/man3/atf-c++-api.3.gz
 share/man/man3/atf-c++.3.gz
-share/man/man3/atf-c-api.3.gz
 share/man/man3/atf-c.3.gz
-share/man/man3/atf-sh-api.3.gz
 share/man/man3/atf-sh.3.gz
 share/man/man4/atf-test-case.4.gz
 share/man/man7/atf.7.gz
@@ -45,7 +42,7 @@ share/aclocal/atf-sh.m4
 %%DATADIR%%/libatf-sh.subr
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
-%%PORTDOCS%%%%DOCSDIR%%/NEWS.md
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README.md
 %%TEST%%tests/atf/Kyuafile
 %%TEST%%tests/atf/atf-c/Kyuafile
