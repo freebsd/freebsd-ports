@@ -1,8 +1,8 @@
---- Makefile.orig	2023-08-02 04:10:12 UTC
+--- Makefile.orig	2024-09-08 02:08:55 UTC
 +++ Makefile
-@@ -36,17 +36,8 @@ SHLIB_LINK += -Ldeps/v8-cmake/build -g
+@@ -36,19 +36,8 @@ SHLIB_LINK += -Ldeps/v8-cmake/build
  
- SHLIB_LINK += -Ldeps/v8-cmake/build -g
+ SHLIB_LINK += -Ldeps/v8-cmake/build
  
 -all: v8 $(OBJS)
 +all: $(OBJS)
@@ -10,8 +10,10 @@
 -# For some reason, this solves parallel make dependency.
 -plv8_config.h plv8.so: v8
 -
--deps/v8-cmake/build/libv8_libbase.a:
+-deps/v8-cmake/README.md:
 -	@git submodule update --init --recursive
+-
+-deps/v8-cmake/build/libv8_libbase.a: deps/v8-cmake/README.md
 -	@cd deps/v8-cmake && mkdir -p build && cd build && cmake -Denable-fPIC=ON -DCMAKE_BUILD_TYPE=Release ../ && make -j $(NUMPROC)
 -
 -v8: deps/v8-cmake/build/libv8_libbase.a
@@ -19,7 +21,7 @@
  # enable direct jsonb conversion by default
  CCFLAGS += -DJSONB_DIRECT_CONVERSION
  
-@@ -72,7 +63,7 @@ endif
+@@ -74,7 +63,7 @@ endif
  	REGRESS += bigint_graceful
  endif
  
