@@ -1,6 +1,6 @@
 PORTNAME=	zathura-pdf-poppler
 DISTVERSION=	0.3.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	https://pwmt.org/projects/zathura-pdf-poppler/download/
 

@@ -1,6 +1,7 @@
 PORTNAME=	pdf2svg
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.2.4
+PORTREVISION=	1
 CATEGORIES=	graphics
 
 MAINTAINER=	martin.dieringer@gmx.de
