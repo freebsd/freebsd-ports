@@ -1,4 +1,4 @@
-PORTREVISION=	2
+PORTREVISION=	0
 
 .include "${.CURDIR}/Makefile.common"
 
