@@ -1,7 +1,6 @@
 PORTNAME=	votca
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2024.2
-PORTREVISION=	3
+DISTVERSION=	2025
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -63,10 +62,15 @@ OPTIONS_SUB=		yes
 APPS_DESC=		Build applications
 APPS_CMAKE_BOOL=	INSTALL_CSGAPPS
 
+post-install: # workaround for https://github.com/votca/votca/issues/1173
+	@${RM} -r ${STAGEDIR}${PREFIX}/lib/python.
+
 do-test: # several tests fail, see https://github.com/votca/votca/issues/1098
 	@cd ${BUILD_WRKSRC} && \
 		${SETENV} ${CONFIGURE_ENV} ${CMAKE_BIN} ${CMAKE_ARGS} -DENABLE_TESTING:BOOL=ON ${CMAKE_SOURCE_PATH} && \
 		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} ${ALL_TARGET} && \
 		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} test
+
+# tests as of 2025: 100% tests passed, 0 tests failed out of 250
 
 .include <bsd.port.mk>
