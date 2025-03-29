@@ -1,5 +1,5 @@
 PORTNAME=	netutils
-DISTVERSION=	1.10.0
+DISTVERSION=	1.12.0
 CATEGORIES=	net-mgmt python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,11 +13,15 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}poetry-core>=1.0.0:devel/py-poetry-core@${PY_FLAVOR}
 
-USES=		python
+USES=		python:3.9+
 USE_PYTHON=	autoplist pep517
 
 NO_ARCH=	yes
 
+# There are another two options, "napalm" + "legacycrypt", in "pyproject.toml"
+# and are deliberately not added for the time being.  The first one  would lead
+# to a circular dependency and the second one is required for Python 3.13+ (not
+# in ports tree, yet) which no longer has the deprecated "crypt" module.
 OPTIONS_DEFINE=		JSONSCHEMA
 OPTIONS_DEFAULT=	JSONSCHEMA
 
