@@ -35,6 +35,7 @@ include/glaze/compare/approx.hpp
 include/glaze/compare/compare.hpp
 include/glaze/concepts/container_concepts.hpp
 include/glaze/containers/flat_map.hpp
+include/glaze/core/array_apply.hpp
 include/glaze/core/common.hpp
 include/glaze/core/context.hpp
 include/glaze/core/convert_struct.hpp
@@ -140,6 +141,7 @@ include/glaze/util/type_traits.hpp
 include/glaze/util/utility.hpp
 include/glaze/util/validate.hpp
 include/glaze/util/variant.hpp
+include/glaze/version.hpp
 %%DATADIR%%/glazeConfig.cmake
 %%DATADIR%%/glazeConfigVersion.cmake
 %%DATADIR%%/glazeTargets.cmake
