@@ -12,6 +12,8 @@ WWW=		https://packages.octave.org/
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKDIR}/${OCTAVE_SRC}/COPYING
 
+BROKEN=		depends upon math/octave-forge-geometry, which is broken
+
 RUN_DEPENDS=	${OCTAVE_TARBALLS_DIR}/io.tar.gz:math/octave-forge-io \
 		${OCTAVE_TARBALLS_DIR}/geometry.tar.gz:math/octave-forge-geometry
 
