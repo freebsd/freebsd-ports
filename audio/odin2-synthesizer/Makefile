@@ -12,6 +12,8 @@ WWW=		https://thewavewarden.com/pages/odin-2 \
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_armv7=	compilation fails, see https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=279134
+
 BUILD_DEPENDS=	lv2>0:audio/lv2 \
 		bash:shells/bash
 LIB_DEPENDS=	libasound.so:audio/alsa-lib \
