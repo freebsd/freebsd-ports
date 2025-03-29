@@ -1,5 +1,5 @@
 PORTNAME=	mkdocstrings-python
-DISTVERSION=	1.16.7
+DISTVERSION=	1.16.8
 CATEGORIES=	textproc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,7 +13,7 @@ LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pdm-backend>0:devel/py-pdm-backend@${PY_FLAVOR}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}griffe>=0.49:textproc/py-griffe@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}griffe>=1.6.2:textproc/py-griffe@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}mkdocs-autorefs>=1.4:textproc/py-mkdocs-autorefs@${PY_FLAVOR}
 # textproc/py-mkdocstrings belongs to RUN_DEPENDS as well but would cause
 # a circular dependency (via py-mkdocstrings' PYTHON option).  It was therefore
@@ -38,10 +38,5 @@ NO_ARCH=	yes
 .if ${PYTHON_REL} < 31100
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}typing-extensions>=4.0:devel/py-typing-extensions@${PY_FLAVOR}
 .endif
-
-# Prevent packaging of the Mypy cache folder
-post-extract:
-	@${RM} -r ${WRKSRC}/src/mkdocstrings_handlers/python/.mypy_cache \
-		${WRKSRC}/src/mkdocstrings_handlers/python/_internal/.mypy_cache
 
 .include <bsd.port.post.mk>
