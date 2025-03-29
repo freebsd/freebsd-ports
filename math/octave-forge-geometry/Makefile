@@ -12,6 +12,8 @@ WWW=		https://packages.octave.org/
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKDIR}/${OCTAVE_SRC}/COPYING
 
+BROKEN=		does not build with octave version >= 10.1.0
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lxml>=0:devel/py-lxml@${PY_FLAVOR} \
 		${OCTAVE_TARBALLS_DIR}/matgeom.tar.gz:math/octave-forge-matgeom
 
