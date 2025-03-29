@@ -1,7 +1,6 @@
 PORTNAME=	xyce
 DISTVERSIONPREFIX=	Release-
-DISTVERSION=	7.8.0
-PORTREVISION=	7
+DISTVERSION=	7.9.0
 CATEGORIES=	cad
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -42,6 +41,8 @@ CONFIGURE_ARGS=	LEX=/usr/bin/flex \
 		--enable-amesos \
 		--enable-shared \
 		--disable-static
+CFLAGS+=	-I${LOCALBASE}/include/kokkos # https://github.com/Xyce/Xyce/issues/137
+CXXFLAGS+=	-I${LOCALBASE}/include/kokkos # https://github.com/Xyce/Xyce/issues/137
 
 INSTALL_TARGET=	install-strip
 
