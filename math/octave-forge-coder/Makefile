@@ -11,6 +11,8 @@ WWW=		https://packages.octave.org/
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKDIR}/${OCTAVE_SRC}/COPYING
 
+BROKEN=		does not build with octave version >= 10.1.0
+
 USES=		octave
 USE_GITHUB=	yes
 GH_ACCOUNT=	shsajjadi
