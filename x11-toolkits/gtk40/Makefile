@@ -1,5 +1,5 @@
 PORTNAME=	gtk
-PORTVERSION=	4.18.2
+PORTVERSION=	4.18.3
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	GNOME
 PKGNAMESUFFIX=	4
@@ -38,10 +38,11 @@ LDFLAGS+=	-lexecinfo
 
 BINARY_ALIAS=	python3=${PYTHON_CMD}
 
-LIBVERSION=	1.1800.2
+LIBVERSION=	1.1800.3
 PLIST_SUB+=	LIBVERSION=${LIBVERSION}
 
 GLIB_SCHEMAS=	org.gtk.Demo4.gschema.xml \
+		org.gtk.gtk4.Inspector.gschema.xml \
 		org.gtk.gtk4.Settings.ColorChooser.gschema.xml \
 		org.gtk.gtk4.Settings.Debug.gschema.xml \
 		org.gtk.gtk4.Settings.EmojiChooser.gschema.xml \
