@@ -1,5 +1,5 @@
 PORTNAME=	rtorrent
-DISTVERSION=	0.15.1
+DISTVERSION=	0.15.2
 CATEGORIES=	net-p2p
 MASTER_SITES=	https://github.com/rakshasa/rtorrent/releases/download/v${DISTVERSION}/
 
@@ -14,7 +14,7 @@ LICENSE_FILE_GPLv2=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libtorrent.so:net-p2p/libtorrent
 
-USES=		compiler:c++14-lang ncurses pkgconfig
+USES=		compiler:c++17-lang ncurses pkgconfig
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-debug
 LDFLAGS+=	-lexecinfo -pthread

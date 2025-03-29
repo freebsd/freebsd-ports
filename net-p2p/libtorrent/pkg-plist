@@ -14,7 +14,6 @@ include/torrent/data/file_manager.h
 include/torrent/data/file_utils.h
 include/torrent/data/piece.h
 include/torrent/data/transfer_list.h
-include/torrent/dht_manager.h
 include/torrent/download.h
 include/torrent/download/choke_group.h
 include/torrent/download/choke_queue.h
@@ -29,6 +28,7 @@ include/torrent/hash_string.h
 include/torrent/http.h
 include/torrent/net/address_info.h
 include/torrent/net/fd.h
+include/torrent/net/resolver.h
 include/torrent/net/socket_address.h
 include/torrent/net/socket_address_key.h
 include/torrent/net/socket_event.h
@@ -53,7 +53,11 @@ include/torrent/poll_select.h
 include/torrent/rate.h
 include/torrent/throttle.h
 include/torrent/torrent.h
-include/torrent/tracker.h
+include/torrent/tracker/dht_controller.h
+include/torrent/tracker/manager.h
+include/torrent/tracker/tracker.h
+include/torrent/tracker/tracker_state.h
+include/torrent/tracker/wrappers.h
 include/torrent/tracker_controller.h
 include/torrent/tracker_list.h
 include/torrent/utils/directory_events.h
@@ -64,10 +68,10 @@ include/torrent/utils/option_strings.h
 include/torrent/utils/ranges.h
 include/torrent/utils/resume.h
 include/torrent/utils/signal_bitfield.h
-include/torrent/utils/thread_base.h
+include/torrent/utils/thread.h
 include/torrent/utils/thread_interrupt.h
 include/torrent/utils/uri_parser.h
 lib/libtorrent.so
-lib/libtorrent.so.23
-lib/libtorrent.so.23.0.0
+lib/libtorrent.so.24
+lib/libtorrent.so.24.0.0
 libdata/pkgconfig/libtorrent.pc
