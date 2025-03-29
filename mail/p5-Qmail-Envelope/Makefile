@@ -6,7 +6,7 @@ MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:MJA
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	bofh@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Examine and modify qmail envelope strings
 WWW=		https://metacpan.org/release/Qmail-Envelope
 
