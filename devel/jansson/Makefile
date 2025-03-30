@@ -1,5 +1,5 @@
 PORTNAME=	jansson
-DISTVERSION=	2.14
+DISTVERSION=	2.14.1
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/akheron/${PORTNAME}/releases/download/v${DISTVERSION}/
 
@@ -12,15 +12,15 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 TEST_DEPENDS=	bash>=0:shells/bash
 
-USES=		cpe pathfix pkgconfig tar:bzip2 libtool shebangfix
+USES=		cmake:testing cpe tar:bzip2 pathfix shebangfix
+CPE_VENDOR=	jansson_project
 SHEBANG_FILES=	scripts/clang-format scripts/clang-format-check
 USE_LDCONFIG=	yes
 
-GNU_CONFIGURE=	yes
+CMAKE_TESTING_OFF=	JANSSON_WITHOUT_TESTS
 
-CPE_VENDOR=	jansson_project
-
-INSTALL_TARGET=	install-strip
-TEST_TARGET=	check
+CMAKE_OFF=	JANSSON_BUILD_DOCS
+CMAKE_ON=	JANSSON_BUILD_SHARED_LIBS \
+		JANSSON_WITHOUT_TESTS
 
 .include <bsd.port.mk>

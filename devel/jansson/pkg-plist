@@ -1,6 +1,9 @@
 include/jansson.h
 include/jansson_config.h
-lib/libjansson.a
+lib/cmake/jansson/janssonConfig.cmake
+lib/cmake/jansson/janssonConfigVersion.cmake
+lib/cmake/jansson/janssonTargets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/jansson/janssonTargets.cmake
 lib/libjansson.so
 lib/libjansson.so.4
 lib/libjansson.so.4.14.0
