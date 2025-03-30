@@ -10,6 +10,9 @@ WWW=		https://github.com/Litres/turboxsl
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Obsolete, supports only legacy versions of XML and XSLT
+EXPIRATION_DATE=2025-04-30
+
 ONLY_FOR_ARCHS=		aarch64 amd64 powerpc64 powerpc64le
 
 LIB_DEPENDS=	libck.so:devel/concurrencykit \
