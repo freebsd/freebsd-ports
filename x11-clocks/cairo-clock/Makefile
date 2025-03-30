@@ -22,6 +22,8 @@ USE_GNOME=	atk cairo gdkpixbuf glib20 gtk20 libglade2 pango librsvg2 libxml2
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
+LDFLAGS+=	-lm
+
 MAKE_ARGS=	GMSGFMT=msgfmt DATADIRNAME=share
 
 .include <bsd.port.mk>
