@@ -6,7 +6,9 @@ DISTNAME=	${PORTNAME:tl}-${DISTVERSION}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Suite of data structures and routines from Argonne National Laboratory
-WWW=		https://petsc.org/release/
+WWW=		https://petsc.org/release/ \
+		https://gitlab.com/petsc/petsc \
+		https://github.com/petsc/petsc
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
