@@ -1,3 +1,62 @@
+  <vuln vid="1a67144d-0d86-11f0-8542-b42e991fc52e">
+    <topic>mozilla -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>firefox</name>
+	<range><lt>136.0</lt></range>
+      </package>
+      <package>
+	<name>firefox-esr</name>
+	<range><lt>128.8</lt></range>
+      </package>
+      <package>
+	<name>thunderbird</name>
+	<range><lt>136.0</lt></range>
+      </package>
+      <package>
+	<name>thunderbird</name>
+	<range><lt>128.8</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>security@mozilla.org reports:</p>
+	<blockquote cite="https://bugzilla.mozilla.org/show_bug.cgi?id=1945392">
+	  <p>An inconsistent comparator in xslt/txNodeSorter could have resulted
+	in potentially exploitable out-of-bounds access.  Only affected
+	version 122 and later.  This vulnerability affects Firefox &lt;
+	136, Firefox ESR &lt; 128.8, Thunderbird &lt; 136, and Thunderbird
+	&lt; 128.8.</p>
+	  <p>Under certain circumstances, a user opt-in setting that Focus should
+	require authentication before use could have been be bypassed
+	(distinct from CVE-2025-0245).  This vulnerability affects Firefox
+	&lt; 136.</p>
+	  <p>When String.toUpperCase() caused a string to get longer it was
+	possible for uninitialized memory to be incorporated into the result
+	string This vulnerability affects Firefox &lt; 136 and Thunderbird
+	&lt; 136.</p>
+	  <p>Websites redirecting to a non-HTTP scheme URL could allow a website
+	address to be spoofed for a malicious page This vulnerability affects
+	Firefox for iOS &lt; 136.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-1932</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2025-1932</url>
+      <cvename>CVE-2025-1941</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2025-1941</url>
+      <cvename>CVE-2025-1942</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2025-1942</url>
+      <cvename>CVE-2025-27424</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2025-27424</url>
+    </references>
+    <dates>
+      <discovery>2025-03-04</discovery>
+      <entry>2025-03-30</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="1d53db32-0d60-11f0-8542-b42e991fc52e">
     <topic>suricata -- Multiple vulnerabilities</topic>
     <affects>
