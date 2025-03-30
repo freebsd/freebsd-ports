@@ -28,4 +28,6 @@ USE_XORG=	x11
 
 GLIB_SCHEMAS=	org.gnome.Robots.gschema.xml
 
+LDFLAGS+=	-lm
+
 .include <bsd.port.mk>
