@@ -2114,6 +2114,7 @@
     SUBDIR += tokay
     SUBDIR += tokyodystopia
     SUBDIR += toml-f
+    SUBDIR += tomlq
     SUBDIR += tr-aspell
     SUBDIR += trang
     SUBDIR += translate-shell

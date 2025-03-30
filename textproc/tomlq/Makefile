@@ -1,0 +1,150 @@
+PORTNAME=	tomlq
+DISTVERSION=	0.2.2
+CATEGORIES=	textproc
+
+MAINTAINER=	yuri@FreeBSD.org
+COMMENT=	Tool for getting data from TOML files on the command line
+WWW=		https://github.com/cryptaliagy/tomlq
+
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+USES=		cargo
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	cryptaliagy
+
+CARGO_CRATES=	addr2line-0.24.1 \
+		adler-1.0.2 \
+		adler2-2.0.0 \
+		aho-corasick-1.1.3 \
+		ansi_colours-1.2.3 \
+		anstream-0.6.14 \
+		anstyle-1.0.6 \
+		anstyle-parse-0.2.3 \
+		anstyle-query-1.0.2 \
+		anstyle-wincon-3.0.3 \
+		anyhow-1.0.95 \
+		backtrace-0.3.74 \
+		base64-0.22.1 \
+		bat-0.25.0 \
+		bincode-1.3.3 \
+		bit-set-0.5.3 \
+		bit-vec-0.6.3 \
+		bitflags-1.3.2 \
+		bstr-1.10.0 \
+		bytemuck-1.16.3 \
+		bytesize-1.3.0 \
+		cfg-if-1.0.0 \
+		clap-4.5.8 \
+		clap_builder-4.5.8 \
+		clap_derive-4.5.8 \
+		clap_lex-0.7.1 \
+		clircle-0.6.1 \
+		colorchoice-1.0.0 \
+		colored-3.0.0 \
+		console-0.15.10 \
+		content_inspector-0.2.4 \
+		crc32fast-1.4.2 \
+		darling-0.20.10 \
+		darling_core-0.20.10 \
+		darling_macro-0.20.10 \
+		deranged-0.3.11 \
+		either-1.13.0 \
+		encode_unicode-1.0.0 \
+		encoding_rs-0.8.35 \
+		equivalent-1.0.1 \
+		fancy-regex-0.11.0 \
+		flate2-1.0.30 \
+		fnv-1.0.7 \
+		gimli-0.31.0 \
+		globset-0.4.14 \
+		hashbrown-0.15.2 \
+		heck-0.5.0 \
+		home-0.5.9 \
+		ident_case-1.0.1 \
+		indexmap-2.7.0 \
+		is_terminal_polyfill-1.70.0 \
+		itertools-0.13.0 \
+		itoa-1.0.14 \
+		libc-0.2.169 \
+		linked-hash-map-0.5.6 \
+		log-0.4.22 \
+		memchr-2.7.4 \
+		miniz_oxide-0.7.4 \
+		miniz_oxide-0.8.0 \
+		mio-1.0.3 \
+		nu-ansi-term-0.50.1 \
+		num-conv-0.1.0 \
+		object-0.36.4 \
+		once_cell-1.20.2 \
+		path_abs-0.5.1 \
+		plist-1.7.0 \
+		powerfmt-0.2.0 \
+		proc-macro2-1.0.93 \
+		quick-xml-0.32.0 \
+		quote-1.0.37 \
+		regex-1.11.1 \
+		regex-automata-0.4.9 \
+		regex-syntax-0.8.5 \
+		rgb-0.8.45 \
+		rustc-demangle-0.1.24 \
+		ryu-1.0.18 \
+		same-file-1.0.6 \
+		semver-1.0.23 \
+		serde-1.0.217 \
+		serde_derive-1.0.217 \
+		serde_json-1.0.135 \
+		serde_spanned-0.6.8 \
+		serde_with-3.12.0 \
+		serde_with_macros-3.12.0 \
+		serde_yaml-0.9.34+deprecated \
+		std_prelude-0.2.12 \
+		strsim-0.11.1 \
+		syn-2.0.96 \
+		syntect-5.2.0 \
+		terminal-colorsaurus-0.4.7 \
+		terminal-trx-0.2.3 \
+		thiserror-1.0.69 \
+		thiserror-2.0.11 \
+		thiserror-impl-1.0.69 \
+		thiserror-impl-2.0.11 \
+		time-0.3.36 \
+		time-core-0.1.2 \
+		time-macros-0.2.18 \
+		toml-0.8.19 \
+		toml_datetime-0.6.8 \
+		toml_edit-0.22.22 \
+		unicode-ident-1.0.14 \
+		unicode-width-0.1.14 \
+		unicode-width-0.2.0 \
+		unsafe-libyaml-0.2.11 \
+		utf8parse-0.2.1 \
+		walkdir-2.5.0 \
+		wasi-0.11.0+wasi-snapshot-preview1 \
+		winapi-util-0.1.9 \
+		windows-0.56.0 \
+		windows-core-0.56.0 \
+		windows-implement-0.56.0 \
+		windows-interface-0.56.0 \
+		windows-result-0.1.2 \
+		windows-sys-0.52.0 \
+		windows-sys-0.59.0 \
+		windows-targets-0.52.6 \
+		windows_aarch64_gnullvm-0.52.6 \
+		windows_aarch64_msvc-0.52.6 \
+		windows_i686_gnu-0.52.6 \
+		windows_i686_gnullvm-0.52.6 \
+		windows_i686_msvc-0.52.6 \
+		windows_x86_64_gnu-0.52.6 \
+		windows_x86_64_gnullvm-0.52.6 \
+		windows_x86_64_msvc-0.52.6 \
+		winnow-0.6.24 \
+		yaml-rust-0.4.5
+
+PLIST_FILES=	bin/tq
+
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/tq
+
+.include <bsd.port.mk>
