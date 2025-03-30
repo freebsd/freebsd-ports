@@ -1,19 +1,17 @@
 PORTNAME=	dakota
-DISTVERSION=	6.17.0
-PORTREVISION=	12
+DISTVERSION=	6.21.0
 CATEGORIES=	science
-MASTER_SITES=	https://dakota.sandia.gov/sites/default/files/distributions/public/
-DISTNAME=	${PORTNAME}-${DISTVERSION}-release-public-src-cli
+MASTER_SITES=	https://github.com/snl-dakota/dakota/releases/download/v${DISTVERSION}/
+DISTNAME=	${PORTNAME}-${DISTVERSION}-public-src-cli
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Interface between analysis codes & iterative systems analysis methods
-WWW=		https://dakota.sandia.gov/
+WWW=		https://dakota.sandia.gov \
+		https://github.com/snl-dakota/dakota
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/LICENSE
-
-BROKEN=		fails to build with boost-1.85+
 
 BUILD_DEPENDS=	nanoflann>0:math/nanoflann
 LIB_DEPENDS=	libblas.so:math/blas \
@@ -24,6 +22,7 @@ LIB_DEPENDS=	libblas.so:math/blas \
 		libgsl.so:math/gsl \
 		libhdf5.so:science/hdf5 \
 		libicui18n.so:devel/icu \
+		libkokkoscore.so:devel/kokkos \
 		liblapack.so:math/lapack \
 		libnlopt.so:math/nlopt \
 		libpng16.so:graphics/png \
@@ -43,6 +42,8 @@ SHEBANG_FILES=	interfaces/Python/mpitile \
 		scripts/pyprepro/pyprepro \
 		scripts/dprepro.perl \
 		test/dakota_test.perl
+
+CXX=		${FILESDIR}/fake-c++.sh # change to c++14
 
 CMAKE_ON=	HAVE_X_GRAPHICS # always enable graphics because w/out it a lot of unrelated files aren't installed due to bugs in the project
 CMAKE_ON+=	Boost_NO_BOOST_CMAKE \
@@ -75,16 +76,9 @@ pre-configure: # MUQ_STANMATH_DIR is lost otherwise
 	@${REINPLACE_CMD} 's|find_package(PkgConfig)|set(MUQ_STANMATH_DIR ${WRKSRC}/stanmath)|' ${WRKSRC}/packages/external/muq2/cmake/finds/FindSTANMATH.cmake
 
 post-install:
-	# remove eigen3 that Dakota installs
-	cd ${STAGEDIR}${PREFIX} && ${RM} -r include/eigen3 share/eigen3
-	# remove cblas.h that Dakota installs
-	${RM} ${STAGEDIR}${PREFIX}/include/cblas.h
-	# remove *.orig files
-	${RM} ${STAGEDIR}${PREFIX}/include/colin/AppResponse.h.orig
-	# install libraries that it fails to install
-.for l in libmuqSamplingAlgorithms.so libmuqModeling.so libmuqUtilities.so
-	${INSTALL_LIB} ${BUILD_WRKSRC}/packages/external/muq2/lib/${l} ${STAGEDIR}${PREFIX}/lib
-.endfor
+	# remove eigen3 that Dakota installs, see https://github.com/snl-dakota/dakota/issues/182
+	@cd ${STAGEDIR}${PREFIX} && \
+		${RM} -r include/eigen3 share/eigen3
 
 do-test: install # from Additional Test Suites @ https://dakota.sandia.gov/content/additional-test-suites (many tests are known to fail)
 	## minimal set of fast-running tests that should NOT FAIL (may DIFF, depending on platform / compiler)

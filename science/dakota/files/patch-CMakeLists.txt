@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2022-11-11 20:23:57 UTC
+--- CMakeLists.txt.orig	2024-11-12 02:01:36 UTC
 +++ CMakeLists.txt
-@@ -243,9 +243,11 @@ if(DAKOTA_MODULE_DAKOTA)
+@@ -274,9 +274,11 @@ if(DAKOTA_MODULE_DAKOTA)
    endif()
  
    # Legacy examples
@@ -14,7 +14,7 @@
      add_subdirectory(dakota-examples)
    endif()
  
-@@ -268,19 +270,23 @@ install(FILES INSTALL LICENSE COPYRIGHT README
+@@ -299,19 +301,23 @@ install(FILES INSTALL LICENSE COPYRIGHT README
    DESTINATION ${DAKOTA_TOPFILES_INSTALL}
    )
  
