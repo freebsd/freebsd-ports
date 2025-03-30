@@ -1,7 +1,10 @@
 include/libwnck-3.0/libwnck/application.h
 include/libwnck-3.0/libwnck/class-group.h
+include/libwnck-3.0/libwnck/icons.h
 include/libwnck-3.0/libwnck/libwnck.h
+include/libwnck-3.0/libwnck/misc.h
 include/libwnck-3.0/libwnck/pager.h
+include/libwnck-3.0/libwnck/resource.h
 include/libwnck-3.0/libwnck/screen.h
 include/libwnck-3.0/libwnck/selector.h
 include/libwnck-3.0/libwnck/tasklist.h
@@ -10,6 +13,7 @@ include/libwnck-3.0/libwnck/version.h
 include/libwnck-3.0/libwnck/window-action-menu.h
 include/libwnck-3.0/libwnck/window.h
 include/libwnck-3.0/libwnck/wnck-enum-types.h
+include/libwnck-3.0/libwnck/wnck-handle.h
 include/libwnck-3.0/libwnck/workspace.h
 lib/libwnck-3.so
 lib/libwnck-3.so.0
@@ -31,6 +35,7 @@ share/locale/bs/LC_MESSAGES/libwnck-3.0.mo
 share/locale/ca/LC_MESSAGES/libwnck-3.0.mo
 share/locale/ca@valencia/LC_MESSAGES/libwnck-3.0.mo
 share/locale/crh/LC_MESSAGES/libwnck-3.0.mo
+share/locale/ckb/LC_MESSAGES/libwnck-3.0.mo
 share/locale/cs/LC_MESSAGES/libwnck-3.0.mo
 share/locale/cy/LC_MESSAGES/libwnck-3.0.mo
 share/locale/da/LC_MESSAGES/libwnck-3.0.mo
