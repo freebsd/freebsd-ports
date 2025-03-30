@@ -1,9 +1,9 @@
 PORTNAME=	gammaray
 DISTVERSION=	3.1.0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/KDAB/GammaRay/releases/download/v${DISTVERSION}/
 
-# implicit-approval+: arrowd
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Debugging tool for Qt-application
 WWW=		https://www.kdab.com/development-resources/qt-tools/gammaray/
@@ -24,6 +24,7 @@ LICENSE_FILE_MIT=	${WRKSRC}/LICENSES/MIT.txt
 
 LIB_DEPENDS=	libdwarf.so:devel/libdwarf \
 		libelf.so:devel/libelf
+RUN_DEPENDS=	lsof:sysutils/lsof
 
 FLAVORS=	qt6 qt5
 FLAVOR?=	qt6
