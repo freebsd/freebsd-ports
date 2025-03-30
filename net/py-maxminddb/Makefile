@@ -1,6 +1,5 @@
 PORTNAME=	maxminddb
-PORTVERSION=	2.6.2
-PORTREVISION=	1
+PORTVERSION=	2.6.3
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net python geography
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,14 +12,16 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libmaxminddb.so:net/libmaxminddb
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}setuptools-scm>=0:devel/py-setuptools-scm@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 
 USES=		compiler:c11 localbase python
 USE_GITHUB=	yes
 GH_ACCOUNT=	maxmind
 GH_PROJECT=	MaxMind-DB-Reader-python
 
-USE_PYTHON=	autoplist distutils
+USE_PYTHON=	autoplist concurrent pep517
 
 NO_ARCH=	yes
 
