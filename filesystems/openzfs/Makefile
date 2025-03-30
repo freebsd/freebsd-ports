@@ -1,5 +1,6 @@
 PORTNAME=	openzfs
 PORTVERSION=	2.3.1
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	filesystems sysutils
 MASTER_SITES=   https://github.com/openzfs/zfs/releases/download/zfs-${PORTVERSION}/
@@ -53,6 +54,8 @@ CONFIGURE_ARGS+=	--without-python
 PYTHON_NO_DEPENDS=yes
 .endif
 
+.include <bsd.port.pre.mk>
+
 post-extract:
 	# Change certain shebangs into something that shebang fix understands
 	cd ${WRKSRC} && ${SED} -i '' '1s:@PYTHON_SHEBANG@:python3:' \
@@ -62,4 +65,13 @@ post-extract:
 		cmd/dbufstat.in \
 		cmd/zilstat.in
 
-.include <bsd.port.mk>
+post-patch:
+.if ${ARCH} == i386
+	${REINPLACE_CMD} \
+	-e 's,-c -o lib/libspl/libspl_la-atomic.lo,-Wno-error=atomic-alignment -c -o lib/libspl/libspl_la-atomic.lo,' \
+	-e 's,-c -o module/icp/algs/sha2/libicp_la-sha256_impl.lo,-Wno-unused-function -c -o module/icp/algs/sha2/libicp_la-sha256_impl.lo,' \
+	-e 's,-c -o module/icp/algs/sha2/libicp_la-sha512_impl.lo,-Wno-unused-function -c -o module/icp/algs/sha2/libicp_la-sha512_impl.lo,' \
+	${WRKSRC}/Makefile.in
+.endif
+
+.include <bsd.port.post.mk>
