@@ -1,7 +1,7 @@
 PORTNAME=	xorgxrdp
-DISTVERSION=	0.10.3
+DISTVERSION=	0.10.4
 # Be sure to bump PORTREVISION after xorg-server update to force rebuild
-PORTREVISION=	2
+PORTREVISION=	0
 CATEGORIES=	x11-drivers
 MASTER_SITES=	https://github.com/neutrinolabs/${PORTNAME}/releases/download/v${DISTVERSION}/ \
 		https://github.com/neutrinolabs/xrdp/releases/download/v${XRDPVER}/:xrdp
@@ -24,7 +24,7 @@ USES=		autoreconf libtool:build localbase pkgconfig xorg
 USE_XORG=	xorgproto xorg-server
 USE_LDCONFIG=	yes
 
-XRDPVER=	0.10.2
+XRDPVER=	0.10.3
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
