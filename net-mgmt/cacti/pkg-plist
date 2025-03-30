@@ -146,6 +146,7 @@
 %%CACTIDIR%%/docs/Plugin-Development.html
 %%CACTIDIR%%/docs/Plugin-Guidelines.html
 %%CACTIDIR%%/docs/Plugin-Hook-API-Ref.html
+%%CACTIDIR%%/docs/Plugin-Mactrack.html
 %%CACTIDIR%%/docs/Plugin-Reference.html
 %%CACTIDIR%%/docs/Plugin-Syslog.html
 %%CACTIDIR%%/docs/Plugins.html
