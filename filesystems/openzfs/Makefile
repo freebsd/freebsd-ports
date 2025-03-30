@@ -12,7 +12,6 @@ WWW=		https://github.com/openzfs/zfs
 
 LICENSE=	CDDL
 
-BROKEN_aarch64=	invokes x86 assembler
 BROKEN_riscv64=	fails to compile: btree_test.c:462:49: result of comparison of constant -1 with expression of type 'char' is always true
 
 BUILD_DEPENDS=	ksh93:shells/ksh93
