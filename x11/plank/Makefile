@@ -1,5 +1,5 @@
 PORTNAME=	plank
-DISTVERSION=	0.11.100
+DISTVERSION=	0.11.114
 CATEGORIES=	x11
 
 MAINTAINER=	daniel@shafer.cc
@@ -12,14 +12,14 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libbamf3.so:sysutils/bamf \
 		libgee-0.8.so:devel/libgee \
 		libgnome-menu-3.so:x11/gnome-menus
+RUN_DEPENDS=	upower>0:sysutils/upower
 
-USES=		autoreconf gmake gnome libtool localbase pathfix pkgconfig \
-		vala:build xorg
+USES=		desktop-file-utils gettext-tools gnome localbase meson \
+		pkgconfig vala:build xorg
 USE_GNOME=	glib20 gtk30 gdkpixbuf cairo libxml2 libwnck3
 USE_XORG=	x11 xfixes xi
 
 CFLAGS+=	-Wno-return-type
-GNU_CONFIGURE=	yes
 GLIB_SCHEMAS=	net.launchpad.plank.gschema.xml
 
 USE_GITHUB=	yes
@@ -28,22 +28,15 @@ GH_PROJECT=	plank-reloaded
 
 OPTIONS_SUB=	yes
 
-OPTIONS_DEFINE=	NLS DBUSMENU
+OPTIONS_DEFINE=	DBUSMENU
 DBUSMENU_DESC=	DBusMenu protocol
 
-CONFIGURE_ARGS=	--disable-benchmark \
-	--disable-headless-tests \
-	--disable-docs \
-	--disable-apport
+MESON_ARGS=	-Dproduction_release=true \
+		-Denable-apport=false \
+		-Denable-barriers=yes
 
-NLS_USES=		gettext
-NLS_USES_OFF=		gettext-tools
-NLS_CONFIGURE_ENABLE=	nls
-
-DBUSMENU_LIB_DEPENDS=			libdbusmenu-gtk3.so:devel/libdbusmenu
-DBUSMENU_CONFIGURE_ENABLE=		dbusmenu
-
-INSTALL_TARGET=	install-strip
+DBUSMENU_LIB_DEPENDS=	libdbusmenu-gtk3.so:devel/libdbusmenu
+DBUSMENU_MESON_YES=	enable-dbusmenu
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${LOCALBASE}|g' \

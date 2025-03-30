@@ -1,0 +1,10 @@
+--- lib/meson.build.orig	2025-02-28 03:58:18 UTC
++++ lib/meson.build
+@@ -82,7 +82,6 @@ plank_internal_lib = static_library(
+   plank_internal_lib_sources,
+   dependencies: [plank_base_dep, wnck_x11_dep],
+   install: false,
+-  c_args: '-fvisibility=internal',
+   vala_args: [
+     '--pkg', 'compat',
+   ],
