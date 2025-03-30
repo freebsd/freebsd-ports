@@ -31,6 +31,8 @@ SHEBANG_FILES=	data/scripts/cairo-dock-package-theme.sh \
 		data/scripts/help_scripts.sh \
 		data/scripts/initial-setup.sh
 
+LDFLAGS+=	-lm
+
 OPTIONS_DEFINE=		WAYLAND X11
 OPTIONS_DEFAULT=	EGL WAYLAND X11
 OPTIONS_RADIO=		GL
