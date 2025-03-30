@@ -1,3 +1,42 @@
+  <vuln vid="1d53db32-0d60-11f0-8542-b42e991fc52e">
+    <topic>suricata -- Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>suricata</name>
+	<range><lt>7.0.9</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Suricate team reports:</p>
+	<blockquote cite="https://forum.suricata.io/t/suricata-7-0-9-released/5495">
+	  <p>Multiple vulnerabilities</p>
+	</blockquote>
+	<p>These CVEs have been reserved and no details have been yet provided.</p>
+	<ul>
+	  <li>CVE-2025-29915: Severity HIGH</li>
+	  <li>CVE-2025-29916: Severity Moderate</li>
+	  <li>CVE-2025-29917: Severity HIGH</li>
+	  <li>CVE-2025-29918: Severity HIGH</li>
+	</ul>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-29915</cvename>
+      <url>https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-29915</url>
+      <cvename>CVE-2025-29916</cvename>
+      <url>https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-29916</url>
+      <cvename>CVE-2025-29917</cvename>
+      <url>https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-29917</url>
+      <cvename>CVE-2025-29918</cvename>
+      <url>https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-29918</url>
+    </references>
+    <dates>
+      <discovery>2025-03-12</discovery>
+      <entry>2025-03-30</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="7cb6642c-0c5a-11f0-8688-4ccc6adda413">
     <topic>qt6-webengine -- Multiple vulnerabilities</topic>
     <affects>
