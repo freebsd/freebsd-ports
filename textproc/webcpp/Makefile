@@ -8,6 +8,9 @@ MAINTAINER=	chip-set@mail.ru
 COMMENT=	Convert your source code to syntax highlighted HTML
 WWW=		https://webcpp.sourceforge.net/
 
+DEPRECATED=	Abandonware and obsolete, last release in 2004
+EXPIRATION_DATE=2025-04-30
+
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
