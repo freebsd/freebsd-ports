@@ -12,6 +12,9 @@ LICENSE_NAME=	GREPLE License
 LICENSE_FILE=	${WRKSRC}/LICENSE
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
+DEPRECATED=	Deprecated upstream, repo archived Nov 21, 2018
+EXPIRATION_DATE=2025-04-30
+
 RUN_DEPENDS=	${SITE_PERL}/Getopt/EX.pm:devel/p5-Getopt-EX
 
 USES=		perl5 shebangfix
