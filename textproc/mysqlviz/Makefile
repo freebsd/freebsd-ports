@@ -9,6 +9,10 @@ WWW=		https://github.com/globalcitizen/mysqlviz
 
 LICENSE=	GPLv3
 
+BROKEN=		Unfetchable
+DEPRECATED=	Repo deleted upstream
+EXPIRATION_DATE=2025-04-30
+
 NO_BUILD=	yes
 USES=	php:cli tar:bzip2
 USE_GITHUB=	yes
