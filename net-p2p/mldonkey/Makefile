@@ -10,9 +10,6 @@ WWW=		https://mldonkey.sourceforge.net/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/Copying.txt
 
-DEPRECATED=	Outdated and unsupported upstream
-EXPIRATION_DATE=2025-04-30
-
 CONFLICTS=	mldonkey{-{core,gui},}-devel
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/ocaml/nums.cma:math/ocaml-num

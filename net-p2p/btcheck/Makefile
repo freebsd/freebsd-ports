@@ -10,11 +10,7 @@ WWW=		https://sourceforge.net/projects/btcheck/
 
 LICENSE=	GPLv3
 
-DEPRECATED=	Abandoned upstream and missing multiple features that modern torrent files/clients utilize, consider using net-p2p/intermodal
-EXPIRATION_DATE=2025-04-30
-
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
 CONFLICTS_INSTALL=	libbt # bin/btcheck
 

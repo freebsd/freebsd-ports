@@ -4,15 +4,12 @@ DISTVERSIONPREFIX=	v
 PORTREVISION=	1
 CATEGORIES=	net-p2p
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Command-line utility for creating BitTorrent metainfo files
 WWW=		https://github.com/Rudde/mktorrent
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
-
-DEPRECATED=	Abandonware, new upstream which also seems to have abandoned the project. Consider using net-p2p/mkbrr
-EXPIRATION_DATE=2025-03-31
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	Rudde
