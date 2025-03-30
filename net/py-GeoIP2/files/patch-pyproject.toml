@@ -1,0 +1,11 @@
+--- pyproject.toml.orig	2025-03-30 21:20:26 UTC
++++ pyproject.toml
+@@ -3,7 +3,7 @@ build-backend = "setuptools.build_meta"
+ build-backend = "setuptools.build_meta"
+ 
+ [project]
+-name = "geoip2"
++name = "GeoIP2"
+ version = "5.0.1"
+ description = "MaxMind GeoIP2 API"
+ authors = [

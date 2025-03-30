@@ -1,6 +1,5 @@
 PORTNAME=	GeoIP2
-PORTVERSION=	4.7.0
-PORTREVISION=	1
+PORTVERSION=	5.0.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net python geography
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,17 +12,20 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aiohttp>=3.6.2:www/py-aiohttp@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}maxminddb>=2.0.0:net/py-maxminddb@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}requests>=2.24.0:www/py-requests@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}urllib3>=1.25.2:net/py-urllib3@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}maxminddb>=2.5.1:net/py-maxminddb@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}requests>=2.24.0:www/py-requests@${PY_FLAVOR}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}setuptools-scm>=0:devel/py-setuptools-scm@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 
 USES=		python
 
+USE_GITHUB=	yes
 GH_ACCOUNT=	maxmind
 GH_PROJECT=	GeoIP2-python
 
+USE_PYTHON=	autoplist concurrent pep517
+
 NO_ARCH=	yes
-USE_GITHUB=	yes
-USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>
