@@ -42,6 +42,7 @@
 %%PYTHON_SITELIBDIR%%/sgp4/omm.py
 %%PYTHON_SITELIBDIR%%/sgp4/propagation.py
 %%PYTHON_SITELIBDIR%%/sgp4/sample_omm.csv
+%%PYTHON_SITELIBDIR%%/sgp4/sample_omm.json
 %%PYTHON_SITELIBDIR%%/sgp4/sample_omm.xml
 %%PYTHON_SITELIBDIR%%/sgp4/tcppver.out
 %%PYTHON_SITELIBDIR%%/sgp4/tests.py
