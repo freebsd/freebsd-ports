@@ -10,6 +10,8 @@ WWW=		https://www.gnuradio.org/
 
 LICENSE=	GPLv3
 
+BROKEN=		Fails to build with Boost 1.87 
+
 BUILD_DEPENDS=	volk>0:devel/volk \
 		doxygen>0:devel/doxygen \
 		${PYTHON_PKGNAMEPREFIX}sphinx>=1.2.2,1:textproc/py-sphinx@${PY_FLAVOR} \
