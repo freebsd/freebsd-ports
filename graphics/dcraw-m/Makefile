@@ -1,6 +1,6 @@
 PORTNAME=	dcraw-m
 PORTVERSION=	9.22
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	graphics
 
 MAINTAINER=	waitman@waitman.net
@@ -19,10 +19,10 @@ GH_TAGNAME=	1392579
 USES=		jpeg magick:6 pkgconfig
 
 CFLAGS+=	-Wall -I${LOCALBASE}/include \
-		`MagickWand-config --cflags --cppflags` \
+		`pkg-config MagickWand --cflags` \
 		-DMAGICKCORE_HDRI_ENABLE=0 \
 		-DMAGICKCORE_QUANTUM_DEPTH=16
-LDFLAGS+=	`MagickWand-config --ldflags --libs` -lm -llcms2 -ljpeg \
+LDFLAGS+=	`pkg-config MagickWand --libs` -lm -llcms2 -ljpeg \
 		-ljasper
 LIBS+=		-L${LOCALBASE}/lib
 
