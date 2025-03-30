@@ -5893,6 +5893,7 @@
     SUBDIR += py-session-info
     SUBDIR += py-setoptconf
     SUBDIR += py-setproctitle
+    SUBDIR += py-setupmeta
     SUBDIR += py-setuptools
     SUBDIR += py-setuptools-declarative-requirements
     SUBDIR += py-setuptools-dso
