@@ -1,5 +1,6 @@
 PORTNAME=	purple-discord
 PORTVERSION=	g20230215
+PORTREVISION=	1
 CATEGORIES=	net-im
 
 MAINTAINER=	ports@FreeBSD.org

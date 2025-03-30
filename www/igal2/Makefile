@@ -1,5 +1,6 @@
 PORTNAME=	igal2
 DISTVERSION=	3.2
+PORTREVISION=	1
 CATEGORIES=	www graphics
 MASTER_SITES=	https://codeload.github.com/solbu/${PORTNAME}/tar.gz/v${DISTVERSION}?dummy=/
 

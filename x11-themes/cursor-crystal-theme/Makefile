@@ -1,6 +1,6 @@
 PORTNAME=	cursor-crystal-theme
 DISTVERSION=	1.1.1
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	x11-themes
 MASTER_SITES=	https://www.notmart.org/files/
 DISTNAME=	Crystalcursors

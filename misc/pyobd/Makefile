@@ -1,6 +1,6 @@
 PORTNAME=	pyobd
 DISTVERSION=	0.9.3
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	misc
 MASTER_SITES=	http://www.obdtester.com/download/
 DISTNAME=	pyobd_${PORTVERSION}

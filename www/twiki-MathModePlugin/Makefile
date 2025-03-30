@@ -1,6 +1,6 @@
 PORTNAME=	MathModePlugin
 SVNREV=		15934
-PORTREVISION=	2
+PORTREVISION=	3
 MASTER_SITES=	LOCAL/skv
 
 COMMENT=	Include LaTeX formatted math in your TWiki pages

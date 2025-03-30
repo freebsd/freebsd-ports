@@ -1,6 +1,6 @@
 PORTNAME=	docbook2odf
 PORTVERSION=	0.244
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	textproc perl5
 MASTER_SITES=	http://open.comsultia.com/docbook2odf/dwn/
 
