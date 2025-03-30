@@ -1,5 +1,5 @@
 PORTNAME=	libdatovka
-DISTVERSION=	0.7.0
+DISTVERSION=	0.7.1
 CATEGORIES=	devel
 MASTER_SITES=	https://secure.nic.cz/files/datove_schranky/libdatovka/
 
@@ -10,26 +10,23 @@ WWW=		https://gitlab.nic.cz/datovka/libdatovka
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	docbook-xsl>0:textproc/docbook-xsl \
-		expat>0:textproc/expat2 \
-		gpgme>0:security/gpgme \
-		libgcrypt>0:security/libgcrypt \
-		libiconv>0:converters/libiconv \
-		pkgconf:devel/pkgconf \
+BUILD_DEPENDS=	docbook-xsl>=0:textproc/docbook-xsl \
+		gpgme>=0:security/gpgme \
+		libgcrypt>=0:security/libgcrypt \
+		libgpg-error>=0:security/libgpg-error \
 		xsltproc:textproc/libxslt
-LIB_DEPENDS=	libassuan.so:security/libassuan \
-		libcurl.so:ftp/curl \
-		libexpat.so:textproc/expat2 \
-		libgcrypt.so:security/libgcrypt \
-		libgpg-error.so:security/libgpg-error \
-		libgpgme.so:security/gpgme
+LIB_DEPENDS=	libcurl.so:ftp/curl \
+		libexpat.so:textproc/expat2
+RUN_DEPENDS=	gpgme>=0:security/gpgme \
+		libgcrypt>=0:security/libgcrypt \
+		libgpg-error>=0:security/libgpg-error
 
-USES=		autoreconf gettext gmake gnome libtool localbase ssl tar:xz
-USE_GNOME=	libxml2 libxslt
+USES=		autoreconf gettext gmake gnome iconv libtool localbase \
+		pkgconfig ssl tar:xz
+USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=		yes
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS+=	--disable-fatalwarnings \
 			--enable-openssl-backend \
 			--with-docbook-xsl-stylesheets=${LOCALBASE}/share/xsl/docbook
