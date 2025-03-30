@@ -1,5 +1,5 @@
 PORTNAME=	root
-DISTVERSION=	6.34.04
+DISTVERSION=	6.34.06
 CATEGORIES=	devel science math parallel python
 MASTER_SITES=	https://root.cern/download/
 DISTFILES=	${PORTNAME}_v${DISTVERSION}.source${EXTRACT_SUFX}
@@ -174,7 +174,6 @@ TMLP_IMPLIES=	TMVAML
 TMVAML_CMAKE_BOOL=	tmva tmva-cpu
 TMVAML_DESC=		Build TMVA multi variate analysis library, including TMVA with CPU support for deep learning
 TMVAML_IMPLIES=	IMT
-TMVAML_LIB_DEPENDS=	libopenblas.so:math/openblas
 
 VDT_CMAKE_BOOL=	vdt
 VDT_DESC=		Enable support for VDT (fast and vectorisable mathematical functions)

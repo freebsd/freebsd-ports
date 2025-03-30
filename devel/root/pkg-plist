@@ -1443,6 +1443,8 @@ include/root/Riostream.h
 %%ROOFIT%%include/root/RooFit/Detail/JSONInterface.h
 %%ROOFIT%%include/root/RooFit/Detail/MathFuncs.h
 %%ROOFIT%%include/root/RooFit/Detail/NormalizationHelpers.h
+%%ROOFIT%%include/root/RooFit/Detail/RooNLLVarNew.h
+%%ROOFIT%%include/root/RooFit/Detail/RooNormalizedPdf.h
 %%ROOFIT%%include/root/RooFit/EvalContext.h
 %%ROOFIT%%include/root/RooFit/Evaluator.h
 %%ROOFIT%%include/root/RooFit/Floats.h
@@ -4620,7 +4622,6 @@ lib/root/libvectorDict.so.%%SHLIB_VER%%
 %%PORTDOCS%%%%DOCSDIR%%/tutorials/gl/transparentpad.C
 %%PORTDOCS%%%%DOCSDIR%%/tutorials/gl/viewer3DLocal.C
 %%PORTDOCS%%%%DOCSDIR%%/tutorials/gl/viewer3DMaster.C
-%%PORTDOCS%%%%DOCSDIR%%/tutorials/graphics/AtlasExample.C
 %%PORTDOCS%%%%DOCSDIR%%/tutorials/graphics/accessiblecolorschemes.C
 %%PORTDOCS%%%%DOCSDIR%%/tutorials/graphics/analyze.C
 %%PORTDOCS%%%%DOCSDIR%%/tutorials/graphics/anim.C
@@ -4778,6 +4779,7 @@ lib/root/libvectorDict.so.%%SHLIB_VER%%
 %%PORTDOCS%%%%DOCSDIR%%/tutorials/hist/h2_cut.C
 %%PORTDOCS%%%%DOCSDIR%%/tutorials/hist/h2proj.C
 %%PORTDOCS%%%%DOCSDIR%%/tutorials/hist/hbars.C
+%%PORTDOCS%%%%DOCSDIR%%/tutorials/hist/hist039_TH2Poly_usa.py
 %%PORTDOCS%%%%DOCSDIR%%/tutorials/hist/histpalettecolor.C
 %%PORTDOCS%%%%DOCSDIR%%/tutorials/hist/hksimple.C
 %%PORTDOCS%%%%DOCSDIR%%/tutorials/hist/hlHisto1.C
@@ -4813,9 +4815,9 @@ lib/root/libvectorDict.so.%%SHLIB_VER%%
 %%PORTDOCS%%%%DOCSDIR%%/tutorials/hist/statsEditing.C
 %%PORTDOCS%%%%DOCSDIR%%/tutorials/hist/testSmooth.C
 %%PORTDOCS%%%%DOCSDIR%%/tutorials/hist/th2polyBoxes.C
-%%PORTDOCS%%%%DOCSDIR%%/tutorials/hist/th2polyEurope.C
 %%PORTDOCS%%%%DOCSDIR%%/tutorials/hist/th2polyHoneycomb.C
 %%PORTDOCS%%%%DOCSDIR%%/tutorials/hist/th2polyUSA.C
+%%PORTDOCS%%%%DOCSDIR%%/tutorials/hist/th2polyUSA.py
 %%PORTDOCS%%%%DOCSDIR%%/tutorials/hist/thstack2palettecolor.C
 %%PORTDOCS%%%%DOCSDIR%%/tutorials/hist/thstackcolorscheme.C
 %%PORTDOCS%%%%DOCSDIR%%/tutorials/hist/thstackpalettecolor.C
@@ -4901,6 +4903,7 @@ lib/root/libvectorDict.so.%%SHLIB_VER%%
 %%PORTDOCS%%%%DOCSDIR%%/tutorials/legacy/rootenv.C
 %%PORTDOCS%%%%DOCSDIR%%/tutorials/legacy/rootmarks.C
 %%PORTDOCS%%%%DOCSDIR%%/tutorials/legacy/tasks.C
+%%PORTDOCS%%%%DOCSDIR%%/tutorials/legacy/th2polyEurope.C
 %%PORTDOCS%%%%DOCSDIR%%/tutorials/legacy/thread/index.md
 %%PORTDOCS%%%%DOCSDIR%%/tutorials/legacy/thread/stressThreadPool.C
 %%PORTDOCS%%%%DOCSDIR%%/tutorials/legacy/thread/threadPool.C
@@ -4961,7 +4964,6 @@ lib/root/libvectorDict.so.%%SHLIB_VER%%
 %%PORTDOCS%%%%DOCSDIR%%/tutorials/matrix/solveLinear.C
 %%PORTDOCS%%%%DOCSDIR%%/tutorials/mc/CompareMasses.C
 %%PORTDOCS%%%%DOCSDIR%%/tutorials/mc/mass_width_2008.mc.txt
-%%PORTDOCS%%%%DOCSDIR%%/tutorials/multicore/imt001_parBranchProcessing.C
 %%PORTDOCS%%%%DOCSDIR%%/tutorials/multicore/imt101_parTreeProcessing.C
 %%PORTDOCS%%%%DOCSDIR%%/tutorials/multicore/mp001_fillHistos.C
 %%PORTDOCS%%%%DOCSDIR%%/tutorials/multicore/mp101_fillNtuples.C
@@ -5459,6 +5461,10 @@ lib/root/libvectorDict.so.%%SHLIB_VER%%
 %%PORTDOCS%%%%DOCSDIR%%/tutorials/tmva/TMVA_SOFIE_RDataFrame_JIT.C
 %%PORTDOCS%%%%DOCSDIR%%/tutorials/tmva/TMVA_SOFIE_RSofieReader.C
 %%PORTDOCS%%%%DOCSDIR%%/tutorials/tmva/createData.C
+%%PORTDOCS%%%%DOCSDIR%%/tutorials/tmva/data/Higgs_data.root
+%%PORTDOCS%%%%DOCSDIR%%/tutorials/tmva/data/tmva_class_example.root
+%%PORTDOCS%%%%DOCSDIR%%/tutorials/tmva/data/tmva_multiclass_example.root
+%%PORTDOCS%%%%DOCSDIR%%/tutorials/tmva/data/tmva_reg_example.root
 %%PORTDOCS%%%%DOCSDIR%%/tutorials/tmva/data/toy_sigbkg_categ_offset.root
 %%PORTDOCS%%%%DOCSDIR%%/tutorials/tmva/data/toy_sigbkg_categ_varoff.root
 %%PORTDOCS%%%%DOCSDIR%%/tutorials/tmva/envelope/classification.C
