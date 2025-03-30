@@ -1,6 +1,6 @@
 --- Makefile.orig	2010-11-23 21:27:55 UTC
 +++ Makefile
-@@ -31,8 +31,12 @@ DEPENDENCY_HEADERS = \
+@@ -31,8 +31,12 @@ ifeq (${PLATFORM},linux)
  
  
  ifeq (${PLATFORM},linux)
@@ -9,13 +9,13 @@
 +CXX?=		c++
 +CXXFLAGS+=	-Wall
 +CPPFLAGS+=	`pkg-config --cflags popt` `pkg-config --cflags OpenEXR` \
-+		`Magick++-config --cppflags`
++		`pkg-config --cflags Magick++`
 +LDFLAGS+=	`pkg-config --libs popt` `pkg-config --libs libtiff-4` \
-+		`pkg-config --libs OpenEXR` `Magick++-config --libs`
++		`pkg-config --libs OpenEXR` `pkg-config --libs Magick++`
  EXECUTABLES = ${TARGET_SOURCES:%.cc=%}
  endif
  
-@@ -64,14 +68,24 @@ CFLAGS := -O3 -funroll-loops -fomit-fram
+@@ -64,14 +68,24 @@ endif
  endif
  
  
@@ -33,13 +33,13 @@
 +$(TARGET_OBJS) $(DEPENDENCY_OBJS) : $(DEPENDENCY_HEADERS)
 +$(EXECUTABLES) : $(DEPENDENCY_OBJS)
 +$(foreach prog,$(EXECUTABLES),$(eval $$prog : $$prog.o))
-+
+ 
 +%.o : %.cc
 +# Clang cannot compile image.cc and squish_luminance.cc with -O2 and above
 +	$(CXX) $(if $(and $(shell $(CXX) -v 2>&1 | grep clang),$(filter \
 +		image.cc squish_luminance.cc,$<)),$(CXXFLAGS:-O%=-O1), \
 +		$(CXXFLAGS)) $(CPPFLAGS) -o $@ -c $<
- 
++
 +% : %.o
 +	$(CXX) $(CXXFLAGS) $(LDFLAGS) $^ -o $@
  
