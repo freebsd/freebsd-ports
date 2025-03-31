@@ -4581,7 +4581,6 @@
     SUBDIR += py-bluelet
     SUBDIR += py-boltons
     SUBDIR += py-boolean.py
-    SUBDIR += py-boto
     SUBDIR += py-botocore
     SUBDIR += py-bps-restpy
     SUBDIR += py-breathe
