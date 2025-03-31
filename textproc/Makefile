@@ -472,7 +472,6 @@
     SUBDIR += lucene5
     SUBDIR += luceneplusplus
     SUBDIR += lv-aspell
-    SUBDIR += m17n-im-config
     SUBDIR += makefaq
     SUBDIR += makepatch
     SUBDIR += man2html
