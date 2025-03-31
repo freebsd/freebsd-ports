@@ -4867,7 +4867,6 @@
     SUBDIR += py-fastjsonschema
     SUBDIR += py-fastnumbers
     SUBDIR += py-fastprogress
-    SUBDIR += py-fbprophet
     SUBDIR += py-fiddle
     SUBDIR += py-fields
     SUBDIR += py-filebytes
