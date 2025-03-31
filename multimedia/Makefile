@@ -244,7 +244,6 @@
     SUBDIR += mpv-mpris
     SUBDIR += mpvpaper
     SUBDIR += mpvqt
-    SUBDIR += msdl
     SUBDIR += msopenh264
     SUBDIR += mswebrtc
     SUBDIR += musikcube
