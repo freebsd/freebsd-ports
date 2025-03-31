@@ -312,7 +312,6 @@
     SUBDIR += python3
     SUBDIR += python310
     SUBDIR += python311
-    SUBDIR += python38
     SUBDIR += python39
     SUBDIR += qmasm
     SUBDIR += quickjs

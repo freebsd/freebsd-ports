@@ -4259,3 +4259,4 @@ multimedia/dirac||2025-03-31|Has expired: Legacy video codec superseded by multi
 ports-mgmt/py-pytoport||2025-03-31|Has expired: Depends on expired misc/py-spdx-lookup
 net/py-ec2-cli-tools||2025-03-31|Has expired: Depends on expired devel/py-boto
 emulators/libretro-mame||2025-03-31|Has expired: Uses expired Python 3.8
+lang/python38|lang/python39|2025-03-31|Has expired: Reached end-of-life in October 2024
