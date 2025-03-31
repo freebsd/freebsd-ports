@@ -4265,3 +4265,4 @@ textproc/p5-PDF-WebKit||2025-03-31|Has expired: Depends on expired converters/wk
 net-im/py-telepot||2025-03-31|Has expired: Upstream repository has been archived on Jun 2, 2019
 multimedia/msdl||2025-03-31|Has expired: Obsolete utility for obsolete protocols
 net-im/sayaka||2025-03-31|Has expired: Depends on expired security/mbedtls2
+finance/odoo17||2025-03-31|Has expired: Depends on expired print/py-pypdf2
