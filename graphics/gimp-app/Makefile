@@ -1,6 +1,6 @@
 PORTNAME=	gimp
 DISTVERSION=	2.10.38
-PORTREVISION=	3
+PORTREVISION=	4
 PORTEPOCH=	1
 CATEGORIES=	graphics gnome
 MASTER_SITES=	GIMP/gimp/v${PORTVERSION:R}
@@ -132,6 +132,7 @@ post-patch:
 			${WRKSRC}/plug-ins/pygimp/Makefile.in
 	@${REINPLACE_CMD} \
 		-e 's|x86_64|amd64|g' \
+		-e 's|libpixbufloader-svg.so|libpixbufloader_svg.so|g' \
 		${WRKSRC}/configure.ac
 
 .include <bsd.port.mk>
