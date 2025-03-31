@@ -401,6 +401,7 @@ include/thrift/lib/cpp2/protocol/detail/FieldMask.h
 include/thrift/lib/cpp2/protocol/detail/FieldMaskUtil.h
 include/thrift/lib/cpp2/protocol/detail/Object.h
 include/thrift/lib/cpp2/protocol/detail/ReservedId.h
+include/thrift/lib/cpp2/protocol/detail/Patch.h
 include/thrift/lib/cpp2/protocol/detail/index.h
 include/thrift/lib/cpp2/protocol/detail/protocol_methods.h
 include/thrift/lib/cpp2/reflection/gmock_matching.h
@@ -571,6 +572,9 @@ include/thrift/lib/cpp2/transport/rocket/client/RocketClient.h
 include/thrift/lib/cpp2/transport/rocket/client/RocketStreamServerCallback.h
 include/thrift/lib/cpp2/transport/rocket/compression/CompressionAlgorithmSelector.h
 include/thrift/lib/cpp2/transport/rocket/compression/CompressionManager.h
+include/thrift/lib/cpp2/transport/rocket/compression/CustomCompressor.h
+include/thrift/lib/cpp2/transport/rocket/compression/CustomCompressorFactory.h
+include/thrift/lib/cpp2/transport/rocket/compression/CustomCompressorRegistry.h
 include/thrift/lib/cpp2/transport/rocket/flush/FlushManager.h
 include/thrift/lib/cpp2/transport/rocket/framing/ErrorCode.h
 include/thrift/lib/cpp2/transport/rocket/framing/Flags.h
@@ -587,6 +591,7 @@ include/thrift/lib/cpp2/transport/rocket/framing/parser/ParserStrategy.h
 include/thrift/lib/cpp2/transport/rocket/framing/parser/test/TestUtil.h
 include/thrift/lib/cpp2/transport/rocket/framing/test/Util.h
 include/thrift/lib/cpp2/transport/rocket/payload/ChecksumPayloadSerializerStrategy.h
+include/thrift/lib/cpp2/transport/rocket/payload/CustomCompressionPayloadSerializerStrategy.h
 include/thrift/lib/cpp2/transport/rocket/payload/DefaultPayloadSerializerStrategy.h
 include/thrift/lib/cpp2/transport/rocket/payload/LegacyPayloadSerializerStrategy.h
 include/thrift/lib/cpp2/transport/rocket/payload/PayloadSerializer.h
