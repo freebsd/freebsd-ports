@@ -4293,3 +4293,4 @@ devel/rubygem-aws-sdk-elasticinference||2025-03-31|Has expired: Deprecated by up
 devel/electron31||2025-03-31|Has expired: EOLed upstream, switch to newer version
 net-im/telepathy-logger-qt5||2025-03-31|Has expired: Abandoned project
 devel/py-boto|www/py-boto3|2025-03-31|Has expired: This version is discontinued upstream, please use www/py-boto3
+print/py-pypdf2|print/py-pypdf|2025-03-31|Has expired: Upstream moved the development back to PyPDF. Use print/py-pypdf instead
