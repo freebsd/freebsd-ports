@@ -589,7 +589,6 @@
     SUBDIR += openpgm
     SUBDIR += openradius
     SUBDIR += openrsync
-    SUBDIR += opensips31
     SUBDIR += openslp
     SUBDIR += openvswitch
     SUBDIR += ortp

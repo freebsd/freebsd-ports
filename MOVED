@@ -4247,3 +4247,4 @@ multimedia/spook||2025-03-31|Has expired: Abandonware and obsolete, consider usi
 finance/odoo14||2025-03-31|Has expired: Depends on expired converters/wkhtmltopdf and print/py-pypdf2
 net/nsscache||2025-03-31|Has expired: Depends on expired devel/py-pytest-runner
 security/caldera4||2025-03-31|Has expired: Upgrade to a newer caldera version. 4.2.0 is vulnerable to remote code execution
+net/opensips31||2025-03-31|Has expired: Deprecated upstream
