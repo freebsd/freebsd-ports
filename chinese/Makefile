@@ -67,7 +67,6 @@
     SUBDIR += linux-wps-office-zh_CN
     SUBDIR += lunar
     SUBDIR += moettf
-    SUBDIR += muni
     SUBDIR += opencc
     SUBDIR += opendesktop-fonts
     SUBDIR += oto
