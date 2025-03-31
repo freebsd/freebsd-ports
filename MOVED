@@ -4274,3 +4274,4 @@ japanese/wnn7egg||2025-03-31|Has expired: Upstream disapeared and distfile is no
 multimedia/projectx||2025-03-31|Has expired: Abandonware, last release in 2011 and dependens on legacy version of Java. Consider using multimedia/ffmpeg or multimedia/vlc
 x11-toolkits/shared-desktop-ontologies||2025-03-31|Has expired: Abandonedware, not used by KDE for a long time
 devel/jrtplib||2025-03-31|Has expired: Abandonware, no longer maintained upstream as of 2020
+net-mgmt/netdot||2025-03-31|Has expired: Upstream has been inactive for 4 years, consider migrating to net-mgmt/netbox

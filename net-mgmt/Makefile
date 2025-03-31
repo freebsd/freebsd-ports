@@ -193,7 +193,6 @@
     SUBDIR += netdata-go
     SUBDIR += netdisco
     SUBDIR += netdisco-mibs
-    SUBDIR += netdot
     SUBDIR += netleak
     SUBDIR += netmagis-common
     SUBDIR += netmagis-database
