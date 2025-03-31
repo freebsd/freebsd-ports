@@ -4260,3 +4260,4 @@ ports-mgmt/py-pytoport||2025-03-31|Has expired: Depends on expired misc/py-spdx-
 net/py-ec2-cli-tools||2025-03-31|Has expired: Depends on expired devel/py-boto
 emulators/libretro-mame||2025-03-31|Has expired: Uses expired Python 3.8
 lang/python38|lang/python39|2025-03-31|Has expired: Reached end-of-life in October 2024
+devel/py-python-pcre||2025-03-31|Has expired: Upstream is inactive for over 9 years
