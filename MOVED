@@ -4234,3 +4234,4 @@ multimedia/ogmrip||2025-03-31|Has expired: Abandonware, last activity in 2018 an
 databases/py-pgxnclient||2025-03-31|Has expired: Depends on expired devel/py-pytest-runner
 misc/jirust||2025-03-31|Has expired: Listed as broken for over 6+ months
 math/py-Diofant||2025-03-31|Has expired: Depends on expired devel/py-pytest-runner
+devel/py-prettyprinter||2025-03-31|Has expired: Depends on expired devel/py-pytest-runner

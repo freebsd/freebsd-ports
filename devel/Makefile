@@ -5492,7 +5492,6 @@
     SUBDIR += py-preshed
     SUBDIR += py-preshed3
     SUBDIR += py-pretend
-    SUBDIR += py-prettyprinter
     SUBDIR += py-prettytable
     SUBDIR += py-prettytable0
     SUBDIR += py-printree
