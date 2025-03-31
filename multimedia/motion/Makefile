@@ -19,7 +19,7 @@ LIB_DEPENDS=	libwebp.so:graphics/webp \
 		libmicrohttpd.so:www/libmicrohttpd
 
 # USES block
-USES=		autoreconf cpe gmake jpeg localbase pkgconfig
+USES=		autoreconf cpe gettext-tools gmake jpeg localbase pkgconfig
 CPE_VENDOR=	${PORTNAME}_project
 
 USE_GITHUB=	yes
@@ -27,7 +27,6 @@ GH_ACCOUNT=	Motion-Project
 USE_RC_SUBR=	${PORTNAME}
 
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
 # Standard bsd.port.mk variables
 SUB_FILES=	pkg-message
