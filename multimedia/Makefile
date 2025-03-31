@@ -269,7 +269,6 @@
     SUBDIR += obs-waveform
     SUBDIR += obuparse
     SUBDIR += oggvideotools
-    SUBDIR += ogmrip
     SUBDIR += ogmtools
     SUBDIR += olive
     SUBDIR += onevpl
