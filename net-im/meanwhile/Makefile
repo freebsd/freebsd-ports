@@ -1,14 +1,18 @@
 PORTNAME=	meanwhile
-PORTVERSION=	1.0.2
-PORTREVISION=	6
+PORTVERSION=	1.1.1
 CATEGORIES=	net-im
-MASTER_SITES=	SF
 
-MAINTAINER=	marcus@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open Source implementation of the Lotus Sametime protocol
-WWW=		https://meanwhile.sourceforge.net/
+WWW=		https://github.com/obriencj/meanwhile
 
-USES=		gmake gnome libtool pathfix pkgconfig
+USES=		autoreconf gmake gnome libtool pathfix pkgconfig
+USE_GITHUB=     yes
+
+GH_ACCOUNT=     obriencj
+GH_PROJECT=     ${PORTNAME}
+GH_TAGNAME=     v${PORTVERSION}
+
 USE_GNOME=	glib20
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
