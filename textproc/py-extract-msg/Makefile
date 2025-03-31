@@ -13,6 +13,9 @@ WWW=		https://github.com/TeamMsgExtractor/msg-extractor
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
+DEPRECATED=	Depends on expiring textproc/py-RTFDE
+EXPIRATION_DATE=2025-06-01
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}beautifulsoup>=4.11.1:www/py-beautifulsoup@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}chardet>=4.0.0:textproc/py-chardet@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}compressed-rtf>=1.0.6:archivers/py-compressed-rtf@${PY_FLAVOR} \

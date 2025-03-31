@@ -11,6 +11,9 @@ WWW=		https://github.com/seamustuohy/RTFDE
 
 LICENSE=	LGPL3
 
+DEPRECATED=	Depends on expired devel/py-oletools
+EXPIRATION_DATE=2025-06-01
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lark>=0.11:devel/py-lark@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}oletools>=0.56:devel/py-oletools@${PY_FLAVOR}
 
