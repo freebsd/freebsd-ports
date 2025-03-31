@@ -4236,7 +4236,6 @@ misc/jirust||2025-03-31|Has expired: Listed as broken for over 6+ months
 math/py-Diofant||2025-03-31|Has expired: Depends on expired devel/py-pytest-runner
 devel/py-prettyprinter||2025-03-31|Has expired: Depends on expired devel/py-pytest-runner
 textproc/py-wstools||2025-03-31|Has expired: Depends on expired devel/py-pytest-runner
-x11/terminator||2025-03-31|Has expired: Depends on expired devel/py-pytest-runner
 devel/peg.el||2025-03-31|Has expired: Emacs 30 and later include peg.el as standard library
 textproc/py-citeproc-py-styles||2025-03-31|Has expired: Depends on expired devel/py-pytest-runner
 multimedia/gdialog||2025-03-31|Has expired: Support for a 20 year old obsolete STB that only supports DVB-T(1) and MPEG-2
