@@ -1,5 +1,5 @@
 PORTNAME=	fdupes
-DISTVERSION=	2.3.2
+DISTVERSION=	2.4.0
 PORTEPOCH=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	https://github.com/adrianlopezroche/${PORTNAME}/releases/download/v${DISTVERSION}/
