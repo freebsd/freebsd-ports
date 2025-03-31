@@ -1,7 +1,0 @@
-etc/esecannarc
-@dir lib/esecanna
-sbin/esecannaserver
-%%PORTDOCS%%share/doc/esecanna/CREDITS
-%%PORTDOCS%%share/doc/esecanna/CHANGES.jp
-%%PORTDOCS%%share/doc/esecanna/README.First.jp
-%%PORTDOCS%%share/doc/esecanna/README.jp
