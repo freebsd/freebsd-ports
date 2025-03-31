@@ -4287,3 +4287,4 @@ multimedia/gnome-mplayer||2025-03-31|Has expired: Abandonware, last activity fro
 devel/py-opengrok-tools||2025-03-31|Has expired: Depends on expired devel/py-pytest-runner
 multimedia/gmtk||2025-03-31|Has expired: Support library for deprecated port multimedia/gnome-mplayer
 lang/neko||2025-03-31|Has expired: Depends on expired security/mbedtls2
+devel/radian||2025-03-31|Has expired: Depends on expired devel/py-pytest-runner

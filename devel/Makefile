@@ -6323,7 +6323,6 @@
     SUBDIR += qxlsx
     SUBDIR += rabs
     SUBDIR += radare2
-    SUBDIR += radian
     SUBDIR += radicle
     SUBDIR += ragel
     SUBDIR += random123
