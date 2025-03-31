@@ -1,16 +1,16 @@
 bin/rsvg-convert
 include/librsvg-2.0/librsvg/rsvg-cairo.h
 include/librsvg-2.0/librsvg/rsvg-features.h
+include/librsvg-2.0/librsvg/rsvg-pixbuf.h
 include/librsvg-2.0/librsvg/rsvg-version.h
 include/librsvg-2.0/librsvg/rsvg.h
-lib/gdk-pixbuf-2.0/%%GTK2_VERSION%%/loaders/libpixbufloader-svg.so
+lib/gdk-pixbuf-2.0/%%GTK2_VERSION%%/loaders/libpixbufloader_svg.so
 lib/girepository-1.0/Rsvg-2.0.typelib
 lib/librsvg-2.so
 lib/librsvg-2.so.2
-lib/librsvg-2.so.2.50.0
+lib/librsvg-2.so.2.60.0
 libdata/pkgconfig/librsvg-2.0.pc
 share/man/man1/rsvg-convert.1.gz
-%%DOCSDIR%%/README.md
 %%PORTDOCS%%share/doc/Rsvg-2.0/RedHatDisplay-Black.woff
 %%PORTDOCS%%share/doc/Rsvg-2.0/RedHatDisplay-Black.woff2
 %%PORTDOCS%%share/doc/Rsvg-2.0/RedHatDisplay-BlackItalic.woff
@@ -46,6 +46,9 @@ share/man/man1/rsvg-convert.1.gz
 %%PORTDOCS%%share/doc/Rsvg-2.0/callback.SizeFunc.html
 %%PORTDOCS%%share/doc/Rsvg-2.0/class.Handle.html
 %%PORTDOCS%%share/doc/Rsvg-2.0/classes_hierarchy.html
+%%PORTDOCS%%share/doc/Rsvg-2.0/const.HAVE_CSS.html
+%%PORTDOCS%%share/doc/Rsvg-2.0/const.HAVE_PIXBUF.html
+%%PORTDOCS%%share/doc/Rsvg-2.0/const.HAVE_SVGZ.html
 %%PORTDOCS%%share/doc/Rsvg-2.0/const.MAJOR_VERSION.html
 %%PORTDOCS%%share/doc/Rsvg-2.0/const.MICRO_VERSION.html
 %%PORTDOCS%%share/doc/Rsvg-2.0/const.MINOR_VERSION.html
@@ -60,6 +63,7 @@ share/man/man1/rsvg-convert.1.gz
 %%PORTDOCS%%share/doc/Rsvg-2.0/error.Error.html
 %%PORTDOCS%%share/doc/Rsvg-2.0/flags.HandleFlags.html
 %%PORTDOCS%%share/doc/Rsvg-2.0/fonts.css
+%%PORTDOCS%%share/doc/Rsvg-2.0/func.CHECK_FEATURE.html
 %%PORTDOCS%%share/doc/Rsvg-2.0/func.CHECK_VERSION.html
 %%PORTDOCS%%share/doc/Rsvg-2.0/func.DEPRECATED_FOR.html
 %%PORTDOCS%%share/doc/Rsvg-2.0/func.cleanup.html
@@ -90,6 +94,7 @@ share/man/man1/rsvg-convert.1.gz
 %%PORTDOCS%%share/doc/Rsvg-2.0/method.Handle.get_intrinsic_size_in_pixels.html
 %%PORTDOCS%%share/doc/Rsvg-2.0/method.Handle.get_metadata.html
 %%PORTDOCS%%share/doc/Rsvg-2.0/method.Handle.get_pixbuf.html
+%%PORTDOCS%%share/doc/Rsvg-2.0/method.Handle.get_pixbuf_and_error.html
 %%PORTDOCS%%share/doc/Rsvg-2.0/method.Handle.get_pixbuf_sub.html
 %%PORTDOCS%%share/doc/Rsvg-2.0/method.Handle.get_position_sub.html
 %%PORTDOCS%%share/doc/Rsvg-2.0/method.Handle.get_title.html
@@ -103,6 +108,7 @@ share/man/man1/rsvg-convert.1.gz
 %%PORTDOCS%%share/doc/Rsvg-2.0/method.Handle.render_layer.html
 %%PORTDOCS%%share/doc/Rsvg-2.0/method.Handle.set_base_gfile.html
 %%PORTDOCS%%share/doc/Rsvg-2.0/method.Handle.set_base_uri.html
+%%PORTDOCS%%share/doc/Rsvg-2.0/method.Handle.set_cancellable_for_rendering.html
 %%PORTDOCS%%share/doc/Rsvg-2.0/method.Handle.set_dpi.html
 %%PORTDOCS%%share/doc/Rsvg-2.0/method.Handle.set_dpi_x_y.html
 %%PORTDOCS%%share/doc/Rsvg-2.0/method.Handle.set_size_callback.html
@@ -132,7 +138,7 @@ share/man/man1/rsvg-convert.1.gz
 %%PORTDOCS%%share/doc/Rsvg-2.0/style.css
 %%PORTDOCS%%share/doc/Rsvg-2.0/type_func.Error.quark.html
 %%PORTDOCS%%share/doc/Rsvg-2.0/urlmap.js
-%%DOCSDIR%%/code-of-conduct.md
 share/gir-1.0/Rsvg-2.0.gir
 share/thumbnailers/librsvg.thumbnailer
+share/vala/vapi/librsvg-2.0.deps
 share/vala/vapi/librsvg-2.0.vapi
