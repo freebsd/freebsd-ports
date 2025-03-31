@@ -10,8 +10,6 @@ WWW=		https://www.haskellstack.org/
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN_aarch64=	compiler crashes
-
 RUN_DEPENDS=	ca_root_nss>0:security/ca_root_nss \
 		gmake:devel/gmake \
 		${LOCALBASE}/lib/compat/libffi.so.6:devel/libffi321 \
