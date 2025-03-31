@@ -430,6 +430,7 @@
     SUBDIR += taiga
     SUBDIR += temperature.app
     SUBDIR += terminal.app
+    SUBDIR += terminator
     SUBDIR += terminology
     SUBDIR += tessen
     SUBDIR += thingylaunch
