@@ -1083,7 +1083,6 @@
     SUBDIR += jiri
     SUBDIR += jline
     SUBDIR += jna
-    SUBDIR += jrtplib
     SUBDIR += jsap
     SUBDIR += jsl
     SUBDIR += jsmin
