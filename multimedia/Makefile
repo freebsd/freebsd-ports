@@ -37,7 +37,6 @@
     SUBDIR += decord
     SUBDIR += deforaos-camera
     SUBDIR += deforaos-player
-    SUBDIR += dirac
     SUBDIR += dovi_tool
     SUBDIR += dragon
     SUBDIR += droidcam

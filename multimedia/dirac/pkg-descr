@@ -1,4 +1,0 @@
-Dirac is a general-purpose video codec aimed at resolutions from QCIF
-(180x144) to HDTV (1920x1080) progressive or interlaced. It uses wavelets,
-motion compensation and arithmetic coding and aims to be competitive with
-other state of the art codecs.
