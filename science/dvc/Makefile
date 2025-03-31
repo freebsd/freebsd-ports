@@ -10,6 +10,9 @@ WWW=		https://dvc.org/
 
 LICENSE=	APACHE20
 
+DEPRECATED=	Depends on expired math/py-grandalf
+EXPIRATION_DATE=2025-06-01
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}appdirs>=1.4.3:devel/py-appdirs@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}asciimatics>=1.10.0:devel/py-asciimatics@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}colorama>=0.3.9:devel/py-colorama@${PY_FLAVOR} \
