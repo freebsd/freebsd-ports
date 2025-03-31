@@ -1,5 +1,5 @@
 PORTNAME=	libnotify
-DISTVERSION=	0.8.4
+DISTVERSION=	0.8.6
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME
 
@@ -22,7 +22,8 @@ OPTIONS_DEFINE=		MANPAGES
 OPTIONS_DEFAULT=	MANPAGES
 OPTIONS_SUB=		yes
 
-MANPAGES_BUILD_DEPENDS=	docbook-xsl>0:textproc/docbook-xsl
+MANPAGES_BUILD_DEPENDS=	docbook-xsl>0:textproc/docbook-xsl \
+			docbook-xsl-ns>0:textproc/docbook-xsl-ns
 MANPAGES_USE=		GNOME=libxslt:build
 MANPAGES_MESON_TRUE=	man
 
