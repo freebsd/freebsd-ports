@@ -792,7 +792,6 @@
     SUBDIR += py-pglite
     SUBDIR += py-pgmigrate
     SUBDIR += py-pgspecial
-    SUBDIR += py-pgxnclient
     SUBDIR += py-pickledb
     SUBDIR += py-pickleshare
     SUBDIR += py-pony
