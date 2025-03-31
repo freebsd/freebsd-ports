@@ -240,7 +240,6 @@
     SUBDIR += scintilla
     SUBDIR += sdl2_pango
     SUBDIR += sdl_pango
-    SUBDIR += shared-desktop-ontologies
     SUBDIR += skinlf
     SUBDIR += soqt
     SUBDIR += swt
