@@ -4254,3 +4254,4 @@ net/libmediawiki||2025-03-31|Has expired: Project abandoned upstream
 finance/odoo16||2025-03-31|Has expired: Depends on expired print/py-pypdf2
 net/py-tacacs_plus||2025-03-31|Has expired: Depends on expired devel/py-pytest-runner
 devel/py-imgkit||2025-03-31|Has expired: Depends on expired converters/wkhtmltopdf
+sysutils/py-google-compute-engine||2025-03-31|Has expired: Depends on expired devel/py-boto
