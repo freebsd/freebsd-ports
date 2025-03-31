@@ -155,7 +155,6 @@
     SUBDIR += telepathy-idle
     SUBDIR += telepathy-logger
     SUBDIR += telepathy-mission-control
-    SUBDIR += telepathy-qt
     SUBDIR += telepathy-sofiasip
     SUBDIR += tg_owt
     SUBDIR += tkabber
