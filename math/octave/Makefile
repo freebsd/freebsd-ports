@@ -47,7 +47,7 @@ LIB_DEPENDS=	libamd.so:math/suitesparse-amd \
 		libsundials_arkode.so:math/sundials \
 		libumfpack.so:math/suitesparse-umfpack
 
-USES=		charsetfix compiler:c++14-lang desktop-file-utils fortran gl \
+USES=		charsetfix compiler:c++17-lang desktop-file-utils fortran gl \
 		gmake iconv libtool localbase:ldflags ncurses octave:env perl5 \
 		pkgconfig readline tar:xz xorg
 USE_LDCONFIG=	${PREFIX}/lib/${PORTNAME}/${PORTVERSION}
