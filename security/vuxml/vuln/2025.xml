@@ -1,3 +1,62 @@
+  <vuln vid="300f86de-0e4d-11f0-ae40-b42e991fc52e">
+    <topic>gitea -- Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>gitea</name>
+	<range><lt>1.23.6</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>security@golang.org reports:</p>
+	<blockquote cite="https://go.dev/cl/654697">
+	<p>Matching of hosts against proxy patterns can improperly treat an
+	IPv6 zone ID as a hostname component.  For example, when the NO_PROXY
+	environment variable is set to &quot;*.example.com&quot;, a request
+	to &quot;[::1%25.example.com]:80` will incorrectly match and not
+	be proxied.</p>
+	<p>go-redis is the official Redis client library for the Go programming
+	language.  Prior to 9.5.5, 9.6.3, and 9.7.3, go-redis potentially
+	responds out of order when `CLIENT SETINFO` times out during
+	connection establishment.  This can happen when the client is
+	configured to transmit its identity, there are network connectivity
+	issues, or the client was configured with aggressive timeouts.  The
+	problem occurs for multiple use cases.  For sticky connections, you
+	receive persistent out-of-order responses for the lifetime of the
+	connection.  All commands in the pipeline receive incorrect responses.
+	When used with the default ConnPool once a connection is returned
+	after use with ConnPool#Put the read buffer will be checked and the
+	connection will be marked as bad due to the unread data.  This means
+	that at most one out-of-order response before the connection is
+	discarded.  This issue is fixed in 9.5.5, 9.6.3, and 9.7.3.  You
+	can prevent the vulnerability by setting the flag DisableIndentity
+	to true when constructing the client instance.</p>
+	<p>golang-jwt is a Go implementation of JSON Web Tokens.  Prior to
+	5.2.2 and 4.5.2, the function parse.ParseUnverified splits (via a
+	call to strings.Split) its argument (which is untrusted data) on
+	periods.  As a result, in the face of a malicious request whose
+	Authorization header consists of Bearer followed by many period
+	characters, a call to that function incurs allocations to the tune
+	of O(n) bytes (where n stands for the length of the function&apos;s
+	argument), with a constant factor of about 16.  This issue is fixed
+	in 5.2.2 and 4.5.2.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-22870</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2025-22870</url>
+      <cvename>CVE-2025-29923</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2025-29923</url>
+      <cvename>CVE-2025-30204</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2025-30204</url>
+    </references>
+    <dates>
+      <discovery>2025-03-12</discovery>
+      <entry>2025-03-31</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="1a67144d-0d86-11f0-8542-b42e991fc52e">
     <topic>mozilla -- multiple vulnerabilities</topic>
     <affects>
