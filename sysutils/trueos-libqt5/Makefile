@@ -3,7 +3,7 @@ PORTVERSION=	20171003
 PORTREVISION=	3
 CATEGORIES=	sysutils
 
-MAINTAINER=	jt@ixsystems.com
+MAINTAINER=	jt@obs-sec.com
 COMMENT=	TrueOS QT5 Library
 WWW=		https://github.com/trueos/trueos-libqt5
 
