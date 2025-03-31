@@ -4223,3 +4223,4 @@ www/py-flask-security||2025-03-31|Has expired: Depends on expired devel/py-pytes
 devel/py-aiocontextvars||2025-03-31|Has expired: Depends on expired devel/py-pytest-runner
 finance/odoo||2025-03-31|Has expired: Depends on expired print/py-pypdf2
 converters/libutf-8||2025-03-31|Has expired: Upstream disapeared and distfile is no more available
+science/py-moltemplate||2025-03-31|Has expired: Depends on expired devel/py-pytest-runner
