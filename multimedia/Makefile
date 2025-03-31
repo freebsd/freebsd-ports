@@ -70,7 +70,6 @@
     SUBDIR += gmmlib
     SUBDIR += gmp-api
     SUBDIR += gmtk
-    SUBDIR += gnome-mplayer
     SUBDIR += gpac-libgpac
     SUBDIR += gpac-mp4box
     SUBDIR += gpodder
