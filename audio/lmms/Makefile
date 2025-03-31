@@ -12,6 +12,9 @@ WWW=		https://lmms.io/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
+DEPRECATED=	Depends on expiring audio/carla
+EXPIRATION_DATE=2025-06-01
+
 BUILD_DEPENDS=	${LOCALBASE}/include/ladspa.h:audio/ladspa
 LIB_DEPENDS=	libcarla_utils.so:audio/carla \
 		libfftw3.so:math/fftw3 \

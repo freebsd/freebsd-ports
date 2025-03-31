@@ -12,6 +12,9 @@ WWW=		https://kx.studio/Applications:Carla \
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/doc/GPL.txt
 
+DEPRECATED=	Depends on expired audio/py-pyliblo
+EXPIRATION_DATE=2025-06-01
+
 LIB_DEPENDS=	liblo.so:audio/liblo \
 		libsndfile.so:audio/libsndfile
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyliblo>0:audio/py-pyliblo@${PY_FLAVOR}
