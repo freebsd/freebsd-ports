@@ -1,6 +1,6 @@
 PORTNAME=	mise
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2025.3.10
+DISTVERSION=	2025.3.11
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -87,8 +87,8 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		chrono-tz-build-0.3.0 \
 		ci_info-0.14.14 \
 		cipher-0.4.4 \
-		clap-4.5.33 \
-		clap_builder-4.5.33 \
+		clap-4.5.34 \
+		clap_builder-4.5.34 \
 		clap_derive-4.5.32 \
 		clap_lex-0.7.4 \
 		clap_mangen-0.2.26 \
@@ -387,7 +387,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		num_cpus-1.16.0 \
 		number_prefix-0.4.0 \
 		object-0.32.2 \
-		once_cell-1.21.1 \
+		once_cell-1.21.3 \
 		opaque-debug-0.3.1 \
 		openssl-0.10.71 \
 		openssl-macros-0.1.1 \
