@@ -12,6 +12,9 @@ WWW=		https://calcurse.org/
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Depends on expired security/py-oauth2client
+EXPIRATION_DATE=2025-06-01
+
 USES=		ncurses shebangfix
 SHEBANG_FILES=	contrib/caldav/calcurse-caldav \
 		contrib/caldav/calcurse-caldav.py \
