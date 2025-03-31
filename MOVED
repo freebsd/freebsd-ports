@@ -4291,3 +4291,4 @@ devel/radian||2025-03-31|Has expired: Depends on expired devel/py-pytest-runner
 japanese/esecanna||2025-03-31|Has expired: Upstream disapeared and distfile is no more available
 devel/rubygem-aws-sdk-elasticinference||2025-03-31|Has expired: Deprecated by upstream
 devel/electron31||2025-03-31|Has expired: EOLed upstream, switch to newer version
+net-im/telepathy-logger-qt5||2025-03-31|Has expired: Abandoned project
