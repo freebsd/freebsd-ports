@@ -90,7 +90,6 @@
     SUBDIR += gom
     SUBDIR += goose
     SUBDIR += gqlplus
-    SUBDIR += grass7
     SUBDIR += grass8
     SUBDIR += greptimedb
     SUBDIR += hashtypes
