@@ -296,7 +296,6 @@
     SUBDIR += plexmediaserver-plexpass
     SUBDIR += podcastdl
     SUBDIR += poe
-    SUBDIR += projectx
     SUBDIR += ptx-kmod
     SUBDIR += pwcbsd
     SUBDIR += pwcview
