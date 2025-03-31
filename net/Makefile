@@ -397,7 +397,6 @@
     SUBDIR += libmateweather
     SUBDIR += libmaxminddb
     SUBDIR += libmdf
-    SUBDIR += libmediawiki
     SUBDIR += libnatpmp
     SUBDIR += libndp
     SUBDIR += libnet
