@@ -1,5 +1,0 @@
-A micro Linux distro meant to be embedded in a CD together with all
-video/audio files you want, so that the CD will be able to boot and
-automagically play all of its own files.
-
-eMoviX CDs can be written with sysutils/K3b.
