@@ -3,7 +3,7 @@ DISTVERSION=	201711240000
 PORTREVISION=	4
 CATEGORIES=	sysutils security
 
-MAINTAINER=	jt@ixsystems.com
+MAINTAINER=	jt@obs-sec.com
 COMMENT=	Qt sudo front-end
 WWW=		https://github.com/trueos/qsudo
 
