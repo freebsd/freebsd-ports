@@ -10,8 +10,10 @@ WWW=		https://github.com/CESNET/ipfixcol2
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_FreeBSD_13=	Requires sys/timerfd.h
+
 ONLY_FOR_ARCHS=		aarch64 amd64
-ONLY_FOR_ARCHS_REASON=	Require SSE2 and static_assert(sizeof(uint64_t) == sizeof(time_t), "Assumed that time_t is uint64_t, but it's not")
+ONLY_FOR_ARCHS_REASON=	Requires 64bit time_t: static_assert(sizeof(uint64_t) == sizeof(time_t), "Assumed that time_t is uint64_t, but it's not")
 
 BUILD_DEPENDS=	rst2man:textproc/py-docutils
 LIB_DEPENDS=	libepoll-shim.so:devel/libepoll-shim \
