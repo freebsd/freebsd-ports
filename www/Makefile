@@ -1599,7 +1599,6 @@
     SUBDIR += py-django-hashid-field
     SUBDIR += py-django-haystack
     SUBDIR += py-django-hierarkey
-    SUBDIR += py-django-hijack
     SUBDIR += py-django-htmlmin
     SUBDIR += py-django-htmx
     SUBDIR += py-django-i18nfield

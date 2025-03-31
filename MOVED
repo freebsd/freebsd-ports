@@ -4280,3 +4280,4 @@ japanese/esecanna-module-vje25||2025-03-31|Has expired: Upstream disapeared and 
 japanese/esecanna-module-vje30||2025-03-31|Has expired: Upstream disapeared and distfile is no more available
 chinese/muni||2025-03-31|Has expired: Upstream disapeared and distfile is no more available
 devel/buildstream||2025-03-31|Has expired: Depends on expired devel/py-pytest-runner
+www/py-django-hijack||2025-03-31|Has expired: Depends on expired devel/py-pytest-runner
