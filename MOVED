@@ -4284,3 +4284,4 @@ www/py-django-hijack||2025-03-31|Has expired: Depends on expired devel/py-pytest
 security/heimdal-devel||2025-03-31|Has expired: Upstream commits are incompatible
 lang/ruby31||2025-03-31|Has expired: Please migrate to newer version. Ruby 3.1 is expected to reach its EoL on March 31, 2025
 multimedia/gnome-mplayer||2025-03-31|Has expired: Abandonware, last activity from upstream 11 years ago and multiple unresolved issue reports
+devel/py-opengrok-tools||2025-03-31|Has expired: Depends on expired devel/py-pytest-runner

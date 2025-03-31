@@ -5316,7 +5316,6 @@
     SUBDIR += py-opencensus
     SUBDIR += py-opencensus-context
     SUBDIR += py-opendht
-    SUBDIR += py-opengrok-tools
     SUBDIR += py-openstacksdk
     SUBDIR += py-opentelemetry-api
     SUBDIR += py-opentelemetry-exporter-otlp
