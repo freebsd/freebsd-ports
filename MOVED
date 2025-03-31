@@ -4282,3 +4282,4 @@ chinese/muni||2025-03-31|Has expired: Upstream disapeared and distfile is no mor
 devel/buildstream||2025-03-31|Has expired: Depends on expired devel/py-pytest-runner
 www/py-django-hijack||2025-03-31|Has expired: Depends on expired devel/py-pytest-runner
 security/heimdal-devel||2025-03-31|Has expired: Upstream commits are incompatible
+lang/ruby31||2025-03-31|Has expired: Please migrate to newer version. Ruby 3.1 is expected to reach its EoL on March 31, 2025
