@@ -4239,3 +4239,4 @@ textproc/py-wstools||2025-03-31|Has expired: Depends on expired devel/py-pytest-
 x11/terminator||2025-03-31|Has expired: Depends on expired devel/py-pytest-runner
 devel/peg.el||2025-03-31|Has expired: Emacs 30 and later include peg.el as standard library
 textproc/py-citeproc-py-styles||2025-03-31|Has expired: Depends on expired devel/py-pytest-runner
+multimedia/gdialog||2025-03-31|Has expired: Support for a 20 year old obsolete STB that only supports DVB-T(1) and MPEG-2

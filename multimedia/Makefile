@@ -68,7 +68,6 @@
     SUBDIR += fswebcam
     SUBDIR += gaupol
     SUBDIR += gavl
-    SUBDIR += gdialog
     SUBDIR += get_iplayer
     SUBDIR += gmmlib
     SUBDIR += gmp-api
