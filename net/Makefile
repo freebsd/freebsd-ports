@@ -552,7 +552,6 @@
     SUBDIR += nss-pam-ldapd
     SUBDIR += nss-pam-ldapd-sasl
     SUBDIR += nss_ldap
-    SUBDIR += nsscache
     SUBDIR += ntimed
     SUBDIR += ntopng
     SUBDIR += ntp

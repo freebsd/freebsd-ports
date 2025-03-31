@@ -4245,3 +4245,4 @@ textproc/m17n-im-config||2025-03-31|Has expired: Upstream disapeared and distfil
 databases/pgfouine||2025-03-31|Has expired: Upstream project disappeared in 2010
 multimedia/spook||2025-03-31|Has expired: Abandonware and obsolete, consider using multimedia/ffmpeg or multimedia/vlc
 finance/odoo14||2025-03-31|Has expired: Depends on expired converters/wkhtmltopdf and print/py-pypdf2
+net/nsscache||2025-03-31|Has expired: Depends on expired devel/py-pytest-runner
