@@ -17,9 +17,9 @@
 #		Examples:
 #
 #			USES=python:2.7		# Supports Python 2.7 Only
-#			USES=python:3.8+	# Supports Python 3.8 or later
-#			USES=python:3.8-3.10	# Supports Python 3.8 to 3.10
-#			USES=python:-3.8	# Supports Python up to 3.8
+#			USES=python:3.9+	# Supports Python 3.9 or later
+#			USES=python:3.9-3.10	# Supports Python 3.9 to 3.10
+#			USES=python:-3.9	# Supports Python up to 3.9
 #			USES=python		# Supports 3.9+
 #
 # NOTE:	<version-spec> should be as specific as possible, matching the versions
@@ -29,7 +29,7 @@
 #
 #	Not specifying a <version-spec> should only be used when a more specific
 #	<version-spec> cannot be specified due to syntax limitations, for
-#	example: 2.7,3.8-3.9, but even in this case, X.Y+ (2.7+), or -X.Y (-3.9)
+#	example: 2.7,3.9-3.10, but even in this case, X.Y+ (2.7+), or -X.Y (-3.9)
 #	is preferred and likely more correct.
 #
 # patch		Python is needed at patch time. Adds dependency to PATCH_DEPENDS.
@@ -50,7 +50,7 @@
 # Exported variables:
 #
 # PYTHON_VERSION	- The chosen Python interpreter including the version,
-#			  e.g. python2.7, python3.8, etc.
+#			  e.g. python2.7, python3.9, etc.
 #
 # Variables, which can be set by the port:
 #
@@ -223,7 +223,7 @@
 # PYTHON_PORTSDIR	- The port directory of the chosen Python interpreter
 #
 # PYTHON_REL		- The release number of the chosen Python interpreter
-#			  without dots, e.g. 20706, 30801, ...
+#			  without dots, e.g. 20706, 30901, ...
 #
 # PYTHON_SUFFIX		- The major-minor release number of the chosen Python
 #			  interpreter without dots, e.g. 27, 38, ...
@@ -233,7 +233,7 @@
 #			  interpreter, e.g. 2, 3, ...
 #
 # PYTHON_VER		- The major-minor release version of the chosen Python
-#			  interpreter, e.g. 2.7, 3.8, ...
+#			  interpreter, e.g. 2.7, 3.9, ...
 #
 # PYTHON_ABIVER		- Additional ABI flags set by the chosen Python
 #			  interpreter, e.g. md
