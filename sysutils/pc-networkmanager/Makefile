@@ -3,7 +3,7 @@ PORTVERSION=	201710031301
 PORTREVISION=	4
 CATEGORIES=	sysutils
 
-MAINTAINER=	jt@ixsystems.com
+MAINTAINER=	jt@obs-sec.com
 COMMENT=	TrueOS Qt based network manager
 WWW=		https://github.com/trueos/pc-networkmanager
 
