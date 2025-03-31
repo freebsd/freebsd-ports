@@ -4232,3 +4232,4 @@ finance/odoo15||2025-03-31|Has expired: Depends on expired converters/wkhtmltopd
 devel/py-fbprophet||2025-03-31|Has expired: Depends on expired math/py-pystan
 multimedia/ogmrip||2025-03-31|Has expired: Abandonware, last activity in 2018 and lacks support for new formats. Consider using multimedia/handbrake
 databases/py-pgxnclient||2025-03-31|Has expired: Depends on expired devel/py-pytest-runner
+misc/jirust||2025-03-31|Has expired: Listed as broken for over 6+ months
