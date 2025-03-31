@@ -10,6 +10,9 @@ WWW=		https://github.com/jstewart/ezprint
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
 
+DEPRECATED=	Depends on expired graphics/rubygem-pdfkit
+EXPIRATION_DATE=2025-06-01
+
 RUN_DEPENDS=	rubygem-pdfkit>=0.8.0:graphics/rubygem-pdfkit
 
 NO_ARCH=	yes
