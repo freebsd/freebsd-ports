@@ -5444,7 +5444,6 @@
     SUBDIR += py-pipreqs
     SUBDIR += py-pipx
     SUBDIR += py-pkgconfig
-    SUBDIR += py-pkgutil-resolve-name
     SUBDIR += py-plac
     SUBDIR += py-plan
     SUBDIR += py-platformdirs
