@@ -1078,7 +1078,6 @@
     SUBDIR += py-pyreadstat
     SUBDIR += py-pyrr
     SUBDIR += py-pysmt
-    SUBDIR += py-pystan
     SUBDIR += py-pysym
     SUBDIR += py-pytanque
     SUBDIR += py-pytensor
