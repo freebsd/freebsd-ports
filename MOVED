@@ -4259,3 +4259,4 @@ devel/ocaml-type_conv|devel/ocaml-ppxlib|2025-03-31|Has expired: Deprecated, ups
 multimedia/dirac||2025-03-31|Has expired: Legacy video codec superseded by multiple formats. Files can be decoded using FFmpeg
 ports-mgmt/py-pytoport||2025-03-31|Has expired: Depends on expired misc/py-spdx-lookup
 net/py-ec2-cli-tools||2025-03-31|Has expired: Depends on expired devel/py-boto
+emulators/libretro-mame||2025-03-31|Has expired: Uses expired Python 3.8
