@@ -1,5 +1,5 @@
 PORTNAME=	groonga
-DISTVERSION=	14.1.3
+DISTVERSION=	15.0.0
 CATEGORIES=	textproc
 MASTER_SITES=	https://packages.groonga.org/source/groonga/
 
