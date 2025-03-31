@@ -148,6 +148,9 @@ share/xpra/www/js/lib/brotli_decode.js.gz
 share/xpra/www/js/lib/detect-zoom.js
 share/xpra/www/js/lib/detect-zoom.js.br
 share/xpra/www/js/lib/detect-zoom.js.gz
+share/xpra/www/js/lib/hmac.js
+share/xpra/www/js/lib/hmac.js.br
+share/xpra/www/js/lib/hmac.js.gz
 share/xpra/www/js/lib/jquery-transform-draggable.js
 share/xpra/www/js/lib/jquery-transform-draggable.js.br
 share/xpra/www/js/lib/jquery-transform-draggable.js.gz
