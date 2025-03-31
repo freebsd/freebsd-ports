@@ -9,6 +9,9 @@ WWW=		https://github.com/smacke/ffsubsync
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Depends on expried multimedia/py-ffmpeg-python
+EXPIRATION_DATE=2025-06-01
+
 BUILD_DEPENDS=	${PY_SETUPTOOLS} \
 		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}auditok>=0.1.5:audio/py-auditok@${PY_FLAVOR} \
