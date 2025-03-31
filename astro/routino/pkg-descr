@@ -1,5 +1,5 @@
 Routino is an application for finding a route between two points using the
-dataset of topographical information collected by http://www.OpenStreetMap.org.
+dataset of topographical information collected by OpenStreetMap.
 
 This router uses a routing algorithm that takes OSM format data as its input and
 calculates either the shortest or quickest route between two points. To optimise

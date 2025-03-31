@@ -1,5 +1,5 @@
 PORTNAME=	routino
-PORTVERSION=	3.4.1
+DISTVERSION=	3.4.2
 CATEGORIES=	astro
 MASTER_SITES=	http://www.routino.org/download/
 
@@ -9,11 +9,12 @@ WWW=		https://www.routino.org/
 
 LICENSE=	AGPLv3
 
-OPTIONS_DEFINE=	DOCS
 USES=		compiler gmake perl5 tar:tgz
 USE_LDCONFIG=	yes
 
 CONFLICTS_INSTALL=	jabberd # bin/router
+
+OPTIONS_DEFINE=	DOCS
 
 post-patch:
 	${REINPLACE_CMD} 's|doc/routino|share/doc/routino|' \
