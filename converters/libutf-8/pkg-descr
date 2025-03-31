@@ -1,3 +1,0 @@
-A library of C routines for the conversion of Unicode to UTF-8 and back.
-The library can also be used to convert the 31-bit UCS-4 mappings to UTF-8 and
-back.
