@@ -586,7 +586,7 @@
 %%G%%/webapps/%%G%%/WEB-INF/lib/batik-transcoder-%%BATIK%%.jar
 %%G%%/webapps/%%G%%/WEB-INF/lib/batik-util-%%BATIK%%.jar
 %%G%%/webapps/%%G%%/WEB-INF/lib/batik-xml-%%BATIK%%.jar
-%%G%%/webapps/%%G%%/WEB-INF/lib/bcprov-jdk15on-1.69.jar
+%%G%%/webapps/%%G%%/WEB-INF/lib/bcprov-jdk18on-1.79.jar
 %%G%%/webapps/%%G%%/WEB-INF/lib/bigint-0.7.1.jar
 %%G%%/webapps/%%G%%/WEB-INF/lib/checker-qual-3.42.0.jar
 %%G%%/webapps/%%G%%/WEB-INF/lib/commons-beanutils-1.9.4.jar
@@ -819,7 +819,7 @@
 %%G%%/webapps/%%G%%/WEB-INF/lib/spring-core-%%SPRING%%.jar
 %%G%%/webapps/%%G%%/WEB-INF/lib/spring-expression-%%SPRING%%.jar
 %%G%%/webapps/%%G%%/WEB-INF/lib/spring-jdbc-%%SPRING%%.jar
-%%G%%/webapps/%%G%%/WEB-INF/lib/spring-ldap-core-2.4.1.jar
+%%G%%/webapps/%%G%%/WEB-INF/lib/spring-ldap-core-2.4.4.jar
 %%G%%/webapps/%%G%%/WEB-INF/lib/spring-security-config-%%SPRINGS%%.jar
 %%G%%/webapps/%%G%%/WEB-INF/lib/spring-security-core-%%SPRINGS%%.jar
 %%G%%/webapps/%%G%%/WEB-INF/lib/spring-security-crypto-%%SPRINGS%%.jar
@@ -847,7 +847,7 @@
 %%G%%/webapps/%%G%%/WEB-INF/lib/xml-commons-resolver-1.2.jar
 %%G%%/webapps/%%G%%/WEB-INF/lib/xmlgraphics-commons-2.9.jar
 %%G%%/webapps/%%G%%/WEB-INF/lib/xmlpull-%%VER3%%.1.jar
-%%G%%/webapps/%%G%%/WEB-INF/lib/xstream-1.4.20.jar
+%%G%%/webapps/%%G%%/WEB-INF/lib/xstream-1.4.21.jar
 %%G%%/webapps/%%G%%/WEB-INF/web.xml
 %%G%%/webapps/%%G%%/index.html
 @dir %%G%%/webapps/%%G%%/WEB-INF/classes
