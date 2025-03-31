@@ -54,7 +54,6 @@
     SUBDIR += moneymanagerex
     SUBDIR += myphpmoney
     SUBDIR += nextcloud-cospend
-    SUBDIR += odoo14
     SUBDIR += odoo16
     SUBDIR += odoo17
     SUBDIR += ord
