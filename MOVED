@@ -4221,3 +4221,4 @@ www/ytdl|www/yt-dlp|2025-03-24|ytdl doesn't work and is archived upstream, www/y
 textproc/py-docstring-parser|textproc/py-docstring_parser|2025-03-25|Renamed to match upstream naming
 www/py-flask-security||2025-03-31|Has expired: Depends on expired devel/py-pytest-runner
 devel/py-aiocontextvars||2025-03-31|Has expired: Depends on expired devel/py-pytest-runner
+finance/odoo||2025-03-31|Has expired: Depends on expired print/py-pypdf2
