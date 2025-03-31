@@ -52,7 +52,6 @@
     SUBDIR += esecanna
     SUBDIR += esecanna-module-vje25
     SUBDIR += esecanna-module-vje30
-    SUBDIR += esecanna-module-wnn6
     SUBDIR += eterm
     SUBDIR += fcitx-anthy
     SUBDIR += fcitx-mozc
