@@ -1711,7 +1711,6 @@
     SUBDIR += py-wordcloud
     SUBDIR += py-wordnet
     SUBDIR += py-wordninja
-    SUBDIR += py-wstools
     SUBDIR += py-wtf-peewee
     SUBDIR += py-wtforms
     SUBDIR += py-xhtml2pdf
