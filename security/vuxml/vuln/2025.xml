@@ -62,11 +62,11 @@
     <affects>
       <package>
 	<name>firefox</name>
-	<range><lt>136.0</lt></range>
+	<range><lt>136.0,2</lt></range>
       </package>
       <package>
 	<name>firefox-esr</name>
-	<range><lt>128.8</lt></range>
+	<range><lt>128.8,1</lt></range>
       </package>
       <package>
 	<name>thunderbird</name>
