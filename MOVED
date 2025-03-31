@@ -4226,3 +4226,4 @@ converters/libutf-8||2025-03-31|Has expired: Upstream disapeared and distfile is
 science/py-moltemplate||2025-03-31|Has expired: Depends on expired devel/py-pytest-runner
 math/py-numdifftools||2025-03-31|Has expired: Depends on expired devel/py-pytest-runner
 graphics/py-pygal||2025-03-31|Has expired: Depends on expired devel/py-pytest-runner
+www/choqok||2025-03-31|Has expired: Project discontinued upstream

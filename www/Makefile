@@ -101,7 +101,6 @@
     SUBDIR += cgiwrap
     SUBDIR += checkbot
     SUBDIR += chisel
-    SUBDIR += choqok
     SUBDIR += chpasswd
     SUBDIR += chrome-gnome-shell
     SUBDIR += chromium
