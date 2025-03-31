@@ -4639,6 +4639,7 @@
     SUBDIR += py-check-sdist
     SUBDIR += py-check-wheel-contents
     SUBDIR += py-cheetah3
+    SUBDIR += py-cibuildwheel
     SUBDIR += py-circuitbreaker
     SUBDIR += py-circuits
     SUBDIR += py-ciso8601
