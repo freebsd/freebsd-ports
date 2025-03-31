@@ -1,3 +1,0 @@
-tcmplex-pantelje, audio video multiplexer from the transcode distribution,
-re-writen for 8 audio channels. This version fixes an AC3 bug and supports
-files > 2GB.

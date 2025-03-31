@@ -4267,3 +4267,4 @@ multimedia/msdl||2025-03-31|Has expired: Obsolete utility for obsolete protocols
 net-im/sayaka||2025-03-31|Has expired: Depends on expired security/mbedtls2
 finance/odoo17||2025-03-31|Has expired: Depends on expired print/py-pypdf2
 databases/grass7|databases/grass8|2025-03-31|Has expired: Please use databases/grass8
+multimedia/tcmplex-panteltje||2025-03-31|Has expired: Abandonware, upstream is gone and no consumers in tree

@@ -365,7 +365,6 @@
     SUBDIR += syncplay
     SUBDIR += szap-s2
     SUBDIR += tautulli
-    SUBDIR += tcmplex-panteltje
     SUBDIR += termplay
     SUBDIR += tinyobjloader
     SUBDIR += tivodecode
