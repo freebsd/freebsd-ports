@@ -4566,6 +4566,7 @@
     SUBDIR += py-backports.zoneinfo
     SUBDIR += py-banal
     SUBDIR += py-bandit
+    SUBDIR += py-bashlex
     SUBDIR += py-bcdoc
     SUBDIR += py-beartype
     SUBDIR += py-beautifultable
