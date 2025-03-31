@@ -57,4 +57,6 @@ CMAKE_ON=	RELEASE_BUILD
 # Performance increase according to README.PACKAGERS
 CMAKE_ARGS+=	-DCMAKE_CXX_FLAGS="-DKDE_NO_DEBUG_OUTPUT"
 
+PLIST_SUB=	SHLIB_VER=39
+
 .include <bsd.port.mk>
