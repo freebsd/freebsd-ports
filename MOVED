@@ -4270,3 +4270,4 @@ databases/grass7|databases/grass8|2025-03-31|Has expired: Please use databases/g
 multimedia/tcmplex-panteltje||2025-03-31|Has expired: Abandonware, upstream is gone and no consumers in tree
 games/minecraft-client||2025-03-31|Has expired: dead upstream, no longer functional
 www/redmine50|www/redmine51|2025-03-31|Has expired: Requires ruby31
+japanese/wnn7egg||2025-03-31|Has expired: Upstream disapeared and distfile is no more available
