@@ -132,7 +132,6 @@
     SUBDIR += rubygem-termtter
     SUBDIR += rubygem-tinder
     SUBDIR += ruqola
-    SUBDIR += sayaka
     SUBDIR += scli
     SUBDIR += sendxmpp
     SUBDIR += signal-cli
