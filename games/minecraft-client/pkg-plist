@@ -1,5 +1,0 @@
-bin/minecraft-client
-%%DATADIR%%/Minecraft.jar
-%%DATADIR%%/minecraft-runtime
-%%DATADIR%%/Notifier.java
-share/pixmaps/minecraft-client.png

@@ -628,7 +628,6 @@
     SUBDIR += meqcc
     SUBDIR += meritous
     SUBDIR += mindfocus
-    SUBDIR += minecraft-client
     SUBDIR += minecraft-server
     SUBDIR += minerbold
     SUBDIR += minetest_game
