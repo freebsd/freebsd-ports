@@ -4227,3 +4227,4 @@ science/py-moltemplate||2025-03-31|Has expired: Depends on expired devel/py-pyte
 math/py-numdifftools||2025-03-31|Has expired: Depends on expired devel/py-pytest-runner
 graphics/py-pygal||2025-03-31|Has expired: Depends on expired devel/py-pytest-runner
 www/choqok||2025-03-31|Has expired: Project discontinued upstream
+net-p2p/vuze||2025-03-31|Has expired: Abandoned upstream
