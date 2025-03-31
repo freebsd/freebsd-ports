@@ -58,13 +58,13 @@ lib/libweed_gslice.so.0.1.13
 lib/libweed_gslice_scripting.so
 lib/libweed_gslice_scripting.so.0
 lib/libweed_gslice_scripting.so.0.1.13
-lib/lives/plugins/decoders/asf_decoder.so
+%%FFMPEG%%lib/lives/plugins/decoders/asf_decoder.so
 lib/lives/plugins/decoders/dv_decoder.so
-lib/lives/plugins/decoders/flv_decoder.so
-lib/lives/plugins/decoders/mkv_decoder.so
-lib/lives/plugins/decoders/mpegts_decoder.so
+%%FFMPEG%%lib/lives/plugins/decoders/flv_decoder.so
+%%FFMPEG%%lib/lives/plugins/decoders/mkv_decoder.so
+%%FFMPEG%%lib/lives/plugins/decoders/mpegts_decoder.so
 lib/lives/plugins/decoders/ogg_decoder.so
-lib/lives/plugins/decoders/zzavformat_decoder.so
+%%FFMPEG%%lib/lives/plugins/decoders/zzavformat_decoder.so
 lib/lives/plugins/effects/realtime/weed/RGBdelay.so
 lib/lives/plugins/effects/realtime/weed/alien_overlay.so
 lib/lives/plugins/effects/realtime/weed/alpha_means.so
@@ -90,13 +90,13 @@ lib/lives/plugins/effects/realtime/weed/data/fourKlives/songs/regrlives.txt
 lib/lives/plugins/effects/realtime/weed/data/fourKlives/songs/roselives.txt
 lib/lives/plugins/effects/realtime/weed/deinterlace.so
 lib/lives/plugins/effects/realtime/weed/edge.so
-lib/lives/plugins/effects/realtime/weed/farneback_analyser.so
+%%OPENCV%%lib/lives/plugins/effects/realtime/weed/farneback_analyser.so
 lib/lives/plugins/effects/realtime/weed/fg_bg_removal.so
 lib/lives/plugins/effects/realtime/weed/fireTV.so
 %%FREI0R%%lib/lives/plugins/effects/realtime/weed/frei0r/frei0r.so
 lib/lives/plugins/effects/realtime/weed/fourKlives.so
 lib/lives/plugins/effects/realtime/weed/gdk_fast_resize.so
-lib/lives/plugins/effects/realtime/weed/haar_analyser.so
+@comment lib/lives/plugins/effects/realtime/weed/haar_analyser.so
 lib/lives/plugins/effects/realtime/weed/haip.so
 lib/lives/plugins/effects/realtime/weed/kaleidoscope.so
 lib/lives/plugins/effects/realtime/weed/ladspa.so
@@ -204,7 +204,7 @@ lib/lives/plugins/encoders/sswf_encoder
 lib/lives/plugins/encoders/x264_encoder
 lib/lives/plugins/playback/audiostream/audiostreamer.pl
 lib/lives/plugins/playback/video/icecast_output.so
-lib/lives/plugins/playback/video/libav_stream.so
+%%FFMPEG%%lib/lives/plugins/playback/video/libav_stream.so
 lib/lives/plugins/playback/video/lives2lives_stream.so
 lib/lives/plugins/playback/video/oggstream.so
 lib/lives/plugins/playback/video/openGL.so
