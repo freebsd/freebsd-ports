@@ -1,6 +1,5 @@
 PORTNAME=	netatalk
-PORTVERSION=	4.1.2
-PORTREVISION=	1
+PORTVERSION=	4.2.0
 CATEGORIES=	net
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/netatalk-${PORTVERSION:S/./-/g}/
 PKGNAMESUFFIX=	4
@@ -11,9 +10,10 @@ WWW=		https://netatalk.io/
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	docbook-xsl>=0:textproc/docbook-xsl
+BUILD_DEPENDS=	cmark:textproc/cmark
 LIB_DEPENDS=	libgcrypt.so:security/libgcrypt \
-		libevent.so:devel/libevent
+		libevent.so:devel/libevent \
+		libiniparser.so:devel/iniparser
 
 USES=		bdb:18 cpe gettext iconv:wchar_t meson perl5 pkgconfig shebangfix ssl tar:xz
 USE_GNOME=	libxslt:build
@@ -28,7 +28,6 @@ MESON_ARGS=		-Dwith-libgcrypt-path=${LOCALBASE} \
 			-Dwith-dtrace=false \
 			-Dwith-init-hooks=false \
 			-Dpkg_config_path=${LOCALBASE}/libdata/pkgconfig \
-			-Dwith-shadow=false \
 			-Dwith-webmin=false \
 			-Dwith-cups=false \
 			-Dwith-testsuite=false \
