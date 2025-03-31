@@ -23,12 +23,6 @@ USE_PYTHON=	autoplist pep517
 
 NO_ARCH=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${PYTHON_VER} == "3.8"
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}pkgutil-resolve-name>=1.3.10:devel/py-pkgutil-resolve-name@${PY_FLAVOR}
-.endif
-
 post-patch:
 	@cd ${WRKSRC} && \
 	  ${REINPLACE_CMD} -e 's|/etc/borgmatic|${PREFIX}/etc/borgmatic|g' \
@@ -37,4 +31,4 @@ post-patch:
 		tests/unit/config/test_collect.py \
 		tests/unit/borg/test_create.py
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -50,10 +50,6 @@ TRAC_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}offtrac>0:devel/py-offtrac@${PY_FLAVOR
 
 .include <bsd.port.pre.mk>
 
-.if ${PYTHON_VER} <= 3.8
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}typing-extensions>0:devel/py-typing-extensions@${PY_FLAVOR}
-.endif
-
 .if ${PYTHON_REL} > 30900
 BROKEN=		python-3.9 or later is not supported
 .endif

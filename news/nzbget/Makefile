@@ -41,7 +41,7 @@ NCURSES_USES=	ncurses
 NCURSES_CMAKE_BOOL_OFF=	DISABLE_CURSES
 PAR2_CMAKE_BOOL_OFF=	DISABLE_PARCHECK
 
-PYTHON_USES=	python:run,3.8+
+PYTHON_USES=	python:run,3.9+
 
 .include <bsd.port.options.mk>
 

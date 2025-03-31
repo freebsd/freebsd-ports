@@ -20,7 +20,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dkimpy>=1.1.0:mail/py-dkimpy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pynacl>=0:security/py-pynacl@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dnspython>=1.16.0:dns/py-dnspython@${PY_FLAVOR}
 
-USES=		python:3.9+	# Some dependencies don't support 3.8
+USES=		python
 USE_PYTHON=	autoplist concurrent distutils
 USE_RC_SUBR=	dkimpy-milter
 SUB_LIST+=	PYTHON_CMD=${PYTHON_CMD}

@@ -25,7 +25,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cryptography>=0:security/py-cryptography@${P
 		${PYTHON_PKGNAMEPREFIX}zeroconf>=0.27.0:net/py-zeroconf@${PY_FLAVOR} \
 		xapp>=0:x11/xapp
 
-USES=		gettext gnome meson python:3.8+ shebangfix
+USES=		gettext gnome meson python shebangfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	linuxmint
 USE_GNOME=	glib20 gtk30 pygobject3

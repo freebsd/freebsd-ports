@@ -18,7 +18,7 @@ LICENSE=	GFDL
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/libxml2.py:textproc/py-libxml2@${PY_FLAVOR} \
 		${LOCALBASE}/share/xsl/docbook/xhtml/chunk.xsl:textproc/docbook-xsl
 
-USES=		gettext-tools gmake gnome perl5 pkgconfig python:3.8+,build shebangfix \
+USES=		gettext-tools gmake gnome perl5 pkgconfig python:3.9+,build shebangfix \
 		tar:bzip2
 USE_GNOME=	intltool:build libxslt:build
 USE_PERL5=	build

@@ -33,7 +33,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}arrow>=1.0.0:devel/py-arrow@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}terminaltables>=3.1.0:textproc/py-terminaltables@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyyaml>=5.4:devel/py-pyyaml@${PY_FLAVOR}
 
-USES=		python:3.8-3.11
+USES=		python:3.9-3.11
 USE_PYTHON=	autoplist concurrent cryptography pep517
 
 # upstream uses underscore for the tarball name, but uses hyphen for

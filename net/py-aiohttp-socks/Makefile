@@ -23,7 +23,7 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}flask>0:www/py-flask@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tiny-proxy>0:net/py-tiny-proxy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}trio>0:net/py-trio@${PY_FLAVOR}
 
-USES=		python:3.8+
+USES=		python
 USE_GITHUB=	yes
 GH_ACCOUNT=	romis2012
 USE_PYTHON=	autoplist pep517

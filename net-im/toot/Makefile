@@ -26,7 +26,7 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}flake8>=0:devel/py-flake8@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}typing-extensions>=0:devel/py-typing-extensions@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}urwidgets>=0:devel/py-urwidgets@${PY_FLAVOR}
 
-USES=		python:3.8+
+USES=		python
 USE_PYTHON=	flavors pytest
 
 NO_ARCH=	yes
