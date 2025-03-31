@@ -1,6 +1,0 @@
-PDF::WebKit uses wkhtmltopdf to convert HTML documents into PDFs. It
-is a port of the elegant PDFKit Ruby library.
-
-wkhtmltopdf generates beautiful PDFs by leveraging the rendering power
-of Qt's WebKit browser engine (used by both Apple Safari and Google
-Chrome browsers).
