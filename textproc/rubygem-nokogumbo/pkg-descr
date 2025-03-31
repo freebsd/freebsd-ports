@@ -1,2 +1,0 @@
-Nokogumbo allows a Ruby program to invoke the Gumbo HTML5 parser and access the
-result as a Nokogiri parsed document.
