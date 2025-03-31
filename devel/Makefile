@@ -4378,7 +4378,6 @@
     SUBDIR += py-aenum
     SUBDIR += py-aioapns
     SUBDIR += py-aiobotocore
-    SUBDIR += py-aiocontextvars
     SUBDIR += py-aiofiles
     SUBDIR += py-aiohttp-apispec
     SUBDIR += py-aioice
