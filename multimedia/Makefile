@@ -356,7 +356,6 @@
     SUBDIR += smplayer-skins
     SUBDIR += smplayer-themes
     SUBDIR += snapcast
-    SUBDIR += spook
     SUBDIR += streamlink
     SUBDIR += subtitlecomposer
     SUBDIR += subtitleoffsetmodifier

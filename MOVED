@@ -4243,3 +4243,4 @@ multimedia/gdialog||2025-03-31|Has expired: Support for a 20 year old obsolete S
 multimedia/emovix||2025-03-31|Has expired: Abandonware, uses over a decade year old software and no support for anything recent
 textproc/m17n-im-config||2025-03-31|Has expired: Upstream disapeared and distfile is no more available
 databases/pgfouine||2025-03-31|Has expired: Upstream project disappeared in 2010
+multimedia/spook||2025-03-31|Has expired: Abandonware and obsolete, consider using multimedia/ffmpeg or multimedia/vlc
