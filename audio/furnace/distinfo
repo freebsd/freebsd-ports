@@ -1,6 +1,6 @@
-TIMESTAMP = 1725256909
-SHA256 (tildearrow-furnace-v0.6.7_GH0.tar.gz) = 94180a50ff9009c7d29f93c2ea64363ecea0f88e8eea3709221cb1a6e5e7b808
-SIZE (tildearrow-furnace-v0.6.7_GH0.tar.gz) = 54718123
+TIMESTAMP = 1743353362
+SHA256 (tildearrow-furnace-v0.6.8_GH0.tar.gz) = eb3d0876ba4d65405b5bab93432e08bb7f63534e071f9fc73bb1f549d7ea0357
+SIZE (tildearrow-furnace-v0.6.8_GH0.tar.gz) = 57303968
 SHA256 (libsdl-org-SDL-ffa78e6be_GH0.tar.gz) = fe333e604bba715828d48f7b98d28b0d1302977c7afbc47a87832c59ffaa9f97
 SIZE (libsdl-org-SDL-ffa78e6be_GH0.tar.gz) = 8486093
 SHA256 (superctr-adpcm-ef7a21715_GH0.tar.gz) = 0f311dd8abb3099abc86870fc3946e50ed0d9857188909ed9b25582896184dca
@@ -9,5 +9,3 @@ SHA256 (fmtlib-fmt-e57ca2e36_GH0.tar.gz) = b595a38f4d71e24cb358a0c08a8acb3fdb574
 SIZE (fmtlib-fmt-e57ca2e36_GH0.tar.gz) = 849361
 SHA256 (libsndfile-libsndfile-72f6af15e_GH0.tar.gz) = d83037659bb999045631211dc749b8351129db96ab5a4356bbb667407b59308c
 SIZE (libsndfile-libsndfile-72f6af15e_GH0.tar.gz) = 684932
-SHA256 (PortAudio-portaudio-6ee9836a0_GH0.tar.gz) = 50237bcda9b9f6e3d19292ae51cb9a52e4e3565e7829445752f6e0f27cc3866b
-SIZE (PortAudio-portaudio-6ee9836a0_GH0.tar.gz) = 1462314

@@ -1,6 +1,6 @@
 PORTNAME=	furnace
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.6.7
+DISTVERSION=	0.6.8
 CATEGORIES=	audio
 
 MAINTAINER=	ehaupt@FreeBSD.org
@@ -22,8 +22,7 @@ GH_ACCOUNT=	tildearrow
 GH_TUPLE=	libsdl-org:SDL:ffa78e6be:sdl/extern/SDL \
 		superctr:adpcm:ef7a21715:adpcm/extern/adpcm \
 		fmtlib:fmt:e57ca2e36:fmt/extern/fmt \
-		libsndfile:libsndfile:72f6af15e:libsndfile/extern/libsndfile \
-		PortAudio:portaudio:6ee9836a0:portaudio/extern/portaudio
+		libsndfile:libsndfile:72f6af15e:libsndfile/extern/libsndfile
 USE_GL=		gl
 USE_SDL=	sdl2
 

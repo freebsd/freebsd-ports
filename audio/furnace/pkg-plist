@@ -2,6 +2,7 @@ bin/furnace
 share/applications/furnace.desktop
 %%PORTDOCS%%%%DOCSDIR%%/doc/1-intro/README.md
 %%PORTDOCS%%%%DOCSDIR%%/doc/1-intro/concepts.md
+%%PORTDOCS%%%%DOCSDIR%%/doc/1-intro/faq.md
 %%PORTDOCS%%%%DOCSDIR%%/doc/1-intro/glossary.md
 %%PORTDOCS%%%%DOCSDIR%%/doc/1-intro/hex.md
 %%PORTDOCS%%%%DOCSDIR%%/doc/1-intro/qs-insteditor.png
@@ -86,6 +87,7 @@ share/applications/furnace.desktop
 %%PORTDOCS%%%%DOCSDIR%%/doc/3-pattern/status-volume-tremolo.png
 %%PORTDOCS%%%%DOCSDIR%%/doc/3-pattern/status-volume-up.png
 %%PORTDOCS%%%%DOCSDIR%%/doc/4-instrument/FM-ADSRchart.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/4-instrument/MPCM-ADSRchart.png
 %%PORTDOCS%%%%DOCSDIR%%/doc/4-instrument/README.md
 %%PORTDOCS%%%%DOCSDIR%%/doc/4-instrument/adpcm-a.md
 %%PORTDOCS%%%%DOCSDIR%%/doc/4-instrument/adpcm-b.md
@@ -127,6 +129,7 @@ share/applications/furnace.desktop
 %%PORTDOCS%%%%DOCSDIR%%/doc/4-instrument/msm5232.md
 %%PORTDOCS%%%%DOCSDIR%%/doc/4-instrument/msm6258.md
 %%PORTDOCS%%%%DOCSDIR%%/doc/4-instrument/msm6295.md
+%%PORTDOCS%%%%DOCSDIR%%/doc/4-instrument/multipcm.md
 %%PORTDOCS%%%%DOCSDIR%%/doc/4-instrument/n163.md
 %%PORTDOCS%%%%DOCSDIR%%/doc/4-instrument/nds.md
 %%PORTDOCS%%%%DOCSDIR%%/doc/4-instrument/nes.md
@@ -145,6 +148,7 @@ share/applications/furnace.desktop
 %%PORTDOCS%%%%DOCSDIR%%/doc/4-instrument/scc.md
 %%PORTDOCS%%%%DOCSDIR%%/doc/4-instrument/segapcm.md
 %%PORTDOCS%%%%DOCSDIR%%/doc/4-instrument/sid2.md
+%%PORTDOCS%%%%DOCSDIR%%/doc/4-instrument/sid3.md
 %%PORTDOCS%%%%DOCSDIR%%/doc/4-instrument/sm8521.md
 %%PORTDOCS%%%%DOCSDIR%%/doc/4-instrument/snes.md
 %%PORTDOCS%%%%DOCSDIR%%/doc/4-instrument/su.md
@@ -155,6 +159,7 @@ share/applications/furnace.desktop
 %%PORTDOCS%%%%DOCSDIR%%/doc/4-instrument/vic.md
 %%PORTDOCS%%%%DOCSDIR%%/doc/4-instrument/virtual-boy.md
 %%PORTDOCS%%%%DOCSDIR%%/doc/4-instrument/vrc6.md
+%%PORTDOCS%%%%DOCSDIR%%/doc/4-instrument/watarasv.md
 %%PORTDOCS%%%%DOCSDIR%%/doc/4-instrument/wavesynth.md
 %%PORTDOCS%%%%DOCSDIR%%/doc/4-instrument/wavetable.png
 %%PORTDOCS%%%%DOCSDIR%%/doc/4-instrument/wonderswan.md
@@ -214,6 +219,7 @@ share/applications/furnace.desktop
 %%PORTDOCS%%%%DOCSDIR%%/doc/7-systems/scc.md
 %%PORTDOCS%%%%DOCSDIR%%/doc/7-systems/segapcm.md
 %%PORTDOCS%%%%DOCSDIR%%/doc/7-systems/sid2.md
+%%PORTDOCS%%%%DOCSDIR%%/doc/7-systems/sid3.md
 %%PORTDOCS%%%%DOCSDIR%%/doc/7-systems/sm8521.md
 %%PORTDOCS%%%%DOCSDIR%%/doc/7-systems/sms.md
 %%PORTDOCS%%%%DOCSDIR%%/doc/7-systems/snes.md
@@ -247,6 +253,7 @@ share/applications/furnace.desktop
 %%PORTDOCS%%%%DOCSDIR%%/doc/7-systems/vic20.md
 %%PORTDOCS%%%%DOCSDIR%%/doc/7-systems/virtual-boy.md
 %%PORTDOCS%%%%DOCSDIR%%/doc/7-systems/vrc6.md
+%%PORTDOCS%%%%DOCSDIR%%/doc/7-systems/watarasv.md
 %%PORTDOCS%%%%DOCSDIR%%/doc/7-systems/wonderswan.md
 %%PORTDOCS%%%%DOCSDIR%%/doc/7-systems/x1-010.md
 %%PORTDOCS%%%%DOCSDIR%%/doc/7-systems/ym2151.md
@@ -284,6 +291,7 @@ share/applications/furnace.desktop
 %%PORTDOCS%%%%DOCSDIR%%/doc/8-advanced/inputlatch.png
 %%PORTDOCS%%%%DOCSDIR%%/doc/8-advanced/log-viewer.md
 %%PORTDOCS%%%%DOCSDIR%%/doc/8-advanced/log-viewer.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/8-advanced/memcompo.png
 %%PORTDOCS%%%%DOCSDIR%%/doc/8-advanced/memory-composition.md
 %%PORTDOCS%%%%DOCSDIR%%/doc/8-advanced/mixer-mixer.png
 %%PORTDOCS%%%%DOCSDIR%%/doc/8-advanced/mixer-patchbay.png
@@ -303,6 +311,7 @@ share/applications/furnace.desktop
 %%PORTDOCS%%%%DOCSDIR%%/doc/8-advanced/user-systems.md
 %%PORTDOCS%%%%DOCSDIR%%/doc/8-advanced/user-systems.png
 %%PORTDOCS%%%%DOCSDIR%%/doc/8-advanced/xyosc.md
+%%PORTDOCS%%%%DOCSDIR%%/doc/8-advanced/xyosc.png
 %%PORTDOCS%%%%DOCSDIR%%/doc/9-guides/README.md
 %%PORTDOCS%%%%DOCSDIR%%/doc/9-guides/emulation-cores.md
 %%PORTDOCS%%%%DOCSDIR%%/doc/9-guides/envelope.md
@@ -329,401 +338,6 @@ share/applications/furnace.desktop
 %%PORTDOCS%%%%DOCSDIR%%/other/papers/screenshot3.png
 %%PORTDOCS%%%%DOCSDIR%%/other/papers/unifont-license.txt
 %%PORTDOCS%%%%DOCSDIR%%/other/papers/zsm-format.md
-%%DATADIR%%/demos/README.md
-%%DATADIR%%/demos/a2600/Funky_Afternoon.fur
-%%DATADIR%%/demos/a2600/Slam_the_Door.fur
-%%DATADIR%%/demos/a2600/TIADeepIntoCode.fur
-%%DATADIR%%/demos/a2600/Watch My Tone.fur
-%%DATADIR%%/demos/a2600/atari_breakbeat.fur
-%%DATADIR%%/demos/a2600/morepain.fur
-%%DATADIR%%/demos/a2600/the_erfngjt.fur
-%%DATADIR%%/demos/a2600/twin.fur
-%%DATADIR%%/demos/amiga/a_wave_powerhouse.fur
-%%DATADIR%%/demos/amiga/bruno_time.fur
-%%DATADIR%%/demos/amiga/furnace0.6crk.fur
-%%DATADIR%%/demos/amiga/m7 vibe.fur
-%%DATADIR%%/demos/amiga/serendipid.fur
-%%DATADIR%%/demos/arcade/ComicPartytrack20.fur
-%%DATADIR%%/demos/arcade/Destiny_Islands_Irem_M92.fur
-%%DATADIR%%/demos/arcade/Eternal_Forest_TaitoArcade.fur
-%%DATADIR%%/demos/arcade/Grape_Jelly_Alpha5232.fur
-%%DATADIR%%/demos/arcade/Hexionology.fur
-%%DATADIR%%/demos/arcade/Ice_Wind_SegaPCM.fur
-%%DATADIR%%/demos/arcade/Mars_Bar_On_Mars_NamcoWSG.fur
-%%DATADIR%%/demos/arcade/Maximum_Overdrive_NamcoWSG.fur
-%%DATADIR%%/demos/arcade/Neo_Seaside_Volley_Court_NeoGeo.fur
-%%DATADIR%%/demos/arcade/Phoenix_cover_NamcoWSG.fur
-%%DATADIR%%/demos/arcade/Physics_Exam_TaitoArcade.fur
-%%DATADIR%%/demos/arcade/Point_of_No_Return_SegaPCM.fur
-%%DATADIR%%/demos/arcade/QSound_smile.fur
-%%DATADIR%%/demos/arcade/Salamander_Starfield.fur
-%%DATADIR%%/demos/arcade/Some_Creatures_SegaPCM.fur
-%%DATADIR%%/demos/arcade/The_Good_Times_SegaPCM.fur
-%%DATADIR%%/demos/arcade/ToHeart_QoH98_TPower_Asuka120Style.fur
-%%DATADIR%%/demos/arcade/Tubelectric_Fictional_Arcade.fur
-%%DATADIR%%/demos/arcade/U.N. Owen Was Her (NS2).fur
-%%DATADIR%%/demos/arcade/UT99_Run_TaitoArcade.fur
-%%DATADIR%%/demos/arcade/Utter_Determination_TaitoArcade.fur
-%%DATADIR%%/demos/arcade/WSG_Loop_Tune_NamcoWSG.fur
-%%DATADIR%%/demos/arcade/eek_qsound.fur
-%%DATADIR%%/demos/arcade/ice_cap_NamcoC30.fur
-%%DATADIR%%/demos/arcade/last_day_of_summer_NamcoC15.fur
-%%DATADIR%%/demos/arcade/sans_TaitoArcade.fur
-%%DATADIR%%/demos/arcade/the_machines_are_socialising_SegaPCM.fur
-%%DATADIR%%/demos/ay8910/AY-3-8910_Jam.fur
-%%DATADIR%%/demos/ay8910/AyMate.fur
-%%DATADIR%%/demos/ay8910/Drifting in Colour.fur
-%%DATADIR%%/demos/ay8910/Flat Wave Society.fur
-%%DATADIR%%/demos/ay8910/Second_Addition.fur
-%%DATADIR%%/demos/ay8910/cardboardmywater.fur
-%%DATADIR%%/demos/ay8910/demoscenetypebeat.fur
-%%DATADIR%%/demos/ay8910/remark_music.fur
-%%DATADIR%%/demos/ay8910/vibe_zone.fur
-%%DATADIR%%/demos/ay8930/AY8930Shuffle.fur
-%%DATADIR%%/demos/ay8930/Obscure_Temptation.fur
-%%DATADIR%%/demos/ay8930/One_Minute_Waltz.fur
-%%DATADIR%%/demos/ay8930/Playing_On_The_Stairs.fur
-%%DATADIR%%/demos/ay8930/Red_Planet.fur
-%%DATADIR%%/demos/ay8930/duty fun.fur
-%%DATADIR%%/demos/ay8930/joyful.fur
-%%DATADIR%%/demos/ay8930/powerful-sample-generator.fur
-%%DATADIR%%/demos/c64/C64 junk.fur
-%%DATADIR%%/demos/c64/ChaosTune.fur
-%%DATADIR%%/demos/c64/DOOM_E1M1.fur
-%%DATADIR%%/demos/c64/DOOM_E1M3.fur
-%%DATADIR%%/demos/c64/Hellcharger.fur
-%%DATADIR%%/demos/c64/The_Snippet.fur
-%%DATADIR%%/demos/c64/deadlock.fur
-%%DATADIR%%/demos/c64/yeah!.fur
-%%DATADIR%%/demos/esfm/AAAA.fur
-%%DATADIR%%/demos/esfm/ALCATRAZ_ALWAYS.fur
-%%DATADIR%%/demos/esfm/CampingJourney.fur
-%%DATADIR%%/demos/esfm/Deadline.fur
-%%DATADIR%%/demos/esfm/Devil_Detective.fur
-%%DATADIR%%/demos/esfm/Drinkin_Coffee_Way_Too_Much.fur
-%%DATADIR%%/demos/esfm/EdgeRunning_2078.fur
-%%DATADIR%%/demos/esfm/Fighting_the_Dimensions_Big_Bad_Because_its_Fun.fur
-%%DATADIR%%/demos/esfm/I_Cant_Escape_Your_Memory.fur
-%%DATADIR%%/demos/esfm/Just_me_and_my_Brain.fur
-%%DATADIR%%/demos/esfm/Ken_Stage.fur
-%%DATADIR%%/demos/esfm/Magician_Lake_Cover.fur
-%%DATADIR%%/demos/esfm/Napalm-Loader.fur
-%%DATADIR%%/demos/esfm/Perilous059.fur
-%%DATADIR%%/demos/esfm/Poets_I.fur
-%%DATADIR%%/demos/esfm/Redial.fur
-%%DATADIR%%/demos/esfm/SearchPrincess.fur
-%%DATADIR%%/demos/esfm/Second_Start.fur
-%%DATADIR%%/demos/esfm/Strange_Sunset.fur
-%%DATADIR%%/demos/esfm/Tangent_to_a_Segue.fur
-%%DATADIR%%/demos/esfm/TheOneWayFuture.fur
-%%DATADIR%%/demos/esfm/Unconscious_Unravelling.fur
-%%DATADIR%%/demos/esfm/Unknown_Location.fur
-%%DATADIR%%/demos/esfm/WalkInThePark.fur
-%%DATADIR%%/demos/esfm/WindFjordsESFM.fur
-%%DATADIR%%/demos/esfm/act_of_fighter.fur
-%%DATADIR%%/demos/esfm/cielos_esfumados.fur
-%%DATADIR%%/demos/esfm/esfm_ins.fur
-%%DATADIR%%/demos/esfm/experiment.fur
-%%DATADIR%%/demos/esfm/flashback.fur
-%%DATADIR%%/demos/esfm/frosty_dusk.fur
-%%DATADIR%%/demos/esfm/haunted_castle.fur
-%%DATADIR%%/demos/esfm/her_wishes.fur
-%%DATADIR%%/demos/esfm/ledstorm.fur
-%%DATADIR%%/demos/esfm/loneguitarist.fur
-%%DATADIR%%/demos/esfm/moon_closedspace.fur
-%%DATADIR%%/demos/esfm/pcbend.fur
-%%DATADIR%%/demos/esfm/sticker1.fur
-%%DATADIR%%/demos/esfm/synthy.fur
-%%DATADIR%%/demos/esfm/wack.fur
-%%DATADIR%%/demos/esfm/x_evil_soul.fur
-%%DATADIR%%/demos/gameboy/GB_WaitForMe.fur
-%%DATADIR%%/demos/gameboy/On_Hold.fur
-%%DATADIR%%/demos/gameboy/Pleasure_of_Tension.fur
-%%DATADIR%%/demos/gameboy/You're_Doing_Well!.fur
-%%DATADIR%%/demos/gameboy/cheap.fur
-%%DATADIR%%/demos/gameboy/dancing_to_the_death.fur
-%%DATADIR%%/demos/gameboy/dtect.fur
-%%DATADIR%%/demos/gameboy/finger.fur
-%%DATADIR%%/demos/gameboy/freedom.fur
-%%DATADIR%%/demos/gameboy/ice_3_advert.fur
-%%DATADIR%%/demos/gameboy/lagtrain.fur
-%%DATADIR%%/demos/gameboy/minos.fur
-%%DATADIR%%/demos/gameboy/puggs_in_space.fur
-%%DATADIR%%/demos/gameboy/snowdin.fur
-%%DATADIR%%/demos/gameboy/spreadtro.fur
-%%DATADIR%%/demos/genesis/All Good Times.fur
-%%DATADIR%%/demos/genesis/Another_winter.fur
-%%DATADIR%%/demos/genesis/Carnage.fur
-%%DATADIR%%/demos/genesis/CorridorsOfTimeRMX.fur
-%%DATADIR%%/demos/genesis/Equinox Intro.fur
-%%DATADIR%%/demos/genesis/Fancy_Promenard.fur
-%%DATADIR%%/demos/genesis/Kobito_of_the_Shining_Needle.fur
-%%DATADIR%%/demos/genesis/MegadriveOverdrive.fur
-%%DATADIR%%/demos/genesis/Plok_Beach.fur
-%%DATADIR%%/demos/genesis/Puyopuyo~n_DopplegangerArle-TsuuStyle.fur
-%%DATADIR%%/demos/genesis/Shovel_Knight_Title.fur
-%%DATADIR%%/demos/genesis/Solar_Man.fur
-%%DATADIR%%/demos/genesis/SpareHalloween2.fur
-%%DATADIR%%/demos/genesis/SparkmanMD.fur
-%%DATADIR%%/demos/genesis/Stereotactics_Rewritten.fur
-%%DATADIR%%/demos/genesis/darkstar.fur
-%%DATADIR%%/demos/genesis/forest_freeway_zone.fur
-%%DATADIR%%/demos/genesis/imaginarium.fur
-%%DATADIR%%/demos/genesis/inside_the_computer.fur
-%%DATADIR%%/demos/genesis/laidback.fur
-%%DATADIR%%/demos/genesis/last_chiptune.fur
-%%DATADIR%%/demos/genesis/louder.fur
-%%DATADIR%%/demos/genesis/mm5_boss.fur
-%%DATADIR%%/demos/genesis/mummy_in_the_pyramid.fur
-%%DATADIR%%/demos/genesis/my_problem.fur
-%%DATADIR%%/demos/genesis/newer_song_lol.fur
-%%DATADIR%%/demos/genesis/the_serenity_of_lonliness.fur
-%%DATADIR%%/demos/genesis/yky.fur
-%%DATADIR%%/demos/lynx/LedStorm.fur
-%%DATADIR%%/demos/lynx/Road_Rash_Grass_Valley.fur
-%%DATADIR%%/demos/lynx/Tyrian-Camanis.fur
-%%DATADIR%%/demos/lynx/chippylotus.fur
-%%DATADIR%%/demos/lynx/insert_title_here.fur
-%%DATADIR%%/demos/misc/BlueBolt_VIC20.fur
-%%DATADIR%%/demos/misc/Dreamliner_FMTowns.fur
-%%DATADIR%%/demos/misc/FiveTwoThreeTwo_MSM5232.fur
-%%DATADIR%%/demos/misc/Galactic_Melody_PowerNoise.fur
-%%DATADIR%%/demos/misc/GreenIdeas_PET.fur
-%%DATADIR%%/demos/misc/Inner Machinations YM2610B.fur
-%%DATADIR%%/demos/misc/Miami_Ice_Sharp_X1.fur
-%%DATADIR%%/demos/misc/OHM_VRC6.fur
-%%DATADIR%%/demos/misc/Playground_2xT6W28.fur
-%%DATADIR%%/demos/misc/Someting_I_can_feel_MSM5232.fur
-%%DATADIR%%/demos/misc/Special Stage Sonic 3 (GBA).fur
-%%DATADIR%%/demos/misc/StrobesPowerNoise.fur
-%%DATADIR%%/demos/misc/T_Six_T6W28.fur
-%%DATADIR%%/demos/misc/TerminalZone_SM8521.fur
-%%DATADIR%%/demos/misc/Weightlessness_ES5506.fur
-%%DATADIR%%/demos/misc/ZetaForceLevel2.fur
-%%DATADIR%%/demos/misc/beeper_torture.fur
-%%DATADIR%%/demos/misc/biffy_bifurcator.fur
-%%DATADIR%%/demos/misc/brokenspace-msm5232.fur
-%%DATADIR%%/demos/misc/cavedotwave-msm5232.fur
-%%DATADIR%%/demos/misc/combat_vehicle_pokey.fur
-%%DATADIR%%/demos/misc/deepmist_dave.fur
-%%DATADIR%%/demos/misc/empty_PV-1000.fur
-%%DATADIR%%/demos/misc/fragments_turbosound.fur
-%%DATADIR%%/demos/misc/fursuits_for_the_suspiciously_rich_MSM5232.fur
-%%DATADIR%%/demos/misc/hope_for_the_dream_opm.fur
-%%DATADIR%%/demos/misc/lagrange_point_2023_opm.fur
-%%DATADIR%%/demos/misc/massive_x_opz.fur
-%%DATADIR%%/demos/misc/meaningful_connection_es5506.fur
-%%DATADIR%%/demos/misc/mushroomhill_SM8521.fur
-%%DATADIR%%/demos/misc/pseudogba_pwaa_godot.fur
-%%DATADIR%%/demos/misc/rf5wapianoroll.fur
-%%DATADIR%%/demos/misc/sparkling_aria_pokemini.fur
-%%DATADIR%%/demos/misc/sucked_something_zx.fur
-%%DATADIR%%/demos/misc/teddy_bear_midnight_jam_ted.fur
-%%DATADIR%%/demos/misc/the_king_of_crisp_opm.fur
-%%DATADIR%%/demos/misc/vortex_opm.fur
-%%DATADIR%%/demos/misc/walkontheroof_T6W28.fur
-%%DATADIR%%/demos/misc/waterworld_map_opm.fur
-%%DATADIR%%/demos/msx/21492413.fur
-%%DATADIR%%/demos/msx/BREEZE_SENSATION.fur
-%%DATADIR%%/demos/msx/Gyruss_Stage_2.fur
-%%DATADIR%%/demos/msx/Juice_Stand.fur
-%%DATADIR%%/demos/msx/Morning_Alarm.fur
-%%DATADIR%%/demos/msx/Nemesis2AirBattle.fur
-%%DATADIR%%/demos/msx/OPLL_High_and_Rising.fur
-%%DATADIR%%/demos/msx/OPLL_OperationPleaseLeaveLeave.fur
-%%DATADIR%%/demos/msx/Port Sun.fur
-%%DATADIR%%/demos/msx/Princess_of_the_Dead.fur
-%%DATADIR%%/demos/msx/Striking_Towards_Opposition.fur
-%%DATADIR%%/demos/msx/attack_the_barbarian.fur
-%%DATADIR%%/demos/msx/opll-fashioned_drums.fur
-%%DATADIR%%/demos/msx/ranburu_song.fur
-%%DATADIR%%/demos/multichip/1_bit_bros.fur
-%%DATADIR%%/demos/multichip/AgentX.fur
-%%DATADIR%%/demos/multichip/Between_the_Circuits.fur
-%%DATADIR%%/demos/multichip/Chip_Duel_AY-3-8910+SN76489.fur
-%%DATADIR%%/demos/multichip/Cossack Stage Boss.fur
-%%DATADIR%%/demos/multichip/FamiMega Aliance.fur
-%%DATADIR%%/demos/multichip/Fantasy_Chip_Christmas.fur
-%%DATADIR%%/demos/multichip/Fight Against the Dark Matter.fur
-%%DATADIR%%/demos/multichip/Fiorella YM2610B+YM2203.fur
-%%DATADIR%%/demos/multichip/Fusion.fur
-%%DATADIR%%/demos/multichip/HoldOn.fur
-%%DATADIR%%/demos/multichip/Jet_Pack_Adventure_GBAesque.fur
-%%DATADIR%%/demos/multichip/MegaMari-Cirno.fur
-%%DATADIR%%/demos/multichip/MetalSlug_BaseCamp_SMS_TIA.fur
-%%DATADIR%%/demos/multichip/Namco_C30_C219_Loop.fur
-%%DATADIR%%/demos/multichip/OPL3_SegaPCM_Xeno_Crisis_-_Facility_Area_2.fur
-%%DATADIR%%/demos/multichip/PinBot-C30C140.fur
-%%DATADIR%%/demos/multichip/Sky Chaze Zone 32X.fur
-%%DATADIR%%/demos/multichip/Sunset Hill Zone Act 2.fur
-%%DATADIR%%/demos/multichip/TheOnlyWayIsForward.fur
-%%DATADIR%%/demos/multichip/collab.fur
-%%DATADIR%%/demos/multichip/cueball.fur
-%%DATADIR%%/demos/multichip/double-dragon-stage1.fur
-%%DATADIR%%/demos/multichip/government funding breakcore-ish remix.fur
-%%DATADIR%%/demos/multichip/invicibility_mmc5_n163_fds.fur
-%%DATADIR%%/demos/multichip/meteor_shower.fur
-%%DATADIR%%/demos/multichip/not genesis thing.fur
-%%DATADIR%%/demos/multichip/one.fur
-%%DATADIR%%/demos/multichip/overdrive.fur
-%%DATADIR%%/demos/multichip/pont of noreturn.fur
-%%DATADIR%%/demos/multichip/ridiculous_game.fur
-%%DATADIR%%/demos/multichip/satellite_interconnects.fur
-%%DATADIR%%/demos/multichip/second_dimension_demo.fur
-%%DATADIR%%/demos/multichip/silverlining.fur
-%%DATADIR%%/demos/multichip/skate_or_die.fur
-%%DATADIR%%/demos/multichip/splashingwater.fur
-%%DATADIR%%/demos/multichip/sunlight.fur
-%%DATADIR%%/demos/multichip/super_fantasy_zone_mango.fur
-%%DATADIR%%/demos/multichip/track8_n163_k053260.fur
-%%DATADIR%%/demos/multichip/urgency.fur
-%%DATADIR%%/demos/nes/Bridge Zone.fur
-%%DATADIR%%/demos/nes/Byte-Sized Bop.fur
-%%DATADIR%%/demos/nes/FDS TEST.fur
-%%DATADIR%%/demos/nes/Famitune1.fur
-%%DATADIR%%/demos/nes/Fur_Nes.fur
-%%DATADIR%%/demos/nes/Future_Re-ference.fur
-%%DATADIR%%/demos/nes/Rise_against_the_ashes_to_the_new_dawn.fur
-%%DATADIR%%/demos/nes/Samsung SGH-x830 - Ringtone 8.fur
-%%DATADIR%%/demos/nes/Sky Sanctuary Zone.fur
-%%DATADIR%%/demos/nes/Super cool and awesome samurai.fur
-%%DATADIR%%/demos/nes/Super_Space_Invaders_Title.fur
-%%DATADIR%%/demos/nes/The Cheetahmen.fur
-%%DATADIR%%/demos/nes/The East.fur
-%%DATADIR%%/demos/nes/carve_your_own_path.fur
-%%DATADIR%%/demos/nes/christmas-fever.fur
-%%DATADIR%%/demos/nes/going_up_a_step_at_time.fur
-%%DATADIR%%/demos/nes/infinity.fur
-%%DATADIR%%/demos/nes/oby1_ingame.fur
-%%DATADIR%%/demos/nes/one_sided_love.fur
-%%DATADIR%%/demos/nes/sweatsmile_bossfight.fur
-%%DATADIR%%/demos/nes/the_best-1990.fur
-%%DATADIR%%/demos/nes/turtle_byte.fur
-%%DATADIR%%/demos/opl/Contraduct Design OPL3 Cover.fur
-%%DATADIR%%/demos/opl/DASH.fur
-%%DATADIR%%/demos/opl/E1M4OPL2.fur
-%%DATADIR%%/demos/opl/Egyptian_Rule.fur
-%%DATADIR%%/demos/opl/Fly_to_the_Leaden_Sky_OPL3.fur
-%%DATADIR%%/demos/opl/Funky_Bubbles_OPL3.fur
-%%DATADIR%%/demos/opl/I_won_t_be_there_again.fur
-%%DATADIR%%/demos/opl/Memories_of_Triumph.fur
-%%DATADIR%%/demos/opl/Midnight_Dog_Orchestra.fur
-%%DATADIR%%/demos/opl/Moon.fur
-%%DATADIR%%/demos/opl/Oh no, more sine waves.fur
-%%DATADIR%%/demos/opl/Perpetual_Motion.fur
-%%DATADIR%%/demos/opl/PhantomBreakerBattleGrounds_ShinjukuStage-OPL3.fur
-%%DATADIR%%/demos/opl/Sliding_on_a_Rainbow.fur
-%%DATADIR%%/demos/opl/TeamInnocent-BGM4-OPL3Plus.fur
-%%DATADIR%%/demos/opl/Waterworld_-_Map.fur
-%%DATADIR%%/demos/opl/e3m2_opl3.fur
-%%DATADIR%%/demos/opl/fight and flight.fur
-%%DATADIR%%/demos/opl/green_biker_dude_opl.fur
-%%DATADIR%%/demos/opl/home_wfl_opl3.fur
-%%DATADIR%%/demos/opl/rain.cloud.sunset.fur
-%%DATADIR%%/demos/opl/the_foggy_cave_in_the_darkness.fur
-%%DATADIR%%/demos/pc98/Blue_Nebula.fur
-%%DATADIR%%/demos/pc98/CT_maintheme.fur
-%%DATADIR%%/demos/pc98/Counterattack.fur
-%%DATADIR%%/demos/pc98/MMXStageClear.fur
-%%DATADIR%%/demos/pc98/atomic_failure.fur
-%%DATADIR%%/demos/pce/Bad_Dudes_Greased_Lightning.fur
-%%DATADIR%%/demos/pce/Fake Gameboy.fur
-%%DATADIR%%/demos/pce/Ma-Da-Ra.fur
-%%DATADIR%%/demos/pce/Warpdrive_Engage.fur
-%%DATADIR%%/demos/quickstart.fur
-%%DATADIR%%/demos/sn7/456nm_TI994A.fur
-%%DATADIR%%/demos/sn7/FlowOfSN7.fur
-%%DATADIR%%/demos/sn7/Last Frecuency System.fur
-%%DATADIR%%/demos/sn7/Night_Market_TI994A.fur
-%%DATADIR%%/demos/sn7/Tidal_Tempest_Zone.fur
-%%DATADIR%%/demos/sn7/doorintosummer.fur
-%%DATADIR%%/demos/sn7/gg_silver_surfer_st1.fur
-%%DATADIR%%/demos/sn7/gg_soniccd_collision_chaos.fur
-%%DATADIR%%/demos/sn7/thunderblade-type-ii.fur
-%%DATADIR%%/demos/snes/Breezy.fur
-%%DATADIR%%/demos/snes/Cosmic_Warehouse.fur
-%%DATADIR%%/demos/snes/Dear Blue SNES.fur
-%%DATADIR%%/demos/snes/IMU Café.fur
-%%DATADIR%%/demos/snes/MM8_Frost_Man.fur
-%%DATADIR%%/demos/snes/ManbowSMW.fur
-%%DATADIR%%/demos/snes/Sadness.fur
-%%DATADIR%%/demos/snes/Sunken Lights.fur
-%%DATADIR%%/demos/snes/Unreal_Something_SNES.fur
-%%DATADIR%%/demos/snes/amalgam.fur
-%%DATADIR%%/demos/snes/analog.fur
-%%DATADIR%%/demos/snes/aurora.fur
-%%DATADIR%%/demos/snes/changeyourheart.fur
-%%DATADIR%%/demos/snes/encjslt.fur
-%%DATADIR%%/demos/snes/segacd.fur
-%%DATADIR%%/demos/snes/sound processing unit.fur
-%%DATADIR%%/demos/snes/spd10.fur
-%%DATADIR%%/demos/snes/spd12.fur
-%%DATADIR%%/demos/snes/tetristheme.fur
-%%DATADIR%%/demos/snes/very chill snes.fur
-%%DATADIR%%/demos/snes/wonders_of_synthia.fur
-%%DATADIR%%/demos/specs2/KeygenTypeBeat.fur
-%%DATADIR%%/demos/specs2/Tim_Follin.fur
-%%DATADIR%%/demos/specs2/acidic_juice_of_hell.fur
-%%DATADIR%%/demos/specs2/atmosphere.fur
-%%DATADIR%%/demos/specs2/back_into_adventure.fur
-%%DATADIR%%/demos/specs2/object.fur
-%%DATADIR%%/demos/specs2/rastaline_dub.fur
-%%DATADIR%%/demos/specs2/spa.fur
-%%DATADIR%%/demos/specs2/thick bass test.fur
-%%DATADIR%%/demos/virtualboy/4_dimensionnal_goddess_of_existance.fur
-%%DATADIR%%/demos/virtualboy/Cherry_Vertex.fur
-%%DATADIR%%/demos/virtualboy/Dimensional.fur
-%%DATADIR%%/demos/virtualboy/Double_Puzzle_Trouble.fur
-%%DATADIR%%/demos/virtualboy/DoublingDown.fur
-%%DATADIR%%/demos/virtualboy/Evil_Incarnate.fur
-%%DATADIR%%/demos/virtualboy/God_Rest_Ye_Deadly_Gentlemen.fur
-%%DATADIR%%/demos/virtualboy/Iridion_3D_Stage_3.fur
-%%DATADIR%%/demos/virtualboy/LN2StreetLoader-VB.fur
-%%DATADIR%%/demos/virtualboy/La_Folia_ground_bass.fur
-%%DATADIR%%/demos/virtualboy/No_Such_Thing.fur
-%%DATADIR%%/demos/virtualboy/Professional_Beat.fur
-%%DATADIR%%/demos/virtualboy/Rave_Dancetune.fur
-%%DATADIR%%/demos/virtualboy/Red_And_Black_Orchid.fur
-%%DATADIR%%/demos/virtualboy/Red_Revolver.fur
-%%DATADIR%%/demos/virtualboy/Redworld.fur
-%%DATADIR%%/demos/virtualboy/Scarlet_Horizons.fur
-%%DATADIR%%/demos/virtualboy/SeeingRed.fur
-%%DATADIR%%/demos/virtualboy/StuckTerminologyRealVB.fur
-%%DATADIR%%/demos/virtualboy/Virtual_Promises.fur
-%%DATADIR%%/demos/virtualboy/air_fight.fur
-%%DATADIR%%/demos/virtualboy/blueseed.fur
-%%DATADIR%%/demos/virtualboy/devil_crash.fur
-%%DATADIR%%/demos/virtualboy/eek.fur
-%%DATADIR%%/demos/virtualboy/ghx_melodic.fur
-%%DATADIR%%/demos/virtualboy/groove_in_the_virtual_realm.fur
-%%DATADIR%%/demos/virtualboy/honeydippedkiwis.fur
-%%DATADIR%%/demos/virtualboy/lastninja-sewersloader.fur
-%%DATADIR%%/demos/virtualboy/mission_breafing.fur
-%%DATADIR%%/demos/virtualboy/needforspeed2semainmenu.fur
-%%DATADIR%%/demos/virtualboy/red_joke.fur
-%%DATADIR%%/demos/virtualboy/redboas.fur
-%%DATADIR%%/demos/virtualboy/redshift.fur
-%%DATADIR%%/demos/virtualboy/virtual_namachuukei_pennant_race.fur
-%%DATADIR%%/demos/virtualboy/wavetablehell4-vb.fur
-%%DATADIR%%/demos/wonderswan/Bullet_Hell.fur
-%%DATADIR%%/demos/wonderswan/Rusty_-_Queen_in_the_Dark_Night.fur
-%%DATADIR%%/demos/wonderswan/TimeTrial.fur
-%%DATADIR%%/demos/wonderswan/sijofsjfsoeife.fur
-%%DATADIR%%/demos/x16/Cafe - 010 Editor 2.0kg.fur
-%%DATADIR%%/demos/x16/Exerion_II_Tune.fur
-%%DATADIR%%/demos/x16/Identity_Believer.fur
-%%DATADIR%%/demos/x16/Melody of Certain Feelings.fur
-%%DATADIR%%/demos/x16/Shades of Blue.fur
-%%DATADIR%%/demos/x16/TFV_Rise.fur
-%%DATADIR%%/demos/x16/dance with me.fur
-%%DATADIR%%/demos/x16/her11.fur
-%%DATADIR%%/demos/x16/keygen19.fur
-%%DATADIR%%/demos/x16/lunacommdemo.fur
-%%DATADIR%%/demos/x16/richca.fur
-%%DATADIR%%/demos/x16/watching_paint_dry.fur
-%%DATADIR%%/demos/x68000/Optimistic.fur
-%%DATADIR%%/demos/x68000/TimeMan.fur
-%%DATADIR%%/demos/x68000/Wicked_Express.fur
 %%DATADIR%%/instruments/AY/Closed Hat.fui
 %%DATADIR%%/instruments/AY/Hat-EnvBass.fui
 %%DATADIR%%/instruments/AY/Heavy Kick and Snare.fui
@@ -742,8 +356,11 @@ share/applications/furnace.desktop
 %%DATADIR%%/instruments/C64/Side_Stick.fui
 %%DATADIR%%/instruments/C64/Snare.fui
 %%DATADIR%%/instruments/C64/string_c64.fui
+%%DATADIR%%/instruments/ESFM/ESFM Guitar Power Chord (note cut for palm mute).fui
 %%DATADIR%%/instruments/ESFM/Hi-Hat_ESFM.fui
 %%DATADIR%%/instruments/ESFM/Synth Bass.fui
+%%DATADIR%%/instruments/ESFM/deep_bass.fui
+%%DATADIR%%/instruments/ESFM/delayed.fui
 %%DATADIR%%/instruments/ESFM/djtBMX_1chostinato.fui
 %%DATADIR%%/instruments/ESFM/djtBMX_4opBassESFM.fui
 %%DATADIR%%/instruments/ESFM/djtBMX_4opESFMStrings.fui
@@ -843,6 +460,17 @@ share/applications/furnace.desktop
 %%DATADIR%%/instruments/ESFM/djtBMX_vic20square.fui
 %%DATADIR%%/instruments/ESFM/djtBMX_vic20squaretest.fui
 %%DATADIR%%/instruments/ESFM/djtBMX_wurly.fui
+%%DATADIR%%/instruments/ESFM/fakebits.fui
+%%DATADIR%%/instruments/ESFM/maj_chord.fui
+%%DATADIR%%/instruments/ESFM/min_chord.fui
+%%DATADIR%%/instruments/ESFM/obligatory_supersaw.fui
+%%DATADIR%%/instruments/ESFM/phat_square.fui
+%%DATADIR%%/instruments/ESFM/sine_w_reverb.fui
+%%DATADIR%%/instruments/ESFM/squishsine_organ.fui
+%%DATADIR%%/instruments/ESFM/stereo_brass_or_strings.fui
+%%DATADIR%%/instruments/ESFM/sytnth_stringfui
+%%DATADIR%%/instruments/ESFM/weird_bass.fui
+%%DATADIR%%/instruments/ESFM/wood_block.fui
 %%DATADIR%%/instruments/GB/GB_Kick.fui
 %%DATADIR%%/instruments/GB/GB_Lead.fui
 %%DATADIR%%/instruments/GB/GB_Snare.fui
@@ -922,6 +550,10 @@ share/applications/furnace.desktop
 %%DATADIR%%/instruments/OPL/kalimba or plain sine i cant tell.fui
 %%DATADIR%%/instruments/OPL/key.fui
 %%DATADIR%%/instruments/OPL/marimba.fui
+%%DATADIR%%/instruments/OPL/opl1 square.fui
+%%DATADIR%%/instruments/OPL/opl1-hat.fui
+%%DATADIR%%/instruments/OPL/opl1-kick.fui
+%%DATADIR%%/instruments/OPL/opl1-snare.fui
 %%DATADIR%%/instruments/OPL/opl3_4op_bass_1.fui
 %%DATADIR%%/instruments/OPL/opl3_4op_bass_2.fui
 %%DATADIR%%/instruments/OPL/opl3_4op_bass_3.fui
@@ -937,6 +569,7 @@ share/applications/furnace.desktop
 %%DATADIR%%/instruments/OPL/opl3_4op_strings.fui
 %%DATADIR%%/instruments/OPL/sax.fui
 %%DATADIR%%/instruments/OPL/tuba trumpet thing.fui
+%%DATADIR%%/instruments/OPLL/Acoustic Bass.fui
 %%DATADIR%%/instruments/OPLL/Almost_Sine.fui
 %%DATADIR%%/instruments/OPLL/Alt_Oboe.fui
 %%DATADIR%%/instruments/OPLL/Better_Electric_Guitar.fui
@@ -946,6 +579,9 @@ share/applications/furnace.desktop
 %%DATADIR%%/instruments/OPLL/Finger_Bass.fui
 %%DATADIR%%/instruments/OPLL/Glass_and_Wood.fui
 %%DATADIR%%/instruments/OPLL/Half_Sine.fui
+%%DATADIR%%/instruments/OPLL/HeeminYT_VRC7Hi-Hat.fui
+%%DATADIR%%/instruments/OPLL/HeeminYT_VRC7Kick.fui
+%%DATADIR%%/instruments/OPLL/HeeminYT_VRC7Snare.fui
 %%DATADIR%%/instruments/OPLL/Hihat_Plus_Brass.fui
 %%DATADIR%%/instruments/OPLL/Near Perfect Square Wave.dmp
 %%DATADIR%%/instruments/OPLL/OPLL_Clickik.fui
@@ -957,9 +593,12 @@ share/applications/furnace.desktop
 %%DATADIR%%/instruments/OPLL/Soft_EP.fui
 %%DATADIR%%/instruments/OPLL/Soft_Flute.fui
 %%DATADIR%%/instruments/OPLL/Steel_Guitar.fui
+%%DATADIR%%/instruments/OPLL/Synth_Marimba.fui
 %%DATADIR%%/instruments/OPLL/Triangle_Recorder.fui
 %%DATADIR%%/instruments/OPLL/Weeppiko-piano_guitar_idk.fui
 %%DATADIR%%/instruments/OPM/80's Organ.dmp
+%%DATADIR%%/instruments/OPM/Accordion.dmp
+%%DATADIR%%/instruments/OPM/Acid_Bass.fui
 %%DATADIR%%/instruments/OPM/Basses.opm
 %%DATADIR%%/instruments/OPM/Bowed Lead 1.dmp
 %%DATADIR%%/instruments/OPM/Brass 4.dmp
@@ -968,6 +607,7 @@ share/applications/furnace.desktop
 %%DATADIR%%/instruments/OPM/Brass 7.dmp
 %%DATADIR%%/instruments/OPM/Brass 8.dmp
 %%DATADIR%%/instruments/OPM/Chromatic Percussion.opm
+%%DATADIR%%/instruments/OPM/Church Organ.dmp
 %%DATADIR%%/instruments/OPM/Computer Shutdown [C-6 0213].dmp
 %%DATADIR%%/instruments/OPM/Deep Marimba.dmp
 %%DATADIR%%/instruments/OPM/Dist 2.dmp
@@ -1011,6 +651,7 @@ share/applications/furnace.desktop
 %%DATADIR%%/instruments/OPM/Piano 3 (Electric Grand).dmp
 %%DATADIR%%/instruments/OPM/Piano Low.dmp
 %%DATADIR%%/instruments/OPM/Piano Test.opm
+%%DATADIR%%/instruments/OPM/Picked_Bass.fui
 %%DATADIR%%/instruments/OPM/Plucked 1.dmp
 %%DATADIR%%/instruments/OPM/Plucked 2.dmp
 %%DATADIR%%/instruments/OPM/Plucked 3.dmp
@@ -1033,8 +674,7 @@ share/applications/furnace.desktop
 %%DATADIR%%/instruments/OPM/VariBrass 2.dmp
 %%DATADIR%%/instruments/OPM/ass overtone brass.dmp
 %%DATADIR%%/instruments/OPM/ass-loud lead.dmp
-%%DATADIR%%/instruments/OPM/brickblock369 Accordion.dmp
-%%DATADIR%%/instruments/OPM/brickblock369 Church Organ.dmp
+%%DATADIR%%/instruments/OPM/dx7tubularbell_opm.fui
 %%DATADIR%%/instruments/OPM/early 80s bs.dmp
 %%DATADIR%%/instruments/OPM/huh.dmp
 %%DATADIR%%/instruments/OPM/orchestal bullshit.dmp
@@ -1324,6 +964,7 @@ share/applications/furnace.desktop
 %%DATADIR%%/instruments/OPN/guitar/Ukulele.dmp
 %%DATADIR%%/instruments/OPN/guitar/YM2151_DistGuitar.fui
 %%DATADIR%%/instruments/OPN/guitar/distguitar_00.fui
+%%DATADIR%%/instruments/OPN/guitar/distortion2.fui
 %%DATADIR%%/instruments/OPN/guitar/high guitar.dmp
 %%DATADIR%%/instruments/OPN/guitar/powerchord.fui
 %%DATADIR%%/instruments/OPN/guitar/sine distorted guitar.dmp
@@ -1374,6 +1015,7 @@ share/applications/furnace.desktop
 %%DATADIR%%/instruments/OPN/keys/E. Piano 2 (DX).dmp
 %%DATADIR%%/instruments/OPN/keys/E. Piano 3 (Glassy).dmp
 %%DATADIR%%/instruments/OPN/keys/ElisOrgan.fui
+%%DATADIR%%/instruments/OPN/keys/Harpsichord 2.dmp
 %%DATADIR%%/instruments/OPN/keys/Harpsichord.dmp
 %%DATADIR%%/instruments/OPN/keys/Less Soft E Piano.dmp
 %%DATADIR%%/instruments/OPN/keys/Low Piano.dmp
@@ -1397,7 +1039,6 @@ share/applications/furnace.desktop
 %%DATADIR%%/instruments/OPN/keys/Spoopy Organ.dmp
 %%DATADIR%%/instruments/OPN/keys/VRC7 Reed Organ.dmp
 %%DATADIR%%/instruments/OPN/keys/YM2151_E-PIANO.fui
-%%DATADIR%%/instruments/OPN/keys/brickblock369 Harpsichord.dmp
 %%DATADIR%%/instruments/OPN/keys/fmpiano.fui
 %%DATADIR%%/instruments/OPN/keys/harpsisine.dmp
 %%DATADIR%%/instruments/OPN/percussion/(CH3) Double Metalliphone.dmp
@@ -1413,6 +1054,7 @@ share/applications/furnace.desktop
 %%DATADIR%%/instruments/OPN/percussion/Cowbell_F#5.dmp
 %%DATADIR%%/instruments/OPN/percussion/Dangerously Cheap Timpani.fui
 %%DATADIR%%/instruments/OPN/percussion/Dulcimer.dmp
+%%DATADIR%%/instruments/OPN/percussion/Glockenspiel 2.dmp
 %%DATADIR%%/instruments/OPN/percussion/Glockenspiel.dmp
 %%DATADIR%%/instruments/OPN/percussion/Kalimba.dmp
 %%DATADIR%%/instruments/OPN/percussion/Kalimba.fui
@@ -1431,8 +1073,10 @@ share/applications/furnace.desktop
 %%DATADIR%%/instruments/OPN/percussion/Space Chime.dmp
 %%DATADIR%%/instruments/OPN/percussion/Space Marimba.dmp
 %%DATADIR%%/instruments/OPN/percussion/Steel Drum (2).dmp
+%%DATADIR%%/instruments/OPN/percussion/Steel Drum (3).dmp
 %%DATADIR%%/instruments/OPN/percussion/Steel Drum.dmp
 %%DATADIR%%/instruments/OPN/percussion/Timpani (OPN).fui
+%%DATADIR%%/instruments/OPN/percussion/Timpani 2.dmp
 %%DATADIR%%/instruments/OPN/percussion/Timpani.dmp
 %%DATADIR%%/instruments/OPN/percussion/Tubular Bells.dmp
 %%DATADIR%%/instruments/OPN/percussion/VRC7 Chime.dmp
@@ -1450,9 +1094,7 @@ share/applications/furnace.desktop
 %%DATADIR%%/instruments/OPN/percussion/bell_00_glockenspiel.fui
 %%DATADIR%%/instruments/OPN/percussion/bell_01_glockenspiel_echoing.fui
 %%DATADIR%%/instruments/OPN/percussion/bell_02_glockenspiel_wobbly.fui
-%%DATADIR%%/instruments/OPN/percussion/brickblock369 Glockenspiel.dmp
-%%DATADIR%%/instruments/OPN/percussion/brickblock369 Steel Drum.dmp
-%%DATADIR%%/instruments/OPN/percussion/brickblock369 Timpani.dmp
+%%DATADIR%%/instruments/OPN/percussion/dx7tubularbell_opn.fui
 %%DATADIR%%/instruments/OPN/percussion/fm_cowbell.fui
 %%DATADIR%%/instruments/OPN/percussion/octave_8_bell.fui
 %%DATADIR%%/instruments/OPN/strings/(CH3) Double Viola.dmp
@@ -1651,8 +1293,11 @@ share/applications/furnace.desktop
 %%DATADIR%%/instruments/OPN/wind/bassoon_clarinet.fui
 %%DATADIR%%/instruments/OPN/wind/fm_pipeflute.fui
 %%DATADIR%%/instruments/OPN/wind/woodwind_00.fui
+%%DATADIR%%/instruments/OPZ/Another_Synth_Bass.fui
+%%DATADIR%%/instruments/OPZ/Banjo.fui
 %%DATADIR%%/instruments/OPZ/Fake SNES Bass_OPZ.fui
 %%DATADIR%%/instruments/OPZ/Fake_Famicom_Tri.fui
+%%DATADIR%%/instruments/OPZ/Funky_Bass.fui
 %%DATADIR%%/instruments/OPZ/Heavy_synth_bass.fui
 %%DATADIR%%/instruments/OPZ/Organ_OPZ.fui
 %%DATADIR%%/instruments/OPZ/Synth Bass.fui
@@ -2029,22 +1674,22 @@ share/icons/hicolor/512x512/apps/furnace.png
 share/icons/hicolor/512x512@2/apps/furnace.png
 share/icons/hicolor/64x64/apps/furnace.png
 share/icons/hicolor/64x64@2/apps/furnace.png
-%%NLS%%share/locale/de/LC_MESSAGES/furnace.mo
-%%NLS%%share/locale/es/LC_MESSAGES/furnace.mo
-%%NLS%%share/locale/fi/LC_MESSAGES/furnace.mo
-%%NLS%%share/locale/fr/LC_MESSAGES/furnace.mo
-%%NLS%%share/locale/hy/LC_MESSAGES/furnace.mo
-%%NLS%%share/locale/id/LC_MESSAGES/furnace.mo
-%%NLS%%share/locale/ko/LC_MESSAGES/furnace.mo
-%%NLS%%share/locale/nl/LC_MESSAGES/furnace.mo
-%%NLS%%share/locale/pl/LC_MESSAGES/furnace.mo
-%%NLS%%share/locale/pt_BR/LC_MESSAGES/furnace.mo
-%%NLS%%share/locale/ru/LC_MESSAGES/furnace.mo
-%%NLS%%share/locale/sk/LC_MESSAGES/furnace.mo
-%%NLS%%share/locale/sv/LC_MESSAGES/furnace.mo
-%%NLS%%share/locale/th/LC_MESSAGES/furnace.mo
-%%NLS%%share/locale/tr/LC_MESSAGES/furnace.mo
-%%NLS%%share/locale/uk/LC_MESSAGES/furnace.mo
-%%NLS%%share/locale/zh/LC_MESSAGES/furnace.mo
-%%NLS%%share/locale/zh_HK/LC_MESSAGES/furnace.mo
+share/locale/de/LC_MESSAGES/furnace.mo
+share/locale/es/LC_MESSAGES/furnace.mo
+share/locale/fi/LC_MESSAGES/furnace.mo
+share/locale/fr/LC_MESSAGES/furnace.mo
+share/locale/hy/LC_MESSAGES/furnace.mo
+share/locale/id/LC_MESSAGES/furnace.mo
+share/locale/ko/LC_MESSAGES/furnace.mo
+share/locale/nl/LC_MESSAGES/furnace.mo
+share/locale/pl/LC_MESSAGES/furnace.mo
+share/locale/pt_BR/LC_MESSAGES/furnace.mo
+share/locale/ru/LC_MESSAGES/furnace.mo
+share/locale/sk/LC_MESSAGES/furnace.mo
+share/locale/sv/LC_MESSAGES/furnace.mo
+share/locale/th/LC_MESSAGES/furnace.mo
+share/locale/tr/LC_MESSAGES/furnace.mo
+share/locale/uk/LC_MESSAGES/furnace.mo
+share/locale/zh/LC_MESSAGES/furnace.mo
+share/locale/zh_HK/LC_MESSAGES/furnace.mo
 share/mime/packages/furnace.xml
