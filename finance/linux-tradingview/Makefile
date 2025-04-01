@@ -1,13 +1,12 @@
 PORTNAME=	tradingview
-PORTVERSION=	2.7.8
+DISTVERSION=	2.9.6
+DISTVERSIONSUFFIX=	-1_amd64
 CATEGORIES=	finance linux
-MASTER_SITES=	https://tvd-packages.tradingview.com/ubuntu/stable/latest/jammy/
+MASTER_SITES=	https://tvd-packages.tradingview.com/ubuntu/stable/pool/multiverse/t/tradingview/jammy/
 PKGNAMEPREFIX=	linux-
-DISTNAME=	tradingview_amd64
 EXTRACT_SUFX=	.deb
-EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	aadonsk4@mts.ru
+MAINTAINER=	voxnod@gmail.com
 COMMENT=	Desktop trading application
 WWW=		https://www.tradingview.com
 
