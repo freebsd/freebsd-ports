@@ -16,10 +16,8 @@ LICENSE_PERMS=	dist-mirror no-dist-sell pkg-mirror no-pkg-sell auto-accept
 ONLY_FOR_ARCHS=	aarch64 amd64
 ONLY_FOR_ARCHS_REASON=	upstream only supports amd64 and aarch64
 
-RUN_DEPENDS=	linux-c7-curl>0:ftp/linux-c7-curl
-
 USES=		desktop-file-utils gnome linux tar:xz
-USE_LINUX=	gtk3
+USE_LINUX=	curl gtk3
 
 CONFLICTS_INSTALL=	linux-sublime[0-9]*
 
