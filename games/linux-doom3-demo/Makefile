@@ -21,7 +21,7 @@ LICENSE_TEXT=	Redistribution is limited, see license; Requested by id Software
 LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
 
 ONLY_FOR_ARCHS=	i386 amd64
-USES=		linux
+USES=		linux:c7
 USE_LINUX=	dri xorglibs
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
