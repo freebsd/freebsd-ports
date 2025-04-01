@@ -46,6 +46,7 @@
     SUBDIR += acidwarp-sdl
     SUBDIR += aeskulap
     SUBDIR += agg
+    SUBDIR += agg26
     SUBDIR += airsaned
     SUBDIR += akira
     SUBDIR += alembic
