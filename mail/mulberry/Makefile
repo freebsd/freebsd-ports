@@ -10,7 +10,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Scalable high-performance GUI Internet Mail User Agent
 WWW=		http://www.mulberrymail.com/
 
-USES=		linux tar:tgz
+USES=		linux:c7 tar:tgz
 NO_WRKSUBDIR=	yes
 USE_LINUX=	xorglibs
 ONLY_FOR_ARCHS=	i386 amd64
