@@ -1,12 +1,17 @@
 PORTNAME=	xjewel
 PORTVERSION=	1.6
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	games
 MASTER_SITES=	XCONTRIB/../R5contrib
 EXTRACT_SUFX=	.tar.z
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	X11 dropping jewels game
+
+LICENSE=	NONE
+
+DEPRECATED=	Unmaintained as last release was in 1994
+EXPIRATION_DATE=	2025-05-01
 
 BUILD_DEPENDS=	bdftopcf:x11-fonts/bdftopcf \
 		mkfontscale>=0:x11-fonts/mkfontscale
