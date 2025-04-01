@@ -1,20 +1,12 @@
-  FSF binutils/gcc/gdb toolchain for ARM Cortex-M & Cortex-R
-processors (Cortex-M0/M0+/M3/M4, Cortex-R4/R5/R7).
- This port brings C and C++ compilers. Gloss and libc layer
-are provided through newlib embedded C library.
- This is complete package prepated by "GNU Tools for ARM Embedded
-Processors" project (which is maintained by ARM company itself).
+  The GNU Toolchain for the Arm Architecture releases produced by Arm
+(referred to as “Arm GNU Toolchain”) enable partners, developers
+the community to use new features from recent Arm Architecture and
+from open-source projects GCC, Binutils, glibc, Newlib, and GDB.
 
-It includes:
- binutils
- gcc 5.3 with LTO and GRAPHITE support.
- newlib optimized for speed
- newlib-nano optimized for
- two versions of libstdc++, optimized for speed and size.
- gdb without sim.
+ * Contains integrated and validated packages.
+ * Supports C and C++ languages.
+ * Supports CPUs based on the A, R and M profiles of the Arm architecture
+   (including Cortex-A, Cortex-R, Cortex-M and Neoverse processors).
+ * Provides different variants of the toolchain which can be used for bare-metal
+   embedded development.
 
- All this is built with support for armv6-m, armv7-ar,
-armv7-m and armv7e-m targets, armv7e-m with and without
-FPU support and armv8-m too.
- This port gives bit-to-bit compatibility with "official"
-embedded ARM toolchain for MacOS X, Linux and Windows.

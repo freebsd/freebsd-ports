@@ -1,3 +1,5 @@
-TIMESTAMP = 1649877811
-SHA256 (gcc-arm-none-eabi-10.3-2021.10-src.tar.bz2) = 94e582e4dd3a6014dea0485be0377c6478bd3c9e1301190f05810aa2ad989cbf
-SIZE (gcc-arm-none-eabi-10.3-2021.10-src.tar.bz2) = 201152632
+TIMESTAMP = 1743428897
+SHA256 (arm-gnu-toolchain-src-snapshot-14.2.rel1.tar.xz) = e6405f20f8a817a50d92dbf7974d0ee77708dfdf9e79900a59c5d343b464ef9c
+SIZE (arm-gnu-toolchain-src-snapshot-14.2.rel1.tar.xz) = 311500280
+SHA256 (gnu-devtools-for-arm-v1.3.0.tar.bz2) = 89fdac5e73bff3673d930fdc8c1807d7548bd978900ff8d2fd45125984626dc2
+SIZE (gnu-devtools-for-arm-v1.3.0.tar.bz2) = 744557

@@ -1,0 +1,10 @@
+--- binutils-gdb--gdb/gdb/configure.orig	2025-03-31 18:36:01 UTC
++++ binutils-gdb--gdb/gdb/configure
+@@ -28123,6 +28123,7 @@
+ 
+ 
+   new_CPPFLAGS=${python_includes}
++  python_libs="-L$python_prefix/lib $python_libs"
+   new_LIBS=${python_libs}
+   { $as_echo "$as_me:${as_lineno-$LINENO}: checking for python" >&5
+ $as_echo_n "checking for python... " >&6; }
