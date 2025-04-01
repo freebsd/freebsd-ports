@@ -55,6 +55,7 @@ include/snort/framework/ips_action.h
 include/snort/framework/ips_option.h
 include/snort/framework/logger.h
 include/snort/framework/module.h
+include/snort/framework/mp_data_bus.h
 include/snort/framework/mpse.h
 include/snort/framework/mpse_batch.h
 include/snort/framework/parameter.h
