@@ -16,6 +16,7 @@ LICENSE_FILE=	${WRKSRC}/copying
 LIB_DEPENDS=	libfreetype.so:print/freetype2
 
 USES=		autoreconf cpe gmake libtool pathfix pkgconfig sdl xorg
+CONFLICTS=	agg26-2.*
 CPE_VENDOR=	antigrain
 USE_CXXSTD=	c++14
 USE_LDCONFIG=	yes
