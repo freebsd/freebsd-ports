@@ -2,6 +2,7 @@ include/SDL3_ttf/SDL_textengine.h
 include/SDL3_ttf/SDL_ttf.h
 lib/cmake/SDL3_ttf/Findharfbuzz.cmake
 lib/cmake/SDL3_ttf/Findplutosvg.cmake
+lib/cmake/SDL3_ttf/Findplutovg.cmake
 lib/cmake/SDL3_ttf/PkgConfigHelper.cmake
 lib/cmake/SDL3_ttf/SDL3_ttf-shared-targets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/SDL3_ttf/SDL3_ttf-shared-targets.cmake
