@@ -179,6 +179,7 @@ include/utils/PrivateImplementation-impl.h
 include/utils/PrivateImplementation.h
 include/utils/SingleInstanceComponentManager.h
 include/utils/Slice.h
+include/utils/StaticString.h
 include/utils/StructureOfArrays.h
 include/utils/Systrace.h
 include/utils/algorithm.h
