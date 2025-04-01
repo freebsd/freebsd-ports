@@ -1,6 +1,6 @@
---- src/saga_core/saga_gui/dlg_about.cpp.orig	2022-09-14 15:41:47 UTC
+--- src/saga_core/saga_gui/dlg_about.cpp.orig	2023-11-14 07:03:55 UTC
 +++ src/saga_core/saga_gui/dlg_about.cpp
-@@ -166,12 +166,7 @@ wxString CDLG_About::_Get_Version(void)
+@@ -165,12 +165,7 @@ wxString CDLG_About::_Get_Version(void)
  	#else
  		s	+= " (32 bit)</b><br>";
  	#endif
