@@ -27,7 +27,7 @@ LICENSE_DISTFILES_LGPL21+ =	${DISTFL_FFMPEG}
 LICENSE_DISTFILES_MAKEMKV=	${DISTFL_MAKEMKV}
 
 ONLY_FOR_ARCHS=	aarch64 amd64 i386
-USES=		gmake linux pkgconfig
+USES=		gmake linux:c7 pkgconfig
 USE_CSTD=	c11
 USE_CXXSTD=	c++11
 USE_LINUX=	base expat \
