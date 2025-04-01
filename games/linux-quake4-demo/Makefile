@@ -18,7 +18,7 @@ LICENSE_NAME=	IDSOFTWARE
 LICENSE_TEXT=	Redistribution is limited, see license
 LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
 
-USES=		linux
+USES=		linux:c7
 USE_LINUX=	sdl12
 
 NO_WRKSUBDIR=	yes
