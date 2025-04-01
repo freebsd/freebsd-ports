@@ -1,5 +1,5 @@
 PORTNAME=	xmlbeans
-DISTVERSION=	5.2.1 # Do not upgrade without checking compatibility with math/R-cran-XLConnect
+DISTVERSION=	5.3.0 # Do not upgrade without checking compatibility with math/R-cran-XLConnect
 CATEGORIES=	textproc java
 MASTER_SITES=	https://archive.apache.org/dist/poi/xmlbeans/release/bin/
 PKGNAMEPREFIX=	apache-
@@ -15,7 +15,7 @@ RUN_DEPENDS=	apache-log4j2>0:devel/apache-log4j2	\
 		slf4j>0:devel/slf4j
 
 USES=		cpe java tar:tgz
-DATE_REL=	20240522
+DATE_REL=	20241203
 CPE_VENDOR=	apache
 
 JAVA_VERSION=	11+
