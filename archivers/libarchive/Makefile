@@ -1,6 +1,5 @@
 PORTNAME=	libarchive
-DISTVERSION=	3.7.7
-PORTREVISION=	2
+DISTVERSION=	3.7.9
 PORTEPOCH=	1
 CATEGORIES=	archivers
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/v${DISTVERSION}/ \
