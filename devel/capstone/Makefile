@@ -1,6 +1,7 @@
 PORTNAME=	capstone
-DISTVERSION=	5.0.5
+DISTVERSION=	5.0.6
 CATEGORIES=	devel
+MASTER_SITES=	https://github.com/${PORTNAME}-engine/${PORTNAME}/releases/download/${DISTVERSION}/
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Multi-platform, multi-architecture disassembly framework
@@ -9,10 +10,10 @@ WWW=		http://capstone-engine.org/
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.TXT
 
-USES=		cpe gmake
+USES=		cpe gmake tar:xz
 CPE_VENDOR=	${PORTNAME}-engine
-USE_GITHUB=	yes
-GH_ACCOUNT=	capstone-engine
+#USE_GITHUB=	yes
+#GH_ACCOUNT=	capstone-engine
 USE_LDCONFIG=	yes
 
 MAKE_ENV+=	INSTALL_DATA="${INSTALL_DATA}" \
