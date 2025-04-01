@@ -10,12 +10,8 @@ MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Zoom videoconferencing client (CAVEAT: Sound doesn't yet work)
 WWW=		https://zoom.us/
 
-RUN_DEPENDS=	linux-c7-xcb-util-image>0:x11/linux-c7-xcb-util-image \
-		linux-c7-xcb-util-keysyms>0:x11/linux-c7-xcb-util-keysyms \
-		linux-c7-xcb-util>0:x11/linux-c7-xcb-util
-
 USES=		cpe desktop-file-utils linux tar:xz
-USE_LINUX=	alsalib alsa-plugins-oss atk cairo-gobject dbuslibs fontconfig freetype gdkpixbuf2 gtk3 libdrm libglvnd pango xorglibs # pulseaudio-libs (asserts under the linux emulator)
+USE_LINUX=	alsalib alsa-plugins-oss atk cairo-gobject dbuslibs fontconfig freetype gdkpixbuf2 gtk3 libdrm libglvnd pango xcb-util xorglibs # pulseaudio-libs (asserts under the linux emulator)
 
 NO_BUILD=	yes
 
@@ -33,6 +29,13 @@ ${p:tu:S/-/_/g}_DESC=			NVidia libraries x11/${p}
 ${p:tu:S/-/_/g}_RUN_DEPENDS=		${p}>0:x11/${p}
 .endfor
 
+.include <bsd.port.pre.mk>
+
+.if ${LINUX_DEFAULT} == c7
+RUN_DEPENDS=	linux-c7-xcb-util-image>0:x11/linux-c7-xcb-util-image \
+		linux-c7-xcb-util-keysyms>0:x11/linux-c7-xcb-util-keysyms
+.endif
+
 do-install:
 	${MKDIR} ${STAGEDIR}${LINUXBASE}
 	cd ${WRKDIR} && ${CP} -r opt ${STAGEDIR}${LINUXBASE}
@@ -45,4 +48,4 @@ do-install:
 	${REINPLACE_CMD} -i '' -e 's|/usr/bin/zoom|${LOCALBASE}/bin/zoom|' ${STAGEDIR}${PREFIX}/share/applications/Zoom.desktop
 	${INSTALL_DATA} ${WRKDIR}/usr/share/pixmaps/Zoom.png ${STAGEDIR}${PREFIX}/share/pixmaps/Zoom.png
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
