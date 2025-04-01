@@ -1,7 +1,6 @@
 PORTNAME=	godns
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.2.2
-PORTREVISION=	2
+DISTVERSION=	3.2.3
 CATEGORIES=	dns
 MASTER_SITES=	https://raw.githubusercontent.com/TimothyYe/${PORTNAME}/${DISTVERSIONFULL}/:gomod
 DISTFILES=	go.mod:gomod
@@ -13,7 +12,7 @@ WWW=		https://github.com/TimothyYe/godns
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:1.23,modules
+USES=		go:1.24,modules
 USE_RC_SUBR=	${PORTNAME}
 USE_GITHUB=	yes
 
