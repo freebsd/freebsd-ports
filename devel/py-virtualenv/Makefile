@@ -1,6 +1,5 @@
 PORTNAME=	virtualenv
-# Check XXX below before updating to see if that condition is still valid
-PORTVERSION=	20.29.3
+PORTVERSION=	20.30.0
 CATEGORIES=	devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -46,10 +45,7 @@ TEST_ENV=	PYTHONIOENCODING=utf-8 \
 
 NO_ARCH=	yes
 
-# XXX: Temporarly disable DOCS option due to the issue reported at
-# https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=280687
-# https://github.com/sphinx-contrib/sphinxcontrib-towncrier/issues/92
-#OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFINE=	DOCS
 
 DOCS_BINARY_ALIAS=	towncrier=towncrier-${PYTHON_VER}
 DOCS_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}click-default-group>=1.2.4:devel/py-click-default-group@${PY_FLAVOR} \
