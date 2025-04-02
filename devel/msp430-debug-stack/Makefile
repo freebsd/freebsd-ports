@@ -1,6 +1,6 @@
 PORTNAME=	msp430-debug-stack
 PORTVERSION=	3.15.1.1
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	devel
 MASTER_SITES=	https://dr-download.ti.com/software-development/driver-or-library/MD-4vnqcP1Wk4/${PORTVERSION}/ \
 		LOCAL/lev:doc1 \
@@ -15,8 +15,6 @@ COMMENT=	TI MSP430 debugging interface library
 WWW=		http://www.ti.com/tool/mspds
 
 LICENSE=	BSD3CLAUSE
-
-BROKEN=		fails to build with Boost>=1.87
 
 LIB_DEPENDS=	libboost_filesystem.so:devel/boost-libs \
 		libhidapi.so:comms/hidapi

@@ -1,5 +1,23 @@
---- DLL430_v3/src/TI/DLL430/UsbCdcIoChannel.cpp.orig	2020-02-14 09:38:32 UTC
+--- DLL430_v3/src/TI/DLL430/UsbCdcIoChannel.cpp.orig	2025-02-14 17:38:09 UTC
 +++ DLL430_v3/src/TI/DLL430/UsbCdcIoChannel.cpp
+@@ -42,7 +42,7 @@
+ 
+ #include <boost/asio/read.hpp>
+ #include <boost/asio/write.hpp>
+-#include <boost/asio/io_service.hpp>
++#include <boost/asio/io_context.hpp>
+ 
+ #if defined(_WIN32) || defined(_WIN64)
+ 
+@@ -181,7 +181,7 @@ void UsbCdcIoChannel::createCdcPortList(const uint16_t
+ 
+ 	for (;;)
+ 	{
+-		io_service_t device = IOIteratorNext(iterator);
++		io_context_t device = IOIteratorNext(iterator);
+ 		if (device == 0)
+ 		{
+ 			if (!IOIteratorIsValid(iterator))
 @@ -310,6 +310,22 @@ void UsbCdcIoChannel::createCdcPortList(const uint16_t
  	}
  #else
@@ -31,3 +49,38 @@
  					const string filename = it->path().filename().string();
  					const string portPath = string("/dev/") + filename;
  
+@@ -376,7 +393,7 @@ bool UsbCdcIoChannel::openPort()
+ 
+ bool UsbCdcIoChannel::openPort()
+ {
+-	ioService = new boost::asio::io_service;
++	ioService = new boost::asio::io_context;
+ 	port = new boost::asio::serial_port(*ioService);
+ 	timer = new boost::asio::deadline_timer(*ioService);
+ 
+@@ -542,7 +559,7 @@ size_t UsbCdcIoChannel::read(HalResponse& resp)
+ 
+ 	boost::system::error_code ec;
+ 
+-	while (ioService->run_one(ec))
++	while (ioService->run_one())
+ 	{
+ 		if (readEvent)
+ 		{
+@@ -577,13 +594,13 @@ size_t UsbCdcIoChannel::read(HalResponse& resp)
+ 
+ 		if (ioService->stopped())
+ 		{
+-			ioService->reset();
++			ioService->restart();
+ 		}
+ 	}
+ 
+ 	//Let cancelled tasks finish
+-	ioService->run(ec);
+-	ioService->reset();
++	ioService->run();
++	ioService->restart();
+ 
+ 
+ 	if (actSize == expSize)
