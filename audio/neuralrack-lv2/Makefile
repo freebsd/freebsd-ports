@@ -1,6 +1,6 @@
 PORTNAME=	neuralrack
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.1.3
+DISTVERSION=	0.1.4
 CATEGORIES=	audio
 PKGNAMESUFFIX=	-lv2
 
@@ -24,16 +24,18 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	brummer10
 GH_TUPLE=	\
 		brummer10:libxputty:9775b74862e3c10d482b35b38ad74865b9afc75c:brummer10_libxputty/libxputty \
-		jatinchowdhury18:RTNeural:a8ae9c5af21cba309d06bce71a2008a9a13ab65b:jatinchowdhury18_RTNeural/RTNeural \
-			xtensor-stack:xsimd:a00c81f7b9e808a42aedcf7da2fbb1f9a636da34:xtensor_stack_xsimd/RTNeural/modules/xsimd \
-		sdatkinson:NeuralAmpModelerCore:e181f61efb8d05d34add45b5eecb3893ff21177c:sdatkinson_NeuralAmpModelerCore/NeuralAmpModelerCore \
-		HiFi-LoFi:FFTConvolver:f2cdeb04c42141d2caec19ca4f137398b2a76b85:HiFi_LoFi_FFTConvolver/FFTConvolver
+		HiFi-LoFi:FFTConvolver:f2cdeb04c42141d2caec19ca4f137398b2a76b85:HiFi_LoFi_FFTConvolver/FFTConvolver \
+		mikeoliphant:NeuralAudio:137cd6c:neural_audio/NeuralAudio \
+			mikeoliphant:RTNeural:5909c44:RTNeural/NeuralAudio/deps/RTNeural \
+				xtensor-stack:xsimd:a00c81f7b9e808a42aedcf7da2fbb1f9a636da34:xtensor_stack_xsimd/NeuralAudio/deps/RTNeural/modules/xsimd \
+			mikeoliphant:NeuralAmpModelerCore:e181f61efb8d05d34add45b5eecb3893ff21177c:NeuralAmpModelerCore/NeuralAudio/deps/NeuralAmpModelerCore \
+			Chowdhury-DSP:math_approx:f6d55e7:math_approx/NeuralAudio/deps/math_approx
 
 WRKSRC=		${WRKDIR}/NeuralRack-${PORTVERSION}
 
 MAKEFILE=	makefile
 
-CXXFLAGS+=	-I${WRKSRC}/RTNeural/modules/Eigen
+CXXFLAGS+=	-I${WRKSRC}/NeuralAudio/deps/RTNeural/modules/Eigen
 
 post-install:
 	@${REINPLACE_CMD} -i '' -e 's|Neuralrack|NeuralRack|' ${STAGEDIR}${PREFIX}/lib/lv2/NeuralRack.lv2/*.ttl

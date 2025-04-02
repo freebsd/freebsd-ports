@@ -1,4 +1,4 @@
---- NeuralRack/makefile.orig	2025-03-26 15:38:12 UTC
+--- NeuralRack/makefile.orig	2025-04-02 08:41:27 UTC
 +++ NeuralRack/makefile
 @@ -2,14 +2,14 @@
  	# check on which OS we build
@@ -38,14 +38,14 @@
  	BUNDLE = $(EXEC_NAME).lv2
  	LIB_DIR := ../libxputty/libxputty/
  	HEADER_DIR := $(LIB_DIR)include/
-@@ -438,13 +435,13 @@ ifneq ("$(wildcard ../bin/$(EXEC_NAME)$(EXE_EXT))","")
+@@ -421,13 +418,13 @@ ifneq ("$(wildcard ../bin/$(EXEC_NAME)$(EXE_EXT))","")
  	$(QUIET)mkdir -p $(DESTDIR)$(EXE_INSTALL_DIR)/
  	$(QUIET)cp -r ../bin/$(EXEC_NAME)$(EXE_EXT) $(DESTDIR)$(EXE_INSTALL_DIR)/$(EXEC_NAME)$(EXE_EXT)
  
 -  ifeq ($(user),root)
 +  #ifeq ($(user),root)
  	$(QUIET)mkdir -p $(DESTDIR)$(DESKAPPS_DIR)
- 	$(QUIET)cp $(STANDALONE_DIR)$(EXEC_NAME).desktop $(DESTDIR)$(DESKAPPS_DIR)$(EXEC_NAME).desktop
+ 	$(QUIET)cp $(STANDALONE_DIR)$(EXEC_NAME).desktop $(DESTDIR)$(DESKAPPS_DIR)$(NAME).desktop
  	$(QUIET)mkdir -p $(DESTDIR)$(PIXMAPS_DIR)
  	$(QUIET)cp $(STANDALONE_DIR)$(EXEC_NAME).svg $(DESTDIR)$(PIXMAPS_DIR)$(EXEC_NAME).svg 
 -	$(QUIET)update-desktop-database || true
