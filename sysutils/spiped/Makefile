@@ -1,5 +1,5 @@
 PORTNAME=	spiped
-PORTVERSION=	1.6.3
+PORTVERSION=	1.6.4
 CATEGORIES=	sysutils security
 MASTER_SITES=	http://www.tarsnap.com/spiped/
 
