@@ -1,2 +1,5 @@
-SHA256 (xml-security-src-1_5_5.zip) = 68d0e567134913a1ba9571b587980306522f34d66ff495d065f734c08cc793c0
-SIZE (xml-security-src-1_5_5.zip) = 2437645
+TIMESTAMP = 1743614273
+SHA256 (xmlsec-3.0.5.jar) = ad39c8422c0a90d54377d53e1200d596879e7440ab88db0b1e15fb0410940f11
+SIZE (xmlsec-3.0.5.jar) = 1203552
+SHA256 (xmlsec-3.0.5-javadoc.jar) = b015b9fb50960c1133d197a691634e867df1724e29eefaa73ef7ceb6418424de
+SIZE (xmlsec-3.0.5-javadoc.jar) = 3220835
