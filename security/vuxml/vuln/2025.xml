@@ -1,3 +1,40 @@
+  <vuln vid="2cad4541-0f5b-11f0-89f8-411aefea0df9">
+    <topic>openvpn -- server-side denial-of-service vulnerability with tls-crypt-v2</topic>
+    <affects>
+      <package>
+	<name>openvpn</name>
+	<range><ge>2.6.1</ge><lt>2.6.14</lt></range>
+      </package>
+      <package>
+	<name>openvpn-devel</name>
+	<range><lt>g20250402,1</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Gert Doering reports:</p>
+	<blockquote cite="https://github.com/OpenVPN/openvpn/blob/v2.6.14/Changes.rst#overview-of-changes-in-2614">
+	  <p>OpenVPN servers between 2.6.1 and 2.6.13 using
+	    --tls-crypt-v2 can be made to abort with an ASSERT() message by
+	    sending a particular combination of authenticated and malformed packets.</p>
+	  <p>To trigger the bug, a valid tls-crypt-v2 client key is needed, or
+	    network observation of a handshake with a valid tls-crypt-v2 client key</p>
+	  <p>No crypto integrity is violated, no data is leaked, and no remote
+	    code execution is possible.</p>
+	  <p>This bug does not affect OpenVPN clients.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-2704</cvename>
+      <url>https://github.com/OpenVPN/openvpn/blob/v2.6.14/Changes.rst#overview-of-changes-in-2614</url>
+    </references>
+    <dates>
+      <discovery>2025-03-26</discovery>
+      <entry>2025-04-02</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="300f86de-0e4d-11f0-ae40-b42e991fc52e">
     <topic>gitea -- Multiple vulnerabilities</topic>
     <affects>
