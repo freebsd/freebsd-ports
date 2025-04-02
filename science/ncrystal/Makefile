@@ -1,6 +1,6 @@
 PORTNAME=	ncrystal
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.1.4
+DISTVERSION=	4.1.6
 CATEGORIES=	science # physics
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -18,7 +18,8 @@ GH_ACCOUNT=	mctools
 
 SHEBANG_FILES=	tests/scripts/*
 
-CMAKE_TESTING_ON=	NCRYSTAL_ENABLE_TESTING
+CMAKE_TESTING_ON=	NCRYSTAL_ENABLE_TESTING \
+			NCRYSTAL_ENABLE_CORE_TEST
 
 post-install: # workaround for https://github.com/mctools/ncrystal/issues/150
 	@${RM} ${STAGEDIR}${PREFIX}/*.sh
