@@ -1,18 +1,15 @@
 PORTNAME=	pam_pwdfile
-PORTVERSION=	1.0
-DISTVERSIONPREFIX=	v
+PORTVERSION=	2.0
+MASTER_SITES=	https://git.tiwe.de/libpam-pwdfile.git/snapshot/
+DISTFILES=	libpam-pwdfile-${PORTVERSION}.tar.gz
 CATEGORIES=	security
 
 MAINTAINER=	lev@FreeBSD.org
 COMMENT=	Pam module for authenticating with flat passwd files
-WWW=		http://www.cpbotha.net/pam_pwdfile.html
+WWW=		https://www.cpbotha.net/software/pam_pwdfile/
 
-USES=		uidfix
-USE_GITHUB=	yes
-GH_ACCOUNT=	tiwe-de
-GH_PROJECT=	libpam-pwdfile
-
-MAKEFILE=	${FILESDIR}/Makefile.bsd
+LICENSE=	BSD3CLAUSE GPLv1 GPLv2 GPLv3
+LICENSE_COMB=	dual
 
 PLIST_FILES=	lib/pam_pwdfile.so
 PORTDOCS=	README INSTALL
@@ -20,9 +17,9 @@ CFLAGS+=	-I${WRKSRC}
 
 OPTIONS_DEFINE=	DOCS
 
-post-patch:
-#	${REINPLACE_CMD} -e 's|#include <features.h>||g' ${WRKSRC}/pam_pwdfile.c
-	${CP} ${FILESDIR}/_pam_macros.h ${WRKSRC}
+MAKE_ARGS=	PAM_LIB_DIR=${PREFIX}/lib
+
+WRKSRC=		${WRKDIR}/libpam-pwdfile-${PORTVERSION}
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

@@ -1,0 +1,22 @@
+--- Makefile.orig	2025-04-02 18:45:17 UTC
++++ Makefile
+@@ -2,8 +2,8 @@ PAM_LIB_DIR ?= /lib/security
+ INSTALL ?= install
+ CFLAGS ?= -O2 -g -Wall -Wformat-security
+ 
+-CPPFLAGS += -DUSE_CRYPT_R -D_FILE_OFFSET_BITS=64
+-CFLAGS += -fPIC -fvisibility=hidden
++CPPFLAGS += -D_FILE_OFFSET_BITS=64
++CFLAGS += -fPIC -fvisibility=hidden ${CPPFLAGS}
+ LDFLAGS += -Wl,-x -shared
+ 
+ TITLE = pam_pwdfile
+@@ -19,7 +19,7 @@ $(LIBSHARED): $(LIBOBJ)
+ 
+ install: $(LIBSHARED)
+ 	$(INSTALL) -m 0755 -d $(DESTDIR)$(PAM_LIB_DIR)
+-	$(INSTALL) -m 0755 $(LIBSHARED) $(DESTDIR)$(PAM_LIB_DIR)
++	$(INSTALL) -m 0755 -s $(LIBSHARED) $(DESTDIR)$(PAM_LIB_DIR)
+ 
+ clean:
+ 	$(RM) *.o *.so
