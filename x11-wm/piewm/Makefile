@@ -8,6 +8,8 @@ MAINTAINER=	david@catwhisker.org
 COMMENT=	tvtwm with pie (circular) menus
 WWW=		https://web.archive.org/web/20160409071502if_/http://www.crynwr.com/piewm/index.html~
 
+LICENSE=	MIT
+
 USES=		imake xorg
 DISABLE_SIZE=	yes
 USE_XORG=	xbitmaps xpm xmu
