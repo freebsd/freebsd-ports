@@ -4270,7 +4270,6 @@ databases/grass7|databases/grass8|2025-03-31|Has expired: Please use databases/g
 multimedia/tcmplex-panteltje||2025-03-31|Has expired: Abandonware, upstream is gone and no consumers in tree
 games/minecraft-client||2025-03-31|Has expired: dead upstream, no longer functional
 www/redmine50|www/redmine51|2025-03-31|Has expired: Requires ruby31
-japanese/wnn7egg||2025-03-31|Has expired: Upstream disapeared and distfile is no more available
 multimedia/projectx||2025-03-31|Has expired: Abandonware, last release in 2011 and dependens on legacy version of Java. Consider using multimedia/ffmpeg or multimedia/vlc
 x11-toolkits/shared-desktop-ontologies||2025-03-31|Has expired: Abandonedware, not used by KDE for a long time
 devel/jrtplib||2025-03-31|Has expired: Abandonware, no longer maintained upstream as of 2020
