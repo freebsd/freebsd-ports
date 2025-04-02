@@ -4297,3 +4297,5 @@ print/py-pypdf2|print/py-pypdf|2025-03-31|Has expired: Upstream moved the develo
 math/py-pystan||2025-03-31|Has expired: Marked as BROKEN for years
 net-im/telepathy-qt||2025-03-31|Has expired: Leaf library depending on Qt5
 devel/py-pkgutil-resolve-name||2025-03-31|Removed, only for Python 3.8
+devel/appstream-qt@qt5||2025-04-03|Unflavorize; only Qt6 support is needed
+devel/appstream-qt@qt6|devel/appstream-qt|2025-04-03|Unflavorize; only Qt6 support is needed
