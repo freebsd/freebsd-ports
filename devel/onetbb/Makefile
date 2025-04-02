@@ -1,5 +1,5 @@
 PORTNAME=	onetbb
-PORTVERSION=	2022.0.0
+PORTVERSION=	2022.1.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
@@ -26,7 +26,7 @@ LDFLAGS+=	-Wl,--undefined-version
 CONFLICTS=	tbb
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	oneapi-src
+GH_ACCOUNT=	uxlfoundation
 GH_PROJECT=	oneTBB
 
 USE_LDCONFIG=	yes

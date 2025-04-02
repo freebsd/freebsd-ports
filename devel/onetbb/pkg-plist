@@ -1,4 +1,5 @@
 include/oneapi/tbb.h
+include/oneapi/tbb/blocked_nd_range.h
 include/oneapi/tbb/blocked_range.h
 include/oneapi/tbb/blocked_range2d.h
 include/oneapi/tbb/blocked_range3d.h
@@ -91,6 +92,7 @@ include/oneapi/tbb/tbb_allocator.h
 include/oneapi/tbb/tbbmalloc_proxy.h
 include/oneapi/tbb/tick_count.h
 include/oneapi/tbb/version.h
+include/tbb/blocked_nd_range.h
 include/tbb/blocked_range.h
 include/tbb/blocked_range2d.h
 include/tbb/blocked_range3d.h
@@ -146,14 +148,14 @@ lib/cmake/TBB/TBBTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/TBB/TBBTargets.cmake
 lib/libtbb%%DBGSUFX%%.so
 lib/libtbb%%DBGSUFX%%.so.12
-lib/libtbb%%DBGSUFX%%.so.12.14
+lib/libtbb%%DBGSUFX%%.so.12.15
 lib/libtbbbind_2_0%%DBGSUFX%%.so
 lib/libtbbbind_2_0%%DBGSUFX%%.so.3
-lib/libtbbbind_2_0%%DBGSUFX%%.so.3.14
+lib/libtbbbind_2_0%%DBGSUFX%%.so.3.15
 lib/libtbbmalloc%%DBGSUFX%%.so
 lib/libtbbmalloc%%DBGSUFX%%.so.2
-lib/libtbbmalloc%%DBGSUFX%%.so.2.14
+lib/libtbbmalloc%%DBGSUFX%%.so.2.15
 lib/libtbbmalloc_proxy%%DBGSUFX%%.so
 lib/libtbbmalloc_proxy%%DBGSUFX%%.so.2
-lib/libtbbmalloc_proxy%%DBGSUFX%%.so.2.14
+lib/libtbbmalloc_proxy%%DBGSUFX%%.so.2.15
 libdata/pkgconfig/tbb%%PCSUFX%%.pc
