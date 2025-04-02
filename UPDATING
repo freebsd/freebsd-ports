@@ -5,6 +5,19 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20250408:
+  AFFECTS: users of linux_base-c7 and any Linux application in Ports
+  AUTHOR: arrowd@FreeBSD.org
+
+  LINUX_DEFAULT was switched to "rl9" which correspons to the Rocky Linux 9 base.
+  All architectures except i386 are affected. To stay on the old base add
+  DEFAULT_VERSIONS=linux=c7 to your /etc/make.conf
+
+  Note that some older amd64 hardware (pre-Nehalem) might not support the
+  instruction set that is targeted by Rocky Linux builders. If you're getting
+  SIGILL crashes when running Linux apps consider switching LINUX_DEFAULT back
+  to "c7".
+
 20250404:
   AFFECTS: users of jetbrains-clion
   AUTHOR: fernape@FreeBSD.org
