@@ -1,6 +1,4 @@
 share/applications/evisum.desktop
-share/applications/evisum_cpu.desktop
-share/applications/evisum_mem.desktop
 %%DATADIR%%/images/actions.png
 %%DATADIR%%/images/application.png
 %%DATADIR%%/images/apply.png
