@@ -1,7 +1,7 @@
 PORTNAME=	stlink
-DISTVERSION=	1.7.0
+DISTVERSION=	1.8.0
 DISTVERSIONPREFIX=	v
-PORTREVISION=	2
+?PORTREVISION=	0
 CATEGORIES=	devel
 
 MAINTAINER=	lev@FreeBSD.org
@@ -18,8 +18,8 @@ USE_LDCONFIG=	yes
 
 PORTDOCS=	${ALLDOCS} README.md
 
-ALLDOCS=	compiling.md dev/developer.txt devices_boards.md \
-		flashloaders.md release.md tutorial.md version_support.md
+ALLDOCS=	compiling.md flashloaders.md release.md supported_devices.md \
+		tutorial.md version_support.md
 
 FLASHLOADERS=	cleanroom.md linker.ld Makefile stm32f0.s stm32f4.s stm32f4lv.s \
 		stm32f7.s stm32f7lv.s stm32l4.s stm32lx.s
