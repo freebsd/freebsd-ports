@@ -1,5 +1,5 @@
 PORTNAME=	resdk
-DISTVERSION=	21.2.1
+DISTVERSION=	22.0.0
 CATEGORIES=	biology python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -37,5 +37,7 @@ USE_PYTHON=	pep517 autoplist pytest
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 
 NO_ARCH=	yes
+
+# tests as of 22.0.0: 171 passed, 1 warning in 9.20s
 
 .include <bsd.port.mk>
