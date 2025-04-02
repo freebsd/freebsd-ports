@@ -1,12 +1,13 @@
 PORTNAME=	frameworkintegration
 DISTVERSION=	${KDE_FRAMEWORKS_VERSION}
+PORTREVISION=	1
 CATEGORIES=	x11 kde kde-frameworks
 
 COMMENT=	Integration of Qt application with KDE workspaces
 MAINTAINER=	kde@FreeBSD.org
 
-LIB_DEPENDS=	libAppStreamQt.so:devel/appstream-qt@qt6 \
-		libpackagekitqt6.so:ports-mgmt/packagekit-qt@qt6 \
+LIB_DEPENDS=	libAppStreamQt.so:devel/appstream-qt \
+		libpackagekitqt6.so:ports-mgmt/packagekit-qt \
 
 USES=		cmake gettext gl kde:6 qt:6 tar:xz
 USE_GL=		gl opengl
