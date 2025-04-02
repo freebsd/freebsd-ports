@@ -25,7 +25,7 @@ include/neon/ne_xml.h
 include/neon/ne_xmlreq.h
 lib/libneon.so
 lib/libneon.so.27
-lib/libneon.so.27.5.5
+lib/libneon.so.27.7.0
 libdata/pkgconfig/neon.pc
 %%DOCS%%share/man/man1/neon-config.1.gz
 %%DOCS%%share/man/man3/ne_add_request_header.3.gz
@@ -52,6 +52,7 @@ libdata/pkgconfig/neon.pc
 %%DOCS%%share/man/man3/ne_get_error.3.gz
 %%DOCS%%share/man/man3/ne_get_request_flag.3.gz
 %%DOCS%%share/man/man3/ne_get_response_header.3.gz
+%%DOCS%%share/man/man3/ne_get_response_location.3.gz
 %%DOCS%%share/man/man3/ne_get_scheme.3.gz
 %%DOCS%%share/man/man3/ne_get_server_hostport.3.gz
 %%DOCS%%share/man/man3/ne_get_session_flag.3.gz
@@ -71,6 +72,8 @@ libdata/pkgconfig/neon.pc
 %%DOCS%%share/man/man3/ne_print_request_header.3.gz
 %%DOCS%%share/man/man3/ne_qtoken.3.gz
 %%DOCS%%share/man/man3/ne_realloc.3.gz
+%%DOCS%%share/man/man3/ne_redirect_location.3.gz
+%%DOCS%%share/man/man3/ne_redirect_register.3.gz
 %%DOCS%%share/man/man3/ne_request_create.3.gz
 %%DOCS%%share/man/man3/ne_request_destroy.3.gz
 %%DOCS%%share/man/man3/ne_request_dispatch.3.gz
@@ -87,6 +90,7 @@ libdata/pkgconfig/neon.pc
 %%DOCS%%share/man/man3/ne_set_read_timeout.3.gz
 %%DOCS%%share/man/man3/ne_set_request_body_buffer.3.gz
 %%DOCS%%share/man/man3/ne_set_request_body_fd.3.gz
+%%DOCS%%share/man/man3/ne_set_request_body_provider.3.gz
 %%DOCS%%share/man/man3/ne_set_request_flag.3.gz
 %%DOCS%%share/man/man3/ne_set_server_auth.3.gz
 %%DOCS%%share/man/man3/ne_set_session_flag.3.gz
@@ -130,6 +134,7 @@ libdata/pkgconfig/neon.pc
 %%PORTDOCS%%%%DOCSDIR%%/html/api.html
 %%PORTDOCS%%%%DOCSDIR%%/html/biblio.html
 %%PORTDOCS%%%%DOCSDIR%%/html/compliance.html
+%%PORTDOCS%%%%DOCSDIR%%/html/example.html
 %%PORTDOCS%%%%DOCSDIR%%/html/features.html
 %%PORTDOCS%%%%DOCSDIR%%/html/index.html
 %%PORTDOCS%%%%DOCSDIR%%/html/intro.html
@@ -154,6 +159,7 @@ libdata/pkgconfig/neon.pc
 %%PORTDOCS%%%%DOCSDIR%%/html/refopts.html
 %%PORTDOCS%%%%DOCSDIR%%/html/refparam.html
 %%PORTDOCS%%%%DOCSDIR%%/html/refproxy.html
+%%PORTDOCS%%%%DOCSDIR%%/html/refred.html
 %%PORTDOCS%%%%DOCSDIR%%/html/refreq.html
 %%PORTDOCS%%%%DOCSDIR%%/html/refreqbody.html
 %%PORTDOCS%%%%DOCSDIR%%/html/refreqflags.html
