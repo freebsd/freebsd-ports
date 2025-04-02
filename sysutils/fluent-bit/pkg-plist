@@ -67,6 +67,7 @@ include/fluent-bit/flb_input_event.h
 include/fluent-bit/flb_input_log.h
 include/fluent-bit/flb_input_metric.h
 include/fluent-bit/flb_input_plugin.h
+include/fluent-bit/flb_input_profiles.h
 include/fluent-bit/flb_input_thread.h
 include/fluent-bit/flb_input_trace.h
 include/fluent-bit/flb_intermediate_metric.h
@@ -147,6 +148,7 @@ include/fluent-bit/flb_time.h
 include/fluent-bit/flb_time_utils.h
 include/fluent-bit/flb_typecast.h
 include/fluent-bit/flb_unescape.h
+include/fluent-bit/flb_unicode.h
 include/fluent-bit/flb_upstream.h
 include/fluent-bit/flb_upstream_conn.h
 include/fluent-bit/flb_upstream_ha.h
@@ -158,6 +160,7 @@ include/fluent-bit/flb_utils.h
 include/fluent-bit/flb_version.h
 include/fluent-bit/flb_worker.h
 include/fluent-bit/flb_zstd.h
+include/fluent-bit/simdutf/flb_simdutf_connector.h
 include/fluent-bit/tls/flb_tls.h
 include/fluent-bit/tls/flb_tls_info.h
 include/fluent-bit/wasm/flb_wasm.h
