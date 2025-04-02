@@ -14,6 +14,7 @@ etc/rc.d/xrdp-sesman
 %%ETCDIR%%/km-0000040a.ini
 %%ETCDIR%%/km-0000040b.ini
 %%ETCDIR%%/km-0000040c.ini
+%%ETCDIR%%/km-0000040e.ini
 %%ETCDIR%%/km-00000410.ini
 %%ETCDIR%%/km-00000411.ini
 %%ETCDIR%%/km-00000412.ini
