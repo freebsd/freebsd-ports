@@ -25,8 +25,6 @@ GHC_VERSION=	9.4.8
 .endif
 
 USES=		cabal
-USE_GITHUB=	yes
-GH_ACCOUNT=	haskell
 
 .for flavor in ${FLAVORS}
 .	include "Makefile.cabal.${flavor}"

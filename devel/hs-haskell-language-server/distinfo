@@ -1,4 +1,6 @@
-TIMESTAMP = 1743569847
+TIMESTAMP = 1743594991
+SHA256 (cabal/haskell-language-server-2.10.0.0/haskell-language-server-2.10.0.0.tar.gz) = d68d5fa7adf02db0f1941df4ff06ee7f3727e6eee02f42e1e793d3013c203cc0
+SIZE (cabal/haskell-language-server-2.10.0.0/haskell-language-server-2.10.0.0.tar.gz) = 536724
 SHA256 (cabal/Cabal-3.10.3.0/Cabal-3.10.3.0.tar.gz) = cb7f7c66626d7555f799e786513ddd65a874fd23f1cf312990c7a48abfc0b2c6
 SIZE (cabal/Cabal-3.10.3.0/Cabal-3.10.3.0.tar.gz) = 397960
 SHA256 (cabal/Cabal-syntax-3.10.3.0/Cabal-syntax-3.10.3.0.tar.gz) = 75d6a0aa9c00990a0d6e7720ac50c6954f6c942fa1be42c8add7f1c025f7e212
@@ -747,5 +749,3 @@ SHA256 (cabal/zlib-0.7.1.0/zlib-0.7.1.0.tar.gz) = 6edd38b6b81df8d274952aa85affa6
 SIZE (cabal/zlib-0.7.1.0/zlib-0.7.1.0.tar.gz) = 29318
 SHA256 (cabal/zlib-0.7.1.0/revision/2.cabal) = 85e64a75c0b490506a7edaa2d54950c668e66b65758bb08bb14cd31faf53a206
 SIZE (cabal/zlib-0.7.1.0/revision/2.cabal) = 5357
-SHA256 (cabal/haskell-haskell-language-server-2.10.0.0_GH0.tar.gz) = 4e4b2c8c2864d529f305b52c1f53e83ed596ebccd7d0f8438adcabe732b42621
-SIZE (cabal/haskell-haskell-language-server-2.10.0.0_GH0.tar.gz) = 7286029
