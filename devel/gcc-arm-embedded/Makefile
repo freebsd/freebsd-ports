@@ -1,6 +1,6 @@
 PORTNAME=	gcc-arm-embedded
 PORTVERSION=	${FULL_VERSION:S/.rel/r/}
-#PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://developer.arm.com/-/media/Files/downloads/gnu/${FULL_VERSION}/srcrel/:src
 DISTFILES=	arm-gnu-toolchain-src-snapshot-${FULL_VERSION}.tar.xz:src
