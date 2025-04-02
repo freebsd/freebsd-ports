@@ -1,6 +1,7 @@
 PORTNAME=	headscale
 PORTVERSION=	0.25.1
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	security net-vpn
 
 MAINTAINER=	m.muenz@gmail.com

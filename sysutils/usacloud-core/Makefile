@@ -1,5 +1,5 @@
 PORTNAME=	usacloud
-PORTREVISION=	1
+PORTREVISION=	2
 #PORTREVISION=	Use PORTREVISION in Makefile.version instead
 CATEGORIES=	sysutils
 PKGNAMESUFFIX=	-core

@@ -1,6 +1,7 @@
 PORTNAME=	snmp_exporter
 DISTVERSIONPREFIX=v
 DISTVERSION=	0.28.0
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	lexi@hemlock.eden.le-fay.org

@@ -1,7 +1,7 @@
 PORTNAME=	vulsrepo
 PORTVERSION=	0.7.1
 DISTVERSIONPREFIX=v
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	security www
 MASTER_SITES=   https://raw.githubusercontent.com/${GH_ACCOUNT}/${PORTNAME}/v${PORTVERSION}/server/:gomod
 DISTFILES=	go.mod:gomod
