@@ -1,6 +1,6 @@
 bin/bluefish
 lib/bluefish/about.so
-%%GTK3%%lib/bluefish/charmap.so
+lib/bluefish/charmap.so
 lib/bluefish/entities.so
 lib/bluefish/htmlbar.so
 lib/bluefish/infbrowser.so

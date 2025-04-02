@@ -1,5 +1,5 @@
 PORTNAME=	bluefish
-DISTVERSION=	2.2.16
+DISTVERSION=	2.2.17
 CATEGORIES=	www editors
 MASTER_SITES=	https://www.bennewitz.com/bluefish/stable/source/ \
 		SF
@@ -12,17 +12,18 @@ LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libenchant-2.so:textproc/enchant2 \
+		libgucharmap_2_90.so:deskutils/gucharmap \
 		libharfbuzz.so:print/harfbuzz \
 		libpcre2-8.so:devel/pcre2
 
-USES=		desktop-file-utils gettext gmake gnome libtool localbase \
+USES=		desktop-file-utils gettext-tools gmake gnome libtool localbase \
 		pkgconfig python shared-mime-info shebangfix tar:bzip2
-USE_GNOME=	cairo gdkpixbuf intltool libxml2
-SHEBANG_FILES=	data/css_decompressor data/cssmin.py data/json_prettyprint.py \
-		data/jsmin.py data/lorem-ipsum-generator \
+USE_GNOME=	cairo gdkpixbuf gtk30 intltool libxml2
+SHEBANG_FILES=	data/css_decompressor data/cssmin.py data/jsmin.py \
+		data/json_prettyprint.py data/lorem-ipsum-generator \
+		src/plugin_zencoding/zencoding/*.py \
 		src/plugin_zencoding/zencoding/actions/*.py \
-		src/plugin_zencoding/zencoding/filters/*.py \
-		src/plugin_zencoding/zencoding/*.py
+		src/plugin_zencoding/zencoding/filters/*.py
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-update-databases \
 		--with-freedesktop_org-menu=${PREFIX}/share/applications \
@@ -32,22 +33,10 @@ INSTALL_TARGET=	install-strip
 
 PORTSCOUT=	skipv:2.2.15fp
 
-OPTIONS_DEFINE=		DEBUG DOCS NLS TIDY
-OPTIONS_DEFAULT=	GTK3
-OPTIONS_SINGLE=		TOOLKIT
-OPTIONS_SINGLE_TOOLKIT=	GTK2 GTK3
-OPTIONS_SUB=		yes
-
-TOOLKIT_DESC=	GTK toolkit
+OPTIONS_DEFINE=	DEBUG DOCS NLS TIDY
+OPTIONS_SUB=	yes
 
 DEBUG_CONFIGURE_ENABLE=	debugging-output
-GTK2_LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
-			libfreetype.so:print/freetype2
-GTK2_USE=		GNOME=gtk20
-GTK2_CONFIGURE_ON=	--with-gtk2=yes
-
-GTK3_LIB_DEPENDS=	libgucharmap_2_90.so:deskutils/gucharmap
-GTK3_USE=		GNOME=gtk30
 
 NLS_CONFIGURE_ENABLE=	nls
 
