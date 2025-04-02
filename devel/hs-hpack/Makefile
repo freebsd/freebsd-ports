@@ -1,5 +1,5 @@
 PORTNAME=	hpack
-DISTVERSION=	0.38.0
+DISTVERSION=	0.38.1
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -14,7 +14,7 @@ USES=		cabal
 
 USE_CABAL=	Glob-0.10.2_3 \
 		OneTuple-0.4.2_1 \
-		QuickCheck-2.15.0.1 \
+		QuickCheck-2.15.0.1_1 \
 		StateVar-1.2.2 \
 		aeson-2.2.3.0_3 \
 		ansi-terminal-1.1.2 \
@@ -30,37 +30,39 @@ USE_CABAL=	Glob-0.10.2_3 \
 		base16-bytestring-1.0.2.0_1 \
 		base64-bytestring-1.2.1.0_1 \
 		basement-0.0.16 \
-		bifunctors-5.6.2_1 \
+		bifunctors-5.6.2_2 \
 		bitvec-1.1.5.0_3 \
 		blaze-builder-0.4.2.3 \
 		byteorder-1.0.4 \
 		case-insensitive-1.2.1.0 \
-		cborg-0.2.10.0_1 \
+		cborg-0.2.10.0_2 \
 		cereal-0.5.8.3 \
 		character-ps-0.1 \
 		colour-2.3.6 \
-		comonad-5.0.9 \
-		conduit-1.3.6 \
+		comonad-5.0.9_1 \
+		conduit-1.3.6.1 \
 		contravariant-1.5.5 \
-		cookie-0.5.0 \
-		crypton-1.0.1 \
-		crypton-connection-0.4.3 \
+		cookie-0.5.1 \
+		crypton-1.0.4 \
+		crypton-connection-0.4.4 \
 		crypton-x509-1.7.7 \
-		crypton-x509-store-1.6.9 \
+		crypton-x509-store-1.6.10 \
 		crypton-x509-system-1.6.7 \
-		crypton-x509-validation-1.6.13 \
-		data-default-0.8.0.0 \
+		crypton-x509-validation-1.6.14 \
+		data-default-0.8.0.1 \
 		data-default-class-0.2.0.0 \
 		data-fix-0.3.4_1 \
 		distributive-0.6.2.1_1 \
 		dlist-1.0_2 \
+		ech-config-0.0.1 \
 		generically-0.1.1_4 \
 		half-0.3.2 \
 		hashable-1.5.0.0_1 \
 		hourglass-0.2.12_1 \
-		hsc2hs-0.68.10_3 \
-		http-client-0.7.18 \
-		http-client-tls-0.3.6.4 \
+		hpke-0.0.0 \
+		hsc2hs-0.68.10_4 \
+		http-client-0.7.19 \
+		http-client-tls-0.3.6.4_2 \
 		http-types-0.12.4 \
 		indexed-traversable-0.1.4_1 \
 		indexed-traversable-instances-0.1.2_1 \
@@ -74,6 +76,7 @@ USE_CABAL=	Glob-0.10.2_3 \
 		mime-types-0.1.2.0 \
 		mono-traversable-1.0.21.0 \
 		network-3.2.7.0 \
+		network-byte-order-0.1.7 \
 		network-uri-2.6.4.2_1 \
 		old-locale-1.0.0.7_2 \
 		old-time-1.1.0.4 \
@@ -82,35 +85,35 @@ USE_CABAL=	Glob-0.10.2_3 \
 		pem-0.2.4 \
 		prettyprinter-1.7.1 \
 		prettyprinter-ansi-terminal-1.1.3 \
-		primitive-0.9.0.0_2 \
-		random-1.2.1.3 \
+		primitive-0.9.1.0 \
+		random-1.3.0 \
 		resourcet-1.3.0 \
 		scientific-0.3.8.0_2 \
 		semialign-1.3.1_2 \
-		semigroupoids-6.0.1_1 \
-		serialise-0.2.6.1_3 \
+		semigroupoids-6.0.1_2 \
+		serialise-0.2.6.1_4 \
 		socks-0.6.1 \
 		split-0.2.5 \
 		splitmix-0.1.1 \
 		streaming-commons-0.2.3.0 \
 		strict-0.5.1_1 \
 		tagged-0.8.9 \
-		tasty-1.5.3 \
+		tasty-1.5.3_1 \
 		text-iso8601-0.1.1_2 \
 		text-metrics-0.3.3 \
 		text-short-0.1.6_3 \
-		th-abstraction-0.7.1.0 \
+		th-abstraction-0.7.1.0_1 \
 		th-compat-0.1.6 \
 		these-1.2.1_2 \
 		time-compat-1.9.8 \
-		tls-2.1.7 \
+		tls-2.1.9 \
 		transformers-compat-0.7.2 \
 		unix-time-0.4.16 \
 		unliftio-core-0.2.1.0_4 \
 		unordered-containers-0.2.20_4 \
-		uuid-types-1.0.6_2 \
+		uuid-types-1.0.6_3 \
 		vector-0.13.2.0_1 \
-		vector-algorithms-0.9.0.3 \
+		vector-algorithms-0.9.1.0 \
 		vector-stream-0.1.0.1_3 \
 		witherable-0.5_1 \
 		yaml-0.11.11.2_2 \
