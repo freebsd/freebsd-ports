@@ -51,6 +51,7 @@
 %%SITE_PERL%%/DateTime/TimeZone/America/Chihuahua.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/Ciudad_Juarez.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/Costa_Rica.pm
+%%SITE_PERL%%/DateTime/TimeZone/America/Coyhaique.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/Cuiaba.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/Danmarkshavn.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/Dawson.pm
