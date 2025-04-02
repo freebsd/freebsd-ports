@@ -5,6 +5,25 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20250404:
+  AFFECTS: users of jetbrains-clion
+  AUTHOR: fernape@FreeBSD.org
+
+  The jetbrains-clion update to 2024.3.5 might fail under certain circumstances
+  that are not clear. If this happens users are encouraged to check the contents
+  of ~/.config/JetBrains/CLion2024.3/clion64.vmoptions and ensure that the
+  following option IS NOT present:
+
+  -Didea.suppressed.plugins.set.selector=radler
+
+  If it is, change the value to:
+
+  -Didea.suppressed.plugins.set.selector=classic
+
+  References:
+    https://youtrack.jetbrains.com/issue/CPP-44041#focus=Comments-27-11819516.0-0
+    https://youtrack.jetbrains.com/issue/IJPL-175884/Start-Failed#focus=Comments-27-11425743.0-0
+
 20250402:
   AFFECTS: users of devel/glib20 and devel/gobject-introspection building outside of Poudriere
   AUTHOR: arrowd@FreeBSD.org
