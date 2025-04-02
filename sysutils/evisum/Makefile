@@ -1,6 +1,5 @@
 PORTNAME=	evisum
-PORTVERSION=	0.6.0
-PORTREVISION=	1
+PORTVERSION=	0.6.4
 CATEGORIES=	sysutils enlightenment
 MASTER_SITES=	http://download.enlightenment.org/rel/apps/${PORTNAME}/
 
