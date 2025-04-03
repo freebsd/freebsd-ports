@@ -1,5 +1,5 @@
 PORTNAME=	poi
-PORTVERSION=	5.3.0
+PORTVERSION=	5.4.0
 CATEGORIES=	textproc devel java
 MASTER_SITES=	${MAVEN_SITE}/poi/${PORTVERSION}/:poi	\
 		${MAVEN_SITE}/poi-examples/${PORTVERSION}/:examples	\
@@ -24,8 +24,12 @@ WWW=		https://poi.apache.org/
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKDIR}/META-INF/LICENSE
 
-RUN_DEPENDS=	apache-log4j2>0:devel/apache-log4j2	\
+RUN_DEPENDS=	pdfbox>0:print/pdfbox	\
+		batik>0:graphics/batik	\
+		xmlsec>0:security/xml-security	\
 		SparseBitSet>0:devel/sparsebitset	\
+		apache-log4j2>0:devel/apache-log4j2	\
+		apache-xmlbeans>0:textproc/apache-xmlbeans	\
 		apache-commons-io>0:devel/apache-commons-io	\
 		apache-commons-math>0:math/apache-commons-math	\
 		apache-commons-codec>0:java/apache-commons-codec	\
