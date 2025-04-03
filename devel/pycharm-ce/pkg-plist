@@ -20,7 +20,7 @@ share/applications/pycharm-ce.desktop
 %%DATADIR%%/lib/app-client.jar
 %%DATADIR%%/lib/app.jar
 %%DATADIR%%/lib/bouncy-castle.jar
-%%DATADIR%%/lib/build-marker-PC-243.24978.54
+%%DATADIR%%/lib/build-marker-PC-243.26053.29
 %%DATADIR%%/lib/cds/classesLogAgent.jar
 %%DATADIR%%/lib/external-system-rt.jar
 %%DATADIR%%/lib/externalProcess-rt.jar
@@ -360,8 +360,8 @@ share/applications/pycharm-ce.desktop
 %%DATADIR%%/plugins/properties/lib/properties.jar
 %%DATADIR%%/plugins/pycharm-community-customization/lib/pycharm-community-customization.jar
 %%DATADIR%%/plugins/pycharm-community-sharedIndexes-bundled/lib/pycharm-community-sharedIndexes-bundled.jar
-%%DATADIR%%/plugins/pycharm-community-sharedIndexes-bundled/python-sdk/python-sdk-fc1d50d2d915-aa17d162503b.ijx
-%%DATADIR%%/plugins/pycharm-community-sharedIndexes-bundled/python-sdk/python-sdk-fc1d50d2d915-aa17d162503b.txt
+%%DATADIR%%/plugins/pycharm-community-sharedIndexes-bundled/python-sdk/python-sdk-4f4e415b4190-aa17d162503b.ijx
+%%DATADIR%%/plugins/pycharm-community-sharedIndexes-bundled/python-sdk/python-sdk-4f4e415b4190-aa17d162503b.txt
 %%DATADIR%%/plugins/python-ce/helpers/.gitignore
 %%DATADIR%%/plugins/python-ce/helpers/MathJax/MathJax.js
 %%DATADIR%%/plugins/python-ce/helpers/MathJax/config/TeX-AMS_HTML-full.js
