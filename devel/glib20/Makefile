@@ -111,6 +111,11 @@ post-patch:
 
 CODEGENDIR=	${PREFIX}/share/glib-2.0/codegen
 
+post-install-DOCS-on:
+# this doc file gets created conditionally, so instead of adding another
+# PLIST_SUB item just create an empty file if it is missing
+	${TOUCH} ${STAGEDIR}${DOCSDIR}-2.0/const.VA_COPY_AS_ARRAY.html
+
 post-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/GConf/gsettings
 	${MKDIR} ${STAGEDIR}${PREFIX}/lib/gio/modules
