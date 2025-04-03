@@ -1,6 +1,6 @@
 PORTNAME=	mctc-lib
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.3.2
+DISTVERSION=	0.4.0
 CATEGORIES=	science # chemistry
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -20,5 +20,7 @@ CMAKE_ON=	BUILD_SHARED_LIBS
 
 post-patch: # same as https://github.com/grimme-lab/mctc-lib/pull/55
 	@${REINPLACE_CMD} -e 's|$${CMAKE_Fortran_COMPILER_ID}-$${CMAKE_Fortran_COMPILER_VERSION}||' ${WRKSRC}/config/CMakeLists.txt
+
+# tests as of 0.4.0: 100% tests passed, 0 tests failed out of 28
 
 .include <bsd.port.mk>

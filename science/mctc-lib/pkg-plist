@@ -1,4 +1,10 @@
 bin/mctc-convert
+include/mctc-lib/modules/mctc_cutoff.mod
+include/mctc-lib/modules/mctc_data.mod
+include/mctc-lib/modules/mctc_data_atomicrad.mod
+include/mctc-lib/modules/mctc_data_covrad.mod
+include/mctc-lib/modules/mctc_data_paulingen.mod
+include/mctc-lib/modules/mctc_data_vdwrad.mod
 include/mctc-lib/modules/mctc_env.mod
 include/mctc-lib/modules/mctc_env_accuracy.mod
 include/mctc-lib/modules/mctc_env_error.mod
@@ -39,6 +45,13 @@ include/mctc-lib/modules/mctc_io_write_qcschema.mod
 include/mctc-lib/modules/mctc_io_write_turbomole.mod
 include/mctc-lib/modules/mctc_io_write_vasp.mod
 include/mctc-lib/modules/mctc_io_write_xyz.mod
+include/mctc-lib/modules/mctc_ncoord.mod
+include/mctc-lib/modules/mctc_ncoord_dexp.mod
+include/mctc-lib/modules/mctc_ncoord_erf.mod
+include/mctc-lib/modules/mctc_ncoord_erf_dftd4.mod
+include/mctc-lib/modules/mctc_ncoord_erf_en.mod
+include/mctc-lib/modules/mctc_ncoord_exp.mod
+include/mctc-lib/modules/mctc_ncoord_type.mod
 include/mctc-lib/modules/mctc_version.mod
 lib/cmake/mctc-lib/Findjsonfortran.cmake
 lib/cmake/mctc-lib/mctc-lib-config-version.cmake
@@ -47,5 +60,5 @@ lib/cmake/mctc-lib/mctc-lib-targets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/mctc-lib/mctc-lib-targets.cmake
 lib/libmctc-lib.so
 lib/libmctc-lib.so.0
-lib/libmctc-lib.so.0.3.2
+lib/libmctc-lib.so.0.4.0
 libdata/pkgconfig/mctc-lib.pc
