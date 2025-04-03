@@ -1,3 +1,195 @@
+  <vuln vid="37c368f1-10a2-11f0-8195-b42e991fc52e">
+    <topic>mozilla -- memory corruption</topic>
+    <affects>
+      <package>
+	<name>firefox</name>
+	<range><lt>136.0,2</lt></range>
+      </package>
+      <package>
+	<name>thunderbird</name>
+	<range><lt>136.0</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>security@mozilla.org reports:</p>
+	<blockquote cite="https://bugzilla.mozilla.org/buglist.cgi?bug_id=1869650%2C1938451%2C1940326%2C1944052%2C1944063%2C1947281">
+	  <p>Memory safety bugs present in Firefox 135 and Thunderbird
+	  135. Some of these bugs showed evidence of memory corruption
+	  and we presume that with enough effort some of these could
+	  have been exploited to run arbitrary code.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-1943</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2025-1943</url>
+    </references>
+    <dates>
+      <discovery>2025-03-04</discovery>
+      <entry>2025-04-03</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="b31a4e74-109d-11f0-8195-b42e991fc52e">
+    <topic>mozilla -- memory corruption</topic>
+    <affects>
+      <package>
+	<name>firefox</name>
+	<range><lt>136.0,2</lt></range>
+      </package>
+      <package>
+	<name>firefox-esr</name>
+	<range><lt>128.8,1</lt></range>
+      </package>
+      <package>
+	<name>thunderbird</name>
+	<range><lt>136.0</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>security@mozilla.org reports:</p>
+	<blockquote cite="https://bugzilla.mozilla.org/buglist.cgi?bug_id=1922889%2C1935004%2C1943586%2C1943912%2C1948111">
+	<p>CVE-2025-1938: Memory safety bugs present in Firefox 135,
+	Thunderbird 135, Firefox ESR 128.7, and Thunderbird 128.7.
+	Some of these bugs showed evidence of memory corruption and
+	we presume that with enough effort some of these could have
+	been exploited to run arbitrary code.</p>
+	<p>CVE-2025-1935: A web page could trick a user into setting
+	that site as the default handler for a custom URL protocol.</p>
+	<p>CVE-2025-1934: It was possible to interrupt the processing
+	of a RegExp bailout and run additional JavaScript, potentially
+	triggering garbage collection when the engine was not
+	expecting it.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-1938</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2025-1938</url>
+      <cvename>CVE-2025-1935</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2025-1935</url>
+      <cvename>CVE-2025-1934</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2025-1934</url>
+    </references>
+    <dates>
+      <discovery>2025-03-04</discovery>
+      <entry>2025-04-03</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="aeb2ca87-109d-11f0-8195-b42e991fc52e">
+    <topic>mozilla -- Memory safety bugs</topic>
+    <affects>
+      <package>
+	<name>firefox</name>
+	<range><lt>136.0,2</lt></range>
+      </package>
+      <package>
+	<name>firefox-esr</name>
+	<range><lt>115.21,1</lt></range>
+      </package>
+      <package>
+	<name>thunderbird</name>
+	<range><lt>136.0</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>security@mozilla.org reports:</p>
+	<blockquote cite="https://bugzilla.mozilla.org/buglist.cgi?bug_id=1938471%2C1940716">
+	<p>Memory safety bugs present in Firefox 135, Thunderbird 135,
+	Firefox ESR 115.20, Firefox ESR 128.7, and Thunderbird 128.7.
+	Some of these bugs showed evidence of memory corruption and
+	we presume that with enough effort some of these could have
+	been exploited to run arbitrary code.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-1937</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2025-1937</url>
+    </references>
+    <dates>
+      <discovery>2025-03-04</discovery>
+      <entry>2025-04-03</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="acf902f6-109d-11f0-8195-b42e991fc52e">
+    <topic>mozilla -- use-after-free in WebTransport connection</topic>
+    <affects>
+      <package>
+	<name>firefox</name>
+	<range><lt>136.0,2</lt></range>
+      </package>
+      <package>
+	<name>firefox-esr</name>
+	<range><lt>115.21,1</lt></range>
+      </package>
+      <package>
+	<name>thunderbird</name>
+	<range><lt>136.0</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>security@mozilla.org reports:</p>
+	<blockquote cite="https://bugzilla.mozilla.org/show_bug.cgi?id=1944126">
+	  <p>It was possible to cause a use-after-free in the content
+	  process side of a WebTransport connection, leading to a
+	  potentially exploitable crash.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-1931</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2025-1931</url>
+    </references>
+    <dates>
+      <discovery>2025-03-04</discovery>
+      <entry>2025-04-03</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="a93a1d2a-109d-11f0-8195-b42e991fc52e">
+    <topic>mozilla -- 64 bit JIT WASM read on left over memroy</topic>
+    <affects>
+      <package>
+	<name>firefox</name>
+	<range><lt>136.0,2</lt></range>
+      </package>
+      <package>
+	<name>firefox-esr</name>
+	<range><lt>115.21,1</lt></range>
+      </package>
+      <package>
+	<name>thunderbird</name>
+	<range><lt>136.0</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>security@mozilla.org reports:</p>
+	<blockquote cite="https://bugzilla.mozilla.org/show_bug.cgi?id=1946004">
+	 <p>On 64-bit CPUs, when the JIT compiles WASM i32 return
+	 values they can pick up bits from left over memory.
+	 This can potentially cause them to be treated as a different
+	 type.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-1933</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2025-1933</url>
+    </references>
+    <dates>
+      <discovery>2025-03-04</discovery>
+      <entry>2025-04-03</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="350b3389-107f-11f0-8195-b42e991fc52e">
     <topic>MongoDB -- crash due to improper validation of explain command</topic>
     <affects>
