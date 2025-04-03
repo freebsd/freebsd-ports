@@ -1,11 +1,11 @@
---- tools/meson.build.orig	2020-09-12 17:25:46 UTC
+--- tools/meson.build.orig	2025-03-15 13:50:44 UTC
 +++ tools/meson.build
-@@ -9,11 +9,7 @@ if with_doctool
+@@ -9,11 +9,7 @@ endif
    tools += [['g-ir-doc-tool', 'docmain', 'doc_main']]
  endif
  
--if cc.get_id() == 'msvc'
--  python_cmd = '/usr/bin/env ' + python.path()
+-if not python.full_path().startswith('/usr/bin')
+-  python_cmd = '/usr/bin/env ' + python.full_path()
 -else
 -  python_cmd = '/usr/bin/env python@0@'.format(python.language_version().split('.')[0])
 -endif
