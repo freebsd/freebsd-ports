@@ -1,3 +1,122 @@
+  <vuln vid="350b3389-107f-11f0-8195-b42e991fc52e">
+    <topic>MongoDB -- crash due to improper validation of explain command</topic>
+    <affects>
+      <package>
+	<name>mongodb50</name>
+	<range><lt>5.0.31</lt></range>
+      </package>
+      <package>
+	<name>mongodb60</name>
+	<range><lt>6.0.20</lt></range>
+      </package>
+      <package>
+	<name>mongodb70</name>
+	<range><lt>7.0.16</lt></range>
+      </package>
+      <package>
+	<name>mongodb80</name>
+	<range><lt>8.0.4</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>cna@mongodb.com reports:</p>
+	<blockquote cite="https://jira.mongodb.org/browse/SERVER-103153">
+	  <p>When run on commands with certain arguments set, explain may fail
+	to validate these arguments before using them.  This can lead to
+	crashes in router servers.  This affects MongoDB Server v5.0 prior
+	to 5.0.31, MongoDB Server v6.0 prior to 6.0.20, MongoDB Server v7.0
+	prior to 7.0.16 and MongoDB Server v8.0 prior to 8.0.4</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-3084</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2025-3084</url>
+    </references>
+    <dates>
+      <discovery>2025-04-01</discovery>
+      <entry>2025-04-03</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="32f5e57f-107f-11f0-8195-b42e991fc52e">
+    <topic>MongoDB -- Malformed wire protocol messages may cause mongos to crash</topic>
+    <affects>
+      <package>
+	<name>mongodb50</name>
+	<range><lt>5.0.31</lt></range>
+      </package>
+      <package>
+	<name>mongodb60</name>
+	<range><lt>6.0.20</lt></range>
+      </package>
+      <package>
+	<name>mongodb70</name>
+	<range><lt>7.0.16</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>cna@mongodb.com reports:</p>
+	<blockquote cite="https://jira.mongodb.org/browse/SERVER-103152">
+	  <p>Specifically crafted MongoDB wire protocol messages can cause mongos
+	to crash during command validation.  This can occur without using
+	an authenticated connection.  This issue affects MongoDB v5.0
+	versions prior to 5.0.31, MongoDB v6.0 versions prior to6.0.20 and
+	MongoDB v7.0 versions prior to 7.0.16</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-3083</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2025-3083</url>
+    </references>
+    <dates>
+      <discovery>2025-04-01</discovery>
+      <entry>2025-04-03</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="30418b26-107f-11f0-8195-b42e991fc52e">
+    <topic>MongoDB -- Unauthorized access to underlying data</topic>
+    <affects>
+      <package>
+	<name>mongodb50</name>
+	<range><lt>5.0.31</lt></range>
+      </package>
+      <package>
+	<name>mongodb60</name>
+	<range><lt>6.0.20</lt></range>
+      </package>
+      <package>
+	<name>mongodb70</name>
+	<range><lt>7.0.16</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>cna@mongodb.com reports:</p>
+	<blockquote cite="https://jira.mongodb.org/browse/SERVER-103151">
+	  <p>A user authorized to access a view may be able to alter the intended
+	collation, allowing them to access to a different or unintended
+	view of underlying data.  This issue affects MongoDB Server v5.0
+	version prior to 5.0.31, MongoDB Server v6.0 version prior to 6.0.20,
+	MongoDB Server v7.0 version prior to 7.0.14 and MongoDB Server v7.3
+	versions prior to 7.3.4.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-3082</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2025-3082</url>
+    </references>
+    <dates>
+      <discovery>2025-04-01</discovery>
+      <entry>2025-04-03</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="2cad4541-0f5b-11f0-89f8-411aefea0df9">
     <topic>openvpn -- server-side denial-of-service vulnerability with tls-crypt-v2</topic>
     <affects>
