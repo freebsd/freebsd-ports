@@ -15,6 +15,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	rust-lang
 GH_PROJECT=	rustup
 
+ONLY_FOR_ARCHS=	amd64
 PLIST_FILES=	bin/${PORTNAME}
 
 do-install:
