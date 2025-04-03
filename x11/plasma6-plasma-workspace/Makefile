@@ -1,9 +1,8 @@
 PORTNAME=	plasma-workspace
 DISTVERSION=	${KDE_PLASMA_VERSION}
-PORTREVISION=	1
 CATEGORIES=	x11 kde kde-plasma
-
-#PATCH_SITES=	https://invent.kde.org/plasma/plasma-workspace/-/commit/
+PATCH_SITES=	https://invent.kde.org/plasma/plasma-workspace/-/commit/
+PATCHFILES=	47d502353720004fa2d0e7b0065994b75b3e0ded.patch:-p1 # fix layout regression in notifications
 
 COMMENT=	KDE Plasma Workspace
 MAINTAINER=	kde@FreeBSD.org

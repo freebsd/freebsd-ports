@@ -1,7 +1,7 @@
-TIMESTAMP = 1744179722
-SHA256 (KDE/plasma/6.3.3/breeze-6.3.3.tar.xz) = e07c95e26deb002a4b6f3422fc7cb8bd6df1d60a55064c92e9b17ff5a89796e4
-SIZE (KDE/plasma/6.3.3/breeze-6.3.3.tar.xz) = 45513084
-SHA256 (KDE/plasma/6.3.3/098ad3facb3d76fe4476424f1b7bf3c9c2c1b142.patch) = 4b2d35e8625a8b0cff99abd8751e749615cee7d7f7471f97b70291355c0ef1c7
-SIZE (KDE/plasma/6.3.3/098ad3facb3d76fe4476424f1b7bf3c9c2c1b142.patch) = 689
-SHA256 (KDE/plasma/6.3.3/e2f16562b64c63b623def44476eadc635a82c7de.patch) = 49981eecce817597a3a378f50f7cbac3fbd8a8a30d12d0393e413f47a5bd1bc8
-SIZE (KDE/plasma/6.3.3/e2f16562b64c63b623def44476eadc635a82c7de.patch) = 769
+TIMESTAMP = 1744178262
+SHA256 (KDE/plasma/6.3.4/breeze-6.3.4.tar.xz) = 97af530e746eaea423f741697f91eb47ae5e8e883bef3d353fb25ad0b5ed15ac
+SIZE (KDE/plasma/6.3.4/breeze-6.3.4.tar.xz) = 45513772
+SHA256 (KDE/plasma/6.3.4/098ad3facb3d76fe4476424f1b7bf3c9c2c1b142.patch) = 4b2d35e8625a8b0cff99abd8751e749615cee7d7f7471f97b70291355c0ef1c7
+SIZE (KDE/plasma/6.3.4/098ad3facb3d76fe4476424f1b7bf3c9c2c1b142.patch) = 689
+SHA256 (KDE/plasma/6.3.4/e2f16562b64c63b623def44476eadc635a82c7de.patch) = 49981eecce817597a3a378f50f7cbac3fbd8a8a30d12d0393e413f47a5bd1bc8
+SIZE (KDE/plasma/6.3.4/e2f16562b64c63b623def44476eadc635a82c7de.patch) = 769
