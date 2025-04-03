@@ -4556,13 +4556,13 @@
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/anyio/streams/tls.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/anyio/to_process.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/anyio/to_thread.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/api-4.11.1.dist-info/INSTALLER
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/api-4.11.1.dist-info/METADATA
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/api-4.11.1.dist-info/RECORD
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/api-4.11.1.dist-info/REQUESTED
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/api-4.11.1.dist-info/WHEEL
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/api-4.11.1.dist-info/direct_url.json
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/api-4.11.1.dist-info/top_level.txt
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/api-4.11.2.dist-info/INSTALLER
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/api-4.11.2.dist-info/METADATA
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/api-4.11.2.dist-info/RECORD
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/api-4.11.2.dist-info/REQUESTED
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/api-4.11.2.dist-info/WHEEL
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/api-4.11.2.dist-info/direct_url.json
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/api-4.11.2.dist-info/top_level.txt
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/api/__init__.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/api/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/api/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
@@ -25133,13 +25133,13 @@
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/uvloop/server.pyx
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/uvloop/sslproto.pxd
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/uvloop/sslproto.pyx
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.11.1.dist-info/INSTALLER
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.11.1.dist-info/METADATA
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.11.1.dist-info/RECORD
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.11.1.dist-info/REQUESTED
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.11.1.dist-info/WHEEL
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.11.1.dist-info/direct_url.json
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.11.1.dist-info/top_level.txt
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.11.2.dist-info/INSTALLER
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.11.2.dist-info/METADATA
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.11.2.dist-info/RECORD
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.11.2.dist-info/REQUESTED
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.11.2.dist-info/WHEEL
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.11.2.dist-info/direct_url.json
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.11.2.dist-info/top_level.txt
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh/__init__.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh/__main__.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
@@ -31336,7 +31336,7 @@
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/api/models
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/api/spec
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/api
-@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/api-4.11.1.dist-info
+@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/api-4.11.2.dist-info
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/asgiref/__pycache__
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/asgiref
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/asgiref-3.7.2.dist-info
@@ -33424,7 +33424,7 @@
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh/rbac/default
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh/rbac
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh
-@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.11.1.dist-info
+@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.11.2.dist-info
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/websocket/__pycache__
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/websocket/tests/__pycache__
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/websocket/tests/data

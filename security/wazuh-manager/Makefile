@@ -1,6 +1,6 @@
 PORTNAME=	wazuh
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.11.1
+DISTVERSION=	4.11.2
 CATEGORIES=	security
 MASTER_SITES=	https://packages.wazuh.com/deps/35/libraries/sources/:wazuh_sources \
 		LOCAL/acm/${PORTNAME}/:wazuh_cache
