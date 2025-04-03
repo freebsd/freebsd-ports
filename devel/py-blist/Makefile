@@ -12,6 +12,9 @@ WWW=		http://stutzbachenterprises.com/blist/
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Abandoned project, no consumers, no modern python support
+EXPIRATION_DATE=	2025-04-03
+
 USES=		python:3.9
 USE_PYTHON=	autoplist distutils
 
