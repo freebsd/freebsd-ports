@@ -1,0 +1,4 @@
+The Buildkite CLI is a command-line interface tool for interacting directly
+with Buildkite itself. This tool provides command line/terminal access to work
+with a subset of Buildkite's features, as you normally would through
+Buildkite's web interface.

@@ -348,6 +348,7 @@
     SUBDIR += build
     SUBDIR += build2
     SUBDIR += buildkite-agent
+    SUBDIR += buildkite-cli
     SUBDIR += bullet
     SUBDIR += bunyan
     SUBDIR += busd

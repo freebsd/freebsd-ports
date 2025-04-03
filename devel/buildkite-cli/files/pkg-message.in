@@ -1,0 +1,9 @@
+[
+{ type: install
+  message: <<EOM
+On first install, run `bk configure1` to set up your organization and API token.
+
+See https://buildkite.com/docs/platform/cli for further details.
+EOM
+}
+]
