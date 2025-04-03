@@ -1,9 +1,9 @@
 Revert https://gitlab.gnome.org/GNOME/glib/commit/8abf3a04e699 for
 breaking at least graphics/inkscape as wchar_t is locale-dependent.
 
---- glib/gconvert.c.orig	2018-03-12 16:23:37 UTC
+--- glib/gconvert.c.orig	2025-03-06 13:09:13 UTC
 +++ glib/gconvert.c
-@@ -264,13 +264,6 @@ g_iconv_open (const gchar  *to_codeset,
+@@ -165,12 +165,6 @@ g_iconv_open (const gchar  *to_codeset,
   * GLib provides g_convert() and g_locale_to_utf8() which are likely
   * more convenient than the raw iconv wrappers.
   * 
@@ -13,11 +13,10 @@ breaking at least graphics/inkscape as wchar_t is locale-dependent.
 - * positive number of non-reversible conversions as replacement characters were
 - * used), or it may return -1 and set an error such as %EILSEQ, in such a
 - * situation.
-- *
-  * Returns: count of non-reversible conversions, or -1 on error
-  **/
- gsize 
-@@ -379,14 +372,6 @@ close_converter (GIConv cd)
+  *
+  * See [`iconv(3posix)`](man:iconv(3posix)) and [`iconv(3)`](man:iconv(3)) for more details about behavior when an
+  * error occurs.
+@@ -283,14 +277,6 @@ close_converter (GIConv cd)
   * character until it knows that the next character is not a mark that
   * could combine with the base character.)
   *
@@ -32,7 +31,7 @@ breaking at least graphics/inkscape as wchar_t is locale-dependent.
   * Returns: (array length=bytes_written) (element-type guint8) (transfer full):
   *               If the conversion was successful, a newly allocated buffer
   *               containing the converted string, which must be freed with
-@@ -466,13 +451,6 @@ g_convert_with_iconv (const gchar *str,
+@@ -370,13 +356,6 @@ g_convert_with_iconv (const gchar *str,
  	      break;
  	    }
  	}
@@ -46,9 +45,9 @@ breaking at least graphics/inkscape as wchar_t is locale-dependent.
        else 
  	{
  	  if (!reset)
---- glib/gconvert.h.orig	2018-02-06 15:44:20 UTC
+--- glib/gconvert.h.orig	2025-03-06 13:09:13 UTC
 +++ glib/gconvert.h
-@@ -37,9 +37,7 @@ G_BEGIN_DECLS
+@@ -39,9 +39,7 @@ G_BEGIN_DECLS
   * GConvertError:
   * @G_CONVERT_ERROR_NO_CONVERSION: Conversion between the requested character
   *     sets is not supported.

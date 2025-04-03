@@ -1,13 +1,9 @@
 PORTNAME=	glib
-DISTVERSION=	2.82.4
-PORTREVISION=	1
+DISTVERSION=	2.84.1
 PORTEPOCH=	2
 CATEGORIES=	devel
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
-
-PATCH_SITES=	https://gitlab.gnome.org/GNOME/${PORTNAME}/-/commit/
-PATCHFILES=	3dcf1ea13d9b2a3371fa35b79e640063de33dc20.patch:-p1
 
 MAINTAINER=	desktop@FreeBSD.org
 COMMENT=	Some useful routines of C programming (current stable version)
@@ -17,6 +13,7 @@ LICENSE=	LGPL20
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}packaging>0:devel/py-packaging@${PY_FLAVOR}
 LIB_DEPENDS=	libffi.so:devel/libffi \
+		libinotify.so:devel/libinotify \
 		libpcre2-8.so:devel/pcre2
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}packaging>0:devel/py-packaging@${PY_FLAVOR}
 TEST_DEPENDS=	dbus-uuidgen:devel/dbus \
@@ -42,6 +39,7 @@ USE_PYTHON=	py3kplist
 TRIGGERS=	gio-modules glib-schemas
 MESON_ARGS=	-Db_lundef=false \
 		-Ddefault_library=both \
+		-Dfile_monitor_backend='libinotify-kqueue' \
 		-Dinstalled_tests=false \
 		-Dlibmount=disabled \
 		-Druntime_dir=/var/run \
