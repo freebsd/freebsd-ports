@@ -299,9 +299,9 @@ share/applications/visualvm.desktop
 %%DATADIR%%/visualvm/lib/deployed/jdk16/windows/profilerinterface.map
 %%DATADIR%%/visualvm/lib/jfluid-server-15.jar
 %%DATADIR%%/visualvm/lib/jfluid-server.jar
-%%DATADIR%%/visualvm/modules/ext/common-8.2.1.jar
+%%DATADIR%%/visualvm/modules/ext/common-8.3.0.jar
 %%DATADIR%%/visualvm/modules/ext/encoder-1.2.3.jar
-%%DATADIR%%/visualvm/modules/ext/flightrecorder-8.2.1.jar
+%%DATADIR%%/visualvm/modules/ext/flightrecorder-8.3.0.jar
 %%DATADIR%%/visualvm/modules/ext/locale/updater_visualvm.jar
 %%DATADIR%%/visualvm/modules/ext/lz4-java-1.8.0.jar
 %%DATADIR%%/visualvm/modules/ext/profilerprobe.jar
