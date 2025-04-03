@@ -1,6 +1,6 @@
 PORTNAME=	mise
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2025.3.11
+DISTVERSION=	2025.4.0
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -72,7 +72,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		bytecount-0.6.8 \
 		byteorder-1.5.0 \
 		bytes-1.10.1 \
-		bytesize-1.3.2 \
+		bytesize-1.3.3 \
 		bzip2-0.5.2 \
 		bzip2-sys-0.1.13+1.0.8 \
 		calm_io-0.1.1 \
@@ -128,9 +128,9 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		ctr-0.9.2 \
 		curve25519-dalek-4.1.3 \
 		curve25519-dalek-derive-0.1.1 \
-		darling-0.20.10 \
-		darling_core-0.20.10 \
-		darling_macro-0.20.10 \
+		darling-0.20.11 \
+		darling_core-0.20.11 \
+		darling_macro-0.20.11 \
 		dashmap-5.5.3 \
 		dashmap-6.1.0 \
 		deflate64-0.1.9 \
@@ -281,12 +281,12 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		hyper-1.6.0 \
 		hyper-rustls-0.27.5 \
 		hyper-tls-0.6.0 \
-		hyper-util-0.1.10 \
+		hyper-util-0.1.11 \
 		i18n-config-0.4.7 \
 		i18n-embed-0.14.1 \
 		i18n-embed-fl-0.7.0 \
 		i18n-embed-impl-0.8.4 \
-		iana-time-zone-0.1.62 \
+		iana-time-zone-0.1.63 \
 		iana-time-zone-haiku-0.1.2 \
 		icu_collections-1.5.0 \
 		icu_locid-1.5.0 \
@@ -437,7 +437,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		proc-macro-error2-2.0.1 \
 		proc-macro2-1.0.94 \
 		prodash-29.0.1 \
-		quick-xml-0.37.3 \
+		quick-xml-0.37.4 \
 		quinn-0.11.7 \
 		quinn-proto-0.11.10 \
 		quinn-udp-0.5.11 \
@@ -473,7 +473,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		rustc-hash-2.1.1 \
 		rustc_version-0.4.1 \
 		rustix-0.38.44 \
-		rustix-1.0.3 \
+		rustix-1.0.4 \
 		rustls-0.23.25 \
 		rustls-native-certs-0.8.1 \
 		rustls-pemfile-2.2.0 \
@@ -528,7 +528,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		slab-0.4.9 \
 		slug-0.1.6 \
 		smallvec-1.14.0 \
-		socket2-0.5.8 \
+		socket2-0.5.9 \
 		spki-0.7.3 \
 		stable_deref_trait-1.2.0 \
 		static_assertions-1.1.0 \
@@ -644,15 +644,18 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		winapi-util-0.1.9 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
 		windows-0.57.0 \
-		windows-core-0.52.0 \
 		windows-core-0.57.0 \
+		windows-core-0.61.0 \
 		windows-implement-0.57.0 \
+		windows-implement-0.60.0 \
 		windows-interface-0.57.0 \
+		windows-interface-0.59.1 \
 		windows-link-0.1.1 \
 		windows-registry-0.4.0 \
 		windows-result-0.1.2 \
 		windows-result-0.3.2 \
 		windows-strings-0.3.1 \
+		windows-strings-0.4.0 \
 		windows-sys-0.48.0 \
 		windows-sys-0.52.0 \
 		windows-sys-0.59.0 \
