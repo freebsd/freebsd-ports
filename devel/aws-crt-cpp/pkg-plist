@@ -11,6 +11,7 @@ include/aws/crt/RefCounted.h
 include/aws/crt/StlAllocator.h
 include/aws/crt/StringUtils.h
 include/aws/crt/StringView.h
+include/aws/crt/TypeTraits.h
 include/aws/crt/Types.h
 include/aws/crt/UUID.h
 include/aws/crt/Utility.h
