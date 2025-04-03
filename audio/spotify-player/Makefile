@@ -1,6 +1,7 @@
 PORTNAME=	spotify-player
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.20.4
+PORTREVISION=	1
 CATEGORIES=	audio
 
 MAINTAINER=	jfree@FreeBSD.org
@@ -32,7 +33,6 @@ OPTIONS_DEFINE=		DAEMON \
 			DOCS \
 			FUZZY_SEARCH \
 			IMAGE \
-			LYRICS \
 			NOTIFY \
 			STREAMING
 
@@ -45,7 +45,6 @@ DAEMON_DESC=	Ability to launch as daemon
 DBUS_DESC=	Media control via MPRIS D-Bus
 FUZZY_SEARCH_DESC=	Approximate string matching
 IMAGE_DESC=	Terminal album art rendering
-LYRICS_DESC=	Fetch lyrics for current track
 NOTIFY_DESC=	Desktop notifications
 STREAMING_DESC=	Play music directly from terminal
 
@@ -57,8 +56,6 @@ DBUS_VARS=		CARGO_FEATURES+=media-control
 FUZZY_SEARCH_VARS=	CARGO_FEATURES+=fzf
 
 IMAGE_VARS=	CARGO_FEATURES+=image
-
-LYRICS_VARS=	CARGO_FEATURES+=lyric-finder
 
 NOTIFY_VARS=	CARGO_FEATURES+=notify
 
