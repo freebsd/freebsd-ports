@@ -11,6 +11,9 @@ WWW=		http://tamsys.sourceforge.net/gtams/
 
 LICENSE=	GPLv2
 
+DEPRECATED=		Upstream unmaintained as last release was in 2004
+EXPIRATION_DATE=		2025-05-04
+
 USES=		gnustep
 USE_GNUSTEP=	back build
 

@@ -1,6 +1,6 @@
 PORTNAME=	gnustep-app
 PORTVERSION=	2.0.0
-PORTREVISION=	20
+PORTREVISION=	21
 CATEGORIES=	x11 gnustep
 
 MAINTAINER=	ports@FreeBSD.org
@@ -42,7 +42,6 @@ RUN_DEPENDS=	aclock>0:x11-clocks/aclock \
 		gshisen>0:games/gshisen \
 		gskrab>0:x11/gskrab \
 		gspdf>0:print/gspdf \
-		gtamsanalyzer>0:science/gtamsanalyzer \
 		gworkspace-gwmetadata>0:deskutils/gworkspace-gwmetadata \
 		gworkspace>0:deskutils/gworkspace \
 		helpviewer>0:deskutils/helpviewer \
