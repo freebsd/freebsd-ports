@@ -170,4 +170,4 @@ lib/cmake/OpenVDB/OpenVDBMayaSetup.cmake
 lib/cmake/OpenVDB/OpenVDBUtils.cmake
 lib/libopenvdb.so
 lib/libopenvdb.so.12.0
-lib/libopenvdb.so.12.0.0
+lib/libopenvdb.so.12.0.1
