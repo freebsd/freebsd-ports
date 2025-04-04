@@ -15,12 +15,13 @@ DISTFILES=	core-dictionaries.zip:dictionaries \
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Integrated development environment (IDE) for R
-WWW=		https://rstudio.com/
+WWW=		https://www.rstudio.com/ \
+		https://github.com/rstudio/rstudio
 
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN=		fails to build with Boost>=1.87
+BROKEN=		fails to build with Boost>=1.87, see https://github.com/rstudio/rstudio/issues/15862
 BROKEN_i386=	[ERROR] Line 101: Failed to resolve 'org.rstudio.studio.client.workbench.views.vcs.common.diff.LineActionButtonRenderer.GrayResources' via deferred binding
 
 BUILD_DEPENDS=	ant:devel/apache-ant \
