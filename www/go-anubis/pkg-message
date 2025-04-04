@@ -1,0 +1,18 @@
+[
+{
+  type: install
+  message: <<EOM
+Anubis has been installed! Typically anubis is run behind a proxy, such as
+nginx, caddy, haproxy, or similar, that passes the `x-real-ip` header to
+anubis, which runs by default on port 8923. You will need to supply the
+target url that you are protecting.
+
+Amend rc.conf as required. For example:
+
+anubis_enable=YES
+anubis_args="-target http://localhost:4000/myapp -bind :8923"
+
+For more information, see https://anubis.techaro.lol/
+EOM
+}
+]

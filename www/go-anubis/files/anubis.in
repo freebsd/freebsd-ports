@@ -1,0 +1,58 @@
+#!/bin/sh
+#
+# PROVIDE: anubis
+# REQUIRE: DAEMON NETWORKING
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf to enable anubis:
+# anubis_enable (bool):        Set to "NO" by default.
+#                              Set it to "YES" to enable anubis.
+# anubis_user (user):          Set to "www" by default.
+#                              User to run anubis as.
+# anubis_group (group):        Set to "www" by default.
+#                              Group to run anubis as.
+# anubis_args (str):           Set to "" by default.
+#                              Extra flags passed to anubis.
+
+. /etc/rc.subr
+
+name=anubis
+rcvar=anubis_enable
+
+load_rc_config $name
+
+: ${anubis_enable:="NO"}
+: ${anubis_user:="www"}
+: ${anubis_group:="www"}
+: ${anubis_args:=""}
+
+pidfile="/var/run/${name}.pid"
+daemon_pidfile="/var/run/${name}-daemon.pid"
+procname="%%PREFIX%%/sbin/anubis"
+command="/usr/sbin/daemon"
+command_args="-f -c -R 5 -r -T ${name} -p ${pidfile} -P ${daemon_pidfile} ${procname} ${anubis_args}"
+
+start_precmd=anubis_startprecmd
+stop_postcmd=anubis_stoppostcmd
+
+anubis_startprecmd()
+{
+	if [ ! -e ${daemon_pidfile} ]; then
+		install -o ${anubis_user} -g ${anubis_group} /dev/null ${daemon_pidfile};
+	fi
+	if [ ! -e ${pidfile} ]; then
+		install -o ${anubis_user} -g ${anubis_group} /dev/null ${pidfile};
+	fi
+}
+
+
+anubis_stoppostcmd()
+{
+	if [ -f "${daemon_pidfile}" ]; then
+		pids=$( pgrep -F ${daemon_pidfile} 2>&1 )
+		_err=$?
+		[ ${_err} -eq 0 ] && kill -9 ${pids}
+	fi
+}
+
+run_rc_command "$1"
