@@ -20,7 +20,7 @@ MASTER_SITES=	NVIDIA/XFree86/FreeBSD-${ARCH_SUFX}/${DISTVERSION}
 DISTNAME=	NVIDIA-FreeBSD-${ARCH_SUFX}-${DISTVERSION}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER?=	danfe@FreeBSD.org
+MAINTAINER?=	x11@FreeBSD.org
 COMMENT?=	NVidia graphics card binary drivers for hardware OpenGL rendering
 WWW=		https://www.nvidia.com/object/unix.html
 

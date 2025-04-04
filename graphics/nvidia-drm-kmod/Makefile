@@ -2,7 +2,7 @@ PORTNAME=	nvidia-drm-kmod
 PORTVERSION=	${NVIDIA_DISTVERSION}
 CATEGORIES=	graphics kld
 
-MAINTAINER=	ashafer@badland.io
+MAINTAINER=	x11@FreeBSD.org
 COMMENT=	NVIDIA DRM Kernel Module
 WWW=		https://www.nvidia.com/object/unix.html
 
