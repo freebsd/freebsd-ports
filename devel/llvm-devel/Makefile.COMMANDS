@@ -36,6 +36,7 @@ LLVM_COMMANDS=	\
 		llvm-lipo \
 		llvm-mc \
 		llvm-ml \
+		llvm-ml64 \
 		llvm-modextract \
 		llvm-mt \
 		llvm-nm \
